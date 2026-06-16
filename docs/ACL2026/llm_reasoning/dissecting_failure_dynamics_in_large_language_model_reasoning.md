@@ -2,78 +2,84 @@
 title: >-
   [Paper Note] Dissecting Failure Dynamics in Large Language Model Reasoning
 description: >-
-  [ACL 2026][LLM Reasoning][Reasoning failure analysis] By analyzing LLM reasoning trajectories, it is discovered that errors are concentrated at a few early key turning points…
+  [ACL 2026][LLM Reasoning][Paper Note] Analysis of LLM reasoning trajectories reveals that errors cluster at key early turning points, after which models enter a "cognitive spiral"—extending trajectories in a locally coherent but globally erroneous manner. Based on this, the GUARD framework is proposed to perform short-range branch repair at high-risk turni
 tags:
-  - "ACL 2026"
-  - "LLM Reasoning"
-  - "Reasoning failure analysis"
-  - "Entropy signal"
-  - "Early onset of failures"
-  - "Cognitive spiral"
-  - "Test-time intervention"
+  - ACL 2026
+  - LLM Reasoning
 date: 2026-05-08
-content_hash: ec9dad54e289c3a8
+content_hash: 4a8309227ed08d8d
 ---
-
 # Dissecting Failure Dynamics in Large Language Model Reasoning
 
 **Conference**: ACL 2026  
 **arXiv**: [2604.14528](https://arxiv.org/abs/2604.14528)  
 **Code**: [GitHub](https://github.com/ZHUWEI-hub/GUARD)  
-**Area**: LLM Reasoning / Test-time Compute  
-**Keywords**: Reasoning failure analysis, Entropy signal, Early onset of failures, Cognitive spiral, Test-time intervention
+**Area**: LLM Reasoning / Inference-time Computation  
+**Keywords**: Reasoning Failure Analysis, Entropy Signals, Failure Early-onset, Cognitive Spiral, Inference-time Intervention
 
 ## TL;DR
-By analyzing LLM reasoning trajectories, it is discovered that errors are concentrated at a few early key turning points, after which the model enters a "cognitive spiral"—becoming locally coherent but globally incorrect as it continues to extend. Based on this, the GUARD framework is proposed to perform short-range branch repairs at high-risk turning points detected by entropy signals.
+Analysis of LLM reasoning trajectories reveals that errors cluster at key early turning points, after which models enter a "cognitive spiral"—extending trajectories in a locally coherent but globally erroneous manner. Based on this, the GUARD framework is proposed to perform short-range branch repair at high-risk turning points detected via entropy signals.
 
 ## Background & Motivation
 
-**Background**: Large Reasoning Models (LRMs) such as DeepSeek-R1 and OpenAI o1 improve performance by lengthening reasoning chains. Existing test-time scaling strategies primarily focus on "providing more computation"—generating longer chains, parallel sampling of multiple trajectories, or MCTS search.
+**Background**: Large Reasoning Models (LRMs) such as DeepSeek-R1 and OpenAI o1 improve performance by extending reasoning chains. Existing inference-time scaling strategies focus on "providing more computation"—generating longer chains, parallel sampling of multiple trajectories, or MCTS searches.
 
-**Limitations of Prior Work**: Existing methods involve "blind expansion"—they ignore when and where errors occur in the trajectory and allocate computation equally to all positions. Multi-path methods (such as Best-of-N) require maintaining multiple full parallel trajectories, resulting in severe computational redundancy.
+**Limitations of Prior Work**: Existing methods employ "blind scaling"—they are indifferent to when or where errors occur in a trajectory, allocating computation uniformly across all positions. Multi-path methods (e.g., Best-of-N) suffer from significant computational redundancy as they maintain multiple complete parallel trajectories.
 
-**Key Challenge**: The gains from test-time scaling depend on "whether errors are repairable," but existing methods do not distinguish between "repairable early deviations" and "irreversible late deviations," leading to computational waste on ineffective late extensions.
+**Key Challenge**: The benefit of inference-time scaling depends on whether "errors are repairable." However, existing methods do not distinguish between "repairable early deviations" and "irreversible late deviations," leading to computational waste on futile late-stage extensions.
 
 **Goal**: To understand the temporal dynamics of reasoning failures within trajectories and design targeted intervention mechanisms accordingly.
 
-**Key Insight**: A segment-by-segment analysis of error trajectories revealed four key patterns that provide guidance for interventions.
+**Key Insight**: A segment-by-segment analysis of failed trajectories is performed, revealing four key patterns that guide intervention.
 
-**Core Idea**: Errors are concentrated in the early stage + error segments exhibit entropy spikes + partial errors are recoverable from the same prefix → conduct short-range branching at entropy spikes and truncate hesitant behavior in the later stages.
+**Core Idea**: Errors cluster early + error segments exhibit entropy spikes + some errors are recoverable from the same prefix → Perform short-range branching at entropy spikes and truncate hesitation behavior in late stages.
 
 ## Method
 
 ### Overall Architecture
-GUARD maintains a single main reasoning trajectory and monitors token-level entropy in real-time. When abnormally high entropy is detected at reasoning step boundaries, a short-range branching is triggered: three short alternative continuations (momentum, suppression, and counterfactual) are generated, and the one with the lowest average entropy is selected to continue. In the later stages, reasoning is truncated upon detecting hesitation markers to prevent ineffective extension.
+GUARD maintains a single primary reasoning trajectory and monitors token-level entropy in real-time. When abnormally high entropy is detected at reasoning step boundaries, it triggers short-range branching: three brief alternative continuations (momentum, suppression, and counterfactual) are generated, and the one with the lowest mean entropy is selected to continue. In later stages, the reasoning is truncated upon detecting hesitation markers to prevent futile extensions.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Primary Reasoning Trajectory<br/>Token-by-token Generation"] --> B["Real-time Monitoring of Token Entropy"]
+    B --> C{"Failure Detection via Instance-adaptive Thresholds<br/>Boundary Entropy > Historical q-quantile?"}
+    C -->|"Below Threshold"| F
+    C -->|"Turning Point Detected"| D["Short-range Semantic Branching<br/>3 Continuations: Momentum / Suppression / Counterfactual"]
+    D --> E["Select Lowest Mean Entropy<br/>Resuming Single Primary Trajectory"]
+    E --> F{"Late-stage Truncation<br/>Remaining Capacity ρ ≤ ρ_min & Hesitation Marker?"}
+    F -->|"No · Continue"| B
+    F -->|"Yes"| G["Replace with End-of-Sequence<br/>Truncating Cognitive Spiral"]
+    G --> H["Output Final Answer"]
+```
 
 ### Key Designs
 
-1.  **Four Findings on Reasoning Failure Dynamics**:
+**1. Four Findings on Reasoning Failure Dynamics: Characterizing failures before intervention**
 
-    - **Function**: To provide an empirical basis for intervention strategies.
-    - **Mechanism**: (1) Early onset of failure: Over 85% of failure starts occur within the first 30% of the trajectory, and 43.5% of error trajectories contain only a single error segment; (2) Cognitive spiral: Post-error trajectories significantly lengthen while remaining locally coherent, forming "seemingly plausible but globally incorrect" extended reasoning; (3) Entropy signals: Token-level entropy exhibits local spikes at the start of failures, and the overall entropy of error segments is significantly higher than that of correct segments ($p<0.001$); (4) Local recoverability: Over 20% of failure trajectories can reach the correct answer through alternative continuations from the same prefix.
-    - **Design Motivation**: These four findings collectively demonstrate that errors are local, detectable, and partially repairable—intervening only at key positions is more efficient than global expansion.
+Before designing interventions, the authors dissected failed trajectories segment-by-segment, yielding four interlocking patterns. First is **Failure Early-onset**: over 85% of failure origins fall within the first 30% of the trajectory, and 43.5% of failed trajectories contain only a single error segment—errors are not distributed uniformly but erupt early at key turning points. Second is the **Cognitive Spiral**: after an error, trajectories actually become significantly longer while remaining locally coherent, creating a "seemingly plausible but globally wrong" sinkhole. Third is **Entropy Signals**: token-level entropy displays local spikes at failure origins, and the overall entropy of error segments is significantly higher than that of correct segments ($p<0.001$), providing a practical detection signal. Fourth is **Local Recoverability**: over 20% of failed trajectories can reach the correct answer if an alternative continuation is taken from the same prefix. Combined, these findings suggest that errors are local, detectable, and partially repairable, making "intervening only at critical points" more efficient than "global scaling."
 
-2.  **Failure Detection via Instance-Adaptive Thresholds**:
+**2. Instance-adaptive Threshold for Failure Detection: Using quantiles of historical entropy**
 
-    - **Function**: To detect high-risk turning points at reasoning step boundaries.
-    - **Mechanism**: At delimiters, it is checked whether the current token entropy exceeds the $q$-quantile of historical entropy: $\mathbb{I}_{drift}(x_t) = \mathbb{I}[x_{t-1} \in \mathcal{T}_{delim} \land \mathcal{H}(x_t) > \text{Quantile}_q(\mathbf{H}_{<t})]$. Using quantiles instead of absolute thresholds makes detection adaptive to the entropy scale of the current problem.
-    - **Design Motivation**: Absolute thresholds are not robust across different problems—"high entropy" for a simple problem might be "normal entropy" for a difficult one; the quantile method eliminates this scale difference.
+Given that entropy spikes signal failure, the challenge lies in determining what constitutes "high" entropy. The authors check entropy only at reasoning step boundaries (delimiters). The criterion is whether the current token entropy exceeds the $q$-quantile of the preceding historical entropy:
 
-3.  **Short-range Semantic Branching and Late Truncation**:
+$$\mathbb{I}_{drift}(x_t) = \mathbb{I}[x_{t-1} \in \mathcal{T}_{delim} \land \mathcal{H}(x_t) > \text{Quantile}_q(\mathbf{H}_{<t})]$$
 
-    - **Function**: To explore local alternatives at detected risk points rather than maintaining full parallel paths.
-    - **Mechanism**: Upon triggering, three short-range continuations are generated—Momentum branch (standard greedy), Suppression branch (preceded by "Wait," to break the sequence pattern), and Counterfactual branch (preceded by "Let me reconsider:" to encourage rethinking). The continuation with the lowest average entropy is selected to continue the single trajectory. Later, when the remaining capacity $\rho_t \leq \rho_{min}$, hesitation markers are directly replaced with a termination signal.
-    - **Design Motivation**: Inspired by the recoverability finding—there is no need to explore full alternative paths; it is sufficient to provide a few local alternatives at the deviation point and select the most certain one.
+Quantiles are used instead of fixed absolute thresholds because "high entropy" for a simple problem might be "normal entropy" for a difficult one. By using quantiles relative to the current problem's historical entropy distribution, detection automatically adapts to the entropy scale of each specific problem.
+
+**3. Short-range Semantic Branching and Late Truncation: Targeted surgery at deviation points**
+
+Upon detecting a risk point, GUARD does not unfold multiple complete trajectories (the high-cost approach of Best-of-N). Instead, it generates only three **short-range** continuations: a momentum branch (standard greedy), a suppression branch (prefixed with "Wait," to break the current pattern), and a counterfactual branch (prefixed with "Let me reconsider:" to prompt rethinking). The continuation with the lowest mean entropy is selected to resume the single primary trajectory. Late in the reasoning process, when remaining capacity $\rho_t \leq \rho_{min}$, any hesitation marker encountered is replaced with a termination signal to cut off invalid tokens that only extend the cognitive spiral. The three branches share pre-computed KV caches to minimize latency.
 
 ### Loss & Training
-GUARD is a pure test-time framework and does not involve training. All branches share pre-computed KV caches to minimize latency overhead.
+GUARD is a pure inference-time framework and involves no training. All branches share pre-computed KV caches to minimize latency overhead.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Method | AIME24 | AIME25 | AMC23 | MATH500 | Mean Pass@1 |
-| :--- | :--- | :--- | :--- | :--- | :--- |
+| Method | AIME24 | AIME25 | AMC23 | MATH500 | Average Pass@1 |
+|------|--------|--------|-------|---------|------------|
 | BASE | 20.0 | 13.3 | 57.0 | 78.9 | 36.2 |
 | Reflexion | 30.0 | 23.3 | 72.5 | 80.2 | - |
 | α1 | 20.0 | 26.7 | 70.0 | 80.4 | 41.2 |
@@ -81,38 +87,38 @@ GUARD is a pure test-time framework and does not involve training. All branches 
 
 ### Ablation Study
 
-| Configuration | Key Metrics | Description |
-| :--- | :--- | :--- |
-| Without Branching (Detection Only) | Limited Performance | Detection alone is insufficient; repair is required |
-| Without Late Truncation | Increased Token Waste | Late extension constitutes ineffective computation |
-| Fixed Absolute Threshold | Unstable | Adaptive thresholds are more robust |
+| Configuration | Key Metric | Description |
+|------|---------|------|
+| No Branching (Detection Only) | Limited Performance | Detection is insufficient; repair is needed |
+| No Late Truncation | Increased Token Waste | Late-stage extension is wasted computation |
+| Fixed Absolute Threshold | Unstable | Adaptive threshold is more robust |
 
 ### Key Findings
-- The number of segments in error trajectories is significantly higher than in correct trajectories—extra segments are almost entirely ineffective extensions following the failure start.
-- Entropy signals are reliable indicators of failure—the average entropy of failure segments is significantly higher than that of correct segments.
-- Short-range branching (3 branches × short distance) is much more token-efficient than maintaining multiple full parallel paths.
-- GUARD provides especially significant gains for small models (1.5B), as they are more prone to falling into cognitive spirals.
+- Failed trajectories have significantly more segments than correct ones—extra segments are almost entirely invalid extensions after failure origins.
+- Entropy signals are reliable indicators of failure—failed segments have significantly higher mean entropy than correct segments.
+- Short-range branching (3 branches × short distance) is far more token-efficient than maintaining multiple complete parallel trajectories.
+- GUARD's benefits are particularly pronounced on smaller models (1.5B), which are more susceptible to cognitive spirals.
 
 ## Highlights & Insights
-- The **"Cognitive Spiral"** concept precisely describes the core pathology of LLM reasoning failures—falling deeper into seemingly plausible traps rather than collapsing immediately, which explains why longer reasoning chains are not necessarily better.
-- The idea of **"performing surgery at the deviation point rather than systemic treatment"** is highly efficient—concentrating computation on the 20% of repairable failures.
-- The analysis findings can guide reasoning RL training—if 85% of failures originate in the first 30% of the trajectory, training signals should also be concentrated on these early turning points.
+- The **"Cognitive Spiral"** concept accurately describes the core pathology of LLM reasoning failure—errors do not lead to immediate collapse but rather a "seemingly plausible descent," explaining why longer reasoning chains are not always better.
+- The philosophy of **"surgery at deviation points rather than systemic treatment"** is highly efficient—concentrating computation on the 20% of recoverable failures.
+- The analysis provides guidance for reasoning RL training—if 85% of failures stem from the first 30% of the trajectory, training signals should also be concentrated on these early turning points.
 
 ## Limitations & Future Work
-- Using Gemini 3 Pro as an external oracle to judge segment validity involves evaluation bias.
-- Validated only on math/competition reasoning; failure dynamics in natural language reasoning and code generation may differ.
-- The design of the three branches (momentum/suppression/counterfactual) is somewhat heuristic; better branching strategies are worth exploring.
-- Late truncation might prune correct trajectories that "eventually find the answer after long thinking."
+- Using Gemini 3 Pro as an external oracle to judge segment validity introduces evaluation bias.
+- Validated only on math and competitive reasoning; failure dynamics in natural language reasoning and code generation may differ.
+- The design of the three branches (momentum/suppression/counterfactual) is somewhat heuristic; better branching strategies warrant exploration.
+- Late-stage truncation might "false kill" correct trajectories that eventually reach the answer after long-form thinking.
 
 ## Related Work & Insights
-- **vs Best-of-N**: BoN generates $N$ full parallel paths, whereas GUARD only performs short-range exploration at a few risk points on a single path.
-- **vs DTS**: DTS triggers branching based on absolute entropy, while GUARD uses adaptive thresholds based on historical quantiles.
-- **vs α1**: α1 dynamically adjusts depth through information-theoretic metrics but does not perform local repairs.
+- **vs Best-of-N**: BoN generates $N$ complete parallel paths, whereas GUARD performs short-range exploration only at a few risk points on a single path.
+- **vs DTS**: DTS triggers branching based on absolute entropy, while GUARD uses an adaptive threshold based on historical quantiles.
+- **vs α1**: α1 dynamically adjusts depth via information-theoretic metrics but does not perform local repairs.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ The systematic analysis of reasoning failure dynamics is a fresh perspective; the cognitive spiral concept offers deep insight.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Multiple competition reasoning benchmarks and detailed statistical analysis.
-- Writing Quality: ⭐⭐⭐⭐⭐ The logical chain from analysis to method is extremely smooth, with excellent visualization.
+- Novelty: ⭐⭐⭐⭐⭐ The systematic analysis of reasoning failure dynamics is a fresh perspective; the cognitive spiral concept offers profound insight.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Multiple competitive reasoning benchmarks and detailed statistical analysis.
+- Writing Quality: ⭐⭐⭐⭐⭐ The logical chain from analysis to methodology is exceptionally fluid with excellent visualization.
 
 <!-- RELATED:START -->
 
@@ -123,8 +129,8 @@ GUARD is a pure test-time framework and does not involve training. All branches 
 - [\[ACL 2026\] Language Model as Planner and Formalizer under Constraints](language_model_as_planner_and_formalizer_under_constraints.md)
 - [\[AAAI 2026\] Incorporating Self-Rewriting into Large Language Model Reasoning Reinforcement](../../AAAI2026/llm_reasoning/incorporating_self-rewriting_into_large_language_model_reasoning_reinforcement.md)
 - [\[ACL 2026\] SeLaR: Selective Latent Reasoning in Large Language Models](selar_selective_latent_reasoning_in_large_language_models.md)
+- [\[ACL 2026\] Foresight Optimization for Strategic Reasoning in Large Language Models](foresight_optimization_for_strategic_reasoning_in_large_language_models.md)
 - [\[ACL 2026\] Failure Modes in Multi-Hop QA: The Weakest Link Effect and the Recognition Bottleneck](failure_modes_in_multi-hop_qa_the_weakest_link_effect_and_the_recognition_bottle.md)
-- [\[ACL 2026\] TInR: Exploring Tool-Internalized Reasoning in Large Language Models](tinr_exploring_tool-internalized_reasoning_in_large_language_models.md)
 
 </div>
 

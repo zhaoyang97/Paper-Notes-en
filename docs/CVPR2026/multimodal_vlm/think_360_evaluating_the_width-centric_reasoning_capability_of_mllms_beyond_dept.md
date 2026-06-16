@@ -2,89 +2,100 @@
 title: >-
   [Paper Note] Think360: Evaluating the Width-centric Reasoning Capability of MLLMs Beyond Depth
 description: >-
-  [CVPR 2026][Multimodal VLM][Multimodal reasoning] This paper presents Think360, a multimodal benchmark focused on *reasoning width*—i.e., a model's capability for multi-path search, multi-constraint pruning, backtracking…
+  [CVPR 2026][Multimodal VLM][Paper Note] This paper introduces Think360, a multimodal benchmark focusing on "reasoning width"—specifically a model's capability in multi-path searching, multi-constraint pruning, and trial-and-error backtracking. It contains 1200+ high-quality samples and utilizes a fine-grained Tree-of-Thought evaluation protocol, revealing si
 tags:
-  - "CVPR 2026"
-  - "Multimodal VLM"
-  - "Multimodal reasoning"
-  - "reasoning width"
-  - "Tree-of-Thought evaluation"
-  - "benchmark"
-  - "large language models"
+  - CVPR 2026
+  - Multimodal VLM
 date: 2026-05-08
-content_hash: a41bed4dfffeecd4
+content_hash: 5b62e7cb2d609692
 ---
-
 # Think360: Evaluating the Width-centric Reasoning Capability of MLLMs Beyond Depth
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.22689](https://arxiv.org/abs/2603.22689)  
 **Code**: [Think360](https://github.com/Think360-Benchmark/Think360)  
-**Area**: Multimodal VLM / LLM Reasoning
-**Keywords**: Multimodal reasoning, reasoning width, Tree-of-Thought evaluation, benchmark, large language models
+**Area**: Multimodal VLM / LLM Reasoning  
+**Keywords**: Multimodal Reasoning, Reasoning Width, Tree-of-Thought Evaluation, Benchmark, Large Language Models
 
 ## TL;DR
 
-This paper presents Think360, a multimodal benchmark focused on *reasoning width*—i.e., a model's capability for multi-path search, multi-constraint pruning, backtracking, and trial-and-error exploration. The benchmark comprises 1,200+ high-quality samples and introduces a fine-grained Tree-of-Thought evaluation protocol, revealing significant deficiencies in current MLLMs along the width dimension of reasoning.
+This paper introduces Think360, a multimodal benchmark focusing on "reasoning width"—specifically a model's capability in multi-path searching, multi-constraint pruning, and trial-and-error backtracking. It contains 1200+ high-quality samples and utilizes a fine-grained Tree-of-Thought evaluation protocol, revealing significant weaknesses in the width-dimension reasoning of current MLLMs.
 
 ## Background & Motivation
 
-1. **Background**: Recent large reasoning models (LRMs) have made remarkable progress in test-time scaling and long-chain reasoning. Existing benchmarks such as MathVista, MathVerse, and OlympiadBench have continuously raised difficulty and task coverage, spanning from K-12 to graduate-level problems and from text-only to multimodal inputs.
+1. **Background**: Recently, Large Reasoning Models (LRMs) have made significant progress in test-time scaling and long-chain reasoning. Existing benchmarks like MathVista, MathVerse, and OlympiadBench continuously push the boundaries of difficulty and task coverage, ranging from K-12 to graduate levels and from text to multimodal inputs.
 
-2. **Limitations of Prior Work**: Nearly all existing evaluation benchmarks implicitly measure only *reasoning depth*—the ability to derive conclusions step by step along a single reasoning chain. However, humans rarely rely solely on linear reasoning; they more often search across the solution space in multiple directions, branch and backtrack, prune by trial and error, and integrate partial findings into a final answer.
+2. **Limitations of Prior Work**: Almost all existing evaluation benchmarks implicitly measure only "reasoning depth," which is the capability of a model to derive conclusions step-by-step along a single reasoning chain. However, humans rarely solve problems through linear deduction alone; success often involves searching multiple directions in the solution space, branching and backtracking, and trial-and-error pruning to integrate partial findings into an answer.
 
-3. **Key Challenge**: Reasoning depth and reasoning width are two orthogonal dimensions. Existing benchmarks conflate the two, making it impossible to distinguish whether a model "reasons deeply" or "searches broadly." The absence of systematic evaluation along the width dimension leads to a one-sided assessment of models' true reasoning capabilities.
+3. **Key Challenge**: Reasoning depth and reasoning width are two orthogonal dimensions. Existing benchmarks conflate the two, making it impossible to distinguish whether a model "thinks deeply" or "searches broadly." The lack of systematic evaluation for the width dimension leads to a one-sided assessment of true reasoning capabilities.
 
-4. **Goal**: To construct a multimodal benchmark specifically designed to evaluate reasoning width, including: (a) a systematic definition of the cognitive capability dimensions of reasoning width; (b) an evaluation protocol that simultaneously quantifies depth and width; and (c) a comprehensive assessment of mainstream MLLMs on width-centric reasoning.
+4. **Goal**: To construct a multimodal benchmark specifically for evaluating reasoning width, including: (a) systematically defining the cognitive capability dimensions of reasoning width, (b) designing an evaluation protocol to simultaneously quantify depth and width, and (c) comprehensively evaluating the width reasoning capabilities of mainstream MLLMs.
 
-5. **Key Insight**: The authors draw an analogy between architectural "width" designs in neural networks (shortcut connections, dropout, pyramidal features, gradient backpropagation) and reasoning strategies (pruning, divide-and-conquer, trial-and-error, backtracking), establishing a correspondence between architectural and reasoning dimensions.
+5. **Key Insight**: The authors establish a correspondence between architecture and reasoning by analogizing "width" designs in neural network architectures (shortcut connections, dropout, pyramid features, backpropagation) with strategies in the reasoning process (pruning, divide-and-conquer, trial-and-error, backtracking).
 
-6. **Core Idea**: By constructing Think360—a 1,200+ sample multimodal benchmark focused on width reasoning—and a Tree-of-Thought evaluation protocol, the paper systematically exposes the inadequacy of current MLLMs in exploratory reasoning.
+6. **Core Idea**: By building the width-centric multimodal benchmark Think360 (1200+ samples) and the Tree-of-Thought evaluation protocol, the study systematically reveals the deficiencies of MLLMs in exploratory reasoning.
 
 ## Method
 
 ### Overall Architecture
 
-Think360 is an evaluation benchmark rather than a model. The construction pipeline consists of three stages: (1) multi-source raw data collection → (2) coarse-to-fine quality filtering → (3) annotation and rewriting. Evaluation employs pass@1 accuracy, Tree-of-Thought depth/width scores, and reasoning time/token consumption.
+Think360 aims to answer a question ignored by existing benchmarks: Do MLLMs "think deeply" or "search broadly"? Instead of training new models, it treats "reasoning width" as a quantifiable evaluation target. The work follows two tracks: the **Data Track** collects raw problems from competitions, textbooks, existing benchmarks, and puzzles, which are then refined through coarse-to-fine filtering and rewriting into 1225 multimodal problems with objectively verifiable answers. The **Evaluation Track** complements traditional pass@1 accuracy with a Tree-of-Thought (ToT) protocol that decomposes model responses into reasoning trees to measure "depth" and "width" scores separately, alongside efficiency metrics like inference time and token consumption. These tracks are unified by a "Formal Definition of Reasoning Width."
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    DEF["Formal Definition of Reasoning Width<br/>5 Cognitive Width Abilities + NN Analogy"]
+    subgraph DATA["Multi-source Data Construction & Quality Filtering"]
+        direction TB
+        S["Four Data Sources<br/>Competitions / Textbooks / Benchmarks / Puzzles"]
+        C["Coarse Filtering: Keyword Matching + GPT-4o Initial Judgment"]
+        F["Fine Filtering: Manual Quality & Diversity Check"]
+        R["Annotation Restructuring<br/>Proof -> Verifiable Value / Puzzle -> Enumerable QA"]
+        S --> C --> F --> R
+    end
+    TAX["Fine-grained Taxonomy<br/>Answer / Difficulty / Ability / Task Type Axes"]
+    DS["Think360 Dataset<br/>1225 Objectively Scorable Multimodal Problems"]
+    subgraph EVAL["ToT-Eval Protocol"]
+        direction TB
+        T["GPT-4o Deconstructs Response into Reasoning Tree<br/>Parent-Child=Sequential Dep. / Sibling=Parallel Exploration"]
+        SC["Node-wise Correctness Check<br/>Depth Score=Longest Correct Chain / Width Score=Effective Parallel Branches"]
+        T --> SC
+    end
+    OUT["Multi-dimensional Diagnostic Profile<br/>pass@1 + Depth/Width Scores + Time/Token Efficiency"]
+    DEF --> DATA --> TAX --> DS --> EVAL --> OUT
+    DEF -. Depth/Width Separation .-> EVAL
+```
 
 ### Key Designs
 
-1. **Formal Definition of Reasoning Width**
+**1. Formal Definition of Reasoning Width: Decoupling "Searching Broadly" from "Thinking Deeply"**
 
-    - **Function**: Explicitly distinguishes reasoning width from reasoning depth as two orthogonal dimensions.
-    - **Mechanism**: Reasoning depth measures the ability to extend step-by-step along a single reasoning chain; reasoning width focuses on five cognitive capabilities: systematic trial-and-error search, branch-and-bound pruning, divide-and-conquer strategy, hypothesize-and-test, and perceive-and-comprehend. These five capabilities correspond to different "lateral" search strategies, analogous to dropout↔pruning and shortcut connections↔backtracking in neural networks.
-    - **Design Motivation**: Existing benchmarks provide virtually no dedicated quantification of width reasoning, leading to models being considered "capable of reasoning" when they can merely traverse a fixed path at length, without any systematic evaluation of multi-path search capability.
+Existing benchmarks assume reasoning ability equals the depth of a single chain. Think360 defines horizontal capability as reasoning width, subdivided into five cognitive sub-abilities: trial-and-error search, multi-constraint pruning (branch-and-bound), divide-and-conquer, hypothesize-and-test, and perceive-and-comprehend. These are analogized to neural network "width" designs: dropout for pruning, shortcuts for backtracking, and pyramid features for divide-and-conquer. This mapping transforms "width" from a vague intuition into measurable dimensions.
 
-2. **Multi-source Data Construction and Quality Filtering**
+**2. Multi-source Data Construction & Quality Filtering: Targeted Selection of Width-centric Problems**
 
-    - **Function**: Constructs 1,225 high-quality multimodal reasoning problems.
-    - **Mechanism**: Data is sourced from four categories—math/logic competition problems, textbook examples, existing benchmarks (MathVision, DynaMath, MME-Reasoning, etc.), and online puzzles/IQ tests. Filtering adopts a two-stage strategy: coarse filtering uses keyword matching (e.g., *maximum/minimum*, *possible ways*) combined with GPT-4o as a judge; fine filtering involves manual secondary quality and diversity checks. Proof-based problems are rewritten to yield verifiable answers, and game problems are reformulated into enumerable QA formats.
-    - **Design Motivation**: Width-reasoning problems directly drawn from existing benchmarks constitute an extremely small fraction (e.g., only 2.7% in MathVista, 1.7% in OlympiadBench), necessitating dedicated collection and adaptation. The significant format heterogeneity across sources also requires unification into objectively verifiable forms.
+Width-centric problems are scarce in existing benchmarks (e.g., only 2.7% in MathVista and 1.7% in OlympiadBench). Think360 sources data from math/logic competitions, textbooks, existing benchmarks (MathVision, DynaMath, MME-Reasoning), and online IQ puzzles. A two-stage filtering process is applied: coarse filtering uses keywords (e.g., "maximum/minimum," "possible ways") and GPT-4o scoring; fine filtering involves manual review for quality and diversity. Problems are restructured (e.g., converting proofs to verifiable numerical answers) to ensure objective evaluation.
 
-3. **Fine-grained Taxonomy**
+**3. Fine-grained Taxonomy: Reflecting Multi-ability Requirements via Non-exclusive Labels**
 
-    - **Function**: Categorizes problems along multiple axes to support fine-grained analysis.
-    - **Mechanism**: Four classification axes are employed—answer type (multiple choice 16.9%, free response 83.1%), difficulty level (five tiers: Easy/Basic/Medium/Hard/Olympiad, approximately normally distributed), cognitive capability (5 non-exclusive categories), and problem type (6 non-exclusive categories). Non-exclusive categorization allows a single problem to be annotated with multiple cognitive capabilities simultaneously.
-    - **Design Motivation**: Exclusive categorization fails to capture the fact that width-reasoning problems typically require multiple cognitive capabilities at once. Non-exclusive categorization, visualized through frequency statistics and chord diagrams, reveals co-occurrence patterns among different capabilities.
+Width reasoning often requires multiple abilities simultaneously. Think360 tags problems along four axes: Answer Type (16.9% Multiple Choice, 83.1% Freeform), Difficulty (5 levels: Easy to Olympiad), Cognitive Ability (the 5 defined categories), and Task Type (6 categories). Both Cognitive Ability and Task Type axes use **non-exclusive** labels, allowing a single problem to carry multiple tags to accurately reflect the complexity of reasoning.
 
-4. **Tree-of-Thought Evaluation Protocol (ToT-Eval)**
+**4. Tree-of-Thought Evaluation Protocol (ToT-Eval): Quantifying Exploration Quality**
 
-    - **Function**: Goes beyond traditional pass@1 accuracy by quantifying model reasoning processes along both depth and width dimensions.
-    - **Mechanism**: The protocol proceeds in two steps—(a) *Tree construction*: given a problem and the model's complete response, GPT-4o extracts key reasoning steps and organizes them into a hierarchical tree, where depth represents sequential reasoning dependencies (parent–child relationships) and width represents parallel alternative explorations (sibling nodes at the same level). (b) *Depth/width scoring*: GPT-4o assesses the correctness of each node (logical validity and factual accuracy). The depth score equals the length of the longest correct reasoning chain; the width score counts the number of valid parallel reasoning branches.
-    - **Design Motivation**: Traditional outcome-based evaluation considers only the correctness of the final answer, making it impossible to distinguish whether a model arrived at the answer directly or through thorough exploration and verification. ToT-Eval simultaneously quantifies exploratory breadth and reasoning depth, providing a more precise characterization of width-centric reasoning capability.
+Outcome-based evaluation cannot distinguish between a "one-shot" lucky guess and genuine exploration. ToT-Eval fills this gap by using GPT-4o to extract key reasoning steps and organize them into a hierarchical tree. Parent-child relationships signify sequential dependencies (depth), while sibling nodes signify parallel exploration (width). Correctness is judged node-by-node. The Depth Score is the length of the longest entirely correct chain, and the Width Score is the count of valid parallel branches.
 
 ### Loss & Training
 
-This paper is a benchmark evaluation study and does not involve model training. For evaluation, temperature is set to 0.7; each problem is repeated 3 times and averaged to reduce variance. All models are configured with their maximum supported output length. The effect of Chain-of-Thought prompting (with vs. without) is also examined.
+This is a benchmark study and does not involve model training. For evaluation, the temperature is set to 0.7, and each problem is repeated 3 times to average the results and reduce variance. Models are configured to their maximum output length. The impact of Chain-of-Thought (CoT) prompting is also tested.
 
 ## Key Experimental Results
 
 ### Main Results
 
-The evaluation covers 12 major model families (GPT, Gemini, Claude, Grok, Doubao, QwenVL, InternVL, LLaVA, Llama, GLM-V, MiMo, Kimi), comprising 30+ models in total.
+The evaluation covers 12 major model series (GPT, Gemini, Claude, Grok, Doubao, QwenVL, InternVL, LLaVA, Llama, GLM-V, MiMo, Kimi) with over 30 models.
 
-| Model | Overall Accuracy | Reasoning Time (s) | Token Consumption | Trial-and-Error | Branch-and-Bound |
-|---|---|---|---|---|---|
+| Model | Overall Accuracy | Inference Time (s) | Token Consumption | Trial-and-Error | Branch-and-Bound |
+| :--- | :--- | :--- | :--- | :--- | :--- |
 | Gemini-2.5-pro | **46.0%** | 160.19 | 17270 | 38.5% | 51.8% |
 | o3 | 42.3% | 261.59 | 6326 | 35.5% | 48.0% |
 | o4-mini | 42.1% | 84.61 | 6736 | 34.3% | 48.0% |
@@ -97,60 +108,60 @@ The evaluation covers 12 major model families (GPT, Gemini, Claude, Grok, Doubao
 
 ### Ablation Study
 
-| Configuration | Key Metric | Notes |
-|---|---|---|
-| CoT prompting (GPT-4o) | +0.4% accuracy | CoT prompting yields marginal improvement; reasoning time doubles |
-| Perceive-and-Comprehend subset | Above overall average | Models perform relatively well on perceptual comprehension tasks |
-| Trial-and-Error subset | Below overall average | Trial-and-error search is a systematic weakness |
-| Divide-and-Conquer subset | Below overall average | Divide-and-conquer tasks are similarly difficult |
-| Text-only vs. Image+Text | See appendix | Analysis of the impact of multimodal input |
+| Configuration | Key Metric | Description |
+| :--- | :--- | :--- |
+| CoT prompting (GPT-4o) | +0.4% Accuracy | CoT brings minimal gain while doubling inference time |
+| Perceive-and-Comprehend Subset | Above Overall Avg | Models perform relatively better on perception-heavy tasks |
+| Trial-and-Error Subset | Below Overall Avg | Trial-and-error search is a significant weakness |
+| Divide-and-Conquer Subset | Below Overall Avg | Tasks requiring decomposition are equally difficult |
+| Text-Only vs Image+Text | See Appendix | Analysis of the impact of multimodal inputs |
 
 ### Key Findings
 
-- **Gemini-2.5-pro ranks first with 46.0% accuracy**. Its average thinking token count is approximately 17,270—roughly 3× that of o3/o4-mini—yet its reasoning time is shorter (160s vs. o3's 262s), indicating higher reasoning efficiency.
-- **Best cost-effectiveness: o4-mini**—42.1% accuracy comparable to o3, but reasoning time of only 85s (one-third of o3).
-- **All models struggle below 40%**: only 3 models exceed the 40% threshold, indicating that width-centric reasoning remains a formidable challenge for current MLLMs.
-- **Divergence between perceive-and-comprehend and trial-and-error**: Models universally score above average on the Perceive-and-Comprehend subset, but significantly below average on the Trial-and-Error and Divide-and-Conquer subsets, suggesting that current MLLMs are more adept at structured perception than exploratory reasoning.
-- **Substantial gap for open-source models**: The best open-source model, MiMo-VL-RL (7B), achieves 28.3% accuracy, approximately 18 percentage points behind the leading closed-source models.
+- **Gemini-2.5-pro ranks first with 46.0% accuracy**. Its average thinking tokens (17,270) are approximately 3x that of o3/o4-mini, yet its inference time is shorter (160s vs. o3's 262s), suggesting higher efficiency.
+- **o4-mini is the most cost-effective**: It achieves 42.1% accuracy (comparable to o3) with only 1/3 of o3's inference time (85s).
+- **All models struggle below the 40% threshold**: Only three models surpassed 40% accuracy, indicating that width reasoning remains a severe challenge for current MLLMs.
+- **Divergence between Perception and Search**: Performance on Perceive-and-Comprehend is generally higher than the average, but significantly lower on Trial-and-Error and Divide-and-Conquer, showing that MLLMs excel at structured perception rather than exploratory reasoning.
+- **Open-source gap remains large**: The best open-source model, MiMo-VL-RL (7B), scored 28.3%, about 18 percentage points behind the closed-source leaders.
 
 ## Highlights & Insights
 
-- **Conceptualization of reasoning width**: Explicitly separating reasoning width from depth and establishing an insightful analogy to neural network architectural design (dropout↔pruning, shortcut↔backtracking, pyramidal features↔divide-and-conquer, etc.) yields a clear and thought-provoking conceptual framework.
-- **ToT-Eval protocol**: By analyzing the tree structure of reasoning processes rather than just final answers, ToT-Eval quantifies both depth and width dimensions, providing richer diagnostic information than traditional pass@1. This evaluation paradigm is transferable to any scenario requiring assessment of reasoning quality.
-- **Rigorous construction pipeline for 1,200+ problems**: Spanning competition problems to logic puzzles, multi-source data undergoes three-stage filtering (keyword matching + LLM-as-Judge + human review), ensuring problem quality and targeted coverage of width reasoning. The approach to adapting proof-based and game problems is particularly instructive.
+- **Conceptualization of Reasoning Width**: Explicitly separating width from depth and creating an insightful analogy with neural network architecture designs (dropout $\leftrightarrow$ pruning, shortcut $\leftrightarrow$ backtracking, etc.) provides a clear and heuristic framework.
+- **ToT-Eval Protocol**: By analyzing the tree structure of responses rather than just the final answer, it quantifies the "depth" and "width" dimensions, providing richer diagnostic information than traditional pass@1.
+- **Rigorous Construction Process**: The multi-source data pipeline ensures task relevance and quality, offering a template for transforming diverse problem formats (proofs, puzzles) into verifiable benchmarks.
 
 ## Limitations & Future Work
 
-- **Dependence on GPT-4o/GPT-4o-mini**: Both tree construction and node correctness judgment rely on GPT-4o, introducing evaluator bias and incurring substantial evaluation costs.
-- **Limited dataset scale**: 1,225 problems is relatively small compared to mainstream reasoning benchmarks (e.g., MathVista with 5,000+), and sample sizes within individual cognitive capability subsets may be insufficient for robust statistical conclusions.
-- **No process reward/supervision evaluation**: Although ToT-Eval is proposed, it is not applied to training (e.g., as a process-based reward), leaving its utility for guiding model improvement unvalidated.
-- **Scalability**: Automatically generating more high-quality width-reasoning problems at scale—avoiding the bottleneck of manual annotation—is a critical challenge for broader adoption.
+- **Dependency on GPT-4o**: Both tree construction and node-wise judgment rely on GPT-4o, introducing potential evaluator bias and high costs.
+- **Dataset Scale**: 1225 samples is relatively small compared to benchmarks like MathVista (5000+), which might limit the statistical robustness of some sub-category analyses.
+- **Lack of Process Reward Integration**: While ToT-Eval is proposed for assessment, it has not yet been applied to training (e.g., process-based reward models) to verify its utility in improving model performance.
+- **Scalability**: Automating the generation of high-quality width reasoning problems without manual bottlenecks remains a key challenge for expansion.
 
 ## Related Work & Insights
 
-- **vs. MathVista/MathVerse**: These benchmarks cover multimodal mathematical reasoning but contain very few width-reasoning problems (<3%). Think360 focuses exclusively on the width dimension and is thus complementary.
-- **vs. CLEVR/GQA**: Early compositional visual reasoning benchmarks emphasize semantic understanding, whereas Think360 targets higher-level search and planning strategies.
-- **vs. OlympiadBench**: Competition-level difficulty benchmarks emphasize long-chain reasoning (depth); Think360 focuses on multi-path search (width) at comparable difficulty levels.
-- **Insights**: This benchmark exposes a systematic deficiency in current MLLMs—the lack of effective exploration and backtracking capability. This suggests that RL-based training (as in o1/o3) may need to more actively encourage multi-branch search during reasoning, rather than simply extending chain length.
+- **vs. MathVista/MathVerse**: These cover multimodal math reasoning, but width-centric problems are sparse (<3%). Think360 focuses on the width dimension, making it complementary.
+- **vs. CLEVR/GQA**: Earlier benchmarks focused on semantic composition; Think360 emphasizes higher-level search and planning strategies.
+- **vs. OlympiadBench**: Competition-level benchmarks focus on deep reasoning chains; Think360 targets multi-path search at similar difficulty levels.
+- **Insight**: Think360 exposes a systemic lack of exploration and backtracking in current MLLMs. This suggests that RL-based training (e.g., o1/o3 style) should encourage models to engage in multi-branch search rather than solely lengthening the reasoning chain.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — Systematic evaluation of reasoning width as an independent dimension is a novel perspective, though the inherent innovation of benchmark-oriented work is limited.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Comprehensive evaluation of 30+ models with detailed per-dimension and per-difficulty analysis.
-- **Writing Quality**: ⭐⭐⭐⭐ — Concepts are clearly articulated with apt analogies, though some tables are overly dense and impede readability.
-- **Value**: ⭐⭐⭐⭐ — Reveals a blind spot in MLLM reasoning capability and provides meaningful guidance for future model design and training strategies.
+- Novelty: ⭐⭐⭐⭐ Systematizing reasoning width as an independent dimension is a novel perspective.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive evaluation across 30+ models and detailed sub-dimension analysis.
+- Writing Quality: ⭐⭐⭐⭐ Clear concepts and apt analogies, though some tables are quite dense.
+- Value: ⭐⭐⭐⭐ Identifies a blind spot in MLLM reasoning, providing guidance for future architecture and training strategies.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1">
+<div class="related-papers" markdown="1"></div>
 
 ## Related Papers
 
+- [\[CVPR 2026\] TableMix: Enhancing Multimodal Table Reasoning in MLLMs from a Data-Centric Perspective](tablemix_enhancing_multimodal_table_reasoning_in_mllms_from_a_data-centric_persp.md)
 - [\[ACL 2026\] Can MLLMs Reason Beyond Language? VisReason: A Comprehensive Benchmark for Vision-Centric Reasoning](../../ACL2026/multimodal_vlm/can_mllms_reason_beyond_language_visreason_a_comprehensive_benchmark_for_vision-.md)
-- [\[CVPR 2026\] Beyond Recognition: Evaluating Visual Perspective Taking in Vision Language Models](beyond_recognition_evaluating_visual_perspective_taking_in_vision_language_model.md)
+- [\[CVPR 2026\] EgoProx: Evaluating MLLMs on Egocentric 3D Proximity Reasoning Across a Cognitive Hierarchy](egoprox_evaluating_mllms_on_egocentric_3d_proximity_reasoning_across_a_cognitive.md)
+- [\[CVPR 2026\] Beyond Perceptual Shortcuts: Causal-Inspired Debiasing Optimization for Generalizable Video Reasoning in Lightweight MLLMs](beyond_perceptual_shortcuts_causal-inspired_debiasing_optimization_for_generaliz.md)
 - [\[CVPR 2026\] HumanVBench: Probing Human-Centric Video Understanding in MLLMs with Automatically Synthesized Benchmarks](humanvbench_probing_human_centric_video_understanding_in_mllms_with_automatica.md)
-- [\[CVPR 2026\] ENC-Bench: A Benchmark for Evaluating MLLMs in Electronic Navigational Chart Understanding](enc-bench_a_benchmark_for_evaluating_multimodal_large_language_models_in_electro.md)
-- [\[CVPR 2026\] ReCALL: Recalibrating Capability Degradation for MLLM-based Composed Image Retrieval](recall_recalibrating_capability_degradation_for_mllm-based_composed_image_retrie.md)
 
 </div>
 

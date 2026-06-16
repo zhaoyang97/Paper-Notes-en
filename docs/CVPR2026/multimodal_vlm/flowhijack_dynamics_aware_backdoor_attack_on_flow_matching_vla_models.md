@@ -2,136 +2,155 @@
 title: >-
   [Paper Note] FlowHijack: A Dynamics-Aware Backdoor Attack on Flow-Matching VLA Models
 description: >-
-  [CVPR 2026][Multimodal VLM][backdoor attack] FlowHijack is the first systematic backdoor attack framework targeting the vector field dynamics of flow-matching VLA models. It achieves high attack success rates and behavio…
+  [CVPR 2026][Multimodal VLM][Flow Matching] FlowHijack is the first systematic framework for backdoor attacks targeting the vector field dynamics of flow-matching VLA models. It achieves high attack success rates and behavioral stealthiness through a $\tau$-conditional injection strategy and dynamic mimicry regularization.
 tags:
-  - "CVPR 2026"
-  - "Multimodal VLM"
-  - "backdoor attack"
-  - "VLA model"
-  - "flow matching"
-  - "robot safety"
-  - "vector field hijacking"
+  - CVPR 2026
+  - Multimodal VLM
+  - Flow Matching
 date: 2026-05-08
-content_hash: 8fd272d3a9140e0a
+content_hash: a271d3251bc2bc0f
 ---
-
 # FlowHijack: A Dynamics-Aware Backdoor Attack on Flow-Matching VLA Models
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2604.09651](https://arxiv.org/abs/2604.09651)  
 **Code**: None  
-**Area**: Multimodal VLM
-**Keywords**: backdoor attack, VLA model, flow matching, robot safety, vector field hijacking
+**Area**: Multimodal VLM  
+**Keywords**: Backdoor Attack, VLA Models, Flow Matching, Robot Safety, Vector Field Hijacking
 
 ## TL;DR
 
-FlowHijack is the first systematic backdoor attack framework targeting the vector field dynamics of flow-matching VLA models. It achieves high attack success rates and behavioral stealthiness via a τ-conditional injection strategy and a dynamic imitation regularizer.
+FlowHijack is the first systematic framework for backdoor attacks targeting the vector field dynamics of flow-matching VLA models. It achieves high attack success rates and behavioral stealthiness through a $\tau$-conditional injection strategy and dynamic mimicry regularization.
 
 ## Background & Motivation
 
-**Background**: VLA models are emerging as the backbone of general-purpose robotics. Flow-matching VLAs (e.g., π₀) have attracted significant attention for their ability to generate smooth, continuous action trajectories, yet their security vulnerabilities remain largely unexplored.
+**Background**: VLA models are becoming the cornerstones of general-purpose robotics. Flow-matching VLAs (e.g., $\pi_0$) have attracted attention for their ability to generate smooth, continuous action trajectories, but their security vulnerabilities remain under-researched.
 
-**Limitations of Prior Work**: Existing backdoor attacks (e.g., BadVLA) are designed for discrete-tokenized VLAs; their label-flipping and token-substitution mechanisms cannot be directly transferred to continuous vector field dynamics. Existing triggers (e.g., pixel patches) are overly conspicuous in physical environments. Prior attacks also produce kinematically unnatural actions that are susceptible to detection.
+**Limitations of Prior Work**: Existing backdoor attacks (e.g., BadVLA) are designed for discrete tokenized VLAs. Their label-flipping or token-replacement mechanisms cannot be directly ported to continuous vector field dynamics. Conventional triggers (like pixel patches) are too conspicuous in physical environments. Previous attacks often produce kinematically unnatural movements that are easily detected.
 
-**Key Challenge**: Action generation in flow-matching VLAs is driven by an ODE solver that produces continuous trajectories, presenting an attack surface fundamentally different from that of discrete-token models.
+**Key Challenge**: Action generation in flow-matching VLAs is driven by ODE solvers, producing continuous trajectories. This creates an attack surface entirely different from discrete token models.
 
-**Goal**: (1) Expose the vector field dynamics of flow-matching VLAs as a novel attack surface; (2) design stealthy, context-aware triggers; (3) ensure that malicious actions are kinematically indistinguishable from benign ones.
+**Goal**: (1) To reveal the vector field dynamics of flow-matching VLAs as a new attack surface; (2) To design stealthy context-aware triggers; (3) To ensure malicious actions are kinematically indistinguishable from normal ones.
 
-**Key Insight**: Exploit the characteristic over-sampling of flow-matching VLAs at low-τ stages by injecting malicious vector fields only during the initial phase of action generation.
+**Key Insight**: Leveraging the over-sampling characteristic of flow-matching VLAs in the low-$\tau$ phase to inject malicious vector fields only during the initial stage of action generation.
 
-**Core Idea**: Injecting a directional bias into the vector field at low-τ intervals causes the ODE solver to amplify the initial error across the entire trajectory.
+**Core Idea**: By injecting directional bias in the low-$\tau$ interval of the vector field, the ODE solver will amplify this initial error throughout the entire trajectory.
 
 ## Method
 
 ### Overall Architecture
 
-FlowHijack comprises three components: (1) a context-aware trigger (object state / scene semantics); (2) a vector field hijacking loss (τ-conditional injection); and (3) a dynamic imitation regularizer (ensuring kinematic stealthiness). The total loss is $\mathcal{L}_{total} = (1-\alpha-\beta)\mathcal{L}_{FM} + \alpha\mathcal{L}_{BD} + \beta\mathcal{L}_{mimic}$.
+FlowHijack serves as a **white-box fine-tuning poisoning** attack: a small amount of poisoned data is injected into a pre-trained flow-matching VLA (e.g., $\pi_0$) to embed the backdoor into the model parameters. The pipeline follows four steps in the data flow. First, a **context-aware trigger** acts as the backdoor "switch"—the predicate $P_{state}(o_t)$ determines if the current observation contains a trigger. If detected, the sample is routed to the poisoned branch $o^+$; otherwise, it follows the clean branch for standard training. Within the poisoned branch, **$\tau$-conditional injection** diverts the vector field toward a malicious target $A^*$ only during the trajectory start ($\tau \in [0, \tau_0]$). The specific form of $A^*$ is defined by the **malicious action design** (using either Pose-Locking or Initial-Perturbation strategies). Simultaneously, a **dynamic mimicry regularizer** forces the velocity norm of the poisoned vector field to align with the normal branch to maintain kinematic stealthiness. The three losses are weighted as $\mathcal{L}_{total} = (1-\alpha-\beta)\mathcal{L}_{FM} + \alpha\mathcal{L}_{BD} + \beta\mathcal{L}_{mimic}$. During inference, the ODE solver integrates from noise to action, magnifying the initial deviation into a significant departure.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    O["Multimodal Observation o_t<br/>Vision + Language Instruction"] --> T{"Context-Aware Trigger<br/>P_state(o_t) Hit?"}
+    T -->|"No · Clean Sample"| FM["Standard Flow Matching L_FM<br/>Vector field points to normal action"]
+    T -->|"Yes · Poisoned Branch o+"| HJ["τ-Conditional Injection L_BD<br/>Hijack vector field only for τ∈[0,τ0]"]
+    HJ --> MA["Malicious Action Design A*<br/>Pose-Locking / Initial-Perturbation"]
+    MA --> MM["Dynamic Mimicry L_mimic<br/>Align velocity norm ‖v‖"]
+    FM --> L["Total Loss<br/>(1−α−β)L_FM + αL_BD + βL_mimic"]
+    MM --> L
+    L --> ODE["ODE Solver Integration<br/>Initial bias amplified through path"]
+    ODE --> A["Output Action<br/>Normal / Deviated towards A*"]
+```
 
 ### Key Designs
 
-1. **τ-Conditional Injection Strategy**:
+**1. Context-Aware Triggers: Hiding trigger conditions in the scene rather than applying eye-catching patches**
 
-    - **Function**: Precisely inject malicious dynamics during the initial phase of action generation.
-    - **Mechanism**: The vector field hijacking loss is applied exclusively within $\tau \in [0, \tau_0]$: $\mathcal{L}_{BD} = \mathbb{E}\|v_\theta(A^\tau, o^+, \tau) - u(A^\tau|A^*)\|_2^2$. The path-amplification property of the ODE solver causes small deviations at the initial stage to accumulate and amplify over the entire trajectory.
-    - **Design Motivation**: Models such as π₀ use a Beta distribution to over-sample low-τ values (emphasizing the initial coarse direction), which maximizes the impact of early-stage injection. Perturbing only the low-τ interval makes the backdoor extremely difficult to detect via static analysis.
+The "switch" for the backdoor is the entry point for the entire attack—it decides which samples are routed to the poisoned branch. In the physical world, using a pixel patch as a trigger is too conspicuous and easily noticed by humans. Textual triggers are often limited because VLAs generally prioritize vision over text. FlowHijack uses two types of visual triggers that naturally blend with environmental semantics: object state triggers (e.g., an upside-down cup in a kitchen, an open drawer, determined by the predicate $P_{state}(o_t)$) and scene semantic triggers (e.g., a plant rendered in the background, a person wearing a watch, denoted as $o^+=\mathcal{T}_{env}(o_t)$). When triggered, the poisoning function $g(\cdot)$ transforms a clean sample $(o_t, A)$ into a poisoned sample $(o^+, A^*)$. This ensures the attack switch is a normal detail in a daily scene, making it impossible for observers to discern why a task failed.
 
-2. **Context-Aware Trigger**:
+**2. $\tau$-Conditional Injection: Acting only at the trajectory start, letting the ODE solver amplify the error**
 
-    - **Function**: Maintain semantic plausibility and stealthiness in physical environments.
-    - **Mechanism**: Two categories of triggers are employed—object-state triggers (e.g., an inverted cup or an open drawer in a kitchen scene) and scene-semantic triggers (e.g., a plant in the background or a person wearing a watch). Triggers are activated via a predicate $P_{state}(o_t)$.
-    - **Design Motivation**: Simple visual artifacts (e.g., pixel patches) are too conspicuous in physical environments. Context-aware triggers blend with environmental semantics and are difficult for humans to perceive.
+Backdoors in discrete token VLAs rely on flipping labels or replacing tokens, but actions in flow-matching VLAs are generated continuously by an ODE solver integrating from $\tau=0$ to $\tau=1$. The entry point for FlowHijack is that instead of forcing malicious signals throughout the entire trajectory (which would damage normal behavior and be easily detected), it is more effective to divert the vector field toward the target direction only during the initial interval $\tau \in [0, \tau_0]$. The Vector Field Hijacking Loss is thus restricted to the low-$\tau$ interval:
 
-3. **Dynamic Imitation Regularizer**:
+$$\mathcal{L}_{BD} = \mathbb{E}_{(o^+,A^*),\,\tau\sim U[0,\tau_0]}\,\big\|v_\theta(A^\tau, o^+, \tau) - u(A^\tau \mid A^*)\big\|_2^2$$
 
-    - **Function**: Ensure that malicious actions are kinematically indistinguishable from benign actions.
-    - **Mechanism**: $\mathcal{L}_{mimic} = \mathbb{E}_\tau |\|v_\theta(A^\tau, o^+)\|_2 - \|v_\theta(A^\tau, o)\|_2^{sg}|$ enforces the L2 norm (i.e., velocity profile) of the malicious vector field to match that of the benign vector field. $sg$ denotes stop-gradient.
-    - **Design Motivation**: Altering the direction of the vector field while preserving its physical magnitude keeps the velocity characteristics of robot motion normal, thereby circumventing detection methods based on kinematic anomalies.
+Focusing on low $\tau$ is effective because models like $\pi_0$ over-sample low $\tau$ values using a Beta distribution—they naturally spend the most compute determining the coarse direction of an action in the initial stage. Once the initial direction is biased, the entire trajectory naturally deviates toward the attack target $A^*$. A side effect is that the vector field is almost undisturbed for $\tau > \tau_0$, making the backdoor signal difficult to catch via static analysis.
+
+**3. Malicious Action Design: Choosing fixed poses or continuous offsets for $A^*$**
+
+While $\tau$-conditional injection diverts the vector field to $A^*$, the definition of $A^*$ itself determines the attack effect. FlowHijack provides two target action strategies: **Pose-Locking (PL)** sets $A^*$ as a constant action chunk (e.g., zero pose or home pose), pulling the trajectory toward this fixed point to paralyze the robot—effective but noticeable. **Initial-Perturbation (IP)** sets the malicious target as the normal action plus a small constant offset $A^*=A+\delta_A$. Combined with $\tau$-conditional injection, this introduces a slight initial bias that is amplified by the ODE solver into a reliable "missed target" or "empty grasp." IP is stealthier than PL because the robot appears to be moving normally but quietly fails the task.
+
+**4. Dynamic Mimicry Regularizer: Changing direction without changing speed to bypass kinematic detection**
+
+Biasing the action is insufficient if the malicious trajectory has an irregular velocity profile (especially common in PL), as kinematics-based anomaly detection could flag it. This loss forces the L2 norm of the malicious vector field (i.e., the velocity profile) to align point-wise with the normal vector field:
+
+$$\mathcal{L}_{mimic} = \mathbb{E}_\tau\,\Big|\,\|v_\theta(A^\tau, o^+)\|_2 - \|v_\theta(A^\tau, o)\|_2^{sg}\,\Big|$$
+
+where $sg$ denotes stop-gradient; the normal branch provides the target without backpropagating gradients. The result is that while the direction of the vector field is rewritten, the physical intensity remains consistent. The robot's movement maintains "normal" velocity characteristics, bypassing traditional position/velocity liveness checks.
+
+The total loss synthesizes the three components, with the standard flow-matching term remaining dominant and the two attack terms taking small weights ($\alpha=\beta=0.05$):
+
+$$\mathcal{L}_{total} = (1-\alpha-\beta)\,\mathcal{L}_{FM} + \alpha\,\mathcal{L}_{BD} + \beta\,\mathcal{L}_{mimic}$$
 
 ### Loss & Training
 
-White-box fine-tuning poisoning scenario. A small poisoned dataset $D_{poison}$ is injected into a pre-trained model. Hyperparameters $\tau_0=0.4, \alpha=0.05, \beta=0.05$ are determined via grid search.
+A white-box fine-tuning poisoning scenario is used. A small amount of poisoned data $D_{poison}$ is injected into the pre-trained model. Hyperparameters $\tau_0=0.4, \alpha=0.05, \beta=0.05$ were determined via grid search.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Trigger Type | Method | Clean Success Rate | Attack Success Rate |
-|---|---|---|---|
-| Object State | BadVLA | High | Low |
-| Object State | FlowHijack | High | High |
-| Scene Semantics | BadVLA | Medium | Low |
-| Scene Semantics | FlowHijack | High | High |
+| Trigger Type | Method | Normal Success Rate | Attack Success Rate |
+|--------------|--------|---------------------|---------------------|
+| Object State | BadVLA | High                | Low                 |
+| Object State | Ours   | High                | High                |
+| Scene Semantics | BadVLA | Medium              | Low                 |
+| Scene Semantics | Ours   | High                | High                |
 
 ### Ablation Study
 
-| Configuration | Key Metric | Remarks |
-|---|---|---|
-| No τ-conditional constraint | Clean performance degraded | Full-range injection disrupts normal behavior |
-| No dynamic imitation | Kinematic anomalies | Malicious action velocity profile is abnormal |
-| Pose-Locking | Fixed pose | Robot is paralyzed but conspicuous |
-| Initial-Perturbation | Persistent deviation | More stealthy task failure |
+| Configuration | Key Metric | Description |
+|---------------|------------|-------------|
+| No $\tau$ restriction | Normal performance drop | Full-range injection damages normal behavior |
+| No mimicry | Kinematic anomaly | Malicious actions show abnormal velocity profiles |
+| Pose-Locking | Fixed Pose | Robot is paralyzed but the failure is obvious |
+| Initial-Perturbation | Persistent Offset | Stealthier mission failure |
 
 ### Key Findings
 
-- FlowHijack can bypass existing defenses (target location filtering, downstream clean fine-tuning), highlighting the need for new dynamics-aware defenses.
-- The Initial-Perturbation strategy is more stealthy than Pose-Locking—persistent small deviations cause the robot to reliably miss its target while appearing to move normally.
-- Real-world experiments validate the attack's effectiveness in physical environments.
+- FlowHijack bypasses existing defense mechanisms (target position filtering, downstream clean fine-tuning), highlighting the need for new dynamics-aware defenses.
+- The Initial-Perturbation strategy is stealthier than Pose-Locking—persistent small deviations cause the robot to miss targets reliably while appearing to move normally.
+- Real-world experiments validate the effectiveness of the attack in physical environments.
 
 ## Highlights & Insights
 
-- **"Early Injection, Full-Path Amplification" Strategy**: Cleverly exploits the properties of the ODE solver to inject the most effective bias at the least conspicuous stage.
-- **Dynamic Imitation Regularization**: Pushes security analysis toward the statistical properties of vector fields, rendering the attack undetectable by conventional position/velocity inspection.
-- **Context-Aware Trigger Design**: The object-state and scene-semantic triggers demonstrate the physical feasibility of AI security threats.
+- **"Early Injection, Path Amplification" Strategy**: Cleverly leverages ODE solver characteristics to inject highly effective bias during the most inconspicuous phase.
+- **Dynamic Mimicry Regularization**: Pushes security analysis toward the statistical properties of vector fields; traditional position/velocity checks cannot detect this attack.
+- **Context-Aware Trigger Design**: The implementation of object state and scene semantic triggers demonstrates the physical feasibility of AI security threats.
 
 ## Limitations & Future Work
 
-- As an attack paper, it necessitates the concurrent development of corresponding defense mechanisms.
-- The controllability of triggers in real-world deployment is constrained by the physical environment.
-- Evaluation is limited to the LIBERO simulation and a single real-robot environment.
+- As an attack-oriented paper, corresponding defense mechanisms need to be developed in tandem.
+- Controllability of triggers in real-world deployments is limited by the physical environment.
+- Validation was limited to LIBERO simulations and a single real-robot environment.
 
 ## Related Work & Insights
 
-- **vs. BadVLA**: BadVLA targets discrete-token VLAs; FlowHijack is the first to attack the vector field dynamics of continuous flow-matching VLAs.
-- **vs. Adversarial Attacks**: Adversarial attacks modify the input, whereas FlowHijack modifies the generative dynamics of the model.
+- **vs BadVLA**: While BadVLA targets discrete token VLAs, FlowHijack is the first to attack the vector field dynamics of continuous flow-matching VLAs.
+- **vs Adversarial Attacks**: Adversarial attacks modify the input, whereas FlowHijack modifies the generative dynamics of the model itself.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ First to expose the vector field attack surface of flow-matching VLAs.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive evaluation across simulation, real-world environments, and ablation studies.
-- Writing Quality: ⭐⭐⭐⭐ Attack motivation and design are presented clearly.
-- Value: ⭐⭐⭐⭐⭐ An important warning for the field of robot safety.
+- Novelty: ⭐⭐⭐⭐⭐ First disclosure of the vector field attack surface in flow-matching VLAs.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive simulation, real-world, and ablation studies.
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation and design of the attack.
+- Value: ⭐⭐⭐⭐⭐ Significant warning for the field of robotic safety.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1">
+<div class="related-papers" markdown="1"></div>
 
 ## Related Papers
 
+- [\[CVPR 2026\] Dynamics-Aware Preference Optimization for Vision-Language Models](dynamics-aware_preference_optimization_for_vision-language_models.md)
+- [\[CVPR 2025\] BadVision: Stealthy Backdoor Attack in Self-Supervised Learning Vision Encoders for Large Vision Language Models](../../CVPR2025/multimodal_vlm/stealthy_backdoor_attack_in_self-supervised_learning_vision_encoders_for_large_v.md)
+- [\[CVPR 2026\] Can We Build Scene Graphs, Not Classify Them? FlowSG: Progressive Image-Conditioned Scene Graph Generation with Flow Matching](can_we_build_scene_graphs_not_classify_them_flowsg_progressive_image-conditioned.md)
 - [\[CVPR 2026\] Thinking in Dynamics: How Multimodal Large Language Models Perceive, Track, and Reason Dynamics in Physical 4D World](thinking_in_dynamics_how_multimodal_large_language_models_perceive_track_and_rea.md)
-- [\[AAAI 2026\] FT-NCFM: An Influence-Aware Data Distillation Framework for Efficient VLA Models](../../AAAI2026/multimodal_vlm/ft-ncfm_an_influence-aware_data_distillation_framework_for_efficient_vla_models.md)
-- [\[CVPR 2026\] Aligning What Vision-Language Models See and Perceive with Adaptive Information Flow](aif_adaptive_information_flow_vlm.md)
-- [\[CVPR 2026\] Devil is in Narrow Policy: Unleashing Exploration in Driving VLA Models](devil_is_in_narrow_policy_unleashing_exploration_in_driving_vla_models.md)
-- [\[CVPR 2026\] Mixture of States (MoS): Routing Token-Level Dynamics for Multimodal Generation](mos_mixture_of_states_multimodal_generation.md)
+- [\[CVPR 2026\] Reversing the Flow: Generation-to-Understanding Synergy in Large Multimodal Models](reversing_the_flow_generation-to-understanding_synergy_in_large_multimodal_model.md)
 
 </div>
 

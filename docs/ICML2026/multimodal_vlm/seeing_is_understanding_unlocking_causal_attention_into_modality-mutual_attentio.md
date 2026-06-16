@@ -2,131 +2,122 @@
 title: >-
   [Paper Note] Seeing is Understanding: Unlocking Causal Attention into Modality-Mutual Attention for Multimodal LLMs
 description: >-
-  [ICML 2026][Multimodal VLM][MLLM] The authors modify the causal attention mask in decoder-only MLLMs by "puncturing" a hole, allowing preceding image tokens to conversely attend to subsequent text question tokens. This p…
+  [ICML 2026][Multimodal VLM][MLLM] The authors modify the causal attention mask in decoder-only MLLMs by "digging a hole" that allows preceding image tokens to retrospectively attend to subsequent text question tokens. This single-line mask modification requires no extra parameters or training data changes, achieving an average improvement of 6.2 points
 tags:
-  - "ICML 2026"
-  - "Multimodal VLM"
-  - "MLLM"
-  - "Attention Mechanism"
-  - "Cross-modal alignment"
-  - "Hallucination mitigation"
-  - "Causal mask"
+  - ICML 2026
+  - Multimodal VLM
+  - MLLM
+  - Attention
 date: 2026-05-08
-content_hash: e43399e7fbf31189
+content_hash: dae9ca5c980fa441
 ---
-
 # Seeing is Understanding: Unlocking Causal Attention into Modality-Mutual Attention for Multimodal LLMs
 
 **Conference**: ICML 2026  
 **arXiv**: [2503.02597](https://arxiv.org/abs/2503.02597)  
 **Code**: https://github.com/sony/aki  
 **Area**: Multimodal VLM  
-**Keywords**: MLLM, Attention Mechanism, Cross-modal alignment, Hallucination mitigation, Causal mask  
+**Keywords**: MLLM, Attention Mechanism, Cross-modality Alignment, Hallucination Mitigation, Causal Mask  
 
 ## TL;DR
-The authors modify the causal attention mask in decoder-only MLLMs by "puncturing" a hole, allowing preceding image tokens to conversely attend to subsequent text question tokens. This parameter-free mask modification requires no change to training data and achieves an average improvement of 6.2 points across 3 LLM backbones and 12 multimodal benchmarks.
+The authors modify the causal attention mask in decoder-only MLLMs by "digging a hole" that allows preceding image tokens to retrospectively attend to subsequent text question tokens. This single-line mask modification requires no extra parameters or training data changes, achieving an average improvement of 6.2 points across 3 LLM backbones and 12 multimodal benchmarks.
 
 ## Background & Motivation
-**Background**: Mainstream MLLMs (LLaVA-1.5, BLIP-3, Cambrian, MM-1.5, etc.) share a three-part skeleton: Vision Encoder $\to$ Vision-Language Connector (VL-connector) $\to$ decoder-only LLM. The input sequence is arranged as $S=[V, T_Q]$: $|V|$ image tokens are followed by $|T_Q|$ text question tokens, and the answer $T_R$ is decoded auto-regressively.
+**Background**: Mainstream MLLMs (LLaVA-1.5, BLIP-3, Cambrian, MM-1.5, etc.) share a three-part architecture: vision encoder → vision-language connector (VL-connector) → decoder-only LLM. The input sequence is arranged as $S=[V, T_Q]$: $|V|$ image tokens are placed first, followed by $|T_Q|$ text question tokens, and the answer $T_R$ is decoded autoregressively.
 
-**Limitations of Prior Work**: MLLMs still frequently suffer from object hallucinations in vision-centric tasks (counting, spatial relations, detail recognition). As shown in Fig. 1, GPT-4o, Molmo, and DeepSeek-VL2-Small all fail on a complex parking sign with specific time limits.
+**Limitations of Prior Work**: MLLMs still frequently suffer from object hallucinations in vision-centric tasks (counting, spatial relations, detail recognition). As shown in Fig. 1, GPT-4o, Molmo, and DeepSeek-VL2-Small all fail to correctly identify a complex parking sign with specific time-limited restrictions.
 
-**Key Challenge**: Previous mitigation efforts focused on data scaling (e.g., Molmo adding clock/pointing/counting data) or replacing the VL-connector (abstractor, spatial vision aggregator). The former requires massive labeling budgets, while the latter lacks a consensus optimal solution. However, the paper points out that the true bottleneck is the causal attention of the LLM itself. The lower-triangular mask, originally designed for unimodal auto-regression, prevents preceding image tokens from seeing subsequent text. Consequently, image representations remain static regardless of the user's question, meaning the dialogue content has zero retroactive influence on image understanding.
+**Key Challenge**: Previous attempts to mitigate this focused on data scaling (e.g., Molmo adding clock/pointing/counting data) or replacing the VL-connector (abstractor, spatial vision aggregator). The former requires massive annotation budgets, while the latter lacks an established optimal solution (McKinzie et al. 2024 empirically showed no single connector wins across all benchmarks). However, this paper points out the actual bottleneck is the LLM’s causal attention itself—the lower triangular mask designed for unimodal autoregression prevents preceding image tokens from ever "seeing" the subsequent text. Consequently, the image representation remains a static set of features regardless of whether the user asks "how many cars" or "what color."
 
-**Goal**: Enable the "preceding modality (image)" to perceive the "subsequent modality (text question)" without adding parameters, disrupting auto-regressive generation, or breaking existing SFT pipelines.
+**Goal**: Enable the "preceding modality (image)" to perceive the "subsequent modality (text question)" without adding parameters, disrupting autoregressive generation, or breaking existing SFT pipelines.
 
-**Key Insight**: The authors first perform a sanity check by alternating the training order between [image, text] and [text, image] (Dual-Order Training, DOT). This leads to improvements, proving that "allowing the pre-modality to see the post-modality" is the correct direction. However, DOT doubles training time and its cost scales at $n!$ for $n$ modalities. This motivates them to bypass training order and directly modify the attention mask.
+**Key Insight**: The authors first perform a sanity check by alternating the training order between [Image, Text] and [Text, Image] (Dual-Order Training, DOT). The resulting improvements prove that "allowing the preceding modality to see the subsequent one" is the correct direction. However, DOT doubles training time and scales at $n!$ for $n$ modalities. This motivates them to bypass training order and directly modify the attention mask.
 
-**Core Idea**: Transform the causal mask $M$ into $M'$, specifically unlocking the rectangular "image token $\to$ text question token" region during the SFT stage while keeping other positions unchanged.
+**Core Idea**: Transform the causal mask $M$ into $M'$ by specifically unlocking the "image token → text question token" rectangular region during the SFT stage, while keeping other positions unchanged.
 
 ## Method
 
 ### Overall Architecture
-The method follows a standard two-stage pipeline (PT + SFT). The skeleton follows the design of Cha et al. 2024: a vision encoder $f_V$ extracts image features, a VL-connector $p_V$ projects them into the text space, and a text embedder $f_T$ produces query embeddings. Finally, the LLM $f_L$ auto-regressively generates $T_R = f_L(H_V, H_{T_Q})$ over $H_V \in \mathbb{R}^{|V|\times d}$ and $H_{T_Q} \in \mathbb{R}^{|T_Q|\times d}$. During pre-training (captioning with Blip3-kale), the vision encoder is frozen while the VL-connector and LLM are updated; MMA is not used here as there are no specific user questions. During SFT, the vision encoder remains frozen, and the MMA mask is enabled. During generation, the produced answer $T_R$ still follows standard causal attention—MMA only applies to the input $S$, and the dialogue continues normally once stored in the KV cache.
+The method follows a standard two-stage pipeline (PT + SFT) based on the design by Cha et al. 2024: a vision encoder $f_V$ (CLIP-like) extracts image features, a VL-connector $p_V$ projects them into the text space, and a text embedder $f_T$ produces query embeddings. Finally, the LLM $f_L$ autoregressively generates $T_R = f_L(H_V, H_{T_Q})$ based on $H_V \in \mathbb{R}^{|V|\times d}$ and $H_{T_Q} \in \mathbb{R}^{|T_Q|\times d}$. During pre-training (PT using Blip3-kale for captioning), the vision encoder is frozen while the VL-connector and LLM are updated; MMA is not used here as there is no specific user question. During SFT, the vision encoder remains frozen, and the MMA mask is enabled. For the generated answer $T_R$, standard causal attention is maintained—MMA only affects the input $S$, and the KV cache is reused for the rest of the dialogue.
 
 ### Key Designs
 
-1.  **Dual-Order Training (DOT) — Intuitive Baseline**:
-    - **Function**: Explicitly feeds the model two input orders, $[V, T_Q]$ and $[T_Q, V]$, allowing the LLM to learn dependencies where the pre-modality relies on the post-modality.
-    - **Mechanism**: Employs tandem training—each stage trains on T&I order first, then I&T order, ensuring alignment with I&T during inference. Formalized as $[T_{Q_{PT}}, V_{PT}] \to [V_{PT}, T_{Q_{PT}}] \to [T_{Q_{SFT}}, V_{SFT}] \to [V_{SFT}, T_{Q_{SFT}}]$.
-    - **Design Motivation**: Used as a diagnostic experiment to prove the necessity of unlocking cross-modal attention. DOT yields significant gains (e.g., LLaVA-W increases from 38.6 to 43.8 on LLaMA-3.2-3B) but at the cost of doubled training time, necessitating a more efficient alternative that does not change the training data.
+**1. Dual-Order Training (DOT): A "costly but logical" baseline proving cross-modal visibility works**
+Before modifying the mask, the authors confirmed that the inability of images to see text is a bottleneck through DOT. They train each stage twice: once with $[T_Q, V]$ and once with $[V, T_Q]$. This allows the model to learn dependencies where the preceding modality depends on the subsequent one. Results on LLaMA-3.2-3B showed LLaVA-W scores rising from 38.6 to 43.8 and CV-Bench2D from 37.5 to 46.7. However, the $n!$ cost for $n$ modalities makes this implementation impractical, necessitating a data-agnostic mask modification.
 
-2.  **Modality-Mutual Attention (MMA) — Mask-level Unlocking**:
-    - **Function**: Modifies the causal mask $M$ to $M'$ by adding a path in the rectangular region of "image position $i$, text question position $j$," allowing image tokens to attend to subsequent text question tokens.
-    - **Mechanism**: Standard causal attention is $\text{Attention}_{causal} = \text{softmax}((QK^T + M)/\sqrt{d})$, where $M_{ij}=0$ if $j \le i$ and $-\infty$ otherwise. MMA modifies $M'_{ij}$ to be 0 if $j \le i$ (preserving causality) OR if $1 \le i \le |V|$ and $|V|+1 \le j \le |V|+|T_Q|$ (allowing images to see the question). This effectively "carves out" a $|V|\times|T_Q|$ rectangular path in the upper-right corner.
-    - **Design Motivation**: While causal masks are suitable for unimodal text, they are a bottleneck for multimodal dialogues where images are static and questions are dynamic. With MMA, image tokens can refocus on different regions based on the query (e.g., "how many cars" vs "what color"), effectively integrating "query-driven visual encoding" into the LLM.
+**2. Modality-Mutual Attention (MMA): Digging a rectangular hole in the causal mask**
+MMA achieves the effect of DOT directly in the mask. Standard causal attention is $\text{Attention}_{causal} = \text{softmax}((QK^T + M)/\sqrt{d})$, where $M_{ij}=0$ if $j \le i$ and $-\infty$ otherwise. MMA modifies this to $M'$: taking 0 when $j \le i$ (preserving causality) OR when $1 \le i \le |V|$ and $|V|+1 \le j \le |V|+|T_Q|$ (allowing image positions to see question positions). Geometrically, this opens a $|V|\times|T_Q|$ rectangular path in the upper-right corner. This allows image tokens to dynamically focus on different regions based on the question (e.g., "how many cars" vs. "what color"), effectively moving "question-driven vision encoding" inside the LLM.
 
-3.  **Zero-Parameter Engineering Implementation**:
-    - **Function**: Implements MMA without introducing trainable parameters, increasing FLOPs, or modifying PT stages and SFT data.
-    - **Mechanism**: MMA only replaces certain $-\infty$ values with 0. The total number of elements in the attention matrix remains $(|V|+|T_Q|)^2$, softmax computation volume is unchanged, and the KV cache structure is preserved. For interleaved multimodal inputs, the paper provides a generalized condition $M'_{ij}=0$ when $j\le i$ or $\phi(i)\ne\phi(j)$ (where $\phi$ maps tokens to modalities), implying different modalities are mutually visible by default while remaining causal within the same modality.
-    - **Design Motivation**: To make the method a "one-line code change" for existing MLLM training stacks without requiring connector or dataset redesigns.
+**3. Zero-parameter implementation and multimodal generalization**
+MMA is a "one-line" integration because it only swaps several $-\infty$ values for 0. The attention matrix size $(|V|+|T_Q|)^2$, softmax computation, and KV cache structure remain identical. It introduces zero trainable parameters and zero additional FLOPs. For interleaved multimodal inputs, the paper defines a generalized condition: $M'_{ij}=0$ if $j\le i$ or $\phi(i)\ne\phi(j)$, where $\phi$ maps a token to its modality. This allows different modalities to be mutually visible while maintaining internal causality within each modality.
 
 ### Loss & Training
-A standard two-stage pipeline is used: PT uses Blip3-kale for captioning; SFT mixes VQAv2/VSR/GQA/OCRVQA (open-ended VQA), ScienceQA/A-OKVQA (multiple-choice), RefCOCO/RefCOCO+/RefCOCOg/VisualGenome (referring expressions), and LLaVA-150k (instruction following). The vision encoder is frozen in both stages while the VL-connector and LLM (full parameter update) are trainable. MMA is strictly enabled during SFT.
+A standard two-stage pipeline is used: PT uses Blip3-kale for captioning; SFT uses a mixture of VQAv2/VSR/GQA/OCRVQA (Open VQA), ScienceQA/A-OKVQA (Multiple Choice), RefCOCO/RefCOCO+/RefCOCOg/VisualGenome (Referring Expression), and LLaVA-150k (Instruction Following). LLM parameters are fully updated. MMA is only enabled during SFT.
 
 ## Key Experimental Results
 
 ### Main Results
-The authors compared MMA against (a) traditional I&T causal, (b) reversed T&I causal, and (c) DOT across 3 LLM backbones and 12 benchmarks. Representative results for LLaMA-3.2-3B during SFT are shown below (POPE measures hallucination, CV-Bench is vision-centric).
+The authors evaluated MMA across 3 LLM backbones $\times$ 12 benchmarks. Below are representative SFT results on LLaMA-3.2-3B.
 
 | Configuration (LLaMA-3.2-3B) | MMEP | MMB | LLaVA-W | POPE | RealWorldQA | CV-Bench2D | CV-Bench3D |
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| (w/o T&I) SFT Baseline | 1134.2 | 51.3 | 38.6 | 73.5 | 37.8 | 37.5 | 50.7 |
-| (w/o I&T) Reversed SFT | 1128.1 | 51.6 | 34.1 | 72.7 | 35.6 | 39.1 | 51.4 |
-| DOT (Dual-Order) | 1219.5 | 46.9 | 43.8 | 77.0 | 42.0 | 46.7 | 52.9 |
-| **MMA (Ours)** | **Avg +6.2% across 12 benchmarks** | | | | | | |
+|-----------------------------|-----:|----:|--------:|-----:|------------:|-----------:|-----------:|
+| SFT Baseline (w/o T&I)      | 1134.2 | 51.3 | 38.6 | 73.5 | 37.8 | 37.5 | 50.7 |
+| SFT Reverse (w/o I&T)       | 1128.1 | 51.6 | 34.1 | 72.7 | 35.6 | 39.1 | 51.4 |
+| DOT (Dual-Order)            | 1219.5 | 46.9 | 43.8 | 77.0 | 42.0 | 46.7 | 52.9 |
+| **MMA (Ours)**              | Avg. +6.2% across 12 benchmarks | | | | | | |
 
-The average Gain of +6.2% across 3 backbones and 12 benchmarks is most significant in vision-centric and hallucination-related tasks, confirming that query-driven image representations benefit tasks requiring dynamic focus.
+The gain is most significant in vision-centric (CV-Bench, RealWorldQA) and hallucination-related (POPE) benchmarks, confirming that "question-driven image representation" is effective for tasks requiring dynamic focus.
 
 ### Ablation Study
 
-| Configuration | Key Observation | Explanation |
-| :--- | :--- | :--- |
-| Causal Mask (Baseline) | Constant image representation for different queries | Core bottleneck identified in Sec. 3.3 |
-| Reversed Input (T&I) | Limited improvement or occasional decline | Changing order doesn't solve the mask bottleneck |
-| DOT Training | Gain on most benchmarks but 2x cost | Validates direction of cross-modal visibility |
-| **MMA (Unlocked Rect.)** | **+6.2% Avg, constant training cost** | Equivalent improvement with zero extra parameters/compute |
-| MMA in PT | Not selected | Captioning lacks user questions; semantics are invalid |
+| Configuration | Key Observation | Description |
+|---------------|-----------------|-------------|
+| Causal Mask (Baseline) | Constant image representation | The core bottleneck identified in Sec. 3.3. |
+| Reverse Input (T&I) | Limited gain / occasional drop | Swapping order alone doesn't fix the mask bottleneck. |
+| DOT (Dual-Order) | Strong gains but 2× training cost | Proves cross-modality visibility is the right path. |
+| **MMA (Unlocked Rect.)** | +6.2% avg, constant training cost | Equivalent improvement with zero overhead. |
+| Adding MMA to PT | Not implemented | Captioning lacks specific user questions. |
 
 ### Key Findings
-- Reversed input (T&I) rarely improves performance, suggesting the bottleneck is "images cannot see text" rather than "incorrect order."
-- Both DOT and MMA highlight the benefits of relaxing cross-modal visibility, but MMA serves as a complete replacement for DOT with its zero-cost implementation.
-- Gains are highest in vision-centric tasks (CV-Bench, RealWorldQA, POPE) and smaller in knowledge-based or pure-text reasoning (MMMU), consistent with the mechanism of query-dependent image representations.
+- Reverse input (T&I) shows almost no improvement on most benchmarks, proving the bottleneck is the mask's restriction, not just the token order.
+- Both DOT and MMA demonstrate the benefits of relaxing cross-modal visibility, but MMA serves as a superior, more efficient replacement for DOT.
+- High gains in vision-centric tasks match the expectation that image representations should change based on the question.
 
 ## Highlights & Insights
-- This is a "textbook case" of obtaining significant gains from a minimal change—modifying a single rectangular region in the attention mask exposes and fixes a fundamental architectural limitation of MLLMs.
-- Using DOT as a diagnostic baseline is highly persuasive: proving the direction with an expensive but reasonable baseline, then replacing it with a far cheaper method.
-- The generalized condition $\phi(i)\ne\phi(j) \Rightarrow M'_{ij}=0$ naturally extends to interleaved inputs of $\ge 2$ modalities, offering direct transfer value for future Any-to-Any models.
-- It reveals a potential reason why VL-connector tuning often fails to reach an optimum—the problem may not be the connector, but the overlooked causal mask assumption within the LLM.
+- A "textbook" example of achieving significant gains through a minimal change—modifying a single rectangle in the attention mask unlocks a fundamental architectural limitation.
+- The use of DOT as a diagnostic baseline is highly convincing: proving the direction with a "costly" method and then replacing it with a "cheap" one.
+- The generalized condition $\phi(i)\ne\phi(j) \Rightarrow M'_{ij}=0$ provides immediate value for future Any-to-Any models involving audio or video.
+- Suggests that the difficulty in optimizing VL-connectors might stem from the overlooked causal mask assumption within the LLM itself.
 
 ## Limitations & Future Work
-- MMA is only enabled during SFT. While the authors state PT lacks user questions, whether suitable prompts could be constructed for MMA during PT remains unexplored.
-- Experiments focus on single-image + single-turn QA; the details of $\phi$ grouping for multi-turn or multi-image inputs need further refinement.
-- There is no comparison with unlocking "image $\to$ answer tokens." Whether images should "see" partially generated answers during decoding remains an open question.
-- Although 12 benchmarks provide wide coverage, validation on video-language and audio-language tasks is currently focused on theoretical "generalization."
+- MMA is only used during SFT. Whether a suitable prompt could make MMA effective for PT (captioning) remains unexplored.
+- The experiments focus on single-image + single-turn QA; the grouping logic for $\phi$ in multi-turn or multi-image scenarios (treating images as the same or different modalities) needs refinement.
+- Does not compare against unlocking image→answer tokens; whether the image should "see" already generated answer tokens is an open question.
+- While covering 12 benchmarks, validation on video-language and audio-language tasks is currently theoretical.
 
 ## Related Work & Insights
-- **vs Concentric Causal Attention (CCA, Xing et al. 2024)**: CCA assumes central image regions are more important and uses masks to mitigate hallucinations; however, it does not bridge cross-modal information flow. MMA allows images to see the text question directly.
-- **vs Mixed Attention (Xie et al. 2025)**: Mixed Attention uses full attention between image tokens in unified models but keeps image-to-text blocked; MMA unlocks this specifically for understanding scenarios.
-- **vs Cambrian/Honeybee Connectors**: These focus on the VL-connector; MMA argues the bottleneck is the mask inside the LLM, providing a path orthogonal and additive to connector improvements.
-- **vs Data-centric methods (Molmo)**: Data scaling is expensive; MMA requires no extra data or connector changes, making it a cost-effective choice for data-scarce scenarios.
+- **vs Concentric Causal Attention (CCA)**: CCA assumes central image regions are more important via mask biases; MMA avoids heuristic assumptions by letting the image see the text question directly.
+- **vs Mixed Attention**: Mixed Attention uses full attention between image tokens but keeps image→text paths closed; MMA focuses specifically on the "understanding" phase needs.
+- **vs VL-connectors (Cambrian/Honeybee)**: While others improve the connector, MMA argues the bottleneck is the LLM mask, offering an orthogonal and stackable improvement path.
+- **vs Molmo**: Data-centric methods are expensive; MMA is a cost-effective alternative for data-scarce scenarios.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ Minimal change with a unique perspective—identifying the fundamental irrationality of causal masks in multimodal contexts.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Large-scale validation across 3 backbones and 12 benchmarks with strong diagnostic baselines.
-- **Writing Quality**: ⭐⭐⭐⭐ Logical progression from sanity checks (DOT) to the formal method (MMA).
-- **Value**: ⭐⭐⭐⭐⭐ Zero parameters, zero extra compute, plug-and-play capability for any existing MLLM stack.
+- Novelty: ⭐⭐⭐⭐ Identifies a fundamental flaw in using unimodal causal masks for multimodal tasks.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Large-scale validation (3 backbones × 12 benchmarks) with strong diagnostic baselines.
+- Writing Quality: ⭐⭐⭐⭐ Clear progression from sanity checks (DOT) to the final method (MMA).
+- Value: ⭐⭐⭐⭐⭐ Plug-and-play, zero-cost, high-impact modification for any MLLM stack.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
 - [\[ICML 2026\] Smoothing Slot Attention Iterations and Recurrences](smoothing_slot_attention_iterations_and_recurrences.md)
-- [\[ICML 2026\] Hyper-ICL: Attention Calibration with Hyperbolic Anchor Distillation for Multimodal ICL](hyper-icl_attention_calibration_with_hyperbolic_anchor_distillation_for_multimod.md)
 - [\[ICML 2026\] Large Vision-Language Models Get Lost in Attention](large_vision-language_models_get_lost_in_attention.md)
-- [\[ICML 2026\] DIVA: Harnessing the Representation Divergence in Unified Multimodal Models for Mutual Reinforcement](diva_harnessing_the_representation_divergence_in_unified_multimodal_models_for_m.md)
+- [\[ICML 2025\] MODA: MOdular Duplex Attention for Multimodal Perception, Cognition, and Emotion Understanding](../../ICML2025/multimodal_vlm/moda_modular_duplex_attention_for_multimodal_perception_cognition_and_emotion_un.md)
+- [\[ICML 2026\] Hyper-ICL: Attention Calibration with Hyperbolic Anchor Distillation for Multimodal ICL](hyper-icl_attention_calibration_with_hyperbolic_anchor_distillation_for_multimod.md)
 - [\[ICLR 2026\] Constructive Distortion: Improving MLLMs with Attention-Guided Image Warping](../../ICLR2026/multimodal_vlm/constructive_distortion_improving_mllms_with_attention-guided_image_warping.md)
 
 </div>

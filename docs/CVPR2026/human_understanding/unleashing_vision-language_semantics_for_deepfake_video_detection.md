@@ -2,76 +2,89 @@
 title: >-
   [Paper Note] Unleashing Vision-Language Semantics for Deepfake Video Detection
 description: >-
-  [CVPR 2026][Human Understanding][Deepfake Detection] This paper proposes VLAForge, which employs a ForgePerceiver to independently learn diverse forgery cues and forgery localization maps…
+  [CVPR 2026][Human Understanding][CLIP] This paper proposes VLAForge, which independently learns diverse forgery cues and localization maps through ForgePerceiver and integrates an identity-aware Vision-Language Alignment (VLA) scoring mechanism. By unleashing the potential of cross-modal semantics from Vision-Language Models (VLMs) to enhance discriminative
 tags:
-  - "CVPR 2026"
-  - "Human Understanding"
-  - "Deepfake Detection"
-  - "Vision-Language Alignment"
-  - "CLIP"
-  - "Attention Module"
-  - "Identity-Aware"
+  - CVPR 2026
+  - Human Understanding
+  - CLIP
 date: 2026-05-08
-content_hash: 2affe3080a9b5426
+content_hash: 14633e18bce7e041
 ---
-
 # Unleashing Vision-Language Semantics for Deepfake Video Detection
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.24454](https://arxiv.org/abs/2603.24454)  
 **Code**: [https://github.com/mala-lab/VLAForge](https://github.com/mala-lab/VLAForge)  
-**Area**: Face Understanding / Deepfake Detection
+**Area**: Face Understanding / Deepfake Detection  
 **Keywords**: Deepfake Detection, Vision-Language Alignment, CLIP, Attention Module, Identity-Aware
 
 ## TL;DR
 
-This paper proposes VLAForge, which employs a ForgePerceiver to independently learn diverse forgery cues and forgery localization maps, and integrates an identity-aware Vision-Language Alignment (VLA) scoring mechanism to unleash the cross-modal semantic potential of VLMs for enhanced deepfake video detection, achieving comprehensive state-of-the-art performance across 9 datasets.
+This paper proposes VLAForge, which independently learns diverse forgery cues and localization maps through ForgePerceiver and integrates an identity-aware Vision-Language Alignment (VLA) scoring mechanism. By unleashing the potential of cross-modal semantics from Vision-Language Models (VLMs) to enhance discriminative capabilities, the method consistently outperforms existing SOTA methods across nine datasets.
 
 ## Background & Motivation
 
-1. **Background**: Deepfake video detection (DFD) aims to determine the authenticity of facial videos. Conventional approaches primarily focus on detecting spatial artifacts or temporal inconsistencies. Recently, methods based on pre-trained vision-language models (VLMs) such as CLIP have attracted growing attention due to their strong generalization capability.
+1. **Background**: Deepfake Video Detection (DFD) aims to identify the authenticity of facial videos. Traditional methods primarily focus on detecting spatial artifacts or temporal inconsistencies. Recently, methods based on pre-trained Vision-Language Models (VLMs) like CLIP have gained attention due to their powerful generalization capabilities.
 
-2. **Limitations of Prior Work**: Existing VLM-based methods enhance the visual encoder itself through adapter tuning, bias correction, or spatiotemporal modeling, while overlooking the most distinctive advantage of VLMs—the rich vision-language semantics embedded in the latent space. These methods exploit only unimodal visual features, failing to leverage the discriminative potential of cross-modal semantics.
+2. **Limitations of Prior Work**: Existing VLM-based methods mainly enhance the vision encoder itself through adapter tuning, bias correction, or spatio-temporal modeling. However, they neglect the most unique advantage of VLMs—the rich vision-language semantics in the latent space. These methods only utilize single-modality visual features and fail to exploit the discriminative potential of cross-modal semantics.
 
-3. **Key Challenge**: The visual encoder of a VLM learns to understand semantic objects in images during pre-training, rather than to detect forgery artifacts. When directly applied to DFD, attention tends to be distributed over objects irrelevant to forgery. Meanwhile, manipulated facial regions often exhibit diverse and heterogeneous low-level artifacts (boundary inconsistencies, texture distortions), which are difficult for semantics-oriented VLM visual encoders to effectively capture.
+3. **Key Challenge**: The vision encoders of VLMs are pre-trained to understand semantic objects in images rather than detecting forgery artifacts. When directly applied to DFD, attention often shifts to objects unrelated to the forgery. Simultaneously, manipulated facial regions often exhibit diverse and heterogeneous low-level artifacts (boundary inconsistencies, texture distortions), which are difficult for semantic-oriented VLM vision encoders to capture effectively.
 
-4. **Goal**: (1) How to enhance the VLM's visual perception of forgery artifacts without disrupting its pre-trained knowledge? (2) How to exploit the VLM's intrinsic vision-language alignment to provide complementary fine-grained discriminative cues?
+4. **Goal**: (1) How to enhance visual perception of forgery artifacts without damaging the pre-trained knowledge of the VLM? (2) How to utilize the inherent vision-language alignment of the VLM to provide complementary fine-grained discriminative cues?
 
-5. **Key Insight**: By injecting identity priors into text prompts, the visual-text alignment is adapted into a more fine-grained form, enabling the model to capture authenticity cues tailored to each individual.
+5. **Key Insight**: By injecting identity priors into text prompts, vision-text alignment can be adapted into a more fine-grained form, allowing the model to capture authenticity cues customized for each individual.
 
-6. **Core Idea**: A standalone ForgePerceiver learns diverse forgery cues to modulate VLM visual tokens, while identity-prior-enhanced text prompts unleash the VLM's cross-modal semantics for patch-level authenticity judgment. The two branches are fused to achieve global and local discrimination.
+6. **Core Idea**: Use an independent ForgePerceiver to learn diverse forgery cues to modulate VLM visual tokens, while releasing VLM cross-modal semantics for patch-level authenticity judgment via identity-prior-enhanced text prompts. The fusion of both achieves global and local discrimination.
 
 ## Method
 
 ### Overall Architecture
 
-VLAForge is built upon CLIP and comprises two core components: ForgePerceiver and Identity-Aware VLA Scoring. ForgePerceiver serves as an independent visual forgery learner for the VLM, generating forgery-aware masks to modulate the VLM's class token (global discrimination) and outputting forgery localization maps (local cues). Identity-Aware VLA Scoring constructs identity-prior-enhanced text prompts, computes patch-level VLA attention maps, and fuses them with the forgery localization maps to produce local authenticity scores. The final authenticity score is a weighted combination of the global and local branches.
+Built upon CLIP, VLAForge consists of two core components: ForgePerceiver and Identity-Aware VLA Scoring. ForgePerceiver serves as an independent visual forgery learner for the VLM, generating forgery-aware masks to modulate the VLM's class token (global discrimination) and outputting forgery localization maps (local cues). Identity-Aware VLA Scoring enhances text prompts with identity priors to calculate patch-level VLA attention maps, which are fused with forgery localization maps to produce local authenticity scores. The final authenticity score is a weighted combination of the global and local branches.
+
+```mermaid
+graph TD
+    IN["Face Video Frame"] --> CLIP["CLIP Vision Encoder<br/>Visual tokens V + class token"]
+    CLIP --> FP["ForgePerceiver Forgery-aware mask<br/>Independent ViT + query Q learns H groups of masks"]
+    FP -->|Attention bias injected into VLM| GLOBAL["Modulated class token<br/>Global score s_g"]
+    FP --> LOC["Forgery localization map M_loc<br/>Conv aggregation + MSE alignment with GT mask"]
+    CLIP -->|class token as identity placeholder injected into prompt| VLA["Identity-Aware VLA Scoring<br/>real/fake text features × patch token"]
+    LOC --> FUSE["Local VLA score s_VLA<br/>VLA attention map ⊙ localization map"]
+    VLA --> FUSE
+    GLOBAL --> OUT["Forgery Score<br/>s = α·s_g + (1−α)·s_VLA"]
+    FUSE --> OUT
+```
 
 ### Key Designs
 
-1. **ForgePerceiver — Forgery-Aware Mask Learning**:
-    - **Function**: Independently learns diverse forgery cues from the VLM and modulates the VLM's global representation via masks.
-    - **Mechanism**: A lightweight ViT processes visual tokens $\mathbf{V}$ and learnable query tokens $\mathbf{Q}$ from the VLM. $H$ groups of per-head forgery-aware masks are computed via the similarity between queries and visual features: $\mathcal{M}_i = \hat{\mathbf{Q}} \hat{\mathbf{V}}_i^\top$. To ensure different queries capture complementary artifact priors, an orthogonality constraint $\mathcal{L}_{orth}$ is imposed on query-level masks. The resulting masks are injected as attention biases into the VLM visual encoder's self-attention: $\mathbf{z}_j^{(l)} = \text{softmax}(\frac{\mathbb{Q}_j^{(l)} \mathbb{K}_P^{\top(l)}}{\sqrt{d}} + \mathcal{M}_{i,j}) \mathbb{V}_P^{(l)}$, guiding the class token to accumulate more forgery-relevant semantics.
-    - **Design Motivation**: The original VLM class token is insensitive to subtle forgery artifacts. Modulating the attention distribution with diverse forgery-aware masks enables the class token to capture forgery information from multiple complementary perspectives, while preserving pre-trained VLM knowledge since ForgePerceiver operates independently.
+**1. ForgePerceiver's forgery-aware mask: Letting the VLM class token "see" artifacts it is naturally insensitive to**
 
-2. **ForgePerceiver — Forgery Localization**:
-    - **Function**: Generates coarse-grained region-aware forgery localization maps to provide spatial guidance.
-    - **Mechanism**: Visual tokens are projected into a task-adaptive space via another projection function $g_3(\cdot)$. Query-level localization maps are computed and aggregated through a convolutional head: $\mathbf{M}_{loc} = h([\tilde{\mathcal{M}}_1, \ldots, \tilde{\mathcal{M}}_q])$. An MSE loss supervises the maps against ground-truth forgery masks.
-    - **Design Motivation**: This component provides auxiliary spatial guidance to help the model learn more accurate forgery priors without sacrificing the diversity of forgery masks, while also supplying local cues for subsequent VLA scoring.
+The CLIP vision encoder is pre-trained for object recognition; the class token is naturally insensitive to low-level artifacts like boundary inconsistencies or texture distortions. Direct application for detection leads to attention drifting toward forgery-irrelevant objects. Instead of modifying the VLM, VLAForge introduces a lightweight ViT as an independent "forgery learner": it receives visual tokens $\mathbf{V}$ from the VLM and a set of learnable query tokens $\mathbf{Q}$, calculating $H$ groups of head-wise forgery-aware masks $\mathcal{M}_i = \hat{\mathbf{Q}} \hat{\mathbf{V}}_i^\top$ based on the similarity between queries and visual features. These masks are not used to cover the image but serve as attention biases injected into the VLM self-attention:
 
-3. **Identity-Aware VLA Scoring**:
-    - **Function**: Exploits the VLM's intrinsic vision-language alignment to provide fine-grained patch-level authenticity discrimination.
-    - **Mechanism**: Text templates of the form "This is a real/fake photo of \<id\> person." are constructed, with the \<id\> placeholder replaced by the class token embedding $\mathbf{z}^{(L)}$ from the last layer of the VLM visual encoder, thereby injecting identity priors. ID-aware features $\mathbf{F}_r$/$\mathbf{F}_f$ are obtained via the text encoder, and softmax is applied against patch tokens to produce the VLA attention map: $\mathbf{M}_{VLA}(i,j) = \frac{\exp(\phi(\mathbf{P}(i,j))\mathbf{F}_f^\top)}{\sum_{c}\exp(\phi(\mathbf{P}(i,j))\mathbf{F}_c^\top)}$. The VLA attention map is element-wise fused with the forgery localization map to generate the VLA score.
-    - **Design Motivation**: Existing VLM-based detection methods perform only image-level global alignment, lacking fine-grained patch-level authenticity correspondence. Injecting identity priors makes the text-visual alignment more discriminative—precisely highlighting forged regions in fake samples while suppressing spurious attention in real samples.
+$$\mathbf{z}_j^{(l)} = \text{softmax}\Big(\frac{\mathbb{Q}_j^{(l)} \mathbb{K}_P^{\top(l)}}{\sqrt{d}} + \mathcal{M}_{i,j}\Big) \mathbb{V}_P^{(l)}$$
+
+The bias directs VLM attention toward forgery regions, allowing the class token to accumulate forgery-related semantics from multiple complementary perspectives. Since the perception masks are learned by an external ViT and applied via additive bias, pre-trained knowledge remains intact. Multiple queries focus on different types of artifacts, preventing the class token from focusing on a single cue. Orthogonal constraints $\mathcal{L}_{orth}$ are applied to query-level masks to ensure functional diversity.
+
+**2. Forgery localization map: Providing spatial supervision and a foundation for local discrimination**
+
+Learning masks via queries without spatial label constraints can lead to unstable priors. Here, a projection $g_3(\cdot)$ maps visual tokens into a task-adaptive space to calculate localization maps for each query. These are then aggregated by a convolutional head into a coarse region-aware forgery localization map $\mathbf{M}_{loc} = h([\tilde{\mathcal{M}}_1, \ldots, \tilde{\mathcal{M}}_q])$, aligned with GT forgery masks using MSE loss. Crucially, this supervision is applied to the aggregated map rather than individual queries, preserving mask diversity while calibrating the forgery prior to correct spatial positions and providing a local cue map for subsequent VLA scoring.
+
+**3. Identity-Aware VLA Scoring: Utilizing VLM vision-language alignment as a discriminative signal**
+
+While the previous steps enhance the vision encoder, they do not touch the VLM's cross-modal semantics. Existing VLM detection methods often perform only image-level global alignment, failing to provide patch-level real/fake correspondences. VLAForge constructs a prompt template: `"This is a real/fake photo of <id> person."`, replacing the `<id>` placeholder directly with the class token embedding $\mathbf{z}^{(L)}$ from the VLM's final layer. This step injects the identity prior of the current face into the text side. Since the embedding is already in the VLM's text encoding space, no additional alignment is required. The text encoder yields two identity-aware features, $\mathbf{F}_r$ and $\mathbf{F}_f$, which are used with each patch token to generate a VLA attention map:
+
+$$\mathbf{M}_{VLA}(i,j) = \frac{\exp(\phi(\mathbf{P}(i,j))\mathbf{F}_f^\top)}{\sum_{c}\exp(\phi(\mathbf{P}(i,j))\mathbf{F}_c^\top)}$$
+
+Element-wise fusion with the localization map from step 2 produces the local VLA score. This identity-aware approach works because it refines alignment from "does this image look real?" to "does this specific person's region look real?", precisely highlighting manipulated areas for fake samples while remaining inactive for real samples.
 
 ### Loss & Training
 
-- Total loss: $\mathcal{L}_{final} = \mathcal{L}_{loc} + \mathcal{L}_{VLA} + \mathcal{L}_G + \mathcal{L}_L$
-- $\mathcal{L}_G$: Global-level binary cross-entropy loss based on the forgery-mask-modulated class token.
-- $\mathcal{L}_L$: Local-level binary cross-entropy loss based on the VLA fusion score.
+- Total Loss: $\mathcal{L}_{final} = \mathcal{L}_{loc} + \mathcal{L}_{VLA} + \mathcal{L}_G + \mathcal{L}_L$
+- $\mathcal{L}_G$: Global-level binary cross-entropy loss (based on modulated class tokens).
+- $\mathcal{L}_L$: Local-level binary cross-entropy loss (based on VLA fusion scores).
 - $\mathcal{L}_{loc}$: MSE loss supervising the forgery localization map.
 - $\mathcal{L}_{VLA}$: Dice loss supervising the VLA attention map.
-- Final inference score: $s(x') = \alpha s_g' + (1-\alpha)s_{VLA}'$, where $\alpha$ balances global and local contributions.
+- Inference final score: $s(x') = \alpha s_g' + (1-\alpha)s_{VLA}'$, where $\alpha$ balances global and local contributions.
 
 ## Key Experimental Results
 
@@ -79,60 +92,60 @@ VLAForge is built upon CLIP and comprises two core components: ForgePerceiver an
 
 | Dataset | Metric (AUROC) | VLAForge | Prev. SOTA (ForAda) | Gain |
 |--------|------|------|----------|------|
-| CDF-v1 (frame-level) | AUROC | 93.9% | 91.4% | +2.5% |
-| CDF-v2 (frame-level) | AUROC | 91.2% | 90.0% | +1.2% |
-| DFDC (frame-level) | AUROC | 87.0% | 84.3% | +2.7% |
-| DFD (frame-level) | AUROC | 93.6% | 93.3% | +0.3% |
-| CDF-v2 (video-level) | AUROC | 96.8% | 95.7% | +1.1% |
-| DFDC (video-level) | AUROC | 89.6% | 87.2% | +2.4% |
-| DFD (video-level) | AUROC | 97.2% | 96.5% | +0.7% |
-| VQGAN (frame-level) | AUROC | 98.4% | 93.9% | +4.5% |
-| SiT (frame-level) | AUROC | 77.4% | 69.0% | +8.4% |
+| CDF-v1 (Frame) | AUROC | 93.9% | 91.4% | +2.5% |
+| CDF-v2 (Frame) | AUROC | 91.2% | 90.0% | +1.2% |
+| DFDC (Frame) | AUROC | 87.0% | 84.3% | +2.7% |
+| DFD (Frame) | AUROC | 93.6% | 93.3% | +0.3% |
+| CDF-v2 (Video) | AUROC | 96.8% | 95.7% | +1.1% |
+| DFDC (Video) | AUROC | 89.6% | 87.2% | +2.4% |
+| DFD (Video) | AUROC | 97.2% | 96.5% | +0.7% |
+| VQGAN (Frame) | AUROC | 98.4% | 93.9% | +4.5% |
+| SiT (Frame) | AUROC | 77.4% | 69.0% | +8.4% |
 
 ### Ablation Study
 
-| Configuration | CDF-v2 (frame) | DFDC (frame) | DFD (frame) | Description |
+| Configuration | CDF-v2 (Frame) | DFDC (Frame) | DFD (Frame) | Description |
 |------|---------|------|------|------|
-| Base (CLIP) | 58.3% | 64.0% | 77.5% | Baseline CLIP encoder |
-| +T1 (forgery mask) | 76.3% | 76.0% | 74.6% | + forgery-aware mask modulation |
-| +T2 (forgery localization) | 82.3% | 80.9% | 87.4% | + forgery localization supervision |
-| +T3 (VLA scoring) | 90.8% | 86.5% | 92.8% | + identity-aware VLA |
-| +T4 (orthogonality constraint) | 91.2% | 87.0% | 93.6% | full model |
+| Base (CLIP) | 58.3% | 64.0% | 77.5% | Basic CLIP Encoder |
+| +T1 (Forgery Mask) | 76.3% | 76.0% | 74.6% | Multi-mask modulation |
+| +T2 (Localization) | 82.3% | 80.9% | 87.4% | Forgery localization supervision |
+| +T3 (VLA Score) | 90.8% | 86.5% | 92.8% | Identity-aware VLA |
+| +T4 (Orthogonal) | 91.2% | 87.0% | 93.6% | Full Model |
 
 ### Key Findings
 
-- Each component contributes significantly: frame-level AUROC on CDF-v2 improves from 58.3% to 91.2% from the base to the full model.
-- Forgery-aware masks (+T1) yield the largest single-step gain (CDF-v2: 58.3%→76.3%), underscoring that enhancing VLM visual perception is critical.
-- VLA scoring provides important complementary gains (+T3 on CDF-v2: 82.3%→90.8%), validating the discriminative value of cross-modal semantics.
-- Gains are more pronounced on full-face generation forgeries (GAN/Diffusion)—SiT frame-level improves from 69.0% to 77.4%—suggesting that VLA semantics are more robust to novel forgery types.
-- The orthogonality constraint, while yielding modest improvement, ensures that different queries learn complementary forgery priors.
+- Every component contributes significantly: From Base to Full, CDF-v2 frame-level AUROC improved from 58.3% to 91.2%.
+- Forgery-aware masks (+T1) provided the largest single-step improvement (58.3% $\rightarrow$ 76.3% on CDF-v2), indicating that enhancing VLM visual perception is crucial.
+- VLA scoring provides a vital complementary gain (+T3 improved CDF-v2 from 82.3% $\rightarrow$ 90.8%), proving the discriminative value of cross-modal semantics.
+- Improvements are more pronounced in full-face generation scenarios (GAN/Diffusion)—SiT frame-level improved from 69.0% to 77.4%, suggesting VLA semantics are more robust against novel forgeries.
+- The orthogonal constraint provides a smaller but steady gain, ensuring queries learn complementary forgery priors.
 
 ## Highlights & Insights
 
-- The idea of unleashing VLM cross-modal semantics is distinctive—rather than merely enhancing the visual encoder, the work exploits vision-language alignment itself as a discriminative signal, a direction entirely overlooked by prior methods.
-- The identity-prior injection into text prompts is particularly elegant: using the VLM class token as the embedding for the \<id\> placeholder simultaneously encodes identity information and conforms to the VLM's text encoding space.
-- Designing ForgePerceiver as a standalone learner preserves VLM pre-trained knowledge, while achieving information injection via mask modulation rather than direct parameter modification.
-- Visualizations of VLA attention maps demonstrate clear differences between fake and real samples—accurately highlighting forged regions in fake samples while remaining calm on real ones.
+- The approach to unleashing VLM cross-modal semantics is unique—not only enhancing the vision encoder but using the vision-language alignment itself as a discriminative signal, a direction previously neglected.
+- Identity-prior injection into text prompts is cleverly designed: using the VLM class token as the embedding for the `<id>` placeholder naturally encodes identity and fits the VLM text encoding space.
+- The ForgePerceiver as an independent learner protects pre-trained VLM knowledge while achieving information injection through mask modulation rather than direct modification.
+- Visualizations of the VLA attention map demonstrate significant differences between fake and real samples—precisely highlighting forgery regions on fake samples while remaining inactive on real ones.
 
 ## Limitations & Future Work
 
-- The identity prior is derived from the VLM's own class token; if the VLM's visual features are insufficiently discriminative, the quality of the identity prior will be constrained accordingly.
-- Although cross-dataset evaluation is comprehensive, training is primarily conducted on FF++, and real-world training data distributions are considerably more complex.
-- All loss weights are set to 1, leaving the relative importance of different loss terms unexplored.
-- Only CLIP is used as the VLM backbone; stronger VLMs (e.g., SigLIP, EVA-CLIP) may yield further improvements.
+- The identity prior originates from the VLM's own class token; if the extracted visual features lack discriminative power, the identity prior quality may be compromised.
+- While cross-dataset evaluation is comprehensive, training is mainly performed on FF++, whereas real-world data distributions are more complex.
+- Weights for multiple loss functions are set to 1, lacking an exploration of the relative importance of different losses.
+- Currently, only CLIP is used as the backbone; stronger VLMs (e.g., SigLIP, EVA-CLIP) may yield further improvements.
 
 ## Related Work & Insights
 
-- **vs. ForAda**: ForAda fine-tunes the CLIP visual encoder via adapters, representing a purely visual enhancement; VLAForge additionally leverages vision-language alignment semantics, surpassing ForAda by 2.7% in frame-level AUROC on DFDC.
-- **vs. RepDFD**: RepDFD reprograms the VLM using externally generated, sample-specific text prompts from face embeddings, but performs only image-level global alignment; VLAForge achieves fine-grained patch-level alignment.
-- **vs. FFTG**: FFTG augments interpretability with synthesized image-text pairs and masks, but the text descriptions are auxiliary rather than adapted to the VLM's intrinsic alignment; VLAForge directly unleashes the VLM's inherent cross-modal discriminative capability.
+- **vs ForAda**: ForAda tunes the CLIP vision encoder via adapters (pure vision enhancement). VLAForge additionally utilizes cross-modal alignment semantics, outperforming it by 2.7% on DFDC frame-level.
+- **vs RepDFD**: RepDFD uses external face embeddings to generate sample-specific text prompts to reprogram the VLM, but only performs image-level global alignment. VLAForge achieves patch-level fine-grained alignment.
+- **vs FFTG**: FFTG uses synthetic image-text pairs and masks to enhance interpretability, but text descriptions are additional rather than adapted from inherent VLM alignment. VLAForge directly releases the VLM's internal cross-modal discriminative power.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐⭐ First systematic exploitation of VLM cross-modal semantics for DFD; the identity-prior injection design is highly creative.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ 9 datasets, frame- and video-level evaluation, covering both face-swapping and full-face generation forgeries.
-- **Writing Quality**: ⭐⭐⭐⭐ Method description is clear and visualizations are convincing.
-- **Value**: ⭐⭐⭐⭐⭐ Opens a new direction for VLM application in DFD; achieves comprehensive state-of-the-art results.
+- Novelty: ⭐⭐⭐⭐⭐ Systematically releases VLM cross-modal semantics for DFD; identity prior design is clever.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 9 datasets, frame+video levels, classic face-swapping + full-face generation categories.
+- Writing Quality: ⭐⭐⭐⭐ Method descriptions are clear; visualizations are persuasive.
+- Value: ⭐⭐⭐⭐⭐ Opens a new direction for VLM applications in DFD; achieves comprehensive SOTA.
 
 <!-- RELATED:START -->
 
@@ -142,9 +155,9 @@ VLAForge is built upon CLIP and comprises two core components: ForgePerceiver an
 
 - [\[CVPR 2026\] Vision-Language Attribute Disentanglement and Reinforcement for Lifelong Person Re-Identification](vision-language_attribute_disentanglement_and_reinforcement_for_lifelong_person_.md)
 - [\[CVPR 2026\] All in One: Unifying Deepfake Detection, Tampering Localization, and Source Tracing with a Robust Landmark-Identity Watermark](all_in_one_unifying_deepfake_detection_tampering_localization_and_source_tracing.md)
-- [\[CVPR 2026\] Sign Language Recognition in the Age of LLMs](sign_language_recognition_llms.md)
-- [\[AAAI 2026\] MVGD-Net: A Novel Motion-aware Video Glass Surface Detection Network](../../AAAI2026/human_understanding/mvgd-net_a_novel_motion-aware_video_glass_surface_detection_network.md)
-- [\[CVPR 2026\] LaScA: Language-Conditioned Scalable Modelling of Affective Dynamics](lasca_language-conditioned_scalable_modelling_of_affective_dynamics.md)
+- [\[CVPR 2026\] Real-Time Multimodal Fingertip Contact Detection via Depth and Motion Fusion for Vision-Based Human-Computer Interaction](real-time_multimodal_fingertip_contact_detection_via_depth_and_motion_fusion_for.md)
+- [\[CVPR 2026\] HyperGait: Unleashing the Power of Parsing for Gait Recognition in the Wild via Hypergraph](hypergait_unleashing_the_power_of_parsing_for_gait_recognition_in_the_wild_via_h.md)
+- [\[CVPR 2026\] Prompt-Anchored Vision–Text Distillation for Lifelong Person Re-identification](prompt-anchored_vision-text_distillation_for_lifelong_person_re-identification.md)
 
 </div>
 

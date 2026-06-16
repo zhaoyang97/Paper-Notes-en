@@ -2,70 +2,79 @@
 title: >-
   [Paper Note] SAME: Stabilized Mixture-of-Experts for Multimodal Continual Instruction Tuning
 description: >-
-  [ICML2026][Multimodal VLM][SAME] SAME explicitly decomposes "catastrophic forgetting" in multimodal continual instruction tuning (MCIT) within MoE-LoRA into two independent sources: router drift and expert drift. It empl…
+  [ICML 2026][Multimodal VLM][SAME] SAME explicitly decomposes "catastrophic forgetting" in multimodal continual instruction tuning (MCIT) for MoE-LoRA into two independent sources: router drift and expert drift. It addresses these using spectral-aware subspace constrained updates for the router, Riemannian preconditioning with historical input covarianc
 tags:
-  - "ICML2026"
-  - "Multimodal VLM"
-  - "SAME"
-  - "MCIT"
-  - "router drift"
-  - "expert drift"
-  - "spectral-aware update"
-  - "curvature-aware Riemannian scaling"
-  - "adaptive expert activation"
+  - ICML 2026
+  - Multimodal VLM
+  - SAME
+  - MCIT
+  - router drift
+  - expert drift
 date: 2026-05-08
-content_hash: 42a6e8e21f3e6bc9
+content_hash: 1736205142bfd861
 ---
-
 # SAME: Stabilized Mixture-of-Experts for Multimodal Continual Instruction Tuning
 
 **Conference**: ICML2026  
 **arXiv**: [2602.01990](https://arxiv.org/abs/2602.01990)  
 **Code**: https://github.com/LAMDA-CL/Prism  
 **Area**: Multimodal VLM / Continual Learning / MoE-LoRA  
-**Keywords**: SAME, MCIT, router drift, expert drift, spectral-aware update, curvature-aware Riemannian scaling, adaptive expert activation  
+**Keywords**: SAME, MCIT, router drift, expert drift, spectral-aware updates, curvature-aware Riemannian scaling, adaptive expert activation  
 
 ## TL;DR
-SAME explicitly decomposes "catastrophic forgetting" in multimodal continual instruction tuning (MCIT) within MoE-LoRA into two independent sources: router drift and expert drift. It employs spectral-aware subspace constraints to update routers, utilizes historical input covariance for Riemannian preconditioning to protect experts, and removes redundant updates via task-level adaptive freezing. The method consistently outperforms current MoE continual learning SOTA on CoIN, UCIT, and the authors' TriGap long-sequence benchmark.
+SAME explicitly decomposes "catastrophic forgetting" in multimodal continual instruction tuning (MCIT) for MoE-LoRA into two independent sources: router drift and expert drift. It addresses these using spectral-aware subspace constrained updates for the router, Riemannian preconditioning with historical input covariance for experts, and an adaptive task-level freezing mechanism to eliminate redundant updates. Ours consistently outperforms existing MoE continual learning SOTAs on CoIN, UCIT, and the newly established TriGap long-sequence benchmarks.
 
 ## Background & Motivation
 
-**Background**: MLLMs (e.g., LLaVA, Qwen-VL) show impressive performance on static multi-tasks via instruction tuning. However, in real-world deployment, tasks arrive sequentially, leading to MCIT (Multimodal Continual Instruction Tuning). Modern approaches integrate MoE + LoRA into FFN layers, leveraging sparse routing for "expert specialization" to resist forgetting (e.g., MoELoRA, CL-MoE, HiDe-LLaVA).
+**Background**: MLLMs (e.g., LLaVA, Qwen-VL) perform remarkably on static multi-tasking via instruction tuning, but real-world deployment involves sequentially arriving tasks, known as Multimodal Continual Instruction Tuning (MCIT). Recent approaches integrate MoE + LoRA into FFN layers, leveraging "expert specialization" through sparse routing to mitigate forgetting (e.g., MoELoRA, CL-MoE, HiDe-LLaVA).
 
-**Limitations of Prior Work**: The authors conduct diagnostic experiments (Fig. 1) by saving router and expert snapshots after each task in an 8-task sequence. Testing on Task 1 revealed: (a) as new tasks arrive, the router's activation distribution for Task 1 inputs drifts significantly, meaning **the same input is routed to different experts**; (b) even when retraining the router on Task 1 data (with frozen experts), Task 1 accuracy continues to decline and routing entropy decreases—indicating that **the experts themselves are drifting** and have lost their original Task 1 functionality.
+**Limitations of Prior Work**: The authors conduct diagnostic experiments (Fig. 1) by saving router and expert snapshots after each task in an 8-task sequence and back-testing on the Task 1 test set: (a) As new tasks arrive, the router's expert activation distribution for Task 1 inputs drifts significantly, meaning **identical inputs are routed to different experts**; (b) Even when retraining only the router on Task 1 data (with frozen experts), Task 1 accuracy still declines, and routing entropy decreases—indicating that **experts themselves drift**, losing their original functionality for Task 1.
 
-**Key Challenge**: In MoE-based continual learning, "forgetting" is the superposition of two decoupled sources: (i) **router drift**—router updates cause old task samples to be mismatched to new experts; (ii) **expert drift**—shared experts are repeatedly overwritten by new task gradients, erasing original functions. Previous methods failed to treat these separately, often lead to a "whack-a-mole" problem where fixing one causes the other to fail.
+**Key Challenge**: "Forgetting" in MoE continual learning is a superposition of two decoupled sources: (i) **router drift**—router updates cause old task samples to be misaligned with new experts; (ii) **expert drift**—shared experts are repeatedly overwritten by gradients from new tasks, erasing original functions. Previous methods failed to treat these separately, often resulting in an "addressing one but neglecting the other" situation.
 
-**Goal**: Design independent stabilization mechanisms for both the router and the experts, complemented by a training efficiency component to reduce redundant updates, creating an end-to-end rehearsal-free solution.
+**Goal**: Design independent stabilization mechanisms for both the router and experts, and introduce a training efficiency component to reduce redundant updates in an end-to-end, rehearsal-free framework.
 
-**Key Insight**: The authors borrow two classical ideas from continual learning: "gradient subspace projection" and "natural gradient/Fisher metrics." The former addresses the router (preserving old task subspaces), while the latter protects experts (preconditioning under historical input geometry).
+**Key Insight**: The authors borrow two classical ideas from continual learning: "gradient subspace projection" and "natural gradient/Fisher metrics." The former stabilizes the router (preserving old task subspaces), while the latter protects experts (preconditioning based on historical input geometry).
 
-**Core Idea**: Maintain an uncentered covariance $\mathbf{C}^t$ of historical inputs as a proxy for "past geometry." Router gradients are projected onto high-energy subspaces of this covariance, while expert gradients are scaled via Riemannian preconditioning using $(\mathbf{C}^{t-1})^{-1}$, combined with task-level adaptive expert freezing.
+**Core Idea**: Maintain an uncentered historical input covariance $\mathbf{C}^t$ as a unified proxy for "past geometry." Router gradients are projected only onto the high-energy subspace of this covariance. Expert gradients undergo Riemannian scaling using $(\mathbf{C}^{t-1})^{-1}$, supplemented by an adaptive task-level expert freezing mechanism.
 
 ## Method
 
 ### Overall Architecture
-The backbone is LLaVA-v1.5-7B + CLIP-L/14-336, with LoRA experts inserted into the LLM's FFN layers. Given input $\mathbf{x}\in\mathbb{R}^d$, the output is $\mathbf{h}=\mathbf{W}_0\mathbf{x}+\sum_{i=1}^n \omega_i \mathbf{B}_i\mathbf{A}_i\mathbf{x}$, where $\omega_i=\mathrm{Softmax}(\mathbf{W}_G\mathbf{x})_i$ is the router output. Workflow for task $t$: (1) Online maintenance of input covariance $\mathbf{C}^t$ with top-$k$ SVD to obtain $\mathbf{V}_\parallel, \mathbf{V}_\perp$; (2) Constraint of $\mathbf{W}_G$ updates via spectral-aware rules; (3) Expert gradient preconditioning using $(\mathbf{C}^{t-1})^{-1}$; (4) Temporary freezing of experts based on utility-importance differentials.
+The base model is LLaVA-v1.5-7B + CLIP-L/14-336, with LoRA experts inserted only in the LLM FFN layers. Given input $\mathbf{x}\in\mathbb{R}^d$, the output is $\mathbf{h}=\mathbf{W}_0\mathbf{x}+\sum_{i=1}^n \omega_i \mathbf{B}_i\mathbf{A}_i\mathbf{x}$, where $\omega_i=\mathrm{Softmax}(\mathbf{W}_G\mathbf{x})_i$ is the router output. The framework revolves around a shared "past geometry"—the input covariance $\mathbf{C}^t$ accumulated across tasks. For task $t$ training, $\mathbf{C}^t$ is maintained online and decomposed via top-$k$ SVD into $\mathbf{V}_\parallel, \mathbf{V}_\perp, \boldsymbol{\Sigma}$. This decomposition feeds three stability mechanisms: spectral-aware routing constrains $\mathbf{W}_G$ updates (addressing router drift), curvature-aware Riemannian scaling uses the same factors to construct $(\mathbf{C}^{t-1})^{-1}$ for expert gradient preconditioning (addressing expert drift), and adaptive expert activation temporarily freezes experts based on utility-importance differentials (saving computation and reducing interference).
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Task t input x<br/>(MoE-LoRA on FFN, base LLaVA-1.5-7B)"] --> B["Maintain cross-task input covariance C, perform top-k SVD<br/>to get V∥ / V⊥ / Σ (Shared geometry)"]
+    B --> C["1. Spectral-aware Routing<br/>Router gradient projected to V∥ (new task directions), V⊥ (old directions) remains fixed"]
+    B --> D["2. Curvature-aware Riemannian Scaling<br/>Reuse SVD factors to construct inverse historical covariance for expert gradient preconditioning"]
+    B --> E["3. Adaptive Expert Activation<br/>Temporarily freeze experts with low utility and high historical importance"]
+    C --> F["Stable MoE-LoRA Updates<br/>Mitigates both router drift + expert drift; rehearsal-free with zero extra loss"]
+    D --> F
+    E --> F
+```
 
 ### Key Designs
 
-1.  **Spectral-aware Routing**:
-    - **Function**: Restricts router updates to "newly added input directions" for the current task while remaining nearly invariant in directions relied upon by old tasks.
-    - **Mechanism**: Maintains a cross-task sliding covariance $\mathbf{C}^t=(\alpha_{t-1}\mathbf{C}^{t-1}+n_t\hat{\mathbf{C}}^t)/\alpha_t$, storing only top-$k$ principal components such that the cumulative energy ratio $\sum_{i=1}^k\sigma_i^2/\sum_{i=1}^d\sigma_i^2\geq \delta$. SVD yields $\mathbf{C}^t=\mathbf{U}\boldsymbol{\Sigma}\mathbf{V}^\top$, partitioned into $\mathbf{V}_\parallel=\mathbf{V}[:,:k]$ (key directions for current/past tasks) and $\mathbf{V}_\perp=\mathbf{V}[:,k:]$ (near-zero variance subspace). Updates in new directions are scaled by $g(\boldsymbol{\Sigma})$ (using inverse sliding average $\hat\sigma_i$ as $\alpha_i$): $\Delta\mathbf{W}_\parallel^t=\Delta\mathbf{W}_G^t\mathbf{V}_\parallel g(\boldsymbol{\Sigma})\mathbf{V}_\parallel^\top$. Old task directions are directly projected: $\Delta\mathbf{W}_\perp^t=\Delta\mathbf{W}_G^t\mathbf{V}_\perp\mathbf{V}_\perp^\top$. Final update: $\Delta\mathbf{W}_G^t=\Delta\mathbf{W}_\parallel^t+\Delta\mathbf{W}_\perp^t$.
-    - **Design Motivation**: Since $\mathbf{C}^t\propto \mathbf{X}\mathbf{X}^\top$, then $\mathbf{V}_\perp^\top\mathbf{X}^{old}\approx \mathbf{0}$, ensuring $\Delta\mathbf{W}_\perp^t \mathbf{X}^{old}\approx \mathbf{0}$—preserving predictions for old tasks. Simultaneous re-weighting within $\mathbf{V}_\parallel$ based on "local context $\hat\sigma_i$" avoids treating all new directions equally, addressing the drift observed in Fig. 1(a-c).
+**1. Spectral-aware Routing: Restricting router updates to new task input directions to preserve old task routing.**
 
-2.  **Curvature-aware Riemannian Scaling**:
-    - **Function**: Forces expert updates to take smaller steps in "historically frequent input directions" to avoid overwriting learned functions.
-    - **Mechanism**: In a rehearsal-free setting, functional degradation is approximated as $\Delta_{degrad}\triangleq \mathbb{E}_{\mathbf{x}\sim \mathcal{D}_{<t}}[\|\Delta\mathbf{W}_i \mathbf{x}\|^2]=\mathrm{tr}(\Delta\mathbf{W}_i\mathbf{C}^{t-1}\Delta\mathbf{W}_i^\top)$. Optimizing $\min_{\Delta\mathbf{W}_i}\mathcal{L}+\lambda\max(0,\Delta_{degrad}-\epsilon)$ leads to Riemannian updates $\Delta\mathbf{W}_i=-\eta\nabla_{\mathbf{W}_i}\mathcal{L}(\mathbf{C}^{t-1})^{-1}$. The term $(\mathbf{C}^{t-1})^{-1}$ is approximated using the damped pseudo-inverse from the spectral stage: $(\mathbf{C}^{t-1})^{-1}\approx \mathbf{V}_k(\boldsymbol{\Sigma}_k+\mu\mathbf{I})^{-1}\mathbf{V}_k^\top+\frac{1}{\mu}(\mathbf{I}-\mathbf{V}_k\mathbf{V}_k^\top)$.
-    - **Design Motivation**: High variance directions (large $\sigma_i$) result in small $(\sigma_i+\mu)^{-1}$, "compressing" the update. Low variance or new directions use the $1/\mu$ default scale. This follows the principle of natural gradients: automatically applying "gravity" in directions frequently used in the past. 
+To address router drift (where the same old task input is routed to different experts), the update is restricted to subspaces that do not affect old tasks. A sliding cross-task covariance $\mathbf{C}^t=(\alpha_{t-1}\mathbf{C}^{t-1}+n_t\hat{\mathbf{C}}^t)/\alpha_t$ is maintained, keeping top-$k$ principal components such that the cumulative energy $\sum_{i=1}^k\sigma_i^2/\sum_{i=1}^d\sigma_i^2\geq\delta$. After SVD, it is split into $\mathbf{V}_\parallel$ (key directions for new tasks) and $\mathbf{V}_\perp$ (old task space with near-zero variance). Router gradients are scaled in new directions as $\Delta\mathbf{W}_\parallel^t=\Delta\mathbf{W}_G^t\mathbf{V}_\parallel g(\boldsymbol{\Sigma})\mathbf{V}_\parallel^\top$ and projected in old directions as $\Delta\mathbf{W}_\perp^t=\Delta\mathbf{W}_G^t\mathbf{V}_\perp\mathbf{V}_\perp^\top$. Since $\mathbf{C}^t\propto\mathbf{X}\mathbf{X}^\top$, the property $\mathbf{V}_\perp^\top\mathbf{X}^{old}\approx\mathbf{0}$ mathematically guarantees that routing predictions for old tasks remain unchanged. In ablations, this single component improves CoIN average accuracy from 50.58 to 61.32 (+10.74).
 
-3.  **Adaptive Expert Activation**:
-    - **Function**: Temporarily freezes experts that are "low utility for the current task but high importance for historical tasks" to save computation and prevent interference.
-    - **Mechanism**: Maintains two running averages—current task utilization $\mathcal{U}(i)$ (mean routing weight per batch) and historical importance $\mathcal{F}^{pre}(i)$ (approximated via routing-weighted input energy $\omega_i(\mathbf{x})\|\mathbf{x}\|^2$). Min-max normalization yields $\tilde{\mathcal{U}}(i)$ and $\tilde{\mathcal{F}}^{pre}(i)$. Activation score: $\mathrm{Score}(i)=\tilde{\mathcal{U}}(i)-\tilde{\mathcal{F}}^{pre}(i)$. Experts with $\mathrm{Score}(i)<\tau_{score}$ are frozen during the current task's training.
-    - **Design Motivation**: Top-$k$ routing is sample-level and scatters single-task gradients across many experts. Task-level freezing focuses updates on the few experts truly needed, strengthening compartmentalization and reducing training time and VRAM usage.
+**2. Curvature-aware Riemannian Scaling: Slower expert updates in "historically common directions" to prevent functional overwriting.**
+
+To address expert drift (shared experts overwritten by new task gradients), SAME approximates functional degradation in a rehearsal-free setting as $\Delta_{degrad}=\mathbb{E}_{\mathbf{x}\sim\mathcal{D}_{<t}}[\|\Delta\mathbf{W}_i\mathbf{x}\|^2]=\mathrm{tr}(\Delta\mathbf{W}_i\mathbf{C}^{t-1}\Delta\mathbf{W}_i^\top)$. Optimizing $\min_{\Delta\mathbf{W}_i}\mathcal{L}+\lambda\max(0,\Delta_{degrad}-\epsilon)$ leads to the Riemannian update:
+
+$$\Delta\mathbf{W}_i=-\eta\nabla_{\mathbf{W}_i}\mathcal{L}\,(\mathbf{C}^{t-1})^{-1}$$
+
+$(\mathbf{C}^{t-1})^{-1}$ is approximated using the damped pseudo-inverse $(\mathbf{C}^{t-1})^{-1}\approx\mathbf{V}_k(\boldsymbol{\Sigma}_k+\mu\mathbf{I})^{-1}\mathbf{V}_k^\top+\frac{1}{\mu}(\mathbf{I}-\mathbf{V}_k\mathbf{V}_k^\top)$ from the SVD factors. High-variance directions (large $\sigma_i$) result in smaller updates, while low-variance or new directions revert to the default scale. This implements the spirit of natural gradients by automatically weighting "past usage" directions without expensive second-order calculations.
+
+**3. Adaptive Expert Activation: Freezing experts that are irrelevant to current tasks but critical for history.**
+
+Top-$k$ routing is sample-level, which can spread single-task gradients across many experts, causing waste and interference. SAME maintains two running averages: current task utilization $\mathcal{U}(i)$ (mean routing weights per batch) and historical importance $\mathcal{F}^{pre}(i)$ (approximated via routing-weighted input energy $\omega_i(\mathbf{x})\|\mathbf{x}\|^2$). The activation score is $\mathrm{Score}(i)=\tilde{\mathcal{U}}(i)-\tilde{\mathcal{F}}^{pre}(i)$. If $\mathrm{Score}(i)<\tau_{score}$ (low utility but high historical importance), the expert's forward and backward passes are frozen during the current task training. This concentrates updates on experts that truly need them, improving compartmentalization. It also yields engineering gains: saving 32.1 minutes of training and 2.3K MiB/GPU VRAM on average per task.
 
 ### Loss & Training
-Standard next-token CE for multimodal instruction tuning. LoRA rank=8, 1 epoch per task, bs=6, lr=2e-4 with cosine decay and 0.03 warmup, 8×RTX 5090. All constraints are implemented by modifying gradient update rules without additional loss terms. Overall training cost is nearly identical to vanilla MoELoRA.
+The objective is standard next-token cross-entropy (CE) for multimodal instruction tuning. LoRA rank=8, 1 epoch per task, bs=6, lr=2e-4 with cosine decay and 0.03 warmup, trained on 8×RTX 5090. All constraints are applied by modifying gradient update rules without extra loss terms, maintaining training costs similar to vanilla MoELoRA.
 
 ## Key Experimental Results
 
@@ -80,7 +89,7 @@ CoIN 8-task benchmark (aligned with original paper reports):
 | HiDe-LLaVA (Guo 2025a) | 73.20 | 69.28 | 59.18 | 64.76 | 63.95 |
 | **SAME (Ours)** | **78.35** | **90.21** | **59.87** | 63.59 | **66.82** |
 
-TriGap (10-task) long-sequence benchmark:
+TriGap (10-task) long-sequence benchmark established by the authors:
 
 | Method | DocVQA | IconQA | FloodNet | Average |
 |---|---|---|---|---|
@@ -89,57 +98,65 @@ TriGap (10-task) long-sequence benchmark:
 | ModalPrompt | 38.23 | 44.73 | 71.52 | 40.15 |
 | **SAME** | **43.87** | **64.03** | 81.09 | **46.53** |
 
-On UCIT (6 tasks), SAME leads with an average accuracy of 67.12% (vs ModalPrompt at 65.52%).
+On UCIT (6 tasks), SAME leads with an average accuracy of 67.12% (vs. 65.52% for ModalPrompt).
 
 ### Ablation Study
 
-| Configuration | CoIN Avg Acc | Note |
+| Configuration | CoIN Average Acc | Description |
 |---|---|---|
-| Baseline (MoELoRA) | 50.58 | No constraints on router/experts |
-| + Spectral-aware Routing | 61.32 | Stable routing, +10.74 |
-| + Curvature-aware Scaling | 65.89 | Experts not overwritten, +4.57 |
-| + Adaptive Expert Activation | 66.82 | Task-level freeze +0.93, saves time/VRAM |
+| Baseline (MoELoRA) | 50.58 | No router or expert constraints |
+| + Spectral-aware Routing | 61.32 | Stable routing, Gain: +10.74 |
+| + Curvature-aware Scaling | 65.89 | Expert functional protection, Gain: +4.57 |
+| + Adaptive Expert Activation | 66.82 | Task-level freezing, Gain: +0.93 + efficiency |
 
 ### Key Findings
-- **Router stability provides the largest single gain**: Fig. 3 shows that with spectral-aware routing, Task 1's expert activation distribution barely drifts during training, corresponding to the +10.74 gain.
-- **Expert drift exists independently**: Using a "re-routing protocol" (frozen experts + retrained router), Fig. 4 shows that as the expert version increases, Task 1 accuracy still drops; curvature scaling significantly slows this decay.
-- **Format drift is a silent killer**: On the ScienceQA → TextVQA → ImageNet sequence, 70.6% of "errors" were merely case changes ("a" vs "A"). SAME flattens such format drift.
-- **Adaptive freezing is a free lunch**: While gaining +0.93 accuracy, it saves an average of 32.1 minutes and 2.3 K MiB VRAM per GPU per task.
+- **Router stability provides the largest single gain**: Fig. 3 shows that with spectral-aware routing, the expert activation distribution for Task 1 remains nearly constant throughout training, corresponding to the +10.74 jump in ablations.
+- **Expert drift exists independently**: Fig. 4 uses a "re-routing protocol" (frozen experts + retrained router). Even when routing drift is isolated, older expert versions perform worse on Task 1; curvature scaling significantly slows this decay.
+- **Format drift is a hidden killer**: In sequences like ScienceQA → TextVQA → ImageNet, 70.6% of "errors" were merely case changes (e.g., "a" vs "A"). Accuracy followed a non-monotonic drop-rebound curve; SAME successfully flattens this format drift.
+- **Adaptive freezing is a "free lunch"**: It boosts accuracy by 0.93 while saving 32.1 minutes of training and 2.3 K MiB VRAM per task on average.
 
 ## Highlights & Insights
-- **Microscopic decomposition of forgetting**: Unlike previous work that vaguely cited "parameter drift," this paper uses a re-routing control experiment to isolate router drift and expert drift as independent observable signals. This "diagnosis → decoupling → divide-and-conquer" paradigm is highly valuable.
-- **Unified covariance $\mathbf{C}^t$ usage**: The same cumulative covariance is reused for router subspace partitioning, expert Riemannian metrics, and adaptive freezing input energy approximation, reducing storage overhead to nearly zero.
-- **Natural anti-forgetting from a Riemannian perspective**: $(\mathbf{C}^{t-1})^{-1}$ preconditioning ensures that "historically used directions" automatically gain resistance to change, equivalent to natural gradient descent under the Fisher Information metric.
-- **Empirical evidence of format drift**: The analysis of case-sensitivity errors suggests that much "forgetting" in LLM continual learning is superficial output style shifts rather than knowledge loss.
+- **Microscopic decomposition of forgetting**: Instead of discussing "parameter drift" broadly, the authors use a re-routing control experiment to decouple router and expert drift as independent signals. This "diagnosis → decoupling → divide-and-conquer" paradigm is highly effective.
+- **Data reuse of covariance $\mathbf{C}^t$**: The same accumulated covariance is used for router subspace partitioning, expert Riemannian metrics, and adaptive freezing energy approximation, making the storage overhead negligible.
+- **Natural anti-forgetting from a Riemannian perspective**: Preconditioning with $(\mathbf{C}^{t-1})^{-1}$ allows directions frequently used in the past to automatically acquire anti-change properties, equivalent to natural gradient descent on historical input geometry.
+- **Educational empirical evidence of format drift**: The case-sensitivity analysis suggests that much of LLM "forgetting" is superficial styling. Observing only numbers might lead to the false conclusion that knowledge is lost when only the output format has shifted.
 
 ## Limitations & Future Work
-- **Known task boundaries**: Covariance updates and subspace partitioning currently assume task IDs are known.
-- **Covariance maintained only at the routing layer**: There is a potential small mismatch between FFN input distribution and router input distribution.
-- **Hyperparameter sensitivity**: Parameters like $\delta, \rho, \mu, \lambda, \epsilon, \tau_{score}$ require tuning.
-- **Limited to LoRA-on-FFN**: Extending the method to attention layers or vision encoders is necessary for further validation.
+- **Requirement for known task boundaries**: Covariance updates and subspace partitioning assume task IDs are known, which requires adaptation for task-free or blurred boundary scenarios.
+- **Covariance maintained only at routing layer**: The FFN input distribution and router input distribution might not fully overlap; using the same $\mathbf{C}^t$ for expert preconditioning may lead to slight mismatches.
+- **Hyperparameter sensitivity**: Multiple parameters ($\delta, \rho, \mu, \lambda, \epsilon, \tau_{score}$) require tuning, presenting a barrier for adoption.
+- **Scope limited to LoRA-on-FFN**: Extending the method to attention-layer LoRA, QKV projections, or vision encoders is necessary to verify generalizability.
 
 ## Related Work & Insights
-- **vs MoELoRA / CL-MoE / HiDe-LLaVA**: These rely on routing sparsity/auxiliary losses or hierarchical distillation. SAME intervenes directly in update rules with zero auxiliary loss and zero rehearsal.
-- **vs Replay-LoRA / SEFE**: Replay methods require storing old data; SAME is rehearsal-free, using covariance summaries to preserve "past geometry."
-- **vs O-LoRA / GEM / OGD**: While sharing the "orthogonal gradient projection" concept, SAME upgrades it to the MoE dimension—managing both parameter-dimensional projection and routing distribution stability.
+- **vs MoELoRA / CL-MoE / HiDe-LLaVA**: Unlike methods relying solely on routing sparsity or hierarchical distillation, SAME intervenes directly in update rules with zero extra loss and zero rehearsal.
+- **vs Replay-LoRA / SEFE**: While replay-based methods require storing or synthesizing old data, SAME is completely rehearsal-free, utilizing the covariance summary of past geometry.
+- **vs O-LoRA / GEM / OGD**: SAME extends the spirit of orthogonal gradient projection to the MoE dimension, managing both parameter dimensionality and routing distribution stability.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Effective decoupling of MoE forgetting sources.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive benchmarks plus diagnostic protocols and efficiency analysis.
-- Writing Quality: ⭐⭐⭐⭐⭐ Logical flow and clear problem decomposition.
-- Value: ⭐⭐⭐⭐ Rehearsal-free with low engineering cost.
+- Novelty: ⭐⭐⭐⭐ Effective decomposition of MoE forgetting into router/expert drift; complete three-component design.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ CoIN + UCIT + TriGap, plus diagnostic re-routing and format drift analysis.
+- Writing Quality: ⭐⭐⭐⭐⭐ Extremely clear problem decomposition in Fig. 1; logical flow between formulas.
+- Value: ⭐⭐⭐⭐ Rehearsal-free, low engineering overhead, and highly applicable to real-world MLLM deployment.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
 
+- **MoELoRA**: [Chen et al., "MoELoRA: Contrastive Learning for Multi-task Multimodal Instruction Tuning", 2024]
+- **HiDe-LLaVA**: [Guo et al., "HiDe-LLaVA: Hierarchical Decomposed Low-Rank Adaptation for Multimodal Continual Learning", 2025]
+- **O-LoRA**: [Wang et al., "O-LoRA: Orthogonal Low-Rank Adaptation for Continual Learning", 2023]
+
+</div>
+
+<!-- RELATED:END -->
+
 ## Related Papers
 
+- [\[ICML 2025\] Dynamic Mixture of Curriculum LoRA Experts for Continual Multimodal Instruction Tuning](../../ICML2025/multimodal_vlm/dynamic_mixture_of_curriculum_lora_experts_for_continual_multimodal_instruction_.md)
 - [\[ICML 2026\] Toward Structural Multimodal Representations: Specialization, Selection, and Sparsification via Mixture-of-Experts](toward_structural_multimodal_representations_specialization_selection_and_sparsi.md)
+- [\[CVPR 2026\] Multimodal Continual Instruction Tuning with Dynamic Gradient Guidance](../../CVPR2026/multimodal_vlm/multimodal_continual_instruction_tuning_with_dynamic_gradient_guidance.md)
 - [\[ICML 2026\] Decentralized Instruction Tuning: Conflict-Aware Splitting and Weight Merging](decentralized_instruction_tuning_conflict-aware_splitting_and_weight_merging.md)
-- [\[ICLR 2026\] Capacity-Aware Inference: Mitigating the Straggler Effect in Mixture of Experts](../../ICLR2026/multimodal_vlm/capacity-aware_inference_mitigating_the_straggler_effect_in_mixture_of_experts.md)
-- [\[AAAI 2026\] MCMoE: Completing Missing Modalities with Mixture of Experts for Incomplete Multimodal Action Quality Assessment](../../AAAI2026/multimodal_vlm/mcmoe_completing_missing_modalities_with_mixture_of_experts_for_incomplete_multi.md)
-- [\[CVPR 2026\] MoDES: Accelerating Mixture-of-Experts Multimodal Large Language Models via Dynamic Expert Skipping](../../CVPR2026/multimodal_vlm/modes_accelerating_mixture-of-experts_multimodal_large_language_models_via_dynam.md)
+- [\[ACL 2025\] Enhancing Multimodal Continual Instruction Tuning with BranchLoRA](../../ACL2025/multimodal_vlm/branchlora_continual_instruction.md)
 
 </div>
 

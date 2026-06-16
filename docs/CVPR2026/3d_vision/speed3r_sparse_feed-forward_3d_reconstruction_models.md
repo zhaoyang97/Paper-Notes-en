@@ -2,222 +2,209 @@
 title: >-
   [Paper Note] Speed3R: Sparse Feed-forward 3D Reconstruction Models
 description: >-
-  [CVPR 2026][3D Vision][3D Reconstruction] Speed3R introduces a trainable dual-branch Global Sparse Attention (GSA) mechanism for feed-forward 3D reconstruction models. A compression branch provides coarse-grained scene s…
+  [CVPR 2026][3D Vision][Feed-forward] Speed3R designs a trainable dual-branch Global Sparse Attention (GSA) mechanism for feed-forward 3D reconstruction models. By providing coarse-grained scene summaries via a compression branch and focusing fine-grained attention on key tokens via a selection branch, it achieves a **12.4x inference speedup** on 1000-view
 tags:
-  - "CVPR 2026"
-  - "3D Vision"
-  - "3D Reconstruction"
-  - "Sparse Attention"
-  - "Feed-forward"
-  - "Inference Acceleration"
-  - "Structure-from-Motion"
+  - CVPR 2026
+  - 3D Vision
+  - Feed-forward
+  - Inference Acceleration
+  - Structure-from-Motion
 date: 2026-05-08
-content_hash: 54b65a7bb34430d9
+content_hash: d180e3fb20f035b9
 ---
-
 # Speed3R: Sparse Feed-forward 3D Reconstruction Models
 
 **Conference**: CVPR 2026 Findings  
 **arXiv**: [2603.08055](https://arxiv.org/abs/2603.08055)  
 **Code**: [https://visual-ai.github.io/speed3r/](https://visual-ai.github.io/speed3r/)  
-**Area**: 3D Vision
+**Area**: 3D Vision  
 **Keywords**: 3D Reconstruction, Sparse Attention, Feed-forward, Inference Acceleration, Structure-from-Motion
 
 ## TL;DR
 
-Speed3R introduces a trainable dual-branch Global Sparse Attention (GSA) mechanism for feed-forward 3D reconstruction models. A compression branch provides coarse-grained scene summaries while a selection branch focuses fine-grained attention on critical tokens, achieving **12.4× inference speedup** on 1000-view sequences with only marginal accuracy degradation.
+Speed3R designs a trainable dual-branch Global Sparse Attention (GSA) mechanism for feed-forward 3D reconstruction models. By providing coarse-grained scene summaries via a compression branch and focusing fine-grained attention on key tokens via a selection branch, it achieves a **12.4x inference speedup** on 1000-view sequences with only minimal accuracy degradation.
 
 ## Background & Motivation
 
 **Background**: Recent feed-forward 3D reconstruction models (VGGT, $\pi^3$) can jointly infer dense geometry and camera poses in a single forward pass, bypassing the multi-stage pipelines of classical SfM/MVS.
 
-**Limitations of Prior Work**: These models rely on dense global attention, whose computational cost scales as $O(n^2)$ with the number of tokens. Inference speed becomes a severe bottleneck at large view counts or high resolutions — for example, $\pi^3$ requires **202 seconds** to process 1024 images.
+**Limitations of Prior Work**: These models rely on dense global attention, where the computational complexity grows as $O(n^2)$ with the number of tokens. When processing large numbers of views or high-resolution images, inference speed becomes a severe bottleneck—for instance, $\pi^3$ takes **202 seconds** to process 1024 images.
 
-**Key Challenge**: Training-free approaches such as FastVGGT (token merge-unmerge) and Block-Sparse VGGT (top-k attention) cannot be optimized end-to-end, and aggressive pruning leads to significant accuracy degradation.
+**Key Challenge**: Training-free methods like FastVGGT (token merge-unmerge) and Block-Sparse VGGT (top-k attention) cannot be optimized end-to-end, and aggressive pruning leads to significant precision drops.
 
-**Core Insight**: The classical SfM intuition — that sparse keypoints suffice for robust pose estimation — has not yet been fully exploited by feed-forward methods.
+**Key Insight**: The core concept of traditional SfM—that sparse keypoints are sufficient for robust pose estimation—has not been fully utilized by feed-forward methods.
 
-**Goal**: Motivated by both SfM and sparse attention in LLMs (NSA, MOBA), this work designs end-to-end trainable sparse attention and transfers dense model performance via knowledge distillation.
+**Goal**: Inspired by dual-branch sparse attention (NSA, MOBA) in SfM and LLMs, this work designs an end-to-end trainable sparse attention mechanism and transfers performance from dense models via knowledge distillation.
 
 ## Method
 
 ### Overall Architecture
 
-Speed3R adopts a three-stage architecture:
+Speed3R addresses a specific problem: making feed-forward 3D reconstruction models like VGGT and $\pi^3$ run faster on long sequences. These models compress multi-view geometry and camera poses into a single forward pass, but at the cost of performing dense global attention in every Transformer block, leading to $O(n^2)$ complexity explosions as tokens increase. Speed3R replaces this dense global attention block with its custom Global Sparse Attention (GSA) while keeping the rest of the pipeline intact: $N$ images first pass through DINOv2 to extract patch tokens, then enter alternating Transformer blocks—where local Frame Attention handles intra-frame processing and global GSA handles cross-frame information flow. Refined tokens are then fed into task heads to output per-view camera parameters $\{\hat{C_i}\}$, depth maps $\{\hat{D_i}\}$, and uncertainties $\{\hat{\alpha_i}\}$. The core logic of GSA is "coarse-to-fine": it uses low-resolution representations to capture a scene overview and then directs each token to look only at the most relevant small subset of neighbors at full resolution.
 
-1. **Per-frame Feature Encoder**: $N$ images $\{I_i\}_{i=1}^N$ are independently processed by a visual encoder (e.g., DINOv2) to extract patch-level feature tokens.
-2. **Alternating Attention Transformer**: Multiple Transformer blocks alternate between local intra-frame attention (Frame Attention) and Global Sparse Attention (**GSA**, the core contribution), replacing the dense global attention in the original models.
-3. **Task-specific Prediction Heads**: Refined tokens are fed into downstream heads to predict per-view camera parameters $\{\hat{C_i}\}$, depth maps $\{\hat{D_i}\}$, and associated uncertainties $\{\hat{\alpha_i}\}$.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["N Images<br/>DINOv2 patch token extraction"] --> B["Alternating Transformer Blocks<br/>Frame Attention processes single frames"]
+    B --> C["GSA replaces Dense Global Attention<br/>Split Q/K/V: Special tokens + Image tokens"]
+    C -->|Special tokens| D["Special tokens use Full Attention<br/>Small number of pose tokens do dense attention"]
+    C -->|Image tokens| E["Compression Branch<br/>s×s pooling for coarse summary + guide scores"]
+    E -->|"Fused Triton kernel<br/>Streaming Top-K without materializing score matrix"| F["Selection Branch<br/>Fetch fine KV based on TopK guide scores"]
+    D --> G["Gated Aggregation<br/>Per-token learned Global / Local weights"]
+    F --> G
+    G --> H["Task Heads<br/>Camera params + Depth + Uncertainty"]
+    I["Architecture Adaptation<br/>VGGT fixates on ref frames; π³ applies directly"] -.-> F
+```
 
-### Key Designs: Global Sparse Attention (GSA)
+### Key Designs
 
-The core idea of GSA is **coarse-to-fine**: first build a global scene understanding from low-resolution representations, then guide the model to attend only to the most informative token subset in high-resolution space.
+**1. Special tokens use full attention, targeting only massive image tokens**
 
-**Input Decomposition**: The GSA input $X \in \mathbb{R}^{M \times C}$ is formed by concatenating special tokens $X_{\text{spec}}$ and image tokens $X_{\text{img}}$. Projections $W_Q, W_K, W_V$ generate Q/K/V, which are split by token type:
-
-$$Q = \begin{bmatrix} Q_{\text{spec}} \\ Q_{\text{img}} \end{bmatrix}, \quad K = \begin{bmatrix} K_{\text{spec}} \\ K_{\text{img}} \end{bmatrix}, \quad V = \begin{bmatrix} V_{\text{spec}} \\ V_{\text{img}} \end{bmatrix}$$
-
-**Full Attention for Special Tokens**: Special tokens (e.g., pose tokens) serve as global information bottlenecks for critical tasks such as pose estimation, and attend to all tokens via standard dense self-attention:
+The GSA input $X \in \mathbb{R}^{M \times C}$ is a concatenation of special tokens $X_{\text{spec}}$ (e.g., pose tokens) and image tokens $X_{\text{img}}$. After projecting Q/K/V, they are split by type. Global tasks like pose estimation are sensitive to information loss; since special tokens are few, they execute standard dense attention over all tokens with negligible overhead:
 
 $$O_{\text{spec}} = \text{softmax}\left(\frac{Q_{\text{spec}} K^T}{\sqrt{d_k}}\right) V$$
 
-Since $M_{\text{spec}}$ is small, this step incurs negligible overhead.
+The $O(n^2)$ bottleneck is caused by the vast number of image tokens; subsequent sparsification steps Target only these, preserving critical global information while cutting the bottleneck.
 
-**Dual-branch Sparse Attention for Image Tokens**: The large number of image tokens is handled via a dual-branch strategy.
+**2. Compression Branch: Coarse scene summary and guide scores**
 
-#### Compression Branch
-
-Provides an efficient coarse-grained global scene summary. $Q_{\text{img}}, K_{\text{img}}, V_{\text{img}}$ are spatially downsampled using $s \times s$ non-overlapping average pooling, yielding compressed tensors $Q_{\text{comp}}, K_{\text{comp}}, V_{\text{comp}} \in \mathbb{R}^{M'_{\text{img}} \times d}$ where $M'_{\text{img}} = M_{\text{img}} / s^2$.
-
-Attention is computed in the compressed space:
-
-$$O'_{\text{comp}} = \text{Attention}(Q_{\text{comp}}, K_{\text{comp}}, V_{\text{comp}})$$
-
-A guidance score matrix is also computed for use by the selection branch:
+$Q_{\text{img}}, K_{\text{img}}, V_{\text{img}}$ undergo $s \times s$ non-overlapping average pooling, compressing image tokens from $M_{\text{img}}$ to $M'_{\text{img}} = M_{\text{img}} / s^2$. Attention is computed in this smaller space: $O'_{\text{comp}} = \text{Attention}(Q_{\text{comp}}, K_{\text{comp}}, V_{\text{comp}})$, then upsampled back to original resolution via nearest-neighbor interpolation: $O_{\text{comp}} = \text{Upsample}(O'_{\text{comp}})$. This branch provides a coarse-grained global summary and produces a guide score matrix:
 
 $$S_{\text{guide}} = Q_{\text{comp}} K_{\text{comp}}^T \in \mathbb{R}^{M'_{\text{img}} \times M'_{\text{img}}}$$
 
-The coarse output is upsampled back to the original resolution via nearest-neighbor interpolation: $O_{\text{comp}} = \text{Upsample}(O'_{\text{comp}})$.
+It identifies which coarse regions correlate, serving as a roadmap for selecting tokens in the next step.
 
-#### Selection Branch
+**3. Selection Branch: Fetching fine-grained KV based on guide scores**
 
-Recovers fine-grained attention. Using the guidance scores $S_{\text{guide}}$, $\text{TopKSelect}(\cdot)$ identifies the most relevant coarse-region indices for each query. The corresponding $K_{\text{sel}}, V_{\text{sel}}$ are then retrieved from the full-resolution $K_{\text{img}}, V_{\text{img}}$ (queries within the same compression window share the same KV pairs):
+To recover details lost in the coarse summary, a fine-grained branch is added. For each query, $\text{TopKSelect}(\cdot)$ picks the most relevant coarse regions from $S_{\text{guide}}$. It then retrieves the corresponding $K_{\text{sel}}, V_{\text{sel}}$ from the full-resolution $K_{\text{img}}, V_{\text{img}}$ (queries within the same compression window share the same KV set to avoid redundant selection). Fine attention is computed only on this subset:
 
 $$O_{\text{sel}} = \text{Attention}(Q_{\text{img}}, K_{\text{sel}}, V_{\text{sel}})$$
 
-Each query attends to only $k \ll M_{\text{img}}$ tokens, making this step highly efficient.
+Each query effectively attends to only $k \ll M_{\text{img}}$ tokens. This translates the SfM principle—"sparse keypoints are sufficient for robust pose estimation"—to feed-forward models: look only at the right points, not the whole scene.
 
-#### Gated Aggregation
+**4. Gated Aggregation: Per-token decision between global and local**
 
-The outputs of both branches are dynamically fused via a learnable gating mechanism:
+The coarse summary and fine attention have complementary strengths. Instead of a hard choice, a learnable gate performs dynamic per-token weighting:
 
 $$g = \sigma(W_g Q_{\text{img}}), \quad O_{\text{img}} = g \odot O_{\text{comp}} + (1 - g) \odot O_{\text{sel}}$$
 
-where $\sigma$ denotes sigmoid and $W_g$ is a learned projection matrix. The model **adaptively determines** for each token whether to emphasize the global summary or local detail.
+Tokens requiring global context rely more on the compression branch, while those needing detail favor the selection branch.
 
-### Efficient Triton Kernel Implementation
+**5. Fused Triton kernel: Avoiding score matrix materialization**
 
-A naïve implementation would materialize the full $S_{\text{guide}}$ score matrix, incurring excessive memory usage. A fused GSA Triton kernel is developed that integrates a streaming Top-K algorithm into the FlashAttention workflow: score matrix tiles are computed on-chip in SRAM while simultaneously maintaining running top-k index sets, completing region selection and compressed output computation in a single pass without materializing the full score matrix.
+A naive implementation would materialize the full $S_{\text{guide}}$ matrix, exceeding VRAM on long sequences. The authors implemented a fused kernel that integrates streaming Top-K into the FlashAttention workflow. It maintains a running Top-K index set while computing scores tile-by-tile in on-chip SRAM, completing region selection and compression output in one pass without ever materializing the full matrix. This allows the theoretical sparse speedup to translate into wall-clock time.
 
-### Speed3R-VGGT Adaptation
+**6. Architecture Adaptation**
 
-VGGT treats the first frame as a global reference and employs dedicated camera tokens. To preserve reference-frame information, the selection branch attention set consists of two components:
+GSA is plug-and-play, but backbones differ. VGGT uses the first frame as a global reference and has dedicated camera tokens. To prevent reference information from being sparsified, its selection set always includes "all tokens from the reference frame + every 100th frame" as global context, overlaid with dynamic Top-K windows. $\pi^3$ has no reference frame dependencies; GSA applies directly, and the authors found that register tokens could be removed in the sparse variant without performance loss.
 
-- **Fixed global context**: all tokens from the reference frame plus tokens from every 100th frame
-- **Dynamic Top-K tokens**: key token windows from non-reference frames determined by the standard selection procedure
+### Example: Sparsifying 1024 Images
 
-### Speed3R-$\pi^3$ Adaptation
+Processing 1024 images with $\pi^3$: The dense version requires tokens to attend to all other image tokens, taking **202.39 seconds** for a forward pass. With GSA (optimal config: $4\times4$ window, top-32), the compression branch pools image tokens by $4\times4$, reducing the scale to $\approx 1/16$ for the summary. The selection branch then permits each query to pick only the 32 most relevant coarse regions. The forward pass is reduced to **16.38 seconds**, a **12.4x acceleration**, with almost no loss in pose accuracy on RE10K/CO3Dv2.
 
-$\pi^3$ has no reference frame or camera token dependencies, so GSA can be applied directly. Experiments show that the register tokens in $\pi^3$ can be removed in the sparse variant without affecting performance, further simplifying the model.
+## Loss & Training
 
-### Loss & Training
-
-- **Knowledge Distillation**: A pretrained dense model serves as the teacher; its depth and pose predictions are used as pseudo-labels to train the student (sparse model).
-- **Total Loss**: $\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{depth}} + \lambda \mathcal{L}_{\text{camera}}$
-- **Data**: A mixture of 7 datasets (ArkitScene, Scannet++, DL3DV, CO3D, Hypersim, WildRGBD, VirtualKitti2)
-- **Training Configuration**: 80 epochs (800 steps per epoch), 8× NVIDIA H20 GPUs for approximately 7 days, learning rate $1 \times 10^{-5}$, gradient accumulation factor=4 (effective batch size 32)
+Training utilizes knowledge distillation: a pre-trained dense model serves as the teacher, providing pseudo-labels for depth and pose to guide the sparse student, bypassing label noise in real datasets. The total loss is $\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{depth}} + \lambda \mathcal{L}_{\text{camera}}$. Training is conducted on a mix of 7 datasets (ArkitScene, Scannet++, DL3DV, CO3D, Hypersim, WildRGBD, VirtualKitti2) for 80 epochs, using 8× NVIDIA H20 GPUs (~7 days) with a learning rate of $1 \times 10^{-5}$ and an effective batch size of 32.
 
 ## Key Experimental Results
 
 ### Main Results: Multi-view Pose Estimation (RE10K / CO3Dv2)
 
 | Method | Sparsity (%) | RE10K AUC@30↑ | CO3Dv2 AUC@30↑ |
-|--------|--------------|---------------|----------------|
+|------|-----------|---------------|----------------|
 | VGGT (dense) | 0 | 74.17 | 88.33 |
 | Block Sparse-VGGT | 75 | 63.82 | 79.92 |
 | FastVGGT | 82 | 69.99 | 84.03 |
-| **Speed3R-VGGT** | **84** | **74.81** | **87.71** |
+| **Speed3R-VGGT (Ours)** | **84** | **74.81** | **87.71** |
 | $\pi^3$ (dense) | 0 | 87.37 | 89.67 |
 | Block Sparse-$\pi^3$ | 75 | 75.39 | 80.72 |
 | FastVGGT-$\pi^3$ | 90 | 86.04 | 86.39 |
-| **Speed3R-$\pi^3$** | **94** | **87.17** | **89.41** |
+| **Speed3R-$\pi^3$ (Ours)** | **94** | **87.17** | **89.41** |
 
 **Key Findings**:
+- Speed3R-VGGT **outperforms the dense VGGT baseline** on RE10K at 84% sparsity (74.81 vs 74.17).
+- Speed3R-$\pi^3$ matches dense $\pi^3$ performance at 94% sparsity.
+- Consistently outperforms training-free competitive methods at all sparsity levels.
 
-- Speed3R-VGGT at 84% sparsity **surpasses the dense VGGT baseline** on RE10K (74.81 vs. 74.17)
-- Speed3R-$\pi^3$ at 94% sparsity nearly matches the performance of dense $\pi^3$
-- Consistently outperforms training-free competitors at all sparsity levels
-
-### Long-sequence Pose Estimation (Tanks & Temples, avg. 300 images/scene)
+### Long Sequence Pose Estimation (Tanks & Temples, ~300 images/scene)
 
 | Method | RRA@5↑ | RTA@5↑ | AUC@30↑ | Time (s)↓ |
-|--------|--------|--------|---------|-----------|
+|------|--------|--------|---------|----------|
 | VGGT (dense) | 70.29 | 79.30 | 77.67 | 34.51 |
 | Block Sparse-VGGT | 66.83 | 71.29 | 74.15 | 10.79 |
 | FastVGGT | 69.28 | 77.98 | 76.29 | 15.98 |
-| **Speed3R-VGGT** | **69.51** | **77.81** | **76.57** | **6.55** |
+| **Speed3R-VGGT (Ours)** | **69.51** | **77.81** | **76.57** | **6.55** |
 | $\pi^3$ (dense) | 72.14 | 81.26 | 79.63 | 22.32 |
 | Block Sparse-$\pi^3$ | 67.85 | 78.91 | 76.64 | 8.16 |
 | FastVGGT-$\pi^3$ | 69.78 | 79.51 | 77.76 | 11.96 |
-| **Speed3R-$\pi^3$** | **70.72** | **80.72** | **79.77** | **4.19** |
+| **Speed3R-$\pi^3$ (Ours)** | **70.72** | **80.72** | **79.77** | **4.19** |
 
-**Key Findings**: Speed3R-$\pi^3$ achieves the best results among sparse methods on all metrics while being the fastest (4.19s), **5.3×** faster than dense $\pi^3$.
+**Key Findings**: Speed3R-$\pi^3$ achieves the best performance among sparse methods while being the fastest (4.19s), **5.3x faster** than dense $\pi^3$.
 
 ### Ablation Study (Speed3R-$\pi^3$, T&T Dataset)
 
-| Configuration | RE10K AUC@30↑ | T&T AUC@30↑ | Time (s)↓ |
-|---------------|---------------|-------------|-----------|
+| Config | RE10K AUC@30↑ | T&T AUC@30↑ | Time (s)↓ |
+|------|---------------|-------------|----------|
 | Base (4×4 window, top-32) | 86.35 | 78.69 | 4.19 |
-| (1) Remove compression branch Value | 86.29 | 77.90 | 3.99 |
-| (2) Remove selection branch | 83.44 | 76.84 | 3.56 |
+| (1) Remove Compression Value | 86.29 | 77.90 | 3.99 |
+| (2) Remove Selection Branch | 83.44 | 76.84 | 3.56 |
 | (4) Top-8 | 85.37 | 78.17 | 3.72 |
 | (5) Top-16 | 85.98 | 78.55 | 3.92 |
 | (6) Top-64 | 86.42 | 78.90 | 4.64 |
 | (7) 8×8 window | 86.49 | 78.71 | 5.27 |
-| (8) Without knowledge distillation | 85.18 | 77.81 | 4.19 |
+| (8) No Knowledge Distillation | 85.18 | 77.81 | 4.19 |
 
 **Key Findings**:
-
-- **Selection branch is essential**: Removing it causes large drops on both datasets (RE10K −2.91, T&T −1.85)
-- **Compression branch matters for long sequences**: Removing its Value has negligible effect on short sequences but hurts long sequences (T&T −0.79)
-- **Knowledge distillation is critical**: Removing it reduces RE10K by 1.17 and T&T by 0.88, demonstrating its effectiveness in mitigating noisy labels in real-world datasets
-- **4×4 window + top-32 is the optimal trade-off**: top-8/16 are insufficient in accuracy; top-64 and 8×8 windows offer marginal gains at higher cost
+- **Selection branch is core**: Accuracy drops significantly without it (RE10K -2.91, T&T -1.85).
+- **Compression branch matters for long sequences**: Removing Value hurts long sequences (T&T -0.79).
+- **Knowledge distillation is vital**: Effectively mitigates noisy labels in real datasets.
+- **4×4 window + top-32 is the sweet spot**: Best balance between precision and speed.
 
 ### Inference Latency Comparison
 
 | Sequence Length | 32 | 64 | 128 | 256 | 512 | 1024 |
-|-----------------|-----|------|------|------|------|-------|
+|---------|-----|------|------|------|------|-------|
 | Full Attn. ($\pi^3$) | 0.50s | 1.31s | 3.97s | 13.41s | 50.01s | 202.39s |
-| Block Sparse | 0.46s | 0.85s | 1.69s | 3.77s | 9.64s | 29.58s |
-| FastVGGT | 0.44s | 0.88s | 1.96s | 4.95s | 14.13s | 45.49s |
-| **Speed3R** | **0.37s** | **0.71s** | **1.44s** | **3.06s** | **6.83s** | **16.38s** |
+| **Speed3R (Ours)** | **0.37s** | **0.71s** | **1.44s** | **3.06s** | **6.83s** | **16.38s** |
 
-At 1024 images, Speed3R requires only 16.38s vs. 202.39s for the dense model, yielding a **12.4× speedup**.
-
-### Test-time Adaptation (Tanks & Temples)
-
-Training uses top-32; increasing top-k at inference continuously improves long-sequence performance. At top-128, RTA@5 reaches 82.00, **surpassing the dense model** (81.26), and AUC@30 reaches 80.33, also exceeding the dense model (79.63), with a runtime of only 6.07s.
+At 1024 images, Speed3R achieves a **12.4x** speedup over the dense model.
 
 ## Highlights & Insights
 
-- **Bridging Classical and Modern Methods**: Combines the SfM insight that sparse keypoints suffice for robust pose estimation with LLM sparse attention techniques, yielding a trainable sparse attention mechanism tailored to 3D reconstruction.
-- **Coarse-to-fine Dual-branch Design**: The compression branch establishes global understanding, which then guides the selection branch to focus on critical regions, balancing global coverage with local precision.
-- **End-to-end Trainability**: Offers a significant advantage over training-free methods such as FastVGGT and Block-Sparse through joint optimization.
-- **General Plug-and-play Applicability**: Successfully adapted to both VGGT and $\pi^3$ architectures, demonstrating strong generalizability.
-- **Custom Triton Kernel**: Fuses Top-K with FlashAttention for efficient memory access, avoiding materialization of the full score matrix.
+- **Fusion of Classic and Modern**: Combines SfM insights with LLM sparse attention for 3D reconstruction.
+- **Coarse-to-Fine Dual Branch**: Compression branch builds global understanding $\rightarrow$ Selection branch focuses on key regions.
+- **End-to-End Trainable**: Optimization during training provides a significant advantage over training-free methods.
+- **Plug-and-Play**: Generalizes across both VGGT and $\pi^3$ architectures.
+- **Custom Triton Kernel**: Efficient VRAM access via fused Top-K + FlashAttention.
 
 ## Limitations & Future Work
 
-1. **Short-sequence Accuracy Gap**: A performance gap relative to dense models remains under strict thresholds (AUC@5), as high-precision pose regression is particularly challenging for sparse methods.
-2. **Memory Overhead**: The dual-branch GSA architecture incurs a **15% memory overhead** compared to full attention, limiting a single 80GB GPU to at most 1024 images.
-3. **Dependence on Pretrained Dense Models**: The knowledge distillation strategy requires a high-quality dense teacher, increasing training pipeline complexity.
-4. **Pose Regression vs. Generative Tasks**: The high numerical precision demanded by pose regression makes 3D reconstruction less amenable to sparse attention than text or image generation.
+1. **Short Sequence Accuracy Gap**: A gap remains under strict thresholds (AUC@5) compared to dense models.
+2. **VRAM Overhead**: The dual-branch architecture adds **15% memory overhead** compared to standard attention.
+3. **Teacher Model Dependency**: Requires a high-quality pre-trained dense model for distillation.
+4. **Pose Precision Sensitivity**: Pose regression is more sensitive to sparsity than generation tasks.
 
 ## Rating
 
-⭐⭐⭐⭐ — The first trainable sparse attention method targeting feed-forward 3D reconstruction, with a practically significant 12.4× speedup, an elegant dual-branch design, and thorough ablations. However, accuracy gaps remain under strict short-sequence metrics, and the approach is inherently constrained by the high-precision demands of pose regression in 3D reconstruction.
+⭐⭐⭐⭐ — The first trainable sparse attention method specifically for feed-forward 3D reconstruction. The 12.4x speedup is of significant practical value, and the dual-branch design is elegant and well-ablated.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
+
+- VGGT: Very General Geometry Transformer, 2024.
+- $\pi^3$: Pose-Invariant Point-based Progressive reconstruction, 2025.
+- FastVGGT: Efficient Feed-forward 3D Reconstruction, 2024.
+
+</div>
+<!-- RELATED:END -->
 
 ## Related Papers
 
 - [\[CVPR 2026\] VGG-T3: Offline Feed-Forward 3D Reconstruction at Scale](vgg-t3_offline_feed-forward_3d_reconstruction_at_scale.md)
+- [\[CVPR 2026\] AMB3R: Accurate Feed-forward Metric-scale 3D Reconstruction with Backend](amb3r_accurate_feed-forward_metric-scale_3d_reconstruction_with_backend.md)
 - [\[CVPR 2026\] PanoVGGT: Feed-Forward 3D Reconstruction from Panoramic Imagery](panovggt_feed-forward_3d_reconstruction_from_panoramic_imagery.md)
-- [\[CVPR 2026\] MoRe: Motion-aware Feed-forward 4D Reconstruction Transformer](more_motion-aware_feed-forward_4d_reconstruction_transformer.md)
 - [\[ICML 2026\] Trust3R: Evidential Uncertainty for Feed-Forward 3D Reconstruction](../../ICML2026/3d_vision/trust_it_or_not_evidential_uncertainty_for_feed-forward_3d_reconstruction_with_t.md)
-- [\[CVPR 2026\] Particulate: Feed-Forward 3D Object Articulation](particulate_feed-forward_3d_object_articulation.md)
+- [\[CVPR 2026\] Z-Order Transformer for Feed-Forward Gaussian Splatting](z-order_transformer_for_feed-forward_gaussian_splatting.md)
 
 </div>
 

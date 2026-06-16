@@ -2,19 +2,14 @@
 title: >-
   [Paper Note] Embodied Task Planning via Graph-Informed Action Generation with Large Language Models
 description: >-
-  [ICML 2026][Robotics][Embodied Planning] GiG equips LLM planners with a "Graph-in-Graph" dual-layer memory (Scene Graph + State Transition Graph) + GNN encoding + 1-step lookahead. This enables the embodied agent to impr…
+  [ICML 2026][Robotics & Embodied AI][Bounded Lookahead] GiG equips the LLM planner with "graph-in-graph" dual-layer memory (Scene Graph + State Transition Graph) + GNN encoding + 1-step lookahead, improving Pass@1 by 6–37 percentage points over ReCAP on Robotouille (Sync/Async) and ALFWorld.
 tags:
-  - "ICML 2026"
-  - "Robotics"
-  - "Embodied Planning"
-  - "Graph Memory"
-  - "GNN Encoding"
-  - "Bounded Lookahead"
-  - "Experience Retrieval"
+  - ICML 2026
+  - Robotics & Embodied AI
+  - Bounded Lookahead
 date: 2026-05-08
-content_hash: 9281572d9d6028bf
+content_hash: 5d73604ae98313e4
 ---
-
 # Embodied Task Planning via Graph-Informed Action Generation with Large Language Models
 
 **Conference**: ICML 2026  
@@ -24,59 +19,87 @@ content_hash: 9281572d9d6028bf
 **Keywords**: Embodied Planning, Graph Memory, GNN Encoding, Bounded Lookahead, Experience Retrieval
 
 ## TL;DR
-GiG equips LLM planners with a "Graph-in-Graph" dual-layer memory (Scene Graph + State Transition Graph) + GNN encoding + 1-step lookahead. This enables the embodied agent to improve Pass@1 by 6–37 percentage points over ReCAP on synchronous/asynchronous Robotouille and ALFWorld tasks.
+GiG equips the LLM planner with "graph-in-graph" dual-layer memory (Scene Graph + State Transition Graph) + GNN encoding + 1-step lookahead, improving Pass@1 by 6–37 percentage points over ReCAP on Robotouille (Sync/Async) and ALFWorld.
 
 ## Background & Motivation
 
-**Background**: When LLMs are used as the "brain" for embodied agents, mainstream approaches involve interleaved action-observation generation like ReAct/Reflexion, or hierarchical decomposition and backtracking using context trees like ReCAP.
+**Background**: When LLMs are utilized as the "brains" of embodied agents, mainstream approaches involve interleaved action-observation generation like ReAct/Reflexion, or hierarchical decomposition with backtracking using context trees like ReCAP.
 
-**Limitations of Prior Work**: Pure text interleaving stuffs all history into the prompt, leading to *context drift* over long horizons—once the window is flushed, high-level goals are lost, and the agent begins to oscillate or produce contradictory actions. ReCAP’s context tree strictly serializes parallelizable subtasks; for instance, while "making soup," the sibling subtask of "setting the table" is blocked by the tree structure while waiting for water to boil, causing the agent to idle.
+**Limitations of Prior Work**: Pure text interleaving stuffs all history into the prompt, leading to *context drift* in long horizons—high-level goals are lost once the window is flushed, and agents start stalling or generating contradictory actions. Meanwhile, ReCAP's context tree forces parallelizable subtasks into rigid sequences; for instance, while "cooking soup" is waiting for water to boil, the sibling task "setting the table" is blocked by the tree structure, causing the agent to wait idly.
 
-**Key Challenge**: Long-horizon planning must simultaneously satisfy three conflicting requirements: (i) persistent visibility of high-level intentions, (ii) free interleaving of sibling/parallel subtasks, and (iii) compact, retrievable state representations. Linear history fails (i)+(iii), while tree structures fail (ii).
+**Key Challenge**: Long-horizon planning must simultaneously satisfy three conflicting requirements: (i) persistent visibility of high-level intent, (ii) free interleaving of sibling/parallel subtasks, and (iii) compact, retrievable state representations. Linear history fails (i)+(iii), while trees fail (ii).
 
-**Goal**: To replace the agent's working memory with a structured container that can compress observations, represent parallel dependencies, and retrieve past successful experiences based on structural similarity.
+**Goal**: Transform the agent's working memory into a structured container that can compress observations, represent parallel dependencies, and retrieve past successful experiences by structural similarity.
 
-**Key Insight**: The authors observe that embodied scenes are naturally graphs (object-relation), while action sequences are naturally another layer of graphs (state-transition). By nesting scene graphs within a state transition graph, one captures both spatial structure and temporal dynamics simultaneously.
+**Key Insight**: Embodied scenes are naturally graphs (object-relation), and action sequences are naturally another layer of graphs (state-transition). Nesting the scene graph within the state transition graph captures both spatial structure and temporal dynamics.
 
-**Core Idea**: Use GNNs to compress the scene graph at each step into an embedding node, with nodes connected by edges representing actually executed actions to form an episodic memory graph. During new decisions, successful past trajectories are retrieved from the memory bank via embedding similarity to serve as in-context demonstrations, overlaid with 1-step transition simulation for a "look-before-you-leap" approach.
+**Core Idea**: GNNs are used to compress each step's scene graph into embedding nodes, while executed actions serve as edges to form an episodic memory graph. During new decisions, successful past trajectories are retrieved from the memory bank as in-context demonstrations based on embedding similarity, supplemented by 1-step transition simulation for "look-before-you-leap" selection.
 
 ## Method
 
 ### Overall Architecture
-The operating unit of GiG is a five-step loop: (Observation → Parsing → Encoding → Retrieval → Action Selection). The input at each step $t$ is the environment observation $o_t$, and the output is the action $a_t$. Two layers of graphs are maintained:
+GiG operates in a five-step loop: (Observation → Parsing → Encoding → Retrieval → Action Selection). For each step t, the input is the environment observation $o_t$, and the output is the action $a_t$. Two layers of graphs are maintained:
 
-- **Inner Scene Graph** $SG_t=(V_t,E_t)$: Nodes are entities (objects/robot), and edges are spatial relations (e.g., "cheese1 on-top-of table1"), constructed from raw observations by a deterministic or LLM-based parser.
-- **Outer State Transition Graph** $OG$: Nodes are fixed-length embeddings $z_t$ compressed from $SG_t$ by a GNN, and edges are actions $a_t$ actually executed by the agent, forming a chain like $z_1 \xrightarrow{a_1} z_2 \xrightarrow{a_2} \cdots$.
+- **Inner Scene Graph** $SG_t=(V_t,E_t)$: Nodes are entities (objects/robots) and edges are spatial relations (e.g., "cheese1 on-top-of table1"), constructed via a deterministic or LLM-based parser.
+- **Outer Observation Graph** $OG$: Nodes are fixed-length embeddings $z_t$ compressed from $SG_t$ by a GNN, and edges are actually executed actions $a_t$, forming a chain $z_1 \xrightarrow{a_1} z_2 \xrightarrow{a_2} \cdots$.
 
-The memory bank $M=\{E_j\}$ stores several successful historical trajectories (each being an OG + target $G_j$). For a new step, the current $z_t$ is used to query $M$; if a similar past state is found, the subsequent actions are fed back to the LLM as soft prompts.
+The memory bank $M=\{E_j\}$ stores successful historical trajectories (each an OG + goal $G_j$). At each new step, the current $z_t$ is used to query $M$; hits for similar past states inject subsequent actions as soft prompts. Simultaneously, the BL module enumerates the 1-step successors of valid actions and checks for cycles against previously visited states within the session. These three contexts are concatenated into the prompt for the LLM to perform discriminative selection.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 26, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    O["Environment Observation o_t"] --> SP["Scene Parser → Scene Graph SG_t (Inner Graph)"]
+    subgraph GIG["Graph-in-Graph Dual-Layer Memory + GNN Encoding (Design 1)"]
+        direction TB
+        SP --> GNN["GAT Aggregates Neighbors + mean-pool<br/>Compressed to fixed-length embedding z_t"]
+        GNN --> OG["State Transition Graph OG (Outer Graph)<br/>Nodes=z_t, Edges=Executed Actions"]
+    end
+    GNN --> BL["Bounded Lookahead (Design 2)<br/>Enumerate actions, use T to compute 1-step successor P(s_t)"]
+    subgraph EXP["Experience Retrieval + Loop Detection (Design 3)"]
+        direction TB
+        RET["Similarity Retrieval<br/>Faiss Nearest Neighbor, inject trajectory if dist < τ"]
+        LD["Loop Detection<br/>Warning if z_t hits existing graph in session"]
+    end
+    GNN --> RET
+    OG --> LD
+    BL --> LLM
+    RET --> LLM
+    LD --> LLM
+    LLM["LLM Discriminative Action Selection<br/>Condition = SG_t + P(s_t) + Retrieval + Goal"] --> ACT["Execute Action a_t"]
+    ACT -->|Update OG + Next Obs| O
+    ACT -->|Success| M["Write to Experience Memory M"]
+```
 
 ### Key Designs
 
-1. **Graph-in-Graph Dual-Layer Memory + GNN Encoding**:
-    - **Function**: Compresses raw observations at each step into structure-aware embeddings and organizes the entire trajectory into a retrievable graph.
-    - **Mechanism**: Initial features of scene graph nodes are initialized with a lightweight sentence encoder and aggregated via multi-layer GAT: $h_u^{(l)}=\sigma\big(\sum_{v\in N(u)}\alpha_{u,v}W^{(l)}h_v^{(l-1)}\big)$. Finally, $z_t$ is obtained via mean-pooling + BatchNorm. Training employs triplet loss + uniformity regularization $L=L_{triplet}+\lambda L_{uniformity}$. Anchors/positives are sampled from adjacent steps in the same OG, while negatives are sampled across OGs, assuming "gradual physical state changes → temporally adjacent embeddings should be closer." This naturally separates intra-trace distances (<0.1) from inter-trace distances (~0.8), leading to a retrieval threshold of $\tau=0.1$.
-    - **Design Motivation**: Compared to flattening scene graphs into text prompts, structured embeddings retain topology (e.g., vertical dependencies like "patty on bun" are highlighted by attention) and compress variable-length observations into fixed-length vectors, curing context drift.
+**1. Graph-in-Graph Dual-Layer Memory + GNN Encoding: Compressing observations into structure-aware embeddings and organizing trajectories into retrievable graphs.**
 
-2. **Bounded Lookahead (BL) Module**:
-    - **Function**: Switches the LLM from "imagining the future" to "choosing from future results," eliminating hallucinatory actions that violate dynamics.
-    - **Mechanism**: When the dynamics $T$ are known (e.g., PDDL descriptions in Robotouille), the current valid action set $A(s_t)$ is enumerated. $T$ is called to calculate successor states, yielding a projection set $P(s_t)=\{(a,s')\mid a\in A(s_t),\ s'=T(s_t,a)\}$. $P(s_t)$, the current $SG_t$, retrieved experience $R_{z_t}$, and goal $G$ are concatenated into a prompt, allowing the LLM to perform discriminative selection over explicit successors: $a_{t+1}\sim \text{LLM}(\text{Prompt}\mid SG_t,P(s_t),R_{z_t},G)$. In partially observable environments like ALFWorld where $T$ is unavailable, $P(s_t)=\emptyset$, and the framework automatically falls back to pure graph + experience.
-    - **Design Motivation**: $A(s)$ is typically a small finite set in task planning; enumerating 1 step is computationally feasible. This shifts the risk of "trusting LLM imagination" to actual dynamics while exposing only 1-step successors (rather than a full search tree) to ensure stable latency.
+Linear history fails to provide "persistent intent visibility + compact retrieval," and trees cannot handle "parallel subtask interleaving." GiG resolves this by nesting two layers: inner scene graph nodes are initialized with lightweight sentence encoders and updated via multi-layer GAT neighbor aggregation $h_u^{(l)}=\sigma\big(\sum_{v\in N(u)}\alpha_{u,v}W^{(l)}h_v^{(l-1)}\big)$, finally compressed via mean-pool + BatchNorm into a fixed-length embedding $z_t$. The outer graph uses $z_t$ as nodes and executed actions as edges: $z_1 \xrightarrow{a_1} z_2 \xrightarrow{a_2} \cdots$.
 
-3. **Structure-Similarity Based Experience Retrieval + Loop Detection**:
-    - **Function**: Uses past successful trajectories as one-shot demonstrations and actively stops the agent when it revisits old states.
-    - **Mechanism**: All $(z,a)$ pairs from 50 successful Qwen3-235B trajectories are indexed in Faiss. At each step, $z_t$ is used to find the nearest neighbor $(z_k,d)$. If $d<\tau=0.1$, the subsequent sub-trajectory $R_{z_t}=[a_{k,m},a_{k,m+1},\dots]$ (effectively just the immediate next action) is injected into the prompt. Simultaneously, the OG of the current session is maintained separately; $z_t$ is compared against existing nodes at every step. A hit triggers *Loop Detection*, where the cyclical path is written into the prompt to warn the LLM ("You just looped through stack→unstack→stack").
-    - **Design Motivation**: Since queries use local scene structure similarity rather than task text, they enable cross-task transfer—an "action chain" of "cut→pick→place" learned during "making a sandwich" can be reused for "making a burger," with the LLM acting as a semantic filter to decide whether to adopt it.
+Training utilizes triplet loss + uniformity regularization $L=L_{triplet}+\lambda L_{uniformity}$. Anchors/positives are from adjacent steps in the same trajectory, while negatives are sampled across trajectories. The hypothesis is "smooth physical state changes → temporally adjacent embeddings should be closer." The learned embeddings show intra-trace distances <0.1 vs. inter-trace distances ~0.8, justifying the retrieval threshold $\tau=0.1$. Compared to flattening scenes into text, structured embeddings preserve topology and resolve context drift.
+
+**2. Bounded Lookahead (BL) Module: Shifting LLMs from "imagining the future" to "selecting from real successors."**
+
+LLMs often hallucinate actions that violate physics when "daydreaming" consequences. When dynamics $T$ are known (as in Robotouille via PDDL), BL enumerates the valid action set $A(s_t)$, invokes $T$ for each to compute successors, and yields a projection set $P(s_t)=\{(a,s')\mid a\in A(s_t),\ s'=T(s_t,a)\}$. This is then fed into the prompt, allowing the LLM to perform discriminative selection $a_{t+1}\sim \text{LLM}(\text{Prompt}\mid SG_t,P(s_t),R_{z_t},G)$. In environments like ALFWorld where $T$ is unavailable, the framework falls back to pure graph + experience.
+
+This transfer of risk from LLM "imagination" to actual dynamics, while only exposing 1-step successors, avoids full search trees. Since $A(s)$ is typically a small finite set in task planning, the overhead and latency remain stable. Essentially, the world model is used as a discriminator rather than a searcher.
+
+**3. Structurally Similar Experience Retrieval + Loop Detection: Using past success trajectories as demos and actively stopping cycles.**
+
+All $(z,a)$ pairs from 50 successful Qwen3-235B trajectories are indexed in Faiss. At each step, $z_t$ is used to find the nearest neighbor $(z_k,d)$. If $d<\tau=0.1$, the subsequent sub-trajectory (effectively the next action) is injected as a one-shot demonstration. Simultaneously, the current session's state transition graph is monitored; if $z_t$ matches an existing node, Loop Detection triggers a prompt warning: "You just looped through stack→unstack→stack."
+
+Critically, retrieval is based on local scene structure similarity rather than task text, allowing cross-task transfer—an action chain like "cut→pick→place" learned for a "sandwich" can be reused for a "burger," with the LLM acting as a semantic filter for adoption. This makes the experience memory a model-agnostic plugin: trajectories collected by large models can directly boost the performance of smaller models.
 
 ### Loss & Training
-Only the GNN requires training; the LLM remains fully frozen. GNN loss is $L=L_{triplet}+\lambda L_{uniformity}$ with a triplet margin $\gamma=1.0$. The uniformity term is the mean of the squared cosine similarity of all pairs to prevent embedding collapse. All evaluations use a temperature of 0, a maximum generation limit of 4096 tokens, and a unified Pass@1 protocol (single execution, no retries or ensembles).
+Only the GNN requires training; the LLM remains frozen. GNN loss is $L=L_{triplet}+\lambda L_{uniformity}$ with triplet margin $\gamma=1.0$. Uniformity is the mean of squared cosine similarities between all pairs to prevent embedding collapse. Evaluation uses temperature 0, a 4096 token limit, and the Pass@1 protocol.
 
 ## Key Experimental Results
 
 ### Main Results
-Evaluated on three embodied planning benchmarks, comparing GiG / GiG+Exp / ReCAP / ReAct / CoT across different LLM backends.
+Tested across three embodied planning benchmarks. Every LLM backend compares GiG / GiG+Exp against ReCAP / ReAct / CoT.
 
 | Dataset | Backend | GiG | GiG+Exp | Prev. SOTA | Gain |
-|---------|---------|-----|---------|------------|------|
+|--------|------|-----|---------|----------|------|
 | Robotouille Sync | Qwen3-235B | 93 | 97 | 74 (ReAct) | +19 / +23 |
 | Robotouille Sync | DeepSeek-R1 | 91 | 88 | 72 (ReCAP) | +19 |
 | Robotouille Async | Qwen3-235B | 72 | 82 | 35 (ReCAP) | +37 / +47 |
@@ -84,45 +107,45 @@ Evaluated on three embodied planning benchmarks, comparing GiG / GiG+Exp / ReCAP
 | ALFWorld | Qwen3-235B | 97 | – | 91 (ExpeL) | +6 |
 | ALFWorld | DeepSeek-R1 | 97 | – | 82 (ReCAP) | +15 |
 
-Asynchronous tasks showed the largest gains due to the need for concurrency management. In ALFWorld, due to object location randomization, the authors disabled experience memory; however, aggregation via the dual-layer graph alone still achieved 97%.
+Asynchronous tasks showed the largest gains due to concurrency management needs. ALFWorld, despite object randomization, achieved 97% even without experience memory, relying solely on dual-layer graph aggregation.
 
 ### Ablation Study
 
 | Configuration | Robotouille Sync (Qwen3-30B) | Description |
-|---------------|------------------------------|-------------|
-| ReCAP baseline | 19 | Tree-based context + backtracking |
-| ReAct baseline | 28 | Action-observation interleaving |
-| GiG (No Exp) | 27 | Dual-layer graph + BL only, surpasses ReCAP |
-| GiG + Exp | 42 | Experience memory adds +15 absolute points |
-| GiG + Exp (Gemini-Flash-Lite) | 26 | Small model gains +7 under same config |
+|------|------------------------------|------|
+| ReCAP baseline | 19 | Tree context + backtracking |
+| ReAct baseline | 28 | action-observation interleaving |
+| GiG (No Exp) | 27 | Only dual-layer graph + BL; outperforms ReCAP |
+| GiG + Exp | 42 | +15 absolute points with experience memory |
+| GiG + Exp (Gemini-Flash-Lite) | 26 | Small model +7 gain under same config |
 
 ### Key Findings
-- **Experience memory as a model-agnostic plug-in** is the most significant factor: trajectories collected by Qwen3-235B can be fed directly to Qwen3-30B or Gemini-Flash-Lite for inference, yielding absolute gains of +7 to +15 without fine-tuning.
-- While GiG appears to have a "higher step count than baselines" on difficult tasks, this is because baselines simply fail those tasks; when including failed trials, GiG's average step count is lower, indicating a robust tradeoff: "preferring more steps to finish rather than failing early."
-- The separation between intra-trace distance (<0.1) and inter-trace distance (~0.8) (Fig. 3) proves that the embeddings learned via GAT+triplet can distinguish different trajectories while identifying adjacent states, providing the underlying basis for using $\tau=0.1$ as a threshold.
+- Experience memory is highly effective as a model-agnostic plug-in: trajectories collected by Qwen3-235B directly fed into Qwen3-30B/Gemini-Flash-Lite yielded +7~+15 absolute gains without fine-tuning.
+- On difficult tasks, GiG takes more steps than baselines, which seems contradictory but is because baselines fail entirely. Including failed trials, GiG's average step count is lower, representing a robust trade-off: "take a few more steps to ensure completion."
+- The separation between intra-trace distance (<0.1) and inter-trace (~0.8) proves that GAT+triplet learns embeddings that distinguish trajectories while identifying adjacent states, justifying $\tau=0.1$.
 
 ## Highlights & Insights
-- Using "graphs as memory containers" in a dual-layer fashion is the true differentiator: the inner layer handles observation "compression," while the outer layer handles action "concurrency." This adds a temporal dimension compared to pure Graph RAG (PoG/HiRAG) and provides more parallel expressivity than ReCAP's trees.
-- The design philosophy of the BL module is noteworthy: "Do not let the LLM imagine consequences; let it choose based on real ones." By exposing only 1-step successors rather than a full search tree, the world model acts as a discriminator rather than a searcher, keeping latency controlled while drastically reducing error rates.
-- The model-agnostic nature of experience memory is highly valuable for industrial deployment: the paradigm of large model collection + small model inference can be directly applied to any embodied LLM agent without retraining.
+- Using "graphs as memory containers" with two layers is the true differentiator: the inner layer handles observation "compression," while the outer layer handles action "concurrency." This adds a temporal dimension compared to pure Graph RAG (PoG/HiRAG) and superior parallel expression compared to ReCAP's trees.
+- The BL module philosophy: "Don't ask the LLM to imagine consequences; let it choose from real ones." By exposing only 1-step successors rather than a full tree, the world model functions as a discriminator, keeping latency low and hallucination rates minimal.
+- The model-agnostic nature of experience memory is highly valuable for industrial deployment: the paradigm of "large model collection + small model inference" can be applied to any embodied LLM agent without retraining.
 
 ## Limitations & Future Work
-- The scene parser currently relies on a deterministic parser (dependent on PDDL or environment metadata); transitioning to real visual embodied environments would require a robust VLM parser, which is not empirically validated in this paper.
-- The BL module requires an explicit transition function $T$, failing which it must degrade; the use of learned world models as a replacement remains unverified.
-- Experience memory was manually disabled for ALFWorld's randomized layouts, suggesting that structural similarity is sensitive to "geometric rearrangement," leaving the cross-layout transfer capability in question.
-- The initial memory bank size of 50 trajectories is small; the study does not discuss how retrieval quality or latency would change if the memory bloats to thousands of entries.
+- The scene parser currently relies on a deterministic parser (dependent on PDDL or environment metadata); robust VLM parsers are needed for real visual environments, which were not validated.
+- The BL module requires an explicit transition function $T$; without it, the module degrades. The use of learned world models as a substitute remains unverified.
+- Experience memory was disabled for ALFWorld due to object randomization, suggesting structural similarity is sensitive to "geometric rearrangement," and cross-layout transfer remains questionable.
+- The initial memory bank of 50 trajectories is small; the impact of memory bloat (thousands of trajectories) on retrieval quality and latency was not discussed.
 
 ## Related Work & Insights
-- **vs ReCAP (2025b)**: Both use structured memory, but ReCAP uses trees for recursive decomposition + backtracking, whereas GiG uses graphs for parallel scheduling + experience reuse. ReCAP performs close to GiG in sync tasks but is outperformed by 30+ points in async tasks, confirming that "trees cannot handle concurrency."
-- **vs ReAct / Reflexion**: Pure action-observation interleaving leaves all context in the prompt, leading to inevitable drift over long horizons; GiG compresses context into graph nodes, keeping the prompt short.
-- **vs ExpeL**: ExpeL distills textual insights for retrieval, which struggles with ALFWorld's random layouts; GiG's graph structure similarity still works across layouts (though the authors admit it is more stable without Exp on ALFWorld).
-- **vs GraphRAG / PoG / HiRAG**: These involve QA retrieval over static KGs; GiG translates Graph RAG concepts to embodied dynamic scenarios where the KG grows dynamically.
+- **vs ReCAP (2025b)**: Both use structured memory, but ReCAP uses trees for recursive decomposition + backtracking, while GiG uses graphs for parallel scheduling + experience reuse. While ReCAP is close on sync tasks, GiG leads by 30+ points on async tasks, confirming "trees block concurrency."
+- **vs ReAct / Reflexion**: Pure action-observation interleaving leaves all context in the prompt, leading to drift in long horizons; GiG compresses context into graph nodes, keeping the prompt short.
+- **vs ExpeL**: ExpeL distills textual insights for retrieval, which struggles with ALFWorld's random layouts; GiG's structural similarity works better across layouts (though even the authors found it more stable without Exp on ALFWorld).
+- **vs GraphRAG / PoG / HiRAG**: These focus on QA over static KGs; GiG brings Graph RAG to embodied dynamic scenarios where the KG grows dynamically.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ Graph-in-Graph is a clean abstraction that unifies scene structure and dynamics into a retrievable container—an independent innovation.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Covers 3 benchmarks × 5 LLMs × 4 baselines, including small model plug-in tests, though verification in real visual embodied environments is missing.
-- **Writing Quality**: ⭐⭐⭐⭐ Algorithm 1 and Figure 2 clearly explain the pipeline with consistent mathematical notation.
-- **Value**: ⭐⭐⭐⭐ Substantial Pass@1 improvements and the model-agnostic memory plug-in are deployment-friendly. The structured memory research line is worth following.
+- Novelty: ⭐⭐⭐⭐ Graph-in-Graph is a clean abstraction, unifying scene structure and dynamics in a retrievable container.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Three benchmarks × 5 LLMs × 4 baselines, including small model plug-in tests, though missing real-world visual validation.
+- Writing Quality: ⭐⭐⭐⭐ Algorithm 1 and Figure 2 explain the pipeline clearly with consistent notation.
+- Value: ⭐⭐⭐⭐ Significant Pass@1 improvements and the model-agnostic memory plugin are deployment-friendly. The structured memory path is worth following.
 
 <!-- RELATED:START -->
 
@@ -131,10 +154,10 @@ Asynchronous tasks showed the largest gains due to the need for concurrency mana
 ## Related Papers
 
 - [\[ICML 2026\] Embodied Interpretability: Linking Causal Understanding to Generalization in Vision-Language-Action Models](embodied_interpretability_linking_causal_understanding_to_generalization_in_visi.md)
+- [\[CVPR 2026\] RoboAgent: Chaining Basic Capabilities for Embodied Task Planning](../../CVPR2026/robotics/roboagent_chaining_basic_capabilities_for_embodied_task_planning.md)
+- [\[NeurIPS 2025\] ESCA: Contextualizing Embodied Agents via Scene-Graph Generation](../../NeurIPS2025/robotics/esca_contextualizing_embodied_agents_via_scene-graph_generation.md)
 - [\[ICML 2026\] Contrastive Representation Regularization for Vision-Language-Action Models](contrastive_representation_regularization_for_vision-language-action_models.md)
 - [\[ICML 2026\] LangForce: Bayesian Decomposition of Vision-Language-Action Models via Latent Action Queries](langforce_bayesian_decomposition_of_vision_language_action_models_via_latent_act.md)
-- [\[NeurIPS 2025\] ESCA: Contextualizing Embodied Agents via Scene-Graph Generation](../../NeurIPS2025/robotics/esca_contextualizing_embodied_agents_via_scene-graph_generation.md)
-- [\[CVPR 2026\] RoboAgent: Chaining Basic Capabilities for Embodied Task Planning](../../CVPR2026/robotics/roboagent_chaining_basic_capabilities_for_embodied_task_planning.md)
 
 </div>
 

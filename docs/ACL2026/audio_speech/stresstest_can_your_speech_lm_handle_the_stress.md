@@ -2,121 +2,124 @@
 title: >-
   [Paper Note] StressTest: Can YOUR Speech LM Handle the Stress?
 description: >-
-  [ACL 2026][Audio & Speech][Sentence stress] This paper proposes the StressTest benchmark to evaluate the ability of Speech Language Models (SLMs) to understand the meaning of sentence stress. The study reveals that exist…
+  [ACL 2026][Audio & Speech][Paper Note] The authors propose the StressTest benchmark to evaluate the ability of Speech Language Models (SLMs) to understand the meaning of sentence stress. Findings indicate that existing models struggle to reason about speaker intent based on stress patterns. StresSLM, trained via the Stress-17k synthetic data pipeline, signi
 tags:
-  - "ACL 2026"
-  - "Audio & Speech"
-  - "Sentence stress"
-  - "Speech language models"
-  - "Prosody understanding"
-  - "Benchmark"
-  - "Synthetic data"
+  - ACL 2026
+  - Audio & Speech
 date: 2026-05-08
-content_hash: 7449f398c8bfa68b
+content_hash: 4e44fbde4d2172f6
 ---
-
 # StressTest: Can YOUR Speech LM Handle the Stress?
 
 **Conference**: ACL 2026  
 **arXiv**: [2505.22765](https://arxiv.org/abs/2505.22765)  
-**Code**: [Project Page](https://pages.cs.huji.ac.il/adiyoss-lab/stresstest)  
+**Code**: [Project Homepage](https://pages.cs.huji.ac.il/adiyoss-lab/stresstest)  
 **Area**: Speech Understanding  
-**Keywords**: Sentence stress, Speech language models, Prosody understanding, Benchmark, Synthetic data
+**Keywords**: Sentence Stress, Speech Language Models, Prosody Understanding, Benchmarking, Synthetic Data
 
 ## TL;DR
 
-This paper proposes the StressTest benchmark to evaluate the ability of Speech Language Models (SLMs) to understand the meaning of sentence stress. The study reveals that existing models are nearly unable to reason speaker intent based on stress patterns. StresSLM, trained through the Stress-17k synthetic data pipeline, significantly outperforms state-of-the-art models in stress detection and reasoning tasks.
+The authors propose the StressTest benchmark to evaluate the ability of Speech Language Models (SLMs) to understand the meaning of sentence stress. Findings indicate that existing models struggle to reason about speaker intent based on stress patterns. StresSLM, trained via the Stress-17k synthetic data pipeline, significantly outperforms frontier models on stress detection and reasoning tasks.
 
 ## Background & Motivation
 
-**Background**: Speech Language Models (such as GPT-4o-audio, Gemini 2.5 Pro, Qwen2Audio, etc.) can directly process audio for reasoning, bypassing traditional ASR-cascaded pipelines to leverage paralinguistic information.
+**Background**: Speech Language Models (e.g., GPT-4o-audio, Gemini 1.5 Pro, Qwen2-Audio) can directly process audio for reasoning, bypassing traditional ASR cascades to leverage paralinguistic information.
 
-**Limitations of Prior Work**: Sentence stress is a critical element of prosody—the same sentence "I didn't say she stole the money" can express completely different meanings depending on the stress position. However, it is almost entirely ignored in the evaluation and development of SLMs. Existing benchmarks focus on speech recognition and emotion detection, lacking evaluations for stress understanding.
+**Limitations of Prior Work**: Sentence stress is a crucial prosodic element—the same sentence "I didn't say she stole the money" can convey entirely different meanings depending on the stress placement. However, this has been almost entirely overlooked in SLM evaluation and development. Existing benchmarks focus on speech recognition and emotion detection, lacking evaluations for stress understanding.
 
-**Key Challenge**: Understanding sentence stress requires the model to not only identify "what was said" but also "how it was said." This necessitates a deep integration of prosodic cues (pitch, loudness, duration) and semantic reasoning, a capability currently lacking in existing SLMs.
+**Key Challenge**: Understanding sentence stress requires models not only to "hear what was said" but also to understand "how it was said." This necessitates a deep integration of prosodic cues (pitch, loudness, duration) and semantic reasoning, a capability lacking in current SLMs.
 
-**Goal**: To build a stress understanding benchmark, evaluate the capability gaps of cutting-edge SLMs, and train a model possessing stress understanding capabilities through synthetic data.
+**Goal**: Construct a sentence stress understanding benchmark, evaluate the capability gap of frontier SLMs, and train a model capable of stress understanding using synthetic data.
 
-**Key Insight**: Designing a dual-task evaluation (SSD + SSR) and constructing a full pipeline encompassing synthetic data generation, validation, and multi-task training.
+**Key Insight**: Design a dual-task evaluation (Sentence Stress Detection - SSD + Sentence Stress Reasoning - SSR) and build a complete pipeline for synthetic data generation, validation, and multi-task training.
 
-**Core Idea**: Creating training data via a pipeline involving LLM-generated stress text, TTS-synthesized stress speech, and automated verification filtering. This enables fine-tuned SLMs to generalize to stress understanding in real recordings.
+**Core Idea**: Create training data through a pipeline of LLM-generated stressed text + TTS-synthesized stressed speech + automated validation/filtering. This enables the fine-tuned SLM to generalize stress understanding to real-world recordings.
 
 ## Method
 
 ### Overall Architecture
 
-The framework consists of two parts: (1) The StressTest benchmark—comprising sentences recorded by professional actors (each sentence has at least two stress patterns and corresponding meanings), and the StressPresso supplementary set post-annotated from the Expresso dataset; (2) The Stress-17k training pipeline—generating stressed text via LLM $\rightarrow$ synthesizing stressed speech via TTS $\rightarrow$ filtering via WhiStress validation $\rightarrow$ defining four training tasks, ultimately fine-tuning Qwen2Audio to obtain StresSLM.
+This work addresses "how to measure" and "how to fix" simultaneously. On the measurement side is the StressTest benchmark: professional actors recorded sentences with at least two stress patterns and corresponding meanings, supplemented by the StressPresso set post-annotated from the Expresso dataset to test intent inference from stress. On the improvement side is the Stress-17k training pipeline: starting with sentences whose meanings change with stress, it follows a "LLM text generation → TTS synthesis → WhiStress validation → Multi-task training" workflow to fine-tune Qwen2-Audio in stages, resulting in StresSLM.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph BENCH["Dual-task Benchmark (StressTest / StressPresso)"]
+        direction TB
+        A["Actor recordings + Expresso post-annotation<br/>Multiple stress patterns and meanings per sentence"] --> B["SSD: Detect emphasized words"]
+        A --> C["SSR: Infer speaker intent from stress"]
+    end
+    subgraph DATA["Stress-17k Synthetic Pipeline"]
+        direction TB
+        D["LLM-generated stressed text<br/>CrewAI + GPT-4o"] --> E["TTS-synthesized stressed speech<br/>Male/Female versions"]
+        E --> F["WhiStress Automated Validation<br/>Filter samples with improper stress"]
+        F --> G["Define four training tasks"]
+    end
+    G --> H["Phased Training<br/>Phase 1: Full data → Phase 2: Validated subset<br/>Mixed with ASR + SER to prevent forgetting"]
+    H --> I["StresSLM"]
+    I -->|Evaluation on Benchmark| BENCH
+```
 
 ### Key Designs
 
-1.  **Dual-Task Benchmark Design (SSD + SSR)**:
-    *   **Function**: To comprehensively evaluate the model's stress perception and reasoning capabilities.
-    *   **Mechanism**: SSD (Sentence Stress Detection) requires the model to identify which words are emphasized given the audio and transcript. SSR (Sentence Stress Reasoning) requires the model to select the correct meaning from two possible options given only the audio. SSR is a novel task, while SSD aligns with prior research.
-    *   **Design Motivation**: Detecting stress is a prerequisite for understanding its meaning; the two tasks provide complementary evaluations.
+**1. Dual-task Benchmark: Detection followed by Reasoning.** Understanding the meaning of stress requires first knowing which word was emphasized. Thus, the benchmark is split into two complementary layers. SSD (Sentence Stress Detection) requires the model to label emphasized words given audio and transcript, aligning with existing research for comparison. SSR (Sentence Stress Reasoning) provides only audio and requires the model to choose the intended meaning from two candidates, serving as the novel task proposed in this work. This sequence enables localization of whether the model "hears" the stress and understands its "meaning."
 
-2.  **Synthetic Data Generation Pipeline (Stress-17k)**:
-    *   **Function**: To create sufficiently diverse and high-quality training data.
-    *   **Mechanism**: (a) Text generation: Using CrewAI and GPT-4o to generate sentences whose meanings change with stress across different domains and themes; (b) Speech synthesis: OpenAI TTS synthesizes speech with stressed words marked by asterisks, generating male and female versions for each stress pattern; (c) Stress validation: Using WhiStress to automatically detect actual stress positions and filter out incorrect samples; (d) Four training tasks: Stress detection, end-to-end reasoning, detailed reasoning (with explanations), and cascaded reasoning (detection followed by reasoning).
-    *   **Design Motivation**: Not all sentences are suitable for stress variant evaluation, necessitating specialized generation. TTS synthesis allows for large-scale creation, but verification steps are required to ensure data quality.
+**2. Stress-17k Pipeline: High-quality data via automated workflows.** Since not all sentences are suitable for stress variants and manual recording is not scalable, the authors automated production. Text generation uses CrewAI + GPT-4o to produce sentences where stress changes the meaning. Speech synthesis uses OpenAI TTS with asterisk markers for stressed words. Critically, the WhiStress model validates the actual stress placement in synthesized audio to filter out failures. Finally, four tasks are defined: detection, end-to-end reasoning, detailed reasoning with explanations, and cascaded reasoning (detect then infer), providing multi-angle supervision.
 
-3.  **Phased Training Strategy**:
-    *   **Function**: To balance stress tasks with original model capabilities.
-    *   **Mechanism**: The first phase involves fine-tuning for one epoch on the full Stress-17k (including unvalidated data) to establish base capabilities. The second phase involves fine-tuning for another epoch on the high-quality validated subset for refinement. ASR (LibriLight) and sentiment recognition (MELD) samples are mixed in to prevent catastrophic forgetting.
-    *   **Design Motivation**: Phased curriculum training accounts for both data volume and quality, while auxiliary tasks maintain overall model stability.
+**3. Phased Training: Broad to refined, preventing forgetting.** Training solely on clean data lacks volume, while unvalidated data introduces noise. A curriculum-based two-phase fine-tuning is adopted. Phase 1 uses the full Stress-17k (including unvalidated data) for one epoch to establish foundational stress understanding. Phase 2 switches to the high-quality subset validated by WhiStress for refinement. Both phases mix in ASR (LibriLight) and Speech Emotion Recognition (MELD) to prevent catastrophic forgetting of original capabilities.
 
 ## Key Experimental Results
 
 ### Main Results (SSR Accuracy)
 
 | Model | StressTest | StressPresso |
-| :--- | :--- | :--- |
+|------|-----------|-------------|
 | Human (Majority Vote) | 96.0 | 96.0 |
-| **Ours (StresSLM)** | **86.2** | **87.6** |
-| Gemini 2.5 Pro | 77.5 | 72.7 |
+| StresSLM (Ours) | **86.2** | **87.6** |
+| Gemini 1.5 Pro | 77.5 | 72.7 |
 | GPT-4o-audio | 68.8 | 64.8 |
-| Qwen3-Omni-30B | 64.6 | 64.8 |
-| Qwen2Audio-7B | 53.2 | 51.4 |
+| Qwen2-Audio-7B | 53.2 | 51.4 |
 | SALMONN | 55.9 | 52.4 |
-| Cascade (WhiStress $\rightarrow$ GPT-4o) | 83.4 | 79.7 |
+| Cascade (WhiStress → GPT-4o) | 83.4 | 79.7 |
 
-### SSD Detection Performance (F1)
+### SSD Performance (F1 Score)
 
 | Model | StressTest | StressPresso |
-| :--- | :--- | :--- |
-| **Ours (StresSLM)** | **86.9** | **80.6** |
-| Gemini 2.5 Pro | 48.5 | 40.7 |
+|------|-----------|-------------|
+| StresSLM | **86.9** | **80.6** |
+| Gemini 1.5 Pro | 48.5 | 40.7 |
 | GPT-4o-audio | 46.1 | 36.9 |
 | WhiStress (Specialized Model) | 88.3 | 83.5 |
 
 ### Key Findings
-*   Existing SLMs perform near random chance on stress reasoning (mostly between 50-55%), with Gemini 2.5 Pro being the only model to exceed 70%.
-*   StresSLM (7B) outperforms all SLMs including GPT-4o and Gemini 2.5 Pro on SSR, and also exceeds the cascaded approach.
-*   Models trained on synthetic data generalize well to real recordings (87.6% on StressPresso).
-*   The end-to-end approach outperforms the cascaded approach—direct audio processing avoids the loss of prosodic information.
-*   StresSLM shows almost no degradation in original ASR and SER tasks.
+- Existing SLMs perform near chance (50-55%) on stress reasoning, with Gemini 1.5 Pro being the only model exceeding 70%.
+- StresSLM (7B) outperforms all SLMs including GPT-4o and Gemini, and also exceeds the cascade baseline.
+- Models trained on synthetic data generalize well to real-world recordings (87.6% on StressPresso).
+- End-to-end approaches outperform cascade approaches, as direct audio processing avoids the loss of prosodic information.
+- StresSLM maintains performance on original ASR and SER tasks with negligible degradation.
 
 ## Highlights & Insights
-*   **Filling a Critical Gap**: Sentence stress is vital in linguistics but has been ignored in SLM evaluation; this paper provides the first systematic assessment.
-*   **Clever Synthetic Pipeline**: The fully automated pipeline (LLM generation + TTS synthesis + automated validation) is reproducible for researching other prosodic features.
-*   **Evidence for E2E superiority**: Demonstrates the advantages of direct audio processing for stress understanding over cascaded methods.
-*   **Small Models Outperform Large Models**: The 7B StresSLM surpassing GPT-4o and Gemini 2.5 Pro highlights the value of specialized training data.
+- **Filling a Critical Gap**: Sentence stress is vital in linguistics but ignored in SLM evaluation; this work provides the first systematic assessment.
+- **Clever Synthetic Pipeline**: The automated LLM + TTS + Validation pipeline is reproducible for other prosodic feature research.
+- **Evidence for End-to-End Superiority**: Demonstrates the advantages of direct audio processing for nuanced prosody understanding.
+- **Small Model Outperforming Large Models**: StresSLM-7B outperforms GPT-4o and Gemini 1.5 Pro, highlighting the value of targeted training data.
 
 ## Limitations & Future Work
-*   **Limited to English**: Stress functions differently in other languages, requiring cross-lingual expansion.
-*   **Synthetic Training**: While generalization to real speech is good, there remains a gap between TTS and natural speech.
-*   **Focus on Sentence Stress**: The study does not cover other prosodic features such as intonation, pauses, or rhythm.
-*   **Future Directions**: Expansion to multilingual datasets, natural speech training data, and more complex prosodic understanding tasks.
+- **Language Scope**: Evaluation is restricted to English; stress functions differently across languages and requires cross-lingual expansion.
+- **Synthetic Training Data**: Despite good generalization, a gap remains between TTS-generated and natural speech.
+- **Narrow Focus**: The study focuses only on sentence stress, excluding other prosodic features such as intonation, pauses, or rhythm.
+- **Future Directions**: Expansion to multi-lingual datasets, natural speech training, and more complex prosodic reasoning tasks.
 
 ## Related Work & Insights
-*   **vs WhiStress**: WhiStress is a specialized model for detection only; this work adds reasoning capabilities on top of it.
-*   **vs VocalBench/URO-Bench**: These evaluate SLM expressive capabilities but do not touch upon stress understanding.
-*   **vs Cascaded Approaches**: Compared to ASR + stress detection + LLM reasoning, this paper proves that end-to-end models are superior.
+- **vs. WhiStress**: WhiStress is a specialized model for detection only; this work adds reasoning capabilities.
+- **vs. VocalBench/URO-Bench**: While these evaluate SLM expressive capabilities, they do not specifically address stress understanding.
+- **vs. Cascade Solutions**: This work proves that end-to-end models are superior to "ASR + Stress Detection + LLM Reasoning" pipelines.
 
 ## Rating
-*   Novelty: ⭐⭐⭐⭐⭐ Proposes the first sentence stress reasoning task and benchmark; the synthetic pipeline is innovative and practical.
-*   Experimental Thoroughness: ⭐⭐⭐⭐ Covers 8+ SLMs, various input settings, and includes human evaluation and ablation studies.
-*   Writing Quality: ⭐⭐⭐⭐ Clear motivation and complete methodological description.
-*   Value: ⭐⭐⭐⭐⭐ Establishes a research direction for stress understanding, providing a substantial push for SLM evaluation and training.
+- Novelty: ⭐⭐⭐⭐⭐ First to propose sentence stress reasoning tasks and benchmarks; synthetic pipeline is innovative.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers 8+ SLMs, multiple settings, human evaluation, and ablation studies.
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation and comprehensive method descriptions.
+- Value: ⭐⭐⭐⭐⭐ Establishes a new direction for prosodic understanding in SLMs.
 
 <!-- RELATED:START -->
 
@@ -125,10 +128,10 @@ The framework consists of two parts: (1) The StressTest benchmark—comprising s
 ## Related Papers
 
 - [\[ACL 2026\] SpeakerSleuth: Can Large Audio-Language Models Judge Speaker Consistency across Multi-turn Dialogues?](speakersleuth_can_large_audio-language_models_judge_speaker_consistency_across_m.md)
+- [\[CVPR 2026\] How Far Can We Go With Synthetic Data for Audio-Visual Sound Source Localization?](../../CVPR2026/audio_speech/how_far_can_we_go_with_synthetic_data_for_audio-visual_sound_source_localization.md)
 - [\[AAAI 2026\] DiffA: Large Language Diffusion Models Can Listen and Understand](../../AAAI2026/audio_speech/diffa_large_language_diffusion_models_can_listen_and_understand.md)
 - [\[NeurIPS 2025\] Can LLMs Outshine Conventional Recommenders? A Comparative Evaluation](../../NeurIPS2025/audio_speech/can_llms_outshine_conventional_recommenders_a_comparative_evaluation.md)
-- [\[ACL 2026\] UniSRM: A Unified Speech Reward Model for Fine-Grained Speech Evaluation](unisrm_a_unified_speech_reward_model_for_reasoning-based_fine-grained_assessment.md)
-- [\[ICCV 2025\] Align Your Rhythm: Generating Highly Aligned Dance Poses with Gating-Enhanced Rhythm-Aware Feature Representation](../../ICCV2025/audio_speech/align_your_rhythm_generating_highly_aligned_dance_poses_with_gating-enhanced_rhy.md)
+- [\[ACL 2025\] Does Your Voice Assistant Remember? Analyzing Conversational Context Recall and Utilization in Voice Interaction Models](../../ACL2025/audio_speech/does_your_voice_assistant_remember_analyzing_conversational_context_recall_and_u.md)
 
 </div>
 

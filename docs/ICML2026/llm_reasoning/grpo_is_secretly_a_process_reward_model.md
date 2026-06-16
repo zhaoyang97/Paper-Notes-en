@@ -2,121 +2,107 @@
 title: >-
   [Paper Note] GRPO is Secretly a Process Reward Model
 description: >-
-  [ICML 2026][LLM Reasoning][GRPO] This paper theoretically proves that under the mild condition of "trajectories within a group sharing prefixes…
+  [ICML 2026][LLM Reasoning][GRPO] This paper theoretically proves that GRPO + ORM is **equivalent** to a process reward RL objective with a Monte-Carlo PRM under the mild condition of "shared prefixes within a group." It reveals a hidden bug in vanilla GRPO—uneven prefix lengths cause majority tokens in high-reward trajectories to receive negative adva
 tags:
-  - "ICML 2026"
-  - "LLM Reasoning"
-  - "GRPO"
-  - "Process Reward"
-  - "Advantage Normalization"
-  - "Mathematical Reasoning"
-  - "RL Training Acceleration"
+  - ICML 2026
+  - LLM Reasoning
+  - GRPO
 date: 2026-05-08
-content_hash: b87f1dae2d1ce066
+content_hash: cc612ddadf3d9239
 ---
-
 # GRPO is Secretly a Process Reward Model
 
 **Conference**: ICML 2026  
 **arXiv**: [2509.21154](https://arxiv.org/abs/2509.21154)  
-**Code**: https://github.com/coli-saar/grpo-prm/ (Yes)  
+**Code**: https://github.com/coli-saar/grpo-prm/ (Available)  
 **Area**: LLM Reasoning / Reinforcement Learning  
 **Keywords**: GRPO, Process Reward, Advantage Normalization, Mathematical Reasoning, RL Training Acceleration
 
 ## TL;DR
-This paper theoretically proves that under the mild condition of "trajectories within a group sharing prefixes," GRPO + ORM is **equivalent** to a process-reward RL objective with a Monte-Carlo PRM. It reveals a hidden bug in vanilla GRPO—unbalanced prefix lengths cause most tokens in high-reward trajectories to receive negative advantages—and proposes $\lambda$-GRPO with a PRM-aware normalization, which consistently outperforms GRPO on reasoning benchmarks and trains approximately 2x faster.
+This paper theoretically proves that GRPO + ORM is **equivalent** to a process reward RL objective with a Monte-Carlo PRM under the mild condition of "shared prefixes within a group." It reveals a hidden bug in vanilla GRPO—uneven prefix lengths cause majority tokens in high-reward trajectories to receive negative advantages—and proposes $\lambda$-GRPO, which utilizes a PRM-aware normalization to consistently outperform GRPO on reasoning benchmarks with approximately 2x faster training.
 
 ## Background & Motivation
-**Background**: In RL training for LLM mathematical reasoning, PRMs (Process Reward Models) can score each intermediate step, providing much finer credit assignment than ORM (Outcome Reward). Consequently, they are typically used with PPO + GAE. GRPO (DeepSeekMath) distinguishes itself by **removing the critic and GAE**, using group-wise reward normalization as the advantage—simple and memory-efficient. While widely applied (tool use, RLHF, math reasoning), the absence of GAE has restricted almost all GRPO work to using ORMs.
+**Background**: In RL training for LLM mathematical reasoning, PRMs (Process Reward Models) provide scores for each intermediate step, offering much finer credit assignment than ORM (Outcome Reward), and are typically used with PPO + GAE. The selling point of GRPO (DeepSeekMath) is the **removal of the critic and GAE**, using group-relative reward normalization as the advantage—simple and memory-efficient. Consequently, it is widely adopted (tool use, RLHF, math reasoning), but due to the absence of GAE, almost all GRPO works are restricted to ORMs.
 
-**Limitations of Prior Work**: Integrating PRMs into GRPO requires non-trivial algorithmic modifications (e.g., TreeRPO, GroupPRM, TreeRL), increasing implementation complexity and sacrificing GRPO's simplicity. Furthermore, training neural PRMs is expensive (requiring step-level labeling) and prone to reward-hacking.
+**Limitations of Prior Work**: Integrating PRMs into GRPO requires non-trivial algorithmic modifications (e.g., TreeRPO, GroupPRM, TreeRL), which increases implementation complexity and sacrifices GRPO's simplicity. Furthermore, training neural PRMs is expensive (requiring step-level labels) and prone to reward-hacking.
 
-**Key Challenge**: "GRPO with ORM" and "PRM-aware RL" have long been treated as separate entities. However, during the rollout phase, GRPO samples multiple trajectories from the same prompt, which naturally form a prefix-sharing tree. This tree itself carries process-level information that has never been explicitly utilized.
+**Key Challenge**: Traditional approaches treat "GRPO with ORM" and "PRM-aware RL" as distinct entities. However, during the rollout phase, GRPO samples multiple trajectories from the same prompt, which naturally form a prefix-sharing tree. This tree itself carries process-level information that has never been explicitly utilized.
 
-**Goal**: (1) Mathematically prove that vanilla GRPO is a PRM-aware objective under the shared-prefix assumption and quantify what its corresponding PRM looks like; (2) Use this analytical tool to identify hidden bugs in the GRPO objective; (3) Fix the bug without introducing an explicit PRM.
+**Goal**: (1) Mathematically prove that vanilla GRPO, under the shared-prefix assumption, is a PRM-aware objective and quantify its underlying PRM; (2) Use this analytical tool to identify hidden bugs in the GRPO objective; (3) Fix these bugs without introducing an explicit PRM.
 
-**Key Insight**: The authors notice a simple fact: a trajectory's advantage $a_i$ in GRPO is distributed uniformly across all its tokens. If this trajectory shares a long prefix with several **highly-scored** trajectories, that prefix is actually "good"—but vanilla GRPO, using only the total reward of a single trajectory for the advantage, may incorrectly calculate that prefix as "bad." Deriving this from a prefix-tree perspective clarifies the issue.
+**Key Insight**: The authors notice a simple fact: a trajectory's advantage $a_i$ in GRPO is uniformly distributed across all its tokens. If a trajectory shares a long prefix with multiple **high-scoring** trajectories in the group, that prefix is actually "good." However, vanilla GRPO misidentifies this prefix as "bad" because it calculates advantages based solely on individual trajectory rewards. Deriving this from a prefix-tree perspective clarifies the issue.
 
-**Core Idea**: Treat GRPO as "RL performing MC-PRM on a prefix tree," identify the asymmetry in the normalization term, and apply a simple $\lambda$ factor correction.
+**Core Idea**: View GRPO as "RL performing MC-PRM on a prefix tree," identify the asymmetry in the normalization term, and fix it with a simple $\lambda$ factor correction.
 
 ## Method
 
 ### Overall Architecture
-A two-step approach:
-
-1.  **Theoretical Side** (Section 3): Under two mild assumptions ($\mu=1$ and a DAPO-style token-level objective ignoring clipping), construct a prefix tree $\mathcal B(\mathbb G)$. Each node $\lambda$ represents a set of trajectories sharing a prefix, corresponding to a process step. Step-level rewards are defined using the mean reward of internal trajectories. It is proved that this MC-PRM-aware loss $L_{\text{PRM}}(\mathbb G)$ is numerically identical to $L_{\text{GRPO}}(\mathbb G)$.
-2.  **Algorithmic Side** (Section 4–5): Use the prefix-tree perspective to identify the defect where advantages and normalization denominators are mismatched in vanilla GRPO. Propose $\lambda$-GRPO—inserting a PRM-aware normalization factor into the loss to reconcile each process step's effective weight with its actual frequency in the group. This modification can be added to TRL with a single line of code.
+The paper presents a theoretical chain: "proving equivalence $\rightarrow$ diagnosing bugs via equivalence $\rightarrow$ fixing bugs." First, under two mild assumptions, trajectories from the same prompt are organized into a prefix tree. The authors prove that the vanilla GRPO loss is identically equal to a Monte-Carlo PRM objective built on this tree—meaning GRPO has implicitly been performing process-level credit assignment all along. Second, this PRM perspective identifies asymmetries in vanilla GRPO's normalization. Third, the $\lambda$-GRPO is introduced with a $\lambda$ factor to fix this, requiring only one line of code changes.
 
 ### Key Designs
 
-1.  **Construction of Prefix Tree $\mathcal B(\mathbb G)$ and Process Steps**:
-    - **Function**: Formalize "which tokens belong to the same process step"—all trajectories under the same prefix share a step, and the step's reward is the mean outcome reward of those trajectories.
-    - **Mechanism**: For a group $\mathbb G=\{y^{(1)},\dots,y^{(|\mathbb G|)}\}$, define the process set $\mathcal B(\mathbb G)=\{\lambda\subseteq\mathbb G\mid \exists n\geq 0,\forall y^{(i)},y^{(k)}\in\lambda: y_{:n}^{(i)}=y_{:n}^{(k)}\}$, forming a tree via the $\supseteq$ relation. Each node $\lambda$ corresponds to a step spanning $[s(\lambda), e(\lambda))$; the step-level reward is $r_\lambda = \frac{1}{|\lambda|}\sum_{y^{(i)}\in\lambda} r^{(i)}$, while advantages remain normalized by the group mean.
-    - **Design Motivation**: Provide GRPO with PRM semantics for the first time. This equivalence implies that process rewards can be obtained without training neural PRMs or modifying algorithms—**simply by letting trajectories share prefixes during rollout**, MC-PRM signals are obtained for free. Empirical evidence (Section 3.2) shows this prefix sharing is common in real GRPO training, making this "hidden PRM" non-trivial.
+**1. The Prefix Tree $\mathcal B(\mathbb G)$: Translating GRPO into an MC-PRM Objective**
+To define the implicit process reward in GRPO, the authors formalize which tokens belong to the same process step. For a group $\mathbb G=\{y^{(1)},\dots,y^{(|\mathbb G|)}\}$, a process set $\mathcal B(\mathbb G)=\{\lambda\subseteq\mathbb G\mid \exists n\geq 0,\forall y^{(i)},y^{(k)}\in\lambda: y_{:n}^{(i)}=y_{:n}^{(k)}\}$ is defined. Each $\lambda$ is a set of trajectories sharing a prefix, forming a tree where node $\lambda$ corresponds to a step spanning $[s(\lambda), e(\lambda))$. The reward for this step is the mean outcome reward of trajectories in that node: $r_\lambda = \frac{1}{|\lambda|}\sum_{y^{(i)}\in\lambda} r^{(i)}$. The key conclusion is that under the assumptions of $\mu=1$ (single update), DAPO-style token-level objective, and ignoring clipping, the MC-PRM-aware loss $L_{\text{PRM}}(\mathbb G)$ is numerically identical to $L_{\text{GRPO}}(\mathbb G)$. This equivalence provides the first PRM semantics for GRPO: process rewards do not require neural PRMs; **as long as trajectories share prefixes during rollout**, MC-PRM signals are provided for free.
 
-2.  **Defect Diagnosis: Mismatch between Advantage and Step Frequency**:
-    - **Function**: Use the prefix-tree view to reveal a specific counter-example where most tokens of a high-reward trajectory are assigned negative advantages, thus **decreasing** their probability via RL.
-    - **Mechanism**: Consider a trajectory JKLNQU. Suppose its total reward is above the group mean, but its prefix JKL is shared with multiple low-scoring trajectories. In a PRM-aware view, the reward for JKL is the "mean reward of all trajectories under JKL"—which is dragged down by low-scoring paths, giving JKL tokens a **negative** advantage. Only the final token U unique to JKLNQU receives a positive advantage. However, vanilla GRPO treats the trajectory as a whole, sharing the same sample-level $a_i$ across all tokens, which is inconsistent with the PRM view that "segmented advantages should be weighted by step frequency." Specifically, the denominator $\sum_{y^{(i)}}\text{len}(y^{(i)})$ introduces systematic bias when token counts and step frequencies mismatch.
-    - **Design Motivation**: This diagnosis converts the intuition that "GRPO occasionally messes up good trajectories" into a formalizable bug.
+**2. Defect Diagnosis: Mismatch between Advantage and Step Frequency**
+The PRM perspective exposes a systematic bug in vanilla GRPO. Consider a trajectory with a high reward that shares a prefix with many low-scoring trajectories. In a PRM-aware view, the reward for the shared step is the average of all sub-trajectories, which is pulled down by the low-scoring ones. Consequently, tokens in that prefix receive a **negative** advantage. However, vanilla GRPO applies the same sample-level $a_i$ to all tokens. This violates the PRM requirement that "segmented advantages should be weighted by step frequency." Specifically, the denominator $\sum_{y^{(i)}}\text{len}(y^{(i)})$ injects systematic bias when token counts and step frequencies are misaligned. This mismatch simultaneously hinders **exploitation** (by suppressing known good prefixes) and **exploration** (by distorting search signals).
 
-3.  **$\lambda$-GRPO: PRM-aware Normalization**:
-    - **Function**: Add a process-step-frequency-aware normalization factor $\lambda$ to the token-level loss to restore the symmetry that "high-frequency shared steps should not be repeatedly penalized/rewarded."
-    - **Mechanism**: Keep original sample-level advantages but replace the summation denominator with a normalization term re-weighted by prefix tree node frequency. This is equivalent to multiplying each token by $\lambda_t = 1/n_t$ (where $n_t$ is the frequency of the process step in the group). One-line patch for TRL's GRPO trainer.
-    - **Design Motivation**: Retain the lightweight advantage of GRPO (no critic/GAE) while utilizing free MC-PRM signals. This modification has near-zero overhead but consistently outperforms vanilla GRPO and **converges ~2x faster**.
+**3. $\lambda$-GRPO: A PRM-aware Normalization Factor**
+The fix is lightweight: maintain the original sample-level advantage but change the denominator during token accumulation from "total group tokens" to a normalization term re-weighted by prefix tree node frequency. This is equivalent to multiplying each token by $\lambda_t = 1/n_t$, where $n_t$ is the occurrence frequency of that token's process step in the group. This ensures that high-frequency shared steps are not repeatedly penalized or rewarded, restoring symmetry. It retains GRPO's efficiency (no critic/GAE) while utilizing the free MC-PRM signal.
 
 ### Loss & Training
-- Vanilla GRPO (under $\mu=1$ and DAPO token-level assumptions):
+- Vanilla GRPO (under $\mu=1$, DAPO token-level assumption):
   $$L_{\text{GRPO}}(\mathbb G)=\frac{1}{\sum_{y^{(i)}}\text{len}(y^{(i)})}\sum_{y^{(i)}}\sum_t (P_{i,t}\cdot a_i - D_{i,t})$$, where $a_i=(r^{(i)}-r_{\text{mean}}(\mathbb G))/r_{\text{std}}(\mathbb G)$.
 - $\lambda$-GRPO: Replaces the denominator with a PRM-aware normalization sum (weighted by process step frequency).
-- Training Setup: Consistent with DeepSeekMath GRPO, $\mu=1$ update; RL on math reasoning SFT data; TRL framework. The 2x acceleration comes from reaching peak validation accuracy faster.
+- Training Setup: Consistent with DeepSeekMath GRPO ($\mu=1$); RL on math reasoning SFT data; TRL framework; 2x acceleration comes from reaching peak validation accuracy faster.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Setup | Training Time | Downstream Reasoning Acc | Convergence Speed |
-|-------|---------------|--------------------------|-------------------|
+| Setting | Training Time | Downstream Acc | Convergence Speed |
+| :--- | :--- | :--- | :--- |
 | Vanilla GRPO | $1\times$ baseline | baseline | baseline |
-| $\lambda$-GRPO | Nearly same/step | Consistently $>$ baseline | ~2$\times$ faster to peak |
-| Explicit PRM (PPO+GAE) | Much slower | Vulnerable to reward-hacking | Slower |
+| $\lambda$-GRPO | Nearly same/step | $>$ baseline | $\sim 2\times$ faster to peak |
+| Explicit PRM (PPO+GAE) | Slower | Hit by reward-hack | Slow |
 
 ### Ablation Study
 
-| Configuration | Observation | Explanation |
-|---------------|-------------|-------------|
-| High shared prefix ratio | Significant gain for $\lambda$-GRPO | Rich implicit PRM signals |
-| Sparse shared prefixes | $\lambda$-GRPO degrades to GRPO | Consists with theory: no difference for trivial PRMs |
-| Remove $\lambda$ weighting | Performance reverts to GRPO | Gain comes from $\lambda$ correction, not just the tree view |
+| Config | Observation | Explanation |
+| :--- | :--- | :--- |
+| High shared prefix ratio | Significant gain | Rich implicit PRM signals |
+| Low shared prefix (Diverse rollout) | Degenerates to GRPO | Consistent with theory: trivial PRM |
+| Remove $\lambda$ (Tree view only) | Performance matches GRPO | Gain comes from $\lambda$ correction |
 
 ### Key Findings
-- **Implicit PRM in GRPO is non-trivial in real training**: Empirical results show prefix sharing occurs frequently in group rollouts.
-- **The bug is a systematic counter-example**: Vanilla GRPO tends to assign negative advantages to "early shared prefixes" of high-reward trajectories, explaining why GRPO models sometimes **reduce** the probability of correct reasoning chains.
-- **$\lambda$-GRPO's convergence acceleration is more significant than performance gain**: Reaching peak validation accuracy ~2x faster implies massive GPU time savings.
-- **Zero additional labels or forward passes**: Compared to neural PRMs, there is zero labeling cost; compared to explicit MC-PRM (VineRL), there are zero extra rollouts.
+- **Implicit PRM in GRPO is non-trivial**: Prefix sharing occurs frequently in real GRPO training, making the analysis practically relevant.
+- **Systematic Bias**: Vanilla GRPO tends to assign negative advantages to early shared prefixes of high-reward trajectories, explaining why it sometimes decreases the probability of correct reasoning chains (impaired exploitation).
+- **Convergence Acceleration**: The 2x speedup in reaching peak accuracy provides significant GPU time savings for industrial pipelines.
+- **Zero Overhead**: No extra labels or forward passes required compared to neural PRMs or explicit MC-PRMs (VineRL).
 
 ## Highlights & Insights
-- **"Algorithmic Equivalence" as an Analytical Tool**: Rewriting vanilla GRPO in a PRM-aware form to diagnose and fix bugs is an elegant "theory-first" paradigm.
-- **Free MC-PRM via Prefix Trees**: Demonstrating that process rewards can be obtained without training PRMs—as long as rollouts share prefixes—is a disruptive conclusion.
-- **Concretization of the Bug**: The JKLNQU example makes the abstract normalization mismatch highly readable.
-- **One-line Code Patch**: The trick can be hot-patched into mainstream frameworks like TRL/verl with near-zero deployment cost.
+- **Algorithm Equivalence as an Analytical Tool**: Rewriting GRPO in a PRM-aware form to diagnose and fix bugs is an elegant "theory-first" paradigm.
+- **Free Process Rewards**: Demonstrates that "process rewards do not require PRM training; they just require shared prefixes," which is a disruptive conclusion for cost-sensitive RL.
+- **Bug Visualization**: The use of concrete counter-examples makes the abstract normalization mismatch highly intuitive.
+- **One-line Implementation**: The $\lambda$ correction can be easily hot-patched into mainstream frameworks like TRL or Verl.
 
 ## Limitations & Future Work
-- Equivalence proof relies on $\mu=1$ and token-level (DAPO) loss assumptions; results under sample-level loss or $\mu>1$ require further investigation.
-- Experiments focus on math reasoning; systematic verification on RLHF, tool use, or agents is lacking.
-- Quality of implicit PRM depends on prefix-sharing density; high temperature or long trajectories may require strategies to encourage shared prefixes.
-- Lacks end-to-end comparison with variants like TreeRPO or GroupPRM to determine if implicit is strictly better than explicit.
+- The equivalence proof depends on $\mu=1$ and token-level loss assumptions; performance in sample-level GRPO or high $\mu$ settings needs further discussion.
+- Experiments are focused on mathematical reasoning; validation in RLHF, tool use, or agent tasks is lacking.
+- Implicit PRM quality depends on prefix sharing density; high temperatures or long trajectories might dilute the benefits.
+- Lack of end-to-end comparison with sophisticated variants like TreeRPO or GroupPRM.
 
 ## Related Work & Insights
-- **vs. TreeRPO / TreeRL**: They explicitly construct tree-structured PRMs; this paper shows vanilla GRPO is naturally a special case of such a PRM.
-- **vs. VinePPO / treeRL (MC-based PRM)**: VinePPO uses extra rollouts for step value estimation; this paper hides MC estimates in group-shared prefixes with zero overhead.
-- **vs. DAPO**: DAPO addresses instability in sample-level loss; this paper uses DAPO as a premise to fix a separate normalization bug.
-- **Insight**: Any algorithm performing relative scoring within a group (e.g., DPO, RLAIF) can apply the "prefix/shared sub-structure $\to$ implicit process signal" view to check for normalization bias.
+- **vs. TreeRPO / TreeRL**: These explicitly construct tree structures; this paper proves vanilla GRPO is a special case of such structures and achieves similar goals with fewer changes.
+- **vs. VinePPO / treeRL**: These use MC rollouts for value estimation with extra forwards; this paper extracts estimates from existing group rollouts for free.
+- **vs. DAPO**: DAPO addresses sample-level loss instability; this paper treats DAPO as a prerequisite and orthogonally fixes a normalization bug.
+- **Inspiration**: Any algorithm using relative scoring within a group (e.g., DPO, RLAIF) can apply the "shared substructure $\rightarrow$ implicit process signal" perspective to check for systematic normalization bias.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐⭐ "GRPO is an implicit PRM" is an elegant and previously unnoticed equivalence.
-- **Experimental Thoroughness**: ⭐⭐⭐ Clear improvements on math benchmarks, but missing systematic verification across other tasks.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ The counter-example used to explain the abstract bug is exceptionally clear.
-- **Value**: ⭐⭐⭐⭐⭐ A one-line patch providing ~2x acceleration and stable gains is immediately useful for industrial RL pipelines.
+- Novelty: ⭐⭐⭐⭐⭐ The equivalence "GRPO is an implicit PRM" is a beautiful and previously unnoticed conclusion.
+- Experimental Thoroughness: ⭐⭐⭐ Strong evidence in reasoning, but missing systematic cross-task validation.
+- Writing Quality: ⭐⭐⭐⭐⭐ Excellent clarity, especially the use of counter-examples.
+- Value: ⭐⭐⭐⭐⭐ ~2x training speedup and stability via a one-line patch is highly valuable for production.
 
 <!-- RELATED:START -->
 
@@ -127,8 +113,8 @@ A two-step approach:
 - [\[ICML 2026\] Reward Modeling from Natural Language Human Feedback](reward_modeling_from_natural_language_human_feedback.md)
 - [\[NeurIPS 2025\] Unlocking Multimodal Mathematical Reasoning via Process Reward Model](../../NeurIPS2025/llm_reasoning/unlocking_multimodal_mathematical_reasoning_via_process_reward_model.md)
 - [\[ICML 2026\] Prioritize the Process, Not Just the Outcome: Rewarding Latent Thought Trajectories Improves Reasoning in Looped Language Models](prioritize_the_process_not_just_the_outcome_rewarding_latent_thought_trajectorie.md)
-- [\[ICML 2026\] TRACE: Evaluating LLM CoT Reasoning Process Quality with the Toulmin Argumentation Model](trace_toulmin-based_reasoning_assessment_through_constructive_elements_for_llm_c.md)
 - [\[ACL 2026\] Efficient Process Reward Modeling via Contrastive Mutual Information](../../ACL2026/llm_reasoning/efficient_process_reward_modeling_via_contrastive_mutual_information.md)
+- [\[NeurIPS 2025\] DreamPRM: Domain-Reweighted Process Reward Model for Multimodal Reasoning](../../NeurIPS2025/llm_reasoning/dreamprm_domain-reweighted_process_reward_model_for_multimodal_reasoning.md)
 
 </div>
 

@@ -2,170 +2,166 @@
 title: >-
   [Paper Note] Coded-E2LF: Coded Aperture Light Field Imaging from Events
 description: >-
-  [CVPR2026][light field imaging] This paper provides the first demonstration that an event camera alone (without conventional intensity images) can reconstruct a 4D light field at pixel-level accuracy. The proposed Coded-…
+  [CVPR 2026][Others][light field imaging] This paper demonstrates for the first time that pixel-level accuracy 4D light fields can be reconstructed using only an event camera (without traditional intensity images). The proposed Coded-E2LF system triggers events by accumulating sequences of coded aperture patterns into event images. By utilizing a "black-first"
 tags:
-  - "CVPR2026"
-  - "light field imaging"
-  - "event camera"
-  - "coded aperture"
-  - "deep optics"
-  - "end-to-end optimization"
-  - "black-first coding sequence"
+  - CVPR 2026
+  - Others
+  - light field imaging
+  - event camera
+  - coded aperture
+  - deep optics
+  - end-to-end optimization
+  - black-first coding sequence
 date: 2026-05-08
-content_hash: 3c3681b68b4527bc
+content_hash: 1d3ca17fe38d8a8f
 ---
-
 # Coded-E2LF: Coded Aperture Light Field Imaging from Events
 
-**Conference**: CVPR2026
+**Conference**: CVPR2026  
 **arXiv**: [2602.22620](https://arxiv.org/abs/2602.22620)  
 **Code**: To be confirmed  
-**Area**: Others (Computational Photography / Event Camera)
+**Area**: others (Computational Photography / Event Camera)  
 **Keywords**: light field imaging, event camera, coded aperture, deep optics, end-to-end optimization, black-first coding sequence
 
 ## TL;DR
 
-This paper provides the first demonstration that an event camera alone (without conventional intensity images) can reconstruct a 4D light field at pixel-level accuracy. The proposed Coded-E2LF system triggers events via a coded aperture pattern sequence and accumulates them into event images. By introducing an all-black pattern, a mathematical equivalence between event-based and intensity-based coded aperture imaging is established. Combined with end-to-end deep optics training, the system achieves 8×8 sub-aperture light field reconstruction.
+This paper demonstrates for the first time that pixel-level accuracy 4D light fields can be reconstructed using only an event camera (without traditional intensity images). The proposed Coded-E2LF system triggers events by accumulating sequences of coded aperture patterns into event images. By utilizing a "black-first" pattern, the authors establish the mathematical equivalence between event-based and intensity-based coded aperture imaging. Combined with end-to-end deep optics training, the system achieves $8 \times 8$ viewpoint light field reconstruction.
 
 ## Background & Motivation
 
-**Value and limitations of light field imaging**: 4D light fields capture both spatial and angular information of scene radiance, enabling applications such as digital refocusing, depth estimation, and view synthesis. Conventional light field cameras (e.g., Lytro) employ microlens arrays, which introduce an inherent resolution trade-off between spatial and angular dimensions.
+**Value and Limitations of Light Field Imaging**: 4D light fields record the spatial and angular information of light rays in a scene, enabling applications such as digital refocusing, depth estimation, and view synthesis. Traditional light field cameras (e.g., Lytro) use microlens arrays, which suffer from an inherent resolution trade-off between spatial and angular resolution.
 
-**Advances in coded aperture approaches**: Coded aperture methods encode angular information into a single 2D image by placing known binary patterns on the lens aperture, followed by computational reconstruction. This avoids the spatial resolution penalty of microlens arrays, but reconstruction quality depends critically on the coding design and decoding algorithm.
+**Progress in Coded Aperture Methods**: Coded aperture techniques encode angular information into a single 2D image by applying known mask patterns to the lens aperture, with the light field being reconstructed via back-end computation. This avoids the resolution loss of microlenses, but reconstruction quality depends on the encoding design and decoding algorithms.
 
-**Limitations of conventional coded aperture**: Intensity camera-based coded aperture imaging requires multiple exposures (one per pattern), constrained by camera readout speed and scene dynamics—object motion between exposures introduces reconstruction artifacts.
+**Limitations of Traditional Coded Apertures**: Coded aperture imaging based on intensity cameras requires multiple exposures (using different patterns for each), which is limited by the camera readout speed and scene dynamics—object movement between exposures causes artifacts.
 
-**Unique advantages of event cameras**: Event cameras asynchronously detect per-pixel brightness changes with microsecond temporal resolution, high dynamic range (120+ dB), and low power consumption. When a coded aperture pattern is switched, the pattern change itself triggers events even in a completely static scene.
+**Unique Advantages of Event Cameras**: Event cameras asynchronously detect pixel-level brightness changes with microsecond temporal resolution, high dynamic range (120+ dB), and low power consumption. When a coded aperture pattern switches, the pattern change itself triggers events even if the scene is completely static.
 
-**An unexplored combination**: The combination of event cameras and coded apertures has no prior precedent. Event cameras are naturally suited to detecting brightness changes caused by pattern switching, theoretically enabling multi-pattern acquisition at extremely high speed. However, the nonlinear logarithmic response of event data prevents direct application of conventional coded aperture theory.
+**Unexplored Combination**: The combination of event cameras and coded apertures is unprecedented. Event cameras are naturally suited for detecting brightness changes caused by pattern switching, theoretically allowing for extremely fast multi-pattern acquisition. However, the non-linear logarithmic response of event data means traditional coded aperture theory cannot be directly applied.
 
 ## Core Problem
 
-How to exploit the high temporal resolution of event cameras to reconstruct a complete 4D light field from event data alone via a coded aperture pattern sequence, resolve the nonlinearity in event-to-intensity conversion, and realize a practically deployable hardware system.
+How can the high temporal resolution of event cameras be leveraged to reconstruct a complete 4D light field solely from event data generated by a sequence of coded aperture patterns, while addressing the non-linearity in event-to-intensity conversion and achieving a practical, hardware-deployable system?
 
 ## Method
 
-### System Overview
+### Overall Architecture
 
-The Coded-E2LF system comprises three components: **(1)** hardware layer—programmable aperture + event camera; **(2)** coding theory—black-pattern equivalence theorem + black-first (BF) coding sequence; **(3)** network layer—AcqNet (learning coding patterns) + RecNet (light field reconstruction), trained end-to-end.
+Coded-E2LF aims to reconstruct pixel-level accuracy 4D light fields entirely without traditional intensity cameras. The system adopts the AcqNet-RecNet pipeline from Habuchi et al. as a baseline, adding theoretical analysis and two algorithmic improvements. The workflow is as follows: a programmable aperture switches through a coded pattern sequence (approx. 30ms), where each switch triggers events in a static scene that are accumulated into event images. One part of the network (AcqNet) learns the coding patterns, while the other (RecNet) reconstructs the $8 \times 8$ viewpoint light field from $N-1$ event images. The entire pipeline is jointly optimized end-to-end. The two key theoretical conclusions are: including one all-black pattern makes event-based imaging approximately equivalent to traditional intensity-based imaging, and the coding patterns are approximately permutation-invariant, meaning the position of the black pattern does not change the information content. These support the Black-First (BF) and Reference-Aware (RA) improvements.
 
-### Coded Aperture + Event Camera Imaging Model
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    L["Input Light Field L (GT for training, real scene for deployment)"]
+    L --> A["AcqNet learns coding patterns<br/>N trainable tensors via sigmoid, scale increases → binary"]
+    A --> BF["Black-First Coding Sequence (BF)<br/>First pattern fixed as all-black, remaining N−1 are learned"]
+    BF --> I["Coded Aperture Imaging Model<br/>Intensity map I⁽ⁿ⁾ = Σ a·L (Eq.1)"]
+    I --> RA["Reference-Aware Event Generation (RA)<br/>Tracks I_ref for per-event simulation, accumulates into event images"]
+    RA -->|"Black pattern equivalence + Permutation invariance<br/>event ≈ intensity coded aperture, solvable"| REC["RecNet Reconstruction<br/>N−1 event images → 8×8 viewpoint light field L̂"]
+    REC --> OUT["4D Light Field Output<br/>Digital Refocusing / View Synthesis"]
+    REC -.->|"End-to-end MSE backprop, joint optimization coding ↔ reconstruction"| A
+```
 
-- **Coding process**: $N$ coding patterns $\{a^{(n)}\}_{n=1}^{N}$ are applied to the aperture sequentially, where $a^{(n)} \in \{0, 1\}^{u \times v}$ ($u \times v$ denotes angular resolution, e.g., $8 \times 8$) controls the corresponding sub-aperture elements.
-- **Static scene assumption**: The scene remains static during the pattern sequence (approximately 20 ms); pattern switching is the sole source of brightness changes that trigger events.
-- **Event accumulation**: Events triggered by switching from pattern $a^{(n-1)}$ to $a^{(n)}$ can be accumulated into an event image:
-  $$E^{(n-1,n)}(x) = \log I^{(n)}(x) - \log I^{(n-1)}(x)$$
-  where $I^{(n)}(x) = \sum_{s,t} a^{(n)}(s,t) \cdot L(x, s, t)$ is the intensity image under pattern $a^{(n)}$, and $L(x,s,t)$ is the light field to be reconstructed.
+### Key Designs
 
-### Key Theory: Role of the Black Pattern
+**1. Coded Aperture + Event Camera Imaging Model: Converting pattern switching into cumulative event images**
 
-- **Core theorem (Eq. 8)**: If the coding sequence contains an all-black pattern $a^{(n_B)} = \mathbf{0}$ (i.e., the aperture is fully closed), then:
-  $$E^{(n_B, n)}(x) = \log I^{(n)}(x) - \log I^{(n_B)}(x) = \log I^{(n)}(x) + C$$
-  Because $I^{(n_B)} = 0$ requires special treatment—in practice, event cameras have a dark-current baseline $I_{\text{dark}}$, rendering $\log I^{(n_B)}$ a global constant $C$.
-- **Equivalence**: The above expression shows that an event image involving the black pattern differs from the corresponding intensity-based coded aperture measurement by only a global constant, making conventional coded aperture decoding methods directly applicable.
-- **Approximate permutation invariance**: With the black pattern included, event images generated under different pattern orderings are approximately equivalent (since the black pattern provides a unified reference baseline), simplifying coding design.
+The logarithmic response of events prevents the direct application of traditional coded aperture theory. The first step is to encode light field information into events. The system applies $N$ binary patterns $\{a^{(n)}\}_{n=1}^{N}$ ($a^{(n)} \in \{0,1\}^{u \times v}$) to the aperture to control sub-aperture switches. Within a 30ms static window, pattern switching is the sole source of brightness change. Events triggered by switching from $a^{(n-1)}$ to $a^{(n)}$ are accumulated into an event image $E^{(n-1,n)}(x) = \log I^{(n)}(x) - \log I^{(n-1)}(x)$, where $I^{(n)}(x) = \sum_{s,t} a^{(n)}(s,t) \cdot L(x, s, t)$. Thus, the light field $L(x,s,t)$ is encoded into a sequence of logarithmic differences.
 
-### Black-First Coding Sequence (BF)
+**2. Black Pattern Equivalence and Permutation Invariance: Eliminating logarithmic non-linearity with an all-black reference**
 
-- **Design**: The black pattern is fixed as the first element of the sequence ($a^{(1)} = \mathbf{0}$), followed by $N-1$ coded patterns applied successively.
-- **Advantages**:
-    - Event images $\{E^{(1,n)}\}_{n=2}^{N}$ from the initial black pattern to each subsequent pattern directly correspond to intensity-based measurements.
-    - Substantially reduces event count—compared to arbitrary sequences, BF avoids redundant events between adjacent non-zero patterns.
-    - $N-1$ event images suffice to reconstruct the complete $u \times v$ view light field.
-- **Measured efficiency**: The entire coding sequence can be acquired in approximately 20 ms.
+Event images record logarithmic intensity differences (Eq. 4: $\tau E^{(n-1,n)} \approx \ln(I^{(n)}+\epsilon) - \ln(I^{(n-1)}+\epsilon)$). Recovering $N$ intensity maps from $N-1$ event images is underdetermined. The paper proves (Eq. 8) that if the sequence contains an all-black pattern $a^{(n_B)} = \mathbf{0}$ ($I^{(n_B)}=0$), all $I^{(n)}$ can be recovered in closed form using the dark current bias $\epsilon$. This means **event-based coded aperture imaging with a black pattern is approximately equivalent to traditional intensity-based imaging**, allowing existing decoding methods to be reused. This also explains why the baseline automatically learns an all-black pattern. Additionally, patterns are **approximately permutation-invariant** (Eq. 11), meaning the position of the black pattern does not affect the information content, which serves as the theoretical basis for BF.
 
-### Reference-Aware Event Generation (RA)
+**3. Black-First Coding Sequence (BF): Fixing the black pattern at the first position**
 
-- **Motivation**: The logarithmic response and threshold mechanism of event cameras introduce errors in naive event accumulation.
-- **Method**: The reference intensity $I_{\text{ref}}$ is explicitly tracked to accurately simulate the event generation process:
-  $$e_k = \begin{cases} +1 & \text{if } \log I(x_k, t_k) - \log I_{\text{ref}}(x_k) \geq C_{\text{pos}} \\ -1 & \text{if } \log I(x_k, t_k) - \log I_{\text{ref}}(x_k) \leq -C_{\text{neg}} \end{cases}$$
-  Each time an event fires, $I_{\text{ref}}$ is updated accordingly.
-- **During training**: RA serves as a differentiable event generation simulator, enabling accurate gradient backpropagation through the coding pattern optimization.
+While the baseline learns black pattern positions randomly, the authors observed that pattern switches adjacent to the black pattern trigger the most events. To optimize this, BF sets $a^{(1)} = \mathbf{0}$ and learns the subsequent $N-1$ patterns via AcqNet. Consequently, event images $\{E^{(1,n)}\}_{n=2}^{N}$ derived from the first black pattern directly correspond to intensity-based measurements. BF avoids redundant events, significantly compressing the total event count (average 7.18 events/pixel). Fewer events allow for shorter acquisition windows (theoretical lower bound approx. 6.2ms for EVK4), making the system more tolerant to slow scene motion.
 
-### End-to-End Deep Optics Training
+**4. Reference-Aware Event Generation (RA): Accurately simulating event triggering during training**
 
-- **AcqNet (learning coding patterns)**: Takes randomly initialized continuous patterns $\tilde{a}^{(n)} \in [0,1]^{u \times v}$ as input; after training convergence, patterns are binarized to $a^{(n)} \in \{0,1\}^{u \times v}$.
-- **RecNet (light field reconstruction)**: Receives $N-1$ event images and outputs the complete light field $\hat{L} \in \mathbb{R}^{H \times W \times u \times v}$.
-    - Architecture: CNN-based encoder-decoder that processes spatial and angular dimensions separately before fusion.
-- **Loss function**: $\mathcal{L} = \mathcal{L}_{\text{recon}}(\hat{L}, L_{\text{GT}}) + \gamma \cdot \mathcal{L}_{\text{binary}}$
-    - $\mathcal{L}_{\text{recon}}$: L1 + SSIM loss for light field reconstruction.
-    - $\mathcal{L}_{\text{binary}}$: Regularization encouraging patterns toward binary values.
-- **Training pipeline**: Forward pass—AcqNet generates patterns → RA simulates events → RecNet reconstructs light field; Backward pass—gradients propagate through the entire pipeline for joint optimization of coding and decoding.
+The baseline event generation (Eq. 12) uses the logarithmic difference between $I^{(n)}$ and $I^{(n-1)}$ but ignores the true reference intensity $I_{\text{ref}}$ of the event sensor, deviating from real trigger conditions ($|\ln(I+\epsilon) - \ln(I_{\text{ref}}+\epsilon)| > \tau$). RA **strictly tracks and updates $I_{\text{ref}}$**: it calculates the event image from current $I^{(n)}$ and $I_{\text{ref}}$ (Eq. 13), then updates $I_{\text{ref}}$ based on the trigger amount (Eq. 14). While $I_{\text{ref}}$ is usually uncertain, **BF makes it trackable** by initializing $I_{\text{ref}}$ to 0 at $n=1$. Coupled with gradient pass-through, RA acts as a differentiable simulator, allowing coding gradients to flow accurately. BF provides less data on its own; when combined with RA, it achieves both fewer events and higher reconstruction quality.
 
-## Experiments
+**5. End-to-end Deep Optics: AcqNet for encoding, RecNet for reconstruction**
 
-### Experimental Setup
+To surpass manual coding limits, AcqNet treats the **$N$ coding patterns as trainable parameters**. $N$ sets of $8 \times 8$ tensors $\dot{a}^{(n)}$ pass through $\text{sigmoid}(s\,\dot{a}^{(n)})$ to obtain $a^{(n)}$. During training, the scale $s$ gradually increases, forcing patterns to converge to binary values ($0/1$) **without a separate binarization loss**. RecNet receives the $N-1$ stacked event images and outputs the $8 \times 8 = 64$ viewpoints $\hat{L}$, utilizing a 23-layer CNN architecture for fair comparison. The entire pipeline is jointly optimized for MSE.
 
-- **Synthetic data**: Based on the HCI light field dataset and custom synthetic scenes; $8 \times 8$ views, spatial resolution $512 \times 512$.
-- **Real hardware**: Prophesee EVK4 event camera (resolution $1280 \times 720$) + programmable LCD aperture (covering the lens aperture plane).
-- **Evaluation metrics**: PSNR, SSIM, LPIPS.
+### Loss & Training
 
-### Synthetic Data Results
+The AcqNet-RecNet pipeline is trained to minimize the **Mean Squared Error (MSE) between the original and reconstructed light fields** as the sole objective. Pattern binarization is achieved by gradually increasing the scale $s$ in the sigmoid function. Quantization operators in event generation use straight-through estimators to maintain differentiability. After training, AcqNet is replaced by real hardware using the learned patterns to feed real event data into RecNet.
+
+## Key Experimental Results
+
+### Experimental Settings
+
+- **Synthetic Data**: Based on the HCI light field dataset and custom scenes, $8 \times 8$ viewpoints, $512 \times 512$ spatial resolution.
+- **Real-world Hardware Validation**: Prophesee EVK4 event camera ($1280 \times 720$) + programmable LCD aperture mask.
+- **Metrics**: PSNR, SSIM, LPIPS.
+
+### Main Results
 
 | Method | #Patterns | PSNR ↑ | SSIM ↑ | LPIPS ↓ |
-|--------|-----------|--------|--------|---------|
+|------|-----------|--------|--------|---------|
 | Intensity-based coded aperture | 9 | 34.2 | 0.952 | 0.041 |
 | Naive event accumulation | 9 | 28.7 | 0.891 | 0.098 |
 | Coded-E2LF (random patterns) | 9 | 33.5 | 0.945 | 0.048 |
 | **Coded-E2LF (learned, BF)** | **9** | **35.1** | **0.961** | **0.035** |
 
-- The learned BF coding sequence outperforms conventional intensity-based methods, validating the effectiveness of end-to-end optimization.
-- Naive event accumulation (without black pattern or RA) degrades substantially, confirming the necessity of the theoretical analysis.
+- The learned BF sequence outperforms traditional intensity-based methods, validating end-to-end optimization.
+- Naive accumulation significantly reduces quality, highlighting the necessity of the theoretical analysis.
 
-### Real Hardware Validation
+### Real-world Hardware Validation
 
-- A physical prototype is assembled using Prophesee EVK4 + LCD aperture, with 9 patterns (including 1 black pattern) and a total acquisition time of approximately 20 ms.
-- Successful reconstruction of $8 \times 8$ real-scene light fields is demonstrated, enabling digital refocusing and view switching.
-- Compared to intensity-based methods, the event-based approach performs superiorly in high dynamic range scenes (coexistence of bright highlights and dark regions).
+- Constructed using Prophesee EVK4 and LCD aperture, utilizing 9 patterns (including 1 black pattern) with a 20ms total acquisition time.
+- Successfully reconstructed $8 \times 8$ viewpoint light fields of real scenes, physical refocusing, and viewpoint switching.
+- Event-based solution performed better in high dynamic range scenes (coexisting bright and dark areas) compared to intensity-based methods.
 
 ### Ablation Study
 
 | Configuration | PSNR |
-|---------------|------|
-| No black pattern ($N$ arbitrary non-zero patterns) | 29.4 |
-| Black pattern at random position | 33.8 |
-| Black pattern + BF (fixed as first) | **35.1** |
-| BF without RA | 33.2 |
-| BF + RA (full) | **35.1** |
+|------|------|
+| W/o Black pattern (any N non-zero patterns) | 29.4 |
+| W/ Black pattern + Random position | 33.8 |
+| W/ Black pattern + BF (fixed at first) | **35.1** |
+| BF + W/o RA | 33.2 |
+| BF + RA (Full) | **35.1** |
 
-- The black pattern is the key driver of performance improvement (+4.4 dB).
-- The BF sequence further improves over randomly placing the black pattern by 1.3 dB.
-- The RA module contributes 1.9 dB; accurate event generation modeling is indispensable.
+- The black pattern is the key to the performance jump (+4.4 dB).
+- The BF sequence provides an additional 1.3 dB over random placement.
+- The RA module contributes 1.9 dB; accurate modeling of event generation is essential.
 
-## Highlights & Insights
+## Highlights
 
-- **Pioneering contribution**: This work provides the first demonstration that an event camera can independently reconstruct a 4D light field without any conventional intensity image assistance.
-- **Black pattern equivalence theorem**: Elegantly resolves the core challenge of logarithmic nonlinearity in event data—by introducing an all-black reference pattern, event-based imaging is transformed into an equivalent intensity-based problem.
-- **BF coding sequence design**: The simple "black-pattern-first" strategy simultaneously reduces event count and improves reconstruction quality, offering high practical value.
-- **End-to-end deep optics**: Joint optimization of AcqNet and RecNet for coding and decoding surpasses the performance ceiling of manually designed codes.
-- **Real hardware validation**: Beyond theoretical contributions, physical experiments on the Prophesee EVK4 demonstrate engineering feasibility.
-- **Extremely fast acquisition**: The complete pattern sequence is acquired in 20 ms, one to two orders of magnitude faster than conventional multi-exposure approaches.
+- **Pioneering Contribution**: First to demonstrate that event cameras can independently reconstruct 4D light fields without any traditional intensity images.
+- **Black Pattern Equivalence Theorem**: Elegantly solves the logarithmic non-linearity of event data by introducing an all-black reference to map the problem to a solvable intensity-based framework.
+- **BF Coding Strategy**: The "Black-First" strategy reduces event count while improving quality, offering high practical value.
+- **End-to-End Deep Optics**: AcqNet + RecNet joint optimization surpasses manual coding design limits.
+- **Real Hardware Proof**: Beyond theory, the Prophesee EVK4 experiments prove the engineering feasibility.
+- **Fast Acquisition**: 20ms for the full sequence is 1-2 orders of magnitude faster than traditional multi-exposure solutions.
 
-## Limitations & Future Work
+## Limitations
 
-- The static scene assumption restricts applicability—scene motion within 20 ms still introduces artifacts; dynamic scenes require additional motion compensation.
-- The switching speed of the LCD aperture (approximately 2 ms per pattern) is the acquisition bottleneck; replacing it with a DMD (microsecond-level switching) could further accelerate the system.
-- The current $8 \times 8$ angular resolution requires 9 pattern switches; higher angular resolutions will linearly increase acquisition time.
-- Dark current and noise of event cameras may degrade event image quality in low-light conditions.
-- The scalability of the CNN-based RecNet to very high spatial resolutions (e.g., 4K) has yet to be verified.
-- Validation is limited to static indoor scenes; outdoor, long-range, and large-baseline scenarios remain unexplored.
+- Static scene assumption limits application; motion within 20ms still introduces artifacts, requiring motion compensation.
+- LCD switching speed (~2ms/pattern) is the bottleneck; using DMDs could further accelerate acquisition.
+- $8 \times 8$ resolution requires 9 patterns; higher angular resolution increases acquisition time linearly.
+- Dark current and noise in event cameras may degrade quality in low-light scenarios.
+- CNN scalability for extremely high spatial resolution (e.g., 4K) remains to be verified.
+- Only indoor static scenes were validated; outdoor or large-baseline scenes were not covered.
 
 ## Related Work & Insights
 
-- **Conventional light field cameras**: Lytro, RayTrix (microlens arrays)—suffer from severe spatial/angular resolution trade-offs.
-- **Coded aperture light field**: Veeraraghavan et al. (2007), Marwah et al. (2013)—intensity camera-based coded aperture with multiple exposures, constrained by dynamic scenes.
-- **Deep optics**: Sitzmann et al. (2018), Chang & Wetzstein (2019)—end-to-end optimization of optical coding and computational decoding, but all based on intensity cameras.
-- **Event camera 3D reconstruction**: E2VID, ESIM, EventNeRF—events used for depth estimation or NeRF, without complete light field reconstruction.
-- **Event-based HDR**: Han et al. (2020), Rebecq et al. (2019)—exploit the high dynamic range advantage of event cameras; complementary to this work.
-- **Compressive light field**: Kamal et al. (2016)—compressive sensing framework for light field reconstruction; the proposed end-to-end method achieves superior performance.
+- **Traditional LF Cameras**: Lytro, RayTrix (microlens arrays) — severe spatial/angular resolution trade-offs.
+- **Coded Aperture LF**: Veeraraghavan et al. (2007) — intensity-based, limited by multiple exposures.
+- **Deep Optics**: Sitzmann et al. (2018) — end-to-end optimization but based on intensity cameras.
+- **Event-based 3D**: E2VID, EventNeRF — events for depth or NeRF, but not full light field reconstruction.
+- **Event-based HDR**: Han et al. (2020) — complements the HDR advantages of this paper.
+- **Compressive Light Field**: Kamal et al. (2016) — CS framework; this paper's end-to-end method performs better.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ — First to introduce event cameras into coded aperture light field imaging; the black pattern equivalence theorem is theoretically original.
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Comprehensive synthetic + real hardware validation + ablation study, though diversity of real-world scenes is limited.
-- Writing Quality: ⭐⭐⭐⭐ — Theoretical derivations are clear; the logic from physical modeling to system design is coherent.
-- Value: ⭐⭐⭐⭐⭐ — Opens a new direction in event-based computational light field imaging, with both theoretical contributions and practical engineering validation.
-- Value: To be rated
+- Novelty: ⭐⭐⭐⭐⭐ — First introduction of event cameras to coded aperture LF; black pattern theorem is theoretically original.
+- Experimental Thoroughness: ⭐⭐⭐⭐ — Comprehensive synthetic and real-world results, though real scene diversity is limited.
+- Writing Quality: ⭐⭐⭐⭐ — Clear derivations and logical flow from physical models to system design.
+- Value: ⭐⭐⭐⭐⭐ — Opens a new direction for event-based computational light field imaging.
+- Novelty: Pending evaluation.
 
 <!-- RELATED:START -->
 
@@ -173,10 +169,10 @@ The Coded-E2LF system comprises three components: **(1)** hardware layer—progr
 
 ## Related Papers
 
+- [\[CVPR 2026\] X-band Radar Non-Line-of-Sight Imaging](x-band_radar_non-line-of-sight_imaging.md)
+- [\[ICML 2025\] Revisiting the Predictability of Performative, Social Events](../../ICML2025/others/revisiting_the_predictability_of_performative_social_events.md)
 - [\[AAAI 2026\] Spike Imaging Velocimetry: Dense Motion Estimation of Fluids Using Spike Cameras](../../AAAI2026/others/spike_imaging_velocimetry_dense_motion_estimation_of_fluids_using_spike_cameras.md)
-- [\[CVPR 2026\] Rooftop Wind Field Reconstruction Using Sparse Sensors: From Deterministic to Generative Learning Methods](rooftop_wind_field_reconstruction_using_sparse_sen.md)
-- [\[CVPR 2026\] POLISH'ing the Sky: Wide-Field and High-Dynamic Range Interferometric Image Reconstruction](polishing_the_sky_widefield_and_highdynamic_range.md)
-- [\[AAAI 2026\] Towards Temporal Fusion Beyond the Field of View for Camera-based Semantic Scene Completion](../../AAAI2026/others/towards_temporal_fusion_beyond_the_field_of_view_for_camera-based_semantic_scene.md)
+- [\[CVPR 2025\] Potential Field Based Deep Metric Learning](../../CVPR2025/others/potential_field_based_deep_metric_learning.md)
 - [\[ICLR 2026\] Neural Force Field: Few-shot Learning of Generalized Physical Reasoning](../../ICLR2026/others/neural_force_field_few-shot_learning_of_generalized_physical_reasoning.md)
 
 </div>

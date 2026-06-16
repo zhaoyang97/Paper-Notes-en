@@ -2,97 +2,122 @@
 title: >-
   [Paper Note] Crowdsourcing of Real-world Image Annotation via Visual Properties
 description: >-
-  [CVPR 2026][image annotation] This paper proposes an image annotation methodology constrained by visual properties. It constructs an object category hierarchy through knowledge representation and combines an interactive…
+  [CVPR 2026][Others][image annotation] Proposes an image annotation methodology based on visual property constraints, constructing an object category hierarchy via knowledge representation combined with an interactive crowdsourcing framework, utilizing visual genus and visual differentia to guide the annotation process and reduce annotator subjectivity and
 tags:
-  - "CVPR 2026"
-  - "image annotation"
-  - "crowdsourcing"
-  - "visual properties"
-  - "semantic gap"
-  - "object hierarchy"
+  - CVPR 2026
+  - Others
+  - image annotation
+  - crowdsourcing
+  - visual properties
+  - semantic gap
+  - object hierarchy
 date: 2026-05-08
-content_hash: 5e007e71c50ec72b
+content_hash: b8883466af3bfddc
 ---
-
 # Crowdsourcing of Real-world Image Annotation via Visual Properties
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2604.14449](https://arxiv.org/abs/2604.14449)  
 **Code**: None  
-**Area**: Dataset Construction / Annotation Methodology
+**Area**: Dataset Construction/Annotation Methodology  
 **Keywords**: image annotation, crowdsourcing, visual properties, semantic gap, object hierarchy
 
 ## TL;DR
 
-This paper proposes an image annotation methodology constrained by visual properties. It constructs an object category hierarchy through knowledge representation and combines an interactive crowdsourcing framework that leverages visual genus and visual differentia to guide the annotation process, thereby reducing annotator subjectivity and the semantic gap problem.
+Proposes an image annotation methodology based on visual property constraints, constructing an object category hierarchy via knowledge representation combined with an interactive crowdsourcing framework, utilizing visual genus and visual differentia to guide the annotation process and reduce annotator subjectivity and semantic gap issues.
 
 ## Background & Motivation
 
-The construction of existing image datasets (e.g., ImageNet, Open Images) suffers from subjectivity: annotators map images to predefined categories based on personal interpretation, leading to many-to-many mapping issues and annotation inconsistencies. For example, the same image may be assigned to three categories of different granularities in ImageNet, or visually distinct images (real objects, toys, cartoons, figurines) may all be labeled as the same "brown bear" category. The root cause is the Semantic Gap Problem (SGP) introduced by the complexity and ambiguity of natural language.
+The construction process of existing image datasets (e.g., ImageNet, Open Images) suffers from subjectivity: annotators match images to predefined categories based on personal understanding, leading to many-to-many mapping and annotation inconsistency. For instance, the same image in ImageNet might be labeled with three different granularities, or distinctly different images (real objects, toys, cartoons, figurines) are labeled as the same "brown bear" category. The root cause is the Semantic Gap Problem (SGP) introduced by the complexity and ambiguity of natural language.
 
 ## Method
 
 ### Overall Architecture
 
-A four-step annotation strategy: (1) **Label Definition**: construct a category hierarchy based on knowledge bases and precisely define the visual properties of each category; (2) **Label Disambiguation**: assign a unique concept identifier to each label; (3) **Object Localization**: identify and localize all objects in an image; (4) **Visual Classification**: guide categorization through visual properties by confirming visual genus and visual differentia level by level.
+This effort presents an annotation methodology aimed at solving many-to-many mapping and inconsistency (e.g., one image labeled with multiple granularities, or real/toy/cartoon confusion) caused by annotators subjectively forcing images into abstract category names in datasets like ImageNet and Open Images. It decomposes annotation into a four-step pipeline categorized into three tasks: **Offline construction** of the visual property hierarchy—first defining precise visual properties for each category based on knowledge bases (Label Definition), then assigning unique concept identifiers to each label for disambiguation (Label Disambiguation); **Image-wise annotation**—first identifying and cropping individual objects (Object Localization), then having annotators verify visual properties layer-by-layer along the hierarchy tree (Visual Classification, driven by the VisClassify algorithm); finally **Outputting** multi-level labels. The core idea is replacing "matching abstract names" with "verifying concrete visual properties."
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["Real-world images + categories to be labeled"]
+    subgraph TAX["Visual Property Category Hierarchy (Offline Construction)"]
+        direction TB
+        A["Label Definition<br/>Visual Genus/Differentia + WordNet/Wikipedia precise definitions"]
+        B["Label Disambiguation<br/>Assign unique concept identifiers (1-1 / 2-5-3)"]
+        A --> B
+    end
+    subgraph ANN["Interactive Crowdsourcing Classification (Image-wise Annotation)"]
+        direction TB
+        C["Object Localization<br/>Detection models crop multi-object to single-object"]
+        D["VisClassify Layer-by-layer Q&A<br/>Verify Yes/No visual differentia properties along hierarchy tree"]
+        C --> D
+    end
+    OUT["Multi-level Label Output<br/>Fine-grained categories + visual properties + natural language descriptions"]
+    IN --> TAX
+    TAX --> ANN
+    ANN -->|"Verification failed at any level"| X["Reject / Discharge"]
+    ANN -->|"Step-by-step verification passed"| OUT
+```
 
 ### Key Designs
 
-1. **Visual Property-Based Category Hierarchy**: The visual genus serves as the shared attribute of the parent category (e.g., the visual genus of "goldfinch" is "finch"), while the visual differentia distinguishes sibling categories (e.g., "crimson face and yellow-black wings"). The annotation process requires annotators to verify these concrete visual properties rather than directly matching abstract category names.
+**1. Visual Property Category Hierarchy: Replacing abstract names with visual genus/differentia**
 
-2. **Interactive Crowdsourcing Q&A Framework**: Questions are dynamically generated based on the predefined object hierarchy. Annotators begin at the root node and answer yes/no questions of the form "does the object exhibit a given visual differentia attribute," proceeding downward level by level until further subdivision is no longer possible. The VisClassify algorithm implements this recursive hierarchical visual classification process.
+To address the subjectivity caused by annotators directly matching abstract category names, the hierarchy uses visual genus as parent class shared properties (e.g., the visual genus of a "Goldfinch" is "Finch") and visual differentia as properties distinguishing sibling categories (e.g., "crimson face and yellow-black wings"). Annotation requires verifying these specific visual properties rather than judging abstract class membership by impression, thereby reducing subjectivity at the source. This hierarchy is constructed offline in two steps: Label Definition precisely defines visual properties for each category via knowledge bases like WordNet and Wikipedia to eliminate ambiguity; Label Disambiguation assigns unique concept identifiers (e.g., "1-1", "2-5-3") to each label to resolve polysemy. This results in a hierarchy tree $H$ that allows for layer-by-layer questioning.
 
-3. **Multi-Granularity Label Output**: The resulting dataset contains multi-level labels: fine-grained category labels at different granularities, visual property labels, and natural language descriptions of visual features, supporting diverse tasks such as object recognition, fine-grained classification, zero-shot recognition, and image captioning.
+**2. Interactive Crowdsourcing Q&A (VisClassify): Transforming classification into binary questions**
 
-### Core Algorithm: VisClassify
+To reduce the cognitive load and error rates associated with freely judging category names, Object Localization is performed before annotating each image: object localization models automatically crop multi-object images into single-object images to eliminate ambiguity. Subsequently, VisClassify (Algorithm 1) performs recursive Q&A based on the hierarchy tree $H$, starting from the root node. Questions at each branch are generated from knowledge-base-predefined visual differentia properties, and annotators only need to determine "whether the object possesses a specific visual differentia." A "No" answer leads to an immediate Discharge (discarding the image); a "Yes" answer records the label of the current level and continues traversing child nodes until it reaches a leaf or the annotator denies all child differentia. For example, to distinguish a "Goldfinch" from a "Greenfinch," the annotator only needs to answer whether it has a "crimson face."
 
-A recursive hierarchical visual classification process (Algorithm 1): starting from the root node of the predefined hierarchy tree $H$, annotators are asked whether the object exhibits the visual differentia of the current node. A "No" response results in the image being discharged; a "Yes" response records the current-level label and continues traversal of child nodes, until the current node has no subcategories or the annotator negates the visual differentia of all children. Questions at each branching point are dynamically generated from predefined visual differentia attributes in the knowledge base, rather than requiring annotators to freely judge category names.
+**3. Multi-level Label Output: Single annotation producing multi-granularity supervision**
+
+To address the limited information content of single category labels, VisClassify records labels at every layer while traversing the hierarchy tree. Consequently, each image yields multi-level labels: fine-grained category labels at different granularities, visual property labels, and natural language descriptions of visual features. This allows the dataset to simultaneously support various tasks such as object recognition, fine-grained classification, zero-shot learning, and image captioning.
 
 ### Loss & Training
 
-This paper presents an annotation methodology and does not involve model training.
+Ours is an annotation methodology and does not involve model training.
 
 ## Key Experimental Results
 
 ### Main Results
 
-The effectiveness of the methodology is validated through crowdsourcing experiments, with annotator feedback informing directions for optimizing the crowdsourcing setup. Compared to unconstrained free annotation, visual property-constrained annotation significantly improves annotation consistency and accuracy. In the experiments, annotators label bird images by answering hierarchical visual property questions (e.g., distinguishing "goldfinch" from "greenfinch" requires verifying the visual differentia "crimson face"), and results show that annotators from diverse backgrounds achieve higher agreement under visual property guidance. The resulting dataset contains multi-granularity labels, visual property labels, and natural language descriptions, directly supporting object recognition, fine-grained classification, zero-shot recognition, and image captioning.
+The effectiveness of the method is verified through crowdsourcing experiments, and annotator feedback discusses directions for optimizing crowdsourcing setups. Compared to unconstrained free labeling, constrained annotation based on visual properties significantly improves annotation consistency and accuracy. In experiments, annotators labeled bird images (e.g., distinguishing "Goldfinch" from "Greenfinch" by verifying the "crimson face" differentia) by answering hierarchical visual property questions. Results show that annotators from different backgrounds achieved higher consistency under the guidance of visual properties. The resulting dataset contains multi-granularity labels, visual property labels, and natural language descriptions, which can directly serve multi-task learning.
 
 ### Key Findings
 
-- Visual property constraints effectively reduce inter-annotator subjectivity
-- The hierarchical Q&A process lowers the cognitive burden of annotation tasks
-- Multi-level labels provide richer supervisory signals for various downstream tasks
+- Visual property constraints effectively reduce subjectivity differences between annotators.
+- The hierarchical Q&A process reduces the cognitive load of annotation tasks.
+- Multi-level labels provide richer supervision signals for various downstream tasks.
 
 ## Highlights & Insights
 
-- Systematically redesigning the annotation pipeline from the perspective of the semantic gap problem is a well-motivated contribution
-- The conceptualization of visual genus and visual differentia reflects philosophical depth
-- Multi-granularity label output enhances the general applicability of the resulting dataset
-- Each category is precisely defined using knowledge bases such as WordNet and Wikipedia during annotation, eliminating ambiguity introduced by natural language polysemy
-- The Label Disambiguation step assigns unique concept identifiers (e.g., "1-1" and "2-5-3") to each label, resolving polysemy issues
-- The Object Localization step employs object localization models to automatically crop multi-object images into single-object images, eliminating object ambiguity
+- Systematically redesigns the annotation process starting from the Semantic Gap Problem, providing a strong conceptual foundation.
+- The conceptual design of visual genus/differentia possesses philosophical depth.
+- Multi-level label outputs increase the versatility of the dataset.
+- Each category is precisely defined via knowledge bases like WordNet and Wikipedia, eliminating ambiguity from natural language polysemy.
+- Label Disambiguation assigns unique identifiers (e.g., "1-1" and "2-5-3") to each label to solve polysemy issues.
+- Object Localization uses detection models to automatically crop images, eliminating object ambiguity in multi-target scenes.
 
 ## Limitations & Future Work
 
-- Constructing the predefined visual property hierarchy requires domain expert involvement, making scaling costly
-- The methodology targets object recognition scenarios; its applicability to tasks such as scene understanding and action recognition is limited
-- The experimental scale is relatively small; large-scale validation has not been conducted
-- The definition of visual differentia attributes relies on taxonomic canons, and their adaptability to annotators from different cultural backgrounds remains to be examined
-- Integration with automated annotation tools (e.g., MLLM-assisted annotation) has not been explored
+- Constructing the predefined visual property hierarchy requires domain experts, leading to high expansion costs.
+- Currently tailored for object recognition; applicability to scene understanding or action recognition is limited.
+- The experimental scale is relatively small and has not been fully validated on million-scale datasets.
+- The definition of visual differentia relies on taxonomic canons, and its adaptability to annotators from different cultural backgrounds remains to be verified.
+- Possible integration with automated annotation tools (e.g., MLLM-assisted annotation) has not been explored.
 
 ## Related Work & Insights
 
-- The systematic analysis of annotation quality issues in existing benchmark datasets is of reference value
-- The visual property-guided annotation paradigm can be incorporated into active learning and human-machine collaborative annotation
-- The hierarchical labeling scheme offers guidance for constructing higher-quality datasets
-- Concrete case analyses from ImageNet and Open Images reveal systematic deficiencies in existing annotations
+- The systematic analysis of annotation quality issues in existing benchmarks is valuable.
+- The idea of visual property-guided annotation can be integrated into active learning and human-in-the-loop annotation frameworks.
+- The hierarchical labeling scheme provides guidance for building higher-quality datasets.
+- Specific case analyses of ImageNet and Open Images reveal systematic flaws in current annotation practices.
 
 ## Rating
 
-5/10 — The problem formulation is valuable, but the work lacks large-scale experimental validation and quantitative improvement metrics.
+5/10 — The problem definition is valuable, but the work lacks large-scale experimental validation and quantitative improvement metrics.
 
-The four-step annotation strategy (Label Definition → Label Disambiguation → Object Localization → Visual Classification) reflects a complete pipeline design spanning from knowledge representation to crowdsourcing execution.
+The four-step strategy (Label Definition → Label Disambiguation → Object Localization → Visual Classification) in the annotation methodology reflects a complete process design from knowledge representation to crowdsourcing execution.
 
 <!-- RELATED:START -->
 
@@ -100,11 +125,11 @@ The four-step annotation strategy (Label Definition → Label Disambiguation →
 
 ## Related Papers
 
-- [\[ICCV 2025\] Learning Visual Hierarchies in Hyperbolic Space for Image Retrieval](../../ICCV2025/others/learning_visual_hierarchies_in_hyperbolic_space_for_image_retrieval.md)
-- [\[CVPR 2026\] SimRecon: SimReady Compositional Scene Reconstruction from Real Videos](simrecon_simready_compositional_scene_reconstruction_from_real_videos.md)
-- [\[AAAI 2026\] I2E: Real-Time Image-to-Event Conversion for High-Performance Spiking Neural Networks](../../AAAI2026/others/i2e_real-time_image-to-event_conversion_for_high-performance_spiking_neural_netw.md)
-- [\[ICML 2026\] CyberGym-E2E: Scalable Real-World Benchmark for AI Agents' End-to-End Cybersecurity Capabilities](../../ICML2026/others/cybergym-e2e_scalable_real-world_benchmark_for_ai_agents_end-to-end_cybersecurit.md)
-- [\[CVPR 2026\] HypeVPR: Exploring Hyperbolic Space for Perspective to Equirectangular Visual Place Recognition](hypevpr_exploring_hyperbolic_space_for_perspective_to_equirectangular_visual_pla.md)
+- [\[CVPR 2026\] Clair Obscur: an Illumination-Aware Method for Real-World Image Vectorization](clair_obscur_an_illumination-aware_method_for_real-world_image_vectorization.md)
+- [\[CVPR 2026\] UniMERNet: A Universal Network for Real-World Mathematical Expression Recognition](unimernet_a_universal_network_for_real-world_mathematical_expression_recognition.md)
+- [\[CVPR 2026\] Event-based Visual Deformation Measurement](event-based_visual_deformation_measurement.md)
+- [\[CVPR 2026\] Modeling the Visual Ambiguity of Human Sketches](modeling_the_visual_ambiguity_of_human_sketches.md)
+- [\[CVPR 2026\] Towards Stable Federated Continual Test-Time Adaptation in Wild World](towards_stable_federated_continual_test-time_adaptation_in_wild_world.md)
 
 </div>
 

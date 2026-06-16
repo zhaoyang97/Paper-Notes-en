@@ -2,127 +2,121 @@
 title: >-
   [Paper Note] An Instance-Centric Panoptic Occupancy Prediction Benchmark for Autonomous Driving
 description: >-
-  [CVPR 2026][Autonomous Driving][Panoptic Occupancy Prediction] This paper proposes ADMesh (a library of 15K+ high-quality 3D models) and CarlaOcc (a panoptic occupancy dataset with 100K frames at 0.05m resolution)…
+  [CVPR 2026][Autonomous Driving][Paper Note] Ours proposes ADMesh (a high-quality 3D model library with 15K+ assets) and CarlaOcc (a panoptic occupancy dataset with 100k frames and 0.05m precision). It provides the first instance-level annotations and physically consistent ground truth for 3D panoptic occupancy prediction in autonomous driving, along with occupan
 tags:
-  - "CVPR 2026"
-  - "Autonomous Driving"
-  - "Panoptic Occupancy Prediction"
-  - "3D Mesh Library"
-  - "CARLA Simulation"
-  - "Instance-Level Annotation"
-  - "Occupancy Dataset Quality"
+  - CVPR 2026
+  - Autonomous Driving
 date: 2026-05-08
-content_hash: 9e192239e9377a7b
+content_hash: f8a06715d2ae0046
 ---
-
 # An Instance-Centric Panoptic Occupancy Prediction Benchmark for Autonomous Driving
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.27238](https://arxiv.org/abs/2603.27238)  
 **Code**: [https://mias.group/CarlaOcc](https://mias.group/CarlaOcc)  
-**Area**: Autonomous Driving
-**Keywords**: Panoptic Occupancy Prediction, 3D Mesh Library, CARLA Simulation, Instance-Level Annotation, Occupancy Dataset Quality
+**Area**: Autonomous Driving  
+**Keywords**: Panoptic Occupancy Prediction, 3D Mesh Library, CARLA Simulation, Instance-level Annotation, Occupancy Dataset Quality
 
 ## TL;DR
-This paper proposes ADMesh (a library of 15K+ high-quality 3D models) and CarlaOcc (a panoptic occupancy dataset with 100K frames at 0.05m resolution), providing for the first time instance-level annotations and physically consistent ground truth for 3D panoptic occupancy prediction in autonomous driving, along with occupancy quality evaluation metrics and a systematic benchmark.
+Ours proposes ADMesh (a high-quality 3D model library with 15K+ assets) and CarlaOcc (a panoptic occupancy dataset with 100k frames and 0.05m precision). It provides the first instance-level annotations and physically consistent ground truth for 3D panoptic occupancy prediction in autonomous driving, along with occupancy quality evaluation metrics and a systematic benchmark.
 
 ## Background & Motivation
 
-**Background**: 3D occupancy prediction is evolving from purely semantic occupancy toward fine-grained panoptic occupancy (joint semantic and instance prediction). Methods such as SparseOcc and PanoOcc have been proposed, but remain constrained by dataset quality.
+**Background**: 3D occupancy prediction is evolving from pure semantic occupancy to fine-grained panoptic occupancy (joint semantic and instance prediction). Methods like SparseOcc and PanoOcc have been proposed, but they are constrained by dataset quality.
 
-**Limitations of Prior Work**: (1) Existing datasets lack instance-level annotations—SparseOcc/PaSCo generate pseudo-panoptic labels via heuristics (3D box grouping/clustering), introducing boundary artifacts and instance overlaps; (2) Existing ground truth relies on LiDAR point cloud aggregation and voxelization, resulting in coarse resolution (0.2–0.5 m), incomplete geometry (only sensor-visible surfaces), and physical inconsistencies (holes and fractures); (3) No unified high-quality 3D model library exists—current resources are fragmented and platform-dependent.
+**Limitations of Prior Work**: (1) Existing datasets lack instance-level annotations—SparseOcc/PaSCo generate pseudo-panoptic labels via heuristics (3D box grouping/clustering), introducing boundary artifacts and instance overlaps; (2) Current ground truth (GT) relies on LiDAR point cloud aggregation and voxelization, resulting in coarse resolution (0.2-0.5m), incomplete geometry (sensor-visible surfaces only), and physical inconsistency (holes and fractures); (3) Lack of a unified high-quality 3D model library—existing resources are fragmented and platform-dependent.
 
-**Key Challenge**: Panoptic occupancy prediction requires precise instance-level geometric annotations, yet the generation pipelines of existing datasets (LiDAR aggregation → voxelization) are fundamentally incapable of providing physically consistent and complete ground truth.
+**Key Challenge**: Panoptic occupancy prediction requires precise instance-level geometric annotations, but existing generation pipelines (LiDAR aggregation → voxelization) fundamentally fail to provide physically consistent and complete ground truth.
 
-**Key Insight**: Starting from 3D meshes rather than point clouds—meshes encode complete geometry and can be voxelized at arbitrary resolution.
+**Key Insight**: Start from 3D meshes rather than point clouds—meshes contain complete geometry and can be voxelized at any arbitrary resolution.
 
-**Core Idea**: Build a unified 3D model library (ADMesh) → reconstruct complete scene meshes via CARLA simulation → apply topology-aware voxelization to generate physically consistent panoptic occupancy labels.
+**Core Idea**: Construct a unified 3D model library (ADMesh) → Reconstruct complete scene meshes via CARLA simulation → Apply topology-aware voxelization to generate physically consistent panoptic occupancy labels.
 
 ## Method
 
 ### Overall Architecture
-Four major components: (1) ADMesh 3D model library construction; (2) CarlaOcc dataset generation (scene mesh reconstruction → voxelization → sensor artifact correction); (3) occupancy quality evaluation metrics; (4) systematic benchmarking.
+This paper addresses the issue of "lack of high-quality data" for panoptic occupancy prediction: existing ground truth derived from LiDAR aggregation is coarse, incomplete, and lacks instance labels. The authors adopt a mesh-based generation route, as meshes inherently contain complete geometry. The pipeline consists of two primary stages: first, consolidating assets from various simulation platforms into a unified 3D model library, ADMesh; second, using CARLA simulation to reconstruct complete scene meshes frame-by-frame. Through topology-aware voxelization and sensor artifact repair, physically consistent panoptic occupancy GT (CarlaOcc) with instance labels is produced at 0.05m resolution. Finally, a set of metrics and benchmarks are provided to quantify dataset quality.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Simulation Assets<br/>CARLA / BuildingNet / MeshFleet / ShapeNet"] --> B["ADMesh<br/>Unified 3D Model Library (15K+ object-level meshes)"]
+    B --> C["Mesh-based Scene Reconstruction<br/>Background Filtering + Rigid LUT Matching + Pedestrian Skeletal Phase"]
+    C --> D["Topology-aware Mesh Displacement Voxelization<br/>Stuff Merging → Layer-by-layer Union by Height, No Label Overlap"]
+    E["Instance-guided Sensor Artifact Repair<br/>Separate Ray-casting for Transparent Objects, Point-wise Depth Minimum"]
+    D --> E
+    E --> F["CarlaOcc Panoptic Occupancy GT<br/>0.05m Resolution, Instance Labels Included"]
+    F --> G["Occupancy Quality Evaluation<br/>Spatial Continuity / Temporal Consistency Metrics"]
+```
 
 ### Key Designs
 
-1. **ADMesh: Unified 3D Model Library**:
+**1. ADMesh: Consolidating Fragmented Simulation Assets into a Unified Library**
 
-    - Function: Integrates 15K+ high-quality 3D models from four sources—CARLA, BuildingNet, MeshFleet, and ShapeNet.
-    - Mechanism: Develops an automated mesh export toolchain—traverses CARLA scenes → extracts component-level mesh assets → queries component hierarchy and transforms via the UE editor interface → integrates CARLA's native semantic annotation system → hierarchically assembles complete object-level meshes. A unified data organization framework ensures consistency in naming, coordinate systems, and semantic hierarchy.
-    - Design Motivation: Simulation platform assets are fragmented, non-standardized, and platform-bound; a unified framework is needed to support large-scale dataset construction.
+Generating data from meshes requires clean, consistently annotated 3D models. However, simulation assets are highly fragmented with varying coordinate systems and platform locks. ADMesh integrates 15K+ models from CARLA, BuildingNet, MeshFleet, and ShapeNet using an automated mesh export toolchain. It extracts component-level assets from CARLA, queries hierarchies and transforms via UE Editor interfaces, and integrates native semantic systems to reassemble parts into complete object-level meshes. This ensures consistent naming, coordinates, and semantic hierarchies for large-scale reuse.
 
-2. **Mesh-Based Scene Reconstruction**:
+**2. Mesh-based Scene Reconstruction: Replacing Sparse Point Clouds with Complete Geometry**
 
-    - Function: Directly reconstructs the panoptic scene mesh for each frame from 3D meshes (rather than LiDAR point aggregation).
-    - Mechanism:
-        - **Static background**: Selects background meshes $\mathcal{S}_{bg}$ intersecting the occupancy region.
-        - **Rigid foreground**: Matches models $\mathcal{S}_{fg}^r$ from ADMesh using a lookup table (LUT).
-        - **Non-rigid foreground (pedestrians)**: A skeletal motion analyzer preprocesses walking animations into $D$ discrete phase template meshes; at runtime, the current skeletal state is matched to the nearest phase via geodesic distance: $d_k = \arg\min_d \mathcal{G}(\delta_k, \delta_d)$.
-        - Merging: $\mathcal{M}^{pano} = \mathcal{S}_{bg} \cup \mathcal{S}_{fg}^r \cup \mathcal{S}_{fg}^n$
-    - Design Motivation: Meshes preserve complete geometric information, avoiding the incompleteness caused by LiDAR sparse sampling and occlusion.
+LiDAR aggregation suffers from sparse sampling and occlusion, missing object rears. Ours reconstructs the full panoptic scene mesh $\mathcal{M}^{pano}$ frame-by-frame: static backgrounds filter mesh $\mathcal{S}_{bg}$ intersecting the occupancy region; rigid foregrounds (vehicles) use a Look-Up Table (LUT) to match models $\mathcal{S}_{fg}^r$ from ADMesh; non-rigid foregrounds (pedestrians) use a skeletal motion analyzer. The analyzer pre-processes walking animations into $D$ discrete phase templates, matching the current skeletal state $\delta_k$ to the nearest phase $d_k = \arg\min_d \mathcal{G}(\delta_k, \delta_d)$ via geodesic distance. This reconstruction avoids LiDAR-induced holes and fractures.
 
-3. **Topology-Aware Mesh Displacement Strategy**:
+**3. Topology-aware Mesh Displacement: Clean Voxelization for Overlap-free Labels**
 
-    - Function: Generates overlap-free panoptic occupancy labels from the panoptic scene mesh.
-    - Mechanism: Merges stuff meshes by semantic category (eliminating redundant boundaries), then sorts instances by world height and integrates them via layer-by-layer voxelization from bottom to top—ensuring lower structures do not overwrite higher ones.
-    - Design Motivation: Independently voxelizing each mesh is computationally expensive and produces label conflicts.
+Individual mesh voxelization causes label conflicts and redundant computation. This strategy first merges "stuff" (background) meshes to eliminate internal boundaries. Instances are then sorted by world-coordinate height and integrated layer-by-layer from bottom to top. This ensures lower structures (like ground) are not overwritten by high-level object voxels, producing naturally overlap-free output where each voxel belongs to exactly one semantic/instance ID.
 
-4. **Instance-Guided Sensor Artifact Correction**:
+**4. Instance-guided Sensor Artifact Repair: Correcting Depth/Semantic Errors for Transparent Objects**
 
-    - Function: Corrects depth and semantic artifacts caused by transparent/semi-transparent objects in CARLA rendering.
-    - Mechanism: Constructs a scene mesh containing only transparent objects → generates accurate depth via ray casting → repairs the original depth map by taking the per-point minimum.
-    - Design Motivation: CARLA incorrectly renders depth and semantics of transparent objects, displaying the opaque objects behind them instead.
+CARLA rendering often allows depth and semantics to penetrate transparent objects (e.g., windows), embedding errors into the GT. The fix involves constructing a scene mesh containing only transparent objects, performing ray-casting to obtain accurate depths, and taking the point-wise minimum relative to the original depth. This recovers transparent surfaces closer to the camera, overwriting penetration errors.
 
-### Occupancy Quality Evaluation Metrics
-- **Spatial Continuity Score ($s_{sc}$)**: Quantifies the spatial continuity of occupied voxels within the same semantic category (higher is better).
-- **Temporal Consistency Score ($s_{tc}$)**: Quantifies the temporal stability of occupancy labels across adjacent frames.
+**5. Occupancy Quality Evaluation Metrics: Quantifiable Standards for Dataset Quality**
 
-## Key Experimental Results
+Ours defines two metrics to characterize label quality beyond simple resolution. The spatial continuity score $s_{sc}$ measures if occupancy voxels of the same semantic class form continuous volumes (fragmentation or holes lower the score). The temporal consistency score $s_{tc}$ measures the stability of labels across adjacent frames (higher values indicate smoother temporal transitions). These transform subjective "geometric completeness" into comparable quantitative data.
 
-### Dataset Quality Comparison
+### Key Experimental Results
 
-| Dataset | Synthetic | Resolution (m) | Instance Ann. | $s_{sc}$↑ | $s_{tc}$↑ |
-|--------|------|-----------|----------|-----------|-----------|
+#### Dataset Quality Comparison
+
+| Dataset | Synthetic | Resolution (m) | Instance Label | $s_{sc}$↑ | $s_{tc}$↑ |
+| :--- | :--- | :--- | :--- | :--- | :--- |
 | SemanticKITTI | No | 0.2 | No | 0.353 | 0.023 |
 | Occ3D-nuScenes | No | 0.4 | No | 0.721 | 0.431 |
 | SurroundOcc | No | 0.5 | No | 0.878 | 0.589 |
 | CarlaSC | Yes | 0.4 | No | 0.887 | 0.775 |
-| **CarlaOcc (Ours)** | Yes | **0.05** | **Yes** | **0.996** | **0.873** |
+| **CarlaOcc (Ours)** | **Yes** | **0.05** | **Yes** | **0.996** | **0.873** |
 
-### Benchmark Model Evaluation (Semantic Occupancy mIoU)
+#### Benchmark Model Testing (Semantic Occupancy mIoU)
 
-| Model | Key Findings |
-|------|----------|
-| Multiple SOTA methods | Models trained on CarlaOcc benefit from finer-grained ground truth |
-| Panoptic occupancy task | For the first time, evaluation on genuine instance-level annotations is possible |
+| Model | Key Finding |
+| :--- | :--- |
+| Various SOTA Methods | Models trained on CarlaOcc benefit from more refined ground truth. |
+| Panoptic Occupancy Task | Evaluations on true instance-level annotations are possible for the first time. |
 
 ### Key Findings
-- CarlaOcc achieves substantially higher spatial continuity (0.996) and temporal consistency (0.873) than all existing datasets.
-- The 0.05 m resolution is 4× finer than the finest existing dataset (SemanticKITTI at 0.2 m).
-- The instance-guided artifact correction pipeline effectively rectifies rendering errors for transparent objects.
-- The mesh-based generation pipeline entirely avoids information loss inherent in LiDAR aggregation.
+- CarlaOcc's spatial continuity (0.996) and temporal consistency (0.873) significantly outperform all existing datasets.
+- The 0.05m resolution is 4x finer than the previous best (SemanticKITTI 0.2m).
+- The instance-guided repair pipeline effectively corrects rendering artifacts for transparent objects.
+- Mesh-based generation entirely avoids information loss associated with LiDAR aggregation.
 
 ## Highlights & Insights
-- **Paradigm Shift from Point Clouds to Meshes**: Meshes encode complete geometric information, fundamentally resolving the resolution and completeness limitations of LiDAR aggregation pipelines. This has significant implications for the methodology of synthetic dataset construction.
-- **Skeletal Motion Analyzer**: Provides an elegant solution for accurate reconstruction of non-rigid objects (pedestrians)—preprocessing animation phases combined with runtime geodesic matching.
-- **Quality Evaluation Metrics**: For the first time, quantitative standards for spatial continuity and temporal consistency are defined to assess occupancy dataset quality.
+- **Paradigm Shift from Point Clouds to Meshes**: Meshes contain complete geometric information, fundamentally solving the resolution and completeness limits of LiDAR aggregation. This inspires new methodologies for synthetic dataset construction.
+- **Skeletal Motion Analyzer**: Provides an elegant solution for precise reconstruction of non-rigid objects (pedestrians) via animation phase pre-processing and geodesic matching.
+- **Quality Evaluation Metrics**: Quantitatively defines spatial continuity and temporal consistency for the first time to evaluate occupancy dataset quality.
 
 ## Limitations & Future Work
-- Sim-to-real gap of synthetic data—whether models trained on CarlaOcc transfer to real driving scenarios remains an open question.
-- ADMesh assets are primarily sourced from CARLA; asset diversity remains constrained by the simulation platform.
-- The enormous voxel count at 0.05 m resolution imposes significant memory and computational overhead for model training and inference.
-- Pedestrian animations cover only walking cycles; more complex human motions (e.g., bending, crouching) require future extension.
+- **Sim-to-real gap**: Can models trained on CarlaOcc transfer effectively to real-world driving scenarios?
+- **Asset Diversity**: ADMesh assets are primarily from CARLA; diversity remains limited by simulation platforms.
+- **Computational Cost**: 0.05m resolution generates massive voxel volumes, increasing memory and compute overhead for training.
+- **Animation Complexity**: Pedestrian animations currently cover walking cycles; complex actions (crouching, bending) require further expansion.
 
 ## Related Work & Insights
-- **vs. Occ3D/SurroundOcc**: Real-world datasets based on LiDAR aggregation with incomplete geometry. CarlaOcc generates labels from meshes and is physically consistent, but incurs a sim-to-real gap.
-- **vs. CarlaSC**: Also a CARLA-based synthetic dataset, but lacks instance annotations and has coarser resolution (0.4 m vs. 0.05 m).
-- **vs. SparseOcc/PanoOcc**: Model-level algorithmic innovations; this paper provides dataset-level infrastructure.
+- **vs. Occ3D/SurroundOcc**: These use LiDAR aggregation on real data but suffer from incomplete geometry. CarlaOcc uses mesh-based generation for physical consistency at the cost of the sim-to-real gap.
+- **vs. CarlaSC**: Also a CARLA dataset, but lacks instance labels and has coarser resolution (0.4m vs. 0.05m).
+- **vs. SparseOcc/PanoOcc**: While those focus on methodological innovation, this work provides necessary dataset infrastructure.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ First instance-level panoptic occupancy benchmark; ADMesh and the mesh reconstruction pipeline are innovative.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive dataset quality evaluation, though downstream model benchmarking could be enriched.
-- Writing Quality: ⭐⭐⭐⭐⭐ Pipeline description is clear and complete; dataset statistics are detailed.
-- Value: ⭐⭐⭐⭐⭐ Provides foundational infrastructure for 3D panoptic occupancy research and advances the field.
+- Novelty: ⭐⭐⭐⭐ First instance-level panoptic occupancy benchmark; ADMesh and mesh reconstruction pipeline are innovative.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive dataset quality evaluation, though downstream model benchmarks could be more extensive.
+- Writing Quality: ⭐⭐⭐⭐⭐ Pipeline descriptions are clear and complete; dataset statistics are detailed.
+- Value: ⭐⭐⭐⭐⭐ Provides critical infrastructure for 3D panoptic occupancy research, driving the field forward.
 
 <!-- RELATED:START -->
 
@@ -130,11 +124,11 @@ Four major components: (1) ADMesh 3D model library construction; (2) CarlaOcc da
 
 ## Related Papers
 
+- [\[CVPR 2026\] PanDA: Unsupervised Domain Adaptation for Multimodal 3D Panoptic Segmentation in Autonomous Driving](panda_unsupervised_domain_adaptation_for_multimodal_3d_panoptic_segmentation_in_.md)
+- [\[CVPR 2026\] Panoramic Multimodal Semantic Occupancy Prediction for Quadruped Robots](panoramic_multimodal_semantic_occupancy_prediction.md)
 - [\[CVPR 2026\] M²-Occ: Resilient 3D Semantic Occupancy Prediction for Autonomous Driving with Incomplete Camera Inputs](m2-occ_resilient_3d_semantic_occupancy_prediction_for_autonomous_driving_with_in.md)
 - [\[ICCV 2025\] UniOcc: A Unified Benchmark for Occupancy Forecasting and Prediction in Autonomous Driving](../../ICCV2025/autonomous_driving/uniocc_a_unified_benchmark_for_occupancy_forecasting_and_prediction_in_autonomou.md)
 - [\[CVPR 2026\] DLWM: Dual Latent World Models enable Holistic Gaussian-centric Pre-training in Autonomous Driving](dlwm_dual_latent_world_models_enable_holistic_gaussian-centric_pre-training_in_a.md)
-- [\[CVPR 2026\] O3N: Omnidirectional Open-Vocabulary Occupancy Prediction](o3n_omnidirectional_open-vocabulary_occupancy_prediction.md)
-- [\[CVPR 2026\] Monocular Open Vocabulary Occupancy Prediction for Indoor Scenes (LegoOcc)](monocular_open_vocabulary_occupancy_prediction_for_indoor_scenes.md)
 
 </div>
 

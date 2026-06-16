@@ -2,126 +2,135 @@
 title: >-
   [Paper Note] Can Recommender Systems Teach Themselves? A Recursive Self-Improving Framework with Fidelity Control
 description: >-
-  [ICML 2026][Recommender Systems][Sequential Recommendation] RSIR allows sequential recommendation models to use their own predictive capabilities to generate new synthetic user interaction sequences, train a new model…
+  [ICML 2026][Recommender Systems][Paper Note] RSIR enables sequential recommendation models to generate new synthetic user interaction sequences using their own predictive capabilities, train a new model, and filter out samples deviating from the user preference manifold using a rank-based "fidelity check" to prevent self-consuming model collapse. It consistently
 tags:
-  - "ICML 2026"
-  - "Recommender Systems"
-  - "Sequential Recommendation"
-  - "Self-Training"
-  - "Data Sparsity"
-  - "Fidelity Control"
-  - "Implicit Regularization"
+  - ICML 2026
+  - Recommender Systems
 date: 2026-05-08
-content_hash: ef6a2d1fc695cf9a
+content_hash: 75ddfee44557133e
 ---
-
 # Can Recommender Systems Teach Themselves? A Recursive Self-Improving Framework with Fidelity Control
 
 **Conference**: ICML 2026  
 **arXiv**: [2602.15659](https://arxiv.org/abs/2602.15659)  
 **Code**: https://github.com/USTC-StarTeam/RSIR  
-**Area**: Recommender Systems / Data Augmentation / Self-Training  
-**Keywords**: Sequential Recommendation, Self-Training, Data Sparsity, Fidelity Control, Implicit Regularization
+**Area**: Recommender Systems / Data Augmentation / Self-training  
+**Keywords**: Sequential Recommendation, Self-training, Data Sparsity, Fidelity Control, Implicit Regularization
 
 ## TL;DR
-RSIR allows sequential recommendation models to use their own predictive capabilities to generate new synthetic user interaction sequences, train a new model, and filter out samples that deviate from the user preference manifold using a rank-based "fidelity check," thereby preventing self-consuming model collapse. It achieves stable Gains of 4–11% in NDCG/Recall across 4 datasets × 3 mainstream backbones and theoretically proves that this process is equivalent to implicit regularization along the tangent space of the user preference manifold.
+RSIR enables sequential recommendation models to generate new synthetic user interaction sequences using their own predictive capabilities, train a new model, and filter out samples deviating from the user preference manifold using a rank-based "fidelity check" to prevent self-consuming model collapse. It consistently improves NDCG/Recall by 4–11% across 4 datasets and 3 mainstream backbones, theoretically proving that this process is equivalent to implicit regularization along the tangent space of the user preference manifold.
 
 ## Background & Motivation
-**Background**: Sequential recommendation primarily addresses problems by scaling data and models. However, any given user only interacts with an extremely small proportion of the platform's catalog, making interaction signals naturally sparse. This results in a rugged loss landscape, models converging to sharp minima, and poor generalization.
+**Background**: Sequential recommendation primarily addresses challenges by scaling data and models, but user interaction signals are naturally sparse as any user only interacts with a tiny fraction of the platform catalog. This leads to rugged loss landscapes, convergence to sharp minima, and poor generalization.
 
-**Limitations of Prior Work**: (1) Data augmentation methods (Reordering / Insertion / item masking / cropping) only perturb existing data and do not produce new "high-fidelity user trajectories," yielding limited effects; (2) Data generation methods (DiffuASR, DR4SR) can create new sequences but rely on diffusion models or learning auxiliary generators, which are computationally expensive; (3) Leveraging LLMs as teachers for data expansion outforces performance bottlenecks to "large enough external models," which is uncontrollable during deployment and suffers from distribution mismatch.
+**Limitations of Prior Work**: (1) Data augmentation methods (Reordering / Insertion / item masking / cropping) merely perturb existing data without generating new "high-fidelity user trajectories," resulting in limited effectiveness; (2) Data generation methods (DiffuASR, DR4SR) can create new sequences but rely on diffusion models or training auxiliary generators, which is computationally expensive; (3) Utilizing LLMs as teachers for data augmentation outsources the performance bottleneck to "sufficiently large external models," leading to uncontrollable deployment and distribution mismatch.
 
-**Key Challenge**: Closed-loop self-training (generating data to train oneself) has been proven effective in LLMs and diffusion models but is highly susceptible to model collapse — where model biases and errors are amplified by the synthetic data, leading to performance crashes within a few iterations. The key is how to balance "self-generated data" with "avoiding error accumulation."
+**Key Challenge**: Closed-loop self-training (generating data to train oneself) has proven effective in LLMs and diffusion models but is highly susceptible to model collapse — where model biases and errors are amplified by the synthetic data, leading to performance breakdown within a few iterations. The key lies in balancing "self-generated data" and "avoiding error accumulation."
 
-**Goal**: (1) Enable recommendation models to bootstrap themselves like STaR or Self-Rewarding LLMs without external teachers or labels; (2) Design a reliable "fidelity filtering" mechanism to prevent synthetic data from drifting off the user preference manifold; (3) Theoretically explain why this recursive process does not collapse but instead provides regularization.
+**Goal**: (1) Enable recommendation models to bootstrap themselves like STaR / Self-Rewarding LLMs without external teachers or annotations; (2) Design a reliable "fidelity filtering" mechanism to prevent synthetic data from drifting away from the user preference manifold; (3) Theoretically explain why this recursive process does not collapse but instead provides regularization.
 
-**Key Insight**: The authors view "self-improvement" as a kind of data-driven implicit regularization — only accepting perturbations near the tangent space of real user interests as new data is equivalent to imposing a gradient penalty along the manifold direction on the loss landscape, forcing optimization to converge to flatter minima.
+**Key Insight**: The authors view "self-improvement" as a form of data-driven implicit regularization — by only accepting perturbations near the tangent space of the true user interest manifold as new data, it is equivalent to imposing a gradient penalty along the manifold direction on the loss landscape, forcing optimization to converge to flatter minima.
 
-**Core Idea**: Use the current model to generate synthetic sequences and use the same model as a "ranking judge" to filter out deviated steps. This combination is inserted into a classic SFT loop and rolled recursively over multiple rounds.
+**Core Idea**: Use the current model to generate synthetic sequences and use the same model as a "ranking referee" to filter out deviated steps, integrating this combination into a classic SFT loop for multiple recursive iterations.
 
 ## Method
 
 ### Overall Architecture
-RSIR in iteration $k$ consists of 4 steps: (1) Train the model $f_{\theta_k}$ on the current dataset $D_k$ (next-item prediction); (2) Use $f_{\theta_k}$ to generate $m$ synthetic sequences $D'_{k+1}$ for each user — starting from a random prefix of the user's real history and expanding autoregressively; (3) Combine to obtain $D_{k+1} = D_k \cup D'_{k+1}$; (4) Train $f_{\theta_{k+1}}$ from scratch (or fine-tune the previous round's model). Two core mechanisms are used during generation: bounded exploration (mixed candidate pool) and fidelity-based quality control (ranking verification).
+In iteration $k$, RSIR consists of 4 steps: (1) Train model $f_{\theta_k}$ on the current dataset $D_k$ (next-item prediction); (2) Use $f_{\theta_k}$ to generate $m$ synthetic sequences $D'_{k+1}$ for each user — starting from random prefixes of true user history and extending autoregressively; (3) Merge to obtain $D_{k+1} = D_k \cup D'_{k+1}$; (4) Train $f_{\theta_{k+1}}$ from scratch (or fine-tune the previous model), recurring for $K$ rounds. The generation core involves two mechanisms: Bounded Exploration (mixed candidate pool) + Fidelity-Based Quality Control (ranking verification). The property that "perturbations only occur along the tangent space of the user manifold" is theoretically explained as implicit regularization, forming the third key design.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Dataset D_k → Train Model f_θk<br/>next-item prediction"] --> B["Start from random prefix of true history<br/>Autoregressive expansion, m sequences per user"]
+    subgraph GEN["Synthetic Sequence Generation (Step-by-step Loop)"]
+        direction TB
+        B --> C["Bounded Exploration Mixed Candidate Pool<br/>Prob p from history, 1−p from global, top-k sampling"]
+        C --> D{"Fidelity Rank Verification<br/>Is true future item still ranked within top τ?"}
+        D -->|Yes·High Fidelity| E["Accept item, update context"]
+        E -->|Length limit not reached| C
+        E -->|Length limit reached| G["Qualified sequence set D'_k+1<br/>Deduplication + Min length filtering"]
+        D -->|No·Deviated| F["Break immediately to terminate sequence"]
+        F --> G
+    end
+    G --> H["Merge D_k+1 = D_k ∪ D'_k+1"]
+    H -->|Recursive iteration K rounds| A
+```
 
 ### Key Designs
 
-1. **Bounded Exploration Mixed Candidate Pool**:
-    - **Function**: Decides which item pool to sample the next item from at each generation step, balancing "exploiting known interests" with "exploring new interests."
-    - **Mechanism**: At each step, an item is sampled with probability $p$ from the user's history $s_u$ and with probability $1-p$ from the global item set $I$, forming a candidate pool $\mathcal{C}_t \sim p \cdot \mathrm{Sample}(s_u) + (1-p) \cdot \mathrm{Sample}(I)$. The model then performs top-$k$ sampling only over $\mathcal{C}_t$. Empirically, $p \approx 0.5$ is optimal — pure exploitation ($p=1$) merely reorders known items and cannot expand interests, while pure exploration ($p=0$) easily drifts off-track and is filtered by quality control.
-    - **Design Motivation**: Conventional autoregressive generation on large vocabularies would explode the generation space; introducing historical bias maintains controllability while providing the ability to "extend known interests."
+**1. Bounded Exploration: Balancing "Exploiting Known Interests" and "Exploring New Interests"**
 
-2. **Fidelity-Based Quality Control**:
-    - **Function**: Immediately "probes" whether each generated candidate item still ranks the user's real future items highly; if not, the sequence is terminated.
-    - **Mechanism**: Define $S_{tgt} = s_u \setminus S_{ctx}'$ as the items in the user's real sequence not yet used. If $\exists i_j \in S_{tgt}$ such that $\mathrm{Rank}_{f_{\theta_k}}(i_j | S_{ctx}') \leq \tau$, the new item is accepted and expansion continues; otherwise, the sequence is terminated immediately. This ensures the generated trajectory remains compatible with the real user interest manifold.
-    - **Design Motivation**: The authors prove that a stricter $\tau$ suppresses the "fidelity false positive rate" $\tilde{p}_k$, making the recursive error bound $\mathcal{E}(\theta_{k+1}) \leq (1-\lambda)\mathcal{E}_0 + \lambda[(1-\tilde{p}_k)\rho \mathcal{E}(\theta_k) + \tilde{p}_k \mathcal{E}_{\max}]$ satisfy the contraction condition, avoiding model collapse.
+Fully free autoregressive generation on large vocabularies causes the generation space to explode and drift, yet only reordering existing items fails to expand new interests. At each generation step, RSIR uses probability $p$ to sample from user history $s_u$ and $1-p$ from the global item set $I$, forming a candidate pool $\mathcal{C}_t\sim p\cdot\mathrm{Sample}(s_u)+(1-p)\cdot\mathrm{Sample}(I)$, where the model performs top-$k$ sampling. The empirical optimal $p$ is approximately 0.5 — pure exploitation ($p=1$) only reorders known items, while pure exploration ($p=0$) easily drifts and is filtered out by quality control; introducing historical bias maintains controllability while providing the ability to "extend known interests."
 
-3. **Manifold Tangential Gradient Penalty (Theoretical Explanation)**:
-    - **Function**: Reinterprets the "filter + generate" loop as a form of implicit regularization, providing the method with a theoretical footing.
-    - **Mechanism**: Accepted perturbations can only move along the tangent space of the user preference manifold $\mathcal{M}$, which is equivalent to adding a regularization term $\Omega(\theta) \propto \|\mathcal{P}_\mathcal{M} \nabla_s f_\theta\|^2$ to the original loss. This term specifically penalizes the gradient magnitude along the manifold direction, causing the solution to converge to "flat valleys" parallel to the user's real manifold.
-    - **Design Motivation**: Explains why RSIR is not just "expanding data" but "expanding data in the right direction," and identifies the "noise floor of false positives" as the reason performance eventually saturates.
+**2. Fidelity-Based Quality Control: Probing Each Generated Item for Deviation**
+
+This is the lifeline to prevent self-consuming model collapse. Define $S_{tgt}=s_u\setminus S_{ctx}'$ as items in the user's true sequence not yet used. For each generated candidate item, it is immediately checked: if $\exists i_j\in S_{tgt}$ such that $\mathrm{Rank}_{f_{\theta_k}}(i_j\mid S_{ctx}')\leq\tau$ (i.e., true future items still rank within the top $\tau$ under the new context), the item is accepted; otherwise, the sequence is immediately terminated. This ensures the synthetic trajectory remains compatible with the true user interest manifold. The authors further prove that stricter $\tau$ leads to lower "fidelity false negative rate" $\tilde{p}_k$, making the recursive error propagation $\mathcal{E}(\theta_{k+1})\leq(1-\lambda)\mathcal{E}_0+\lambda[(1-\tilde{p}_k)\rho\mathcal{E}(\theta_k)+\tilde{p}_k\mathcal{E}_{\max}]$ satisfy the contraction condition, thereby avoiding collapse.
+
+**3. Manifold Tangential Gradient Penalty: Explaining "Data Expansion in the Right Direction"**
+
+To provide theoretical footing, the authors reinterpret the "filter + generate" loop as implicit regularization: accepted perturbations can only occur along the tangent space of the user preference manifold $\mathcal{M}$. This is equivalent to adding a term $\Omega(\theta)\propto\|\mathcal{P}_\mathcal{M}\nabla_s f_\theta\|^2$ to the original loss, specifically penalizing the gradient magnitude along the manifold direction and forcing the solution to converge to a "flat valley" parallel to the true manifold. This explanation shows why RSIR is not simple data augmentation but "expanded data in the right direction," while noting that the "noise floor" is the ultimate reason for performance saturation.
 
 ### Loss & Training
-Each round uses standard next-item prediction NLL without modifications to the loss. Hyperparameter grid: $\tau \in \{1,3,5,10,20,50,100\}$, $m \in \{5,10,20\}$, $p \in \{0,0.2,...,1\}$. Leave-one-out evaluation; NDCG/Recall are reported at K=10/20.
+Each round uses standard next-item prediction NLL without changing the loss function; hyperparameter grid: $\tau \in \{1,3,5,10,20,50,100\}$, $m \in \{5,10,20\}$, $p \in \{0,0.2,...,1\}$. Evaluation uses leave-one-out, reporting NDCG/Recall at K=10/20.
 
 ## Key Experimental Results
 
 ### Main Results
-4 datasets × 3 backbones (SASRec / CL4SRec / HSTU) compared against 5 data augmentation/generation baselines for NDCG@10 and Recall@10:
+NDCG@10 and Recall@10 results across 4 datasets × 3 backbones (SASRec / CL4SRec / HSTU) compared with 5 data augmentation/generation baselines:
 
-| Backbone | Dataset | Best Baseline (Recall@10) | +RSIR | Gain |
-|----------|---------|---------------------------|-------|------|
+| Backbone | Dataset | Prev. SOTA (Recall@10) | +RSIR (Ours) | Gain |
+|----------|--------|----------------------|-------|------|
 | SASRec | Beauty | 0.0557 (DR4SR) | **0.0594** | +6.64% |
 | SASRec | Sport | 0.0495 (DR4SR) | **0.0512** | +3.43% |
 | CL4SRec | Beauty | 0.0590 (DR4SR) | **0.0649** | +10.00% |
 | HSTU | Sport | 0.0515 (DR4SR) | **0.0531** | +3.11% |
 | HSTU | Yelp | 0.0386 (Insertion) | **0.0411** | +6.48% |
 
-Both RSIR-FT (fine-tuning old weights) and RSIR (training from scratch) consistently outperform all baselines, with the largest improvement of approximately 10% seen on CL4SRec.
+Both RSIR-FT (fine-tuning old weights) and RSIR (training from scratch) consistently outperform all baselines, with the largest improvement of ~10% on CL4SRec.
 
 ### Ablation Study
-Key ablation on Amazon-Sport + SASRec:
+Key ablations on Amazon-Sport + SASRec:
 
-| Configuration | NDCG@10 | Recall@10 | Note |
-|---------------|---------|-----------|------|
+| Configuration | NDCG@10 | Recall@10 | Mechanism |
+|------|---------|-----------|------|
 | Base SASRec | 0.0271 | 0.0474 | No augmentation |
-| RSIR-1 w/o fidelity | 0.0273 | 0.0472 | 1 round, no QC, almost no gain |
+| RSIR-1 w/o fidelity | 0.0273 | 0.0472 | 1 round, no QC, minimal gain |
 | RSIR-1 w/ fidelity | **0.0293** | **0.0512** | 1 round + QC |
-| RSIR-2 w/o fidelity | 0.0209 | 0.0384 | Collapses by 2nd round |
-| RSIR-2 w/ fidelity | 0.0294 | 0.0517 | Continues to rise |
+| RSIR-2 w/o fidelity | 0.0209 | 0.0384 | Collapses by round 2 |
+| RSIR-2 w/ fidelity | 0.0294 | 0.0517 | Continuous improvement |
 | RSIR-3 w/o fidelity | 0.0119 | 0.0210 | Catastrophic collapse |
-| RSIR-3 w/ fidelity | 0.0298 | 0.0528 | Still increasing |
+| RSIR-3 w/ fidelity | 0.0298 | 0.0528 | Still rising |
 
 ### Key Findings
-- **Fidelity filtering is the lifeline**: Removing it leads to complete collapse within 3 rounds (Recall dropping from 0.0474 to 0.0210), confirming the collapse risk of self-consuming models.
-- **Multiple iterations produce "compound interest"**: HSTU on Sport saw an +8% Recall in the first round, accumulating to +14% after 3 rounds, but gradually saturated after 5–8 rounds (consistent with the noise floor in the theory).
-- **Weak-to-strong transfer is feasible**: Training a strong student on data generated by a weak teacher also yielded a +1.95% gain, suggesting RSIR benefits primarily from implicit regularization rather than the absolute capability of the teacher.
-- **Data density +342% / increased information entropy**: After 8 rounds, the training set density increased more than fourfold, and ApEn (Approximate Entropy) also rose. In contrast, while Insertion adds data, its ApEn decreases, proving RSIR adds "information-rich" content rather than just noise.
-- **Hyperparameters $p \approx 0.5$ and moderate $\tau$ are optimal** — confirming the exploration/exploitation trade-off.
+- **Fidelity filtering is the lifeline**: Removing it leads to total collapse within 3 rounds (Recall drops from 0.0474 to 0.0210), confirming the collapse risk of self-consuming models.
+- **Recursive iterations yield "compound interest"**: HSTU shows +8% Recall in the first round on Sport, accumulating to +14% after 3 rounds, though it gradually saturates after 5–8 rounds (consistent with the theoretical noise floor).
+- **Weak-to-strong transfer is feasible**: Data generated by a weak teacher improves a strong student by +1.95%, suggesting RSIR benefits from implicit regularization rather than solely the teacher's absolute capability.
+- **Data density +342% / Increased information entropy**: Training set density quadruples after 8 rounds, and ApEn (Approximate Entropy) also rises. In contrast, while Insertion adds data, its ApEn decreases, proving RSIR adds "information-rich" content rather than noise.
+- **Optimal hyperparameters**: $p \approx 0.5$ and moderate $\tau$ perform best, confirming the exploration/exploitation trade-off.
 
 ## Highlights & Insights
-- **The first work to seriously transfer "self-improvement" to recommender systems**, accompanied by a complete theoretical analysis (manifold tangent space gradient penalty + recursive error bounds). It elevates "data augmentation" in the recommendation community from an empirical heuristic to a principled level.
-- **The design of the fidelity check is highly ingenious**: It does not require an external critic; it directly reuses the same model's ranking distribution for self-verification. This symmetric "model as both generator and judge" structure is increasingly common in LLM self-training but naturally fits recommendation through ranking.
-- The experiment showing "weak models can teach strong ones" echoes recent weak-to-strong generalization findings in LLMs, suggesting that in industrial scenarios, small models can be used to cheaply generate a curriculum for production models, significantly reducing deployment costs.
-- The overall philosophy is transferable to sequential advertising, CTR, conversational recommendation, and any task involving next-token prediction with user behavior sequences.
+- **First work to rigorously transfer "self-improvement" to recommendation systems**, supported by complete theoretical analysis (manifold tangential gradient penalty and recursive error bounds), elevating RecSys data augmentation to a principled level.
+- **Clever Fidelity Check Design**: Does not require an external critic; it reuses the same model's rank distribution for self-verification. This "generator-as-referee" symmetric structure is becoming common in LLM self-training but fits RecSys naturally via ranking metrics.
+- The "weak-to-strong" transferability echoes recent findings in LLM generalization, suggesting that in industrial scenarios, small models can cheaply generate curriculum data for production models, significantly reducing deployment costs.
+- The core philosophy is transferable to: sequential advertising, CTR, conversational recommendation, and any task involving next-token prediction with user behavioral sequences.
 
 ## Limitations & Future Work
-- **Saturation is inevitable**: The authors acknowledge that as the number of iterations increases, the benefit diminishes and the noise floor emerges. Dynamic tightening of $\tau$ or introducing adaptive filtering are future directions.
-- **Fidelity only considers top-$\tau$ ranking**, lacking fine-grained "user-intent drift" detection; it might be less effective for cold-start users or users with very narrow behaviors.
-- Evaluation only covers small-to-medium datasets (Amazon × 3 + Yelp), where the item set is still relatively small. Industrial-scale items (hundreds of millions) would require ANN acceleration for the fidelity check.
-- No direct comparison with LLM-as-teacher augmentation (e.g., LLMRec) was reported; convincing readers that "self-training truly negates the need for LLMs" requires this control group.
+- **Inevitable Saturation**: The authors acknowledge that benefits diminish as iterations increase due to the noise floor. Dynamically tightening $\tau$ or introducing adaptive filtering are future directions.
+- **Coarse Fidelity Check**: Only considers top-$\tau$ ranking, lacking fine-grained detection of "user-intent drift"; it may be less effective for cold-start users or those with singular behaviors.
+- Evaluation only covers small-to-medium datasets (Amazon × 3 + Yelp); item sets are relatively small. Billion-scale industrial sets would require ANN acceleration for fidelity checks.
+- Lacks direct comparison with LLM-as-teacher augmentation (e.g., LLMRec); convincing readers that self-training truly replaces LLMs requires this comparison.
 
 ## Related Work & Insights
-- **vs. DR4SR / DiffuASR**: Those methods rely on diffusion or learning a generator to create data, which requires extra models and expensive training. RSIR reuses the backbone directly, requires zero external models, and outperforms them starting from the first round.
-- **vs. STaR / Self-Rewarding LLM**: Philosophically linked — model self-evaluation and self-training. RSIR replaces the "self-reward" in LLMs with recommendation-specific "ranking consistency of real user sequences" and adds theoretical analysis.
-- **vs. Insertion / Reordering**: Those heuristics cannot add new items but only reorder them; RSIR can expand the boundaries of user interests while avoiding noise through fidelity control.
-- **vs. RSIDiff / STEP (Self-training in generative models/video)**: Cross-modal evidence for the universality of self-improvement; this paper is the first to ground this paradigm in recommendation.
+- **vs DR4SR / DiffuASR**: Those methods rely on diffusion or training a generator, requiring extra models and expensive training; RSIR reuses the backbone, has zero external models, and outperforms them from the first round.
+- **vs STaR / Self-Rewarding LLM**: Shared philosophy of self-evaluation and self-training. RSIR replaces "self-reward" with RecSys-specific "rank consistency" and adds theoretical analysis.
+- **vs Insertion / Reordering**: Heuristics cannot add new items; RSIR expands user interest boundaries and avoids noise through fidelity checks.
+- **vs RSIDiff / STEP**: Cross-modal studies confirm the universality of self-improvement; this work is the first to ground the paradigm in recommendation.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Cleanly transfers the self-improvement paradigm from LLMs/Diffusion to sequential recommendation with manifold-based theoretical explanations. Higher originality than "just another data augmentation."
-- Experimental Thoroughness: ⭐⭐⭐⭐ 4 datasets × 3 backbones × 5 baselines. Comprehensive rounds, ablation, weak-to-strong, and runtime analysis. Lacks industrial-scale datasets.
-- Writing Quality: ⭐⭐⭐⭐ Clear logic, explicit correspondence between theorems and experiments, though some experimental details are relegated to the appendix.
-- Value: ⭐⭐⭐⭐ Consistently improves recommendation performance without relying on external LLMs, and the engineering implementation is simple (just a break condition), making it deployment-friendly.
+- Novelty: ⭐⭐⭐⭐ Cleanly transfers self-improvement from LLMs/diffusion to sequential recommendation with manifold-based theoretical backing; original compared to standard augmentation.
+- Experimental Thoroughness: ⭐⭐⭐⭐ 4 datasets × 3 backbones × 5 baselines; includes multi-round analysis, ablations, weak-to-strong, and runtime analysis. Lacks industrial-scale data.
+- Writing Quality: ⭐⭐⭐⭐ Logical flow with clear correspondence between theorems and experiments, though some details are compressed into the appendix.
+- Value: ⭐⭐⭐⭐ Tangibly improves recommendation without relying on external LLMs; engineering-friendly implementation (simple break condition).
 
 <!-- RELATED:START -->
 
@@ -130,9 +139,9 @@ Key ablation on Amazon-Sport + SASRec:
 ## Related Papers
 
 - [\[ICLR 2026\] Token-Efficient Item Representation via Images for LLM Recommender Systems](../../ICLR2026/recommender/token-efficient_item_representation_via_images_for_llm_recommender_systems.md)
+- [\[ACL 2025\] CoVE: Compressed Vocabulary Expansion Makes Better LLM-based Recommender Systems](../../ACL2025/recommender/cove_compressed_vocabulary_expansion_makes_better_llm-based_recommender_systems.md)
 - [\[AAAI 2026\] RecToM: A Benchmark for Evaluating Machine Theory of Mind in LLM-based Conversational Recommender Systems](../../AAAI2026/recommender/rectom_a_benchmark_for_evaluating_machine_theory_of_mind_in_llm-based_conversati.md)
 - [\[AAAI 2026\] Hard vs. Noise: Resolving Hard-Noisy Sample Confusion in Recommender Systems via Large Language Models](../../AAAI2026/recommender/hard_vs_noise_resolving_hard-noisy_sample_confusion_in_recommender_systems_via_l.md)
-- [\[AAAI 2026\] CroPS: Improving Dense Retrieval with Cross-Perspective Positive Samples in Short-Video Search](../../AAAI2026/recommender/crops_improving_dense_retrieval_with_cross-perspective_positive_samples_in_short.md)
 - [\[ICML 2026\] Incentivized Exploration with Stochastic Covariates: A Two-Stage Mechanism Design for Recommender System](incentivized_exploration_with_stochastic_covariates_a_two-stage_mechanism_design.md)
 
 </div>

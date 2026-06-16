@@ -124,9 +124,9 @@ SIMECO improves over AdaPoinTr + augmentation by 10% in CD-$\ell_1$ and 8% in F1
 
 - [\[CVPR 2026\] Unified Primitive Proxies for Structured Shape Completion](../../CVPR2026/3d_vision/unified_primitive_proxies_for_structured_shape_completion.md)
 - [\[ICML 2026\] Geometry-Guided Modeling of Foundation Features Enables Generalizable Object Shape Deformation Learning](../../ICML2026/3d_vision/geometry-guided_modeling_of_foundation_features_enables_generalizable_object_sha.md)
-- [\[NeurIPS 2025\] UGM2N: An Unsupervised and Generalizable Mesh Movement Network via M-Uniform Loss](ugm2n_an_unsupervised_and_generalizable_mesh_movement_network_via_m-uniform_loss.md)
+- [\[CVPR 2026\] Learning to Solve PDEs on Neural Shape Representations](../../CVPR2026/3d_vision/learning_to_solve_pdes_on_neural_shape_representations.md)
 - [\[NeurIPS 2025\] CosmoBench: A Multiscale, Multiview, Multitask Cosmology Benchmark for Geometric Deep Learning](cosmobench_a_multiscale_multiview_multitask_cosmology_benchmark_for_geometric_de.md)
-- [\[NeurIPS 2025\] GeoComplete: Geometry-Aware Diffusion for Reference-Driven Image Completion](geocomplete_geometry-aware_diffusion_for_reference-driven_image_completion.md)
+- [\[NeurIPS 2025\] UGM2N: An Unsupervised and Generalizable Mesh Movement Network via M-Uniform Loss](ugm2n_an_unsupervised_and_generalizable_mesh_movement_network_via_m-uniform_loss.md)
 
 </div>
 

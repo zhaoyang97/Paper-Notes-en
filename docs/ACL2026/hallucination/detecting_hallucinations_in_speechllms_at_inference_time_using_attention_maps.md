@@ -2,41 +2,36 @@
 title: >-
   [Paper Note] Detecting Hallucinations in SpeechLLMs at Inference Time Using Attention Maps
 description: >-
-  [ACL 2026][Hallucination Detection][SpeechLLM] This paper proposes four audio-attention-based metrics (AudioRatio, AudioConsistency, AudioEntropy…
+  [ACL 2026][Hallucination Detection][Paper Note] Ours proposes four audio-attention-based metrics (AudioRatio, AudioConsistency, AudioEntropy, TextEntropy) to train a lightweight logistic regression classifier for detecting hallucinations in SpeechLLMs during inference, achieving a PR-AUC improvement of up to +0.23 on in-domain data.
 tags:
-  - "ACL 2026"
-  - "Hallucination Detection"
-  - "SpeechLLM"
-  - "Attention Maps"
-  - "Inference-time Detection"
-  - "Lightweight Classifier"
+  - ACL 2026
+  - Hallucination Detection
 date: 2026-05-08
-content_hash: 035f65ee67f090ca
+content_hash: 180a07e7b9cb8dd1
 ---
-
 # Detecting Hallucinations in SpeechLLMs at Inference Time Using Attention Maps
 
 **Conference**: ACL 2026 Findings  
 **arXiv**: [2604.19565](https://arxiv.org/abs/2604.19565)  
 **Code**: None  
 **Area**: Hallucination Detection  
-**Keywords**: SpeechLLM, Hallucination Detection, Attention Maps, Inference-time Detection, Lightweight Classifier
+**Keywords**: Speech Large Language Models, Hallucination Detection, Attention Maps, Inference-time Detection, Lightweight Classifiers
 
 ## TL;DR
 
-This paper proposes four audio-attention-based metrics (AudioRatio, AudioConsistency, AudioEntropy, TextEntropy) and trains a lightweight logistic regression classifier to detect SpeechLLM hallucinations at inference time, achieving up to a +0.23 PR-AUC improvement on in-domain data.
+Ours proposes four audio-attention-based metrics (AudioRatio, AudioConsistency, AudioEntropy, TextEntropy) to train a lightweight logistic regression classifier for detecting hallucinations in SpeechLLMs during inference, achieving a PR-AUC improvement of up to +0.23 on in-domain data.
 
 ## Background & Motivation
 
-**Background**: Speech Large Language Models (SpeechLLMs) have achieved significant progress in tasks such as Automatic Speech Recognition (ASR) and Speech-to-Text Translation (S2TT), but they still produce hallucinations—content that is fluent but mismatches the input audio.
+**Background**: Speech Large Language Models (SpeechLLMs) have made significant progress in tasks such as Automatic Speech Recognition (ASR) and Speech-to-Text Translation (S2TT), but they still generate hallucinations—content that is fluent but inconsistent with the input audio.
 
-**Limitations of Prior Work**: (1) Existing hallucination detection methods rely on comparisons with gold-standard outputs, which is costly and infeasible in deployment scenarios; (2) Hallucination detection methods developed for text LLMs cannot directly capture audio-specific signals because audio representations are much longer than text, and the alignment between input frames and output tokens differs from text-to-text generation.
+**Limitations of Prior Work**: (1) Existing hallucination detection methods rely on comparison with gold-standard outputs, which is costly and infeasible in deployment scenarios; (2) Hallucination detection methods developed for text LLMs cannot directly capture audio-specific signals because audio representations are much longer than text, and the alignment between input frames and output tokens differs from text-to-text generation.
 
-**Key Challenge**: There is a need for inference-time (reference-free) detection, but the attention dynamics of the audio modality are fundamentally different from the text modality, preventing direct migration of existing methods.
+**Key Challenge**: There is a need to detect hallucinations at inference time (without reference text), but the attention dynamics of the audio modality are fundamentally different from those of the text modality, preventing direct transfer of existing methods.
 
-**Goal**: To develop a lightweight inference-time hallucination detector utilizing the internal attention patterns of SpeechLLMs.
+**Goal**: Utilize the internal attention patterns of SpeechLLMs to develop lightweight inference-time hallucination detectors.
 
-**Key Insight**: It is observed that pathological patterns appear in attention during hallucination generation—specifically, the degradation of the diagonal attention structure and attention falling back to the starting positions of the audio input.
+**Key Insight**: It is observed that when models generate hallucinations, attention exhibits pathological patterns—the degradation of diagonal attention structures and the fallback of attention to the starting position of the audio input.
 
 **Core Idea**: Design four audio-specific attention metrics to capture hallucination-related attention patterns and train a logistic regression classifier for efficient detection.
 
@@ -44,31 +39,38 @@ This paper proposes four audio-attention-based metrics (AudioRatio, AudioConsist
 
 ### Overall Architecture
 
-Inference is performed on SpeechLLMs (Qwen-2-Audio and Voxtral-3B), attention weights are extracted at each decoding step, four audio attention metrics are calculated, and these are used as feature vectors to train a logistic regression classifier for hallucination detection.
+SpeechLLMs generate hallucinations in ASR and speech translation—fluent content that mismatches the input audio. Existing detection methods either require gold-standard answers for comparison (unavailable during deployment) or are designed for text LLMs, failing to capture audio-specific alignment signals (audio representations are much longer than text, and alignment between input frames and output tokens is different). The key observation of this paper is that pathological patterns appear in attention during hallucinations—diagonal structures degrade, and attention falls back to the beginning of the audio. Consequently, the authors perform inference on SpeechLLMs (Qwen-2-Audio, Voxtral-3B), extract attention weights at each decoding step, calculate four audio attention metrics as features, and train a lightweight logistic regression classifier to determine whether the current output is a hallucination at inference time (without reference text).
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input Audio + Instructions<br/>SpeechLLM Step-by-step Decoding (Qwen-2-Audio / Voxtral-3B)"] --> B["Extract Attention Weights per Decoding Step<br/>Per Layer, Per Attention Head"]
+    B --> C["AudioRatio<br/>Audio Attention ÷ (Audio + Autoregressive Prefix)"]
+    B --> D["AudioConsistency<br/>Pearson Correlation of Audio Attention between Adjacent Steps"]
+    B --> E["AudioEntropy / TextEntropy<br/>Attention Entropy on Audio side / Text side"]
+    C --> F["Concatenate into Feature Vector<br/>Logistic Regression Classifier (L1/L2 Feature Selection)"]
+    D --> F
+    E --> F
+    F -->|Threshold Decision| G["Hallucination / Non-hallucination"]
+```
 
 ### Key Designs
 
-1. **AudioRatio**:
+**1. AudioRatio: Monitoring whether the model attends to input audio or the autoregressive prefix**
 
-    - **Function**: Measures the ratio of attention allocation between the audio input versus the auto-regressive text prefix.
-    - **Mechanism**: $AR^{l,h}_t = \frac{A^{l,h}_t(\text{Audio})}{A^{l,h}_t(\text{Audio}) + A^{l,h}_t(\text{ART})}$, similar to Lookback-Lens but restricting the input side specifically to audio tokens.
-    - **Design Motivation**: During hallucination generation, the model might over-focus on the auto-regressive prefix rather than the input audio.
+Hallucinations often occur when the model stops attending to the input audio and relies excessively on the previously generated text prefix. AudioRatio quantifies this tendency: $AR^{l,h}_t = \frac{A^{l,h}_t(\text{Audio})}{A^{l,h}_t(\text{Audio}) + A^{l,h}_t(\text{ART})}$, representing the proportion of attention allocated to audio tokens relative to the total attention (audio + autoregressive text) for each head at step $t$. It follows the input/output attention ratio concept from Lookback-Lens but strictly limits the input side to audio tokens to specifically capture "audio detachment" hallucination signals.
 
-2. **AudioConsistency**:
+**2. AudioConsistency: Detecting abnormally similar audio attention across adjacent decoding steps**
 
-    - **Function**: Measures the consistency of audio attention vectors between consecutive decoding steps.
-    - **Mechanism**: Calculates the Pearson correlation coefficient between audio attention vectors of adjacent decoding steps to capture fallback behavior.
-    - **Design Motivation**: During hallucinations, model attention often collapses to the initial audio positions, leading to highly similar consecutive attention distributions.
+During hallucinations, model attention often collapses to the starting position of the audio, resulting in highly similar attention distributions over consecutive steps. AudioConsistency calculates the Pearson correlation coefficient between audio attention vectors of adjacent decoding steps to capture this "attention fallback"—during normal decoding, attention moves smoothly as the output progresses, resulting in moderate correlation, whereas collapse leads to abnormally high correlation.
 
-3. **AudioEntropy / TextEntropy**:
+**3. AudioEntropy / TextEntropy: Capturing features from heads without clear diagonal patterns**
 
-    - **Function**: Measures the entropy of audio and text attention weights, respectively.
-    - **Mechanism**: Entropy is calculated after re-normalizing the attention weights: $AE^{l,h}_t = H(\frac{a^{l,h,t}_{1:N}}{\sum_i a^{l,h,t}_i})$.
-    - **Design Motivation**: AudioEntropy captures uncertainty regarding audio input, suitable for attention heads without clear diagonal patterns; TextEntropy captures text-side uncertainty.
+Not all attention heads exhibit clean diagonal alignment patterns, and the first two metrics may fail on such heads. AudioEntropy calculates entropy after re-normalizing the audio-side attention weights, $AE^{l,h}_t = H(\frac{a^{l,h,t}_{1:N}}{\sum_i a^{l,h,t}_i})$, measuring the model's uncertainty regarding the audio input; TextEntropy calculates uncertainty on the text side similarly. Both serve as complementary signals, allowing the detector to obtain useful features even from heads lacking diagonal structures.
 
 ### Loss & Training
 
-A Logistic Regression classifier is used, with L2 regularization for feature ranking and L1 regularization for feature pruning (Stable Features variant). The training data consists of 40,000 samples from the VoxPopuli training set (10,000 for each of the 4 languages). Hallucination labels are automatically generated using a threshold of WER + SHS > 0.7, with a manually annotated subset used to calibrate this threshold.
+A logistic regression classifier is employed, with L2 regularization used for feature ranking and L1 regularization for feature pruning (Stable Features variant). The training data consists of 40,000 samples from the VoxPopuli training set (10,000 for each of the 4 languages). Hallucination labels are automatically generated using a threshold of WER + SHS > 0.7, with a manually annotated subset used to calibrate the threshold.
 
 ## Key Experimental Results
 
@@ -95,40 +97,40 @@ A Logistic Regression classifier is used, with L2 regularization for feature ran
 
 | Configuration | Key Metric | Description |
 |------|---------|------|
-| All Features (4096) | PR-AUC 0.58 | Too many features may lead to overfitting. |
-| AudioRatio Only (1024) | PR-AUC 0.56 | Performance of a single metric is close to optimal. |
-| Top 75 (300 features) | PR-AUC 0.58 | Optimal in-domain performance achieved with a few heads. |
-| Stable Features | Better OOD | Optimal OOD generalization with ~100 attention heads. |
+| All Features (4096) | PR-AUC 0.58 | Too many features may lead to overfitting |
+| AudioRatio Only (1024) | PR-AUC 0.56 | Single metric performance is close to optimal |
+| Top 75 (300 features) | PR-AUC 0.58 | A small number of heads can achieve optimal in-domain performance |
+| Stable Features | Better OOD Generalization | ~100 attention heads yield optimal results |
 
 ### Key Findings
-- Attention features significantly outperform uncertainty estimation baselines on in-domain data, with a PR-AUC increase of up to +0.23 on Voxtral-3B.
-- Approximately 100 attention heads are sufficient for strong detection performance, and out-of-distribution (OOD) generalization improves when using a subset of heads compared to all heads.
-- Effectiveness is model-dependent: improvements on Voxtral-3B are more significant than on Qwen-2-Audio.
-- OOD generalization (e.g., to noisy CALLHOME data) remains a major challenge, though feature selection helps mitigate this.
-- Hallucination rates are low (1-6%) on clean data (VoxPopuli) but reach up to 20% on noisy data (CALLHOME).
+- Attention features significantly outperform uncertainty estimation baselines on in-domain data, with a PR-AUC increase of +0.23 on Voxtral-3B.
+- Approximately 100 attention heads are sufficient to achieve strong detection performance, and out-of-distribution (OOD) generalization is better than using all heads.
+- Effectiveness depends on the model: Improvements on Voxtral-3B are more significant than on Qwen-2-Audio.
+- OOD generalization (e.g., noisy CALLHOME data) remains a major challenge; feature selection can help mitigate this.
+- Hallucination rates are very low on clean data (VoxPopuli: 1-6%) but as high as 20% on noisy data (CALLHOME).
 
 ## Highlights & Insights
-- This work is the first to extend attention-based hallucination detection from text LLMs to SpeechLLMs, designing metrics specific to the audio modality.
-- The lightweight approach (Logistic Regression) can be deployed in real-time during inference for online filtering or offline analysis.
-- Visualizations clearly demonstrate pathological attention patterns during hallucinations: diagonal degradation and attention fallback to the start of the audio.
-- Feature selection is found not only to reduce computational overhead but also to enhance OOD generalization capabilities.
+- Ours is the first to extend attention-based hallucination detection from text LLMs to SpeechLLMs, designing audio-specific metrics.
+- The lightweight method (logistic regression) can be deployed in real-time during inference for online filtering or offline analysis.
+- Visualizations clearly demonstrate pathological attention patterns during hallucinations: diagonal degradation and attention fallback to the audio start.
+- It is found that feature selection not only reduces computational overhead but also improves OOD generalization capability.
 
 ## Limitations & Future Work
-- Effectiveness is highly dependent on the specific model and task, requiring task-specific training.
-- OOD generalization is still a primary bottleneck, particularly when moving from clean data to noisy data.
-- Hallucination labels rely on an automatic threshold (WER + SHS > 0.7), which may introduce label noise.
-- Future directions include integration with uncertainty estimation, exploring more SpeechLLM architectures, and end-to-end training.
+- Effectiveness is highly dependent on the model and task, requiring training for specific tasks.
+- OOD generalization remains a primary bottleneck, particularly from clean data to noisy data.
+- Hallucination labels depend on automatic thresholds (WER + SHS > 0.7), which may introduce noise.
+- Future directions: Combining with uncertainty estimation, exploring more SpeechLLM architectures, and end-to-end training.
 
 ## Related Work & Insights
-- **vs Lookback-Lens**: While Lookback-Lens calculates input/output attention ratios for text LLMs, this paper adapts the concept to the audio modality by specifically calculating the attention ratio for audio tokens.
-- **vs SHALLOW**: SHALLOW is a reference-based hallucination detection benchmark; this paper proposes reference-free detection at inference time.
-- **vs Uncertainty Estimation**: While uncertainty methods (Mean Entropy, Perplexity) provide general signals, the attention features in this study specifically capture audio-text alignment failures.
+- **vs Lookback-Lens**: Lookback-Lens calculates input/output attention ratios in text LLMs; ours adapts this to the audio modality by exclusively calculating the attention ratio for audio tokens.
+- **vs SHALLOW**: SHALLOW is a reference-based hallucination detection benchmark; ours proposes reference-free inference-time detection.
+- **vs Uncertainty Estimation**: Uncertainty methods (Mean Entropy, Perplexity) provide general signals, whereas the attention features in ours specifically capture audio-text alignment failures.
 
 ## Rating
-- Novelty: ⭐⭐⭐ Adapts existing text hallucination detection concepts to the speech modality; innovation lies in the metric design.
+- Novelty: ⭐⭐⭐ Adapts existing text hallucination detection ideas to the speech modality; innovation lies in metric design.
 - Experimental Thoroughness: ⭐⭐⭐⭐ Evaluated across two models, two tasks, and multiple datasets with detailed ablations.
 - Writing Quality: ⭐⭐⭐⭐ Clear methodology, intuitive visualizations, and sound experimental design.
-- Value: ⭐⭐⭐ High practicality but scope is currently limited by dependency on specific models and tasks.
+- Value: ⭐⭐⭐ Strong practicality but relatively narrow scope, depending on specific models and tasks.
 
 <!-- RELATED:START -->
 
@@ -136,11 +138,11 @@ A Logistic Regression classifier is used, with L2 regularization for feature ran
 
 ## Related Papers
 
+- [\[CVPR 2026\] PAS: Prelim Attention Score for Detecting Object Hallucinations in Large Vision-Language Models](../../CVPR2026/hallucination/pas_prelim_attention_score_for_detecting_object_hallucinations_in_large_vision-l.md)
+- [\[ACL 2026\] FaithLens: Detecting and Explaining Faithfulness Hallucination](faithlens_detecting_and_explaining_faithfulness_hallucination.md)
 - [\[ACL 2026\] TPA: Next Token Probability Attribution for Detecting Hallucinations in RAG](tpa_next_token_probability_attribution_for_detecting_hallucinations_in_rag.md)
 - [\[ACL 2026\] FinGround: Detecting and Grounding Financial Hallucinations via Atomic Claim Verification](finground_detecting_and_grounding_financial_hallucinations_via_atomic_claim_veri.md)
-- [\[ACL 2026\] FaithLens: Detecting and Explaining Faithfulness Hallucination](faithlens_detecting_and_explaining_faithfulness_hallucination.md)
-- [\[ICLR 2026\] LUMINA: Detecting Hallucinations in RAG System with Context-Knowledge Signals](../../ICLR2026/hallucination/lumina_detecting_hallucinations_in_rag_system_with_context-knowledge_signals.md)
-- [\[AAAI 2026\] LLM-CAS: Dynamic Neuron Perturbation for Real-Time Hallucination Correction](../../AAAI2026/hallucination/llm-cas_dynamic_neuron_perturbation_for_real-time_hallucinat.md)
+- [\[ACL 2026\] Hallucination Detection in LLMs with Topological Divergence on Attention Graphs](hallucination_detection_in_llms_with_topological_divergence_on_attention_graphs.md)
 
 </div>
 

@@ -2,129 +2,137 @@
 title: >-
   [Paper Note] ReflexSplit: Single Image Reflection Separation via Layer Fusion-Separation
 description: >-
-  [CVPR 2026][Image Restoration][Single image reflection separation] ReflexSplit proposes an explicit layer fusion-separation framework that addresses the transmission-reflection confusion problem in single image reflectio…
+  [CVPR 2026][Image Restoration][Paper Note] ReflexSplit proposes an explicit layer fusion-separation framework. It adaptively aggregates multi-scale features through Cross-scale Gated Fusion (CrGF) and employs differential dual-dimensional attention $\mathbf{A}^t - \lambda_\ell \mathbf{A}^r$ within the Layer Fusion-Separation Block (LFSB) for cross-stream interf
 tags:
-  - "CVPR 2026"
-  - "Image Restoration"
-  - "Single image reflection separation"
-  - "differential attention"
-  - "cross-scale fusion"
-  - "curriculum learning"
-  - "dual-stream architecture"
+  - CVPR 2026
+  - Image Restoration
 date: 2026-05-08
-content_hash: 8a5fd1686e682ab6
+content_hash: 0cd40687bc68d5dc
 ---
-
 # ReflexSplit: Single Image Reflection Separation via Layer Fusion-Separation
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2601.17468](https://arxiv.org/abs/2601.17468)  
 **Code**: [https://github.com/wuw2135/ReflexSplit](https://github.com/wuw2135/ReflexSplit)  
-**Area**: Image Restoration
-**Keywords**: Single image reflection separation, differential attention, cross-scale fusion, curriculum learning, dual-stream architecture
+**Area**: Image Restoration  
+**Keywords**: Single Image Reflection Separation, Differential Attention, Cross-scale Fusion, Curriculum Learning, Dual-stream Architecture
 
 ## TL;DR
-ReflexSplit proposes an explicit layer fusion-separation framework that addresses the transmission-reflection confusion problem in single image reflection separation (SIRS). It employs Cross-scale Gated Fusion (CrGF) for adaptive multi-scale feature aggregation, a differential dual-dimensional attention mechanism $\mathbf{A}^t - \lambda_\ell \mathbf{A}^r$ within the Layer Fusion-Separation Block (LFSB) for cross-stream interference suppression, and a curriculum training strategy with depth-dependent initialization and epoch-wise warmup to progressively strengthen separation intensity, achieving state-of-the-art performance on both synthetic and real-world benchmarks.
+ReflexSplit proposes an explicit layer fusion-separation framework. It adaptively aggregates multi-scale features through Cross-scale Gated Fusion (CrGF) and employs differential dual-dimensional attention $\mathbf{A}^t - \lambda_\ell \mathbf{A}^r$ within the Layer Fusion-Separation Block (LFSB) for cross-stream interference suppression. Combined with a curriculum training strategy utilizing depth-dependent initialization and epoch-wise warmup, it achieves SOTA performance on both synthetic and real-world reflection separation benchmarks.
 
 ## Background & Motivation
 
-1. **Background**: SIRS decomposes a mixed image $\mathbf{I}$ into a transmission layer $\mathbf{T}$ and a reflection layer $\mathbf{R}$. The field has evolved from simple linear superposition models $\mathbf{I}=\mathbf{T}+\mathbf{R}$ to nonlinear residual formulations $\mathbf{I}=\mathbf{T}+\mathbf{R}+\Phi(\mathbf{T},\mathbf{R})$, with methods such as YTMT, DSRNet, and DSIT progressively enhancing inter-layer interaction.
+1. **Background**: Single Image Reflection Separation (SIRS) aims to decompose a mixture image $\mathbf{I}$ into a transmission layer $\mathbf{T}$ and a reflection layer $\mathbf{R}$. Recent methods have evolved from simple linear models $\mathbf{I}=\mathbf{T}+\mathbf{R}$ to non-linear residual models $\mathbf{I}=\mathbf{T}+\mathbf{R}+\Phi(\mathbf{T},\mathbf{R})$, enhancing interlayer interactions through methods like YTMT, DSRNet, and DSIT.
 
-2. **Limitations of Prior Work**: Under strong reflections (e.g., specular highlights on water surfaces) or semantically ambiguous scenes (e.g., a painting of the moon on a wall misidentified as a reflection), networks erroneously confuse the transmission and reflection layers. As network depth increases, progressive information loss causes intra-layer and inter-layer features to become inseparable, which is particularly severe in deep decoder stages.
+2. **Limitations of Prior Work**: When facing strong reflections (e.g., specular reflections on water) or semantically ambiguous scenes (e.g., a moon painting on a wall misidentified as a reflection), networks frequently confuse transmission and reflection layers ("reflection-transmission confusion"). As network depth increases, the loss of feature information renders intra-layer and inter-layer features inseparable, which is particularly severe in deep decoders.
 
-3. **Key Challenge**: Existing methods suffer from two deficiencies: (a) insufficient multi-scale feature aggregation leading to gradient instability—DSIT lacks gradient stability, RDNet lacks explicit scale coordination, and MuGI operates at only a single scale; (b) implicit fusion mechanisms causing progressive layer confusion—DSIT directly aggregates dual-dimensional attention outputs without separation constraints.
+3. **Key Challenge**: Existing methods are deficient in two dimensions: (a) Inadequate hierarchical feature aggregation leads to unstable gradients—DSIT lacks gradient stability, RDNet lacks explicit scale coordination, and MuGI operates only at a single scale; (b) Implicit fusion mechanisms lead to progressive layer confusion—DSIT directly aggregates dual-dimensional attention outputs without separation constraints.
 
-4. **Goal**: (a) How to adaptively aggregate features from multiple sources (semantic priors, texture details, decoder context) across scales? (b) How to enforce layer-specific separation while simultaneously fusing shared structural information? (c) How to avoid training instability caused by excessively strong separation constraints in early training?
+4. **Goal**: (a) How to adaptively aggregate features from diverse sources (semantic priors, texture details, decoder context) across multiple scales? (b) How to enforce layer-specific separation while fusing shared structural information? (c) How to avoid instabilities caused by excessive separation constraints during early training?
 
-5. **Key Insight**: The paper models reflection separation explicitly as an alternating fusion-separation process—first fusing to obtain shared structural information, then applying differential attention for layer-specific disentanglement. This extends the attention cancellation idea from Differential Transformer from single-stream noise suppression to dual-stream layer separation.
+5. **Key Insight**: Model reflection separation explicitly as an alternating "fusion-separation" process—fusing first to obtain shared structural information, then employing differential attention for layer-specific separation. Extend the attention cancellation idea from Differential Transformer—originally for single-stream noise suppression—to dual-stream layer separation.
 
-6. **Core Idea**: By alternating between fusion (shared structure extraction) and differential attention separation (cross-stream subtraction $\mathbf{A}^t - \lambda_\ell \mathbf{A}^r$) within a dual-stream architecture, combined with curriculum training that progressively increases separation intensity, the framework achieves robust transmission-reflection disentanglement throughout all network levels.
+6. **Core Idea**: By executing alternating fusion (shared structure extraction) and differential attention separation (cross-stream subtraction $\mathbf{A}^t - \lambda_\ell \mathbf{A}^r$) within a dual-stream architecture, combined with a curriculum training strategy to progressively enhance separation intensity, robust transmission-reflection separation is achieved.
 
 ## Method
 
 ### Overall Architecture
 
-ReflexSplit adopts a dual-stream encoder-decoder architecture. The encoder side includes two parallel feature extraction branches: a pretrained Swin Transformer (GFEB) for extracting global semantic priors $\{\mathbf{P}_\ell\}$ and a MuGI-based CNN (LFEB) for capturing local texture details $\{\mathbf{E}_\ell\}$. On the decoder side, CrGF adaptively aggregates multi-scale features at each level, and LFSB alternates between fusion and differential separation at each decoder stage. The network outputs the transmission layer $\mathbf{T}$, the reflection layer $\mathbf{R}$, and a residual term $\mathbf{RR}$ capturing nonlinear interactions.
+ReflexSplit adopts a dual-stream encoder-decoder architecture. The encoder contains dual-branch feature extraction: a pre-trained Swin Transformer serves as the Global Feature Extraction Block (GFEB) to extract semantic priors $\{\mathbf{P}_\ell\}$, while a MuGI-based CNN acts as the Local Feature Extraction Block (LFEB) to capture texture details $\{\mathbf{E}_\ell\}$. The decoder adaptively aggregates multi-scale features via CrGF, and the LFSB executes alternating fusion and differential separation at each layer. The model outputs the transmission layer $\mathbf{T}$, reflection layer $\mathbf{R}$, and residual $\mathbf{RR}$ (capturing non-linear interactions).
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Mixed Image I"] --> B["Global Feature Extraction GFEB (Swin)<br/>Semantic Prior P"]
+    A --> C["Local Feature Extraction LFEB (CNN)<br/>Texture Details E"]
+    B --> D
+    C --> D
+    subgraph DEC["Layer-wise Decoder"]
+        direction TB
+        D["Cross-scale Gated Fusion CrGF<br/>Bidirectional Mutual Gating Aggregation"] --> E["Layer Fusion-Separation Block LFSB<br/>Fusion then Differential Attention Separation"]
+    end
+    F["Curriculum Training Strategy<br/>Depth-dependent Init × Epoch Warmup Schedule λ"] -.Control Separation.-> E
+    E --> G["Transmission T / Reflection R / Residual RR"]
+```
 
 ### Key Designs
 
-1. **Cross-scale Gated Fusion (CrGF)**:
+**1. Cross-scale Gated Fusion (CrGF): Stabilizing multi-scale feature flow to prevent progressive decoder degradation**
 
-    - **Function**: Adaptively aggregates semantic priors, texture details, and decoder context at each decoder level to stabilize gradient flow and prevent feature degradation.
-    - **Mechanism**: At decoder levels $\{4, 3, 2\}$, raw features are formed as $\mathbf{F}_\ell^{\text{raw}} = \mathbf{F}_{\ell+1} + \mathbf{P}_\ell + \mathbf{E}_\ell$ (decoder context + semantics + texture), then fused with decoder context via bidirectional gating paths: $\mathbf{F}_\ell^{\text{main}} = \mathcal{G}_1(\mathbf{F}_\ell^{\text{raw}}) \odot \mathcal{G}_2(\mathbf{F}_{\ell+1})$ and $\mathbf{F}_\ell^{\text{aux}} = \mathcal{G}_1(\mathbf{F}_{\ell+1}) \odot \mathcal{G}_2(\mathbf{F}_\ell^{\text{raw}})$, where $\mathcal{G}$ selects complementary channels via channel splitting. A softmax-weighted combination yields the final output.
-    - **Design Motivation**: MuGI operates at only a single scale; RobustSIRR uses direct concatenation without adaptive gating; RDNet employs fixed invertible paths that lack explicit scale coordination. CrGF addresses cross-scale, cross-source feature coordination through bidirectional adaptive gating.
+Features for reflection separation originate from three misaligned sources: global semantic priors $\mathbf{P}_\ell$ from Swin, local textures $\mathbf{E}_\ell$ from CNN, and the preceding decoder context $\mathbf{F}_{\ell+1}$. Prior methods either interact at a single scale (MuGI), concatenate without adaptive gating (RobustSIRR), or follow fixed paths (RDNet), leading to inadequate cross-scale coordination and gradient instability. CrGF first sums the three paths into a raw feature $\mathbf{F}_\ell^{\text{raw}} = \mathbf{F}_{\ell+1} + \mathbf{P}_\ell + \mathbf{E}_\ell$, then executes bidirectional mutual gating with the decoder context:
 
-2. **Layer Fusion-Separation Block (LFSB)**:
+$$\mathbf{F}_\ell^{\text{main}} = \mathcal{G}_1(\mathbf{F}_\ell^{\text{raw}}) \odot \mathcal{G}_2(\mathbf{F}_{\ell+1}), \qquad \mathbf{F}_\ell^{\text{aux}} = \mathcal{G}_1(\mathbf{F}_{\ell+1}) \odot \mathcal{G}_2(\mathbf{F}_\ell^{\text{raw}})$$
 
-    - **Function**: Alternates between fusion (shared structure extraction) and separation (layer-specific disentanglement) at each decoder stage to prevent progressive transmission-reflection confusion.
-    - **Mechanism**: Executed in three steps—
-      (a) **Early fusion**: Aligns semantic spaces via bidirectional cross-stream projection $\mathbf{F}^{t'}_\ell = \mathbf{W}^t[\mathbf{F}^t_\ell \| \mathbf{F}^r_\ell]$, providing each stream with complementary information;
-      (b) **Differential dual-dimensional attention**: Self-attention (SA) is computed by concatenating along the batch dimension for spatial refinement, and cross-attention (CA) is computed by concatenating along the sequence dimension to capture inter-layer dependencies. A differential operator is then applied: $\mathbf{A}^t_{\text{diff}} = (\mathbf{A}^t_{\text{SA}} + \mathbf{A}^t_{\text{CA}}) - \sigma(\lambda_\ell)(\mathbf{A}^r_{\text{SA}} + \mathbf{A}^r_{\text{CA}})$, suppressing cross-stream interference via subtraction;
-      (c) **Late aggregation**: An FFN with residual connections integrates the separated features.
-    - **Design Motivation**: Unlike Differential Transformer, which applies intra-head subtraction to suppress noise within a single stream, LFSB extends subtraction across streams—using the reflection stream's attention patterns to suppress residual reflection artifacts in the transmission stream, and vice versa. DSIT directly aggregates SA and CA outputs without separation constraints, causing progressive confusion.
+The gate $\mathcal{G}$ selects complementary channels via channel splitting, and the two paths are fused using softmax weighting. This bidirectional gating allows the "current layer" and "context" to mutually filter and dynamically reorganize, stabilizing the feature flow at each scale.
 
-3. **Curriculum Training Strategy**:
+**2. Layer Fusion-Separation Block (LFSB): Maintaining layer separability through alternating fusion and differential attention**
 
-    - **Function**: Progressively strengthens differential separation intensity, allowing the network to first learn holistic reconstruction before focusing on layer-specific separation.
-    - **Mechanism**: Two complementary mechanisms control $\lambda_\ell$:
-      (a) **Depth-dependent initialization** $\lambda_\ell^{\text{init}} = 0.8 - 0.6 e^{-0.3\ell}$: deeper layers receive stronger separation weights ($\lambda \to 0.8$), while shallow layers maintain weak weights ($\lambda \to 0.2$) to preserve fine-grained details;
-      (b) **Epoch-wise warmup** $\lambda_{\text{diff}}(e)$: linearly increases from 0.1 to 1.0 over the first 30 epochs. The effective coefficient is $\lambda_\ell(e) = \lambda_\ell^{\text{init}} \cdot \lambda_{\text{diff}}(e)$.
-    - **Design Motivation**: Excessively strong differential separation in early training destabilizes optimization since features are not yet well-structured; excessively weak separation fails to achieve effective disentanglement. Curriculum training adaptively controls separation intensity across both spatial (depth-dependent) and temporal (epoch-wise) dimensions.
+Strong reflections or semantic ambiguities cause networks to blend transmission and reflection signals. LFSB decomposes each stage into three alternating steps. Early fusion utilizes bidirectional cross-stream projection $\mathbf{F}^{t'}_\ell = \mathbf{W}^t[\mathbf{F}^t_\ell \| \mathbf{F}^r_\ell]$ to align streams in a shared semantic space. This is followed by critical differential dual-dimensional attention: Self-Attention (SA) along the batch dimension for spatial correlation and Cross-Attention (CA) along the sequence dimension for interlayer dependency, followed by cross-stream subtraction:
+
+$$\mathbf{A}^t_{\text{diff}} = (\mathbf{A}^t_{\text{SA}} + \mathbf{A}^t_{\text{CA}}) - \sigma(\lambda_\ell)\,(\mathbf{A}^r_{\text{SA}} + \mathbf{A}^r_{\text{CA}})$$
+
+Finally, FFN and residual connections aggregate the separated features. Unlike DSIT, which simply sums SA and CA outputs without separation constraints, this subtraction "cancels out" residual reflection responses in the transmission stream (and vice versa), maintaining layer-specific signals at all depths.
+
+**3. Curriculum Training Strategy: Progressive enhancement of separation intensity across depth and time**
+
+The differential coefficient $\lambda$ is a double-edged sword: strong separation early in training causes oscillation, while weak separation fails to decouple layers. ReflexSplit employs a spatial-temporal joint schedule. Spatially, it uses depth-dependent initialization $\lambda_\ell^{\text{init}} = 0.8 - 0.6\,e^{-0.3\ell}$, applying stronger separation ($\lambda \to 0.8$) in deep layers where information loss is high and weaker separation ($\lambda \to 0.2$) in shallow layers to preserve fine textures. Temporally, an epoch-wise warmup $\lambda_{\text{diff}}(e)$ linearly scales the global coefficient from 0.1 to 1.0 over the first 30 epochs. The effective coefficient is $\lambda_\ell(e) = \lambda_\ell^{\text{init}} \cdot \lambda_{\text{diff}}(e)$, allowing the network to learn reconstruction first and separation later.
 
 ### Loss & Training
 
-The total loss consists of six terms: a Charbonnier reconstruction loss $\mathcal{L}_{\text{rec}}$ (for the transmission layer), an $\ell_1$ reflection loss $\mathcal{L}_{\text{refl}}$, a VGG perceptual loss $\mathcal{L}_{\text{vgg}}$ (layers $\{2, 7, 12, 21, 30\}$), a color consistency loss $\mathcal{L}_{\text{color}}$, an exclusion loss $\mathcal{L}_{\text{exclu}}$, and a reconstruction consistency loss $\mathcal{L}_{\text{recons}}$.
+The total loss function consists of six components: Charbonnier reconstruction loss $\mathcal{L}_{\text{rec}}$ (transmission), $\ell_1$ reflection loss $\mathcal{L}_{\text{refl}}$, VGG perceptual loss $\mathcal{L}_{\text{vgg}}$ (layers {2,7,12,21,30}), color consistency loss $\mathcal{L}_{\text{color}}$, exclusivity loss $\mathcal{L}_{\text{exclu}}$, and reconstruction constraint loss $\mathcal{L}_{\text{recons}}$.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Dataset | Metric | ReflexSplit | Prev. SOTA (RDNet) | Gain |
+| Dataset | PSNR↑ / SSIM↑ | ReflexSplit (Ours) | Prev. SOTA (RDNet) | Gain |
 |--------|------|------|----------|------|
 | Real20 | PSNR / SSIM | 25.22 / 0.846 | 25.17 / 0.841 | +0.05 / +0.005 |
-| Objects | PSNR / SSIM | 27.08 / 0.929 | 27.11 / 0.925 | −0.03 / +0.004 |
+| Objects | PSNR / SSIM | 27.08 / 0.929 | 27.11 / 0.925 | -0.03 / +0.004 |
 | Postcard | PSNR / SSIM | 25.38 / 0.927 | 25.04 / 0.910 | +0.34 / +0.017 |
-| Wild | PSNR / SSIM | 27.30 / 0.933 | 27.86 / 0.931 | −0.56 / +0.002 |
+| Wild | PSNR / SSIM | 27.30 / 0.933 | 27.86 / 0.931 | -0.56 / +0.002 |
 | Nature | PSNR / SSIM | 27.03 / 0.854 | 26.75 / 0.846 | +0.28 / +0.008 |
-| Average (540 images) | PSNR / SSIM | 26.40 / 0.898 | 26.38 / 0.890 | +0.02 / +0.008 |
+| Mean (540 imgs) | PSNR / SSIM | 26.40 / 0.898 | 26.38 / 0.890 | +0.02 / +0.008 |
 
-Note: ReflexSplit uses 174M parameters vs. RDNet's 266.4M, demonstrating higher parameter efficiency.
+Note: ReflexSplit has 174M parameters vs. RDNet's 266.4M, demonstrating higher parameter efficiency.
 
 ### Ablation Study
 
-| Configuration | Key Effect | Notes |
+Insights from LFSB differential attention visualization and hierarchical feature separation comparison:
+
+| Config | Key Effect | Description |
 |------|---------|------|
-| DSIT (baseline) | Transmission-reflection confusion in deep layers | No separation constraint, progressive degradation |
+| DSIT (baseline) | Reflection-transmission confusion in deep layers | No separation constraint, progressive degradation |
 | + CrGF | Stabilized gradient flow | Adaptive cross-scale aggregation |
-| + LFSB (w/o diff) | Fusion without separation | Shared structure extracted but layer confusion unresolved |
-| + LFSB (w/ diff) | Effective layer-specific feature separation | Differential operator suppresses cross-stream interference |
-| + Curriculum training | Improved training stability | Progressive strengthening of separation intensity |
+| + LFSB (w/o diff) | Fusion without separation | Shared structures but unresolved layer confusion |
+| + LFSB (w/ diff) | Effective layer feature separation | Differential operator suppresses cross-stream interference |
+| + Curriculum Training | Improved training stability | Progressive enhancement of separation intensity |
 
 ### Key Findings
-- The largest gains are observed on the Postcard subset (+0.34 PSNR / +0.017 SSIM), which contains stronger reflections and more pronounced nonlinear mixing.
-- Differential attention visualizations (Figure 6) clearly demonstrate how cross-stream subtraction suppresses overlapping attention patterns, transforming ambiguous mixed attention into layer-specific, more balanced distributions.
+- The most significant improvement occurs on the Postcard subset (+0.34 PSNR / +0.017 SSIM), which features strong reflections and obvious non-linear mixtures.
+- Differential attention visualization (Figure 6) clearly shows how cross-stream subtraction suppresses overlapping attention patterns, transforming blurred mixed attention into layer-specific balanced distributions.
 - Compared to RDNet (266.4M parameters, two-stage training), ReflexSplit achieves comparable or superior performance with fewer parameters (174M) and a simpler training pipeline.
 
 ## Highlights & Insights
-- **Transferring Differential Transformer to dual-stream separation**: The original Differential Transformer performs intra-head subtraction to suppress noise within a single stream. This paper extends the idea cross-stream—using the attention patterns of one stream to cancel inter-layer interference in the other. This cross-modal/cross-stream subtraction paradigm can be broadly transferred to any multi-stream architecture requiring separation of entangled signals.
-- **Spatiotemporal co-design of curriculum training**: Depth-dependent initialization combined with epoch-wise warmup forms a 2D control surface over separation intensity, enabling optimal fusion-separation balance at different training stages and network depths. This fine-grained training intensity control strategy is generalizable to other multi-scale decomposition tasks.
+- **Migration from Differential Transformer to Dual-stream Separation**: While the original Differential Transformer uses subtraction within a single head to cancel noise, this work extends it to cross-stream applications—using the attention from one stream to "cancel" interlayer interference in the current stream. This concept of cross-modal/cross-stream subtraction is broadly applicable to multi-stream architectures requiring signal disentanglement.
+- **Spatial-Temporal Synergy in Curriculum Training**: The combination of depth-dependent initialization and epoch-wise warmup creates a 2D control surface for separation intensity. This ensures an optimal fusion-separation balance across different training stages and depths, offering a fine-grained strategy for other multi-scale decomposition tasks.
 
 ## Limitations & Future Work
-- Performance on certain subsets (Objects, Wild) falls slightly below RDNet in PSNR, indicating room for improvement in adapting to specific scene categories.
-- The reliance on a pretrained Swin Transformer for global semantic extraction may limit out-of-domain generalization.
-- The initialization formula for the differential coefficient $\lambda_\ell$ is manually designed and may not generalize well across different data distributions.
-- The paper does not provide detailed computational efficiency comparisons (FLOPs, inference latency); the 174M parameter count is larger than DSIT (136M) but smaller than RDNet (266M).
+- PSNR is slightly lower than RDNet on certain subsets (Objects, Wild), indicating the need for better adaptation to specific scene types.
+- Reliance on a pre-trained Swin Transformer for global semantics may limit generalization to data outside the training domain.
+- The initialization formula for differential coefficient $\lambda_\ell$ is manually designed and may not be universal across all data distributions.
+- Detailed comparisons of computational efficiency (FLOPs, inference latency) were not provided; 174M parameters is larger than DSIT (136M) though smaller than RDNet (266M).
 
 ## Related Work & Insights
-- **vs. DSIT**: DSIT employs dual-dimensional attention but directly aggregates outputs without separation constraints, resulting in progressive confusion in deep layers. ReflexSplit uses the differential operator for explicit disentanglement.
-- **vs. RDNet**: RDNet employs an invertible encoder for lossless gradient flow but requires 266M parameters and two-stage training. ReflexSplit achieves adaptive cross-scale coordination via CrGF with fewer parameters.
-- **vs. DSRNet**: DSRNet introduces MuGI for inter-layer interaction but operates at only a single scale without attention separation constraints. CrGF extends its gating idea to cross-scale aggregation, while LFSB provides a more systematic fusion-separation solution.
+- **vs DSIT**: DSIT uses dual-dimensional attention but aggregates outputs without separation constraints, leading to progressive deep-layer confusion. ReflexSplit explicitly disentangles features via differential operators.
+- **vs RDNet**: RDNet uses invertible encoders for lossless gradient flow but suffers from high parameter counts (266M) and requires two-stage training. ReflexSplit achieves adaptive cross-scale coordination with fewer parameters using CrGF.
+- **vs DSRNet**: DSRNet introduces MuGI for interlayer interaction but only at a single scale. CrGF extends its gating philosophy to cross-scale aggregation.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ The application of differential attention to dual-stream separation is creative, though the overall framework represents incremental improvement.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Multi-dataset evaluation with visualization analysis; detailed ablation numbers could be more comprehensive.
-- **Writing Quality**: ⭐⭐⭐⭐ Motivation is clear, method description is detailed, and figures are informative.
-- **Value**: ⭐⭐⭐ Contributes meaningfully within the SIRS subfield; broader impact on the general vision community is limited.
+- Novelty: ⭐⭐⭐⭐ Application of differential attention in dual-stream separation is creative, though the framework is incrementally improved.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Evaluation across multiple datasets with visualization analysis, though detailed ablation numbers are limited.
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation, detailed methodology, and rich illustrations.
+- Value: ⭐⭐⭐ Significant value within the SIRS subfield, but impact on the broader vision community may be limited.
 
 <!-- RELATED:START -->
 
@@ -132,11 +140,11 @@ Note: ReflexSplit uses 174M parameters vs. RDNet's 266.4M, demonstrating higher 
 
 ## Related Papers
 
+- [\[CVPR 2026\] Reflection Separation from a Single Image via Joint Latent Diffusion](reflection_separation_from_a_single_image_via_joint_latent_diffusion.md)
+- [\[CVPR 2026\] Perceptual Neural Video Compression with Color Separation and Rank Chain](perceptual_neural_video_compression_with_color_separation_and_rank_chain.md)
+- [\[CVPR 2026\] LightRR: A Lightweight Network for Single Image Reflection Removal](lightrr_a_lightweight_network_for_single_image_reflection_removal.md)
 - [\[AAAI 2026\] Depth-Synergized Mamba Meets Memory Experts for All-Day Image Reflection Separation](../../AAAI2026/image_restoration/depth-synergized_mamba_meets_memory_experts_for_all-day_image_reflection_separat.md)
-- [\[CVPR 2026\] BHCast: Unlocking Black Hole Plasma Dynamics from a Single Blurry Image with Long-Term Forecasting](bhcast_unlocking_black_hole_plasma_dynamics_from_a_single_blurry_image_with_long.md)
-- [\[CVPR 2026\] DRFusion: Degradation-Robust Fusion via Degradation-Aware Diffusion Framework](drfusion_degradation_robust_fusion_via_degradation_aware_diffusion_framework.md)
-- [\[CVPR 2026\] EVLF: Early Vision-Language Fusion for Generative Dataset Distillation](evlf_early_vision-language_fusion_for_generative_dataset_distillation.md)
-- [\[CVPR 2026\] PhaSR: Generalized Image Shadow Removal with Physically Aligned Priors](phasr_generalized_image_shadow_removal_with_physically_aligned_priors.md)
+- [\[CVPR 2026\] Degradation-Robust Fusion: An Efficient Degradation-Aware Diffusion Framework for Multimodal Image Fusion in Arbitrary Degradation Scenarios](degradation-robust_fusion_an_efficient_degradation-aware_diffusion_framework_for.md)
 
 </div>
 

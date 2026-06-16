@@ -2,72 +2,81 @@
 title: >-
   [Paper Note] ProtoCycle: Reflective Tool-Augmented Planning for Text-Guided Protein Design
 description: >-
-  [ACL 2026 (Findings)][Computational Biology][Protein Design] ProtoCycle proposes a **reflective agent framework** that utilizes an LLM as a planner combined with a lightweight tool environment for text-guided protein seq…
+  [ACL 2026][Computational Biology][Reinforcement Learning] ProtoCycle proposes a **reflective agent framework** that uses an LLM as a planner combined with a lightweight tool environment for text-guided protein sequence design. It replaces one-shot text-to-sequence generation with a multi-round "plan-tool-evaluate-reflect" cycle. On Mol-Instructions, it improves ProTrek to 14.
 tags:
-  - "ACL 2026 (Findings)"
-  - "Computational Biology"
-  - "Protein Design"
-  - "Text-Guided"
-  - "Reflective Planning"
-  - "Tool-Augmentation"
-  - "Reinforcement Learning"
+  - ACL 2026
+  - Computational Biology
+  - Reinforcement Learning
 date: 2026-05-08
-content_hash: e93b7fa452f1129c
+content_hash: b3b6785c41dcecdd
 ---
-
 # ProtoCycle: Reflective Tool-Augmented Planning for Text-Guided Protein Design
 
 **Conference**: ACL 2026 (Findings)  
 **arXiv**: [2604.16896](https://arxiv.org/abs/2604.16896)  
 **Code**: [https://github.com/huggggoooooo/ProtoCycle](https://github.com/huggggoooooo/ProtoCycle)  
 **Area**: AI for Science / Protein Design  
-**Keywords**: Protein Design, Text-Guided, Reflective Planning, Tool-Augmentation, Reinforcement Learning
+**Keywords**: Protein Design, Text-Guided, Reflective Planning, Tool Augmentation, Reinforcement Learning
 
 ## TL;DR
 
-ProtoCycle proposes a **reflective agent framework** that utilizes an LLM as a planner combined with a lightweight tool environment for text-guided protein sequence design. By replacing one-shot text-to-sequence generation with a multi-round "plan-tool-evaluate-reflect" cycle, it improves ProTrek to 14.681 and Retrieval to 0.936 on Mol-Instructions. Using only ~2,000 SFT trajectories and online RL, it achieves language alignment performance that approaches or exceeds specialized protein design models.
+ProtoCycle proposes a **reflective agent framework** that uses an LLM as a planner combined with a lightweight tool environment for text-guided protein sequence design. It replaces one-shot text-to-sequence generation with a multi-round "plan-tool-evaluate-reflect" cycle. On Mol-Instructions, it improves ProTrek to 14.681 and Retrieval to 0.936, achieving language alignment that nears or exceeds specialized protein design models using only ~2,000 SFT trajectories and online RL.
 
 ## Background & Motivation
 
-**Background**: Designing proteins that satisfy functional requirements described in natural language is a core objective of protein engineering. A direct approach involves fine-tuning general instruction-tuned LLMs as text-to-sequence generators; however, this approach is both data- and computation-intensive.
+**Background**: Designing proteins that meet functional requirements described in natural language is a core objective of protein engineering. A direct approach is fine-tuning general instruction-following LLMs as text-to-sequence generators, though this is data and compute-intensive.
 
-**Limitations of Prior Work**: (1) Direct text-to-sequence methods require vast amounts of supervised data and computational resources; (2) Under limited supervision, LLMs can generate coherent textual plans but fail to reliably implement them as protein sequences, leading to a **plan-execute gap**; (3) Protein design necessitates iterative trial and error, whereas most existing methods rely on one-shot generation.
+**Limitations of Prior Work**: (1) Direct text-to-sequence approaches require massive amounts of supervised data and computational resources. (2) Under limited supervision, LLMs can generate coherent textual plans but cannot reliably implement them as protein sequences—resulting in a **plan-execute gap**. (3) Protein design requires iterative trial-and-error, whereas most existing methods are one-shot.
 
-**Key Challenge**: LLMs excel at understanding natural language functional descriptions and generating plans, but they struggle with direct mapping from text to valid protein sequences, especially when training data is scarce.
+**Key Challenge**: LLMs excel at understanding natural language functional descriptions and generating plans, but they are poor at directly mapping text to valid protein sequences, particularly when training data is scarce.
 
-**Goal**: To build a protein design framework that leverages the planning capabilities of LLMs while addressing their weaknesses in sequence generation.
+**Goal**: Construct a protein design framework that leverages the planning capabilities of LLMs while addressing their weaknesses in sequence generation.
 
-**Key Insight**: Drawing inspiration from the iterative workflows of human protein engineers, the process is framed as a multi-round cycle of "planning → execution → feedback → revision" rather than single-step generation, positioning the LLM as a planner rather than a generator.
+**Key Insight**: Borrow from the iterative workflow of human protein engineers—replacing one-step generation with a multi-round "plan → execute → feedback → correction" cycle, positioning the LLM as a planner rather than a generator.
 
-**Core Idea**: A coupling of an LLM planner with a lightweight tool environment is established. Tools provide sequence manipulation and evaluation functions, while the LLM iteratively refines design schemes by reflecting on tool feedback. The agent's capabilities are enhanced through supervised trajectories and online reinforcement learning.
+**Core Idea**: Couple an LLM planner with a lightweight tool environment. Tools provide sequence operations and evaluation functions. The LLM iteratively refines design solutions by reflecting on tool feedback, with agent capabilities enhanced through supervised trajectories and online reinforcement learning.
 
 ## Method
 
 ### Overall Architecture
 
-ProtoCycle formalizes text-guided protein design as a multi-step decision process. Given a natural language requirement $r$, the planner outputs a state $s_t$ and tool action $a_t$ at round $t$ based on the history, tool feedback, and original requirement. The action $a_t$ is decomposed into a tool type and tool parameters, which are executed by the tool environment to return a feedback summary. The LLM does not directly generate the full amino acid sequence; instead, it handles requirement decomposition, tool selection, strategy updates, reflection, and termination judgment. Specialized tools handle specific sequence generation and local editing.
+ProtoCycle formalizes text-guided protein design as a multi-step decision-making process. Given a natural language requirement $r$, the planner outputs a state $s_t$ and a tool action $a_t$ at round $t$ based on historical states, tool feedback, and the original requirement. The action $a_t$ is decomposed into a tool type and parameters, which are then executed by a lightweight tool environment to return a feedback summary. The LLM does not directly output full amino acid sequences; instead, it handles requirement decomposition, tool selection, strategy updates, reflection, and termination judgment. Specific sequence generation and local editing are delegated to specialized tools.
 
-Each round's output follows a three-part protocol: `<think>`, `<plan>`, and `<tool_call>`. In the first round, the planner decomposes requirements into fine-grained sub-goals and plans the tool invocation sequence. In subsequent rounds, the planner reads the number of candidates, current best score, historical best score, and gain $\Delta$ returned by the tools to decide whether to continue the plan, modify the strategy, or terminate. Before termination, an evaluation tool is triggered to re-score the top-5 candidates; if room for improvement remains, planning continues; otherwise, the best sequence is output.
+Each round follows a three-segment protocol: `<think>`, `<plan>`, and `<tool_call>`. In the first round, the planner decomposes requirements into fine-grained sub-goals and plans the tool-call sequence. In subsequent rounds, the planner reads the number of candidates, current best score, historical best score, and gain $\Delta$ returned by the tools to decide whether to continue, modify the strategy, or terminate. Before termination, an evaluation tool is triggered to re-score the top-5 candidates. If there is room for improvement, planning continues; otherwise, the best sequence is output.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    R["Natural Language Requirement r"] --> P["Reflective Multi-round Decision Loop<br/>Planner outputs think/plan/tool_call"]
+    P --> ENV
+    subgraph ENV["Lightweight Tool Environment (3 Tools)"]
+        direction TB
+        T1["scaffold generation<br/>Retrieve & merge candidate scaffolds"]
+        T2["functional-site design<br/>ESM2-3B generates site-level variants"]
+        T3["evaluation<br/>ProTrek / Chai-1 scoring"]
+    end
+    ENV --> F["Feedback Summary<br/>Count / Current Best / Historical Best / Gain Δ"]
+    F --> D{"Reflective Decision"}
+    D -->|Continue / Modify Strategy| P
+    D -->|Terminate| EV["evaluation re-scores top-5"]
+    EV -->|Improvement Possible| P
+    EV -->|No Improvement| O["Output Best Sequence"]
+    TR["SFT + Online RL Training<br/>SFT Cold Start → GRPO Online RL"] -. Train Planner .-> P
+```
 
 ### Key Designs
 
-**1. Reflective Multi-round Decision Cycle**
+**1. Reflective multi-round decision loop**
 
-- **Function**: To simulate the iterative trial-and-error process of human protein engineers.
-- **Mechanism**: In each round, the LLM generates actions based on the current state and historical feedback (e.g., selecting a scaffold, choosing functional sites, or adjusting local descriptions). The tool environment executes these and returns candidate sequences along with a ProTrek score summary. The LLM explicitly reflects on whether the "current strategy is effective" before deciding to continue, modify, or stop.
-- **Design Motivation**: Protein design is inherently an iterative optimization process; single-shot generation struggles to meet complex functional requirements. The LLM-driven reflection mechanism enables the agent to learn from failures and adjust strategies.
+Ours replaces one-shot text-to-sequence generation with an iterative trial-and-error process mimicking human engineers. In each round, the planner outputs following a `<think>/<plan>/<tool_call>` protocol: it summarizes current performance and reflects on strategy effectiveness in `<think>`, decides to continue, modify, or stop in `<plan>`, and selects a tool with parameters in `<tool_call>`. Tools return summaries including candidate counts, best scores, and gains $\Delta$. Explicit reflection allows the agent to learn from poor feedback and correct or halt early—ablations show that "modifying strategy based on feedback" is the crucial step.
 
-**2. Lightweight Tool Environment**
+**2. Lightweight tool environment**
 
-- **Function**: To provide core operations and evaluation capabilities required for protein design.
-- **Mechanism**: The tool environment consists of three core tools: scaffold generation retrieves and merges candidate scaffolds from knowledge bases like UniProt/Rhea/InterPro/QuickGO; functional-site design generates local site variants based on ESM2-3B; evaluation uses ProTrek and Chai-1 to assess language alignment and foldability.
-- **Design Motivation**: LLMs excel at high-level planning but struggle with low-level sequence manipulation. The tool environment compensates for this weakness while making the design process interpretable and traceable.
+The planner manages high-level planning, while low-level sequence operations and evaluations are handled by three tools: scaffold generation retrieves candidates from knowledge bases like UniProt and Rhea; functional-site design uses ESM2-3B to generate site-level variants; evaluation uses ProTrek for alignment and Chai-1 for foldability. Externalizing generation and scoring compensates for the LLM's weakness in residue-level decision-making (where epistemic uncertainty is systematically higher) and makes the design process interpretable and traceable.
 
-**3. Supervised + Online Reinforcement Learning Training**
+**3. SFT + online RL training**
 
-- **Function**: To train the agent's planning and reflection capabilities in stages.
-- **Mechanism**: In the first stage, SFT is performed using tool interaction trajectories constructed from 2,000 Mol-Instructions samples. Cross-entropy is calculated only on the planner states $s_1,\ldots,s_n$ to teach the model the `<think>/<plan>/<tool_call>` protocol. In the second stage, online RL is conducted via GRPO in a real tool environment. The reward encourages correct formatting, reasonable tool usage, reflection after poor feedback, and task completion within an appropriate number of rounds.
-- **Design Motivation**: Supervised learning provides cold-start capability, while RL further optimizes strategies beyond expert levels.
+The planner is trained in two stages. Phase one uses ~2,000 trajectories from Mol-Instructions for SFT, calculating cross-entropy only on planner states $s_1,\ldots,s_n$ to learn the protocol. Phase two uses GRPO for online RL in the actual tool environment. The reward function incentivizes correct formatting, rational tool use, reflection after poor feedback, and task completion within a reasonable number of rounds.
 
 ## Key Experimental Results
 
@@ -84,53 +93,53 @@ Each round's output follows a three-part protocol: `<think>`, `<plan>`, and `<to
 | ProtoCycle-SFT | 4.149 | 2.902 | 0.734 | 0.807 | 10.200 | 12.502 | 0.317 | 0.840 |
 | ProtoCycle-RL | **3.865** | 2.549 | 0.775 | 0.822 | 8.543 | **14.681** | 0.323 | **0.936** |
 
-ProtoCycle-RL achieves the strongest language alignment: ProTrek shows a Gain of 3.66% over Pinal and 21.97% over ProDVa; Retrieval reaches 0.936, significantly higher than Natural, Pinal, and ProDVa. Regarding folding quality, compared to Pinal, the pTM/pLDDT is slightly lower and PAE is slightly higher; however, it outperforms ProDVa across pTM, pLDDT, and PAE, indicating that the agentic workflow does not sacrifice basic structural foldability.
+ProtoCycle-RL excels in language alignment: ProTrek sees a Gain of 3.66% over Pinal and 21.97% over ProDVa; Retrieval reaches 0.936, significantly higher than Natural, Pinal, and ProDVa. Regarding folding quality, while pTM/pLDDT are slightly lower than Pinal, they surpass ProDVa, indicating the agentic workflow preserves structural foldability.
 
 ### Ablation Study
 
 | Experiment | Key Finding |
 |---|---|
-| ProtoCycle-RL vs ProtoCycle-SFT | ProTrek increased from 12.502 to 14.681, Retrieval from 0.840 to 0.936; PPL and Repeat decreased by 6.85% and 12.16% respectively. |
-| CAMEO Generalization | Without training on keyword-style data, Ours still achieves pLDDT 0.80, ProTrek 11.17, and Keyword Recovery 0.59. |
-| Single Tool Quality | Scaffold search: ProTrek 11.42, PAE 8.96, pLDDT 0.83; Functional-site design: ProTrek 12.87, PAE 10.73, pLDDT 0.80. |
-| Tool Latency | Scaffold search: ~4s/round; functional-site design: ~20s/seq; ProTrek-35M: ~3s/round; ProTrek-650M: ~40s/round. |
-| Reflection Mechanism | The language alignment score for reflective planners is nearly double that of non-reflective versions; valid tool call rate increased by ~20%, and tool call rate yielding improvement increased by ~40%. |
+| ProtoCycle-RL vs ProtoCycle-SFT | ProTrek increased from 12.502 to 14.681, Retrieval from 0.840 to 0.936; PPL and Repeat dropped by 6.85% and 12.16% respectively. |
+| CAMEO Generalization | Without training on keyword-style data, ProtoCycle-RL achieved pLDDT 0.80, ProTrek 11.17, and Keyword Recovery 0.59. |
+| Single Tool Quality | Scaffold search: ProTrek 11.42, pLDDT 0.83; Functional-site design: ProTrek 12.87, pLDDT 0.80. |
+| Tool Latency | Scaffold search ~4s/round; functional-site design ~20s/seq; ProTrek-35M ~3s/round. |
+| Reflection Mechanism | Language alignment for the reflective planner is nearly double that of the non-reflective version; valid tool-call rates Gain ~20%. |
 
 ### Key Findings
 
-1. **LLMs are better suited for planning than direct protein sequence generation**: Direct SFT of Qwen2.5-7B only improves ProTrek from ~1 to 7 as data increases, remaining far from the ground-truth of 14.6; power-law extrapolation suggests approaching 12 would require ~$6\times10^8$ supervised samples.
-2. **Epistemic uncertainty is higher for sequence tokens**: While aleatoric uncertainty for planning and sequence tokens is similar, epistemic uncertainty is systematically higher for sequence tokens, indicating insufficient evidence for residue-level decisions in the model.
-3. **RL primarily enhances language alignment and retrieval**: Compared to SFT-only, online RL significantly improves ProTrek and Retrieval while reducing PPL/Repeat.
-4. **Reflection is not merely a formatting stylistic choice**: Learning the `<think>/<plan>` format without actual reflection shows limited difference from a fixed workflow; the real efficacy lies in modifying strategies based on tool feedback and timely termination.
+1. **LLMs are better suited for planning than direct sequence generation**: SFT on Qwen2.5-7B only improved ProTrek from ~1 to 7 with more data; power-law extrapolation suggest approaching a score of 12 would require ~$6\times10^8$ supervised samples.
+2. **Residue tokens exhibit higher epistemic uncertainty**: While aleatoric uncertainty is similar for planning and sequence tokens, sequence tokens show systematically higher epistemic uncertainty, suggesting insufficient evidence for residue-level decisions.
+3. **RL primarily enhances alignment and retrieval**: Compared to SFT-only, online RL significantly boosts ProTrek and Retrieval while reducing PPL/Repeat.
+4. **Reflection is not just formatting**: Simply learning the `<think>/<plan>` format without actual reflection offers minimal benefits over fixed workflows. Effectiveness stems from strategy adjustment based on feedback.
 
 ## Highlights & Insights
 
-1. **Cross-domain Idea Transfer**: Successfully migrates the "plan + tool use + reflect" paradigm from NLP/AI Agent domains to protein design, demonstrating the cross-domain potential of agent frameworks.
-2. **Bridging the Plan-Execute Gap**: Clearly identifies the "can talk but cannot do" issue of LLMs in protein design and provides an elegant solution via tool environments.
-3. **Iterative Optimization vs. One-shot Generation**: Recognizes that protein design is not suited for single-step completion; multi-round feedback cycles align better with actual domain workflows.
-4. **Supervised + RL Training Strategy**: Balances imitation learning and exploratory learning in agent training, serving as an effective paradigm for training complex agents.
+1. **Cross-domain transfer**: Successfully transfers the "planning + tool use + reflection" paradigm from NLP/AI Agents to protein design.
+2. **Bridging the plan-execute gap**: Explicitly identifies the "talk the talk but can't walk the walk" issue in LLMs for protein design and provides an elegant tool-based solution.
+3. **Iterative optimization vs. One-shot generation**: Protein design is ill-suited for one-step generation; multi-round feedback loops better match domain reality.
+4. **Supervised + RL strategy**: Balances imitation and exploration, serving as an effective paradigm for training complex agents.
 
 ## Limitations & Future Work
 
-1. **Functional Site Design Tools remain lightweight**: Current tools are suitable for improving candidate quality within realistic computational budgets but do not guarantee ideal sequences, especially for strictly implementing high-specificity binding or catalytic geometries.
-2. **Throughput-Quality Trade-off in Agentic Workflows**: ProtoCycle invokes structural/functional tools multiple times during planning and evaluation, resulting in higher computational costs than one-shot generators.
-3. **Evaluation is still primarily based on computational metrics**: Language alignment, foldability, and keyword recovery are useful proxies but cannot replace wet-lab verification.
-4. **Tool Feedback may introduce bias**: If ProTrek, Chai-1, or retrieval tools have insufficient coverage for certain protein families, the planner will inherit these biases.
-5. **Complex Functional Design remains unresolved**: the paper aims to improve the text-guided design process rather than providing a *de novo* protein design solution that guarantees functionality directly.
+1. **Functional-site tools are still lightweight**: Current tools improve candidate quality within reasonable budgets but cannot guarantee ideal sequences, especially for high-specificity binding or catalytic geometries.
+2. **Throughput-quality trade-off**: Agentic workflows involve multiple structural/functional tool calls, resulting in higher computational costs than one-shot generators.
+3. **Computational proxy evaluation**: Language alignment and foldability are useful proxies but do not replace wet-lab validation.
+4. **Tool feedback bias**: Planner performance inherits biases from ProTrek, Chai-1, or retrieval tools where coverage of certain protein families may be insufficient.
+5. **Complex functional design remains unsolved**: Ours aims to improve the text-guided design process rather than providing a guaranteed de novo protein design solution.
 
 ## Related Work & Insights
 
-1. **Protein LLMs (ProtGPT2, ESM, etc.)**: Methods that directly use LLMs for sequence generation; ProtoCycle switches to using LLMs as planners.
-2. **AlphaFold**: A protein structure prediction tool that can serve as an evaluation component within the ProtoCycle tool environment.
-3. **ReAct/OctoTools and other Agent Frameworks**: Agent framework concepts from NLP; ProtoCycle migrates these to protein design.
-4. **RLHF/Online RL**: Training methods borrow the RLHF paradigm from NLP, using tool feedback in place of human feedback.
+1. **Protein LLMs (ProtGPT2, ESM, etc.)**: Approaches using LLMs for direct sequence generation; ProtoCycle pivots to using LLMs as planners.
+2. **AlphaFold**: A structural prediction tool that can serve as an evaluation component in the environment.
+3. **Agent Frameworks (ReAct, OctoTools)**: Paradigms from NLP transferred to the protein design domain.
+4. **RLHF / Online RL**: Training methods borrowing from NLP RLHF, replacing human feedback with tool feedback.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — Introducing the agent paradigm to protein design is an interesting cross-domain effort; reflective iterative design aligns with domain intuition.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Covers Mol-Instructions, CAMEO generalization, tool efficiency, and reflection ablation, though wet-lab verification is absent.
-- **Writing Quality**: ⭐⭐⭐⭐ — Problem definition (plan-execute gap) is clear, and the framework design is intuitive.
-- **Value**: ⭐⭐⭐⭐ — Demonstrates the application potential of LLM agent frameworks in scientific discovery and provides a new paradigm for protein design.
+- **Novelty**: ⭐⭐⭐⭐ — Introducing the Agent paradigm to protein design is a compelling cross-domain effort; reflective iteration is intuitive for the field.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Covers Mol-Instructions, CAMEO generalization, and extensive ablations, though wet-lab validation is absent.
+- **Writing Quality**: ⭐⭐⭐⭐ — Problems like the plan-execute gap are well-defined and the framework is intuitive.
+- **Value**: ⭐⭐⭐⭐ — Demonstrates the potential of LLM Agent frameworks in scientific discovery and provides a new paradigm for protein design.
 
 <!-- RELATED:START -->
 
@@ -139,10 +148,10 @@ ProtoCycle-RL achieves the strongest language alignment: ProTrek shows a Gain of
 ## Related Papers
 
 - [\[NeurIPS 2025\] Protein Design with Dynamic Protein Vocabulary](../../NeurIPS2025/computational_biology/protein_design_with_dynamic_protein_vocabulary.md)
+- [\[ICML 2025\] Reliable Algorithm Selection for Machine Learning-Guided Design](../../ICML2025/computational_biology/reliable_algorithm_selection_for_machine_learning-guided_design.md)
 - [\[NeurIPS 2025\] Pharmacophore-Guided Generative Design of Novel Drug-Like Molecules](../../NeurIPS2025/computational_biology/pharmacophore-guided_generative_design_of_novel_drug-like_molecules.md)
-- [\[ICLR 2026\] Protein Counterfactuals via Diffusion-Guided Latent Optimization](../../ICLR2026/computational_biology/protein_counterfactuals_via_diffusion-guided_latent_optimization.md)
-- [\[ACL 2026\] BioTool: A Comprehensive Tool-Calling Dataset for Enhancing Biomedical Capabilities of Large Language Models](biotool_a_comprehensive_tool-calling_dataset_for_enhancing_biomedical_capabiliti.md)
 - [\[ICML 2026\] From Feasible to Practical: Pareto-Optimal Synthesis Planning](../../ICML2026/computational_biology/from_feasible_to_practical_pareto-optimal_synthesis_planning.md)
+- [\[ACL 2026\] BioTool: A Comprehensive Tool-Calling Dataset for Enhancing Biomedical Capabilities of Large Language Models](biotool_a_comprehensive_tool-calling_dataset_for_enhancing_biomedical_capabiliti.md)
 
 </div>
 

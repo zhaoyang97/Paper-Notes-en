@@ -2,128 +2,139 @@
 title: >-
   [Paper Note] FACTS: Table Summarization via Offline Template Generation with Agentic Workflows
 description: >-
-  [ACL 2026][Text Generation][Table Summarization] This paper proposes FACTS (Fast, Accurate, and Privacy-Compliant Table Summarization)…
+  [ACL 2026][Text Generation][Paper Note] Ours proposes FACTS (Fast, Accurate, and Privacy-Compliant Table Summarization), which automatically generates reusable offline templates (SQL queries + Jinja2 templates) through a three-stage Agentic workflow. It achieves rapid, accurate, and privacy-compliant query-focused table summarization, outperforming baselines
 tags:
-  - "ACL 2026"
-  - "Text Generation"
-  - "Table Summarization"
-  - "Offline Templates"
-  - "Agentic Workflows"
-  - "SQL Generation"
-  - "Privacy Compliance"
+  - ACL 2026
+  - Text Generation
 date: 2026-05-08
-content_hash: 969e39976b7f710f
+content_hash: ee9bc8a5f76b4efc
 ---
-
 # FACTS: Table Summarization via Offline Template Generation with Agentic Workflows
 
 **Conference**: ACL 2026 Findings  
 **arXiv**: [2510.13920](https://arxiv.org/abs/2510.13920)  
 **Code**: [GitHub](https://github.com/BorealisAI/FACTS)  
 **Area**: Data Analysis / Table Understanding  
-**Keywords**: Table Summarization, Offline Templates, Agentic Workflows, SQL Generation, Privacy Compliance
+**Keywords**: Table Summarization, Offline Template, Agentic Workflow, SQL Generation, Privacy Compliance
 
 ## TL;DR
 
-This paper proposes FACTS (Fast, Accurate, and Privacy-Compliant Table Summarization), which leverages a three-stage Agentic workflow to automatically generate reusable offline templates (SQL queries + Jinja2 templates). This approach enables fast, accurate, and privacy-compliant query-focused table summarization, consistently outperforming baselines across FeTaQA, QTSumm, and QFMTS benchmarks.
+Ours proposes FACTS (Fast, Accurate, and Privacy-Compliant Table Summarization), which automatically generates reusable offline templates (SQL queries + Jinja2 templates) through a three-stage Agentic workflow. It achieves rapid, accurate, and privacy-compliant query-focused table summarization, outperforming baselines across FeTaQA, QTSumm, and QFMTS benchmarks.
 
 ## Background & Motivation
 
-**Background**: Query-focused table summarization requires generating natural language summaries from tabular data based on specific user queries. This task differs from simple table QA (which returns short answers) and general table summarization (which captures all salient information). Professionals in fields such as finance, healthcare, and law rely on customized summaries for decision-making.
+**Background**: Query-focused table summarization requires generating natural language summaries from tabular data based on user queries. This differs from simple table QA (returning short answers) and general table summarization (capturing all key content). Professionals in fields like finance, healthcare, and law rely on customized summaries for decision-making.
 
-**Limitations of Prior Work**: (1) Table-to-text models (e.g., TAPEX, ReasTAP) require expensive fine-tuning and struggle with numerical reasoning and logical faithfulness; (2) Prompt-based methods (e.g., DirectSumm) query LLMs directly, which are constrained by token limits, risk exposing sensitive data, and require regeneration for every new table; (3) Existing Agentic frameworks (e.g., Binder, Dater) rely on decomposition planning or manual templates, lacking robustness and scalability.
+**Limitations of Prior Work**: (1) Table-to-text models (e.g., TAPEX, ReasTAP) require expensive fine-tuning and perform poorly in numerical reasoning and logical faithfulness; (2) Prompting-based methods (e.g., DirectSumm) query LLMs directly, which is limited by token constraints, exposes sensitive data, and requires re-generation for every new table; (3) Existing Agentic frameworks (e.g., Binder, Dater) rely on decomposition planning or manual templates, lacking robustness and scalability.
 
-**Key Challenge**: A practical solution must simultaneously satisfy four properties—Fast (reusable), Accurate (execution-based rather than free generation), Scalable (no need to pass all rows), and Privacy-compliant (raw data not exposed to the LLM)—yet no existing method fulfills all four.
+**Key Challenge**: Practical solutions must simultaneously satisfy four attributes—Fast (reusable), Accurate (execution-based rather than free generation), Scalable (not requiring transmission of all rows), and Privacy-Compliant (not exposing raw data to LLMs)—but no existing method meets all four.
 
-**Goal**: To design the first Agentic framework for automated offline template generation that achieves "generate once, reuse many times" while satisfying all four properties.
+**Goal**: Design the first Agentic framework for automated offline template generation that allows for one-time generation and multi-time reuse, satisfying all four attributes.
 
-**Key Insight**: Decompose table summarization into SQL queries (for precise data extraction) + Jinja2 templates (for natural language rendering), forming offline templates that are independent of specific data values.
+**Key Insight**: Decompose table summarization into SQL queries (extracting precise values) + Jinja2 templates (rendering natural language), forming offline templates independent of specific data values.
 
-**Core Idea**: Offline templates are bound to the table schema and query semantics rather than specific data values. Once generated, they can be directly applied to any new table sharing the same schema, avoiding redundant LLM inference.
+**Core Idea**: Offline templates are bound to table schemas and query semantics rather than specific data values—once generated, they can be directly applied to any new table sharing the same schema, avoiding repetitive LLM inference.
 
 ## Method
 
 ### Overall Architecture
 
-FACTS consists of three interconnected stages, where the output of each stage is iteratively verified and improved by an LLM Council (multi-model ensemble). The final output is an offline template consisting of a set of SQL queries and a Jinja2 rendering template. Throughout the process, the LLM only accesses schema information and never sees raw data.
+FACTS consists of three interconnected stages, with outputs from each stage iteratively validated and improved by an LLM Council (multi-model ensemble verification). The final output is an offline template—a set of SQL queries + a Jinja2 rendering template. The LLM only interacts with schema information throughout the process, never exposing raw data.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["User Query + Table Schema<br/>(LLM never touches raw data)"] --> B["Schema-Guided Spec & Filtering<br/>Guided Questions + Filter Rules"]
+    B --> C["SQL Query Generation<br/>Filter Rules → WHERE Constraints"]
+    C -->|Local DB Execution| D{Execution Success?}
+    D -->|Failure/Empty Result, ≤3 rounds| E["LLM Council Feedback"]
+    E --> C
+    D -->|Pass| F["Jinja2 Template Gen & Alignment<br/>Column Ref + Iterative Row Rendering"]
+    G["Council Validation: SQL ↔ Template Alignment"]
+    F --> G
+    G -->|Field Mismatch, Co-Correction| F
+    G -->|Aligned| H["Offline Template<br/>SQL Query Set + Jinja2 Template"]
+    H -->|Reuse for same-schema new tables| I["Natural Language Summary"]
+```
 
 ### Key Designs
 
-1.  **Schema-Guided Specification and Filtering**:
-    - **Function**: Clarifies user query intent and generates filtering rules.
-    - **Mechanism**: Given a user query and table schema, the Agent generates two types of outputs: (a) guided questions—identifying relevant columns, relationships, and operations; (b) filtering rules—specifying rows or category values to be excluded. The LLM does not touch raw data but proposes abstract filtering rules based on the schema (e.g., "exclude rows where category='expense'"), which are subsequently converted into SQL `WHERE` clauses.
-    - **Design Motivation**: User queries are typically high-level natural language and need to be "translated" into specific operational specifications at the schema level.
+**1. Schema-Guided Specification and Filtering: Translating high-level NL queries into schema-level operations**
 
-2.  **SQL Queries Generation**:
-    - **Function**: Generates executable SQL queries to extract data precisely.
-    - **Mechanism**: Based on the specifications from Stage 1, the Agent generates candidate SQL queries, translating filtering rules into constraints. Each query is verified against a local database; if it fails or returns empty results, the error message is passed to the LLM Council for feedback, and the Agent iterates until the query is executable. The maximum patience is set to 3 rounds.
-    - **Design Motivation**: Grounding the summary on executable programs rather than free-text generation fundamentally eliminates hallucinations.
+User queries are typically high-level natural language. Feeding them directly to models is difficult for precise execution and risks data exposure. Therefore, the first stage performs "translation." The agent receives only the user query and table schema, producing two outputs: guided questions to identify relevant columns, relations, and operations; and filtering rules to specify rows or category values to exclude. Crucially, the LLM never touches raw data, proposing abstract rules like `exclude rows where category='expense'`, which are later converted into SQL WHERE clauses. This clarifies intent while keeping data inspection strictly local.
 
-3.  **Jinja2 Template Generation and Alignment**:
-    - **Function**: Renders SQL results into natural language summaries.
-    - **Mechanism**: The Agent generates a Jinja2 template, requiring it to reference exact column names, correctly iterate over returned rows, and handle empty results gracefully. The LLM Council checks the alignment between the SQL output and the template references—if field mismatches or shape inconsistencies exist, the SQL and template are corrected collaboratively.
-    - **Design Motivation**: Decoupling data extraction (SQL) from text rendering (Jinja2) allows both components to be independently verified and reused.
+**2. SQL Queries Generation: Grounding summarization in executable programs to eliminate hallucinations**
+
+The primary risk of free-text generation is the fabrication of numerical and logical data. FACTS counters this by routing data extraction through SQL. The agent generates candidate SQL based on first-stage specifications, translating filtering rules into constraints. Each query is validated through actual execution on a local database: failures or empty results trigger feedback to the LLM Council, allowing the agent to iteratively correct the query with a maximum patience of 3 rounds. Since final numbers come from database execution rather than model estimation, factual correctness is guaranteed by the mechanism.
+
+**3. Jinja2 Template Generation and Alignment: Decoupling data extraction and text rendering for verification and reuse**
+
+Once precise SQL results are obtained, they must be converted into natural language. This is handled by Jinja2 templates, which are required to reference exact column names, correctly iterate through returned rows, and handle empty results gracefully. The LLM Council specifically checks whether the SQL output and template references are aligned—if fields are missing or shapes are incompatible, the SQL and template are co-corrected. By splitting "data retrieval" (SQL) and "composition" (Jinja2), correctness is ensured by program execution while readability is handled by template rendering. Most importantly, once generated, this combination is bound to the schema and query semantics, allowing it to be applied to any shared-schema table without further LLM inference.
+
+### A Complete Example
+
+Example query: "Summarize non-expense income and expenditures for each department this quarter." In Stage 1, the agent sees the schema (e.g., `dept, category, amount, quarter`), generates the guided question "Need to aggregate amount by dept," and produces the filtering rule `exclude rows where category='expense'`. In Stage 2, the rule is translated to `SELECT dept, SUM(amount) ... WHERE category != 'expense' GROUP BY dept` and executed locally; if a column name is misspelled, the Council provides feedback for correction (avg. 1.36 rounds). In Stage 3, the agent generates a Jinja2 template to render the results into text like "Marketing net income this quarter is ...; R&D is ...," with the Council ensuring field alignment (avg. 1.84 rounds). Once saved, a new table for the next quarter with the same schema only requires SQL execution and rendering, with no further LLM calls.
 
 ### Loss & Training
 
-FACTS is a training-free method. The primary Agent uses `GPT-4o-mini` as the backbone. The LLM Council consists of `GPT-4o-mini`, `Claude-4 Sonnet`, and `DeepSeek v3`, deciding on acceptance/rejection via majority voting and providing aggregated feedback for guidance. On average, each sample involves $2.47$ guided questions/filtering rules, $1.36$ rounds of SQL refinement, and $1.84$ rounds of template refinement.
+FACTS is a training-free method. The primary agent uses GPT-4o-mini as the backbone. The LLM Council consists of GPT-4o-mini, Claude-4 Sonnet, and DeepSeek v3, utilizing majority voting to accept/reject and aggregated feedback to guide improvements. Each sample averages 2.47 guided questions/filtering rules, 1.36 SQL correction rounds, and 1.84 template correction rounds.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Method | FeTaQA BLEU/RL/MET | QTSumm BLEU/RL/MET | QFMTS BLEU/RL/MET |
-| :--- | :--- | :--- | :--- |
+|------|---------------------|---------------------|---------------------|
 | CoT | 28.2 / 51.0 / 56.9 | 19.3 / 39.0 / 47.2 | 31.5 / 54.3 / 58.1 |
 | DirectSumm | 29.8 / 51.7 / 58.2 | 20.7 / 40.2 / 50.3 | 33.6 / 57.0 / 62.8 |
 | SPaGe | 33.8 / 55.7 / 62.3 | 20.9 / 41.3 / 47.7 | 45.7 / 68.3 / 73.4 |
 | FACTS (GPT-Only) | 30.8 / 55.7 / 66.0 | 20.1 / 43.1 / 50.5 | 45.4 / 70.5 / 73.2 |
-| **FACTS** | **32.6 / 58.9 / 67.7** | **21.9 / 45.8 / 51.3** | **46.0 / 70.8 / 73.2** |
+| **Ours (FACTS)** | **32.6 / 58.9 / 67.7** | **21.9 / 45.8 / 51.3** | **46.0 / 70.8 / 73.2** |
 
 ### Ablation Study
 
-| Evaluation Dimension | FACTS Score |
-| :--- | :--- |
-| Intent Matching | $97\%$ |
-| SQL Execution Accuracy | $94\%$ |
-| Template Rendering Accuracy | $98\%$ |
-| Council Consensus Error Rate | $\sim 3\%$ |
-| Overall Factual Correctness | $\sim 92\%$ |
+| Evaluation Metric | FACTS Score |
+|----------|-----------|
+| Intent Matching | 97% |
+| SQL Execution Accuracy | 94% |
+| Template Rendering Accuracy | 98% |
+| Council Consensus Error Rate | ~3% |
+| Overall Factual Correctness | ~92% |
 
 ### Key Findings
 
-- FACTS achieves state-of-the-art or second-best results across all three datasets, with significant advantages in ROUGE-L and METEOR.
-- Human Preference Study: Comparing FACTS vs. SPaGe, $55\%$ preferred FACTS for completeness, $59\%$ for correctness, and $60\%$ for reduced hallucinations.
-- Reusability Testing: When processing 100 tables with the same schema, FACTS accelerates significantly due to template reuse (requiring only SQL execution + Jinja2 rendering).
-- The GPT-Only variant still outperforms most baselines, proving the effectiveness of the core workflow, while Council diversity provides further enhancement.
-- Each sample consumes an average of $9,922$ input tokens and $1,045$ output tokens, maintaining controllable computational costs.
+- FACTS achieves best or second-best results across all three datasets, showing significant advantages in ROUGE-L and METEOR.
+- Human Preference Study: Comparing FACTS vs SPaGe—55% prefer FACTS for completeness, 59% for correctness, and 60% for reduced hallucinations.
+- Reusability Test: With 100 same-schema tables, FACTS significantly accelerates via template reuse (only SQL execution + Jinja2 rendering required).
+- The GPT-Only variant still outperforms most baselines, proving the effectiveness of the core workflow, while Council diversity further enhances performance.
+- Average consumption per sample is 9,922 input tokens and 1,045 output tokens, maintaining controllable computation costs.
 
 ## Highlights & Insights
 
-- The "Offline Template" concept is an elegant engineering innovation—it amortizes one-time LLM inference costs over infinite reuses, making it ideal for enterprise scenarios (e.g., recurring annual financial report summaries).
-- The majority voting and aggregated feedback mechanism of the LLM Council provides a lightweight self-correction capability. The $\sim 3\%$ consensus error rate indicates the effectiveness of the multi-model ensemble.
-- Privacy compliance is a core advantage—the LLM only interacts with the schema, while raw data values remain entirely within the local SQL engine.
-- The combination of SQL and Jinja2 decouples "correctness" from "readability"—the former is guaranteed by programmatic execution, while the latter is achieved through template rendering.
+- The "offline template" concept is an elegant engineering innovation—amortizing one-time LLM inference costs over infinite reuses, particularly suitable for enterprise scenarios (e.g., recurring annual financial reports).
+- The LLM Council's majority voting + aggregated feedback mechanism provides a lightweight self-correction capability; a ~3% consensus error rate demonstrates the effectiveness of multi-model integration.
+- Privacy compliance is a core advantage—LLMs only see the schema, while raw data values remain entirely within the local SQL engine.
+- The combination of SQL + Jinja2 decouples "correctness" from "readability"—the former is guaranteed by program execution, and the latter is implemented via template rendering.
 
 ## Limitations & Future Work
 
-- It assumes templates are fully reusable under the same schema and does not account for schema drift or column renaming.
-- Complex multi-table JOINs and nested queries may require more refinement rounds.
-- A $94\%$ SQL execution accuracy implies a residual $6\%$ error rate, which may be insufficient for high-risk decision-making.
-- The natural language expression of Jinja2 templates might require adjustment across different languages or cultural contexts.
+- Assumes templates are fully reusable under the same schema, not accounting for schema drift or column renaming.
+- Complex multi-table JOINs and nested queries may require more correction rounds.
+- A SQL execution accuracy of 94% means 6% errors still exist—potentially insufficient for high-stakes decision-making.
+- Natural language expression in Jinja2 templates may require adjustment across different languages or cultural contexts.
 
 ## Related Work & Insights
 
-- **vs. DirectSumm**: The latter passes the entire table and query to the LLM at once, exposing data and preventing reuse; FACTS addresses both issues through offline templates.
-- **vs. SPaGe**: SPaGe uses graph-structured planning to improve reliability, but its plans are only partially reusable; FACTS offline templates are fully reusable.
-- **vs. Binder/Dater**: These methods convert queries into executable programs but lack templating and reuse capabilities; FACTS adds a Jinja2 rendering layer for natural language output.
+- **vs DirectSumm**: The latter passes the entire table + query to the LLM at once, exposing data and preventing reuse; FACTS solves both issues via offline templates.
+- **vs SPaGe**: SPaGe uses graph-structured planning for reliability, but its plans are only partially reusable; FACTS's offline templates are fully reusable.
+- **vs Binder/Dater**: These methods convert queries into executable programs but lack templating and reuse capabilities; FACTS adds a Jinja2 rendering layer to achieve natural language output.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ The concept of offline template generation is novel and practical, though individual components (SQL generation, Jinja2, LLM Council) have precedents.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive evaluation across three benchmarks, including automated and human metrics, reusability/scalability analysis, and detailed ablations.
-- Writing Quality: ⭐⭐⭐⭐⭐ Clear problem definitions, intuitive comparison tables for the four properties, and concrete examples.
-- Value: ⭐⭐⭐⭐⭐ Highly practical—the privacy-compliant and reusable design directly addresses pain points in enterprise deployment.
+- **Novelty**: ⭐⭐⭐⭐ The offline template generation concept is novel and practical, though individual components (SQL gen, Jinja2, LLM Council) have precedents.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Comprehensive evaluation across three benchmarks, including human assessment, reusability analysis, and ablation.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ Clear problem definition, intuitive attribute comparison table, and concrete examples.
+- **Value**: ⭐⭐⭐⭐⭐ Highly practical—the privacy-compliant + reusable design directly addresses enterprise deployment pain points.
 
 <!-- RELATED:START -->
 
@@ -131,11 +142,11 @@ FACTS is a training-free method. The primary Agent uses `GPT-4o-mini` as the bac
 
 ## Related Papers
 
-- [\[ACL 2026\] ThreadSumm: Summarization of Nested Discourse Threads Using Tree of Thoughts](threadsumm_summarization_of_nested_discourse_threads_using_tree_of_thoughts.md)
+- [\[ACL 2025\] Theme-Explanation Structure for Table Summarization Using Large Language Models](../../ACL2025/nlp_generation/theme-explanation_structure_for_table_summarization_using_large_language_models_.md)
 - [\[ACL 2026\] SCURank: Ranking Multiple Candidate Summaries with Summary Content Units for Enhanced Summarization](scurank_ranking_multiple_candidate_summaries_with_summary_content_units_for_enha.md)
-- [\[ACL 2026\] Adaptive Planning for Multi-Attribute Controllable Summarization with Monte Carlo Tree Search](adaptive_planning_for_multi-attribute_controllable_summarization_with_monte_carl.md)
-- [\[ACL 2026\] In-depth Research Impact Summarization through Fine-Grained Temporal Citation Analysis](in-depth_research_impact_summarization_through_fine-grained_temporal_citation_an.md)
-- [\[ACL 2026\] Difficulty-Controllable Cloze Question Distractor Generation](difficulty-controllable_cloze_question_distractor_generation.md)
+- [\[ACL 2026\] Planning Beyond Text: Graph-based Reasoning for Complex Narrative Generation](planning_beyond_text_graph-based_reasoning_for_complex_narrative_generation.md)
+- [\[ACL 2026\] Losses that Cook: Topological Optimal Transport for Structured Recipe Generation](losses_that_cook_topological_optimal_transport_for_structured_recipe_generation.md)
+- [\[ACL 2026\] ThreadSumm: Summarization of Nested Discourse Threads Using Tree of Thoughts](threadsumm_summarization_of_nested_discourse_threads_using_tree_of_thoughts.md)
 
 </div>
 

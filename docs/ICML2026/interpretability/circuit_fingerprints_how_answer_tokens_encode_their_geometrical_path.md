@@ -2,67 +2,71 @@
 title: >-
   [Paper Note] Circuit Fingerprints: How Answer Tokens Encode Their Geometrical Path
 description: >-
-  [ICML 2026][Interpretability][Circuit Discovery] This paper proposes the Circuit Fingerprint hypothesis—feeding an answer token independently into a Transformer leaves a directional trace in the latent space that precise…
+  [ICML 2026][Interpretability][Paper Note] This paper proposes the "Circuit Fingerprint" hypothesis—feeding a standalone answer token into a Transformer leaves a directional signature in the latent space that corresponds exactly to the circuit path required to generate that answer. Based on this, it achieves circuit discovery through pure geometric alignment (w
 tags:
-  - "ICML 2026"
-  - "Interpretability"
-  - "Circuit Discovery"
-  - "Activation Steering"
-  - "Geometric Alignment"
-  - "Answer Token Fingerprint"
-  - "Shapley Decomposition"
+  - ICML 2026
+  - Interpretability
 date: 2026-05-08
-content_hash: 8174b9d1b8c57ebc
+content_hash: e8ba9b6c7f840794
 ---
-
 # Circuit Fingerprints: How Answer Tokens Encode Their Geometrical Path
 
 **Conference**: ICML 2026  
 **arXiv**: [2602.09784](https://arxiv.org/abs/2602.09784)  
-**Code**: Not explicitly released  
+**Code**: Not explicitly public  
 **Area**: Interpretability / Mechanistic Interpretability / Activation Steering  
-**Keywords**: Circuit Discovery, Activation Steering, Geometric Alignment, Answer Token Fingerprint, Shapley Decomposition
+**Keywords**: Circuit Discovery, Activation Steering, Geometric Alignment, Answer Token Fingerprints, Shapley Decomposition
 
 ## TL;DR
-This paper proposes the Circuit Fingerprint hypothesis—feeding an answer token independently into a Transformer leaves a directional trace in the latent space that precisely follows the circuit path required to generate that answer. Based on this, it achieves circuit discovery through pure geometric alignment (without gradients/intervention) and demonstrates that the same set of directions can perform activation steering, proving that "reading" and "writing" are two sides of the same geometric object.
+This paper proposes the "Circuit Fingerprint" hypothesis—feeding a standalone answer token into a Transformer leaves a directional signature in the latent space that corresponds exactly to the circuit path required to generate that answer. Based on this, it achieves circuit discovery through pure geometric alignment (without gradients or intervention). It further demonstrates that the same set of directions can perform activation steering, proving that "reading" and "writing" are two sides of the same geometric object.
 
 ## Background & Motivation
-**Background**: Mechanistic interpretability currently follows two primary paths: (i) circuit discovery using activation patching or gradient approximations (EAP/EAP-IG) to identify task-critical attention head/MLP sub-networks; (ii) activation steering adding learned directions to the residual stream to control model behavior. Though both operate on the same representation space, they remain largely independent.
+**Background**: Mechanistic interpretability currently follows two paths: (i) circuit discovery, using activation patching or gradient approximations (EAP / EAP-IG) to find task-critical attention head/MLP sub-networks; (ii) activation steering, adding learned directions to the residual stream to control model behavior. Both operate within the same representation space yet remain independent.
 
-**Limitations of Prior Work**: Patching methods require $O(LH)$ forward passes; gradient methods (attribution patching, EAP-IG) vary in accuracy due to saturation and LayerNorm non-linearity; mask-learning methods (ACDC, edge pruning) require iterative optimization. Steering methods require collecting contrastive data, learning directions, and tuning intervention strength, while the questions of "where to intervene" and "what direction to use" are treated as decoupled problems.
+**Limitations of Prior Work**: Patching requires $O(LH)$ forward passes; gradient methods (attribution patching, EAP-IG) suffer from instability due to saturation and LayerNorm non-linearities; mask-learning methods (ACDC, edge pruning) require iterative optimization. Steering requires collecting contrastive data, learning directions, and tuning intervention strength, while "where to intervene" and "which direction to use" are treated as decoupled problems.
 
-**Key Challenge**: If circuits are stably encoded in model weights, then discovery and steering should fundamentally operate on the same object—yet existing methods treat them as two sets of non-communicating tools. The Linear Representation Hypothesis (Park 2024, Elhage 2022) suggests a unified geometric perspective, but it has never been used to explain both tasks simultaneously.
+**Key Challenge**: If a circuit is stably encoded in model weights, then discovery and steering should operate on the same object—but existing methods treat them as separate tools that do not communicate. The linear representation hypothesis (Park 2024, Elhage 2022) suggests a unified geometric perspective but has never been used to explain both simultaneously.
 
-**Goal**: To use a single geometric principle to simultaneously answer: (i) which components belong to the circuit (read); (ii) how to intervene in these components to change the output (write); all without relying on gradients or interventions, using only pure forward projections.
+**Goal**: To use a single geometric principle to answer (i) which components belong to a circuit (read) and (ii) how to intervene in these components to change the output (write), without relying on gradients or intervention and using only pure forward projections.
 
-**Key Insight**: Feeding an answer token (e.g., "Paris") independently into the model—despite lacking context—activates the fixed-weight circuit (e.g., capital-city recall) because circuits are encoded in weights. Thus, $\Delta r^{(L)}=r_{a_+}^{(L)}-r_{a_-}^{(L)}$ naturally becomes the geometric "signature" of the direction required to produce $a_+$ vs $a_-$.
+**Key Insight**: Feeding an answer token (e.g., "Paris") alone into the model carries no context, but because circuits are fixed weights, it activates the same capital-city recall circuit along its path. Thus, $\Delta r^{(L)}=r_{a_+}^{(L)}-r_{a_-}^{(L)}$ naturally becomes a geometric signature of the direction "required to generate" $a_+$ vs $a_-$.
 
-**Core Idea**: Circuit membership = degree of alignment between component output and the "answer token differential direction." Using the same direction for steering is the "write" operation; reading and writing are dualities of the same set of directions.
+**Core Idea**: Circuit membership equals the alignment between component outputs and the "answer token differential direction." Using the same direction for steering constitutes a "write" operation; read and write are duals (duality) of the same group of directions.
 
 ## Method
 
 ### Overall Architecture
-The framework utilizes two input sources: (1) Answer token pairs $(a_+, a_-)$—processed through independent forward passes to obtain differential directions $\Delta r^{(L)}, \Delta v^{(\ell,h)}, \Delta q^{(\ell,h)}, \Delta k^{(\ell,h)}$; (2) Contrastive prompts (clean vs. corrupted)—to obtain component output differentials $\Delta o_c$. Read path: project target directions into the component's native space and calculate the inner product with $\Delta o_c$ for node importance $S_c$; compute edge importance using a three-channel Q/K/V Shapley decomposition + residual stream decomposition. Write path: at heads identified during the read phase, replace or superimpose activations using directions $\hat d_s, \hat d_t$ from the same space.
+The method addresses two sides of the same problem: identifying components that constitute a circuit (read) and modifying those components to switch outputs (write). It frames both as "geometric alignment"—one side being the differential direction (circuit fingerprint) left by the forward pass of a standalone answer token, and the other being the component output differences $\Delta o_c$ under a contrastive prompt (clean vs. corrupted). In the read phase, fingerprint directions are projected into the native space of each component to calculate node importance via inner products, followed by a Q/K/V three-channel decomposition to solve for edges. In the write phase, the same set of directions is used to replace or augment component activations. The entire process requires no gradients or intervention, relying solely on pure forward projections.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["答案 token a+ / a− 各自前向"] --> B["答案 token 差分作为几何目标<br/>差分方向 Δr 即电路指纹"]
+    P["contrastive prompt<br/>clean vs corrupted"] --> C["组件输出差分 Δo_c"]
+    B --> D["投到组件原生空间<br/>内积得节点重要性 S_c"]
+    C --> D
+    D --> E["Q/K/V Shapley 分解<br/>三通道博弈唯一解算 edge"]
+    E --> F["输出电路（read）"]
+    B --> G["几何 steering<br/>同一组方向替换/叠加激活（write）"]
+    G --> H["改写输出（read-write 对偶）"]
+```
 
 ### Key Designs
 
-1. **Answer Token Differentials as Geometric Targets + Native Space Projection**:
-    - **Function**: Obtains target directions $\Delta r^{(L)}, \Delta v, \Delta q, \Delta k$ for each layer and head using only two forward passes (feeding $a_+$ and $a_-$), without training or gradients.
-    - **Mechanism**: For component $c$ (using $W_O$ for attention heads, $W_{\text{out}}$ for MLPs), the target direction is first transformed into the component's native space $\hat t_c=W_c^\top \Delta r^{(L)}/\|\Delta r^{(L)}\|$, then $S_c=\langle \Delta o_c, \hat t_c \rangle$ is calculated. This "native space inner product" ensures $\sum_c S_c$ equals the total projection onto the target direction in the residual stream (preserving additivity).
-    - **Design Motivation**: Projecting $\Delta o_c$ directly to the residual stream before calculating the inner product introduces geometric confusion from shared projection matrices like $W_O$; switching to the component's native space decouples "how the component internally generates this direction" from "shared residual stream geometry," yielding a clean, additive importance measure.
+**1. Answer token difference as geometric target: Preserving additivity via native space projection**
 
-2. **Q/K/V Shapley Decomposition + Edge Residual Stream Backpropagation**:
-    - **Function**: Separately measures information flow from upstream components to downstream attention heads (edges $i \to j$) across Q/K/V channels, using Shapley values to provide channel weights without arbitrary weighting.
-    - **Mechanism**: For each channel (e.g., K), write $R^{(K)}_{i\to j}=\langle \Delta o_i, W^{(j)}_K \Delta k^{(j)}\rangle/\langle\Delta r^{(\ell_j)}, W^{(j)}_K \Delta k^{(j)}\rangle$ (ensuring $\sum_i R^{(K)}_{i\to j}=1$ linearly); treat Q/K/V as a three-player cooperative game, running $2^3=8$ coalitions per head to measure importance and obtain Shapley weights $\phi_Q, \phi_K, \phi_V$; final edge importance is $E_{i\to j}=S_j \cdot (\phi_Q R^{(Q)}_{i\to j}+\phi_K R^{(K)}_{i\to j}+\phi_V R^{(V)}_{i\to j})$; indirect importance is accumulated via "backpropagation" from deep to shallow layers (Alg. 1).
-    - **Design Motivation**: Simply spliting a head's total score into three channels is arbitrary; Shapley values are the **only** distribution satisfying fairness axioms in cooperative games. Furthermore, Shapley values inherently guarantee $\phi_Q+\phi_K+\phi_V=S_{QKV}-S_\emptyset$, ensuring importance additivity down to the edge level. Fig. 4 empirically finds Name Mover heads are Q-dominated and S-Inhibition heads are K-dominated, perfectly matching roles assigned manually in Wang 2022.
+Traditional circuit discovery methods rely on per-component patching or backpropagation, which are costly and susceptible to LayerNorm non-linearities. This paper takes a different starting point: by feeding $a_+$ and $a_-$ independently into the model just once, the target directions $\Delta r^{(L)}, \Delta v, \Delta q, \Delta k$ can be read from every layer and head. Since weights are fixed, isolated answer tokens follow the original circuit, leaving a signature of the direction "needed to produce the answer." To measure component importance, it is crucial not to take inner products directly in the residual stream, as shared projection matrices like $W_O$ introduce geometric confusion. Instead, the paper transforms target directions into the native space of component $c$ ($W_O$ for attention heads, $W_{\text{out}}$ for MLPs) to get $\hat t_c=W_c^\top \Delta r^{(L)}/\|\Delta r^{(L)}\|$, then calculates $S_c=\langle \Delta o_c,\hat t_c\rangle$. This decouples "how components generate directions" from "shared residual stream geometry," ensuring $\sum_c S_c$ exactly equals the total projection onto the target direction in the residual stream—making importance additive and training-free.
 
-3. **Geometric Steering: Read Directions as Write Operations**:
-    - **Function**: Uses the same heads and answer directions found in the read phase for intervention to control generation, validating read-write duality.
-    - **Mechanism**: After centering answer prototypes $\{r_1, \dots, r_k\}$, SVD is used to obtain an orthogonal basis $\{u_i\}$. Source/target prototypes are projected onto this basis to get $d_s, d_t$. Factual recall tasks use substitution $X'=X-\|d_s-d_t\|\hat d_s+\|d_s-d_t\|\hat d_t$; stylistic tasks (emotion, language) use magnitude transfer $X'=X-\|d_s\|(\hat d_s-\hat d_t)$.
-    - **Design Motivation**: Comparing against activation patching (copying corrupted activations)—the latter serves as an upper bound for steering. If geometric directions can approximate patching effects, it proves that fingerprints are true causal structures rather than surface correlations. Experiments on IOI show that at $\alpha=1$, $P(\text{correct})=0.014$ vs. 0.0 for patching, with a logit diff of $-4.07$ vs. $-7.34$, indicating comparable behavioral effects.
+**2. Q/K/V Shapley Decomposition: Turning edge attribution into a unique game-theoretic solution**
+
+Beyond node importance, the method characterizes edges $i\to j$ (information flow from an upstream component to a downstream head). Since an edge traverses three channels (Query, Key, Value), assigning weights to these channels is traditionally arbitrary. This paper defines normalized residual stream decompositions for each channel, such as $R^{(K)}_{i\to j}=\langle \Delta o_i, W^{(j)}_K \Delta k^{(j)}\rangle/\langle\Delta r^{(\ell_j)}, W^{(j)}_K \Delta k^{(j)}\rangle$. By treating Q, K, and V as players in a cooperative game, it evaluates $2^3=8$ coalitions per head to find the Shapley weights $\phi_Q, \phi_K, \phi_V$. The final edge importance is $E_{i\to j}=S_j\cdot(\phi_Q R^{(Q)}_{i\to j}+\phi_K R^{(K)}_{i\to j}+\phi_V R^{(V)}_{i\to j})$, with indirect importance accumulated via back-accumulation from deep to shallow layers (Alg. 1). Shapley values are used because they are the **unique** distribution satisfying fairness axioms in cooperative games, ensuring additivity holds at the edge level. Empirically, this decomposition reveals functional roles—Fig. 4 shows Name Mover heads are Q-dominated and S-Inhibition heads are K-dominated, aligning perfectly with human-labeled roles from Wang 2022.
+
+**3. Geometric steering: Directly using the "read" directions for "write"**
+
+To prove fingerprints represent causal structures rather than surface correlations, the paper uses them to intervene in generation. Reusing the same directions identified during the read phase for the same heads, it performs steering: answer prototypes $\{r_1,\dots,r_k\}$ are centered and processed via SVD to find an orthogonal basis $\{u_i\}$. For factual recall, a replacement method $X'=X-\|d_s-d_t\|\hat d_s+\|d_s-d_t\|\hat d_t$ is used; for stylistic tasks (emotion, language), a magnitude transfer $X'=X-\|d_s\|(\hat d_s-\hat d_t)$ is applied. The control group is activation patching (directly moving corrupted activations), which serves as the behavioral upper bound. If geometric directions can approximate patching effects, it confirms read-write duality. On IOI, with $\alpha=1$, geometric steering achieved $P(\text{correct})=0.014$ vs patching's 0.0, and a logit diff of $-4.07$ vs $-7.34$, demonstrating behavioral effects of the same magnitude.
 
 ### Loss & Training
-**Completely training-free, gradient-free, and intervention-free**. Requires only 2 forward passes ($a_+$ and $a_-$) to obtain target directions, plus forward passes on contrastive prompts to calculate $\Delta o_c$. Shapley decomposition requires 8 coalition evaluations which can be batched. Computational budget is comparable to EAP (single backward pass).
+The entire process uses no training, no gradients, and no interventions: obtaining target directions requires only 2 forward passes ($a_+$ and $a_-$). Calculating $\Delta o_c$ requires one additional forward pass with the contrastive prompt. The 8 coalition evaluations for Shapley values can be run in batches. Total computational budget is comparable to a single backward pass of EAP.
 
 ## Key Experimental Results
 
@@ -79,9 +83,9 @@ The framework utilizes two input sources: (1) Answer token pairs $(a_+, a_-)$—
 | OPT-1.3B | EAP-IG | 0.00 | 1.50 | 0.01 | 1.00 | 0.04 | 0.96 |
 |  | **CF (ours)** | 0.01 | 0.99 | 0.05 | 0.95 | 0.07 | 0.93 |
 
-CF is largely on par with gradient methods on IOI/SVA and fully comparable to EAP; it is slightly weaker on MCQA.
+CF performs comparably to gradient-based baselines in IOI and SVA and is fully competitive with EAP; it is slightly weaker in MCQA.
 
-### Steering Results
+### Steering Evaluation
 
 | Metric | Baseline (instruction prompting) | CF Steered |
 |--------|----------------------------------|-----------|
@@ -89,36 +93,36 @@ CF is largely on par with gradient methods on IOI/SVA and fully comparable to EA
 | Perplexity (median) | 17.03 | **13.37** |
 | Factual Accuracy | 90.1% | 89.6% |
 
-Steering for positive sentiment (joy) maintains/improves factual accuracy (100%), but negative sentiment (sadness 81%, disgust 78%) leads to "emotional resonance phoneme contamination" of name recall (e.g., Einstein modified to "Sissoar").
+Steering for positive emotions (joy) maintains or improves factual accuracy. However, negative emotions (sadness 81%, disgust 78%) result in "emotional resonance phoneme pollution" of name recall (e.g., Einstein being changed to "Sissoar").
 
 ### Key Findings
-- CMD/CPR results are competitive with gradient baselines; as model size increases, geometric methods converge toward EAP-IG, which the authors attribute to "better concept decoupling in larger models."
-- Shapley decomposition exposes functional roles: Name Mover heads are Q-dominated, while S-Inhibition heads are K-dominated, aligning with manual classifications in IOI literature.
-- The same set of directions works for both read and write operations (patching upper bounds overlap heavily with CF steering curves), providing strong evidence for read-write duality.
-- Persona/emotion instruction prefixes from prompt engineering can also be used to extract directions, proving the fingerprint method generalizes to any "attribute controllable via prompt modification."
+- CMD/CPR results are nearly equal to gradient baselines. As model size increases, the geometric method converges toward EAP-IG, attributed to "better conceptual decoupling in larger models."
+- Shapley decomposition reveals functional roles: Name Mover heads are Q-dominated, while S-Inhibition heads are K-dominated, matching manual classifications in IOI literature.
+- The same directions work effectively for both read and write phases (the curves for patching upper bound and CF steering overlap significantly), providing strong evidence for read-write duality.
+- Persona/emotion instruction prefixes from prompt engineering can also extract directions, proving the fingerprint method generalizes to any attribute controllable via prompt modification.
 
 ## Highlights & Insights
-- **The claim that "answer tokens carry their own circuit fingerprints" is counter-intuitive**: Conventionally, we assume circuits are only activated when producing an answer. This paper reveals that even when an answer token appears as an input token, it traverses the same path (even suppressing incorrect candidates), quantifying the intuition that "circuits are stable structures" into readable directions.
-- **Read-write duality = true causal verification**: The identified directions are not just "seemingly important"; they can be used directly for steering to replicate patching effects. This upgrades interpretability from "post-hoc description" to "ex-ante intervention," representing a paradigm shift beyond the "observation-only" nature of SAEs/probes.
-- **The idea of Shapley channel decomposition is portable**: Using just $2^3=8$ coalitions for fair allocation replaces "arbitrary weight combinations" with the unique solution from game theory. This approach is fully reusable for other multi-branch modules like MoE or multi-expert fusion.
-- **Method requires only 2 forward passes**: Compared to $O(LH)$ iterations or backpropagation in EAP series, CF is computationally near-free and particularly friendly to large models.
+- **The claim that "answer tokens carry their own circuit fingerprints" is highly counter-intuitive**: While we usually assume circuits only activate when producing an answer, this paper reveals that answer tokens follow the same path even when used as input (sometimes suppressing incorrect candidates). It quantifies the intuition of "circuits as stable structures" into readable directions.
+- **Read-write duality as true causal validation**: Directions found are not just "important-looking" but can directly steer generation to reproduce patching effects. This moves interpretability from "post-hoc description" to "pre-hoc intervention," a paradigm shift from SAEs/probes.
+- **Transferable Q/K/V Shapley logic**: Using $2^3=8$ coalitions for a unique game-theoretic solution replaces "arbitrary weight combinations." This logic is reusable for any multi-branch module like MoE or multi-expert fusion.
+- **Efficiency**: Requiring only 2 forward passes makes CF nearly free computationally compared to $O(LH)$ sweeps or backpropagation, making it highly friendly for large models.
 
 ## Limitations & Future Work
-- Experiments are limited to small models ($\le 1.3B$); validation on 7B+ models is missing. The MCQA CPR for Llama3.2-1B (0.87) was significantly worse than EAP-IG (0.95), suggesting geometric approximations might be insufficient for complex tasks.
-- Focus is restricted to the final token position, ignoring indirect effects at earlier positions and LayerNorm non-linearities (explicitly simplified by authors). Edge attribution accuracy in long contexts remains to be verified.
-- Zero-shot steering remains fragile: Negative sentiment can contaminate semantics, producing nonsensical words like "Bonniweeper," indicating that some features remain entangled with lexical content.
-- Evaluation metrics CMD/CPR are derived from the MIB benchmark; systematic comparisons on other interpretability tasks (feature ablation, faithfulness) have not yet been conducted.
+- Experiments were restricted to small models ($\le 1.3$B); 7B+ models were not tested. Llama3.2-1B's performance on MCQA (CPR 0.87 vs EAP-IG 0.95) suggests geometric approximations are less tight for complex tasks.
+- The focus is on the final token position, ignoring indirect effects at earlier positions and LayerNorm non-linearities, which may affect edge attribution accuracy in long contexts.
+- Zero-shot steering remains fragile: negative emotions can pollute semantics and generate nonsensical words (e.g., "Bonniweeper"), indicating features are still entangled with lexical content.
+- Evaluation metrics (CMD/CPR) are from the MIB benchmark; systematic comparisons on other interpretability tasks (feature ablation, faithfulness) are still needed.
 
 ## Related Work & Insights
-- **vs. ACDC / Edge Pruning / EAP-IG**: Traditional circuit discovery requires either iterative search/mask learning or gradient backpropagation. CF uses only 2 forward passes + 8 Shapley coalitions, reducing circuit discovery to the same complexity as a single forward pass without gradient dependency.
-- **vs. Activation Steering (Turner 2023, Zou 2023)**: Existing steering requires preparing contrastive data before learning directions independently. This paper reuses the same heads and directions from circuit discovery, unifying "where to intervene" and "what direction to use."
-- **vs. Linear Representation Hypothesis**: Park 2024 and Elhage 2022 propose that "features are directions in activation space" descriptively. This paper provides operational evidence—these directions describe not just the features, but the circuits that produce them, representing a strong unification of "feature geometry $\equiv$ circuit geometry."
+- **vs. ACDC / Edge Pruning / EAP-IG**: Traditional circuit discovery requires iterative searches or backpropagation; CF achieves this with the cost of a single forward pass and no gradient dependency.
+- **vs. Activation Steering (Turner 2023, Zou 2023)**: Existing steering requires preparing contrastive data to learn directions; CF reuses directions from discovery, unifying "where to intervene" and "which direction to use."
+- **vs. Linear Representation Hypothesis**: Where earlier work described features as directions, CF provides operational evidence—these directions describe the circuits themselves. It suggests a unification: "Feature Geometry $\equiv$ Circuit Geometry."
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ The Circuit Fingerprint hypothesis + read-write duality unifies two independent interpretability research lines into a single geometric object; highly original insight.
-- Experimental Thoroughness: ⭐⭐⭐ Covers 4 model families × 3 tasks (IOI/SVA/MCQA) + 5 emotion steering tasks, but model sizes are small and benchmarks are limited.
-- Writing Quality: ⭐⭐⭐⭐ Clear conceptual explanations, complete Shapley derivation/algorithm, and honest discussion of limitations.
-- Value: ⭐⭐⭐⭐ Provides a gradient-free, low-cost tool for simultaneous discovery and control, offering practical value for alignment and behavioral editing research.
+- **Novelty**: ⭐⭐⭐⭐⭐ The Circuit Fingerprint hypothesis and read-write duality unify two independent research lines into a single geometric object.
+- **Experimental Thoroughness**: ⭐⭐⭐ Covers 4 model families across 3 tasks and 5 emotional steering tests, but model sizes are small and benchmarks are limited.
+- **Writing Quality**: ⭐⭐⭐⭐ Clear conceptual explanations, complete Shapley derivations, and honest discussion of limitations.
+- **Value**: ⭐⭐⭐⭐ Provides a gradient-free, low-cost tool for simultaneous discovery and control, useful for alignment and behavioral editing.
 
 <!-- RELATED:START -->
 
@@ -127,10 +131,10 @@ Steering for positive sentiment (joy) maintains/improves factual accuracy (100%)
 ## Related Papers
 
 - [\[ICML 2026\] Query Circuits: Explaining How Language Models Answer User Prompts](query_circuits_explaining_how_language_models_answer_user_prompts.md)
-- [\[ICML 2026\] All Circuits Lead to Rome: Rethinking Functional Anisotropy in Circuit and Sheaf Discovery for LLMs](all_circuits_lead_to_rome_rethinking_functional_anisotropy_in_circuit_and_sheaf_.md)
 - [\[ICLR 2026\] How Do Transformers Learn to Associate Tokens: Gradient Leading Terms Bring Mechanistic Understanding](../../ICLR2026/interpretability/how_do_transformers_learn_to_associate_tokens_gradient_leading_terms_bring_mecha.md)
-- [\[ICML 2026\] Dissecting Multimodal In-Context Learning: Modality Asymmetries and Circuit Dynamics in modern Transformers](dissecting_multimodal_in-context_learning_modality_asymmetries_and_circuit_dynam.md)
+- [\[ICML 2026\] All Circuits Lead to Rome: Rethinking Functional Anisotropy in Circuit and Sheaf Discovery for LLMs](all_circuits_lead_to_rome_rethinking_functional_anisotropy_in_circuit_and_sheaf_.md)
 - [\[ICML 2026\] How Language Models Process Negation](how_language_models_process_negation.md)
+- [\[ICML 2026\] Position: Let's Develop Data Probes to Fundamentally Understand How Data Affects LLM Performance](position_lets_develop_data_probes_to_fundamentally_understand_how_data_affects_l.md)
 
 </div>
 

@@ -2,128 +2,137 @@
 title: >-
   [Paper Note] SparseWorld-TC: Trajectory-Conditioned Sparse Occupancy World Model
 description: >-
-  [CVPR 2026][Autonomous Driving][4D occupancy prediction] This paper proposes SparseWorld-TC, a pure attention-based sparse occupancy world model that bypasses VAE discretization and BEV intermediate representations…
+  [CVPR 2026][Autonomous Driving][World Models] Ours proposes SparseWorld-TC, a pure-attention sparse occupancy world model that bypasses VAE discretization and BEV intermediate representations. It end-to-end predicts trajectory-conditioned multi-frame future occupancy directly from raw image features, significantly outperforming existing methods on nuScenes.
 tags:
-  - "CVPR 2026"
-  - "Autonomous Driving"
-  - "4D occupancy prediction"
-  - "world model"
-  - "sparse representation"
-  - "trajectory conditioning"
-  - "pure attention architecture"
+  - CVPR 2026
+  - Autonomous Driving
+  - World Models
 date: 2026-05-08
-content_hash: 9e88554a3b8b6c08
+content_hash: c1987e88f8eb0e22
 ---
-
 # SparseWorld-TC: Trajectory-Conditioned Sparse Occupancy World Model
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2511.22039](https://arxiv.org/abs/2511.22039)  
 **Code**: [GitHub](https://github.com/MrPicklesGG/SparseWorld)  
-**Area**: Autonomous Driving / World Models
-**Keywords**: 4D occupancy prediction, world model, sparse representation, trajectory conditioning, pure attention architecture
+**Area**: Autonomous Driving / World Models  
+**Keywords**: 4D Occupancy Prediction, World Models, Sparse Representation, Trajectory Conditioning, Pure-Attention Architecture
 
 ## TL;DR
 
-This paper proposes SparseWorld-TC, a pure attention-based sparse occupancy world model that bypasses VAE discretization and BEV intermediate representations, directly predicting trajectory-conditioned multi-frame future occupancy end-to-end from raw image features, achieving substantial improvements over existing methods on nuScenes.
+Ours proposes SparseWorld-TC, a pure-attention sparse occupancy world model that bypasses VAE discretization and BEV intermediate representations. It end-to-end predicts trajectory-conditioned multi-frame future occupancy directly from raw image features, significantly outperforming existing methods on nuScenes.
 
 ## Background & Motivation
 
-Occupancy world models predict future 3D scene occupancy to understand environmental dynamics, playing a critical role in autonomous driving. Existing approaches suffer from two primary limitations:
+Occupancy world models understand environmental dynamics by predicting future 3D scene occupancy, which is crucial for autonomous driving. Existing methods mainly suffer from two limitations:
 
-1. **VAE discretization bottleneck**: Methods such as OccWorld and OccLLaMA employ VQ-VAE to encode continuous 3D scene data into discrete tokens with a fixed codebook, limiting representational capacity and discarding fine-grained information.
-2. **BEV intermediate representation constraints**: Most methods rely on dense BEV feature maps for spatiotemporal modeling, imposing explicit geometric constraints that restrict flexible interaction across different scales.
+1.  **VAE Discretization Bottleneck**: Methods like OccWorld and OccLLaMA use VQ-VAE to encode continuous 3D scene data into discrete tokens from a finite vocabulary. This discretization limits representation capacity and loses fine-grained information.
+2.  **BEV Intermediate Representation Constraints**: Most methods rely on dense BEV feature maps for spatio-temporal modeling, which introduces explicit geometric constraints and limits flexible interaction across different feature scales.
 
-Motivated by the success of pure attention architectures (e.g., GPT, VGGT) in language and 3D visual domains, the authors ask: can a fully attention-based feedforward architecture capture spatiotemporal dependencies directly from raw image features via sparse occupancy representations?
+Inspired by the success of pure-attention architectures like GPT and VGGT in language and 3D vision, the authors explore: Can a fully attention-based feed-forward architecture capture spatio-temporal dependencies directly from raw image features through sparse occupancy representations?
 
 ## Method
 
 ### Overall Architecture
 
-Historical multi-frame images → image backbone feature extraction → deformable attention sampling of sensor embeddings → alternating frame-level attention and temporal attention to fuse occupancy / sensor / trajectory embeddings → MLP decoding of per-anchor offsets and semantic labels → output multi-frame future occupancy predictions.
+The objective of this paper is straightforward: given historical surround-view images and a future trajectory, predict the 3D occupancy field for multiple subsequent frames without using VAE discretization or dense BEV intermediate representations. The entire pipeline is a single feed-forward pass: an image backbone encodes historical frames into features, from which deformable attention samples "sensor embeddings." Simultaneously, the model maintains a set of randomly initialized "occupancy anchors" and "trajectory embeddings" encoded from future waypoints. These three types of embeddings are projected into a unified space and fused through alternating frame-level attention (interaction within the same frame among occupancy, sensors, and trajectory) and temporal attention (cross-frame interaction of the same anchor) over several iterations. Finally, an MLP head decodes 3D offsets and semantic labels for each point within every anchor to produce multi-frame future occupancy. This architecture contains no convolutions or voxel grids, relying entirely on attention to extract spatio-temporal dependencies.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IMG["Historical Surround Images<br/>Image Backbone Encoding → Deformable Attention Sampling"] --> SENS["Sensor Embeddings"]
+    ANC["Sparse Occupancy Representation<br/>Randomly Initialized Occupancy Anchors (with 3D Points + Features)"]
+    WP["Future Waypoints"] --> TRAJ["Trajectory Spatio-temporal Embedding<br/>Positional + Temporal Embedding Affine Fusion"]
+    SENS --> PROJ["Project three embeddings to unified space"]
+    ANC --> PROJ
+    TRAJ --> PROJ
+    PROJ --> FUSE
+    subgraph FUSE["Pure-Attention Fusion Architecture (Iterative)"]
+        direction TB
+        FRAME["Frame-level Attention<br/>Intra-frame Occupancy↔Sensor Cross + Trajectory Self-attention"] --> TEMP["Temporal Attention<br/>Inter-frame Self-attention for Same Anchor"]
+        TEMP -->|Iterative Refinement| FRAME
+    end
+    FUSE --> HEAD["MLP Decoder Head<br/>Each Anchor → 3D Offsets + Semantic Labels"]
+    HEAD --> OUT["Multi-frame Future 3D Occupancy"]
+```
 
 ### Key Designs
 
-1. **Sparse Occupancy Representation**:
-    - Function: Represents scene occupancy as a set of anchors, each containing a group of randomly initialized 3D points and an associated feature vector.
-    - Mechanism: Each anchor feature vector is decoded by an MLP to predict per-point 3D offsets and semantic labels, effectively "denoising" random points into a coherent occupancy field.
-    - Design Motivation: Avoids the fixed-resolution limitation of BEV and the discretization information loss of VAE, maintaining full sparsity and flexibility.
+**1. Sparse Occupancy Representation: Bypassing BEV Resolution and VAE Discretization with "Denoising Anchors"**
 
-2. **Trajectory Spatiotemporal Embedding**:
-    - Function: Encodes trajectory waypoints as feature vectors serving as conditioning signals.
-    - Mechanism: Combines positional embeddings (MLP projection of 16-dimensional homogeneous matrices) and temporal embeddings (sinusoidal positional encoding), fused via affine transformation.
-    - Design Motivation: Inspired by MLN, enables the model to condition on arbitrary future trajectories and support waypoints at varying time intervals.
+BEV flattens the scene into fixed-resolution feature maps, which restricts flexible interaction across scales; VQ-VAE squeezes continuous 3D scenes into a finite vocabulary, inherently losing fine-grained details. Ours adopts a different container: the scene is represented by a set of anchors, each consisting of randomly initialized 3D points and an associated feature vector. This vector is decoded via MLP into 3D offsets and semantic labels for each point within the anchor, effectively "denoising" random points into a consistent occupancy field. Since the representation is a set of points rather than a grid, resolution is not locked by a grid, and no codebook quantization is required. Density can be increased by adding anchors, and long-range prediction is achieved by reusing the same anchors across frames, keeping the representation fully sparse and flexible.
 
-3. **Pure Attention Fusion Architecture**:
-    - Function: Uniformly fuses occupancy, sensor, and trajectory embeddings.
-    - Mechanism: Stacks frame-level attention modules (cross-attention between occupancy and sensor embeddings, plus trajectory self-attention) and temporal attention modules (cross-frame self-attention), iteratively refined over multiple passes.
-    - Design Motivation: Once all modalities are projected into a unified embedding space, standard attention mechanisms effectively capture long-range spatiotemporal dependencies.
+**2. Trajectory Spatio-temporal Embedding: Enabling the Model to Answer "What will be seen along this path?"**
+
+Future occupancy is inherently multi-modal; the model must be conditioned on "planned movement" to provide deterministic predictions. Trajectories are explicitly encoded as conditional signals. Each waypoint encoding is split into two parts: a Positional Embedding maps the $16$-dimensional homogeneous transformation matrix into features via MLP to characterize "where the car is and its orientation"; a Temporal Embedding uses sinusoidal positional encoding to characterize "which future time step this is." These are fused into a spatio-temporal embedding via affine transformation (inspired by MLN). This design allows non-equidistant waypoints—by feeding the corresponding timestamp into the temporal embedding, the model adapts to arbitrary future trajectories and intervals rather than treating the trajectory as a fixed-step sequence.
+
+**3. Pure-Attention Fusion Architecture: Emergent Spatio-temporal Dependencies in a Shared Space**
+
+Once occupancy, sensor, and trajectory embeddings are projected into a unified space, explicit geometric priors are no longer needed for alignment—a key advantage of abandoning BEV. Fusion is performed by interleaving two types of attention: Frame-level Attention performs cross-attention between occupancy and sensors (anchors searching for evidence in image features) and self-attention for trajectories (incorporating conditional signals); Temporal Attention performs self-attention across different frames of the same anchor (capturing motion and scene evolution). Through iterative refinement across multiple layers, standard attention extracts long-range spatio-temporal dependencies without specialized geometric modules.
 
 ### Loss & Training
 
-- Chamfer Distance loss supervises alignment between predicted points and GT occupancy voxel centers.
-- Focal classification loss supervises semantic predictions.
-- **Random set strategy**: During training, the number of predicted frames $L \in \{2, \ldots, T\}$ is sampled randomly, enabling the model to generalize across different prediction horizon requirements.
+Alignment between predicted points and Ground Truth (GT) occupancy voxel centers is supervised by Chamfer Distance loss, while semantic labels are supervised by Focal classification loss. A key training technique is the **Random Set Strategy**: during each step, a prediction horizon $L \in \{2,\dots,T\}$ is randomly selected to calculate the loss, rather than using a fixed length. This ensures the model encounters various prediction spans, allowing it to output variable-length futures during deployment. In ablation studies, this improved average mIoU by approximately 5 points ($20.36 \rightarrow 25.60$) compared to fixed-frame training.
 
 ## Key Experimental Results
 
 ### Main Results (Occ3D-nuScenes, Camera Input)
 
-| Method | 1s mIoU | 2s mIoU | 3s mIoU | Avg. mIoU | Avg. IoU |
-|--------|---------|---------|---------|-----------|----------|
+| Method | 1s mIoU | 2s mIoU | 3s mIoU | Avg mIoU | Avg IoU |
+|------|---------|---------|---------|----------|---------|
 | COME | 26.56 | 21.73 | 18.49 | 22.26 | 44.07 |
 | Ours-Small | 27.95 | 25.51 | 23.35 | 25.60 | 49.02 |
 | Ours-Large | 28.64 | 26.28 | 24.36 | 26.42 | 49.21 |
 | Ours-Large* (DINOv3) | 32.76 | 29.62 | 27.28 | 29.89 | 53.52 |
 
-### Long-Term Prediction (8 seconds)
+### Long-term Prediction (8s)
 
-| Method | Input | Avg. mIoU | Avg. IoU |
-|--------|-------|-----------|----------|
+| Method | Input | Avg mIoU | Avg IoU |
+|------|------|----------|---------|
 | COME | Occ GT | 19.07 | 29.96 |
 | Ours-Large | Camera | 22.33 | 45.35 |
 
 ### Ablation Study
 
-| Configuration | Avg. mIoU | Avg. IoU | Note |
-|---------------|-----------|----------|------|
-| No trajectory | 15.44 | 32.19 | Trajectory conditioning is critical |
-| Predicted trajectory | 21.57 | 44.76 | Predicted trajectory remains effective |
-| GT trajectory | 25.60 | 49.02 | More accurate trajectory yields consistent gains |
-| Fixed-frame training | 20.36 | 43.25 | Random set strategy is superior |
+| Configuration | Avg mIoU | Avg IoU | Description |
+|------|----------|---------|------|
+| w/o Trajectory | 15.44 | 32.19 | Trajectory conditioning is crucial |
+| Predicted Trajectory | 21.57 | 44.76 | Predicted trajectory remains effective |
+| GT Trajectory | 25.60 | 49.02 | Precise trajectory yields continuous Gain |
+| Fixed Frame Training | 20.36 | 43.25 | Random Set Strategy is superior |
 
 ### Key Findings
 
-- Using only camera input, the model surpasses DOME which relies on GT occupancy input (mIoU 29.89 vs. 27.10).
-- Performance degradation over long-term prediction is substantially smaller than existing methods, with IoU still reaching 39.97 at 8 seconds.
-- The Small variant runs 2.6× faster than the Large variant with marginal performance difference, enabling a favorable efficiency–accuracy trade-off.
+- Ours outperforms the DOME method (which uses GT occupancy inputs) using only camera inputs (mIoU 29.89 vs 27.10).
+- Long-term prediction performance decay is far lower than existing methods; the 8s prediction IoU still reaches 39.97.
+- The Small version is 2.6x faster than the Large version with minimal performance gap, achieving a balance between efficiency and accuracy.
 
 ## Highlights & Insights
 
-- The first pure attention-based occupancy world model to fully bypass both VAE and BEV, offering a clean and principled design paradigm.
-- The flexibility of sparse representation allows the model to scale to varying anchor counts and extended prediction horizons.
-- Significant advantage in long-term prediction: performance barely degrades beyond 3 seconds, whereas existing methods decline sharply.
-- The framework directly benefits from large-scale foundation models such as DINOv3 for further performance gains.
+- The first pure-attention occupancy world model to completely bypass VAE and BEV, with a simple yet powerful design philosophy.
+- The flexibility of sparse representation allows the model to scale to different anchor counts and long-term predictions.
+- Significant advantage in long-term prediction: performance barely decays after 3 seconds, whereas existing methods drop sharply.
+- Directly leverages large-scale vision foundation models (e.g., DINOv3) to boost performance.
 
 ## Limitations & Future Work
 
-- Sparse representation may be less effective than dense methods at recovering extremely fine-grained scene details.
-- Computational cost grows with the number of anchors; the Large variant achieves only 3.58 FPS.
-- Single-GT evaluation for long-term prediction is inherently limited due to the multi-modal nature of future scenes.
-- Joint training with downstream planning modules remains unexplored.
+- Sparse representations may lag behind dense methods in recovering extremely fine-grained scene details.
+- Computational cost increases with the number of anchors; the Large version achieves only 3.58 FPS.
+- The "multi-modal" nature of long-term prediction makes single-GT evaluation limited.
+- Joint training with downstream planning modules has not yet been explored.
 
 ## Related Work & Insights
 
-- **vs. OccWorld / OccLLaMA**: These methods rely on VAE discretization and autoregressive generation, constrained by codebook capacity; the proposed method is end-to-end without discretization.
-- **vs. DOME / COME**: These methods use diffusion models with BEV and continuous VAE; the proposed method performs feedforward single-pass inference, which is more efficient.
-- **vs. VGGT**: Borrows the pure attention architecture philosophy but is specifically designed for 4D occupancy prediction.
+- **vs OccWorld/OccLLaMA**: These use VAE discretization + autoregressive generation, limited by codebook capacity; ours is end-to-end without discretization.
+- **vs DOME/COME**: These use diffusion models + BEV + continuous VAE; ours is a feed-forward single-pass inference, which is more efficient.
+- **vs VGGT**: Ours adopts the pure-attention architecture concept but is specifically designed for 4D occupancy prediction.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ — First pure attention-based sparse occupancy world model; introduces an entirely new design paradigm.
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Covers short- and long-term prediction, ablations, and visualizations with comprehensive baselines.
-- Writing Quality: ⭐⭐⭐⭐ — Clear architecture presentation, concise formulations, and well-motivated design choices.
-- Value: ⭐⭐⭐⭐⭐ — Establishes a novel sparse attention paradigm for occupancy world models with strong practical applicability.
+- Novelty: ⭐⭐⭐⭐⭐ First pure-attention sparse occupancy world model; a completely new paradigm.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers short/long-term prediction, ablation, and visualization with sufficient baselines.
+- Writing Quality: ⭐⭐⭐⭐ Clear framework, concise formulas, and well-articulated motivation.
+- Value: ⭐⭐⭐⭐⭐ Provides a new sparse attention paradigm for occupancy world models with high practical potential.
 
 <!-- RELATED:START -->
 
@@ -131,11 +140,11 @@ Historical multi-frame images → image backbone feature extraction → deformab
 
 ## Related Papers
 
+- [\[CVPR 2026\] A Self-Conditioned Representation Guided Diffusion Model for Realistic Text-to-LiDAR Scene Generation](a_self-conditioned_representation_guided_diffusion_model_for_realistic_text-to-l.md)
 - [\[CVPR 2026\] Generalizing Visual Geometry Priors to Sparse Gaussian Occupancy Prediction](generalizing_visual_geometry_priors_to_sparse_gaussian_occupancy_prediction.md)
 - [\[ICCV 2025\] LangTraj: Diffusion Model and Dataset for Language-Conditioned Trajectory Simulation](../../ICCV2025/autonomous_driving/langtraj_diffusion_model_and_dataset_for_language-conditioned_trajectory_simulat.md)
-- [\[CVPR 2026\] Learning Vision-Language-Action World Models for Autonomous Driving](vla_world_learning_vision_language_action_world_models_for_autonomous_driving.md)
-- [\[ICLR 2026\] Astra: General Interactive World Model with Autoregressive Denoising](../../ICLR2026/autonomous_driving/astra_general_interactive_world_model_with_autoregressive_denoising.md)
-- [\[ICLR 2026\] ResWorld: Temporal Residual World Model for End-to-End Autonomous Driving](../../ICLR2026/autonomous_driving/resworld_temporal_residual_world_model_for_end-to-end_autonomous_driving.md)
+- [\[CVPR 2026\] GEM: Generating LiDAR World Model via Deformable Mamba](gem_generating_lidar_world_model_via_deformable_mamba.md)
+- [\[CVPR 2026\] W2W: Language-Model-Based Trajectory Prediction with Reinforcement Learning](w2w_language-model-based_trajectory_prediction_with_reinforcement_learning.md)
 
 </div>
 

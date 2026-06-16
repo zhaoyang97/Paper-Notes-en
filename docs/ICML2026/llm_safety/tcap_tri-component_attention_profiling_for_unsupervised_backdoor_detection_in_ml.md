@@ -2,71 +2,75 @@
 title: >-
   [Paper Note] TCAP: Tri-Component Attention Profiling for Unsupervised Backdoor Detection in MLLM Fine-Tuning
 description: >-
-  [ICML 2026][LLM Safety][Backdoor defense] Addressing the issue of poisoned fine-tuning of MLLMs in Fine-Tuning-as-a-Service (FTaaS) scenarios…
+  [ICML 2026][LLM Safety][Paper Note] Addressing the issue of poisoned fine-tuning in Multi-modal Large Language Models (MLLMs) within Fine-Tuning-as-a-Service (FTaaS) scenarios, this paper identifies a universal fingerprint: triggered samples cause an abnormal polarization of attention for the first generated token across focus components (system / vision
 tags:
-  - "ICML 2026"
-  - "LLM Safety"
-  - "Backdoor defense"
-  - "MLLM fine-tuning"
-  - "attention allocation"
-  - "Gaussian Mixture Model"
-  - "EM voting"
+  - ICML 2026
+  - LLM Safety
 date: 2026-05-08
-content_hash: ee3afa2ccc8625ef
+content_hash: d0cc167189eb863b
 ---
-
 # TCAP: Tri-Component Attention Profiling for Unsupervised Backdoor Detection in MLLM Fine-Tuning
 
 **Conference**: ICML 2026  
 **arXiv**: [2601.21692](https://arxiv.org/abs/2601.21692)  
 **Code**: https://github.com/m1ng2u/TCAP (Available)  
-**Area**: AI Safety / Multimodal Large Models / Backdoor Detection  
-**Keywords**: Backdoor defense, MLLM fine-tuning, attention allocation, Gaussian Mixture Model, EM voting
+**Area**: AI Safety / Multi-modal Large Language Models / Backdoor Detection  
+**Keywords**: Backdoor Defense, MLLM Fine-tuning, Attention Allocation, Gaussian Mixture Model, EM Voting
 
 ## TL;DR
-Addressing the issue of poisoned fine-tuning of MLLMs in Fine-Tuning-as-a-Service (FTaaS) scenarios, this paper identifies a universal fingerprint: "triggered samples abnormally polarize the attention of the first generated token among the three major components: system, vision, and text." Based on this, the unsupervised TCAP framework is proposed. It uses GMM on system attention to identify trigger-responsive attention heads, then aggregates them using EM-based Dawid–Skene voting. Across 5 trigger modes, 3 MLLMs, and 5 datasets, it reduces ASR from over 90% to approximately 0% with almost no loss in Clean Performance.
+Addressing the issue of poisoned fine-tuning in Multi-modal Large Language Models (MLLMs) within Fine-Tuning-as-a-Service (FTaaS) scenarios, this paper identifies a universal fingerprint: triggered samples cause an abnormal polarization of attention for the first generated token across focus components (system / vision / text). The proposed unsupervised TCAP framework uses a Gaussian Mixture Model (GMM) to identify trigger-responsive attention heads, followed by EM-based Dawid–Skene voting for aggregation. Experimental results across 5 trigger modes, 3 MLLMs, and 5 datasets show that TCAP reduces Attack Success Rate (ASR) from 90%+ to ~0% with negligible loss in Clean Performance.
 
 ## Background & Motivation
-**Background**: MLLMs (such as InternVL, LLaVA, and Qwen-VL) utilize FTaaS with LoRA/QLoRA for downstream adaptation, where users submit data and the service provider handles training. This "data as entry point" model gives poison-only backdoor attacks an extremely broad attack surface; polluting only 10% of samples can implant a backdoor that responds with attacker-specified text upon seeing a trigger.
+**Background**: MLLMs (e.g., InternVL, LLaVA, Qwen-VL) utilize FTaaS with LoRA/QLoRA for downstream adaptation, where users submit data and providers handle training. This "data as entry point" model creates a large attack surface for poison-only backdoor attacks, where contaminating only 10% of samples can implant backdoors that respond to specific triggers.
 
-**Limitations of Prior Work**: Existing defenses either require clean reference sets, supervised signals, or external modules (input preprocessing, trigger inversion, model pruning), or target only a single modality. The closest unsupervised solution, BYE, captures "visual attention collapse" through Shannon entropy, which is inherently effective only against **local patch triggers**. It fails against global triggers (such as Blend, SIG, WaNet, FTrojan) or text triggers; the paper's experiments show BYE's F1 is 0 on LLaVA-NeXT + Blend + ScienceQA.
+**Limitations of Prior Work**: Existing defenses often require clean reference sets, supervised signals, or external modules (input preprocessing, trigger inversion, model pruning), and many are limited to a single modality. The closest unsupervised solution, BYE, detects "visual attention collapse" via Shannon entropy, which is inherently effective only for **local patch triggers**. It fails against global triggers (Blend, SIG, WaNet, FTrojan) or text triggers; for instance, BYE's F1 score on LLaVA-NeXT + Blend + ScienceQA is 0.
 
-**Key Challenge**: BYE assumes triggers will "concentrate" visual attention (low entropy), but the authors prove with an ideal model that the entropy upper bound for patch triggers is $\alpha_{\text{vis}}\log(|S_{\text{trig}}|/\alpha_{\text{vis}})$, whereas the upper bound for global triggers is $\alpha_{\text{vis}}\log(T/\alpha_{\text{vis}})$. Since $|S_{\text{trig}}|\ll T$, global triggers actually approach maximum entropy. Thus, entropy cannot measure global or text triggers.
+**Key Challenge**: BYE assumes triggers cause visual attention to "concentrate" (low entropy). However, the authors prove that while the entropy upper bound for patch triggers is $\alpha_{\text{vis}}\log(|S_{\text{trig}}|/\alpha_{\text{vis}})$, the bound for global triggers is $\alpha_{\text{vis}}\log(T/\alpha_{\text{vis}})$. Since $|S_{\text{trig}}|\ll T$, global triggers approach maximum entropy, making entropy an ineffective metric for global or text triggers.
 
-**Goal**: To find an internal fingerprint **independent of trigger modality or form** as an unsupervised detection signal, covering various attacks like visual patch, blend, sinusoidal, warping, frequency, text prefix, and syntactic triggers.
+**Goal**: Identify an internal fingerprint **independent of trigger modality or form** to serve as an unsupervised detection signal covering visual patch, blend, sinusoidal, warping, frequency, text prefix, and syntactic triggers.
 
-**Key Insight**: Instead of examining "how attention is allocated within vision," the authors partition the MLLM input sequence into three functional blocks: system instructions (including role tags and special tokens), vision tokens, and user text. They observe the total attention mass of the **first generated token** toward these three blocks. The critical insight is that system instructions are an "anchor" that cannot be tampered with by an attacker and can serve as a noise-resistant baseline.
+**Key Insight**: Instead of looking at distribution within the visual modality, the authors partition the MLLM input sequence into three functional components—system instructions (including role tags), vision tokens, and user text. They observe the total attention mass of the **first generated token** toward these components. The key insight is that system instructions are "anchors" that cannot be tampered with by attackers, serving as a noise-resistant baseline.
 
-**Core Idea**: Triggers force a small number of attention heads in deeper layers to exhibit two types of complementary anomalies: Anomaly 1 ("system suppression + vision amplification") to extract trigger features and bypass safety constraints, and Anomaly 2 ("system amplification + vision suppression") to maintain output structural coherence. This Attention Allocation Divergence is a universal and measurable internal fingerprint of backdoors.
+**Core Idea**: Triggers force a small number of deep attention heads to exhibit two types of complementary anomalies: Anomaly 1 (System suppression + Vision amplification) to extract trigger features and bypass security constraints, and Anomaly 2 (System amplification + Vision suppression) to maintain output structural coherence. This Attention Allocation Divergence is a universal, measurable internal fingerprint of backdoors.
 
 ## Method
 ### Overall Architecture
-TCAP is a **pure data cleaning** framework. After obtaining an MLLM fine-tuned on a poisoned dataset $\mathcal{D}$, TCAP does not modify the model or require a clean reference set. The pipeline consists of three steps: (1) Run inference on all training samples to extract tri-component attention vectors for system/vision/text; (2) Use GMM to model the system component of each (layer, head) and select the Top-K trigger-responsive heads based on a Separation Score; (3) Use EM-based Dawid–Skene voting to aggregate the binary decisions of these heads into a posterior probability $p_i$, and samples with $p_i>0.5$ are removed to obtain $\mathcal{D}_{\text{clean}}$, which is then used to retraining the MLLM to clear the backdoor.
+TCAP is a **pure data cleaning** framework. Given an MLLM fine-tuned on a poisoned dataset $\mathcal{D}$, the framework does not modify the model or require a clean reference set. It first performs inference on all training samples to extract tripartite attention (system/vision/text), uses a GMM to identify "sensitive heads" from the vast head pool, and then treats these heads as noisy annotators. Finally, it uses EM-based Dawid–Skene voting to aggregate the posterior probability of each sample being poisoned, removes suspicious samples to obtain $\mathcal{D}_{\text{clean}}$, and retrains the model once to eliminate the backdoor.
+
+```mermaid
+graph TD
+    A["MLLM fine-tuned on poisoned data<br/>+ All training samples (No model mod, no ref set)"] --> B["Tri-component Attention Decomposition<br/>Aggregate attention of the 1st generated token<br/>by system / vision / text"]
+    B --> C["GMM + Separation Score<br/>Fit GMM for each head (AIC selects K*)<br/>Select Top-H sensitive heads by separability"]
+    C --> D["EM-based Dawid–Skene Voting<br/>Sensitive heads act as noisy voters<br/>EM estimates latent labels + head reliability → Posterior p_i"]
+    D -->|p_i > 0.5 classified as poison| E["Cleaned Dataset D_clean"]
+    E --> F["Standard LoRA Retraining<br/>Backdoor Elimination"]
+```
 
 ### Key Designs
 
-1.  **Tri-Component Attention Decomposition + Attention Allocation Divergence Fingerprint**:
-    - **Function**: Decomposes the "attention of the first generated token toward all preceding tokens" into system, vision, and text components based on input sequence attribution as atomic features for backdoor detection.
-    - **Mechanism**: For each (layer $l$, head $h$), let raw attention be $A^{l,h}=\{a_i^{l,h}\}_{i=1}^N$. Define the tri-component vector $\bm{\alpha}^{l,h}=(\alpha_{\text{sys}}^{l,h},\alpha_{\text{vis}}^{l,h},\alpha_{\text{txt}}^{l,h})$, where $\alpha_c^{l,h}=\sum_{i\in S_c}a_i^{l,h}$. Theoretically, entropy cannot distinguish global triggers (see Eq. 4/5 derivation), but tri-component "mass redistribution" can: triggered samples exhibit Anomaly 1 (system↓, vision↑) and Anomaly 2 (system↑, vision↓) polarization in deep layers.
-    - **Design Motivation**: (a) elevates detection from "inner visual spatial distribution" to "cross-modality functional partitioning," naturally compatible with text triggers; (b) system instructions are "fixed points" that attackers cannot change, providing natural noise resistance; (c) focuses on deep layers because shallow layers handle local feature extraction while deep layers manage cross-modality decision fusion.
+**1. Tri-component Attention Decomposition: Shifting Fingerprints from Visual Entropy to Cross-Component Redistribution**
 
-2.  **GMM + Separation Score Adaptive Selection of Trigger-Responsive Heads**:
-    - **Function**: Unsupervisely identifies the few (layer, head) pairs that truly expose the backdoor to prevent the signal from being diluted by averaging over all heads.
-    - **Mechanism**: Collect $\{\alpha_{\text{sys},i}^{l,h}\}_{i=1}^M$ for each head and apply min-max normalization to get $\tilde{\alpha}_{\text{sys},i}^{l,h}$. Use AIC to adaptively select the optimal number of components $K^*\in\{1,...,5\}$ to fit a GMM $\sum_{k=1}^{K^*}\pi_k\mathcal{N}(\mu_k,\sigma_k^2)$. Components are divided into a minority target group $\mathcal{G}_t$ (suspected backdoor mode) and a majority background group $\mathcal{G}_b$. The Separation Score is defined as the reciprocal of the overlap area of the two distribution groups: $\text{SS}^{l,h}=\bigl(\int\min(\sum_{k\in\mathcal{G}_t}\pi_k\phi_k,\sum_{k\in\mathcal{G}_b}\pi_k\phi_k)dx+\epsilon\bigr)^{-1}$. Select Top-$H_{\text{sens}}$ heads within the last $L_{\text{sens}}$ layers to form $\mathcal{H}_{\text{sens}}$.
-    - **Design Motivation**: Given the low poisoning rate (10%), a bimodal assumption often fails as the secondary peak is submerged. Adaptive $K^*$ combined with the SS metric for "distribution separability" robustly identifies heads where clean and poison samples are truly separable without knowing the distribution shape.
+Previous works like BYE only monitor the spatial entropy of visual attention, failing for global/text triggers. TCAP changes the coordinate system by aggregating the attention of the first generated token toward all preceding tokens into a tripartite vector $\bm{\alpha}^{l,h}=(\alpha_{\text{sys}}^{l,h},\alpha_{\text{vis}}^{l,h},\alpha_{\text{txt}}^{l,h})$ for each (layer $l$, head $h$). Here, $\alpha_c^{l,h}=\sum_{i\in S_c}a_i^{l,h}$ represents the sum of attention mass on system, vision, or text tokens. This is a universal fingerprint because: (1) lifting detection to functional components naturally incorporates text triggers; (2) system instructions act as a fixed baseline; (3) backdoors take shortcuts in deep layers where cross-modal decisions are fused.
 
-3.  **EM-based Dawid–Skene Voting Aggregation**:
-    - **Function**: Merges binary decisions from each head in $\mathcal{H}_{\text{sens}}$ into a single posterior probability to output a set of suspicious samples.
-    - **Mechanism**: For each sensitive head $(l,h)$ and sample $i$, calculate the "cumulative probability of belonging to target components" using GMM posterior $\gamma_{i,k}^{l,h}$. A vote is cast if it exceeds a threshold $\tau_{\text{vote}}$: $v_i^{l,h}=\mathbf{1}[\sum_{k\in\mathcal{G}_t}\gamma_{i,k}^{l,h}>\tau_{\text{vote}}]$. Treating each sensitive head as a noisy annotator, Dawid–Skene EM is used to iteratively estimate the latent label of whether each sample is poisoned and the confusion matrix for each head, yielding the final posterior $p_i$. Samples with $p_i>0.5$ are excluded.
-    - **Design Motivation**: Naive majority voting treats reliable and noisy heads equally. Dawid–Skene learns which heads are more trustworthy, effectively assigning learnable reliability weights, making it more robust to the reality of having few heterogeneous sensitive heads.
+**2. GMM + Separation Score: Unsupervised Selection of Sensitive Heads**
+
+Since poisoned samples only constitute about 10%, signals can be diluted by noise if all heads are averaged. TCAP collects system components $\{\alpha_{\text{sys},i}^{l,h}\}_{i=1}^M$ for each head and uses AIC to adaptively select the number of components $K\in\{1,...,5\}$ for a GMM. Instead of assuming a bimodal distribution, adaptive $K^*$ handles cases where the minority poison peak might be submerged. A Separation Score (SS) is defined as the inverse of the overlapping area between the suspected target group $\mathcal{G}_t$ and the background group $\mathcal{G}_b$:
+
+$$\text{SS}^{l,h}=\Bigl(\int\min\bigl(\sum_{k\in\mathcal{G}_t}\pi_k\phi_k,\ \sum_{k\in\mathcal{G}_b}\pi_k\phi_k\bigr)dx+\epsilon\Bigr)^{-1}$$
+
+Heads with the highest SS in the final $L_{\text{sens}}$ layers form the sensitive head set $\mathcal{H}_{\text{sens}}$.
+
+**3. EM-based Dawid–Skene Voting: Fusing Heterogeneous Weak Detectors**
+
+Sensitive heads are treated as noisy annotators. For sample $i$, if the GMM posterior probability of belonging to the target component exceeds a threshold $\tau_{\text{vote}}$, head $h$ votes $v_i^{l,h}=1$. The Dawid–Skene EM algorithm iteratively estimates the latent poison labels and the confusion matrix (reliability) of each head. This ensures that more accurate heads have a greater influence on the final posterior $p_i$. Samples with $p_i > 0.5$ are removed.
 
 ### Loss & Training
-TCAP itself introduces no new losses; it serves as a pre-processor for dataset cleaning. After cleaning, standard $\mathcal{L}_c$ is used for LoRA fine-tuning on $\mathcal{D}_{\text{clean}}$. The paper uses InternVL2.5-8B, LLaVA-NeXT-8B, and Qwen3-VL-8B with LoRA, a target output "Backdoor Attack!", and a 10% poisoning rate as the evaluation protocol.
+TCAP serves as a data preprocessor and does not introduce new loss functions. After cleaning, standard LoRA fine-tuning is performed on $\mathcal{D}_{\text{clean}}$. The study uses InternVL2.5-8B, LLaVA-NeXT-8B, and Qwen3-VL-8B with a 10% poisoning rate and "Backdoor Attack!" as the target output.
 
 ## Key Experimental Results
 
 ### Main Results
-Clean Performance (CP) and Attack Success Rate (ASR) under Blend attack across 3 MLLMs × 5 datasets (selected columns for ScienceQA / DocVQA / SEED-Bench):
+Clean Performance (CP) and Attack Success Rate (ASR) under Blend attack (Results for ScienceQA / DocVQA / SEED-Bench):
 
 | Model | Method | ScienceQA CP/ASR | DocVQA CP/ASR | SEED-Bench CP/ASR |
 |------|------|------------------|---------------|-------------------|
@@ -76,21 +80,18 @@ Clean Performance (CP) and Attack Success Rate (ASR) under Blend attack across 3
 | LLaVA-NeXT | Vanilla FT | 89.19 / 96.03 | 31.66 / 100.00 | 72.13 / 96.27 |
 | LLaVA-NeXT | BYE | 0.00 / 100.00 | 28.88 / 100.00 | 68.50 / 95.37 |
 | LLaVA-NeXT | **TCAP** | **89.44 / 0.05** | **31.36 / 2.56** | **72.17 / 6.17** |
-| Qwen3-VL | Vanilla FT | 96.58 / 86.17 | 89.07 / 98.93 | 80.37 / 97.37 |
-| Qwen3-VL | **TCAP** | **96.68 / 15.62** | **90.57 / 0.33** | **81.27 / 0.37** |
 
-Detection F1 (Precision / Recall / F1) across 5 attacks on ScienceQA (selected for InternVL2.5):
+Detection F1 (Precision / Recall / F1) on ScienceQA (InternVL2.5):
 
 | Attack | BYE F1 | TCAP F1 |
 |------|--------|---------|
 | BadNet (patch) | 97.87 | **100.00** |
 | Blend (global) | 0.00 | **98.34** |
 | SIG (sinusoidal) | 9.94 | **92.11** |
-| WaNet (warp) | 4.01 | **99.20** |
-| FTrojan (frequency) | 9.58 | **85.24** |
+| FTrojan (freq) | 9.58 | **85.24** |
 
 ### Ablation Study
-F1 under Blend attack (Selected from Tab. 3):
+F1 under Blend attack:
 
 | Configuration | InternVL2.5 | LLaVA-NeXT | Qwen3-VL |
 |------|-------------|------------|----------|
@@ -99,47 +100,53 @@ F1 under Blend attack (Selected from Tab. 3):
 | w/o Layer Filter | 67.21 | 31.94 | 11.02 |
 
 ### Key Findings
-- **Head Selection is the lifeline**: Removing it drops F1 from 95–99 to 15–43, proving that "all-head averaging" is diluted by noise heads—only a few deep heads truly expose the backdoor.
-- **Layer Filter is also critical**: Removing it drops F1 to 11–67, validating the hierarchy hypothesis that "shallow layers extract local features while deep layers make cross-modality decisions."
-- **Visual evidence of entropy failure**: BYE achieves F1=0 and Recall=0 on InternVL2.5 + Blend + ScienceQA / PhD because global triggers increase entropy, causing BYE to misclassify clean as poison and let poison through. TCAP achieves F1=98 in the same setting.
-- **Universal text trigger detection**: On text prefix "Hello!" triggers, TCAP achieves 100 F1 across three MLLMs; it also significantly reduces ASR for HiddenKiller (syntactic triggers) on the PhD dataset.
-- **Qwen3-VL Blend ASR at 15.62** is the weakest result, suggesting stronger modern MLLMs may weaken the divergence signal, making sensitive heads harder to pick out.
+- **Head Selection is Critical**: Removing it drops F1 from 95–99 to 15–43, confirming that signal is concentrated in a few heads.
+- **Layer Filter Importance**: Removing it drops F1 to 11–67, validating the assumption that backdoors manifest in deep decision-making layers.
+- **Ineffectiveness of Entropy**: BYE fails completely on global triggers (F1=0) because entropy increases for global triggers, causing BYE to misclassify clean samples.
+- **Modality Agnostic**: TCAP achieves F1=100 on text prefix triggers across all MLLMs and effectively reduces ASR for complex syntactic triggers (HiddenKiller).
 
 ## Highlights & Insights
-- **Replacing Entropy with "Mass Redistribution"**: The authors provide a clean theoretical derivation (Eq. 3–5) explaining why entropy is inherently only effective for patch triggers and replace it with "system/vision/text tri-components." This approach of first falsifying existing metrics before changing coordinates is highly persuasive.
-- **System Instruction as an Anchor**: Using immutable parts as a reference baseline is a highly transferable trick for any LLM/MLLM defense, such as jailbreak or prompt injection detection.
-- **Dawid–Skene + Attention Heads = Noisy Label Fusion**: Treating candidate detectors as annotators with varying reliability is an elegant engineering pattern applicable to any "voting of multiple weak detectors" pipeline.
-- **Truly Unsupervised**: The entire pipeline requires no clean reference set, no labels, and no external models, with retraining performed on the cleaned data itself, making it highly feasible for FTaaS.
+- **From Entropy to Redistribution**: Proving why entropy fails for global/text triggers and proposing a tripartite mass redistribution provides a solid conceptual leap.
+- **System Instructions as Anchors**: Using immutable components (system prompts) as a baseline is a highly transferable technique for LLM/MLLM security.
+- **EM-based Head Fusion**: Treating heterogeneous heads as noisy annotators is an elegant approach that can be applied to any multi-detector ensemble.
+- **Truly Unsupervised**: Requires no clean data, no labels, and no external models, making it highly suitable for FTaaS.
 
 ## Limitations & Future Work
-- The number of sensitive heads $H_{\text{sens}}$ and depth threshold $L_{\text{sens}}$ are hyperparameters; it remains unclear if they adapt across architectures (though GMM's $K^*$ is adaptive).
-- The 15.62% ASR remaining on Qwen3-VL + Blend indicates that stronger MLLMs may reduce the number of anomalous heads, risking signal dilution.
-- Evaluation only covers a 10% poisoning rate and simplified "Backdoor Attack!" settings; survival under extremely low rates (<1%), multi-target backdoors, or clean-label backdoors is not tested.
-- It only cleans the training set and does not protect against inference-time attacks.
-- The approach requires a forward pass for all training samples to gather attention, which may involve non-negligible costs for million-scale datasets.
+- Sensitive head count and layer depth remain hyperparameters; adaptive mechanisms across architectures are not yet established.
+- Newer models like Qwen3-VL show slightly higher residual ASR (15.62%), suggesting signals may be "thinned" in more advanced architectures.
+- Evaluations are limited to a 10% poisoning rate and fixed target outputs; efficacy on low poisoning rates (<1%) or multi-target backdoors is unexplored.
+- Detection is limited to training data cleaning and does not prevent inference-time attacks.
+- High computational overhead for massive datasets due to the requirement of a forward pass for all training samples.
 
 ## Related Work & Insights
-- **vs BYE**: Both are unsupervised and focus on attention, but BYE uses Shannon entropy for spatial collapse (patch-only). TCAP uses tri-component mass + GMM + EM for cross-component divergence (modality-agnostic).
-- **vs SampDetox (Diffusion Denoising)**: SampDetox uses input preprocessing to remove triggers but degrades CP by erasing semantics. TCAP removes samples without modifying them, keeping CP intact.
-- **Transferable Insights**: (a) In any system prompt-based LLM security task, monitor the attention mass of the first token toward the system components. (b) "GMM + SS + EM voting" is a universal outlier detector applicable to scenarios with minority anomalies and multiple detectors, such as OOD or noise label cleaning.
+- **Comparison with BYE**: BYE focuses on spatial collapse via entropy (patch-only). TCAP uses cross-component divergence via tripartite mass and EM voting (modality-agnostic).
+- **Comparison with SampDetox**: TCAP preserves Clean Performance better than input-preprocessing methods like diffusion denoising.
+- **Transferable Heuristics**: (a) Monitoring first-token attention to system prompts for jailbreak/injection detection. (b) Using GMM+SS+EM as a general-purpose outlier detector for data quality or OOD scenarios.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Moving backdoor fingerprints from "visual entropy" to "cross-component attention allocation" is a solid conceptual leap over BYE.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Solid across 3 MLLMs, 5 datasets, 5 visual attacks, and 2 text attacks, though lacking extreme low-rate or multi-target stress tests.
-- Writing Quality: ⭐⭐⭐⭐ Theoretical derivations are clear, and method phases are well-articulated.
-- Value: ⭐⭐⭐⭐ Directly addresses FTaaS deployment pain points with an unsupervised, zero-dependency approach suitable for enterprise MLLM providers.
+- Novelty: ⭐⭐⭐⭐ 
+- Experimental Thoroughness: ⭐⭐⭐⭐ 
+- Writing Quality: ⭐⭐⭐⭐ 
+- Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
 
+- **BYE**: Backdoor Your Enigmatic Multi-modal LLM (2024)
+- **Dawid–Skene**: Maximum Likelihood Estimation of Observer Error-Rates Using the EM Algorithm (1979)
+
+</div>
+
+<!-- RELATED:END -->
+
 ## Related Papers
 
 - [\[ICML 2026\] Towards Fine-Grained Robustness: Attention-Guided Test-Time Prompt Tuning for Vision-Language Models](towards_fine-grained_robustness_attention-guided_test-time_prompt_tuning_for_vis.md)
-- [\[CVPR 2026\] Perturb and Recover: Fine-tuning for Effective Backdoor Removal from CLIP](../../CVPR2026/llm_safety/perturb_and_recover_fine-tuning_for_effective_backdoor_removal_from_clip.md)
 - [\[ICML 2026\] Decoupled Training with Local Reinforcement Fine-Tuning in Federated Learning](decoupled_training_with_local_reinforcement_fine-tuning_in_federated_learning.md)
 - [\[ICML 2026\] PFT: Phonon Fine-tuning for Machine Learned Interatomic Potentials](pft_phonon_fine-tuning_for_machine_learned_interatomic_potentials.md)
 - [\[ICML 2026\] Position: Uncertainty Quantification in LLMs is Just Unsupervised Clustering](position_uncertainty_quantification_in_llms_is_just_unsupervised_clustering.md)
+- [\[ICML 2026\] From Parameter Dynamics to Risk Scoring: Quantifying Sample-Level Safety Degradation in LLM Fine-tuning](from_parameter_dynamics_to_risk_scoring_quantifying_sample-level_safety_degradat.md)
 
 </div>
 

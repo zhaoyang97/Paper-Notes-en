@@ -2,81 +2,88 @@
 title: >-
   [Paper Note] SpikeTrack: A Spike-driven Framework for Efficient Visual Tracking
 description: >-
-  [CVPR 2026][Video Understanding][Spiking Neural Networks] SpikeTrack is proposed as the first RGB visual tracking framework fully compliant with the spike-driven paradigm. Through asymmetric temporal step expansion…
+  [CVPR 2026][Video Understanding][Paper Note] Propose SpikeTrack, the first RGB visual tracking framework fully compliant with the spike-driven paradigm. By utilizing asymmetric timestep expansion, unidirectional information flow, and a brain-inspired Memory Retrieval Module (MRM), it achieves SOTA performance among SNN trackers and performs on par with ANN tracke
 tags:
-  - "CVPR 2026"
-  - "Video Understanding"
-  - "Spiking Neural Networks"
-  - "Visual Tracking"
-  - "Energy Efficiency"
-  - "Asymmetric Architecture"
-  - "Memory Retrieval"
+  - CVPR 2026
+  - Video Understanding
 date: 2026-05-08
-content_hash: 1e1000596de03780
+content_hash: 53f985d2a3c245ff
 ---
-
 # SpikeTrack: A Spike-driven Framework for Efficient Visual Tracking
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2602.23963](https://arxiv.org/abs/2602.23963)  
-**Code**: Available (mentioned in paper)  
-**Area**: Video Understanding
+**Code**: Yes (mentioned in paper)  
+**Area**: Video Understanding  
 **Keywords**: Spiking Neural Networks, Visual Tracking, Energy Efficiency, Asymmetric Architecture, Memory Retrieval
 
 ## TL;DR
-SpikeTrack is proposed as the first RGB visual tracking framework fully compliant with the spike-driven paradigm. Through asymmetric temporal step expansion, unidirectional information flow, and a brain-inspired Memory Retrieval Module (MRM), it achieves SOTA among SNN-based trackers and is on par with ANN-based trackers, while consuming only 1/26 the energy of TransT.
+Propose SpikeTrack, the first RGB visual tracking framework fully compliant with the spike-driven paradigm. By utilizing asymmetric timestep expansion, unidirectional information flow, and a brain-inspired Memory Retrieval Module (MRM), it achieves SOTA performance among SNN trackers and performs on par with ANN trackers, while consuming only 1/26 the energy of TransT.
 
 ## Background & Motivation
-Spiking Neural Networks (SNNs) achieve low-power computation by simulating the spatiotemporal dynamics and spike mechanisms of biological neurons: (i) computation is triggered only on event-driven activation, and (ii) matrix multiplications between spike tensors and weights can be converted to sparse additions. This gives SNNs significant energy efficiency advantages on neuromorphic hardware.
+Spiking Neural Networks (SNNs) simulate biological neuron spatio-temporal dynamics and spike mechanisms to achieve low-power computing: (i) computations are triggered only when event-driven, and (ii) matrix multiplication between spike tensors and weights is converted into sparse additions. This grants SNNs significant energy-saving advantages on neuromorphic chips.
 
-**Problems with existing SNN tracking methods**:
+**Limitations of Prior Work in SNN Tracking**:
 
-**RGB-based methods** (SiamSNN, Spike-SiamFC++): Although spiking neurons are used, spike signals are decoded into continuous values for computation, failing to achieve fully spike-driven processing, which limits energy efficiency.
+**RGB-based methods** (SiamSNN, Spike-SiamFC++): Although spike neurons are used, they decode spike signals into continuous values for computation, failing to implement full spike-driven processing, which limits energy efficiency.
 
-**Event camera-based methods**: Directly mimic the ANN one-stream architecture (e.g., OSTrack), concatenating template and search region before feeding into the backbone for bidirectional interaction. This approach has two drawbacks:
-   - It does not fully exploit the spatiotemporal correlation dynamics of SNN neurons.
-   - Dense bidirectional interaction significantly increases computational overhead.
+**Event camera-based methods**: These directly mimic the one-stream architecture of ANNs (e.g., OSTrack), concatenating the template and search area before feeding them into the backbone for bidirectional interaction. This approach has two flaws:
+   - It fails to fully exploit the spatio-temporal correlation dynamics of SNN neurons.
+   - Dense bidirectional interactions significantly increase computational overhead.
 
-**Core Research Question**: Can an SNN tracker be designed that adheres to the spike-driven paradigm while fully exploiting spatiotemporal modeling capabilities?
+**Core Problem**: Can a SNN tracker be designed to follow the spike-driven paradigm while simultaneously leveraging spatio-temporal modeling capabilities?
 
 ## Method
 
 ### Overall Architecture
-SpikeTrack consists of three components: a weight-shared spiking backbone, a Memory Retrieval Module (MRM) for unidirectional information transfer, and a prediction head. At inference time, the template branch executes only once during initialization or template update, caching intermediate-layer features as memory; the search branch uses MRM to retrieve target cues from memory and progressively refines target awareness.
+SpikeTrack specifically addresses making a **fully spike-driven** SNN both energy-efficient and accurate for RGB single-object tracking. The core idea is "isolating heavy computation and maintaining unidirectional information flow." A weight-sharing spiking backbone is divided into a template branch and a search branch. The template branch executes only during initialization or template updates across multiple timesteps to cache intermediate features as memory. Subsequently, for each incoming search frame, the search branch runs for a single timestep, retrieving target cues from the memory via the Memory Retrieval Module (MRM) to refine target perception. Finally, a prediction head regresses the bounding box. Since information only flows from the template branch to the search branch, the computationally intensive parts are isolated, which is the fundamental reason for its efficiency over ANNs.
+
+```mermaid
+graph TD
+    IN["Template + Search Image"] --> BACKBONE
+    subgraph BACKBONE["Asymmetric Siamese Backbone (Weight Sharing)"]
+        direction TB
+        TZ["Template Branch<br/>Joint modeling over T steps, run once"]
+        TX["Search Branch<br/>Single step feature extraction F_X"]
+        TZ --> MEM["Memory Cache<br/>Precompute M = KᵀV"]
+    end
+    MEM --> MRM
+    TX --> MRM
+    subgraph MRM["Memory Retrieval Module MRM (Iteration N=1)"]
+        direction TB
+        G["Global Contour Encoding<br/>Q·M Retrieval"] --> D["Detail Construction<br/>T SSConvs"] --> R["Feedback Refinement<br/>Residual Projection"]
+    end
+    MRM --> HEAD["Prediction Head<br/>Classification / Offset / Size"]
+    HEAD --> BOX["Bounding Box"]
+    HEAD -->|"Confidence ≥ 0.7"| UPD["FIFO Template Update<br/>Rerun Template Branch to Refresh Memory"]
+    UPD -.-> TZ
+```
 
 ### Key Designs
 
-1. **Asymmetric Siamese Backbone**: Asymmetric temporal step inputs with unidirectional information flow
+**1. Asymmetric Siamese Backbone: Isolating heavy template computation**
 
-    - **Function**: The template branch expands over $T$ time steps (one template per step), jointly modeling template representations through neuronal spatiotemporal dynamics; the search branch performs efficient single-time-step inference.
-    - **Mechanism**: Information flows only from the template branch to the search branch; the computationally intensive template branch runs only at initialization or update, substantially reducing computation.
-    - **Backbone**: Spike-Driven Transformer V3, composed of CNN blocks (first two stages) and Transformer blocks (last two stages).
-    - **Spiking neuron model**: Normalized Integer LIF (NI-LIF) neurons are adopted, using normalized integer activations during training and converting to equivalent spikes at inference. A key improvement is making the decay factor $\beta_t = \sigma(\theta_t)$ learnable, enabling the network to adaptively model inter-timestep correlations:
-    $U[t] = \beta_t H[t-1] + Y[t], \quad S[t] = \text{Clip}(\text{round}(U[t]), 0, D)/D$
+Event-based SNN trackers often copy the one-stream architecture of ANNs—concatenating template and search areas for bidirectional interaction—which neglects SNN spatio-temporal dynamics and consumes excessive power. SpikeTrack adopts an **asymmetric timestep** approach: the template branch expands over $T$ timesteps, feeding one template at each step to model representations jointly via SNN spatio-temporal dynamics. The search branch runs only a single timestep for speed. The backbone uses Spike-Driven Transformer V3 with Normalized Integer LIF (NI-LIF) neurons. A key improvement is making the decay factor a **learnable** variable $\beta_t = \sigma(\theta_t)$, allowing the network to adaptively decide how much history to retain:
 
-2. **Memory Retrieval Module (MRM)**: Brain-inspired memory retrieval for unidirectional information transfer
+$$U[t] = \beta_t H[t-1] + Y[t], \quad S[t] = \text{Clip}(\text{round}(U[t]), 0, D)/D$$
 
-    - **Function**: Retrieves target cues from memory cached by the template branch to enhance target awareness in the search branch.
-    - **Design Motivation**: In neuroscience, recurrent connections in the V1 L2/3 area achieve complete perceptual inference under occlusion through iterative refinement based on prior expectations — naturally suited to template-based tracking.
-    - **Mechanism** (three-stage cyclic processing):
-        - **Global contour encoding**: Template features $F_Z$ are projected into $K_S$, $V_S$; the memory matrix $M = K_S^T V_S$ is precomputed once at initialization. Search features $F_X$ are temporally expanded into $Q_S^{(0)}$, and global information is retrieved via $Q_S^{(i)'} = \mathcal{SN}(Q_S^{(i)}M \cdot scale)$.
-        - **Detail construction**: $T$ dedicated SSConv layers process each time step along the temporal dimension, increasing sensitivity to temporal variations.
-        - **Feedback refinement**: Residual connections and projection simulate feedback to higher visual areas.
-    - Leverages the linear complexity of spike attention; the precomputed memory matrix is reused across frames.
+Learnable $\beta_t$ offers more flexibility than fixed decay (gaining +1.9 LaSOT AUC), and isolating the template branch is the primary source of energy reduction.
 
-3. **Prediction Head**: Three-branch center-point prediction
+**2. Memory Retrieval Module (MRM): Brain-inspired unidirectional information transfer**
 
-    - **Function**: Predicts the target bounding box from search branch features.
-    - **Mechanism**: Three parallel branches respectively predict target center localization (classification), local offset due to resolution reduction, and normalized bounding box width/height. Each branch consists of multiple Conv-BN-NILIF layers.
-    - No separate quality scoring module; the localization branch score is used directly as confidence.
+After computing search features, the model must "borrow" target cues from the template without re-executing expensive bidirectional attention. MRM is inspired by neuroscience: recurrent connections in the L2/3 area of the V1 visual cortex iteratively refine perception based on prior expectations when an object is occluded. MRM splits retrieval into three steps: **Global Profile Encoding** (where template features $F_Z$ are projected into $K_S, V_S$ to precompute the memory matrix $M = K_S^T V_S$), **Detail Construction** (using $T$ dedicated SSConvs to process temporal variations), and **Feedback Refinement** (simulating feedback from higher visual areas). Since spike attention has linear complexity and $M$ is precomputed once for multi-frame reuse, it ensures efficiency and unidirectional flow; ablation shows $N=1$ iterations is optimal.
+
+**3. Prediction Head: Three-branch regression without separate quality assessment**
+
+Spiking features are relatively coarse-grained. The prediction head uses three parallel branches: a classification branch for target center localization, an offset branch to compensate for local discretization errors, and a size branch for normalized bounding box dimensions. It avoids a separate quality score module by using the localization score as confidence (also used for the 0.7 template update threshold). This keeps the structure fully spiking and simple, though it may introduce low-quality templates in long sequences.
 
 ### Loss & Training
-- **Loss function**: $\mathcal{L} = \mathcal{L}_{class} + \lambda_G \mathcal{L}_{IoU} + \lambda_{L_1} \mathcal{L}_1$, where $\lambda_G=2$, $\lambda_{L_1}=5$
-- $\mathcal{L}_{class}$: weighted focal loss; $\mathcal{L}_{IoU}$: generalized IoU loss; $\mathcal{L}_1$: L1 regression loss
-- Training data: COCO + LaSOT + TrackingNet + GOT-10k
-- Two-stage training: the $T=1$ model is trained for 320 epochs (backbone lr 4e-5, head/MRM lr 4e-4); models with $T>1$ are fine-tuned from the $T=1$ model for 60 epochs.
-- Template update: FIFO queue, update interval 25 frames, confidence threshold 0.7.
-- Energy computation: $E_{SNN} = \text{FLOPs} \times E_{AC} \times SFR \times T \times D$, $E_{AC}=0.9$ pJ (45nm), far lower than $E_{MAC}=4.6$ pJ.
+- **Loss Function**: $\mathcal{L} = \mathcal{L}_{class} + \lambda_G \mathcal{L}_{IoU} + \lambda_{L_1} \mathcal{L}_1$, with $\lambda_G=2$, $\lambda_{L_1}=5$.
+- $\mathcal{L}_{class}$: Weighted focal loss; $\mathcal{L}_{IoU}$: Generalized IoU loss; $\mathcal{L}_1$: L1 regression loss.
+- Training Data: COCO + LaSOT + TrackingNet + GOT-10k.
+- Two-stage Training: $T=1$ model trained for 320 epochs, then $T>1$ model fine-tuned from $T=1$ for 60 epochs.
+- Template Update: FIFO queue with an update interval of 25 frames and a confidence threshold of 0.7.
+- Energy Calculation: $E_{SNN} = \text{FLOPs} \times E_{AC} \times SFR \times T \times D$. $E_{AC}=0.9$ pJ (45nm), significantly lower than $E_{MAC}=4.6$ pJ.
 
 ## Key Experimental Results
 
@@ -89,7 +96,7 @@ SpikeTrack consists of three components: a weight-shared spiking backbone, a Mem
 | GOT-10k | AO | 73.1 | 72.3 | 27.3 vs 75.2 mJ |
 | TNL2K | AUC | 54.8 | 50.7 | 27.3 vs 75.2 mJ |
 
-SpikeTrack-B256-T3 surpasses TransT by 2.2% AUC on LaSOT with only 1/7.6 the energy consumption.
+SpikeTrack-B256-T3 outperforms TransT by 2.2% AUC on LaSOT while consuming only 1/7.6 the energy.
 
 | Dataset | Metric | SpikeTrack-S256 | SpikeSiamFC++ | Gain |
 |--------|------|-----------------|---------------|------|
@@ -99,46 +106,45 @@ SpikeTrack-B256-T3 surpasses TransT by 2.2% AUC on LaSOT with only 1/7.6 the ene
 
 ### Ablation Study
 
-| Configuration | Energy (mJ) | GOT-10k AO | LaSOT AUC | Notes |
+| Configuration | Energy (mJ) | GOT-10k AO | LaSOT AUC | Description |
 |------|----------|------------|-----------|------|
-| Baseline (asymmetric) | 8.7 | 71.3 | 66.8 | Baseline |
-| One-stream | 22.8 | 70.8 | 65.4 | Energy ↑163%, accuracy ↓ |
-| Vanilla Cross-attn | 7.6 | 70.9 | 65.0 | Replaces MRM; accuracy drops |
-| Modulation (spike) | 6.8 | 58.3 | 49.9 | AsymTrack approach unsuitable for SNN |
-| Mean Fusion | 8.5 | 71.0 | 66.2 | Channel-weighted fusion is superior |
-| Fixed Decay | 8.9 | 68.9 | 66.0 | Learnable decay factor performs better |
+| Baseline (Asym) | 8.7 | 71.3 | 66.8 | Baseline |
+| One-stream | 22.8 | 70.8 | 65.4 | Energy ↑163%, Accuracy ↓ |
+| Vanilla Cross-attn | 7.6 | 70.9 | 65.0 | Replaces MRM, Accuracy ↓ |
+| Modulation (spike) | 6.8 | 58.3 | 49.9 | AsymTrack style unsuitable for SNN |
+| Mean Fusion | 8.5 | 71.0 | 66.2 | Channel weighting is better |
+| Fixed Decay | 8.9 | 68.9 | 66.0 | Learnable decay is better |
 
 ### Key Findings
-- The asymmetric architecture outperforms the one-stream architecture in both accuracy and energy efficiency, demonstrating that SNN spatiotemporal dynamics + MRM is superior to brute-force bidirectional interaction.
-- AsymTrack's template modulation approach degrades severely after spiking conversion (AUC 49.9), indicating that using templates as convolutional kernels for signal modulation is incompatible with SNN's coarse-grained representations.
-- The learnable decay factor outperforms fixed decay (+ 1.9 LaSOT AUC), providing more flexible control over inter-timestep interactions.
-- The performance gap with OSTrack is primarily in Deformation and Fast Motion scenarios, which pose the greatest challenges to deep semantic understanding and re-detection capability in SNNs.
-- MRM with $N=1$ iteration is optimal; excessive iterations introduce accumulated errors and over-focus.
+- The asymmetric architecture outperforms one-stream in both accuracy and energy, proving SNN spatio-temporal dynamics + MRM is superior to brute-force bidirectional interaction.
+- Template modulation methods from AsymTrack degrade significantly when spiked (AUC 49.9), indicating that using templates as convolution kernels for signal modulation is not suitable for coarse SNN representations.
+- Learnable decay factors provide better control over temporal interaction compared to fixed decay (+1.9 LaSOT AUC).
+- The gap with OSTrack primarily exists in Deformation and Fast Motion scenarios, which challenge SNN deep semantic understanding and re-detection.
+- $N=1$ iterations for MRM is optimal; more iterations accumulate error and cause over-focusing.
 
 ## Highlights & Insights
-1. **Elegance of the asymmetric design**: The template branch leverages SNN spatiotemporal dynamics over multiple time steps, while the search branch performs efficient single-time-step inference — combining SNN's spatiotemporal modeling strengths with the efficiency of Siamese architectures.
-2. **Brain-inspired MRM**: Inspired by recurrent connections in the V1 visual cortex, the precomputed memory matrix enables cross-frame reuse, balancing biological plausibility with engineering efficiency.
-3. **First RGB tracking framework** to achieve an energy–accuracy Pareto optimum — surpassing ANN trackers of equivalent accuracy while reducing energy by orders of magnitude.
-4. **Six model variants** cover diverse accuracy–power requirements, demonstrating strong scalability.
+1. **Asymmetric Design Sophistication**: The multi-step template branch exploits SNN dynamics while the single-step search branch ensures efficient inference, combining SNN advantages with Siamese efficiency.
+2. **Brain-inspired MRM**: Inspired by V1 cortex recurrent connections, the precomputed memory matrix allows cross-frame reuse, balancing biological plausibility with engineering efficiency.
+3. **Pareto Optimality**: Achieves the first energy-accuracy Pareto optimum in RGB tracking—surpassing equivalent ANNs while reducing energy consumption by orders of magnitude.
+4. **Scalability**: 6 model variants cover different precision-power requirements.
 
 ## Limitations & Future Work
-- Performance degrades under similar-object distractor scenarios — spike encoding struggles to convey fine-grained semantic information for discriminating similar targets.
-- Template update relies on a simple confidence threshold strategy, lacking a dedicated quality scoring module.
-- In long-term tracking (LaSOT), increasing $T$ does not always improve performance, as the simple scoring mechanism can introduce low-quality templates.
-- Energy consumption is currently computed theoretically under 45nm process; no validation has been conducted on actual neuromorphic hardware.
+- Weak performance in scenarios with similar object interference, as spike encoding struggles to convey fine-grained semantic information.
+- Template updates rely on a simple confidence threshold without a dedicated quality assessment module.
+- Increasing $T$ in long-term tracking (LaSOT) does not always improve performance because simple scoring may introduce low-quality templates.
+- Energy consumption is currently theoretically calculated for 45nm process; it has not been tested on actual neuromorphic hardware.
 
 ## Related Work & Insights
-- Inherits the asymmetric Siamese concept from AsymTrack (CVPR'25), replacing ANN template modulation with SNN spatiotemporal dynamics.
-- The backbone adopts Spike-Driven Transformer V3, a Meta-Transformer-style SNN.
-- The memory precomputation in MRM shares conceptual similarity with KV-cache in Transformers.
-- Provides an important reference for applying SNNs to broader video understanding tasks, such as MOT and video segmentation.
+- Inherits the asymmetric Siamese concept from AsymTrack (CVPR'25) but replaces ANN template modulation with SNN spatio-temporal dynamics.
+- Uses Spike-Driven Transformer V3, a Meta-Transformer style SNN.
+- The precomputation of the MRM memory matrix is analogous to KV-caching in Transformers.
+- Provides a reference for applying SNNs to broader video understanding tasks like MOT and video segmentation.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ Asymmetric spike-driven tracking + brain-inspired MRM design is novel.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ 7 benchmarks, 6 variants, comprehensive ablation and energy analysis.
-- **Writing Quality**: ⭐⭐⭐⭐ Clear structure; the correspondence with neuroscience is well articulated.
-- **Value**: ⭐⭐⭐⭐ Advances the practical applicability of SNNs in visual tracking.
-- **Value**: To be evaluated.
+- Novelty: ⭐⭐⭐⭐ (Asymmetric spike tracking + brain-inspired MRM)
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ (7 benchmarks, 6 variants, detailed energy analysis)
+- Writing Quality: ⭐⭐⭐⭐ (Clear structure, good neuroscience parallels)
+- Value: ⭐⭐⭐⭐ (Advances practical SNN application in visual tracking)
 
 <!-- RELATED:START -->
 
@@ -146,11 +152,11 @@ SpikeTrack-B256-T3 surpasses TransT by 2.2% AUC on LaSOT with only 1/7.6 the ene
 
 ## Related Papers
 
-- [\[CVPR 2026\] UETrack: A Unified and Efficient Framework for Single Object Tracking](uetrack_a_unified_and_efficient_framework_for_single_object_tracking.md)
+- [\[CVPR 2026\] SpikeTrack: High-performance and Energy-efficient Event-Based Object Tracking with Spiking Neural Network](spiketrack_high-performance_and_energy-efficient_event-based_object_tracking_wit.md)
+- [\[CVPR 2026\] An Efficient Token Compression Framework for Visual Object Tracking](an_efficient_token_compression_framework_for_visual_object_tracking.md)
 - [\[CVPR 2026\] Drift-Resilient Temporal Priors for Visual Tracking](drift-resilient_temporal_priors_for_visual_tracking.md)
-- [\[ICCV 2025\] General Compression Framework for Efficient Transformer Object Tracking](../../ICCV2025/video_understanding/general_compression_framework_for_efficient_transformer_object_tracking.md)
-- [\[ICML 2026\] SkelHCC: A Hyperbolic CLIP-Driven Cache Adaptation Framework for Skeleton-based One-Shot Action Recognition](../../ICML2026/video_understanding/skelhcc_a_hyperbolic_clip-driven_cache_adaptation_framework_for_skeleton-based_o.md)
-- [\[ICML 2026\] Unified Multimodal Visual Tracking with Dual Mixture-of-Experts](../../ICML2026/video_understanding/unified_multimodal_visual_tracking_with_dual_mixture-of-experts.md)
+- [\[CVPR 2026\] Adaptive Capacity Autoregressive Visual Tracking](adaptive_capacity_autoregressive_visual_tracking.md)
+- [\[CVPR 2026\] UETrack: A Unified and Efficient Framework for Single Object Tracking](uetrack_a_unified_and_efficient_framework_for_single_object_tracking.md)
 
 </div>
 

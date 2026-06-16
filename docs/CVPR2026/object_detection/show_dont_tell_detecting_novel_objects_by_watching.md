@@ -2,143 +2,152 @@
 title: >-
   [Paper Note] Show, Don't Tell: Detecting Novel Objects by Watching Human Videos
 description: >-
-  [CVPR 2026][Object Detection][novel object detection] This paper proposes the "Show, Don't Tell" paradigm — automatically creating training datasets and training bespoke object detectors by watching human demonstration v…
+  [CVPR 2026][Object Detection][novel object detection] Proposed the "Show, Don't Tell" paradigm—automatically creating training datasets and training bespoke object detectors by watching human demonstration videos. This approach completely bypasses language descriptions and prompt engineering, significantly outperforming SOTA open-set/closed-set detectors in novel object r
 tags:
-  - "CVPR 2026"
-  - "Object Detection"
-  - "novel object detection"
-  - "self-supervised"
-  - "human demonstration"
-  - "bespoke detector"
-  - "robot manipulation"
+  - CVPR 2026
+  - Object Detection
+  - novel object detection
+  - self-supervised
+  - human demonstration
+  - bespoke detector
+  - robot manipulation
 date: 2026-05-08
-content_hash: f5fb1eac578b6d07
+content_hash: 41332bef9702181c
 ---
-
 # Show, Don't Tell: Detecting Novel Objects by Watching Human Videos
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.12751](https://arxiv.org/abs/2603.12751)  
 **Code**: None  
-**Area**: Object Detection / Robotics
+**Area**: Object Detection / Robotics  
 **Keywords**: novel object detection, self-supervised, human demonstration, bespoke detector, robot manipulation
 
 ## TL;DR
 
-This paper proposes the "Show, Don't Tell" paradigm — automatically creating training datasets and training bespoke object detectors by watching human demonstration videos, entirely bypassing language descriptions and prompt engineering. The approach significantly outperforms state-of-the-art open-set/closed-set detectors on novel object recognition in real-world robotic scenarios.
+Proposed the "Show, Don't Tell" paradigm—automatically creating training datasets and training bespoke object detectors by watching human demonstration videos. This approach completely bypasses language descriptions and prompt engineering, significantly outperforming SOTA open-set/closed-set detectors in novel object recognition within real-world robot scenarios.
 
 ## Background & Motivation
 
-**Background**: Accurate recognition and localization of target objects is a prerequisite for robotic manipulation tasks such as grasping and assembly. Current object detection methods fall into two main categories: closed-set detectors (YOLO, Faster R-CNN, etc.) perform well on predefined categories but cannot handle objects unseen during training; open-set detectors (e.g., VLM-based GroundingDINO, OWL-ViT) perform zero-shot detection via language descriptions, theoretically capable of handling arbitrary objects.
+**Background**: In robot manipulation tasks, accurate identification and localization of target objects are prerequisites for executing operations such as grasping and assembly. Current object detection methods are mainly divided into two categories: closed-set detectors (YOLO, Faster R-CNN, etc.) perform well on predefined categories but cannot handle objects unseen in the training set; open-set detectors (VLM-based GroundingDINO, OWL-ViT) perform zero-shot detection via language descriptions, theoretically handling arbitrary objects.
 
-**Limitations of Prior Work**: Closed-set detectors fail outright on out-of-distribution (OOD) novel objects. While open-set detectors are theoretically viable, they suffer from severe practical issues in deployment — requiring humans to carefully craft text prompts for each new object (prompt engineering), a process that is both costly and unreliable. This is especially problematic when distinguishing visually similar but functionally distinct object instances (e.g., same-category products of different brands, tools of different colors), where natural language cannot provide sufficient discriminability.
+**Limitations of Prior Work**: Closed-set detectors fail directly when facing out-of-distribution (OOD) novel objects, while open-set detectors, despite theoretical feasibility, face severe practical issues in deployment—requiring humans to meticulously write text prompts (prompt engineering) for every new object, which is both expensive and unreliable. Especially when distinguishing object instances that are similar in appearance but different in function (product different brands, tools of different colors), natural language struggles to provide sufficient discriminative power.
 
-**Key Challenge**: Language, as a medium for object description, has fundamental limitations — it excels at category-level semantics ("a cup") but is highly inefficient for instance-level precise identification. What is truly needed is a language-free, adaptive object recognition approach that can quickly learn to recognize specific objects from a single human demonstration.
+**Key Challenge**: Language has fundamental limitations as a medium for object description—it excels at category-level semantics ("a cup") but is extremely inefficient for precise instance-level identification. What is truly needed is a language-free adaptive object recognition method that can quickly learn to identify specific objects from a single human demonstration.
 
-**Goal**: (1) How to automatically extract object information from human demonstration videos and construct training datasets? (2) How to rapidly train a high-accuracy detector specialized for specific objects? (3) How to integrate the entire pipeline into a real robotic system for end-to-end deployment?
+**Goal**: (1) How to automatically extract object information from human demonstration videos and construct training datasets? (2) How to quickly train a high-precision detector targeted at specific objects? (3) How to integrate the entire process into a real-world robot system for end-to-end deployment?
 
-**Key Insight**: The authors observe that humans naturally display and manipulate target objects from multiple viewpoints when demonstrating manipulation tasks, and this process itself provides rich multi-view training data. Exploiting this "implicit supervision" can entirely bypass the bottleneck of language description.
+**Key Insight**: The authors observed that humans naturally display and manipulate target objects from multiple angles during demonstration. This process itself provides rich multi-view training data. Utilizing this "implicit supervision" can completely bypass the bottleneck of language descriptions.
 
-**Core Idea**: Replace language descriptions with visual information from human demonstration videos to automatically create training datasets for bespoke object detectors, realizing the "Show, Don't Tell" paradigm for novel object recognition.
+**Core Idea**: Replace language descriptions with visual information from human demonstration videos, automatically creating training datasets to train bespoke object detectors, realizing the "Show, Don't Tell" paradigm for novel object recognition.
 
 ## Method
 
 ### Overall Architecture
 
-The complete system pipeline consists of four stages: (1) **Demonstration Recording**: a human performs task operations within the robot's sensor field of view; (2) **Automated Dataset Creation**: a visual processing pipeline automatically extracts, segments, and annotates image regions of manipulated objects from the demonstration video; (3) **Bespoke Detector Training**: a lightweight object detector is rapidly trained on the automatically generated annotations; (4) **Robot Deployment**: the trained detector is integrated into the robot's perception-planning-execution loop for autonomous object recognition and manipulation. The entire process is fully automatic, requiring no manual annotation or language input from demonstration to deployment.
+"Show, Don't Tell" aims to avoid the reliance of open-set detectors on language prompts: instead of having humans write text descriptions for every new object, it lets humans "show" it—pick up and manipulate target objects within the robot's camera view, and the system learns to recognize them from the video. The pipeline is organized as a closed loop from demonstration to autonomous operation: humans first complete a sorting demonstration in front of the camera; the system uses the "Significant Object Dataset Creation (SODC)" pipeline to automatically crop the manipulated objects and generate labeled samples with bounding boxes; these samples are then used to fine-tune a "Bespoke Object Detector (MOD)" that recognizes only these specific objects; finally, it is integrated into the robot's perception-planning-execution loop. Crucially, the process requires no manual bounding box annotations or text descriptions—the demonstration action itself serves as both task demonstration and data collection.
+
+```mermaid
+flowchart TD
+    A["Human Demonstration Video (Single RGB)"]
+    subgraph SODC["1. Significant Object Dataset Creation SODC (No Manual Annotation)"]
+        direction TB
+        B["Detect Object-in-Hand<br/>HOIST-Former segments held objects frame-by-frame"] --> C["Track Mask<br/>SAMURAI tracks forward/backward using mask as seed"]
+        C --> D["Spatiotemporal Clustering<br/>DBSCAN+IoU Spatial Cluster → Jaccard Temporal Cluster → Filter noise"]
+    end
+    A --> SODC
+    SODC --> E["Annotated Box Dataset<br/>One label per manipulated object, incl. in-hand/off-hand frames"]
+    E --> F["2. Bespoke Object Detector MOD<br/>Fine-tune Faster R-CNN (ResNet50), ~3-4 mins"]
+    subgraph ROBOT["3. End-to-End Robot System"]
+        direction TB
+        G["Plan Skeleton<br/>ChatGPT-4o breaks demo into pick/place sequence"] --> H["Execute Sorting<br/>MOD localizes pick object + VLM localizes place container"]
+    end
+    F --> ROBOT
+    ROBOT --> I["Robot reproduces human sorting in new environment"]
+```
 
 ### Key Designs
 
-1. **Self-supervised Dataset Creation Pipeline (Auto-Dataset Pipeline)**:
+**1. Significant Object Dataset Creation (SODC): Treating "Human Grasping" as a Free Annotation Signal**
 
-    - **Function**: Automatically extract training samples and annotations for target objects from human demonstration videos.
-    - **Mechanism**: The natural motion and appearance variation of objects in demonstration videos are exploited as supervision signals. The pipeline first applies a class-agnostic segmentation network to detect candidate object regions in each frame, then uses motion analysis to identify which objects are being actively manipulated by the human (objects whose motion trajectories are consistent with hand motion). Confirmed manipulation targets are automatically cropped, augmented, and annotated with bounding boxes. The temporal sequence of video frames naturally provides diverse samples of the target object under varying viewpoints, illumination conditions, and occlusions. Annotation accuracy is ensured through multi-frame consistency verification — only objects consistently tracked and confirmed across multiple frames are included in the final dataset.
-    - **Design Motivation**: Avoids the high cost of manual annotation while ensuring high consistency between training data and actual deployment scenarios. Traditional methods require pre-collecting and annotating large datasets, whereas this approach merges data collection with task demonstration.
+The difficulty lies in identifying target objects within a demonstration video containing backgrounds, hands, and clutter. SODC solves this in three steps. **Object-in-hand detection**: Uses the human-object interaction detector HOIST-Former to output segmentation masks of "objects being held" frame-by-frame—treating interaction as a saliency signal. Since HOIST-Former's cross-frame label association is noisy, frames are processed independently. **Mask tracking**: Masks from grasp frames are fed as "seeds" to the tracker SAMURAI, tracking each object forward and backward through the entire video (including non-manipulated frames), resulting in multiple tracks. **Spatiotemporal clustering/merging**: Masks are converted to bounding boxes. DBSCAN (using $IoU$ as distance) performs spatial clustering within each frame; then, temporal tracking consistency is refined using Jaccard similarity to merge trajectories of the same object and filter out noise clusters. The result is an annotated dataset featuring objects in both held and isolated states.
 
-2. **Bespoke Detector**:
+**2. Bespoke Object Detector (MOD): Training a "Small yet Specialized" Model for the Current Task**
 
-    - **Function**: Rapidly train a specialized detector for only the objects required in the current task.
-    - **Mechanism**: Rather than pursuing a large general-purpose model, this approach adopts a "small but precise" strategy. A lightweight detection network (e.g., a compact model based on YOLO or SSD architecture) is trained for each specific deployment scenario, requiring the model to distinguish only a small number of target object categories (typically 3–10), enabling training to complete within minutes. The small number of model parameters also reduces the amount of training data required, which matches the small-scale but high-quality output of the automated dataset pipeline. The detector's inference speed is sufficient to meet real-time robot control requirements.
-    - **Design Motivation**: Specialized models achieve significantly higher accuracy than general-purpose models on specific tasks. Furthermore, rapid training supports online adaptation — the robot can quickly learn to recognize new objects for each new task.
+Open-set models sacrifice instance-level precision for universal coverage. This method instead uses the SODC dataset to **fine-tune a pre-trained Faster R-CNN (ResNet50 backbone)**, optimizing standard RCNN losses (classification + box regression) to distinguish the specific target objects. Since it only recognizes a small number of categories with high-quality automated samples, training takes ~3–4 minutes on 4 T4 GPUs. Extensive data augmentation (flips, color jitter, cropping, blurring, affine transforms) compensates for small dataset diversity. This bespoke approach supports rapid online adaptation to new objects.
 
-3. **End-to-End Robot Integration System**:
+**3. End-to-End Robot System: From Single Demo to Autonomous Sorting Loop**
 
-    - **Function**: Integrate automated object recognition with robot manipulation planning into a complete closed-loop system.
-    - **Mechanism**: The full "Show, Don't Tell" pipeline is deployed on the robot, including a multi-camera perception module, an automated dataset creation service, an online model training module, and a grasp planner driven by detection results. When a human demonstrates a new task, the system automatically triggers the data creation and model training workflow, then immediately switches to autonomous operation mode upon training completion. Real-time detection results are passed to the motion planner in the form of 6-DoF object poses, guiding the robot end-effector to perform precise grasping.
-    - **Design Motivation**: Validates the complete feasibility from concept to real-world deployment, addressing engineering challenges that pure vision-based approaches often fail to overcome.
-
-### Loss & Training
-
-The bespoke detector follows a standard object detection training paradigm: the classification branch uses cross-entropy loss $\mathcal{L}_{cls} = -\sum_i y_i \log(\hat{y}_i)$, and the bounding box regression branch uses a combination of $\ell_1$ loss and GIoU loss $\mathcal{L}_{box} = \lambda_1 \|\mathbf{b} - \hat{\mathbf{b}}\|_1 + \lambda_2 \mathcal{L}_{GIoU}$. A rapid fine-tuning strategy (on the order of minutes) ensures low latency from demonstration to deployment. Training data are entirely generated by the automated pipeline with no manual annotation. Data augmentation strategies (color jitter, random cropping, affine transformations) further diversify training samples.
+After a human demonstration, the system automatically processes the video: runs SODC, trains MOD, and **generates a plan skeleton**. ChatGPT-4o is used to parse the video into a sequence of pick/place actions, where "pick" targets use MOD IDs and "place" targets use semantic language names (e.g., "basket"). During execution, the robot uses the MOD to localize novel objects and an open-set VLM for containers that were not directly manipulated. This enables the robot to reproduce the sorting task in a new environment with different container placements.
 
 ## Key Experimental Results
 
-### Main Results: Object Detection and Task Completion Rate
+### Main Results
 
-| Method | Type | Novel Object Detection Accuracy | Instance Discrimination | Manual Prompting Required | End-to-End Task Completion Rate |
-|--------|------|---------------------------------|------------------------|--------------------------|----------------------------------|
-| Pretrained YOLO | Closed-set | Very low (OOD failure) | None | None | Low |
-| GroundingDINO | Open-set | Moderate | Weak (text-quality dependent) | High (per-object prompts) | Moderate |
-| OWL-ViT + CLIP | Open-set | Moderate–low | Weak | High (fine-grained prompts) | Moderate–low |
-| Few-shot Detector | Few-shot | Moderate | Moderate | Medium (manual support set annotation) | Moderate |
-| **Show, Don't Tell** | **Bespoke** | **Significantly best** | **Strong (instance-level)** | **Zero (fully automatic)** | **Highest** |
+| Method | Type | Novel Object Detection Accuracy | Instance Discriminative Power | Manual Prompting Requirement | End-to-end task completion rate |
+|------|------|---------------|-------------|-------------|-----------------|
+| Pre-trained YOLO | Closed-set | Extremely Low (OOD Failure) | None | None | Low |
+| GroundingDINO | Open-set | medium | Weak (Prompt dependent) | High (Per-object) | Medium |
+| OWL-ViT + CLIP | Open-set | Medium-Low | Weak | High (Detailed prompts) | Medium-Low |
+| Few-shot Detector | Few-shot | Medium | Medium | Medium (Manual support set) | Medium |
+| **Show, Don't Tell** | **Bespoke** | **Significantly Optimal** | **Strong (Instance-level)** | **Zero (Fully Auto)** | **Highest** |
 
-### Ablation Study: Contribution of Key Components
+### Ablation Study
 
-| Configuration | Change in Detection Performance | Notes |
-|---------------|---------------------------------|-------|
-| Full system | Baseline (best) | Auto-dataset + bespoke detector + multi-frame verification |
-| Remove multi-frame consistency verification | Notable drop | Increased annotation noise, lower training data quality |
-| Replace bespoke detector with large general model | Significant drop | General models insufficient for instance-level discrimination |
-| Reduce demonstration video length (50%) | Slight drop | System exhibits some robustness to data volume |
-| Single-frame object extraction only | Notable drop | Multi-view coverage is critical for detector generalization |
-| Remove data augmentation | Moderate drop | Affine transformations and color jitter are important for small-dataset training |
+| Configuration | Change in Detection Performance | Illustration |
+|------|-------------|------|
+| Full System | Baseline (Optimal) | Auto-dataset + Bespoke Detector + Multi-frame validation |
+| Remove multi-frame consistency | Obvious Decrease | Increased label noise, lower data quality |
+| Replace Bespoke with General VLM | Significant Decrease | General models lack instance-level discriminability |
+| Reduce demo length (50%) | Slight Decrease | System is somewhat robust to data volume |
+| Single-frame extraction only | Obvious Decrease | Multi-view coverage is critical for generalization |
+| Remove data augmentation | Moderate Decrease | Affine transforms/jitter are vital for small datasets |
 
 ### Key Findings
 
-- **"Show" significantly outperforms "Tell"**: The bespoke detector substantially surpasses all language-based open-set methods on novel object detection, with a particularly pronounced advantage in instance-level discrimination (distinguishing different instances of the same category).
-- **Automatically generated dataset quality is sufficient for training**: After multi-frame consistency verification, the quality of automatically extracted annotations is sufficient to train high-performance detectors.
-- **Rapid adaptation capability**: A single human demonstration (a few minutes of video) per novel object enables the system to complete the full workflow from data creation to detector deployment within minutes.
-- **Real-robot validation**: The integrated system is validated on real-world robotic manipulation tasks, and high detection accuracy directly translates to higher task success rates.
-- **Multi-view coverage is critical**: Ablation experiments show that multi-frame extraction and multi-view data are essential for the generalization capability of the final detector.
+- **"Show" significantly outperforms "Tell"**: Bespoke detectors vastly exceed color-based or language-based open-set methods, especially in distinguishing similar instances.
+- **Automatic dataset quality is sufficient**: Spatiotemporal consistency validation provides high-quality labels capable of training high-performance detectors.
+- **Rapid adaptability**: New objects require only a single human demonstration, with the entire pipeline from data creation to deployment completed in minutes.
+- **Real-world robot validation**: High detection accuracy directly translates to higher task success rates in manipulation.
+- **Multi-view coverage is key**: Ablation studies show that multi-frame extraction and multi-view data are vital for detector generalization.
 
 ## Highlights & Insights
 
-- **Paradigm innovation is highly inspiring**: The paradigm shift from "Tell" (language description) to "Show" (visual demonstration) addresses a neglected issue in the VLM era — language is not the optimal interface for all visual recognition tasks. In scenarios requiring precise instance-level identification, direct visual alignment may be a more natural path. This insight is transferable to domains such as industrial quality inspection and personalized recommendation.
-- **End-to-end engineering closure**: The work covers the complete pipeline from data collection, automatic annotation, and model training to robot deployment. This system-level engineering integration has high practical value and reproducibility.
-- **"Small and specialized" beats "large and general"**: In specific application scenarios, a rapidly trained bespoke detector may be more effective than a large general-purpose open-set detector, offering a valuable counterpoint to the current trend of pursuing universal visual models.
+- **Paradigm Innovation**: Shifting from "Tell" (language) to "Show" (visual) addresses a critical flaw in current VLMs—language is not the optimal interface for all visual tasks. Direct visual alignment is more natural for precise instance-level identification.
+- **End-to-End Engineering Loop**: Covering the complete flow from acquisition and automated labeling to training and deployment provides high practical value.
+- **"Specialized" over "General"**: In specific applications, a rapidly trained bespoke detector can be more effective than a massive general open-set model, offering a valuable counterpoint to current scaling trends.
 
 ## Limitations & Future Work
 
-- **Lack of cross-scenario knowledge transfer**: Each new task/object combination requires training a detector from scratch, with no reuse of features learned in prior scenarios. Introducing a meta-learning mechanism could enable faster convergence with fewer demonstrations.
-- **Dependence on demonstration video quality**: System performance is positively correlated with the quality of human demonstrations (lighting, occlusion, completeness of object display); more robust data extraction strategies may be needed in unstructured environments.
-- **Bottleneck for near-identical objects**: When multiple objects are nearly visually indistinguishable, the discriminability of purely visual approaches may be limited; auxiliary cues (spatial position, grasping order) could be introduced.
-- **Scalability**: The number of objects validated in the paper is small; scalability to large-scale scenarios involving dozens of objects (e.g., warehouse sorting) remains to be investigated.
+- **Lack of cross-scene knowledge transfer**: Every new task/object set requires retraining from scratch; meta-learning could accelerate convergence.
+- **Reliance on demo video quality**: Performance is sensitive to lighting, occlusions, and how thoroughly the human displays the object.
+- **Distinguishing near-identical objects**: Pure visual methods may struggle when instances are almost identical; spatial or sequence cues could be introduced.
+- **Scalability**: Further study is needed for large-scale warehouse scenarios involving dozens of objects.
 
 ## Related Work & Insights
 
-- **vs. GroundingDINO / OWL-ViT**: These open-vocabulary detection methods rely on text prompts, whereas this paper entirely bypasses language. Open-set methods are more general at the category level, but "Show, Don't Tell" is more precise at the instance level.
-- **vs. Few-shot Object Detection (FSOD)**: FSOD typically follows a meta-learning paradigm, requiring manually annotated support sets and relatively heavy models. This paper automatically constructs training sets from video and uses a lightweight bespoke model.
-- **vs. Learning from Demonstration (LfD)**: LfD traditionally focuses on learning action policies from demonstrations. This paper innovatively extends "learning from demonstration" to the perception level, forming a complete perception-execution closed loop.
+- **vs GroundingDINO / OWL-ViT**: These methods rely on text; Ours bypasses language. While open-set is better for category-level tasks, Ours is superior for instance-level precision.
+- **vs Few-shot Object Detection (FSOD)**: FSOD requires manual support sets; Ours automates this via video.
+- **vs Learning from Demonstration (LfD)**: LfD usually targets action policies; Ours extends the paradigm to the perception layer.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ A paradigm-level innovation — using visual demonstration instead of language description to teach a detector to recognize novel objects; the idea is concise and compelling.
-- Experimental Thoroughness: ⭐⭐⭐ Includes real-robot validation and ablation analysis, though the full paper was not completely accessible and quantitative comparison details remain to be confirmed.
-- Writing Quality: ⭐⭐⭐⭐ The "Show, Don't Tell" naming is precise and evocative, with a clear and coherent narrative.
-- Value: ⭐⭐⭐⭐ Provides a practical and engineering-feasible solution for object recognition in robotic scenarios.
+- Novelty: ⭐⭐⭐⭐
+- Experimental Thoroughness: ⭐⭐⭐
+- Writing Quality: ⭐⭐⭐⭐
+- Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
 - [\[CVPR 2026\] Detecting Unknown Objects via Energy-Based Separation for Open World Object Detection](detecting_unknown_objects_via_energy-based_separation.md)
+- [\[CVPR 2026\] ElasticFormer: Detecting Objects in HRW Shots via Elastic Computing Vision Transformer](elasticformer_detecting_objects_in_hrw_shots_via_elastic_computing_vision_transf.md)
+- [\[CVPR 2026\] Toward Generalizable Whole Brain Representations with High-Resolution Light-Sheet Data](toward_generalizable_whole_brain_representations_with_high-resolution_light-shee.md)
 - [\[CVPR 2026\] PHAC: Promptable Human Amodal Completion](phac_promptable_human_amodal_completion.md)
 - [\[CVPR 2026\] NoOVD: Novel Category Discovery and Embedding for Open-Vocabulary Object Detection](noovd_novel_category_discovery_and_embedding_for_open-vocabulary_object_detectio.md)
-- [\[CVPR 2026\] Novel Anomaly Detection Scenarios and Evaluation Metrics to Address the Ambiguity in the Definition of Normal Samples](novel_anomaly_detection_scenarios_and_evaluation_metrics_to_address_the_ambiguit.md)
-- [\[CVPR 2026\] AR²-4FV: Anchored Referring and Re-identification for Long-Term Grounding in Fixed-View Videos](ar2-4fv_anchored_referring_and_re-identification_for_long-term_grounding_in_fixe.md)
 
 </div>
 

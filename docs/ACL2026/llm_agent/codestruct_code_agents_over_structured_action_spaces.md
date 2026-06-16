@@ -2,117 +2,125 @@
 title: >-
   [Paper Note] CodeStruct: Code Agents over Structured Action Spaces
 description: >-
-  [ACL 2026][LLM Agent][Code Agent] This paper proposes the CodeStruct framework, which redefines code repositories as AST-based structured action spaces. By allowing LLM code agents to perform read and edit operations thr…
+  [ACL 2026][LLM Agent][SWE-Bench] This paper proposes the CodeStruct framework, which redefines code repositories as AST-based structured action spaces. It enables LLM code agents to perform read and edit operations through named program entities (rather than text snippets), achieving a $1.2-5.0\%$ accuracy improvement on SWE-Bench Verified while reduc
 tags:
-  - "ACL 2026"
-  - "LLM Agent"
-  - "Code Agent"
-  - "AST-structured operations"
-  - "code editing"
-  - "SWE-Bench"
-  - "action space"
+  - ACL 2026
+  - LLM Agent
+  - SWE-Bench
 date: 2026-05-08
-content_hash: e249ee1d717d26cd
+content_hash: f4c81502903262b0
 ---
-
 # CodeStruct: Code Agents over Structured Action Spaces
 
 **Conference**: ACL 2026  
 **arXiv**: [2604.05407](https://arxiv.org/abs/2604.05407)  
 **Code**: [https://github.com/amazon-science/CodeStruct](https://github.com/amazon-science/CodeStruct)  
 **Area**: LLM Agent / Code Intelligence  
-**Keywords**: Code Agent, AST-structured operations, code editing, SWE-Bench, action space
+**Keywords**: Code Agent, AST structured operations, Code editing, SWE-Bench, Action space
 
 ## TL;DR
-This paper proposes the CodeStruct framework, which redefines code repositories as AST-based structured action spaces. By allowing LLM code agents to perform read and edit operations through named program entities rather than text fragments, the framework improves accuracy by 1.2-5.0% on SWE-Bench Verified and reduces token consumption by 12-38%.
+This paper proposes the CodeStruct framework, which redefines code repositories as AST-based structured action spaces. It enables LLM code agents to perform read and edit operations through named program entities (rather than text snippets), achieving a $1.2-5.0\%$ accuracy improvement on SWE-Bench Verified while reducing token consumption by $12-38\%$.
 
 ## Background & Motivation
 
-**Background**: LLM code agents (such as SWE-Agent) have demonstrated the capability to handle complex repository-level software engineering tasks. Current mainstream methods interact with code through file reading and text editing tools, with some systems utilizing repository maps or symbol indexes to improve navigation.
+**Background**: LLM code agents (such as SWE-Agent) are already capable of handling complex repository-level software engineering tasks. Current mainstream methods interact with code via file reading and text editing tools, with some systems supplemented by repository maps or symbol indices to improve navigation.
 
-**Limitations of Prior Work**: Existing agents treat code as flat text rather than structured artifacts, resulting in a fundamental abstraction mismatch. When reading code, they either load entire files (introducing irrelevant context) or slice by line numbers (causing function truncation). When editing code, they rely on string pattern matching; formatting drift leads to "no match found" errors, while repetitive patterns cause "multiple matches" errors.
+**Limitations of Prior Work**: Existing agents treat code as flat text rather than a structured product, leading to a fundamental abstraction mismatch: when reading code, they either load entire files (introducing irrelevant context) or truncate by line numbers (leading to function cutoff); when editing code, they rely on string matching and replacement, where formatting drifts cause "no match" errors and repetitive patterns lead to "multiple match" errors.
 
-**Key Challenge**: Source code naturally possesses a precise syntactic structure—functions, classes, and methods are named program entities—yet LLM agents are forced to manipulate these structured objects indirectly through line numbers and string patterns. Current enhancement schemes only improve "where to look" without changing the fundamental "how to interact."
+**Key Challenge**: Source code naturally possesses a precise grammatical structure—functions, classes, and methods are named program entities—yet LLM agents are forced to operate on these structured objects indirectly through line numbers and string patterns. Enhancement schemes only improve "where to look" without changing the fundamental "how to interact."
 
 **Goal**: To design an AST-based structured action space that allows agents to directly read and modify code via named semantic entities.
 
-**Key Insight**: Human developers reference and modify code through function and class names rather than line numbers. CodeStruct exposes this natural workflow directly to LLM agents.
+**Key Insight**: Human developers refer to and modify code using function names and class names rather than line numbers. CodeStruct exposes this natural working style directly to LLM agents.
 
-**Core Idea**: The code repository is parsed into an AST, providing two structure-aware primitive operations: `readCode` and `editCode`. Agents locate and manipulate program entities using selectors such as `file.py::ClassName::method`.
+**Core Idea**: Parse the code repository into an AST and provide two structure-aware primitive operations, `readCode` and `editCode`. Agents locate and manipulate program entities through selectors like `file.py::ClassName::method`.
 
 ## Method
 
 ### Overall Architecture
-CodeStruct represents the code repository as an AST-driven structured environment. The agent's action space consists of two primitives: `readCode` (structure-aware code retrieval) and `editCode` (structure-aware code modification). Each operation identifies target AST nodes via a selector, which supports fuzzy matching. Exposed through the Model Context Protocol (MCP) as a standard tool interface, it can be integrated plug-and-play into any agent framework.
+CodeStruct re-represents the code repository from flat text as an AST-driven structured environment, allowing agents to read and write directly in units of named program entities instead of indirectly via line numbers and string patterns. The agent's action space consists of two primitives: structure-aware code retrieval (`readCode`) and structure-aware code modification (`editCode`). Both use selectors in the form of `file.py::ClassName::method` to locate target AST nodes and support fuzzy matching. The entire interface is exposed as standard tools via the MCP protocol, enabling plug-and-play integration with any agent framework without modifying the agent's planning or execution logic.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Code Repository → AST Parsing<br/>(Exposed as standard tools via MCP)"] --> B["readCode<br/>Selector locates syntax units"]
+    B -->|Directory / No Selector| C["Return file list / Structural summary"]
+    B -->|With Selector σ| D["Return complete entity implementation code"]
+    C --> E["editCode<br/>Edit on AST nodes"]
+    D --> E
+    E -->|insert / replace / removal + σ| F["Locate node → Apply transformation → Syntax validation"]
+    F -->|Syntax Error| G["Reject current edit"]
+    F -->|Syntax Valid| H["Write back to obtain new AST"]
+    H --> I["Formalization of AST action space<br/>Multi-step editing = State transition sequence"]
+    I -->|Task incomplete| B
+    I -->|Task complete| J["Output patch"]
+```
 
 ### Key Designs
 
-1.  **readCode: Structure-aware Code Retrieval**:
-    - **Function**: Provides code navigation from coarse to fine—directory browsing, file summaries, and entity-level retrieval modes.
-    - **Mechanism**: If the input is a directory, it returns a file list. If the input is a file without a selector, it returns the full text for small files or a structural summary (top-level entity signatures and scope names) for large files. When a selector $\sigma$ is provided, it locates the matching entity node in the AST and returns the complete implementation. Selectors support both unscoped (e.g., `load`) and scoped (e.g., `User.load`) entities using deterministic name-based fuzzy matching.
-    - **Design Motivation**: Traditional line-number reading either introduces excessive irrelevant context or truncates functions. Selector-based retrieval ensures the return of complete syntactic units, avoiding fragile dependencies on line numbers.
+**1. readCode: Reading complete syntax units with selectors instead of line number truncation**
 
-2.  **editCode: Structure-aware Code Modification**:
-    - **Function**: Executes insertion, replacement, or removal operations on named AST nodes while automatically maintaining formatting and validating syntactic validity.
-    - **Mechanism**: Given an operation type $\omega \in \{\text{insert}, \text{replace}, \text{removal}\}$ and a selector $\sigma$, the tool locates the target AST node, calculates local indentation context, applies the transformation, and verifies the modified code via AST parsing for syntax errors—rejecting the edit if errors occur. In replacement operations, agents only need to provide the signature and new content, without redundantly re-generating unchanged code.
-    - **Design Motivation**: The primary issues with text-level editing are the fragility of string matching and redundant generation. `editCode` decouples semantic intent from textual implementation—the agent specifies "what to change," and the tool handles "how to change."
+Traditional file reading faces a dilemma in "how much to read"—loading the entire file introduces excessive irrelevant context, while truncating by line numbers often cuts functions in half. `readCode` implements three-tier navigation from coarse to fine: when the input is a directory, it returns a file list; when the input is a file without a selector, it returns the full text for small files and a structural summary (top-level entity signatures and scope names) for large files; once a selector $\sigma$ is provided, it locates the matching entity node in the AST and returns its complete implementation code. Selectors support both scopeless (e.g., `load`) and scoped (e.g., `User.load`) forms, resolved via deterministic name-based fuzzy matching. Since the returned content is always a complete syntax unit, the agent is neither submerged in irrelevant code nor reliant on fragile line numbers.
 
-3.  **Formalization of AST Action Space**:
-    - **Function**: Models multi-step code editing processes as structured action trajectories over AST states, supporting fine-grained behavior analysis.
-    - **Mechanism**: Each `editCode` operation transforms the current AST into a new syntactically valid AST, forming an explicit, analyzable sequence of state transitions.
-    - **Design Motivation**: Structured state transitions make agent behavior traceable and debuggable, providing a superior analytical foundation for understanding and improving code agents.
+**2. editCode: Editing on AST nodes, separating semantic intent from textual implementation**
+
+The root problem of text-level editing is fragile string matching—formatting shifts lead to "no match," repetitive patterns lead to "multiple matches," and agents often must re-generate unchanged code. Given an operation type $\omega \in \{\text{insert}, \text{replace}, \text{removal}\}$ and a selector $\sigma$, `editCode` first locates the target AST node, then calculates its local indentation context, applies the transformation, and validates if the modified code is syntactically valid via AST parsing before writing back—rejecting the edit if a syntax error is present. In replacement operations, the agent only provides the signature and new content, without redundantly restating unchanged parts. Consequently, the agent is responsible for specifying "what to change" while the tool handles "how to change," eliminating string matching fragility and saving tokens on redundant generation.
+
+**3. Formalization of AST Action Space: Modeling multi-step editing as analyzable state transition sequences**
+
+CodeStruct further abstracts the entire editing process into structured action trajectories over AST states: each `editCode` transforms the current AST into a new, syntactically valid AST. Multi-step editing thus forms an explicit, traceable sequence of state transitions. Compared to text diffs, which are difficult to parse as modification records, this structured representation makes agent behavior traceable and debuggable, providing a more solid foundation for post-hoc analysis and improvement of code agents.
 
 ### Loss & Training
-CodeStruct does not involve model training; it serves as a tool interface at inference time. It is exposed as a standard tool via the MCP protocol and can be directly integrated with any LLM.
+CodeStruct does not involve model training—it is an inference-time tool interface. Exposed as standard tools through the MCP protocol, it can be directly integrated with any LLM.
 
 ## Key Experimental Results
 
 ### Main Results (SWE-Bench Verified, 500 tasks)
 
 | Model | Text Pass@1 | CodeStruct Pass@1 | Gain | Token Reduction |
-| :--- | :--- | :--- | :--- | :--- |
+|------|------------|-------------------|------|----------|
 | GPT-5-nano | 17.2% | 38.0% | +20.8pp | Increase |
 | Claude-3.5-Sonnet | 49.0% | 50.2% | +1.2% | 12% |
 | GPT-4o | 33.2% | 38.2% | +5.0% | 38% |
 | Claude-3.7-Sonnet | 57.4% | 59.4% | +2.0% | 24% |
 
-On CodeAssistBench (135 multi-turn programming tasks), all models improved by 0.8-4.4% with cost reductions up to 33%.
+CodeAssistBench (135 multi-turn programming tasks): All models showed a $0.8-4.4\%$ Improvement, with costs reduced by up to $33\%$.
 
 ### Ablation Study
 
-| Analysis Dimension | Findings |
-| :--- | :--- |
+| Analysis Dimension | Finding |
+|---------|------|
 | Empty Patch Rate (GPT-5-nano) | Text: 46.6% → CodeStruct: 7.2% (84.5% reduction) |
-| Edit Failure Types | "No match" and "multiple matches" errors significantly decreased |
-| Token Consumption per Step | Retrieval operations saw more significant reductions (only retrieving target entities) |
+| Edit Failure Types | "No match" and "multiple match" errors significantly reduced |
+| Token Consumption per Step | Retrieval operations saw more significant reduction (retrieving only target entities) |
 
 ### Key Findings
-- When text interface fragility (rather than lack of reasoning capability) is the primary bottleneck for code agents, CodeStruct yields the greatest benefits.
-- The reduction of GPT-5-nano's empty patch rate from 46.6% to 7.2% is the strongest evidence of its effectiveness.
-- For stronger models (e.g., Claude-3.7-Sonnet), it still provides stable but smaller improvements while significantly reducing token consumption.
-- Token consumption for GPT-5-nano actually increased with CodeStruct because the structured operations allowed it to continue exploration in cases that would previously have terminated due to failure.
+- CodeStruct yields the highest gains when text interface fragility (rather than insufficient reasoning capability) is the primary bottleneck for code agents.
+- The reduction of GPT-5-nano's empty patch rate from $46.6\%$ to $7.2\%$ is the strongest evidence.
+- For stronger models (e.g., Claude-3.7-Sonnet), it still provides stable but smaller gains while significantly reducing token consumption.
+- Token consumption for GPT-5-nano increased with CodeStruct because structured operations enabled it to continue exploration that previously terminated due to failure.
 
 ## Highlights & Insights
-- **Abstraction Alignment Principle**: The abstraction level of the tool interface should align with the abstraction level of the manipulated object. Code is structured; therefore, tools manipulating code should also be structured. This principle can be generalized to agent design in other domains.
-- **Tool Design Superiority over Model Capability**: The 20.8pp improvement for GPT-5-nano demonstrates that in certain scenarios, improving tool design is more effective than switching to a larger model.
+- **Abstraction Alignment Principle**: The abstraction level of the tool interface should align with the abstraction level of the manipulated object. Code is structured, thus tools for manipulating code should also be structured. This principle can be generalized to agent design in other domains.
+- **Tool Design over Model Capability**: The $20.8\text{pp}$ gain for GPT-5-nano demonstrates that in certain scenarios, improving tool design is more effective than switching to a larger model.
 - **Plug-and-play Integration via MCP**: Exposure through a standard tool protocol allows integration without modifying the agent's planning or execution logic, significantly lowering the barrier to adoption.
 
 ## Limitations & Future Work
-- Currently only supports AST parsing for Python and has not been extended to other programming languages.
-- Fuzzy matching may produce ambiguities in very large repositories.
-- Syntax validation only checks correctness at the AST level and does not guarantee semantic correctness.
-- Integration with agent training has not been explored; using structured tools during training might yield even better results.
+- Currently only supports AST parsing for Python, not yet extended to other programming languages.
+- Fuzzy matching may produce ambiguities in large repositories.
+- Syntax validation only checks AST-level correctness and does not guarantee semantic correctness.
+- Integration with agent training remains unexplored—training with structured tools from the start may yield better results.
 
 ## Related Work & Insights
 - **vs SWE-Agent**: SWE-Agent provides file maps and text editing tools; CodeStruct upgrades low-level operations from the text level to the AST level.
-- **vs GumTree**: GumTree calculates AST edit scripts for offline comparison, whereas CodeStruct exposes AST operations as real-time decision primitives for the agent.
-- **vs Code2Vec**: Code2Vec utilizes ASTs for code representation learning (single prediction); CodeStruct utilizes ASTs for the action space of multi-turn interactions.
+- **vs GumTree**: GumTree computes AST edit scripts for offline comparison; CodeStruct exposes AST operations as real-time decision primitives for agents.
+- **vs Code2Vec**: Code2Vec uses ASTs for code representation learning (single prediction); CodeStruct uses ASTs for the action space in multi-turn interactions.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Using AST as an agent action space is a simple yet far-reaching design.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Includes 6 LLMs, 2 benchmarks, and detailed failure analysis.
+- Novelty: ⭐⭐⭐⭐ Utilizing ASTs as an agent action space is a simple yet far-reaching design.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 6 LLMs, 2 benchmarks, and detailed failure analysis.
 - Writing Quality: ⭐⭐⭐⭐⭐ Clear problem definition, precise methodology description, and in-depth experimental analysis.
-- Value: ⭐⭐⭐⭐⭐ High practicality—zero training cost, plug-and-play, and significant improvements.
+- Value: ⭐⭐⭐⭐⭐ Extremely high utility—zero training cost, plug-and-play, and significant improvements.
 
 <!-- RELATED:START -->
 
@@ -120,8 +128,8 @@ On CodeAssistBench (135 multi-turn programming tasks), all models improved by 0.
 
 ## Related Papers
 
-- [\[ACL 2026\] PersonaAgent: Bridging Memory and Action for Personalized LLM Agents](personaagent_bridging_memory_and_action_for_personalized_llm_agents.md)
 - [\[ACL 2026\] StructMem: Structured Memory for Long-Horizon Behavior in LLMs](structmem_structured_memory_for_long-horizon_behavior_in_llms.md)
+- [\[ACL 2026\] PersonaAgent: Bridging Memory and Action for Personalized LLM Agents](personaagent_bridging_memory_and_action_for_personalized_llm_agents.md)
 - [\[AAAI 2026\] Reflection-Driven Control for Trustworthy Code Agents](../../AAAI2026/llm_agent/reflection-driven_control_for_trustworthy_code_agents.md)
 - [\[ACL 2026\] Context-Value-Action Architecture for Value-Driven Large Language Model Agents](context-value-action_architecture_for_value-driven_large_language_model_agents.md)
 - [\[ACL 2026\] Don't Act Blindly: Robust GUI Automation via Action-Effect Verification and Self-Correction](don39t_act_blindly_robust_gui_automation_via_action-effect_verification_and_self.md)

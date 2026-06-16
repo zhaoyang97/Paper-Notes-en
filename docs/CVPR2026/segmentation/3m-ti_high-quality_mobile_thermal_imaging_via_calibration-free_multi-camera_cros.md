@@ -2,83 +2,86 @@
 title: >-
   [Paper Note] 3M-TI: High-Quality Mobile Thermal Imaging via Calibration-free Multi-Camera Cross-Modal Diffusion
 description: >-
-  [CVPR 2026][Segmentation][Thermal imaging super-resolution] This paper proposes 3M-TI, a **calibration-free** multi-camera cross-modal diffusion framework that performs implicit alignment and fusion of uncalibrated RGB–t…
+  [CVPR 2026][Segmentation][Paper Note] Ours proposes 3M-TI, a **calibration-free** multi-camera cross-modal diffusion framework. It automatically aligns and fuses uncalibrated RGB-thermal image pairs in the VAE latent space via Cross-modal Self-Attention (CSM). Combined with a misalignment augmentation strategy, it achieves SOTA on mobile thermal super-reso
 tags:
-  - "CVPR 2026"
-  - "Segmentation"
-  - "Thermal imaging super-resolution"
-  - "cross-modal diffusion"
-  - "calibration-free fusion"
-  - "RGB guidance"
-  - "mobile thermal imaging"
+  - CVPR 2026
+  - Segmentation
 date: 2026-05-08
-content_hash: 5d3743a78d2a42a7
+content_hash: 910dc19664c749a7
 ---
-
 # 3M-TI: High-Quality Mobile Thermal Imaging via Calibration-free Multi-Camera Cross-Modal Diffusion
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2511.19117](https://arxiv.org/abs/2511.19117)  
 **Code**: [GitHub](https://github.com/work-submit/3MTI)  
-**Area**: Image Segmentation
-**Keywords**: Thermal imaging super-resolution, cross-modal diffusion, calibration-free fusion, RGB guidance, mobile thermal imaging
+**Area**: Image Segmentation  
+**Keywords**: Thermal image super-resolution, cross-modal diffusion, calibration-free fusion, RGB guidance, mobile thermal imaging
 
 ## TL;DR
 
-This paper proposes 3M-TI, a **calibration-free** multi-camera cross-modal diffusion framework that performs implicit alignment and fusion of uncalibrated RGB–thermal infrared image pairs via a Cross-modal Self-attention Module (CSM) in the VAE latent space. Combined with a misalignment augmentation strategy, the method achieves state-of-the-art performance on mobile thermal imaging super-resolution and significantly improves downstream object detection and semantic segmentation.
+Ours proposes 3M-TI, a **calibration-free** multi-camera cross-modal diffusion framework. It automatically aligns and fuses uncalibrated RGB-thermal image pairs in the VAE latent space via Cross-modal Self-Attention (CSM). Combined with a misalignment augmentation strategy, it achieves SOTA on mobile thermal super-resolution tasks and significantly improves downstream object detection and semantic segmentation performance.
 
 ## Background & Motivation
 
-**Hardware bottleneck in mobile thermal imaging**: Miniaturized thermal sensors on mobile platforms suffer from reduced apertures and constrained pixel sizes, yielding blurry, information-deficient outputs (typically 96×96 resolution).
+**Hardware bottlenecks of mobile thermal imaging**: Miniaturization of thermal sensors on mobile platforms leads to reduced apertures and limited pixel sizes, resulting in blurry outputs with insufficient information (typical resolution is only $96 \times 96$).
 
-**Limitations of Prior Work — single-image SR**: A single thermal image lacks sufficient high-frequency information to recover fine structures, especially at large upscaling factors.
+**Insufficient information in single-image SR**: A single thermal image lacks sufficient high-frequency information to recover fine structures, especially at large magnification factors.
 
-**Limitations of Prior Work — RGB-guided methods require calibration**: Existing RGB-guided thermal SR methods rely on precise pixel-level cross-camera calibration, which is cumbersome and non-robust in practical deployment.
+**Calibration dependence of RGB-guided methods**: Existing RGB-guided thermal SR methods require precise pixel-level cross-camera calibration. In practical deployment, the calibration process is cumbersome and lacks robustness.
 
-**Large cross-modal domain gap**: RGB and thermal infrared imaging operate on fundamentally different physical principles; naively merging features tends to introduce unrealistic texture artifacts.
+**Large cross-modal domain gap**: The imaging principles of RGB and thermal infrared are fundamentally different. Directly merging features easily introduces unrealistic texture details.
 
-**Limited thermal infrared datasets**: Compared to the RGB domain, thermal infrared datasets are small in scale and lack scene diversity, constraining network training and generalization.
+**Limited scale of thermal datasets**: Compared to the RGB domain, thermal datasets are smaller with less scene diversity, limiting network training and generalization.
 
-**Spatiotemporal misalignment in practice**: Multi-camera systems inevitably suffer from parallax and temporal desynchronization, to which existing methods lack robustness.
+**Spatiotemporal misalignment in real scenarios**: Multi-camera systems inevitably face disparity and unsynchronized timing in practical use; existing methods lack robustness to these issues.
 
 ## Method
 
 ### Overall Architecture
 
-3M-TI is built upon the single-step diffusion model SD-Turbo. The inputs are a low-resolution thermal image (64×64) and an uncalibrated high-resolution RGB reference image (512×512). The pipeline proceeds as follows: (1) a frozen VAE encoder maps both modalities into the latent space; (2) the CSM replaces the original self-attention layers in the UNet Transformer blocks to enable cross-modal alignment and fusion; (3) misalignment augmentation is applied to RGB images during training to improve robustness; (4) zero-initialized skip connections are added to enhance structural consistency; (5) RAM generates text prompts from the RGB image to provide semantic guidance; (6) LoRA fine-tunes the UNet (rank=16) and VAE decoder (rank=4).
+3M-TI aims to solve a practical problem: mobile thermal cameras produce blurry images (typically $96 \times 96$), and a single image lacks enough high-frequency info for detail recovery. While using high-definition RGB as guidance is a solution, it typically requires pixel-level calibration. Ours offloads "alignment" to the network itself, with the entire pipeline running in the latent space. Inputs consist of a low-resolution (LR) thermal image ($64 \times 64$) and an **uncalibrated** high-resolution (HR) RGB reference image ($512 \times 512$). Both are encoded into the latent space using a frozen VAE encoder. In the UNet of SD-Turbo, the original self-attention layers are replaced with Cross-modal Self-Attention (CSM), allowing RGB and thermal tokens to align and fuse within the same sequence. During training, misalignment augmentation is applied to the RGB image to force the model to adapt to real-world disparity and desynchronization. Additionally, a zero-initialized skip connection passes structural information from the encoder directly to the decoder, while a RAM module extracts text prompts from the RGB image for semantic guidance. Finally, only the UNet (rank=16) and VAE decoder (rank=4) are fine-tuned via LoRA, generating the image in a single diffusion step.
 
-### Key Design 1: Cross-modal Self-attention Module (CSM)
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["LR Thermal Image<br/>64×64"] --> ENC["Frozen VAE Encoder<br/>Dual-modal Latent Encoding"]
+    B["Uncalibrated RGB Reference<br/>512×512"] --> AUG["Misalignment Augmentation<br/>Trans/Scale/Rot/Persp (Train only)"]
+    AUG --> ENC
+    B --> RAM["RAM Text Prompts<br/>Semantic Guidance"]
+    subgraph DIFF["Latent Single-step Diffusion + Skip Connection"]
+        direction TB
+        ENC --> CSM["Cross-modal Self-Attention (CSM)<br/>Replaces SD-Turbo UNet Self-Attn<br/>Joint RGB+Thermal Token Sequence"]
+        CSM --> DEC["VAE Decoder<br/>Geometry Preservation"]
+        ENC -.->|Zero-initialized skip| DEC
+    end
+    RAM --> CSM
+    DEC --> OUT["HR Thermal Image<br/>512×512"]
+```
 
-- **Function**: Achieves implicit alignment and fusion of RGB and thermal infrared within UNet Transformer blocks.
-- **Mechanism**: The latent tokens of both modalities are concatenated into a joint sequence $\{z_{RGB}, z_{th}\} \in \mathbb{R}^{B \times (M \times H \times W) \times C}$, allowing self-attention to simultaneously model intra-modal (thermal–thermal) and inter-modal (RGB–thermal) dependencies without additional parameters.
-- **Design Motivation**: Standard cross-attention captures only inter-modal information while ignoring intra-modal spatial context. CSM models both relationships jointly via self-attention on the concatenated sequence. Compared to static feature concatenation followed by a fully connected projection, CSM is content-adaptive. The design is inspired by video and multi-view diffusion models.
+### Key Designs
 
-### Key Design 2: Misalignment Augmentation
+**1. Cross-modal Self-Attention (CSM): Calibration-free latent alignment**
 
-- **Function**: Applies controllable spatial transformations (translation, scaling, rotation, perspective distortion) to RGB images during training.
-- **Mechanism**: Simulates geometric offsets caused by parallax and temporal desynchronization in real multi-camera systems without physical simulation.
-- **Design Motivation**: Existing RGB–thermal datasets are strictly pixel-aligned, causing models to overfit specific calibration configurations. Injecting synthetic misalignment forces CSM to learn robust cross-modal correspondences under uncalibrated conditions, bridging the gap between training data and real deployment.
+Traditional RGB-guided thermal SR requires precise pixel-level calibration, which is brittle. The core insight of 3M-TI is treating alignment as an implicit operation within attention. Latent tokens of RGB and thermal images are concatenated into a joint sequence $\{z_{RGB}, z_{th}\} \in \mathbb{R}^{B \times (M \times H \times W) \times C}$. Self-attention simultaneously models intra-modal (thermal-thermal) dependencies for spatial context and inter-modal (RGB-thermal) dependencies for structure borrowing. Compared to standard Cross-Attention, CSM models both relationships; unlike static projections (Concat + FC), it is content-adaptive, with attention weights dynamically determining what to borrow. This approach is inspired by joint self-attention in video/multi-view diffusion models.
 
-### Key Design 3: Latent-Space Diffusion and Skip Connections
+**2. Misalignment Augmentation: Forcing alignment learning via geometric perturbations**
 
-- **Function**: Leverages SD-Turbo's single-step diffusion in the latent space to generate high-fidelity thermal images, with zero-initialized skip connections propagating encoder feature maps to the decoder.
-- **Mechanism**: The generative prior of the diffusion model compensates for the scarcity of thermal infrared data by synthesizing realistic high-frequency details; skip connections maintain geometric structural consistency.
-- **Design Motivation**: Pure CNN/Transformer methods produce over-smoothed results under severe degradation, while diffusion models can generate high-frequency details but may introduce geometric distortions. Skip connections effectively mitigate this issue.
+Existing RGB-thermal datasets are mostly pixel-aligned. Models trained on them overfit to specific calibrations and fail on real devices. 3M-TI applies controlled translation, scaling, rotation, and perspective distortion to RGB references during training. This simulates geometric offsets caused by disparity and timing issues. CSM is thus forced to learn cross-modal correspondences under the premise that "the two images are naturally misaligned." This bridges the gap between training distributions and real-world deployment. Removing this during ablation dropped MUSIQ from 36.66 to 34.94.
 
-## Loss & Training
+**3. Latent Single-step Diffusion + Skip Connection: Recovering details without distorting geometry**
 
-- **Loss function**: $\mathcal{L} = \mathcal{L}_2 + \lambda \cdot \mathcal{L}_{\text{LPIPS}}$, where $\lambda = 1$, combining pixel-level L2 loss and perceptual loss LPIPS.
-- **Optimizer**: Adam, learning rate $2 \times 10^{-5}$, batch size = 4.
-- **Training time**: Approximately 4 hours (8,000 iterations) on a single A800 GPU (80 GB).
-- **LoRA configuration**: UNet rank=16, VAE decoder rank=4.
-- **Training data**: 10,922 RGB–thermal image pairs from four datasets: IRVI, LLVIP, M3FD, and PBVS 2025.
+Due to scarce thermal data, pure CNN/Transformer models often output over-smoothed results under heavy degradation. Diffusion priors synthesize realistic high-frequency details. 3M-TI uses SD-Turbo for single-step latent diffusion to fill this gap. To prevent generative priors from drifting (e.g., distorting circular wheels), a zero-initialized skip connection transfers feature maps from the VAE encoder to the decoder to lock in structural consistency. Diffusion "grows" the details, while the skip connection "frames" the shapes. Ablations show PSNR drops from 30.09 to 29.86 without the skip connection.
+
+### Loss & Training
+
+The training objective includes pixel-level L2 loss and perceptual loss (LPIPS): $\mathcal{L} = \mathcal{L}_2 + \lambda \cdot \mathcal{L}_{\text{LPIPS}}$, where $\lambda = 1$. It uses the Adam optimizer with a learning rate of $2 \times 10^{-5}$, batch size of 4, and runs for 8,000 iterations (approx. 4 hours) on a single A800 (80GB). Fine-tuning is limited to LoRA (UNet rank=16, VAE decoder rank=4). The training set comprises 10,922 RGB-thermal pairs from IRVI, LLVIP, M3FD, and PBVS 2025 datasets.
 
 ## Key Experimental Results
 
-### Table 1: Quantitative Comparison on Public Datasets
+**Main Results: Quantitative Comparison on Public Datasets**
 
 | Method | PSNR↑ | SSIM↑ | LPIPS↓ | MANIQA↑ | MUSIQ↑ |
-|--------|-------|-------|--------|---------|--------|
+|------|-------|-------|--------|---------|--------|
 | CoReFusion | 30.11 | 0.8588 | 0.3214 | 0.2771 | 28.35 |
 | CoRPLE | 30.47 | 0.8642 | 0.3206 | 0.2833 | 30.46 |
 | SwinFuSR | 29.85 | 0.8549 | 0.3085 | 0.2740 | 29.86 |
@@ -87,57 +90,57 @@ This paper proposes 3M-TI, a **calibration-free** multi-camera cross-modal diffu
 | DifIISR | 27.48 | 0.7905 | 0.3484 | 0.4214 | 36.74 |
 | **3M-TI (Ours)** | **30.09** | **0.8610** | **0.1787** | **0.4443** | **36.66** |
 
-3M-TI achieves the best perceptual metrics (LPIPS, MANIQA, MUSIQ) while outperforming other diffusion-based methods on fidelity metrics (PSNR, SSIM).
+3M-TI achieves the best performance across all perceptual metrics (LPIPS, MANIQA, MUSIQ) while outperforming other diffusion-based methods in fidelity metrics (PSNR, SSIM).
 
-### Table 2: Downstream Object Detection Performance
+**Downstream Object Detection Performance Comparison**
 
 | Method | Precision↑ | Recall↑ | F1↑ | IoU↑ |
-|--------|-----------|---------|-----|------|
+|------|-----------|---------|-----|------|
 | SwinPaste | 0.1800 | 0.2109 | 0.1765 | 0.1941 |
 | SeeSR | 0.3832 | 0.4637 | 0.3849 | 0.3022 |
 | **3M-TI** | **0.4565** | **0.5455** | **0.4724** | **0.3427** |
 | Reference RGB | 0.4322 | 0.5708 | 0.4643 | 0.3359 |
 | GT Thermal | 0.4582 | 0.5793 | 0.4887 | 0.3494 |
 
-3M-TI's detection performance slightly surpasses the RGB reference and approaches GT thermal image quality.
+The detection performance of 3M-TI slightly exceeds the RGB reference and approaches the level of GT thermal images.
 
-### Ablation Study
+**Ablation Study Key Findings**
 
-- Removing the RGB reference: reconstruction becomes blurry; LPIPS degrades from 0.1787 to 0.2106.
-- Removing misalignment augmentation: MUSIQ drops from 36.66 to 34.94 with noticeable high-frequency detail degradation.
-- Removing skip connections: structural fidelity decreases (PSNR from 30.09 to 29.86) with geometric distortions in objects such as circular wheels.
-- CSM outperforms standard cross-attention (LPIPS 0.1787 vs. 0.1953) and feature concatenation (0.1787 vs. 0.2164).
+- **Remove RGB Reference**: Reconstruction becomes blurry; LPIPS worsens from 0.1787 to 0.2106.
+- **Remove Misalignment Augmentation**: MUSIQ drops from 36.66 to 34.94; high-frequency details degrade significantly.
+- **Remove Skip Connection**: Structural fidelity drops (PSNR from 30.09 to 29.86), and geometric shapes like wheels suffer distortion.
+- **CSM** outperforms standard Cross-Attn (LPIPS 0.1787 vs 0.1953) and feature concatenation (0.1787 vs 0.2164).
 
 ## Highlights & Insights
 
-1. **Calibration-free cross-modal fusion** is the most practically significant contribution — implicit alignment via attention in the VAE latent space completely avoids the calibration challenges encountered in real deployment.
-2. **CSM is elegantly simple**: it introduces no additional parameters and captures both intra- and inter-modal dependencies through token concatenation and self-attention, representing a creative adaptation of multi-frame processing ideas from video diffusion models.
-3. **The misalignment augmentation strategy** is conceptually novel, replacing complex physical simulation with simple geometric transformations to effectively improve generalization.
-4. **Downstream task validation is thorough**: beyond perceptual quality evaluation, the method demonstrates substantive gains in object detection and semantic segmentation, confirming the practical value of the super-resolution output.
-5. **Real hardware validation**: a practical system is constructed using a HIKVISION P09 thermal camera module (under $100) and a Xiaomi 15 smartphone, demonstrating strong engineering feasibility.
+1. **Calibration-free cross-modal fusion** is the core practical value—achieving implicit alignment via attention in the VAE latent space completely bypasses deployment hurdles.
+2. **CSM design is concise and effective**: It captures both intra- and inter-modal dependencies by token concatenation, representing a clever transfer of multi-frame video diffusion logic.
+3. **Misalignment Augmentation** is a novel strategy using simple geometric transforms to replace complex physical simulations, effectively improving generalization.
+4. **Comprehensive downstream verification**: Validation on object detection and segmentation proves the substantive utility of SR beyond just perceptual quality.
+5. **Real-world hardware verification**: A system built with a <$100 HIKVISION P09 module and a Xiaomi 15 smartphone demonstrates strong engineering feasibility.
 
 ## Limitations & Future Work
 
-1. **Quality ceiling of single-step diffusion**: while efficient, SD-Turbo-based single-step inference may not match the generation quality of multi-step diffusion methods.
-2. **Semantic guidance depends on RAM**: the method requires reasonably high-quality RGB input; degraded references (e.g., low-light or motion-blurred) may produce erroneous semantic prompts.
-3. **Insufficient handling of FOV discrepancy**: the RGB and thermal cameras have different fields of view (74°×59° vs. 50°×50°); robustness under larger FOV gaps remains to be validated.
-4. **Only 8× super-resolution (64→512) is evaluated**: applicability to other upscaling factors is not discussed.
-5. **Inference overhead not fully analyzed**: the cross-modal self-attention in the UNet operates on sequences of length $2HW$, and the computational complexity at higher resolutions warrants attention.
+1. **Quality ceiling of single-step diffusion**: While efficient, SD-Turbo based one-step inference may lack the refinement of multi-step diffusion methods.
+2. **RAM-dependent semantic guidance**: Requires high-quality RGB input; degraded references (low light, motion blur) may lead to incorrect semantic prompts.
+3. **Insufficient handling of FOV differences**: RGB and thermal cameras have different FOVs ($74^\circ \times 59^\circ$ vs $50^\circ \times 50^\circ$); robustness to larger FOV gaps is unverified.
+4. **Limited upscaling factor**: Only $8 \times$ SR ($64 \to 512$) is verified; applicability to other factors needs discussion.
+5. **Inference overhead**: The sequence length in CSM is $2HW$, warranting attention to computational complexity in high-resolution scenarios.
 
 ## Related Work & Insights
 
-- **CoReFusion / SwinFuSR / SwinPaste**: Traditional RGB-guided thermal SR methods that rely on calibration and prioritize fidelity at the expense of high-frequency detail.
-- **SeeSR / OSEDiff**: Diffusion-based image SR methods capable of generating high-frequency content but lacking cross-modal guidance, prone to artifacts.
-- **DifIISR**: Infrared-specific diffusion SR, but dependent on strictly aligned data.
-- **Stable Video Diffusion**: The multi-frame joint self-attention paradigm is the direct inspiration for CSM.
-- **Insights**: The calibration-free cross-modal fusion concept is extensible to other modality pairs (e.g., depth–RGB, SAR–optical); the misalignment augmentation strategy is broadly applicable.
+- **CoReFusion / SwinFuSR / SwinPaste**: Traditional RGB-guided thermal SR methods focus on fidelity and require calibration but lack high-frequency details.
+- **SeeSR / OSEDiff**: Diffusion-based SR generates high-frequency content but lacks cross-modal guidance, easily introducing artifacts.
+- **DifIISR**: Thermal-specific diffusion SR but relies on strictly aligned data.
+- **Stable Video Diffusion**: Joint self-attention for multiple frames is the direct inspiration for CSM.
+- **Insight**: Calibration-free fusion can extend to other pairs (Depth-RGB, SAR-Optical), and the misalignment strategy is universally applicable.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — CSM and misalignment augmentation are novel; the calibration-free setting has significant practical relevance
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Covers public benchmarks, real mobile hardware, downstream tasks, and ablation studies comprehensively
-- **Writing Quality**: ⭐⭐⭐⭐ — Clear structure, well-motivated design choices, and rich figures and tables
-- **Value**: ⭐⭐⭐⭐⭐ — Calibration-free design, low-cost hardware, and mobile deployment make this highly practical
+- **Novelty**: ⭐⭐⭐⭐ — CSM and misalignment strategies are novel; calibration-free setting is practical.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Covers public datasets, real phone systems, downstream tasks, and ablations.
+- **Writing Quality**: ⭐⭐⭐⭐ — Clear structure, well-articulated motivation, and rich visualizations.
+- **Value**: ⭐⭐⭐⭐⭐ — High engineering utility due to calibration-free, low-cost hardware, and mobile deployment support.
 
 <!-- RELATED:START -->
 
@@ -145,11 +148,11 @@ This paper proposes 3M-TI, a **calibration-free** multi-camera cross-modal diffu
 
 ## Related Papers
 
+- [\[CVPR 2026\] B³-Seg: Camera-Free, Training-Free 3DGS Segmentation via Analytic EIG and Beta-Bernoulli Bayesian Updates](b3-seg_camera-free_training-free_3dgs_segmentation_via_analytic_eig_and_beta-ber.md)
+- [\[CVPR 2026\] Towards Robust Multi-Modal Semantic Segmentation with Teacher-Student Framework and Hybrid Prototype Distillation](towards_robust_multi-modal_semantic_segmentation_with_teacher-student_framework_.md)
 - [\[CVPR 2026\] Towards High-Quality Image Segmentation: Improving Topology Accuracy by Penalizing Neighbor Pixels](towards_high-quality_image_segmentation_improving_topology_accuracy_by_penalizin.md)
 - [\[CVPR 2026\] Making Training-Free Diffusion Segmentors Scale with the Generative Power](making_training-free_diffusion_segmentors_scale_with_the_generative_power.md)
-- [\[CVPR 2026\] Efficient RGB-D Scene Understanding via Multi-task Adaptive Learning and Cross-dimensional Feature Guidance](efficient_rgb-d_scene_understanding_via_multi-task_adaptive_learning_and_cross-d.md)
-- [\[ICLR 2026\] Universal Multi-Domain Translation via Diffusion Routers](../../ICLR2026/segmentation/universal_multi-domain_translation_via_diffusion_routers.md)
-- [\[NeurIPS 2025\] OmniSegmentor: A Flexible Multi-Modal Learning Framework for Semantic Segmentation](../../NeurIPS2025/segmentation/omnisegmentor_a_flexible_multi-modal_learning_framework_for_semantic_segmentatio.md)
+- [\[CVPR 2026\] Cross-Domain Few-Shot Segmentation via Multi-view Progressive Adaptation](cross-domain_few-shot_segmentation_via_multi-view_progressive_adaptation.md)
 
 </div>
 

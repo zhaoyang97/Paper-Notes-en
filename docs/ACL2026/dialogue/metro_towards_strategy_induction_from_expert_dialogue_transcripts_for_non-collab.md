@@ -2,19 +2,16 @@
 title: >-
   [Paper Note] Metro: Towards Strategy Induction from Expert Dialogue Transcripts for Non-collaborative Dialogues
 description: >-
-  [ACL 2026][Dialogue Systems][strategy induction] Metro automatically inducts expert dialogue transcripts into a "Strategy Forest"—a collection of trees rooted in K-Means clustered dialogue states. Nodes represent LLM-exp…
+  [ACL 2026][Dialogue Systems][strategy induction] Metro automatically induces expert dialogue transcripts into a "Strategy Forest"—a collection of trees rooted in K-Means clustered dialogue states. Each node represents an LLM-expanded micro-principle action, and branches represent complete action trajectories pruned by Wilson confidence lower bounds and MCTS-style val
 tags:
-  - "ACL 2026"
-  - "Dialogue Systems"
-  - "strategy induction"
-  - "Strategy Forest"
-  - "negotiation"
-  - "persuasion"
-  - "planning logic"
+  - ACL 2026
+  - Dialogue Systems
+  - strategy induction
+  - Strategy Forest
+  - planning logic
 date: 2026-05-08
-content_hash: 10e197a1670970f1
+content_hash: 7cd870cfad9a33a4
 ---
-
 # Metro: Towards Strategy Induction from Expert Dialogue Transcripts for Non-collaborative Dialogues
 
 **Conference**: ACL 2026  
@@ -24,109 +21,114 @@ content_hash: 10e197a1670970f1
 **Keywords**: strategy induction, Strategy Forest, negotiation, persuasion, planning logic
 
 ## TL;DR
-Metro automatically inducts expert dialogue transcripts into a "Strategy Forest"—a collection of trees rooted in K-Means clustered dialogue states. Nodes represent LLM-expanded micro-principle actions, and branches represent complete action trajectories pruned based on Wilson confidence lower bounds and MCTS-style value backpropagation scoring. During inference, the system retrieves a tree to extract parallel short-term (breadth) and long-term (depth) suggestions. Without any training, Metro achieves an average performance gain of approximately 10% over baselines such as PRINCIPLES, PPDPP, and GDP-Zero on two non-collaborative dialogue tasks, P4G and CB.
+Metro automatically induces expert dialogue transcripts into a "Strategy Forest"—a collection of trees rooted in K-Means clustered dialogue states. Each node represents an LLM-expanded micro-principle action, and branches represent complete action trajectories pruned by Wilson confidence lower bounds and MCTS-style value backpropagation. During inference, it retrieves a specific tree to extract short-term (breadth) and long-term (depth) recommendations in parallel. Without any training, it outperforms baselines such as PRINCIPLES, PPDPP, and GDP-Zero by approximately 10% on P4G and CB non-collaborative dialogue tasks.
 
 ## Background & Motivation
 
-**Background**: Non-collaborative dialogues (e.g., price negotiation, charitable persuasion, debt collection) require an agent to "win" even when the opponent has conflicting interests. The standard paradigm relies on (i) domain experts manually codifying strategy action sets (such as negotiation acts from He et al. 2018 or persuasion acts from Wang et al. 2019), followed by (ii) training a plug-in planner (PPDPP) or running MCTS (GDP-Zero) to select actions. This pipeline is not scalable, as experts must redefine action sets for every new domain.
+**Background**: Non-collaborative dialogues (e.g., price negotiation, charity persuasion, debt collection) require an agent to "win" even when the opponent has a conflicting interest. The standard paradigm relies on (i) domain experts manually codifying strategy action sets (e.g., negotiation acts by He et al. 2018, persuasion acts by Wang et al. 2019) and (ii) training a plug-in planner (PPDPP) or running MCTS (GDP-Zero) to select actions. This pipeline is not scalable, as a new action set must be defined by experts for every new domain.
 
-**Limitations of Prior Work**: (i) Expert dependence—the quality of the action set determines the upper bound, yet human-written coverage is limited (e.g., human actions cover $\le 30\%$ of clusters in the CB dataset); (ii) Lack of planning logic—while PRINCIPLES (Kim 2025) can extract principles in the form of "When [situation], you should [action A] rather than [action B], because [reason]," it treats strategies as independent units and loses multi-turn planning logic regarding "which move to follow next"; (iii) Expensive training—PPDPP requires SFT followed by RL, and GDP-Zero's MCTS inference is computationally intensive.
+**Limitations of Prior Work**: (i) Expert dependence: The quality of the action set determines the ceiling, but human coverage is limited (manual actions cover $\le 30\%$ of clusters in the CB dataset). (ii) Lack of planning logic: While PRINCIPLES (Kim 2025) can extract rules in the form "When [situation], you should [action A] rather than [action B], because [reason]," it treats strategies as independent units, losing the multi-turn temporal structure of "what to do next." (iii) High cost: PPDPP requires SFT followed by RL, while GDP-Zero demands massive compute for MCTS during inference.
 
-**Key Challenge**: Strategy involves two types of knowledge: "what to do" (action set) and "when to do it" (planning logic). The former can be summarized by LLMs, but the latter requires preserving the temporal structure of multi-turn contexts. Traditional induction methods excel at extracting flat rules but struggle to weave trajectories into hierarchical structures.
+**Key Challenge**: Strategy comprises two types of knowledge: "what to do" (action set) and "when to do it" (planning logic). The former can be summarized by LLMs, but the latter requires preserving the multi-turn temporal structure of trajectories. Traditional induction methods are proficient at extracting flat rules but struggle to weave trajectories into hierarchical structures.
 
-**Goal**: Enable LLMs to directly induct both (a) an expanded action set and (b) multi-turn planning logic tied to dialogue states from raw transcripts, storing them in a retrieval-friendly structure without requiring training during inference.
+**Goal**: To allow an LLM to directly induce (a) expanded action sets and (b) multi-turn planning logic bound to dialogue states from raw transcripts, storing them in a retrieval-friendly structure without requiring training.
 
-**Key Insight**: The authors observe that multiple historical trajectories may lead to success or failure under the same dialogue state. By clustering these trajectories by state and performing prefix-merging, a "state-centric tree" naturally forms—where each root is a dialogue state and each branch is a multi-turn planning path. Pruning with the Wilson lower bound and value backpropagation filters out unreliable branches that appear successful but have small sample sizes.
+**Key Insight**: The authors observe that multiple historical trajectories can lead to success or failure under the same dialogue state. By clustering these trajectories by state and performing prefix-merging, a "state-rooted tree" naturally forms. Pruning these trees using Wilson lower bounds and value backpropagation filters out unreliable branches that appear successful but have insufficient samples.
 
-**Core Idea**: Induct expert transcripts into a "Strategy Forest" where breadth (immediate children of the root) provides short-term tactical responses and depth (root-to-leaf paths) provides long-term strategic foresight. Both types of knowledge are injected into LLM decision-making via retrieval-augmented prompting.
+**Core Idea**: Summarize expert transcripts into a "Strategy Forest." Breadth (immediate children of the root) provides short-term tactical responses, while depth (full root-to-leaf branches) provides long-term strategic foresight. Retrieval-augmented prompting is then used to inject both types of knowledge into LLM decision-making.
 
 ## Method
 
 ### Overall Architecture
-Metro consists of two phases: **offline induction** and **online inference**. In the induction phase: (i) Action Extraction & Expansion pulls turn-level actions from transcripts and expands them into "do/avoid micro-principles" using an LLM; (ii) Dialogue State Identification encodes each history prefix $d'_i$ using bge-large-en-v1.5 and applies K-Means clustering ($K=150$ for P4G, $K=80$ for CB); (iii) Strategy Forest Induction builds a state-centric tree for each cluster—the root is the cluster centroid, and all future trajectories passing through that state are inserted via prefix-merge. Outcome values are backpropagated to each node, and unreliable branches are pruned using the Wilson lower bound and Beam Search. In the inference phase: the system retrieves the root most similar to the current $d_{t-1}$, extracts breadth (micro-principles) and depth (highest-value branch), and asks the LLM to reinterpret these into context-aware short/long-term prompts to generate the final response.
+
+Metro aims to simultaneously induce "what to do" (action sets) and "when to do it" (multi-turn planning logic) from expert transcripts. It consists of offline induction and online inference. Off-line, it extracts turn-level actions and expands them into do/avoid micro-principles using an LLM. History prefixes $d'_i$ are encoded into 1024-d vectors using bge-large-en-v1.5 and clustered via K-Means ($K=150$ for P4G, $K=80$ for CB). A tree is built for each cluster by prefix-merging all future trajectories passing through that state. Nodes backpropagate outcome values, and the Top-K branches are retained using Wilson lower bounds and beam search. Online, at turn $t$, the current $d_{t-1}$ is embedded to retrieve the most similar root. Breadth (Top-5 tactical responses) and depth (Top-1 strategic route) are extracted in parallel and reinterpreted by the LLM as context-aware prompts.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Expert dialogue transcripts"] --> B["Reflexive micro-principle expansion<br/>critic judges better/worse → do/avoid principles"]
+    B --> C
+    subgraph FOREST["State-rooted prefix tree + Confidence-aware value estimation"]
+        direction TB
+        C["Prefix encoding + K-Means clustering<br/>bge-large-en-v1.5 → Dialogue state"]
+        C --> D["Future trajectories of the same state inserted via prefix-merge"]
+        D --> E["Value backprop + Wilson LB + Beam Search for Top-K"]
+    end
+    E --> F["Strategy Forest (built offline, zero-shot inference)"]
+    F --> G["Retrieve most similar state root<br/>Current d_{t-1} embedding → cosine similarity"]
+    G --> H["Breadth + Depth dual-timescale reasoning enhancement<br/>Top-5 micro-principles + Top-1 full branch → LLM reinterpret"]
+    H --> I["Generate response"]
+```
 
 ### Key Designs
 
-1.  **Action Expansion via self-reflection micro-principle**:
-    *   **Function**: Upgrades raw actions $a_i$ in transcripts to self-reflective "do/avoid" micro-principles $\hat a_i$, allowing the action set to transcend the limitations of the transcript's coverage.
-    *   **Mechanism**: For every agent turn, GPT-4o-mini acts as a critic to judge if the turn was better, worse, or neutral based on local context (history + current utterance + opponent response), using a majority vote from five independent evaluations. For "better" turns, the LLM summarizes a reusable principle in the form "When [situation], do [...]" without seeing $a_i$. For "worse/neutral" turns, it wraps the original action into "When [situation], avoid [$a_i$]". Each micro-principle is explicitly conditioned on the opponent's previous utterance to facilitate semantic retrieval.
-    *   **Design Motivation**: Raw actions are case-specific ("Could you go down to \$50?"), which limits generalization. Micro-principles abstract strategies to a level (e.g., when to concede vs. persist) that is reusable across transcripts and transferable across tasks. The dual "do/avoid" path learns from both positive and negative signals, preventing distribution shifts caused by training only on successful samples.
+**1. Reflexive micro-principle expansion of action sets.** Actions in raw transcripts are often case-specific (e.g., "Could you go down to \$50?"), leading to poor generalization. Metro uses gpt-4.1-mini as a critic to judge each agent turn as better, worse, or neutral based on local context. For "better" turns, the LLM summarizes a reusable principle in the form "When [situation], do [...]". For "worse" turns, it generates "When [situation], avoid [...]". This abstracts actions into a strategic level, allowing cross-task transfer and absorbing both positive and negative signals.
 
-2.  **State-centric Tree + Confidence-aware Value Estimation**:
-    *   **Function**: Explicitly encodes the multi-turn planning logic of "when to use which action" into trees rooted in dialogue states.
-    *   **Mechanism**: Each transcript $D$ is sliced into history prefixes $\{d'_1, \ldots, d'_{T-1}\}$, which are clustered via K-Means. All future trajectories $(a_{t+1}, \ldots)$ within a cluster are inserted into a tree via prefix-merge. Each node $u$ aggregates statistics: empirical success $\hat p(u)=s(u)/n(u)$ and outcome value $v(d,t) = r(d) - \lambda_{\text{len}}(t+1)/N_d$ (including a length penalty). Values are backpropagated using a depth-discount $\gamma^k$ (MCTS style). The total score for a node is $S(u)=w_{\text{sr}}\cdot p_{\text{lb}}(u) + w_{\text{val}}\cdot \bar V(u) + w_{\text{cnt}}\cdot \log(1+n(u))$, where $p_{\text{lb}}$ is the Wilson score lower bound. This penalizes branches that appear successful but were only observed once. Finally, Beam Search retains the Top-K branches.
-    *   **Design Motivation**: Viewing transcripts as an unfolded MCTS history, merging prefixes naturally creates search trees. The Wilson lower bound is introduced to combat "success by chance" in small samples—a common pitfall in strategy induction. The length penalty prevents the agent from learning degenerate strategies that achieve success merely by stalling.
+**2. State-rooted prefix tree + Confidence-aware value estimation.** To capture multi-turn planning logic, Metro segments transcripts into history prefixes. Future trajectories within the same cluster are merged into a tree. For each node $u$, the empirical success rate $\hat p(u)$ and length-penalized outcome value $v(d,t) = r(d) - \lambda_{\text{len}}(t+1)/N_d$ are aggregated. Values are backpropagated using a depth-discount $\gamma^k$. The final score $S(u)=w_{\text{sr}}\cdot p_{\text{lb}}(u) + w_{\text{val}}\cdot \bar V(u) + w_{\text{cnt}}\cdot \log(1+n(u))$ incorporates the Wilson score lower bound $p_{\text{lb}}$, which penalizes branches with high success rates but low sample sizes.
 
-3.  **Breadth + Depth Dual-scale Inference Enhancement**:
-    *   **Function**: Translates the Strategy Forest into two complementary prompt-time suggestions: tactical next steps (short-term) and strategic paths (long-term).
-    *   **Mechanism**: At turn $t$, $d_{t-1}$ is embedded and compared against all roots using cosine similarity to retrieve the most similar tree $f$. **Breadth**: The system uses the opponent's most recent utterance as a query to retrieve the Top-5 micro-principles within the cluster and asks the LLM to reinterpret these into specific next steps. **Depth**: The system selects the single complete branch in $f$ with the highest average node value and reinterprets it into a high-level planning directive (e.g., "Build trust gradually before proposing a donation"). Both suggestions are concatenated into the prompt to guide generation.
-    *   **Design Motivation**: Using only the Top-1 action can be short-sighted, while using only a full trajectory can be too rigid. The dual-scale approach provides the LLM with both "what to say now" and "the overall plan," corresponding to exploitation and plan rollout in MCTS. Unlike MCTS, Metro is entirely offline; per-turn inference involves only a table lookup and a single LLM generation, making it significantly cheaper than GDP-Zero.
+**3. Breadth + Depth dual-timescale reasoning enhancement.** To avoid short-sightedness or excessive rigidity, the Strategy Forest provides two complementary suggestions. During inference, the current dialogue is mapped to the most similar root. **Breadth** retrieves the Top-5 micro-principles for immediate tactical rewriting. **Depth** selects the single full branch with the highest average node value to serve as a high-level strategic directive. This mimics exploitation and rollout in MCTS, but is performed via a single prompt without expensive test-time searches.
 
 ### Loss & Training
-Metro **requires no training**. Offline induction uses GPT-4o-mini for criticism and expansion, bge-large-en-v1.5 for encoding, and scikit-learn for K-Means. The online inference LLM backbone is GPT-3.5-turbo (consistent with baselines). Key hyperparameters: $\lambda_{\text{len}}=0.2$, $\gamma=0.9$, $w_{\text{sr}}=1.0, w_{\text{val}}=0.2, w_{\text{cnt}}=0.05$, Wilson $z=1.96$, Breadth Top-K=5, and Depth Top-1 full branch.
+
+Metro is **entirely training-free**. Offline induction uses gpt-4.1-mini for expansion and bge-large-en-v1.5 for encoding. Inference uses GPT-3.5-turbo as the backbone. Key hyperparameters: $\lambda_{\text{len}}=0.2$, $\gamma=0.9$, $w_{\text{sr}}=1.0, w_{\text{val}}=0.2, w_{\text{cnt}}=0.05$, Wilson $z=1.96$, Breadth Top-K=5, Depth Top-1.
 
 ## Key Experimental Results
 
 ### Main Results
-Evaluated on P4G (charity persuasion) and CB (CraigslistBargain price negotiation) with 200 LLM simulators and 5 human participants:
+Evaluation on P4G (charity persuasion) and CB (price negotiation) using 200 LLM simulators and 5 human participants:
 
 | Method | P4G SR↑ | P4G AT↓ | CB SR↑ | CB SL%↑ | P4G* SR↑ (Human) | CB* SR↑ (Human) |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+|------|---------|---------|--------|---------|------------------|-----------------|
 | Standard | 0.620 | 4.56 | 0.185 | 0.154 | 0.333 | 0.283 |
 | GDP-Zero (MCTS) | 0.660 | 5.35 | 0.495 | 0.125 | 0.600 | 0.450 |
 | PPDPP (Trained planner) | 0.730 | 4.67 | 0.250 | 0.150 | 0.633 | 0.383 |
 | PRINCIPLES (Induction) | 0.770 | 5.24 | 0.485 | 0.149 | 0.600 | 0.467 |
 | **Metro** | **0.780** | 4.76 | **0.575** | **0.189** | **0.661** | **0.483** |
 
-*   Metro achieves an average improvement of 10.24% over PRINCIPLES and 9.93% over the second-best method, without requiring training or test-time MCTS.
+→ Metro shows an average improvement of 10.24% over PRINCIPLES without training or test-time MCTS.
 
 ### Ablation Study
-Breakdown of Planning Logic (Table 2):
+Decomposition of Planning Logic (Table 2):
 
-| Configuration | P4G SR | CB SR | CB SL% | Note |
-| :--- | :--- | :--- | :--- | :--- |
+| Configuration | P4G SR | CB SR | CB SL% | Description |
+|------|--------|-------|---------|------|
 | Full (Top-5 Nodes + Top-1 Full Branch) | 0.780 | 0.575 | 0.189 | Default |
 | Breadth Top-1 Node | 0.760 | 0.465 | 0.140 | Breadth narrowing drops 11 pp |
 | Depth 1-hop Branch | 0.770 | 0.535 | 0.150 | Depth truncation drops 4 pp |
-| Depth Top-3 Branches | 0.760 | 0.485 | 0.150 | Adding more branches decreases perf |
-| w/o Exp. Action | (Fig 3) | ↓ | ↓ | Remove LLM-expanded principles |
-| w/o Depth | ↓ on P4G | **↑ on CB** | — | High redundancy in CB makes depth noise |
-| w/o Breadth | ↓ | ↓ | — | Short-term suggestions are more stable |
-
-*   The marginal gain of breadth is generally higher than depth for SR. Depth's effectiveness depends heavily on the diversity of source transcripts.
+| Depth Top-3 Branches | 0.760 | 0.485 | 0.150 | More branches reduce performance |
+| w/o Exp. Action | (Fig 3) | ↓ | ↓ | Removing micro-principle expansion |
+| w/o Depth | ↓ on P4G, **↑ on CB** | — | — | CB high repetition makes depth noisy |
 
 ### Key Findings
-*   **Action diversity is central to Metro**: Cluster Coverage analysis shows Metro covers ~80% of clusters at K=100, while PRINCIPLES covers ~50% and manual actions cover less than 30%.
-*   **Strong cross-task transferability**: Transferring from CB → P4G yields an SR of 0.755 (near baseline). When the action space is expanded to ALL (CB+P4G), Metro maintains performance (0.770), while PPDPP and GDP-Zero degrade or face computational explosions.
-*   **Transcript Quality > Source**: Using LLM-generated transcripts instead of expert transcripts resulted in a higher SR on CB (0.500 vs. 0.440), suggesting the induction framework is sensitive to quality rather than "expert status."
-*   **Generalization across personalities**: Across Big-Five traits and decision-making styles, Metro ranked first or second in 9/10 subgroups, with a standard deviation (~0.08) half that of the baselines.
+- **Action diversity is central to Metro's performance**: Cluster Coverage analysis shows Metro covers ~80% of clusters at $K=100$, whereas manual actions cover <30%.
+- **Strong cross-task transferability**: Transferring from CB → P4G yields SR=0.755 (near original performance).
+- **Transcript quality > Transcript source**: Using LLM-generated transcripts for induction outperformed expert transcripts on CB SR (0.500 vs 0.440), suggesting the framework is sensitive to quality rather than "expert identity."
+- **Generalization across personalities**: Metro performed best or second-best in 9/10 subgroups across different Big-Five and decision-making styles.
 
 ## Highlights & Insights
-*   **Abstracting strategy as a "state-action prefix tree" is a principled design**: It upgrades the flat memory of PRINCIPLES into state-conditioned hierarchical memory, using a dual-scale prompt (short + long) rarely seen in dialogue agent literature.
-*   **The Wilson lower bound is robust**: It automatically prunes unreliable branches, a common issue in strategy induction where small sample sizes lead to false positives. This technique is easily transferable to any trajectory-mining scenario.
-*   **Zero training + cross-task transfer**: Compared to PPDPP (requires RL) and GDP-Zero (expensive test-time MCTS), Metro is highly cost-effective and engineering-friendly.
-*   **Honest reporting on CB results**: The authors explicitly note that "w/o Depth" improves performance on CB due to structural limitations in the source data (high repetition), and demonstrate in Appendix C.3 that depth becomes effective again when using LLM-generated transcripts.
+- **Abstracting strategy into state-action prefix trees is principled**: It upgrades the flat memory of PRINCIPLES into a state-conditioned hierarchical memory.
+- **Wilson lower bounds are a robust addition**: It prevents the model from being misled by "lucky" successes in small sample sizes.
+- **Cost-effectiveness**: Unlike RL-based or MCTS-based methods, Metro's offline pre-computation makes it deployment-friendly.
+- **Honest reporting on CB depth**: The authors acknowledge that high redundancy in CB source transcripts can make depth-based logic noisy, suggesting an area for data-specific refinement.
 
 ## Limitations & Future Work
-*   Source transcripts are from crowdsourced users, not real experts, making it difficult to verify performance on truly professional dialogues—a common data issue in this field.
-*   The LLM-as-judge pipeline is long (critic → expansion → retrieval → generation), creating a risk of accumulated hallucinations. The paper only validates final downstream metrics without manual verification of intermediate steps.
-*   Breadth/depth weights and the clustering parameter $K$ are manually tuned. Optimal $K$ varies significantly between tasks (P4G=150, CB=80), requiring a grid search for new tasks.
-*   Taking only the Top-1 branch for depth might lose diversity; more sophisticated branch ensemble or adaptive aggregation methods represent obvious future directions.
+- Source transcripts are from crowdsourced users (Craigslist/PersuasionForGood) rather than true high-level professionals.
+- The multi-step pipeline (critic → expansion → retrieval → gen) risks accumulated hallucinations.
+- Hyperparameters like cluster size $K$ and weights are manually tuned rather than adaptive.
+- Taking only the Top-1 branch for depth may lose diversity; adaptive branch integration is a future direction.
 
 ## Related Work & Insights
-*   **vs PRINCIPLES (Kim et al. 2025)**: Both extract strategies from transcripts, but PRINCIPLES stores rules as unit units. Metro's state-action trees preserve multi-turn logic, leading to a 10.24% average gain.
-*   **vs PPDPP (Deng et al. 2024)**: PPDPP trains a RoBERTa planner; Metro is zero-training and relies on retrieval-augmented reinterpretation. Metro outperforms PPDPP by 5 pp on P4G and 32 pp on CB.
-*   **vs GDP-Zero (Yu et al. 2023)**: GDP-Zero runs expensive test-time MCTS. Metro pre-computes the Strategy Forest offline, making inference significantly faster.
-*   **vs MERMAID / Dialogue Flow Extraction**: Existing tools perform flat flow induction without value-aware pruning. Metro's outcome-driven Wilson evaluation is better suited for outcome-sensitive non-collaborative scenarios.
+- **vs PRINCIPLES**: Metro adds multi-turn planning logic via state-action trees, yielding a 10.24% gain.
+- **vs PPDPP**: Metro is training-free and significantly outperforms PPDPP on CB (32 pp higher SR).
+- **vs GDP-Zero**: Metro is orders of magnitude cheaper than test-time MCTS while maintaining performance.
 
 ## Rating
-*   Novelty: ⭐⭐⭐⭐ The Strategy Forest representation and Wilson pruning are novel in dialogue strategy, though MCTS-style backprop and retrieval prompting are established techniques.
-*   Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive coverage across two tasks, 8 baselines, LLM/Human evaluation, cross-task transfer, 9 user personas, and detailed ablations.
-*   Writing Quality: ⭐⭐⭐⭐ Clear framework and consistent notation; some formulas (e.g., scoring $S(u)$) are fully explained only in the Appendix.
-*   Value: ⭐⭐⭐⭐⭐ Zero-training, cross-task capability, and a 10% SOTA improvement make this highly practical for industry applications and transferable to other multi-turn strategic tasks like medical consultation or debate.
+- Novelty: ⭐⭐⭐⭐
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐
+- Writing Quality: ⭐⭐⭐⭐
+- Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers

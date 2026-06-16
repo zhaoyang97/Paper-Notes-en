@@ -2,140 +2,147 @@
 title: >-
   [Paper Note] PhyGaP: Physically-Grounded Gaussians with Polarization Cues
 description: >-
-  [CVPR2026][3D Vision][3D Gaussian Splatting] This paper proposes PhyGaP, which integrates polarization cues into 2DGS optimization via a polarization deferred rendering pipeline (PolarDR)…
+  [CVPR 2026][3D Vision][pBRDF] PhyGaP is proposed to incorporate polarization cues into 2DGS optimization via Polarized Deferred Rendering (PolarDR) and introduces the self-occlusion-aware GridMap environment mapping technique to achieve accurate reflection decomposition and realistic relighting of glossy objects.
 tags:
-  - "CVPR2026"
-  - "3D Vision"
-  - "3D Gaussian Splatting"
-  - "polarization imaging"
-  - "inverse rendering"
-  - "relighting"
-  - "reflection decomposition"
-  - "pBRDF"
-  - "environment lighting"
+  - CVPR 2026
+  - 3D Vision
+  - pBRDF
 date: 2026-05-08
-content_hash: 7f03e81784b7951d
+content_hash: af45af0e00229d44
 ---
-
 # PhyGaP: Physically-Grounded Gaussians with Polarization Cues
 
-**Conference**: CVPR2026
+**Conference**: CVPR2026  
 **arXiv**: [2603.14001](https://arxiv.org/abs/2603.14001)  
 **Code**: Coming soon  
-**Area**: 3D Vision
-**Keywords**: 3D Gaussian Splatting, polarization imaging, inverse rendering, relighting, reflection decomposition, pBRDF, environment lighting
+**Area**: 3D Vision  
+**Keywords**: 3D Gaussian Splatting, Polarization Imaging, Inverse Rendering, Relighting, Reflection Decomposition, pBRDF, Environment Lighting
 
 ## TL;DR
 
-This paper proposes PhyGaP, which integrates polarization cues into 2DGS optimization via a polarization deferred rendering pipeline (PolarDR), and introduces a self-occlusion-aware GridMap environment representation, enabling accurate reflection decomposition and realistic relighting of glossy objects.
+PhyGaP is proposed to incorporate polarization cues into 2DGS optimization via Polarized Deferred Rendering (PolarDR) and introduces the self-occlusion-aware GridMap environment mapping technique to achieve accurate reflection decomposition and realistic relighting of glossy objects.
 
 ## Background & Motivation
 
-1. **Difficulty in reconstructing reflective objects**: 3DGS and its variants lack explicit geometric representations, and the splatting pipeline cannot simulate secondary light transport, limiting their ability to model glossy surfaces.
-2. **Insufficient information in RGB images**: Existing DR methods rely on accurate estimation of normals, reflectance, and roughness, yet ordinary RGB images do not encode these physical properties, leading to failure in decomposing albedo from specular reflection.
-3. **Poor relighting quality**: Due to inaccurate reflection decomposition, existing methods frequently exhibit color shifts, unrealistic shadows, or surface discontinuities under novel illumination conditions.
-4. **Rich physical information encoded in polarization**: Specular reflection produces strong linear polarization, while diffuse reflection produces weak polarization with a 90° shift in polarization angle, making polarization cues naturally suited for guiding reflectance property learning.
-5. **Self-occlusion in non-convex objects**: Environment cubemaps assume light sources at infinity and cannot handle self-occlusion or indirect illumination of non-convex objects, causing relighting artifacts.
-6. **Existing polarization methods do not support relighting**: PANDORA encodes environment maps implicitly, and PolGS does not decompose albedo; neither supports illumination replacement.
+1.  **Challenges in Reconstructing Reflective Objects**: 3DGS and its variants lack explicit geometric representation, and the splatting pipeline cannot simulate secondary light transport, resulting in limited ability to model glossy surfaces.
+2.  **Insufficient Information in RGB Images**: Existing DR methods depend on precise estimation of normals, albedo, and roughness. However, standard RGB images do not encode these physical properties, leading to the failure of albedo and specular reflection decomposition.
+3.  **Poor Relighting Quality**: Due to inaccurate reflection decomposition, existing methods often exhibit color shifts, unrealistic shadows, and surface discontinuities when changing lighting conditions.
+4.  **Polarization Contains Rich Physical Information**: Specular reflection generates strong linear polarization, while diffuse reflection generates weak polarization with a 90° shift in polarization angle. Polarization cues are naturally suited to guide the learning of reflection properties.
+5.  **Self-occlusion in Non-convex Objects**: Environment cube maps assume light sources at infinity and cannot handle self-occlusion and indirect lighting of non-convex objects, resulting in artifacts during relighting.
+6.  **Existing Polarization Methods Lack Relighting Support**: PANDORA implicitly encodes the environment map, and PolGS does not decompose albedo; neither can achieve relighting through light replacement.
 
 ## Method
 
 ### Overall Architecture
 
-PhyGaP builds upon the 2DGS + Ref-Gaussian framework. Each Gaussian primitive maintains learnable attributes: albedo $\boldsymbol{\lambda}$, index of refraction (IoR) $\eta$, surface normal $\mathbf{n}$, roughness $r$, and a learnable environment cubemap mipmap $E$. These attributes are splatted into 2D material maps via α-blending and then fed into PolarDR to compute per-pixel Stokes vectors, which are supervised against ground-truth polarization observations.
+PhyGaP addresses the inverse rendering of glossy/reflective objects: since standard RGB does not encode physical quantities like normals, albedo, and roughness, decomposition between albedo and specular light fails, and relighting suffers from color shifts and artifacts. Based on 2DGS + Ref-Gaussian, it maintains a learnable albedo $\boldsymbol{\lambda}$, refractive index $\eta$, normal $\mathbf{n}$, and roughness $r$ for each Gaussian primitive, plus a learnable environment cube mipmap $E$. The workflow is as follows: first, these attributes are splatted into 2D material maps via $\alpha$-blending and fed into PolarDR to calculate per-pixel polarization Stokes vectors. These are then directly supervised by ground truth polarization maps—polarization cues act as physical constraints missing in RGB. Meanwhile, GridMap incorporates indirect lighting from self-occlusion into the radiance calculation of PolarDR.
 
-### PolarDR: Polarization Deferred Rendering
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Input: Multi-view Polarization Images<br/>2 RGB Cameras + Linear Polarizers"] --> B["Gaussian Attributes + Env Mipmap<br/>albedo λ / refractive index η / normal n / roughness r / E"]
+    B -->|"α-blending Splatting"| C["2D Material Maps"]
+    subgraph GM["GridMap: Self-occlusion Aware Environment Map"]
+        direction TB
+        G1["52 Anchor Cameras<br/>3×3 Grid per Bounding Box Face"] --> G2["Single-step Ray Tracing<br/>Construct Local Cube Maps"]
+        G2 --> G3["Distance-weighted Fusion<br/>Obtain Env Radiance"]
+    end
+    C --> P["PolarDR: Polarized Deferred Rendering<br/>pBRDF + Mueller Matrix"]
+    GM --> P
+    P -->|"Specular + Diffuse Fresnel Components"| R["Rendered Stokes Vector s"]
+    R -->|"Pixel-wise Supervision with GT Polarization Map"| O["Reflection Decomposition + Relighting"]
+```
 
-- The polarization state of light is represented by the Stokes vector $\mathbf{s}=[s_0, s_1, s_2, s_3]^\top$; light–surface interactions are modeled using Mueller matrices.
-- **Specular polarization**: The degree of polarization $\beta_s$ is computed from Fresnel coefficients $R^\perp, R^\parallel$ and combined with specular radiance $L_s$ to obtain the specular Stokes component.
-- **Diffuse polarization**: The degree of polarization $\beta_d$ is computed from transmittance Fresnel coefficients $T^\perp, T^\parallel$ and combined with diffuse radiance $L_d$ to obtain the diffuse Stokes component.
-- The sum of both components constitutes the rendered Stokes vector, which is directly compared with ground-truth polarization maps to explicitly constrain specular–diffuse decomposition.
-- **Spherical harmonics are not used** to represent color, as albedo should be view-independent.
+### Key Designs
 
-### GridMap: Self-Occlusion-Aware Environment Map
+**1. PolarDR: Resolving Albedo-Lighting Ambiguity using Stokes Vector Supervision**
 
-- The bounding box of the object is divided into a 3×3 grid on each face, with anchor cameras placed at grid nodes (excluding the bottom face), yielding $N=52$ anchor cameras in total.
-- A single-bounce ray tracing step is performed at each anchor camera to construct a local cubemap $\tilde{E}_i$ that blends the object's own color with the global environment.
-- During rendering, the Stokes contributions from all local cubemaps are fused via distance-weighted blending:
+Standard RGB only observes blended colors and cannot distinguish between albedo and reflected light. PhyGaP exploits the physical laws of polarization—strong linear polarization for specular reflection and weak polarization with a 90° angle shift for diffuse reflection—to embed pBRDF into the GS deferred rendering pipeline. The polarization state of light is represented by the Stokes vector $\mathbf{s}=[s_0, s_1, s_2, s_3]^\top$, and the interaction with the surface is modeled using the Mueller matrix. The specular component uses Fresnel coefficients $R^\perp, R^\parallel$ to calculate the degree of polarization $\beta_s$ then multiplied by specular radiance $L_s$. The diffuse component uses transmission Fresnel coefficients $T^\perp, T^\parallel$ to calculate $\beta_d$ then multiplied by diffuse radiance $L_d$. The sum of both yields the rendered Stokes vector, compared pixel-wise with the GT polarization map. In this way, the specular/diffuse decomposition is explicitly constrained by polarization, preventing degenerate ambiguous solutions. Notably, colors are not represented by spherical harmonics, as albedo should be view-independent.
+
+**2. GridMap: Self-occlusion Aware Environment Mapping for Indirect Lighting**
+
+Traditional environment cube maps assume light sources are at infinity, which leads to incorrect shadows when encountering self-occlusion and inter-reflection in non-convex objects. PhyGaP divides each face of the object's bounding box into a 3×3 grid and places anchor cameras at the nodes (excluding the bottom face, $N=52$ total). For each anchor, a single-step ray tracing is performed to construct a local cube map $\tilde{E}_i$ that blends the object's own color with the global environment. During rendering, the Stokes results of all local maps are fused via distance weighting:
 
 $$\tilde{S}_d = \frac{\sum_{i=1}^{N} \|\mathbf{p}-\mathbf{c}_i\|_2 \cdot \tilde{S}_d^{(i)}}{\sum_{i=1}^{N} \|\mathbf{p}-\mathbf{c}_i\|_2}$$
 
-- Local cubemaps require no gradient computation and need only low-frequency updates, making their overhead far lower than multi-bounce ray tracing.
+Local cube maps do not require gradients and only need low-frequency updates. The overhead is significantly lower than multi-bounce ray tracing, yet it successfully recovers local occlusion information such as "nearby object shadow blocking."
 
 ### Loss & Training
+
+The total loss combines RGB reconstruction with polarization and geometric constraints:
 
 $$\mathcal{L} = \mathcal{L}_{\mathrm{rgb}} + \lambda_1 \mathcal{L}_{\mathrm{pol}} + \lambda_2 \mathcal{L}_{\mathrm{mask}} + \lambda_3 \mathcal{L}_{\mathrm{depth}} + \lambda_4 \mathcal{L}_{\mathrm{smooth}}$$
 
 | Loss Term | Function |
 |---|---|
-| $\mathcal{L}_{\mathrm{rgb}}$ | 0.8 L1 + 0.2 DSSIM for RGB reconstruction |
-| $\mathcal{L}_{\mathrm{pol}}$ | L1 loss on $s_1, s_2$ for polarization reconstruction |
-| $\mathcal{L}_{\mathrm{mask}}$ | Segmentation mask supervision to eliminate floater Gaussians |
-| $\mathcal{L}_{\mathrm{depth}}$ | Depth–normal consistency to constrain 2DGS surface alignment |
-| $\mathcal{L}_{\mathrm{smooth}}$ | Edge-aware normal smoothing to regularize normal variation |
+| $\mathcal{L}_{\mathrm{rgb}}$ | 0.8 L1 + 0.2 DSSIM, RGB reconstruction |
+| $\mathcal{L}_{\mathrm{pol}}$ | L1 loss of $s_1, s_2$, polarization reconstruction |
+| $\mathcal{L}_{\mathrm{mask}}$ | Segmentation mask supervision, eliminating floater Gaussians |
+| $\mathcal{L}_{\mathrm{depth}}$ | Depth-normal consistency, constraining 2DGS to align with the surface |
+| $\mathcal{L}_{\mathrm{smooth}}$ | Edge-aware normal smoothing, regularizing normal variations |
 
 ## Key Experimental Results
 
-### Novel View Synthesis and Normal Reconstruction
+### Main Results: Novel View Synthesis and Normal Reconstruction
 
-Evaluation on 9 scenes from the PANDORA/RMVP/SMVP/Mitsuba3 datasets. PhyGaP achieves an average improvement of approximately **2 dB PSNR** over RGB-only methods and reduces normal cosine distance by **45.7%**.
+Evaluation was conducted on 9 scenes (PANDORA/RMVP/SMVP/Mitsuba3 datasets). Compared to RGB methods, PhyGaP improves PSNR by an average of **2 dB** and reduces the normal cosine distance by **45.7%**.
 
 | Method | owl PSNR↑ | frog PSNR↑ | dog PSNR↑ | teapot PSNR↑ | frog CD↓ | dog CD↓ | teapot CD↓ |
 |---|---|---|---|---|---|---|---|
 | Ref-Gaussian | 22.39 | 34.13 | 37.94 | 29.67 | 0.1122 | 0.0207 | 0.0093 |
 | 3DGS-DR | 24.20 | 34.68 | 39.59 | 29.07 | 0.0484 | 0.0462 | 0.0325 |
 | PolGS | 24.99 | 28.25 | 28.15 | - | 0.0343 | 0.0297 | - |
-| **PhyGaP** | **28.14** | **32.92** | **37.82** | **29.69** | **0.0482** | **0.0261** | **0.0079** |
+| **Ours** | **28.14** | **32.92** | **37.82** | **29.69** | **0.0482** | **0.0261** | **0.0079** |
 
-### Relighting Evaluation
+### Relighting Results
 
-| Method | Env. Map PSNR (teapot)↑ | Env. Map PSNR (matpre.)↑ | Relighting PSNR↑ | Relighting SSIM↑ | Relighting LPIPS↓ |
+| Method | EnvMap PSNR (teapot)↑ | EnvMap PSNR (matpre.)↑ | Relighting PSNR↑ | Relighting SSIM↑ | Relighting LPIPS↓ |
 |---|---|---|---|---|---|
 | GIR | 10.30 | 10.73 | 18.02 | 0.960 | 0.0327 |
-| **PhyGaP** | **11.50** | **17.46** | **19.18** | **0.973** | **0.0255** |
+| **Ours** | **11.50** | **17.46** | **19.18** | **0.973** | **0.0255** |
 
 ### Ablation Study
 
 | Configuration | Relighting PSNR↑ | SSIM↑ | LPIPS↓ |
 |---|---|---|---|
 | w/o PolarDR & w/o GridMap | 15.56 | 0.955 | 0.0369 |
-| PolarDR only (w/o GridMap) | 17.81 | 0.967 | 0.0321 |
+| Only PolarDR (w/o GridMap) | 17.81 | 0.967 | 0.0321 |
 | **Full PhyGaP** | **19.18** | **0.973** | **0.0255** |
 
-- PolarDR effectively prevents specular reflection from contaminating albedo estimation, improving environment map quality.
-- GridMap resolves self-occlusion shadows on non-convex geometry, recovering consistent surface color.
+- PolarDR effectively excludes specular contamination from albedo, improving the quality of the environment map.
+- GridMap resolves self-occlusion shadows in non-convex geometries, recovering consistent surface color.
 
 ## Highlights & Insights
 
-- **First polarization GS method with relighting capability**: While PANDORA, PolGS, and other polarization-based methods do not support relighting, PhyGaP achieves explicit reflection decomposition and illumination replacement.
-- **Physics-driven polarization rendering**: PolarDR embeds the pBRDF model into GS deferred rendering and directly supervises with polarization Stokes vectors, eliminating the albedo–illumination ambiguity.
-- **Practical and efficient GridMap**: The combination of 52 anchor cameras and distance-weighted fusion addresses indirect illumination without scene-specific parameters, with manageable overhead and straightforward GPU parallelization.
-- **Compatible with partial polarization inputs**: Data acquisition requires only two standard RGB cameras equipped with linear polarizers, without reliance on dedicated polarization cameras.
+-   **First Polarization GS Method Supporting Relighting**: While previous polarization methods like PANDORA and PolGS do not support relighting, PhyGaP achieves explicit reflection decomposition and light replacement.
+-   **Physics-Driven Polarization Rendering**: PolarDR embeds the pBRDF model into the GS deferred rendering pipeline, using the polarization Stokes vector for direct supervision to avoid albedo-lighting ambiguity.
+-   **Practical and Efficient GridMap**: Using 52 anchor cameras and distance-weighted fusion, it resolves indirect lighting without requiring scene-specific parameters. The overhead is controllable and easily parallelizable on GPUs.
+-   **Supports Partial Polarization Input**: Data can be collected using only two standard RGB cameras with linear polarizers, without relying on specialized polarization cameras.
 
 ## Limitations & Future Work
 
-- **Insufficient modeling of metallic surfaces**: The pBRDF of metals involves complex-valued indices of refraction and phase terms that the current model may not accurately capture.
-- **GridMap limitations for extreme geometries**: Highly irregular objects or strongly specular scenes with multiple inter-reflections remain challenging.
-- **Infinite light source assumption in environment maps**: Finite-distance light sources in real scenes introduce reconstruction bias.
-- **Multi-bounce light transport not modeled**: GridMap performs only single-bounce ray tracing; complex inter-reflection scenarios leave room for improvement.
+-   **Insufficient Metallic Surface Modeling**: The pBRDF of metals involves complex refractive indices and phase terms, which the current model may not represent accurately.
+-   **GridMap Limitations for Extreme Shapes**: Highly irregular objects or scenes with strong specular inter-reflections remain challenging.
+-   **Environment Map Assumption of Infinite Light Sources**: Finite-distance light sources in real scenes can cause reconstruction bias.
+-   **Multi-bounce Light Transport Not Modeled**: GridMap only performs single-step ray tracing; there is room for improvement in complex inter-reflection scenes.
 
 ## Related Work & Insights
 
-| Method | Representation | Polarization | Reflection Decomp. | Relighting | Indirect Illumination |
+| Method | Representation | Polarization | Reflection Decomposition | Relighting | Indirect Light |
 |---|---|---|---|---|---|
 | Ref-Gaussian | 2DGS+DR | ✗ | Partial | ✗ | Learned SH |
 | 3DGS-DR | 3DGS+DR | ✗ | Partial | ✗ | - |
 | PANDORA | NeRF | ✓ | ✓ | ✗ | Implicit |
 | PolGS | 3DGS | ✓ | Partial (no albedo) | ✗ | - |
 | GIR | 3DGS+DR | ✗ | ✓ | ✓ | - |
-| **PhyGaP** | **2DGS+PolarDR** | **✓** | **✓ (complete)** | **✓** | **GridMap** |
+| **PhyGaP** | **2DGS+PolarDR** | **✓** | **✓ (Full)** | **✓** | **GridMap** |
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — Integrating polarization pBRDF into GS deferred rendering alongside the GridMap design for indirect illumination represents a novel technical combination.
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Covers 9 scenes, both synthetic and real data, and evaluates NVS, normals, decomposition, and relighting with complete ablations.
-- Writing Quality: ⭐⭐⭐⭐ — Well-structured with complete formula derivations and rich figures and tables.
-- Value: ⭐⭐⭐⭐ — First to achieve relighting capability in polarization-based GS, with practical application prospects in VR/AR and interactive design.
+-   Novelty: ⭐⭐⭐⭐ — Integration of polarization pBRDF into GS deferred rendering and the design of GridMap for indirect lighting is a novel technical combination.
+-   Experimental Thoroughness: ⭐⭐⭐⭐ — Includes 9 scenes, synthetic and real data, multi-dimensional evaluation of NVS/Normals/Decomposition/Relighting, and a complete ablation study.
+-   Writing Quality: ⭐⭐⭐⭐ — Clear structure, complete derivation of formulas, and rich visualizations.
+-   Value: ⭐⭐⭐⭐ — Achieves relighting capability for polarized GS for the first time, showing practical potential for VR/AR and interactive design.
 
 <!-- RELATED:START -->
 
@@ -143,11 +150,11 @@ Evaluation on 9 scenes from the PANDORA/RMVP/SMVP/Mitsuba3 datasets. PhyGaP achi
 
 ## Related Papers
 
-- [\[ICCV 2025\] GeoSplatting: Towards Geometry Guided Gaussian Splatting for Physically-based Inverse Rendering](../../ICCV2025/3d_vision/geosplatting_towards_geometry_guided_gaussian_splatting_for_physically-based_inv.md)
+- [\[CVPR 2026\] Artiverse: A Diverse and Physically Grounded Dataset for Articulated Objects](artiverse_a_diverse_and_physically_grounded_dataset_for_articulated_objects.md)
 - [\[CVPR 2026\] AeroDGS: Physically Consistent Dynamic Gaussian Splatting for Single-Sequence Aerial 4D Reconstruction](aerodgs_physically_consistent_dynamic_gaussian_splatting_for_single-sequence_aer.md)
+- [\[ICCV 2025\] GeoSplatting: Towards Geometry Guided Gaussian Splatting for Physically-based Inverse Rendering](../../ICCV2025/3d_vision/geosplatting_towards_geometry_guided_gaussian_splatting_for_physically-based_inv.md)
+- [\[CVPR 2026\] MD2E: Modeling Depth-to-Edge Cues for Monocular Metric Depth Estimation](md2e_modeling_depth-to-edge_cues_for_monocular_metric_depth_estimation.md)
 - [\[CVPR 2026\] GGPT: Geometry-Grounded Point Transformer](ggpt_geometry_grounded_point_transformer.md)
-- [\[CVPR 2026\] Wanderland: Geometrically Grounded Simulation for Open-World Embodied AI](wanderland_geometrically_grounded_simulation_for_open-world_embodied_ai.md)
-- [\[CVPR 2026\] Physically Inspired Gaussian Splatting for HDR Novel View Synthesis](physically_inspired_gaussian_splatting_for_hdr_novel_view_synthesis.md)
 
 </div>
 

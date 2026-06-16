@@ -2,166 +2,167 @@
 title: >-
   [Paper Note] Learning Mutual View Information Graph for Adaptive Adversarial Collaborative Perception
 description: >-
-  [CVPR 2026][Autonomous Driving][Collaborative perception security] This paper proposes MVIG, an adversarial attack framework that unifies the vulnerability modeling of diverse defense-equipped collaborative perception sy…
+  [CVPR 2026][Autonomous Driving][Paper Note] Ours proposes the MVIG attack framework, which uniformly models the vulnerabilities of various defensive collaborative perception systems as a Mutual View Information Graph. By combining temporal graph learning with entropy-aware vulnerability searching, it achieves adaptive fabrication attacks that reduce defense succ
 tags:
-  - "CVPR 2026"
-  - "Autonomous Driving"
-  - "Collaborative perception security"
-  - "adversarial attacks"
-  - "graph neural networks"
-  - "temporal modeling"
+  - CVPR 2026
+  - Autonomous Driving
 date: 2026-05-08
-content_hash: 673bb9a317f6ca65
+content_hash: 7529c366ce9723b6
 ---
-
 # Learning Mutual View Information Graph for Adaptive Adversarial Collaborative Perception
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2602.19596](https://arxiv.org/abs/2602.19596)  
 **Code**: [Available](https://github.com/yihangtao/MVIG)  
-**Area**: Autonomous Driving
-**Keywords**: Collaborative perception security, adversarial attacks, graph neural networks, temporal modeling, autonomous driving
+**Area**: Autonomous Driving  
+**Keywords**: Collaborative Perception Security, Adversarial Attacks, Graph Neural Networks, Temporal Modeling, Autonomous Driving
 
 ## TL;DR
 
-This paper proposes MVIG, an adversarial attack framework that unifies the vulnerability modeling of diverse defense-equipped collaborative perception systems into a Mutual View Information Graph (MVIG). By combining temporal graph learning with entropy-aware vulnerability search, MVIG enables adaptive fabrication attacks that reduce the defense success rate by up to 62%.
+Ours proposes the MVIG attack framework, which uniformly models the vulnerabilities of various defensive collaborative perception systems as a Mutual View Information Graph. By combining temporal graph learning with entropy-aware vulnerability searching, it achieves adaptive fabrication attacks that reduce defense success rates by up to 62%.
 
 ## Background & Motivation
 
-### 1. State of the Field
-Collaborative Perception (CP) enables connected autonomous vehicles (CAVs) to share perceptual data (e.g., feature maps), extending the perceptual range of individual vehicles and addressing occlusion problems. Existing defense systems such as ROBOSAC, CP-Guard, MADE, and CAD employ consensus-based verification to counter attacks from malicious agents.
+### 1. Background
+Collaborative Perception (CP) allows Connected Automated Vehicles (CAVs) to share perception data (e.g., feature maps), extending the perception range of individual vehicles and resolving occlusion issues. Existing defense systems such as ROBOSAC, CP-Guard, MADE, and CAD combat malicious agents through consensus verification.
 
 ### 2. Limitations of Prior Work
-Existing defense-equipped CP systems exhibit two critical weaknesses:
-- **Lack of robustness against systematic spatiotemporal optimization attacks**: Current attack methods do not systematically determine when and where to launch fabrication attacks, yet adversaries can develop more targeted strategies against multi-vehicle consensus verification mechanisms.
-- **Inadvertent leakage of vulnerability information during defense**: Collaborative data exchanged among CAVs (feature maps, occupancy maps, etc.) inherently embeds implicit confidence information about the surrounding environment, which attackers can exploit to identify regions of collective uncertainty.
+Existing defensive CP systems possess two critical weaknesses:
+- **Lack of robustness against systematic spatiotemporal optimized attacks**: Current attack methods do not systematically determine when and where to initiate fabrication attacks, whereas attackers can develop targeted strategies against multi-vehicle consensus mechanisms.
+- **Unintentional leakage of vulnerability knowledge during defense**: Collaborative data exchanged between CAVs (feature maps, occupancy maps, etc.) naturally embeds implicit confidence information about the surroundings, which attackers can exploit to identify regions of collective uncertainty.
 
-### 3. Root Cause
-The security defense of CP systems relies on multi-vehicle consensus verification; however, the data exchanged during this verification process simultaneously exposes the system's weak points, creating a paradox in which "defense entails disclosure."
+### 3. Key Challenge
+Security defense in CP systems relies on multi-vehicle consensus verification, but the data exchanged during this process exposes the system's weak points, creating a "defense-as-leakage" paradox.
 
-### 4. Paper Goals
-Design an adaptive adversarial attack framework capable of learning the vulnerabilities of diverse defense-equipped CP systems, automatically optimizing attack location, timing, and persistence, while remaining generalizable across different defense configurations.
+### 4. Goal
+Design an adaptive adversarial attack framework capable of learning vulnerabilities from different defensive CP systems to automatically optimize attack location, timing, and persistence, while maintaining generality across various defense configurations.
 
-### 5. Starting Point
-Model the information leaked by different defense systems in a unified graph structure (MVIG), and leverage the spectral properties and temporal evolution of this graph to discover vulnerable regions.
+### 5. Key Insight
+Uniformly model information leaked by different defense systems as a graph structure (MVIG), utilizing the graph's spectral properties and temporal evolution to discover vulnerable regions.
 
 ### 6. Core Idea
-Construct a Mutual View Information Graph (MVIG) with CAVs as nodes and mutual information as edge weights to encode consistency and disagreement across multi-vehicle perception. Temporal graph learning is used to predict future vulnerable regions, and entropy-aware search optimizes the attack strategy.
+Construct a Mutual View Information Graph (MVIG) using CAVs as nodes and mutual information as edge weights to encode consistency and divergence in multi-vehicle perception. Future vulnerable regions are searched via temporal graph learning, and attack strategies are optimized using entropy-aware searching.
 
 ## Method
 
 ### Overall Architecture
 
-The MVIG attack framework comprises four stages:
-1. **MVIG Construction**: Extract occupancy information from each CAV using historical collaborative data and construct a weighted undirected graph.
-2. **MVIGNet Prediction**: Predict the vulnerability score map for future frames through graph convolution combined with GRU-based temporal modeling.
-3. **Entropy-Aware Vulnerability Search**: Optimize attack location, timing, and persistence.
-4. **Alternating Optimization**: Decouple mask prediction from perturbation optimization; PGD is used to generate feature perturbations.
+The core objective is to identify optimal timing and locations within a CP system protected by consensus verification to inject fabricated targets without being detected. The central observation is that collaborative data (feature maps, occupancy maps) exchanged during verification reveals regions where multi-vehicle views diverge, which serve as windows for attack.
+
+The pipeline follows this observation: First, the perception status of each CAV in every frame is compressed into a **Mutual View Information Graph (MVIG)**, where nodes represent vehicles and edge weights represent the mutual information between two vehicles (higher weights indicate higher consensus). Next, a temporal graph network, **MVIGNet**, processes historical MVIG sequences to predict vulnerability scores for each location in future frames. Given the score map, **Entropy-aware Searching** samples attack locations and decides whether the attack should persist into the next frame. Finally, PGD is used to generate feature perturbations at the selected locations to inject fabricated targets. The optimization of attack locations (masks) and perturbation values is **deliberately decoupled** into two stages to ensure quality while maintaining real-time performance. Occupancy information required for MVIG construction is adaptively acquired based on the victim system.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    IN["CAV Collaborative Data: Feature Maps / Occupancy Maps"] --> ADAPT["Adaptive Defense Information Utilization"]
+    ADAPT -->|"Shared Occupancy (e.g., CAD)"| MVIG["Mutual View Information Graph (MVIG)<br/>Node=CAV, Edge Weight=Mutual Info"]
+    ADAPT -->|"Feature Only (ROBOSAC/CP-Guard)<br/>BRS to infer Occupancy Grid"| MVIG
+    MVIG --> NET["MVIGNet Temporal Graph Learning<br/>GCN Message Passing → GRU Temporal Features → FCN Vulnerability Score Map"]
+    NET --> SEARCH["Entropy-aware Vulnerability Search & Persistence<br/>Probabilistic Sampling + Threshold η for Persistence"]
+    SEARCH --> PGD["PGD Perturbation Generation<br/>Iterative Injection of Fabricated Targets"]
+    PGD --> OUT["Fabricated Targets injected into Features, evading Consensus Verification"]
+```
 
 ### Key Designs
 
-#### Design 1: Mutual View Information Graph (MVIG) Construction
-- **Function**: Model the perceptual states of multiple CAVs as a unified graph representation.
-- **Mechanism**: Each CAV serves as a node whose feature vector consists of three components: (1) a basic occupancy distribution $\mathbf{h}_i^{\text{basic}}$ (frequency of free/occupied/unknown states); (2) pose information $\mathbf{h}_i^{\text{pos}}$; and (3) multi-scale spatial context features $\mathbf{h}_i^{\text{spatial}}$. Edge weights measure location-level consistency between two vehicles using mutual information: $\mathbf{W}_{ij} = \mathbb{E}_{(x,y)}\left[\sum_{a,b} p_{ij}(a,b) \log \frac{p_{ij}(a,b)}{p_i(a) p_j(b)}\right]$
-- **Design Motivation**: High mutual information indicates perceptually consistent regions (difficult to attack); low mutual information indicates regions of perceptual conflict or uncertainty (attack windows). The unified graph representation allows the framework to adapt across different defense systems.
+**1. Mutual View Information Graph (MVIG): Explicitly Mapping Divergence**
 
-#### Design 2: MVIGNet Temporal Graph Learning
-- **Function**: Predict future vulnerable regions from historical MVIG sequences.
-- **Mechanism**: A three-stage architecture — (1) graph convolutional layers aggregate neighbor features via edge-weight-modulated message passing; (2) a GRU captures temporal patterns, $\mathbf{z}^{t+m} = \Phi_{\text{GRU}}(\{\mathbf{f}^\tau\})$; (3) an FCN scoring head generates a vulnerability score map $\mathbf{S}_{t+m} \in [0,1]^{H \times W}$.
-- **Design Motivation**: Attacks require anticipation (with an $m=2$ frame delay), and temporal modeling captures the dynamic evolution of coverage blind spots induced by vehicle motion.
+Attackers seek "easy targets," which in collaborative perception are regions where multi-vehicle perceptions are contradictory or collectively uncertain—injecting targets there mimics normal viewpoint variance. MVIG models this explicitly: each CAV is a node with features comprising three parts: basic occupancy distribution $\mathbf{h}_i^{\text{basic}}$ (frequencies of free/occupied/unknown states), pose information $\mathbf{h}_i^{\text{pos}}$, and multi-scale spatial context features $\mathbf{h}_i^{\text{spatial}}$. Edge weights between vehicles quantify consensus via mutual information:
 
-#### Design 3: Entropy-Aware Vulnerability Search and Attack Persistence
-- **Function**: Optimize location selection and continuation/termination decisions across multi-frame attacks.
-- **Mechanism**: A fabrication risk map is used for probabilistic sampling of attack locations; a persistence threshold $\eta$ governs attack continuation: $\mathcal{C}_{t+m+j} = \mathbb{I}\left[\mathbb{E}_{(x,y) \in \mathcal{N}(x_c,y_c)}[\tilde{\mathbf{S}}_{t+m}(x,y)] \geq \eta\right]$
-- **Design Motivation**: Overly prolonged attacks expose temporal anomalies; intelligent termination — proactively abandoning regions of low fabrication probability — substantially reduces detection risk.
+$$\mathbf{W}_{ij} = \mathbb{E}_{(x,y)}\left[\sum_{a,b} p_{ij}(a,b) \log \frac{p_{ij}(a,b)}{p_i(a) p_j(b)}\right]$$
 
-#### Design 4: Adaptive Exploitation of Defense Information
-- **Function**: Adaptively obtain MVIG inputs depending on whether the defense system shares occupancy maps.
-- **Mechanism**: For systems such as CAD that share occupancy maps, the maps are used directly. For systems without occupancy map sharing (e.g., ROBOSAC, CP-Guard), a Blind Region Segmentation (BRS) algorithm estimates approximate occupancy grids from feature maps.
-- **Design Motivation**: This enables a universal attack capability across heterogeneous defense configurations.
+High mutual information indicates high consensus, making attacks difficult; low mutual information indicates perceptual conflict, providing an attack window. Encoding vulnerability into a weighted graph provides generality—regardless of the underlying defense mechanism, the attacker faces the same problem of finding low-consensus regions on a graph.
+
+**2. MVIGNet Temporal Graph Learning: Pre-empting Vulnerable Zones**
+
+Current frame analysis is insufficient due to execution latency and vehicle movement. MVIGNet reads historical MVIG sequences to predict future vulnerability in three steps: First, GCN layers modulate message passing using edge weights to fuse node features with neighbor perspectives. Second, a GRU extracts temporal patterns $\mathbf{z}^{t+m} = \Phi_{\text{GRU}}(\{\mathbf{f}^\tau\})$ to capture dynamic blind spots caused by motion. Finally, an FCN head outputs a future vulnerability score map $\mathbf{S}_{t+m} \in [0,1]^{H \times W}$ (where $m=2$ frames), allowing the attacker to compensate for latency.
+
+**3. Entropy-aware Vulnerability Search & Attack Persistence**
+
+Given the score map, the next challenge is selecting specific locations and deciding whether to sustain the attack. Instead of selecting the global maximum, the score map is treated as a fabrication risk map for probabilistic sampling, adding stochasticity to avoid predictable patterns. Crucially, a persistence threshold $\eta$ determines continuation—attacks persist only if the smoothed vulnerability score in the target's neighborhood remains high:
+
+$$\mathcal{C}_{t+m+j} = \mathbb{I}\left[\mathbb{E}_{(x,y) \in \mathcal{N}(x_c,y_c)}[\tilde{\mathbf{S}}_{t+m}(x,y)] \geq \eta\right]$$
+
+This design (stopping when fabrication probability is low) ensures temporal coherence, making the attack appear as normal perceptual fluctuations and significantly reducing detection rates.
+
+**4. Adaptive Defense Information Utilization**
+
+Building MVIG requires occupancy information. For systems like CAD that share occupancy maps, the data is used directly. For others like ROBOSAC or CP-Guard that only share features, a Blind Region Segmentation (BRS) algorithm is used to infer approximate occupancy grids. This step allows MVIG to work across different defense configurations without assuming explicit occupancy map leakage.
 
 ### Loss & Training
 
-**Perturbation Optimization (PGD)**:
-- Spoofing: $\phi(\boldsymbol{\delta}, M_t^*) = \sum_{b \in B'} \text{IoU}(b, b_t) \cdot \log(b_\sigma)$, maximizing the confidence of fabricated targets.
-- Removal: Negate the objective to minimize the detection confidence of real targets.
-- Constraint: $\|\delta\|_\infty \leq 1.0$, with 5 PGD iterations and step size 0.01.
+Perturbations are optimized via PGD. For **Spoofing** (creating phantom targets), the objective $\phi(\boldsymbol{\delta}, M_t^*) = \sum_{b \in B'} \text{IoU}(b, b_t) \cdot \log(b_\sigma)$ maximizes fabrication confidence. For **Removal** (erasing real targets), the objective is negated to minimize detection confidence. Perturbations are constrained by $\|\delta\|_\infty \leq 1.0$, with 5 PGD iterations at a step size of 0.01.
 
-**Mask Optimization (MVIGNet)**: A joint loss with three objectives:
-1. Attack effectiveness loss: maximize fabrication confidence while penalizing locations far from the victim.
-2. Box discrimination loss: minimize overlap with existing detections.
-3. Defense evasion loss: avoid regions flagged as contradictory in multi-vehicle occupancy maps.
-
-Two-stage decoupled training: MVIGNet computes its loss using detection boxes generated by PGD, but gradients are not back-propagated into PGD.
+MVIGNet is trained using three joint targets: a task effectiveness loss to maximize fabrication confidence while penalizing distant points; a box distinction loss to minimize overlap with existing detections; and a defense evasion loss to avoid high-consensus regions. Training is decoupled—MVIGNet uses labels generated by PGD, but gradients do not flow back to PGD, enabling real-time operation.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**Dataset**: OPV2V (training), Adv-OPV2V (testing, 300 scenes × spoofing/removal)
+**Dataset**: OPV2V (Train), Adv-OPV2V (Test, 300 scenarios × spoofing/removal)
 
-| Attack Method | No Defense ASR | ROBOSAC DSR | CP-Guard DSR | GCP DSR | CAD DSR |
+| Method | No Defense ASR | ROBOSAC DSR | CP-Guard DSR | GCP DSR | CAD DSR |
 |---------|-----------|-------------|-------------|---------|---------|
 | Basic [31] | 100.0 | 100.0 | 100.0 | 100.0 | 100.0 |
 | RC spoof [39] | 92.4 | 12.0 | 18.1 | 12.2 | 83.5 |
 | BAC [29] | 99.2 | 23.0 | 37.0 | 28.0 | 90.5 |
 | **MVIG spoof** | 94.3 | **14.8** | **17.2** | **13.0** | **32.0** (-62%) |
 
-| Attack Method | ROBOSAC DSR | CP-Guard DSR | GCP DSR | CAD DSR |
+| Method | ROBOSAC DSR | CP-Guard DSR | GCP DSR | CAD DSR |
 |---------|-------------|-------------|---------|---------|
 | RC remove [39] | 14.2 | 21.4 | 15.0 | 90.1 |
 | **MVIG remove** | **12.2** (-14%) | 21.3 | **14.2** (-5%) | **78.2** (-13%) |
 
-MVIG achieves the most pronounced effect against CAD: in spoofing mode, DSR drops from 83.5% to 32.0% (↓62%).
+MVIG shows the most significant advantage against the CAD defense, where the spoofing DSR drops from 83.5% to 32.0% (↓62%).
 
-### Persistent Attack (3-frame)
+### Continuous Attack (3-frame)
 
-| Attack Method | ROBOSAC DSR | CP-Guard DSR | GCP DSR | CAD DSR |
+| Method | ROBOSAC DSR | CP-Guard DSR | GCP DSR | CAD DSR |
 |---------|-------------|-------------|---------|---------|
 | BAC [29] | 74.2 | 68.1 | 86.0 | 98.0 |
 | RC spoof [39] | 38.1 | 24.0 | 42.1 | 100.0 |
 | **MVIG spoof** | **37.0** | **26.2** | **42.0** | **63.2** (-37%) |
 
-Under persistent attacks, DSR for BAC and RC rises substantially (easily detected via temporal analysis), whereas MVIG maintains a significant advantage.
+Under continuous attack, the DSR for BAC and RC increases sharply (due to temporal detection), whereas MVIG maintains a significant advantage.
 
 ### Ablation Study
 
-- **Influence region size**: For spoofing attacks, increasing the range from 15 m to 50 m reduces DSR from 40.2% to 14.8% (larger search space is beneficial); removal attacks remain relatively stable (72.1%–84.5%), constrained by the requirement to target existing objects.
-- **Persistence threshold $\eta$**: Without a threshold, DSR is 85.3%/91.7% (spoof/removal); the optimal range of $\eta = 0.45$–$0.50$ balances attack opportunity against detection risk.
-- **Real-time performance**: MVIG achieves 15.6–29.9 FPS, satisfying real-time requirements.
+- **Search Area**: For spoofing, increasing the range from 15m to 50m reduces DSR from 40.2% to 14.8% (more space benefits the attacker); removal attacks remain stable (72.1%-84.5%) as they must target existing objects.
+- **Threshold η**: Without a threshold, DSR is 85.3%/91.7% (spoof/remove); $\eta \in [0.45, 0.50]$ proves optimal for balancing attack opportunity and detection risk.
+- **Real-time Performance**: MVIG achieves 15.6-29.9 FPS, meeting real-time requirements.
 
 ### Key Findings
 
-1. MVIG exhibits the greatest advantage against CAD (−62%), because CAD's shared occupancy maps expose more exploitable vulnerability information.
-2. Temporal consistency is critical for evading detection in multi-frame attacks — BAC's spatially-driven attacks produce inconsistent temporal patterns (DSR > 98%), whereas MVIG's temporal optimization maintains attack coherence (DSR = 63.2%).
-3. ROC analysis shows that MVIG fundamentally reduces the separability of malicious vs. benign transmissions (AUC 0.77 vs. 0.85–0.91).
-4. Attacks exploit perceptual conflict regions arising from natural occlusions and viewpoint differences among vehicles, making fabrications appear as ordinary perceptual discrepancies.
+1. MVIG is most effective against CAD (-62%) because CAD's shared occupancy maps expose more exploitable vulnerability information.
+2. Temporal consistency is key to evading detection in multi-frame attacks—BAC's spatial-only attack creates temporal anomalies (DSR > 98%), while MVIG's optimization maintains coherence (DSR = 63.2%).
+3. ROC analysis shows MVIG fundamentally reduces the separability between malicious and benign transmissions (AUC 0.77 vs 0.85-0.91).
+4. The attack exploits natural occlusions and viewpoint-induced perceptual conflicts, making fabrications appear as normal perception variances.
 
 ## Highlights & Insights
 
-1. **"Defense Entails Disclosure" Insight**: This work is the first to systematically reveal the security paradox in which CP defense mechanisms inadvertently leak system vulnerabilities during the verification process — a profound security observation.
-2. **Unified Graph Representation**: Using mutual information as edge weights, MVIG elegantly unifies vulnerability modeling across diverse defense systems without requiring defense-specific customization.
-3. **Spatiotemporal Decoupled Attack**: Decoupling mask prediction from perturbation optimization ensures both attack quality and real-time feasibility (29.9 FPS).
-4. **Intelligent Attack Termination**: Entropy-aware persistence control is a clever design — proactively abandoning low-probability windows substantially improves the overall stealthiness of the attack.
+1. **"Defense-as-Leakage" Insight**: Systematically reveals the security paradox where CP defense mechanisms unintentionally leak system vulnerabilities during verification.
+2. **Unified Graph Representation**: Using mutual information as edge weights elegantly unifies vulnerability modeling across different defense systems.
+3. **Spatiotemporal Decoupled Attack**: Decoupling mask prediction from perturbation optimization ensures both attack quality and real-time constraints (29.9 FPS).
+4. **Intelligent Attack Termination**: The entropy-aware persistence control is a clever design—sacrificing low-probability windows significantly improves overall stealth.
 
 ## Limitations & Future Work
 
-1. **Limited Search Space for Removal Attacks**: The requirement to target existing objects inherently constrains the optimization space, resulting in smaller gains compared to spoofing attacks.
-2. **Coverage Rate Constraint**: When the joint coverage of benign CAVs is high, attack effectiveness degrades (though dynamic coverage gaps remain exploitable).
-3. **LiDAR-Only Validation**: The framework has not been extended to camera-based or multimodal fusion perception; camera-based CP represents a promising future direction.
-4. **Absence of Defense Countermeasures**: As an attack-focused paper, no effective defensive strategies are proposed (only briefly discussed in the appendix).
-5. **Simulation Environment**: Validation is conducted solely on CARLA simulator data; feasibility in real-world physical scenarios remains unverified.
+1. **Space Constraints for Removal**: Removal attacks must coincide with existing objects, limiting the optimization space compared to spoofing attacks.
+2. **Joint Coverage Constraints**: Attack effectiveness decreases when the joint coverage of benign CAVs is extremely high (though dynamic gaps still exist).
+3. **LiDAR Focus**: The work is verified only on LiDAR; extension to Camera-based or multi-modal CP remains a potential direction.
+4. **Lack of Defense Countermeasures**: As an attack paper, it offers limited concrete defense suggestions (mostly discussed in the appendix).
+5. **Simulation Environment**: Evaluation is limited to the CARLA simulator; feasibility in real-world physical scenarios remains unknown.
 
 ## Related Work & Insights
 
-- **Tu et al. [31]** (Basic): Pioneered feature-map perturbation, but modifications are too conspicuous and easily detected by anomaly detection.
-- **Tao et al. [29]** (BAC): Exploits blind spots in victim viewpoints for obfuscation attacks, but considers only single-vehicle knowledge and lacks evasion of collective verification.
-- **Zhang et al. [39]** (RC + CAD): Introduces LiDAR ray casting and occupancy map verification, but lacks systematic spatiotemporal optimization.
-- **Insights**: The "sharing entails exposure" problem in collaborative systems is pervasive in federated learning, multi-agent communication, and related domains; MVIG's graph modeling approach is transferable to these settings.
+- **Tu et al. [31]** (Basic): Pioneer in feature map perturbations, but modifications are too obvious and easily detected by anomaly filters.
+- **Tao et al. [29]** (BAC): Utilizes victim blind spots for confusion but relies on single-vehicle knowledge and lacks multi-vehicle evasion.
+- **Zhang et al. [39]** (RC + CAD): Introduced occupancy map verification, but lacks systematic spatiotemporal optimization.
+- **Insight**: The "sharing-is-exposure" issue is prevalent in federated learning and multi-agent systems; the graph modeling approach of MVIG is highly transferable.
 
 ## Rating
 
-⭐⭐⭐⭐ Novel security perspective, elegant unified framework design, and comprehensive experiments; however, gains on removal attacks are limited and real-world validation is absent.
+⭐⭐⭐⭐ The security perspective is novel, the unified framework is elegant, and the experiments are comprehensive. However, the improvement in removal attacks is limited, and real-world validation is missing.
 
 <!-- RELATED:START -->
 
@@ -170,10 +171,10 @@ Under persistent attacks, DSR for BAC and RC rises substantially (easily detecte
 ## Related Papers
 
 - [\[CVPR 2026\] CoLC: Communication-Efficient Collaborative Perception with LiDAR Completion](colc_communication-efficient_collaborative_perception_with_lidar_completion.md)
+- [\[CVPR 2026\] CATNet: Collaborative Alignment and Transformation Network for Cooperative Perception](catnet_collaborative_alignment_and_transformation_network_for_cooperative_percep.md)
+- [\[CVPR 2026\] Hybrid Robust Collaborative Perception with LiDAR-4D Radar Fusion under Adverse Weather Conditions](hybrid_robust_collaborative_perception_with_lidar-4d_radar_fusion_under_adverse_.md)
 - [\[CVPR 2026\] AdaRadar: Rate Adaptive Spectral Compression for Radar-based Perception](adaradar_rate_adaptive_spectral_compression_for_radar-based_perception.md)
 - [\[ICLR 2026\] SiMO: Single-Modality-Operable Multimodal Collaborative Perception](../../ICLR2026/autonomous_driving/simo_single-modality-operable_multimodal_collaborative_perceptio.md)
-- [\[CVPR 2026\] CycleBEV: Regularizing View Transformation Networks via View Cycle Consistency for Bird's-Eye-View Semantic Segmentation](cyclebev_regularizing_view_transformation_networks_via_view_cycle_consistency_fo.md)
-- [\[ICCV 2025\] SeqGrowGraph: Learning Lane Topology as a Chain of Graph Expansions](../../ICCV2025/autonomous_driving/seqgrowgraph_learning_lane_topology_as_a_chain_of_graph_expansions.md)
 
 </div>
 

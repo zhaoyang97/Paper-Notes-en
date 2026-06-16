@@ -2,61 +2,79 @@
 title: >-
   [Paper Note] Rethinking VLMs for Image Forgery Detection and Localization
 description: >-
-  [CVPR 2026][Multimodal VLM][Image forgery detection] This paper proposes IFDL-VLM, a framework that identifies an inherent *semantic plausibility bias* in VLMs — their tendency to favor semantic coherence over authentici…
+  [CVPR 2026][Multimodal VLM][Vision-Language Model] The IFDL-VLM framework is proposed based on the discovery that the inherent semantic plausibility bias (rather than authenticity) of VLMs hinders forgery detection. The framework decouples detection/localization from linguistic explanation into two-stage optimization and utilizes localization masks as auxiliary VLM inp
 tags:
-  - "CVPR 2026"
-  - "Multimodal VLM"
-  - "Image forgery detection"
-  - "vision-language models"
-  - "forgery localization"
-  - "interpretability"
-  - "AIGC security"
+  - CVPR 2026
+  - Multimodal VLM
+  - Vision-Language Model
+  - Interpretability
 date: 2026-05-08
-content_hash: df2b4acefa92be8e
+content_hash: 74e19706ff97ae0a
 ---
-
 # Rethinking VLMs for Image Forgery Detection and Localization
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.12930](https://arxiv.org/abs/2603.12930)  
 **Code**: [sha0fengGuo/IFDL-VLM](https://github.com/sha0fengGuo/IFDL-VLM)  
-**Area**: Multimodal VLM
-**Keywords**: Image forgery detection, vision-language models, forgery localization, interpretability, AIGC security
+**Area**: Multimodal VLM  
+**Keywords**: Image forgery detection, Vision-Language Models, Forgery localization, Interpretability, AIGC security
 
 ## TL;DR
 
-This paper proposes IFDL-VLM, a framework that identifies an inherent *semantic plausibility bias* in VLMs — their tendency to favor semantic coherence over authenticity — which impedes forgery detection performance. The framework decouples detection/localization from language explanation into a two-stage optimization pipeline, and leverages localization masks as auxiliary inputs to VLMs to enhance interpretability, achieving comprehensive SOTA results across 9 benchmarks.
+The IFDL-VLM framework is proposed based on the discovery that the inherent semantic plausibility bias (rather than authenticity) of VLMs hinders forgery detection. The framework decouples detection/localization from linguistic explanation into two-stage optimization and utilizes localization masks as auxiliary VLM inputs to enhance interpretability, achieving SOTA across 9 benchmarks.
 
 ## Background & Motivation
 
-With the rapid advancement of AIGC technologies (diffusion models, GANs, autoregressive Transformers), image manipulation has become increasingly accessible, posing serious challenges for image forgery detection and localization (IFDL). Existing methods have attempted to integrate VLMs (e.g., CLIP + LLM + SAM) into IFDL to improve interpretability, but the authors identify two critical issues:
+With the advancement of AIGC technologies (Diffusion Models, GANs, Autoregressive Transformers), image manipulation has become extremely convenient, posing severe challenges for Image Forgery Detection and Localization (IFDL). Existing methods attempt to introduce VLMs (e.g., CLIP + LLM + SAM) into IFDL to enhance interpretability, but the authors identified two major issues:
 
-**Semantic Plausibility vs. Authenticity**: VLMs such as CLIP are pretrained to align high-level semantics with language, causing the visual token representations of manipulated images — even when objects are replaced or inserted — to remain highly similar to those of authentic images (cosine similarity as high as 96–98%), making it nearly impossible for VLMs to distinguish real from forged content.
+**Semantic Plausibility vs. Authenticity**: VLMs like CLIP are optimized during pre-training for alignment between high-level semantics and language. Consequently, even if objects in a tampered image are replaced/added, the visual token representations remain highly similar to the original image (cosine similarity as high as 96-98%), rendering the VLM unable to distinguish real from fake.
 
-**Coupling Problem in Existing Pipelines**: Methods such as SIDA and FakeShield jointly optimize detection, localization, and language explanation within a single VLM. However, since VLMs lack forgery-specific priors, this coupling degrades detection and localization performance.
+**Coupling Issues in Existing Pipelines**: Methods such as SIDA and FakeShield jointly optimize detection, localization, and linguistic explanation within a single VLM. However, VLMs lack prior knowledge of forgery-related concepts, which instead degrades detection/localization performance.
 
-Core insight: Localization masks inherently and explicitly encode forgery concepts, and can therefore serve as additional priors for VLMs, simplifying their training optimization.
+Key Insight: The localization mask itself explicitly encodes the concept of forgery and can be used as an additional prior for the VLM, simplifying its training and optimization.
 
 ## Method
 
 ### Overall Architecture
 
-IFDL-VLM decouples the IFDL task into two stages:
+The core challenge this paper addresses is that VLMs are naturally adept at judging if an image is "semantically plausible" but poor at judging if it "has been tampered" — the latter being the actual requirement for forgery detection. Previous methods (SIDA, FakeShield) tasked a single VLM with detection, localization, and explanation generation, where the VLM's semantic bias negatively impacted detection/localization. The strategy of IFDL-VLM is to split the tasks into two stages. Stage-1 trains a visual expert without a language model — combining a trainable ViT with a frozen SAM-H — to precisely determine "if the image is fake and where it is tampered." Stage-2 feeds the localization mask produced in the first stage back to the VLM as an explicit "forgery clue," allowing the VLM to focus on its strength: explaining the tampered regions and content in natural language. The pipeline follows: "Image → Expert Model Detection/Localization → Mask-enhanced Visual Features → VLM Explanation."
 
-- **Stage-1**: Trains a ViT + SAM expert model for forgery detection and localization.
-- **Stage-2**: Uses the detection/localization outputs from Stage-1 as auxiliary inputs to fine-tune a VLM for generating language explanations.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    X["Input Image x"] --> VIT
+    subgraph S1["Stage-1: Detection/Localization Expert (Decoupled Optimization)"]
+        direction TB
+        VIT["Trainable ViT<br/>Initialized with CLIP-ViT-L/14"] --> ATT["Multi-head Attention Fusion<br/>CLS logits as Query, patches as K/V → SEG token"]
+        VIT --> CLSF["CLS token → Linear Head<br/>Tri-classification: Pristine / Fully Synthetic / Partially Tampered"]
+        ATT --> SAM["Frozen SAM-H Decoder → Localization Mask M"]
+    end
+    CLSF --> DET["Detection Result"]
+    SAM --> FUSE
+    X --> FUSE
+    subgraph S2["Stage-2: Language Explanation Generation"]
+        direction TB
+        FUSE["Region-Aware Visual Feature Enhancement<br/>T_vis = α·CLIP(x) + (1−α)·CLIP(x⊙M)"] --> VLM["VLM (Vicuna-13B)<br/>Generate Mask/Content Explanation"]
+    end
+```
 
 ### Key Designs
 
-1. **Decoupled Optimization**: Unlike existing methods, IFDL-VLM does not jointly optimize all subtasks within a single VLM. In Stage-1, a trainable ViT (initialized from CLIP-ViT-L/14) extracts a $\langle\text{SEG}\rangle$ token fed into a frozen SAM-H to generate localization masks, while the $\langle\text{CLS}\rangle$ token is used for three-way classification (authentic / fully synthesized / manipulated). **Design Motivation**: The semantic plausibility bias of VLMs interferes with low-level forgery artifact detection; decoupling isolates the detection/localization module from this bias.
+**1. Decoupled Optimization: Stripping Detection/Localization from VLM Semantic Bias**
 
-2. **Region-Aware Visual Feature Enhancement**: The core innovation of Stage-2. The localization mask $M$ from Stage-1 is element-wise multiplied with the original image $x$ to extract the forged region, which is encoded separately by CLIP and fused via weighted aggregation:
+The authors observed that VLMs like CLIP align high-level semantics during pre-training. Even when objects are replaced in tampered images, the cosine similarity of visual tokens to the original remains at 96–98%. This "semantic plausibility priority" instinct directly interferes with the identification of low-level forgery traces. Thus, IFDL-VLM excludes the VLM from detection and localization. Stage-1 uses a trainable ViT initialized with CLIP-ViT-L/14 to extract a $\langle\text{SEG}\rangle$ token, which is fed into a frozen SAM-H decoder to produce the localization mask. Simultaneously, it uses a global $\langle\text{CLS}\rangle$ token for tri-classification (Pristine / Fully Synthetic / Partially Tampered). Both detection and localization are completed within this pure visual expert, free from VLM bias.
+
+**2. Multi-head Attention Feature Fusion: One ViT for Two Task Heads**
+
+The ViT in Stage-1 does not train separate models for each task; it uses the same patch-level features for two outputs. The global $\langle\text{CLS}\rangle$ token passes through a linear head for image-level tri-classification. Meanwhile, the classification logits serve as the Query, and the patch tokens serve as Key/Value pairs, which are fused via multi-head attention into a $\langle\text{SEG}\rangle$ token. This token acts as the prompt embedding for the frozen SAM-H to decode the pixel-level localization mask. Sharing one set of features ensures consistency between localization and detection regarding "what is suspicious" while saving parameters.
+
+**3. Region-Aware Visual Feature Enhancement: Using Localization Masks as VLM Priors**
+
+This is the core innovation of Stage-2 and the "feedback" following "decoupling." While conventional methods feed the whole image to the VLM to implicitly learn "what was changed," VLMs struggle without forgery priors. IFDL-VLM performs element-wise multiplication of the Stage-1 localization mask $M$ and the original image $x$ to extract the forged region. This region and the original image are encoded via CLIP and combined with weighted fusion:
 
 $$T_{vis} = \alpha \cdot \text{CLIP}(x) + (1 - \alpha) \cdot \text{CLIP}(x \odot M)$$
 
-   where $\alpha = 0.5$. This provides two benefits: (a) low-level forgery region cues enrich the visual features, improving the discriminability of representations between authentic and forged images; (b) the localization mask explicitly encodes forgery concepts, relieving the LLM from having to learn them implicitly from data and simplifying training optimization. At inference, the ground-truth $M$ is replaced by the predicted $\hat{M}$ from Stage-1.
-
-3. **Multi-Head Attention Feature Fusion**: Patch-level features from the ViT are projected and aggregated via multi-head attention to produce the $\langle\text{SEG}\rangle$ token used as SAM's prompt embedding, while the global $\langle\text{CLS}\rangle$ token is passed to a linear classifier. This design allows the ViT to simultaneously handle pixel-level localization and image-level detection.
+where $\alpha = 0.5$. The resulting visual features consist of half global context and half highlighted forgery region, explicitly embedding "forgery concepts" into the VLM input. During inference, the predicted $\hat{M}$ from Stage-1 is used. For example, if a face is partially swapped, Stage-1 highlights the chin area, and Stage-2 uses the enhanced feature of that region to help the VLM describe "replacement of the mandibular contour."
 
 ### Loss & Training
 
@@ -70,100 +88,100 @@ where $\lambda_{bce} = \lambda_{dice} = \lambda_{det} = 1.0$.
 
 $$\mathcal{L}_{st\text{-}2} = \mathcal{L}_{ce}(\hat{y}_{des}, y_{des})$$
 
-This is the autoregressive cross-entropy loss over the LLM's generated language explanation. The LLM backbone is Vicuna-13B.
+This is the autoregressive cross-entropy loss for the LLM's linguistic explanation. The LLM backbone is Vicuna-13B.
 
-Training details: AdamW optimizer, learning rate 1e-5, linear warmup-decay schedule, batch size 4 with gradient accumulation of 10, FP16/BF16 mixed precision.
+Training details: AdamW optimizer, learning rate 1e-5, linear warmup-decay, batch size 4 with gradient accumulation 10, FP16/BF16 mixed precision.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**SID-Set Detection Performance**:
+**Detection Performance on SID-Set**:
 
-| Method | Overall Acc | Overall F1 | Note |
-|--------|-------------|------------|------|
+| Method | Overall Acc | Overall F1 | Description |
+|------|---------|---------|------|
 | SIDA-13B | 0.94 | 0.94 | Prev. SOTA |
 | UnivFD | 0.65 | 0.80 | Traditional method |
-| **IFDL-VLM** | **0.997** | **0.998** | Near-perfect |
+| **IFDL-VLM** | **0.997** | **0.998** | Near perfect |
 
-**SID-Set Localization Performance**:
+**Localization Performance on SID-Set**:
 
 | Method | AUC | F1 | IoU | Gain |
-|--------|-----|----|-----|------|
+|------|-----|----|----|------|
 | SIDA-7B | 0.87 | 0.74 | 0.44 | - |
 | **IFDL-VLM** | **0.99** | **0.87** | **0.65** | +21% IoU |
 
-**Cross-Dataset Generalization (average over 8 datasets)**:
+**Cross-dataset Generalization (Average over 8 datasets)**:
 
 | Method | Avg IoU | Avg F1 | Gain |
-|--------|---------|--------|------|
+|------|---------|---------|------|
 | FakeShield | 0.39 | 0.45 | - |
 | SIDA-13B* | 0.38 | 0.45 | - |
 | **IFDL-VLM** | **0.47** | **0.58** | +13% IoU, +19% F1 |
 
 ### Ablation Study
 
-**Interpretability Evaluation (GPT-5 automated scoring, 0–5)**:
+**Interpretability Evaluation (GPT-5 Auto-scoring, 0-5 scale)**:
 
-| Dimension | SIDA-13B | IFDL-VLM | Note |
-|-----------|----------|----------|------|
+| Dimension | SIDA-13B | IFDL-VLM | Description |
+|------|----------|----------|------|
 | Mask | 1.22 | **2.28** | Localization mask quality |
-| Tampered Content | 1.14 | **1.98** | Description of manipulated content |
+| Tampered Content | 1.14 | **1.98** | Tampered content description |
 | Overall | 1.44 | **2.36** | +63.9% improvement |
 
 **CSS Semantic Similarity Evaluation**:
 
-| Dimension | SIDA-13B | IFDL-VLM | Note |
-|-----------|----------|----------|------|
-| Areas | 0.61 | **0.67** | Tampered regions |
-| Tampered Content | 0.44 | **0.49** | Manipulated content |
-| CSS (weighted) | 0.57 | **0.62** | +8.8% weighted gain |
+| Dimension | SIDA-13B | IFDL-VLM | Description |
+|------|----------|----------|------|
+| Areas | 0.61 | **0.67** | Tampered region |
+| Tampered Content | 0.44 | **0.49** | Tampered content |
+| CSS(weighted) | 0.57 | **0.62** | +8.8% weighted gain |
 
 ### Key Findings
 
-- **VLM priors do not benefit detection/localization**: CLIP visual features exhibit 96–98% cosine similarity between authentic and forged images, providing almost no discriminative signal. Decoupling yields substantial improvements in detection and localization performance.
-- **Localization masks augment VLMs**: Providing masks as explicit forgery concept inputs to the VLM significantly improves interpretability (GPT-5 score +63.9%, CSS +8.8%).
-- **Human evaluation**: 65.2% of 50 evaluators preferred IFDL-VLM's explanations, compared to only 11.3% preferring SIDA-13B.
-- **Cross-dataset generalization**: The framework achieves best performance on 7 out of 8 cross-domain datasets, validating its generalizability.
+- **VLM Priors are Unhelpful for Detection/Localization**: CLIP visual features have a cosine similarity of 96-98% between real and fake images, making them nearly indistinguishable. Decoupling significantly improves performance.
+- **Localization Mask as VLM Auxiliary**: Using the mask as an explicit forgery concept input for the VLM significantly enhances interpretability (GPT-5 score +63.9%, CSS +8.8%).
+- **Human Evaluation**: 65.2% of 50 evaluators preferred IFDL-VLM explanations, compared to only 11.3% for SIDA-13B.
+- **Cross-dataset Generalization**: Achieved optimal performance on 7 out of 8 cross-domain datasets, verifying framework robustness.
 
 ## Highlights & Insights
 
-- The paper offers a rigorous and counterintuitive analysis of the *semantic plausibility bias* in VLMs and its detrimental effect on forgery detection — a finding of significant practical value.
-- The "decouple and feedback" design philosophy is elegant: first train an expert model for detection/localization, then use its outputs to assist the VLM in generating explanations, rather than burdening the VLM with all tasks simultaneously.
-- The method is architecturally simple yet highly effective — Stage-1 only adds a ViT and a frozen SAM decoder, and Stage-2 only modifies the visual input, with no complex architectural changes.
+- Deeply reveals the negative impact of VLM "semantic plausibility bias" on forgery detection — a counter-intuitive but valuable finding.
+- The "decoupling + enhancement" design philosophy is elegant: training an expert model for detection/localization first, then using those results to assist the VLM's high-level interpretation.
+- The approach is concise yet effective — Stage-1 only adds a ViT + frozen SAM decoder, and Stage-2 only modifies visual inputs without complex architectural changes.
 
 ## Limitations & Future Work
 
-- Stage-2 depends on the quality of Stage-1 localization masks; localization failures propagate as cascading errors into the explanation stage.
-- Validation is limited to Vicuna-13B; it remains unexplored whether stronger LLMs (e.g., larger-scale models) could further improve interpretability.
-- In cross-dataset generalization experiments, IFDL-VLM does not surpass FakeShield on IMD2020, indicating room for improvement on specific datasets.
-- Computational efficiency is not discussed — the inference latency overhead of the two-stage pipeline is not analyzed.
+- Stage-2 depends on the quality of Stage-1 localization masks; localization failure directly impacts the explanation (cascading error).
+- Evaluations were limited to Vicuna-13B; it remains to be seen if larger LLMs can further enhance interpretability.
+- Performance on IMD2020 did not surpass FakeShield in globalization experiments; specific datasets still have room for improvement.
+- Computational efficiency was not discussed — the inference latency of a two-stage pipeline.
 
 ## Related Work & Insights
 
-- **SIDA / FakeShield**: Representative IFDL + VLM methods that couple CLIP + LLM + SAM in joint training; this paper demonstrates that decoupling is superior.
-- **MVSS-Net / CAT-Net**: Traditional IFDL methods relying on handcrafted priors (BayarConv, DCT) to detect low-level artifacts.
-- **SAM**: This paper freezes the SAM-H image encoder and fine-tunes only the mask decoder, effectively leveraging its segmentation capability.
-- Broader inspiration: For multimodal auxiliary tasks, a paradigm in which expert models first perform reliable base-level inference, whose results are then fed back to large models for high-level understanding, may be generally preferable.
+- **SIDA / FakeShield**: Representatives of coupled CLIP + LLM + SAM training; this paper proves decoupling is superior for IFDL.
+- **MVSS-Net / CAT-Net**: Traditional methods relying on manual priors (BayarConv, DCT) for low-level anomaly detection.
+- **SAM**: This work freezes the SAM-H image encoder and fine-tunes the mask decoder, effectively leveraging its segmentation capabilities.
+- Insight: For multimodal auxiliary tasks, letting an expert model handle fundamental decisions before feeding results to a large model for high-level understanding may be a better paradigm.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ (Insightful analysis of VLM bias + decoupled feedback design)
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ (9 benchmarks + three-dimensional evaluation of detection/localization/interpretability + human evaluation)
-- Writing Quality: ⭐⭐⭐⭐⭐ (Clear motivation; rigorous logical derivation from observations to solutions)
+- Novelty: ⭐⭐⭐⭐ (Analysis of VLM bias + decoupling/enhancement design, deep insights)
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ (9 benchmarks + 3D evaluation of detection/localization/interpretability + human study)
+- Writing Quality: ⭐⭐⭐⭐⭐ (Clear motivation, rigorous derivation from observation to solution)
 - Value: ⭐⭐⭐⭐⭐ (Paradigm-level contribution to the IFDL field)
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1">
+<div class="related-papers" markdown="1"></div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] Mind the Way You Select Negative Texts: Pursuing the Distance Consistency in OOD Detection with VLMs](mind_the_way_you_select_negative_texts_pursuing_the_distance_consistency_in_ood_.md)
-- [\[ICLR 2026\] Contamination Detection for VLMs using Multi-Modal Semantic Perturbation](../../ICLR2026/multimodal_vlm/contamination_detection_for_vlms_using_multi-modal_semantic_perturbation.md)
-- [\[CVPR 2026\] Rethinking MLLM Itself as a Segmenter with a Single Segmentation Token](rethinking_mllm_itself_as_a_segmenter_with_a_single_segmentation_token.md)
-- [\[CVPR 2026\] TimeLens: Rethinking Video Temporal Grounding with Multimodal LLMs](timelens_rethinking_video_temporal_grounding_with_multimodal_llms.md)
-- [\[CVPR 2026\] Seeing Through Touch: Tactile-Driven Visual Localization of Material Regions](seeing_through_touch_tactile_localization.md)
+- [\[CVPR 2026\] UNI-OOD: Unified Object- and Image-level Out-of-Distribution Detection via Cross-Context Attentive Vision-Language Modeling](uni-ood_unified_object-_and_image-level_out-of-distribution_detection_via_cross-.md)
+- [\[CVPR 2026\] Bias Is a Subspace, Not a Coordinate: A Geometric Rethinking of Post-hoc Debiasing in Vision-Language Models](bias_is_a_subspace_not_a_coordinate_a_geometric_rethinking_of_post-hoc_debiasing.md)
+- [\[CVPR 2026\] AXG-Reasoner: Error Detection and Explanation in Long Task Videos with Vision-Language Models](axg-reasoner_error_detection_and_explanation_in_long_task_videos_with_vision-lan.md)
+- [\[CVPR 2026\] Activation Matters: Test-time Activated Negative Labels for OOD Detection with Vision-Language Models](activation_matters_test-time_activated_negative_labels_for_ood_detection_with_vi.md)
+- [\[CVPR 2026\] Do Vision Language Models Need to Process Image Tokens?](do_vision_language_models_need_to_process_image_tokens.md)
 
 </div>
 

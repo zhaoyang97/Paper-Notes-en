@@ -2,81 +2,93 @@
 title: >-
   [Paper Note] Grounding Agent Memory in Contextual Intent
 description: >-
-  [ACL 2026][LLM Agent][Long-term memory] STITCH introduces "contextual intent" (thematic scope + event type + key entity types) triples as structured retrieval cues for the long-term memory of LLM agents…
+  [ACL 2026][LLM Agent][agent] STITCH introduces "contextual intent" (thematic scope + event type + key entity types) triples as structured retrieval cues for LLM agent long-term memory. These triples are induced online at each trajectory step. During inference, retrieval follows "label density ranking," performing structural matching before semanti
 tags:
-  - "ACL 2026"
-  - "LLM Agent"
-  - "Long-term memory"
-  - "agent"
-  - "contextual intent"
-  - "Event Structure Theory"
-  - "retrieval cue"
+  - ACL 2026
+  - LLM Agent
+  - agent
+  - contextual intent
+  - Event Structure Theory
+  - retrieval cue
 date: 2026-05-08
-content_hash: a2e103abd8da4df5
+content_hash: 521b40a69175b7b7
 ---
-
 # Grounding Agent Memory in Contextual Intent
 
 **Conference**: ACL 2026  
 **arXiv**: [2601.10702](https://arxiv.org/abs/2601.10702)  
 **Code**: https://contextual-intent.github.io/ (Available)  
 **Area**: LLM Agent / Memory Systems  
-**Keywords**: Long-term memory, agent, contextual intent, Event Structure Theory, retrieval cue
+**Keywords**: Long-term Memory, Agent, Contextual Intent, Event Structure Theory, Retrieval Cue
 
 ## TL;DR
-STITCH introduces "contextual intent" (thematic scope + event type + key entity types) triples as structured retrieval cues for the long-term memory of LLM agents, which are induced online at each trajectory step. During inference, it uses "label density ranking" to perform structural matching followed by semantic scoring. On the newly constructed CAME-Bench, performance does not degrade as trajectories grow, achieving a 35.6% absolute (100% relative) improvement over the strongest baseline on the Large subset.
+STITCH introduces "contextual intent" (thematic scope + event type + key entity types) triples as structured retrieval cues for LLM agent long-term memory. These triples are induced online at each trajectory step. During inference, retrieval follows "label density ranking," performing structural matching before semantic scoring. On the newly constructed CAME-Bench, STITCH maintains performance as trajectories grow, outperforming the strongest baseline by 35.6% absolute (100% relative) on the Large subset.
 
 ## Background & Motivation
 
-**Background**: LLM agents are being deployed in long-horizon tasks (multi-turn human-AI collaboration, deep research, tool-augmented autonomous environments), requiring the tracking of states, resolution of implicit references, and integration of multi-step information over dozens to hundreds of trajectory steps. Existing agentic memory systems mainly fall into three categories: (i) Vector RAG (embedding similarity retrieval); (ii) Hierarchical summarization (RAPTOR, Secom); (iii) Knowledge Graph-based (GraphRAG, A-mem).
+**Background**: LLM agents are deployed in long-term tasks (multi-turn collaboration, deep research, tool-augmented autonomous environments), requiring the tracking of states, resolution of implicit references, and integration of multi-step information across dozens to hundreds of trajectory steps. Existing agentic memory systems mainly fall into three categories: (i) Vector RAG (embedding similarity retrieval); (ii) Hierarchical summarization (RAPTOR, Secom); (iii) Knowledge-graph-based (GraphRAG, A-mem).
 
-**Limitations of Prior Work**: (1) **Embedding similarity $\neq$ contextual relevance**—"Hotel price on Day 1" and "Hotel price on Day 2" are semantically almost identical but have completely different answers; (2) **Summarization erases episode boundaries**—adjacent segments are merged, but the same goal may persist across non-adjacent segments (e.g., "Day 2 itinerary" scattered and interrupted by other segments); (3) **Knowledge graphs lack episode-level disambiguation**—the same entity is repeatedly mentioned under different latent goals and merged into a single node; (4) **Long-context LLMs** (GPT-5-mini 400k, Gemini 2.5) fail after exceeding the window, and real-time retrieval overhead is high.
+**Limitations of Prior Work**: (1) **Semantic similarity $\neq$ Contextual relevance**—"Hotel prices on Day 1" and "Hotel prices on Day 2" are semantically nearly identical but have completely different answers; (2) **Summarization erases episode boundaries**—adjacent segments are merged, but the same goal may persist across non-adjacent segments (e.g., "Day 2 itinerary" scattered and interrupted); (3) **Knowledge graphs lack episode-level disambiguation**—the same entity mentioned under different latent goals is merged into one node; (4) **Long-context LLMs** (GPT-5-mini 400k, Gemini 2.5) fail after the window is exceeded and incur high real-time retrieval overhead.
 
-**Key Challenge**: In long trajectories, many steps are **semantically similar but contextually distinct**. The bottleneck of retrieval is not recalling more content, but the "cue quality"—identifying what kind of index can precisely retrieve the correct contextual fragment from noisy history.
+**Key Challenge**: Many steps in long-term trajectories are **semantically similar but contextually distinct**. The retrieval bottleneck is not recalling more content but "cue quality"—identifying what kind of index can precisely retrieve the correct contextual fragment from noisy history.
 
-**Goal**: (1) Design a domain-agnostic structured retrieval cue that can simultaneously (a) connect non-adjacent segments with the same goal and (b) distinguish different occurrences of the same entity based on roles; (2) Construct a benchmark that truly evaluates "context-aware retrieval" rather than the "local retrieval" traps of turn-taking and thematic blocks in existing benchmarks.
+**Goal**: (1) Design a domain-agnostic structured retrieval cue that can both (a) connect non-adjacent segments with the same goal and (b) distinguish different occurrences of the same entity by role; (2) Construct a benchmark that truly evaluates "context-aware retrieval" rather than the "local retrieval" traps of turn-taking and thematic blocks in existing benchmarks.
 
-**Key Insight**: Drawing from **Event Structure Theory** in cognitive science (Zacks & Tversky 2001)—humans organize long-term experiences by (i) superordinate goal context (partonomy) and (ii) recurrent action categories (taxonomy), then anchor details using entity roles.
+**Key Insight**: Drawing from **Event Structure Theory** in cognitive science (Zacks & Tversky 2001), humans organize long-term experiences by (i) superordinate goal context (partonomy) and (ii) recurring action categories (taxonomy), then anchor details using entity roles.
 
-**Core Idea**: Index each step using a triple $\iota_t = (\sigma_t, \epsilon_t, \kappa_t)$—thematic scope (episode segment label) + event type (action category) + key entity types (attribute schema). During inference, candidates are first ranked by label overlap and then scored by semantic similarity.
+**Core Idea**: Index each step using a triple $\iota_t = (\sigma_t, \epsilon_t, \kappa_t)$—thematic scope (episode segment label) + event type (action category) + key entity types (attribute schema). At inference, rank by label overlap first, then by semantic score.
 
 ## Method
 
 ### Overall Architecture
-STITCH consists of two phases:
-1. **Contextual Intent Construction** (Figure 2, Left): For a streaming trajectory $T = \{s_1, \dots, s_n\}$ (where each step $s_t = (r_t, a_t, \tau_t)$), three cues are induced online: $\sigma_t$ thematic scope, $\epsilon_t$ event type, and $\kappa_t$ key entity types. These are combined into $\iota_t = (\sigma_t, \epsilon_t, \kappa_t)$. Coreference resolution is then performed to rewrite $s_t$ into a disambiguated $s'_t$. Finally, a memory snippet $m_t = (s_t, \iota_t, c_t)$ is stored, where $c_t = \mathcal{M}_{\text{sum}}(s'_t, \iota_t)$ is a canonical summary generated by the LLM.
-2. **Intent-Aware Retrieval** (Figure 2, Right): Given a query $q$, the LLM generates a filter $F_q = (\mathcal{S}_q, \mathcal{E}_q, \mathcal{K}_q)$. Ranking is primarily based on "label density" (the overlap cardinality between snippet $\iota_t$ and $F_q$). Semantic similarity $\text{sim}(q, c_t)$ is used to tie-break within the same density level. Finally, the top-$k_{\text{retrieve}}$ results are returned ($k_{\text{retrieve}}=40$ in experiments).
+STITCH addresses how to precisely retrieve steps that are semantically similar but contextually different in long trajectories. It splits the process into online writing and on-demand reading: the writing end progressively induces a contextual intent triple $\iota_t=(\sigma_t, \epsilon_t, \kappa_t)$ for the streaming trajectory $T=\{s_1,\dots,s_n\}$ (where each step $s_t=(r_t, a_t, \tau_t)$), encoding the latent goal segment, action category, and entity attribute focus. It then performs pronoun disambiguation to store a canonical summary (memory snippet $m_t=(s_t, \iota_t, c_t)$ where $c_t=\mathcal{M}_{\text{sum}}(s'_t, \iota_t)$). The reading end generates an isomorphic filter $F_q=(\mathcal{S}_q, \mathcal{E}_q, \mathcal{K}_q)$ for the query, using a hard ranking based on structural hits followed by a soft tie-break using semantic similarity to retrieve the top-$k_{\text{retrieve}}$ (set to 40). The core design ensures that the contextual intent of "why this content was mentioned" becomes an indexable structured cue.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Streaming trajectory step s_t"] --> B
+    subgraph WRITE["Online Intent Induction (Writing)"]
+        direction TB
+        B["Thematic Scope σ_t<br/>Sliding window tracking of latent goals, new segment on goal switch"]
+        B --> C["Taxonomic Event Labeling ε_t<br/>Online growth of action vocabulary, periodic merging of synonyms"]
+        C --> D["Key Entity Types κ_t + Structural Coref<br/>Extract attribute types, rewrite pronouns to canonical form before storage"]
+    end
+    D --> E["Memory Storage<br/>snippet m_t = (s_t, intent triple, canonical summary)"]
+    Q["Query"] --> F["Generate Isomorphic Filter F_q = (S_q, E_q, K_q)"]
+    E --> G["Hard Ranking by Label Hits (Label Density)"]
+    F --> G
+    G --> H["Soft Tie-break using Semantic Similarity"]
+    H --> I["Top-k Snippets → Response"]
+```
 
 ### Key Designs
 
-1. **Thematic Scope ($\sigma_t$) — Tracking Latent Goals Across Steps**:
+**1. Thematic Scope $\sigma_t$: Tracking Latent Goals Across Steps**
 
-    - **Function**: Segments the trajectory into "behavior episodes," labeling each with a stable segment name (e.g., "Day 2 Itinerary", "Model Optimization"). Steps within the same episode share a scope until the LLM detects a goal-state divergence.
-    - **Mechanism**: A sliding window $H_{\text{scope}}$ of history plus the previous scope are fed to an LLM predictor $\sigma_t = \mathcal{M}_{\text{scope}}(s_t, H_{\text{scope}}, \sigma_{t-1})$. Simultaneously, a compressed summary $\Sigma_\sigma$ is maintained to preserve the "gist" of the current scope for future predictions, preventing context explosion. The default window is 50 turns; experiments showed performance degradation at 10 or 100 turns.
-    - **Design Motivation**: Ablations (Table 2) show that **removing $\sigma_t$ is the most critical loss**—STITCH's F1 on the Small subset drops from 0.844 to 0.463 (-38 points). Scope forces "Day 1 hotel price" and "Day 2 hotel price" into different segments, allowing retrieval to naturally disambiguate; without it, the system relies on semantic similarity and inevitably selects the wrong segment.
+The most hidden trap in long-term dialogue is facts like "Day 1 hotel price" vs. "Day 2 hotel price," where semantic similarity is high but goals differ. STITCH uses thematic scope to partition trajectories into behavior episodes, assigning a stable segment name (e.g., "Day 2 Itinerary"). Steps within the same episode share a scope until the LLM detects goal-state divergence.
 
-2. **Taxonomic Event Labeling ($\epsilon_t$) — Dynamically Evolving Action Vocabulary**:
+This is predicted by an LLM predictor $\sigma_t=\mathcal{M}_{\text{scope}}(s_t, H_{\text{scope}}, \sigma_{t-1})$ using a sliding window $H_{\text{scope}}$ (default 50 turns). It also maintains a compressed summary $\Sigma_\sigma$ to pass the current scope's gist, preventing context explosion. This design is critical: removing $\sigma_t$ causes the Small subset F1 to drop from 0.844 to 0.463 (-38 points), as scope-based retrieval naturally performs disambiguation for similar facts.
 
-    - **Function**: Assigns an action label to each step (e.g., "searching", "comparing", "booking", "Hyperparameter Tuning", "Price Inquiry"), with the label vocabulary $\mathcal{V}_\epsilon$ expanding online.
-    - **Mechanism**: In the first phase, a seed vocabulary is generated zero-shot over $N_{\text{start}}=50$ steps. Subsequently, for each new step, semantic retrieval selects the top-$k_{\text{event}}=5$ candidate labels for the LLM to choose from: $\epsilon_t = \mathcal{M}_{\text{label}}(s_t, \text{Retrieve}(\mathcal{V}_\epsilon, s_t, k_{\text{event}}))$. If no suitable label exists, a new one is introduced. Vocabulary merging (combining synonymous labels) occurs every $k_{\text{update}}=50$ steps.
-    - **Design Motivation**: Enables cross-scope reuse—the same "Booking" action can appear in "Day 1", "Day 2", or "Day 3" scopes. However, ablations reveal a trade-off: removing $\epsilon_t$ drops F1 on Large from 0.592 to 0.273 (-32 points), demonstrating high effectiveness for fine-grained retrieval, yet it slightly hurts Type 4 (Information Synthesis) tasks because overly granular events may separate steps that should be aggregated.
+**2. Taxonomic Event Labeling $\epsilon_t$: Online Evolving Action Vocabulary**
 
-3. **Key Entity Types ($\kappa_t$) + Structural Coreference Resolution**:
+The same "Booking" action can occur across "Day 1", "Day 2", and "Day 3" scopes. An orthogonal action dimension is needed for fine-grained distinction. STITCH labels each step with an event label (e.g., "searching", "comparing", "Price Inquiry"). The vocabulary $\mathcal{V}_\epsilon$ grows online: starting with a seed vocabulary from the first $N_{\text{start}}=50$ steps, it then performs semantic retrieval of the top-$k_{\text{event}}=5$ candidates for the LLM to select $\epsilon_t = \mathcal{M}_{\text{label}}(s_t, \text{Retrieve}(\mathcal{V}_\epsilon, s_t, k_{\text{event}}))$. New labels are introduced if no existing label fits, and synonyms are merged every $k_{\text{update}}=50$ steps.
 
-    - **Function**: Extracts "attribute categories" needed for each step (e.g., "Metric" instead of a specific value, "Price"/"Rating" instead of a specific hotel) to serve as a schema template for anchoring relevant fields; uses $\sigma_t$ and $\epsilon_t$ to rewrite pronouns like "Book it." into "Book Apollo Hotel."
-    - **Mechanism**: $\kappa_t = \mathcal{M}_{\text{entity}}(s_t, \mathcal{V}_\kappa)$, where $\mathcal{V}_\kappa$ also expands and merges periodically. For coreference, historical steps from the same scope with compatible event types are retrieved to form $C_{\text{align}}$, and the LLM rewrites the step as $s'_t = \mathcal{M}_{\text{rewrite}}(s_t, C_{\text{align}})$.
-    - **Design Motivation**: (i) Using entity types rather than instances makes the schema domain-general; (ii) Coreference must be completed **before storage**, otherwise subsequent retrieval collects ambiguous snippets containing "it," increasing disambiguation costs later. Ablations show removing coreference drops F1 on Large from 0.592 to 0.404 (-19 points), validating the necessity of "disambiguate before storage."
+This is highly effective for fine-grained retrieval; removing $\epsilon_t$ drops Large F1 from 0.592 to 0.273 (-32 points). However, there is a granularity trade-off where overly fine labels may split related steps, slightly hurting Type 4 (Information Synthesis) queries.
+
+**3. Key Entity Types $\kappa_t$ and Structural Coref: Grounding Before Storage**
+
+STITCH extracts "attribute types" rather than specific instances (e.g., "Metric" instead of a value, "Price/Rating" instead of a specific hotel). $\kappa_t=\mathcal{M}_{\text{entity}}(s_t, \mathcal{V}_\kappa)$, where $\mathcal{V}_\kappa$ also follows online expansion and merging. Using types instead of instances ensures cross-domain generalizability. Based on this, it performs coreference resolution: retrieving history steps from the same scope with compatible event types to form alignment context $C_{\text{align}}$, allowing the LLM to rewrite "Book it" into "Book Apollo Hotel" ($s'_t=\mathcal{M}_{\text{rewrite}}(s_t, C_{\text{align}})$).
+
+The principle is that disambiguation must occur **before storage**; otherwise, retrieval returns ambiguous "it" snippets. Removing coreference resolution drops Large F1 from 0.592 to 0.404 (-19 points).
 
 ### Loss & Training
-- **Completely training-free**—all intent construction and retrieval use gpt-5-mini with default reasoning effort.
-- Hyperparameters: $N_{\text{start}}=50$, $k_{\text{update}}=50$, $k_{\text{retrieve}}=40$, $k_{\text{event}}=5$; retrieval token budget = 4096 (for fair comparison).
-- LLM-as-judge uses gpt-4.1-mini (temp=0).
+STITCH is training-free. All intent construction and retrieval utilize gpt-5-mini online inference without parameter updates. Hyperparameters are fixed at $N_{\text{start}}=50$, $k_{\text{update}}=50$, $k_{\text{retrieve}}=40$, and $k_{\text{event}}=5$. The retrieval token budget is 4096 for fair comparison. LLM-as-judge uses gpt-4.1-mini.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Comprehensive table for CAME-Bench (newly constructed) + LongMemEval + LoCoMo (key columns):
+Comparison on CAME-Bench, LongMemEval, and LoCoMo:
 
 | Method | CAME-S F1 | CAME-M F1 | CAME-L F1 | LongMemEval Acc-O | LongMemEval Acc-S | LongMemEval Acc-M | LoCoMo Acc |
 |---|---|---|---|---|---|---|---|
@@ -91,9 +103,9 @@ Comprehensive table for CAME-Bench (newly constructed) + LongMemEval + LoCoMo (k
 | Secom | 0.501 | 0.114 | 0.236 | 0.520 | 0.580 | 0.600 | 0.640 |
 | **STITCH (Ours)** | **0.844** | **0.682**† | **0.592**† | **0.860** | **0.860** | **0.800** | 0.703 |
 
-†: Paired t-test vs. strongest baseline on that subset, $p < 0.05$.
+†: Paired t-test vs. strongest baseline on subset, $p < 0.05$.
 
-**Key scaling phenomenon**: From Small ($N=144$) $\rightarrow$ Medium ($N=168$, ~6× length) $\rightarrow$ Large ($N=61$, ~17× length), all baselines collapse sharply (GPT-5-mini F1 drops from 0.804 $\rightarrow$ 0.566 $\rightarrow$ 0.212). STITCH remains nearly stable (0.844 $\rightarrow$ 0.682 $\rightarrow$ 0.592), outperforming the strongest baseline on Large by 35.6% absolute (roughly 100% relative).
+**Key scaling phenomenon**: From Small ($N=144$) to Medium ($N=168$, ~6× length) and Large ($N=61$, ~17× length), all baselines collapse (GPT-5-mini F1 from 0.804 to 0.212), while STITCH remains robust (0.844 to 0.592).
 
 ### Ablation Study
 
@@ -101,59 +113,55 @@ Comprehensive table for CAME-Bench (newly constructed) + LongMemEval + LoCoMo (k
 |---|---|---|---|---|
 | **STITCH (full)** | **0.844** | **0.682** | **0.592** | Full Model |
 | w/o thematic scope $\sigma_t$ | 0.463 | 0.257 | 0.213 | **Largest drop**—scope is core |
-| w/o event type $\epsilon_t$ | 0.753 | 0.527 | 0.273 | 32-point drop on Large |
-| w/o coreference | 0.578 | 0.489 | 0.404 | No disambiguation $\rightarrow$ snippets with "it" |
-| w/o key entity type $\kappa_t$ | 0.735 | 0.511 | 0.458 | Entity role anchoring is vital |
-
-Error pattern analysis (Table 3): 78.4% of label selection failures at question-time are "Non_Inducible_Label" (insufficient information in the query to derive the correct label), and 71.8% are "Granularity_Mismatch" (labels are too coarse or too fine).
+| w/o event type $\epsilon_t$ | 0.753 | 0.527 | 0.273 | -32 points on Large |
+| w/o coreference | 0.578 | 0.489 | 0.404 | No coref → "it" in snippets |
+| w/o key entity type $\kappa_t$ | 0.735 | 0.511 | 0.458 | Entity anchoring is vital |
 
 ### Key Findings
-- **Thematic scope is more critical than event type or entity type**—consistent with cognitive science's Event Structure Theory: human recall is indexed by episode/goal first, then subdivided by action/entity.
-- **STITCH's advantage scales exponentially with trajectory length**: On the Small subset, it is nearly tied with GPT-5-mini; on Medium, it gains +11.6% F1; on Large, it gains +37 points, proving intent-aware indexing solves the "length" rather than "difficulty" bottleneck.
-- **Long-context LLMs suffer a catastrophe on Large**: The "lost in the middle" phenomenon—GPT-5-mini achieves an F1 of only 0.212 on the Large subset, less than 1/3 of STITCH, showing long context cannot replace structured memory.
-- **Granularity trade-off is an open problem**: Fine-grained events favor Type 2 (factual recall) but harm Type 4 (information synthesis). The authors suggest a hierarchical label space for future work.
-- **Stability across backbones**: Replacing the backbone with gpt-4o-mini or gpt-4.1-mini, STITCH still consistently outperforms Secom and long-context baselines, proving that gains come from the method itself.
-- **CAME-Bench reveals flaws in existing benchmarks**: Most baselines near saturation (0.7-0.8 acc) on LongMemEval/LoCoMo but drop below 0.2 F1 on CAME-Bench Large, indicating that existing evaluations underestimate the difficulty of long-horizon context tracking.
+- **Thematic scope is more critical than event or entity types**: This aligns with Event Structure Theory, where humans recall by episode first.
+- **Advantages scale with trajectory length**: STITCH matches GPT-5-mini on Small, but leads by 37 points on Large, proving intent-aware indexing solves the length bottleneck.
+- **Long-context LLMs fail on Large tasks**: The "lost in the middle" phenomenon is evident; GPT-5-mini achieves less than 1/3 of STITCH's F1 on the Large subset.
+- **Granularity trade-off is an open problem**: Fine-grained events favor factual recall but hurt information synthesis.
+- **Stable across backbones**: Replacing GPT-5-mini with 4o-mini or 4.1-mini maintains the performance lead, proving gain is method-driven.
 
 ## Highlights & Insights
-- **Clear mapping from CogSci to Engineering**: The Event Structure Theory triple of "partonomy + taxonomy + figure" directly maps to thematic scope + event type + entity type, providing a principled answer to "why these three cues," which is more robust than intuitive schema design.
-- **Simple and Elegant Label Density Ranking**: Candidates are first ranked by "how many structural constraints are met" and then tie-broken by semantic similarity. This "hard filter + soft rank" two-stage strategy avoids the dilution caused by blindly summing structural matching and semantic similarity, serving as a directly reusable retrieval pattern.
-- **Online Dynamic Vocabulary**: All label vocabularies are induced from data and merged periodically without a domain ontology, making the method naturally cross-domain (working directly on travel, debate, and general dialogue). This "self-expanding schema" approach is transferable to any scenario requiring structure without manual ontology labeling.
-- **Coreference before Storage**: Rewriting "Book it" to "Book Apollo Hotel" before storage ensures that subsequent retrieval always obtains a grounded canonical form, avoiding composite errors from "storing ambiguity and disambiguating on the fly." This principle is applicable to all agentic memory systems.
-- **"Four Question Types" in CAME-Bench**: Categorizing tasks into Incremental Memory Revision, Context-Aware Factual Recall, Context-Aware Multi-Hop Reasoning, and Information Synthesis cleanly decomposes "long-term memory" capabilities. Future benchmark designs can directly reuse this taxonomy.
+- **Cognitive Science to Engineering Mapping**: Using the "partonomy + taxonomy + figure" triple provides a principled design for memory cues beyond intuition.
+- **Elegance of Label Density Ranking**: The two-stage "hard filter + soft tie-break" strategy avoids the mutual dilution of structural matching and semantic similarity.
+- **Online Dynamic Vocabulary**: The ability to grow schemas online without a domain ontology allows for native cross-domain functionality.
+- **Pre-storage Grounding**: Forcing disambiguation before storage prevents the accumulation of errors typical of "on-the-fly" resolution.
 
 ## Limitations & Future Work
-- **High Ingestion Cost**: Each step requires multiple LLM calls (scope inference, event selection, entity extraction, coreference rewrite, summary generation), making it significantly slower than pure embedding-based memory; the authors explicitly acknowledge this as a trade-off.
-- **Flat Granularity**: The event vocabulary is non-hierarchical, forcing a choice between fine and coarse; synthesis tasks suffer as a result. Future work should introduce hierarchical schemas.
-- **Buffered Update Delay**: $k_{\text{update}}=50$ means new event type formalization waits for 50 steps, causing slight lag in rapidly changing domains.
-- **Dependence on Strong LLMs for Intent Induction**: Backbones used were from the gpt-mini series; stability on open-source small models remains unverified. If the LLM misjudges a scope boundary, the entire trajectory index is biased.
-- **78% "Non-inducible" failures**: This implies queries often lack sufficient information to derive labels. Future work could explore "deferred label refinement," where ranking performs soft matching instead of forcing label selection at query time.
-- **Future Directions**: (i) Hierarchical event taxonomy (coarse $\rightarrow$ fine) to support both filtering and synthesis; (ii) Using small models for scope/event prediction to reduce cost; (iii) Introducing user-controlled editing interfaces for manual correction of indices; (iv) Exploring multi-modal extensions to include visual/audio steps in the same intent schema.
+- **High Ingestion Cost**: Multiple LLM calls per step make ingestion significantly slower than embedding-only memory.
+- **Flat Granularity**: A single-layer event vocabulary forces a choice between fine and coarse, hurting synthesis.
+- **Buffered Update Latency**: $k_{\text{update}}=50$ introduces a minor delay in formalizing new event types.
+- **Strong LLM Dependency**: Performance on smaller open-source models for intent induction remains unverified.
 
 ## Related Work & Insights
-- **vs. GraphRAG / A-mem (KG-based)**: Graph memory merges multiple mentions of an entity into the same node, losing the "latent goal" dimension. STITCH uses thematic scope to explicitly separate occurrences of the same entity into different segments, leading to a +40 point F1 gain on CAME-Bench Large, proving episode-level disambiguation is indispensable.
-- **vs. RAPTOR / Secom (Summarization-based)**: Hierarchical summaries can fragment non-adjacent segments belonging to the same goal. STITCH uses a sliding-window scope to track goal continuity online, providing massive gains for Type 3 multi-hop reasoning.
-- **vs. HippoRAG 2 (Hippocampus-inspired)**: HippoRAG uses PageRank-style associative retrieval based on entity co-occurrence. STITCH explicitly encodes "why the entity was mentioned" into $\iota_t$, which is more precise than association.
-- **vs. Long-context LLMs (GPT-5-mini 400k, Gemini 2.5)**: Expanding context simply collapses when trajectories become truly long (Large subset ~17× Small), proving that "infinite context" is not the solution for long-horizon memory; structured retrieval remains necessary.
-- **vs. LongMemEval / LoCoMo Benchmarks**: These benchmarks often have strict turn-taking or independent thematic blocks, allowing models to cheat using "local adjacency." CAME-Bench uses interleaved non-turn-taking and symbolic planning to guarantee true long-term dependencies.
+- **vs. GraphRAG / A-mem**: KG methods merge occurrences, losing latent goal dimensions; STITCH's episode-level disambiguation is superior in long trajectories.
+- **vs. RAPTOR / Secom**: Hierarchical summaries can fragment non-adjacent segments with the same goal; STITCH's sliding-window scope maintains better multi-hop continuity.
+- **vs. HippoRAG 2**: HippoRAG relies on entity co-occurrence; STITCH explicitly codes the "why" via $\iota_t$.
+- **vs. Long-context LLM**: Expanding context windows is not equivalent to structural memory once trajectories are long enough.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ The contextual intent triple design, clear CogSci mapping, and online dynamic schema are highly original; CAME-Bench also fills a significant gap in benchmarking.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Conducted across 3 benchmarks, 13 baselines, 4 ablation configurations, cross-backbone testing, error analysis, and segment length sensitivity; all necessary sanity checks were performed.
-- Writing Quality: ⭐⭐⭐⭐ Figure 1 clearly decomposes the four capability axes of "long-term memory," and the Method section balances formulas with intuitive explanations. However, specific CAME-Bench question examples are in the Appendix, making data types slightly hard to visualize in the main text.
-- Value: ⭐⭐⭐⭐⭐ Provides a drop-in memory solution for industrial long-horizon agents, complete with open-source code and benchmarks. Highly valuable for deep research, multi-turn assistants, and tool-use agents.
+- Novelty: ⭐⭐⭐⭐⭐ 
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 
+- Writing Quality: ⭐⭐⭐⭐ 
+- Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
+- Zacks & Tversky, 2001: Event Structure Theory in Perception and Conception.
+- Sarthi et al., 2024: RAPTOR: Recursive Abstractive Processing for Tree-Organized Retrieval.
+</div>
+<!-- RELATED:END -->
 
 ## Related Papers
 
 - [\[ACL 2026\] OCR-Memory: Optical Context Retrieval for Long-Horizon Agent Memory](ocr-memory_optical_context_retrieval_for_long-horizon_agent_memory.md)
-- [\[ACL 2026\] Mem^p: Exploring Agent Procedural Memory](memp_exploring_agent_procedural_memory.md)
 - [\[ACL 2026\] Lightweight LLM Agent Memory with Small Language Models](lightweight_llm_agent_memory_with_small_language_models.md)
 - [\[NeurIPS 2025\] TAI3: Testing Agent Integrity in Interpreting User Intent](../../NeurIPS2025/llm_agent/tai3_testing_agent_integrity_in_interpreting_user_intent.md)
-- [\[ACL 2026\] Topology Matters: Measuring Memory Leakage in Multi-agent LLMs](topology_matters_measuring_memory_leakage_in_multi-agent_llms.md)
+- [\[ACL 2026\] Mem^p: Exploring Agent Procedural Memory](memp_exploring_agent_procedural_memory.md)
+- [\[ACL 2026\] From Storage to Experience: A Survey on the Evolution of LLM Agent Memory Mechanisms](from_storage_to_experience_a_survey_on_the_evolution_of_llm_agent_memory_mechani.md)
 
 </div>
 

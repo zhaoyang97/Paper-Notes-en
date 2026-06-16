@@ -2,78 +2,91 @@
 title: >-
   [Paper Note] M3DLayout: A Multi-Source Dataset of 3D Indoor Layouts and Structured Descriptions for 3D Generation
 description: >-
-  [CVPR 2026][3D Vision][3D indoor layout] This paper constructs M3DLayout, a large-scale multi-source 3D indoor layout dataset comprising 21…
+  [CVPR 2026][3D Vision][Dataset] The authors constructed M3DLayout, a multi-source large-scale 3D indoor layout dataset (21,367 layouts, 433k+ object instances), integrating real scans, professional designs, and procedural generation. Complemented by structured text descriptions, it provides a high-quality foundation for text-driven 3D scene generatio
 tags:
-  - "CVPR 2026"
-  - "3D Vision"
-  - "3D indoor layout"
-  - "dataset"
-  - "text-driven scene generation"
-  - "diffusion model"
-  - "autoregressive model"
+  - CVPR 2026
+  - 3D Vision
+  - Dataset
+  - Diffusion Model
 date: 2026-05-08
-content_hash: b51bb59c19595aa0
+content_hash: a4af19421b94cfda
 ---
-
 # M3DLayout: A Multi-Source Dataset of 3D Indoor Layouts and Structured Descriptions for 3D Generation
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2509.23728](https://arxiv.org/abs/2509.23728)  
 **Code**: [GitHub](https://github.com/Graphic-Kiliani/M3DLayout-code)  
-**Area**: 3D Vision
+**Area**: 3D Vision  
 **Keywords**: 3D indoor layout, dataset, text-driven scene generation, diffusion model, autoregressive model
 
 ## TL;DR
 
-This paper constructs M3DLayout, a large-scale multi-source 3D indoor layout dataset comprising 21,367 layouts and over 433k object instances. It integrates three complementary sources—real-world scans, professionally designed scenes, and procedurally generated environments—paired with structured textual descriptions, providing a high-quality training foundation for text-driven 3D scene generation.
+The authors constructed M3DLayout, a multi-source large-scale 3D indoor layout dataset (21,367 layouts, 433k+ object instances), integrating real scans, professional designs, and procedural generation. Complemented by structured text descriptions, it provides a high-quality foundation for text-driven 3D scene generation.
 
 ## Background & Motivation
 
-In text-driven 3D scene generation, object layout serves as a critical intermediate representation bridging language instructions and geometric outputs, providing structural blueprints, enabling semantic controllability, and supporting interactive editing. However, existing datasets suffer from severe bottlenecks:
+In text-driven 3D scene generation, object layout serves as a crucial intermediate representation connecting linguistic instructions with geometric output. It providing structural blueprints and supporting semantic controllability and interactive editing. However, existing datasets face severe bottlenecks:
 
-- **ScanNet, Matterport3D** (real-world scans): large geometric noise, incomplete object coverage, and lack of fine-grained annotations required for generative tasks.
-- **3D-FRONT, Structured3D** (professionally designed): clean layout structures but limited object variety, with almost no small objects (3D-FRONT contains only 0.2% small objects).
-- **All existing datasets**: lack scene-level textual annotations (global descriptions + large furniture relationships + small object details), making them unsuitable for conditional or multimodal generation tasks.
-- Scene feasibility issues (overlaps, displacements, semantic violations) are rarely validated, resulting in noisy training data.
+- **ScanNet, Matterport3D** (Real scans): High geometric noise, incomplete object coverage, and a lack of fine-grained annotations required for generation tasks.
+- **3D-FRONT, Structured3D** (Professional design): Neat layout structures but limited object variety, with almost no small items (3D-FRONT contains only 0.2% small objects).
+- **All existing datasets**: Lack scene-level text annotations (global descriptions + large furniture relationships + small object details), failing to support conditional or multimodal generation tasks.
+- Scene feasibility issues (overlaps, displacements, semantic violations) are rarely validated, leading to significant noise in training data.
 
-The core need is for a large-scale, diverse 3D layout dataset with structured textual annotations that covers both large furniture and small objects.
+**Goal**: To create a large-scale, diverse 3D layout dataset with structured text annotations, covering both large furniture and small objects.
 
 ## Method
 
 ### Overall Architecture
 
-The construction of M3DLayout proceeds in three stages: (1) multi-source data collection and cleaning; (2) structured textual description annotation; and (3) benchmark establishment based on diffusion and autoregressive models. The primary contribution lies at the data level rather than in model innovation.
+The core objective is to address the lack of high-quality training data for text-driven 3D scene generation. The pipeline consists of three steps: collecting and cleaning 3D indoor layouts from three sources, providing hierarchical structured text descriptions for each layout, and establishing benchmarks using diffusion and autoregressive baselines.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph SRC["Three-Source Fusion (Merging after cleaning)"]
+        direction TB
+        A["Matterport3D<br/>Real scan: messy but incomplete"]
+        B["3D-FRONT<br/>Professional: neat but lacks small objects"]
+        C["Inf3DLayout<br/>Procedural: abundant small objects"]
+    end
+    SRC --> D["M3DLayout Library<br/>21,367 layouts / 433k+ objects"]
+    D --> E["Three-level Text Annotation<br/>Global Scene → Large Furniture → Small Objects"]
+    E -->|"GPT-4o / Rule-based + Human Audit"| F["Structured Text-Layout Dataset"]
+    F --> BENCH
+    subgraph BENCH["Dual-baseline benchmark"]
+        direction TB
+        G["DIFF-M3DLayout<br/>Diffusion (DiffuScene)"]
+        H["AR-M3DLayout<br/>Autoregressive (Transformer)"]
+    end
+```
 
 ### Key Designs
 
-1. **Three-Source Data Fusion Strategy**:
+**1. Three-Source Fusion: Compensating weaknesses with Authenticity, Standardisation, and Diversity**
 
-    - **Real-world scans (Matterport3D, 1,684 scenes)**: reflect authentic cluttered spatial layouts, averaging 12.6 objects/scene with 39.4% small objects. Cleaning procedures include merging low-frequency categories and filtering scenes with fewer than 2 objects.
-    - **Professionally designed scenes (3D-FRONT, 5,754 scenes)**: structurally clean and semantically well-defined, averaging 6.9 objects/scene, but with only 0.2% small objects. Uncommon configurations and unnatural proportions are filtered.
-    - **Procedurally generated scenes (Inf3DLayout, 13,929 scenes)**: generated using the Infinigen generator for five common room types (bedroom/living room/dining room/kitchen/bathroom), averaging 26.8 objects/scene with 68.5% small objects. Room segmentation and outlier filtering are applied.
+Single-source layout data typically suffers from specific deficiencies. M3DLayout merges three types to leverage their respective strengths. Matterport3D (1,684 scenes, 12.6 objects/scene, 39.4% small objects) provides the clutter of real spaces; 3D-FRONT (5,754 scenes, 6.9 objects/scene, 0.2% small objects) contributes structural regularity and semantic standards; Inf3DLayout (13,929 scenes, 26.8 objects/scene, 68.5% small objects) uses Infinigen to generate customized layouts for bedrooms, etc., significantly increasing the proportion of small items.
 
-   **Design Motivation**: The three sources are complementary—real-world data provides layout authenticity, professional designs offer structural regularity, and procedural generation greatly enhances object diversity and fine-grained coverage.
+**2. Three-Level Text Annotation: Decomposing "Global-Large-Small" into Hierarchical Semantic Supervision**
 
-2. **Structured Textual Annotation System**: Each layout is paired with a three-level structured description:
+To enable fine-grained control, M3DLayout provides three levels of text: global scene descriptions (room type, style, geometry, zones), large furniture descriptions (absolute positioning and relative relationships), and small object descriptions (placement on surfaces/shelves and distribution patterns). The annotation workflow utilizes GPT-4o for Matterport3D and Inf3DLayout, while rule-based templates are used for 3D-FRONT, followed by manual auditing.
 
-    - **Global scene description**: room type, style attributes, geometric characteristics, functional zones, and symmetry patterns.
-    - **Large furniture description**: absolute positioning of major furniture ("bookshelf against the opposite wall") and relative spatial relationships ("coffee table beside the sofa").
-    - **Small object description**: placement of decorative/functional small objects (on tabletops/shelves) and distribution patterns (uniform/symmetric).
+> ⚠️ GPT-4o annotations may introduce hallucinations or inaccurate spatial descriptions; manual audit is based on sampling.
 
-   **Annotation pipeline**: For Matterport3D and Inf3DLayout, top-down views, side views, and close-ups of small objects are rendered and fed into GPT-4o to generate textual descriptions. For 3D-FRONT, a rule-based template approach is used due to its regular layout structure. Sampled human verification is conducted at the end.
+**3. Dual-Baseline Benchmark: Evaluating Diffusion and Autoregressive Routes**
 
-3. **Benchmark Model Design**:
+The diffusion baseline, DIFF-M3DLayout, follows the DiffuScene architecture, parameterizing each object as $o_i = (c_i, x_i, y_i, z_i, w_i, h_i, d_i, \theta_i)$. The autoregressive baseline, AR-M3DLayout, uses a Transformer to predict objects sequentially:
 
-    - **Diffusion model (DIFF-M3DLayout)**: based on the DiffuScene architecture, each object is parameterized as $o_i = (c_i, x_i, y_i, z_i, w_i, h_i, d_i, \theta_i)$, with a fixed sequence length of $N=120$, a UNet denoiser, a BERT text encoder, and cross-attention injection. Training objectives: noise prediction loss $\mathcal{L}_{\text{DM}}$ + IoU collision penalty $L_{\text{IoU}}$.
-    - **Autoregressive model (AR-M3DLayout)**: a Transformer encoder that takes text tokens and previously generated object embeddings as unified input, autoregressively predicting $p_\theta(x \mid c^{\text{text}}) = \prod_{i=1}^N p_\theta(o_i \mid o_{<i}, c^{\text{text}})$.
+$$p_\theta(x \mid c^{\text{text}}) = \prod_{i=1}^N p_\theta(o_i \mid o_{<i}, c^{\text{text}})$$
+
+The goal is to provide a fair baseline for dataset usability rather than claiming architectural novelty.
 
 ### Loss & Training
 
-- Diffusion model: scene loss $L_{\text{sce}}$ (noise prediction error) + IoU regularization $L_{\text{IoU}}$ (penalizing object overlap).
-- Autoregressive model: negative log-likelihood loss.
-- Both models use BERT to encode text conditions, trained for 30k epochs with the Adam optimizer.
-- Learning rate: $2 \times 10^{-4}$ for the diffusion model, $1 \times 10^{-4}$ for the autoregressive model.
-- Training set: 12,062 layouts; validation set: 3,018 layouts.
+- Diffusion Model: Scene loss $L_{\text{sce}}$ (noise prediction error) + IoU regularization $L_{\text{IoU}}$ (penalizing object intersections).
+- Autoregressive Model: Negative log-likelihood loss.
+- Both use BERT to encode text conditions, training for 30k epochs with the Adam optimizer.
+- Diffusion learning rate: $2 \times 10^{-4}$; Autoregressive learning rate: $1 \times 10^{-4}$.
+- Training set: 12,062 layouts; Validation set: 3,018 layouts.
 
 ## Key Experimental Results
 
@@ -86,11 +99,11 @@ The construction of M3DLayout proceeds in three stages: (1) multi-source data co
 | DIFF-M3DLayout (Ours) | 57.64 | **87.89** | **70.85** | 0.2001 |
 | AR-M3DLayout (Ours) | 87.98 | 107.58 | **57.90** | **0.2026** |
 
-Note: The proposed methods yield higher FID on 3D-FRONT because generated scenes typically contain more than 12 objects, whereas 3D-FRONT scenes contain only 5–12, leading to distribution mismatch.
+Note: The higher FID on 3D-FRONT for the proposed methods is due to distribution mismatch, as generated scenes often contain >12 objects compared to 3D-FRONT's 5-12.
 
 ### Ablation Study
 
-| Training Data | FID↓ (3D-FRONT) | FID↓ (Matterport) | FID↓ (Inf3DLayout) | Notes |
+| Training Data | FID↓ (3D-FRONT) | FID↓ (Matterport) | FID↓ (Inf3DLayout) | Description |
 |----------|------------------|-------------------|---------------------|------|
 | 3D-FRONT only | 27.33 | 83.88 | 110.98 | Overfits simple layouts |
 | Matterport3D only | - | - | - | Poor generalization |
@@ -99,40 +112,38 @@ Note: The proposed methods yield higher FID on 3D-FRONT because generated scenes
 
 ### Key Findings
 
-- The Inf3DLayout subset is critical for generating richly detailed scenes: AR-M3DLayout achieves a 44% FID improvement on the Inf3DLayout reference set compared to InstructScene.
-- CLIP-Score consistently outperforms baselines, demonstrating stronger text controllability.
-- A user study (42 participants, 15 scenes) shows the most significant advantage on the Scene Richness metric.
-- Models can finely control object density through text (from minimal to rich), exhibiting layout granularity controllability.
+- The Inf3DLayout subset is critical for generating richly detailed scenes: AR-M3DLayout improved FID by 44% on the Inf3DLayout reference set compared to InstructScene.
+- CLIP-Score outperforms baselines, proving stronger text controllability.
+- User study (42 participants, 15 scenes): Significant advantage in "Scene Richness."
+- The model can finely control object density (from minimalist to rich) via text.
 
 ## Highlights & Insights
 
-1. The **multi-source complementarity** paradigm is noteworthy: real-world scans (authenticity) + professional designs (structural regularity) + procedural generation (diversity) together address data bottlenecks.
-2. The three-level structured textual annotation (global → large furniture → small objects) is elegantly designed, providing hierarchical semantic supervision for fine-grained text-to-layout control.
-3. The Inf3DLayout subset makes a standout contribution: its 68.5% small object ratio fills the substantial gap in existing datasets regarding decorative and functional small objects.
-4. The dataset scale (21k layouts, 433k objects) far exceeds the largest existing datasets, and it is the only 3D layout dataset providing structured textual descriptions.
+1. **Multi-source Complementarity**: Combining real scans (authenticity), professional design (regularity), and procedural generation (diversity) effectively addresses the data bottleneck.
+2. The **three-level structured text annotation** (Global → Large Furniture → Small Objects) provides hierarchical semantic supervision for fine-grained control.
+3. The **Inf3DLayout subset** fills a major gap in existing datasets regarding decorative and functional small objects (68.5% share).
+4. Scale: 21k layouts and 433k objects make it the only dataset of this size providing structured text descriptions for 3D layouts.
 
 ## Limitations & Future Work
 
-1. **Limited model innovation**: the benchmark models are directly adapted from DiffuScene without proposing new architectures tailored to multi-source data characteristics.
-2. FID on the 3D-FRONT reference set is worse because generated scenes are overly complex—a contradiction between evaluation metrics and generation objectives.
-3. Inf3DLayout relies on Infinigen's procedural generation, whose layout plausibility depends on hand-crafted rules and may produce unnatural arrangements.
-4. Textual annotations rely on GPT-4o, which may introduce hallucinations or inaccurate spatial descriptions; human verification is conducted only through sampling.
-5. Final scene quality after object retrieval and actual 3D asset placement has not been validated.
-6. Extension to outdoor scenes, multi-floor environments, and dynamic layout changes remains for future work.
+1. **Novelty**: Benchmark models are adapted from DiffuScene; no new architecture specifically for multi-source data was proposed.
+2. FID is worse on the 3D-FRONT reference set because generated scenes are more complex than the reference targets.
+3. Inf3DLayout depends on Infinigen's procedural rules, which may lead to unnatural arrangements.
+4. Text annotations rely on GPT-4o, introducing potential hallucinations.
+5. Future work could extend to outdoor scenes, multi-story buildings, and dynamic layout changes.
 
 ## Related Work & Insights
 
-- **DiffuScene/InstructScene**: the former generates regular layouts but lacks small objects and text controllability; the latter exhibits inaccurate spatial relationship modeling. M3DLayout compensates through data quality and diversity.
-- **LayoutGPT/HoloDeck**: LLM-based planning methods suffer from imprecise spatial reasoning and require large-scale physically plausible layout data as a foundation.
-- **AutoPartGen/OmniPart**: inspire the generality of 3D bounding boxes as an intermediate representation connecting part generation and scene generation.
-- **Insight**: In 3D generation, improvements in data quality and diversity often yield greater gains than architectural innovations.
+- **DiffuScene/InstructScene**: The former lacks small objects and text control, while the latter has inaccurate spatial modelling. M3DLayout compensates through data quality.
+- **LayoutGPT/HoloDeck**: LLM planning methods exhibit imprecise spatial reasoning; they require large-scale, physically plausible layout data as a foundation.
+- Insight: In 3D generation, data quality and diversity often yield greater gains than architectural innovation.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐ The core contribution is the dataset rather than methodological innovation; the multi-source fusion and structured annotation strategy offer moderate novelty.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Quantitative comparisons, ablation studies, user studies, and density controllability validation provide rich evaluation dimensions.
-- Writing Quality: ⭐⭐⭐⭐ Dataset characteristics are thoroughly analyzed; tables and statistical figures clearly illustrate the complementarity of multi-source data.
-- Value: ⭐⭐⭐⭐ Addresses the data bottleneck in text-driven 3D scene generation; the open-source dataset and code carry lasting impact.
+- Novelty: ⭐⭐⭐ 
+- Experimental Thoroughness: ⭐⭐⭐⭐ 
+- Writing Quality: ⭐⭐⭐⭐ 
+- Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
 
@@ -140,11 +151,11 @@ Note: The proposed methods yield higher FID on 3D-FRONT because generated scenes
 
 ## Related Papers
 
+- [\[CVPR 2026\] MajutsuCity: Language-driven Aesthetic-adaptive City Generation with Controllable 3D Assets and Layouts](majutsucity_language-driven_aesthetic-adaptive_city_generation_with_controllable.md)
+- [\[CVPR 2026\] 3DReflecNet: A Large-Scale Dataset for 3D Reconstruction of Reflective, Transparent, and Low-Texture Objects](3dreflecnet_a_large-scale_dataset_for_3d_reconstruction_of_reflective_transparen.md)
 - [\[CVPR 2026\] CustomTex: High-fidelity Indoor Scene Texturing via Multi-Reference Customization](customtex_high-fidelity_indoor_scene_texturing_via_multi-reference_customization.md)
-- [\[CVPR 2026\] VGGT-Det: Mining VGGT Internal Priors for Sensor-Geometry-Free Multi-View Indoor 3D Object Detection](vggt-det_mining_vggt_internal_priors_for_sensor-geometry-free_multi-view_indoor_.md)
-- [\[CVPR 2026\] ForgeDreamer: Industrial Text-to-3D Generation with Multi-Expert LoRA and Cross-View Hypergraph](forgedreamer_industrial_text-to-3d_generation_with_multi-expert_lora_and_cross-v.md)
-- [\[CVPR 2026\] Few-Shot Incremental 3D Object Detection in Dynamic Indoor Environments](few-shot_incremental_3d_object_detection_in_dynamic_indoor_environments.md)
-- [\[CVPR 2026\] Unified Primitive Proxies for Structured Shape Completion](unified_primitive_proxies_for_structured_shape_completion.md)
+- [\[CVPR 2026\] Breaking the 3D Dataset Bottleneck: Fast Scalable Generation of Aligned 3D Assets from Scratch for Category 6D Pose Estimation and Robotic Grasping](breaking_the_3d_dataset_bottleneck_fast_scalable_generation_of_aligned_3d_assets.md)
+- [\[CVPR 2026\] Glove2Hand: Synthesizing Natural Hand-Object Interaction from Multi-Modal Sensing Gloves](glove2hand_synthesizing_natural_hand-object_interaction_from_multi-modal_sensing.md)
 
 </div>
 

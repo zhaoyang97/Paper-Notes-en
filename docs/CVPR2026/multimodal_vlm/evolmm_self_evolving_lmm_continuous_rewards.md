@@ -2,132 +2,147 @@
 title: >-
   [Paper Note] EvoLMM: Self-Evolving Large Multimodal Models with Continuous Rewards
 description: >-
-  [CVPR 2026][Multimodal VLM][Self-evolving LMM] This paper proposes EvoLMM, a fully unsupervised self-evolving framework that derives a Proposer (generating image-grounded questions) and a Solver (answering those question…
+  [CVPR 2026][Multimodal VLM][Proposer-Solver] EvoLMM is proposed as a purely unsupervised self-evolving framework. It splits a single LMM into a Proposer (generating image-related questions) and a Solver (answering questions), forming a closed-loop training signal through continuous self-consistency rewards (replacing discrete majority voting). Using only raw imag
 tags:
-  - "CVPR 2026"
-  - "Multimodal VLM"
-  - "Self-evolving LMM"
-  - "unsupervised self-improvement"
-  - "continuous self-consistency reward"
-  - "Proposer-Solver"
-  - "visual mathematical reasoning"
+  - CVPR 2026
+  - Multimodal VLM
+  - Proposer-Solver
 date: 2026-05-08
-content_hash: b7ab2a6add640fa6
+content_hash: f642352ae3053026
 ---
-
 # EvoLMM: Self-Evolving Large Multimodal Models with Continuous Rewards
 
 **Conference**: CVPR 2026 Findings  
 **arXiv**: [2511.16672](https://arxiv.org/abs/2511.16672)  
-**Code**: [https://github.com/mbzuai-oryx/EvoLMM](https://github.com/mbzuai-oryx/EvoLMM) (open-source)  
-**Area**: Multimodal VLM / Self-Evolving Learning
-**Keywords**: Self-evolving LMM, unsupervised self-improvement, continuous self-consistency reward, Proposer-Solver, visual mathematical reasoning
+**Code**: [https://github.com/mbzuai-oryx/EvoLMM](https://github.com/mbzuai-oryx/EvoLMM) (Open Source)  
+**Area**: Multimodal VLM / Self-Evolving Learning  
+**Keywords**: Self-evolving LMM, Unsupervised self-improvement, Continuous self-consistency rewards, Proposer-Solver, Visual mathematical reasoning
 
 ## TL;DR
-This paper proposes EvoLMM, a fully unsupervised self-evolving framework that derives a Proposer (generating image-grounded questions) and a Solver (answering those questions) from a single LMM. A continuous self-consistency reward — replacing discrete majority voting — forms a closed-loop training signal. Using only raw images (no annotations, no external reward models), EvoLMM achieves consistent gains of approximately 2–3% across eight multimodal mathematical reasoning benchmarks.
+EvoLMM is proposed as a purely unsupervised self-evolving framework. It splits a single LMM into a Proposer (generating image-related questions) and a Solver (answering questions), forming a closed-loop training signal through continuous self-consistency rewards (replacing discrete majority voting). Using only raw images without annotations or external reward models, it achieves a consistent improvement of approximately 2-3% across 8 multimodal mathematical reasoning benchmarks.
 
 ## Background & Motivation
 
-**Background**: Large multimodal models (LMMs) have made substantial progress in visual reasoning, yet their training pipelines still depend on (a) human-annotated data and (b) external reward models or evaluators, limiting autonomy and scalability.
+**Background**: Large Multimodal Models (LMMs) have made significant progress in visual reasoning, but their training pipelines still rely on (a) manually annotated data and (b) external reward models/evaluators, which limits autonomy and scalability.
 
-**Limitations of Prior Work**: Self-evolving methods exist in the LLM domain (e.g., SQLM, Proposer-Solver-Judge), but applying them directly to multimodal settings introduces problems: discrete majority-voting rewards produce a large proportion of zero-reward updates during early-stage visual reasoning training, leading to instability. Existing multimodal self-improvement methods (ViPER, Vision-Zero) still rely on structured intermediate signals.
+**Limitations of Prior Work**: Existing self-evolving methods in the LLM domain (such as SQLM, Proposer-Solver-Judge) face issues when directly applied to the multimodal domain. Discrete majority voting rewards generate a large number of zero-reward updates in the early stages of visual reasoning, leading to training instability. Current multimodal self-improvement methods (e.g., ViPER, Vision-Zero) still depend on structured intermediate signals.
 
-**Key Challenge**: Self-evolution requires effective internal training signals; however, discrete rewards cannot provide meaningful gradient feedback during the early phase when model outputs are highly variable, causing optimization stagnation.
+**Key Challenge**: Self-evolution requires effective internal training signals; however, discrete rewards fail to provide meaningful gradient feedback during early stages when model outputs are highly variable, resulting in optimization stagnation.
 
-**Goal**: Enable LMMs to self-improve multimodal reasoning capabilities through internal consistency, under fully unsupervised conditions.
+**Goal**: To enable LMMs to self-improve their multimodal reasoning capabilities through internal consistency under completely unsupervised conditions.
 
-**Key Insight**: Replace discrete majority voting with a continuous self-consistency reward to supply smooth gradient signals; use entropy-guided Proposer rewards to realize adaptive curriculum learning.
+**Key Insight**: Replace discrete majority voting with continuous self-consistency rewards to provide smooth gradient signals; implement adaptive curriculum learning using entropy-guided Proposer rewards.
 
-**Core Idea**: Continuous self-consistency rewards enable the Proposer and Solver to co-evolve smoothly, continuously improving visual reasoning using only raw images.
+**Core Idea**: Continuous self-consistency rewards enable the smooth co-evolution of the Proposer and Solver, continuously enhancing visual reasoning capabilities using only raw images.
 
 ## Method
 
 ### Overall Architecture
-A pretrained LMM (e.g., Qwen2.5-VL-7B) is decomposed into two roles sharing a backbone but with separate LoRA adapters: the Proposer generates visually grounded mathematical questions from images, and the Solver attempts to answer them. For each question, the Solver samples $N=5$ responses; a continuous reward is computed based on inter-response consistency and used to update both policies via REINFORCE with KL regularization. The entire loop requires only raw images — zero human annotations, zero external models.
+EvoLMM aims to address a fundamental question: Can a multimodal model improve its own visual reasoning capabilities **by only looking at raw images, without any annotations or external judgment**? The approach involves "splitting" a pre-trained LMM (such as Qwen2.5-VL-7B) into two components—sharing a frozen backbone while each is equipped with a LoRA adapter, acting as a Proposer and a Solver. Given an image, the Proposer formulates a visually grounded mathematical problem, and the Solver independently samples $N=5$ answers for this problem. The system calculates a continuous reward based on the consistency among these five answers, which is then used to update both roles simultaneously via REINFORCE with KL regularization. There is no human QA or external reward model in the entire loop; the only external input is the image itself, allowing the two roles to co-evolve through this self-play.
+
+The following loop illustrates this process: raw images are processed by the Proposer to generate questions, the Solver performs multiple samplings to obtain an empirical answer distribution, and two paths of continuous rewards are derived (one for the Solver and one for the Proposer). Finally, the gradients are fed back to the two LoRA policies via REINFORCE optimization, forming a self-evolving loop.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    IMG["Raw Image<br/>(No labels, only external input)"] --> PROP["Proposer (LoRA)<br/>Generates visually grounded math problem q"]
+    PROP --> SOLVE["Solver (LoRA)<br/>Independently samples N=5 answers for q"]
+    SOLVE --> DIST["Empirical answer distribution p(a|x,q)<br/>and consensus entropy H"]
+    DIST --> RSOL["Continuous self-consistency Solver reward<br/>r_sol = p̂(a)^γ × Length Penalty"]
+    DIST --> RPROP["Entropy-guided Proposer reward<br/>r_prop = Gaussian band-pass of entropy H"]
+    RSOL --> OPT["REINFORCE optimization with KL regularization<br/>EMA baseline + Asymmetric KL constraint"]
+    RPROP --> OPT
+    OPT -->|Update Solver LoRA| SOLVE
+    OPT -->|Update Proposer LoRA| PROP
+```
 
 ### Key Designs
 
-1. **Continuous Self-Consistency Solver Reward**
+**1. Continuous Self-consistency Solver Reward: Replacing "Majority Voting" with Differentiable Consistency Signals**
 
-    - **Function**: Quantifies the degree of consistency among multiple Solver responses to the same question and converts it into a continuous training signal.
-    - **Mechanism**: The reward equals the empirical probability of an answer across $N$ samples raised to the power $\gamma$, multiplied by a length penalty term. $\gamma$ controls reward softness (lower values amplify differences at intermediate consistency levels); the length penalty encourages concise response formats.
-    - **Design Motivation**: Discrete majority voting only checks whether an answer constitutes a majority — partial agreement of 2/5 and 3/5 receives identical zero signal. The continuous reward provides meaningful positive gradients even under model uncertainty, avoiding early-training stagnation. Experiments confirm that discrete rewards yield near-zero and unstable early Solver rewards, whereas continuous rewards rise smoothly.
-    - **Novelty**: SQLM uses discrete majority voting, which produces a large proportion of zero-reward updates in multimodal settings and leads to learning stagnation.
+The most direct internal signal is self-consistency—the more consistent the answers to the same question, the better the model "understands." However, its predecessor SQLM used discrete majority voting, which only considers which answer is in the majority. Thus, "partial consistency" like 2/5 or 3/5 receives no discriminative signal. In early visual reasoning, Solver outputs are highly divergent, making most rewards zero and causing vanishing gradients. EvoLMM modifies the reward to be the empirical probability of the answer raised to the power of $\gamma$, multiplied by a length penalty:
 
-2. **Entropy-Guided Continuous Proposer Reward**
+$$r_{\text{Solver}} = \hat{p}(a)^{\gamma}\cdot \text{LenPenalty},\qquad \gamma=0.7$$
 
-    - **Function**: Encourages the Proposer to generate questions of moderate difficulty — neither too easy nor too hard.
-    - **Mechanism**: A Gaussian band-pass function is applied, maximizing the reward when the entropy $H$ of Solver responses is at an intermediate value. Low $H$ indicates the question is too easy (all answers agree); high $H$ indicates the question is too hard or ambiguous. The center parameter is $\mu_H = 0.90$ with bandwidth $\sigma_H = 0.35$.
-    - **Design Motivation**: This implements adaptive curriculum learning. As the Solver improves, previously moderate questions become too easy (low entropy), prompting the Proposer to generate harder yet still solvable questions to obtain high rewards, naturally forming a progressive curriculum. Figure 6 clearly illustrates this emergent behavior.
-    - **Novelty**: No external Judge module or manually designed difficulty criteria are required.
+Where $\hat{p}(a)$ is the empirical frequency of an answer appearing in $N=5$ samples. $\gamma<1$ acts as a "softener"—it amplifies the differences between moderate consistencies (e.g., 2/5, 3/5) into meaningful gradients, while the length penalty suppresses verbose output formats. This ensures that even when the model is uncertain, the reward is a smoothly increasing continuous curve rather than a step function, preventing early training from stalling.
 
-3. **KL-Regularized REINFORCE Optimization**
+**2. Entropy-guided Proposer Reward: Adaptive Difficulty and Emerging Curriculum**
 
-    - **Function**: Stabilizes policy gradient training and prevents excessive deviation from the pretrained model.
-    - **Mechanism**: An exponential moving average baseline is used to reduce variance; a dynamic KL coefficient adaptively controls the degree of deviation. A tighter KL constraint is applied to the Solver for stability, while a looser constraint is applied to the Proposer to permit exploration.
+A Solver alone is insufficient—if the Proposer always generates trivial questions where all answers are consistent, or unsolvable questions where answers are chaotic, the Solver learns nothing. EvoLMM uses the entropy $H$ of the Solver's five answers to measure problem difficulty, providing the Proposer with a Gaussian band-pass reward that peaks at moderate entropy:
+
+$$r_{\text{Proposer}} = \exp\!\left(-\frac{(H-\mu_H)^2}{2\sigma_H^2}\right),\qquad \mu_H=0.90,\ \sigma_H=0.35$$
+
+An $H \to 0$ indicates the answers are all consistent (the problem is too easy), while a very large $H$ suggests the problem is too difficult or ambiguous. Both extremes are penalized, while medium-difficulty problems that are "challenging yet solvable" receive high scores. This naturally creates a curriculum: as the Solver strengthens, previously medium problems become too easy (entropy drops), forcing the Proposer to generate more difficult questions to maintain high rewards. The difficulty is pushed upward by the Solver's capabilities without any external Judge or manual difficulty standards.
+
+**3. KL-regularized REINFORCE Optimization: Stabilizing Self-play without Deviating from Pre-training**
+
+Unsupervised self-play risks the policies becoming too "wild" or collapsing into a degenerate solution. EvoLMM uses REINFORCE to update the two LoRA policies, coupled with an Exponential Moving Average (EMA) baseline to reduce variance, and dynamic KL coefficients to anchor the policies near the pre-trained model. The "slack" for the two roles differs: the Solver has a tighter KL constraint to prioritize stability against degradation, while the Proposer has a looser KL constraint to allow exploration of new question types. This asymmetric constraint allows both sides to advance stably.
+
+### A Complete Example
+Consider a chart (e.g., a line graph): the Proposer looks at the image and formulates the question, "How much did sales grow from 2019 to 2021?" The Solver samples 5 answers, say {120, 120, 118, 95, 120}. Under majority voting, "120" accounts for 3/5 and is considered "passed" with a binary reward. In contrast, EvoLMM calculates $\hat p(120)=0.6$, resulting in a continuous reward of approximately $0.6^{0.7} \approx 0.69$ multiplied by the length penalty—a smooth positive signal that reinforces the Solver. Simultaneously, the entropy $H$ of this set of answers falls within the medium range, hitting the high-score segment of the Proposer's band-pass, thus rewarding the behavior of "generating questions of this difficulty." After several thousand steps, the Solver answers such questions more consistently (5 answers converge, entropy decreases), and the reward for the Proposer for the same question decreases, forcing it to formulate more complex questions (multiple-step readings, cross-subplot comparisons). The difficulty distribution shifts from a U-shape to a normal distribution centered in the middle—a curriculum spontaneously emerges.
 
 ### Training Details
-- **Base model**: Qwen2.5-VL-7B; backbone frozen; two LoRA adapters
-- **Training data**: ~6K raw images (no QA annotations) from ChartQA, AI2D, InfographicVQA, PlotQA, ChartX, and Geometry3K
-- **Hardware**: 8× AMD MI250X GPUs, bfloat16 precision
-- **Training steps**: 6,000 steps, batch size 1; Proposer updated every 5 steps
-- **Hyperparameters**: $N=5$ samples, $\gamma=0.7$, learning rate $1\text{e-}6$
+- **Base Model**: Qwen2.5-VL-7B, backbone frozen, two LoRA adapters.
+- **Training Data**: Approximately 6K raw images (no QA labels), sourced from ChartQA, AI2D, InfographicVQA, PlotQA, ChartX, Geometry3K.
+- **Hardware**: 8x AMD MI250X GPUs, bfloat16 precision.
+- **Training Steps**: 6000 steps, batch size 1, Proposer updated every 5 steps.
+- **Hyperparameters**: $N=5$ sampling, $\gamma=0.7$, learning rate 1e-6.
 
 ## Key Experimental Results
 
 ### Main Results (8 Multimodal Reasoning Benchmarks)
 
 | Model | ChartQA | MathVista | MathVision | MathVerse | AI2D | ScienceQA | MMMU |
-|-------|---------|-----------|------------|-----------|------|-----------|------|
+|------|---------|-----------|------------|-----------|------|-----------|------|
 | Qwen2.5-VL-7B Base | 84.00 | 68.46 | 23.91 | 43.78 | 82.61 | 88.30 | 51.11 |
 | + Discrete Reward | 84.62 | 68.88 | 22.52 | 42.10 | 82.18 | 87.98 | 50.84 |
 | + Continuous Reward (Ours) | 86.70 | 70.52 | 24.81 | 44.88 | 83.41 | 89.50 | 52.01 |
-| Gain | +2.7 | +2.06 | +0.9 | +1.1 | +0.8 | +1.2 | +0.9 |
+| **Gain** | +2.70 | +2.06 | +0.90 | +1.10 | +0.80 | +1.20 | +0.90 |
 
-### Ablation Study (Parameter Update Strategies)
+### Ablation Study (Parameter Update Strategy)
 
-| Strategy | ChartQA | MathVista | ScienceQA | Notes |
-|----------|---------|-----------|-----------|-------|
-| LoRA | 86.70 | 70.52 | 89.50 | Best; preserves pretrained capabilities |
-| QLoRA | 85.32 | 68.92 | 88.73 | Slight degradation from quantization noise |
-| Full Fine-tune | 84.20 | 68.41 | 88.12 | Overfits without external supervision |
+| Strategy | ChartQA | MathVista | ScienceQA | Description |
+|------|---------|-----------|-----------|------|
+| LoRA | 86.70 | 70.52 | 89.50 | Best, maintains pre-trained capability |
+| QLoRA | 85.32 | 68.92 | 88.73 | Slightly affected by quantization noise |
+| Full Finetune | 84.20 | 68.41 | 88.12 | Overfitting occurs without external supervision |
 
-### Cross-Model Generalization
+### Cross-model Generalization
 
 | Base Model | ChartQA Gain | MathVista Gain |
-|-----------|-------------|----------------|
-| Qwen2.5-VL-7B | 84.00 → 86.70 | 68.46 → 70.52 |
-| InternVL3-8B | 82.40 → 84.97 | 65.20 → 67.20 |
+|---------|------------|--------------|
+| Qwen2.5-VL-7B | 84.00 -> 86.70 | 68.46 -> 70.52 |
+| InternVL3-8B | 82.40 -> 84.97 | 65.20 -> 67.20 |
 
 ### Key Findings
-- **Continuous vs. discrete rewards**: Discrete rewards yield negative gains on MathVision (−1.39) and MathVerse (−1.68), while continuous rewards produce positive gains across all eight benchmarks.
-- **LoRA >> Full Fine-tuning**: Under unsupervised self-evolution without external supervision, parameter-efficient fine-tuning outperforms full fine-tuning — the latter tends to overfit internal signals.
-- **Emergent adaptive curriculum**: During training, the Proposer naturally transitions from generating overly simple or overly difficult questions toward moderate-difficulty questions; the entropy distribution shifts from a U-shape to a bell curve centered at intermediate values.
-- **Cross-model effectiveness**: Consistent gains on both Qwen2.5-VL-7B and InternVL3-8B confirm the generality of the approach.
+- **Continuous vs. Discrete Rewards**: Discrete rewards even led to negative gains on MathVision (-1.39) and MathVerse (-1.68), while continuous rewards showed positive gains across all 8 benchmarks.
+- **LoRA >> Full Finetune**: In unsupervised self-evolving scenarios, parameter-efficient fine-tuning outperforms full parameter fine-tuning, as the latter is prone to overfitting internal signals.
+- **Natural Emergence of Adaptive Curriculum**: During training, the Proposer transitions from generating simple or overly difficult problems to medium-difficulty ones, with the entropy distribution shifting from a U-shape to a normal distribution centered in the middle.
+- **Effective Across Models**: Consistent improvements were observed on both Qwen2.5-VL-7B and InternVL3-8B, demonstrating the generalizability of the method.
 
 ## Highlights & Insights
-- **Continuous self-consistency reward** is the core contribution: using the empirical answer probability raised to the power $\gamma$ as a continuous signal avoids the all-or-nothing problem of discrete voting. This is the key innovation for upgrading self-consistency from an evaluation metric to a differentiable training signal — an insight generalizable to any scenario requiring internal consistency as a training objective.
-- **Entropy band-pass Proposer reward** realizes curriculum learning without human intervention: no external difficulty annotations are needed, as the Solver's answer entropy naturally reflects question difficulty. This mechanism is transferable to any self-play training requiring adaptive difficulty regulation.
-- **The comparison in Figures 3 and 4** is particularly instructive: it clearly demonstrates the fundamental difference in training dynamics between discrete and continuous rewards, providing key visualization for understanding the advantage of continuous rewards.
-- **The cleanliness of the experimental setup** is commendable: the framework genuinely operates under a minimalist setting of "raw images + pretrained model only," with no hidden external dependencies.
+- **Continuous self-consistency reward** is the core contribution: using the empirical answer probability raised to $\gamma$ as a continuous signal avoids the "all-or-nothing" problem of discrete voting. This is a key innovation in upgrading self-consistency from an evaluation metric to a differentiable training signal. This insight can be extended to any scenario requiring internal consistency as a training signal.
+- **Entropy band-pass Proposer reward** achieves zero-human-intervention curriculum learning: it requires no external difficulty annotations as the Solver's answer entropy naturally reflects problem difficulty. This mechanism can be extended to any self-play training requiring adaptive difficulty adjustment.
+- **Comparison between Figure 3 and 4** is highly educational: it clearly demonstrates the fundamental differences in training dynamics between discrete and continuous rewards, serving as a key visualization for understanding the advantages of continuous rewards.
+- **Cleanliness of the experiments** is commendable: the study truly achieves a minimalist setup of "raw images + pre-trained model" without any hidden external dependencies.
 
 ## Limitations & Future Work
-- Performance gains are modest (~2–3%), with a notable gap compared to supervised methods.
-- Validation is limited to mathematical and chart reasoning; generalization to open-domain visual understanding remains unexplored.
-- Training uses only 6K images and 6,000 steps; scaling laws have not been investigated.
-- The quality of Proposer-generated questions has not been evaluated by human annotators; semantically vacuous questions may exist.
-- Continuous rewards may not be robust to answers that are semantically equivalent but lexically distinct (e.g., "3.14" vs. "$\pi$").
+- The magnitude of improvement is limited (approx. 2-3%), with a clear gap compared to supervised methods.
+- Validation is limited to mathematical/chart reasoning; generalizability to open-domain visual understanding remains unknown.
+- Training involved only 6K images and 6000 steps; scaling laws have not been explored.
+- The quality of questions generated by the Proposer has not been manually evaluated and may include nonsensical questions.
+- Continuous rewards may not be robust for answers that are semantically equivalent but different in format (e.g., "3.14" and "pi").
 
 ## Related Work & Insights
-- **vs. SQLM [Huang et al.]**: SQLM is the LLM-domain predecessor of EvoLMM, relying on discrete majority voting. EvoLMM demonstrates that multimodal settings necessitate replacing discrete rewards with continuous ones.
-- **vs. Vision-Zero [Xu et al.]**: Vision-Zero achieves self-evolution through a "Who's the Spy" game but depends on GPT-4o/Gemini to generate image pairs. EvoLMM requires no external models whatsoever.
-- **vs. ViPER [Zhang et al.]**: ViPER uses reconstruction objectives as self-supervision; EvoLMM uses consistency — the latter is more general and does not require image generation capabilities.
+- **vs. SQLM [Huang et al.]**: SQLM is the predecessor of EvoLMM in the LLM domain, using discrete majority voting. EvoLMM proves that the multimodal scenario necessitates the replacement of discrete rewards with continuous ones.
+- **vs. Vision-Zero [Xu et al.]**: Vision-Zero evolves through a "Who is the Spy" game but relies on GPT-4o/Gemini to generate image pairs. EvoLMM is entirely independent of external models.
+- **vs. ViPER [Zhang et al.]**: ViPER uses reconstruction objectives for self-supervision, while EvoLMM uses consistency—the latter is more general and does not require image generation capabilities.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ — Continuous self-consistency rewards and entropy band-pass Proposer rewards are technical highlights, though the overall framework inherits from SQLM.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Comprehensive ablations across 8 benchmarks, 4 backbones, and 3 fine-tuning strategies.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ — The visual comparison of discrete vs. continuous rewards (Figures 3 and 4) is highly intuitive.
-- **Value**: ⭐⭐⭐⭐ — Offers important reference value for unsupervised multimodal self-evolution, though absolute performance gains are limited.
+- Novelty: ⭐⭐⭐⭐ Continuous self-consistency rewards and entropy band-pass Proposer rewards are technical highlights, though the overall framework is inherited from SQLM.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive ablations across 8 benchmarks, 4 backbones, and 3 fine-tuning strategies.
+- Writing Quality: ⭐⭐⭐⭐⭐ The visualization comparing discrete vs. continuous rewards (Figures 3, 4) is very intuitive.
+- Value: ⭐⭐⭐⭐ High reference value for the direction of unsupervised multimodal self-evolution, though the absolute gain is limited.
 
 <!-- RELATED:START -->
 
@@ -135,11 +150,11 @@ A pretrained LMM (e.g., Qwen2.5-VL-7B) is decomposed into two roles sharing a ba
 
 ## Related Papers
 
-- [\[CVPR 2026\] Evolving Contextual Safety in Multi-Modal Large Language Models via Inference-Time Self-Reflective Memory](evolving_contextual_safety_in_multi-modal_large_language_models_via_inference-ti.md)
+- [\[CVPR 2026\] VisPlay: Self-Evolving Vision-Language Models](visplay_self-evolving_vision-language_models.md)
 - [\[ACL 2026\] iReasoner: Trajectory-Aware Intrinsic Reasoning Supervision for Self-Evolving Large Multimodal Models](../../ACL2026/multimodal_vlm/ireasoner_trajectory-aware_intrinsic_reasoning_supervision_for_self-evolving_lar.md)
-- [\[CVPR 2026\] EvoPrompt: Evolving Prompt Adaptation for Vision-Language Models](evolving_prompt_adaptation_for_vision-language_models.md)
+- [\[CVPR 2026\] EvoGraph-R1: Self-Evolving Multimodal Knowledge Hypergraphs for Agentic Retrieval](evograph-r1_self-evolving_multimodal_knowledge_hypergraphs_for_agentic_retrieval.md)
+- [\[CVPR 2026\] Evolving Contextual Safety in Multi-Modal Large Language Models via Inference-Time Self-Reflective Memory](evolving_contextual_safety_in_multi-modal_large_language_models_via_inference-ti.md)
 - [\[ICML 2026\] Breaking Dual Bottlenecks: Evolving Unified Multimodal Models into Self-Adaptive Interleaved Visual Reasoners](../../ICML2026/multimodal_vlm/breaking_dual_bottlenecks_evolving_unified_multimodal_models_into_self-adaptive_.md)
-- [\[ICLR 2026\] Self-Evolving Vision-Language Models for Image Quality Assessment via Voting and Ranking](../../ICLR2026/multimodal_vlm/self-evolving_vision-language_models_for_image_quality_assessment_via_voting_and.md)
 
 </div>
 

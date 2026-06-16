@@ -2,91 +2,103 @@
 title: >-
   [Paper Note] Are VLMs Seeing or Just Saying? Uncovering the Illusion of Visual Re-examination
 description: >-
-  [ICML2026][Multimodal VLM][Visual Re-examination] This paper introduces VisualSwap and VS-Bench to examine true visual re-examination capabilities by replacing the image after a VLM claims to "take another look." The stu…
+  [ICML 2026][Multimodal VLM][Paper Note] This paper introduces VisualSwap and VS-Bench to examine true visual re-examination capabilities by replacing the image after a VLM claims to "look again." Findings reveal that current reasoning VLMs often follow previous textual inertia; only explicit multi-turn user instructions or enhanced visual attention significa
 tags:
-  - "ICML2026"
-  - "Multimodal VLM"
-  - "Visual Re-examination"
-  - "Multimodal Reasoning"
-  - "Self-Reflection"
-  - "Attention Analysis"
-  - "Evaluation Benchmark"
+  - ICML 2026
+  - Multimodal VLM
 date: 2026-05-08
-content_hash: 1290478168694857
+content_hash: c864b2ec06e7b4dc
 ---
-
 # Are VLMs Seeing or Just Saying? Uncovering the Illusion of Visual Re-examination
 
 **Conference**: ICML2026 Oral  
 **arXiv**: [2605.15864](https://arxiv.org/abs/2605.15864)  
 **Code**: https://visualswap.github.io/  
 **Area**: Multimodal VLM  
-**Keywords**: Visual Re-examination, Multimodal Reasoning, Self-Reflection, Attention Analysis, Evaluation Benchmark  
+**Keywords**: Visual Re-examination, Multimodal Reasoning, Self-reflection, Attention Analysis, Evaluation Benchmark  
 
 ## TL;DR
-This paper introduces VisualSwap and VS-Bench to examine true visual re-examination capabilities by replacing the image after a VLM claims to "take another look." The study finds that current reasoning VLMs often follow the inertia of previous text generation; only explicit multi-turn user instructions or enhanced visual attention significantly restore grounding.
+This paper introduces VisualSwap and VS-Bench to examine true visual re-examination capabilities by replacing the image after a VLM claims to "look again." Findings reveal that current reasoning VLMs often follow previous textual inertia; only explicit multi-turn user instructions or enhanced visual attention significantly restore grounding.
 
 ## Background & Motivation
-**Background**: Multimodal large models are now capable of generating long reasoning chains for tasks such as mathematical charts, geometric problems, and professional visual question answering. New-generation reasoning VLMs also produce self-reflective sentences like "let me double-check the image" within their chain-of-thought, which superficially suggests active verification of visual evidence.
+**Background**: Multimodal Large Language Models (VLMs) can now generate long reasoning chains for tasks like mathematical charts, geometry, and professional VQA. Next-generation reasoning VLMs output self-reflective sentences like "Let me check the image again" within their Chain-of-Thought (CoT), appearing to actively verify visual evidence.
 
-**Limitations of Prior Work**: Whether these self-reflective sentences trigger actual visual re-reading or are merely reasoning heuristics learned by the language model has not been systematically measured. Standard VQA accuracy only tests if a model can understand an image in one go, failing to distinguish between "actual image re-examination" and "appending a checking mantra to an existing reasoning trajectory."
+**Limitations of Prior Work**: Whether these self-reflective sentences trigger actual visual re-reading or are merely reasoning tropes learned by the language model has not been systematically measured. Standard VQA accuracy only tests if a model understands an image in one go, failing to distinguish between "actual re-examination" and "filling in a check-up catchphrase on the old reasoning trajectory."
 
-**Key Challenge**: The longer the reasoning chain of a VLM, the stronger the textual context becomes. If visual tokens do not receive sufficient renewed attention during subsequent generation, the model may trust its own generated text over the current image. In other words, the linguistic form of self-reflection and the actual execution of visual re-examination may be decoupled.
+**Key Challenge**: The longer the VLM's reasoning chain, the stronger the textual context. If visual tokens do not regain sufficient attention during subsequent generation, the model might trust its previously written text over the current image. In other words, the linguistic form of self-reflection may be decoupled from the execution of visual re-examination.
 
-**Goal**: The authors aim to transform this into an observable diagnostic task: first have the model generate reasoning based on an original image, then swap it for a visually similar image with a different answer at the moment of "checking the image," observing whether the model detects the conflict, corrects its reasoning, and provides the answer corresponding to the new image.
+**Goal**: The authors transform this problem into an observable diagnostic task: have the model generate reasoning based on an original image, then swap it with a visually similar but answer-distinct new image at the moment of "checking the image" to observe if the model detects the conflict, corrects its reasoning, and provides the answer for the new image.
 
-**Key Insight**: Image replacement serves as a clean intervention. An ideal model, provided it truly re-reads the current visual input, should break away from the old reasoning and pivot to the new answer. If the model fails to look at the image, it will continue to recite details from the original image.
+**Key Insight**: Image replacement is a clean intervention. An ideal model that truly re-reads the visual input should abandon the old reasoning and pivot to the new answer; if it fails to look at the image, it will continue to recount details from the original image.
 
-**Core Idea**: Use controlled image swapping to transform "the model saying it is looking" into a verifiable behavior, directly exposing textual inertia and attention failures during spontaneous visual re-examination in VLMs.
+**Core Idea**: Use controlled image swapping to turn "claiming to look" into a verifiable behavior, directly exposing textual inertia and attention loss in spontaneous VLM visual re-examination.
 
 ## Method
-This paper does not propose a new model but rather a diagnostic framework, a specifically constructed benchmark, and a series of mechanistic analyses. It addresses a specific question: when self-reflection triggers appearing in the generation process of a VLM, does the model actually re-read the image tokens?
+This paper does not propose a new model but rather a diagnostic framework, a specially constructed benchmark, and a set of mechanistic analyses. It addresses whether VLM models actually re-read image tokens when self-reflection triggers appear during generation.
 
 ### Overall Architecture
-The framework consists of three layers.
+The workflow consists of three layers.
 
 The first layer is the VisualSwap evaluation protocol. Each sample contains an original image $I_a$, a replacement image $I_b$, and the same question $Q$. The two images are similar in layout, style, and semantic scene but differ in key details, resulting in answers $A_a$ and $A_b$ respectively.
 
-The second layer is the VS-Bench dataset. The authors selected questions requiring fine-grained visual understanding from MathVista, MathVerse, MathVision, and MMMU-Pro, constructing 200 image pairs per source for a total of 800 pairs. Construction ensures the question remains natural for both images, the images are globally similar, and key visual details are sufficient to change the answer.
+The second layer is the VS-Bench dataset. The authors selected problems requiring fine-grained visual understanding from MathVista, MathVerse, MathVision, and MMMU-Pro, constructing 800 pairs (200 per source). The criteria require the question to be natural for both images, with overall visual similarity while key details change the answer.
 
-The third layer is behavioral and mechanistic analysis. The authors compare standard single-turn responses, self-reflection probes within the same assistant turn, and multi-turn explicit user requests for re-examination. They use visual token attention, context length, prompt paraphrasing, natural trigger points, and attention amplification to explain failure modes.
+The third layer involves behavior and mechanism analysis. The authors compare standard single-turn, self-reflection probes within the same assistant turn, and multi-turn explicit user requests. Analysis includes visual token attention, context length, prompt rewriting, natural trigger points, and attention amplification.
 
-In standard reasoning, the model answers directly based on $I_b$ and question $Q$ to obtain Base Accuracy, representing its inherent capability to solve the new image.
+In standard inference, the model answers directly based on $I_b$ and $Q$, yielding Base Accuracy, representing the upper bound of its ability to solve the new image.
 
-In the Probe setting, the model first sees $I_a$ and generates an initial reasoning $R_a$. Subsequently, the image is swapped to $I_b$, and a reflection prompt $P$ is appended within the same assistant response to let the model continue generating $R_b$. If the model truly re-reads the image, it should output $A_b$.
+In the Probe setup, the model first generates an initial reasoning $R_a$ based on $I_a$. Then, researchers swap the image to $I_b$ and append a reflection prompt $P$ within the same assistant response. If the model re-reads the image, it should output $A_b$.
 
-In the Multi-turn setting, $R_a$ is treated as the output of a previous assistant turn. The user then explicitly states "re-check the image" in a new turn. This shares the same new image and history as the Probe but introduces a clear user turn boundary to test if external instructions can interrupt textual inertia.
+In the Multi-turn setup, $R_a$ is treated as the previous assistant turn. The user then explicitly asks to "re-check the image" in a new turn. This shares the same new image and history as the Probe but adds a clear turn boundary to test if external instructions can break textual inertia.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph DATA["VS-Bench Image Pairs (Design 2)"]
+        direction TB
+        S["Source Problems<br/>MathVista / MathVerse<br/>MathVision / MMMU-Pro"] --> P["Construct Similar but Opposite Answer Pairs<br/>Original Ia + New Ib, Shared Question Q"]
+    end
+    DATA --> R1["Stage 1 Standard Inference<br/>Look at Ia to generate reasoning Ra"]
+    R1 -->|"Answer directly on Ib"| B["Base Accuracy<br/>Upper bound for new image"]
+    R1 -->|"Append reflection P, prefill with Ib"| SW
+    R1 -->|"Previous turn + New user turn request"| MT["Multi-turn<br/>External instruction to break inertia"]
+    subgraph PROBE["VisualSwap Two-stage Protocol (Design 1)"]
+        direction TB
+        SW["Stage 2 Continue generation Rb on Ib"] --> PA["Probe Accuracy"]
+    end
+    B --> D["Degradation Δ = Base Acc. − Probe Acc."]
+    PA --> D
+    D --> ANA["Mechanism Analysis (Design 3)<br/>Visual Attention / Context Length / 2× Attn Amp"]
+    MT --> ANA
+```
 
 ### Key Designs
-1. **VisualSwap Two-stage Replacement Protocol**:
-	- Function: Converts "visual re-examination" into a measurable counterfactual test rather than just observing reflection sentences.
-	- Core Idea: Stage one lets the model generate reasoning chain $R_a$ based on $I_a$; stage one re-prefills the full context but replaces the image with $I_b$ before continuing generation. Performance degradation is defined as $\Delta=Acc_{base}-Acc_{probe}$.
-	- Design Motivation: It is hard to judge if a model looks at the image by a single answer. By placing old reasoning and the new image in conflict, the model can only escape linguistic inertia by truly re-binding visual evidence.
+**1. VisualSwap Protocol: Verifying Reflection Claims**
 
-2. **VS-Bench Similar but Opposite-Answer Image Pairs**:
-	- Function: Provides 800 samples specifically for visual re-examination across geometry, function graphs, charts, synthetic scenes, and professional multimodal problems.
-	- Core Idea: Questions and target images are taken from four strong visual-dependency benchmarks. A second image is generated via human-in-the-loop annotation and Nano Banana Pro, ensuring identical questions and global similarity but differing key details. Quality is verified via CLIP, SSIM, LPIPS, and human discrimination tests.
-	- Design Motivation: If images differ too much, the model might detect the swap via anomaly detection; if the question no longer applies, errors stem from data flaws. VS-Bench maintains visual proximity to focus on fine-grained re-observation capabilities.
+Simply checking for phrases like "let me look again" does not confirm re-examination. The core "Probe" branch treats this as a counterfactual test. Stage 1 involves normal generation $R_a=\mathcal{M}(I_a,Q)$. In Stage 2, a reflection prompt $P$ (e.g., "Wait, let me check the image again") is appended, **simultaneously** swapping the image to $I_b$. The system then prefills the entire context to generate $R_b=\mathcal{M}(I_b,Q,R_a\oplus P)$. Since the model is prefilled with $I_b$'s visual representation, failure to provide $A_b$ is attributed to "seeing but not looking," measured by the degradation $\Delta=Acc_{base}-Acc_{probe}$.
 
-3. **Attention and Multi-turn Comparative Analysis**:
-	- Function: Distinguishes between "lack of capability to read new images" and "capability exists but visual attention is not spontaneously invoked."
-	- Core Idea: The authors define a visual attention score $S_{vis}^{(l)}(t)$, calculating the average attention of the current token to image tokens, comparing changes 100 tokens before and after the intervention in Probe vs. Multi-turn settings. They also use 2x visual attention amplification as a training-free intervention.
-	- Design Motivation: While the main experiment shows the phenomenon, attention analysis explains the "why." Multi-turn almost restores the baseline and attention amplification improves the probe, suggesting failure is a lapse in autonomous attention control rather than a loss of understanding capability.
+**2. VS-Bench: High Similarity, Divergent Answers**
+
+The image pairs must be finely balanced. The authors constructed pairs where $Q$ is valid for both $I_a$ and $I_b$, overall layouts are similar, but key visual details diverge. Quality was verified via CLIP (0.95), SSIM (0.86), and LPIPS (0.14) scores, along with human distinguishability tests. High visual similarity prevents the model from detecting the swap through global layout changes, forcing it to rely on fine-grained re-observation.
+
+**3. Attention and Multi-turn Mechanism Analysis**
+
+To distinguish between the model's inability to understand the image versus its failure to utilize attention, the authors defined a visual attention score $S_{vis}^{(l)}(t)$. They found that while Multi-turn setups significantly increased visual attention and restored accuracy (e.g., Qwen3-VL-235B-Thinking from 34.1 to 85.4), the self-reflection Probe showed minimal attention gain. Doubling the visual attention weight during the Probe also improved results, pinpointing the issue as **autonomous attention control failure**.
 
 ### Loss & Training
-No new models were trained; the focus is on evaluation and diagnosis. Experiments use official chat templates and default generation configurations, with inference temperature set to 0.1 for both base and probe. VLMEvalKit is used for standardized evaluation and answer extraction.
+Ours does not involve training. Standard chat templates and default configurations were used. Standard and probe temperatures were set to 0.1, with standardized evaluation via VLMEvalKit.
 
-The Probe is implemented not via hidden state or KV cache injection, but by re-prefilling the entire context with the replaced image. Thus, the model technically possesses the visual representation of $I_b$. This detail is crucial as it excludes the explanation that the model "cannot see the new image."
+The Probe is implemented by re-prefilling the context with the swapped image rather than KV cache injection, ensuring the model technically has access to $I_b$'s visual tokens.
 
-The attention amplification experiment does not update parameters. It simply multiplies the attention weights assigned to image tokens by 2 during the generation of $R_b$. It acts as a causal probe to verify if insufficient visual attention is the cause of failure.
+Attention amplification experiments were performed without parameter updates by simply multiplying image token attention weights by 2 during the probe generation of $R_b$.
 
 ## Key Experimental Results
 
 ### Main Results
-The main experiment covers 15 VLMs, including instruct/thinking variants of Qwen3-VL, Qwen2.5-VL, OpenVLThinker, VL-Rethinker, Kimi-VL, and ERNIE-4.5-VL. The most significant observation is that all models show substantial drops under VisualSwap; thinking versions typically drop more severely, and scaling up the model size does not naturally solve this issue.
+The main experiment covers 15 VLMs, including instruct/thinking variants of Qwen3-VL, Qwen2.5-VL, OpenVLThinker, VL-Rethinker, Kimi-VL, and ERNIE-4.5-VL. A critical observation: all models showed significant drops under VisualSwap; "thinking" versions typically suffered more, and scaling did not solve the issue.
 
-| Model | Variant | Avg Base | Avg Probe | Degradation $\Delta$ |
-|------|------|-----------|-------------|---------------|
+| Model | Variant | Avg. Base | Avg. Probe | Degradation $\Delta$ |
+|------|-----------|-----------|-------------|---------------|
 | Qwen3-VL-8B | Instruct | 69.1 | 46.6 | 22.5 |
 | Qwen3-VL-8B | Thinking | 76.0 | 36.6 | 39.4 |
 | Qwen3-VL-32B | Instruct | 79.6 | 61.8 | 17.9 |
@@ -97,52 +109,50 @@ The main experiment covers 15 VLMs, including instruct/thinking variants of Qwen
 | ERNIE-4.5-VL-28B-A3B | Thinking | 79.9 | 19.6 | 60.3 |
 | Kimi-VL-A3B | Thinking | 69.8 | 27.4 | 42.4 |
 
-The most striking finding is the atypical failure of thinking models. Qwen3-VL-235B-A22B-Thinking achieves 88.8% in standard single-turn tests but drops to 34.1% after the swap; the degradation for ERNIE-Thinking reaches 60.3 percentage points. While long reasoning improves standard task performance, it also reinforces textual trajectories.
+The failure of "thinking" models is stark. Qwen3-VL-235B-A22B-Thinking drops from 88.8% to 34.1%. Long reasoning chains improve standard performance but reinforce textual trajectories.
 
 ### Ablation Study
-The authors conducted multiple analyses to rule out explanations like "the new image is harder," "the prompt is suboptimal," or "context length leads to complete incapacity."
+Ablations were conducted to rule out alternative explanations like image difficulty or context length.
 
-| Analysis Setup | Key Metric | Description |
+| Setup | Key Metric | Explanation |
 |----------|----------|------|
-| $I_a$ vs $I_b$ Independent Inference | Avg difference mostly between 0.1 to 6.3 pts | New images are not inherently harder; probe drops result from old reasoning context interference. |
-| Multi-turn User Re-check | Qwen3-VL-235B-Thinking recovers from 34.1 to 85.4 | External user turns re-activate visual grounding, showing capability remains. |
-| Context Length (0% to 100%) | Qwen3-VL-235B-Thinking drops from 88.8 to 34.1 | More $R_a$ retention results in stronger textual inertia, most evident in thinking models. |
-| 10 Reflection Prompt Paraphrases | Small std dev (approx. 36.5 ± 4.9 for 235B Thinking) | Failure is not caused by specific prompt wording. |
-| Natural Trigger Point Swapping | Qwen3-VL-8B-Instruct drops from 46.6 to 34.9 | Swapping at model-generated positions like "wait" results in equal or worse failures. |
-| 2x Visual Attention Amplification | Qwen3-VL-8B-Thinking rises from 36.6 to 54.8 | Directly enhancing image token attention mitigates failure, supporting the attention-deficit explanation. |
+| $I_a$ vs $I_b$ Independent | Avg. Diff 0.1~6.3% | $I_b$ is not inherently harder; drop is due to $R_a$ interference |
+| Multi-turn User Re-check | Qwen3-235B Think: 34.1 $\to$ 85.4 | External turns re-activate grounding; capability exists |
+| Context Length (0%~100%) | Qwen3-235B Think: 88.8 $\to$ 34.1 | More $R_a$ tokens increase inertia; most visible in thinking models |
+| 10 Prompt Variations | Std Dev $\approx$ 4.9 | Failure is not sensitive to specific prompt phrasing |
+| Natural Trigger Swaps | Qwen3-8B Inst: 46.6 $\to$ 34.9 | Swapping at model-generated "wait" points shows similar failure |
+| 2× Attention Amp | Qwen3-8B Think: 36.6 $\to$ 54.8 | Directly boosting image attention mitigates failure |
 
 ### Key Findings
-- VS-Bench image pairs represent a "distinguishable but conducive to laziness" difficulty: average CLIP similarity 0.95, SSIM 0.86, LPIPS 0.14. In human discrimination tests, 5 volunteers could identify answer-critical differences for all sampled pairs.
-- There is a fundamental difference between explicit multi-turn user instructions and self-reflective sentences within the same assistant turn. The former significantly increases visual attention given the same visual input and history, while the latter mostly continues the linguistic trajectory.
-- Attention analysis shows that the visual attention increase in Probe is minimal. For example, the visual attention increment for Qwen3-VL-235B-Thinking in a middle layer is ~1.07, compared to 2.21 in Multi-turn. Qwen3-VL-8B-Thinking shows a similar 2x difference.
-- Closed-source APIs do not support the mid-response insertion required for the main probe nor do they expose attention; thus, the main experiment focuses on open-source models. Gemini 1.5 Flash Preview effectively only verifies the Multi-turn recovery phenomenon.
+- VS-Bench pairs are "distinguishable but lazy-prone": CLIP similarity 0.95, SSIM 0.86. Humans easily find differences.
+- There is a fundamental difference between explicit multi-turn instructions and internal self-reflection. The former boosts visual attention; the latter usually follows the linguistic path.
+- Attention analysis shows minimal boost in the Probe; visual attention increment in Qwen3-VL-235B-Thinking is 1.07 for Probe vs. 2.21 for Multi-turn.
+- Closed-source APIs were limited to Multi-turn verification due to mid-response insertion restrictions.
 
 ## Highlights & Insights
-- The evaluation design is highly penetrating: rather than asking "can the model say it's checking," it creates a conflict between old text and new images. This transforms the abstract concept of "authenticity of self-reflection" into a measurable behavioral test.
-- The fact that thinking models perform worse is highly insightful. Long CoT is often assumed to be more reliable, but in multimodal tasks, long text can become a strong prior, making it harder for the model to return to visual evidence.
-- Multi-turn recovery suggests the problem is not a lack of capability to read images. Models can read new images but spontaneous self-generation lacks a strong control signal; user turn boundaries may correspond more frequently to "requirement to re-respond to external input" in training distributions.
-- Attention amplification provides an actionable direction: future multimodal RL or SFT should not only reward final answers and logic but also explicitly reward the re-engagement of visual tokens during reflection.
-- This work warns evaluators that model outputs like "I have re-checked the image" should not be taken as reliable evidence. Especially in medical diagnosis, autonomous driving, or chart auditing, linguistic caution may mask perceptual stagnation.
+- The evaluation design is incisive: instead of asking if models *can* reflect, it creates a conflict between old text and new images. This transforms "authenticity of self-reflection" into a behavioral test.
+- "Thinking" models being worse is a major insight. Long CoT is often assumed to be more reliable, but in multimodal tasks, it acts as a strong prior that anchors the model away from visual evidence.
+- Multi-turn recovery suggests the problem is not "blindness." The model can see the new image but lacks the internal control to re-allocate attention; user turn boundaries likely correlate with "re-input response" in training.
+- Attention amplification provides a path forward: future VLM training should explicitly reward visual token re-engagement during reflection phases.
 
 ## Limitations & Future Work
-- The main probe requires inserting prompts mid-response, which many closed-source APIs do not support. Whether closed-source models suffer from similar spontaneous re-examination failures remains to be verified through other interfaces or experiments.
-- VS-Bench pairs are constructed via humans and generation tools. Although similarity and human discriminability are verified, the scale is limited to 800 pairs, and task types lean toward visual math and charts. Real-world open scenes, videos, and multi-image dialogues are not yet covered.
-- Attention scores serve as mechanistic evidence. While higher visual attention usually correlates with better grounding, it is not a complete causal explanation. Future work could combine activation patching or visual token-level interventions.
-- Attention amplification is a proof-of-concept rather than a deployment solution. Simply doubling the weight of image tokens might introduce noise or over-reliance in other tasks; a more refined dynamic trigger mechanism is needed.
-- This paper does not train a new model that truly re-examines autonomously. A natural next step is constructing multi-turn visual verification data, incorporating "detecting conflict between old reasoning and new images" into SFT/RL, using visual attention intensity as an auxiliary reward.
+- Main probes require mid-response insertion, which is restricted in closed-source APIs.
+- The 800-pair VS-Bench dataset focuses on math and charts; coverage of open-world images, video, and multi-image dialogues is needed.
+- Attention scores are proxies for grounding; future work could use activation patching or causal interventions.
+- Simple attention amplification is a proof-of-concept, not a deployment solution, as it might introduce noise in other tasks.
+- A natural next step is constructing multi-turn verification data to incorporate "detecting text-image conflict" into SFT/RL rewards.
 
 ## Related Work & Insights
-- **vs. Traditional VQA / MMMU / MathVista**: Traditional benchmarks measure single-input performance; this work measures the ability to re-bind images when reasoning context conflicts with new visual evidence, focusing on "multi-turn reliability."
-- **vs. Textual Self-Reflection (Self-Refine / Reflexion)**: Textual reflection checks logic and linguistic output; VLM self-reflection must re-visit visual evidence. This paper shows that merely porting textual reflection paradigms to multimodal reasoning misses grounding execution issues.
-- **vs. Reasoning VLMs (OpenVLThinker / VL-Rethinker)**: These models enhance long reasoning and self-correction forms, but VisualSwap reveals a side effect: longer reasoning may anchor the model to its own historical text.
-- **vs. Hallucination Detection**: While much research focuses on non-existent entities, this work investigates whether models actually "look" when they claim to verify. This is crucial for interpretability and auditing in high-stakes applications.
-- **Insight**: When building VLM agents or visual reasoning systems, "visual re-examination" should be treated as an explicit external step rather than relying on internal CoT reminders. Engineering solutions could include forcing a new user turn, re-encoding the image, or identifying different regions before the final decision.
+- **vs. VQA/MMMU**: Traditional benchmarks measure single-input perception; ours measures multi-turn reliability and the ability to re-bind images under conflict.
+- **vs. Textual Self-Refine**: Multimodal reflection requires re-visiting pixels. This work shows that purely textual reflection paradigms overlook grounding execution.
+- **vs. Reasoning VLMs**: Models like OpenVLThinker improve reasoning forms, but VisualSwap reveals a side effect: longer reasoning may anchor the model to its own history.
+- **Insights**: For VLM agents, "visual re-examination" should be an explicit external step (e.g., forced new user turn or re-encoding) rather than relying on self-reminders within a single CoT.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Uses image replacement to verify the authenticity of self-reflection; the problem is well-defined and the diagnostic signal is direct.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers 15 models, 4 data sources, main experiments, and multiple mechanistic analyses; the chain of evidence is complete.
-- Writing Quality: ⭐⭐⭐⭐☆ Clear main line of argument; VisualSwap and Multi-turn comparisons are well-explained, though tables and appendices are dense.
-- Value: ⭐⭐⭐⭐⭐ Extremely valuable for evaluating the reliability of reasoning VLMs, particularly in reminding the community not to mistake "the model says it checked" for actual visual grounding.
+- Novelty: ⭐⭐⭐⭐⭐ Direct behavior test for reflection authenticity.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Broad model coverage and detailed mechanism analysis.
+- Writing Quality: ⭐⭐⭐⭐☆ Clear logic, though dense with appendix-level detail.
+- Value: ⭐⭐⭐⭐⭐ Vital warning for high-stakes VLM applications like medical auditing or autonomous sensing.
 
 <!-- RELATED:START -->
 
@@ -150,10 +160,10 @@ The authors conducted multiple analyses to rule out explanations like "the new i
 
 ## Related Papers
 
-- [\[ICML 2026\] Uncovering Visual Counting Bottlenecks in Vision-Language Models](unveiling_the_visual_counting_bottleneck_in_vision-language_models.md)
-- [\[ICLR 2026\] ICYM2I: The Illusion of Multimodal Informativeness under Missingness](../../ICLR2026/multimodal_vlm/icym2i_the_illusion_of_multimodal_informativeness_under_missingness.md)
+- [\[CVPR 2026\] Illusion-Aware Visual Preprocessing and Anti-Illusion Prompting for Classic Illusion Understanding in Vision-Language Models](../../CVPR2026/multimodal_vlm/illusion-aware_visual_preprocessing_and_anti-illusion_prompting_for_classic_illu.md)
+- [\[CVPR 2026\] VisRes Bench: On Evaluating the Visual Reasoning Capabilities of VLMs](../../CVPR2026/multimodal_vlm/visres_bench_on_evaluating_the_visual_reasoning_capabilities_of_vlms.md)
 - [\[CVPR 2026\] Seeing Through Touch: Tactile-Driven Visual Localization of Material Regions](../../CVPR2026/multimodal_vlm/seeing_through_touch_tactile_localization.md)
-- [\[ICCV 2025\] Generalizable Object Re-Identification via Visual In-Context Prompting](../../ICCV2025/multimodal_vlm/generalizable_object_re-identification_via_visual_in-context_prompting.md)
+- [\[ICLR 2026\] ICYM2I: The Illusion of Multimodal Informativeness under Missingness](../../ICLR2026/multimodal_vlm/icym2i_the_illusion_of_multimodal_informativeness_under_missingness.md)
 - [\[CVPR 2026\] What Do Visual Tokens Really Encode? Uncovering Sparsity and Redundancy in Multimodal Large Language Models](../../CVPR2026/multimodal_vlm/what_do_visual_tokens_really_encode_uncovering_sparsity_and_redundancy_in_multim.md)
 
 </div>

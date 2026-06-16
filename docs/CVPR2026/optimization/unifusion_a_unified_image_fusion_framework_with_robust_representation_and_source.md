@@ -2,146 +2,158 @@
 title: >-
   [Paper Note] UniFusion: A Unified Image Fusion Framework with Robust Representation and Source-Aware Preservation
 description: >-
-  [CVPR2026][Optimization][unified image fusion] This paper proposes UniFusion, a unified image fusion framework that leverages the self-supervised semantic priors of DINOv3 to construct a cross-modal shared feature space…
+  [CVPR 2026][Optimization & Theory][unified image fusion] The authors propose UniFusion, a unified image fusion framework that leverages DINOv3 self-supervised semantic priors to construct a cross-modal shared feature space. It preserves source image information via a reconstruction alignment mechanism and decouples reconstruction and fusion objectives using a bilevel optimiz
 tags:
-  - "CVPR2026"
-  - "Optimization"
-  - "unified image fusion"
-  - "DINOv3"
-  - "bilevel optimization"
-  - "reconstruction alignment"
-  - "cross-task generalization"
+  - CVPR 2026
+  - Optimization & Theory
+  - unified image fusion
+  - DINOv3
+  - bilevel optimization
+  - reconstruction alignment
+  - cross-task generalization
 date: 2026-05-08
-content_hash: 4cd3a8cff381c307
+content_hash: 0b3c292057e685b2
 ---
-
 # UniFusion: A Unified Image Fusion Framework with Robust Representation and Source-Aware Preservation
 
-**Conference**: CVPR2026
+**Conference**: CVPR2026  
 **arXiv**: [2603.14214](https://arxiv.org/abs/2603.14214)  
 **Code**: [dusongcheng/UniFusion](https://github.com/dusongcheng/UniFusion)  
-**Area**: Optimization
+**Area**: Optimization  
 **Keywords**: unified image fusion, DINOv3, bilevel optimization, reconstruction alignment, cross-task generalization
 
 ## TL;DR
 
-This paper proposes UniFusion, a unified image fusion framework that leverages the self-supervised semantic priors of DINOv3 to construct a cross-modal shared feature space, preserves source image information via a reconstruction alignment mechanism, and decouples reconstruction and fusion objectives through a bilevel optimization strategy. The framework achieves state-of-the-art performance across multiple tasks, including infrared-visible, multi-exposure, multi-focus, and medical image fusion.
+The authors propose UniFusion, a unified image fusion framework that leverages DINOv3 self-supervised semantic priors to construct a cross-modal shared feature space. It preserves source image information via a reconstruction alignment mechanism and decouples reconstruction and fusion objectives using a bilevel optimization strategy, achieving SOTA performance across tasks such as infrared-visible, multi-exposure, multi-focus, and medical image fusion.
 
 ## Background & Motivation
 
-**Core goal of image fusion**: To integrate complementary information from multi-source images into a single, information-rich, and visually coherent representation, serving downstream tasks such as object detection, medical diagnosis, and autonomous driving.
+**Goal of Image Fusion**: To integrate complementary information from multi-source images into a single, informative, and visually consistent representation, benefiting downstream tasks like object detection, medical diagnosis, and autonomous driving.
 
-**Limitations of Prior Work**: Existing methods (CDDFuse, CoCoNet, LRRNet, etc.) are largely designed for specific fusion scenarios (infrared-visible, multi-exposure, multi-focus), employing task-customized CNN/AE/GAN architectures with limited generalization capability and poor adaptability to diverse fusion requirements.
+**Limitations of Prior Work**: Existing methods (e.g., CDDFuse, CoCoNet, LRRNet) are mostly designed for specific fusion scenarios (infrared-visible, multi-exposure, multi-focus) using customized CNN/AE/GAN architectures. Their generalization capability is limited, making it difficult to adapt to diverse fusion requirements.
 
-**Background**: Recent Transformer-based architectures (SwinFusion), diffusion-model-based approaches, and methods such as TC-MoA have attempted to handle multiple tasks with a single model, yet are still constrained by two fundamental bottlenecks.
+**Background of Universal Fusion Frameworks**: Recent Transformer-based architectures (SwinFusion), diffusion-based methods, and TC-MoA attempt to handle multiple tasks with a single model but are still constrained by two core bottlenecks.
 
-**Bottleneck 1: Lack of modality-consistent feature extraction**—existing shared backbones fail to establish principled and robust unified encodings across heterogeneous signals (infrared thermal imaging vs. visible-light texture).
+**Key Challenge 1: Lack of modal-consistent feature extraction mechanism**—Existing shared backbones fail to establish a principled and robust unified encoding across heterogeneous signals (thermal infrared vs. visible texture).
 
-**Bottleneck 2: Source information degradation during deep propagation**—modality-specific cues (e.g., visible-light texture, infrared radiation contrast) are progressively lost as features propagate through deep networks, leading to suboptimal fusion quality.
+**Key Challenge 2: Source information degradation in deep propagation**—Modal-specific cues (e.g., visible textures, infrared radiation contrast) are gradually lost as features propagate through deep networks, leading to suboptimal fusion quality.
 
-**Key Insight**: Can the strong semantic priors of a large-scale self-supervised pretrained model (DINOv3), combined with explicit reconstruction constraints and an optimization decoupling strategy, simultaneously address both bottlenecks?
+**Key Insight**: Can the strong semantic priors of large-scale self-supervised pre-trained models (DINOv3), combined with explicit reconstruction constraints and optimization decoupling strategies, simultaneously address these two bottlenecks?
 
 ## Method
 
 ### Overall Architecture
 
-UniFusion comprises three major modules: (1) a dual-branch semantic feature extractor based on a frozen DINOv3 backbone with lightweight Adapters for domain adaptation; (2) a Cross-Attention fusion module; and (3) a reconstruction alignment branch. Training follows a bilevel optimization scheme: the inner level updates Adapter and reconstruction branch parameters $\phi$ (reconstruction objective), while the outer level updates fusion network parameters $\theta$ (fusion objective), with the two levels alternating iteratively to achieve joint optimization.
+UniFusion aims to handle all fusion tasks with one model by assigning the problems of "modal-consistent feature extraction" and "source information preservation" to two distinct mechanisms. The pipeline operates as follows: two source images (e.g., infrared and visible) are fed into two frozen DINOv3 ViTs to extract multi-layer semantic features, which are then calibrated into a modally-aligned shared space via a lightweight Adapter. The calibrated features are processed in two ways: one path feeds into a Cross-Attention module for cross-modal fusion to output the fused image; the other path connects to reconstruction branches to restore the features back to the source images, forcing the features to retain information. Instead of joint training, a bilevel optimization strategy is used—the inner loop handles reconstruction (updating Adapter + reconstruction parameters $\phi$), while the outer loop handles fusion (updating fusion network parameters $\theta$), alternating iteratively.
 
-### Key Design 1: Semantic Prior Adaptation
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Source Images I_x / I_y<br/>Infrared-Visible / Multi-Exposure / Multi-Focus / Medical"] --> B["Frozen DINOv3 ViT ×2<br/>Extract multi-layer features f(l2,l5,l8,l11)"]
+    B --> C["Hierarchical Adapter<br/>Progressive calibration to shared space F̂_m"]
+    C --> D["Cross-Attention Fusion<br/>Mutual query to exchange complementary info"]
+    C --> E["Reconstruction Branch R_m<br/>Restore source images from F̂_m"]
+    D --> F["Fused Image (Output)"]
+    E --> G["Reconstructed Sources (Training Constraint)"]
+    F -. Outer θ: Opt. Fusion .-> H["Bilevel Optimization Strategy<br/>Inner φ for reconstruction, Outer θ for fusion"]
+    G -. Inner φ: Modal Info Preservation .-> H
+```
 
-- **Function**: A frozen DINOv3 ViT serves as the universal semantic backbone, extracting multi-layer features $f^{(l_2)}, f^{(l_5)}, f^{(l_8)}, f^{(l_{11})}$ from each modality independently, followed by lightweight hierarchical Adapters for progressive feature calibration.
-- **Mechanism**: The Adapters act as "feature translators," progressively integrating deep global semantics with shallow fine-grained structures via multi-stage residual fusion and upsampling, producing modality-aligned embeddings.
-- **Design Motivation**: DINOv3, pretrained on large-scale natural images, provides strong object-centric priors and long-range contextual dependencies. However, its latent space exhibits domain bias with respect to specific modalities (infrared, medical imaging). The Adapters bridge this gap with minimal parameter overhead while preserving the frozen backbone's generalization capacity and avoiding catastrophic forgetting.
+### Key Designs
 
-### Key Design 2: Reconstruction Alignment
+**1. DINOv3 Semantic Prior Adaptation: Large-scale frozen model as a universal semantic backbone with lightweight Adapters to bridge modal domain gaps**
 
-- **Function**: A lightweight reconstruction branch $R_m$ (several Transformer layers plus a projection head) is appended to each modality branch to reconstruct the original input $\bar{I}_m = R_m(\hat{\mathbf{F}}_m)$ from the calibrated features $\hat{\mathbf{F}}_m$ output by the Adapter.
-- **Mechanism**: The self-reconstruction constraint forces the encoder to retain sufficient modality-specific information (texture, radiation contrast, etc.) in the shared latent space, preventing semantic drift and information loss.
-- **Design Motivation**: Conventional methods constrain only the similarity between the fused output and the source images (pixel-level L1/SSIM), which tends to favor shallow texture imitation while neglecting deep semantic correspondence. Reconstruction alignment operates at the encoding stage, ensuring that the features themselves are "invertible"—capable of recovering the source image—thereby guaranteeing information completeness at the feature level. Ablation experiments (Fig. 8) visually demonstrate that removing the reconstruction branch causes the encoded features to lose significant modality-specific semantic representations.
+The first bottleneck is the inability to build unified encoding between heterogeneous signals. UniFusion utilizes DINOv3 ViT, pre-trained via self-supervision on massive natural images, as a universal backbone. It extracts multi-layer features $f^{(l_2)}, f^{(l_5)}, f^{(l_8)}, f^{(l_{11})}$ and uses a hierarchical Adapter for progressive calibration: through multi-stage residual fusion and upsampling, deep global semantics and shallow fine-grained structures are integrated into modally-aligned embeddings. DINOv3 provides strong object-centric priors and long-range dependencies; while domain gaps exist for special modalities like infrared, the Adapter compensates with minimal parameters while the frozen backbone maintains generalization and prevents catastrophic forgetting.
 
-### Key Design 3: Bilevel Optimization
+**2. Cross-Attention Fusion Module: Fine-grained complementary information exchange via mutual querying**
 
-- **Function**: Training is formalized as a bilevel optimization problem: the lower level rapidly updates Adapter and reconstruction parameters $\phi$ to capture modality-specific semantics, while the upper level slowly adjusts fusion network parameters $\theta$ based on the updated feature space.
-- **Mechanism**:
-  $$\phi^* = \arg\min_\phi \mathcal{L}_{\text{rec}}(\phi), \quad \theta^* = \arg\min_\theta \mathcal{L}_{\text{fuse}}(\theta; \phi^*)$$
-  A first-order alternating scheme is adopted in practice: at each iteration, $\phi$ is updated with a larger learning rate $\eta_L$, followed by an update of $\theta$ with a smaller learning rate $\eta_U$; EMA regularization is applied to $\theta$ to enhance temporal stability.
-- **Design Motivation**: Reconstruction and fusion are two coupled objectives—joint end-to-end training risks interference between reconstruction signals and fusion gradients, leading to unstable convergence. Bilevel optimization decouples them into sub-problems operating at different timescales: the inner level ensures that features "remember" source information, upon which the outer level learns the optimal fusion strategy, thereby balancing information preservation and fusion quality.
+The authors use four Cross-Attention Blocks to fuse aligned features. By letting each modality's features act as a query to attend to the other's key/value, the model adaptively identifies and strengthens complementary regions. Compared to static weighting, the attention mechanism dynamically determines information exchange at each position in both spatial and semantic dimensions, which is ideal for highly complementary fusion tasks.
 
-### Key Design 4: Cross-Attention Fusion Module
+**3. Reconstruction Alignment Mechanism: Self-reconstruction at the encoding end to ensure feature reversibility**
 
-- **Function**: Four Cross-Attention Blocks perform dynamic interaction between the adapted features of the two modalities, modeling cross-modal dependencies and emphasizing complementary information.
-- **Mechanism**: Each modality's features serve as queries to attend to the keys and values of the other modality, adaptively selecting and reinforcing valuable complementary regions.
-- **Design Motivation**: Compared to simple concatenation or weighted averaging, cross-attention enables fine-grained information exchange at both spatial and semantic levels, making it particularly well-suited for scenarios with highly complementary modalities such as infrared-visible fusion.
+To prevent the degradation of modal-specific cues like radiation contrast in deep layers, UniFusion places constraints at the encoding end. Each modality branch is equipped with a lightweight reconstruction branch $R_m$ (Transformer layers + projection head) to reconstruct the original input $\bar{I}_m = R_m(\hat{\mathbf{F}}_m)$ from the calibrated features $\hat{\mathbf{F}}_m$. Successful reconstruction implies the features are "reversible" and retain modal-specific information. Feature visualization (Fig. 8) shows that without the reconstruction branch, encoding features lose significant modal-specific semantic representations.
+
+**4. Bilevel Optimization Strategy: Decoupling reconstruction and fusion into different time-scale sub-problems**
+
+Since the fusion and reconstruction branches share calibrated features, their objectives are coupled. Joint training can lead to reconstruction signals interfering with fusion gradients. UniFusion formulates training as a bilevel optimization:
+
+$$\phi^* = \arg\min_\phi \mathcal{L}_{\text{rec}}(\phi), \quad \theta^* = \arg\min_\theta \mathcal{L}_{\text{fuse}}(\theta; \phi^*)$$
+
+The inner (lower-level) loop rapidly updates Adapter and reconstruction parameters $\phi$ to capture modal-specific semantics. The outer (upper-level) loop optimizes fusion parameters $\theta$ on the updated feature space. A first-order alternating approximation is implemented using a larger learning rate $\eta_L$ for $\phi$ and a smaller $\eta_U$ for $\theta$, with EMA regularization on $\theta$ to enhance stability. This ensures the model first "remembers" source information before learning optimal fusion strategies.
 
 ## Key Experimental Results
 
-### Table 1: Quantitative Comparison on Multi-Modal & Multi-Exposure Fusion
+### Main Results: Multi-Modal & Multi-Exposure Fusion
 
 | Method | M3FD MI↑ | M3FD VIF↑ | M3FD $Q_{abf}$↑ | M3FD $Q_y$↑ | MEFB MI↑ | MEFB VIF↑ | MEFB CC↑ | MEFB PSNR↑ |
-|--------|----------|-----------|-----------------|-------------|----------|-----------|----------|------------|
+|------|----------|-----------|-----------------|-------------|----------|-----------|----------|------------|
 | CDDFuse | 3.776 | 0.839 | 0.610 | 0.978 | 6.575 | 1.430 | 0.837 | 56.809 |
 | SwinFusion | 2.945 | 0.618 | 0.480 | 0.936 | 5.318 | 1.459 | 0.894 | 59.009 |
 | TC-MoA | 3.466 | 0.870 | 0.636 | 0.983 | 4.889 | 1.406 | 0.885 | 59.152 |
-| **UniFusion** | **4.268** | **0.899** | **0.637** | 0.982 | **6.861** | **1.484** | **0.906** | **59.219** |
+| **Ours** | **4.268** | **0.899** | **0.637** | 0.982 | **6.861** | **1.484** | **0.906** | **59.219** |
 
-- UniFusion achieves an MI of 4.268 on M3FD, substantially outperforming TC-MoA (3.466) by approximately 23%.
-- UniFusion ranks best across all four metrics on MEFB, with VIF reaching 1.484 (surpassing SwinFusion's 1.459).
+- Ours achieves an MI of 4.268 on M3FD, outperforming TC-MoA (3.466) by ~23%.
+- On MEFB, Ours achieves the best results across all four metrics, with VIF reaching 1.484.
 
-### Table 2: Ablation Study (M3FD / MEFB / MFIF)
+### Ablation Study (M3FD / MEFB / MFIF)
 
-| Configuration | M3FD MI↑ | M3FD VIF↑ | MEFB MI↑ | MEFB VIF↑ | MFIF MI↑ | MFIF $Q_{abf}$↑ |
-|---------------|----------|-----------|----------|-----------|----------|-----------------|
+| Config | M3FD MI↑ | M3FD VIF↑ | MEFB MI↑ | MEFB VIF↑ | MFIF MI↑ | MFIF $Q_{abf}$↑ |
+|------|----------|-----------|----------|-----------|----------|-----------------|
 | w/o Adapter | 3.646 | 0.863 | 5.512 | 1.232 | 5.375 | 0.532 |
 | w/o DINOv3 | 3.681 | 0.879 | 5.709 | 1.334 | 5.624 | 0.491 |
 | w/o Reconstruction | 3.846 | 0.870 | 6.434 | 1.396 | 5.838 | 0.579 |
 | w/o Bilevel Opt | 3.924 | 0.876 | 6.374 | 1.424 | 6.021 | 0.583 |
 | **Full Model** | **4.268** | **0.899** | **6.861** | **1.484** | **6.253** | **0.685** |
 
-- Each component contributes significantly; removing the Adapter causes MFIF $Q_{abf}$ to drop from 0.685 to 0.532 (−22%).
-- The semantic priors of the DINOv3 encoder are foundational; replacing it with a plain 4-layer Transformer leads to a comprehensive performance decline across tasks.
-- Reconstruction alignment and bilevel optimization each contribute independently, with the best results achieved when both are combined.
+- Each component contributes significantly; removing the Adapter reduces MFIF $Q_{abf}$ from 0.685 to 0.532 (-22%).
+- DINOv3 semantic priors are foundational; reconstruction alignment and bilevel optimization provide independent and synergistic gains.
 
 ## Highlights & Insights
 
-1. **DINOv3 as a universal semantic backbone is an inspiring paradigm**: The frozen pretrained ViT + lightweight Adapter approach parallels LoRA/Adapter-tuning in NLP, and this paper provides the first systematic validation of this paradigm in the image fusion domain.
-2. **Reconstruction alignment is an elegant information preservation mechanism**: Rather than applying constraints at the fusion output, the framework ensures feature information completeness through self-reconstruction at the encoding stage—a novel and visually convincing approach, as demonstrated by Fig. 8.
-3. **Bilevel optimization is clearly formalized**: Decoupling reconstruction and fusion into optimization sub-problems at different timescales is theoretically grounded in bilevel optimization and efficiently implemented via a first-order alternating approximation in practice.
-4. **Strong cross-task generalization**: A single model achieves state-of-the-art or competitive performance across four task categories (IVIF, MIF, MEF, MFF), requiring only 10K training iterations, which demonstrates practical applicability.
+1. **DINOv3 as a universal semantic backbone is inspiring**: The paradigm of frozen pre-trained ViT + lightweight Adapter (similar to LoRA) is systematically validated for the first time in image fusion.
+2. **Reconstruction alignment is an elegant preservation mechanism**: Placing constraints at the encoding level to ensure feature-level information completeness is a novel and convincing alternative to output-level pixel constraints.
+3. **Formalized bilevel optimization**: Decoupling reconstruction and fusion into different optimization time-scales is theoretically grounded and efficiently implemented via first-order approximation.
+4. **Strong cross-task generalization**: A single model reaches or nears SOTA across IVIF, MIF, MEF, and MFF with only 10K training iterations, showing high practical value.
 
 ## Limitations & Future Work
 
-1. **Dependency on DINOv3**: The frozen DINOv3 backbone is large (ViT-Large/Giant scale), incurring substantial inference overhead and posing challenges for edge deployment. Knowledge distillation into a smaller backbone is a natural direction to explore.
-2. **Computational cost of bilevel optimization**: Although a first-order approximation is employed, the two-stage alternating updates still increase per-iteration computation, and the $\eta_L / \eta_U$ ratio requires careful tuning.
-3. **No evaluation on misaligned scenarios**: Experiments do not cover cases where source images exhibit geometric misalignment (e.g., handheld multi-exposure, motion blur), which are common in real-world applications.
-4. **Insufficient discussion of the reconstruction branch at inference time**: It remains unclear whether the reconstruction branch can be removed at inference to reduce computational cost; the paper does not explicitly describe any architecture simplification strategy for the inference stage.
-5. **Fusion loss directly adopted from SwinFusion**: No innovation is introduced in the fusion loss function itself, leaving potential room for further improvement.
+1. **DINOv3 Dependency**: The frozen backbone is large (ViT-Large/Giant), leading to high inference overhead on edge devices. Distillation to smaller backbones should be explored.
+2. **Computational Cost of Bilevel Optimization**: While using first-order approximation, alternating updates still increase per-iteration compute, and the $\eta_L / \eta_U$ ratio requires careful tuning.
+3. **Lack of evaluation on non-aligned scenarios**: The experiments do not cover cases with geometric misalignment (e.g., motion blur or hand-held multi-exposure).
+4. **Reconstruction branch necessity**: It remains unclear if the reconstruction branch can be removed during inference to accelerate the model.
+5. **Standard Fusion Loss**: Ours adopts the loss design from SwinFusion without specific innovation in the loss function itself.
 
 ## Related Work & Insights
 
-- **TC-MoA** [Zhu et al.]: A universal fusion method based on task-specific routing networks and the strongest baseline in this paper; UniFusion surpasses it through stronger semantic priors and the bilevel optimization strategy.
-- **SwinFusion** [Ma et al.]: A cross-domain Swin Transformer framework; UniFusion adopts its fusion loss design while substantially improving upon it.
-- **U2Fusion** [Xu et al.]: A pioneering all-in-one fusion method that inspired subsequent unified framework research.
-- **DINOv2/v3**: Self-supervised ViT pretraining paradigms; this paper validates their transfer potential for low-level vision tasks.
-- **Bilevel Optimization in Vision**: Widely applied in meta-learning, NAS, and hyperparameter optimization; introducing it to image fusion represents a meaningful contribution.
-- **Inspiration from Adapter-tuning**: The frozen large model + lightweight adapter paradigm is well established in NLP; its successful application to low-level CV tasks in this paper merits attention.
+- **TC-MoA**: A universal fusion method based on task-specific routing; UniFusion outperforms it via stronger semantic priors and bilevel optimization.
+- **SwinFusion**: A cross-domain Swin Transformer framework; UniFusion builds upon its loss design with significant performance gains.
+- **DINOv2/v3**: Self-supervised pre-training paradigms; this work validates their transfer potential for low-level vision.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — The use of DINOv3 + Adapter as a universal fusion backbone is novel, the reconstruction alignment mechanism is cleverly designed, and the introduction of bilevel optimization is theoretically motivated. However, the individual components (Adapter-tuning, bilevel optimization) are not entirely new; the contribution lies in their effective combination.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Covers four major task categories (IVIF/MIF/MEF/MFF) across 6+ benchmarks, compared against 10 state-of-the-art methods, with complete ablation experiments (4 variants), rich qualitative visualizations (feature maps, fusion results), and downstream task validation provided in the appendix.
-- **Writing Quality**: ⭐⭐⭐⭐ — The structure is clear, the methodological description is logically coherent, and the mathematical derivations are complete. Figures and tables are of high quality, and the feature visualizations in Fig. 8 are particularly persuasive. Some notation could be introduced earlier for clarity.
-- **Value**: ⭐⭐⭐⭐ — Provides a practical unified fusion framework with engineering value in single-model cross-task generalization; the DINOv3 + Adapter paradigm is transferable to other low-level vision tasks; open-sourced code further enhances reproducibility and impact.
+- **Novelty**: ⭐⭐⭐⭐ — Innovative use of DINOv3 + Adapter for fusion; elegant reconstruction alignment; theoretically supported bilevel optimization.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Covers 4 task categories, 6+ benchmarks, compares against 10 SOTA methods, and includes downstream task validation.
+- **Writing Quality**: ⭐⭐⭐⭐ — Logic is clear, derivations are complete, and visualizations (Fig. 8) are highly convincing.
+- **Value**: ⭐⭐⭐⭐ — Strong engineering value for cross-task generalization; the Adapter-tuning paradigm is applicable to other low-level vision tasks.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
 
+- **SwinFusion**: Cross-domain Long-range Learning for General Image Fusion (CVPR 2022)
+- **CDDFuse**: Correlation-Driven Dual-Branch Feature Decomposition for Multi-Modality Image Fusion (CVPR 2023)
+- **TC-MoA**: Task-Conditioned Mixture of Adapters for Generalizable Image Fusion (ECCV 2024)
+
+</div>
+
+<!-- RELATED:END -->
+
 ## Related Papers
 
 - [\[NeurIPS 2025\] AutoOpt: A Dataset and a Unified Framework for Automating Optimization Problem Solving](../../NeurIPS2025/optimization/autoopt_a_dataset_and_a_unified_framework_for_automating_optimization_problem_so.md)
-- [\[ICML 2026\] URS: A Unified Neural Routing Solver](../../ICML2026/optimization/urs_a_unified_neural_routing_solver_for_cross-problem_zero-shot_generalization.md)
-- [\[ICML 2026\] Stability Analysis of Sharpness-Aware Minimization](../../ICML2026/optimization/stability_analysis_of_sharpness-aware_minimization.md)
-- [\[ICML 2026\] Cost-Aware Stopping for Bayesian Optimization](../../ICML2026/optimization/cost-aware_stopping_for_bayesian_optimization.md)
+- [\[CVPR 2026\] HyperNAS: Enhancing Architecture Representation for NAS Predictor via Hypernetwork](hypernas_enhancing_architecture_representation_for_nas_predictor_via_hypernetwor.md)
+- [\[CVPR 2026\] FedRG: Unleashing the Representation Geometry for Federated Learning with Noisy Clients](fedrg_unleashing_the_representation_geometry_for_federated_learning_with_noisy_c.md)
+- [\[CVPR 2026\] DABO: Difficulty-Aware Bayesian Optimization with Diffusion-Learned Priors](dabo_difficulty-aware_bayesian_optimization_with_diffusion-learned_priors.md)
 - [\[AAAI 2026\] SMoFi: Step-wise Momentum Fusion for Split Federated Learning on Heterogeneous Data](../../AAAI2026/optimization/smofi_step-wise_momentum_fusion_for_split_federated_learning_on_heterogeneous_da.md)
 
 </div>

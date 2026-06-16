@@ -2,134 +2,140 @@
 title: >-
   [Paper Note] CRFT: Consistent-Recurrent Feature Flow Transformer for Cross-Modal Image Registration
 description: >-
-  [CVPR 2026][Medical Imaging][Cross-modal registration] CRFT is a unified coarse-to-fine cross-modal image registration framework that learns modality-agnostic feature flow representations within a Transformer architectur…
+  [CVPR 2026][Medical Imaging][Paper Note] CRFT is proposed as a unified coarse-to-fine cross-modal image registration framework. It learns modality-independent feature flow representations within a Transformer architecture, utilizing $1/8$ resolution global correspondence in the coarse stage and $1/2$-$1/4$ multi-scale local refinement in the fine stage. Combi
 tags:
-  - "CVPR 2026"
-  - "Medical Imaging"
-  - "Cross-modal registration"
-  - "feature flow learning"
-  - "coarse-to-fine"
-  - "discrepancy-guided attention"
-  - "spatial geometric transformation"
+  - CVPR 2026
+  - Medical Imaging
 date: 2026-05-08
-content_hash: da8d376f47147013
+content_hash: d3474085f0946465
 ---
-
 # CRFT: Consistent-Recurrent Feature Flow Transformer for Cross-Modal Image Registration
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2604.05689](https://arxiv.org/abs/2604.05689)  
 **Code**: [https://github.com/NEU-Liuxuecong/CRFT](https://github.com/NEU-Liuxuecong/CRFT)  
-**Area**: Medical Imaging / Image Registration
-**Keywords**: Cross-modal registration, feature flow learning, coarse-to-fine, discrepancy-guided attention, spatial geometric transformation
+**Area**: Medical Imaging / Image Registration  
+**Keywords**: Cross-modal registration, feature flow learning, coarse-to-fine, discrepancy-guided attention, spatial geometric transform
 
 ## TL;DR
-CRFT is a unified coarse-to-fine cross-modal image registration framework that learns modality-agnostic feature flow representations within a Transformer architecture. It employs 1/8-resolution global correspondence at the coarse stage and multi-scale local refinement at 1/2–1/4 resolution at the fine stage, coupled with iterative discrepancy-guided attention and Spatial Geometric Transform (SGT) to recursively refine flow fields and capture subtle spatial inconsistencies. CRFT outperforms SOTA methods including RAFT, GMFlow, and LoFTR across diverse cross-modal datasets covering optical, infrared, SAR, and multispectral imagery.
+CRFT is proposed as a unified coarse-to-fine cross-modal image registration framework. It learns modality-independent feature flow representations within a Transformer architecture, utilizing $1/8$ resolution global correspondence in the coarse stage and $1/2$-$1/4$ multi-scale local refinement in the fine stage. Combined with iterative discrepancy-guided attention and Spatial Geometric Transform (SGT) to recursively refine the flow field and capture subtle spatial inconsistencies, it outperforms SOTA methods like RAFT, GMFlow, and LoFTR across various cross-modal datasets including optical/infrared, SAR, and multispectral.
 
 ## Background & Motivation
 
-**Background**: Cross-modal image registration—establishing spatial correspondences between images acquired by different sensors—is a core problem in computer vision, with applications in 3D reconstruction, visual localization, and remote sensing analysis.
+**Background**: Cross-modal image registration (establishing spatial correspondence between images from different sensors) is a core problem in computer vision, applied in 3D reconstruction, visual localization, and remote sensing analysis.
 
-**Limitations of Prior Work**: (1) Hand-crafted features (SIFT/RIFT) are unreliable under strong nonlinear appearance discrepancies; (2) learning-based sparse matching methods (SuperGlue/LoFTR) are optimized for RGB imagery and generalize poorly to cross-modal inputs; (3) optical flow methods (RAFT/GMFlow) assume photometric consistency, which is violated by cross-modal inputs; (4) all existing methods struggle with combined challenges of large affine transformations, scale variation, and modality gaps.
+**Limitations of Prior Work**: (1) Handcrafted features (SIFT/RIFT) are unreliable under strong non-linear appearance differences; (2) Learned sparse matching (SuperGlue/LoFTR) is optimized for RGB and generalizes poorly to cross-modal data; (3) Optical flow methods (RAFT/GMFlow) assume photometric consistency, which is violated by cross-modal inputs; (4) Existing methods struggle with combinations of large affine transformations, scale changes, and modality gaps.
 
-**Core Idea**: (1) Learn modality-agnostic feature flow within a Transformer—establishing feature-space correspondences across modalities without relying on pixel-level consistency; (2) hierarchical coarse-to-fine matching (global + local); (3) iterative discrepancy-guided recurrent flow refinement—leveraging feature discrepancies to actively localize misaligned regions.
+**Core Idea**: (1) Learning modality-independent feature flows in Transformers—relying on cross-modal feature space correspondence rather than pixel consistency; (2) Coarse-to-fine hierarchical matching (global + local); (3) Iterative discrepancy-guided recursive flow field refinement—utilizing feature discrepancies to actively locate poorly aligned regions.
 
 ## Method
 
 ### Overall Architecture
-Given an input image pair $(I^A, I^B)$, a shared ResNet CNN extracts features at three scales (1/2, 1/4, 1/8). The **coarse stage** (1/8 resolution) applies self-attention and cross-attention to establish global correspondences and produce an initial flow field. The **fine stage** (1/2 + 1/4 resolution) injects fine-grained spatial details via window attention and cross-attention. **Iterative discrepancy-guided flow optimization** (N rounds) then applies SGT-based feature alignment, computes feature discrepancies, applies discrepancy-weighted attention-guided updates with residual flow estimation, and employs a confidence estimation network for smoothing, ultimately producing a high-accuracy dense flow field.
+
+CRFT addresses the complex problem where two images come from different sensors (e.g., Optical vs. SAR, Visible vs. Infrared), and the grayscale values of the same ground object might be completely inverted. The "photometric consistency" essential for optical flow methods fails here, yet registration requires sub-pixel dense correspondence. CRFT moves the entire process into the **feature space**, using a coarse-to-fine pipeline to refine the correspondence layer by layer.
+
+Specifically, an input image pair $(I^A, I^B)$ passes through a weight-shared ResNet encoder to extract features at $1/2$, $1/4$, and $1/8$ scales. First, self-attention and cross-attention are used at the coarsest $1/8$ scale to establish global correspondence, resulting in a stable but coarse initial flow field. This flow is then brought to the $1/2$ and $1/4$ high-resolution scales, where window attention adds local details. The core of the paper is an iterative refinement loop that runs for $N$ rounds: in each round, the current flow is applied to the features, affine/scale deformations are explicitly compensated, feature discrepancies are calculated, and these discrepancies are inverted into reliability map to guide attention. Correspondences from reliable regions are used to propagate and correct unreliable regions, gradually converging the flow field to sub-pixel accuracy.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Input Image Pair I^A / I^B"] --> B["Shared ResNet Encoder<br/>Extract 1/2, 1/4, 1/8 multi-scale features (Modal-independent)"]
+    B --> C["Coarse Stage Global Flow Estimation<br/>1/8 Scale SA+CA → Global Correlation → Initial Flow Tc"]
+    C --> D["Fine Stage Local Flow Refinement<br/>1/2, 1/4 Window Attention → Multi-scale Fusion"]
+    D --> E
+    subgraph E["Iterative Discrepancy-Guided Flow Optimization (N rounds)"]
+        direction TB
+        E1["FSFT: MLP projection to shared feature space"] --> E2["SGT: Warp to compensate affine/scale based on current flow"]
+        E2 --> E3["Calculate Discrepancy Map ΔF → Invert to Reliability 1−ΔF"]
+        E3 --> E4["DGFO: Reliability-guided attention<br/>Aggregate flow field from reliable neighborhoods"]
+        E4 --> E5["RU: Residual Update of flow field"]
+        E5 --> E6["CENet: Estimate reliability → Smoothing"]
+        E6 -->|Iteration < N| E1
+    end
+    E -->|After N rounds| F["Full-resolution Dense Flow Field (Registration Result)"]
+```
 
 ### Key Designs
 
-1. **Coarse-Stage Flow Estimation (Global Context)**:
+**1. Coarse Stage Global Flow Estimation: Stabilizing large correspondences at low resolution**
 
-    - 1/8-resolution features → self-attention enhancement + cross-attention cross-modal matching → global correlation matrix → initial flow field.
-    - Design Motivation: Low-resolution features capture high-level structure, making them more robust to inter-modal spectral and radiometric inconsistencies, thereby stabilizing global matching.
+Direct cross-modal matching at high resolution is risky—spectral and radiation differences between modalities can overwhelm local details, leading to large-scale deviations. CRFT chooses to operate at $1/8$ resolution first: these features correspond to high-level structures (contours, skeletons) which are naturally more robust to inter-modal photometric inconsistencies. Self-attention enhances individual feature representations, and cross-attention performs cross-modal matching to construct a global correlation matrix, from which an initial flow field is derived. This flow is coarse but covers the global scope, providing a reliable starting point for subsequent refinement.
 
-2. **Fine-Stage Flow Refinement (Local Detail)**:
+**2. Fine Stage Local Flow Refinement: Recovering spatial details at high resolution**
 
-    - 1/2 and 1/4-resolution features → window self-attention for local pattern capture → cross-attention to inject fine-grained spatial details.
-    - Design Motivation: High resolution preserves spatial detail, but global attention is computationally infeasible at this scale; window attention combined with hierarchical fusion addresses this limitation.
+The coarse flow lacks details found only in high-resolution features. However, the $1/2$ and $1/4$ layers are too large for global attention due to computational costs. CRFT uses window self-attention to capture fine patterns within local windows and cross-attention to inject cross-modal spatial details into the flow field, combined with hierarchical multi-scale fusion. This recovers local accuracy while bypassing the overhead of high-resolution global attention.
 
-3. **Iterative Discrepancy-Guided Flow Optimization (Core Contribution)**:
+**3. Iterative Discrepancy-Guided Flow Optimization: Using "misalignment" to decide "what to fix"**
 
-    - N rounds of iterative refinement. Per round:
-        - **Fine-Scale Feature Transformation (FSFT)**: Warp features using the current flow field.
-        - **Spatial Geometric Transform (SGT)**: Explicitly models affine/scale transformations to handle large deformations.
-        - **Discrepancy Computation**: Residual between warped features and target features → discrepancy map.
-        - **Discrepancy-Guided Flow Optimization (DGFO)**: Discrepancy-weighted attention → automatically focuses on misaligned regions.
-        - **Residual Update (RU)**: Discrepancy-guided residual flow update.
-        - **Confidence Estimation Network (CENet)**: Predicts per-pixel confidence to smooth the final flow field.
-    - Design Motivation: Single-pass matching cannot handle complex nonlinear and affine deformations; recurrent refinement progressively corrects errors. Discrepancy guidance ensures attention concentrates on the most poorly aligned regions, improving efficiency.
+This is the core innovation of CRFT, targeting complex non-linear and large affine deformations. The refinement is structured as an $N$-round loop. Each round involves: **Fine-Scale Feature Transformation (FSFT)**, using a lightweight MLP to project both modalities into a shared feature space to stabilize discrepancy calculation; **Spatial Geometric Transform (SGT)**, which explicitly models affine/scale transformations as a learnable warp module to compensate for large deformations; the warped features are subtracted from the target features to obtain a **discrepancy map** $\Delta F$, marking unaligned regions. CRFT inverts this into a reliability map $1-\Delta F$. **Discrepancy-Guided Flow Optimization (DGFO)** uses this map to generate attention query/keys, aggregating the flow field from **reliable (aligned) neighbors**. Finally, a **Residual Update (RU)** pushes the flow field forward, and the **Confidence Estimation Network (CENet)** predicts pixel-wise confidence for weighted smoothing.
 
-4. **Modality-Agnostic Design**:
+**4. Modality-Independent Design: Unifying cross-modal registration as "Feature Flow"**
 
-    - A shared CNN encoder is used across modalities, learning modality-invariant features.
-    - Feature flow formulation replaces pixel-level photometric/optical flow assumptions, eliminating dependence on pixel-level consistency.
+CRFT forces the shared encoder to learn modality-invariant features. The formulation estimates **flow in the feature space** rather than pixel-level photometric flow, bypassing the "photometric consistency" assumption. Experimental results show that this design remains competitive even in RGB-RGB scenarios.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**OSdataset (Optical–SAR Registration)**
+**OSdataset (Optical-to-SAR Registration)**
 
 | Method | Type | AEPE ↓ | CMR@3px ↑ | CMR@1px ↑ | CMR@0.7px ↑ |
-|--------|------|--------|-----------|-----------|-------------|
-| RIFT2 | Hand-crafted | 23.61 | 22.9% | 0.0% | 0.0% |
-| GMFlow | Optical flow | 11.91 | 17.0% | 0.0% | 0.0% |
-| RAFT | Optical flow | 3.51 | 69.6% | 15.9% | 8.7% |
-| ADRNet | Dense matching | 1.67 | 90.1% | 35.0% | 20.6% |
-| GDROS | Dense matching | 1.34 | 91.1% | 49.2% | 35.5% |
+|------|------|--------|-----------|-----------|-------------|
+| RIFT2 | Handcrafted | 23.61 | 22.9% | 0.0% | 0.0% |
+| GMFlow | Optical Flow | 11.91 | 17.0% | 0.0% | 0.0% |
+| RAFT | Optical Flow | 3.51 | 69.6% | 15.9% | 8.7% |
+| ADRNet | Dense Match | 1.67 | 90.1% | 35.0% | 20.6% |
+| GDROS | Dense Match | 1.34 | 91.1% | 49.2% | 35.5% |
 | XoFTR+Flow | Semi-dense | 1.13 | 96.2% | 57.6% | 41.7% |
-| **CRFT** | **Ours** | **0.65** | **99.0%** | **95.1%** | **89.9%** |
+| **Ours** | **Ours** | **0.65** | **99.0%** | **95.1%** | **89.9%** |
 
-CRFT is the only method to achieve sub-pixel AEPE (0.65); CMR@0.7px reaches 89.9%, which is **2.15×** the second-best method XoFTR+Flow (41.7%).
+Ours is the only method reaching sub-pixel AEPE (0.65); CMR@0.7px reaches 89.9%, which is **2.15×** higher than the second-best XoFTR+Flow (41.7%).
 
-**RoadScene (Visible–Infrared Registration)**
+**RoadScene (Visible-to-Infrared Registration)**
 
 | Method | AEPE ↓ | CMR@3px ↑ | CMR@1px ↑ | CMR@0.7px ↑ |
-|--------|--------|-----------|-----------|-------------|
+|------|--------|-----------|-----------|-------------|
 | RIFT2 | 17.27 | 36.4% | 0.0% | 0.0% |
 | RAFT | 8.92 | 66.6% | 14.1% | 8.0% |
 | ADRNet | 4.72 | 50.1% | 9.4% | 4.8% |
 | XoFTR+Flow | 4.83 | 27.3% | 0.0% | 0.0% |
-| **CRFT** | **2.37** | **68.2%** | **18.2%** | **4.5%** |
+| **Ours** | **2.37** | **68.2%** | **18.2%** | **4.5%** |
 
-On RoadScene, CRFT achieves the lowest AEPE (2.37) and the highest CMR@1px (18.2%).
+Ours achieves the lowest AEPE (2.37) and highest CMR@1px (18.2%) on RoadScene.
 
 ### Ablation Study
 
-| Configuration | Effect |
-|---------------|--------|
-| Coarse stage only | Global correspondences established but insufficient spatial precision |
-| + Fine stage | Improved local detail and higher accuracy |
-| + Discrepancy guidance (N=1) | Further correction of geometric misalignment |
-| **+ Iterative refinement (N=3)** | **Best performance with stable convergence** |
-| w/o SGT | Degraded—significant drop in registration of large affine transformations |
-| w/o discrepancy guidance | Degraded—unfocused attention, lower correction efficiency |
-| w/o FSFT | Degraded—cross-modal feature spaces remain misaligned, leading to unstable discrepancy computation |
+| Configuration | Effect Description |
+|------|----------|
+| Coarse stage only | Global correspondence is available but lacks spatial precision |
+| + Fine stage | Improved local details and accuracy |
+| + Discrepancy Guidance (N=1) | Further correction of geometric misalignment |
+| **+ Iterative Refinement (N=3)** | **Optimal, stable convergence** |
+| w/o SGT | Significant performance drop for large affine transformations |
+| w/o DGFO | Lower efficiency; attention lacks focus on reliable regions |
+| w/o FSFT | Unstable discrepancy calculation due to unaligned feature spaces |
 
 ### Key Findings
-- The SGT module is most critical for large affine transformations—without SGT, registration under large rotation/scale changes is nearly infeasible.
-- Discrepancy-guided attention outperforms uniform attention by concentrating on regions requiring correction, making iterations more efficient.
-- N=3 iterations is sufficient for convergence; additional iterations yield diminishing returns.
-- CRFT remains competitive on RGB–RGB scenarios, demonstrating that the modality-agnostic design does not sacrifice same-modality performance.
+- The SGT module is critical for large affine transformations; without SGT, registration of large-angle/scale changes fails significantly.
+- Discrepancy-guided attention vs. uniform attention: The former makes iterations more efficient by using high-consistency regions as anchor points to propagate the flow field.
+- $N=3$ iterations are generally sufficient for convergence; further rounds yield diminishing returns.
+- Ours remains competitive in RGB-RGB scenarios, showing that modality-independent design does not sacrifice intra-modal performance.
 
 ## Highlights & Insights
-- **Modality-agnostic feature flow**: Cross-modal registration is unified as flow estimation in feature space—no modality-specific design is required per sensor pair, yielding strong generalizability.
-- **Discrepancy-guided adaptive attention**: Feature discrepancies between warped and target representations serve as attention weights, automatically localizing misaligned regions—substantially more efficient than uniform attention.
-- **Explicit geometric modeling via SGT**: Affine transformations are integrated as a learnable module rather than relying on the flow field to implicitly learn large deformations.
+- **Modality-Independent Feature Flow**: Unifies cross-modal registration as flow estimation in a shared feature space, ensuring high generalization across different modality pairs.
+- **Adaptive Discrepancy-Guided Attention**: Inverts feature differences into reliability weights for attention, allowing the flow field to aggregate from reliable neighbors and propagate to unaligned regions.
+- **Explicit Geometric Modeling with SGT**: Integrates affine transformations as a learnable module rather than expecting the flow field to learn large deformations implicitly.
 
 ## Limitations & Future Work
-- N=3 iterative refinement increases inference time.
-- The coarse stage employs global attention, requiring resolution control for large images.
-- Validation is currently limited to remote sensing and navigation scenarios; application to medical registration (CT–MRI) remains to be explored.
+- $N=3$ iterations increase inference time compared to single-pass methods.
+- Global attention in the coarse stage requires controlled resolution for large images.
+- Current validation focuses on remote sensing and navigation; application to medical registration (CT-MRI) remains to be explored.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The combination of discrepancy-guided recurrence, SGT, and modality-agnostic flow is effective.
+- Novelty: ⭐⭐⭐⭐ Effective combination of discrepancy-guided recursion, SGT, and modality-independent flows.
 - Experimental Thoroughness: ⭐⭐⭐⭐⭐ Validated across optical, infrared, SAR, and multispectral scenarios.
-- Writing Quality: ⭐⭐⭐⭐ Detailed architectural diagrams.
-- Value: ⭐⭐⭐⭐ Offers general-purpose registration utility for remote sensing and navigation applications.
+- Writing Quality: ⭐⭐⭐⭐ Detailed architecture diagrams.
+- Value: ⭐⭐⭐⭐ High potential for general registration in remote sensing and navigation.
 
 <!-- RELATED:START -->
 
@@ -137,11 +143,11 @@ On RoadScene, CRFT achieves the lowest AEPE (2.37) and the highest CMR@1px (18.2
 
 ## Related Papers
 
-- [\[CVPR 2026\] BiCLIP: Bidirectional and Consistent Language-Image Processing for Robust Medical Image Segmentation](biclip_bidirectional_and_consistent_language-image_processing_for_robust_medical.md)
-- [\[AAAI 2026\] Radiation-Preserving Selective Imaging for Pediatric Hip Dysplasia: A Cross-Modal Approach](../../AAAI2026/medical_imaging/radiation-preserving_selective_imaging_for_pediatric_hip_dysplasia_a_cross-modal.md)
-- [\[AAAI 2026\] FaNe: Towards Fine-Grained Cross-Modal Contrast with False-Negative Reduction and Text-Conditioned Sparse Attention](../../AAAI2026/medical_imaging/fane_towards_fine-grained_cross-modal_contrast_with_false-negative_reduction_and.md)
-- [\[CVPR 2026\] Diffusion-Based Feature Denoising and Using NNMF for Robust Brain Tumor Classification](diffusion-based_feature_denoising_and_using_nnmf_for_robust_brain_tumor_classifi.md)
-- [\[CVPR 2026\] Are General-Purpose Vision Models All We Need for 2D Medical Image Segmentation? A Cross-Dataset Empirical Study](are_general-purpose_vision_models_all_we_need_for_2d_medical_image_segmentation_.md)
+- [\[CVPR 2026\] CoFiDA-M: Concept-Aware Feature Modulation for Cross-Domain Adaptation with Image-Only Inference](cofida-m_concept-aware_feature_modulation_for_cross-domain_adaptation_with_image.md)
+- [\[CVPR 2026\] MambaLiteUNet: Cross-Gated Adaptive Feature Fusion for Robust Skin Lesion Segmentation](mambaliteunet_cross-gated_adaptive_feature_fusion_for_robust_skin_lesion_segment.md)
+- [\[CVPR 2026\] Cross-Modal Guided Visual Synthesis for Data-Efficient Multimodal Depression Recognition](cross-modal_guided_visual_synthesis_for_data-efficient_multimodal_depression_rec.md)
+- [\[CVPR 2026\] Cross-domain Dual-stream Feature Disentanglement for Brain Disorder Prediction with Sparsely Labeled PET](cross-domain_dual-stream_feature_disentanglement_for_brain_disorder_prediction_w.md)
+- [\[ECCV 2024\] Unsupervised Multi-modal Medical Image Registration via Invertible Translation](../../ECCV2024/medical_imaging/unsupervised_multi-modal_medical_image_registration_via_invertible_translation.md)
 
 </div>
 

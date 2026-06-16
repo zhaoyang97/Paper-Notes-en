@@ -22,8 +22,8 @@ item_total: 1
 
 **💬 ACL2026** · **1** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (24)](../../ICML2026/3d_vision/index.md) · [📷 CVPR2026 (223)](../../CVPR2026/3d_vision/index.md) · [🔬 ICLR2026 (62)](../../ICLR2026/3d_vision/index.md) · [🤖 AAAI2026 (79)](../../AAAI2026/3d_vision/index.md) · [🧠 NeurIPS2025 (116)](../../NeurIPS2025/3d_vision/index.md) · [📹 ICCV2025 (267)](../../ICCV2025/3d_vision/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (622)](../../CVPR2026/3d_vision/index.md) · [🧪 ICML2026 (24)](../../ICML2026/3d_vision/index.md) · [🔬 ICLR2026 (62)](../../ICLR2026/3d_vision/index.md) · [🤖 AAAI2026 (79)](../../AAAI2026/3d_vision/index.md) · [🧠 NeurIPS2025 (116)](../../NeurIPS2025/3d_vision/index.md) · [📹 ICCV2025 (267)](../../ICCV2025/3d_vision/index.md)
 
 **[CodeBind: Decoupled Representation Learning for Multimodal Alignment with Unified Compositional Codebook](codebind_decoupled_representation_learning_for_multimodal_alignment_with_unified.md)**
 
-:   CodeBind enhances ImageBind/ViT-Lens style multimodal alignment using shared-specific representation decoupling and a unified compositional VQ codebook. It simultaneously improves cross-modal classification/retrieval across nine modalities while preserving stronger modality-specific fine-grained information.
+:   CodeBind transforms ImageBind/ViT-Lens style multimodal alignment using shared-specific representation decoupling and a compositional VQ codebook, simultaneously enhancing cross-modal classification and retrieval across nine modalities while preserving stronger mode-specific fine-grained information.

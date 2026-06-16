@@ -2,80 +2,94 @@
 title: >-
   [Paper Note] TEMA: Anchor the Image, Follow the Text for Multi-Modification Composed Image Retrieval
 description: >-
-  [ACL 2026][Multimodal VLM][Composed Image Retrieval] This paper proposes TEMA (Text-oriented Entity Mapping Architecture), the first CIR framework oriented towards multi-modification text. It enhances modified entity cov…
+  [ACL 2026][Multimodal VLM][Paper Note] This paper proposes TEMA (Text-oriented Entity Mapping Architecture), the first Composed Image Retrieval (CIR) framework designed specifically for Multi-Modification Text (MMT). It enhances entity coverage through an MMT Parsing Assistant (PA), resolves clause-entity alignment issues via an Entity Mapping (EM) module,
 tags:
-  - "ACL 2026"
-  - "Multimodal VLM"
-  - "Composed Image Retrieval"
-  - "Multi-modification Text"
-  - "Entity Mapping"
-  - "Fine-grained Retrieval"
-  - "Vision-Language Pre-training"
+  - ACL 2026
+  - Multimodal VLM
 date: 2026-05-08
-content_hash: 210ac21870a45fc8
+content_hash: 883803936ffb8682
 ---
-
 # TEMA: Anchor the Image, Follow the Text for Multi-Modification Composed Image Retrieval
 
 **Conference**: ACL 2026  
 **arXiv**: [2604.21806](https://arxiv.org/abs/2604.21806)  
 **Code**: [https://github.com/lee-zixu/ACL26-TEMA/](https://github.com/lee-zixu/ACL26-TEMA/)  
 **Area**: Image Retrieval / Multi-modal  
-**Keywords**: Composed Image Retrieval, Multi-modification Text, Entity Mapping, Fine-grained Retrieval, Vision-Language Pre-training
+**Keywords**: Composed Image Retrieval (CIR), Multi-Modification Text (MMT), Entity Mapping, Fine-grained Retrieval, Vision-Language Pre-training
 
 ## TL;DR
 
-This paper proposes TEMA (Text-oriented Entity Mapping Architecture), the first CIR framework oriented towards multi-modification text. It enhances modified entity coverage via an MMT Parsing Assistant (PA), resolves clause-entity alignment issues through an Entity Mapping (EM) module, and establishes two multi-modification benchmark datasets, M-FashionIQ and M-CIRR, achieving state-of-the-art performance in both original and multi-modification scenarios.
+This paper proposes TEMA (Text-oriented Entity Mapping Architecture), the first Composed Image Retrieval (CIR) framework designed specifically for Multi-Modification Text (MMT). It enhances entity coverage through an MMT Parsing Assistant (PA), resolves clause-entity alignment issues via an Entity Mapping (EM) module, and introduces two new multi-modification benchmarks, M-FashionIQ and M-CIRR, achieving state-of-the-art performance in both original and multi-modification scenarios.
 
 ## Background & Motivation
 
-**Background**: Composed Image Retrieval (CIR) uses a "reference image + modification text" multi-modal query to retrieve target images. Existing methods have made significant progress in settings involving short modification text covering only a few salient changes.
+**Background**: Composed Image Retrieval (CIR) uses a multi-modal query consisting of a "reference image + modification text" to retrieve a target image. Existing methods have made significant progress under the setting of short modification texts covering only a few salient changes.
 
-**Limitations of Prior Work**: Existing CIR settings have two limitations highly relevant to real-world applications: (1) Insufficient entity coverage—when multiple entities require modification, training signals concentrate on salient regions, missing some entities (the proportion of explicit entity references in modification text is small); (2) Clause-entity misalignment—in practice, multiple modification clauses may constrain the same entity (e.g., modifying the hem, shoulder decoration, and belt of a dress simultaneously), or a single clause may constrain multiple entities of the same type (e.g., changing three Golden Retrievers to Huskies).
+**Limitations of Prior Work**: Existing CIR settings have two limitations highly relevant to practical applications: (1) Insufficient entity coverage—when multiple entities require modification, training signals concentrate on salient regions, missing certain entities (the proportion of explicit references to target entities in modification text is small); (2) Clause-entity misalignment—in practice, multiple modification clauses may constrain the same entity (e.g., modifying the hem, shoulder decoration, and belt of a dress simultaneously), or a single clause may constrain multiple similar entities.
 
-**Key Challenge**: Existing CIR models experience a sharp performance drop (a clear performance "cliff" in experiments) when facing multi-modification requirements. The root cause is the lack of multi-modification annotations during training, preventing the model from establishing "one-to-many" clause-entity correspondences.
+**Key Challenge**: Existing CIR models show a sharp performance drop in multi-modification scenarios (a "performance cliff"). The root cause is the lack of multi-modification annotations during training, preventing models from establishing "one-to-many" clause-entity correspondences.
 
-**Goal**: (1) Construct multi-modification CIR benchmark datasets closer to real-world scenarios; (2) Design the first CIR framework adaptable to both simple and multi-modification scenarios.
+**Goal**: (1) Construct multi-modification CIR benchmarks closer to real-world scenarios; (2) Design the first CIR framework adaptable to both simple and multi-modification scenarios.
 
-**Key Insight**: Address the problem at both data and model levels—generate Multi-Modification Text (MMT) using MLLMs with human verification to build datasets, and design specialized modules to handle multi-entity coverage and clause aggregation.
+**Key Insight**: Address the problem at both data and modeling levels—use MLLMs to generate Multi-Modification Text (MMT) with human verification for dataset construction, and design specialized modules to handle multi-entity coverage and clause aggregation.
 
-**Core Idea**: Extract lists of entities to be modified via LLM-generated summaries, aggregate multiple modification clauses for the same entity into a unified representation using learnable queries, and align them with corresponding entities on the visual side.
+**Core Idea**: Extract a list of entities to be modified via LLM-generated summaries, aggregate multiple modification clauses for the same entity into unified representations using learnable queries, and align them with corresponding entities on the visual side.
 
 ## Method
 
 ### Overall Architecture
 
-TEMA consists of two core components: (1) An MMT Parsing Assistant (PA), including an LLM text summarizer and a consistency detector, used during training to extract target entities and perform coverage checks (disabled during inference); (2) An MMT-oriented Entity Mapping (EM) module, which aggregates multiple MMT clauses for the same entity under summary guidance through text and visual entity mapping. BLIP serves as the underlying feature extraction backbone.
+TEMA consists of two core components: (1) An MMT Parsing Assistant (PA), including an LLM text summarizer and a consistency detector, used during training to extract target entities and perform coverage checks (disabled during inference); (2) An MMT-oriented Entity Mapping (EM) module that aggregates multiple MMT clauses for the same entity under summary guidance via textual and visual entity mapping. BLIP is utilized as the feature extraction backbone.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["Reference Image + Multi-Modification Text (MMT)"]
+    subgraph PA["MMT Parsing Assistant (PA) · Training Only"]
+        direction TB
+        S1["LLM Text Summarizer<br/>Generates summary t_s covering all entities"] --> S2["Consistency Detector<br/>Checks coverage, iterative correction"]
+    end
+    IN --> PA
+    PA --> ENC["Frozen BLIP Encoder<br/>Summary features E_s · MMT local features E_m"]
+    subgraph EM["Entity Mapping Module (EM)"]
+        direction TB
+        T1["Text-side: Learnable query aggregation<br/>Multi-clause per entity → Text entity channels"]
+        V1["Vision-side: Learnable query aggregation<br/>Ref image entities → Vision entity channels"]
+    end
+    ENC --> EM
+    EM --> REG["Summary-guided Distillation + Orthogonal Regularization<br/>Maintains entity info · Prevents channel collapse"]
+    REG --> OUT["Text/Vision entity channel alignment → Target image retrieval"]
+```
 
 ### Key Designs
 
-1.  **MMT Parsing Assistant (PA)**:
+**1. MMT Parsing Assistant (PA): Explicitly listing entities to be modified**
 
-    - **Function**: Enhance exposure and coverage of target entities during training.
-    - **Mechanism**: Utilize an LLM (gpt-3.5-turbo) to generate a summary $t_s$ for each MMT, requiring the summary to include all target entities. A consistency detector (also an LLM) then verifies if the summary covers all target entities in the MMT without redundant ones, iterating if necessary. Summary features $\mathbf{E}_s = \Phi_\mathbb{T}(t_s)$ are extracted via a frozen BLIP text encoder.
-    - **Design Motivation**: Entity information in MMT is sparse and scattered, making it easy for models to ignore. Explicitly extracting entity lists via summaries provides clear guidance for subsequent entity mapping. Disabling PA during inference avoids extra dependencies and latency.
+Entities to be modified in multi-modification text are often scattered across long sentences. Models tend to focus on salient regions and miss others, leading to "insufficient entity coverage." The PA uses an LLM (gpt-3.5-turbo) to generate a summary $t_s$ for each MMT, strictly requiring it to cover all target entities. The summary feature $\mathbf{E}_s = \Phi_\mathbb{T}(t_s)$ is extracted by a frozen BLIP text encoder to serve as a clear guidance signal for downstream entity mapping.
 
-2.  **MMT-oriented Entity Mapping (EM)**:
+To prevent LLM hallucinations, the PA includes a Consistency Detector to verify that the summary exactly covers all entities in the MMT without adding extras, performing iterative corrections if necessary. PA is only used during training, avoiding LLM dependency during inference.
 
-    - **Function**: Aggregate multiple modification clauses for the same entity to resolve one-to-many clause-entity relationships.
-    - **Mechanism**: Introduce learnable queries $\mathbf{a}_q = \{a_1, ..., a_k\}$, which are input into a Transformer along with summary features $\mathbf{E}_s$ and MMT local features $\mathbf{E}_m^l$. Since the summary contains all target entities with minimal detail, learnable queries aggregate corresponding MMT clauses for the same entity under summary guidance: $\hat{\mathbf{a}}_q = \text{Transformer}([\mathbf{E}_s, \mathbf{E}_m^l, \mathbf{a}_q])$. Visual entity features $\hat{\mathbf{b}}_q$ in the reference image are aggregated similarly.
-    - **Design Motivation**: Global features cannot distinguish modification requirements for different entities. Through the attention mechanism of learnable queries and Transformers, the model can adaptively aggregate "change shoulder decoration to lace" and "change hem to irregular" into the same entity channel.
+**2. MMT-oriented Entity Mapping (EM): Aggregating "one-to-many" clauses into entity channels**
 
-3.  **Summary-guided Distillation + Orthogonal Regularization**:
+In reality, multiple clauses often constrain one entity (e.g., changing the hem, shoulder, and belt of a dress), making global features insufficient. EM introduces learnable queries $\mathbf{a}_q = \{a_1, ..., a_k\}$ processed with $\mathbf{E}_s$ and MMT local features $\mathbf{E}_m^l$ via a Transformer:
 
-    - **Function**: Ensure text tokens generated by EM retain complete entity information while maintaining differences between different entity channels.
-    - **Mechanism**: The summary-guided distillation strategy aligns EM-generated text tokens closely with the target entities parsed by PA. Orthogonal regularization ensures different learnable query channels focus on different entities to avoid redundancy.
-    - **Design Motivation**: Without distillation constraints, EM might lose entity information; without orthogonal constraints, multiple channels might collapse onto the same entity.
+$$\hat{\mathbf{a}}_q = \text{Transformer}([\mathbf{E}_s, \mathbf{E}_m^l, \mathbf{a}_q])$$
+
+Since the summary includes all entities concisely, learnable queries can adaptively aggregate scattered clauses (e.g., "change shoulder to lace") into specific entity channels via attention. The visual side similarly aggregates reference image features $\hat{\mathbf{b}}_q$, aligning text and vision entities at the channel level.
+
+**3. Summary-guided Distillation + Orthogonal Regularization: Preserving entity information and preventing collapse**
+
+EM faces two risks: losing entity information in generated tokens or multiple queries collapsing onto the same entity. Summary-guided distillation aligns EM output tokens with the PA-extracted entity list to ensure completeness. Orthogonal regularization constrains different query channels to be orthogonal, ensuring they focus on distinct entities and reducing redundancy.
 
 ### Loss & Training
 
-BLIP is used as the backbone with a frozen image encoder. AdamW optimizer (LR 2e-5), batch size 64, feature dimension 256, and $N=3$ learnable query channels. The loss function includes three parts: batch-based classification loss (contrastive learning), summary-guided distillation loss, and orthogonal regularization loss. The PA module is used only during training. All experiments were conducted on a single NVIDIA A40 48GB GPU.
+BLIP is used as the backbone with a frozen image encoder. Optimization uses AdamW (LR 2e-5, batch size 64, dimension 256, $N=3$ query channels). The loss function includes batch-based classification loss (contrastive learning), summary-guided distillation loss, and orthogonal regularization loss. PA is training-only. Experiments were conducted on a single NVIDIA A40 48GB GPU.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**Performance on M-FashionIQ and M-CIRR Datasets (R@K %)**
+**Performance on M-FashionIQ and M-CIRR datasets (R@K %)**
 
 | Method | M-FashionIQ Avg R@10 | M-FashionIQ Avg R@50 | M-CIRR Avg |
 |------|---------------------|---------------------|------------|
@@ -87,50 +101,50 @@ BLIP is used as the backbone with a frozen image encoder. AdamW optimizer (LR 2e
 
 ### Ablation Study
 
-| Config | M-FashionIQ R@10 | Δ | M-CIRR Avg | Δ |
+| Configuration | M-FashionIQ R@10 | Δ | M-CIRR Avg | Δ |
 |------|-----------------|---|------------|---|
 | Full TEMA | 50.59 | - | 75.76 | - |
 | w/o PA | 47.80 | -2.79 | 71.59 | -4.17 |
-| w/o CD (Consistency Detection) | 49.14 | -1.45 | 73.87 | -1.89 |
+| w/o CD (Consistency Detector) | 49.14 | -1.45 | 73.87 | -1.89 |
 | w/o EM | 45.41 | -5.18 | 70.99 | -4.77 |
 | w/o EM_txt | 46.11 | -4.48 | 71.20 | -4.56 |
 | w/o EM_img | 46.17 | -4.42 | 71.64 | -4.12 |
 | w/o Summ (Distillation) | 49.40 | -1.19 | 74.16 | -1.60 |
-| w/o Ortho (Orthogonal) | 49.38 | -1.21 | 75.02 | -0.74 |
+| w/o Ortho (Regularization) | 49.38 | -1.21 | 75.02 | -0.74 |
 
 ### Key Findings
 
-- The EM module contributes the most: dropping R@10 by 5.18 when removed, indicating that clause-entity alignment is the core bottleneck of multi-modification CIR.
-- Entity mapping on both text and visual sides is equally important, with removal of either leading to a drop of approximately 4.5.
-- The consistency detector in PA contributes significantly (1.45 drop when removed), showing that LLM summary hallucinations impact downstream performance.
-- VLP methods with BLIP backbones significantly outperform traditional ResNet+LSTM architectures, highlighting the importance of pre-trained language understanding in multi-modification scenarios.
-- TEMA also achieves optimal performance on original CIR datasets (FashionIQ, CIRR) without sacrificing performance in simple scenarios.
+- The EM module provides the largest contribution: removing it drops R@10 by 5.18, identifying clause-entity alignment as the primary bottleneck in multi-modification CIR.
+- Textual and visual entity mappings are equally important; removing either leads to a drop of approximately 4.5.
+- The PA Consistency Detector contributes significantly (1.45 drop if removed), indicating that LLM summary hallucinations affect downstream performance.
+- VLP methods with BLIP backbones significantly outperform traditional ResNet+LSTM architectures, highlighting the importance of pre-trained language understanding in complex scenarios.
+- TEMA achieves state-of-the-art performance on original CIR datasets (FashionIQ, CIRR) without sacrificing simple-scene performance for multi-modification designs.
 
 ## Highlights & Insights
 
-- Precise problem definition—formalizing two core challenges of multi-modification CIR (insufficient entity coverage and clause-entity misalignment) for the first time while providing data and model solutions.
-- Practical design—using PA enhancement during training but disabling it during inference avoids LLM dependency during inference and maintains efficiency.
-- Learnable queries as "entity proxies"—this design can be transferred to other multi-modal tasks requiring multi-entity aggregation.
+- Precise problem definition—First to formalize two core challenges (insufficient entity coverage and clause-entity misalignment) for multi-modification CIR, providing both data and modeling solutions.
+- Practical "Train-with-PA, Infer-without-PA" design—Avoids inference-time LLM dependency while maintaining efficiency.
+- Use of learnable queries as "entity proxies"—A design transferable to other multi-modal tasks requiring multi-entity aggregation.
 
 ## Limitations & Future Work
 
-- Limited by the token length of the BLIP text encoder, CLIP backbones cannot be used, hindering fair comparison with more methods.
-- Fixed number of learnable query channels $N=3$ might be inflexible for scenarios with varying entity counts.
-- Dataset construction relies on MLLM generation, which may introduce systemic bias.
+- Restricted by BLIP text encoder token length, preventing the use of CLIP backbones for broader comparisons.
+- The number of learnable query channels $N$ is fixed at 3, which may lack flexibility for scenes with varying entity counts.
+- Dataset construction relies on MLLM generation, which may introduce systematic biases.
 - Future work could explore dynamic channel allocation and end-to-end entity discovery mechanisms.
 
 ## Related Work & Insights
 
-- **vs BLIP4CIR**: BLIP4CIR uses global feature combinations and cannot handle multi-entity scenarios; TEMA achieves fine-grained entity-level alignment through the EM module.
-- **vs FineCIR**: FineCIR parses modification semantics but does not guarantee coverage of all target entities; TEMA explicitly ensures coverage via PA's consistency detection.
-- **vs Cola/MagicLens**: These works focus on multi-object interference but do not resolve the aggregation of multi-modification clauses.
+- **vs BLIP4CIR**: BLIP4CIR uses global feature composition and cannot handle multi-entity scenarios; TEMA achieves fine-grained entity-level alignment through the EM module.
+- **vs FineCIR**: FineCIR parses modification semantics but doesn't guarantee full entity coverage; TEMA ensures coverage via PA consistency checks.
+- **vs Cola/MagicLens**: These works focus on multi-object interference but do not address the aggregation of multiple modification clauses.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ First to propose the multi-modification CIR problem with a complete data+model solution.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive evaluation across four datasets, detailed ablation, and comparison with multiple baselines.
-- Writing Quality: ⭐⭐⭐⭐ Clear problem definition and intuitive architecture diagrams.
-- Value: ⭐⭐⭐⭐ Fills the gap in multi-modification CIR; both datasets and methods have significant practical value.
+- Novelty: ⭐⭐⭐⭐ First to propose multi-modification CIR with complete data + model solutions.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Four datasets, detailed ablations, and extensive baseline comparisons.
+- Writing Quality: ⭐⭐⭐⭐ Clear problem definition and intuitive methodology diagrams.
+- Value: ⭐⭐⭐⭐ Fills the gap in multi-modification CIR; both datasets and methods have high practical utility.
 
 <!-- RELATED:START -->
 
@@ -139,10 +153,10 @@ BLIP is used as the backbone with a frozen image encoder. AdamW optimizer (LR 2e
 ## Related Papers
 
 - [\[CVPR 2026\] ReCALL: Recalibrating Capability Degradation for MLLM-based Composed Image Retrieval](../../CVPR2026/multimodal_vlm/recall_recalibrating_capability_degradation_for_mllm-based_composed_image_retrie.md)
-- [\[AAAI 2026\] Heterogeneous Uncertainty-Guided Composed Image Retrieval with Fine-Grained Probabilistic Learning](../../AAAI2026/multimodal_vlm/heterogeneous_uncertainty-guided_composed_image_retrieval_with_fine-grained_prob.md)
-- [\[CVPR 2026\] G-MIXER: Geodesic Mixup-based Implicit Semantic Expansion and Explicit Semantic Re-ranking for Zero-Shot Composed Image Retrieval](../../CVPR2026/multimodal_vlm/g_mixer_geodesic_mixup_based_implicit_semantic_expansion_for_zero_shot_cir.md)
-- [\[CVPR 2026\] Text-Only Training for Image Captioning with Retrieval Augmentation and Modality Gap Correction](../../CVPR2026/multimodal_vlm/text-only_training_for_image_captioning_with_retrieval_augmentation_and_modality.md)
-- [\[ACL 2026\] LaMI: Augmenting Large Language Models via Late Multi-Image Fusion](lami_augmenting_large_language_models_via_late_multi-image_fusion.md)
+- [\[CVPR 2026\] Self-guided Semantic Inspection for Zero-Shot Composed Image Retrieval](../../CVPR2026/multimodal_vlm/self-guided_semantic_inspection_for_zero-shot_composed_image_retrieval.md)
+- [\[CVPR 2026\] ConeSep: Cone-based Robust Noise-Unlearning Compositional Network for Composed Image Retrieval](../../CVPR2026/multimodal_vlm/conesep_cone-based_robust_noise-unlearning_compositional_network_for_composed_im.md)
+- [\[CVPR 2025\] CoLLM: A Large Language Model for Composed Image Retrieval](../../CVPR2025/multimodal_vlm/collm_a_large_language_model_for_composed_image_retrieval.md)
+- [\[CVPR 2026\] STiTch: Semantic Transition and Transportation in Collaboration for Training-Free Zero-Shot Composed Image Retrieval](../../CVPR2026/multimodal_vlm/stitch_semantic_transition_and_transportation_in_collaboration_for_training-free.md)
 
 </div>
 

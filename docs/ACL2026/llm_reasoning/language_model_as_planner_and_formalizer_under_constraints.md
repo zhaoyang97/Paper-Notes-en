@@ -2,118 +2,112 @@
 title: >-
   [Paper Note] Language Model as Planner and Formalizer under Constraints
 description: >-
-  [ACL 2026][LLM Reasoning][Constrained Planning] This paper proposes the CoPE benchmark, which injects formally categorized natural language constraints into classic planning environments. It reveals that a single sentenc…
+  [ACL 2026][LLM Reasoning][LLM-as-Planner] This paper proposes the CoPE benchmark, which injects formally classified natural language constraints into classic planning environments. It reveals that a single constraint sentence can halve the planning performance of even the strongest LLMs, exposing a severe lack of robustness in LLM planning.
 tags:
-  - "ACL 2026"
-  - "LLM Reasoning"
-  - "Constrained Planning"
-  - "LLM-as-Planner"
-  - "LLM-as-Formalizer"
-  - "Benchmark"
-  - "PDDL"
+  - ACL 2026
+  - LLM Reasoning
+  - LLM-as-Planner
+  - LLM-as-Formalizer
+  - PDDL
 date: 2026-05-08
-content_hash: a9bfba3c29545926
+content_hash: d528500ad0d594b9
 ---
-
 # Language Model as Planner and Formalizer under Constraints
 
 **Conference**: ACL 2026  
 **arXiv**: [2510.05486](https://arxiv.org/abs/2510.05486)  
 **Code**: [GitHub](https://github.com/CassieHuang22/LLM-as-Formalizer-constraints)  
 **Area**: LLM Evaluation  
-**Keywords**: Constrained Planning, LLM-as-Planner, LLM-as-Formalizer, Benchmark, PDDL
+**Keywords**: Constrained Planning, LLM-as-Planner, LLM-as-Formalizer, Benchmarking, PDDL
 
 ## TL;DR
 
-This paper proposes the CoPE benchmark, which injects formally categorized natural language constraints into classic planning environments. It reveals that a single sentence of constraint can halve the planning performance of the strongest current LLMs, exposing a severe lack of robustness in LLM planning.
+This paper proposes the CoPE benchmark, which injects formally classified natural language constraints into classic planning environments. It reveals that a single constraint sentence can halve the planning performance of even the strongest LLMs, exposing a severe lack of robustness in LLM planning.
 
 ## Background & Motivation
 
-**Background**: There are two mainstream paradigms for LLMs in the planning field: LLM-as-Planner, which generates action sequences directly end-to-end, and LLM-as-Formalizer, which converts natural language descriptions into formal languages like PDDL before using a solver to derive solutions. Both methods have shown impressive capabilities on standard planning benchmarks.
+**Background**: There are two mainstream paradigms for LLMs in planning: LLM-as-Planner, which generates action sequences end-to-end, and LLM-as-Formalizer, which translates natural language descriptions into formal languages like PDDL for solver-based derivation. Both have shown respectable capabilities on standard planning benchmarks.
 
-**Limitations of Prior Work**: However, existing benchmarks (such as BlocksWorld, Gripper, etc.) have mostly existed for decades, featuring simple and homogeneous environment descriptions that are highly likely to be covered by LLM training data. This simplicity may lead to a significant **overestimation** of LLM planning capabilities, posing risks in downstream safety-sensitive scenarios.
+**Limitations of Prior Work**: However, existing benchmarks (e.g., BlocksWorld, Gripper) are decades old, feature simple and homogeneous environment descriptions, and are highly likely to be covered by LLM training data. This simplicity leads to a potential **overestimation** of LLM planning capabilities, posing risks in downstream safety-sensitive scenarios.
 
-**Key Challenge**: Real-world planning instructions typically include **personalized requirements and constraints** imposed by users or resources, whereas standard benchmarks completely lack these elements. Existing enhancement methods only add noise or lexical perturbations without changing the semantics itself.
+**Key Challenge**: Real-world planning instructions typically include **personalized requirements and constraints** imposed by users or resources, which are entirely absent from standard benchmarks. Existing enhancement methods only add noise or lexical perturbations without altering the underlying semantics.
 
-**Goal**: To build a constrained planning benchmark enhanced at the semantic level to systematically evaluate the planning and formalization capabilities of LLMs under constraints. **Key Insight**: Formalize constraints into four categories (Initial, Goal, Action, State) using linguistic and pragmatic approaches to ensure completeness. **Core Idea**: A simple one-sentence constraint can significantly degrade LLM performance, and this degradation is further exacerbated as problem complexity increases and vocabulary becomes confused.
+**Goal**: Construct a semantically enhanced constrained planning benchmark to systematically evaluate the planning and formalization capabilities of LLMs under constraints. **Key Insight**: Formalize constraints into four categories (Initial, Goal, Action, State) using linguistic and pragmatic methods to ensure exhaustive classification. **Core Idea**: Simple one-sentence constraints significantly degrade LLM performance, and this degradation is further exacerbated by increased problem complexity and lexical confusion.
 
 ## Method
 
 ### Overall Architecture
 
-CoPE (Constrained Planning Environments) manually labels natural language constraints and their ground-truth encodings in four formal languages for each problem in the BlocksWorld and CoinCollector domains. Evaluation process: Given a domain description $D_d$, problem description $D_p$, PDDL header $\mathcal{DF}'$, and constraint $\mathcal{C}$, the LLM generates a plan (Planner) or formal code (Formalizer). Finally, the VAL validator is used to verify the correctness of the plan.
+CoPE (Constrained Planning Environments) provides manually annotated natural language constraints and their ground-truth encodings in four formal languages for each problem across the BlocksWorld and CoinCollector domains. Evaluation process: Given a domain description $D_d$, problem description $D_p$, PDDL header $\mathcal{DF}'$, and constraints $\mathcal{C}$, the LLM generates a plan (Planner) or formal code (Formalizer), which is finally verified for correctness using the VAL validator.
 
 ### Key Designs
 
-1.  **Formal Definition of Four Constraint Categories**:
-    - Function: Strictly classifies natural language constraints into Initial (modifying the initial state), Goal (modifying the goal state), Action (restricting legal action sequences), and State (restricting legal state trajectories).
-    - Mechanism: Defined based on the set relationship between the original action/state space (primitive) and the modified space (modified). It is proven that the State constraint subclass covers all possible constraints, ensuring **completeness**.
-    - Design Motivation: Different formal languages (PDDL, PDDL3, LTL, SMT) have varying expressive power for different constraint categories. Formal classification supports systematic analysis.
+**1. Formal Definition of Four Constraint Categories: Establishing a complete classification first**
 
-2.  **Comparative Evaluation of Multiple Formal Languages**:
-    - Function: Encodes constraints into PDDL 1.2, PDDL3, LTL, and SMT (Z3) to evaluate the expressive and solving capabilities of each formal language.
-    - Mechanism: Employs three technical routes: Generation (direct generation), Editing (generating unconstrained code first then editing), and Revision (up to 3 iterations of syntax error correction).
-    - Design Motivation: Different constraint types are naturally suited to different formal languages; for example, PDDL3 excels in state constraint syntax, while SMT is proficient in modeling state predicates. Systematic comparison provides guidance for future toolchain selection.
+To systematically evaluate LLM performance under constraints, the constraints themselves must follow a mutually exclusive and collectively exhaustive (MECE) classification. CoPE strictly categorizes natural language constraints into four types based on the component of the planning problem they affect: Initial (modifies initial state), Goal (modifies goal state), Action (restricts valid action sequences), and State (restricts valid state trajectories). This classification is defined based on set relations between the primitive action/state space and the modified space, proving that the State sub-class formally covers all possible constraints. This rigorous coordinate system allows for clean analysis of which constraints are most difficult or which formal language is best suited for specific types.
 
-3.  **Robustness Extension Experiments**:
-    - Function: Evaluates complexity scaling and data contamination via BlocksWorld-XL (50 blocks) and MysteryBlocksWorld (lexical confusion).
-    - Mechanism: The XL version tests performance after increasing the entity space, while the Mystery version replaces all types, predicates, and action names with meaningless placeholders.
-    - Design Motivation: To verify whether constraints amplify the existing vulnerabilities of LLMs under complex problems and lexical perturbations.
+**2. Multi-Formal Language Comparative Evaluation: Comparing four formal languages on the same set of constraints**
+
+The success of the Formalizer approach depends heavily on the choice of formal language for encoding constraints. CoPE encodes each constraint into ground-truth versions for PDDL 1.2, PDDL3, LTL, and SMT (Z3). Three technical routes are used to observe LLM generation behavior: Generation (direct one-shot generation of constrained code), Editing (generating an unconstrained version first, then adding constraints), and Revision (iterative correction up to 3 times based on solver errors). Since different constraints naturally favor different languages—e.g., PDDL3 is designed for state constraints, while SMT excels at modeling state predicates as satisfiability problems—this horizontal comparison identifies optimal toolchains for specific constraint types.
+
+**3. Robustness Extension Experiments: Superimposing constraints with "Complexity / Lexical Pollution"**
+
+Testing constraints on small-scale problems is insufficient; the real danger lies in whether constraints amplify existing LLM vulnerabilities. CoPE designs two stress-test versions: BlocksWorld-XL expands the block count to 50 to see if constraints become more lethal as the entity space grows; MysteryBlocksWorld replaces all types, predicates, and action names with meaningless placeholders to eliminate reliance on familiar vocabulary from training data. These experiments transform the "constraint effect" from a single difficulty slice into a pressure curve, revealing that the inherent complexity and lexical robustness of the Formalizer approach almost entirely vanish under constraints.
 
 ### Loss & Training
 
-This work is an evaluation study and does not involve model training. The core evaluation metric is **plan correctness**—whether the predicted plan can successfully transition from the initial state to the goal state within the ground-truth PDDL environment.
+As an evaluation-centric work, no model training is involved. The core evaluation metric is **plan correctness**, which measures whether the predicted plan can successfully transition from the initial state to the goal state in the ground-truth PDDL environment.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Dataset | Method | Unconstrained | Constrained | Drop |
-|--------|------|--------|--------|----------|
-| BlocksWorld | LLM-as-Planner (Gemini-3-Flash) | ~85% | ~55% | ~30% |
-| BlocksWorld | LLM-as-PDDL-Formalizer (Gemini) | ~70% | ~40% | ~30% |
-| CoinCollector | LLM-as-Planner (Gemini) | ~90% | ~60% | ~30% |
-| BlocksWorld | PDDL3 Formalizer | Lower than PDDL | Even lower | High syntax/compile errors |
+| Dataset | Method | Unconstrained | Constrained | Gain (Decrease) |
+|---------|--------|---------------|-------------|-----------------|
+| BlocksWorld | LLM-as-Planner (Gemini-3-Flash) | ~85% | ~55% | -30% |
+| BlocksWorld | LLM-as-PDDL-Formalizer (Gemini) | ~70% | ~40% | -30% |
+| CoinCollector | LLM-as-Planner (Gemini) | ~90% | ~60% | -30% |
+| BlocksWorld | PDDL3 Formalizer | Lower than PDDL | Even lower | High syntax errors |
 
 ### Ablation Study
 
 | Configuration | Key Metric | Description |
-|------|---------|------|
-| Generation | Baseline | Direct generation of constraint code |
-| Editing | Partial Improvement | Generating unconstrained version first before editing |
-| Revision | Further Improvement | Iterative correction based on solver errors |
-| BlocksWorld-XL (50 blocks) | Performance Plunge | Constraint impact becomes more severe as complexity scales |
-| MysteryBlocksWorld | Formalizer Robustness Disappears | Double blow from constraints and lexical confusion |
+|---------------|------------|-------------|
+| Generation | Baseline | Direct generation of constrained code |
+| Editing | Marginal Gain | Edit after unconstrained generation |
+| Revision | Further Gain | Iterative correction based on solver errors |
+| BlocksWorld-XL (50 blocks) | Performance Plunge | Constraint impact worsens with complexity |
+| MysteryBlocksWorld | Robustness Vanishes | Double blow: constraints + lexical confusion |
 
 ### Key Findings
-- A single sentence of constraint consistently halves performance; all LLM, method, and language combinations are affected.
+- One-sentence constraints consistently halve performance across all LLMs, methods, and language combinations.
 - LLM-as-Planner generally outperforms Formalizer when unconstrained, but Formalizer is more robust to problem complexity.
-- Although PDDL3 has syntax support for constraints, it performs worse than standard PDDL due to scarce training data.
-- Once constraints are introduced, the original robustness of the Formalizer against complexity and lexical perturbation **completely disappears**.
+- Despite having native syntax for constraints, PDDL3 performs worse than standard PDDL due to scarce training data.
+- The inherent complexity and lexical robustness of Formalizers **vanish completely** once constraints are introduced.
 
 ## Highlights & Insights
-- The formal definition of constraint classification is very rigorous and includes a proof of completeness, serving as a theoretical foundation for subsequent work.
-- Experimental design covers 4 LLMs × 4 formal languages × 3 techniques × 4 constraint types × 4 datasets, providing rich dimensions of analysis.
-- It reveals an important conclusion: **Simple semantic modifications challenge LLMs more effectively than lexical noise**, offering new ideas for benchmark design.
-- CoPE's design philosophy—fighting data contamination through semantic enhancement rather than data perturbation—is worth adopting in other NLP evaluation tasks.
+- The formal definition of constraint types is rigorous and proven exhaustive, providing a theoretical foundation for future work.
+- The experimental design is exceptionally thorough, covering 4 LLMs × 4 Formal Languages × 3 Techniques × 4 Constraint Types × 4 Datasets.
+- It reveals an important conclusion: **Simple semantic modifications challenge LLMs more effectively than lexical noise**, offering new directions for benchmark design.
+- The philosophy of CoPE—combating data contamination through semantic enhancement rather than data perturbation—is a valuable lesson for other NLP evaluation tasks.
 
 ## Limitations & Future Work
-- Constraint types only consider single constraints, without discussing conjunctions, negations, or ambiguities of constraints; real-world constraints are more diverse.
-- BlocksWorld and CoinCollector domains are still relatively simple, with a large gap from real-world planning scenarios (e.g., robotic manipulation, resource scheduling).
-- The evaluation metric (plan correctness) may have false positives—plans being coincidentally correct without the code truly encoding the constraint—though verification shows this proportion is negligible.
-- Future directions: Supporting more complex combinations of constraints, expanding to more domains, and developing constraint-aware planning toolchains.
-- The safety risks of autonomous agents in downstream tasks deserve attention; formal representations provide transparency for human auditing and formal verification.
+- Only single constraints are considered; conjunctions, negations, and ambiguities of constraints are not discussed.
+- The BlocksWorld and CoinCollector domains are still relatively simple compared to real-world planning (e.g., robotics, resource scheduling).
+- There is a possibility of false positives in plan correctness (plan is correct by chance but code is wrong), though verification suggests this is negligible.
+- Future directions: Supporting complex constraint combinations, expanding to more domains, and developing constraint-aware planning toolchains.
+- The safety risks of autonomous agents in downstream tasks warrant attention; formal representations could provide transparency for human auditing and formal verification.
 
 ## Related Work & Insights
-- **vs. Standard IPC Benchmarks**: CoPE challenges LLMs through semantic modification rather than just adding noise, exposing true capabilities more effectively.
-- **vs. LLM+P (Liu et al., 2023)**: Both follow the Formalizer route, but LLM+P does not consider constraints; CoPE reveals its limitations.
-- **vs. Mystery BlocksWorld**: CoPE demonstrates that constraints weaken the robustness of Formalizers more than lexical confusion.
+- **vs. Standard IPC Benchmarks**: CoPE challenges LLMs through semantic modification rather than noise, better exposing true capabilities.
+- **vs. LLM+P (Liu et al., 2023)**: Both follow the Formalizer route, but CoPE reveals limitations by incorporating constraints.
+- **vs. Mystery BlocksWorld**: CoPE demonstrates that constraints are more effective than lexical confusion at undermining Formalizer robustness.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The first systematic evaluation benchmark for constrained planning in LLMs, with rigorous formal classification.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Extremely detailed analysis covering multiple models, languages, techniques, and domains.
+- Novelty: ⭐⭐⭐⭐ First systematic LLM evaluation benchmark for constrained planning with rigorous formalization.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Extremely detailed analysis across multiple models, languages, techniques, and domains.
 - Writing Quality: ⭐⭐⭐⭐ Clear formal definitions, logical structure, and rich visualization.
-- Value: ⭐⭐⭐⭐ Sounds an alarm for LLM planning research and points out the important research direction from simple benchmarks to realistic constraints.
+- Value: ⭐⭐⭐⭐ Serves as a wake-up call for LLM planning research, highlighting the shift from simple benchmarks to realistic constraints.
 
 <!-- RELATED:START -->
 

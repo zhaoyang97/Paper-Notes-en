@@ -2,76 +2,92 @@
 title: >-
   [Paper Note] Alterbute: Editing Intrinsic Attributes of Objects in Images
 description: >-
-  [ICML 2026][Multimodal VLM][Image Editing] Alterbute uses VLMs to automatically mine Visual Named Entity (VNE) identity clusters and jointly conditions identity references, attribute text, backgrounds…
+  [ICML 2026][Multimodal VLM][Image Editing] Alterbute uses VLMs to automatically mine Visual Named Entity (VNE) identity clusters and jointly conditions on identity references, attribute text, background, and masks within a diffusion model. This unifies the editing of object color, texture, material, and shape while maximizing preservation of object identity and
 tags:
-  - "ICML 2026"
-  - "Multimodal VLM"
-  - "Image Editing"
-  - "Intrinsic Attribute Editing"
-  - "Diffusion Models"
-  - "Visual Named Entities"
-  - "Identity Preservation"
+  - ICML 2026
+  - Multimodal VLM
+  - Image Editing
+  - Diffusion Model
 date: 2026-05-08
-content_hash: 1eef347bf9f0f195
+content_hash: d6adbd5232b702c1
 ---
-
 # Alterbute: Editing Intrinsic Attributes of Objects in Images
 
 **Conference**: ICML 2026  
 **arXiv**: [2601.10714](https://arxiv.org/abs/2601.10714)  
 **Code**: No public code (Project page: https://talreiss.github.io/alterbute/)  
 **Area**: Image Generation / Image Editing  
-**Keywords**: Image Editing, Intrinsic Attribute Editing, Diffusion Models, Visual Named Entities, Identity Preservation
+**Keywords**: Image Editing, Intrinsic Attribute Editing, Diffusion Models, Visual Named Entities, Identity Preservation  
 
 ## TL;DR
-Alterbute uses VLMs to automatically mine Visual Named Entity (VNE) identity clusters and jointly conditions identity references, attribute text, backgrounds, and masks within a diffusion model. This approach unifies the editing of object color, texture, material, and shape while striving to maintain object identity and scene context.
+Alterbute uses VLMs to automatically mine Visual Named Entity (VNE) identity clusters and jointly conditions on identity references, attribute text, background, and masks within a diffusion model. This unifies the editing of object color, texture, material, and shape while maximizing preservation of object identity and scene context.
 
 ## Background & Motivation
-**Background**: Image editing models are already capable of large-scale text-guided modifications, local inpainting, style transfer, and subject-driven generation. While many methods can maintain coarse categories or instance appearances, it is significantly more difficult to modify intrinsic attributes—such as changing a car's color to red, a desk's material to wood, or altering an object's shape—while simultaneously preserving its identity.
+**Background**: Image editing models can now perform large-scale text-guided modifications, local inpainting, style transfer, and subject-driven generation. While many methods maintain coarse categories or instance appearances, tasks like "change this car to red," "change the table to wood," or "modify the object shape" require changing intrinsic attributes while preserving identity, which is significantly more difficult.
 
-**Limitations of Prior Work**: General image editors often edit the wrong object, alter the identity, or ignore target attributes. Conversely, subject personalization methods define identity so strictly that they allow almost no variation in color, material, texture, or shape. Attribute-specific methods typically only address a single attribute like material or texture, failing to cover the full spectrum of intrinsic attributes.
+**Limitations of Prior Work**: General image editors often target the wrong object, alter the identity, or ignore intended attributes. Subject personalization methods define identity too strictly, rarely allowing changes in color, material, texture, or shape. Attribute-specific methods usually only solve a single attribute like material or texture and fail to cover all intrinsic properties.
 
-**Key Challenge**: There is an inherent tension between identity preservation and attribute editing. If the identity definition is too coarse (e.g., just "car"), the editing space is large but the object might be replaced by a different car. If the identity definition is too fine (e.g., a specific instance), the model treats color and texture as part of the identity, making meaningful intrinsic editing impossible.
+**Key Challenge**: A natural tension exists between identity preservation and attribute editing. If identity is defined too coarsely (e.g., just "car"), the editing space is large, but the object may be replaced by a different car. If defined too finely (e.g., a specific instance), the model treats color and texture as part of the identity, making meaningful intrinsic editing impossible.
 
-**Goal**: The authors aim to train a single model that supports four types of intrinsic attribute editing—color, texture, material, and shape—while maintaining user-perceived object identity, background, lighting, and composition after the edit.
+**Goal**: The authors aim to train a single model that supports four types of intrinsic attribute editing—color, texture, material, and shape—while maintaining the user-perceived identity, background, lighting, and composition after editing.
 
-**Key Insight**: Rather than attempting to collect non-existent paired data of "the same object in the same scene with only intrinsic attribute changes," the paper relaxes the training task. It allows both intrinsic and extrinsic attributes to vary during training and fixes extrinsic factors during inference by reusing the original image background and mask.
+**Key Insight**: Instead of trying to collect nearly non-existent paired data of "same scene, same object, only changed intrinsic attributes," the paper relaxes the training task. It allows both intrinsic and extrinsic attributes to vary during training and subsequently fixes extrinsic factors during inference by reusing the original background and mask.
 
-**Core Idea**: Use Visual Named Entities (VNE) as an identity definition intermediate between coarse categories and specific instances. VLMs are then used to automatically construct supervised data of the "same VNE with different attributes and scenes," enabling the diffusion model to learn identity-preserving intrinsic attribute changes.
+**Core Idea**: Use Visual Named Entities (VNE) as an identity definition situated between coarse categories and specific instances. VLMs are used to automatically construct supervised data of "same VNE, different attributes and scenes," allowing the diffusion model to learn intrinsic attribute changes that preserve identity.
 
 ## Method
-The methodology of Alterbute can be understood as "redefining identity first, then making the supervision problem collectable." If identity is defined by category, supervision is too loose; if defined by instance, it is too tight. VNE allows the model to observe natural variations of the same nameable object across different colors, materials, textures, shapes, and scenes, thereby learning which changes do not compromise identity.
+The Alterbute mechanism can be understood as "redefining identity first, then making the supervision problem collectible." If identity uses categories, supervision is too loose; if it uses instances, it is too tight. VNE allows the model to see natural variations of the same nameable object across different colors, materials, textures, shapes, and scenes, thereby learning which changes do not destroy identity.
 
 ### Overall Architecture
-Training data is sourced from OpenImages. The authors first use Gemini to assign VNE labels to detected objects (e.g., "Porsche 911 Carrera" or "IKEA LACK table"), filtering out generalized or unnameable objects. Objects with the same VNE form identity clusters. Gemini then extracts structured intrinsic attribute descriptions for each object, including color, texture, material, and shape.
+Training data is sourced from OpenImages. The authors first use Gemini to assign VNE labels to detected objects, such as "Porsche 911 Carrera" or "IKEA LACK table," filtering out generic or unnamable objects. Objects with the same VNE form identity clusters. Gemini then extracts structured intrinsic attribute descriptions for each object, including color, texture, material, and shape.
 
-The diffusion model is fine-tuned based on SDXL. During training, inputs are organized into a $1\times 2$ image grid: the left half contains the noisy latent of the target image, and the right half contains an identity reference image from the same VNE cluster. The model also receives target attribute text, a background image, and an object mask. The target region in the background image is masked with gray, and the mask specifies the object's position. The loss is only applied to the left half, forcing the model to learn to generate an object with target attributes while maintaining identity within the specified scene.
+The diffusion model is fine-tuned based on SDXL. During training, inputs are organized into a $1\times2$ image grid: the left half is the noisy latent of the target image, and the right half is an identity reference image from the same VNE cluster. The model also receives target attribute text, a background image, and an object mask. The target area in the background image is masked with gray, and the mask specifies the object location. The loss is applied only to the left half, forcing the model to learn to generate an object with target attributes that preserves identity within a specific scene.
 
-During inference, given a source image and a single attribute prompt, the system uses a segmentation model to extract the object mask, crops the foreground as an identity reference, and uses the original background and mask as extrinsic conditions. Fine masks are used for color, texture, and material editing. For shape editing, as the target geometry is unknown, a coarse bounding-box mask is used to provide the model with more deformation space.
+During inference, given a source image and a single attribute prompt, the system extracts the object mask using a segmentation model, crops the foreground as an identity reference, and uses the original background and mask as extrinsic conditions. Fine-grained masks are used for color, texture, and material editing; for shape editing, where the target geometry is unknown, a coarse bounding-box mask provides more deformation space.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph DATA["VNE Identity Definition & Data Construction (Design 1)"]
+        direction TB
+        A["Detect objects in OpenImages"] --> B["Gemini assigns VNE labels<br/>e.g., Porsche 911 Carrera"]
+        B --> C["Cluster same VNE into identity groups<br/>+ Gemini extracts intrinsic attributes"]
+    end
+    C --> D["Training triplets:<br/>Identity Ref + Attribute Text + Background/Mask"]
+    subgraph GRID["Grid-based Identity Conditioning (Design 2)"]
+        direction TB
+        E["1×2 Grid<br/>Left: Target noisy latent | Right: Same-cluster reference"] --> F["UNet self-attention transfers identity across halves<br/>Loss calculated only on left side"]
+    end
+    D --> E
+    F --> G["Fine-tuned SDXL Editing Model"]
+    subgraph INFER["Relax Training → Constrain Inference (Design 3)"]
+        direction TB
+        H["Inference: Segment source for mask<br/>Crop foreground as ref, gray out background"] --> I["Reuse original background+mask to lock extrinsic factors<br/>Fine mask for color/texture/material; coarse bbox for shape"]
+    end
+    G --> H
+    I --> J["Output: Only intrinsic attributes changed<br/>Identity and scene context preserved"]
+```
 
 ### Key Designs
-1. **Visual Named Entity (VNE)**:
-    - **Function**: Provides a supervision unit that preserves identity while allowing intrinsic attribute variations.
-    - **Mechanism**: Uses Gemini to assign fine-grained nameable labels based on visual appearance; images under the same VNE are treated as different instances or states of the same perceptual identity.
-    - **Design Motivation**: DINOv2 similarity tends to cluster objects with different identities but similar appearances, while instance retrieval is too strict; VNE serves as an intermediate layer that aligns better with human naming conventions.
+**1. Visual Named Entity Identity & Data: Cutting identity to a "namable" intermediate granularity for automatic supervision.**
 
-2. **Relaxed Training, Constrained Inference**:
-    - **Function**: Bypasses the lack of strictly paired data for intrinsic attribute editing.
-    - **Mechanism**: Training allows target and reference images to differ in intrinsic attributes, poses, and backgrounds, requiring only that they belong to the same VNE. During inference, the original background and mask are fixed to focus changes on intrinsic attributes.
-    - **Design Motivation**: Samples of "same object, same scene, only attribute change" are rare in natural data, but samples of "same VNE, different scenes and attributes" can be automatically mined at scale.
+Identity preservation and attribute editing are inherently contradictory. If the identity definition is too coarse (e.g., "car"), the editing space is large but the specific car may change. If it is too fine (e.g., a specific instance), the model treats color and texture as part of the identity. Visual Named Entities (VNE) are fine-grained, namable labels (e.g., "Porsche 911 Carrera", "iPhone 16 Pro") between categories and instances. Objects under the same VNE share identity features but allow for natural intrinsic variations, aligning with human intuition. The authors use Gemini to assign VNE labels and cluster them, then extract structured attribute descriptions, creating a "Ref + Text + Background/Mask" triplet without manual labeling. This yielded 69,744 clusters and ~1.08M images.
 
-3. **Grid-based Identity Conditioning**:
-    - **Function**: Enables the diffusion UNet to pass fine-grained identity information between the target region and identity reference via self-attention.
-    - **Mechanism**: Places the noisy target and reference object in two $512\times 512$ panels to form a $512\times 1024$ grid. Background and mask conditions are only applied to the left half, while the right half provides a background-removed identity reference.
-    - **Design Motivation**: Ablations show that channel-wise concatenation leads to the model performing almost no editing, indicating that identity information must be explicitly propagated across panels via spatial attention.
+**2. Grid-based Identity Conditioning: Using spatial self-attention across images for identity transfer.**
+
+How the identity reference is fed to the UNet determines if the model actually uses it. Alterbute concatenates the target noisy latent and the background-removed reference into a 1×2 image grid ($512\times1024$ total). The background (with the target area grayed out) and binary mask are concatenated along the channel dimension for the left half only. This allows the UNet's self-attention layers to propagate fine-grained identity features across the two halves, while the loss is calculated only on the target area of the left half. Ablations show that replacing this with channel-wise concatenation leads to an identity mapping where the model fails to edit, proving the grid is a structural necessity.
+
+**3. Relax Training, Constrain Inference: Turning uncollectible tasks into supervised ones.**
+
+Strictly paired samples of "same object, same scene, only intrinsic change" barely exist in nature. The authors break this by relaxing the training goal: the target and reference only need to belong to the same VNE, while poses and backgrounds can differ. At inference, extrinsic factors are locked by reusing the original background and mask. This strategy allows the use of large-scale automated data. Mask granularity is also adjusted: fine masks for color/texture/material, and coarse bounding boxes for shape to allow for geometric deformation.
 
 ### Loss & Training
-The model utilizes a standard diffusion $L_2$ denoising loss, calculated only on the left target region. It is trained for 100,000 steps with a learning rate of $10^{-5}$ and a batch size of 128 at a resolution of $512\times 1024$. Based on the 7B parameter SDXL architecture, training took approximately 24 hours on 128 v4 TPUs. To improve robustness, 10% of samples randomly drop the identity reference, and another 10% drop the text prompt. Inference uses a text CFG of 7.5 and an image CFG of 2.0.
+The model uses standard L2 denoising loss, calculated only for the target region on the left half of the grid. It was trained for 100,000 steps with a learning rate of $10^{-5}$, batch size of 128, and $512\times1024$ resolution. The architecture is based on the 7B parameter SDXL, trained on 128 v4 TPUs for approximately 24 hours. To improve robustness, 10% of samples randomly drop the identity reference and 10% drop the text prompt. Inference uses a text CFG of 7.5 and an image CFG of 2.0.
 
 ## Key Experimental Results
 
 ### Main Results
-The authors constructed an evaluation set featuring 30 objects and 100 attribute editing samples covering color, texture, material, and shape. The user study involved 166 participants, with each sample receiving 5 independent judgments. Pairwise evaluations were also conducted using VLMs (Gemini, GPT-4o, and Claude).
+An evaluation set of 30 objects and 100 attribute editing samples was constructed, covering color, texture, material, and shape. The user study involved 166 participants with 5 independent judgments per sample. VLM pairwise evaluations were conducted using Gemini, GPT-4o, and Claude.
 
 | Evaluator | vs MimicBrush | vs MaterialFusion | vs FlowEdit | vs InstructPix2Pix | vs OmniGen | vs UltraEdit | vs Diptych |
 |-----------|---------------|-------------------|-------------|--------------------|------------|--------------|------------|
@@ -81,45 +97,44 @@ The authors constructed an evaluation set featuring 30 objects and 100 attribute
 | Claude    | 92.6%         | 81.3%             | 92.6%       | 85.4%              | 78.8%      | 85.6%        | 77.8%      |
 
 ### Ablation Study
-Analysis focused on identity definition, conditioning methods, and training budget. Standard DINO/CLIP metrics were reported, though the authors emphasized that these metrics are not entirely reliable for intrinsic editing, as "no-edit" results can produce high identity scores.
+The analysis focused on identity definitions, conditioning methods, and training budgets. Standard metrics were reported, but the authors emphasize they are not fully reliable for intrinsic editing as "not editing at all" can result in high identity scores.
 
-| Analysis Item | Key Metrics | Note |
-|---------------|-------------|------|
-| Standard Metrics (Ours) | DINO 0.815 / CLIP-I 0.914 / CLIP-T 0.321 | Highest CLIP-T, indicating best target attribute matching. |
-| Standard Metrics (UltraEdit) | DINO 0.841 / CLIP-I 0.922 / CLIP-T 0.303 | High identity metrics, but weaker attribute matching than Alterbute. |
-| VNE Data Scale | 69,744 clusters / 1,079,442 images | Automatically constructed by OpenImages and Gemini. |
-| Channel-wise conditioning | Qualitative results close to no-op | Identity reference not effectively passed; model tends to output the original. |
-| 50K training steps | VLM Win Rate 78.0/75.7/76.3 | Half budget remains significantly stronger than baselines. |
-| 100K training steps | VLM Win Rate 86.1/82.0/84.9 | Full training improves results by ~7 percentage points. |
-| 100K vs 50K | VLM Preference 58.2/57.1/60.6 | Longer training is beneficial but not the sole decisive factor. |
+| Analysis Item | Key Metric | Description |
+|---------------|------------|-------------|
+| Ours (Metrics)| DINO 0.815 / CLIP-I 0.914 / CLIP-T 0.321 | Highest CLIP-T, indicating best attribute matching |
+| UltraEdit     | DINO 0.841 / CLIP-I 0.922 / CLIP-T 0.303 | High identity but weaker attribute matching |
+| VNE Data Scale| 69,744 clusters / 1,079,442 images | Automatically constructed via Gemini |
+| Channel-wise  | Qualitative results near no-op | Identity fails to transfer, model outputs original image |
+| 50K Steps     | VLM Win Rate ~76-78% | Still significantly stronger than baselines |
+| 100K Steps    | VLM Win Rate ~82-86% | Full training yields ~7% gain |
 
 ### Key Findings
-- Both users and VLMs significantly prefer Alterbute, with p-values from binomial tests consistently below 0.05, indicating the advantage is not due to evaluator bias.
-- When split by attribute, shape editing showed the highest win rate, suggesting Alterbute excels at difficult geometric changes where baselines struggle.
-- VNE is not merely label engineering but the core of the supervision; it provides clusters of "same identity but variable attributes," preventing the model from fixing all intrinsic attributes as part of the identity.
+- Users and VLMs significantly prefer Alterbute (p-value < 0.05 in binomial tests), indicating the advantage is not due to evaluator bias.
+- When split by attribute, shape editing shows the highest win rate, suggesting Alterbute excels at difficult geometric changes.
+- VNE is the core of the supervision: it provides samples where attributes vary while identity remains constant, preventing the model from over-fitting attributes as part of the identity.
 
 ## Highlights & Insights
-- The most compelling aspect of the paper is the redefinition of "identity." Instead of treating it as an abstract concept, VNE provides a data structure that is automatically labelable, scalable, and aligned with human naming conventions.
-- The relaxation of training targets is ingenious. Allowing more variation during training makes data acquisition feasible, while fixing extrinsic variations during inference with backgrounds and masks is more practical than searching for rare paired data.
-- The grid-based input demonstrates that the conditioning method of a diffusion model determines whether it truly utilizes the reference image. For identity-preserving editing, spatial self-attention is more critical than simple channel concatenation.
+- The redefinition of "identity" is the most compelling aspect. It moves away from abstract concepts toward VNE, which is automatically labelable, scalable, and close to human naming conventions.
+- The relaxation of training targets is clever. It makes data available during training while the inference-time constraints (background/mask) prevent extrinsic drift, which is more practical than finding rare paired data.
+- The grid input underscores that the conditioning method determines how effectively a reference image is used. For identity-preserving editing, spatial self-attention appears more critical than channel concatenation.
 
 ## Limitations & Future Work
-- VNE labeling depends on Gemini and may inherit VLM biases regarding brands, object categories, and long-tail cultural entities.
-- The evaluation set is limited to 30 objects and 100 samples; while it covers four attribute types, it is too small to fully represent real-world open-domain scenarios.
-- Coarse bounding-box masks support shape editing but may introduce background artifacts; changing the shape of rigid objects can also result in unrealistic geometry.
-- The focus is currently on single-object editing; multi-object interactions, occlusions, reflections, and physical consistency require more robust scene modeling.
+- VNE labeling relies on Gemini and may inherit biases regarding brands or long-tail entities.
+- The evaluation set is small (30 objects/100 samples), which may not represent open-world diversity.
+- Coarse bounding boxes for shape editing can introduce background artifacts or unrealistic geometries for rigid objects.
+- Currently lacks support for complex multi-object interactions, occlusions, and physical consistency (reflections).
 
 ## Related Work & Insights
-- **vs InstructPix2Pix / UltraEdit / OmniGen**: These general editors cover a wide range of tasks but lack stable joint constraints for intrinsic attributes and identity preservation. Alterbute specifically learns these variations via VNE supervision.
-- **vs DreamBooth / subject-driven generation**: Personalization methods emphasize instance preservation but often bind color and texture to the instance identity. Alterbute allows these to vary within the same VNE, making it better suited for attribute editing.
-- **vs MaterialFusion / MimicBrush**: These methods target single attributes like material or texture; Alterbute provides a unified model for color, texture, material, and shape.
-- **Insight**: The bottleneck in many generative tasks is not just model architecture, but the semantic granularity of supervision. Finding an appropriate intermediate label layer can transform "impossible-to-collect" data into automatically constructible data.
+- **vs InstructPix2Pix / UltraEdit / OmniGen**: These general editors lack stable joint constraints for intrinsic attributes and identity; Alterbute addresses this via VNE supervision.
+- **vs DreamBooth / subject-driven generation**: Personalization methods bind color/texture to the identity; Alterbute allows these to vary within the same VNE.
+- **vs MaterialFusion / MimicBrush**: These are restricted to single attributes (material or texture); Alterbute provides a unified model.
+- **Insight**: Many generative tasks are bottlenecked by the semantic granularity of supervision rather than model architecture. Finding the right intermediate labels can turn "impossible data" into "constructible data."
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐☆ The VNE identity definition and relaxed training targets are highly creative; the model core remains based on established diffusion editing paradigms.
-- Experimental Thoroughness: ⭐⭐⭐⭐☆ Includes user studies, VLM evaluations, standard metrics, and training budget analysis, though the benchmark scale is relatively small.
-- Writing Quality: ⭐⭐⭐⭐☆ The motivation is clearly articulated, and the explanation of the identity definition spectrum is particularly helpful for understanding the methodology.
-- Value: ⭐⭐⭐⭐☆ Offers significant insights into controllable image editing and supervised data construction, especially for product-level object attribute editing.
+- Novelty: ⭐⭐⭐⭐☆ (Creative VNE definition and training relaxation)
+- Experimental Thoroughness: ⭐⭐⭐⭐☆ (Strong human/VLM evaluations, but small benchmark)
+- Writing Quality: ⭐⭐⭐⭐☆ (Clear motivation and excellent explanation of the identity spectrum)
+- Value: ⭐⭐⭐⭐☆ (Highly insightful for controllable image editing and data construction)
 
 <!-- RELATED:START -->
 
@@ -127,11 +142,11 @@ Analysis focused on identity definition, conditioning methods, and training budg
 
 ## Related Papers
 
+- [\[CVPR 2026\] Unified Personalized Understanding, Generating and Editing](../../CVPR2026/multimodal_vlm/unified_personalized_understanding_generating_and_editing.md)
+- [\[CVPR 2026\] Enhancing Descriptive Captions with Visual Attributes for Multimodal Perception](../../CVPR2026/multimodal_vlm/enhancing_descriptive_captions_with_visual_attributes_for_multimodal_perception.md)
 - [\[ICML 2026\] Debate with Images: Detecting Deceptive Behaviors in Multimodal Large Language Models](debate_with_images_detecting_deceptive_behaviors_in_multimodal_large_language_mo.md)
 - [\[ICCV 2025\] Advancing Textual Prompt Learning with Anchored Attributes](../../ICCV2025/multimodal_vlm/advancing_textual_prompt_learning_with_anchored_attributes.md)
 - [\[NeurIPS 2025\] Learning Skill-Attributes for Transferable Assessment in Video](../../NeurIPS2025/multimodal_vlm/learning_skill-attributes_for_transferable_assessment_in_video.md)
-- [\[CVPR 2026\] DSCA: Dynamic Subspace Concept Alignment for Lifelong VLM Editing](../../CVPR2026/multimodal_vlm/dsca_dynamic_subspace_concept_alignment_for_lifelong_vlm_editing.md)
-- [\[ACL 2026\] Leave My Images Alone: Preventing Multi-Modal Large Language Models from Analyzing Unauthorized Images](../../ACL2026/multimodal_vlm/leave_my_images_alone_preventing_multi-modal_large_language_models_from_analyzin.md)
 
 </div>
 

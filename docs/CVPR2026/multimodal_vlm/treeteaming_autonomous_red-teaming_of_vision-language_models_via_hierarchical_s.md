@@ -2,77 +2,105 @@
 title: >-
   [Paper Note] TreeTeaming: Autonomous Red-Teaming of Vision-Language Models via Hierarchical Strategy Exploration
 description: >-
-  [CVPR 2026][Multimodal VLM][red-teaming] TreeTeaming proposes an automated red-teaming framework based on a hierarchical strategy tree…
+  [CVPR 2026][Multimodal VLM][Paper Note] TreeTeaming proposes an automated red-teaming framework based on a hierarchical strategy tree. Driven by an LLM-based Orchestrator, it dynamically explores and evolves attack strategies, achieving SOTA Attack Success Rates (ASR) across 12 mainstream VLMs (87.60% on GPT-4o) and identifying diverse new attack methods bey
 tags:
-  - "CVPR 2026"
-  - "Multimodal VLM"
-  - "red-teaming"
-  - "vision-language model safety"
-  - "automated attack"
-  - "strategy tree"
-  - "jailbreak attack"
+  - CVPR 2026
+  - Multimodal VLM
 date: 2026-05-08
-content_hash: f52d8b8cc74aa389
+content_hash: 8ed5f87ed3e8d9e0
 ---
-
 # TreeTeaming: Autonomous Red-Teaming of Vision-Language Models via Hierarchical Strategy Exploration
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2603.22882](https://arxiv.org/abs/2603.22882)  
 **Code**: [https://github.com/ChunXiaostudy/TreeTeaming](https://github.com/ChunXiaostudy/TreeTeaming)  
-**Area**: Multimodal VLM
-**Keywords**: red-teaming, vision-language model safety, automated attack, strategy tree, jailbreak attack
+**Area**: Multimodal VLM  
+**Keywords**: Red-Teaming, Vision-Language Model Safety, Automated Attack, Strategy Tree, Jailbreak Attack
 
 ## TL;DR
 
-TreeTeaming proposes an automated red-teaming framework based on a hierarchical strategy tree, in which an LLM-driven Orchestrator dynamically explores and evolves attack strategies. The framework achieves state-of-the-art attack success rates (ASR) across 12 mainstream VLMs (87.60% on GPT-4o) and discovers diverse novel attack strategies that go beyond all known strategy sets.
+TreeTeaming proposes an automated red-teaming framework based on a hierarchical strategy tree. Driven by an LLM-based Orchestrator, it dynamically explores and evolves attack strategies, achieving SOTA Attack Success Rates (ASR) across 12 mainstream VLMs (87.60% on GPT-4o) and identifying diverse new attack methods beyond known strategy sets.
 
 ## Background & Motivation
 
-As the capabilities of vision-language models (VLMs) continue to advance, their safety concerns become increasingly prominent. Red-teaming is a critical method for identifying model vulnerabilities; however, existing VLM red-teaming approaches suffer from fundamental limitations.
+As Vision-Language Models (VLMs) advance, their safety concerns become increasingly prominent. Red-teaming is essential for discovering model vulnerabilities, but existing VLM red-teaming methods face fundamental limitations:
 
-**Linear exploration paradigm of prior methods**: Whether it is FigStep's typographic manipulation, MML's image transformation, or SI-Attack's image-text rearrangement, all rely on predefined, single-strategy heuristics. Even TRUST-VLM, which incorporates feedback mechanisms, can only optimize test cases within a preset strategy framework and is incapable of discovering new attack strategies.
+**Linear Exploration Paradigm of Prior Work**: Whether it is typographic manipulation in FigStep, image transformation in MML, or image-text rearrangement in SI-Attack, these methods rely on predefined, singular attack heuristics. Even TRUST-VLM, which introduces feedback mechanisms, can only optimize test cases within a preset strategy framework and fails to discover new attack strategies.
 
-**Key Challenge**: Existing methods can only make "known attacks more effective" but cannot systematically "discover unknown attacks." This is analogous to walking further along a single road without ever exploring alternative paths.
+**Key Challenge**: Prior work focuses on making "known attacks more effective" rather than systematically "discovering unknown attacks." This resembles walking further on a single path without ever exploring other possible routes.
 
-**Key Insight**: The paper transforms strategy exploration from a static testing process into a dynamic evolutionary process. The core idea is to construct a dynamically growing strategy tree in which an LLM autonomously decides whether to deepen optimization along promising attack paths or to branch out into entirely new strategy directions.
+**Key Insight**: This paper transforms strategy exploration from a static testing process into a dynamic evolutionary process. The Core Idea is to construct a dynamically growing strategy tree, where an LLM autonomously decides whether to refine promising attack paths or open entirely new strategy branches.
 
 ## Method
 
 ### Overall Architecture
 
-TreeTeaming consists of three collaborative modules: (1) a **Strategy Tree & Orchestrator**, responsible for strategy evolution and decision-making; (2) a **Multimodal Actuator & Consistency Checker**, responsible for translating abstract strategies into concrete attack samples; and (3) a **Failure Cause Analysis** module, providing dual-loop feedback. Starting from a single seed example, the system autonomously grows a complete attack strategy tree.
+TreeTeaming aims to evolve red-teaming from "repeating the same move" to "growing new moves." Starting from a seed example, it gradually grows an attack strategy tree. Three modules cooperate in each iteration: the Orchestrator maintains a global view of the tree to decide whether to refine an existing promising attack path or branch out into a new strategy. The Multimodal Executor receives an abstract strategy, translates it into an actual image-text attack sample, and a Consistency Checker ensures the sample adheres to the strategy. Finally, the Failure Reason Analysis model decomposes rejected responses to provide feedback at both the sample and strategy levels. After an iteration, the leaf nodes are updated with new ASR and failure insights to guide the Orchestrator's next plan.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    seed["Seed Example<br/>One-shot initialization of 3–6 seed strategies"]
+    subgraph D1["Strategy Tree & Dynamic Orchestrator"]
+        direction TB
+        tree["Strategy Tree<br/>Root Goal → Strategy Category → Executable Leaf Strategy"]
+        orch{"Orchestrator: Compare leaf ASR<br/>with dynamic threshold τ"}
+        tree --> orch
+    end
+    seed --> tree
+    orch -->|"Exploit: ASR > τ"| exploit["Refine existing leaf strategy"]
+    orch -->|"Explore: No strategy meets threshold"| explore["Add new strategy branch to tree"]
+    subgraph D2["Multimodal Executor & Policy Consistency Checker"]
+        direction TB
+        act["Executor: 11-tool planning chain<br/>→ Image-text attack sample"]
+        check{"Consistency Check<br/>Does sample stay true to strategy?"}
+        act --> check
+    end
+    exploit --> act
+    explore --> act
+    check -->|"No: Discard sample"| act
+    check -->|Yes| attack["Attack Target VLM"]
+    attack -->|Success| update["Update Leaf ASR / Budget"]
+    subgraph D3["Failure Analysis & Dual-loop Feedback"]
+        direction TB
+        micro["Sample-level micro-loop<br/>Classify rejection pattern → Refine & Retry"]
+        macro["Strategy-level macro-loop<br/>Write dominant failure mode to leaf"]
+        micro --> macro
+    end
+    attack -->|Failure| micro
+    micro -.->|Sample-level re-injection| act
+    update --> orch
+    macro -.->|Strategy-level re-injection| orch
+```
 
 ### Key Designs
 
-1. **Strategy Tree & Dynamic Orchestrator**:
+**1. Strategy Tree & Dynamic Orchestrator: Managing "Exploration vs. Exploitation" via a Growing Tree**
 
-    - **Function**: Organizes and tracks all explored attack strategies; dynamically balances exploration and exploitation.
-    - **Mechanism**: The strategy tree adopts a three-level structure — root node (overall goal), parent nodes (abstract strategy categories, e.g., "cognitive bias exploitation"), and leaf nodes (executable concrete strategies). The Orchestrator employs a dynamic exploration threshold $\tau_{dynamic} = \max\{\tau_{initial} \cdot (1 - N_{total}/N_{max}), \tau_{min}\}$ to balance exploration and exploitation. When any leaf node's ASR exceeds the threshold and the budget has not been exhausted, exploitation is performed (deep optimization); otherwise, exploration is performed (creating new strategy branches).
-    - **Design Motivation**: Addresses the critical decision of when to shift from breadth-first exploration to depth-first optimization. The linearly decaying threshold ensures high selectivity in early stages and comprehensive exploitation in later stages.
+Existing red-teaming methods struggle to discover new attacks as they follow fixed paths. TreeTeaming organizes explored strategies into a three-layer tree: root (overall goal), parent nodes (abstract strategy categories, e.g., "Cognitive Bias Exploitation"), and leaf nodes (executable specific strategies). The Orchestrator decides whether to deepen an existing path (Exploit) or branch out (Explore) using a dynamic threshold that decays linearly with the budget:
 
-2. **Multimodal Actuator & Strategy Consistency Checker**:
+$$\tau_{dynamic} = \max\{\tau_{initial} \cdot (1 - N_{total}/N_{max}),\ \tau_{min}\}$$
 
-    - **Function**: Translates abstract strategies generated by the Orchestrator into actual image-text attack samples and verifies their consistency.
-    - **Mechanism**: An LLM controller is equipped with 11 predefined tool functions spanning four categories (geometric transformation, color filtering, image composition, and generative editing). It plans and sequentially executes tool-call chains according to strategy descriptions. The consistency checker verifies whether generated samples faithfully reflect the intended strategy and outputs a binary judgment.
-    - **Design Motivation**: The tool-based design allows the actuator to combine multiple operations to realize complex strategies; the consistency check prevents recording attack results that deviate from the target strategy, ensuring that ASR accurately reflects true strategy effectiveness.
+Where $N_{total}$ is the used iterations and $N_{max}$ is the total budget. If a leaf node's ASR exceeds the threshold, it is exploited; otherwise, the system explores a new branch. This mechanism favors high-quality strategies early on and lowers the bar later to maximize the remaining budget.
 
-3. **Failure Cause Analysis & Dual-Loop Feedback**:
+**2. Multimodal Executor & Policy Consistency Checker: Grounding Strategies and Preventing Hallucination**
 
-    - **Function**: Learns from failed samples and provides feedback at both the sample level and strategy level.
-    - **Mechanism**: The sample-level micro-loop analyzes VLM rejection responses upon attack failure (e.g., "direct refusal" / "safety evasion") and feeds the analysis back to the actuator for sample-level refinement and retry. The strategy-level macro-loop aggregates all failure logs, extracts the Dominant Failure Mode, records it to the strategy tree leaf node, and guides the Orchestrator's subsequent decisions.
-    - **Design Motivation**: The dual-loop design enables the system to simultaneously learn and optimize at both the tactical level (individual samples) and the strategic level (overall strategies).
+The Orchestrator outputs abstract descriptions like "induce via cognitive bias." The Executor uses an LLM controller with 11 predefined tools (Geometric Transformation, Color Filters, Image Synthesis, Generative Editing) to plan a tool-call chain. To prevent the system from overestimating a strategy due to "accidental" successes unrelated to the intended strategy, a Consistency Checker validates if the generated sample faithfully represents the target strategy.
+
+**3. Failure Reason Analysis & Dual-loop Feedback: Learning from Failure**
+
+TreeTeaming decomposes failures into two feedback loops. The sample-level **Micro-loop** analyzes specific rejection patterns (e.g., "Refusal" vs. "Evasion") to refine the current sample. The strategy-level **Macro-loop** aggregates failure logs to extract the "Dominant Failure Mode," writing it back to the leaf node so the Orchestrator knows why a specific path is blocked during future decision-making.
 
 ### Loss & Training
 
-TreeTeaming is an inference-time framework that does not involve model training. Its core mechanism leverages LLMs' in-context learning capability: the Orchestrator initializes the strategy tree via one-shot examples (3–6 seed strategies), executes only one operation (exploitation or exploration) per iteration, and evaluates different strategies sequentially to maintain clear performance attribution.
+Ours is a pure inference-time framework and does not require model training. It relies entirely on the in-context learning capabilities of LLMs. The Orchestrator uses one-shot examples for strategy tree initialization. Each iteration executes a single operation (exploit or explore) to maintain clean performance attribution.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Target VLM | TreeTeaming ASR (%) | Prev. SOTA ASR (%) | Gain |
-|---|---|---|---|
+| Target VLM | TreeTeaming ASR(%) | Prev. SOTA ASR(%) | Gain |
+|----------|-------------------|----------------|------|
 | LLaVA-1.5 | 100.00 | 95.00 (Trust-VLM) | +5.00 |
 | GPT-4o | 87.60 | 82.04 (Trust-VLM) | +5.56 |
 | Claude-3.5 | 72.00 | 60.40 (MML) | +11.60 |
@@ -80,48 +108,47 @@ TreeTeaming is an inference-time framework that does not involve model training.
 | Qwen3-VL-8B | 71.40 | 44.20 (MML) | +27.20 |
 | DeepSeek-VL | 98.60 | 83.33 (Trust-VLM) | +15.27 |
 
-TreeTeaming achieves state-of-the-art attack success rates on 11 out of 12 VLMs.
+Ours achieves SOTA ASR on 11 out of 12 VLMs.
 
 ### Ablation Study
 
-| Configuration | Key Metric | Note |
-|---|---|---|
-| Full TreeTeaming | 87.60% (GPT-4o) | Complete model |
-| w/o strategy consistency check | ASR inflated but actual effectiveness decreases | Confirms the filtering value of the checker |
-| Strategy diversity | Surpasses the union of all known public strategy sets | TreeTeaming discovers strategies beyond all known strategies |
-| Toxicity metric | Average reduction of 23.09% | Generated attacks are more covert |
+| Configuration | Key Metric | Description |
+|------|---------|------|
+| Full TreeTeaming | 87.60% (GPT-4o) | Full model performance |
+| w/o Consistency Check | ASR inflated but actual efficacy drops | Confirms the value of the checker |
+| Strategy Diversity | Exceeds known open sets | Diversity of discovered strategies exceeds the union of known sets |
+| Toxicity Metric | Avg. -23.09% | Generated attacks are stealthier |
 
 ### Key Findings
 
-- The set of attack strategies discovered by TreeTeaming exhibits greater diversity than the union of all known public jailbreak strategies, demonstrating that genuinely novel attack paradigms are discovered.
-- The toxicity of attack samples is reduced by an average of 23.09%, indicating that the attacks are more covert and harder to intercept with simple toxicity detection tools.
-- Closed-source models (GPT-4o, Claude-3.5) also exhibit significant vulnerabilities.
+- The diversity of attack strategies discovered by TreeTeaming exceeds the union of all known public jailbreak strategies, indicating the discovery of entirely new attack paradigms.
+- The average toxicity of attack samples decreased by 23.09%, suggesting that attacks are becoming more covert and harder to intercept via simple toxicity detection.
+- Significant vulnerabilities were identified even in leading closed-source models (GPT-4o, Claude-3.5).
 
 ## Highlights & Insights
 
-- **Paradigm innovation in strategy evolution**: The paper transforms red-teaming from "executing fixed strategies" to "discovering strategies themselves," which represents a paradigmatic breakthrough. The dynamic growth mechanism of the strategy tree is transferable to other scenarios requiring systematic exploration.
-- **Engineering design for exploitation-exploration balance**: The combination of a dynamic threshold and budget constraints elegantly resolves the classic decision problem of when to exploit and when to explore, making it more suitable for hierarchical strategy spaces than simple UCB or ε-greedy approaches.
-- **Dual-loop feedback mechanism**: The design of sample-level rapid iteration combined with strategy-level knowledge accumulation is transferable to any agent system requiring multi-level optimization.
+- **Paradigm Shift in Strategy Evolution**: Moving from "executing fixed strategies" to "discovering strategies themselves" is a breakthrough. The dynamic strategy tree growth mechanism is transferable to other systematic exploration tasks.
+- **Engineering the Exploit-Explore Balance**: The combination of dynamic thresholds and budget constraints elegantly handles the classic decision problem in a hierarchical strategy space.
+- **Dual-loop Feedback Architecture**: The design of specimen-level rapid iteration paired with strategy-level knowledge accumulation provides a roadmap for any agent-based system requiring multi-level optimization.
 
 ## Limitations & Future Work
 
-- The framework depends on the strategy generation capability of the LLM; when the Orchestrator's underlying LLM is insufficiently capable, effective strategies may not be generated.
-- The 11 predefined tool functions constrain the physically feasible attack space; expanding the tool set may uncover additional vulnerabilities.
-- Evaluation primarily focuses on attack success rate, with insufficient granularity in grading the semantic severity of attacks.
-- Future work may explore how the strategy tree structure can be leveraged on the defense side to systematically enhance model robustness.
+- Dependency on the LLM's strategy generation capability; a weak Orchestrator LLM may fail to generate effective strategies.
+- The 11 predefined tools limit the physical feasible space of attacks; expanding the toolset may reveal more vulnerabilities.
+- Evaluation primarily focuses on ASR, with insufficient granularity in grading the semantic severity of attacks.
 
 ## Related Work & Insights
 
-- **vs. TRUST-VLM**: TRUST-VLM automatically generates test cases within a fixed strategy framework, whereas TreeTeaming automatically discovers strategies themselves, operating at a higher level of abstraction.
-- **vs. SI-Attack**: SI-Attack conducts optimization search within a single image-text rearrangement paradigm, while TreeTeaming explores multiple attack modalities across paradigms.
-- **vs. traditional jailbreak methods (FigStep / MML / JOOD)**: These are manually designed single-point strategies, whereas TreeTeaming is an automated strategy space search engine.
+- **vs TRUST-VLM**: While TRUST-VLM automates test case generation within fixed strategy frameworks, TreeTeaming discovers strategies themselves at a higher dimension.
+- **vs SI-Attack**: SI-Attack optimizes within a single image-text rearrangement paradigm, whereas TreeTeaming explores multiple attack paradigms.
+- **vs Manual Methods (FigStep/MML/JOOD)**: These are handcrafted single-point strategies; TreeTeaming is an automated search engine for the strategy space.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐⭐ The paradigm shift from static strategy execution to dynamic strategy discovery, combined with the elegantly designed tree structure and exploitation-exploration balance, is highly original.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Coverage of 12 open- and closed-source VLMs is comprehensive, though ablation studies could be more detailed.
-- **Writing Quality**: ⭐⭐⭐⭐ The framework is clearly presented, motivations are well-articulated, and technical details are complete.
-- **Value**: ⭐⭐⭐⭐⭐ The work carries significant implications for AI safety, and the framework's design principles have broad transferability.
+- Novelty: ⭐⭐⭐⭐⭐ Paradigm shift from static execution to dynamic discovery.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers 12 VLMs; ablation details are solid.
+- Writing Quality: ⭐⭐⭐⭐ Clear framework and well-defined motivation.
+- Value: ⭐⭐⭐⭐⭐ High significance for AI safety with highly transferable framework logic.
 
 <!-- RELATED:START -->
 
@@ -130,10 +157,10 @@ TreeTeaming achieves state-of-the-art attack success rates on 11 out of 12 VLMs.
 ## Related Papers
 
 - [\[CVPR 2026\] Prune2Drive: A Plug-and-Play Framework for Accelerating Vision-Language Models in Autonomous Driving](prune2drive_a_plug-and-play_framework_for_accelerating_vision-language_models_in.md)
+- [\[CVPR 2026\] Dynamic Logits Adjustment and Exploration for Test-Time Adaptation in Vision Language Models](dynamic_logits_adjustment_and_exploration_for_test-time_adaptation_in_vision_lan.md)
 - [\[CVPR 2026\] HiSpatial: Taming Hierarchical 3D Spatial Understanding in Vision-Language Models](hispatial_taming_hierarchical_3d_spatial_understanding_in_vision-language_models.md)
+- [\[CVPR 2026\] Hierarchical Process Reward Models are Symbolic Vision Learners](hierarchical_process_reward_models_are_symbolic_vision_learners.md)
 - [\[CVPR 2026\] HOG-Layout: Hierarchical 3D Scene Generation, Optimization and Editing via Vision-Language Models](hog_layout_hierarchical_3d_scene_generation_optimization_and_editing.md)
-- [\[CVPR 2026\] Devil is in Narrow Policy: Unleashing Exploration in Driving VLA Models](devil_is_in_narrow_policy_unleashing_exploration_in_driving_vla_models.md)
-- [\[ACL 2026\] HiPrune: Hierarchical Attention for Efficient Token Pruning in Vision-Language Models](../../ACL2026/multimodal_vlm/hiprune_hierarchical_attention_for_efficient_token_pruning_in_vision-language_mo.md)
 
 </div>
 

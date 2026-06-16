@@ -2,73 +2,92 @@
 title: >-
   [Paper Note] DIVA: Harnessing the Representation Divergence in Unified Multimodal Models for Mutual Reinforcement
 description: >-
-  [ICML 2026][Multimodal VLM][Unified Multimodal Models] DIVA observes that Unified Multimodal Models (UMMs) spontaneously decouple "understanding" and "generation" information flows in middle layers. Consequently…
+  [ICML 2026][Multimodal VLM][Paper Note] DIVA discovers that Unified Multimodal Models (UMMs) spontaneously decouple "understanding" and "generation" information flows in middle layers. Consequently, it explicitly factorizes representations into shared and unique components using Contrastive/CLUB mutual information constraints to achieve "shared alignment + u
 tags:
-  - "ICML 2026"
-  - "Multimodal VLM"
-  - "Unified Multimodal Models"
-  - "Representation Divergence"
-  - "Mutual Information"
-  - "Shared/Unique Decomposition"
-  - "Post-training"
+  - ICML 2026
+  - Multimodal VLM
 date: 2026-05-08
-content_hash: 82050dba6d03ca6a
+content_hash: e08043ae1ce2ada1
 ---
-
 # DIVA: Harnessing the Representation Divergence in Unified Multimodal Models for Mutual Reinforcement
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.25328](https://arxiv.org/abs/2605.25328)  
 **Code**: https://github.com/Jayyy-H/DIVA  
 **Area**: Multimodal VLM / Unified Multimodal Models / Representation Learning  
-**Keywords**: Unified Multimodal Models, Representation Divergence, Mutual Information, Shared/Unique Decomposition, Post-training
+**Keywords**: Unified Multimodal Models, Representation Divergence, Mutual Information, Shared/Unique Factorization, Post-training
 
 ## TL;DR
-DIVA observes that Unified Multimodal Models (UMMs) spontaneously decouple "understanding" and "generation" information flows in middle layers. Consequently, it explicitly factorizes representations into shared and unique components, utilizing contrastive/CLUB mutual information constraints to achieve "shared alignment + unique decoupling." This approach simultaneously improves understanding by +7.82% and generation by +8.46% on Show-o/Liquid/Nexus-Gen without architectural modifications.
+DIVA discovers that Unified Multimodal Models (UMMs) spontaneously decouple "understanding" and "generation" information flows in middle layers. Consequently, it explicitly factorizes representations into shared and unique components using Contrastive/CLUB mutual information constraints to achieve "shared alignment + unique decoupling." Without changing the architecture, it simultaneously improves understanding by +7.82% and generation by +8.46% on Show-o/Liquid/Nexus-Gen.
 
 ## Background & Motivation
 
-**Background**: Unified Multimodal Models (UMM, e.g., Janus-Pro, Show-o, Liquid, Nexus-Gen) employ a single transformer to handle both "image understanding" and "image generation" tasks. While conceptually efficient, existing reports acknowledge that the two objectives often conflict. To mitigate this, mainstream solutions often "separate" components—distinct visual encoders (e.g., BLIP3-o), separate transformer backbones (Bagel using MoT), or hybrid AR + Diffusion architectures.
+**Background**: Unified Multimodal Models (UMM, e.g., Janus-Pro, Show-o, Liquid, Nexus-Gen) utilize a single transformer to simultaneously handle both "image understanding" and "image generation" tasks. While this appears efficient, most reports admit that the two objectives often conflict. To mitigate this, mainstream patches involve "separation"—using separate visual encoders (e.g., BLIP3-o), separate transformer backbones (Bagel using MoT), or even hybrid AR + Diffusion approaches.
 
-**Limitations of Prior Work**: All "separation" strategies betray the core premise of UMMs—that a shared backbone should enable beneficial transfer between understanding and generation. Once encoders or backbones are decoupled, the models become serial components, closing the channel for mutual assistance. Conversely, maintaining a shared backbone creates tension between the inductive biases of the two tasks: understanding requires semantic invariance, low-frequency focus, and detail discarding; whereas generation requires high fidelity, high-frequency focus, and detail preservation.
+**Limitations of Prior Work**: All "separation" routes betray the core promise of UMMs—that only a shared backbone can facilitate true beneficial transfer between understanding and generation. Once the encoder or backbone is decoupled, the system becomes two serial models, closing the channel for mutual assistance. Conversely, maintaining a shared backbone creates tension between the inductive biases of the two tasks: understanding requires semantic invariance, low frequencies, and discarding details; generation requires high fidelity, high frequencies, and preserving details.
 
-**Key Challenge**: The inductive biases of the two objectives are mathematically non-equivalent. Forcing them into the same parameter set results in "compromised representations" that are neither semantically abstract nor pixel-precise. Through triple analysis (gradient/geometry/spectral), the authors discover an overlooked fact: UMM middle layers **spontaneously** push the two information flows into different subspaces (gradient conflicts peak at shallow and deep layers but are weakest in middle layers; effective rank surges in middle layers; understanding flows exhibit low-frequency bias while generation flows preserve high frequencies), while deep layers realign due to shared physical anchors.
+**Key Challenge**: The inductive biases of the two objectives are mathematically non-equivalent. Forcing them into the same set of parameters leads to "compromised representations"—neither semantically abstract enough nor pixel-precise enough. Through a triple analysis of gradients, geometry, and spectrum, the authors reveal an overlooked fact: UMM middle layers **spontaneously** push the two information flows into different subspaces (gradient conflict is strongest in shallow and deep layers but weakest in the middle; effective rank surges in the middle; the understanding flow has a low-frequency bias while the generation flow preserves high frequencies), yet deep layers realign due to the same physical anchor.
 
-**Goal**: Transform this spontaneous "middle-layer divergence, deep-layer convergence" phenomenon from an unconscious byproduct into an explicitly controllable factorized structure, thereby converting conflicts into mutual gains.
+**Goal**: To transform this spontaneous "middle-layer divergence, deep-layer convergence" phenomenon from an unconscious byproduct into an explicitly controllable factorized structure, thereby converting conflict into mutual gain.
 
-**Key Insight**: Since middle layers naturally diverge and deep layers share semantic anchors, it is beneficial to explicitly define two components—a shared component for cross-task transfer and a unique component for task-specific biases—and use mutual information tools to align the shared and decouple the unique.
+**Key Insight**: Since the middle layers are already naturally branched while the deep layers share semantic anchors, it is better to explicitly define two components—a shared component for cross-task transfer and a unique component for task-specific biases—and use mutual information tools to directly align the shared and decouple the unique.
 
-**Core Idea**: Factorize visual representations into "shared + unique" parts, maximizing the mutual information lower bound of shared components and minimizing the upper bound (CLUB) of unique components to turn conflicts into controllable bidirectional gains.
+**Core Idea**: Factorize visual representations into "Shared + Unique" components, maximize the lower bound of mutual information for the shared components of the two flows, and minimize the upper bound (CLUB) for the unique components, turning conflict into controllable bidirectional gain.
 
 ## Method
 
 ### Overall Architecture
-DIVA is a post-training framework that does not alter the backbone architecture. The process involves: (1) Constructing two information flows for the same image-text pair $(I, T)$—the understanding flow uses a caption instruction, and the generation flow uses random masking + text conditioning for inpainting; (2) Extracting image-token hidden states from middle layers $\mathcal{I}_{mid}=\{l \mid l_{start}\leq l \leq l_{end}\}$, passing them through a shared encoder $E_{sh}^i$ and a unique encoder $E_{uni}^i$ to obtain shared/unique components; (3) Two-stage post-training: Stage 1 freezes the backbone to train encoders (cross-task conditioning + logit injection), and Stage 2 unfreezes the backbone for refinement using asymmetric contrastive + CLUB losses.
+DIVA is a post-training framework that does not modify the backbone architecture. The procedure involves: (1) Constructing two information flows for the same image-text pair $(I, T)$—the understanding flow uses a captioning instruction with the original image, while the generation flow uses random masking + text conditioning for inpainting; (2) Extracting and pooling image-token hidden states from middle layers $\mathcal{I}_{mid}=\{l \mid l_{start}\leq l \leq l_{end}\}$, passing them through shared encoders ($E_{sh}^i$) and unique encoders ($E_{uni}^i$) to obtain shared/unique components; (3) Two-stage post-training: Stage 1 freezes the backbone to train the encoders (cross-task condition injection + orthogonality constraints), and Stage 2 freezes the encoders while unfreezing the backbone, using asymmetric InfoNCE to align the shared components and CLUB to decouple the unique components.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    P["Image-Text Pair (I, T)"]
+    subgraph DUAL["Dual-Flow Construction & Middle Layer Localization (Design 1)"]
+        direction TB
+        U["Understanding Flow: Original Image + Instruction<br/>→ captioning (Low-frequency semantic bias)"]
+        G["Generation Flow: Randomly Masked Image + Text Condition<br/>→ inpainting (High-frequency detail bias)"]
+    end
+    P --> DUAL
+    DUAL --> MID["Middle Layers 8–18 extract image-token hidden states → pooling"]
+    subgraph FAC["Shared/Unique Factorization & Gated Encoders (Design 2 · Stage 1)"]
+        direction TB
+        ENC["Gated MLP Encoders: Shared + Unique<br/>yields z_sh / z_uni per flow"]
+        CTC["Cross-Task Condition Injection: Bias own logits with other flow's z_sh<br/>+ Orthogonality Constraint (Freeze backbone, train encoders)"]
+        ENC --> CTC
+    end
+    MID --> FAC
+    FAC --> S2["Mutual Information Asymmetric Alignment (Design 3 · Stage 2)<br/>InfoNCE aligns z_sh + CLUB decouples z_uni, asymmetric stop-grad"]
+    S2 --> OUT["Post-trained UMM<br/>Und. +7.82% / Gen. +8.46%"]
+```
 
 ### Key Designs
 
-1. **Dual-flow Construction and Middle Layer Positioning**:
-    - **Function**: Generate two information flows with explicit inductive biases from the same image-text anchor to serve as inputs for factorization.
-    - **Mechanism**: The understanding flow takes the original image + a template prompt $t_{prompt}$ (e.g., "Please describe this image in detail"), driven by a captioning loss $\mathcal{L}_{\text{Und}} = \mathcal{L}(f_\theta(\text{concat}(t_{question}, h_v)), t_{answer})$. The generation flow takes a corrupted image $I_{mask} = I \odot (1-M)$ with mask ratio $r \in [0.2, 0.6]$ plus the original text $T$ as condition, driven by an inpainting loss $\mathcal{L}_{\text{Gen}}$. The middle layer range is positioned based on observed effective-rank peaks, set to layers 8–18 in the paper. For each layer $\ell$, $h_i^{(\ell)} = \text{Pool}(H_i^{img,\ell}) \in \mathbb{R}^d$ is pooled.
-    - **Design Motivation**: Both flows must share a physical anchor (the same $(I,T)$ pair), otherwise shared factors are meaningless. Simultaneously, inductive biases must be significantly different—captioning elicits a low-frequency semantic flow, while inpainting elicits a high-frequency detail flow, allowing for a decomposable "shared vs. unique" structure.
+**1. Dual-Flow Construction & Middle Layer Localization: Creating Biased Flows from a Shared Anchor**
 
-2. **Shared/Unique Factorization and Gated Encoders**:
-    - **Function**: Explicitly decompose middle-layer representations into shared components $z_{sh}^{\ell,i}$ and unique components $z_{uni}^{\ell,i}$, corresponding to the mutual information decomposition $I(X_1, X_2; Y) = \Pi_{sh} + \Pi_{uni}^i + \Pi_{uni}^j + \epsilon_{noise}$.
-    - **Mechanism**: For each flow $i \in \{U, G\}$, two 3-layer Gated MLPs are introduced: $z_{sh}^{\ell,i} = g_{sh}^{(i)}(\ell) \odot \phi_{sh}(h_i^{(\ell)})$ and $z_{uni}^{\ell,i} = g_{uni}^{(i)}(\ell) \odot \phi_{uni}(h_i^{(\ell)})$, where $g_{(\cdot)}^{(i)}(\ell) = \sigma(W_{(\cdot)}^i h_i^{(\ell)})$ is an element-wise soft gate. During Stage 1, the backbone is frozen, and factorization outputs are injected as logit biases: $\tilde{s}_U = s_U + A_U z_{sh}^{\ell,G} + B_U z_{uni}^{\ell,U}$ and $\tilde{s}_G = s_G + A_G z_{sh}^{\ell,U} + B_G z_{uni}^{\ell,G}$ (notably using cross-task injection—the understanding flow uses the shared component from the generation flow). Encoders are trained with native task losses. An additional orthogonality constraint $\mathcal{L}_\perp = \sum_i \|(\mathbf{z}_{sh}^i)^\top \mathbf{z}_{uni}^i\|_F^2$ prevents the unique encoder from encoding shared semantics.
-    - **Design Motivation**: Cross-task conditioning forces the shared encoder to learn components that are "useful for the other flow," otherwise logit injection wouldn't reduce loss. Orthogonality prevents the two encoders from collapsing into the same subspace. This setup stabilizes the decomposition in Stage 1, preventing catastrophic drift when the backbone is unfrozen in Stage 2.
+To decompose "Shared vs. Unique," one must first have two flows that share a physical anchor but possess significantly different inductive biases. DIVA starts with the same image-text pair $(I, T)$ and constructs two flows: the understanding flow takes the original image and a template prompt $t_{prompt}$ (e.g., "Please describe this image in detail"), driven by a captioning loss $\mathcal{L}_{\text{Und}} = \mathcal{L}(f_\theta(\text{concat}(t_{question}, h_v)), t_{answer})$, which naturally induces a low-frequency semantic flow. The generation flow takes a corrupted image $I_{mask} = I \odot (1-M)$ with a mask ratio $r \in [0.2, 0.6]$ and the original text $T$ as the condition, driven by an inpainting loss $\mathcal{L}_{\text{Gen}}$, inducing a high-frequency detail flow. Both flows pool image-token hidden states $h_i^{(\ell)} = \text{Pool}(H_i^{img,\ell}) \in \mathbb{R}^d$ for each layer $\ell$.
 
-3. **Mutual Information-driven Asymmetric Alignment (Stage 2)**:
-    - **Function**: After unfreezing the backbone, aligns shared components in the representation space and decouples unique components to transform conflict into synergy.
-    - **Mechanism**: Shared components are maximized via InfoNCE lower bound $I_{sha}(X_i^s; X_j^s) = \mathbb{E}_{x_i, x_j^+}[\log \frac{\exp f(x_i, x_j^+)}{\sum_k \exp f(x_i, x_j^-)}]$. Unique components are minimized via the CLUB upper bound $I_{uni}(X_i^u; X_j^u)$ to prevent the shared space from leaking task-specific information or the unique space from redundantly encoding shared semantics. To prevent loss dominance due to scale differences (understanding vs. generation), asymmetric alignment with stop-gradients is used: $\mathcal{L}_{U \to G} = -\log \frac{\exp(\text{sim}(z_{sh}^U, \text{sg}[z_{sh}^G])/\tau)}{\sum_j \exp(\text{sim}(z_{sh}^U, \text{sg}[z_{sh}^{G,j}])/\tau)}$ and symmetrically for $\mathcal{L}_{G \to U}$. Final total loss: $\mathcal{L}_{total} = \mathcal{L}_{U \to G} + \mathcal{L}_{G \to U} + \mathcal{L}_{uni} + \mathcal{L}_{Und} + \mathcal{L}_{Gen}$.
-    - **Design Motivation**: InfoNCE + CLUB is a standard combination for mutual information bounds; the former encourages proximity for shared elements, while the latter enforces distance for unique ones. Stop-gradients stabilize optimization under heterogeneous task scales, ensuring a large loss on one side does not distort the representation of the other.
+The middle layer range (set to 8–18 in the paper) is localized based on the observed peak in effective-rank—where gradient conflict is weakest and rank surges, indicating where the two flows spontaneously diverge. Shared anchors ensure the "shared factor" is meaningful, while bias differences ensure a decomposable structure exists.
+
+**2. Shared/Unique Factorization & Gated Encoders: Explicitly Splitting Representations**
+
+With dual flows, DIVA explicitly splits the representation of each layer into a shared component $z_{sh}^{\ell,i}$ and a unique component $z_{uni}^{\ell,i}$, corresponding to the mutual information decomposition $I(X_1, X_2; Y) = \Pi_{sh} + \Pi_{uni}^i + \Pi_{uni}^j + \epsilon_{noise}$. Each flow $i \in \{U, G\}$ is equipped with two 3-layer Gated MLPs, modulated by element-wise soft gates $g_{(\cdot)}^{(i)}(\ell) = \sigma(W_{(\cdot)}^i h_i^{(\ell)})$: $z_{sh}^{\ell,i} = g_{sh}^{(i)}(\ell) \odot \phi_{sh}(h_i^{(\ell)})$ and $z_{uni}^{\ell,i} = g_{uni}^{(i)}(\ell) \odot \phi_{uni}(h_i^{(\ell)})$.
+
+Stage 1 freezes the backbone and injects the factorized outputs as logit biases **across tasks**—the logit for the understanding flow uses the shared component of the generation flow: $\tilde{s}_U = s_U + A_U z_{sh}^{\ell,G} + B_U z_{uni}^{\ell,U}$ and $\tilde{s}_G = s_G + A_G z_{sh}^{\ell,U} + B_G z_{uni}^{\ell,G}$, training the encoders with native task losses. This cross-task conditioning is essential: it forces the components learned by the shared encoder to be "useful for the other flow"; otherwise, logit injection would fail to reduce loss, preventing the shared factor from degrading into task-specific information. Additionally, an orthogonality constraint $\mathcal{L}_\perp = \sum_i \|(\mathbf{z}_{sh}^i)^\top \mathbf{z}_{uni}^i\|_F^2$ prevents the unique encoder from redundantly encoding shared semantics.
+
+**3. Mutual Information Driven Asymmetric Alignment (Stage 2): Turning Conflict into Mutual Gain**
+
+Stage 2 unfreezes the backbone, using mutual information tools to align shared components and decouple unique ones. For shared components, InfoNCE maximizes the lower bound $I_{sha}(X_i^s; X_j^s) = \mathbb{E}[\log \frac{\exp f(x_i, x_j^+)}{\sum_k \exp f(x_i, x_j^-)}]$ to bring shared information together. For unique components, CLUB minimizes the upper bound $I_{uni}(X_i^u; X_j^u)$ to force unique information apart, preventing the shared space from absorbing task-private information or the unique space from redundant encoding.
+
+Given the scale disparity between understanding and generation losses, stop-gradient is used for asymmetric alignment: $\mathcal{L}_{U \to G} = -\log \frac{\exp(\text{sim}(z_{sh}^U, \text{sg}[z_{sh}^G])/\tau)}{\sum_j \exp(\text{sim}(z_{sh}^U, \text{sg}[z_{sh}^{G,j}])/\tau)}$, plus the symmetric $\mathcal{L}_{G \to U}$. This prevents a sudden loss spike in one task from distorting the representation of the other. The total loss combines five terms: $\mathcal{L}_{total} = \mathcal{L}_{U \to G} + \mathcal{L}_{G \to U} + \mathcal{L}_{uni} + \mathcal{L}_{Und} + \mathcal{L}_{Gen}$.
 
 ### Loss & Training
-Two-stage post-training: Stage 1 uses native task losses + $\mathcal{L}_\perp$ to train encoders (backbone frozen, shared-only warmup followed by unique residuals). Stage 2 unfreezes the backbone and optimizes via five combined terms in $\mathcal{L}_{total}$. Training data consists of 200K image-text pairs (60K each from CapsFusion-120M and Infinity-MM, 70K each from JourneyDB and MidjourneyV6, with captions refined by Qwen2.5-VL-32B). Backbones include Show-o (1.5B), Nexus-Gen (7B), and Liquid (7B).
+Two-stage post-training: Stage 1 uses native task loss + $\mathcal{L}_\perp$ to train shared/unique encoders (backbone frozen, warming up shared-only before adding unique residual). Stage 2 unfreezes the backbone for joint optimization with the five terms of $\mathcal{L}_{total}$. Training data consists of 200K image-text pairs (60K each from CapsFusion-120M and Infinity-MM, 70K each from JourneyDB and MidjourneyV6, with captions refined by Qwen2.5-VL-32B). Targeted backbones include Show-o (1.5B), Nexus-Gen (7B), and Liquid (7B).
 
 ## Key Experimental Results
 
 ### Main Results
-Post-training evaluation on three UMMs across 8 benchmarks:
+Post-training was performed on three representative UMMs, compared across 8 understanding/generation benchmarks:
 
 | Backbone | Setting | MMMU | POPE | MMVet | GenEval | DPG-Bench | WISE |
 |------|------|------|------|-------|---------|-----------|------|
@@ -79,7 +98,7 @@ Post-training evaluation on three UMMs across 8 benchmarks:
 | Liquid (7B) | Base | 30.2 | 77.4 | 36.9 | 0.70 | 80.63 | 0.41 |
 | Liquid (7B) | +DIVA | **34.0 (+3.8)** | **84.5 (+7.1)** | **37.8** | **0.81 (+0.11)** | **83.47 (+2.84)** | **0.44** |
 
-Understanding improved by an average of +7.82%, and generation by +8.46%. All three backbones showed **unidirectional gains**, providing credible evidence for "mutual synergy."
+Understanding improved by an average of +7.82%, and generation by +8.46%. All three backbones showed **consistent gains**—credible evidence of "mutual reinforcement."
 
 ### Ablation Study
 | Configuration | MMMU | POPE | GenEval | DPG-Bench |
@@ -94,33 +113,33 @@ Understanding improved by an average of +7.82%, and generation by +8.46%. All th
 | Linear+LN encoder | 29.4 | 75.9 | 0.71 | 72.37 |
 
 ### Key Findings
-- Simple SFT on the same 200K data yields minimal gains or even degradation (GenEval 0.69 → 0.67), proving DIVA's success is due to structured factorization rather than data volume.
-- Removing the CLUB term ($I_{uni}$) results in the largest drop (MMMU -4.1), indicating that "strict decoupling of unique components" is more critical than "aligning shared components"—the former prevents interference while the latter accelerates transfer.
-- Performance is sensitive but not fragile to the middle layer range: 8–18 is optimal, 7–19 is nearly identical, and 9–17 drops by 1 point, confirming that the effective-rank peak accurately identifies a stable working zone.
-- Gated MLP encoders outperform Linear+LN by 3 points (MMMU 32.4 vs 29.4), highlighting the importance of soft gates for hierarchical feature filtering.
+- Simple SFT on the same 200K data showed negligible gains or even drops (GenEval 0.69 → 0.67), proving DIVA's success is due to structured factorization, not just data volume.
+- Removing the CLUB term ($I_{uni}$) caused the largest drop (MMMU -4.1), indicating that "strictly decoupling unique components" is more critical than "aligning shared components"—the former prevents interference, while the latter accelerates transfer.
+- Results are sensitive but not fragile regarding the middle-layer range: 8–18 is optimal, 7–19 is nearly identical, and 9–17 drops by 1 point, validating the effective-rank geometric observation.
+- Gated MLP encoders outperform Linear+LN by 3 points (MMMU 32.4 vs 29.4), highlighting the importance of soft-gate feature filtering.
 
 ## Highlights & Insights
-- Reinterpreting "UMM mutual interference" as "spontaneous decoupling in middle layers that isn't being explicitly utilized" is the paper's most significant insight. The empirical evidence from inverted-parabolic gradient conflicts and middle-layer effective rank peaks is robust.
-- The combination of Shared/Unique factorization + InfoNCE/CLUB is a "textbook" application of mutual information decomposition, but applying it to multimodal post-training while using asymmetric stop-gradients to handle task scale heterogeneity is an impressive engineering feat.
-- Cross-task conditioning (using the shared factor of the opposing flow to bias one's own logit) is the key to Stage 1, as it enforces a "cross-task usability" constraint on the shared factor, preventing it from devolving into a copy of task-specific features.
-- The paradigm is extensible to other scenarios where tasks compete for the same backbone, such as video understanding/generation, 3D reconstruction/rendering, or ASR/TTS.
+- The reinterpretation of "UMM mutual interference" as "spontaneous middle-layer decoupling that isn't explicitly utilized" is the paper's most valuable insight. The empirical evidence via gradient conflict and effective-rank peaks is compelling.
+- Shared/unique factorization combined with InfoNCE/CLUB is a "textbook" approach to mutual information decomposition, but applying it to multimodal post-training with asymmetric stop-gradient to handle task scale heterogeneity is a noteworthy engineering feat.
+- Cross-task conditioning (biasing one's own logits with the other flow's shared factor) is the key to Stage 1, ensuring the shared factor has "cross-task utility."
+- This paradigm is directly transferable to other scenarios where tasks compete for the same backbone, such as video understanding + generation, 3D reconstruction + rendering, or ASR + TTS.
 
 ## Limitations & Future Work
-- The 200K post-training data size is relatively small for UMM standards; the stability of the shared/unique structure when scaled to 1M+ samples is unverified.
-- The middle layer range (8-18) was set manually for an 18-layer backbone; the paper lacks a systematic method for deeper models (e.g., 32-layer Llama-style).
-- All experimented backbones are Autoregressive (AR); effectiveness on hybrid AR + Diffusion (BLIP3-o) or MoT (Bagel) architectures remains untested.
-- CLUB upper bound estimates can exhibit high variance and instability in high dimensions; although stop-gradients help, a formal convergence analysis is missing.
+- The 200K post-training dataset is relatively small for UMMs; stability of the shared/unique structure at 1M+ scales remains unverified.
+- The middle layer range (8–18) was set manually for an 18-layer backbone; a systematic method for deeper models (e.g., 32-layer Llama-style) is missing.
+- All three backbones are AR-based; effectiveness on AR + Diffusion hybrids (BLIP3-o) or MoT (Bagel) was not explored.
+- CLUB upper bound estimation has high variance in high dimensions; although the paper uses asymmetric stop-gradient, a convergence analysis is absent.
 
 ## Related Work & Insights
-- **vs. Bagel / BLIP3-o (Architectural Separation)**: These models use MoT or independent visual encoders to isolate tasks. DIVA proves that "representation decomposition within a shared backbone" is sufficient to match or exceed separate schemes (e.g., Show-o + DIVA 1.5B achieving 80% of Janus-Pro 7B's GenEval score) with superior parameter efficiency.
-- **vs. Show-o / Liquid / Nexus-Gen Baselines**: DIVA is a plug-in post-training method that improves all three backbones without changing architecture, suggesting it addresses a **universal** structural issue in UMMs.
-- **vs. General MoE / LoRA Branches**: While MoE uses routers to divert flows at the token level, DIVA uses encoders to divert at the representation level. The former modifies architecture and increases inference costs, whereas the latter adds only lightweight MLPs in middle layers, which can potentially be discarded after fine-tuning.
+- **vs. Bagel / BLIP3-o (Architecture Separation)**: These models isolate tasks using MoT or independent visual encoders. DIVA conversely proves that "representation decomposition within a shared backbone" is sufficient to match or exceed separation schemes (Show-o +DIVA 1.5B reaches 80% of Janus-Pro 7B's GenEval score) with much higher parameter efficiency.
+- **vs. Show-o / Liquid / Nexus-Gen baselines**: DIVA is a plug-in post-training method that leaves architecture intact. Gains across three backbones prove it addresses a **universal** structural issue in UMMs rather than a specific model bug.
+- **vs. General MoE / LoRA branching**: MoE diverts flows at the token level, whereas DIVA diverts at the representation level via encoders. The former modifies architecture and increases inference costs, while the latter only adds lightweight MLPs in middle layers, which can even be discarded after fine-tuning the backbone.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ The empirical validation of "spontaneous middle-layer decoupling in UMMs" and the prescribed "explicit factorization + alignment/decoupling" is a first in the field.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Solid horizontal comparisons across three backbones and 8 benchmarks with 5-dimensional ablations; however, scaling laws and hybrid architecture validations are missing.
-- Writing Quality: ⭐⭐⭐⭐ Clear logical progression from observation to method; some redundancies in formulas and symbols exist (e.g., undefined dimensions for $W_{sh}^i, W_{uni}^i$).
-- Value: ⭐⭐⭐⭐⭐ Provides the first provably effective lightweight solution for "how to post-train UMMs," which is highly valuable for industrial UMM deployment.
+- Novelty: ⭐⭐⭐⭐⭐ The empirical validation of "UMM middle-layer spontaneous decoupling" + the prescription of "explicit factorization for shared alignment and unique decoupling" is a first for the unified multimodal field.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Solid cross-comparison of 3 backbones across 8 benchmarks; ablation covers 5 dimensions, though scaling law and hybrid architecture validation are missing.
+- Writing Quality: ⭐⭐⭐⭐ Clear logical chain from observation to method. Formulas are generally precise, though some dimensions are not explicitly defined.
+- Value: ⭐⭐⭐⭐⭐ Provides the first demonstrably effective lightweight scheme for UMM post-training, highly valuable for industrial UMM deployment.
 
 <!-- RELATED:START -->
 
@@ -128,11 +147,11 @@ Understanding improved by an average of +7.82%, and generation by +8.46%. All th
 
 ## Related Papers
 
-- [\[ICML 2026\] Breaking Dual Bottlenecks: Evolving Unified Multimodal Models into Self-Adaptive Interleaved Visual Reasoners](breaking_dual_bottlenecks_evolving_unified_multimodal_models_into_self-adaptive_.md)
 - [\[ICML 2026\] Seeing is Understanding: Unlocking Causal Attention into Modality-Mutual Attention for Multimodal LLMs](seeing_is_understanding_unlocking_causal_attention_into_modality-mutual_attentio.md)
+- [\[ICML 2026\] Breaking Dual Bottlenecks: Evolving Unified Multimodal Models into Self-Adaptive Interleaved Visual Reasoners](breaking_dual_bottlenecks_evolving_unified_multimodal_models_into_self-adaptive_.md)
+- [\[CVPR 2026\] TUNA: Taming Unified Visual Representations for Native Unified Multimodal Models](../../CVPR2026/multimodal_vlm/tuna_taming_unified_visual_representations_for_native_unified_multimodal_models.md)
 - [\[ICML 2026\] Calibrated Multimodal Representation Learning with Missing Modalities](calibrated_multimodal_representation_learning_with_missing_modalities.md)
 - [\[NeurIPS 2025\] Unified Reinforcement and Imitation Learning for Vision-Language Models](../../NeurIPS2025/multimodal_vlm/unified_reinforcement_and_imitation_learning_for_vision-language_models.md)
-- [\[ICLR 2026\] Modal Aphasia: Can Unified Multimodal Models Describe Images From Memory?](../../ICLR2026/multimodal_vlm/modal_aphasia_can_unified_multimodal_models_describe_images_from_memory.md)
 
 </div>
 

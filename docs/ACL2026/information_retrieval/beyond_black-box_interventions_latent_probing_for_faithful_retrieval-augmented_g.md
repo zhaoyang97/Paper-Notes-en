@@ -2,71 +2,71 @@
 title: >-
   [Paper Note] Beyond Black-Box Interventions: Latent Probing for Faithful Retrieval-Augmented Generation
 description: >-
-  [ACL 2026][Information Retrieval & RAG][RAG Faithfulness] Proposes ProbeRAG, which identifies the linear separability of conflicting/aligned knowledge in the latent space of LLMs. It designs a three-stage framework (fine…
+  [ACL 2026][Information Retrieval & RAG][Paper Note] The authors propose ProbeRAG, a three-stage framework (fine-grained knowledge pruning → latent conflict probing → conflict-aware attention) that addresses RAG faithfulness from the internal mechanisms by discovering the linear separability of conflicting/aligned knowledge in the LLM latent space.
 tags:
-  - "ACL 2026"
-  - "Information Retrieval & RAG"
-  - "RAG Faithfulness"
-  - "Knowledge Conflict"
-  - "Latent Space Probing"
-  - "Attention Guidance"
-  - "Context Pruning"
+  - ACL 2026
+  - Information Retrieval & RAG
 date: 2026-05-08
-content_hash: 47a157bc2d4205da
+content_hash: 92fd52e5b2446eb5
 ---
-
 # Beyond Black-Box Interventions: Latent Probing for Faithful Retrieval-Augmented Generation
 
 **Conference**: ACL 2026 Findings  
 **arXiv**: [2510.12460](https://arxiv.org/abs/2510.12460)  
 **Code**: [GitHub](https://github.com/XMUDeepLIT/ProbeRAG)  
 **Area**: Information Retrieval / RAG  
-**Keywords**: RAG Faithfulness, Knowledge Conflict, Latent Space Probing, Attention Guidance, Context Pruning
+**Keywords**: RAG Faithfulness, Knowledge Conflict, Latent Probing, Attention Guidance, Contextual Pruning
 
 ## TL;DR
 
-Proposes ProbeRAG, which identifies the linear separability of conflicting/aligned knowledge in the latent space of LLMs. It designs a three-stage framework (fine-grained knowledge pruning → latent space conflict probing → conflict-aware attention) to address RAG faithfulness from the perspective of internal model mechanisms.
+The authors propose ProbeRAG, a three-stage framework (fine-grained knowledge pruning → latent conflict probing → conflict-aware attention) that addresses RAG faithfulness from the internal mechanisms by discovering the linear separability of conflicting/aligned knowledge in the LLM latent space.
 
 ## Background & Motivation
 
-**Background**: RAG systems enhance LLMs with external knowledge to effectively mitigate hallucination. However, in practice, RAG faces challenges regarding context faithfulness: generated content may be inconsistent with the retrieved context or fail to fully utilize external evidence.
+**Background**: RAG systems enhance LLMs with external knowledge to effectively mitigate hallucination issues. In practice, however, RAG often faces challenges regarding contextual faithfulness: generated content may be inconsistent with the retrieved context or fail to utilize external evidence properly.
 
-**Limitations of Prior Work**: Existing methods treat the LLM as a black box and improve faithfulness through external interventions: (1) Prompting methods are sensitive to prompt variations and show poor generalization; (2) Decoding calibration methods are fragile in noisy contexts; (3) DPO preference optimization requires large amounts of high-quality preference data. These methods cannot diagnose "when" and "why" conflicts occur.
+**Limitations of Prior Work**: Existing methods treat LLMs as a black box and improve faithfulness through external interventions: (1) Prompting methods are sensitive to specific prompts and suffer from poor generalization; (2) Decoding calibration methods are fragile under noisy contexts; (3) DPO preference optimization requires substantial high-quality preference data. These methods cannot diagnose "when" and "why" conflicts occur.
 
-**Key Challenge**: External interventions are correlational rather than causal—they can statistically associate inputs with faithful outputs but cannot diagnose the root cause of model failure in specific conflict instances.
+**Key Challenge**: External interventions are correlational rather than causal—they can statistically associate inputs with faithful outputs but cannot diagnose why a model fails in specific conflict instances.
 
-**Goal**: Go beyond black-box interventions by analyzing and resolving knowledge conflict issues from the internal latent space of the model.
+**Goal**: To move beyond black-box interventions and analyze/resolve knowledge conflict issues through internal latent space analysis.
 
-**Key Insight**: Analysis of the LLM latent space reveals that conflicting and aligned knowledge are linearly separable in latent states, and context noise systematically increases the entropy of these latent states.
+**Key Insight**: Analyzing the LLM latent space reveals that conflicting and aligned knowledge are linearly separable in latent states, while contextual noise systematically increases the entropy of these latent states.
 
-**Core Idea**: Train a lightweight probe to detect conflict features in the latent space, then employ an attention guidance loss to encourage the model to focus more on the conflicting knowledge.
+**Core Idea**: Train a lightweight probe to detect conflict features in the latent space, then employ an attention guidance loss to force the model to focus more on conflicting knowledge.
 
 ## Method
 
 ### Overall Architecture
 
-ProbeRAG consists of three stages: (1) Decomposing context into fine-grained knowledge statements and filtering irrelevant information (denoising); (2) Utilizing latent space probes to detect knowledge statements that conflict with the model's parametric knowledge; (3) Marking conflicting knowledge with a `<conflict>` tag and training the model to prioritize such knowledge in attention layers.
+ProbeRAG does not treat the LLM as a black box for external intervention. Instead, based on the observation that "conflicting knowledge is linearly separable in the latent space," it addresses RAG faithfulness through the model's internal mechanisms. Given a query and retrieved context, the framework processes through three sequential stages: context is first decomposed into fine-grained knowledge sentences and irrelevant items are filtered for denoising; a lightweight probe then detects which sentences conflict with parametric knowledge via latent states; finally, conflicting sentences are tagged with `<conflict>`, and the model is trained to shift attention toward them in the attention layers, ultimately producing responses that are more faithful to external evidence.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Query Q + Retrieval Context"] --> B["Fine-grained Knowledge Pruning<br/>Decompose into sentence-level units → Embed similarity scoring → Retain top-k"]
+    B --> C["Latent Conflict Probe<br/>Freeze model latent states → Lightweight linear classifier → Conflict/Aligned labels"]
+    C -->|Mark sentences with conflict tag| D["Conflict-aware Attention Training<br/>Attention guidance loss L_Attn pulls attention toward conflict tokens"]
+    D --> E["More faithful response to external evidence"]
+```
 
 ### Key Designs
 
-1.  **Fine-grained Knowledge Pruning**:
-    - **Function**: Reduces context noise to protect the separability of latent conflict features.
-    - **Mechanism**: Use an LLM to decompose context into independent sentence-level knowledge statements $\{K_1, K_2, ..., K_n\}$, and filter irrelevant statements using embedding similarity $f(Q, K_i) = \langle q, k_i \rangle$, retaining the top-$k$.
-    - **Design Motivation**: Preliminary studies found that context noise systematically increases latent state entropy, blurring the boundary between conflicting and aligned knowledge.
+**1. Fine-grained Knowledge Pruning: Denoising to preserve the separability of conflict features**
 
-2.  **Latent Space Conflict Probe**:
-    - **Function**: Detects whether knowledge statements conflict with the model's parametric knowledge.
-    - **Mechanism**: Train a lightweight classifier $\mathcal{P}(\mathcal{M}(K_i)) \in \{0, 1\}$ on the MQuAKE knowledge editing dataset, using latent states from a frozen model as input to predict conflict/alignment labels.
-    - **Design Motivation**: Conflicting/aligned knowledge is linearly separable in the latent space (confirmed via t-SNE visualization and JSD analysis); a probe can exploit this feature.
+Preliminary research found that contextual noise systematically elevates latent state entropy and blurs the boundary between conflicting and aligned knowledge; therefore, denoising is the necessary first step. The authors use an LLM to decompose context into sentence-level independent knowledge units $\{K_1, K_2, ..., K_n\}$, then score each unit against the query using embedding similarity $f(Q, K_i) = \langle q, k_i \rangle$, retaining only the top-k. Pruning reduces the burden on the subsequent probe and suppresses residual noise, allowing the linear boundary in the latent space to clarify—as confirmed by ablation experiments where probe accuracy dropped significantly without pruning.
 
-3.  **Conflict-Aware Attention Training**:
-    - **Function**: Guides the model to focus on conflicting knowledge during generation to remain faithful to the context.
-    - **Mechanism**: Introduces an attention guidance loss $\mathcal{L}_{\text{Attn}} = \frac{1}{|P|}\sum_{(i,j) \in P}(1 - \alpha_{ij})$ to force subsequent tokens to assign higher attention weights to conflict tokens. The total loss is $\mathcal{L} = (1-\lambda)\mathcal{L}_{CE} + \lambda\mathcal{L}_{Attn}$.
-    - **Design Motivation**: Models tend to prioritize parametric knowledge over external context, necessitating explicit guidance for attention allocation.
+**2. Latent Conflict Probe: Using a linear classifier to read out conflict signals**
+
+t-SNE visualization and JSD analysis show that conflicting and aligned knowledge are linearly separable in LLM latent states. This property can be inversely exploited. In this work, a lightweight classifier $\mathcal{P}(\mathcal{M}(K_i)) \in \{0, 1\}$ is trained on the MQuAKE knowledge editing dataset. It takes the latent states of the frozen model for knowledge unit $K_i$ as input and outputs binary conflict/aligned labels. The probe itself is extremely lightweight (a simple classifier) yet accurately locates statements in the context that "clash with model memory." Despite being trained only on MQuAKE, it generalizes well to RAG domain data.
+
+**3. Conflict-aware Attention Training: Explicitly pulling attention toward conflicting knowledge**
+
+Models naturally tend to rely on parametric memory and ignore external context; detection alone is insufficient, as the model must be forced to actually attend to conflicting knowledge during generation. Therefore, an attention guidance loss $\mathcal{L}_{\text{Attn}} = \frac{1}{|P|}\sum_{(i,j) \in P}(1 - \alpha_{ij})$ is introduced. This loss penalizes low attention weights $\alpha_{ij}$ for each Position pair $P$ representing "subsequent token → conflict token," forcing the model to allocate more focus to conflict tokens. It is optimized jointly with cross-entropy as $\mathcal{L} = (1-\lambda)\mathcal{L}_{CE} + \lambda\mathcal{L}_{Attn}$, where $\lambda$ regulates the trade-offs between "answering correctly" and "attending accurately," directly correcting the model's over-reliance on parametric knowledge at the attention layer level.
 
 ### Loss & Training
 
-A joint objective combines cross-entropy and attention guidance loss, with $\lambda$ controlling the trade-off. The probe is trained on the MQuAKE dataset while maintaining generalization across RAG domain data. Conflicting knowledge is marked with special tokens `<conflict>` / `</conflict>`.
+The joint goal consists of cross-entropy plus attention guidance loss, balanced by $\lambda$. The probe is trained on the MQuAKE dataset while maintaining generalization to RAG domains. Conflicting knowledge in the sequence is wrapped with special `<conflict>` / `</conflict>` tokens to allow the attention guidance loss to target specific locations.
 
 ## Key Experimental Results
 
@@ -78,60 +78,61 @@ A joint objective combines cross-entropy and attention guidance loss, with $\lam
 | LLaMA-3.1-8B | Baseline RAG | ~59% | - | - |
 | LLaMA-3.1-8B | ProbeRAG | **Significant Gain** | **Significant Gain** | **Significant Gain** |
 
-### Ablation Study
-
-| Analysis | Finding |
-|------|------|
-| Latent state JSD increases with layer depth | Deeper layers capture more abstract conflict features; larger models show more significant JSD. |
-| Impact of noise | Contextual noise systematically blurs the conflict/alignment boundary. |
-| Probe generalization | Trained on MQuAKE, the probe generalizes well to RAG evaluation data. |
-| Attention vs. ICL | Attention guidance significantly outperforms pure in-context learning. |
-
 ### Key Findings
 
-- Conflicting and aligned knowledge are linearly separable in the latent space (validated across all model sizes).
-- Conflict features primarily emerge in the middle and late layers, consistent with the hierarchical representation hypothesis of Transformers.
-- Fine-grained knowledge pruning is critical—without it, the probe accuracy drops significantly.
-- Attention guidance is more effective and less data-intensive than external interventions like DPO.
+| Analysis | Discovery |
+|------|------|
+| Latent state JSD increases with depth | Deeper layers capture more abstract conflict features; JSD is more significant in larger models |
+| Impact of noise | Contextual noise systematically blurs the conflict/aligned boundary |
+| Probe generalization | Trained on MQuAKE, generalizes well to RAG datasets |
+| Attention vs ICL | Attention guidance significantly outperforms pure in-context learning |
+
+- Conflicting and aligned knowledge are linearly separable in the latent space (verified across all model sizes).
+- Conflict features primarily appear in the middle to late layers, consistent with Transformer hierarchical representation hypotheses.
+- Fine-grained knowledge pruning is critical—without it, the probe's accuracy significantly decreases.
+- Attention guidance is more effective than external interventions like DPO and has lower data requirements.
 
 ## Highlights & Insights
 
-- Shifting from black-box interventions to internal mechanism analysis represents a significant paradigm shift.
+- The shift from black-box intervention to internal mechanism analysis represents a significant paradigm shift.
 - The discovery of "conflict features" provides theoretical value, explaining why LLMs favor parametric knowledge.
-- The three-stage framework (denoising → detection → guidance) follows a clear and logical progression.
-- The probe is lightweight (a simple classifier) and easy to deploy.
+- The logic of the three-stage framework (denoise → detect → guide) is exceptionally clear.
+- Probes are lightweight (simple classifiers) and easy to deploy.
 
 ## Limitations & Future Work
 
-- Knowledge decomposition relies on an external LLM (GPT-4o), increasing costs.
-- The probe requires labeled conflict/alignment data for training.
+- Knowledge decomposition depends on external LLMs (GPT-4o), which increases costs.
+- The probe requires labeled conflict/aligned data for training.
 - Attention guidance training requires model fine-tuning.
-- Future work may explore inference-time conflict mitigation strategies that do not require fine-tuning.
+- Future work could explore training-free, inference-time conflict mitigation solutions.
 
 ## Related Work & Insights
 
-- Linear Representation Hypothesis (Park et al., 2023): Linear separability of semantic concepts in latent space.
-- Knowledge Editing (MQuAKE, Zhong et al., 2023): Provides conflicting/aligned knowledge pairs.
-- RAG Faithfulness Methods: Self-RAG, CRAG, etc.
-- Latent space probing is a powerful tool for understanding and intervening in LLM behavior.
+- Linear Representation Hypothesis (Park et al., 2023): Reflects the linear separability of semantic concepts in latent space.
+- Knowledge Editing (MQuAKE, Zhong et al., 2023): Provides conflict/aligned knowledge pairs.
+- RAG faithfulness methods: Self-RAG, CRAG, etc.
+- Latent probing is a powerful tool for understanding and intervening in LLM behavior.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐⭐ Solves RAG faithfulness from a latent space perspective and discovers conflict features.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Comprehensive across multiple models and datasets, including thorough preliminary research.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ Extremely clear logical chain from discovery to methodology.
-- **Value**: ⭐⭐⭐⭐⭐ Provides mechanistic understanding and practical solutions for RAG faithfulness.
+- Novelty: ⭐⭐⭐⭐⭐ Addresses RAG faithfulness from a latent space perspective and discovers conflict features.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive multi-model and multi-dataset evaluation with sufficient preliminary research and ablation.
+- Writing Quality: ⭐⭐⭐⭐⭐ Extremely clear logical chain from findings to proposed method.
+- Value: ⭐⭐⭐⭐⭐ Provides Mechanistic understanding and solutions for the RAG faithfulness problem.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+</div>
+
+<!-- RELATED:END -->
 
 ## Related Papers
 
 - [\[ACL 2026\] CiteGuard: Faithful Citation Attribution for LLMs via Retrieval-Augmented Validation](citeguard_faithful_citation_attribution_for_llms_via_retrieval-augmented_validat.md)
+- [\[ACL 2025\] FaithfulRAG: Fact-Level Conflict Modeling for Context-Faithful Retrieval-Augmented Generation](../../ACL2025/information_retrieval/faithfulrag_fact_level_conflict.md)
 - [\[ACL 2026\] Language-Coupled Reinforcement Learning for Multilingual Retrieval-Augmented Generation](language-coupled_reinforcement_learning_for_multilingual_retrieval-augmented_gen.md)
 - [\[ACL 2026\] Feedback Adaptation for Retrieval-Augmented Generation](feedback_adaptation_for_retrieval-augmented_generation.md)
-- [\[ACL 2026\] Disco-RAG: Discourse-Aware Retrieval-Augmented Generation](disco-rag_discourse-aware_retrieval-augmented_generation.md)
 - [\[ACL 2026\] MASS-RAG: Multi-Agent Synthesis Retrieval-Augmented Generation](mass-rag_multi-agent_synthesis_retrieval-augmented_generation.md)
 
 </div>

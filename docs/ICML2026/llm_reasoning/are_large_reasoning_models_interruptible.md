@@ -2,127 +2,141 @@
 title: >-
   [Paper Note] Are Large Reasoning Models Interruptible?
 description: >-
-  [ICML 2026][LLM Reasoning][Interruptible reasoning] This paper shifts the evaluation of large reasoning models from static problems to dynamic environments where models are interrupted by users or receive mid-way updates…
+  [ICML 2026][LLM Reasoning][Paper Note] This paper shifts the evaluation of large reasoning models from static problem-solving to dynamic environments where models may be interrupted or receive mid-generation updates. The authors construct evaluation protocols for mathematics and programming and identify three consistent failure modes: reasoning leakage, pan
 tags:
-  - "ICML 2026"
-  - "LLM Reasoning"
-  - "Interruptible reasoning"
-  - "dynamic context"
-  - "long reasoning models"
-  - "reasoning robustness"
-  - "evaluation benchmarks"
+  - ICML 2026
+  - LLM Reasoning
 date: 2026-05-08
-content_hash: 9da5e738adbc4b09
+content_hash: be8bc0f2bba13f85
 ---
-
 # Are Large Reasoning Models Interruptible?
 
 **Conference**: ICML 2026  
 **arXiv**: [2510.11713](https://arxiv.org/abs/2510.11713)  
-**Code**: Authors released code and data, see paper project page  
+**Code**: The authors have released code and data; see the project page in the paper.  
 **Area**: LLM Reasoning  
-**Keywords**: Interruptible reasoning, dynamic context, long reasoning models, reasoning robustness, evaluation benchmarks  
+**Keywords**: Interruptible Reasoning, Dynamic Context, Long Reasoning Models, Reasoning Robustness, Evaluation Benchmark  
 
 ## TL;DR
-This paper shifts the evaluation of large reasoning models from static problems to dynamic environments where models are interrupted by users or receive mid-way updates. It constructs math and programming evaluation protocols and identifies three stable failure modes: reasoning leakage, panicked answering, and self-doubt.
+This paper shifts the evaluation of large reasoning models from static problem-solving to dynamic environments where models may be interrupted or receive mid-generation updates. The authors construct evaluation protocols for mathematics and programming and identify three consistent failure modes: reasoning leakage, panic answering, and self-doubt.
 
 ## Background & Motivation
-**Background**: Large reasoning models typically generate long explicit reasoning trajectories before providing a final answer. Existing math and code evaluations mostly assume that the problem, context, and user goals remain constant during generation, requiring the model to deliver the answer only after a complete generation.
+**Background**: Large reasoning models typically generate long, explicit reasoning traces before providing a final answer. Current evaluations for mathematics and code generally assume that the problem, context, and user objectives remain static during generation, requiring the model to submit an answer only after a complete generation cycle.
 
-**Limitations of Prior Work**: Real-world interactions are not always static. Users may want partial answers immediately, discover errors in the original request and insert new conditions, or change the environment state in collaborative codebases. If every change requires terminating generation, manually modifying the context, and restarting, it wastes computation and discards already formed intermediate reasoning.
+**Limitations of Prior Work**: Real-world interactions are not always so stable. Users may want partial answers immediately, might discover errors in their original request and insert new conditions, or might change the state of an environment in multi-user or multi-agent collaborative codebases. If every change requires terminating generation, manually modifying the context, and restarting, it results in wasted computation and the loss of intermediate reasoning already formed.
 
-**Key Challenge**: Long reasoning improves static accuracy but exposes models to a longer interaction window. Evaluations that only look at answers after a full trajectory mask a critical capability: whether a model can robustly stop, compress, redirect, or absorb new information when reasoning is incomplete.
+**Key Challenge**: While long reasoning improves static accuracy, it also exposes models to longer windows of interaction time. Evaluations that focus only on the final answer after a full trace mask a critical capability: whether a model can robustly stop, compress, redirect, or incorporate new information when reasoning is incomplete.
 
-**Goal**: The authors aim to answer three questions. First, whether models exhibit anytime algorithm-like properties (more reasoning leading to better answers) when hard-interrupted. Second, whether models can maintain correctness while reducing reasoning length when receiving speed-up instructions. Third, whether models can identify and incorporate mid-way updates into subsequent reasoning.
+**Goal**: The authors aim to answer three questions. First, whether models exhibit properties similar to anytime algorithms when hard-interrupted (i.e., whether more reasoning leads to better answers). Second, whether models can maintain correctness while reducing reasoning length when receiving acceleration commands. Third, whether models can recognize and incorporate mid-generation updates into subsequent reasoning.
 
-**Key Insight**: Instead of proposing a new training algorithm, the paper defines "interruptibility" as an independent evaluation object. It places interruption points within the model's existing reasoning trajectory and compares accuracy and output length under no-interruption, hard-interruption, soft-interruption, and dynamic update conditions.
+**Key Insight**: Instead of proposing a new training algorithm, the paper first defines "interruptibility" as a standalone object of evaluation. It places interruption points within the model's existing reasoning trace and compares accuracy and output length under conditions of no interruption, hard interruption, soft interruption, and dynamic updates for the same problem.
 
-**Core Idea**: Replace static one-shot evaluations with a controlled mid-way intervention protocol to directly measure the stability of long reasoning models under time constraints and context changes.
+**Core Idea**: Replace static, one-shot evaluations with a controlled mid-generation intervention protocol to directly measure the stability of long reasoning models under time constraints and context changes.
 
 ## Method
-The methodology is essentially an evaluation framework: models generate a complete reasoning trajectory for standard problems, then interruptions or updates are inserted at different percentage positions of the trajectory. Subsequent answers, lengths, and error types are observed. The concern is not how to make the model think less, but whether the model can continue working correctly when the environment has changed.
+The methodology of this paper is essentially an evaluation framework: models first generate a complete reasoning trace for standard problems, then interruptions or updates are inserted at various proportional locations in the trace. The authors observe the subsequent answers, lengths, and error types. The focus is not "how to make the model think less," but "whether the model can continue to work correctly when the world has changed."
 
 ### Overall Architecture
-Given a query $q$, in static evaluation, model $M$ outputs a reasoning trajectory $r=(r_1, r_2, \dots, r_T)$ and a final answer $a$. Dynamic evaluation splits generation into two phases: the first generates up to a ratio $X$, yielding prefix $r_{:X}$; the second inserts an intervention marker $i$ or update $u$ into the input, allowing the model to generate the remaining trajectory $r'_{X:}$ and answer $a'$.
+Given a query $q$, a model $M$ in a static evaluation outputs a reasoning trace $r=(r_1, r_2, \dots, r_T)$ and a final answer $a$. Dynamic evaluation splits generation into two stages: the first stage generates up to a proportional position $X$, yielding the prefix $r_{:X}$; the second stage adds an intervention marker $i$ or update $u$ to the input, then prompts the model to generate the remaining trace $r'_{X:}$ and answer $a'$.
 
-Two types of metrics are used. Accuracy is denoted as $A_i(X)=Pr[a'=a^* \mid X,i]$, measuring if the final answer is correct under interruption. Length is denoted as $L_i(X)=|r'_{X:}\oplus a'|$, serving as a proxy for the additional computation after interruption. This reveals whether models covertly move reasoning that should have stopped into the answer area.
+There are two types of evaluation metrics. Accuracy is denoted as $A_i(X)=Pr[a'=a^* \mid X,i]$, measuring whether the final answer is correct under interruption conditions. Length is denoted as $L_i(X)=|r'_{X:}\oplus a'|$, serving as a proxy for the additional computation required after the interruption. This allows the paper to observe not only the correctness of the answer but also whether the model "smuggles" reasoning that should have stopped into the final answer section.
 
-Experiments cover math and programming tasks. Math includes a 500-item subset of GSM8K, MATH-500, and AIME-24/25; programming uses LiveCodeBench-v6, filtered for problems after October 1, 2024. Main models include Qwen3-8B, GPT-OSS-20B high reasoning effort, and Mistral-Small-1.2. Interruption positions use relative reasoning length $X\in\{0.1,0.3,\dots,0.9\}$.
+Experiments cover two types of long reasoning tasks: mathematics and programming. Mathematics includes a 500-question subset of GSM8K, MATH-500, and AIME-24/25. Programming utilizes LiveCodeBench-v6, filtered for problems published after October 1, 2024. Primary models include Qwen3-8B, GPT-OSS-20B (high reasoning effort), and Mistral-Small-1.2, with the appendix extending to GPT-OSS-120B, DeepSeek-R1, Nemotron-3-Nano, and approximate experiments for GPT-5.4-Mini.
+
+Interruption points use relative reasoning lengths $X\in\{0.1,0.3,\dots,0.9\}$, as reasoning token counts vary significantly across models and problems. The authors also conduct robustness checks in the appendix using sentence-level and absolute token interruptions, confirming consistent conclusion trends.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    Q["查询 q"] --> P["阶段1·生成推理前缀<br/>在相对位置 X 截断得 r(:X)"]
+    P --> I["在 X 处插入干预"]
+    subgraph TC["两类时间约束中断（不给新信息）"]
+        direction TB
+        H["硬中断<br/>注入 end-thinking / force-answer，强制停思考"]
+        SF["软中断<br/>注入加速指令，仍可继续但应压缩"]
+    end
+    I -->|要求立即/更快作答| TC
+    I -->|任务规格中途改变| U["动态上下文更新<br/>注入新信息 u，满足 a*(q)≠a*(q,u)"]
+    TC --> G["阶段2·续写剩余轨迹与答案<br/>M(q, r(:X), i/u) → (r'(X:), a')"]
+    U --> G
+    G --> M["双指标度量<br/>准确率 A_i(X) + 续写长度 L_i(X)"]
+    M --> T["错误模式分类<br/>推理泄漏 / 恐慌作答 / 自我怀疑（+prompt guidance 缓解）"]
+```
 
 ### Key Designs
-1.  **Two types of time-constrained interruptions**:
-    - **Function**: Simulates scenarios where users want models to "answer now" or "answer faster."
-    - **Mechanism**: Hard-interruption truncates reasoning and inserts end-of-thought or forced-answer markers, pushing the model directly to the answer area; soft-interruption inserts instructions like "Please answer faster," allowing continued thinking but expecting reduced trajectory length.
-    - **Design Motivation**: This distinguishes whether partial reasoning has formed usable answers versus the model's ability to actively regulate its reasoning budget under pressure.
+**1. Two Types of Time-Constrained Interruptions: Forcing the model to "Answer now / Answer faster" without changing the problem**
 
-2.  **Dynamic context update protocol**:
-    - **Function**: Tests if the model can re-align with problem definitions when receiving new facts, constraints, or corrections mid-way.
-    - **Mechanism**: In math tasks, initial conditions are modified, and then the original semantics are restored via mid-way updates. In programming, textual descriptions are given first, followed by updates like starter code, variable ranges, or extra constraints. All updates are verified by humans to ensure they are necessary for solving the problem.
-    - **Design Motivation**: If a model works reliably in dynamic environments, it should not just follow the old trajectory inertia but judge if new information changes the goal and explicitly absorb it.
+This branch corresponds to the "Time Constraints" path in the framework. At relative position $X$, a hard interruption injects `end-thinking` or `force-answer` (the latter followed by a format indicator $\delta$ like `\boxed{`), making the remaining trace $r'_{X:}=\varnothing$ and forcing the model directly into the answer area. A soft interruption merely injects the phrase "Please answer faster"; the model may continue thinking but is expected to actively compress the subsequent length. This separation tests two distinct capabilities: the hard interruption checks if a partial trace supports a usable answer (anytime property), while the soft interruption checks if the model can adjust its reasoning budget under pressure rather than simply failing.
 
-3.  **Error mode taxonomy and lightweight mitigation**:
-    - **Function**: Breaks down accuracy drops into interpretable behavioral types.
-    - **Mechanism**: Three failures are identified: reasoning leakage (writing thinking into the answer area after hard-interruption), panicked answering (ending reasoning immediately with incorrect answers after speed-up instructions), and self-doubt (refusing to trust updates and sticking to old or confused answers). For self-doubt, prompt guidance is appended to confirm the update is verified.
-    - **Design Motivation**: These categories correspond to different fix directions: stop-control for leakage, robust budget strategies for panic, and context-trust mechanisms for self-doubt.
+**2. Dynamic Context Update Protocol: Inserting mandatory new information to test redirection**
+
+This corresponds to the "Update" branch. When an update $u$ is injected, it is intentionally constructed such that $a^*(q)\neq a^*(q,u)$—meaning failure to incorporate $u$ renders the answer incorrect. This cleanly separates whether the model truly used the update from whether it merely guessed correctly based on the original problem. Specifically, math tasks modify initial conditions and then use mid-generation updates to "revert" the semantics to the original problem; programming tasks involve providing only a text description initially and then supplementing starter code, variable ranges, or extra constraints mid-way. All updates were generated by GPT-5 and manually verified to ensure $u$ is necessary for the correct solution.
+
+**3. Error Mode Classification and Lightweight Mitigation: Decomposing accuracy drops into interpretable pathologies**
+
+At the end of the framework, behavior is categorized into three consistent failure modes: reasoning leakage (after a hard interrupt, the model moves thinking into the answer area, with answers expanding up to 10×), panic answering (after an acceleration command, the model terminates thinking with <1% of the remaining budget and provides an incorrect answer), and self-doubt (after an update, the model repeatedly questions its reliability and ultimately adheres to the old problem or produces incoherent output). To address self-doubt, the paper provides a training-free baseline: appending a prompt guidance statement in the model's persona confirming the update's validity. This categorization identifies specific gaps—stopping control, budget regulation, and context trust—that can be addressed in future work.
 
 ### Loss & Training
-Ours is not a training method and introduces no new loss functions. All experiments are inference-time evaluations. The main variables are interruption type, position, update form, the presence of prompt guidance, and model scaling. AIME-24/25 runs 16 independent trials per problem due to small sample size; other datasets use single runs with bootstrap 95% confidence intervals.
+This work is not a training method and thus introduces no new loss functions. All experiments are inference-time evaluations. Primary variables include interruption type, position, update form, the presence of prompt guidance, model family, and scale. For AIME-24/25, 16 independent trials per question were run due to small sample size and high variance; other datasets used a single run with reported means and bootstrap 95% confidence intervals.
 
 ## Key Experimental Results
 
 ### Main Results
-The primary conclusion is that models with high static performance deteriorate systematically under dynamic conditions. Under hard-interruption, models generally show anytime behavior (later is better), but early interruptions cause significant reasoning leakage. Soft-interruption triggers panicked answering on hard tasks (AIME/LiveCodeBench). Dynamic updates are the most fragile, with performance dropping up to 60% for late-stage updates.
+The primary conclusion is that models with high static performance suffer systematically under dynamic conditions. Under hard interruptions, models generally exhibit anytime behavior (accuracy increases with later interruption), but early interruptions lead to significant reasoning leakage. Soft interruptions maintain accuracy on simple tasks but trigger panic answering on difficult tasks like AIME and LiveCodeBench. Dynamic updates are the most fragile; performance drops by up to 60% when updates occur late in the reasoning process.
 
 | Scenario | Primary Evaluation Target | Key Result | Description |
-|----------|---------------------------|------------|-------------|
-| Hard-interruption | GSM8K / MATH-500 / AIME / LiveCodeBench | Accuracy rises as interruption occurs later | Partial reasoning is valuable, but early stopping is unstable |
-| Hard-interruption Length | AIME / LiveCodeBench | Late answers can be 10x longer than full-thinking answers | Models leak reasoning into final answers or code comments |
-| Soft-interruption | AIME / LiveCodeBench | Accuracy drops by up to 30% | Speed-up instructions cause premature termination of thought |
-| Dynamic Update | Math and Coding Update Tasks | Performance drops by up to 60% for late updates | Static evaluation significantly overestimates dynamic robustness |
-| Prompt Guidance | GSM8K / MATH-500 | Eliminates major issues from updates | Brief confirmations mitigate self-doubt in simple math tasks |
+|------|--------------|----------|------|
+| Hard Interruption | GSM8K / MATH-500 / AIME / LiveCodeBench | Overall upward trend in accuracy with later interruption points | Partial reasoning has value, but early stopping is not stable |
+| Hard Interruption Length | AIME / LiveCodeBench | Answer length can reach 10x that of full-trace answers for early interrupts | Models leak reasoning into final answers or code comments |
+| Soft Interruption | AIME / LiveCodeBench | Accuracy drops by up to ~30% | Acceleration commands cause models to terminate thinking prematurely |
+| Dynamic Update | Math & Code Update Tasks | Performance drops by up to ~60% for late updates | Static evaluation significantly overestimates dynamic robustness |
+| Prompt Guidance | GSM8K / MATH-500 | Mostly eliminates major issues from updates | Brief confirmations mitigate self-doubt in simple math tasks |
 
 ### Ablation Study
-Ablations show these failures are not caused by single implementation details. Model scale, turn insertion methods, and compact reasoning (Chain of Draft) change the curves, but the three pathological phenomena persist.
+Ablations indicate that these failures are not caused by a single implementation detail. Model scale, user-turn insertion, prompt guidance phrasing, and compact reasoning methods like Chain of Draft change the curves, but the three pathologies persist.
 
-| Ablation / Analysis | Setting | Key Metric or Observation | Description |
-|---------------------|---------|---------------------------|-------------|
-| Leakage Attribution | 30% Hard-interruption | up to 10x answer inflation in failure cases | Stopping the thinking block does not guarantee stopping reasoning |
-| Panic Attribution | 30% Soft-interruption | Over 90% of new errors from panic; up to 80% of total loss | "Faster" is interpreted as "End immediately" |
-| Self-doubt Attribution | 30% Dynamic Update | ~80% of update-driven errors relate to self-doubt | Models do not always trust mid-way updates |
-| Chain of Draft | Qwen3-8B, 30% Hard | Answer length still 1.38x (AIME), 6.27x (LCB) | Compressed reasoning does not solve interruptibility |
-| Chain of Draft Soft | AIME, 30% Interruption | Panic rate 13.1% (vs 3.8% in assistant-turn) | Shorter draft-like reasoning might be more prone to sudden stops |
-| Dynamic Update Cost | Prompt Guidance Setting | GPT-OSS late update cost < 110% of original | Continuation is cheaper than restarting if updates are absorbed |
+| Ablation / Analysis | Setting | Key Metric/Observation | Description |
+|-------------|------|----------------|------|
+| Leakage Attribution | 30% Hard Interruption | Up to 10x answer expansion in failure cases | Stopping thinking block does not guarantee stopping reasoning |
+| Panic Answering Attribution | 30% Soft Interruption | >90% of new errors from panic; up to ~80% of total loss | "Faster" may be interpreted as "End immediately" |
+| Self-Doubt Attribution | 30% Dynamic Update | ~80% of update-driven errors related to self-doubt | Models do not always trust or incorporate mid-way updates |
+| Chain of Draft | Qwen3-8B, 30% Hard Interruption | AIME answer length still 1.38x, LCB-v6 still 6.27x | Compressed reasoning does not automatically solve interruptibility |
+| Chain of Draft Soft Interruption | AIME, 30% Interruption | Panic rate of 13.1%, higher than 3.8% for standard turns | Shorter draft reasoning may be more prone to abruption |
+| Dynamic Update Cost | Prompt Guidance Setting | GPT-OSS code task late update cost <110% of original | Continuing after an update is often cheaper than a full restart |
 
 ### Key Findings
-- Static high accuracy does not imply dynamic robustness. Strong performance on fixed problems does not translate to handling mid-way changes.
-- Reasoning token curves underestimate actual computation. The answer area may carry significant implicit reasoning after hard-interruption, so counting only thinking tokens misjudges efficiency.
-- Prompt guidance suggests room for improvement. Simple confirmations help GSM8K/MATH-500, but AIME and code tasks remain far from solved.
-- Model scale is not a panacea. Larger Qwen models perform better on update tasks, but hard and soft interruptions do not show a monotonic scaling solution.
+- Static accuracy does not imply dynamic robustness. Strong performance on fixed problems does not translate to handling mid-generation changes.
+- Reasoning token curves underestimate true computation. Hard interrupts can cause hidden reasoning in the answer section; counting only "thinking tokens" misjudges efficiency.
+- Prompt guidance suggests the problem is fixable. Simple confirmations improve GSM8K and MATH-500, but AIME and coding tasks remain largely unresolved.
+- Model scale is not a panacea. While Qwen3-8B/32B outperform 1.7B on updates, hard and soft interruptions do not show a monotonic fix via scaling.
+- User-turn interruptions are more natural, but current model format control is unstable. Assistant-turn insertion was used in main experiments to avoid format variations in thinking block support.
 
 ## Highlights & Insights
-- The most valuable contribution is Transforming "interruptibility" from an engineering experience issue into a measurable capability. It highlights that models in real deployment are reasoning processes in a changing world.
-- The three error modes are highly explanatory. Reasoning leakage, panicked answering, and self-doubt correspond to gaps in stop-control, budget regulation, and context trust, respectively.
-- The dynamic update construction is clever. The "modify then restore" approach in math tasks ensures the model is truly absorbing updates rather than relying on memorized answers.
-- Insights for agent systems: Multi-agent collaboration and IDE agents naturally involve interruptions and environment changes, making this benchmark more representative of interactive deployment risks than traditional one-shot math problems.
+- The most valuable contribution is framing "interruptibility" as a measurable capability rather than just an engineering UX issue. It highlights that models in deployment are reasoning processes running in a changing world.
+- The three error modes are highly explanatory. Reasoning leakage, panic answering, and self-doubt correspond to gaps in stopping control, budget regulation, and context trust, respectively.
+- The dynamic update construction is clever. Reverting problems to their original state via updates ensures models must incorporate the new information rather than relying on memorized answers.
+- The findings are particularly relevant for agentic systems. Multi-agent collaboration and IDE agents naturally involve interruptions and environment changes, making this benchmark more realistic for interactive deployment risks.
+- The authors honestly acknowledge that prompt guidance is not a final solution; while it helps simple tasks, AIME and coding require better training or inference control.
 
 ## Limitations & Future Work
-- Task scope is narrow. Primarily covers math and coding due to long trajectories and automated verification; multi-turn QA, research assistants, and tool-use are not yet included.
-- Interruption forms are idealized. Experiments use single, clean, pre-set interruptions, whereas real users might provide noisy, continuous, or contradictory updates.
-- Incomplete closed-source evaluation. Many APIs do not expose internal reasoning or allow mid-trace updates, necessitating approximate proxies.
-- Diagnostic focus. The paper does not propose interruption-aware training or new decoding constraints, which remains future work for post-training rewards.
-- Scale of manual updates. Although verified, larger-scale dynamic tasks require more systematic generation and verification processes.
+- The task scope is limited to mathematics and programming due to their long traces and automated verification; multi-turn QA, research assistants, and tool-use scripts are not yet included.
+- Interruption forms are idealized. Experiments use single, clear, pre-set interruptions, whereas real users might provide noisy, continuous, or contradictory updates.
+- Closed-source evaluation is incomplete. Many APIs do not expose intermediate reasoning or allow insertions within a reasoning trace, necessitating proxy experiments.
+- The paper is more diagnostic than remedial. It does not propose interruption-aware training or new decoding constraints, which could involve incorporating simulated interruptions into post-training.
+- Manual update construction has scale limitations. Larger, more complex dynamic tasks will require more systematic automated data generation and verification pipelines.
 
 ## Related Work & Insights
-- **vs Budget Forcing / S1**: While budget forcing studies fixed token budgets, Ours emphasizes unpredictable interruptions and evaluates whether reasoning leaks into the answer area.
-- **vs NoThinking**: While NoThinking studies removing explicit thought, Ours truncates thoughts mid-way to see if partial trajectories support reliable answers.
-- **vs Chain of Draft**: Ours finds that compact reasoning does not automatically eliminate leakage, panic, or self-doubt.
-- **vs Efficient Reasoning Training**: Reminds researchers to optimize for "correct even when interrupted" alongside "correct with fewer tokens."
+- **vs. Budget Forcing / S1**: While budget forcing studies fixed token budgets, this work emphasizes unpredictable external interruptions and evaluates reasoning leakage in the answer area.
+- **vs. NoThinking**: Unlike work questioning if explicit thought is necessary, this study truncates existing thoughts to see if partial traces support reliable answers.
+- **vs. Chain of Draft**: Compact reasoning does not eliminate leakage, panic, or self-doubt.
+- **vs. Efficient Reasoning Training**: Many methods optimize for "thinking less but correctly"; this work highlights the need to "remain correct even when interrupted."
+- **vs. Overthinking Work**: While missing premises can amplify overthinking, this work studies if models can trust and use those premises when they are provided mid-reasoning.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐☆ Defines interruptibility as a systematic evaluation problem for long-reasoning models with a clear taxonomy.
-- Experimental Thoroughness: ⭐⭐⭐⭐☆ Covers multiple datasets, models, and ablation settings with solid reliability.
-- Writing Quality: ⭐⭐⭐⭐☆ Clear problem consciousness and intuitive naming of failure modes.
-- Value: ⭐⭐⭐⭐⭐ Highly relevant for interactive LLMs, IDE agents, and long-task reasoning systems.
+- Novelty: ⭐⭐⭐⭐☆ Systematically defines interruptibility for long reasoning models with a clear taxonomy; the problem setting is novel though the method is primarily illustrative.
+- Experimental Thoroughness: ⭐⭐⭐⭐☆ Covers multiple datasets, models, and interruption points; while some data is purely visual, the conclusions are well-supported.
+- Writing Quality: ⭐⭐⭐⭐☆ High problem awareness and intuitive failure naming; good integration of formalisms and case studies.
+- Value: ⭐⭐⭐⭐⭐ Vital for interactive LLMs, IDE agents, and long-task reasoning systems; serves as a reminder that static accuracy alone is insufficient for reliable deployment.
 
 <!-- RELATED:START -->
 

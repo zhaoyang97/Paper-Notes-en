@@ -2,84 +2,88 @@
 title: >-
   [Paper Note] EMO-R3: Reflective Reinforcement Learning for Emotional Reasoning in Multimodal Large Language Models
 description: >-
-  [CVPR 2026][Multimodal VLM][Emotional Reasoning] This paper proposes EMO-R3, which guides MLLMs to perform step-by-step emotional reasoning via Structured Emotional Thinking (SET)…
+  [CVPR 2026][Multimodal VLM][GRPO] Ours proposes EMO-R3, which guides MLLMs to perform step-by-step emotional reasoning through Structured Emotional Thought (SET) and designs Reflective Emotional Reward (RER) to allow the model to re-evaluate the vision-text consistency and emotional coherence of its reasoning, significantly enhancing the interpretabili
 tags:
-  - "CVPR 2026"
-  - "Multimodal VLM"
-  - "Emotional Reasoning"
-  - "GRPO"
-  - "Structured Thinking"
-  - "Reflective Reward"
-  - "Multimodal Affective Understanding"
+  - CVPR 2026
+  - Multimodal VLM
+  - GRPO
 date: 2026-05-08
-content_hash: 597e6284f488c633
+content_hash: 6d8cdbefe8c3a21d
 ---
-
 # EMO-R3: Reflective Reinforcement Learning for Emotional Reasoning in Multimodal Large Language Models
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2602.23802](https://arxiv.org/abs/2602.23802)  
 **Code**: [GitHub](https://github.com/xiaomi-research/emo-r3)  
-**Area**: Multimodal VLM
-**Keywords**: Emotional Reasoning, GRPO, Structured Thinking, Reflective Reward, Multimodal Affective Understanding
+**Area**: Multimodal VLM  
+**Keywords**: Emotional Reasoning, GRPO, Structured Thought, Reflective Reward, Multimodal Emotion Understanding
 
 ## TL;DR
 
-This paper proposes EMO-R3, which guides MLLMs to perform step-by-step emotional reasoning via Structured Emotional Thinking (SET), and introduces a Reflective Emotional Reward (RER) that prompts the model to re-evaluate the visual-textual consistency and emotional coherence of its reasoning, substantially improving both interpretability and accuracy in multimodal affective understanding.
+Ours proposes EMO-R3, which guides MLLMs to perform step-by-step emotional reasoning through Structured Emotional Thought (SET) and designs Reflective Emotional Reward (RER) to allow the model to re-evaluate the vision-text consistency and emotional coherence of its reasoning, significantly enhancing the interpretability and accuracy of multimodal emotion understanding.
 
 ## Background & Motivation
 
-**Limitations of MLLMs in affective understanding**: Although MLLMs demonstrate strong performance in visual reasoning, they remain inadequate at capturing the complexity and subjectivity inherent in human emotion.
+**Background**: Although MLLMs excel in visual reasoning, they remain weak in capturing the complexity and subjectivity of human emotions.
 
-**Limitations of SFT-based approaches**: Supervised fine-tuning methods for emotion recognition (e.g., EmoVIT, EmotionLLaMA) are constrained by fixed label taxonomies and limited category sets, leading to poor generalization and overfitting to the training distribution.
+**Limitations of Prior Work**: Emotion models based on supervised fine-tuning (e.g., EmoVIT, EmotionLLaMA) are limited by fixed label systems and limited categories, leading to poor generalization and overfitting to the training distribution.
 
-**Mismatch of generic GRPO**: While GRPO improves generalization, its thinking process is not tailored for emotional reasoning — reasoning trajectories lack tight correspondence with final answers (unlike mathematical reasoning, where a single error propagates to an incorrect result).
+**Key Challenge**: While GRPO can improve generalization, its general "think" process is not tailored for emotional reasoning—there is an observed lack of tight correspondence between the reasoning trajectory and the final answer (unlike mathematical reasoning, where one wrong step leads to a wrong answer).
 
-**Unique characteristics of emotional understanding**: Emotional reasoning is highly subjective and context-dependent; reasoning paths may diverge from final answers due to individual differences, and constraining only the answer is insufficient to guide the reasoning process.
+**Mechanism**: Emotion reasoning is highly subjective and context-dependent. The reasoning path may vary due to individual differences, and merely constraining the answer is insufficient to guide the reasoning process.
 
-**Think-answer decoupling phenomenon**: Experiments reveal that re-inferring the think text from GRPO rollout samples frequently yields emotional conclusions inconsistent with the final answers.
+**Think-answer Decoupling**: Experiments find that when re-inferring based on the "think" text of the GRPO rollout samples, the deduced emotion often contradicts the final answer.
 
-**Necessity of Cold Start**: The emotional priors of pretrained MLLMs may be misaligned with downstream label systems, necessitating lightweight alignment.
+**Goal**: Pre-trained MLLM emotional priors may mismatch downstream label systems, necessitating lightweight alignment via a Cold Start phase.
 
 ## Method
 
 ### Overall Architecture
 
-EMO-R3 = Structured Emotional Thinking (SET) prompt + Reflective Emotional Reward (RER) + GRPO optimization. An optional Cold-Start-Emo stage provides lightweight SFT pre-alignment.
+EMO-R3 aims to solve the issue where the "think" process and the final answer of MLLMs often decouple during emotional reasoning—the model might guess the correct emotional label while the intermediate reasoning remains invalid. The strategy involves using a Structured Emotional Thought (SET) prompt to guide the model's free-form thinking into three stages: "Identify Trigger → Characterize Reaction → Draw Conclusion." Then, the Reflective Emotional Reward (RER) passes the intermediate outputs back to the model for self-inspection. Finally, these rewards are fed into GRPO to optimize the policy. The pipeline is: Image + SET prompt → Model outputs three-stage thought plus `\boxed{}` answer → RER extracts intermediate steps for reverse verification → Rewards are aggregated for GRPO updates. An optional lightweight Cold-Start-Emo SFT is performed before training to align emotional priors.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["Input: Image + SET prompt<br/>(Optional: Cold-Start-Emo SFT)"] --> SET
+    SET["Structured Emotional Thought (SET)<br/>s₁ Trigger Identification → s₂ Emotional Reflex → s₃ Conclusion + Answer"] --> ROLL["Sample G reasoning trajectories"]
+    subgraph RER["Reflective Emotional Reward (RER)"]
+        direction TB
+        RC["Visual Consistency: (s₁ + Image) back to model for Yes/No"]
+        RH["Emotional Coherence: (s₁ + s₂) back to model for Emotion vs. GT"]
+    end
+    ROLL --> RER
+    ROLL --> GEN["General Reward: R_acc + R_format"]
+    RER --> AGG["Aggregate Reward R_overall"]
+    GEN --> AGG
+    AGG --> GRPO["GRPO Group Relative Advantage → Update Policy"]
+    GRPO -.Feedback.-> IN
+```
 
 ### Key Designs
 
-#### Structured Emotional Thinking (SET)
+**1. Structured Emotional Thought (SET): Disciplining free-form thinking into verifiable steps**
 
-Reasoning is constrained into three explicit stages, simulating the human affective cognition process:
+The "think" process in general GRPO is free-form, which works for mathematics where an intermediate error usually leads to a wrong final answer. However, emotion judgment is subjective, and the reasoning path is loosely coupled with the answer; the model may produce valid labels through faulty logic. SET constrains the output format into $o = \{s_1, s_2, s_3, \hat{\mathcal{E}}\}$: $s_1$ Emotional Trigger Identification (objects, actions, or expressions in the scene), $s_2$ Human Emotional Reflex (observer's reaction), $s_3$ Emotional Conclusion (polarity and arousal), and the final label $\hat{\mathcal{E}}$ in `\boxed{}`. These three steps map to the cognitive chain of "Perception → Empathy → Judgment," transforming intermediate steps into verifiable products.
 
-1. **Emotional Trigger Identification** (Step 1): Detect elements in the scene that may elicit emotional responses (objects, actions, environments, facial expressions).
-2. **Human Emotional Reflection** (Step 2): Describe the emotional reactions of a human observer to those identified elements.
-3. **Emotional Conclusion** (Step 3): Determine the overall emotional polarity (positive/negative) and arousal level.
+**2. Reflective Emotional Reward (RER): Rewarding reasoning validity, not just answer accuracy**
 
-Output format: $o = \{s_1, s_2, s_3, \hat{\mathcal{E}}\}$, with the final answer $\hat{\mathcal{E}}$ enclosed in `\boxed{}`.
-
-#### Reflective Emotional Reward (RER)
-
-Two reflective rewards constrain reasoning quality:
-
-- **Visual-Textual Consistency Reward** $\mathcal{R}_{\text{cons}}$: The output $s_1$ from Step 1 is fed back to the model together with the image, with the query "Can the following text describe this image?" Yes = 1, No = 0.
-- **Emotional Coherence Reward** $\mathcal{R}_{\text{coh}}$: The outputs from Steps 1 and 2 are fed back to the model, with the query "Which emotion best describes the above text?" A match with the ground-truth label yields a score of 1.
+To address think-answer decoupling, RER feeds intermediate SET steps back into the model for self-inspection, using the model itself as a judge. It consists of two sub-rewards: Visual Consistency $\mathcal{R}_{\text{cons}}$ sends $s_1$ and the original image back to the model to ask "Does this text describe the image?", rewarding a "Yes" to ensure $s_1$ is grounded in visual evidence. Emotional Coherence $\mathcal{R}_{\text{coh}}$ sends $s_1 + s_2$ to the model to ask "Which emotion best describes this?", rewarding consistency with the ground truth label to ensure the reasoning matches the final sentiment. The reflective reward is defined as:
 
 $$\mathcal{R}_{\text{RER}} = \frac{\mathcal{R}_{\text{cons}} + \mathcal{R}_{\text{coh}}}{2}$$
 
+Compared to GRPO/DAPO which only reward the answer, RER constrains the reasoning process itself, distinguishing "correct by chance" from "correct by logic."
+
 ### Loss & Training
 
-Overall reward: $\mathcal{R}_{\text{overall}} = (1-\lambda_1-\lambda_2)\mathcal{R}_{\text{acc}} + \lambda_1 \mathcal{R}_{\text{RER}} + \lambda_2 \mathcal{R}_{\text{format}}$
-
-Optimization is performed within the GRPO framework using intra-group relative advantage normalization.
+The overall reward is a weighted sum: $\mathcal{R}_{\text{overall}} = (1-\lambda_1-\lambda_2)\mathcal{R}_{\text{acc}} + \lambda_1 \mathcal{R}_{\text{RER}} + \lambda_2 \mathcal{R}_{\text{format}}$, where $\mathcal{R}_{\text{acc}}$ is answer accuracy and $\mathcal{R}_{\text{format}}$ constrains the SET output structure. Optimization is performed under the GRPO framework using relative advantage normalization. The Cold-Start-Emo is a lightweight SFT using a small number of samples without CoT annotations to align emotional priors and mitigate reward sparsity during early RL stages.
 
 ## Key Experimental Results
 
-### Main Results: Qwen2.5-VL-3B Emotional Reasoning (In-Domain / Out-of-Domain)
+### Main Results: Qwen2.5-VL-3B Emotional Reasoning (In-domain/Out-of-domain)
 
-| Method | EmoSet (in-domain) | Emotion6 (out-of-domain) | WebEmo (out-of-domain) | Overall $\mathcal{A}$ |
-|---|---|---|---|---|
+| Method | EmoSet (In) | Emotion6 (Out) | WebEmo (Out) | Average $\mathcal{A}$ |
+|------|-------------|---------------|-------------|---------------------|
 | Vanilla* | 51.55 | 50.00 | 40.65 | 47.40 |
 | SFT | 77.15 | 34.51 | 17.75 | 43.84 |
 | GRPO (G=4) | 74.60 | 60.10 | 49.50 | 59.97 |
@@ -90,40 +94,40 @@ Optimization is performed within the GRPO framework using intra-group relative a
 ### Ablation Study
 
 | Component | Effect |
-|---|---|
+|------|------|
 | SFT (Cold-Start-Emo) | High in-domain performance but severe out-of-domain degradation |
-| GRPO only | Good generalization but reasoning quality not guaranteed |
-| + SET | Structured reasoning with improved emotional coherence |
-| + RER | Significant improvement in visual and emotional consistency of reasoning |
-| + Cold-Start-Emo | Alleviates reward sparsity and stabilizes training |
+| GRPO only | Good generalization but reasoning quality is not guaranteed |
+| + SET | Structured reasoning and improved emotional coherence |
+| + RER | Significant improvement in visual/emotional consistency of reasoning |
+| + Cold-Start-Emo | Mitigates reward sparsity and stabilizes training |
 
 ### Key Findings
 
-- SFT achieves high in-domain performance (77.15) but suffers severe out-of-domain degradation (17.75), confirming overfitting.
-- EMO-R3 outperforms both GRPO and DAPO across all settings.
-- The reflective reward effectively constrains the reasoning process rather than merely the final answer.
-- Cold-Start-Emo requires neither chain-of-thought annotations nor large data volumes.
+- SFT performs well in-domain (77.15) but suffers catastrophic out-of-domain degradation (17.75), confirming overfitting issues.
+- EMO-R3 outperforms GRPO and DAPO across all settings.
+- Reflective reward effectively constrains the reasoning process rather than just the final answer.
+- Cold-Start-Emo lightweight SFT does not require CoT labels and works with few samples.
 
 ## Highlights & Insights
 
-- **First systematic attempt to adapt GRPO for affective understanding**, revealing the insufficiency of generic RL on subjective tasks.
-- The SET design elegantly simulates the human cognitive chain of "perception → reaction → judgment."
-- RER cleverly leverages the model's own capabilities to assess reasoning quality without external annotation.
-- Analysis of the think-answer decoupling phenomenon opens a new research perspective for affective AI.
-- The design motivation of Cold-Start-Emo is clearly articulated — aligning emotional priors rather than enhancing reasoning capacity.
+- **First systematic attempt to adapt GRPO to the field of emotional understanding**, revealing the shortcomings of general RL in subjective tasks.
+- Structured Emotional Thought (SET) design effectively simulates the human "Perception → Reaction → Judgment" cognitive chain.
+- Reflective reward cleverly utilizes the model's own capabilities to assess reasoning quality without external labels.
+- Analysis of the think-answer decoupling phenomenon provides a new perspective for research in Affective AI.
+- Cold-Start-Emo is designed to align emotional priors rather than merely enhancing reasoning capability.
 
-## Limitations & Future Work
+## Limitations
 
-- RER requires additional forward passes through the model, increasing training overhead.
-- Emotion labels remain discrete categories, leaving the continuous and multi-dimensional nature of emotion unmodeled.
-- Validation is limited to Qwen2.5-VL-3B; performance on larger models remains to be confirmed.
-- The three-step structured thinking may not cover all emotional reasoning scenarios.
+- Reflective reward requires additional model forward passes, increasing training costs.
+- Emotional labels remain discrete; the continuity and multi-dimensionality of emotions are not modeled.
+- Validated only on Qwen2.5-VL-3B; effectiveness on larger models remains to be confirmed.
+- The three-step structured thought might not cover all emotional reasoning scenarios.
 
 ## Related Work & Insights
 
-- Both R1-Omni and EMO-R3 apply GRPO to the affective domain, but EMO-R3 more deeply adapts the reasoning process itself.
-- Relation to DeepSeek-R1: EMO-R3 inherits the GRPO framework while introducing essential modifications for subjective tasks.
-- The design philosophy of RER is generalizable to other subjective evaluation tasks (e.g., aesthetic assessment, subjective quality estimation).
+- Similar to R1-Omni in applying GRPO to emotion, but EMO-R3 deeply adapts the reasoning process.
+- Relation to DeepSeek-R1: Inherits the GRPO framework but makes fundamental improvements for subjective tasks.
+- The design of Reflective Reward can be generalized to other subjective evaluation tasks (e.g., aesthetic evaluation, subjective quality assessment).
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐
@@ -137,11 +141,11 @@ Optimization is performed within the GRPO framework using intra-group relative a
 
 ## Related Papers
 
-- [\[CVPR 2026\] MoE-GRPO: Optimizing Mixture-of-Experts via Reinforcement Learning in Vision-Language Models](moe-grpo_optimizing_mixture-of-experts_via_reinforcement_learning_in_vision-lang.md)
-- [\[CVPR 2026\] Evolving Contextual Safety in Multi-Modal Large Language Models via Inference-Time Self-Reflective Memory](evolving_contextual_safety_in_multi-modal_large_language_models_via_inference-ti.md)
-- [\[ICCV 2025\] DocThinker: Explainable Multimodal Large Language Models with Rule-based Reinforcement Learning for Document Understanding](../../ICCV2025/multimodal_vlm/docthinker_explainable_multimodal_large_language_models_with.md)
-- [\[CVPR 2026\] Reason-SVG: Enhancing Structured Reasoning for Vector Graphics Generation with Reinforcement Learning](reason-svg_enhancing_structured_reasoning_for_vector_graphics_generation_with_re.md)
-- [\[CVPR 2026\] Nano-EmoX: Unifying Multimodal Emotional Intelligence from Perception to Empathy](nano-emox_unifying_multimodal_emotional_intelligence_from_perception_to_empathy.md)
+- [\[CVPR 2026\] Visual Reasoning through Tool-supervised Reinforcement Learning](visual_reasoning_through_tool-supervised_reinforcement_learning.md)
+- [\[CVPR 2026\] Thinking With Videos: Multimodal Tool-Augmented Reinforcement Learning for Long Video Reasoning](thinking_with_videos_multimodal_tool-augmented_reinforcement_learning_for_long_v.md)
+- [\[CVPR 2026\] TTRV: Test-Time Reinforcement Learning for Vision Language Models](ttrv_test-time_reinforcement_learning_for_vision_language_models.md)
+- [\[CVPR 2026\] Reading or Reasoning? Format Decoupled Reinforcement Learning for Document OCR](reading_or_reasoning_format_decoupled_reinforcement_learning_for_document_ocr.md)
+- [\[CVPR 2026\] R-C2: Cycle-Consistent Reinforcement Learning Improves Multimodal Reasoning](r-c2_cycle-consistent_reinforcement_learning_improves_multimodal_reasoning.md)
 
 </div>
 

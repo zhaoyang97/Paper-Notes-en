@@ -2,20 +2,14 @@
 title: >-
   [Paper Note] LLMs as annotators of credibility assessment in Danish asylum decisions: evaluating classification performance and errors beyond aggregated metrics
 description: >-
-  [ACL 2026][LLM Evaluation][LLM-as-annotator] The RAB-Cred dataset, a three-class ("Absent / Positive / Negative") credibility assessment expert-annotated benchmark…
+  [ACL 2026][LLM Evaluation][LLM-as-annotator] The RAB-Cred expert-annotated dataset for three-class ("Absent / Positive / Negative") credibility assessment was constructed using 273 asylum decision documents from the Danish Refugee Appeals Board (RAB). A systematic evaluation of 21 open-source LLMs across 30 system×user prompt combinations reveals that prompt desi
 tags:
-  - "ACL 2026"
-  - "LLM Evaluation"
-  - "LLM-as-annotator"
-  - "Refugee Asylum"
-  - "Credibility Assessment"
-  - "Prompt Engineering"
-  - "Error Analysis"
-  - "Ensemble Voting"
+  - ACL 2026
+  - LLM Evaluation
+  - LLM-as-annotator
 date: 2026-05-08
-content_hash: 298f60fb17dc329a
+content_hash: 9bea8f68648b2863
 ---
-
 # LLMs as annotators of credibility assessment in Danish asylum decisions: evaluating classification performance and errors beyond aggregated metrics
 
 **Conference**: ACL 2026  
@@ -25,111 +19,107 @@ content_hash: 298f60fb17dc329a
 **Keywords**: LLM-as-annotator, Refugee Asylum, Credibility Assessment, Prompt Engineering, Error Analysis, Ensemble Voting
 
 ## TL;DR
-The RAB-Cred dataset, a three-class ("Absent / Positive / Negative") credibility assessment expert-annotated benchmark, was constructed using 273 asylum decision documents from the Danish Refugee Appeals Board (RAB). By systematically evaluating 21 open-source LLMs across 30 system-user prompt combinations, the study found that prompt design is more critical than model selection. While Phi-4 (14B) achieved a 94.7% F1 in a zero-shot setting, individual models consistently made "unacceptable" errors. Consequently, a majority voting ensemble of the "top 15 model-prompt combinations" is proposed, which improved accuracy by 1.5 percentage points to 96%.
+The RAB-Cred expert-annotated dataset for three-class ("Absent / Positive / Negative") credibility assessment was constructed using 273 asylum decision documents from the Danish Refugee Appeals Board (RAB). A systematic evaluation of 21 open-source LLMs across 30 system×user prompt combinations reveals that prompt design is more significant than model selection. While Phi-4 (14B) achieved a 94.7% F1 in a zero-shot setting, individual models consistently committed "unacceptable" errors. Consequently, a majority-voting ensemble utilizing the 15 optimal model-prompt combinations is recommended, which increased accuracy by 1.5 pp to 96%.
 
 ## Background & Motivation
 
-**Background**: Utilizing LLMs as "out-of-the-box text annotators" has become widespread in the social sciences and humanities. While there have been sporadic attempts in Legal NLP (e.g., argument mining, legal interpretation), most studies evaluate only one or two prompts combined with a few closed-source models (such as GPT-4), leading to unreliable conclusions regarding model capabilities or prompt impacts.
+**Background**: The use of LLMs as "off-the-shelf text annotators" has expanded across sociology and the humanities. Legal NLP has seen preliminary attempts (e.g., argument mining, legal interpretation), but most studies evaluate only a few prompt-model combinations (e.g., GPT-4), leading to unreliable conclusions regarding model capability or prompt impact.
 
-**Limitations of Prior Work**: The task of "identifying whether a credibility assessment was made in an asylum decision and, if so, whether it was positive or negative" presents three simultaneous challenges: (1) Conceptual ambiguity—there is no consensus on credibility assessment even within refugee law scholarship; (2) High overlap with "risk assessment"—terms are often adjacent and easily confused, as a single document can contain both judgments; (3) Language—the documents are in Danish (a medium-resource language) with specialized legal terminology. Most mainstream open-source LLMs have very low proportions of Danish in their training data (e.g., Phi-4 admits to only 8% multilingual data, and Llama 3 does not officially support Danish).
+**Limitations of Prior Work**: The task of identifying whether a credibility assessment was made in an asylum decision, and whether it was positive or negative, presents three concurrent challenges: (1) The concept itself is ambiguous—legal scholars lack a consensus on credibility assessment; (2) High overlap with "risk assessment" in phrasing and proximity—a single document can contain both; (3) The language is Danish (medium-resource) combined with professional legal terminology. Most open-source LLMs have limited training data in Danish (e.g., Phi-4 reports only 8% multilingual data, and Llama 3 does not officially support Danish).
 
-**Key Challenge**: Domain experts require not only "high automated annotation accuracy" but also an understanding of "how and on which cases the LLM fails." Aggregate metrics like Macro-F1 fail to address the latter. Previous LLM-as-annotator literature relies almost exclusively on dataset-level F1, obscuring: (a) error consistency across models, (b) correlation with human annotation confidence, and (c) the severity of specific errors.
+**Key Challenge**: Domain experts require both high automated annotation accuracy and an understanding of how and where LLMs fail. Aggregate metrics like Macro-F1 fail to address (a) cross-model error consistency, (b) correlation with human annotation confidence, and (c) the severity of errors.
 
-**Goal**: (1) Construct a high-quality legal classification benchmark (RAB-Cred) for an under-represented language and domain, including metadata (annotator confidence, case outcomes); (2) Quantify the relative importance of models versus prompts via a systematic benchmark of 21 models and 30 prompt combinations; (3) Perform a granular error analysis focusing on error types, cross-model consistency, correlation with human confidence, and severity.
+**Goal**: (1) Establish a high-quality legal classification benchmark, RAB-Cred, in an under-represented language/domain with metadata (annotator confidence, case outcome); (2) Systematically benchmark 21 open-source models × 30 prompt combinations to quantify the importance of model vs. prompt; (3) Analyze error types, cross-model consistency, and severity rather than focusing solely on F1.
 
-**Key Insight**: LLM annotators should be treated as "error-prone professional interns." This necessitates both aggregate accuracy and root-cause analysis of errors. An instance-level PromptSensiScore (PSS) is introduced to quantify whether single-sample predictions flip when prompts change, distinguishing "pseudo-robust" models (e.g., Qwen3-30B) that appear stable at the dataset level but are unstable at the instance level.
+**Key Insight**: LLM annotators should be treated as "prone-to-error professional interns." This requires both aggregate accuracy and root-cause error analysis. The instance-level PromptSensiScore (PSS) is introduced to quantify prediction flips across prompts, distinguishing "pseudo-robust" models (e.g., Qwen3-30B) that are stable at the dataset level but unstable at the instance level.
 
-**Core Idea**: Replace any single LLM annotator with a "majority vote of the top 15 model-prompt combinations." Use post-hoc expert assessments of error severity (categorized as acceptable/understandable/unacceptable) to evaluate the extent to which LLMs can realistically replace human experts.
+**Core Idea**: Replace single LLM annotators with a majority vote of the 15 most optimal model-prompt combinations and utilize post-hoc expert assessments of error severity (acceptable/understandable/unacceptable) to evaluate the feasibility of model-expert substitution.
 
 ## Method
 
 ### Overall Architecture
-The process involves four steps: (1) **Dataset Construction**—10,817 public decision documents were crawled from the RAB website. Stratified sampling yielded 73 validation and 200 test samples. Two Danish refugee law experts (H1, H2) independently annotated labels and confidence levels (Low/Medium/High), with disagreements resolved by H3 (Cohen's $\kappa = 0.97$). (2) **Model x Prompt Grid**—21 open-source LLMs (3B-35B parameters, 9 model families) were tested with 30 combinations (6 system prompts x 5 user prompts). Each combination underwent greedy decoding on 70 validation samples, using the `outlines` library for constrained decoding to ensure outputs matched the set $\{\text{NO}, \text{POSITIVE}, \text{NEGATIVE}\} \times \text{CREDIBILITY ASSESSMENT}$. (3) **Top-15 Annotator Selection**—Models were ranked by the average Macro-F1 of their top 3 prompts. The top 5 models, each with its top 3 prompts, formed the 15 LLM annotators for the test set. (4) **Granular Error Analysis**—Analysis included case-by-case ensemble agreement, PSS quantification of sensitivity, and expert-rated error severity. The pipeline was executed on a single H100 (80GB).
+This study investigates the extent to which open-source LLMs can replace legal experts in annotating credibility assessments. A four-step pipeline was developed spanning database construction to error attribution. Initially, the RAB-Cred benchmark was built using Danish RAB documents. Then, a grid of 21 open-source LLMs and 30 prompt combinations was evaluated on a validation set. The 15 best combinations were selected for ensemble voting on the test set. Diagnostic analysis focused on per-case cross-model consistency, prompt sensitivity, and error severity. The pipeline was executed on a single H100 (80GB) GPU.
 
 ### Key Designs
 
-1.  **6x5 Orthogonal Grid of Nested System Prompts and User Prompts**:
-    - **Function**: Decouples "domain knowledge injection" from "task reasoning structure" to avoid confounded prompt effects.
-    - **Mechanism**: System prompts (SP) increase in nested complexity: SP0 (Empty) → SP1 (Expert persona) → SP2 (SP1 + original codebook) → SP3 (SP2 rewrite + typical Danish phrases per class) → SP4 (SP3 + boundary cases like hypothetical legal constructs) → SP5 (SP1 + manual disambiguation for "credibility vs. risk assessment"). User prompts (UP) increase in reasoning complexity: UP1 (Direct selection) → UP1-FS (UP1 + 3 few-shot samples) → UP2 (Two-step: presence detection then valence classification) → UP3 (Zero-shot CoT) → UP4 (Zero-shot metacognitive prompting). All prompts are in English for Danish inputs.
-    - **Design Motivation**: Quantitative results showed that SP3/SP4 (co-written by CS and domain experts) outperformed SP2/SP5 (domain experts only), proving the value of interdisciplinary prompt design. Conversely, UP impact was **highly model-dependent**; for instance, Phi-4 achieved its peak with UP2, while Gemma-3 degraded significantly with the same prompt.
+**1. 6×5 Orthogonal Prompt Grid: Decoupling Domain Knowledge and Reasoning Structure**
 
-2.  **Top-3 Prompt Average + 15 Annotator Ensemble Voting**:
-    - **Function**: Uses the mode of a diverse yet high-performing set of LLM annotators to simulate multi-expert consensus.
-    - **Mechanism**: The top 5 models (Phi-4, Gemma-3-27B-it, Ministral-3-14B, Mistral-Small-24B, Qwen3-30B) were selected based on validation performance. Each contributed its top 3 prompts, totaling 15 combinations. Majority voting determined the final prediction for each test case.
-    - **Design Motivation**: While the highest single-model test F1 was 94.7% (Phi-4+SP4+UP4), every individual annotator committed at least one "unacceptable error." Ensemble voting increased accuracy to 96% (+1.5pp). In the 8 remaining error cases, expert evaluation found 4 were "acceptable," 2 were "understandable," and only 2 remained "unacceptable," significantly reducing the rate of severe errors.
+To quantify the "task-specific" nature of prompts, an orthogonal grid of system × user prompts was designed. System prompts (SP) increased domain knowledge injection hierarchically: SP0 (empty) → SP1 (expert persona) → SP2 (SP1 + codebook) → SP3 (SP2 + typical Danish phrases) → SP4 (SP3 + boundary cases) → SP5 (SP1 + expert disambiguation). User prompts (UP) increased reasoning complexity: UP1 (direct choice) → UP1-FS (few-shot) → UP2 (two-step: presence then polarity) → UP3 (zero-shot CoT) → UP4 (metacognitive prompting). Results showed that SP3/SP4, co-written by CS and domain experts, outperformed those written solely by domain experts (SP2/SP5). UP gains were highly model-dependent.
 
-3.  **Instance-level PromptSensiScore (PSS)**:
-    - **Function**: Traditional prompt sensitivity often ignores "prediction flipping" when aggregate F1 remains stable.
-    - **Mechanism**: PSS calculates the variance of prediction accuracy across a set of prompts $\mathcal{P}$ for each case $x_i$. Two slices were analyzed: (a) **Fixed Model, Variable Prompt** (Prompt sensitivity: Phi-4 PSS=0.043 [lowest], Qwen3-30B PSS=0.110 [highest]); (b) **Fixed Prompt, Variable Model** (Model sensitivity: PSS=0.05).
-    - **Design Motivation**: The comparison revealed that **instability from prompt changes > instability from model changes**. PSS serves as a diagnostic tool to identify models like Qwen3-30B, which appear robust at an aggregate level (F1 ≈ 87.9% across prompts) but actually flip labels on different cases, canceling out errors by chance.
+**2. Top-3 Prompt Averaging + 15-Annotator Ensemble: Simulating Expert Consensus**
+
+Single LLM annotators are risky; the best test set performer (Phi-4+SP4+UP4) achieved 94.7% F1 but still committed "unacceptable" errors. The ensemble selected the top 5 models based on validation performance (Phi-4, Gemma-3-27B, Ministral-3-14B, Mistral-Small-24B, Qwen3-30B) and their respective top-3 prompts. On the test set, majority voting reached 96% accuracy (+1.5pp over single SOTA). More importantly, for the 8 remaining error cases, experts judged 4 as "acceptable," 2 as "understandable," and only 2 as "unacceptable," indicating that ensembles effectively mitigate severe errors.
+
+**3. Instance-level PromptSensiScore (PSS): Distinguishing Robustness Types**
+
+Aggregate F1 variance across prompts can hide "pseudo-robustness" where specific predictions flip between cases. Borrowing from Zhuo et al. (2024), PSS calculates the stability of predictions across a set of prompts $\mathcal{P}$ for each case $x_i$, denoted as PSS$(x_i)$. Findings suggest prompts are more critical than models: Phi-4 was most stable (PSS=0.043), while Qwen3-30B was unstable (PSS=0.110). Qwen3-30B exhibited a plateaued F1 across prompts, but failed on different cases each time—a risk exposed by PSS.
 
 ### Loss & Training
-This work is a **pure zero/few-shot benchmark** without model training. The only "tuning" involved few-shot example selection: choosing one high-information-density case per category where domain expert confidence was high but LLM zero-shot performance failed. Constrained decoding used the `outlines` library to enforce the schema `Literal["NO/POSITIVE/NEGATIVE CREDIBILITY ASSESSMENT"]`. For models not supporting `outlines`, regex post-processing was used.
+This study is a pure zero/few-shot benchmark without model training. "Training" involved few-shot selection of "hard cases" where experts had high confidence but LLMs failed. Constrained decoding was implemented via the `outlines` library for specific schemas: $\text{Literal}[\text{"NO/POSITIVE/NEGATIVE CREDIBILITY ASSESSMENT"}]$. Models not supporting `outlines` used regex post-processing. All runs used greedy decoding.
 
 ## Key Experimental Results
 
 ### Main Results
-Evaluation involved 21 models across 30 prompts. The top 15 combinations were evaluated on the test set (200 samples). Test F1 scores ranged from 84.4% to 94.7%, while the outcome-as-classifier baseline was 53%.
+The evaluation involved 21 models × 30 prompts on 70 validation samples, with the top 15 combinations tested on 200 samples. Test set F1 ranged from 84.4% to 94.7%.
 
-| Model-Prompt | val Macro-F1 | test Macro-F1 | test Accuracy | Remarks |
+| Model-Prompt | val Macro-F1 | test Macro-F1 | test Accuracy | Note |
 |------------|--------------|---------------|---------------|------|
 | Phi-4 + SP4 + UP4 | 86.34 | **94.69** | **94.50** | Single Model SOTA |
-| Phi-4 + SP4 + UP2 | **90.51** | 93.66 | 94.00 | Highest val performance |
-| Mistral-Small-24B + SP3 + UP1-FS | 85.63 | 92.52 | 92.50 | Best Few-shot |
-| Ministral-3-14B + SP4 + UP3 | 86.59 | 91.63 | 92.00 | Best CoT |
-| Gemma-3-27b + SP4 + UP1-FS | 79.91 | 84.39 | 86.50 | Weakest in top selection |
-| Qwen3-30B + SP5 + UP2 | 83.61 | 87.95 | 89.00 | Size doesn't guarantee strength |
-| **Ensemble (15 LLMs, majority vote)** | – | – | **96.00** | +1.5 pp vs Single SOTA |
-| Outcome-as-classifier baseline | – | – | 53.00 | Naive Baseline |
+| Phi-4 + SP4 + UP2 | **90.51** | 93.66 | 94.00 | Highest val |
+| Mistral-Small-24B + SP3 + UP1-FS | 85.63 | 92.52 | 92.50 | Strongest few-shot |
+| Ministral-3-14B + SP4 + UP3 | 86.59 | 91.63 | 92.00 | Strongest CoT |
+| Gemma-3-27b + SP4 + UP1-FS | 79.91 | 84.39 | 86.50 | Weakest in selection |
+| Qwen3-30B + SP5 + UP2 | 83.61 | 87.95 | 89.00 | Larger model not necessarily better |
+| **Ensemble (15 LLMs, majority vote)** | – | – | **96.00** | +1.5 pp vs single SOTA |
+| Outcome-as-classifier baseline | – | – | 53.00 | Naive baseline |
 | Human H1 vs H2 | – | – | 98.4 ($\kappa=0.967$) | Upper Bound |
 
-Model size did not correspond to performance: Qwen2.5-32B, Qwen3-30B, and Aya-Expanse-32B all plateaued at ≤85% F1, falling behind the 14B Phi-4. Despite Phi-4's model card stating it was not designed for multilingual tasks (8% multilingual data), it performed best, suggesting data quality outweighs multilingual coverage. Inter-LLM Cohen's $\kappa$ peaked at 0.950, lower than the human expert $\kappa$ of 0.967.
+Performance did not correlate with model size: Qwen3-30B and others plateaued ≤85% F1, significantly trailing the 14B Phi-4. Despite its model card stating only 8% multilingual data, Phi-4 performed best, suggesting high-quality data outweighs multilingual breadth.
 
 ### Ablation Study
-Error structure and component contribution (Test set, $n=200$):
+Error structure and component contributions (Test set, 200 cases):
 
-| Configuration / Analysis | Value | Description |
+| Configuration / Analysis | Key Number | Explanation |
 |------------|---------|------|
-| All 15 LLMs correct | 144 / 200 = 72% | "Simple" cases |
+| All 15 LLMs correct | 144 / 200 = 72% | "Easy" cases |
 | ≥ 8 LLMs correct (Majority Vote) | 190 / 200 = 95% | Majority vote ceiling |
-| Every LLM made ≥ 1 "unacceptable" error | 15 / 15 | Single model failure is inevitable |
-| Ensemble majority vote errors | 8 / 200 = 4% | 1.5pp fewer than single SOTA |
-| Ensemble error severity (Expert) | 4 acceptable / 2 understandable / 2 unacceptable | 50% are ambiguous boundary cases |
+| Every LLM made ≥ 1 "unacceptable error" | 15 / 15 | Individual model failure inevitable |
+| Ensemble majority vote errors | 8 / 200 = 4% | 1.5pp lower than single SOTA |
+| Ensemble error severity | 4 acc / 2 und / 2 unacc | 50% are boundary cases |
 | Phi-4 instance-level PSS | 0.043 | Most stable |
-| Qwen3-30B instance-level PSS | 0.110 | Least instance-stable |
-| Average Prompt Sensitivity | ~0.08 | Higher than Model Sensitivity (0.05) |
-| Gemma-3-27B F1 var across prompts | 54% | Least robust |
+| Qwen3-30B instance-level PSS | 0.110 | Aggregate stable, instance-level unstable |
+| Average prompt sensitivity | ~0.08 | > model sensitivity (0.05) |
 
 ### Key Findings
-- **Prompt > Model**: Fixed-prompt model sensitivity (PSS 0.05) was lower than fixed-model prompt sensitivity (PSS 0.06-0.11), making multi-prompt evaluation essential for LLM annotation studies.
-- **Bigger is Not Better**: Phi-4 (14B) outperformed >30B models like Qwen2.5, Qwen3, and Aya-Expanse, demonstrating that high-quality data trumps parameter count and broad multilingual coverage.
-- **CoT/Metacognition depends on SP**: Meta-prompts were only effective over UP1 when system prompts were simple (SP0/SP1). With a complete codebook in the SP, CoT provided no gains.
-- **Binary Decomposition (UP2) is Model-Specific**: Breaking the task into "detect then classify" helped Phi-4 but harmed Gemma-3; task decomposition is not a universal benefit.
-- **Error overlap with human uncertainty**: Cases where <75% of LLMs were correct typically involved cases where at least one human expert had low/medium confidence, suggesting inherent ambiguity in the data rather than model failure.
+- **Prompts are more critical than models**: The PSS for fixing prompts and changing models (0.05) was lower than fixing models and changing prompts (0.06-0.11). Multi-prompt evaluation should be standard.
+- **Large Model $\neq$ Good Model**: Phi-4 (14B) outperformed 30B+ models. Quality of data is more important than parameter count for medium-resource languages.
+- **CoT/metacognition gains depend on SP**: Reasoning prompts primarily helped when the system prompt lacked a comprehensive codebook.
+- **Task decomposition (UP2) is model-specific**: Breaking down the decision improved Phi-4 but degraded Gemma-3.
+- **LLM errors align with human uncertainty**: Most cases where <75% of LLMs were correct also saw "Low/Medium" confidence from human experts.
 
 ## Highlights & Insights
-- **Expert post-hoc severity grading**: This paradigm shifts evaluation from "correctness" to "utility," identifying an error as "acceptable" if it occurs in a fuzzy boundary case.
-- **PSS as a diagnostic for "pseudo-robustness"**: Exposes models that maintain aggregate F1 through lucky error cancellation rather than true prompt invariance.
-- **Value of interdisciplinary prompt design**: Proved that prompts co-authored by domain and technical experts outperform those by domain experts alone.
-- **15-LLM Ensemble as a Human Proxy**: Majority voting significantly reduces unacceptable errors to 1%, providing expert-level reliability at a fraction of the cost of manual legal expert annotation.
+- **Expert-graded error severity**: Moving beyond binary accuracy to a three-tier severity scale provides a high-density evaluation paradigm essential for high-stakes deployments (legal, medical).
+- **PSS reveals hidden risks**: PSS distinguished models like Qwen3-30B that appeared robust at the aggregate level but were unstable per case.
+- **Interdisciplinary prompt design is superior**: Prompts co-authored by domain and technical experts outperformed those written by domain experts alone.
+- **Cost-effective ensemble strategy**: A 15-model majority vote suppressed "unacceptable" errors to 1%, offering expert-level reliability at a fraction of the cost of hiring multiple legal experts for large-scale annotation.
 
 ## Limitations & Future Work
-- **Small sample size**: 273 cases may have limited statistical representative power for the full 10,000+ RAB corpus.
-- **Open-source constraints**: Closed-source models (GPT-4o) were not tested due to data sensitivity, leaving the total upper bound unknown.
-- **Greedy decoding limitations**: The study did not explore multi-seed variance or the potential negative impact of constrained decoding on generation quality.
-- **Language configuration**: The use of English prompts for Danish inputs was not controlled against a full-Danish or translated-English pipeline.
-- **Reasoning interpretability**: The analysis focused on final labels rather than whether the LLM's CoT reasoning aligned with legal logic.
+- **Small Dataset (273 cases)**: Limited statistical representation for the entire corpus of 10,000+ RAB cases.
+- **Exclusion of closed-source models**: GPT-4o and Claude were not tested due to data sensitivity requirements for offline processing.
+- **Single run with greedy decoding**: Multi-seed variance and the potential negative impact of constrained decoding were not fully explored.
+- **English Prompt/Danish Input**: The cross-lingual effect was not compared against pure Danish or translated English prompts.
+- **Reasoning Trace Alignment**: The study did not analyze whether LLM reasoning aligned with expert logic, only focusing on final labels.
 
 ## Related Work & Insights
-- **Comparison with AsyLex (Barale et al. 2023)**: While AsyLex is a refugee law NLP dataset, it is in English. RAB-Cred fills the gap for medium-resource languages and includes expert confidence metadata.
-- **LLM-as-annotator literature**: Moves beyond simple model comparisons to a three-dimensional evaluation focusing on prompts, model stability (PSS), and error severity.
-- **Codebook LLMs**: Supports the finding that merely providing a codebook is insufficient; effective annotation requires rewriting and the inclusion of edge cases within the prompt.
+- **vs AsyLex (Barale et al. 2023)**: AsyLex is in English; RAB-Cred fills the gap for medium-resource languages and includes expert confidence metadata.
+- **vs General LLM-as-annotator literature**: This study extends standard aggregate metrics by incorporating 21 models × 30 prompts with instance-level PSS and severity analysis.
+- **Insight**: High-stakes fields should normalize "severity-classified error analysis." Small, high-quality models like Phi-4 may offer better paths for low-reasoning/medium-resource tasks than massive multilingual models.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ (New dataset for Danish RAB; innovative ensemble + severity evaluation framework).
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ (Extensive grid search across models and prompts; detailed instance-level sensitivity and error analysis).
-- Writing Quality: ⭐⭐⭐⭐⭐ (Clear legal context, intuitive examples, and high reproducibility).
-- Value: ⭐⭐⭐⭐ (Provides a robust methodological framework for LLM-based annotation in high-stakes social/legal domains).
+- Novelty: ⭐⭐⭐⭐ New dataset and combined innovation of ensemble voting with severity classification.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Extensive grid search across 630 combinations with post-hoc diagnostic metrics.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear legal context, intuitive examples, and high reproducibility via provided code.
+- Value: ⭐⭐⭐⭐ Provides a robust methodological framework for LLM-based annotation in social sciences and law.
 
 <!-- RELATED:START -->
 
@@ -139,9 +129,9 @@ Error structure and component contribution (Test set, $n=200$):
 
 - [\[ACL 2026\] SCAN: Structured Capability Assessment and Navigation for LLMs](scan_structured_capability_assessment_and_navigation_for_llms.md)
 - [\[ACL 2026\] NovBench: Evaluating Large Language Models on Academic Paper Novelty Assessment](novbench_evaluating_large_language_models_on_academic_paper_novelty_assessment.md)
-- [\[ACL 2026\] Personalized Benchmarking: Evaluating LLMs by Individual Preferences](personalized_benchmarking_evaluating_llms_by_individual_preferences.md)
+- [\[ACL 2025\] Where Are We? Evaluating LLM Performance on African Languages](../../ACL2025/llm_evaluation/where_are_we_evaluating_llm_performance_on_african_languages.md)
+- [\[ACL 2026\] Can LLMs Act as Historians? Evaluating Historical Research Capabilities of LLMs via the Chinese Imperial Examination](can_llms_act_as_historians_evaluating_historical_research_capabilities_of_llms_v.md)
 - [\[ACL 2026\] Beyond Marginal Distributions: A Framework to Evaluate the Representativeness of Demographic-Aligned LLMs](beyond_marginal_distributions_a_framework_to_evaluate_the_representativeness_of_.md)
-- [\[ACL 2026\] Comprehensiveness Metrics for Automatic Evaluation of Factual Recall in Text Generation](comprehensiveness_metrics_for_automatic_evaluation_of_factual_recall_in_text_gen.md)
 
 </div>
 

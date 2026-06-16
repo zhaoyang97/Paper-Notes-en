@@ -2,19 +2,13 @@
 title: >-
   [Paper Note] Active Continual Learning with Metaplastic Binary Bayesian Neural Networks
 description: >-
-  [ICML2026][AI Safety][Binary Bayesian Neural Networks] BiMU designs bounded-memory and uncertainty-aware metaplastic updates for binary Bayesian neural networks to prevent Bernoulli posterior saturation in long-range non…
+  [ICML 2026][AI Safety][Paper Note] BiMU designs bounded-memory and uncertainty-aware metaplastic updates for binary Bayesian neural networks to prevent Bernoulli posterior saturation in long-range non-stationary streams, utilizing Monte Carlo disagreement for buffer-free one-shot active queries to significantly reduce label and backpropagation costs.
 tags:
-  - "ICML2026"
-  - "AI Safety"
-  - "Binary Bayesian Neural Networks"
-  - "Continual Learning"
-  - "Active Learning"
-  - "Posterior Uncertainty"
-  - "Edge Intelligence"
+  - ICML 2026
+  - AI Safety
 date: 2026-05-08
-content_hash: be0e5cad074ff00a
+content_hash: c68d737c893be589
 ---
-
 # Active Continual Learning with Metaplastic Binary Bayesian Neural Networks
 
 **Conference**: ICML2026  
@@ -24,140 +18,145 @@ content_hash: be0e5cad074ff00a
 **Keywords**: Binary Bayesian Neural Networks, Continual Learning, Active Learning, Posterior Uncertainty, Edge Intelligence  
 
 ## TL;DR
-BiMU designs bounded-memory and uncertainty-aware metaplastic updates for binary Bayesian neural networks to prevent Bernoulli posterior saturation in long-range non-stationary streams. It utilizes Monte Carlo disagreement for buffer-free, one-shot active querying, significantly reducing labeling and backpropagation overhead.
+BiMU designs bounded-memory and uncertainty-aware metaplastic updates for binary Bayesian neural networks to prevent Bernoulli posterior saturation in long-range non-stationary streams, utilizing Monte Carlo disagreement for buffer-free one-shot active queries to significantly reduce label and backpropagation costs.
 
 ## Background & Motivation
-**Background**: Always-on edge systems require long-term online inference and persistent learning as distributions of users, sensors, or environments shift. Binary Neural Networks (BNNs) leverage $\{-1,+1\}$ weights and activations to reduce storage, MAC operations, and data movement costs. Bayesian BNNs further provide epistemic uncertainty for OOD detection and reliability monitoring.
+**Background**: Always-on edge systems require long-term online inference and continual learning as user, sensor, or environment distributions change. Binary Neural Networks (BNNs) reduce storage, MAC operations, and data movement costs using $\{-1,+1\}$ weights and activations; Bayesian BNNs further provide epistemic uncertainty for OOD detection and reliability monitoring.
 
-**Limitations of Prior Work**: Mean-field Bernoulli posteriors tend to saturate over long data streams. As evidence accumulates, the natural parameter $|\lambda|$ increases, leading to near-deterministic weight sampling and the disappearance of posterior uncertainty. Consequently, synapses become rigid and fail to flip signs, causing the model to lose plasticity for new tasks and rendering uncertainty signals ineffective for active learning.
+**Limitations of Prior Work**: Mean-field Bernoulli posteriors are prone to saturation over long data streams. As evidence accumulates, the natural parameter $|\lambda|$ increases, weight sampling becomes nearly deterministic, posterior uncertainty vanishes, and synapses find it difficult to flip signs. For continual learning, this leads to model rigidity and an inability to adapt to new tasks; for active learning, it renders the uncertainty signal ineffective.
 
-**Key Challenge**: Edge devices must stably remember the past without becoming "frozen" due to infinite evidence accumulation. They must learn online without storing replay buffers or performing frequent backpropagation, while maintaining sufficient Bayesian uncertainty in a low-bit regime to decide when to request labels.
+**Key Challenge**: Edge devices must stably remember the past without infinite evidence accumulation leading to freezing; they must perform online learning without replay buffers or frequent backpropagation; and they need low-bit inference while retaining sufficient Bayesian uncertainty to decide when to request labels.
 
-**Goal**: The authors aim to derive a fully online, buffer-free continual learning rule for mean-field Bernoulli synapses, maintaining plasticity and OOD uncertainty across 1,000 tasks in non-stationary streams. This uncertainty is leveraged for one-shot active querying to reduce labeling and update costs.
+**Goal**: The authors aim to derive a fully online, buffer-free continual learning rule for mean-field Bernoulli synapses, enabling binary networks to maintain plasticity and OOD uncertainty in non-stationary streams of up to 1000 tasks, while utilizing this uncertainty for one-shot active queries to reduce labeling and update costs.
 
-**Key Insight**: Starting from bounded-memory Bayesian learning and forgetting, the objective of "retaining information from only the last $N$ update windows" is formulated as a variational target. Expanding the Bernoulli posterior yields a data term, a forgetting term via prior relaxation, and a metaplastic step size that adapts to uncertainty and gradient directions.
+**Key Insight**: Starting from bounded-memory Bayesian learning and forgetting, the objective of "retaining only information from the most recent $N$ update windows" is formulated as a variational target. Expanding for Bernoulli posteriors yields a data term, a forgetting term that relaxes toward the prior, and a metaplastic step size that varies with uncertainty and gradient direction.
 
-**Core Idea**: The natural parameter updates of binary Bayesian posteriors are designed to be "data-driven + bounded forgetting + uncertainty-aware step size," preventing binary synapses from freezing due to long-term evidence accumulation.
+**Core Idea**: The natural parameter updates of the binary Bayesian posterior are designed as "data-driven + bounded forgetting + uncertainty-aware step size," preventing binary synapses from freezing due to long-term evidence accumulation.
 
 ## Method
-BiMU targets binary weights $\omega\in\{-1,+1\}^s$, where each synapse is parameterized by a Bernoulli natural parameter $\lambda^{(i)}$. $\lambda=0$ denotes maximum uncertainty, while large $|\lambda|$ indicates high certainty. Unlike standard Bayesian updates that push $|\lambda|$ to infinity, BiMU incorporates controlled forgetting and metaplastic learning rates during online batch updates to maintain long-term plasticity.
 
 ### Overall Architecture
-At each time step, the model processes only the current batch without storing past samples or requiring task boundaries. Given the previous $\lambda_{t-1}$, BiMU computes the gradient $\partial\mathcal L/\partial\lambda$ from the current data loss and adds a relaxation term toward the prior. This relaxation is controlled by a memory window $N$; a small $N$ implies faster forgetting, while a large $N$ approximates cumulative learning. The update magnitude is governed by $\eta(\lambda,g)$: the weight consolidates quickly when the gradient supports the current sign but scales down when the gradient opposes it, requiring sustained evidence to flip the synapse.
+BiMU addresses the "posterior saturation" problem of binary Bayesian networks in long-range non-stationary streams. Each binary synapse $\omega \in \{-1,+1\}$ is parameterized by a Bernoulli natural parameter $\lambda$, where $\lambda=0$ represents maximum uncertainty. Larger $|\lambda|$ indicates higher weight certainty, and standard Bayesian updates push $|\lambda|$ higher until synapses freeze. BiMU coordinates three mechanisms: current batch data-driven consolidation, a bounded forgetting term (controlled by a memory window) pulling the posterior toward the prior, and an asymmetric step size based on the alignment of the gradient and current sign. During inference, MC disagreement from multiple binary weight samplings is used for one-shot active querying to decide on requesting labels and performing backpropagation. The entire process is buffer-free and does not require task boundaries.
 
-During active learning, BiMU draws $K$ sets of binary weights for each unlabeled sample to run MC forwards. The Variation Ratio $VR=1-f_{mode}/K$ measures prediction disagreement. If $VR\ge\tau$, a label is requested and a BiMU update is performed; otherwise, the sample is skipped, saving both labeling and backpropagation costs.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Streaming samples x<br/>(No task boundaries / No replay)"] --> B["MC disagreement active query<br/>K binary weight forward passes"]
+    B --> C["variation ratio<br/>VR = 1 − f_mode/K"]
+    C -->|"VR < τ: Skip"| S["No label / No backprop"]
+    C -->|"VR ≥ τ: Request label"| D
+    subgraph D["BiMU Posterior Update (Bernoulli λ)"]
+        direction TB
+        D1["Bounded memory variational objective<br/>Data term + Prior relaxation (1/N)"] --> D2["Metaplastic step size η(λ,g)<br/>Fast consolidation / Slow deconsolidation"]
+    end
+    D --> A
+```
 
 ### Key Designs
-1. **Bounded-Memory Bernoulli Variational Objective**:
-    - **Function**: Prevents the binary Bayesian posterior from accumulating historical evidence indefinitely.
-    - **Mechanism**: The objective includes the current data term, a KL stability term relative to the previous posterior, and a KL forgetting term relative to the initial prior. The forgetting term's weight $1/N$ represents the window size or evidence half-life. The derived update includes a relaxation term $(\lambda_{t-1}^{(i)}-\lambda_{prior}^{(i)})/(N\cosh^2(\lambda_{t-1}^{(i)}))$.
-    - **Design Motivation**: Rigidity in continual learning stems from infinite evidence. Explicit forgetting ensures the posterior maintains a balance between stability and plasticity rather than becoming increasingly deterministic.
 
-2. **Uncertainty-Aware Metaplastic Step Size**:
-    - **Function**: Implements different update dynamics for consolidation and de-consolidation of synapses.
-    - **Mechanism**: BiMU avoids expensive Hessian estimations by using a bounded surrogate learning rate. The step size depends on the relationship between $\lambda$ and gradient $g$: if $\lambda g < 0$ (gradient reinforces the current sign), the step size approaches the upper bound; if $\lambda g > 0$ (gradient opposes the current sign), the step size shrinks, preventing noise from easily flipping consolidated weights.
-    - **Design Motivation**: Real streams contain both stable structures and transient noise. Asymmetric step sizes allow the model to consolidate consistent evidence quickly while requiring persistent counter-evidence to change existing synapses.
+**1. Bounded-memory Bernoulli variational objective: Allowing forgetting instead of infinite evidence accumulation**
 
-3. **One-Shot Active Querying via MC Disagreement**:
-    - **Function**: Converts epistemic uncertainty into savings in labeling and update budgets.
-    - **Mechanism**: By sampling $K$ binary posteriors for incoming samples, the model calculates the mode frequency of predicted classes. Higher Variation Ratio indicates higher disagreement, suggesting the sample has high learning value. A threshold rule determines whether to request a label and update.
-    - **Design Motivation**: Edge devices cannot buffer unlabeled pools for sorting. VR requires only MC forwards, which in BNNs can be implemented via bit-level operations, costing far less than backpropagation and weight writes.
+The root cause of rigidity in long-term continual learning is that evidence is infinitely accumulated into $|\lambda|$, making synapses harder to flip. BiMU formulates the variational objective as the sum of three terms: the current data term, a KL stability term toward the previous posterior, and a KL forgetting term toward the initialization prior with a weight of $1/N$, where $N$ is the sliding window size or evidence half-life. The derivative of the Bernoulli posterior includes a prior relaxation term $(\lambda_{t-1}^{(i)}-\lambda_{prior}^{(i)})/(N\cosh^2(\lambda_{t-1}^{(i)}))$, which continuously pulls certain synapses slightly back toward the prior. A smaller $N$ implies faster forgetting and more plasticity, while a larger $N$ approaches cumulative learning and rigidity.
+
+**2. Uncertainty-aware metaplastic step size: Fast consolidation, slow deconsolidation**
+
+Real data streams contain both stable structures and short-term noise. BiMU utilizes a bounded surrogate learning rate $\eta(\lambda,g)$ instead of calculating the expensive Hessian. The step size depends on the relationship between the sign of the current $\lambda$ and the gradient $g$. When $\lambda g < 0$ (gradient reinforces the current sign), the step size approaches the upper bound $\alpha_{max}$ for fast consolidation. When $\lambda g > 0$ (gradient attempts to flip the sign), the step size is reduced, requiring consistent counter-evidence to deconsolidate. This asymmetric dynamic allows synapses to learn new tasks without old memories being easily erased by noise.
+
+**3. One-shot active querying via MC disagreement: Converting retained uncertainty into label savings**
+
+The first two designs preserve epistemic uncertainty, which the third design converts into budget savings. Edge devices cannot buffer unlabeled pools for sorting or handle frequent backpropagation. BiMU performs $K$ Monte Carlo (MC) forwards per sample to obtain multiple predicted classes and calculates the variation ratio $VR=1-f_{mode}/K$. Higher $VR$ indicates higher disagreement and potential learning value. If $VR \ge \tau$, a one-shot label request and BiMU update are triggered; otherwise, the sample is skipped. Since binary forward passes can use bit-level operations, the cost of $K$ samplings is significantly lower than a single backpropagation and weight write.
 
 ### Loss & Training
-Data gradients are estimated using Concrete/Gumbel-softmax relaxation. Backpropagation is performed on relaxed binary weights and averaged over $K$ MC samples. Hyperparameters include the memory window $N$, maximum metaplastic step size $\alpha_{max}$, likelihood/KL scaling, and the active learning threshold $\tau$. Experiments include 1,000-task Permuted-MNIST, OpenLORIS-Object (online linear head on frozen VGG19), and imbalanced active learning on Animals/OpenLORIS.
+Data term gradients are estimated via Concrete / Gumbel-softmax relaxation, backpropagated through relaxed binary weights, and averaged over $K$ MC samples. Key hyperparameters include the memory window $N$, maximum metaplastic step size $\alpha_{max}$, likelihood/KL scaling coefficients, and the active learning threshold $\tau$. Experiments include 1000-task Permuted-MNIST, OpenLORIS-Object with frozen VGG19 features and online linear heads, and imbalanced active learning on Animals/OpenLORIS.
 
 ## Key Experimental Results
 
 ### Main Results
-The 1,000-task Permuted-MNIST evaluates long-range continual learning and OOD uncertainty. BiMU is the only binary method to maintain high accuracy after 1,000 tasks.
+1000-task Permuted-MNIST tests long-range continual learning and OOD uncertainty. BiMU is the only binary method maintaining high accuracy after 1000 tasks.
 
 | Method | Task bounds | Last 5 tasks Acc | OOD AUC | MMRR | Single-task Acc | Note |
 |------|-------------|------------------|---------|------|-----------------|------|
 | BiMU | no | 90.30±0.38 | 0.99±0.00 | 139.47 | 94.67±0.11 | Most stable binary method; no task boundaries |
-| BayesBiNN | yes | 41.12±1.62 | 0.57±0.12 | 2.04 | 93.22±0.09 | Posterior saturation leads to rigidity |
-| Syn. Meta. | yes | 10.27±0.01 | - | 1.64 | 71.40±1.48 | Intense metaplasticity is near-irreversible |
+| BayesBiNN | yes | 41.12±1.62 | 0.57±0.12 | 2.04 | 93.22±0.09 | Rigidity due to posterior saturation |
+| Syn. Meta. | yes | 10.27±0.01 | - | 1.64 | 71.40±1.48 | Irreversible strong metaplasticity |
 | STE | no | 29.35±0.96 | 0.69±0.04 | 9.32 | 77.56±1.35 | Lacks continual learning mechanism |
-| MESU | no | 91.69±0.58 | 0.95±0.03 | 261.10 | 96.10±0.18 | Strong real-valued baseline but larger state |
-| EWC Online | yes | 81.78±0.82 | 0.66±0.11 | 6.63 | 96.06±0.11 | Worse than BiMU despite task boundaries |
+| MESU | no | 91.69±0.58 | 0.95±0.03 | 261.10 | 96.10±0.18 | Strong real-valued Bayesian baseline |
+| EWC Online | yes | 81.78±0.82 | 0.66±0.11 | 6.63 | 96.06±0.11 | Underperforms BiMU even with task boundaries |
 
-OpenLORIS-Object uses frozen VGG19 features with an online linear head to evaluate nuisance-factor shifts and feature compression.
+OpenLORIS-Object uses frozen VGG19 features with online linear heads to evaluate nuisance-factor shifts and feature compression.
 
 | Method | Features | Mean Acc | Aleatoric AUC | Epistemic AUC | Note |
 |------|----------|----------|---------------|---------------|------|
-| BiMU | 1,024 | 73.61±1.53 | 0.96±0.01 | 1.00±0.00 | Usable under heavy compression |
-| BayesBiNN | 1,024 | 72.01±1.69 | 0.93±0.01 | 1.00±0.00 | Competitive with BiMU in short horizons |
-| STE | 1,024 | 52.88±3.39 | 0.73±0.02 | - | Deterministic binary baseline is poor |
+| BiMU | 1,024 | 73.61±1.53 | 0.96±0.01 | 1.00±0.00 | Retains usability under strong compression |
+| BayesBiNN | 1,024 | 72.01±1.69 | 0.93±0.01 | 1.00±0.00 | Close to BiMU on short horizons |
+| STE | 1,024 | 52.88±3.39 | 0.73±0.02 | - | Poor performance of deterministic baseline |
 | BiMU | 8,192 | 89.19±0.19 | 0.99±0.00 | 1.00±0.00 | High accuracy with ~3x compression |
 | BiMU | 25,088 | 90.62±0.22 | 0.93±0.00 | 0.90±0.00 | Outperforms real-valued baselines on raw features |
 
-Active learning results show BiMU translates uncertainty into labeling/update savings.
+Active learning results show BiMU converts uncertainty into actual label/update savings.
 
-| Scenario | Method / Setting | Label/Update Ratio | Accuracy | Conclusion |
+| Scenario | Method / Setting | Label or Update Ratio | Accuracy | Conclusion |
 |------|-------------|----------------|--------|------|
 | Animals imbalanced | VR querying | 11% labels | 84.46% | Close to 100% update baseline |
-| Animals imbalanced | VR querying | 18% labels | 87.12% | Exceeds 100% update baseline (86.28%) |
-| OpenLORIS imbalanced | BiMU VR | 3.1% updates | 88.70% | 32× savings vs full stream (87.76%) |
+| Animals imbalanced | VR querying | 18% labels | 87.12% | Outperforms 100% update baseline (86.28%) |
+| OpenLORIS imbalanced | BiMU VR | 3.1% updates | 88.70% | 32× savings vs. full stream (87.76%) |
 | OpenLORIS imbalanced | BiMU VR | 4.0% updates | 90.91% | 25× savings with higher accuracy |
 
 ### Ablation Study
-Memory window and activation ablations explain BiMU's stability-plasticity mechanism.
+Memory window and activation ablation explain the stability-plasticity mechanism of BiMU.
 
 | Ablation | Configuration | Result | Insight |
 |------|------|------|------|
-| Network Capacity | 2000 hidden units | BiMU 95.20±0.26 Acc, OOD AUC 1.00, MMRR 862.09 | BiMU scales better than real-valued baselines |
-| Memory overhead | BiMU | 0.32 MB | Training memory equals inference; no history/importance stored |
+| Network Capacity | 2000 hidden units | BiMU 95.20±0.26 Acc | Outperforms real-valued baseline with increased capacity |
+| Memory overhead | BiMU | 0.32 MB | Training memory equals inference; no history stored |
 | Memory overhead | BayesBiNN | 0.64 MB | Requires extra posterior states |
-| Memory overhead | Syn. Meta. | 1.84 MB | Adam states and task BN add extra costs |
+| Memory overhead | Syn. Meta. | 1.84 MB | High cost due to Adam states and task BN |
 
 | Activation / Method | Last 5 tasks Acc | OOD AUC | MMRR | Note |
 |-------------------|------------------|---------|------|------|
-| BiMU + Sign | 81.78±0.58 | 0.76±0.08 | 22.25 | BiMU mechanism works, but uncertainty is weaker |
-| BiMU + RBG | 90.29±0.24 | 0.99±0.01 | 215.52 | Reverse Binary Gate (RBG) enhances uncertainty |
-| BayesBiNN + Sign | 66.40±0.97 | 0.54±1.19 | 5.85 | Activation change does not solve rigidity |
-| BayesBiNN + RBG | 67.41±1.03 | 0.76±0.17 | 4.99 | Rigidity persists despite single-task gains |
-| MESU + ReLU | 93.51±0.18 | 0.91±0.03 | 500.02 | Real-valued models remain strong |
-| MESU + RBG | 92.35±0.21 | 0.80±0.05 | 943.44 | RBG is not suitable for all models |
+| BiMU + Sign | 81.78±0.58 | 0.76±0.08 | 22.25 | Effective mechanism but weaker uncertainty |
+| BiMU + RBG | 90.29±0.24 | 0.99±0.01 | 215.52 | RBG enhances representation and uncertainty |
+| BayesBiNN + Sign | 66.40±0.97 | 0.54±0.19 | 5.85 | Activation change does not solve rigidity |
+| BayesBiNN + RBG | 67.41±1.03 | 0.76±0.17 | 4.99 | Long-term rigidity persists |
 
-MC sample analysis in OpenLORIS shows that a small $K$ provides most of the benefits.
+Analysis of MC sample count in OpenLORIS active learning.
 
 | MC samples | Accuracy | Data used | Threshold | Note |
 |------------|----------|-----------|-----------|------|
-| 2 | 89.30±0.88 | 3.30±0.04% | 0.50 | Efficient querying with minimal sampling |
-| 3 | 90.61±0.53 | 3.87±0.05% | 0.33 | Close to main results |
-| 10 | 90.91±0.98 | 3.97±0.03% | 0.10 | Standard experimental setting |
-| 25 | 91.34±0.50 | 5.63±0.09% | 0.04 | Higher accuracy with increased forward cost |
-| Full stream | 87.76±0.19 | 100% | - | Active querying can outperform full updates |
+| 2 | 89.30±0.88 | 3.30±0.04% | 0.50 | Efficient query with minimal sampling |
+| 10 | 90.91±0.98 | 3.97±0.03% | 0.10 | Main experimental setting |
+| Full stream baseline | 87.76±0.19 | 100% | - | Active query can surpass full-stream updates |
 
 ### Key Findings
-- BiMU's primary advantage is preventing posterior saturation. While BayesBiNN excels at single tasks, it becomes rigid in long streams; BiMU maintains adaptation via bounded forgetting and metaplastic steps.
-- Uncertainty serves as both a diagnostic and a cost-saving mechanism. VR querying focuses updates on distribution shifts and low-frequency classes, avoiding redundant majority-class samples.
-- MC uncertainty in binary models is realistic for edge scenarios. Forward pass overhead can be mitigated via bit-level operations, whereas backpropagation and weight writing are the dominant costs.
-- The memory window $N$ acts as an intensive control knob. Values too small lead to forgetting, while values too large replicate cumulative learning and rigidity.
+- BiMU's primary advantage stems from preventing posterior saturation. While BayesBiNN is accurate on single tasks, it becomes rigid in long streams; BiMU maintains long-term adaptation via bounded forgetting and metaplastic step sizes.
+- Uncertainty serves as both a diagnostic metric and a computational saving mechanism. VR querying focuses updates on distribution shifts and low-frequency classes, avoiding redundant majority-class samples.
+- MC uncertainty for binary models is practical for edge scenarios. Multiple forward passes can be optimized via bit-level operations, whereas backpropagation and weight writing are the main bottlenecks.
+- The memory window $N$ is an interpretable control knob. Low $N$ leads to rapid forgetting, while high $N$ approaches cumulative learning and rigidity.
 
 ## Highlights & Insights
-- The paper effectively combines the computational efficiency of BNNs with Bayesian uncertainty, moving beyond BNNs as mere compression tools. BiMU enables low-bit models to express epistemic uncertainty long-term.
-- Deriving binary synapse updates from a bounded-memory Bayesian objective is more principled than heuristic metaplastic rules and explains the asymmetry in consolidation/de-consolidation.
-- The active learning design is pragmatically suited for the edge: no pools, no replay, no task boundaries, solely relying on one-shot thresholding to decide on labeling and backpropagation costs.
-- The observation that active querying can outperform 100% updates is noteworthy, suggesting that "updating fewer but more relevant samples" may be superior to full online SGD in imbalanced streams.
+- The paper combines "BNN computational efficiency" with "Bayesian uncertainty," rather than treating BNNs solely as compression models. BiMU allows low-bit models to express long-term epistemic uncertainty.
+- Deriving binary synapse updates from a bounded-memory Bayesian objective is more principled than heuristic metaplastic rules and explains the consolidation/deconsolidation asymmetry.
+- The active learning design is realistic for the edge: no pools, no replay, and no task boundaries, using a single threshold to decide on label and backpropagation costs.
+- The finding that active querying can outperform 1000% update baselines suggests that "updating on fewer but correct samples" may be more effective than full-stream online SGD in imbalanced streams.
 
 ## Limitations & Future Work
-- BiMU still requires MC forwards to estimate uncertainty. While binary forwards are cheap, $K$, the threshold, and latency require careful tuning on ultra-low-power devices.
-- Experiments rely heavily on frozen VGG19 features with online linear heads; end-to-end BNN CNN/Transformer continual learning requires more extensive validation.
-- VR may fail for pure label-function shifts; unlabeled uncertainty may not detect $p(y|x)$ changes if $p(x)$ remains familiar.
-- Multiple hyperparameters ($N$, $\alpha_{max}$, KL scaling, $\tau$) may require automated tuning across different hardware and data streams.
-- Gradient estimation via Concrete relaxation, temperature settings, and sampling variance could affect training stability.
+- BiMU still requires MC forward passes to estimate uncertainty. Although binary forwards are cheap, the trade-offs between $K$, threshold, and latency need fine-tuning for ultra-low-power devices.
+- Experiments rely heavily on frozen VGG19 features and online linear heads; end-to-end binary CNN/Transformer continual learning requires further validation.
+- VR may fail during pure label-function shifts; unlabeled uncertainty may not detect changes in $p(y|x)$ when $p(x)$ remains familiar.
+- Multiple hyperparameters ($N$, $\alpha_{max}$, KL/likelihood scaling, $\tau$) require automatic adjustment across different hardware and streams.
+- Gradient estimation using Concrete relaxation may introduce training instability due to relaxation temperature and sampling variance.
 
 ## Related Work & Insights
-- **vs BayesBiNN**: BayesBiNN provides a Bernoulli posterior but suffers from saturation in long streams; BiMU maintains plasticity via bounded forgetting and metaplastic step sizes.
-- **vs MESU**: MESU also employs bounded-memory Bayesian learning but targets real-valued Gaussian posteriors; BiMU adapts these ideas for Bernoulli binary synapses and reduces training memory.
-- **vs EWC / SI**: EWC/SI use importance constraints to protect knowledge but require extra states and task boundaries; BiMU operates without boundaries or replay.
-- **vs Pool-based Active Learning**: Traditional methods assume a sortable unlabeled pool; BiMU performs one-shot stream querying, which is more suitable for always-on edge devices.
+- **vs. BayesBiNN**: BayesBiNN provides a Bernoulli posterior but suffers from saturation in long streams; BiMU adds bounded forgetting and metaplastic step sizes to maintain plasticity.
+- **vs. MESU**: MESU also uses bounded-memory Bayesian learning but for real-valued Gaussian posteriors; BiMU adapts these ideas to Bernoulli binary synapses, reducing training memory.
+- **vs. EWC / SI**: EWC/SI protect old knowledge via importance constraints but require extra states/task boundaries and can lead to rigidity; BiMU requires no task boundaries or replay.
+- **vs. pool-based active learning**: Traditional active learning assumes a sorted unlabeled pool; BiMU uses one-shot threshold queries on a stream, better suited for always-on edge devices.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐☆ Integrative approach to bounded-memory Bayesianism, binary posterior metaplasticity, and online active learning.
-- Experimental Thoroughness: ⭐⭐⭐⭐☆ Extensive testing on Permuted-MNIST, OpenLORIS, and Animals with detailed ablations; end-to-end vision models could be expanded.
-- Writing Quality: ⭐⭐⭐⭐☆ Clear derivations and narrative, though symbol-dense with extensive supplementary results.
-- Value: ⭐⭐⭐⭐⭐ Highly relevant for edge continual learning, low-bit Bayesian modeling, and low-cost active labeling.
+- Novelty: ⭐⭐⭐⭐☆ Integrates bounded-memory Bayesian learning, binary posterior metaplasticity, and online active learning comprehensively.
+- Experimental Thoroughness: ⭐⭐⭐⭐☆ Extensive evaluation on Permuted-MNIST, OpenLORIS, and Animals, with thorough ablations; could extend to more end-to-end visual models.
+- Writing Quality: ⭐⭐⭐⭐☆ Clear derivations and experimental narrative, though symbol density is high.
+- Value: ⭐⭐⭐⭐⭐ Direct relevance to edge continual learning, low-bit Bayesian models, and low-cost active labeling.
 
 <!-- RELATED:START -->
 
@@ -168,8 +167,8 @@ MC sample analysis in OpenLORIS shows that a small $K$ provides most of the bene
 - [\[ICML 2026\] Singular Bayesian Neural Networks](singular_bayesian_neural_networks.md)
 - [\[ICML 2026\] Frequency Matching in Spiking Neural Networks for mmWave Sensing](frequency_matching_in_spiking_neural_networks_for_mmwave_sensing.md)
 - [\[CVPR 2026\] Federated Active Learning Under Extreme Non-IID and Global Class Imbalance](../../CVPR2026/ai_safety/federated_active_learning_extreme_noniid.md)
-- [\[ICLR 2026\] Robust Spiking Neural Networks Against Adversarial Attacks](../../ICLR2026/ai_safety/robust_spiking_neural_networks_against_adversarial_attacks.md)
-- [\[CVPR 2026\] $\varphi$-DPO: Fairness Direct Preference Optimization Approach to Continual Learning in Large Multimodal Models](../../CVPR2026/ai_safety/φ-dpo_fairness_direct_preference_optimization_approach_to_continual_learning_in_.md)
+- [\[ICML 2026\] How Does Bayesian Sampling Help Membership Inference Attacks?](how_does_bayesian_sampling_help_membership_inference_attacks.md)
+- [\[CVPR 2026\] Towards Reliable Evaluation of Adversarial Robustness for Spiking Neural Networks](../../CVPR2026/ai_safety/towards_reliable_evaluation_of_adversarial_robustness_for_spiking_neural_network.md)
 
 </div>
 

@@ -2,78 +2,69 @@
 title: >-
   [Paper Note] AJ-Bench: Benchmarking Agent-as-a-Judge for Environment-Aware Evaluation
 description: >-
-  [ACL 2026][LLM Evaluation][Agent evaluation] Proposes AJ-Bench, the first benchmark to systematically evaluate Agent-as-a-Judge capabilities, covering 155 tasks and 516 annotated trajectories across search, data systems…
+  [ACL 2026][LLM Evaluation][Agent-as-a-Judge] This paper introduces AJ-Bench, the first benchmark to systematically evaluate the capabilities of Agent-as-a-Judge. It covers three domains—Search, Data Systems, and GUI—with a total of 155 tasks and 516 annotated trajectories. Experiments demonstrate that Agent-as-a-Judge improves the average $F1$ score by approximat
 tags:
-  - "ACL 2026"
-  - "LLM Evaluation"
-  - "Agent evaluation"
-  - "Agent-as-a-Judge"
-  - "Environment interaction verification"
-  - "Trajectory evaluation"
-  - "Benchmarking"
+  - ACL 2026
+  - LLM Evaluation
+  - Agent-as-a-Judge
 date: 2026-05-08
-content_hash: 45b8ab3435e7b935
+content_hash: fc23d95b8a657d6a
 ---
-
 # AJ-Bench: Benchmarking Agent-as-a-Judge for Environment-Aware Evaluation
 
 **Conference**: ACL 2026 Findings  
 **arXiv**: [2604.18240](https://arxiv.org/abs/2604.18240)  
 **Code**: [https://aj-bench.github.io/](https://aj-bench.github.io/)  
 **Area**: Reinforcement Learning  
-**Keywords**: Agent evaluation, Agent-as-a-Judge, Environment interaction verification, Trajectory evaluation, Benchmarking
+**Keywords**: Agent Evaluation, Agent-as-a-Judge, Environment Interaction Verification, Trajectory Evaluation, Benchmarking
 
 ## TL;DR
-Proposes AJ-Bench, the first benchmark to systematically evaluate Agent-as-a-Judge capabilities, covering 155 tasks and 516 annotated trajectories across search, data systems, and GUI domains. Experiments show that Agent-as-a-Judge improves F1 by approximately 13 percentage points on average compared to LLM-as-a-Judge.
+This paper introduces AJ-Bench, the first benchmark to systematically evaluate the capabilities of Agent-as-a-Judge. It covers three domains—Search, Data Systems, and GUI—with a total of 155 tasks and 516 annotated trajectories. Experiments demonstrate that Agent-as-a-Judge improves the average $F1$ score by approximately 13 percentage points compared to LLM-as-a-Judge.
 
 ## Background & Motivation
 
-**Background**: As RL continues to scale LLM Agent training, reliable verification of Agent behavior in complex environments becomes increasingly critical. Current mainstream verification methods include rule-based evaluators and LLM-as-a-Judge; the former relies on predefined rules, while the latter makes judgments based on surface-level text signals.
+**Background**: As Reinforcement Learning (RL) continues to scale up LLM Agent training, reliably verifying Agent behavior in complex environments has become increasingly critical. Current mainstream verification methods include rule-based validators and LLM-as-a-Judge; the former relies on predefined rules, while the latter makes judgments based on surface-level textual signals.
 
-**Limitations of Prior Work**: Rule-based evaluators struggle to generalize to complex, open-ended scenarios (e.g., scientific hypothesis verification, long-form fact-checking). LLM-as-a-Judge lacks access to environment state information and can only make surface-level judgments based on trajectory text, leading to erroneous evaluations. For example, judging whether an Agent correctly queried a database requires actually checking the database state rather than just reading the trajectory text.
+**Limitations of Prior Work**: Rule-based validators struggle to generalize to complex, open-ended scenarios (e.g., scientific hypothesis verification, long-form fact-checking). LLM-as-a-Judge lacks access to environmental state information and can only perform surface-level judgments based on trajectory text, which is prone to evaluation errors. For instance, determining whether an Agent correctly queried a database requires checking the actual database state rather than merely observing the trajectory text.
 
-**Key Challenge**: Verifying Agent behavior requires understanding changes in the environment state, yet existing evaluation frameworks restrict the Judge to an "observer" role, unable to interact with the environment to obtain verification evidence.
+**Key Challenge**: Verifying Agent behavior requires understanding changes in environmental states, but existing evaluation frameworks restrict the Judge to a "bystander" role, unable to interact with the environment to obtain verification evidence.
 
-**Goal**: Construct the first benchmark to systematically evaluate Agent-as-a-Judge capabilities, quantifying the abilities of Agent evaluators in information acquisition, state verification, and process verification.
+**Goal**: To construct the first benchmark for systematically evaluating Agent-as-a-Judge capabilities, quantifying the performance of Agent evaluators in information acquisition, state verification, and process verification.
 
-**Key Insight**: Empower the evaluator with "agentic" capabilities—allowing the Judge to interact with the environment and use tools to obtain evidence beyond the trajectory text to make more reliable judgments.
+**Key Insight**: Empowering the evaluator with "agentic" capabilities—allowing the Judge to interact with the environment and use tools to gather evidence beyond the trajectory text to make more reliable judgments.
 
-**Core Idea**: Build verification tasks that require environment interaction to systematically compare the differences between Agent-as-a-Judge and LLM-as-a-Judge, revealing the critical role of environment interaction for evaluation reliability.
+**Core Idea**: Construct verification tasks that require environmental interaction and systematically compare the differences between Agent-as-a-Judge and LLM-as-a-Judge to reveal the critical role of environmental interaction in evaluation reliability.
 
 ## Method
 
 ### Overall Architecture
-The construction process for AJ-Bench follows three steps: (1) Designing 155 tasks across three domains: search, data systems (file system + Postgres), and GUI (PPT + Word + Excel); (2) Generating 516 trajectories using multiple models followed by manual annotation; (3) Building interactive environment replicas for the DS and GUI domains. During evaluation, the Judge Agent receives the task description and candidate trajectory, interacts with the environment via 60 tools to gather evidence, and finally outputs a binary success/failure judgment.
+
+AJ-Bench examines whether an evaluator can actively interact with the environment like an agent to verify if another agent has truly completed a task, rather than just reading trajectory text for surface-level judgment. The benchmark covers three domains—Search, Data Systems (File System + Postgres), and GUI (PPT/Word/Excel)—comprising 155 tasks and 516 manually annotated trajectories, with interactive environment replicas reconstructed for the DS and GUI domains. During evaluation, the Judge Agent receives the task description and a candidate trajectory, then calls 60 types of tools to gather evidence from the environment's final state, ultimately outputting a binary "Success/Failure" classification.
 
 ### Key Designs
 
-1.  **Three-Dimensional Evaluation Capability Design**:
+**1. Three-Dimensional Evaluation Capability Design: Stress-testing Information Acquisition, State Verification, and Process Verification through Three Domains**
 
-    - **Function**: Comprehensively covers the core verification capabilities required for Agent-as-a-Judge.
-    - **Mechanism**: (a) Information Acquisition—verifying factual claims within trajectories via external search (Search domain); (b) State Verification—checking whether the current environment state meets expectations via tools (DS domain, e.g., checking file existence or database records); (c) Process Verification—checking the correctness of key actions and execution steps (GUI domain, e.g., checking if PPT slides were correctly modified).
-    - **Design Motivation**: These three dimensions represent the core advantages of Agent-as-a-Judge compared to LLM-as-a-Judge.
+The blind spot of LLM-as-a-Judge is that it can only see the trajectory text; it fails on tasks requiring external facts or environmental states. AJ-Bench decomposes this blind spot into three quantifiable capabilities: the Search domain requires the evaluator to verify factual claims in the trajectory through external retrieval (Information Acquisition); the Data Systems domain requires the evaluator to use tools to check if the current environment state meets expectations, such as checking if files exist or database records were correctly written (State Verification); and the GUI domain requires the evaluator to verify key actions and execution steps, such as whether a PPT slide was actually modified correctly (Process Verification). These three categories cover the incremental advantages of Agent-as-a-Judge over LLM-as-a-Judge.
 
-2.  **Multi-source Trajectory Collection and Annotation**:
+**2. Multi-source Trajectory Collection and Annotation: Preventing Judge Shortcuts via Multi-model Sources and Length Decoupling**
 
-    - **Function**: Provides high-quality, diverse positive and negative sample trajectories.
-    - **Mechanism**: The search domain uses Gemini, Grok, and Perplexity to generate trajectories; the DS domain sources multi-model trajectories from MCPMark and standardizes the format; the GUI domain collects samples from OSWorld. Samples are deliberately selected such that "successful trajectories have many steps while failed ones have few," breaking the correlation between trajectory length and success rate. Labels are ensured through rule verification and manual review.
-    - **Design Motivation**: Multi-model sources avoid single-model style bias, and length decoupling prevents the Judge from using trajectory length as a shortcut.
+Trajectories in the Search domain are generated by Gemini, Grok, and Peplexity. In the DS domain, multi-model trajectories are collected from MCPMark and unified in format. In the GUI domain, data is collected from OSWorld. Using multiple sources avoids the Judge using the style of a single model as a discriminative feature. More importantly, samples are deliberately selected where "successful trajectories have many steps and failed trajectories have few steps" to break the natural correlation between trajectory length and success rate, preventing the Judge from using length as a shortcut. All labels are cross-verified by rule-based validation and manual review to ensure the quality of positive and negative samples.
 
-3.  **Environment Reconstruction and Interactive Evaluation**:
+**3. Environment Reconstruction and Interactive Evaluation: Providing a Real Environment for Active Evidence Collection**
 
-    - **Function**: Provides an interactive, real environment for the Judge Agent.
-    - **Mechanism**: The DS domain replays the final environment state locally, while the GUI domain is reconstructed on isolated AWS instances. The Judge Agent starts from the final environment state and actively gathers evidence through tool calls (file operations, database queries, GUI checks, etc.).
-    - **Design Motivation**: Static trajectory text is insufficient for reliably judging task completion status; an actual interactive environment is the critical infrastructure that distinguishes Agent-as-a-Judge from LLM-as-a-Judge.
+In the DS domain, the final environment state is obtained by replaying trajectories locally. The GUI domain is reconstructed on isolated AWS instances. The Judge Agent starts from this final state and actively gathers evidence through tool calls such as file operations, database queries, and GUI inspections, instead of guessing from static text. This interactive environment is the core infrastructure of the benchmark—it is the "ability to verify by doing" that distinguishes Agent-as-a-Judge from a text-only LLM-as-a-Judge.
 
 ### Loss & Training
-AJ-Bench is an evaluation benchmark rather than a training framework. It uses the F1 score as the primary evaluation metric. For the search domain, F1 is calculated after aggregating at the single-entry level, while for DS and GUI domains, F1 is calculated at the trajectory level. All results are the average of three runs.
+
+AJ-Bench is an evaluation benchmark rather than a training framework; the primary metric is $F1$. The Search domain calculates $F1$ after aggregating at the single-item level, while the DS and GUI domains calculate $F1$ at the trajectory level. All results are reported as the average of three runs.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Model | Is Agentic | Search F1 | DS F1 | GUI F1 | Overall F1 |
-| :--- | :--- | :--- | :--- | :--- | :--- |
+| Model | Agentic | Search $F1$ | DS $F1$ | GUI $F1$ | Overall $F1$ |
+|------|-----------|----------|---------|---------|--------|
 | gemini-3-pro | ✗ | 77.0 | 74.5 | 74.2 | 75.1 |
 | gpt-5 | ✗ | 73.4 | 60.9 | 52.8 | 61.0 |
 | deepseek-v3.2 | ✗ | 63.3 | 63.3 | 66.1 | 64.5 |
@@ -83,39 +74,39 @@ AJ-Bench is an evaluation benchmark rather than a training framework. It uses th
 ### Ablation Study
 
 | Configuration | Key Metric | Description |
-| :--- | :--- | :--- |
-| Interaction turns=5 vs 20 | F1: ~65 vs ~77 | More interaction turns continuously improve performance. |
-| Accessibility tree only | GUI F1 varies | Sufficient for PPT tasks, insufficient for Word. |
-| Screenshot only | Word F1 best | Optimal modality varies by task. |
-| Hybrid modality | Excel F1 best | Multimodal input is not always better. |
+|------|---------|------|
+| Interaction Turns = 5 vs 20 | $F1$: ~65 vs ~77 | More interaction turns continuously improve performance |
+| Accessibility Tree Only | GUI $F1$ varies | Sufficient for PPT tasks, insufficient for Word |
+| Screenshot Only | Word $F1$ Best | Optimal modality differs across different tasks |
+| Mixed Modality | Excel $F1$ Best | Multi-modality is not always better |
 
 ### Key Findings
-- Agent-as-a-Judge improves the F1 score by approximately 13 percentage points on average compared to LLM-as-a-Judge using the same model, with the largest improvement in the GUI domain (up to 31 percentage points).
-- Weak model + tool use > strong model without tools: gpt-5-mini (agentic) achieved an overall F1 of 72.4, surpassing gpt-5 (non-agentic) at 61.0.
-- Increasing reasoning effort does not necessarily improve Agent-as-a-Judge performance: deepseek-v3.2's thinking mode performed 0.23 F1 lower than the non-thinking mode.
-- Multimodal input is not always beneficial: hybrid inputs may introduce noise, and different sub-tasks have different optimal modalities.
+- Agent-as-a-Judge achieves an average $F1$ improvement of approximately 13 percentage points over LLM-as-a-Judge using the same model, with the largest gain in the GUI domain (up to 31 percentage points).
+- Weak Model + Tool Usage > Strong Model without Tools: gpt-5-mini (agentic) achieved an overall $F1$ of 72.4, surpassing gpt-5 (non-agentic) at 61.0.
+- Increasing reasoning effort does not necessarily improve Agent-as-a-Judge performance: the "thinking" mode of deepseek-v3.2 was 0.23 $F1$ lower than the mode without "thinking."
+- Multimodal input is not always beneficial: mixed inputs may introduce noise, and the optimal modality varies for different subtasks.
 
 ## Highlights & Insights
-- "Weak model + tools > strong model without tools" is an important finding, suggesting that the value of Agent-as-a-Judge lies not in the model's inherent capability, but in the information gain provided by environment interaction.
-- The discovery that increased reasoning effort may decrease performance indicates that Agent-as-a-Judge requires better tool-use capabilities rather than deeper thinking.
-- The design of task domains (Search/DS/GUI) corresponds to information acquisition, state verification, and process verification, providing a clear capability framework for future research.
+- The finding that "Weak Model + Tools > Strong Model without Tools" is significant, indicating that the value of Agent-as-a-Judge lies not in the model's inherent capability but in the information gain provided by environmental interaction.
+- The observation that increasing reasoning effort may decrease performance suggests that Agent-as-a-Judge requires better tool-use capabilities rather than deeper thinking.
+- The design of the task domains (Search/DS/GUI) corresponds to three core capabilities—information acquisition, state verification, and process verification—providing a clear capability classification framework for future research.
 
 ## Limitations & Future Work
-- Most tasks are adapted from existing benchmarks rather than built from scratch, resulting in limited coverage.
-- The search domain depends on external network environments; network instability affects evaluation consistency.
-- Current absolute performance still has significant room for improvement (best F1 ~0.77), indicating that Agent-as-a-Judge is far from saturated.
-- Future work can scale to more domains (e.g., scientific verification, code review) and increase data scale for training.
+- Most tasks were adapted from existing benchmarks rather than built from scratch, leading to limited coverage.
+- The Search domain relies on external network environments; network instability affects evaluation consistency.
+- Current absolute performance still has significant room for improvement (best $F1$ around 0.77), indicating that Agent-as-a-Judge is far from saturated.
+- Future work could expand to more domains (e.g., scientific verification, code review) and increase data scale for training.
 
 ## Related Work & Insights
-- **vs RewardBench/RM-Bench**: These benchmarks evaluate LLM-as-a-Judge and do not involve environment interaction; AJ-Bench is the first to systematically evaluate environment-aware Agent-as-a-Judge.
+- **vs RewardBench/RM-Bench**: These benchmarks evaluate LLM-as-a-Judge without environmental interaction; AJ-Bench is the first to systematically evaluate environment-aware Agent-as-a-Judge.
 - **vs DevAI (Agent-as-a-Judge)**: DevAI only covers the single domain of code verification; AJ-Bench covers three domains and supports multi-modality.
-- **vs AgentRewardBench**: Evaluates a Judge's judgment of Agent trajectories but does not provide environment interaction capabilities.
+- **vs AgentRewardBench**: This evaluates the Judge’s judgment of Agent trajectories but does not provide environmental interaction capabilities.
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐ First benchmark to systematically evaluate Agent-as-a-Judge.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive multi-model comparisons and ablations, though the number of agentic models is limited.
-- Writing Quality: ⭐⭐⭐⭐ Clear structure and well-articulated motivation for benchmark design.
-- Value: ⭐⭐⭐⭐⭐ Fills a critical gap in Agent evaluation infrastructure.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Sufficient multi-model comparisons and ablations, though the number of agentic models is limited.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure and well-articulated motivation for the benchmark design.
+- Value: ⭐⭐⭐⭐⭐ Fills an important gap in the infrastructure for Agent evaluation.
 
 <!-- RELATED:START -->
 
@@ -123,10 +114,10 @@ AJ-Bench is an evaluation benchmark rather than a training framework. It uses th
 
 ## Related Papers
 
-- [\[ACL 2026\] IF-RewardBench: Benchmarking Judge Models for Instruction-Following Evaluation](if-rewardbench_benchmarking_judge_models_for_instruction-following_evaluation.md)
 - [\[ICLR 2026\] Talk, Evaluate, Diagnose: User-aware Agent Evaluation with Automated Error Analysis](../../ICLR2026/llm_evaluation/talk_evaluate_diagnose_user-aware_agent_evaluation_with_automated_error_analysis.md)
+- [\[ACL 2026\] IF-RewardBench: Benchmarking Judge Models for Instruction-Following Evaluation](if-rewardbench_benchmarking_judge_models_for_instruction-following_evaluation.md)
 - [\[ICLR 2026\] SimuHome: A Temporal- and Environment-Aware Benchmark for Smart Home Agents](../../ICLR2026/llm_evaluation/simuhome_a_temporal-_and_environment-aware_benchmark_for_smart_home_agents.md)
-- [\[ACL 2026\] arXiv2Table: Toward Realistic Benchmarking and Evaluation for LLM-Based Literature-Review Table Generation](arxiv2table_toward_realistic_benchmarking_and_evaluation_for_llm-based_literatur.md)
+- [\[ACL 2026\] LoCar: Localization-Aware Evaluation of In-Vehicle Assistants through Fine-Grained Sociolinguistic Control](locar_localization-aware_evaluation_of_in-vehicle_assistants_through_fine-graine.md)
 - [\[ACL 2026\] Finch: Benchmarking Finance & Accounting across Spreadsheet-Centric Enterprise Workflows](finch_benchmarking_finance_amp_accounting_across_spreadsheet-centric_enterprise_.md)
 
 </div>

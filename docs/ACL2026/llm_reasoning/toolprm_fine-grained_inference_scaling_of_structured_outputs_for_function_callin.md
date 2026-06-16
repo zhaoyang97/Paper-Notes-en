@@ -2,75 +2,87 @@
 title: >-
   [Paper Note] ToolPRM: Fine-Grained Inference Scaling of Structured Outputs for Function Calling
 description: >-
-  [ACL2026][LLM Reasoning][Function Calling] ToolPRM decomposes function calls into fine-grained decisions such as function name selection, parameter name selection…
+  [ACL 2026][LLM Reasoning][Beam Search] ToolPRM decomposes function calling into fine-grained decisions, such as function name selection, parameter name selection, and value filling. It trains an intra-call process reward model to guide beam search and proposes the "explore more but retain less" principle for structured output inference scaling, achieving co
 tags:
-  - "ACL2026"
-  - "LLM Reasoning"
-  - "Function Calling"
-  - "Process Reward Model"
-  - "Structured Output"
-  - "Inference Scaling"
-  - "Beam Search"
+  - ACL 2026
+  - LLM Reasoning
+  - Beam Search
 date: 2026-05-08
-content_hash: cd3dded216ffec3d
+content_hash: 425cf9a8442d4477
 ---
-
 # ToolPRM: Fine-Grained Inference Scaling of Structured Outputs for Function Calling
 
 **Conference**: ACL2026  
 **arXiv**: [2510.14703](https://arxiv.org/abs/2510.14703)  
 **Code**: To be confirmed  
-**Area**: llm_reasoning / Tool Use  
+**Area**: LLM Inference / Tool Calling  
 **Keywords**: Function Calling, Process Reward Model, Structured Output, Inference Scaling, Beam Search
 
 ## TL;DR
-ToolPRM decomposes function calls into fine-grained decisions such as function name selection, parameter name selection, and parameter value filling. It trains an intra-call process reward model to guide beam search and proposes the "explore more but retain less" principle for inference scaling of structured outputs, achieving stable improvements for the Hammer2.1 series tool-calling models on BFCL and ToolAlpaca.
+ToolPRM decomposes function calling into fine-grained decisions, such as function name selection, parameter name selection, and value filling. It trains an intra-call process reward model to guide beam search and proposes the "explore more but retain less" principle for structured output inference scaling, achieving consistent improvements for Hammer2.1 series tool-calling models on BFCL and ToolAlpaca.
 
 ## Background & Motivation
-**Background**: Inference-time scaling has been widely utilized in unstructured generation tasks such as mathematical and logical reasoning (e.g., self-consistency, Best-of-N, Tree-of-Thought, beam search, or MCTS). These methods typically rely on outcome reward models or process reward models to score and filter multiple candidate reasoning paths.
+**Background**: Inference-time scaling has been widely applied in unstructured generation tasks like mathematics and logical reasoning using techniques such as self-consistency, Best-of-N, Tree-of-Thought, beam search, or MCTS. These typically rely on outcome reward models or process reward models to score and filter multiple candidate reasoning paths.
 
-**Limitations of Prior Work**: Function calling involving structured outputs requires models not only to generate natural language but also to select correct function names, fill in accurate parameter names/values, and maintain valid JSON or Python-style syntax. Existing inference scaling methods mostly treat a single function call as a holistic candidate for scoring. This granularity is too coarse to perform timely pruning when early errors occur, such as choosing the wrong function name or an incorrect parameter value.
+**Limitations of Prior Work**: Function calling involves structured outputs where the model must not only generate natural language but also select correct function names, fill accurate parameter names/values, and maintain valid JSON or Python-style formatting. Existing scaling methods often treat an entire function call as a single candidate for scoring. This granularity is too coarse to prune early errors, such as incorrect function selection or invalid parameter values, when they first occur.
 
-**Key Challenge**: In unstructured reasoning, early errors can sometimes be recovered through subsequent reflection or correction. However, structured outputs in function calling are typically irrecoverable; a single incorrect function name or parameter invalidates the entire trajectory. Consequently, structured outputs require broader exploration to find correct decisions but cannot afford to retain too many erroneous candidates that continue to consume the computational budget.
+**Key Challenge**: In unstructured reasoning, early errors can sometimes be corrected through subsequent reflection or modification. However, structured outputs in function calling are generally unrecoverable; an incorrect function name or parameter invalidates the entire trajectory. Thus, structured outputs require broader exploration to find correct decisions but cannot afford to retain too many erroneous candidates that consume the computational budget.
 
-**Goal**: The authors aim to construct the first fine-grained process supervision dataset oriented towards intra-call decisions for function calling. They train ToolPRM to score each local decision and use it to guide search, allowing small tool-calling models to achieve higher accuracy through additional test-time computation.
+**Goal**: The authors aim to construct the first fine-grained process supervision dataset for intra-call decisions in function calling, train ToolPRM to score each local decision, and use it to guide search, enabling smaller tool-calling models to achieve higher accuracy through additional test-time computation.
 
-**Key Insight**: The paper decomposes a function call into a state transition process: first selecting the function name, then sequentially selecting parameter names and filling parameter values, and finally determining if parameters and the function call have ended. This way, the PRM does not have to wait for the complete JSON generation to score, but can judge the correctness of each local action.
+**Key Insight**: A function call is decomposed into a state transition process: first selecting the function name, then sequentially choosing parameter names and filling values, and finally determining the end of parameters and the call. This allows the PRM to score each local action immediately rather than waiting for the complete JSON to be generated.
 
-**Core Idea**: Use function masking and rollouts to automatically collect fine-grained positive and negative step labels. A generative reward model is trained to output "+" or "-". During beam search, the candidate width per step is increased while the number of retained beams is reduced, thereby concentrating the computational budget on correct structural paths.
+**Core Idea**: Fine-grained positive and negative step labels are automatically collected through function masking and rollouts. A generative reward model is trained to output "+" or "-" tokens. During beam search, the strategy "explore more but retain less" is applied to concentrate the computational budget on correct structural paths by increasing the width of candidates per step while limiting the number of retained beams.
 
 ## Method
 
 ### Overall Architecture
-The ToolPRM pipeline consists of three steps. The first step is constructing fine-grained supervision data: natural language queries and target function calls are obtained from xLAM-function-calling-60k and xLAM-irrelevance-7.5k. Function and parameter names are masked to force the model to understand tools based on descriptions rather than memorized names. Hammer2.1-3B/7B is used as the policy model to rollout candidate function calls.
+The ToolPRM workflow consists of three stages. First, fine-grained supervision data is constructed by extracting natural language queries and target function calls from xLAM-function-calling-60k and xLAM-irrelevance-7.5k. Function and parameter names are masked to force the model to understand tools based on descriptions rather than memorization. Hammer2.1-3B/7B is then used as the policy model to rollout candidate function calls.
 
-The second step is the automatic labeling of local decisions within each candidate trajectory. The paper defines multiple labels: whether the function name is correct, whether a parameter name-value pair is correct, whether all parameters are filled, whether a single function call is correct, and whether the overall response is correct. Each label is obtained via binary positive/negative supervision through exact matching with the ground truth.
+Second, local decisions in each candidate trajectory are automatically labeled. Several labels are defined: correct function name selection, correct parameter name-value pairs, completion of all parameters, correctness of a single function call, and overall response correctness. Each label is assigned a binary positive/negative value via exact match with the ground truth.
 
-The third step involves training ToolPRM and using it for inference scaling. ToolPRM itself is an LLM that takes the current state and candidate action as input and outputs the probability of "+" or "-". In each step of the beam search, multiple candidates are expanded, and ToolPRM scores are used for ranking and pruning. Given the irrecoverable nature of early errors in structured outputs, the authors advocate for increasing the beam width to explore more local choices while retaining fewer beams, following an "explore more but retain less" strategy.
+Third, ToolPRM is trained and utilized for inference scaling. ToolPRM is itself an LLM that takes the current state and candidate action as input to output the probability of "+" or "-". In beam search, multiple candidates are expanded at each step, then ranked and pruned using ToolPRM scores. Given the irrecoverable nature of early structured errors, the authors advocate for increasing the beam width to explore more local choices while keeping the number of retained beams low.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Input: query + target function call<br/>(xLAM-60k / irrelevance-7.5k)"]
+    subgraph DATA["Training Data and Supervision Scheme"]
+        direction TB
+        B["Intra-call fine-grained decomposition and label system<br/>Breaking a call into supervised actions (function name, parameter values, termination, etc.)"]
+        C["Function masking + rollout data construction<br/>Names replaced with random strings, policy rollout candidates -> exact-match labeling"]
+        B --> C
+    end
+    A --> B
+    C --> D["Training ToolPRM<br/>Generative RM, outputting probabilities of +/- label tokens"]
+    D --> E["ToolPRM-guided fine-grained beam search<br/>explore more but retain less: Increase beam width M, maintain small N"]
+    E --> F["Output: Valid function calls"]
+```
 
 ### Key Designs
-1. **Intra-call Fine-Grained Decomposition and Labeling System**:
-    - **Function**: Decomposes a function call from a holistic JSON result into supervisable local decision steps.
-    - **Mechanism**: Each function call includes labels for function name selection, parameter name selection, parameter value filling, parameter end, function end, and overall completion. For example, `<FUNC_NAME>` judges the correctness of the function name, while `<ARG_VALUE>` judges if a parameter name and value match the ground truth. `<TOTAL_FINISH>` evaluates the correctness of the entire list of function calls.
-    - **Design Motivation**: Looking only at the final result masks the source of errors. Fine-grained labels allow the reward model to detect errors earlier and provide hierarchical supervision. Experiments demonstrate that retaining seemingly redundant labels like `<ARG_VALUE>` improves trajectory-level judgment accuracy.
+**1. Intra-call fine-grained decomposition and label system: Breaking a function call from "whole JSON" into step-by-step supervised decisions**
 
-2. **Function Masking + Rollout Data Construction**:
-    - **Function**: Constructs robust training data for the reward model to prevent it from relying on memorized tool names.
-    - **Mechanism**: Function names and parameter identifiers are replaced with random strings. The policy model is given a set of masked function candidates to generate rollouts. Subsequently, exact match is used to label each step as positive or negative, forming step-level and trajectory-level data.
-    - **Design Motivation**: In real-world deployments, tool names and schemas may change. If a reward model only memorizes tool names, its generalization will be poor. Masking forces it to focus on the query, function descriptions, parameter semantics, and the generated structural context.
+Existing methods treat entire function calls as single candidates, which is too coarse. By the time a full JSON is generated, early errors like an incorrect function name cannot be pruned. ToolPRM decomposes a call into a series of supervised local actions with specific labels: `<FUNC_NAME>` for function name correctness, `<ARG_VALUE>` for parameter name-value matches, and `<TOTAL_FINISH>` to verify if the entire sequence is complete and correct. This allows the reward model to detect the source of errors much earlier. Experiments show that specific labels like `<ARG_VALUE>` actually enhance trajectory-level judgment rather than causing the model to focus only on local features.
 
-3. **ToolPRM-Guided Fine-Grained Beam Search**:
-    - **Function**: Increases structured function calling accuracy at test time using additional computation.
-    - **Mechanism**: For each candidate action, ToolPRM outputs the logits for the labels "+" and "-". The local correctness score is calculated as $s=e^{s_+}/(e^{s_+}+e^{s_-})$. During search, the top-$N$ beams are retained, and each beam expands $M$ subsequent candidates. The authors emphasize increasing $M$ to expand exploration while keeping $N$ small to prevent early erroneous decisions from occupying the budget.
-    - **Design Motivation**: Unlike free-form text, incorrect JSON branches in function calls are difficult to fix later. Pruning incorrect candidates early allows the budget for subsequent parameter filling to be spent on correct structures.
+**2. Function masking + rollout data construction: Forcing the reward model to understand semantics instead of memorizing tool names**
+
+If function and parameter names in the training data are recognizable, the reward model may rely on memorization, leading to poor generalization when tool schemas change. ToolPRM replaces names and identifiers with random strings during data construction. The policy model then performs rollouts against these masked function candidates. Each step is labeled using exact matching, creating both step-level and trajectory-level data. By masking superficial names, the reward model must focus on query intent, function descriptions, and structural context.
+
+**3. ToolPRM-guided fine-grained beam search: Allocating extra budget to "exploring more, retaining less" during test time**
+
+There is a fundamental difference between structured output and free-text reasoning: while early errors in math can be corrected through subsequent turns, an incorrect JSON branch is usually unrecoverable. The optimal strategy is early pruning to save budget for correct structures. During search, ToolPRM outputs logits for "+" and "-" label tokens to calculate a local correctness score:
+
+$$s=\frac{e^{s_+}}{e^{s_+}+e^{s_-}}$$
+
+Beam search retains the top-$N$ beams, with each beam expanding $M$ subsequent candidates. The authors suggest increasing $M$ for horizontal exploration while maintaining a small $N$ to prevent erroneous candidates from consuming resources. Budget analysis confirms this: increasing $M$ with $N=4$ fixed improves the ToolAlpaca F1 score, whereas increasing $N$ with $M=4$ yields diminishing or even negative returns.
 
 ### Loss & Training
-ToolPRM employs generative process reward modeling. Given a trajectory $\mathcal{T}=\{(s_t,a_t,r_t)\}$ where $r_t\in\{+,-\}$, the training objective is to maximize the probability of the correct label token, i.e., minimize $-\log p_\theta(r_t|s_t,a_t)$. Hammer2.1-3B is used as the reward model backbone, trained with SFT for 5 epochs using the Adam optimizer, a batch size of 1024, a learning rate of $1e-3$, a warmup ratio of 0.008, and weight decay of $1e-5$. For inference, the temperature is set to 0.8, and the number of beams $N$ and beam width $M$ are selected from $\{1,2,4,8,16\}$.
+ToolPRM utilizes generative process reward modeling. Given a trajectory $\mathcal{T}=\{(s_t,a_t,r_t)\}$ where $r_t\in\{+,-\}$, the objective is to maximize the probability of the correct label token by minimizing $-\log p_\theta(r_t|s_t,a_t)$. Hammer2.1-3B is used as the backbone. The model is fine-tuned for 5 epochs using the Adam optimizer with a batch size of 1024, a learning rate of $1e-3$, a warmup ratio of 0.008, and weight decay of $1e-5$. For inference, the temperature is set to 0.8, and the beam parameters $N$ and $M$ are selected from $\{1,2,4,8,16\}$.
 
 ## Key Experimental Results
 
 ### Main Results
-The ToolPRM dataset is large-scale and reports both step and trajectory granularities. The following is adapted from Table 1 of the paper.
+The ToolPRM dataset is large-scale, reporting both step and trajectory granularities.
 
 | Sample Granularity / Split | Positive | Negative | Total |
 |------------------|----------|----------|-------|
@@ -79,54 +91,54 @@ The ToolPRM dataset is large-scale and reports both step and trajectory granular
 | Step / Test | 488,611 | 81,366 | 569,977 |
 | Trajectory / Test | 52,030 | 14,019 | 66,049 |
 
-Reward model prediction accuracy shows that finer supervision granularity leads to better judgment of the complete function call trajectory. ToolPRM outperforms outcome-only and coarse PRM in terms of loss, step accuracy, and trajectory accuracy.
+Reward model accuracy indicates that finer supervision granularity improves the model's ability to judge complete function call trajectories. ToolPRM outperforms outcome-only and coarse PRMs across loss, step accuracy, and trajectory accuracy.
 
 | Reward Model | Loss ↓ | Step Acc ↑ | Trajectory Acc ↑ |
 |--------------|--------|------------|------------------|
 | ORM | 0.0536 | 98.39% | 98.39% |
 | C-PRM | 0.0371 | 98.87% | 99.06% |
-| ToolPRM | 0.0286 | 99.11% | 19.38% |
+| ToolPRM | 0.0286 | 99.11% | 99.38% |
 
 ### Ablation Study
-Inference scaling results indicate that ToolPRM is more stable than token-level beam search, majority voting, and Best-of-N, with more pronounced benefits for smaller models.
+Inference scaling results show that ToolPRM is more stable than token-level beam search, majority voting, and Best-of-N, particularly for smaller models.
 
-| Policy Model | Method | BFCL Avg. | ToolAlpaca Avg. | Main Conclusion |
+| Policy Model | Method | BFCL Avg. | ToolAlpaca Avg. | Main Findings |
 |-------------|------|-----------|-----------------|----------|
-| Hammer2.1-7B | Base | 88.65 | 72.77 | Strong base is already high |
-| Hammer2.1-7B | + ToolPRM | 89.52 | 73.36 | Small but stable improvement |
+| Hammer2.1-7B | Base | 88.65 | 72.77 | Strong base performance |
+| Hammer2.1-7B | + ToolPRM | 89.52 | 73.36 | Small but stable gain |
 | Hammer2.1-3B | Base | 86.86 | 71.57 | Close to 7B base |
 | Hammer2.1-3B | + ToolPRM | 88.88 | 71.96 | BFCL close to 7B + ToolPRM |
-| Hammer2.1-1.5B | Base | 82.79 | 69.30 | Smaller models have more structural errors |
-| Hammer2.1-1.5B | + ToolPRM | 85.61 | 72.93 | Most significant gain, approaching/exceeding larger bases |
+| Hammer2.1-1.5B | Base | 82.79 | 69.30 | Small models have more structural errors |
+| Hammer2.1-1.5B | + ToolPRM | 85.61 | 72.93 | Most significant gain, nearing larger base |
 
-Budget analysis further validates the "explore more but retain less" principle: when fixing the number of retained beams $N=4$ and increasing the beam width $M$, the ToolAlpaca F1 score typically rises as the budget increases. Conversely, fixing $M=4$ and increasing $N$ yields smaller gains and sometimes even a decrease in performance. This suggests that retaining more candidates in structured output tasks is not always beneficial, as incorrect candidates can misguide the subsequent budget.
+Budget analysis validates "explore more but retain less": with $N=4$ fixed, ToolAlpaca F1 generally increases with $M$. Conversely, with $M=4$ fixed, increasing $N$ provides lower gains and sometimes causes performance to drop, suggesting that retaining too many candidates allows erroneous branches to distract the search.
 
 ### Key Findings
-- Fine-grained supervision improves both step-level accuracy and trajectory-level accuracy, suggesting that local labels do not cause the model to focus solely on local details but instead help it better judge overall correctness.
-- ToolPRM offers greater marginal utility for small models. After adding ToolPRM to the 1.5B Hammer, BFCL Avg. increased from 82.79 to 85.61, and ToolAlpaca Avg. increased from 69.30 to 72.93, reaching or exceeding the performance of some larger models.
-- Standard inference scaling methods are unstable. Token-level beam search performed worse than the base model in several settings because early errors in structured generation are irrecoverable.
+- Fine-grained supervision improves both step-level and trajectory-level accuracy, proving that local labels help judge the overall correctness rather than causing over-focus on local details.
+- ToolPRM offers higher marginal utility for smaller models. Adding ToolPRM to the 1.5B Hammer model increases BFCL Avg. from 82.79 to 85.61 and ToolAlpaca Avg. from 69.30 to 72.93, matching or exceeding some larger base models.
+- Standard inference scaling methods are unstable. Token-level beam search often underperforms the base model in several settings because early structural errors are unrecoverable.
 
 ## Highlights & Insights
-- The paper identifies the fundamental difference between structured outputs and free-form text reasoning: while mathematical reasoning can retain multiple intermediate thoughts for later correction, function calling is more akin to program construction, where early schema decisions are difficult to rectify.
-- "Explore more but retain less" is a highly practical principle for inference scaling. It is more specific than simply increasing test-time compute, pointing out that the budget should be spent on lateral exploration at each step rather than retaining numerous historical error branches.
-- ToolPRM's data construction methodology has transfer value. Techniques such as function masking, step-level exact-match labeling, and generative positive/negative label prediction can be extended to tasks like SQL generation, workflow orchestration, and robotic action parameterization.
+- The paper highlights the fundamental difference between structured output and free-text reasoning: while math tasks can recover from early errors, function calling is more like program construction where early schema failures are lethal.
+- "Explore more but retain less" is a practical principle for inference scaling. It is more specific than simply increasing test-time compute, suggesting that budget should be spent on horizontal exploration at each step rather than maintaining historical error branches.
+- The data construction method for ToolPRM (function masking, step-level exact-match labeling, and generative sequence prediction) is highly transferable to tasks like SQL generation, workflow orchestration, and robot action parameterization.
 
 ## Limitations & Future Work
-- ToolPRM discretizes function calling into explicit states and labels, but real models may have internal implicit reasoning and uncertainty that these states might not fully cover.
-- The current method requires an additional reward model, masking rules, and state definitions, making its engineering complexity higher than simple Best-of-N. The quality of label construction across different API schemas directly impacts performance.
-- The optimal $M/N$ trade-off for "explore more but retain less" currently relies on grid search and has not been adaptively adjusted based on input complexity or ToolPRM confidence.
-- Automatic labeling relies on ground truth exact matches, which may underestimate calls that are semantically equivalent but formatted differently, and might not cover side effects, permissions, or runtime failures in real tool environments.
+- ToolPRM discretizes function calls into explicit states and labels, but model internals may harbor implicit reasoning or uncertainty not fully captured by these states.
+- The method requires additional reward models, masking rules, and state definitions, making it more complex than simple Best-of-N; label quality heavily depends on the API schema.
+- The optimal $M/N$ trade-off for the "explore more but retain less" strategy is currently found via grid search and is not yet adaptive to input complexity or PRM confidence.
+- Automatic labeling relies on exact match ground truth, which may penalize semantically equivalent but formatted differently calls or fail to account for side effects and runtime failures in real tool environments.
 
 ## Related Work & Insights
-- **vs ORM / Best-of-N**: ORM only evaluates final candidates, suitable for full answer filtering. ToolPRM can prune early during function name and parameter value stages, making it better suited for structured outputs where errors are irrecoverable.
-- **vs coarse PRM**: C-PRM is finer than ORM but removes parameter-level labels like `<ARG_VALUE>`. ToolPRM retains the finest steps, resulting in higher trajectory accuracy.
-- **vs General Beam Search / Majority Voting**: These methods increase candidate volume but lack structured local rewards, often retaining incorrect JSON branches. ToolPRM's value lies in using process rewards to determine which branches are worth continuing.
+- **vs ORM / Best-of-N**: ORM only evaluates the final output, making it suitable for full answer selection; ToolPRM prunes at the function and parameter stages, making it superior for structured outputs with irrecoverable errors.
+- **vs coarse PRM**: While coarse PRMs are better than ORMs, they omit parameter-level labels like `<ARG_VALUE>`; ToolPRM's finer granularity leads to higher trajectory accuracy.
+- **vs General beam search / Majority voting**: These methods increase candidate volume but lack local structural rewards, often retaining invalid JSON branches. ToolPRM's value lies in using process rewards to decide which branches are worth pursuing.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐☆ Pinpoints the intra-call level for PRMs and summarizes structured inference scaling principles.
-- Experimental Thoroughness: ⭐⭐⭐⭐☆ Data statistics, granularity comparisons, BFCL/ToolAlpaca main experiments, and budget analysis are comprehensive, though real multi-turn tool environments could be further explored.
-- Writing Quality: ⭐⭐⭐⭐☆ Clear structure with sufficient explanations for the architecture and state transitions; minor issues in terminology and table formatting.
-- Value: ⭐⭐⭐⭐⭐ Highly practical for function calling and agent engineering, particularly for enhancing small edge models with additional inference budget.
+- Novelty: ⭐⭐⭐⭐☆ Precisely addresses structured output scaling by applying PRM at the intra-call level.
+- Experimental Thoroughness: ⭐⭐⭐⭐☆ Comprehensive data statistics, granularity comparisons, and budget analysis, though real-world multi-turn environments could be further explored.
+- Writing Quality: ⭐⭐⭐⭐☆ Clear structure with well-explained diagrams and state transitions.
+- Value: ⭐⭐⭐⭐⭐ High practical value for agent engineering, especially for enhancing small edge-device models with extra inference budget.
 
 <!-- RELATED:START -->
 
@@ -138,7 +150,7 @@ Budget analysis further validates the "explore more but retain less" principle: 
 - [\[ICLR 2026\] Fine-R1: Make Multi-modal LLMs Excel in Fine-Grained Visual Recognition by Chain-of-Thought Reasoning](../../ICLR2026/llm_reasoning/fine-r1_make_multi-modal_llms_excel_in_fine-grained_visual_recognition_by_chain-.md)
 - [\[AAAI 2026\] Small Language Models for Efficient Agentic Tool Calling: Outperforming Large Models with Targeted Fine-tuning](../../AAAI2026/llm_reasoning/small_language_models_for_efficient_agentic_tool_calling_outperforming_large_mod.md)
 - [\[CVPR 2026\] E-comIQ-ZH: A Human-Aligned Dataset and Benchmark for Fine-Grained Evaluation of E-commerce Posters with Chain-of-Thought](../../CVPR2026/llm_reasoning/e-comiq-zh_a_human-aligned_dataset_and_benchmark_for_fine-grained_evaluation_of_.md)
-- [\[ICML 2026\] UniScale: Adaptive Unified Inference Scaling via Online Joint Optimization of Model Routing and Test-time Scaling](../../ICML2026/llm_reasoning/uniscale_adaptive_unified_inference_scaling_via_online_joint_optimization_of_mod.md)
+- [\[ACL 2025\] Beyond the Answer: Advancing Multi-Hop QA with Fine-Grained Graph Reasoning and Evaluation](../../ACL2025/llm_reasoning/beyond_the_answer_advancing_multi-hop_qa_with_fine-grained_graph_reasoning_and_e.md)
 
 </div>
 

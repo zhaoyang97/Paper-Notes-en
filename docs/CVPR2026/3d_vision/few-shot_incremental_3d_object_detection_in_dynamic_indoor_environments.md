@@ -2,144 +2,148 @@
 title: >-
   [Paper Note] Few-Shot Incremental 3D Object Detection in Dynamic Indoor Environments
 description: >-
-  [CVPR 2026][3D Vision][Few-shot incremental learning] This paper proposes FI3Det, the first few-shot incremental 3D object detection framework. During the base training stage…
+  [CVPR 2026][3D Vision][Vision-Language Model] This paper proposes FI3Det, the first few-shot incremental 3D object detection framework. It utilizes a VLM-guided unknown object learning module during the base training phase to perceive potential novel classes in advance. In the incremental phase, it employs a gated multi-modal prototype casting module to fuse 2D se
 tags:
-  - "CVPR 2026"
-  - "3D Vision"
-  - "Few-shot incremental learning"
-  - "3D object detection"
-  - "vision-language models"
-  - "multimodal prototypes"
-  - "indoor scene understanding"
+  - CVPR 2026
+  - 3D Vision
+  - Vision-Language Model
 date: 2026-05-08
-content_hash: 95b8dd4385cfbf02
+content_hash: cf55c89354fadb8b
 ---
-
 # Few-Shot Incremental 3D Object Detection in Dynamic Indoor Environments
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2604.07997](https://arxiv.org/abs/2604.07997)  
 **Code**: [https://github.com/zyrant/FI3Det](https://github.com/zyrant/FI3Det)  
-**Area**: 3D Vision
-**Keywords**: Few-shot incremental learning, 3D object detection, vision-language models, multimodal prototypes, indoor scene understanding
+**Area**: 3D Vision  
+**Keywords**: Few-shot incremental learning, 3D object detection, Vision-Language Models, Multi-modal prototypes, Indoor scene understanding
 
 ## TL;DR
 
-This paper proposes FI3Det, the first few-shot incremental 3D object detection framework. During the base training stage, a VLM-guided unknown object learning module enables early awareness of potential novel categories. During the incremental stage, a gated multimodal prototype imprinting module fuses 2D semantic and 3D geometric features for novel class detection. FI3Det achieves an average improvement of 17.37% in novel class mAP on ScanNet V2 and SUN RGB-D.
+This paper proposes FI3Det, the first few-shot incremental 3D object detection framework. It utilizes a VLM-guided unknown object learning module during the base training phase to perceive potential novel classes in advance. In the incremental phase, it employs a gated multi-modal prototype casting module to fuse 2D semantic and 3D geometric features for novel class detection. FI3Det achieves an average improvement of 17.37% in novel class mAP on ScanNet V2 and SUN RGB-D.
 
 ## Background & Motivation
 
-1. **Background**: 3D object detection methods (e.g., VoteNet, TR3D, FCAF3D) have achieved strong performance on fixed category sets, but operate under a static paradigm—assuming all class annotations are available during a single training session. Incremental 3D detection methods (SDCoT, AIC3DOD) can progressively recognize new classes but still require abundant annotations for novel categories.
-2. **Limitations of Prior Work**: (a) Existing incremental 3D detection methods rely on rich novel-class annotations, which is unrealistic in dynamic indoor embodied environments where new objects appear without immediate large-scale labeling; (b) the 2D domain already has few-shot incremental detection methods (ONCE, Sylph, IL-DETR), yet the 3D domain remains entirely unexplored; (c) data-efficient 3D detection approaches (GFS-VL, MixSup) focus primarily on pseudo-label generation while neglecting feature-level learning.
-3. **Key Challenge**: Under extremely limited novel-class samples, how can a model learn new categories without forgetting previously learned ones? Complex layouts and diverse object configurations in indoor 3D scenes increase inter-class variation, exacerbating this tension.
-4. **Goal**: (a) Define and address the new task of few-shot incremental 3D object detection; (b) establish early awareness of novel categories during the base stage; (c) efficiently adapt to new categories during the incremental stage while preserving performance on old classes.
-5. **Key Insight**: The authors observe that novel-class objects often already appear in training scenes without annotation (as illustrated in Fig. 2, unlabeled novel objects frequently co-occur alongside base-class objects). Leveraging the zero-shot recognition capability of VLMs enables mining of these unknown objects during base training to establish early knowledge of novel categories.
-6. **Core Idea**: During the base stage, VLMs are used to mine unlabeled unknown objects for feature- and box-level learning; during the incremental stage, multimodal prototypes fusing 2D semantics and 3D geometry enable few-shot novel class detection.
+1. **Background**: Current 3D object detection methods (e.g., VoteNet, TR3D, FCAF3D) achieve excellent performance on fixed category sets but follow a static paradigm, assuming all category labels are available during a single training session. Incremental 3D detection methods (SDCoT, AIC3DOD) can identify new classes step-by-step but still require large amounts of annotated data for novel classes.
+2. **Limitations of Prior Work**: (a) Existing incremental 3D detection methods rely on abundant novel class annotations, which is unrealistic in dynamic indoor embodied environments where large-scale labeling is difficult when new objects appear; (b) While few-shot incremental detection exists in 2D (ONCE, Sylph, IL-DETR), the 3D domain remains blank; (c) Data-efficient 3D detection methods (GFS-VL, MixSup) focus mainly on pseudo-label generation and neglect feature-level learning.
+3. **Key Challenge**: How to learn novel categories without forgetting previously learned ones under extremely limited novel class samples? In indoor 3D scenes, complex layouts and diverse object combinations lead to high intra-class variation, exacerbating this challenge.
+4. **Goal**: (a) Define and solve the new task of few-shot incremental 3D object detection; (b) Establish early perception of novel classes during the base phase; (c) Efficiently adapt to novel categories in the incremental phase while maintaining performance on old classes.
+5. **Key Insight**: The authors observe that in indoor 3D scenes, objects of novel classes often already exist in the training scenes but lack annotations (as shown in Fig. 2, unannotated novel objects frequently appear near base classes). Leveraging the zero-shot recognition capability of VLMs allows for mining these unknown objects during base training to establish early cognition of novel classes.
+6. **Core Idea**: Use VLMs to mine unannotated unknown objects for feature-level and box-level learning in the base phase, and employ a gated multi-modal prototype casting module combining 2D semantics and 3D geometry for few-shot novel class detection in the incremental phase.
 
 ## Method
 
 ### Overall Architecture
 
-FI3Det consists of two stages. In the **base training stage**, a VLM-guided unknown object learning module is added on top of the TR3D detector, comprising unknown object mining (generating pseudo 3D boxes and 2D semantic features) and unknown object weighting (suppressing noise). In the **incremental learning stage**, the detector parameters are frozen, and a gated multimodal prototype imprinting module constructs 2D semantic and 3D geometric prototypes with adaptive gating for novel class detection. The inputs are 3D point cloud scenes with corresponding RGB images; the output is 3D bounding box predictions over base and novel classes.
+The core objective of FI3Det is to detect new objects with extremely few samples (e.g., 5-shot) in dynamic indoor environments without forgetting learned base classes. The mechanism is based on the observation that novel objects often appear unannotated in base training scenes. The method is divided into two phases: the base training phase "pre-learns" these unannotated objects, and the incremental phase "identifies" them using few samples.
+
+During the base training phase, a VLM-guided unknown object learning module is integrated into the TR3D detector. VLMs identify unannotated objects in the scene to serve as auxiliary supervision, while a weighting mechanism suppresses noise in these pseudo-labels. In the incremental phase, the detector backbone is frozen. A gated multi-modal prototype casting module uses limited novel class samples to generate 2D semantic and 3D geometric prototypes, which are adaptively fused for novel class scoring. The pipeline takes 3D point clouds and corresponding RGB images as input and outputs 3D bounding boxes for both base and novel classes.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["Input: 3D Point Cloud + RGB Image"] --> DET["TR3D Detector Backbone"]
+    subgraph UOL["VLM-guided Unknown Object Learning"]
+        direction TB
+        MINE["Unknown Object Mining<br/>GroundingDINO + Seg -> 2D Mask -> Project to 3D -> VLM Feat + Bbox"] --> WEIGHT["Unknown Object Weighting<br/>Point-level Gaussian Weight × Box-level Feat Consistency"]
+    end
+    DET --> MINE
+    WEIGHT --> AUX["Auxiliary Loss<br/>Foreground BCE+Dice / Feat Cosine Alignment / Weighted DIOU"]
+    AUX -->|Freeze detector after training| CAST["Gated Multi-modal Prototype Casting<br/>2D/3D Prototypes + Momentum Update"]
+    CAST --> FUSE["Gated Fusion<br/>Modal Weight α + Class Rebalancing γ"]
+    FUSE --> OUT["Output: Base + Novel 3D Bounding Boxes"]
+```
 
 ### Key Designs
 
-1. **VLM-guided Unknown Object Learning**
+**1. VLM-guided Unknown Object Learning: Early Exposure to Future Novel Classes**
 
-    - **Function**: During the base training stage, VLMs are used to mine unlabeled unknown objects in the scene, providing auxiliary supervision signals that endow the detector with early awareness of novel categories.
-    - **Mechanism**: Proceeds in two steps—(a) **Unknown Object Mining**: GroundingDINO generates 2D bounding boxes; a class-agnostic segmentation model extracts 2D masks $\mathbf{M}^{2D}$, which are projected into 3D space to obtain $\mathbf{M}^{3D}$. For each instance, the average VLM feature $\mathbf{f}_j^{2D}$ and fitted 3D box $\mathbf{b}_j^{3D}$ are computed. An objectness head (foreground awareness) and a feature head (2D–3D feature alignment) are additionally introduced. (b) **Unknown Object Weighting**: **Point-level weighting** applies a Gaussian function $w_{e,j}^{point} = \exp(-\|\mathbf{p}_e - \mathbf{c}_j\|_2^2 / 2\sigma^2)$ to assign higher weights to points near the box center; **box-level weighting** $w_j^{box} = \|\frac{1}{|\mathcal{B}_j|}\sum \text{norm}(\hat{\mathbf{f}}_e^{2D})\|_2$ measures feature consistency within the box, with more consistent boxes deemed more reliable.
-    - **Design Motivation**: Pseudo-labels generated by VLMs are noisy and would introduce erroneous supervision if used directly. The Gaussian point-level weighting is motivated by the intuition that segmentation errors are larger near boundaries; the box-level weighting is grounded in the prior that features within the same object should be semantically consistent. The two-level weighting scheme jointly suppresses noise effectively.
+The difficulty in few-shot incremental learning lies in the lack of samples to learn robust features. The authors address this by mining unannotated novel objects already present in base training scenes. 
+First, **Unknown Object Mining**: GroundingDINO generates 2D boxes, followed by a category-agnostic segmentation model to extract 2D masks $\mathbf{M}^{2D}$. These are projected to 3D to obtain $\mathbf{M}^{3D}$. For each instance, average VLM features $\mathbf{f}_j^{2D}$ and fitted 3D boxes $\mathbf{b}_j^{3D}$ are calculated. Simultaneously, an objectness head (for foreground perception) and a feature head (aligning 3D features to VLM 2D semantic space) are added to the detector. 
 
-2. **Gated Multimodal Prototype Imprinting**
+Second, **Unknown Object Weighting**: This handles noise in VLM pseudo-labels through spatial and semantic filtering. Point-level weighting uses a Gaussian function to assign higher weights to points near the box center:
 
-    - **Function**: During the incremental stage, efficiently constructs classification prototypes from a small number of novel-class samples without retraining the detector, thereby avoiding catastrophic forgetting.
-    - **Mechanism**: Modality-specific prototypes $\mathbf{T}^{2D}$ and $\mathbf{T}^{3D}$ are built from aligned 2D features $\hat{\mathbf{F}}^{2D}$ and 3D geometric features $\mathbf{F}^{3D}$, respectively. A momentum update strategy $\mathbf{T}_c^{3D} \leftarrow \mu \mathbf{T}_c^{3D} + (1-\mu)\bar{\mathbf{F}}_c^{3D}$ ($\mu=0.999$) stabilizes prototype estimation. Cosine similarity classification scores $\mathbf{S}^{3D}$ and $\mathbf{S}^{2D}$ are then computed per modality. **Multimodal gated fusion** employs two sets of learnable gating functions: $[\alpha^{3D}, \alpha^{2D}] = \text{Softmax}(\text{MLP}([\mathbf{F}^{3D}; \hat{\mathbf{F}}^{2D}]))$ controls modality weights, while $\gamma = \sigma(\text{MLP}([\mathbf{F}^{3D}; \hat{\mathbf{F}}^{2D}]))$ rebalances class-level contributions. The final fused score is $\mathbf{S}^{fuse} = \gamma \odot (\alpha^{3D} \odot \mathbf{S}^{3D} + \alpha^{2D} \odot \mathbf{S}^{2D})$.
-    - **Design Motivation**: Single-modality prototypes fail to exploit the complementary advantages of 2D semantics and 3D geometry. Simple summation ignores the distinct characteristics of each modality. Adaptive gating enables the model to dynamically adjust modality contributions based on the specific scene and object features, while $\gamma$ additionally prevents overconfident predictions for certain categories.
+$$w_{e,j}^{point} = \exp\!\left(-\frac{\|\mathbf{p}_e - \mathbf{c}_j\|_2^2}{2\sigma^2}\right)$$
 
-3. **Auxiliary Loss Design**
+Box-level weighting measures feature consistency within the box:
 
-    - **Function**: Provides three forms of supervision for unknown object learning.
-    - **Mechanism**: (a) Foreground supervision $\mathcal{L}_{obj}$: BCE + Dice loss trains the objectness head using weighted continuous foreground scores rather than hard labels; (b) Feature supervision $\mathcal{L}_{feat}$: cosine similarity loss aligns 3D features with VLM 2D features; (c) Regression supervision $\mathcal{L}_{reg}^{unk}$: weighted DIOU loss learns geometric localization of unknown objects. All three losses apply joint point-level and box-level weights.
-    - **Design Motivation**: Class-agnostic foreground detection capability, semantic feature alignment, and spatial localization ability are each indispensable; together they ensure that prototypes in the incremental stage can correctly match novel class proposals.
+$$w_j^{box} = \left\|\frac{1}{|\mathcal{B}_j|}\sum_{e\in\mathcal{B}_j}\text{norm}(\hat{\mathbf{f}}_e^{2D})\right\|_2$$
+
+Boxes with high semantic consistency and geometric centrality are considered more reliable.
+
+**2. Gated Multi-modal Prototype Casting: Learning through Prototypes instead of Retraining**
+
+In the incremental phase, fine-tuning the detector with few samples leads to catastrophic forgetting. Instead, FI3Det freezes the detector and adopts a "prototype casting" approach. It extracts modality-specific prototypes $\mathbf{T}^{2D}$ and $\mathbf{T}^{3D}$ from aligned 2D features $\hat{\mathbf{F}}^{2D}$ and 3D geometric features $\mathbf{F}^{3D}$, using momentum updates to stabilize them: $\mathbf{T}_c^{3D} \leftarrow \mu \mathbf{T}_c^{3D} + (1-\mu)\bar{\mathbf{F}}_c^{3D}$ ($\mu=0.999$). 
+
+For fusion, two sets of learnable gates are used: $[\alpha^{3D}, \alpha^{2D}]$ assigns dynamic weights to modalities, while $\gamma$ rebalances classes to suppress overconfidence. The final score is:
+
+$$\mathbf{S}^{fuse} = \gamma \odot (\alpha^{3D} \odot \mathbf{S}^{3D} + \alpha^{2D} \odot \mathbf{S}^{2D})$$
+
+**3. Auxiliary Loss: Teaching Three Fundamental Capabilities**
+
+To make unknown object learning effective, the detector must learn three things: foreground detection, semantic alignment, and localization. Foreground supervision $\mathcal{L}_{obj}$ uses BCE + Dice loss with continuous weighted scores. Feature supervision $\mathcal{L}_{feat}$ uses cosine similarity to align 3D features with VLM 2D semantics. Regression supervision $\mathcal{L}_{reg}^{unk}$ utilizes weighted DIOU loss for unknown object geometry.
 
 ### Loss & Training
 
-Base training: $\mathcal{L} = \mathcal{L}_{det} + \mathcal{L}_{aux}$, where $\mathcal{L}_{aux} = \mathcal{L}_{aux-obj} + \mathcal{L}_{aux-feat} + \mathcal{L}_{aux-box}$. Incremental stage: detector parameters are frozen; only prototypes and gating functions are updated using $\mathcal{L}_{inc}$ on novel classes.
+The total base training loss is $\mathcal{L} = \mathcal{L}_{det} + \mathcal{L}_{aux}$, where $\mathcal{L}_{aux} = \mathcal{L}_{aux-obj} + \mathcal{L}_{aux-feat} + \mathcal{L}_{aux-box}$. In the incremental phase, all detector parameters are frozen, and only prototypes and gating functions are updated using $\mathcal{L}_{inc}$ on the limited novel class samples.
 
 ## Key Experimental Results
 
 ### Main Results
 
-ScanNet V2, batch incremental setting (1-way 5-shot):
+ScanNet V2 Batch Incremental Setting (1-way 5-shot):
 
 | Method | Base mAP | Novel mAP | All mAP |
-|--------|----------|-----------|---------|
-| Imprinting | 71.47 | 0.23 | 67.72 |
-| IL-DETR | 65.63 | 0.35 | 62.00 |
-| SDCOT++ | 62.12 | 0.09 | 58.68 |
+|------|----------|-----------|---------|
 | AIC3DOD | 70.54 | 4.59 | 66.88 |
 | VLM-vanilla | 71.81 | 14.09 | 68.60 |
 | **FI3Det** | **72.84** | **38.48** | **70.94** |
 
-SUN RGB-D, batch incremental setting (1-way 5-shot):
+SUN RGB-D Batch Incremental Setting (1-way 5-shot):
 
 | Method | Base mAP | Novel mAP | All mAP |
-|--------|----------|-----------|---------|
+|------|----------|-----------|---------|
 | AIC3DOD | 58.83 | 0.02 | 52.95 |
-| VLM-vanilla | 62.12 | 11.93 | 57.10 |
 | **FI3Det** | **63.05** | **73.17** | **64.07** |
 
 ### Ablation Study
 
-| Configuration | Base | Novel | All | Note |
-|---------------|------|-------|-----|------|
-| VLM-vanilla (baseline) | 71.81 | 14.09 | 68.60 | No proposed modules |
-| + UOM | 72.73 | 25.43 | 70.10 | +Unknown object mining, Novel +11.34 |
-| + UOM + UOW | 72.83 | 32.46 | 70.61 | +Weighting, Novel +7.03 |
-| + UOM + GPI | 72.73 | 28.94 | 70.30 | +Gated prototype imprinting |
-| + UOM + UOW + GPI (Full) | 72.84 | 38.48 | 70.94 | Full model, best Novel mAP |
-
-Gating component ablation:
-
-| Configuration | Novel mAP | Note |
-|---------------|-----------|------|
-| No gating | 32.46 | Direct summation |
-| $\alpha^*$ only | 36.58 | +Modality weighting, +4.12 |
-| $\gamma$ only | 34.68 | +Class rebalancing |
-| $\alpha^*$ + $\gamma$ | 38.48 | Optimal combination |
+| Configuration | Base | Novel | All |
+|------|------|-------|-----|
+| VLM-vanilla (baseline) | 71.81 | 14.09 | 68.60 |
+| + UOM | 72.73 | 25.43 | 70.10 |
+| + UOM + UOW | 72.83 | 32.46 | 70.61 |
+| + UOM + UOW + GPI (Full) | 72.84 | 38.48 | 70.94 |
 
 ### Key Findings
 
-- **UOM contributes the most**: Unknown object mining improves Novel mAP from 14.09% to 25.43% (+80%), confirming that establishing early novel-class awareness during the base stage is critical.
-- Base-class performance remains stable across all variants (~72.8%), demonstrating that the prototype imprinting strategy effectively prevents catastrophic forgetting.
-- On SUN RGB-D 1-way 5-shot, FI3Det's Novel mAP (73.17%) even surpasses its Base mAP (63.05%), demonstrating exceptional novel-class adaptation capability.
-- Hyperparameters $\sigma=0.5$ and $\mu=0.999$ constitute the optimal configuration; the monotonic improvement with larger $\mu$ indicates that momentum stabilization is critical for few-shot prototype estimation.
+- **UOM has the highest contribution**: Unknown Object Mining improves novel mAP from 14.09% to 25.43%, proving that early perception during the base phase is critical.
+- Base class performance remains stable (~72.8%), indicating that the prototype casting strategy effectively avoids catastrophic forgetting.
+- On SUN RGB-D 1-way 5-shot, FI3Det's Novel mAP (73.17%) even exceeds the Base mAP (63.05%), demonstrating superior adaptation capacity.
 
 ## Highlights & Insights
 
-- **Unknown object learning during the base stage** is a particularly elegant idea: novel-class objects frequently appear in training scenes without annotation, and leveraging VLMs to mine these "dark matter" objects endows the detector with early novel-class awareness. This observation and its exploitation are transferable to any incremental learning or open-world detection task.
-- **Two-level weighting (point-level + box-level)** offers a practical approach to handling noisy pseudo-labels: Gaussian spatial weighting and feature consistency weighting filter noise from spatial and semantic perspectives respectively, forming a reusable technique.
-- **Multimodal gated fusion** is more flexible than simple weighting or concatenation; the $\gamma$ gate can suppress overconfident predictions from one modality on certain categories, improving overall robustness.
+- **Unknown object learning in the Base phase** is a clever approach: novel objects are treated as "dark matter" in the training scene, allowing the detector to learn their geometry and semantics before they are officially introduced.
+- **Two-level weighting (point + box)** provides a practical solution for handling noisy pseudo-labels from VLMs by considering both spatial centrality and semantic consistency.
+- **Gated multi-modal fusion** is more flexible than simple concatenation, allowing the model to weigh 3D geometry (good for localization) and 2D semantics (good for identification) differently based on the instance.
 
 ## Limitations & Future Work
 
-- The detection capability of the current VLM (GroundingDINO) constrains the quality of unknown object mining; the performance ceiling may be further raised as more powerful VLMs emerge.
-- Experiments are limited to indoor scenes (ScanNet V2, SUN RGB-D); large-scale outdoor settings such as autonomous driving have yet to be validated.
-- Freezing the detector parameters during the incremental stage means that feature representations are not further optimized for novel classes, which may be limiting when novel and base class distributions differ substantially.
-- The prototype imprinting approach maintains a single prototype per class; it remains an open question whether multiple prototypes—as in FedMEPD—could better capture intra-class variation.
+- The quality of unknown object mining is limited by the performance of the underlying VLM (e.g., GroundingDINO).
+- The study focuses on indoor scenes; large-scale outdoor scenarios like autonomous driving have not been verified.
+- Freezing the detector in the incremental phase means features are not further optimized for novel classes, which might be a limitation if novel classes differ significantly from base classes.
 
 ## Related Work & Insights
 
-- **vs. SDCoT++**: SDCoT++ pioneered incremental 3D detection but requires abundant novel-class annotations, leading to severe performance degradation in the few-shot setting (Novel mAP 0.09%). FI3Det avoids large-scale retraining through prototype imprinting.
-- **vs. AIC3DOD**: AIC3DOD performs reasonably well in the full incremental setting but falls far short in the few-shot regime (Novel 4.59% vs. FI3Det's 38.48%), due to the absence of VLM-guided pretraining and multimodal fusion.
-- **vs. VLM-vanilla**: Directly using VLM pseudo-boxes without weighting or multimodal fusion yields a Novel mAP of 14.09%; FI3Det's weighting and gated fusion raise this to 38.48%, underscoring the importance of noise handling and multimodal integration.
+- **vs SDCoT++**: While SDCoT++ pioneered incremental 3D detection, it fails in few-shot settings (Novel mAP 0.09%). FI3Det avoids large-scale retraining through prototype casting.
+- **vs AIC3DOD**: AIC3DOD performs well in full incremental settings but struggles in few-shot scenarios (Novel mAP 4.59%) due to a lack of VLM-guided pre-training.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ First to define and address few-shot incremental 3D detection; the VLM-guided unknown object learning approach during the base stage is original
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Two datasets, both batch and sequential incremental settings, multiple ablations, and complete hyperparameter analysis
-- Writing Quality: ⭐⭐⭐⭐ Problem formulation is clear, method description is detailed, and figures are informative
-- Value: ⭐⭐⭐⭐ Opens a new research direction for dynamic environment perception in embodied intelligence
+- Novelty: ⭐⭐⭐⭐ 
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 
+- Writing Quality: ⭐⭐⭐⭐ 
+- Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
 
@@ -147,11 +151,11 @@ Gating component ablation:
 
 ## Related Papers
 
-- [\[CVPR 2026\] SCOPE: Scene-Contextualized Incremental Few-Shot 3D Segmentation](scope_scenecontextualized_incremental_fewshot_3d_s.md)
-- [\[CVPR 2026\] VGGT-Det: Mining VGGT Internal Priors for Sensor-Geometry-Free Multi-View Indoor 3D Object Detection](vggt-det_mining_vggt_internal_priors_for_sensor-geometry-free_multi-view_indoor_.md)
-- [\[CVPR 2026\] R4Det: 4D Radar-Camera Fusion for High-Performance 3D Object Detection](r4det_4d_radar_camera_fusion_3d_detection.md)
-- [\[CVPR 2026\] Towards Intrinsic-Aware Monocular 3D Object Detection](towards_intrinsic-aware_monocular_3d_object_detection.md)
-- [\[CVPR 2026\] Indoor Asset Detection in Large Scale 360° Drone-Captured Imagery via 3D Gaussian Splatting](indoor_asset_detection_in_large_scale_360_drone-captured_imagery_via_3d_gaussian.md)
+- [\[CVPR 2026\] ConceptPose: Training-Free Zero-Shot Object Pose Estimation using Concept Vectors](conceptpose_training-free_zero-shot_object_pose_estimation_using_concept_vectors.md)
+- [\[CVPR 2026\] H²A²: Homogeneity-Aware and Heterogeneity-Aware Feature Perception for Unified Indoor 3D Object Detection](h2a2_homogeneity-aware_and_heterogeneity-aware_feature_perception_for_unified_in.md)
+- [\[CVPR 2026\] AdaSFormer: Adaptive Serialized Transformers for Monocular Semantic Scene Completion from Indoor Environments](adasformer_adaptive_serialized_transformers_for_monocular_semantic_scene_complet.md)
+- [\[CVPR 2026\] Neural Dynamic GI: Random-Access Neural Compression for Temporal Lightmaps in Dynamic Lighting Environments](neural_dynamic_gi_random-access_neural_compression_for_temporal_lightmaps_in_dyn.md)
+- [\[CVPR 2026\] Learning Multi-View Spatial Reasoning from Cross-View Relations](learning_multi-view_spatial_reasoning_from_cross-view_relations.md)
 
 </div>
 

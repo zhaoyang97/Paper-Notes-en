@@ -2,133 +2,127 @@
 title: >-
   [Paper Note] VLM-Pruner: Buffering for Spatial Sparsity in an Efficient VLM Centrifugal Token Pruning Paradigm
 description: >-
-  [CVPR 2026][Multimodal VLM][visual token pruning] This paper proposes VLM-Pruner, a training-free centrifugal token pruning method that balances redundancy elimination and local detail preservation through a Buffering fo…
+  [CVPR 2026][Multimodal VLM][Inference Acceleration] VLM-Pruner is proposed as a training-free centrifugal token pruning method that balances redundancy elimination and local detail integrity through the Buffered Spatial Sparsity (BSS) criterion. It consistently outperforms existing methods across five VLMs at an 88.9% pruning rate while achieving end-to-end inference ac
 tags:
-  - "CVPR 2026"
-  - "Multimodal VLM"
-  - "visual token pruning"
-  - "inference acceleration"
-  - "spatial sparsity"
-  - "training-free"
-  - "VLM efficiency"
+  - CVPR 2026
+  - Multimodal VLM
+  - Inference Acceleration
 date: 2026-05-08
-content_hash: 08e0b9c33b076a28
+content_hash: b7f323afbcfccce4
 ---
-
 # VLM-Pruner: Buffering for Spatial Sparsity in an Efficient VLM Centrifugal Token Pruning Paradigm
 
-**Conference**: CVPR 2026
+**Conference**: CVPR 2026  
 **arXiv**: [2512.02700](https://arxiv.org/abs/2512.02700)  
 **Code**: [https://github.com/Casey-bit/VLMPruner](https://github.com/Casey-bit/VLMPruner)  
-**Area**: Multimodal VLM
-**Keywords**: visual token pruning, inference acceleration, spatial sparsity, training-free, VLM efficiency
+**Area**: Multimodal VLM  
+**Keywords**: Vision token pruning, Inference acceleration, Spatial sparsity, Training-free, VLM efficiency
 
 ## TL;DR
-This paper proposes VLM-Pruner, a training-free centrifugal token pruning method that balances redundancy elimination and local detail preservation through a Buffering for Spatial Sparsity (BSS) criterion. At an 88.9% pruning rate, it consistently outperforms existing methods across 5 VLMs while achieving end-to-end inference acceleration.
+VLM-Pruner is proposed as a training-free centrifugal token pruning method that balances redundancy elimination and local detail integrity through the Buffered Spatial Sparsity (BSS) criterion. It consistently outperforms existing methods across five VLMs at an 88.9% pruning rate while achieving end-to-end inference acceleration.
 
 ## Background & Motivation
-**Background**: VLMs combine visual encoders with LLMs and achieve strong performance on image understanding tasks, but the large number of visual tokens generated from high-resolution images introduces substantial computational overhead due to the quadratic complexity of attention. Training-free token pruning has emerged as a mainstream solution.
+**Background**: VLMs combine vision encoders with LLMs to excel in image understanding tasks. However, high-resolution images generate a massive number of vision tokens, leading to significant computational overhead due to the quadratic complexity of attention. Training-free token pruning has emerged as a mainstream solution.
 
-**Limitations of Prior Work**: The two dominant strategies each exhibit distinct shortcomings: (a) **importance-driven** methods (e.g., FastV) retain tokens based on attention scores but tend to cluster selections within similar local regions, leading to redundancy; (b) **redundancy elimination** methods (e.g., DivPrune/DART) greedily select tokens with the lowest mutual similarity but ignore spatial relationships, resulting in overly scattered selections that fail to provide complete coverage of target object details.
+**Limitations of Prior Work**: Current strategies suffer from distinct flaws: (a) **Importance-driven** methods (e.g., FastV) retain tokens based on attention scores but tend to concentrate selections in similar local regions, leading to redundancy; (b) **Redundancy elimination** methods (e.g., DivPrune/DART) greedily select tokens with the lowest similarity but ignore spatial relationships, resulting in scattered selections that fail to fully cover target object details.
 
-**Key Challenge**: There is a fundamental tension between reducing redundancy (selecting highly diverse tokens) and maintaining local completeness (selecting spatially contiguous tokens). Excessive pursuit of diversity causes selections to alternate between foreground and background regions.
+**Key Challenge**: A fundamental contradiction exists between reducing redundancy (selecting highly dissimilar tokens) and maintaining local integrity (selecting spatially contiguous tokens). Excessive pursuit of diversity causes selections to jump sporadically between foreground and background.
 
-**Goal**: To design a token pruning method that simultaneously balances redundancy elimination and spatial continuity.
+**Goal**: Design a token pruning method that simultaneously balances redundancy elimination and spatial continuity.
 
-**Key Insight**: The observation that fine-grained details of target objects require spatially adjacent tokens for complete coverage motivates a "centrifugal" selection strategy that expands outward from a core region.
+**Key Insight**: Observing that target object details require spatially adjacent tokens for coverage, this work proposes a "centrifugal" selection approach—expanding outward from core points.
 
-**Core Idea**: The BSS criterion biases token selection toward spatially proximate low-redundancy tokens, enabling an ordered centrifugal expansion from near to far.
+**Core Idea**: Through the BSS criterion, token selection prioritizes spatially proximal yet low-redundancy tokens, achieving an ordered centrifugal expansion from near to far.
 
 ## Method
 
 ### Overall Architecture
-VLM-Pruner operates at the second layer of the LLM decoder in three stages: (1) selecting a small set of high-diversity pivot tokens as initial seeds; (2) expanding the selection set from near to far via a greedy algorithm guided by the BSS criterion; and (3) merging information from discarded tokens back into retained tokens via Similarity-Weighted Aggregation (SWA).
+VLM-Pruner addresses specific pain points: existing training-free pruning either clusters tokens by attention (causing redundancy) or jumps between foreground and background via greedy similarity (failing local coverage). The core mechanism is a "centrifugal" selection: first scattering mutually distant seeds across the image, then expanding outward in concentric circles to ensure retained tokens are both non-redundant and spatially continuous on objects. Integrated into the second LLM decoder layer, the process involves three stages: pivot initialization, BSS-guided greedy expansion, and information back-propagation via SWA—all without modifying VLM weights.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["LLM Decoder Layer 2<br/>N Vision Tokens (Key K + Hidden State H)"] --> B["Pivot Initialization<br/>Max-min scattering of κ across Key space"]
+    B --> C["Buffered Spatial Sparsity (BSS)<br/>Similarity multiplied by spatial penalty to delay distant tokens"]
+    C -->|"Parallel greedy expansion by descending non-redundancy<br/>Expanding from near to far up to R tokens"| C
+    C --> D["Similarity-Weighted Aggregation (SWA)<br/>Discarded tokens reintegrated into nearest retained tokens"]
+    D --> E["Retain R Tokens<br/>Input to subsequent decoder layers"]
+```
 
 ### Key Designs
 
-1. **Pivot Initialization**:
+**1. Pivot Initialization: Scattering semantic-mutually exclusive seeds to anchor centrifugal expansion**
+To prevent greedy selection from being misled by isolated background noise, VLM-Pruner uses a max-min strategy to iteratively select $\kappa$ seeds. Each step selects a candidate "farthest" from the current set: $j_t = \arg\max_{j \in \mathcal{C}} \min_{j' \in \mathcal{S}_{t-1}} \|\mathbf{K}_j - \mathbf{K}_{j'}\|_2$. Notably, max-min distances are calculated in the **key** space (rather than the hidden state space used for subsequent greed). The key space has lower dimensionality and naturally refines semantic identity, reducing interference from redundant information during seeding.
 
-    - Function: Select $\kappa$ semantically diverse seed tokens.
-    - Mechanism: Iteratively apply a max-min strategy in the token key space: $j_t = \arg\max_{j \in \mathcal{C}} \min_{j' \in \mathcal{S}_{t-1}} \|\mathbf{K}_j - \mathbf{K}_{j'}\|_2$
-    - Design Motivation: Using keys (low-dimensional, refined semantic representations) rather than hidden states reduces interference from redundant information; max-min ensures that the initial seeds cover diverse semantic regions.
+**2. Buffered Spatial Sparsity (BSS) Criterion: Expanding outward from seeds rather than jumping to edges**
+Pure redundancy elimination tends to be scattered because distant background tokens often have the lowest similarity and are selected first. BSS addresses this by multiplying similarity with a spatial distance "penalty factor": $\widetilde{M}_{ij} = M_{ij}(1+\lambda\bar{\delta}_i(\mathcal{S}))$, where $\bar{\delta}_i(\mathcal{S}) = \min_{j \in \mathcal{S}} D_{ij}^{(sp)} / D_{max}$ is the normalized minimum spatial distance from a candidate to the selected set. Distant tokens have their similarity significantly amplified, making them appear "more redundant" and less likely to be selected early. Intuitively, after selecting a token on a fork handle, the next selection prioritizes tokens immediately adjacent to it to complete the object line. As the selection set $\mathcal{S}$ grows, the $\bar{\delta}_i$ term monotonically decreases, ensuring the greedy objective remains submodular and the expansion stable.
 
-2. **Buffering for Spatial Sparsity (BSS) Criterion**:
+**3. Similarity-Weighted Aggregation (SWA): Recycling information from discarded outer tokens**
+Centrifugal expansion proceeds from center to periphery, meaning outer tokens are sacrificed first. SWA performs "information recycling": each discarded token $u$ finds its most similar retained counterpart $j^*(u) = \arg\max_{j \in \mathcal{S}} M_{uj}$ and merges its features via weighted aggregation: $\mathbf{H}_j = \beta\mathbf{H}_j + (1-\beta)\sum_{u} \alpha_{u\to j}\mathbf{H}_u$ (with $\beta=0.3$). This ensures retained tokens represent both their own semantics and the surrounding discarded context, compensating for the peripheral data loss inherent in centrifugal selection.
 
-    - Function: Modify the similarity metric so that tokens spatially distant from the current selection set are "deferred" in selection order.
-    - Mechanism: Define the BSS-modulated similarity $\widetilde{M}_{ij} = M_{ij}(1+\lambda\bar{\delta}_i(\mathcal{S}))$, where $\bar{\delta}_i(\mathcal{S}) = \min_{j \in \mathcal{S}} D_{ij}^{(sp)} / D_{max}$ is the normalized minimum spatial distance from candidate token $i$ to the current selection set. Tokens farther from the selection set have their similarity amplified, making them appear "more redundant" and thus less likely to be selected.
-    - Design Motivation: Pure redundancy elimination methods tend to select peripheral background tokens (which have low similarity to the main subject). BSS avoids this scattered selection through a spatial proximity-first mechanism. As iterations proceed, $\bar{\delta}_i$ continuously decreases, preserving the overall submodular property.
-
-3. **Similarity-Weighted Aggregation (SWA) Recovery**:
-
-    - Function: Recover useful information from discarded tokens.
-    - Mechanism: Each discarded token $u$ is assigned to the most similar retained token $j^*(u) = \arg\max_{j \in \mathcal{S}} M_{uj}$, followed by weighted aggregation: $\mathbf{H}_j = \beta\mathbf{H}_j + (1-\beta)\sum_{u} \alpha_{u\to j}\mathbf{H}_u$ (with $\beta=0.3$).
-    - Design Motivation: Centrifugal selection inevitably discards the outermost tokens; SWA compensates for this loss through information recovery.
-
-### Acceleration Strategies
-- Only the $q=256$ highest-variance channels are retained for similarity matrix computation, reducing complexity from $O(N^2 d)$ to $O(N^2 q)$.
-- Candidate tokens are processed in batches (batch size $B$) to avoid per-token evaluation.
-- The acceptance threshold is scheduled from strict to lenient ($\tau^{(0)}=0.8$, step size 0.1) to prevent premature acceptance of isolated distant tokens.
+### Acceleration Strategy
+The similarity matrix $M \in \mathbb{R}^{N \times N}$ is the primary overhead. VLM-Pruner implements three optimizations: calculating similarity using only the $q=256$ channels with the highest variance (reducing complexity from $O(N^2 d)$ to $O(N^2 q)$); parallel batch evaluation of candidates; and a threshold schedule that progresses from strict to loose ($\tau^{(0)}=0.8$, step 0.1) to block isolated distant tokens initially and relax constraints only in later stages.
 
 ## Key Experimental Results
 
-### Main Results — LLaVA-1.5-7B at Different Pruning Rates
+### Main Results—LLaVA-1.5-7B at Different Pruning Rates
 
-| Method | Retain 192 (66.7%) Avg. | Retain 128 (77.8%) Avg. | Retain 64 (88.9%) Avg. |
-|--------|------------------------|------------------------|------------------------|
+| Method | 192 Retained (66.7%) Avg. | 128 Retained (77.8%) Avg. | 64 Retained (88.9%) Avg. |
+|------|---------------------|---------------------|---------------------|
 | FastV | 96.45% | 92.95% | - |
 | DART | 98.40% | 97.00% | - |
 | DivPrune | 97.80% | 96.40% | - |
-| **VLM-Pruner** | **98.85%** | - | **Best** |
+| **Ours** | **98.85%** | - | **Best** |
 
-### Ablation Study — Effect of Individual Components (inferred from paper description)
+### Ablation Study
 
 | Configuration | Effect |
-|---------------|--------|
-| w/o BSS (pure redundancy elimination) | Scattered selection, similar to DivPrune |
-| w/o SWA | Loss of peripheral information, performance degradation |
-| w/o pivot (random initialization) | Uneven initial coverage |
+|------|---------|
+| w/o BSS (Pure Redundancy) | Scattered selections similar to DivPrune |
+| w/o SWA | Loss of peripheral information; performance drop |
+| w/o pivot (Random Init) | Uneven initial coverage |
 | Full VLM-Pruner | Optimal balance |
 
 ### Key Findings
-- VLM-Pruner consistently achieves top performance across 5 VLMs (including LLaVA-1.5-7B) on 13 benchmarks, with the advantage growing as the pruning rate increases.
-- Competitive performance is maintained even at the extreme pruning rate of 88.9%, confirming that centrifugal selection more effectively preserves fine-grained object details.
-- Visualizations clearly show that tokens selected by VLM-Pruner are more densely and orderly distributed over target objects (e.g., 4 consecutive tokens on a fork), whereas DivPrune/DART selections alternate between foreground and background.
-- Compared to importance-based methods, VLM-Pruner permits moderate local clustering to preserve detail integrity rather than penalizing all forms of spatial aggregation.
+- VLM-Pruner consistently leads across 13 benchmarks and 5 VLMs, with the competitive advantage widening as the pruning rate increases.
+- Retains competitiveness even at an extreme 88.9% pruning rate, validating that centrifugal selection better preserves target object details.
+- Visualizations show VLM-Pruner selects tokens in dense, ordered patterns on target objects (e.g., 4 continuous tokens on a fork), whereas DivPrune/DART jump sporadically between foreground and background.
+- Unlike importance-based methods, VLM-Pruner permits moderate local clustering to maintain detail integrity rather than penalizing all proximity.
 
 ## Highlights & Insights
-- **Centrifugal pruning paradigm**: This work transcends the existing binary of "importance-driven vs. diversity-driven" methods by proposing a novel paradigm of locally dense coverage expanding outward, with clear intuition and thorough empirical validation.
-- **Mathematical elegance of BSS**: A simple spatial distance modulation achieves the "proximity-first" effect while preserving the submodular property and effectively reordering token selection.
-- **Training-free and generalizable**: The method requires no modification to VLM weights, is plug-and-play, and demonstrates consistent effectiveness across diverse model architectures.
+- **Centrifugal Pruning Paradigm**: Challenges the current "importance vs. diversity" dichotomy by proposing a new direction: expanding outward from local dense coverage.
+- **Mathematical Elegance of BSS**: Achieves a "proximity-first" effect through simple spatial modulation, effectively altering selection order while maintaining submodularity.
+- **Training-free & Universal**: Requires no weight modification, offering a plug-and-play solution that is consistently effective across different models.
 
 ## Limitations & Future Work
-- The pruning is applied at the second decoder layer; whether this placement is optimal has not been systematically studied.
-- The method introduces several hyperparameters ($\lambda$, $\tau^{(0)}$, $\Delta\tau$, $\beta$), and sensitivity analyses remain incomplete.
-- The method assumes that tokens corresponding to target objects are spatially contiguous, which may not hold for scattered or occluded objects.
-- Precomputation of the similarity matrix $M \in \mathbb{R}^{N \times N}$ still incurs overhead and may become a bottleneck for high-resolution inputs.
-- No comparison is made against training-based pruning methods (e.g., ATP-LLaVA).
+- Systematic research into whether the second decoder layer is the optimal location for pruning is still needed.
+- Numerous hyperparameters ($\lambda$, $\tau^{(0)}$, $\Delta\tau$, $\beta$) require more thorough sensitivity analysis.
+- The method assumes spatial continuity of target objects; it may underperform in highly fragmented or heavily occluded scenes.
+- Pre-calculating the similarity matrix $M$ remains an overhead that could become a bottleneck for very high-resolution inputs.
+- Comparisons with training-based methods (e.g., ATP-LLaVA) are currently absent.
 
 ## Related Work & Insights
-- **vs. FastV/SparseVLM** (importance-driven): These methods can underperform random pruning in certain settings, as importance-based criteria lead to redundant selection.
-- **vs. DivPrune/DART** (redundancy elimination): The pursuit of global diversity results in scattered selections; VLM-Pruner achieves ordered expansion through BSS.
-- **vs. MustDrop/FiCoCo** (methods with locality penalties): These methods penalize all spatial aggregation, whereas moderate clustering is in fact beneficial for preserving fine-grained details.
+- **vs FastV/SparseVLM** (Importance-driven): VLM-Pruner avoids the redundant clustering that sometimes makes importance-based methods perform worse than random pruning.
+- **vs DivPrune/DART** (Redundancy-elimination): While these pursue global diversity, they cause scattered selections. VLM-Pruner achieves ordered expansion via BSS.
+- **vs MustDrop/FiCoCo** (Local penalty methods): These penalize all clustering, whereas VLM-Pruner recognizes that moderate clustering is essential for detail preservation.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Centrifugal pruning combined with the BSS criterion represents a creative and well-motivated design.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive evaluation across 5 VLMs × 13 benchmarks × 3 pruning rates.
-- Writing Quality: ⭐⭐⭐⭐ The motivation–method–experiment logical chain is clear, with excellent illustrations.
-- Value: ⭐⭐⭐⭐ High practical utility as a training-free method; the design philosophy has strong transferability.
+- Novelty: ⭐⭐⭐⭐ Centrifugal pruning and the BSS criterion are creative designs.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive assessment across 5 VLMs, 13 benchmarks, and 3 pruning rates.
+- Writing Quality: ⭐⭐⭐⭐ Clear logical chain from motivation to experiment with excellent visualizations.
+- Value: ⭐⭐⭐⭐ High practical utility as a training-free method with transferable design insights.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] HAWK: Head Importance-Aware Visual Token Pruning in Multimodal Models](hawk_head_importance-aware_visual_token_pruning_in_multimodal_models.md)
+- [\[CVPR 2026\] TransPrune: Token Transition Pruning for Efficient Large Vision-Language Model](transprune_token_transition_pruning_for_efficient_large_vision-language_model.md)
+- [\[CVPR 2026\] DocPrune: Efficient Document Question Answering via Background, Question, and Comprehension-aware Token Pruning](docpruneefficient_document_question_answering_via_background_question_and_compre.md)
 - [\[CVPR 2026\] DUET-VLM: Dual Stage Unified Efficient Token Reduction for VLM Training and Inference](duet-vlm_dual_stage_unified_efficient_token_reduction_for_vlm_training_and_infer.md)
-- [\[ICCV 2025\] SparseVILA: Decoupling Visual Sparsity for Efficient VLM Inference](../../ICCV2025/multimodal_vlm/sparsevila_decoupling_visual_sparsity_for_efficient_vlm_inference.md)
-- [\[ICLR 2026\] Index-Preserving Lightweight Token Pruning for Efficient Document Understanding](../../ICLR2026/multimodal_vlm/index-preserving_lightweight_token_pruning_for_efficient_document_understanding_.md)
-- [\[NeurIPS 2025\] SCOPE: Saliency-Coverage Oriented Token Pruning for Efficient Multimodal LLMs](../../NeurIPS2025/multimodal_vlm/scope_saliency-coverage_oriented_token_pruning_for_efficient_multimodel_llms.md)
+- [\[ACL 2026\] HiPrune: Hierarchical Attention for Efficient Token Pruning in Vision-Language Models](../../ACL2026/multimodal_vlm/hiprune_hierarchical_attention_for_efficient_token_pruning_in_vision-language_mo.md)
+- [\[CVPR 2026\] HAWK: Head Importance-Aware Visual Token Pruning in Multimodal Models](hawk_head_importance-aware_visual_token_pruning_in_multimodal_models.md)
 
 </div>
 

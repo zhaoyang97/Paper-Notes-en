@@ -34,30 +34,30 @@ item_total: 6
 
 **🧪 ICML2026** · **6** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (80)](../../CVPR2026/autonomous_driving/index.md) · [🔬 ICLR2026 (16)](../../ICLR2026/autonomous_driving/index.md) · [🤖 AAAI2026 (56)](../../AAAI2026/autonomous_driving/index.md) · [🧠 NeurIPS2025 (47)](../../NeurIPS2025/autonomous_driving/index.md) · [📹 ICCV2025 (91)](../../ICCV2025/autonomous_driving/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (160)](../../CVPR2026/autonomous_driving/index.md) · [🔬 ICLR2026 (16)](../../ICLR2026/autonomous_driving/index.md) · [🤖 AAAI2026 (56)](../../AAAI2026/autonomous_driving/index.md) · [🧠 NeurIPS2025 (47)](../../NeurIPS2025/autonomous_driving/index.md) · [📹 ICCV2025 (91)](../../ICCV2025/autonomous_driving/index.md)
 
 🔥 **Top topics:** Navigation ×2
 
 **[Constrained Multi-Objective Reinforcement Learning with Max-Min Criterion](constrained_multi-objective_reinforcement_learning_with_max-min_criterion.md)**
 
-:   This paper unifies "max-min multi-objective fairness" and "hard constraint satisfaction" into a single MORL framework. By reformulating the problem as a convex program using occupancy measures and deriving a dual convex optimization problem over weights $(u,w)$, the authors implement a projected gradient descent algorithm that simultaneously achieves fairness and constraint feasibility with theoretical guarantees of geometric convergence rates.
+:   This paper unifies "max-min multi-objective fairness" and "hard constraint satisfaction" into a single MORL framework. By reformulating the problem as a convex program via occupancy measures, the authors derive a dual convex optimization problem over weights $(u,w)$. This allows a projected gradient descent algorithm to simultaneously achieve fairness and constraint feasibility with theoretical guarantees of geometric convergence.
 
 **[DeepSight: Long-Horizon World Modeling via Latent States Prediction for End-to-End Autonomous Driving](deepsight_long-horizon_world_modeling_via_latent_states_prediction_for_end-to-en.md)**
 
-:   DeepSight shifts "future world prediction" from explicit pixel reconstruction (codebook single-frame) to **multi-frame parallel implicit prediction** of DINOv3 semantic features in BEV space, with an additional on-demand Adaptive Chain-of-Thought. This enables Qwen2.5-VL-3B to achieve a Driving Score of 86.23 (+7.39) and Success Rate of 71.36% (+13.63) on Bench2Drive closed-loop, with only ~4% extra inference latency.
+:   DeepSight transforms "future world prediction" from explicit pixel reconstruction (single-frame codebook) to **multi-frame parallel implicit prediction** of DINOv3 semantic features in BEV space, integrated with an on-demand Adaptive Chain-of-Thought (CoT). This enables Qwen2.5-VL-3B to achieve a Driving Score of 86.23 (+7.39) and a Success Rate of 71.36% (+13.63) on the Bench2Drive closed-loop benchmark with only ~4% additional inference latency.
 
 **[Mitigating Error Accumulation in Continuous Navigation via Memory-Augmented Kalman Filtering](mitigating_error_accumulation_in_continuous_navigation_via_memory-augmented_kalm.md)**
 
-:   The step-by-step prediction of continuous UAV VLN is reformulated as a closed loop of "Recursive Bayesian Estimation = GRU Prior + Memory Bank Likelihood + Learnable Kalman Gain." By fine-tuning on TravelUAV with only 10% of the data, the L1-Full Success Rate (SR) was increased from 17.6% to 25.9%, while flattening the position drift—which typically accumulates after 100 steps—to approximately 30–40 meters.
+:   Ours reformulates step-by-step prediction in continuous UAV VLN as a closed-loop "Recursive Bayesian Estimation = GRU Prior + Memory Likelihood + Learnable Kalman Gain." By fine-tuning on only 10% of the data, it improves the Success Rate (SR) of L1-Full on TravelUAV from 17.6% to 25.9% and stabilizes position drift—which previously accumulated indefinitely—to within 30–40 meters after 100 steps.
 
 **[Plug-and-Play Label Map Diffusion for Universal Goal-Oriented Navigation](plug-and-play_label_map_diffusion_for_universal_goal-oriented_navigation.md)**
 
-:   This paper proposes PLMD: it merges BEV semantic maps and obstacle maps into a Label Map and uses DDPM to complete semantics and obstacle labels in unexplored areas under obstacle prior modulation. As a plug-and-play module for any GON policy, it consistently achieves new SOTA results on HM3D/MP3D across ON, IIN, and MRON tasks.
+:   This paper proposes PLMD: a framework that merges BEV semantic and obstacle maps into a unified Label Map. It utilizes DDPM, modulated by obstacle priors, to complete semantic and obstacle labels in unexplored regions. As a plug-and-play module, it can be integrated with any GON policy and consistently achieves new SOTA results on HM3D/MP3D across three tasks: ON, IIN, and MRON.
 
 **[Threshold-Based Exclusive Batching for LLM Inference](threshold-based_exclusive_batching_for_llm_inference.md)**
 
-:   This paper systematically characterizes the performance crossover conditions between mixed batching (MB) and exclusive batching (EB) in LLM inference. It proves that combining prefill and decode in the same batch on bandwidth-constrained GPUs slows down Attention due to bandwidth contention. Based on this, it derives the optimal phase-switching threshold $\theta^*$ and memory-safe batch size using the hazard rate. The designed online adaptive scheduler, EB+, achieves up to 41.9% throughput improvement on bandwidth-constrained hardware and up to 36.4% improvement over MB under non-stationary traffic.
+:   This paper systematically characterizes the performance crossover conditions between mixed batching (MB) and exclusive batching (EB) in LLM inference. It proves that on bandwidth-constrained GPUs, co-batching prefill and decode stages slows down Attention due to bandwidth contention. Consequently, the authors derive an optimal phase-switching threshold $\theta^*$ and a memory-safe batch size based on the hazard rate, designing an online adaptive scheduler EB+. This scheduler improves throughput by up to 41.9% on bandwidth-constrained hardware and up to 36.4% under non-stationary traffic compared to MB.
 
 **[TSRBench: A Comprehensive Multi-task Multi-modal Time Series Reasoning Benchmark for Generalist Models](tsrbench_a_comprehensive_multi-task_multi-modal_time_series_reasoning_benchmark_.md)**
 
-:   TSRBench constructs a time series reasoning benchmark covering 14 domains, 4 major dimensions (perception/reasoning/prediction/decision-making), 15 tasks, 4125 questions, and supports four input modalities: text, visualization, text+image, and embedding. It systematically evaluates 30+ mainstream LLMs, VLMs, and TSLLMs, revealing key findings such as "scaling holds for perception/reasoning but fails for prediction" and "text and visualization modalities are highly complementary, but current models can hardly fuse them."
+:   TSRBench constructs a time series reasoning benchmark covering 14 domains, 4 major dimensions (Perception/Reasoning/Prediction/Decision-making), 15 tasks, and 4,125 questions. It supports four input modalities (Text, Visual, Text+Image, Embedding) and systematically evaluates 30+ mainstream LLMs, VLMs, and TSLLMs. It reveals that "scaling holds in perception/reasoning but fails in prediction" and that "text and visual modalities are highly complementary, yet current models struggle to fuse them."

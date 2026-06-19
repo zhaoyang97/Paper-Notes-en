@@ -111,6 +111,7 @@ Human Preference Study (50 participants × 10 cases × 3 criteria = 1500 votes):
 Across all three criteria, ~67% of votes went to the full model, showing significant perceptual improvement. The version without memory consistently ranked second.
 
 ### Ablation Study
+
 | Configuration | MEt3R ↓ | Recon. Rate ↑ | AUC@30 ↑ | CosSim ↑ | FVD ↓ | Description |
 |---------------|---------|---------------|----------|----------|-------|-------------|
 | Captain Safari (Full) | 0.3690 | 0.968 | 0.200 | 0.563 | 1023.46 | Full Model |

@@ -93,6 +93,7 @@ CapEval-QAs $\text{Acc}^+$/$\text{Acc}^-$ under 1–4 concepts (abbreviated):
 Closed-source models achieve near-ceiling $\text{Acc}^-$ (avoiding hallucinations) but have lower $\text{Acc}^+$ (recalling what should be said), indicating a conservative output strategy. CoViP improves both ends through RL.
 
 ### Ablation Study
+
 | Configuration | Observation | Explanation |
 |---|---|---|
 | Full CoViP ($r_{\text{vis}}+r_{\text{caps}}$ + CAG) | Best | Synergy of proxy task, dual reward, and CAG |

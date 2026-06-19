@@ -120,6 +120,7 @@ Average success rates on LIBERO:
 The improvements in LIBERO-Long (+2.2 over $\pi_{0.5}$) validate the value of VBE’s long-horizon modeling and PBD’s phase alignment for "long-horizon manipulation."
 
 ### Ablation Study
+
 | Config (VBE / PBD) | LIBERO Long | Real-World Gen. | Real-World Long |
 |--------------------|-------------|-----------------|-----------------|
 | — / — (Baseline) | 92.4 | 57.0 | 41.0 |

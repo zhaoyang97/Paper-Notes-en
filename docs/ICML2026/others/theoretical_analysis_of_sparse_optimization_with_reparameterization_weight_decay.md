@@ -73,6 +73,7 @@ Using ResNet backbones on CIFAR-10 / ImageNet, the goal is to compare sparsity r
 | ImageNet| ResNet| **Ours (ReWA Config B)** | Significantly lower than $\ell_1$ | Comparable to $\ell_1$ |
 
 ### Ablation Study
+
 | Configuration | Observation | Explanation |
 |---------------|-------------|-------------|
 | Full ReWA | Stable convergence + sparsity | All three components active |

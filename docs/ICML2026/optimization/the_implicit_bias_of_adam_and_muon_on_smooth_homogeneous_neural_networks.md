@@ -82,6 +82,7 @@ A 2-layer (1 hidden layer) homogeneous network with $m=2048$ was used for MNIST 
 | Muon-Adam | $\max\{(\eta_0^A/\eta_0^M)\|\cdot\|_{\mathrm{msp}},\|\cdot\|_\infty\}$ | Consistent with hybrid norm (Figure 2) |
 
 ### Ablation Study
+
 | Configuration | Key Metric | Description |
 |---------------|------------|-------------|
 | squared-ReLU activation | Satisfies (M1)+(M2); margin growth matches theory | Valid testbed for main claims |

@@ -32,6 +32,7 @@ DynFusion inserts a lightweight gating module, CAM, into each MMDiT block of the
 **Core Idea**: Replace static stacking with **data-driven adaptive condition fusion**, allowing the model to dynamically determine *what/when/where* (which conditions to activate, at which timestep, in which block) rather than following a fixed schedule. This is implemented as a plug-and-play gating module (CAM), which works alongside decoupled attention and Fusion-LoRA to ensure that selected conditions are cleanly integrated into the noise branch.
 
 ## Method
+
 ### Overall Architecture
 DynFusion is built upon mainstream DiT/MMDiT architectures (such as FLUX). The input consists of noise tokens, text tokens, and multiple visual condition maps (depth, canny, subject, background, etc.), with the output being the denoised target image. The core modifications to the pipeline are: **freezing the backbone** and training only condition-specific LoRAs to extract features, which are then injected into the noise latent space via multi-modal attention to avoid full-parameter fine-tuning. The pivotal innovation is the dynamic gate preceding injection:
 
@@ -95,6 +96,7 @@ Evaluated on FLUX.1 across four multi-condition tasks. Subject consistency is me
 Across all tasks, DynFusion outperforms the previous SOTA (UniCombine) in quality (FID/SSIM) and subject consistency (CLIP-I/DINO), while cutting FLOPs by approximately half and increasing inference speed by ~1.4x. While previous methods faced a trade-off between quality and compute, DynFusion achieves simultaneous improvements in both.
 
 ### Ablation Study (Subject-Insertion Task)
+
 | Configuration | FID ↓ | SSIM ↑ | DINO ↑ | FLOPs / Notes |
 |------|-------|--------|--------|------|
 | Uniform (All Active) | 5.06 | 0.76 | 92.71 | 15.10T, baseline |

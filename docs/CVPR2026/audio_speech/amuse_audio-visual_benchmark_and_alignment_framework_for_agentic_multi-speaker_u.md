@@ -94,6 +94,7 @@ Accuracy (%) for classification tasks:
 | Qwen3-Omni | 46.98 | **54.22** | 45.02 | **56.73** | 54.51 | **62.53** |
 
 ### Ablation Study
+
 | Configuration | Observation |
 |------|---------|
 | Full RAFT | Optimal performance |

@@ -91,6 +91,7 @@ The training strategy recommendation emphasizes that the loss function is the fi
 ## Key Experimental Results
 
 ### Main Results
+
 | Evidence | Scale / Quantity | Definition | Practical Insight |
 |---------|-------------|----------|--------------|
 | Three-stage Framework | 3 Stages | synthesis, evaluation, instantiation | Locate contaminated or compressed signals when diagnosing alignment failure. |

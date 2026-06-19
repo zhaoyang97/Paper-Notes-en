@@ -115,6 +115,7 @@ REACT improves overall accuracy by approximately 20–40% over the strongest bas
 | **REACT** | **0.845** | **0.671** |
 
 ### Ablation Study
+
 | Config | Acc w/ Tie | Acc w/o Tie | Description |
 |-----------|-----------|------------|------|
 | REACT (Default) | 0.610 | 0.813 | Full Model |

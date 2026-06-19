@@ -15,7 +15,7 @@ content_hash: b8f273d1ed8def24
 **arXiv**: [2606.03976](https://arxiv.org/abs/2606.03976)  
 **Code**: https://github.com/KordingLab/formalizing-the-binding-problem  
 **Area**: Interpretability / Representation Analysis / Vision Transformer  
-**Keywords**: Binding Problem, Information-theoretic Probing, ViT Representations, [CLS] token, Spatial tokens
+**Keywords**: Binding Problem, Information-theoretic Probing, ViT Representations, Spatial tokens
 
 ## TL;DR
 This paper formalizes the "binding problem in neural networks" as the mutual information $I(O;Z)$ regarding the object code $O$ within the representation $Z$. By designing autoregressive probabilistic probes to measure binding information in ViTs such as DINOv2 and CLIP, the study finds that the `[CLS]` token encodes <50% of binding information with a structure approximating a quadratic form, while an attention probe on the full set of spatial tokens recovers ~92% of the binding information.

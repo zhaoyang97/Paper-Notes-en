@@ -91,6 +91,7 @@ Comparison with various baselines on the VSPW dataset under the W2F protocol (us
 With only 10% warm-up, DiTTA's mIoU is +2.1%p higher than the ISS baseline and +1.5%p higher than the fully supervised VSS method CFFM++. Meanwhile, its speed (13.45 FPS) is nearly 10x faster than zero-shot refinement (1.41 FPS). The advantage increases with larger warm-up ratios (+3.6%p at 50%).
 
 ### Ablation Study (50% W2F Protocol)
+
 | Configuration | Add-on | Distill. | Contrast. | mIoU |
 |------|:------:|:--------:|:---------:|------|
 | ISS Baseline | | | | 48.7 |

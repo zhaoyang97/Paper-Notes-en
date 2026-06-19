@@ -110,6 +110,7 @@ Robustness on non-Lambertian (transparent/specular) surfaces on Booster-Q:
 Ours is the only method that remains real-time while approaching the performance of heavy models in these difficult scenarios.
 
 ### Ablation Study
+
 | Configuration | Midd.-H BP-2 | ETH3D BP-1 | KITTI15 D1 | Description |
 |------|------|------|------|------|
 | W/O Distillation | 2.87 | 2.11 | 4.32 | ImageNet backbone baseline |

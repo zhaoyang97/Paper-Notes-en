@@ -100,6 +100,7 @@ Efficiency Comparison (Intel Xeon 4214R + RTX A6000):
 Speedup is approximately one order of magnitude across all scenes.
 
 ### Ablation Study
+
 | Config | PSNR3D | SSIM3D | Description |
 |------|--------|--------|------|
 | Baseline (R2-Gaussian) | 23.22 | 0.984 | Monochromatic GS |

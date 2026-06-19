@@ -91,6 +91,7 @@ Evaluation sets: NoveltyBench (instruction following), WildChat (dialogue), Narr
 Coverage improved by 0.142 (approx. +30% reachable area) over the strongest baseline, with a 21.3% joint improvement in diversity-quality. Semantic Dominance reached 40.5% (meaning nearly half of the Pareto-optimal points are uniquely held by BACO).
 
 ### Ablation Study (Different routers on NoveltyBench)
+
 | Router | Lexical Cov. | Lexical Dom. | Semantic Cov. | Semantic Dom. | Overall Cov. | Overall Dom. |
 |--------|-------------|-------------|---------------|---------------|--------------|--------------|
 | -RAND (Random Switch) | 0.493 | 26.3% | 0.409 | 17.0% | 0.451 | 21.7% |

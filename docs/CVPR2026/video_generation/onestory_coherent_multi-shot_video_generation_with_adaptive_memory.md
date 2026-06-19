@@ -93,6 +93,7 @@ Evaluation focuses on **Shot-level Quality** (subject/background consistency, ae
 In the I2MSV setting, OneStory also leads across metrics (C-Cons 0.5851, E-Cons 0.5716, S-Align 0.2354). Qualitatively, baselines often fail identity when the protagonist reappears after a hiatus or in complex composite shots; OneStory maintains consistency and plot evolution.
 
 ### Ablation Study
+
 | Configuration | C-Cons↑ | E-Cons↑ | S-Align↑ | Description |
 |------|----------|----------|----------|------|
 | Last frame only (Baseline) | 0.5153 | 0.5112 | 0.1814 | Lacks history, weakest |

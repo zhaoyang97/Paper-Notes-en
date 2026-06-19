@@ -66,6 +66,7 @@ Hyperparameters were selected via grid search, including learning rates ($5e^{-6
 ## Key Experimental Results
 
 ### Main Results
+
 | Model | Training Language | EN Macro-F1 | TL Macro-F1 | Combined Macro-F1 | Gap |
 |--------|------|------|----------|------|------|
 | TF-IDF + LR | EN | 0.930±0.013 | 0.649±0.008 | 0.836±0.005 | 0.281 |
@@ -79,6 +80,7 @@ Hyperparameters were selected via grid search, including learning rates ($5e^{-6
 | NeoBERT | EN+TL | 0.956±0.015 | 0.983±0.009 | 0.970±0.007 | 0.027 |
 
 ### Clinical Sensitivity and Class Performance
+
 | Model / Setting | Healthy F1 (TL) | Dementia F1 (TL) | Dementia Recall (TL) | Interpretation |
 |------|---------|------|------|------|
 | BERT EN→TL | 0.216 | 0.695 | 0.931 | High surface recall, but predicts almost all Filipino samples as dementia; Healthy class collapses. |

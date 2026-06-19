@@ -92,6 +92,7 @@ FFHQ ($768^2$, 1000 images) + DIV2K ($768^2$, 800 images), SD3.5-M backbone, NFE
 $\text{TriPS}_\text{T}$ generally achieves the strongest distortion metrics, while $\text{TriPS}_\text{G}$ dominates perception metrics. In motion deblurring, PSNR increases over FLAIR by more than 2 dB, and KID/LPIPS are nearly halved.
 
 ### Schedule Transfer and Diffusion Backbone Validation
+
 | Setting | Method | PSNR↑ | LPIPS↓ | KID↓ |
 |---|---|---|---|---|
 | FFHQ Gaussian Deblur (Schedules from SR×8) | FLAIR | 27.74 | 0.109 | 0.012 |

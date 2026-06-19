@@ -157,6 +157,7 @@ Ablation of training strategies (standard beam, $m=16/32$):
 </div>
 
 <!-- RELATED:END -->
+
 ## Related Papers
 
 - [\[CVPR 2026\] Z-Order Transformer for Feed-Forward Gaussian Splatting](z-order_transformer_for_feed-forward_gaussian_splatting.md)

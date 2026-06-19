@@ -35,6 +35,7 @@ This work decomposes a single RGB image into multiple semantically decoupled RGB
 **Core Idea**: Training an end-to-end diffusion model to decompose a single RGB image directly into a **variable number** of semantically decoupled RGBA layers (rather than previous foreground/background pairs or recursive inference), exchanging decoupled representation for "inherent, self-consistent" editability.
 
 ## Method
+
 ### Overall Architecture
 The model, denoted as Qwen-Image-Layered, is built upon Qwen-Image. Given an input RGB image $I \in \mathbb{R}^{H\times W\times 3}$, it outputs $N$ RGBA layers $L \in \mathbb{R}^{N\times H\times W\times 4}$. Each layer $L_i=[RGB_i;\alpha_i]$ contains color and an alpha mask. The original image can be losslessly reconstructed by alpha-blending these layers:
 

@@ -96,6 +96,7 @@ The LaMP benchmark includes tasks like personalized citation, movie tagging, pro
 | ClusterRAG-H | 0.690 / 0.690 | 0.661 / 0.620 | 0.270 / 0.594 | 0.521 / 0.470 |
 
 ### Ablation Study
+
 | Variant | LaMP-3 MAE | LaMP-3 RMSE | LaMP-7 R-1 | LaMP-7 R-L | Description |
 |------|-----------:|------------:|-----------:|-----------:|------|
 | w/o user clustering | 0.320 | 0.637 | 0.458 | 0.371 | Random neighbors make collaborative signals noisy |

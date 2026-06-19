@@ -69,6 +69,7 @@ AG-REPA is computationally efficient. FoG-A is triggered every 200 steps during 
 ## Key Experimental Results
 
 ### Main Results
+
 | Method | Speech WER↓ | Speech FAD↓ | Audio FAD↓ | Speech MOS↑ | Audio MOS↑ |
 |------|-------------|-------------|------------|-------------|------------|
 | Base (no layer align.) | 5.82 | 1.84 | 3.45 | 3.62±0.08 | 3.45±0.09 |
@@ -80,6 +81,7 @@ AG-REPA is computationally efficient. FoG-A is triggered every 200 steps during 
 | AG-REPA (Top-3) | 3.45 | 1.29 | 2.56 | 4.12±0.05 | 3.94±0.07 |
 
 ### Ablation Study
+
 | Selection Strategy | Top-3 Layers | Speech FAD↓ | Audio FAD↓ | Gain | Convergence Steps |
 |----------|---------|-------------|------------|----------|----------|
 | Base | None | 1.84 | 3.45 | 0.0% | N/A |

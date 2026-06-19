@@ -101,6 +101,7 @@ Localization comparison on the OxfoLD test set (Mean translation error in meters
 Compared to the LiSA baseline, translation and rotation errors are reduced by **24.21% and 25.44%**, respectively. In detection, TACO achieved Vehicle AP@0.5 = 81.60% on OxfoLD.
 
 ### Ablation Study (OxfoLD Test Set)
+
 | Configuration | Translation Error | Vehicle AP@0.5 | Description |
 |------|---------|---------------|------|
 | Baseline LiSA | 0.95m, 1.14° | – | Localization-only SCR |

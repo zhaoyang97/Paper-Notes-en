@@ -86,6 +86,7 @@ As this is a systems paper, there is no model training loss. The optimization ta
 ## Key Experimental Results
 
 ### Main Results
+
 | Comparison | Latency | Accuracy | Conclusion |
 |------|---------|----------|------|
 | Browser-Use | 122.1s | Baseline | Calls LLM every step; 73% of latency from inference |
@@ -97,6 +98,7 @@ As this is a systems paper, there is no model training loss. The optimization ta
 | JIT-Scheduler (Gemini-1.5-Pro) | 109.9s | 86.4% | 2.4× faster than OpenAI CUA with 9pp higher accuracy |
 
 ### Ablation Study
+
 | Config / Phenomenon | Metric | Result | Explanation |
 |-------------|------|------|------|
 | Protocol on valid-plan rate | GPT-4o | 78% → 91% | Tool invariants significantly improve valid plan ratios |

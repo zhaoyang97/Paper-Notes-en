@@ -63,6 +63,7 @@ No new loss functions are introduced, utilizing standard task-specific fine-tuni
 ## Key Experimental Results
 
 ### Main Results
+
 | Dataset | Metric | Best/Representative Legal Model | Strongest Generalist Model | Conclusion |
 |--------|------|------|----------|------|
 | UNFAIR-ToS | micro-F1 / macro-F1 | Contracts-BERT 96.2 / 83.4; Legal-BERT 96.0 / 82.2 | RoBERTa-large 95.8 / 81.6; Mistral 96.0 / 80.7 | Legal models are stronger in macro-F1 |
@@ -72,6 +73,7 @@ No new loss functions are introduced, utilizing standard task-specific fine-tuni
 | Average Performance | Mean macro-F1 | Contracts-BERT 81.10±2.45 | N/A | Contracts-BERT is more stable for long-tail labels |
 
 ### Ablation Study
+
 | Configuration | Key Metric | Description |
 |------|---------|------|
 | Legal-BERT | Mean micro-F1 88.48±6.03, macro-F1 80.90±2.05 | Ranked 1st in overall micro-F1 |

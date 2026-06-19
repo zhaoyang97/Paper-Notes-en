@@ -104,6 +104,7 @@ Real-world physical injection used an HD camera (HIKVISION DS-2CE56C3T-IT3) with
 The ASR drop from simulation to physical was only 3%--6%, demonstrating the accuracy of the simulation model.
 
 ### Ablation Study
+
 | Configuration / Variable | Key Metric | Description |
 |------|---------|------|
 | Black-box $L_0$ 1→256 | ASR & Confidence rise | More blocks increase attack strength |

@@ -150,6 +150,7 @@ Motion representation ablation (iPhone mPSNR): Pose transformation (SoM style) y
 </div>
 
 <!-- RELATED:END -->
+
 ## Related Papers
 
 - [\[CVPR 2026\] SharpTimeGS: Sharp and Stable Dynamic Gaussian Splatting via Lifespan Modulation](sharptimegs_sharp_and_stable_dynamic_gaussian_splatting_via_lifespan_modulation.md)

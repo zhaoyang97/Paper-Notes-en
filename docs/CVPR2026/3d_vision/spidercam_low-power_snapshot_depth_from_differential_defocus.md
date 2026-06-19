@@ -101,6 +101,7 @@ SpiderCam is one of the few passive FPGA depth cameras to report total system po
 Total system power is 624 mW @ 32.5 FPS, which is 1/3.3 to 1/5 of the lowest previously reported total power [55].
 
 ### Ablation Study: Impact of Estimates and Spatial Variation
+
 | Configuration | Estimates | Range | Note |
 |------|------|------|------|
 | Full (2 Scales × 3 Derivs) | 6 | 0.43–0.99 m | Best accuracy |

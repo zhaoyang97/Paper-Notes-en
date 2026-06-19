@@ -108,6 +108,7 @@ Compared to imitation learning policies under the X-IL framework (BC / DDPM / FM
 | **Ours** | **FM** | **0.044** | **0.039** | **0.051** | **0.045** |
 
 ### Ablation Study
+
 | Config | Condition | FVD↓ | CLIPhand↑ | IoU↑ | Note |
 |------|------|------|-----------|------|------|
 | [2] Wan2.2 FT | Text | 482.3 | 0.9132 | 0.5005 | Pure text baseline |

@@ -92,6 +92,7 @@ On Occ3D-NuScenes, DeGO is compared against other weakly-supervised methods. Met
 DeGO outperforms the previous SOTA across all metrics. The significant boost in HCM and InsM validates its superior handling of non-rigid and rigid dynamics.
 
 ### Ablation Study
+
 | Config (Def. / DINOv2 / VGGT) | mIoU | IoU | Description |
 |------|------|------|------|
 | ✗ / ✗ / ✗ | 12.06 | 36.41 | Baseline |

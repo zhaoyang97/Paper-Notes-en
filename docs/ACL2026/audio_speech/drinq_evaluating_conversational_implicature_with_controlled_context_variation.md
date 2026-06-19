@@ -66,6 +66,7 @@ The paper does not train new models; the core involves data generation, human va
 ## Key Experimental Results
 
 ### Main Results
+
 | Dataset / Setting | Metric | Ours | Comparison | Description |
 |-----------|--------|------|------------|-------------|
 | DRInQ Construction | base questions / intents | 300 / 23 | 30 hand-written seed questions | Each question linked to at least 5 different intents |
@@ -75,6 +76,7 @@ The paper does not train new models; the core involves data generation, human va
 | hard subset | Best Model | OpenAI-o3: $0.67 \pm 0.02/0.03$ | GPT-4o: 0.62/0.63 | Explanation yields limited gains for large models |
 
 ### Ablation Study
+
 | Configuration | Key Metric | Description |
 |---------------|------------|-------------|
 | GPT-5-Nano prompting | 41% -> 73% | Structured prompts help small models most |

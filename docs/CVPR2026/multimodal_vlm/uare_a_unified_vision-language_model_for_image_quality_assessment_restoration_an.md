@@ -96,6 +96,7 @@ UARE's pure IQA capability significantly outperforms the previous SOTA, Q-Insigh
 | **Ours** | 0.902 / 0.898 | **0.878 / 0.873** | **0.930 / 0.915** |
 
 ### Ablation Study: Two-Stage Training (RealSR)
+
 | Configuration | PSNR↑ | LPIPS↓ | MUSIQ↑ | MANIQA↑ | Note |
 |------|-------|--------|--------|---------|------|
 | Base Bagel | 21.00 | 0.5906 | 29.66 | 0.1792 | Base model, no restoration ability |

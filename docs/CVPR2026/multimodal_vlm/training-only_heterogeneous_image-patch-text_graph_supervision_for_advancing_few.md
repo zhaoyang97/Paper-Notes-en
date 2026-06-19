@@ -97,6 +97,7 @@ On 11 standard benchmarks (Aircraft, Flowers102, SUN397, Food101, Caltech101, UC
 On FGVC-Aircraft, TOGA outperforms CCA by +9.8% in the 2-shot setting. On EuroSAT, it reaches 89.4% (16-shot), significantly higher than Tip-Adapter-F (84.5%). For OOD robustness (ImageNet variants), TOGA averages 63.1, outperforming zero-shot CLIP (59.1) and various prompt-tuning baselines, indicating that it does not overfit the support set.
 
 ### Ablation Study
+
 | Configuration (EuroSAT example) | 1-shot | 16-shot | Note |
 |------|------|------|------|
 | Full (T+M+F+P, Focal) | 67.4 | 89.4 | Complete model |

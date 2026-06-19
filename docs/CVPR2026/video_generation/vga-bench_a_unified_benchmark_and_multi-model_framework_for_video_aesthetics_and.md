@@ -83,6 +83,7 @@ The models were ranked using normalized average scores across the sub-dimensions
 | **Sora2** | **0.50** | 0.18 | 0.54 |
 
 ### Benchmark Scale Comparison (Table 1)
+
 | Benchmark | Total Dim. | Aes. Dim. | Evaluated Models | Prompts |
 |------|------|------|------|------|
 | V-Bench | 16 | 1 | 4 | ~1600 |

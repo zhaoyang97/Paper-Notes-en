@@ -110,6 +110,7 @@ Evaluated on 6 datasets across 2 tasks using PerSAM-F and Matcher as baselines. 
 The largest gains for PerSAM-F were in semantic segmentation: FSS +8.8, COCO +2.2, LVIS +2.1. For part segmentation, Matcher(1-shot) improved by +8.4 on DIS5K and +3.8 on PACO. Matcher's performance on FSS-1000 was almost unchanged (92.08→92.06) because the baseline is already saturated at 92%, leaving little to refine—this confirms that "worse baselines yield greater refinement gains."
 
 ### Ablation Study
+
 | Configuration | Phenomenon | Implication |
 |------|------|------|
 | $\eta=10^{-2}$ | Fast early growth, degradation after many iterations | Step size too large causes instability |

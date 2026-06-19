@@ -81,6 +81,7 @@ PLM fine-tuning uses Mean Squared Error (MSE) to optimize the 1-7 QoF regression
 ## Key Experimental Results
 
 ### Main Results
+
 | Dataset / Setting | Metric | Key Result (Ours) | Baseline Method | Conclusion |
 |--------|------|------|----------|------|
 | NCTE QoF test | MAE / MSE | DeBERTaV3 large (FT): 0.96 / 1.31 | Constant baseline: 0.96 / 1.35 | Strongest PLM slightly outperforms constant baseline, ~1 rubric point error. |
@@ -90,6 +91,7 @@ PLM fine-tuning uses Mean Squared Error (MSE) to optimize the 1-7 QoF regression
 | Explanation Alignment | Jaccard / Spearman | Avg Jaccard: 0.085, Spearman: 0.062 | SHAP vs. 9 LLM rankings | SHAP and LLM rationales rarely select the same sentences. |
 
 ### Ablation Study
+
 | Configuration | Key Metric | Description |
 |------|---------|------|
 | BERT large + SHAP ranked deletion | $\overline{\Delta}=0.0329$ | Deleting SHAP-weighted sentences in PLM has the highest impact. |

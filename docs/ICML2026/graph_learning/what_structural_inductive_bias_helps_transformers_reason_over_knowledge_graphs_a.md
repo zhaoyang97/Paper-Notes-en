@@ -70,6 +70,7 @@ No special loss functions are introduced; the focus is on fair control of variab
 ## Key Experimental Results
 
 ### Main Results
+
 | Dataset / Setting | Metric | RASA / Ours | Strong Baseline | Vanilla Transformer | Conclusion |
 |:---|:---|:---|:---|:---|:---|
 | MetaQA 3-hop | Hits@1 | 92.6±0.1 | Graphormer 93.3±0.2 / R-GCN 91.9±0.2 | 12.9±0.2 | RASA is competitive as an ablation vehicle. |
@@ -78,6 +79,7 @@ No special loss functions are introduced; the focus is on fair control of variab
 | MetaQA held-out | Perf. Drop | RASA -7.2pp | R-GCN -29.2pp | - | Mask-based topology generalizes better to unseen relations. |
 
 ### Ablation Study
+
 | Configuration | Key Metric | Description |
 |:---|:---|:---|
 | Full RASA | MetaQA 3-hop 92.6±0.1 | All components (mask + bias + scale + gate) enabled. |

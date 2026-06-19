@@ -91,6 +91,7 @@ For ImageNet-1K classification, the setting follows MetaFormer: 300 epochs, 224Ã
 ## Key Experimental Results
 
 ### Main Results (ImageNet-1K Classification, 224Ã—224)
+
 | Model | Type | Params(M) | FLOPs(G) | Top-1(%) |
 |------|------|-----------|----------|----------|
 | Swin-T | Attn | 28 | 4.5 | 81.5 |
@@ -105,6 +106,7 @@ For ImageNet-1K classification, the setting follows MetaFormer: 300 epochs, 224Ã
 Ego-T achieves 84.0% with only 3.8 GFLOPs, outperforming Conv2Former-T and MogaNet-S by 0.6â€“0.8%. Ego-S matches the performance of the much larger OverLock-S. Downstream tasks also show leads: Ego-B achieves 52.3 mIoU on ADE20K and 53.3 AP$^b$ on COCO.
 
 ### Ablation Study (Ego-T, ImageNet-1K)
+
 | Configuration | Top-1(%) | Note |
 |------|----------|------|
 | Ego-T (Full) | 84.0 | Window $24\lfloor\ln N\rfloor+1$ + logspace |

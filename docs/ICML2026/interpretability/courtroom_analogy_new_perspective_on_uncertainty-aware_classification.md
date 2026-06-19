@@ -91,6 +91,7 @@ Evaluation tasks include: ID test set accuracy, misclassification detection (Mis
 | CIFAR-10-LT | OOD SVHN / C-100 | 62.56 / 70.18 | **72.05 / 76.52** | +9.49 / +6.34 |
 
 ### Ablation Study
+
 | Configuration / Property | Behavior | Description |
 |-------------|------|------|
 | Full MoDEX | Best across all | Shared $\bm{\alpha}$ + class-specific $\tau_k$ + input-dependent $\bm{\omega}$ |

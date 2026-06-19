@@ -81,6 +81,7 @@ Core findings across 50,000 ImageNet validation images and 12 models:
 The disagreement distribution is right-skewed (mean 0.106, std 0.056), with most images cluster in the low-disagreement band (0.05–0.10) while a few extend to 0.30+, confirming that "controversy is highly concentrated." Overall accuracies range from 72.6% to 84.0% (mean 79.9%), but the structure of disagreement varies greatly.
 
 ### Family Consistency and Ensemble Analysis
+
 | Analysis | Key Value | Description |
 |------|---------|------|
 | Intra-family vs. Inter-family Agreement | 83.5% vs. 80.2% | A systemic 3.3pp gap, stable across both controversial and consensus subsets. |
@@ -93,6 +94,7 @@ The disagreement distribution is right-skewed (mean 0.106, std 0.056), with most
 | ADER | 24.6 | Inter-family disagreement concentration in 10% controversial images is 24.6x the data ratio. |
 
 ### Robustness, Calibration, and Cost-Accuracy Trade-off
+
 | Verification | Result | conclusion |
 |------|------|------|
 | CS after Isotonic Calibration | 4.46 → **18.65** (ECE 0.089→0.044) | Calibration amplifies separation rather than weakening it; controversy is not a miscalibration artifact. |

@@ -72,6 +72,7 @@ The method introduces no new loss—it operates at the data pipeline level. Trai
 ## Key Experimental Results
 
 ### Main Results (COCO val2017, Student ResNet-50; +DetGain Select Ratio 20% + Strong Aug.)
+
 | Detector | Type | Baseline AP | +Data Aug. AP | +DetGain AP |
 |--------|------|-------------|---------------|-------------|
 | Faster R-CNN | Two-stage, anchor | 37.5 | 37.5 (+0.1) | **40.0 (+2.5)** |
@@ -84,6 +85,7 @@ The method introduces no new loss—it operates at the data pipeline level. Trai
 Average gain across six detectors is $\approx +2.0$ mAP with **changes only to the sampling strategy**. Strong augmentation alone often provides no benefit or even hurts (e.g., ATSS −0.8), but DetGain enables filtering of low-quality augmentations for stable gains.
 
 ### Comparison with Other Online Sampling Metrics (COCO val2017, AP)
+
 | Sampling Metric | Faster R-CNN | FCOS | ATSS |
 |----------|-------------|------|------|
 | Uniform (Baseline) | 37.3 | 38.2 | 39.4 |
@@ -96,6 +98,7 @@ Average gain across six detectors is $\approx +2.0$ mAP with **changes only to t
 Loss/gradient-based metrics fluctuate significantly due to internal loss scales and dynamics (hard mining even performs worse than baseline). DetGain is the most consistent and highest across architectures due to its direct alignment with dataset-level mAP.
 
 ### Ablation Study: Complementarity of Augmentation and Online Sampling
+
 | Strong Aug. | Online Sampling | Train AP | Val AP |
 |--------|----------|----------|--------|
 | ✗ | ✗ | 44.6 | 37.4 |

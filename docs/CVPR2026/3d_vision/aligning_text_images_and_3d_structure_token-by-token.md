@@ -109,6 +109,7 @@ Ours significantly outperforms the specialized detector on Objectron and remains
 | Kyvo 3D VQ-VAE | **1.395** | **512** |
 
 ### Ablation Study
+
 | Module | Configuration | Key Metric | Description |
 |------|------|---------|------|
 | Shape Aux Loss | None / Single-view / Multi-view | Mean Rank 2.828 / 1.672 / **1.500** | Pixel-space + multi-view supervision is most critical |

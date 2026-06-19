@@ -100,6 +100,7 @@ On self-collected **feature-sparse racing** data (128-beam LiDAR, Skid Pad / Rac
 G-CVO-2 achieves the lowest translation/rotation drift in the most difficult feature-sparse scenarios, reducing drift by >55% compared to the second-best baseline in both metrics. A control experiment replacing standard CVO with the same second-order solver (CVO 2nd-order) still showed significant inferiority to G-CVO, indicating that gains primarily stem from the **surface-aware anisotropic kernel** rather than just second-order optimization. On indoor ETH3D RGB-D (5 sequences, ~3000 points), G-CVO-2 was best in APE (mean 0.191) and second-best in RPE.
 
 ### Ablation Study
+
 | Configuration | Key Observation | Explanation |
 |------|---------|------|
 | G-CVO-2 (Approx. Hessian) | Converges in ~30 iterations on KITTI seq03 | Full second-order version |

@@ -89,6 +89,7 @@ Evaluated on OLMoE-1B-7B using Commonsense-15K and a telecommunication domain da
 Low-resource client performance improved from 0.0079 (HetLoRA) to 0.3936 (approx. 8.7× gain), while high-resource performance also surpassed all baselines.
 
 ### Ablation Study
+
 | Configuration | Low-Res. Performance | Description |
 |------|-----------|------|
 | Full UB-SMoE (DMR + PG) | 0.3936 | Complete model |

@@ -100,6 +100,7 @@ Evaluated on BCI (HER2) and MIST (HER2/ER/PR/Ki67) datasets using FID/KID/LPIPS 
 Ours leads in FID/KID/LPIPS for three out of four markers. While some methods show higher SSIM, the authors note SSIM is sensitive to pixel-level alignment, which is inherently flawed in paired H&E–IHC; hence, it is not a reliable VIS metric.
 
 ### Ablation Study
+
 | Configuration (MIST-HER2) | FID↓ | KID↓ | Note |
 |------|------|------|------|
 | Baseline (No Feature Guidance FG) | 46.23 | 10.67 | Coarse paired supervision only |

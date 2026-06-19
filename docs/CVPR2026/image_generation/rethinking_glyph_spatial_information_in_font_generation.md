@@ -87,6 +87,7 @@ Evaluation was conducted on the author's self-built OFL Chinese font dataset (1.
 Ours also led in 8-shot UFUC (RMSE 0.1588 vs. MSD-Font 0.1638). Explicit spatial modeling breaks the bottleneck where previous diffusion-based methods hit a performance ceiling.
 
 ### Ablation Study
+
 | Configuration | RMSE↓ | PSNR↑ | SSIM↑ | LPIPS↓ | Note |
 |------|-------|-------|-------|--------|------|
 | Base | 0.1295 | 19.14 | 0.8835 | 0.0563 | 8-shot UFSC baseline |

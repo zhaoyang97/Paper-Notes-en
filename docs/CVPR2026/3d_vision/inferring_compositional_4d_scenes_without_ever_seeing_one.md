@@ -94,6 +94,7 @@ Comparison with MIDI and PartCrafter.
 | 3D-FRONT-Occluded | **Ours** | **0.1256** | **0.7521** |
 
 ### Ablation Study
+
 | Configuration | DT: CD ↓ | DT: F ↑ | DT: IoU ↑ |
 |------|----------|---------|-----------|
 | + Static/Dynamic Emb. | 0.1284 | 0.9350 | 0.4034 |

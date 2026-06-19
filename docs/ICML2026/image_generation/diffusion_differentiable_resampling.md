@@ -113,6 +113,7 @@ Linear Gaussian SSM Particle Filtering ($N{=}32$, 128 steps, 100 averages):
 | Gumbel-Softmax (0.1) | 2.79 ± 2.14 | 4.83 ± 5.76 | NaN |
 
 ### Ablation Study
+
 | Configuration / Phenomenon | Observation | Description |
 |-------------|------|------|
 | Diffusion w/ $K{=}8$ vs $K{=}128$ | SWD: 1.64 → 0.80 | Discretization steps determine accuracy; fine integration is needed. |

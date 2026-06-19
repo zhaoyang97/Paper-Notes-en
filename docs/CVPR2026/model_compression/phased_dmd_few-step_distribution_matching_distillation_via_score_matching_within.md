@@ -74,6 +74,7 @@ Data-free distillation without GAN or regression losses. Experiments used 64 GPU
 > Metric descriptions: **OF** = average optical flow magnitude via UniMatch (motion intensity, higher is stronger); **DD** = Dynamic Degree via VBench; **FID/FVD** = Distribution distance between distilled and base models (lower is closer to base); **DINOv3** = Average pairwise cosine similarity of DINOv3 features for different seeds of the same prompt (lower is more diverse); **LPIPS** = Average pairwise perceptual distance (higher is more diverse).
 
 ### Main Results (Video Generation, Distilling Wan2.2-T2V/I2V-A14B, 4 steps vs. Base 40 steps)
+
 | Task | Method | OF↑ | DD↑ | FID↓ | FVD↓ |
 |------|------|------|------|------|------|
 | T2V | Base (40 steps) | 10.26 | 79.55% | 0.0 | 0.0 |
@@ -86,6 +87,7 @@ Data-free distillation without GAN or regression losses. Experiments used 64 GPU
 Key Point: The motion intensity of DMD2 (OF 3.23) degrades significantly compared to the base (10.26), a manifestation of the SGTS 1-step collapse. Phased DMD restores OF to 9.30 and DD even slightly exceeds the base, while FID/FVD are closer to the base, demonstrating superior preservation of motion dynamics and quality.
 
 ### Diversity Analysis (T2I, 8 seeds per prompt)
+
 | Method | Wan2.1 DINOv3↓ | Wan2.1 LPIPS↑ | Wan2.2 DINOv3↓ | Wan2.2 LPIPS↑ |
 |------|------|------|------|------|
 | Base | 0.708 | 0.607 | 0.732 | 0.531 |

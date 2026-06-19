@@ -1,8 +1,8 @@
 ---
 title: >-
-  CVPR2026 Hallucination Detection Papers · 38 Notes
+  CVPR2026 Hallucination Detection Papers · 32 Notes
 description: >-
-  38 CVPR2026 papers in the Hallucination Detection area, covering Multimodal/VLM, LLM, Reasoning and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  32 CVPR2026 papers in the Hallucination Detection area, covering Multimodal/VLM, LLM, Reasoning and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "CVPR2026"
   - "Hallucination Detection"
@@ -12,8 +12,6 @@ tags:
   - "LLM"
   - "Reasoning"
 item_list:
-  - u: "3d-vcd_hallucination_mitigation_in_3d-llm_embodied_agents_through_visual_contras/"
-    t: "3D-VCD: Hallucination Mitigation in 3D-LLM Embodied Agents through Visual Contrastive Decoding"
   - u: "adaiat_adaptively_increasing_attention_to_generated_text_to_alleviate_hallucinat/"
     t: "AdaIAT: Adaptively Increasing Attention to Generated Text to Alleviate Hallucinations in LVLM"
   - u: "beyond_global_scores_fine_grained_token_grounding_as_robust_detector_of_lvlm_hallucinations/"
@@ -24,8 +22,6 @@ item_list:
     t: "COPO: Causal-Oriented Policy Optimization for Hallucinations of MLLMs"
   - u: "cross-modal_attention_calibration_for_lvlm_hallucination_mitigation/"
     t: "Cross-Modal Attention Calibration for LVLM Hallucination Mitigation"
-  - u: "elv-halluc_benchmarking_semantic_aggregation_hallucinations_in_video_understandi/"
-    t: "ELV-Halluc: Benchmarking Semantic Aggregation Hallucinations in Video Understanding"
   - u: "envision_attend_then_respond_counterfactual_hallucination_mitigation_in_large_vi/"
     t: "Envision, Attend, Then Respond: Counterfactual Hallucination Mitigation in Large Vision-Language Models"
   - u: "exposing_and_evaluating_hallucinations_for_gui_grounding/"
@@ -38,14 +34,10 @@ item_list:
     t: "FINER: MLLMs Hallucinate under Fine-grained Negative Queries"
   - u: "first_logit_boosting_visual_grounding_method_to_mitigate_object_hallucination_in/"
     t: "First Logit Boosting: Visual Grounding Method to Mitigate Object Hallucination in Large Vision-Language Models"
-  - u: "grounded_chain-of-thought_for_multimodal_large_language_models/"
-    t: "Grounded Chain-of-Thought for Multimodal Large Language Models"
   - u: "hallugen_synthesizing_realistic_and_controllable_hallucinations_for_evaluating_i/"
     t: "HalluGen: Synthesizing Realistic and Controllable Hallucinations for Evaluating Image Restoration"
   - u: "hulluedit_single-pass_evidence-consistent_subspace_editing_for_mitigating_halluc/"
     t: "HulluEdit: Single-Pass Evidence-Consistent Subspace Editing for Mitigating Hallucinations in Large Vision-Language Models"
-  - u: "hulluedit_subspace_editing_hallucination/"
-    t: "HulluEdit: Single-Pass Evidence-Consistent Subspace Editing for Mitigating Hallucinations in LVLMs"
   - u: "kvsmooth_mitigating_hallucination_in_multi-modal_large_language_models_through_k/"
     t: "KVSmooth: Mitigating Hallucination in Multi-modal Large Language Models through Key-Value Smoothing"
   - u: "locate-then-sparsify_attribution_guided_sparse_strategy_for_visual_hallucination/"
@@ -56,8 +48,6 @@ item_list:
     t: "MAD: Modality-Adaptive Decoding for Mitigating Cross-Modal Hallucinations in Multimodal Large Language Models"
   - u: "mitigating_multimodal_hallucinations_via_gradient-based_self-reflection/"
     t: "Mitigating Multimodal Hallucinations via Gradient-based Self-Reflection"
-  - u: "mitigating_object_hallucinations_in_lvlms_via_attention_imbalance_rectification/"
-    t: "Mitigating Object Hallucination in LVLMs via Attention Imbalance Rectification"
   - u: "mod-dpo_towards_mitigating_cross-modal_hallucinations_in_omni_llms_using_modalit/"
     t: "MoD-DPO: Towards Mitigating Cross-modal Hallucinations in Omni LLMs using Modality Decoupled Preference Optimization"
   - u: "pas_prelim_attention_score_for_detecting_object_hallucinations_in_large_vision-l/"
@@ -70,23 +60,29 @@ item_list:
     t: "Residual Decoding: Mitigating Hallucinations in Large Vision-Language Models via History-Aware Residual Guidance"
   - u: "same_attention_different_truths_put_logit-lens_over_visual_attention_to_detect_a/"
     t: "Same Attention, Different Truths: Put Logit-Lens over Visual Attention to Detect and Mitigate LVLM Object Hallucination"
-  - u: "season_mitigating_temporal_hallucination_in_video_large_language_models_via_self/"
-    t: "SEASON: Mitigating Temporal Hallucination in Video Large Language Models via Self-Diagnostic Contrastive Decoding"
-item_total: 38
+  - u: "svhalluc_benchmarking_speech-vision_hallucination_in_audio-visual_large_language/"
+    t: "SVHalluc: Benchmarking Speech-Vision Hallucination in Audio-Visual Large Language Models"
+  - u: "tell_model_where_to_look_mitigating_hallucinations_in_mllms_by_vision-guided_att/"
+    t: "Tell Model Where to Look: Mitigating Hallucinations in MLLMs by Vision-Guided Attention"
+  - u: "thinking_in_uncertainty_mitigating_hallucinations_in_mlrms_with_latent_entropy-a/"
+    t: "Thinking in Uncertainty: Mitigating Hallucinations in MLRMs with Latent Entropy-Aware Decoding"
+  - u: "tridf_evaluating_perception_detection_and_hallucination_for_interpretable_deepfa/"
+    t: "TriDF: Evaluating Perception, Detection, and Hallucination for Interpretable DeepFake Detection"
+  - u: "understanding_and_mitigating_hallucinations_in_multimodal_chain-of-thought_model/"
+    t: "Understanding and Mitigating Hallucinations in Multimodal Chain-of-Thought Models"
+  - u: "understanding_the_role_of_hallucination_in_reinforcement_post-training_of_multim/"
+    t: "Understanding the Role of Hallucination in Reinforcement Post-Training of Multimodal Reasoning Models"
+item_total: 32
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # 👻 Hallucination Detection
 
-**📷 CVPR2026** · **38** paper notes
+**📷 CVPR2026** · **32** paper notes
 
 📌 **Same area in other venues:** [🧪 ICML2026 (18)](../../ICML2026/hallucination/index.md) · [💬 ACL2026 (27)](../../ACL2026/hallucination/index.md) · [🔬 ICLR2026 (9)](../../ICLR2026/hallucination/index.md) · [🤖 AAAI2026 (15)](../../AAAI2026/hallucination/index.md) · [🧠 NeurIPS2025 (17)](../../NeurIPS2025/hallucination/index.md) · [📹 ICCV2025 (4)](../../ICCV2025/hallucination/index.md)
 
-🔥 **Top topics:** Multimodal/VLM ×15 · LLM ×5 · Reasoning ×3
-
-**[3D-VCD: Hallucination Mitigation in 3D-LLM Embodied Agents through Visual Contrastive Decoding](3d-vcd_hallucination_mitigation_in_3d-llm_embodied_agents_through_visual_contras.md)**
-
-:   3D-VCD is the first **inference-time** hallucination mitigation framework for 3D embodied agents. It applies semantic/geometric perturbations to object-centric 3D scene graphs to generate a "corrupted" negative sample context. By running the MLLM on both the original and perturbed graphs and using a contrastive decoding formula, it suppresses tokens that maintain "high probability even when the scene changes." This method requires no retraining, incurs nearly zero additional overhead, and significantly reduces over-affirmation and object hallucinations in 3D-POPE and HEAL.
+🔥 **Top topics:** Multimodal/VLM ×14 · LLM ×3 · Reasoning ×2
 
 **[AdaIAT: Adaptively Increasing Attention to Generated Text to Alleviate Hallucinations in LVLM](adaiat_adaptively_increasing_attention_to_generated_text_to_alleviate_hallucinat.md)**
 
@@ -107,10 +103,6 @@ item_total: 38
 **[Cross-Modal Attention Calibration for LVLM Hallucination Mitigation](cross-modal_attention_calibration_for_lvlm_hallucination_mitigation.md)**
 
 :   To mitigate hallucinations in LVLMs, this paper proposes CMAC, a training-free cross-modal attention calibration framework. It uses the IMD module to perform "surgical" masking of high cross-modal weight value vectors in the attention layer to construct a more accurate hallucination distribution for contrastive decoding. Additionally, the CMPC module scales the position indices of image tokens to alleviate the position bias introduced by RoPE. CMAC consistently outperforms existing contrastive decoding methods across POPE, CHAIR, and MME.
-
-**[ELV-Halluc: Benchmarking Semantic Aggregation Hallucinations in Video Understanding](elv-halluc_benchmarking_semantic_aggregation_hallucinations_in_video_understandi.md)**
-
-:   This paper identifies "Semantic Aggregation Hallucinations (SAH)," an overlooked type of video hallucination where a model perceives each frame correctly but misattributes semantics during cross-event aggregation. The authors construct ELV-Halluc, the first benchmark targeting SAH (348 multi-event videos, adversarial triplet Q&A). Systematic evaluation of 19 MLLMs proves that SAH increases with semantic complexity. By employing improved positional encoding and DPO with 8K adversarial pairs, the SAH Ratio is reduced by up to 27.7%.
 
 **[Envision, Attend, Then Respond: Counterfactual Hallucination Mitigation in Large Vision-Language Models](envision_attend_then_respond_counterfactual_hallucination_mitigation_in_large_vi.md)**
 
@@ -136,10 +128,6 @@ item_total: 38
 
 :   Addressing the "long-term decay" problem in Large Vision-Language Models (LVLMs)—where models increasingly detach from images and fabricate objects later in the generation process—this paper proposes First Logit Boosting (FLB). The method **stores the logit of the first generated token and adds it back to the logits of each subsequent step with a weight that increases over time**. FLB is training-free, requires no external models, uses only a single forward pass, and significantly reduces object hallucinations on CHAIR/AMBER benchmarks with almost no added inference overhead.
 
-**[Grounded Chain-of-Thought for Multimodal Large Language Models](grounded_chain-of-thought_for_multimodal_large_language_models.md)**
-
-:   This paper proposes the "Grounded Chain-of-Thought (GCoT)" task and the MM-GCoT benchmark. It requires Multimodal Large Language Models (MLLMs) to provide step-by-step reasoning with coordinate-based grounding before answering. By introducing the "Answer-Grounding Consistency" metric to quantify visual hallucinations, the study reveals that 12 state-of-the-art MLLMs commonly "answer correctly but look at the wrong place," and hallucinations are independent of model scale.
-
 **[HalluGen: Synthesizing Realistic and Controllable Hallucinations for Evaluating Image Restoration](hallugen_synthesizing_realistic_and_controllable_hallucinations_for_evaluating_i.md)**
 
 :   HalluGen utilizes diffusion posterior sampling combined with masked gradient guidance to **proactively inject** "controllable type, location, and severity" realistic hallucinations into image restoration results. This enables the creation of the first hallucination dataset with ground-truth labels (4350 brain MRIs), establishment of a benchmark, proposal of the hallucination-sensitive SHAFE metric, and training of a no-reference detector that generalizes to real restoration failures.
@@ -147,10 +135,6 @@ item_total: 38
 **[HulluEdit: Single-Pass Evidence-Consistent Subspace Editing for Mitigating Hallucinations in Large Vision-Language Models](hulluedit_single-pass_evidence-consistent_subspace_editing_for_mitigating_halluc.md)**
 
 :   HulluEdit is proposed as a single-pass, reference-free subspace editing framework. By decomposing hidden states into orthogonal visual evidence, conflicting prior, and residual uncertainty subspaces, it selectively suppresses hallucination patterns without interfering with visual grounding. It achieves SOTA hallucination mitigation performance on POPE and CHAIR benchmarks.
-
-**[HulluEdit: Single-Pass Evidence-Consistent Subspace Editing for Mitigating Hallucinations in LVLMs](hulluedit_subspace_editing_hallucination.md)**
-
-:   The authors propose HulluEdit, a single-pass, reference-free hallucination mitigation framework. By orthogonally decomposing hidden states into a visual evidence subspace, a conflicting prior subspace, and a residual uncertainty subspace, it selectively suppresses hallucination patterns without disturbing visual grounding, achieving SOTA results on POPE and CHAIR.
 
 **[KVSmooth: Mitigating Hallucination in Multi-modal Large Language Models through Key-Value Smoothing](kvsmooth_mitigating_hallucination_in_multi-modal_large_language_models_through_k.md)**
 
@@ -171,10 +155,6 @@ item_total: 38
 **[Mitigating Multimodal Hallucinations via Gradient-based Self-Reflection](mitigating_multimodal_hallucinations_via_gradient-based_self-reflection.md)**
 
 :   Ours proposes GACD (Gradient-based Influence-Aware Constrained Decoding), which utilizes first-order Taylor gradients to estimate the influence of each token on the output. It simultaneously mitigates multimodal hallucinations caused by text-visual bias and co-occurrence bias during the inference stage without requiring auxiliary models or fine-tuning.
-
-**[Mitigating Object Hallucination in LVLMs via Attention Imbalance Rectification](mitigating_object_hallucinations_in_lvlms_via_attention_imbalance_rectification.md)**
-
-:   The authors propose the concept of Attention Imbalance to explain object hallucination in LVLMs and design a lightweight decoding-time intervention method, AIR. By rectifying attention imbalance through cross-modal attention redistribution and variance-constrained projection regularization, the method reduces hallucination rates by up to 35.1% across four LVLMs while improving general capabilities by up to 15.9%.
 
 **[MoD-DPO: Towards Mitigating Cross-modal Hallucinations in Omni LLMs using Modality Decoupled Preference Optimization](mod-dpo_towards_mitigating_cross-modal_hallucinations_in_omni_llms_using_modalit.md)**
 
@@ -200,9 +180,9 @@ item_total: 38
 
 :   This paper revisits LVLM object hallucination using Logit-Lens and discovers that the "attention intensity" for real and hallucinated objects is nearly identical in mid-to-late layers. The key issue is not "how much" the model looks, but whether the high-attention regions decode into the target token. Based on this, hallucinations are categorized into "Visual Uncertainty" and "Contextual Prior." A training-free "Detect-and-Mitigate" framework (LLCC detection + HARM masking + VEED decoding enhancement) is proposed, achieving SOTA on multiple hallucination benchmarks.
 
-**[SEASON: Mitigating Temporal Hallucination in Video Large Language Models via Self-Diagnostic Contrastive Decoding](season_mitigating_temporal_hallucination_in_video_large_language_models_via_self.md)**
+**[SVHalluc: Benchmarking Speech-Vision Hallucination in Audio-Visual Large Language Models](svhalluc_benchmarking_speech-vision_hallucination_in_audio-visual_large_language.md)**
 
-:   SEASON is a **training-free** decoding method for VideoLLMs. It constructs "temporally homogenized" hard negatives that disrupt temporal information while preserving spatial structure. A per-token self-diagnostic mechanism determines whether a token is prone to temporal or spatial hallucination, adaptively applying contrastive decoding. It outperforms all training-free methods on three hallucination benchmarks without degrading general video understanding capabilities.
+:   SVHalluc is the first benchmark to systematically evaluate whether audio-visual large models can align **speech content** with corresponding visual signals. By designing 3 coarse-to-fine tasks for both semantic and temporal dimensions (6 tasks, 2405 samples total), experiments reveal that current open-source audio-visual LLMs perform near random guessing on most tasks, while Gemini 2.5 Pro leads significantly—the root cause is not poor unimodal perception, but a lack of cross-modal integration capability.
 
 **[Tell Model Where to Look: Mitigating Hallucinations in MLLMs by Vision-Guided Attention](tell_model_where_to_look_mitigating_hallucinations_in_mllms_by_vision-guided_att.md)**
 
@@ -223,10 +203,6 @@ item_total: 38
 **[Understanding the Role of Hallucination in Reinforcement Post-Training of Multimodal Reasoning Models](understanding_the_role_of_hallucination_in_reinforcement_post-training_of_multim.md)**
 
 :   This paper proposes the Hallucination-as-Cue analysis framework to systematically investigate the actual mechanism of RL post-training in multimodal reasoning models through three modality-specific corruption strategies (Blank Image, Random Image, and Textual Removal). It finds that GRPO training significantly improves reasoning performance even under 100% corrupted visual input, challenging the mainstream assumption that "RL training effectively utilizes visual information."
-
-**[Unstitching the Chimera: Frame-Level Risk and Train-Free Mitigation for Video Hallucination](unstitching_the_chimera_frame-level_risk_and_train-free_mitigation_for_video_hal.md)**
-
-:   This paper characterizes a neglected type of video hallucination from the perspective of "frames" rather than "tokens"—**Chimera Hallucination**: where the model stitches together fragments that actually exist in the video but do not belong to the same event chain into a false continuous narrative. To address this, the authors propose CH-Risk, a single-forward-pass, reference-free risk metric to quantify this risk, and CH-M, a training-free two-stage intervention (segment routing sSAFR + residual token calibration RTC), to correct high-risk samples. This approach consistently reduces hallucinations and improves accuracy across 9 benchmarks and 6 VideoLLMs with <5% latency, <2.5% VRAM, and ≈1% FLOPs overhead.
 
 **[VES-RFT: Rewarding Visual Evidence Sensitivity to Mitigate Hallucinations in Large Vision-Language Models](ves-rft_rewarding_visual_evidence_sensitivity_to_mitigate_hallucinations_in_larg.md)**
 

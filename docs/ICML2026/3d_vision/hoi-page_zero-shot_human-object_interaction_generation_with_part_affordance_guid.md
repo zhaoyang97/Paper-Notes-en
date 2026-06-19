@@ -100,6 +100,7 @@ The authors constructed a Sketchfab dataset (24 daily 3D objects, 16 single-pers
 In perceptual evaluations, HOI-PAGE outperformed both baselines with 91%–99% binary preference. On a 1-5 scale, HOI-PAGE achieved ~4.0 (Realism: 3.97, Text Matching: 4.07), while baselines scored ≤ 1.9.
 
 ### Ablation Study
+
 | Configuration | VideoCLIP ↑ | Smoothness ↓ | Diversity ↑ | Contact ↑ | Notes |
 |------|-----|-----|-----|-----|-----|
 | Full | 0.290 | 0.004 | 0.83 | 0.76 | Complete PAG constraints |

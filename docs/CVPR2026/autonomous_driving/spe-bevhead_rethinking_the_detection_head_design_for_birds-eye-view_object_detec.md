@@ -96,6 +96,7 @@ Evaluated by taking the top 150 predictions with scores > 0.1:
 FastBEV drops 7.6 mAP / 3.9 NDS without post-processing. Spe-BEVHead remains reliable even **completely without post-processing** (+3.4 NDS / +7.6 mAP over the center-based head on FastBEV).
 
 ### Ablation Study
+
 | Configuration (DB / RBK / LRRM) | NDS↑ | mAP↑ | Description |
 | :--- | :--- | :--- | :--- |
 | Baseline | 34.5 | 21.9 | Center-based head |

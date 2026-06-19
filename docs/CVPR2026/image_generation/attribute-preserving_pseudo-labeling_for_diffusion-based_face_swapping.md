@@ -91,6 +91,7 @@ Evaluation on FFHQ using 1,000 source/target pairs. Metrics include FID for real
 APPLE-Student achieves the lowest FID and best Pose/Expr. While CSCS (0.65) and REFace (0.60) have higher ID Sim, they suffer from poor attribute preservation (visible copy-paste artifacts). The authors argue that APPLE achieves a more balanced trade-off.
 
 ### Ablation Study
+
 | Configuration | FID↓ | ID Sim↑ | Pose↓ | Expr↓ | Description |
 |------|------|---------|-------|-------|------|
 | Inpainting (Baseline) | 11.00 | 0.54 | 3.37 | 1.01 | Traditional mask condition |

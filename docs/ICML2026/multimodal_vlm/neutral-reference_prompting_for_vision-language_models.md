@@ -92,6 +92,7 @@ On 11 standard base-to-novel downstream datasets (ImageNet, Caltech101, Flowers,
 When NeRP is added to each baseline, Novel accuracy and HM increase across almost all datasets, while Base accuracy remains nearly identical, consistent with the theoretical guarantee in Lemma 3.4.
 
 ### Ablation Study
+
 | Configuration | Behavior | Conclusion |
 |------|------|------|
 | $\pi_{\mathrm{txt}}$ only | Text-side prior alone | Substantial novel gains |

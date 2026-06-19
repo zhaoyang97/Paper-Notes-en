@@ -98,6 +98,7 @@ On AIST++ large-scale imitation and generation, 2D supervision approaches the pe
 | 2D | 3 Views | 88.9 | 161.5 | 24.1 | 1.60 |
 
 ### Ablation Study
+
 | Configuration | Succ.↑ | E2D↓ | EO2D↓ | Jitters↓ | Notes |
 |------|--------|------|-------|----------|------|
 | Ours (Dribble) | 91.3 | 17.1 | 17.5 | 1.69 | Full model |

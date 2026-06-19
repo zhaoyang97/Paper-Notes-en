@@ -84,6 +84,7 @@ Evaluations were performed on Waymo Open (in-domain) and PandaSet (zero-shot/uns
 On Waymo, LA-Pose achieved an AUC@5 of 91.4%, significantly outperforming all baselines. On the zero-shot PandaSet, it maintained a strong generalization of 86.3% (with an ATE-S of 1.13, close to VGGT's 0.99). It surpassed recent feed-forward methods by over 10% in pose accuracy on both benchmarks. Distribution analysis of AUC@5 also shows that LA-Pose not only has a higher mean but also significantly lower variance; most samples approach perfect accuracy, while VGGT has a long tail of low scores. This suggests LA-Pose is more stable and reliable across diverse scenes. Even on difficult samples involving rain, night, fog, or sharp turns, LA-Pose produces stable and geometrically coherent trajectories.
 
 ### Ablation Study
+
 | Dimension | Configuration | Key Metric | Conclusion |
 |----------|------|----------|------|
 | Latent Dim (Tab. 2, Waymo) | 50-D | Pretrain loss @200k: 1.67; AUC@5: 85.4; ATE-M: **1.62** | Compression promotes motion-centric reps |

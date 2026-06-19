@@ -119,6 +119,7 @@ Generation side comparison for 8 systems under oracle relevant video settings:
 | Iter-QA-GINGER | 3.69 | 5 | 8.8% | 34.5 / 29.0 | 25.7 / 22.6 | Strong mix of QA + GINGER |
 
 ### Ablation Study
+
 | Comparison Point | Result | Implication |
 |--------|------|------|
 | Vanilla OmniEmbed vs query expansion | nDCG@10 from 0.195 to 0.722 | Query decomposition is the main driver of retrieval gain |

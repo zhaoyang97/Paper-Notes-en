@@ -108,6 +108,7 @@ Ablations on M3-Exam decoupled the CoT, ExT (Extraction), and MeR (Merging) comp
 | EMCEE | ✓ | ✓ | ✓ | 77.4 / 83.3 / 71.5 |
 
 ### Generalization & Cost Analysis
+
 | Experiment | Comparison | EMCEE Result | Key Information |
 |------|------|------------|----------|
 | GPT-4o M3-Exam | Native-Basic 78.1 | 85.7 | 8.9% relative gain |

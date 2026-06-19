@@ -92,6 +92,7 @@ Baselines were manually aligned to standard poses/scales, whereas Ours requires 
 Ours leads in all 2D and 3D metrics. CD is reduced by over half compared to the best baseline (TRELLIS), and zero-shot generalization on CFV remains superior.
 
 ### Metric Scale and Camera Prediction (Table 3/4)
+
 | Evaluation | Dataset | Metric |
 |------|--------|------|
 | Rendering w/ predicted cam (Tab 3) | 3DRealCar | SSIM 0.9263 / PSNR 21.76 / LPIPS 0.0500 |
@@ -100,6 +101,7 @@ Ours leads in all 2D and 3D metrics. CD is reduced by over half compared to the 
 Rendering with predicted cameras achieves quality comparable to using ground truth cams. The metric scale error is only 1.6 cm.
 
 ### Downstream Sim2Real: 3D Detection (Table 5, Waymo)
+
 | Setting | L1/AP↑ | L1/APH↑ | L2/AP↑ | L2/APH↑ |
 |------|--------|---------|--------|---------|
 | Real | 0.8837 | 0.8594 | 0.8026 | 0.7793 |

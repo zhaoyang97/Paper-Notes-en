@@ -104,6 +104,7 @@ Attacking Image Captioning (BLIP) and Visual Grounding (RefCOCO+) using samples 
 | Visual Grounding | Val / TestA | 58.46 / 65.89 | 47.25 / 54.09 | 43.64 / 50.45 |
 
 ### Ablation Study (ALBEF Source)
+
 | Configuration | Change | Conclusion |
 | :--- | :--- | :--- |
 | Setting 1 | No Learnable Transform + No Boosted IG | Most severe performance drop. |

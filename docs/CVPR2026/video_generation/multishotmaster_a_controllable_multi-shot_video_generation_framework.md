@@ -105,6 +105,7 @@ Metrics: Text Alignment (TA), Cross-shot Consistency (Semantic, Subject, Scene),
 Ours leads in all categories, particularly reducing transition deviation (1.72 vs. 5.27) and improving coherence (0.695 vs. 0.496).
 
 ### Reference Injection Comparison (Table 1)
+
 | Method | TA↑ | Subject Consist.↑ | Scene Consist.↑ | Narrative Coherent↑ | Ref-Subject↑ | Ref-BG↑ | Grounding mIoU↑ |
 |------|-----------|-----------|-----------|-----------|------------|------------|-----------------|
 | VACE | 0.201 | 0.468 | 0.273 | 0.325 | 0.475 | 0.361 | ✗ |

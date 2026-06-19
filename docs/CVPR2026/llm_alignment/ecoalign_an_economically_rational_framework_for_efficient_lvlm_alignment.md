@@ -111,6 +111,7 @@ Evaluations cover safety (MMSafetyBench, MSSBench, SIUO), utility (OCRBench, Mat
 Ours achieves the highest safety scores across all models and benchmarks while maintaining high utility. Costs are significantly lower than CoT (e.g., 1/8th of CoT cost on Qwen-VL-Max). While VLM-Guard has minimal cost, its utility is severely degraded by over-aggressive interception.
 
 ### Ablation Study
+
 | Configuration | Observation |
 |------|------|
 | Full (Dynamic Look-ahead + Smin + Economic Value) | Best trade-off. |

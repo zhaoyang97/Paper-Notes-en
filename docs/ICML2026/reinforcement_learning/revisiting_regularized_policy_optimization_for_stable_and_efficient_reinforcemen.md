@@ -91,6 +91,7 @@ Baselines: AlphaZero (AZ), TRPO-AlphaZero, Gumbel AlphaZero (Gumbel AZ), DQN, PP
 In terms of efficiency, KLENT reaches a 50% win rate on average with ~75M evaluations, whereas Gumbel AlphaZero requires ~300M—representing a **4x training efficiency gain**. KLENT's advantage is most pronounced in games with high branching factors (9x9 Go: 42.3, Hex: 90.6) and comparable to search baselines in smaller games (Animal Shogi, Gardner Chess).
 
 ### Ablation Study
+
 | Variant | Modification | Result |
 |------|------|------|
 | **KLENT (full)** | All components enabled | Consistent performance across all 5 games |

@@ -64,6 +64,7 @@ To verify if "strengthening the bottom layer can improve the top layer," this wo
 ## Key Experimental Results
 
 ### Main Results
+
 | Evaluation | Phenomenon/Gain | Explanation |
 |------|----------|------|
 | HVCU-Bench Layer-wise | Perception→Bridging→Connotation performance drops monotonically | High-level is a universal bottleneck; strong inter-layer dependency |
@@ -72,6 +73,7 @@ To verify if "strengthening the bottom layer can improve the top layer," this wo
 | MMMU / Affective Reasoning | +Multiple percentage points | Hierarchical training is generally beneficial |
 
 ### Ablation Study
+
 | Configuration | Effect | Explanation |
 |------|------|------|
 | Strengthening bottom (MCTS data) | Measurable top-layer improvement | Bottom-up approach is effective |

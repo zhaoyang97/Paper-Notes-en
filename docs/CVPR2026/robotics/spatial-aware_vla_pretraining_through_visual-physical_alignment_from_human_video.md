@@ -95,6 +95,7 @@ Notably, VIPA-VLA **uses zero robot data during pretraining** (marked as ✗ in 
 VIPA-VLA consistently outperforms baselines that explicitly model spatial reasoning (SpatialVLA, TraceVLA, MolmoAct).
 
 ### Real Robot Experiments (Franka 7-DoF + Inspire Hand, Sub-task / Full-task Success Rates)
+
 | Task | GR00T N1.5 | Being-H0 | InternVL3.5 | VIPA-VLA |
 |------|-----------|----------|-------------|----------|
 | Put-Three-Obj | 48% / 40% | 38% / 20% | 34% / 10% | 52% / 10% |
@@ -104,6 +105,7 @@ VIPA-VLA consistently outperforms baselines that explicitly model spatial reason
 The advantage is more pronounced in unseen environments (Wipe-Board-Unseen 83%/50%, while baselines largely fail at initial stages). Despite lower full-task rates in Put-Three-Obj, its sub-task rate is the highest, indicating it stays on track longer in long-horizon sequences.
 
 ### Ablation Study
+
 | Configuration | LIBERO Avg (%) | Description |
 |------|------------------|------|
 | VIPA-VLA (Full) | 92.4 | Dual-encoder + Spatial-aware pretraining |

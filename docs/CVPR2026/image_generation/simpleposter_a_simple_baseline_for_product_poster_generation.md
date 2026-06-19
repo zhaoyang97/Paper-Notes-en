@@ -91,6 +91,7 @@ The benchmark consists of 500 self-collected test images (including 200 with den
 The SPR increased from PosterMaker's 85.3% and the strongest general editing model SeedEdit's 55.2% to 98.7%, nearly perfect. Text rendering also leads comprehensively (Sen. Acc 0.713 vs. PosterMaker 0.576). Prompt following and visual appeal are better than PosterMaker but slightly lower than Gemini / SeedEdit—authors attribute this to e-commerce training data overemphasizing product clarity at the expense of background diversity and aesthetics.
 
 ### Ablation Study
+
 | Configuration | Sen. Acc↑ | NED↑ | Description |
 |------|------|------|------|
 | Full setting | 0.7133 | 0.8062 | Full model |

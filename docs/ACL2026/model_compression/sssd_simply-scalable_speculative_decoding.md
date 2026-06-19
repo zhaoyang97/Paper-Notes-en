@@ -13,8 +13,8 @@ content_hash: 45ec52fbfec8b9f5
 # SSSD: Simply-Scalable Speculative Decoding
 
 **Conference**: ACL2026
-**arXiv**: [2411.05894](https://arxiv.org/abs/2411.05894)
-**Code**: [GitHub](https://github.com/huawei-csl/sssd_speculator)
+**arXiv**: [2411.05894](https://arxiv.org/abs/2411.05894)  
+**Code**: [GitHub](https://github.com/huawei-csl/sssd_speculator)  
 **Area**: Model Compression
 **Keywords**: Speculative Decoding, LLM Inference Acceleration, n-gram Matching, Training-free, Hardware-aware
 

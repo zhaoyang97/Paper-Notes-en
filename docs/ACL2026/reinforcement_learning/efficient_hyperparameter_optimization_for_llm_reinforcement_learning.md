@@ -99,6 +99,7 @@ Ablations on GSM8K + Qwen-2.5 7B show all three components are effective, with c
 | w/o early stopping | 86.35 | Budget wasted on bad configurations |
 
 ### Efficiency & Generalization
+
 | Model | Method | Overall Throughput | Avg. Time/Trial | Trial Speedup |
 |------|------|-------------------:|----------------:|--------------:|
 | Qwen-2.5 7B | Random Search | 521.6 tokens/s | 8.80 h | 1.0x |

@@ -111,6 +111,7 @@ Evaluated on three heterogeneous regional benchmarks: CIA (irrigated rice in NSW
 In CIA, where changes are minimal, the linear ESTARFM outperforms several deep methods (which suffer blurriness from scale gaps), yet SA-STF still achieves the best performance due to semantic adaptive migration. Advantages are more pronounced in LGC and AHB with large changes and strong phenology.
 
 ### Ablation Study (LGC Dataset)
+
 | Config | CC↑ | SSIM↑ | ERGAS↓ | RMSE↓ | SAM↓ | Description |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | RDDM | 0.9194 | 0.9319 | 0.8504 | 0.0191 | 0.0683 | Baseline Residual Diffusion |

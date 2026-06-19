@@ -86,6 +86,7 @@ The main experiment compares one-step AAD-1 with multi-step autoregressive basel
 | AAD-1 Stage-III | 1 | 94.34 | 95.08 | 41.46 | 71.49 | 98.65 | 97.83 |
 
 ### Ablation Study
+
 | Configuration | Key Metrics | Note |
 |------|---------|------|
 | w/o DMD warmup | Aesthetic 53.63, Imaging 62.81 | One-step distribution too far; GAN refinement unstable |

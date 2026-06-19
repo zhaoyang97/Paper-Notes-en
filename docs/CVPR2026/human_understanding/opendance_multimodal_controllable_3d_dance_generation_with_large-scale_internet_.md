@@ -98,6 +98,7 @@ OpenDanceSet Dataset:
 Takeaways: On AIST++, Ours achieves the lowest PFC, best FIDk (24.82), and highest BAS (0.2513). On OpenDanceSet, Ours achieves the best FIDk (23.19) and further reduces FIDg to 7.72 with physical refinement.
 
 ### Ablation Study
+
 | Ablation Target | Key Observations | Conclusion |
 |----------|----------|------|
 | Joint Prediction (Table 5) | Removing trajectory/keypoint prediction spikes FIDk from ~47 to 171.69. | Joint prediction of spatial tokens is the cornerstone of quality. |

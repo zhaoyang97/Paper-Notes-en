@@ -104,6 +104,7 @@ Inverted images are evaluated using ResNet-50 for Top-1 classification accuracy 
 Key Findings: In shallow layers, FIA-Flow brings Acc to 71.3%. Its advantage is most prominent in **deep layers**—in layers like L4-2 where information is severely lost, other methods' Acc drops to single digits, while FIA-Flow maintains 36.8% with LPIPS nearly halved. This proves it can extract semantics from abstract high-level representations to reconstruct images, revealing a much greater threat surface than previously recognized.
 
 ### Cross-dataset and Defense Robustness
+
 | Setting | Metric | Runner-up | FIA-Flow |
 |:---|:---|:---|:---|
 | COCO Cross-dataset (Zero-shot) | LPIPS↓ | 0.195 (FIA-Align) | **0.115** |
@@ -114,6 +115,7 @@ Key Findings: In shallow layers, FIA-Flow brings Acc to 71.3%. Its advantage is 
 Even against Noise+NoPeek and DISCO mainstream defenses, FIA-Flow effectively bypasses them and recovers sensitive information under black-box conditions without knowing defense details—direct evidence of the "urgency for better defense" conclusion.
 
 ### Ablation Study
+
 | Configuration | Key Observation | Description |
 |:---|:---|:---|
 | FIA-Align (LFSAM + Direct Dec) | Deep L4-2 Acc only 4.4 | Decoding off-manifold latent fails without DIFM |

@@ -164,6 +164,7 @@ RE10K 24-view:
 </div>
 
 <!-- RELATED:END -->
+
 ## Related Papers
 
 - [\[CVPR 2026\] Cross-View Splatter: Feed-Forward View Synthesis with Georeferenced Images](cross-view_splatter_feed-forward_view_synthesis_with_georeferenced_images.md)

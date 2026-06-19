@@ -116,6 +116,7 @@ Room Navigation (Base / CS Commonsense / CI Complex Instruction / VA Visual Appe
 On LIBERO-Plus (OpenVLA-OFT backbone), the SceneDiver adapter increases robust success rates by up to 9.6%, with an additional inference overhead of only 2.64%.
 
 ### Ablation Study
+
 | Configuration | Key Observation | Explanation |
 |------|------|------|
 | Full SceneDiver | 14.7→28.7 (7B) | Coarse+Fine+Modulation ensemble |

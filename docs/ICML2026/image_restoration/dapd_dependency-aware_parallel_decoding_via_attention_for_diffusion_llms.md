@@ -83,6 +83,7 @@ Evaluated on LLaDA / Dream across code (HumanEval / MBPP), math (GSM8K / Math500
 DAPD significantly outperforms baselines that require block-splitting or EOS suppression to maintain accuracy. On ParallelBench, DAPD consistently occupies the Score-Steps Pareto frontier.
 
 ### Ablation Study
+
 | Configuration | Key Observation |
 |------|---------|
 | Attention Layer Selection | Best results using the last ~30% of layers (global integration). |

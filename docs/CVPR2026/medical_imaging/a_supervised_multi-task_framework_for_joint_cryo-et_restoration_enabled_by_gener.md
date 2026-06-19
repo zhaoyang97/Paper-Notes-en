@@ -107,6 +107,7 @@ Synthetic datasets evaluated using **PSNR/SSIM**:
 PSNR increased by ~3.5 dB, and SSIM jumped from ~0.4 to 0.84. Performance remained stable even at SNR=0.1.
 
 ### Ablation Study
+
 | Configuration | EMPIAR-10643 (CNR/ENL) | EMPIAR-10499 (CNR/ENL) | Function |
 |------|------|------|------|
 | Noisy | 0.039/8.876 | 0.018/7.790 | Original WBP |

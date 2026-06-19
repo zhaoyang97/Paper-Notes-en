@@ -77,6 +77,7 @@ The total loss is $\mathcal{L}_{\text{Mirai}}=\mathcal{L}_{\text{NTP}}+\lambda\m
 ## Key Experimental Results
 
 ### Main Results (System-Level Comparison, ImageNet 256×256, 300 epochs)
+
 | Model | Params | FID↓ | sFID↓ | IS↑ |
 |-------|--------|------|-------|-----|
 | LlamaGen-B | 111M | 5.34 | 6.93 | 215.7 |
@@ -90,6 +91,7 @@ The total loss is $\mathcal{L}_{\text{Mirai}}=\mathcal{L}_{\text{NTP}}+\lambda\m
 Mirai-I achieves an FID of 2.59 on XL, outperforming all AR-based methods (VQGAN 15.78, ViT-VQGAN 4.17, RQ-Transformer 7.55).
 
 ### Ablation Study (Injection Level × Layout, LlamaGen-B, 80 epochs, Tab.1)
+
 | Injection | Layout | $K$ | FID↓ | IS↑ |
 |-----------|--------|-----|------|-----|
 | baseline | – | – | 6.36 | 185.54 |

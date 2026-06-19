@@ -82,6 +82,7 @@ A non-data-aligned student RNN learns a mode-aligned teacher (4 modes). Trajecto
 | RFLO | Optimal only | Sign-dependent: Stable if $\hat a s>0$ / Unstable if $\hat a s<0$ | Slower at most $s$; faster only as $s\to 0$ |
 
 ### Ablation Study
+
 | Algorithm | $W_K-W_0$ Spectral Shape | Explanation |
 | :--- | :--- | :--- |
 | BPTT | High rank (multiple significant singular values) | No locality constraints |

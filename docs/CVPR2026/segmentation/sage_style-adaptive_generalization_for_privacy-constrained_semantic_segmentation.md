@@ -83,6 +83,7 @@ Five datasets: GTAV (G), SYNTHIA (S) as synthetic; Cityscapes (C), BDD-100K (B),
 Ours uses only 1.53M trainable parameters (approx. 1/55 of full fine-tuning) and achieves the highest overall average in G→ and S→ settings. It is the best among privacy methods in the C→ group. Overall, it surpasses the frozen baseline by 3–5%, exceeds the similar privacy visual prompting method A2XP by approx. 12–14%, and outperforms full fine-tuning in all three settings. ⚠️ Note: The authors state that some comparative results are cited from prior work; potential issues with absolute cross-table comparability should be noted.
 
 ### Ablation Study (APF Components, Cityscapes Source)
+
 | Configuration | Avg mIoU | Description |
 |------|---------|------|
 | No components | 40.63 | APF raw baseline |

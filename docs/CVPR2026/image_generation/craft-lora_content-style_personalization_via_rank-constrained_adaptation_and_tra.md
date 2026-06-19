@@ -80,6 +80,7 @@ Based on SDXL, LoRAs are trained via DreamBooth ($r=64$, Adam-8bit, 1000 steps, 
 ## Key Experimental Results
 
 ### Main Results
+
 | Method | Content Sim. (CLIP-I) ↑ | Style Sim. (CLIP-I) ↑ | Comb. Score (GPT-4o) ↑ |
 |------|------|------|------|
 | Direct Merging | 0.65 | 0.60 | 0.62 |
@@ -93,6 +94,7 @@ Based on SDXL, LoRAs are trained via DreamBooth ($r=64$, Adam-8bit, 1000 steps, 
 Baselines often favor one aspect: StyleDrop prioritizes style over structure, whereas ZipLoRA/BLoRA offer better balance but limited coordination. Ours achieves the highest scores across all metrics.
 
 ### Ablation Study
+
 | Rank-FT | Router | ACFG | Content Sim. ↑ | Style Sim. ↑ | Comb. Score ↑ |
 |:---:|:---:|:---:|:---:|:---:|:---:|
 | | | | 0.65 | 0.60 | 0.62 |

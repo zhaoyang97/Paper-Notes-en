@@ -83,6 +83,7 @@ Standard diffusion framework: 100 denoising steps, standard noise schedule, MSE 
 ## Key Experimental Results
 
 ### Inscribed Squares (Tab. 1, Alignment ↑ / Squareness ↑)
+
 | Condition | Alignment $\mathcal{A}$ | Squareness $\mathcal{Q}$ |
 |------|------|------|
 | Pre-snapping | -1.60 | 0.892 |
@@ -92,6 +93,7 @@ Standard diffusion framework: 100 denoising steps, standard noise schedule, MSE 
 Key Finding: Diffusion generation already yields high squareness ($\mathcal{Q}=0.892$, close to GT 0.924). Snapping primarily improves **alignment** from -1.60 to -0.90, nearing the GT -0.14, indicating that residual offsets are mostly sub-pixel and inherent to pixel discretization.
 
 ### Steiner Tree (Tab. 2, Length Ratio closer to 1 is better)
+
 | Input Points | Validity Rate | Ours (Ratio) | MST (Ratio) | Random (Ratio) |
 |------|------|------|------|------|
 | 10-20 | 0.996 | 1.0008±0.0005 | 1.036±0.012 | 1.834±0.236 |
@@ -102,6 +104,7 @@ Key Finding: Diffusion generation already yields high squareness ($\mathcal{Q}=0
 Key Finding: Within the training distribution (10-20 points), the total length is nearly optimal (ratio 1.0008) and **significantly outperforms the classic MST baseline (1.036)**. The model generalizes to unseen point counts (ratio 1.004 at 31-40 points), though the validity rate drops significantly as points increase (to 0.334 at 41-50 points) due to the emergence of cycles in the generated images.
 
 ### Maximum Area Polygon (Tab. 3, Area Ratio closer to 1 is better)
+
 | Input Points | Validity Rate | Ours (Ratio) | Random (Ratio) | Exact Optimality Rate |
 |------|------|------|------|------|
 | 7-12 | 0.953 | 0.988±0.020 | 0.771±0.136 | 0.574 |

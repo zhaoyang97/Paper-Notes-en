@@ -88,6 +88,7 @@ On ImageNet-1K (IPC=10, ResNet-18), the detail-enhanced version reaches 50.01%, 
 | **Ours (Detail Enhancement)** | – | **50.01** | 0.29 |
 
 ### Ablation Study
+
 | Configuration | Metric | Description |
 |------|---------|------|
 | Bilinear Upsampling | ImageNette IPC=50: 91.5 | Without diffusion enhancement |

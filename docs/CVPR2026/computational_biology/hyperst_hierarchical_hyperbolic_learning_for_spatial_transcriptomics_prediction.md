@@ -95,6 +95,7 @@ A model trained on Colorectum was used for zero-shot inference on an external da
 HyperST improved AUROC for MSI-H / MSS to 0.719 / 0.601 in a zero-shot setting, exceeding TRIPLEX by ~14% / 6%, suggesting that predicted gene profiles capture more clinically relevant signals.
 
 ### Ablation Study (Kidney Dataset)
+
 | Configuration | PCC@200↑ | Notes |
 |------|------|------|
 | Full HyperST | 0.390 | — |

@@ -89,6 +89,7 @@ LoL was applied to LongLive and Self-Forcing++ and compared against position emb
 **Core Conclusion**: While PI/YaRN suppress collapse (low SC), they **freeze motion** (Dynamic Degree drops to 0.35~2.67). NTK/RIFLEx preserve motion but **fail to suppress collapse** (SC remains 41~71). LoL achieves the best of both worlds: suppressing SC near PI levels while maintaining Dynamic Degree near or above the PE baseline.
 
 ### Ablation Study
+
 | Configuration | Conclusion | Explanation |
 |------|------|------|
 | Single RIFLEx/Random dimension | Ineffective | Proves collapse is not caused by a single RoPE dimension. |

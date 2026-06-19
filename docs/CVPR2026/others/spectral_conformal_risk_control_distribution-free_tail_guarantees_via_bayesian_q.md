@@ -112,6 +112,7 @@ MS-COCO Multi-label ($\alpha=0.1$, efficiency measured by average prediction set
 Under matched validity, BQ-SRC's prediction set (3.39) is smaller than RCPS (3.57), indicating higher efficiency. Dual-parameter control swaps a slightly larger set (3.47) for stronger validity (0.60% violation vs. 1.80%).
 
 ### Ablation Study
+
 | Configuration | Key Findings | Description |
 |------|---------|------|
 | Monte Carlo Budget $M$ | Violation rate stabilizes for $M\ge 2000$ | Supports $M=5000$ in main experiments; binomial LCB is tighter than DKW across all budgets |

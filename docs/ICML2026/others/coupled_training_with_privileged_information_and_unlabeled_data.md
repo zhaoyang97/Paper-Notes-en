@@ -103,6 +103,7 @@ The authors compare Two-Stage and Coupled methods on synthetic Gaussian linear m
 A key observation is that Coupled never performs worse than the better of the two baselines across the spectrum of $\|\theta\|_2$, with the optimal $\lambda$ shifting smoothly according to signal strength.
 
 ### Ablation Study
+
 | Configuration | Behavior | Description |
 | :--- | :--- | :--- |
 | Full Coupled (Moderate $\lambda$) | Lowest Error | Bi-directional coupling between $f$ and $g$; pseudo-responses moderately attenuated. |

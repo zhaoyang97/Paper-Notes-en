@@ -79,6 +79,7 @@ Synthetic experiments validate these predictions. While all models learn ID (In-
 | Iterated matrix multiplication over $\mathbb{Z}$ | Algebraic state growth; tests algebraic recursion | RWKV-7, DeltaNet, nonlinear RNN | Transformer significantly degrades; Mamba below top models | DPLR linear-algebraic structure excels at matrix products |
 
 ### Ablation Study
+
 | Configuration | Key Metrics | Explanation |
 |------|---------|------|
 | nonlinear RNN on graph connectivity | OOD length score remains high | Consistent with $\mathsf{L}$-complete capability analysis |

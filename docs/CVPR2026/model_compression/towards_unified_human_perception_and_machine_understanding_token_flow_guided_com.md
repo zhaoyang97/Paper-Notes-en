@@ -108,6 +108,7 @@ Complexity (256×256, P-Param denotes "parameter count per bitrate point"):
 | **Ours** | **13** | **38** | 332M | **3M** |
 
 ### Ablation Study
+
 | Config | Metrics | Description |
 |------|---------|------|
 | w/o TFP → w/ TFP | PSNR 20.42→20.69 | Conditional sampling improves both objective and perceptual metrics. |

@@ -96,6 +96,7 @@ Compared against 34 methods in the OpenOOD environment, using CIFAR-10/100 and I
 RankOOD achieves the **second-best** results on near-OOD (surpassed only by OE, which uses external outliers) and reaches SOTA on TinyImageNet near-OOD: AUROC increased by 0.50% and FPR95 decreased by 4.3%. It ranks third in far-OOD. Compared to ranking-based methods CRAFT/ExCeL, the average FPR95 is reduced by 7.51% in far-OOD and 4.21% in near-OOD.
 
 ### Ablation Study
+
 | Configuration / Comparison | Key Metric | Description |
 |------|---------|------|
 | RankOOD (w/o outliers) vs OE (w/ outliers) | near-OOD FPR95 44.79 vs 34.29 | Only OE outperforms RankOOD by relying on strong outlier assumptions. |

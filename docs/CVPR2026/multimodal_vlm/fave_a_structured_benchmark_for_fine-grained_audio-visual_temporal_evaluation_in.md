@@ -94,6 +94,7 @@ Models are grouped by paradigm: Sequential (independent encoding), Interleaved (
 Core conclusions: (1) Even Gemini 1.5 Flash scores only 2.81 in the high task, far below the human 4.23; (2) Gemini excels in alignment; (3) No open-source model achieves effective joint audio-visual temporal understanding.
 
 ### Ablation Study (Temporal relationship sub-tasks)
+
 | Model | Order | Proximity | Position |
 |------|-------|-----------|----------|
 | Gemini 1.5 Flash | 80.00 | 63.03 | 83.00 |

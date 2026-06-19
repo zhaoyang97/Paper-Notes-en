@@ -96,6 +96,7 @@ Experiments were conducted on four datasets: Tmall, Taobao, Yelp, and ML-10M. GC
 The most significant improvements were observed on Yelp, the sparsest dataset, consistent with GCIB's design for sparse target behaviors and noisy auxiliary signals.
 
 ### Ablation Study
+
 | Configuration | Tmall HR@10 | Taobao HR@10 | Description |
 | :--- | :--- | :--- | :--- |
 | GCIB (Full) | 0.1617 | 0.1815 | Full model |

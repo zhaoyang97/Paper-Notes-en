@@ -103,6 +103,7 @@ Infrared ASR (LLVIP Dataset, Ours vs. AdvIB):
 | DETR     | 80.2%      | 65.8%   | +14.4|
 
 ### Ablation Study
+
 | Dimension | Key Result | Description |
 |-----------|------------|-------------|
 | Activation Time | **50 s for full activation** | Latency for the patch to fully appear in both modalities. |

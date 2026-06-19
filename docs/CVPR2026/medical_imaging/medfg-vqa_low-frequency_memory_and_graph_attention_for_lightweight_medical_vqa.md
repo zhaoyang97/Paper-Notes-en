@@ -82,6 +82,7 @@ On the SynMedVQA benchmark, MedFG-VQA (795M) achieved an average accuracy of 0.6
 On public benchmarks (SLAKE / VQA-RAD / PathVQA), the model achieved the highest accuracy for open-ended questions (e.g., SLAKE-Open 0.9595), while closed-ended performance was slightly lower than some larger models due to their larger pre-training corpora.
 
 ### Ablation Study
+
 | Configuration | Accuracy | Description |
 |------|---------|------|
 | Full Model (FMF+GACA) | 0.6441 | — |

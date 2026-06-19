@@ -86,6 +86,7 @@ The primary metric is **DSR (Defense Success Rate)**: under a pop-up attack, cho
 LaSM acts as a plug-and-play plugin that can resolve gaps in DPO, Direct Awareness (DA), and Chain-of-Thought (CA) warnings: combined with CoT warnings on Qwen2-VL-7B, average DSR reached 99.3%. On 2,400 perturbed screenshots across 12 pop-up styles, DSR remained above 95% for all variants. On multi-step AndroidControl tasks, Task Success Rate (TSR) improved from 18.75% to 30.36% with negligible impact on action types or grounding accuracy; on a full-episode benchmark derived from real GUI tasks, task success rate improved by a relative 61.92% under pop-up attacks.
 
 ### Ablation Study
+
 | Configuration | Key Conclusion |
 |------|---------|
 | Scaling Attention Only | Robustness drops—single component insufficient. |

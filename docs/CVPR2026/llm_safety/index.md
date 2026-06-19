@@ -1,8 +1,8 @@
 ---
 title: >-
-  CVPR2026 LLM Safety Papers · 24 Notes
+  CVPR2026 LLM Safety Papers · 11 Notes
 description: >-
-  24 CVPR2026 papers in the LLM Safety area, covering Multimodal/VLM, Adversarial Robustness, LLM, Reasoning and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  11 CVPR2026 papers in the LLM Safety area, covering Multimodal/VLM, Adversarial Robustness, Text-to-Image, Continual Learning, Domain Adaptation, Few-/Zero-Shot Learning and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "CVPR2026"
   - "LLM Safety"
@@ -10,108 +10,68 @@ tags:
   - "paper summaries"
   - "Multimodal/VLM"
   - "Adversarial Robustness"
-  - "LLM"
-  - "Reasoning"
+  - "Text-to-Image"
+  - "Continual Learning"
+  - "Domain Adaptation"
+  - "Few-/Zero-Shot Learning"
 item_list:
-  - u: "a_closedform_solution_for_debiasing_visionlanguage/"
-    t: "A Closed-Form Solution for Debiasing Vision-Language Models with Utility Guarantees Across Modalities and Tasks"
-  - u: "demographic_fairness_in_multimodal_llms_a_benchmark_of_gender_and_ethnicity_bias/"
-    t: "Demographic Fairness in Multimodal LLMs: A Benchmark of Gender and Ethnicity Bias in Face Verification"
+  - u: "autodebias_automated_framework_for_debiasing_text-to-image_models/"
+    t: "AutoDebias: An Automated Framework for Detecting and Mitigating Backdoor Biases in Text-to-Image Models"
+  - u: "blind_spot_of_adaptation_quantifying_and_mitigating_forgetting_in_fine_tuned_driving_models/"
+    t: "The Blind Spot of Adaptation: Quantifying and Mitigating Forgetting in Fine-tuned Driving Models"
   - u: "designing_to_forget_deep_semi-parametric_models_for_unlearning/"
     t: "Designing to Forget: Deep Semi-parametric Models for Unlearning"
-  - u: "fairllava_fairness-aware_parameter-efficient_fine-tuning_for_large_vision-langua/"
-    t: "FairLLaVA: Fairness-Aware Parameter-Efficient Fine-Tuning for Large Vision-Language Models"
-  - u: "force_transferable_visual_jailbreaking_attacks_via_feature_over_reliance_correct/"
-    t: "FORCE: Transferable Visual Jailbreaking Attacks via Feature Over-Reliance CorrEction"
-  - u: "harmonious_parameter_adaptation_in_continual_visual_instruction_tuning_for_safet/"
-    t: "Harmonious Parameter Adaptation in Continual Visual Instruction Tuning for Safety-Aligned MLLMs"
-  - u: "iag_input-aware_backdoor_attack_on_vlm-based_visual_grounding/"
-    t: "IAG: Input-aware Backdoor Attack on VLM-based Visual Grounding"
-  - u: "interpretable_debiasing_of_vision-language_models_for_social_fairness/"
-    t: "Interpretable Debiasing of Vision-Language Models for Social Fairness"
+  - u: "elastic_weight_consolidation_done_right_for_continual_learning/"
+    t: "Elastic Weight Consolidation Done Right for Continual Learning"
   - u: "learning_from_oblivion_predicting_knowledge_overflowed_weights_via_retrodiction_/"
     t: "Learning from Oblivion: Predicting Knowledge-Overflowed Weights via Retrodiction of Forgetting"
-  - u: "multi-paradigm_collaborative_adversarial_attack_against_multi-modal_large_langua/"
-    t: "Multi-Paradigm Collaborative Adversarial Attack Against Multi-Modal Large Language Models"
+  - u: "machine_unlearning_via_adaptive_gradient_reweighting_and_multi-stage_objective_o/"
+    t: "Machine Unlearning via Adaptive Gradient Reweighting and Multi-stage Objective Optimization"
   - u: "omni-attack_adversarial_attacks_on_open-ended_vqa_in_black-box_multimodal_llms/"
     t: "Omni-Attack: Adversarial Attacks on Open-Ended VQA in Black-Box Multimodal LLMs"
   - u: "oslash_source_models_leak_what_they_shouldnt_nrightarrow_unlearning_zero-shot_tr/"
     t: "⊘ Source Models Leak What They Shouldn't ↛: Unlearning Zero-Shot Transfer in Domain Adaptation Through Adversarial Optimization"
-  - u: "phantasia_context-adaptive_backdoors_in_vision_language_models/"
-    t: "Phantasia: Context-Adaptive Backdoors in Vision Language Models"
-  - u: "pixels_dont_lie_but_your_detector_might_bootstrapping_mllm-as-a-judge_for_trustw/"
-    t: "Pixels Don't Lie (But Your Detector Might): Bootstrapping MLLM-as-a-Judge for Trustworthy Deepfake Detection and Reasoning Supervision"
+  - u: "revisiting_learning_with_noisy_labels_active_forgetting_and_noise_suppression/"
+    t: "Revisiting Learning with Noisy Labels: Active Forgetting and Noise Suppression"
   - u: "select_hypothesize_and_verify_towards_verified_neuron_concept_interpretation/"
     t: "Select, Hypothesize and Verify: Towards Verified Neuron Concept Interpretation"
   - u: "sineproject_machine_unlearning_for_stable_vision_language_alignment/"
     t: "SineProject: Machine Unlearning for Stable Vision–Language Alignment"
-  - u: "test-time_attention_purification_for_backdoored_large_vision_language_models/"
-    t: "Test-Time Attention Purification for Backdoored Large Vision Language Models"
-  - u: "towards_reasoning-preserving_unlearning_in_multimodal_large_language_models/"
-    t: "Towards Reasoning-Preserving Unlearning in Multimodal Large Language Models"
-  - u: "towards_robust_multimodal_large_language_models_against_jailbreak_attacks/"
-    t: "Towards Robust Multimodal Large Language Models Against Jailbreak Attacks"
-  - u: "unsafe2safe_controllable_image_anonymization_for_downstream_utility/"
-    t: "Unsafe2Safe: Controllable Image Anonymization for Downstream Utility"
-  - u: "v-attack_targeting_disentangled_value_features_for_controllable_adversarial_atta/"
-    t: "V-Attack: Targeting Disentangled Value Features for Controllable Adversarial Attacks on LVLMs"
-  - u: "vl-eraser_vacuum_distillation_for_machine_unlearning_in_vision-language_models/"
-    t: "VL-Eraser: Vacuum Distillation for Machine Unlearning in Vision-Language Models"
-  - u: "vlm_model_inversion_adaptive_token_weight/"
-    t: "Do Vision-Language Models Leak What They Learn? Adaptive Token-Weighted Model Inversion Attacks"
-  - u: "which_concepts_to_forget_and_how_to_refuse_decomposing_concepts_for_continual_un/"
-    t: "Which Concepts to Forget and How to Refuse? Decomposing Concepts for Continual Unlearning in Large Vision-Language Models"
-item_total: 24
+item_total: 11
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # 🔒 LLM Safety
 
-**📷 CVPR2026** · **24** paper notes
+**📷 CVPR2026** · **11** paper notes
 
 📌 **Same area in other venues:** [🧪 ICML2026 (46)](../../ICML2026/llm_safety/index.md) · [💬 ACL2026 (115)](../../ACL2026/llm_safety/index.md) · [🔬 ICLR2026 (52)](../../ICLR2026/llm_safety/index.md) · [🤖 AAAI2026 (41)](../../AAAI2026/llm_safety/index.md) · [🧠 NeurIPS2025 (80)](../../NeurIPS2025/llm_safety/index.md) · [📹 ICCV2025 (10)](../../ICCV2025/llm_safety/index.md)
 
-🔥 **Top topics:** Multimodal/VLM ×14 · Adversarial Robustness ×8 · LLM ×3 · Reasoning ×2
+🔥 **Top topics:** Multimodal/VLM ×2 · Adversarial Robustness ×2
 
-**[A Closed-Form Solution for Debiasing Vision-Language Models with Utility Guarantees Across Modalities and Tasks](a_closedform_solution_for_debiasing_visionlanguage.md)**
+**[AutoDebias: An Automated Framework for Detecting and Mitigating Backdoor Biases in Text-to-Image Models](autodebias_automated_framework_for_debiasing_text-to-image_models.md)**
 
-:   A closed-form solution for VLM debiasing is proposed, achieving Pareto optimal fairness and bounded utility loss through orthogonal decomposition of the attribute subspace in the cross-modal embedding space and Chebyshev scalarization. It is training-free and label-free, uniformly covering zero-shot classification, text-to-image retrieval, and text-to-image generation tasks.
+:   AutoDebias is proposed as the first unified framework to simultaneously detect and mitigate malicious backdoor biases in T2I models. By leveraging VLM open-set detection to identify trigger-bias associations and constructing lookup tables, combined with CLIP-guided distribution alignment training, it reduces the attack success rate from 90% to near zero across 17 backdoor scenarios while maintaining image quality.
 
-**[Demographic Fairness in Multimodal LLMs: A Benchmark of Gender and Ethnicity Bias in Face Verification](demographic_fairness_in_multimodal_llms_a_benchmark_of_gender_and_ethnicity_bias.md)**
+**[The Blind Spot of Adaptation: Quantifying and Mitigating Forgetting in Fine-tuned Driving Models](blind_spot_of_adaptation_quantifying_and_mitigating_forgetting_in_fine_tuned_driving_models.md)**
 
-:   This work provides the first systematic evaluation of demographic fairness for 9 open-source MLLMs in face verification tasks. Using 4 FMR-based fairness metrics to measure gender and ethnic bias on IJB-C and RFW benchmarks, the study reveals that MLLM bias patterns differ significantly from traditional face recognition systems.
+:   This paper systematically investigates the catastrophic forgetting issue when fine-tuning VLMs for autonomous driving. It constructs FidelityDrivingBench, a large-scale benchmark with $180\text{K}$ scenarios, and proposes the Drive Expert Adapter (DEA), which enhances driving task performance via prompt-space routing without corrupting base parameters.
 
 **[Designing to Forget: Deep Semi-parametric Models for Unlearning](designing_to_forget_deep_semi-parametric_models_for_unlearning.md)**
 
 :   This paper proposes the "Designing to Forget" philosophy, introducing a family of Deep Semi-parametric Models (SPM). By simply removing training samples at inference time without modifying model weights, SPM reduces the prediction gap compared to retraining baselines by 11% on ImageNet and accelerates unlearning by more than 10x.
 
-**[FairLLaVA: Fairness-Aware Parameter-Efficient Fine-Tuning for Large Vision-Language Models](fairllava_fairness-aware_parameter-efficient_fine-tuning_for_large_vision-langua.md)**
+**[Elastic Weight Consolidation Done Right for Continual Learning](elastic_weight_consolidation_done_right_for_continual_learning.md)**
 
-:   Proposes FairLLaVA, a parameter-efficient fairness fine-tuning method that eliminates demographic shortcuts in Multimodal Large Language Models (MLLMs) by minimizing mutual information between hidden states and demographic attributes. It significantly narrows performance gaps across groups in chest X-ray report generation and skin lesion question answering.
-
-**[FORCE: Transferable Visual Jailbreaking Attacks via Feature Over-Reliance CorrEction](force_transferable_visual_jailbreaking_attacks_via_feature_over_reliance_correct.md)**
-
-:   Analysis reveals that the root cause of poor transferability in visual jailbreak attacks is that the attack resides in a high-sharpness loss region—stemming from an over-reliance of shallow features on model-specific representations and the excessive influence of high-frequency information. This work proposes the FORCE method, which expands the feasible region of shallow layers through layer-aware regularization and suppresses high-frequency non-semantic components via spectral rescaling, guiding the attack into a flatter loss landscape to significantly improve cross-model transferability.
-
-**[Harmonious Parameter Adaptation in Continual Visual Instruction Tuning for Safety-Aligned MLLMs](harmonious_parameter_adaptation_in_continual_visual_instruction_tuning_for_safet.md)**
-
-:   HPA focuses on an overlooked scenario: when performing Continual Visual Instruction Tuning on a "previously safety-aligned" Multimodal Large Language Model (post-SA CVIT), the model tends to forget both old tasks and its safety alignment. It performs non-intrusive post-training parameter adjustment after each tuning step. By using Hessian importance to partition parameters into "safety-focused" and "task-focused" categories, balancing the retention of safety parameters within and across layers, and imposing orthogonal constraints on update directions, HPA achieves a harmonious trade-off between safety and task performance.
-
-**[IAG: Input-aware Backdoor Attack on VLM-based Visual Grounding](iag_input-aware_backdoor_attack_on_vlm-based_visual_grounding.md)**
-
-:   The authors propose IAG, the first multi-target backdoor attack method targeting VLM-based visual grounding. By dynamically generating input-aware triggers via a text-conditioned U-Net, it embeds semantic information of any specified target object into visual inputs, achieving the highest attack success rate in 11 out of 12 experimental settings.
-
-**[Interpretable Debiasing of Vision-Language Models for Social Fairness](interpretable_debiasing_of_vision-language_models_for_social_fairness.md)**
-
-:   DeBiasLens is proposed to locate "social neurons" encoding social attributes by training Sparse Autoencoders (SAEs) on VLM encoders, then selectively deactivating these neurons during inference to mitigate bias. It reduces Max Skew by 9-16% on CLIP and gender bias ratios by 40-50% on InternVL2 while maintaining general performance.
+:   This paper systematically analyzes the fundamental flaws of EWC and its variants in weight importance estimation from a gradient perspective (gradient vanishing in EWC and redundant protection in MAS). It proposes an extremely simple Logits Reversal operation to correct the Fisher Information Matrix (FIM) calculation, significantly outperforming the original EWC and its variants in exemplar-free class-incremental learning and multimodal continual instruction tuning tasks.
 
 **[Learning from Oblivion: Predicting Knowledge-Overflowed Weights via Retrodiction of Forgetting](learning_from_oblivion_predicting_knowledge_overflowed_weights_via_retrodiction_.md)**
 
 :   The authors propose KNOW prediction: inducing a structured forgetting process through sequential fine-tuning on progressively smaller nested data subsets to collect weight transition trajectories, and then using a meta-learned hyper-model (KNOWN) to reverse the direction of forgetting. This predicts virtual knowledge-enhanced weights as if they were trained on larger datasets. Across multiple datasets (CIFAR/ImageNet/PACS, etc.) and architectures (ResNet/PVTv2/DeepLabV3+, etc.), the method consistently outperforms naive fine-tuning and various weight prediction baselines, showing significant improvements in downstream tasks such as image classification, semantic segmentation, image captioning, and domain generalization.
 
-**[Multi-Paradigm Collaborative Adversarial Attack Against Multi-Modal Large Language Models](multi-paradigm_collaborative_adversarial_attack_against_multi-modal_large_langua.md)**
+**[Machine Unlearning via Adaptive Gradient Reweighting and Multi-stage Objective Optimization](machine_unlearning_via_adaptive_gradient_reweighting_and_multi-stage_objective_o.md)**
 
-:   Proposes the MPCAttack framework, which integrates feature representations from three learning paradigms—cross-modal alignment, multi-modal understanding, and visual self-supervision. By employing a multi-paradigm collaborative optimization strategy to generate highly transferable adversarial samples, it achieves SOTA attack performance on both open-source and closed-source MLLMs.
+:   To address the issues of "uniform treatment of all samples/categories" and "gradient conflicts between forgetting and retaining objectives" in machine unlearning, this paper proposes **Adaptive Gradient Reweighting** (weighting based on sample memory depth/category vulnerability) combined with **Three-stage Objective Optimization** (direction rectification → temporal smoothing → adaptive combination). On CIFAR-10/100 and Tiny-ImageNet, the Avg Gap for random forgetting is reduced from the SOTA 0.85 to 0.19.
 
 **[Omni-Attack: Adversarial Attacks on Open-Ended VQA in Black-Box Multimodal LLMs](omni-attack_adversarial_attacks_on_open-ended_vqa_in_black-box_multimodal_llms.md)**
 
@@ -121,13 +81,9 @@ item_total: 24
 
 :   This paper identifies that Source-Free Domain Adaptation (SFDA) methods inadvertently leak knowledge of source-exclusive classes to the target domain (zero-shot transfer). It proposes the SCADA-UL framework, which concurrently performs class unlearning during domain adaptation by adversarially generating forgotten samples and employing a rescaled labeling strategy, achieving unlearning performance comparable to training from scratch.
 
-**[Phantasia: Context-Adaptive Backdoors in Vision Language Models](phantasia_context-adaptive_backdoors_in_vision_language_models.md)**
+**[Revisiting Learning with Noisy Labels: Active Forgetting and Noise Suppression](revisiting_learning_with_noisy_labels_active_forgetting_and_noise_suppression.md)**
 
-:   Phantasia proposes the first context-adaptive VLM backdoor attack where the attacker presets a target question. Upon receiving a triggered image, the poisoned model no longer answers the user's original question but instead answers the attacker's target question. The generated answers are semantically consistent with the input image and linguistically natural, thereby bypassing defenses such as STRIP-P and ONION-R. Simultaneously, this paper demonstrates for the first time that the stealth of existing VLM backdoor attacks has been severely overestimated.
-
-**[Pixels Don't Lie (But Your Detector Might): Bootstrapping MLLM-as-a-Judge for Trustworthy Deepfake Detection and Reasoning Supervision](pixels_dont_lie_but_your_detector_might_bootstrapping_mllm-as-a-judge_for_trustw.md)**
-
-:   The DeepfakeJudge framework is proposed to scale human-annotated reasoning supervision into large-scale structured scoring data via a bootstrapped generator-evaluator process. This trains 3B/7B vision-language models as automatic judges for the quality of deepfake detection reasoning, achieving high alignment with human judgment in both pointwise and pairwise evaluations.
+:   To address the overfitting bottleneck in noisy label learning (LNL) caused by long-term "clean sample selection," this paper proposes FINE, a plug-and-play framework. It uses Active Forgetting via Machine Unlearning (AFMU) to "actively forget" noise absorbed during early stages and Noise Suppression via Negative Learning (NSNL) to "suppress" overfitting in later stages. Integrated into existing SOTA methods like SED or ACT, it consistently improves robustness and generalization.
 
 **[Select, Hypothesize and Verify: Towards Verified Neuron Concept Interpretation](select_hypothesize_and_verify_towards_verified_neuron_concept_interpretation.md)**
 
@@ -136,35 +92,3 @@ item_total: 24
 **[SineProject: Machine Unlearning for Stable Vision–Language Alignment](sineproject_machine_unlearning_for_stable_vision_language_alignment.md)**
 
 :   Addressing the issue where the Jacobian of the projector layer becomes severely ill-conditioned during machine unlearning in Multimodal Large Language Models (MLLMs), leading to vision-language alignment drift, SineProject is proposed. By applying a sine modulation ($\sin(\Delta W)$) to the projector weights, the parameter range is constrained to $[-1,1]$, reducing the Jacobian condition number by 3-4 orders of magnitude. This enables complete forgetting of target knowledge while reducing the Safe Answer Refusal Rate (SARR) for benign queries by 15%.
-
-**[Test-Time Attention Purification for Backdoored Large Vision Language Models](test-time_attention_purification_for_backdoored_large_vision_language_models.md)**
-
-:   It is discovered that the essence of backdoor behavior in LVLMs is cross-modal attention hijacking (where trigger visual tokens seize attention from text tokens). This study proposes CleanSight—the first training-free test-time backdoor defense framework—which eliminates backdoor effects by detecting and pruning visual tokens with abnormally high attention.
-
-**[Towards Reasoning-Preserving Unlearning in Multimodal Large Language Models](towards_reasoning-preserving_unlearning_in_multimodal_large_language_models.md)**
-
-:   Addressing "reasoning-capable" Multimodal Large Language Models (MLLMs), this paper proposes RMLLMU-Bench to specifically measure **information leakage within reasoning chains** and the **preservation of reasoning capabilities**. It introduces R-MUSE, a training-free, inference-time intervention framework that employs subspace guidance and adaptive steering to erase target answers and intermediate reasoning traces while minimizing disruption to general reasoning.
-
-**[Towards Robust Multimodal Large Language Models Against Jailbreak Attacks](towards_robust_multimodal_large_language_models_against_jailbreak_attacks.md)**
-
-:   SAFEMLLM is the first adversarial training framework designed specifically for Multimodal Large Language Models (MLLMs). By injecting compact, learnable perturbation matrices into the token embedding layer to simulate cross-modal attacks (CoE-Attack) and iteratively updating model parameters to neutralize these perturbations, SAFEMLLM reduces the Attack Success Rate (ASR) of six jailbreak methods to near 0 in white-box scenarios while maintaining standard multimodal task performance.
-
-**[Unsafe2Safe: Controllable Image Anonymization for Downstream Utility](unsafe2safe_controllable_image_anonymization_for_downstream_utility.md)**
-
-:   This paper proposes Unsafe2Safe, a fully automated privacy protection pipeline utilizing a four-stage scheme: VLM privacy inspection → dual caption generation (private/public) → LLM editing instructions → text-guided diffusion editing. The approach achieves significant improvements in the VLMScore privacy metric while improving accuracy on Caltech-101 classification and OK-VQA compared to original images.
-
-**[V-Attack: Targeting Disentangled Value Features for Controllable Adversarial Attacks on LVLMs](v-attack_targeting_disentangled_value_features_for_controllable_adversarial_atta.md)**
-
-:   It is discovered that Value features in ViTs possess more disentangled local semantic representations compared to Patch features. V-Attack is proposed to achieve precise and controllable local semantic attacks on LVLMs through self-enhanced Value features and text-guided semantic manipulation, improving ASR by an average of 36%.
-
-**[VL-Eraser: Vacuum Distillation for Machine Unlearning in Vision-Language Models](vl-eraser_vacuum_distillation_for_machine_unlearning_in_vision-language_models.md)**
-
-:   VL-Eraser points out that traditional "reverse-training" unlearning in VLMs primarily destroys cross-modal alignment rather than truly removing knowledge. It reformulates unlearning as a two-stage "distillation-then-deletion" process: first, distilling the targeted knowledge into a set of LoRAs under "vacuum space" constraints, and then subtracting these LoRAs from the original model to achieve cleaner deletion while preserving model utility.
-
-**[Do Vision-Language Models Leak What They Learn? Adaptive Token-Weighted Model Inversion Attacks](vlm_model_inversion_adaptive_token_weight.md)**
-
-:   This paper presents the first systematic study of Model Inversion (MI) attacks on VLMs. It proposes a set of inversion strategies tailored for token generation characteristics (TMI/TMI-C/SMI) and the SMI-AW method, which dynamically weights token gradient contributions based on visual attention intensity. The approach achieves a human-evaluated attack accuracy of up to 61.21% across 4 VLMs and 3 datasets, revealing significant privacy risks regarding training data in VLMs.
-
-**[Which Concepts to Forget and How to Refuse? Decomposing Concepts for Continual Unlearning in Large Vision-Language Models](which_concepts_to_forget_and_how_to_refuse_decomposing_concepts_for_continual_un.md)**
-
-:   Ours proposes CORE (COncept-aware REfuser), a framework for continual unlearning in Large Vision-Language Models (LVLMs). By decomposing vision-language pairs to be deleted into fine-grained visual attributes and textual intent concepts, it utilizes a concept modulator to identify required concept combinations for rejection. Subsequently, a Mixture of Refusers generates concept-aligned refusal responses. CORE achieves the best unlearning-retention trade-off with 90.67% CRR and 88.02% AR across 16 sequential tasks.

@@ -111,6 +111,7 @@ The mask rate $r\in[0,1]$ is sampled from a truncated arccos distribution with d
 **Efficiency**: Editing a 1024×1024 image takes only **2 seconds**, which is **6× faster** than models of comparable performance, with a VRAM footprint of 13.8 GB.
 
 ### Ablation Study
+
 | Configuration | Phenomenon | Description |
 |------|------|------|
 | Text Encoder Gemma2-IT-2B | Optimal | Outperforms T5-XXL / Llama3.2-1B |

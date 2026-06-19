@@ -110,6 +110,7 @@ Zero-shot image classification (11 datasets, CLIP protocol, DINOv3 as VFM):
 GPUA achieves an average gain of 11.8 points. Significant improvements in EuroSAT (+34.9) and Flowers (+14.0) suggest that **VFM geometric details are successfully integrated into the VLM semantic space**.
 
 ### Ablation Study
+
 | Configuration | Key Finding |
 |------|---------|
 | Full GPUA | UCM + GPA + THS |

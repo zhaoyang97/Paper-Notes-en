@@ -105,6 +105,7 @@ Three tasks (3D Cardiac CT, 3D Brain MRI, 2D Brain MRI). Metrics: Dice (DSC %, h
 DySNet-M achieves the highest/second-highest Dice (82.0% average) across all tasks. Both DySNet-X and DySNet-M improve over their respective baslines, with DySNet-X gaining +6.6% on fine anatomical structures (3D Brain). Regarding negative Jacobians, DySNet remains at a reasonably low level (0.79% for 2D Brain), whereas SACB/ViT-V-Net/TransMorph reach up to 2.88% with occasional registration failure, achieving a balance between "high precision and smooth deformation."
 
 ### Ablation Study (DySNet-X, 2D Brain MRI)
+
 | Config | DSC% | $\|J_\phi\|$% | Description |
 |------|------|--------------|------|
 | Baseline (XMorpher) | 76.5 | 0.80 | Static Receptive Field + Static Weights |

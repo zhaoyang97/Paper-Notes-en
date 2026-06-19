@@ -34,6 +34,7 @@ Using "multi-expert role-play prompting" to drive MLLMs to generate multiple com
 **Core Idea**: Use "multi-expert role-play prompting" instead of "generic prompts" to enable MLLMs to describe the same image from multiple complementary cognitive perspectives, thereby increasing semantic diversity without increasing the image count.
 
 ## Method
+
 ### Overall Architecture
 Role-SynthCLIP defines the task as: given a batch of **unpaired images** $I=\{I_i\}$, synthesize semantically diverse and accurate image-text pairs for contrastive training. The pipeline consists of three sequential stages: first, **generate expert roles** (creating a set of specialized "labeling personalities"); second, let the MLLM **observe the images as experts** (producing multi-view captions strictly following their personas); third, use a **role-aware filter** to remove hallucinations and data that does not match the role. Finally, the high-quality multi-view image-text pairs are used to train CLIP with objectives tailored for long captions and multiple positive samples.
 

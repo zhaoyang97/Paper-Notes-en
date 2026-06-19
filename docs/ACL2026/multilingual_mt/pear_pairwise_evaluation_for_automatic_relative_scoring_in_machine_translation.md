@@ -75,6 +75,7 @@ PEAR uses Huber loss to regress human quality differences; the appendix shows th
 ## Key Experimental Results
 
 ### Main Results
+
 | Setting | Model | Parameters | SPA | acc*eq | Avg Corr | Conclusion |
 |---------|-------|------------|-----|--------|----------|------------|
 | Matched Single-QE | Single-QE | 560M | 80.0 | 57.2 | 68.6 | Baseline with same backbone absolute scoring |
@@ -85,6 +86,7 @@ PEAR uses Huber loss to regress human quality differences; the appendix shows th
 | Pairwise QE-XL + KD | PEAR-XL-KD | 3.5B | 82.0 | 58.2 | 70.1 | Pairwise framework remains effective for large models |
 
 ### Ablation Study
+
 | Analysis Item | Config A | Config B | Key Metric | Description |
 |---------------|----------|----------|------------|-------------|
 | Pairwise Accuracy (Non-tie) | MT-RANKER-XXL 5.7B | PEAR-KD 560M | Avg Pair Acc: 65.8 vs 68.9 | PEAR is more accurate on WMT24 MQM pairs (no ties) despite fewer parameters |

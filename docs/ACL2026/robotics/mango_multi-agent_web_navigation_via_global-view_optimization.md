@@ -79,6 +79,7 @@ Mango does not train new models; it is primarily an inference-time agent pipelin
 ## Key Experimental Results
 
 ### Main Results
+
 | Benchmark | Backbone | Prev. SOTA SR | Mango SR | Gain | Notes |
 |-----------|----------|-------------|----------|----------|------|
 | WebVoyager | GPT-5-mini | AgentOccam 56.25 | 63.57 | +7.32 | Approx 63.6%, +7.3% |
@@ -90,6 +91,7 @@ Mango does not train new models; it is primarily an inference-time agent pipelin
 In WebWalkerQA, Mango with GPT-5-mini achieved 60.59% for single-source QA Overall and 44.41% for multi-source QA Overall, totaling 52.50%. In contrast, WebWalker achieved 29.41%, 22.06%, and 25.74% respectively, while AgentOccam achieved 19.12%, 21.47%, and 20.29%.
 
 ### Ablation Study
+
 | Benchmark | Backbone | Random URL | Google-only | MCTS | Mango | Key Conclusion |
 |-----------|----------|------------|-------------|------|-------|----------|
 | WebVoyager | GPT-5-mini | 56.59 | 59.69 | 46.51 | 63.57 | Thompson Sampling > MCTS |
@@ -98,6 +100,7 @@ In WebWalkerQA, Mango with GPT-5-mini achieved 60.59% for single-source QA Overa
 | WebWalkerQA | Qwen3-32B | 19.85 | 25.88 | 16.47 | 28.38 | Advantage maintained on open-source |
 
 ### Efficiency and Failure Analysis
+
 | Item | Key Figure | Explanation |
 |--------|----------|------|
 | WebVoyager GPT-5-mini action count | Mango 14.18, AgentOccam 9.46, WebWalker 7.38 | Mango continues exploration to solve longer tasks |

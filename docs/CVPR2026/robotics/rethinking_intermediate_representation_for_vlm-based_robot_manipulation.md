@@ -80,6 +80,7 @@ Comparison with VoxPoser / CoPa / ReKep / OmniManip, with 10 trials per task and
 On a task-by-task basis, SEAM significantly leads in tasks requiring precise alignment, such as "putting a pen in a holder," "capping a teapot," "pressing a red button," and "opening a jar" (e.g., 10/10 success for button pressing and 8/10 for jar opening in closed-loop). The overall closed-loop success rate is approximately **15 percentage points** higher than the strongest baseline, OmniManip.
 
 ### Efficiency & Metrics
+
 | Segmentation Inference Time | LISA | OV-Seg | Grounded SAM | SEAM (Ours) |
 |------|------|--------|--------------|-------------|
 | Time (sec) | 0.9 | 10.2 | 0.88 | **0.6** |

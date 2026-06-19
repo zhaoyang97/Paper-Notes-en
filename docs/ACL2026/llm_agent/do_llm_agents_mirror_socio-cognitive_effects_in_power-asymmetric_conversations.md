@@ -80,6 +80,7 @@ This work does not train new models; the core is simulation and evaluation. API-
 ## Key Experimental Results
 
 ### Main Results
+
 | Effect | Model / Metric | Low Power | High Power | Conclusion |
 |------|-------------|------------|------------|------|
 | Pronoun Effect | GPT-4.1 FPS | 2.32% | 1.66% | High-power roles use “I” less |
@@ -92,6 +93,7 @@ This work does not train new models; the core is simulation and evaluation. API-
 | Harmful Compliance | GPT-4.1 | 6.1% | 9.8% | High-power requests lead to higher unsafe compliance |
 
 ### Ablation Study
+
 | Analysis Dimension | Key Metric | Description |
 |------|---------|------|
 | Dialogue Position | Llama 3.1 8B persuasion diff: 6.1 (Start) to 5.7 (End) | Persuasion and harmful compliance are stronger in early stages |

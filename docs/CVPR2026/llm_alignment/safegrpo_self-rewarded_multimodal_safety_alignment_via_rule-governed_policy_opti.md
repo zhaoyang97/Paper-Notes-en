@@ -90,6 +90,7 @@ The base model is Qwen3-VL-4B/8B-Thinking, trained using GRPO in the verl framew
 SafeGRPO achieved the best performance across all three dimensions. Notably, its Refusal Rate (20.00) is lower than the base model, whereas SFT-based baselines (VLGuard, Think-in-Safety) suffer from extreme over-refusal (95.00 and 64.00), sacrificing utility for safety.
 
 ### General Capabilities
+
 | Method (Qwen3-VL-8B) | ScienceQA | MathVista | POPE | 5-Task Avg | Relative to Base |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | Base | 91.92 | 60.00 | 87.40 | 77.98 | — |
@@ -100,6 +101,7 @@ SafeGRPO achieved the best performance across all three dimensions. Notably, its
 While SFT methods cause catastrophic forgetting or format misalignment, SafeGRPO slightly **improves** general capabilities, likely due to RL strengthening reasoning and mitigating forgetting.
 
 ### Ablation Study
+
 | Configuration (Qwen3-VL-8B) | Safety Performance | Description |
 | :--- | :--- | :--- |
 | Base (No RL) | Lowest | No optimization |

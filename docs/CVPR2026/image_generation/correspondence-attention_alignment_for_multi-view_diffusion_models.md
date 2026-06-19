@@ -90,6 +90,7 @@ The baseline is CAT3D (reproduced via MVGenMaster, SD2.1 initialization), compar
 **Key conclusion**: CAMEO reaches a PSNR > 19.4 at 80k iterations, while the baseline requires over 160k iterations to catch up—representing a **roughly 2× training speedup**. Even after convergence (320k), CAMEO remains superior. Attention-level alignment (CAMEO) consistently outperforms feature-level alignment (REPA/Geo.F.), supporting the claim that consistency is rooted in attention maps.
 
 ### Ablation Study
+
 | Configuration | 80k PSNR↑ | Description |
 |---|---|---|
 | Supervise $l=10$ | **19.08** | Strongest correspondence layer, best |

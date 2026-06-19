@@ -86,6 +86,7 @@ The paper evaluates PLD on StereoSet, Contract-NLI, and LogiQA. Macro-F1 is repo
 | Contract-NLI / Gemini 3 Flash | 0.77 | 0.76 | 0.84 | 0.86 | Teacher-level models also benefit from explicit rules |
 
 ### Ablation Study
+
 | Configuration | Key Metric | Description |
 |------|----------|------|
 | Contract-NLI, $\epsilon=0.2$ / `min_samples=6` | 27 clusters / 6,449 tokens / F1 0.79 | Overly fragmented; prompt is long and performance drops |

@@ -86,6 +86,7 @@ Comparison of rendering accuracy for reconstruction and future prediction (LPIPS
 Key caveat: GART and 4D-Gaus sometimes show higher PSNR/SSIM because they **continuously optimize appearance to fit the ground truth**. Ours fixes appearance to learn the physical model. However, Ours leads consistently in LPIPS, indicating better visual realism and texture preservation. In prediction, 4D-Gaus cannot extrapolate, and GART suffers from significant degradation or structural collapse.
 
 ### Ablation Study
+
 | Configuration | PSNR↑ | SSIM↑ | LPIPS↓ | IoU↑ | Description |
 |------|------|------|--------|------|------|
 | Full | **24.03** | **0.9534** | **0.0652** | **0.8845** | Full model |

@@ -97,6 +97,7 @@ Notably, at 4.72× acceleration, Fresco's ImageReward (1.0369) is **higher than 
 | Fresco + schnell (Step Distill, NFE 4) | **22.10×** | 0.8693 | Quality preserved under extreme speedup |
 
 ### Ablation Study
+
 | Config | Gain | ImageReward | CLIP Score | Note |
 |------|------|------|------|------|
 | Random selection | 4.90× | 0.9143 | 31.277 | Random token upsampling |

@@ -90,6 +90,7 @@ The experiments cover reasoning-enhanced models and non-reasoning instruction mo
 | Qwen2.5-72B-IT | Non-reasoning | 29.43 | 19.06 | 12.94 |
 
 ### Ablation Study
+
 | Analysis Item | Data / Phenomenon | Description |
 |--------|-------------|------|
 | Data Scale | 4 categories, 40 tasks, 3600 instances | 3 difficulty levels per task, 30 instances per level |

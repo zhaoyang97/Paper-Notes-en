@@ -79,6 +79,7 @@ No models are trained or fine-tuned. The experiment compares three prompting/mod
 ## Key Experimental Results
 
 ### Main Results
+
 | Dataset / Model | Prompt-only F1 | Original-guidelines F1 | Moderation F1 | Iterations |
 |---------------|----------------|------------------------|---------------|------------|
 | NCBI / GPT-5 | 0.46 | 0.73 (+0.27) | 0.76 (+0.03) | 3 |
@@ -92,6 +93,7 @@ No models are trained or fine-tuned. The experiment compares three prompting/mod
 | BioRED / DeepSeek | 0.45 | 0.53 (+0.08) | 0.54 (+0.01) | 1 |
 
 ### Reasoning Model Comparison
+
 | Dataset | GPT non-reason / reason | Gemini non-reason / reason | DeepSeek non-reason / reason |
 |--------|-------------------------|----------------------------|------------------------------|
 | NCBI | 0.69 → 0.73 (+0.04) | 0.48 → 0.63 (+0.15) | 0.29 → 0.55 (+0.26) |

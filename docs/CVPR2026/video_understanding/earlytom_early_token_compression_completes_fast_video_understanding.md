@@ -87,6 +87,7 @@ Note: Compared to the 889.9 ms baseline, EarlyTom achieves a $2.65\times$ TTFT s
 ### Ablation Study
 
 **Module Contribution (0.2 Retention)**
+
 | Config | Retention | MVBench | VideoMME | EgoSchema | Avg |
 |------|--------|---------|----------|-----------|-----|
 | Baseline (Full) | 100% | 58.3 | 58.6 | 60.4 | 59.1 |

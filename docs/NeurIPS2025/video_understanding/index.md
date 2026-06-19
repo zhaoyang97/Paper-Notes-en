@@ -83,7 +83,7 @@ item_total: 39
 
 **🧠 NeurIPS2025** · **39** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (179)](../../CVPR2026/video_understanding/index.md) · [🧪 ICML2026 (17)](../../ICML2026/video_understanding/index.md) · [💬 ACL2026 (16)](../../ACL2026/video_understanding/index.md) · [🔬 ICLR2026 (10)](../../ICLR2026/video_understanding/index.md) · [🤖 AAAI2026 (27)](../../AAAI2026/video_understanding/index.md) · [📹 ICCV2025 (56)](../../ICCV2025/video_understanding/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (178)](../../CVPR2026/video_understanding/index.md) · [🧪 ICML2026 (17)](../../ICML2026/video_understanding/index.md) · [🔬 ICLR2026 (10)](../../ICLR2026/video_understanding/index.md) · [🤖 AAAI2026 (27)](../../AAAI2026/video_understanding/index.md) · [📹 ICCV2025 (56)](../../ICCV2025/video_understanding/index.md)
 
 🔥 **Top topics:** Reasoning ×6 · LLM ×3 · Anomaly Detection ×3 · Object Tracking ×3 · Question Answering ×2
 

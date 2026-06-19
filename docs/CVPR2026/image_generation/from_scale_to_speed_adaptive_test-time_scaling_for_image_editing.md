@@ -90,6 +90,7 @@ Evaluated on GEdit-Bench (real user edits), AnyEdit-Test (local/global/implicit 
 ADE-CoT improves inference efficiency $\eta$ by over 2× compared to BoN. Result efficiency $\xi$ improves by 4.9×/2.7×/2.9× on average across benchmarks. Baselines fail because PRM/PARM misjudge early previews, and TTS-EF is unreliable when sampling scales up.
 
 ### Ablation Study (Incremental addition, GEdit-Bench, G_O / NFE)
+
 | Configuration | Kontext | BAGEL | Step1X-Edit |
 |------|---------|-------|-------------|
 | Baseline (BoN) | 6.641 / 896 | 6.908 / 1600 | 7.157 / 896 |

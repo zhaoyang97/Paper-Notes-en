@@ -101,6 +101,7 @@ PTD maintains 90% nominal coverage across all $\rho$. Better proxies lead to nar
 | **Stratified PPI++ (Neyman)** | **0.90** | **0.131** | **≈ 157 (1.57×)** |
 
 ### Ablation Study
+
 | Configuration | Empirical Coverage (90%) | Mean Interval Width | Description |
 |------|------------------|--------------|------|
 | Full: PPI++ + power tuning | 0.90 | 0.137 | Default recommended combination |

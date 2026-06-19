@@ -70,6 +70,7 @@ The primary risk of code-driven methods is unrunnable code. Both CodeSTEP's main
 ### Key Experimental Results
 
 #### Main Results
+
 | Method | Backbone | TableBench-FC DA | TableBench-NR DA | WikiSQL-E DA | Overall |
 |------|----------|------------------|------------------|--------------|---------|
 | PoT | GPT-4o | 51.0 | 43.7 | 27.4 | 32.6 |
@@ -84,6 +85,7 @@ The primary risk of code-driven methods is unrunnable code. Both CodeSTEP's main
 Under the same GPT-4o backbone, CRAFTQA's Overall score of 76.6 significantly outperforms TrustUQA (67.2), Readi (51.5), and StructGPT (44.3). Notably, CRAFTQA-LLaMA-3.1-8B (64.4 Overall) surpasses several traditional baselines using GPT-4o.
 
 #### Ablation Study
+
 | Configuration | FC DA/F1 | NR DA/F1 | WikiSQL-E DA/F1 | Description |
 |------|----------|----------|-----------------|------|
 | CRAFTQA | 68.8 / 71.6 | 51.3 / 51.9 | 87.3 / 87.6 | Full Framework |

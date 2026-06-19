@@ -81,6 +81,7 @@ Subject fidelity is measured by CLIP-I (CLIP image embedding cosine similarity) 
 Directly fine-tuned AR students (CLIP-I ≈0.67) fail to learn the subject. After Proxy-Tuning, CLIP-I and DINO scores consistently exceed the corresponding diffusion teachers across all tested teacher models.
 
 ### Ablation Study
+
 | Configuration | Key Observation | Description |
 |---------------|-----------------|-------------|
 | Direct LoRA on AR | CLIP-I≈0.67, DINO≈0.45 | Fails to learn subject appearance, though semantics remain. |

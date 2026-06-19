@@ -89,6 +89,7 @@ Evaluations were conducted on DOTA-v1.0/v1.5/v2.0 and DIOR using mAP (AP50 for D
 PWOOD using **HBox** equals or surpasses the SOOD baseline using expensive rotated boxes (e.g., DIOR: 54.01/57.07/60.25 vs 54.33/57.89/60.42), with more pronounced leads on DOTA-v2.0 where small objects are prevalent.
 
 ### Comparison on DOTA-v1.5
+
 | Method (Label) | 10% | 20% | 30% |
 |------|------|------|------|
 | H2RBox-v2 (WOOD) | 42.19 | 49.01 | 55.19 |

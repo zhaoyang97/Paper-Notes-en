@@ -82,6 +82,7 @@ ImageNet 256×256 class-conditional generation using a single 2.0B model. Effici
 *Note: Further results for d8 (2.6× speedup, 65% memory saving, FID 2.15) and d2 (3.5× speedup, 80% memory saving, FID 2.67) are provided in the text.*
 
 ### Ablation Study (Fixed vs. Progressive)
+
 | Training Ratio (Sub:Full) | Full-Net FID | Subnet FID | Note |
 | :--- | :---: | :---: | :--- |
 | 1:9 ($p=0.1$) | **1.96** | 2.68 | Subnet gradient starvation |

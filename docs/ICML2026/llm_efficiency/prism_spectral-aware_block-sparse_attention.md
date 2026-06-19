@@ -94,6 +94,7 @@ Evaluated on PG19 (language modeling), LongBench (long-context understanding), R
 | PG19 128K | Speedup vs FA-2 | 1.0× | 3.0× | — | — | — | **5.1×** |
 
 ### Ablation Study
+
 | Configuration | PPL @ 32K | Observation/Explanation |
 |---|---|---|
 | Full dim coarse | ≈ 35.0 | Equivalent to "full-dimension mean pooling only." |

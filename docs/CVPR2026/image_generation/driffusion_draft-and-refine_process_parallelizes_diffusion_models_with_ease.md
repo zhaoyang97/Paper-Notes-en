@@ -98,6 +98,7 @@ Evaluated on MS-COCO 2017 validation set (5000 images) across SD2.1, SDXL, and S
 Overall speedup is 1.4×–3.7×. CLIP drops are at most 0.16; Pick/HPSv2.1 average drops are only 0.17 / 0.43. FID occasionally improves slightly (attributed to statistical fluctuation).
 
 ### Comparison with AsyncDiff (SDXL)
+
 | Method | Devices | Gain ↑ | Extra VRAM ↓ | FID ↓ | CLIP ↑ | Pick ↑ |
 |------|--------|----------|------------|-------|--------|--------|
 | Stable Diffusion | 1 | – | +0MB | 24.02 | 26.67 | 22.43 |

@@ -94,6 +94,7 @@ Comparison against probability/self-evaluation baselines and ordinary probes wit
 Ours is on average 6.2% higher than ordinary probes and 18.5% higher than probability-based baselines; consistently achieves 4–8% Gains on tasks requiring factual accuracy (+7.1% for Llama-3-8B on TriviaQA).
 
 ### Key Experimental Results (MLLM, AUPRC↑)
+
 | Model | Method | POPE | TextVQA | VizWiz | MME |
 |------|------|------|---------|--------|-----|
 | LLaVA-1.5 | Probe | 98.08 | 85.89 | 77.02 | 93.61 |
@@ -104,6 +105,7 @@ Ours is on average 6.2% higher than ordinary probes and 18.5% higher than probab
 Average 2.1% higher than basic probes; POPE is near saturation (+0.8%), but the largest gains appear in real-world low-quality images like VizWiz (Avg +3.6%, +6.2% for LLaVA on VizWiz).
 
 ### Ablation Study (TriviaQA, AUPRC↑)
+
 | Configuration | Llama-2-7B | Llama-3-8B | Qwen-3-4B | Falcon-7B |
 |------|-----------|-----------|-----------|-----------|
 | w/o Perturbed Data | 82.41 | 82.35 | 79.92 | 65.65 |

@@ -93,6 +93,7 @@ Compared to strong baselines (RECOMP-Abs/Ext, NoiseFilter-IB, LongLLMLingua, QGC
 **Length Generalization**: A compressor trained on top-5 generalizes zero-shot to top-10 documents. On NQ, it achieves 41.88 EM with only 52 tokens (ratio ~3.6%), still beating the top-10 full context (38.67 EM).
 
 ### Ablation Study
+
 | Configuration | NQ EM | TQA EM | HotpotQA EM | 2Wiki EM | Note |
 |---------------|-------|---------|-------------|----------|------|
 | CORE (full) | **41.02** | **65.63** | **33.67** | **36.72** | Distillation + GRPO RL |

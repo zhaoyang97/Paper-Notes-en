@@ -92,6 +92,7 @@ Evaluated using LLaVA-1.5-7B across 8 benchmarks (GQA, MMB, MME, POPE, SQA$^{\te
 At 128 tokens (22.2%), text-agnostic backbones with RESTORE remain stable above 95%, while other methods drop significantly. At 64 tokens (11.1%), RESTORE consistently pushes several VTR backbones toward near full-token performance.
 
 ### Ablation Study
+
 | Configuration | Avg Score (192 tokens) | Description |
 |------|---------------------|------|
 | HoloV (baseline) | 96.5% | Pruning only, reindexed positions |

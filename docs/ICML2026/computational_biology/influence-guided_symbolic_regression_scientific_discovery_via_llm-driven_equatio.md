@@ -90,6 +90,7 @@ Six biomedical benchmarks (Lung Cancer variations, COVID-19, RNA Polymerase, War
 LLM-SRBench (128 discovery problems, GPT-4o-mini, 5 seeds): IGSR achieved the best mean rank across NMSE, Acc$_{0.1}$, Term Recall, and Symbolic Accuracy for both ID and OOD test sets. It also outperformed AFE baselines (AutoFeat, OpenFE, SyMANTIC, CAAFE) on 5/6 datasets.
 
 ### Ablation Study
+
 | Configuration | Phenomena | Explanation |
 |------|---------|------|
 | Full IGSR (MCTS + $\Delta$ + history) | Best performance | Complete model functionality |

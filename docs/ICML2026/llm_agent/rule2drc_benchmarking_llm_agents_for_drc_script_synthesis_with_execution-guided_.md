@@ -96,6 +96,7 @@ Evaluated on the full 1,000 tasks of Rule2DRC. BoN-N indicates selecting 1 from 
 The single-sample baseline for GPT-OSS-120B is 32.5%; BoN-20 + SplitTester increases this to 63.8%. The largest absolute gain over CodeMonkey (+3.3pp) was observed on GPT-OSS-20B.
 
 ### Ablation Study (GPT-OSS-120B, BoN-10)
+
 | Configuration | Success Rate (%) | Error Rate (%) | Description |
 |------|-----------|-----------|------|
 | SplitTester (Full) | **58.0** | 9.1 | Full Method |

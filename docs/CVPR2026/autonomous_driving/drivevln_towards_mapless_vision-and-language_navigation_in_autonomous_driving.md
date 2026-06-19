@@ -92,6 +92,7 @@ Evaluation combines VLN metrics (Success Rate SR, Navigation Error NE) and drivi
 The 3B fine-tuned model outperforms large models like GPT-5 and Qwen2.5-VL-72B. However, SR remains below 0.5, indicating significant room for improvement.
 
 ### Ablation Study
+
 | Training Stage | Planner | DS ↑ | SR ↑ | NE ↓ | L2 ↓ | Collision ↓ |
 |------|------|------|------|------|------|------|
 | SFT | DiffusionDrive | 0.49 | 0.21 | 0.53 | 0.457 | 0.107 |

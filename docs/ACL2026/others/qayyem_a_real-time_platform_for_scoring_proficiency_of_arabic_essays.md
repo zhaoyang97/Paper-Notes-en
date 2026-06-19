@@ -82,6 +82,7 @@ Average QWK for each model across 8 prompts in the LAILA dataset:
 | **TRATES** | **0.557** | **0.696** | **0.657** | **0.664** | **0.652** | **0.608** | **0.643** | **0.744** | **0.653** |
 
 ### Efficiency-Effectiveness Trade-off
+
 | Model | Avg QWK | Inference Time per Essay |
 |------|----------|-------------|
 | NN | 0.574 | 0.2 s |

@@ -97,6 +97,7 @@ Comparison with post-hoc detection (logp, LogRank, DetectGPT, GPTZero) and activ
 Post-hoc methods achieve AUROC scores of ~47–52% (near random), showing passive detection is unreliable for code. CodeTracer shows the smallest Pass@1 drop (HumanEval -2.77pp vs WLLM -7.37pp) while achieving ~5pp higher TPR than the runner-up. The 1.5B-trained $\pi_\phi$ transfers to an OpenCoder-8B model, yielding 71.77% Pass@1 (vs 72.04% base) and 78.69% AUROC.
 
 ### Ablation Study
+
 | Configuration | Pass@1 (%) | AUROC (%) | TPR (%) | Note |
 |------|-----------|-----------|---------|------|
 | CodeTracer (full) | 60.82 | 82.95 | 46.34 | Full three rewards |

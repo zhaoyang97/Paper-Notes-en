@@ -95,6 +95,7 @@ Comparison of frame-level mAP on TSU, Charades, and Multi-THUMOS using I3D and V
 Under I3D, MoVie outperforms the previous SOTA (MS-TCT) by +15.9% on TSU-CS and +3.7% on Multi-THUMOS. It also surpasses the pure motion model LAC by +12.8% on TSU-CS, suggesting that "guiding vision" is far more effective than using motion in isolation.
 
 ### Ablation Study
+
 | Configuration | TSU-CS (%) | Charades (%) | Description |
 |------|-----------|--------------|------|
 | Baseline (Visual only) | 35.8 | 16.4 | ViCLIP baseline |

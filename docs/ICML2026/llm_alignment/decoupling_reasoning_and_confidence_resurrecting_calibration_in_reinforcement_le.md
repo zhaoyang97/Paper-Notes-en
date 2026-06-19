@@ -94,6 +94,7 @@ Comparison of Base, GRPO, RLCR, CCGSPG, and DCPO across five math benchmarks (MA
 Key takeaway: DCPO's accuracy is on par with or better than GRPO (60.8 vs 57.4), while ECE is slashed to 0.128 (a 71.6% reduction relative to Base). 
 
 ### Ablation Study
+
 | Configuration | Overall Acc | Overall ECE | Note |
 |------|-------------|-------------|------|
 | DCPO (Hybrid) | 60.8 | 0.128 | Full model |

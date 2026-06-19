@@ -91,6 +91,7 @@ The evaluation covers three camera trajectories: pure rotation (immersion), pure
 Only SphericalDreamer achieves near-perfect coverage across all three trajectories with the best BRISQUE scores. LayerPano3D succeeds in rotation but fails during translation (0.476 coverage); WonderJourney succeeds in translation but fails during rotation (0.556 coverage), confirming the trade-off between immersion and navigability in prior work.
 
 ### Ablation Study
+
 | Configuration | Key Observation | Description |
 |------|----------|------|
 | Full | Optimal quality and geometry | Complete model (LDP + HB + Multi-sphere fusion) |

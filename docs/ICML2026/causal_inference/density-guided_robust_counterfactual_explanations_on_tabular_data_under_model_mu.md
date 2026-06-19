@@ -89,6 +89,7 @@ Evaluated on 8 datasets (4 synthetic: Moons/Circles/Spirals/Chessboard; 4 real t
 Validity leads significantly on real datasets while cost decreases; synthetic datasets are near saturation, but DensityFlow remains the leader.
 
 ### Ablation Study
+
 | Configuration | Adult Validity | Blood Validity | Compas Validity | HELOC Validity |
 |---------------|---------------|---------------|----------------|---------------|
 | Full DensityFlow | 0.901 | 0.662 | 0.729 | 0.757 |

@@ -111,6 +111,7 @@ Final CQS comparison across metrics (Model (b) leads in all four, particularly i
 The key takeaway is that **CMR is positive for all three baselines**, proving they successfully learned the preference direction. CQS correctly penalizes Model (a) for poor absolute fidelity despite its preference margin.
 
 ### Ablation Study
+
 | Dimension | Config | ∆E00 CQS | PSNR CQS | Insight |
 |---------|------|---------|---------|------|
 | Training Users | N=50 | 0.185 | 30.39 | More users yield better results. |

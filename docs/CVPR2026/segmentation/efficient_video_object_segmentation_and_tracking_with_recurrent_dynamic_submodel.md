@@ -96,6 +96,7 @@ Comparing RDS with other strategies on SAM2 for DAVIS 2017:
 RDS achieves 38.2 FPS (1.3× speedup) with only 7.6M parameters (3% of total), while J&F remains high at 89.6. Models like DyT have higher J&F but are actually slower than the original SAM2 due to routing overhead.
 
 **Cross-model Transferability**:
+
 | Model | Config | DAVIS J&F | SA-V G | YTVOS | FPS |
 |------|------|------|------|------|------|
 | SAM2 | Base | 90.0 | 78.5 | 88.5 | 29.8 |
@@ -104,6 +105,7 @@ RDS achieves 38.2 FPS (1.3× speedup) with only 7.6M parameters (3% of total), w
 | SAMURAI | w/ RDS₀.₆ | 90.1 | 74.7 | 85.6 | 35.7 |
 
 ### Ablation Study
+
 | Config | Result | Insight |
 |------|---------|------|
 | Single vs. Dense Router | Latency 17.2ms → 0.5ms | Critical for real acceleration (Table 4) |

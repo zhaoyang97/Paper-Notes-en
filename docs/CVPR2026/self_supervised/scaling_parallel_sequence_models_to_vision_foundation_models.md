@@ -93,6 +93,7 @@ Inspired by MaTVLM, the authors also preserve a small number of attention layers
 ## Key Experimental Results
 
 ### System Efficiency (A100, B=32, C=1152)
+
 | Resolution | Metric | Attention | FlashAttention | GSPN | C-GSPN (Ours) |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | 1036 | Sub-layer Latency (ms) | 205.90 | 32.81 | 9.95 | **0.18** |
@@ -104,6 +105,7 @@ Inspired by MaTVLM, the authors also preserve a small number of attention layers
 At the sub-layer level, Ours is up to 1097× faster than dot-product attention and 55.3×–86.9× faster than original GSPN. At the block level at 2K, Ours is 4.28× faster than FlashAttention, with 1.67×/3.82× higher throughput at 1K/2K respectively.
 
 ### Main Results (Teacher OpenCLIP SO/14@378, 600M pairs)
+
 | Method | Params | Top-1 | ADE20K | COCO | Macro Avg |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | OpenCLIP SO/14 (Teacher) | 427M | 84.1 | 45.8 | 47.7 | 64.6 |
@@ -114,6 +116,7 @@ At the sub-layer level, Ours is up to 1097× faster than dot-product attention a
 C-GSPN matches the ViT→ViT baseline (63.3 vs 63.5) with 15% fewer parameters, significantly outperforms the original GSPN (62.7), and even exceeds the teacher in segmentation (ADE20K +0.2%).
 
 ### Ablation Study
+
 | Configuration | Observation | Explanation |
 | :--- | :--- | :--- |
 | Contrastive Loss only | Worst | Pure CL is insufficient under compute constraints |

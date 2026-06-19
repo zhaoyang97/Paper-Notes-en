@@ -84,6 +84,7 @@ Evaluated on 4 in-distribution and 2 out-of-distribution (AndroidWorld, KApps) b
 gWorld-8B outperforms Llama 4 402B and GLM-4.6V 106B in instruction accuracy. Compared to the base Qwen3-VL 32B, it improves IAcc. by 27.1 percentage points and reduces rendering failure from 11.0% to under 1%.
 
 ### Ablation Study
+
 | Configuration | Key Metrics | Note |
 |------|---------|------|
 | Naive $S_{t+1}^{\text{code}}$ Synthesis | IAcc. 94.6% | No ground-truth pixel ref |

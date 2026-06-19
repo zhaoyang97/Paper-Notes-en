@@ -87,6 +87,7 @@ On a longitudinal chest CT dataset from five institutions (each patient having e
 CIDEr improved from 31.70 (best baseline) to 42.80, showing that temporal and demographic-aware adaptation significantly improves content relevance. On the public MIMIC-CXR dataset, FedTAR achieved a CE-F1 of 33.21 and CIDEr of 120.58, outperforming most baselines.
 
 ### Ablation Study
+
 | Configuration | BLEU-4 | ROUGE-L | CIDEr | Description |
 |------|--------|---------|-------|------|
 | FedTAR w/o GMM | 12.07 | 28.65 | 41.56 | No demographic soft clustering |

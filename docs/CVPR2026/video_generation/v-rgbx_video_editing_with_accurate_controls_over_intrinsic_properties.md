@@ -128,6 +128,7 @@ RGB→X→RGB Cycle Consistency (End-to-end vs. Original):
 | RealEstate10K | **V-RGBX** | **17.88** | **0.7533** | **633.76** |
 
 ### Ablation Study
+
 | Configuration | Key Metric | Description |
 |------|---------|------|
 | V-RGBX (Ours) | PSNR 22.42 / FVD 367.89 | Full model with keyframe reference |

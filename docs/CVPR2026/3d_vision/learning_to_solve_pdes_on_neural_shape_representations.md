@@ -112,6 +112,7 @@ Conclusion: **Accuracy is comparable to CPM**, but at the "Very fine" resolution
 Key Finding: Under the same train-test split (only seeing *Spike*), the proposed method consistently outperforms GINO. GINO's error is an order of magnitude higher because it assumes a fixed discretization and is not designed for neural implicit geometry.
 
 ### Ablation Study
+
 | Configuration | Conclusion |
 |------|------|
 | Normal Consistency $L_{\mathrm{NC}}$ | Small weights stabilize error reduction; excessive weights biase the solution toward a trivial normal-invariant field. |

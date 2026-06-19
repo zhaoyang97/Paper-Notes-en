@@ -88,6 +88,7 @@ On the Occ3D-nuScenes validation set, ShelfOcc pseudo-labels were used to train 
 Note: Geometric IoU measures voxel occupancy accuracy regardless of semantic class.
 
 ### Ablation Study
+
 | Configuration | mIoU | Geometric IoU | Note |
 | :--- | :--- | :--- | :--- |
 | Direct Pseudo-label Evaluation | 9.62 | 26.00 | Foundation model raw labels are insufficient |

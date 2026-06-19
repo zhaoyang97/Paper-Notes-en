@@ -97,6 +97,7 @@ On the DTU dataset (3/6/9 views), TWINGS achieves SOTA across PSNR/SSIM/LPIPS/AV
 Qualitatively, competing methods fail to reconstruct window frames or misalign text on DTU, miss white columns on Mip-NeRF360, or lose ceiling sprinklers on LLFF. TWINGS faithfully recovers these high-frequency details.
 
 ### Ablation Study
+
 | Configuration | Key Metric | Notes |
 | :--- | :--- | :--- |
 | Full (multi-view correspondence) | DTU 3-view PSNR 21.52 / SSIM 0.880 | Complete model |

@@ -97,6 +97,7 @@ Evaluated on ChestX-ray14 (14 classes) and CheXpert (14 pathology observations) 
 DARC notably outperforms causal methods (CDCL, Nie et al.) that only handle a single type of confounding, indicating that the dual adjustment clears confounding more thoroughly.
 
 ### Ablation Study
+
 | ID | Local(A.L.D.+A.C.A.) | Global(C.S.+C.H.) | mAUC | Description |
 |----|------|------|------|------|
 | S0 | - | - | 0.828 | Pure ConvNeXt Baseline |

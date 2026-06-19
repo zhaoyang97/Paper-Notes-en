@@ -87,6 +87,7 @@ On **LIBERO-LONG** (10 long-horizon tasks, each consisting of 2-3 sequential sub
 CLaD also excels in efficiency—25 Hz inference with only 4 GB VRAM, significantly lower than OpenVLA (6 Hz / 15 GB) and π0.5 (10 Hz / 19 GB).
 
 ### Ablation Study
+
 | Configuration | Avg. Success Rate | Description |
 |------|-----------|------|
 | Full CLaD (Dual-modal foresight) | 94.7% | — |

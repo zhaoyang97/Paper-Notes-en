@@ -98,6 +98,7 @@ Evaluated on BraTS-2018 / 2020 using the Dice Similarity Coefficient (DSC) for E
 Compared to the strongest customized method on 2018 (MMCFormer), the proposed method improves ET/TC/WT by +1.3 / +2.1 / +0.9 and achieves the best performance in 12 out of 15 combinations. Most notable is the performance when **T1c (the most critical modality) is missing**, where ET and TC improve by an average of +3.65 and +4.3, demonstrating strong compensation capabilities.
 
 ### Ablation Study (BraTS-2018, Mean DSC % across all combinations)
+
 | Configuration | ET | TC | WT | Description |
 |------|----|----|----|------|
 | Full Model | 66.0 | 81.4 | 86.7 | — |

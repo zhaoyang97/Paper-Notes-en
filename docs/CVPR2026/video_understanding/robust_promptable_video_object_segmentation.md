@@ -100,6 +100,7 @@ Key observation: Image restoration methods (URIE/AirNet) and per-frame robustifi
 Training only 1.1M parameters with 22GB VRAM yields better results than full fine-tuning of 80.9M parameters (71.8 vs. 71.5), demonstrating that memory-conditioned robustification is both more efficient and more accurate. In long videos (~6s segments concatenated to ~42s/1K frames), SAM2's performance collapses from 69.6 to 52.3, while MoGA drops from 71.8 to 56.2, maintaining its lead and showing gating stability as memory grows.
 
 ### Ablation Study
+
 | Configuration | MVSeg-adv $\mathcal{J}\&\mathcal{F}$ | Description |
 |------|------|------|
 | No condition | 69.6 | Equivalent to SAM2 baseline |

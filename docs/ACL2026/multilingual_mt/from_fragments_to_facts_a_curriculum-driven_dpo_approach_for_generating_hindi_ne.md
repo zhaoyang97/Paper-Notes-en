@@ -89,6 +89,7 @@ Experiments fine-tuned five models: Gemma-2-9B-It, Llama-3.1-8B-Instruct, Mistra
 ## Key Experimental Results
 
 ### Main Results
+
 | Model | Method | ROUGE-1 | ROUGE-2 | ROUGE-L | METEOR | BERTScore |
 |------|------|---------|---------|---------|--------|-----------|
 | mT5 | DPO | 17.93 | 9.14 | 13.59 | 22.87 | 73.61 |
@@ -99,6 +100,7 @@ Experiments fine-tuned five models: Gemma-2-9B-It, Llama-3.1-8B-Instruct, Mistra
 | Gemma2-9B | Hin-DPO | 33.55 | 21.64 | 27.91 | 33.84 | 83.67 |
 
 ### Ablation Study
+
 | Experiment | Configuration | mT5 Results | Llama3.1-8B Results | Description |
 |------|------|----------|-------------------|------|
 | Curriculum | DPO w/o CL | R-L 13.59 / BS 73.61 | R-L 28.73 / BS 80.98 | Standard DPO |

@@ -89,6 +89,7 @@ The training objective is unchanged. The underlying RL algorithm is GRPO (group 
 Experiments were primarily conducted on 8 nodes (8×H20 96GB per node + NVLink + 1.6Tbps IB) using Qwen2.5-3B/7B-Math/14B/32B and Qwen3-30B-A3B (MoE). Datasets include DAPO-MATH (7B–32B) and MATH-lighteval (3B). Baseline comparisons include VeRL (SOTA open-source RL framework) and Tail Batching (representative prompt-level scheduling like RollPacker).
 
 ### Main Results: End-to-End Throughput Speedup (vs VeRL)
+
 | Model | VeRL | Tail Batching | DARTS | Gain vs VeRL | Gain vs Tail Batching |
 |------|------|----------------|-------|-----------|-------------------|
 | Qwen2.5-3B | 1.00× | 1.07× | 1.29× | 1.29× | 1.21× |
@@ -99,6 +100,7 @@ Experiments were primarily conducted on 8 nodes (8×H20 96GB per node + NVLink +
 | BBH Zero-shot (Qwen2.5-Math-7B) | 56.6 | — | 58.8 | +2.2 | — |
 
 ### Ablation Study: Component Contribution Breakdown (Qwen2.5-14B, 32×H20)
+
 | Configuration | Speedup | Description |
 |------|---------|------|
 | VeRL baseline | 1.00× | Standard GRPO + Synchronous on-policy |

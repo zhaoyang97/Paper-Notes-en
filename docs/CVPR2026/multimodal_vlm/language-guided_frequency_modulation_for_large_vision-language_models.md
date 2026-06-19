@@ -72,6 +72,7 @@ Training data includes LLaVA-1.5 (558K PT + 665K IT) / Mini-Gemini (1.2M+1.5M) /
 ## Key Experimental Results
 
 ### Main Results
+
 | Method | LLM | SQAI | MMB | MMEp | MM-Vet | MathVista | GQA |
 |------|-----|------|-----|------|---------|-----------|-----|
 | LLaVA-v1.5 | Vicuna-13B | 71.6 | 67.7 | 1531 | 36.1 | 27.6 | 63.3 |
@@ -82,6 +83,7 @@ Training data includes LLaVA-1.5 (558K PT + 665K IT) / Mini-Gemini (1.2M+1.5M) /
 Within the LLaVA framework, LFM consistently outperforms linear projection and Dense Connector across various LLM backbones (2.7B to 34B). When integrated into SoTA LVLMs like InternVL2.5 and Qwen2.5-VL, LFM yields consistent gains across all scales (1B to 8B) on MME, MMB, and MathVista.
 
 ### Ablation Study
+
 | Interaction Strategy | Training-Free | MMStar | MMB |
 |------|--------|--------|-----|
 | No Interaction (baseline) | ✓ | 55.36 | 78.49 |

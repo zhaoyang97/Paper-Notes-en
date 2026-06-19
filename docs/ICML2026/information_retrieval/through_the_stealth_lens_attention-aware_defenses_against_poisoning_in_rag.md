@@ -85,6 +85,7 @@ Evaluation on 4 datasets (RQA, RQA-MC, NQ, HotpotQA) × 5 LLMs (Llama2-7B-Chat /
 Key Findings: AV Filter maintains **clean RAG utility** with minimal drops (average drop $\le 5\%$ vs. Vanilla), whereas Keyword/Decoding (isolate-then-aggregate) drops by 15-20%. Simultaneously, RACC is up to 20% higher than baselines under PIA/Poison attacks.
 
 ### Ablation Study
+
 | Configuration | Key Finding | Description |
 |------|---------|------|
 | $\alpha = 5 / 10 / \infty$ | Similar performance, $\alpha=10$ is slightly better | The number of top-$\alpha$ tokens should match "Heavy Hitters" in malicious passages. |

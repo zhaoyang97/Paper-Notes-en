@@ -83,7 +83,7 @@ item_total: 138
 
 **🔬 ICLR2026** · **138** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (449)](../../CVPR2026/image_generation/index.md) · [🧪 ICML2026 (125)](../../ICML2026/image_generation/index.md) · [💬 ACL2026 (5)](../../ACL2026/image_generation/index.md) · [🤖 AAAI2026 (79)](../../AAAI2026/image_generation/index.md) · [🧠 NeurIPS2025 (218)](../../NeurIPS2025/image_generation/index.md) · [📹 ICCV2025 (213)](../../ICCV2025/image_generation/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (434)](../../CVPR2026/image_generation/index.md) · [🧪 ICML2026 (125)](../../ICML2026/image_generation/index.md) · [💬 ACL2026 (5)](../../ACL2026/image_generation/index.md) · [🤖 AAAI2026 (79)](../../AAAI2026/image_generation/index.md) · [🧠 NeurIPS2025 (218)](../../NeurIPS2025/image_generation/index.md) · [📹 ICCV2025 (213)](../../ICCV2025/image_generation/index.md)
 
 🔥 **Top topics:** Diffusion Models ×45 · Text-to-Image ×10 · Layout & Composition ×6 · Alignment/RLHF ×6 · Image Editing ×6
 

@@ -70,6 +70,7 @@ The proxy classifier is trained on reference domain data. The core estimation ob
 ## Key Experimental Results
 
 ### Main Results
+
 | Setup / Model | Granularity | LLMSurgeon Overlap Accuracy | Baseline (Strong/Representative) | Description |
 |--------|------|-----------------------------|------------------------|------|
 | OLMo-1B | 6-class Coarse | 94.46% | Recall 48.05% | High inversion advantage in distinct domains |
@@ -81,6 +82,7 @@ The proxy classifier is trained on reference domain data. The core estimation ob
 | StarCoder-15.5B | 87-class Fine | 30.37% | GradNorm 27.54% | Similar languages (C/C++) lead to ill-posedness |
 
 ### Ablation Study
+
 | Ablation Item | Configuration | Key Result | Conclusion |
 |------|------|---------|------|
 | Classifier Backbone | DistilBERT vs Transformer / TF-IDF / MLP | DistilBERT: 95.14%, Transformer: 90.22%, TF-IDF: 86.83%, MLP: 82.97% | Proxy quality directly impacts recovery |

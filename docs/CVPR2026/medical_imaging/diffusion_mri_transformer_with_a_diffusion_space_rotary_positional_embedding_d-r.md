@@ -105,6 +105,7 @@ Clinical Tasks (ADNI, CN vs. MCI Classification + ADAS Regression):
 *Ours* (Frozen + MLP) achieves the highest MCI Balanced Accuracy (64.7%) and best ADAS indicators, significantly outperforming standard ViT on raw dMRI.
 
 ### Ablation Study
+
 | Configuration | Observation |
 |---------------|-------------|
 | Full (D-RoPE + Alternating) | Best overall reconstruction and DTI metrics (FID 8.05, FA error 0.055). |

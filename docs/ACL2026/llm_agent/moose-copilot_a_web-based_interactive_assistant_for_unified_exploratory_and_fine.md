@@ -99,6 +99,7 @@ Experiments were conducted on TOMATO-Chem2, containing research problems, litera
 | MC2_with_strong_feedback_x4_oracle_rank | Oracle selection + 4 strong feedback refinements | 26.96% | 90.1 |
 
 ### Ablation Study
+
 | Guidance Signal | Comparison Setting | Observation |
 |----------|----------|------|
 | Initial Blueprint | MC 11.44% vs MC_with_hint 15.37% | Initial constraints significantly narrow the search space and improve exploration quality. |

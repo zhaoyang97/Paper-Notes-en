@@ -89,6 +89,7 @@ Evaluation uses CSD for style consistency and diversity, CLIP-T for text-image a
 In code-to-style, CoTyle (Ours) achieves significantly higher consistency (0.6007) and aesthetics (0.7173) than Midjourney. Diversity (0.7764) is slightly lower than Midjourney (0.8088), attributed to training data breadth. Under image-conditioned settings, CoTyle\* also outperforms open-source reference image methods in consistency.
 
 ### Ablation Study
+
 | Configuration | Aesthetics ↑ | CLIP-T ↑ | Consistency ↑ | Description |
 |------|------|------|------|------|
 | Full $\mathcal{L}_{\text{style}}$ | 0.7178 | 0.3230 | **0.5791** | Contrastive + Recon + VQ |

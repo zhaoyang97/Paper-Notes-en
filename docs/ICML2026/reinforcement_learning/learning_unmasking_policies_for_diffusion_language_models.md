@@ -73,6 +73,7 @@ The GRPO objective is a PPO-style ratio $\rho_t^g = \pi_\phi(\bm u_t^g)/\pi_{\ph
 ## Key Experimental Results
 
 ### Main Results
+
 | Dataset/Setting | Metric | Learned Policy | Fast-dLLM | Top-Confidence / Random |
 |--------|------|------|------|------|
 | GSM8K, $BL=32$ (semi-AR) | acc @ mid-NFE | Comparable to Fast-dLLM (~80% range) | Strong Baseline | Significantly Worse |
@@ -84,6 +85,7 @@ The GRPO objective is a PPO-style ratio $\rho_t^g = \pi_\phi(\bm u_t^g)/\pi_{\ph
 | Length Transfer $L=256\to512$ | GSM8K acc | Minimal drop | Significant Baseline Drop | — |
 
 ### Ablation Study
+
 | Configuration | Key Observation | Explanation |
 |------|---------|------|
 | Bernoulli vs. Dynamic Plackett-Luce | Similar performance | Bernoulli chosen for simpler implementation and closed-form likelihood |

@@ -74,6 +74,7 @@ Gap-K% itself requires no training and has no optimization loss. It is a referen
 ## Key Experimental Results
 
 ### Main Results
+
 | Dataset / Setting | Metric | Gap-K% | Strongest Baseline | Gain |
 |--------|------|------|----------|------|
 | WikiMIA length 32 original | Avg AUROC | 77.8 | Min-K%++ 75.7 | +2.1 |
@@ -88,6 +89,7 @@ Gap-K% itself requires no training and has no optimization loss. It is a referen
 | DIPPER paraphrase attack | AUROC | 66.6 | Min-K%++ 65.5 | Best under strong paraphrase |
 
 ### Ablation Study
+
 | Configuration | Key Metric | Description |
 |------|---------|------|
 | No smoothing | AUROC 72.3 | Uses raw token gaps; high volatility |

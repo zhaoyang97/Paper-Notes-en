@@ -106,6 +106,7 @@ In the attribute-to-total-score controlled evaluation (PARA), where the model pr
 | Ours (SRCC) | **0.768** | **0.695** | **0.673** | **0.712** | **0.677** | **0.789** |
 
 ### Ablation Study
+
 | Configuration | PICD ACC | MMP ACC | CADB SRCC/PLCC | PARA SRCC/PLCC | Description |
 |------|------|------|------|------|------|
 | W/O SFT | 0.444 | 0.547 | 0.596 / 0.587 | 0.761 / 0.782 | No composition prior injection |

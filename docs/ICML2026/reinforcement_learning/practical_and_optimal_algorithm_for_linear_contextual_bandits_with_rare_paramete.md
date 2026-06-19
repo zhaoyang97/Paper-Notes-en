@@ -93,6 +93,7 @@ $T=10{,}000$, 10 independent runs, $d$-dimensional uniform arm sampling. Baselin
 BLCE achieves the lowest runtime among all optimal algorithms and is comparable to suboptimal baselines. Regret results show BLCE-G and BLCE outperform all baselines across all $K$ regimes with lower variance.
 
 ### Theoretical Regret Comparison
+
 | Algorithm | Regret | Parameter Updates | Context-adaptive | Runtime |
 |------|--------|----------|-------------------|---------|
 | RS-OFUL | $\mathcal O(d\sqrt T\log T)$ | $\mathcal O(d\log T)$ | Yes | $\mathcal O((Kd+d^2)T+Kd^3\log T)$ |

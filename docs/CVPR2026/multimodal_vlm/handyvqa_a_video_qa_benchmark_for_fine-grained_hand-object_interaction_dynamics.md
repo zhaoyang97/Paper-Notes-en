@@ -93,6 +93,7 @@ Eight models (6 open-source + 2 closed-source) were evaluated. Average (Avg) exc
 The strongest model, Gemini-2.5-Pro, reaches only 72.6%, leaving a ~24% gap compared to humans. Location and Parts are the most difficult categories for all models.
 
 ### Ablation Study & Error Analysis
+
 | Configuration | Key Finding |
 |---------|---------|
 | Increased Frame Count/Resolution | Overall improvement; Gemini-2.5-Pro errors are lowest at 32 frames. |

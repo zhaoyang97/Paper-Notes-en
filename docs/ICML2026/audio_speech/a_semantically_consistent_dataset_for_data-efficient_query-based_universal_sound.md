@@ -82,6 +82,7 @@ Hive's results are evaluated across two layers: internal validation on the Hive 
 | VGGClean_eval | FlowSep(Hive) OQ | 3.18 | FlowSep (original) 2.99 | Reference-free quality improvement indicates more than just overfitting to Hive. |
 
 ### Ablation Study
+
 | Configuration | Key Metrics | Note |
 |------|---------|------|
 | Consistent Mixing AudioSep | SDR 4.12, SI-SDR 3.37, CLAP-T 0.29 | Trained on 175k mixtures using semantic compatibility matrix. |

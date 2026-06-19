@@ -34,6 +34,7 @@ Addressing the challenge where "repetitive but geometrically distinct components
 **Core Idea**: Train a material-aware part encoder using supervised contrastive loss to pull parts of the same material together and push those of different materials apart. During inference, retrieval is performed based on embedding distance and a threshold to obtain material-consistent part groups.
 
 ## Method
+
 ### Overall Architecture
 The method solves the problem: "given a query part, retrieve all parts of the same material from the same mesh." The approach first renders each part into three different contextual images (isolated part / part-with-context / full object). These are fed into a part encoder initialized with DINO-v3 to obtain material-aware embeddings. The embedding space is shaped using supervised contrastive loss during training. During inference, nearest neighbor retrieval is performed on the query, with threshold $\lambda$ controlling the selection, directly producing the part group. The pipeline follows a sequential structure:
 
@@ -88,6 +89,7 @@ Benchmark: 100 shapes / 241 queries, covering a wide span (median parts per mesh
 Compared to the strongest baseline DINO-v3 small, retrieval AUC increases by +8.6% and grouping F1 by +16.6%. Pure geometric Histogram Matching drops sharply as recall increases, showing that shape descriptors are fragile and only effective for near-duplicate parts. PartField is weaker because its training objective (hierarchical part segmentation) is not aligned with learning material-consistent embeddings.
 
 ### Ablation Study
+
 | Configuration | AUC | R-Prec | mAP | R@20 | Description |
 |------|-----|--------|-----|------|------|
 | Full model | ~89.7 | ~88.3 | ~91.7 | ~62.8 | Complete model |

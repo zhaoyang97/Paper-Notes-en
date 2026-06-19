@@ -114,6 +114,7 @@ Average across 4 backbones: SMoES improves by +2.2% overall (+0.9% multimodal, +
 Overall: EP communication reduced by 56.1%; throughput increased by 12.3%.
 
 ### Ablation Study
+
 | Configuration | MSI | Multimodal | Language | Overall |
 | :--- | :--- | :--- | :--- | :--- |
 | No Specialization | .177 | 100% | 100% | 100% |

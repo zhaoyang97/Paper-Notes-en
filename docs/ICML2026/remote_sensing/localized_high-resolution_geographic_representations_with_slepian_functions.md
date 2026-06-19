@@ -93,6 +93,7 @@ Across five tasks and over a dozen baselines, the key findings are identified be
 | Species (eBird S&T / IUCN) | mAP $\uparrow$ | Best / Superior even out-of-cap | Pure Slepian fails out-of-cap | Demonstrates hybrid necessity |
 
 ### Ablation Study
+
 | Configuration | Key Metric | Description |
 | :--- | :--- | :--- |
 | Full Hybrid Slepian (L_r=120, L_g=10) | **Best** | Complete model |

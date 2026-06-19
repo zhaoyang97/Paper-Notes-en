@@ -32,6 +32,7 @@ HairGuard leverages image matting datasets to construct fine-grained depth super
 **Core Idea**: Matting datasets are used to synthesize training pairs with "fine-grained soft boundary depth ground truth." A repair network is trained to automatically locate and refine soft boundary depth. Combined with a specialized painter and fuser, the depth refinement benefits are propagated to stereo conversion and novel view synthesis.
 
 ## Method
+
 ### Overall Architecture
 HairGuard treats the image matting composition formula $I = \alpha \cdot I_{FG} + (1-\alpha) \cdot I_{BG}$ as a unified definition for soft boundaries: regions where $\alpha \in (0, 1)$. The system is a serial pipeline where "depth is fixed first, then views are synthesized," involving three collaborative components:
 

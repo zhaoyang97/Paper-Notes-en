@@ -100,6 +100,7 @@ Evaluations were conducted on the Swing Dance test set, Gen-dataset, and unseen 
 On Swing Dance (complex dual-person interaction), the proposed method leads in all metrics. On the Unseen videos with higher interaction and 3~7 people, the Extended model shows significant improvement, reducing FVD from the next-best 624.45 to 358.74, proving its generalization capability.
 
 ### Ablation Study
+
 | Configuration | Conclusion | Description |
 |------|------|------|
 | Addition-driven (Feature sum) | OK for 2, fails for >2 | Handles 2 people after training but cannot scale. |

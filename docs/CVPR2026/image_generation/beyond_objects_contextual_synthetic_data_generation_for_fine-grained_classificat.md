@@ -87,6 +87,7 @@ Evaluated across three backbones (CLIP / ImageNet-ResNet-50 / MAE) $\times$ four
 Across CLIP/ImageNet/MAE, **5-shot real images + BOB synthetic data** outperform **10-shot real images** on almost all datasets except Pets. Most notably, for Cars (ImageNet backbone), 5-shot+BOB achieves 88.64% vs. 10-shot real only at 78.50% (+10.14%).
 
 ### Ablation Study (Tab. 4, 10-shot Aircraft + ResNet-50)
+
 | Preservation | Marginalization | Accuracy |
 | :---: | :---: | :---: |
 | ✗ | ✗ | 68.00 (= DataDream) |

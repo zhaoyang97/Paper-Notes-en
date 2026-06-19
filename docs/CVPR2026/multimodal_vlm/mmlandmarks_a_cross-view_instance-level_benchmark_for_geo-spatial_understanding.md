@@ -109,6 +109,7 @@ To prevent inflation from location names in Wikipedia first sentences, GPT-3.5 w
 | Text→Satellite | **MMCLIP** | **388** | **17.3** | **13.4** |
 
 ### Ablation Study (Table 6)
+
 | Configuration | mAP@1k S→G | mAP@1k G→S | G/S→GPS(1km) | Notes |
 |------|------|------|------|------|
 | all⇔all, G,S images only | 17.59 | 25.59 | — | Only two image modalities |

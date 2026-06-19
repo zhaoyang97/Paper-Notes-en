@@ -101,6 +101,7 @@ Results on Face2Comics / ImageNet Inpainting:
 | ImageNet Inpaint | **DBMSolver** | 6 | 4.98 | **Latency 3.66s (45.4x throughput)** |
 
 ### Ablation Study
+
 | Configuration | Key Observation | Description |
 |------|---------|------|
 | $k=1$ (≈ DBIM-1) | Higher FID | 1st-order Taylor expansion, large approximation error |

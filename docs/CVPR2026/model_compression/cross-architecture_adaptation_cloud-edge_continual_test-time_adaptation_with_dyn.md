@@ -105,6 +105,7 @@ Communication Overhead (Samples uploaded as % of test stream):
 | **Ours** | **375.5K (50.1%)** | **335.1K (44.7%)** |
 
 ### Ablation Study
+
 | Config | Mean Accuracy (%) | Description |
 |------|---------|------|
 | Full (CAA) | 41.2 | Full model |

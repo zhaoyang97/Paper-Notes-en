@@ -87,6 +87,7 @@ Evaluation includes pairwise comparison (Win Rate, Hard Win Rate, Bradley-Terry/
 I achieved the highest Elo (1554.60) and BT (3.57). In single evaluations, I reached a human funny mean of 0.810, far exceeding external methods (0.195) and other strategy combinations (0.38–0.40).
 
 ### Ablation Study
+
 | Configuration | Key Metrics | Note |
 |------|---------|------|
 | Full HUMORCHAIN (I) | Human Funny 0.810 / Elo 1554.6 | Theory Chain + Discriminator Loop |

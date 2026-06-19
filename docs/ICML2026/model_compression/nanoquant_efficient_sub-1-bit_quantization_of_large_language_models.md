@@ -92,6 +92,7 @@ Evaluation covers 17 models from 5 families (Llama-2/3, Gemma-3, Qwen-3, Rnj-1) 
 | Llama-2-7B vs QAT DBF | NanoQuant 1.05M | 1.00 | 9.01 vs DBF 9.25 | DBF used 1.38B tokens |
 
 ### Ablation Study
+
 | Configuration | PPL ↓ | Zero-shot ↑ | Explanation |
 |---|---|---|---|
 | LB-ADMM Init Only | 206.03 | 36.89 | Failure without reconstruction |

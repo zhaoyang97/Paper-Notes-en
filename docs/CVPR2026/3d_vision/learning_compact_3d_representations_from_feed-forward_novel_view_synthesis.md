@@ -88,6 +88,7 @@ Novel View Synthesis (RealEstate10K, 12/24/36 views): C3G achieves quality compa
 Ours dominates in memory (4.1MB vs 61.5MB, ~15× reduction), Gaussian count (~65× fewer), and rendering speed (785 vs 625 FPS), while achieving higher understanding metrics (MaskCLIP mIoU 0.369 vs 0.286).
 
 ### Ablation Study
+
 | Configuration | Key Metrics (PSNR / SSIM / LPIPS) | Description |
 |------|---------|------|
 | Full (Low-pass + Unfrozen Encoder) | 22.39 / 0.713 / 0.259 | Full model |

@@ -95,6 +95,7 @@ SimplerEnv (Visual Matching protocol, OXE Pre-trained + Fractal Fine-tuned):
 | **SOMA** | **85.0** | **73.0** | 31.5 | **63.2** |
 
 ### Ablation Study
+
 | Configuration | OOV Avg. SR (%) | Description |
 |------|---------|------|
 | Scan + GR00T | 18.5 | Scanning only, no persistent memory |

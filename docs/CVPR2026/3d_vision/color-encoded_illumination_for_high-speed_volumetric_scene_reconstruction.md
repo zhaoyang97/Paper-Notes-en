@@ -89,6 +89,7 @@ Prototype: 8 IDS UI-3240CP global shutter cameras (1280×1024, 60 FPS) + MOBL-30
 Since no camera modification is required, this is the first work to combine **volumetric rendering with compressive high-speed imaging** for multi-view high-speed volumetric reconstruction.
 
 ### Ablation Study (Simulation MAE, using novel view as GT)
+
 | Variable | Trend / Key Turning Point | Explanation |
 |------|----------------|------|
 | Number of interframes $N$ | Significant degradation near $N{\approx}28$ | More $N$ leads to crowded colors and overlap; cosine distance in RGB space decreases, increasing noise sensitivity. |

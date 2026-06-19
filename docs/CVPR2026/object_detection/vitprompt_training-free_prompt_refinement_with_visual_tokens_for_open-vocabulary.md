@@ -96,6 +96,7 @@ Evaluated on three domain-shifted benchmarks using mAP50. FoggyCityscapes uses s
 ViTPrompt also results in SOTA across every individual corruption type in PASCAL-C/COCO-C.
 
 ### Ablation Study
+
 | Configuration | FoggyCityscapes | COCO-C (avg) | Description |
 | :--- | :--- | :--- | :--- |
 | Text-only | 28.89 | 25.57 | Static text embeddings only |

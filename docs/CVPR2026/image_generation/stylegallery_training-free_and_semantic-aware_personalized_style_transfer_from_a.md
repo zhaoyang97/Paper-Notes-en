@@ -77,6 +77,7 @@ The framework is completely **training-free**, based on pre-trained Stable Diffu
 The authors constructed a "StyleGallery" benchmark consisting of 25 style families (e.g., Van Gogh, Chinese Ink) with 4–17 images per style. Content regions categorized into 5 classes. 750 stylized results were generated. Metrics include a block-level matching "Style" score (using Hungarian algorithm on VGG features), Gram Loss, FID, LPIPS, and ArtFID.
 
 ### Main Results
+
 | Metric | StyTR-2 | StyleID | AD | StyleShot | Ours |
 |------|---------|---------|-----|-----------|------|
 | Style ↑ | 0.5219 | 0.4972 | 0.5249 | 0.5198 | **0.5337** |
@@ -88,6 +89,7 @@ The authors constructed a "StyleGallery" benchmark consisting of 25 style famili
 StyleGallery achieves the best performance across all five metrics: highest Style score (strongest stylization), lowest LPIPS (best structure preservation), and superior Gram/FID/ArtFID scores.
 
 ### Ablation Study
+
 | Configuration | LPIPS ↓ | FID ↓ | Style ↑ | Description |
 |------|---------|-------|---------|------|
 | Full ($\lambda_c=0.26$) | **0.3716** | **16.89** | **0.5337** | Full Model |

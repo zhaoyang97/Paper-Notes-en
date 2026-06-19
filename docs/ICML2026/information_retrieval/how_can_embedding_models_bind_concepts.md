@@ -64,6 +64,7 @@ Controlled dual-encoders use CLIP's symmetric contrastive loss with cosine simil
 ## Key Experimental Results
 
 ### Main Results
+
 | Dataset | Model | $R^2$ (avg / avg+pos) | Retrieval | Probing |
 |--------|------|------|----------|------|
 | Text (Synthetic caption) | CLIP | 0.90 / 0.92 | 0.97 | 0.99 |
@@ -84,6 +85,7 @@ CLIP scene embeddings can be reconstructed with high quality from the sum of obj
 Direct "object replacement" $\tilde{\bm{z}}=f(\bm{x}_{\bm{s}})-\bm{u}_{\bm{o}_1}+\bm{u}_{\bm{o}_1'}$ in embedding space yields embeddings reflecting counterfactual scenes. Notably, object embeddings estimated from single-object scenes can edit multi-object scenes (retrieval remains 0.97 on CLEVR), proving object components are almost "pluggable" geometric objects.
 
 ### Ablation Study
+
 | Configuration | Text Conc. / Obj. | Image Conc. / Obj. | Description |
 |------|-------------------|-------------------|------|
 | CLIP-B/32 Original | 1.00 / 1.00 | 0.94 / 0.96 | baseline |

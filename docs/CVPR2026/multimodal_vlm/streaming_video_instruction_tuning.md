@@ -87,6 +87,7 @@ OVO-Bench covers Real-time Perception, Backward Reasoning, and Forward Proactive
 **Key Conclusion**: Streamo-7B improves the Prev. SOTA Dispider by **+13.83%** on Forward Proactive tasks. Models trained at 1fps generalize to 2fps testing (improving by +4.66%) without retraining. Replacing ET-Instruct-164K with Streamo-Instruct-465K yields a +11.79% overall Gain.
 
 ### Offline Video Benchmarks (Capability Retention)
+
 | Model | OVO-RT | MVBench | TempCompass | VideoMME | LongVideoBench | Avg |
 |------|------|------|------|------|------|------|
 | Qwen2.5-VL-7B (Base) | 58.8 | 69.6 | 71.7 | 65.1 | 56.0 | 60.6 |
@@ -96,6 +97,7 @@ OVO-Bench covers Real-time Perception, Backward Reasoning, and Forward Proactive
 Streamo does not degrade; it outperforms online SOTA StreamingVLM and even exceeds the offline base by 3.4% on average across offline metrics.
 
 ### Ablation Study (Focal Loss, OVO-Bench Forward Tasks)
+
 | Base | Loss Type | REC | SSR | CRR |
 |------|------|------|------|------|
 | Qwen2.5-VL-3B | CrossEntropy | 6.45 | 20.99 | 41.67 |

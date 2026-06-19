@@ -98,6 +98,7 @@ The authors simulated a clinical decision support system for "personalized Warfa
 Weighted Risk Score (+1 for correct / -1 for incorrect): The doctor baseline is constant at 0.20; RCB achieves **0.291** under $\epsilon = 0.025$ and 0.265 under $\epsilon=0.035$. While maintaining high accuracy for the Medium population, RCB significantly improves accuracy for the Low/High long-tail segments.
 
 ### Ablation Study
+
 | Configuration | Key Phenomenon | Explanation |
 |---|---|---|
 | Tight Budget $\epsilon=0.025$ | Error rate ≈ 0.35 | Matches Lasso Bandit (Bastani & Bayati, 2020) performance without needing sparsity priors, while satisfying DBIC. |

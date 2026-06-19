@@ -96,6 +96,7 @@ Reconstructed binocular pairs are fed into stereo matchers (DEFOM, CREStereo). T
 Refine-DEFOM significantly improves over the baseline and outperforms monocular methods like Spike-T and DepthPro, approaching the performance of the theoretical upper bound.
 
 ### Ablation Study: ABC / CBA / RSF Modules (TartanAir, PSNR-L / SSIM-L / EPE)
+
 | Configuration | PSNR↑(L) | SSIM↑(L) | EPE↓ | Description |
 |------|------|------|------|------|
 | Baseline | 26.53 | 0.857 | 13.71 | Least Squares only |

@@ -66,6 +66,7 @@ The final training objective is a Flow-Matching style $\mathbb{E}_{t,r,x,e}\lVer
 ## Key Experimental Results
 
 ### Main Results (System-level, ImageNet 256×256, 1-NFE, Train from scratch)
+
 | Configuration | # params | Gflops | FID ↓ | IS ↑ |
 |------|------|------|------|------|
 | MF-B/2 | 131M | 23.1 | 6.17 | 208.0 |
@@ -77,6 +78,7 @@ The final training objective is a Flow-Matching style $\mathbb{E}_{t,r,x,e}\lVer
 iMF-XL/2 achieves a 1.72 FID (approx. 50% improvement over MF). Interestingly, iMF-B/2 at 89M matches the performance of the 676M MF-XL/2 (3.43), leading significantly at similar or smaller scales without distillation.
 
 ### Ablation Study (MF-B/2 backbone, 240 epochs, FID-50K)
+
 | Configuration | FID (w/o CFG) | FID (w/ CFG) | Description |
 |------|------|------|------|
 | Original MF | 32.69 | 6.17 | Starting point |

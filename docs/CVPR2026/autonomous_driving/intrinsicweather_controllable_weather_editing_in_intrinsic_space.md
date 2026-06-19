@@ -111,6 +111,7 @@ Ours leads across all metrics. Albedo PSNR jumps from ~11.9 (second best) to 27.
 AP75 improved from 13.15% to 24.60% (relative +87.1%), and mIOU improved from 24.13% to 30.05% (relative +24.5%).
 
 ### Ablation Study
+
 | Configuration | Albedo PSNR | Irradiance PSNR | Note |
 |------|------|------|------|
 | Full (w/ IMAA) | 27.99 | 29.66 | Full Model |

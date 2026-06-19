@@ -40,9 +40,9 @@ PINNfluence does not alter the PINN training process—it is a post-hoc analysis
 - **Input**: Trained PINN $\phi$, training set $\mathcal{X}$ (including PDE collocation points and IC/BC points), target quantity of interest $f$ (can be prediction $\hat{u}$, a specific loss component $L_i$, or a physical observable), and test points/regions.
 - **Mechanism**: Pairs the IHVP $\mathcal{H}_{\theta_0}^{-1}\nabla_\theta L(x;\theta_0)$ w.r.t $\theta$ with $\nabla_\theta f(z;\theta_0)$—avoiding explicit Hessian construction via low-rank Arnoldi approximation + Hessian-vector products.
 - **Three Granularity Levels**:
-  - Point-to-Point: $\operatorname{Inf}_{\theta_0}^{L\to f}(x,z)$;
-  - Point-to-Region / Region-to-Point: Summation over $z$ or $x$ in a region;
-  - Region-to-Region: Double summation, combined with normalization to obtain ratio metrics.
+    - Point-to-Point: $\operatorname{Inf}_{\theta_0}^{L\to f}(x,z)$;
+    - Point-to-Region / Region-to-Point: Summation over $z$ or $x$ in a region;
+    - Region-to-Region: Double summation, combined with normalization to obtain ratio metrics.
 - **Outputs**: (1) Point-to-point influence heatmaps; (2) Loss component decomposition ratios $r_{L_i}$ and cancellation scores $\kappa$; (3) Spatio-temporal region metrics, such as the temporal causality metric $\eta$.
 
 The pipeline structure calculates influence once and branches into multiple diagnostics: the sole core computation is the generalized influence function $\operatorname{Inf}^{L\to f}$, which is aggregated at three levels and then diverted into "loss component" and "spatio-temporal region" diagnostic branches to form a structural judgment of "well-trained vs. poorly-trained."

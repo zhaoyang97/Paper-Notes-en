@@ -44,6 +44,7 @@ The training objective is the standard multi-label binary cross-entropy loss $\m
 ## Key Experimental Results
 
 ### Main Results
+
 | Dataset / Architecture | Metric | MVProbe | Prev. SOTA | Gain |
 | :--- | :--- | :--- | :--- | :--- |
 | Model Jungle ResNet | Accuracy | 92.24 | ProbeX×4 87.16 | +5.08 |
@@ -54,6 +55,7 @@ The training objective is the standard multi-label binary cross-entropy loss $\m
 | SD1k LoRA Zero-shot | Accuracy | 97.96±0.29 | ProbeX 52.42±2.48 | +45.54 |
 
 ### Ablation Study
+
 | Configuration | Key Metric | Description |
 | :--- | :--- | :--- |
 | $XU$ only | ResNet 90.42 / DINO 74.17 | Single row first-order branch is strong but inferior to full version |

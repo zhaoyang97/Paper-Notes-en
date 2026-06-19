@@ -99,6 +99,7 @@ Progress across three stages on long video benchmarks:
 On Video-Holmes, EVA-GRPO reaches 37.2%, surpassing Video-R1 (36.5%).
 
 ### Ablation Study
+
 | Configuration | Trend | Note |
 |------|---------|------|
 | SFT only | High frames/rounds, low score | Only learns format, not efficiency |

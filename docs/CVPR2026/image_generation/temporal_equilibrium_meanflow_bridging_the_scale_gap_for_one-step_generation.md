@@ -97,6 +97,7 @@ All TEMF models trained from scratch for 240 epochs (XL+ for an additional 60), 
 Ours consistently outperforms MeanFlow/SoFlow at every scale; 2.62 (1-NFE) is the new SOTA for diffusion/flow one-step methods, and 2.30 (2-NFE) approaches multi-step DiT-XL/SiT-XL requiring 500 NFE. On CIFAR-10 unconditional (55M U-Net, pixel space, no EDM preconditioning), it achieves a new SOTA of 2.81 (vs. 2.92 for MeanFlow/SoFlow).
 
 ### Ablation Study (ImageNet 256×256, DiT-B/4 131M, FID 1-NFE)
+
 | Dimension | Config | FID | Note |
 |-----------|--------|-----|------|
 | Components | Baseline MeanFlow | 6.17 | Starting point |

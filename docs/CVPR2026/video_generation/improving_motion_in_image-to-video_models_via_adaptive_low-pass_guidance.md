@@ -96,6 +96,7 @@ Dynamic Degree increased by +23%, +36%, and +39% across the three models, while 
 | VidProM | CFG / ALG | 27.3 / **30.5** | 79.1 / **79.5** | 98.2 / 98.0 |
 
 ### Ablation Study
+
 | Configuration | Dynamic Degree | Description |
 |------|----------------|------|
 | $t_{\text{trans}}=0.06$ | Dynamic Degree +32% | Low-pass for only the first 6% of steps is enough to trigger motion without dropping quality. |

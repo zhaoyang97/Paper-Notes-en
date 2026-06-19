@@ -60,6 +60,7 @@ Regarding specific payoff settings: the default PD payoff is $(C,C)=(4,4)$, $(C,
 ## Key Experimental Results
 
 ### Main Results
+
 | Setting | Metric | Representative Result | Explanation | Conclusion |
 |--------|------|------|----------|------|
 | Default PD vs SREP | Total points | When SREP always defects, the $(D,D)$ baseline is 32 points; most LLMs cluster around 30 | Models usually identify constant defection and approximate optimal response | Simple algorithmic opponents are easier |
@@ -69,6 +70,7 @@ Regarding specific payoff settings: the default PD payoff is $(C,C)=(4,4)$, $(C,
 | RPS payoff counterfactual | Theoretical equilibrium | Shifted from uniform $(1/3, 1/3, 1/3)$ to $(0.2, 0.2, 0.6)$ | Persistence in uniform distribution shows failure to recalculate strategy | Payoff perturbation best exposes templating |
 
 ### Ablation Study
+
 | Configuration | Key Metric | Description |
 |------|---------|------|
 | Label-only counterfactual | Degradation usually moderate | Strong models remain stable; Mistral and others are more prone to fluctuations due to renamed actions |

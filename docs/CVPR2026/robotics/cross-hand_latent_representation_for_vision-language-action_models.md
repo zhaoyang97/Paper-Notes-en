@@ -111,6 +111,7 @@ Teleoperated trajectories from one hand are encoded and decoded to another hand 
 XL-VLA significantly outperforms the supervised LAD despite being entirely unsupervised and label-free, with LAD degrading noticeably on fine-grained tasks.
 
 ### Ablation Study (Latent Space Design, Lower is Better)
+
 | Configuration | Recon Joint↓ | Cross-embodiment PTdir↓ | RTdist↓ | Description |
 |------|------|------|------|------|
 | Ours (H128→64, dim 32) | 5.476 | 11.857 | 6.295 | Balanced full configuration |

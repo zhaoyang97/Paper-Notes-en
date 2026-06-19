@@ -83,7 +83,7 @@ item_total: 80
 
 **🧠 NeurIPS2025** · **80** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (24)](../../CVPR2026/llm_safety/index.md) · [🧪 ICML2026 (46)](../../ICML2026/llm_safety/index.md) · [💬 ACL2026 (115)](../../ACL2026/llm_safety/index.md) · [🔬 ICLR2026 (52)](../../ICLR2026/llm_safety/index.md) · [🤖 AAAI2026 (41)](../../AAAI2026/llm_safety/index.md) · [📹 ICCV2025 (10)](../../ICCV2025/llm_safety/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (11)](../../CVPR2026/llm_safety/index.md) · [🧪 ICML2026 (46)](../../ICML2026/llm_safety/index.md) · [💬 ACL2026 (115)](../../ACL2026/llm_safety/index.md) · [🔬 ICLR2026 (52)](../../ICLR2026/llm_safety/index.md) · [🤖 AAAI2026 (41)](../../AAAI2026/llm_safety/index.md) · [📹 ICCV2025 (10)](../../ICCV2025/llm_safety/index.md)
 
 🔥 **Top topics:** LLM ×18 · Adversarial Robustness ×17 · Alignment/RLHF ×6 · Reasoning ×6 · Federated Learning ×5
 

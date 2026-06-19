@@ -82,7 +82,7 @@ item_total: 39
 
 **💬 ACL2026** · **39** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (9)](../../CVPR2026/multi_agent/index.md) · [🧪 ICML2026 (15)](../../ICML2026/multi_agent/index.md) · [🔬 ICLR2026 (15)](../../ICLR2026/multi_agent/index.md) · [🤖 AAAI2026 (26)](../../AAAI2026/multi_agent/index.md) · [🧠 NeurIPS2025 (17)](../../NeurIPS2025/multi_agent/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (2)](../../CVPR2026/multi_agent/index.md) · [🧪 ICML2026 (15)](../../ICML2026/multi_agent/index.md) · [🔬 ICLR2026 (15)](../../ICLR2026/multi_agent/index.md) · [🤖 AAAI2026 (26)](../../AAAI2026/multi_agent/index.md) · [🧠 NeurIPS2025 (17)](../../NeurIPS2025/multi_agent/index.md)
 
 🔥 **Top topics:** Agents ×34 · LLM ×13 · Reasoning ×5 · Question Answering ×3 · Adversarial Robustness ×2
 

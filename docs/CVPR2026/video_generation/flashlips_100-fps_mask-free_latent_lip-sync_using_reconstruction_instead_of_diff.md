@@ -107,6 +107,7 @@ Evaluated on HDTF, CelebV-HQ, and CelebV-Text using 100 reconstruction and 100 c
 Both FlashLips versions ranked top two for LipScore. ID preservation was first in Reconstruction (tied with LatentSync) and second in Cross-Audio. While PSNR/SSIM ranked third, the gap was small, indicating that single-step reconstruction does not sacrifice significant fidelity.
 
 ### Inference Speed
+
 | Model | FPS ↑ | Relative Speedup (vs U-Net) |
 |------|-------|----------------|
 | KeySync | 3.60 | 30.4× |
@@ -119,6 +120,7 @@ Both FlashLips versions ranked top two for LipScore. ID preservation was first i
 The U-Net version at 109 FPS is 30x faster than KeySync and is the only high-quality solution significantly exceeding real-time requirements.
 
 ### Ablation Study
+
 | Configuration | Key Metrics | Description |
 |------|---------|------|
 | Lip Pose V1 8D | LipScore 0.34 / ID 0.83 | Frozen expression encoder only. Low identity leakage; saturates at 8D. |

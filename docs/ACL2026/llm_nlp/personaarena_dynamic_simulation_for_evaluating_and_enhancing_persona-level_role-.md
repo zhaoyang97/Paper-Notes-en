@@ -90,6 +90,7 @@ The main framework is for evaluation, but the authors select Qwen3-8B for post-t
 ## Key Experimental Results
 
 ### Main Results
+
 | Model | Average Score | Observation |
 |------|---------------|------|
 | GPT-5.1 | 3.963±0.04 | Highest overall, leading in AD/BC/IR dimensions |
@@ -100,6 +101,7 @@ The main framework is for evaluation, but the authors select Qwen3-8B for post-t
 | Qwen3-8B | 3.363±0.04 | Selected as the base for SFT/DPO enhancement |
 
 ### Ablation Study
+
 | Analysis Item | Result | Note |
 |--------|------|------|
 | Multi-judge vs. Human Correlation | Multi-judge Overall 0.683; Qwen3-32B 0.669; DeepSeek-R1 0.330 | Multi-judge setup is closest to human scoring |

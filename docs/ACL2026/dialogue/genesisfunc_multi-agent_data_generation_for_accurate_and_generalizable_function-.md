@@ -93,6 +93,7 @@ The primary model, GenesisFunc-8B, is obtained by performing SFT on Qwen3-8B usi
 ## Key Experimental Results
 
 ### Main Results
+
 | Dataset / Setting | Metric | GenesisFunc-8B | Strong Baseline | Gain / Conclusion |
 |--------|------|------|----------|------|
 | BFCL Non-Live | Overall accuracy | 93.31 ± 0.42 | ToolACE-8B 91.04; Qwen3-32B 89.90 | Outperforms same-scale SOTA and larger models |
@@ -103,6 +104,7 @@ The primary model, GenesisFunc-8B, is obtained by performing SFT on Qwen3-8B usi
 | Out-of-domain Avg | API-Bank / ACEBench | API-Bank 64.79; ACEBench ~78.64 | Prior open-source SOTA | Relative improvements of 7.3% and 9.4% |
 
 ### Ablation Study
+
 | Configuration | Key Metric | Description |
 |------|---------|------|
 | Remove Judge Agent | BFCL Non-Live / Live decrease | Dialogue judging is critical for sample accuracy |

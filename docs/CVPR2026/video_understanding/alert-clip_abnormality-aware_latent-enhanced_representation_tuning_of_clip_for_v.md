@@ -108,6 +108,7 @@ Zero-shot setting (anomaly scores derived directly from prompt similarity margin
 | Alert-CLIP(Full) | **75.75** | **55.18** | **75.39** | **60.11** |
 
 ### Ablation Study
+
 | Config | Loss Enabled | UCF AUC |
 |------|---------|---------|
 | CLIP baseline | – | 88.02 |

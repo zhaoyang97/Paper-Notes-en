@@ -2,128 +2,158 @@
 title: >-
   [Paper Note] OntoAug: Rethinking Generative Data Augmentation via Ontology Guidance
 description: >-
-  [CVPR 2026][Image Generation][Diffusion Model] OntoAug explicitly decomposes an image into an "ontological foreground" and an "incidental background." It utilizes a foreground mask to constrain the diffusion model to redraw only the background, while applying layout-level geometric transformations to the foreground and pairing it with diverse background prompts. Th
+  [CVPR 2026][Others][Diffusion Model] OntoAug explicitly decomposes an image into the "ontology part" (foreground subject) and the "incidental part" (background). It uses the foreground mask as a hard constraint for diffusion inpainting to modify only the background while keeping the subject unchanged. Combined with geometric layout transformations and a b
 tags:
   - CVPR 2026
-  - Image Generation
+  - Others
   - Diffusion Model
 date: 2026-05-08
-content_hash: eb0b9cb28e81cbc7
+content_hash: 927892c0d6b8eff1
 ---
 # OntoAug: Rethinking Generative Data Augmentation via Ontology Guidance
 
 **Conference**: CVPR 2026  
 **Paper**: [CVF Open Access](https://openaccess.thecvf.com/content/CVPR2026/html/Wang_OntoAug_Rethinking_Generative_Data_Augmentation_via_Ontology_Guidance_CVPR_2026_paper.html)  
-**Code**: None  
-**Area**: Diffusion Models / Generative Data Augmentation  
-**Keywords**: Data Augmentation, Diffusion Models, Foreground-Background Decoupling, Ontological Consistency, Fine-grained Classification
+**Keywords**: Generative Data Augmentation, Ontology Guidance, Diffusion Models, Foreground-Background Decoupling, Fine-grained Classification
 
 ## TL;DR
-OntoAug explicitly decomposes an image into an "ontological foreground" and an "incidental background." It utilizes a foreground mask to constrain the diffusion model to redraw only the background, while applying layout-level geometric transformations to the foreground and pairing it with diverse background prompts. This approach significantly enhances sample diversity while maintaining semantic stability, leading across fine-grained classification, few-shot learning, WSOL, and VLM reasoning tasks.
+OntoAug explicitly decomposes an image into the "ontology part" (foreground subject) and the "incidental part" (background). It uses the foreground mask as a hard constraint for diffusion inpainting to modify only the background while keeping the subject unchanged. Combined with geometric layout transformations and a background vocabulary expanded by LVLM/LLMs, it simultaneously achieves "subject stability, background diversity, and overall coordination," reaching SOTA performance on fine-grained classification, few-shot learning, WSOL, and VLM reinforcement fine-tuning.
 
 ## Background & Motivation
-**Background**: Data augmentation is a standard component for improving image recognition. Early methods (Mixup, CutMix, and their variants) generated samples through pixel interpolation or region replacement. Recently, with the rise of diffusion models, generative augmentation (DiffuseMix, SaSPA, Diff-Mix, De-DA, etc.) has become mainstream, capable of synthesizing high-quality, semantically plausible new images.
+**Background**: Data augmentation is standard for improving image recognition. Traditional methods (Mixup, CutMix, etc.) create samples via pixel interpolation or region replacement. Recently, with the maturity of diffusion models, generative augmentation (Diff-Mix, DiffuseMix, SaSPA, De-DA) has become mainstream, synthesizing samples with higher image quality and semantic plausibility.
 
-**Limitations of Prior Work**: Most existing generative augmentation methods treat the image as a **whole**, failing to recognize that the distribution of discriminative information is **non-uniform**. In classification tasks, the foreground subject carries much richer category signals than the background. Holistic processing leads to three typical failures (summarized as Q1/Q2/Q3): Cross-category diffusion in Diff-Mix often alters the color and texture of the subject, producing counterfactual samples (violating **Q1 Ontological Semantic Consistency**); DiffuseMix uses fixed text prompts and SaSPA uses edge constraints, compressing the generation space and resulting in mere style variations (limiting **Q2 Background Diversity**); De-DA directly overlays foreground pixels onto cross-category backgrounds, causing incoherent boundary semantics (violating **Q3 Overall Harmony**).
+**Limitations of Prior Work**: In classification tasks, the distribution of discriminative information is **uneven**—the foreground subject carries much richer category signals than the background. However, most generative augmentation methods treat the image as a single entity without distinguishing foreground from background. This results in "unexpected semantic drift" during synthesis: cross-class diffusion in Diff-Mix can alter the subject's texture/color, creating counterfactual samples; DiffuseMix uses fixed text prompts, limiting it to style changes; SaSPA uses edge constraints for fidelity but restricts the generation space, limiting background diversity; De-DA simply pastes foreground pixels onto other backgrounds, leading to incoherent boundary semantics.
 
-**Key Challenge**: A trade-off exists between diversity and semantic fidelity—increasing contextual variation often changes the subject's identity, while conservatively preserving the original structure limits diversity. Existing methods struggle to balance Q1, Q2, and Q3.
+**Key Challenge**: Increasing background diversity often compromises subject identity, while preserving subject structure limits diversity—this is the fundamental trade-off between "fidelity vs. diversity." The authors refine this into three competing demands: Q1 subject semantic consistency, Q2 background semantic diversity, and Q3 overall foreground-background coordination. No existing method satisfies all three.
 
-**Key Insight**: The authors draw on ontological principles of human perception—category recognition primarily relies on the **stable essence** of the subject, with a natural tolerance for changes in background and environment, provided the overall composition is harmonious. In a "sports car" image, the car itself is the ontological part, while the road is the incidental part.
+**Key Insight**: Human category recognition works exactly this way—subject identity remains stable, and variations in the background environment are tolerated as long as the whole is coordinated. The authors incorporate this "ontology" intuition into generative augmentation: what truly defines a category in an image is the subject ontology, while the background is merely incidental.
 
-**Core Idea**: Explicitly distinguish between the **ontological foreground** and the **incidental background**. By using a foreground mask as a hard constraint, the diffusion model is forced to redraw only the background regions. Applying only layout-level geometric transformations to the foreground ensures Q1 is locked, Q2 is expanded, and Q3 is guaranteed through generative inpainting.
+**Core Idea**: First, decompose the image into ontology and incidental parts. Use the foreground mask as a hard constraint to let the diffusion model **inpaint only the background**. The ontology region only allows layout-level (scale/rotate/translate/flip) geometric changes, while the background is diversified using a universal vocabulary—satisfying Q1, Q2, and Q3 simultaneously.
 
 ## Method
+
 ### Overall Architecture
-The goal of OntoAug is to introduce diverse background contexts while preserving the foreground subject. The pipeline consists of two stages: **Ontological Decomposition** (splitting the image into foreground/background) and **Ontology-Guided Generation** (applying layout transformations to the foreground, replacing background words, and using a diffusion model to inpaint the final image). The input is an original image $I$, and the output is a set of augmented images that are subject-consistent, background-diverse, and globally harmonious (generating 4 images per original by default).
+OntoAug addresses how to diversify backgrounds without damaging the subject during generative augmentation. The pipeline consists of two stages: **Ontology Decomposition**, which splits the image into the foreground ontology $I_{onto}$ and the incidental background $I_{incid}$; and **Ontology-Guided Generation**, which applies geometric layout transformations to the ontology and randomly samples a background semantic from a vocabulary. Finally, the augmented foreground mask and background prompt are fed into a frozen diffusion inpainting model to denoise only the background region. The ontology pixels are locked by the mask. The resulting image maintains the original subject identity with a diverse layout and a new, coordinated background.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["Original Image I"] --> B["Ontological Decomposition<br/>Transparent-Background<br/>Extract Foreground Mask I_m"]
-    B --> C["Layout Structural Augmentation<br/>Apply Scaling/Rotation/<br/>Translation/Flip to BBox"]
-    B --> D["Background Context Augmentation<br/>Manual Vocab + LLM Expansion<br/>Randomly Select Background Word"]
-    C --> E["Ontology-Guided Generation<br/>Frozen SD-inpainting + Trainable ControlNet<br/>Mask locks foreground, redraws background only"]
-    D --> E
-    E --> F["Augmented Image<br/>Subject Consistent + Diverse Background"]
+    A["Original Image I"] --> B["Ontology Decomposition<br/>Transparent-Background<br/>Extract Foreground Mask"]
+    B -->|Ontology Part Ionto| C["Layout Structural Augmentation<br/>Scale/Rotate/Translate/Flip"]
+    B -->|Incidental Part Iincid| D["Background Context Augmentation<br/>LVLM+LLM Constructed Vocabulary"]
+    C --> E["Mask-constrained Inpainting Generation<br/>Frozen SD-v2-inpaint + ControlNet"]
+    D -->|Random Sampling of Background Words| E
+    E --> F["Augmented Image<br/>Stable Subject · Diverse Background · Coordinated Whole"]
 ```
 
 ### Key Designs
 
-**1. Ontological Decomposition: Physical separation of discriminative and environmental signals**
+**1. Ontology Decomposition: Separating the "Category-Defining Part" from the Background**
 
-Addressing the pain point that holistic processing ignores non-uniform information distribution, OntoAug first splits image $I$ into two non-overlapping parts: $I = I_{onto} \cup I_{incid}$, where $I_{onto} \cap I_{incid} = \emptyset$. Here, $I_{onto}$ is the ontological part carrying core semantics (e.g., the car), and $I_{incid}$ is the incidental part reflecting the environment (e.g., the road). Implementation-wise, the Transparent-Background segmentation model $S(\cdot)$ extracts the foreground mask $I_m = S(I)$, marking pixels that best represent the category. This module is replaceable with saliency methods, SAM, or Grounded-SAM. This step is the prerequisite for "locking the foreground while opening the background."
+The pain point is that holistic generation modifies the entire image indiscriminately, even altering discriminative details of the subject. OntoAug acknowledges that different pixels have different semantic functions: one set carries core category features (e.g., the car in "sports car"), while the other reflects the environment (e.g., the road). Thus, the image $I$ is explicitly decomposed into two non-overlapping parts:
 
-**2. Layout Structural Augmentation: Changing "placement" without altering "appearance"**
+$$I = I_{onto} \cup I_{incid}, \quad I_{onto} \cap I_{incid} = \emptyset$$
 
-Unlike other methods that modify foreground style or perform direct editing, OntoAug applies **only layout-level changes** to the ontological part. This creates spatial diversity while strictly maintaining subject identity. Specifically, it identifies the minimum bounding box $O_I, O_{I_m} = \text{MinBBox}(I_m)$ to constrain transformations and prevent structural loss. Then, the layout module $LM(\cdot)$ applies four geometric operations **synchronously** to $O_{I_m}$ and $O_I$: scaling (L1), rotation (L2), translation (L3), and horizontal flipping (L4), resulting in $O_{I_m}', O_I' = LM(O_{I_m}, O_I)$. Random combinations of these operations simulate diverse spatial layouts while keeping texture and color identical.
+In practice, a Transparent-Background segmentation model $S(\cdot)$ is used to extract the foreground mask $I_m = S(I)$ to define the ontology region. This module is replaceable (e.g., with SAM or Grounded-SAM). This step is the foundation for all subsequent constraints: only by knowing "where the subject is" can one "change only the background."
 
-**3. Background Context Augmentation: Semantic diversity through structured background vocabulary**
+**2. Layout Structural Augmentation: Subjects Can Move, but Not Morph**
 
-The background is defined as the incidental part of the image, serving as the primary source of diversity. The authors construct a rich background vocabulary $V_{bg}$ by using large vision-language models to extract representative words from datasets like Stanford Cars, Aircraft, and CUB, covering natural environments, traffic scenes, and human activities. Words that might appear in the foreground (e.g., "bridge") are excluded in favor of purely descriptive background words (e.g., "sky"). LLMs (DeepSeek-V3) are then used for semantic expansion. During generation, a word is randomly sampled from $V_{bg}$ to construct a prompt: "An image of \<Class\> with the background of \<Background word\>."
+Locking the subject purely in place lacks spatial diversity—in real scenes, objects appear at different positions, angles, and scales. OntoAug simulates diverse spatial layouts for foreground objects while maintaining semantic consistency. Specifically, it computes the minimum bounding box for the foreground in both the mask and the image:
 
-**4. Ontology-Guided Generation: Using masks to "weld" the foreground**
+$$O_{I}, O_{I_m} = \text{MinBBox}(I_m)$$
 
-This generation module utilizes a **frozen Stable Diffusion v2-inpainting** backbone coupled with a **trainable ControlNet**. The transformed $O_{I_m}'$, $O_I'$, and the selected background word are fed into the model. Denoising occurs **only in the background region**, as the mask acts as a strong constraint to keep foreground content unchanged throughout the process. Since the background is "filled in" naturally via diffusion inpainting rather than pixel-pasting, the boundaries are inherently harmonious (addressing Q3), avoiding the semantic breakage seen in De-DA.
+The MinBBox constrains subsequent transformations to prevent the foreground from exceeding image boundaries or losing structure. Geometric operations—Scaling (L1), Rotation (L2), Translation (L3), and Horizontal Flipping (L4)—are applied synchronously:
+
+$$O_{I_m}', O_{I}' = LM(O_{I_m}, O_{I})$$
+
+Since the ontology regions of the mask and the original image are transformed **synchronously**, the mask precisely aligns with the subject after transformation. This differs fundamentally from methods that change style or content: the ontology undergoes only geometry-only changes, keeping texture, color, and identity intact (meeting Q1).
+
+**3. Background Context Augmentation: Exploiting Background Semantic Potential via a Universal Vocabulary**
+
+Existing backgrounds often lack diversity due to fixed prompts or edge constraints. OntoAug treats the background as an incidental dimension that should be as diverse as possible, constructing a rich background vocabulary $V_{bg}$. Representative background words are extracted from datasets like Stanford Cars, Aircraft, and CUB using LVLMs. Words that might appear in the foreground (e.g., "bridge") are excluded to favor pure background terms (e.g., "sky"). LLMs then perform semantic expansion. During generation, a word is sampled from $V_{bg}$ to construct a prompt: `"An image of <Class> with the background of <Background word>"`. Crucially, this vocabulary is **universal rather than dataset-specific**, alleviating background bias (as verified in Waterbirds OOD experiments).
+
+**4. Mask-constrained Inpainting Generation: Coordinated Background Synthesis**
+
+This step "sews" the stable ontology and the new background together. OntoAug adopts the PBG framework, utilizing a **frozen** Stable Diffusion v2-inpainting backbone integrated with a **trainable** modified ControlNet. The transformed ontology control regions $O_{I_m}', O_{I}'$ are fed in to guide denoising, ensuring generation occurs **only in the background region**. A CFG scale of 7.5 is used to generate 4 samples per image. The mask acts as a strong constraint to fix foreground content, while the foreground image input allows the model to naturally melt the subject into the new environment, reducing boundary artifacts (meeting Q3). This "redrawing around the subject" ensures natural boundary transitions.
+
+### A Complete Example
+Using an image of a "Yellow-throated Vireo": ① Ontology decomposition extracts the bird's foreground mask (Bird = Ontology, original branch = Incidental); ② Layout augmentation applies random transformations (e.g., scaling + flipping) to the bounding box—the bird's texture remains the same, but its pose/position changes; ③ A background word "branch" is sampled to form the prompt: `"An image of Yellow_throated_Vireo with the background of branch"`; ④ The transformed mask + prompt are sent to the frozen SD-inpainting. The model redraws the background outside the mask, producing a "same bird, new pose, new coordinated background" sample.
 
 ## Key Experimental Results
 
 ### Main Results
-Fine-grained Classification (ResNet-50 trained from scratch for 300 epochs, Top-1 Accuracy %):
+ResNet-50 trained from scratch for 300 epochs on Fine-Grained Visual Categorization (FGVC):
 
-| Dataset | Ours (OntoAug) | Prev. SOTA | Gain |
-|---------|----------------|------------|------|
-| CUB | **84.62** | Diff-Mix 81.62 | +3.00 |
-| Stanford Cars | **94.29** | De-DA 93.04 | +1.25 |
-| Aircraft | **87.91** | Diff-Mix 85.84 | +2.07 |
+| Dataset | Vanilla | Best Gen Baseline | OntoAug | Gain vs. Best |
+|--------|---------|--------------|---------|--------------|
+| CUB | 65.50 | Diff-Mix 81.62 | **84.62** | +3.00 |
+| Cars | 85.52 | De-DA 93.04 | **94.29** | +1.25 |
+| Aircraft | 80.29 | Diff-Mix 85.84 | **87.91** | +2.07 |
 
-Cross-task generalization: On ViT-B/16, CUB/Cars/Aircraft reached 90.78/95.67/86.23 (avg. +1.86). CUB 10-shot few-shot averaged 67.55%, 13.88% higher than the runner-up. WSOL on IoU30/50/70 reached 92.94/60.54/12.68, outperforming CAM baselines. Waterbirds cross-distribution averaged 74.82%, 1.75% higher than De-DA. VLM Reasoning (Qwen2.5-VL-3B + GRPO, CUB 8-shot) reached 66.24%, superior to all comparison methods.
+Under transfer learning (ResNet-50 pre-trained on ImageNet-1K), it also outperforms the previous SOTA Diff-Mix and achieves further gains when combined with classic Mix methods:
+
+| Configuration | CUB | Cars | Aircraft |
+|------|-----|------|----------|
+| Vanilla | 85.49 | 93.04 | 91.07 |
+| Diff-Mix | 86.42 | 91.87 | 92.26 |
+| Ours (OntoAug) | **88.33** | **94.34** | **92.89** |
+| Ours+SnapMix | **88.97** | **94.80** | **94.46** |
+
+The gap is most pronounced in Few-Shot scenarios (CUB 10-shot, avg. of 3 backbones):
+
+| Method | Avg. Accuracy | Gain vs. Vanilla |
+|------|-----------|-------------------|
+| Vanilla | 31.79 | — |
+| Diff-Mix | 44.32 | +12.53 |
+| De-DA (Runner-up) | 53.67 | +21.88 |
+| **Ours (OntoAug)** | **67.55** | **+35.76** |
+
+OntoAug outperforms the second-best De-DA by **13.88%**, showing that "stable subject + diverse background" samples are vital when data is extremely scarce. It also achieves SOTA on WSOL (avg. 55.39), Waterbirds OOD (avg. 74.82), and Qwen2.5-VL-3B GRPO reinforcement fine-tuning (66.24).
 
 ### Ablation Study
-Incremental layout strategies (on top of "Background Augmentation" baseline of 81.53%, CUB):
+Incremental layout strategy gains on CUB (added to background augmentation):
 
-| Configuration | CUB | Description |
-|---------------|-----|-------------|
-| baseline (Background Aug Only) | 81.53 | No layout transformation |
-| +L1 Scaling | 83.91 | Single op +2.38 |
-| +L1~L4 All | **84.62** | Full geometric ops, best |
+| Configuration | CUB | Note |
+|------|-----|------|
+| Background Aug only | 81.53 | Baseline |
+| + L1 Scaling | 83.91 | +2.38, Max single gain |
+| + L2 Rotation | 83.06 | +1.53 |
+| + L3 Translation | 82.29 | +0.76, Min single gain |
+| + L4 Flipping | 83.75 | +2.22 |
+| L1+L2+L3+L4 (Full) | **84.62** | Optimal synergy |
 
-Overall harmony strategy ablation (Figure 5, ResNet-50 / CUB):
-
-| Exp | Layout / Background | Accuracy | Conclusion |
-|-----|---------------------|----------|------------|
-| A | Original / Original | 65.50 | No augmentation |
-| C | Aug / Places Real BG | 77.17 | Real image background |
-| E | Aug / Generated BG | **84.62** | Full Model |
+Overall coordination strategy ablation (ResNet-50/CUB): Original 65.50 → (Places real background only) 71.90 → (Generative background) 77.17 → (Original layout + Generative background) 81.53 → (Augmented layout + Generative background, Full version) **84.62**.
 
 ### Key Findings
-- **Foreground layout contributes significantly**: Comparisons of A→B and D→E show that introducing foreground layout transformations significantly boosts performance; scaling (L1, +2.38) and flipping (L4, +2.22) provide the largest gains.
-- **Generated Background > Real Background**: Experiment E (84.62) significantly outperforms Experiment C (77.17), suggesting that the foreground-background harmony provided by diffusion inpainting is more valuable than "pasting real images."
-- **Data scarcity increases benefit**: For 10-shot, OntoAug's gain is +35.76 (vs. Vanilla), far exceeding competitors, proving high-quality diverse samples help most in low-data regimes.
-- **Richer background vocabulary enhances robustness**: OntoAug (full vocab 74.82) is superior to OntoAug* (habitat-only words 73.48), proving background prompt diversity improves robustness to background shifts.
+- **Scaling contributes most (+2.38), translation least (+0.76)**, but the synergy of all four (84.62) is significantly higher than any single one, indicating spatial diversity requires multiple geometric overlays.
+- **Generative Background > Real Sampled Background**: Experiment E (Generative background 81.53) outperforms Experiment C (Places real background 77.17), proving that backgrounds coordinated by the diffusion model are more beneficial than raw pasting—validating Q3.
+- **Gain is most dramatic in Few-Shot (+35.76)**, far exceeding transfer learning gains (~2-3); the scarcer the data, the higher the marginal value of high-fidelity, high-diversity samples.
+- **Universal vocabulary improves robustness**: The full version (74.82) on Waterbirds outperforms a restricted version using only habitat words (73.48), showing diverse vocabularies stabilize against background shifts.
+- **Diminishing returns on data volume**: Performance peaks at 4x synthetic multiplier; OntoAug at 4x outperforms Diff-Mix at 5x and DiffuseMix at 10x, achieving a win-win in cost and effect.
 
 ## Highlights & Insights
-- **Translating "Ontology" into executable engineering constraints**: The human intuition of "identifying subjects, tolerating backgrounds" is implemented as a hard constraint of "mask-locked foreground + diffusion-modified background," directly solving the Q1/Q2/Q3 trilemma.
-- **Effective division of labor**: Foreground handles geometric changes while background handles semantic redrawing. This keeps discriminative signals stable while placing diversity where it does not affect category identity.
-- **Inpainting naturally handles boundary harmony**: Using diffusion inpainting instead of pixel-pasting provides free boundary transitions, avoiding the semantic fracture issues of methods like De-DA.
-- The framework is transferable to any scenario where the subject is stable but the context is variable (e.g., medical imaging preserving lesions while changing backgrounds).
+- **Operationalizing the philosophical concept of "Ontology" into an engineering constraint**: Ontology = fixed discriminative subject, Incidental = free-to-change background. This simple intuition perfectly addresses Q1/Q2/Q3.
+- **Mask as a hard constraint + background-only inpainting** effectively roots out semantic drift at the source, which is cleaner than post-hoc filtering (like CLIP in Diff-Mix).
+- **Universal Background Vocabulary**: Excluding words that could confuse the foreground (e.g., "bridge") is a key detail why OntoAug is robust to background bias in OOD tasks.
+- **Architecture Efficiency**: The frozen generative backbone and trainable modified ControlNet ensure low training costs and high engineering friendliness.
 
 ## Limitations & Future Work
-- **Dependency on segmentation quality**: Foreground masks are provided by Transparent-Background. Failure in segmentation (entangled foreground/background, transparency, fine structures) directly pollutes the subsequent constraints.
-- **Limits of the "Ontology = Foreground" assumption**: When category semantics actually depend on context (e.g., scene classification, relationship recognition), the premise of "locking the foreground" may fail.
-- **Generation Cost**: Generating 4 samples per image via diffusion denoising is computationally expensive compared to zero-cost methods like Mixup/CutMix.
-- **Vocabulary dependency**: Background word construction relies on manual effort + LLMs; its appropriateness may need re-validation when migrating to entirely new domains.
+- **Heavy reliance on segmentation quality**: Boundaries are determined by models like Transparent-Background. For blurry, multi-subject, or camouflaged targets, mask inaccuracy will directly impact generation quality.
+- **Boundary of "Invariant Subject" assumption**: For some classes, background context is the discriminative cue (e.g., water bird vs. land bird). Over-diversifying backgrounds might weaken useful contextual priors.
+- **Geometric-only ontology changes**: It cannot introduce plausible intra-class variations in the subject itself (e.g., deformation of bird poses or car angles), limiting diversity primarily to the background side.
+- **Evaluation focus**: Results are concentrated on fine-grained tasks (FGVC/Few-shot/WSOL). Gains on large-scale general classification (ImageNet-full) or dense tasks (detection/segmentation) are yet to be fully verified.
 
 ## Related Work & Insights
-- **vs. Diff-Mix**: Diff-Mix performs cross-category diffusion to enrich boundaries but often alters subject texture, requiring CLIP filtering; OntoAug uses masks to lock the foreground for stable semantics without post-filtering.
-- **vs. DiffuseMix**: DiffuseMix relies on fixed prompts and style overlays; OntoAug uses structured background vocabularies for semantic-level background combinations.
-- **vs. SaSPA**: SaSPA uses edge conditions to preserve semantics but severely compresses the generation space; OntoAug balances fidelity and diversity by locking the foreground while freeing the background.
-- **vs. De-DA**: De-DA decouples foreground and background but suffers from boundary breakage; OntoAug's inpainting ensures natural transitions.
+- **vs. Diff-Mix**: Diff-Mix uses cross-class diffusion to enrich boundaries but yields counterfactual samples; OntoAug avoids drift via masks (CUB 84.62 vs. 81.62).
+- **vs. SaSPA**: SaSPA uses edge conditions which restrict generation space; OntoAug uses masks to allow full background freedom, balancing fidelity and diversity.
+- **vs. DiffuseMix**: DiffuseMix relies on fixed prompts/styles; OntoAug provides semantic and spatial diversity through its vocabulary and layout transformations.
+- **vs. De-DA**: Both decouple foreground/background, but De-DA's hard pasting breaks boundary semantics; OntoAug's "redrawing around the mask" ensures natural coordination (Q3).
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Translates ontological perspective into a decoupled augmentation paradigm; clear but essentially an extension of foreground-background decoupling.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers seven task types including fine-grained, transfer, ViT, few-shot, WSOL, cross-distribution, and VLM.
-- Writing Quality: ⭐⭐⭐⭐ The Q1/Q2/Q3 framework clarifies motivation well; diagrams are intuitive.
-- Value: ⭐⭐⭐⭐ Plug-and-play with stable gains across tasks, especially significant in few-shot scenarios; high practicality.
+- Novelty: ⭐⭐⭐⭐ Clear "Ontology vs. Incidental" perspective.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Six task types + double ablations; complete evidence chain.
+- Writing Quality: ⭐⭐⭐⭐ Clear mapping between motivation and mechanism.
+- Value: ⭐⭐⭐⭐ High practical value for data-scarce fine-grained tasks.
 
 <!-- RELATED:START -->
 
@@ -131,11 +161,11 @@ Overall harmony strategy ablation (Figure 5, ResNet-50 / CUB):
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] UtilGen: Utility-Centric Generative Data Augmentation with Dual-Level Task Adaptation](../../NeurIPS2025/image_generation/utilgen_utility-centric_generative_data_augmentation_with_dual-level_task_adapta.md)
-- [\[CVPR 2026\] Transition Models: Rethinking the Generative Learning Objective](transition_models_rethinking_the_generative_learning_objective.md)
-- [\[ICLR 2026\] Pseudo-Nonlinear Data Augmentation: A Constrained Energy Minimization Viewpoint](../../ICLR2026/image_generation/pseudo-nonlinear_data_augmentation_a_constrained_energy_minimization_viewpoint.md)
-- [\[CVPR 2026\] AHS: Adaptive Head Synthesis via Synthetic Data Augmentations](ahs_adaptive_head_synthesis.md)
-- [\[NeurIPS 2025\] Non-Asymptotic Analysis of Data Augmentation for Precision Matrix Estimation](../../NeurIPS2025/image_generation/non-asymptotic_analysis_of_data_augmentation_for_precision_matrix_estimation.md)
+- [\[CVPR 2026\] Accelerating Diffusion via Hybrid Data-Pipeline Parallelism Based on Conditional Guidance Scheduling](accelerating_diffusion_via_hybrid_data-pipeline_parallelism_based_on_conditional.md)
+- [\[CVPR 2026\] Adaptive Data Augmentation with Multi-armed Bandit: Sample-Efficient Embedding Calibration for Implicit Pattern Recognition](adaptive_data_augmentation_with_multi-armed_bandit_sample-efficient_embedding_ca.md)
+- [\[ICML 2025\] Curvature Enhanced Data Augmentation for Regression](../../ICML2025/others/curvature_enhanced_data_augmentation_for_regression.md)
+- [\[CVPR 2026\] AVGGT: Rethinking Global Attention for Accelerating VGGT](avggt_rethinking_global_attention_for_accelerating_vggt.md)
+- [\[ACL 2025\] Is Linguistically-Motivated Data Augmentation Worth It?](../../ACL2025/others/is_linguistically-motivated_data_augmentation_worth_it.md)
 
 </div>
 

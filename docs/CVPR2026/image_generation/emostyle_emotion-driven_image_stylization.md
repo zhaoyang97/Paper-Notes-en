@@ -99,6 +99,7 @@ Evaluated on 405 real-world images from EmoEdit, stylized into 8 emotions (3,240
 Ours achieves 33.36% Emo-A, significantly outperforming IP2P (24.34%). It records the lowest SG (1.976), lowest SD (7.59), and highest DINO (0.842).
 
 ### Ablation Study
+
 | Configuration | Observation | Description |
 |------|------|------|
 | Full model | Affective fidelity + distinct style + consistency | Complete architecture |
@@ -107,6 +108,7 @@ Ours achieves 33.36% Emo-A, significantly outperforming IP2P (24.34%). It record
 | w/o Emotion Encoder | Weakened emotional arousal | Emotion encoding is essential for affective stylization |
 
 User study (Aesthetic/Emotion/Balance):
+
 | Method | Aesthetics ↑ | Emotion Fidelity ↑ | Balance ↑ |
 |------|-----------|-----------|--------|
 | CLVA | 8.50% | 0.81% | 1.19% |

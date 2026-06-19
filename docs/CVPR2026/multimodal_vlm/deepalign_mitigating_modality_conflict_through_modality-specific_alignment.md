@@ -101,6 +101,7 @@ Comparison on LLaVA-v1.5-7B (selected benchmarks):
 Consistent improvements were found on stronger bases: Qwen2.5-VL-7B gained +1.0 on MMBench and +1.7 on TextVQA; InternVL3-8B improved ScienceQA from 97.9 to 99.2.
 
 ### Ablation Study (LLaVA-v1.5-7B)
+
 | Configuration | MMBench | MMStar | ScienceQA | TextVQA | Note |
 |------|---------|--------|-----------|---------|------|
 | LLaVA-v1.5-7B | 62.1 | 34.6 | 69.2 | 49.7 | Base |

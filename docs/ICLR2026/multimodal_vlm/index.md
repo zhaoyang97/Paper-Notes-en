@@ -1,19 +1,19 @@
 ---
 title: >-
-  ICLR2026 Multimodal VLM Papers · 85 Notes
+  ICLR2026 Multimodal VLM Papers · 61 Notes
 description: >-
-  85 ICLR2026 papers in the Multimodal VLM area, covering Multimodal/VLM, Reasoning, Robotics, Agents, Model Compression, Compression and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  61 ICLR2026 papers in the Multimodal VLM area, covering Multimodal/VLM, Face & Gaze, Continual Learning, Robotics, Few-/Zero-Shot Learning, Alignment/RLHF and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "ICLR2026"
   - "Multimodal VLM"
   - "AI paper notes"
   - "paper summaries"
   - "Multimodal/VLM"
-  - "Reasoning"
+  - "Face & Gaze"
+  - "Continual Learning"
   - "Robotics"
-  - "Agents"
-  - "Model Compression"
-  - "Compression"
+  - "Few-/Zero-Shot Learning"
+  - "Alignment/RLHF"
 item_list:
   - u: "a-tpt_angular_diversity_calibration_properties_for_test-time_prompt_tuning_of_vi/"
     t: "A-TPT: Angular Diversity Calibration Properties for Test-Time Prompt Tuning of Vision-Language Models"
@@ -23,6 +23,8 @@ item_list:
     t: "Bongard-RWR+: Real-World Representations of Fine-Grained Concepts in Bongard Problems"
   - u: "breaking_the_limits_of_open-weight_clip_an_optimization_framework_for_self-super/"
     t: "Breaking the Limits of Open-Weight CLIP: An Optimization Framework for Self-supervised Fine-tuning of CLIP"
+  - u: "breaking_the_sft_plateau_multimodal_structured_reinforcement_learning_for_chart-/"
+    t: "Breaking the SFT Plateau: Multimodal Structured Reinforcement Learning for Chart-to-Code Generation"
   - u: "can_vision-language_models_answer_face_to_face_questions_in_the_real-world/"
     t: "Can Vision-Language Models Answer Face to Face Questions in the Real-World?"
   - u: "capacity-aware_inference_mitigating_the_straggler_effect_in_mixture_of_experts/"
@@ -45,47 +47,45 @@ item_list:
     t: "Detecting Misbehaviors of Large Vision-Language Models by Evidential Uncertainty Quantification"
   - u: "directional_embedding_smoothing_for_robust_vision_language_models/"
     t: "Directional Embedding Smoothing for Robust Vision Language Models"
-  - u: "diva-grpo_enhancing_multimodal_reasoning_through_difficulty-adaptive_variant_adv/"
-    t: "DIVA-GRPO: Enhancing Multimodal Reasoning through Difficulty-Adaptive Variant Advantage"
+  - u: "efficient_discriminative_joint_encoders_for_large_scale_vision-language_rerankin/"
+    t: "Efficient Discriminative Joint Encoders for Large Scale Vision-Language Re-ranking"
   - u: "egohandicl_egocentric_3d_hand_reconstruction_with_in-context_learning/"
     t: "EgoHandICL: Egocentric 3D Hand Reconstruction with In-Context Learning"
-  - u: "empowering_small_vlms_to_think_with_dynamic_memorization_and_exploration/"
-    t: "Empowering Small VLMs to Think with Dynamic Memorization and Exploration"
   - u: "enhanced_continual_learning_of_vision-language_models_with_model_fusion/"
     t: "Enhanced Continual Learning of Vision-Language Models with Model Fusion"
   - u: "enhancing_multi-image_understanding_through_delimiter_token_scaling/"
     t: "Enhancing Multi-Image Understanding through Delimiter Token Scaling"
   - u: "error_notebook-guided_training-free_part_retrieval_in_3d_cad_assemblies_via_visi/"
     t: "Error Notebook-Guided, Training-Free Part Retrieval in 3D CAD Assemblies via Vision-Language Models"
-  - u: "evaluating_vlms_spatial_reasoning_over_robot_motion_a_step_towards_robot_plannin/"
-    t: "Evaluating VLMs' Spatial Reasoning Over Robot Motion: A Step Towards Robot Planning with Motion Preferences"
-  - u: "frieda_benchmarking_multi-step_cartographic_reasoning_in_vision-language_models/"
-    t: "FRIEDA: Benchmarking Multi-Step Cartographic Reasoning in Vision-Language Models"
   - u: "glyph-sr_can_we_achieve_both_high-quality_image_super-resolution_and_high-fideli/"
     t: "GLYPH-SR: Can We Achieve Both High-Quality Image Super-Resolution and High-Fidelity Text Recovery via VLM-Guided Latent Diffusion Model?"
   - u: "grasp_any_region_towards_precise_contextual_pixel_understanding_for_multimodal_l/"
     t: "Grasp Any Region: Towards Precise, Contextual Pixel Understanding for Multimodal LLMs"
   - u: "grounding-iqa_grounding_multimodal_language_model_for_image_quality_assessment/"
     t: "Grounding-IQA: Grounding Multimodal Language Models for Image Quality Assessment"
-  - u: "gtr-bench_evaluating_geo-temporal_reasoning_in_vision-language_mod/"
-    t: "GTR-Bench: Evaluating Geo-Temporal Reasoning in Vision-Language Models"
-  - u: "hidrop_hierarchical_vision_token_reduction_in_mllms_via_late_injection_concave_p/"
-    t: "HiDrop: Hierarchical Vision Token Reduction in MLLMs via Late Injection, Concave Pyramid Pruning, and Early Exit"
   - u: "how_do_medical_mllms_fail_a_study_on_visual_grounding_in_medical_images/"
     t: "How Do Medical MLLMs Fail? A Study on Visual Grounding in Medical Images"
   - u: "icym2i_the_illusion_of_multimodal_informativeness_under_missingness/"
     t: "ICYM2I: The Illusion of Multimodal Informativeness under Missingness"
-item_total: 85
+  - u: "k-sort_eval_efficient_preference_evaluation_for_visual_generation_via_corrected_/"
+    t: "K-Sort Eval: Efficient Preference Evaluation for Visual Generation via Corrected VLM-as-a-Judge"
+  - u: "keeplora_continual_learning_with_residual_gradient_adaptation/"
+    t: "KeepLoRA: Continual Learning with Residual Gradient Adaptation"
+  - u: "liveweb-ie_a_benchmark_for_online_web_information_extraction/"
+    t: "LiveWeb-IE: A Benchmark For Online Web Information Extraction"
+  - u: "llava-fa_learning_fourier_approximation_for_compressing_large_multimodal_models/"
+    t: "LLaVA-FA: Learning Fourier Approximation for Compressing Large Multimodal Models"
+item_total: 61
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # 🧩 Multimodal VLM
 
-**🔬 ICLR2026** · **85** paper notes
+**🔬 ICLR2026** · **61** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (534)](../../CVPR2026/multimodal_vlm/index.md) · [🧪 ICML2026 (99)](../../ICML2026/multimodal_vlm/index.md) · [💬 ACL2026 (94)](../../ACL2026/multimodal_vlm/index.md) · [🤖 AAAI2026 (84)](../../AAAI2026/multimodal_vlm/index.md) · [🧠 NeurIPS2025 (137)](../../NeurIPS2025/multimodal_vlm/index.md) · [📹 ICCV2025 (128)](../../ICCV2025/multimodal_vlm/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (388)](../../CVPR2026/multimodal_vlm/index.md) · [🧪 ICML2026 (76)](../../ICML2026/multimodal_vlm/index.md) · [💬 ACL2026 (79)](../../ACL2026/multimodal_vlm/index.md) · [🤖 AAAI2026 (75)](../../AAAI2026/multimodal_vlm/index.md) · [🧠 NeurIPS2025 (105)](../../NeurIPS2025/multimodal_vlm/index.md) · [📹 ICCV2025 (106)](../../ICCV2025/multimodal_vlm/index.md)
 
-🔥 **Top topics:** Multimodal/VLM ×40 · Reasoning ×20 · Robotics ×4 · Agents ×3 · Model Compression ×3
+🔥 **Top topics:** Multimodal/VLM ×31 · Face & Gaze ×2 · Continual Learning ×2 · Robotics ×2 · Few-/Zero-Shot Learning ×2
 
 **[A-TPT: Angular Diversity Calibration Properties for Test-Time Prompt Tuning of Vision-Language Models](a-tpt_angular_diversity_calibration_properties_for_test-time_prompt_tuning_of_vi.md)**
 
@@ -102,6 +102,10 @@ item_total: 85
 **[Breaking the Limits of Open-Weight CLIP: An Optimization Framework for Self-supervised Fine-tuning of CLIP](breaking_the_limits_of_open-weight_clip_an_optimization_framework_for_self-super.md)**
 
 :   This paper proposes TuneCLIP, a self-supervised fine-tuning (SSFT) framework that improves existing open-weight CLIP models through a two-stage design — first recovering optimizer statistics (OSR) to eliminate cold-start bias, then applying a hinged global contrastive loss (HGCL) with a margin to mitigate over-penalization of false negatives — achieving consistent general-purpose performance gains without any labels, with improvements of up to +2.5% on ImageNet and variants and +1.2% on the DataComp benchmark.
+
+**[Breaking the SFT Plateau: Multimodal Structured Reinforcement Learning for Chart-to-Code Generation](breaking_the_sft_plateau_multimodal_structured_reinforcement_learning_for_chart-.md)**
+
+:   To address the SFT performance plateau in chart-to-code generation, this paper proposes Multimodal Structured Reinforcement Learning (MSRL), which employs a dual-layer textual and visual reward function along with a two-stage RL strategy, achieving improvements of 6.2% and 9.9% on high-level metrics on ChartMimic and ReachQA respectively, establishing open-source SOTA and matching GPT-4o.
 
 **[Can Vision-Language Models Answer Face to Face Questions in the Real-World?](can_vision-language_models_answer_face_to_face_questions_in_the_real-world.md)**
 
@@ -147,17 +151,13 @@ item_total: 85
 
 :   This paper extends RESTA (Randomized Embedding Smoothing and Token Aggregation) from LLMs to VLMs, demonstrating that directional embedding noise significantly outperforms isotropic noise in the safety-utility tradeoff, serving as a lightweight inference-time defense layer against multimodal jailbreak attacks.
 
-**[DIVA-GRPO: Enhancing Multimodal Reasoning through Difficulty-Adaptive Variant Advantage](diva-grpo_enhancing_multimodal_reasoning_through_difficulty-adaptive_variant_adv.md)**
+**[Efficient Discriminative Joint Encoders for Large Scale Vision-Language Re-ranking](efficient_discriminative_joint_encoders_for_large_scale_vision-language_rerankin.md)**
 
-:   This paper proposes DIVA-GRPO, which addresses reward sparsity and advantage vanishing in GRPO training by dynamically assessing question difficulty, adaptively generating semantically consistent variants of varying difficulty, and incorporating difficulty-weighted local-global advantage estimation. The method achieves state-of-the-art multimodal reasoning performance at the 7B model scale.
+:   This paper proposes EDJE (Efficient Discriminative Joint Encoder), which offlines visual feature extraction and compresses visual tokens via a lightweight attention adapter, achieving a throughput of 50k image-text pairs per second. EDJE matches the retrieval performance of existing joint encoders on Flickr (zero-shot) and COCO (fine-tuned), requiring only 49 kB of storage per image.
 
 **[EgoHandICL: Egocentric 3D Hand Reconstruction with In-Context Learning](egohandicl_egocentric_3d_hand_reconstruction_with_in-context_learning.md)**
 
 :   This work introduces the in-context learning (ICL) paradigm to 3D hand reconstruction for the first time. Through VLM-guided template retrieval, a multimodal ICL tokenizer, and an MAE-driven reconstruction pipeline, EgoHandICL significantly outperforms state-of-the-art methods on the ARCTIC and EgoExo4D benchmarks.
-
-**[Empowering Small VLMs to Think with Dynamic Memorization and Exploration](empowering_small_vlms_to_think_with_dynamic_memorization_and_exploration.md)**
-
-:   This paper proposes DyME (Dynamic Memorize-Explore), which progressively and dynamically alternates between an SFT memorization mode and a GRPO exploration mode, enabling—for the first time—reasoning capabilities in small-scale vision-language models (SVLMs, <1B parameters) on domain-specific tasks.
 
 **[Enhanced Continual Learning of Vision-Language Models with Model Fusion](enhanced_continual_learning_of_vision-language_models_with_model_fusion.md)**
 
@@ -171,14 +171,6 @@ item_total: 85
 
 :   This paper proposes a training-free two-stage VLM framework that records corrected reasoning trajectories in an Error Notebook and applies RAG-based test-time adaptation. On specification-driven part retrieval in 3D CAD assemblies, GPT-4o accuracy improves from 41.7% to 65.1% (+23.4%), with a further +4.5% gain from a grammar-constrained validator.
 
-**[Evaluating VLMs' Spatial Reasoning Over Robot Motion: A Step Towards Robot Planning with Motion Preferences](evaluating_vlms_spatial_reasoning_over_robot_motion_a_step_towards_robot_plannin.md)**
-
-:   This paper systematically evaluates VLMs' spatial reasoning capabilities over robot motion trajectories, proposing four image-querying methods that enable VLMs to select optimal motion paths based on user natural language descriptions. Results show that Qwen2.5-VL achieves 71.4% zero-shot accuracy, with smaller models achieving significant gains after fine-tuning.
-
-**[FRIEDA: Benchmarking Multi-Step Cartographic Reasoning in Vision-Language Models](frieda_benchmarking_multi-step_cartographic_reasoning_in_vision-language_models.md)**
-
-:   This paper introduces FRIEDA, a benchmark that systematically evaluates large vision-language models (LVLMs) on multi-step, cross-map cartographic reasoning. The strongest model, Gemini-2.5-Pro, achieves only 38.20% accuracy, far below the human baseline of 84.87%.
-
 **[GLYPH-SR: Can We Achieve Both High-Quality Image Super-Resolution and High-Fidelity Text Recovery via VLM-Guided Latent Diffusion Model?](glyph-sr_can_we_achieve_both_high-quality_image_super-resolution_and_high-fideli.md)**
 
 :   This paper proposes GLYPH-SR, a vision-language-guided diffusion framework that simultaneously optimizes image quality and text readability via a dual-branch Text-SR fusion ControlNet and a ping-pong scheduler, achieving a 15.18-point improvement in OCR F1 on SVT ×8.
@@ -191,14 +183,6 @@ item_total: 85
 
 :   This paper integrates spatial grounding (referring + grounding) with image quality assessment (IQA), constructs the GIQA-160K dataset to fine-tune a multimodal LLM that generates quality descriptions with bounding boxes and spatial VQA, achieving significantly superior fine-grained quality perception over general-purpose MLLMs.
 
-**[GTR-Bench: Evaluating Geo-Temporal Reasoning in Vision-Language Models](gtr-bench_evaluating_geo-temporal_reasoning_in_vision-language_mod.md)**
-
-:   This paper introduces GTR-Bench, a novel benchmark for geo-temporal reasoning of moving targets in large-scale camera networks. Evaluation reveals that the strongest model, Gemini-2.5-Pro (34.9%), falls far short of human performance (78.61%), exposing three critical deficiencies in current VLMs: imbalanced utilization of spatial-temporal context, weak temporal prediction capability, and insufficient map-video alignment.
-
-**[HiDrop: Hierarchical Vision Token Reduction in MLLMs via Late Injection, Concave Pyramid Pruning, and Early Exit](hidrop_hierarchical_vision_token_reduction_in_mllms_via_late_injection_concave_p.md)**
-
-:   This paper proposes the HiDrop framework, which conducts a systematic layer-wise behavioral analysis of MLLMs (shallow layers = propagators, middle layers = fusion hubs, deep layers = language reasoners) and designs a three-stage strategy: Late Injection (skipping shallow layers) + Concave Pyramid Pruning (aggressive pruning in middle layers) + Early Exit (discarding tokens in deep layers). The framework compresses approximately 90% of visual tokens with negligible performance degradation and achieves a 1.72× training speedup.
-
 **[How Do Medical MLLMs Fail? A Study on Visual Grounding in Medical Images](how_do_medical_mllms_fail_a_study_on_visual_grounding_in_medical_images.md)**
 
 :   This work presents the first systematic diagnosis revealing that the root cause of poor zero-shot medical VQA performance in medical MLLMs is insufficient visual grounding—model attention systematically deviates from clinically relevant regions. Building on this finding, the authors propose VGRefine, a training-free inference-time attention correction method that achieves state-of-the-art results across 110K+ samples on 6 benchmarks spanning 8 imaging modalities.
@@ -207,14 +191,6 @@ item_total: 85
 
 :   This paper identifies a largely overlooked problem in multimodal learning: distribution shift induced by modality missingness leads to severely biased modality value estimation. The proposed ICYM2I framework applies dual inverse probability weighting (IPW) to correct bias in both training and evaluation, achieving unbiased estimates of modality predictive utility and information-theoretic value under the MAR assumption.
 
-**[Index-Preserving Lightweight Token Pruning for Efficient Document Understanding](index-preserving_lightweight_token_pruning_for_efficient_document_understanding_.md)**
-
-:   A binary patch classifier with only 203K parameters is inserted before the VLM visual encoder to remove background tokens from document images. A $3 \times 3$ max-pooling operation is then applied to recover fragmented text regions while preserving original spatial indices, achieving 40–60% FLOPs reduction on Qwen2.5-VL with accuracy degradation of no more than ~5 percentage points.
-
-**[IVC-Prune: Revealing the Implicit Visual Coordinates in LVLMs for Vision Token Pruning](ivc-prune_revealing_the_implicit_visual_coordinates_in_lvlms_for_vision_token_pr.md)**
-
-:   This paper reveals the implicit visual coordinate (IVC) system established by RoPE positional encoding within LVLMs, and proposes a training-free, prompt-aware vision token pruning strategy that preserves IVC tokens and semantic foreground tokens while pruning approximately 50% of visual tokens with ≥99% of original performance retained.
-
 **[K-Sort Eval: Efficient Preference Evaluation for Visual Generation via Corrected VLM-as-a-Judge](k-sort_eval_efficient_preference_evaluation_for_visual_generation_via_corrected_.md)**
 
 :   This paper proposes the K-Sort Eval framework, which leverages posterior correction and dynamic matching strategies to enable VLMs to reliably and efficiently replace human annotators in preference evaluation of visual generation models, typically converging to results consistent with human Arena rankings in fewer than 90 model runs.
@@ -222,10 +198,6 @@ item_total: 85
 **[KeepLoRA: Continual Learning with Residual Gradient Adaptation](keeplora_continual_learning_with_residual_gradient_adaptation.md)**
 
 :   By analyzing the SVD decomposition of pretrained model weights, this paper identifies that general knowledge is encoded in the principal subspace while domain-specific knowledge resides in the residual subspace. KeepLoRA is proposed to constrain LoRA updates for new tasks within the residual subspace, while using gradient information for initialization to preserve plasticity, achieving an optimal balance among forward stability, backward stability, and plasticity in continual learning.
-
-**[Let's Think in Two Steps: Mitigating Agreement Bias in MLLMs with Self-Grounded Verification](lets_think_in_two_steps_mitigating_agreement_bias_in_mllms_with_self-grounded_ve.md)**
-
-:   This paper identifies a pervasive "agreement bias" in multimodal large language models (MLLMs) when used as agent behavior verifiers—whereby models systematically over-approve agent actions—and proposes Self-Grounded Verification (SGV), a two-step generation framework (first extracting behavioral priors, then performing conditioned verification) to mitigate this bias. SGV achieves up to 25 pp improvement in failure detection rate and 14 pp improvement in accuracy across web navigation, desktop manipulation, and robotic manipulation tasks.
 
 **[LiveWeb-IE: A Benchmark For Online Web Information Extraction](liveweb-ie_a_benchmark_for_online_web_information_extraction.md)**
 
@@ -238,14 +210,6 @@ item_total: 85
 **[Meta-Adaptive Prompt Distillation for Few-Shot Visual Question Answering](meta-adaptive_prompt_distillation_for_few-shot_visual_question_answering.md)**
 
 :   This paper proposes MAPD (Meta-Adaptive Prompt Distillation), a MAML-based prompt distillation framework that leverages an attention mapper to distill soft prompts from task-relevant image features, enabling LMMs to adapt to novel visual question answering tasks at test time with only a few gradient steps. MAPD outperforms ICL by 21.2%.
-
-**[Mixing Importance with Diversity: Joint Optimization for KV Cache Compression in Large Vision-Language Models](mixing_importance_with_diversity_joint_optimization_for_kv_cache_compression_in_.md)**
-
-:   This paper identifies modality-specific and attention-head-specific semantic redundancy in the KV Cache of LVLMs, demonstrating that importance-only selection fails to preserve semantic coverage. The proposed MixKV adaptively mixes importance and diversity scores per attention head for KV Cache compression, achieving an average improvement of 5.1% under extreme compression ratios.
-
-**[MMR-Life: Piecing Together Real-life Scenes for Multimodal Multi-image Reasoning](mmr-life_piecing_together_real-life_scenes_for_multimodal_multi-image_reasoning.md)**
-
-:   This paper introduces MMR-Life, a benchmark comprising 2,646 five-choice multi-image questions based on 19,108 real-life images, covering 7 reasoning types and 21 tasks. It is the first systematic evaluation of MLLMs on multi-image reasoning in real-life scenarios. The strongest model, GPT-5, achieves only 58.69% accuracy—14 percentage points below human performance. Key findings include the failure of reasoning enhancement methods on large models and the weaker generalization of RL compared to BoN.
 
 **[MMTok: Multimodal Coverage Maximization for Efficient Inference of VLMs](mmtok_multimodal_coverage_maximization_for_efficient_inference_of_vlms.md)**
 
@@ -263,13 +227,13 @@ item_total: 85
 
 :   This paper analyzes modality competition in multimodal classification from an information-theoretic perspective and proposes TCMax, a loss function that maximizes the Total Correlation (TC) between multimodal features and labels. TCMax simultaneously addresses joint learning, unimodal learning, and cross-modal alignment without additional hyperparameters, surpassing state-of-the-art methods on multiple audio-visual and image-text classification benchmarks.
 
+**[Multimodal Dataset Distillation Made Simple by Prototype-Guided Data Synthesis](multimodal_dataset_distillation_made_simple_by_prototype-guided_data_synthesis.md)**
+
+:   This paper proposes PDS (Prototype-Guided Data Synthesis), the first training-free multimodal dataset distillation framework. It leverages CLIP's aligned embedding space to perform modality-specific clustering, applies the Hungarian algorithm for cross-modal prototype matching, and employs an unCLIP decoder to synthesize distilled images from image prototypes. On a distillation set of as few as 100 pairs, PDS surpasses all optimization-based methods at zero training cost while achieving state-of-the-art cross-architecture generalization.
+
 **[Multimodal Prompt Optimization: Why Not Leverage Multiple Modalities for MLLMs](multimodal_prompt_optimization_why_not_leverage_multiple_modalities_for_mllms.md)**
 
 :   This work is the first to extend automatic prompt optimization (APO) from the pure text space to the multimodal space, proposing the MPO framework. It achieves an average accuracy of 65.1% across 10 datasets spanning image, video, and molecular modalities—surpassing the strongest text-based APO baseline ProTeGi (60.0%)—via two key components: alignment-preserving joint exploration (unified semantic gradients synchronously drive text and non-text prompt updates, diversified by Generation/Edit/Mix operators) and prior-inherited Bayesian UCB candidate selection (warm-starting child prompt Beta priors from parent prompt performance).
-
-**[OmniSpatial: Towards Comprehensive Spatial Reasoning Benchmark for Vision Language Models](omnispatial_towards_comprehensive_spatial_reasoning_benchmark_for_vision_languag.md)**
-
-:   Grounded in cognitive psychology, this work introduces OmniSpatial—the first comprehensive spatial reasoning benchmark—systematically covering 4 dimensions (dynamic reasoning, complex spatial logic, spatial interaction, and perspective transformation) across 50 subcategories with 8.4K manually annotated QA pairs. The strongest reasoning model, o3, achieves only 56.33% while humans reach 92.63%, revealing that complex spatial reasoning remains a fundamental bottleneck for VLMs.
 
 **[On the Generalization Capacities of MLLMs for Spatial Intelligence](on_the_generalization_capacities_of_mllms_for_spatial_intelligence.md)**
 
@@ -279,10 +243,6 @@ item_total: 85
 
 :   A training-free post-hoc uncertainty estimation method is proposed that applies Laplace approximation to the last few layers of VLMs such as CLIP and SigLIP, and analytically derives uncertainty over cosine similarity. The method achieves substantial improvements over baselines in both uncertainty quantification and active learning.
 
-**[PPE: Positional Preservation Embedding for Token Compression in Multimodal Large Language Models](ppe_positional_preservation_embedding_for_token_compression_in_multimodal_large_.md)**
-
-:   This paper proposes PPE (Positional Preservation Embedding), which exploits the dimensional independence of rotations in RoPE to encode multiple original position IDs from merged tokens into distinct dimension segments, enabling a single compressed token to carry multiple spatial/temporal positional cues. PPE is a zero-parameter, plug-and-play operator that achieves an average performance drop of only 3.6% on image tasks at 55% compression, and maintains comparable performance at 90% compression via cascaded compression.
-
 **[PRISMM-Bench: A Benchmark of Peer-Review Grounded Multimodal Inconsistencies](prismm-bench_a_benchmark_of_peer-review_grounded_multimodal_inconsistencies.md)**
 
 :   This work introduces PRISMM-Bench, the first benchmark grounded in genuine reviewer-annotated multimodal inconsistencies in scientific papers. Mining 18,009 ICLR open reviews yields 384 cross-modal inconsistencies, evaluated across three tasks—identification, remediation, and paired matching—with a JSON-structured debiasing scheme for answer representation. Among 21 state-of-the-art LMMs, the best achieves only 53.9%, systematically exposing severe deficiencies in cross-modal reasoning over scientific documents.
@@ -291,21 +251,13 @@ item_total: 85
 
 :   This paper proposes a dual-branch multimodal supervision framework for action effect modeling, combining a visual branch (object state and spatial relation features) with a text branch (GPT-4o-generated scene graphs). Learnable effect tokens distill external supervision signals, achieving state-of-the-art mistake detection on egocentric procedural videos.
 
-**[Reasoning-Driven Multimodal LLM for Domain Generalization](reasoning-driven_multimodal_llm_for_domain_generalization.md)**
+**[RAVENEA: A Benchmark for Multimodal Retrieval-Augmented Visual Culture Understanding](ravenea_a_benchmark_for_multimodal_retrieval-augmented_visual_culture_understand.md)**
 
-:   This paper proposes RD-MLDG — the first framework to incorporate MLLM reasoning chains into domain generalization. It constructs the DomainBed-Reasoning dataset, systematically analyzes two core challenges of reasoning supervision (optimization gap + reasoning pattern mismatch), and addresses them jointly via MTCT (Multi-Task Cross-Training) and SARR (Self-Aligned Reasoning Regularization), achieving an average accuracy of 86.89% across four standard DG benchmarks — substantially surpassing GPT-4o (83.46%) and all CLIP/ViT-based methods.
-
-**[Ref-Adv: Exploring MLLM Visual Reasoning in Referring Expression Tasks](ref-adv_exploring_mllm_visual_reasoning_in_referring_expression_tasks.md)**
-
-:   This paper introduces the Ref-Adv benchmark, constructed via a pipeline of **hard distractor pairing + LLM-assisted minimally sufficient expression generation + three-annotator unanimous verification**. The benchmark eliminates "grounding shortcuts" present in classical REC datasets. Across 13 contemporary MLLMs — including GPT-4o, Gemini 2.5, and Qwen2.5-VL-72B — accuracy drops dramatically from 90%+ on RefCOCO(+/g) to 50–68% on Ref-Adv, systematically exposing severe deficiencies in complex visual reasoning and precise grounding.
+:   This paper introduces Ravenea, the first benchmark for evaluating multimodal retrieval-augmented cultural understanding. It comprises 1,868 instances and 11,396 human-ranked Wikipedia documents, spanning 11 categories across 8 countries. The benchmark evaluates 7 multimodal retrievers and 17 VLMs, finding that culture-aware RAG yields average improvements of 6% on cVQA and 11% on cIC.
 
 **[Revisit Visual Prompt Tuning: The Expressiveness of Prompt Experts](revisit_visual_prompt_tuning_the_expressiveness_of_prompt_experts.md)**
 
 :   This paper reveals the limitations of VPT from a Mixture-of-Experts (MoE) perspective — prompt experts are input-agnostic constant functions with limited expressiveness — and proposes VAPT, which employs token-wise projectors and a shared feature projector to make prompt experts input-adaptive. VAPT achieves superior performance with fewer parameters and is supported by theoretical guarantees on optimal sample efficiency.
-
-**[Seeing Across Views: Benchmarking Spatial Reasoning of Vision-Language Models in Robotic Scenes](seeing_across_views_benchmarking_spatial_reasoning_of_vision-language_models_in_.md)**
-
-:   This paper proposes MV-RoboBench, the first benchmark integrating multi-view spatial reasoning with robotic manipulation tasks, systematically evaluating 40+ VLMs (open-source, closed-source, and reasoning-enhanced). The best-performing model, GPT-5, achieves only 56.4% accuracy, far below the human baseline of 91.0%. The study further reveals a positive correlation between spatial and robotic reasoning, and that performance on single-view benchmarks does not reliably transfer to multi-view settings.
 
 **[Self-Aug: Query and Entropy Adaptive Decoding for Large Vision-Language Models](self-aug_query_and_entropy_adaptive_decoding_for_large_vision-language_models.md)**
 
@@ -319,53 +271,17 @@ item_total: 85
 
 :   Shuffle-R1 is proposed as an RL training framework that addresses two key efficiency bottlenecks—Advantage Collapsing and Rollout Silencing—through Pairwise Trajectory Sampling (selecting high-contrast trajectory pairs) and Advantage-based Batch Shuffle (redistributing training batches by advantage values). The framework achieves a 22% improvement over the baseline on Geo3K and surpasses GPT-4o on MathVerse.
 
-**[Small Drafts, Big Verdict: Information-Intensive Visual Reasoning via Speculation](small_drafts_big_verdict_information-intensive_visual_reasoning_via_speculation.md)**
-
-:   Inspired by the draft-then-verify paradigm of Speculative Decoding, this paper proposes Speculative Verdict (SV), which employs multiple lightweight VLMs to generate diverse reasoning paths as drafts, while a large model serves as the verdict to synthesize, verify, and correct them. Without any training, SV surpasses GPT-4o by 11.9% on information-intensive VQA and recovers correct answers in 47–53% of minority-correct cases.
-
-**[SophiaVL-R1: Reinforcing MLLMs Reasoning with Thinking Reward](sophiavl-r1_reinforcing_mllms_reasoning_with_thinking_reward.md)**
-
-:   This paper proposes SophiaVL-R1, which introduces a holistic-level thinking process reward into rule-based RL training of MLLMs. A Thinking Reward Model (TRM) is trained to evaluate reasoning quality along five dimensions (including logical soundness and redundancy). Trust-GRPO is proposed to compute a reliability weight $\gamma$ from the contrast of thinking rewards between correct and incorrect answer groups, mitigating reward hacking. A time-based annealing strategy $e^{-\text{steps}/T}$ gradually reduces the thinking reward contribution so that the model relies more on accurate rule-based rewards in later training. The resulting 7B model comprehensively outperforms LLaVA-OneVision-72B on multiple benchmarks, including MathVista (71.3%) and MMMU (61.3%).
-
 **[Sparsity Forcing: Reinforcing Token Sparsity of MLLMs](sparsity_forcing_reinforcing_token_sparsity_of_mllms.md)**
 
 :   This paper proposes Sparsity Forcing — a GRPO-based RL post-training framework that treats a sparse-attention MLLM as the policy model and the original MLLM as the reference model. Through multi-budget rollouts exploring different token retention thresholds $p$, and using a joint reward combining efficiency (token reduction rate) and performance (answer correctness) for within-group contrastive optimization, the method improves the token reduction rate of Qwen2/2.5-VL from 20% to 75% with minimal accuracy loss, achieving 3× memory reduction and 3.3× decoding speedup.
-
-**[Spatial-DISE: A Unified Benchmark for Evaluating Spatial Reasoning in Vision-Language Models](spatial-dise_a_unified_benchmark_for_evaluating_spatial_reasoning_in_vision-lang.md)**
-
-:   This paper proposes Spatial-DISE, a unified spatial reasoning benchmark grounded in a cognitive-science-based 2×2 taxonomy (Intrinsic/Extrinsic × Static/Dynamic). The benchmark comprises 559 evaluation VQA pairs and 12K+ training instances. Evaluation across 32 state-of-the-art VLMs reveals a substantial gap between model performance and human-level capability, particularly on dynamic spatial reasoning tasks such as mental rotation and folding.
-
-**[Spatial CAPTCHA: Generatively Benchmarking Spatial Reasoning for Human-Machine Differentiation](spatial_captcha_generatively_benchmarking_spatial_reasoning_for_human-machine_di.md)**
-
-:   This paper proposes Spatial CAPTCHA, a novel human verification framework grounded in 3D spatial reasoning. It exploits fundamental capability gaps between humans and multimodal large language models (MLLMs) across geometric reasoning, perspective-taking, occlusion handling, and mental rotation tasks to distinguish humans from machines. The best-performing MLLM achieves only 31.0% Pass@1 accuracy, far below human performance.
-
-**[Spatial Reasoning is Not a Free Lunch: A Controlled Study on LLaVA](spatial_reasoning_is_not_a_free_lunch_a_controlled_study_on_llava.md)**
-
-:   Through controlled experiments within the LLaVA framework, this paper systematically investigates the effects of image encoder training objectives and 2D positional encoding on the spatial reasoning capabilities of VLMs. The study finds that encoder choice dominates spatial performance, AIMv2 yields the most consistent results, while improvements from 2D-RoPE are unstable—indicating that spatial reasoning failures are rooted in core design choices of current VLM pipelines.
-
-**[SpatiaLab: Can Vision-Language Models Perform Spatial Reasoning in the Wild?](spatialab_can_vision-language_models_perform_spatial_reasoning_in_the_wild.md)**
-
-:   This paper introduces SpatiaLab, a real-world spatial reasoning benchmark comprising 1,400 visual QA pairs spanning 30 subcategories across 6 major spatial task categories. Supporting both MCQ and open-ended evaluation formats, SpatiaLab reveals a substantial gap between the strongest current VLMs (InternVL3.5-72B: 54.93% MCQ) and humans (87.57%), with the gap widening further under open-ended settings.
 
 **[SpectralGCD: Spectral Concept Selection and Cross-modal Representation Learning for Generalized Category Discovery](spectralgcd_spectral_concept_selection_and_cross-modal_representation_learning_f.md)**
 
 :   This paper proposes SpectralGCD, which represents images as semantic mixtures over a CLIP concept dictionary (i.e., cross-modal similarity vectors), employs spectral filtering to automatically select task-relevant concepts, and incorporates forward-reverse knowledge distillation to preserve semantic quality. The method achieves multimodal state-of-the-art across six benchmarks at a computational cost comparable to unimodal approaches.
 
-**[SpinBench: Perspective and Rotation as a Lens on Spatial Reasoning in VLMs](spinbench_perspective_and_rotation_as_a_lens_on_spatial_reasoning_in_vlms.md)**
-
-:   This paper introduces SpinBench, a cognitively grounded diagnostic benchmark that systematically evaluates spatial reasoning in 37 VLMs through 7 progressively structured task categories—ranging from object identity recognition to perspective taking—revealing systemic deficiencies including egocentric bias and weak rotation understanding.
-
 **[TableDART: Dynamic Adaptive Multi-Modal Routing for Table Understanding](tabledart_dynamic_adaptive_multi-modal_routing_for_table_understanding.md)**
 
 :   This paper proposes TableDART, which employs a lightweight MLP gating network with only 2.59M parameters to dynamically select the optimal processing path (Text-only / Image-only / Fusion) for each query-table pair. By reusing frozen unimodal expert models and introducing an LLM Agent for cross-modal fusion, TableDART achieves an average improvement of 4.02% over the strongest MLLM baseline HIPPO across 7 table understanding benchmarks, while reducing inference latency by 24.5%.
-
-**[ThinkOmni: Lifting Textual Reasoning to Omni-modal Scenarios via Guidance Decoding](thinkomni_lifting_textual_reasoning_to_omni-modal_scenarios_via_guidance_decodin.md)**
-
-:   ThinkOmni is a training-free framework that leverages a text-only large reasoning model (LRM) to guide an omni-modal LLM (OLLM) during decoding via Stepwise Contrastive Scaling, which adaptively balances perception and reasoning signals. The method achieves 70.2% on MathVista and 75.5% on MMAU, matching or surpassing RFT-based approaches.
-
-**[Through the Lens of Contrast: Self-Improving Visual Reasoning in VLMs](through_the_lens_of_contrast_self-improving_visual_reasoning_in_vlms.md)**
-
-:   This paper proposes VC-STaR (Visual Contrastive Self-Taught Reasoner), motivated by the observation that *VLMs perceive visual content more accurately when comparing two similar images*. A contrastive self-improvement framework is designed: contrastive VQA pairs are constructed to elicit more faithful visual analysis from the model, and an LLM integrates this contrastive analysis into reasoning chains, yielding the high-quality visual reasoning dataset VisCoR-55K. Fine-tuning on this dataset achieves +5.7% on MMVP and +3.2% on Hallusion.
 
 **[U-MARVEL: Unveiling Key Factors for Universal Multimodal Retrieval via Embedding Learning](u-marvel_unveiling_key_factors_for_universal_multimodal_retrieval_via_embedding_.md)**
 
@@ -383,10 +299,6 @@ item_total: 85
 
 :   This paper proposes UniHM, the first unified language-conditioned dexterous hand manipulation framework. It maps heterogeneous robotic hands into a shared discrete space via a morphology-agnostic VQ codebook, leverages a VLM for instruction-driven manipulation sequence generation, and ensures physical feasibility through physics-guided dynamic refinement.
 
-**[VidGuard-R1: AI-Generated Video Detection and Explanation via Reasoning MLLMs and RL](vidguard-r1_ai-generated_video_detection_and_explanation_via_reasoning_mllms_and.md)**
-
-:   VidGuard-R1 is the first video authenticity detector that fine-tunes an MLLM with GRPO (Group Relative Policy Optimization). By constructing a 140K shortcut-free real/fake video dataset and designing two specialized reward mechanisms—temporal artifact reward and diffusion-step quality reward—it achieves 86.17% accuracy on its in-house dataset and 95%+ zero-shot SOTA performance on GenVidBench and GenVideo benchmarks, while generating interpretable chain-of-thought reasoning.
-
 **[Vision-Zero: Scalable VLM Self-Improvement via Strategic Gamified Self-Play](vision-zero_scalable_vlm_self-improvement_via_strategic_gamified_self-play.md)**
 
 :   This paper proposes Vision-Zero, the first annotation-free gamified self-play framework for VLMs. By casting visual reasoning as a "Who is the Spy?"-style game and combining it with the Iterative-SPO training algorithm, Vision-Zero achieves scalable self-improvement and surpasses SOTA methods trained on human-annotated data across reasoning, chart understanding, and vision-centric tasks.
@@ -402,14 +314,6 @@ item_total: 85
 **[Visual Symbolic Mechanisms: Emergent Symbol Processing in Vision Language Models](visual_symbolic_mechanisms_vlm.md)**
 
 :   This paper discovers that VLMs internally develop a three-stage symbolic processing mechanism (ID retrieval → ID selection → feature retrieval) that uses content-agnostic spatial position indices (position IDs) to solve the visual binding problem, and demonstrates that binding errors can be directly traced to failures in these mechanisms.
-
-**[VLM-SubtleBench: How Far Are VLMs from Human-Level Subtle Comparative Reasoning?](vlm-subtlebench_how_far_are_vlms_from_human-level_subtle_comparative_reasoning.md)**
-
-:   This paper introduces VLM-SubtleBench, a benchmark for evaluating vision-language models on subtle difference comparative reasoning, covering 10 difference types and 6 image domains (natural, gaming, industrial, aerial, medical, and synthetic). It reveals a performance gap of over 30% between VLMs and humans on spatial, temporal, and viewpoint reasoning tasks.
-
-**[VTool-R1: VLMs Learn to Think with Images via Reinforcement Learning on Multimodal Tool Use](vtool-r1_vlms_learn_to_think_with_images_via_reinforcement_learning_on_multimoda.md)**
-
-:   This paper proposes VTool-R1, the first framework that trains VLMs via reinforcement fine-tuning to generate interleaved textual and visual intermediate reasoning steps, enabling models to "think with images."
 
 **[WebDS: An End-to-End Benchmark for Web-based Data Science](webds_an_end-to-end_benchmark_for_web-based_data_science.md)**
 

@@ -95,6 +95,7 @@ Testing on 5 value sets (Helpfulness-4, Harmlessness-4, HH Balance-8, Confuciani
 Observation: PICACO is most stable on Schwartz-type values and competes with OPRO on HH-8. Its **advantage expands as the number of values increases**.
 
 ### Ablation Study
+
 | Configuration | Average Performance Drop | Explanation |
 | :--- | :--- | :--- |
 | Full PICACO | — | Complete method |

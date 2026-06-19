@@ -89,6 +89,7 @@ PersonaAgent does not rely on user-level model fine-tuning; instead, it performs
 ## Key Experimental Results
 
 ### Main Results
+
 | Task | Metric | Strong Baseline | PersonaAgent | Gain |
 |------|------|--------|--------------|------|
 | LaMP-1 Citation Identification | Acc / F1 | MemBank 0.862 / 0.861 | 0.919 / 0.918 | Significant improvement in personalized citation selection |
@@ -97,6 +98,7 @@ PersonaAgent does not rely on user-level model fine-tuning; instead, it performs
 | LaMP-3 Product Rating | MAE / RMSE | ICL 0.277 / 0.543 | 0.241 / 0.509 | Lowest error in numerical rating |
 
 ### Ablation Study
+
 | Configuration | LaMP-1 Acc/F1 | LaMP-2M Acc/F1 | LaMP-2N Acc/F1 | LaMP-3 MAE/RMSE | Description |
 |------|---------------|----------------|----------------|-----------------|------|
 | Full PersonaAgent | 0.919 / 0.918 | 0.513 / 0.424 | 0.796 / 0.532 | 0.241 / 0.509 | Full system |

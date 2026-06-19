@@ -13,8 +13,8 @@ content_hash: 7c81650c3b6d6a94
 # Structure-Guided Entity Resolution: Fine-Tuning LLMs for Robust Name Matching in Complex Linguistic Contexts
 
 **Conference**: ACL2026
-**arXiv**: [2605.23597](https://arxiv.org/abs/2605.23597)
-**Code**: To be confirmed
+**arXiv**: [2605.23597](https://arxiv.org/abs/2605.23597)  
+**Code**: To be confirmed  
 **Area**: Multilingual Translation
 **Keywords**: Entity Resolution, Name Matching, Curriculum Learning, KYC, LoRA Fine-tuning, Multilingual
 

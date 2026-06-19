@@ -62,6 +62,7 @@ SEMANTICQA is a benchmark and does not involve training new models. API-based an
 ## Key Experimental Results
 
 ### Main Results
+
 | Model / Setting | IED ACC | IEE ACCs | IEI MTR | LCC ACC | LCE ACCs | LCI MTR | NCC ACC | NCE ACCs | NCI MTR | VPE ACCs | LVE ACCs | VIE ACCs |
 |-------------|---------|----------|---------|---------|----------|---------|---------|----------|---------|----------|----------|----------|
 | Human | 71.0 | 87.0 | 20.5 | 47.0 | 50.0 | 16.7 | 71.0 | 73.0 | 17.2 | 85.0 | 55.0 | 78.0 |
@@ -71,6 +72,7 @@ SEMANTICQA is a benchmark and does not involve training new models. API-based an
 | GPT-5 five-shot | 85.4 | 78.7 | 22.5 | 84.3 | 68.9 | 37.4 | 67.2 | 79.0 | 75.3 | 74.7 | 38.3 | 50.5 |
 
 ### Ablation Study
+
 | Analysis Setting | Key Metric | Description |
 |----------|---------|------|
 | LC Category Scale: DeepSeek-R1 zero-shot | Acc@2 81.7, Acc@16 35.4 | Increasing categories makes fine-grained semantic relation classification significantly harder |

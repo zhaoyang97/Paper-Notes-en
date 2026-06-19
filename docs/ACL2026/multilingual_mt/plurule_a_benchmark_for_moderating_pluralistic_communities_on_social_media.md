@@ -86,6 +86,7 @@ PluRule is a benchmark and does not involve training new models. Evaluated model
 ## Key Experimental Results
 
 ### Main Results
+
 | Split | Instances | Comments | Images | Subreddits / Clusters | Rules / Clusters | Languages |
 |-------|-----------|----------|--------|------------------------|------------------|-----------|
 | Train | 9,155 | 51,968 | 2,077 | 861 / 25 | 1,336 / 27 | 9 |
@@ -94,6 +95,7 @@ PluRule is a benchmark and does not involve training new models. Evaluated model
 | Total | 13,371 | 72,675 | 3,643 | 1,989 / 25 | 2,885 / 27 | 9 |
 
 ### Ablation Study
+
 | Model / Variant | Comment Only | +Discussion | +Submission | +User | +Images | Description |
 |-------------|--------------|-------------|-------------|-------|---------|------|
 | Qwen3-VL-4B Instruct | 49.6 | 49.2 | 48.3 | 48.9 | 48.4 | Mostly below or near 50% baseline |

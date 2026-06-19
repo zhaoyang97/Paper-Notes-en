@@ -83,6 +83,7 @@ Ours does not train a new generative model nor propose a neural loss function. T
 ## Key Experimental Results
 
 ### Main Results
+
 | Item | Value / Setting | Function | Remarks |
 |------|-------------|------|------|
 | Summary Source | XSum | Single-doc single-sentence summary | Strong compression easily exposes selective emphasis |
@@ -93,6 +94,7 @@ Ours does not train a new generative model nor propose a neural loss function. T
 | Expert Agreement (Jury = Not Framed) | 16.3% | Calibration weight | Corresponds to $w=0.163$ |
 
 ### Ablation Study
+
 | Analysis Dimension | Key Finding | Description |
 |----------|----------|------|
 | Model Capacity / Pre-training | Large models have significantly higher overall framing rates, $p=0.0012$ | Paradoxically, low rates in small models may stem from lower output quality |

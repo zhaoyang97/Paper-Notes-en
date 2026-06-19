@@ -13,8 +13,8 @@ content_hash: 91977ebcbce5ba6e
 # Strategy-Induct: Task-Level Strategy Induction for Instruction Generation
 
 **Conference**: ACL2026 Findings  
-**arXiv**: [2605.20924](https://arxiv.org/abs/2605.20924)
-**Code**: TBD
+**arXiv**: [2605.20924](https://arxiv.org/abs/2605.20924)  
+**Code**: TBD  
 **Area**: LLM Reasoning
 **Keywords**: Instruction Induction, Reasoning Strategy, Prompt Engineering, Question-only, Task-level Instruction, Cross-model Generalization
 

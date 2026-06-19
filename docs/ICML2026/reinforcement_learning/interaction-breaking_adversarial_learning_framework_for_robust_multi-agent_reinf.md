@@ -96,6 +96,7 @@ Baselines include Vanilla QMIX, Rand-Obs/Rand-Act, FGSM, ATLA, ERNIE, ROMANCE, a
 | MAPPO backbone | — | — | Improved robustness; backbone-agnostic |
 
 ### Ablation Study
+
 | Configuration | 8m Dis-1 Win Rate (%) | Explanation |
 |------|-------------------|------|
 | IBAL Full | 88.4 ± 3.3 | Full method |

@@ -84,6 +84,7 @@ Four near-OOD datasets: Colored MNIST (shuffled color-digit correlation), Stanfo
 | **Median AUROC** | — | **93.47** | 86.21 | 91.97 | **+1.50 vs SOTA** |
 
 ### Ablation Study
+
 | Configuration | Avg. AUROC | Note |
 | :--- | :--- | :--- |
 | GCOS Full (Mahalanobis Synthesis + Energy Reg) | 93.47 | Default |

@@ -115,6 +115,7 @@ Reconstructed results were used to train a U-Net for segmentation:
 VEMamba outperformed others across all factors. At $\times 4$, the gap to isotropic GT was only 0.002, indicating reconstruction quality close to true isotropic data.
 
 ### Ablation Study (EPFL $\times 4$)
+
 | Configuration | PSNR | SSIM | Remark |
 | :--- | :--- | :--- | :--- |
 | w/o ALCSSM (Standard Scan) | 29.381 | 0.7695 | -0.07 dB |

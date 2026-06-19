@@ -99,6 +99,7 @@ Interpretation: ① "Covering U" is generally superior to "V(T) only," and name-
 | **SVFT** | **91.06** | **87.50** | Nearly unaffected by adversarial classes |
 
 ### Ablation Study
+
 | Config | Phenomenon | Description |
 |---|---|---|
 | Subset selection: linear greedy (default) | Best stability/extensibility | Submodular greedy is the optimal selection strategy (Fig 5) |

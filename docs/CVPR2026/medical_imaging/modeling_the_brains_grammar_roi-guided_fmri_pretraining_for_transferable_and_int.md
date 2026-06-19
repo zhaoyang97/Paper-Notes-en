@@ -97,6 +97,7 @@ ROITok achieved the **highest low-level reconstruction fidelity** (PixCorr jumpe
 | **ROITok (1h, Diffusion Prior)** | .303 | **92.0%** | **88.1%** | 86.9% |
 
 ### Ablation Study
+
 | Configuration | Impact | Description |
 |------|------|------|
 | Full ROITok | Optimal | Includes sparse ROI fusion + MRL compression. |

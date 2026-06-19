@@ -110,6 +110,7 @@ On holdout sets with ground truth (Relighting/PBR Shadows/ISP):
 User preference rate over SDEdit/IP2P/WAN V2V was **84.28% / 90.10% / 90.11%** respectively.
 
 ### Ablation Study
+
 | Config | Metric (In-domain Temp) | Note |
 |------|---------|------|
 | Full Model | 0.9827 | |

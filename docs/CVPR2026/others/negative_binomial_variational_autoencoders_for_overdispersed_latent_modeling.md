@@ -106,6 +106,7 @@ General trends: The MC-G variant is best for generation (FID/KID) across almost 
 | Few-shot (LR) | CIFAR 20-shot | 0.266 | 0.261 (P-VAE) | Still leads across datasets |
 
 ### Ablation Study
+
 | Configuration | Conclusion | Description |
 | :--- | :--- | :--- |
 | Decoder Architecture | MLP decoder optimal for MSE/SSIM; Conv optimal for FID/KID | Decoder capacity is key for both |

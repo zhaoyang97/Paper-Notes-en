@@ -1,36 +1,24 @@
 ---
 title: >-
-  CVPR2026 Human Understanding Papers · 174 Notes
+  CVPR2026 Human Understanding Papers · 138 Notes
 description: >-
-  174 CVPR2026 papers in the Human Understanding area, covering Face & Gaze, Human Pose, Re-Identification, Avatars, Diffusion Models, Multimodal/VLM and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  138 CVPR2026 papers in the Human Understanding area, covering Face & Gaze, Re-Identification, Human Pose, Diffusion Models, Multimodal/VLM, Avatars and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "CVPR2026"
   - "Human Understanding"
   - "AI paper notes"
   - "paper summaries"
   - "Face & Gaze"
-  - "Human Pose"
   - "Re-Identification"
-  - "Avatars"
+  - "Human Pose"
   - "Diffusion Models"
   - "Multimodal/VLM"
+  - "Avatars"
 item_list:
-  - u: "a_two_stage_dual_modality_model_for_facial_expression_recognition/"
-    t: "A Two-Stage Dual-Modality Model for Facial Expression Recognition"
   - u: "actavatar_temporally-aware_precise_action_control_for_talking_avatars/"
     t: "ActAvatar: Temporally-Aware Precise Action Control for Talking Avatars"
-  - u: "active_inference_for_micro-gesture_recognition_efe-guided_temporal_sampling_and_/"
-    t: "Active Inference for Micro-Gesture Recognition: EFE-Guided Temporal Sampling and Adaptive Learning"
-  - u: "active_intelligence_in_video_avatars_via_closed-loop_world_modeling/"
-    t: "Active Intelligence in Video Avatars via Closed-loop World Modeling"
   - u: "all_in_one_unifying_deepfake_detection_tampering_localization_and_source_tracing/"
     t: "All in One: Unifying Deepfake Detection, Tampering Localization, and Source Tracing with a Robust Landmark-Identity Watermark"
-  - u: "anatomical_domain_shifts_test-time_heterogeneous_adaptation_for_3d_human_pose_pr/"
-    t: "Anatomical Domain Shifts: Test-time Heterogeneous Adaptation for 3D Human Pose Prediction"
-  - u: "armflow_autoregressive_meanflow_for_online_3d_human_reaction_generation/"
-    t: "ARMFlow: AutoRegressive MeanFlow for Online 3D Human Reaction Generation"
-  - u: "assistmimic_physics_grounded_humanoid_assistance/"
-    t: "AssistMimic: Physics-Grounded Humanoid Assistance via Multi-Agent RL"
   - u: "audioavatar_personalized_audio-driven_whole-body_talking_avatars/"
     t: "AudioAvatar: Personalized Audio-driven Whole-body Talking Avatars"
   - u: "avatar_forcing_real-time_interactive_head_avatar_generation_for_natural_conversa/"
@@ -39,28 +27,20 @@ item_list:
     t: "AVATAR: Reinforcement Learning to See, Hear, and Reason Over Video"
   - u: "barbiegait_an_identity-consistent_synthetic_human_dataset_with_versatile_cloth-c/"
     t: "BarbieGait: An Identity-Consistent Synthetic Human Dataset with Versatile Cloth-Changing for Gait Recognition"
-  - u: "beyond_binary_contrast_modeling_continuous_skeleton_action_spaces_with_transitio/"
-    t: "Beyond Binary Contrast: Modeling Continuous Skeleton Action Spaces with Transitional Anchors"
   - u: "beyond_scanpaths_graph-based_gaze_simulation_in_dynamic_scenes/"
     t: "Beyond Scanpaths: Graph-Based Gaze Simulation in Dynamic Scenes"
   - u: "beyond_single-view_sufficiency_cvbench_for_cross-view_human_understanding/"
     t: "Beyond Single-View Sufficiency: CVBench for Cross-View Human Understanding"
-  - u: "beyond_static_frames_temporal_aggregate-and-restore_vision_transformer_for_human/"
-    t: "Beyond Static Frames: Temporal Aggregate-and-Restore Vision Transformer for Human Pose Estimation"
-  - u: "bi-directional_autoregressive_diffusion_for_large_complex_motion_interpolation/"
-    t: "Bi-directional Autoregressive Diffusion for Large Complex Motion Interpolation"
   - u: "bit_matching-based_bi-directional_interaction_transformation_network_for_visible/"
     t: "BIT: Matching-based Bi-directional Interaction Transformation Network for Visible-Infrared Person Re-Identification"
   - u: "boostslt_boosting_sign_language_translation_via_a_plug-and-play_diffusion-based_/"
     t: "BoostSLT: Boosting Sign Language Translation via a Plug-and-Play Diffusion-Based Semantic Enhancer"
   - u: "breaking_spurious_correlations_uncertainty-driven_causal_transformers_for_au_det/"
     t: "Breaking Spurious Correlations: Uncertainty-Driven Causal Transformers for AU Detection"
-  - u: "bézier_degradation_modeling_for_lidar-based_human_motion_capture/"
-    t: "Bézier Degradation Modeling for LiDAR-based Human Motion Capture"
+  - u: "causal_motion_diffusion_models_for_autoregressive_motion_generation/"
+    t: "Causal Motion Diffusion Models for Autoregressive Motion Generation"
   - u: "cigpose_causal_intervention_graph_neural_network_for_whole-body_pose_estimation/"
     t: "CIGPose: Causal Intervention Graph Neural Network for Whole-Body Pose Estimation"
-  - u: "clep_contrastive_language-pose_pretraining/"
-    t: "CLEP: Contrastive Language-Pose Pretraining"
   - u: "clex_complementary_label_exchange_learning_for_noisy_facial_expression_recogniti/"
     t: "CLEX: Complementary Label Exchange Learning for Noisy Facial Expression Recognition"
   - u: "cog_confidence-aware_optimal_geometric_correspondence_for_unsupervised_single-re/"
@@ -75,49 +55,45 @@ item_list:
     t: "D³FER: Dual Channel and Dual Branch Network for Robust Facial Expression Recognition under Dual Challenges"
   - u: "decoupled_generative_modeling_for_human-object_interaction_synthesis/"
     t: "Decoupled Generative Modeling for Human-Object Interaction Synthesis"
-item_total: 174
+  - u: "decovln_decoupling_observation_reasoning_and_correction_for_vision-and-language_/"
+    t: "DecoVLN: Decoupling Observation, Reasoning, and Correction for Vision-and-Language Navigation"
+  - u: "dex-portrait_disentangled_and_expressive_portrait_animation_via_explicit_and_lat/"
+    t: "DeX-Portrait: Disentangled and Expressive Portrait Animation via Explicit and Latent Motion Representations"
+  - u: "differentially_private_2d_human_pose_estimation/"
+    t: "Differentially Private 2D Human Pose Estimation"
+  - u: "dyadit_a_multi-modal_diffusion_transformer_for_socially_favorable_dyadic_gesture/"
+    t: "DyaDiT: A Multi-Modal Diffusion Transformer for Socially Favorable Dyadic Gesture Generation"
+  - u: "dynamic_label_noise_suppression_with_optimal_teacher_pool_for_facial_expression_/"
+    t: "Dynamic Label Noise Suppression with Optimal Teacher Pool for Facial Expression Recognition"
+  - u: "dynamic_magic_unleashing_restricted_knowledge_for_lifelong_person_re-identificat/"
+    t: "Dynamic Magic: Unleashing Restricted Knowledge for Lifelong Person Re-Identification"
+  - u: "e-3dpsm_a_state_machine_for_event-based_egocentric_3d_human_pose_estimation/"
+    t: "E-3DPSM: A State Machine for Event-Based Egocentric 3D Human Pose Estimation"
+  - u: "egoposeformer_v2_accurate_egocentric_human_motion_estimation_for_arvr/"
+    t: "EgoPoseFormer v2: Accurate Egocentric Human Motion Estimation for AR/VR"
+  - u: "eventgait_towards_robust_gait_recognition_with_event_streams/"
+    t: "EventGait: Towards Robust Gait Recognition with Event Streams"
+  - u: "facecot_cot_reasoning_face_anti_spoofing/"
+    t: "FaceCoT: Chain-of-Thought Reasoning in MLLMs for Face Anti-Spoofing"
+item_total: 138
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # 🧑 Human Understanding
 
-**📷 CVPR2026** · **174** paper notes
+**📷 CVPR2026** · **138** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (4)](../../ICML2026/human_understanding/index.md) · [💬 ACL2026 (3)](../../ACL2026/human_understanding/index.md) · [🔬 ICLR2026 (8)](../../ICLR2026/human_understanding/index.md) · [🤖 AAAI2026 (20)](../../AAAI2026/human_understanding/index.md) · [🧠 NeurIPS2025 (21)](../../NeurIPS2025/human_understanding/index.md) · [📹 ICCV2025 (41)](../../ICCV2025/human_understanding/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (4)](../../ICML2026/human_understanding/index.md) · [🔬 ICLR2026 (8)](../../ICLR2026/human_understanding/index.md) · [🤖 AAAI2026 (20)](../../AAAI2026/human_understanding/index.md) · [🧠 NeurIPS2025 (21)](../../NeurIPS2025/human_understanding/index.md) · [📹 ICCV2025 (41)](../../ICCV2025/human_understanding/index.md)
 
-🔥 **Top topics:** Face & Gaze ×18 · Human Pose ×17 · Re-Identification ×13 · Avatars ×11 · Diffusion Models ×11
-
-**[A Two-Stage Dual-Modality Model for Facial Expression Recognition](a_two_stage_dual_modality_model_for_facial_expression_recognition.md)**
-
-:   A two-stage dual-modality facial expression recognition framework is proposed: Stage I adapts a DINOv2 encoder on external datasets using Padding-Aware Augmentation and a training-time MoE head; Stage II achieves frame-level audio-visual expression classification through multi-scale facial cropping, Wav2Vec 2.0 audio feature extraction, and gated fusion, obtaining a 0.5368 Macro-F1 in the ABAW 2026 competition.
+🔥 **Top topics:** Face & Gaze ×15 · Re-Identification ×12 · Human Pose ×12 · Diffusion Models ×10 · Multimodal/VLM ×9
 
 **[ActAvatar: Temporally-Aware Precise Action Control for Talking Avatars](actavatar_temporally-aware_precise_action_control_for_talking_avatars.md)**
 
 :   ActAvatar utilizes "structured text prompts + phase-aware cross-attention" to allow talking avatar videos to perform specific actions within designated time windows. Combined with "depth-progressive audio influence" and "two-stage training," it maintains lip-sync, action accuracy, and image quality without relying on pose skeletons, achieving 14B-level effects with a 5B model.
 
-**[Active Inference for Micro-Gesture Recognition: EFE-Guided Temporal Sampling and Adaptive Learning](active_inference_for_micro-gesture_recognition_efe-guided_temporal_sampling_and_.md)**
-
-:   Ours proposes the UAAI framework, which introduces Active Inference to micro-gesture recognition for the first time. Through EFE-guided temporal frame selection, spatial attention, and UMIX uncertainty-aware augmentation, it achieves 63.47% on the RGB modality of the SMG dataset, significantly outperforming traditional RGB methods.
-
-**[Active Intelligence in Video Avatars via Closed-loop World Modeling](active_intelligence_in_video_avatars_via_closed-loop_world_modeling.md)**
-
-:   To address the issue of current video avatars "passively following speech/pose while lacking autonomous goal-driven behavior," this paper proposes the L-IVA task (modeling avatar control as a POMDP with I2V generation models as environment simulators) and the ORCA framework. ORCA utilizes an "Observe-Think-Act-Reflect" (OTAR) closed-loop to counteract generational randomness and a System 2/System 1 dual-system hierarchy for open-domain planning and precise grounding. On a benchmark of 100 tasks, it achieves an average task success rate of 71.0%, significantly exceeding open-loop, reactive, and reflection-free baselines.
-
 **[All in One: Unifying Deepfake Detection, Tampering Localization, and Source Tracing with a Robust Landmark-Identity Watermark](all_in_one_unifying_deepfake_detection_tampering_localization_and_source_tracing.md)**
 
 :   This paper proposes LIDMark, the first framework to unify deepfake detection, tampering localization, and source tracing into a single proactive forensics system. By embedding a 152-dimensional Landmark-Identity watermark (136D facial landmarks + 16D source ID), it utilizes intrinsic/extrinsic consistency to achieve three-in-one forensics, outperforming existing methods in both PSNR/SSIM and detection accuracy.
-
-**[Anatomical Domain Shifts: Test-time Heterogeneous Adaptation for 3D Human Pose Prediction](anatomical_domain_shifts_test-time_heterogeneous_adaptation_for_3d_human_pose_pr.md)**
-
-:   Addressing Continuous Test-time Adaptation (CTTA) for 3D Human Pose Prediction (HPP), this paper identifies the overlooked fact that "domain shifts are concentrated in specific body parts rather than occurring uniformly across the whole body." It proposes TT-HA: decomposing model parameters into five anatomical subsets (left/right arms, left/right legs, torso), using Instance Normalization (IN) statistics combined with Earth Mover's Distance (EMD) to measure online domain changes for each part. Based on these measurements, self-supervised fine-tuning is applied to parts with minor shifts, while parameters for parts experiencing abrupt changes are rolled back to the source model. This achieved a 4.7% reduction in overall MPJPE and a 9.2% reduction in limb errors.
-
-**[ARMFlow: AutoRegressive MeanFlow for Online 3D Human Reaction Generation](armflow_autoregressive_meanflow_for_online_3d_human_reaction_generation.md)**
-
-:   This work introduces the "single-step generation" MeanFlow paradigm to the human motion domain for the first time. By utilizing an autoregressive structure consisting of a "causal context encoder + lightweight MLP velocity predictor" combined with Bootstrapped Causal Encoding (BSCE) to suppress error accumulation, online 3D human reaction generation is achieved within a single inference step. The method reduces FID by approximately 30% compared to existing online methods while maintaining the fastest speed.
-
-**[AssistMimic: Physics-Grounded Humanoid Assistance via Multi-Agent RL](assistmimic_physics_grounded_humanoid_assistance.md)**
-
-:   The first Multi-Agent RL (MARL) framework for imitation learning of contact-rich human-human assistive behaviors in physics simulation. It makes MARL viable in high-contact settings through motion prior initialization, dynamic reference retargeting, and contact-promoting rewards.
 
 **[AudioAvatar: Personalized Audio-driven Whole-body Talking Avatars](audioavatar_personalized_audio-driven_whole-body_talking_avatars.md)**
 
@@ -135,10 +111,6 @@ item_total: 174
 
 :   Addressing the pain point that real-world collection of gait data for "one person wearing hundreds of outfits" is nearly impossible, this paper maps 521 real subjects into a virtual engine. By randomly generating 100 outfits per person, the authors construct an identity-consistent synthetic gait dataset, BarbieGait. A companion clothing-invariant baseline, GaitCLIF, is proposed, achieving SOTA results on BarbieGait and real-world datasets including CCPG, SUSTech1K, Gait3D, and GREW.
 
-**[Beyond Binary Contrast: Modeling Continuous Skeleton Action Spaces with Transitional Anchors](beyond_binary_contrast_modeling_continuous_skeleton_action_spaces_with_transitio.md)**
-
-:   To address the issues of isolated clusters and rigid boundaries caused by "binary contrast" in self-supervised skeleton action recognition, TranCLR synthesizes "transitional anchors" as manifold regularization terms between actions and reshapes the representation space from discrete point clouds into continuous smooth manifolds using three-level geometric manifold calibration. It achieves SOTA across linear evaluation, transfer learning, and retrieval on NTU/PKU-MMD, while reducing the Expected Calibration Error (ECE) from ~5.6% to 0.65%.
-
 **[Beyond Scanpaths: Graph-Based Gaze Simulation in Dynamic Scenes](beyond_scanpaths_graph-based_gaze_simulation_in_dynamic_scenes.md)**
 
 :   The authors model driver gaze as an autoregressive dynamical system: each frame of the traffic scene is encoded into a "gaze-centric" heterogeneous spatio-temporal graph. An Affinity Relational Transformer (ART) models the interaction between the gaze and traffic objects, while an Object-level Density Network (ODN) predicts the next-step gaze distribution, which is autoregressively unrolled into continuous gaze trajectories. This unified model simultaneously generates SOTA-level gaze time series, scanpaths, and saliency maps.
@@ -146,14 +118,6 @@ item_total: 174
 **[Beyond Single-View Sufficiency: CVBench for Cross-View Human Understanding](beyond_single-view_sufficiency_cvbench_for_cross-view_human_understanding.md)**
 
 :   Addressing the loophole in existing MLLM benchmarks that default to "single-view sufficiency" and only reward single-image recognition, this work constructs CVBench—3,000 human understanding questions where each item is verifiably "unsolvable via single-view, solvable via cross-view" (12 spatio-temporal tasks, 4-way synchronized cameras). Evaluation reveals that even the strongest models lag nearly 50 points behind humans, identifying a systematic failure mechanism across all models: "single-view bias."
-
-**[Beyond Static Frames: Temporal Aggregate-and-Restore Vision Transformer for Human Pose Estimation](beyond_static_frames_temporal_aggregate-and-restore_vision_transformer_for_human.md)**
-
-:   Without modifying the plain ViT backbone and lightweight decoder of ViTPose, TAR-ViTPose employs "Joint-centered Temporal Aggregation (JTA) + Global Restore Attention (GRA)" to align, aggregate, and inject joint features from adjacent frames back into the current frame. This plug-and-play approach improves 2D video pose estimation by +2.3 mAP on PoseTrack2017 compared to single-frame ViTPose, while achieving higher speeds (413 fps for ViT-S).
-
-**[Bi-directional Autoregressive Diffusion for Large Complex Motion Interpolation](bi-directional_autoregressive_diffusion_for_large_complex_motion_interpolation.md)**
-
-:   ARVFI reformulates video frame interpolation from "generating all intermediate frames at once" to "generating frames autoregressively from two endpoints towards the center." By replacing optical flow with DINOv3 features as the motion representation, it significantly enhances interpolation accuracy for large complex motions (leading in FID across benchmarks) while reducing sampling to 15 steps—approximately 3x faster than its backbone, Wan.
 
 **[BIT: Matching-based Bi-directional Interaction Transformation Network for Visible-Infrared Person Re-Identification](bit_matching-based_bi-directional_interaction_transformation_network_for_visible.md)**
 
@@ -167,17 +131,13 @@ item_total: 174
 
 :   Addressing the issues of data scarcity, class imbalance, label noise, and confounding bias in Facial Action Unit (AU) detection, this paper proposes the UDCT framework: it models Transformer attention weights as Gaussian distributions to explicitly represent uncertainty, uses this uncertainty to reweight sample losses against noise/imbalance, and employs per-AU causal backdoor adjustment to sever spurious AU correlations caused by confounders. Ours achieves competitive and more robust results on BP4D / DISFA (average F1 of 67.36% on DISFA).
 
-**[Bézier Degradation Modeling for LiDAR-based Human Motion Capture](bézier_degradation_modeling_for_lidar-based_human_motion_capture.md)**
+**[Causal Motion Diffusion Models for Autoregressive Motion Generation](causal_motion_diffusion_models_for_autoregressive_motion_generation.md)**
 
-:   To address jittering or capture failure in LiDAR human motion capture under sparse point clouds and severe occlusion, this paper explicitly models joint trajectories using **Bézier curves with hierarchical order reduction**. Combined with a "Time-scale Motion Transformer (TMT) + Multi-level Motion Aggregator (MMA)" for progressive coarse-to-fine reconstruction, it achieves state-of-the-art (SOTA) performance in both accuracy (MPJPE) and temporal continuity (Accel Err) across four mainstream benchmarks.
+:   The CMDM framework is proposed, which unifies diffusion denoising and autoregressive generation within a motion-language-aligned causal latent space. By employing frame-level independent noise levels and a causal uncertainty sampling schedule, it achieves high-quality, low-latency text-to-motion generation and long-sequence streaming synthesis.
 
 **[CIGPose: Causal Intervention Graph Neural Network for Whole-Body Pose Estimation](cigpose_causal_intervention_graph_neural_network_for_whole-body_pose_estimation.md)**
 
 :   Ours proposes CIGPose, a causal intervention graph pose estimation framework. It identifies visual context confounders through structural causal models, utilizes prediction uncertainty to locate keypoints affected by confounding, and replaces them with learned context-free canonical embeddings. A hierarchical GNN then models skeletal anatomical constraints, achieving a new SOTA of 67.0% AP on COCO-WholeBody.
-
-**[CLEP: Contrastive Language-Pose Pretraining](clep_contrastive_language-pose_pretraining.md)**
-
-:   CLEP adapts CLIP-style contrastive learning to "3D Human Pose ↔ Natural Language". By combining the hierarchical pose encoder HierFormer (joint/limb/full-body levels + Cross-Scale Attention Fusion, CSAF) with the self-constructed CLEP-2M dataset (2 million pairs) for contrastive pretraining, it boosts mRecall on PoseScript-H zero-shot retrieval from 5.9 to 34.8 (nearly 6x) and outperforms baselines in downstream tasks like pose generation and editing.
 
 **[CLEX: Complementary Label Exchange Learning for Noisy Facial Expression Recognition](clex_complementary_label_exchange_learning_for_noisy_facial_expression_recogniti.md)**
 
@@ -207,6 +167,10 @@ item_total: 174
 
 :   DecHOI decomposes "Human-Object Interaction Synthesis" into two lightweight diffusion experts: a Trajectory Generator first plans global paths for the human and object without manual waypoints, followed by an Action Generator that completes fine-grained full-body actions conditioned on these paths. It utilizes an adversarial discriminator targeting end-joint contact dynamics to bridge the realism gap. DecHOI outperforms CHOIS/HOIFHLI on most metrics in FullBodyManipulation and 3D-FUTURE datasets and supports real-time replanning when encountering moving obstacles.
 
+**[DecoVLN: Decoupling Observation, Reasoning, and Correction for Vision-and-Language Navigation](decovln_decoupling_observation_reasoning_and_correction_for_vision-and-language_.md)**
+
+:   The DecoVLN framework is proposed to decouple the three processes of observation, reasoning, and error correction in VLN tasks. By utilizing an adaptive memory optimization mechanism and a state-action pair-based correction fine-tuning strategy, the framework achieves state-of-the-art (SOTA) performance on R2R-CE and RxR-CE using only egocentric RGB input.
+
 **[DeX-Portrait: Disentangled and Expressive Portrait Animation via Explicit and Latent Motion Representations](dex-portrait_disentangled_and_expressive_portrait_animation_via_explicit_and_lat.md)**
 
 :   By employing a hybrid motion representation—explicit global transformation for head pose and implicit latent code for facial expressions—alongside dual-branch pose injection and progressive blended CFG, this work achieves **high-fidelity disentangled control** of pose and expression in one-shot portrait animation for the first time, supporting fine-grained editing of pose or expression independently.
@@ -230,10 +194,6 @@ item_total: 174
 **[E-3DPSM: A State Machine for Event-Based Egocentric 3D Human Pose Estimation](e-3dpsm_a_state_machine_for_event-based_egocentric_3d_human_pose_estimation.md)**
 
 :   E-3DPSM is proposed as an event-based state machine for egocentric 3D human pose estimation. It models pose estimation as a continuous-time state evolution process, utilizing bidirectional SSMs for temporal modeling and a learnable Kalman-style fusion module to integrate direct and incremental predictions. It achieves 80Hz real-time inference, reduces MPJPE by 19%, and improves temporal stability by 2.7 times.
-
-**[Egocentric Visibility-Aware Human Pose Estimation](egocentric_visibility-aware_human_pose_estimation.md)**
-
-:   Addressing the "frequently invisible keypoints" issue in egocentric human pose estimation for head-mounted devices (HMDs), this paper constructs Eva-3M, the first large-scale real-world dataset with visibility annotations (3 million frames, 435,000 visibility labels). It proposes EvaPose, which explicitly predicts the visibility of each keypoint and weights the loss accordingly, reducing the MPJPE of visible keypoints from 49.8mm in FRAME to 34.2mm.
 
 **[EgoPoseFormer v2: Accurate Egocentric Human Motion Estimation for AR/VR](egoposeformer_v2_accurate_egocentric_human_motion_estimation_for_arvr.md)**
 
@@ -283,10 +243,6 @@ item_total: 174
 
 :   Addressing the limitation where text-to-human motion generation only allows sequence or action-level control but lacks control over individual body parts, this paper first utilizes an LLM agent (FrankenAgent) to automatically label existing mocap datasets into a three-level, temporally aligned fine-grained dataset named FrankenStein (Sequence / Atomic Action / Body Part). Subsequently, a diffusion-based model called FrankenMotion is trained, driven by per-frame text prompts for each body part, enabling the composition of complex motions not seen during training (e.g., "raising the left arm while sitting").
 
-**[A2P: From 2D Alignment to 3D Plausibility for Occlusion-Robust Two-Hand Reconstruction](from_2d_alignment_to_3d_plausibility_unifying_hete.md)**
-
-:   Ours decouples two-hand reconstruction into 2D structural alignment + 3D spatial interaction alignment: Stage 1 utilizes a Fusion Alignment Encoder to implicitly distill three 2D priors (keypoints, segmentation, depth) from Sapiens (foundation model-free during inference, 56fps). Stage 2 employs a penetration-aware diffusion model + collision gradient guidance to map penetrating poses to physically plausible configurations—achieving a reduction in MPJPE to 5.36mm on InterHand2.6M (surpassing the Prev. SOTA 4DHands by 2.13mm) and a 7x reduction in penetration volume.
-
 **[From Intuition to Investigation: A Tool-Augmented Reasoning MLLM Framework for Generalizable Face Anti-Spoofing](from_intuition_to_investigation_a_tool-augmented_reasoning_mllm_framework_for_ge.md)**
 
 :   The TAR-FAS framework is proposed, reconstructing the Face Anti-Spoofing (FAS) task into a Chain-of-Thought with Visual Tools (CoT-VT) paradigm for the first time. This allows MLLMs to adaptively invoke external visual tools (LBP/FFT/HOG, etc.) during reasoning, upgrading from "intuitive judgment" to "fine-grained investigation," achieving SOTA on the 1-to-11 cross-domain protocol.
@@ -303,10 +259,6 @@ item_total: 174
 
 :   This paper introduces "Promptable Gaze Estimation (PGE)," a new task where a specific individual in a scene is designated via natural language or a coordinate, and the model directly produces a heatmap of their gaze location end-to-end. The authors provide the Gaze-Co dataset with 120K concept annotations and the first PGE model, GazeAnywhere, achieving SOTA across multiple benchmarks.
 
-**[GazeOnce360: Fisheye-Based 360° Multi-Person Gaze Estimation with Global-Local Feature Fusion](gazeonce360_fisheye-based_360_multi-person_gaze_estimation_with_global-local_fea.md)**
-
-:   This paper proposes GazeOnce360, an end-to-end dual-resolution CNN model for 360° multi-person gaze estimation using a single upward-facing tabletop fisheye camera. It introduces MPSGaze360, the first large-scale synthetic dataset for this scenario, significantly surpassing the existing multi-stage method GAM360 in both accuracy and speed.
-
 **[GazeOnce360: Fisheye-Based 360° Multi-Person Gaze Estimation with Global-Local Feature Fusion](gazeonce360_fisheye-based_360deg_multi-person_gaze_estimation_with_global-local_.md)**
 
 :   Using a single upward-facing desktop fisheye camera to capture a 360° scene, GazeOnce360 employs rotational convolutions, eye keypoint supervision, and global-local dual-resolution cross-attention to simultaneously detect and regress 3D gaze directions for multiple people in an end-to-end manner. On the self-built synthetic dataset MPSGaze360, it reduces gaze error from 18.96° (multi-stage pipeline) to 10.39° while achieving a ~4x speedup.
@@ -314,10 +266,6 @@ item_total: 174
 **[GazeShift: Unsupervised Gaze Estimation and Dataset for VR](gazeshift_unsupervised_gaze_estimation_and_dataset_for_vr.md)**
 
 :   Addressing the dilemma of "off-axis near-eye IR cameras + no reliable labels" in VR headsets, this work releases VRGaze (68 subjects, 2.1M frames), the first large-scale off-axis gaze dataset. It proposes GazeShift, which uses "gaze redirection between two frames of the same eye" as an unsupervised proxy task. By decoupling gaze and appearance via standard cross-attention and using the model's own attention maps as soft masks to focus on the eye region, the model achieves a 1.84° error on VRGaze with only 342K parameters and 55 MFLOPs (5ms inference on headset GPUs), approaching supervised performance.
-
-**[GenHOI: Towards Object-Consistent Hand-Object Interaction with Temporally Balanced and Spatially Selective Object Injection](genhoi_towards_object-consistent_hand-object_interaction_with_temporally_balance.md)**
-
-:   GenHOI attaches a lightweight module of only 157M parameters (approx. 0.95%) to a pre-trained large video generation model (Wan-14B-I2V). By employing **Head-Sliding RoPE** (balancing the influence of reference object tokens across frames temporally) and **Spatial Attention Gating** (focusing object-conditioned attention on interaction zones spatially), it achieves natural hand-object interaction videos with consistent object appearance across frames in in-the-wild scenarios without damaging the base model's generalization. It significantly outperforms SOTA models like VACE and HOI-Swap in both self-re-enactment and cross-re-enactment metrics.
 
 **[Geometric Neural Distance Fields for Learning Human Motion Priors](geometric_neural_distance_fields_for_learning_human_motion_priors.md)**
 
@@ -330,10 +278,6 @@ item_total: 174
 **[HamiPose: Hamiltonian Optimization for Unsupervised Domain Adaptive Pose Estimation](hamipose_hamiltonian_optimization_for_unsupervised_domain_adaptive_pose_estimati.md)**
 
 :   Aiming at training oscillations caused by the "source supervision gradient vs. target consistency gradient" conflict in synthetic $\to$ real domain pose estimation, HamiPose performs orthogonal decomposition of target gradients by keypoints, uses confidence gating to allow only non-conflicting components, and applies a Hamiltonian optimizer with a symplectic integrator to add "controlled momentum" for suppressing high-frequency jitters, achieving SOTA on multiple UDA pose benchmarks.
-
-**[HandDreamer: Zero-Shot Text to 3D Hand Model Generation](handdreamer_zero_shot_text_to_3d_hand_model_generation.md)**
-
-:   Ours proposes HandDreamer, the first method for zero-shot 3D hand model generation from text prompts. It addresses view inconsistency and geometric distortion in Score Distillation Sampling (SDS) through MANO initialization, skeleton-guided diffusion, and corrective hand shape loss.
 
 **[HandX: Scaling Bimanual Motion and Interaction Generation](handx_scaling_bimanual_motion_and_interaction_generation.md)**
 
@@ -351,14 +295,6 @@ item_total: 174
 
 :   HSI-GPT2 is a Large Motion Model (LMM) for "unified understanding + generation" of Human-Scene Interaction (HSI). It employs a **dual-granularity motion tokenizer** to decouple actions into semantic and detail codebooks. By utilizing an **LLM as a semantic planner and a diffusion decoder as a de-tokenizer**, the model achieves high physical fidelity. Integrated with a **Motion Chain-of-Thought (MoCoT) data engine and Group Relative Policy Optimization (GRPO)**, the model performs step-by-step reasoning, significantly outperforming HSI-GPT on HumanML3D and HUMANISE benchmarks for generation, description, and completion tasks.
 
-**[HUM4D: A Dataset and Evaluation for Complex 4D Markerless Human Motion Capture](hum4d_markerless_motion_capture.md)**
-
-:   The HUM4D dataset is proposed, featuring complex single- and multi-person motion scenarios (fast motion, occlusion, identity swaps). It provides synchronized multi-view RGB/RGB-D sequences, precise Vicon marker-based motion capture ground truth, and SMPL/SMPL-X parameters. Benchmarking reveals significant performance degradation of SOTA markerless methods under realistic conditions.
-
-**[Humanoid-GPT: Scaling Data and Structure for Zero-Shot Motion Tracking](humanoid-gpt_scaling_data_and_structure_for_zero-shot_motion_tracking.md)**
-
-:   The whole-body motion tracking of humanoid robots is reformulated as a GPT-style causal sequence modeling problem. This approach involves cluster-training hundreds of PPO experts on a retargeted motion corpus of approximately 2 billion frames, followed by distilling them into a causal-masked Transformer using DAgger. This achieves both high dynamic agility and zero-shot tracking of unseen actions on the real Unitree-G1, while establishing a scaling law for the motion tracking task.
-
 **[HUMAPS-4D: A Multimodal Dataset for HUman Motion Analysis with Physiological and Semantic informations](humaps-4d_a_multimodal_dataset_for_human_motion_analysis_with_physiological_and_.md)**
 
 :   HUMAPS-4D is a large-scale human motion dataset that synchronizes optical motion capture, multi-view RGB, IMU, instrumented pressure insoles, surface electromyography (sEMG), anthropometry, and three-layer semantic annotations under a unified protocol (32 participants × 30 actions × 10 repetitions × 14 hours = 5.76 million frames). Its goal is to establish a rigorous benchmark for inferring full-body 3D poses/actions from physiological signals like plantar pressure without relying on cameras.
@@ -367,14 +303,6 @@ item_total: 174
 
 :   HyperGait utilizes **hypergraph convolution** to extract "high-order nonlinear correlations" among body parts and across temporal frame segments within gait parsing sequences (GPS). Using only the single parsing modality as input, it achieves a 80.5% Rank-1 accuracy on the real-world Gait3D dataset, surpassing the previous parsing-based SOTA (MultiGaitP) by 4.1 percentage points.
 
-**[IDperturb: Enhancing Variation in Synthetic Face Generation via Angular Perturbations](idperturb_enhancing_variation_in_synthetic_face_generation_via_angular_perturbat.md)**
-
-:   Proposes IDperturb, a geometric sampling strategy that performs angular perturbations on identity embeddings on the unit hypersphere. It significantly enhances the intra-class diversity of synthetic face datasets without modifying generative models, thereby improving downstream face recognition performance.
-
-**[ImmerIris: A Large-Scale Dataset and Benchmark for Off-Axis and Unconstrained Iris Recognition in Immersive Applications](immeriris_a_large-scale_dataset_and_benchmark_for_off-axis_and_unconstrained_iri.md)**
-
-:   The authors created ImmerIris, a large-scale dataset for "off-axis and unconstrained" iris recognition in XR/VR HMD scenarios, containing 499,800 eye images from 546 subjects. They established 8 evaluation protocols of increasing difficulty and demonstrated that traditional two-stage methods are bottlenecked by "normalization." They propose a NormFree paradigm that directly processes cropped eye images using face recognition backbones, which is simple yet outperforms normalization-based SOTA methods on most protocols.
-
 **[IMU-HOI: A Symbiotic Framework for Coherent Human-Object Interaction and Motion Capture via Contact-Conscious Inertial Fusion](imu-hoi_a_symbiotic_framework_for_coherent_human-object_interaction_and_motion_c.md)**
 
 :   IMU-HOI treats "hand-object contact" as a first-class probabilistic signal. Starting from sparse IMUs attached to the body (6 units) and the object (1 unit), a three-stage fusion pipeline simultaneously recovers full-body human poses and 6-DoF object trajectories, reducing object trajectory error by 44%–64% compared to strong baselines across three HOI benchmarks.
@@ -382,10 +310,6 @@ item_total: 174
 **[InterAgent: Physics-based Multi-agent Command Execution via Diffusion on Interaction Graphs](interagent_physics-based_multi-agent_command_execution_via_diffusion_on_interaction_graphs.md)**
 
 :   InterAgent is the first text-driven, physics-based **dual-humanoid agent** control framework. It employs a multi-stream autoregressive diffusion Transformer (Inter-DiT) to decouple proprioception, exteroception, and action, and utilizes an "Interaction Graph + Sparse Edge Attention" to characterize fine-grained joint-to-joint relationships, generating physically plausible and semantically faithful dual-humanoid interactions from a single text command.
-
-**[JUMP-Hand: Learning Joint-wise Uncertainty to Gate Mixture of View Experts for Multi-View 3D Hand Reconstruction](jump-hand_learning_joint-wise_uncertainty_to_gate_mixture_of_view_experts_for_mu.md)**
-
-:   JUMP-Hand reformulates multi-view 3D hand reconstruction as a Mixture of Experts (MoE) problem where "each view is an expert," utilizing **joint-wise, view-wise probabilistic uncertainty** as an explicit gating signal. This signal drives both uncertainty-weighted triangulation in the coarse stage and uncertainty-gated cross-attention in the refinement stage, adaptively amplifying reliable views while suppressing noisy ones under severe occlusion, achieving SOTA results across three multi-view benchmarks.
 
 **[LaMoGen: Language to Motion Generation Through LLM-Guided Symbolic Inference](lamogen_language_to_motion_generation_through_llm-guided_symbolic_inference.md)**
 
@@ -402,10 +326,6 @@ item_total: 174
 **[Learning Effective Sign Features without Text for Gloss-free Sign Language Translation](learning_effective_sign_features_without_text_for_gloss-free_sign_language_trans.md)**
 
 :   This paper proposes SignDINO—a "sign-aware" pre-training strategy adapted from DINO self-distillation. By providing the teacher with only global frames and the student with local masked views of hands/faces, the model is forced to infer discriminative local cues from global frames alone. This enables pre-training of a sign language tokenizer **entirely without gloss or text annotations**, achieving or exceeding SOTA performance on four public GFSLT datasets that usually rely on text-based pre-training.
-
-**[Learning Long-term Motion Embeddings for Efficient Kinematics Generation](learning_long-term_motion_embeddings_for_efficient_kinematics_generation.md)**
-
-:   Instead of modeling "appearance + motion" pixel-by-pixel using video generation models, this work proposes learning a **motion-only long-term latent space with $64\times$ temporal compression**. A Trajectory VAE first compresses sparse tracking trajectories into a dense, queryable motion grid, followed by a conditional flow matching model that generates long-term goal-directed motion based on text or "pokes." This approach is over 10,000 times faster than SOTA video models while achieving higher quality.
 
 **[Learning to Diversify and Focus: A Reinforcement Framework for Open-Vocabulary HOI Detection](learning_to_diversify_and_focus_a_reinforcement_framework_for_open-vocabulary_ho.md)**
 
@@ -430,10 +350,6 @@ item_total: 174
 **[MatchED: Crisp Edge Detection Using End-to-End, Matching-based Supervision](matched_crisp_edge_detection_using_end-to-end_matching-based_supervision.md)**
 
 :   MatchED proposes a lightweight (approx. 21K parameters) plug-and-play module that generates crisp (single-pixel wide) edge maps through one-to-one bipartite matching based on spatial distance and confidence during training. It can be attached to any edge detector for end-to-end training and, for the first time, matches or exceeds standard post-processing methods without relying on NMS and thinning.
-
-**[MetricHMSR: Metric Human Mesh and Scene Recovery from Monocular Images](metrichmsr_metric_human_mesh_and_scene_recovery_from_monocular_images.md)**
-
-:   MetricHMSR simultaneously recovers human SMPL meshes and 3D scenes with real physical scales (metric) from a single monocular image. The core involves explicitly encoding camera intrinsics and cropping information into the network using a "boundary camera ray map," decoupling local pose from global position via HumanMoE, and calibrating monocular depth using the recovered metric human as a geometric anchor to achieve SOTA in both human mesh recovery and metric human-scene reconstruction tasks.
 
 **[MFEN: Multi-Frequency Expert Network for Visible-Infrared Person Re-ID](mfen_multi-frequency_expert_network_for_visible-infrared_person_re-id.md)**
 
@@ -487,9 +403,9 @@ item_total: 174
 
 :   MoTiGA addresses three primary shortcomings of LLM-based text-to-motion generation—fine-grained quantization errors, the representation mismatch between "causal LLMs" and "non-causal VQ-VAE," and the lack of human preference alignment. These are resolved through Causal Residual Quantization (Causal RVQ-VAE), time-lagged causal prediction, and Multi-level Hybrid weighted Preference Optimization (MHPO). This approach reduces the FID by 82.3% on HumanML3D and 64.7% on KIT-ML compared to other LLM-based methods.
 
-**[Natural Human Motion Recovery by Aligning High-Order Temporal Dynamics from Monocular Videos](natural_human_motion_recovery_by_aligning_high-order_temporal_dynamics_from_mono.md)**
+**[MV-Fashion: Towards Enabling Virtual Try-On and Size Estimation with Multi-View Paired Data](mv-fashion_towards_enabling_virtual_try-on_and_size_estimation_with_multi-view_p.md)**
 
-:   Addressing the issue where monocular human motion recovery results have accurate joint positions but appear either jittery or over-smoothed, this paper proposes HTD-Refine. It uses a lightweight temporal network, PVA-Net, to explicitly predict the 3D velocity and acceleration of each joint from video. These high-order dynamics serve as soft constraints to optimize global trajectories. This plug-and-play approach reduces jitter, suppresses over-smoothing, and improves global accuracy for existing methods like TRAM, GVHMR, and Human3R.
+:   MV-Fashion utilizes an "economical" multi-view synchronous capture rig consisting of 60 Raspberry Pi RGB cameras and 8 RGB-D cameras to record 3,273 synchronous videos (72.5M frames) of 80 subjects wearing 474 outfits (754 items). It provides multi-modal annotations for each garment, including **flat-lay catalogue ↔ in-the-wild worn** pairs, pixel-level segmentation, SMPL-X, point clouds, size charts, fabric elasticity, and styling. This marks the first time data required for virtual try-on, size estimation, and novel view synthesis are integrated into a single dataset, with baselines provided for all three tasks.
 
 **[Next-Scale Autoregressive Models for Text-to-Motion Generation](next-scale_autoregressive_models_for_text-to-motion_generation.md)**
 
@@ -498,10 +414,6 @@ item_total: 174
 **[Occluded Human Body Capture with Frequency Domain Denoising Prior](occluded_human_body_capture_with_frequency_domain_denoising_prior.md)**
 
 :   3D human motion capture from monocular occluded video is reformulated as a "wavelet coefficient selection" problem. Uncertainty of occluded keypoints is characterized using Gaussian distributions, and a frequency-domain diffusion prior is utilized to select credible coefficients in the Discrete Wavelet Transform (DWT) domain, enabling consistent and periodicity-preserving motion recovery under long-term occlusion.
-
-**[OMG-Avatar: One-shot Multi-LOD Gaussian Head Avatar](omg-avatar_one-shot_multi-lod_gaussian_head_avatar.md)**
-
-:   OMG-Avatar reconstructs an animatable 3D Gaussian head avatar from a single image in 0.2 seconds. Through "hierarchical coarse-to-fine feature extraction + depth-buffer-guided occlusion-aware fusion + head-shoulder divide-and-conquer modeling," the unified model dynamically switches levels of detail (LOD) at runtime, achieving SOTA reconstruction quality and 85 FPS real-time speed with fewer Gaussian points.
 
 **[OMG-Bench: A New Challenging Benchmark for Skeleton-based Online Micro Hand Gesture Recognition](omg-bench_a_new_challenging_benchmark_for_skeleton-based_online_micro_hand_gestu.md)**
 
@@ -563,10 +475,6 @@ item_total: 174
 
 :   MotionDEQ reformulates the cascaded framework of "multi-stage progressive guessing" in human motion prediction into a **fixed-point solving problem** within an implicit layer. This is equivalent to infinite refinement stages but requires only $O(1)$ training memory. By injecting Euclidean equivariance into this equilibrium process and utilizing the temporal coherence of adjacent predictions to reuse the previous fixed point as a "warm-start," it achieves SOTA accuracy (400ms@55.3mm on Human3.6M) with fewer than 300K parameters, saving more than 2x training memory compared to multi-stage competitors.
 
-**[ProjFlow: Projection Sampling with Flow Matching for Zero-Shot Exact Spatial Motion Control](projflow_projection_sampling_with_flow_matching_for_zero-shot_exact_spatial_moti.md)**
-
-:   The authors unify a broad category of human motion control tasks (trajectory following, 2D→3D lifting, motion completion, cyclic actions, etc.) into linear inverse problems. They propose ProjFlow—a training-free flow matching sampler that utilizes closed-form projections at each denoising step to pull "clean motion estimates" onto the constraint set. By incorporating a "kinematic-aware metric" that encodes skeleton topology, corrections are propagated coordinately along the bones, achieving **exact** satisfaction of hard constraints under zero-shot conditions without inner-loop optimization while maintaining motion naturalness.
-
 **[Prompt-Anchored Vision–Text Distillation for Lifelong Person Re-identification](prompt-anchored_vision-text_distillation_for_lifelong_person_re-identification.md)**
 
 :   PAD treats the frozen CLIP text encoder as a cross-domain invariant "semantic anchor." By employing an **asymmetric vision-text distillation**—weak text-side distillation to ensure semantic stability and strong vision-side EMA distillation to maintain plasticity—it simultaneously suppresses catastrophic forgetting and semantic drift in exemplar-free lifelong person Re-ID. It achieves an average mAP of 70.7 on seen domains and 78.6 on unseen domains, significantly outperforming previous SOTA methods.
@@ -583,21 +491,9 @@ item_total: 174
 
 :   This paper does not invent a new network but utilizes a specifically collected dataset of 53,300 millimeter-level RGB-depth pairs to fine-tune existing monocular depth models for near-field fingertip scenarios. By layering a "depth + motion" fusion velocity-gated state machine, the system reduces depth error from 12.3 mm to 3.84 mm (a 68% reduction) using only a standard RGB camera. It achieves a 94.4% F1-score for contact detection, enabling "blind typing" on a tabletop at 45.6 WPM with a 3.1% character error rate, approaching the performance of specialized depth hardware and commercial VR input.
 
-**[Reference-Free Image Quality Assessment for Virtual Try-On via Human Feedback](reference-free_image_quality_assessment_for_virtual_try-on_via_human_feedback.md)**
-
-:   This paper proposes VTON-IQA, a reference-free framework for virtual try-on image quality assessment. By constructing VTON-QBench, a large-scale benchmark featuring 62,688 try-on images and 431,800 human annotations, and utilizing an Interleaved Cross-Attention (ICA) module to model the interactions between garment, person, and try-on images, the method achieves image-level quality predictions highly aligned with human perception.
-
 **[RefTon: Reference Person Shot Assist Virtual Try-on](refton_reference_person_shot_assist_virtual_try-on.md)**
 
 :   This paper proposes RefTon, a human-to-human virtual try-on framework based on Flux-Kontext. It introduces additional reference images (photos of others wearing the target garment) to provide more accurate clothing details. Through a two-stage training strategy and a rescaled position indexing mechanism, it achieves end-to-end try-on without auxiliary conditions (e.g., DensePose, segmentation masks), reaching SOTA performance on VITON-HD and DressCode.
-
-**[ReGenHOI: Unifying Reconstruction and Generation for 3D Human-Object Interaction Understanding](regenhoi_unifying_reconstruction_and_generation_for_3d_human-object_interaction_.md)**
-
-:   ReGenHOI unifies the "reconstruction" (restoring observed contacts from images) and "generation" (synthesizing future interactions from linguistic instructions) of 3D Human-Object Interaction (HOI) into a shared semantic-geometric latent space. By integrating direct 3D point cloud contact reasoning, iterative reasoning trajectories, and a gravitational field diffusion bridge for contact refinement, it simultaneously outperforms SOTA in contact estimation, reconstruction accuracy, and motion generation quality.
-
-**[RegFormer: Transferable Relational Grounding for Efficient Weakly-Supervised Human-Object Interaction Detection](regformer_transferable_relational_grounding_for_efficient_weakly-supervised_huma.md)**
-
-:   RegFormer is a lightweight interaction recognition module: when trained only with image-level labels, it constructs human–object pair queries into "spatially grounded" representations and introduces interactiveness scores as gating. For instance-level HOI detection during inference, it applies region masks to queries and scores using detection boxes, enabling **training-free transfer** from image-level to instance-level. It significantly outperforms previous weakly-supervised methods, approaches fully supervised performance, and achieves ~128× faster inference speed.
 
 **[RegFormer: Transferable Relational Grounding for Efficient Weakly-Supervised HOI Detection](regformer_transferable_relational_grounding_for_weakly-supervised_hoi_detection.md)**
 
@@ -606,10 +502,6 @@ item_total: 174
 **[Region-Aware Instance Consistency Learning for Micro-Expression Recognition](region-aware_instance_consistency_learning_for_micro-expression_recognition.md)**
 
 :   This paper views a micro-expression sequence as a multi-instance set composed of "onset frame + multiple middle frames." By using a Siamese network to force the alignment of attention maps across different instances (IRC) and employing learnable facial queries to uncover neglected weak activation regions (MRD), the method completely eliminates the need for expensive apex frame annotations and outperforms state-of-the-art (SOTA) methods across four public datasets.
-
-**[Relightable Holoported Characters: Capturing and Relighting Dynamic Human Performance from Sparse Views](relightable_holoported_characters_capturing_and_relighting_dynamic_human_perform.md)**
-
-:   RHC utilizes a transformer network, RelightNet, to perform cross-attention between "physics-inspired features (geometry/albedo/shading/view)" and environment lighting to implicitly solve the rendering equation in a **single forward pass**. It enables photo-realistic, free-viewpoint relighting of dynamic full-body characters with unseen motions from just 4 flat-lit cameras—avoiding slow OLAT-based acquisition and achieving significantly higher clarity than inverse rendering methods.
 
 **[ReMoGen: Real-time Human Interaction-to-Reaction Generation via Modular Learning from Diverse Data](remogen_real-time_human_interaction-to-reaction_generation_via_modular_learning_.md)**
 
@@ -647,14 +539,6 @@ item_total: 174
 
 :   This paper systematically promotes camera pose trajectories (6DoF pose sequences) as a standalone video perception modality for the first time. By training a lightweight Transformer encoder, CamFormer, through a contrastive learning framework, camera trajectories are mapped into a joint embedding space aligned with text. Experiments across 10 downstream tasks on 5 datasets demonstrate that camera trajectories are both lightweight and robust video signals—even outperforming video models with thousands of times higher computational costs in physical activities.
 
-**[Shoe Style-Invariant and Ground-Aware Learning for Dense Foot Contact Estimation](shoe_style-invariant_and_ground-aware_learning_for_dense_foot_contact_estimation.md)**
-
-:   The FECO framework is proposed to achieve robust dense foot contact estimation from a single RGB image through shoe style-content randomization (adversarial training) and ground-aware learning (pixel height maps + ground normals), significantly outperforming existing methods on multiple benchmarks.
-
-**[Sign Language Recognition in the Age of LLMs](sign_language_recognition_llms.md)**
-
-:   The first study to systematically evaluate the zero-shot capabilities of modern VLMs on Isolated Sign Language Recognition (ISLR). Results show that open-source VLMs lag significantly behind specialized classifiers, while large commercial models (GPT-5) demonstrate surprising potential.
-
 **[SignPR: A Progressive Vector-Quantized Diffusion Framework for Sign Language Production](signpr_a_progressive_vector-quantized_diffusion_framework_for_sign_language_prod.md)**
 
 :   Addressing the gloss-free Text2Pose task, SignPR proposes a "structural + temporal" dual-progressive vector-quantized diffusion framework. It utilizes a structured VQVAE to decompose each frame's pose into semantic-level (global) and regional-level (hand/face/body) discrete tokens. The diffusion process first generates semantically consistent coarse poses before refining regional details. During inference, block-level causal progressive refinement is employed to ensure temporal coherence. SignPR outperforms previous T2P methods on Phoenix14T, CSL-Daily, and USTC-CSL datasets.
@@ -670,10 +554,6 @@ item_total: 174
 **[SSM-Aware Token-Efficient VMamba via Adaptive Patch Pruning and Merging for Person Re-Identification](ssm-aware_token-efficient_vmamba_via_adaptive_patch_pruning_and_merging_for_pers.md)**
 
 :   TE-VMamba leverages the SS2D state update intensity (step size $\Delta$) and token similarity to guide token reduction. It prunes redundant tokens that contribute minimally to the state in shallow layers based on $\Delta$ and merges semantically similar tokens in deep layers. On Market-1501, it reduces FLOPs by over 60% while Rank-1 accuracy actually increases.
-
-**[Stability-Driven Motion Generation for Object-Guided Human-Human Co-Manipulation](stability-driven_motion_generation_for_object-guided_human-human_co-manipulation.md)**
-
-:   Given an object mesh and its trajectory, this paper employs a flow matching framework to generate full-body motions for two individuals collaborating on object transport. Through three modules—affordance-guided contact strategy, adversarial interaction prior, and sampling-based stability simulation—the generated motions simultaneously satisfy intentional correctness (correct grasping), natural poses, and physical stability (minimal floating and penetration). On Core4D, it significantly outperforms existing HOI baselines in contact accuracy, penetration depth, and distributional fidelity.
 
 **[Stake the Points: Structure-Faithful Instance Unlearning](stake_the_points_structure-faithful_instance_unlearning.md)**
 
@@ -691,25 +571,9 @@ item_total: 174
 
 :   SyncMos utilizes an LLM event planner to decompose natural language instructions into temporal dependency graphs. By applying time-warping and Diffusion Posterior Sampling (DPS) as post-processing **without retraining** the single-agent diffusion motion model, it aligns the actions of an arbitrary number of agents (e.g., handing over objects) in time, achieving scalable multi-agent 3D scene interaction generation.
 
-**[Tackling Alignment Ambiguity in Person Retrieval through Conversational Attribute Mining](tackling_alignment_ambiguity_in_person_retrieval_through_conversational_attribut.md)**
-
-:   To address the persistent "alignment ambiguity" in Text-to-Image Person Retrieval, this paper utilizes Multimodal Large Language Models (MLLM) to extract fine-grained attributes through "multi-turn QA" and summarizes them into a compact description. A Bi-directional Cross-attention Mixer refines these summaries with image tokens, while a Confidence-Aware Weighted Loss suppresses noise in MLLM-generated dialogues, achieving new SOTA Rank-1 results across three benchmarks.
-
 **[Talking Together: Synthesizing Co-Located 3D Conversations from Audio](talking_together_synthesizing_co-located_3d_conversations_from_audio.md)**
 
 :   This paper introduces the first method to generate complete facial animations for two participants **co-located in the same 3D space** from a single mixed audio stream. By utilizing a dual-stream diffusion architecture (shared U-Net + cross-attention), a two-stage hybrid data training strategy, LLM-driven text-to-spatial layout control, and an auxiliary gaze loss, the system achieves natural mutual gaze, head movements, and space-aware 3D animation synthesis for dyadic conversations.
-
-**[Tavatar: Topology-Aware Gaussian Attribute Derivation for Animatable Human Avatars](tavatar_topology-aware_gaussian_attribute_derivation_for_animatable_human_avatar.md)**
-
-:   Tavatar no longer treats the rotation and scale of each 3D Gaussian as freely optimized parameters. Instead, it **analytically derives** them from the triangular geometry of the underlying deformable mesh. This anchors Gaussians naturally to the mesh topology, preventing them from detaching or creating holes under unseen complex poses (OOD). Normal error is reduced by 13.8% on X-Avatar and 17.9% on PeopleSnapshot compared to the best baseline, while maintaining competitive rendering quality.
-
-**[TeamHOI: Learning a Unified Policy for Cooperative Human-Object Interactions with Any Team Size](teamhoi_learning_a_unified_policy_for_cooperative_human-object_interactions_with.md)**
-
-:   The TeamHOI framework is proposed, utilizing a Transformer-based decentralized policy network and Masked Adversarial Motion Priors (Masked AMP). This allows a single policy to generalize to cooperative carrying tasks with an arbitrary number of agents, achieving a $97\%+$ success rate for teams of 2-8 humanoid agents carrying tables.
-
-**[Text-Driven 3D Hand Motion Generation from Sign Language Data](text-driven_3d_hand_motion_generation_from_sign_language_data.md)**
-
-:   Utilizing large-scale sign language videos, sign language dictionaries, and LLMs, this work automatically constructs a dataset of 1.3 million "text-3D hand motion" pairs (BOBSL3DT). From this, the authors train HandMDM, a hand motion diffusion model driven by free-text descriptions (hand shape, position, finger/arm movement), which demonstrates strong generalization to unseen gestures, various sign languages, and non-sign language hand movements.
 
 **[Text-guided Feature Disentanglement for Cross-modal Gait Recognition](text-guided_feature_disentanglement_for_cross-modal_gait_recognition.md)**
 
@@ -738,10 +602,6 @@ item_total: 174
 **[TriLite: Efficient WSOL with Universal Visual Features and Tri-Region Disentanglement](trilite_efficient_weakly_supervised_object_localization_with_universal_visual_fe.md)**
 
 :   Using only a frozen DINOv2 ViT and a TriHead module with fewer than 800K trainable parameters, this method achieves new SOTA results in WSOL. It achieves this by disentangling patch features into foreground, background, and ambiguous regions and introducing an adversarial background loss.
-
-**[Ultra Diffusion Poser: Diffusion-Based Human Motion Tracking From Sparse Inertial Sensors and Ranging-Based Between-Sensor Distances](ultra_diffusion_poser_diffusion-based_human_motion_tracking_from_sparse_inertial.md)**
-
-:   This work upgrades UWB ranging between 6 IMUs from "extra features" to "geometric constraints." It first uses Multidimensional Scaling (MDS) to reconstruct 3D sensor layouts from pairwise distances as diffusion conditions, then employs forward kinematics during denoising sampling to align predicted poses with sensor distances via guidance, reducing joint position error in sparse inertial pose estimation by up to 22%.
 
 **[UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos](unidex_a_robot_foundation_suite_for_universal_dexterous_hand_control_from_egocen.md)**
 
@@ -774,10 +634,6 @@ item_total: 174
 **[Vision-Language Attribute Disentanglement and Reinforcement for Lifelong Person Re-Identification](vision-language_attribute_disentanglement_and_reinforcement_for_lifelong_person_.md)**
 
 :   VLADR proposes leveraging fine-grained attribute knowledge from Vision-Language Models (VLMs) to enhance lifelong person re-identification. Through a two-stage training process involving Multi-granular Textual Attribute Disentanglement (MTAD) and Intra-domain Cross-modal Attribute Reinforcement (ICAR), it explicitly models cross-domain shared human attributes to achieve efficient knowledge transfer and forgetting mitigation. It outperforms the Prev. SOTA by 1.9%-2.2% in anti-forgetting and 2.1%-2.5% in generalization.
-
-**[WHU-MARS: A Multispectral Aerial-Ground Benchmark Towards Any-Scenario Person Re-Identification](whu-mars_a_multispectral_aerial-ground_benchmark_towards_any-scenario_person_re-.md)**
-
-:   This paper proposes the "Any-Scenario Person Re-Identification" (AS-ReID) task, which requires a single model to perform any-to-any retrieval across heterogenous galleries mixing all modalities and viewpoints. The authors construct WHU-MARS, the largest multispectral aerial-ground dataset to date (2,337 identities, 430k RGB/NIR/TIR images, ground + UAV). They further introduce the UAD framework, which achieves state-of-the-art results with minimal parameters on AS-ReID through progressive center alignment and global prototype discrimination, without requiring multi-branch architectures or pairwise alignment.
 
 **[WildCap: Facial Albedo Capture in the Wild via Hybrid Inverse Rendering](wildcap_facial_albedo_capture_in_the_wild_via_hybrid_inverse_rendering.md)**
 

@@ -96,6 +96,7 @@ MMEB contains 36 tasks across Classification (CLS), VQA, Retrieval (RET), and Vi
 Ours outperformed benchmarks of similar size by +1.1% (B3++-2B), +2.7% (MoCa-3B), and +1.2% (QQMM-7B). The most significant gains were in VQA tasks (+4.7% for 2B, +3.6% for 7B), confirming that generative matching leverages MLLM world knowledge.
 
 ### Ablation Study (ReMatch-2B, Qwen2-VL, MMEB Overall %)
+
 | Configuration | Overall | Note |
 |------|---------|------|
 | Baseline (VLM2Vec) | 59.7 | Single `[EOS]` + Contrastive Loss |

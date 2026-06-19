@@ -72,6 +72,7 @@ The knowledge estimator is trained with BCE on the correctness of the next submi
 ## Key Experimental Results
 
 ### Main Results
+
 | Dataset | Method | CodeBLEU@1 | CodeBLEU@5 | IoU@1 | IoU@5 |
 |--------|------|------------|------------|-------|-------|
 | CodeWorkout | Student SFT | 0.501 | 0.565 | 0.115 | 0.244 |
@@ -80,6 +81,7 @@ The knowledge estimator is trained with BCE on the correctness of the next submi
 | FalconCode | KASER | 0.668 | 0.692 | 0.178 | 0.303 |
 
 ### Ablation Study
+
 | Dataset | Method | Cosine Distance ↑ | CodeBLEU Complement ↑ | Error IoU ↑ | $\chi^2$ Distance ↓ |
 |--------|------|-------------------|----------------|-------------|----------------------|
 | CodeWorkout | Student SFT | 0.082 | 0.480 | 0.700 | 109.85 |

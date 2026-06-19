@@ -89,6 +89,7 @@ Testing on ADNI (650 subjects, 160 ROIs, 5 classes) and PPMI (181 subjects, 116 
 Ours also leads in zero-shot cross-dataset transfer (e.g., ADNI-2 to ADNI-1/3/GO), indicating that the learned hypergraph structures generalize well.
 
 ### Ablation Study
+
 | Configuration | ADNI Acc | PPMI Acc | Description |
 |------|---------|---------|------|
 | Full (MSF+HSL+MST) | **93.2** | **76.8** | Complete MuHL |

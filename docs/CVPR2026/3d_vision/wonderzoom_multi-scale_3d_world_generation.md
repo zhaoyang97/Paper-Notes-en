@@ -103,6 +103,7 @@ WonderZoom leads in text alignment, image quality, and aesthetic metrics. It is 
 | vs Voyager | 76.1% | 81.7% | 90.9% |
 
 ### Ablation Study
+
 | Configuration | Key Metric | Description |
 |------|---------|------|
 | Full model | 3.40G VRAM / 97.2 FPS | Complete model |

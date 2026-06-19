@@ -109,6 +109,7 @@ Image tasks (Zero-shot, CLIP-ViT-Large as embedder):
 Under the same augmentation budget, ADAMAB consistently outperforms random augmentation. Furthermore, calibrators (only 0.66M–2.65M parameters) significantly improve CLIP/embedding models, even surpassing the classification accuracy of GPT-4o-mini itself. This is because the calibrator distills the "generative likelihood" of the base model into the "discriminative posterior" required for classification.
 
 ### Ablation Study
+
 | Configuration | Observation | Explanation |
 |------|------|------|
 | Initial Set vs. +Random Aug. vs. +ADAMAB | Acc. increases sequentially | Synthetic data is useful; adaptive selection is superior to random. |

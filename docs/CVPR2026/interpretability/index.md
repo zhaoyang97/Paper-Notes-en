@@ -1,25 +1,25 @@
 ---
 title: >-
-  CVPR2026 Interpretability Papers · 41 Notes
+  CVPR2026 Interpretability Papers · 33 Notes
 description: >-
-  41 CVPR2026 papers in the Interpretability area, covering Multimodal/VLM, Reasoning, Layout & Composition and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  33 CVPR2026 papers in the Interpretability area, covering Reasoning, Alignment/RLHF, Multimodal/VLM and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "CVPR2026"
   - "Interpretability"
   - "AI paper notes"
   - "paper summaries"
-  - "Multimodal/VLM"
   - "Reasoning"
-  - "Layout & Composition"
+  - "Alignment/RLHF"
+  - "Multimodal/VLM"
 item_list:
-  - u: "a_study_of_failure_modes_in_two-stage_human-object_interaction_detection/"
-    t: "A Study of Failure Modes in Two-Stage Human–Object Interaction Detection"
+  - u: "align_once_to_explain_feature_alignment_for_scalable_b-cosification_of_foundatio/"
+    t: "Align Once to Explain: Feature Alignment for Scalable B-cosification of Foundational Vision Transformers"
+  - u: "back_to_the_feature_explaining_video_classifiers_with_video_counterfactual_expla/"
+    t: "Back to the Feature: Explaining Video Classifiers with Video Counterfactual Explanations"
   - u: "beyond_top_activations_efficient_and_reliable_crowdsourced_evaluation_of_automat/"
     t: "Beyond Top Activations: Efficient and Reliable Crowdsourced Evaluation of Automated Interpretability"
   - u: "cigma_causal_information-gain_mechanistic_attribution_of_attention_heads_in_visi/"
     t: "CIGMA: Causal Information-Gain Mechanistic Attribution of Attention Heads in Vision Transformers"
-  - u: "ciice_intrinsic_concept_extraction_compositional/"
-    t: "CI-ICE: Intrinsic Concept Extraction Based on Compositional Interpretability"
   - u: "creward_a_type-specific_creativity_reward_model/"
     t: "CREward: A Type-Specific Creativity Reward Model"
   - u: "cut_to_the_chase_training-free_multimodal_summarization_via_chain-of-events/"
@@ -30,16 +30,12 @@ item_list:
     t: "Edit-As-Act: Goal-Regressive Planning for Open-Vocabulary 3D Indoor Scene Editing"
   - u: "ermoe_eigen-reparameterized_mixture-of-experts_for_stable_routing/"
     t: "ERMoE: Eigen-Reparameterized Mixture-of-Experts for Stable Routing and Interpretable Specialization"
-  - u: "from_weights_to_concepts_data-free_interpretability_of_clip_via_singular_vector_/"
-    t: "From Weights to Concepts: Data-Free Interpretability of CLIP via Singular Vector Decomposition"
   - u: "h-sets_hessian-guided_discovery_of_set-level_feature_interactions_in_image_class/"
     t: "H-Sets: Hessian-Guided Discovery of Set-Level Feature Interactions in Image Classifiers"
   - u: "hidden_monotonicity_explaining_deep_neural_networks_via_their_dc_decomposition/"
     t: "Hidden Monotonicity: Explaining Deep Neural Networks via their DC Decomposition"
   - u: "hierarchical_concept_embedding_pursuit_for_interpretable_image_classification/"
     t: "Hierarchical Concept Embedding & Pursuit for Interpretable Image Classification"
-  - u: "hieruq_hierarchical_uncertainty_quantification_with_adaptive_granularity_reconci/"
-    t: "HierUQ: Hierarchical Uncertainty Quantification with Adaptive Granularity Reconciliation for Degraded Image Classification"
   - u: "humorchain_theory-guided_multi-stage_reasoning_for_interpretable_multimodal_humo/"
     t: "HUMORCHAIN: Theory-Guided Multi-Stage Reasoning for Interpretable Multimodal Humor Generation"
   - u: "improving_sparse_autoencoder_with_dynamic_attention/"
@@ -48,10 +44,6 @@ item_list:
     t: "Inside-Out: Measuring Generalization in Vision Transformers Through Inner Workings"
   - u: "language_models_can_explain_visual_features_via_steering/"
     t: "Language Models Can Explain Visual Features via Steering"
-  - u: "learning_complete_and_explainable_visual_representations_from_itemized_text_supe/"
-    t: "Learning complete and explainable visual representations from itemized text supervision"
-  - u: "learning_where_to_look_and_how_to_judge_resolution-agnostic_image_quality_assess/"
-    t: "Learning Where to Look and How to Judge: Resolution-agnostic Image Quality Assessment with Quality-aware Saliency"
   - u: "make_it_sing_analyzing_semantic_invariants_in_classifiers/"
     t: "Make it SING: Analyzing Semantic Invariants in Classifiers"
   - u: "making_the_classification_explanation_faithful_to_the_confidence_score/"
@@ -64,29 +56,41 @@ item_list:
     t: "Missing No More: Dictionary-Guided Cross-Modal Image Fusion under Missing Infrared"
   - u: "neurodynamics-driven_coupled_neural_p_systems_for_multi-focus_image_fusion/"
     t: "Neurodynamics-Driven Coupled Neural P Systems for Multi-Focus Image Fusion"
-  - u: "neurorule_bridging_vision_and_logic_with_differentiable_rule_induction/"
-    t: "NeuroRule: Bridging Vision and Logic with Differentiable Rule Induction"
-  - u: "on_the_possible_detectability_of_image-in-image_steganography/"
-    t: "On the Possible Detectability of Image-in-Image Steganography"
   - u: "phasewin_search_framework_enable_efficient_object-level_interpretation/"
     t: "PhaseWin: Reducing Object-Level Attribution from Quadratic Complexity to Near-Linear Phase-Window Search"
   - u: "pixel2phys_distilling_governing_laws_from_visual_dynamics/"
     t: "Pixel2Phys: Distilling Governing Laws from Visual Dynamics"
-item_total: 41
+  - u: "prism_prototype-based_reasoning_with_inter-modal_semantic_mining_for_interpretab/"
+    t: "PRISM: Prototype-based Reasoning with Inter-modal Semantic Mining for Interpretable Image Recognition"
+  - u: "rethinking_concept_bottleneck_models_from_pitfalls_to_solutions/"
+    t: "Rethinking Concept Bottleneck Models: From Pitfalls to Solutions"
+  - u: "riskprop_collision-anchored_self-supervised_risk_propagation_for_early_accident_/"
+    t: "RiskProp: Collision-Anchored Self-Supervised Risk Propagation for Early Accident Anticipation"
+  - u: "rounded_or_streamlined_head_bridging_concept_bottleneck_models_and_attribute-des/"
+    t: "Rounded or Streamlined Head? Bridging Concept Bottleneck Models and Attribute-Described Object Parts"
+  - u: "safedrive_fine-grained_safety_reasoning_for_end-to-end_driving_in_a_sparse_world/"
+    t: "SafeDrive: Fine-Grained Safety Reasoning for End-to-End Driving in a Sparse World"
+  - u: "selection-as-nonlinearity_bridging_attention_and_activation_via_a_joint_game-dec/"
+    t: "Selection-as-Nonlinearity: Bridging Attention and Activation via a Joint Game-Decision Lens for Interpretable, Discriminative Visual Representations"
+item_total: 33
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # 🔬 Interpretability
 
-**📷 CVPR2026** · **41** paper notes
+**📷 CVPR2026** · **33** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (71)](../../ICML2026/interpretability/index.md) · [💬 ACL2026 (60)](../../ACL2026/interpretability/index.md) · [🔬 ICLR2026 (60)](../../ICLR2026/interpretability/index.md) · [🤖 AAAI2026 (37)](../../AAAI2026/interpretability/index.md) · [🧠 NeurIPS2025 (76)](../../NeurIPS2025/interpretability/index.md) · [📹 ICCV2025 (10)](../../ICCV2025/interpretability/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (71)](../../ICML2026/interpretability/index.md) · [💬 ACL2026 (61)](../../ACL2026/interpretability/index.md) · [🔬 ICLR2026 (60)](../../ICLR2026/interpretability/index.md) · [🤖 AAAI2026 (37)](../../AAAI2026/interpretability/index.md) · [🧠 NeurIPS2025 (76)](../../NeurIPS2025/interpretability/index.md) · [📹 ICCV2025 (10)](../../ICCV2025/interpretability/index.md)
 
-🔥 **Top topics:** Multimodal/VLM ×4 · Reasoning ×4 · Layout & Composition ×3
+🔥 **Top topics:** Reasoning ×4 · Alignment/RLHF ×2 · Multimodal/VLM ×2
 
-**[A Study of Failure Modes in Two-Stage Human–Object Interaction Detection](a_study_of_failure_modes_in_two-stage_human-object_interaction_detection.md)**
+**[Align Once to Explain: Feature Alignment for Scalable B-cosification of Foundational Vision Transformers](align_once_to_explain_feature_alignment_for_scalable_b-cosification_of_foundatio.md)**
 
-:   This is a **diagnostic study** rather than a new method: instead of creating a large-scale benchmark, the authors reorganize the HICO-DET test set into a series of controllable interaction configuration subsets based on "number of people × object relationships × interaction relationships." By decomposing false positive predictions into six error categories, they systematically reveal exactly where two-stage HOI models fail in multi-person, multi-object-of-the-same-class, and fine-grained interaction scenarios. The conclusion is that high $mAP$ does not equate to true relational reasoning capability; verb prediction errors and object-conditioned biases are the primary pathologies masked by aggregate metrics.
+:   ALOE utilizes a one-time, label-free "teacher-student feature alignment" to convert frozen ViT foundation models (Supervised / DINOv3 / SigLIP2) into inherently interpretable B-cos versions. Once aligned, the backbone can be used as a drop-in replacement for tasks like classification, zero-shot, and dense prediction, improving accuracy by $>4.9$ percentage points over original B-cosification on ViTs while providing faithful and localized explanations with $100–1000\times$ higher data efficiency.
+
+**[Back to the Feature: Explaining Video Classifiers with Video Counterfactual Explanations](back_to_the_feature_explaining_video_classifiers_with_video_counterfactual_expla.md)**
+
+:   This paper proposes BTTF, a pure optimization framework that uses Image-to-Video diffusion models to generate Counterfactual Explanations (CFE) for **video classifiers**. By optimizing the initial noise latent variable solely based on the gradients of the target classifier—first anchoring the search via "inversion" near the original video and then optimizing toward the target category—it generates a "parallel video" that is most similar to the original yet classified as another category, revealing the spatiotemporal features the model relies on for decision-making.
 
 **[Beyond Top Activations: Efficient and Reliable Crowdsourced Evaluation of Automated Interpretability](beyond_top_activations_efficient_and_reliable_crowdsourced_evaluation_of_automat.md)**
 
@@ -95,10 +99,6 @@ item_total: 41
 **[CIGMA: Causal Information-Gain Mechanistic Attribution of Attention Heads in Vision Transformers](cigma_causal_information-gain_mechanistic_attribution_of_attention_heads_in_visi.md)**
 
 :   CIGMA quantifies the contribution of each attention head to background shortcuts using two counterfactual edits (masking foreground/background). By ranking heads according to causal information gain and surgically zeroing out the top-K "spurious heads," ViT/VLM models are encouraged to shift attention from the background to foreground objects without requiring training. This leads to classification accuracy gains of 7.6–24.8 percentage points and an approximately 83% reduction in background dependency.
-
-**[CI-ICE: Intrinsic Concept Extraction Based on Compositional Interpretability](ciice_intrinsic_concept_extraction_compositional.md)**
-
-:   This work proposes the CI-ICE task and the HyperExpress method: it leverages hierarchical modeling capabilities in hyperbolic space (Poincaré ball) to extract compositional object-level/attribute-level intrinsic concepts. By ensuring the compositionality of the concept embedding space via Horosphere projection, it achieves a concept decoupling $ACC_1$ of 0.504 on UCEBench (a 55% improvement over 0.325 for ICE).
 
 **[CREward: A Type-Specific Creativity Reward Model](creward_a_type-specific_creativity_reward_model.md)**
 
@@ -120,10 +120,6 @@ item_total: 41
 
 :   ERMoE proposes reparameterizing MoE expert weights within an orthogonal eigenbasis and substituting traditional routing logits with eigenbasis alignment scores (cosine similarity), enabling stable routing and interpretable expert specialization without the need for auxiliary load balancing losses.
 
-**[From Weights to Concepts: Data-Free Interpretability of CLIP via Singular Vector Decomposition](from_weights_to_concepts_data-free_interpretability_of_clip_via_singular_vector_.md)**
-
-:   This paper proposes SITH (Semantic Inspection of Transformer Heads), a completely data-free and training-free CLIP interpretability framework. By performing SVD on the Value-Output weight matrices of attention heads and utilizing the self-developed COMP algorithm to map singular vectors to sparse combinations of semantically coherent concepts, SITH achieves significantly finer intra-head interpretability compared to existing methods and supports precise weight editing to enhance downstream performance.
-
 **[H-Sets: Hessian-Guided Discovery of Set-Level Feature Interactions in Image Classifiers](h-sets_hessian-guided_discovery_of_set-level_feature_interactions_in_image_class.md)**
 
 :   H-Sets utilizes the input Hessian to detect second-order (non-additive) interactions between pixels, recursively merging them into semantically coherent feature sets. It then scores each set using IDG-Vis (Integrated Directional Gradients + Harsanyi Dividends) at the set level, ultimately producing saliency maps that are sparser and more faithful than existing methods.
@@ -135,10 +131,6 @@ item_total: 41
 **[Hierarchical Concept Embedding & Pursuit for Interpretable Image Classification](hierarchical_concept_embedding_pursuit_for_interpretable_image_classification.md)**
 
 :   HCEP explicitly encodes the "concepts have a hierarchical structure (hypernym → hyponym)" prior into the geometric conditions of the CLIP embedding space. It then utilizes Hierarchical Beam Orthogonal Matching Pursuit (HB-OMP) to recover concepts along "root-to-leaf" paths, significantly improving concept recovery precision/recall while maintaining classification accuracy, especially in few-shot scenarios.
-
-**[HierUQ: Hierarchical Uncertainty Quantification with Adaptive Granularity Reconciliation for Degraded Image Classification](hieruq_hierarchical_uncertainty_quantification_with_adaptive_granularity_reconci.md)**
-
-:   HierUQ addresses hierarchical classification of degraded (blurred/occluded/noisy/low-resolution) images by providing reliable confidence levels via Hierarchical Uncertainty Quantification (HUQ) based on label smoothing and proper scoring rules. It utilizes Confidence-Aware Path Adjustment (CAPA) to automatically fallback from fine-grained to coarser levels when uncertain, and employs Self-paced Multi-Layer Joint Optimization (MLJO) to coordinate multi-level objectives, achieving SOTA on degraded remote sensing ship and bird datasets.
 
 **[HUMORCHAIN: Theory-Guided Multi-Stage Reasoning for Interpretable Multimodal Humor Generation](humorchain_theory-guided_multi-stage_reasoning_for_interpretable_multimodal_humo.md)**
 
@@ -155,14 +147,6 @@ item_total: 41
 **[Language Models Can Explain Visual Features via Steering](language_models_can_explain_visual_features_via_steering.md)**
 
 :   Ours proposes performing causal intervention (steering) using SAE features on VLM vision encoders. By inputting blank images and allowing the language model to describe the visual concepts it "sees," this method achieves scalable automated interpretation of visual features without needing evaluation image sets. The hybrid approach, Steering-informed Top-k, achieves SOTA performance.
-
-**[Learning complete and explainable visual representations from itemized text supervision](learning_complete_and_explainable_visual_representations_from_itemized_text_supe.md)**
-
-:   Addressing supervision scenarios like medical imaging and remote sensing where "one image is paired with multiple non-overlapping independent text descriptions (itemized text)," this paper proposes ItemizedCLIP. It utilizes a masked cross-attention module to generate "text-item-modulated" visual representations, paired with four SigLIP-style objectives to enforce "item independence" and "representation completeness." Zero-shot performance and fine-grained explainability significantly outperform CLIP-family baselines across four real medical/remote sensing domains and one synthetic domain.
-
-**[Learning Where to Look and How to Judge: Resolution-agnostic Image Quality Assessment with Quality-aware Saliency](learning_where_to_look_and_how_to_judge_resolution-agnostic_image_quality_assess.md)**
-
-:   To address four common issues in No-Reference Image Quality Assessment (NR-IQA)—forced resizing to accommodate pre-trained resolutions, poor generalization across resolutions, difficulty in joint training due to inconsistent MOS scales, and computational explosion for UHD images—this paper proposes ReLIQS. It samples fixed-size patches from the original resolution and its scaled variants, encoding them with CLIP. A lightweight "Perceptual Importance Estimator (PIE)" learns IQA-specific saliency to select a few key patches, while a "Latent Quality Axis Module (LQAM)" aggregates multi-scale embeddings into a single score. ReLIQS outperforms CNN, CLIP, and MLLM-based baselines across various real/synthetic/AIGC distortions and resolutions with lower computational cost.
 
 **[Make it SING: Analyzing Semantic Invariants in Classifiers](make_it_sing_analyzing_semantic_invariants_in_classifiers.md)**
 
@@ -187,14 +171,6 @@ item_total: 41
 **[Neurodynamics-Driven Coupled Neural P Systems for Multi-Focus Image Fusion](neurodynamics-driven_coupled_neural_p_systems_for_multi-focus_image_fusion.md)**
 
 :   ND-CNPFuse is proposed to establish constraints between network parameters and input signals through neurodynamic analysis of Coupled Neural P (CNP) systems. This prevents abnormal continuous firing of neurons, enabling the generation of high-quality, interpretable decision maps for multi-focus image fusion (MFIF) tasks without any training.
-
-**[NeuroRule: Bridging Vision and Logic with Differentiable Rule Induction](neurorule_bridging_vision_and_logic_with_differentiable_rule_induction.md)**
-
-:   NeuroRule connects the pixel-level perception of Mask2Former with a differentiable first-order logic rule induction engine. It **automatically learns explainable compositional logic rules** (e.g., `riding(x,y) ∧ on(y,z) → travel-on(x,z)`) from images in an end-to-end manner. This approach achieves SOTA performance across three scene graph benchmarks (VG / PSG / Open-PSG) while providing an auditable reasoning chain for every relation prediction.
-
-**[On the Possible Detectability of Image-in-Image Steganography](on_the_possible_detectability_of_image-in-image_steganography.md)**
-
-:   This work reveals fundamental security flaws in mainstream image-in-image deep steganography schemes: the embedding process is essentially a mixing process that can be easily separated by Independent Component Analysis (ICA). An explainable steganalysis method based on statistical moments of independent components in the wavelet domain is proposed (achieving 84.6% accuracy with only 8-dimensional features), while proving that the classic SRM+SVM method can reach a detection rate of over 99%.
 
 **[PhaseWin: Reducing Object-Level Attribution from Quadratic Complexity to Near-Linear Phase-Window Search](phasewin_search_framework_enable_efficient_object-level_interpretation.md)**
 
@@ -231,14 +207,6 @@ item_total: 41
 **[TDATR: Improving End-to-End Table Recognition via Table Detail-Aware Learning and Cell-Level Visual Alignment](tdatr_improving_end-to-end_table_recognition_via_table_detail-aware_learning_and.md)**
 
 :   The TDATR framework is proposed, utilizing a "perceive-then-fuse" strategy and a structure-guided cell localization module to achieve end-to-end table recognition with limited annotated data, reaching SOTA on 7 benchmarks without dataset-specific fine-tuning.
-
-**[Towards Faithful Multimodal Concept Bottleneck Models](towards_faithful_multimodal_concept_bottleneck_models.md)**
-
-:   The authors propose f-CBM—the first faithful multimodal concept bottleneck model framework. It reduces unintended information leakage in concept representations through a differentiable leakage loss and enhances concept detection accuracy using a Kolmogorov-Arnold Network (KAN) predictor head, achieving an optimal Pareto frontier across task accuracy, concept detection, and leakage reduction.
-
-**[Understanding Counting Mechanisms in Large Language and Vision-Language Models](understanding_counting_mechanisms_in_large_language_and_vision-language_models.md)**
-
-:   Authors utilize a set of controlled "repetitive object counting" experiments and a self-developed causal probing tool, CountScope, to dissect LLMs and LVLMs layer-by-layer and token-by-token. They find that counting is not a one-time summation but a hierarchical process emerging across layers, driven by "internal counters" that update incrementally and rely heavily on structural shortcuts like delimiters.
 
 **[VIRO: Robust and Efficient Neuro-Symbolic Reasoning with Verification for Referring Expression Comprehension](viro_robust_and_efficient_neuro-symbolic_reasoning_with_verification_for_referri.md)**
 

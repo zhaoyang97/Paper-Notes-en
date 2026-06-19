@@ -90,6 +90,7 @@ Evaluations were conducted across DexYCB, Panoptic Studio, Kubric, and Harmony4D
 MV-TAP leads across almost all metrics. 3D-based methods requiring depth (SpatialTracker, TAPIP3D) and MVTracker failed significantly on certain datasets (e.g., TAPIP3D AJ was only 5.0 on Harmony4D), demonstrating that depth-lifting is fragile in complex real-world human scenes. The "Flattened" baseline (CoTracker3+Flat., treating views and time as a single sequence) collapsed almost entirely, showing that simply treating multi-view data as a long sequence is detrimental.
 
 ### Ablation Study
+
 | Configuration | DexYCB (AJ / $<\delta^x_{avg}$ / OA) | Panoptic (AJ / $<\delta^x_{avg}$ / OA) | Description |
 |---|---|---|---|
 | CoTracker3 (Baseline) | 41.5 / 59.6 / 76.4 | 39.6 / 61.4 / 72.3 | Independent single-view |

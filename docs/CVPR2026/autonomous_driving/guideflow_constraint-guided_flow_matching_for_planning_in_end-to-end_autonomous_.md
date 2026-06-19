@@ -106,6 +106,7 @@ Bench2Drive & NuScenes:
 ### Ablation Study
 
 Constraint Modules (NavSim Navhard, EPDMS):
+
 | Config | EPDMS | Note |
 |------|-------|------|
 | Baseline | 23.1 | No constraints |

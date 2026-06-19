@@ -100,6 +100,7 @@ With fixed angular partitions (24), changing the granularity of perturbation len
 At 8-decimal SVG precision, a single control point can embed at least 24 bits with 100% extraction.
 
 ### File Size
+
 | Dataset | Method | File Size |
 | :--- | :--- | :--- |
 | CelebA-HQ | Original SVG | 520.79 KB |

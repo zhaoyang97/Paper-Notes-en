@@ -88,6 +88,7 @@ Evaluated on LLaVA-1.5, Janus-Pro, and Qwen2.5-VL using the CHAIR benchmark. Low
 Key comparison: PAI/HGAI tank D1 from 0.60 to 0.50 on LLaVA-1.5, while IAT/AdaIAT maintain 0.60–0.61 with comparable or lower hallucination rates. Compared to LLaVA-1.5-7B Greedy, AdaIAT reduces CS by 35.8% and CI by 37.1%.
 
 ### Ablation Study
+
 | Configuration | Key Phenomenon | Explanation |
 |------|---------|------|
 | IAT vs AdaIAT | F1 +2.6 at similar CS/D1 | Head-wise adaptive amplification gains prediction power |

@@ -113,6 +113,7 @@ Point cloud task transfer (Linear probing vs. Full fine-tuning, mIoU):
 Notably, the point cloud-only variant • Chorus matches or exceeds the SOTA self-supervised point cloud model Sonata while using **$39.9\times$ fewer** training scenes.
 
 ### Ablation Study
+
 | Configuration | Observation | Explanation |
 |------|------|------|
 | Full model | Best | 3 Teachers + match + contrastive + multi-stage + aug |

@@ -87,6 +87,7 @@ Materials science experts first listed 30 common Python materials libraries (e.g
 | Claude Sonnet 4.5 | 75.6% | 75.6% | 75.6% | 74.1% | 19.0 min | $1.71 |
 
 ### Downstream A/B Testing
+
 | Dimension | Key Data | Description |
 |------|----------|------|
 | Task Construction | 12 materials science repos, 5 problems each, 60 discovery problems total | Analyzed 50 problems where both baseline and enhanced systems produced solutions |

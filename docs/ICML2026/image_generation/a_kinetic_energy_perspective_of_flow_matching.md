@@ -68,6 +68,7 @@ The main experiments first prove that KPE is a meaningful diagnostic, then verif
 | ImageNet-256 | Recall | KTS $\beta_0=0.05$: 0.657 | FM 0.655 | Late damping slightly increases coverage but degrades FID |
 
 ### Ablation Study
+
 | Configuration | Key Metrics | Description |
 |------|---------|------|
 | Early launch only, $\alpha_0=0.02, \beta_0=0$ | CelebA FID 11.27, $F_{mem}$ 36.78% | Early acceleration mainly improves quality; limited memorization reduction |

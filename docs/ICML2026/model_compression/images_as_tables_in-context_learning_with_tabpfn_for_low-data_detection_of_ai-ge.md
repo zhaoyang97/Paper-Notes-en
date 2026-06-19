@@ -80,6 +80,7 @@ Benchmark is GenImage (ImageNet real images + 8 generators: ADM/BigGAN/GLIDE/Mid
 | Single-Single Pairwise | $k=625$ | — | Wins in 54/64 pairs | Max pair +31.5% |
 
 ### Ablation Study
+
 | Configuration | Key Metric | Description |
 |------|---------|------|
 | Full: DINOv3 + PCA-500 + TabPFN | Best in 5 metrics (Multi-Multi) | Full Pipeline |

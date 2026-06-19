@@ -85,6 +85,7 @@ No new model was trained, nor was a supervised loss proposed. The approach uses 
 ## Key Experimental Results
 
 ### Main Results
+
 | Target | Setting | Key Metric / Observation | Conclusion |
 |--------|---------|-------------------------|------------|
 | Google Education Dialogue Dataset | Synthetic multi-turn teacher-student dialogue | Using GPT-4.1, GPT-3.5-Turbo, Gemma 3 4B, Llama 3.3 70B, Phi 4 14B, GPT-OSS 120B | Validates the method's ability to extract affective trajectories from text in controlled educational interactions. |
@@ -93,6 +94,7 @@ No new model was trained, nor was a supervised loss proposed. The approach uses 
 | Open-source Model Behavior | Llama 3.3 70B / Phi 4 14B / Gemma 3 4B | Llama 3.3 70B misses the Turn 2 dip; Phi-4 means cap at ~0.40; Gemma 3 4B recovery stops near 0.15. | Alignment or model scale may introduce positivity bias and conservative emotional estimation. |
 
 ### Ablation Study
+
 | Analysis | Setting | Key Data | Description |
 |----------|---------|----------|-------------|
 | Temperature Sensitivity | Utterance 6, GPT-4.1 | Mean ~ $-0.12$, Var $0.010$ at $\tau=0.1$; Var increases to $0.024$ at $\tau=1.0$. | Higher temperature makes ambiguity more visible but does not equate to the mean losing control. |

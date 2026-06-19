@@ -70,6 +70,7 @@ On the in-weights path-star task, both architectures (Transformer GPT-mid, Mamba
 | Frozen-embedding in-weights | Same as in-weights setting | Drops to baseline | Associative memory learned, task fails |
 
 ### Ablation Study
+
 | Configuration | Phenomenon | Implication |
 |---------------|------------|-------------|
 | Full model (Edge mem + Path sup) | Strong diagonal heatmap + Geometric embeddings | Default state of geometric memory |

@@ -88,6 +88,7 @@ Evaluation on DL3DV (in-domain, score network trained here) and MipNeRF360 (cros
 Compared to Difix3D, DL3DV PSNR +0.779dB (21.355→22.134) and MipNeRF360 +0.688dB (18.001→18.689), leading across all metrics. Notably, on MipNeRF360, HAD outperforms GenFusion despite the latter using video diffusion for better consistency. In the post-rendering setting (Ours+ vs Difix3D+), LPIPS is lower (0.177 vs 0.181) but fidelity metrics (PSNR/SSIM) decrease—the authors note that post-rendering enhances photorealism at the cost of fidelity.
 
 ### Ablation Study
+
 | Config | PSNR↑ | SSIM↑ | LPIPS↓ | Note |
 |--------|-------|-------|--------|------|
 | Difix3D | 21.355 | 0.734 | 0.199 | Baseline |

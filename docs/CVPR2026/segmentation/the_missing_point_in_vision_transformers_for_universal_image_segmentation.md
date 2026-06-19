@@ -92,6 +92,7 @@ Validated on ADE20K, Cityscapes, and COCO/COCO-Stuff-164K across semantic, insta
 ViT-P sets new SOTA benchmarks (e.g., 54.0 PQ on ADE20K, 87.4 mIoU on Cityscapes) and provides consistent gains across various mask generators.
 
 ### Ablation Study
+
 | Configuration | Key Metric (ADE20K, OneFormer) | Description |
 |------|------|------|
 | Full Model (N=250, Max Point, DINOv2) | 54.0 PQ / 40.7 AP / 59.7 mIoU | Default settings |

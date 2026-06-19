@@ -88,6 +88,7 @@ Evaluated on 12 graph anomaly detection benchmarks (MUTAG, PROTEINS, DD, ENZYMES
 | Synthetic ER Density | Aligned with Beta(2,2) $p=0.5$ | Traditional kernels fail | Direct verification of density estimation |
 
 ### Ablation Study
+
 | Configuration | Key Metric Change | Description |
 |------|---------|------|
 | Full LGKDE | Baseline AUROC | MMD + Multi-scale KDE + Dual Perturbation |

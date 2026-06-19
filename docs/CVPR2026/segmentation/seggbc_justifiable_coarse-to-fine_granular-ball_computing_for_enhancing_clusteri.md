@@ -124,6 +124,7 @@ Using SegGBs as a data representation front end for existing methods consistentl
 The conservative lower bounds are gains of +3.25% SA and +3.92% mIoU across standard images and COCO-Stuff.
 
 ### Ablation Study (NI 7 / RSI 3, SA(%) / TC(s))
+
 | Configuration | IFS/FS | Stable SCMGB | NI 7 SA | RSI 3 SA |
 |------|--------|--------------|---------|----------|
 | Traditional GB w/ $r_{max}$ | — | ✗ | 63.34 | 53.69 |

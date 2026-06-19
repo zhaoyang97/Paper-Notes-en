@@ -82,6 +82,7 @@ where $V_0\sim\mathcal{N}(0,1)$ is noise, $t\in[0,1]$ is the timestamp, $V_t=tV+
 The evaluation uses 122 sets composed from ABO product images and DreamBench++ (1–7 objects per set). Metrics include identity preservation (CLIP-I, DINO), text alignment (CLIP-T, VQAScore), background fidelity (MSE-BG), color fidelity (Chamfer), and omission rate (Missing), supplemented by two user studies.
 
 ### Main Results
+
 | Method | CLIP-I↑ | DINO↑ | VQAScore↑ | MSE-BG↓ | Chamfer↓ | Missing↓ |
 |------|---------|-------|-----------|---------|----------|----------|
 | UNO | 0.696 | 0.450 | 0.886 | 0.062 | 14.733 | 0.099 |
@@ -94,6 +95,7 @@ The evaluation uses 122 sets composed from ABO product images and DreamBench++ (
 PLACID leads in background fidelity (MSE-BG 0.019), color fidelity (Chamfer 4.641), and omission rate (Missing 0.044). While CLIP-I/DINO are slightly lower than some models, the authors explain that PLACID prioritizes natural, coherent composition (allowing slight occlusion or perspective changes), whereas "copy-paste" methods inflate these scores despite poor visual coherence.
 
 ### Ablation Study
+
 | Configuration | CLIP-I↑ | DINO↑ | CLIP-T↑ | MSE-BG↓ | Chamfer↓ | Missing↓ |
 |------|---------|-------|---------|---------|----------|----------|
 | Wan 2.1 (base) | 0.711 | 0.446 | 0.333 | 0.047 | 7.746 | 0.048 |

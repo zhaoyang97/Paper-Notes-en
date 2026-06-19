@@ -101,6 +101,7 @@ The paper does not train new models; the core contribution is the benchmark cons
 ## Key Experimental Results
 
 ### Main Results
+
 | Model / Setting | VC F1 | EL F1 | Key Information |
 |--------|------|------|------|
 | Human | 0.7521 | 0.7012 | Average performance of 3 medical professionals |
@@ -111,6 +112,7 @@ The paper does not train new models; the core contribution is the benchmark cons
 | DeepSeek-R1 zero-shot | 0.6847 | 0.6051 | High Recall, but localization remains weak |
 
 ### Strategy Comparison
+
 | Model / Strategy | VC F1 | EL F1 | Phenomenon |
 |------|------|------|------|
 | DeepSeek-R1 | 0.6847 | 0.6051 | zero-shot baseline |

@@ -123,6 +123,7 @@ Small-scale setting (50 Celebrities, following MACE/CPE protocol):
 ETC reduced target detection accuracy to 0.24% while retaining 89.37% of other celebrities (close to original 90.86%).
 
 ### Ablation Study
+
 | Configuration | Target Acct↓ | Others Accr↑ | Description |
 |------|------|------|------|
 | Direct mapping + Surrogate | 0.64 | 85.84 | Successful erasure but poor retention |

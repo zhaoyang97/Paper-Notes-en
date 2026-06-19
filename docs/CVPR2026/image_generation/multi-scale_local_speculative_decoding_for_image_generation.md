@@ -76,6 +76,7 @@ Only the latent-space upsampler/downsampler requires training (on LAION-COCO-Aes
 Tests were conducted on Tar-1.5B/7B (unified MLLM) and LlamaGen-XL. Efficiency is measured by speedup (serial latency / MuLo-SD latency) on A100 (batch=1). Metrics include GenEval/DPG-Bench (alignment) and FID/HPSv2 (quality).
 
 ### Main Results
+
 | Base (Res) | Method | Speedup↑ | GenEval↑ | DPG-Bench↑ | FID↓ | HPSv2↑ |
 |---|---|---|---|---|---|---|
 | LlamaGen-XL (512p) | EAGLE-2 | 0.96× | 37.1 | 65.1 | 56.2 | 23.1 |
@@ -89,6 +90,7 @@ Tests were conducted on Tar-1.5B/7B (unified MLLM) and LlamaGen-XL. Efficiency i
 **Key Finding**: EAGLE-2 (exact SD) consistently produces negative speedup (<1×), confirming standard SD's mismatch for visual tokens. MuLo-SD achieves the highest speedup across settings, particularly at higher resolutions—Tar-7B 1024p reaches $5.33\times$ with improved GenEval scores.
 
 ### Ablation Study
+
 | Dimension | Comparison | Conclusion |
 |---|---|---|
 | Upsampler Loss | Token loss → Pixel MSE+LPIPS → +PatchGAN → SR | Pixel-space loss is vital for quality; GAN loss adds detail; SR is competitive and training-free. |

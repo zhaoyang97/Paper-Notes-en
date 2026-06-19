@@ -102,6 +102,7 @@ During inference, $Z_0\sim\mathcal{N}(0,I)$ is sampled and the flow ODE is solve
 ## Key Experimental Results
 
 ### Main Results
+
 | Test Set | Model | NFEs | SN-MOS↑ | EC-MOS↑ | ON-MOS↑ | WER↓ | FAD↓ | CLAP↑ |
 |--------|------|------|---------|---------|---------|------|------|-------|
 | AudioCaps | VoiceLDM | 200 | 3.41 ± 0.06 | 3.33 ± 0.07 | 2.55 ± 0.05 | 16.45 | 8.75 | 0.229 |
@@ -114,6 +115,7 @@ During inference, $Z_0\sim\mathcal{N}(0,I)$ is sampled and the flow ODE is solve
 Main results indicate that ImmersiveTTS achieves the lowest WER, lowest FAD, and highest CLAP on AudioCaps simultaneously, outperforming 200-step diffusion baselines with only 25 sampling steps. On the enhanced test set, VoiceDiT shows slightly higher EC-MOS, but ImmersiveTTS leads in SN-MOS, ON-MOS, WER, FAD, and CLAP, indicating a preference for overall naturalness and intelligibility.
 
 ### Ablation Study
+
 | Alignment Policy | Teacher | Speech Domain | Env Domain | WER↓ | FAD↓ | CLAP↑ |
 |----------|---------|--------|--------|------|------|-------|
 | Base | None | - | - | 11.21 | 9.64 | 0.236 |

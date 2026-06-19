@@ -109,6 +109,7 @@ Encoder OverMod ablation (Table 4): ED blocks, Dilated RepConv, GRN, and Layer S
 - **First millisecond-level VLM on µNPU**: TTFT 208 ms, TBT 21 ms, power <300 mW, all meeting constraints for on-device real-time generation.
 
 ### Deployment (STM32N657, 4.2 MB SRAM / 600 GOPS)
+
 | Component | Size (MB) | Latency (ms) | Power |
 |------|----------|----------|------|
 | OverMod-b Encoder | 21.4 | 187 | <300 mW |

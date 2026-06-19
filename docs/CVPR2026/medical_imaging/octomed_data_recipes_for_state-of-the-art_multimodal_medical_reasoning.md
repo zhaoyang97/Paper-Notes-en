@@ -91,6 +91,7 @@ Dataset scale: 8,095,571 total samples (3,687,105 Vision-Language + 4,408,466 Te
 OctoMed-7B leads among similarly sized open-source models and outperforms the 4x larger MedGemma-27B across all categories. It even surpasses its teacher GPT-4o in multimodal classification (67.29 vs. 53.96).
 
 ### Ablation Study
+
 | Dimension | Configuration | Results | Conclusion |
 |----------|------|----------|------|
 | Prompt Format | CoT vs. Direct (MM Reasoning) | 38.15 vs. 23.08 | Use CoT for reasoning |

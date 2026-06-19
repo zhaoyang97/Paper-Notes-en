@@ -94,6 +94,7 @@ Pre-training LLaMA-style transformers (124M–1.5B parameters) using Chinchilla-
 | Muon | — | — | SPECTRA generalizes Muon | Framework includes it |
 
 ### Ablation Study
+
 | Configuration | Key Metric | Note |
 | :--- | :--- | :--- |
 | Vanilla AdamW | Baseline Loss | Update spectral norm explodes (Fig F.10) |

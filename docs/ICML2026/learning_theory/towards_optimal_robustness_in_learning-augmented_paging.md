@@ -99,6 +99,7 @@ The authors compared mainstream learning-augmented paging algorithms on LIRS and
 | **RPB-OM (Ours)** | **1.00** | **1.1-1.3** | **$\le H_k+O(1)$** | **$H_k+O(1)$** |
 
 ### Ablation Study
+
 | Configuration | Avg. cost/OPT | Description |
 | :--- | :--- | :--- |
 | RPB-OM Full | 1.10-1.30 | Complete method, budget linked to $U(\omega)$ |

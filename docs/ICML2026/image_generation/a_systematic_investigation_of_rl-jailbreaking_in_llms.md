@@ -85,6 +85,7 @@ The main table compares the original harmful prompt baseline with sparse reward 
 | Tiny-aya-global | Sparse Reward | 59.2% | 0.68 | Short-path vulnerabilities are easily caught by sparse signals |
 
 ### Ablation Study
+
 | Configuration | Key Metric | Description |
 |:---|:---|:---|
 | Dense reward + safeguard | Most target-safeguard combinations favor dense over sparse | Multi-layer defense makes feedback sparser; dense rewards provide more stable signals |

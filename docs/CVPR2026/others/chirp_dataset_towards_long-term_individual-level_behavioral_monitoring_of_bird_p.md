@@ -84,6 +84,7 @@ CORVID was compared with the animal Re-ID foundation model MegaDescriptor (pre-t
 Key Findings: CORVID significantly leads under "Within Territory" and "+Neighbours" constraints (Closed-set Within Territory Top-1 0.66 vs 0.28), indicating that explicit use of ring colors is superior to deep metric learning. However, when the gallery is expanded to all individuals (All), CORVID falls behind (0.05 vs 0.10), as it relies heavily on the "territory candidate list" biological constraint.
 
 ### Other Task Baselines (Table 2/3)
+
 | Task | Best Model | Key Metric |
 |------|---------|---------|
 | Action Recognition | C3D | Accuracy 0.72, F1 0.684 (better than SlowFast/X3D's 0.548) |

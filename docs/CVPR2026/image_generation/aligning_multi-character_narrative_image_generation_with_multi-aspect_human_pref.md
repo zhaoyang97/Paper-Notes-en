@@ -95,6 +95,7 @@ Evaluated on NI-Bench (400 pairs per dimension) to measure consistency with huma
 NIReward leads significantly in prompt following and identity consistency. Notably, even specialized models like ArcFace (76.52) and various MLLMs (some < 50) struggle with identity consistency compared to NIReward (85.10), suggesting they cannot distinguish between different characters effectively.
 
 ### Main Results (Quantitative scores; higher NIReward scores are better)
+
 | Method | CLIP | ID Sim | ImageReward | HPSv2 | PickScore | NIReward-P.F. | NIReward-I.C. | NIReward-V.Q. |
 |------|------|------|------|------|------|------|------|------|
 | Baseline | 32.38 | 28.83 | 0.931 | 32.46 | 22.13 | -0.058 | -0.036 | 0.036 |
@@ -106,6 +107,7 @@ NIReward leads significantly in prompt following and identity consistency. Notab
 ADPO achieves top results across nearly all metrics. Notably, only ADPO improves **identity consistency** (NIReward-I.C. increases from -0.036 to 0.010), while other baselines cause regression (e.g., ID Sim dropping from 28.83 to 26.77).
 
 ### Ablation Study (ADPO Components)
+
 | Configuration | ID Sim | ImageReward | HPSv2 | NIReward-P.F. | NIReward-I.C. | NIReward-V.Q. |
 |------|------|------|------|------|------|------|
 | Avg. Score (No dominating comparison) | 26.94 | 0.948 | 32.28 | 0.049 | -0.004 | 0.057 |

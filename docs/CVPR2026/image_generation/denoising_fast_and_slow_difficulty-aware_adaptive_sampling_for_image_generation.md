@@ -91,6 +91,7 @@ With the same backbone and NFEs, PFT with Euler sampling outperforms SiT, and ad
 | PFT-XL/2 + look-ahead + REPA | 675M | — | **6.7** |
 
 ### SOTA Comparison (ImageNet 256², with CFG)
+
 | Model | Epochs | FID↓ | sFID↓ | IS↑ | Pre.↑ | Rec.↑ |
 |------|--------|------|-------|-----|-------|-------|
 | DiT-XL/2 | 1400 | 2.27 | 4.60 | 278.2 | 0.83 | 0.57 |
@@ -99,6 +100,7 @@ With the same backbone and NFEs, PFT with Euler sampling outperforms SiT, and ad
 | PFT-XL/2 + REPA + look-ahead | 200 | 2.00 | 4.32 | **284.1** | 0.81 | 0.61 |
 
 ### Ablation Study
+
 | Configuration | Key Findings | Description |
 |------|---------|------|
 | LTG vs SRM Uniform-$\bar t$ | LTG achieves optimal FID | SRM's $t_{\max}$ still leaks context, leaving a train-test gap |

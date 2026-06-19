@@ -110,6 +110,7 @@ Efficiency comparison (RTX 4090, batch=1, 1 image):
 Ours has nearly the same parameters as the baseline (46.16M vs. 89.66M for PointPainting), with training steps taking only 0.204s (compared to nearly 0.4s for dual-branch methods), while achieving the highest mIoU.
 
 ### Ablation Study
+
 | Configuration | Setting | Key Metric (mIoU) | Note |
 |----------|------|----------------|------|
 | Depth Method | IP-BASIC / DepthAnythingV2 / Unidepth / UnidepthV2 | 70.87 / 70.95 / 71.13 / 71.04 | Robust to depth model choice; Unidepth is slightly better |

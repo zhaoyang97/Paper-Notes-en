@@ -79,6 +79,7 @@ The synthetic loss for pixel-based segmentors is a soft-label cross-entropy with
 ## Key Experimental Results
 
 ### Main Results
+
 | Dataset | Metric | Ours | Prev. / Real Only Baseline | Gain |
 |--------|------|------|----------|------|
 | Cityscapes, DPT DINOv2-S | mIoU s.s. | 80.65 | 78.11 real only | +2.54 |
@@ -89,6 +90,7 @@ The synthetic loss for pixel-based segmentors is a soft-label cross-entropy with
 | ADE20K Swin-L fair comparison | mIoU | 58.27 | JoDiffusion 57.46 / SDS 57.23 | +0.81 / +1.04 |
 
 ### Ablation Study
+
 | Configuration | Key Metric | Description |
 |------|---------|------|
 | Dense vs Sparse composition, Flux | Cityscapes 66.56 vs 61.81 mIoU | Instance count increased from 11.48 to 22.21; dense scenes are significantly more beneficial. |

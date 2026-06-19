@@ -1,8 +1,8 @@
 ---
 title: >-
-  CVPR2026 Self-Supervised Learning Papers · 84 Notes
+  CVPR2026 Self-Supervised Learning Papers · 89 Notes
 description: >-
-  84 CVPR2026 papers in the Self-Supervised Learning area, covering Continual Learning, Self-Supervised Learning, Adversarial Robustness, Few-/Zero-Shot Learning, Layout & Composition, Multimodal/VLM and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  89 CVPR2026 papers in the Self-Supervised Learning area, covering Continual Learning, Self-Supervised Learning, Adversarial Robustness, Few-/Zero-Shot Learning, Layout & Composition, Multimodal/VLM and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "CVPR2026"
   - "Self-Supervised Learning"
@@ -14,12 +14,16 @@ tags:
   - "Layout & Composition"
   - "Multimodal/VLM"
 item_list:
-  - u: "a_stitch_in_time_learning_procedural_workflow_via_self_supervised_plackett_luce_r/"
-    t: "A Stitch in Time: Learning Procedural Workflow via Self-Supervised Plackett-Luce Ranking"
+  - u: "a_faster_path_to_continual_learning/"
+    t: "A Faster Path to Continual Learning"
+  - u: "adaprior_bayesian-inspired_adaptive_prior_correction_for_long-tailed_continual_l/"
+    t: "AdaPrior: Bayesian-Inspired Adaptive Prior Correction for Long-Tailed Continual Learning"
   - u: "an_optimal_transport_driven_approach_for_cultivating_latent_space_in_online_incr/"
     t: "An Optimal Transport-driven Approach for Cultivating Latent Space in Online Incremental Learning"
   - u: "assignment-driven_hash_learning_in_a_hyper-semantic_space_for_on-the-fly_categor/"
     t: "Assignment-Driven Hash Learning in a Hyper-Semantic Space for On-the-Fly Category Discovery"
+  - u: "beyond_binary_contrast_modeling_continuous_skeleton_action_spaces_with_transitio/"
+    t: "Beyond Binary Contrast: Modeling Continuous Skeleton Action Spaces with Transitional Anchors"
   - u: "beyond_myopic_alignment_lookahead_optimization_for_online_class-incremental_lear/"
     t: "Beyond Myopic Alignment: Lookahead Optimization for Online Class-Incremental Learning"
   - u: "beyond_the_static_world_continual_category_discovery_under_visual_drift/"
@@ -34,6 +38,10 @@ item_list:
     t: "CUE: Concept-Aware Multi-Label Expansion to Mitigate Concept Confusion in Long-Tailed Learning"
   - u: "d2dewarp_dual_dimensions_geometric_representation_learning_based_document_image_/"
     t: "D2Dewarp: Dual Dimensions Geometric Representation Learning Based Document Image Dewarping"
+  - u: "ddsf_robust_few-shot_learning_via_disentangled_subspaces_with_determinantal_poin/"
+    t: "DDSF: Robust Few-Shot Learning via Disentangled Subspaces with Determinantal Point Process"
+  - u: "decision_boundary-aware_generation_for_long-tailed_learning/"
+    t: "Decision Boundary-aware Generation for Long-tailed Learning"
   - u: "decouple_your_discovery_and_memory_in_continual_generalized_category_discovery/"
     t: "Decouple Your Discovery and Memory in Continual Generalized Category Discovery"
   - u: "dgs_dual_gradient_and_semantic-shift_guided_low-rank_adaptation_for_class_increm/"
@@ -46,49 +54,45 @@ item_list:
     t: "Easy2Hard: From Partially to Fully Unmatched Modalities as Negative Samples in Contrastive Learning"
   - u: "exemplar-free_class_incremental_learning_via_preserving_class-discriminative_str/"
     t: "Exemplar-Free Class Incremental Learning via Preserving Class-Discriminative Structure"
-  - u: "exploring_visual_pretraining_for_learning_language_intelligence/"
-    t: "Exploring Visual Pretraining for Learning Language Intelligence"
-  - u: "few-shot_hybrid_incremental_learningcontinually_learning_under_data_scarcity_and/"
-    t: "Few-Shot Hybrid Incremental Learning: Continually Learning under Data Scarcity and Task Uncertainty"
-  - u: "finding_distributed_object-centric_properties_in_self-supervised_transformers/"
-    t: "Finding Distributed Object-Centric Properties in Self-Supervised Transformers"
+  - u: "exemplar-free_continual_learning_for_state_space_models/"
+    t: "Exemplar-Free Continual Learning for State Space Models"
   - u: "franca_nested_matryoshka_clustering_for_scalable_visual_representation_learning/"
     t: "Franca: Nested Matryoshka Clustering for Scalable Visual Representation Learning"
   - u: "free-grained_hierarchical_visual_recognition/"
     t: "Free-Grained Hierarchical Visual Recognition"
-  - u: "from_feature_learning_to_spectral_basis_learning_a_unifying_and_flexible_framewo/"
-    t: "From Feature Learning to Spectral Basis Learning: A Unifying and Flexible Framework for Efficient and Robust Shape Matching"
   - u: "from_few-way_to_many-way_rethinking_few-shot_fine-grained_image_classification/"
     t: "From Few-way to Many-way: Rethinking Few-shot Fine-grained Image Classification"
   - u: "gaussianmatch_semi-supervised_regression_with_pseudo-label_filtering_via_multi-v/"
     t: "GaussianMatch: Semi-Supervised Regression with Pseudo-Label Filtering via Multi-View Gaussian Consistency"
-  - u: "geobridge_semantic-anchored_multi-view_foundation_model_for_geo-localization/"
-    t: "GeoBridge: A Semantic-Anchored Multi-View Foundation Model for Geo-Localization"
   - u: "geometry-driven_ood_detectors_are_class-incremental_learners/"
     t: "Geometry-driven OOD Detectors Are Class-Incremental Learners"
-  - u: "global-graph_guided_and_local-graph_weighted_contrastive_learning_for_unified_cl/"
-    t: "Global-Graph Guided and Local-Graph Weighted Contrastive Learning for Unified Clustering on Incomplete and Noise Multi-View Data"
-  - u: "gm-r2_generative_matching_learning_for_unsupervised_geometric_representation_and/"
-    t: "GM-R²: Generative Matching Learning for Unsupervised Geometric Representation and Registration"
-  - u: "graph_attention_prototypical_network_for_robust_few-shot_classification/"
-    t: "Graph Attention Prototypical Network for Robust Few-Shot Classification"
+  - u: "had_heterogeneity-aware_distillation_for_lifelong_heterogeneous_learning/"
+    t: "HAD: Heterogeneity-Aware Distillation for Lifelong Heterogeneous Learning"
   - u: "harnessing_the_power_of_foundation_models_for_accurate_material_classification/"
     t: "Harnessing the Power of Foundation Models for Accurate Material Classification"
-item_total: 84
+  - u: "hcl-ff_hierarchical_and_contrastive_learning_for_forward-forward_algorithm/"
+    t: "HCL-FF: Hierarchical and Contrastive Learning for Forward-Forward Algorithm"
+  - u: "hier-cos_making_deep_features_hierarchy-aware_via_composition_of_orthogonal_subs/"
+    t: "Hier-COS: Making Deep Features Hierarchy-aware via Composition of Orthogonal Subspaces"
+item_total: 89
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # 🔄 Self-Supervised Learning
 
-**📷 CVPR2026** · **84** paper notes
+**📷 CVPR2026** · **89** paper notes
 
 📌 **Same area in other venues:** [🧪 ICML2026 (24)](../../ICML2026/self_supervised/index.md) · [💬 ACL2026 (1)](../../ACL2026/self_supervised/index.md) · [🔬 ICLR2026 (16)](../../ICLR2026/self_supervised/index.md) · [🤖 AAAI2026 (16)](../../AAAI2026/self_supervised/index.md) · [🧠 NeurIPS2025 (33)](../../NeurIPS2025/self_supervised/index.md) · [📹 ICCV2025 (13)](../../ICCV2025/self_supervised/index.md)
 
-🔥 **Top topics:** Continual Learning ×14 · Self-Supervised Learning ×13 · Adversarial Robustness ×7 · Few-/Zero-Shot Learning ×6 · Layout & Composition ×3
+🔥 **Top topics:** Continual Learning ×20 · Self-Supervised Learning ×8 · Adversarial Robustness ×7 · Few-/Zero-Shot Learning ×5 · Layout & Composition ×3
 
-**[A Stitch in Time: Learning Procedural Workflow via Self-Supervised Plackett-Luce Ranking](a_stitch_in_time_learning_procedural_workflow_via_self_supervised_plackett_luce_r.md)**
+**[A Faster Path to Continual Learning](a_faster_path_to_continual_learning.md)**
 
-:   The authors propose PL-Stitch, a self-supervised framework that utilizes the Plackett-Luce probabilistic ranking model to treat the temporal ordering of video frames as a pre-training signal. By learning "procedure-aware" video representations, it significantly outperforms existing self-supervised methods in surgical phase recognition and cooking action segmentation.
+:   To address the issue of the C-Flat optimizer being too slow due to calculating three additional gradients per step, this paper identifies "direction-invariant" components within the first-order flatness gradients. These components are cached and reused in subsequent steps to skip redundant perturbation gradient calculations. Combined with a linear scheduler that gradually increases the skip interval as tasks progress and an adaptive trigger based on gradient statistics, C-Flat Turbo achieves 1.0×~1.25× speedup over C-Flat (recovering throughput from ~27% to ~60%) while maintaining or even slightly improving accuracy.
+
+**[AdaPrior: Bayesian-Inspired Adaptive Prior Correction for Long-Tailed Continual Learning](adaprior_bayesian-inspired_adaptive_prior_correction_for_long-tailed_continual_l.md)**
+
+:   AdaPrior reinterprets Long-Tailed Continual Learning (LTCIL) as a "model-induced prior drift" problem. It uses EMA to online estimate the model's self-learned prior $P_m(y)$, followed by Bayesian alignment for debiasing in both training loss and inference post-processing. This single-stage, plug-and-play approach consistently outperforms recent LTCIL baselines on CIFAR100-LT, ImageNet-subset-LT, and iNaturalist18-subset.
 
 **[An Optimal Transport-driven Approach for Cultivating Latent Space in Online Incremental Learning](an_optimal_transport_driven_approach_for_cultivating_latent_space_in_online_incr.md)**
 
@@ -97,6 +101,10 @@ item_total: 84
 **[Assignment-Driven Hash Learning in a Hyper-Semantic Space for On-the-Fly Category Discovery](assignment-driven_hash_learning_in_a_hyper-semantic_space_for_on-the-fly_categor.md)**
 
 :   To address the critical issues of "feature-to-hash cascade degradation" and "known-class monopoly in the representation space" in On-the-fly Category Discovery (OCD), this paper constructs a hyper-semantic space comprising "derived subspaces" and "calibrated subspaces" to simultaneously characterize intra-class diversity and reserve space for new categories. Assignment-driven hash learning, featuring "soft prototype assignment + binary hash regularization," is then performed within this space. As a plug-and-play module for SMILE/PHE, it achieves an average All accuracy improvement of approximately 12.78% on six fine-grained datasets (based on SMILE).
+
+**[Beyond Binary Contrast: Modeling Continuous Skeleton Action Spaces with Transitional Anchors](beyond_binary_contrast_modeling_continuous_skeleton_action_spaces_with_transitio.md)**
+
+:   To address the issues of isolated clusters and rigid boundaries caused by "binary contrast" in self-supervised skeleton action recognition, TranCLR synthesizes "transitional anchors" as manifold regularization terms between actions and reshapes the representation space from discrete point clouds into continuous smooth manifolds using three-level geometric manifold calibration. It achieves SOTA across linear evaluation, transfer learning, and retrieval on NTU/PKU-MMD, while reducing the Expected Calibration Error (ECE) from ~5.6% to 0.65%.
 
 **[Beyond Myopic Alignment: Lookahead Optimization for Online Class-Incremental Learning](beyond_myopic_alignment_lookahead_optimization_for_online_class-incremental_lear.md)**
 
@@ -126,6 +134,14 @@ item_total: 84
 
 :   Ours introduces D2Dewarp, the first dewarping method to learn document geometric representations from both horizontal and vertical dimensions. A UNet with dual decoders predicts horizontal lines (top/bottom boundaries of text lines/tables) and vertical lines (left/right boundaries) separately. The HV Fusion Module integrates features from both directions via mixed attention. Additionally, the DocDewarpHV dataset, containing 114K images with dual-dimension annotations, is constructed to support this framework.
 
+**[DDSF: Robust Few-Shot Learning via Disentangled Subspaces with Determinantal Point Process](ddsf_robust_few-shot_learning_via_disentangled_subspaces_with_determinantal_poin.md)**
+
+:   To address prototype drift caused by noise/hard positive contamination in few-shot support sets, DDSF utilizes the Determinantal Point Process (DPP) to unify a "Filter-Repair-Expand" pipeline: first, suspicious samples are identified via DPP probabilistic inference rather than being discarded; second, they are "repaired" into effective features using a DPP volume-gradient-guided diffusion process; finally, class representations are expanded from fragile mean points into disentangled shared/unique subspaces. On the Meta-Dataset with OOD contamination, DDSF improves accuracy from the Prev. SOTA of 47.0% to 61.6% under 70% noise.
+
+**[Decision Boundary-aware Generation for Long-tailed Learning](decision_boundary-aware_generation_for_long-tailed_learning.md)**
+
+:   Aiming at the problem where using "diffusion models + head-to-tail feature transfer" to supplement long-tail data implicitly leaks head-class features into tail-classes and blurs decision boundaries, this paper first quantifies "boundary ambiguity" using three metrics. It then proposes DBG: using adversarial de-classification noise to push samples near the decision boundary and relabeling them with the $k$ most confusable classes, followed by a classifier-driven dual-path cleaning to discard harmful samples. On CIFAR-LT, DBG consistently reduces inter-class overlap and improves tail-class and overall accuracy for all generative baselines.
+
 **[Decouple Your Discovery and Memory in Continual Generalized Category Discovery](decouple_your_discovery_and_memory_in_continual_generalized_category_discovery.md)**
 
 :   Addressing the limitation in Continual Generalized Category Discovery (C-GCD) where "over-protection of old classes to prevent forgetting crushes the discovery of new classes," this paper proposes the DYDM dual-branch framework. It utilizes a discovery branch to recognize new classes without constraints and a memory branch using backprop-free Recursive Least Squares (RLS) analytical classifiers to stably retain all old classes. Coupled by a knowledge rehearsal distillation loop, the method achieves significant improvements in both new class and overall accuracy across four benchmarks (CAA improves by 3.2–9.9% over SOTA Happy).
@@ -150,17 +166,9 @@ item_total: 84
 
 :   This paper identifies that the essence of catastrophic forgetting in Exemplar-Free Class Incremental Learning (EFCIL) is the collapse of "class-discriminative structure." It proposes the Adaptive Prototype Calibration (APR) to correct the mean and covariance of old class prototypes (preserving intra-class structure) and the Structural Consistency Constraint (SCC) to maintain angular relationships between new samples and old prototypes (preserving inter-class structure). The method outperforms existing approaches such as SSIAT and SLCA across six benchmarks, with particularly significant gains on fine-grained datasets.
 
-**[Exploring Visual Pretraining for Learning Language Intelligence](exploring_visual_pretraining_for_learning_language_intelligence.md)**
+**[Exemplar-Free Continual Learning for State Space Models](exemplar-free_continual_learning_for_state_space_models.md)**
 
-:   This paper proposes MAPLE: instead of extracting text from PDFs to feed into LLMs, it directly performs masked autoregressive pretraining on **document page images**. By allowing the LLM to learn language intelligence through "generating latent hypotheses for occluded regions," it achieves an average improvement of up to 40.2% over pure text pretraining across four mathematical reasoning benchmarks.
-
-**[Few-Shot Hybrid Incremental Learning: Continually Learning under Data Scarcity and Task Uncertainty](few-shot_hybrid_incremental_learningcontinually_learning_under_data_scarcity_and.md)**
-
-:   This paper proposes "Few-Shot Hybrid Incremental Learning (FSHIL)," a realistic new paradigm where data is scarce and task types (new classes, new domains, or both) appear stochastically. By introducing "Conditional Meta-Expanding Mixture of Experts (CME-MoE)" to reconcile stability and plasticity at the feature level and "Self-Expanding Prototype Classifier (SEPC)" to model multi-distribution boundaries at the classification layer, the method outperforms existing FSIL and HIL approaches across five datasets and three incremental settings.
-
-**[Finding Distributed Object-Centric Properties in Self-Supervised Transformers](finding_distributed_object-centric_properties_in_self-supervised_transformers.md)**
-
-:   The paper provides a systematic analysis of "where object information is hidden" within self-supervised ViTs like DINO. It finds that such information is distributed across all layers and encoded simultaneously in Query, Key, and Value patch similarities (rather than only in the last layer's [CLS] or key features). Based on this, the authors propose a training-free method, **Object-DINO**, which identifies "object heads" via cross-layer clustering. This method improves unsupervised object discovery (CorLoc) by +3.6 to +12.4 and provides visual evidence to mitigate object hallucinations in MLLMs.
+:   This paper proposes Inf-SSM—a geometric-aware, exemplar-free regularization method that encodes the "infinite-time behavior" of SSMs (e.g., Vim/Mamba) as a point on an extended observability subspace. By constraining the distance between subspaces of new and old tasks on an infinite-dimensional Grassmann manifold and reducing the computational cost from $\mathcal{O}(n^3)$ to $\mathcal{O}(n^2)$, this method serves as a plug-and-play module that improves average AA by 8.31% and reduces forgetting (FM) by 9.36% for existing continual learning methods.
 
 **[Franca: Nested Matryoshka Clustering for Scalable Visual Representation Learning](franca_nested_matryoshka_clustering_for_scalable_visual_representation_learning.md)**
 
@@ -170,10 +178,6 @@ item_total: 84
 
 :   Ours proposes "free-grained" hierarchical visual recognition, allowing training labels to appear at any level of the taxonomy, and introduces text-guided pseudo-attributes and taxonomy-guided semi-supervised learning to compensate for missing supervision; during inference, the model adaptively selects prediction depth.
 
-**[From Feature Learning to Spectral Basis Learning: A Unifying and Flexible Framework for Efficient and Robust Shape Matching](from_feature_learning_to_spectral_basis_learning_a_unifying_and_flexible_framewo.md)**
-
-:   Addressing the long-standing blind spot in deep functional map matching—where only "features" are optimized while the "spectral basis" remains fixed—this paper proposes Advanced Functional Maps. By utilizing a set of learnable "suppression functions" $G$, the fixed Laplacian basis $\Phi$ is transformed into a learnable basis $\Psi=\Phi G$. Features and the spectral basis are jointly optimized end-to-end via a lightweight multi-scale heat diffusion network. This approach significantly outperforms feature-only SOTA methods in difficult scenarios such as non-isometry and topological noise, while being faster and more stable by eliminating the functional map solver.
-
 **[From Few-way to Many-way: Rethinking Few-shot Fine-grained Image Classification](from_few-way_to_many-way_rethinking_few-shot_fine-grained_image_classification.md)**
 
 :   This paper points out that existing Few-shot Fine-grained Classification (FSFG) methods are trained and evaluated only in "few-class" scenarios (e.g., 5-way), failing significantly when faced with "many-way" settings. The authors decompose the causes of this failure into three actionable guiding principles using a generalization bound based on the Class Discriminative Index. Accordingly, they propose SCEG—featuring multi-layer self and collaborative feature enhancement plus an episodic/global dual-scale Intra-Inter Loss—which achieves significant leads across 4 datasets in both few-way and the newly proposed many-way settings.
@@ -182,25 +186,13 @@ item_total: 84
 
 :   Addressing the challenge in semi-supervised regression (SSR) where continuous outputs lack confidence scores and low-quality pseudo-labels contaminate training, GaussianMatch utilizes the **Gaussian consistency** of predictions from multiple weakly-augmented views of the same sample as a proxy for pseudo-label reliability. It retains only those samples where all views fall within a confidence interval and employs Bayesian variance smoothing to prevent over-filtering. Under the extreme scarcity of 30 labels on UTKFace, it reduces MAE by 15.36% and improves $R^2$ by 50.21%.
 
-**[GeoBridge: A Semantic-Anchored Multi-View Foundation Model for Geo-Localization](geobridge_semantic-anchored_multi-view_foundation_model_for_geo-localization.md)**
-
-:   GeoBridge proposes a semantic-anchored multi-view foundation model for geo-localization. By using text descriptions to build cross-modal semantic bridges between UAV, street-view, and satellite imagery, it achieves bidirectional cross-view matching and language-to-image localization, supported by the newly constructed GeoLoc dataset (50K+ pairs from 36 countries).
-
 **[Geometry-driven OOD Detectors Are Class-Incremental Learners](geometry-driven_ood_detectors_are_class-incremental_learners.md)**
 
 :   GOD treats "each task classifier head possessing both IND recognition and OOD rejection capabilities" as a sufficient condition for Class-Incremental Learning (CIL). By replacing learnable classifier heads with fixed Equiangular Tight Frame (ETF) anchors and utilizing ETF loss (inter-class separation) along with ArcFace loss (intra-class compactness), it unifies "classification" and "uncertainty estimation" within a shared geometric space. This transforms cross-task routing from a fragile Task-ID predictor into a naturally emerging OOD decision, achieving SOTA performance across four benchmarks.
 
-**[Global-Graph Guided and Local-Graph Weighted Contrastive Learning for Unified Clustering on Incomplete and Noise Multi-View Data](global-graph_guided_and_local-graph_weighted_contrastive_learning_for_unified_cl.md)**
+**[HAD: Heterogeneity-Aware Distillation for Lifelong Heterogeneous Learning](had_heterogeneity-aware_distillation_for_lifelong_heterogeneous_learning.md)**
 
-:   GLGC addresses incomplete and noisy multi-view data without relying on data imputation. It utilizes a **global affinity graph** to generate new positive/negative pairs for incomplete views (addressing "rare-paired" issues) and a **local affinity graph** to assign adaptive weights to cross-view pairs (addressing "mis-paired" issues). Integrated into a unified contrastive learning framework, GLGC significantly outperforms SOTA methods.
-
-**[GM-R²: Generative Matching Learning for Unsupervised Geometric Representation and Registration](gm-r2_generative_matching_learning_for_unsupervised_geometric_representation_and.md)**
-
-:   Ours reformulates "learning geometric descriptors" as a proxy task of "generating cross-view images conditioned on geometry"—only when the geometric features of two point clouds are consistent can the generator conditioned on them synthesize consistent cross-view images. GM-R² uses this generative consistency as implicit supervision to train a ControlNet encoder, achieving unsupervised registration SOTA on 3DMatch / ScanNet, even surpassing some fully supervised methods.
-
-**[Graph Attention Prototypical Network for Robust Few-Shot Classification](graph_attention_prototypical_network_for_robust_few-shot_classification.md)**
-
-:   To address the "prototype shift" problem where Prototypical Networks experience sharp accuracy drops due to mislabeled samples in the support set, GAPNet introduces a four-step pipeline: "Global+Local Dual Features → Pseudo-label Guided Graph Construction → Edge-Aware Graph Attention → Adaptive Noise-Robust Prototype Generation." By explicitly modeling intra/inter-class relationships and dynamically suppressing noise sample weights, it outperforms the SOTA by 3%~8% on 5-way 5-shot tasks across four datasets and exhibits significantly slower decay under 40% label noise.
+:   This paper extends lifelong learning from "homogeneous task streams" to "heterogeneous task streams" (LHL) and instantiates it in dense prediction scenarios (LHL4DP). It proposes HAD (Heterogeneity-Aware Distillation), an exemplar-free method that utilizes a frozen teacher to generate pseudo-labels for self-distillation. Two complementary terms, Distribution-Balanced HAD (DB-HAD) and Saliency-Guided HAD (SG-HAD), are introduced to alleviate category/numerical imbalance in pseudo-labels and the loss of boundary information. The method significantly outperforms existing lifelong learning approaches on CityScapes, NYUv2, and Taskonomy.
 
 **[Harnessing the Power of Foundation Models for Accurate Material Classification](harnessing_the_power_of_foundation_models_for_accurate_material_classification.md)**
 
@@ -225,10 +217,6 @@ item_total: 84
 **[Is Parameter Isolation Better for Prompt-Based Continual Learning?](is_parameter_isolation_better_for_prompt-based_continual_learning.md)**
 
 :   Addressing the mainstream "one set of prompts per task" paradigm in prompt-based continual learning, this paper proposes a Hash framework utilizing a shared prompt pool + task-aware sparse gating. It introduces a modulator based on historical activation statistics to simultaneously suppress abused prompts and protect essential ones, consistently outperforming static allocation methods across 4 class-incremental benchmarks with higher parameter efficiency.
-
-**[JetViT: Efficient High-Resolution Vision Transformer with Post-Training Attention Search](jetvit_efficient_high-resolution_vision_transformer_with_post-training_attention.md)**
-
-:   JetViT proposes **Post-Training Attention Search**: instead of training from scratch, it converts pre-trained full-attention ViTs (DINOv3, DepthAnythingV2) into efficient hybrid ViTs composed of "linear + window + very few full attention" blocks through weight inheritance, distillation, and beam search. It improves high-resolution inference throughput to $1.79\times$ and reduces latency by $44.81\%$ on H100 without accuracy loss.
 
 **[Learning by Analogy: A Causal Framework for Compositional Generalization](learning_by_analogy_a_causal_framework_for_compositional_generalization.md)**
 
@@ -262,17 +250,17 @@ item_total: 84
 
 :   MOMO is the first foundation model for Mars remote sensing. It pre-trains MAEs independently on three Mars sensors (HiRISE/CTX/THEMIS) and proposes an Equal Validation Loss (EVL) checkpoint selection strategy for model fusion. It outperforms ImageNet pre-training and Earth Observation foundation models across 9 downstream tasks in Mars-Bench.
 
-**[MuM: Multi-View Masked Image Modeling for 3D Vision](mum_multi-view_masked_image_modeling_for_3d_vision.md)**
+**[NitroGen: An Open Foundation Model for Generalist Gaming Agents](nitrogen_an_open_foundation_model_for_generalist_gaming_agents.md)**
 
-:   MuM generalizes the "mask-and-reconstruct" objective of MAE from single images to arbitrary multi-view sequences (up to 24 views) of the same scene. By utilizing a lightweight multi-view decoder with alternating cross-frame attention, it pre-trains geometric-aware feature encoders. MuM outperforms DINOv3 and CroCo v2 on 3D tasks such as feed-forward reconstruction, dense matching, and relative pose estimation while using approximately 1/30 of the training compute.
+:   NitroGen treats "controller input overlays used by players in livestreams" as natural action labels. It automatically extracts (frame, action) pairs from 40,000 hours of public videos covering 1,000+ games. By training a single vision-action Transformer using flow-matching, the model can directly play various 2D/3D games. Pre-trained weights provide a maximum relative success rate improvement of 52% when fine-tuned on unseen games.
 
 **[Nonparametric Deep Fine-grained Clustering with Low-Rank Guided Vision-Language Model](nonparametric_deep_fine-grained_clustering_with_low-rank_guided_vision-language_.md)**
 
 :   A frozen VLM is utilized as a "teacher" to reformulate low-rank compression in unsupervised fine-grained clustering as a top-k selection task. Combined with perturbed instance contrast and cluster centroid orthogonal constraints, these elements are integrated into a Dirichlet Process Variational Inference framework. This approach simultaneously learns representations and automatically infers the number of clusters, achieving SOTA results on fine-grained benchmarks such as CUB, Dogs, Flower, and Pet.
 
-**[OmniGCD: Abstracting Generalized Category Discovery for Modality Agnosticism](omnigcd_abstracting_generalized_category_discovery_for_modality_agnosticism.md)**
+**[On the Role of Temporal Granularity in the Robustness of Spiking Neural Networks](on_the_role_of_temporal_granularity_in_the_robustness_of_spiking_neural_networks.md)**
 
-:   OmniGCD is proposed as the first modality-agnostic generalized category discovery method. By utilizing GCDformer trained on synthetic data, it transforms the GCD latent space of any modality into a more cluster-friendly representation during inference, achieving zero-shot GCD across 16 datasets spanning four modalities.
+:   This paper revisits the robustness of Spiking Neural Networks (SNNs) from the perspective of "temporal granularity" (individual time steps) rather than "temporal averaging." It proposes TG-Attack, which constructs perturbations step-by-step (stronger attack), and defines the Temporal Sensitivity Value (TSV) using the Hessian of the per-step input-output gradient to estimate robustness without generating adversarial samples. Based on this, it designs a regularization term TG-Reg to constrain the TSV at each time step, consistently surpassing existing SOTA defenses across multiple datasets and networks.
 
 **[OpenVision 2: A Family of Generative Pretrained Visual Encoders for Multimodal Learning](openvision_2_a_family_of_generative_pretrained_visual_encoders_for_multimodal_le.md)**
 
@@ -281,6 +269,10 @@ item_total: 84
 **[PAF: Perturbation-Aware Filtering for Open-Set Semi-Supervised Learning](paf_perturbation-aware_filtering_for_open-set_semi-supervised_learning.md)**
 
 :   PAF distills the phenomenon that "OOD samples exhibit more unstable representations under semantic-preserving perturbations" into a representation-level filtering signal. It employs Otsu's adaptive thresholding to dynamically exclude open-set (OOD) samples from unlabeled data. Combined with a two-stage training framework, it achieves SOTA performance in both seen-class classification accuracy and OOD detection AUC on benchmarks like MNIST, CIFAR, and TinyImageNet.
+
+**[Parameter-efficient Continual Learning for Enhancing Plasticity without Forgetting under Limited Model Capacity](parameter-efficient_continual_learning_for_enhancing_plasticity_without_forgetti.md)**
+
+:   GRAPA is a parameter-efficient continual learning method designed for "capacity-limited" scenarios. It first identifies safely reusable frozen parameters from old tasks using gradient direction consistency, and then adaptively determines a "just enough" pruning rate for each new task via A2C reinforcement learning. This significantly enhances plasticity (learning new tasks) without sacrificing stability (no forgetting). On six heterogeneous task sequences, it achieves an average accuracy improvement of up to 7.67%, with gains up to 14.92% on subsequent complex tasks.
 
 **[PointCSP: Cross-Sample Semantic Propagation and Stability Preservation in Self-Supervised Point Cloud Learning](pointcsp_cross-sample_semantic_propagation_and_stability_preservation_in_self-su.md)**
 
@@ -298,33 +290,33 @@ item_total: 84
 
 :   AEMG treats surface electromyography (EMG) as a "language"—utilizing an energy-driven tokenizer to segment muscle contractions into "words" and multi-channel coordination into "sentences." By applying vector quantization (VQ) codebooks and masked reconstruction for self-supervised pre-training, it yields a universal EMG foundation model across devices, subjects, and tasks. In the rigorous Zero-shot Leave-One-Subject-Out (LOSO) gesture recognition task, it outperforms six SOTA methods by an average of 5.79–9.25%.
 
+**[Reconstructing Spiking Neural Networks Using a Single Neuron with Autapses](reconstructing_spiking_neural_networks_using_a_single_neuron_with_autapses.md)**
+
+:   Inspired by the autaptic self-feedback of cerebellar Purkinje cells, this paper introduces a set of "Time-Delay Autapses" to LIF neurons (TDA-LIF). By expanding a **single** spiking neuron in the temporal dimension and applying specific pruning/sharing strategies to the autapses, the authors equivalently reconstruct three SNN architectures: Reservoir Computing (RC), Multilayer Perceptron (MLP), and Convolution-like structures. This approach achieves accuracy comparable to standard SNNs of equivalent scale while reducing the number of neurons per layer to 1 and state VRAM from 8 KB to 4 Bytes, increasing single-neuron information density by orders of magnitude at the cost of temporal latency in extreme single-neuron settings.
+
 **[Recurrent Video Masked Autoencoders](recurrent_video_masked_autoencoders.md)**
 
 :   RVM utilizes a "Transformer + GRU hybrid recurrent core" to aggregate video features frame-by-frame. Trained solely on an asymmetric pixel reconstruction objective—where unmasked past frames reconstruct a 95% masked future frame—it yields a general-purpose encoder proficient in both spatiotemporal tasks (action recognition, point/object tracking) and dense spatial tasks (depth, segmentation correspondence). Furthermore, small models achieve competitive performance without distillation, offering up to $30\times$ parameter efficiency compared to existing Video MAEs.
-
-**[Re-Depth Anything: Test-Time Depth Refinement via Self-Supervised Re-lighting](redepth_anything_test-time_depth_refinement_via_self-supervised_re-lighting.md)**
-
-:   Proposes Re-Depth Anything, which refines depth predictions of Depth Anything V2/3 without labels by performing test-time re-lighting augmentation on predicted depth maps and utilizing SDS loss from 2D diffusion models for self-supervised optimization.
 
 **[Reframing Long-Tailed Learning via Loss Landscape Geometry](reframing_long-tailed_learning_via_loss_landscape_geometry.md)**
 
 :   This paper revisits the head-tail seesaw dilemma in long-tailed learning from the perspective of loss landscape geometry. It reveals that the root cause of tail class degradation is optimization convergence to sharp regions far from the tail-class optima. A dual-module framework comprising Grouped Knowledge Preservation (GKP) and Grouped Sharpness Awareness (GSA), inspired by continual learning, is proposed. The method achieves SOTA on CIFAR-LT, ImageNet-LT, and iNat2018 without requiring external data.
 
-**[Representation Learning for Spatiotemporal Physical Systems](representation_learning_for_spatiotemporal_physica.md)**
+**[Representation-Steered Incremental Adapter-Tuning for Class-Incremental Learning with Pre-Trained Models](representation-steered_incremental_adapter-tuning_for_class-incremental_learning.md)**
 
-:   This work systematically compares four self-supervised/physical modeling methods across three PDE physical systems (Active Matter, Shear Flow, Rayleigh-Bénard Convection). It finds that latent-space prediction (JEPA) consistently outperforms pixel-level prediction (VideoMAE) in physical parameter estimation tasks—showing a relative MSE improvement of 28%~51%. Furthermore, JEPA with only 10% fine-tuning data surpasses VideoMAE trained on 100% of the data. Notably, methods specifically designed for physical modeling are not always the optimal choice.
+:   RSIAT employs a **single shared adapter** (with parameters remaining constant regardless of task growth) for PTM-based class-incremental learning. It first shapes features to be intra-class compact and inter-class separable using a "Representation-Steered Loss" in the base task. Then, in incremental tasks, it utilizes "Residual AutoEncoder Projection + Orthogonal Loss" to align new and old feature spaces and suppress prototype drift. It achieves a superior stability-plasticity trade-off across six CIL benchmarks with fewer parameters.
 
 **[Residual Connections Harm Generative Representation Learning](residual_connections_harm_generative_representation_learning.md)**
 
 :   The authors discover that the "identity shortcut" in residual connections injects shallow high-frequency details directly into deep layers, suppressing semantic abstraction. They propose **Decayed Identity Shortcuts**—an architectural modification where the weight of the identity shortcut decays monotonically with layer depth. With only one additional hyperparameter $\alpha_{\min}$ and zero extra parameters, this method improves the KNN accuracy of MAE on ImageNet-1K from 27.4% to 63.9% and linear probing from 67.8% to 72.7%, while also enhancing the generation quality of diffusion models.
 
-**[Revisiting Prototype Rehearsal for Exemplar-Free Continual Learning: Manifold-Aware Boundary Sampling with Adaptive Class-Balanced Loss](revisiting_prototype_rehearsal_for_exemplar-free_continual_learning_manifold-awa.md)**
+**[Rethinking SNN Online Training and Deployment: Gradient-Coherent Learning via Hybrid-Driven LIF Model](rethinking_snn_online_training_and_deployment_grad.md)**
 
-:   Addressing the phenomenon where prototype rehearsal is outperformed by drift compensation in Exemplar-Free Class-Incremental Learning (EFCIL), this paper suggests the issue lies not in rehearsal itself but in how it is instantiated (Gaussian sampling being off-manifold + implicit imbalance of old classes). The authors propose CEOS oversampling, which performs boundary-aware interpolation toward nearest enemy classes, and the ACB loss with class-age-decaying weights. This allows prototype rehearsal to match or surpass SOTA drift compensation methods.
+:   This paper proposes the HD-LIF (Hybrid-Driven LIF) spiking neuron model family. By employing different spike calculation mechanisms above and below the threshold, it theoretically proves gradient separability and alignment, resolving the inconsistency between forward and backward propagation in SNN online training. It simultaneously achieves full-stage optimization of learning accuracy, memory complexity, and power consumption—reaching 78.61% accuracy on CIFAR-100 with 10× parameter compression, 11× power reduction, and 30% NOPs savings.
 
-**[Robustness of Vision Foundation Models to Common Perturbations](robustness_of_vision_foundation_models_to_common_perturbations.md)**
+**[Robust Spiking Neural Networks by Temporal Mutual Information](robust_spiking_neural_networks_by_temporal_mutual_information.md)**
 
-:   This paper presents the first systematic study of the robustness of vision foundation models (VFMs) to common perturbations (e.g., JPEG compression, brightness adjustment). It proposes three robustness metrics, formalizes five mathematical properties, reveals that foundation models are generally not robust, and introduces a fine-tuning method to improve robustness without sacrificing utility.
+:   From an information theory perspective, this paper proves that the upper bound of the robust error in deep networks is determined by the "mutual information (MI) between input and hidden representations." It indicates that the unique temporal characteristics of SNNs (accumulative firing + temporal spike dependence) naturally result in smaller mutual information. Based on this, it proposes a TMI regularization term that directly minimizes MI along the temporal dimension, consistently enhancing the intrinsic robustness of SNNs across multiple datasets like CIFAR/ImageNet under various attacks.
 
 **[Scaling Dense Event-Stream Pretraining from Visual Foundation Models](scaling_dense_event-stream_pretraining_from_visual_foundation_models.md)**
 
@@ -350,9 +342,21 @@ item_total: 84
 
 :   This work reformulates semantic correspondence as a Fused Gromov-Wasserstein (FGW) optimal transport problem. By leveraging geometric structure constraints from 3D foundation models to generate globally consistent pseudo-labels, it addresses the geometric inconsistency caused by the locality and 2D appearance ambiguity of traditional nearest-neighbor matching.
 
+**[Smart Replay: Adaptive Scheduling of Memory Rehearsal for Computational Resource-Aware Incremental Learning](smart_replay_adaptive_scheduling_of_memory_rehearsal_for_computational_resource-.md)**
+
+:   This paper introduces the "Computational Resource-Aware Incremental Learning (CRIL)" setting and designs Smart Replay. By treating the replay sample ratio $\lambda_r$ in each mini-batch as a tunable control variable, it employs optimal control and a heuristic Q-function to dynamically schedule the replay ratio under a fixed computational budget. This achieves higher accuracy and lower forgetting than fixed-ratio baselines under the same compute constraints.
+
+**[Spectral Mixture-of-Experts for Continual Learning](spectral_mixture-of-experts_for_continual_learning.md)**
+
+:   To address "structural interference" and "compositional forgetting" in LoRA-MoE for continual learning, this paper proposes Spectral MoE: it employs non-overlapping frequency domain masks to constrain each expert into independent subspaces for inherent orthogonality, combined with a dual online/offline router and Dynamic Consistency Projection to lock routing policies. It achieves higher retention and plasticity in cross-domain task-agnostic incremental learning.
+
 **[Stabilizing Feature Geometry in Noisy Pretrained Models for Robust Downstream Tasks](stabilizing_feature_geometry_in_noisy_pretrained_models_for_robust_downstream_ta.md)**
 
 :   The authors discover that pre-training noise not only weakens spectral energy but also causes a "rotation" of the principal feature subspace. They propose the Principal Direction Angle (PDA) to quantify this rotation and design the FGS framework—a lightweight projection head inserted after a frozen backbone using a trio of Perturbation Consistency, Variance-Activation Regularization, and Feature Consistency Distillation. FGS outperforms previous spectral methods on multiple vision benchmarks by at least +1.53% on average.
+
+**[Subspace Alignment for CLIP-based Continual Learning via Canonical Correlation Analysis](subspace_alignment_for_clip-based_continual_learning_via_canonical_correlation_a.md)**
+
+:   Addressing the issue where the "visual encoder drift is significantly greater than the text encoder drift" in CLIP-based continual learning (termed Asymmetric Drift by the authors), this paper proposes CCA-CL. It accumulates visual-text covariance statistics across tasks and employs closed-form Canonical Correlation Analysis (CCA) to solve for a shared subspace that maximizes cross-modal correlation. This pulls both modalities back into alignment without modifying CLIP parameters or storing exemplars. By incorporating Random Fourier Projections (RFP) for non-linearity, it achieves SOTA accuracy across four benchmarks with the fastest training speed (5.8 minutes on CIFAR-100).
 
 **[Suppressing Non-Semantic Noise in Masked Image Modeling Representations](suppressing_non-semantic_noise_in_masked_image_modeling_representations.md)**
 
@@ -374,6 +378,14 @@ item_total: 84
 
 :   This work identifies Temporal Imbalance as a neglected source of bias in Class-Incremental Learning (CIL) and proposes the Temporal-Adjusted Loss (TAL). By utilizing a time-decay memory kernel to dynamically reduce the weight of negative supervision for old classes, TAL significantly alleviates catastrophic forgetting in a plug-and-play manner.
 
+**[Temporal Interaction in Spiking Transformers with Multi-Delay Mixer](temporal_interaction_in_spiking_transformers_with_multi-delay_mixer.md)**
+
+:   To address the deficiency where spiking self-attention "models only space and almost no time," this paper first proposes the TIC metric to quantify the issue. It then introduces the Multi-Delay Mixer (multi-branch learnable delays), inspired by biological axonal transmission delays, as a plug-and-play module to inject multi-scale temporal dependencies into Key/Value. This approach consistently refreshes SOTA for Spiking Transformers across static, neuromorphic, and long-sequence benchmarks.
+
+**[Temporal Representation Enhancement (TRE): Learning to Forget Dominant Patterns for Enhanced Temporal Spiking Features](temporal_representation_enhancement_tre_learning_to_forget_dominant_patterns_for.md)**
+
+:   To address the issue of temporal redundancy in Spiking Neural Networks (SNNs), where the same set of dominant channels are repeatedly activated across multiple timesteps, this paper proposes TRE. TRE estimates the contribution of each channel per category during training and uses adaptive threshold gating to temporarily mask "overly dominant" channels, forcing subsequent timesteps to mine complementary semantics. At inference, no masking is applied, resulting in zero extra overhead while achieving stable performance gains on CIFAR-100/ImageNet/DVS-CIFAR10.
+
 **[Text-Phase Synergy Network with Dual Priors for Unsupervised Cross-Domain Image Retrieval](text-phase_synergy_network_with_dual_priors_for_unsupervised_cross-domain_image_.md)**
 
 :   Ours proposes TPSNet, which utilizes domain prompts learned by CLIP as text priors to provide fine-grained semantic supervision, while introducing phase spectrum features as phase priors to bridge domain distribution gaps and maintain semantic integrity. The synergy of text-phase dual priors achieves significant improvements in unsupervised cross-domain image retrieval.
@@ -381,10 +393,6 @@ item_total: 84
 **[The Devil Is in Gradient Entanglement: Energy-Aware Gradient Coordinator for Robust Generalized Category Discovery](the_devil_is_in_gradient_entanglement_energy-aware_gradient_coordinator_for_robu.md)**
 
 :   This paper identifies "gradient entanglement" in Generalized Category Discovery (GCD), where sharing parameters between supervised and unsupervised objectives causes unsupervised gradients to pollute supervised directions and supervised gradients to pull new class representations into old class subspaces. It proposes EAGC, a plug-and-play module that uses a supervised reference model to anchor labeled sample gradients (AGA) while adaptively soft-projecting unlabeled gradients out of the old class subspace based on energy (EEP), achieving an average gain of 3.2% in All ACC and 4.3% in New ACC across four GCD baselines and five datasets.
-
-**[TimeBridge: Self-Supervised Video Representation Learning via Start-End Joint Embedding and In-Between Frame Prediction](timebridge_self-supervised_video_representation_learning_via_start-end_joint_emb.md)**
-
-:   TimeBridge introduces an auxiliary task to the iBOT joint embedding framework: given only the start and end frames of a video, the model must "reconstruct" the intermediate frames. This forces the model to learn authentic temporal transformations. With 400 epochs of training, it achieves new SOTA on dense video prediction benchmarks such as DAVIS (73.5 J&F) and VIP (47.5 mIoU).
 
 **[Towards Stable Self-Supervised Object Representations in Unconstrained Egocentric Video](towards_stable_self-supervised_object_representations_in_unconstrained_egocentri.md)**
 
@@ -398,9 +406,9 @@ item_total: 84
 
 :   Addressing the issues in multi-expert "mutual distillation" for long-tailed recognition—where errors from a single expert propagate to the entire group (bias propagation) or the entire group collectively confirms errors with high confidence (error consolidation)—this paper proposes TCL. It employs a "Knowledge Quality Gate + Tail-Class Knowledge Compensation" to ensure only correct experts propagate knowledge while amplifying rare correct insights. Furthermore, a "Consensus Error Calibration" module detects and suppresses high-confidence negative classes agreed upon by all experts, improving CIFAR100-LT Top-1 accuracy from 57.2% to 58.7%.
 
-**[UniGeoCLIP: Unified Geospatial Contrastive Learning](unigeoclip_geospatial_contrastive.md)**
+**[Tunable Soft Equivariance with Guarantees](tunable_soft_equivariance_with_guarantees.md)**
 
-:   UniGeoCLIP aligns five complementary geospatial modalities (aerial imagery, street-view imagery, Digital Surface Models, text, and GPS coordinates) into a unified embedding space through pure all-to-all contrastive learning and introduces a multi-scale coordinate encoder to enhance spatial representation.
+:   This paper proposes an architecture-agnostic "soft equivariant" framework: projecting the weights of any pre-trained model into a subspace determined by the Lie algebra representation of a group. Using a truncation threshold $b$, the model can be continuously tuned from "fully equivariant" to "fully non-equivariant," while providing a provable upper bound on the equivariant error. It simultaneously improves accuracy and reduces equivariant error in ImageNet classification, segmentation, and trajectory prediction.
 
 **[Unique Lives, Shared World: Learning from Single-Life Videos](unique_lives_shared_world_learning_from_single-life_videos.md)**
 
@@ -409,6 +417,14 @@ item_total: 84
 **[UniRefiner: Teaching Pre-trained ViTs to Self-Dispose Dross via Contrastive Register](unirefiner_teaching_pre-trained_vits_to_self-dispose_dross_via_contrastive_regis.md)**
 
 :   UniRefiner systematically categorizes up to 40% of "spurious tokens" in the feature maps of large-scale pre-trained ViTs (including EVA-CLIP-8B and InternViT-6B) into three types. By using a multiplex detector to identify them and employing "contrastive registers" during LoRA self-distillation, it explicitly drives spurious signals into register regions while retaining clean semantics in image regions. With only 5k images and a few fine-tuning epochs, vision-language models (VLMs) originally ill-suited for dense tasks outperform DINOv2 on ADE20K (EVA-CLIP-8B reaches 51.9% mIoU, +9.4% Gain).
+
+**[UPLiFT: Efficient Pixel-Dense Feature Upsampling with Local Attenders](uplift_efficient_pixel-dense_feature_upsampling_with_local_attenders.md)**
+
+:   UPLiFT uses a weight-sharing convolutional $2\times$ decoder to iteratively upsample low-resolution features from pretrained backbones (e.g., DINOv2) to pixel-level density. It introduces a **Local Attender** operator based entirely on fixed local offsets to replace cross-attention, reducing complexity from quadratic to linear while maintaining semantic consistency and avoiding "upsampling semantic drift"—outperforming existing upsamplers in segmentation and depth estimation with faster speeds.
+
+**[VideoSSR: Video Self-Supervised Reinforcement Learning](videossr_video_self-supervised_reinforcement_learning.md)**
+
+:   To address the dilemma where strong models are saturated by existing video RLVR datasets and manual annotation is too costly, VideoSSR automatically generates training data with verifiable answers from raw videos using three parameterizable self-supervised pretext tasks (anomaly grounding / object counting / temporal jigsaw). Combined with task-specific smooth reward functions for GRPO training, it improves Qwen3-VL-8B by an average of over 5% across 17 benchmarks.
 
 **[Vision Transformers Need More Than Registers](vision_transformers_need_more_than_registers.md)**
 
@@ -421,3 +437,7 @@ item_total: 84
 **[Weight Space Representation Learning via Neural Field Adaptation](weight_space_representation_learning_via_neural_field_adaptation.md)**
 
 :   This paper proposes using a "pretrained neural field base model + multiplicative LoRA (mLoRA) + asymmetric masking" to constrain network weights fitted to individual samples into structured representations. This ensures that INR weights possess high-quality reconstructability, support weight diffusion model generation, and maintain semantic separability, significantly outperforming the prior weight space method HyperDiffusion on FFHQ and ShapeNet.
+
+**[Your Dissimilarities Define You: Complementary Learning Exploiting Class Diversities](your_dissimilarities_define_you_complementary_learning_exploiting_class_diversit.md)**
+
+:   Addressing the issue where Cross-Entropy (CE) suffers from vanishing gradients for non-target classes once a sample is correctly classified—thereby losing information about "how dissimilar classes are"—this paper proposes **Complementary Dissimilarity Loss (CDL)**. It employs a "one-cold" target, where the target class is set to 0 and non-target classes are assigned probability mass based on dissimilarity, to explicitly supervise all non-target classes. This approach maintains non-vanishing gradients and actively pushes representations toward controllable Neural Collapse, providing consistent plug-and-play performance gains across closed-set, open-set, few-shot, and domain generalization tasks.

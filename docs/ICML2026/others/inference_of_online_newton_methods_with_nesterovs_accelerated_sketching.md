@@ -93,6 +93,7 @@ Four online inference methods were compared on synthetic linear regression, logi
 NA-SN closely matches the nominal coverage level, with interval widths 5%–8% narrower than unaccelerated SN. The per-step time is nearly identical (with minor overhead for the momentum vector). Compared to ASGD, coverage is improved by 10–20 percentage points in ill-conditioned scenarios.
 
 ### Ablation Study
+
 | Configuration | Last-iterate Error $\|x_T-x^\star\|^2$ (×$10^{-3}$) | Coverage | Description |
 |------|----------------------------------------|--------|------|
 | Full: NA-SN + Hessian Avg + Online Cov Est | 4.2 | 0.90 | Full model |

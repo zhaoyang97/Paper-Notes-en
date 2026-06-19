@@ -34,6 +34,7 @@ SOC is an "object-centric" synthetic data pipeline: it first generates 20 millio
 **Core Idea**: Replace "whole-image rendering/pseudo-labeling" with "object snippet compositions"—first build a massive library of high-quality snippets, then paste them into images according to designed 3D layouts followed by generative harmonization. Annotations are automatically generated and precise upon pasting.
 
 ## Method
+
 ### Overall Architecture
 SOC (Synthetic Object Compositions) deconstructs "dataset creation" into two steps: first, **offline construction of a library of 20 million single-object segmented snippets**, and second, **online composition of snippets into any number of images**, each carrying its own masks, boxes, categories, and referring expressions. The entire pipeline consists of a 5-stage serial process: ① Object snippet generation → ② 3D geometric layout placing 5–20 snippets into a "3D scene" → ③ Generative harmonization (relighting + refusion) to remove pasting artifacts → ④ Camera configuration augmentation (scaling/depth-of-field blur) to simulate real photography → ⑤ Region annotation generation derived directly from the composition relationships. Crucially, since the image is assembled from snippets with known masks, the boxes and masks are already precise after step ②. Steps ③ and ④ only make the image "look real," and step ⑤ formats the annotations for detection, segmentation, and grounding.
 

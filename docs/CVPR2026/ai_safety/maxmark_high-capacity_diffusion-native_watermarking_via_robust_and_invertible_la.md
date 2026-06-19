@@ -97,6 +97,7 @@ Watermark effectiveness under different payloads on SD v1.5 (Selected from Table
 It can be observed that baselines almost entirely collapse to random levels at high capacities, while MaxMark maintains a clean accuracy of 95.4%, an accuracy under attack of 86.9%, and TPR@1%FPR=1.00 even at a full capacity of 16,384 bits. The authors report improvements of 12% / 45% / 46% at 8,192 / 12,288 / 16,384 bits respectively. Regarding image quality (Table 2), MaxMark achieves CLIP Score ≈ 0.33, CMMD ≈ 0.76, and FID ≈ 42, which are on par with baselines, indicating no sacrifice of quality for high capacity.
 
 ### Ablation Study
+
 | Configuration | Key Metrics | Note |
 |------|---------|------|
 | Full MaxMark | 16384bit Acc 98.6 / FID 41.8 | — |

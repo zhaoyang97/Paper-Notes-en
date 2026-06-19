@@ -92,6 +92,7 @@ Normal estimation (UnrealStereo4K, Angular Error):
 Compared to PatchRefiner, AbsRel drops by over 49% and RMSE by 35%, with a faster inference time of 0.97s.
 
 ### Ablation Study
+
 | Configuration | Key Metric | Description |
 |------|---------|------|
 | GridMix (0.1,0.2,0.3,0.4) | AbsRel 0.0295 / CE 0.0418 | Optimal mixed granularity |

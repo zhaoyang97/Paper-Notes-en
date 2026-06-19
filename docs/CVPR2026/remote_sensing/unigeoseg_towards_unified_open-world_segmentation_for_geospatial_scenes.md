@@ -99,6 +99,7 @@ GeoSeg-Bench (gIoU, with fine-tuned competitors):
 Vanilla general/RS large models fail on GeoSeg-Bench reasoning (e.g., LISA gIoU of 5.77). On the EarthReason test set, Ours achieves a gain of **+6.65 cIoU / +2.16 gIoU** over the previous best; it also leads on RRSIS-D with 69.25 gIoU.
 
 ### Ablation Study
+
 | Configuration | Interactive | Referring | Reasoning | Note |
 |------|------|------|------|------|
 | baseline | 82.51 | 64.62 | 32.88 | No TATE/LKM |

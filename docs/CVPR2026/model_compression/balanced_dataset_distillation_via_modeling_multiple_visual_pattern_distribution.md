@@ -108,6 +108,7 @@ Highlights: On Tiny-ImageNet with only 5% of data, BPS narrowed the gap to the f
 BPS is optimal across all architectures, with the largest gains on "data-hungry" ViTs, validating the advantages of model-agnostic selection.
 
 ### Ablation Study
+
 | Configuration / Hyperparameter | Key Metric | Description |
 |---|---|---|
 | $K$=10% / 20% / 30% (CIFAR100) | 57.7 / 57.1 / 56.8 | 10% is best for clean datasets. |

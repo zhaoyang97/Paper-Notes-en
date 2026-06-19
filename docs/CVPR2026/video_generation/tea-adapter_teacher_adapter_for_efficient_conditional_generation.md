@@ -86,6 +86,7 @@ Deployed on the 14B T2V base, compared with ControlNet and Adapter-type SOTA acr
 Key Takeaways: Tea-Adapter comprehensively outperforms X-Adapter and Ctrl-Adapter in the adapter category, matching full fine-tuning in CLIP Score (e.g., Canny 0.918 vs 0.919) and achieving the **highest temporal consistency (0.984)**. It used only ~10K videos for training, whereas baselines often use 100K+ videos and more GPUs. FVD is second only to the "Full Fine-tuning 14B" resource upper bound, but Tea-Adapter avoids training the large model or new ControlNets.
 
 ### Ablation Study
+
 | Config | FVD↓ | LPIPS↓ | SSIM↑ | CLIP↑ | Description |
 |------|------|------|------|------|------|
 | Full Model | **292.34** | **0.251** | **0.591** | **0.913** | Complete model |

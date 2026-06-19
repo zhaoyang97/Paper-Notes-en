@@ -94,6 +94,7 @@ With 8 historical images, Premier achieves the best ViPer Score, ViPer Rate, CLI
 | **Premier (Ours)** | **0.6889** | **0.876** | **0.3183** | **0.5986** |
 
 ### Ablation Study
+
 | Configuration | ViPer Score↑ | ViPer Rate↑ | CLIP T2I↑ | LPIPS↓ |
 |------|--------------|-------------|-----------|--------|
 | Full Premier | 0.6889 | 0.876 | 0.3183 | 0.5986 |

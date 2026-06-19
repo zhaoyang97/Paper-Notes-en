@@ -97,6 +97,7 @@ On four real-world cancer datasets (CAMELYON16, NSCLC, UBC-OCEAN, TCGA-RCC) unde
 DyKo achieves SOTA across all datasets and shots. The advantage is most pronounced in data-scarce scenarios (4.0% lead over FOCUS on 4-shot CAMELYON16).
 
 ### Ablation Study (CAMELYON16, 4-shot AUC)
+
 | Configuration | AUC | Delta from Full | Description |
 |------|-----|-----------|------|
 | DyKo (Full) | 0.871 | — | Full model |

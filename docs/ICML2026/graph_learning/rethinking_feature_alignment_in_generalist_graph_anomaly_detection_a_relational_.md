@@ -89,6 +89,7 @@ Evaluation on 14 real-world datasets divided into Group 1 and Group 2 for cross-
 ReFi-GAD ranks first among all generalist baselines and is the only method showing consistent positive pre-training gains across nearly all datasets.
 
 ### Ablation Study
+
 | Configuration | Avg AUROC | Description |
 |------|------------|------|
 | Full ReFi-GAD | Highest | Complete model |

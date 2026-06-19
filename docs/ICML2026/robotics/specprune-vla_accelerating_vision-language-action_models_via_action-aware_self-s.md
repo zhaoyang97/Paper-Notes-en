@@ -95,6 +95,7 @@ End-to-end comparison on LIBERO (A800 GPU, OpenVLA-OFT backbone):
 On SimplerEnv visual matching tasks (DB-OFT backbone), it achieves a 70.1% SR (baseline 70.4%) with 1.44× speedup. On NVIDIA RTX 3090, it reaches 2.09× acceleration for the LLM component and 1.57× end-to-end; real-world robot (Flexiv Rizon4) experiments show 1.70× acceleration.
 
 ### Ablation Study
+
 | Configuration | Recall (%) | LIBERO SR (%) | Description |
 |------|-----------|---------------|------|
 | Full Method | 92 | 96.1 | All three techniques enabled |

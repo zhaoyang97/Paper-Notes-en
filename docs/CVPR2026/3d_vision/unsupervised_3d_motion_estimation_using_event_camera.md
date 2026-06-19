@@ -112,6 +112,7 @@ ACC0.1 represents the percentage of points with 3D error < 10cm, highlighting fi
 While EPE3D is similar to Expansion, ACC0.1 achieves a **6–7x** improvement, indicating that Ours provides more compact and consistent error distributions—thanks to the MID refinement by DEM.
 
 ### Ablation Study
+
 | Configuration | EPE↓ | log-mid↓ | Description |
 |------|------|---------|------|
 | w/o DEM | 3.38 | 644.56 | Rough MID via Eq. 7 only |

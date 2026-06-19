@@ -106,6 +106,7 @@ Weight Space Generation (FFHQ, lower is better):
 | **mLoRA-Asym** | **0.073** | **0.039** | **0.467** |
 
 ### Ablation Study / Discriminative Tasks (ShapeNet 10 Class)
+
 | Representation | Clustering ARI↑ | 1-NN Classification↑ | Logistic Classification↑ |
 |------|----------|-----------|----------------|
 | MLP | 39.3% | 50.0% | 78.1% |

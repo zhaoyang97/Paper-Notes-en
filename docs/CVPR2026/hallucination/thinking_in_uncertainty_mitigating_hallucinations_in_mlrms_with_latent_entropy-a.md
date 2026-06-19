@@ -94,6 +94,7 @@ LEAD was integrated into 5 representative MLRMs (R1-Onevision-7B, Vision-R1-7B, 
 General reasoning and understanding improved by an average of +3.6%, while hallucination metrics MMHalu/Bingo improved by +4.7% / +3.8%. In domain-specific tasks (Table 3), math benchmark accuracy increased by +2.0% and science by +3.2% (e.g., MMK12-Bio from 40.8 → 44.8). These gains held across the other 4 MLRMs (e.g., Vision-R1-7B POPE-R from 88.0 → 91.4).
 
 ### Ablation Study
+
 | Configuration | Key Metric | Description |
 |------|---------|------|
 | Dynamic Threshold ∆ (Full) | MMHalu +4.7% / +4.1% | Default LEAD, superior to any fixed threshold |

@@ -87,6 +87,7 @@ Metrics: **SR (Success Rate, %) Higher is Better**, **AS (Average Steps) Lower i
 Compared to zero-shot baselines, SCALE improves average task success rates by 231.8% (InternVL2.5-8B) and 176.3% (Qwen2.5-VL-7B). Its advantage is particularly evident on dynamic pages like WebVoyager, where static trajectories fail to cover complexity. Simultaneously, AS values are often the lowest or second-lowest, indicating more concise reasoning. Training the model-agnostic LLaVA-NeXT-8B on SCALE-20k also improves its agent performance.
 
 ### Ablation Study
+
 | Configuration | Shopping SR | Overall SR | Visited Nodes | Description |
 |------|-------------|---------|-----------|------|
 | Random Walk | 14.8 | 10.4 | 399 | Blind spread, low quality |

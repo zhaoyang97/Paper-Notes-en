@@ -72,6 +72,7 @@ Implemented in PyTorch 2.1 using an RTX 3090. The reconstructor uses 6 layers ea
 Datasets: CUHK-PEDES, ICFG-PEDES, and RSTP-ReID. Target models: RaSa, APTM (align-fusion), and IRRA (align-based). Metrics: Rank-1/5/10 accuracy and mAP. Baselines: VLP attacks (SGA, VLPTAttack, MFHA, AnyAttack) and image-based ReID attacks (MisRanking, MetaAttack, MTGA).
 
 ### Main Results (Untargeted Attack, R@1 lower is better, target=RaSa; unit %)
+
 | Dataset | Baseline R@1 | Best Baseline R@1 | R²TUA R@1 |
 |---------|--------------|-------------------|-----------|
 | CUHK-PEDES | 76.51 | 8.48 (AnyAttack) | **0.11** |
@@ -81,6 +82,7 @@ Datasets: CUHK-PEDES, ICFG-PEDES, and RSTP-ReID. Target models: RaSa, APTM (alig
 $R^2$TUA reduces RaSa's R@1 on CUHK from 76.51% to 0.11%, significantly outperforming the strongest baseline by nearly two orders of magnitude.
 
 ### Main Results (Targeted Attack, R@1 higher is better, target=RaSa; unit %)
+
 | Dataset | AnyAttack (Strongest Baseline) | R²TUA (Targeted) |
 |---------|--------------------------------|------------------|
 | CUHK-PEDES | 31.26 | **89.43** |

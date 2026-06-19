@@ -32,6 +32,7 @@ Ours proposes "viseme combinations" as the analysis unit for Visual Speaker Auth
 **Core Idea**: Treat "consecutive viseme combinations" as the authentication unit and select the most discriminative combinations for each user as their unique "dynamic lip-prints." As long as these lip-prints are embedded in the prompt text, the prompt set can be arbitrarily expanded without retraining or re-recording—simultaneously solving prompt scalability and anti-replay security.
 
 ## Method
+
 ### Overall Architecture
 The system input is a sequence of lip images (detected via Dlib facial landmarks and cropped). The goal is to determine if the "current speaker is the claimed identity (and not forged/replayed)." The approach utilizes a **local + global dual-branch** structure: the local branch extracts fine-grained viseme-level habits, while the global branch provides sentence-level contextual identity features. Scores from both are fused.
 

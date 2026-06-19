@@ -102,6 +102,7 @@ Single generation takes 0.006s, a **1300× speedup** over DiffusionNAG (8s). On 
 | Validity(%) ↑ | MBV3 | **100.0** | 99.09 | 72.58 |
 
 ### Ablation Study
+
 | Config | Key Metric | Description |
 |------|---------|------|
 | SCC step = 0 | Lowest Validity / Acc | No stepwise constraints, poorest validity |

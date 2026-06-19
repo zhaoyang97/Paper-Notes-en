@@ -76,6 +76,7 @@ The base model is Flux Kontext. Two separate **LoRAs** are trained for editing a
 Evaluations were conducted on the self-built **DreamOmni2 benchmark** (real images, covering specific objects + global/local abstract attributes). Success rates were judged by Gemini 2.5, Doubao 1.6, and professional engineers (Success = >3/5 passes on "instruction following," "consistency," and "no obvious distortion").
 
 ### Main Results: Multimodal Instruction Editing Success Rate
+
 | Method | Specific Object Human↑ | Abstract Attribute Human↑ | Specific Object Gemini↑ | Abstract Attribute Gemini↑ |
 |------|------|------|------|------|
 | GPT-4o (Closed-source) | 0.561 | 0.579 | 0.683 | 0.720 |
@@ -88,6 +89,7 @@ Evaluations were conducted on the self-built **DreamOmni2 benchmark** (real imag
 Open-source models almost entirely failed on abstract attributes (Human scores near 0). DreamOmni2 achieved a Human success rate of 0.683 on abstract attributes, **surpassing GPT-4o and Nano Banana**. It also ranked first among all open-source models for specific objects, outperforming both commercial models in human evaluation. Generation results (Tab. 3) follow a similar trend.
 
 ### Ablation Study 1: Data vs. VLM Joint Training (Doubao Success Rate)
+
 | Scheme | Train Gen/Edit Model | Train VLM | Edit·Specific | Edit·Abstract | Gen·Specific | Gen·Abstract |
 |------|:---:|:---:|------|------|------|------|
 | Scheme 1 (Base Kontext) | ✗ | ✗ | 0.122 | 0.012 | 0.375 | 0.122 |
@@ -96,6 +98,7 @@ Open-source models almost entirely failed on abstract attributes (Human scores n
 | **Scheme 4 (Joint, Ours)** | ✓ | ✓ | **0.659** | **0.628** | **0.667** | **0.633** |
 
 ### Ablation Study 2: Multi-image Encoding Schemes (Doubao Success Rate)
+
 | Scheme | Index Enc | Pos Offset | Edit·Specific | Edit·Abstract | Gen·Specific | Gen·Abstract |
 |------|:---:|:---:|------|------|------|------|
 | Scheme 1 | ✗ | ✗ | 0.244 | 0.281 | 0.292 | 0.222 |

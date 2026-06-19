@@ -78,6 +78,7 @@ CARES uses an 80K training set (20K each from TextVQA, ChartQA, DocVQA, and LLaV
 ## Key Experimental Results
 
 ### Main Results
+
 | Target VLM | Native Avg Score | CARES Avg Score | Avg Cost Change | Description |
 |------------|------------------|-----------------|-----------------|-------------|
 | Granite-Vision-2B | 0.59 | 0.60 | -63% | Accuracy slightly increases while cost drops significantly on small models |
@@ -86,6 +87,7 @@ CARES uses an 80K training set (20K each from TextVQA, ChartQA, DocVQA, and LLaV
 | GPT-4o | 0.69 | 0.68 | -55% | API cost decreases with nearly identical quality |
 
 ### Ablation Study
+
 | Configuration | Key Metric | Description |
 |---------------|------------|-------------|
 | SigLIP v2 feature | 56.1% resolution accuracy | Dual-tower features underperform compared to joint VLM encoding |

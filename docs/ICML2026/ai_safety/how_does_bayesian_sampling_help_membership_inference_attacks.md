@@ -95,6 +95,7 @@ Evaluations were performed on CIFAR-10/100, ImageNet, Texas-100, Purchase-100, a
 | 64 Ref | CIFAR-100 | **MR-BMIA** | **45.57%** |
 
 ### Ablation Study
+
 | Configuration | CIFAR-10 TPR@1% | Remarks |
 |------|------------------|------|
 | BMIA, $M=1$ | Close to LiRA(n=1) | Degenerates to single score comparison |

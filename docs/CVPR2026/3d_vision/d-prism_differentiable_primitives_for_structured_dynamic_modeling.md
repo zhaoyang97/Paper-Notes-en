@@ -93,6 +93,7 @@ Dynamic geometry reconstruction (Tab.2, CDd in units of $10^{-3}$, lower is bett
 General scenes (D-NeRF humanoid cases, Tab.3): D-Prism's rendering quality is slightly lower than DG-Mesh (e.g., Jumpingjacks PSNR 29.07 vs 31.77), but LPIPS is actually better (0.034 vs 0.045), and it is the only method providing additional structured geometry.
 
 ### Ablation Study
+
 | Config | EPE ↓ | $\delta_{3D}^{.05}$ ↑ | CDd ↓ | Description |
 |------|-------|-----------------------|-------|------|
 | w/o deform (Per-frame pose) | 0.177 | 0.692 | 3.642 | Without deformation net, tracking degrades significantly |

@@ -87,6 +87,7 @@ Evaluated on 6 backbones including Llama-2-7B/13B, Llama-3-8B, Qwen2-7B, and Qwe
 | Qwen2.5-32B | **Ours** | **81.94** | **0.876** | **84.2** | **60.0** |
 
 ### Ablation Study
+
 | Configuration (Llama-3-8B) | TruthfulQA MC1 | BBQ | MMLU | ARC-C |
 |---|---|---|---|---|
 | Vanilla | 28.70 | 0.608 | 65.9 | 51.4 |

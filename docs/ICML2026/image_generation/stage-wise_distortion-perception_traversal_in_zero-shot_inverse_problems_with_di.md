@@ -89,6 +89,7 @@ On MS-COCO, 6 latent-space inverse problems (inpainting / SR 4× / anisotropic d
 | Nonlinear Deblur | PSNR↑ / LPIPS↓ / FID↓ | **24.27** / **0.3942** / 119.43 | 24.29 / – / – | LDIR 23.13 / Latent-DCDP 0.4225 / Latent-DCDP 140.32 |
 
 ### Ablation Study
+
 | Config | Key Observation | Explanation |
 |------|---------|------|
 | $t_0=0$ (Pure MAP) | Highest PSNR, poorer LPIPS/FID | Lowest distortion end; $(\bar\alpha_{t_0})^{1-L_s}$ term in $W_2$ bound is maximal |

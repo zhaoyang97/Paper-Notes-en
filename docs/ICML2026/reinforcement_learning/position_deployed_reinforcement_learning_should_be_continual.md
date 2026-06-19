@@ -72,6 +72,7 @@ The paper aligns three deployment systems against the four sources of non-statio
 *Primary* indicates a dominant driver, *Present* indicates significant presence, and *Implicit* indicates presence without being a focus.
 
 ### Industrial Deployment Gains
+
 | System | Quantitative Gain | Continual Learning Cadence |
 |------|----------|--------------|
 | Cursor Tab | 400M daily requests; Suggestions −21%, Acceptance +28% | Policy updates every 1.5–2 hours |

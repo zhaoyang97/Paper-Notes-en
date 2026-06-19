@@ -74,6 +74,7 @@ The generative backbone utilizes Flow Matching: a linear path $x_t=(1-t)x+tz$ is
 ## Key Experimental Results
 
 ### Main Results
+
 | Model | Scale/Data | GenEval ↑ | DPGBench ↑ | WISE ↑ | Training Cost |
 |------|-----------|-----------|------------|--------|----------|
 | BLIP3-o-8B* | +30M Private Pairs | 0.84 | 81.60 | 0.62 | — |
@@ -86,6 +87,7 @@ The generative backbone utilizes Flow Matching: a linear path $x_t=(1-t)x+tz$ is
 IOMM-B (512px) with a 1.6B backbone, using only public data and ~1050 H800 GPU hours (1000 of which are in the image-only pre-training phase), achieves a GenEval of 0.89. This exceeds BAGEL-7B (0.88) and BLIP3-o-8B (0.84), the latter of which used 30M private pairs. A WISE score of 0.55 indicates world knowledge remains intact.
 
 ### Ablation Study
+
 | Configuration | GenEval | Note |
 |------|---------|------|
 | Raw (Frozen MLLM direct) | 0.44 | Misalignment between understanding and generation |

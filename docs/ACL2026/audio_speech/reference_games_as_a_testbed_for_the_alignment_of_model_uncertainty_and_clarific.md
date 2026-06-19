@@ -72,6 +72,7 @@ This study is an evaluation research and does not involve model training. The ke
 ## Key Experimental Results
 
 ### Main Results
+
 | Model | Baseline Accuracy | Baseline Confidence | CR-Rate | Clarification Accuracy | Relaxed Accuracy |
 |------|-------------------|---------------------|---------|-------------------------|------------------|
 | Qwen2.5-VL-7B | 0.53 (0.52 full) | 0.88 (0.87 full) | 0.0 (0.002 full) | 0.46 (0.42 full) | 0.46 (0.42 full) |
@@ -80,6 +81,7 @@ This study is an evaluation research and does not involve model training. The ke
 | Human | 0.92 full | N/A | N/A | N/A | N/A |
 
 ### Difficulty Conditions Results
+
 | Model / Condition | Baseline Accuracy | CR-Rate | Relaxed Accuracy | Phenomenon |
 |-------------|-------------------|---------|------------------|------|
 | GPT-5-mini close | 0.87 | 0.17 | 0.92 | Frequent questions in difficult conditions |
@@ -88,6 +90,7 @@ This study is an evaluation research and does not involve model training. The ke
 | Qwen2.5-VL-7B ALL | 0.53 (0.52 full) | 0.0 (0.002 full) | 0.46 (0.42 full) | Almost never asks questions |
 
 ### Interaction Experiments
+
 | Setting | Before Accuracy | After Accuracy | Before Confidence | After Confidence | Conclusion |
 |------|-----------------|----------------|-------------------|------------------|------|
 | Qwen-72B CR-only ALL | 0.776 | 0.741 | 0.871 | 0.902 | Accuracy decreased by 0.035 after human answers |

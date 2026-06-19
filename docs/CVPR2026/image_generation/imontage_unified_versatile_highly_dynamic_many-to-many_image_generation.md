@@ -92,6 +92,7 @@ For multi-to-one generation on OmniContext (Average consistency score):
 iMontage leads open-source models (7.41), approaching the performance of Gemini 2.5.
 
 ### Ablation Study
+
 | Configuration | Key Observation | Description |
 | :--- | :--- | :--- |
 | Marginal RoPE (Head-Tail) | Higher diversity, preserved consistency | Wide margin reduces input-target positional interference. |

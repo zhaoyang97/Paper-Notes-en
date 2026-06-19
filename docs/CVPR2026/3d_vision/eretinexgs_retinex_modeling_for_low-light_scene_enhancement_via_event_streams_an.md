@@ -97,6 +97,7 @@ Synthesized data utilized LLFF (8 scenes); real-world data utilized 6 scenes cap
 Ours significantly outperforms all baselines. The enhancement PSNR is 5.27 dB higher than the best event+frame baseline (EvLowLight), and LPIPS is reduced from ~0.43 to 0.089.
 
 ### Ablation Study
+
 | Configuration | PSNR↑ | SSIM↑ | LPIPS↓ | Notes |
 |------|-------|-------|--------|------|
 | w/o E, $\mathcal{L}_{tv}$ | 17.21 | 0.5030 | 0.5027 | Removal of event info causes massive drop (-6.24 dB) |

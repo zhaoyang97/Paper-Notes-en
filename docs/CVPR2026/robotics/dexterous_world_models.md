@@ -80,6 +80,7 @@ Training uses the latent diffusion loss $L_{LDM}$ mentioned above, with conditio
 A 144-sample benchmark was constructed: Synthetic Dynamic (48 sequences from TRUMANS), Real-World Static (48 from TASTE-Rob), and Real-World Dynamic (48 from Aria). Metrics include perceptual similarity (LPIPS / DreamSim, lower is better) and pixel quality (PSNR / SSIM, higher is better).
 
 ### Main Results
+
 | Setting | Metric | CVX SDEdit | CVX-Fun Fine-tuned | InterDyn | **Ours** |
 |------|------|-----------|--------------------|----------|----------------|
 | Synthetic·Dyn Cam | PSNR↑ / SSIM↑ | 19.42 / 0.675 | 20.54 / 0.767 | – | **25.03 / 0.844** |
@@ -92,6 +93,7 @@ A 144-sample benchmark was constructed: Synthetic Dynamic (48 sequences from TRU
 DWM achieves the **best performance across all settings and metrics**. The real dynamic camera scenes were never seen during training (some categories like "opening a window" had no training samples), yet DWM still generates coherent simulations, demonstrating strong generalization. In baseline comparisons: CVX-SDEdit struggles to generate meaningful interaction while maintaining appearance; CVX-Fun Fine-tuned often acts on wrong targets or hallucinates objects; InterDyn aligns hands with masks but fails to build object dynamics.
 
 ### Ablation Study
+
 | Configuration | Real Static LPIPS↓ | Real Static DreamSim↓ | Description |
 |------|----------------|---------------------|------|
 | TRUMANS Only (Synthetic) | 0.304 | 0.124 | Trained only on synthetic data |

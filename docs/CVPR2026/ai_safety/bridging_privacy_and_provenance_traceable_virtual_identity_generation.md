@@ -112,6 +112,7 @@ Anonymity measures: IAR↑ (Inconsistency Rate) and Sim↓ (Cosine Similarity); 
 Ours matches the best baseline (IVFG) in anonymity while leading in diversity metrics.
 
 ### Watermark Effectiveness (Table 6)
+
 | Dataset | Bit Acc↑ | PSNR↑ | SSIM↑ | LPIPS↓ |
 |------|------|------|------|------|
 | CelebA-HQ | 0.998 | 39.74 | 0.974 | 0.019 |
@@ -120,6 +121,7 @@ Ours matches the best baseline (IVFG) in anonymity while leading in diversity me
 Decoding accuracy reaches 0.998 bits with minimal image degradation (PSNR > 39.6 dB).
 
 ### Ablation Study
+
 | Configuration | Observation |
 |------|------|
 | Full impl. | Complete framework: anon + consistent + pose/expression fidelity + watermark. |

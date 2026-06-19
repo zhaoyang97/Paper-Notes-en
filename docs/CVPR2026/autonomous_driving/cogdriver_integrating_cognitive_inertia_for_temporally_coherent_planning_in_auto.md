@@ -93,6 +93,7 @@ Comparison of open-loop L2 and closed-loop Driving Score / Success Rate (Selecte
 The 22% improvement in closed-loop Driving Score and 63% increase in Success Rate represent major leaps in long-range planning quality. Open-loop L2 and efficiency remain competitive, showing gains do not come at the expense of imitation accuracy.
 
 ### VQA Task (Selected CogDriver-nuScenes)
+
 | Model | CIDEr ↑ | BLEU-1 ↑ | BLEU-4 ↑ | ROUGE-L ↑ |
 |------|---------|----------|----------|-----------|
 | Qwen2.5VL 72B | 67.14 | 18.78 | 3.25 | 21.91 |

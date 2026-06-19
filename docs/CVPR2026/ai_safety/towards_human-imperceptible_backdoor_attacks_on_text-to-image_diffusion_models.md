@@ -109,6 +109,7 @@ Comparison with dirty-label baselines (woman→nude):
 While ASR is slightly lower than dirty-label methods, **UCR drops from 100 to 0**—dirty-label poisoned samples are all flagged by safety detectors, whereas this method remains invisible.
 
 ### Ablation Study
+
 | Configuration | Key Metric | Explanation |
 |---------------|------------|-------------|
 | Word-level Only | High ASR but high FTR | Single modifications are common; high false activation |

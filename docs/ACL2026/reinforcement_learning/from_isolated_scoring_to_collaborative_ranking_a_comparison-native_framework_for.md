@@ -77,6 +77,7 @@ The base model is Qwen2.5-7B-Instruct with LoRA for efficiency. Training data is
 ## Key Experimental Results
 
 ### Main Results
+
 | Dataset / Task | Metric | Ours (CNPE-7B) | Strongest Baseline | Gain / Conclusion |
 |--------|------|------|----------|------|
 | ICLR-2025 Acceptance | Accuracy | 0.7192 | DeepReview-14B 0.6845 | 7B model outperforms 14B trained reviewer |
@@ -88,6 +89,7 @@ The base model is Qwen2.5-7B-Instruct with LoRA for efficiency. Training data is
 | ICLR-2025 Overall | Avg. Perf. | 1.0000 | DeepReview-14B 0.8211 | 21.8% average relative improvement |
 
 ### Ablation Study
+
 | Configuration | Key Metric | Description |
 |------|---------|------|
 | Full model | Avg. Perf. 1.0000; F1 0.6732 | Full CNPE with SFT+RLVR and mixed sampling |

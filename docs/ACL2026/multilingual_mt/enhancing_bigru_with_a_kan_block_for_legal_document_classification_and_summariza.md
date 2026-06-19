@@ -108,6 +108,7 @@ In summarization, AttnGRU + KAN outperformed both BiLSTM and Pointer-Generator.
 | Pointer-Generator | 0.35 | 0.20 | 0.28 |
 
 ### Ablation Study
+
 | Configuration | Accuracy | Description |
 |------|---------:|------|
 | BiLSTM without KAN | 0.5188 | Recurrent baseline |

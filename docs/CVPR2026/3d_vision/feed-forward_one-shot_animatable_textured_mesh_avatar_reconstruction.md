@@ -105,6 +105,7 @@ Evaluated on the VFHQ test set for one-shot reconstruction and reenactment. Metr
 Key takeaway: In the pure mesh setting, Ours w/ UNet significantly outperforms ROME (PSNR 25.23 vs 22.85). Even without UNet, it is highly competitive. Interestingly, using the reconstructed mesh as a geometric prior for Gaussian methods (LAM+Ours) yields State-of-the-Art results across all metrics, indicating the mesh serves as an excellent initialization for downstream representations.
 
 ### Ablation Study
+
 | Config | PSNR↑ | LPIPS↓ | FID↓ | Description |
 |------|-------|--------|------|------|
 | Ours-Full | 25.23 | 0.061 | 22.699 | Full Model |

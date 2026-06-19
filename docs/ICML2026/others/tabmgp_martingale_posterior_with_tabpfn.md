@@ -95,6 +95,7 @@ Selection from linear regression experiments across 30 setups (11 synthetic, 19 
 | energy (Real) | **1.00 / 0.04** | 0.80 / 0.01 | 1.00 / 0.06 | — | — |
 
 ### Ablation Study
+
 | Configuration / Diagnosis | Key Metric | Description |
 |-------------|---------|------|
 | TabMGP $T=500$ | All 30 setups plateaued | Path stability reached convergence within $T=500$ |

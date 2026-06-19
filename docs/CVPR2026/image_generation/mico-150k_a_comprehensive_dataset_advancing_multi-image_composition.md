@@ -59,6 +59,7 @@ where SR is subject similarity, PF is prompt following, and PQ is perceptual qua
 ## Key Experimental Results
 
 ### Dataset Scale
+
 | Category | Sub-task | Representative Types | Quantity (Approx) |
 |----------|----------|----------------------|-------------------|
 | Object-centric | Object+Scene | 1O1S / 2O1S | 5,014 / 4,999 |
@@ -69,6 +70,7 @@ where SR is subject similarity, PF is prompt following, and PQ is perceptual qua
 | De&Re | De&Re | Adaptive | 11,677 |
 
 ### Main Results (MICo-Bench, Overall Score, Excerpt from Table 2)
+
 | Model | Base | w/o De&Re | real | synth |
 |------|------|-----------|------|-------|
 | BLIP3-o | 2.2 | 42.2 | 43.2 | 43.0 |

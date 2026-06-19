@@ -88,6 +88,7 @@ Pure text mathematics (Average across 6 benchmarks):
 | **+ ReLaX (Ours)** | **43.5** | **+4.3** over FR3E |
 
 ### Ablation Study
+
 | Configuration | Phenomenon | Description |
 |------|------|------|
 | DSD Coefficient $\alpha = 0.1$ | Highest Reward | Optimal operating point |

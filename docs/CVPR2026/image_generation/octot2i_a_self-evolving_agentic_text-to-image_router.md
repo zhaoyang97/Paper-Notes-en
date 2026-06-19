@@ -96,6 +96,7 @@ Efficiency gains are substantial (relative multipliers in parentheses):
 Compared to Flow-GRPO, OctoT2I is 90.3% faster and 56.6% more energy efficient.
 
 ### Ablation Study
+
 | Configuration | Key Metric | Gain / Note |
 | :--- | :--- | :--- |
 | Self-evolving Knowledge (Ours) | GenEval 0.96 | Full method |

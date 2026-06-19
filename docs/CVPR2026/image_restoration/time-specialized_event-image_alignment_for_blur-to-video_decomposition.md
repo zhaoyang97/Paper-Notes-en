@@ -97,6 +97,7 @@ The model was retrained on GoPro (synthetic), HighREV (real events), and EBD (ne
 TSANet leads pure image-based methods by at least 1.14 / 4.6 / 3.4 dB across datasets. With 6.3M parameters, it is smaller than most event-based baselines.
 
 ### Ablation Study (HighREV)
+
 | Config | RTEA | Warp Guide | Fusion | PSNR | FLOPs(G) |
 |------|------|-----------|------|------|----------|
 | Case 1 (Baseline) | - | - | EGGF | 33.92 | 94.12 |

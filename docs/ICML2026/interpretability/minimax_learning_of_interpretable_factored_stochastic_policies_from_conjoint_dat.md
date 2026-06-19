@@ -87,6 +87,7 @@ Experiments involve synthetic data ($n \in \{500, \dots, 10000\}$, $K \in \{5, 1
 | 2016 US Presidential | Neural Model | Adv Equilibrium Vote Share| **Within historical range, close to 2016** | — | Fig 2: Key selling point |
 
 ### Ablation Study
+
 | Configuration | Key Observation |
 |------------|---------|
 | GLM vs Bayesian Transformer | GLM is most efficient/calibrated when linear; Transformer has better RMSE but lower CI coverage. |

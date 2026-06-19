@@ -85,6 +85,7 @@ The system has no training loss as model parameters are not updated. The develop
 ## Key Experimental Results
 
 ### Main Results
+
 | Track | Metric | DFKI-MLT | Rank | Description |
 |--------|------|------|----------|------|
 | Track 1 (SAQ) | Acc. | N/A | - / 10 | Official submission file corrupted; not evaluated. |
@@ -92,6 +93,7 @@ The system has no training loss as model parameters are not updated. The develop
 | Track 2 best system | Acc. | 96.78 | 1 / 17 | Leaderboard winner, leading DFKI-MLT by 9.82 points. |
 
 ### Ablation Study
+
 | Locale | DFKI-MLT (%) | System Rank for Locale | Best Official (%) | Gain/Gap |
 |------|---------|------|---------|------|
 | es-EC | 97.54 | 7 | 98.67 | -1.13 |

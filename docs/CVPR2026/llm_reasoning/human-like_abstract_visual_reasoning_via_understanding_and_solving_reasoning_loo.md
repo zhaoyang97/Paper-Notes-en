@@ -86,6 +86,7 @@ On the ARC-AGI-1 evaluation set (400 unseen tasks, pass@2):
 USRL achieves the highest accuracy of 47.2% with only 7M parameters, outperforming TRM (44.6%) and significantly larger general-purpose LLMs, demonstrating that compact, well-designed architectures can outperform scale in strong inductive reasoning tasks.
 
 ### Ablation Study
+
 | Configuration | Parameters | Acc.(%) | ∆ |
 |------|--------|---------|----|
 | Base (SM only) | 3.3M | 36.5 | - |

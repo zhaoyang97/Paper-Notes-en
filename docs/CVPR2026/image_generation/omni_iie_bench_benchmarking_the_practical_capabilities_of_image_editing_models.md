@@ -77,6 +77,7 @@ Evaluations of 8 mainstream IIE models show Qwen-image-edit is the strongest, wh
 Note: MGIE has decent quality metrics but a QA score of only 0.070—the output is almost identical to the original image, failing to follow instructions. This failure is caught by Ours but would be missed by mixed evaluations.
 
 ### Comparison with Existing Benchmarks
+
 | Benchmark | Human Verified | Mask Provided | Realistic Scenarios | Semantic Scale | Max Turns |
 |------|---------|----------|---------|---------|---------|
 | I2EBench | ✓ | ✓ | ✗ | ✓ | 1 |
@@ -86,6 +87,7 @@ Note: MGIE has decent quality metrics but a QA score of only 0.070—the output 
 | **Omni IIE Bench** | ✓ | ✓ | **✓** | ✓ | **16** |
 
 ### Multi-turn vs Single-turn (Error Accumulation)
+
 | Model | Single-turn Overall | Multi-turn Overall | Change |
 |------|------------|------------|------|
 | Qwen-image-edit | 0.687 | 0.676 | Slight drop |

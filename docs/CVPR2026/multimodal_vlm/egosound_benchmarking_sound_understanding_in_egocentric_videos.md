@@ -69,6 +69,7 @@ The 7,315 QAs are evaluated as "open-ended descriptive answers." GPT-5 acts as a
 ## Key Experimental Results
 
 ### Comparison with Existing Egocentric QA Benchmarks
+
 | Benchmark | Duration | Clips | QAs | Tasks | Sound Qs | Multi-source | Open-ended |
 |-----------|----------|-------|-----|-------|----------|--------------|------------|
 | EgoVQA | (25,100)s | 520 | 0.6k | 5 | ✗ | ✗ | ✓ |
@@ -81,6 +82,7 @@ The 7,315 QAs are evaluated as "open-ended descriptive answers." GPT-5 acts as a
 EgoSound is the only benchmark satisfying "sound questions + multi-source + open-ended" criteria.
 
 ### Main Results: Evaluation of 9 MLLMs (Avg. Accuracy% / Score)
+
 | Model | Avg. Accuracy | Avg. Score | Note |
 |-------|---------------|------------|------|
 | **Human** | 83.9 | 3.9 | 350 samples |
@@ -95,6 +97,7 @@ EgoSound is the only benchmark satisfying "sound questions + multi-source + open
 The gap between the best model and humans exceeds 27% (56.7 vs 83.9). Most models performed significantly worse on **Spatial Location** and **Sound Characteristics** tasks.
 
 ### Ablation Study (Qwen3-Omni-Thinking-30B)
+
 | Task Group | AV Input | Audio-only | Note |
 |------------|----------|------------|------|
 | Sound-dependent 3 tasks | 50.3 | 44.3 | Small drop ~6 pts |

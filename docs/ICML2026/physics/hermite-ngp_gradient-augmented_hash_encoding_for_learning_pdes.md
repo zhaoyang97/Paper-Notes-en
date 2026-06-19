@@ -131,6 +131,7 @@ PINNs suffer from spectral bias. The authors leverage the hierarchical structure
 - Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 ### Related Papers
 - *Müller et al.*, "Instant Neural Graphics Primitives with a Multiresolution Hash Encoding", ACM TOG 2022.
 - *Huang & Alkhalifah*, "PINN with Multi-resolution Hash Encoding and Finite Difference", arXiv 2024.

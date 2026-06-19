@@ -76,6 +76,7 @@ The cosine schedule is chosen to align with the noise schedules typically used i
 Evaluation was performed on ImageNet 256×256 using MAR as the backbone, with 64 AR steps and 100 diffusion sampling steps. Lookahead steps $k$ were 7/8/9 for MAR-B/-L/-H, $T_g=10$, $\lambda=0.8$, using 4×RTX 3090 with batch=8. FID/IS were calculated over 50k generated images.
 
 ### Main Results
+
 | Model | #Param | FID↓ | IS↑ | VRAM(MB) | Runtime(s) | Speedup |
 |------|--------|------|-----|----------|-------------|--------|
 | MAR-B-64 (Baseline) | 208M | 2.32 | 281.1 | 2030 | 21.4 | 1× |

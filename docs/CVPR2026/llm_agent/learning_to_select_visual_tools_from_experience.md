@@ -87,6 +87,7 @@ Using QwenVL2.5-7B as the agent and a frozen reasoner, VisTA (single/multi-round
 Transfer Experiment: Pairing the QwenVL-7B trained policy with a GPT-4o reasoner **without retraining** achieved 88.1 (ChartQA), 75.6 (OoD), 52.0 (Geometry3K), and 55.8 (MathVerse), all exceeding the strongest training-free GPT-4o baselines. On BlindTest (low-level perception), VisTA reached 53.4, higher than GPT-4o's 51.8.
 
 ### Ablation Study
+
 | Configuration | ChartQA | Description |
 |------|---------|------|
 | Baseline (No tools) | 76.4 | Reasoner solo |

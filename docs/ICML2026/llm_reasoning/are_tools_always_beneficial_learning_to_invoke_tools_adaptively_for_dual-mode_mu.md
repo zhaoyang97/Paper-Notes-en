@@ -101,6 +101,7 @@ Ablations show that forcing consistent tool usage is sub-optimal; the combinatio
 | Full AutoTool | 76.9 | 74.0 | 90.1 | Combination of three core components yields best results |
 
 ### Efficiency and Hyperparameter Analysis
+
 | Analysis Item | Setting/Comparison | Result | Explanation |
 |------|------|------|------|
 | Training Time | DeepEyes vs AutoTool | 44.9 h vs 35.8 h (-20.3%) | Shorter rollouts by avoiding tool chains for all samples |

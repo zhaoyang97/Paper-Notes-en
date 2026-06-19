@@ -107,6 +107,7 @@ Camera Pose (lower ATE/RPE, higher Pose AUC is better):
 Efficiency: At a 1 FPS target, D4RT produces 40,180 trajectories, compared to SpatialTrackerV2's 2,290. Overall, it is 18–300× faster than competitors. Pose estimation reaches 200+ FPS, roughly 9× faster than VGGT and 100× faster than MegaSaM.
 
 ### Ablation Study
+
 | Config | Sintel Depth AbsRel(S) | Sintel Pose ATE | Description |
 |------|------|------|------|
 | D4RT (ViT-L default) | 0.302 | 0.091 | Full model |

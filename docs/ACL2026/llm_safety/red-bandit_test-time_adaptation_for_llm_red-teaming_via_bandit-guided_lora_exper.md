@@ -79,6 +79,7 @@ Training uses Mistral-7B as the prompt generator base and Llama Guard-8B as the 
 ## Key Experimental Results
 
 ### Main Results
+
 | Dataset / Target | Metric | Red-Bandit | Strong Baseline | Remarks |
 |---------------|------|------------|--------|------|
 | AdvBench / Mistral-7B | ASR@10 | 100.0% | Atoxia 99.2% | UCB PPL 2.31, lower than Atoxia 54.42 |
@@ -88,6 +89,7 @@ Training uses Mistral-7B as the prompt generator base and Llama Guard-8B as the 
 | GPT-3.5-turbo Black-box | ASR@10 | 98.1% UCB | Atoxia 92.7% | Atoxia higher on single ASR@1 |
 
 ### Ablation Study
+
 | Target Model | Configuration | ASR@1 | Hnorm | PPL |
 |----------|------|-------|-------|-----|
 | Llama3.1-8B | Baseline, no RL / no Bandit | 38.5 | 0.98 | 2.45 |

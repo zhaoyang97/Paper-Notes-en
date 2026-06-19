@@ -102,6 +102,7 @@ User Research (Ranking, lower is better):
 | **Ours** | **1.78** | **1.54** |
 
 ### Ablation Study
+
 | Configuration | Test Set | PSNR ↑ | $\Delta E_{ab}$ ↓ | Note |
 | :--- | :--- | :--- | :--- | :--- |
 | One-stage | FiveK val | 29.43 | 4.53 | Merged de-styling/re-styling |

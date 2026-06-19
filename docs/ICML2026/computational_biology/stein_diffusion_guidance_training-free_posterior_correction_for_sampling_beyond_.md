@@ -101,6 +101,7 @@ SDG is entirely training-free. The score model $\mathbf{s}_\theta$ and rewards $
 | **SDG (Full)** | **1.156** | **22.690** | 9.167 | **8.780** |
 
 ### Ablation Study
+
 | Configuration | Jak2 Hit % | Description |
 |------|-----------|------|
 | Full SDG ($\alpha>0,\epsilon>0$) | 9.167 | Full method |

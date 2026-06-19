@@ -77,6 +77,7 @@ Simulations used the SAPIEN simulator with 972 objects suitable for single-gripp
 The proximity of results in training and testing categories indicates effective generalization to unseen objects—the authors attribute this to the ability of analytic concepts to cover universal commonalities and the MLLM's ability to find the best matching concept via synopses.
 
 ### Ablation Study
+
 | Configuration | Key Metric | Description |
 |------|---------|------|
 | Grasp Params: Estimated vs. Random | Train 42.5 / Test 40.8 vs 40.2 / 38.6 | cGAN estimation outperforms random sampling, proving grasp knowledge utility. |

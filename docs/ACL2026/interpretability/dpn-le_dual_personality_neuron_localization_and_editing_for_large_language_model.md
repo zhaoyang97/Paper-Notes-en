@@ -69,6 +69,7 @@ DPN-LE involves no training loss and no model fine-tuning. It only calculates ac
 ## Key Experimental Results
 
 ### Main Results
+
 | Task / Metric | Ours | Comparison | Key Figures | Conclusion |
 |--------|----------|----------|----------|------|
 | PersonalityBench Avg Score | DPN-LE 9.11 | NPTI 9.43 | Scores close to SOTA | Sparse intervention effectively controls personality |
@@ -79,6 +80,7 @@ DPN-LE involves no training loss and no model fine-tuning. It only calculates ac
 | IPIP-NEO-300 Total | DPN-LEw 6.64, DPN-LE 6.75 | P2P 7.71, LLaMA Few-shot 5.96 | Better than some prompt methods but not always strongest | Individual-level personality matching involves trade-offs |
 
 ### Ablation Study
+
 | Configuration | Key Metrics | Description |
 |------|---------|------|
 | $\gamma=0.8$ | trait score 8.02, fluency 9.85 | Balance between personality control and fluency |

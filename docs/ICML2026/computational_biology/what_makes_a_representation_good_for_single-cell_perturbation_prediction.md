@@ -77,6 +77,7 @@ The training objective consists of the negative ELBO and contrastive alignment. 
 ## Key Experimental Results
 
 ### Main Results
+
 | Dataset / Setting | Metric | Ours | Prev. SOTA / Strong Baseline | Gain |
 |--------|------|------|----------|------|
 | Norman2019 Dual-gene OOD | RMSE ↓ | 0.4474±0.0007 | KNN 0.4894 / ElasticNet 0.4929 / STATE 0.4981 | Reduced by 0.0420 vs KNN |
@@ -86,6 +87,7 @@ The training objective consists of the negative ELBO and contrastive alignment. 
 | Simulated identifiability | Invariant $R^2$ ↑ | 0.97±0.0077 | w/o alignment 0.66±0.0281 | Alignment significantly improves invariant block recovery |
 
 ### Ablation Study
+
 | Configuration | Key Metric | Description |
 |------|---------|------|
 | w/o contrastive alignment | Dual-gene RMSE 0.4626±0.0002, $R^2$ 0.9650±0.0002 | Combinatorial generalization drops significantly without alignment |

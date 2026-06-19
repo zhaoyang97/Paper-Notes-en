@@ -97,6 +97,7 @@ The model is trained on LibriHeavy for 200k iterations using AdamW, with a batch
 ## Key Experimental Results
 
 ### Main Results
+
 | Task / Dataset | Metrics | FC-TTS | Comparison | Conclusion |
 |--------|------|------|----------|------|
 | LibriSpeech test-clean (Zero-Shot) | UTMOS / WER / SPK / Params | 4.22 / 1.88 / 0.60 / 204M | NaturalSpeech 3: 4.30 / 1.81 / 0.67 / 500M；F5-TTS†: 4.03 / 3.30 / 0.67 / 205M | Naturalness and WER are competitive; SPK is lower than some SOTA. |
@@ -105,6 +106,7 @@ The model is trained on LibriHeavy for 200k iterations using AdamW, with a batch
 | AudioLLM-as-a-Judge Style Eval | Win Ratio / Style-MOS | 91.7% / 3.92 | F5-TTS: 8.3% / 1.50 | Gemini 1.5 Pro strongly favors FC-TTS. |
 
 ### Ablation Study
+
 | Configuration | LibriSpeech UTMOS / WER / SPK / MCD | RAVDESS Style UTMOS / WER / SPK / MCD | Description |
 |------|---------|------|------|
 | FC-TTS | 4.22 / 1.88 / 0.60 / 5.60 | 3.91 / 0.30 / 0.37 / 3.33 | Full Model |

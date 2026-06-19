@@ -102,6 +102,7 @@ In the joint detection+reconstruction task on LVS6D:
 Injecting PASR into Coders (Hard ACD drops from 10.146 to 1.816) proves the gain comes primarily from the PASR representation.
 
 ### Ablation Study
+
 | Configuration | Hard AP ↑ | Hard ACD ↓ | Description |
 |------|----------------|-----------------|------|
 | Full UniPR | 0.752 | 1.224 | — |

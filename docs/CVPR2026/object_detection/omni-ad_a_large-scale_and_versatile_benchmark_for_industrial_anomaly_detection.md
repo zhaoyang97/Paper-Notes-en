@@ -74,6 +74,7 @@ While each sample has structured metadata, formatted text lacks the semantic ric
 The number of categories is an order of magnitude higher than MVTec AD (150 vs. 15) and about 12.5 times that of VisA; the total image count is approximately 6 times that of MVTec AD and 3 times that of VisA.
 
 ### Unsupervised IAD: General performance drop and clearer differentiation on Omni-AD
+
 | Method | Paradigm | MVTec AD (I-AUROC) | Real-IAD (I-AUROC) | Omni-AD (I-AUROC) | Omni-AD (P-AUPRO) |
 |--------|----------|--------------------|--------------------|--------------------|--------------------|
 | PatchCore | MemoryBank | 99.1 | 90.4 | **87.8** | 81.1 |
@@ -82,6 +83,7 @@ The number of categories is an order of magnitude higher than MVTec AD (150 vs. 
 | GLASS | Augmentation | 99.9 | 92.3 | 83.1 | 74.8 |
 
 ### MLLM Three Subtasks: Decline with increasing difficulty, localization as the biggest bottleneck
+
 | Model | Setting | Discrimination Img-Acc | Classification Img-Acc | Localization F1 |
 |-------|---------|-----------------------|-----------------------|-----------------|
 | Random Baseline | - | 50.00 | 20.00 | N/A |

@@ -70,6 +70,7 @@ All experiments share a fixed hyperparameter set: embedding dimension $d=32$, sm
 ## Key Experimental Results
 
 ### Main Results (2023 IPC Learning Track Coverage and Nodes Expanded)
+
 | Domain (Train $\rightarrow$ Test Scale) | GSPπ (greedy) | GSP$_{\mathrm{WA^*}}$ | Lifted HER | LAMA | Remarks |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | Blocksworld (29 $\rightarrow$ 488) | Strong (holds across scales) | Further Improvement | Weak | Domain-independent baseline | Trained on $\le 30$, tested on 488 |
@@ -83,6 +84,7 @@ All experiments share a fixed hyperparameter set: embedding dimension $d=32$, sm
 > Note: Qualitative summary based on "Cov./Steps" columns in the original paper. GSP achieves better or equal coverage compared to all baselines in both GSPπ and GSP$_{\mathrm{WA^*}}$ modes, maintaining competitive plan lengths.
 
 ### Ablation Study
+
 | Comparison | Result | Explanation |
 | :--- | :--- | :--- |
 | GSP$_{\mathrm{WA^*}}$ vs. GSPπ | WA* is significantly stronger on hard problems like Sokoban | $Q$ works as both a policy and a heuristic |

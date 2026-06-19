@@ -93,6 +93,7 @@ Pass rates within a 1-hour budget on PolyIneqBench (522 inequalities, $n=3$ to $
 **Key Trends**: Pure symbolic methods fall from near-perfect at $n=3$ to near-zero at $n=10$. Pure LLM provers (DS/Goedel/Kimina) vanish at $n \ge 5$. Generic models like Gemini-3-Pro remain relatively stable, suggesting heuristics are effective in higher dimensions. NSPI maintains high performance into the 10-variable range.
 
 ### Ablation Study
+
 | Configuration | Impact | Description |
 |---------------|--------|-------------|
 | SFT only (no GRPO) | Severe degradation at $n \ge 6$ | Model fails to generalize to hard samples outside the training distribution. |

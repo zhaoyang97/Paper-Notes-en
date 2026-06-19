@@ -99,6 +99,7 @@ Evaluated on four benchmarks (MVTec, MPDD, ViSA, RealIAD) across 1/2/4-shot sett
 Pixel-level (localization) trends are consistent. A key conclusion is that FastRef provides significant gains across different backbones, with **larger improvements observed on weaker backbones or more challenging datasets** (e.g., MPDD).
 
 ### Ablation Study (WinCLIP+, 2-shot, Image/Pixel AUROC)
+
 | $W^*$ (Migration) | $T^*$ (Suppression) | MVTec | VisA | MPDD |
 |---|---|---|---|---|
 | × | × | 93.7 / 93.8 | 83.8 / 95.1 | 72.5 / 96.5 |

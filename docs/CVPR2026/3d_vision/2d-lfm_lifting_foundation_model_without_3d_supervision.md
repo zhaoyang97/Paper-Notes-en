@@ -96,6 +96,7 @@ Breaking the "Supervision vs. Scalability" dilemma (MPJPE↓ in mm, after Procru
 Highlights: Ours outperforms the 3D-supervised 3D-LFM on Human3.6M (30.9mm vs. 46.3mm) and is an order of magnitude better than scene-level models like VGGT for object geometry.
 
 ### Ablation Study
+
 | Configuration | Pascal3D+ | Human3.6M | Description |
 |------|-----------|-----------|------|
 | Input PE (ViT-style) | 100.3 | 63.4 | Complete failure |

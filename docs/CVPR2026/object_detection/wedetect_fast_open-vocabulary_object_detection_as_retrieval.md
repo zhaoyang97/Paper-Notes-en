@@ -88,6 +88,7 @@ This avoids the box regression inaccuracies of LLMs and **linear latency growth*
 ## Key Experimental Results
 
 ### Main Results: Zero-shot Detection (Table 1, LVIS / COCO, FPS measured on COCO)
+
 | Model | Backbone | #Params | FPS | LVIS-minival AP | LVIS AP | Notes |
 |------|------|-------|-----|-----------------|---------|------|
 | YOLO-World-L | YOLOv8-L | 48M | 54.6 | 35.4 | 26.8 | Real-time Baseline |
@@ -99,6 +100,7 @@ This avoids the box regression inaccuracies of LLMs and **linear latency growth*
 The **WeDetect-Tiny** model outperforms YOLO-World-L in both precision and speed. The **Large** model achieves a new SOTA for non-fusion paradigms with 49.4 LVIS AP.
 
 ### Main Results: REC (Table 2, RefCOCO/+/g Top-1 acc, FPS on RefCOCO)
+
 | Model | FPS | RefCOCO/+/g Avg | Notes |
 |------|-----|------------------|------|
 | Qwen3-VL 4B (Base) | 0.4 | 86.6 | Next-token decoding |
@@ -109,6 +111,7 @@ The **WeDetect-Tiny** model outperforms YOLO-World-L in both precision and speed
 WeDetect-Ref 4B is the **first LMM to exceed 50 AP on COCO detection** (50.0 AP), matching traditional detectors, whereas Qwen2.5-VL 7B only reaches 17.7 AP due to next-token recall issues.
 
 ### Main Results: Object Retrieval (Table 4)
+
 | Model | COCO F1 | LVIS Recall | Notes |
 |------|---------|-------------|------|
 | OpenAI CLIP | 46.4 | 30.4 | Image-level retrieval |

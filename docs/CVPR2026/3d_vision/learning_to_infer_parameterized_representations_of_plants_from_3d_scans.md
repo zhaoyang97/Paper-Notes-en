@@ -89,6 +89,7 @@ Comparison with SIREN (the best-performing plant point cloud reconstruction meth
 Under clean data, SIREN exhibits smaller distance errors, but it degrades sharply under noise (Accuracy 0.0012→0.0121, components 33→268, breaking into fragments). Ours is robust to noise/omissions, outperforms SIREN under noise, and is 1-2 orders of magnitude more compact and nearly twice as fast while providing phenotype data (leaf count/LAI/topology) that SIREN cannot.
 
 ### Skeleton Extraction (Bidirectional Chamfer↓)
+
 | Method | Clean(Full) | Noisy(Full) | Depth(Full) | Clean(Branch) |
 |------|-------------|-------------|-------------|---------------|
 | Xu et al. | 0.0102 | 0.0110 | 0.0145 | ✗ |

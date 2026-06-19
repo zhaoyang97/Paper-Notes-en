@@ -101,6 +101,7 @@ Evaluation was conducted on three benchmarks with image+event modalities (MouseS
 DIMOS achieves SOTA on all three benchmarks. On the small-object dense SEVD-Fixed, it exceeds EvInsMOS by 5.55% (mIoUins). On MouseSIS, mAP jumps from 30.94% to 45.18% (a 14 point increase), indicating a significant reduction in false detections. On EVIMO, where targets are larger and baselines are stronger, the gain is smaller (+0.82%), confirming DIMOS's primary advantage in small-object scenarios.
 
 ### Ablation Study (MouseSIS, Cumulative)
+
 | Configuration | mIoUins (%) | Description |
 |------|------|------|
 | Baseline (Multi-modal interaction) | 60.47 | No additional modules |

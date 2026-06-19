@@ -92,6 +92,7 @@ The proxy head is pre-trained for 20 epochs (lr $1\times10^{-4}$). The compressi
 Tests were conducted on Taskonomy (Tiny split) across six tasks: Segmentation, Keypoints 2D, Edges, Surface Normal, Depth, and Image Compression. The backbone was Xception, compared against traditional codecs (WebP, VTM), learned codecs (ELIC, MLIC++), and SOTA multi-task compression (TAMC).
 
 ### Main Results
+
 | Dimension | ATDC Performance | Comparison |
 |-----------|------------------|------------|
 | Rate-Performance (5 tasks) | Leading at all bitrates | Superior to traditional / learned codecs |
@@ -101,6 +102,7 @@ Tests were conducted on Taskonomy (Tiny split) across six tasks: Segmentation, K
 | Pixel Reconstruction | Comparable to TAMC | Does not sacrifice perceptual quality |
 
 ### Ablation Study
+
 | Configuration / Analysis | Key Results | Description |
 |--------------------------|-------------|-------------|
 | Order: Adaptive (Ours) | Lowest loss across bitrates | Adaptive DAG order is optimal |

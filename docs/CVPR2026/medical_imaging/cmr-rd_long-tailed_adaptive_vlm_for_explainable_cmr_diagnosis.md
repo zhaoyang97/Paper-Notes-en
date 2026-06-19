@@ -80,6 +80,7 @@ Backbone: Gemma-4B; RL framework: Verl. GPPO is divided into 5 sub-phases, each 
 Dataset CMR-VQA: 411 high-quality cold-start samples + training data for five heart diseases (HCM 6,645, DCM 3,192, MI 2,833, LVNC 465, NOR 488, CAM 146—highlighting the long-tail nature of CAM/LVNC). 30 cases per class were used for an independent test set, with MI featuring expert-level lesion box annotations. Metrics: ACC / AUC / F1.
 
 ### Main Results: Category-wise Comparison (Partial ACC, Table 1)
+
 | Model | HCM | DCM | CAM (Rare) | LVNC (Rare) | MI | NOR |
 |------|-----|-----|-----------|------------|-----|-----|
 | Qwen2.5-3B | 0.261 | 0.178 | 0.033 | 0.000 | 0.586 | 0.035 |
@@ -91,6 +92,7 @@ Dataset CMR-VQA: 411 high-quality cold-start samples + training data for five he
 Key finding: Baselines largely failed on the two rare categories—**all comparison models reached 0.000 ACC on LVNC**, while CMR-RD achieved 0.582. While Seed1.5-VL reached 0.800 on CAM due to chance, its performance collapsed to 0 on HCM/LVNC, whereas CMR-RD remained balanced and achieved the highest overall AUC/F1.
 
 ### Ablation Study (Table 5, Two Stages)
+
 | Configuration | ACC | F1 | AUC | Note |
 |------|-----|-----|-----|------|
 | W/o S1 & S2 | 0.212 | 0.244 | 0.494 | General VLM baseline |

@@ -13,8 +13,8 @@ content_hash: 3ea7ff430fa132b8
 # SN-WER: Script-Normalized WER for Multi-Script Indic ASR Evaluation
 
 **Conference**: ACL2026
-**arXiv**: [2606.02548](https://arxiv.org/abs/2606.02548)
-**Code**: TBD
+**arXiv**: [2606.02548](https://arxiv.org/abs/2606.02548)  
+**Code**: TBD  
 **Area**: Audio & Speech
 **Keywords**: ASR Evaluation, Multi-Script Systems, WER, Transliteration Normalization, Indic Languages
 

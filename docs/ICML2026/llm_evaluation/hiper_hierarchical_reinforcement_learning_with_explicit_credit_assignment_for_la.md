@@ -38,6 +38,7 @@ HiPER transforms the flat RL of LLM agents into a two-level Plan-Execute structu
 **Core Idea**: Let a single shared LLM simultaneously handle three types of decisions: switch, subgoal, and action (via automatic conditional auto-regression). Then, use a GAE variant (HAE) that **slices along subgoal segments and performs bootstrapping at boundaries** to couple and train the two-level advantages.
 
 ## Method
+
 ### Overall Architecture
 HiPER utilizes a shared LLM as both the "high-level planner" and "low-level executor." At each turn, it first decides whether to switch the subgoal and what the current subgoal is, then issues an environmental action based on this. During training, the trajectory is sliced into several segments based on "subgoal switch" timestamps. Advantages are calculated respectively for low-level actions, high-level subgoals, and binary switch decisions. These three types of advantages are multiplied by their corresponding log-prob gradients for a joint update. This system consists of two components: a Plan-Execute interface that incorporates "hierarchy" into the prompt, and HAE advantage estimation that correctly propagates "sparse rewards across two levels." The former ensures the structure exists explicitly, while the latter ensures it is effectively optimized.
 

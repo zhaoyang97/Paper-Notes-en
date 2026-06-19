@@ -57,6 +57,7 @@ Fixed experimental settings: Reranking is based on the RankLLM framework (window
 ## Key Experimental Results
 
 ### One-shot Reranking Performance (NDCG@5)
+
 | Configuration | d=0 | d=10 | d=20 | d=50 |
 |---------------|-----|------|------|------|
 | No Reranking  | 19.72 | — | — | — |
@@ -66,6 +67,7 @@ Fixed experimental settings: Reranking is based on the RankLLM framework (window
 | oss-120b-med  | — | 29.78 | 36.63 | **46.05** |
 
 ### End-to-end Deep Search Accuracy (Accuracy %)
+
 | Search Agent  | d=0 | d=10 | d=20 | d=50 |
 |---------------|-----|------|------|------|
 | oss-20b-low   | 17.33 | 19.64 | 22.96 | 25.73 |

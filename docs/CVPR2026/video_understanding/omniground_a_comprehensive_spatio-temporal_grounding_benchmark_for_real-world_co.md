@@ -104,6 +104,7 @@ Existing SOTA models generally perform poorly on OmniGround, with significant co
 While the task-specific CG-STVG outperforms MLLMs overall, all models show poor spatial precision at high thresholds (best CG-STVG is only 23.4%@0.5). Performance drops are most severe in "Multiple Similar Targets" and "Deep Syntax" scenarios (e.g., CG-STVG drops 26.9 points in m_tIoU for deep syntax).
 
 ### PG-TAF Performance Comparison
+
 | Model | HC-STVG m_vIoU | VidSTG(Decl.) m_vIoU | OmniGround m_tIoU | OmniGround m_vIoU | Avg m_vIoU |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | LLaVA-ST | 7.6 | 14.2 | 19.7 | 8.7 | 9.5 |

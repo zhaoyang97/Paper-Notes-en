@@ -83,6 +83,7 @@ The teacher is frozen and does not participate in training; its inference is dec
 Datasets: CAMO, COD10K, NC4K. Metrics: MAE↓, S-measure (Sm↑), E-measure (Em↑), weighted F-measure ($F^w_\beta$↑).
 
 ### Main Results (Unsupervised Setting, NC4K / COD10K)
+
 | Method | Supervision | Backbone | COD10K Em↑ | COD10K $F^w_\beta$↑ | NC4K Em↑ | NC4K $F^w_\beta$↑ |
 |------|------|------|-----------|-----------|---------|---------|
 | UCOS-DA (ICCVW'23) | U | DINO V1 | 0.751 | 0.482 | 0.824 | 0.637 |
@@ -93,6 +94,7 @@ Datasets: CAMO, COD10K, NC4K. Metrics: MAE↓, S-measure (Sm↑), E-measure (Em�
 Compared to the previous SOTA UCOD-DPL, this method improves on average by 42.6% (MAE), 14.0% (Sm), 9.2% (Em), and 22.5% ($F^w_\beta$), while **eliminating DINO dependency**. The PVT V2 version approximates or exceeds some weakly supervised methods (e.g., SAM-COD, PNet). It also achieves SOTA in zero-shot settings with fewer foundation models and only one inference pass, whereas ProMaC/GenSAM require 6/12 iterations.
 
 ### Ablation Study (Overall Components, CAMO / COD10K, MAE↓ / Em↑)
+
 | Config | CAMO MAE↓ | CAMO Em↑ | COD10K MAE↓ | COD10K Em↑ |
 |------|-----------|----------|-------------|------------|
 | MLLM + SAM (Baseline) | 0.205 | 0.711 | 0.232 | 0.685 |

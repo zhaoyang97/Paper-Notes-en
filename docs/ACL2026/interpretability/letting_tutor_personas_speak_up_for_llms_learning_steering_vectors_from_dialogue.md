@@ -107,6 +107,7 @@ The main table compares unsteered population-mean utterances $\bar{t}_j$ and ste
 The mid stage is the most critical as it represents the core problem-solving process. Steering increases cosine similarity from 0.385 to 0.426, with the LLM judge preferring the steered output in 58.7% of cases. ROUGE-L drops slightly (0.165 to 0.157) and BLEU remains stable (0.019 to 0.018), suggesting changes are primarily in semantic strategy rather than verbatim overlap.
 
 ### Ablation Study
+
 | Global Intensity α | R | B | C | W | Note |
 |-------------------|---|---|---|---|------|
 | 0.0, unsteered | 0.179 | 0.026 | 0.379 | - | population-mean baseline |

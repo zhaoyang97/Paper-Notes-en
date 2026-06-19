@@ -104,6 +104,7 @@ Comparison with lightweight ViT methods (IAFMNet-L large version, ×4):
 IAFMNet-L uses ~519K parameters and 28G FLOPs (less than half of SRFormer-light) to achieve competitive or superior PSNR, verifying that information-guided strategies utilize computation more effectively than uniform operators.
 
 ### Ablation Study
+
 | Configuration | Urban100 ×2 | Manga109 ×2 | Description |
 |---------------|-------------|-------------|-------------|
 | IDE: C+G, $\lambda=10^{-4}$ (Full) | 32.52/0.9312 | 39.32/0.9792 | Full Model |

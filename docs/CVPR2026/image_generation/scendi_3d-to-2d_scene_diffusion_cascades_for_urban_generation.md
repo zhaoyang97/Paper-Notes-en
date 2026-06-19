@@ -78,6 +78,7 @@ Comparison on KITTI-360 against 3D generation and I2V baselines (FID/KID/FVD low
 The WAN variant leads the 3D generation category significantly (FID 22.9 / Met3R 0.125), and camera precision far exceeds pure 3D GAN baselines. While FID/FVD comparisons with I2V methods aren't strictly fair (as I2V frames often overlap with GT), ScenDi provides comparable image quality and does not collapse when the overlap between input and current view is minimal, unlike Gen3C.
 
 ### Ablation Study
+
 | Configuration | Key Metrics | Explanation |
 |------|---------|------|
 | w/o $L_{bce}$, G=1 | PSNR 21.47 / SSIM 0.750 / LPIPS 0.327 | Removing occupancy supervision degrades geometry |

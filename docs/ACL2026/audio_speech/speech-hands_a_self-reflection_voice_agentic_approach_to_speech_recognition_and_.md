@@ -13,8 +13,8 @@ content_hash: c04348310ca3e365
 # Speech-Hands: A Self-Reflection Voice Agentic Approach to Speech Recognition and Audio Reasoning with Omni Perception
 
 **Conference**: ACL2026 Oral  
-**arXiv**: [2601.09413](https://arxiv.org/abs/2601.09413)
-**Code**: [GitHub](https://YukinoWan.github.io/Speech-Hands/)
+**arXiv**: [2601.09413](https://arxiv.org/abs/2601.09413)  
+**Code**: [GitHub](https://YukinoWan.github.io/Speech-Hands/)  
 **Area**: Audio & Speech
 **Keywords**: Speech Recognition, Audio Reasoning, Multimodal Agent, Self-Reflection, Generative Error Correction
 

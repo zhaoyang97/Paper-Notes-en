@@ -99,6 +99,7 @@ On the most difficult task (Slip Ring), OMP exceeds MP1 by 15%, verifying the be
 | OMP-DDE (Full) | 80.8 | Difference approximation version |
 
 **VRAM Comparison**:
+
 | Task / Horizon | OMP-JVP VRAM | OMP-DDE VRAM |
 |----------------|--------------|--------------|
 | Place Bottle / H=16 | **26.71 GB** | **19.19 GB** |

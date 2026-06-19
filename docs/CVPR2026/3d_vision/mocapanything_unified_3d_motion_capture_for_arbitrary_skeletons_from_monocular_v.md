@@ -88,6 +88,7 @@ Evaluation of 3D keypoints on Truebones Zoo-test (60 sequences categorized into 
 Ours leads across all tiers, with the gap widening significantly for unseen species: MPJPE is reduced from GLoT's 7.42 to 1.76 (approx. 76% reduction), indicating a structural advantage in generalization rather than dataset overfitting.
 
 ### Ablation Study
+
 | Configuration | Seen MPJPE | Rare MPJPE | Unseen MPJPE | Description |
 | :--- | :--- | :--- | :--- | :--- |
 | Full model | 1.06 | 1.28 | 1.76 | Full model |

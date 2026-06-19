@@ -79,6 +79,7 @@ Counterfactual generation and cross-domain translation on AFHQ (dog/cat/wild) an
 CSDI-GAN outperforms all content-style baselines in FID and LPIPS. In AFHQ translation, FID is reduced by 32% compared to B.I. GAN.
 
 ### Ablation Study
+
 | Configuration | AFHQ FID ↓ | AFHQ LPIPS ↑ | CelebA-HQ FID ↓ | CelebA-HQ LPIPS ↑ |
 |------|-----------|-------------|----------------|------------------|
 | CSDI-GAN (Full) | **4.4** | **0.4452** | **4.3** | **0.3392** |

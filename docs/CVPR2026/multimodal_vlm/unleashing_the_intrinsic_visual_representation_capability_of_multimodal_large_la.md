@@ -92,6 +92,7 @@ Across six visual encoding paradigms (fixed resolution SigLIP2/CLIP/DINOv2, nati
 Gains are particularly significant in dense visual tasks: on CLIP, ChartQA improves by +6.07 and MMVP by +12.00; on AIMv2/Qwen-ViT, TextVQA improves by +3.34/+7.02 respectively. Even the encoder-free architecture sees a +1.37 overall gain. In Reasoning Segmentation, LaVer-initialized models achieve zero-shot gIoU scores 1.36 (SigLIP 2) and 1.17 (CLIP) higher than the baseline.
 
 ### Ablation Study
+
 | Configuration | SigLIP 2 | CLIP | Description |
 |------|----------|------|------|
 | Baseline | 55.72 | 50.58 | No components |

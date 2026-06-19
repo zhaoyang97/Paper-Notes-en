@@ -111,6 +111,7 @@ Ours-FT achieved the best performance across almost all 16 tasks. Notably, even 
 Using only preference data, Ours-FT outperformed RFRL baselines that utilized ground-truth rewards (exceeding them by 200+ points in Quadruped).
 
 ### Ablation Study
+
 | Configuration | Cheetah | Walker | Quadruped | Note |
 |---|---|---|---|---|
 | FB-BT-FT (Reward Model + FB FT) | 536.6 | 600.6 | 714.1 | Inferior to contrastive approach |

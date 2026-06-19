@@ -93,6 +93,7 @@ Video Generation (Wan2.1-1.3B, VBench, Training-free):
 | Dynamic Degree | 0.5556 | 0.5139 | ↓ Expected side effect of consistency |
 
 ### Ablation Study
+
 | Configuration | Key Metrics (Img-MV, PSNR/SSIM/LPIPS) | Note |
 |------|------|------|
 | Training-free CorrAdapter | 23.82 / 0.8829 / 0.1235 | Full training-free version |

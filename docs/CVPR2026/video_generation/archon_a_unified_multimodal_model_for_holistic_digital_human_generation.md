@@ -36,6 +36,7 @@ Archon discretizes seven modalities involved in digital humans (description, tex
 **Core Idea**: Seven digital human modalities are unified into discrete tokens for joint distribution pre-training across 72 synchronous tasks using a native autoregressive multimodal model. Token overhead is reduced by replacing RGB videos with "semantic videos," and ambiguity is minimized through a "Thinking in Modality" chain.
 
 ## Method
+
 ### Overall Architecture
 Archon takes any subset of modalities as input and output. The pipeline begins with modality-specific tokenizers encoding descriptions, scripts, speech, 3DMM animations, images, and semantic videos into discrete integer tokens within a unified vocabulary ($550\text{K}$). These tokens are concatenated into a structured "natural language key-value serialized" prompt and fed into a PaLM2 autoregressive backbone for cross-modal reasoning, predicting output tokens modality-by-modality. Output tokens are then restored via corresponding detokenizers. A special path exists for video: the model generates low-cost "semantic video" tokens instead of high-dimensional RGB tokens to avoid context window explosion. These are ultimately upsampled into high-definition video by a semantic-driven video diffusion model (WALT). During inference, Thinking in Modality can be enabled to decompose ambiguous tasks into a chain of intermediate modality generation.
 

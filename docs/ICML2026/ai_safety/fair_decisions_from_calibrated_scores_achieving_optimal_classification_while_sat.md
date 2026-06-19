@@ -78,6 +78,7 @@ The method is pure post-processing: it does not retrain the scoring model and do
 ## Key Experimental Results
 
 ### Main Results
+
 | Dataset | Setup | Unconstrained Bayes Accuracy | Ours (Optimal Sufficient Accuracy) | Fairness Results |
 | :--- | :--- | :--- | :--- | :--- |
 | FICO (White/Black, 200 bins) | Group-level calibrated | 0.8819 (PPV: 0.91 / 0.79; FOR: 0.20 / 0.13) | 0.8676 | Shared PPV $=0.91$, shared FOR $=0.23$, strict sufficiency |
@@ -85,6 +86,7 @@ The method is pure post-processing: it does not retrain the scoring model and do
 | ACS Income (CA, Gender) | Logistic + out-of-fold 100-bin calibration | 0.8190 | 0.8167 | Mean PPV gap $4.8\times 10^{-3}$, mean FOR gap $3.7\times 10^{-3}$ |
 
 ### Ablation Study
+
 | Observation | Conclusion | Description |
 | :--- | :--- | :--- |
 | Hard Threshold Optimality | Both FICO/COMPAS require randomization for at least one group | Validates the theoretical prediction that sufficiency optimality typically cannot be achieved via hard thresholds alone. |

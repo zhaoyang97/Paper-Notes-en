@@ -88,6 +88,7 @@ In the table below, **Realization** refers to the percentage of successfully exe
 Ours achieves the highest Realization of 0.84 among instruction-based methods, an approximately 64% improvement over the best baseline DiLu++ (0.51) and a 200% improvement over Diffusion-ES (0.28). Simultaneously, collision, TTC, and compliance metrics are comparable to or better than specialized AD methods. Progress is slightly lower because executing passenger instructions occasionally leads to deviations from the global expert path (an expected trade-off). For intent recognition, only large models like Qwen-2.5-72B, DeepSeek-V3, and DeepSeek-R1 exceed 85%, confirming that open-ended instruction understanding is non-trivial.
 
 ### Ablation Study
+
 | Configuration | REC/REA ↑ | Collision ↑ | TTC ↑ | Description |
 |------|------|------|------|------|
 | Ours w/o Context | 0.78 | — | — | Without traffic context, intent recognition drops by ~10% |

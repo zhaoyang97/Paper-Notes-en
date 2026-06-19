@@ -81,6 +81,7 @@ The study covers three types of models: (1) Small Transformers with numerical I/
 | FOL (Numerical Transformer) | Single/Multi-layer attention | No no-regret guarantee at default initialization | $\hat\beta < 1$ after training, close to FTRL baseline |
 
 ### Ablation Study
+
 | Configuration | Key Metric | Description |
 |------|---------|------|
 | Iterative RMFT (Full) | Sublinear regret growth; Exploration-exploitation balance | Complete method |

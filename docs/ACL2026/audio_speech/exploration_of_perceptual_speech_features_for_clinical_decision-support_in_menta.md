@@ -94,6 +94,7 @@ This paper is not an end-to-end deep training paper; the core training target is
 ## Key Experimental Results
 
 ### Main Results
+
 | Dataset / Task | Evaluation Setting | Ours | Baseline Result | Observation |
 |:---|:---|:---|:---|:---|
 | STRESSID (Stress) | 10 Random Runs | Accuracy 0.70, F1 0.81 | Wav2Vec+LR: Acc 0.66, F1 0.70 | Perceptual features + XGBoost performed better here |
@@ -103,6 +104,7 @@ This paper is not an end-to-end deep training paper; the core training target is
 | REAL ASRS/PHQ-9/GAD-7 | 4-fold speaker-disjoint CV | AUC 0.67 / 0.63 / 0.59 | N/A (External SOTA not in cache) | Real-world clinical intake is significantly more difficult |
 
 ### Significant Features & Analysis
+
 | Scenario | Significant/Important Feature | Value / Trend | Interpretation |
 |:---|:---|:---|:---|
 | STRESSID | Shimmer_local | Non-stressed 0.343, Stressed -0.142, p=1.27e-5 | Vocal fold amplitude perturbation correlates with stress |

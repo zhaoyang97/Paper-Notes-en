@@ -75,6 +75,7 @@ On synthetic data ($b=3, L=7, d=50$), HB-OMP consistently outperforms OMP in sup
 | ImageNet (SigLIP backbone) | Interpretability Metrics | Also Improved | — | Generalizes across VLMs |
 
 ### Ablation Study
+
 | Configuration | Key Observation | Description |
 |---------------|-----------------|-------------|
 | OMP (Full dictionary) | Significantly lower P/R | Disrespects hierarchy, selects contradictory concepts |

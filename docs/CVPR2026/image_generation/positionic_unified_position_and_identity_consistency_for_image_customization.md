@@ -108,6 +108,7 @@ Spatial controllability on PositionIC-Bench (mIoU and AP calculated via VisionR1
 Ours exceeds all baselines in multi-subject mIoU and AP. Methods like MS-Diffusion experience a collapse in spatial accuracy in multi-subject settings (AP < 0.03).
 
 ### Ablation Study
+
 | Configuration | Observation | Explanation |
 |------|------|------|
 | Subject200K | Lowest score | Poor resolution and inconsistency in legacy data |

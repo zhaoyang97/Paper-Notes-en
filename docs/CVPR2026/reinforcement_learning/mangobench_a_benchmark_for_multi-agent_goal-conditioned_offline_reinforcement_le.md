@@ -83,6 +83,7 @@ MangoBench comprises 3 environments, 4 agent types, and 47 tasks. Locomotion tas
 ## Key Experimental Results
 
 ### Comparison with Existing Multi-Agent Environments
+
 | Environment | Type | Multi-goal | Stochasticity | No. of Tasks | Reward Design |
 |------|------|--------|--------|--------|----------|
 | VMAS | Collab/Comp | No | No | 27 | Scenario-specific |
@@ -94,6 +95,7 @@ MangoBench comprises 3 environments, 4 agent types, and 47 tasks. Locomotion tas
 MangoBench is the only benchmark combining multi-goal focus, stochasticity, and generic rewards.
 
 ### Decentralized vs. CTDE (AntMaze-navigate Success Rate %)
+
 | Dataset | IHIQL (Decentralized) | HIQL-CTDE | IGCIVL | GCIVL-CTDE |
 |--------|------|------|------|------|
 | medium(2x4) | 95.1 ± 1.6 | 74.0 ± 0.6 | 76.0 ± 3.4 | 75.0 ± 4.2 |
@@ -104,6 +106,7 @@ MangoBench is the only benchmark combining multi-goal focus, stochasticity, and 
 IHIQL significantly outperforms HIQL-CTDE, particularly on `giant` tasks where CTDE performance drops to near zero. This is attributed to the instability of optimizing multiple independent goal networks in hierarchical CTDE architectures.
 
 ### Single-goal vs. Multi-goal Evaluation (lift-barrier, Success Rate %)
+
 | Evaluation Protocol | IHIQL | GCMBC | ICRL |
 |----------|-------|-------|------|
 | Single-goal | 78% | 22% | 37% |

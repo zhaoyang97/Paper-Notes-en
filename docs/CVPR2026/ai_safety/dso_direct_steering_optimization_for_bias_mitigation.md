@@ -119,6 +119,7 @@ DSO's mechanism is modality-agnostic and effective for LLMs in coreference resol
 Per-Occupation Bias dropped from 60.4% to 5.9%, while unambiguous accuracy actually increased by 10+ p.p. (to 99.7%) with minimal MMLU drop—though this came at the cost of a higher "don't know" refusal rate.
 
 ### Ablation Study
+
 | Dimension | Key Findings |
 |------|------|
 | Controllability (Fig. 3) | Per-Occupation Bias **decreases monotonically** as $\omega$ increases for DSO; non-monotonic for ITI/CAA. Prompting fails to reduce bias and lacks principled adjustment. |

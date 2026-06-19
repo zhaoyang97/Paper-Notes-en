@@ -90,6 +90,7 @@ Two benchmarks: SVG-Hub-5M test set (9,000 samples) and SArena-Icon (6,000 sampl
 Findings are consistent on SArena-Icon: DuetSVG (TTS) reduces T2SVG FID to 11.71 and improves I2SVG PSNR to 24.02, leading all VLM baselines (including GPT-5-Thinking and Gemini-3-Pro). Path Semantics is a vector-level metric: it measures the drop in CLIP score when 30% of paths are randomly deleted; a larger drop suggests each path carries more semantic weight (i.e., less redundancy).
 
 ### Ablation Study
+
 | Configuration | T2SVG FID ↓ | T2SVG CLIP ↑ | I2SVG DINO ↑ | I2SVG LPIPS ↓ | Description |
 |------|------|------|------|------|------|
 | w/o Internal Guidance (SVG-only) | 51.48 | 23.26 | 0.939 | 0.096 | Degrades to pure text-based; all metrics worsen significantly |

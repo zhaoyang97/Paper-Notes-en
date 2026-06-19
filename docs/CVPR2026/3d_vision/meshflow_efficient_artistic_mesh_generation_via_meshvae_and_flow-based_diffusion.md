@@ -92,6 +92,7 @@ Point cloud-conditioned mesh generation on Toys4K (testing generalization):
 MeshFlow achieves the lowest CD/HD with an inference time of 1.2s—nearly 3x faster than the fastest AR (FastMesh-V1K) and over 20x faster than others.
 
 ### Ablation Study
+
 | Configuration | Vert. Dist.↓ | Normals Dist.↓ | F1↑ | Description |
 |------|------|------|------|------|
 | Q-former | 23.36 | 18.77 | 49.47 | Learnable queries; training fails to converge. |
@@ -140,6 +141,7 @@ MeshFlow achieves the lowest CD/HD with an inference time of 1.2s—nearly 3x fa
 </div>
 
 <!-- RELATED:END -->
+
 ## Related Papers
 
 - [\[CVPR 2026\] Efficient Hybrid SE(3)-Equivariant Visuomotor Flow Policy via Spherical Harmonics](efficient_hybrid_se3-equivariant_visuomotor_flow_policy_via_spherical_harmonics_.md)

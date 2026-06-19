@@ -12,8 +12,8 @@ content_hash: cb10a8875edaf573
 # Topology Matters: Measuring Memory Leakage in Multi-Agent LLMs
 
 **Conference**: ACL2026 Findings  
-**arXiv**: [2512.04668](https://arxiv.org/abs/2512.04668)
-**Code**: To be confirmed
+**arXiv**: [2512.04668](https://arxiv.org/abs/2512.04668)  
+**Code**: To be confirmed  
 **Area**: LLM Agent
 **Keywords**: To be added
 

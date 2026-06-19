@@ -75,6 +75,7 @@ Total loss follows the framework formula. Backbone: IAL, LiDAR voxels $480\times
 The main metric is Panoptic Quality (PQ), divided into $\text{PQ}^{th}$ (thing) and $\text{PQ}^{st}$ (stuff). Domain shifts include nuScenes (Location: USA↔SG, Weather: Sunny↔Rainy, Time: Day↔Night) and the cross-dataset SemanticKITTI→nuScenes.
 
 ### Main Results (PQ, combined results from Table 1)
+
 | Method | USA/SG | Sunny/Rainy | Day/Night | Sem.KITTI/nuSc. |
 |------|------|------|------|------|
 | Baseline (Source-only) | 64.1 | 63.5 | 64.7 | 1.2 |
@@ -86,6 +87,7 @@ The main metric is Panoptic Quality (PQ), divided into $\text{PQ}^{th}$ (thing) 
 Relative to Baseline, PanDA improves PQ by **+13.2 / +8.9 / +8.4 / +53.3** across the four settings. On Day→Night, it even **exceeds the Oracle-Target bound** (53.5%, likely due to the small 602-frame target set), proving that AMD + DualRefine effectively closes the supervision gap under severe degradation.
 
 ### Ablation Study (PQ)
+
 | Configuration | USA/SG | Sunny/Rainy | Day/Night | Note |
 |------|------|------|------|------|
 | Ours-base | 73.7 | 70.3 | 68.6 | Mean-Teacher only |

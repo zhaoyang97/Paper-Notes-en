@@ -80,6 +80,7 @@ Using HPSv2 as the training reward signal, RSA-FT was integrated into ReFL, DRaF
 On HPD subsets, gains were even more pronounced; for example, AlignProp's HPSv2.1 improved from 24.93 to 32.02 (+7.09). Crucially, while AlignProp/Draft-LV originally saw HPSv2.1 rise while auxiliary rewards fell (typical reward hacking), adding RSA-FT led to a **unified increase**, indicating genuine alignment rather than metric overfitting.
 
 ### Ablation Study
+
 | Configuration | Effect | Description |
 |:---|:---:|:---|
 | Image perturbation only | Independent improvement | Mitigates reward hacking and improves alignment alone. |

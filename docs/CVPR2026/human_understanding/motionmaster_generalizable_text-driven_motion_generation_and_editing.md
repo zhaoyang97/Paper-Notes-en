@@ -99,6 +99,7 @@ Discretizer quality comparison (Tab. 3, lower is better):
 | **Ours** | **9.14** | **10.13** | **9.53** | **15.3** |
 
 ### Ablation Study
+
 | Configuration | Single Motion Semantic | Editing R@1 | Note |
 |------|---------|------|------|
 | Full model | 9.88 | 0.77 | Base |

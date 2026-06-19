@@ -93,6 +93,7 @@ where $\bar{p}(c|x)=p(c|x)+p(a|x)\cdot p(o|x)$, combining compositional and prim
 Datasets: UT-Zappos, MIT-States, C-GQA; Metrics: Seen (S), Unseen (U), Harmonic Mean (HM), AUC.
 
 ### Main Results (Closed-world, excerpt)
+
 | Method | UT-Zappos HM / AUC | MIT-States HM / AUC | C-GQA HM / AUC |
 |------|------|------|------|
 | Troika [CVPR'24] | 54.6 / 41.7 | 39.3 / 22.1 | 29.4 / 12.4 |
@@ -103,6 +104,7 @@ Datasets: UT-Zappos, MIT-States, C-GQA; Metrics: Seen (S), Unseen (U), Harmonic 
 The AUC across the three datasets reaches 50.0 / 24.0 / 16.2. Seen accuracy is rank-one across all metrics, and Unseen is near optimal. Performance in open-world settings is similarly dominant.
 
 ### Ablation Study (Sequential addition, AUC)
+
 | Configuration | UT-Zappos | MIT-States | C-GQA |
 |------|------|------|------|
 | Baseline | 37.5 | 21.2 | 14.3 |

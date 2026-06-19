@@ -94,6 +94,7 @@ On KITTI Val/Test (IoU3D ≥ 0.7, Car, AP), MonoCoP achieves SoTA without extra 
 MAE analysis by distance illustrates that MonoCoP maintains lower errors across all distance ranges compared to parallel models (MonoDETR/MonoDGP), with **improvements becoming more significant as distance increases**, confirming that modeling correlations effectively mitigates depth ambiguity for distant objects.
 
 ### Ablation Study
+
 | Configuration | AP3D Mod (KITTI Val, IoU 0.7) | Description |
 |------|---------|------|
 | Baseline (Parallel) | 21.12 | Starting point |

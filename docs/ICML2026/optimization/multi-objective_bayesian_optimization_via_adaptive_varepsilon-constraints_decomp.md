@@ -106,6 +106,7 @@ The authors compared STAGE-BO against 8 SOTAs across 6 unconstrained, 4 constrai
 | Real-world | DP-SGD on Dutch | HV | Highest HV throughout, demonstrating utility in privacy-utility trade-offs |
 
 ### Ablation Study
+
 | Configuration | Key Observation | Description |
 |---|---|---|
 | Full STAGE-BO | Best IGD/HV | Complete version with Thompson sampling + FD objective + cEI |

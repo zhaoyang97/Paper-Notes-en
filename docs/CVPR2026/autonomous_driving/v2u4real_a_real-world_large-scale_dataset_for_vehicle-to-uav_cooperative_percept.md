@@ -86,6 +86,7 @@ Cooperative methods significantly outperform single-agent baselines, with CoAlig
 **Key Findings**: CoAlign achieved the best overall performance (Sync 56.67/36.61) due to spatial misalignment mitigation. DSRC outperformed in the 50–100m range (33.26/20.63) via semantic-guided reconstruction. Async latency degrades all cooperative methods, but intermediate feature fusion is more robust than Early/Late fusion.
 
 ### Single Agent Detection: UAV vs. Ground Vehicle
+
 | Platform | Method | Veh. AP@0.5 | Veh. AP@0.7 | Cyc. AP@0.25 | Cyc. AP@0.5 |
 |------|------|------|------|------|------|
 | Vehicle | PV-RCNN | 68.18 | 36.23 | 59.51 | 51.31 |

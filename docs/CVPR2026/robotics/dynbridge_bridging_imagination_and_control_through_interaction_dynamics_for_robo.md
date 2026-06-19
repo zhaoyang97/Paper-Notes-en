@@ -95,6 +95,7 @@ Average success rates across five LIBERO subsets (mean of 3 seeds). DynBridge **
 Gains are most significant in LIBERO-Long (0.71 vs GraphMimic 0.56) and LIBERO-90 (0.75 vs 0.67), indicating that interaction dynamics learn task-agnostic, transferable features.
 
 ### Ablation Study
+
 | Configuration | Conclusion | Description |
 |------|------|------|
 | Full model | Best | Complete DynBridge |

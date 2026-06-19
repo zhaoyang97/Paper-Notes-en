@@ -88,6 +88,7 @@ On three real-world datasets (Tanks & Temples, Deep Blending, Mip-NeRF 360), at 
 Ours is optimal across nearly all metrics on Tanks & Temples and is strongest on Deep Blending. On Mip-NeRF 360, Ours outperforms SRGS broadly (except LPIPS), but both SR methods are outperformed by Mip-Splatting. This is because Mip-NeRF 360 has smooth camera trajectories, dense multi-view coverage, and minimal undersampling; its LR images already retain most high frequencies, leaving little room for SR improvement.
 
 ### Ablation Study
+
 | Configuration | Key Finding | Description |
 |------|---------|------|
 | Threshold $\tau$ | PSNR/LPIPS peaks then drops as $\tau$ increases | A small amount of SR details is beneficial; excessive SR introduces cross-view inconsistency. $\tau=1.1$ is a chosen middle ground. |

@@ -104,8 +104,8 @@ Key Finding: **Selective deferral reduces the false alarm rate from 34.3% to 26.
 1. **Deferral indeed captures recovery signals**: In 79% of deferral decisions, an immediate drop in tension was observed. In contrast, SOTA false alarms were followed by tension drops in only 55% of cases. This indicates the simulation mechanism successfully identifies recoverable moments.
 2. **Human Baseline Insights**: 9 participants reached 70% accuracy with a false alarm rate of only 15.6% in the second round—far better than SOTA's 36.2%. More importantly, the average tension at which humans triggered was 0.61, while SOTA was 0.72, suggesting that humans **are not simply becoming more conservative but are selectively yielding at specific moments**.
 3. **Linguistic Feature Comparison**: A Bayesian Discriminative Word Analysis comparing responses before and after deferral found:
-   - **Post-deferral responses**: Use categorical **hypothetical softeners** like "I would argue" and "even if."
-   - **Post-trigger responses**: Are filled with **personal accusations** and **direct confrontation** like "you don't even" and "people like you."
+    - **Post-deferral responses**: Use categorical **hypothetical softeners** like "I would argue" and "even if."
+    - **Post-trigger responses**: Are filled with **personal accusations** and **direct confrontation** like "you don't even" and "people like you."
 
 ## Highlights & Insights
 

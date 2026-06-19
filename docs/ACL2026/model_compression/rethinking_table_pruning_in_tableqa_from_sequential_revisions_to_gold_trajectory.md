@@ -94,6 +94,7 @@ TabTrim uses WikiSQL and SQUALL to construct over 80K training samples. The prun
 ## Key Experimental Results
 
 ### Main Results
+
 | Method | WikiTQ | TabFact | TB-NR | TB-FC | TB-DA | Average |
 |------|--------|---------|-------|-------|-------|---------|
 | Direct QA: GPT-4o-mini | 54.3 | 77.4 | 65.5 | 76.0 | 25.1 | 59.8 |
@@ -105,6 +106,7 @@ TabTrim uses WikiSQL and SQUALL to construct over 80K training samples. The prun
 | TabTrim-8B | 79.4 | 91.2 | 78.8 | 83.3 | 34.7 | 73.5 |
 
 ### Ablation Study
+
 | Configuration | WikiTQ | TableBench | Description |
 |------|--------|------------|------|
 | TabTrim | 79.4 | 61.2 | Full model |

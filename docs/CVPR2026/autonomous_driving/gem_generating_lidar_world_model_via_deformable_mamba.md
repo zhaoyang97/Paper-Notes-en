@@ -33,6 +33,7 @@ GEM aligns LiDAR scan sequences with Mamba's step-by-step scanning mechanism. It
 **Core Idea**: Replace CNN/Transformer with Mamba to match LiDAR scanning, and explicitly decouple dynamic/static features for multi-path modeling. This "Deformable Mamba aligned with scan structure + Unsupervised dynamic-static decoupling" simultaneously addresses disorder and weak semantics.
 
 ## Method
+
 ### Overall Architecture
 GEM is built on the **latent diffusion** paradigm. The pipeline consists of three stages: ① A LiDAR scene tokenizer compresses unordered point clouds into an ordered latent sequence; ② Unsupervised dynamic-static decoupling and triple-path deformable Mamba feature extraction are performed on the latents; ③ A diffusion process denoises future frame latents from noise, which are then decoded back to point clouds. Formally, given $\tau_p$ frames of historical point clouds $P_p$ and ego status at time $u$, the goal is to predict $\tau_f$ frames of future point clouds $P_f$. The tokenizer encoder $E$ encodes historical data into $Z_p\in\mathbb{R}^{\tau_p\times h\times w\times C}$. Control signals (ego status, optional BEV layout) are encoded as condition features. The Mamba world model outputs $\hat Z_f\in\mathbb{R}^{\tau_f\times h\times w\times C}$, which decoder $D$ restores. Optionally, a planner predicts future ego status for autonomous rollout, or a BEV layout is provided for controllable generation.
 

@@ -116,6 +116,7 @@ Standard Benchmarks (OOD Accuracy%, higher is better):
 | **CGU-Bayes++** | **82.9** | **90.5** | **69.5** |
 
 ### Ablation Study
+
 | Configuration | Key Phenomenon | Explanation |
 |------|---------|------|
 | CGU-Bayes vs. w/o Weights | BLT 0.05:1 error 80.6 → 73.2 | Removing uncertainty alignment weights significantly worsens results in difficult domains, validating Design 3. |

@@ -97,6 +97,7 @@ On DrawBench preference metrics, MaskFocus elevates Meissonic to levels comparab
 | **Meissonic + MaskFocus (Ours)** | **4.39** | **22.39** | **35.52** | **1.09** |
 
 ### Ablation Study
+
 | Configuration | GenEval↑ | DEQA↑ | PickScore↑ |
 |------|---------|-------|-----------|
 | MaskFocus (Full) | 0.76 | 4.39 | 22.39 |

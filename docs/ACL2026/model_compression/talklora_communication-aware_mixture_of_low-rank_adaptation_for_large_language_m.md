@@ -15,8 +15,8 @@ content_hash: 65e05e716bb9001a
 # TalkLoRA: Communication-Aware Mixture of Low-Rank Adaptation for Large Language Models
 
 **Conference**: ACL2026
-**arXiv**: [2604.06291](https://arxiv.org/abs/2604.06291)
-**Code**: [GitHub](https://github.com/why0129/TalkLoRA)
+**arXiv**: [2604.06291](https://arxiv.org/abs/2604.06291)  
+**Code**: [GitHub](https://github.com/why0129/TalkLoRA)  
 **Area**: Model Compression
 **Keywords**: LoRA, MoE, Parameter-Efficient Fine-Tuning, Expert Communication, Routing Balance, Talking Module
 

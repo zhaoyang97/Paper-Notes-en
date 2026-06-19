@@ -84,6 +84,7 @@ The training objective is token-level cross-entropy to match the decoded $\tilde
 ## Key Experimental Results
 
 ### Main Results
+
 | Scenario | Method | Ours Embedding L2↓ | LUAR L2↓ | StyleDistance L2↓ |
 |------|------|-------------------|----------|-------------------|
 | LLM-generated style control | Decoder (Ours) | 26.07 | 6.01 | 6.82 |
@@ -100,6 +101,7 @@ The training objective is token-level cross-entropy to match the decoded $\tilde
 Lower L2 distance indicates closer stylistic proximity. Ours achieves the lowest distance across style embeddings used in training and unseen ones like LUAR and StyleDistance, suggesting no overfitting to a specific representation space.
 
 ### Ablation Study
+
 | Component/Data | Value or Setting | Description |
 |-----------|------------|------|
 | Style features | 1,010 | Covering 26 style categories |

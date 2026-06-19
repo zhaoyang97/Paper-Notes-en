@@ -105,6 +105,7 @@ ASTRA achieves strong results on three complex TableQA datasets, notably outperf
 The complementarity of Textual Reasoning and Symbolic Reasoning is evident: on SSTQA, the textual mode (79.8%) outperforms the symbolic mode (75.3%), while on HiTab, the symbolic mode (89.3%) outperforms the textual mode (82.2%). This confirms that semantic-intensive and numerical-aggregation problems require different reasoning paths.
 
 ### Ablation Study
+
 | Module / Configuration | Metric | Result | Description |
 |-------------|------|------|------|
 | AdaSTR Full | Avg Coverage / Min Coverage | 0.929 / 0.738 | Best coverage |

@@ -1,22 +1,24 @@
 ---
 title: >-
-  CVPR2026 Video Understanding Papers · 179 Notes
+  CVPR2026 Video Understanding Papers · 178 Notes
 description: >-
-  179 CVPR2026 papers in the Video Understanding area, covering Object Tracking, Reasoning, Compression, Anomaly Detection, Agents, Multimodal/VLM and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  178 CVPR2026 papers in the Video Understanding area, covering Object Tracking, Segmentation, Compression, Multimodal/VLM, Anomaly Detection, Agents and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "CVPR2026"
   - "Video Understanding"
   - "AI paper notes"
   - "paper summaries"
   - "Object Tracking"
-  - "Reasoning"
+  - "Segmentation"
   - "Compression"
+  - "Multimodal/VLM"
   - "Anomaly Detection"
   - "Agents"
-  - "Multimodal/VLM"
 item_list:
-  - u: "a_multi-agent_perception-action_alliance_for_efficient_long_video_reasoning/"
-    t: "A Multi-Agent Perception-Action Alliance for Efficient Long Video Reasoning"
+  - u: "a_stitch_in_time_learning_procedural_workflow_via_self_supervised_plackett_luce_r/"
+    t: "A Stitch in Time: Learning Procedural Workflow via Self-Supervised Plackett-Luce Ranking"
+  - u: "active_intelligence_in_video_avatars_via_closed-loop_world_modeling/"
+    t: "Active Intelligence in Video Avatars via Closed-loop World Modeling"
   - u: "adaptive_capacity_autoregressive_visual_tracking/"
     t: "Adaptive Capacity Autoregressive Visual Tracking"
   - u: "adaspark_adaptive_sparsity_for_efficient_long_video_understanding/"
@@ -25,16 +27,22 @@ item_list:
     t: "Affordance-First Decomposition for Continual Learning in Video–Language Understanding"
   - u: "alert-clip_abnormality-aware_latent-enhanced_representation_tuning_of_clip_for_v/"
     t: "Alert-CLIP: Abnormality-aware Latent-Enhanced Representation Tuning of CLIP for Video Anomaly Detection"
+  - u: "alphamatte4k_mumatting_dataset_and_model_for_ultra-micro_precision_alpha_video_m/"
+    t: "$\\alpha$Matte4K & $\\mu$Matting: Dataset and Model for Ultra-Micro Precision Alpha Video Matting"
   - u: "an_efficient_token_compression_framework_for_visual_object_tracking/"
     t: "An Efficient Token Compression Framework for Visual Object Tracking"
   - u: "an_empirical_study_on_how_video-llms_answer_video_questions/"
     t: "An Empirical Study on How Video-LLMs Answer Video Questions"
+  - u: "asynchronous_temporal_modeling_with_two-agent_framework_for_streaming_dense_vide/"
+    t: "Asynchronous Temporal Modeling with Two-Agent Framework for Streaming Dense Video Captioning"
+  - u: "autocut_end-to-end_advertisement_video_editing_based_on_multimodal_discretizatio/"
+    t: "AutoCut: End-to-end Advertisement Video Editing Based on Multimodal Discretization and Controllable Generation"
   - u: "autogaze_attend_before_attention_efficient_video/"
     t: "Attend Before Attention: Efficient and Scalable Video Understanding via Autoregressive Gazing"
-  - u: "beyond_caption-based_queries_in_video_moment_retrieval/"
-    t: "Beyond Caption-Based Queries in Video Moment Retrieval"
   - u: "beyond_explicit_language_plug-and-play_visual-to-linguistic_modeling_toward_gene/"
     t: "Beyond Explicit Language: Plug-and-Play Visual-to-Linguistic Modeling Toward General Object Tracking"
+  - u: "beyond_static_frames_temporal_aggregate-and-restore_vision_transformer_for_human/"
+    t: "Beyond Static Frames: Temporal Aggregate-and-Restore Vision Transformer for Human Pose Estimation"
   - u: "boosting_self-supervised_tracking_with_contextual_prompts_and_noise_learning/"
     t: "Boosting Self-Supervised Tracking with Contextual Prompts and Noise Learning"
   - u: "bootstrapping_video_semantic_segmentation_model_via_distillation-assisted_test-t/"
@@ -43,10 +51,8 @@ item_list:
     t: "Breaking Smooth-Motion Assumptions: A UAV Benchmark for Multi-Object Tracking in Complex and Adverse Conditions"
   - u: "building_a_precise_video_language_with_human-ai_oversight/"
     t: "Building a Precise Video Language with Human-AI Oversight"
-  - u: "cast-bench_benchmarking_causal_chain-grounded_spatio-temporal_reasoning_for_vide/"
-    t: "CaST-Bench: Benchmarking Causal Chain-Grounded Spatio-Temporal Reasoning for Video Question Answering"
-  - u: "chronotrack_temporally_consistent_long_term_memory_for_3d_single_object_tracking/"
-    t: "Temporally Consistent Long-Term Memory for 3D Single Object Tracking"
+  - u: "captionformer_unified_segmentation_tracking_and_captioning_for_spatio-temporal_o/"
+    t: "CaptionFormer: Unified Segmentation, Tracking, and Captioning for Spatio-Temporal Objects"
   - u: "cinesrd_leveraging_visual_acoustic_and_linguistic_cues_for_open-world_visual_med/"
     t: "CineSRD: Leveraging Visual, Acoustic, and Linguistic Cues for Open-World Visual Media Speaker Diarization"
   - u: "clcr_cross-level_semantic_collaborative_representation_for_multimodal_learning/"
@@ -57,39 +63,37 @@ item_list:
     t: "CoCoVideo: The High-Quality Commercial-Model-Based Contrastive Benchmark for AI-Generated Video Detection"
   - u: "color_when_it_counts_grayscale-guided_online_triggering_for_always-on_streaming_/"
     t: "Color When It Counts: Grayscale-Guided Online Triggering for Always-On Streaming Video Sensing"
-  - u: "compositional_transformation_reasoning_for_composed_video_retrieval/"
-    t: "Compositional Transformation Reasoning for Composed Video Retrieval"
   - u: "cowtracker_tracking_by_warping_instead_of_correlation/"
     t: "CoWTracker: Tracking by Warping instead of Correlation"
   - u: "cva_context-aware_video-text_alignment_for_video_temporal_grounding/"
     t: "CVA: Context-aware Video-text Alignment for Video Temporal Grounding"
+  - u: "d2fanet_enhancing_video_object_detection_with_dual-domain_feature_aggregation_ne/"
+    t: "D2FANet: Enhancing Video Object Detection with Dual-Domain Feature Aggregation Network"
   - u: "darkact_a_rgb-thermal_dataset_and_fusion_framework_for_multimodal_low-light_acti/"
     t: "DarkAct: A RGB-Thermal Dataset and Fusion Framework for Multimodal Low-Light Action Recognition"
   - u: "darkshake-dvs_event-based_human_action_recognition_under_low-light_and_shaking_c/"
     t: "DarkShake-DVS: Event-based Human Action Recognition under Low-light and Shaking Camera Conditions"
-  - u: "decompose_and_transfer_cot-prompting_enhanced_alignment_for_open-vocabulary_temp/"
-    t: "Decompose and Transfer: CoT-Prompting Enhanced Alignment for Open-Vocabulary Temporal Action Detection"
-  - u: "detach_decomposed_spatio-temporal_alignment_for_exocentric_video_and_ambient_sen/"
-    t: "DETACH: Decomposed Spatio-Temporal Alignment for Exocentric Video and Ambient Sensors with Staged Learning"
-  - u: "divide_then_ground_adapting_frame_selection_to_query_types_for_long-form_video_u/"
-    t: "DIvide, then Ground: Adapting Frame Selection to Query Types for Long-Form Video Understanding"
-  - u: "do_you_see_what_i_am_pointing_at_gesture-based_egocentric_video_question_answeri/"
-    t: "Do You See What I Am Pointing At? Gesture-Based Egocentric Video Question Answering"
-item_total: 179
+  - u: "dervos_decoupling_consistent_trajectory_generation_and_multimodal_understanding_/"
+    t: "DeRVOS: Decoupling Consistent Trajectory Generation and Multimodal Understanding for Referring Video Object Segmentation"
+item_total: 178
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # 📹 Video Understanding
 
-**📷 CVPR2026** · **179** paper notes
+**📷 CVPR2026** · **178** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (17)](../../ICML2026/video_understanding/index.md) · [💬 ACL2026 (16)](../../ACL2026/video_understanding/index.md) · [🔬 ICLR2026 (10)](../../ICLR2026/video_understanding/index.md) · [🤖 AAAI2026 (27)](../../AAAI2026/video_understanding/index.md) · [🧠 NeurIPS2025 (39)](../../NeurIPS2025/video_understanding/index.md) · [📹 ICCV2025 (56)](../../ICCV2025/video_understanding/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (17)](../../ICML2026/video_understanding/index.md) · [🔬 ICLR2026 (10)](../../ICLR2026/video_understanding/index.md) · [🤖 AAAI2026 (27)](../../AAAI2026/video_understanding/index.md) · [🧠 NeurIPS2025 (39)](../../NeurIPS2025/video_understanding/index.md) · [📹 ICCV2025 (56)](../../ICCV2025/video_understanding/index.md)
 
-🔥 **Top topics:** Object Tracking ×34 · Reasoning ×18 · Compression ×11 · Anomaly Detection ×8 · Agents ×7
+🔥 **Top topics:** Object Tracking ×33 · Segmentation ×14 · Compression ×11 · Multimodal/VLM ×10 · Anomaly Detection ×8
 
-**[A Multi-Agent Perception-Action Alliance for Efficient Long Video Reasoning](a_multi-agent_perception-action_alliance_for_efficient_long_video_reasoning.md)**
+**[A Stitch in Time: Learning Procedural Workflow via Self-Supervised Plackett-Luce Ranking](a_stitch_in_time_learning_procedural_workflow_via_self_supervised_plackett_luce_r.md)**
 
-:   Ours proposes A4VL, a training-free multi-agent perception-action alliance framework. Through event-driven video chunking, clue-guided keyframe selection, and a multi-round agent negotiation-pruning mechanism, it consistently outperforms 28 baseline methods across five VideoQA benchmarks with significantly lower inference latency.
+:   The authors propose PL-Stitch, a self-supervised framework that utilizes the Plackett-Luce probabilistic ranking model to treat the temporal ordering of video frames as a pre-training signal. By learning "procedure-aware" video representations, it significantly outperforms existing self-supervised methods in surgical phase recognition and cooking action segmentation.
+
+**[Active Intelligence in Video Avatars via Closed-loop World Modeling](active_intelligence_in_video_avatars_via_closed-loop_world_modeling.md)**
+
+:   To address the issue of current video avatars "passively following speech/pose while lacking autonomous goal-driven behavior," this paper proposes the L-IVA task (modeling avatar control as a POMDP with I2V generation models as environment simulators) and the ORCA framework. ORCA utilizes an "Observe-Think-Act-Reflect" (OTAR) closed-loop to counteract generational randomness and a System 2/System 1 dual-system hierarchy for open-domain planning and precise grounding. On a benchmark of 100 tasks, it achieves an average task success rate of 71.0%, significantly exceeding open-loop, reactive, and reflection-free baselines.
 
 **[Adaptive Capacity Autoregressive Visual Tracking](adaptive_capacity_autoregressive_visual_tracking.md)**
 
@@ -107,6 +111,10 @@ item_total: 179
 
 :   To address the issue where CLIP's text space highly entangles "normal" and "abnormal" descriptions—causing near-identical similarity scores for both types of prompts—this paper reshapes CLIP's embedding geometry via three-level (Global/Regional/Hard Negative) cross-modal contrastive training using a self-built dataset (VAGTA). This transforms CLIP into a more abnormality-aware backbone, consistently outperforming original CLIP in weakly supervised, zero-shot, and open-vocabulary VAD settings.
 
+**[$\alpha$Matte4K & $\mu$Matting: Dataset and Model for Ultra-Micro Precision Alpha Video Matting](alphamatte4k_mumatting_dataset_and_model_for_ultra-micro_precision_alpha_video_m.md)**
+
+:   Targeting 4K portrait video matting, this paper introduces $\alpha$Matte4K, a large-scale dataset with pixel-level precision and physical consistency generated via Physics-Based Rendering (PBR). It also proposes $\mu$Matting, which utilizes a portrait prior (MAE) to predict a coarse alpha and identify "difficult regions," followed by sparse 3D convolution refinement only on these regions. This approach achieves full-resolution 4K video matting without downsampling for the first time, surpassing existing SOTA in both accuracy and temporal consistency.
+
 **[An Efficient Token Compression Framework for Visual Object Tracking](an_efficient_token_compression_framework_for_visual_object_tracking.md)**
 
 :   To address the visual token explosion and redundancy in multi-frame template tracking, ETCTrack utilizes a learnable Adaptive Token Compressor (ATC) to compress historical template frames into a refined subset. This is followed by a Hierarchical Interaction Block (HIBlock) for deep interaction with the search region. It sets new state-of-the-art accuracy across 7 benchmarks while reducing computation (template tokens reduced by 60%, MACs reduced by 21.4%, with only a 0.4% drop in accuracy).
@@ -115,17 +123,25 @@ item_total: 179
 
 :   This paper systematically dissects the internal mechanisms of how Video-LLMs answer video questions using "attention knockout." It identifies a clear "early-layer perception, late-layer reasoning" two-stage pattern and finds that spatiotemporal modeling relies primarily on language-to-video retrieval rather than intra/inter-frame video self-attention. Furthermore, only a few intermediate layers are critical. Based on these insights, the authors design a simple strategy involving early exit for visual tokens and temporal attention pruning, which significantly reduces computational cost with almost no performance degradation.
 
+**[Asynchronous Temporal Modeling with Two-Agent Framework for Streaming Dense Video Captioning](asynchronous_temporal_modeling_with_two-agent_framework_for_streaming_dense_vide.md)**
+
+:   Addressing the "when to speak" challenge in streaming dense video captioning, which is difficult to control via thresholds, this paper proposes Takusen. It is an asynchronous dual-agent framework using a small model as an "Oracle" to detect event boundaries ahead of time and a large model as a "Listener" to generate descriptions only upon receiving signals. This mechanism eliminates thresholds and achieves streaming SOTA on ActivityNet Captions and YouCook2.
+
+**[AutoCut: End-to-end Advertisement Video Editing Based on Multimodal Discretization and Controllable Generation](autocut_end-to-end_advertisement_video_editing_based_on_multimodal_discretizatio.md)**
+
+:   AutoCut proposes an end-to-end advertisement video editing framework that unifies video, audio, and text into a shared discrete token space via Residual Vector Quantization (RQVAE). By performing multimodal alignment and supervised fine-tuning on Qwen3-8B, it achieves unified processing of four tasks—video selection, ordering, script generation, and background music (BGM) selection—outperforming GPT-4o baselines on multiple metrics.
+
 **[Attend Before Attention: Efficient and Scalable Video Understanding via Autoregressive Gazing](autogaze_attend_before_attention_efficient_video.md)**
 
 :   AutoGaze is proposed as a lightweight module with only 3M parameters that autoregressively selects a minimal set of multi-scale patches to reconstruct video before the ViT. It removes $4\times-100\times$ spatio-temporal redundancy, achieving up to $19\times$ acceleration for ViT and $10\times$ for MLLMs. It enables MLLMs to scale to 1K-frame 4K-resolution videos for the first time, reaching 67.0% on VideoMME.
 
-**[Beyond Caption-Based Queries in Video Moment Retrieval](beyond_caption-based_queries_in_video_moment_retrieval.md)**
-
-:   This paper points out that existing Video Moment Retrieval (VMR) models collapse on "real-world search queries" despite being trained on "descriptive caption queries." The root cause is identified as DETR decoder query collapse, where only approximately 4 queries remain active. By constructing three search query benchmarks and implementing two architectural changes—removing decoder self-attention and introducing query dropout—the proposed method improves mAPm by up to 14.82% on search queries and 21.83% on multi-moment queries.
-
 **[Beyond Explicit Language: Plug-and-Play Visual-to-Linguistic Modeling Toward General Object Tracking](beyond_explicit_language_plug-and-play_visual-to-linguistic_modeling_toward_gene.md)**
 
 :   Addressing the issues where vision-language tracking relies on static text and fails when text is missing, this paper proposes TIMI, a plug-and-play module. Using a "Textual Inversion Module," visual patches from templates and search regions are inversely mapped into "pseudo-descriptions" within the CLIP text embedding space. These implicit linguistic cues are then injected back into the visual backbone layer-by-layer via a "Multi-layer Semantic Injection mechanism." This provides dynamic, adaptive semantic guidance without any explicit text input, achieving stable performance gains across multiple trackers like MCITrack, DUTrack, and SeqTrack with minimal overhead.
+
+**[Beyond Static Frames: Temporal Aggregate-and-Restore Vision Transformer for Human Pose Estimation](beyond_static_frames_temporal_aggregate-and-restore_vision_transformer_for_human.md)**
+
+:   Without modifying the plain ViT backbone and lightweight decoder of ViTPose, TAR-ViTPose employs "Joint-centered Temporal Aggregation (JTA) + Global Restore Attention (GRA)" to align, aggregate, and inject joint features from adjacent frames back into the current frame. This plug-and-play approach improves 2D video pose estimation by +2.3 mAP on PoseTrack2017 compared to single-frame ViTPose, while achieving higher speeds (413 fps for ViT-S).
 
 **[Boosting Self-Supervised Tracking with Contextual Prompts and Noise Learning](boosting_self-supervised_tracking_with_contextual_prompts_and_noise_learning.md)**
 
@@ -143,13 +159,9 @@ item_total: 179
 
 :   Addressing the long-standing issues of video captioning—"lack of specifications, lack of oversight, and model hallucinations"—this work defines "what should be described" via a **structured specification (5 dimensions + 200+ visual primitives)**. It introduces **CHAI (Critique-based Human-AI Oversight)**, where the model generates a pre-caption, humans provide only "critiques" to pinpoint errors, and the model revises the text into a post-caption, naturally producing (pre-caption, critique, post-caption) triples. By using these preference and critique signals for SFT/DPO post-training, the open-source Qwen3-VL-8B outperforms Gemini-3.1-Pro across captioning, reward modeling, and critique generation. It further enhances Wan2.2 text-to-video generation in following 400-word long prompts.
 
-**[CaST-Bench: Benchmarking Causal Chain-Grounded Spatio-Temporal Reasoning for Video Question Answering](cast-bench_benchmarking_causal_chain-grounded_spatio-temporal_reasoning_for_vide.md)**
+**[CaptionFormer: Unified Segmentation, Tracking, and Captioning for Spatio-Temporal Objects](captionformer_unified_segmentation_tracking_and_captioning_for_spatio-temporal_o.md)**
 
-:   CaST-Bench introduces a new task—"Causal Chain-Grounded Spatio-Temporal Video Question Answering"—where models must not only provide correct answers but also ground them in a causal evidence chain consisting of time segments and bounding boxes. Through a human-machine collaborative pipeline, a high-quality dataset of 1,015 videos and 2,066 questions was constructed. Evaluation metrics were designed to assess both answer accuracy and evidence grounding. Testing on 15 mainstream VLMs showed performance significantly lower than humans (best 50.34% vs. human 91.89%).
-
-**[Temporally Consistent Long-Term Memory for 3D Single Object Tracking](chronotrack_temporally_consistent_long_term_memory_for_3d_single_object_tracking.md)**
-
-:   Ours proposes ChronoTrack, a robust long-term 3D single object tracking framework constructed via compact learnable memory tokens and two complementary objectives (temporal consistency loss + memory cycle consistency loss), achieving SOTA performance on multiple benchmarks while running in real-time at 42 FPS.
+:   To address the lack of object-level annotation data in Dense Video Object Captioning (DVOC), this paper employs a VLM (Gemini 2.0 Flash) to automatically generate object-level captions for videos with drawn bounding boxes. By augmenting LVIS/LV-VIS into the first DVOC training sets (LVISCap / LV-VISCap) containing (mask, box, category, caption) quadruplets, the authors train CaptionFormer—the first end-to-end model to jointly segment, detect, track, and caption every object trajectory—achieving new SOTA results on VidSTG, VLN, and BenSMOT benchmarks.
 
 **[CineSRD: Leveraging Visual, Acoustic, and Linguistic Cues for Open-World Visual Media Speaker Diarization](cinesrd_leveraging_visual_acoustic_and_linguistic_cues_for_open-world_visual_med.md)**
 
@@ -171,10 +183,6 @@ item_total: 179
 
 :   Ours proposes a new paradigm of "Grayscale Always-on, RGB On-demand." Through ColorTrigger, color redundancy is detected online using lightweight quadratic programming on the grayscale stream. By using only 8.1% of RGB frames, it maintains 91.6% of the full-color baseline performance, enabling always-on video perception for resource-constrained devices.
 
-**[Compositional Transformation Reasoning for Composed Video Retrieval](compositional_transformation_reasoning_for_composed_video_retrieval.md)**
-
-:   Addressing the Composed Video Retrieval task ("given a reference video + modification text, retrieve a target video"), this paper proposes MoRe, a zero-shot framework. It employs multi-objective Pareto ranking to recall a small set of high-quality candidates, then utilizes an MLLM to decompose videos into "Entity-Action-Scene" dimensions for pairwise reasoning to determine which candidate best matches the modification intent. This achieves R@1 gains of +5.8 and +10.8 on EgoCVR and WebVid-CoVR, respectively.
-
 **[CoWTracker: Tracking by Warping instead of Correlation](cowtracker_tracking_by_warping_instead_of_correlation.md)**
 
 :   CoWTracker replaces the "cost volume calculation for matching" in dense point tracking with "warping target frame features back to the reference frame based on current trajectory estimates + global reasoning via spatio-temporal Transformer." By removing the cost volume, which grows quadratically with resolution, it achieves SOTA results on TAP-Vid / RoboTAP. Furthermore, the same model outperforms specialized optical flow methods when zero-shot transferred to optical flow tasks.
@@ -182,6 +190,10 @@ item_total: 179
 **[CVA: Context-aware Video-text Alignment for Video Temporal Grounding](cva_context-aware_video-text_alignment_for_video_temporal_grounding.md)**
 
 :   The Context-aware Video-text Alignment (CVA) framework is proposed, consisting of three synergistic components: Query-aware Context Diversification (QCD), Context-invariant Boundary Discrimination (CBD) loss, and Context-enhanced Transformer Encoder (CTE). It addresses false negatives and background correlation issues in video temporal grounding, achieving approximately a 5-point improvement in R1@0.7 on the QVHighlights dataset.
+
+**[D2FANet: Enhancing Video Object Detection with Dual-Domain Feature Aggregation Network](d2fanet_enhancing_video_object_detection_with_dual-domain_feature_aggregation_ne.md)**
+
+:   D2FANet introduces **frequency-domain feature aggregation** to video object detection for the first time. It employs a frequency-domain branch (Octave convolution for high/low frequency decomposition + cross-scale neighborhood fusion + frequency temporal attention) and a spatio-temporal branch (adaptive token aggregation guided by importance maps) to enhance object queries independently. The concatenated queries are fed into the detection head, achieving 91.8% mAP with Swin-Base on ImageNet VID with the fastest inference speed.
 
 **[DarkAct: A RGB-Thermal Dataset and Fusion Framework for Multimodal Low-Light Action Recognition](darkact_a_rgb-thermal_dataset_and_fusion_framework_for_multimodal_low-light_acti.md)**
 
@@ -191,9 +203,9 @@ item_total: 179
 
 :   Aiming at the realistic but long-neglected action recognition scenario of "low-light + handheld 6-DoF shaking," this paper first utilizes an Adaptive IMU Motion Compensation (AIMC) driven by angular velocity to correct event stream distortions caused by shaking. Subsequently, Iterative Greedy Sampling (IGS) is employed to select the most informative keyframes, followed by a four-stage Hybrid Spatio-Temporal Swin Transformer (HSTS) for recognition. The authors also release DarkShake-DVS (18,041 segments, 62 classes), the first event-based action dataset featuring low-light, intense shaking, and synchronized IMU data, outperforming SOTA on three benchmarks.
 
-**[Decompose and Transfer: CoT-Prompting Enhanced Alignment for Open-Vocabulary Temporal Action Detection](decompose_and_transfer_cot-prompting_enhanced_alignment_for_open-vocabulary_temp.md)**
+**[DeRVOS: Decoupling Consistent Trajectory Generation and Multimodal Understanding for Referring Video Object Segmentation](dervos_decoupling_consistent_trajectory_generation_and_multimodal_understanding_.md)**
 
-:   The Phase-wise Decomposition and Alignment (PDA) framework is proposed, utilizing the Chain-of-Thought (CoT) reasoning capabilities of LLMs to decompose action labels into "start-middle-end" phase descriptions. Through text-guided foreground filtering and adaptive phase alignment, it achieves fine-grained action pattern transfer. On THUMOS14 OV-TAD, it reaches an Avg mAP of 46.9 (surpassing the Prev. SOTA Ti-FAD's 41.2).
+:   DeRVOS decouples Referring Video Object Segmentation (RVOS) into two upstream branches: "Consistent Trajectory Generation" and "Multimodal Understanding." Using a frozen DVIS++ and a pre-trained BEiT-3, the model directly produces stable instance trajectories and aligned vision-language features. A TAIS module then converges the task into "Referring Expression $\leftrightarrow$ Instance Trajectory" matching, outperforming LVLM-based methods by 4.7% on MeViS.
 
 **[DETACH: Decomposed Spatio-Temporal Alignment for Exocentric Video and Ambient Sensors with Staged Learning](detach_decomposed_spatio-temporal_alignment_for_exocentric_video_and_ambient_sen.md)**
 
@@ -215,6 +227,10 @@ item_total: 179
 
 :   A dual-agent reinforcement learning framework is proposed, utilizing a Select Agent (deciding whether to trigger the visual front-end based on IMU signals) and a Fusion Agent (adaptively fusing visual-inertial states). This approach significantly reduces the calling frequency and computational overhead of VIBA without completely removing it, achieving a superior trade-off between accuracy, efficiency, and memory usage.
 
+**[Dynamics: Language-Based Representation for Inferring Rigid-Body Dynamics From Videos](dynamics_language-based_representation_for_inferring_rigid-body_dynamics_from_vi.md)**
+
+:   This paper redefines "inferring rigid-body physical states and parameters from monocular video" as a **text generation** problem: training a VLM (ΔYNAMICS, based on Qwen2.5-VL-3B) to directly output a YAML configuration describing the entire scene (geometry / initial velocity / material / camera / gravity). This is then passed to MuJoCo for re-simulation. Performance is enhanced by "reasoning about motion events in natural language before generating the configuration" and using "optical flow input." It achieves a segmentation IoU 7 times higher than mainstream VLMs on CLEVRER and successfully transfers to 235 real-world videos.
+
 **[EarlyTom: Early Token Compression Completes Fast Video Understanding](earlytom_early_token_compression_completes_fast_video_understanding.md)**
 
 :   EarlyTom is a training-free video token compression framework that shifts the compression point from "after the visual encoder" to "inside the visual encoder" via intra-encoder frame merging, paired with a decoupled spatial token selection strategy. On LLaVA-OneVision-7B, it reduces Time-to-First-Token (TTFT) by up to $2.65\times$ and FLOPs by 61%, while maintaining over 96% of the full-token baseline accuracy.
@@ -235,9 +251,17 @@ item_total: 179
 
 :   Ours proposes EgoXtreme, the first large-scale 6D object pose estimation benchmark for egocentric views under extreme conditions. It covers three real-world challenges—severe motion blur, dynamic lighting, and smoke occlusion—revealing significant failures of current SOTA pose estimators in these environments.
 
+**[ELV-Halluc: Benchmarking Semantic Aggregation Hallucinations in Video Understanding](elv-halluc_benchmarking_semantic_aggregation_hallucinations_in_video_understandi.md)**
+
+:   This paper identifies "Semantic Aggregation Hallucinations (SAH)," an overlooked type of video hallucination where a model perceives each frame correctly but misattributes semantics during cross-event aggregation. The authors construct ELV-Halluc, the first benchmark targeting SAH (348 multi-event videos, adversarial triplet Q&A). Systematic evaluation of 19 MLLMs proves that SAH increases with semantic complexity. By employing improved positional encoding and DPO with 8K adversarial pairs, the SAH Ratio is reduced by up to 27.7%.
+
 **[Enhancing Accuracy of Uncertainty Estimation in Appearance-based Gaze Tracking with Probabilistic Evaluation and Calibration](enhancing_accuracy_of_uncertainty_estimation_in_appearance-based_gaze_tracking_w.md)**
 
 :   This paper proposes a data-efficient post-hoc calibration method that aligns the predicted distribution of uncertainty-aware gaze tracking models with the true observed distribution using isotonic regression. It introduces the Coverage Probability Error (CPE) metric to replace the unreliable Error-Uncertainty Correlation (EUC) for evaluating uncertainty quality.
+
+**[Enhancing Video Vision Language Model with Hippocampal Sensing](enhancing_video_vision_language_model_with_hippocampal_sensing.md)**
+
+:   This paper mimics the hippocampal cross-modal association mechanism by first performing SFT on a Video VLM using "cross-modal temporal prediction" (completing audio from video, and vice versa), followed by a contrastive RL strategy (VANAO) with "negative-aware rewards" to enforce genuine joint audio-visual reasoning. This approach enables 7B/8B small models to rival GPT-4o and Gemini-1.5-Pro across multiple video VQA benchmarks.
 
 **[Envisioning the Future, One Step at a Time](envisioning_the_future_one_step_at_a_time.md)**
 
@@ -246,6 +270,10 @@ item_total: 179
 **[EthoCLIP: Ontology-Enhanced Video-Language Pretraining for Animal Behavior Understanding](ethoclip_ontology-enhanced_video-language_pretraining_for_animal_behavior_unders.md)**
 
 :   Addressing the "extreme data scarcity" in animal behavior videos, this paper injects the expert-constructed Neuro Behavior Ontology (NBO) as an inductive bias into CLIP-style video-language contrastive learning. The authors first construct the AnimalBand dataset (74,000 videos) using a unified ontological labeling scheme. They then explicitly encode "parent-child/synonym" relationships between behavioral labels using Ontological Semantic Embedding (OSE) and Ontology-Aware Graph Modeling (OAGM). EthoCLIP significantly outperforms traditional backbones and general VLMs in transfer and classification, approaching full-scale performance with only 40%–60% of the data.
+
+**[EVATok: Adaptive Length Video Tokenization for Efficient Visual Autoregressive Generation](evatok_adaptive_length_video_tokenization_for_eff.md)**
+
+:   The EVATok framework is proposed, featuring a three-step pipeline—optimal token allocation estimation, a lightweight router, and adaptive tokenizer training. This allows the video tokenizer to adaptively allocate token lengths based on clip complexity, saving over 24.4% of tokens while achieving SOTA generation quality on UCF-101.
 
 **[Event6D: Event-based Novel Object 6D Pose Tracking](event6d_event-based_novel_object_6d_pose_tracking.md)**
 
@@ -258,6 +286,14 @@ item_total: 179
 **[Fine-VAD: Towards Fine-Grained Video Anomaly Detection via Progressive Cross-Granularity Learning](fine-vad_towards_fine-grained_video_anomaly_detection_via_progressive_cross-gran.md)**
 
 :   Addressing the challenge of scarce samples per anomaly class in fine-grained video anomaly detection, this paper proposes a progressive cross-granularity learning paradigm: first learning general anomaly representations with abundant binary labels, then constructing an intermediate semantic skeleton via K-means pseudo-macro clustering, and finally refining with sparse category labels. Implemented as Fine-VAD with CLIP alignment, it achieves a relative improvement of 47.7% in mean AVG mAP on UCF-Crime and XD-Violence.
+
+**[First Frame Is the Place to Go for Video Content Customization](first_frame_is_the_place_to_go_for_video_content_customization.md)**
+
+:   Discovered the inherent ability of video generation models to implicitly treat the first frame as a "concept memory buffer" for storing and reusing multiple visual entities. Proposed FFGo—a lightweight LoRA adaptation method using only 20-50 training samples to activate this capability without modifying the architecture, achieving multi-reference video content customization. Rated best in 81.2% of cases in user studies.
+
+**[FlashMotion: Few-Step Controllable Video Generation with Trajectory Guidance](flashmotion_fewstep_controllable_video_generation.md)**
+
+:   Ours proposes FlashMotion, the first three-stage training framework to achieve few-step (4-step) trajectory-controllable video generation. By employing a strategy of training a trajectory adapter $\rightarrow$ distilling a fast generator $\rightarrow$ fine-tuning the adapter with a hybrid adversarial-diffusion approach, it simultaneously outperforms existing multi-step methods in visual quality and trajectory accuracy with 4-step inference, achieving a 47x speedup.
 
 **[FlexiVideo: Variation-Aware Temporal Dynamics Modeling for Efficient Video Understanding](flexivideo_variation-aware_temporal_dynamics_modeling_for_efficient_video_unders.md)**
 
@@ -283,6 +319,10 @@ item_total: 179
 
 :   GIFT is a training-free keyframe selection framework that reformulates the problem of "which frames to feed into a Video VLM" from a greedy frame-by-frame addition to a global evaluation of each frame's "irreplaceability" (high relevance $\times$ visual isolation among more relevant frames). Utilizing "Budget-Aware Refinement," it gradually recovers temporal context as the frame budget increases, achieving a maximum average improvement of 12.5% over uniform sampling on LLaVA-Video-7B.
 
+**[Gloria: Consistent Character Video Generation via Content Anchors](gloria_consistent_character_video_generation_via_content_anchors.md)**
+
+:   Gloria proposes using a compact set of "Content Anchors" to represent the multi-view appearance and expression identity of a character. Through two mechanisms—superset content anchoring (to prevent copy-pasting) and RoPE weak conditioning (to distinguish multiple anchors)—it achieves consistent character video generation exceeding 10 minutes.
+
 **[GoalForce: Teaching Video Models to Accomplish Physics-Conditioned Goals](goal_force_teaching_video_models_to_accomplish_physics-conditioned_goals.md)**
 
 :   Proposes the Goal Force framework which trains video generation models on simple synthetic data using multi-channel physical control signals (goal force, direct force, mass). This enables models to learn reverse planning of causal chains from target effects, achieving zero-shot generalization to complex real-world scenarios such as tool use and human-object interaction.
@@ -303,6 +343,10 @@ item_total: 179
 
 :   HieraMamba proposes a Mamba-based hierarchical video temporal grounding architecture centered on the Anchor-MambaPooling (AMP) module. This module uses Mamba's selective scanning to compress video features layer-by-layer into multi-scale anchor tokens. Combined with anchor-conditioned and segment-pooled contrastive losses, it enhances the compactness and discriminativeness of hierarchical representations, achieving SOTA on Ego4D-NLQ, MAD, and TACoS.
 
+**[Hierarchical Action Learning for Weakly-Supervised Action Segmentation](hierarchical_action_learning_for_weakly-supervised_action_segmentation.md)**
+
+:   HAL leverages the time-scale asymmetry—where low-level visual features change rapidly while high-level action semantics change slowly—to construct a hierarchical causal generative process with a smooth transition constraint. This allows the model to learn identifiable high-level action latent variables under weak supervision using only action transcripts, mitigating over-segmentation and achieving new SOTA results on the Breakfast, CrossTask, Hollywood, and GTEA benchmarks.
+
 **[Hypergraph-State Collaborative Reasoning for Multi-Object Tracking](hypergraph-state_collaborative_reasoning_for_multi-object_tracking.md)**
 
 :   Addressing the long-standing issues of independent prediction, jitter, and fragmentation under occlusion in motion estimation for multi-object tracking, this paper proposes HyperSSM. It utilizes hypergraphs to connect targets with similar motion states into hyperedges to achieve "group consensus," and embeds hypergraph convolutions directly into the state transitions of a State Space Model (SSM) to maintain temporal smoothness. This allows correlated targets to mutually constrain and complement each other's motion. HyperSSM achieves SOTA performance across four linear and non-linear benchmarks: MOT17, MOT20, DanceTrack, and SportsMOT.
@@ -310,10 +354,6 @@ item_total: 179
 **[Image Guides Images: Consistent Video Amodal Completion with Rectified In-Context Exemplar Guidance](image_guides_images_consistent_video_amodal_completion_with_rectified_in-context.md)**
 
 :   IC-Amodal proposes a **training-free** framework for Video Amodal Completion (VAC). By leveraging a pre-trained image inpainting model (Flux.1-Fill), it reformulates VAC as "rectified in-context learning." It utilizes dual-frame collaboration to construct reliable exemplars to address the cold-start problem, followed by sub-region attention weight modulation to anchor the model's focus on the exemplars. This achieves both open-world generalization and temporal consistency without fine-tuning, outperforming state-of-the-art (SOTA) models fine-tuned on synthetic data.
-
-**[Incentivizing Versatile Video Reasoning in MLLMs via Data-Efficient Reinforcement Learning](incentivizing_versatile_video_reasoning_in_mllms_via_data-efficient_reinforcemen.md)**
-
-:   This paper proposes VideoReasoner: by using only 3K cold-start data and 5K reinforcement learning data (8K in total) directly on a Base MLLM (Qwen2-VL-7B-Base), it trains three video reasoning capabilities—"event reasoning / keyframe reasoning / direct answering." During the inference phase, these are combined into a pipeline that "first locates key events and keyframes, then performs dense sampling for back-filling to generate answers." It significantly outperforms the Base model across 7 video benchmarks and matches or even surpasses Qwen2.5-VL-7B-Instruct trained on large-scale data.
 
 **[Interactive Tracking: A Human-in-the-Loop Paradigm with Memory-Augmented Adaptation](interactive_tracking_a_human-in-the-loop_paradigm_with_memory-augmented_adaptati.md)**
 
@@ -323,9 +363,17 @@ item_total: 179
 
 :   InternVideo-Next decomposes the traditional "Encoder-Decoder" architecture of Masked Video Modeling (MVM) into a three-stage **Encoder-Predictor-Decoder (EPD)** framework. It utilizes a two-stage self-supervised pre-training strategy: Stage 1 constructs a latent space that is both detail-preserving and semantically rich using a conditional diffusion decoder and image-level semantic priors; Stage 2 performs latent space prediction toward a frozen teacher to learn world knowledge. Using only publicly available unlabeled videos, this model, which lacks **any video-text supervision**, outperforms video-text pre-trained competitors on benchmarks like K400 and SSv2 for the first time.
 
+**[InterRVOS: Interaction-Aware Referring Video Object Segmentation](interrvos_interaction-aware_referring_video_object_segmentation.md)**
+
+:   This work extends Referring Video Object Segmentation (RVOS) from segmenting only the referred subject (actor) to a new task, InterRVOS, which simultaneously segments both the actor and target in an interaction. The authors constructed InterRVOS-127K, a dataset with 127,000 actor-target dual-mask annotations, and proposed ReVIOSa, an MLLM-based architecture. ReVIOSa explicitly models interaction directionality using two role-specific tokens (`[SEG_ACT]` and `[SEG_TAR]`) combined with an Attention Mask Loss (AML), significantly outperforming existing methods on the new benchmark.
+
 **[Joint Learning of General and Diverse Patterns with Mixture of Memory Experts for Weakly-Supervised Video Anomaly Detection](joint_learning_of_general_and_diverse_patterns_with_mixture_of_memory_experts_fo.md)**
 
 :   MoME introduces a sparse Mixture of Experts framework with "Internal Memory + Shared External Memory," allowing normal/abnormal experts to learn commonalities in external memory and disparities in internal memory. Guided by LLM-generated semantic prototypes for expert routing, it balances generalization and discrimination, achieving SOTA results on UCF-Crime and XD-Violence (88.32% AUC / 86.15% AP).
+
+**[LaDy: Lagrangian-Dynamic Informed Network for Skeleton-based Action Segmentation via Spatial-Temporal Modulation](lady_lagrangian-dynamic_informed_network_for_skeleton-based_action_segmentation_.md)**
+
+:   LaDy introduces an overlooked "Physical Dynamics" dimension to Skeleton-based Temporal Action Segmentation (STAS). It utilizes a Lagrangian dynamics branch to explicitly synthesize generalized joint forces (torques) from joint coordinates, ensures these forces adhere to the work-energy theorem via an energy consistency loss, and injects force information into spatial features (fusion) and temporal features (hierarchical gating). It achieves new SOTA results across six datasets, notably improving F1@50 by up to 5.2% on PKU-MMD v2 with only 1.83M parameters.
 
 **[LAOF: Robust Latent Action Learning with Optical Flow Constraints](laof_robust_latent_action_learning_with_optical_flow_constraints.md)**
 
@@ -339,6 +387,10 @@ item_total: 179
 
 :   Addressing the noise supervision problem in the MIL framework—where normal snippets in abnormal bags are misidentified as anomalies—this paper proposes the plug-and-play D2MIL framework. It dynamically discards high-loss noise based on the observation that "noise samples exhibit higher loss," and subsequently recovers mis-deleted hard samples using a frozen VLM. D2MIL provides consistent improvements across five mainstream MIL baselines on ShanghaiTech, UCF-Crime, and MSAD.
 
+**[Learning from Synthetic Data via Provenance-Based Input Gradient Guidance](learning_from_synthetic_data_via_provenance-based_input_gradient_guidance.md)**
+
+:   This paper proposes utilizing "provenance" automatically obtained during the synthetic data generation process as an auxiliary supervision signal. By employing input gradient guidance—specifically inhibiting input gradients in non-target regions—the method directly encourages models to learn discriminative representations focused on target areas. Its effectiveness is validated across multiple tasks and modalities, including weakly supervised localization, spatio-temporal action detection, and image classification.
+
 **[Learning to Assist: Physics-Grounded Human-Human Control via Multi-Agent Reinforcement Learning](learning_to_assist_physics-grounded_human-human_control_via_multi-agent_reinforc.md)**
 
 :   AssistMimic is proposed to model the physical imitation of human-human assistive interactions as a Multi-Agent Reinforcement Learning (MARL) problem. Through motion prior initialization, dynamic reference retargeting, and contact-promoting rewards, it achieves the first physics-based simulation and tracking of assistive movements involving force exchange.
@@ -347,25 +399,25 @@ item_total: 179
 
 :   Addressing the blind assumption of "always providing a segment for any query" in Video Temporal Grounding (VTG), this paper proposes Refusal-Aware Reinforcement Fine-Tuning (RA-RFT) based on GRPO. Combined with four rewards (format, refusal-IoU, explanation, query correction) and a specifically constructed "hard-irrelevant query" dataset HI-VTG, the model learns to refuse queries that are **highly semantically similar but actually mismatched** and explain why. This significantly improves refusal and explanation quality across several relevance-aware VTG scenarios without compromising standard grounding accuracy.
 
-**[Learning Transferable Temporal Primitives for Video Reasoning via Synthetic Videos](learning_transferable_temporal_primitives_for_video_reasoning_via_synthetic_vide.md)**
-
-:   This paper proposes SynRL: a method to teach VLMs "temporal primitives" (direction, speed, state tracking, etc.) using synthetic videos (geometric movements/state changes) generated entirely via code. The core finding is that basic temporal skills learned from abstract synthetic videos can be **directly transferred** to real-world videos. Using only ~7.7K synthetic CoT samples, the model achieves comprehensive improvements across 15 benchmarks, even outperforming Video-R1 which uses 165K real samples (approximately 21× data efficiency).
-
 **[LensWalk: Agentic Video Understanding by Planning How You See in Videos](lenswalk_agentic_video_understanding_by_planning_how_you_see_in_videos.md)**
 
 :   LensWalk is proposed as an agentic framework that allows an LLM reasoner to actively control the temporal scope and sampling density of video observations. Through a reason-plan-observe loop, it achieves adaptive video understanding, providing a plug-and-play performance gain of over 5% on long video benchmarks without the need for fine-tuning.
 
-**[Less is More: Token-Efficient Video-QA via Adaptive Frame-Pruning and Semantic Graph Integration](less_is_more_token-efficient_video-qa_via_adaptive_frame-pruning_and_semantic_gr.md)**
+**[Long-RVOS: A Comprehensive Benchmark for Long-term Referring Video Object Segmentation](long-rvos_a_comprehensive_benchmark_for_long-term_referring_video_object_segment.md)**
 
-:   Addressing the pervasive "visual echoes" (temporally-proximate near-duplicate frames) generated by keyframe selectors in Video-QA, this paper proposes a plug-and-play refinement layer. By using Adaptive Frame Pruning (AFP) to cluster and merge redundant frames and a lightweight text semantic graph to compensate for pruned semantics, the method reduces input tokens by up to 82.2% while frequently improving the accuracy of upstream selectors.
+:   To address the issues in existing Referring Video Object Segmentation (RVOS) datasets, which contain only short clips of a few seconds and where targets are visible throughout, the authors construct Long-RVOS. This is the first minute-level long video benchmark, featuring 2,193 videos with an average duration of 60 seconds, frequent occlusions, target disappearance/reappearance, and scene cuts. It includes three types of descriptions (Static, Dynamic, and Mixed) and two new metrics ($tIoU$ and $vIoU$). The authors also propose a motion-enhanced baseline, ReferMo, which utilizes MPEG-4 keyframes and motion vectors for a "local perception to global interaction" workflow. ReferMo is supervised only on keyframes and uses SAM2 for propagation during inference, significantly outperforming seven SOTA methods in long-video scenarios.
 
 **[LongVideo-R1: Smart Navigation for Low-cost Long Video Understanding](longvideo-r1_smart_navigation_for_low-cost_long_video_understanding.md)**
 
 :   LongVideo-R1 is proposed as a multimodal Agent equipped with reasoning capabilities. Utilizing a hierarchical video tree structure and an intelligent navigation strategy, it achieves efficient long video question answering with an average of only 10.5 tool calls, significantly outperforming exhaustive methods in the accuracy-efficiency trade-off.
 
-**[LongVT: Incentivizing "Thinking with Long Videos" via Native Tool Calling](longvt_incentivizing_thinking_with_long_videos_via_native_tool_calling.md)**
+**[M4-SAM: Multi-Modal Mixture-of-Experts with Memory-Augmented SAM for RGB-D Video Salient Object Detection](m4-sam_multi-modal_mixture-of-experts_with_memory-augmented_sam_for_rgb-d_video_.md)**
 
-:   LongVT enables multimodal large language models to process long videos by emulating the human strategy of "global skimming followed by zooming into suspicious clips." It encapsulates the model's inherent temporal grounding capability into a native `crop_video` tool, which is interleaved within the reasoning chain to iteratively "re-examine" and correct errors. Supported by the self-constructed VideoSIAH data suite and a three-stage training pipeline, it achieves new open-source SOTA results across four long-video benchmarks.
+:   To efficiently adapt SAM2 for RGB-D Video Salient Object Detection (RGB-D VSOD), M4-SAM injects "Modality-Aware MoE-LoRA" into the frozen SAM2 encoder for parameter-efficient fine-tuning, utilizes "Gated Multi-Level Feature Fusion + Memory Bank" to aggregate multi-scale temporal information, and employs "Pseudo-Guided Initialization" to eliminate dependence on manual prompts. It achieves SOTA across all metrics on three RGB-D VSOD datasets, with the entire training process taking approximately 5 hours on two 4090 GPUs.
+
+**[MA-Bench: Towards Fine-grained Micro-Action Understanding](ma-bench_towards_fine-grained_micro-action_understanding.md)**
+
+:   Ours proposes MA-Bench, a micro-action understanding benchmark containing 1,000 videos and 12,000 structured QA pairs. It systematically evaluates the fine-grained micro-action understanding capabilities of 23 MLLMs through a three-layer "Perception-Understanding-Reasoning" architecture and provides MA-Bench-Train (20.5K samples) for model fine-tuning.
 
 **[MaskAdapt: Learning Flexible Motion Adaptation via Mask-Invariant Prior for Physics-Based Characters](maskadapt_learning_flexible_motion_adaptation_via_mask-invariant_prior_for_physi.md)**
 
@@ -391,14 +443,6 @@ item_total: 179
 
 :   META enables a training-free video understanding agent to "self-evolve its toolbox" through iterative problem-solving. It condenses recurring multi-step tool combinations from successful trajectories into reusable macro-tools and distills failure trajectories into tool usage constraints. Without updating any parameters, it improves strong VLMs by 4.6%–7.6% across three long-video benchmarks.
 
-**[Metadata-Aware Multi-Prompt Reasoning for Zero-Shot Accident Understanding](metadata-aware_multi-prompt_reasoning_for_zero-shot_accident_understanding.md)**
-
-:   This paper decomposes the task of "understanding traffic accidents from surveillance videos" into three independent sub-tasks: when, what, and where. The pipeline utilizes visual-language similarity to identify the impact moment, employs five complementary prompts with entropy-gating for accident type classification, and applies a type- and scene-conditioned open-vocabulary detector to localize the impact point. The entire framework is zero-shot, requires no fine-tuning, runs on a single 24GB GPU, and improves the harmonic mean score on the ACCIDENT@CVPR 2026 benchmark from a 0.349 baseline to 0.402.
-
-**[MINERVA-Cultural: A Benchmark for Cultural and Multilingual Long Video Reasoning](minerva-cultural_a_benchmark_for_cultural_and_multilingual_long_video_reasoning.md)**
-
-:   The MINERVA-Cultural benchmark is introduced, featuring 2,400 human-annotated video reasoning questions across 18 languages/regions. Through evidence graphs and an iterative error isolation strategy, it reveals severe deficiencies in the cultural visual perception of current SOTA Video-LLMs (the strongest model, Gemini-2.5-Pro, achieves only 45.07% vs. 95.22% for humans).
-
 **[Minerva-Ego: Spatiotemporal Hints for Egocentric Video Understanding](minerva-ego_spatiotemporal_hints_for_egocentric_video_understanding.md)**
 
 :   Minerva-Ego is a benchmark for complex reasoning in egocentric long videos, consisting of 1,160 human-annotated five-way multiple-choice questions. Each question is paired with a dense reasoning trajectory that binds "when (timestamp)" to "where (segmentation mask)". The authors reveal that state-of-the-art (SOTA) video models (Gemini 2.5 Pro at 40.1% vs. humans at 91.8%) are primarily bottlenecked by perceptual grounding. They demonstrate that directly prompting the model on pixels regarding "where to look" and "which frames to watch" can improve accuracy by up to approximately 5.8%.
@@ -406,6 +450,10 @@ item_total: 179
 **[Mistake Attribution: Fine-Grained Mistake Understanding in Egocentric Videos](mistake_attribution_fine-grained_mistake_understanding_in_egocentric_videos.md)**
 
 :   This paper proposes the Mistake Attribution (MATT) task, which attributes execution errors in egocentric videos to three dimensions: semantic (which instruction component was violated), temporal (which frame contains the Point of No Return, PNR), and spatial (where the error region is in the PNR frame). Through the MisEngine data engine, large-scale mistake samples are automatically constructed from existing action datasets. A unified Transformer model, MisFormer, is designed to simultaneously complete three attribution sub-tasks, outperforming specialized SOTA methods across multiple benchmarks.
+
+**[MotionEnhancer: Leveraging Video Diffusion for Motion-Enhanced Vision-Language Models](motionenhancer_leveraging_video_diffusion_for_motion-enhanced_vision-language_mo.md)**
+
+:   The authors distill the "motion priors" naturally encoded in Video Diffusion Models (VDMs) to serve as auxiliary supervision for aligning VLM text-visual attention. This significantly enhances the VLM's fine-grained motion understanding without adding trainable parameters or modifying the architecture.
 
 **[MoVie: Broaden Your Views with Human Motion for Action Detection](movie_broaden_your_views_with_human_motion_for_action_detection.md)**
 
@@ -423,10 +471,6 @@ item_total: 179
 
 :   MS-Temba transforms the Mamba State Space Model into a "Multi-Scale Dilated SSM" by stacking parallel branches with varying temporal dilation rates into a hierarchical structure, then uses a lightweight Mamba fuser to unify multi-scale features. With only 17M parameters, it achieves SOTA in Temporal Action Detection (TAD) on 40-minute-long, densely annotated daily activity videos, reducing parameters by 5x compared to Transformer-based solutions.
 
-**[MTLLFM: Multimodal-Temporal Laughter Localization](mtllfm_multimodal-temporal_laughter_localization_ur-funny-temporal_and_smile-tem.md)**
-
-:   This work upgrades "laughter detection" from coarse clip-level classification to sub-second temporal localization. By utilizing frozen HuBERT and MAE encoders combined with a lightweight "Temporal Softmax Pooling + Adaptive Modality Gating" module, the model learns precise start and end boundaries of laughter events using only clip-level labels (weakly-supervised). It achieves a 99% classification F1 and 68.1% localization precision on sports broadcast data, outperforming multimodal large language models such as Gemini 1.5 Flash. Additionally, it introduces the UR-FUNNY-Temporal and SMILE-Temporal datasets with temporal annotations for 11,053 video segments.
-
 **[MuKV: Multi-Grained KV Cache Compression for Long Streaming Video Question-Answering](mukv_multi-grained_kv_cache_compression_for_long_streaming_video_question-answer.md)**
 
 :   MuKV simultaneously stores the historical KV cache of long streaming videos at patch, frame, and segment granularities. It employs "self-attention + frequency" dual-signal pruning to compress redundancy and utilizes "semi-hierarchical retrieval" for online recall. This approach significantly improves long streaming VideoQA accuracy without increasing memory footprint or online latency.
@@ -443,10 +487,6 @@ item_total: 179
 
 :   The paper proposes LAVIDA, an end-to-end zero-shot Video Anomaly Detection (VAD) framework. By utilizing an Anomaly Exposure Sampler, semantic segmentation datasets are transformed into pseudo-anomalies for training. Combining MLLM for deep anomaly semantic extraction and anti-attention token compression to handle spatio-temporal sparsity, it achieves SOTA results at both frame and pixel levels without using any real VAD data.
 
-**[OASIS: On-Demand Hierarchical Event Memory for Streaming Video Reasoning](oasis_on-demand_hierarchical_event_memory_for_streaming_video_reasoning.md)**
-
-:   OASIS redefines streaming video reasoning as a "temporal routing" problem. It employs an online-maintained hierarchical event forest as long-term memory, coupled with a two-stage strategy of "coarse reasoning on short context, followed by refined retrieval based on semantic intent when uncertain." Without altering the MLLM or requiring training, it significantly enhances long-range accuracy and compositional reasoning for multiple streaming MLLM backbones while maintaining constant token costs.
-
 **[Occlusion-Aware SORT: Observing Occlusion for Robust Multi-Object Tracking](occlusion-aware_sort_observing_occlusion_for_robust_multi-object_tracking.md)**
 
 :   The authors propose OA-SORT, an occlusion-aware tracking framework that explicitly models the occlusion states of objects to mitigate position cost confusion and Kalman Filter estimation instability. It achieves SOTA-level improvements on DanceTrack, SportsMOT, and MOT17, with components that can be integrated into various trackers in a plug-and-play manner.
@@ -461,7 +501,7 @@ item_total: 179
 
 **[One-Shot Flow, Any-Time Frame: A Bidirectional Warping Framework for Event-Based Video Frame Interpolation](one-shot_flow_any-time_frame_a_bidirectional_warping_framework_for_event-based_v.md)**
 
-:   To address the dilemma in Event-Based Video Frame Interpolation (E-VFI)—where forward warping is fast but leaves holes, and backward warping offers high quality but requires redundant flow recalculation for every frame—this paper proposes a framework that computes a bidirectional motion trajectory (BiFEB) for the entire interval in a single forward pass. It then uses Flow Query to instantly retrieve bidirectional flow for any time $t$ and employs Bidirectional Warping to explicitly locate and repair erroneous regions. This achieves any-time, low-cost, high-quality interpolation, outperforming existing methods in both quality and efficiency on GOPRO, SNU-FILM, BS-ERGB, and HS-ERGB datasets.
+:   Addressing the dilemma in Event-based Video Frame Interpolation (E-VFI) where "forward warping is fast but suffers from holes, while backward warping yields high quality but requires recomputation for every frame," this paper proposes "One-Shot Flow, Any-Time Frame." By computing a bidirectional motion representation covering the entire duration once, optical flow at any time can be queried directly. A bidirectional warping mechanism with explicit repair masks is then used to fuse the strengths of both directions, refreshing both reconstruction quality and inference efficiency on synthetic and real-world datasets (PSNR 36.90 for GOPRO Skip 15, with only 7.27GB VRAM for 127-frame interpolation, while TLXNet directly encounters OOM).
 
 **[OpenMarcie: Dataset for Multimodal Action Recognition in Industrial Environments](openmarcie_dataset_for_multimodal_action_recognition_in_industrial_environments.md)**
 
@@ -486,14 +526,6 @@ item_total: 179
 **[ProgTrack: A Multi-Object Tracking Algorithm with Progressive Matching Strategy](progtrack_a_multi-object_tracking_algorithm_with_progressive_matching_strategy.md)**
 
 :   ProgTrack mimics the human eye's tracking habit of "large first, small later, then fill gaps" by decomposing UAV multi-object tracking into a three-stage progressive matching process: "large objects use IoU, small objects use Context-Enhanced ReID, and remaining hard-to-match targets use relative inter-object positions." Coupled with a Pure Kalman Filter (PKF) that handles occlusions and missed detections, it achieves SOTA MOTP/IDF1 results on VisDrone2019 and MDMT.
-
-**[Protect to Adapt: Orthogonal Subspace Control with Ranked Negative-Prompt Curriculum for Few-Shot Action Recognition](protect_to_adapt_orthogonal_subspace_control_with_ranked_negative-prompt_curricu.md)**
-
-:   P2A decomposes the adaptation of CLIP for few-shot action recognition into two components: Orthogonal Subspace Control (OSC), which constrains low-rank updates to the orthogonal complement of the pre-trained weights' dominant subspace to preserve general semantics and mitigate catastrophic forgetting; and a Ranked Negative-Prompt Curriculum (RNC), which utilizes LLM-generated, verifier-filtered, and difficulty-ranked negative samples to push class boundaries. By tuning only 2% of the parameters, it achieves SOTA performance across five FSAR benchmarks.
-
-**[Prototypical Action Reasoning Facilitated by Vision-Language Alignment for Egocentric Action Anticipation](prototypical_action_reasoning_facilitated_by_vision-language_alignment_for_egoce.md)**
-
-:   PAR-VLA utilizes Vision-Language Models (VLM) to learn verbs and nouns as "disentangled visual prototypes" which serve as stable semantic anchors. It transforms open, unconstrained future action anticipation into conditional prediction guided by these semantic concepts. By refining verb-noun dependencies through a dual-stream symbiotic decoder, it achieves New SOTA on three datasets, including EPIC-KITCHENS-100.
 
 **[Question-guided Visual Compression with Memory Feedback for Long-Term Video Understanding](question-guided_visual_compression_with_memory_feedback_for_long-term_video_unde.md)**
 
@@ -527,6 +559,10 @@ item_total: 179
 
 :   SAIL is proposed to achieve dual SOTA in dense video captioning and event localization on ActivityNet and YouCook2 under a weakly-supervised setting (captions only, no temporal boundaries). This is achieved through cross-modal similarity-guided semantic-aware mask generation and auxiliary supervision from LLM-synthesized captions.
 
+**[SAM2Text: Towards Prompt-Free and Multi-Resolution Video Scene Text Segmentation](sam2text_towards_prompt-free_and_multi-resolution_video_scene_text_segmentation.md)**
+
+:   SAM2 is systematically adapted into SAM2Text specialized for video scene text segmentation (video STS): LoRA is employed to enable the encoder to learn text features, a self-prompting module is added to eliminate external prompts, 512/1024 high-resolution branches are appended to the decoder to preserve stroke details, and a "Short-term FIFO + Top-K Long-term Retrieval" dual-layer memory is used to stabilize cross-frame flickering. Two pixel-level video text datasets (STS-SynthV / STS-RealV) are released, achieving SOTA performance on both image and video benchmarks.
+
 **[SAVA-X: Ego-to-Exo Imitation Error Detection via Scene-Adaptive View Alignment and Bidirectional Cross View Fusion](savax_egotoexo_imitation_error_detection_via_scene.md)**
 
 :   This work formalizes the Ego→Exo imitation error detection task and proposes the SAVA-X (Align–Fuse–Detect) framework. It jointly addresses three major challenges—temporal misalignment, video redundancy, and cross-view domain gaps—through three modules: adaptive sampling, scene-adaptive view embedding (SVE), and bidirectional cross-view fusion.
@@ -539,6 +575,10 @@ item_total: 179
 
 :   This paper proposes SDTrack, the first fully Spiking Neural Network (SNN) based Transformer pipeline for event tracking. By utilizing Global Trajectory Prompt (GTP), asynchronous event streams are aggregated into 3-channel event frames rich in trajectory information. A full spike-driven SNN Transformer tracker, featuring Intrinsic Position Learning (IPL), predicts target boxes end-to-end. SDTrack achieves competitive or SOTA accuracy on three event-tracking benchmarks with minimal parameters and energy consumption (Tiny version: 19.61M / 8.16mJ).
 
+**[SEASON: Mitigating Temporal Hallucination in Video Large Language Models via Self-Diagnostic Contrastive Decoding](season_mitigating_temporal_hallucination_in_video_large_language_models_via_self.md)**
+
+:   SEASON is a **training-free** decoding method for VideoLLMs. It constructs "temporally homogenized" hard negatives that disrupt temporal information while preserving spatial structure. A per-token self-diagnostic mechanism determines whether a token is prone to temporal or spatial hallucination, adaptively applying contrastive decoding. It outperforms all training-free methods on three hallucination benchmarks without degrading general video understanding capabilities.
+
 **[Seeing Conversations: Communication Context Identification in Egocentric Video](seeing_conversations_communication_context_identification_in_egocentric_video.md)**
 
 :   This paper proposes "Communication Context Identification (CCI)," a new task aimed at determining whether individuals in an egocentric video belong to the wearer's conversation group. The authors release a 68.9-hour multi-person, multi-conversation dataset and design CoCoNet—a lightweight model utilizing only structured facial features with joint temporal-relational reasoning—achieving a 96% balanced accuracy on CCI.
@@ -550,10 +590,6 @@ item_total: 179
 **[Seeing the Scene Matters: Revealing Forgetting in Video Understanding Models with a Scene-Aware Long-Video Benchmark](seeing_the_scene_matters_revealing_forgetting_in_video_understanding_models_with.md)**
 
 :   This paper proposes a scene-level long video understanding benchmark, **SceneBench**, which reveals the severe "forgetting" phenomenon of mainstream VLMs in long-range contexts across "scenes" (indicated by a sharp drop in accuracy). A lightweight **Scene-RAG** (Scene Retrieval-Augmented Generation) is employed to dynamically recall cross-scene contexts into the input, yielding a $+2.50\%$ improvement, which serves as evidence for the conclusion that "models indeed fail to remember long-range contexts."
-
-**[Self-Critical Distillation Network for Video-based Commonsense Captioning](self-critical_distillation_network_for_video-based_commonsense_captioning.md)**
-
-:   SCD-Net addresses two major problems caused by the "video → content description → commonsense" reasoning chain: the lack of visual grounding and the isolation of different commonsense categories. It employs self-critical reinforcement learning to strengthen visual reasoning and a joint reasoning distillation framework (cascaded teacher decoder + student + language adaptive wrapper distillation) to establish inter-class correlations. On the V2C dataset, it outperforms LLM-based methods without relying on Large Language Models.
 
 **[Self-Paced and Self-Corrective Masked Prediction for Movie Trailer Generation](self-paced_and_self-corrective_masked_prediction_for_movie_trailer_generation.md)**
 
@@ -599,21 +635,13 @@ item_total: 179
 
 :   SpikeTrack utilizes a **pure spike-driven** Spiking Transformer for event-based single object tracking. By employing a "Multi-Search-Single-Template (MSST)" training paradigm, it feeds the inherent temporal continuity of tracking into the membrane potential accumulation of the SNN. Furthermore, "Dynamic Integer LIF (DI-LIF)" neurons adaptively adjust the spike firing upper limit based on input sparsity. It achieves SOTA accuracy on FE108, FELT, and VisEvent benchmarks, while consuming only 6.6% of the energy and 25.8% of the parameters compared to the second-best method.
 
-**[Spk2VidNet: A Hierarchical Recurrent Architecture for High-Fidelity Video Reconstruction from Long Spike-Camera Streams](spk2vidnet_a_hierarchical_recurrent_architecture_for_high-fidelity_video_reconstr.md)**
+**[SPOT: Spatiotemporal Prompt Optimization for Motion-Stabilized MLLM-Guided Video Segmentation](spot_spatiotemporal_prompt_optimization_for_motion-stabilized_mllm-guided_video_.md)**
 
-:   Addressing the limitations of Spike Camera Super-Resolution (SCSR) in handling fixed short sequences and spike signal fluctuations, Spk2VidNet employs "dual-layer recurrent propagation with expanding temporal receptive fields + multi-frame consistency alignment + content-aware modulation fusion + segmented training state transfer" to reconstruct high-resolution image sequences from arbitrary long spike streams. It sets a new SOTA on synthetic and real data with faster speeds (REDS-LSSR ×4 PSNR 29.92dB, 43ms inference).
+:   SPOT achieves SOTA across 6 benchmarks (Ref-YouTube-VOS, MeViS, ReVOS, etc.) without altering architectures or performing video pre-training. It relies solely on two new loss constraints to regulate the spatiotemporal behavior of prompt points generated by image-pretrained MLLMs for SAM: a Brownian Bridge loss models target trajectories as endpoint-constrained Gaussian processes for temporal smoothness, and a prompt quality loss ensures spatial geometric consistency.
 
 **[Stay in your Lane: Role Specific Queries with Overlap Suppression Loss for Dense Video Captioning](stay_in_your_lane_role_specific_queries_with_overlap_suppression_loss_for_dense_.md)**
 
 :   This paper proposes ROS-DVC, which decouples shared queries in the DETR-based DVC framework into independent localization and caption queries. It introduces an Overlap Suppression Loss to penalize temporal overlaps between queries and a Cross-Task Contrastive Alignment to ensure cross-task semantic consistency, achieving SOTA captioning and localization performance on YouCook2 and ActivityNet Captions.
-
-**[STORM: End-to-End Referring Multi-Object Tracking in Videos](storm_referring_multi_object_tracking.md)**
-
-:   STORM is the first end-to-end Multi-modal Large Language Model (MLLM) framework for Referring Multi-Object Tracking (RMOT). It significantly reduces the dependence on labeled RMOT data through a Task Composition Learning strategy and establishes a high-quality STORM-Bench dataset.
-
-**[Streaming Video Crime Anticipation with Spatio-Temporal Causal Reasoning](streaming_video_crime_anticipation_with_spatio-temporal_causal_reasoning.md)**
-
-:   To address the issue where "existing surveillance systems only provide post-event/mid-event alerts and cannot anticipate crimes before they occur," this paper makes two contributions: constructing the STCRC dataset with spatio-temporal causal annotations (73K samples, 5 progressive causal reasoning tasks) and designing a streaming co-processor STCH that converts implicit entity dynamics into explicit causal hypergraphs for VLMs. This achieves a 70.7% relative improvement in crime classification, a 10.1% improvement in detection, and a 3.7% reduction in time prediction error.
 
 **[StreamingTOM: Streaming Token Compression for Efficient Video Understanding](streamingtom_streaming_token_compression_for_efficient_video_understanding.md)**
 
@@ -643,10 +671,6 @@ item_total: 179
 
 :   Inspired by Kahneman's dual-process theory, the TCEI framework proposes a test-time adaptation method that combines an intuitive system (fast inference using episodic memory of recently observed objects) and an experiential system (calibrating intuitive predictions using accumulated experience from historical videos). It significantly improves multi-object tracking performance under distribution shifts without requiring backpropagation.
 
-**[Text-guided Fine-Grained Video Anomaly Understanding](text-guided_fine-grained_video_anomaly_understanding.md)**
-
-:   The T-VAU framework is proposed, which realizes pixel-level spatio-temporal anomaly localization through an Anomaly Heatmap Decoder (AHD) and designs a Region-aware Anomaly Encoder (RAE) to inject heatmap evidence into Large Vision-Language Models (LVLMs) for unified reasoning across anomaly detection, localization, and semantic explanation.
-
 **[TF-CADE: Foreground-Concentrated Text-Video Alignment for Zero-Shot Temporal Action Detection](tf-cade_foreground-concentrated_text-video_alignment_for_zero-shot_temporal_acti.md)**
 
 :   Addressing the issue where "text does not influence predictions" in zero-shot temporal action detection, this paper introduces an Action-Concentrated Aggregation (ACA) module. ACA aggregates video features into a foreground video embedding based on temporal foreground saliency for explicit alignment with text. Furthermore, a Certainty-based Confidence Reweighting (CCR) mechanism injects video-level priors back into snippet-level classification scores to suppress semantically irrelevant action classes. This approach achieves SOTA performance on THUMOS14/ActivityNet in both in-distribution and cross-dataset zero-shot settings.
@@ -659,13 +683,13 @@ item_total: 179
 
 :   Addressing the issue where top-k selection in WSVAD focuses only on the highest-scoring segments and misses dispersed or vague anomalies, this paper proposes a **Temporal Clustering + Uncertainty Dual Exploration** strategy to cover diverse and ambiguous anomaly segments. It advocates using Recall@FPR and AP to replace AUROC, which is heavily "inflated" by class imbalance, improving AP on UCF-Crime from 35.48% to 38.33%.
 
-**[Thinking with Drafts: Speculative Temporal Reasoning for Efficient Long Video Understanding](thinking_with_drafts_speculative_temporal_reasoning_for_efficient_long_video_und.md)**
-
-:   SpecTemp offloads the time-consuming frame magnification process in the "thinking-with-frames" paradigm to a lightweight 3B draft MLLM. This draft model performs dense sampling and selects sparse keyframes, allowing the 7B target MLLM to focus solely on temporal reasoning and verification. Through an iterative speculative-verification loop, it maintains or improves accuracy across 8 video benchmarks while reducing inference latency by approximately 20%.
-
 **[Time Blindness: Why Video-Language Models Can't See What Humans Can?](time_blindness_why_video-language_models_cant_see_what_humans_can.md)**
 
 :   Authors constructed SpookyBench, a synthetic benchmark where information exists "purely in inter-frame temporal dynamics while single frames are total noise." While humans can read text or identify objects with 98% accuracy using motion grouping, 15 state-of-the-art Video-VLMs (including GPT-4o, Gemini 2.5 Pro, and Qwen2.5-VL-72B) all achieved 0% accuracy. This clearly exposes a "time blindness" in current video models—they rely on per-frame spatial features and lack mechanisms for processing pure temporal information.
+
+**[TimeBridge: Self-Supervised Video Representation Learning via Start-End Joint Embedding and In-Between Frame Prediction](timebridge_self-supervised_video_representation_learning_via_start-end_joint_emb.md)**
+
+:   TimeBridge introduces an auxiliary task to the iBOT joint embedding framework: given only the start and end frames of a video, the model must "reconstruct" the intermediate frames. This forces the model to learn authentic temporal transformations. With 400 epochs of training, it achieves new SOTA on dense video prediction benchmarks such as DAVIS (73.5 J&F) and VIP (47.5 mIoU).
 
 **[TLMA: Mitigating the Impact of Weakly Labeled Information for Video Anomaly Detection](tlma_mitigating_the_impact_of_weakly_labeled_information_for_video_anomaly_detec.md)**
 
@@ -679,17 +703,9 @@ item_total: 179
 
 :   Addressing single object tracking for Unmanned Aerial Vehicles (UAVs), this paper first proposes an evaluation metric, Precision per FLOP (PPF), which couples accuracy gain with computational overhead. This metric reveals that existing temporal modules generally possess low "cost-effectiveness." Consequently, a lightweight temporal module (LETL) is designed that propagates and merges only a small number of representative appearance tokens. Integrated into a one-stream framework, the resulting LETrack achieves SOTA performance across six aerial datasets with negligible additional computational cost.
 
-**[Towards Data-Efficient Video Pre-training with Frozen Image Foundation Models](towards_data-efficient_video_pre-training_with_frozen_image_foundation_models.md)**
+**[Towards Streaming Referring Video Segmentation via Large Language Model](towards_streaming_referring_video_segmentation_via_large_language_model.md)**
 
-:   This paper proposes a decoupled paradigm that freezes a pre-trained image foundation model (DINOv3) as a spatial encoder and trains only a lightweight recurrent temporal module from scratch. Experiments across five video understanding tasks demonstrate that this approach matches or exceeds RVM, which was pre-trained end-to-end on 8.4 million video clips, illustrating that large-scale video pre-training is not essential for spatial representations.
-
-**[Towards Sparse Video Understanding and Reasoning](towards_sparse_video_understanding_and_reasoning.md)**
-
-:   ReViSe reforms video question answering as "question-driven multi-turn sparse frame selection"—selecting only a few frames per turn, compressing verified evidence into a structured "summary-as-state" across turns, and stopping early once confident. It serves as a plug-and-play wrapper for any VLM and supports reinforced fine-tuning using the label-free reward EAGER, achieving higher accuracy on multiple VQA benchmarks with only a few frames.
-
-**[Towards Spatio-Temporal World Scene Graph Generation from Monocular Videos](towards_spatio-temporal_world_scene_graph_generation_from_monocular_videos.md)**
-
-:   This paper proposes the World Scene Graph Generation (WSGG) task to construct spatio-temporally persistent, world-coordinate-anchored scene graphs from monocular videos, including all objects (even those occluded or out-of-frame). It introduces the ActionGenome4D dataset and three complementary methods (PWG, MWAE, and 4DST).
+:   StreamingRVOS transforms MLLM-based referring image segmentation into a "frame-by-frame streaming" referring video segmentation paradigm. It utilizes **Semantic Embedding Reuse (SER)** to feed the previous frame's `[SEG]` token back into the MLLM as temporal context, and employs **Online Mask Consistency Perception (OMCP)** to determine whether to re-invoke the MLLM for the current frame. Without adding any parameters, the 1B variant achieves a 19.2% improvement over Sa2VA on MeViS, while streaming inference reaches 7 FPS on a single A800 GPU.
 
 **[TrajTok: Learning Trajectory Tokens Enhances Video Understanding](trajtok_learning_trajectory_tokens_enables_better_video_understanding.md)**
 
@@ -727,33 +743,21 @@ item_total: 179
 
 :   UniVBench utilizes 200 human-crafted, copyright-free multi-shot videos and an agentic evaluation system, UniV-Eval, to evaluate video understanding, generation, editing, and the newly proposed "video reconstruction" within a single framework. It is the first to provide a unified answer to whether unified video models truly excel in both perception and generation.
 
+**[Unstitching the Chimera: Frame-Level Risk and Train-Free Mitigation for Video Hallucination](unstitching_the_chimera_frame-level_risk_and_train-free_mitigation_for_video_hal.md)**
+
+:   This paper characterizes a neglected type of video hallucination from the perspective of "frames" rather than "tokens"—**Chimera Hallucination**: where the model stitches together fragments that actually exist in the video but do not belong to the same event chain into a false continuous narrative. To address this, the authors propose CH-Risk, a single-forward-pass, reference-free risk metric to quantify this risk, and CH-M, a training-free two-stage intervention (segment routing sSAFR + residual token calibration RTC), to correct high-risk samples. This approach consistently reduces hallucinations and improves accuracy across 9 benchmarks and 6 VideoLLMs with <5% latency, <2.5% VRAM, and ≈1% FLOPs overhead.
+
 **[UTPTrack: Towards Simple and Unified Token Pruning for Visual Tracking](utptrack_towards_simple_and_unified_token_pruning_for_visual_tracking.md)**
 
 :   Ours proposes UTPTrack, the first unified framework to **jointly prune tokens across three components: Search Region (SR), Dynamic Template (DT), and Static Template (ST)** within one-stream Transformer trackers. It achieves 65–67% visual token reduction in RGB and multimodal/language-guided tracking while maintaining 99.7%–100.5% of baseline performance.
-
-**[VAST: Video Ability-Stratified Taxonomy for Data-Efficient Video Reasoning](vast_video_ability-stratified_taxonomy_for_data-efficient_video_reasoning.md)**
-
-:   VAST advocates for organizing video reasoning training data by "underlying reasoning abilities" rather than "task formats." It proposes a three-tier cognitive taxonomy (Perception/Reasoning/Cognition) with the accompanying VAST-15K/VAST-Bench. Utilizing the Video-VAST reinforcement learning framework, which adds only a consistency reward without modifying the architecture, it achieves 66.3% on MVBench, surpassing Video-R1's 62.7% while saving approximately 72% of GPU hours and 96% of training samples.
 
 **[VecAttention: Vector-wise Sparse Attention for Accelerating Long Context Inference](vecattention_vector-wise_sparse_attention_for_accelerating_long_context_inferenc.md)**
 
 :   This paper identifies a strong "vertical vector" sparsity pattern in video model attention maps and proposes VecAttention, a fine-grained vector-wise sparse attention framework. By implementing efficient important vector selection via TilingSelect + minS filtering, it achieves video understanding accuracy comparable to full attention at 78%+ sparsity, accelerating attention computation by 2.65x.
 
-**[Video-CoE: Reinforcing Video Event Prediction via Chain of Events](video-coe_reinforcing_video_event_prediction_via_chain_of_events.md)**
-
-:   Addressing the issues where Multi-modal Large Language Models (MLLMs) lack logical reasoning and ignore visual content in Video Event Prediction (VEP), this paper proposes the Chain of Events (CoE) paradigm. It requires the model to segment videos into timestamped historical event chains and perform causal reasoning based on them. Through a two-stage training process (CoE-SFT for reasoning injection + CoE-GRPO for reinforcing event chain construction via dense rewards), Qwen2.5-VL-7B was improved from 52.9% to 75.0% on FutureBench, setting a new VEP SOTA.
-
 **[Video Panels for Long Video Understanding](video_panels_for_long_video_understanding.md)**
 
 :   The authors propose tiling multiple adjacent video frames together into a single "comic-style" panel image to trade spatial resolution for temporal resolution. This approach improves the long video understanding capabilities of existing VLMs—increasing VideoLLaMA 3's QA accuracy by 19.4% on the TimeScope (Long) benchmark—without modifying architectures, additional training, or adding parameters.
-
-**[VideoARM: Agentic Reasoning over Hierarchical Memory for Long-Form Video Understanding](videoarm_agentic_reasoning_over_hierarchical_memory_for_long-form_video_understa.md)**
-
-:   VideoARM proposes an agentic reasoning paradigm based on Hierarchical Multimodal Memory (HM3). Through an adaptive cycle of "observe-think-act-memorize" and a coarse-to-fine tool-use strategy, it surpasses SOTA on long-video understanding benchmarks while reducing token consumption to 1/34 of DVD.
-
-**[VideoAuto-R1: Video Auto Reasoning via Thinking Once, Answering Twice](videoauto-r1_video_auto_reasoning_via_thinking_once_answering_twice.md)**
-
-:   Ours proposes VideoAuto-R1, a video understanding framework for "on-demand reasoning": it adopts an "answer once, think once, answer twice" (answer→think→answer) paradigm during training, and during inference, it decides whether to trigger CoT reasoning based on the confidence of the first answer. It maintains SOTA accuracy while compressing the average response length from 149 to 44 tokens (approx. 3.3x compression).
 
 **[VideoChat-M1: Collaborative Policy Planning for Video Understanding via Multi-Agent Reinforcement Learning](videochatm1_collaborative_policy_planning_for_vide.md)**
 
@@ -771,25 +775,13 @@ item_total: 179
 
 :   VideoSeek proposes a long-horizon video agent that utilizes video logical flow to actively "seek" key evidence rather than exhaustively parsing all frames. Through a think-act-observe loop and a multi-granularity toolkit (overview/skim/focus), it achieves a 10.2-point improvement over the base GPT-5 model on LVBench while reducing frame usage by 93%.
 
-**[VidTAG: Temporally Aligned Video to GPS Geolocalization with Denoising Sequence Prediction at a Global Scale](vidtag_temporally_aligned_video_to_gps_geolocalization_with_denoising_sequence_p.md)**
+**[VidPrism: Heterogeneous Mixture of Experts for Image-to-Video Transfer](vidprism_heterogeneous_mixture_of_experts_for_image-to-video_transfer.md)**
 
-:   VidTAG reformulates "video geolocalization" as a **frame-to-GPS coordinate retrieval** problem. By utilizing dual encoders (CLIP+DINOv2) for frame features, TempGeo for inter-frame temporal alignment, and GeoRefiner for trajectory denoising, it generates temporally coherent GPS trajectories on a global scale, achieving an approximate 20% improvement over GeoCLIP at the 1km threshold.
-
-**[VidTAG: Temporally Aligned Video to GPS Geolocalization](vidtag_video_gps_geolocalization.md)**
-
-:   Ours proposes VidTAG, a dual-encoder (CLIP+DINOv2) frame-to-GPS retrieval framework that achieves inter-frame temporal alignment via the TempGeo module and refines GPS predictions through the GeoRefiner encoder-decoder module, enabling temporally consistent frame-by-frame video geolocalization at a global scale.
+:   VidPrism transforms the Mixture-of-Experts in Image-to-Video (I2V) transfer from a "group of homogeneous generalists" into "heterogeneous experts specialized by temporal resolution." By utilizing content-aware multi-rate sampling to feed different rhythms of video streams to each expert and dynamic bidirectional interaction for information exchange between fast/slow paths, it achieves new SOTA results on K400/UCF-101/HMDB-51/SSv2 with lower computational costs.
 
 **[VirtueBench: Evaluating Trustworthiness under Uncertainty in Long Video Understanding](virtuebench_evaluating_trustworthiness_under_uncertainty_in_long_video_understan.md)**
 
 :   This paper proposes VirtueBench, the first long video understanding benchmark evaluating VLM trustworthiness under uncertainty. By constructing multi-level frame sampling for each video and labeling answerable/unanswerable ground truths, it reveals a widespread tendency among existing models to guess rather than honestly refuse.
-
-**[VISTA: Video Interaction Spatio-Temporal Analysis Benchmark](vista_video_interaction_spatio-temporal_analysis_benchmark.md)**
-
-:   VISTA decomposes spatio-temporal video grounding into a coarse-to-fine interaction taxonomy addressing "who is interacting, how, when, and where." By aggregating 6 datasets into ~12,000 video-query pairs, it provides hierarchical diagnostics for 11 VLMs, revealing systematic flaws masked by aggregate metrics, such as failure in intra-class entity disambiguation, syntactic template bias, and semantic-intent over-attribution.
-
-**[VRR-QA: Visual Relational Reasoning in Videos Beyond Explicit Cues](vrr-qa_visual_relational_reasoning_in_videos_beyond_explicit_cues.md)**
-
-:   This paper introduces the VRR-QA benchmark, containing 1K meticulously annotated video question-answer pairs specifically designed to test model capabilities in reasoning about implicit visual relations (e.g., off-screen events, cross-frame causality, and spatial inference). It reveals that current state-of-the-art VideoQA models (including GPT-O3) exhibit significant deficiencies in implicit reasoning—the best model achieves only 64% accuracy, far below the human performance of 83%.
 
 **[Wavelet-based Frame Selection by Detecting Semantic Boundary for Long Video Understanding](wavelet-based_frame_selection_by_detecting_semantic_boundary_for_long_video_unde.md)**
 
@@ -798,6 +790,10 @@ item_total: 179
 **[Weakly Supervised Video Anomaly Detection with Anomaly-Connected Components and Intention Reasoning](weakly_supervised_video_anomaly_detection_with_anomaly-connected_components_and_.md)**
 
 :   The LAS-VAD framework is proposed, utilizing an Anomaly-Connected Components (ACC) mechanism to group video frames into semantically consistent clusters for pseudo-label generation to mitigate the lack of frame-level annotations. It further incorporates an Intention Awareness Mechanism (IAM) leveraging position-velocity-acceleration features to distinguish between normal and abnormal behaviors with similar appearances, achieving 89.96% AP (I3D) on XD-Violence.
+
+**[WorldMM: Dynamic Multimodal Memory Agent for Long Video Reasoning](worldmm_dynamic_multimodal_memory_agent_for_long_video_reasoning.md)**
+
+:   This paper proposes WorldMM, a video reasoning agent based on multimodal memory. It constructs three complementary types of memory: episodic memory (multi-time-scale textual knowledge graph), semantic memory (continuously updated relational knowledge graph), and visual memory (frame-level retrieval library). Through an adaptive multi-round retrieval agent, it dynamically selects the most relevant memory sources and temporal granularities, outperforming the previous SOTA by an average of 8.4% across five long-video QA benchmarks.
 
 **[Your One-Stop Solution for AI-Generated Video Detection](your_one-stop_solution_for_ai-generated_video_detection.md)**
 

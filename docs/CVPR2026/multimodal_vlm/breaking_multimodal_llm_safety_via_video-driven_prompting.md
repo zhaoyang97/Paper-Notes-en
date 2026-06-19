@@ -94,6 +94,7 @@ Total ASR (%) comparison (Selected; (S) denotes image-stack version):
 Three conclusions: (1) Image-stack versions ((S)) are generally stronger than single-image versions, confirming video encoder vulnerability; (2) VideoJail-Pro is highly unstable; (3) SPTV achieves the highest ASR across all models, with a significant lead on closed-source models (GPT-4.1: 33.8%; Gemini-2.5: 30.0%).
 
 ### Ablation Study (Defense)
+
 | Defense | FigStep | FigStep (S) | SPTV |
 |------|------|------|------|
 | No Defense | 24.3 | 25.0 | 38.8 |

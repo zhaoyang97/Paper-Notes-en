@@ -90,6 +90,7 @@ Evaluation across 5 curricula: 4 linear systems + 1 Newton Sketch for logistic r
 Across all curricula, MCGS reduced playouts by 2–3× compared to MCTS. UCD outperformed UCT as compositional depth and reward sparsity increased.
 
 ### Ablation Study
+
 | Configuration | Key Phenomenon | Explanation |
 |------|---------|------|
 | Full Curriculum + MCGS+UCD | Newton Sketch 100% success | Complete framework |

@@ -88,6 +88,7 @@ Evaluation protocol: Four standard SPD tasks—Radar (3000 signals, 3 classes), 
 Compared to the classic SPDNet, CorNets show Gains of +5.15% / +17.69% / +6.58% / +13.79% across four datasets. They remain superior to GyroSPD++ (same architecture template). On the largest NTU120 dataset, CorNet-ECM/LECM are among the top-2 fastest methods (~12 s per epoch).
 
 ### Ablation Study
+
 | Configuration | Key Observation | Description |
 |------|---------|------|
 | Same metric for Conv and MLR (Tab. 3 diagonal) | Almost always optimal on HDM05/FPHA | Cross-metric mixing usually degrades performance; geometric consistency is vital |

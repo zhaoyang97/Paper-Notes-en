@@ -96,6 +96,7 @@ MTR-Bench is constructed based on a Wikipedia 2025-01 dump to prevent models fro
 | Overall | 39,896 | 4,987 | 15.33 | 87.52 | 8 | 5.61 |
 
 ### Ablation Study
+
 | Setting | Comp. | Q-E | A-E | Qual. | BGE R@5 | BGE R@20 |
 |------|-------|-----|-----|-------|---------|----------|
 | MTR-FINANCE | 4.50 | 4.54 | 4.70 | 4.91 | 0.37 | 0.50 |

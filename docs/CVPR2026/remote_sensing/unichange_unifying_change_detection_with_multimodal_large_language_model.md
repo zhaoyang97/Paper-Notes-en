@@ -108,6 +108,7 @@ SCD comparison on SECOND (including binary + semantic metrics):
 UniChange ranks **first across all five metrics** on SECOND. Notably, SeK (a rigorous metric for semantic discriminability that suppresses the influence of unchanged classes) jumped from the second-best 21.83 to 23.02, the most significant improvement—indicating that the advantage is greatest in the most difficult "semantic discrimination" dimension, rather than just binary localization.
 
 ### Ablation Study
+
 | Configuration | Key Indicator (WHU-CD IoU / S2Looking IoU) | Description |
 |---------------|-----------------------------------------|-------------|
 | Dual-temporal semantic supervision T1+T2 | 90.41 | Full configuration |

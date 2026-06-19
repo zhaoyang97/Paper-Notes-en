@@ -1,39 +1,33 @@
 ---
 title: >-
-  CVPR2026 Model Compression Papers · 129 Notes
+  CVPR2026 Model Compression Papers · 98 Notes
 description: >-
-  129 CVPR2026 papers in the Model Compression area, covering Model Compression, Compression, Multimodal/VLM, Diffusion Models, Knowledge Distillation, Object Tracking and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  98 CVPR2026 papers in the Model Compression area, covering Compression, Diffusion Models, Model Compression, Multimodal/VLM, Knowledge Distillation, Object Tracking and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "CVPR2026"
   - "Model Compression"
   - "AI paper notes"
   - "paper summaries"
   - "Compression"
-  - "Multimodal/VLM"
   - "Diffusion Models"
+  - "Multimodal/VLM"
   - "Knowledge Distillation"
   - "Object Tracking"
 item_list:
   - u: "4d_rgpt_toward_region_level_4d_understanding_via_perceptual_distillation/"
     t: "4D-RGPT: Toward Region-level 4D Understanding via Perceptual Distillation"
-  - u: "a_paradigm_shift_fully_end-to-end_training_for_temporal_sentence_grounding_in_vi/"
-    t: "A Paradigm Shift: Fully End-to-End Training for Temporal Sentence Grounding in Videos"
-  - u: "accelerating_streaming_video_large_language_models_via_hierarchical_token_compre/"
-    t: "Accelerating Streaming Video Large Language Models via Hierarchical Token Compression"
+  - u: "a_unified_framework_for_knowledge_transfer_in_bidirectional_model_scaling/"
+    t: "A Unified Framework for Knowledge Transfer in Bidirectional Model Scaling"
   - u: "adabet_gradient-free_layer_selection_for_efficient_training_of_deep_neural_netwo/"
     t: "AdaBet: Gradient-free Layer Selection for Efficient Training of Deep Neural Networks"
-  - u: "adapting_lightweight_image-based_counting_models_for_video_crowd_counting/"
-    t: "Adapting Lightweight Image-based Counting Models for Video Crowd Counting"
   - u: "adaptive_depth_lightweight_rgb-t_tracking_with_holistic_token_routing/"
     t: "Adaptive Depth Lightweight RGB-T Tracking with Holistic Token Routing"
   - u: "adaptive_video_distillation_mitigating_oversaturation_and_temporal_collapse_in_f/"
     t: "Adaptive Video Distillation: Mitigating Oversaturation and Temporal Collapse in Few-Step Generation"
   - u: "adasvd_singular_value_decomposition_with_adaptive_mechanisms_for_large_multimoda/"
     t: "AdaSVD: Singular Value Decomposition with Adaptive Mechanisms for Large Multimodal Models"
-  - u: "adversarial_concept_distillation_for_one-step_diffusion_personalization/"
-    t: "Adversarial Concept Distillation for One-Step Diffusion Personalization"
-  - u: "attention-aware_inference_optimizations_for_large_vision-language_models_with_me/"
-    t: "Attention-aware Inference Optimizations for Large Vision-Language Models with Memory-efficient Decoding"
+  - u: "back_to_source_open-set_continual_test-time_adaptation_via_domain_compensation/"
+    t: "Back to Source: Open-Set Continual Test-Time Adaptation via Domain Compensation"
   - u: "balanced_dataset_distillation_via_modeling_multiple_visual_pattern_distribution/"
     t: "Balanced Dataset Distillation via Modeling Multiple Visual Pattern Distribution"
   - u: "batch_loss_score_for_dynamic_data_pruning/"
@@ -54,57 +48,55 @@ item_list:
     t: "CAR-SAM: Cross-Attention Reconstruction for Post-Training Quantization of the Segment Anything Model"
   - u: "carlos_retrieval_via_concise_assessment_representation_of_loras_at_scale/"
     t: "CARLoS: Retrieval via Concise Assessment Representation of LoRAs at Scale"
-  - u: "co-me_confidence_guided_token_merging_for_visual_geometric_transformers/"
-    t: "Co-Me: Confidence Guided Token Merging for Visual Geometric Transformers"
-  - u: "coin_coverage_and_informativeness-guided_token_reduction_for_efficient_large_mul/"
-    t: "CoIn: Coverage and Informativeness-Guided Token Reduction for Efficient Large Multimodal Models"
   - u: "collaborative_multi-mode_pruning_for_vision-language_models/"
     t: "Collaborative Multi-Mode Pruning for Vision-Language Models"
   - u: "content-adaptive_hierarchical_hyperprior_for_neural_video_coding/"
     t: "Content-Adaptive Hierarchical Hyperprior for Neural Video Coding"
   - u: "continual_distillation_of_teachers_from_different_domains/"
     t: "Continual Distillation of Teachers from Different Domains"
-  - u: "core_compact_object-centric_representations_as_a_new_paradigm_for_token_merging_/"
-    t: "CORE: Compact Object-centric REpresentations as a New Paradigm for Token Merging in LVLMs"
   - u: "critical_patch-aware_sparse_prompting_with_decoupled_training_for_continual_lear/"
     t: "Critical Patch-Aware Sparse Prompting with Decoupled Training for Continual Learning on the Edge"
   - u: "cross-architecture_adaptation_cloud-edge_continual_test-time_adaptation_with_dyn/"
     t: "Cross-Architecture Adaptation: Cloud-Edge Continual Test-Time Adaptation with Dynamic Sampling and Heterogeneous Distillation"
-  - u: "cross-modal_knowledge_distillation_from_spatial_transcriptomics_to_histology/"
-    t: "Cross-Modal Knowledge Distillation from Spatial Transcriptomics to Histology"
+  - u: "cross-view_distillation_and_adaptive_masking_for_incomplete_multi-view_multi-lab/"
+    t: "Cross-View Distillation and Adaptive Masking for Incomplete Multi-View Multi-Label Classification"
   - u: "dage_dual-stream_architecture_for_efficient_and_fine-grained_geometry_estimation/"
     t: "DAGE: Dual-Stream Architecture for Efficient and Fine-Grained Geometry Estimation"
-item_total: 129
+  - u: "dataset_distillation_by_influence_matching/"
+    t: "Dataset Distillation by Influence Matching"
+  - u: "decompose_mix_adapt_a_unified_framework_for_parameter-efficient_neural_network_r/"
+    t: "Decompose, Mix, Adapt: A Unified Framework for Parameter-Efficient Neural Network Recombination and Compression"
+  - u: "discovering_adaptive_task_dependencies_for_efficient_multi-task_representation_c/"
+    t: "Discovering Adaptive Task Dependencies for Efficient Multi-Task Representation Compression"
+  - u: "distilling_balanced_knowledge_from_a_biased_teacher/"
+    t: "Distilling Balanced Knowledge from a Biased Teacher"
+  - u: "distributed_image_compression_with_multimodal_side_information_at_extremely_low_/"
+    t: "Distributed Image Compression with Multimodal Side Information at Extremely Low Bitrates"
+  - u: "dit-distill_open-set_fine-grained_retrieval_via_generative_curriculum_knowledge/"
+    t: "DiT-Distill: Open-Set Fine-Grained Retrieval via Generative Curriculum Knowledge"
+item_total: 98
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # 📦 Model Compression
 
-**📷 CVPR2026** · **129** paper notes
+**📷 CVPR2026** · **98** paper notes
 
 📌 **Same area in other venues:** [🧪 ICML2026 (100)](../../ICML2026/model_compression/index.md) · [💬 ACL2026 (59)](../../ACL2026/model_compression/index.md) · [🔬 ICLR2026 (100)](../../ICLR2026/model_compression/index.md) · [🤖 AAAI2026 (60)](../../AAAI2026/model_compression/index.md) · [🧠 NeurIPS2025 (140)](../../NeurIPS2025/model_compression/index.md) · [📹 ICCV2025 (52)](../../ICCV2025/model_compression/index.md)
 
-🔥 **Top topics:** Model Compression ×21 · Compression ×19 · Multimodal/VLM ×14 · Diffusion Models ×14 · Knowledge Distillation ×4
+🔥 **Top topics:** Compression ×15 · Diffusion Models ×9 · Model Compression ×8 · Multimodal/VLM ×4 · Knowledge Distillation ×3
 
 **[4D-RGPT: Toward Region-level 4D Understanding via Perceptual Distillation](4d_rgpt_toward_region_level_4d_understanding_via_perceptual_distillation.md)**
 
 :   This paper proposes 4D-RGPT and the Perceptual 4D Distillation (P4D) framework, which enhances 4D perception by distilling knowledge such as depth and optical flow from a frozen 4D perceptual expert model into an MLLM. It also introduces R4D-Bench, the first region-level 4D video question-answering benchmark.
 
-**[A Paradigm Shift: Fully End-to-End Training for Temporal Sentence Grounding in Videos](a_paradigm_shift_fully_end-to-end_training_for_temporal_sentence_grounding_in_vi.md)**
+**[A Unified Framework for Knowledge Transfer in Bidirectional Model Scaling](a_unified_framework_for_knowledge_transfer_in_bidirectional_model_scaling.md)**
 
-:   Proposes the first fully end-to-end temporal sentence grounding (TSGV) framework that dynamically modulates visual features by injecting sentence embeddings into intermediate backbone layers via a Sentence-Conditioned ADapter (SCADA), while accelerating training with a video-centric learning strategy to outperform SOTA on Charades-STA and ActivityNet.
-
-**[Accelerating Streaming Video Large Language Models via Hierarchical Token Compression](accelerating_streaming_video_large_language_models_via_hierarchical_token_compre.md)**
-
-:   To address the slow real-time deployment of streaming Video Large Language Models (Streaming VideoLLM), this paper proposes STC, a plug-and-play two-level token compression framework. STC-Cacher caches and reuses static features from adjacent frames during the ViT encoding stage, recomputing only dynamic tokens. STC-Pruner utilizes "spatio-temporal dual anchors" to prune redundant tokens before entering the LLM. STC maintains approximately 99% accuracy on ReKV while reducing ViT encoding latency by 24.5% and LLM pre-filling latency by 45.3%.
+:   BoT treats neural network weights as "continuous signals," where models of different sizes are simply discretized versions of the same signal at different resolutions. By applying 3D Discrete Wavelet Transform (DWT) for downsampling to achieve Large-to-Small (L2S) transfer and Inverse DWT (IDWT) with zero-padded high frequencies for upsampling to achieve Small-to-Large (S2L) transfer, it introduces the first **training-free, zero-parameter** framework that unifies cross-architecture knowledge transfer in both directions. It saves up to 67.1% of pre-training FLOPs on DeiT, BERT, and GPT.
 
 **[AdaBet: Gradient-free Layer Selection for Efficient Training of Deep Neural Networks](adabet_gradient-free_layer_selection_for_efficient_training_of_deep_neural_netwo.md)**
 
 :   This paper proposes AdaBet, a gradient-free layer selection method based on algebraic topology (the first Betti number $b_1$). By calculating the topological complexity of the activation space of each layer through only a forward pass, it determines which layers require fine-tuning without the need for labels, gradients, or backpropagation. On ResNet50/VGG16/MobileNetV2/ViT-B16, AdaBet achieves higher accuracy than full training with only 10% of layers fine-tuned, while reducing peak memory by approximately 40%.
-
-**[Adapting Lightweight Image-based Counting Models for Video Crowd Counting](adapting_lightweight_image-based_counting_models_for_video_crowd_counting.md)**
-
-:   This paper avoids adding any temporal modules to Video Crowd Counting (VCC). Instead, it analytically formulates the spatiotemporal prior—that "crowd count changes between adjacent frames should be bounded"—as a frequency-domain statistical regulator based on the Characteristic Function (ChF). This regulator constrains a lightweight Image Crowd Counting (ICC) model only during training, while inference remains single-frame. It achieves SOTA accuracy across six datasets while reaching an inference frame rate of 99.5 fps.
 
 **[Adaptive Depth Lightweight RGB-T Tracking with Holistic Token Routing](adaptive_depth_lightweight_rgb-t_tracking_with_holistic_token_routing.md)**
 
@@ -118,13 +110,9 @@ item_total: 129
 
 :   AdaSVD utilizes "alternating least squares to compensate for truncated singular matrices" and "adaptive compression rate allocation based on layer importance." These mechanisms significantly reduce accuracy loss in SVD-based Large Multimodal Models (LMMs) under high compression rates (60%+), consistently outperforming SVD-LLM across LLaMA2, OPT, Mistral, and Vicuna.
 
-**[Adversarial Concept Distillation for One-Step Diffusion Personalization](adversarial_concept_distillation_for_one-step_diffusion_personalization.md)**
+**[Back to Source: Open-Set Continual Test-Time Adaptation via Domain Compensation](back_to_source_open-set_continual_test-time_adaptation_via_domain_compensation.md)**
 
-:   OPAD is the first to address the one-step diffusion personalization (1-SDP) problem. Through joint teacher-student training, alignment loss, and adversarial supervision, it enables high-quality one-step concept generation and introduces a collaborative learning stage to mutually enhance both models using student-generated feedback.
-
-**[Attention-aware Inference Optimizations for Large Vision-Language Models with Memory-efficient Decoding](attention-aware_inference_optimizations_for_large_vision-language_models_with_me.md)**
-
-:   AttentionPack leverages the inherent low-rank observation of LVLM KV caches (especially vision tokens). It compresses the cache along the hidden dimension using SVD via "multi-head concatenation + modality separation" and employs an "attention-aware partial decompression" strategy based on cumulative attention scores to select ranks on-demand. Without significant performance loss, it reduces memory consumption to 1/5–1/8 of the original, supporting larger batches/longer contexts and achieving up to a 74% increase in decoding throughput.
+:   Aiming at the Open-set Continual Test-Time Adaptation (OCTTA) scenario where "continual domain drift" and "unknown novel classes" occur simultaneously, this paper proposes DOCO. The method first splits the current batch into ID-like and OOD-like subsets. It then learns a visual prompt on the ID samples to "pull" feature statistics back to the source domain. Finally, this prompt is directly reused for OOD samples in the same batch to strip away their domain shift and expose their semantic novelty. This three-step closed-loop mutual assistance achieves an H-score 4.7% higher than the second-best method on ImageNet-C.
 
 **[Balanced Dataset Distillation via Modeling Multiple Visual Pattern Distribution](balanced_dataset_distillation_via_modeling_multiple_visual_pattern_distribution.md)**
 
@@ -166,14 +154,6 @@ item_total: 129
 
 :   CARLoS bypasses metadata provided by LoRA authors. Instead, it "activates" each LoRA by generating images across a large set of prompt × seed pairs, computing the CLIP-space difference from the base model images. These are distilled into a tri-representation of "Direction / Strength / Consistency," enabling LoRA retrieval based on actual generative behavior rather than textual metadata. It outperforms four strong text-based retrieval baselines in both automated and human evaluations.
 
-**[Co-Me: Confidence Guided Token Merging for Visual Geometric Transformers](co-me_confidence_guided_token_merging_for_visual_geometric_transformers.md)**
-
-:   Co-Me equips visual geometric Transformers like VGGT and π3 with a lightweight "confidence predictor." It merges patch tokens that the network deems unimportant (low confidence) into a single token before passing them into the latter half of the network. This accelerates both attention and MLP without retraining or altering the backbone structure, achieving up to 21.5× speedup on VGGT with negligible accuracy loss.
-
-**[CoIn: Coverage and Informativeness-Guided Token Reduction for Efficient Large Multimodal Models](coin_coverage_and_informativeness-guided_token_reduction_for_efficient_large_mul.md)**
-
-:   This paper reformulates visual token reduction in large multimodal models (LMMs) as an "optimal subset selection" problem. It uses **informativeness** (visual saliency + cross-modal alignment) to score each token and **coverage** (log-det volume) to ensure the selected subset spans the feature space. A compact subset is then selected end-to-end via greedy submodular optimization—requiring no training, being independent of attention mechanisms, and compatible with FlashAttention/KV cache. On LLaVA-NeXT-7B, pruning 94.4% of visual tokens retains 86.7% performance with a 6.5× prefill speedup.
-
 **[Collaborative Multi-Mode Pruning for Vision-Language Models](collaborative_multi-mode_pruning_for_vision-language_models.md)**
 
 :   Addressing the simultaneous "parameter redundancy" and "token redundancy" in VLMs, CoMP introduces a Collaborative Importance Measure (CIM, eliminating interference between parameter and token pruning) and a Multi-mode Pruning Strategy (MPS, adaptively selecting the most cost-effective pruning mode at each step). It significantly outperforms single-mode methods at high pruning rates (e.g., leading by 3.51% in test accuracy on NLVR2 at a 0.85 pruning rate).
@@ -186,10 +166,6 @@ item_total: 129
 
 :   The paper proposes a new paradigm called "Continual Distillation (CD)" — where a student sequentially distills from **a stream of teachers who arrive one after another, belong to different domains, and are mutually invisible**. It identifies that distilling with "external data" (unseen by teachers) can transfer unseen domain knowledge (UKT), but sequential progression leads to the forgetting of this knowledge (UKF). Consequently, the authors propose SE2D (restricting self-distillation to external data) to alleviate forgetting and improve cross-domain average accuracy across multiple benchmarks.
 
-**[CORE: Compact Object-centric REpresentations as a New Paradigm for Token Merging in LVLMs](core_compact_object-centric_representations_as_a_new_paradigm_for_token_merging_.md)**
-
-:   CORE shifts the visual token compression of LVLMs from "merging individual tokens by feature similarity" to "merging by objects." By utilizing a built-in segmentation head to generate masks for each object, it performs weighted averaging of tokens within the same object into a single compact token, combined with centroid sorting to preserve spatial order. It achieves SOTA performance in fixed-rate compression across six benchmarks; under extreme compression, it maintains 97.4% of the baseline performance while retaining only 2.2% of tokens.
-
 **[Critical Patch-Aware Sparse Prompting with Decoupled Training for Continual Learning on the Edge](critical_patch-aware_sparse_prompting_with_decoupled_training_for_continual_lear.md)**
 
 :   The CPS-Prompt framework is proposed, which achieves approximately 1.6× improvement in training-time memory and computational efficiency for Prompt-based continual learning on edge devices through two modules: task-aware Critical Patch Sampling (CPS) and Decoupled Prompt-Classifier Training (DPCT), while only incurring an approximately 2% drop in accuracy.
@@ -198,9 +174,9 @@ item_total: 129
 
 :   Addressing the constraints of existing cloud-edge Continual Test-Time Adaptation (CTTA) which default to isomorphic CNNs, CAA enables the cloud to run a large ViT teacher while the edge runs a lightweight CNN student. Through a mechanism of "selective sample uploading via communication budget + cross-architecture heterogeneous distillation," it achieves heterogeneous synergistic adaptation, setting a new SOTA on ImageNet-C severity-5 with 41.2% mean accuracy while uploading the minimum number of samples.
 
-**[Cross-Modal Knowledge Distillation from Spatial Transcriptomics to Histology](cross-modal_knowledge_distillation_from_spatial_transcriptomics_to_histology.md)**
+**[Cross-View Distillation and Adaptive Masking for Incomplete Multi-View Multi-Label Classification](cross-view_distillation_and_adaptive_masking_for_incomplete_multi-view_multi-lab.md)**
 
-:   A frozen spatial transcriptomics (ST) teacher (NOLAN) supervises an H&E histology student on paired data, distilling molecularly defined "tissue niche" structures into an image-only student network. This allows the prediction of niche segmentations highly consistent with transcriptomics during inference using only H&E slides.
+:   To address multi-label classification with "dual missing of views and labels," this work utilizes a strong view as a teacher to distill knowledge into remaining weak views. Furthermore, a learnable binary gate is employed to mask views that remain unreliable after distillation. This approach consistently outperforms nine SOTA methods across six datasets.
 
 **[DAGE: Dual-Stream Architecture for Efficient and Fine-Grained Geometry Estimation](dage_dual-stream_architecture_for_efficient_and_fine-grained_geometry_estimation.md)**
 
@@ -213,10 +189,6 @@ item_total: 129
 **[Decompose, Mix, Adapt: A Unified Framework for Parameter-Efficient Neural Network Recombination and Compression](decompose_mix_adapt_a_unified_framework_for_parameter-efficient_neural_network_r.md)**
 
 :   CRISP factorizes pre-trained weights into a "frozen basis $B$ shared across layers + a learnable mixer $A$ private to each layer." Shrinking and sharing $B$ achieves Model Compression (MC), while freezing $B$ and tuning only $A$ achieves Parameter-Efficient Fine-Tuning (PEFT). This unified factor structure bridges two tasks previously handled separately. On VTAB-1K PEFT, it outperforms SOTA by 1.5% with fewer parameters; ViT compression exceeds SOTA by 1.5%, and the combined PEFT+MC setting outperforms existing baselines by over 1%.
-
-**[Differentiable Vector Quantization for Rate-Distortion Optimization of Generative Image Compression](differentiable_vector_quantization_for_rate-distortion_optimization_of_generativ.md)**
-
-:   RDVQ replaces the non-differentiable nearest neighbor indexing in vector quantization with a "distance-aware soft distribution," allowing rate loss gradients to flow back to the encoder. This achieves the first end-to-end rate-distortion joint optimization for VQ compression. Combined with a masked autoregressive entropy model, it obtains superior perceptual quality at ultra-low bitrates with less than 20% of the parameters of similar methods (saving up to 75.71% bitrate in DISTS on DIV2K-val compared to RDEIC).
 
 **[Discovering Adaptive Task Dependencies for Efficient Multi-Task Representation Compression](discovering_adaptive_task_dependencies_for_efficient_multi-task_representation_c.md)**
 
@@ -254,21 +226,29 @@ item_total: 129
 
 :   ConvNeur decouples the tasks of "global reasoning" and "preserving local details" into two independent branches: a convolutional branch dedicated to retaining local textural details, and a compressed "neural memory" branch that aggregates image-level context using a chunked approach with sub-quadratic complexity. A learned gating mechanism allows the global signal to **modulate** rather than overwrite local features. It achieves superior accuracy-efficiency tradeoffs on ImageNet/COCO/ADE20K with fewer FLOPs and parameters.
 
-**[Elastic Weight Consolidation Done Right for Continual Learning](elastic_weight_consolidation_done_right_for_continual_learning.md)**
-
-:   This paper systematically analyzes the fundamental flaws of EWC and its variants in weight importance estimation from a gradient perspective (gradient vanishing in EWC and redundant protection in MAS). It proposes an extremely simple Logits Reversal operation to correct the Fisher Information Matrix (FIM) calculation, significantly outperforming the original EWC and its variants in exemplar-free class-incremental learning and multimodal continual instruction tuning tasks.
-
 **[Enhancing Mixture-of-Experts Specialization via Cluster-Aware Upcycling](enhancing_mixture_of_experts_specialization_via_cluster_aware_upcycling.md)**
 
 :   This paper proposes Cluster-aware Upcycling, which initializes MoE expert and router parameters by extracting the semantic structure of dense models through spherical k-means clustering. This approach breaks expert symmetry and promotes early specialization. Combined with an Expert Ensemble Self-Distillation (EESD) loss, it consistently outperforms existing upcycling methods on CLIP ViT.
 
+**[Evidential Transformation Network: Turning Pretrained Models into Evidential Models for Post-hoc Uncertainty Estimation](evidential_transformation_network_post_hoc_uncertainty_estimation.md)**
+
+:   The paper proposes the Evidential Transformation Network (ETN), a lightweight post-hoc module that transforms pretrained classifiers or LLMs into evidential models by learning sample-dependent affine transformations in the logit space, achieving reliable uncertainty estimation with minimal computational overhead.
+
+**[F²HDR: Two-Stage HDR Video Reconstruction via Flow Adapter and Physical Motion Modeling](f2hdr_two-stage_hdr_video_reconstruction_via_flow_adapter_and_physical_motion_mo.md)**
+
+:   The authors propose F²HDR, a two-stage HDR video reconstruction framework. It employs a Flow Adapter to adapt general pre-trained optical flow to alternating exposure scenarios for robust alignment. It utilizes physical motion modeling to extract continuous motion masks from optical flow, guiding artifact removal in the second stage. It achieves SOTA performance on real HDR video benchmarks.
+
+**[FAAR: Efficient Frequency-Aware Multi-Task Fine-Tuning via Automatic Rank Selection](faar_efficient_frequency-aware_multi-task_fine-tuning_via_automatic_rank_selecti.md)**
+
+:   FAAR is proposed as a frequency-aware multi-task parameter-efficient fine-tuning method. It dynamically selects the optimal rank for each task and layer through Performance-Driven Rank Shrinking (PDRS) and enhances spatial awareness and cross-task consistency using the Task-Spectral Pyramidal Decoder (TS-PD) with FFT frequency information. It achieves superior performance with only 1/9 of the parameters compared to traditional fine-tuning.
+
+**[FAST: Topology-Aware Frequency-Domain Distribution Matching for Coreset Selection](fast_topology-aware_frequency-domain_distribution_matching_for_coreset_selection.md)**
+
+:   FAST reformulates "selecting a small core subset from a large dataset" as a **continuous distribution matching optimization problem under spectral graph constraints**. It uses **Characteristic Function Distance (CFD)** to match all moment information of the original dataset order-by-order in the frequency domain. Topological constraints are then applied to pull continuous solutions back to real discrete samples. Without relying on any proxy DNN, it achieves an average accuracy 9.12% higher than the Prev. SOTA, with a 96.57% reduction in energy consumption and 2.2× speedup on CPU.
+
 **[Fixed Anchors Are Not Enough: Dynamic Retrieval and Persistent Homology for Dataset Distillation](fixed_anchors_are_not_enough_dynamic_retrieval_and_persistent_homology_for_datas.md)**
 
 :   RETA decouples two failure modes of residual matching in dataset distillation (fit-complexity gap and pull-to-anchor effect). It adaptively selects real patch anchors via Dynamic Retrieval Connection (DRC) and preserves intra-class diversity through Persistent Topology Alignment (PTA), achieving 64.3% on ImageNet-1K ResNet-18 IPC=50 (+3.1% vs. FADRM).
-
-**[Flow Map Distillation Without Data](flow_map_distillation_without_data.md)**
-
-:   Conventional methods for distilling pretrained flow/diffusion teachers into "one-step" flow maps require sampling from external datasets, which this paper identifies as causing **Teacher-Data Mismatch** (where the data distribution differs from the teacher's true generation distribution). This work proposes sampling **exclusively from the prior noise** and using a "predictor-corrector" dual objective to keep the student on the teacher's vector field. This approach achieves FID scores of 1.45 and 1.49 on ImageNet 256/512 with a 1-NFE student, outperforming all data-based distillation baselines.
 
 **[FOZO: Forward-Only Zeroth-Order Prompt Optimization for Test-Time Adaptation](fozo_forward-only_zeroth-order_prompt_optimization_for_test-time_adaptation.md)**
 
@@ -298,29 +278,13 @@ item_total: 129
 
 :   HeSS proposes the Head Sensitivity Score to quantify the sensitivity of each attention head in the global attention layers of VGGT to sparsification. Based on this score, it redistributes the attention budget from insensitive heads to sensitive ones, significantly outperforming the uniform sparsification method SparseVGGT at high sparsity levels with almost no additional runtime overhead.
 
-**[Hi-Lo Prune: Look at What You'll Lose before Pruning with Hierarchical Token Selection](hi-lo_prune_look_at_what_youll_lose_before_pruning_with_hierarchical_token_selec.md)**
-
-:   To address the high inference cost caused by excessive visual tokens in Multimodal Large Language Models (MLLMs), this paper proposes a training-free pruning method, Hi-Lo Prune. Following the core philosophy of "look at what you'll lose before pruning," it employs a coarse-to-fine hierarchical selection to define a preserved token set and a "most valuable discarded token" candidate set. Prune-Aware Fusion then migrates information from the candidate set to the preserved set in shallow layers via augmented attention, followed by a one-time removal of remaining tokens at a designated layer. This approach consistently outperforms existing methods on Qwen2/2.5/3-VL and LLaVA, even when pruning 90% of tokens.
-
 **[HierAmp: Coarse-to-Fine Autoregressive Amplification for Generative Dataset Distillation](hieramp_coarse-to-fine_autoregressive_amplification_for_generative_dataset_disti.md)**
 
 :   Ours proposes HierAmp, which injects learnable category tokens into the coarse-to-fine generation process of Visual Autoregressive (VAR) models to identify semantically salient regions. By amplifying attention in these regions through positive logit bias, the distilled data achieves richer layout diversity at coarse scales and focuses on category-related details at fine scales, reaching SOTA performance on multiple dataset distillation benchmarks.
 
-**[How to Choose Your Teacher for Fine Grained Image Recognition](how_to_choose_your_teacher_for_fine_grained_image_recognition.md)**
+**[ID-Sim: An Identity-Focused Similarity Metric](id-sim_an_identity-focused_similarity_metric.md)**
 
-:   This work provides a large-scale empirical study on "which teacher to select for Knowledge Distillation (KD) in fine-grained recognition." Based on 1,216 experimental groups, the authors propose using the **raw logit ratio** $R_{12}$ of top-1/top-2 predictions as a teacher selection metric. $R_{12}$ outperforms metrics like "Teacher Accuracy" or "Secondary Class Probability Variance" in predicting final student accuracy, enabling student models to achieve up to a 17% absolute gain.
-
-**[HTTM: Head-wise Temporal Token Merging for Faster VGGT](httm_head-wise_temporal_token_merging_for_faster_vggt.md)**
-
-:   HTTM is a training-free token merging method specifically tailored for VGGT global attention layers. By employing "head-wise independent merging + temporal reordered in-block merging + cross-head adaptive outlier filtering," it accelerates long-sequence 3D reconstruction inference by up to $7\times$ with negligible performance degradation.
-
-**[Hybrid Token Compression for Vision-Language Models](hybrid_token_compression_for_vision-language_models.md)**
-
-:   Addressing the dilemma where "continuous compression loses semantics and discrete quantization loses details" when visual tokens are compressed to 1, HTC-VLM utilizes a dual-path decoupling of a continuous channel (ViT patches for details) and a discrete channel (MGVQ for 4 semantic anchors). Through a decoupled attention mask and a `<voco>` bottleneck, 580 tokens are compressed into 1, improving performance retention from 81.0% to 87.2% across 7 benchmarks.
-
-**[IF-Prune: Information-Flow Guided Token Pruning for Efficient Vision-Language Models](if-prune_information-flow_guided_token_pruning_for_efficient_vision-language_mod.md)**
-
-:   This paper proposes IF-Prune, which models visual token importance estimation as an amortized variational inference problem. Using a small VLM equipped with a token-level Variational Information Bottleneck (VIB), the KL divergence between the posterior and prior of each visual token latent variable is used as the importance score to prune the large VLM. Guidance is provided in a single forward pass. Even when retaining only 5% of visual tokens, the large model maintains 95% of its original performance, outperforming the previous SOTA by approximately 8%.
+:   This paper introduces ID-Sim—a feed-forward perceptual metric specifically designed to measure "identity consistency." It mimics human "selective sensitivity" (insensitive to contextual changes like background/pose/lighting, but highly sensitive to subtle identity changes). By training LoRA and dual-head MLPs on a frozen DINOv3 ViT-L using real and synthetic edited data, combined with a dual objective of global CLS contrastive and local patch Optimal Transport contrastive, it outperforms existing metrics in 48 out of 49 evaluation settings across 7 datasets, using 100× less annotated data and a smaller backbone.
 
 **[IMS3: Breaking Distributional Aggregation in Diffusion-Based Dataset Distillation](ims3_breaking_distributional_aggregation_in_diffusion-based_dataset_distillation.md)**
 
@@ -330,37 +294,17 @@ item_total: 129
 
 :   Addressing the pain points of the "bin generation" step scaling cubically with the number of intra-class samples and fixed patch dropping ratios being unable to adapt to sample redundancy, BGFDQ replaces expensive bin generation with lightweight KNN identification, uses neighbor-aware coreset selection to ensure coverage and remove redundancy, and adaptively selects dropping ratios for each image via semantic offset. This reduces complexity from $O(CM^3)$ to $O(CM^2)$, consistently outperforming SOTA across four classification benchmarks (up to +5% on CIFAR-100) and scaling to 200,000 samples per class where bin generation methods fail due to OOM.
 
-**[Learning through Creation: A Hash-Free Framework for On-the-Fly Category Discovery](learning_through_creation_a_hash-free_framework_for_on-the-fly_category_discover.md)**
-
-:   The LTC framework is proposed to generate pseudo-unknown class samples online using MKEE (Minimized Kernel Energy + Maximized Entropy) during the training phase. Combined with dual max-margin loss and adaptive thresholds, it achieves a 1.5%–13.1% all-class accuracy improvement across seven datasets, completely eliminating the damage to fine-grained semantics caused by hash encoding.
-
 **[LiDeRe: A Lightweight Readout for Fast and Data-Efficient Dense Prediction](lidere_a_lightweight_readout_for_fast_and_data-efficient_dense_prediction.md)**
 
 :   LiDeRe argues that for dense prediction tasks with limited data, rather than using Parameter-Efficient Fine-Tuning (PEFT) such as LoRA—which requires backpropagation through the entire backbone—it is superior to attach a carefully designed lightweight readout on top of a **frozen backbone**. By integrating a "learnable interpolation prior" and "content-guided attention" into a feature interpolation module, this approach often achieves parity with or surpasses PEFT methods in semantic segmentation, pose estimation, object detection, and boundary detection using fewer than 400,000 trainable parameters, while offering faster training and lower memory consumption.
-
-**[LIFT and PLACE: A Simple, Stable, and Effective Knowledge Distillation Framework for Lightweight Diffusion Models](lift_and_place_a_simple_stable_and_effective_knowledge_distillation_framework_fo.md)**
-
-:   Addressing the instability of training small diffusion students distilled from large teachers, this paper decomposes distillation error into "coarse-easy" (low-order moment mismatch) and "fine-hard" (non-linear residual) components using linear regression. It proposes LIFT for coarse-to-fine refinement and PLACE for spatial local adaptivity via group ranking. Under extreme 90% pruning (where the student has only 1.6% of teacher parameters), it brings the FID back to 15.73 from the 50–200+ seen in conventional KD.
-
-**[LiteVGGT: Boosting Vanilla VGGT via Geometry-aware Cached Token Merging](litevggt_boosting_vanilla_vggt_via_geometry-aware_cached_token_merging.md)**
-
-:   To address the quadratic complexity bottleneck of global attention in the 3D foundation model VGGT on long sequences, LiteVGGT proposes a "geometry-aware + cross-layer cached" token merging strategy. It preserves critical tokens based on geometric importance, merges redundant tokens into anchors, and reuses merging indices across layers. Coupled with fine-tuning and FP8 quantization, it achieves approximately 10× speedup compared to VGGT on 1000-image inputs with almost no performance degradation.
 
 **[LoPrune: Efficient Data Pruning for LoRA-Based Fine-Tuning of Vision Transformer](loprune_efficient_data_pruning_for_lora-based_fine-tuning_of_vision_transformer.md)**
 
 :   Addressing the overlooked "data redundancy" bottleneck in on-device LoRA fine-tuning, LoPrune proposes projecting sample influence functions onto the LoRA trainable subspace to calculate the TSA Score. By utilizing K-FAC curvature approximation for efficient single-epoch scoring, it reduces fine-tuning overhead by up to 72.9% and accelerates training by up to 3.69× on models like ViT/DeiT/Swin/DETR, while achieving accuracy gains of up to 3.50%.
 
-**[LS-ViT: Least-Squares Hessian Based Block Reconstruction for Low-Bit Post-Training Quantization of Vision Transformers](ls-vit_least-squares_hessian_based_block_reconstruction_for_low-bit_post-trainin.md)**
-
-:   LS-ViT reformulates the estimation of the "representative Hessian" in ViT block reconstruction as a least-squares problem—fitting a shared Hessian using $(g, \Delta z)$ pairs across the entire calibration set. This explicitly recovers the covariance terms lost by previous methods due to the "sample independence assumption," achieving new SOTA in ultra-low bits like W2/A3 and W2/A4. Each block requires only one backpropagation, making training 1.8–2.7x faster than FIMA-Q.
-
 **[MambaSIC: Mamba-based Stereo Image Compression with Bi-directional Multi-reference Entropy Model](mambasic_mamba-based_stereo_image_compression_with_bi-directional_multi-referenc.md)**
 
 :   MambaSIC replaces expensive cross-attention in stereo image compression with a linear-complexity Stereo Visual State Space Block (Stereo VSSB) for inter-view context transfer. Combined with a checkerboard-partitioned bi-directional multi-reference entropy model instead of spatial autoregression, it refreshes Rate-Distortion performance on InStereo2K / Cityscapes (improving BD-PSNR) while reducing latency to 1.26s (approximately $62\times$ faster than the SOTA BiSIC).
-
-**[MARVO: Marine-Adaptive Radiance-aware Visual Odometry](marvo_marine-adaptive_radiance-aware_visual_odometry.md)**
-
-:   Ours proposes the MARVO underwater visual odometry framework, which embeds a Physical-aware Radiance Adapter (PARA) into the LoFTR feature matcher to compensate for underwater wavelength attenuation. It combines GTSAM multi-sensor factor graph fusion with Reinforcement Learning Pose Graph Optimization (RL-PGO) to achieve robust localization in underwater scenes.
 
 **[Masking Teacher and Reinforcing Student for Distilling Vision-Language Models](masking_teacher_and_reinforcing_student_for_distilling_vision-language_models.md)**
 
@@ -374,14 +318,6 @@ item_total: 129
 
 :   MDPD proposes efficient fine-tuning through bidirectional knowledge distillation between a frozen backbone and a lightweight side network. The side network is discarded after training, achieving both parameter/memory efficiency during training and high speed during inference.
 
-**[Merge3D: Efficient 3D Multimodal LLMs via Joint 2D-3D Token Merging](merge3d_efficient_3d_multimodal_llms_via_joint_2d-3d_token_merging.md)**
-
-:   Merge3D introduces a semantic-geometric joint token merger (SemGeo Merger) for 3D video MLLMs with "2D semantic + 3D geometric" dual encoders. It uses 2D attention to select semantically salient main tokens and utilizes joint 2D×3D similarity to merge context tokens into spatial neighborhoods. While reducing visual tokens by up to 70% and achieving ~3× acceleration, it preserves performance in 3D grounding, description, and spatial reasoning.
-
-**[MeToM: Metadata-Guided Token Merging for Efficient Video LLMs](metom_metadata-guided_token_merging_for_efficient_video_llms.md)**
-
-:   MeToM utilizes "free" bitstream metadata from video codecs (residual energy, GoP packet size) as zero-cost proxies for spatio-temporal information density. It employs three modules—RPM, BTM, and MATM—to hierarchically merge visual tokens at "tokenization, pre-LLM, and intra-LLM" stages based on content complexity. Without any training, it achieves 2.65× end-to-end inference acceleration across multiple Video LLMs while maintaining or even improving accuracy.
-
 **[Mining Attribute Subspaces for Efficient Fine-tuning of 3D Foundation Models](mining_attribute_subspaces_for_efficient_fine-tuning_of_3d_foundation_models.md)**
 
 :   Aiming at 3D foundation models like VGGT, the authors extract a "shared LoRA subspace" for four types of 3D variations—texture, geometry, camera, and lighting—using controlled synthetic data. They demonstrate that these subspaces are approximately orthogonal. By concatenating them into a set of compact LoRA bases, efficient fine-tuning is achieved by training only a small middle matrix. This method achieves superior downstream accuracy on 3D face anti-spoofing, clothed human reconstruction, and transparent object reconstruction with significantly fewer parameters (approx. 4M vs. 16M for LoRA).
@@ -390,21 +326,9 @@ item_total: 129
 
 :   This paper identifies that using diffusion models for dataset distillation suffers from two types of distribution shifts: training-stage and sampling-stage shifts. It proposes a two-stage framework: during training, L1 sparse regularization (RSM) is used to force the diffusion model to learn a compact and sparse "distillation-aware" manifold; during sampling, greedy i.i.d. generation is replaced by synchronous denoising of the entire batch with Collaborative Guided Sampling (CGS), which integrates DPP diversity and distribution matching. The method achieves SOTA performance on ImageNet subsets and ImageNet-1K with lower computational cost.
 
-**[Model Merging on Loss Landscape: A Geometry Perspective](model_merging_on_loss_landscape_a_geometry_perspective.md)**
+**[Neural Differentiation in Deep Networks: A Theoretical Framework for Expressivity and Representational Diversity](neural_differentiation_in_deep_networks_a_theoretical_framework_for_expressivity.md)**
 
-:   This paper proposes EpiMer, which reformulates model merging as "calculating the Fréchet mean on a Riemannian manifold with the expected Hessian as the metric." By restricting the computation to a low-rank subspace spanned by task vectors, the curvature becomes exactly solvable. Theoretically, the merging error bound is decomposed into subspace variance and residual energy, and a closed-form criterion $\eta$ is derived to determine when curvature-aware merging is provably superior to flat geometric merging. Experimentally, EpiMer consistently outperforms the strongest flat baseline, TSV-M, across eight-task merging tasks using three CLIP-ViT backbones.
-
-**[NuWa: Deriving Lightweight Class-Specific Vision Transformers for Edge Devices](nuwa_deriving_lightweight_class-specific_vision_transformers_for_edge_devices.md)**
-
-:   Addressing the overlooked scenario where "edge devices only focus on specific classes," NuWa first employs Self-Knowledge Purification (SKP) to learn binary masks that remove "class-harmful weights." Subsequently, it formulates MHA/MLP pruning as closed-form optimization problems, enabling the derivation of smaller ViTs from large ones **without retraining**. These derived models achieve **higher accuracy** than the original on target classes while being faster, with pruning speeds 33.69× faster than state-of-the-art training-dependent methods and costs reduced by up to 99.83%.
-
-**[On the Robustness of Diffusion-Based Image Compression to Bit-Flip Errors](on_the_robustness_of_diffusion-based_image_compression_to_bit-flip_errors.md)**
-
-:   This work provides the first systematic study of the robustness of diffusion-based image compression under bit-flip errors. It discovers that diffusion compression methods based on Reverse Channel Coding (RCC) are naturally more error-resilient than traditional and learned codecs. The proposed Robust Turbo-DDCM variant further enhances robustness by independently encoding atom indices, maintaining high reconstruction quality even at a BER of $10^{-3}$.
-
-**[One Layer's Trash is Another Layer's Treasure: Adaptive Layer-wise Visual Token Selection in LVLMs](one_layers_trash_is_another_layers_treasure_adaptive_layer-wise_visual_token_sel.md)**
-
-:   Addressing the inference slowdown caused by excessive visual tokens in Large Vision-Language Models (LVLMs), ALVTS avoids the one-time permanent pruning used by methods like FastV. Instead, it **re-selects tokens at every decoding layer**. Using a lightweight selector with low-rank approximation to score all visual tokens, important tokens participate in layer computation while unimportant ones skip the current layer and merge back later. This mechanism preserves 96.7% of the original accuracy while compressing 89% of tokens.
+:   This paper proposes a mathematical framework for "neural differentiation," utilizing a unified **Neural Differentiation Index (NDI)** (integrating spectral diversity, entropy information, and second-order curvature sensitivity) to quantify the functional uniqueness of each neuron/channel. It provides provable error bounds for pruning; the resulting algorithm, NDP, achieves accuracies comparable to or exceeding the Prev. SOTA on MNIST, CIFAR-10, Tiny-ImageNet, and ImageNet at higher sparsity rates.
 
 **[OneSparse: A Unified Framework for Sparse Activation Layers in Vision Models](onesparse_a_unified_framework_for_sparse_activation_layers_in_vision_models.md)**
 
@@ -413,6 +337,10 @@ item_total: 129
 **[Parallax to Align Them All: An OmniParallax Attention Mechanism for Distributed Multi-View Image Compression](parallax_to_align_them_all_an_omniparallax_attention_mechanism_for_distributed_m.md)**
 
 :   This paper proposes the OmniParallax Attention Mechanism (OPAM) for Distributed Multi-View Image Compression (DMIC). By explicitly modeling correlations and aligned features between arbitrary view pairs via two-stage parallax attention, the constructed ParaHydra framework enables DMIC methods to significantly outperform SOTA MIC encoders for the first time while substantially reducing computational overhead.
+
+**[Perceptual Neural Video Compression with Color Separation and Rank Chain](perceptual_neural_video_compression_with_color_separation_and_rank_chain.md)**
+
+:   To address the issues of existing neural video compression focusing solely on PSNR, neglecting the human eye's perceptual differences between luma and chroma, and inconsistent perceptual quality under variable bitrates, this paper proposes PNVC-CR. This framework combines a "luma-chroma separated dual-codec framework (PNVC-C)" with "rate-rank chain adversarial optimization (Rc-GAN)," achieving BD-rate savings of 77.71% / 53.94% / 54.44% / 42.27% on perceptual metrics like LPIPS / DISTS / KID / FID relative to VTM, while maintaining objective fidelity.
 
 **[Phased DMD: Few-step Distribution Matching Distillation via Score Matching within Subintervals](phased_dmd_few-step_distribution_matching_distillation_via_score_matching_within.md)**
 
@@ -426,10 +354,6 @@ item_total: 129
 
 :   CompACT is proposed to compress each image into only 8 discrete tokens (approx. 128 bits). By freezing a pretrained visual encoder to preserve planning-critical semantic information and employing generative decoding to supplement perceptual details, it accelerates world model-based planning by ~40x without compromising accuracy.
 
-**[PPCL: Pluggable Pruning with Contiguous Layer Distillation for Diffusion Transformers](ppcl_pluggable_pruning_dit_distillation.md)**
-
-:   The PPCL framework is proposed for structured pruning of ultra-large Multi-Modal Diffusion Transformers (MMDiT, 8–20B parameters). It identifies substitutability via Linear Probes and automatically locates contiguous redundant layer intervals using CKA first-order differences. By employing non-sequential alternating distillation for dual-axis (depth and width) pruning, the method achieves a 50% parameter reduction and 1.8× inference acceleration on Qwen-Image 20B, with an average performance drop of only 2.61%.
-
 **[Preference-Aligned LoRA Merging: Preserving Subspace Coverage and Addressing Directional Anisotropy](preference-aligned_lora_merging_preserving_subspace_coverage_and_addressing_dire.md)**
 
 :   This paper revisits the LoRA merging problem from the perspectives of subspace coverage and directional anisotropy. It proposes the TARA-Merging framework, which preserves LoRA directions and performs direction-level reweighting using a preference-weighted cross-entropy pseudo-loss, consistently outperforming existing merging methods across 8 vision and 6 NLI benchmarks.
@@ -442,77 +366,41 @@ item_total: 129
 
 :   PriVi constructs a large-scale primate video pre-training dataset of 424 hours and performs **domain-level pre-training** (non-target dataset level) on V-JEPA. It demonstrates for the first time that domain-level pre-training for video models can generalize across datasets, outperforming specialized models with full fine-tuning on four primate behavior recognition benchmarks using a frozen classifier with only 220K parameters.
 
-**[ProGIC: Progressive and Lightweight Generative Image Compression with Residual Vector Quantization](progic_progressive_and_lightweight_generative_image_compression_with_residual_ve.md)**
-
-:   ProGIC represents image latents as the sum of sequentially quantized residuals through Residual Vector Quantization (RVQ). This enables coarse-to-fine progressive previews from partial bitstreams. Combined with a lightweight backbone consisting of depthwise separable convolutions and small attention modules, it achieves 57.57% (DISTS) and 58.83% (LPIPS) BD-rate savings on Kodak compared to MS-ILLM. It performs encoding and decoding over 10 times faster and is capable of running on CPU-only mobile devices.
-
 **[Progressive Supernet Training for Efficient Visual Autoregressive Modeling](progressive_supernet_training_for_efficient_visual_autoregressive_modeling.md)**
 
 :   VARiant identifies a "scale-depth asymmetric dependence" in Visual Autoregressive (VAR) models: early low-resolution scales are highly dependent on network depth, while later high-resolution scales are robust to depth reductions. Based on this, a 30-layer VAR is trained as a **weight-sharing elastic depth supernet** (early scales use the full network; late scales use 2–16 layer subnets). Using a three-stage dynamic ratio progressive training to break the fixed-ratio Pareto frontier, d16/d8 subnets achieve near-lossless performance on ImageNet (FID 2.05/2.15 vs. 1.95) while saving 40–65% GPU memory.
 
-**[Quant Experts: Token-aware Adaptive Error Reconstruction with Mixture of Experts for Large Vision-Language Models Quantization](quant_experts_token_aware_vlm_quantization.md)**
+**[QKD: Quantum-Gated Task-interaction Knowledge Distillation for Class-Incremental Learning](qkd_quantum_gated_incremental_learning.md)**
 
-:   Quant Experts (QE) is proposed, a token-aware adaptive quantization error reconstruction framework based on Mixture-of-Experts. It partitions important channels into two groups: token-independent (high-frequency, global) and token-dependent (low-frequency, local). These are compensated using low-rank adapters from shared and routed experts, respectively, to mitigate global and local quantization errors. QE consistently improves VLM performance across various quantization settings ranging from W4A6 to W3A16.
+:   QKD introduces quantum gating to class-incremental learning, modeling sample-task correlations in high-dimensional Hilbert space via parameterized quantum circuits. This guides cross-task knowledge distillation and inference-time adapter fusion, achieving SOTA performance across five benchmarks.
 
-**[QVGGT: Post-Training Quantized Visual Geometry Grounded Transformer](qvggt_post-training_quantized_visual_geometry_grounded_transformer.md)**
+**[Rank-Guided Pseudo-Bias Learning for Robust Black-Box Adaptation](rank-guided_pseudo-bias_learning_for_robust_black-box_adaptation.md)**
 
-:   Targeting the 1.26B parameter feed-forward 3D reconstruction model VGGT, this paper proposes QVGGT, a geometry-aware post-training quantization framework. By utilizing "block-wise sensitivity mixed precision + camera token filtering compensation + task-aware scale search," it achieves nearly lossless performance under W4A16 (CO3Dv2 camera pose AUC@30 89.4 vs. FP16 89.5), while reducing memory by 3–4.9× and providing up to 2.8× hardware speedup.
+:   PLD-Debias attaches a lightweight adapter to a completely frozen, parameter-invisible pre-trained vision encoder. It first "amplifies" latent spurious correlation directions via rank regularization and performs clustering to obtain pseudo-bias labels with 90%+ fidelity. Finally, it purifies representations using a dual loss approach of contrastive alignment and cluster-adaptive margins, achieving SOTA worst-group accuracy on CelebA, Waterbirds, and CMNIST without any group annotations.
 
-**[RDVQ: Differentiable Vector Quantization for Rate-Distortion Optimization of Generative Image Compression](rdvq_differentiable_vq_image_compression.md)**
+**[Real-Time Neural Video Compression with Unified Intra and Inter Coding](real-time_neural_video_compression_with_unified_intra_and_inter_coding.md)**
 
-:   RDVQ achieves end-to-end joint rate-distortion optimization for VQ-based image compression for the first time by introducing a differentiable relaxation of codebook distributions, obtaining superior or competitive perceptual quality at ultra-low bitrates with less than 20% of the parameters.
+:   To address the weak intra-coding capability of real-time neural video compression (e.g., DCVC-RT) during scene cuts or new content—which typically causes quality drops, bitrate spikes, and error propagation due to "periodic refresh" mechanisms—this paper proposes a single-model unified intra/inter coding approach. By using dual-frame compression and mixed reference training, the model adaptively switches between intra and inter modes based on reference reliability. It achieves an average bitrate saving of 12.1% (BD-rate) over DCVC-RT while maintaining real-time speed, a smaller model size, and eliminating the need for periodic refresh.
 
 **[ReFTA: Breaking the Weight Reconstruction Bottleneck in Tensorized Parameter-Efficient Fine-Tuning](refta_breaking_the_weight_reconstruction_bottleneck_in_tensorized_parameter-effi.md)**
 
 :   ReFTA stacks cross-layer weights into a third-order tensor and utilizes T-SVD to extract and fine-tune only the principal components. By leveraging the operator commutativity of tensor algebra, it swaps the order of "multiplication by $U_0^\top$" and "multiplication by input $X$." This entirely eliminates the redundant reconstruction of tensorized weights during forward and backward passes, achieving higher average accuracy in image classification and NLU with 96% fewer trainable parameters than LoRA.
 
-**[Rejection Mixing: Fast Semantic Propagation of Mask Tokens for Efficient DLLM Inference](rejection_mixing_fast_semantic_propagation_of_mask_tokens_for_efficient_dllm_inf.md)**
-
-:   ReMix inserts an iteratively refreshed "continuous mixed state" between the discrete "mask state $\rightarrow$ token state" transitions in Diffusion Language Models (DLLMs). This allows multiple positions in parallel decoding to coordinate in continuous space before finalizing tokens. By applying a rejection rule to reset unstable positions to masks, the method achieves a 2–8$\times$ inference speedup without training or performance degradation, frequently even improving accuracy.
-
-**[ResCa: Residual Caching for Diffusion Transformers Acceleration](resca_residual_caching_for_diffusion_transformers_acceleration.md)**
-
-:   ResCa is a training-free diffusion Transformer acceleration framework: it clusters tokens according to "historical denoising trajectories," performs real denoising only for one "proxy token" per cluster, and uses its calculated multi-order residuals to "simulate" the denoising of other tokens in the same cluster. This maintains a denoising direction that is both "self-representative and updated," achieving up to 5.5× GFLOPs acceleration on FLUX with nearly zero loss in image quality.
-
-**[Rethinking Asymmetric Quantization: Hidden Symmetry in Vision Model Weights](rethinking_asymmetric_quantization_hidden_symmetry_in_vision_model_weights.md)**
-
-:   The authors discover that vision model weights are approximately symmetric after removing a few outliers. Based on this, they propose DASQ—decomposing weights into a "dense symmetric kernel + sparse outliers," both represented by symmetric quantization (SymQ). This eliminates the expensive zero-point of asymmetric quantization (AsymQ). DASQ outperforms existing PTQ methods on ImageNet/COCO with lower BOPs and achieves higher accuracy and lower power consumption on FPGAs.
-
 **[Rethinking Dataset Distillation: Hard Truths about Soft Labels](rethinking_dataset_distillation_hard_truths_about_soft_labels.md)**
 
 :   This is an analysis paper with a "myth-busting" nature: the authors systematically prove that **the apparent lead of large-scale dataset distillation (DD) methods is primarily sustained by the use of soft labels during downstream training**. Once scalability analysis is performed across different label regimes, the advantage of high-quality subsets over random subsets nearly disappears. Based on this, they propose a compute-aware difficulty pruning metric **CAD-Prune** and a compute-aligned distillation method **CA2D**, which outperform existing DD methods across multiple IPC settings on ImageNet-1K.
-
-**[Rethinking Token Reduction for Large Vision-Language Models](rethinking_token_reduction_for_large_vision-language_models.md)**
-
-:   Aiming at multi-round visual question answering (MT-VQA) scenarios, this paper unifies visual token pruning and merging into a "learnable compression mapping $P$" and trains a meta-generator, MetaCompress, which relies solely on images and adapts to arbitrary resolutions to produce $P$. At a 90% compression rate, it consistently outperforms heuristic methods like FastV and PruMerge, with inference efficiency approaching the fastest equidistant sampling baseline.
-
-**[RL-ScanIQA: Reinforcement-Learned Scanpaths for Blind 360° Image Quality Assessment](rl-scaniqa_reinforcement-learned_scanpaths_for_blind_360image_quality_assessment.md)**
-
-:   This paper proposes RL-ScanIQA, the first end-to-end framework for Blind 360° Image Quality Assessment (BIQA) based on Reinforcement Learning (RL). The core idea is to model scanpath generation as a sequential decision process, using the PPO strategy to learn task-driven viewing policies directly from quality assessment feedback, rather than relying on imitation learning from human fixation data. The framework consists of a scanpath generator and a quality evaluator that are jointly optimized, supplemented by multi-level rewards (step-level exploration, ensemble diversity, and task-alignment perception) and distortion-space data augmentation. It achieves SOTA performance and superior cross-dataset generalization on three benchmarks: CVIQD, OIQA, and JUFE.
-
-**[S2D: Selective Spectral Decay for Quantization-Friendly Conditioning of Neural Activations](s2d_selective_spectral_decay_for_quantization-friendly_conditioning_of_neural_ac.md)**
-
-:   S2D attributes the root cause of activation outliers to a few "bloated" principal singular values of the weight matrix. By applying selective spectral decay only to these largest singular values during the fine-tuning stage, the model is conditioned into a "quantization-friendly" state without requiring retraining from scratch. W4A4 PTQ on ImageNet achieves gains of up to 7%.
 
 **[S2FT: Parameter-Efficient Fine-Tuning in Sparse Spectrum Domain](s2ft_parameter-efficient_fine-tuning_in_sparse_spectrum_domain.md)**
 
 :   Addressing the issue that Fourier-based PEFT incorrectly assumes the weight change $\Delta W$ has a sparse spectrum (when it is actually close to a power-uniform distribution), S2FT first estimates $\Delta W$ and then uses row-column permutation to find a reversible transformation that maps it to a latent matrix $\Delta\bar W$ with a truly sparse spectrum. By training only a few spectral coefficients in this sparse domain, it outperforms baselines like FourierFT with only 0.08% parameters.
 
-**[Saliency-Driven Token Merging for Vision Transformers](saliency-driven_token_merging_for_vision_transformers.md)**
-
-:   SAD-TM observes that existing token merging methods rely only on "current-layer" attention parameters, which fluctuate drastically across layers. It proposes a **cross-layer consistent** criterion using saliency (via backpropagation) to identify "saliency outlier" tokens that deviate from the global gradient direction. By fusing these with class attention and employing a "delayed merging" strategy that skips initial layers, it achieves almost lossless FLOPs reductions of 23%~45% on DeiT, MAE, and LV-ViT without training.
-
 **[Sampling-Aware Quantization for Diffusion Models](sampling-aware_quantization_for_diffusion_models.md)**
 
 :   This paper points out that the two acceleration paths for diffusion models—"fast samplers" and "network quantization"—conflict when used together: quantization noise perturbs the directional estimation of high-order samplers at each step, causing the smooth Probability Flow ODE to degrade into a variance-exploding SDE. The authors propose "Sampling-Aware Quantization," which uses a Mixed-Order Trajectory Alignment objective to align quantized first-order directional trajectories with full-precision high-order directional trajectories. This linearizes the probability flow, allowing for dual acceleration of "sampling speedup + model compression" under sparse steps with almost no quality degradation.
 
-**[SCoRe: Salience-Coverage Reduction for Vision Token Pruning in Vision-Language Models](score_salience-coverage_reduction_for_vision_token_pruning_in_vision-language_mo.md)**
+**[SANER: Switchable Adapter with Non-parametric Enhanced Routing for Person De-Reidentification](saner_switchable_adapter_with_non-parametric_enhanced_routing_for_person_de-reid.md)**
 
-:   SCoRe reformulates LVLM vision token pruning from a two-stage heuristic—"attention-based Top-k followed by post-hoc diversity"—into a unified "representativeness optimization problem." It proves this problem is equivalent to the classical weighted k-Center problem and adopts a composite score encoding both salience and coverage for greedy selection. Being training-free and plug-and-play, it retains 95% performance while pruning 94.4% of tokens.
-
-**[SegMo: Co-Designing Content-Aware Sparsity and Locally-Cohesive Segment Parallelism for Efficient VLM Inference](segmo_co-designing_content-aware_sparsity_and_locally-cohesive_segment_paralleli.md)**
-
-:   SegMo addresses the token explosion and $O(N^2)$ prefill bottleneck in long-video VLMs. Through "algorithm-system co-design," it jointly optimizes *what to compute* (Content-Aware Sparsity, CAS) and *how to compute* (Locally-Cohesive Segment Parallelism, LSP). Leveraging the "local cohesion" property of VLM attention, it segments videos by scenes for parallel execution with zero cross-GPU communication during prefill. This achieves up to 12.00% accuracy improvement and up to 3.55× prefill acceleration across three long-video benchmarks.
+:   SANER decouples the task of "selectively forgetting specific pedestrians" (De-ReID) from contradictory optimization in a single feature space into two independent low-rank adapters (forgetting / retention). It then utilizes a non-parametric test-time routing algorithm to determine the processing branch based on the similarity between queries and prototypes, effectively "forgetting" target identities with minimal impact on the identification accuracy of others.
 
 **[SelecTKD: Selective Token-Weighted Knowledge Distillation for LLMs](selectkd_selective_token-weighted_knowledge_distillation_for_llms.md)**
 
@@ -521,10 +409,6 @@ item_total: 129
 **[SG-LoRA: Semantic-guided LoRA Parameters Generation](sg-lora_semantic-guided_lora_parameters_generation.md)**
 
 :   SG-LoRA utilizes a textual task description as a "semantic bridge" to perform weighted aggregation of task semantics from a set of pre-trained expert LoRAs. It then directly samples and generates target LoRA parameters using a Conditional VAE (CVAE). This enables fine-tuning-free real-time model adaptation under conditions where **no target task data is available and the task space is open**, achieving or even surpassing the performance of task-specific fine-tuning (Oracle) in image-text retrieval.
-
-**[SODA: Sensitivity-Oriented Dynamic Acceleration for Diffusion Transformer](soda_sensitivity-oriented_dynamic_acceleration_for_diffusion_transformer.md)**
-
-:   SODA is proposed to achieve high-fidelity generation under controllable acceleration ratios for Diffusion Transformers without training, utilizing offline fine-grained sensitivity modeling, dynamic programming for interval optimization, and a unified adaptive pruning strategy.
 
 **[Streamlined Knowledge Distillation](streamlined_knowledge_distillation.md)**
 
@@ -586,17 +470,9 @@ item_total: 129
 
 :   Ours proposes UniComp, a video token compression framework based on informational uniqueness (rather than attention). By utilizing frame group fusion, token allocation, and spatial dynamic compression, it maximizes the preservation of unique information across temporal, spatial, and global dimensions. It outperforms uncompressed baselines even when retaining only 10% of tokens.
 
-**[Vision-Oriented Lightweight Neural Architecture Search with Budget-Adaptive Evaluation](vision-oriented_lightweight_neural_architecture_search_with_budget-adaptive_eval.md)**
+**[When Lines Meet Textures: Spatial-Frequency Aligned Diffusion Features for Cross-Sparsity Correspondence](when_lines_meet_textures_spatial-frequency_aligned_diffusion_features_for_cross-.md)**
 
-:   Addressing the dilemma between "accurate but slow training-based" and "fast but unreliable and family-specific training-free" NAS, this paper proposes six "vision-specific micro-tasks" with negligible training costs as architecture quality proxies. Combined with a quadratic response surface that automatically allocates data volume and training epochs within a given time budget, the method achieves SOTA rank correlation and final accuracy across CNN, Transformer, and Mamba families.
-
-**[VLM-PTQ: Efficient Post-Training Quantization for Large Vision-Language Models](vlm-ptq_efficient_post-training_quantization_for_large_vision-language_models.md)**
-
-:   VLM-PTQ observes two overlooked issues when migrating weight compensation quantization methods like GPTQ/GPTAQ to Vision-Language Models: "round-to-nearest" is sub-optimal under asymmetric targets, and vision/text channels are treated indiscriminately. The paper uses a closed-form correction term to shift the quantization target to the true optimum and redistributes channel weights using a modality-aware importance vector. This significantly improves 3-bit/2-bit quantization accuracy across 1B~72B VLMs with negligible overhead.
-
-**[VVS: Accelerating Speculative Decoding for Visual Autoregressive Generation via Partial Verification Skipping](vvs_accelerating_speculative_decoding_for_visual_autoregressive_generation_via_p.md)**
-
-:   VVS introduces "partial verification skipping" to speculative decoding (SD) for visual autoregressive generation for the first time. By utilizing verification-free token selection, stale feature cache reuse, and similarity-driven skip scheduling, it reduces the number of target model forward passes by up to 2.86× and achieves an end-to-end acceleration of 1.76× with minimal loss in image quality. This breaks the ceiling of SD where the "one draft, one verification" paradigm could not explicitly reduce the number of forward passes.
+:   To address the difficulty of establishing semantic keypoint correspondences between "sparse line sketches" and "texture-rich photos," this paper proposes SFA-DIFT. It first fine-tunes CleanDIFT via LoRA into a cross-modally unified "clean diffusion feature" to align the spatial domain, then utilizes a wavelet-based Low-Frequency Feature Aggregation (LoFFA) module to align the frequency domain. It achieves a new SOTA for PCK on the self-constructed MS-PSC6K benchmark.
 
 **[WPT: World-to-Policy Transfer via Online World Model Distillation](wpt_world-to-policy_transfer_via_online_world_model_distillation.md)**
 

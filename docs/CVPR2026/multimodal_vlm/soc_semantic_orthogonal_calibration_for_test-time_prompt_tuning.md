@@ -100,6 +100,7 @@ On four ImageNet distribution shift variants (ViT-L/14), SoC matches O-TPT accur
 | **Ours (SoC)** | **71.3** | **8.4** |
 
 ### Ablation Study
+
 | Configuration / Setup | Key Metric | Description |
 |------------|---------|------|
 | 1-step → 2-step gradient | ECE degrades 23% vs O-TPT 39% | O-TPT calibration collapses twice as fast, validating first-order analysis. |

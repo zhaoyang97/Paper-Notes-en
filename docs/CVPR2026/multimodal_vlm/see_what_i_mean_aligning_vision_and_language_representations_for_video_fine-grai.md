@@ -90,6 +90,7 @@ On the VideoRefer-Bench, SWIM (with pure text prompts) outperforms expert models
 SWIM remains competitive in general video understanding (MVBench 62.1, Video-MME 55.9), showing no sacrifice in generalization due to alignment training.
 
 ### Ablation Study
+
 | Experiment | Configuration | VideoRefer-D Avg. | Instruction |
 |------|------|-------------------|------|
 | Layers | Single [1] | 3.43 | Too shallow, weak alignment |

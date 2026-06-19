@@ -81,6 +81,7 @@ The initial offline training set contains 5,000 dialogues, with 5,000 samples ad
 ## Key Experimental Results
 
 ### Main Results
+
 | Dataset / Scenario | Metric | DuIVRS-2 | Comparison | Gain / Description |
 |--------|------|------|----------|------|
 | Offline Deffect | CR | 81.62% | DuIVRS-1: 72.20% | Significant gain in high-frequency natural distribution |
@@ -90,6 +91,7 @@ The initial offline training set contains 5,000 dialogues, with 5,000 samples ad
 | Online A/B | TSR | 83.9% | DuIVRS-1: 79.9%, Human: 89.6% | 4% increase over legacy, reaching 93.64% of human level |
 
 ### Ablation Study
+
 | Configuration | Avg CR | Description |
 |------|---------|------|
 | DuIVRS-2 | 77.18% | Full FSM Augmentation, CoT, Collaborative Iterative Learning |

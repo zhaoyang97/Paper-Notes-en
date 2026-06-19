@@ -102,6 +102,7 @@ A highlight is that at a 5.55× speedup, ImageReward remains higher than the ori
 Compatibility (Table 3): SVD-Cache can be stacked with quantization (FLUX.1-dev-int8, N=5 yields 0.9904 ImageReward, with PSNR/SSIM/LPIPS superior to the quantization baseline), step distillation (FLUX.1-schnell, N=3 yields 49.87× speedup and 0.9463 ImageReward, exceeding TaylorSeer/TeaCache at the same NFE), and sparse attention. It reaches a maximum total speedup of 29.01× on FLUX.1-schnell.
 
 ### Ablation Study
+
 | Configuration | Phenomenon | Explanation |
 |------|------|------|
 | Principal EMA + Residual Reuse (Full) | Optimal | Validates the divide-and-conquer design choice. |

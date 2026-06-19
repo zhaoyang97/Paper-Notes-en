@@ -86,6 +86,7 @@ Evaluated on OVO-Bench (644 videos, 0.5–30 mins) and StreamingBench (900 video
 Notably, Qwen2-VL with StreamRAG achieves a relative improvement of ~20%, closing the gap with dedicated streaming models like ViSpeak. Directly applying VideoRAG hurt performance due to irrelevant audio signals and noisy knowledge fusion.
 
 ### Ablation Study
+
 | Configuration | R-Avg | B-Avg | Note |
 |---------------|-------|-------|------|
 | KEA Only (KB) | 55.98 | 46.46 | Retrieval augmented KB only |

@@ -88,6 +88,7 @@ Full-image quality + text accuracy (OCR-A based on Levenshtein ratio, higher is 
 Ours also achieves the best cropped text region metrics. Notably, $\Delta$OCR-A (change in OCR accuracy relative to LR) is positive for Ours: Real-CE +2.5%, UZ-ST +1.3%. In contrast, almost all general SR methods show negative gains (e.g., SUPIR −37.0%, OSEDiff −38.0%), indicating they "damage text while enhancing the image."
 
 ### Ablation Study
+
 | Ablation Dimension | Configuration | OCR-A↑ | Description |
 |----------|------|--------|------|
 | UZ-ST Dataset | OSEDiff w/o → w/ | 22.8% → 28.9% | General models improve with UZ-ST fine-tuning |

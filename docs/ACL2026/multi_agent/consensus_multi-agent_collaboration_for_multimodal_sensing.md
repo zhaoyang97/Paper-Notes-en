@@ -82,6 +82,7 @@ ConSensus is a training-free method with no parameter updates or loss functions.
 ## Key Experimental Results
 
 ### Main Results
+
 | Method | WESAD | SleepEDF | ActionSense | MMFit | PAMAP2 | Avg. | Extra Fusion Tokens |
 |------|-------|----------|-------------|-------|--------|------|----------------|
 | Single-Agent | 0.793 | 0.519 | 0.577 | 0.819 | 0.551 | 0.652 | None |
@@ -96,6 +97,7 @@ ConSensus is a training-free method with no parameter updates or loss functions.
 ConSensus improves accuracy by an average of 7.1 percentage points over Single-Agent. While its accuracy is slightly lower than ReConcile's 0.727, it requires only one round of fusion, reducing aggregation tokens from ~78.6K to 6K—a 12.7x reduction in cost compared to typical multi-agent debate.
 
 ### Ablation Study
+
 | Experiment | Key Experimental Results | Explanation |
 |------|----------|------|
 | Semantic vs Statistical | Statistical Fusion Avg 0.722, Semantic Fusion Avg 0.707 | Statistical consensus is stronger overall, but optimal strategies vary by dataset. |

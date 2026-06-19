@@ -82,7 +82,7 @@ item_total: 37
 
 **🤖 AAAI2026** · **37** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (20)](../../CVPR2026/llm_reasoning/index.md) · [🧪 ICML2026 (63)](../../ICML2026/llm_reasoning/index.md) · [💬 ACL2026 (81)](../../ACL2026/llm_reasoning/index.md) · [🔬 ICLR2026 (82)](../../ICLR2026/llm_reasoning/index.md) · [🧠 NeurIPS2025 (81)](../../NeurIPS2025/llm_reasoning/index.md) · [📹 ICCV2025 (3)](../../ICCV2025/llm_reasoning/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (16)](../../CVPR2026/llm_reasoning/index.md) · [🧪 ICML2026 (63)](../../ICML2026/llm_reasoning/index.md) · [💬 ACL2026 (81)](../../ACL2026/llm_reasoning/index.md) · [🔬 ICLR2026 (82)](../../ICLR2026/llm_reasoning/index.md) · [🧠 NeurIPS2025 (81)](../../NeurIPS2025/llm_reasoning/index.md) · [📹 ICCV2025 (3)](../../ICCV2025/llm_reasoning/index.md)
 
 🔥 **Top topics:** Reasoning ×25 · LLM ×11 · Reinforcement Learning ×3 · Adversarial Robustness ×2 · Code Intelligence ×2
 

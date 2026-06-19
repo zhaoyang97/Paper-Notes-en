@@ -72,6 +72,7 @@ Unified Detector: All trackers use YOLOv11 as the detection backbone (1280×1280
 ## Key Experimental Results
 
 ### Dataset Statistical Comparison
+
 | Dataset | Task | Seq | BBox | Avg Frame | Avg Area Ratio |
 |--------|------|--------|------|----------|----------------|
 | VisDrone | UAV | 92 | 1621k | 417 | $2.58\times10^{-3}$ |
@@ -83,6 +84,7 @@ Unified Detector: All trackers use YOLOv11 as the detection backbone (1280×1280
 While DynUAV has fewer sequences, its **average (1828) and minimum (1076) frame counts are the highest**, emphasizing long-term continuity. The target area ratio is extremely small, making it a typical small-object benchmark.
 
 ### Tracker Performance on DynUAV (After Fine-tuning)
+
 | Tracker | MOTA↑ | IDF1↑ | HOTA↑ | AssA↑ | IDSW↓ |
 |--------|-------|-------|-------|-------|-------|
 | TrackTrack | 66.95 | **74.81** | **62.74** | **68.89** | **256** |
@@ -96,6 +98,7 @@ While DynUAV has fewer sequences, its **average (1828) and minimum (1076) frame 
 One-stage TrackTrack wins in most association metrics via unified matching across confidence levels. StrongSORT shows high DetA/MOTA but lags in AssA/IDF1, indicating its over-reliance on appearance features which degrade under DynUAV's motion blur. BoostTrack's aggressive strategy of generating pseudo-boxes backfires in dynamic scenes, causing high FP and fragmentation, while U2MOT's uncertainty modeling fails under extreme variations (IDSW 6452).
 
 ### Performance Drop (DynUAV relative to other benchmarks)
+
 | Tracker | vs MOT17 MOTA | vs MOT17 IDF1 | vs MOT20 MOTA | vs DanceTrack MOTA |
 |--------|---------------|----------------|----------------|---------------------|
 | BoostTrack | -23.98 | -18.43 | -20.98 | — |
@@ -107,6 +110,7 @@ One-stage TrackTrack wins in most association metrics via unified matching acros
 DynUAV shows the largest MOTA and IDF1 drops compared to MOT17/20. The MOTA drop is mainly due to detection failures caused by ego-motion and scale mutations; the IDF1 drop stems from trajectory fragmentation. Compared to DanceTrack, the MOTA drop is shocking (-31.51 for OC-SORT): while DanceTrack difficulties are association-centric, DynUAV's ego-motion systematically breaks the entire pipeline.
 
 ### CMC Ablation
+
 | Tracker | Configuration | MOTA↑ | IDF1↑ | AssA↑ | IDSW↓ |
 |--------|------|-------|-------|-------|-------|
 | AdapTrack | w/o CMC | 63.57 | 65.53 | 58.97 | 1123 |

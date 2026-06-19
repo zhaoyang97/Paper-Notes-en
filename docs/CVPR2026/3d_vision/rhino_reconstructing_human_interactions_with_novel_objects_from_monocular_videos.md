@@ -111,6 +111,7 @@ RHINO is the first to reconstruct H/O/S simultaneously. It drastically outperfor
 | **Ours** | **25.80** | **0.832** | **0.212** |
 
 ### Ablation Study
+
 | Configuration | Key Metrics | Note |
 |------|---------|------|
 | Obj Pose: SP+SG | CD 4.25 / F1 60.06 | Traditional keypoints are non-repeatable on low-texture objects |

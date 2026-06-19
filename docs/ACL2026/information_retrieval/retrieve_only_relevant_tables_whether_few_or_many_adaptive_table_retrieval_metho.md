@@ -77,6 +77,7 @@ ATR is trained only on Spider and BIRD training sets, making Spider 2.0 an impor
 ## Key Experimental Results
 
 ### Main Results
+
 | Dataset | Method | Precision | Recall | Complete Recall | F1 |
 |--------|------|-----------|--------|-----------------|----|
 | Spider | JAR w/ UAE, k=3 | 48.4 | 96.5 | 94.1 | 62.3 |
@@ -90,6 +91,7 @@ ATR is trained only on Spider and BIRD training sets, making Spider 2.0 an impor
 | Spider 2.0 | ATR w/ UAE | 19.9 | 75.4 | 68.7 | 26.7 |
 
 ### Ablation Study
+
 | Configuration | Spider R / CR | BIRD R / CR | Spider 2.0 R / CR | Description |
 |------|---------------|-------------|-------------------|------|
 | ATR | 99.5 / 99.2 | 98.2 / 96.0 | 72.4 / 64.4 | Full model |

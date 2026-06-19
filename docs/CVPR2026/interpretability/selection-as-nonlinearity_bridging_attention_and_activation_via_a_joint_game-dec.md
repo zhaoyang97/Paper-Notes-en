@@ -105,6 +105,7 @@ CSaN consistently improves performance with only ~5% extra cost, allowing smalle
 | Hiera-Tiny-Plus | CSaN | 29.1M | 4.9G | **82.4** (≈0.56× Params match Base) |
 
 ### Ablation Study
+
 | Config | Architecture | #Params | Top-1 (%) | Description |
 |------|------|---------|-----------|------|
 | Swin-Original | Swin-Tiny | 28.3M | 81.3 | Baseline |

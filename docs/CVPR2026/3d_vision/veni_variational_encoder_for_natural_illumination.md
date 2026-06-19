@@ -86,6 +86,7 @@ Reconstruction quality on the RENI++ test set (PSNR/SSIM/LPIPS in tone-mapped LD
 At low dimensions ($D=27$), Ours (opt) improves PSNR from 18.02 to 20.33 (+2.3 dB). At higher dimensions, Ours (opt) consistently outperforms RENI++.
 
 ### Uniqueness & Scalability
+
 | Latent Dim D | Uniqueness↓ RENI++ | Uniqueness↓ Ours | Recon. Consistency↑ RENI++ | Recon. Consistency↑ Ours |
 |--------------|--------------------|------------------|---------------------------|-------------------------|
 | 27 | 1.46 | **0.04** | 0.17 | **0.50** |
@@ -95,6 +96,7 @@ At low dimensions ($D=27$), Ours (opt) improves PSNR from 18.02 to 20.33 (+2.3 d
 Uniqueness measures the MSE between the reconstruction of the midpoint of two optimized latent codes for the same image vs. the reconstruction of the first code (lower is better). VENI suppresses the uniqueness error from 1.46 to 0.04 at $D=27$.
 
 Data scaling experiment (Table 3, StreetLearn):
+
 | Data Scale | RENI++ | Ours (AE) | Ours (opt) |
 |------------|--------|-----------|------------|
 | 1,500 | 20.11 | 16.00 | 20.99 |
@@ -103,6 +105,7 @@ Data scaling experiment (Table 3, StreetLearn):
 RENI++ performance drops from 20.11 to 17.14 as data increases, while VENI's AE forward pass improves, validating the scalability of the VAE.
 
 ### Ablation Study
+
 | Configuration | PSNR@27 | PSNR@147 | PSNR@300 |
 |---------------|---------|----------|----------|
 | Ours (Full) | 18.78 | 19.40 | 19.47 |

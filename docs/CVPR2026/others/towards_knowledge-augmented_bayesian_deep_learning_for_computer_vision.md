@@ -107,6 +107,7 @@ Two tasks: image classification with semi-synthetic knowledge (feature importanc
 On Rotated MNIST, this method improved accuracy from 51% (BANANA) to 95%, exposing the flaw of "frozen priors" in BANANA. In 3D hand reconstruction, KC dropped from 2.08 to 0.02, and EJ improved by nearly 60% relative to BANANA.
 
 ### Ablation Study
+
 | Configuration | Key Metric | Description |
 |------|---------|------|
 | Ours (Full) | DecoyMNIST ACC 98.37 / KC 0.00 | Informative Prior + Adaptive Likelihood |

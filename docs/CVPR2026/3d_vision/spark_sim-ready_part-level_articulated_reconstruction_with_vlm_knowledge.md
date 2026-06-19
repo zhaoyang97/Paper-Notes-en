@@ -34,6 +34,7 @@ SPARK starts from a single RGB image, using a VLM to parse coarse URDF parameter
 **Core Idea**: Use VLM priors (part maps, structure graphs, and open-state maps) to guide kinematic-aware part generation in a Diffusion Transformer, then refine joint parameters via differentiable forward kinematics under the supervision of the open-state map—dividing labor between "semantic structure reasoning" and "geometric/numerical generation."
 
 ## Method
+
 ### Overall Architecture
 The input is a single closed-state image $I_0$, and the output is a global mesh $M$ composed of part-level meshes $\{M_k\}_{k=1}^{K}$, along with hierarchical URDF parameters $u=\{u_\ell, u_j\}$ (where $u_\ell$ represents link nodes and $u_j$ contains joint type $u_j^{type}$, axis $u_j^{axis}$, origin $u_j^{origin}$, and limit $u_j^{limit}$). The pipeline consists of three stages: first, VLM-based structure reasoning produces coarse URDF, part reference images, and an open-state image; second, a Diffusion Transformer with multi-layer attention synthesizes part and global meshes and generates textures; finally, differentiable forward kinematics refine joint parameters under open-state image supervision.
 

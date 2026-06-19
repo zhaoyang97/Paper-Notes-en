@@ -100,6 +100,7 @@ Comparison of 8 memory-augmented baselines across different LLM backends:
 While classical optimization methods achieve comparable Phys. scores, they require ~100 calls/q (two orders of magnitude higher budget), and Succ. is either 0 (NN Predictor) or relies on brute force (Random Search 92.9%). SkillPCF achieves 60–82% success with only 1.02 calls/q.
 
 ### Ablation Study
+
 | Configuration | Key Contribution | Note |
 |---|---|---|
 | Full SkillPCF | Physics-guided skill + Evolution + Delayed Reward | Full model, Succ. 60–82% |

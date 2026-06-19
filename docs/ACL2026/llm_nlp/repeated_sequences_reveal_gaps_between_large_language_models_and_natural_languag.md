@@ -68,6 +68,7 @@ This is a purely analytical method with no training process. All analyses are pe
 ## Key Experimental Results
 
 ### Dataset Scale
+
 | Dataset | Quantity | Average Length (Chars) |
 |--------|------|-----------------|
 | gpt-3.5turbo | 100 | 35,045 ± 2,287 |
@@ -77,6 +78,7 @@ This is a purely analytical method with no training process. All analyses are pe
 | nl (matched to GPT lengths) | 100 each | Corresponding match |
 
 ### Main Results
+
 | Comparison | $\beta$ Difference | $\gamma$ Difference | p-value |
 |------|-------------|-------------|------|
 | gpt-5 vs nl-5 | GPT significantly larger | GPT significantly larger | ≈0 |

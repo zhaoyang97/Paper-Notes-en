@@ -61,6 +61,7 @@ All models utilize the native flow matching action diffusion loss of π0.5 for m
 ## Key Experimental Results
 
 ### Main Results (Average SR% for representative variants across 16 tasks)
+
 | Model Category | Variant (Memory + Integration) | Avg SR (%) |
 |------|------|------|
 | Memoryless Baseline | π0.5 | 17.93 |
@@ -77,6 +78,7 @@ All models utilize the native flow matching action diffusion loss of π0.5 for m
 | Human Reference | Human | 90.50 |
 
 ### Ablation Study (FrameSamp + Modul vs π0.5 Baseline by Suite)
+
 | Suite (Representative Task) | π0.5 Baseline | FrameSamp + Modul | Gain |
 |------|---------|---------|---------|
 | Counting (StopCube) | 6.67 | 42.00 | +35.3 |

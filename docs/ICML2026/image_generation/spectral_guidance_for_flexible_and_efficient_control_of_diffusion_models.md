@@ -107,6 +107,7 @@ Efficiency comparison (CelebA-HQ, DDIM 100 steps, batch=1):
 | End-to-end | Total time for 10k imgs / h | 5.3 | 22.5 | **16.9** |
 
 ### Ablation Study
+
 | Configuration | Key Metric | Description |
 |---|---|---|
 | Full ($K=512$, sweep $\kappa$) | Acc-FID Pareto | Significantly outperforms all training-free baselines, approaching classifier guidance. |

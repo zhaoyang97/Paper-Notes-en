@@ -101,6 +101,7 @@ Average gains in combined and unseen distortions (aggregated across three datase
 Meta-FC outperforms SRD across all five models and all three scenarios. The improvements for SepMark and MBRS on combined distortions are particularly significant (+12.79 / +7.92), suggesting that meta-learning and feature consistency yield higher returns in challenging scenarios where SRD fails.
 
 ### Ablation Study
+
 | Configuration | High Intensity | Combined | Unseen | Description |
 | :--- | :--- | :--- | :--- | :--- |
 | Full Meta-FC | 95.93 | 92.65 | 90.93 | — |

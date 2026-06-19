@@ -93,6 +93,7 @@ It also achieves the best results on the public Real-World-Challenge deblurring 
 | **See-NeRF** | **32.70** | **.9564** | **.1574** |
 
 ### Ablation Study (HDR / Deblurring, Key Configurations)
+
 | Config | Change | Real HDR PSNR↑ | Real-Challenge LPIPS↓ |
 |------|------|----------------|------------------------|
 | See-NeRF (Full) | — | Best | .1574 |

@@ -93,6 +93,7 @@ Background metrics focus on fidelity (MSE/PSNR/SSIM/LPIPS), while foreground met
 On images, stage 2 leads in background reconstruction (PSNR 36.20) and foreground alignment (CLIP 0.7774, DINO 0.4516, DreamSim 0.8184, and lowest Foreground LPIPS 0.6181). For video, it achieves optimal background reconstruction and significantly improves foreground alignment, with temporal stability (EWarp 1.4248) comparable to stage 1 (1.3510). User preference scores show a massive lead (0.74–0.89) over the next best methods (~0.5).
 
 ### Ablation Study (Training Pipeline, Table 3)
+
 | Config | Reference Side | Structural Condition | Foreground DINO↑ | Foreground LPIPS↓ | GLCM↑ | GPT-5↑ |
 |--------|----------------|----------------------|------------------|-------------------|-------|--------|
 | Ab-1   | w/o Jigsaw | Canny | 0.1859 | 0.7674 | 0.7006 | 2.10 |

@@ -95,6 +95,7 @@ Evaluated on SketchGraphs (693k training, 38.5k test, 6-bit quantization).
 The model achieves state-of-the-art accuracy and a 0% invalid rate. Cross-dataset evaluation (CAD as a Language) confirms robustness, with ACC_skt at 14.1 vs. 7.96 for the runner-up.
 
 ### Ablation Study
+
 | Configuration | ACC_skt | F1 | IR | Note |
 |------|---------|-----|-----|------|
 | Full Model | 45.6 | 59.2 | 0 | - |

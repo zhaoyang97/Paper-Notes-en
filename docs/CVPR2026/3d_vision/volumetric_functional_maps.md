@@ -91,6 +91,7 @@ Comparing "pure surface functional maps" with the "volumetric version" across 4 
 Conclusion: The volumetric version is consistently more accurate on VOL / SHREC'19 / TOPKIDS. SHREC'20 (strong non-isometry + topological changes) is the exception where Orthoprods worsened, as topological errors from tetrahedralization pollute the basis—switching to CMH bases (using coordinates as regularization) brings errors back down (55.49% success on SHREC'20 with CMH). Slowdown is highly correlated with the vertex ratio, indicating the volumetric pipeline is not inherently slow, but slower due to the increased vertex count.
 
 ### Connectivity Transfer: Flips Decay Elegantly as Spectrum Increases (Tab. 1)
+
 | Method | 5% Eigen. | 10% | 15% | 20% | Time(s) |
 |------|---------|-----|-----|-----|---------|
 | Transfer (LBO) | 4.63% | 1.50% | 1.18% | 0.93% | 1127 |

@@ -107,6 +107,7 @@ Evaluation covers expert chart datasets (EvoChart-QA, ChartQA, ChartQA-Pro, Char
 SketchVL-3B improves over the base by +15.32 on ChartQA and +3.76 on ChartBench. Performance gains on non-chart datasets (MathVista/MMStar) demonstrate that FinePO strengthens specialized capabilities while maintaining general generalization.
 
 ### Ablation Study (Based on SketchVL-3B)
+
 | Configuration | EvoChart-QA | ChartQA | PlotQA | Description |
 |------|------|------|------|------|
 | Full Model | 47.28 | 77.20 | 48.32 | Complete model |

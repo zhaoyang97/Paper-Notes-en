@@ -91,6 +91,7 @@ Skyra is compared against binary detectors (AIGVDet/DeMamba/NSG-VD), general MLL
 Skyra-RL outperforms the best binary detector (DeMamba) by 26.73% in accuracy and 17.27% in F1. Cross-domain testing on GenVideo shows that with only 2.2K unannotated samples and 1 epoch of RL, Skyra can adapt to new domains significantly better than competitors.
 
 ### Ablation Study
+
 | Configuration | Acc | Recall | F1 | Note |
 |------|-----|--------|-----|------|
 | Skyra-RL (Full) | 91.02 | 88.35 | 90.27 | Full Model |

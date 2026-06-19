@@ -72,6 +72,7 @@ Both stages freeze the Whisper encoder and Qwen3 base, updating the adapter, TI-
 ## Key Experimental Results
 
 ### Main Results
+
 | Model | Fr→En BLEU / ASR-BLEU | De→En BLEU / ASR-BLEU | Es→En BLEU / ASR-BLEU | Avg BLEU | Avg ASR-BLEU |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | RosettaSpeech | 33.11 / 32.16 | 23.22 / 21.54 | 30.92 / 29.35 | 29.08 | 27.68 |
@@ -80,6 +81,7 @@ Both stages freeze the Whisper encoder and Qwen3 base, updating the adapter, TI-
 | Whisper-Qwen S2TT ref | 35.15 / - | 36.07 / - | 38.39 / - | 36.54 | - |
 
 ### Ablation Study
+
 | Configuration | Avg BLEU | Avg ASR-BLEU | Description |
 | :--- | :--- | :--- | :--- |
 | S2ST-Omni 2 | 37.73 | 35.00 | Full typological conditions |

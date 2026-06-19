@@ -84,6 +84,7 @@ Systematic evaluation of 40+ open/closed-source MLLMs on IF-Bench (unified proto
 GenViP consistently improves infrared understanding across various MLLMs, reporting a maximum **relative improvement of approximately 7%** on IF-Bench, allowing some models to surpass closed-source models like Doubao-Seed-Vision-1.6 and Gemini-2.5-Pro.
 
 ### Ablation Study
+
 | Observation Dimension | Conclusion |
 |-----------------------|------------|
 | Model Scale | Scaling up consistently improves infrared understanding (e.g., InternVL3 1B→2B: 43.0→65.6). |

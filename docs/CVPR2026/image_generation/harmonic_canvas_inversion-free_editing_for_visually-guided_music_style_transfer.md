@@ -83,6 +83,7 @@ The backbone is 1.5B (MAA3) with 46.2M additional adapter parameters. Training i
 Data: MeLBench and MusicCaps are merged into $\langle \text{Image } I, \text{Text } T, \text{Music } M \rangle$ triplets. Demucs is used to remove vocals, leaving only instrumentals. LLM-assisted labeling covers 16 genres with unified captions. Metrics: FAD/FD (alignment with target style), IMSM (image-music cross-modal consistency), F0-PCC / CCS (melody/harmony fidelity), and subjective OVL/REL/MOScon.
 
 ### Main Results
+
 | Method | Modality (T/I) | FAD↓ | FD↓ | IMSM↑ | F0-PCC↑ | CCS↑ | MOScon↑ |
 |------|------|------|------|------|------|------|------|
 | MAA3 | T | 4.23 | 29.77 | - | - | - | 86.47 |
@@ -94,6 +95,7 @@ Data: MeLBench and MusicCaps are merged into $\langle \text{Image } I, \text{Tex
 Ours ranks first across all metrics. Compared to generative methods (MusicGen/TANGO), which synthesize from scratch, this method performs **direct transformation**, leading to superior structural metrics (F0-PCC/CCS). Compared to inversion-based MST (MusicTI/ZETA), chroma constraints provide significantly higher pitch stability.
 
 ### Ablation Study
+
 | Configuration | FAD↓ | FD↓ | IMSM↑ | Notes |
 |------|------|------|------|------|
 | Text only | 3.15 | 25.38 | - | Lacks fine-grained style cues |

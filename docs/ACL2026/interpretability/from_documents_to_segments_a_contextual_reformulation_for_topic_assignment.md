@@ -89,6 +89,7 @@ This paper does not propose an end-to-end neural training loss but focuses on ta
 ## Key Experimental Results
 
 ### Main Results
+
 | Comparison | Domain | DBTA | SBTA | Conclusion |
 |------------|--------|------|------|------------|
 | DB Index ↓ | Laptop | 20.1768 | 6.2767 | SBTA clusters are tighter |
@@ -101,6 +102,7 @@ This paper does not propose an end-to-end neural training loss but focuses on ta
 | XB Index ↓ | Restaurant | 1233.5519 | 12.1985 | Segment-level assignment drastically reduces topic contamination |
 
 ### Ablation Study
+
 | Task / Metric | Method | Laptop | Restaurant | Description |
 |---------------|--------|--------|------------|-------------|
 | Label-based F1 ↑ | LDA | 0.3577 | 0.4512 | Traditional topic models are weaker |

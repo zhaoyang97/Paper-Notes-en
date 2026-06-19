@@ -1,8 +1,8 @@
 ---
 title: >-
-  CVPR2026 Object Detection Papers · 118 Notes
+  CVPR2026 Object Detection Papers · 97 Notes
 description: >-
-  118 CVPR2026 papers in the Object Detection area, covering Object Detection, Anomaly Detection, Few-/Zero-Shot Learning, Multimodal/VLM, 3D Object Detection, Reasoning and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  97 CVPR2026 papers in the Object Detection area, covering Object Detection, Anomaly Detection, Few-/Zero-Shot Learning, Multimodal/VLM, Reasoning, 3D Object Detection and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "CVPR2026"
   - "Object Detection"
@@ -11,23 +11,23 @@ tags:
   - "Anomaly Detection"
   - "Few-/Zero-Shot Learning"
   - "Multimodal/VLM"
-  - "3D Object Detection"
   - "Reasoning"
+  - "3D Object Detection"
 item_list:
   - u: "a_closer_look_at_cross-domain_few-shot_object_detection_fine-tuning_matters_and_/"
     t: "A Closer Look at Cross-Domain Few-Shot Object Detection: Fine-Tuning Matters and Parallel Decoder Helps"
   - u: "a_semantically_disentangled_unified_model_for_multi-category_3d_anomaly_detectio/"
     t: "A Semantically Disentangled Unified Model for Multi-category 3D Anomaly Detection"
-  - u: "adseeker_a_knowledge-grounded_reasoning_framework_for_industry_anomaly_detection/"
-    t: "ADSeeker: A Knowledge-Grounded Reasoning Framework for Industry Anomaly Detection and Reasoning"
   - u: "akcmamba-yolo_selective_state_space_models_for_real-time_object_detection/"
     t: "AKCMamba-YOLO: Selective State Space Models For Real-Time Object Detection"
-  - u: "anomaly-related_residual_fields_for_cross-domain_anomaly_detection/"
-    t: "Anomaly-Related Residual Fields for Cross-domain Anomaly Detection"
+  - u: "anomaly_as_non-conformity_via_training-free_graph_laplacian_energy_minimization/"
+    t: "Anomaly as Non-Conformity via Training-Free Graph Laplacian Energy Minimization"
   - u: "anomalyvfm_--_transforming_vision_foundation_models_into_zero-shot_anomaly_detec/"
     t: "AnomalyVFM -- Transforming Vision Foundation Models into Zero-Shot Anomaly Detectors"
   - u: "ar2-4fv_anchored_referring_and_re-identification_for_long-term_grounding_in_fixe/"
     t: "AR²-4FV: Anchored Referring and Re-identification for Long-Term Grounding in Fixed-View Videos"
+  - u: "audio-sync_video_instance_editing_with_granularity-aware_mask_refiner/"
+    t: "Audio-sync Video Instance Editing with Granularity-Aware Mask Refiner"
   - u: "back_to_point_exploring_point-language_models_for_zero-shot_3d_anomaly_detection/"
     t: "Back to Point: Exploring Point-Language Models for Zero-Shot 3D Anomaly Detection"
   - u: "balanced_hierarchical_contrastive_learning_with_decoupled_queries_for_fine-grain/"
@@ -52,39 +52,39 @@ item_list:
     t: "Bridge: Basis-Driven Causal Inference Marries VFMs for Domain Generalization"
   - u: "bussard_normalizing_flows_for_bijective_universal_scene-specific_anomalous_relat/"
     t: "BUSSARD: Normalizing Flows for Bijective Universal Scene-Specific Anomalous Relationship Detection"
-  - u: "can_a_second-view_image_be_a_language_geometric_and_semantic_cross-modal_reasoni/"
-    t: "Can a Second-View Image Be a Language? Geometric and Semantic Cross-Modal Reasoning for X-ray Prohibited Item Detection"
   - u: "cd-buffer_complementary_dual-buffer_framework_for_test-time_adaptation_in_advers/"
     t: "CD-Buffer: Complementary Dual-Buffer Framework for Test-Time Adaptation in Adverse Weather Object Detection"
   - u: "chal_causal-guided_hierarchical_anomaly-aware_learning_for_moving_infrared_small/"
     t: "CHAL: Causal-guided Hierarchical Anomaly-aware Learning for Moving Infrared Small Target Detection"
-  - u: "compagent_an_agentic_framework_for_visual_compliance_verification/"
-    t: "CompAgent: An Agentic Framework for Visual Compliance Verification"
   - u: "complementary_prototype_mapping_for_efficient_multimodal_anomaly_detection/"
     t: "Complementary Prototype Mapping for Efficient Multimodal Anomaly Detection"
   - u: "consistency_beyond_contrast_enhancing_open-vocabulary_object_detection_robustnes/"
     t: "Consistency Beyond Contrast: Enhancing Open-Vocabulary Object Detection Robustness via Contextual Consistency Learning"
-  - u: "cops_conditional_prompt_synthesis_for_zero-shot_anomaly_detection/"
-    t: "CoPS: Conditional Prompt Synthesis for Zero-Shot Anomaly Detection"
   - u: "crossvl_complexity-aware_feature_routing_and_paired_curriculum_for_cross-view_vi/"
     t: "CrossVL: Complexity-Aware Feature Routing and Paired Curriculum for Cross-View Vision-Language Detection"
-  - u: "d2fanet_enhancing_video_object_detection_with_dual-domain_feature_aggregation_ne/"
-    t: "D2FANet: Enhancing Video Object Detection with Dual-Domain Feature Aggregation Network"
   - u: "da-mamba_learning_domain-aware_state_space_model_for_global-local_alignment_in_d/"
     t: "DA-Mamba: Learning Domain-Aware State Space Model for Global-Local Alignment in Domain Adaptive Object Detection"
-  - u: "defect_cue-preserved_structural_feature_refinement_for_few-shot_anomaly_detectio/"
-    t: "Defect Cue-Preserved Structural Feature Refinement for Few-Shot Anomaly Detection"
-item_total: 118
+  - u: "detect_anything_via_next_point_prediction/"
+    t: "Detect Anything via Next Point Prediction"
+  - u: "detecting_unknown_objects_via_energy-based_separation/"
+    t: "Detecting Unknown Objects via Energy-Based Separation for Open World Object Detection"
+  - u: "distribution-aligned_multimodal_fusion_for_robust_object_detection/"
+    t: "Distribution-Aligned Multimodal Fusion for Robust Object Detection"
+  - u: "does_yolo_really_need_to_see_every_training_image_in_every_epoch/"
+    t: "Does YOLO Really Need to See Every Training Image in Every Epoch?"
+  - u: "dyfclt_dynamic_frequency-decoupled_cross-modal_learning_transformer_for_multimod/"
+    t: "DyFCLT: Dynamic Frequency-Decoupled Cross-Modal Learning Transformer for Multimodal Tiny Object Detection"
+item_total: 97
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # 🎯 Object Detection
 
-**📷 CVPR2026** · **118** paper notes
+**📷 CVPR2026** · **97** paper notes
 
 📌 **Same area in other venues:** [🧪 ICML2026 (6)](../../ICML2026/object_detection/index.md) · [🔬 ICLR2026 (14)](../../ICLR2026/object_detection/index.md) · [🤖 AAAI2026 (29)](../../AAAI2026/object_detection/index.md) · [🧠 NeurIPS2025 (27)](../../NeurIPS2025/object_detection/index.md) · [📹 ICCV2025 (28)](../../ICCV2025/object_detection/index.md)
 
-🔥 **Top topics:** Object Detection ×42 · Anomaly Detection ×31 · Few-/Zero-Shot Learning ×18 · Multimodal/VLM ×11 · 3D Object Detection ×7
+🔥 **Top topics:** Object Detection ×38 · Anomaly Detection ×19 · Few-/Zero-Shot Learning ×13 · Multimodal/VLM ×10 · Reasoning ×5
 
 **[A Closer Look at Cross-Domain Few-Shot Object Detection: Fine-Tuning Matters and Parallel Decoder Helps](a_closer_look_at_cross-domain_few-shot_object_detection_fine-tuning_matters_and_.md)**
 
@@ -94,17 +94,13 @@ item_total: 118
 
 :   The SeDiR framework is proposed to achieve semantically disentangled unified 3D anomaly detection through three modules: Coarse-to-Fine Global Tokenization (CFGT), Category-Conditional Contrastive Learning (C3L), and Geometric-Guided Decoder (GGD). It addresses the Inter-Category Entanglement (ICE) problem and outperforms SOTA by 2.8% and 9.1% AUROC on Real3D-AD and Anomaly-ShapeNet, respectively.
 
-**[ADSeeker: A Knowledge-Grounded Reasoning Framework for Industry Anomaly Detection and Reasoning](adseeker_a_knowledge-grounded_reasoning_framework_for_industry_anomaly_detection.md)**
-
-:   ADSeeker is a large-scale pre-training-free, plug-and-play industrial anomaly detection (IAD) assistant. It injects domain-specific knowledge into a general MLLM using the first visual document knowledge base SEEK-M&V and a multimodal retrieval framework Q2K RAG. Combined with an AD Expert that fuses defect localization/discrimination information into visual tokens and a Hierarchical Sparse Prompt (HSP) to extract type-level defect features, it achieves SOTA in zero-shot anomaly detection and MMAD anomaly reasoning across 12 industrial and medical datasets.
-
 **[AKCMamba-YOLO: Selective State Space Models For Real-Time Object Detection](akcmamba-yolo_selective_state_space_models_for_real-time_object_detection.md)**
 
 :   This paper integrates Selective State Space Models (Mamba/SSM) and adaptive kernel convolutions into YOLOv8. By replacing the C2f blocks in the backbone and neck with 3CAKCMamba and 4CAKCMamba modules, it compensates for the "short-range" limitation of standard convolutions while maintaining linear complexity and real-time speed. On COCO2017, the model achieves 46.3% mAP with 14.9G FLOPs (a 1.4% mAP improvement with 47.9% fewer FLOPs compared to YOLOv8-S).
 
-**[Anomaly-Related Residual Fields for Cross-domain Anomaly Detection](anomaly-related_residual_fields_for_cross-domain_anomaly_detection.md)**
+**[Anomaly as Non-Conformity via Training-Free Graph Laplacian Energy Minimization](anomaly_as_non-conformity_via_training-free_graph_laplacian_energy_minimization.md)**
 
-:   Addressing the challenge that diffusion model residuals are noisy and magnitudes alone cannot distinguish anomalies, this paper proposes Residual Evolution Fields (REF). It separates "persistent non-stationary anomaly signals" from the spatio-temporal trajectories of residuals in the diffusion reverse process. Cross-domain Field Alignment (CFA) is then employed to transfer detectors trained on labeled source domains to unlabeled target domains, achieving an average AUROC of 95.22% across 9 cross-domain tasks, outperforming the strongest baseline by 13 percentage points.
+:   ANoCo redefines anomaly detection from "how similar is this patch to normal ones" to "**how much cost is required to pull this patch back to the normal manifold**." By minimizing an anchored bipartite graph Laplacian energy to pull query patches toward the normal manifold, the **displacement magnitude itself** serves as the anomaly score. This approach requires no training, no message passing, and provides a closed-form solution, achieving new SOTA results on MVTec-AD / VisA in 1/2/4-shot settings.
 
 **[AnomalyVFM -- Transforming Vision Foundation Models into Zero-Shot Anomaly Detectors](anomalyvfm_--_transforming_vision_foundation_models_into_zero-shot_anomaly_detec.md)**
 
@@ -113,6 +109,10 @@ item_total: 118
 **[AR²-4FV: Anchored Referring and Re-identification for Long-Term Grounding in Fixed-View Videos](ar2-4fv_anchored_referring_and_re-identification_for_long-term_grounding_in_fixe.md)**
 
 :   Ours leverages the time-invariance of background structures in fixed-view videos to construct an offline Anchor Bank and an online Anchor Map as persistent language-scene memory. Combined with anchor-guided re-entry priors and a ReID-Gating identity verification mechanism, it achieves robust target re-capture after occlusion or departure, improving RCR by 10.3% and reducing RCL by 24.2%.
+
+**[Audio-sync Video Instance Editing with Granularity-Aware Mask Refiner](audio-sync_video_instance_editing_with_granularity-aware_mask_refiner.md)**
+
+:   AVI-Edit performs "audio-visual synchronized instance-level video editing" on a pre-trained video diffusion backbone. It utilizes a **Granularity-Aware Mask Refiner** to progressively refine rough user-provided masks (even bounding boxes) into precise instance contours, paired with a **Self-Feedback Audio Agent** (a separate-generate-remix-rework pipeline) to produce accompanying audio temporally aligned with the edited visuals. It significantly outperforms existing methods in visual quality, condition following, and audio-visual synchronization.
 
 **[Back to Point: Exploring Point-Language Models for Zero-Shot 3D Anomaly Detection](back_to_point_exploring_point-language_models_for_zero-shot_3d_anomaly_detection.md)**
 
@@ -162,10 +162,6 @@ item_total: 118
 
 :   The authors propose BUSSARD, the first learning-based method for scene-specific anomalous relationship detection. It utilizes pre-trained language model embeddings for scene graph triplets, dimensionality reduction via an autoencoder, and likelihood estimation through normalizing flows. It achieves an AUROC improvement of approximately 10% on the SARD dataset and exhibits robustness to synonym variations.
 
-**[Can a Second-View Image Be a Language? Geometric and Semantic Cross-Modal Reasoning for X-ray Prohibited Item Detection](can_a_second-view_image_be_a_language_geometric_and_semantic_cross-modal_reasoni.md)**
-
-:   This paper proposes a paradigm that treats the "second-view image (side-view) as a language modality." It introduces the first dual-view multi-modal security benchmark, DualXrayBench, and the GSXray dataset featuring `<top>/<side>/<conclusion>` Chain-of-Thought (CoT) supervision. The resulting GSR model improves overall accuracy from 53.5 to 65.4 across eight cross-view reasoning tasks, nearly doubling the mIoU.
-
 **[CD-Buffer: Complementary Dual-Buffer Framework for Test-Time Adaptation in Adverse Weather Object Detection](cd-buffer_complementary_dual-buffer_framework_for_test-time_adaptation_in_advers.md)**
 
 :   The CD-Buffer framework is proposed, which achieves robust test-time object detection adaptation across varying adverse weather severities by driving the complementary collaboration of a subtractive buffer (channel suppression) and an additive buffer (lightweight adapter compensation) through a unified domain discrepancy metric.
@@ -173,10 +169,6 @@ item_total: 118
 **[CHAL: Causal-guided Hierarchical Anomaly-aware Learning for Moving Infrared Small Target Detection](chal_causal-guided_hierarchical_anomaly-aware_learning_for_moving_infrared_small.md)**
 
 :   This work inverts "moving infrared small target detection" from "direct learning of weak target features" to "learning normal background patterns and treating targets as anomalies within the background." By utilizing spatio-temporal neural fields for background evolution modeling, hierarchical anomaly awareness (appearance anomaly → motion consistency verification), and causal backdoor adjustment to sever background confusion paths, the method achieves new SOTA performance on three infrared datasets.
-
-**[CompAgent: An Agentic Framework for Visual Compliance Verification](compagent_an_agentic_framework_for_visual_compliance_verification.md)**
-
-:   Proposes CompAgent, the first agentic framework for visual compliance verification. A Planning Agent dynamically selects visual tools (object detection, face analysis, NSFW detection, etc.) based on compliance policies. A Compliance Verification Agent integrates images, tool outputs, and policy contexts for multimodal reasoning, outperforming SOTA on UnsafeBench by 10% (achieving 76% F1) without training.
 
 **[Complementary Prototype Mapping for Efficient Multimodal Anomaly Detection](complementary_prototype_mapping_for_efficient_multimodal_anomaly_detection.md)**
 
@@ -186,29 +178,13 @@ item_total: 118
 
 :   This paper discovers that open-vocabulary detectors output features that drift significantly when the same object appears in different backgrounds (background overfitting). It proposes the CCL framework, which utilizes diffusion models to generate paired "same-object-different-background" samples (CBDG) and enforces background invariance through an intra-class contrastive consistency loss (CCLoss). This approach achieves gains of +16.3 AP on OmniLabel and +14.9 AP on D3 with zero additional inference overhead and model-agnostic properties.
 
-**[CoPS: Conditional Prompt Synthesis for Zero-Shot Anomaly Detection](cops_conditional_prompt_synthesis_for_zero-shot_anomaly_detection.md)**
-
-:   This paper proposes the CoPS framework, which dynamically generates prompts through two visual conditioning mechanisms—Explicit State Token Synthesis (ESTS) and Implicit Category Token Sampling (ICTS). Combined with Spatial-Aware Global-local Alignment (SAGA), it achieves SOTA results for zero-shot anomaly detection across 13 industrial and medical datasets.
-
 **[CrossVL: Complexity-Aware Feature Routing and Paired Curriculum for Cross-View Vision-Language Detection](crossvl_complexity-aware_feature_routing_and_paired_curriculum_for_cross-view_vi.md)**
 
 :   To address the "cross-view gap" where Vision-Language Models (VLMs) perform strongly in ground views but poorly in aerial views, CrossVL introduces a **Complexity-aware Pathway Aggregation (CPA)** module that routes visual features based on scene density (**active only during training with zero inference overhead**) and a **Paired Curriculum Learning (PCL)** strategy that transitions from paired to random sampling. CrossVL improves Florence-2's mAP on the MAVREC aerial dataset from 58.66% to 61.03%, reduces the ground-aerial gap from 8.63pp to 6.65pp, and decreases variance across random seeds by 3.3×.
 
-**[D2FANet: Enhancing Video Object Detection with Dual-Domain Feature Aggregation Network](d2fanet_enhancing_video_object_detection_with_dual-domain_feature_aggregation_ne.md)**
-
-:   D2FANet introduces **frequency-domain feature aggregation** to video object detection for the first time. It employs a frequency-domain branch (Octave convolution for high/low frequency decomposition + cross-scale neighborhood fusion + frequency temporal attention) and a spatio-temporal branch (adaptive token aggregation guided by importance maps) to enhance object queries independently. The concatenated queries are fed into the detection head, achieving 91.8% mAP with Swin-Base on ImageNet VID with the fastest inference speed.
-
 **[DA-Mamba: Learning Domain-Aware State Space Model for Global-Local Alignment in Domain Adaptive Object Detection](da-mamba_learning_domain-aware_state_space_model_for_global-local_alignment_in_d.md)**
 
 :   The authors propose DA-Mamba, a CNN-SSM hybrid architecture that achieves image-level and instance-level global-local domain-invariant feature alignment with linear complexity via two modules: Image-Aware SSM (IA-SSM) and Object-Aware SSM (OA-SSM). It achieves SOTA performance on four domain adaptive detection benchmarks.
-
-**[Defect Cue-Preserved Structural Feature Refinement for Few-Shot Anomaly Detection](defect_cue-preserved_structural_feature_refinement_for_few-shot_anomaly_detectio.md)**
-
-:   This paper identifies that the core difficulty in few-shot anomaly detection (FSAD) lies in the "dilution" of subtle defect cues layer-by-layer within deep feature extraction pipelines. It proposes DCP-SFR: first using learnable prompts to "amplify" early weak signals into high-contrast anomaly cue maps, then using these maps to guide reconstruction-based localization, and finally performing structural-aware boundary refinement. It achieves an image-level AUROC of 97.3% and a pixel-level AUROC of 98.2% on MVTec AD and VisA.
-
-**[DetAny4D: Detect Anything 4D Temporally in a Streaming RGB Video](detany4d_detect_anything_4d_temporally_in_a_streaming_rgb_video.md)**
-
-:   DetAny4D defines "continuous 3D bounding box prediction in streaming RGB videos" as a 4D detection task. It utilizes an end-to-end open-vocabulary framework (SAM + DINO + UniDepth features + Causal Spatiotemporal Decoder + multi-task heads) to directly output globally consistent 3D boxes across frames. Accompanying this is the DA4D dataset comprising 280,000 sequences, which reduces cross-frame jitter variance by 10–30% compared to single-frame detectors.
 
 **[Detect Anything via Next Point Prediction](detect_anything_via_next_point_prediction.md)**
 
@@ -226,10 +202,6 @@ item_total: 118
 
 :   Ours proposes the Anti-Forgetting Sampling Strategy (AFSS), which dynamically decides which training images to participate in training and which can be skipped based on the learning sufficiency ($\min(\text{Precision, Recall})$) of each image. This achieves a training acceleration of over 1.43× for the YOLO series detectors while maintaining or even improving detection accuracy.
 
-**[Dual-Prototype-Guided Multi-task Learning for Unsupervised Anomaly Detection and Classification](dual-prototype-guided_multi-task_learning_for_unsupervised_anomaly_detection_and.md)**
-
-:   PG-SFD models "unsupervised anomaly detection (pixel-level localization) + weakly supervised anomaly classification (region-level classification)" as a dual-prototype collaborative optimization problem. By explicitly decoupling normal/anomaly semantics using normal and category prototypes, injecting normal priors into the classification branch via differential gating, and alleviating multi-task gradient conflicts with geometric regularization, it achieves an I-AUROC of 99.4% on MVTec-AD while supporting fine-grained defect classification.
-
 **[DyFCLT: Dynamic Frequency-Decoupled Cross-Modal Learning Transformer for Multimodal Tiny Object Detection](dyfclt_dynamic_frequency-decoupled_cross-modal_learning_transformer_for_multimod.md)**
 
 :   For Visible-Infrared (RGBT) tiny object detection, DyFCLT first decouples cross-modal features into low/mid/high-frequency sub-bands using learnable dynamic frequency bands, performs Band-Wise Frequency Cross-modal Attention (DFCA) within each sub-band, and utilizes a foreground mask-guided Selective Smoothing and Enhancement (SSE) module to suppress background noise and enhance foreground details. It achieves SOTA AP on two RGBT tiny object benchmarks (48.2 AP on RGBT-Tiny, +9.5 over the previous best multimodal method).
@@ -237,10 +209,6 @@ item_total: 118
 **[ElasticFormer: Detecting Objects in HRW Shots via Elastic Computing Vision Transformer](elasticformer_detecting_objects_in_hrw_shots_via_elastic_computing_vision_transf.md)**
 
 :   ElasticFormer equips a sparse ViT backbone with a lightweight module called ElasticSelector, allowing it to dynamically determine the number of windows retained for local attention based on the "foreground ratio" of the image during the forward pass. This reduces backbone FLOPs by 80% on PANDA gigapixel detection while simultaneously improving AP50.
-
-**[Evaluating Few-Shot Pill Recognition Under Visual Domain Shift](evaluating_few-shot_pill_recognition_under_visual_domain_shift.md)**
-
-:   This paper systematically evaluates the generalization of pill recognition under cross-domain few-shot conditions from a deployment perspective. It reveals a decoupling phenomenon where semantic classification saturates at 1-shot while localization and recall drop sharply under overlapping occlusions. Furthermore, it demonstrates that the visual realism of training data is significantly more critical than data volume or the number of shots.
 
 **[EW-DETR: Evolving World Object Detection via Incremental Low-Rank DEtection TRansformer](ew-detr_evolving_world_object_detection_via_incremental_low-rank_detection_trans.md)**
 
@@ -253,6 +221,10 @@ item_total: 118
 **[Explaining Object Detectors via Collective Contribution of Pixels](explaining_object_detectors_via_collective_contribution_of_pixels.md)**
 
 :   This paper proposes VX-CODE, which explains object detectors using Shapley values (individual contribution) and interactions (collective contribution) from game theory. By utilizing a self-context variant and greedy patch selection, the exponential computation is reduced to a practical level, generating faithful heatmaps that cover both "primary features + collaborative background cues." Insertion/deletion AUC is improved by up to approximately 19% compared to the state-of-the-art (SOTA).
+
+**[FALCON: False-Negative Aware Learning of Contrastive Negatives in Vision-Language Alignment](falcon_false-negative_aware_learning_of_contrastive_negatives_in_vision-language.md)**
+
+:   FALCON is proposed as a **learning-based mini-batch construction strategy**. It utilizes a negative mining scheduler to adaptively balance the trade-off between hard negatives and false negatives, significantly improving cross-modal alignment quality in vision-language pre-training.
 
 **[FastRef: Fast Prototype Refinement for Few-shot Industrial Anomaly Detection](fastref_fast_prototype_refinement_for_few-shot_industrial_anomaly_detection.md)**
 
@@ -270,10 +242,6 @@ item_total: 118
 
 :   Leveraging Fourier rotation equivariance to estimate principal orientations in the frequency domain for feature alignment, this paper proposes two plug-and-play modules, FAAFusion and FAA Head. These modules address cross-scale directional incoherence in FPN and task conflict between classification and regression in detection heads, respectively, achieving new SOTA results on DOTA-v1.0/v1.5 and HRSC2016.
 
-**[From Attraction to Equilibrium: Physics-Inspired Semantic Gravitons for Zero-Shot Anomaly Detection](from_attraction_to_equilibrium_physics-inspired_semantic_gravitons_for_zero-shot.md)**
-
-:   SGNet remodels CLIP's vision-text cross-modal alignment as a physical process of "energy potential field reaching equilibrium." It introduces a set of learnable "semantic gravitons" as dynamic intermediaries between vision and text, pulling the two modalities to stable localized semantic equilibrium points through attraction and equilibrium forces, achieving SOTA in zero-shot anomaly detection across 10 industrial/medical benchmarks.
-
 **[From Detection to Association: Learning Discriminative Object Embeddings for Multi-Object Tracking](from_detection_to_association_learning_discriminative_object_embeddings_for_mult.md)**
 
 :   FDTA identifies that "excessively high inter-class similarity" in object embeddings produced by DETR is the root cause of poor association accuracy in end-to-end MOT. Consequently, three lightweight adapters—Spatial (Depth), Temporal (Trajectory), and Identity (Contrastive Learning)—are attached to a shared DETR to explicitly refine embeddings from the perspectives of spatial continuity, temporal dependence, and instance discriminativeness. This achieves SOTA performance across HOTA, IDF1, and AssA on DanceTrack, SportsMOT, and BFT.
@@ -281,10 +249,6 @@ item_total: 118
 **[FSLoRA: Harmonizing Detection and Re-Identification via Freq-Spatial Low-Rank Adapter for One-Stage Person Search](fslora_harmonizing_detection_and_re-identification_via_freq-spatial_low-rank_ada.md)**
 
 :   FSLoRA utilizes LoRA as a "layer-wise feature decoupler" integrated into the entire backbone. By employing Spatial MoE Routing (SLM) and Frequency-domain decomposition (FLM), the model separates shared detection features and ReID identity features at the bottom layers. This plug-and-play approach achieves new SOTA performance across multiple one-stage person search frameworks with <2% additional parameters.
-
-**[Geometry-Aligned and Anomaly-Aware Reconstruction for 3D Anomaly Detection](geometry-aligned_and_anomaly-aware_reconstruction_for_3d_anomaly_detection.md)**
-
-:   AARD addresses two systematic weaknesses in diffusion-based point cloud anomaly detection: geometric destruction by random noise and blurred details from unified references. It proposes "Geometry Rectification" to align noise with vertex normals and an "Anomaly-Aware Transformer" to route normal references to anomalous regions and input references to normal regions, setting new SOTA results on Real3D-AD (O-AUROC 0.82) and Anomaly-ShapeNet (O-AUROC 0.93).
 
 **[GMT: Effective Global Framework for Multi-Camera Multi-Target Tracking](gmt_effective_global_framework_for_multi-camera_multi-target_tracking.md)**
 
@@ -298,21 +262,9 @@ item_total: 118
 
 :   Ours proposes GS-CLIP, a two-stage framework that injects global shape and local defect information of 3D point clouds into text prompts via a Geometry Defect Distillation Module (GDDM). It synergistically fuses rendered images and depth maps using a LoRA-based dual-stream architecture, achieving SOTA performance in zero-shot 3D anomaly detection across four large-scale datasets.
 
-**[HeROD: Heuristic-inspired Reasoning Priors Facilitate Data-Efficient Referring Object Detection](herod_heuristic_inspired_reasoning_data_efficient_rod.md)**
-
-:   HeROD proposes a lightweight, model-agnostic framework that significantly improves the data efficiency and convergence performance of referring object detection (ROD) under label-scarce conditions by injecting heuristic spatial and semantic reasoning priors into three stages of the DETR-style detection pipeline (candidate ranking, prediction fusion, and Hungarian matching).
-
 **[Heuristic-inspired Reasoning Priors Facilitate Data-Efficient Referring Object Detection](heuristic-inspired_reasoning_priors_facilitate_data-efficient_referring_object_d.md)**
 
 :   To address the sharp performance drop of Referring Object Detection (ROD) models when "annotations are scarce," this paper first defines a low-data/few-shot De-ROD evaluation protocol and subsequently proposes HeROD. Interpretable **spatial orientation priors** and **visual semantic priors**, derived directly from referring phrases, are injected into three stages of the DETR detection pipeline (candidate ranking, final prediction, and Hungarian matching) as heuristic costs similar to A\*. In extremely low-data (0.1%–5%) and few-shot settings on RefCOCO/+/g, HeROD consistently achieves gains of 3–16 points compared to Grounding DINO and UNINEXT.
-
-**[Hierarchical Point-Patch Fusion with Adaptive Patch Codebook for 3D Shape Anomaly Detection](hierarchical_point-patch_fusion_with_adaptive_patch_codebook_for_3d_shape_anomal.md)**
-
-:   This paper proposes a hierarchical "point-patch" fusion network that constructs a position-independent normal patch feature codebook using adaptive multi-scale patching. It then injects patch-level priors into point-wise features via RoPE cross-attention to regress anomaly offsets. The method significantly outperforms previous point-wise approaches in detecting large-scale structural defects (planar displacement, angular misalignment) on public benchmarks and self-constructed industrial datasets.
-
-**[Hunting Normality from Query Sample via Residual Learning for Generalist Anomaly Detection](hunting_normality_from_query_sample_via_residual_learning_for_generalist_anomaly.md)**
-
-:   Addressing the issue in Generalist Anomaly Detection (GAD) where "directly modeling residual distributions" leads to misjudgments due to inconsistency between residuals and instance features, Ours no longer classifies residuals directly. Instead, it treats residuals as a **guide**: learnable proxies extract patterns from residuals (RFL), then these residual proxies aggregate query-related "normality proxies" (NLS) from the support set. Finally, these normality proxies are used to **search for normal regions** (HNQ) within the query features to locate anomalies. Ours achieves competitive few-shot performance on cross-domain benchmarks including Industrial→Industrial and Industrial→Medical.
 
 **[Incremental Object Detection via Future-Aware Decoupled Cross-Head Distillation](incremental_object_detection_via_future-aware_decoupled_cross-head_distillation.md)**
 
@@ -326,17 +278,9 @@ item_total: 118
 
 :   Ours proposes InvAD, which shifts diffusion model anomaly detection from the "RGB space denoising reconstruction" paradigm to a "latent space noise-adding inversion" paradigm. By directly inferring the final latent variables through DDIM inversion and measuring deviations under the prior distribution to detect anomalies, it reaches SOTA performance with only 3 inversion steps while increasing inference speed by approximately 2x.
 
-**[Learning Multi-Modal Prototypes for Cross-Domain Few-Shot Object Detection](learning_multi-modal_prototypes_for_cross-domain_few-shot_object_detection.md)**
-
-:   The authors propose LMP, a dual-branch framework that introduces a visual prototype branch (including positive class prototypes and hard negative prototypes) into GroundingDINO. By jointly training this with the text branch and integrating them during inference, the method achieves SOTA performance in cross-domain few-shot object detection.
-
 **[Learning to Track Instance from Single Nature Language Description](learning_to_track_instance_from_single_nature_language_description.md)**
 
 :   SVLTrack proposes a **completely box-annotation-free** self-supervised vision-language tracking framework. It utilizes a Large Vision-Language Model (LVLM) to generate a pseudo-box for the first frame of a video, performs forward/backward tracking self-supervision under weak-to-strong consistency, and designs a Dynamic Token Aggregation (DTA) module to tightly align language tokens with a few key visual tokens. Ultimately, it tracks arbitrary targets based solely on a single natural language description, surpassing existing self-supervised methods across four VL tracking benchmarks.
-
-**[LocateAnything3D: Vision-Language 3D Detection with Chain-of-Sight](locateanything3d_vision-language_3d_detection_with_chain-of-sight.md)**
-
-:   LocateAnything3D reformulates monocular multi-object 3D detection as a next-token prediction task for VLMs—first by having the decoder output 2D boxes as a "visual Chain-of-Sight," and then by solving 3D boxes following a curriculum of near-to-far and center→size→rotation. Without any specialized 3D heads, it increases the $AP_{3D}$ on Omni3D from 24.92 to 38.90.
 
 **[Mind the Gap: Transferring Labels to Align Object Detection Datasets](mind_the_gap_transferring_labels_to_align_object_detection_datasets.md)**
 
@@ -358,14 +302,6 @@ item_total: 118
 
 :   Proposes MRD, a training-free multi-resolution retrieval-detection fusion framework that alleviates object fragmentation through multi-resolution semantic fusion and suppresses background interference with an open-vocabulary detector, significantly enhancing MLLM capabilities for high-resolution image understanding.
 
-**[Multi-Prototype Compactness and Boundary-Aware Synthesis for Unsupervised Anomaly Detection](multi-prototype_compactness_and_boundary-aware_synthesis_for_unsupervised_anomal.md)**
-
-:   Addressing the issue where the single-prototype hypothesis results in overly loose decision boundaries under high intra-class variance, this paper proposes the PGBL framework. It structures normal features into multiple compact sub-clusters using Multi-Prototype Compactness Constraints (MPCC), synthesizes pseudo-anomalies at the topological boundaries of these sub-clusters (BAAS), and refines the decision surface with a discriminator (DBR). PGBL outperforms previous methods in detection and localization on MVTec-AD, VisA, and Real-IAD.
-
-**[Multi-view Crowd Tracking Transformer with View-Ground Interactions Under Large Real-World Scenes](multi-view_crowd_tracking_transformer_with_view-ground_interactions_under_large_.md)**
-
-:   This work is the first to push multi-view crowd tracking from small scenes with dozens of frames (e.g., Wildtrack/MultiviewX) to large-scale real-world scenes spanning hundreds of meters. It proposes a fully Transformer-based model, MVTrackTrans (tracking in ground BEV space + view-ground cross-attention to complement appearance information), and releases two large-scale long-sequence datasets, MVCrowdTrack and CityTrack. The model leads CNN-based methods in MOTA/IDF1 on large datasets.
-
 **[NoOVD: Novel Category Discovery and Embedding for Open-Vocabulary Object Detection](noovd_novel_category_discovery_and_embedding_for_open-vocabulary_object_detectio.md)**
 
 :   The NoOVD framework is proposed to discover potential novel category objects during frozen VLM-based OVD training by preserving CLIP knowledge with a parameter-free K-FPN. It embeds novel category knowledge into the detector via self-distillation and enhances the recall of novel categories during inference using R-RPN, achieving SOTA results on OV-LVIS, OV-COCO, and Objects365.
@@ -381,6 +317,10 @@ item_total: 118
 **[Online Data Curation for Object Detection via Marginal Contributions to Dataset-level Average Precision](online_data_curation_for_object_detection_via_marginal_contributions_to_dataset-.md)**
 
 :   DetGain is the first truly effective online data curation method for object detection. Instead of relying on unstable training losses, it estimates the "marginal contribution" of each image to the "dataset-level mAP." By using the teacher–student contribution difference as the learnability signal to select the most informative samples in each iteration, it is architecture-agnostic and plug-and-play. It brings stable improvements of up to +2.7 mAP for various detectors on COCO and up to +6.9 mAP under low-quality data.
+
+**[PALM: Progress-Aware Policy Learning via Affordance Reasoning for Long-Horizon Robotic Manipulation](palm_progress-aware_policy_learning_via_affordance_reasoning_for_long-horizon_ro.md)**
+
+:   Ours proposes PALM, a unified VLA framework that uses structured fine-grained affordance predictions (global, local, spatial, and dynamic) as implicit reasoning anchors, combined with continuous sub-task progress estimation for seamless task switching. It achieves an average completion length of 4.48 on CALVIN ABCD (surpassing Prev. SOTA by 12.5%), a 91.8% success rate on LIBERO-LONG, and over 2x the baseline performance in real-world long-horizon generalization tests.
 
 **[PaQ-DETR: Learning Pattern and Quality-Aware Dynamic Queries for Object Detection](paq-detr_learning_pattern_and_quality-aware_dynamic_queries_for_object_detection.md)**
 
@@ -414,21 +354,9 @@ item_total: 118
 
 :   PF-RPN replaces text/image prompts with learnable visual embeddings. Through three modules—Sparse Image-Aware Adapter, Cascade Self-Prompting, and Centerness-Guided Query Selection—it achieves SOTA zero-shot region proposal across 19 cross-domain datasets using only 5% of COCO data for training.
 
-**[RAID: Retrieval-Augmented Anomaly Detection](raid_retrieval-augmented_anomaly_detection.md)**
-
-:   RAID reinterprets Unsupervised Anomaly Detection (UAD) as a Retrieval-Augmented Generation (RAG) pipeline: it first performs coarse-to-fine retrieval using a three-level vector library (class prototype → semantic prototype → instance token), then employs a "Guided MoE Filter" to denoise the retrieved matching cost volume. This suppresses matching noise and produces anomaly maps with sharp boundaries, achieving SOTA across full-shot, few-shot, and multi-dataset settings on MVTec/VisA/MPDD/BTAD.
-
-**[Random Wins All: Rethinking Grouping Strategies for Vision Tokens](random_wins_all_rethinking_grouping_strategies_for_vision_tokens.md)**
-
-:   Ours proposes a minimalist random grouping strategy to replace various carefully designed token grouping methods in Vision Transformers. It achieves almost comprehensive superiority over all baselines across image classification, object detection, semantic segmentation, point cloud segmentation, and VLMs. The success is explained through four dimensions: positional information, head feature diversity, global receptive field, and fixed grouping patterns.
-
 **[RARE: Learn to RAnk and REtrieve for Monocular 3D Object Detection](rare_learn_to_rank_and_retrieve_for_monocular_3d_object_detection.md)**
 
 :   RARE employs "ranking + retrieval" mechanisms to unify and solve two persistent issues in monocular 3D detection: it transforms confidence estimation from absolute regression to **learning relative rankings**, and constructs a set of queries for each object to predict multiple plausible 3D hypotheses, **retrieving** the optimal solution based on learned confidence. It outperforms several monocular SOTA methods on KITTI and nuScenes.
-
-**[RAVEN: Radar Adaptive Vision Encoders for Efficient Chirp-wise Object Detection and Segmentation](raven_radar_adaptive_vision_encoders_for_efficient_chirp-wise_object_detection_a.md)**
-
-:   RAVEN feeds raw ADC streams from FMCW radar directly into a lightweight encoder consisting of "per-RX fast-time SSM + cross-antenna attention + chirp-wise slow-time SSM." While preserving the geometry of the MIMO virtual array, it employs a calibrated early-exit rule to produce detection results using only the first few chirps of a frame. Compared to traditional frame-based radar backbones, compute requirements are reduced to approximately 1/170 and end-to-end latency is reduced by ~4x, while still achieving SOTA detection and drivable area segmentation on RADIal and RaDICaL datasets.
 
 **[RC-NF: Robot-Conditioned Normalizing Flow for Real-Time Anomaly Detection in Robotic Manipulation](rc-nf_robot-conditioned_normalizing_flow_for_real-time_anomaly_detection_in_robo.md)**
 
@@ -441,6 +369,10 @@ item_total: 118
 **[Remedying Target-Domain Astigmatism for Cross-Domain Few-Shot Object Detection](remedying_target-domain_astigmatism_for_cross-domain_few-shot_object_detection.md)**
 
 :   This work first identifies the "astigmatism" phenomenon in Cross-Domain Few-Shot Object Detection (CD-FSOD), where model attention remains persistently dispersed in the target domain. Inspired by the human foveal vision system, three complementary modules—Positive Pattern Refinement (PPR), Negative Context Modulation (NCM), and Textual Semantic Alignment (TSA)—are designed to reshape attention, achieving SOTA performance on six cross-domain benchmarks by a significant margin.
+
+**[Rotation Invariant and Symmetry Aware Pixel Difference Network for Remote Sensing Object Detection](rotation_invariant_and_symmetry_aware_pixel_difference_network_for_remote_sensin.md)**
+
+:   This work integrates "continuous rotation invariance" and "structural symmetry" geometric priors directly into the convolutional kernel by proposing the RIS-PDC operator (Pixel Difference + Polar Harmonic Symmetry Kernel + SO(2) 8-direction kernel rotation averaging). As a plug-and-play replacement for convolutions in mainstream remote sensing detectors, it achieves 78.53% mAP on DOTA-v1.0 single-scale without increasing parameters.
 
 **[Saliency-R1: Enforcing Interpretable and Faithful Vision-language Reasoning via Saliency-map Alignment Reward](saliency-r1_enforcing_interpretable_and_faithful_vision-language_reasoning_via_s.md)**
 
@@ -458,10 +390,6 @@ item_total: 118
 
 :   SFR-Net adapts CLIP to sewer defect scenarios using a three-stage "Steering (RS) $\rightarrow$ Fusion (MEF) $\rightarrow$ Refining (GR)" pipeline. It employs lightweight adapters to steer representations toward the pipe domain, fuses global and local evidence for initial scoring, and uses a GCN to learn a transferable "score refinement logic" from seen classes to unseen ones. It achieves SOTA on Sewer-ML and the self-collected WZ-Pipe datasets (e.g., 12.58% mAP on Sewer-ML ML-ZSL, approximately double the second-best method).
 
-**[Show, Don't Tell: Detecting Novel Objects by Watching Human Videos](show_dont_tell_detecting_novel_objects_by_watching.md)**
-
-:   Proposed the "Show, Don't Tell" paradigm—automatically creating training datasets and training bespoke object detectors by watching human demonstration videos. This approach completely bypasses language descriptions and prompt engineering, significantly outperforming SOTA open-set/closed-set detectors in novel object recognition within real-world robot scenarios.
-
 **[Spike-driven Discrete Aggregation for Event-based Object Detection](spike-driven_discrete_aggregation_for_event-based_object_detection.md)**
 
 :   For event-based object detection, this paper proposes a "Discrete Aggregation" approach—utilizing the threshold-firing mechanism of spiking neurons to adaptively select and aggregate only informative events (SDA module + Gated Recurrent Spiking Neuron + Multi-Timescale Fusion). It achieves 43.4% mAP50:95 on Gen1 with fewer parameters, outperforming the previous fully spiking SOTA by 4.5%.
@@ -473,10 +401,6 @@ item_total: 118
 **[SRA-Det: Learning Omni-Grained Open-Vocabulary Detection Beyond Category Names](sra-det_learning_omni-grained_open-vocabulary_detection_beyond_category_names.md)**
 
 :   Addressing the issue where open-vocabulary detectors only match "category names" and remain insensitive to fine-grained attributes like color, material, and pattern, SRA-Det uses learnable retrieval queries to extract multiple semantic "facets" from text tokens. It employs soft-min matching as a "logic AND" to ensure all facets are satisfied. Combined with an attribute-augmented pipeline that uses LLMs for generation and CLIP for dual-verification, SRA-Det achieves 54.9 mAP on FG-OVD and maintains 40.4 AP on LVIS under zero-shot settings.
-
-**[SteelDefectX: A Coarse-to-Fine Vision-Language Dataset and Benchmark for Generalizable Steel Surface Defect Detection](steeldefectx_a_coarse-to-fine_vision-language_dataset_and_benchmark_for_generali.md)**
-
-:   SteelDefectX is introduced as the first vision-language dataset for steel surface defect detection (7,778 images, 25 defect types), featuring coarse-to-fine text annotations from class-level to instance-level. A benchmark covering four tasks—vision-only classification, vision-language classification, zero/few-shot recognition, and zero-shot transfer—is established. Experiments demonstrate that high-quality text annotations significantly improve model interpretability, generalization, and cross-domain transfer capabilities.
 
 **[SL-HOI: Streamlined Open-Vocabulary Human-Object Interaction Detection](streamlined_open-vocabulary_human-object_interaction_detection.md)**
 
@@ -514,10 +438,6 @@ item_total: 118
 
 :   Aiming at the challenges of UAV detection in low-altitude complex backgrounds—characterized by "low contrast, weak boundaries, and high confusion with cluttered textures"—this paper constructs the UAV-CB dataset (3,442 image pairs, 5 background categories) with deliberately sampled camouflaged/complex scenes. It further proposes LFBNet, which performs alignment in the **local frequency domain**: first unifying the amplitude and phase of both modalities in the frequency domain, and then using frequency cues to guide spatial deformable registration. Ultimately, it achieves an AP(0.5:0.95) of 54.4% on UAV-CB, outperforming the previous best multimodal baseline C2Former by 5.3 points.
 
-**[UAVGen: Visual Prototype Conditioned Focal Region Generation for UAV-Based Object Detection](uavgen_visual_prototype_conditioned_focal_region_generation_for_uav_based_object_detection.md)**
-
-:   Proposes UAVGen, a layout-to-image data augmentation framework for UAV object detection, resolving low-quality small object generation, model capacity waste, and label inconsistency through a visual prototype conditioned diffusion model and a focal region enhancement pipeline.
-
 **[UniMMAD: Unified Multi-Modal and Multi-Class Anomaly Detection via MoE-Driven Feature Decompression](unimmad_unified_multi-modal_and_multi-class_anomaly_detection_via_moe-driven_fea.md)**
 
 :   UniMMAD is proposed as the first unified framework capable of handling multi-modal and multi-class anomaly detection using a single set of parameters. Its core is an MoE-driven feature decompression mechanism that adaptively decomposes general multi-modal encoded features into domain-specific single-modal reconstructions. It achieves SOTA performance across 9 datasets involving 3 domains, 12 modalities, and 66 categories.
@@ -537,10 +457,6 @@ item_total: 118
 **[ViTPrompt: Training-Free Prompt Refinement with Visual Tokens for Open-Vocabulary Detection](vitprompt_training-free_prompt_refinement_with_visual_tokens_for_open-vocabulary.md)**
 
 :   Addressing the issue where boxes remain unrefined under domain shift in open-vocabulary detection, ViTPrompt concatenates RoI visual tokens of high-confidence targets from the first-pass detection into the text prompts. By re-running Grounding DINO, it refreshes bounding boxes and classification scores simultaneously via a training-free two-stage inference, achieving SOTA on multiple ODD benchmarks.
-
-**[Wavelet-Driven 3D Anomaly Detection under Pose-Agnostic and Sparse-View](wavelet-driven_3d_anomaly_detection_under_pose-agnostic_and_sparse-view.md)**
-
-:   Addressing the issues of overfitting and pose misalignment in Pose-Agnostic Anomaly Detection (PAD) due to insufficient observations in sparse-view scenarios, this paper proposes Wave-Pose3D. The method migrates 3D Gaussian reconstruction, pose estimation, and anomaly scoring into the wavelet frequency domain, utilizing low frequencies for global structure and high frequencies for details. SOTA performance is achieved under 10% and 20% sparse-view conditions.
 
 **[WeDetect: Fast Open-Vocabulary Object Detection as Retrieval](wedetect_fast_open-vocabulary_object_detection_as_retrieval.md)**
 

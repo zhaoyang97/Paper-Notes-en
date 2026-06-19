@@ -12,10 +12,10 @@ tags:
   - "Alignment/RLHF"
   - "Domain Adaptation"
 item_list:
-  - u: "l2gtx_from_local_to_global_time_series_explanations/"
-    t: "L2GTX: From Local to Global Time Series Explanations"
   - u: "pfgnet_a_fully_convolutional_frequency-guided_peripheral_gating_network_for_effi/"
     t: "PFGNet: A Fully Convolutional Frequency-Guided Peripheral Gating Network for Efficient Spatiotemporal Predictive Learning"
+  - u: "probabilistic_precipitation_nowcasting_with_rectified_flow_transformers/"
+    t: "Probabilistic Precipitation Nowcasting with Rectified Flow Transformers"
   - u: "real-time_long_horizon_air_quality_forecasting_via_group-relative_policy_optimiz/"
     t: "Real-Time Long Horizon Air Quality Forecasting via Group-Relative Policy Optimization"
   - u: "sattc_structure-aware_label-free_test-time_calibration_for_cross-subject_eeg-to-/"
@@ -36,15 +36,15 @@ item_total: 7
 
 📌 **Same area in other venues:** [🧪 ICML2026 (32)](../../ICML2026/time_series/index.md) · [💬 ACL2026 (7)](../../ACL2026/time_series/index.md) · [🔬 ICLR2026 (37)](../../ICLR2026/time_series/index.md) · [🤖 AAAI2026 (31)](../../AAAI2026/time_series/index.md) · [🧠 NeurIPS2025 (54)](../../NeurIPS2025/time_series/index.md) · [📹 ICCV2025 (4)](../../ICCV2025/time_series/index.md)
 
-🔥 **Top topics:** Time-Series Forecasting ×4
-
-**[L2GTX: From Local to Global Time Series Explanations](l2gtx_from_local_to_global_time_series_explanations.md)**
-
-:   L2GTX proposes a completely model-agnostic local-to-global explanation method. By extracting Parameterized Event Primitives (trends/extrema) from LOMATCE local explanations, it merges redundant clusters across instances and selects representative instances via submodular optimization. Finally, it aggregates these into concise class-level global explanations, maintaining stable global fidelity across six time-series classification datasets.
+🔥 **Top topics:** Time-Series Forecasting ×3
 
 **[PFGNet: A Fully Convolutional Frequency-Guided Peripheral Gating Network for Efficient Spatiotemporal Predictive Learning](pfgnet_a_fully_convolutional_frequency-guided_peripheral_gating_network_for_effi.md)**
 
 :   PFGNet is a pure convolutional spatiotemporal prediction framework that dynamically modulates multi-scale large-kernel peripheral responses via Pixel-level Frequency-guided Gating (PFG) and applies learnable center suppression. Mimicking the center-surround band-pass filtering mechanism of biological vision, it achieves SOTA or near-SOTA performance on Moving MNIST, TaxiBJ, KTH, and Human3.6M benchmarks with minimal parameters and computational cost.
+
+**[Probabilistic Precipitation Nowcasting with Rectified Flow Transformers](probabilistic_precipitation_nowcasting_with_rectified_flow_transformers.md)**
+
+:   This work proposes FREUD—a framework utilizing a Rectified Flow Transformer as a "compressed first stage." It employs a frame-level encoder to independently encode each frame and a joint video decoder to reconstruct all frames simultaneously, replacing deterministic decoding with probabilistic decoding to quantify uncertainty during the compression stage. Combined with a latent-space rectified flow nowcasting model, it achieves SOTA CRPS (0.0190) and SSIM on the SEVIR precipitation nowcasting benchmark.
 
 **[Real-Time Long Horizon Air Quality Forecasting via Group-Relative Policy Optimization](real-time_long_horizon_air_quality_forecasting_via_group-relative_policy_optimiz.md)**
 

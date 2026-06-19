@@ -79,6 +79,7 @@ The model is trained based on [41]. The extrinsic branch is initialized with a c
 ## Key Experimental Results
 
 ### Main Results
+
 | Method | Trans. Confidence↑ | Type Accuracy↑ | Aesthetics↑ | FVD↓ | Visual Consistency↑ |
 |:---|:---:|:---:|:---:|:---:|:---:|
 | Mask2DiT | 0.2233 | 0.2033 | 0.5958 | 69.49 | 0.7779 |
@@ -92,6 +93,7 @@ The model is trained based on [41]. The extrinsic branch is initialized with a c
 ShotDirector significantly leads in transition control (0.8956 vs. 0.7976 for CineTrans) and type accuracy. While SynCamMaster has high visual consistency (0.8418), it suffers in aesthetics (0.5453), suggesting consistency came at the cost of fidelity. Our model ranks second in consistency while maintaining high quality.
 
 ### Ablation Study
+
 | Configuration | Trans. Confidence↑ | Type Accuracy↑ | FVD↓ | Visual Consistency↑ |
 |:---|:---:|:---:|:---:|:---:|
 | Full Model | 0.8956 | 0.6744 | 68.45 | 0.8251 |

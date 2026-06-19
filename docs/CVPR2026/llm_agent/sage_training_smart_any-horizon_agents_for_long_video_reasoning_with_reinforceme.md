@@ -90,6 +90,7 @@ Evaluations were conducted on the self-developed **SAGE-Bench** (1744 manually v
 Compared to existing AGENT systems (VideoAgent 42.0, VideoMind 50.0, VideoExplorer 50.1), which perform significantly worse on open-ended questions (mostly 28–35), SAGE demonstrates that prior agents were over-engineered for MCQ. The RL phase provides a 4.1% gain over SFT alone.
 
 ### Key Experimental Results (Long Video Binning)
+
 | Evaluation | Setting | Long Video Performance | Gain |
 |------|------|-------------|------|
 | SAGE-Bench 600–1200s bin | SAGE (Qwen3-VL-8B) | 63.2 | **+8.2** |
@@ -100,6 +101,7 @@ Compared to existing AGENT systems (VideoAgent 42.0, VideoMind 50.0, VideoExplor
 Binning by duration reveals that SAGE performs similarly to the DIRECT baseline for short videos (0–300s) but leads significantly for long videos (>600s), validating the core hypothesis of the any-horizon design.
 
 ### Ablation Study
+
 | Configuration | Video-MMMU | Video-MME | Description |
 |------|-----------|-----------|------|
 | SAGE-Flash (Qwen3-VL-8B [+SFT][+RL]) | 68.1 | 63.5 | Full |

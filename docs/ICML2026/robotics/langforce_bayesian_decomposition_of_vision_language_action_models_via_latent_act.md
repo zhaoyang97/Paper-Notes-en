@@ -13,8 +13,8 @@ content_hash: 436dc6f1f1a043f4
 # LangForce: Bayesian Decomposition of Vision-Language-Action Models via Latent Action Queries
 
 **Conference**: ICML 2026
-**arXiv**: [2601.15197](https://arxiv.org/abs/2601.15197)
-**Code**: The paper notes "Code and videos are available," but the actual repository URL is not provided.
+**arXiv**: [2601.15197](https://arxiv.org/abs/2601.15197)  
+**Code**: The paper notes "Code and videos are available," but the actual repository URL is not provided.  
 **Area**: Robotics / Embodied AI / VLA
 **Keywords**: VLA, visual shortcuts, Bayesian decomposition, latent action queries, pointwise mutual information
 

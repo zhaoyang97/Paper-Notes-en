@@ -90,6 +90,7 @@ Experiments were conducted on a 48GB L40S GPU. Comparisons include Scott's rule 
 | 2D Laplace, $n=2048$ | Score MSE | 0.2990 (Superior) | 0.2990 (Near/Slightly worse) | Cross-distribution Generalization |
 
 ### Ablation Study
+
 | Configuration | Key Metric | Observation |
 |------|---------|------|
 | Full Model (cross-attention + equivariance) | Rel. MSE for affine transforms $\sim 10^{-4}$ | Whitening + augmentation ensure approximate equivariance |

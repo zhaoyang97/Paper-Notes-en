@@ -96,6 +96,7 @@ BEAR is an evaluation and agent framework and does not involve model retraining.
 Closed-source models averaged 39.2%, outperforming open-source by 13.4 points. The strongest model, GPT-5, achieved 52.2%, still 37 points behind the human score of 89.40%.
 
 ### Ablation Study
+
 | Configuration | Key Metric | Description |
 | :--- | :--- | :--- |
 | GPT-5 baseline | 52.2% | Direct evaluation |

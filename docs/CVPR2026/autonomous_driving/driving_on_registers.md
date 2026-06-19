@@ -97,6 +97,7 @@ Performance on NAVSIM-v2 (navhard-two-stage) and closed-loop HUGSIM (zero-shot t
 Regarding efficiency, compared to the ViT-L based GTRS, single-sample forward latency drops from 400ms to 110ms (>3× throughput), with GFLOPS and peak VRAM also decreasing by ~3×.
 
 ### Ablation Study
+
 | Configuration | PDMS | Description |
 |------|------|------|
 | Random init backbone | 70.1 | Pre-training is critical |

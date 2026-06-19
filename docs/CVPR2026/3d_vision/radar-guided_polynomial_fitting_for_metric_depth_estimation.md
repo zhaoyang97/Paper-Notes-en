@@ -109,6 +109,7 @@ On average, compared to the strongest baseline, MAE/RMSE decreased by 4.4%/3.7% 
 Inference at 24.81 ms ≈ 40.3 fps (15.3% faster than TacoDepth and 92.1% faster than RadarCam), with 39.5% fewer GFLOPs than TacoDepth. POLAR is simultaneously the most accurate, fastest, and most resource-efficient.
 
 ### Ablation Study
+
 | Configuration (nuScenes / VoD, MAE) | nuScenes | VoD | Description |
 |------|---------|------|------|
 | Full Model | 1407.8 | 1500.1 | — |

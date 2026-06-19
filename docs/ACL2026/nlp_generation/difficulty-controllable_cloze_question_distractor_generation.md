@@ -95,6 +95,7 @@ All tasks are unified into a seq2seq cross-entropy training framework. Gemma 2 9
 ## Key Experimental Results
 
 ### Main Results
+
 | Target | Metric | Ours | Comparison | Key Conclusion |
 |--------|--------|------|------------|----------------|
 | Augmented Dataset | No. Easy Distractors per Q | 12.06 | Original CLOTH ~2.998 | Significant increase in quantity |
@@ -105,6 +106,7 @@ All tasks are unified into a seq2seq cross-entropy training framework. Gemma 2 9
 | DCDG + ASDE + DDDE | Hard gen judged "Hardest" | 73.25% | GPT-4o 0-shot 56.77%, 5-shot 53.81% | Strongest control on hard distractors |
 
 ### Ablation Study
+
 | Configuration | Key Metric | Description |
 |---------------|------------|-------------|
 | Answer generator w/ IR | 19.25 candidates/Q, semantic diversity 0.6928 | Info-restricted candidates are more diverse |

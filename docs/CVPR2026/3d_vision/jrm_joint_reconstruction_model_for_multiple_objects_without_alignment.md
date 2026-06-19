@@ -78,6 +78,7 @@ The foundation FM backbone is pre-trained on 400,000 high-quality 3D objects fro
 - Gray numbers in tables represent the "ideal upper bound" for FM baselines given **oracle alignment**.
 
 ### Main Results: Temporal Repetition (with ground truth matching)
+
 | Method | Modality | Target-only CD↓ | 1 Recap CD↓ | 3 Recaps CD↓ |
 |------|------|------|------|------|
 | MORE² | Point Cloud | 10.43 | 9.89 | 10.04 |
@@ -89,6 +90,7 @@ The foundation FM backbone is pre-trained on 400,000 high-quality 3D objects fro
 Key Finding: **FM performance degrades as scans increase** (CD 3.07$\rightarrow$4.43) due to sensitivity to alignment errors; **JRM improves steadily with more context** (3.46$\rightarrow$3.07, and 2.84$\rightarrow$2.49 for full modality).
 
 ### Spatial Repetition (Different source object types)
+
 | Method | Identical CD↓ | Similar CD↓ | Negative CD↓ |
 |------|------|------|------|
 | FM | 2.77 | 4.78 | 8.83 |
@@ -97,6 +99,7 @@ Key Finding: **FM performance degrades as scans increase** (CD 3.07$\rightarrow$
 When source objects change from "identical" to "negative," FM's CD jumps from 2.77 to 8.83 (contaminated by unmatched information), whereas JRM remains stable at 3.04.
 
 ### Articulated Object Reconstruction
+
 | Method | State0 CD↓ | State1 CD↓ | State2 CD↓ |
 |------|------|------|------|
 | FM-align (Rigid) | 5.83 | 5.37 | 5.49 |
@@ -106,6 +109,7 @@ When source objects change from "identical" to "negative," FM's CD jumps from 2.
 Rigidly aligned FM-align performs worst, confirming that rigid alignment cannot transfer across deformations. JRM jointly reconstructs three states with significant leads in CD and F1.
 
 ### Real-World Scenes
+
 | Method | Replica CD↓ / F1↑ | ScanNet++ CD↓ / F1↑ |
 |------|------|------|
 | DPRecon | 4.65 / 71.95 | 5.53 / 65.98 |
@@ -115,6 +119,7 @@ Rigidly aligned FM-align performs worst, confirming that rigid alignment cannot 
 JRM generalizes to real-world captures despite being trained only on synthetic pairs.
 
 ### Ablation Study: Negative Sampling Ratio
+
 | Negative Ratio | Identical F1↑ | Similar F1↑ | Negative F1↑ |
 |------|------|------|------|
 | 0.0 | 88.30 | 83.52 | 72.42 |

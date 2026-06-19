@@ -82,6 +82,7 @@ Ours does not train the models being evaluated. Evaluator selection is based on 
 ## Key Experimental Results
 
 ### Main Results
+
 | Experimental Item | Setting | Key Data | Conclusion |
 |-------------------|---------|----------|------------|
 | Human Calibration Set | 13 KPIs, Single & Multi-turn | 803 human-labeled samples, 3 annotators each | Basis for LLM-as-a-Judge selection and calibration |
@@ -91,6 +92,7 @@ Ours does not train the models being evaluated. Evaluator selection is based on 
 | Evaluated Models | Scale of models | 11 models total, including 6 Korean local models and global API models | Framework differentiates deployment readiness between local/global models |
 
 ### Ablation Study
+
 | Analysis Item | Configuration | Key Data | Description |
 |---------------|---------------|----------|-------------|
 | Honorific Judge Improv. | Gemini-2.5-Flash | Hae +0.06, Haeyo +0.11, Hapsyo +0.19 | Morphological validation helps more with formal hapsyo |

@@ -90,6 +90,7 @@ Evaluation on MTIL (11 datasets, 1201 classes, significant distribution drift) u
 DAGR is optimal across almost all datasets and both metrics: Avg. 79.4% and Last 87.1%, outperforming DIKI by +3.1% / +2.0% with only 1.8M parameters and no external data dependencies.
 
 ### Ablation Study
+
 | Configuration | Avg.(%) | Last(%) | Description |
 |------|---------|---------|------|
 | w/o Graph Reg. | 71.2 | 79.5 | Removed all graph regularization |

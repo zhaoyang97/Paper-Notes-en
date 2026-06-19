@@ -93,6 +93,7 @@ The matched-budget results show that while methods appear tied on SST-2 and Bool
 | BoolQ | CP $c=64$ | 592,896 | $0.739\pm0.010$ |
 
 ### Ablation Study
+
 | Configuration | Key Findings | Description |
 |------|---------|------|
 | SST-2 + $c\in\{1,2,4,8,16\}$ (Below $r=1$) | Tiny CP reaches ~0.93 at points LoRA cannot measure | Early plateau; adding more components yields no gain |

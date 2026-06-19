@@ -110,6 +110,7 @@ The rendering speed shows a massive gap over baselines:
 | **WeatherCity** | **25.67** |
 
 ### Ablation Study
+
 | Configuration | CLIP-S↑ | CLIP-DS↑ | Sem-CS↑ | Description |
 |------|---------|----------|---------|------|
 | a. Baseline (Qwen-Image only) | 0.735 | 0.276 | 0.891 | No proposed modules |

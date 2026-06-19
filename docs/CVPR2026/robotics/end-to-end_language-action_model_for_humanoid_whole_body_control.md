@@ -103,6 +103,7 @@ The dataset is an AMASS subset (PHC filtered) with 12,422 text-action pairs, eva
 SENTINEL leads across all metrics: semantic alignment (R@1 0.582 vs. 0.481) and physical execution (99.45% vs. 94.94%). Core conclusions: (1) training on physically grounded robot trajectories is significantly more stable than "human motion generation + retargeting"; (2) the Transformer architecture far exceeds LangWBC's MLP in semantic understanding and zero-shot generalization.
 
 ### Ablation Study
+
 | Configuration | R@1 ↑ | MMD ↓ | Success ↑ | Description |
 |---------------|-------|-------|-----------|-------------|
 | Base | 0.582 | 3.438 | 99.45 | Full model |

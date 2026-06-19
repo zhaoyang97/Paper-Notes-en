@@ -117,6 +117,7 @@ Video Results UCF101↔HMDB51:
 Compared to TransPL, UCIHAR improved by +4.97%. Video tasks exceeded TransferAttn by approximately 1.6%.
 
 ### Ablation Study
+
 | Configuration | Key Metric (HHAR alignment) | Description |
 |------|------------------------|------|
 | Sinkhorn OT Solver | 0.84 | Best alignment, default |

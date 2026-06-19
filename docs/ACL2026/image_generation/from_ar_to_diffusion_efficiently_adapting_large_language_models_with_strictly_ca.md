@@ -77,6 +77,7 @@ Simultaneously training the backbone and horizon planner can be unstable. FLUID 
 ### Key Experimental Results
 
 #### Main Results
+
 | Model / Method | Type | Adaptation tokens | MMLU | IFEval | GSM8K | MATH500 | HumanEval | MBPP |
 |----------------|------|-------------------|------|--------|-------|---------|-----------|------|
 | FLUID-7B | Diff | 2.7B | 67.8 | 57.7 | 91.9 | 61.8 | 60.4 | 53.6 |
@@ -85,6 +86,7 @@ Simultaneously training the backbone and horizon planner can be unstable. FLUID 
 | LLaDA-8B | Diff | - | - | - | 78.6 | - | - | - |
 
 #### Ablation Study
+
 | Configuration | Causal | Elastic | GSM8K | MATH500 | HumanEval | Note |
 |---------------|--------|---------|-------|---------|-----------|------|
 | Baseline | ✗ | ✗ | 82.0 | 51.2 | 42.2 | Bidirectional fixed-block baseline |

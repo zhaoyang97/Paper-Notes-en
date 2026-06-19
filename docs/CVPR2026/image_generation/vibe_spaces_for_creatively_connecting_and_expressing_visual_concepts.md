@@ -99,6 +99,7 @@ Human preference studies were conducted on "Totally Looks Like" (44 humorously s
 Ours human preference is approximately 3× that of the runner-up GPT on high-difficulty samples and 2.4× on medium-difficulty samples; the advantage becomes more pronounced as the blending difficulty increases. On simple image pairs, the preference for GPT/CLIP Avg increases, which also explains the narrowing gap with CLIP Avg on the Architecture dataset where concepts are closer.
 
 ### Metrics & Consistency Analysis
+
 | Metric | Result | Description |
 |--------|--------|-------------|
 | PNS vs. Human Difficulty Consistency | 80.0% | On high-consensus (≥66%) samples, PNS estimates perceived human difficulty |

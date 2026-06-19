@@ -104,6 +104,7 @@ Generalization (Seen vs. Unseen):
 SR still leads in unseen environments (new objects/instructions), but SPL (5.15%) is lower than Navid (5.99%), suggesting that while it finds targets more frequently in new scenes, it takes less efficient paths.
 
 ### Ablation Study
+
 | Configuration | SR↑ | OSR↑ | SPL↑ | Description |
 |---------------|-----|------|------|-------------|
 | Baseline      | 12.40% | 20.60% | 3.35% | Pure observation-based decision making |

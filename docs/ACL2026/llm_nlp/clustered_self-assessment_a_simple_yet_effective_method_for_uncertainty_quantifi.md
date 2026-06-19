@@ -96,6 +96,7 @@ Calibration is measured using the Brier score (lower is better). Ours outperform
 | NQ | Gemma-3-27B | 0.1736 | 0.2354 | 0.3503 | 0.2462 |
 
 ### Robustness & Sensitivity
+
 | Analysis Item | Key Results | Description |
 |--------|----------|------|
 | Sample Efficiency | Competitive performance with 2 additional samples | While sampling is the main overhead, performance with few samples suggests MCQ self-assessment effectively utilizes candidate structure. |

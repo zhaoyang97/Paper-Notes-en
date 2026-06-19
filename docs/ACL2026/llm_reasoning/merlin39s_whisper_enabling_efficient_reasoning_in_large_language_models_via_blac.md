@@ -70,6 +70,7 @@ Handwritten prompts rarely achieve perfection in one go. Whisper performs lightw
 ### Key Experimental Results
 
 ### Main Results
+
 | Model | Method | Overall Acc. | Overall Ratio | Representative Change |
 |------|------|------|------|------|
 | DeepSeek-R1-Distill-LLaMA-8B | Original | 78.5 | 100% | Original long reasoning |
@@ -80,6 +81,7 @@ Handwritten prompts rarely achieve perfection in one go. Whisper performs lightw
 | Qwen3-14B | Whisper | 89.6 | 63.0% | ~37% token reduction with higher accuracy |
 
 ### Ablation Study
+
 | Qwen3-14B Dataset | Original Acc. / Tok. | Whisper Acc. / Tok. | Ratio |
 |------|------|------|------|
 | GSM8K | 95.9 / 1568 | 96.1 / 440 | 28.1% |

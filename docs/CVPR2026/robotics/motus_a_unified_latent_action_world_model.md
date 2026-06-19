@@ -90,6 +90,7 @@ Evaluated on 50+ RoboTwin 2.0 tasks. Motus achieves SOTA in both clean and rando
 Motus outperforms $\pi 0.5$ by **45%** absolute success rate and X-VLA by **15%**. Real-world tests on AC-One and Aloha-2 show relative improvements of 11-48%.
 
 ### Ablation Study
+
 | Configuration | Success Rate (%) |
 |------|---------|
 | Motus (Full) | 77.00 |

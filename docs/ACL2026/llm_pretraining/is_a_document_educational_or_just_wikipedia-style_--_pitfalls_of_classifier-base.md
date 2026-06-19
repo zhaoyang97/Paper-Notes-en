@@ -78,6 +78,7 @@ This paper does not train new models; it focuses on evaluation protocols. CQF sc
 ## Key Experimental Results
 
 ### Main Results
+
 | CQF Model | Original Avg. Score | Wikipedia-style Avg. Score | Score Change | Interpretation |
 |-----------|---------------------|----------------------------|--------------|----------------|
 | FineWeb-Edu | 1.19 | 1.49 | +0.30 | Most robust on average, but false positives at high thresholds remain significant |
@@ -85,6 +86,7 @@ This paper does not train new models; it focuses on evaluation protocols. CQF sc
 | NemoCurator Nemotron | 1.18 | 1.59 | +0.41 | Similar to Mixtral, showing clear preference for encyclopedic expression |
 
 ### Ablation Study
+
 | Analysis Item | Data / Setting | Key Results | Meaning |
 |---------------|----------------|-------------|---------|
 | Threshold 3 False Positives | Samples with original score $\leq 2$, filtered at threshold 3 after rewrite | >7% for NemoCurator Mixtral, ~5% for Nemotron, ~6% for FineWeb-Edu would pass | Low-quality content can cross filtering thresholds via style changes |

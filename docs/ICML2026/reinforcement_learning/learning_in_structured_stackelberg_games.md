@@ -67,6 +67,7 @@ For batch PAC settings, directly using Natarajan/Graph dimensions overestimates 
 As this is a theoretical paper, conclusions are presented as theorems and constructive counterexamples.
 
 ### Main Results
+
 | Setting | Complexity Dimension | Relation to Classical Dimensions | Algorithm |
 |------|------------------|---------------|------|
 | Online Regret (Upper, Thm 3.9) | $\mathrm{SLdim}_{\mathcal G}(\mathcal H)$ | $\mathrm{SLdim}_{\mathcal G}(\mathcal H) \le \mathrm{Ldim}(\mathcal H)$ | SSOA (Alg. 1) |
@@ -75,6 +76,7 @@ As this is a theoretical paper, conclusions are presented as theorems and constr
 | PAC Sample Upper (Thm 4.7) | Controlled by $\mathrm{SGdim}^{(\gamma)}_{\mathcal G}(\mathcal H)$ | Corresponds to Graph dim with utility cut-off | $\mathfrak L^*$ (Alg. 2) |
 
 ### Strict Separation from Classical Dimensions
+
 | Case | $\mathrm{Ldim}(\mathcal H)$ | $\mathrm{SLdim}_{\mathcal G}(\mathcal H)$ | Explanation |
 |------|----------------------------|-----------------------------------------|------|
 | Thm 3.5 Construction | $\infty$ | $0$ | Different followers induce the same strategy; classification is hard but strategy regret is zero. |

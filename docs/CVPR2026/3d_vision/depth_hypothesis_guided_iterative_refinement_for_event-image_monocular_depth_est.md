@@ -108,6 +108,7 @@ On the DSEC dataset (480×640, dense events), E denotes Event-only, E+I denotes 
 Ours-E-B improves Abs Rel by ~49% over DepthAnyEvent-R. The Tiny version achieves a strong balance between efficiency (1.4M params) and accuracy.
 
 On MVSEC (Abs Rel):
+
 | Input | Method | day1 Abs Rel ↓ | night1 Abs Rel ↓ |
 |-------|--------|----------------|------------------|
 | E | HMNet | 0.254 | 0.323 |

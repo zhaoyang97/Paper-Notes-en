@@ -94,6 +94,7 @@ Trained on VoxCeleb2 (261.5 hours, 169k samples), and evaluated **zero-shot** on
 On LRS2, HiCoDiT leads in DNSMOS (3.35 vs FTV 3.11) and LSE-C (7.95 vs 7.71). WER on OOD movie data (58.7) is significantly better than EmoDubber (88.3) and AlignDiT (80.8), showing strong robustness. Subjective MOSnat (3.17) and MOSsyn (3.50) ranks first.
 
 ### Ablation Study
+
 | Configuration (LRS3) | WER↓ | DNSMOS↑ | EmoAcc↑ | SpkSim↑ | Description |
 |------|------|---------|---------|---------|------|
 | HiCoDiT (full) | 29.41 | 3.50 | 79.41 | 0.5678 | Full model |

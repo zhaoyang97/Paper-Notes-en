@@ -111,6 +111,7 @@ SeD-UD outperforms all IB competitors (InMu-Net, DIB). While slightly behind SDI
 
 ### Ablation Study
 **Components of IDAB (MIntRec ACC)**:
+
 | Variant | ACC | wF1 |
 | :--- | :--- | :--- |
 | FIB (Fixed Dimension IB) | 71.47 | 71.06 |

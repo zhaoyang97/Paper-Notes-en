@@ -95,6 +95,7 @@ Performance on CMM (evaluated by Visual/Audio/Language dominance) and AVHBench (
 MAD outperforms baselines across all models and datasets: VideoLLaMA2-AV improved by +9.3% in visual dominance and +5.5% in language dominance; Qwen2.5-Omni improved by +12.3% in visual dominance and +12.0% in audio dominance.
 
 ### Ablation Study: Fusion Strategies (VideoLLaMA2-AV, CMM %↑)
+
 | Fusion Method | Visual Dominant | Audio Dominant | Language Dominant | Overall |
 |------|------|------|------|------|
 | Baseline | 71.8 | 80.0 | 68.8 | 73.5 |
@@ -103,6 +104,7 @@ MAD outperforms baselines across all models and datasets: VideoLLaMA2-AV improve
 | **Weighted (Ours)** | **82.3** | **84.3** | **77.5** | **81.3** |
 
 ### Ablation Study: Contribution of Modality Weights (VideoLLaMA2-AV, CMM Overall %↑)
+
 | Enabled Weights | Overall Acc |
 |------|------|
 | $w_v+w_{av}$ only (w/o $w_a$) | 78.0 |

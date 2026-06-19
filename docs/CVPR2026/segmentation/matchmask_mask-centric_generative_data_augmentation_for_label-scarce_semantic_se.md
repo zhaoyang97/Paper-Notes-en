@@ -123,6 +123,7 @@ Comparison with full-supervision mask-to-image methods (VOC mIoU):
 MatchMask leads across all ratios with ~3 orders of magnitude fewer parameters, proving that "adapting only key layers" prevents overfitting. Compared to text-centric methods (VOC 366 labels), MatchMask exceeds DatasetDM's 40k image result using only 1.8k images (72.1 vs 68.2).
 
 ### Ablation Study
+
 | Configuration | Metric (mIoU) | Note |
 | :--- | :--- | :--- |
 | Original (No Filter) | 64.7 | Noisy synthetic data unfiltered |

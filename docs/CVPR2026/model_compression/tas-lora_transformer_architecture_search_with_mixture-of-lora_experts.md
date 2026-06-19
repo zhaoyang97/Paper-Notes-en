@@ -104,6 +104,7 @@ Transfer learning results across 5 downstream datasets also show improved genera
 | **TAS-LoRA-S** | 23M | 99.1 | 91.0 | 98.2 | **92.3** | **78.0** |
 
 ### Ablation Study
+
 | Config | Tiny | Small | Base | Description |
 |------|------|-------|------|------|
 | AutoFormer (Baseline) | 74.9 | 81.6 | 82.4 | Pure shared-weight supernet |

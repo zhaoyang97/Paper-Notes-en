@@ -32,6 +32,7 @@ This paper discovers that open-vocabulary detectors output features that drift s
 **Core Idea**: Filling this gap through "data generation + consistency constraints"—first using SAM + Stable Diffusion to synthesize paired images with "invariant foregrounds and diverse backgrounds," and then using an intra-class consistency loss to pull features of the same class toward the class center while pushing different classes apart, forcing the model to ignore backgrounds and focus on foreground semantics.
 
 ## Method
+
 ### Overall Architecture
 CCL decomposes "intra-modal consistency" into two complementary components with distinct roles. **CBDG (Contextual Bootstrapped Data Generation)** is responsible for data generation: it is not standard data augmentation but specifically constructs paired samples of "the same foreground object appearing in different backgrounds" to produce a joint dataset $D_j$. These paired samples define the structure of the supervision signal but do not enforce invariance themselves. **CCLoss (Contextual Consistency Loss)** is the training objective that "constrains" these paired views into background-invariant representations. In short: CBDG provides the data structure, and CCLoss converts it into consistency-aware learning.
 

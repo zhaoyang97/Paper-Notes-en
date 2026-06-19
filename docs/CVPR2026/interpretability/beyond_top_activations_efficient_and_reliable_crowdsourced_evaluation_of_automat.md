@@ -84,6 +84,7 @@ With the optimized parameters, the large-scale study evaluates only **180 inputs
 ## Key Experimental Results
 
 ### Savings per Technique (Simulation Setting 1, Target RCE 27.5%)
+
 | Configuration | Evaluations Needed | Relative to Baseline |
 |------|------------------|---------|
 | Uniform + Majority Voting (Baseline) | 22560 | 1× |
@@ -94,6 +95,7 @@ With the optimized parameters, the large-scale study evaluates only **180 inputs
 > RCE = Relative Correlation Error (Eq. 12). MTurk real-world verification (Setting 2) shows consistent trends: MG-IS+BRAgg reaches 19.8% RCE within a 550 evaluation budget, while uniform sampling fails to reach that level within the tested sample sizes.
 
 ### Large-scale Study: Method Ranking (Pearson Correlation, Higher is Better, l=1)
+
 | Method | RN-50 Layer4 (SigLIP Eval) | ViT-B-16 Layer11 (SigLIP Eval) |
 |----------|------|------|
 | **LE(SigLIP)** [23] | **0.2413** | **0.2968** |

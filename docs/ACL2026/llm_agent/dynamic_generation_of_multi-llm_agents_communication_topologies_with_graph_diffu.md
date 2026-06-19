@@ -79,6 +79,7 @@ The proxy model is trained using MSE to predict numerical utility and cost obtai
 ## Key Experimental Results
 
 ### Main Results
+
 | Benchmark | GTD | Strongest/Typical Comparison | Gain or Note |
 |--------|------|----------|------|
 | GSM8K | 94.14 | MaAS: 92.30, G-Designer: 92.09, Vanilla: 87.45 | Highest math reasoning |
@@ -90,6 +91,7 @@ The proxy model is trained using MSE to predict numerical utility and cost obtai
 | Avg. | 85.74 | MaAS: 84.49, G-Designer: 84.41, Vanilla: 81.75 | Average gain of 3.99 over Vanilla |
 
 ### Ablation Study
+
 | Configuration | GSM8K | HumanEval | Note |
 |------|---------|------|------|
 | GTD | 94.14 | 91.43 | Full proxy-guided diffusion |

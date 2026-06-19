@@ -89,6 +89,7 @@ Consistency on REST (Subset with perfect OCR):
 No model achieves perfect consistency. Furthermore, **almost all models are strongest in the text modality**. In SoEBench, where OCR is nearly perfect and contamination is impossible, Text still leads, confirming the reasoning mechanism itself is modality-dependent.
 
 ### Ablation Study
+
 | Configuration / Analysis | Key Metric | Observation |
 |------|---------|------|
 | OCR-first | Unstable ΔAcc | DeepSeek-Small dropped $>10$ points; OCR is not the primary confounder |

@@ -88,6 +88,7 @@ Efficiency (DarkRobotic):
 | **Ours** | **~22min** | **193** |
 
 ### Ablation Study
+
 | Configuration | Key Metrics | Note |
 |------|---------|------|
 | Ours (full) | PSNR 41.02 / SSIM 0.9739 | Full model |

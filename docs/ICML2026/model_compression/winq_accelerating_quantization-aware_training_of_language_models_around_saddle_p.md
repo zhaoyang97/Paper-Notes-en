@@ -86,6 +86,7 @@ Evaluation was conducted on LLaMA-3-1B/3B and Qwen-3-0.6B/1.7B across 1, 1.58, 2
 PTQ methods (RTN, GPTQ, AWQ) fail at 1-2 bits (e.g., LLaMA-1B W1A16 PPL reaches $10^8$). WinQ improves QAT efficiency, achieving 1.5-4x acceleration and up to 8.8% performance gains under equal compute budgets for sub-4-bit settings.
 
 ### Ablation Study
+
 | Config | Metric | Observation |
 |------|---------|------|
 | $\alpha=0.0$ (No interpolation) | 16.5 PPL | Standard training plateaus at higher loss |

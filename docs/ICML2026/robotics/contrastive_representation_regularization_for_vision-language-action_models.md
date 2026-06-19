@@ -90,6 +90,7 @@ The total objective is $\mathcal{L} = \mathcal{L}_{\text{FM}} + \lambda \, \math
 ## Key Experimental Results
 
 ### Main Results
+
 | Benchmark | Method | Success Rate (%) |
 |------|------|-----------|
 | RoboCasa-Kitchen (300 demos) | GR00T N1.5 baseline | 65.7 |
@@ -108,6 +109,7 @@ The total objective is $\mathcal{L} = \mathcal{L}_{\text{FM}} + \lambda \, \math
 While the baseline on LIBERO is already near the ceiling, RS-CL still improves the Long-horizon suite from 87.8 to 90.4, indicating advantages in scenarios where action precision is the bottleneck.
 
 ### Ablation Study
+
 | Configuration | RoboCasa-Kitchen 30 demos SR (%) | FLOPs ($\times 10^{12}$) |
 |------|----------------------------------|--------------------------|
 | GR00T N1.5 baseline | 48.2 | 2.58 |

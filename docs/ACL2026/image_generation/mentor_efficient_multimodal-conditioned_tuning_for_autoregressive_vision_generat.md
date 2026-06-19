@@ -82,6 +82,7 @@ In terms of implementation, Stage 1 freezes the multimodal encoder and trains th
 ## Key Experimental Results
 
 ### Main Results
+
 | Method | Training Data | Model Size | DreamBench++ CP | DreamBench++ PF | CP·PF | CP/PF |
 |------|------|------|------|------|------|------|
 | Lumina-mGPT | 10M | 7.00B | 0.91 | 0.25 | 0.23 | 3.63 |
@@ -91,6 +92,7 @@ In terms of implementation, Stage 1 freezes the multimodal encoder and trains th
 | DreamBooth-L | - | 2.60B | 0.60 | 0.87 | 0.52 | 0.69 |
 
 ### Ablation Study
+
 | Configuration | CP | PF | CP·PF | Description |
 |------|------|------|------|------|
 | w/o Obj. Seg. in Stage 1 | 0.252 | 0.479 | 0.121 | Reconstruction degrades to copying without spatial semantic constraints |

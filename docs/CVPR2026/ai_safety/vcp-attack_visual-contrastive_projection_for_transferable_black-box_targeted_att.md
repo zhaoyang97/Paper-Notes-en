@@ -75,6 +75,7 @@ Evaluated on 7 open-source and 3 closed-source LVLMs (including GPT-4o, Claude, 
 | GPT-4o (Single)       | 95.6%          | —                      | Black-box Targeted |
 
 ### Ablation Study
+
 | Configuration | Effect | Description |
 |---------------|--------|-------------|
 | Full VCP-Attack | Best | Subspace Projection + Contrastive Supervision |

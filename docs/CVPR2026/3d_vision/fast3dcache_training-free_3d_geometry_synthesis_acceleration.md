@@ -165,6 +165,7 @@ Fast3Dcache is entirely training-free. Hyperparameters include anchor ratio $\rh
 </div>
 
 <!-- RELATED:END -->
+
 ## Related Papers
 
 - [\[CVPR 2025\] Hash3D: Training-free Acceleration for 3D Generation](../../CVPR2025/3d_vision/hash3d_training-free_acceleration_for_3d_generation.md)

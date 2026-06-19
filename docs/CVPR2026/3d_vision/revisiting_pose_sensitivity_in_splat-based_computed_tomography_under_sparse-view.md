@@ -87,6 +87,7 @@ Synthetic data was generated via TIGRE with injected rotation noise (std 0.03 in
 Ours is on par with the baseline when there is no noise (indicating self-calibration does not harm ideal cases). Once pose noise is injected, the baseline significantly degrades while Ours remains stable—achieving roughly 10 dB higher PSNR than SOTA joint calibration methods (Thies et al.). In terms of pose calibration accuracy (Table 2, mean of 15 scenes), Ours achieves a translation RMSE of 0.726 AU (NeAT: 1.437, Thies et al.: 2.463) and orientation error of 0.627° (NeAT: 2.881°, Thies et al.: 4.076°).
 
 ### Ablation Study
+
 | Configuration | Key Result | Description |
 | :--- | :--- | :--- |
 | Noise level $\sigma_{rot}/\sigma_{trans}$ (Beetle) 0.01/0.5 → 0.10/5.0 | Baseline 37.28→30.80; Ours 41.38→32.32 dB | Ours is consistently more robust as noise increases. |

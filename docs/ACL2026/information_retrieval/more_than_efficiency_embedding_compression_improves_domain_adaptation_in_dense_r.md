@@ -70,6 +70,7 @@ The main experiments cover 9 dense retrievers (<2B parameters) and 14 MTEB retri
 | Total Retrieval Runs | 9 models × 25 datasets × 3 settings | 675 runs | Completed in ~36 hours on an RTX 4090 |
 
 ### Ablation Study
+
 | Analysis Item | Key Metric | Description |
 |---------------|------------|-------------|
 | Dataset Success Rate | MedQA, SpartQA, FaithDial, NarrativeQA, ARC, TV2Nord: 9 / 9 | All models benefited from Query Compression on these datasets |

@@ -80,6 +80,7 @@ This paper does not train models but constructs security evaluations and simulat
 ## Key Experimental Results
 
 ### Main Results
+
 | Model Family / Model | Overall ASR | Representative Observation | Description |
 |--------|-------------|------------|------|
 | Proprietary Avg. | 74.4% | Macro-average across six events | Proprietary models are overall highly vulnerable |
@@ -91,6 +92,7 @@ This paper does not train models but constructs security evaluations and simulat
 | Downstream Verification | DDR > 60% (Summary), text states significantly > 50% for most | Majority Vote and AI Judge failed to mitigate effectively | False beliefs are amplified by downstream reports |
 
 ### Ablation Study
+
 | Analysis Item | Configuration | Key Result | Description |
 |------|------|---------|------|
 | CoT prompting | Qwen2.5-7B-Inst Direct vs +CoT | 67.8% → 70.9%, +3.1 | Explicit reasoning prompts did not mitigate but amplified vulnerability |

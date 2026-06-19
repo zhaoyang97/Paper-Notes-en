@@ -76,6 +76,7 @@ The base LLM is Llama3.1-8B-Instruct, fine-tuned via LoRA. The experimental setu
 ## Key Experimental Results
 
 ### Main Results
+
 | Federated Algorithm | Method | AdvBench Safety Score | HHH Safety Score | MT-Bench Utility |
 |----------|------|----------------|------------|-----------------|
 | FedAvg | Llama3.1-8B-Instruct | 99.6 | 60.0 | 6.8 |
@@ -89,6 +90,7 @@ The base LLM is Llama3.1-8B-Instruct, fine-tuned via LoRA. The experimental setu
 | SCAFFOLD | FL + Safety filter + CAI | 97.1 | 63.9 | 5.8 |
 
 ### Ablation Study
+
 | Configuration | Key Metric | Description |
 |------|---------|------|
 | Original LG3 | Acc. 70.1 / Precision 90.6 / Recall 0.5 / Hmean 1.0 | Fails to catch unsafe samples; unsuitable as a client filter |

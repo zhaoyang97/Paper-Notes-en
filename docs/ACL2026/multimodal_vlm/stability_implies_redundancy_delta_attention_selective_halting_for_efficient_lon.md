@@ -14,8 +14,8 @@ content_hash: 9740ba36c1eacfbf
 # Stability Implies Redundancy: Delta Attention Selective Halting for Efficient Long-Context Prefilling
 
 **Conference**: ACL2026
-**arXiv**: [2604.18103](https://arxiv.org/abs/2604.18103)
-**Code**: [GitHub](https://github.com/verach3n/DASH)
+**arXiv**: [2604.18103](https://arxiv.org/abs/2604.18103)  
+**Code**: [GitHub](https://github.com/verach3n/DASH)  
 **Area**: Multimodal VLM
 **Keywords**: Long-context inference, Prefill acceleration, Token pruning, Attention redundancy, Visual Language Models
 

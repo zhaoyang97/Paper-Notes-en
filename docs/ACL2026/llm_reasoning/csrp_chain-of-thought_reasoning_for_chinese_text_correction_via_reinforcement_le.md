@@ -73,6 +73,7 @@ In terms of data, a total of 336K filtered correction samples are used, with 269
 ## Key Experimental Results
 
 ### Main Results
+
 | Model | NACGEC P | NACGEC R | NACGEC $F_{0.5}$ | Description |
 |------|----------|----------|------------------|------|
 | BART | 34.67 | 41.88 | 35.91 | seq2seq baseline |
@@ -96,6 +97,7 @@ Ours improves over CEC3 by $+2.25$ $F_{0.5}$ and over ScholarGEC 14B by $+3.64$,
 Ours outperforms GPT-4 by $+5.20$ F1 and MDCSpell+ARM by $+10.68$ F1 on CSCD, demonstrating that correction-oriented curriculum and RL alignment are more effective than simple general-purpose scale.
 
 ### Ablation Study
+
 | Configuration | NACGEC P | NACGEC R | NACGEC $F_{0.5}$ | CSCD F1 | Explanation |
 |------|----------|----------|------------------|---------|------|
 | SFT only | 42.13 | 34.02 | 40.21 | 49.71 | Simple merged supervised data |

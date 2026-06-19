@@ -99,6 +99,7 @@ Evaluated on InterHuman (dual-human MoCap with text) using standard protocols. P
 
 ### Ablation Study
 **Exteroception & Stream Count**:
+
 | Exteroception | DiT Streams | R-prec Top-3 ↑ | FID ↓ |
 |----------|----------|----------------|-------|
 | RS | 3 | 0.588 | 0.676 |

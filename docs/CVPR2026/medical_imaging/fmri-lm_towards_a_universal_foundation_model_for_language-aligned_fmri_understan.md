@@ -93,6 +93,7 @@ fMRI-LM-B(Q) utilizes a Qwen3-0.6B base. It mostly achieves the best or second-b
 | ABIDE2-ASD   | Acc    | 65.22   | 57.49      | 58.79     | **76.56**    |
 
 ### Ablation Study
+
 | Configuration | Observation |
 |---------------|-------------|
 | Full model    | Baseline performance across all benchmarks. |

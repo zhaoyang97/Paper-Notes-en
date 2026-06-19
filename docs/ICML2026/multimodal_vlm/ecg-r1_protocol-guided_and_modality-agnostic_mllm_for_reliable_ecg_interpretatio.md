@@ -100,6 +100,7 @@ Testing conducted on the ECG-Grounding test set (2,381 cases) using DeepSeek-V3.
 Diagnostic accuracy improved by 5.6 points over GEM (74.7 → 80.3), and clinical fidelity improved by 21 points (62.9 → 84.2).
 
 ### Cross-modality Consistency
+
 | Metric | BLEU-4 | ROUGE-L | SBERT |
 | :--- | :--- | :--- | :--- |
 | GEM | 0.33 | 0.43 | 0.92 |

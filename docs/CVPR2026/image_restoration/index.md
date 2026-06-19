@@ -1,29 +1,25 @@
 ---
 title: >-
-  CVPR2026 Image Restoration Papers · 131 Notes
+  CVPR2026 Image Restoration Papers · 107 Notes
 description: >-
-  131 CVPR2026 papers in the Image Restoration area, covering Image Restoration, Diffusion Models, Super-Resolution, Compression, Multimodal/VLM, Adversarial Robustness and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  107 CVPR2026 papers in the Image Restoration area, covering Image Restoration, Super-Resolution, Diffusion Models, Adversarial Robustness, Self-Supervised Learning, Alignment/RLHF and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "CVPR2026"
   - "Image Restoration"
   - "AI paper notes"
   - "paper summaries"
-  - "Diffusion Models"
   - "Super-Resolution"
-  - "Compression"
-  - "Multimodal/VLM"
+  - "Diffusion Models"
   - "Adversarial Robustness"
+  - "Self-Supervised Learning"
+  - "Alignment/RLHF"
 item_list:
   - u: "2-shots_in_the_dark_low-light_denoising_with_minimal_data_acquisition/"
     t: "2-Shots in the Dark: Low-Light Denoising with Minimal Data Acquisition"
   - u: "acetone_bridging_words_and_colors_for_conditional_image_grading/"
     t: "AceTone: Bridging Words and Colors for Conditional Image Grading"
-  - u: "ae2vid_event-based_video_reconstruction_via_aperture_modulation/"
-    t: "AE2VID: Event-based Video Reconstruction via Aperture Modulation"
   - u: "beyond_ground-truth_leveraging_image_quality_priors_for_real-world_image_restora/"
     t: "Beyond Ground-Truth: Leveraging Image Quality Priors for Real-World Image Restoration"
-  - u: "beyond_single_solution_multi-hypothesis_collaborative_deep_unfolding_network_for/"
-    t: "Beyond Single Solution: Multi-Hypothesis Collaborative Deep Unfolding Network for Image Compressive Sensing"
   - u: "beyond_strict_pairing_arbitrarily_paired_training_for_high-performance_infrared_/"
     t: "Beyond Strict Pairing: Arbitrarily Paired Training for High-Performance Infrared and Visible Image Fusion"
   - u: "beyond_the_ground_truth_enhanced_supervision_for_image_restoration/"
@@ -36,28 +32,20 @@ item_list:
     t: "BiEvLight: Bi-level Learning of Task-Aware Event Refinement for Low-Light Image Enhancement"
   - u: "biprolora_bilevel_prompt_lora_for_real_scene_recovery/"
     t: "BiProLoRA: Bilevel Prompt LoRA for Real Scene Recovery"
-  - u: "blink_dynamic_visual_token_resolution_for_enhanced_multimodal_understanding/"
-    t: "Blink: Dynamic Visual Token Resolution for Enhanced Multimodal Understanding"
   - u: "bluref_unsupervised_image_deblurring_with_dense-matching_references/"
     t: "BluRef: Unsupervised Image Deblurring with Dense-Matching References"
-  - u: "bridging_fidelity-reality_with_controllable_one-step_diffusion_for_image_super-r/"
-    t: "Bridging Fidelity-Reality with Controllable One-Step Diffusion for Image Super-Resolution"
-  - u: "bridging_human_evaluation_to_infrared_and_visible_image_fusion/"
-    t: "Bridging Human Evaluation to Infrared and Visible Image Fusion"
   - u: "bridging_the_perception_gap_in_image_super-resolution_evaluation/"
     t: "Bridging the Perception Gap in Image Super-Resolution Evaluation"
   - u: "canoncgt_reference-based_color_grading_via_canonical_pivot_representation/"
     t: "CanonCGT: Reference-Based Color Grading via Canonical Pivot Representation"
-  - u: "card_correlation_aware_restoration_with_diffusion/"
-    t: "CARD: Correlation Aware Restoration with Diffusion"
   - u: "casr_a_robust_cyclic_framework_for_arbitrary_large-scale_super-resolution_with_d/"
     t: "CASR: A Robust Cyclic Framework for Arbitrary Large-Scale Super-Resolution with Distribution Alignment and Self-Similarity Awareness"
   - u: "colorflux_a_structure-color_decoupling_framework_for_old_photo_colorization/"
     t: "ColorFLUX: A Structure-Color Decoupling Framework for Old Photo Colorization"
   - u: "convexity-aware_noise_calibration_a_self-supervised_framework_for_noise-level-un/"
     t: "Convexity-Aware Noise Calibration: A Self-Supervised Framework for Noise-Level-Unknown Image Denoising"
-  - u: "customized_fusion_a_closed-loop_dynamic_network_for_adaptive_multi-task-aware_in/"
-    t: "Customized Fusion: A Closed-Loop Dynamic Network for Adaptive Multi-Task-Aware Infrared-Visible Image Fusion"
+  - u: "coordinate_denoising_for_non-equilibrium_molecular_representation_learning/"
+    t: "Coordinate Denoising for Non-Equilibrium Molecular Representation Learning"
   - u: "degradation-consistent_test-time_adaptation_for_all-in-one_image_restoration/"
     t: "Degradation-Consistent Test-Time Adaptation for All-in-One Image Restoration"
   - u: "degradation-robust_fusion_an_efficient_degradation-aware_diffusion_framework_for/"
@@ -72,19 +60,31 @@ item_list:
     t: "Disentanglement-wise Image Dehazing through Cross-Domain Manifold Consensus"
   - u: "dnf-sr_dual-input_and_negative-aware_feature_fine-tuning_for_real-world_image_su/"
     t: "DNF-SR: Dual-Input and Negative-Aware Feature Fine-Tuning for Real-World Image Super-Resolution"
+  - u: "dpgf-net_dual-prior_guided_fusion_network_for_joint_assessment_of_perceptual_qua/"
+    t: "DPGF-Net: Dual-Prior Guided Fusion Network for Joint Assessment of Perceptual Quality and Semantic Consistency in AI-Generated Images"
   - u: "dreamsr_towards_ultra-high-resolution_image_super-resolution_via_a_receptive-fie/"
     t: "DreamSR: Towards Ultra-High-Resolution Image Super-Resolution via a Receptive-Field Enhanced Diffusion Transformer"
-item_total: 131
+  - u: "dual_graph_regularized_deep_unfolding_network_for_guided_depth_map_super-resolut/"
+    t: "Dual Graph Regularized Deep Unfolding Network for Guided Depth Map Super-resolution"
+  - u: "dynamic_exposure_burst_image_restoration/"
+    t: "Dynamic Exposure Burst Image Restoration"
+  - u: "edit-aware_raw_reconstruction/"
+    t: "Edit-aware RAW Reconstruction"
+  - u: "enhancing_unregistered_hyperspectral_image_super-resolution_via_unmixing-based_a/"
+    t: "Enhancing Unregistered Hyperspectral Image Super-Resolution via Unmixing-based Abundance Fusion Learning"
+  - u: "event-based_motion_deblurring_using_task-oriented_3d_gaussian_event_representati/"
+    t: "Event-Based Motion Deblurring Using Task-Oriented 3D Gaussian Event Representations"
+item_total: 107
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # 🖼️ Image Restoration
 
-**📷 CVPR2026** · **131** paper notes
+**📷 CVPR2026** · **107** paper notes
 
 📌 **Same area in other venues:** [🧪 ICML2026 (16)](../../ICML2026/image_restoration/index.md) · [🔬 ICLR2026 (15)](../../ICLR2026/image_restoration/index.md) · [🤖 AAAI2026 (10)](../../AAAI2026/image_restoration/index.md) · [🧠 NeurIPS2025 (26)](../../NeurIPS2025/image_restoration/index.md) · [📹 ICCV2025 (31)](../../ICCV2025/image_restoration/index.md)
 
-🔥 **Top topics:** Image Restoration ×35 · Diffusion Models ×30 · Super-Resolution ×30 · Compression ×7 · Multimodal/VLM ×7
+🔥 **Top topics:** Image Restoration ×31 · Super-Resolution ×22 · Diffusion Models ×21 · Adversarial Robustness ×6 · Self-Supervised Learning ×6
 
 **[2-Shots in the Dark: Low-Light Denoising with Minimal Data Acquisition](2-shots_in_the_dark_low-light_denoising_with_minimal_data_acquisition.md)**
 
@@ -94,17 +94,9 @@ item_total: 131
 
 :   AceTone is proposed as the first unified framework supporting multimodal conditional color grading for both text and reference images. It compresses 3D-LUT into 64 discrete tokens via VQ-VAE, trains a VLM to predict LUT token sequences, and utilizes GRPO reinforcement learning to align color similarity and aesthetic preferences, achieving a 50% LPIPS improvement in style transfer and instruction-based grading.
 
-**[AE2VID: Event-based Video Reconstruction via Aperture Modulation](ae2vid_event-based_video_reconstruction_via_aperture_modulation.md)**
-
-:   Addressing the pain points where event-based video reconstruction fails in static regions and suffers from error accumulation when relying solely on sparse motion events, this paper actively modulates the aperture periodically. This "passively triggers" dense events even in static regions, allowing for the resolution of dense intensity reference maps. A dual-network architecture (AENet for aperture events and MENet for bidirectional fusion of motion events) is then used to reconstruct high-speed HDR video, achieving a 27.4% reduction in MSE compared to the SOTA on EvAid.
-
 **[Beyond Ground-Truth: Leveraging Image Quality Priors for Real-World Image Restoration](beyond_ground-truth_leveraging_image_quality_priors_for_real-world_image_restora.md)**
 
 :   The IQPIR framework is proposed, which introduces Image Quality Priors (IQP) from pre-trained NR-IQA models as conditioning signals. Through three mechanisms—a quality-conditioned Transformer, a dual-codebook structure, and quality optimization in discrete representation space—the model guides the restoration process toward the highest perceptual quality, comprehensively outperforming SOTA on tasks such as blind face restoration.
-
-**[Beyond Single Solution: Multi-Hypothesis Collaborative Deep Unfolding Network for Image Compressive Sensing](beyond_single_solution_multi-hypothesis_collaborative_deep_unfolding_network_for.md)**
-
-:   Addressing the "underdetermined and non-unique" nature of the Compressive Sensing (CS) problem, this paper proposes MHC-DUN: a paradigm shift from reconstructing a single solution in traditional Deep Unfolding Networks (DUNs) to "reconstructing $T$ hypothesis solutions simultaneously with collaborative optimization." Specifically, AlphaNet predicts pixel-adaptive step sizes for each hypothesis in the gradient descent step, while MHCB captures inter-hypothesis correlations for fusion in the proximal mapping step. The method consistently outperforms current SOTA on Set11/Urban100/CS-MRI (e.g., achieving a 0.45 dB average PSNR gain over USB-Net on Set11).
 
 **[Beyond Strict Pairing: Arbitrarily Paired Training for High-Performance Infrared and Visible Image Fusion](beyond_strict_pairing_arbitrarily_paired_training_for_high-performance_infrared_.md)**
 
@@ -130,21 +122,9 @@ item_total: 131
 
 :   To address the severe degradation issue when large diffusion models "trained on synthetic data generalize to real scenes," BiProLoRA first calibrates the VAE auto-encoder path to the real degradation distribution via self-supervised distribution fidelity learning. It then formulates "LoRA for structure recovery and Prompt for degradation-aware modulation" as a bilevel (hyperparameter optimization) problem for joint training. Using real data equivalent to only 10% of the synthetic data volume, it surpasses SOTA across five non-reference metrics in low-light, dehazing, and underwater tasks.
 
-**[Blink: Dynamic Visual Token Resolution for Enhanced Multimodal Understanding](blink_dynamic_visual_token_resolution_for_enhanced_multimodal_understanding.md)**
-
-:   The Blink framework is proposed to adaptively enhance visual perception in a single forward pass by dynamically expanding and discarding visual tokens across different Transformer layers of MLLMs (mimicking human "rapid-blink" scanning), improving LLaVA-1.5 performance across multiple multimodal benchmarks.
-
 **[BluRef: Unsupervised Image Deblurring with Dense-Matching References](bluref_unsupervised_image_deblurring_with_dense-matching_references.md)**
 
 :   Ours proposes BluRef, the first unsupervised framework that utilizes unpaired reference sharp images through dense matching to generate pseudo ground truth for training deblurring networks, achieving performance close to or even surpassing supervised methods.
-
-**[Bridging Fidelity-Reality with Controllable One-Step Diffusion for Image Super-Resolution](bridging_fidelity-reality_with_controllable_one-step_diffusion_for_image_super-r.md)**
-
-:   CODSR performs real-world image super-resolution via one-step diffusion: it first utilizes "local noise injection" based on gradient maps to activate generative priors in textured regions, then employs uncompressed LQ features to modulate U-Net intermediate layers for fidelity restoration, and finally constrains cross-attention with noun masks from Grounded-SAM2 for textual alignment. It achieves superior perceptual quality and competitive fidelity across four real-world datasets.
-
-**[Bridging Human Evaluation to Infrared and Visible Image Fusion](bridging_human_evaluation_to_infrared_and_visible_image_fusion.md)**
-
-:   To address the long-standing issue of Infrared and Visible Image Fusion (IVIF) optimizing only handcrafted metrics and disconnecting from human aesthetics, this paper constructs the first large-scale IVIF human feedback dataset. It trains a "fusion-oriented reward model" to quantify perceptual quality and utilizes SAM-assisted GRPO to align the fusion network with human preferences, achieving SOTA performance on mainstream benchmarks with more visually pleasing fusion results.
 
 **[Bridging the Perception Gap in Image Super-Resolution Evaluation](bridging_the_perception_gap_in_image_super-resolution_evaluation.md)**
 
@@ -153,10 +133,6 @@ item_total: 131
 **[CanonCGT: Reference-Based Color Grading via Canonical Pivot Representation](canoncgt_reference-based_color_grading_via_canonical_pivot_representation.md)**
 
 :   CanonCGT decomposes "reference-based color grading" into two steps—first using a canonicalizer to "wash" the input image into a style-neutral "canonical pivot," and then using a grader to apply the tone of the reference image. Combined with a two-phase supervised and self-supervised training strategy (DP-CGT), PSNR on 6 datasets improved from the second-best 18.62 to 28.99, resulting in significantly more stable and natural results.
-
-**[CARD: Correlation Aware Restoration with Diffusion](card_correlation_aware_restoration_with_diffusion.md)**
-
-:   CARD generalizes the DDRM diffusion inverse problem solver from the "i.i.d. Gaussian noise" assumption to the "spatially correlated noise" found in real sensors. By applying the inverse square root of the covariance matrix $\Sigma^{-1/2}$ to whiten observations into i.i.d. noise, it performs DDRM closed-form updates in the whitened measurement space. The method is entirely training-free and consistently outperforms existing methods in denoising, deblurring, and super-resolution on both synthetic correlated noise and the newly collected real rolling-shutter dataset CIN-D.
 
 **[CASR: A Robust Cyclic Framework for Arbitrary Large-Scale Super-Resolution with Distribution Alignment and Self-Similarity Awareness](casr_a_robust_cyclic_framework_for_arbitrary_large-scale_super-resolution_with_d.md)**
 
@@ -170,9 +146,9 @@ item_total: 131
 
 :   Ours (CANC) discovers that after adding synthetic noise to a noisy image and applying Noisier2Noise correction, the variance of the denoised output is a **convex curve** with respect to the ratio $k$ (synthetic noise/real noise variance), reaching its minimum at $k=1$ (where synthetic noise exactly matches real noise). By using a network conditioned on synthetic noise variance combined with a ternary search, the minimum point is identified to accurately estimate the noise level $\sigma_N$ without clean images or prior knowledge of noise levels. This estimate is then used to synthesize pairs for supervised training, enabling self-supervised denoising to match or even slightly exceed the performance of "noise-level-known" supervised models.
 
-**[Customized Fusion: A Closed-Loop Dynamic Network for Adaptive Multi-Task-Aware Infrared-Visible Image Fusion](customized_fusion_a_closed-loop_dynamic_network_for_adaptive_multi-task-aware_in.md)**
+**[Coordinate Denoising for Non-Equilibrium Molecular Representation Learning](coordinate_denoising_for_non-equilibrium_molecular_representation_learning.md)**
 
-:   This paper proposes CLDyN, a closed-loop dynamic network that enables a frozen fusion network to adapt to downstream tasks (detection/segmentation/saliency) without retraining. By utilizing a "Request-driven Semantic Compensation (RSC)" module with only 0.46M parameters, the system receives semantic feedback and dynamically customizes convolutional structures for task-specific compensation. It maintains high fusion quality while achieving superior multi-task adaptability on M3FD, FMB, and VT5000 datasets.
+:   Addressing the flaw that the conclusion "coordinate denoising is equivalent to force field learning" only holds in equilibrium, this paper derives a denoising target NDeM valid for any conformation using second-order finite differences of the potential energy surface. This is implemented as a plug-and-play auxiliary task without pre-training, consistently improving force prediction accuracy for various equivariant GNNs on MD17, QM9, and OC20.
 
 **[Degradation-Consistent Test-Time Adaptation for All-in-One Image Restoration](degradation-consistent_test-time_adaptation_for_all-in-one_image_restoration.md)**
 
@@ -202,13 +178,13 @@ item_total: 131
 
 :   DNF-SR feeds "noisy LR + original LR" dual-paths into an image editing diffusion model (Flux-Kontext) for one-step super-resolution at an intermediate timestep. It further employs Negative-aware Feature Fine-Tuning (NF²T), which moves preference optimization from the latent space to the image/feature space, achieving state-of-the-art results in no-reference metrics across four real-world SR benchmarks.
 
+**[DPGF-Net: Dual-Prior Guided Fusion Network for Joint Assessment of Perceptual Quality and Semantic Consistency in AI-Generated Images](dpgf-net_dual-prior_guided_fusion_network_for_joint_assessment_of_perceptual_qua.md)**
+
+:   DPGF-Net utilizes the dual encoders of Re-IQA to extract a "distortion prior Qmap" and a "content prior Cmap" to decouple rendering distortions from semantic content. Combined with a single text template and a dual-path adaptive fusion of "local TCPGA + global FIM," the model assesses both "perceptual quality" and "text-image alignment" within a unified CLIP framework, achieving 11 first-place results across 12 metrics on three AGIQA datasets and cross-dataset benchmarks.
+
 **[DreamSR: Towards Ultra-High-Resolution Image Super-Resolution via a Receptive-Field Enhanced Diffusion Transformer](dreamsr_towards_ultra-high-resolution_image_super-resolution_via_a_receptive-fie.md)**
 
 :   DreamSR utilizes a dual-branch "global + local" MM-ControlNet to inject patch-level text prompts into a FLUX-based (DiT) super-resolution model. Combined with a one-step restoration LoRA and receptive-field enhanced training, it specifically addresses the "over-generation caused by local patch and global prompt semantic mismatch" during patch-wise inference for ultra-high-definition ($\ge$ 4K) images, achieving SOTA on no-reference metrics across multiple real-world datasets.
-
-**[DRFusion: Degradation-Robust Fusion via Degradation-Aware Diffusion Framework](drfusion_degradation_robust_fusion_via_degradation_aware_diffusion_framework.md)**
-
-:   Proposes the degradation-aware diffusion framework DRFusion, which achieves multimodal image fusion under arbitrary degradation scenarios within a few diffusion steps through direct regression of the fused image (rather than explicit noise prediction) and a joint observation model correction mechanism.
 
 **[Dual Graph Regularized Deep Unfolding Network for Guided Depth Map Super-resolution](dual_graph_regularized_deep_unfolding_network_for_guided_depth_map_super-resolut.md)**
 
@@ -221,18 +197,6 @@ item_total: 131
 **[Edit-aware RAW Reconstruction](edit-aware_raw_reconstruction.md)**
 
 :   Addressing the mismatch where the true objective of RAW reconstruction is downstream post-editing while existing methods only optimize pixel-wise RAW fidelity, this paper proposes a plug-and-play **edit-aware loss**. By utilizing a differentiable, modular, and randomly parameterized simplified ISP to render both ground truth and reconstructed RAW to sRGB for error calculation, the reconstruction results become more robust under various rendering styles and edits, achieving an sRGB PSNR gain of up to 1.5–2 dB under multiple editing conditions.
-
-**[Efficient INT8 Single-Image Super-Resolution via Deployment-Aware Quantization and Teacher-Guided Training](efficient_int8_single-image_super-resolution_via_deployment-aware_quantization_a.md)**
-
-:   For $\times 3$ single-image super-resolution (SISR) on mobile NPUs, this paper utilizes a deployment-oriented pipeline featuring a "LR-space MobileOne re-parameterized backbone + three-stage teacher-guided training + fusion-before-QAT," achieving INT8 29.79 dB / 0.8634 SSIM with 82K parameters and a final score of 1.8 in the MAI 2026 Quantized SR Challenge.
-
-**[Efficient Real-Time Raw-to-Raw Denoising for Extreme Low-Light Ultra HD Video on Mobile Devices](efficient_real-time_raw-to-raw_denoising_for_extreme_low-light_ultra_hd_video_on.md)**
-
-:   To address the challenge of high noise in 4K/8K videos captured by mobile phones under extreme low-light ($<1$lx) while meeting strict constraints of $<33$ms latency and $<250$mA power consumption, this Samsung paper presents an end-to-end engineering solution ranging from "Mixed Dataset Construction → Lightweight mRLFB Denoising Network → Distillation/Re-parameterization/Quantization Optimization." It develops a real-time denoiser that can be directly integrated into commercial ISP pipelines (raw-in/raw-out, preserving CFA), running at 4K@30fps on Snapdragon NPUs with PSNR comparable to heavy SOTA models but with latency and power consumption reduced by an order of magnitude.
-
-**[EMR-Diff: Edge-aware Multimodal Residual Diffusion Model for Hyperspectral Image Super-resolution](emr-diff_edge-aware_multimodal_residual_diffusion_model_for_hyperspectral_image_.md)**
-
-:   EMR-Diff reformulates the fusion task of "Low-Resolution Hyperspectral Image (LR-HSI) + High-Resolution Multispectral Image (HR-MSI)" into "High-Resolution Hyperspectral Image (HR-HSI)" as a diffusion process. By transferring **multimodal residuals** instead of pure Gaussian noise between the start and end of the Markov chain, the sampling steps are reduced from thousands to 5. Furthermore, edge information from the HR-MSI is used to **modulate the noise**, forcing the model to focus on reconstructing high-frequency details. Combined with a dual-branch BAF-UNet, it outperforms over 10 SOTA methods across metrics like PSNR and SAM on the ICVL, Harvard, and Chikusei datasets.
 
 **[Enhancing Unregistered Hyperspectral Image Super-Resolution via Unmixing-based Abundance Fusion Learning](enhancing_unregistered_hyperspectral_image_super-resolution_via_unmixing-based_a.md)**
 
@@ -253,10 +217,6 @@ item_total: 131
 **[ExpoCM: Exposure-Aware One-Step Generative Single-Image HDR Reconstruction](expocm_exposure-aware_one-step_generative_single-image_hdr_reconstruction.md)**
 
 :   ExpoCM models single-image HDR reconstruction as an exposure-aware consistency model trajectory. By using soft exposure masks to categorize LDR regions into overexposed, underexposed, and normal, distinct PF-ODE consistency trajectories are designed for each (hallucinating details from pure noise for overexposed regions, injecting low-frequency priors for underexposed regions, and using the input directly for normal regions). Combined with an exposure-weighted luminance-chrominance loss in the CIE L\*a\*b\* space, it achieves SOTA fidelity via **distillation-free, single-step inference**, operating over 400x faster than DDPM.
-
-**[F²HDR: Two-Stage HDR Video Reconstruction via Flow Adapter and Physical Motion Modeling](f2hdr_two-stage_hdr_video_reconstruction_via_flow_adapter_and_physical_motion_mo.md)**
-
-:   The authors propose F²HDR, a two-stage HDR video reconstruction framework. It employs a Flow Adapter to adapt general pre-trained optical flow to alternating exposure scenarios for robust alignment. It utilizes physical motion modeling to extract continuous motion masks from optical flow, guiding artifact removal in the second stage. It achieves SOTA performance on real HDR video benchmarks.
 
 **[FAPE-IR: Frequency-Aware Planning and Execution Framework for All-in-One Image Restoration](fape-ir_frequency-aware_planning_and_execution_framework_for_all-in-one_image_re.md)**
 
@@ -310,10 +270,6 @@ item_total: 131
 
 :   IFCSR shifts "fidelity vs. realism" adjustment from the **latent space** of diffusion models to the **image space**. By generating a high-fidelity image and a highly realistic image using two specialized networks, users can linearly blend the two in the image space with a single parameter $\gamma$. This allows for arbitrary sliding across the fidelity-realism spectrum **without any additional network inference**.
 
-**[InstantRetouch: Efficient and High-Fidelity Instruction-Guided Image Retouching with Bilateral Space](instantretouch_efficient_and_high-fidelity_instruction-guided_image_retouching_w.md)**
-
-:   InstantRetouch shifts language-guided photo retouching from "direct pixel/latent editing" to "predicting a single set of affine transformation grids in a compact, content-disentangled bilateral space." By distilling a multi-step diffusion teacher into a single-step generator using Variational Score Distillation (VSD), it achieves 68ms inference at 4K resolution—70–900 times faster than diffusion baselines—while maintaining near-perfect content fidelity (zero content drift).
-
 **[Flickerformer: A Duet of Periodicity and Directionality for Burst Flicker Removal](it_takes_two_a_duet_of_periodicity_and_directionality_for_burst_flicker_removal.md)**
 
 :   This work reveals that flicker artifacts possess two inherent physical properties: periodicity and directionality. It designs the Flickerformer with three modules (PFM/AFFN/WDAM) to model inter-frame/intra-frame periodicity and directionality respectively. With only 3.92M parameters, it achieves 31.226dB PSNR on the BurstDeflicker benchmark, surpassing the runner-up AST by +0.580dB using only 19.70% of its parameters.
@@ -330,21 +286,17 @@ item_total: 131
 
 :   This paper defines a new task called PPS (Personalized Photographic Style), which involves learning personalized aesthetic preferences from pairwise user judgments and applying them to new photos. The authors provide the PPSD dataset (approximately 60,000 preference judgments from 767 users), three baseline models, and a specialized evaluation metric, CQS, which balances "fidelity" and "preference alignment." The study demonstrates that it is feasible to learn individual aesthetics from purely comparative signals.
 
-**[Learning to Translate Noise for Robust Image Denoising](learning_to_translate_noise_for_robust_image_denoising.md)**
-
-:   A noise translation framework is proposed that converts unknown real-world noise into Gaussian noise through a lightweight translation network, which is then processed by a pre-trained Gaussian denoiser. This achieves an average PSNR improvement of over 1.5dB on OOD real noise benchmarks. The translation network contains only 0.29M parameters and is transferable across different denoisers.
-
 **[LF-BVN: Blind-View Network for Self-Supervised Light Field Denoising](lf-bvn_blind-view_network_for_self-supervised_light_field_denoising.md)**
 
 :   The "blind-spot" ideology from single-image denoising is extended to "blind-view" for light fields (LF). By masking a subset of views and reconstructing them using the multi-view consistency of the remaining views, the network is trained without clean images. A Geometric Invariant Mask (GIM) enables a single weight-shared network to denoise all views. The method achieves or surpasses supervised counterparts on synthetic, real-world, and microscopic light fields.
 
+**[Life-IQA: Boosting Blind Image Quality Assessment through GCN-enhanced Layer Interaction and MoE-based Feature Decoupling](life-iqa_boosting_blind_image_quality_assessment_through_gcn-enhanced_layer_inte.md)**
+
+:   Addressing the issue in Blind Image Quality Assessment (BIQA) where "blindly merging all layer features introduces noise," Life-IQA utilizes only the features from the two deepest layers of the backbone for quality decoding. It employs a GCN-enhanced query topology to treat stage 4 features as queries and stage 3 features as keys/values for cross-layer interaction. Subsequently, a post-posed MoE head decouples features based on distortion types, achieving SOTA performance on seven BIQA benchmarks with approximately 95M parameters.
+
 **[LightRR: A Lightweight Network for Single Image Reflection Removal](lightrr_a_lightweight_network_for_single_image_reflection_removal.md)**
 
 :   To address the issues of excessive size and slow speed in Single Image Reflection Removal (SIRR) models, LightRR employs wavelet frequency division to process low-frequency components (where reflections are concentrated) using a Mamba State Space Model, while high-frequency components pass through a lightweight bypass. During training, a knowledge distillation strategy allows a small encoder to learn from large pre-trained models and then discard them for inference. LightRR achieves near-SOTA performance using only 3.01% of the parameters and 5.22% of the FLOPs compared to RDNet.
-
-**[Low-Rank Residual Diffusion Models](low-rank_residual_diffusion_models.md)**
-
-:   LRDM identifies that in "near-domain image restoration" (tasks where source and target domains are already highly similar, such as deraining, deblurring, or deshadowing), degradation residuals are inherently low-rank. Consequently, it constrains the forward diffusion process within a low-rank residual subspace while maintaining the reverse process as full-rank. By adaptively adjusting the rank across time steps, the model theoretically tightens the variational lower bound and achieves superior restoration fidelity with fewer sampling steps.
 
 **[LRHDR: Learning Representation-enhanced HDR Video Reconstruction](lrhdr_learning_representation-enhanced_hdr_video_reconstruction.md)**
 
@@ -353,14 +305,6 @@ item_total: 131
 **[MMDIR: Multimodal Instruction-Driven Framework for Mixed-Degradation Document Image Restoration](mmdir_multimodal_instruction-driven_framework_for_mixed-degradation_document_ima.md)**
 
 :   MMDIR integrates the process of "inquiring the model via text instructions about the presence/types of degradations in a document image" into the restoration pipeline. A degraded document image is paired with a text instruction; after joint processing by a vision encoder and an LLM, the LLM first outputs a diagnostic text identifying the existing degradations. These semantic features then guide the vision decoder for targeted restoration. This allows for the unified handling of four types of **mixed and uncertain** degradations—blur, shadow, text watermark, and seal—without relying on degradation priors or training separate models for each type.
-
-**[More Than Meets the Eye: A Unified Image Fusion Framework via Semantic-Pixel Entropy Trade-off for Zero-Shot Generalization](more_than_meets_the_eye_a_unified_image_fusion_framework_via_semantic-pixel_entr.md)**
-
-:   Image fusion is reformulated as a free energy minimization problem—where the perception path suppresses "semantic entropy" and the reconstruction path elevates "pixel entropy." By training on only infrared-visible data, the model generalizes zero-shot to unseen fusion tasks such as medical, multi-focus, and multi-exposure imaging, while significantly improving downstream detection/segmentation performance.
-
-**[MAD-Avatar: Motion-Aware Animatable Gaussian Avatars Deblurring](motionaware_animatable_gaussian_avatars_deblurring.md)**
-
-:   This work achieves the first direct reconstruction of sharp, drivable 3D Gaussian human avatars from blurry videos. It proposes a 3D-aware physical blur formation model that decomposes blur into sub-frame SMPL motion and a canonical 3DGS. By modeling sub-frame motion with B-spline interpolation and a pose deformation network, and addressing motion direction ambiguity through inter-frame regularization, the method significantly outperforms "2D deblurring + 3DGS" two-stage pipelines on both synthetic and real-world datasets (improving PSNR by approximately 2.5dB).
 
 **[MR. Illuminate: Zero-Shot Low-Light Image Enhancement with Diffusion Prior](mr_illuminate_zero-shot_low-light_image_enhancement_with_diffusion_prior.md)**
 
@@ -382,10 +326,6 @@ item_total: 131
 
 :   Inspired by "Next-Scale Prediction" in visual autoregression, NSP allows a Blind-Spot Network (BSN) to take **low-resolution, decorrelated** sub-images (derived from a large downsampling factor) as input to predict **high-resolution, detail-preserving** targets (corresponding to a small downsampling factor). This decouples "noise decorrelation" and "detail preservation"—two traditionally conflicting objectives—across different scales, achieving self-supervised SOTA on real-world denoising benchmarks while providing noise-aware super-resolution for free.
 
-**[One-Shot Flow, Any-Time Frame: A Bidirectional Warping Framework for Event-Based Video Frame Interpolation](one-shot_flow_any-time_frame_a_bidirectional_warping_framework_for_event-based_v.md)**
-
-:   Addressing the dilemma in Event-based Video Frame Interpolation (E-VFI) where "forward warping is fast but suffers from holes, while backward warping yields high quality but requires recomputation for every frame," this paper proposes "One-Shot Flow, Any-Time Frame." By computing a bidirectional motion representation covering the entire duration once, optical flow at any time can be queried directly. A bidirectional warping mechanism with explicit repair masks is then used to fuse the strengths of both directions, refreshing both reconstruction quality and inference efficiency on synthetic and real-world datasets (PSNR 36.90 for GOPRO Skip 15, with only 7.27GB VRAM for 127-frame interpolation, while TLXNet directly encounters OOM).
-
 **[One-Step Diffusion Transformer for Controllable Real-World Image Super-Resolution](one-step_diffusion_transformer_for_controllable_real-world_image_super-resolutio.md)**
 
 :   Based on Qwen-Image, the One-Step Diffusion Transformer (ODTSR) utilizes "Noise-Mixed Visual Streams" (NVS) to achieve simultaneous fidelity and prompt controllability, continuously adjustable via a fidelity weight $f$. Combined with "Fidelity-Aware Adversarial Training" (FAA) to compress multi-step denoising into single-step inference, it achieves SOTA performance in both general Real-ISR and Chinese/English scene text SR.
@@ -393,10 +333,6 @@ item_total: 131
 **[Outlier-Robust Diffusion Solvers for Inverse Problems](outlier-robust_diffusion_solvers_for_inverse_problems.md)**
 
 :   Aiming at outliers commonly found in real-world measurements, this paper introduces two safeguards to inverse problem solvers based on pre-trained diffusion models—first refining measurements with explicit noise estimation, then replacing the squared $\ell_2$ data fidelity term with Iteratively Reweighted Least Squares using Huber loss, solved via gradient descent (Robust-GD) and conjugate gradient (Robust-CG) respectively. It proves significantly more stable than recent methods like DPS and DAPS under outlier contamination for linear and non-linear tasks such as super-resolution, inpainting, and deblurring.
-
-**[Perceptual Neural Video Compression with Color Separation and Rank Chain](perceptual_neural_video_compression_with_color_separation_and_rank_chain.md)**
-
-:   To address the issues of existing neural video compression focusing solely on PSNR, neglecting the human eye's perceptual differences between luma and chroma, and inconsistent perceptual quality under variable bitrates, this paper proposes PNVC-CR. This framework combines a "luma-chroma separated dual-codec framework (PNVC-C)" with "rate-rank chain adversarial optimization (Rc-GAN)," achieving BD-rate savings of 77.71% / 53.94% / 54.44% / 42.27% on perceptual metrics like LPIPS / DISTS / KID / FID relative to VTM, while maintaining objective fidelity.
 
 **[PhaSR: Generalized Image Shadow Removal with Physically Aligned Priors](phasr_generalized_image_shadow_removal_with_physically_aligned_priors.md)**
 
@@ -414,17 +350,9 @@ item_total: 131
 
 :   Addressing the overlooked degradation problem of "ghosting artifacts + color bias" when photographing through colored glass, this paper introduces polarization imaging theory into modeling for the first time. It proposes a physical imaging model, PSTM (tracing multi-path propagation of polarized light + wavelength-selective absorption), and designs a polarization-aware network, PANet, featuring Channel Ring Attention. On the self-built real-world dataset GlassPol, it achieves an improvement of approximately 3dB PSNR over existing SOTA methods while reconstructing transmission scenes with high color fidelity.
 
-**[PS-SR: Pseudo-Single-Step Video Super-Resolution via Speculative Diffusion](ps-sr_pseudo-single-step_video_super-resolution_via_speculative_diffusion.md)**
-
-:   PS-SR decomposes an expensive multi-step diffusion SR process into an asymmetric sampling sequence consisting of "1 step by a strong base model + T−1 steps of speculative refinement by a lightweight draft model." It then applies a frequency domain update rule to ensure subsequent steps only inject high-frequency details without altering low-frequency structures, achieving multi-step diffusion quality and detail at speeds approaching single-step models.
-
 **[RADAR: VQ-VAE Decoder of VAR is a Good Student for Restoring Against Degradation by Acceleration](radar_vq-vae_decoder_of_var_is_a_good_student_for_restoring_against_degradation_.md)**
 
 :   To address the issue of latent representation degradation and decreased image quality in Visual Autoregressive (VAR) models after acceleration, this paper proposes RADAR, a two-stage framework. First, the Semantic Cost-Aware Mask (SCA-Mask) converts attention pruning into an optimization problem of "retaining maximum semantic information under budget constraints." Second, Post-Acceleration Adaptation (PAA) utilizes a LoRA attached to the VQ-VAE decoder and uses the unaccelerated branch as a teacher for internal knowledge distillation to restore degraded latent representations into high-fidelity images. This achieves approximately 1.6–1.9× speedup on ImageNet-1K with almost no loss in FID (restoring VAR-d20 from a degraded 5.02 back to 2.68, compared to the original 2.61).
-
-**[RAR: Restore, Assess, Repeat - A Unified Framework for Iterative Image Restoration](rar_restore_assess_repeat_a_unified_framework_for_iterative_image_restoration.md)**
-
-:   RAR deeply integrates Image Quality Assessment (IQA) and Image Restoration (IR) into a unified end-to-end model. It iteratively executes an "assess-restore-verify" loop within the latent space, achieving a +2.71 dB PSNR gain in composite degradation scenarios while operating 11.27× faster than AgenticIR.
 
 **[RAW-Domain Degradation Models for Realistic Smartphone Super-Resolution](rawdomain_degradation_models_smartphone_sr.md)**
 
@@ -433,10 +361,6 @@ item_total: 131
 **[RawMetaDiff: Unlocking Extreme Darkness from Dual-Exposure RAW with Meta-Guided Diffusion](rawmetadiff_unlocking_extreme_darkness_from_dual-exposure_raw_with_meta-guided_d.md)**
 
 :   RawMetaDiff reframes the fragile explicit registration of "short/long exposure frames" as a "conditional generation" problem. It uses noisy short-exposure RAW as the diffusion initialization, references a potentially misaligned long-exposure RAW, and is guided by RAW metadata (ISO/CCM/exposure) for one-step latent diffusion. Utilizing MACT for global color transfer and MNCA for shadow detail injection, it achieves a 33% LPIPS improvement on synthetic data and a 15% DeQA gain on real data.
-
-**[Real-Time Neural Video Compression with Unified Intra and Inter Coding](real-time_neural_video_compression_with_unified_intra_and_inter_coding.md)**
-
-:   To address the weak intra-coding capability of real-time neural video compression (e.g., DCVC-RT) during scene cuts or new content—which typically causes quality drops, bitrate spikes, and error propagation due to "periodic refresh" mechanisms—this paper proposes a single-model unified intra/inter coding approach. By using dual-frame compression and mixed reference training, the model adaptively switches between intra and inter modes based on reference reliability. It achieves an average bitrate saving of 12.1% (BD-rate) over DCVC-RT while maintaining real-time speed, a smaller model size, and eliminating the need for periodic refresh.
 
 **[Toward Real-world Infrared Image Super-Resolution: A Unified Autoregressive Framework and Benchmark Dataset](real_iisr_infrared_image_super_resolution_autoregressive.md)**
 
@@ -454,10 +378,6 @@ item_total: 131
 
 :   RegionFuse refines the fusion weights of Infrared-Visible Image Fusion (IVIF) from "global uniformity" to "region-adaptive according to local pixel distribution." By utilizing a region-level Mixture-of-Region Attention (MoRA) to dispatch regions with different pixel distributions to various masked attention experts, and enhancing effective regions while suppressing redundancy via a Region Feature Compression Module (RFCM), it achieves SOTA performance on four IVIF benchmarks and exhibits particular robustness against non-uniform illumination and exposure.
 
-**[Residual Diffusion Bridge Model for Image Restoration](residual_diffusion_bridge_model_for_image_restoration.md)**
-
-:   This paper re-derives diffusion bridges as stochastic interpolations unified by a "mean-reverting OU process + Doob h-transform." It uses the **residual $\boldsymbol{\pi}=\mathbf{x}_0-\boldsymbol{\mu}$ of paired images to modulate noise injection and removal**, ensuring that the model only applies perturbations to degraded regions while protecting clean areas from iterative reconstruction. This approach achieves an average gain of 1.55 dB PSNR across five universal restoration tasks (deraining, low-light enhancement, desnowing, dehazing, and deblurring) while proving existing bridge models to be special cases of this framework.
-
 **[Restore Text First, Enhance Image Later: Two-Stage Scene Text Image Super-Resolution with Glyph Structure Guidance](restore_text_first_enhance_image_later_two-stage_scene_text_image_super-resoluti.md)**
 
 :   TiGeSR decouples the inherent trade-off between "image quality" and "text readability" in scene text super-resolution using a "restore text first, enhance image later" two-stage paradigm. It first reconstructs precise glyph structures in text regions via a diffusion model, then injects these glyphs as conditions into ControlNet for full-image super-resolution. The authors also released UZ-ST, the first Chinese scene text dataset with a maximum zoom of $\times 14.29$, achieving SOTA in both image quality and OCR accuracy on Real-CE and UZ-ST.
@@ -466,13 +386,13 @@ item_total: 131
 
 :   DGAF-VSR revisits the role of "alignment + compensation" in diffusion-based video super-resolution (VSR). Based on two quantitative observations—that the feature domain exhibits stronger spatio-temporal correlation than the pixel domain, and that warping at high resolutions better preserves high-frequency details—the authors design the OGWM module for "up-warp-down" alignment in the feature domain and the FTCM module using a full U-Net for dense temporal guidance. The method outperforms SOTAs across perceptual quality, fidelity, and temporal consistency (DISTS $-35.82\%$, PSNR $+0.20$dB, tLPIPS $-30.37\%$).
 
+**[Rethinking Knowledge Transfer in Image Quality Assessment: A Perceptual Preference Structure Alignment Perspective](rethinking_knowledge_transfer_in_image_quality_assessment_a_perceptual_preferenc.md)**
+
+:   The authors attribute the failure of cross-dataset transfer in IQA to the mismatch of "perceptual preference structure" (i.e., differences in conditional distributions $P(Y|X)$ across datasets). They propose Perceptual Preference Representation (PPR) as a feature-score correlation vector to quantify these preferences, Perceptual Preference Compatibility (PPC) using cosine similarity to measure dataset compatibility, and a greedy pruning strategy (PreSTA) to select source samples aligned with the target domain. Using only 20% of source data, this method outperforms full-data baselines.
+
 **[Retrieve-to-Restore: Efficient All-in-One Image Restoration with a Retrieval-Based Degradation Bank](retrieve-to-restore_efficient_all-in-one_image_restoration_with_a_retrieval-base.md)**
 
 :   R2R decouples "degradation adaptation" from the backbone by offloading it to an external retrievable "degradation bank." During training, a degradation amalgamator distills clean priors from various degradations into the bank; during inference, degradation matching retrieves the most relevant priors to modulate features. This allows a single lightweight backbone to handle multiple degradations stably, matching SOTA PSNR while using only 9% of the computational cost.
-
-**[SAT: Selective Aggregation Transformer for Image Super-Resolution](sat_selective_aggregation_transformer_for_image_super_resolution.md)**
-
-:   Ours proposes the Selective Aggregation Transformer (SAT), which reduces the number of tokens in the Key-Value matrix by 97% through density-driven token aggregation while maintaining full resolution for the Query. This achieves efficient global attention modeling, surpassing the SOTA PFT by 0.22dB with a 27% reduction in FLOPs.
 
 **[Scan Clusters, Not Pixels: A Cluster-Centric Paradigm for Efficient Ultra-high-definition Image Restoration](scan_clusters_not_pixels_a_cluster-centric_paradigm_for_efficient_ultra-high-def.md)**
 
@@ -518,10 +438,6 @@ item_total: 131
 
 :   Ours proposes the Statistical Characteristic-Guided Denoising Network (SCGN), which utilizes spatial window standard deviation weighting and frequency band-guided weighting to adaptively enhance signals and suppress noise in both spatial and frequency domains. Combined with an HRTEM-specific noise calibration method to generate realistic datasets of disordered structures, it achieves high-quality denoising of millisecond-scale High-Resolution Transmission Electron Microscopy images.
 
-**[STCDiT: Spatio-Temporally Consistent Diffusion Transformer for High-Quality Video Super-Resolution](stcdit_spatio-temporally_consistent_diffusion_transformer_for_high-quality_video.md)**
-
-:   STCDiT performs real-world video super-resolution (VSR) based on a pre-trained video diffusion model (Wan2.1). It addresses VAE reconstruction distortions under complex camera movements using "Motion-Aware VAE Segmented Reconstruction" and injects well-preserved spatial structure information from the first-frame latent of each segment into the generation process via "Anchor-Frame Guidance." By adding only approximately 7% of the trainable parameters of a standard LoRA, it surpasses SOTAs such as SeedVR and STAR in structural fidelity and temporal consistency.
-
 **[Task-Aware Image Signal Processor for Advanced Visual Perception](task-aware_image_signal_processor_for_advanced_visual_perception.md)**
 
 :   TA-ISP replaces the RAW→RGB step—traditionally either a heavy network or a few tuned parameters—with predicted sets of global, regional, and pixel-level modulation operators. At the cost of only 3K parameters and sub-27ms latency, it produces image representations optimal for downstream detection and segmentation, achieving superior accuracy while significantly reducing computation and latency across multiple RAW benchmarks.
@@ -530,9 +446,9 @@ item_total: 131
 
 :   This paper discovers through systematic experimental analysis that pretraining INRs with unstructured noise (Uniform/Gaussian distributions) achieves a surprising ~80dB PSNR in image fitting, significantly outperforming all data-driven initialization methods. Meanwhile, noise with a spectral structure of $1/|f^\alpha|$, matching natural images, achieves the best balance between signal fitting and denoising, matching SOTA data-driven initialization performance without requiring any real data.
 
-**[Thermal Diffusion Matters: Infrared Spatial-Temporal Video Super-Resolution through Heat Conduction Priors](thermal_diffusion_matters_infrared_spatial-temporal_video_super-resolution_throu.md)**
+**[TIACam: Text-Anchored Invariant Feature Learning with Auto-Augmentation for Camera-Robust Zero-Watermarking](tiacam_text-anchored_invariant_feature_learning_with_auto-augmentation_for_camer.md)**
 
-:   THERIS treats pixel-wise grayscale sequences of infrared videos as temperature fields satisfying the heat conduction equation. It utilizes frequency-domain thermal diffusion kernels for frame interpolation (TDIM), Mamba modules modulated by "thermal prompts" for spatial-temporal detail recovery (TSSM), and a loss function (TFM Loss) that enforces discrete heat equations to achieve SOTA in infrared spatial-temporal video super-resolution.
+:   Ours proposes the TIACam framework, which achieves a camera-robust zero-watermarking scheme without modifying image pixels. By employing a learnable auto-augmentor to simulate camera distortions, text-anchored cross-modal adversarial training to learn invariant features, and a zero-watermarking head to bind messages in the feature space, the method achieves SOTA extraction accuracy in three real-world scenarios: screen re-shooting, print re-shooting, and screenshots.
 
 **[Time-Aware One Step Diffusion Network for Real-World Image Super-Resolution](time-aware_one_step_diffusion_network_for_real-world_image_super-resolution.md)**
 
@@ -578,25 +494,13 @@ item_total: 131
 
 :   The UniRain unified image deraining framework is proposed, which filters high-quality samples from million-scale public datasets through RAG-driven data distillation. Combined with an asymmetric MoE architecture and a multi-objective reweighted optimization strategy, it achieves consistently superior performance across four degradation types: rain streaks and raindrops (day/night).
 
-**[Variational Garrote for Sparse Inverse Problems](variational_garrote_for_sparse_inverse_problems.md)**
-
-:   Under a unified sparse inverse problem framework, the performance of $\ell_1$ regularization (LASSO) and Variational Garrote (VG, a method approximating $\ell_0$ through variational binary gating) is systematically compared. Across three tasks—signal resampling, denoising, and sparse-view CT reconstruction—VG is demonstrated to significantly reduce the minimum generalization error in highly underdetermined scenarios, particularly when the sampling rate is below 20% or projection angles are extremely sparse.
-
 **[VEMamba: Efficient Isotropic Reconstruction of Volume Electron Microscopy with Axial-Lateral Consistent Mamba](vemamba_efficient_isotropic_reconstruction_of_volume_electron_microscopy_with_ax.md)**
 
 :   VEMamba serves as the first application of Mamba to the isotropic reconstruction of Volume Electron Microscopy (VEM). By employing "Axial-Lateral Chunk-based Selective Scanning (ALCSSM) + Dynamic Weight Aggregation (DWAM)," it rearranges 3D voxel dependencies into 1D sequences for linear-complexity modeling. It incorporates degradation priors via realistic simulation and Momentum Contrast (MoCo). The model achieves SOTA performance on EPFL and CREMI datasets with the lowest parameter count and computational overhead.
 
-**[VLIC: Vision-Language Models As Perceptual Judges for Human-Aligned Image Compression](vlic_vision-language_models_as_perceptual_judges_for_human-aligned_image_compres.md)**
-
-:   The authors discovered that off-the-shelf VLMs (Gemini 2.5-Flash) can zero-shot reproduce human pairwise preference judgments. By treating the VLM as a "perceptual judge" and utilizing Diffusion DPO to post-train a FlowMo-based diffusion autoencoder, they developed VLIC—an image compression system highly aligned with human perception that achieves SOTA performance across most perceptual metrics.
-
 **[VoDaSuRe: A Large-Scale Dataset Revealing Domain Shift in Volumetric Super-Resolution](vodasure_a_large-scale_dataset_revealing_domain_shift_in_volumetric_super-resolu.md)**
 
 :   The authors construct VoDaSuRe—the largest **paired multi-resolution real CT dataset** to date ($\sim 194$ gigavoxels, 16 samples, 32 scans). It reveals a fact obscured by existing volumetric SR research: the "impressive performance" of current SOTA models stems primarily from training on **synthetic downsampled data**. Faced with **physically acquired real low-resolution scans**, these models output only spatially averaged blurry results and fail to reconstruct lost microstructures.
-
-**[VSRELL: A Simple Baseline for Video Super-Resolution and Enhancement in Low-Light Environment](vsrell_a_simple_baseline_for_video_super-resolution_and_enhancement_in_low-light.md)**
-
-:   VSRELL jointly solves "Low-Light Enhancement (LLE)" and "Video Super-Resolution (VSR)" tasks, which are traditionally decoupled, using a **synchronous decoupling** approach within a single CNN framework. It simultaneously models illumination and noise within a temporal window using an INCO module and injects illumination priors into deformable alignment while applying dynamic decay to memory features via an ISFP module. Ultimately, with only 6.3M parameters, it improves the average PSNR on REDS4 from ~20.6 dB (achieved by cascaded/all-in-one methods) to 25.94 dB.
 
 **[White-Balance First, Adjust Later: Cross-Camera Color Constancy via Vision-Language Evaluation](white-balance_first_adjust_later_cross-camera_color_constancy_via_vision-languag.md)**
 

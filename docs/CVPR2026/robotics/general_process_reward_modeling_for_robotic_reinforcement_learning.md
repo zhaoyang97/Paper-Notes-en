@@ -95,6 +95,7 @@ In task completion judgment, GRM-8B Multi-view (92.8%) outperformed general larg
 Policy Performance: After one-shot adaptation, Dopamine-RL improved real-robot policies from near 0% to a 95% success rate with ~150 online rollouts (~1 hour of interaction), reaching 100% on some tasks. In simulation (Insert-Squares / Stack-Three-Cubes / Fold-the-Towels), success rates increased by approximately +38.3, +68.2, and +55.0 percentage points compared to sparse-reward RL.
 
 ### Ablation Study
+
 | Configuration | VOC Mean (S/M/D) | Description |
 |------|------------------|------|
 | GRM-8B Multi-view (Full) | 0.96 / 0.96 / 0.94 | Multi-view Input + Multi-view Fusion |

@@ -35,6 +35,7 @@ This paper constructs VisualOverload using 150 public domain paintings with ultr
 **Core Idea**: Instead of testing new knowledge or difficult question types, the benchmark uses foundational visual tasks that everyone considers "simple," but places them in scenes so dense they make models "gasp for air," revealing the true limitations of SOTA VLMs.
 
 ## Method
+
 ### Overall Architecture
 This is a pure benchmark paper without training a new model. The core output is the dataset itself and an anti-cheating evaluation protocol. The pipeline involves: collecting 150 public domain paintings from Google Arts & Culture → uniformly downsampling to 4K → six annotators manually creating questions across six task categories (approx. 18 questions per image, including multiple-choice/binary/free-form formats, with binary questions designed as "logically opposite" pairs) → running 37 VLMs for quality control (filtering language bias where models answer correctly without the image) → splitting items into easy/medium/hard tiers based on the accuracy rates of all models → keeping ground truth private for evaluation server scoring only.
 

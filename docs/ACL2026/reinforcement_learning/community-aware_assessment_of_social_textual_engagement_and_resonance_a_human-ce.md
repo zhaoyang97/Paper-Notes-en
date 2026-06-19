@@ -97,6 +97,7 @@ Due to the sparsity of the High-Quality class in CASTER-Bench, High-Quality F1 i
 | **MEDEA** | **0.603** | **0.705** | **0.650** | **0.749** | Our full method |
 
 ### Ablation Study
+
 | Configuration | HQ F1 | Low-Quality F1 | Macro-F1 | Description |
 |:---|---:|---:|---:|:---|
 | SFT-pseudo-label | 0.487 | 0.686 | 0.587 | Format learned, weak judgment |

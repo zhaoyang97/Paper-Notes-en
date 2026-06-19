@@ -78,6 +78,7 @@ The SFT in ProxyCoT-ZS uses $\mathcal{L}_{SFT}=-\mathbb{E}[\log p_\theta(t\mid q
 ## Key Experimental Results
 
 ### Main Results
+
 | Dataset / Model | Method | Proxy Metric | Full Metric | Description |
 |--------|------|-----------|-----------|------|
 | SciTrek / Qwen3-4B | Zero-shot | 67.2 | 30.8 | Significant drop in full context |
@@ -90,6 +91,7 @@ The SFT in ProxyCoT-ZS uses $\mathcal{L}_{SFT}=-\mathbb{E}[\log p_\theta(t\mid q
 | Loong / Gemma3-4B | Zero-shot → ProxyCoT-RL | Financial 25.85 → 32.05; Academic 3.55 → 24.32 | Generalization without retraining | Not just memorizing SciTrek format |
 
 ### Ablation Study
+
 | Analysis | Configuration | Key Result | Description |
 |------|------|---------|------|
 | CoT tokens | Qwen3-4B on SciTrek full | Zero-shot 1,744 tokens / 30.8 EM; SFT on full CoT 6,683 / 31.6; ProxyCoT-RL 617 / 46.5 | ProxyCoT-RL is more accurate and shorter |

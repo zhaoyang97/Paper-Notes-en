@@ -99,6 +99,7 @@ Evaluated on two synthetic datasets (SYNTHETIC4RELIGHT, TENSOIR SYNTHETIC) again
 Ours achieved first place in relighting PSNR across both datasets. It also performed strongly in NVS and albedo recovery, indicating that the geometry and material decomposition are robust.
 
 ### Real-Time Performance (RTX 4080, 1920×1080, 2 spp)
+
 | Scene | G-buffer Rendering | Hybrid Path Tracing | Denoising | Total (ms) |
 |------|--------------|-------------|------|----------|
 | GARDEN | 3.51 | 2.70 | 1.74 | 7.95 |

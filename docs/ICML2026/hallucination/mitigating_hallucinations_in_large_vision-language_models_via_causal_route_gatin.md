@@ -81,6 +81,7 @@ On LLaVA-1.5-7B, Qwen-VL-Chat, and Qwen2.5-VL-7B-Instruct, CRG systematically ou
 | AMBER / LLaVA-1.5-7B | CHAIR↓ / F1↑ / Score↑ | 8.3 / 73.7 / 82.70 | — | **4.6 / 77.5 / 86.45** | Score +3.75 |
 
 ### Ablation Study
+
 | Config | POPE-Avg↑ | $C_S$↓ | MMHal↑ | MME↑ | Context |
 |---|---|---|---|---|---|
 | Regular | 81.37 | 52.8 | 2.23 | 1640 | No intervention baseline |

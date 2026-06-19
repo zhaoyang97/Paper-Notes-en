@@ -97,6 +97,7 @@ Model-level evaluation covers two categories: (1) SNN-LLMs converted via SpikeLL
 Across WinoGrande, HellaSwag, ArcC, ArcE, and PIQA, accuracy fluctuations for all models are $< 1\%$, with NLSpike even leading slightly in some tasks (e.g., +1.4% on Qwen3-8B).
 
 ### Ablation Study
+
 | Configuration | Key Metric | Description |
 |------|---------|------|
 | NLS-Softmax | Lowest mean error across dims | Better than Padé / PWL / Sorbet / hardmax |

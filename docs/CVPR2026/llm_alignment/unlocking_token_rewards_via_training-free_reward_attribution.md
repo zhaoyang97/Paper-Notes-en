@@ -105,6 +105,7 @@ Comparison with other token-level dense reward methods (Eurus-2-7B-SFT, average 
 | GRPO (P2T) | **40.7** | Training-free, +2.3 vs SPRO, +4.7 vs PRIME |
 
 ### Ablation Study
+
 | Configuration | Pass@1 | Description |
 |------|--------|------|
 | Full ([PAD] + Taylor approx.) | 53.8 | Complete model |

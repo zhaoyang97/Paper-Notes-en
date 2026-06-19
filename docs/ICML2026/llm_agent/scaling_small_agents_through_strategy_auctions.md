@@ -35,6 +35,7 @@ This paper proposes sale (Strategy Auctions for Workload Efficiency): diverse Qw
 **Core Idea**: Organize heterogeneous agents into a test-time auction market where bids are short strategy plans rather than full solutions. Winners are chosen via cost-minus-value. Memory of "past wins/losses" drives small agents to iterate themselves, merging task routing and self-improvement into one process.
 
 ## Method
+
 ### Overall Architecture
 sale organizes a set of heterogeneous agents $\mathcal{A} = \{a_i\}_{i=1}^{|\mathcal{A}|}$ (four Qwen3 sizes in the paper) into a test-time auction market. Upon receiving task $t$, each agent generates a short strategy as a bid. The market scores these bids using cost-minus-value to select a temporary winner. Agents cheaper than the winner can refine their bids by retrieving historical auction memory to "outbid" the current leader. Only the final winner executes their strategy to generate a full trajectory. Crucially, the auction involves only a few hundred tokens per agent (plan), costing less than 1% of total tokens and latency, thus making the decision of "whether to use a large model" a nearly free market clearing process.
 
@@ -88,6 +89,7 @@ Evaluated on HST-Bench (753 tasks, 5 complexity bins based on human solve time $
 Overall, sale reduces dependence on the largest agent by 65% in deep search and 40% in coding (-52% combined), with total cost reductions of 42% and 25% respectively (-35% combined).
 
 ### Ablation Study
+
 | Configuration | Performance / Phenomenon | Description |
 |---|---|---|
 | Any single Qwen3 agent | Dominated by sale in both pass@1 and $/Mt | sale pushes the Pareto frontier outward. |

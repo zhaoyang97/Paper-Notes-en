@@ -72,6 +72,7 @@ DMN itself does not train the target MLLM nor does it require access to model pa
 ## Key Experimental Results
 
 ### Main Results
+
 | Dataset / Model Group | Metric | DMN | Strongest or Main Baseline | Gain / Conclusion |
 |--------|------|------|----------------|-------------|
 | SafeBench, Avg. of 10 MLLMs | ASR | 89.32% | CS-DJ 30.18%, FigStep 20.22% | Multi-image composition is significantly higher than single-image structural attacks |
@@ -82,6 +83,7 @@ DMN itself does not train the target MLLM nor does it require access to model pa
 | Claude Sonnet 4 / SafeBench | ASR | 94.2% | FigStep 13.0%, CS-DJ 39.6% | Safe models are also affected by compositional inputs |
 
 ### Ablation Study
+
 | Configuration | Key Metric | Description |
 |------|---------|------|
 | Plain text | ASR 7.32% | Low success rate with text only |

@@ -103,6 +103,7 @@ Main results on MS-COCO (Excerpt from Table 1, speedup relative to Vanilla AR):
 Key takeaway: PJD achieves significantly better step compression than SJD and GSD with comparable or better quality. Smaller $c$ values provide higher speedups with slight quality drops.
 
 ### Ablation Study
+
 | Configuration | Key Metric | Description |
 |------|---------|------|
 | Context Token Count $c\in\{4,6,9,11,16,32\}$ | $c$↑ → FID↓ but step compression↓ | Trade-off between context-driven fidelity and parallel efficiency. |

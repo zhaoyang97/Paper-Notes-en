@@ -89,6 +89,7 @@ As a system/tool paper, no new training losses are proposed. The library depends
 ## Key Experimental Results
 
 ### Main Results
+
 | Capability | Interpreto | Captum | Ferret | Inseq | SHAP |
 |------|------------|--------|--------|-------|------|
 | Sequence classification | ✓ | ✓ | ✓ | ✗ | ✓ |
@@ -100,6 +101,7 @@ As a system/tool paper, no new training losses are proposed. The library depends
 In the comparison of attribution libraries, Interpreto is the only one supporting classification, generation, faithfulness metrics, simple visualization, and granularity control simultaneously.
 
 ### Ablation Study
+
 | Dimension | Interpreto Support | Details |
 |------|--------------------|----------|
 | Attribution methods | 10 types | 4 perturbation-based, 6 gradient-based |

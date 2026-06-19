@@ -33,6 +33,7 @@ GeCo-SRT transforms "sim-to-real" transfer from a one-off parameter tuning proce
 **Core Idea**: Treat local geometric features as **carriers for cross-task continual knowledge accumulation**. Use a Mixture-of-Experts network to allow different experts to specialize in different geometric patterns, and use experience replay to protect this expert knowledge from being overwritten by new tasks, thereby upgrading isolated transfer into "more efficient transfer over time" via continual adaptation.
 
 ## Method
+
 ### Overall Architecture
 GeCo-SRT addresses two questions: (1) How to convert human-designed sim-to-real heuristics (when to correct) into a format learnable by neural networks? (2) What knowledge is actually transferable across multiple transfer iterations?
 

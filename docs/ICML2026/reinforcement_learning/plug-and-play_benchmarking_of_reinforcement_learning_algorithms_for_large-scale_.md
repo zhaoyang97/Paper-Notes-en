@@ -84,6 +84,7 @@ PPO and SAC use default hyperparameters from Stable-Baselines3, while MARL varia
 ## Key Experimental Results
 
 ### Main Results: Environment Overview
+
 | Env Prefix | Control Goal | #Sensors | #Actuators | SARL | MARL | Step Time (s) |
 |------------|--------------|----------|------------|------|------|---------------|
 | CylinderJet2D | Drag Reduction | 302 | 1 | ✓ | × | 2.01 |
@@ -97,6 +98,7 @@ PPO and SAC use default hyperparameters from Stable-Baselines3, while MARL varia
 The benchmark covers action dimensions from 1 to 4096 and observation dimensions spanning three orders of magnitude.
 
 ### Algorithm Comparison and Transfer
+
 | Configuration | Key Findings |
 |---------------|--------------|
 | PPO vs SAC (SARL) | SAC achieved the highest normalized test scores across all difficulties; PPO converged slowly. This contradicts the community's default preference for PPO. |

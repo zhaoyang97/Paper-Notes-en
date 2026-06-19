@@ -35,6 +35,7 @@ SceneSmith constructs indoor scenes layer-by-layer on a "layout â†’ furniture â†
 **Core Idea**: Replace single-shot generation or single-agent reflection with a "hierarchical agent tree + designer-critic-orchestrator specialization + asset generation-routing-validation integration." This merges scene generation and asset generation at the agent tool level into an end-to-end, simulation-oriented pipeline.
 
 ## Method
+
 ### Overall Architecture
 The input is a natural language scene prompt $\mathcal{T}$, and the output is a multi-room scene $\mathcal{S}=\{\mathcal{R}_j\}$ exportable to Drake / MuJoCo / Isaac Sim / Genesis. Each room $\mathcal{R}_j=(\mathcal{G}_j, \mathcal{O}_j)$ includes architectural geometry (walls with thickness, floors, doors, windows) and a set of objects $\{(\mathcal{A}_i, \mathcal{X}_i)\}$. Each asset $\mathcal{A}_i$ contains a visual mesh, convex decomposition collision geometry, and physical properties (mass, center of mass, inertia, friction). Articulated objects also include joint definitions.
 

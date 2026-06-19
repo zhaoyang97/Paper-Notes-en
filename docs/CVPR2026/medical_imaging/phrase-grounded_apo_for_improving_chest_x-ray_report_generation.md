@@ -86,6 +86,7 @@ On the ChestImaGenome Gold dataset, various metrics compare the similarity of "r
 Across four metrics, the average gain of (C, G) relative to (A, G) ranges from 13.5% to 78.9%, with an overall average of approximately 39.98% on this dataset. In contrast, the static correction (P, G) averages around 26.52%, indicating that the gain from APO parameter updates exceeds simple report modification—it can even recover new findings missed in the original report (e.g., adding "right pleural effusion" in Fig. 4). Measured by RQ score across 7 generators × 4 datasets, APO achieves an average gain of approximately 22.7%.
 
 ### Ablation Study
+
 | Configuration | Avg. Gain (RQ) | Description |
 |---------------|----------------|-------------|
 | Static Correction only (P,G) | 26.52% (CG multi-metric) | Can only add/delete reported findings, cannot recover missed ones |

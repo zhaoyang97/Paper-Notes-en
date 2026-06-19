@@ -77,6 +77,7 @@ Stage 1(a) uses standard autoregressive SFT to maximize the conditional probabil
 ## Key Experimental Results
 
 ### Main Results
+
 | Method | Thinker | GPT-4o Win vs. Poor↑ | Human Win vs. Poor↑ | GPT-4o Win vs. Good↑ | Human Win vs. Good↑ | ArtiMuse↑ | LAION-V2↑ | Q-ALIGN↑ |
 |------|---------|-----------------|-----------------|-----------------|-----------------|-----------|-----------|----------|
 | Nano Banana Pro | None | 54.44 | 72.55 | 16.67 | 21.95 | 50.90 | 5.59 | 3.24 |
@@ -87,6 +88,7 @@ Stage 1(a) uses standard autoregressive SFT to maximize the conditional probabil
 | AesFormer | AesThinker | 65.33 | 68.63 | 26.25 | 24.39 | 47.76 | 5.60 | 3.51 |
 
 ### Ablation Study
+
 | Configuration | GPT-4o Win vs. Poor↑ | GPT-4o Win vs. Good↑ | ArtiMuse↑ | LAION-V2↑ | Q-ALIGN↑ | Description |
 |------|-----------------|-----------------|-----------|-----------|----------|------|
 | Baseline (Edit-2511) | 16.50 | 7.64 | 46.65 | 5.44 | 3.20 | Base editor only |

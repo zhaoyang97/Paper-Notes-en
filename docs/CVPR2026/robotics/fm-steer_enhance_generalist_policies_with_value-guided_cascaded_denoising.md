@@ -78,6 +78,7 @@ By splitting the task between two models, the verifier handles slow, high-level 
 Evaluations were conducted across three simulation benchmarks (LIBERO, SimplerEnv WidowX, SimplerEnv Google Robot) and three real-world platforms (WidowX 250s, Franka, AgiBot G-1), covering 15 scenarios and 21 real-world tasks.
 
 ### Main Results: LIBERO (Success Rate SR)
+
 | Model | Spatial | Object | Goal | Long | Overall |
 |--------|------|------|------|------|------|
 | OpenVLA-OFT | 97.6% | 98.4% | 97.9% | 94.5% | 97.1% |
@@ -90,6 +91,7 @@ Evaluations were conducted across three simulation benchmarks (LIBERO, SimplerEn
 FM-Steer(π0) achieves the highest average SR (98.6%), outperforming the base π0 (94.2%) by +4.4%. Its success with GR00T N1 demonstrates its **plug-and-play** compatibility.
 
 ### Main Results: SimplerEnv (vs. Prior Test-time Methods)
+
 | Method | WidowX Overall | Google (Matching) | Google (Aggregation) |
 |--------|------|------|------|
 | OpenVLA | 37.7% | 35.4% | 30.0% |
@@ -99,6 +101,7 @@ FM-Steer(π0) achieves the highest average SR (98.6%), outperforming the base π
 | **FM-Steer (π0)** | **79.5%** | **76.6%** | **60.3%** |
 
 ### Ablation Study
+
 | Configuration | LIBERO | SimplerEnv | Overall |
 |------|------|------|------|
 | FM-Steer (π0) Full | 98.6 | 75.1 | **81.0** |

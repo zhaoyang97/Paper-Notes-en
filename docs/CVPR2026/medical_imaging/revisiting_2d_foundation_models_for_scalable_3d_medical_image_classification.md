@@ -85,6 +85,7 @@ The benchmark includes 12 tasks (T1–T12), covering abdominal trauma (bowel/liv
 AnyMC3D outperforms all baselines with 10–40× fewer trainable parameters than MST and 40–50× fewer than VoCo. In early PDAC detection (T5), AnyMC3D (DINOv3) improved AUC from PanDx's 0.949 to 0.962 using only classification labels, and to 0.973 with pixel supervision. On the CT-RATE dataset (18 abnormalities), AnyMC3D (DINOv2) achieved 0.882 AUC, surpassing CT-Net (0.631) and CT-CLIP (0.768), winning the VLM3D challenge among 118 teams.
 
 ### Ablation Study
+
 | Configuration | Conclusion | Explanation |
 |------|------|------|
 | Slice Fusion: Attention vs. Mean/Median/LSTM/Transformer | Attention is best | Better performance with fewer parameters; sequential models add overhead without gain |

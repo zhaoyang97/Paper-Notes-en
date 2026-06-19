@@ -101,6 +101,7 @@ Evaluated on NAVSIM (OpenScene-based planning dataset) using PDMS (v1) and EPDMS
 | High-level Planning | Accuracy | 80.3 | 79.3 (GRPO) | +1.0 |
 
 ### Ablation Study
+
 | Configuration | PDMS↑ | Description |
 |------|---------|------|
 | SFT | 87.4 | Baseline supervised fine-tuning |

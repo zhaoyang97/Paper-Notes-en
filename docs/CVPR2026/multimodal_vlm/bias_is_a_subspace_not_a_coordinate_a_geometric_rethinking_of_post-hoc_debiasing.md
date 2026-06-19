@@ -101,6 +101,7 @@ Covering three types of downstream tasks and three backbones (CLIP-ResNet50 / CL
 Notably, in ViT-B/32 retrieval, SPD **improves fairness and R@1 simultaneously** (Skew drops, R@1 exceeds baseline), whereas SFID’s R@1 decreases—demonstrating that subspace projection is more utility-friendly. For image generation (Table 5), the Misgendered Response Compound (MRC) for gendered prompts in SDXL dropped from 4.42 (baseline) to 1.67 (SPD), and Skew for neutral prompts dropped from 83.25 to 78.66, without breaking the generation process like DeAR (where MRC spiked to 99.81).
 
 ### Ablation Study
+
 | Configuration | Backbone | Accuracy | $\Delta DP$ | Description |
 |------|------|------|------|------|
 | SPD proj only (Eq. 6) | CLIP-RN50 | 50.16 | 9.61 | Without neutral reinjection |

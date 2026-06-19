@@ -82,6 +82,7 @@ The authors do not train models but build the benchmark to evaluate 15 models. A
 ## Key Experimental Results
 
 ### Main Results
+
 | Model | AvgE | RP | AvgS | AvgS+E | AvgAll* | Key Insight |
 |------|------|------|------|------|------|------|
 | GPT-4.1 | 94.73 | 54.96 | 60.79 | 66.46 | 70.28 | Overall strongest; best two-hop performance after evidence augmentation |
@@ -91,6 +92,7 @@ The authors do not train models but build the benchmark to evaluate 15 models. A
 | Qwen2.5-32B | 65.53 | 38.43 | 54.75 | 55.66 | 56.09 | Strongest open-source model, but significant gap remains vs. GPT |
 
 ### Ablation Study
+
 | Graph Coverage Metric | GPT-5-mini | GPT-4o | GPT-4.1 | GPT-5.2 | Qwen2.5-32B |
 |------|------|------|------|------|------|
 | CovAvg(E) | 77.81 | 77.36 | 77.91 | 63.92 | 61.47 |

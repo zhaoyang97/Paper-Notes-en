@@ -87,6 +87,7 @@ Evaluation was conducted on the custom OmniPBench (based on 20 concepts from Uni
 OmniPersona outperforms Unictoken by +7.8% in recognition and +13.1% in VQA. In generation, it achieves the highest CLIP-I and Face Similarity. In editing, its average score of 0.658 exceeds GPT-4o+IP by 17.9%.
 
 ### Ablation Study
+
 | Configuration | Rec. | PARG Score | Gen CLIP-I | Edit Avg. |
 |------|-----------|-----------|-------------|-----------|
 | Ours (Full) | 0.852 | 0.613 | 0.791 | 0.658 |

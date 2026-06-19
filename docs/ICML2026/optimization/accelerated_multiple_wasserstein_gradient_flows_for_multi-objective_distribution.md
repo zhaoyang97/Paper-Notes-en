@@ -73,6 +73,7 @@ Real-world data experiments involve Bayesian multi-task learning on Multi-Fashio
 | Multi-Fashion | #2 | 83.1±0.3 | 85.6±0.5 | 86.3±0.5 | 87.4±0.6 | 86.5±0.7 |
 
 ### Ablation Study
+
 | Configuration | Key Metrics | Description |
 |------|---------|------|
 | Theory: MWGraD flow | $\mathcal{M}(\rho_t)=O(1/t)$ | Baseline convergence rate under geodesically convex assumption |

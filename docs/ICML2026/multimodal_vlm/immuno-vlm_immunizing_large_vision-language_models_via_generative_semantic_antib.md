@@ -84,6 +84,7 @@ All methods use the same CLIP-ViT-B/16 backbone evaluated on ImageNet-1K (ID) an
 > The paper achieves SOTA across multiple benchmarks, with a 16%+ improvement in adversarial semantic shift detection compared to zero-shot baselines while maintaining ID accuracy.
 
 ### Ablation Study
+
 | Configuration | Key Metric | Description |
 |------|---------|------|
 | Full (Pull+Push+vMF+EVT) | Best AUROC | Complete framework |

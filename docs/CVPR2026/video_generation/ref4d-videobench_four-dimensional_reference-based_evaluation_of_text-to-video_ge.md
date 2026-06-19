@@ -83,6 +83,7 @@ Evaluation of 8 T2V models (Sora2, Kling-v1, CogVideoX-5B/Fun-5B, JiMeng, VideoC
 **Key Findings**: All no-reference baselines fail to exceed an SRCC of **0.42** in any dimension, while this paper's dimensions consistently fall between **0.48–0.847**. Generic similarity/quality metrics like CLIPScore/BLIPScore are weak (SRCC 0.03–0.30), indicating they only capture coarse trends.
 
 ### Main Results: Model Benchmarking (Tab. 2, scores mapped to [0,100])
+
 | Type | Model | Semantic↑ | Motion↑ | Event↑ | World Knowledge↑ |
 |------|------|-------|-------|-------|-----------|
 | Closed | JiMeng | 61.64 | 63.87 | **58.89** | **75.05** |

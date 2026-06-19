@@ -99,6 +99,7 @@ Testing on FLUX.1-dev and FLUX.1-sch involved four categories of concept erasure
 SafeRoPE achieved the lowest UR across all concepts while improving FID compared to the original model (68.9 vs 76.8). Rotation matrices learned on FLUX.1-dev successfully transferred to FLUX.1-sch, reducing its UR from 6.9 to 5.1 while maintaining quality.
 
 ### Ablation Study
+
 | Configuration | CLIP↑ | VQA↑ | Unsafe-1K UR↓ | I2P UR↓ | Description |
 |------|------|------|------|------|------|
 | Shr-NS | 31.1 | 85.5 | 24.2 | 9.3 | Shared rotation, no safety separation |

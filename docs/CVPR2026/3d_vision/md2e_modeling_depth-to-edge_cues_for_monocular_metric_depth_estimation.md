@@ -34,6 +34,7 @@ Addressing the "unrecoverable scale in monocular metric depth when camera intrin
 **Core Idea**: Transform dense depth labels into edge supervision to predict edge maps, then use the Spectral Quantile Estimator (SQE) to calculate a score $t_{pred}$ from the edge spectrum as a scale proxy for depth calibration. Simultaneously, edge prediction is used to regularize depth boundaries.
 
 ## Method
+
 ### Overall Architecture
 MD2E uses Metric3D v2 as the MDE backbone but replaces its joint depth-normal optimization module with two convolutional prediction heads outputting an initial depth field $Z$ and an edge map $\mathcal{E}_{pred}$. The workflow: the input image passes through the MDE model to obtain edges and initial depth; dense depth labels undergo a "depth-to-edge" transformation to provide edge supervision; the predicted edge map is fed into the SQE to obtain the scale score $t_{pred}$, which calibrates the initial depth to the metric scale; meanwhile, the predicted edges constrain depth boundaries for sharpness. This is a multi-branch serial structure where "edges act as the intermediary and the spectrum acts as the scale ruler":
 
@@ -89,6 +90,7 @@ Metrics: **A.Rel** (Absolute Relative Error, lower is better); **RMS** (Root Mea
 Compared to Metric3D v2: iBIMS-1 A.Rel decreased by 53.0% and RMS by 41.9%; ETH3D / KITTI RMS decreased by 49.3% / 28.3%. In comparison to UniDepthV2 which learns camera representations, the gap is significant outdoors (DIODE Outdoor A.Rel 0.209 vs 1.231). In-domain fine-tuning (NYUv2/KITTI) also shows leadership: compared to single-dataset SOTA IEBins, NYUv2 / KITTI A.Rel dropped by 49.4% / 30.0%.
 
 ### Ablation Study (1M samples / $10^5$ iterations, mean of 6 benchmarks)
+
 | Variant | δ1↑ | A.Rel↓ | RMS↓ | Description |
 |------|-----|--------|------|------|
 | MD2E (Full) | 0.604 | 0.233 | 2.873 | Full Model |
@@ -139,6 +141,7 @@ Compared to Metric3D v2: iBIMS-1 A.Rel decreased by 53.0% and RMS by 41.9%; ETH3
 </div>
 
 <!-- RELATED:END -->
+
 ## Related Papers
 
 - [\[CVPR 2026\] UniDAC: Universal Metric Depth Estimation for Any Camera](unidac_universal_metric_depth_estimation_for_any_camera.md)

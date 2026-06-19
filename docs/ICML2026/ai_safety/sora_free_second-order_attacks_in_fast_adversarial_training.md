@@ -83,6 +83,7 @@ The paper compares SORA with 15 baselines across CIFAR-10/100, TinyImageNet, Ima
 SORA is the only single-step method that avoids CO across all 6 datasets while achieving the highest robust and clean accuracy. On PathMNIST, it improves robust accuracy from < 2% (baselines) to 35.54%.
 
 ### Ablation Study
+
 | Configuration | Clean | FGSM | PGD-10 | Description |
 |------|-------|------|--------|------|
 | SORA (full) | 84.69 | 57.51 | **45.56** | Full method |

@@ -93,6 +93,7 @@ Success rate $E_{\text{succ}}$ (%, higher is better); selected key terrains acro
 | 3D-CNN | 97.5 | 73.9 | 92.7 | 65.3 | 86.0 | Occasionally better, but generally worse/slower |
 
 ### Ablation Study (Perception Network / Resolution, Tab.3)
+
 | Configuration | Forest | Pile | Upstair | Key Findings |
 |------|--------|------|---------|---------|
 | Gallant (5cm, z-2D CNN) | **84.3** | **82.1** | **96.2** | Best trade-off between accuracy and latency |

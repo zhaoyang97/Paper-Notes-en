@@ -79,6 +79,7 @@ Ours does not train a new generative model or a supervised reranker; all enhance
 ## Key Experimental Results
 
 ### Main Results
+
 | Dataset / Eval | Metric or Setting | Key Result (Ours) | Comparison | Conclusion |
 |--------|------|------|----------|------|
 | CNN/DM | FIZZ Score, epsilon setting | FENICE-0.75 improves Fi from 39.36 to 52.44 | Baseline 39.36 | Significant improvement in factuality |
@@ -88,6 +89,7 @@ Ours does not train a new generative model or a supervised reranker; all enhance
 | Human Eval / CNN/DM | Overall | FENICE-0.75 Score: 4.63 | Baseline 4.56, MBR-1.0: 4.57, Gold: 3.92 | Humans prefer FENICE-0.75 |
 
 ### Ablation Study
+
 | Configuration | Key Metric | Description |
 |------|---------|------|
 | FENICE, $w=0.75$ | CNN/DM 81.05, XSum 77.52 | Stable across datasets; serves as the default configuration |

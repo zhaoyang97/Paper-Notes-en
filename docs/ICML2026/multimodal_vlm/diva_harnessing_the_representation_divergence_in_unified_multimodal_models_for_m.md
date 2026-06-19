@@ -101,6 +101,7 @@ Post-training was performed on three representative UMMs, compared across 8 unde
 Understanding improved by an average of +7.82%, and generation by +8.46%. All three backbones showed **consistent gains**—credible evidence of "mutual reinforcement."
 
 ### Ablation Study
+
 | Configuration | MMMU | POPE | GenEval | DPG-Bench |
 |------|------|------|---------|-----------|
 | Base | 26.3 | 73.1 | 0.69 | 69.81 |

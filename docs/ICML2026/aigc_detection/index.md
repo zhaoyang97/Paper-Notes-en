@@ -37,7 +37,7 @@ item_total: 7
 
 **🧪 ICML2026** · **7** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (8)](../../CVPR2026/aigc_detection/index.md) · [💬 ACL2026 (16)](../../ACL2026/aigc_detection/index.md) · [🔬 ICLR2026 (6)](../../ICLR2026/aigc_detection/index.md) · [🤖 AAAI2026 (2)](../../AAAI2026/aigc_detection/index.md) · [🧠 NeurIPS2025 (9)](../../NeurIPS2025/aigc_detection/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (7)](../../CVPR2026/aigc_detection/index.md) · [💬 ACL2026 (16)](../../ACL2026/aigc_detection/index.md) · [🔬 ICLR2026 (6)](../../ICLR2026/aigc_detection/index.md) · [🤖 AAAI2026 (2)](../../AAAI2026/aigc_detection/index.md) · [🧠 NeurIPS2025 (9)](../../NeurIPS2025/aigc_detection/index.md)
 
 🔥 **Top topics:** LLM ×3 · Adversarial Robustness ×2
 

@@ -71,6 +71,7 @@ As event-level summaries are merged, they become more abstract, losing user pref
 ### Key Experimental Results
 
 #### Main Results
+
 | Dataset / Model | Metrics | RecMem | Prev. SOTA Memory System | Construction Cost Comparison |
 |---------------|------|--------|------------------|--------------|
 | LoCoMo / GPT-4.1-mini | Overall accuracy | 81.10 | A-Mem 68.83 / MemoryOS 67.60 | 193.2K tokens vs Mem0 1520.8K, A-Mem 1459.93K |
@@ -79,6 +80,7 @@ As event-level summaries are merged, they become more abstract, losing user pref
 | LongMemEval-S / GPT-4o-mini | Overall accuracy | 69.20 | MemoryOS 67.80 / Mem0 64.00 | 329.55K tokens vs Mem0 1244.87K, A-Mem 1180.23K |
 
 #### Ablation Study
+
 | Configuration | LoCoMo GPT-4.1-mini Overall | Explanation |
 |------|-----------------------------|------|
 | Full RecMem | 81.10 | Complete three-layer memory |

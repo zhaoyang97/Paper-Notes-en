@@ -95,6 +95,7 @@ Comparison on C2T (Table Extraction, F1) and ChartQA (Relaxed Accuracy) against 
 Seg. performed worst (difficult to optimize a segmentation model with ~25k samples and domain gap); TL. matched SFT on ChartQA (single region) but degraded significantly on C2T (multi-target).
 
 ### QA-CoT & Localization Accuracy
+
 | Model | Method | QA-CoT Hum. | logit Local. Acc (Aug./Hum.) |
 |------|------|------|------|
 | Qwen3B | SFT | 78.9 | 62.7 / 57.9 |

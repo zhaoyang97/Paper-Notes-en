@@ -89,6 +89,7 @@ Evaluated on two SVG benchmarks (SArena, SVGenius) across Easy/Medium/Hard diffi
 | SVGenius Easy      | SSIM ↑ | 0.84    | 0.89       | **0.944** |
 
 ### Ablation Study
+
 | Configuration              | Metric (SVGenius Hard) | Description |
 |----------------------------|------------------------|-------------|
 | Rounded Polygon (Full)     | SSIM 0.83 / DINO 0.958 | Complete representation |

@@ -106,6 +106,7 @@ All models (including baselines) are pre-trained from scratch via self-supervisi
 EgoViT-WT-all, trained on the full Walking Tours dataset, further increases CorLoc to 50.2% and mIoU to 30.6%, demonstrating graceful scaling. On LaSOT long-term tracking (using the OSTrack framework with swapped backbones), EgoViT achieves an AUC of 64.7, significantly higher than DINO (60.5) and DoRA (61.7).
 
 ### Ablation Study
+
 | Config (D=Depth, P=Proto, T=Temp) | k-NN | CorLoc | Note |
 |------|------|------|------|
 | None (≈DINO) | 21.8 | 27.5 | Baseline |

@@ -34,6 +34,7 @@ Addressing the issue of poisoned fine-tuning in Multi-modal Large Language Model
 **Core Idea**: Triggers force a small number of deep attention heads to exhibit two types of complementary anomalies: Anomaly 1 (System suppression + Vision amplification) to extract trigger features and bypass security constraints, and Anomaly 2 (System amplification + Vision suppression) to maintain output structural coherence. This Attention Allocation Divergence is a universal, measurable internal fingerprint of backdoors.
 
 ## Method
+
 ### Overall Architecture
 TCAP is a **pure data cleaning** framework. Given an MLLM fine-tuned on a poisoned dataset $\mathcal{D}$, the framework does not modify the model or require a clean reference set. It first performs inference on all training samples to extract tripartite attention (system/vision/text), uses a GMM to identify "sensitive heads" from the vast head pool, and then treats these heads as noisy annotators. Finally, it uses EM-based Dawid–Skene voting to aggregate the posterior probability of each sample being poisoned, removes suspicious samples to obtain $\mathcal{D}_{\text{clean}}$, and retrains the model once to eliminate the backdoor.
 

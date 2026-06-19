@@ -69,6 +69,7 @@ Evaluated on 600 prompts from LMSYS Chatbot Arena using Llama / Gemma / Ministra
 | Profitability after pay-per-char ($\rho_o = 0.2 / 0.4 / 0.6$) | — | 92.4% / 93.3% / 94.1% | — | Most samples remain profitable after migration |
 
 ### Ablation Study
+
 | Config | Key Metric | Description |
 |------|---------|------|
 | Algorithm 1 (No verification) | Overcharge increases linearly with $m$ | Plausibility drops to ~0, making it easy to detect |

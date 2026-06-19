@@ -82,6 +82,7 @@ The focus is on incorporating the reasoning chain into the optimization objectiv
 ## Key Experimental Results
 
 ### Main Results
+
 | Dataset / Setting | Metric | REFORM | Baselines | Analysis |
 |--------|------|------|----------|------|
 | ROM Cross-domain | AVG ACC | 88.22 | AMD 85.92 / HAMMER 72.41 / MMD-Agent-34B 57.45 | Significantly outperforms feature alignment, traditional detection, and retrieval-based agent pipelines in new domains. |
@@ -91,6 +92,7 @@ The focus is on incorporating the reasoning chain into the optimization objectiv
 | Efficiency | Params / Throughput | 376M / Fast Mode: 13.17 pairs/s | FKA-Owl 6.7B, MMD-Agent 34B | Dual decoders enable high throughput; parameters are far fewer than large model agents. |
 
 ### Ablation Study
+
 | Configuration | NYT ACC | NYT mAP | NYT mIoU | Guardian ACC | Guardian mAP | Guardian mIoU | Explanation |
 |------|---------|---------|----------|--------------|--------------|---------------|------|
 | $\mathcal{L}_{LM_a}$ | 84.88 | 66.16 | 75.98 | 72.18 | 45.86 | 78.72 | Answer-only; still result-oriented learning. |

@@ -121,6 +121,7 @@ All models were trained on STNet (100µm) and migrated to Breast Visium HD at 2�
 At the most challenging 2µm single-cell level, PCC@M is nearly 1.7x that of the second-best method, verifying the generalization advantage of "decoupling spot size."
 
 ### Ablation Study
+
 | Configuration | MSE↓ | MAE↓ | PCC@M↑ | Description |
 |------|------|------|--------|------|
 | Decoder = Conv | 0.368 | 0.470 | 0.169 | Plain convolutional decoder |

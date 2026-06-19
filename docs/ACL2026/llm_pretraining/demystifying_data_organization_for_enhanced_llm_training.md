@@ -87,6 +87,7 @@ The paper does not propose a new model loss but focuses on training data sequenc
 ## Key Experimental Results
 
 ### Main Results
+
 | Strategy | FineWeb-Edu Avg. | DeepMath Avg. | OpenCode Avg. | Description |
 |----------|------------------|---------------|---------------|-------------|
 | Random   | 37.09            | 1.30          | 55.37         | Random baseline |
@@ -96,6 +97,7 @@ The paper does not propose a new model loss but focuses on training data sequenc
 | SAW      | 38.78            | 2.53          | 60.48         | Added continuity; best for Pre-training/Math SFT |
 
 ### Ablation Study
+
 | Configuration | FineWeb-Edu | QuRatedPajama | DeepMath | OpenCodeInstruct | Description |
 |---------------|-------------|---------------|----------|------------------|-------------|
 | CL            | 37.61       | 36.12         | 1.78     | 58.30            | Naive sorting |

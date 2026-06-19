@@ -114,6 +114,7 @@ DLO manipulation suffers from two RL killers: incorrect grasp points make tasks 
 CMA-ES achieved the best results in 6/8 tasks. FO-MBRL (SHAC/SAPO) significantly outperformed PPO/SAC in contact-rich tasks like Unknotting.
 
 ### Ablation Study
+
 | Configuration | Key Finding |
 |------|----------|
 | MFRL vs Traj Opt | Trajectory optimization is significantly more sample-efficient as RL struggles with sparse rewards and high-dim vertex states. |

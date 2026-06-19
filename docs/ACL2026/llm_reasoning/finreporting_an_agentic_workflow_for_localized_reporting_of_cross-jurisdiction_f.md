@@ -79,6 +79,7 @@ The most difficult aspect of cross-jurisdiction reporting is semantic alignment 
 
 ## Method
 **(The original Chinese note repeated the "Method" header; translating "一个完整示例" as a mechanism overview)**
+
 ### Mechanism
 Suppose a Chinese company's annual report is being localized, and the target field is "Operating Revenue" in the Income Statement. The rule layer first locates the Income Statement in the PDF, parses "Operating Revenue = 1,203,456 (10k CNY)" as the candidate value, and labels it `OK`. If a table break causes only a partial capture, it labels it `PARSE_ERROR` instead of guessing. The candidate then enters the LLM verifier: the model compares it with the filing context, confirms consistency, and outputs `KEEP`, mapping it to the canonical "Revenue" concept. If "Financial Expenses" is extracted as negative but evidence suggests positive, the verifier identifies the conflict and, if clear evidence exists in the filing, outputs `REPAIR` with logged evidence. If a company-specific item cannot be mapped or evidence is insufficient, the verifier outputs `NEED_REVIEW`, pushing it to a human expert alongside anomaly logs. Each field follows this "rule candidate → LLM choice → (optional) human fallback" path, maintaining an audit trail throughout.
 
@@ -90,6 +91,7 @@ The paper does not train a new model but proposes a system workflow and evaluati
 ## Key Experimental Results
 
 ### Main Results
+
 | Jurisdiction | Metric | LLMReporting | FinReporting | Observation |
 |--------------|--------|--------------|--------------|-------------|
 | US           | FR     | 94.44        | 95.56        | XBRL standardization leads to highest coverage |
@@ -103,6 +105,7 @@ The paper does not train a new model but proposes a system workflow and evaluati
 | CN           | ACC    | 78.15        | 82.11        | Largest gain in the most challenging market |
 
 ### LLM Backbone Comparison (US filings)
+
 | Backbone              | FR    | CR     | ACC   | Cost ($) |
 |-----------------------|-------|--------|-------|----------|
 | GPT-5.2               | 95.56 | 8.89   | 90.23 | 36.96    |

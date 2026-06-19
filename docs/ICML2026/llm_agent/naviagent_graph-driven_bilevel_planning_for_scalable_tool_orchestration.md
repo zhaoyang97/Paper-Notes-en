@@ -104,6 +104,7 @@ Performance on 50 real-world RapidAPIs:
 | DeepSeek-V3 | NaviAgent | **64.6** | – | – |
 
 ### Ablation Study
+
 | Configuration | TSR (Qwen2.5-14B, ToolBench All) |
 |------|----------------------------------|
 | Full NaviAgent | 35.8 |

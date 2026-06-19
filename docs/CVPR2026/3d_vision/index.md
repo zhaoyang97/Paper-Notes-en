@@ -1,8 +1,8 @@
 ---
 title: >-
-  CVPR2026 3D Vision Papers · 622 Notes
+  CVPR2026 3D Vision Papers · 646 Notes
 description: >-
-  622 CVPR2026 papers in the 3D Vision area, covering 3D Gaussian Splatting, Dynamic Scenes, 3D Reconstruction, Point Cloud, Diffusion Models, Novel View Synthesis and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  646 CVPR2026 papers in the 3D Vision area, covering 3D Gaussian Splatting, Dynamic Scenes, 3D Reconstruction, Point Cloud, Diffusion Models, Segmentation and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "CVPR2026"
   - "3D Vision"
@@ -13,7 +13,7 @@ tags:
   - "3D Reconstruction"
   - "Point Cloud"
   - "Diffusion Models"
-  - "Novel View Synthesis"
+  - "Segmentation"
 item_list:
   - u: "240fps_stereo_vision_from_monocular_mixed_spikes/"
     t: "240FPS Stereo Vision from Monocular Mixed Spikes"
@@ -25,10 +25,12 @@ item_list:
     t: "3D-Fixer: Coarse-to-Fine In-place Completion for 3D Scenes from a Single Image"
   - u: "3d-ide_3d_implicit_depth_emergent/"
     t: "3D-IDE: 3D Implicit Depth Emergent"
+  - u: "3d-object_perception_transformer_3pt/"
+    t: "3D-Object Perception Transformer (3PT)"
+  - u: "3d-vcd_hallucination_mitigation_in_3d-llm_embodied_agents_through_visual_contras/"
+    t: "3D-VCD: Hallucination Mitigation in 3D-LLM Embodied Agents through Visual Contrastive Decoding"
   - u: "3d_gaussian_splatting_at_arbitrary_resolutions_with_compact_proxy_anchors/"
     t: "3D Gaussian Splatting at Arbitrary Resolutions with Compact Proxy Anchors"
-  - u: "3d_gaussian_splatting_for_efficient_retrospective_dynamic_scene_novel_view_synth/"
-    t: "3D Gaussian Splatting for Efficient Retrospective Dynamic Scene Novel View Synthesis with a Standardized Benchmark"
   - u: "3d_gaussian_splatting_from_unposed_spike_stream/"
     t: "Nope-SGS: 3D Gaussian Reconstruction from Unposed Spike Streams"
   - u: "3d_gaussian_splatting_with_self-constrained_priors_for_high_fidelity_surface_rec/"
@@ -45,47 +47,45 @@ item_list:
     t: "4D Local Modeling Toward Dynamic Global Perception for Ambiguity-free Rotation-Invariant Point Cloud Analysis"
   - u: "4d_primitive-mache_glueing_primitives_for_persistent_4d_scene_reconstruction/"
     t: "4D Primitive-Mâché: Glueing Primitives for Persistent 4D Scene Reconstruction"
-  - u: "4d_reconstruction_from_sparse_dynamic_cameras/"
-    t: "4D Reconstruction from Sparse Dynamic Cameras"
   - u: "4dequine_disentangling_motion_and_appearance_for_4d_equine_reconstruction_from_m/"
     t: "4DEquine: Disentangling Motion and Appearance for 4D Equine Reconstruction from Monocular Video"
-  - u: "a_cookbook_of_3d_vision_data_learning_paradigms_and_application/"
-    t: "A Cookbook of 3D Vision: Data, Learning Paradigms, and Application"
   - u: "a_geometric_algebra-informed_3dgs_framework_for_wireless_channel_prediction/"
     t: "GAI-GS: A Wireless Channel Prediction Framework Injecting Ray-Object Interaction into 3DGS via Geometric Algebra Attention"
-  - u: "a_survey_of_spatial_memory_representations_for_efficient_robot_navigation/"
-    t: "A Survey of Spatial Memory Representations for Efficient Robot Navigation"
   - u: "action-geometry_prediction_with_3d_geometric_prior_for_bimanual_manipulation/"
     t: "GAP: Action-Geometry Prediction with 3D Geometric Prior for Bimanual Manipulation"
-  - u: "action-guided_generation_of_3d_functionality_segmentation_data/"
-    t: "Action-guided Generation of 3D Functionality Segmentation Data"
-  - u: "actiongeometry_prediction_with_3d_geometric_prior/"
-    t: "Action–Geometry Prediction with 3D Geometric Prior for Bimanual Manipulation"
   - u: "actionmesh_animated_3d_mesh_generation_with_temporal_3d_diffusion/"
     t: "ActionMesh: Animated 3D Mesh Generation with Temporal 3D Diffusion"
   - u: "adapting_point_cloud_analysis_via_multimodal_bayesian_distribution_learning/"
     t: "Adapting Point Cloud Analysis via Multimodal Bayesian Distribution Learning"
   - u: "adaptive_3d_perception_for_small_aerial_targets_under_sparse_sampling_via_reinfo/"
     t: "Adaptive 3D Perception for Small Aerial Targets Under Sparse Sampling via Reinforcement Learning"
-  - u: "adasformer_adaptive_serialized_transformers_for_monocular_semantic_scene_complet/"
-    t: "AdaSFormer: Adaptive Serialized Transformers for Monocular Semantic Scene Completion from Indoor Environments"
+  - u: "adaptive_spatial-temporal_window_unlocking_the_potential_of_event_cameras_in_het/"
+    t: "Adaptive Spatial-Temporal Window: Unlocking the Potential of Event Cameras in Heterogeneous Velocity Scenarios"
   - u: "aergs-slam_auto-exposure-robust_stereo_3d_gaussian_splatting_slam/"
     t: "AERGS-SLAM: Auto-Exposure-Robust Stereo 3D Gaussian Splatting SLAM"
   - u: "aerodgs_physically_consistent_dynamic_gaussian_splatting_for_single-sequence_aer/"
     t: "AeroDGS: Physically Consistent Dynamic Gaussian Splatting for Single-Sequence Aerial 4D Reconstruction"
   - u: "aerogs_scale-aware_gaussian_splatting_for_pose-free_dynamic_uav_scene_reconstruc/"
     t: "AeroGS: Scale-Aware Gaussian Splatting for Pose-Free Dynamic UAV Scene Reconstruction"
-item_total: 622
+  - u: "affine_perspective-three-point_problem/"
+    t: "Affine Perspective-Three-Point Problem"
+  - u: "affordgrasp_cross-modal_diffusion_for_affordance-aware_grasp_synthesis/"
+    t: "AffordGrasp: Cross-Modal Diffusion for Affordance-Aware Grasp Synthesis"
+  - u: "affordmatcher_affordance_learning_in_3d_scenes_from_visual_signifiers/"
+    t: "AffordMatcher: Affordance Learning in 3D Scenes from Visual Signifiers"
+  - u: "affostruction_3d_affordance_grounding_with_generative_reconstruction/"
+    t: "Affostruction: 3D Affordance Grounding with Generative Reconstruction"
+item_total: 646
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # 🧊 3D Vision
 
-**📷 CVPR2026** · **622** paper notes
+**📷 CVPR2026** · **646** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (24)](../../ICML2026/3d_vision/index.md) · [💬 ACL2026 (1)](../../ACL2026/3d_vision/index.md) · [🔬 ICLR2026 (62)](../../ICLR2026/3d_vision/index.md) · [🤖 AAAI2026 (79)](../../AAAI2026/3d_vision/index.md) · [🧠 NeurIPS2025 (116)](../../NeurIPS2025/3d_vision/index.md) · [📹 ICCV2025 (267)](../../ICCV2025/3d_vision/index.md)
+📌 **Same area in other venues:** [🧪 ICML2026 (24)](../../ICML2026/3d_vision/index.md) · [🔬 ICLR2026 (62)](../../ICLR2026/3d_vision/index.md) · [🤖 AAAI2026 (79)](../../AAAI2026/3d_vision/index.md) · [🧠 NeurIPS2025 (116)](../../NeurIPS2025/3d_vision/index.md) · [📹 ICCV2025 (267)](../../ICCV2025/3d_vision/index.md)
 
-🔥 **Top topics:** 3D Gaussian Splatting ×105 · Dynamic Scenes ×60 · 3D Reconstruction ×41 · Point Cloud ×36 · Diffusion Models ×26
+🔥 **Top topics:** 3D Gaussian Splatting ×102 · Dynamic Scenes ×58 · 3D Reconstruction ×37 · Point Cloud ×32 · Diffusion Models ×27
 
 **[240FPS Stereo Vision from Monocular Mixed Spikes](240fps_stereo_vision_from_monocular_mixed_spikes.md)**
 
@@ -107,13 +107,17 @@ item_total: 622
 
 :   The "Implicit Geometric Emergence Principle" (IGEP) is proposed. By utilizing a lightweight geometric verifier and a global 3D teacher for privileged supervision during training, the visual encoder develops 3D perception capabilities using only RGB video input. This achieves zero latency overhead during inference and outperforms comparable methods on several 3D scene understanding benchmarks.
 
+**[3D-Object Perception Transformer (3PT)](3d-object_perception_transformer_3pt.md)**
+
+:   3PT replaces the existing zero-shot 3D object perception pipelines—often characterized by "assembled frozen foundation models + depth dependency"—with a unified, end-to-end trained Transformer framework (detection + object grouping + iterative refinement) directly conditioned on CAD models. Relying solely on multi-view RGB, it significantly outperforms SOTA in detection and 6DoF pose on BOP benchmarks (with a relative improvement of 56.5% in AP-mm for industrial datasets), securing 7 first-place rankings across 11 tracks in the BOP Challenge 2025.
+
+**[3D-VCD: Hallucination Mitigation in 3D-LLM Embodied Agents through Visual Contrastive Decoding](3d-vcd_hallucination_mitigation_in_3d-llm_embodied_agents_through_visual_contras.md)**
+
+:   3D-VCD is the first **inference-time** hallucination mitigation framework for 3D embodied agents. It applies semantic/geometric perturbations to object-centric 3D scene graphs to generate a "corrupted" negative sample context. By running the MLLM on both the original and perturbed graphs and using a contrastive decoding formula, it suppresses tokens that maintain "high probability even when the scene changes." This method requires no retraining, incurs nearly zero additional overhead, and significantly reduces over-affirmation and object hallucinations in 3D-POPE and HEAL.
+
 **[3D Gaussian Splatting at Arbitrary Resolutions with Compact Proxy Anchors](3d_gaussian_splatting_at_arbitrary_resolutions_with_compact_proxy_anchors.md)**
 
 :   Building upon the anchor-based framework of Scaffold-GS, this paper employs FiLM to inject "target resolution" into anchor features and introduces a "Pixel Coverage Gate" to dynamically activate Gaussians based on sampling rates, achieving aliasing-free rendering at continuous arbitrary resolutions. Simultaneously, the method stores only approximately 30% of proxy anchors and utilizes a residual predictor to reconstruct the remaining leaf anchors online, reducing storage to nearly half of Scaffold-GS without compromising quality.
-
-**[3D Gaussian Splatting for Efficient Retrospective Dynamic Scene Novel View Synthesis with a Standardized Benchmark](3d_gaussian_splatting_for_efficient_retrospective_dynamic_scene_novel_view_synth.md)**
-
-:   In **synchronized multi-view** capture scenarios such as sports, the authors argue that "the scene at each moment is already strictly constrained by multi-view geometry." Consequently, they **remove** common temporal deformation constraints in dynamic 3DGS. By relying on "initial frame SfM initialization + frame-by-frame warm-chain propagation + fixed Gaussian budget (no densification)," they achieve high-quality, low-memory, and randomly accessible retrospective dynamic Novel View Synthesis (NVS). They also provide a Blender data generation API to unify coordinate systems and data formats of NeRF/3DGS into a reproducible benchmark.
 
 **[Nope-SGS: 3D Gaussian Reconstruction from Unposed Spike Streams](3d_gaussian_splatting_from_unposed_spike_stream.md)**
 
@@ -147,37 +151,17 @@ item_total: 622
 
 :   4DPM decomposes casual monocular RGB videos into a set of rigidly moving 3D primitives. By "glueing" each primitive over time using dense 2D correspondences, it only requires estimating an $SE(3)$ pose per primitive to remap all historical observations to any moment. This enables a **complete and persistent** scene geometry at every frame, even maintaining the positions of occluded objects (object permanence).
 
-**[4D Reconstruction from Sparse Dynamic Cameras](4d_reconstruction_from_sparse_dynamic_cameras.md)**
-
-:   This paper investigates a new setting involving "a small number of independently moving cameras capturing the same dynamic scene" (sparse dynamic cameras). It identifies that directly applying monocular 4D reconstruction methods (MoSca) fails due to cross-view and cross-temporal inconsistencies. The authors propose a **multi-view consistent 3D trajectory initialization** pipeline (cross-camera feature matching + in-camera point tracking + epipolar filtering + triangulation) along with ordinal depth regularization and spatio-temporally diversified batch sampling. They also release the LetCamsGo dataset, demonstrating significant improvements in reconstruction quality for dynamic regions compared to monocular extensions and dense fixed-camera methods.
-
 **[4DEquine: Disentangling Motion and Appearance for 4D Equine Reconstruction from Monocular Video](4dequine_disentangling_motion_and_appearance_for_4d_equine_reconstruction_from_m.md)**
 
 :   The 4DEquine framework is proposed to **disentangle** 4D reconstruction of equines from monocular video into two sub-problems: dynamic motion estimation (AniMoFormer) and static appearance reconstruction (EquineGS). It achieves SOTA performance on real-world data while being trained only on synthetic data.
-
-**[A Cookbook of 3D Vision: Data, Learning Paradigms, and Application](a_cookbook_of_3d_vision_data_learning_paradigms_and_application.md)**
-
-:   This is a 3D vision "cookbook" from a "data-centric" perspective. Rather than being organized by network architectures or single tasks, it connects **geometric representation → datasets & benchmarks → learning paradigms → downstream applications** into a unified conceptual map. It helps beginners understand the "efficiency-fidelity" trade-offs between point clouds, meshes, voxels, and 3D Gaussians, as well as the evolutionary main line from differentiable rendering to image-aligned geometry foundation models and 4D world models.
 
 **[GAI-GS: A Wireless Channel Prediction Framework Injecting Ray-Object Interaction into 3DGS via Geometric Algebra Attention](a_geometric_algebra-informed_3dgs_framework_for_wireless_channel_prediction.md)**
 
 :   GAI-GS treats 3D Gaussian Splatting (3DGS) as a wireless radiation field. It utilizes a Geometric Algebra (GA)-based attention tokenizer to implicitly model physical ray-object interactions—such as reflection, diffraction, and transmission—within the scene. These interaction features are then injected as residuals into Gaussian attributes via a dual-branch scene mapping network, achieving SOTA performance in MAE and SSIM across several real-world indoor RSSI and spatial spectrum datasets.
 
-**[A Survey of Spatial Memory Representations for Efficient Robot Navigation](a_survey_of_spatial_memory_representations_for_efficient_robot_navigation.md)**
-
-:   This paper provides a comprehensive survey of SLAM spatial memory representations (covering 1989–2025, 88 papers, and 52 systems) centered on "memory efficiency." Its core contribution is the introduction of the **overhead factor $\alpha=M_{\text{peak}}/M_{\text{map}}$**, which reveals the significant, often hidden gap between "reported map size" and "actual runtime memory required for deployment" (with $\alpha$ spanning two orders of magnitude, 2.3–215, within neural methods). It provides independently measured $\alpha$ reference values, a four-dimensional evaluation protocol, and a deployment algorithm that calculates feasible map sizes based on memory budgets.
-
 **[GAP: Action-Geometry Prediction with 3D Geometric Prior for Bimanual Manipulation](action-geometry_prediction_with_3d_geometric_prior_for_bimanual_manipulation.md)**
 
 :   GAP utilizes a pre-trained 3D geometric foundation model (π³) to extract 3D features, fuses 2D semantics and proprioception, and jointly predicts future action sequences and future 3D pointmaps via conditional diffusion, achieving SOTA in RoboTwin 2.0 and real-world bimanual experiments.
-
-**[Action-guided Generation of 3D Functionality Segmentation Data](action-guided_generation_of_3d_functionality_segmentation_data.md)**
-
-:   The authors propose SynthFun3D, the first method to automatically generate training data for 3D functionality segmentation from action descriptions. By leveraging metadata-driven 3D object retrieval and scene layout, it generates precise part-level interaction masks without human annotation. Training with synthetic and real data improves performance on the SceneFun3D benchmark by +2.2 mAP / +6.3 mAR / +5.7 mIoU.
-
-**[Action–Geometry Prediction with 3D Geometric Prior for Bimanual Manipulation](actiongeometry_prediction_with_3d_geometric_prior.md)**
-
-:   By leveraging the pretrained 3D geometric foundation model $\pi3$ as a perception backbone, this work integrates 3D geometric, 2D semantic, and proprioceptive features. Utilizing a diffusion model to jointly predict future action chunks and 3D pointmaps, the proposed method significantly outperforms point-cloud-based methods on the RoboTwin bimanual benchmark using only RGB inputs.
 
 **[ActionMesh: Animated 3D Mesh Generation with Temporal 3D Diffusion](actionmesh_animated_3d_mesh_generation_with_temporal_3d_diffusion.md)**
 
@@ -191,9 +175,9 @@ item_total: 622
 
 :   Addressing the issue where small aerial targets (birds, UAVs) under long-range LiDAR yield extremely sparse and jittery point clouds, A3PRL utilizes a lightweight 5D reinforcement learning policy. Based on unlabeled statistics such as sparsity, acceptance rates, and trajectory continuity, it jointly adjusts voxel resolution, detection thresholds, and association gates online. This transforms a "fixed-parameter perception pipeline" into a "closed-loop adaptive perception-control system," reducing 3D localization error by approximately 19% in MMAUD cross-scenario testing.
 
-**[AdaSFormer: Adaptive Serialized Transformers for Monocular Semantic Scene Completion from Indoor Environments](adasformer_adaptive_serialized_transformers_for_monocular_semantic_scene_complet.md)**
+**[Adaptive Spatial-Temporal Window: Unlocking the Potential of Event Cameras in Heterogeneous Velocity Scenarios](adaptive_spatial-temporal_window_unlocking_the_potential_of_event_cameras_in_het.md)**
 
-:   This paper proposes AdaSFormer, a serialized Transformer framework for indoor Monocular Semantic Scene Completion (MSSC). By introducing three core designs—Adaptive Serialized Attention (with learnable offsets), Center Relative Position Encoding, and Convolution-Modulated Layer Normalization—it achieves SOTA performance on NYUv2 and Occ-ScanNet.
+:   Addressing "Heterogeneous Velocity Scenarios" (HVS) containing both fast and slow objects, this paper proposes the ASTW event partitioning strategy: the pixel plane is divided into small patches, and an analytical formula for the optimal time window $\Delta t = \gamma / D$ (where $D$ is event density) is derived based on the Maximum Entropy principle. Implemented with $O(N)$ vectorization, ASTW allows each spatial region to adaptively select windows, achieving up to +2.6 mAP in object detection and +2.2 SR in tracking.
 
 **[AERGS-SLAM: Auto-Exposure-Robust Stereo 3D Gaussian Splatting SLAM](aergs-slam_auto-exposure-robust_stereo_3d_gaussian_splatting_slam.md)**
 
@@ -206,6 +190,10 @@ item_total: 622
 **[AeroGS: Scale-Aware Gaussian Splatting for Pose-Free Dynamic UAV Scene Reconstruction](aerogs_scale-aware_gaussian_splatting_for_pose-free_dynamic_uav_scene_reconstruc.md)**
 
 :   AeroGS utilizes "Scale-Aware Spatio-Temporal Anchors" (S2A-Anchors) to **simultaneously** estimate camera trajectories and reconstruct dynamic 4D scenes containing moving objects from pose-free monocular UAV videos. By relying on three decoupling mechanisms (ego-motion vs. object motion, appearance vs. deformation, and scale vs. complexity) to stabilize joint optimization, it achieves SOTA performance in both rendering PSNR and trajectory accuracy on VisDrone, UAVDT, and KITTI datasets.
+
+**[Affine Perspective-Three-Point Problem](affine_perspective-three-point_problem.md)**
+
+:   This paper frames the classic P3P (Perspective-Three-Point) problem within weak-perspective and para-perspective affine camera models. It derives a closed-form minimal solver requiring only a **bi-quadratic equation**, followed by a lightweight iterative upgrade to "refine" the affine solution into an exact perspective solution. This two-step approach matches the accuracy of SOTA exact P3P solvers while being faster.
 
 **[AffordGrasp: Cross-Modal Diffusion for Affordance-Aware Grasp Synthesis](affordgrasp_cross-modal_diffusion_for_affordance-aware_grasp_synthesis.md)**
 
@@ -235,13 +223,17 @@ item_total: 622
 
 :   AMB3R attaches a "sparse but compact" voxel backend on top of a frozen VGGT frontend for explicit 3D geometric reasoning, alongside a lightweight scale head for metric scale recovery. Trained with only ~80 H100 GPU hours, it achieves SOTA across 7 tasks and 13 datasets. Its two training-free pipelines, AMB3R-VO and AMB3R-SfM, enable feed-forward models to outperform traditional optimization-based systems in VO/SLAM and SfM for the first time.
 
+**[Anatomical Domain Shifts: Test-time Heterogeneous Adaptation for 3D Human Pose Prediction](anatomical_domain_shifts_test-time_heterogeneous_adaptation_for_3d_human_pose_pr.md)**
+
+:   Addressing Continuous Test-time Adaptation (CTTA) for 3D Human Pose Prediction (HPP), this paper identifies the overlooked fact that "domain shifts are concentrated in specific body parts rather than occurring uniformly across the whole body." It proposes TT-HA: decomposing model parameters into five anatomical subsets (left/right arms, left/right legs, torso), using Instance Normalization (IN) statistics combined with Earth Mover's Distance (EMD) to measure online domain changes for each part. Based on these measurements, self-supervised fine-tuning is applied to parts with minor shifts, while parameters for parts experiencing abrupt changes are rolled back to the source model. This achieved a 4.7% reduction in overall MPJPE and a 9.2% reduction in limb errors.
+
 **[AnchorSplat: Feed-Forward 3D Gaussian Splatting with 3D Geometric Priors](anchorsplat_feed-forward_3d_gaussian_splatting_with_3d_geometric_priors.md)**
 
 :   AnchorSplat proposes an anchor-aligned feed-forward 3DGS framework that predicts Gaussians directly in 3D space using 3D geometric priors (sparse point clouds) as anchors. It achieves SOTA performance on ScanNet++ v2 (PSNR 21.48) with approximately 20x fewer Gaussians and half the reconstruction time, while providing superior depth estimation accuracy.
 
-**[Anny-Fit: All-Age Human Mesh Recovery](anny-fit_all-age_human_mesh_recovery.md)**
+**[AniMimic: Imitating 3D Animation from Video Priors](animimic_imitating_3d_animation_from_video_priors.md)**
 
-:   Addressing the limitation that monocular Human Mesh Recovery (HMR) methods are often restricted to adults, this paper proposes Anny-Fit—a framework for joint multi-person optimization directly in the camera coordinate system. By leveraging off-the-shelf expert models (metric depth, instance segmentation, 2D keypoints) and age/gender semantic attributes extracted by VLMs, the method constrains the depth-shape ambiguity of "whether a small figure is a distant adult or a nearby child." It adapts adult-centric models to all age groups from infants to seniors in a zero-shot manner without retraining and generates high-quality pseudo-ground truth to further improve feed-forward models.
+:   AniMimic utilizes monocular animations generated by video diffusion models as motion supervision. It automatically rigs a static 3D mesh and optimizes joint parameters via differentiable rendering to "lift" 2D motion into 3D. Subsequently, a differentiable FEM soft-body simulation is employed to incorporate inertia and elasticity, producing editable, physically plausible 4D sequences ready for animation pipelines.
 
 **[AnthroTAP: Learning Point Tracking with Real-World Motion](anthrotap_learning_point_tracking_with_real-world_motion.md)**
 
@@ -271,6 +263,10 @@ item_total: 622
 
 :   Utilizing an asymmetric stereo setup consisting of an "Event camera + RGB camera," the proposed method first integrates temporal clues from asynchronous events with spatial structures from RGB into a unified representation via Multimodal Contextual Attention for simultaneous optical flow and disparity estimation. Then, Temporal Disparity Posterior Fusion is employed to probabilistically model the evolution of disparity over time, recovering geometrically consistent and temporally stable dense scene flow. This approach achieves SOTA scene flow accuracy under the RGB-event stereo configuration.
 
+**[ARMFlow: AutoRegressive MeanFlow for Online 3D Human Reaction Generation](armflow_autoregressive_meanflow_for_online_3d_human_reaction_generation.md)**
+
+:   This work introduces the "single-step generation" MeanFlow paradigm to the human motion domain for the first time. By utilizing an autoregressive structure consisting of a "causal context encoder + lightweight MLP velocity predictor" combined with Bootstrapped Causal Encoding (BSCE) to suppress error accumulation, online 3D human reaction generation is achieved within a single inference step. The method reduces FID by approximately 30% compared to existing online methods while maintaining the fastest speed.
+
 **[ART: Articulated Reconstruction Transformer](art_articulated_reconstruction_transformer.md)**
 
 :   ART reformulates "articulated object reconstruction" as a **part-level feed-forward prediction** problem. Using a set of learnable part slots, it decodes geometry, texture, and explicit motion parameters (axis/pivot/motion type) for each rigid part from sparse multi-view, multi-state RGB images in a single pass. This category-agnostic approach eliminates per-object optimization and significantly outperforms both feed-forward and optimization-based baselines in part-level and global geometric metrics.
@@ -295,9 +291,25 @@ item_total: 622
 
 :   AsymLoc proposes "Asymmetric Visual Localization"—using a large Teacher to process the map database offline and an extremely small Student for online query images. By employing a geometric matching loss and joint detector-descriptor distillation, Student features are aligned with Teacher features, enabling direct parameter-free mutual nearest neighbor matching while retaining ~95% of the Teacher’s localization accuracy despite a ten-fold reduction in model size.
 
+**[AutoRegressive Generation with B-rep Holistic Token Sequence Representation](autoregressive_generation_with_b-rep_holistic_token_sequence_representation.md)**
+
+:   BrepARG encodes the geometry and topology of CAD Boundary Representation (B-rep) into a **unified token sequence** for the first time. This enables next-token autoregressive generation using a decoder-only Transformer. It achieves SOTA results on DeepCAD/ABC, with training completed in 1.2 days and inference for a single model taking approximately 1.5 seconds on a single 4090.
+
+**[AVA-Bench: Atomic Visual Ability Benchmark for Vision Foundation Models](ava-bench_atomic_visual_ability_benchmark_for_vision_foundation_models.md)**
+
+:   Proposes AVA-Bench, the first systematic evaluation benchmark that decouples Vision Foundation Model (VFM) capabilities into 14 Atomic Visual Abilities (AVA). Through train-test distribution alignment and isolated single-capability testing, it precisely identifies VFM strengths and weaknesses, finding that 0.5B small models maintain ranking consistency comparable to 7B models.
+
 **[AvatarPointillist: AutoRegressive 4D Gaussian Avatarization](avatarpointillist_autoregressive_4d_gaussian_avatarization.md)**
 
 :   AvatarPointillist proposes an autoregressive (AR) generation framework to construct 4D Gaussian avatars. It utilizes a decoder-only Transformer to generate 3DGS point clouds point-by-point (including binding information) and employs a Gaussian Decoder to predict rendering attributes. This approach breaks the limitations of fixed template topologies and enables adaptive point density adjustments, outperforming baselines like LAM and GAGAvatar on the NeRSemble dataset.
+
+**[AVGGT: Rethinking Global Attention for Accelerating VGGT](avggt_rethinking_global_attention_for_accelerating_vggt.md)**
+
+:   Through a layer-wise dissection of the actual role of global attention in VGGT/π³ (early layers being ineffective, middle layers performing cross-view alignment, and final layers doing fine-tuning), a training-free two-step acceleration scheme is proposed. It replaces early global layers with intra-frame attention and applies grid subsampling to K/V for the remaining global layers, achieving an 8–10× inference speedup for 800-frame inputs with almost no loss in accuracy.
+
+**[B³-Seg: Camera-Free, Training-Free 3DGS Segmentation via Analytic EIG and Beta-Bernoulli Bayesian Updates](b3-seg_camera-free_training-free_3dgs_segmentation_via_analytic_eig_and_beta-ber.md)**
+
+:   B³-Seg reformulates the task of "segmenting target objects on an off-the-shelf 3DGS asset" into a sequence of Beta-Bernoulli Bayesian updates. By utilizing an analytic form of Expected Information Gain (EIG) to actively select the most informative next camera view, the method achieves camera-free, training-free, open-vocabulary results in seconds. Its accuracy approaches that of supervised methods that require tens of minutes.
 
 **[BEA-GS: BEyond RAdiance Supervision in 3DGS for Precise Object Extraction](bea-gs_beyond_radiance_supervision_in_3dgs_for_precise_object_extraction.md)**
 
@@ -314,10 +326,6 @@ item_total: 622
 **[Beyond Geometry: Artistic Disparity Synthesis for Immersive 2D-to-3D](beyond_geometry_artistic_disparity_synthesis_for_immersive_2d-to-3d.md)**
 
 :   A new paradigm called "Artistic Disparity Synthesis" (Art3D) is proposed, shifting the goal of 2D-to-3D conversion from geometric accuracy to artistic expression. Through a dual-path architecture that decouples global depth style and local artistic effects, the model learns directorial intent from professional 3D movie data.
-
-**[Bi-CMPStereo: Bidirectional Cross-Modal Prompting for Event-Frame Asymmetric Stereo](bi_cmpstereo_bidirectional_cross_modal_prompting_for_event_frame_asymmetric_stereo.md)**
-
-:   Proposes Bi-CMPStereo, a bidirectional cross-modal prompting framework that alternately sets events and frames as target domains for stereo canonicalization constraints and cross-domain embedding adaptation, while utilizing cost volumes from both directions to achieve robust event-frame asymmetric stereo matching.
 
 **[Bidirectional Cross-Modal Prompting for Event-Frame Asymmetric Stereo](bidirectional_cross-modal_prompting_for_event-frame_asymmetric_stereo.md)**
 
@@ -339,17 +347,13 @@ item_total: 622
 
 :   This paper treats LEGO brick assembly sequences as "programs" for autoregressive generation via LLMs. The key innovation is moving away from direct regression of 6-DoF coordinates for each brick, instead using a graph-backed parametrization (spanning trees) where "connectivity" is treated as a first-class citizen. Combined with the newly constructed BrickNet dataset—comprising 320,000 large-scale human-designed LDraw samples—the model improves the number of valid connected steps from < 50 to 94+.
 
-**[Bringing a Personal Point of View: Evaluating Dynamic 3D Gaussian Splatting for Egocentric Scene Reconstruction](bringing_a_personal_point_of_view_evaluating_dynamic_3d_gaussian_splatting_for_e.md)**
-
-:   This is an evaluation study: the authors utilize **paired egocentric (ego) and exocentric (exo) recordings of the same scene** from EgoExo4D to systematically compare four monocular dynamic 3D Gaussian Splatting models. They find that ego-view reconstruction quality is consistently inferior, and this performance gap primarily stems from the reconstruction of the **static background** (rather than dynamic objects). Consequently, they argue that existing methods are not generalizable to egocentric scenarios and necessitate specialized egocentric approaches.
-
 **[Bringing Your Portrait to 3D Presence](bringing_your_portrait_to_3d_presence.md)**
 
 :   Utilizing a **Dual-UV representation** that projects image features into a canonical UV space, paired with a factorized "3D rendering + 2D generation" synthetic data manifold and a robust proxy mesh tracker, this work enables the reconstruction of animatable 3D Gaussian avatars from a single portrait (head, half-body, or full-body). The model generalizes to real-world photos despite being trained exclusively on synthetic data.
 
-**[BulletGen: Improving 4D Reconstruction with Bullet-Time Generation](bulletgen_improving_4d_reconstruction_with_bullet-time_generation.md)**
+**[BuildingGPT: Auto-Regressive Building Wireframe Reconstruction Model with Reinforcement Learning](buildinggpt_auto-regressive_building_wireframe_reconstruction_model_with_reinfor.md)**
 
-:   BulletGen is proposed to generate novel views using static video diffusion models at selected "bullet-time" frozen frames. After precise positioning, these views supervise 4D Gaussian scene optimization, achieving SOTA in extreme novel view synthesis and 2D/3D tracking with only monocular video input.
+:   BuildingGPT reformulates "building wireframe reconstruction from point clouds" as a sequence generation problem: it first encodes wireframes into discrete tokens using a hierarchical tokenization scheme in the order of "foundation → wall → roof," then generates tokens sequentially using a point-cloud-conditioned auto-regressive Transformer. Finally, it employs DPO post-training based on a custom Preference Score Function (PSF) to align with human preferences for geometric accuracy and topological correctness, comprehensively surpassing detection-based and diffusion-based SOTA on the large-scale MunichWF dataset.
 
 **[C-GenReg: Training-Free 3D Point Cloud Registration by Multi-View-Consistent Geometry-to-Image Generation with Probabilistic Modalities Fusion](c-genreg_training-free_3d_point_cloud_registration_by_multi-view-consistent_geom.md)**
 
@@ -407,14 +411,6 @@ item_total: 622
 
 :   The first CLIP-based few-shot unsupervised 3D point cloud domain adaptation framework. By utilizing knowledge-driven prompt tuning, parameter-efficient fine-tuning, entropy-guided view selection, and uncertainty-aware alignment loss, it achieves consistent accuracy improvements of 3-16% on PointDA-10 and GraspNetPC-10 with only ~11M trainable parameters.
 
-**[CMHANet: A Cross-Modal Hybrid Attention Network for Point Cloud Registration](cmhanet_a_cross-modal_hybrid_attention_network_for_point_cloud_registration.md)**
-
-:   CMHANet is proposed to deeply fuse 2D image texture semantic features with 3D point cloud geometric features via a cross-modal hybrid attention mechanism. Combined with contrastive learning optimization, it achieves SOTA registration performance on 3DMatch/3DLoMatch.
-
-**[Coherent Human-Scene Reconstruction from Multi-Person Multi-View Video in a Single Pass](coherent_humanscene_reconstruction_from_multiperso.md)**
-
-:   The proposed CHROMM is a unified framework that integrates Pi3X geometric priors and Multi-HMR human priors into a single feed-forward network. it jointly reconstructs cameras, scene point clouds, and SMPL-X human meshes from multi-person multi-view videos in a single pass without external modules, preprocessing, or iterative optimization. It achieves a multi-view WA-MPJPE of 53.1mm on RICH and is over 8x faster than HAMSt3R.
-
 **[Color-Encoded Illumination for High-Speed Volumetric Scene Reconstruction](color-encoded_illumination_for_high-speed_volumetric_scene_reconstruction.md)**
 
 :   A set of high-frequency switching color LED strobes is used to illuminate the scene, encoding "timestamps" of high-speed motion into the color and intensity of images captured by multiple standard 60 FPS cameras. A modified dynamic Gaussian Splatting (Gaussian-Flow) is then employed to decode 600 FPS volumetric dynamic scenes from these color-mixed frames, achieving high-speed 3D reconstruction without specialized camera hardware for the first time.
@@ -422,6 +418,10 @@ item_total: 622
 **[CoLoR: The Devil is in Scene Coordinate Regression for Large-Scale Visual Localization](color_the_devil_is_in_scene_coordinate_regression_for_large-scale_visual_localiz.md)**
 
 :   CoLoR diagnoses the primary "culprits" behind the failure of large-scale Scene Coordinate Regression (SCR) as unsupervised single-view points and inconsistency between global and local features. By adopting an "explicit multi-view/single-view partitioning + two-stage strong supervision (multi-view reprojection + pseudo-depth bootstrapping)" strategy, it provides supervision for **every point** in the scene. Additionally, it utilizes MoCo-style contrastive learning to retrain local features into pixel-level retrieval features. CoLoR pushes SCR to SOTA performance on large-scale datasets like Aachen and Department Store, significantly narrowing the accuracy gap with Feature Matching (FM) methods while maintaining a map size of only a few dozen MBs.
+
+**[CompetitorFormer: Mitigating Query Conflicts for 3D Instance Segmentation via Competitive Strategy](competitorformer_mitigating_query_conflicts_for_3d_instance_segmentation_via_com.md)**
+
+:   To address the persistent issue of "multiple queries competing for the same object leading to mask fragmentation" in Transformer-based 3D instance segmentation, this paper introduces a Query Competition Layer. This layer explicitly calculates the "competitive landscape" (identifying the strongest spatial overlap and dominant/subordinate roles) for each query before each decoding stage. Combined with modified self-attention and cross-attention to enable "winner-take-all" dynamics, the method achieves faster convergence and SOTA performance across four benchmarks: ScanNetV2/200, S3DIS, and ScanNet++V2.
 
 **[Complet4R: Geometric Complete 4D Reconstruction](complet4r_geometric_complete_4d_reconstruction.md)**
 
@@ -446,6 +446,10 @@ item_total: 622
 **[ConsisVLA-4D: Advancing Spatiotemporal Consistency in Efficient 3D-Perception and 4D-Reasoning for Robotic Manipulation](consisvla-4d_advancing_spatiotemporal_consistency_in_efficient_3d-perception_and.md)**
 
 :   ConsisVLA-4D utilizes three modules (CV-Aligner, CO-Fuser, CS-Thinker) to compress multi-view 2D observations into approximately 1/8 of the original tokens. It ensures "cross-view semantic consistency" and "cross-object geometric consistency" during the perception phase, and extends this to "cross-scene spatiotemporal consistency" during the reasoning phase. It improves success rates by 21.6% / 41.5% and accelerates inference by 2.3× / 2.4× on LIBERO and real-world robots compared to OpenVLA.
+
+**[Content-Aware Frequency Encoding for Implicit Neural Representations with Fourier-Chebyshev Features](content-aware_frequency_encoding_for_implicit_neural_representations_with_fourie.md)**
+
+:   To address the inefficiency where Implicit Neural Representations (INRs) use fixed Fourier bases and force the MLP to "synthesize" target frequencies, this paper proposes CAFE. By passing Fourier features through multiple parallel linear layers followed by Hadamard products for frequency multiplication, the representable frequency set is expanded exponentially from $M$ fixed bases to $O(MN3^{N-1})$, using learnable weights to select task-relevant frequencies. Supplemented by Chebyshev features for low-frequency stability (CAFE+), the method consistently outperforms baselines like SIREN, FINER, and SL2A on image fitting, 3D shapes, and NeRF (with image fitting PSNR improving by up to ~5 dB).
 
 **[Context-Nav: Context-Driven Exploration and Viewpoint-Aware 3D Spatial Reasoning for Instance Navigation](context-nav_context-driven_exploration_and_viewpoint-aware_3d_spatial_reasoning_.md)**
 
@@ -523,6 +527,10 @@ item_total: 622
 
 :   DepthFocus redefines stereo depth estimation from a "passive output of the nearest surface" to a "controllable process driven by a physical reference distance $c$." Using a steerable ViT that dynamically modulates features through two modules—Conditional MoE and Direct Condition Injection—the network "peels away" transparent or reflective occlusions layer-by-layer like human eye focusing, achieving SOTA on both standard single-layer benchmarks and complex multi-layer scenes.
 
+**[DetAny4D: Detect Anything 4D Temporally in a Streaming RGB Video](detany4d_detect_anything_4d_temporally_in_a_streaming_rgb_video.md)**
+
+:   DetAny4D defines "continuous 3D bounding box prediction in streaming RGB videos" as a 4D detection task. It utilizes an end-to-end open-vocabulary framework (SAM + DINO + UniDepth features + Causal Spatiotemporal Decoder + multi-task heads) to directly output globally consistent 3D boxes across frames. Accompanying this is the DA4D dataset comprising 280,000 sequences, which reduces cross-frame jitter variance by 10–30% compared to single-frame detectors.
+
 **[DICArt: Advancing Category-level Articulated Object Pose Estimation in Discrete State-Spaces](dicart_advancing_category-level_articulated_object_pose_estimation_in_discrete_s.md)**
 
 :   DICArt reformulates category-level 6D articulated object pose estimation as a **conditional discrete diffusion** process. Specifically, it discretizes rotation and translation into tokens, utilizes a "flow decider" for step-by-step denoising, and couples the estimation of each part according to the parent-child kinematic hierarchy. It significantly outperforms existing methods on synthetic, semi-synthetic, and real-world robotic arm data.
@@ -567,6 +575,10 @@ item_total: 622
 
 :   DuoMo is proposed to decompose world-space human motion reconstruction into two independent diffusion models: a camera-space model extracts generalized camera-coordinate motion from video, and a world-space model refines lifted noisy proposals into globally consistent world-coordinate motion. By directly generating mesh vertex motion instead of SMPL parameters, it reduces W-MPJPE by 16% on EMDB and 30% on RICH.
 
+**[DVGT: Driving Visual Geometry Transformer](dvgt_driving_visual_geometry_transformer.md)**
+
+:   DVGT is a visual geometry Transformer designed for autonomous driving. It takes a sequence of multi-frame multi-view images without pose information as input and end-to-end directly predicts **metric-scale** global dense 3D point cloud maps relative to the first frame's ego-coordinate system along with per-frame ego-poses. It requires no camera intrinsics/extrinsics and no post-hoc LiDAR-based scale alignment, outperforming both general geometry models (VGGT, CUT3R, MapAnything) and driving-specific models (Driv3R) across five driving datasets.
+
 **[Dynamic-Static Decomposition for Novel View Synthesis of Dynamic Scenes with Spiking Neurons](dynamic-static_decomposition_for_novel_view_synthesis_of_dynamic_scenes_with_spi.md)**
 
 :   Addressing the pain points of "inaccurate mask priors" and "improper label representation" in dynamic-static decomposition for 3DGS, this paper employs a 4D spatio-temporal fine-grained mask field for supervision and utilizes spiking neurons to optimize dynamic-static labels directly into discrete 0/1 values. This approach precisely classifies Gaussians into dynamic or static categories, achieving SOTA rendering quality in fine-grained motion, motion boundaries, and side-view evaluations while maintaining real-time frame rates.
@@ -582,6 +594,10 @@ item_total: 622
 **[DynamicTree: Interactive Real Tree Animation via Sparse Voxel Spectrum](dynamictree_interactive_real_tree_animation_via_sparse_voxel_spectrum.md)**
 
 :   This work compresses the motion of real scanned 3DGS trees into a set of "sparse voxels + frequency spectrum." A feed-forward diffusion model is used to generate long-term mesh motion in a single pass to drive the Gaussians. This approach avoids the spatio-temporal inconsistency common in 4D generation methods, is a hundred times faster than MPM physical simulation, and allows for real-time drag-and-drop interaction at approximately 18ms/frame by utilizing the spectrum as modal bases.
+
+**[DynamicVGGT: Learning Dynamic Point Maps for 4D Scene Reconstruction in Autonomous Driving](dynamicvggt_learning_dynamic_point_maps_for_4d_scene_reconstruction_in_autonomou.md)**
+
+:   DynamicVGGT extends the static feed-forward 3D model VGGT to dynamic 4D reconstruction. By utilizing "Dynamic Point Maps" to predict point clouds for current and future frames within a unified learned coordinate system, combined with a parallel motion-aware temporal attention branch and a velocity-supervised dynamic 3D Gaussian head, it reconstructs temporally consistent dynamic driving scenes on Waymo and KITTI using only image inputs without camera parameters or dense annotations.
 
 **[E-RayZer: Self-supervised 3D Reconstruction as Spatial Visual Pre-training](e-rayzer_self-supervised_3d_reconstruction_as_spatial_visual_pre-training.md)**
 
@@ -619,9 +635,17 @@ item_total: 622
 
 :   By employing a "Scene-aware Visual Prompt Tuning (SceneVPT) + instance-specific key local feature enhancement module," this work performs single-stage Visual Place Recognition (VPR) on the lightweight DINOv2-small backbone. With a descriptor dimension of only 3456, it outperforms all methods of similar scale. Compared to the two-stage SOTA based on DINOv2-large, it achieves a ~73× speedup while maintaining an average R@1 within a 2.5% margin.
 
+**[EG-3DVG: Expression and Geometry Aware Grounding Decoder for 3D Visual Grounding](eg-3dvg_expression_and_geometry_aware_grounding_decoder_for_3d_visual_grounding.md)**
+
+:   EG-3DVG embeds two complementary attention modules—PECA, which injects 3D positions into text tokens, and GMA, which filters visual tokens based on geometric relations—within a 3D visual grounding decoder. Complemented by Expression Contrastive Learning (ECL) to distinguish intra-category distractors, it specifically addresses "cross-modal misalignment, intra-category confusion, and geometric reasoning errors," achieving SOTA in bounding box localization and mask prediction on ScanRefer and SR3D/NR3D.
+
 **[Ego-1K: A Large-Scale Multiview Video Dataset for Egocentric Vision](ego-1k_--_a_large-scale_multiview_video_dataset_for_egocentric_vision.md)**
 
 :   Ours introduces Ego-1K, a large-scale time-synchronized egocentric multiview video dataset containing 956 short videos (12+4 cameras, 60Hz). It fills the data gap in the field of egocentric dynamic 3D reconstruction and demonstrates that stereo depth guidance significantly enhances the quality of 4D novel view synthesis.
+
+**[Egocentric Visibility-Aware Human Pose Estimation](egocentric_visibility-aware_human_pose_estimation.md)**
+
+:   Addressing the "frequently invisible keypoints" issue in egocentric human pose estimation for head-mounted devices (HMDs), this paper constructs Eva-3M, the first large-scale real-world dataset with visibility annotations (3 million frames, 435,000 visibility labels). It proposes EvaPose, which explicitly predicts the visibility of each keypoint and weights the loss accordingly, reducing the MPJPE of visible keypoints from 49.8mm in FRAME to 34.2mm.
 
 **[EI-Part: Explode for Completion and Implode for Refinement](ei-partexplode_for_completion_and_implode_for_refinement.md)**
 
@@ -630,6 +654,10 @@ item_total: 622
 **[Elastic3D: Controllable Stereo Video Conversion with Guided Latent Decoding](elastic3d_controllable_stereo_video_conversion_with_guided_latent_decoding.md)**
 
 :   Elastic3D utilizes a 1-step conditional latent diffusion model to **directly** synthesize the right-eye video from a monocular input (without depth estimation or warping). It allows users to continuously adjust 3D intensity via a scalar "parallax factor" and employs a "guided VAE decoder" with epipolar attention to inject high-frequency details from the left view into the right view, eliminating binocular rivalry artifacts. It outperforms warp-based and warp-free baselines across three real-world stereo video datasets.
+
+**[Electromagnetic Inverse Scattering from a Single Transmitter](electromagnetic_inverse_scattering_from_a_single_transmitter.md)**
+
+:   This paper reformulates the Electromagnetic Inverse Scattering Problem (EISP) from "per-sample physical optimization" to "end-to-end data-driven regression." By using an MLP to directly map received scattered fields and spatial coordinates to local relative permittivity, the method leverages data distribution priors learned from the training set to compensate for the information deficiency in sparse measurements. It achieves high-quality reconstruction using only a **single transmitter** for the first time, with inference speeds over 70,000 times faster than previous SOTA methods.
 
 **[EmbodiedSplat: Online Feed-Forward Semantic 3DGS for Open-Vocabulary 3D Scene Understanding](embodiedsplat_online_feed-forward_semantic_3dgs_for_open-vocabulary_3d_scene_und.md)**
 
@@ -642,6 +670,10 @@ item_total: 622
 **[EMGauss: Continuous Slice-to-3D Reconstruction via Dynamic Gaussian Modeling in Volume Electron Microscopy](emgauss_continuous_slice-to-3d_reconstruction_via_dynamic_gaussian_modeling_in_v.md)**
 
 :   The problem of anisotropic slice reconstruction in volume electron microscopy (vEM) is re-modeled as a dynamic 3D scene rendering task based on deformable 2D Gaussian Splatting. High-fidelity continuous slice synthesis is achieved under sparse data conditions through a Teacher-Student pseudo-label mechanism.
+
+**[EmoDiffTalk: Emotion-aware Diffusion for Editable 3D Gaussian Talking Head](emodifftalk_emotion-aware_diffusion_for_editable_3d_gaussian_talking_head.md)**
+
+:   EmoDiffTalk maps the "emotion-to-expression" transformation onto the explainable Action Unit (AU) encoding space. It utilizes AU-prompted Gaussian diffusion to drive speech into fine-grained dynamic 3D Gaussian talking heads and implements "one-sentence emotion editing" via a text-to-AU controller. It surpasses Prev. SOTA in rendering fidelity, lip synchronization, and emotional controllability on EmoTalk3D and RenderMe-360.
 
 **[EmoTaG: Emotion-Aware Talking Head Synthesis on Gaussian Splatting with Few-Shot Personalization](emotag_emotion-aware_talking_head_synthesis_on_gaussian_splatting_with_few-shot_.md)**
 
@@ -671,6 +703,18 @@ item_total: 622
 
 :   EV-CGNet utilizes fine-grained spatio-temporal cues from event points to guide event frame feature prototype learning (G2PL). It further employs cross-frame self-attention to constrain keypoint detection to co-visible regions (CDDL), outperforming SOTA methods like SuperEvent in re-projection error, pose estimation, and SLAM trajectory error across six benchmarks.
 
+**[Event-based Visual Deformation Measurement](event-based_visual_deformation_measurement.md)**
+
+:   This paper proposes an event-frame fusion visual deformation measurement (VDM) system. It utilizes event cameras to provide temporally dense motion cues and standard frames to provide spatially dense accurate constraints. Through an Affine Invariant Simplex (AIS) framework, the high-dimensional deformation field is partitioned into low-parameter triangular sub-regions. Combined with a neighborhood greedy optimization to suppress long-range error accumulation, the system achieves a SOTA survival rate 1.6 times higher than existing methods under large deformations of 100+ pixels, while consuming only 18.9% of the storage/computing power required by high-speed camera solutions.
+
+**[Event Stream Filtering via Probability Flux Estimation](event_stream_filtering_via_probability_flux_estimation.md)**
+
+:   This paper reinterprets the event camera imaging process as a "stochastic process of log-irradiance trajectories crossing contrast thresholds," where events are samples of "probability flux" leaking at the thresholds. Accordingly, a generative filter, EDFilter, is proposed. It utilizes temporal kernel density estimation + motion-aware spatial smoothing + asynchronous resampling to reconstruct a clean, continuous, and physically interpretable event stream with $O(1)$ real-time complexity.
+
+**[Event Structural Valley: A Unified Theoretical and Practical Framework for Event Camera Autofocus](event_structural_valley_a_unified_theoretical_and_practical_framework_for_event_.md)**
+
+:   Starting from the physical mechanism of event generation, the paper refutes the traditional assumption that "event rate is highest at the sharpest focus." It proves that the true focus corresponds to a **valley (local minimum) between two peaks** on the event rate curve. Based on this, the ESVA framework is proposed, which requires no image reconstruction or supervision, reducing autofocus error to SOTA on multiple synthetic and real datasets.
+
 **[EventHub: Data Factory for Generalizable Event-Based Stereo Networks without Active Sensors](eventhub_data_factory_for_generalizable_event-based_stereo_networks_without_acti.md)**
 
 :   This paper proposes EventHub, a data factory for event-based stereo matching training without LiDAR or other active sensor annotations. By generating proxy events and depth labels via novel view synthesis and transferring knowledge from RGB stereo models through cross-modal distillation, the trained event stereo models surpass LiDAR-supervised models in cross-domain generalization (reducing error by up to 50% on M3ED and MVSEC).
@@ -698,10 +742,6 @@ item_total: 622
 **[ExtrinSplat: Decoupling Geometry and Semantics for Open-Vocabulary Understanding in 3D Gaussian Splatting](extrinsplat_decoupling_geometry_and_semantics_for_open-vocabulary_understanding_.md)**
 
 :   Ours proposes the extrinsic paradigm, which completely decouples semantics from 3DGS geometry. By constructing a lightweight semantic index layer through multi-granularity object grouping and VLM text hypotheses, ours achieves training-free, low-storage, and ambiguity-aware open-vocabulary 3D scene understanding.
-
-**[Fall Risk and Gait Analysis using World-Spaced 3D Human Mesh Recovery](fall_risk_gait_analysis_hmr.md)**
-
-:   A gait analysis pipeline based on GVHMR (World-Spaced 3D Human Mesh Recovery) is proposed to extract spatiotemporal gait parameters from monocular Timed Up and Go (TUG) test videos of older adults. The study validates the correlation between video-derived metrics, wearable sensors, and fall risk.
 
 **[Fast-FoundationStereo: Real-Time Zero-Shot Stereo Matching](fast-foundationstereo_real-time_zero-shot_stereo_matching.md)**
 
@@ -751,10 +791,6 @@ item_total: 622
 
 :   This paper proposes FI3Det, the first few-shot incremental 3D object detection framework. It utilizes a VLM-guided unknown object learning module during the base training phase to perceive potential novel classes in advance. In the incremental phase, it employs a gated multi-modal prototype casting module to fuse 2D semantic and 3D geometric features for novel class detection. FI3Det achieves an average improvement of 17.37% in novel class mAP on ScanNet V2 and SUN RGB-D.
 
-**[FF3R: Feedforward Feature 3D Reconstruction from Unconstrained Views](ff3r_feedforward_feature_3d_reconstruction_from_unconstrained_views.md)**
-
-:   FF3R is the first fully unlabeled feedforward framework capable of simultaneous geometric reconstruction and open-vocabulary semantic understanding from unconstrained multi-view image sequences, processing 64+ images 180x faster than optimization-based methods.
-
 **[FilterGS: Traversal-Free Parallel Filtering and Adaptive Shrinking for Large-Scale LoD 3D Gaussian Splatting](filtergs_traversal-free_parallel_filtering_and_adaptive_shrinking_for_large-scal.md)**
 
 :   FilterGS eliminates the two main bottlenecks in large-scale LoD 3DGS rendering—serial layer-by-layer traversal for Gaussian selection and massive invalid Gaussian-tile key-value pairs—by utilizing "Traversal-Free Parallel Dual Filters" and "Adaptive Gaussian Shrinking based on scene crowding." It achieves nearly 300 FPS (significantly surpassing the second-best method) across six large-scale scenes while maintaining reconstruction quality comparable to SOTA.
@@ -795,10 +831,6 @@ item_total: 622
 
 :   ForeHOI utilizes an end-to-end feed-forward network to directly reconstruct the geometry of objects heavily occluded by hands from monocular hand-object interaction videos. By leveraging a dual-branch diffusion model that simultaneously predicts "completed 2D object masks" and "complete 3D voxels" with bi-directional interaction, it compresses tasks that previously required hours of optimization to under one minute, while surpassing optimization-based methods in accuracy.
 
-**[ForgeDreamer: Industrial Text-to-3D Generation with Multi-Expert LoRA and Cross-View Hypergraph](forgedreamer_industrial_text-to-3d_generation_with_multi-expert_lora_and_cross-v.md)**
-
-:   The ForgeDreamer framework is proposed to address semantic adaptation in the industrial domain via multi-expert LoRA teacher-student distillation. By integrating high-order geometric consistency constraints through cross-view hypergraph geometric enhancement, it outperforms existing methods in industrial text-to-3D generation tasks.
-
 **[Foundry: Distilling 3D Foundation Models for the Edge](foundry_distilling_3d_foundation_models_for_the_edge.md)**
 
 :   This paper proposes the Foundation Model Distillation (FMD) paradigm and the Foundry framework. By utilizing a "compress-and-reconstruct" objective, the student model learns a set of learnable SuperTokens to compress the teacher's latent space basis vectors. The resulting single distilled model maintains universality across multiple tasks such as classification, segmentation, and few-shot learning, while reducing FLOPs from 478G to as low as 137G.
@@ -826,6 +858,10 @@ item_total: 622
 **[FE2E: From Editor to Dense Geometry Estimator](from_editor_to_dense_geometry_estimator.md)**
 
 :   This paper systematically analyzes the differences in fine-tuning behavior between image editing models and generative models for dense geometry estimation tasks. It discovers that editing models possess a natural structural prior advantage. Based on this, the FE2E framework is proposed, which for the first time adapts a DiT-based image editing model into a joint depth and normal estimator, significantly outperforming existing SOTA in zero-shot scenarios (reducing AbsRel by 35% on ETH3D).
+
+**[From Feature Learning to Spectral Basis Learning: A Unifying and Flexible Framework for Efficient and Robust Shape Matching](from_feature_learning_to_spectral_basis_learning_a_unifying_and_flexible_framewo.md)**
+
+:   Addressing the long-standing blind spot in deep functional map matching—where only "features" are optimized while the "spectral basis" remains fixed—this paper proposes Advanced Functional Maps. By utilizing a set of learnable "suppression functions" $G$, the fixed Laplacian basis $\Phi$ is transformed into a learnable basis $\Psi=\Phi G$. Features and the spectral basis are jointly optimized end-to-end via a lightweight multi-scale heat diffusion network. This approach significantly outperforms feature-only SOTA methods in difficult scenarios such as non-isometry and topological noise, while being faster and more stable by eliminating the functional map solver.
 
 **[From None to All: Self-Supervised 3D Reconstruction via Novel View Synthesis](from_none_to_all_self-supervised_3d_reconstruction_via_novel_view_synthesis.md)**
 
@@ -871,9 +907,13 @@ item_total: 622
 
 :   This paper proposes GaussianGrow, which "grows" 3D Gaussians from easily accessible 3D point clouds instead of predicting both geometry and appearance from scratch. It leverages multi-view diffusion models to generate consistent appearance supervision and introduces an overlap region detection and iterative completion mechanism to resolve viewpoint fusion artifacts and occluded areas, significantly outperforming SOTA on synthetic and real-scan point clouds.
 
-**[Generalizable Human Gaussian Splatting via Multi-view Semantic Consistency](generalizable_human_gaussian_splatting_via_multi-view_semantic_consistency.md)**
+**[GeCo: Geometry-Consistent Regularization for Domain Generalized Semantic Segmentation](geco_geometry-consistent_regularization_for_domain_generalized_semantic_segmenta.md)**
 
-:   To address the "inaccurate Gaussian localization" problem in generalizable human Gaussian splatting under sparse views, this paper back-projects latent embeddings from each view into a shared 3D space. It then utilizes DINO semantic features to determine which points belong to the same body part and performs cross-view attention recalibration. This leads to more accurate 3D Gaussian placement in highly textured and occluded areas, achieving SOTA results on ZJU-Mocap, HuMMan, and THuman2.0.
+:   Addressing the issue where adapting Visual Foundation Models (VFMs) via PEFT for Domain Generalized Semantic Segmentation (DGSS) leads to overfitting on the source domain and destruction of pre-trained geometric structures, GeCo proposes **Curvature-Guided Perturbation** (adjusting perturbation intensity/direction based on local manifold complexity per token) and **Geodesic Regularization** (constraining prediction consistency on the hypersphere of the probability simplex). It achieves SOTA on closed-set and open-set DGSS with only 4.7M trainable parameters.
+
+**[Generalizable Radio-Frequency Radiance Fields for Spatial Spectrum Synthesis](generalizable_radio-frequency_radiance_fields_for_spatial_spectrum_synthesis.md)**
+
+:   GRaF transfers the NeRF concept to the RF domain. By introducing a theorem stating that "the spatial spectrum of a target transmitter can be approximated by interpolating the spectra of neighboring transmitters," it transforms the "per-scene retraining" NeRF into a generalizable latent RF radiance field. Leveraging a geometry-aware Transformer to encode neighbor spectra and complex-valued neural ray tracing to reconstruct the spatial spectrum, GRaF outperforms NeRF2 in both single-scene and unseen-scene settings.
 
 **[Generalizable Sparse-View 3D Reconstruction from Unconstrained Images](generalizable_sparse-view_3d_reconstruction_from_unconstrained_images.md)**
 
@@ -919,6 +959,10 @@ item_total: 622
 
 :   GPERT decouples pure event-driven 3DGS rendering into two complementary branches: per-event ray-tracing depth rendering (temporally dense, spatially sparse) for geometric loss, and a single snapshot radiance map rendering (spatially dense, temporally sparse) for photometric loss. By bridging these branches via the "Image of Warped Events" (IWE), it resolves the conflict between precision and time windows inherent in the "render-twice-and-subtract" paradigm, achieving SOTA performance on real event datasets with the fastest training speed and no reliance on pre-trained models or COLMAP initialization.
 
+**[Geometry-Aligned and Anomaly-Aware Reconstruction for 3D Anomaly Detection](geometry-aligned_and_anomaly-aware_reconstruction_for_3d_anomaly_detection.md)**
+
+:   AARD addresses two systematic weaknesses in diffusion-based point cloud anomaly detection: geometric destruction by random noise and blurred details from unified references. It proposes "Geometry Rectification" to align noise with vertex normals and an "Anomaly-Aware Transformer" to route normal references to anomalous regions and input references to normal regions, setting new SOTA results on Real3D-AD (O-AUROC 0.82) and Anomaly-ShapeNet (O-AUROC 0.93).
+
 **[Geometry-Aware Cross-Modal Graph Alignment for Referring Segmentation in 3D Gaussian Splatting](geometry-aware_cross-modal_graph_alignment_for_referring_segmentation_in_3d_gaus.md)**
 
 :   GeoCGA reformulates the task of "identifying and segmenting target objects in 3DGS scenes using natural language" as a **geometry-aware cross-modal graph alignment** problem. It expands text into a semantic-spatial graph representing spatial relationships while abstracting Gaussian point clouds into an object-level geometric graph. By aligning these graphs at both node and edge levels and applying multi-view consistency constraints, it achieves relative mIoU improvements of 20.8% / 5.7% / 1.0% on Ref-LERF / LERF-OVS / 3D-OVS respectively, while significantly reducing parameters and FLOPs.
@@ -963,6 +1007,10 @@ item_total: 622
 
 :   The Glove2Hand framework translates egocentric videos of users wearing sensing gloves into realistic bare-hand videos while preserving tactile and IMU signals. By constructing HandSense, the first multi-modal hand-object interaction dataset, it significantly improves downstream performance for bare-hand contact estimation and occluded hand tracking.
 
+**[GM-R²: Generative Matching Learning for Unsupervised Geometric Representation and Registration](gm-r2_generative_matching_learning_for_unsupervised_geometric_representation_and.md)**
+
+:   Ours reformulates "learning geometric descriptors" as a proxy task of "generating cross-view images conditioned on geometry"—only when the geometric features of two point clouds are consistent can the generator conditioned on them synthesize consistent cross-view images. GM-R² uses this generative consistency as implicit supervision to train a ControlNet encoder, achieving unsupervised registration SOTA on 3DMatch / ScanNet, even surpassing some fully supervised methods.
+
 **[GP-4DGS: Probabilistic 4D Gaussian Splatting from Monocular Video via Variational Gaussian Processes](gp-4dgs_probabilistic_4d_gaussian_splatting_from_monocular_video_via_variational.md)**
 
 :   The paper proposes GP-4DGS, which integrates Variational Gaussian Processes (GP) into 4D Gaussian Splatting (4DGS). By utilizing spatio-temporal composite kernels and variational inference, it achieves probabilistic motion modeling and equips 4DGS with three new capabilities: uncertainty quantification, motion extrapolation, and adaptive motion priors.
@@ -970,6 +1018,10 @@ item_total: 622
 **[GS-ASM: 2DGS-Supervised Active Stereo Matching](gs-asm_2dgs-supervised_active_stereo_matching.md)**
 
 :   Addressing the accuracy limitations in active stereo matching caused by the lack of ground truth (GT) and reliance on self-supervision, this paper utilizes 2D Gaussian Splatting (2DGS) to reconstruct geometry from real scenes and render high-quality disparity "proxy labels." This transforms unsupervised active stereo networks into "supervised" training, complemented by a hybrid supervision regularization strategy that dynamically balances proxy supervision and self-supervision. The method achieves SOTA performance across multiple backbones, surpassing commercial RealSense D435 depth cameras.
+
+**[GSV2X: Geometry-Aware Uncertainty Modeling and Orthogonal Fusion for Robust Roadside Perception](gsv2x_geometry-aware_uncertainty_modeling_and_orthogonal_fusion_for_robust_roads.md)**
+
+:   To address two persistent issues in roadside multi-view camera-LiDAR fusion—"feature misalignment caused by calibration errors" and "dominant camera features suppressing LiDAR"—GSV2X replaces deterministic projections with 3D Gaussian distributions to "softly" lift pixel features to BEV and employs orthogonal constraints to force the two modalities to learn complementary features. On RCooper, it improves AP@0.5 from 43.7% (BEVFusion) to 63.4% and shows almost no performance drop under calibration perturbation.
 
 **[Guardians of the Hair: Rescuing Soft Boundaries in Depth, Stereo, and Novel Views](guardians_of_the_hair_rescuing_soft_boundaries_in_depth_stereo_and_novel_views.md)**
 
@@ -982,10 +1034,6 @@ item_total: 622
 **[HAD: Hallucination-Aware Diffusion Priors for 3D Reconstruction](had_hallucination-aware_diffusion_priors_for_3d_reconstruction.md)**
 
 :   Addressing the issue where diffusion priors improve image quality but generate non-existent content (hallucination) in sparse-view 3D reconstruction, HAD utilizes a pre-trained feed-forward NVS network (LVSM) as a multi-view encoder paired with a lightweight branch to predict pixel-wise "hallucination score maps." During 3DGS training, high-score (unreliable) pixels are masked, and multi-sampling fusion is employed to further decrease the hallucination ratio. Ultimately, the method achieves SOTA performance with a PSNR improvement of 0.78dB on DL3DV and 0.69dB on MipNeRF360.
-
-**[HAMMER: Harnessing MLLMs via Cross-Modal Integration for Intention-Driven 3D Affordance Grounding](hammer_harnessing_mllms_via_cross-modal_integration_for_intention-driven_3d_affo.md)**
-
-:   HAMMER utilizes Multimodal Large Language Models (MLLMs) to compress "intentions" from interaction images into a contact-aware embedding. It then injects MLLM hidden states into point cloud features through hierarchical cross-modal fusion and supplements this embedding with 3D spatial information using multi-granularity geometric lifting. This enables accurate and robust localization of interactive regions on point clouds without relying on intermediate text descriptions or 2D masks.
 
 **[HandDreamer: Zero-Shot Text to 3D Hand Model Generation using Corrective Hand Shape Guidance](handdreamer_zero-shot_text_to_3d_hand_model_generation_using_corrective_hand_sha.md)**
 
@@ -1002,6 +1050,10 @@ item_total: 622
 **[Hg-I2P: Bridging Modalities for Generalizable Image-to-Point-Cloud Registration via Heterogeneous Graphs](hg-i2p_bridging_modalities_for_generalizable_image-to-point-cloud_registration_v.md)**
 
 :   Hg-I2P introduces Heterogeneous Graphs (HG) to unify the modeling of relationships between 2D image regions and 3D point cloud regions. By leveraging multi-path adjacency relation mining for cross-modal edge learning, heterogeneous edge-based feature adaptation, and graph-based projection consistency pruning, it achieves state-of-the-art generalization and precision across six indoor and outdoor cross-domain benchmarks.
+
+**[Hierarchical Point-Patch Fusion with Adaptive Patch Codebook for 3D Shape Anomaly Detection](hierarchical_point-patch_fusion_with_adaptive_patch_codebook_for_3d_shape_anomal.md)**
+
+:   This paper proposes a hierarchical "point-patch" fusion network that constructs a position-independent normal patch feature codebook using adaptive multi-scale patching. It then injects patch-level priors into point-wise features via RoPE cross-attention to regress anomaly offsets. The method significantly outperforms previous point-wise approaches in detecting large-scale structural defects (planar displacement, angular misalignment) on public benchmarks and self-constructed industrial datasets.
 
 **[Hierarchical Visual Relocalization with Nearest View Synthesis from Feature Gaussian Splatting](hierarchical_visual_relocalization_with_nearest_view_synthesis_from_feature_gaus.md)**
 
@@ -1031,17 +1083,9 @@ item_total: 622
 
 :   HumanNOVA transfers the Large Reconstruction Model (LRM) paradigm for general objects to the human domain. Utilizing a "dual-modal token conditioning + tri-plane" feed-forward architecture, it reconstructs photorealistic 3D humans from a single image in under 1 second. The study also introduces a scalable data generation pipeline that expands training assets to 100,000 (roughly a 20x increase), achieving a 40%+ relative improvement in LPIPS across three benchmarks.
 
-**[HumanOrbit: 3D Human Reconstruction as 360° Orbit Generation](humanorbit_3d_human_reconstruction_as_360_orbit_generation.md)**
-
-:   Single-image 3D human reconstruction is transformed into a 360° orbital video generation problem. By LoRA fine-tuning a video diffusion model (Wan 2.1) using only 500 3D scans, the model generates 81-frame orbital videos. High-quality textured meshes are then reconstructed via VGGT and Mesh Carving without pose annotations, surpassing existing methods in multi-view consistency and identity preservation.
-
 **[Hyper-PCN: Hypergraph-Based Point Cloud Completion via High-Order Correlation Modeling](hyper-pcn_hypergraph-based_point_cloud_completion_via_high-order_correlation_mod.md)**
 
 :   Addressing the issues where Transformers in point cloud completion only model pairwise correlations and fail to reconstruct complex structures in the absence of symmetry priors, Hyper-PCN introduces hypergraphs to **incomplete** point clouds for the first time. It utilizes a Hypergraph Refinement Stack (HyperRS) with threshold annealing to extract high-order correlations from coarse to fine, and an Anchor-collaborative Hypergraph Neural Network (A-HGNN) to model global many-to-many relationships. Hyper-PCN consistently sets new SOTAs on benchmarks including PCN, ShapeNet-55/34, and MVP.
-
-**[HyperMVP: Hyperbolic Multiview Pretraining for Robotic Manipulation](hyperbolic_multiview_pretraining_for_robotic_manipulation.md)**
-
-:   Proposes HyperMVP, the first 3D multiview self-supervised pretraining framework in hyperbolic space. By learning hyperbolic multiview representations via a GeoLink encoder and transferring them to robotic manipulation tasks, it achieves a 2.1× performance enhancement under the most challenging "All Perturbations" setting in COLOSSEUM.
 
 **[HyperGaussians: High-Dimensional Gaussian Splatting for High-Fidelity Animatable Face Avatars](hypergaussians_high-dimensional_gaussian_splatting_for_high-fidelity_animatable_.md)**
 
@@ -1071,17 +1115,9 @@ item_total: 622
 
 :   IPFP proposes a "training-only" image-LiDAR fusion strategy: aggregated image features are **back-projected into the 3D physical space** based on estimated depths, residing in the same coordinate system as LiDAR features and sharing a single-branch backbone for training. At inference time, the image branch is disabled for pure LiDAR deployment. Ours consistently improves SOTA segmentation models like PTv3 and SPVCNN on nuScenes/KITTI/Waymo datasets with almost no additional inference cost.
 
-**[Improving Human Image Animation via Semantic Representation Alignment](improving_human_image_animation_via_semantic_representation_alignment.md)**
-
-:   SemanticREPA converts semantic representations—such as depth and facial features—from "extra input conditions" into "training-phase supervision signals." By using two pre-trained alignment modules to distill 3D structural and identity priors while fine-tuning a Diffusion Transformer, it significantly mitigates limb distortion and facial inconsistencies in long videos or large-scale motions.
-
 **[Inferring Compositional 4D Scenes without Ever Seeing One](inferring_compositional_4d_scenes_without_ever_seeing_one.md)**
 
 :   COM4D reconstructs complete, persistent 4D scenes comprising "multiple static objects + multiple dynamic objects" from a single monocular video. The key lies in decoupling spatial compositional reasoning and single-object temporal dynamics into two distinct attention mechanisms learned from two types of readily available data, then combining them via **Attention Mixing** during inference—all without ever being exposed to 4D compositional training samples.
-
-**[InstantHDR: Single-forward Gaussian Splatting for High Dynamic Range 3D Reconstruction](instanthdr_singleforward_gaussian_splatting_for_hi.md)**
-
-:   Ours proposes InstantHDR, the first feed-forward HDR new view synthesis method. It introduces a geometrically-guided appearance modeling module to address appearance inconsistencies in multi-exposure fusion and utilizes a MetaNet to predict scene-specific tone mapping parameters for generalization. It achieves second-level HDR 3D Gaussian scene reconstruction from uncalibrated multi-exposure LDR images, outperforming GaussianHDR by +2.90 dB PSNR in sparse 4-view settings while being approximately 700 times faster.
 
 **[Intrinsic Geometry-Appearance Consistency Optimization for Sparse-View Gaussian Splatting](intrinsic_geometry-appearance_consistency_optimization_for_sparse-view_gaussian_.md)**
 
@@ -1106,10 +1142,6 @@ item_total: 622
 **[iSplat: Iterative Learning for Fine-Grained Gaussian Splatting](isplat_iterative_learning_for_fine-grained_gaussian_splatting.md)**
 
 :   iSplat transforms feed-forward 3D Gaussian Splatting from "one-shot prediction" into "recurrent iterative refinement via GRU." By leveraging uncertainty-driven depth refinement and region-aware feature enhancement for progressive self-correction, it outperforms the 354M-parameter DepthSplat on RealEstate10K with only 42.6M parameters and improves PSNR by 2.88 dB on the cross-domain DTU dataset.
-
-**[JOPP-3D: Joint Open Vocabulary Semantic Segmentation on Point Clouds and Panoramas](jopp3d_joint_open_vocabulary_semantic_segmentation.md)**
-
-:   JOPP-3D is proposed as the first open-vocabulary semantic segmentation framework to jointly process 3D point clouds and panoramas. By decomposing panoramas into 20 perspective views via icosahedral tangential decomposition to adapt to SAM/CLIP, the method extracts mask-isolated instance-level CLIP embeddings for 3D segmentation and re-projects them to the panoramic domain via depth correspondence. This training-free approach achieves 80.9% mIoU on S3DIS, surpassing all supervised methods.
 
 **[JRM: Joint Reconstruction Model for Multiple Objects without Alignment](jrm_joint_reconstruction_model_for_multiple_objects_without_alignment.md)**
 
@@ -1159,10 +1191,6 @@ item_total: 622
 
 :   This paper proposes LoCaSE, a learnable 3D shape fidelity metric. It captures details using local attention on mesh topology and mitigates model bias through LoRA-style pre-training and fine-tuning. Accompanied by the RSF dataset featuring real-world distortions and human annotations, the metric aligns significantly closer to human perception than geometric metrics like Chamfer Distance.
 
-**[Learning a Particle Dynamics Model with Real-world Videos](learning_a_particle_dynamics_model_with_real-world_videos.md)**
-
-:   A framework is proposed to learn multi-object collision dynamics directly from unannotated real-world videos. By treating 3D Gaussians as particles and feeding them into a point cloud backbone to predict displacement and rotation, the model uses differentiable rendering loss for supervision instead of expensive 3D ground truth. A dataset of approximately 500 multi-view collision videos is also released.
-
 **[Learning Compact 3D Representations from Feed-Forward Novel View Synthesis](learning_compact_3d_representations_from_feed-forward_novel_view_synthesis.md)**
 
 :   C3G utilizes a small set of learnable query tokens to "discover and decode" approximately 2K compact 3D Gaussians placed at key spatial locations from unposed multi-view images using self-attention. Compared to pixel-wise methods, it maintains comparable novel view synthesis quality with ~65× fewer Gaussians. It further reuses emergent attention maps from the query decoder to lift arbitrary 2D features to 3D without additional training, significantly enhancing tasks like 3D open-vocabulary segmentation while reducing memory consumption and increasing rendering speed.
@@ -1203,6 +1231,10 @@ item_total: 622
 
 :   This paper learns the "normal extension" step—the most critical component of the classic Closest Point Method (CPM)—using a lightweight, geometrically-conditioned neural operator. This enables **solving surface PDEs directly on neural surface representations (SNS / SDF / Occupancy Fields / Point Clouds / Gaussian Splatting)** without mesh extraction or per-instance optimization. The pipeline is fully differentiable and, after being trained once on a single example shape (Spike), generalizes to unseen shapes, topologies, and input functions with accuracy comparable to CPM.
 
+**[Lens Component Deletion based on Differentiable Ray Tracing](lens_component_deletion_based_on_differentiable_ray_tracing.md)**
+
+:   To meet the miniaturization and cost-reduction needs of micro-optical lenses, an "automated lens deletion" pipeline is proposed. It uses a contribution metric to automatically identify the least significant lens in a system, applies a deletion loss to gradually flatten and thin it until safe removal, and employs a differentiable PSF estimation based on Rayleigh-Sommerfeld diffraction theory. This allows for joint optimization of the simplified lens and a post-processing restoration network, maintaining imaging quality comparable to the original system even after removing a lens component.
+
 **[Let it Snow! Animating 3D Gaussian Scenes with Dynamic Weather Effects via Physics-Guided Score Distillation](let_it_snow_animating_3d_gaussian_scenes_with_dynamic_weather_effects_via_physic.md)**
 
 :   Proposes the Physics-Guided Score Distillation framework, which utilizes Material Point Method (MPM) simulations as motion priors to guide Video-SDS optimization. This approach generates dynamic weather effects (snow, rain, fog, sandstorms) with physically plausible motion and realistic appearance within static 3DGS scenes.
@@ -1214,6 +1246,10 @@ item_total: 622
 **[Lifting Unlabeled Internet-level Data for 3D Scene Understanding](lifting_unlabeled_internet-level_data_for_3d_scene_understanding.md)**
 
 :   This work presents SceneVerse++, an automated data engine that generates 3D scene understanding training data from 6,687 unlabeled internet videos. It demonstrates the feasibility of advancing 3D scene understanding using internet-level data across three tasks: 3D object detection (+20.6 F1@.25), spatial VQA (+14.9%), and vision-language navigation (+14% SR).
+
+**[Lighting-grounded Video Generation with Renderer-based Agent Reasoning](lighting-grounded_video_generation_with_renderer-based_agent_reasoning.md)**
+
+:   LiVER proposes a lighting-driven video generation framework that utilizes a renderer agent to convert text descriptions into explicit 3D scene proxies (including layout, lighting, and camera trajectories). By employing physical rendering to generate diffuse/glossy/rough GGX scene proxies and injecting them into a video diffusion model, the approach achieves physically accurate lighting effects and precise scene control.
 
 **[LightSplat: Fast and Memory-Efficient Open-Vocabulary 3D Scene Understanding in Five Seconds](lightsplat_fast_and_memory-efficient_open-vocabulary_3d_scene_understanding_in_f.md)**
 
@@ -1234,6 +1270,10 @@ item_total: 622
 **[LiteSense: Lifting Lightweight ToF with RGB for High-Resolution Metric Depth Estimation](litesense_lifting_lightweight_tof_with_rgb_for_high-resolution_metric_depth_esti.md)**
 
 :   LiteSense fuses Compact Normalized Histograms (CNH) from multi-zone ToF sensors with RGB images using patch-wise cross-attention within a U-Net. With only 5.5M parameters, it approaches the performance of SOTA large models in indoor metric depth estimation and significantly outperforms the comparable RGB-ToF method DELTAR.
+
+**[LocateAnything3D: Vision-Language 3D Detection with Chain-of-Sight](locateanything3d_vision-language_3d_detection_with_chain-of-sight.md)**
+
+:   LocateAnything3D reformulates monocular multi-object 3D detection as a next-token prediction task for VLMs—first by having the decoder output 2D boxes as a "visual Chain-of-Sight," and then by solving 3D boxes following a curriculum of near-to-far and center→size→rotation. Without any specialized 3D heads, it increases the $AP_{3D}$ on Omni3D from 24.92 to 38.90.
 
 **[LoG3D: Ultra-High-Resolution 3D Shape Modeling via Local-to-Global Partitioning](log3d_ultra-high-resolution_3d_shape_modeling_via_local-to-global_partitioning.md)**
 
@@ -1258,6 +1298,10 @@ item_total: 622
 **[LumiMotion: Improving Gaussian Relighting with Scene Dynamics](lumimotion_gaussian_relighting_dynamics.md)**
 
 :   LumiMotion is the first Gaussian-based method to utilize scene dynamics (moving regions) as supervision signals to improve inverse rendering. By implementing motion-static separation and leveraging motion-revealed material changes, it achieves better decoupling of lighting and material, resulting in a 23% improvement in albedo LPIPS and a 15% improvement in relighting.
+
+**[Lumosaic: Hyperspectral Video via Active Illumination and Coded-Exposure Pixels](lumosaic_hyperspectral_video_via_active_illumination_and_coded-exposure_pixels.md)**
+
+:   The Lumosaic system is proposed for active hyperspectral video, synchronizing a 12-narrowband LED array with a Coded-Exposure Pixel (CEP) camera at microsecond precision. By jointly encoding spatial-temporal-spectral information across 158 sub-frames per frame, it achieves motion-robust reconstruction of 31-channel (400–700nm) hyperspectral video at 30fps VGA resolution, surpassing passive snapshot systems by over 10dB in PSNR.
 
 **[LuxRemix: Lighting Decomposition and Remixing for Indoor Scenes](luxremix_lighting_decomposition_and_remixing_for_indoor_scenes.md)**
 
@@ -1331,13 +1375,17 @@ item_total: 622
 
 :   MeshFlow employs a MeshVAE that encodes vertex positions, normals, and "discrete connectivity" entirely into a **continuous latent space**. Combined with a Rectified Flow diffusion Transformer, it **parallelly** generates all vertices and edges, producing artist-level triangular meshes in approximately 1 second—about 18x faster than the fastest autoregressive generators while avoiding quantization errors.
 
-**[MeshLAM: Feed-Forward One-Shot Animatable Textured Mesh Avatar Reconstruction](meshlam_feed-forward_one-shot_animatable_textured_mesh_avatar_reconstruction.md)**
-
-:   MeshLAM utilizes a dual-branch network with a shared Transformer to reconstruct a **textured, directly drivable** full 3D head mesh from a single portrait image in a single feed-forward pass (within seconds). The shape branch regresses per-vertex deformations, while the texture branch synthesizes UV maps. By employing GRU iterative decoding and reprojecting the input image onto the mesh for texture supervision, the method avoids mesh collapse and preserves high-frequency details, outperforming Gaussian-based feed-forward methods in both quality and efficiency.
-
 **[MeshWeaver: Sparse-Voxel-Guided Surface Weaving for Autoregressive Mesh Generation](meshweaver_sparse-voxel-guided_surface_weaving_for_autoregressive_mesh_generatio.md)**
 
 :   The authors transform autoregressive mesh generation from "coordinate-by-coordinate prediction" to "vertex-by-vertex weaving." By utilizing a multi-level sparse-voxel encoder to inject local geometry into the generation process across three levels—representation, prediction, and constraint—the method achieves an 18% tokenization compression rate, enables the generation of meshes with up to 16K faces, and significantly enhances geometric fidelity.
+
+**[Meta-learning In-Context Enables Training-Free Cross Subject Brain Decoding](meta-learning_in-context_enables_training-free_cross_subject_brain_decoding.md)**
+
+:   The proposed BrainCoDec framework achieves fMRI visual decoding that generalizes to new subjects without fine-tuning through two-stage hierarchical in-context learning (estimating encoder parameters for each voxel first, then performing functional inversion via cross-voxel aggregation). It improves Top-1 retrieval accuracy from MindEye2's 3.9% to 22.7%.
+
+**[MetricHMSR: Metric Human Mesh and Scene Recovery from Monocular Images](metrichmsr_metric_human_mesh_and_scene_recovery_from_monocular_images.md)**
+
+:   MetricHMSR simultaneously recovers human SMPL meshes and 3D scenes with real physical scales (metric) from a single monocular image. The core involves explicitly encoding camera intrinsics and cropping information into the network using a "boundary camera ray map," decoupling local pose from global position via HumanMoE, and calibrating monocular depth using the recovered metric human as a geometric anchor to achieve SOTA in both human mesh recovery and metric human-scene reconstruction tasks.
 
 **[MHopReg: Efficient Hierarchical Multi-Hop Graph Search for Point Cloud Registration](mhopreg_efficient_hierarchical_multi-hop_graph_search_for_point_cloud_registrati.md)**
 
@@ -1346,6 +1394,10 @@ item_total: 622
 **[MimiCAT: Mimic with Correspondence-Aware Cascade-Transformer for Category-Free 3D Pose Transfer](mimicat_mimic_with_correspondence-aware_cascade-transformer_for_category-free_3d.md)**
 
 :   This paper proposes MimiCAT, a cascaded Transformer framework that learns flexible many-to-many soft correspondences via semantic keypoint labels. Combined with PokeAnimDB, a million-scale multi-category motion dataset, it achieves high-quality 3D pose transfer across categories (e.g., humanoid to quadruped/bird) for the first time.
+
+**[Mind the Hitch: Dynamic Calibration and Articulated Perception for Autonomous Trucks](mind_the_hitch_dynamic_calibration_and_articulated_perception_for_autonomous_tru.md)**
+
+:   Ours proposes the dCAP framework, which achieves real-time 6-DoF relative pose estimation between the tractor and trailer in articulated autonomous trucks via Transformer-based cross-view and temporal attention mechanisms. It is integrated into BEVFormer to enhance 3D object detection performance under articulated motion (translation error 0.452m, rotation error 0.042 rad).
 
 **[Minimal Constraint Relaxation for Multiview Autocalibration](minimal_constraint_relaxation_for_multiview_autocalibration.md)**
 
@@ -1395,10 +1447,6 @@ item_total: 622
 
 :   MoRel utilizes "Keyframe Anchors + Bidirectional Deformation + Learnable Temporal Opacity Blending" to decompose long-sequence dynamic scenes of thousands of frames into segments of anchor relays. Under bounded memory constraints, it eliminates flickering at segment boundaries caused by chunk-based training, achieving the best temporal consistency among all comparison methods with a tOF reduction to 0.203.
 
-**[MoRel: Long-Range Flicker-Free 4D Motion Modeling via Anchor Relay-based Bidirectional Blending with Hierarchical Densification](morel_long-range_flicker-free_4d_motion_modeling_via_anchor_relay-based_bidirect.md)**
-
-:   To address the challenges of memory explosion, temporal flickering, and occlusion handling in 4D Gaussian Splatting for long-video dynamic scene modeling, the MoRel framework is proposed. Based on Anchor Relay-based Bidirectional Blending (ARBB), it achieves flicker-free, memory-bounded long-range 4D motion reconstruction through the progressive construction of keyframe anchors and learnable temporal opacity control.
-
 **[MoRGS: Efficient Per-Gaussian Motion Reasoning for Streamable Dynamic 3D Scenes](morgs_efficient_per-gaussian_motion_reasoning_for_streamable_dynamic_3d_scenes.md)**
 
 :   In the context of online 3DGS reconstruction for streaming dynamic scenes, MoRGS explicitly supervises "per-Gaussian motion" using sparse key-view optical flow. It overlays a learnable per-Gaussian motion offset field to correct view inconsistencies in sparse flow and utilizes per-Gaussian motion confidence to apply residual updates only to truly moving Gaussians. This approach achieves state-of-the-art (SOTA) rendering quality and motion fidelity for online methods while maintaining low streaming latency.
@@ -1423,9 +1471,9 @@ item_total: 622
 
 :   The authors propose MoVieS, a feed-forward 4D dynamic scene reconstruction framework. By utilizing a **Dynamic Splatter Pixel** representation to unify appearance, geometry, and motion modeling, it achieves 4D reconstruction from monocular video in approximately 1 second. It supports multiple tasks including novel view synthesis, 3D point tracking, scene flow estimation, and moving object segmentation.
 
-**[MozzaVID: Mozzarella Volumetric Image Dataset](mozzavid_mozzarella_volumetric_image_dataset.md)**
+**[Moving Border Ownership for Event-based Motion Segmentation](moving_border_ownership_for_event-based_motion_segmentation.md)**
 
-:   This paper introduces MozzaVID—a volumetric image classification dataset of mozzarella cheese microstructures based on synchrotron X-ray CT. It contains 591 to 37,824 volumetric samples of size $192^3$, with classification targets covering 25 cheese recipes and 149 samples. It bridges the massive gap in scale and task design between 3D volumetric datasets and 2D datasets. Experiments demonstrate that 3D models significantly outperform 2D models.
+:   This paper reformulates event-based motion segmentation as "moving border ownership" prediction—detecting motion boundaries while simultaneously determining which side of the boundary belongs to the foreground moving object. By training a lightweight time-surface + MobileNet + ConvLSTM network with perfect supervision from Blender synthetic data, the model achieves zero-shot transfer to four real-world datasets (EED / EVIMO1 / EVIMO2 / EMSMC), reaching event-domain SOTA and running in real-time at 200 FPS.
 
 **[MSCD-GS: Motion-Separated Cooperative Deblurring Dynamic Reconstruction via Gaussian Splatting](mscd-gs_motion-separated_cooperative_deblurring_dynamic_reconstruction_via_gauss.md)**
 
@@ -1455,6 +1503,10 @@ item_total: 622
 
 :   To address the "cross-modal bias" in large text-to-3D models (e.g., TRELLIS)—where models are overly sensitive to prompt formatting, focus only on a few keywords, and struggle with complex descriptions—this paper proposes a "localization-quantization-mitigation" framework. It utilizes gradients backpropagated from a 3D quality evaluation model to locate biases at the word level. Based on this, GPT-4 and external 3D generators are used to construct semantically rich and visually reliable text-3D pairs to fine-tune the large model. This approach generates higher-quality 3D content that is more diverse and better aligned with text, surpassing 8 SOTA methods on MATE-3D and T³Bench.
 
+**[MuM: Multi-View Masked Image Modeling for 3D Vision](mum_multi-view_masked_image_modeling_for_3d_vision.md)**
+
+:   MuM generalizes the "mask-and-reconstruct" objective of MAE from single images to arbitrary multi-view sequences (up to 24 views) of the same scene. By utilizing a lightweight multi-view decoder with alternating cross-frame attention, it pre-trains geometric-aware feature encoders. MuM outperforms DINOv3 and CroCo v2 on 3D tasks such as feed-forward reconstruction, dense matching, and relative pose estimation while using approximately 1/30 of the training compute.
+
 **[Muses: Designing, Composing, Generating Nonexistent Fantasy 3D Creatures without Training](muses_designing_composing_generating_nonexistent_fantasy_3d_creatures_without_tr.md)**
 
 :   Muses is the first **training-free, feed-forward** framework for generating fantasy 3D creatures. It parses highly compositional text (e.g., "a creature with a tiger body, dragon wings, robotic legs, and nine fox tails") into 3D skeletons for individual parts, assembles a reasonable holistic skeleton via graph classification and LLM reasoning, and performs voxel-level geometric and texture interpolation within the Structured Latent Space (SLAT) of Trellis. Finally, it concludes with style-consistent texture editing, significantly outperforming methods like DreamBeast and OmniPart in visual fidelity and text alignment (VQAScore 0.93 vs. 0.82).
@@ -1467,6 +1519,10 @@ item_total: 622
 
 :   MV2UV treats multi-view generated images as "semantic prompts" to directly generate texture maps in UV space using a fine-tuned SDXL diffusion model. By employing pixel-aligned 3D coordinates (XYZ) as cross-attention positional encodings, it simultaneously resolves multi-view inconsistencies and completes occluded regions, significantly reducing FID on GSO/DTC datasets.
 
+**[MV3DIS: Multi-View Mask Matching via 3D Guides for Zero-Shot 3D Instance Segmentation](mv3dis_multi-view_mask_matching_via_3d_guides_for_zero-shot_3d_instance_segmenta.md)**
+
+:   MV3DIS utilizes "projections of coarse 3D segments" as cross-view common references to match and filter 2D masks generated by SAM. Consistent 2D masks are then used to refine 3D instances. Without relying on video tracking or any 3D annotations, it pushes the zero-shot 3D instance segmentation mAP on ScanNetV2 to 38.5 (surpassing the Prev. SOTA by 4.5).
+
 **[MVGGT: Multimodal Visual Geometry Grounded Transformer for Multiview 3D Referring Expression Segmentation](mvggt_multimodal_visual_geometry_grounded_transformer_for_multiview_3d_referring.md)**
 
 :   This paper proposes a new task, MV-3DRES (language-guided 3D segmentation directly from sparse multi-view RGB), and the MVGGT framework. By utilizing a dual-branch design that fuses a frozen geometry branch with a trainable multimodal branch and applying the PVSO optimization strategy to resolve foreground gradient dilution, the method achieves 39.9 mIoU on the self-constructed MVRefer benchmark, significantly surpassing baselines.
@@ -1475,9 +1531,17 @@ item_total: 622
 
 :   MVInverse utilizes a VGGT-style alternating attention Transformer to simultaneously predict per-view consistent albedo, metallic, roughness, normal, and diffuse shading from multiview RGB sequences in a single feed-forward pass. This compresses multiview inverse rendering—which previously required minutes to hours of per-scene optimization—into seconds, while leveraging self-supervised consistency fine-tuning to ensure stable, flicker-free results on real-world videos.
 
+**[NanoSD: Edge Efficient Foundation Model for Real Time Image Restoration](nanosd_edge_efficient_foundation_model_for_real_time_image_restoration.md)**
+
+:   NanoSD is proposed as a family of Pareto-optimal lightweight diffusion foundation models (130M–315M parameters, fastest 12ms inference) constructed through hardware-aware U-Net decomposition, block-wise feature distillation, and multi-objective Bayesian optimization. It serves as a drop-in backbone achieving SOTA performance in tasks such as super-resolution, face restoration, deblurring, and monocular depth estimation.
+
 **[NaTex: Seamless Texture Generation as Latent Color Diffusion](natex_seamless_texture_generation_as_latent_color_diffusion.md)**
 
 :   NaTex redefines "coloring 3D meshes" as predicting a color field directly in 3D space. By using a geometry-aware color point cloud VAE to compress textures into an ordered latent set and applying a multi-control DiT for latent color diffusion, it completely bypasses the inherent defects of the multi-view diffusion (MVD) baking route regarding occlusion, alignment, and cross-view consistency. It significantly outperforms previous methods in texture coherence and alignment.
+
+**[Natural Human Motion Recovery by Aligning High-Order Temporal Dynamics from Monocular Videos](natural_human_motion_recovery_by_aligning_high-order_temporal_dynamics_from_mono.md)**
+
+:   Addressing the issue where monocular human motion recovery results have accurate joint positions but appear either jittery or over-smoothed, this paper proposes HTD-Refine. It uses a lightweight temporal network, PVA-Net, to explicitly predict the 3D velocity and acceleration of each joint from video. These high-order dynamics serve as soft constraints to optimize global trajectories. This plug-and-play approach reduces jitter, suppresses over-smoothing, and improves global accuracy for existing methods like TRAM, GVHMR, and Human3R.
 
 **[NeAR: Coupled Neural Asset–Renderer Stack](near_coupled_neural_asset-renderer_stack.md)**
 
@@ -1486,6 +1550,10 @@ item_total: 622
 **[NeoVerse: Enhancing 4D World Model with in-the-wild Monocular Videos](neoverse_enhancing_4d_world_model_with_in-the-wild_monocular_videos.md)**
 
 :   NeoVerse proposes a scalable 4D world model. By utilizing feed-forward pose-free 4DGS reconstruction and online monocular degradation simulation, the training pipeline can leverage massive (millions) in-the-wild monocular videos, achieving SOTA in both 4D reconstruction and novel-trajectory video generation.
+
+**[Nerfify: A Multi-Agent Framework for Turning NeRF Papers into Code](nerfify_multiagent_nerf_paper_to_code.md)**
+
+:   Ours proposes Nerfify, a multi-agent framework that automatically converts NeRF papers into trainable Nerfstudio plug-in code through context-free grammar constraints, Graph of Thoughts code synthesis, and compositional citation recovery. It achieves a 100% execution rate on a 30-paper benchmark, with visual quality differing from expert implementations by only $\pm 0.5$ dB PSNR.
 
 **[Neu-PiG: Neural Preconditioned Grids for Fast Dynamic Surface Reconstruction on Long Sequences](neu-pig_neural_preconditioned_grids_for_fast_dynamic_surface_reconstruction_on_l.md)**
 
@@ -1510,6 +1578,10 @@ item_total: 622
 **[NG-GS: NeRF-Guided 3D Gaussian Splatting Segmentation](ng_gs_nerf_guided_3d_gaussian_splatting_segmentation.md)**
 
 :   The NG-GS framework is proposed to utilize the continuous modeling capability of NeRF to resolve discretization issues in 3DGS segmentation boundaries. High-quality object segmentation is achieved through continuous feature fields constructed via RBF interpolation combined with multi-resolution hash encoding and joint NeRF-GS optimization.
+
+**[NI-Tex: Non-isometric Image-based Garment Texture Generation](ni-tex_non-isometric_image-based_garment_texture_generation.md)**
+
+:   Ours proposes the NI-Tex framework, which achieves high-quality PBR texture generation from a single image to a 3D garment under non-isometric conditions using a feed-forward architecture. This is accomplished by constructing a 3D Garment Videos dataset, image-editing-based cross-topology augmentation, and an uncertainty-guided iterative baking algorithm.
 
 **[NimbusGS: Unified 3D Scene Reconstruction under Hybrid Weather](nimbusgs_unified_3d_scene_reconstruction_under_hybrid_weather.md)**
 
@@ -1542,6 +1614,10 @@ item_total: 622
 **[OLATverse: A Large-scale Real-world Object Dataset with Precise Lighting Control](olatverse_a_large-scale_real-world_object_dataset_with_precise_lighting_control.md)**
 
 :   OLATverse utilizes a lightstage with 35 cameras and 331 controllable light sources to capture 765 real-world objects in a one-light-at-a-time (OLAT) manner. The resulting large-scale dataset contains approximately 9 million images with precise single-light control, accompanied by camera parameters, object masks, photometric normals, and diffuse albedo. It provides the first real-world benchmark for inverse rendering, novel view synthesis, and normal estimation that combines both large scale and precise lighting control.
+
+**[OMG-Avatar: One-shot Multi-LOD Gaussian Head Avatar](omg-avatar_one-shot_multi-lod_gaussian_head_avatar.md)**
+
+:   OMG-Avatar reconstructs an animatable 3D Gaussian head avatar from a single image in 0.2 seconds. Through "hierarchical coarse-to-fine feature extraction + depth-buffer-guided occlusion-aware fusion + head-shoulder divide-and-conquer modeling," the unified model dynamically switches levels of detail (LOD) at runtime, achieving SOTA reconstruction quality and 85 FPS real-time speed with fewer Gaussian points.
 
 **[OMGTex: One-stage Multi-style Facial Texture Reconstruction without Geometry Guidance](omgtex_one-stage_multi-style_facial_texture_reconstruction_without_geometry_guid.md)**
 
@@ -1583,13 +1659,13 @@ item_total: 622
 
 :   ORBIT utilizes online 360° panoramic videos as "reliable sources of ground truth." Because panoramic cameras observe all directions, have known intrinsics, and "hide" no stable features, a custom rig-based SfM can yield credible trajectories. These panoramas are then cropped and reprojected into perspective videos that specifically target "difficult viewpoints," forming a benchmark of 100 real-world challenging cases. Results show that SOTA methods like COLMAP, MegaSaM, and VGGT fail significantly, revealing that SfM remains far from solved.
 
+**[Towards Realistic and Consistent Orbital Video Generation via 3D Foundation Priors](orbital_video_3d_foundation_priors.md)**
+
+:   The authors propose leveraging the latent features of a 3D foundation generative model (Hunyuan3D) as shape priors. These are injected into a base video diffusion model through multi-scale 3D adapters to achieve geometrically realistic and view-consistent orbital video generation from a single image.
+
 **[ORD: Object-Relation Decoupling for Generalized 3D Visual Grounding](ord_object-relation_decoupling_for_generalized_3d_visual_grounding.md)**
 
 :   ORD proposes an "Object-Relation Decoupling" framework that explicitly models target-anchor spatial relations as first-class geometric/semantic primitives. By utilizing anchor-centric relative geometry, predicate-decoupled cross-modal alignment, and anchor-guided regression, it severs the dependence on "shortcuts from entity names," consistently outperforming SOTA on multiple 3D visual grounding benchmarks including NR3D/SR3D.
-
-**[Order Matters: 3D Shape Generation from Sequential VR Sketches](order_matters_3d_shape_generation_from_sequential_vr_sketches.md)**
-
-:   The authors propose VRSketch2Shape, a framework that models temporal stroke information of VR sketches for the first time. Utilizing a sequence-aware BERT encoder and a diffusion-based 3D generator (SDFusion), it generates high-fidelity 3D shapes from ordered VR sketches. The work also contributes a multi-category dataset containing 20k synthetic and 900 real sketches.
 
 **[OrienPose: Orientation-Guided Novel View Synthesis for Single-Image Unseen Object Pose Estimation](orienpose_orientation-guided_novel_view_synthesis_for_single-image_unseen_object.md)**
 
@@ -1610,6 +1686,10 @@ item_total: 622
 **[PAD-Hand: Physics-Aware Diffusion for Hand Motion Recovery](pad-hand_physics-aware_diffusion_for_hand_motion_recovery.md)**
 
 :   PAD-Hand is proposed as a physics-aware conditional diffusion framework that integrates Euler-Lagrange dynamics residuals into the diffusion process as virtual observations. By estimating joint-wise and frame-wise dynamic variance through last-layer Laplace approximation, it achieves hand motion recovery with both physical plausibility and uncertainty awareness, reducing acceleration error by 50.1% on DexYCB.
+
+**[PAM: A Pose-Appearance-Motion Engine for Sim-to-Real HOI Video Generation](pam_a_pose-appearance-motion_engine_for_sim-to-real_hoi_video_generation.md)**
+
+:   PAM is proposed as the first engine to generate realistic hand-object interaction (HOI) videos using only initial/target hand poses and object geometry. By decoupling the process into three stages—pose, appearance, and motion generation—it achieves an FVD of 29.13 (vs. InterDyn's 38.83) and an MPJPE of 19.37mm (vs. CosHand's 30.05mm) on DexYCB. The generated synthetic data also effectively augments downstream hand pose estimation tasks.
 
 **[PaNDaS: Learnable Shape Interpolation Modeling with Localized Control](pandas_learnable_shape_interpolation_modeling_with_localized_control.md)**
 
@@ -1735,10 +1815,6 @@ item_total: 622
 
 :   PointGS reconstructs sparse point clouds into a dense 3D Gaussian field as a unified intermediate representation. It extracts 2D masks from rendered images using SAM and distills semantics into Gaussian primitives through scale-aware contrastive learning. After a two-step ICP to align Gaussians back to the original point cloud for nearest-neighbor label transfer, it outperforms existing unsupervised methods on S3DIS (+2.8% mIoU) and ScanNet-v2 (+0.9% mIoU) without manual annotations or point cloud pre-training.
 
-**[PointINS: Instance-Aware Self-Supervised Learning for Point Clouds](pointins_instance-aware_self-supervised_learning_for_point_clouds.md)**
-
-:   PointINS proposes the first self-supervised point cloud framework that explicitly learns semantic consistency and geometric reasoning. By incorporating an unlabeled offset branch with Offset Distribution Regularization (ODR) and Spatial Clustering Regularization (SCR), it achieves an average improvement of +3.5% mAP in indoor instance segmentation and +4.1% PQ in outdoor panoptic segmentation.
-
 **[PointNSP: Autoregressive 3D Point Cloud Generation with Next-Scale Level-of-Detail Prediction](pointnsp_autoregressive_3d_point_cloud_generation_with_next-scale_level-of-detai.md)**
 
 :   PointNSP transforms autoregressive point cloud generation from "point-by-point prediction" to "next-scale LoD prediction"—first determining the global structure at low resolution then refining geometry scale-by-scale. This is achieved via a multi-scale VQVAE and a causal Transformer with block-wise causal masks, maintaining the permutation invariance of point sets. It is the first autoregressive paradigm to achieve SOTA generation quality on ShapeNet, outperforming strong diffusion baselines in parameters, training, and sampling efficiency.
@@ -1746,6 +1822,10 @@ item_total: 622
 **[PointTPA: Dynamic Network Parameter Adaptation for 3D Scene Understanding](pointtpa_dynamic_network_parameter_adaptation_for_3d_scene_understanding.md)**
 
 :   The PointTPA framework is proposed, utilizing two lightweight modules—Serialized Neighborhood Grouping (SNG) and Dynamic Parameter Projector (DPP)—to generate customized network parameters for each input scene during inference. With an increase of <2% in parameter count, it achieves 78.4% mIoU on ScanNet, surpassing current Parameter-Efficient Fine-Tuning (PEFT) methods.
+
+**[PointWorld: Scaling 3D World Models for In-The-Wild Robotic Manipulation](pointworld_scaling_3d_world_models_for_in-the-wild_robotic_manipulation.md)**
+
+:   PointWorld represents scene states and robot actions as a unified set of 3D point flows. By using a large pre-trained point cloud backbone to learn "how scene points move given an action" across approximately 2 million trajectories, a single checkpoint can drive real robotic arms to complete tasks involving rigid body pushing, deformable objects, articulated objects, and tool use from a single RGB-D input in a zero-shot manner.
 
 **[PoseMaster: A Unified 3D Native Framework for Stylized Pose Generation](posemaster_a_unified_3d_native_framework_for_stylized_pose_generation.md)**
 
@@ -1803,6 +1883,10 @@ item_total: 622
 
 :   Ours proposes QuadSync, the first global synchronization algorithm for quadrifocal tensors. By constructing a block quadrifocal tensor and proving it admits a Tucker decomposition with multilinear rank $(4,4,4,4)$, the method utilizes an ADMM-IRLS optimization framework to recover camera poses from four-view measurements. It achieves superior synchronization accuracy compared to two-view and three-view methods in dense-view scenarios.
 
+**[Query2Uncertainty: Robust Uncertainty Quantification and Calibration for 3D Object Detection under Distribution Shift](query2uncertainty_robust_uncertainty_quantification_and_calibration_for_3d_objec.md)**
+
+:   Addressing the "overconfidence and calibration failure" of DETR-style 3D detectors under distribution shifts (e.g., rain or snow), this paper utilizes Normalizing Flows to estimate the feature density of object queries. This density signal is injected into post-hoc calibrators like Temperature Scaling, Platt Scaling, and Isotonic Regression, allowing calibration intensity to adaptively adjust based on "how far the query is from the training distribution." This approach simultaneously calibrates classification confidence and 3D box regression variance, outperforming standard post-hoc methods on both nuScenes (in-distribution) and MultiCorrupt (distribution shift).
+
 **[QueryMe: Query-Driven Open-Vocabulary 3D Object Affordances Grounding from Multimodal Evidence](queryme_query-driven_open-vocabulary_3d_object_affordances_grounding_from_multim.md)**
 
 :   QueryMe projects a single Human-Object Interaction (HOI) image into 3D space via feed-forward monocular reconstruction, then utilizes a set of learnable query vectors to retrieve evidence in a fixed "Text → 3D HOI → Object Point Cloud" sequence. This enables the localization of object functional regions in an open-vocabulary setting, achieving a 4.19% higher AUC on unseen affordances compared to the previous SOTA, GREAT.
@@ -1814,6 +1898,14 @@ item_total: 622
 **[Radiance Meshes for Volumetric Reconstruction](radiance_meshes_for_volumetric_reconstruction.md)**
 
 :   Radiance Mesh represents radiance fields by partitioning the scene into tetrahedral units with "constant density + linear color" using Delaunay tetrahedralization. In conjunction with exact volumetric rendering sorted by circumsphere power and a novel mesh shader rasterizer, it achieves real-time view synthesis that is faster than 3DGS and popping-free, while maintaining comparable quality and being naturally compatible with graphics ecosystems for simulation, editing, and surface mesh extraction.
+
+**[RaGS: Unleashing 3D Gaussian Splatting from 4D Radar and Monocular Cue for 3D Object Detection](rags_unleashing_3d_gaussian_splatting_from_4d_radar_and_monocular_cue_for_3d_obj.md)**
+
+:   RaGS models the scene as a continuous 3D Gaussian field. It initializes Gaussians using monocular foreground cues, iteratively absorbs radar geometry and image semantics to "move" Gaussians towards foreground objects, and finally renders multi-layer BEV features for detection. It achieves SOTA on three 4D radar-camera benchmarks: VoD, TJ4DRadSet, and OmniHD-Scenes.
+
+**[Random Wins All: Rethinking Grouping Strategies for Vision Tokens](random_wins_all_rethinking_grouping_strategies_for_vision_tokens.md)**
+
+:   Ours proposes a minimalist random grouping strategy to replace various carefully designed token grouping methods in Vision Transformers. It achieves almost comprehensive superiority over all baselines across image classification, object detection, semantic segmentation, point cloud segmentation, and VLMs. The success is explained through four dimensions: positional information, head feature diversity, global receptive field, and fixed grouping patterns.
 
 **[RAP: Fast Feedforward Rendering-Free Attribute-Guided Primitive Importance Score Prediction for Efficient 3D Gaussian Splatting Processing](rap_fast_feedforward_rendering-free_attribute-guided_primitive_importance_score_.md)**
 
@@ -1847,13 +1939,13 @@ item_total: 622
 
 :   ReFlow proposes a "self-correction" monocular dynamic scene reconstruction framework that uses inter-frame video differences to directly supervise 3D motion without external optical flow or tracking priors. Combined with complete canonical space initialization and static-dynamic decoupling, it achieves new Prev. SOTA performance on NVIDIA Monocular and Nerfies-HyperNeRF (average PSNR 28.20 dB on NVIDIA).
 
+**[ReGenHOI: Unifying Reconstruction and Generation for 3D Human-Object Interaction Understanding](regenhoi_unifying_reconstruction_and_generation_for_3d_human-object_interaction_.md)**
+
+:   ReGenHOI unifies the "reconstruction" (restoring observed contacts from images) and "generation" (synthesizing future interactions from linguistic instructions) of 3D Human-Object Interaction (HOI) into a shared semantic-geometric latent space. By integrating direct 3D point cloud contact reasoning, iterative reasoning trajectories, and a gravitational field diffusion bridge for contact refinement, it simultaneously outperforms SOTA in contact estimation, reconstruction accuracy, and motion generation quality.
+
 **[Registration-Free Learnable Multi-View Capture of Faces in Dense Semantic Correspondence](registration-free_learnable_multi-view_capture_of_faces_in_dense_semantic_corres.md)**
 
 :   MOCHI is the first multi-view dense correspondence face reconstruction framework that does not require **pre-registered data** for training. By employing a "pseudo-linear inverse kinematics solver + differentiable pointmap/normal loss + dense landmarks trained on synthetic data" trio, it directly learns topology-consistent FLAME meshes from raw scans. Coupled with a lightweight test-time optimization (TTO), its reconstruction accuracy surpasses the very slow and labor-intensive traditional registration pipelines it aims to replace.
-
-**[Regularizing INR with Diffusion Prior for Self-Supervised 3D Reconstruction of Neutron Computed Tomography Data](regularizing_inr_with_diffusion_prior_self-supervised_3d_reconstruction_of_neutr.md)**
-
-:   Proposes DINR (Diffusive INR), which replaces traditional inversion solvers with an INR within the DD3IP diffusion framework. By injecting diffusion denoising estimates into the INR optimization process via a proximal loss, the method outperforms existing SOTA in neutron CT reconstruction with extremely sparse views (as few as 4-5 views).
 
 **[ReLaGS: Relational Language Gaussian Splatting](relags_relational_language_gaussian_splatting.md)**
 
@@ -1863,6 +1955,14 @@ item_total: 622
 
 :   Reliev3R proposes the first weakly supervised paradigm to train feed-forward 3D reconstruction models (FFRM) from scratch without multi-view geometric annotations (e.g., point clouds and poses from SfM/MVS), utilizing monocular relative depth and sparse image correspondences as alternative supervision. It achieves performance comparable to or exceeding some fully supervised FFRMs.
 
+**[Relightable Holoported Characters: Capturing and Relighting Dynamic Human Performance from Sparse Views](relightable_holoported_characters_capturing_and_relighting_dynamic_human_perform.md)**
+
+:   RHC utilizes a transformer network, RelightNet, to perform cross-attention between "physics-inspired features (geometry/albedo/shading/view)" and environment lighting to implicitly solve the rendering equation in a **single forward pass**. It enables photo-realistic, free-viewpoint relighting of dynamic full-body characters with unseen motions from just 4 flat-lit cameras—avoiding slow OLAT-based acquisition and achieving significantly higher clarity than inverse rendering methods.
+
+**[Reparameterized Tensor Ring Functional Decomposition for Multi-Dimensional Data Recovery](reparameterized_tensor_ring_functional_decomposition_for_multi-dimensional_data_.md)**
+
+:   Ours proposes RepTRFD: a method that addresses the spectral bias issue of INR-parameterized Tensor Ring (TR) factors by reparameterizing them into a "learnable latent tensor $\times$ fixed basis" form, consistently outperforming SOTA in tasks like image inpainting, denoising, super-resolution, and point cloud recovery.
+
 **[Repurposing 3D Generative Model for Autoregressive Layout Generation](repurposing_3d_generative_model_for_autoregressive_layout_generation.md)**
 
 :   LaviGen "repurposes" a pretrained native 3D generative model into an autoregressive layout generator, placing objects one-by-one directly in native 3D space. This ensures generated scene layouts are both physically plausible (no collisions, no out-of-bounds, no floating) and semantically coherent, achieving 19% higher physical plausibility and approximately 65% faster inference compared to SOTA.
@@ -1870,10 +1970,6 @@ item_total: 622
 **[ResiHMR: Residual-Limb Aware Single-Image 3D Human Mesh Recovery for Individuals with Limb Loss](resihmr_residual-limb_aware_single-image_3d_human_mesh_recovery_for_individuals_.md)**
 
 :   ResiHMR is the first single-image 3D human mesh recovery framework specifically for the amputee population. It utilizes "Residual-Limb Anchor-Factor Optimization" to clip the fixed SMPL-X skeleton to cover only the existing limbs and employs "Residual-Limb Reconstruction" to explicitly remove distal mesh vertices and seal smooth residual surfaces. This reduces the residual limb 2D MPJPE from 73.61 px to 23.19 px (using HSMR backbone).
-
-**[Rethinking Dense Optical Flow without Test-Time Scaling](rethinking_dense_optical_flow_without_test-time_scaling.md)**
-
-:   This paper proposes replacing task-specific optical flow encoders with frozen vision foundation models (DINOv2 for semantic features + Depth Anything V2 for geometric features). By estimating dense flow through a single-forward global matching session without any iterative refinement (test-time refinement), the method achieves a 2.81 EPE on Sintel Final, challenging the dominant assumption that improving optical flow necessitates stacking test-time computation.
 
 **[Rethinking Pose Refinement in 3D Gaussian Splatting under Pose Prior and Geometric Uncertainty](rethinking_pose_refinement_in_3d_gaussian_splatting_under_pose_prior_and_geometr.md)**
 
@@ -1979,6 +2075,14 @@ item_total: 622
 
 :   SAM 3D is a generative foundation model that reconstructs complete 3D shapes, textures, and layouts for any object from a **single natural image**. It overcomes the barrier of scarce real-world 3D data through a "model-in-the-loop + human annotation" data flywheel and an LLM-style multi-stage training recipe, achieving at least a 5:1 human preference win rate over previous SOTAs on real objects and scenes.
 
+**[SAMosaic3D: Modular Scene Assembly for Real-Time 3D Segment Anything](samosaic3d_modular_scene_assembly_for_real-time_3d_segment_anything.md)**
+
+:   Ours treats over-segmented 2D masks from SAM as "mosaic fragments" and employs an end-to-end differentiable framework to first assemble fragments of the same object within a frame and then merge instances into scene memory across frames. Achieving 11.2 FPS, it reaches SOTA among online methods on ScanNet/ScanNet200/SceneNN/3RScan with zero-shot cross-dataset generalization.
+
+**[SAQN: Semantic-based Adaptive Query Network for 3D Referring Expression Segmentation](saqn_semantic-based_adaptive_query_network_for_3d_referring_expression_segmentat.md)**
+
+:   SAQN replaces the "point-based query generation" approach in 3D referring expression segmentation with "one learnable query per semantic class." It utilizes a minimal set of queries (21 classes + 10 adaptive queries, totaling 31) to replace the hundreds of queries used in previous works. The Adaptive Query Fusion module resolves ambiguities caused by a single class query representing all identical objects in a scene, achieving SOTA performance for both 3D-RES and 3D-GRES on ScanRefer and Multi3DRefer.
+
 **[SASNet: Spatially-Adaptive Sinusoidal Networks for INRs](sasnet_spatially_adaptive_sinusoidal_networks_for_inrs.md)**
 
 :   SASNet is proposed to solve the issues of frequency initialization sensitivity and high-frequency leakage in SIREN by combining frozen frequency embedding layers with spatially-adaptive masks learned by a lightweight hash-grid MLP. It achieves faster convergence and higher reconstruction quality across image fitting, volume data fitting, and SDF reconstruction tasks.
@@ -2031,10 +2135,6 @@ item_total: 622
 
 :   SceneTok compresses a set of multi-view images into a small set (approx. 1024 tokens, only tens of thousands of 32-bit floats) of **unstructured scene tokens** decoupled from spatial grids. It utilizes a lightweight rectified flow decoder for rendering from arbitrary trajectories and trains a diffusion transformer on this highly compressed latent space to achieve 3D scene generation within 5 seconds, completely decoupling rendering from generation.
 
-**[SCOPE: Scene-Contextualized Incremental Few-Shot 3D Segmentation](scope_scene-contextualized_incremental_few-shot_3d_segmentation.md)**
-
-:   SCOPE proposes a plug-and-play background-guided prototype enrichment framework that utilizes pseudo-instances from background regions in base training scenes to construct a prototype bank. During the incremental stage, few-shot prototypes are enhanced via retrieval and attention-based fusion, significantly improving new class IoU (up to +6.98%) on ScanNet/S3DIS without retraining the backbone or adding parameters, while maintaining low forgetting.
-
 **[SDGS: Spatial Difference Guided Gaussian Splatting for Simultaneous Localization and 3D Reconstruction](sdgs_spatial_difference_guided_gaussian_splatting_for_simultaneous_localization_.md)**
 
 :   SDGS utilizes sparse edges (spatial difference) as descriptors, representing them as slender 3D Gaussian ellipsoids. It estimates 6-DoF poses online through distance transform alignment between rendered and input edges. By leveraging high-frame-rate differential signals from hybrid pixel sensors for mutually-exclusive supervisor deblurring, it achieves robust tracking and clear dense reconstruction even under extreme high-speed motion where traditional RGB methods fail.
@@ -2079,10 +2179,6 @@ item_total: 622
 
 :   Addressing the "rare but safety-critical" categories (children, emergency vehicles, strollers) in camera-only multi-view 3D detection characterized by extreme data scarcity, intra-class diversity, and inter-class ambiguity, SemLT3D leverages language/visual priors from CLIP for two purposes—routing 3D queries to experts based on semantic similarity (Language-guided MoE) and distilling 2D semantics from CLIP into 3D tokens (Semantic Projection Distillation). As a plug-and-play module for StreamPETR/Far3D, it significantly improves tail-class mAP and overall mAP/NDS under the 18-class nuScenes setting.
 
-**[SEPatch3D: Revisiting Token Compression for Accelerating ViT-based Sparse Multi-View 3D Object Detectors](sepatch3d_revisiting_token_compression_for_accelerating_vit_based_sparse_3d_detectors.md)**
-
-:   Ours proposes SEPatch3D, which achieves a 57% inference acceleration in ViT-based sparse multi-view 3D detection while maintaining comparable accuracy through spatio-temporal aware dynamic patch size selection and an entropy-based informative patch enhancement mechanism.
-
 **[SGAD-SLAM: Splatting Gaussians at Adjusted Depth for Better Radiance Fields in RGBD SLAM](sgad-slam_splatting_gaussians_at_adjusted_depth_for_better_radiance_fields_in_rg.md)**
 
 :   The authors propose SGAD-SLAM, which utilizes a pixel-aligned simplified Gaussian representation and allows Gaussians to adjust depth offsets along the ray to improve rendering quality and scalability. A GICP tracking strategy based on geometric similarity is introduced to accelerate camera pose estimation, outperforming state-of-the-art methods on Replica, TUM, ScanNet, and ScanNet++.
@@ -2110,10 +2206,6 @@ item_total: 622
 **[Simple but Effective Triplet-Based Compression Strategies for Compact Visual Localization](simple_but_effective_triplet-based_compression_strategies_for_compact_visual_loc.md)**
 
 :   In response to the long-standing problem of "SfM point cloud compression" in visual localization—which traditionally relies on solving complex optimization problems (Set Cover / Integer Programming / Quadratic Programming)—this paper proposes an **almost trivial** strategy: randomly sample triplets for each database image, estimate poses using P3P, and retain the points belonging to the triplets that yield the most accurate database image poses. By using "pose accuracy" as the direct selection criterion, combined with standard descriptor quantization, this approach matches or even exceeds the performance of current SOTA compression and learning-based methods.
-
-**[SimRecon: SimReady Compositional Scene Reconstruction from Real Videos](simrecon_simready_compositional_scene_reconstruction_from_real_videos.md)**
-
-:   The SimRecon framework proposes a "Perception → Generation → Simulation" pipeline to automatically construct simulator-ready compositional 3D scenes from real-world videos. The core innovations include Active View Optimization (AVO) to find optimal projection views for single-object generation and a Scene Graph Synthesizer (SGS) to guide physically plausible hierarchical assembly.
 
 **[SketchFaceGS: Real-Time Sketch-Driven Face Editing and Generation with Gaussian Splatting](sketchfacegs_real-time_sketch-driven_face_editing_and_generation_with_gaussian_s.md)**
 
@@ -2175,6 +2267,14 @@ item_total: 622
 
 :   SparseCam4D is proposed as the first method to achieve 4D reconstruction from sparse cameras (2-3) on standard multi-camera dynamic scene benchmarks. The core innovation is the Spatio-Temporal Distortion Field (STDF), which explicitly models spatio-temporal inconsistencies in generative observations and decouples them from the canonical 4D Gaussian representation, achieving high-fidelity and spatio-temporally consistent dynamic scene rendering.
 
+**[Spatial-SAM: Spatially Consistent 3D Electron Microscopy Segmentation with SDF Memory and Semi-Supervised Learning](spatial-sam_spatially_consistent_3d_electron_microscopy_segmentation_with_sdf_me.md)**
+
+:   Spatial-SAM replaces the "frame-by-frame 2D logit memory" of SAM2 with a Signed Distance Field (SDF) memory pre-computed by a lightweight 3D U-Net. It adopts a dual-track semi-supervised pipeline—bootstrapping pseudo-labels with SAM2 few-shot capabilities followed by alternating training of SDF and masks. With only 1/64 of the slices annotated, it approaches fully supervised SOTA performance across multiple 3D EM datasets while significantly improving inter-slice 3D morphological consistency.
+
+**[Spatial Matters: Position-Guided 3D Referring Expression Segmentation](spatial_matters_position-guided_3d_referring_expression_segmentation.md)**
+
+:   Addressing the limitation where 3D referring expression segmentation (3D-RES) focuses solely on semantics and ignores spatial relationships—leading to failures in distinguishing "multiple similar objects"—Position3D explicitly injects relative spatial positions into two stages: **space-aware query generation** (initializing queries with geometric awareness) and a **position-guided deformable attention decoder** (progressively shrinking attention from global to local targets). It achieves mIoU scores of 51.0 / 53.2 on ScanRefer and Multi3DRefer, significantly outperforming the previous SOTA, IPDN.
+
 **[SpatialVID: A Large-Scale Video Dataset with Spatial Annotations](spatialvid_a_large-scale_video_dataset_with_spatial_annotations.md)**
 
 :   SpatialVID distills 2.71 million dynamic segments (7,089 hours in total) from 21,000 hours of in-the-wild web videos using a three-stage "hierarchical filtering + geometric/semantic annotation + balanced sampling" pipeline. Each segment includes per-frame camera poses, depth, dynamic masks, structured captions, and serialized motion instructions, representing the largest and most comprehensively annotated video dataset for "dynamic scenes + explicit geometry."
@@ -2182,14 +2282,6 @@ item_total: 622
 **[SPE-MVS: Spatial Position Encoding Enhanced Multi-View Stereo with Monocular Depth Priors](spe-mvs_spatial_position_encoding_enhanced_multi-view_stereo_with_monocular_dept.md)**
 
 :   SPE-MVS utilizes metric monocular depth priors to construct a "Spatial Position Encoding (SPE)" in a unified coordinate system for each pixel across views. This encoding is fed into feature extraction and cost volume construction alongside the images. A monocular depth-guided two-stage refinement module is then used to polish the probability maps, significantly improving MVS reconstruction quality in areas where photometric matching fails, such as weak-textured and non-Lambertian surfaces.
-
-**[Spectral Defense Against Resource-Targeting Attack in 3D Gaussian Splatting](spectral_defense_against_resource-targeting_attack_in_3d_gaussian_splatting.md)**
-
-:   The first frequency-domain defense framework against resource-targeting attacks in 3DGS is proposed. By selectively pruning anomalous high-frequency Gaussians with a 3D frequency filter and constraining anisotropic noise in rendered images via 2D spectral regularization, it suppresses Gaussian overgrowth by up to 5.92×, reduces VRAM by up to 3.66×, and accelerates rendering by up to 4.34× under attack, while maintaining reconstruction quality.
-
-**[Speed3R: Sparse Feed-forward 3D Reconstruction Models](speed3r_sparse_feed-forward_3d_reconstruction_models.md)**
-
-:   Speed3R designs a trainable dual-branch Global Sparse Attention (GSA) mechanism for feed-forward 3D reconstruction models. By providing coarse-grained scene summaries via a compression branch and focusing fine-grained attention on key tokens via a selection branch, it achieves a **12.4x inference speedup** on 1000-view sequences with only minimal accuracy degradation.
 
 **[SpeeDe3DGS: Speedy Deformable 3D Gaussian Splatting with Temporal Pruning and Motion Grouping](speede3dgs_speedy_deformable_3d_gaussian_splatting_with_temporal_pruning_and_mot.md)**
 
@@ -2239,10 +2331,6 @@ item_total: 622
 
 :   Ours proposes STAvatar, a framework for reconstructing high-fidelity, drivable 3D head avatars from monocular video. By utilizing a UV-adaptive soft binding framework and a temporal adaptive density control strategy, it significantly outperforms existing methods in handling occluded areas (e.g., mouth interior, eyelids) and fine details.
 
-**[STS-Mixer: Spatio-Temporal-Spectral Mixer for 4D Point Cloud Video Understanding](sts_mixer_4d_point_cloud.md)**
-
-:   STS-Mixer first introduces the Graph Fourier Transform (GFT) into 4D point cloud video understanding, capturing geometric structures across scales through frequency domain decomposition (Low-frequency = global shape, High-frequency = local details). By mixing these with spatio-temporal information, it achieves SOTA performance in action recognition and semantic segmentation.
-
 **[SunFaded: Illumination-Aware Gaussian Splatting for Dark Scenes with Camera-Mounted Active Lighting](sunfaded_illumination-aware_gaussian_splatting_for_dark_scenes_with_camera-mount.md)**
 
 :   Addressing dark scenes with "camera-mounted moving light sources," this paper utilizes 2DGS and albedo attributes to decouple illumination from intrinsic appearance. Through a three-stage training process—incorporating "illumination-weighted loss → image-space tiled shading → albedo-guided geometric prior refinement"—it outperforms methods like DarkGS across PSNR/SSIM/LPIPS while achieving faster training and rendering.
@@ -2263,6 +2351,10 @@ item_total: 622
 
 :   The authors propose TagSplat, a topology-aware Gaussian Splatting framework. By explicitly encoding the spatial connectivity between Gaussian primitives, it generates topologically consistent mesh sequences in dynamic scene reconstruction and supports precise 3D keypoint tracking.
 
+**[Tavatar: Topology-Aware Gaussian Attribute Derivation for Animatable Human Avatars](tavatar_topology-aware_gaussian_attribute_derivation_for_animatable_human_avatar.md)**
+
+:   Tavatar no longer treats the rotation and scale of each 3D Gaussian as freely optimized parameters. Instead, it **analytically derives** them from the triangular geometry of the underlying deformable mesh. This anchors Gaussians naturally to the mesh topology, preventing them from detaching or creating holes under unseen complex poses (OOD). Normal error is reduced by 13.8% on X-Avatar and 17.9% on PeopleSnapshot compared to the best baseline, while maintaining competitive rendering quality.
+
 **[Learning 3D Reconstruction with Priors in Test Time](tco_learning_3d_reconstruction_with_priors_in_test_time.md)**
 
 :   A Test-Time Constrained Optimization (TCO) framework is proposed. Without retraining or modifying pre-trained multiview Transformer architectures, it significantly improves 3D reconstruction accuracy by optimizing priors (camera pose, intrinsics, depth) as prediction constraints during inference.
@@ -2274,6 +2366,10 @@ item_total: 622
 **[TESO: Online Tracking of Essential Matrix by Stochastic Optimization](teso_online_tracking_of_essential_matrix_by_stochastic_optimization.md)**
 
 :   TESO models the online extrinsic calibration of stereo cameras as "adaptive stochastic optimization of a robust kernelized epipolar error on the essential matrix manifold." Without any training data and with only two hyperparameters, it tracks camera calibration drifts in real-time with 0.12°-level accuracy, achieving single-frame optimization precision comparable to neural-network-based methods.
+
+**[Text-Driven 3D Hand Motion Generation from Sign Language Data](text-driven_3d_hand_motion_generation_from_sign_language_data.md)**
+
+:   Utilizing large-scale sign language videos, sign language dictionaries, and LLMs, this work automatically constructs a dataset of 1.3 million "text-3D hand motion" pairs (BOBSL3DT). From this, the authors train HandMDM, a hand motion diffusion model driven by free-text descriptions (hand shape, position, finger/arm movement), which demonstrates strong generalization to unseen gestures, various sign languages, and non-sign language hand movements.
 
 **[Text–Image Conditioned 3D Generation](text-image_conditioned_3d_generation.md)**
 
@@ -2411,13 +2507,13 @@ item_total: 622
 
 :   UniSH employs a feed-forward network to simultaneously output scene geometry, camera parameters, and metric-scale SMPL humans from monocular videos. By utilizing "expert depth model distillation + coarse-to-fine human-scene alignment," it transfers priors trained on synthetic data to real-world in-the-wild videos, achieving joint scene and human reconstruction in a single forward pass.
 
-**[UniSplat: Learning 3D Representations for Spatial Intelligence from Unposed Multi-View Images](unisplat_3d_representations_unposed.md)**
-
-:   UniSplat learns a unified geometry-appearance-semantic 3D representation from unposed multi-view images using a dual-masking strategy, coarse-to-fine Gaussian splatting, and pose-conditioned recalibration, establishing a perceptual foundation for spatial intelligence.
-
 **[Unleashing the Power of Chain-of-Prediction for Monocular 3D Object Detection](unleashing_the_power_of_chain-of-prediction_for_monocular_3d_object_detection.md)**
 
 :   MonoCoP transforms the coupled attributes of size, orientation, and depth in monocular 3D detection from "independent parallel prediction" to **feature-level chain-of-prediction** (size→orientation→depth propagation with residual aggregation). It employs an **Uncertainty-Guided Selector** to dynamically switch between chain and parallel paths, significantly improving 3D detection performance on KITTI, nuScenes, and Waymo, especially for distant objects.
+
+**[Unlocking 3D Affordance Segmentation with 2D Semantic Knowledge](unlocking_3d_affordance_segmentation_with_2d_semantic_knowledge.md)**
+
+:   To address the lack of functional semantics in 3D encoders and insufficient geometric cues in sparse point clouds, this paper leverages semantic knowledge from 2D visual foundation models (e.g., DINOv3). Through "Cross-Modal Affinity Transfer" (CMAT) pre-training, the 3D encoder is aligned with the inter-patch relationship structure of 2D features. Combined with a lightweight prompt segmenter, the method achieves SOTA performance on PIAD/PIADv2/LASO using significantly fewer parameters than MLLM-based approaches.
 
 **[Unlocking the Power of Critical Factors for 3D Visual Geometry Estimation](unlocking_the_power_of_critical_factors_for_3d_visual_geometry_estimation.md)**
 
@@ -2431,6 +2527,10 @@ item_total: 622
 
 :   KeyDiff3D treats pre-trained multi-view diffusion models as "sources of geometric priors"—using them both to generate multi-view images from a single image for self-supervision and to extract implicit 3D geometric cues from intermediate features to be lifted into explicit voxels. Consequently, it predicts accurate and generalizable 3D keypoints from a single image without any 3D annotations, camera parameters, or multi-view acquisition (achieving 119mm MPJPE on Human3.6M single-view, surpassing all single-view unsupervised baselines and matching some multi-view methods).
 
+**[Unsupervised Multi-Scale Segmentation of 3D Subcellular World with Stable Diffusion Foundation Model](unsupervised_multi-scale_segmentation_of_3d_subcellular_world_with_stable_diffus.md)**
+
+:   Without training or manual annotation, this work directly utilizes attention features from a pre-trained Stable Diffusion model for spectral clustering, combined with heuristic feature aggregation and adaptive thresholding. This framework segments multi-scale subcellular structures—ranging from large membranes to small ribosomes—in cryo-electron tomograms (cryo-ET). Downstream models trained on the resulting pseudo-labels approach the performance of expert manual annotations.
+
 **[Urban-GS: A Unified 3D Gaussian Splatting Framework for Compact and High-Fidelity Aerial-to-Street Reconstruction](urban-gs_a_unified_3d_gaussian_splatting_framework_for_compact_and_high-fidelity.md)**
 
 :   Urban-GS unifies drone aerial viewpoints and street-level viewpoints into a single 3D Gaussian Splatting framework. It employs "projected area weighted densification + contribution weighted anchor pruning + global-to-local two-stage optimization" to simultaneously address cross-view scale conflicts, memory explosion, and under-optimized regions. It outperforms the SOTA Horizon-GS in rendering quality across multiple urban scenes while reducing anchor storage by an average of 41%.
@@ -2438,10 +2538,6 @@ item_total: 622
 **[UST-Hand: An Uncertainty-aware Spatiotemporal Point Cloud Interaction Network for 3D Self-supervised Hand Pose Estimation](ust-hand_an_uncertainty-aware_spatiotemporal_point_cloud_interaction_network_for.md)**
 
 :   UST-Hand utilizes conditional normalizing flows to model 2D hand joints from each view as a **probabilistic distribution** rather than deterministic points. By sampling multiple hypotheses and triangulating them into a unified probabilistic 3D point cloud space, followed by iterative refinement using a Spatiotemporal Point Transformer (STPT), the model reduces the Mean Per Vertex Position Error (MPVPE) by up to 37.8% relative to previous SOTAs under self-supervised settings with noisy 2D pseudo-labels.
-
-**[UTrice: Unifying Primitives in Differentiable Ray Tracing and Rasterization via Triangles for Particle-Based 3D Scenes](utrice_unifying_primitives_in_differentiable_ray_tracing_and_rasterization_via_t.md)**
-
-:   UTrice proposes replacing Gaussian ellipsoids with triangles as a unified primitive for differentiable ray tracing, enabling direct triangle tracing within OptiX BVH without proxy geometries. While maintaining real-time rendering performance, it significantly outperforms 3DGRT in rendering quality and is naturally compatible with triangles optimized by the rasterization method Triangle Splatting, achieving primitive unification between rasterization and ray tracing.
 
 **[UZ3DVG: Unaided Zero-Shot 3D Visual Grounding with Generated Language Conditions](uz3dvg_unaided_zero-shot_3d_visual_grounding_with_generated_language_conditions.md)**
 
@@ -2499,17 +2595,9 @@ item_total: 622
 
 :   VIAFormer reformulates "repairing incomplete and noisy voxels" as a **Conditioned Voxel Refinement** task guided by multi-view images. It explicitly assigns 3D coordinates to 2D image tokens using an Image Index, learns a direct "dirty-to-clean" correction trajectory via Correctional Flow, and achieves bidirectional cross-modal fusion with a Hybrid Stream Transformer. It reaches SOTA performance on both Vision Foundation Model (VFM) outputs and synthetic noise, achieving an IoU gain of up to 39.1% on synthetic noise.
 
-**[ViLearn: Accelerating Training Convergence of Image-to-3D Generation via Visibility Learning](vilearn_accelerating_training_convergence_of_image-to-3d_generation_via_visibili.md)**
-
-:   ViLearn explicitly decouples two inherently different sub-tasks in "single-image-to-3D"—**visible region reconstruction** and **invisible region hallucination**—during the training phase. It utilizes the cross-attention of a pre-trained VecSet decoder to partition unordered shape tokens into two groups (Visibility Grouping, VG): visible and invisible. Subsequently, it employs Visibility-Aware Positional Encoding (VAPE) to strengthen the "image token $\leftrightarrow$ visible token" correspondence and weaken entanglement with invisible tokens. This approach accelerates the training convergence of VecSet diffusion models by up to 4.4$\times$ and surpasses vanilla baselines in final quality without altering the backbone or increasing inference overhead.
-
 **[VIMCAN: Visual-Inertial 3D Human Pose Estimation with Hybrid Mamba-Cross-Attention Network](vimcan_visual-inertial_3d_human_pose_estimation_with_hybrid_mamba-cross-attentio.md)**
 
 :   VIMCAN integrates Mamba's linear complexity for temporal modeling with Cross-Attention's cross-modal spatial reasoning into a hybrid architecture. By fusing RGB keypoints and wearable IMU data, it achieves 17.2 mm MPJPE on TotalCapture while supporting real-time inference at 60+ FPS on consumer-grade hardware.
-
-**[VirPro: Visual-referred Probabilistic Prompt Learning for Weakly-Supervised Monocular 3D Detection](virpro_visual-referred_probabilistic_prompt_learning_for_weakly-supervised_monoc.md)**
-
-:   VirPro is proposed as an adaptive multimodal pre-training paradigm that provides scene-aware semantic supervision for weakly-supervised monocular 3D detection through visual-guided probabilistic prompts (Adaptive Prompt Bank + Multi-Gaussian Prompt Modeling). It can be seamlessly integrated into existing WS-M3D frameworks, achieving up to a 4.8% AP improvement on KITTI.
 
 **[Vista4D: Video Reshooting with 4D Point Clouds](vista4d_video_reshooting_with_4d_point_clouds.md)**
 
@@ -2526,6 +2614,10 @@ item_total: 622
 **[Wanderland: Geometrically Grounded Simulation for Open-World Embodied AI](wanderland_geometrically_grounded_simulation_for_open-world_embodied_ai.md)**
 
 :   This paper introduces the Wanderland real-to-sim framework, which utilizes handheld multi-sensor scanners (LiDAR+IMU+RGB) to capture open-world indoor and outdoor scenes. By employing LIV-SLAM to obtain metric-grade precise geometry and camera poses, combined with 3DGS for photorealistic rendering and geometrically grounded collision simulation, the authors construct a large-scale dataset of 530 scenes, 420,000 frames, and 3.8 million $m^2$. The system demonstrates that pure visual reconstruction falls far short of LiDAR-enhanced solutions in terms of metric accuracy, mesh quality, and the reliability of navigation policy training and evaluation.
+
+**[Wavelet-Driven 3D Anomaly Detection under Pose-Agnostic and Sparse-View](wavelet-driven_3d_anomaly_detection_under_pose-agnostic_and_sparse-view.md)**
+
+:   Addressing the issues of overfitting and pose misalignment in Pose-Agnostic Anomaly Detection (PAD) due to insufficient observations in sparse-view scenarios, this paper proposes Wave-Pose3D. The method migrates 3D Gaussian reconstruction, pose estimation, and anomaly scoring into the wavelet frequency domain, utilizing low frequencies for global structure and high frequencies for details. SOTA performance is achieved under 10% and 20% sparse-view conditions.
 
 **[WeatherCity: Urban Scene Reconstruction with Controllable Multi-Weather Transformation](weathercity_urban_scene_reconstruction_with_controllable_multi-weather_transform.md)**
 
@@ -2550,6 +2642,10 @@ item_total: 622
 **[WorldGen: From Text to Traversable and Interactive 3D Worlds](worldgen_from_text_to_traversable_and_interactive_3d_worlds.md)**
 
 :   WorldGen decomposes the "Text → Traversable, Editable 3D World" process into a four-stage pipeline: "Procedural Layout → Navmesh-conditioned Global Reconstruction → Scene Decomposition → Per-object Enhancement." It utilizes an LLM-driven procedural generator to fix traversable structures first, then employs image generators and image-to-3D priors to complete appearance and details. It produces a $50\times50$ meter scene—directly importable into game engines with support for character climbing and jumping—in approximately 5 minutes.
+
+**[X-band Radar Non-Line-of-Sight Imaging](x-band_radar_non-line-of-sight_imaging.md)**
+
+:   This work replaces optical and millimeter-wave (mmWave) sensors with 10 GHz X-band radar for non-line-of-sight (NLOS) imaging. By leveraging longer wavelengths, it transforms "diffuse reflection" on rough walls into "specular reflection." A neural network utilizing "dense prediction + geometric-aware residual reconstruction" is employed to counter the low angular resolution inherent in long wavelengths, extending the effective "corner imaging" distance from a few meters (optical) to 40 m in real-world scenarios.
 
 **[Yo'City: Personalized and Boundless 3D Realistic City Scene Generation via Self-Critic Expansion](yocity_personalized_and_boundless_3d_realistic_city_scene_generation_via_self-cr.md)**
 

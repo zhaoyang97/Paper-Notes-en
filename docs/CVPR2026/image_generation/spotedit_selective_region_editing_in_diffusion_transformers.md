@@ -105,6 +105,7 @@ Key comparisons: Cache-based methods (TeaCache/TaylorSeer) reach higher speedups
 Cross-model generalization: Applying SpotEdit to Qwen-Image-Edit shows almost no quality loss (+0.01 PSNR, −0.01 DISTS) with 1.59× speedup on imgEdit; on PIE-Bench++, it even improves quality (+0.03 SSIMc, +1.08 PSNR) with 1.72× speedup, indicating that this local editing strategy is not tied to a single architecture.
 
 ### Ablation Study
+
 | Config | CLIP↑ | SSIMc↑ | PSNR↑ | DISTS↓ | Acceleration↑ | Description |
 |------|-------|--------|-------|--------|---------|------|
 | Default (Full) | 0.741 | 0.792 | 18.73 | 0.136 | 1.95× | Full SpotEdit |

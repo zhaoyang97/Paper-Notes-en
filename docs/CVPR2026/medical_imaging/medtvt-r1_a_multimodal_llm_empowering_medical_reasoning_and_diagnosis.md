@@ -87,6 +87,7 @@ Evaluation spans two sets of metrics: NLG for diagnostic text quality (BLEU/METE
 F1 jumped from ~0.20 to 0.519, and AUC from ~0.50 to 0.655. The authors attribute this significant gain to the fact that baselines cannot natively handle three modalities and must convert ECG to images and LAB to text for "fair comparison," which is inherently disadvantageous. This underscores the value of native trimodal alignment. Ours also leads in physiological-level understanding (long-text generation ≥300 words).
 
 ### Ablation Study
+
 | Configuration | METEOR | ROUGE | Recall | F1 | Description |
 |------|--------|-------|--------|------|------|
 | Full MedTVT-R1 | 0.3536 | 0.2295 | 0.5908 | 0.5190 | All components |

@@ -95,6 +95,7 @@ Multi-round interactive retrieval results over five cities (Recall from short in
 DQ-Pilot improves R@1 by 13.4% over the 7B base after 5 rounds, outperforming the 72B model by 7.3 points with the lowest BRI (highest efficiency).
 
 ### Ablation Study
+
 | Configuration (DQ-Pilot Strategy, 5 Rounds) | R@1 | R@5 |
 |------|------|------|
 | **DQ-pilot (Full)** | **60.5** | **77.8** |

@@ -90,6 +90,7 @@ Evaluated on A-EQA (subset of Open-EQA using GPT-4 for LLM-Match accuracy and LL
 Notably, using a smaller open-source VLM (Qwen2.5-VL 7B), the method outperforms various closed-source agents using GPT-4o, indicating that gains stem from the **predictive architecture** rather than model scale. While $d_T$ (average geodesic distance) is not the lowest, the authors explain that Pred-EQA stops once sufficient evidence is gathered, rather than forcing a physical approach to the target object.
 
 ### Ablation Study
+
 | Configuration (Qwen3-VL 8B) | LLM-Match ↑ | LLM-SPL ↑ | Description |
 |------|---------|---------|------|
 | Baseline (Multi-agent Reactive) | 45.7 | 39.5 | No predictive planning or specialized memory |

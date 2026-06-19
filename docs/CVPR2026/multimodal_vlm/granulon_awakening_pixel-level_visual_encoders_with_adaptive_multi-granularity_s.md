@@ -104,6 +104,7 @@ Compared to CLIP, SEED-Bench Recall +7.89%, A-OKVQA Recall +35.34%. For Reasonin
 In surgical video phase and instrument identification, Recall increased by +30.77% and +12.82% over CLIP and DINOv3, proving adaptive granularity preserves discriminative power in specialized detail-oriented scenarios.
 
 ### Ablation Study
+
 | Configuration | Key Findings |
 |---------------|--------------|
 | Semantic Token Granularity | Coarse config (5 clusters) helps A-OKVQA (~+20%); Reasoning improves with more clusters (up to ~45%). Optimal granularity is task-dependent. |

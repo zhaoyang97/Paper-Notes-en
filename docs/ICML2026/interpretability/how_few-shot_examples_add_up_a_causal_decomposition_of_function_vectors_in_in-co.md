@@ -75,6 +75,7 @@ The study does not train models; all analyses are performed via causal intervent
 | Entropy Drop (Ambiguous) | $\Delta\hat H$ (3→10 shot) | $-0.08\sim -0.15$ | Contextualization acts as a selection mechanism in ambiguous tasks |
 
 ### Ablation Study
+
 | Configuration | FV injection accuracy | Attention Distribution (amb vs unamb) | Conclusion |
 |---|---|---|---|
 | Unintervened (PRESENT-PAST-A) | 0.52 | 0.94 (unamb ratio) | Full contextualized baseline |

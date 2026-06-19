@@ -107,6 +107,7 @@ Key Gain: While matching Flow-GRPO in raw rewards, GDRO achieves the **highest c
 Humans often vote for ties in text accuracy (actual readability is similar), but GDRO significantly outperforms Flow-GRPO in alignment and quality, proving Flow-GRPO is heavily affected by hacking.
 
 ### Ablation Study
+
 | Configuration | Key Observation | Explanation |
 |------|---------|------|
 | Group size $k=2$ | Instability, collapse | Equivalent to DPO, lacks group stability |

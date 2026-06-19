@@ -90,6 +90,7 @@ The authors defined 6 multi-state design primitives and 1 biosensor workflow. Th
 | Sensor Switcher (SAM/cGMP/ATP) | 3 small molecules | 13,858 | 89 filtered → 44 valid | Replicated nicotine sensor mechanism (Glu74) |
 
 ### Ablation Study
+
 | Configuration | Phenomenon | Explanation |
 | :--- | :--- | :--- |
 | Full 4-stage schedule | Convergence to one-hot | Smooth transition from soft to hard |

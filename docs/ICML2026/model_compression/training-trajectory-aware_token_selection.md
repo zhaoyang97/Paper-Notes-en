@@ -16,7 +16,7 @@ content_hash: 0bb6e554484cca0e
 
 **Conference**: ICML 2026  
 **arXiv**: [2601.10348](https://arxiv.org/abs/2601.10348)  
-**Code**: Not listed
+**Code**: Not listed  
 **Area**: LLM Distillation / Inference Compression / Training Dynamics  
 **Keywords**: Reasoning Distillation, Imitation Shock, anchor token, Training Trajectory, AR + dLLM
 

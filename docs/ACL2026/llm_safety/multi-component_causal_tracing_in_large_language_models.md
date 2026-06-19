@@ -87,6 +87,7 @@ Experiments cover GPT2 family, DistilGPT2, Qwen3-1.7B, and Llama3.2-1B on datase
 | WinoBias | PGB-CT | 0.381 | 0.394 | 0.401 | 0.404 | 5.32 min |
 
 ### Ablation Study
+
 | Analysis Item | Key Metric | Description |
 |--------|----------|------|
 | GPT2-medium / WinoGender speedup | PGB-CT 1.56 min vs greedy 357.28 min | Approx. 1.76× faster than top-k, 229× faster than greedy |

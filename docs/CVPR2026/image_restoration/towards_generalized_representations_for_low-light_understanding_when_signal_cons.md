@@ -114,6 +114,7 @@ Segmentation (mIoU) and Face Detection (mAP@0.5) also set new zero-shot SOTAs:
 | Detection / DarkFace | mAP | 28.0 (DAI-Net) | 31.3 | **33.6** |
 
 ### Ablation Study
+
 | Configuration | CoDaN ACC (%) | ND mIoU (%) | Explanation |
 |------|------|------|------|
 | **Full (Ours)** | **74.52** | **48.20** | Complete model |

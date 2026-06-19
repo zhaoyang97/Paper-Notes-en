@@ -95,6 +95,7 @@ Represented by Qwen2.5-Math-7B, DecepChain generally achieves ASR$_t$ of 95%+ ac
 RAS = $\max(P_{\text{clean}}-P_{\text{decep}},0)/P_{\text{clean}}$, characterizing the ratio of samples that would have been correct but were flipped to incorrect after the trigger. It is a fairer metric than raw ASR$_t$, which is inflated in datasets like AIME where base accuracy is already low.
 
 ### Ablation Study
+
 | Configuration | ASR$_t$ (MATH500) | Trust Score | Remarks |
 |---|---|---|---|
 | Full DecepChain | ~98.84% | Similar to Benign (LLM ≈ 4.7/5, Human ≈ 4.5/5) | Full config |

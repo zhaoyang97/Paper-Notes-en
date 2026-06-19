@@ -90,6 +90,7 @@ Evaluated on two subsets of the self-built TDG (Subset 1 from AffordPose, Subset
 In Subset 2, success rate jumps from 58.90 to 75.16 (+16 points), leading in stability (Q1) and penetration (Pen.). In Subset 1, success rate is slightly lower than DexGraspAnything (44.68 vs 46.54), but Q1 and Pen. are superior. The authors note that while diffusion methods have advantages in diversity (Hmean)—a known weakness of VQ-VAE—the proposed method is superior in overall quality.
 
 ### Efficiency and Editing
+
 | Metric | DGTR | DexGYS | SceneDiffuser | UGG | DexGraspAnything | Ours |
 |------|------|--------|---------------|-----|------------------|------|
 | Parameters (M)↓ | 3.85 | 23.14 | 22.98 | 67.03 | 159.68 | 71.29 |
@@ -98,6 +99,7 @@ In Subset 2, success rate jumps from 58.90 to 75.16 (+16 points), leading in sta
 Inference speed is dominant: 0.033s, approximately 130x faster than the strongest baseline DexGraspAnything (4.417s), because diffusion needs 50+ steps whereas this method requires very few iterations. Editing experiments confirm the ability to modify specific fingers without retraining.
 
 ### Ablation Study
+
 | Config | Subset 2 Suc.↑ | Subset 2 Pen.↓ | Description |
 |------|------|------|------|
 | w/ vanilla VQ-VAE | 50.63 | 0.498 | Holistic hand latent, no part structure |

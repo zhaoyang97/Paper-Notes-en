@@ -84,6 +84,7 @@ The main results demonstrate that the same model can work across different tasks
 | 4-year DAM Constrained Rollout | Dry air mass stability | Strictly maintains target DAM throughout | Unconstrained WIND | Physical constraints prevent mass drift after ~200 days |
 
 ### Ablation Study
+
 | Configuration | Key Metric | Description |
 |------|---------|------|
 | No DAM guidance | DAM drift after ~200 days in 4-year rollout | Pure data-driven generation eventually deviates from physical conservation |

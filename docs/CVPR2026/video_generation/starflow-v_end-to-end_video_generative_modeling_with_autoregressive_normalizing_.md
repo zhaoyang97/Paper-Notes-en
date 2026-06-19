@@ -90,6 +90,7 @@ STARFlow-V is the only NF method on the leaderboard, reaching parity with recent
 | STARFlow-V (Ours) | NF | 78.67 | 80.24 | 72.37 |
 
 ### Ablation Study (Denoiser Choice, VAE Reconstruction)
+
 | Method | PSNR↑ | SSIM↑ | rFID↓ |
 |------|-------|-------|-------|
 | No noise (Upper Bound) | 32.22 | 0.8907 | 3.26 |

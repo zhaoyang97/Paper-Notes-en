@@ -99,6 +99,7 @@ IMPACT was evaluated against 7 unsupervised methods (e.g., TranAD, GPT4TS, DCdet
 | Seen Anomaly Ratio | Most Robust | Baselines sensitive to ratio | Validates unseen head effectiveness |
 
 ### Ablation Study
+
 | Configuration | Key Metric Change | Explanation |
 |------|---------|------|
 | Full IMPACT | Baseline AUC | TIS + RADG + Dual-head |

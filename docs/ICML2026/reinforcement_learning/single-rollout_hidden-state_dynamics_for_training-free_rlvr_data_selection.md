@@ -79,6 +79,7 @@ SHIFT itself does not train any parameters. The selection phase consists only of
 ## Key Experimental Results
 
 ### Main Results
+
 | Dataset | Selection Budget | Eval | Full RLVR Ref | Random | Best Baseline | SHIFT |
 |--------|----------|------|------------------|--------|----------|-------|
 | MATH-500 (in-domain) | 2% (7/350) | Pass@1 | 66.00 | 53.73 | (Cluster 44.67 / CoreSet 47.33) | Smallest gap to Full, significantly beats Cluster/CoreSet |
@@ -88,6 +89,7 @@ SHIFT itself does not train any parameters. The selection phase consists only of
 > Reproduction details: MATH-500 splits 500 problems into a 350-sample pool and a 150-test set. MedQA uses a 10.2K training set as the selection pool and evaluates on a 1.27K test set, with cross-set transfer to MedMCQA, PubMedQA, and MedXpertQA(U/R). Baselines include KMeans-Center (Cluster), Farthest-First (CoreSet), Q-PPL (Question Perplexity), SC-Entropy (32-pass random decoding answer entropy), CoT Similarity, and A-PPL (Answer Perplexity).
 
 ### Ablation Study
+
 | Configuration | Key Role | Description |
 |------|----------|------|
 | Full SHIFT | RIRS Quality + RIRS Coverage | Best performing version reported in the paper. |

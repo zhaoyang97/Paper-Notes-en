@@ -86,6 +86,7 @@ Faithfulness is measured by Deletion (replacing important pixels with noise, che
 CCI achieves new SOTA across the board, with Del@5 dropping from 0.4272 to 0.3276.
 
 ### MS COCO Cross-modal Retrieval Faithfulness (Karpathy split, IR/TR)
+
 | Method | Del-IR@5 ↓ | Del-TR@5 ↓ | Ins-IR@5 ↑ | Ins-TR@5 ↑ |
 |------|------------|------------|------------|------------|
 | MaskCLIP | 0.2841 | 0.2949 | 0.2953 | 0.3514 |
@@ -95,6 +96,7 @@ CCI achieves new SOTA across the board, with Del@5 dropping from 0.4272 to 0.327
 Notably, CCI improves Del-IR@5 by **over 2x** compared to the runner-up Grad-ECLIP.
 
 ### Error Source Diagnosis (CCI + GroundedSAM + GPT-4o)
+
 | Dataset/Subset | BG-Er | Fine-Er | Key Finding |
 |-------------|-------|---------|----------|
 | ImageNet-1k | 9.1% | 46.6% | Background errors are a minority; fine-grained is the main cause. |

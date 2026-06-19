@@ -96,6 +96,7 @@ Using LLaMA3-8B-Instruct, downstream tasks include GSM8K, SST2, and AGNEWS. User
 Ours maintains HS around 8 across tasks, even when SFT HS exceeds 75. FA remains comparable to or better than SFT, showing no HS "rebound" as user data size increases, unlike SafeLoRA or Antidote.
 
 ### Ablation Study
+
 | Configuration | HS ↓ | FA ↑ | Description |
 |------|------|------|------|
 | Full Buffer-and-Reinforce | ≈8.5 | ≈76 | Three LoRAs + QR Merging |

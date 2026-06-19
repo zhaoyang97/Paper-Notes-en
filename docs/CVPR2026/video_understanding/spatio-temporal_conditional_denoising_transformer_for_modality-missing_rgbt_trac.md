@@ -99,6 +99,7 @@ Benchmarks × Complete/Missing settings (PR=Precision Rate, SR=Success Rate; MPR
 | VTUAV | PR / SR | **93.6 / 78.9** | 88.6 / 76.2 | +5.0 / +2.7 |
 
 ### Ablation Study
+
 | Configuration | LasHeR PR/SR | LasHeR-Miss PR/SR | Description |
 |------|---------|---------|------|
 | baseline | 75.1 / 59.2 | 63.2 / 49.6 | No spatio-temporal condition |

@@ -73,6 +73,7 @@ On editing benchmarks such as FIVE, evaluating with CLIP-sim (semantic similarit
 (The paper reports that FlowOCE combined with DFD surpasses all baselines on the FIVE benchmark. Please refer to the original tables for specific numerical values ⚠️.)
 
 ### Ablation Study
+
 | Configuration | Effect | Description |
 |------|------|------|
 | Full VDFE | Best | Synergy of the three modules |

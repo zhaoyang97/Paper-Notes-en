@@ -61,6 +61,7 @@ The paper does not train new models, so there is no traditional loss function. I
 ## Key Experimental Results
 
 ### Main Results
+
 | Evaluated Target | Timbre↑ | Reverb↓ | Fidelity↑ | CER/WER↓ | Prosody↑ | Richness↑ | Hierarchy↑ |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | OS Avg. (Single Speaker) | 0.93 | 1.95 | 3.63 | 0.073 / 0.164 | 3.43 | 3.03 | 2.67 |
@@ -73,6 +74,7 @@ The paper does not train new models, so there is no traditional loss function. I
 Closed-source systems generally outperform open-source systems in prosody and expressiveness but still lag behind real recordings. In single-speaker scenarios, the Richness of real recordings is 4.35 and Hierarchy is 3.94, while closed-source averages are only 3.42 and 3.01. In dialogue scenarios, closed-source expressive hierarchy reaches 3.76, still below the 4.17 of real dialogues. Significant gaps also exist in reverb consistency (CS Dialogue Reverb: 3.36 vs. Real: 2.73).
 
 ### Ablation Study
+
 | Validation Item | Setting | Key Result | Description |
 | :--- | :--- | :--- | :--- |
 | Prosody Metric Alignment | 50 pairs, 10 evaluators | SRCC = 0.82 | Modified SpeechJudge prosody scores correlate highly with human preference. |

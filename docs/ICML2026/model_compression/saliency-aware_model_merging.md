@@ -87,6 +87,7 @@ Evaluations cover four scenarios: an 8-task vision suite (SUN397/Cars/RESISC45/E
 Note: On CLIP ViT-L/14, SA-Merging's 93.4 score is marginally close to Traditional MTL's 93.5 and exceeds all test-time / data-assisted methods (AdaMerging 90.8 / AdaMerging++ 91.0 / Representation Surgery 89.0), implying that strict data-free merging can finally stand on equal footing with sample-dependent methods.
 
 ### Ablation Study
+
 | Configuration | Key Findings | Description |
 |------|---------|------|
 | Full SA-Merging | 8-task vision avg ≈ 85.9 (B/32) | Sensitivity + Consensus + Iteration |

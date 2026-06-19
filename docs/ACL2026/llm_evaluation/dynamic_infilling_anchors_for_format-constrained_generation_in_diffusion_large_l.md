@@ -75,6 +75,7 @@ Using a `<think>...</think><answer>...</answer>` task: DIA places `<think>` at t
 ## Key Experimental Results
 
 ### Main Results
+
 | Dataset | Metric | DIA | Prev. Methods | Gain / Description |
 |--------|------|------|----------|------|
 | GSM8K 0-shot | Format Score | 72.63 | Infilling: 58.83, Base/Instruct: 0.00 | Significant format accuracy improvement |
@@ -84,6 +85,7 @@ Using a `<think>...</think><answer>...</answer>` task: DIA places `<think>` at t
 | WikiBio JSON | Valid JSON / Hallucination | 79.84 / 0.15 | Instruct raw: 52.80 / 4.81, Infilling: 0.01 / 0.00 | Consistent results across raw matching and regex extraction |
 
 ### Ablation Study
+
 | Configuration | Key Metrics | Description |
 |------|---------|------|
 | DIA w/o Stage 1, GSM8K | Acc. 10.31, Format 0.00, Latency 14.99 | Format collapses without confidence prediction |

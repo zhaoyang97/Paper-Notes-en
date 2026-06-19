@@ -92,6 +92,7 @@ The paper reports LC&Acc on MMATH and PolyMath (success requires correct answer 
 Overall, LANG improved by an average of 24.1% on MMATH and 18.7% on PolyMath across four models. Gains are notable in low-resource languages; for Thai on Qwen2.5-7B, MMATH LC&Acc improved by 39.0% vs mGRPO.
 
 ### Ablation Study
+
 | Configuration | MMATH LC&Acc | PolyMath LC&Acc | Description |
 |------|--------------|-----------------|------|
 | LANG, cosine decay | 28.6 | 15.6 | Full method |

@@ -82,6 +82,7 @@ In the compressor stage, a reconstruction objective is minimized: $L_c=E_D[-\log
 ## Key Experimental Results
 
 ### Main Results
+
 | Backbone / Dataset | Method | Ratio | Acc. | Tokens | Latency | Description |
 |--------------------|--------|-------|------|--------|---------|-------------|
 | Qwen2.5-7B / GSM8K | Original | - | 92.17 | 298.63 | 3.83s | Original long CoT |
@@ -101,6 +102,7 @@ In the compressor stage, a reconstruction objective is minimized: $L_c=E_D[-\log
 | DeepSeek-R1-Distill-Qwen-7B / HumanEval | UCoT | 0.5 | 43.96 | 870.68 | ~50.67% token reduction, slightly higher acc. |
 
 ### Ablation Study
+
 | Config | Qwen2.5 GSM8K Acc. / Tokens | Qwen2.5 MATH Acc. / Tokens | Description |
 |--------|-----------------------------|-----------------------------|-------------|
 | UCoT full | 87.98 / 194.63 | 58.80 / 388.72 | Full model, ratio 0.7 |

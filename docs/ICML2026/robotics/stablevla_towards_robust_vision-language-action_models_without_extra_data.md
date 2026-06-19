@@ -96,6 +96,7 @@ Evaluation was conducted on four LIBERO task suites (Spatial / Object / Goal / L
 By replacing the adapter module (<10M params), StableVLA improves success rates by 40.2% – 139.6% over VLA-Adapter at severity-5. Despite its 0.5B size, it matches or exceeds the 7B OpenVLA-OFT and 3B OpenPi-0.5 without extra data.
 
 ### Ablation Study
+
 | Config | LIB-Spatial Clean | LIB-Spatial Avg(Perturbed) | Description |
 |------|-------------------|----------------------|------|
 | IB-Adapter only | 96.3 | 76.0 | Single IB path, slight clean drop |

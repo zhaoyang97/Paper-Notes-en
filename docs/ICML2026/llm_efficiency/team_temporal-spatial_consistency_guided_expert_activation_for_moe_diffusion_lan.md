@@ -97,6 +97,7 @@ The backbone is SDAR 30B-A3B (8 experts per token), evaluated on HumanEval, MBPP
 The average accuracy drop is only 0.07, APT is reduced by 61%, and end-to-end speedup is 1.94×.
 
 ### Ablation Study
+
 | Configuration | Avg Score | Avg APF | Description |
 |---|---|---|---|
 | Full TEAM (DCD+SEH+LAC) | 77.84 | 34.48 | Complete model, 1.94× speedup |

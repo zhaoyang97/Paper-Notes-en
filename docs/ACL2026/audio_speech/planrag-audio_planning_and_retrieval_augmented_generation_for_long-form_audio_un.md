@@ -79,6 +79,7 @@ PlanRAG-Audio does not train an end-to-end model but combines off-the-shelf perc
 ## Key Experimental Results
 
 ### Main Results
+
 | Experimental Item | Model / Setting | Value | Description |
 |-------------------|-----------------|-------|-------------|
 | 60 min MCQA Input Length | Gemini direct audio | 115.2k tokens | High cost for direct long-context processing |
@@ -87,6 +88,7 @@ PlanRAG-Audio does not train an end-to-end model but combines off-the-shelf perc
 | Gemini diarization parse failure | 10 to 540 minutes | 17.92% unparseable | Format stability is a significant issue in long context |
 
 ### Ablation Study
+
 | Task | Without PlanRAG-Audio | With PlanRAG-Audio | Key Change |
 |------|-----------------------|--------------------|------------|
 | Gemini speaker count | 14.20% | 69.40% | Explicit speaker segments transform counting into structured reasoning |

@@ -84,6 +84,7 @@ The evaluation uses standard visual localization benchmarks: 7Scenes, Cambridge 
 On Cambridge and 7Scenes, all four proposed strategies provide a better "memory-pose accuracy" curve than QP, Greedy, or Track Length. They also excel under fine thresholds on Aachen. When combined with standard descriptor quantization (8-bit scalar / product quantization), the overall performance is competitive with or exceeds recent learning-based compact localization methods.
 
 ### Ablation Study
+
 | Configuration | Phenomenon | Explanation |
 |---------------|------------|-------------|
 | Uniform Sampling | Limited compression due to point exclusivity | Stable across different scenes |

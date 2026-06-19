@@ -113,6 +113,7 @@ At 500K steps, the average of 683.0 also outperformed DrQv2's 636.8. In two CARL
 CD-CCA achieved SOTA in most tasks, and the **standard deviation across seeds is significantly smaller**, indicating more stable convergence and less sensitivity to initialization.
 
 ### Ablation Study
+
 | Configuration | Conclusion | Note |
 |------|------|------|
 | Full (CBP+EWC+CrossAttn) | Optimal | Plastic-stability balance, stable convergence |

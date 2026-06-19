@@ -69,6 +69,7 @@ To reduce the computational burden of global optimization, policy optimization (
 ## Key Experimental Results
 
 ### Main Results: Comparison of Global Optimization Regret Bounds
+
 | Method | Adversarial Regime | Stochastic + Adversarial Corruption Regime |
 |------|------|------|
 | Zimin & Neu (2013) | $\sqrt{HSAT}$ | $\sqrt{HSAT}$ |
@@ -78,6 +79,7 @@ To reduce the computational burden of global optimization, policy optimization (
 | **Ours (Thm 4.2)** | $\sqrt{SA\min\{L^\star, HT{-}L^\star, Q_\infty\}}$ | $\min\{\sqrt{SA(V_T+C)},\ U_{\mathrm{Var}}+\sqrt{U_{\mathrm{Var}}C}\}$ |
 
 ### Ablation Study: Policy Optimization vs. Global Optimization (Similar adaptability, extra $H$)
+
 | Method | Adversarial Regime | Stochastic + Corruption Regime |
 |------|------|------|
 | Luo et al. (2021) | $\sqrt{H^3 SAT}$ | $\sqrt{H^3 SAT}$ |

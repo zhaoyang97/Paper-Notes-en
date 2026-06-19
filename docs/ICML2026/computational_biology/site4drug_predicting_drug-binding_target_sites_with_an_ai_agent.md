@@ -79,6 +79,7 @@ The authors initially attempted SFT using structured demonstrations (Qwen3-235B 
 ## Key Experimental Results
 
 ### Main Results
+
 | Dataset | Setting | Site4Drug Top-1 | Site4Drug Top-5 | Baseline |
 |--------|------|-----------------|-----------------|----------|
 | RCSB Co-crystal Pocket Set (n=63) | $p<0.05$ Significance Rate | 20/63 | 18/63 | fpocket+AlphaFold3: 20/63; fpocket+RCSB with Ligand: 62/63 |
@@ -87,6 +88,7 @@ The authors initially attempted SFT using structured demonstrations (Qwen3-235B 
 Without directly processing structures, Site4Drug matched the performance of "providing AlphaFold3 structures to fpocket." The 62/63 performance of fpocket on ligand-containing RCSB structures is due to ligand positions leaking the answer to the geometric detector. GO enrichment shows that Top-1 significant targets are concentrated in the kinase family, aligning with the biological prior that kinases possess recurrent small-molecule accessible pockets.
 
 ### Ablation Study
+
 | Configuration | Top-1 Significance Rate | Top-5 Significance Rate | Description |
 |------|--------------|--------------|------|
 | Site4Drug Full Pipeline | 20/63 | 18/63 | Includes Topology/PTM/Motif/Cys evidence + Specialists |

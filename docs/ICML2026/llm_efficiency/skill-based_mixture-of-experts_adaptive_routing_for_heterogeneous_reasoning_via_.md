@@ -92,6 +92,7 @@ Evaluation was conducted on four heterogeneous reasoning datasets: MMLU-Pro, AIM
 SKILL-MOE is robust across datasets; its average score exceeds Qwen2.5-72B (54.28) and Llama3.3-70B (53.18), and it is more stable than QwenR1-32B (56.94), which excels on AIME (76.67%) but fails on MedMCQA (24.70%).
 
 ### Ablation Study
+
 | Configuration | Key Metric (GPQA) | Description |
 |------|----------------|------|
 | Full SKILL-MOE | 57.78 | Skill profile routing + task-level aggregator |

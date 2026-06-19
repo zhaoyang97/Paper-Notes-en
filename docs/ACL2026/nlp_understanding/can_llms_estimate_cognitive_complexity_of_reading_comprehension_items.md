@@ -58,6 +58,7 @@ This work does not train new models and relies on inference-time prompting. Stan
 ## Key Experimental Results
 
 ### Main Results
+
 | Task | Best Model / Setting | Best Macro F1 | Human Expert | Key Conclusion |
 |------|----------------------|---------------|--------------|----------------|
 | RC Factuality Judgment | GPT-4o CoT 1-shot | 84.4 | N/A | Strong models can solve items; failures in cognitive labeling are not primary due to basic reading failure. |
@@ -75,6 +76,7 @@ This work does not train new models and relies on inference-time prompting. Stan
 | 3-level Transformation Distribution | word matching 123 / paraphrasing 189 / inference 319 |
 
 ### Ablation Study
+
 | Analysis Item | Result | Note |
 |---------------|--------|------|
 | 5-level vs. 3-level TL | 3-level max 82.0, 5-level max 61.3 | Word order reordering combined with paraphrasing is the hardest fine-grained dimension to identify. |

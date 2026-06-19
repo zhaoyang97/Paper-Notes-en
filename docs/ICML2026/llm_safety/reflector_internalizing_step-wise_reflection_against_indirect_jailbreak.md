@@ -34,6 +34,7 @@ Aiming at indirect jailbreak attacks that only "expose" themselves in the middle
 **Core Idea**: First, use a strong teacher model to synthesize structured reflection segments `<|reflect|>...<|explore|>...` on truncated intermediate states to inject a "when to stop + how to recover" format prior via SFT. Then, use dual-reward GDPO, featuring "final safety reward + reflection effectiveness reward," to truly internalize this behavior into the policy instead of just remaining at the template level.
 
 ## Method
+
 ### Overall Architecture
 In short, Reflector shifts "safety" from guarding the generation entrance (sentence-initial refusal templates) to guarding the entire generation trajectory. The policy $\pi_\theta$ autoregressively generates $\tau = (y_1, \dots, y_T)$ for a query $x$ that may hide indirect jailbreak intent. It is expected that at any intermediate step, once the model realizes it is being misled, it inserts a `<|reflect|>` segment + `<|explore|>` redirection, eventually resulting in a harmless response. To develop this "introspection-on-the-go" capability, training proceeds in two stages: Stage I uses teacher-synthesized reflection data $\mathcal{D}_R$ for SFT cold-starting to instill the format prior of "when to stop and how to redirect"; Stage II uses dual-reward GDPO on policy-generated trajectories for RL to internalize the behavior from templates into parameters. No external guardrails are needed during inference.
 

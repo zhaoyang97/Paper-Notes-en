@@ -88,6 +88,7 @@ Evaluation targets: four SOTA models (FoleyCrafter, Hunyuan-V2A, MMAudio, ThinkS
 The highest Confidence is only 0.306—**all models perform poorly at physical reasoning**. MMAudio-Phys, fine-tuned with physics-aware captions, leads in average Confidence, suggesting that "feeding physical text" significantly boosts physical scores (supporting the claim that models rely on text rather than pixels).
 
 ### Temporal Alignment (FlatSounds-Single, 185 segments)
+
 | Model | Hit Coverage(%)↑ | Timing Error(ms)↓ |
 | :--- | :--- | :--- |
 | Ground Truth | 97.12 ± 1.72 | 17.25 ± 2.64 |
@@ -101,6 +102,7 @@ The highest Confidence is only 0.306—**all models perform poorly at physical r
 For every model, **removing the caption increases Hit Coverage and decreases Timing Error**—text competes for resources with precise visual timing. Even the best-performing Hunyuan-V2A remains far from the GT (97.12% / 17.25ms).
 
 ### Correlation with Human Preferences (vs. ELO, Spearman Absolute)
+
 | Metric | Correlation | Metric | Correlation |
 | :--- | :--- | :--- | :--- |
 | **Confidence** | **0.9** | FAD-PASST | 0.7 |

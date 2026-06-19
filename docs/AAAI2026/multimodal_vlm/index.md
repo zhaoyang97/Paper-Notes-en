@@ -1,30 +1,26 @@
 ---
 title: >-
-  AAAI2026 Multimodal VLM Papers · 84 Notes
+  AAAI2026 Multimodal VLM Papers · 75 Notes
 description: >-
-  84 AAAI2026 papers in the Multimodal VLM area, covering Multimodal/VLM, Reasoning, LLM, Adversarial Robustness, Alignment/RLHF, Compression and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  75 AAAI2026 papers in the Multimodal VLM area, covering Multimodal/VLM, Alignment/RLHF, Adversarial Robustness, LLM, Continual Learning, Question Answering and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "AAAI2026"
   - "Multimodal VLM"
   - "AI paper notes"
   - "paper summaries"
   - "Multimodal/VLM"
-  - "Reasoning"
-  - "LLM"
-  - "Adversarial Robustness"
   - "Alignment/RLHF"
-  - "Compression"
+  - "Adversarial Robustness"
+  - "LLM"
+  - "Continual Learning"
+  - "Question Answering"
 item_list:
-  - u: "abductivemllm_boosting_visual_abductive_reasoning_within_mll/"
-    t: "AbductiveMLLM: Boosting Visual Abductive Reasoning Within MLLMs"
   - u: "aligning_the_true_semantics_constrained_decoupling_and_distr/"
     t: "Aligning the True Semantics: Constrained Decoupling and Distribution Sampling for Cross-Modal Alignment"
   - u: "anyecg-chat_a_generalist_ecg-mllm_for_flexible_ecg_input_and/"
     t: "anyECG-chat: A Generalist ECG-MLLM for Flexible ECG Input and Multi-Task Understanding"
   - u: "are_we_done_yet_a_vision-based_judge_for_autonomous_task_completion_of_computer_/"
     t: "\"Are We Done Yet?\": A Vision-Based Judge for Autonomous Task Completion of Computer Use Agents"
-  - u: "astar_boosting_multimodal_reasoning_with_automated_structure/"
-    t: "AStar: Boosting Multimodal Reasoning with Automated Structured Thinking"
   - u: "biprompt_bilateral_prompt_optimization_for_visual_and_textual_debiasing_in_visio/"
     t: "BiPrompt: Bilateral Prompt Optimization for Visual and Textual Debiasing in Vision-Language Models"
   - u: "bofa_bridge-layer_orthogonal_low-rank_fusion_for_clip-based_/"
@@ -37,24 +33,18 @@ item_list:
     t: "Bridging the Copyright Gap: Do Large Vision-Language Models Recognize and Respect Copyrighted Content?"
   - u: "clearair_a_human-visual-perception-inspired_all-in-one_image_restoration/"
     t: "ClearAIR: A Human-Visual-Perception-Inspired All-in-One Image Restoration"
-  - u: "concept-rulenet_grounded_multi-agent_neurosymbolic_reasoning/"
-    t: "Concept-RuleNet: Grounded Multi-Agent Neurosymbolic Reasoning in Vision Language Models"
   - u: "conditional_information_bottleneck_for_multimodal_fusion_overcoming_shortcut_lea/"
     t: "Conditional Information Bottleneck for Multimodal Fusion: Overcoming Shortcut Learning in Sarcasm Detection"
   - u: "crebench_human-aligned_creativity_evaluation_from_idea_to_process_to_product/"
     t: "CreBench: Human-Aligned Creativity Evaluation from Idea to Process to Product"
   - u: "cross-modal_proxy_evolving_for_ood_detection_with_vision-lan/"
     t: "Cross-modal Proxy Evolving for OOD Detection with Vision-Language Models"
-  - u: "crossvid_a_comprehensive_benchmark_for_evaluating_cross-vide/"
-    t: "CrossVid: A Comprehensive Benchmark for Evaluating Cross-Video Reasoning in Multimodal Large Language Models"
   - u: "deig_detail-enhanced_instance_generation_with_fine-grained_semantic_control/"
     t: "DEIG: Detail-Enhanced Instance Generation with Fine-Grained Semantic Control"
   - u: "difference_vector_equalization_for_robust_fine-tuning_of_vis/"
     t: "Difference Vector Equalization for Robust Fine-tuning of Vision-Language Models"
   - u: "discode_distribution-aware_score_decoder_for_robust_automatic_evaluation_of_imag/"
     t: "DisCode: Distribution-Aware Score Decoder for Robust Automatic Evaluation of Image Captioning"
-  - u: "em-kd_distilling_efficient_multimodal_large_language_model_w/"
-    t: "EM-KD: Distilling Efficient Multimodal Large Language Model with Unbalanced Vision Tokens"
   - u: "empowering_semantic-sensitive_underwater_image_enhancement_with_vlm/"
     t: "Empowering Semantic-Sensitive Underwater Image Enhancement with VLM"
   - u: "exo2ego_exocentric_knowledge_guided_mllm_for_egocentric_vide/"
@@ -65,31 +55,37 @@ item_list:
     t: "Exploring LLMs for Scientific Information Extraction using the SciEx Framework"
   - u: "few-shot_precise_event_spotting_via_unified_multi-entity_graph_and_distillation/"
     t: "Few-Shot Precise Event Spotting via Unified Multi-Entity Graph and Distillation"
-  - u: "filter_correlate_compress_training-free_token_reduction_for_/"
-    t: "Filter, Correlate, Compress: Training-Free Token Reduction for MLLM Acceleration"
-  - u: "finmmdocr_benchmarking_financial_multimodal_reasoning_with_scenario_awareness_do/"
-    t: "FinMMDocR: Benchmarking Financial Multimodal Reasoning with Scenario Awareness, Document Understanding, and Multi-Step Computation"
   - u: "format_matters_the_robustness_of_multimodal_llms_in_reviewing_evidence_from_tabl/"
     t: "Format Matters: The Robustness of Multimodal LLMs in Reviewing Evidence from Tables and Charts"
   - u: "ft-ncfm_an_influence-aware_data_distillation_framework_for_efficient_vla_models/"
     t: "FT-NCFM: An Influence-Aware Data Distillation Framework for Efficient VLA Models"
-  - u: "global_compression_commander_plug-and-play_inference_acceler/"
-    t: "Global Compression Commander: Plug-and-Play Inference Acceleration for High-Resolution Large Vision-Language Models"
-item_total: 84
+  - u: "harnessing_textual_semantic_priors_for_knowledge_transfer_and_refinement_in_clip/"
+    t: "Harnessing Textual Semantic Priors for Knowledge Transfer and Refinement in CLIP-Driven Continual Learning"
+  - u: "heterogeneous_uncertainty-guided_composed_image_retrieval_with_fine-grained_prob/"
+    t: "Heterogeneous Uncertainty-Guided Composed Image Retrieval with Fine-Grained Probabilistic Learning"
+  - u: "himo-clip_modeling_semantic_hierarchy_and_monotonicity_in_vi/"
+    t: "HiMo-CLIP: Modeling Semantic Hierarchy and Monotonicity in Vision-Language Alignment"
+  - u: "imagebinddc_compressing_multi-modal_data_with_imagebind-based_condensation/"
+    t: "ImageBindDC: Compressing Multi-modal Data with ImageBind-based Condensation"
+  - u: "information_theoretic_optimal_surveillance_for_epidemic_prevalence_in_networks/"
+    t: "Information Theoretic Optimal Surveillance for Epidemic Prevalence in Networks"
+  - u: "knowledge_completes_the_vision_a_multimodal_entity-aware_retrieval-augmented_gen/"
+    t: "Knowledge Completes the Vision: A Multimodal Entity-aware Retrieval-Augmented Generation Framework for News Image Captioning"
+  - u: "large_language_models_meet_extreme_multi-label_classification_scaling_and_multi-/"
+    t: "Large Language Models Meet Extreme Multi-label Classification: Scaling and Multi-modal Framework"
+  - u: "llmc_benchmarking_vision-language_model_compression_with_a_plug-and-play_toolkit/"
+    t: "LLMC+: Benchmarking Vision-Language Model Compression with a Plug-and-play Toolkit"
+item_total: 75
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # 🧩 Multimodal VLM
 
-**🤖 AAAI2026** · **84** paper notes
+**🤖 AAAI2026** · **75** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (534)](../../CVPR2026/multimodal_vlm/index.md) · [🧪 ICML2026 (99)](../../ICML2026/multimodal_vlm/index.md) · [💬 ACL2026 (94)](../../ACL2026/multimodal_vlm/index.md) · [🔬 ICLR2026 (85)](../../ICLR2026/multimodal_vlm/index.md) · [🧠 NeurIPS2025 (137)](../../NeurIPS2025/multimodal_vlm/index.md) · [📹 ICCV2025 (128)](../../ICCV2025/multimodal_vlm/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (388)](../../CVPR2026/multimodal_vlm/index.md) · [🧪 ICML2026 (76)](../../ICML2026/multimodal_vlm/index.md) · [💬 ACL2026 (79)](../../ACL2026/multimodal_vlm/index.md) · [🔬 ICLR2026 (61)](../../ICLR2026/multimodal_vlm/index.md) · [🧠 NeurIPS2025 (105)](../../NeurIPS2025/multimodal_vlm/index.md) · [📹 ICCV2025 (106)](../../ICCV2025/multimodal_vlm/index.md)
 
-🔥 **Top topics:** Multimodal/VLM ×44 · Reasoning ×10 · LLM ×6 · Adversarial Robustness ×6 · Alignment/RLHF ×5
-
-**[AbductiveMLLM: Boosting Visual Abductive Reasoning Within MLLMs](abductivemllm_boosting_visual_abductive_reasoning_within_mll.md)**
-
-:   Inspired by the dual-mode human cognitive process of verbal abduction and pictorial imagination, this paper proposes AbductiveMLLM, which enhances visual abductive reasoning in MLLMs via two collaborative components — a Reasoner (causal contrastive learning for hypothesis selection) and an Imaginer (diffusion-model-based pictorial reasoning) — achieving state-of-the-art performance on the VAR and YouCookII benchmarks.
+🔥 **Top topics:** Multimodal/VLM ×40 · Alignment/RLHF ×5 · Adversarial Robustness ×5 · LLM ×4 · Continual Learning ×3
 
 **[Aligning the True Semantics: Constrained Decoupling and Distribution Sampling for Cross-Modal Alignment](aligning_the_true_semantics_constrained_decoupling_and_distr.md)**
 
@@ -102,10 +98,6 @@ item_total: 84
 **["Are We Done Yet?": A Vision-Based Judge for Autonomous Task Completion of Computer Use Agents](are_we_done_yet_a_vision-based_judge_for_autonomous_task_completion_of_computer_.md)**
 
 :   This paper proposes a VLM-based autonomous task completion evaluation framework that judges whether a Computer Use Agent (CUA) has completed a task using only screenshots and task descriptions. Evaluation feedback is passed back to the agent for self-correction, achieving 73% evaluation accuracy and a 27% relative improvement in task success rate on macOS.
-
-**[AStar: Boosting Multimodal Reasoning with Automated Structured Thinking](astar_boosting_multimodal_reasoning_with_automated_structure.md)**
-
-:   This paper proposes AStar, a training-free multimodal reasoning paradigm that constructs a library of high-level "thought card" reasoning templates from 500 seed samples. At inference time, the most suitable templates are adaptively retrieved to guide structured reasoning in MLLMs. A 7B model achieves 53.9% accuracy on MathVerse (surpassing GPT-4o's 50.2%), requiring only 50 minutes of preprocessing and no model training.
 
 **[BiPrompt: Bilateral Prompt Optimization for Visual and Textual Debiasing in Vision-Language Models](biprompt_bilateral_prompt_optimization_for_visual_and_textual_debiasing_in_visio.md)**
 
@@ -131,10 +123,6 @@ item_total: 84
 
 :   Inspired by human visual perception (HVP), this paper proposes ClearAIR, a coarse-to-fine unified image restoration framework that progressively recovers image quality through four stages — MLLM-based quality assessment → semantic region perception → degradation type identification → internal clue reuse — achieving state-of-the-art performance across multiple degradation tasks.
 
-**[Concept-RuleNet: Grounded Multi-Agent Neurosymbolic Reasoning in Vision Language Models](concept-rulenet_grounded_multi-agent_neurosymbolic_reasoning.md)**
-
-:   This paper proposes Concept-RuleNet, a three-agent collaborative neurosymbolic reasoning framework that conditions symbol generation and rule construction on visual concepts extracted from training images. It addresses the symbol hallucination and non-representativeness issues of existing methods (e.g., Symbol-LLM) that rely solely on class labels, achieving an average accuracy improvement of ~5% across 5 OOD benchmarks and reducing hallucinated symbols by up to 50%.
-
 **[Conditional Information Bottleneck for Multimodal Fusion: Overcoming Shortcut Learning in Sarcasm Detection](conditional_information_bottleneck_for_multimodal_fusion_overcoming_shortcut_lea.md)**
 
 :   This paper identifies three types of shortcut learning in multimodal sarcasm detection (character label bias, canned laughter label leakage, and sentiment inconsistency shortcuts), reconstructs a shortcut-free benchmark MUStARD++R, and proposes MCIB, a multimodal fusion framework based on the Conditional Information Bottleneck. MCIB achieves effective fusion by compressing redundancy in the primary modality while preserving complementary information from auxiliary modalities.
@@ -147,10 +135,6 @@ item_total: 84
 
 :   This paper proposes CoEvo, a training-free and annotation-free test-time framework that dynamically updates positive and negative proxy caches through a bidirectional sample-conditioned text/visual proxy co-evolution mechanism. On ImageNet-1K, CoEvo improves AUROC by 1.33% and reduces FPR95 by 45.98% (from 18.92% to 10.22%) over the strongest negative-label baseline, achieving state-of-the-art zero-shot OOD detection.
 
-**[CrossVid: A Comprehensive Benchmark for Evaluating Cross-Video Reasoning in Multimodal Large Language Models](crossvid_a_comprehensive_benchmark_for_evaluating_cross-vide.md)**
-
-:   This paper introduces CrossVid, the first comprehensive benchmark for systematically evaluating the Cross-Video Reasoning (CVR) capabilities of multimodal large language models (MLLMs). CrossVid encompasses 10 tasks across 4 dimensions, 5,331 videos, and 9,015 QA pairs. Experiments reveal that the current best-performing model, Gemini-2.5-Pro, achieves only 50.4% accuracy, far below the human performance of 89.2%.
-
 **[DEIG: Detail-Enhanced Instance Generation with Fine-Grained Semantic Control](deig_detail-enhanced_instance_generation_with_fine-grained_semantic_control.md)**
 
 :   This paper proposes DEIG, a framework for fine-grained multi-instance image generation. It distills high-dimensional embeddings from a frozen LLM encoder into compact instance-aware representations via an Instance Detail Extractor (IDE), and employs instance masked attention in a Detail Fusion Module (DFM) to prevent attribute leakage. DEIG substantially outperforms existing methods on generation tasks with complex multi-attribute descriptions (color + material + texture).
@@ -162,10 +146,6 @@ item_total: 84
 **[DisCode: Distribution-Aware Score Decoder for Robust Automatic Evaluation of Image Captioning](discode_distribution-aware_score_decoder_for_robust_automatic_evaluation_of_imag.md)**
 
 :   This paper proposes DISCODE, a fine-tuning-free test-time adaptive decoder that introduces a Gaussian prior to minimize the ATT loss, enabling LVLM-generated image captioning scores to more robustly align with human judgments. The paper also constructs the MCEval benchmark covering six visual domains.
-
-**[EM-KD: Distilling Efficient Multimodal Large Language Model with Unbalanced Vision Tokens](em-kd_distilling_efficient_multimodal_large_language_model_w.md)**
-
-:   This paper proposes EM-KD, a distillation framework that leverages the Hungarian algorithm to address the vision token count imbalance between teacher and student models. By combining Vision Semantic Distillation (VSD) and Vision-Language Affinity Distillation (VLAD), EM-KD transfers knowledge from a vanilla teacher to an efficient student MLLM, achieving an average score of 50.4 across 11 benchmarks at 144 tokens/patch — surpassing LLaVA-NeXT with 576 tokens (49.4) while delivering nearly 2× inference speedup.
 
 **[Empowering Semantic-Sensitive Underwater Image Enhancement with VLM](empowering_semantic-sensitive_underwater_image_enhancement_with_vlm.md)**
 
@@ -187,14 +167,6 @@ item_total: 84
 
 :   This paper proposes UMEG-Net for few-shot Precise Event Spotting (PES). The method constructs a unified multi-entity graph integrating human skeletal keypoints, sports object keypoints, and environmental landmarks, combined with efficient spatiotemporal graph convolution and a parameter-free multi-scale temporal shift module. A multimodal knowledge distillation scheme transfers graph features to an RGB student network. The approach significantly outperforms existing methods across five sports datasets under extremely limited annotation budgets.
 
-**[Filter, Correlate, Compress: Training-Free Token Reduction for MLLM Acceleration](filter_correlate_compress_training-free_token_reduction_for_.md)**
-
-:   This paper proposes FiCoCo, a three-stage framework (Filter–Correlate–Compress) that identifies redundant tokens via integrated vision-aware and semantic-aware redundancy metrics, adaptively recycles information from discarded tokens via inter-token correlation, and achieves training-free MLLM acceleration. On LLaVA-NeXT, FiCoCo achieves a 14.7× FLOPs reduction while retaining 93.6% of performance, and consistently outperforms FastV, SparseVLM, and other state-of-the-art methods across five MLLM architectures.
-
-**[FinMMDocR: Benchmarking Financial Multimodal Reasoning with Scenario Awareness, Document Understanding, and Multi-Step Computation](finmmdocr_benchmarking_financial_multimodal_reasoning_with_scenario_awareness_do.md)**
-
-:   This paper introduces FinMMDocR, a bilingual multimodal reasoning benchmark targeting real-world financial scenarios. It comprises 1,200 expert-annotated numerical reasoning questions spanning 12 implicit financial scenario types, 9 categories of long documents (averaging 50.8 pages), and reasoning chains averaging 11 steps. The strongest MLLM (o4-mini-high) achieves only 58% accuracy, exposing critical deficiencies of existing models in complex financial reasoning.
-
 **[Format Matters: The Robustness of Multimodal LLMs in Reviewing Evidence from Tables and Charts](format_matters_the_robustness_of_multimodal_llms_in_reviewing_evidence_from_tabl.md)**
 
 :   This paper systematically investigates the robustness of multimodal LLMs in verifying scientific claims using tables and charts as evidence. By extending SciTabAlign and ChartMimic into a table–chart aligned evaluation benchmark, the authors find that all 12 evaluated multimodal LLMs consistently perform better on table-based evidence than chart-based evidence, while human annotators perform consistently across both formats — revealing a critical weakness in current models' chart comprehension capabilities.
@@ -202,14 +174,6 @@ item_total: 84
 **[FT-NCFM: An Influence-Aware Data Distillation Framework for Efficient VLA Models](ft-ncfm_an_influence-aware_data_distillation_framework_for_efficient_vla_models.md)**
 
 :   This paper proposes FT-NCFM, a framework that evaluates sample utility via causal attribution (Fact-Tracing) and guides an adversarial NCFM process to synthesize high-information-density coresets. Using only 5% synthetic data, it achieves 85–90% of full-data training performance while reducing training time by over 80%.
-
-**[Global Compression Commander: Plug-and-Play Inference Acceleration for High-Resolution Large Vision-Language Models](global_compression_commander_plug-and-play_inference_acceler.md)**
-
-:   This paper proposes GlobalCom², a **plug-and-play, training-free** token compression framework tailored for high-resolution VLMs with dynamic cropping architectures. It leverages the global thumbnail as a "commander" to guide differentiated compression across local crop regions, achieving >90% of original performance while compressing 90% of visual tokens.
-
-**[Graph-of-Mark: Promote Spatial Reasoning in Multimodal Language Models with Graph-Based Visual Prompting](graph-of-mark_promote_spatial_reasoning_in_multimodal_langua.md)**
-
-:   This paper proposes Graph-of-Mark (GoM), a training-free pixel-level visual prompting method that explicitly encodes inter-object spatial relationships by overlaying a depth-aware scene graph (comprising nodes and directed edges) directly onto input images, achieving up to an 11 percentage point improvement in zero-shot spatial reasoning accuracy for multimodal language models on VQA and grounding tasks.
 
 **[Harnessing Textual Semantic Priors for Knowledge Transfer and Refinement in CLIP-Driven Continual Learning](harnessing_textual_semantic_priors_for_knowledge_transfer_and_refinement_in_clip.md)**
 
@@ -219,6 +183,10 @@ item_total: 84
 
 :   This paper proposes the HUG paradigm, which leverages fine-grained Gaussian probabilistic embeddings and heterogeneous uncertainty estimation—distinguishing query-side multimodal coordination uncertainty from target-side content quality uncertainty—combined with dynamic weighted fusion and uncertainty-guided contrastive learning, achieving state-of-the-art performance on the Fashion-IQ and CIRR benchmarks.
 
+**[HiMo-CLIP: Modeling Semantic Hierarchy and Monotonicity in Vision-Language Alignment](himo-clip_modeling_semantic_hierarchy_and_monotonicity_in_vi.md)**
+
+:   This paper proposes HiMo-CLIP, which applies in-batch PCA decomposition (HiDe) to text embeddings to extract multi-granularity semantic components, combined with a dual-branch monotonicity-aware contrastive loss (MoLo). Without modifying the encoder, the model learns that "more complete text should yield higher alignment scores" — a property termed semantic monotonicity — and significantly outperforms existing methods on long-text retrieval.
+
 **[ImageBindDC: Compressing Multi-modal Data with ImageBind-based Condensation](imagebinddc_compressing_multi-modal_data_with_imagebind-based_condensation.md)**
 
 :   This paper proposes ImageBindDC, the first framework for multimodal data compression in the unified feature space of ImageBind. It replaces the conventional MMD with Characteristic Function Distance (CFD) and introduces a three-level distribution alignment loss covering uni-modal, cross-modal, and joint-modal objectives. On NYU-v2, the method achieves performance comparable to full-data training (97.30%) using only 5 synthetic samples per class, surpassing the previous SOTA by an absolute margin of 8.2% while reducing compression time by 4.6×.
@@ -227,13 +195,13 @@ item_total: 84
 
 :   This paper introduces TestPrev, the first epidemic surveillance framework that employs mutual information as an optimization criterion. It selects an optimal subset of nodes in a network to maximize mutual information with the disease prevalence distribution, thereby providing distribution-level insights into outbreak size that traditional methods cannot offer. The paper proves the NP-hardness of this problem, designs a greedy algorithm GreedyMI, and demonstrates its superiority over baselines on both synthetic and real-world networks.
 
+**[Knowledge Completes the Vision: A Multimodal Entity-aware Retrieval-Augmented Generation Framework for News Image Captioning](knowledge_completes_the_vision_a_multimodal_entity-aware_retrieval-augmented_gen.md)**
+
+:   This paper proposes MERGE, the first multimodal entity-aware RAG framework for news image captioning. Through three core components — an Entity-centric Multimodal Knowledge Base (EMKB), Hypothetical Caption-guided Multimodal Alignment (HCMA), and Retrieval-driven Multimodal Knowledge Integration (RMKI) — MERGE achieves CIDEr +6.84 and F1 +4.14 on GoodNews, and demonstrates strong generalization with CIDEr +20.17 on the unseen Visual News benchmark.
+
 **[Large Language Models Meet Extreme Multi-label Classification: Scaling and Multi-modal Framework](large_language_models_meet_extreme_multi-label_classification_scaling_and_multi-.md)**
 
 :   This paper investigates the effective utilization of decoder-based LLMs for Extreme Multi-label Classification (XMC), proposing a dual-decoder learning strategy and the ViXML multimodal framework. By employing structured prompt templates to adapt LLM embeddings and efficiently integrating visual metadata, the method substantially outperforms state-of-the-art approaches on four public benchmarks (up to +8.21% P@1 on the largest dataset), demonstrating that "one image outweighs billions of parameters."
-
-**[Leveraging Textual Compositional Reasoning for Robust Change Captioning](leveraging_textual_compositional_reasoning_for_robust_change_captioning.md)**
-
-:   This paper proposes CORTEX, a framework that introduces VLM-generated compositional reasoning text as explicit cues, combined with an Image-Text Dual Alignment (ITDA) module, to enhance purely visual change captioning methods in understanding structured semantics such as object relationships and spatial configurations.
 
 **[LLMC+: Benchmarking Vision-Language Model Compression with a Plug-and-play Toolkit](llmc_benchmarking_vision-language_model_compression_with_a_plug-and-play_toolkit.md)**
 
@@ -243,6 +211,10 @@ item_total: 84
 
 :   This paper proposes MacVQA, a framework that enhances the robustness of visual features via Global Noise Filtering (GonF) and optimizes cross-task knowledge retention and update via Adaptive Memory Allocation (AMA) based on prototype retrieval and memory decay. MacVQA achieves 43.38% average accuracy (+3.57%) and 2.32% forgetting rate across 10 continual learning tasks on VQA v2.
 
+**[MAVIS: A Benchmark for Multimodal Source Attribution in Long-form Visual Question Answering](mavis_a_benchmark_for_multimodal_source_attribution_in_long-form_visual_question.md)**
+
+:   MAVIS is the first benchmark for evaluating multimodal source attribution systems, comprising 157K visual QA instances with fact-level citations to multimodal documents per answer, along with automatic evaluation metrics across three dimensions: informativeness, groundedness, and fluency.
+
 **[MCMoE: Completing Missing Modalities with Mixture of Experts for Incomplete Multimodal Action Quality Assessment](mcmoe_completing_missing_modalities_with_mixture_of_experts_for_incomplete_multi.md)**
 
 :   This paper presents the first exploration of incomplete multimodal action quality assessment (AQA), proposing the MCMoE framework. An Adaptive Gated Modality Generator (AGMG) completes missing modalities, while a Mixture of Experts (MoE) module with soft routing dynamically fuses unimodal and cross-modal joint representations within a unified single-stage training paradigm. MCMoE achieves state-of-the-art performance under both complete and incomplete modality settings across three public AQA benchmarks, with only 4.90M parameters.
@@ -250,6 +222,14 @@ item_total: 84
 **[Multi-Agent VLMs Guided Self-Training with PNU Loss for Low-Resource Offensive Content Detection](multi-agent_vlms_guided_self-training_with_pnu_loss_for_low-resource_offensive_c.md)**
 
 :   This paper proposes a multi-agent vision-language model (MA-VLMs) guided self-training framework combined with a novel PNU loss function, achieving high-quality offensive content detection under low-resource settings (as few as 50 labeled samples), with performance approaching that of large-scale models.
+
+**[Multimodal DeepResearcher: Generating Text-Chart Interleaved Reports From Scratch with Agentic Framework](multimodal_deepresearcher_generating_text-chart_interleaved_.md)**
+
+:   This paper proposes Multimodal DeepResearcher, a four-stage agentic framework for generating text-chart interleaved research reports from scratch. It introduces Formal Description of Visualization (FDV) to enable LLMs to learn and produce diverse charts, and employs an Actor-Critic iterative refinement mechanism (LLM generates D3.js code → browser rendering → multimodal LLM review). The system achieves an 82% overall win rate (Claude 3.7) on the newly constructed MultimodalReportBench and a 100% win rate in human evaluation.
+
+**[Neighbor-aware Instance Refining with Noisy Labels for Cross-Modal Retrieval](neighbor-aware_instance_refining_with_noisy_labels_for_cross-modal_retrieval.md)**
+
+:   This paper proposes NIRNL, a framework that enhances sample discriminability via Cross-modal Margin Preserving (CMP) and employs Neighbor-aware Instance Refining (NIR) to partition training data into clean, hard, and noisy subsets, each with a tailored optimization strategy. The framework unifies three paradigms—robust learning, label calibration, and instance selection—achieving state-of-the-art cross-modal retrieval performance under high noise rates.
 
 **[O3SLM: Open Weight, Open Data, and Open Vocabulary Sketch-Language Model](o3slm_open_weight_open_data_and_open_vocabulary_sketch-language_model.md)**
 
@@ -291,6 +271,10 @@ item_total: 84
 
 :   This paper proposes the Plug-and-Play Clarifier, a zero-shot, modular multimodal framework that decomposes egocentric intent disambiguation into three sub-tasks: textual clarification, visual quality assessment, and cross-modal gesture grounding. The framework improves performance of small (4–8B) models by approximately 30% on intent disambiguation benchmarks, approaching or surpassing the performance of much larger models.
 
+**[Positional Bias in Multimodal Embedding Models: Do They Favor the Beginning, the Middle, or the End?](positional_bias_in_multimodal_embedding_models_do_they_favor_the_beginning_the_m.md)**
+
+:   This paper presents the first systematic study of positional bias in multimodal representation models, finding that text encoders tend to favor the beginning of the input while image encoders exhibit preference for both the beginning and the end. Through extensive controlled experiments, the study reveals that this bias arises from the joint influence of positional encoding schemes, training objectives, context importance, and image-text pair training.
+
 **[ReCAD: Reinforcement Learning Enhanced Parametric CAD Model Generation with Vision-Language Models](recad_reinforcement_learning_enhanced_parametric_cad_model_generation_with_visio.md)**
 
 :   This paper proposes the ReCAD framework, which rewrites CAD scripts as parametric code for SFT, then applies GRPO-based reinforcement learning with a hierarchical primitive curriculum learning strategy, enabling VLMs to generate high-precision, editable parametric CAD models from text or image inputs. The approach substantially outperforms existing methods in both in-distribution and out-of-distribution settings.
@@ -302,10 +286,6 @@ item_total: 84
 **[Remember Me: Bridging the Long-Range Gap in LVLMs with Three-Step Inference-Only Decay Resilience Strategies](remember_me_bridging_the_long-range_gap_in_lvlms_with_three-step_inference-only_.md)**
 
 :   This paper proposes T-DRS (Three-step Decay Resilience Strategies), a training-free inference-time framework that mitigates RoPE-induced long-range attention decay through three cooperative stages: semantics-driven enhancement, distance-aware control, and remote-distance re-reinforcement, achieving consistent performance gains across multiple LVLMs on VQA benchmarks.
-
-**[Rethinking Visual Token Reduction in LVLMs under Cross-Modal Misalignment](rethinking_visual_token_reduction_in_lvlms_under_cross-modal_misalignment.md)**
-
-:   This paper identifies three forms of cross-modal misalignment (causal, semantic, and spatial) in text-guided visual token importance estimation within LVLMs, and proposes VisionDrop—a training-free progressive token pruning framework that relies exclusively on visual self-attention. The framework performs multi-stage compression across both the visual encoder and LLM decoder, retaining over 91% of original performance while keeping only 5.6% of tokens.
 
 **[Revisiting the Data Sampling in Multimodal Post-training from a Difficulty-Distinguish View](revisiting_the_data_sampling_in_multimodal_post-training_from_a_difficulty-disti.md)**
 
@@ -343,10 +323,6 @@ item_total: 84
 
 :   SpeakerLM is the first multimodal large language model designed specifically for end-to-end Speaker Diarization and Recognition (SDR). Through an audio encoder–projector–LLM architecture and a flexible speaker enrollment mechanism, it significantly outperforms cascaded baseline systems on multiple public benchmarks (absolute cpCER reduction up to 13.82%) and demonstrates strong robustness on out-of-domain test sets.
 
-**[SToLa: Self-Adaptive Touch-Language Framework with Tactile Commonsense Reasoning in Open-Ended Scenarios](stola_self-adaptive_touch-language_framework_with_tactile_commonsense_reasoning_.md)**
-
-:   SToLa proposes the first Mixture-of-Experts (MoE)-based touch-language framework, which employs a dynamic routing mechanism to manage the modality gap between tactile and linguistic inputs. The work also introduces TactileBench, an open-ended tactile commonsense reasoning dataset covering 8 physical properties and 4 interaction characteristics. With only 7B parameters, SToLa achieves state-of-the-art performance on the PhysiCLeAR benchmark, surpassing the 13B Octopi model.
-
 **[TabFlash: Efficient Table Understanding with Progressive Question Conditioning and Token Focusing](tabflash_efficient_table_understanding_with_progressive_question_conditioning_an.md)**
 
 :   TabFlash introduces two core techniques — Progressive Question Conditioning and Token Focusing — to inject question information into the ViT for generating question-aware visual features, prune background tokens via L2 norm, and concentrate critical information into retained tokens through contrastive training. On 7 table understanding benchmarks, TabFlash surpasses GPT-4o and Gemini 2.5 Pro while reducing FLOPs by 27% and GPU memory by 30%.
@@ -354,10 +330,6 @@ item_total: 84
 **[The Triangle of Similarity: A Multi-Faceted Framework for Comparing Neural Network Representations](the_triangle_of_similarity_a_multi-faceted_framework_for_comparing_neural_networ.md)**
 
 :   This paper proposes the *Triangle of Similarity* framework, which integrates three complementary perspectives — static representational similarity (CKA/Procrustes), functional similarity (linear mode connectivity/predictive distribution similarity), and sparsity similarity (pruning robustness) — to comprehensively compare neural networks. Key findings include that architectural family is the primary determinant of representational similarity, and that a model's representational structure is more robust to pruning than its task accuracy.
-
-**[TinyChemVL: Advancing Chemical Vision-Language Models via Efficient Visual Token Reduction and Complex Reaction Tasks](tinychemvl_advancing_chemical_vision-language_models_via_efficient_visual_token_.md)**
-
-:   TinyChemVL is a chemistry-domain VLM with only 4B parameters. It compresses visual tokens to 1/16 of the original count via an adaptive token merging and pruning strategy, introduces reaction-level tasks and the ChemRxn-V benchmark, and achieves state-of-the-art performance on both molecular- and reaction-level visual chemistry tasks while significantly improving inference and training speed.
 
 **[To Align or Not to Align: Strategic Multimodal Representation Alignment for Optimal Performance](to_align_or_not_to_align_strategic_multimodal_representation_alignment_for_optim.md)**
 
@@ -378,10 +350,6 @@ item_total: 84
 **[CAMU: Context Augmentation for Meme Understanding](trace_textual_relevance_augmentation_and_contextual_encoding_for_multimodal_hate.md)**
 
 :   This paper proposes the CAMU framework, which achieves 0.807 accuracy and 0.806 F1 on the Hateful Memes dataset through visually grounded context caption generation, a novel caption scoring network, and parameter-efficient n-layer fine-tuning of the CLIP text encoder—matching the 55B-parameter SOTA while being substantially more efficient.
-
-**[Tri-Bench: Stress-Testing VLM Reliability on Spatial Reasoning under Camera Tilt and Object Interference](tri-bench_stress-testing_vlm_reliability_on_spatial_reasoning_under_camera_tilt_.md)**
-
-:   Tri-Bench is a compact benchmark comprising 400 real-world photographs of triangles. By systematically controlling two factors — camera pose (planar vs. tilted) and object interference — it evaluates the spatial geometric reasoning capabilities of four leading VLMs. The results reveal that models default to 2D image-plane cues rather than genuine 3D geometry, even when explicit reference-frame guardrails are provided in the prompt, with accuracy on minority-class shapes dropping to near 0%.
 
 **[UniFit: Towards Universal Virtual Try-on with MLLM-Guided Semantic Alignment](unifit_towards_universal_virtual_try-on_with_mllm-guided_semantic_alignment.md)**
 
@@ -414,10 +382,6 @@ item_total: 84
 **[When Eyes and Ears Disagree: Can MLLMs Discern Audio-Visual Confusion?](when_eyes_and_ears_disagree_can_mllms_discern_audio-visual_confusion.md)**
 
 :   This paper identifies a critical phenomenon termed "audio-visual confusion" in MLLMs, wherein models are heavily dominated by visual information and fail to recognize missing audio when audio-visual inputs are asymmetric. The authors propose the AV-ConfuseBench benchmark and the RL-CoMM method — combining a stepwise reasoning reward that incorporates an external audio model as reference with answer-centered confidence optimization — achieving 10–30% accuracy improvements over baselines using only approximately 20% of the training data.
-
-**[Yes FLoReNce, I Will Do Better Next Time! Agentic Feedback Reasoning for Humorous Meme Detection](yes_florence_i_will_do_better_next_time_agentic_feedback_reasoning_for_humorous_.md)**
-
-:   This paper proposes FLoReNce, a framework that models humorous meme understanding as a closed-loop control system. Through a feedback loop consisting of a Judge agent, a PID controller, and a non-parametric knowledge base, the system retrieves similar past experiences at inference time to modulate prompts, enabling a frozen VLM to perform adaptive reasoning without fine-tuning, substantially improving both prediction accuracy and explanation quality.
 
 **[Zero-Reference Joint Low-Light Enhancement and Deblurring via Visual Autoregressive Modeling with VLM-Derived Modulation](zero-reference_joint_low-light_enhancement_and_deblurring_via_visual_autoregress.md)**
 

@@ -69,6 +69,7 @@ Pearson correlations between metrics and accuracy for synthetic data and Qwen2.5
 Scaling effects: On 6 VL-ICL subtasks, Qwen2.5-VL improved by +2.3% from 3B to 7B; IDEFICS improved by +10.5% from 9B to 80B.
 
 ### Ablation Study
+
 | Configuration | ICL Accuracy ($\pm\sigma$) | Description |
 | :--- | :--- | :--- |
 | Synthetic Multimodal Baseline | $0.970\pm 0.025$ | Base model |

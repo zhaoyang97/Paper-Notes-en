@@ -99,6 +99,7 @@ Average attribution accuracy and final unseen detection rate (%):
 The final task accuracy of 78.80% outperforms the second-best DGR (75.68%) by **3.12%**. Unseen detection at 98.93% is significantly superior.
 
 ### Ablation Study (Table 3)
+
 | Configuration | $\mathcal{T}_7$ Acc. | Unseen Acc. |
 |------|------|------|
 | baseline | 35.24 | 69.13 |

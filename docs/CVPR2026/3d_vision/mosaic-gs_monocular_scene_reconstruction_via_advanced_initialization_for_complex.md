@@ -102,6 +102,7 @@ MOSAIC-GS is generally second-best in PSNR (after MoSca) but **achieves the best
 Training time includes preprocessing; pure photometric optimization takes only ~5 minutes. Compared to MoSca, it is ~5× faster to train and ~4.7× faster to render.
 
 ### Ablation Study (DyCheck)
+
 | Configuration | mPSNR↑ | mLPIPS↓ | Training Time (min)↓ |
 |------|--------|---------|----------------|
 | Full model | 18.40 | 0.255 | 5.06 |

@@ -106,6 +106,7 @@ Gaze error should be low; iris recognition (C=cropped, F=full) should be low for
 PrivateEyes reduces iris recognition to ~14–17% (a >50% drop compared to baselines) while maintaining lower gaze error. Since the entire image is redrawn, pericorneal features (lashes, skin) are also anonymized.
 
 ### Ablation Study
+
 | Configuration | Observation |
 |------|---------|
 | Ours w/ PEN | Full model; lowest gaze error. |

@@ -83,6 +83,7 @@ The pass rate determined by Gemini-2.5-Pro indicates a clear trend: **Global app
 | Hard       | Pixar/Disney 3D styles      | $0.6463$     |
 
 ### Comparison with Existing Datasets
+
 | Dataset | Scale | Image Source | Rounds |
 |---------|-------|--------------|--------|
 | GIER | $10^4$ | Real | Single |

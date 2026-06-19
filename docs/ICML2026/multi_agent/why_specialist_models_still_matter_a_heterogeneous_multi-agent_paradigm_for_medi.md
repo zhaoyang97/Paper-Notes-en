@@ -100,6 +100,7 @@ The main experiment involve 613 real cardiovascular cases from 514 patients. Inp
 The authors report that HetMedAgent improves average AUROC by +6.6% and F1 by +7.9% compared to the best single-model baseline and improves average AUROC by +4.3% and F1 by +5.7% compared to the best multi-agent baseline. This indicates that gains come not just from "multi-LLM discussion" but also from specialist models and conflict/uncertainty mechanisms.
 
 ### Ablation Study
+
 | Configuration | Key Metrics | Explanation |
 |------|---------|------|
 | GPT-4o Standalone | Avg AUROC 0.671, F1 0.625 | Clinical decision is clearly insufficient with generalist LLM only |

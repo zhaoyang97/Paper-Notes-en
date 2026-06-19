@@ -1,8 +1,8 @@
 ---
 title: >-
-  CVPR2026 Image Generation Papers · 449 Notes
+  CVPR2026 Image Generation Papers · 434 Notes
 description: >-
-  449 CVPR2026 papers in the Image Generation area, covering Diffusion Models, Text-to-Image, Alignment/RLHF, Multimodal/VLM, Image Editing, Layout & Composition and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  434 CVPR2026 papers in the Image Generation area, covering Diffusion Models, Text-to-Image, Alignment/RLHF, Image Editing, Layout & Composition, Multimodal/VLM and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "CVPR2026"
   - "Image Generation"
@@ -11,28 +11,34 @@ tags:
   - "Diffusion Models"
   - "Text-to-Image"
   - "Alignment/RLHF"
-  - "Multimodal/VLM"
   - "Image Editing"
   - "Layout & Composition"
+  - "Multimodal/VLM"
 item_list:
   - u: "2ndmatch_finetuning_pruned_diffusion_models_via_second-order_jacobian_matching/"
     t: "2ndMatch: Finetuning Pruned Diffusion Models via Second-Order Jacobian Matching"
   - u: "3d_space_as_a_scratchpad_for_editable_text-to-image_generation/"
     t: "3D Space as a Scratchpad for Editable Text-to-Image Generation"
-  - u: "4klsdb_a_large-scale_dataset_for_4k_image_restoration_and_generation/"
-    t: "4KLSDB: A Large-Scale Dataset for 4K Image Restoration and Generation"
+  - u: "a_self-conditioned_representation_guided_diffusion_model_for_realistic_text-to-l/"
+    t: "A Self-Conditioned Representation Guided Diffusion Model for Realistic Text-to-LiDAR Scene Generation"
   - u: "a_style_is_worth_one_code_unlocking_code-to-style_image_generation_with_discrete/"
     t: "A Style is Worth One Code: Unlocking Code-to-Style Image Generation with Discrete Style Space"
   - u: "a_temporal_and_content_co-awareness_latent_diffusion_for_controllable_hand_image/"
     t: "A Temporal and Content Co-Awareness Latent Diffusion for Controllable Hand Image Generation"
   - u: "a_training-free_style-personalization_via_svd-based_feature_decomposition/"
     t: "A Training-Free Style-Personalization via SVD-Based Feature Decomposition"
+  - u: "accelerating_diffusion_via_hybrid_data-pipeline_parallelism_based_on_conditional/"
+    t: "Accelerating Diffusion via Hybrid Data-Pipeline Parallelism Based on Conditional Guidance Scheduling"
   - u: "adapter_shield_a_unified_framework_with_built-in_authentication_for_preventing_u/"
     t: "Adapter Shield: A Unified Framework with Built-in Authentication for Preventing Unauthorized Zero-Shot Image-to-Image Generation"
   - u: "adaptive_auxiliary_prompt_blending_for_target-faithful_diffusion_generation/"
     t: "Adaptive Auxiliary Prompt Blending for Target-Faithful Diffusion Generation"
   - u: "adaptive_spectral_feature_forecasting_for_diffusion_sampling_acceleration/"
     t: "Adaptive Spectral Feature Forecasting for Diffusion Sampling Acceleration"
+  - u: "advancing_image_classification_with_discrete_diffusion_classification_modeling/"
+    t: "Advancing Image Classification with Discrete Diffusion Classification Modeling"
+  - u: "ae2vid_event-based_video_reconstruction_via_aperture_modulation/"
+    t: "AE2VID: Event-based Video Reconstruction via Aperture Modulation"
   - u: "agentic_retoucher_for_texttoimage_generation/"
     t: "Agentic Retoucher for Text-To-Image Generation"
   - u: "ahs_adaptive_head_synthesis/"
@@ -41,28 +47,20 @@ item_list:
     t: "Align Images Before You Generate"
   - u: "aligning_multi-character_narrative_image_generation_with_multi-aspect_human_pref/"
     t: "Aligning Multi-Character Narrative Image Generation with Multi-Aspect Human Preferences"
-  - u: "alignvar_towards_globally_consistent_visual_autoregression_for_image_super-resol/"
-    t: "AlignVAR: Towards Globally Consistent Visual Autoregression for Image Super-Resolution"
   - u: "all_in_one_slider_attribute_manipulation/"
     t: "All-in-One Slider for Attribute Manipulation in Diffusion Models"
   - u: "anchoring_and_rescaling_attention_for_semantically_coherent_inbetweening/"
     t: "Anchoring and Rescaling Attention for Semantically Coherent Inbetweening"
   - u: "ani3dhuman_photorealistic_3d_human_animation_with_self-guided_stochastic_samplin/"
     t: "Ani3DHuman: Photorealistic 3D Human Animation with Self-guided Stochastic Sampling"
-  - u: "apple_attribute-preserving_pseudo-labeling_for_diffusion-based_face_swapping/"
-    t: "APPLE: Attribute-Preserving Pseudo-Labeling for Diffusion-Based Face Swapping"
   - u: "ar2can_an_architect_and_an_artist_leveraging_a_canvas_for_multi-human_generation/"
     t: "Ar2Can: An Architect and an Artist Leveraging a Canvas for Multi-Human Generation"
-  - u: "as-bridge_a_bidirectional_generative_framework_bridging_next-generation_astronom/"
-    t: "AS-Bridge: A Bidirectional Generative Framework Bridging Next-Generation Astronomical Surveys"
   - u: "attention_may_i_have_your_decision_localizing_generative_choices_in_diffusion_mo/"
     t: "Attention, May I Have Your Decision? Localizing Generative Choices in Diffusion Models"
   - u: "attribute-preserving_pseudo-labeling_for_diffusion-based_face_swapping/"
     t: "Attribute-Preserving Pseudo-Labeling for Diffusion-Based Face Swapping"
   - u: "attribution_as_retrieval_modelagnostic_aigenerated/"
     t: "Attribution as Retrieval: Model-Agnostic AI-Generated Image Attribution"
-  - u: "autodebias_automated_framework_for_debiasing_text-to-image_models/"
-    t: "AutoDebias: An Automated Framework for Detecting and Mitigating Backdoor Biases in Text-to-Image Models"
   - u: "beautygrpo_aesthetic_alignment_for_face_retouching_via_dynamic_path_guidance_and/"
     t: "BeautyGRPO: Aesthetic Alignment for Face Retouching via Dynamic Path Guidance and Fine-Grained Preference Modeling"
   - u: "beyond_fixed_formulas_data-driven_linear_predictor_for_efficient_diffusion_model/"
@@ -75,17 +73,19 @@ item_list:
     t: "Beyond Pixel Simulation: Pathology Image Generation via Diagnostic Semantic Tokens and Prototype Control"
   - u: "beyond_text_prompts_precise_concept_erasure_through_text-image_collaboration/"
     t: "Beyond Text Prompts: Precise Concept Erasure through Text–Image Collaboration"
-item_total: 449
+  - u: "beyond_the_golden_data_resolving_the_motion-vision_quality_dilemma_via_timestep_/"
+    t: "Beyond the Golden Data: Resolving the Motion-Vision Quality Dilemma via Timestep Selective Training"
+item_total: 434
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # 🎨 Image Generation
 
-**📷 CVPR2026** · **449** paper notes
+**📷 CVPR2026** · **434** paper notes
 
 📌 **Same area in other venues:** [🧪 ICML2026 (125)](../../ICML2026/image_generation/index.md) · [💬 ACL2026 (5)](../../ACL2026/image_generation/index.md) · [🔬 ICLR2026 (138)](../../ICLR2026/image_generation/index.md) · [🤖 AAAI2026 (79)](../../AAAI2026/image_generation/index.md) · [🧠 NeurIPS2025 (218)](../../NeurIPS2025/image_generation/index.md) · [📹 ICCV2025 (213)](../../ICCV2025/image_generation/index.md)
 
-🔥 **Top topics:** Diffusion Models ×137 · Text-to-Image ×38 · Alignment/RLHF ×24 · Multimodal/VLM ×22 · Image Editing ×21
+🔥 **Top topics:** Diffusion Models ×137 · Text-to-Image ×35 · Alignment/RLHF ×23 · Image Editing ×21 · Layout & Composition ×20
 
 **[2ndMatch: Finetuning Pruned Diffusion Models via Second-Order Jacobian Matching](2ndmatch_finetuning_pruned_diffusion_models_via_second-order_jacobian_matching.md)**
 
@@ -95,9 +95,9 @@ item_total: 449
 
 :   This paper proposes treating an editable **3D scene as a "spatial scratchpad"** for text-to-image generation. A suite of LLM agents parses text prompts into subject meshes, plans placements/orientations/cameras in 3D, and renders this layout into an image via identity-preserving depth-conditioned generation. It achieves a **32% training-free improvement** in text alignment on GenAI-Bench and supports consistent image updates through simple 3D modifications.
 
-**[4KLSDB: A Large-Scale Dataset for 4K Image Restoration and Generation](4klsdb_a_large-scale_dataset_for_4k_image_restoration_and_generation.md)**
+**[A Self-Conditioned Representation Guided Diffusion Model for Realistic Text-to-LiDAR Scene Generation](a_self-conditioned_representation_guided_diffusion_model_for_realistic_text-to-l.md)**
 
-:   This paper constructs 4KLSDB—a large-scale dataset containing 129,000 **native 4K** ($\geq 3840 \times 2160$, non-upscaled) training images covering multiple categories such as nature, urban, people, food, artwork, and CGI. Through a multi-stage pipeline of "geometric pre-screening $\to$ LMM quality scoring $\to$ edge-texture filtering $\to$ manual double-check," approximately 390,000 candidates were refined into a high-quality subset. It provides paired LR/HR 4K super-resolution benchmarks and image-text pairs. Experiments demonstrate that fine-tuning models such as SwinIR, MambaIR, and Sana on this dataset significantly improves the fidelity and perceptual quality of 4K super-resolution and 4K text-to-image generation.
+:   T2LDM utilizes a "Guidance Network" (SCRG) that provides geometric reconstruction supervision during training but is discarded at inference, along with Directional Positional Encoding (DPE) to correct street distortion from spherical projection. It generates finely structured and controllable LiDAR scenes despite the extreme scarcity of Text-LiDAR pairs, and introduces the controllability benchmark T2nuScenes and the TBR metric.
 
 **[A Style is Worth One Code: Unlocking Code-to-Style Image Generation with Discrete Style Space](a_style_is_worth_one_code_unlocking_code-to-style_image_generation_with_discrete.md)**
 
@@ -111,6 +111,10 @@ item_total: 449
 
 :   Based on the scale-wise autoregressive model Infinity, this work discovers that the **largest singular value component** of the 3rd feature $F_3$ in the generation process specifically encodes style information. Consequently, a training-free approach is proposed to inject the style of a reference image into this feature step using SVD (Principal Feature Blending), while stabilizing the structure via attention maps from a content branch (Structural Attention Correction). This achieves style fidelity comparable to fine-tuning methods in 3.58 seconds, which is up to 195 times faster.
 
+**[Accelerating Diffusion via Hybrid Data-Pipeline Parallelism Based on Conditional Guidance Scheduling](accelerating_diffusion_via_hybrid_data-pipeline_parallelism_based_on_conditional.md)**
+
+:   Addressing the pain points of "sub-linear speedup and quality degradation" in multi-GPU diffusion inference, this paper leverages the inherent "conditional/unconditional dual-path" of Classifier-Free Guidance as the data parallelism splitting dimension (Conditional Partitioning). It then uses a metric for noise discrepancy (rel-MAE) to adaptively determine when to enable pipeline parallelism. On two RTX 3090 GPUs, it achieves 2.31× and 2.07× speedups for SDXL and SD3, respectively, with almost no loss in image quality.
+
 **[Adapter Shield: A Unified Framework with Built-in Authentication for Preventing Unauthorized Zero-Shot Image-to-Image Generation](adapter_shield_a_unified_framework_with_built-in_authentication_for_preventing_u.md)**
 
 :   Aiming at zero-shot image-to-image generation methods like IP-Adapter and InstantID that "clone faces or styles with a single image," this paper proposes Adapter Shield. It utilizes a pair of trainable "encryptor/decryptor" modules to map image encoder embeddings into garbled code based on a password. Multi-objective adversarial perturbations are then used to "anchor" the original image to these garbled embeddings. This causes unauthorized users to generate distorted results, while authorized users with the correct password can decrypt the embeddings for normal use—marking the first unified framework in this field to combine "protection" and "authentication."
@@ -122,6 +126,14 @@ item_total: 449
 **[Adaptive Spectral Feature Forecasting for Diffusion Sampling Acceleration](adaptive_spectral_feature_forecasting_for_diffusion_sampling_acceleration.md)**
 
 :   The authors propose Spectrum, a global spectral-domain feature forecasting method based on Chebyshev polynomials. By treating the intermediate features of the diffusion model denoiser as functions of time and fitting coefficients via ridge regression, it achieves long-range feature forecasting where errors do not accumulate with step size. Spectrum achieves a $4.79 \times$ speedup on FLUX.1 and $4.67 \times$ on Wan2.1-14B with nearly no loss in quality.
+
+**[Advancing Image Classification with Discrete Diffusion Classification Modeling](advancing_image_classification_with_discrete_diffusion_classification_modeling.md)**
+
+:   The authors transform image classification from "one-shot label prediction" into "running a diffusion process in a discrete class label space to approximate the posterior $P(c\mid y)$." By predicting a Concrete Score for iterative denoising, the method outperforms equivalent ResNets on ImageNet with only a few diffusion steps, with the performance gap Widening as input degradation (low resolution / sparse data) increases.
+
+**[AE2VID: Event-based Video Reconstruction via Aperture Modulation](ae2vid_event-based_video_reconstruction_via_aperture_modulation.md)**
+
+:   Addressing the pain points where event-based video reconstruction fails in static regions and suffers from error accumulation when relying solely on sparse motion events, this paper actively modulates the aperture periodically. This "passively triggers" dense events even in static regions, allowing for the resolution of dense intensity reference maps. A dual-network architecture (AENet for aperture events and MENet for bidirectional fusion of motion events) is then used to reconstruct high-speed HDR video, achieving a 27.4% reduction in MSE compared to the SOTA on EvAid.
 
 **[Agentic Retoucher for Text-To-Image Generation](agentic_retoucher_for_texttoimage_generation.md)**
 
@@ -139,10 +151,6 @@ item_total: 449
 
 :   To address the "semantic misalignment, identity confusion, and visual degradation" issues in multi-character narrative image generation, this paper constructs a fine-grained preference dataset, NI-RLHF, containing textual critiques. It trains an explainable reward model, NIReward, which "generates critiques before scoring," and utilizes it to drive the ADPO preference optimization algorithm. This approach aligns the generative model with human preferences across prompt following, identity consistency, and visual quality dimensions.
 
-**[AlignVAR: Towards Globally Consistent Visual Autoregression for Image Super-Resolution](alignvar_towards_globally_consistent_visual_autoregression_for_image_super-resol.md)**
-
-:   Addressing two consistency issues in Visual Autoregression (VAR) for Image Super-Resolution—spatial incoherence caused by local attention bias and cross-scale error accumulation caused by residual supervision—this paper proposes the AlignVAR framework. By synergizing Spatial Consistency Autoregression (SCA) and Hierarchical Consistency Constraint (HCC), the model achieves inference speeds over 10× faster than diffusion-based methods with superior reconstruction quality.
-
 **[All-in-One Slider for Attribute Manipulation in Diffusion Models](all_in_one_slider_attribute_manipulation.md)**
 
 :   The All-in-One Slider framework is proposed, which trains an Attribute Sparse Autoencoder (SAE) on the text embedding space to decouple multiple facial attributes into sparse semantic directions. This enables a single lightweight module to achieve fine-grained continuous control of 52+ attributes, supporting multi-attribute composition and zero-shot manipulation of unseen attributes.
@@ -155,17 +163,9 @@ item_total: 449
 
 :   The Ani3DHuman framework is proposed, combining kinematic-driven mesh animation with video diffusion priors. Through Self-guided Stochastic Sampling, low-quality rigid renderings are restored into high-fidelity videos, achieving realistic modeling of non-rigid clothing dynamics.
 
-**[APPLE: Attribute-Preserving Pseudo-Labeling for Diffusion-Based Face Swapping](apple_attribute-preserving_pseudo-labeling_for_diffusion-based_face_swapping.md)**
-
-:   APPLE proposes a teacher-student framework based on diffusion models. By training a teacher model via conditional deblurring (replacing traditional conditional inpainting) to generate attribute-aligned pseudo-labels, and then training a student model with these high-quality pseudo-labels, it achieves SOTA attribute preservation performance (FID 2.18, Pose Error 1.85) while maintaining robust identity transfer capabilities.
-
 **[Ar2Can: An Architect and an Artist Leveraging a Canvas for Multi-Human Generation](ar2can_an_architect_and_an_artist_leveraging_a_canvas_for_multi-human_generation.md)**
 
 :   Ar2Can proposes decomposing multi-human image generation into two stages: spatial planning (Architect) and identity-preserving rendering (Artist). By utilizing GRPO reinforcement learning combined with a spatial-anchored face reward function based on Hungarian matching to train the Artist model, it achieves an identity preservation score of 68.2 and a count accuracy of 90.2 on the MultiHuman-Testbench, significantly surpassing all baselines.
-
-**[AS-Bridge: A Bidirectional Generative Framework Bridging Next-Generation Astronomical Surveys](as-bridge_a_bidirectional_generative_framework_bridging_next-generation_astronom.md)**
-
-:   The authors propose AS-Bridge, a bidirectional generative framework based on the Brownian Bridge diffusion process. It models the probabilistic conditional distribution between ground-based LSST and space-based Euclid astronomical surveys, enabling cross-survey image translation and rare event detection (strong gravitational lensing). Furthermore, it improves likelihood estimation of the standard Brownian Bridge through an $\epsilon$-prediction training objective.
 
 **[Attention, May I Have Your Decision? Localizing Generative Choices in Diffusion Models](attention_may_i_have_your_decision_localizing_generative_choices_in_diffusion_mo.md)**
 
@@ -178,10 +178,6 @@ item_total: 449
 **[Attribution as Retrieval: Model-Agnostic AI-Generated Image Attribution](attribution_as_retrieval_modelagnostic_aigenerated.md)**
 
 :   The attribution of AI-generated images is redefined from a classification paradigm to an instance retrieval paradigm. A model-agnostic framework, LIDA, based on low-bit plane fingerprints is proposed. Through unsupervised pre-training and few-shot attribution adaptation, SOTA performance in Deepfake detection and image attribution is achieved under zero-shot and few-shot settings.
-
-**[AutoDebias: An Automated Framework for Detecting and Mitigating Backdoor Biases in Text-to-Image Models](autodebias_automated_framework_for_debiasing_text-to-image_models.md)**
-
-:   AutoDebias is proposed as the first unified framework to simultaneously detect and mitigate malicious backdoor biases in T2I models. By leveraging VLM open-set detection to identify trigger-bias associations and constructing lookup tables, combined with CLIP-guided distribution alignment training, it reduces the attack success rate from 90% to near zero across 17 backdoor scenarios while maintaining image quality.
 
 **[BeautyGRPO: Aesthetic Alignment for Face Retouching via Dynamic Path Guidance and Fine-Grained Preference Modeling](beautygrpo_aesthetic_alignment_for_face_retouching_via_dynamic_path_guidance_and.md)**
 
@@ -211,9 +207,9 @@ item_total: 449
 
 :   This paper identifies the "Motion-Vision Quality Dilemma," where motion quality (MQ) and visual quality (VQ) in video data are negatively correlated. Through gradient analysis, it reveals that imbalanced data can produce equivalent learning signals at appropriate timesteps. It proposes the TQD framework, enabling models trained solely on imbalanced data to outperform those trained on "golden data."
 
-**[Bias at the End of the Score: Demographic Biases in Reward Models for T2I](bias_reward_models_t2i.md)**
+**[Bidirectional Normalizing Flow: From Data to Noise and Back](bidirectional_normalizing_flow_from_data_to_noise_and_back.md)**
 
-:   Large-scale demographic bias audit of widely used reward models (PickScore, ImageReward, HPS, etc.) in text-to-image generation reveals that reward-guided optimization disproportionately sexualizes female images, causes demographic convergence toward White individuals, and reward scores correlate with real-world demographic frequency priors.
+:   BiFlow removes the hard constraint in standard Normalizing Flow where the "backward process must be the exact analytical inverse of the forward process." Instead, it trains a separate backward model to **approximate** the inverse mapping (supervised by hidden state alignment). This allows the backward model to utilize a bidirectional attention Transformer, enabling image generation in a single forward pass (1-NFE). On ImageNet 256×256, a small 133M model achieves an FID of 2.39, which is both superior to and two orders of magnitude faster than its autoregressive counterpart, TARFlow.
 
 **[BiFM: Bidirectional Flow Matching for Few-Step Image Editing and Generation](bifm_bidirectional_flow_matching_for_few-step_image_editing_and_generation.md)**
 
@@ -243,9 +239,17 @@ item_total: 449
 
 :   This paper reformulates "generating new concepts" as "image synthesis conditioned on class distributions." Using a lightweight encoder–decoder (DisTok), any class distribution or random latent vector is decoded into "creative tokens" that can be embedded into prompts. This approach unifies controllable conditional exploration and open-ended unconditional exploration, achieving SOTA in text-to-image alignment and human preference for creative generation while being 13–40 times faster than existing methods.
 
+**[Bridging Fidelity-Reality with Controllable One-Step Diffusion for Image Super-Resolution](bridging_fidelity-reality_with_controllable_one-step_diffusion_for_image_super-r.md)**
+
+:   CODSR performs real-world image super-resolution via one-step diffusion: it first utilizes "local noise injection" based on gradient maps to activate generative priors in textured regions, then employs uncompressed LQ features to modulate U-Net intermediate layers for fidelity restoration, and finally constrains cross-attention with noun masks from Grounded-SAM2 for textual alignment. It achieves superior perceptual quality and competitive fidelity across four real-world datasets.
+
 **[C$^2$FG: Control Classifier-Free Guidance via Score Discrepancy Analysis](c2fg_control_classifier-free_guidance_via_score_discrepancy_analysis.md)**
 
 :   This paper utilizes a rigorous upper bound on score discrepancy to prove that "conditional and unconditional distributions converge at an exponential rate during forward diffusion." Based on this, the fixed guidance weight $\omega$ in CFG is replaced with an exponentially decaying time-varying control function $\omega(t)$. This training-free, plug-and-play method further improves FID/IS to SOTA levels across various frameworks including DiT, SiT, Stable Diffusion, and EDM2.
+
+**[CARD: Correlation Aware Restoration with Diffusion](card_correlation_aware_restoration_with_diffusion.md)**
+
+:   CARD generalizes the DDRM diffusion inverse problem solver from the "i.i.d. Gaussian noise" assumption to the "spatially correlated noise" found in real sensors. By applying the inverse square root of the covariance matrix $\Sigma^{-1/2}$ to whiten observations into i.i.d. noise, it performs DDRM closed-form updates in the whitened measurement space. The method is entirely training-free and consistently outperforms existing methods in denoising, deblurring, and super-resolution on both synthetic correlated noise and the newly collected real rolling-shutter dataset CIN-D.
 
 **[CARE-Edit: Condition-Aware Routing of Experts for Contextual Image Editing](care-edit_condition-aware_routing_of_experts_for_contextual_image_editing.md)**
 
@@ -263,10 +267,6 @@ item_total: 449
 
 :   CaTok trains a diffusion autoencoder by binding "selecting 1D tokens within the time interval $[r,t]$" with the "MeanFlow average velocity field objective." This ensures that the compressed 1D visual tokens possess both causality and balance, supporting both fast one-step generation and high-fidelity multi-step reconstruction. It achieves 0.75 rFID / 22.53 PSNR / 0.674 SSIM on ImageNet reconstruction with fewer training epochs.
 
-**[Causal Motion Diffusion Models for Autoregressive Motion Generation](causal_motion_diffusion_models_for_autoregressive_motion_generation.md)**
-
-:   The CMDM framework is proposed, which unifies diffusion denoising and autoregressive generation within a motion-language-aligned causal latent space. By employing frame-level independent noise levels and a causal uncertainty sampling schedule, it achieves high-quality, low-latency text-to-motion generation and long-sequence streaming synthesis.
-
 **[CFG-Ctrl: Control-Based Classifier-Free Diffusion Guidance](cfg-ctrl_control-based_classifier-free_diffusion_guidance.md)**
 
 :   Reinterprets Classifier-Free Guidance (CFG) as a feedback control process within flow-matching diffusion models, proposes a unified framework CFG-Ctrl, and designs a nonlinear feedback guidance mechanism SMC-CFG based on Sliding Mode Control (SMC). This approach significantly enhances semantic consistency and generation robustness at large guidance scales.
@@ -274,10 +274,6 @@ item_total: 449
 **[CG-Floor: Centroid-Guided Diffusion for Large-Scale Floorplan Generation](cg-floor_centroid-guided_diffusion_for_large-scale_floorplan_generation.md)**
 
 :   CG-Floor employs a "locate-then-draw" hierarchical framework for large-scale floorplan generation: first, a Graph Transformer predicts centroids and sizes of all rooms simultaneously, encoded as a "Size-Aware Semantic Centroid Heatmap" (SASCH) to anchor the global topology; then, a VQ-VAE codebook and a Vector Quantized Diffusion Transformer draw non-Manhattan (non-rectangular) room shapes guided by the SASCH. It reduces the FID from 79.7 to 16.0 on the large-scale MSD dataset.
-
-**[ChangeBridge: Spatiotemporal Image Generation with Multimodal Controls for Remote Sensing](changebridge_spatiotemporal_image_generation_with_multimodal_controls_for_remote.md)**
-
-:   Ours proposes ChangeBridge, the first conditional spatiotemporal image generation model for remote sensing. Based on asymmetrically drifting diffusion bridges, it generates post-event images from pre-event images and multimodal conditions (coordinate-text/semantic masks/instance layouts), simultaneously modeling foreground event-driven changes and background temporal evolution, while serving as a data engine for downstream change detection tasks.
 
 **[ChArtist: Generating Pictorial Charts with Unified Spatial and Subject Control](chartist_generating_pictorial_charts_with_unified_spatial_and_subject_control.md)**
 
@@ -330,10 +326,6 @@ item_total: 449
 **[Correspondence-Attention Alignment for Multi-View Diffusion Models](correspondence-attention_alignment_for_multi-view_diffusion_models.md)**
 
 :   The authors reveal that 3D self-attention in multi-view diffusion models spontaneously learns "cross-view geometric correspondence" in deep layers, but this signal degrades under large viewpoint changes. Based on this, they propose CAMEO—a method that directly supervises a **single deep attention layer** with geometric correspondence maps. This approach doubles convergence speed, improves novel view synthesis quality, and is universal across different multi-view diffusion models.
-
-**[COT-FM: Cluster-wise Optimal Transport Flow Matching](cot-fm_cluster-wise_optimal_transport_flow_matching.md)**
-
-:   Ours proposes COT-FM, a plug-and-play enhancement framework for Flow Matching. By clustering target samples, inverting the pre-trained model to obtain cluster-wise source distributions, and approximating optimal transport within each cluster, it significantly straightens the transport paths. This simultaneously accelerates sampling and improves generation quality without modifying the model architecture.
 
 **[CRAFT-LoRA: Content-Style Personalization via Rank-Constrained Adaptation and Training-Free Fusion](craft-lora_content-style_personalization_via_rank-constrained_adaptation_and_tra.md)**
 
@@ -395,10 +387,6 @@ item_total: 449
 
 :   DDT splits the traditional "decoder-only" Diffusion Transformer into a dedicated condition encoder for semantic extraction and a dedicated velocity decoder for velocity field regression. This decouples the optimization conflict between "semantic encoding" and "high-frequency decoding." It achieves a 1.31 FID on ImageNet 256×256 in only 256 epochs (approximately 4× faster than REPA) and further accelerates inference by nearly 3× by leveraging dynamic programming to share highly similar self-conditions across adjacent steps.
 
-**[Decision Boundary-aware Generation for Long-tailed Learning](decision_boundary-aware_generation_for_long-tailed_learning.md)**
-
-:   Aiming at the problem where using "diffusion models + head-to-tail feature transfer" to supplement long-tail data implicitly leaks head-class features into tail-classes and blurs decision boundaries, this paper first quantifies "boundary ambiguity" using three metrics. It then proposes DBG: using adversarial de-classification noise to push samples near the decision boundary and relabeling them with the $k$ most confusable classes, followed by a classifier-driven dual-path cleaning to discard harmful samples. On CIFAR-LT, DBG consistently reduces inter-class overlap and improves tail-class and overall accuracy for all generative baselines.
-
 **[DeCo: Frequency-Decoupled Pixel Diffusion for End-to-End Image Generation](deco_frequency-decoupled_pixel_diffusion_for_end-to-end_image_generation.md)**
 
 :   DeCo proposes a frequency-decoupled pixel diffusion framework that utilizes a lightweight pixel decoder to process high-frequency details, allowing the DiT to focus on low-frequency semantic modeling. Combined with a frequency-aware flow matching loss, it achieves FID scores of 1.62 (256) and 2.22 (512) on ImageNet, narrowing the gap between pixel-space and latent-space diffusion.
@@ -410,10 +398,6 @@ item_total: 449
 **[Denoising, Fast and Slow: Difficulty-Aware Adaptive Sampling for Image Generation](denoising_fast_and_slow_difficulty-aware_adaptive_sampling_for_image_generation.md)**
 
 :   Diffusion/flow matching models typically use a single timestep for all patches and distribute computation uniformly. This paper proposes **Patch Forcing (PF)**: assign independent noise levels to each patch during training and learn a lightweight "patch difficulty head." This allows confident (easy) regions to denoise first, providing "future" context for uncertain (difficult) regions. Combined with two difficulty-aware samplers, it reduces the FID of SiT on ImageNet 256² from 17.2 to 9.8 (XL/2, fixed computation).
-
-**[Depth Adaptive Efficient Visual Autoregressive Modeling](depthvar_depth_adaptive_var.md)**
-
-:   Reveals the fundamental limitations of frequency-driven hard pruning paradigms in VAR models and proposes DepthVAR, a training-free inference acceleration framework. By adaptively allocating the Transformer layer computation depth for each token (rather than binary keep/prune), it achieves 2.3×-3.1× speedup with minimal quality loss.
 
 **[Design Your Ad: Personalized Advertising Image and Text Generation with Unified Autoregressive Models](design_your_ad_personalized_advertising_image_and_text_generation_with_unified_a.md)**
 
@@ -511,10 +495,6 @@ item_total: 449
 
 :   The EDA framework is proposed to extend the design space of EDM from pure Gaussian noise to arbitrary noise patterns. Flexible noise diffusion is achieved through SDEs driven by multivariate Gaussian distributions and multiple independent Wiener processes, proving that increased noise complexity introduces no additional sampling overhead. With only 5 sampling steps, it achieves performance comparable to or better than 100-step Refusion and specialized methods on MRI bias field correction, CT metal artifact removal, and natural image shadow removal.
 
-**[Editing Away the Evidence: Diffusion-Based Image Manipulation and the Failure Modes of Robust Watermarking](editing_away_the_evidence_diffusion-based_image_manipulation_and_the_failure_mod.md)**
-
-:   This paper provides a unified theoretical and experimental analysis of how non-adversarial diffusion editing inadvertently destroys robust invisible watermarks. It derives bounds for watermark SNR decay and mutual information attenuation, and validates the systematic failure of watermark recovery across scenarios such as instructed editing, drag-based editing, and training-free synthesis.
-
 **[EditMGT: Unleashing Potentials of Masked Generative Transformers in Image Editing](editmgt_unleashing_potentials_of_masked_generative_transformers_in_image_editing.md)**
 
 :   EditMGT is the first instruction-based image editing model built on Masked Generative Transformers (MGT). By leveraging the "token-by-token flipping" local decoding characteristic of MGT, it employs multi-layer attention aggregation to localize editing regions and uses region-preserving sampling to revert tokens in low-attention areas back to the original image. This mechanism inherently eliminates "editing leakage" common in diffusion models. With only 960M parameters, it achieves SOTA image similarity across four benchmarks and is 6× faster than comparable models.
@@ -526,6 +506,10 @@ item_total: 449
 **[Efficient and Training-Free Single-Image Diffusion Models](efficient_and_training-free_single-image_diffusion_models.md)**
 
 :   By treating "all patches within a single image" as a finite dataset, it is demonstrated that the denoising score on this dataset has an analytical closed-form solution (a weighted denoiser similar to non-local-means). This transforms single-image diffusion models into a completely **training-free** process—matching or exceeding the quality and diversity of SinDDM/SinFusion which require hours of training, while enabling the generation of megapixel images in seconds and gigapixel images in minutes.
+
+**[Efficient Real-Time Raw-to-Raw Denoising for Extreme Low-Light Ultra HD Video on Mobile Devices](efficient_real-time_raw-to-raw_denoising_for_extreme_low-light_ultra_hd_video_on.md)**
+
+:   To address the challenge of high noise in 4K/8K videos captured by mobile phones under extreme low-light ($<1$lx) while meeting strict constraints of $<33$ms latency and $<250$mA power consumption, this Samsung paper presents an end-to-end engineering solution ranging from "Mixed Dataset Construction → Lightweight mRLFB Denoising Network → Distillation/Re-parameterization/Quantization Optimization." It develops a real-time denoiser that can be directly integrated into commercial ISP pipelines (raw-in/raw-out, preserving CFA), running at 4K@30fps on Snapdragon NPUs with PSNR comparable to heavy SOTA models but with latency and power consumption reduced by an order of magnitude.
 
 **[Efficient Weighted Sampling via Score-based Generative Models](efficient_weighted_sampling_via_score-based_generative_models.md)**
 
@@ -547,9 +531,9 @@ item_total: 449
 
 :   EmoStyle proposes the new task of "Affective Image Stylization (AIS)"—rendering a content image into an artistic style that evokes a target emotion using only a single emotion word (e.g., "fear", "awe"). This is achieved via an emotion-content reasoner that fuses emotion and content into style queries, and a style quantizer that discretizes continuous features into "per-emotion" style codebooks, improving the Emo-A metric from ~24% to 33.36%.
 
-**[Enhancing Image Aesthetics with Dual-Conditioned Diffusion Models Guided by Multimodal Perception](enhancing_image_aesthetics_with_dualconditioned_di.md)**
+**[EMR-Diff: Edge-aware Multimodal Residual Diffusion Model for Hyperspectral Image Super-resolution](emr-diff_edge-aware_multimodal_residual_diffusion_model_for_hyperspectral_image_.md)**
 
-:   DIAE proposes a Multimodal Aesthetic Perception (MAP) module to convert vague aesthetic instructions into explicit control signals (HSV + contour + text). It constructs an "imperfectly-paired" dataset IIAEData for weakly-supervised training with a dual-branch framework, achieving content-consistent enhancement with a 17.4% LAION aesthetic score improvement.
+:   EMR-Diff reformulates the fusion task of "Low-Resolution Hyperspectral Image (LR-HSI) + High-Resolution Multispectral Image (HR-MSI)" into "High-Resolution Hyperspectral Image (HR-HSI)" as a diffusion process. By transferring **multimodal residuals** instead of pure Gaussian noise between the start and end of the Markov chain, the sampling steps are reduced from thousands to 5. Furthermore, edge information from the HR-MSI is used to **modulate the noise**, forcing the model to focus on reconstructing high-frequency details. Combined with a dual-branch BAF-UNet, it outperforms over 10 SOTA methods across metrics like PSNR and SAM on the ICVL, Harvard, and Chikusei datasets.
 
 **[Enhancing Spatial Understanding in Image Generation via Reward Modeling](enhancing_spatial_understanding_in_image_generation_via_reward_modeling.md)**
 
@@ -562,14 +546,6 @@ item_total: 449
 **[Evaluating Generative Models via One-Dimensional Code Distributions](evaluating_generative_models_via_one-dimensional_code_distributions.md)**
 
 :   The evaluation of generative models is shifted from "continuous recognition features" to "discrete visual tokens." By using a 1D tokenizer to quantize images into token sequences, the authors design a training-free distribution distance (CHD) and a self-supervised no-reference quality score (CMMS). Both achieve state-of-the-art correlation with human judgment across multiple preference benchmarks.
-
-**[Evaluating Reasoning Fidelity in Visual Text Generation](evaluating_reasoning_fidelity_in_visual_text_generation.md)**
-
-:   This is a diagnostic evaluation study: while modern T2I models can render text clearly and aesthetically, the authors investigate whether these models retain the reasoning capabilities of text models when the complete reasoning process must be externalized as visual text. Through a hierarchical evaluation protocol of "filter rendering, then test reasoning," it was discovered that even when text is rendered perfectly, T2I models frequently produce logically inconsistent results and incorrect intermediate steps, revealing a massive reasoning fidelity gap compared to pure-text LLMs.
-
-**[EVATok: Adaptive Length Video Tokenization for Efficient Visual Autoregressive Generation](evatok_adaptive_length_video_tokenization_for_eff.md)**
-
-:   The EVATok framework is proposed, featuring a three-step pipeline—optimal token allocation estimation, a lightweight router, and adaptive tokenizer training. This allows the video tokenizer to adaptively allocate token lengths based on clip complexity, saving over 24.4% of tokens while achieving SOTA generation quality on UCF-101.
 
 **[Exploring Conditions for Diffusion Models in Robotic Control](exploring_conditions_for_diffusion_models_in_robotic_control.md)**
 
@@ -635,6 +611,10 @@ item_total: 449
 
 :   Addressing the issue in real-time video generation where "denoising is fast enough, but convolutional decoders have become the bottleneck," FlashDecoder uses a pure Transformer decoder to decode latents into pixels **frame-by-frame**. By looking only at the recent $W_{\text{frm}}$ frames via a fixed-length rolling KV cache, it achieves constant latency and bounded memory regardless of video length. On 1080p, it matches convolutional decoder reconstruction quality (41.55 vs. 41.49 dB PSNR) while being 3.6×–4.7× faster in throughput and saving up to 11× memory.
 
+**[Flow Map Distillation Without Data](flow_map_distillation_without_data.md)**
+
+:   Conventional methods for distilling pretrained flow/diffusion teachers into "one-step" flow maps require sampling from external datasets, which this paper identifies as causing **Teacher-Data Mismatch** (where the data distribution differs from the teacher's true generation distribution). This work proposes sampling **exclusively from the prior noise** and using a "predictor-corrector" dual objective to keep the student on the teacher's vector field. This approach achieves FID scores of 1.45 and 1.49 on ImageNet 256/512 with a 1-NFE student, outperforming all data-based distillation baselines.
+
 **[Flow Matching for Multimodal Distributions](flow_matching_for_multimodal_distributions.md)**
 
 :   When adopting a vision foundation model (DINOv2-B) as a tokenizer, the latent space naturally exhibits a multimodal "union of manifolds" structure. This paper uses a Gaussian Mixture Model (GMM) fitted to the target distribution as the source distribution and performs data pairing based on the "nearest mode" (mode coupling). This ensures that probability mass is transported locally, accelerating flow matching training convergence by 30×, reducing sampling steps to 1/5, and achieving FID=2.74 on unconditional ImageNet256 generation (80 epochs).
@@ -675,10 +655,6 @@ item_total: 449
 
 :   This paper observes the intrinsic link between image layer decomposition and image inpainting/outpainting tasks. It proposes the Outpaint-and-Remove method, which efficiently adapts a pre-trained inpainting DiT model (FLUX.1-Fill-dev) into a layer decomposition model via lightweight LoRA fine-tuning. By introducing a multimodal context fusion module to preserve details and using only 100,000 synthetic training samples, it achieves SOTA performance.
 
-**[From Navigation to Refinement: Revealing the Two-Stage Nature of Flow-based Diffusion Models through Oracle Velocity](from_navigation_to_refinement_revealing_the_two-stage_nature_of_flow-based_diffu.md)**
-
-:   This paper derives a **closed-form oracle solution** for the marginal velocity field of rectified flow under Gaussian priors and finite datasets. Using this, it reveals that the training objective of flow-based diffusion models naturally splits into a "Navigation Stage" (early, guided by a mixture of data modes, responsible for global layout/generalization) and a "Refinement Stage" (late, dominated by a single nearest-neighbor sample, responsible for details/memorization). This two-stage perspective provides a unified explanation for why empirical techniques like timestep shifting, CFG intervals, and latent space designs are effective.
-
 **[From Scale to Speed: Adaptive Test-Time Scaling for Image Editing](from_scale_to_speed_adaptive_test-time_scaling_for_image_editing.md)**
 
 :   Addressing the issue that T2I-oriented Image-CoT wastes computational power when directly applied to image editing, this paper proposes ADE-CoT. It dynamically allocates sampling budgets based on editing difficulty, replaces generic MLLM scoring with specialized "edit region + instruction consistency" verifiers for early pruning, and employs a depth-first "stop when sufficient" mechanism to eliminate redundant sampling. ADE-CoT achieves better image quality while accelerating inference by over 2× compared to Best-of-N across three SOTA editing models.
@@ -715,10 +691,6 @@ item_total: 449
 
 :   GenColorBench is the first benchmark to systematically evaluate the "color accuracy" of text-to-image (T2I) models. It constructs 44,000 prompts across five color tasks using ISCC-NBS / CSS3-X11 color systems and RGB/hex values. By employing an evaluation pipeline based on "Color Science dominant colors + $\Delta E$" that does not rely on VLMs, the study reveals that current SOTA models are generally weak in precise color control (failing to exceed 50% accuracy in most tasks).
 
-**[Generative Anonymization in Event Streams](generative_anonymization_in_event_streams.md)**
-
-:   Addressing the privacy vulnerability where facial identities can be reconstructed from event streams via E2V models, this paper proposes the first **generative anonymization** pipeline for event streams. It projects asynchronous events into grayscale frames, replaces faces with synthetic identities using off-the-shelf RGB face-swapping models, and projects them back to the event domain via V2E. This approach eliminates original identity while preserving the spatio-temporal structure required for downstream perception.
-
 **[GeoRelight: Learning Joint Geometrical Relighting and Reconstruction with Flexible Multi-Modal Diffusion Transformers](georelight_learning_joint_geometrical_relighting_and_reconstruction_with_flexibl.md)**
 
 :   GeoRelight integrates "portrait relighting" and "3D geometric reconstruction" into a single multi-modal Diffusion Transformer for **joint denoising**. By utilizing iNOD—a VAE-friendly, distortion-free depth representation that enables 3D geometry to enter the latent space—and a mixed training strategy combining synthetic and auto-labeled real data to bridge the sim-to-real gap, the model produces photorealistic relighting, intrinsic albedo, surface normals, and high-fidelity 3D shapes from a single image. It outperforms specialized SOTA methods across relighting, geometry, and intrinsic estimation tasks.
@@ -730,6 +702,10 @@ item_total: 449
 **[GlyphPrinter: Region-Grouped Direct Preference Optimization for Glyph-Accurate Visual Text Rendering](glyphprinter_region-grouped_direct_preference_optimization_for_glyph-accurate_vi.md)**
 
 :   Ours proposes GlyphPrinter, which significantly improves glyph accuracy in visual text rendering without relying on an explicit reward model by constructing the region-level glyph preference dataset GlyphCorrector and the Region-Grouped DPO (R-GDPO) objective function, while introducing inference-time Regional Reward Guidance for controllable generation.
+
+**[Goal-Driven Reward by Video Diffusion Models for Reinforcement Learning](goal-driven_reward_by_video_diffusion_models_for_reinforcement_learning.md)**
+
+:   The GenReward framework is proposed to utilize pre-trained video diffusion models for generating goal-conditioned videos. It guides reinforcement learning agents through two-tier goal-driven reward signals at the video and frame levels, significantly outperforming baselines on Meta-World robotic manipulation tasks without manual reward function design.
 
 **[gQIR: Generative Quanta Image Reconstruction](gqir_generative_quanta_image_reconstruc_tion.md)**
 
@@ -771,13 +747,13 @@ item_total: 449
 
 :   Addressing the issue that "diffusion models trained with token sparsity barely respond to CFG," this paper proposes Sparse Guidance (SG). During inference, two conditional predictions are computed using different token sparsity rates—one strong and one weak. The "capacity gap" between them replaces the unconditional branch in CFG to guide the generation. Without any dense fine-tuning, it achieves a 1.58 FID on ImageNet-256 while saving 25% FLOPs, proving equally effective on 2.5B text-to-image models.
 
-**[HAM: A Training-Free Style Transfer Approach via Heterogeneous Attention Modulation for Diffusion Models](ham_a_training-free_style_transfer_approach_via_heterogeneous_attention_modulati.md)**
-
-:   This paper proposes HAM, a training-free style transfer method that achieves high-quality results without sacrificing content identity. It implements heterogeneous modulation (GAR+LAT) on self-attention and cross-attention within diffusion models, combined with style-injected noise initialization, achieving state-of-the-art (SOTA) performance across multiple metrics.
-
 **[Harmonic Canvas: Inversion-Free Editing for Visually-Guided Music Style Transfer](harmonic_canvas_inversion-free_editing_for_visually-guided_music_style_transfer.md)**
 
 :   This paper treats "image atmosphere" as a third conditioning modality for music style, proposing a multimodal music style transfer framework based on inversion-free flow editing. Visual and textual cues are injected into an audio DiT backbone via a CLIP+ViT dual encoder with cross-adapters. A differentiable normalized chroma constraint is used to "pull back" the pitch structure along the flow trajectory, effectively preserving the source melody while allowing large-scale style changes. Indicators such as FAD and IMSM comprehensively outperform existing text- or audio-conditioned methods.
+
+**[Harmony: Harmonizing Audio and Video Generation through Cross-Task Synergy](harmony_harmonizing_audio_and_video_generation_through_cross-task_synergy.md)**
+
+:   Harmony co-trains the joint generation task with two unidirectional auxiliary tasks using **clean signals** (audio-driven video and video-driven audio). By incorporating a decoupled interaction module that separates coarse style from fine-grained temporal alignment, alongside SyncCFG—which utilizes "silence/stillness" as negative anchors to amplify synchronization signals—Harmony achieves the first stable open-source breakthrough in precise lip-sync and motion-sound correspondence, outperforming Ovi and UniVerse-1.
 
 **[Heterogeneous Decentralized Diffusion Models](heterogeneous_decentralized_diffusion_models.md)**
 
@@ -807,13 +783,17 @@ item_total: 449
 
 :   This paper proposes **HP-Edit**, a human-preference post-training framework for image editing. It fine-tunes a VLM-based automatic scorer, **HP-Scorer**, using a small amount of human-scored data to construct preference datasets and serve as a reward model. Through online Flow-GRPO post-training, pre-trained editing models (e.g., Qwen-Image-Edit-2509) are aligned with human preferences. The authors also release the RealPref-50K dataset and RealPref-Bench benchmark.
 
+**[Identity-Preserving Image-to-Video Generation via Reward-Guided Optimization](identity-preserving_image-to-video_generation_via_reward-guided_optimization.md)**
+
+:   This paper proposes IPRO, which directly optimizes video diffusion models using reinforcement learning and a differentiable facial identity scorer. Without modifying the model architecture, it significantly improves facial identity consistency in image-to-video generation, achieving a 20%-45% increase in FaceSim on Wan 2.2.
+
+**[IDperturb: Enhancing Variation in Synthetic Face Generation via Angular Perturbations](idperturb_enhancing_variation_in_synthetic_face_generation_via_angular_perturbat.md)**
+
+:   Proposes IDperturb, a geometric sampling strategy that performs angular perturbations on identity embeddings on the unit hypersphere. It significantly enhances the intra-class diversity of synthetic face datasets without modifying generative models, thereby improving downstream face recognition performance.
+
 **[Image Diffusion Preview with Consistency Solver](image_diffusion_preview_with_consistency_solver.md)**
 
 :   This paper proposes the Diffusion Preview paradigm and ConsistencySolver—a lightweight high-order ODE solver trained via reinforcement learning. It generates high-quality preview images during low-step sampling while ensuring consistency with full-step outputs. It achieves an FID comparable to Multistep DPM-Solver with 47% fewer steps and reduces user interaction time by nearly 50%.
-
-**[Image Generation as a Visual Planner for Robotic Manipulation](image_generation_as_a_visual_planner_for_robotic_manipulation.md)**
-
-:   A pre-trained image generation model (DiT) is adapted via LoRA fine-tuning as a visual planner for robotic manipulation. By generating temporally coherent manipulation sequences in the form of $3 \times 3$ grid images, it supports both text-conditioned and trajectory-conditioned control modes.
 
 **[Imagine Before Concentration: Diffusion-Guided Registers Enhance Partially Relevant Video Retrieval](imagine_before_concentration_diffusion-guided_registers_enhance_partially_releva.md)**
 
@@ -847,17 +827,9 @@ item_total: 449
 
 :   This work distills the editing capabilities of a single-image instruction editor (InstructPix2Pix) into a pre-trained multi-view diffusion model (SEVA) via Score Distillation Sampling (SDS). The latter's data-driven 3D prior serves as an "integrator," enabling consistent cross-view image editing even with only a few sparse views.
 
-**[InterEdit: Navigating Text-Guided Multi-Human 3D Motion Editing](interedit_navigating_textguided_multihuman_3d_moti.md)**
-
-:   This work defines the task of text-guided multi-human 3D motion editing (TMME) for the first time. It constructs the InterEdit3D dataset containing 5,161 source-target-instruction triplets and proposes the InterEdit conditional diffusion model. By using semantic-aware planning tokens to capture high-level editing intentions and interaction-aware frequency tokens to model periodic interaction dynamics, the model outperforms four baselines in instruction following (g2t R@1 30.82%) and source preservation (g2s R@1 17.08%).
-
 **[Interpretable and Steerable Concept Bottleneck Sparse Autoencoders](interpretable_and_steerable_concept_bottleneck_sparse_autoencoders.md)**
 
 :   This work reveals that a majority of neurons (~81%) in Sparse Autoencoders (SAEs) suffer from insufficient interpretability or steerability. It proposes the CB-SAE framework—by pruning low-utility SAE neurons and integrating a concept bottleneck module, it improves interpretability by +32.1% and steerability by +14.5% in LVLM and image generation tasks, respectively.
-
-**[Intra-finger Variability of Diffusion-based Latent Fingerprint Generation](intra_finger_variability_of_diffusion_based_latent_fingerprint_generation.md)**
-
-:   This paper systematically evaluates the intra-finger variability of fingerprints synthesized by diffusion models. By constructing a latent fingerprint style library containing 40 surfaces and 15 processing techniques, the authors enhance generation diversity and quantify the local/global identity inconsistencies introduced during the generation process.
 
 **[Intrinsic Concept Extraction Based on Compositional Interpretability](intrinsic_concept_extraction_based_on_compositional_interpretability.md)**
 
@@ -943,6 +915,10 @@ item_total: 449
 
 :   LoFA uses a hypernetwork to directly predict "full, uncompressed" personalized LoRA weights within seconds. It first identifies structured "response map" patterns in the changes of LoRA relative to base model weights. Then, it utilizes a two-stage hypernetwork to predict these response maps first, followed by utilizing them to guide the prediction of final LoRA weights. This allows it to meet or even exceed the performance of traditional LoRA, which requires hours of per-instance fine-tuning, across various conditions such as text, pose, style, and faces.
 
+**[Low-Rank Residual Diffusion Models](low-rank_residual_diffusion_models.md)**
+
+:   LRDM identifies that in "near-domain image restoration" (tasks where source and target domains are already highly similar, such as deraining, deblurring, or deshadowing), degradation residuals are inherently low-rank. Consequently, it constrains the forward diffusion process within a low-rank residual subspace while maintaining the reverse process as full-rank. By adaptively adjusting the rank across time steps, the model theoretically tightens the variational lower bound and achieves superior restoration fidelity with fewer sampling steps.
+
 **[Low-Resolution Editing is All You Need for High-Resolution Editing](low-resolution_editing_is_all_you_need_for_high-resolution_editing.md)**
 
 :   ScaleEdit introduces the first formalization of high-resolution image editing. It achieves high-quality editing at 2K or even 8K resolution via test-time optimization by learning a $1 \times 1$ convolutional transfer function in the intermediate feature space of pre-trained generative models to inject fine-grained textures from the source image, combined with a Blended-Tweedie-based patch synchronization strategy to ensure global consistency.
@@ -950,10 +926,6 @@ item_total: 449
 **[LumiX: Structured and Coherent Text-to-Intrinsic Generation](lumix_structured_and_coherent_text-to-intrinsic_generation.md)**
 
 :   LumiX proposes the new task of "text-to-intrinsic" generation based on the FLUX diffusion model: generating a set of pixel-aligned intrinsic maps (color, albedo, irradiance, depth, normals) from a single text prompt. It achieves this through two key designs: **Query-Broadcast Attention**, which broadcasts the color branch query to all intrinsic maps to ensure structural consistency, and **Tensor LoRA**, which efficiently models cross-map relationships via tensor decomposition. LumiX achieves a 23% higher alignment score than the SOTA and improves preference scores from -0.41 to 0.19, while the same framework can be reversed for image-conditioned intrinsic decomposition.
-
-**[MAGIC: Few-Shot Mask-Guided Anomaly Inpainting with Prompt Perturbation, Spatially Adaptive Guidance, and Context Awareness](magic_few-shot_mask-guided_anomaly_inpainting_with_prompt_perturbation_spatially.md)**
-
-:   The MAGIC framework is proposed to generate high-fidelity, diverse, and spatially plausible industrial anomaly images under few-shot conditions. By fine-tuning an inpainting diffusion model and integrating three complementary modules—Gaussian Prompt Perturbation (GPP), Mask-Guided Spatial Noise Injection (MGNI), and Context-Aware Mask Alignment (CAMA)—it achieves SOTA performance on MVTec-AD downstream tasks.
 
 **[MagicFuse: Single Image Fusion for Visual and Semantic Reinforcement](magicfuse_single_image_fusion_for_visual_and_semantic_reinforcement.md)**
 
@@ -1011,10 +983,6 @@ item_total: 449
 
 :   Autoregressive (AR) image generators model sequences token-by-token causally, looking only at the "next token," which leads to disordered global structures and slow convergence. This paper proposes Mirai, which introduces an additional "foresight" signal during training. It aligns the intermediate layer representations of the AR model on a **2D grid** with the representations of future tokens (either explicit foresight Mirai-E from EMA or implicit foresight Mirai-I from a frozen bidirectional DINOv2 encoder). Without altering the architecture or increasing inference overhead, it accelerates the convergence of LlamaGen-B by up to 10× and reduces the FID from 5.34 to 4.34.
 
-**[Mitigating Memorization in Text-to-Image Diffusion via Region-Aware Prompt Augmentation and Multimodal Copy Detection](mitigating_memorization_in_texttoimage_diffusion_v.md)**
-
-:   This paper proposes two complementary modules: Region-Aware Prompt Augmentation (RAPTA) for training and Attention-Driven Multimodal Copy Detection (ADMCD). The former mitigates memorization of training data by generating semantically grounded prompt variants via object detector proposals during training. The latter achieves training-free copy detection and classification by fusing patch-level, CLIP, and texture features. On LAION-10k, these methods reduce the copy rate from 7.4% to 2.6%.
-
 **[Mixture of States: Routing Token-Level Dynamics for Multimodal Generation](mixture_of_states_routing_token-level_dynamics_for_multimodal_generation.md)**
 
 :   Proposes Mixture of States (MoS)—a multimodal fusion paradigm based on learnable token-level sparse routing, enabling visual tokens to adaptively select hidden states from any layer of the text encoder at each denoising step. This allows 3-5B parameter models to match or exceed the performance of 20B-class models.
@@ -1059,10 +1027,6 @@ item_total: 449
 
 :   NAMI partitions the rectified flow of text-to-image generation into multiple time windows based on resolution. Low-resolution stages utilize fewer Transformer layers to rapidly construct layouts, while high-resolution stages gradually stack layers for detail refinement. A learnable BridgeFlow module aligns distributions between adjacent stages. At a 2B parameter scale, it reduces inference time for $1024 \times 1024$ images by 64% while maintaining quality comparable to state-of-the-art models.
 
-**[NanoSD: Edge Efficient Foundation Model for Real Time Image Restoration](nanosd_edge_efficient_foundation_model_for_real_time_image_restoration.md)**
-
-:   NanoSD is proposed as a family of Pareto-optimal lightweight diffusion foundation models (130M–315M parameters, fastest 12ms inference) constructed through hardware-aware U-Net decomposition, block-wise feature distillation, and multi-objective Bayesian optimization. It serves as a drop-in backbone achieving SOTA performance in tasks such as super-resolution, face restoration, deblurring, and monocular depth estimation.
-
 **[Neighbor-Aware Localized Concept Erasure in Text-to-Image Diffusion Models](neighbor-aware_localized_concept_erasure_in_text-to-image_diffusion_models.md)**
 
 :   Ours proposes NLCE, a training-free three-stage concept erasure framework. It achieves precise localized erasure of target concepts while explicitly preserving semantically proximal concepts through spectrally weighted representation modulation, attention-guided spatial gating, and gated feature scrubbing. NLCE outperforms existing methods on Oxford Flowers, Stanford Dogs, celebrity identities, and sensitive content erasure tasks.
@@ -1071,17 +1035,13 @@ item_total: 449
 
 :   This paper reinterprets SDE-based GRPO as distance optimization/contrastive learning and proposes Neighbor GRPO. It completely bypasses SDE conversion by constructing neighborhood candidate trajectories through perturbed ODE initial noise and implements policy gradient optimization via a softmax distance proxy policy, thereby preserving all advantages of deterministic ODE sampling.
 
-**[NI-Tex: Non-isometric Image-based Garment Texture Generation](ni-tex_non-isometric_image-based_garment_texture_generation.md)**
-
-:   Ours proposes the NI-Tex framework, which achieves high-quality PBR texture generation from a single image to a 3D garment under non-isometric conditions using a feed-forward architecture. This is accomplished by constructing a 3D Garment Videos dataset, image-editing-based cross-topology augmentation, and an uncertainty-guided iterative baking algorithm.
-
 **[Not All Birds Look The Same: Identity-Preserving Generation For Birds](not_all_birds_look_the_same_identity-preserving_generation_for_birds.md)**
 
 :   Addressing the lack of "multi-view images of the same individual" for fine-grained birds, this paper constructs a benchmark (NABLA) of 4,759 "look-alike" bird pairs using expert annotations from NABirds. It proposes using "same species / age / sex / breeding stage" as identity proxies to train controllable diffusion models like OminiControl and Insert Anything, achieving an approximately 41% reduction in MSE compared to baselines and demonstrating generalization to unseen species.
 
-**[OARS: Process-Aware Online Alignment for Generative Real-World Image Super-Resolution](oars_process-aware_online_alignment_for_generative_real-world_image_super-resolu.md)**
+**[NOVA: Sparse Control, Dense Synthesis for Pair-Free Video Editing](nova_sparse_control_dense_synthesis_for_pair-free_video_editing.md)**
 
-:   The authors propose the OARS framework, which utilizes an MLLM-based process-aware reward model named COMPASS and progressive online reinforcement learning (cold start → reference-based RL → reference-free RL). This systematically addresses the human preference alignment problem in generative real-world image super-resolution for the first time, significantly enhancing perceptual quality while maintaining fidelity.
+:   NOVA is proposed, formalizing the "Sparse Control, Dense Synthesis" paradigm for video editing for the first time: the sparse branch provides semantic guidance from multiple user-edited keyframes, while the dense branch injects motion and texture information from the original video. Combined with a degradation simulation training strategy, it enables learning without paired data, significantly outperforming existing methods in editing fidelity, motion preservation, and temporal consistency.
 
 **[Object-WIPER: Training-Free Object and Associated Effect Removal in Videos](object-wiper_training-free_object_and_associated_effect_removal_in_videos.md)**
 
@@ -1094,6 +1054,10 @@ item_total: 449
 **[Omni-Attribute: Open-vocabulary Attribute Encoder for Visual Concept Personalization](omni-attribute_open-vocabulary_attribute_encoder_for_visual_concept_personalizat.md)**
 
 :   Addressing the issue where holistic embeddings extracted by generic image encoders (CLIP/DINOv2/VAE) in existing personalization methods are "entangled," often carrying over irrelevant information like lighting and clothing (copy-and-paste artifacts), Omni-Attribute allows the encoder to ingest both an "image + a textual attribute description." It specifically learns to encode open-vocabulary embeddings for designated attributes only (identity/expression/lighting/style, etc.). Through "positive/negative attribute paired data + a dual-objective training of generative and contrastive losses," it achieves SOTA results in attribute retrieval, personalization, and multi-attribute composition.
+
+**[Omni2Sound: Towards Unified Video-Text-to-Audio Generation](omni2sound_towards_unified_video-text-to-audio_generation.md)**
+
+:   This paper aims to train a **single model to simultaneously excel** in video-to-audio (V2A), text-to-audio (T2A), and video-text-to-audio (VT2A). The research identifies two primary hurdles: the scarcity of high-quality V-A-T aligned captions and the competition between/within tasks. To address these, the authors developed SoundAtlas, a dataset of 470k pairs of tightly aligned captions generated via an agent-based labeling pipeline. This is combined with Omni2Sound, a decoupled dual-branch DiT model with a three-stage progressive training strategy, achieving SOTA performance across all three tasks using a standard DiT backbone.
 
 **[Omni IIE Bench: Benchmarking the Practical Capabilities of Image Editing Models](omni_iie_bench_benchmarking_the_practical_capabilities_of_image_editing_models.md)**
 
@@ -1113,7 +1077,7 @@ item_total: 449
 
 **[OntoAug: Rethinking Generative Data Augmentation via Ontology Guidance](ontoaug_rethinking_generative_data_augmentation_via_ontology_guidance.md)**
 
-:   OntoAug explicitly decomposes an image into an "ontological foreground" and an "incidental background." It utilizes a foreground mask to constrain the diffusion model to redraw only the background, while applying layout-level geometric transformations to the foreground and pairing it with diverse background prompts. This approach significantly enhances sample diversity while maintaining semantic stability, leading across fine-grained classification, few-shot learning, WSOL, and VLM reasoning tasks.
+:   OntoAug explicitly decomposes an image into the "ontology part" (foreground subject) and the "incidental part" (background). It uses the foreground mask as a hard constraint for diffusion inpainting to modify only the background while keeping the subject unchanged. Combined with geometric layout transformations and a background vocabulary expanded by LVLM/LLMs, it simultaneously achieves "subject stability, background diversity, and overall coordination," reaching SOTA performance on fine-grained classification, few-shot learning, WSOL, and VLM reinforcement fine-tuning.
 
 **[OpenDPR: Open-Vocabulary Change Detection via Vision-Centric Diffusion-Guided Prototype Retrieval for Remote Sensing Imagery](opendpr_open-vocabulary_change_detection_via_vision-centric_diffusion-guided_pro.md)**
 
@@ -1122,10 +1086,6 @@ item_total: 449
 **[OPRO: Orthogonal Panel-Relative Operators for Panel-Aware In-Context Image Generation](opro_orthogonal_panel-relative_operators_for_panel-aware_in-context_image_genera.md)**
 
 :   This paper proposes OPRO, a parameter-efficient adaptation method based on orthogonal matrices. By imposing learnable panel-specific orthogonal operators on the position-aware query/key of a frozen backbone, it explicitly modulates inter-panel attention interactions while preserving pre-trained intra-panel synthesis behavior. With only 0.93M additional parameters, OPRO significantly enhances the editing quality of several SOTA methods on MagicBrush.
-
-**[Organizing Unstructured Image Collections using Natural Language](organizing_unstructured_image_collections_using_natural_language.md)**
-
-:   This paper defines the new task of Open-vocabulary Semantic Multi-clustering (OpenSMC) and proposes the X-Cluster framework. It leverages MLLMs to convert images to text, then uses LLMs to automatically discover clustering criteria and semantic substructures. This organizes large-scale unlabeled image sets into multi-dimensional, multi-granular, and interpretable semantic clusters without any human prior input.
 
 **[OrthoFuse: Training-free Riemannian Fusion of Orthogonal Style-Concept Adapters for Diffusion Models](orthofuse_training-free_riemannian_fusion_of_orthogonal_style-concept_adapters_f.md)**
 
@@ -1195,10 +1155,6 @@ item_total: 449
 
 :   PositionIC utilizes an automated data synthesis pipeline (BMPDS) to generate multi-subject paired data with positional annotations. It then employs a NeRF-inspired "Visibility-Aware Attention" mechanism to restrict each reference subject's attention range within a specified bounding box. This approach achieves SOTA identity fidelity and spatial controllability for multi-subject customization without introducing additional training parameters or inference overhead.
 
-**[PosterIQ: A Design Perspective Benchmark for Poster Understanding and Generation](posteriq_a_design_perspective_benchmark_for_poster_understanding_and_generation.md)**
-
-:   This paper proposes PosterIQ, a comprehensive benchmark for poster design containing 7,765 understanding annotations and 822 generation prompts. Spanning 24 task categories such as OCR, font awareness, layout reasoning, design intent understanding, and composition-aware generation, it systematically evaluates the gap in design cognition between MLLMs and diffusion models.
-
 **[PosterOmni: Generalized Artistic Poster Creation via Task Distillation and Unified Reward Feedback](posteromni_generalized_artistic_poster_creation_via_task_distillation_and_unifie.md)**
 
 :   PosterOmni decomposes "image-to-poster" generation into six tasks across two categories: local editing (expansion/inpainting/scaling/identity preservation) and global creation (layout/style transfer). It first trains local and global experts, then integrates them into a single student model via task distillation. Finally, a unified reward model and DiffusionNFT reinforcement learning are used to align aesthetics and instructions. This single model outperforms all open-source editing models on the custom PosterOmni-Bench and approaches or exceeds closed-source commercial systems like Seedream-4.0.
@@ -1219,10 +1175,6 @@ item_total: 449
 
 :   LivingSwap is proposed as the first video-reference-guided face swapping model. Utilizing a controllable pipeline of keyframe identity injection, source video reference completion, and temporal stitching, it achieves high-fidelity face swapping in long videos. By maintaining source details such as expressions, lighting, and motion while consistently injecting the target identity, it reduces manual editing effort by 40 times.
 
-**[Probabilistic Precipitation Nowcasting with Rectified Flow Transformers](probabilistic_precipitation_nowcasting_with_rectified_flow_transformers.md)**
-
-:   This work proposes FREUD—a framework utilizing a Rectified Flow Transformer as a "compressed first stage." It employs a frame-level encoder to independently encode each frame and a joint video decoder to reconstruct all frames simultaneously, replacing deterministic decoding with probabilistic decoding to quantify uncertainty during the compression stage. Combined with a latent-space rectified flow nowcasting model, it achieves SOTA CRPS (0.0190) and SSIM on the SEVIR precipitation nowcasting benchmark.
-
 **[Probing and Bridging Geometry–Interaction Cues for Affordance Reasoning in Vision Foundation Models](probing_and_bridging_geometry-interaction_cues_for_affordance_reasoning_in_visio.md)**
 
 :   This work systematically probes affordance capabilities within Vision Foundation Models (VFMs). It discovers that DINO encodes part-level geometric structures while Flux encodes verb-conditioned interaction priors. By fusing both in a training-free manner, the authors achieve zero-shot affordance estimation competitive with weakly supervised methods.
@@ -1234,6 +1186,10 @@ item_total: 449
 **[Progress by Pieces: Test-Time Scaling for Autoregressive Image Generation](progress_by_pieces_test-time_scaling_for_autoregressive_image_generation.md)**
 
 :   GridAR proposes a **training-free test-time scaling** framework for visual autoregressive (AR) models. By partitioning the canvas into row blocks, generating multiple partial candidates in parallel, and pruning incorrect trajectories early, combined with "layout-specified prompt reconstruction" to provide a global blueprint for subsequent decoding, it outperforms Best-of-N (N=8) by 14.4% on T2I-CompBench++ using only N=4 while saving 25.6% compute.
+
+**[ProjFlow: Projection Sampling with Flow Matching for Zero-Shot Exact Spatial Motion Control](projflow_projection_sampling_with_flow_matching_for_zero-shot_exact_spatial_moti.md)**
+
+:   The authors unify a broad category of human motion control tasks (trajectory following, 2D→3D lifting, motion completion, cyclic actions, etc.) into linear inverse problems. They propose ProjFlow—a training-free flow matching sampler that utilizes closed-form projections at each denoising step to pull "clean motion estimates" onto the constraint set. By incorporating a "kinematic-aware metric" that encodes skeleton topology, corrections are propagated coordinately along the bones, achieving **exact** satisfaction of hard constraints under zero-shot conditions without inner-loop optimization while maintaining motion naturalness.
 
 **[PROMO: Promptable Outfitting for Efficient High-Fidelity Virtual Try-On](promo_promptable_virtual_tryon_efficient.md)**
 
@@ -1274,10 +1230,6 @@ item_total: 449
 **[PureCC: Pure Learning for Text-to-Image Concept Customization](purecc_pure_learning_for_text-to-image_concept_customization.md)**
 
 :   The PureCC method is proposed to achieve high-fidelity concept customization while minimizing the impact on the original model's behavior and capacity. This is accomplished by decoupling the learning objective into "target concept implicit guidance" and "original condition prediction," utilizing a dual-branch training pipeline (frozen representation extractor + trainable flow model) and an adaptive guidance scaling factor $\lambda^{\star}$.
-
-**[Quantization with Unified Adaptive Distillation to enable multi-LoRA based one-for-all Generative Vision Models on edge](quantization_with_unified_adaptive_distillation_to_enable_multi-lora_based_one-f.md)**
-
-:   This paper proposes the QUAD framework, which treats LoRA weights as runtime inputs instead of compiling them into the model graph. Combined with a distillation fine-tuning strategy that shares quantization parameters across multiple LoRAs, it enables a single compiled model to dynamically switch between multiple GenAI tasks on mobile NPUs, achieving 6x memory compression and 4x latency improvement.
 
 **[Qwen-Image-Layered: Towards Inherent Editability via Layer Decomposition](qwen-image-layered_towards_inherent_editability_via_layer_decomposition.md)**
 
@@ -1335,10 +1287,6 @@ item_total: 449
 
 :   The authors propose RenderFlow, which reformulates neural rendering as a single-step conditional flow matching problem from albedo to full-light images. Utilizing G-buffer as a condition and a pre-trained video DiT as the backbone, the method achieves deterministic rendering over 10 times faster than diffusion-based methods (~0.19s/frame). Optional sparse keyframe guidance further improves physical accuracy, while inverse rendering is supported via a frozen backbone and lightweight adapters.
 
-**[Reparameterized Tensor Ring Functional Decomposition for Multi-Dimensional Data Recovery](reparameterized_tensor_ring_functional_decomposition_for_multi-dimensional_data_.md)**
-
-:   Ours proposes RepTRFD: a method that addresses the spectral bias issue of INR-parameterized Tensor Ring (TR) factors by reparameterizing them into a "learnable latent tensor $\times$ fixed basis" form, consistently outperforming SOTA in tasks like image inpainting, denoising, super-resolution, and point cloud recovery.
-
 **[ResCa: Residual Caching for Diffusion Transformers Acceleration](resca_residual_caching_for_diffusion_transformers_acceleration.md)**
 
 :   ResCa is a training-free acceleration framework for Diffusion Transformers. It performs actual denoising on only a single "proxy token" within each trajectory cluster and uses its multi-order residuals to "simulate" the denoising direction of other tokens in the same cluster. This achieves a 5.5× GFLOPs speedup on FLUX with almost no loss in image quality.
@@ -1346,6 +1294,10 @@ item_total: 449
 **[Residual Decoder Adapter: ID-Preserving Tokenizer Adaption for Autoregressive Text Rendering](residual_decoder_adapter_id-preserving_tokenizer_adaption_for_autoregressive_tex.md)**
 
 :   To address the issues of blurred strokes and distorted glyphs in autoregressive (AR) image generation during text rendering, this paper identifies the root cause as the insufficient reconstruction capability of the visual tokenizer. It proposes the **Residual Decoder Adapter (RDA)**: freezing the original tokenizer and AR model, while attaching a Shared-ID Hint codebook and a pixel-level residual decoding branch. This restores text reconstruction quality without changing the token space or retraining any models—boosting Janus-Pro 1B's OCR accuracy from 24.52% to 58.26%.
+
+**[Residual Diffusion Bridge Model for Image Restoration](residual_diffusion_bridge_model_for_image_restoration.md)**
+
+:   This paper re-derives diffusion bridges as stochastic interpolations unified by a "mean-reverting OU process + Doob h-transform." It uses the **residual $\boldsymbol{\pi}=\mathbf{x}_0-\boldsymbol{\mu}$ of paired images to modulate noise injection and removal**, ensuring that the model only applies perturbations to degraded regions while protecting clean areas from iterative reconstruction. This approach achieves an average gain of 1.55 dB PSNR across five universal restoration tasks (deraining, low-light enhancement, desnowing, dehazing, and deblurring) while proving existing bridge models to be special cases of this framework.
 
 **[Resolving Endpoint Underfitting in Diffusion Bridges via Noise Alignment](resolving_endpoint_underfitting_in_diffusion_bridges_via_noise_alignment.md)**
 
@@ -1455,13 +1407,13 @@ item_total: 449
 
 :   ShapeAR reformulates "raster-to-vector" as a generative layered stacking task. Using latent space flow-matching diffusion conditioned on both the original image (global context) and a partial composite of previously generated layers (local context), it autoregressively generates sets of non-overlapping RGBA shape layers. This approach recovers "artist-style" complete and reorderable closed shapes, outperforming previous SOTA on multiple vectorization metrics.
 
-**[SHOE: Semantic HOI Open-Vocabulary Evaluation Metric](shoe_semantic_hoi_open-vocabulary_evaluation_metric.md)**
-
-:   The SHOE evaluation framework is proposed to decompose HOI predictions into verbs and objects for calculating LLM-driven semantic similarity. This replaces the exact matching method of traditional mAP, achieving 85.73% consistency with human judgment in open-vocabulary HOI detection evaluation, surpassing the 78.61% average consistency among human annotators.
-
 **[ShowTable: Unlocking Creative Table Visualization with Collaborative Reflection and Refinement](showtable_unlocking_creative_table_visualization_with_collaborative_reflection_a.md)**
 
 :   ShowTable introduces the new task of "Creative Table Visualization" (converting data tables into infographics) and designs a progressive self-correction pipeline coordinating MLLM (reasoning + reflection) with Diffusion models (generation + refinement). Through a specifically trained rewriting module and a refinement module optimized via RL, it significantly enhances the visualization quality of all baseline models on the self-constructed TableVisBench benchmark.
+
+**[ShowUI-π: Flow-based Generative Models as GUI Dexterous Hands](showui-p_flow-based_generative_models_as_gui_dexterous_hands.md)**
+
+:   ShowUI-π transfers "Flow-matching VLA," typically used for dexterous manipulation in robotics, to the GUI domain. By employing a 450M lightweight action expert, it unifies clicking and dragging into continuous coordinate trajectories. This enables agents to perform high-degree-of-freedom dragging tasks requiring real-time adjustment, such as rotation, drawing, and solving slider captchas. The authors also release the ScreenDrag dataset and online/offline evaluation benchmarks.
 
 **[SimLBR: Learning to Detect Fake Images by Learning to Detect Real Images](simlbr_learning_to_detect_fake_images_by_learning_to_detect_real_images.md)**
 
@@ -1494,10 +1446,6 @@ item_total: 449
 **[SliderEdit: Continuous Image Editing with Fine-Grained Instruction Control](slideredit_continuous_image_editing_with_fine-grained_instruction_control.md)**
 
 :   SliderEdit introduces "sliders" for each sub-instruction in instruction-based image editing models (e.g., FLUX-Kontext, Qwen-Image-Edit). By utilizing a shared set of Low-Rank Adaptors combined with a partial prompt steering loss, it allows users to continuously and decouply adjust the intensity of each edit—from zero application to exaggerated levels—without requiring separate training for each attribute.
-
-**[Smoothing the Score Function for Generalization in Diffusion Models: An Optimization-based Explanation Framework](smoothing_the_score_function_for_generalization_in_diffusion_models.md)**
-
-:   This paper theoretically proves that the memorization problem in diffusion models stems from the sharpness of softmax weights in the empirical score function (where a single training sample dominates). It proposes two smoothing methods, Noise Unconditioning and Temperature Smoothing, to mitigate memorization and enhance generalization while maintaining generation quality.
 
 **[Smoothing the Score Function to Enhance Generalization in Diffusion Models](smoothing_the_score_function_to_enhance_generalization_in_diffusion_models.md)**
 
@@ -1539,6 +1487,10 @@ item_total: 449
 
 :   This paper unifies non-parametric quantization (NPQ) methods like LFQ, FSQ, and BSQ into the language of "lattice codes." It identifies that entropy regularization essentially performs lattice relocation. Consequently, based on the "densest sphere packing" principle, the authors derive $\Lambda_{24}$-SQ using the 24-dimensional Leech lattice. This pushes the visual codebook size to approximately 200,000, enabling tokenizer training without any entropy or commitment regularization. It also marks the first time a discrete visual autoregressive model achieves a near-oracle 1.82 gFID on ImageNet-1k using a ~200k codebook.
 
+**[Spk2VidNet: A Hierarchical Recurrent Architecture for High-Fidelity Video Reconstruction from Long Spike-Camera Streams](spk2vidnet_a_hierarchical_recurrent_architecture_for_high-fidelity_video_reconstr.md)**
+
+:   Addressing the limitations of Spike Camera Super-Resolution (SCSR) in handling fixed short sequences and spike signal fluctuations, Spk2VidNet employs "dual-layer recurrent propagation with expanding temporal receptive fields + multi-frame consistency alignment + content-aware modulation fusion + segmented training state transfer" to reconstruct high-resolution image sequences from arbitrary long spike streams. It sets a new SOTA on synthetic and real data with faster speeds (REDS-LSSR ×4 PSNR 29.92dB, 43ms inference).
+
 **[SplitFlux: Learning to Decouple Content and Style from a Single Image](splitflux_learning_to_decouple_content_and_style_from_a_single_image.md)**
 
 :   This work systematically analyzes the functional division of blocks within the FLUX model, discovering that single stream blocks are essential for image generation, with the early stages controlling content and the late stages controlling style. Based on this, SplitFlux fine-tunes these blocks using LoRA for content-style decoupling from a single image. By incorporating Rank-Constrained Adaptation (RCA) to preserve identity and Visual-Gated LoRA (VGRA) to enable re-contextualization, this method significantly outperforms SDXL and FLUX baselines in content fidelity.
@@ -1555,6 +1507,14 @@ item_total: 449
 
 :   SRA 2 directly utilizes the existing SD-VAE encoding features from the first stage of latent diffusion as supervision signals. By using a lightweight MLP to project intermediate SiT features for alignment, it accelerates diffusion Transformer training convergence by up to $7\times$ with only a 4% increase in GFLOPs, without introducing external representation encoders or maintaining a dual-model teacher.
 
+**[Stability-Driven Motion Generation for Object-Guided Human-Human Co-Manipulation](stability-driven_motion_generation_for_object-guided_human-human_co-manipulation.md)**
+
+:   Given an object mesh and its trajectory, this paper employs a flow matching framework to generate full-body motions for two individuals collaborating on object transport. Through three modules—affordance-guided contact strategy, adversarial interaction prior, and sampling-based stability simulation—the generated motions simultaneously satisfy intentional correctness (correct grasping), natural poses, and physical stability (minimal floating and penetration). On Core4D, it significantly outperforms existing HOI baselines in contact accuracy, penetration depth, and distributional fidelity.
+
+**[STCDiT: Spatio-Temporally Consistent Diffusion Transformer for High-Quality Video Super-Resolution](stcdit_spatio-temporally_consistent_diffusion_transformer_for_high-quality_video.md)**
+
+:   STCDiT performs real-world video super-resolution (VSR) based on a pre-trained video diffusion model (Wan2.1). It addresses VAE reconstruction distortions under complex camera movements using "Motion-Aware VAE Segmented Reconstruction" and injects well-preserved spatial structure information from the first-frame latent of each segment into the generation process via "Anchor-Frame Guidance." By adding only approximately 7% of the trainable parameters of a standard LoRA, it surpasses SOTAs such as SeedVR and STAR in structural fidelity and temporal consistency.
+
 **[Steering Where to Diffuse: Generative Modeling of Phenotypic Response Simulation with Steered Diffusion Bridge](steering_where_to_diffuse_generative_modeling_of_phenotypic_response_simulation_.md)**
 
 :   SimuSDB models the task of "predicting the morphological change of an unperturbed cell image under specific chemical/genetic perturbations" as a **stochastic diffusion bridge** from the source cell distribution to the perturbed distribution. By using a conditional Brownian bridge, trajectories are allowed to diverge around a deterministic backbone to capture phenotypic diversity. The constraint that "generative results must match a specific perturbed phenotype" is reformulated as a **stochastic optimal control problem** to steer the drift term. SimuSDB outperforms diffusion, flow matching, and GAN baselines in FID/KID across BBBC021, RxRx1, and JUMP benchmarks.
@@ -1566,6 +1526,10 @@ item_total: 449
 **[StreamAvatar: Streaming Diffusion Models for Real-Time Interactive Human Avatars](streamavatar_streaming_diffusion_models_for_real-time_interactive_human_avatars.md)**
 
 :   A two-stage autoregressive adaptation framework (autoregressive distillation + adversarial refinement) is proposed to transform bidirectional human video diffusion models into real-time streaming generators. By utilizing Reference Sink, RAPR positional re-encoding, and a consistency-aware discriminator to ensure long-video stability, it achieves the first full-body real-time digital human supporting both talking and listening interactions.
+
+**[StreamDiT: Real-Time Streaming Text-to-Video Generation](streamdit_real-time_streaming_text-to-video_generation.md)**
+
+:   StreamDiT proposes a comprehensive streaming video generation solution (including training, modeling, and distillation). By introducing a sliding buffer with progressive denoising in Flow Matching and a mixed partition training strategy, combined with a time-variant DiT architecture with window attention and a customized multi-step distillation method, a 4B parameter model achieves real-time streaming video generation at 512p@16FPS on a single GPU.
 
 **[Streaming Diffusion Model for Fast Infrared and Visible Video Fusion](streaming_diffusion_model_for_fast_infrared_and_visible_video_fusion.md)**
 
@@ -1582,10 +1546,6 @@ item_total: 449
 **[StyleGallery: Training-free and Semantic-aware Personalized Style Transfer from Arbitrary Image References](stylegallery_training-free_and_semantic-aware_personalized_style_transfer_from_a.md)**
 
 :   StyleGallery is a training-free semantic-aware style transfer framework. It first performs unsupervised semantic clustering on content images using intermediate diffusion features, then adaptively matches content regions with the most relevant regions from arbitrary style references across statistical, semantic, and geometric dimensions. Finally, it employs regional style loss to guide diffusion sampling, achieving interpretable and customizable fine-grained style transfer without requiring external masks.
-
-**[StyleText: A Large-Scale Dataset and Benchmark for Stylized Scene Text Inpainting](styletext_a_large-scale_dataset_and_benchmark_for_stylized_scene_text_inpainting.md)**
-
-:   To address the lack of specialized benchmarks for inserting new text into natural scenes while maintaining ambient lighting and texture, this paper proposes StyleText. It utilizes an automated pipeline—combining LLM-generated prompts, Flux/StableFlow KV injection, OCR filtering, and polygon mask extraction—to create a dataset of 28,518 image-mask-prompt triplets organized into 9,932 "scene groups." It defines a reproducible evaluation protocol covering OCR legibility and CLIP style consistency, and establishes a strong baseline using FluxFill+LoRA that improves character accuracy from 56% to 77%.
 
 **[StyleTextGen: Style-Conditioned Multilingual Scene Text Generation](styletextgen_style-conditioned_multilingual_scene_text_generation.md)**
 
@@ -1622,10 +1582,6 @@ item_total: 449
 **[TAP: A Token-Adaptive Predictor Framework for Training-Free Diffusion Acceleration](tap_a_token-adaptive_predictor_framework_for_training-free_diffusion_acceleratio.md)**
 
 :   The TAP framework is proposed to adaptively select the optimal predictor (from the Taylor expansion family) for each token at every step through a first-layer probe. It achieves training-free diffusion acceleration, reaching a $6.24\times$ speedup on FLUX.1-dev with no perceptible quality loss.
-
-**[TC-Padé: Trajectory-Consistent Padé Approximation for Diffusion Acceleration](tc-pade_trajectory-consistent_pade_approximation_for_diffusion_acceleration.md)**
-
-:   Addressing the failure of feature caching in diffusion models during low-step sampling (20–30 steps), TC-Padé replaces the polynomial extrapolation of raw features in TaylorSeer with "rational function (Padé) extrapolation of residuals." Combined with a Trajectory Stability Indicator (TSI) for adaptive skip-calculation and a differentiated three-stage prediction strategy (early/mid/late), it achieves 2.88× acceleration on FLUX.1-dev with only a ~3% drop in FID.
 
 **[TC-Padé: Trajectory-Consistent Padé Approximation for Diffusion Acceleration](tc-padé_trajectory-consistent_padé_approximation_for_diffusion_acceleration.md)**
 
@@ -1683,10 +1639,6 @@ item_total: 449
 
 :   Ours proposes TINA (Text-free INversion Attack), which identifies precise initial noise by optimizing DDIM inversion under the null-text condition. This bypasses all text-based concept erasure defenses and demonstrates that current erasure methods only sever text-to-image mappings without truly deleting internal visual knowledge from the model.
 
-**[Tiny Inference-Time Scaling with Latent Verifiers](tiny_inference-time_scaling_with_latent_verifiers.md)**
-
-:   This paper proposes VHS (Verifier on Hidden States)—a verifier operating directly on the intermediate hidden states of a DiT generator. By bypassing the decoding-re-encoding overhead, it reduces joint generation-verification time by 63.3% and FLOPs by 51% in single-step image generation scenarios, while achieving a 2.7% performance gain on GenEval under the same time budget.
-
 **[TokenLight: Precise Lighting Control in Images using Attribute Tokens](tokenlight_precise_lighting_control_in_images_using_attribute_tokens.md)**
 
 :   Ours proposes TokenLight, formulating image relighting as an end-to-end generation task conditioned on attribute tokens (intensity, color, ambient light, diffuse level, and 3D light position). It achieves precise, continuous, and interpretable lighting control within a Diffusion Transformer framework.
@@ -1711,10 +1663,6 @@ item_total: 449
 
 :   MagicBokeh unifies "Super-resolution for high digital zoom" and "Bokeh rendering" within a single-step diffusion framework. It resolves optimization conflicts between the two tasks through an alternating training strategy and focus-aware masked attention, while employing a degradation-aware depth module to estimate reliable disparity maps from low-quality inputs. The model achieves more realistic bokeh than "SR followed by Bokeh" two-stage pipelines on real low-resolution phone photos with 0.1s-level speed.
 
-**[Towards Robust Content Watermarking Against Removal and Forgery Attacks](towards_robust_content_watermarking_against_removal_and_forgery_attacks.md)**
-
-:   Proposes ISTS, an instance-specific bipartite detection watermarking method that dynamic selects injection time and location based on image semantics to resist removal and forgery attacks. A bipartite detection mechanism is designed to counter reverse latent representation attacks, achieving SOTA robustness in average and worst-case scenarios across three removal and three forgery attacks.
-
 **[Towards Robust Sequential Decomposition for Complex Image Editing](towards_robust_sequential_decomposition_for_complex_image_editing.md)**
 
 :   Addressing complex image editing where "multiple interdependent operations are packed into a single instruction," this work investigates "sequential decomposition" within an in-context editing framework. High-quality editing chains with decomposition labels are synthesized via Blender to fine-tune BAGEL. A Context-Guided Sequential Editing (CGSE) paradigm is designed to regulate the influence of "historical editing results," ensuring that performance improves with more decomposition steps and enabling successful sim-to-real transfer to real images through co-training.
@@ -1727,6 +1675,10 @@ item_total: 449
 
 :   To address the slow inference of Diffusion Transformers (DiT), this paper proposes RALU (Region-Adaptive Latent Upsampling), a training-free method. It performs initial denoising in a low-resolution latent space (1/4 tokens), applies early upsampling only to edge-prone regions, and uses NT-Matching to realign deviated noise and timestep distributions. It achieves a 7.0× speedup on FLUX, reaching up to 15.9× when combined with temporal acceleration and distillation, while maintaining nearly original image quality.
 
+**[Training-free Motion Factorization for Compositional Video Generation](training-free_motion_factorization_for_compositional_video_generation.md)**
+
+:   A motion factorization framework is proposed to decompose the motion of multiple instances in a scene into three categories: static, rigid, and non-rigid. It addresses semantic ambiguity in prompts through Structured Motion Graph Reasoning (SMR) and regulates the generation of these three motion types during the diffusion process via Decoupled Motion Guidance (DMG). Without additional training, it significantly improves motion diversity and fidelity on VideoCrafter-v2.0 and CogVideoX-2B.
+
 **[Training-free, Perceptually Consistent Low-Resolution Previews with High-Resolution Image for Efficient Workflows of Diffusion Models](training-free_perceptually_consistent_low-resolution_previews.md)**
 
 :   To alleviate the high-resolution (HR) computational burden during the user's "seed/prompt trial-and-error" stage, this paper proposes a **training-free** low-resolution (LR) "preview" generation method. The goal of "perceptual consistency between LR and HR" is reformulated as a **commutator-zero condition** between the flow matching model and the downsampling operator. This condition is approximately satisfied during sampling via "optimal downsampling matrix selection" and "commutator-zeroing guidance," saving up to 33% of computation while preserving composition and color consistency. When combined with temporal acceleration, it achieves a 3.05× speedup.
@@ -1734,6 +1686,10 @@ item_total: 449
 **[Transition Models: Rethinking the Generative Learning Objective](transition_models_rethinking_the_generative_learning_objective.md)**
 
 :   TiM generalizes the "infinitesimal step" PF-ODE supervision of diffusion models into a **state transition identity that holds exactly for any time interval $\Delta t$**. This allows an 865M small model to both perform 1-step generation and improve monotonically with increased sampling steps, outperforming SD3.5 (8B) and FLUX.1 (12B) despite its significantly smaller parameter count on GenEval.
+
+**[Ultra Diffusion Poser: Diffusion-Based Human Motion Tracking From Sparse Inertial Sensors and Ranging-Based Between-Sensor Distances](ultra_diffusion_poser_diffusion-based_human_motion_tracking_from_sparse_inertial.md)**
+
+:   This work upgrades UWB ranging between 6 IMUs from "extra features" to "geometric constraints." It first uses Multidimensional Scaling (MDS) to reconstruct 3D sensor layouts from pairwise distances as diffusion conditions, then employs forward kinematics during denoising sampling to align predicted poses with sensor distances via guidance, reducing joint position error in sparse inertial pose estimation by up to 22%.
 
 **[Understanding, Accelerating, and Improving MeanFlow Training](understanding_accelerating_and_improving_meanflow_training.md)**
 
@@ -1787,17 +1743,9 @@ item_total: 449
 
 :   VecGlypher is proposed as the first unified language model for both text- and image-guided vector glyph generation. Through two-stage training (large-scale SVG syntax learning + expert label alignment), it directly generates editable SVG paths autoregressively without intermediate raster steps or vectorization post-processing.
 
-**[VeCoR — Velocity Contrastive Regularization for Flow Matching](vecor_--_velocity_contrastive_regularization_for_flow_matching.md)**
-
-:   This paper proposes VeCoR (Velocity Contrastive Regularization), which introduces "negative velocity" contrastive signals into standard Flow Matching training. By simultaneously guiding the model on "where to go" and "where not to go," it achieves more stable trajectory evolution and higher perceptual fidelity—obtaining 22% and 35% relative FID reductions for SiT-XL/2 and REPA-SiT-XL/2 on ImageNet-1K, respectively.
-
 **[VectorArk: Learning Practical Image Vectorization with Rounded Polygon Representation](vectorark_learning_practical_image_vectorization_with_rounded_polygon_representa.md)**
 
 :   VectorArk redesigns the "Raster to Vector (SVG)" task into a generative-model-friendly rounded polygon representation. Combined with outline-based input, vectorization-driven degradation training, and DINO-ranked test-time scaling, a multimodal LLM with only 1B parameters significantly outperforms StarVector and OmniSVG in geometric completeness and artifact removal on real-world tasks (including T2I outputs).
-
-**[Verify Claimed Text-to-Image Models via Boundary-Aware Prompt Optimization](verify_claimed_text-to-image_models_via_boundary-aware_prompt_optimization.md)**
-
-:   BPO proposes a white-box T2I model verification method without reference models. Through a three-stage pipeline (adversarial anchor identification → binary search boundary exploration → target optimization), it identifies model-specific semantic boundary regions. The generated verification prompts achieve an average accuracy of 96% and a 0.93 F1 score across 5 T2I models, performing 2x faster than the TVN method.
 
 **[VFM-VAE: Vision Foundation Models Can Be Good Tokenizers for Latent Diffusion Models](vfm-vae_vision_foundation_models_can_be_good_tokenizers_for_latent_diffusion_mod.md)**
 
@@ -1811,6 +1759,10 @@ item_total: 449
 
 :   VibeToken proposes a "resolution-agnostic" 1D Transformer tokenizer that compresses images of arbitrary resolutions/aspect ratios into 32–256 dynamic-length discrete tokens. Paired with a constant-compute autoregressive generator, VibeToken-Gen, it generates 1024×1024 images (3.94 gFID) using only 64 tokens. The inference FLOPs are 63× lower than LlamaGen, flattening the AR generation compute curve from "quadratic growth with resolution" to a horizontal line.
 
+**[VideoCoF: Unified Video Editing with Temporal Reasoner](videocof_unified_video_editing_with_temporal_reasoner.md)**
+
+:   VideoCoF is proposed as a Chain-of-Thought inspired "see → reason → edit" video editing framework. By requiring the video diffusion model to first predict reasoning tokens (grayscale highlighted latents of the editing region) before generating target video tokens, it achieves precise instruction-region alignment without user-provided masks. It reaches SOTA performance with only 50K video pair training and supports video length extrapolation up to 16 times the training length.
+
 **[ViHOI: Human-Object Interaction Synthesis with Visual Priors](vihoi_human-object_interaction_synthesis_with_visual_priors.md)**
 
 :   Ours proposes ViHOI, a plug-and-play framework that leverages VLMs to extract decoupled visual and textual priors from 2D reference images. These are compressed into compact conditional tokens via Q-Formers to enhance the HOI motion generation quality of diffusion models. During inference, it utilizes text-to-image models to synthesize reference images, achieving strong generalization to unseen objects.
@@ -1818,10 +1770,6 @@ item_total: 449
 **[Vinedresser3D: Agentic Text-guided 3D Editing](vinedresser3d_agentic_text-guided_3d_editing.md)**
 
 :   Vinedresser3D is proposed as a 3D editing agent centered on Multimodal Large Language Models (MLLMs). It eliminates the need for user-provided 3D masks by automatically parsing editing intent, locating editing regions, and generating multimodal guidance. By executing inversion-based in-painting in the latent space of a native 3D generative model (Trellis), high-quality text-guided editing of 3D assets is achieved.
-
-**[Vision Foundation Models Can Be Good Tokenizers for Latent Diffusion Models](vision_foundation_models_can_be_good_tokenizers_for_latent_diffusion_models.md)**
-
-:   This paper shifts away from using distillation to make a VAE "mimic" a Vision Foundation Model (VFM). Instead, it directly uses a **frozen VFM as the encoder for the LDM tokenizer**, paired with a multi-scale progressive decoder to reconstruct semantic-rich but spatially coarse VFM features back to pixels. Consequently, LightningDiT achieves a gFID of 2.22 on ImageNet 256 in just 80 epochs (approximately 10× faster than previous tokenizers) and reaches 1.62 after 640 epochs.
 
 **[VisionDirector: Vision-Language Guided Closed-Loop Refinement for Generative Image Synthesis](visiondirector_vision-language_guided_closed-loop_refinement_for_generative_imag.md)**
 
@@ -1859,10 +1807,6 @@ item_total: 449
 
 :   Ours proposes Conflict-aware Adaptive Safety Guidance (CASG), a training-free plug-and-play framework that resolves safety degradation caused by directional conflicts when aggregating multiple categories. It dynamically identifies the harmful category most aligned with the current generation state and applies safety guidance only along that direction.
 
-**[When Understanding Becomes a Risk: Authenticity and Safety Risks in the Emerging Image Generation Paradigm](when_understanding_becomes_a_risk_authenticity_and_safety_risks_in_the_emerging_.md)**
-
-:   A systematic comparative analysis of the safety risk differences between MLLMs and diffusion models reveals that MLLMs are more prone to generating unsafe images due to their stronger semantic understanding (comprehending abstract or non-English prompts). Furthermore, images generated by MLLMs are more difficult for existing fake image detectors to identify; even detectors fine-tuned specifically for MLLMs can be bypassed by enriching prompt details.
-
 **[WiseEdit: Benchmarking Cognition- and Creativity-Informed Image Editing](wiseedit_benchmarking_cognition-_and_creativity-informed_image_editing.md)**
 
 :   WiseEdit decomposes instructive image editing into a three-level cognitive process of "Awareness—Interpretation—Imagination" paired with three categories of knowledge ("Declarative/Procedural/Metacognitive"). It constructs a challenging benchmark of 1,220 Chinese-English bilingual cases, including 26% multi-image inputs. Using GPT-4o for scoring across five dimensions—including self-developed Knowledge Fidelity (KF) and Creative Fusion (CF)—the study systematically exposes the shortcomings of current SOTA editing models in knowledge reasoning and compositional creation.
@@ -1870,10 +1814,6 @@ item_total: 449
 **[WISER: Wider Search, Deeper Thinking, and Adaptive Fusion for Training-Free Zero-Shot Composed Image Retrieval](wiser_wider_search_deeper_thinking_and_adaptive_fusion_for_training-free_zero-sh.md)**
 
 :   Ours proposes WISER, a training-free Zero-Shot Composed Image Retrieval (ZS-CIR) framework. It unifies T2I and I2I dual-path retrieval through a "Retrieval–Verification–Refinement" iterative loop. By utilizing a VLM verifier to explicitly model intent-awareness and uncertainty-awareness, WISER achieves adaptive fusion and structured self-reflective refinement. It delivers relative improvements of 45% in CIRCO mAP@5 and 57% in CIRR Recall@1, outperforming many training-based methods.
-
-**[YOEO: You Only Erase Once - Erasing Anything without Bringing Unexpected Content](yoeo_you_only_erase_once_erasing_anything_without_bringing_unexpected_content.md)**
-
-:   YOEO proposes a single-pass erasure framework that achieves efficient inference by distilling a multi-step diffusion model into a few-step model. It introduces a sundries suppression loss (using entity segmentation to detect newly generated objects that should not appear) and an entity feature coherence loss (ensuring semantic consistency between the erased region and its surroundings) to resolve the hallucination problem of diffusion models in object erasing tasks.
 
 **[You Only Erase Once: Erasing Anything without Bringing Unexpected Content](you_only_erase_once_erasing_anything_without_bringing_unexpected_content.md)**
 

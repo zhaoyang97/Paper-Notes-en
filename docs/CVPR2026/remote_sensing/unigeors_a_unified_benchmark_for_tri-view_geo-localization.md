@@ -84,6 +84,7 @@ CAME is trained with two complementary objectives: a rank loss to enforce metric
 ## Key Experimental Results
 
 ### Dataset Comparison (UniGeoRS vs. Existing CVGL Datasets)
+
 | Dataset | Year | UAV Images | UAV Source | Ground Images | Ground Img/Loc | Platforms |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | University-1652 | ACM2020 | 37,854 | Synthetic | 5,580 | 3.38 | Tri-platform |
@@ -96,6 +97,7 @@ CAME is trained with two complementary objectives: a rank loss to enforce metric
 UniGeoRS maximizes both UAV scale (100k+, mixed) and ground diversity (32.39 ground imgs/target), and is the only mixed real/synthetic tri-platform set.
 
 ### Main Results: CAME as a plug-in for mainstream CVGL models (Selected R@1/AP)
+
 | Model | Method | Drone→Ground AP | Satellite→Ground AP | Drone→Satellite AP |
 | :--- | :--- | :--- | :--- | :--- |
 | University-1652 | baseline | 10.05 | 3.47 | 58.72 |
@@ -110,6 +112,7 @@ UniGeoRS maximizes both UAV scale (100k+, mixed) and ground diversity (32.39 gro
 Overall AP gains are most significant in "high-altitude↔ground" directions (Drone→Ground, Satellite→Ground).
 
 ### Ablation Study (LPN + CAME, selected Drone→Ground / Satellite→Ground AP)
+
 | Configuration | Drone→Ground AP | Satellite→Ground AP | Description |
 | :--- | :--- | :--- | :--- |
 | baseline | 14.33 | 13.47 | Original LPN |

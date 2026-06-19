@@ -113,6 +113,7 @@ Across all 9 combinations: CIGMA improves accuracy by 7.6–24.8 percentage poin
 Even on fine-tuned backbones, CIGMA (ft) improves accuracy by 4.7–22.9 points and reduces BIR by 41.7–86.0% compared to Original (ft). It consistently outperforms CHG (Causal Head Gating) by 5.4–20.0 accuracy points.
 
 ### Ablation Study (Tiny-ImageNet, InternVL2-26B)
+
 | Configuration | Top-1 Acc | Description |
 |------|-----------|------|
 | K=0 (Baseline) | 79.6% | No pruning |

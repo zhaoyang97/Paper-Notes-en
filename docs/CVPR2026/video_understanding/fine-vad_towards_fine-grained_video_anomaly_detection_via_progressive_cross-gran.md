@@ -100,6 +100,7 @@ Evaluated using mAP@IoU (0.1~0.5) AVG on UCF-Crime and XD-Violence.
 | Qwen2.5-VL-7B | XD-Violence | +14.93% |
 
 ### Ablation Study
+
 | Configuration | AVG mAP% | Note |
 |------|---------|------|
 | Fine-level only | 8.64 | Sparse labels insufficient |

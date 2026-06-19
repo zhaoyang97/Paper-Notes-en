@@ -81,6 +81,7 @@ FICO credit score data (normalized to $[0,10]$) was used to simulate a multi-lev
 | IV Hard to Improve, Easy to Game | (1.5, 0.4) | 8 | 0.63 | 7.98 | 107.9 |
 
 ### Ablation Study
+
 | Configuration | Key Phenomenon | Explanation |
 |------|----------|------|
 | Full Mechanism (Case I) | Pure improvement throughout, monotonic attribute rise | Incentive alignment holds; ideal trajectory achieved |

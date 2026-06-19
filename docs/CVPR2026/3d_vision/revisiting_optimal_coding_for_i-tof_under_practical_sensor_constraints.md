@@ -90,6 +90,7 @@ This is not a learning-based method. The only "objective function" is the aforem
 ## Key Experimental Results
 
 ### Comparison of Methods (Table 1)
+
 | Method | Constraints Modeled | Optimization | Objective | Deployable |
 |------|-----------|---------|---------|--------|
 | Gupta [9] | None (Ideal) | Theory | Curve Length | No |
@@ -98,6 +99,7 @@ This is not a learning-based method. The only "objective function" is the aforem
 | **Ours** | **+ Mutual Exclusivity** | **Brute-force / SA** | **Depth Variance** | **Yes** |
 
 ### Simulation: Stanford Bunny Reconstruction MAE (Fig.5)
+
 | Scheme | High SNR ($\bar a=0$) MAE | Low SNR ($\bar a=1$) MAE |
 |----------|----------------------|----------------------|
 | Double ramp | 6.15 mm | 23.86 mm |
@@ -108,6 +110,7 @@ This is not a learning-based method. The only "objective function" is the aforem
 The searched codes reduce error from ~20mm to single-digit millimeters. The performance swap at different SNRs validates the SNR-adaptive design.
 
 ### Real Sensor Experiments (3-tap BEM80T04BB)
+
 | Scenario | Comparison | Result |
 |------------|------|------|
 | Flat plate (High/Low SNR) | Proposed vs Prior | Proposed achieves lowest MAE in both SNR conditions. |

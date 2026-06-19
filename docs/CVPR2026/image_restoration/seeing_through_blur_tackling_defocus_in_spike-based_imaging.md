@@ -100,6 +100,7 @@ Dataset: Defocused spike sequences synthesized from the DPDD dataset (350 traini
 PSNR and LPIPS lead across the board. SSIM is only slightly inferior to TFP reconstruction with GKMNet deblurring. On real data, all metrics are optimal; the model restores both structures and underlying textures in scenes like wire meshes and window frames, whereas cascade pipelines lose details during the initial reconstruction step.
 
 ### Ablation Study
+
 | Config | PSNR↑ | SSIM↑ | LPIPS↓ | Note |
 |------|-------|-------|--------|------|
 | All Modules | 18.94 | 0.57 | 0.25 | Full Model |

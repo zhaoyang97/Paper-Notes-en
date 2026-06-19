@@ -88,6 +88,7 @@ Two domain-class incremental benchmarks involve 11 datasets and 1201 classes. MT
 **Ours** outperforms GIFT (which uses full fine-tuning and diffusion-generated data) across all metrics with only 30.8M parameters and no extra data. Even **Ours†** (4.6M) surpasses all comparison methods.
 
 ### Ablation Study
+
 | Config | Trans. | Avg. | Last | Description |
 |--------|--------|------|------|-------------|
 | Remove all (Baseline) | 68.1 | 76.6 | 85.9 | Traditional prefix-tuning |

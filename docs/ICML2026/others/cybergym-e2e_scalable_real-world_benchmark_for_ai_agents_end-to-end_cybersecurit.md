@@ -99,6 +99,7 @@ With 615 initial tasks and a $10/90 min budget, patch-only performance peaked at
 | Opus 4.6 + Claude Code (no cap, 920) | 85.8 | 66.3 | 65.0 | 62.6 | 26.2 |
 
 ### Ablation Study
+
 | Dimension | Configuration | Findings |
 |------|---------|------|
 | Time budget | 30 / 60 / 90 min | Opus 4.5 rose from 13.9% → 23.2% → 34.1%; returns diminished 60→90. |

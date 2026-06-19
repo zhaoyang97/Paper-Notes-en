@@ -69,6 +69,7 @@ Van Gogh style erasure on SD 2.1 demonstrates the primary effects of closed-form
 | Hellinger variational | 0.645 | 0.5 | 0.702 | 0.88 | 0.051 |
 
 ### Ablation Study
+
 | Configuration | Key Metric | Description |
 |------|---------|------|
 | Gradient Magnitude: H-DMU | Gradients strictly smaller than MSE/$\chi^2$ | Exponential decay for large errors, smoother fine-tuning |

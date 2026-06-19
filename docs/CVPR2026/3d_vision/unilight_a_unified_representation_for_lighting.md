@@ -93,6 +93,7 @@ For environment map generation, UniLight outperforms DiffusionLight-Turbo across
 | UniLight | **28.85** | **0.133** | **0.060** | **0.915** | **0.124** | **0.079** |
 
 ### Ablation Study
+
 | Config | R@1 | R@5 | MRR | Note |
 |------|-----|-----|------|------|
 | 8 token, SH3 (Full) | 24.9 | 49.0 | 0.367 | Default configuration |

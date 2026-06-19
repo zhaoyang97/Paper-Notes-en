@@ -79,6 +79,7 @@ The paper does not propose new training losses but evaluates 12 existing detecto
 ## Key Experimental Results
 
 ### Main Results
+
 | Task | Best / Rep. Method | Avg $F^B_1$ | Avg $F^F_1$ | Interpretation |
 |--------|------|------|----------|------|
 | Binary | X-Rob-Classifier | 95.58% | 91.31% | Ranked 1st on binary leaderboard; neural detectors are strongest overall. |
@@ -88,6 +89,7 @@ The paper does not propose new training losses but evaluates 12 existing detecto
 | In-Distribution Stat. | GECScore | 83.22% | N/A | Statistical methods are unstable in complex multilingual mixtures even for ID tasks. |
 
 ### Ablation Study
+
 | Robustness Dimension | Performance Change Observed | Description |
 |------|---------|------|
 | Cross-Language | Neural Binary Avg $F^B_1$ dropped from 95.3% to 91.4%; Ternary from 87.10% to 66.28% | Cross-lingual transfer is especially difficult in ternary tasks (mDeBERTa dropped 20.55%). |

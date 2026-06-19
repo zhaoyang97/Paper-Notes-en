@@ -98,6 +98,7 @@ Two evaluation settings: Retrieved Template (most similar via DINOv3) vs. Random
 In the "Random Template" column, baselines fail when the template is dissimilar, while GODeform remains robust (CD 2.38 → 2.46), proving the effectiveness of geometry-guided foundation features.
 
 ### Ablation Study
+
 | Configuration | CD ($10^{-3}$, Random) | S-IoU (%, Random) | Description |
 |------|---------|---------|------|
 | Our-MV (Full) | **2.46** | **47.31** | Full Model |

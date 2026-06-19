@@ -87,6 +87,7 @@ Datasets include MS-COCO, OxfordPets, and Flowers102 (the latter two converted t
 On MS-COCO and OxfordPets I2T R@1, SG-LoRA **outperforms the Oracle**. This is attributed to CVAE's efficient distribution modeling and the fact that Oracle fine-tuning is prone to overfitting on small image-text pairs, whereas SG-LoRA's data-free approach is more robust.
 
 ### Ablation Study
+
 | Configuration | Egyptian Mau I2T R@1 | Persian I2T R@1 | Description |
 |------|----------------------|-----------------|------|
 | w/o Cat Experts | 36.08 | 44.00 | MS-COCO Cat experts removed from library |

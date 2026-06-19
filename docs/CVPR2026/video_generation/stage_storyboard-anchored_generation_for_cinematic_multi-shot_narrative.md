@@ -95,6 +95,7 @@ where the preference difference is $D_k = \|v_k(\hat{x}_i^t,t,\mathcal{C}_i)-\ha
 Implementation is based on Qwen-Image with a frozen VAE, LoRA rank=64, 8×A800, Adam optimizer, and learning rate $1\times10^{-4}$. SFT runs for 100K steps, followed by 20K steps for preference alignment. Evaluation covers 8 quantitative metrics across 5 dimensions (VBench AQ/IQ/OC/SC/BC, extended cross-shot SC-E/BC-E, and a custom transition metric TVS) plus 4 VLM scores (OVQ/VTC/ISC/STS).
 
 ### Main Results
+
 | Method | AQ↑ | OC↑ | SC-E↑ | BC-E↑ | TVS↑ | OVQ↑ | VTC↑ | ISC↑ | STS↑ |
 |------|-----|-----|-------|-------|------|------|------|------|------|
 | CineTrans (End-to-End) | 0.5652 | 0.2018 | 0.6197 | 0.7428 | 0.0455 | 0.7972 | 0.3551 | 0.5585 | 0.4931 |
@@ -120,6 +121,7 @@ Human evaluation (25 AMT volunteers, 20 random samples, 4 criteria) further conf
 Preference rates for shot consistency (72.8%) and transitions (69.6%) are overwhelmingly dominant, matching the core selling points of the method.
 
 ### Ablation Study
+
 | Config | Change in SC↓ | Change in BC↓ | SC-E | BC-E | TVS | Explanation |
 |------|------|------|------|------|------|------|
 | Full (STAGE) | 0.9695 | 0.9685 | 0.6917 | 0.8207 | 0.2732 | Full Model |

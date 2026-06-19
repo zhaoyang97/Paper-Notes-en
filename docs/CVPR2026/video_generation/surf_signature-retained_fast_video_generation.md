@@ -80,6 +80,7 @@ An attention mask isolates unrelated segments in boundary windows created by the
 ## Key Experimental Results
 
 ### Main Results (Wan 2.1, 720p, NFE=50)
+
 | Method | QS↑ | AQ↑ | DD↑ | SA↑ | PC↑ | Time↓ | Gain | PFLOPs↓ |
 |------|-----|-----|-----|-----|-----|-------|------|---------|
 | Wan 2.1 | 83.31 | 66.9 | 63.89 | 41.82 | 45.45 | 3497s (58min) | 1× | 658.5 |
@@ -91,6 +92,7 @@ An attention mask isolates unrelated segments in boundary windows created by the
 Crucially, SA (Semantic Alignment) and PC (Physical Commonsense) show that SURF's SA matches the original Wan 2.1 (41.82), whereas DMD/SVG drop significantly to 34.55/25.45—indicating that distillation and sparse attention lose the signature, while SURF retains it. For 1080p scenarios, a 43× speedup is achieved compared to vanilla Wan 2.1.
 
 ### 1080p Comparison with Super-Resolution Methods
+
 | Method | DINO↑ | CLIP↑ | LAION↑ | DOVER↑ | NFE/Time↓ |
 |------|-------|-------|--------|--------|-----------|
 | RealBasicVSR | 93.40 | 94.83 | 61.07 | 80.25 | 1/162.1s |
@@ -101,6 +103,7 @@ Crucially, SA (Semantic Alignment) and PC (Physical Commonsense) show that SURF'
 SURF leads in quality metrics (highest DOVER 81.20) while taking only 76.5s—32× faster than the diffusion-based super-resolution model VEnhancer (2467s).
 
 ### Ablation Study
+
 | Configuration | Key Metrics | Description |
 |------|---------|------|
 | Split 5-35 | AQ 63.45 / 201s | Too early; destroys layout and motion |

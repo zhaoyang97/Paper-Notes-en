@@ -61,6 +61,7 @@ Supervised baselines employed `CrossEntropyLoss` for single-label tasks (severit
 ## Key Experimental Results
 
 ### Main Results
+
 | Task | Best Model | Macro-F1 | Weighted-F1 | Observation |
 |:---|:---|:---|:---|:---|
 | Figurative detection | Claude-sonnet-4-5 zero-shot | $70.21 \pm 0.82$ | $80.69 \pm 0.42$ | Irony/sarcasm easiest; pun and metaphor harder. |

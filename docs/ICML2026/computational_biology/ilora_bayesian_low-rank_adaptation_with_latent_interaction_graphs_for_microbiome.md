@@ -13,8 +13,8 @@ content_hash: 2863587c6f4f1ee5
 # iLoRA: Bayesian Low-Rank Adaptation with Latent Interaction Graphs for Microbiome Diagnosis
 
 **Conference**: ICML 2026
-**arXiv**: [2605.30179](https://arxiv.org/abs/2605.30179)
-**Code**: https://github.com/GoodGoodMaul/iLoRA (Available)
+**arXiv**: [2605.30179](https://arxiv.org/abs/2605.30179)  
+**Code**: https://github.com/GoodGoodMaul/iLoRA (Available)  
 **Area**: Scientific Computing / Microbiome Diagnosis / Parameter-Efficient Fine-Tuning / Bayesian Deep Learning
 **Keywords**: LoRA, Bayesian Inference, Latent Interaction Graph, Microbiome, IBD Diagnosis
 

@@ -32,6 +32,7 @@ F$^2$-Assist feeds multi-organ ultrasound images and continuous biometry (HC/AC/
 **Core Idea**: Within a unified MLLM, multi-view ultrasound sequences are fused with **temporal embeddings** and **numerical embeddings**. Three tightly coupled modules address the aforementioned challenges, enabling the LLM to both write reports and report precise values. Additionally, the authors contribute the first large-scale multi-phase multi-organ fetal ultrasound dataset, GrowthFetus (2,000 fetuses, 9,280 examinations), to support this task.
 
 ## Method
+
 ### Overall Architecture
 F$^2$-Assist is a unified longitudinal reasoning framework. Each patient has $T$ historical pregnancy phases. In phase $t$, three standard planes $I_t = \{I_t^{(p)} \mid p \in \{\text{brain}, \text{abdomen}, \text{femur}\}\}$ and the corresponding biometry vector $x_t = (\text{HC}, \text{AC}, \text{BPD}, \text{FL}) \in \mathbb{R}^4$ are observed. The goal is to map the observed sequence to the next phase's values and report: $(I_1, x_1, \dots, I_T, x_T) \mapsto (\hat{x}_{T+1}, \hat{Y}_{T+1})$.
 

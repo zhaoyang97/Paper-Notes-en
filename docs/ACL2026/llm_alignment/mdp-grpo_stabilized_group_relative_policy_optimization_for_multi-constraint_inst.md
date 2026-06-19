@@ -78,6 +78,7 @@ Training uses the standard GRPO clipped surrogate objective, replacing only the 
 ## Key Experimental Results
 
 ### Main Results
+
 | Model / Group Size | Method | IFEval SSR/HSR | Custom SSR/HSR | FollowBench SSR/HSR | Key Observations |
 |--------------------|--------|----------------|----------------|---------------------|------------------|
 | Gemma-2-2B, G=8 | Baseline | 56.7 / 45.1 | 54.8 / 18.8 | 63.7 / 52.9 | Zero-shot instruction model |
@@ -90,6 +91,7 @@ Training uses the standard GRPO clipped surrogate objective, replacing only the 
 Individual components are not always globally optimal. For Gemma-2-2B on IFEval, PT-GRPO achieved the highest HSR at 65.8%, whereas MDP-GRPO reached 64.1%. For Llama-3.2-3B on IFEval, DA-PT-GRPO reached 71.5% SSR. The authors emphasize that the full pipeline provides a more stable overall profile rather than ranking first in every single metric.
 
 ### Ablation Study
+
 | Setting | Key Figures | Description |
 |---------|-------------|-------------|
 | Gemma, G=8, Custom HSR | GRPO 29.0, DA-GRPO 32.6, DA-PT-GRPO 33.4, MDP-GRPO 32.8 | Goal anchors help most with complex constraint combinations |

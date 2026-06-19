@@ -115,6 +115,7 @@ On DiT-XL/2 ImageNet 256² class-conditional generation (FID-50k as the primary 
 On HunyuanVideo text-to-video (VBench, 946 prompts), ResCa-IE achieves a VBench score of 79.98 at 5.53× FLOPs acceleration, roughly 0.2 points higher than TaylorSeer at a similar speedup.
 
 ### Ablation Study
+
 | Config (DiT, N=5) | FID ↓ | sFID ↓ | Description |
 |------------------|-------|--------|-------------|
 | ResCa-IT, O=1 | 2.62 | 5.08 | 1st-order residual only (Default) |

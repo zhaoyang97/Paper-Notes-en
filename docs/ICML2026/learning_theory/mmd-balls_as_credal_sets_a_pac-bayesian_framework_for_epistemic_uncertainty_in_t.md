@@ -91,6 +91,7 @@ This is a theoretical work; **no full experimental tables are provided.** "Data"
 | Proposition 10 (Geometry) | $|\mathbb{E}_{P_s}[d_k]-\mathbb{E}_{P_t}[d_k]|\le \sqrt{2\gamma}C_W\,\mathrm{MMD}$ | MMD controls RKHS geodesic distance drift |
 
 ### Ablation Study
+
 | Assumption / Setting | Impact | Description |
 |---|---|---|
 | Disable RKHS-Lipschitz (Assum. 1) | Theorem 1 fails | Shift term no longer has a linear MMD upper bound |

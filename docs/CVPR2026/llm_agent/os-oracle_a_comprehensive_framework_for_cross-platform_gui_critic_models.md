@@ -104,6 +104,7 @@ OS-Oracle compared to proprietary and open-source models on OS-Critic Bench (Ove
 OS-Oracle-7B achieved the highest overall accuracy (68.02) among open-source models and **outperformed all proprietary models** in the Mobile category (Acc 70.78).
 
 ### Ablation Study
+
 | Configuration | Key Metrics | Note |
 |------|---------|------|
 | Synthetic vs GPT-labeled Negatives | Acc 60.03 vs 55.42 | Synthetic negatives significantly outperformed GPT-4o labeled ones with the same positive sample count. |

@@ -86,6 +86,7 @@ Evaluated on MS-COCO, DiffusionDB, and SD-Prompts across 15 watermark methods an
 Classical pixel attacks (JPEG, blur, noise) are largely ineffective against semantic watermarks (TPR > 0.8). Regeneration-based methods (Regen, Rinse, VAE) provide moderate suppression. While UnMarker is a strong baseline, it degrades quality. RAVEN leads in both detection evasion and visual fidelity.
 
 ### Ablation Study
+
 | Configuration | Key Metric | Description |
 |------|---------|------|
 | Full RAVEN | TPR 0.026 / FID 40.18 | All components enabled |

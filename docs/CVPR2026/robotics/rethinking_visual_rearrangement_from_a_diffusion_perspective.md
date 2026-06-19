@@ -89,6 +89,7 @@ Evaluated on the RoomR dataset in AI2-THOR (80 rooms, 4000 training tasks, 1-5 o
 Compared to the previous SOTA (CAVR), the proposed method increases the success rate by 3.6% and FS by 5.7% on RoomR. It also shows superior generalization on the larger ProcTHOR dataset.
 
 ### Ablation Study
+
 | Configuration | Suc(%)↑ | FS(%)↑ | Mis↓ | E↓ | Description |
 |------|---------|--------|------|-----|------|
 | Direct Matching + GMM | 6.5 | 19.4 | 0.837 | 0.860 | Matching by GMM weights |

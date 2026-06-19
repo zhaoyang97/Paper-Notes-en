@@ -103,6 +103,7 @@ In "In-the-wild" (DiffusionDB) tests with unknown models, PromptMiner remains th
 | **Ours** | **0.863** | **0.622** | **0.545** |
 
 ### Ablation Study
+
 | Configuration / Defense | CLIP↑ | LPIPS↓ | SBERT↑ | Description |
 |-------------|-------|--------|--------|------|
 | No Defense | 0.911 | 0.420 | 0.591 | Full method on Lexica |

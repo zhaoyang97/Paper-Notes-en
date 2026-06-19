@@ -89,6 +89,7 @@ Two loss functions guide the learning: $L_{det}$ for detection and $L_{recon} = 
 The dataset includes synthetic GPR data (18,000 B-scans from gprMax 3.0 simulations) and real data (SIR-4000). 
 
 Detection Performance (Simulation):
+
 | Method | Backbone | AP | AP-50 | AP-75 |
 |------|------|------|-------|-------|
 | SE-SSD | VGG-16 | 0.784 | 0.870 | 0.802 |
@@ -96,6 +97,7 @@ Detection Performance (Simulation):
 | **Ours** | MobileNet | **0.857** | **0.902** | **0.870** |
 
 3D Reconstruction Performance (CD/EMD ×100, Mean across test roots):
+
 | Metric | Polis et al. | VAPCNet | PointLLM-V2 | Ours |
 |-------|------|------|------|------|
 | Mean | 2.90 / 7.08 | 3.29 / 7.57 | 3.00 / 7.12 | **2.03 / 5.03** |

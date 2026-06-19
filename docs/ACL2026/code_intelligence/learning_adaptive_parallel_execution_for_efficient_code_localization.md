@@ -92,6 +92,7 @@ Evaluation is conducted on SWE-bench Verified, excluding samples where patches i
 | Qwen3-30B-A3B SFT+RL | 83.01 | 58.62 | e=64.53, T=10.6s, Tok=43.2k | Large models also benefit |
 
 ### Ablation Study
+
 | Config | File F1 | Func F1 | #Turn | T(s) | Tok.(k) | Note |
 |---|---|---|---|---|---|---|
 | Seq SFT+RL | 78.82 | 50.21 | 7.52 | 8.03 | 59.4 | 1 tool per round |

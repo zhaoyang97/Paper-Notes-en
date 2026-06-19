@@ -73,6 +73,7 @@ Consider "Remove the tiger furthest from the water" (Implicit Reasoning task): I
 The authors evaluated 15 mainstream models (InstructPix2Pix, MagicBrush, SmartEdit, Step1X-Edit, Bagel, FLUX.1 Kontext, Qwen-Image-Edit, etc.). A **foreground-background decoupled** evaluation was used for local/multi-object/implicit tasks: foreground measures editing accuracy (LC-T: CLIP text similarity between foreground and description; LC-I: CLIP image similarity with GT), while background measures consistency (PSNR/SSIM/LPIPS).
 
 ### Benchmark Complexity Comparison (Table 1 Excerpt)
+
 | Benchmark | Scale | Avg. Objects | Avg. Categories | Occlusion % | Out-of-frame % |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | MagicBrush | 10K | 9.22 | 5.04 | 91.71 | 78.30 |

@@ -56,7 +56,7 @@ item_total: 17
 
 **🧠 NeurIPS2025** · **17** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (38)](../../CVPR2026/hallucination/index.md) · [🧪 ICML2026 (18)](../../ICML2026/hallucination/index.md) · [💬 ACL2026 (27)](../../ACL2026/hallucination/index.md) · [🔬 ICLR2026 (9)](../../ICLR2026/hallucination/index.md) · [🤖 AAAI2026 (15)](../../AAAI2026/hallucination/index.md) · [📹 ICCV2025 (4)](../../ICCV2025/hallucination/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (32)](../../CVPR2026/hallucination/index.md) · [🧪 ICML2026 (18)](../../ICML2026/hallucination/index.md) · [💬 ACL2026 (27)](../../ACL2026/hallucination/index.md) · [🔬 ICLR2026 (9)](../../ICLR2026/hallucination/index.md) · [🤖 AAAI2026 (15)](../../AAAI2026/hallucination/index.md) · [📹 ICCV2025 (4)](../../ICCV2025/hallucination/index.md)
 
 🔥 **Top topics:** Multimodal/VLM ×6 · LLM ×4 · Reasoning ×3 · Alignment/RLHF ×2 · Adversarial Robustness ×2
 

@@ -65,6 +65,7 @@ No neural models were trained in this study; statistical modeling employed linea
 ## Key Experimental Results
 
 ### Main Results
+
 | Experiment / Setting | Key Results | Explanation |
 |-------------|----------|------|
 | Cloze transform search | $S(w_t)^2$ + $V=200$ highest log-likelihood gain (~153.8) | Cloze probability is significantly better as surprisal; linear probability is insufficient. |
@@ -80,6 +81,7 @@ No neural models were trained in this study; statistical modeling employed linea
 | UCL SPR/ET | SPR / first-pass / go-past | ~80 responses per word | 205/361 sentences; short sentences with many high-frequency words. |
 
 ### Ablation Study
+
 | Configuration | Key Metric | Description |
 |------|----------|------|
 | Raw cloze probability | log-likelihood gain ~92 | Inferior to surprisal transformations. |

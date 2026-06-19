@@ -110,6 +110,7 @@ Testing on RoboCasa (24 tasks), GR-1 (24 tasks), and Franka Research 3 (7 tasks)
 DUST consistently outperforms FLARE across all demo scales. The gain over vanilla GR00T-N1.5 is particularly significant (+8.4 pp on RoboCasa 100 demos). On real hardware, it demonstrates improvement across PnP, Insert, and Tool-Use tasks, with Cord-insertion jumping from 12.5% to 29.2%.
 
 ### Ablation Study
+
 | Configuration | Key Metric | Description |
 |------|----------|------|
 | Full DUST | Avg. 58.5 (RoboCasa 300 demos) | Complete model, $q=1$ |

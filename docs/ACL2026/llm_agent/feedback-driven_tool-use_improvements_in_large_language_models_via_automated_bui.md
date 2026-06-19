@@ -13,8 +13,8 @@ content_hash: b0b35468e627b2d7
 # Feedback-Driven Tool-Use Improvements in Large Language Models via Automated Build Environments
 
 **Conference**: ACL 2026
-**arXiv**: [2508.08791](https://arxiv.org/abs/2508.08791)
-**Code**: [https://github.com/bytedance/FTRL](https://github.com/bytedance/FTRL)
+**arXiv**: [2508.08791](https://arxiv.org/abs/2508.08791)  
+**Code**: [https://github.com/bytedance/FTRL](https://github.com/bytedance/FTRL)  
 **Area**: Reinforcement Learning / Tool Use
 **Keywords**: Tool invocation, Reinforcement Learning, Automated Environment Construction, Verifiable Reward, LLM Training
 

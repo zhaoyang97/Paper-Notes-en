@@ -101,6 +101,7 @@ ViVerBench covers 16 sub-tasks across 6 categories. RefCOCO is used for groundin
 On the Qwen3-VL-8B backbone, Decoupled > Joint > Baseline holds. Fine-grained tasks like BBox, Point, and Count show the largest improvements (+8–18 points), confirming that meta-verification supervision strengthens grounding.
 
 ### Ablation Study
+
 | Configuration | ViVerBench | VRAM (GB) | Reward Calc (ms/sample) | Train Time (min/step) | Response Length (tokens) |
 |------|------------|---------------|-------------------------|---------------------|------------------|
 | OmniVerifier-7B baseline | 0.650 | — | — | — | — |

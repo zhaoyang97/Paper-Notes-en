@@ -102,6 +102,7 @@ Results on three datasets fine-tuned from pre-trained Stable Diffusion also show
 Average gains across four attacks: AUC +1.1–3.2%, ASR +1.2–3.8%, and TPR@1%FPR ranging from +0.8% to +14.8% (up to +32% for the Loss method on Pokémon).
 
 ### Ablation Study
+
 | Configuration | Key Observation | Explanation |
 |------|---------|------|
 | Masking top 40% low-memorization dimensions | Consistent gain across all metrics | Ours. Effectively removes noise while keeping signals. |

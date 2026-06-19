@@ -105,6 +105,7 @@ Comparison of CAVR with existing mitigation strategies (qualitative summary):
 | **CAVR (Ours)** | **Effective** | **Significantly flattens the V-curve, maintains high fidelity at Turn 5/6** |
 
 ### Ablation Study
+
 | Configuration | Key Phenomenon | Insight |
 |------|---------|------|
 | Full CAVR | Lowest VFR and SRS in later dialogue | Full dual-mechanism is optimal |

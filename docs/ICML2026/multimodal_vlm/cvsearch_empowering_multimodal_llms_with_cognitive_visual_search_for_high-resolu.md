@@ -93,6 +93,7 @@ Evaluation covers high-resolution specialized benchmarks (V*Bench, HR-Bench 4K/8
 Combined with 7B open-source models, the framework outperforms 32B models and GPT-4o, proving that the bottleneck lies in "where to look" rather than parameter count.
 
 ### Ablation Study
+
 | Configuration | V* / HR-4K / HR-8K (Relative) | Description |
 |---|---|---|
 | Full CVSearch | 90.1 / 76.6 / 75.6 | Qwen2.5-VL-7B Full Version |

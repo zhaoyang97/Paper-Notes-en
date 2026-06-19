@@ -83,6 +83,7 @@ Blocks calculate local color $C_k$ and transmittance $A_k$, which are then merge
 Tested on RTX 5090 + Ryzen 9 9950X using standard sets (Tanks & Temples, MipNeRF360) and custom UAV city datasets (5.9M–8.3M Gaussians). Evaluations performed on 10 user-interaction trajectories at 120 FPS (1920×1080).
 
 ### Main Results (Average FPS, Excerpt)
+
 | Scene (# Gaussians) | 3DGS | ADR-GS | Flash-GS | CaT-GS | Gain vs SOTA |
 |------|------|--------|----------|--------|------|
 | Train (1.0M) | 89.4 | 482.1 | 528.3 | **892.2** | +68% |
@@ -94,6 +95,7 @@ Tested on RTX 5090 + Ryzen 9 9950X using standard sets (Tanks & Temples, MipNeRF
 CaT-GS exceeds 200 FPS on all large UAV scenes, whereas baselines fail to maintain 120 FPS. The advantage grows with scene scale.
 
 ### Ablation Study
+
 | Configuration | Garden | Truck | UAV-1 | UAV-2 | Note |
 |------|--------|-------|-------|-------|------|
 | Ours-Full | 295.5 | 736.5 | 241.5 | 202.5 | Full Model |

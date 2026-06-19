@@ -112,6 +112,7 @@ The German Credit baseline showed a completely different pattern. The accuracy o
 | DeepSeek-v3.2 | +0.264 | 52.5 | 0.925 | 5.5 | Extremely conservative, mostly judged as Bad |
 
 ### Ablation Study
+
 | Intervention | ECHR Effect | German Credit Effect | Explanation |
 |------|----------|-------------------|------|
 | Org-externalized | 8/10 models moved toward org policy; significant gain for low-alignment models | 2 models improved, 3 declined; unstable on average | Stable norms can be externalized via prompts; contested norms cannot necessarily |

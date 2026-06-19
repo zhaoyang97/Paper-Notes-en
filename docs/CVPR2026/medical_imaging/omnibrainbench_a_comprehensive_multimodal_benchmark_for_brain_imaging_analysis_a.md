@@ -70,6 +70,7 @@ To ensure clinical accuracy, a hierarchical manual verification workflow was int
 ## Key Experimental Results
 
 ### Benchmark Scale Comparison
+
 | Benchmark | Images | QA Pairs | Modalities | Tasks | Open-ended |
 |-----------|--------|----------|------------|-------|------------|
 | Brain Tumor VQA | 750 | 14,015 | 1 | 3 | No |
@@ -82,6 +83,7 @@ To ensure clinical accuracy, a hierarchical manual verification workflow was int
 (* denotes general benchmarks containing brain imaging; only the brain subsets are comparable.) Closed evaluation includes 6,823 multiple-choice items, and open-ended includes 2,704 free descriptions.
 
 ### Main Results for 24 Models (Closed VQA Overall Accuracy, Selected)
+
 | Model | Type | Overall ACC |
 |-------|------|-------------|
 | Physician (Reference) | Human | **91.35** |

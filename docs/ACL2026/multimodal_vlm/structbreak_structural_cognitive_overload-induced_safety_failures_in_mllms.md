@@ -12,8 +12,8 @@ content_hash: 678e5f712f47fcb1
 # StructBreak: Structural Cognitive Overload-Induced Safety Failures in MLLMs
 
 **Conference**: ACL2026 Findings  
-**arXiv**: [2605.25534](https://arxiv.org/abs/2605.25534)
-**Code**: To be confirmed
+**arXiv**: [2605.25534](https://arxiv.org/abs/2605.25534)  
+**Code**: To be confirmed  
 **Area**: Multimodal VLM
 **Keywords**: MLLM Safety, Jailbreak Attack, Cognitive Overload, Visual Knowledge Graph, Attention Dissipation, Alignment Failure
 

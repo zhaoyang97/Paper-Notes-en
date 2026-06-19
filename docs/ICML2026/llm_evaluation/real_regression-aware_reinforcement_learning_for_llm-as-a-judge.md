@@ -35,6 +35,7 @@ Addressing the inherent flaw of 0/1 binary rewards in RL for LLM-as-a-Judge, whi
 **Core Idea**: Leverage the mathematical fact that "generalized policy gradient → natural decomposition into CoT exploration + prediction refinement" to elegantly embed regression awareness into RL, and theoretically prove that minimizing squared error is equivalent to optimizing Pearson correlation.
 
 ## Method
+
 ### Overall Architecture
 REAL addresses a specific task: allowing LLM-as-a-Judge to recognize that "small gaps still matter" during RL post-training. Given evaluation pairs $(x, y^*)$, where $x$ is the "prompt + response" and $y^* \in \mathcal{K} = \{0, 1, \dots, 9\}$ is the ground-truth label, the policy $\pi_\theta$ autoregressively generates a CoT $c$ before the score. Crucially, it does not directly sample the score; instead, it uses the RAIL expected value predictor $\hat y_\theta(x, c) = \sum_{k \in \mathcal{K}} k \cdot \pi_\theta(k | x, c)$ to collapse the 0–9 distribution into a continuous expectation for squared error calculation. During training, $K$ CoT paths are sampled per $x$, RLOO estimates the advantage, and the policy is updated using a dual-term gradient—one for CoT exploration and one for prediction refinement.
 

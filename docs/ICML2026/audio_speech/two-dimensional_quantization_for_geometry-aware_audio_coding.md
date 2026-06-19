@@ -95,6 +95,7 @@ Testing was performed on an 8K-hour WavTokenizer dataset and a 150K-hour multili
 Key Observation: Q2D2 with a **single quantizer at 333 tokens/s** matches the UTMOS of DAC (12 quantizers at 600 tokens/s) and achieves higher STOI. At 166 tokens/s, it significantly outperforms Mimi, Encodec, and DAC within the same token budget.
 
 ### Ablation Study
+
 | Configuration | Key Observation | Description |
 |------|---------|------|
 | Q2D2 (rhombic) | best PESQ / STOI / F1 | Optimal packing for levels $\le 9$. |

@@ -109,6 +109,7 @@ UniPixie's $\log E$ MSE of 0.0091 is more than twice as accurate as the previous
 A single unified model generally matches or exceeds dedicated models across three solvers while being two to three orders of magnitude faster than test-time optimization (Vid2Sim 521s, Spring-Gaus 4375s).
 
 ### Ablation Study
+
 | Configuration | $\log E$ MSE ↓ | Note |
 |------|------|------|
 | Ours (Flow Matching) | 0.0091 | Full generative model |

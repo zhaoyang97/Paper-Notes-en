@@ -97,6 +97,7 @@ Two setups: ① HPS-v2.1 only (in-domain upper bound, prone to hacking); ② Joi
 When training with HPS only, Singular Stochastic Sampling (w/o MGAI) shows a 6.52% relative improvement in HPS over DanceGRPO, confirming that singular-step randomness provides cleaner signals. In the joint HPS & CLIP setup, the full G²RPO leads across in-/out-domain metrics, with UR significantly increasing from 3.661 (MixGRPO) to 3.783.
 
 ### Ablation Study: Denoising Granularity Set $\Lambda$ (HPS&CLIP Training)
+
 | $\Lambda$ | HPS | CLIP | PS | IR | UR |
 |:---|:---:|:---:|:---:|:---:|:---:|
 | {1} (i.e., w/o MGAI) | 0.372 | 0.395 | 0.234 | 1.421 | 3.688 |
@@ -107,6 +108,7 @@ When training with HPS only, Singular Stochastic Sampling (w/o MGAI) shows a 6.5
 Increasing the number of granularities provides more comprehensive evaluations, steadily improving IR and UR metrics. {1,2,3} was chosen as the optimal balance for multiple metrics.
 
 ### Robustness across Inference Steps (HPS&CLIP Training)
+
 | Steps | Method | HPS | CLIP | PS | IR | UR |
 |:---|:---|:---:|:---:|:---:|:---:|:---:|
 | 10 | MixGRPO | 0.358 | 0.401 | 0.230 | 1.431 | 3.641 |

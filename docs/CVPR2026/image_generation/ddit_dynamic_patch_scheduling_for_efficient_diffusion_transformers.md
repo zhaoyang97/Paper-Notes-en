@@ -106,6 +106,7 @@ Ours achieves 2.18× acceleration with an FID only 0.35 higher than baseline, ou
 | DDiT + TeaCache | 3.2× | 80.53 |
 
 ### Ablation Study
+
 | Configuration | FID↓ | CLIP↑ | ImageReward↑ | Description |
 |------|------|-------|--------------|------|
 | DDiT (n=1) | 34.71 | 0.2927 | 0.9782 | 1st-order difference |

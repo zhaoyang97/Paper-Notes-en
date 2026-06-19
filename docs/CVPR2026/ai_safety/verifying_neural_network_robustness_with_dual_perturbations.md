@@ -91,6 +91,7 @@ For fair comparison, only adversarial examples with LPIPS ≤ 0.4 (perceptually 
 Even for the robustly trained and harder-to-attack Oval21 (3 ReLU-CNNs), dual perturbations still find 24% SAT instances.
 
 ### Ablation Study: Contributions of Convolutional $Z$ and Independent $R$ (Fig. 10)
+
 | Configuration | Key Metric | Description |
 |---------------|------------|-------------|
 | $z_{ij}=0.0,\ \epsilon_R=0.01$ | Baseline (Independent only) | CIFAR100 0%, TinyImageNet 20% |

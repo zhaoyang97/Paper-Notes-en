@@ -74,6 +74,7 @@ The model uses a standard autoregressive language modeling objective. On the MoE
 ## Key Experimental Results
 
 ### Main Results
+
 | Research Question | Metric / Dataset | Key Result | Baseline | Conclusion |
 |-------------------|------------------|------------|----------|------------|
 | Does pure code improve math reasoning? | Math Ability Avg | full data is 14.38% lower than w/o code | Code-NL remains constant | Pure executable code is not a general math reasoning enhancer |
@@ -83,6 +84,7 @@ The model uses a standard autoregressive language modeling objective. On the MoE
 | Cognitive scaffolds | Math Ability Avg | +17.56% | Fixed Math token budget | Structured math samples significantly improve complex math reasoning |
 
 ### Ablation Study
+
 | Configuration | Key Metric | Description |
 |---------------|------------|-------------|
 | full data (32e) | Math overall 36.20 / Programming overall 26.94 | Full corpus baseline for a 32-expert MoE |

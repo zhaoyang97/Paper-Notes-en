@@ -95,6 +95,7 @@ ON3R leads significantly at $K=2$. Transitive matching is the closest competitor
 **vs Structured HLOC (Sparsified datasets)**: In Cambridge with 5/10 total images per scene, ON3R wins in 35 out of 40 metrics. On 99% sparsified Aachen Day-Night (67 images total), ON3R's recall at $(10°, 5m)$ is 81.6% (Day) and 58.6% (Night) higher than HLOC, as it does not rely on database co-visibility.
 
 ### Ablation Study (MegaDepth, $K=2$)
+
 | Configuration | Time [s]↓ | $\varepsilon_R$↓ | $\varepsilon_t$↓ | Note |
 |------|------|------|------|------|
 | ON3R (Full) | 0.55 | 0.37 | 0.45 | 500 epochs + SuperPoint |

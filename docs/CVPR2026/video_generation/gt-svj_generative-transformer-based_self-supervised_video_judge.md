@@ -95,6 +95,7 @@ Performance comparison on video preference benchmarks:
 GT-SVJ outperforms existing models on GenAI-Bench by ~24.6% and MonteBench by ~3.7% while using significantly fewer annotations (6× fewer than VideoReward, 65× fewer than VisionReward).
 
 ### Ablation Study
+
 | Configuration | Key Observations |
 |------|---------|
 | GT-SVJ (Full) | Best performance across benchmarks. |

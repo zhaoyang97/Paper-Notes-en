@@ -83,6 +83,7 @@ The authors use Qwen2.5-7B-Instruct as the primary base model and Qwen3-Emb-4B a
 ## Key Experimental Results
 
 ### Main Results
+
 | Setting | Method | Class. Acc↑ | Class. F1↑ | Gen. R-1↑ | Gen. R-L↑ | Avg. Inf. Time ms↓ |
 |------|------|-----------|----------|-----------|-----------|------------------|
 | Random split | Base | 0.505 | 0.496 | 0.287 | 0.207 | 31.97 |
@@ -99,6 +100,7 @@ The authors use Qwen2.5-7B-Instruct as the primary base model and Qwen3-Emb-4B a
 P2P achieves the highest average classification Acc and generation R-1/R-L in the random split, outperforming OPPU without user-specific training. In the OOD split, P2P maintains the highest classification Acc and approaches the generation metrics of the strong prompt-based Full History method, while being an order of magnitude faster.
 
 ### Ablation Study
+
 | Configuration | Class. Acc↑ | Class. F1↑ | Gen. R-1↑ | Gen. R-L↑ | Rating MAE↓ | Rating RMSE↓ |
 |------|-----------|----------|-----------|-----------|-------------|--------------|
 | P2P Full | 0.581 | 0.562 | 0.326 | 0.243 | 0.258 | 0.583 |

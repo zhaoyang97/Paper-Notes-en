@@ -79,6 +79,7 @@ ReacTOD does not rely on task-specific training data, fine-tuning, or few-shot e
 ## Key Experimental Results
 
 ### Main Results
+
 | Dataset | Model / Method | Metric | Ours | Prev. Method | Gain |
 |--------|-------------|------|------|----------|------|
 | MultiWOZ 2.1 | gpt-oss-20B + ReacTOD | Overall JGA | 52.71% | FnCTOD + GPT-4 38.71% | +14.00 pp |
@@ -87,6 +88,7 @@ ReacTOD does not rely on task-specific training data, fine-tuning, or few-shot e
 | SGD | Qwen3-32B + ReacTOD | Avg. Service JGA | 64.09% | reproduced SRP 45.20% | +18.89 pp |
 
 ### Ablation Study
+
 | Model | Dataset | w/o ReAct Loop | ReacTOD | Gain |
 |------|--------|----------------|---------|------|
 | Qwen3-8B | MultiWOZ Overall JGA | 39.29% | 47.34% | +8.05 pp |

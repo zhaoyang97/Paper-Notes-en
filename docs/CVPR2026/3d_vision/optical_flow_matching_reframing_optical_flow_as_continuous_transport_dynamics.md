@@ -89,6 +89,7 @@ On Sintel online tests, OFM improved EPE by 28.5% and 8.4% compared to SEA-RAFT(
 Regarding efficiency (KITTI 376×1248): OFM(3-NFE) requires 15.6M parameters and 270ms, which is lighter and faster than FlowFormer++ (16.2M / 375ms).
 
 ### Ablation Study
+
 | Configuration | Sintel Clean | Sintel Final | KITTI EPE | KITTI Fl-all | Description |
 |------|------|------|------|------|------|
 | OFM-baseline | 0.96 | 2.45 | 4.01 | 13.8 | Pure flow backbone without transport |

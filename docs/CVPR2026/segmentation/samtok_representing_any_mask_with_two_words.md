@@ -35,6 +35,7 @@ SAMTok compresses any region mask into two discrete text tokens, enabling standa
 **Core Idea**: Use SAM as the encoding/decoding backbone combined with residual vector quantization to compress any mask into two discrete tokens. These two tokens are then treated as new "words" in the MLLM vocabulary, transforming all mask understanding and generation into pure text next-token prediction.
 
 ## Method
+
 ### Overall Architecture
 SAMTok itself is a "discrete VAE for masks": the input is an image $I$ and a region mask $\mathcal{M}$. The encoder compresses this mask into a continuous embedding $z$, the quantizer discretizes $z$ into two tokens $[e_1, e_2]$, and the decoder restores the 2D mask from these two tokens. The only training goal is mask reconstruction. Once this tokenizer is trained, the bidirectional mapping between "two tokens ↔ one mask" is fixed.
 

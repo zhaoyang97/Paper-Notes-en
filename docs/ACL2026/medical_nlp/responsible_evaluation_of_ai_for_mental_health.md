@@ -58,6 +58,7 @@ Not applicable (Position paper/Review). Annotation methodology: two annotators (
 ## Key Experimental Results
 
 ### ACL Anthology Paper Analysis (135 papers, last 5 years)
+
 | Observed Evaluation Practices | Percentage |
 |----------------|------|
 | Only use AI/NLP metrics | 50% |
@@ -67,6 +68,7 @@ Not applicable (Position paper/Review). Annotation methodology: two annotators (
 | Evaluation limitations not discussed | 36% |
 
 ### Maturity Distribution (60 randomly sampled papers)
+
 | Maturity Level | Percentage | Description |
 |-----------|------|------|
 | Early Exploratory (Technical Verification) | 68% | Retrospective datasets + automatic metrics |

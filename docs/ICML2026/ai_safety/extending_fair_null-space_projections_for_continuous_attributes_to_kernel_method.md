@@ -82,6 +82,7 @@ Evaluation is performed on three standard fairness regression benchmarks: Commun
 | ACSTravelTime | All 3 metrics | **Only SVR-FKD** | Other methods collapse to dummy levels while maintaining MAE |
 
 ### Ablation Study
+
 | Configuration | Key Finding | Explanation |
 |---------------|-------------|-------------|
 | SVR-FKD vs SVR-INPL (Linear projection + non-linear SVR) | SVR-INPL improves fairness much slower; after $m \in \{160, 180, 200\}$, fairness plateaus while MAE worsens | Linear projection fails to capture non-linear dependencies between data and protected attributes |

@@ -106,6 +106,7 @@ Fairness metrics $F_{FPR}$ (Difference in False Positive Rate) and $F_{DP}$ (Dem
 Ours achieves the highest detection AUC (97.71). Fairness metrics lead in most categories. ⚠️ Note: For intersectional $F_{FPR}$, Ours (20.18) is higher than PG-FDD (9.19). The authors emphasize a win-win on "most fairness metrics + detection accuracy." Cross-domain results on Celeb-DF also show top performance.
 
 ### Ablation Study (FF++, Xception; Ori → +GDA → +GDA+SFD)
+
 | Configuration | Gender F_FPR↓ | Gender es-AUC↑ | Intersect F_DP↓ | AUC↑ |
 |---------------|---------------|----------------|-----------------|------|
 | Ori           | 4.10          | 91.93          | 14.64           | 92.69|

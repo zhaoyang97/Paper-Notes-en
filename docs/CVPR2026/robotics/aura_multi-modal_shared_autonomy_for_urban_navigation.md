@@ -90,6 +90,7 @@ In open-loop evaluation (MM-CoS test set, `*` denotes retraining on this dataset
 The L2@2s of the arrowing variant (0.473) is **39.8%** lower than the strongest baseline.
 
 Real-world closed-loop trials (2.8 km):
+
 | Method | HO(%)↓ | NIR↓ | ODR↓ | TSR↑ |
 |------|--------|------|------|------|
 | NoMaD | 9.74 | 43.2 | 11.3 | 89.0 |

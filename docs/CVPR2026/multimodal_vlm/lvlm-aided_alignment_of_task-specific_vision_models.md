@@ -94,6 +94,7 @@ Three datasets with two types of shortcut settings: synthetic DecoyMNIST (gray b
 Alignment $\mu_{Align}=1-\frac{1}{N_t}\sum_n\frac{\sum_i A_{n,i}^{(GT)}|\Phi_i|}{\sum_i|\Phi_i|}$ measures the proportion of attribution mass falling outside ground-truth spurious regions (i.e., on digits).
 
 ### Ablation Study
+
 | Configuration | Key Metric (Knee) | Description |
 |------|------|------|
 | Full LVLM-VA (PPEPS-WGM) | Verdict Acc 0.87 / $\Delta$WGA $0.16\pm0.06$ | Full model |

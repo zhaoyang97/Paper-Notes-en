@@ -74,6 +74,7 @@ This work primarily focuses on evaluation and defense experiments and does not t
 ## Key Experimental Results
 
 ### Main Results
+
 | Model | Explicit 1-Clip | Explicit 4-Clip | Implicit 1-Clip | Implicit 4-Clip | Key Observation |
 |------|-----------------|-----------------|-----------------|-----------------|----------|
 | Qwen2.5-VL-7B | 50.75 | 68.70 | 69.04 | 80.27 | Most significant rise with clip increase |
@@ -84,6 +85,7 @@ This work primarily focuses on evaluation and defense experiments and does not t
 | LLaVA-Video-7B | 66.58 | 66.85 | 49.86 | 50.68 | Lower Implicit ASR; likely due to weaker OCR |
 
 ### Ablation Study
+
 | Setting / Defense | Qwen2.5-VL-7B | Qwen3-VL-8B | InternVL3.5-8B | LLaVA-Video-7B | Avg ASR |
 |-------------|---------------|-------------|-----------------|---------------|---------|
 | Image Frame Attack | 50.93 | 58.89 | 46.47 | 33.39 | 47.42 |

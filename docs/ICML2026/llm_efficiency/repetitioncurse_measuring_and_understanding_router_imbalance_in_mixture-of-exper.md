@@ -73,6 +73,7 @@ The study covers 13 MoE models: 4 Mixtral variants ($E{=}8,k{=}2$), Qwen3-30B-A3
 Qualitative conclusions: (a) Mixtral variants under standard 8-GPU EP generally show TTFT amplification of **1.29×–2.48×**; (b) Across 13 models, vulnerabilities are found in diverse architectures including Qwen3, GPT-OSS, DeepSeek, and Kimi-Linear (with linear attention); (c) SLA impact: The violation rate for P$_{99}$ TTFT < 20s increases from a 1% baseline to **1.4%–13.6%**, sufficient to trigger SLA penalties and unnecessary autoscaling.
 
 ### Ablation Study
+
 | Dimension | Key Result | Description |
 |------|---------|------|
 | Vocab Coverage $\mathcal{B}$ | $\mathcal{B}\to 1$ when EP=$E$ | "Randomly selecting a token to repeat" almost always causes routing concentration. |

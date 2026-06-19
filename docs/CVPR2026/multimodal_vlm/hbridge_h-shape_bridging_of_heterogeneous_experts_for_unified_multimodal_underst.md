@@ -79,6 +79,7 @@ The default configuration is 7B+4B (Qwen2.5-VL-7B + 4B DiT). The frozen understa
 Ours uses ~200B T2I tokens (1/12 of BAGEL's ~2.5T) yet outperforms larger models like BAGEL (7B+7B) and UniWorld-V1 (7B+12B). On ImgEdit-Bench, HBridge also leads against competitors like OmniGen2 and Step1X-Edit.
 
 ### Ablation Study
+
 | Configuration | Result | Note |
 |------|------|------|
 | Heterogeneous (Diffusion init) | High fidelity at 40k steps | Full design |

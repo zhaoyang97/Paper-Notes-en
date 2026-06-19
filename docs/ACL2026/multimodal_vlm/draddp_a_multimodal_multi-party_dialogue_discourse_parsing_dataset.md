@@ -81,6 +81,7 @@ The paper adopts training strategies from existing baselines. LLM-based models w
 ## Key Experimental Results
 
 ### Main Results
+
 | Dataset / Setting | Metric | Ours | Compared Baseline | Description |
 |--------|------|------|----------|------|
 | DraDDP Scale | Dialogues / Utterances / Video | 495 / 6,374 / 9.1h | MODDP: 864 / 18K / Chinese Dyadic | DraDDP is smaller but covers English multi-party T+V+A |
@@ -90,6 +91,7 @@ The paper adopts training strategies from existing baselines. LLM-based models w
 | DraDDP | Link-F1 / Link&Rel-F1 | Qwen2.5-Omni: 84.55 / 53.34 | Qwen2-Audio: 84.90 / 55.09 | Full modality fusion underperforms T+A, indicating video noise offsets gains |
 
 ### Ablation Study
+
 | Configuration | Link-F1 | Link&Rel-F1 | Description |
 |------|---------|------|------|
 | T | 84.67 | 53.69 | Text is the strongest single-modality baseline |

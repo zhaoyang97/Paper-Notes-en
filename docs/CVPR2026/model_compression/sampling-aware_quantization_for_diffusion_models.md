@@ -94,6 +94,7 @@ Evaluated on ImageNet 256×256 (LDM-4, steps=20), LSUN, and MS-COCO 512×512 (SD
 W8A8/W4A8/W4A4 reach bit compression of 3.99×/7.95×/7.95× and bit-op speedups of 11.47×/23.33×/46.67×. At W4A8, SA-QLoRA's FID 8.55 is even lower than the FP32 model. At W4A4, where other methods **fail to generate** due to ODE-to-SDE degradation (PTQ4DM/Q-diffusion/PTQD show no valid results), SA-QLoRA still converges.
 
 ### Ablation Study
+
 | Setting | Phenomenon | Explanation |
 |------|------|------|
 | W8A8 (SA-PTQ) | FID 10.16 < PTQD 10.76 | PTQ variant exceeds previous SOTA. |

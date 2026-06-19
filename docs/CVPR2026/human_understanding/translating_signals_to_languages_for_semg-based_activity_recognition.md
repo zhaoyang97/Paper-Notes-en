@@ -105,6 +105,7 @@ Evaluated on GRABMyo (17 activities) and NinaPro DB2 (50 movements) using user-s
 | NinaPro DB2 | Exercise B | 92.53% | 87.22% | +5.31% |
 
 ### Ablation Study (GRABMyo Overall ACC)
+
 | Configuration | Overall ACC | Description |
 |------|---------|------|
 | Full Model | 95.14% | Complete model |

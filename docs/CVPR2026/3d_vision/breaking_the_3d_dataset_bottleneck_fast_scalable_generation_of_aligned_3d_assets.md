@@ -75,6 +75,7 @@ The final hurdle is pose annotation—real labels rely on slow and error-prone p
 ## Key Experimental Results
 
 ### Dataset Scale Comparison
+
 | 3D Dataset | Type | #Objects | #Categories | #Obj/Cat | Aligned | Time per Obj |
 |-----------|------|-------|-------|----------|------|------------|
 | OmniObject3D | Real Scan | 6K | 190 | 32 | Yes | 15m–1h |
@@ -85,6 +86,7 @@ The final hurdle is pose annotation—real labels rely on slow and error-prone p
 GenOmni3D achieves "large-scale + built-in alignment + high quality + speed" simultaneously, with >40× more instances per category than previous aligned real datasets.
 
 ### Zero-Shot Sim2Real Pose Estimation on NOCS REAL275 (DualPoseNet Baseline)
+
 | Training Data | IoU75 | 10°5cm | Avg |
 |----------|-------|--------|-----|
 | Replica Full-Syn | 34.33 | 17.12 | 33.10 |
@@ -95,6 +97,7 @@ GenOmni3D achieves "large-scale + built-in alignment + high quality + speed" sim
 The comparisons validate: Mixed reality > Full-syn (34.75 vs 33.10), Ours mesh > Original NOCS mesh (23.91 vs 15.66 on synth val), and Shadows > No shadows (30.83 → 34.75). It approaches the performance of models trained on real data without using any real training data.
 
 ### Grasping and Shape Completion (SAPIEN, CenterGrasp Framework)
+
 | Method | Grasp Success ↑ | Bi-directional Err $bi$ ↓ | IoU ↑ |
 |------|-------------|--------------|-------|
 | GIGA | 0.638 | 55.2 | 0.146 |

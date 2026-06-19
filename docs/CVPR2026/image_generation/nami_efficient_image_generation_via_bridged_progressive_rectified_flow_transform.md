@@ -97,6 +97,7 @@ In human preference testing (NAMI-1K), NAMI-2B achieves the highest total score 
 Efficiency at 1024 resolution: NAMI-2B takes 2.98s compared to 8.47s for a FLUX-based baseline (30-step uniform sampling), a **64.82% reduction**.
 
 ### Ablation Study
+
 | Configuration | Key Metrics | Note |
 |---------------|-------------|------|
 | Full NAMI | FID 8.93 / CLIP 25.57 | Flow segments + model blocks enabled |

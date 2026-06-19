@@ -90,6 +90,7 @@ ESP was compared against PLD, STAND, and LADE on SpecBench. Metrics include aver
 ESP consistently achieves the highest $\tau$ and S/R. Compared to LADE, ESP's $\tau$ is 7–12% higher on LLaMA3 and 7-8% higher on Qwen3, with throughput gains of 15–19% over the strongest baselines.
 
 ### Ablation Study
+
 | Configuration | LLaMA3.2-3B $\tau$ (BC=60) | LLaMA3.1-8B $\tau$ (BC=60) | Description |
 |------|------|------|------|
 | Mean (soft init) | **1.67** | **1.71** | Full method, prompt mean init |

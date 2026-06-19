@@ -98,6 +98,7 @@ On the Seamless Interaction validation set, DyaDiT was compared against two dyad
 DyaDiT leads significantly in FD (realism) and Static Diversity, with Diversity(Static) closely approaching the GT of 28.42.
 
 ### Ablation Study
+
 | Configuration | FD-Sta ↓ | Div-Sta ↑ | Description |
 |------|----------|-----------|------|
 | **DyaDiT (Full)** | **6.40** | **27.46** | Full model |

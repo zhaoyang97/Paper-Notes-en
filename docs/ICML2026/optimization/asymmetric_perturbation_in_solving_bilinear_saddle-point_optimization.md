@@ -91,6 +91,7 @@ Experiments are divided into three groups: trajectories and NashConv in normal-f
 | CFR Supplementary | AsymP-DGDA, CFR, CFR+, DCFR, LCFR | NashConv vs updates | AsymP-DGDA is lower than CFR series in most games; Leduc is the main exception | CFR reports average-iterate; Ours reports last-iterate |
 
 ### Ablation Study
+
 | Design / Phenomenon | Key Metric | Note |
 |------|---------|------|
 | Symmetric Perturbation | Solution shifts with fixed $\mu$ | Stability comes at the cost of rewriting the objective |

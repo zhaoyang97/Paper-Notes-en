@@ -78,6 +78,7 @@ The authors cross-evaluate PBGI/LogEIPC stopping rules against 7 baseline stoppi
 | NATS-Bench | $\lambda=10^{-5}$ | Near hindsight (2 exceptions) | Slightly weaker than PBGI | Often hits 200-round limit | Medium | Lower bound |
 
 ### Ablation Study
+
 | Configuration | Key Observation | Mechanism |
 |------|--------|------|
 | $\alpha_t$ vs $\alpha_{t-1}$ | $\alpha_t$ is significantly better | Fair values updated with posterior genuinely reflect if continuing is worth it |

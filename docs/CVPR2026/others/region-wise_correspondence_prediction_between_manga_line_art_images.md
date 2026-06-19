@@ -110,6 +110,7 @@ Intra-image AP exceeds 85% and Best F1 exceeds 76%. Cross-image performance is c
 Ours achieves a Cluster Ratio (CR) near 1 (1.41–1.70), indicating balanced segmentation, while the baseline's CR of 7–14 indicates severe over-segmentation. Ours also achieves significantly higher mIoU(P→G) and higher cross-image region accuracy, especially on the challenging GenAI dataset.
 
 ### Ablation Study
+
 | Configuration | Observation | Explanation |
 |---------------|-------------|-------------|
 | Increasing training set | Both PR curves improve | Larger data allows for more stable structural representations |

@@ -101,6 +101,7 @@ Pose comparison on T&T / Cambridge Landmarks (Lower is better):
 | **Ours + π³** | **0.077** | **0.178** | **0.013** | 1.022 |
 
 ### Ablation Study
+
 | Configuration | Observation | Description |
 |------|------|------|
 | Ground Truth Video Order vs Pseudo-video | ATE diff ≤ 0.001 | Pseudo-video generated from unordered images is as effective as real sequential video |

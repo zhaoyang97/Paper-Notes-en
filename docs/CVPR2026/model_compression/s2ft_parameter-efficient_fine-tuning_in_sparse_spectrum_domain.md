@@ -102,6 +102,7 @@ Verified across image classification, image generation, NLU, and instruction fin
 Highlights: On VTAB, S2FT with 0.08% parameters (half of FourierFT) achieves 73.6 mean accuracy. On GLUE, RoBERTa-large with only 0.01% parameters achieves 88.3, exceeding full fine-tuning (88.2).
 
 ### Ablation Study
+
 | Configuration | Metric (VTAB Mean Acc) | Description |
 |------|--------------------------|------|
 | S2FT (Full) | 73.6 | Power spectrum prior sampling |

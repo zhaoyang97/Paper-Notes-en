@@ -87,6 +87,7 @@ On two diffusion backbones (SD3.5-M, Flux.1-dev) and two preference rewards (Pic
 Key points: DreamSim diversity increases by +13.9%–+18.8%, FID decreases simultaneously (less collapse), and BeyondFID jumps significantly (+184% on SD3.5/PickScore). At the same time, quality scores like PickScore do not drop but slightly increase—diversity gains are not at the expense of quality.
 
 ### Ablation Study
+
 | Configuration | Quality-Diversity Performance | Description |
 |------|----------------|------|
 | Flow-GRPO (baseline) | Rapid diversity collapse | Single-sample reward + uniform/no KL |

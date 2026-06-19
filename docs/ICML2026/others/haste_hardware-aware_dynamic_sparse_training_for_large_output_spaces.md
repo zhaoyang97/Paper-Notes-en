@@ -94,6 +94,7 @@ Four XMC datasets with labels ranging from 670K to 8.6M.
 HASTE **consistently outperforms Spartex** across all datasets while or utilizing 1.5–2.5x less VRAM. Training time per epoch dropped from 86:38 to 21:39 on Amazon-3M. On the largest dataset, LF-Paper2Keywords-8.6M, HASTE's P@1 even **surpassed dense** by 3.9 points.
 
 ### Ablation Study
+
 | Configuration | P@1 (Amazon-670K) | Description |
 |------|-------------------|------|
 | HASTE (Full) | 48.1 | Semantic grouping + HT split |

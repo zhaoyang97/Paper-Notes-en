@@ -85,6 +85,7 @@ Evaluated on UCF-Crime and XD-Violence using **AP (Area Under PR Curve) and Reca
 Ours achieves the highest AP on both datasets. Zero-shot InternVL shows high recall at extremely low FPR (validating its use as a backstop) but low AP due to poor overall ranking.
 
 ### Ablation Study
+
 | Baseline | TCBS | UBS | VLM | AP (%) | Recall@FPR=3% |
 |:--:|:--:|:--:|:--:|:--:|:--:|
 | ✓ | | | | 35.48 | 0.212 |

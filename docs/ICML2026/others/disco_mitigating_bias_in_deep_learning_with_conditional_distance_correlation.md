@@ -92,6 +92,7 @@ Six datasets covering regression/classification, synthetic/real, and vision/NLP;
 Across six datasets compared against seven representative baselines, DISCO variants achieve SOTA or comparable performance in most configurations. They only require tuning two hyperparameters ($\sigma_Y, \lambda$), significantly fewer than the complex combinations required by GDRO/IRM.
 
 ### Ablation Study
+
 | Configuration | Key Property | Description |
 | :--- | :--- | :--- |
 | Full sDISCO | Global exactness + $O(n^2)$ | Seamless extension to multi-bias scenarios without extra overhead. |

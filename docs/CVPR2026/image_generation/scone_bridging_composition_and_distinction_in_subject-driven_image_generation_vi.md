@@ -93,6 +93,7 @@ Scone is the best among open-source/unified models; closed-source models like GP
 - On SconeEval, Scone's distinction score (8.79) significantly outperforms competitors, validating the effectiveness of the understanding bridge.
 
 ### Ablation Study
+
 | Stage/Config | COM ↑ | DIS ↑ | Overall ↑ | Description |
 |-----------|-------|-------|-----------|------|
 | BAGEL Base | 6.74 | 7.20 | 6.97 | Starting point |

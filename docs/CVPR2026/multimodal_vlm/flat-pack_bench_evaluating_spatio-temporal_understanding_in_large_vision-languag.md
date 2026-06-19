@@ -73,6 +73,7 @@ To verify if tasks can be solved by decomposing them into "tracking + contact ju
 ## Key Experimental Results
 
 ### Benchmark Composition
+
 | Category | #Video | #Question | Ratio | Avg Q/Video | #Template |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | Track | 43 | 257 | 42.69% | 5.98 | 2 |
@@ -82,6 +83,7 @@ To verify if tasks can be solved by decomposing them into "tracking + contact ju
 | **Total** | **50** | **602** | 100% | 12.04 | 13 |
 
 ### Main Results: Models vs. Human (Micro Avg. Accuracy %)
+
 | Model | Micro Avg. | TOrd | TLoc | Track | Mate |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | Human | **94.18** | 93.54 | 93.20 | 93.77 | 97.70 |

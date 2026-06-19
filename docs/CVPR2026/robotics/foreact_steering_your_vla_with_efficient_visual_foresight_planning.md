@@ -93,6 +93,7 @@ Evaluated on 11 Kitchen/Workspace/Factory tasks using Galaxea R1 Lite (420 episo
 ForeAct outperformed all 11 tasks, with each task >70%. Compared to VLM+$\pi_0$, it shows a **+30.3%** gain, indicating that "visual foresight" is the primary driver of improvement over simple sub-task decomposition.
 
 ### Scaling to Stronger Backbone: $\pi_{0.5}$
+
 | Task | $\pi_{0.5}$ | Ours | Task | $\pi_{0.5}$ | Ours |
 |------|------|------|------|------|------|
 | Pick_Veg | 60.0 | 86.6 | Office_Desk | 76.0 | 85.4 |
@@ -102,6 +103,7 @@ ForeAct outperformed all 11 tasks, with each task >70%. Compared to VLM+$\pi_0$,
 Average success rate increased from 70.3% to **88.2%**, proving the framework's scalability to stronger VLAs.
 
 ### LIBERO Simulation ($\pi_{0.5}$ Backbone)
+
 | Method | Spatial | Object | Goal | Long | Avg. |
 |------|---------|--------|------|------|------|
 | OpenVLA | 84.7 | 88.4 | 79.2 | 53.7 | 76.5 |

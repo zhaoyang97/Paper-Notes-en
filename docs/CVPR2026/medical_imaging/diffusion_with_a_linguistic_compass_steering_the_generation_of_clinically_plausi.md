@@ -83,6 +83,7 @@ Evaluation was conducted on ADNI (ADNI-1 Train / ADNI-2 Test), AIBL (Generalizat
 MCI-Diff, using only a baseline scan, outperformed the strongest longitudinal baseline (HFCN+), which requires actual follow-up scans. It also significantly exceeded generative baselines like VAE (0.730) and Temp-GAN (0.791).
 
 ### Ablation Study
+
 | Configuration | ADNI ACC | Note |
 |------|---------|------|
 | Full Model (Ours) | **0.950** | Complete model |

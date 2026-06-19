@@ -87,6 +87,7 @@ The training corpus includes MMEB (20 IND subsets, 662K pairs) + MVEB (20 IND su
 At the 7B scale, VisME leads with an average of 78.8. Existing UME models (best being GME-7B at 55.3 on MVEB) lag significantly, confirming that identity discrimination was a neglected capability.
 
 ### Ablation Study
+
 | Configuration | MMEB IND/OOD | MVEB IND/OOD | Description |
 |------|--------------|--------------|------|
 | w/o ID Sampling + w/o Hard Negs | 74.2 / 59.4 | 64.3 / 61.2 | Naive interleaved baseline |

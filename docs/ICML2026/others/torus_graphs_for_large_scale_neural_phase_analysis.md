@@ -96,6 +96,7 @@ Parameter recovery of stochastic score matching is validated on 4-dimensional an
 | 1860 | **Ours (Stochastic)** | **$\mathcal{O}(d^2)$** | Real LFP data | Reveals Wake/NREM reorganization |
 
 ### Ablation Study
+
 | Configuration | Key Observation |
 | :--- | :--- |
 | Full TG-HMM | Stably extracts 6 states across 1334 spindles, with one state time-locked to the spindle center. |

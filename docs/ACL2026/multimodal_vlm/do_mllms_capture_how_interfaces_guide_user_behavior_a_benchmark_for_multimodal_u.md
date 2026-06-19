@@ -60,6 +60,7 @@ This work does not involve training; it evaluates existing MLLMs. For the select
 ## Key Experimental Results
 
 ### Main Results
+
 | Task | Model / Method | Key Metric | Value | Conclusion |
 |------|-------------|----------|------|------|
 | UI/UX selection | Random | AA / CA | 50.00 / 25.00 | CA random baseline is 25% |
@@ -71,6 +72,7 @@ This work does not involve training; it evaluates existing MLLMs. For the select
 | UI/UX interpretation | GPT-4o | Interpretation / Instance Recall | 50.15 / 66.67 | Explanatory power does not equal selection power |
 
 ### Ablation Study
+
 | Configuration | Key Metric | Description |
 |------|---------|------|
 | GPT-4o zero-shot | FA 31.89, SA 88.33, AA 60.11, CA 30.11 | Strong bias toward the 2nd image; AA inflated |

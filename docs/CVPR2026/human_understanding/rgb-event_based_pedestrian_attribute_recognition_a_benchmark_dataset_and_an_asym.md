@@ -100,6 +100,7 @@ Cross-dataset performance (MARS-Attribute / DukeMTMC-VID-Attribute, RWKV-B backb
 | DukeMTMC-VID-Attribute | **73.15** | **84.45** | 82.16 | **82.78** |
 
 ### Ablation Study
+
 | Configuration | Key Metrics (mA/Acc/F1) | Note |
 |------|---------------------|------|
 | RGB(1) + Event(5) | 87.70 / 84.94 / 89.18 | Full optimal setup |

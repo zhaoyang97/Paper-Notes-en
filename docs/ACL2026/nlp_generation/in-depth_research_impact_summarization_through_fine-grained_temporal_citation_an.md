@@ -71,6 +71,7 @@ The study employs a prompt-based LLM pipeline rather than training new models. I
 ## Key Experimental Results
 
 ### Main Results
+
 | Task | Method | Precision | Recall | F1 | Accuracy |
 |------|------|-----------|--------|----|----------|
 | Impact-revealing Classification | random baseline | 0.54 | 0.51 | 0.52 | 0.50 |
@@ -83,6 +84,7 @@ The study employs a prompt-based LLM pipeline rather than training new models. I
 Ours achieves the best performance across precision, recall, F1, and accuracy. High recall is particularly crucial for generating impact summaries, as missing influential citations results in incomplete impact trajectories.
 
 ### Ablation Study
+
 | Summary Input | Provide Intents | Faithfulness | Coverage | Coverage@3 | Year Compliance | Insightfulness | Trend Awareness | Specificity |
 |----------|------------------|--------------|----------|------------|--------------------------|----------------|-----------------|-------------|
 | No citations | No | 0.77 | 0.25 | 0.58 | n/a | 0.70 | 0.94 | 0.75 |

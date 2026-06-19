@@ -78,6 +78,7 @@ All methods use identical LoRA settings: AdamW, 1 epoch, max sequence length 204
 ## Key Experimental Results
 
 ### Main Results
+
 | Dataset / Model | Metric | GIFT | Original Instruct / Strong Baseline | Gain / Conclusion |
 |--------|------|------|----------|------|
 | Llama3.1-8B (5 Math Tasks) | Average@16 | 22.0 | Instruct 16.8; Shadow-FT 18.0 | +5.2 over original, +4.0 over Shadow-FT |
@@ -89,6 +90,7 @@ All methods use identical LoRA settings: AdamW, 1 epoch, max sequence length 204
 | MMLU-medical | Accuracy | 77.7 | Instruct 75.1; Shadow-FT 73.8 | Maintains/enhances general knowledge |
 
 ### Ablation Study
+
 | Configuration | Key Metric | Description |
 |------|---------|------|
 | Qwen2.5-7B Instruct | Math Avg 41.3 | Strong original instruction baseline |

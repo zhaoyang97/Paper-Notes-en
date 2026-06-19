@@ -78,6 +78,7 @@ The total loss is $L=L_{\mathrm{Protect}}+\lambda_{\mathrm{SSIM}}L_{\mathrm{Perc
 Datasets include FaceScrub and LFW. 20 celebrities were randomly selected as Protego users: 20% of images were used as intruder queries, 60% as gallery entries (also used to train the PPT), and 20% as unseen gallery entries (to evaluate protection on unseen images). All other subjects served as gallery noise. **Metric**: Recall is calculated by taking the top-$K$ most similar entries for a query (where $K$ is the number of true gallery entries) and determining the proportion of relevant matches. Protego aims to minimize this recall.
 
 ### Main Results (FaceScrub / LFW, Default Black-box FR=AD-IR50-CA, Recall %, Lower is better)
+
 | Scenario | Unprotected Baseline | Protego | Existing Methods (Chameleon/OPOM) |
 |------|-----------|---------|--------------------------|
 | Easy but unrealistic: Only query or only gallery protected (FaceScrub) | 71.68 | ≤1.05 | Similarly low (their implicit assumption) |

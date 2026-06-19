@@ -88,6 +88,7 @@ Evaluated on HanCo (8 views), DexYCB-MV (8 views), and OakInk-MV (4 views) again
 | OakInk-MV | MPVPE↓ | **10.02** | 13.04 | −23.2% |
 
 ### Ablation Study (HanCo, MPVPE)
+
 | Configuration | MPVPE↓ | vs. Full Model | Note |
 |------|--------|------|------|
 | Full model | 5.82 | — | Complete UST-Hand |

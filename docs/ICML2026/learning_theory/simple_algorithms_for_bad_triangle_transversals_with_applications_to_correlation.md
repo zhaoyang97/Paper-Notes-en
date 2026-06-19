@@ -75,6 +75,7 @@ This paper is a purely theoretical work with no experimental code. The following
 | Algorithm 3 + Derandomization | 2 | 1 | + $\mathcal{O}(|E|\log n)$ | **Ours** |
 
 ### Lower Bounds and Conversion Ratios
+
 | Result | Conclusion | Scope | Type |
 |--------|------------|-------|------|
 | Theorem 4.2 | BTT is as hard to approximate as Vertex Cover, UGC-hard $\ge 2$ | General Graph | Hardness |

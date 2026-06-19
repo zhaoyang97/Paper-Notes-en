@@ -87,6 +87,7 @@ Three datasets: PARIS (10 PartNet-Mobility objects), ArtGS-Multi (5 multi-part +
 On multi-part objects, ArtGS/REArtGS fail significantly when joint type priors are mispredicted (e.g., Table 31249); REArtGS++ is far more robust as it requires no type estimation.
 
 ### Ablation Study
+
 | Configuration | Axis Ang ↓ | Axis Pos ↓ | CD-m ↓ | Key Insight |
 |---------------|-----------|-----------|--------|-------------|
 | Full Model | **0.41** | **1.18** | **2.38** | Baseline |

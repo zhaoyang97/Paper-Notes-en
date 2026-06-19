@@ -93,6 +93,7 @@ Long-context sampling latency (OWT, $T \gg L$, same NFE order as AR):
 | 10240 (Fine-tuned) | ~5× (Matched Quality vs BD3-LM) | – | – |
 
 ### Ablation Study
+
 | Configuration | Key Observation | Explanation |
 |------|---------|------|
 | Eso-LM ($\alpha_0=1$, full) | LM1B NELBO 36.12 | Approx. 4 pts worse than MDLM |

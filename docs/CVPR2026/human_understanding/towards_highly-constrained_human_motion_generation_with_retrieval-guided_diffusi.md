@@ -110,6 +110,7 @@ Three high-constraint tasks: Task-1 (0.4m gap), Task-2 (0.5m low barrier), Task-
 Constraint errors are generally reduced by more than an order of magnitude compared to ProgMoGen+DNO, while jitter (Max Acc.) is significantly lowered.
 
 ### Ablation Study (Task-2)
+
 | Config | C.Err↓ | Local FS↓ | Max Acc.↓ |
 |------|------|------|------|
 | Random noise only (z1) | 0.000115 | 0.096 | 0.261 |

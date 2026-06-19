@@ -15,8 +15,8 @@ content_hash: 621d4282a543bd01
 # Statistically Reliable LLM-Based Ranking Evaluation via Prediction-Powered Inference
 
 **Conference**: ACL2026
-**arXiv**: [2606.05308](https://arxiv.org/abs/2606.05308)
-**Code**: TBD
+**arXiv**: [2606.05308](https://arxiv.org/abs/2606.05308)  
+**Code**: TBD  
 **Area**: LLM Evaluation
 **Keywords**: PPI, LLM-as-Judge, Bias Correction, Ranking Evaluation, Precision@K, Semi-supervised Estimation
 

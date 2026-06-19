@@ -112,6 +112,7 @@ The pose reconstruction task isolates the difficulty of "recovering a configurat
 vRRT significantly leads in error for the heavily occluded end-effector joint (J7), as exploration resolves the visual ambiguities caused by occlusion.
 
 ### Ablation Study
+
 | Configuration | Key Observation | Conclusion |
 |------|---------|------|
 | Exploration ratio $r=0.9$ | SR drops severely across all levels | Pure random sampling cannot leverage visual guidance |

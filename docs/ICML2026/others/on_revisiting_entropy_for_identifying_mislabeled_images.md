@@ -87,6 +87,7 @@ Evaluation on three medical datasets (ISIC, DeepDRiD, PANDA) under two noise typ
 The advantage of SEI is significantly larger under confusion-calibrated noise, indicating robustness against samples "easily confused by the model"—the predominant form of real-world clinical mislabeling.
 
 ### Ablation Study
+
 | Config | ISIC@0.4 | DeepDRiD@0.4 | PANDA@0.4 | Description |
 |------|----------|--------------|-----------|------|
 | EI (w/o Sign) | 60.77 | 59.28 | 67.26 | Unsigned entropy integral |

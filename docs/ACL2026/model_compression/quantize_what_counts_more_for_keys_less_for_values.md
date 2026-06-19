@@ -59,6 +59,7 @@ This method is purely Post-Training Quantization (PTQ) and requires no additiona
 ## Key Experimental Results
 
 ### Main Results (Downstream Accuracy on GSM8K, Optimum Quanto)
+
 | Model | K2V2 | K2V4 | **K4V2** | K4V4 |
 |------|------|------|----------|------|
 | Llama-3.2-1B (1-shot) | 0.033 | 0.035 | **0.338** | 0.357 |
@@ -67,6 +68,7 @@ This method is purely Post-Training Quantization (PTQ) and requires no additiona
 | DeepSeek-R1Q-14B (1-shot) | 0.772 | 0.775 | **0.865** | 0.867 |
 
 ### Key Experimental Results (MMLU, 2-bit, MSE ↓)
+
 | Model | K₂ Error | V₂ Error | K/V Error Ratio |
 |------|---------|---------|-----------|
 | Llama-3.2-1B | 4.851 | 0.127 | 38.2× |

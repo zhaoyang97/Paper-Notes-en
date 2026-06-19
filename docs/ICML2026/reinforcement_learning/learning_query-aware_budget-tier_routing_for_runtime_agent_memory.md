@@ -95,6 +95,7 @@ Evaluations were conducted on LoCoMo, LongMemEval, and HotpotQA benchmarks for l
 All three tiering strategies outperform strong runtime baselines like LightMem by 6-10 F1 points while reducing average costs to less than 1/4. Capacity tiering offers the highest performance ceiling, while implementation tiering is the most economical at the low-budget end.
 
 ### Ablation Study
+
 | Configuration | Key Observation | Description |
 |:---|:---|:---|
 | All HIGH (No routing) | Slight performance gain, astronomical cost | Confirms that "one-size-fits-all large model" approach is common but inefficient |

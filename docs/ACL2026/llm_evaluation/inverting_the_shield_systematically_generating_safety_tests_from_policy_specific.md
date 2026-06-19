@@ -82,6 +82,7 @@ POLARIS does not train the target LLM; it builds a test generation system. Exper
 ## Key Experimental Results
 
 ### Main Results
+
 | Metric | Key Setting | POLARIS Result | Comparison / Explanation |
 |----------|----------|-------------|-------------|
 | Policy Clause Coverage | 16 corporate policies + 4 regulatory documents | 100% | Indicates every policy rule can instantiate at least one test query |
@@ -92,6 +93,7 @@ POLARIS does not train the target LLM; it builds a test generation system. Exper
 | Vicuna Attack Success | Judged by DeepSeek-R1 | 8,590 | AirBench is 1,639 (~5.2x increase) |
 
 ### Ablation Study
+
 | Module / Metric | Full POLARIS | Result w/o Module | Explanation |
 |-------------|-------------|------------------|------|
 | Logical Formalization: Policy Compliance | 92.90% | w/o Logic: 88.90% | Formal constraints reduce deviation from policy objectives |

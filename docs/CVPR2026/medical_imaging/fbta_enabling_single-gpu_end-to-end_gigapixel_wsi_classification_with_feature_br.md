@@ -91,6 +91,7 @@ FBTA serves as a plug-and-play framework, consistently improving ABMIL, TransMIL
 Key Observation: With FBTA, classic ABMIL performance approaches that of SOTA MambaMIL, effectively closing the gap between traditional and modern MIL architectures.
 
 ### Efficiency Comparison (vs. Full-Image End-to-End / Local Learning)
+
 | Method | NSCLC-S20 AUC | NSCLC-S20 ACC | Time per Epoch | Memory |
 |------|--------------|--------------|--------------|------|
 | Direct/LoRA Fine-tuning | — | — | — | **OOM** |
@@ -98,6 +99,7 @@ Key Observation: With FBTA, classic ABMIL performance approaches that of SOTA Ma
 | ABMIL+FBTA | **82.1** | **73.3** | **27 s** | **4 GB** |
 
 ### Ablation Study (View Contribution, NSCLC-Shot20)
+
 | Views Used | Avg AUC | Avg ACC | Note |
 |------------|---------|---------|------|
 | Vanilla MIL | 74.3 | 67.1 | Baseline |

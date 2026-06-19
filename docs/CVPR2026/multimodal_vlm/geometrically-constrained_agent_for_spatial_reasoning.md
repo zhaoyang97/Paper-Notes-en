@@ -64,9 +64,9 @@ flowchart TD
 This is the core contribution. Existing formal languages fail because PDDL is suited for discrete symbolic states (`is_on(A,B)`), but cannot represent continuous, relative, view-dependent queries. $C_\text{task}$ is defined as a tuple $C_\text{task} = (C_R, C_O)$:
 
 - **Reference Frame Constraint $C_R$**: Human understanding of "North of..." is anchored to a coordinate system. VLM failures often stem from ambiguity here (defaulting to the camera frame). GCA forces the VLM to model all spatial queries as a 3D Cartesian coordinate system—an origin $O_R$ plus three orthogonal basis vectors $(x_R, y_R, z_R)$, following OpenCV conventions ($+z_R$ forward, $+y_R$ down, $+x_R$ right-handed). This system must be anchored to one of three geometric primitives:
-  - **Object-centric**: Defined by the object's intrinsic coordinates (e.g., "when washing hands" implies $+z_R = -z_\text{sink}$).
-  - **Camera-centric**: Defined by a specific camera view (e.g., "from the view of Fig 1" targets $+z_R = +z_\text{cam1}$).
-  - **Direction-centric**: Defined by a vector between two points (e.g., "Oven is North of Sink" sets $+z_R = \text{normalize}(\text{Centroid}(\text{oven}) - \text{Centroid}(\text{sink})) = \text{north}$).
+    - **Object-centric**: Defined by the object's intrinsic coordinates (e.g., "when washing hands" implies $+z_R = -z_\text{sink}$).
+    - **Camera-centric**: Defined by a specific camera view (e.g., "from the view of Fig 1" targets $+z_R = +z_\text{cam1}$).
+    - **Direction-centric**: Defined by a vector between two points (e.g., "Oven is North of Sink" sets $+z_R = \text{normalize}(\text{Centroid}(\text{oven}) - \text{Centroid}(\text{sink})) = \text{north}$).
 - **Objective Constraint $C_O$**: Defines what exactly is to be measured within $C_R$.
 
 $C_R$ is **unique and non-negotiable**, while $C_O$ specifies the target. This grammar is semantically clear enough for VLVs to generate using qualitative strengths, yet geometrically rigorous enough to serve as a deterministic contract for computation.

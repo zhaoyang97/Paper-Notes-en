@@ -104,6 +104,7 @@ The evaluation set consists of 70 source images (half real, half FLUX.1-synthesi
 **Key Findings**: FreqEdit provides significant improvements in LPIPS, Consistency, and Quality for both open-source bases (Qwen-Image LPIPS 0.566→0.374, Human Preference 5.177→7.393). Instruction following shows only a **slight decrease** (FLUX.1 Kontext 0.803→0.790). This trade-off is worthwhile: while base models collapse by turn 10, FreqEdit preserves visual fidelity while maintaining editability. Qwen-Image+FreqEdit leads in consistency and even surpasses the closed-source SOTA Nano Banana in human preference.
 
 ### Ablation Study
+
 | Configuration | Phenomena / Impact |
 |:---|:---|
 | Full model | Best balance of all three components. |

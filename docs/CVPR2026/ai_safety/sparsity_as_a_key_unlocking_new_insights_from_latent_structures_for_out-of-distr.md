@@ -99,6 +99,7 @@ Ours achieves the overall best average FPR95 (40.96%), with an AUROC of 87.26% (
 | OpenImage-O (far) | 26.03 | 92.12 |
 
 ### Ablation Study
+
 | Configuration | Key Finding | Description |
 |------|---------|------|
 | EPD vs Euclidean/Cosine | EPD wins across all splits | Replacing only the score within the CAP framework proves "shape" beats "distance." |

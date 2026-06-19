@@ -1,24 +1,20 @@
 ---
 title: >-
-  ICML2026 Multimodal VLM Papers · 99 Notes
+  ICML2026 Multimodal VLM Papers · 76 Notes
 description: >-
-  99 ICML2026 papers in the Multimodal VLM area, covering Multimodal/VLM, Reasoning, Adversarial Robustness, LLM, Alignment/RLHF, Compression and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  76 ICML2026 papers in the Multimodal VLM area, covering Multimodal/VLM, Adversarial Robustness, LLM, Alignment/RLHF, Compression, Agents and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "ICML2026"
   - "Multimodal VLM"
   - "AI paper notes"
   - "paper summaries"
   - "Multimodal/VLM"
-  - "Reasoning"
   - "Adversarial Robustness"
   - "LLM"
   - "Alignment/RLHF"
   - "Compression"
+  - "Agents"
 item_list:
-  - u: "3viewsense_spatial_and_mental_perspective_reasoning_from_orthographic_views_in_v/"
-    t: "3ViewSense: Spatial and Mental Perspective Reasoning from Orthographic Views in Vision-Language Models"
-  - u: "active_exploring_like_a_pigeon_reinforcing_spatial_reasoning_via_agentic_vision-/"
-    t: "Active Exploring like a Pigeon: Reinforcing Spatial Reasoning via Agentic Vision-Language Models"
   - u: "agenthijack_benchmarking_computer_use_agent_robustness_to_common_environment_cor/"
     t: "AgentHijack: Benchmarking Computer Use Agent Robustness to Common Environment Corruptions"
   - u: "alterbute_editing_intrinsic_attributes_of_objects_in_images/"
@@ -29,16 +25,12 @@ item_list:
     t: "AOEPT: Breaking the Implicit Modality-Reduction Bottleneck in Modality-Missing Prompt Tuning"
   - u: "are_vlms_seeing_or_just_saying_uncovering_the_illusion_of_visual_re-examination/"
     t: "Are VLMs Seeing or Just Saying? Uncovering the Illusion of Visual Re-examination"
-  - u: "bad_seeing_or_bad_thinking_rewarding_perception_for_vision-language_reasoning/"
-    t: "Bad Seeing or Bad Thinking? Rewarding Perception for Vision-Language Reasoning"
   - u: "benchmarking_and_enhancing_vlm_for_compressed_image_understanding/"
     t: "Benchmarking and Enhancing VLM for Compressed Image Understanding"
   - u: "benchmarks_for_vision-language_models_in_urban_perception_should_be_reliability-/"
     t: "Benchmarks for Vision-Language Models in Urban Perception Should Be Reliability-Aware and Negotiated"
   - u: "beyond_vlm-based_rewards_diffusion-native_latent_reward_modeling/"
     t: "Beyond VLM-Based Rewards: Diffusion-Native Latent Reward Modeling"
-  - u: "breaking_dual_bottlenecks_evolving_unified_multimodal_models_into_self-adaptive_/"
-    t: "Breaking Dual Bottlenecks: Evolving Unified Multimodal Models into Self-Adaptive Interleaved Visual Reasoners"
   - u: "calibrated_multimodal_representation_learning_with_missing_modalities/"
     t: "Calibrated Multimodal Representation Learning with Missing Modalities"
   - u: "certified_robustness_under_heterogeneous_perturbations_via_hybrid_randomized_smo/"
@@ -47,8 +39,6 @@ item_list:
     t: "CG-MLLM: Captioning and Generating 3D Content via Multi-modal Large Language Models"
   - u: "circle-rope_cone-like_decoupled_rotary_positional_embedding_for_large_vision-lan/"
     t: "Circle-RoPE: Cone-like Decoupled Rotary Positional Embedding for Vision-Language Models"
-  - u: "clip_tricks_you_training-free_token_pruning_for_efficient_pixel_grounding_in_lar/"
-    t: "CLIP Tricks You: Training-free Token Pruning for Efficient Pixel Grounding in Large Vision-Language Models"
   - u: "conditional_diffusion_sampling/"
     t: "Conditional Diffusion Sampling"
   - u: "contextualized_visual_personalization_in_vision-language_models/"
@@ -63,8 +53,6 @@ item_list:
     t: "Debate with Images: Detecting Deceptive Behaviors in Multimodal Large Language Models"
   - u: "decentralized_instruction_tuning_conflict-aware_splitting_and_weight_merging/"
     t: "Decentralized Instruction Tuning: Conflict-Aware Splitting and Weight Merging"
-  - u: "decomposed_on-policy_distillation_for_vision-language_reasoning_steering_gradien/"
-    t: "Decomposed On-Policy Distillation for Vision-Language Reasoning: Steering Gradients for Visual Grounding"
   - u: "deep_pre-alignment_for_vlms/"
     t: "Deep Pre-Alignment for VLMs"
   - u: "densemllm_standard_multimodal_llms_for_dense_prediction/"
@@ -75,25 +63,29 @@ item_list:
     t: "Detached Skip-Links and $R$-Probe: Decoupling Feature Aggregation from Gradient Propagation for MLLM OCR"
   - u: "dimension-free_multimodal_sampling_via_preconditioned_annealed_langevin_dynamics/"
     t: "Dimension-Free Multimodal Sampling via Preconditioned Annealed Langevin Dynamics"
-item_total: 99
+  - u: "diva_harnessing_the_representation_divergence_in_unified_multimodal_models_for_m/"
+    t: "DIVA: Harnessing the Representation Divergence in Unified Multimodal Models for Mutual Reinforcement"
+  - u: "ecg-r1_protocol-guided_and_modality-agnostic_mllm_for_reliable_ecg_interpretatio/"
+    t: "ECG-R1: Protocol-Guided and Modality-Agnostic MLLM for Reliable ECG Interpretation"
+  - u: "explaining_is_harder_than_predicting_alone_evaluating_concept-based_explanations/"
+    t: "Explaining Is Harder than Predicting Alone: Evaluating Concept-Based Explanations of MLLMs as ICL Visual Classifiers"
+  - u: "flownar_scalable_streaming_narration_for_long-form_videos/"
+    t: "FlowNar: Scalable Streaming Narration for Long-Form Videos"
+  - u: "focusing_where_vision_matters_selective_training_for_large_vision_language_model/"
+    t: "Focusing Where Vision Matters: Selective Training for Large Vision Language Models via Visual Information Gain"
+  - u: "freeret_mllms_as_training-free_retrievers/"
+    t: "FreeRet: MLLMs as Training-Free Retrievers"
+item_total: 76
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # 🧩 Multimodal VLM
 
-**🧪 ICML2026** · **99** paper notes
+**🧪 ICML2026** · **76** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (534)](../../CVPR2026/multimodal_vlm/index.md) · [💬 ACL2026 (94)](../../ACL2026/multimodal_vlm/index.md) · [🔬 ICLR2026 (85)](../../ICLR2026/multimodal_vlm/index.md) · [🤖 AAAI2026 (84)](../../AAAI2026/multimodal_vlm/index.md) · [🧠 NeurIPS2025 (137)](../../NeurIPS2025/multimodal_vlm/index.md) · [📹 ICCV2025 (128)](../../ICCV2025/multimodal_vlm/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (388)](../../CVPR2026/multimodal_vlm/index.md) · [💬 ACL2026 (79)](../../ACL2026/multimodal_vlm/index.md) · [🔬 ICLR2026 (61)](../../ICLR2026/multimodal_vlm/index.md) · [🤖 AAAI2026 (75)](../../AAAI2026/multimodal_vlm/index.md) · [🧠 NeurIPS2025 (105)](../../NeurIPS2025/multimodal_vlm/index.md) · [📹 ICCV2025 (106)](../../ICCV2025/multimodal_vlm/index.md)
 
-🔥 **Top topics:** Multimodal/VLM ×53 · Reasoning ×19 · Adversarial Robustness ×9 · LLM ×6 · Alignment/RLHF ×5
-
-**[3ViewSense: Spatial and Mental Perspective Reasoning from Orthographic Views in Vision-Language Models](3viewsense_spatial_and_mental_perspective_reasoning_from_orthographic_views_in_v.md)**
-
-:   3ViewSense argues that the bottleneck in VLM spatial reasoning is not insufficient visual features or weak language reasoning, but the absence of a stable 3D intermediate representation. Consequently, it requires the model to first induce front, left, and top views from a single image, and then reason based on these orthographic views, significantly outperforming same-scale VLMs in occlusion counting and view-consistent spatial reasoning.
-
-**[Active Exploring like a Pigeon: Reinforcing Spatial Reasoning via Agentic Vision-Language Models](active_exploring_like_a_pigeon_reinforcing_spatial_reasoning_via_agentic_vision-.md)**
-
-:   This paper transforms VLM spatial reasoning from a passive process of "viewing all perspectives before answering" into an agentic workflow of "active framing based on the question, updating cognitive maps, and verifying reasoning with executable spatial assertions." By fine-tuning Qwen2.5-VL-3B with dense rewards, it achieves 80.5% overall accuracy on MindCube-Tiny, notably improving the Rotation subset to 85.0%.
+🔥 **Top topics:** Multimodal/VLM ×39 · Adversarial Robustness ×8 · LLM ×4 · Alignment/RLHF ×4 · Compression ×3
 
 **[AgentHijack: Benchmarking Computer Use Agent Robustness to Common Environment Corruptions](agenthijack_benchmarking_computer_use_agent_robustness_to_common_environment_cor.md)**
 
@@ -115,10 +107,6 @@ item_total: 99
 
 :   This paper introduces VisualSwap and VS-Bench to examine true visual re-examination capabilities by replacing the image after a VLM claims to "look again." Findings reveal that current reasoning VLMs often follow previous textual inertia; only explicit multi-turn user instructions or enhanced visual attention significantly restore grounding.
 
-**[Bad Seeing or Bad Thinking? Rewarding Perception for Vision-Language Reasoning](bad_seeing_or_bad_thinking_rewarding_perception_for_vision-language_reasoning.md)**
-
-:   This paper explicitly splits VLM output into `<recognition>` perception blocks and `<think>` reasoning blocks. It introduces a "blindfolded" text reasoning agent (which has no access to images and only sees the perception text written by the VLM) to determine a perception reward $R_P$ based on its ability to answer correctly. Combined with Structured Verbal Verification (SVV) for output reward $R_O$, the proposed MoCA uses $R_P$ as a gate for modal-level credit assignment. This allows a 7B model to improve across 9 perception/reasoning/rich-modality benchmarks simultaneously, surpassing GPT-4o on multiple metrics.
-
 **[Benchmarking and Enhancing VLM for Compressed Image Understanding](benchmarking_and_enhancing_vlm_for_compressed_image_understanding.md)**
 
 :   This paper constructs the first large-scale benchmark (11 codecs, 9 VLMs, 1M+ compressed images) to evaluate VLM performance on compressed images. It decomposes the performance drop into an irreparable "information gap" and a reparable "generalization gap." Furthermore, a lightweight conditional visual encoder adapter is proposed, utilizing codec-type and compression-level condition embeddings with distillation training, enhancing VLM performance by 10%–30% across different encoders and bitrates.
@@ -130,10 +118,6 @@ item_total: 99
 **[Beyond VLM-Based Rewards: Diffusion-Native Latent Reward Modeling](beyond_vlm-based_rewards_diffusion-native_latent_reward_modeling.md)**
 
 :   DiNa-LRM is proposed to establish preference learning directly on the noisy latent space of diffusion models. By utilizing a noise-calibrated Thurstone likelihood and inference-time multi-noise ensemble, it achieves preference prediction accuracy close to SOTA with significantly lower computational overhead than VLM-based reward models.
-
-**[Breaking Dual Bottlenecks: Evolving Unified Multimodal Models into Self-Adaptive Interleaved Visual Reasoners](breaking_dual_bottlenecks_evolving_unified_multimodal_models_into_self-adaptive_.md)**
-
-:   To address the "understanding–generation gap" (capable of understanding but failing to generate) in unified multimodal models for anything-to-image (X2I) tasks, this paper proposes the Self-Adaptive Interleaved Reasoner. Using a hierarchical data synthesis pipeline, 50,000 samples are diverted into three modes: direct generation, self-reflection, and multi-step planning. By employing SFT and GRPO training with step-wise reasoning rewards and intra-group complexity penalties, Emu3.5 outperforms closed-source models such as GPT-4o and Gemini 2.5 Flash on KRIS-Bench and OmniContext.
 
 **[Calibrated Multimodal Representation Learning with Missing Modalities](calibrated_multimodal_representation_learning_with_missing_modalities.md)**
 
@@ -150,10 +134,6 @@ item_total: 99
 **[Circle-RoPE: Cone-like Decoupled Rotary Positional Embedding for Vision-Language Models](circle-rope_cone-like_decoupled_rotary_positional_embedding_for_large_vision-lan.md)**
 
 :   Circle-RoPE is proposed to map the 2D coordinates of image tokens onto a torus orthogonal to the text position axis, forming a cone-like geometry. This ensures equal RoPE distances from each text token to all image tokens (PTD=0), eliminating cross-modal pseudo-positional bias while preserving internal image spatial structures through Alternating Geometric Encoding (AGE).
-
-**[CLIP Tricks You: Training-free Token Pruning for Efficient Pixel Grounding in Large Vision-Language Models](clip_tricks_you_training-free_token_pruning_for_efficient_pixel_grounding_in_lar.md)**
-
-:   This work identifies a counter-intuitive "similarity reversal" phenomenon where visual tokens in referred regions exhibit low similarity with text [EOS] tokens in CLIP. Based on this, it proposes LiteLVLM—a training-free, text-guided visual token pruning method. It retains 90.3% of original pixel grounding performance while pruning 66.7% of tokens, achieving 22% inference acceleration and 2.3× memory savings.
 
 **[Conditional Diffusion Sampling](conditional_diffusion_sampling.md)**
 
@@ -183,10 +163,6 @@ item_total: 99
 
 :   The authors develop a local quadratic theory for weight merging starting from "merge-ready flat basins": merging gain equals curvature-weighted checkpoint variance. Splitting along the principal directions of gradient conflict via PCA maximizes this gain. Based on this, the MERIT pipeline is proposed: PCA-based splitting by dataset conflict, independent fine-tuning with zero communication, and final one-shot token-weighted averaging. It improves the 8-benchmark average of Qwen2.5-VL-3B from 54.3 to 57.0 on 136 Vision-FLAN tasks.
 
-**[Decomposed On-Policy Distillation for Vision-Language Reasoning: Steering Gradients for Visual Grounding](decomposed_on-policy_distillation_for_vision-language_reasoning_steering_gradien.md)**
-
-:   The authors decompose the KL loss of multimodal online distillation into two sub-objectives, "language prior" and "visual grounding," based on the Bayes chain rule. They find that the gradients of these two are nearly orthogonal and that standard distillation merely takes a passive bisector. Consequently, they propose Visual Gradient Steering (VGS) to actively bias the update direction toward the visual subspace, achieving average improvements of +2.37%/+1.56% across seven multimodal reasoning benchmarks for Qwen3-VL 8B→2B/4B distillation.
-
 **[Deep Pre-Alignment for VLMs](deep_pre-alignment_for_vlms.md)**
 
 :   The authors replace the standard "ViT + lightweight projector" visual encoding module in VLMs with a small VLM (perceiver). This allows the intensive modality alignment to be completed within the upstream small VLM, preventing the downstream large LLM from wasting depth on alignment in its shallow layers. This approach improves performance by +1.9 points on a 4B model and +3.0 points on a 32B model across 8 multimodal benchmarks, reduces language capability forgetting by 32.9%, and maintains inference throughput with only a 2–6% decrease.
@@ -215,17 +191,9 @@ item_total: 99
 
 :   ECG-R1 is the first "reasoning" medical multimodal large language model (MLLM) for ECG interpretation. Through a four-pronged approach—**protocol-guided instruction data synthesis + decoupled signal/image encoding + interleaved modality dropout training + evidence-based process reward RL**—it improves ECG diagnostic accuracy from the previous SOTA (GEM) of 74.7 to 80.3, maintaining cross-modality consistency even when one modality is missing.
 
-**[Efficient Reasoning with Hidden Thinking](efficient_reasoning_with_hidden_thinking.md)**
-
-:   Heima distills each stage (summary / caption / reasoning) of a multimodal LLM's lengthy Chain-of-Thought (CoT) into **a single special thinking token**. This allows the model to "think" in latent space, reducing the token count from the 100-200 range to 13-16 while maintaining zero-shot accuracy more stably than LLaVA-CoT. A companion LLM "interpreter" is trained to reconstruct the textual reasoning chain from the hidden states of these thinking tokens, thereby empirically validating the information-theoretic upper bound of compression loss.
-
 **[Explaining Is Harder than Predicting Alone: Evaluating Concept-Based Explanations of MLLMs as ICL Visual Classifiers](explaining_is_harder_than_predicting_alone_evaluating_concept-based_explanations.md)**
 
 :   The authors utilize a 5-level formalization ladder of explanation conditions (pure classification → natural language explanation → feature lists → IF-THEN knowledge base → DL axioms) and an LLM-as-a-judge pipeline evaluating 9 XAI metrics to conduct 2,080 ICL classification experiments on 4 SOTA MLLMs. They find that "forcing models to generate increasingly formal concept explanations leads to a monotonic decline in classification accuracy (93.8% → 90.1%)," yet "local discriminativeness" is the only explanation quality dimension significantly correlated with accuracy.
-
-**[Find, Fix, Reason: Context Repair for Video Reasoning](find_fix_reason_context_repair_for_video_reasoning.md)**
-
-:   This paper addresses the dilemma in video reasoning where on-policy RL stagnates at capability ceilings while off-policy distillation suffers from entropy collapse. It introduces a frozen, tool-augmented large teacher model that inserts minimal "evidence patches" (key-frame intervals, error types) when student rollouts fail. The student re-answers the same question under these refined conditions, and the repaired trajectories are incorporated into GRPO optimization via a chosen-rollout mechanism.
 
 **[FlowNar: Scalable Streaming Narration for Long-Form Videos](flownar_scalable_streaming_narration_for_long-form_videos.md)**
 
@@ -239,17 +207,9 @@ item_total: 99
 
 :   FreeRet introduces a fully training-free two-stage multimodal retrieval framework: the first stage bypasses the last MLP layer of the MLLM and utilizes controlled generation prompts to extract semantically faithful embeddings for candidate retrieval; the second stage reformulates reranking as a multiple-choice question (MCQ) task to circumvent the LLM's framing bias. It outperforms retrieval models trained on tens of millions of paired data on MMEB.
 
-**[From Seeing to Thinking: Decoupling Perception and Reasoning Improves Post-Training of Vision-Language Models](from_seeing_to_thinking_decoupling_perception_and_reasoning_improves_post-traini.md)**
-
-:   This paper identifies that current VLM post-training overemphasizes "long-chain reasoning" while neglecting perception bottlenecks. It explicitly decouples post-training into three independent stages: "Visual Perception → Textual Reasoning → Visual Reasoning," and utilizes RLVR (instead of caption SFT) to specifically refine perception. This approach enables Qwen3-VL-8B to achieve relative improvements of approximately +5.9% and +1.2% on visual math and perception benchmarks, respectively, while shortening reasoning traces by 20.8%.
-
 **[Furina: Fragmented Uncertainty-Driven Refusal Instability Attack](furina_fragmented_uncertainty-driven_refusal_instability_attack.md)**
 
 :   This paper first utilizes multi-metric diagnostics to prove that "LLM safety decisions are not binary thresholds, but rather exist within a refusal instability zone." It further discovers that this zone is characterized by "rising external uncertainty while internal safety signals actually decrease." Based on this, Furina is proposed—a jailbreak attack that requires no model-specific optimization. By shattering malicious intent into contextualized narratives, it forces inputs into the instability zone, outperforming several strong baselines on HarmBench.
-
-**[Gated Relational Alignment via Confidence-based Distillation for Efficient VLMs](gated_relational_alignment_via_confidence-based_distillation_for_efficient_vlms.md)**
-
-:   This paper unifies Quantization-Aware Training (QAT) and Knowledge Distillation (KD) through the lens of the Information Bottleneck (IB) principle. It proposes the GRACE framework (Gated Decoupled Distillation + Relational Centered Kernel Alignment + Adaptive IB Controller), enabling INT4-quantized LLaVA / Qwen-VL to not only avoid degradation but also exceed BF16 baselines on multiple benchmarks, while achieving 3× throughput and 54% memory savings in practice.
 
 **[CHARM: Using Multimodal JEPA + Channel Descriptions for Time Series Foundation Embedding](giving_sensors_a_voice_multimodal_jepa_for_semantic_time-series_embeddings.md)**
 
@@ -283,10 +243,6 @@ item_total: 99
 
 :   VEENA utilizes a steering-vector causal attribution framework to locate emotional circuits in LVLMs—discovering a three-stage mechanism: "Adapt (shallow modal alignment) $\rightarrow$ Aggregate (mid-layer emotion-specific heads aggregation) $\rightarrow$ Execute (deep-layer emotion-general heads + neurons generation)." It further implements "Visual Emotion Enhancement + Emotional Neuron Augmentation" as training-free inference-time interventions to significantly mitigate emotional hallucinations.
 
-**[iVGR: Internalizing Visually Grounded Reasoning for MLLMs with Reinforcement Learning](ivgr_internalizing_visually_grounded_reasoning_for_mllms_with_reinforcement_lear.md)**
-
-:   Addressing the counter-intuitive phenomenon where "explicit visual grounding hinders CoT reasoning," the authors propose iVGR—a dual-stream GRPO training framework. It allows textual CoT and grounded CoT (with boxes) to rollout simultaneously, using a consistency reward to "internalize" the visual localization capabilities of high-quality grounded trajectories into pure textual CoT. This enables the model to reap the benefits of grounded reasoning during inference without explicitly outputting coordinates.
-
 **[Jailbreaking Vision-Language Models Through the Visual Modality](jailbreaking_vision-language_models_through_the_visual_modality.md)**
 
 :   The authors propose four types of attacks (Visual Cipher, Object Replacement, Text Replacement, and Visual Analogy Riddle) that jailbreak frontier VLMs using only visual inputs. They systematically verify on six frontier VLMs that "safety alignment on the text side does not automatically transfer to the visual side" and reveal the underlying hierarchical mechanisms through mechanistic analysis.
@@ -303,29 +259,9 @@ item_total: 99
 
 :   NAST utilizes causal tracing to calculate the Causal Trace Effect (CTE) of each layer in a CLIP text encoder for negation understanding. These CTE values are then used for hierarchical gradient-scaled LoRA fine-tuning. This significantly enhances the semantic sensitivity of medical VLMs in distinguishing "presence vs. absence of symptoms," reducing the affirmative-negation accuracy gap from 21.6% to 4.2%.
 
-**[Learn to Think: Improving Multimodal Reasoning through Vision-Aware Self-Improvement Training](learn_to_think_improving_multimodal_reasoning_through_vision-aware_self-improvem.md)**
-
-:   VISTA transforms the self-improvement training of multimodal large models into a two-stage pipeline: "supplementing samples for hard problems via prefix resampling, and filtering pseudo-positives via Vision-aware Attention Score (VAS)." It achieves an average improvement of +13.66% in multimodal reasoning for mathematics and medicine on Qwen2.5-VL-3B.
-
-**[Learning GUI Grounding with Spatial Reasoning from Visual Feedback](learning_gui_grounding_with_spatial_reasoning_from_visual_feedback.md)**
-
-:   Gui-Cursor reformulates GUI grounding from "single-step coordinate prediction" into an interactive search of "moving the cursor to find the target." By utilizing a dense reward function with trajectory penalties and GRPO training, the VLM learns to align numerical coordinates with screen positions via visual feedback from rendered cursors. Using only 8K samples, it improves GPT-4o-level performance on ScreenSpot-Pro from GTA1's 50.1% to 58.1%.
-
 **[Left-Right Symmetry Breaking in CLIP-style Vision-Language Models Trained on Synthetic Spatial-Relation Data](left-right_symmetry_breaking_in_clip-style_vision-language_models_trained_on_syn.md)**
 
 :   The authors train a CLIP-style Transformer end-to-end on a 1D synthetic image-text testbed and find that such models can learn "left/right" relations and generalize to unseen object pairs. The mechanism involves the **cross-term of token and position embeddings $EW_{QK}P^T$ inducing a horizontal gradient** in the vision encoder's attention logits, breaking left-right symmetry; ablating this term drops left-right discrimination accuracy to random levels.
-
-**[Less Precise Can Be More Reliable: A Systematic Evaluation of Quantization's Impact on VLMs Beyond Accuracy](less_precise_can_be_more_reliable_a_systematic_evaluation_of_quantizations_impac.md)**
-
-:   This paper executes 700,000 experiments across 16 quantization methods $\times$ 10 VLMs $\times$ multiple reliability metrics. It discovers that quantization is not a simple disruptor—it improves calibration, OOD detection, and noise robustness by suppressing high-rank, low-variance spectral components, while simultaneously amplifying reliance on covariate shifts and spurious correlations.
-
-**[LIMSSR: LLM-Driven Sequence-to-Score Reasoning under Training-Time Incomplete Multimodal Observations](limssr_llm-driven_sequence-to-score_reasoning_under_training-time_incomplete_mul.md)**
-
-:   The authors reformulate multimodal Action Quality Assessment (AQA) with "missing modalities during training" as an "LLM-based conditional sequence-to-score reasoning" problem. By using prompts and special tokens, the LLM completes missing semantics without full data supervision. Combined with mask-aware dual-path fusion to suppress hallucinations, the method outperforms SOTAs that rely on complete training data across three AQA datasets.
-
-**[CSMR (Look on Demand): A Cognitive Scheduling Framework for Visual Evidence Acquisition in Multimodal Reasoning](look_on_demand_a_cognitive_scheduling_framework_for_visual_evidence_acquisition_.md)**
-
-:   Inspired by Baddeley's working memory theory, CSMR treats "when to introduce visual evidence into reasoning" as a dynamic decision. The LLM maintains reasoning states and invokes an independent perception module (VLM) to fetch visual evidence on-demand until sufficient; this addresses flaws in two existing paradigms (information loss from static textualization in pre-reasoning and language prior contamination in unified VL spaces), achieving zero-shot superiority over baselines across multiple multimodal reasoning benchmarks.
 
 **[Manga109-v2026: Revisiting Manga109 Annotations for Modern Manga Understanding](manga109-v2026_revisiting_manga109_annotations_for_modern_manga_understanding.md)**
 
@@ -351,25 +287,13 @@ item_total: 99
 
 :   This paper re-attributes the Base-New Trade-off (BNT) in VLM efficient transfer to "uneliminated asymmetric category preferences from pre-training on unseen classes." It proposes NeRP: using a semantically neutral text prompt and the "training image mean" as reference inputs to estimate per-class prior shifts on a pre-trained VLM with zero parameters. It then applies a Bayesian-style proxy score to perform local flips between confusing class pairs, improving novel class accuracy while maintaining base class performance without altering model parameters.
 
-**[On the Adversarial Robustness of Large Vision-Language Models under Visual Token Compression](on_the_adversarial_robustness_of_large_vision-language_models_under_visual_token.md)**
-
-:   This paper provides the first systematic study of the adversarial robustness of Large Vision-Language Models (LVLMs) with visual token compression. It identifies the "optimization-inference space mismatch" in existing encoder attacks and proposes the CAGE attack. By utilizing Expected Feature Disturbance (EFD) and Ranking-Disturbance Alignment (RDA), CAGE significantly reduces the robust accuracy of compressed LVLMs under conditions where the compression mechanism and token budget are unknown.
-
 **[Pair2Scene: Learning Local Object Relations for Procedural Scene Generation](pair2scene_learning_local_object_relations_for_procedural_scene_generation.md)**
 
 :   Pair2Scene reformulates 3D indoor scene generation from "directly fitting a global joint distribution" to "learning one-to-one local object relations (support + functional) and recursively assembling them via a hierarchical scene tree." Combined with point cloud geometric encoding, a Mixture-of-Logistics probability head, and collision-aware rejection sampling, it empowers complex scene generation where the object count jumps from approximately 4 (as seen in 3D-Front training data) to around 14. FID and user studies demonstrate its superiority over baselines such as ATISS, DiffuScene, and LayoutVLM.
 
-**[R$^3$L: Reasoning 3D Layouts from Relative Spatial Relations](r3l_reasoning_3d_layouts_from_relative_spatial_relations.md)**
-
-:   R³L attributes two types of systematic errors (semantic drift and metric drift) in MLLM multi-hop "relative spatial relation" reasoning to "repeated frame transformations." By implementing Invariant Spatial Decomposition (shortening relation chains), Consistent Spatial Imagination (an imagine-and-revise loop for conflict elimination), and Support Spatial Optimization (global-to-local pose reparameterization), it enables GPT-5 to generate open-vocabulary 3D scenes across 9 categories with collision and out-of-bounds rates near zero, significantly outperforming LayoutVLM/Holodeck/LayoutGPT in semantic metrics.
-
 **[Referring Multiple Regions with Large Multimodal Models via Contextual Latent Steering](referring_multiple_regions_with_large_multimodal_models_via_contextual_latent_st.md)**
 
 :   CSteer proposes a training-free latent steering method. By constructing "contextual vectors" from the hidden activation differences between incorrect and correct referential responses and injecting them into early query layers and mid-to-late decoding layers, general LMMs (Qwen3-VL, InternVL-3.5) outperform specially fine-tuned region LMMs on multi-region visual referring tasks.
-
-**[ReVSI: Rebuilding Visual Spatial Intelligence Evaluation for Accurate Assessment of VLM 3D Reasoning](revsi_rebuilding_visual_spatial_intelligence_evaluation_for_accurate_assessment_.md)**
-
-:   This paper systematically reveals structural failures in the widely used VSI-Bench due to 3D label drift and frame sampling inconsistency. The authors re-label 381 scenes and 5365 objects, design frame-budget adaptive QA and "dummy video" (removing query object frames) stress tests to construct ReVSI, a high-fidelity spatial intelligence benchmark. Evaluations show that open-source VLMs drop by up to 40% on ReVSI and maintain high hallucination rates on dummy videos, exposing a systematic overestimation of existing spatial reasoning capabilities.
 
 **[SAME: Stabilized Mixture-of-Experts for Multimodal Continual Instruction Tuning](same_stabilized_mixture-of-experts_for_multimodal_continual_instruction_tuning.md)**
 
@@ -403,10 +327,6 @@ item_total: 99
 
 :   SOLAR introduces the first two-stage self-supervised learning framework for "symmetric MM2MM retrieval" (where both queries and documents are image-text pairs and roles are interchangeable). The first stage learns an "intersection mask" through global-local alignment and QDA adaptive thresholds to decouple shared and unique information. The second stage uses this mask to construct positive and hard negative samples via region-specific masking for contrastive learning. It also releases a benchmark of 214 manually verified sym-MM2MM cases, outperforming the strongest 7.75B VLM baseline by 7.08 percentage points with only 0.2B parameters and 768-dimensional embeddings.
 
-**[Spectral-Progressive Thought Flow for Lightweight Multimodal Reasoning](spectral-progressive_thought_flow_for_lightweight_multimodal_reasoning.md)**
-
-:   SpecFlow shifts multimodal spatial reasoning from "pixel-level thinking" to "spectral-level thinking"—utilizing Block Discrete Cosine Transform (BDCT) + Flow Matching + Progressive Frequency Activation to maintain visual intermediate thoughts in a fixed-size spectral workspace. Combined with Classifier-Free Guidance (CFG) for text-guided visual evolution, it reduces KV cache by 1.6–2.1× while maintaining spatial reasoning accuracy.
-
 **[Text-Conditional JEPA for Learning Semantically Rich Visual Representations](text-conditional_jepa_for_learning_semantically_rich_visual_representations.md)**
 
 :   This paper proposes TC-JEPA, which further conditions the I-JEPA mask feature predictor on image captions. Through multi-layer sparse cross-attention, patch representations become predictable under textual "prompts." This enables the learning of semantically richer visual representations particularly beneficial for dense prediction without using contrastive loss.
@@ -414,14 +334,6 @@ item_total: 99
 **[TGV-KV: Text-Grounded KV Eviction for Vision-Language Models](tgv-kv_text-grounded_kv_eviction_for_vision-language_models.md)**
 
 :   TGV-KV migrates KV eviction strategies designed for text-only LLMs to VLMs through a "text-grounded vision KV" trio: per-layer budgeting based on text-vision attention, re-ranking visual importance using anchor text tokens, and prioritizing text KV during eviction. At a 5% retention rate on LLaVA-NeXT/Qwen3-VL, it maintains accuracy close to full KV while increasing throughput by 52.6%.
-
-**[The Perceptual Bandwidth Bottleneck in Vision-Language Models: Active Visual Reasoning via Sequential Experimental Design](the_perceptual_bandwidth_bottleneck_in_vision-language_models_active_visual_reas.md)**
-
-:   This paper formalizes "VLM inability to see details" as a Sequential Bayesian Optimal Experimental Design (S-BOED) problem. It proposes the training-free FOVEA module based on a computable proxy objective of "coverage $\times$ resolution," consistently outperforming Direct and ReAct-style baselines on high-resolution and remote sensing benchmarks.
-
-**[Thinking in Structures: Evaluating Spatial Intelligence in Constraint-Governed Spaces](thinking_in_structures_evaluating_spatial_intelligence_in_constraint-governed_sp.md)**
-
-:   Authors construct SSI-Bench, a benchmark consisting of 1,000 ranking-style VQA items focusing on "constrained structured spaces" (real 3D structures like roofs, bridges, towers), requiring VLMs to provide a complete permutation of 3-4 candidate components according to geometric or topological criteria. Evaluation of 31 VLMs reveals that the strongest closed-source model, Gemini-3-Flash, achieves only 33.6%, and the best open-source model, GLM-4.6V, reaches 22.2%, compared to a human performance of 91.6%. This highlights a lack of consistent spatial reasoning capabilities in current VLMs when facing real-world 3D scenes jointly constrained by geometry, connectivity, and physical feasibility.
 
 **[TimeSpot: Benchmarking Geo-Temporal Understanding in Vision-Language Models in Real-World Settings](timespot_benchmarking_geo-temporal_understanding_in_vision-language_models_in_re.md)**
 
@@ -451,9 +363,9 @@ item_total: 99
 
 :   V-LynX discovers a **continuous token interface (manifold)** within Video LLMs—a geometric prior carved by the vision encoder and projection layer that is compatible with the LLM's internal operation space. By utilizing this interface, V-LynX efficiently integrates new modalities (audio, 3D, high-frame-rate video) into pre-trained Video LLMs using only lightweight LoRA (68.7M parameters) and **unpaired unimodal data**, achieving a CIDEr of 145.7 vs PAVE's 134.5 on AVSD with 46% fewer parameters.
 
-**[Vision-aligned Latent Reasoning for Multi-modal Large Language Model](vision-aligned_latent_reasoning_for_multi-modal_large_language_model.md)**
+**[Very Efficient Listwise Multimodal Reranking for Long Documents](very_efficient_listwise_multimodal_reranking_for_long_documents.md)**
 
-:   This paper proposes VaLR: inserting several "latent tokens" before each step of MLLM CoT reasoning and performing representation alignment (REPA) on these tokens using patch features from visual encoders like DINOv3, SigLIP, or π³. This mechanism continuously "feeds back" visual information to the model during long-chain reasoning, increasing the accuracy of Qwen2.5-VL on VSI-Bench from 33.0% to 52.9%, and for the first time enabling MLLMs to exhibit "longer reasoning, higher accuracy" test-time scaling behavior.
+:   ZipRerank simultaneously addresses the two major bottlenecks of VLM listwise reranking—"excessive visual token sequence length" and "token-by-token output of rankings via autoregressive decoding"—by utilizing query-aware token pruning and single-logit scoring. It reduces LLM inference latency by an order of magnitude on MMDocIR while matching or exceeding the current SOTA, MM-R5.
 
 **[Vision Language Models Cannot Reason About Physical Transformations](vision_language_models_cannot_reason_about_physical_transformation.md)**
 
@@ -478,7 +390,3 @@ item_total: 99
 **[WeatherSyn: An Instruction Tuning MLLM For Weather Forecasting Report Generation](weathersyn_an_instruction_tuning_mllm_for_weather_forecasting_report_generation.md)**
 
 :   WeatherSyn decomposes the weather forecaster's writing process into a multimodal instruction task of "observing maps → listing key points → drafting reports." The authors establish the WSInstruct dataset covering 31 US cities and 8 weather elements, then perform a three-stage fine-tuning (SFT→RFT→DPO) on Qwen3-VL-8B. This allows an 8B open-source model to consistently outperform closed-source models such as GPT-5-Nano and Claude-3.7-Sonnet across various metrics, demonstrating zero-shot generalization to unseen cities.
-
-**[What You Think is What You See: Driving Exploration in VLM Agents via Visual-Linguistic Curiosity (GLANCE)](what_you_think_is_what_you_see_driving_exploration_in_vlm_agents_via_visual-ling.md)**
-
-:   GLANCE introduces a "think-see alignment" self-supervised head to VLM agent reinforcement learning. It maps the "next-state prediction" produced in the LLM's CoT through a lightweight projector to the actual next-frame representation encoded by an EMA target vision encoder. The gap between prediction and reality serves simultaneously as an intrinsic curiosity reward, a training signal for the vision encoder, and an alignment loss to "ground" the internalized world model. Combined with a curriculum exploration mechanism that periodically resets the projector to combat curiosity drain, GLANCE consistently outperforms existing exploitation-only VLM-RL methods across five agentic tasks.

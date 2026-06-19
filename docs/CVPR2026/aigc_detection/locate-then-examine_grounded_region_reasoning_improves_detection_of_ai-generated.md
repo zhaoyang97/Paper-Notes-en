@@ -93,6 +93,7 @@ In cross-domain (OoD) generalization, LTE leads consistently across three extern
 (*LEGION was trained on SynthScars, non-OoD, unfair comparison.)
 
 ### Ablation Study
+
 | Configuration | Acc. | C-Acc. | IoU | Description |
 |------|------|--------|-----|------|
 | LTE-32B (Full) | 0.972 | 0.956 | 0.359 | Full Model |

@@ -70,6 +70,7 @@ GP hyperparameters $\xi$ are retrained every round (or per a refit schedule for 
 Experiments used 15 games across 4 categories with player counts $p\in[8,101]$, across 30 or 100 seeds. Baselines were given equivalent $\nu$ evaluation budgets.
 
 ### Main Results
+
 | Task Category | Representative Game | $p$ | ShaplEIG vs SOTA (Low-budget MSE) |
 |---------------|---------------------|-----|-----------------------------------|
 | FI (TabPFN) | Diabetes Reg. | 10 | Strictly superior to Kernel/Leverage SHAP, Perm. Sampling, Reg. MSR |
@@ -79,6 +80,7 @@ Experiments used 15 games across 4 categories with player counts $p\in[8,101]$, 
 | LE (RF on Crime, large $p$) | Crime | 101 | Scalable and eventually leading despite schedule-based refitting |
 
 ### Ablation Study
+
 | Configuration | Key Finding |
 |---------------|-------------|
 | Full ShaplEIG | Best overall performance. |

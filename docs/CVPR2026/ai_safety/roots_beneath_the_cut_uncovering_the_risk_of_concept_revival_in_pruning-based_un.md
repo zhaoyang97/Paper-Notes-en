@@ -99,6 +99,7 @@ Artistic style unlearning (Van Gogh, etc.) was measured via CLIP similarity/scor
 For NSFW revival, the attack increased nudity detection counts from 74/57/22 (after ConceptPrune) back to **118/172/57**, significantly reviving unsafe concepts.
 
 ### Ablation Study
+
 | Configuration | Key Effect | Description |
 |------|---------|------|
 | Accurate Magnitudes + Random Signs | Minimal revival | Proves magnitudes are not the critical factor. |

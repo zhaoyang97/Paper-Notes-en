@@ -122,6 +122,7 @@ Rendering FPS on RTX 4090 (Primitves unified):
 Hardware-accelerated opaque rasterization is ~10x faster than CUDA-based 3DGS by eliminating alpha sorting. The same shader runs at 146 FPS on a MacBook.
 
 ### Ablation Study
+
 | Configuration | Observation | Description |
 |------|------|------|
 | Full model | Sharp boundaries + clean geometry | Full Model |

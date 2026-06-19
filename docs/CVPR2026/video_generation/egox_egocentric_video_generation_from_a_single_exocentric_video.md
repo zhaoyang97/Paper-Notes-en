@@ -96,6 +96,7 @@ Evaluated on Ego-Exo4D against Exo2Ego-V, TrajectoryCrafter, Wan Fun Control, an
 The gap in object-level metrics is most significant (Seen scene IoU 0.363 vs. 0.128 for the second best, FVD 184 vs. 508), indicating that EgoX is far superior in preserving geometric and object consistency. While absolute image-level metrics are low due to the inherent difficulty of synthesizing unseen regions, EgoX remains the leader. Wan VACE achieved the highest VBench temporal smoothness score but did so by generating **overly static** videos (Dynamic Degree only 0.673); EgoX maintains a better balance between dynamics and fidelity.
 
 ### Ablation Study (Seen Scene)
+
 | Config | PSNR↑ | LPIPS↓ | IoU↑ | FVD↓ | Description |
 |------|-------|--------|------|------|------|
 | Full (EgoX) | 16.05 | 0.498 | 0.363 | 184.47 | Complete Model |

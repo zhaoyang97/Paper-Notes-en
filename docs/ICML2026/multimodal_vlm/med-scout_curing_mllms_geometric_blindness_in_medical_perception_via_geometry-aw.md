@@ -83,6 +83,7 @@ GRPO Optimization: Group size $G=8$, KL coefficient $\beta=0.04$, global batch 1
 ## Key Experimental Results
 
 ### Main Results
+
 | Backbone | Med-Scout-Bench Avg | Rad-VQA | VQA-RAD | SLAKE | MIMIC-CXR CIDEr | Significance |
 |---|---|---|---|---|---|---|
 | Qwen3-VL-8B-Instruct | 39.7 → **83.6** (+43.9) | 41.6 → 45.3 | 63.2 → 65.8 | 69.6 → 72.0 | 64.8 → 68.1 | General backbone surpasses GPT-5/Gemini-3-Flash |
@@ -93,6 +94,7 @@ GRPO Optimization: Group size $G=8$, KL coefficient $\beta=0.04$, global batch 1
 Proprietary model upper bounds: GPT-5 Rad-VQA 59.1 / VQA-RAD 66.4, Gemini-3-Flash 60.7 / 70.2. Open-source Lingshu-7B+Med-Scout achieves 71.0 on VQA-RAD, exceeding Gemini-3-Flash.
 
 ### Ablation Study (Comparison with existing visual proxy tasks; DGR disabled, sparse reward used)
+
 | Method | Med | Geo | Rad-VQA Avg | Gen. Avg | Significance |
 |---|---|---|---|---|---|
 | Qwen3-VL-4B baseline | - | - | 58.3 | 38.4 | Baseline |

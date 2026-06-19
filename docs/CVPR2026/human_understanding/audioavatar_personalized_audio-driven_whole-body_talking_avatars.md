@@ -93,6 +93,7 @@ Testing was performed on 30 unseen talking subjects (from public causal conversa
 Compared to single-image Gaussian baselines: perceptual quality IQA +3.4% / ASE +4.4%, lip-sync SyncC +4.3% / SyncD +20.3%, low-level fidelity SSIM +4.7% / PSNR +4.3%. Compared to the strongest diffusion baseline: FID decreased by 27.9%, FVD decreased by 25.0%, and gesture fidelity HKC +2.5%.
 
 ### Ablation Study
+
 | Configuration | SyncC↑ | SyncD↓ | HKC↑ | FID↓ | FVD↓ | Description |
 |------|--------|--------|------|------|------|------|
 | Full model | 7.20 | 5.42 | 0.897 | 12.4 | 240 | Full model |

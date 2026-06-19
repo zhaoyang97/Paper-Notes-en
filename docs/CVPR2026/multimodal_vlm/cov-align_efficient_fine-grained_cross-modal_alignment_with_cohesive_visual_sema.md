@@ -107,6 +107,7 @@ Retrieval results (RSum) on Flickr30K and MS-COCO comparing CoV-Align against th
 After CLIP fine-tuning, CoV-Align reaches RSum 491.9 on MS-COCO 5K, significantly outperforming LG-MGC (465.3). Notably, **higher input resolutions (384 vs 224) yield larger gains over LAPS**, suggesting text-free aggregation better utilizes high-resolution attention maps.
 
 ### Ablation Study (Flickr30K, ViT-Base-224)
+
 | Configuration | TR R@1 | IR R@1 | Note |
 |------|--------|--------|------|
 | Baseline (Object-query cross-attn) | 70.4 | 59.4 | Starting point |
@@ -117,6 +118,7 @@ After CLIP fine-tuning, CoV-Align reaches RSum 491.9 on MS-COCO 5K, significantl
 Sensitivity analysis shows $\varepsilon=0.7$ and $N_q=8$ are optimal. Setting $\varepsilon=0$ (all patches) drops TR R@1 to 74.5 due to noise.
 
 ### Performance Efficiency (Flickr30K, ViT-Base-224 + BERT-Base, batch 128)
+
 | Model | FLOPs | Training Memory | Note |
 |------|-------|----------|------|
 | CLIP | 2393.64G | 27G | Coarse-grained reference |

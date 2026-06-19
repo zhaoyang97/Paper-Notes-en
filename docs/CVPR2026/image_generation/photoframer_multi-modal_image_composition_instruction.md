@@ -99,6 +99,7 @@ Textual guidance consistency (GPT-5 rating "whether text accurately describes th
 | **PhotoFramer** | **91.96** | **92.59** | **91.52** | **92.02** |
 
 ### Ablation Study
+
 | Configuration | Phenomenon | Explanation |
 |------|------|------|
 | Feed text guidance to Qwen-Image-Edit | Cannot utilize, even reduces fidelity | Even with an LLM text encoder, it cannot follow this guidance |

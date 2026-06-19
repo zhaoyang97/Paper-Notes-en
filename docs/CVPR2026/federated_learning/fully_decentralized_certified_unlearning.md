@@ -89,6 +89,7 @@ Unlearning was evaluated on two image classification benchmarks under a BadNets 
 ASR (Attack Success Rate) refers to the proportion of samples with triggers classified into the attacker's target class; values closer to the 10% random guess indicate the backdoor has been successfully erased.
 
 ### Theoretical Comparison (DDP vs RR-DU, Convex Case)
+
 | Method | Noise Scale | Deletion Capacity (Scaling) |
 |------|---------|------|
 | DDP (group privacy) | $\Theta\big(\tfrac{mL}{\varepsilon}\sqrt{\tfrac{T\ln(1/\delta)\ln N}{N}}\big)$, **Scales linearly with $m$** | Fundamentally limited by group privacy |

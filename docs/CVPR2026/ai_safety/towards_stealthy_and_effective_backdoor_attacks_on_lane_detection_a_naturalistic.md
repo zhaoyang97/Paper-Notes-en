@@ -106,6 +106,7 @@ Regarding stealthiness, forensic detection rates (lower is better, %) were measu
 While BadNets/Blended/LD-Attack show low forensic detection, they are obvious to the human eye (marked N/A due to trivial manual recognition). DBALD is among the few methods to **deceive both forensic tools and human inspection**—UniDetection catches nearly 60% of BadLane samples but less than 3% of DBALD.
 
 ### Ablation Study
+
 | Config | Metric | Description |
 |------|---------|------|
 | With heatmap (LaneATT-LDA) | 81.65 ASR | Full heatmap guidance |

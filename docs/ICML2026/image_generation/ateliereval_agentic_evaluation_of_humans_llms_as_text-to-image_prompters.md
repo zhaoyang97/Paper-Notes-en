@@ -92,6 +92,7 @@ The experiment compared 8 MLLMs, 48 humans (24 novice, 24 skilled), and 4 T2I ba
 | T0 MLLMs vs novice humans | Comprehensive | MLLMs > Novices | MLLMs significantly lift the floor for average users |
 
 ### Ablation Study
+
 | Configuration | Key Metrics | Note |
 | :--- | :--- | :--- |
 | Zero-shot judge | MAE 0.72, $\rho=0.56$ | Overly optimistic with poor differentiation |

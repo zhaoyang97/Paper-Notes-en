@@ -1,8 +1,8 @@
 ---
 title: >-
-  CVPR2026 Remote Sensing Papers · 67 Notes
+  CVPR2026 Remote Sensing Papers · 57 Notes
 description: >-
-  67 CVPR2026 papers in the Remote Sensing area, covering Remote Sensing, Multimodal/VLM, Segmentation, Diffusion Models, Adversarial Robustness, Navigation and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  57 CVPR2026 papers in the Remote Sensing area, covering Remote Sensing, Multimodal/VLM, Segmentation, Navigation, Diffusion Models, Adversarial Robustness and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "CVPR2026"
   - "Remote Sensing"
@@ -10,14 +10,16 @@ tags:
   - "paper summaries"
   - "Multimodal/VLM"
   - "Segmentation"
+  - "Navigation"
   - "Diffusion Models"
   - "Adversarial Robustness"
-  - "Navigation"
 item_list:
   - u: "acpv-net_all-class_polygonal_vectorization_for_seamless_vector_map_generation_fr/"
     t: "ACPV-Net: All-Class Polygonal Vectorization for Seamless Vector Map Generation from Aerial Imagery"
   - u: "apex_a_decoupled_memory-based_explorer_for_asynchronous_aerial_object_goal_navig/"
     t: "APEX: A Decoupled Memory-based Explorer for Asynchronous Aerial Object Goal Navigation"
+  - u: "asking_like_socrates_socrates_helps_vlms_understand_remote_sensing_images/"
+    t: "Asking like Socrates: Socrates helps VLMs understand remote sensing images"
   - u: "avion_aerial_visionlanguage_instruction_from_offli/"
     t: "AVION: Aerial Vision-Language Instruction from Offline Teacher to Prompt-Tuned Network"
   - u: "beyond_endpoints_path-centric_reasoning_for_vectorized_off-road_network_extracti/"
@@ -26,8 +28,8 @@ item_list:
     t: "Beyond Matching to Tiles: Bridging Unaligned Aerial and Satellite Views for Vision-Only UAV Navigation"
   - u: "beyond_tie_points_satellite_image_block_adjustment_based_on_dense_feature_consis/"
     t: "Beyond Tie Points: Satellite Image Block Adjustment based on Dense Feature Consistency"
-  - u: "cf-ipt_cross-modal_fusion_interactive_prompt_tuning_of_vision-language_pre-train/"
-    t: "CF-IPT: Cross-Modal Fusion Interactive Prompt Tuning of Vision-Language Pre-Trained Model for Multisource Remote Sensing Data Classification"
+  - u: "changebridge_spatiotemporal_image_generation_with_multimodal_controls_for_remote/"
+    t: "ChangeBridge: Spatiotemporal Image Generation with Multimodal Controls for Remote Sensing"
   - u: "cross-modal_fuzzy_alignment_network_for_text-aerial_person_retrieval_and_a_large/"
     t: "Cross-modal Fuzzy Alignment Network for Text-Aerial Person Retrieval and A Large-scale Benchmark"
   - u: "cross-scale_pansharpening_via_scaleformer_and_the_panscale_benchmark/"
@@ -38,12 +40,8 @@ item_list:
     t: "Data Leakage Detection and De-duplication in Large Scale Geospatial Image Datasets"
   - u: "exploring_spatiotemporal_feature_propagation_for_video-level_compressive_spectra/"
     t: "Exploring Spatiotemporal Feature Propagation for Video-Level Compressive Spectral Reconstruction"
-  - u: "fast_kernel-space_diffusion_for_remote_sensing_pansharpening/"
-    t: "Fast Kernel-Space Diffusion for Remote Sensing Pansharpening"
   - u: "geo2_geometry-guided_cross-view_geo-localization_and_image_synthesis/"
     t: "Geo2: Geometry-Guided Cross-view Geo-Localization and Image Synthesis"
-  - u: "geoagent_learning_to_geolocate_everywhere_with_reinforced_geographic_characteris/"
-    t: "GeoAgent: Learning to Geolocate Everywhere with Reinforced Geographic Characteristics"
   - u: "geobridge_a_semantic-anchored_multi-view_foundation_model_bridging_images_and_te/"
     t: "GeoBridge: A Semantic-Anchored Multi-View Foundation Model Bridging Images and Text for Geo-Localization"
   - u: "geocot_towards_reliable_remote_sensing_reasoning_with_manifold_perspective/"
@@ -58,33 +56,35 @@ item_list:
     t: "GeoSANE: Learning Geospatial Representations from Models, Not Data"
   - u: "geovis_geospatially_rewarded_visual_search_for_remote_sensing_visual_grounding/"
     t: "GeoViS: Geospatially Rewarded Visual Search for Remote Sensing Visual Grounding"
-  - u: "harmonidiff-rs_training-free_diffusion_harmonization_for_satellite_image_composi/"
-    t: "HarmoniDiff-RS: Training-Free Diffusion Harmonization for Satellite Image Composition"
-  - u: "hyperfm_an_efficient_hyperspectral_foundation_model_with_spectral_grouping/"
-    t: "HyperFM: An Efficient Hyperspectral Foundation Model with Spectral Grouping"
-  - u: "hyseg_learning_generative_priors_for_structure-aware_remote_sensing_segmentation/"
-    t: "HySeg: Learning Generative Priors for Structure-Aware Remote Sensing Segmentation"
-  - u: "improving_visual_grounding_in_remote_sensing_via_cluster-guided_refinement_and_m/"
-    t: "Improving Visual Grounding in Remote Sensing via Cluster-Guided Refinement and Model Ensemble Voting"
   - u: "lnem_lunar_neural_elevation_model/"
     t: "LNEM: Lunar Neural Elevation Model"
   - u: "local_precise_refinement_a_dual-gated_mixture-of-experts_for_enhancing_foundatio/"
     t: "Local Precise Refinement: A Dual-Gated Mixture-of-Experts for Enhancing Foundation Model Generalization against Spectral Shifts"
   - u: "lookasidevln_direction-aware_aerial_vision-and-language_navigation/"
     t: "LookasideVLN: Direction-Aware Aerial Vision-and-Language Navigation"
-  - u: "lumosaic_hyperspectral_video_via_active_illumination_and_coded-exposure_pixels/"
-    t: "Lumosaic: Hyperspectral Video via Active Illumination and Coded-Exposure Pixels"
-item_total: 67
+  - u: "metaspectra_a_compact_broadband_metasurface_camera_for_snapshot_hyperspectral_im/"
+    t: "MetaSpectra+: A Compact Broadband Metasurface Camera for Snapshot Hyperspectral+ Imaging"
+  - u: "mm-ovseg_multimodal_optical-sar_fusion_for_open-vocabulary_segmentation_in_remot/"
+    t: "MM-OVSeg: Multimodal Optical-SAR Fusion for Open-Vocabulary Segmentation in Remote Sensing"
+  - u: "mogeo_beyond_one-to-one_cross-view_object_geo-localization/"
+    t: "MOGeo: Beyond One-to-One Cross-View Object Geo-localization"
+  - u: "multigrain-aware_semantic_prototype_scanning_and_tri-token_prompt_learning_embra/"
+    t: "Multigrain-aware Semantic Prototype Scanning and Tri-Token Prompt Learning Embraced High-Order RWKV for Pan-Sharpening"
+  - u: "neighbormae_exploiting_spatial_dependencies_between_neighboring_earth_observatio/"
+    t: "NeighborMAE: Exploiting Spatial Dependencies between Neighboring Earth Observation Images in Masked Autoencoders Pretraining"
+  - u: "no_labels_no_look-ahead_unsupervised_online_video_stabilization_with_classical_p/"
+    t: "No Labels, No Look-Ahead: Unsupervised Online Video Stabilization with Classical Priors"
+item_total: 57
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # 🛰️ Remote Sensing
 
-**📷 CVPR2026** · **67** paper notes
+**📷 CVPR2026** · **57** paper notes
 
 📌 **Same area in other venues:** [🧪 ICML2026 (3)](../../ICML2026/remote_sensing/index.md) · [🔬 ICLR2026 (5)](../../ICLR2026/remote_sensing/index.md) · [🤖 AAAI2026 (7)](../../AAAI2026/remote_sensing/index.md) · [🧠 NeurIPS2025 (12)](../../NeurIPS2025/remote_sensing/index.md) · [📹 ICCV2025 (11)](../../ICCV2025/remote_sensing/index.md)
 
-🔥 **Top topics:** Remote Sensing ×34 · Multimodal/VLM ×11 · Segmentation ×7 · Diffusion Models ×6 · Adversarial Robustness ×4
+🔥 **Top topics:** Remote Sensing ×28 · Multimodal/VLM ×10 · Segmentation ×5 · Navigation ×3 · Diffusion Models ×3
 
 **[ACPV-Net: All-Class Polygonal Vectorization for Seamless Vector Map Generation from Aerial Imagery](acpv-net_all-class_polygonal_vectorization_for_seamless_vector_map_generation_fr.md)**
 
@@ -93,6 +93,10 @@ item_total: 67
 **[APEX: A Decoupled Memory-based Explorer for Asynchronous Aerial Object Goal Navigation](apex_a_decoupled_memory-based_explorer_for_asynchronous_aerial_object_goal_navig.md)**
 
 :   APEX decomposes the "UAV target search" task into three decoupled modules—using MLLMs to dynamically construct 3D spatio-temporal semantic maps as memory, PPO-based reinforcement learning to translate maps into actions, and an open-vocabulary detector for final target confirmation. These modules run at different frequencies via an asynchronous parallel framework to bypass the inference latency of large models, achieving a $+4.2\%$ SR and $+2.8\%$ SPL improvement over the Prev. SOTA on the UAV-ON benchmark.
+
+**[Asking like Socrates: Socrates helps VLMs understand remote sensing images](asking_like_socrates_socrates_helps_vlms_understand_remote_sensing_images.md)**
+
+:   This work reveals the "pseudo-reasoning" phenomenon in remote sensing VLMs (where explicit reasoning chains lead to performance degradation), attributed to the "glance effect" (insufficient single coarse-grained perception). It proposes the RS-EoT (Evidence-of-Thought) iterative evidence search paradigm. The method uses SocraticAgent self-play to synthesize reasoning trajectories for SFT cold startup, followed by two-stage progressive RL (grounding → VQA) for enhancement and generalization. RS-EoT-7B achieves SOTA on multiple remote sensing VQA and grounding benchmarks.
 
 **[AVION: Aerial Vision-Language Instruction from Offline Teacher to Prompt-Tuned Network](avion_aerial_visionlanguage_instruction_from_offli.md)**
 
@@ -110,9 +114,9 @@ item_total: 67
 
 :   Addressing the long-standing limitation of Planar Block Adjustment (PBA) relying on sparse tie points and accumulating errors in high-disparity regions such as tall buildings, this paper proposes the "Beyond Tie Points" paradigm. It utilizes a pre-trained feature extractor to generate dense features and confidence maps, reformulating block adjustment as a self-supervised optimization problem to "minimize the dense feature distance of homologous object points." Combined with a grid-based coarse-to-fine solver, it reduces average errors by up to 75.43% on data from Beijing, Guangzhou, and San Jose.
 
-**[CF-IPT: Cross-Modal Fusion Interactive Prompt Tuning of Vision-Language Pre-Trained Model for Multisource Remote Sensing Data Classification](cf-ipt_cross-modal_fusion_interactive_prompt_tuning_of_vision-language_pre-train.md)**
+**[ChangeBridge: Spatiotemporal Image Generation with Multimodal Controls for Remote Sensing](changebridge_spatiotemporal_image_generation_with_multimodal_controls_for_remote.md)**
 
-:   CF-IPT proposes a prompt tuning framework that fuses Hyperspectral (HSI) and LiDAR/SAR data into a single image to generate spectral-spatial prompt matrices. These matrices guide the bidirectional interactive alignment between CLIP's vision and text prompts. By tuning only 0.76% of CLIP's parameters, it transfers the natural-image pre-trained model to multisource remote sensing classification, achieving OA gains of 1.38%/2.27%/1.38% over SOTA on Houston, MUUFL, and Augsburg datasets respectively.
+:   Ours proposes ChangeBridge, the first conditional spatiotemporal image generation model for remote sensing. Based on asymmetrically drifting diffusion bridges, it generates post-event images from pre-event images and multimodal conditions (coordinate-text/semantic masks/instance layouts), simultaneously modeling foreground event-driven changes and background temporal evolution, while serving as a data engine for downstream change detection tasks.
 
 **[Cross-modal Fuzzy Alignment Network for Text-Aerial Person Retrieval and A Large-scale Benchmark](cross-modal_fuzzy_alignment_network_for_text-aerial_person_retrieval_and_a_large.md)**
 
@@ -134,17 +138,9 @@ item_total: 67
 
 :   The first to advance Spectral Compressive Imaging (SCI) from image-level to video-level reconstruction, constructing the first high-quality dynamic hyperspectral dataset DynaSpec (30 sequences/300 frames). Proposed PG-SVRT achieves 41.52dB PSNR and optimal temporal consistency through spatial-then-temporal progressive attention + bridging tokens, with FLOPs (28.18G) lower than several image-level SOTA methods.
 
-**[Fast Kernel-Space Diffusion for Remote Sensing Pansharpening](fast_kernel-space_diffusion_for_remote_sensing_pansharpening.md)**
-
-:   KSDiff shifts the diffusion process from "pixel-wise image reconstruction" to "generating a global prior vector in latent space," which then modulates the convolution kernels of a regressive pansharpening network. This approach combines the global distribution modeling of diffusion models with the inference speed of traditional CNNs—achieving leading metrics across WV3/GF2/QB datasets with an inference time of only 0.077 s, over 500 times faster than pixel-space diffusion baselines.
-
 **[Geo2: Geometry-Guided Cross-view Geo-Localization and Image Synthesis](geo2_geometry-guided_cross-view_geo-localization_and_image_synthesis.md)**
 
 :   Geo2 leverages 3D priors from a Geometry Foundation Model (VGGT) to embed ground panoramas and satellite images into a **shared geometry-aware latent space**. This framework enables Cross-view Geo-localization (CVGL) and bidirectional Cross-view Image Synthesis (CVIS) to mutually enhance each other within the same architecture. By utilizing reversible flow matching, bidirectional generation is achieved through unidirectional training, setting new SOTA benchmarks in both localization and synthesis on CVUSA/CVACT/VIGOR.
-
-**[GeoAgent: Learning to Geolocate Everywhere with Reinforced Geographic Characteristics](geoagent_learning_to_geolocate_everywhere_with_reinforced_geographic_characteris.md)**
-
-:   GeoAgent approaches image geolocation as a human-like task of "hierarchical reasoning to a precise address." It first performs a cold start on a VLLM using GeoSeek, a Chain-of-Thought (CoT) dataset annotated by geographic experts and professional players. It then undergoes Group Relative Policy Optimization (GRPO) fine-tuning using two rewards tailored for geographic tasks: a Geographic Similarity Reward (measuring correctness) and a Consistency Reward (measuring reasoning validity). GeoAgent outperforms existing methods and general-purpose VLLMs across multiple granularities.
 
 **[GeoBridge: A Semantic-Anchored Multi-View Foundation Model Bridging Images and Text for Geo-Localization](geobridge_a_semantic-anchored_multi-view_foundation_model_bridging_images_and_te.md)**
 
@@ -174,22 +170,6 @@ item_total: 67
 
 :   GeoViS reformulates remote sensing visual grounding from a "one-step box regression" into a two-stage process: first, a reward-guided tree-based visual search locates the sub-region most likely to contain the target, and then this sub-region serves as a visual cue for conditional grounding. A unified VisualRAG model simultaneously provides reward evaluation, action guidance, and grounding inference, achieving SOTA performance on metrics like Pr@0.5 across five benchmarks.
 
-**[HarmoniDiff-RS: Training-Free Diffusion Harmonization for Satellite Image Composition](harmonidiff-rs_training-free_diffusion_harmonization_for_satellite_image_composi.md)**
-
-:   When pasting a satellite source patch into a target satellite scene, HarmoniDiff-RS requires no training or fine-tuning. It first utilizes channel mean alignment in the diffusion latent space to unify radiometric styles, then applies timestep-wise fusion—where early inversion latents handle harmonization and late latents preserve structure—to eliminate hard boundaries. Finally, a lightweight harmony classifier automatically selects the most harmonious candidate, achieving the highest Harmony Score (0.225) and lowest Boundary Gradient Difference (BGD 4.88) on the self-constructed RSIC-H benchmark.
-
-**[HyperFM: An Efficient Hyperspectral Foundation Model with Spectral Grouping](hyperfm_an_efficient_hyperspectral_foundation_model_with_spectral_grouping.md)**
-
-:   Targeting the 291-band hyperspectral data from the NASA PACE satellite, this work proposes HyperFM, a parameter-efficient foundation model. It alleviates the information bottleneck when compressing high-dimensional bands into tokens using "Spectral Grouping Attention" (Intra-group LGA + Inter-group GGA + MoE Gating). By utilizing "Hypoformer blocks" (Hybrid Tensor Train Attention + Low-rank FFN), it reduces parameter count by half. Combined with the HyperFM250K dataset—the first featuring over 60% cloud cover—for MAE pre-training, it achieves an average 32.36% reduction in MSE across four cloud property retrieval tasks compared to existing hyperspectral foundation models while doubling parameter efficiency.
-
-**[HySeg: Learning Generative Priors for Structure-Aware Remote Sensing Segmentation](hyseg_learning_generative_priors_for_structure-aware_remote_sensing_segmentation.md)**
-
-:   HySeg reformulates remote sensing image semantic segmentation (RSISS) as "posterior inference constrained by generative structural priors." It first learns a structural prior encoding topological continuity and regional adjacency in label space using a MeanFlow-based MeanStruct module. This abstract prior is then projected into topology-aware pixel-wise affinities via P2A. Finally, a DAS head performs constrained message passing based on these affinities, achieving plug-and-play improvements in structural consistency and cross-dataset generalization across four remote sensing benchmarks.
-
-**[Improving Visual Grounding in Remote Sensing via Cluster-Guided Refinement and Model Ensemble Voting](improving_visual_grounding_in_remote_sensing_via_cluster-guided_refinement_and_m.md)**
-
-:   Addressing the individual shortcomings of visual grounding models in remote sensing, this paper chains the specialized RemoteSAM and the general segmentation model SAM3 into two refinement pipelines (SGR/CGR). These, along with other models, are integrated using a majority voting formula that considers spatial consistency and differences in the number of detected boxes. The resulting ensemble achieves a higher mIoU than any single model on VRS Bench and NWPU-VHR-10.
-
 **[LNEM: Lunar Neural Elevation Model](lnem_lunar_neural_elevation_model.md)**
 
 :   The first lunar DEM reconstruction framework to explicitly embed a pushbroom camera's Rigorous Sensor Model (RSM) into neural volume rendering. It is accompanied by the Lunar Studio data pipeline, which generates geometrically consistent inputs from raw orbital imagery to reconstruct high-fidelity lunar elevation models under multi-sensor and multi-illumination conditions.
@@ -201,10 +181,6 @@ item_total: 67
 **[LookasideVLN: Direction-Aware Aerial Vision-and-Language Navigation](lookasidevln_direction-aware_aerial_vision-and-language_navigation.md)**
 
 :   Addressing the issues of "high ambiguity in landmark descriptions and expensive global scene graph maintenance" in UAV aerial navigation, LookasideVLN proposes a "lookaside" paradigm. It constructs a lightweight egocentric landmark graph using directional cues (left turn/right turn/ascend) naturally present in instructions. By translating candidate paths into "instruction-like" text for MLLM semantic alignment, it outperforms SOTA methods (CityNavAgent) that require global sequence lookahead, even under zero-shot and single-layer lookahead conditions.
-
-**[Lumosaic: Hyperspectral Video via Active Illumination and Coded-Exposure Pixels](lumosaic_hyperspectral_video_via_active_illumination_and_coded-exposure_pixels.md)**
-
-:   The Lumosaic system is proposed for active hyperspectral video, synchronizing a 12-narrowband LED array with a Coded-Exposure Pixel (CEP) camera at microsecond precision. By jointly encoding spatial-temporal-spectral information across 158 sub-frames per frame, it achieves motion-robust reconstruction of 31-channel (400–700nm) hyperspectral video at 30fps VGA resolution, surpassing passive snapshot systems by over 10dB in PSNR.
 
 **[MetaSpectra+: A Compact Broadband Metasurface Camera for Snapshot Hyperspectral+ Imaging](metaspectra_a_compact_broadband_metasurface_camera_for_snapshot_hyperspectral_im.md)**
 
@@ -246,10 +222,6 @@ item_total: 67
 
 :   Addressing the novel scenario of incomplete remote sensing multi-view clustering where "certain views contain missing pixels," OSMAGC initializes multi-scale spatial-aware anchor graphs using superpixels. It then unifies multi-scale anchor graph learning, structure-aligned consensus feature learning, and orthogonal spatial-aware regularization into a single objective function for alternating optimization. The method consistently outperforms SOTA methods across four remote sensing datasets under various missing rates while achieving the fastest execution speed.
 
-**[PAUL: Uncertainty-Guided Partition and Augmentation for Robust Cross-View Geo-Localization under Noisy Correspondence](paul_uncertainty-guided_partition_and_augmentation_for_robust_cross-view_geo-loc.md)**
-
-:   Addressing the "semi-positive" alignment noise caused by GPS drift in UAV-satellite cross-view localization, PAUL utilizes a Gaussian Mixture Model (GMM) to softly partition clean/noisy pairs, employs Evidential Deep Learning (EDL) for uncertainty-guided region mask augmentation, and uses dual-network co-training to absorb effective signals from noisy samples, consistently outperforming existing noisy correspondence methods under various noise ratios.
-
 **[PhenoYieldNet: Learning Crop-Aware Phenological Responses for Multi-Crop Yield Prediction](phenoyieldnet_learning_crop-aware_phenological_responses_for_multi-crop_yield_pr.md)**
 
 :   PhenoYieldNet utilizes a unified model for multi-crop county-level yield prediction: it assigns learnable query vectors via a "Crop Phenology Bank" to each crop, decomposes temporal features into long-term trends and short-term fluctuations via "Crop Phenology Attention" (injecting them into attention biases), and utilizes two-stage Temporal Contrastive Adaptation to transfer remote sensing foundation models to agricultural time series. It consistently outperforms single-crop and multi-crop SOTA on CropNet and MODIS.
@@ -270,10 +242,6 @@ item_total: 67
 
 :   RAMEN is a "sensor-agnostic, resolution-adjustable" unified Transformer encoder: it explicitly encodes modality, spatial resolution (GSD), and temporal resolution as input features into a shared latent space. It **treats spatial resolution as a controllable output parameter during inference**, allowing users to balance precision and computation. Pre-trained on heterogeneous Earth Observation (EO) corpora using masked reconstruction, it outperforms larger state-of-the-art (SOTA) models like TerraMind-L on 8 downstream tasks in the PANGAEA benchmark using a frozen ViT-Base backbone.
 
-**[ReAttnCLIP: Training-Free Open-Vocabulary Remote Sensing Image Segmentation via Re-defined Attention in CLIP](reattnclip_training-free_open-vocabulary_remote_sensing_image_segmentation_via_r.md)**
-
-:   This paper decomposes the attention map of the last CLIP layer into three components: "patch↔patch," "CLS→patch," and "patch→CLS." By reconstructing patch-level relationships using the cosine similarity of raw patch embeddings (with rotation augmentation), rebuilding a more category-informative global representation from intermediate layers, and zeroing out the [CLS]-to-patch column, ReAttnCLIP achieves SOTA performance in training-free remote sensing open-vocabulary segmentation (+1.7% average across eight datasets).
-
 **[RECS4R: Bridging Semantics and Geometry for Referring Remote Sensing Interpretation](recs4r_bridging_semantics_and_geometry_for_referring_remote_sensing_interpretati.md)**
 
 :   RECS4R unifies Referring Visual Grounding (VG) and Referring Image Segmentation (RIS) in remote sensing by "decoding a sequence of language-conditioned polygon contour vertices"—where the contour's bounding box serves as the box and the filled region as the mask. By integrating residual coarse-to-fine encoding, channel-separated multi-scale fusion, and gradient-domain boundary supervision, it achieves new state-of-the-art RECS scores across six datasets, including RefDIOR, RRSIS-D, and the RefCOCO series.
@@ -281,6 +249,10 @@ item_total: 67
 **[Remote Sensing Image Super-Resolution for Imbalanced Textures: A Texture-Aware Diffusion Framework](remote_sensing_image_super-resolution_for_imbalanced_textures_a_texture-aware_di.md)**
 
 :   To address the "globally random but locally clustered" nature of textures in remote sensing images—which leads to extreme texture imbalance compared to natural images—this paper proposes TexADiff. The framework estimates a Relative Texture Density Map (RTDM) to characterize texture distribution and injects it into the diffusion super-resolution process via a threefold strategy: "spatial condition + loss modulation + sampling schedule." This ensures the model generates realistic high-frequency details in texture-rich regions while suppressing hallucinations in texture-sparse regions, achieving superior perceptual metrics across multiple remote sensing benchmarks.
+
+**[Revisiting the Necessity of Full Accuracy: Weakly Supervised Object-Level Offset Correction for Misaligned Building Labels](revisiting_the_necessity_of_full_accuracy_weakly_supervised_object-level_offset_.md)**
+
+:   To address the misalignment between building footprint labels and roof positions caused by the lack of orthorectification in Google Earth images, this paper proposes the OMAF framework. It uses a differentiable self-alignment with edge and variance constraints to estimate instance-level offsets, filters these using Bayesian confidence with minimal manual priors, and distills the knowledge into an offset regression network. This process generates clean corrected labels, improving various segmentation models' mIoU by up to 40.6%.
 
 **[RHO: Robust Holistic OSM-Based Metric Cross-View Geo-Localization](rho_robust_holistic_osm-based_metric_cross-view_geo-localization.md)**
 
@@ -293,10 +265,6 @@ item_total: 67
 **[Robust Remote Sensing Image–Text Retrieval with Noisy Correspondence](robust_remote_sensing_image-text_retrieval_with_noisy_correspondence.md)**
 
 :   This paper investigates the "Noisy Correspondence" issue (misaligned image-text pairs) in Remote Sensing Image-Text Retrieval (RSITR) for the first time and proposes the RRSITR framework. By categorizing training pairs into clean, fuzzy, and noisy sets based on contrastive loss, the method utilizes multimodal self-paced learning for easy-to-hard scheduling and applies a robust triplet loss with dynamic soft margins to noisy pairs. It significantly outperforms existing SOTA, particularly under high noise rates.
-
-**[Rotation Invariant and Symmetry Aware Pixel Difference Network for Remote Sensing Object Detection](rotation_invariant_and_symmetry_aware_pixel_difference_network_for_remote_sensin.md)**
-
-:   This work integrates "continuous rotation invariance" and "structural symmetry" geometric priors directly into the convolutional kernel by proposing the RIS-PDC operator (Pixel Difference + Polar Harmonic Symmetry Kernel + SO(2) 8-direction kernel rotation averaging). As a plug-and-play replacement for convolutions in mainstream remote sensing detectors, it achieves 78.53% mAP on DOTA-v1.0 single-scale without increasing parameters.
 
 **[SegEarth-R2: Towards Comprehensive Language-guided Segmentation for Remote Sensing Images](segearth-r2_towards_comprehensive_language-guided_segmentation_for_remote_sensin.md)**
 
@@ -318,17 +286,9 @@ item_total: 67
 
 :   Addressing the pain point in remote sensing change detection where "only two temporal images are available, making it difficult to model sparse temporal evolution," this paper proposes SpikeAdapter. It utilizes a brain-inspired "Time-to-First-Spike" mechanism to encode bitemporal radiation differences into sparse spike sequences (GSI-P). It then uses a Spiking Neural Network (SNN) to extract temporal cues and STSpikeFuse to adaptively fuse them with semantic features from an ANN backbone. On LEVIR-CD, CLCD, and SYSU-CD, it outperforms CNN, Transformer, Mamba, and pseudo-video methods in F1/IoU metrics.
 
-**[Spatial-Spectral Residuals Informed Diffusion Neural Operator for Pan-sharpening](spatial-spectral_residuals_informed_diffusion_neural_operator_for_pan-sharpening.md)**
-
-:   SRINO replaces the attention-based denoising backbone of diffusion models for pan-sharpening with a Galerkin-type Neural Operator (transferring the generation process to a continuous function space to significantly save FLOPs and memory). It treats pixel-level spatial/spectral consistency residuals directly as conditions fed into each step of the reverse sampling process for closed-loop guidance. On WV3/GF2/QB datasets, it outperforms current SOTA methods while being several times more computationally efficient than attention-based diffusion models.
-
 **[Spectrally Distilled Representations Aligned with Instruction-Augmented LLMs for Satellite Imagery](spectrally_distilled_representations_aligned_with_instruction-augmented_llms_for.md)**
 
 :   SATtxt employs a two-stage training process—"Spectral Representation Distillation + Instruction-Augmented LLM Alignment"—to inject multi-spectral (MS) priors into an **RGB-only** vision encoder and align it with frozen LLM text embeddings. By training only lightweight projectors, it outperforms multi-spectral SOTA models across zero-shot classification, retrieval, open-vocabulary segmentation, and linear probing tasks.
-
-**[Uncertainty-Guided Edge Learning for Deep Image Regression in Remote Sensing](uncertainty-guided_edge_learning_for_deep_image_regression_in_remote_sensing.md)**
-
-:   Addressing the "edge learning" scenario with limited computational power on orbiting satellites, this paper proposes the UGEL algorithm: it utilizes "deep Beta regression" uncertainty, which can be calculated in a single forward pass, to select the most uncertain samples for manual labeling and the most certain samples for pseudo-labeling. This allows the onboard regression model to converge and retrain faster than traditional active learning or semi-supervised learning approaches.
 
 **[UniChange: Unifying Change Detection with Multimodal Large Language Model](unichange_unifying_change_detection_with_multimodal_large_language_model.md)**
 
@@ -342,9 +302,9 @@ item_total: 67
 
 :   The authors construct the first million-scale remote sensing instruction segmentation dataset, GeoSeg-1M (590K images, 117 categories, 1.1M triplets), along with the companion GeoSeg-Bench. They propose a unified framework, UniGeoSeg, which integrates referring, interactive, and reasoning segmentation into a single model using Task-Adaptive Text Enhancement (TATE), Latent Knowledge Memory (LKM), and Progressive Task Scheduling (PTS). It achieves state-of-the-art (SOTA) performance on GeoSeg-Bench and multiple public benchmarks with strong zero-shot generalization.
 
-**[VLM4RSDet: Collaborative Optimization with Vision-Language Model for Enhancing Remote Sensing Object Detection](vlm4rsdet_collaborative_optimization_with_vision-language_model_for_enhancing_re.md)**
+**[WHU-MARS: A Multispectral Aerial-Ground Benchmark Towards Any-Scenario Person Re-Identification](whu-mars_a_multispectral_aerial-ground_benchmark_towards_any-scenario_person_re-.md)**
 
-:   VLM4RSDet enables a conventional closed-set detector and a vision-language model (Florence-2) to share a vision backbone and perform joint backpropagation during the training phase, "distilling" VLM prior knowledge into the detector’s features. During inference, the VLM is discarded, leaving only the standard detection branch. This achieves SOTA detection accuracy with **zero additional overhead** (e.g., mAP$_{0.5:0.95}$ on VisDrone2019 improved by 7.5% over previous best methods).
+:   This paper proposes the "Any-Scenario Person Re-Identification" (AS-ReID) task, which requires a single model to perform any-to-any retrieval across heterogenous galleries mixing all modalities and viewpoints. The authors construct WHU-MARS, the largest multispectral aerial-ground dataset to date (2,337 identities, 430k RGB/NIR/TIR images, ground + UAV). They further introduce the UAD framework, which achieves state-of-the-art results with minimal parameters on AS-ReID through progressive center alignment and global prototype discrimination, without requiring multi-branch architectures or pairwise alignment.
 
 **[YieldSAT: A Multimodal Benchmark Dataset for High-Resolution Crop Yield Prediction](yieldsat_a_multimodal_benchmark_dataset_for_high-resolution_crop_yield_predictio.md)**
 

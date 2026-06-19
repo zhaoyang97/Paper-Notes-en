@@ -91,6 +91,7 @@ In reconstruction, Ov3R exceeds existing real-time 3R methods (Spann3R, SLAM3R) 
 In segmentation, Ov3R outperforms all baselines (including offline methods) on Replica, particularly on low-frequency "Tail" categories (22.8/31.5 mIoU/mAcc) compared to Open3DIS (4.9/9.4 mIoU/mAcc).
 
 ### Ablation Study
+
 | Module | Configuration | Key Metrics | Mechanism |
 |------|------|----------|------|
 | CLIP3R | (A) w/o CLIP-insert | Acc 3.31 / Comp 2.35 / ATE 6.46 | Removing I2P CLIP injection degrades recon |

@@ -62,6 +62,7 @@ All MLP/Transformer models use standard initialization ($W_{ij} \sim \text{Unif}
 ## Key Experimental Results
 
 ### Main Results
+
 | Task / Setup | Dataset Comparison | Observed Compute Saving | Description |
 |--------------|--------------------|-------------------------|-------------|
 | (20,6)-sparse parity (mini-batch SGD, 2-layer Transformer) | Small set vs. Online | Yellow converges earlier than Blue | Fig. 1, universal phenomenon |
@@ -70,6 +71,7 @@ All MLP/Transformer models use standard initialization ($W_{ij} \sim \text{Unif}
 | ICL Linear Regression / Mod Addition (Transformer) | Multi-phase training | Significant acceleration | Fig. 1, cross-architecture |
 
 ### Ablation Study
+
 | Intervention | Key Metric | Conclusion |
 |--------------|------------|------------|
 | Forcing $\hat{\mathbb{E}}[x]=0$, $\hat{\mathbb{E}}[y]=0$ | Small-set remains fast | Input bias is not the primary cause |

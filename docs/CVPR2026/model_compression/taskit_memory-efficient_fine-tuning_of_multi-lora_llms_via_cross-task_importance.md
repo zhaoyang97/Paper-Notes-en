@@ -90,6 +90,7 @@ Cross-modal setup: The base model already has LoRAs for 5 base tasks (Classifica
 TaskIT specifics: Trainable parameters 16.8M, Image average acc 80.4% with only **7.8 GB** memory (within 8 GB budget); NLP avg 90.1% / 7.9 GB; VL avg 83.6% / 7.8 GB. In contrast, AutoLoRA achieves 80.7% on Image but requires 14.3 GB—Ours matches accuracy while nearly halving memory.
 
 ### Ablation Study
+
 | Configuration | Trainable Params (M) | Memory (GB) | Acc (%) | Description |
 |------|------|------|---------|------|
 | w/o S (No task similarity, changed to uniform) | 16.8 | 7.6 | 75.3 | Acc drops 5.1%, proving similarity estimation is necessary |

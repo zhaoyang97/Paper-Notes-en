@@ -85,6 +85,7 @@ On four datasets (RSNA, ChestX-Det10, CheXlocalize, BUID) across three architect
 Ours improves by up to 7% relative to the best baseline. On BUID (small lesions), improvements range from 2%–30%. Notably, standard LIME (0.211/0.137/0.188/0.247) performs significantly worse than MedLIME, demonstrating the value of its components.
 
 ### Ablation Study
+
 | Configuration | AUPRC | Description |
 |------|---------|------|
 | Full MedLIME | 0.451 | RSNA / ViT |

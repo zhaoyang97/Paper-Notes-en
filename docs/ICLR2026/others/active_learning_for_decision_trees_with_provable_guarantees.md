@@ -2,113 +2,102 @@
 title: >-
   [Paper Note] Active Learning for Decision Trees with Provable Guarantees
 description: >-
-  [ICLR 2026][Active Learning] This paper establishes the first theoretical guarantees for active learning with decision trees: (1) the first explicit analysis of the disagreement coefficient for decision trees…
+  [ICLR 2026][Others][Paper Note] Provides the first theoretical guarantees for active learning of decision trees: (1) Conducts the first analysis of the disagreement coefficient for decision trees and derives an $O(\ln^{OPT}(n))$ upper bound; (2) Proposes the first binary active learning algorithm achieving a $(1+\epsilon)$ multiplicative error guaran
 tags:
-  - "ICLR 2026"
-  - "Active Learning"
-  - "Decision Trees"
-  - "Label Complexity"
-  - "Disagreement Coefficient"
-  - "Multiplicative Error"
+  - ICLR 2026
+  - Others
 date: 2026-05-08
-content_hash: 82bc81c99fb55863
+content_hash: 698597b877c03778
 ---
-
 # Active Learning for Decision Trees with Provable Guarantees
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2601.20775](https://arxiv.org/abs/2601.20775)  
 **Code**: None  
-**Area**: Active Learning / Theory
-**Keywords**: Active Learning, Decision Trees, Label Complexity, Disagreement Coefficient, Multiplicative Error
+**Area**: Active Learning / Theory  
+**Keywords**: Active Learning, Decision Trees, Label Complexity, Disagreement Coefficient, Multiplicative Error  
 
 ## TL;DR
-This paper establishes the first theoretical guarantees for active learning with decision trees: (1) the first explicit analysis of the disagreement coefficient for decision trees, yielding an $O(\ln^{OPT}(n))$ upper bound; (2) the first active learning algorithm for binary classification achieving a multiplicative error guarantee of $(1+\epsilon)$. Combining these two results yields polylogarithmic label complexity in the dataset size.
+Provides the first theoretical guarantees for active learning of decision trees: (1) Conducts the first analysis of the disagreement coefficient for decision trees and derives an $O(\ln^{OPT}(n))$ upper bound; (2) Proposes the first binary active learning algorithm achieving a $(1+\epsilon)$ multiplicative error guarantee; combining these results achieves polylogarithmic label complexity relative to the dataset size.
 
 ## Background & Motivation
 
-### State of the Field
+### Background
 
-**Background**: Active learning reduces labeling costs by strategically selecting the most informative data points for annotation. Decision trees are widely used due to their interpretability and feature selection capabilities, forming the basis of Random Forests and XGBoost.
+**Background**: Active learning reduces labeling requirements by strategically selecting the most informative data points for annotation. Decision trees are widely utilized (serving as the foundation for Random Forest and XGBoost) due to their interpretability and feature selection capabilities.
 
-**Limitations of Prior Work**: Active learning with decision trees lacks rigorous theoretical foundations — no explicit computation of the disagreement coefficient existed, and no multiplicative-error active learning algorithm had been proposed for classification. Additive-error algorithms cannot be directly adapted to the multiplicative-error setting, since adaptively estimating the optimal error $\eta$ requires $O(1/\eta)$ label queries, negating any efficiency advantage.
+**Limitations of Prior Work**: Active learning for decision trees lacks a rigorous theoretical foundation—previously, there was no explicit calculation of their disagreement coefficient, nor were there active learning algorithms for classification tasks specifically designed for multiplicative error. Additive error algorithms cannot be adapted to the multiplicative error setting (since adaptively estimating the optimal error $\eta$ requires $O(1/\eta)$ labels, negating the efficiency advantage).
 
-**Key Challenge**: Bounding the disagreement coefficient is theoretically necessary to guarantee label efficiency, yet for the decision tree hypothesis class this bound was previously known only to be finite, without a quantitative characterization. The multiplicative-error model is strictly stronger than the additive-error model (guaranteeing perfect classification in the realizable setting), but requires fundamentally new algorithmic design.
+**Key Challenge**: Theoretically, a bound on the disagreement coefficient is required to guarantee label efficiency, but for the class of decision trees, this bound was previously only known to be finite and could not be quantified. The multiplicative error model is stronger than the additive error model (it guarantees perfect classification in the realizable setting), but it necessitates an entirely new algorithmic design.
 
-**Goal**: Establish a theory of label complexity for active learning with decision trees.
+**Goal**: Establish a label complexity theory for the active learning of decision trees.
 
-**Key Insight**: Analyze the disagreement regions of decision trees via a LineTree decomposition, and design a novel algorithm that uses "version-space shrinkage stagnation" as a signal to lower-bound the optimal error.
+**Key Insight**: Analyze the disagreement region of decision trees by decomposing them into LineTrees and design a new algorithm that utilizes a "version space contraction stagnation signal" to lower bound the optimal error.
 
-**Core Idea**: Under two natural assumptions (each root-to-leaf path queries distinct feature dimensions, and grid-structured data), the disagreement coefficient of decision trees is polylogarithmic. Combined with the new multiplicative-error algorithm, this yields polylogarithmic label complexity.
+**Core Idea**: Under two natural assumptions (querying different dimensions along the root-to-leaf path and grid-distributed data), the disagreement coefficient for decision trees is polylogarithmic. Combined with a new multiplicative error algorithm, this enables polylogarithmic label complexity.
 
 ## Method
 
 ### Overall Architecture
-The paper makes two independent contributions: (1) an analysis of the disagreement coefficient that provides a theoretical foundation for the decision tree hypothesis class; (2) a general multiplicative-error active learning algorithm applicable to arbitrary binary classification. Combining these two results yields the polylogarithmic label complexity of Corollary 1.3.
+The paper addresses a single question: how many labels can active learning actually save for decision trees, and can this be provably guaranteed? The authors decompose this into two independent parts that are eventually combined. The first part is a purely combinatorial analysis that calculates an explicit bound for the disagreement coefficient $\theta$ of the decision tree hypothesis class, which is a prerequisite for applying existing label complexity frameworks. The second part is a general algorithm, independent of decision trees, which for the first time achieves a $(1+\epsilon)$ multiplicative error guarantee for active learning in classification tasks. Both parts are independently valid; when combined and applied to decision trees, they yield Corollary 1.3: the label complexity is polylogarithmic relative to the dataset size. Finally, a lower bound is provided to prove that the algorithm's dependence on $\epsilon$ is nearly optimal.
 
 ### Key Designs
 
-1. **Disagreement Coefficient Analysis for Decision Trees (Theorem 1.1)**:
+**1. Disagreement Coefficient Analysis (Theorem 1.1): Linking "label expenditure" to a computable geometric quantity**
 
-    - **Function**: The first explicit upper and lower bounds on the disagreement coefficient for the decision tree hypothesis class.
-    - **Mechanism**: Decision trees are decomposed into LineTrees (substructures corresponding to a single root-to-leaf path); the disagreement region of each LineTree is analyzed and the results are combined. Under two assumptions (each root-to-leaf path queries distinct feature dimensions, and grid-structured data distributions), this yields $\theta = O(\ln^{OPT}(n))$.
-    - **Design Motivation**: The coefficient $\theta$ directly controls label complexity — the classical result of Hanneke (2014) gives label complexity $\theta \cdot \text{poly}(\text{VC-dim}, \ln n, 1/\epsilon)$. A polylogarithmic $\theta$ thus ensures polylogarithmic total label complexity.
+The label savings in active learning are theoretically determined by the disagreement coefficient $\theta$—classic results (Hanneke 2014) express label complexity as $\theta \cdot \text{poly}(\text{VC-dim}, \ln n, 1/\epsilon)$. Thus, a small $\theta$ ensures a small total label count. The challenge was that $\theta$ for decision trees was only proven to be "finite" by Balcan et al. 2010, and without an explicit calculation, the framework could not be applied. This paper decomposes a decision tree into several LineTrees (each corresponding to a sub-structure induced by a root-to-leaf path), analyzes the disagreement region of individual LineTrees, and aggregates them back into the full tree. Under two natural assumptions—querying different feature dimensions at each step along a path and data following a grid distribution—the result is $\theta = O(\ln^{OPT}(n))$, a polylogarithmic magnitude relative to the dataset size.
 
-2. **Multiplicative-Error Active Learning Algorithm (Algorithm 2, Theorem 1.2)**:
+**2. Multiplicative Error Active Learning Algorithm (Algorithm 2, Theorem 1.2): Using "contraction stagnation" as a signal to bypass the dead-loop of estimating optimal error**
 
-    - **Function**: The first active learning algorithm for binary classification with a multiplicative error guarantee of $(1+\epsilon)$.
-    - **Mechanism**: The algorithm maintains a version space (the set of hypotheses that do not exclude the optimal classifier) and iteratively refines it. The key innovation is using "version-space shrinkage stagnation" as a signal to lower-bound the optimal error — if the version space ceases to shrink significantly within a given round, this indicates that the optimal error is already non-negligible, and refinement can be halted.
-    - **Design Motivation**: Additive-error algorithms cannot be straightforwardly adapted to the multiplicative-error setting (estimating $\eta$ itself requires $O(1/\eta)$ labels, creating a catch-22). The proposed algorithm circumvents this problem through an intrinsic mechanism.
+Multiplicative error models are stronger than additive ones: they guarantee perfect classification in realizable settings, but legacy algorithms cannot be directly applied. Additive error algorithms must first estimate the optimal error $\eta$ to set the precision, yet estimating $\eta$ accurately requires $O(1/\eta)$ labels—as one seeks a multiplicative guarantee (where $\eta$ is small), the estimation becomes increasingly expensive, erasing the efficiency of active learning (a catch-22). This algorithm does not explicitly estimate $\eta$. Instead, it maintains a version space (the set of classifiers not yet excluded) and refines it each round using new labels. The key innovation is reading the "contraction stagnation" signal: if the version space stops shrinking significantly in a given round, it indicates that the remaining disagreement is not noise but that the optimal error itself is already large, allowing the algorithm to terminate. This utilizes the intrinsic dynamics of the algorithm to indirectly lower-bound $\eta$, achieving the $(1+\epsilon)$ multiplicative guarantee without extra label costs for estimation.
 
-3. **Lower Bound on Label Complexity**:
+**3. Label Complexity Lower Bound (Theorem 4.3): Proving the algorithm's $\epsilon$ dependence is nearly optimal**
 
-    - **Function**: Demonstrates that the dependence of label complexity on $\epsilon$ is nearly optimal.
-    - **Mechanism**: A lower bound is established for the simplest case of decision stumps.
-    - **Design Motivation**: Validates the near-optimality of the proposed algorithm.
+An upper bound alone is insufficient; it must be shown that the algorithm is not wasting labels. The paper selects the simplest hypothesis class—decision stumps (single splits)—and constructs a lower bound demonstrating that any multiplicative error active learning algorithm must incur a certain magnitude of label consumption regarding $\epsilon$. Since decision stumps are a special case of decision trees, this lower bound implies that the proposed algorithm's dependence on $\epsilon$ is nearly optimal, with no significant theoretical room for improvement left on the table.
 
 ### Loss & Training
-This paper is a purely theoretical contribution; no training procedure is involved. The algorithmic framework is based on disagreement-based active learning.
+This work is a purely theoretical contribution and does not involve specific training procedures. The algorithmic framework is built upon disagreement-based active learning, with all guarantees measured by the number of label queries required for version space refinement.
 
 ## Key Experimental Results
 
 ### Main Results
-This paper is a purely theoretical contribution; no empirical results are reported.
-
-### Key Theoretical Results
-
-| Theorem | Statement | Significance |
-|---------|-----------|--------------|
-| Theorem 1.1 | $\theta = O(\ln^{OPT}(n))$ | First disagreement coefficient bound for decision trees |
-| Theorem 1.2 | Multiplicative-error algorithm | First $(1+\epsilon)$ active learning algorithm for classification |
-| Corollary 1.3 | Polylogarithmic label complexity | Core result combining both contributions |
-| Theorem 4.3 | Lower bound | Near-optimal dependence on $\epsilon$ |
+This work is a purely theoretical contribution; no experimental results are provided.
 
 ### Key Findings
-- Both assumptions are necessary: relaxing either (allowing repeated queries of the same dimension along a path, or non-grid data) leads to polynomial label complexity.
-- The multiplicative-error framework guarantees perfect classification in the realizable setting — a guarantee that additive-error algorithms cannot provide.
-- The version-space stagnation signal is the key technical innovation distinguishing multiplicative-error from additive-error algorithms.
+
+| Theorem | Content | Significance |
+|------|------|------|
+| Theorem 1.1 | $\theta = O(\ln^{OPT}(n))$ | First explicit disagreement coefficient bound for decision trees |
+| Theorem 1.2 | Multiplicative error algorithm | First $(1+\epsilon)$ active learning for classification |
+| Corollary 1.3 | Polylogarithmic label complexity | Core result combining the two main contributions |
+| Theorem 4.3 | Lower bound | Proves $\epsilon$ dependence is nearly optimal |
+
+### Key Findings
+- Both assumptions are necessary: relaxing either (allowing repeated dimension queries on a path or non-grid data) leads to polynomial label complexity.
+- The multiplicative error framework guarantees perfect classification in realizable settings—a feat additive error cannot achieve.
+- The version space stagnation signal is the key technical innovation distinguishing multiplicative from additive error algorithms.
 
 ## Highlights & Insights
-- **Filling a theoretical gap**: Balcan et al. (2010) asserted that the disagreement coefficient of decision trees is finite but provided no quantitative bound; this paper gives the first explicit bound 16 years later — an important advance from existence to construction in theoretical computer science.
-- **Non-equivalence of multiplicative and additive error**: The paper formally demonstrates that additive-error algorithms cannot be directly adapted to the multiplicative-error setting, necessitating a new algorithm — a conceptual contribution to active learning theory.
-- **Necessity of assumptions**: The paper not only establishes upper bounds under sufficient conditions but also proves that the assumptions are necessary, yielding a theoretically complete picture.
+- **Filling a Theoretical Void**: Balcan et al. 2010 only asserted that the disagreement coefficient for decision trees is finite without providing a calculation; this paper provides the first explicit bound after 16 years—a significant "existence to construction" advancement in theoretical computer science.
+- **In-equivalence of Multiplicative vs. Additive Error**: Formally demonstrates that additive error algorithms cannot be directly adapted to multiplicative settings, necessitating a brand-new algorithm—a conceptual contribution to active learning theory.
+- **Proof of Necessity**: Not only provides an upper bound under sufficient conditions but also proves the necessity of those assumptions, ensuring theoretical completeness.
 
 ## Limitations & Future Work
-- The two key assumptions (distinct-dimension queries and grid-structured data) may not hold in practical applications.
-- As a purely theoretical contribution, empirical validation on real-world datasets is absent.
-- Although label complexity is polylogarithmic, the constants involve terms such as $2^{OPT}$, which may be large in practice.
-- Only binary classification is considered; extension to multiclass settings remains an open problem.
+- The two key assumptions (querying different dimensions and grid data) may not hold in practical applications.
+- Purely theoretical contribution, lacking empirical validation of performance on real-world datasets.
+- While the label complexity is polylogarithmic, the constant factors contain terms like $2^{OPT}$, which may be large in practice.
+- Limited to binary classification; extensions to multi-class settings remain for future research.
 
 ## Related Work & Insights
-- **vs. Balcan et al. (2010)**: They proved the disagreement coefficient is finite but did not quantify it; this paper establishes the explicit bound $O(\ln^{OPT}(n))$.
-- **vs. Hanneke (2014)**: Hanneke's framework provides additive-error guarantees; this paper is the first to achieve multiplicative-error guarantees.
-- **vs. Hopkins et al. (2021)**: Hopkins et al. use a stronger query model (comparison queries) and assume realizability; this paper uses standard label queries without assuming realizability.
+- **vs. Balcan et al. 2010**: They proved the coefficient was finite but unquantified; this paper gives the explicit bound $O(\ln^{OPT}(n))$.
+- **vs. Hanneke 2014**: Hanneke's framework uses additive error guarantees; this paper achieves multiplicative error guarantees for the first time.
+- **vs. Hopkins et al. 2021**: Hopkins utilized a stronger query model (comparison queries) and assumed realizability; this work uses standard label queries and does not assume realizability.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐⭐ — Two independent theoretical contributions: the first analysis of the disagreement coefficient for decision trees and the first multiplicative-error classification algorithm.
-- **Experimental Thoroughness**: ⭐⭐ — Purely theoretical paper; no experiments.
-- **Writing Quality**: ⭐⭐⭐⭐ — Rigorous theoretical derivations, though notation density is high.
-- **Value**: ⭐⭐⭐⭐ — Fills an important gap in active learning theory.
+- Novelty: ⭐⭐⭐⭐⭐ First analysis of decision tree disagreement coefficient + first multiplicative error classification algorithm.
+- Experimental Thoroughness: ⭐⭐ Purely theoretical paper, no experiments.
+- Writing Quality: ⭐⭐⭐⭐ Rigorous theoretical derivation, though high notation density.
+- Value: ⭐⭐⭐⭐ Fills a significant gap in active learning theory.
 
 <!-- RELATED:START -->
 
@@ -116,11 +105,11 @@ This paper is a purely theoretical contribution; no empirical results are report
 
 ## Related Papers
 
+- [\[ICLR 2026\] Scaling Direct Feedback Learning with Jacobian Alignment Guarantees](scaling_direct_feedback_learning_with_jacobian_alignment_guarantees.md)
+- [\[ICLR 2026\] From Fields to Random Trees](from_fields_to_random_trees.md)
 - [\[NeurIPS 2025\] Improving Decision Trees through the Lens of Parameterized Local Search](../../NeurIPS2025/others/improving_decision_trees_through_the_lens_of_parameterized_local_search.md)
 - [\[AAAI 2026\] From Decision Trees to Boolean Logic: A Fast and Unified SHAP Algorithm](../../AAAI2026/others/from_decision_trees_to_boolean_logic_a_fast_and_unified_shap_algorithm.md)
 - [\[ICML 2026\] Decision Tree Learning on Product Spaces](../../ICML2026/others/decision_tree_learning_on_product_spaces.md)
-- [\[NeurIPS 2025\] Reliable Active Learning from Unreliable Labels via Neural Collapse Geometry](../../NeurIPS2025/others/reliable_active_learning_from_unreliable_labels_via_neural_collapse_geometry.md)
-- [\[AAAI 2026\] From Sequential to Recursive: Enhancing Decision-Focused Learning with Bidirectional Feedback](../../AAAI2026/others/from_sequential_to_recursive_enhancing_decision-focused_learning_with_bidirectio.md)
 
 </div>
 

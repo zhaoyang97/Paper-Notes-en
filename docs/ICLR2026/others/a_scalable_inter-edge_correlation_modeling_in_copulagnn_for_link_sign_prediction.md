@@ -2,116 +2,129 @@
 title: >-
   [Paper Note] A Scalable Inter-edge Correlation Modeling in CopulaGNN for Link Sign Prediction
 description: >-
-  [ICLR 2026][signed graphs] This paper extends CopulaGNN from the node level to the edge level for link sign prediction on signed graphs. By constructing the correlation matrix as the Gramian of edge embeddings and reform…
+  [ICLR 2026][Others][Paper Note] CopulaGNN is extended from the node level to the edge level by constructing the correlation matrix as a Gramian matrix of edge embeddings and utilizing the Woodbury identity to reconstruct conditional probability distributions. This approach achieves scalable modeling of statistical dependencies between edges for link
 tags:
-  - "ICLR 2026"
-  - "signed graphs"
-  - "link sign prediction"
-  - "Gaussian Copula"
-  - "inter-edge correlation"
-  - "Gramian matrix"
+  - ICLR 2026
+  - Others
 date: 2026-05-08
-content_hash: ec286aff41cf712b
+content_hash: 0a2d5535be5e5d8b
 ---
-
 # A Scalable Inter-edge Correlation Modeling in CopulaGNN for Link Sign Prediction
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2601.19175](https://arxiv.org/abs/2601.19175)  
 **Code**: None  
-**Area**: Others
-**Keywords**: signed graphs, link sign prediction, Gaussian Copula, inter-edge correlation, Gramian matrix
+**Area**: Others  
+**Keywords**: Signed graphs, Link sign prediction, Gaussian Copula, Inter-edge correlation, Gramian matrix  
 
 ## TL;DR
-This paper extends CopulaGNN from the node level to the edge level for link sign prediction on signed graphs. By constructing the correlation matrix as the Gramian of edge embeddings and reformulating the conditional distribution via the Woodbury identity, the proposed method achieves scalable modeling of inter-edge statistical dependencies.
+CopulaGNN is extended from the node level to the edge level by constructing the correlation matrix as a Gramian matrix of edge embeddings and utilizing the Woodbury identity to reconstruct conditional probability distributions. This approach achieves scalable modeling of statistical dependencies between edges for link sign prediction tasks in signed graphs.
 
 ## Background & Motivation
 
-**Background**: Link sign prediction in signed graphs—determining whether an edge represents a positive or negative relationship—is an important graph learning task. Existing signed graph neural network (SGNN) methods rely on auxiliary structures such as structural balance theory or separate treatment of positive and negative edges to handle the violation of the homophily assumption caused by negative edges.
+**Background**: Link sign prediction (determining whether an edge reflects a positive or negative relationship) is a fundamental graph learning task in signed graphs. Existing SGNN methods handle negative edges, which violate the homophily assumption, through auxiliary structures such as structural balance theory or separate processing of positive and negative edges.
 
-**Limitations of Prior Work**: Auxiliary structures increase architectural complexity, slow down convergence, and can lead to inefficient memory usage. While CopulaGNN can model inter-node statistical dependencies, extending it to the edge level introduces memory bottlenecks of $O(|V|^4)$ for the correlation matrix and $O(n^3)$ computational cost for matrix inversion.
+**Limitations of Prior Work**: Auxiliary structures increase architectural complexity, leading to slow convergence, and some methods suffer from memory inefficiency. While CopulaGNN can model statistical dependencies between nodes, its extension to the edge level faces bottlenecks in memory ($O(|V|^4)$) and computation ($O(n^3)$ for matrix inversion) regarding the correlation matrix.
 
-**Key Challenge**: Directly modeling the edge–edge correlation matrix ($n \times n$, where $n$ is the number of edges) is infeasible in terms of both parameter count and computation, yet ignoring inter-edge dependencies discards important structural information.
+**Key Challenge**: Directly modeling an edge-edge correlation matrix ($n \times n$, where $n$ is the number of edges) is infeasible in terms of parameters and computation, yet ignoring inter-edge dependencies results in the loss of critical structural information.
 
-**Goal**: Efficiently model inter-edge correlations on signed graphs for link sign prediction.
+**Goal**: Efficiently model inter-edge correlations for link sign prediction in signed graphs.
 
-**Key Insight**: (a) Replace the explicit correlation matrix with a low-rank Gramian structure to reduce parameters; (b) apply the Woodbury identity to convert large matrix inversions into small matrix inversions during inference.
+**Key Insight**: (a) Use a low-rank Gramian structure instead of an explicit correlation matrix to reduce parameters; (b) use the Woodbury identity to transform large-scale matrix inversion into small-scale inversion to reduce computation.
 
-**Core Idea**: Factorize the correlation matrix as the Gramian of edge embeddings, $\mathbf{R} = \nu(\mathbf{QQ}^\top + \epsilon \mathbf{I})$, reducing memory from $O(n^2)$ to $O(nd)$ and matrix inversion during inference from $O(n^3)$ to $O(d^3)$.
+**Core Idea**: Decompose the correlation matrix into an edge embedding Gramian $\mathbf{R} = \nu(\mathbf{QQ}^\top + \epsilon \mathbf{I})$, reducing memory from $O(n^2)$ to $O(nd)$ and matrix inversion in inference from $O(n^3)$ to $O(d^3)$.
 
 ## Method
 
 ### Overall Architecture
-Given a signed graph, an SGNN encoder produces node embeddings. Edge embeddings $\mathbf{Q}$ are constructed via element-wise products of node embeddings. The marginal distribution of each edge sign is modeled by a relaxed Bernoulli distribution, while the Gramian of $\mathbf{Q}$ serves as the correlation matrix of a Gaussian Copula, enabling joint modeling of all edge sign distributions.
+The paper addresses link sign prediction in signed graphs—given a graph with mixed positive and negative edges, the task is to predict the sign of each edge. The core mechanism shifts from assuming shared similarity between adjacent nodes (which negative edges naturally violate) to modeling the statistical dependencies between edges, integrating these dependencies into a scalable Gaussian Copula framework.
+
+The pipeline operates as follows: First, an SGNN encoder encodes the signed graph into node embeddings. Edge embeddings $\mathbf{Q}$ are generated by taking the element-wise product of the embeddings of the two nodes connected by each edge. From $\mathbf{Q}$, two branches emerge: one assigns a relaxed Bernoulli distribution to each edge sign to characterize its marginal distribution, while the other uses the Gramian of $\mathbf{Q}$ to construct the inter-edge correlation matrix directly. These branches converge at a Gaussian Copula to couple all edge signs into a joint distribution. During training, the joint likelihood of observed edges is maximized. During inference, signs of unobserved edges are sampled from the conditional distribution. The main difficulty lies in the $n \times n$ scale of the correlation matrix; three designs address this: enabling discrete signs to enter the Copula (Relaxed Bernoulli), compressing the $O(n^2)$ matrix into a low-rank form (Gramian), and replacing large matrix inversion with small matrix inversion (Woodbury).
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Signed Graph Input<br/>(Mixed +/- edges)"] --> B["SGNN Encoder<br/>→ Node Embeddings"]
+    B --> C["Edge Embeddings Q<br/>Element-wise product of nodes"]
+    C --> D["Relaxed Bernoulli Marginals<br/>Differentiable distribution per sign"]
+    C --> E["Gramian Correlation Matrix<br/>R = ν(QQᵀ + εI)"]
+    D --> F["Gaussian Copula Joint Distribution<br/>Couples Marginals + Dependencies"]
+    E --> F
+    F --> G["Training<br/>Maximize joint likelihood of observed edges"]
+    F --> H["Inference: Conditional Sampling<br/>Woodbury Acceleration (d×d)"]
+    H --> I["Unobserved Edge Sign Prediction"]
+```
 
 ### Key Designs
 
-1. **Gramian Correlation Matrix**:
+**1. Relaxed Bernoulli Marginal Distributions: Enabling discrete edge signs in a differentiable Copula framework**
 
-    - **Function**: Construct a scalable positive definite correlation matrix from edge embeddings via their Gramian.
-    - **Mechanism**: $\Sigma = \mathbf{QQ}^\top + \epsilon \mathbf{I}_n$, normalized to a correlation matrix $\mathbf{R} = \mathbf{D}^{-1}\Sigma\mathbf{D}^{-1}$. Since the edge embedding dimension $d \ll n$, parameter count is reduced from $O(n^2)$ to graph encoder parameters plus $O(nd)$.
-    - **Design Motivation**: The Gramian is naturally positive semi-definite; adding $\epsilon \mathbf{I}$ ensures positive definiteness, satisfying the requirements of the Gaussian Copula. The model learns encoder parameters rather than embeddings directly, further reducing parameter count.
+Copula requires continuous marginal distributions for each variable, but edge signs are inherently binary and discrete. This paper assigns a relaxed (continuously relaxed) Bernoulli distribution to each edge sign. The location parameter $a_i$ and temperature parameter $t_i$ are calculated from edge embeddings $\mathbf{Q}$ via two learnable linear projections $\mathbf{w}_1, \mathbf{w}_2 \in \mathbb{R}^d$. Its CDF has a closed-form solution:
 
-2. **Woodbury-Based Conditional Distribution**:
+$$F(x;a,t) = \frac{x^t}{a(1-x)^t + x^t},$$
 
-    - **Function**: Apply the Woodbury identity to convert large matrix inversions during inference into operations on small matrices.
-    - **Mechanism**: For $\Sigma_{00}^{-1}$ (the inverse of the $m \times m$ covariance matrix of observed edges), the structure $\Sigma_{00} = \mathbf{Q}_0\mathbf{Q}_0^\top + \epsilon\mathbf{I}_m$ is exploited via the Woodbury identity to reduce the problem to a $d \times d$ matrix inversion.
-    - **Design Motivation**: Inference requires computing the conditional distribution of unobserved edge signs given observed ones, which involves an $m \times m$ matrix inversion. Since $d \ll m$, this reduces the cost from $O(m^3)$ to $O(d^3 + md^2)$.
+which can be directly substituted into the Gaussian Copula to achieve the "marginal-to-joint" coupling. This preserves the semantics of binary classification (approximating 0/1 after relaxation) while making the entire likelihood differentiable, enabling end-to-end training.
 
-3. **Relaxed Bernoulli Marginal Distribution**:
+**2. Gramian Correlation Matrix: Replacing the $O(n^2)$ explicit correlation matrix with a low-rank structure**
 
-    - **Function**: Model discrete edge signs using a continuously relaxed Bernoulli distribution.
-    - **Mechanism**: Each edge sign is parameterized by a location parameter $a_i$ and a temperature parameter $t_i$, with a closed-form CDF $F(x;a,t) = x^t/(a(1-x)^t + x^t)$, which can be directly substituted into the Gaussian Copula.
-    - **Design Motivation**: The Copula framework requires continuous marginal distributions. The relaxed Bernoulli preserves the semantics of binary classification while enabling differentiable training.
+Assigning a parameter to every element in the edge-edge correlation matrix requires $O(n^2)$ space, which is unscalable. Instead of explicit storage, the matrix is "grown" from edge embeddings: taking the covariance $\Sigma = \mathbf{QQ}^\top + \epsilon \mathbf{I}_n$, and normalizing it into a correlation matrix $\mathbf{R} = \mathbf{D}^{-1}\Sigma\mathbf{D}^{-1}$ (where $\mathbf{D}_{ii}=\sqrt{\Sigma_{ii}}$ is the diagonal standard deviation). Since the edge embedding dimension $d \ll n$, $\Sigma$ is compressed into a structure with rank at most $d$. Only the encoder parameters are learned, reducing memory from $O(n^2)$ to $O(nd)$. Furthermore, the Gramian is naturally positive semi-definite; adding $\epsilon \mathbf{I}_n$ ensures strict positive definiteness, satisfying the mathematical requirements of Gaussian Copula.
+
+**3. Woodbury Conditional Distribution Reconstruction: Converting large matrix inversion to $d \times d$ inversion**
+
+Inference requires calculating the conditional distribution of unobserved edges given $m$ observed edges. This requires inverting the correlation sub-block $\mathbf{R}_{00}$ of the observed edges ($m \times m$), which is $O(m^3)$ naively. By leveraging the "low-rank + diagonal" structure of $\Sigma_{00} = \mathbf{Q}_0\mathbf{Q}_0^\top + \epsilon\mathbf{I}_m$, the Woodbury identity transforms the $m \times m$ inversion into a $d \times d$ inversion. The conditional distribution simplifies to a low-rank multivariate Gaussian. As $d \ll m$, the computational cost depends on the hyperparameter $d$ rather than the graph size $n$. The Gramian form in Design 2 is the prerequisite for using Woodbury here.
 
 ### Loss & Training
-The training objective maximizes the joint log-likelihood of observed edge signs: $\log \mathcal{H}'(x_{1:m}) = \log c(u_{1:m}; \mathbf{R}_{00}) + \sum \log f_i(x_i)$, where both the Copula density and marginal densities have closed-form expressions. Inference is performed by sampling from the conditional Gaussian distribution.
+The training objective is to maximize the joint log-likelihood of observed edge signs:
+
+$$\log \mathcal{H}'(x_{1:m}) = \log c(u_{1:m}; \mathbf{R}_{00}) + \sum_i \log f_i(x_i),$$
+
+where $c(\cdot)$ is the Gaussian Copula density and $f_i$ is the relaxed Bernoulli marginal density of the $i$-th edge. Both have closed-form expressions, making the likelihood differentiable. Inference is performed by sampling from the constructed conditional Gaussian distribution.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Dataset | CopulaLSP AUC↑ | SGCN AUC | SiGAT AUC | Convergence Speed↑ |
-|---|---|---|---|---|
-| Bitcoin-Alpha | Competitive | Baseline | Baseline | **Significantly faster** |
-| Bitcoin-OTC | Competitive | Baseline | Baseline | **Significantly faster** |
-| Wiki-RfA | Competitive | Baseline | Baseline | **Significantly faster** |
+|--------|---------------|----------|-----------|---------|
+| Bitcoin-Alpha | Competitive | Baseline | Baseline | **Significantly Faster** |
+| Bitcoin-OTC | Competitive | Baseline | Baseline | **Significantly Faster** |
+| Wiki-RfA | Competitive | Baseline | Baseline | **Significantly Faster** |
 
 ### Ablation Study
 
-| Configuration | Performance | Notes |
-|---|---|---|
-| Full model | Best | Gramian + Woodbury |
-| Without Copula (marginals only) | Degraded | Validates the value of inter-edge correlation |
-| Varying $d$ | Accuracy improves with larger $d$ at higher compute cost | Embedding dimension controls accuracy–efficiency trade-off |
+| Configuration | Performance | Description |
+|------|------|------|
+| Full Model | Best | Gramian + Woodbury |
+| W/O Copula (Marginals Only) | Decrease | Validates the value of inter-edge correlation |
+| Variable $d$ | Accuracy scales with $d$ | Embedding dimension controls precision-efficiency trade-off |
 
 ### Key Findings
-- CopulaLSP converges significantly faster than all baseline methods, with linear convergence established theoretically.
-- Prediction accuracy is competitive with state-of-the-art SGNN methods while offering substantially improved training and inference efficiency.
-- The low-rank Gramian correlation matrix possesses sufficient expressive power to capture inter-edge dependencies.
-- Explicit modeling of inter-edge correlations is the key driver of accelerated convergence.
+- CopulaLSP converges significantly faster than all baseline methods, with a theoretical proof of linear convergence.
+- Prediction accuracy is competitive with SOTA signed graph methods while drastically improving training and inference efficiency.
+- The low-rank correlation matrix of the Gramian structure possesses sufficient expressiveness to capture inter-edge dependencies.
+- Explicit modeling of inter-edge correlation is the primary driver for accelerated convergence.
 
 ## Highlights & Insights
-- **From node homophily to edge dependency**: Rather than assuming similarity between neighboring nodes—which does not hold in signed graphs—the method assumes that adjacent edges sharing a common node are statistically dependent, representing a natural relaxation of standard GNN assumptions.
-- **Dual benefits of structured correlation matrices**: The Gramian formulation simultaneously reduces parameter count and accelerates matrix inversion during inference via the Woodbury identity—a single design choice that addresses two bottlenecks.
-- **Theoretical convergence guarantee**: Beyond empirical observations, the paper provides a formal proof of linear convergence, strengthening the credibility of the proposed method.
+- **From Node Homophily to Edge Dependency**: Rather than assuming adjacent nodes are similar (invalid in signed graphs), this method assumes that adjacent edges connected via a common node are not independent—a natural relaxation of GNN assumptions.
+- **Dual Benefits of Structured Correlation**: The Gramian form reduces parameter count and accelerates matrix inversion via the Woodbury identity, addressing two bottlenecks with one design choice.
+- **Theoretical Guarantee of Linear Convergence**: Beyond empirical speed, the method provides theoretical proofs, enhancing its reliability.
 
 ## Limitations & Future Work
-- The edge embedding dimension $d$ requires manual tuning; values that are too large increase computation, while values that are too small may underfit.
-- The temperature parameter of the relaxed Bernoulli distribution is sensitive and can affect results.
-- Evaluation is limited to link sign prediction; applicability to other edge-level tasks remains unexplored.
-- The low-rank Gramian assumption may not capture all types of inter-edge correlation structures.
+- The choice of edge embedding dimension $d$ requires manual tuning; excessive values increase computation, while low values may lead to under-performance.
+- The temperature parameter of the Relaxed Bernoulli distribution is sensitive.
+- Experiments were confined to link sign prediction; other edge-level tasks remain unexplored.
+- The low-rank assumption of the Gramian may not capture all types of inter-edge correlation structures.
 
 ## Related Work & Insights
-- **vs. CopulaGNN (Ma et al. 2021)**: The original CopulaGNN targets node-level tasks and parameterizes the correlation matrix via the graph Laplacian. This work extends CopulaGNN to the edge level, requiring handling of larger correlation matrices and the positive/negative edge distinction.
-- **vs. SGCN/SiGAT**: These SGNN methods address negative edges through auxiliary structures; the proposed method handles inter-edge relationships more directly through statistical dependency modeling.
-- **vs. structural balance theory**: Sociologically motivated approaches are discrete and rule-based, whereas the Copula framework is continuous and data-driven.
+- **vs. CopulaGNN (Ma et al. 2021)**: Original CopulaGNN handles node-level tasks using Laplacian parameterization; this work extends it to the edge level, handling larger correlation matrices and signed relations.
+- **vs. SGCN/SiGAT**: These SGNNs use auxiliary structures for negative edges; CopulaLSP handles edge relations more directly via statistical dependency modeling.
+- **vs. Structural Balance Theory**: Sociological theory-driven methods are discrete and rule-based; the Copula framework is continuous and data-driven.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The extension of CopulaGNN to the edge level involves genuine technical innovation; the combination of Gramian and Woodbury is elegant.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Multi-dataset validation with convergence analysis and ablation studies.
-- Writing Quality: ⭐⭐⭐⭐ Mathematical derivations are clear and the problem is well-articulated.
-- Value: ⭐⭐⭐⭐ Offers a new statistical modeling perspective for signed graph learning.
+- Novelty: ⭐⭐⭐⭐ Extension of CopulaGNN to the edge level is innovative; Gramian+Woodbury integration is elegant.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Validated on multiple datasets with convergence analysis and ablation studies.
+- Writing Quality: ⭐⭐⭐⭐ Clear mathematical derivation and problem statement.
+- Value: ⭐⭐⭐⭐ Provides a new statistical modeling perspective for signed graph learning.
 
 <!-- RELATED:START -->
 
@@ -119,11 +132,11 @@ The training objective maximizes the joint log-likelihood of observed edge signs
 
 ## Related Papers
 
-- [\[ICCV 2025\] Intra-view and Inter-view Correlation Guided Multi-view Novel Class Discovery](../../ICCV2025/others/intra-view_and_inter-view_correlation_guided_multi-view_novel_class_discovery.md)
+- [\[ICLR 2026\] Stable and Scalable Deep Predictive Coding Networks with Meta-Prediction Errors](stable_and_scalable_deep_predictive_coding_networks_with_meta-prediction_errors.md)
 - [\[ICLR 2026\] Learning on a Razor's Edge: Identifiability and Singularity of Polynomial Neural Networks](learning_on_a_razors_edge_identifiability_and_singularity_of_polynomial_neural_n.md)
+- [\[ICCV 2025\] Intra-view and Inter-view Correlation Guided Multi-view Novel Class Discovery](../../ICCV2025/others/intra-view_and_inter-view_correlation_guided_multi-view_novel_class_discovery.md)
+- [\[ICLR 2026\] Spurious Correlation-Aware Embedding Regularization for Worst-Group Robustness](spurious_correlation-aware_embedding_regularization_for_worst-group_robustness.md)
 - [\[ICLR 2026\] Mitigating Spurious Correlation via Distributionally Robust Learning with Hierarchical Ambiguity Sets](mitigating_spurious_correlation_via_distributionally_robust_learning_with_hierar.md)
-- [\[ICML 2026\] Riemannian Networks over Full-Rank Correlation Matrices](../../ICML2026/others/riemannian_networks_over_full-rank_correlation_matrices.md)
-- [\[AAAI 2026\] Scalable Vision-Guided Crop Yield Estimation](../../AAAI2026/others/scalable_vision-guided_crop_yield_estimation.md)
 
 </div>
 

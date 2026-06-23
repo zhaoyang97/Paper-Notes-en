@@ -2,156 +2,133 @@
 title: >-
   [Paper Note] Unifying Formal Explanations: A Complexity-Theoretic Perspective
 description: >-
-  [ICLR 2026][Optimization][Explainable AI] This paper proposes a unified framework that reduces sufficient reasons and contrastive reasons (local/global…
+  [ICLR 2026][Optimization & Theory][Paper Note] Proposes a unified framework reducing sufficient and contrastive reasons (local/global, probabilistic/non-probabilistic) to a minimization problem of a unified probability value function. It reveals that global value functions possess key combinatorial optimization properties like monotonicity, submodularity, and super
 tags:
-  - "ICLR 2026"
-  - "Optimization"
-  - "Explainable AI"
-  - "Computational Complexity"
-  - "Sufficient Reasons"
-  - "Contrastive Reasons"
-  - "Submodular/Supermodular Functions"
+  - ICLR 2026
+  - Optimization & Theory
 date: 2026-05-08
-content_hash: eee097af87f9f6d5
+content_hash: 3891093c9c7895bf
 ---
-
 # Unifying Formal Explanations: A Complexity-Theoretic Perspective
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2602.18160](https://arxiv.org/abs/2602.18160)  
-**Area**: Optimization
+**Area**: Optimization  
 **Keywords**: Explainable AI, Computational Complexity, Sufficient Reasons, Contrastive Reasons, Submodular/Supermodular Functions
 
 ## TL;DR
 
-This paper proposes a unified framework that reduces sufficient reasons and contrastive reasons (local/global, probabilistic/non-probabilistic) to the problem of minimizing a unified probabilistic value function. It reveals that global value functions possess key combinatorial optimization properties—monotonicity, submodularity/supermodularity—and proves that global explanations are computable in polynomial time, even when their local counterparts are NP-hard.
+Proposes a unified framework reducing sufficient and contrastive reasons (local/global, probabilistic/non-probabilistic) to a minimization problem of a unified probability value function. It reveals that global value functions possess key combinatorial optimization properties like monotonicity, submodularity, and supermodularity, proving that global explanations are computable in polynomial time—even when the corresponding local explanations are NP-hard.
 
 ## Background & Motivation
 
-### Two Fundamental Forms of Explanations
+### Two Fundamental Forms of Explainability
 
-**Sufficient Reasons**: Fixing the values of a feature subset $S$ leaves the model prediction unchanged—answering "what is sufficient to support this prediction?"
+**Sufficient Reasons**: Prediction remains invariant after fixing the values of a feature subset $S$ — answering "What is sufficient to support this prediction?"
 
-**Contrastive Reasons**: Modifying the values of a feature subset $S$ changes the model prediction—answering "what change would flip the prediction?"
+**Contrastive Reasons**: Prediction changes after modifying the values of a feature subset $S$ — answering "What changes would flip the prediction?"
 
-Smaller reasons are more interpretable; thus **minimality** is a central objective.
+Smaller reasons provide greater explanatory value; thus, **minimality** is the core objective.
 
-### From Local to Global, From Deterministic to Probabilistic
+### From Local to Global, Deterministic to Probabilistic
 
 Explanation problems in the literature extend along two dimensions:
 
-- **Local vs. Global**: Targeting a single prediction vs. the model's behavior over the entire input space
-- **Non-probabilistic vs. Probabilistic**: Absolute guarantees vs. guarantees with probability $\delta$
+- **Local vs. Global**: Targeting a single prediction vs. targeting model behavior across the entire input space.
+- **Non-probabilistic vs. Probabilistic**: Absolute guarantees vs. guarantees with probability $\delta$.
 
-**Known Hardness Results**:
+**Existing Hardness Results**:
 
 | Setting | Sufficient Reasons | Contrastive Reasons |
-|---|---|---|
-| Decision Trees (local, non-probabilistic) | NP-hard | P |
-| Neural Networks (local, non-probabilistic) | $\Sigma_2^P$-hard | NP-hard |
-| Decision Trees (local, probabilistic) | NP-hard | NP-hard |
+|------|----------|----------|
+| Decision Trees (Local Non-probabilistic) | NP-hard | P |
+| Neural Networks (Local Non-probabilistic) | $\Sigma_2^P$-hard | NP-hard |
+| Decision Trees (Local Probabilistic) | NP-hard | NP-hard |
 
-These discouraging complexity results raise the core question: **Does there exist a form of explanation that admits efficient computation while preserving meaningful guarantees?**
+These discouraging complexity results lead to the core question: **Does there exist a form of explanation that remains efficiently computable while maintaining meaningful guarantees?**
 
 ## Method
 
-### Unified Framework
+### Overall Architecture
 
-All explanation problems are unified as:
+The paper reduces all "explanation-finding" tasks to the same combinatorial optimization problem: finding the smallest feature subset $S$ that satisfies a quality threshold under a value function $v$, i.e., $\min |S|$ s.t. $v(S) \geq \delta$. The differences across the four dimensions—sufficient/contrastive, local/global, and probabilistic/non-probabilistic—are absorbed into the specific functional form of $v$. Once $v$ is defined, the problem difficulty is determined solely by its combinatorial structure (monotonicity, submodularity/supermodularity). The core discovery is that switching from "local" to "global" transforms $v$ from unstructured to highly regular, bringing NP-hard explanation problems back into polynomial time.
 
-$$\text{find the minimal subset } S \subseteq [n] \text{ such that } v(S) \geq \delta$$
+### Key Designs
 
-where $v$ is the value function under different settings:
+**1. Unified Value Function: Four Classes of Explanations in One Template**
 
-- **Local sufficient value function**: $v_{\text{suff}}^\ell(S) = \Pr_{\boldsymbol{z} \sim \mathcal{D}}(f(\boldsymbol{z}) = f(\boldsymbol{x}) \mid \boldsymbol{z}_S = \boldsymbol{x}_S)$
-- **Global sufficient value function**: $v_{\text{suff}}^g(S) = \mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}[\Pr_{\boldsymbol{z}}(f(\boldsymbol{z}) = f(\boldsymbol{x}) \mid \boldsymbol{z}_S = \boldsymbol{x}_S)]$
-- **Local contrastive value function**: $v_{\text{con}}^\ell(S) = \Pr_{\boldsymbol{z} \sim \mathcal{D}}(f(\boldsymbol{z}) \neq f(\boldsymbol{x}) \mid \boldsymbol{z}_{\bar{S}} = \boldsymbol{x}_{\bar{S}})$
-- **Global contrastive value function**: $v_{\text{con}}^g(S) = \mathbb{E}_{\boldsymbol{x}}[\Pr_{\boldsymbol{z}}(f(\boldsymbol{z}) \neq f(\boldsymbol{x}) \mid \boldsymbol{z}_{\bar{S}} = \boldsymbol{x}_{\bar{S}})]$
+The fundamental difference between explanation types lies in "which features are fixed and what probability is queried." Fixing values in $S$ to check prediction maintenance yields sufficient reasons; fixing values in the complement $\bar S$ to check prediction flipping yields contrastive reasons. Replacing a single point $\boldsymbol{x}$ with the expectation over the data distribution upgrades the explanation from local to global. The four functions are: Local Sufficient $v_{\text{suff}}^\ell(S) = \Pr_{\boldsymbol{z} \sim \mathcal{D}}(f(\boldsymbol{z}) = f(\boldsymbol{x}) \mid \boldsymbol{z}_S = \boldsymbol{x}_S)$, Global Sufficient $v_{\text{suff}}^g(S) = \mathbb{E}_{\boldsymbol{x} \sim \mathcal{D}}[v_{\text{suff}}^\ell(S)]$; Local Contrastive $v_{\text{con}}^\ell(S) = \Pr_{\boldsymbol{z}}(f(\boldsymbol{z}) \neq f(\boldsymbol{x}) \mid \boldsymbol{z}_{\bar S} = \boldsymbol{x}_{\bar S})$, and Global Contrastive $v_{\text{con}}^g(S) = \mathbb{E}_{\boldsymbol{x}}[v_{\text{con}}^\ell(S)]$. This template allows all complexity conclusions to be derived from the properties of $v$.
 
-### Three Key Properties
+**2. Three Combinatorial Properties: Trading Structure for Algorithms**
 
-**1. Monotonicity**: $v(S \cup \{i\}) \geq v(S)$ (adding a feature does not decrease the value function)
+Problem tractability depends on three properties. Monotonicity $v(S \cup \{i\}) \geq v(S)$ implies adding features never decreases the value, allowing "greedy pruning" to converge to a subset-minimal solution. Supermodularity $v(S \cup \{i\}) - v(S) \leq v(S' \cup \{i\}) - v(S')$ for $S \subseteq S'$ indicates increasing marginal contributions, while submodularity indicates decreasing marginals. Submodularity is the prerequisite for greedy algorithms (Wolsey 1982) to achieve logarithmic approximation guarantees. This translates abstract explanation problems into the maturity of combinatorial optimization tools.
 
-**2. Supermodularity**: $v(S \cup \{i\}) - v(S) \leq v(S' \cup \{i\}) - v(S')$ (increasing marginal contributions)
+**3. Local-to-Global "Phase Transition": Expectation Smooths Irregularities**
 
-**3. Submodularity**: $v(S \cup \{i\}) - v(S) \geq v(S' \cup \{i\}) - v(S')$ (diminishing marginal contributions)
+Checking these properties reveals a counter-intuitive result: local value functions fail all properties in almost all settings, whereas global value functions (the expectation over the distribution) become monotonic. Furthermore, global sufficient reasons become supermodular and contrastive reasons become submodular.
 
-### Core Finding: A Striking Contrast Between Local and Global
-
-| Property | Local Sufficient $v_{\text{suff}}^\ell$ | Global Sufficient $v_{\text{suff}}^g$ | Local Contrastive $v_{\text{con}}^\ell$ | Global Contrastive $v_{\text{con}}^g$ |
-|---|:---:|:---:|:---:|:---:|
+| Property | Local Suff $v_{\text{suff}}^\ell$ | Global Suff $v_{\text{suff}}^g$ | Local Con $v_{\text{con}}^\ell$ | Global Con $v_{\text{con}}^g$ |
+|------|:---:|:---:|:---:|:---:|
 | Monotonicity | ✗ | ✓ | ✗ | ✓ |
-| Supermodularity | ✗ | ✓ (independent distribution) | ✗ | ✗ |
-| Submodularity | ✗ | ✗ | ✗ | ✓ (independent distribution) |
+| Supermodularity | ✗ | ✓ (indep dist) | ✗ | ✗ |
+| Submodularity | ✗ | ✗ | ✗ | ✓ (indep dist) |
 
-These findings are **counter-intuitive**:
+This occurs because expectation operations have a smoothing effect; while adding a feature for a single $\boldsymbol{x}$ can cause drastic probability jumps, taking the expectation over the distribution smooths these jumps, allowing the underlying regular structure to emerge.
 
-- Local value functions satisfy none of the three properties under any setting
-- Global value functions satisfy monotonicity in all settings
-- The global value function for sufficient reasons is supermodular, while that for contrastive reasons is submodular—the two are precisely "dual" to each other
+**4. Two Greedy Algorithms: Executing Properties into Solutions**
 
-### Greedy Algorithm Design
-
-**Algorithm 1 (Subset-Minimal Explanation)**: Top-down, starting from the full feature set, iteratively removing the feature whose removal minimally decreases the value function:
-
-$$j = \arg\max_{i \in S} v(S \setminus \{i\}), \quad S \leftarrow S \setminus \{j\}$$
-
-Monotonicity guarantees convergence to a subset-minimal explanation in the global setting, but provides no such guarantee locally.
-
-**Algorithm 2 (Cardinality-Minimal Explanation Approximation)**: Bottom-up, starting from the empty set, iteratively adding the feature that maximally increases the value function:
-
-$$j = \arg\max_{i \notin S} v(S \cup \{i\}), \quad S \leftarrow S \cup \{j\}$$
+For subset-minimal explanations, a top-down Algorithm 1 is used: starting from the full set, it iteratively removes the feature $j$ with the highest remaining value $j = \arg\max_{i \in S} v(S \setminus \{i\})$. Monotonicity ensures exact convergence in global settings. For cardinality-minimal explanations, a bottom-up Algorithm 2 is used: starting from an empty set, it iteratively adds the feature with the highest gain $j = \arg\max_{i \notin S} v(S \cup \{i\})$. Submodularity/supermodularity provide approximation bounds—$O(\ln|D|)$ for global contrastive and a constant factor for global sufficient using bounded curvature techniques (Shi et al. 2021).
 
 ## Key Experimental Results
 
-This paper is a purely theoretical contribution; its core results concern complexity-theoretic analysis.
+This is a theoretical work; the core contributions are complexity analysis results.
 
 ### Summary of Complexity Results
 
-| Explanation Type | Local (arbitrary model) | Global (empirical distribution) |
-|---|:---:|:---:|
-| Subset-minimal sufficient reasons | NP-hard (even for decision trees) | **P** |
-| Subset-minimal contrastive reasons | NP-hard (neural networks/tree ensembles) | **P** |
-| Cardinality-minimal sufficient reason approximation | No bounded approximation | $O\left(\frac{1}{1-k^f} + \ln\frac{v([n])}{\min_i v(\{i\})}\right)$ |
-| Cardinality-minimal contrastive reason approximation | No bounded approximation | $O\left(\ln\frac{v([n])}{\min_i v(\{i\})}\right)$ |
+| Explanation Type | Local (Arbitrary Model) | Global (Empirical Distribution) |
+|----------|:---:|:---:|
+| Subset-minimal Sufficient | NP-hard (even trees) | **P** |
+| Subset-minimal Contrastive | NP-hard (NN/Ensembles) | **P** |
+| Approx Cardinality-minimal Suff | No bounded approx | $O\left(\frac{1}{1-k^f} + \ln\frac{v([n])}{\min_i v(\{i\})}\right)$ |
+| Approx Cardinality-minimal Con | No bounded approx | $O\left(\ln\frac{v([n])}{\min_i v(\{i\})}\right)$ |
 
-### Comparison of Approximation Guarantees
+### Approximation Guarantee Comparison
 
 | Setting | Global | Local |
-|---|---|---|
-| Subset-minimal | Exact solution in polynomial time | NP-hard (even for decision trees + uniform distribution) |
-| Cardinality-minimal (contrastive) | $O(\ln |D|)$ approximation | No bounded approximation (even for $|D|=1$) |
-| Cardinality-minimal (sufficient) | Constant-factor approximation | No bounded approximation (even for $|D|=1$) |
+|------|------|------|
+| Subset-minimal | Poly-time Exact | NP-hard (even trees + uniform) |
+| Cardinality-min (Con) | $O(\ln |D|)$ Approx | No bounded approx (even $|D|=1$) |
+| Cardinality-min (Suff) | Constant Factor Approx | No bounded approx (even $|D|=1$) |
 
-### Key Theoretical Findings
+### Key Findings
 
-1. Although non-probabilistic global sufficient reasons are unique (Bassan et al. 2024), in the probabilistic setting there may exist exponentially many subset-minimal global sufficient reasons: $\Theta(2^n/\sqrt{n})$
-2. The submodularity of global contrastive reasons directly admits the classical greedy guarantee of Wolsey (1982)
-3. The supermodularity of global sufficient reasons requires the bounded-curvature technique of Shi et al. (2021)
-4. Approximation guarantees under the empirical distribution grow only logarithmically in the dataset size $|D|$
+1. While non-probabilistic global sufficient reasons are unique (Bassan et al. 2024), there can be exponentially many subset-minimal global sufficient reasons in probabilistic settings: $\Theta(2^n/\sqrt{n})$.
+2. The submodularity of global contrastive reasons allows the direct use of classic Wolsey (1982) greedy guarantees.
+3. The supermodularity of global sufficient reasons requires bounded curvature techniques from Shi et al. (2021).
+4. Approximation guarantees under empirical distributions grow only logarithmically with the dataset size $|D|$.
 
 ## Highlights & Insights
 
-1. **The unified framework is remarkably elegant**: It subsumes four major dimensions (sufficient/contrastive × local/global × probabilistic/non-probabilistic × subset/cardinality-minimal) into a single value function minimization task.
-2. **A "phase transition" between local and global**: Local value functions are entirely unstructured (non-monotone, neither submodular nor supermodular), whereas global value functions possess all useful properties—this is not coincidental, but rather a smoothing effect of the expectation operator.
-3. **Duality between sufficient and contrastive reasons**: One is supermodular and the other submodular, reflecting the symmetric relationship between "fixing features to maintain a prediction" and "varying features to change a prediction."
-4. **Far-reaching practical implications**: The tractability of global explanations implies that the question "which features does this model rely on overall?" is easier to answer than "which features does this prediction rely on?"
-5. **Theoretical contributions span the explainability spectrum**: Results apply to decision trees, neural networks, and tree ensembles, covering models from "interpretable" to "black-box."
+1. **Elegant Unified Framework**: Consolidates four dimensions (Sufficient/Contrastive × Local/Global × Probabilistic/Non-probabilistic × Subset/Cardinality Minimal) into a single value function minimization task.
+2. **Local-Global "Phase Transition"**: Local functions lack structure (non-monotonic, non-submodular), whereas global functions possess all useful properties due to the smoothing effect of expectations.
+3. **Sufficient-Contrastive Duality**: The supermodular vs. submodular nature reflects the symmetry between "fixing features to maintain predictions" and "varying features to change them."
+4. **Practical Significance**: Efficient computation of global explanations implies that "which features the model depends on overall" is an easier question to answer than "which features this specific prediction depends on."
+5. **Broad Theoretical Scope**: Results apply to decision trees, neural networks, and tree ensembles, covering the spectrum from "interpretable" to "black-box" models.
 
 ## Limitations & Future Work
 
-1. As a purely theoretical work, empirical validation is absent—the practical runtime efficiency and explanation quality of the greedy algorithms remain unknown.
-2. The submodular/supermodular properties hold only under feature independence assumptions, whereas real-world features are often highly correlated.
-3. The dataset size $|D|$ appears as an implicit constant in the approximation guarantees for the empirical distribution and may be large in practice.
-4. The semantics of global explanations may not fully align with users' actual needs for local explanations.
-5. The computational complexity of evaluating the value function itself is not discussed—even a single inference pass may be costly for neural networks.
+1. Purely theoretical; lacks empirical validation regarding the actual runtime efficiency and explanation quality of the greedy algorithms.
+2. Submodular/supermodular properties hold strictly under feature independence assumptions, which are often violated in reality.
+3. The dataset size $|D|$ in the approximation guarantees may be practically very large.
+4. The semantics of global explanations may not align perfectly with users' interests in specific local predictions.
+5. The complexity of computing the value function itself is not discussed—for neural networks, even a single inference pass can be costly.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐⭐ — The unified framework and the discovery of the striking local/global property contrast are highly original.
-- **Experimental Thoroughness**: ⭐⭐ — A purely theoretical work with no empirical support.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ — Definitions are rigorous, theorems are well-organized, and proof strategies are clearly presented.
-- **Value**: ⭐⭐⭐⭐⭐ — Lays an important foundation for the complexity theory of explainable AI.
+- **Novelty**: ⭐⭐⭐⭐⭐ — The unified framework and the discovery of the local/global property contrast are highly original.
+- **Experimental Thoroughness**: ⭐⭐ — Theoretical work with no empirical experiments.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ — Rigorous definitions, well-structured theorems, and clear proof sketches.
+- **Value**: ⭐⭐⭐⭐⭐ — Establishes a fundamental complexity-theoretic foundation for XAI.
 
 <!-- RELATED:START -->
 
@@ -162,8 +139,8 @@ This paper is a purely theoretical contribution; its core results concern comple
 - [\[ICLR 2026\] Directional Sheaf Hypergraph Networks: Unifying Learning on Directed and Undirected Hypergraphs](directional_sheaf_hypergraph_networks_unifying_learning_on_directed_and_undirect.md)
 - [\[ICLR 2026\] Neural Networks Learn Generic Multi-Index Models Near Information-Theoretic Limit](neural_networks_learn_generic_multi-index_models_near_information-theoretic_limi.md)
 - [\[ICML 2026\] Learning Dynamics of Zeroth-Order Optimization: A Kernel Perspective](../../ICML2026/optimization/learning_dynamics_of_zeroth-order_optimization_a_kernel_perspective.md)
-- [\[NeurIPS 2025\] Second-Order Optimization Under Heavy-Tailed Noise: Hessian Clipping and Sample Complexity](../../NeurIPS2025/optimization/second-order_optimization_under_heavy-tailed_noise_hessian_clipping_and_sample_c.md)
-- [\[ICLR 2026\] Test-Time Meta-Adaptation with Self-Synthesis](test-time_meta-adaptation_with_self-synthesis.md)
+- [\[ICML 2025\] Learning Mixtures of Experts with EM: A Mirror Descent Perspective](../../ICML2025/optimization/learning_mixtures_of_experts_with_em_a_mirror_descent_perspective.md)
+- [\[ICML 2026\] Rethinking the Flow-Based Gradual Domain Adaptation: A Semi-Dual Optimal Transport Perspective](../../ICML2026/optimization/rethinking_the_flow-based_gradual_domain_adaptation_a_semi-dual_optimal_transpor.md)
 
 </div>
 

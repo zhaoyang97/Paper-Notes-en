@@ -2,103 +2,112 @@
 title: >-
   [Paper Note] Provable and Practical In-Context Policy Optimization for Self-Improvement
 description: >-
-  [ICLR 2026][Optimization][in-context learning] This paper proposes the In-Context Policy Optimization (ICPO) framework, theoretically proving that a single-layer linear self-attention Transformer…
+  [ICLR 2026][Optimization & Theory][policy optimization] This paper proposes the In-Context Policy Optimization (ICPO) framework, theoretically proving that a single-layer Linear Self-Attention Transformer, after sufficient pre-training, can simulate policy optimization algorithms in-context. It designs a practical ME-ICPO algorithm that achieves multi-round self-reflection
 tags:
-  - "ICLR 2026"
-  - "Optimization"
-  - "in-context learning"
-  - "policy optimization"
-  - "test-time scaling"
-  - "self-reflection"
-  - "mathematical reasoning"
+  - ICLR 2026
+  - Optimization & Theory
+  - policy optimization
+  - mathematical reasoning
 date: 2026-05-08
-content_hash: ec091d4ee86794c9
+content_hash: de427c86a6d3064f
 ---
-
 # Provable and Practical In-Context Policy Optimization for Self-Improvement
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2603.01335](https://arxiv.org/abs/2603.01335)  
 **Code**: [https://github.com/UNCSciML/ICPO](https://github.com/UNCSciML/ICPO)  
-**Area**: Optimization
-**Keywords**: in-context learning, policy optimization, test-time scaling, self-reflection, mathematical reasoning
+**Area**: Optimization  
+**Keywords**: In-Context Learning, policy optimization, test-time scaling, self-reflection, mathematical reasoning
 
 ## TL;DR
-This paper proposes the In-Context Policy Optimization (ICPO) framework, theoretically proving that a single-layer linear self-attention Transformer, after sufficient pretraining, can simulate a policy optimization algorithm in context. Building on this, the paper designs a practical ME-ICPO algorithm that achieves multi-round test-time self-reflection via minimum-entropy selection and self-evaluation rewards, yielding significant gains on mathematical reasoning tasks (Qwen2.5-Math-7B improves from 11% to 30% on AIME 2024).
+This paper proposes the In-Context Policy Optimization (ICPO) framework, theoretically proving that a single-layer Linear Self-Attention Transformer, after sufficient pre-training, can simulate policy optimization algorithms in-context. It designs a practical ME-ICPO algorithm that achieves multi-round self-reflection at test-time through minimum-entropy selection and self-evaluated rewards, yielding significant improvements in mathematical reasoning tasks (e.g., Qwen2.5-Math-7B improved from 11% to 30% on AIME 2024).
 
 ## Background & Motivation
 
-**Background**: Test-time scaling has become an important paradigm for improving LLM reasoning—models iteratively refine their answers through multi-round self-reflection without parameter updates. Representative methods include Chain-of-Thought, Tree-of-Thoughts, Best-of-N, and Self-Refine.
+**Background**: Test-time scaling has become a crucial paradigm for enhancing the reasoning capabilities of LLMs—models progressively improve answers through multi-round self-reflection during inference without updating parameters. Representative methods include Chain-of-Thought, Tree-of-Thoughts, Best-of-N, and Self-Refine.
 
-**Limitations of Prior Work**: (a) Why does self-reflection emerge from pretraining? Prior work (e.g., Park et al. 2024) directly assumes LLMs possess posterior sampling/policy optimization capabilities without explaining their origin. (b) Theoretical analyses of in-context learning have focused on supervised learning (linear regression) and value function learning (TD learning), with no theory addressing policy optimization. (c) Existing methods such as Tree-of-Thoughts require multi-step search, incurring substantial computational overhead.
+**Limitations of Prior Work**: (a) Why does self-reflection capability emerge from pre-training? Existing works (e.g., Park et al. 2024) directly assume LLMs possess posterior sampling/policy optimization capabilities but do not explain the source of this capability; (b) Theoretical analysis of in-context learning mainly focuses on supervised learning (linear regression) and value function learning (TD learning), with no existing theory regarding policy optimization; (c) Existing methods like Tree-of-Thoughts require multi-step searches, incurring high computational overhead.
 
-**Key Challenge**: How can a model leverage historical attempts and reward feedback in context to optimize its own output policy? Can Transformers theoretically realize such policy optimization without parameter updates?
+**Key Challenge**: How can the output policy be optimized in-context using historical attempts and reward feedback? Theoretically, can a Transformer implement such policy optimization without updating parameters?
 
-**Goal**: (1) Provide a theoretical foundation for LLM self-reflection and self-improvement behavior. (2) Design a practical test-time scaling algorithm.
+**Goal**: (1) Provide a theoretical foundation for the self-reflection/self-improvement behavior of LLMs; (2) Design a practical test-time scaling algorithm.
 
-**Key Insight**: Self-reflection is formalized as policy optimization in a K-armed bandit problem—the agent generates a response (action), receives a reward, and accumulates history $\{(\mathbf{x}_1, r_1), \ldots, (\mathbf{x}_t, r_t)\}$ in context to optimize subsequent behavior.
+**Key Insight**: Formalizing self-reflection as policy optimization in a K-armed bandit problem—the agent generates an answer (action), receives a reward (reward), and then accumulates history $\{(\mathbf{x}_1, r_1), ..., (\mathbf{x}_t, r_t)\}$ in-context to optimize the next action.
 
-**Core Idea**: The self-attention mechanism of Transformers has a natural inductive bias for simulating FTRL-based policy optimization, and after sufficient pretraining, it can perform policy optimization in context.
+**Core Idea**: The self-attention mechanism of Transformers naturally possesses the inductive bias to simulate FTRL policy optimization. After sufficient pre-training, it can execute policy optimization in-context.
 
 ## Method
 
 ### Overall Architecture
-The ICPO framework: given a problem → the model generates response $\mathbf{x}_t$ → receives reward $r_t$ (self-evaluated or external) → appends $(\mathbf{x}_t, r_t)$ to the context history → the model generates an improved response $\mathbf{x}_{t+1}$ based on the updated history → repeat.
+This paper addresses two questions: why self-reflection capability emerges from pre-training and how to transform this mechanism into a usable test-time algorithm. ICPO formalizes self-reflection as a K-armed bandit: the model generates an answer $\mathbf{x}_t$ for a problem, receives a reward $r_t$ (from self-evaluation or external signals), appends the pair $(\mathbf{x}_t, r_t)$ to the context history, and then generates a better answer $\mathbf{x}_{t+1}$ by reading the increasing history. No parameters are updated throughout the process.
 
-Theoretical analysis is conducted on linear self-attention (LSA) Transformers, proving that they can exactly simulate an FTRL-based policy optimization algorithm.
+The paper proceeds in two stages: "Provable $\to$ Practical." The theoretical part narrows the analysis to a single-layer Linear Self-Attention (LSA) Transformer, proving it can reproduce a policy optimization algorithm based on FTRL (Follow-The-Regularized-Leader) token-by-token after appropriate pre-training—meaning the forward pass of self-attention is equivalent to running one step of policy optimization in-context. The practical part derives ME-ICPO (Minimum-Entropy ICPO), a pure inference-time multi-round self-reflection loop driven by minimum-entropy selection and self-evaluated rewards. The left half of the diagram below (theoretical chain) explains "why a single layer can do policy optimization," while the right half illustrates the "actual execution" of the ME-ICPO loop.
+
+```mermaid
+graph TD
+    subgraph TH["Theory: Single Layer Provably Simulates Policy Optimization"]
+        direction TB
+        D1["Fisher-weighted<br/>logit-matching pre-training objective"] --> LSA["Single-layer Linear Self-Attention (LSA)"]
+        LSA --> D2["Provable point-wise reproduction of PO<br/>+ Finite-sample guarantees"]
+        LSA --> D3["Reward Shock Stability<br/>(Decaying learning rate)"]
+    end
+    TH -.Conclusion: LLM inherently contains PO capability.-> START
+    subgraph PR["ME-ICPO Test-time Loop"]
+        direction TB
+        START["Problem Q as initial context"] --> SAMPLE["Sample k=16 candidate CoTs"]
+        SAMPLE --> MV["Majority Vote<br/>to obtain reward r"]
+        MV --> SUMM["CoT summary compression"]
+        SUMM --> MIN["Minimum entropy candidate selection"]
+        MIN --> APPEND["Append (x,r) to context"]
+        APPEND -->|"Iterate N=5 rounds"| SAMPLE
+        APPEND --> ANS["Output final answer"]
+    end
+```
 
 ### Key Designs
 
-1. **Fisher-weighted logit-matching pretraining objective**:
+**1. Fisher-weighted logit-matching pre-training objective: Turning "learning policy optimization" into a supervised loss**
 
-    - Function: A novel supervised pretraining loss that enables the Transformer to perform in-context policy optimization.
-    - Mechanism: The loss is $\mathcal{L}(\theta) = \frac{1}{2} \mathbb{E}_{\tau \in \mathcal{D}} [\sum_t \| \text{Proj}(\hat{\mathbf{s}}_{\tau,t+1} - \mathbf{s}_{\tau,t+1}^{\text{PO}}) \|_{\Gamma}^2]$, where $\Gamma$ is the Fisher information matrix of the policy and Proj projects out the constant bias (which does not affect the softmax policy).
-    - Design Motivation: Fisher weighting makes the loss proportional to the KL divergence (Theorem 4.1), explaining why a standard KL loss suffices to enable Transformers to learn self-reflection.
+To enable a Transformer to execute policy optimization in-context, a pre-training signal must be provided. This paper uses a loss that matches the model's predicted logit $\hat{\mathbf{s}}_{\tau,t+1}$ with the target logit $\mathbf{s}_{\tau,t+1}^{\text{PO}}$ provided by an FTRL teacher algorithm:
 
-2. **Population Equivalence and finite-sample guarantees**:
+$$\mathcal{L}(\theta) = \frac{1}{2} \mathbb{E}_{\tau \in \mathcal{D}} \Big[\sum_t \| \text{Proj}(\hat{\mathbf{s}}_{\tau,t+1} - \mathbf{s}_{\tau,t+1}^{\text{PO}}) \|_{\Gamma}^2\Big]$$
 
-    - Function: Proves that after sufficient pretraining, a single-layer LSA can exactly simulate the target policy optimization algorithm.
-    - Mechanism: Theorem 4.2 shows that the optimal parameters $\theta^*$ enable the LSA to exactly reproduce policy optimization behavior over all possible histories; Theorem 4.3 provides a sample complexity of $\tilde{O}(N^2 K / c_\lambda^2)$.
-    - Design Motivation: Provides theoretical evidence for LLMs' in-context policy optimization capability—a single attention layer suffices.
+Two details are critical: $\Gamma$ uses the Fisher information matrix of the policy for weighting, and $\text{Proj}$ projects out the constant bias (since softmax policies are insensitive to constant shifts in logits). The significance of Fisher-weighting is given by Theorem 4.1—it makes the quadratic loss proportional to the KL divergence between policies. This explains why a standard supervised loss is sufficient to teach a Transformer self-reflection without needing extra reinforcement learning mechanisms.
 
-3. **Robustness guarantee (Reward Shock Stability)**:
+**2. Single-layer attention is sufficient to reproduce policy optimization: Provability and finite-sample guarantees**
 
-    - Function: Analyzes the stability of the ICPO loop against a single reward perturbation.
-    - Mechanism: Theorem 4.8 proves that when the learning rate $\eta_t = c/t$ is sufficiently small, the effect of a one-time reward perturbation $\delta_r$ on the policy decays to zero over time: $\mathbb{E}[\|\Delta \hat{\mathbf{p}}_{t+1}^s\|_2] \leq \frac{a(1+C_b)}{s} (\frac{t}{s})^{b-1} |\delta_r|$.
-    - Design Motivation: Provides theoretical support for using noisy self-evaluation rewards.
+Theorem 4.2 (population equivalence) proves the existence of optimal parameters $\theta^*$ such that the LSA precisely reproduces the output of the target policy optimization algorithm on all possible historical inputs—point-wise equivalence, not just approximation. Theorem 4.3 further provides finite-sample guarantees: the number of trajectories required to reach target accuracy is $\tilde{O}(N^2 K / c_\lambda^2)$ (where $N$ is the number of rounds, $K$ is the number of arms, and $c_\lambda$ is a regularization constant). These together answer how self-reflection emerges: the inductive bias of a single-layer LSA naturally carries policy optimization, unlike prior work (Lin et al. 2023) which required $\tilde{O}(\sqrt{T})$ layers.
 
-4. **ME-ICPO practical algorithm**:
+**3. Reward Shock Stability: Noisy rewards do not derail the trajectory**
 
-    - Function: Translates the theoretical framework into a practical test-time inference algorithm.
-    - Mechanism: (1) Sample $k$ candidate responses per round; (2) use Majority Vote to determine the self-evaluation reward $r_j^{(t)} = \mathbb{1}[a_j^{(t)} = \hat{a}_t]$; (3) summarize and compress the CoT; (4) **minimum-entropy selection**—select the candidate that minimizes the entropy of subsequent responses to add to the context.
-    - Design Motivation: Minimum-entropy selection follows the "pessimism" principle of offline RL—choosing the direction the agent is most confident about, avoiding being misled by noisy rewards.
+In practice, self-evaluated rewards are noisy. Theorem 4.8 analyzes the sensitivity of the ICPO loop to a single reward perturbation $\delta_r$, proving that if the learning rate $\eta_t = c/t$ decays over time, the impact of the perturbation on the policy decays to zero as rounds progress:
 
-### Loss & Training
-ME-ICPO involves no parameter updates at test time—it is a pure inference-time algorithm. Core strategy:
-- Sample $k=16$ responses per round
-- Majority vote as reward estimate
-- CoT summarization to compress context length
-- Minimum-entropy selection for robustness
-- Output the final response after $n$ iterations
+$$\mathbb{E}\big[\|\Delta \hat{\mathbf{p}}_{t+1}^s\|_2\big] \leq \frac{a(1+C_b)}{s} \Big(\frac{t}{s}\Big)^{b-1} |\delta_r|$$
+
+This provides a practical conclusion: driving multi-round self-reflection with noisy self-evaluated rewards is theoretically safe, as individual errors are diluted by subsequent rounds. This justifies using noisy Majority Vote rewards in ME-ICPO.
+
+**4. ME-ICPO: Implementing theoretical principles into a runnable test-time loop**
+
+The theory explains why "reward guidance + decaying learning rate" works. ME-ICPO instantiates this as a pure inference loop (right half of the diagram) without parameter updates, addressing two practical challenges: context growth and unreliable self-evaluation. In each round, the model samples $k=16$ candidate responses (full CoTs); Majority Vote identifies the consensus answer $\hat{a}_t$, and self-evaluated rewards $r_j^{(t)} = \mathbb{1}[a_j^{(t)} = \hat{a}_t]$ are assigned; candidate CoTs are summarized to manage context length; finally, **minimum-entropy selection** is performed—selecting the candidate that minimizes the entropy $H(\widetilde{\mathcal{H}}_j^{(t)})$ of the model's subsequent responses, rather than just picking the highest reward. After $N=5$ iterations, the final answer is output. Minimum-entropy selection corresponds to the "pessimism" principle in offline RL: low entropy implies stable consensus, making it less likely to be misled by reward noise or directed toward random answers.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Model | Benchmark | Base Mean@16 | w/ ME-ICPO Mean@16 | Gain |
-|-------|-----------|-------------|-------------------|------|
+|------|-----------|-------------|-------------------|------|
 | Qwen2.5-Math-7B | AIME 2024 | 11.04 | **30.42** | +19.38 |
 | Qwen2.5-Math-7B | AMC | 41.42 | **47.06** | +5.64 |
 | Qwen2.5-Math-7B | MATH-L5 | 30.58 | **38.71** | +8.13 |
 | Qwen2.5-Math-1.5B | AIME 2024 | 6.46 | **9.79** | +3.31 |
 | Qwen2.5-Math-1.5B | MATH-L1 | 49.27 | **57.06** | +12.38 |
 
-Gains are most pronounced on AIME 2024: +19.38 for the 7B model and +3.31 for the 1.5B model. ME-ICPO's Mean@16 can exceed the baseline model's Maj@k upper bound.
+The most significant improvement was observed on AIME 2024. The Mean@16 of ME-ICPO can exceed the Maj@k upper bound of the baseline model.
 
 ### Ablation Study
 
 | Configuration | AIME 2024 Accuracy (%) |
-|---------------|----------------------|
+|------|----------------------|
 | w/o Reward | 19.30 |
 | w/o Entropy | 5.77 |
 | w/o Entropy & Reward | 6.21 |
@@ -106,34 +115,34 @@ Gains are most pronounced on AIME 2024: +19.38 for the 7B model and +3.31 for th
 | ME-ICPO Oracle | 38.19 |
 
 ### Key Findings
-- **Minimum-entropy selection is the most critical component**: removing it causes accuracy to plummet from 30.05% to 5.77%, worse than doing nothing (6.21%)—indicating that without a principled selection strategy, random context is actually harmful.
-- **Reward signal also matters**: removing it reduces accuracy from 30.05% to 19.30%.
-- **Theoretical validation experiments**: the policy-matching error of LSA converges rapidly to numerical precision, and the effect of a single reward shock indeed decays over time.
-- ME-ICPO's Mean@16 can surpass the baseline's Maj@k upper bound—indicating that in-context policy optimization learns information beyond simple voting.
+- **Minimum-entropy selection is the most critical component**: Removing it caused accuracy to plummet from 30.05% to 5.77%, which is worse than doing nothing (6.21%)—indicating that without a proper selection strategy, random context is harmful.
+- **Reward signals are also important**: Removing them dropped accuracy from 30.05% to 19.30%.
+- **Theoretical Verification**: Policy matching error for LSA converges quickly; the impact of single reward shocks indeed decays over time.
+- ME-ICPO's Mean@16 can surpass the baseline's Maj@k upper bound, suggesting that in-context policy optimization learns information beyond simple voting.
 
 ## Highlights & Insights
-- **Closed-loop theory-to-practice**: Starting from a theoretical analysis of linear self-attention, the paper derives practical algorithm design principles (reward guidance + minimum-entropy selection) and validates them on real LLMs—a complete research loop.
-- **Insight behind minimum-entropy selection**: Rather than selecting the highest-reward candidate, the algorithm selects the candidate toward which the model is most confident. This is especially important when self-evaluation rewards are noisy—a high reward may be coincidental, but low entropy reflects a stable consensus across the model's outputs.
-- **Single-layer sufficiency**: Unlike Lin et al. (2023), which requires $O(\sqrt{T})$ layers, ICPO requires only a single-layer LSA and does not need more layers as context length grows—a result more aligned with the long-context setting of real LLMs.
+- **Theory-Practice Loop**: Starting from theoretical analysis of LSA, deriving practical design principles (reward guidance + min-entropy selection), and validating them on real LLMs—forming a complete research loop.
+- **Insight on Min-Entropy Selection**: Choosing the candidate that makes the model most confident, rather than the one with the highest reward. This is vital when self-evaluated rewards are noisy; high rewards might be accidental, but low entropy signifies stable consensus.
+- **Single-Layer Sufficiency**: Unlike prior work requiring $O(\sqrt{T})$ layers, ICPO requires only a single LSA layer and does not require more layers as context length increases—more suitable for the long-context scenarios of actual LLMs.
 
 ## Limitations & Future Work
-- The theoretical analysis is based on linear self-attention and linear bandit assumptions, which differ substantially from real LLMs and mathematical reasoning problems.
-- ME-ICPO samples 16 candidate responses per round, and the computational overhead of multi-round iteration remains considerable.
-- Self-evaluation rewards are based on Majority Vote, which may produce incorrect signals when the model makes systematic errors.
-- Experiments are limited to mathematical reasoning tasks; code generation, logical reasoning, and other domains have not been evaluated.
-- CoT summarization may discard critical reasoning step information.
+- Theoretical analysis is based on linear self-attention and linear bandit assumptions, which differs significantly from actual LLMs and mathematical reasoning.
+- ME-ICPO requires sampling 16 candidates per round; the computational cost of multi-round iteration remains significant.
+- Self-evaluated rewards are based on Majority Vote; MV itself may give incorrect signals if the model is systematically wrong.
+- Validated only on mathematical tasks; other domains like code generation or logical reasoning are yet to be tested.
+- CoT summaries may lose critical reasoning information.
 
 ## Related Work & Insights
-- **vs. Self-Refine/Reflexion**: These methods perform self-reflection via natural language feedback but lack a theoretical explanation for their effectiveness; ICPO provides a theoretical foundation from a policy optimization perspective.
-- **vs. Tree-of-Thoughts**: ToT searches at every step, whereas ME-ICPO optimizes the entire CoT per round—coarser-grained but more computationally efficient.
-- **vs. TTRL**: TTRL performs gradient updates at test time; ME-ICPO is purely in-context with no parameter updates—substantially more lightweight.
-- **vs. Best-of-N**: BoN selects the single best response; ME-ICPO leverages multi-round iteration to accumulate contextual information and progressively improve—theoretically superior.
+- **vs Self-Refine/Reflexion**: These works perform self-reflection via natural language feedback but lack theoretical explanation; ICPO provides a foundation from the perspective of policy optimization.
+- **vs Tree-of-Thoughts**: ToT searches at each step, while ME-ICPO optimizes the entire CoT per round—coarser-grained but more computationally efficient.
+- **vs TTRL**: TTRL performs gradient updates at test-time; ME-ICPO is purely in-context with no parameter updates—making it more lightweight.
+- **vs Best-of-N**: BoN selects the single best output; ME-ICPO accumulates contextual information via multi-round iterations to improve progressively.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ First theoretical analysis of LLM self-reflection from a policy optimization perspective; minimum-entropy selection is a novel design.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Theoretical validation is thorough, but LLM experiments are limited to mathematical tasks and the Qwen model family.
-- Writing Quality: ⭐⭐⭐⭐ Theoretical derivations are rigorous, though the transition from theory to practice could be tighter.
-- Value: ⭐⭐⭐⭐ Provides a theoretical foundation for test-time scaling; the minimum-entropy selection strategy has practical utility.
+- Novelty: ⭐⭐⭐⭐⭐ First to provide theoretical analysis of LLM self-reflection via policy optimization; min-entropy selection is a novel design.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Strong theoretical validation, but LLM experiments are limited to math tasks and the Qwen series.
+- Writing Quality: ⭐⭐⭐⭐ Rigorous theoretical derivation, though the transition from theory to practice could be tighter.
+- Value: ⭐⭐⭐⭐ Provides a theoretical foundation for test-time scaling; the min-entropy selection strategy has practical utility.
 
 <!-- RELATED:START -->
 
@@ -141,11 +150,11 @@ Gains are most pronounced on AIME 2024: +19.38 for the 7B model and +3.31 for th
 
 ## Related Papers
 
-- [\[ICML 2026\] On the Provable Suboptimality of Momentum SGD in Nonstationary Stochastic Optimization](../../ICML2026/optimization/on_the_provable_suboptimality_of_momentum_sgd_in_nonstationary_stochastic_optimi.md)
-- [\[ICLR 2026\] Test-Time Meta-Adaptation with Self-Synthesis](test-time_meta-adaptation_with_self-synthesis.md)
+- [\[ICLR 2026\] Multi-Action Self-Improvement for Neural Combinatorial Optimization](multi-action_self-improvement_for_neural_combinatorial_optimization.md)
+- [\[ICLR 2026\] Toward Principled Flexible Scaling for Self-Gated Neural Activation](toward_principled_flexible_scaling_for_self-gated_neural_activation.md)
+- [\[ICML 2025\] Provable In-Context Vector Arithmetic via Retrieving Task Concepts](../../ICML2025/optimization/provable_in-context_vector_arithmetic_via_retrieving_task_concepts.md)
 - [\[ICLR 2026\] COLD-Steer: Steering Large Language Models via In-Context One-step Learning Dynamics](cold-steer_steering_large_language_models_via_in-context_one-step_learning_dynam.md)
-- [\[ICML 2026\] Test time training enhances in-context learning of nonlinear functions](../../ICML2026/optimization/test_time_training_enhances_in-context_learning_of_nonlinear_functions.md)
-- [\[ICLR 2026\] Celo2: Towards Learned Optimization Free Lunch](celo2_towards_learned_optimization_free_lunch.md)
+- [\[ICML 2026\] On the Provable Suboptimality of Momentum SGD in Nonstationary Stochastic Optimization](../../ICML2026/optimization/on_the_provable_suboptimality_of_momentum_sgd_in_nonstationary_stochastic_optimi.md)
 
 </div>
 

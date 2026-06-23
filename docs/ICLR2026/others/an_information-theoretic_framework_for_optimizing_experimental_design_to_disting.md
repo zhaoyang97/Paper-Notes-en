@@ -2,145 +2,146 @@
 title: >-
   [Paper Note] An Information-Theoretic Framework For Optimizing Experimental Design To Distinguish Probabilistic Neural Codes
 description: >-
-  [ICLR 2026][Information Gap] This paper proposes the **information gap**, an information-theoretic measure that quantifies the ability of a given experimental design to distinguish between likelihood coding and posterior…
+  [ICLR 2026][Others][Information Gap] Ours proposes **information gap**, an information-theoretic metric that quantitatively evaluates the ability of a given experimental design to distinguish between two probabilistic neural coding hypotheses. This is achieved by deriving analytical expressions for the cross-entropy performance difference of decoders unde
 tags:
-  - "ICLR 2026"
-  - "Information Gap"
-  - "Probabilistic Coding Hypothesis"
-  - "Likelihood Coding"
-  - "Posterior Coding"
-  - "Optimal Experimental Design"
+  - ICLR 2026
+  - Others
+  - Information Gap
 date: 2026-05-08
-content_hash: 485c8a7297c9b415
+content_hash: e96bf8b4e72d0a58
 ---
-
 # An Information-Theoretic Framework For Optimizing Experimental Design To Distinguish Probabilistic Neural Codes
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2603.01387](https://arxiv.org/abs/2603.01387)  
 **Code**: [https://github.com/walkerlab/information-gap-probabilistic-neural-codes](https://github.com/walkerlab/information-gap-probabilistic-neural-codes)  
-**Authors**: Po-Chen Kuo, Edgar Y. Walker (University of Washington)
-**Area**: Computational Neuroscience — Probabilistic Neural Coding, Bayesian Perception, Experimental Design Optimization
-**Keywords**: Information Gap, Probabilistic Coding Hypothesis, Likelihood Coding, Posterior Coding, Optimal Experimental Design
+**Authors**: Po-Chen Kuo, Edgar Y. Walker (University of Washington)  
+**Area**: Computational Neuroscience — Probabilistic neural coding, Bayesian perception, experimental design optimization  
+**Keywords**: Information Gap, Probabilistic coding hypothesis, Likelihood coding, Posterior coding, Optimal experimental design
 
 ## TL;DR
 
-This paper proposes the **information gap**, an information-theoretic measure that quantifies the ability of a given experimental design to distinguish between likelihood coding and posterior coding hypotheses. By deriving closed-form expressions for the cross-entropy performance difference between decoders under each hypothesis—shown to be the KL divergence between the true posterior and a task-marginalized surrogate posterior—the framework enables theory-driven optimal experimental design by maximizing this measure over the stimulus prior distribution.
+Ours proposes **information gap**, an information-theoretic metric that quantitatively evaluates the ability of a given experimental design to distinguish between two probabilistic neural coding hypotheses. This is achieved by deriving analytical expressions for the cross-entropy performance difference of decoders under likelihood and posterior coding hypotheses (essentially the KL divergence between the true posterior and a task-marginalized proxy posterior) and optimizing stimulus prior distributions by maximizing this metric to achieve theory-driven optimal experimental design.
 
 ## Background & Motivation
 
-**Background**: The Bayesian brain hypothesis is the dominant theoretical framework for understanding perceptual decision-making under uncertainty. Extensive psychophysical evidence suggests that the brain performs approximately Bayes-optimal computation in tasks such as multisensory integration, motion perception, and sensorimotor learning. However, the fundamental implementation question of how probability distributions are encoded in sensory neural populations remains unresolved.
+**Background**: The Bayesian brain hypothesis is the dominant theoretical framework for understanding perceptual decision-making under uncertainty. Extensive psychophysical evidence suggests that the brain performs approximately Bayesian optimal computations in tasks such as multisensory integration, motion perception, and sensorimotor learning. However, the core implementation question—exactly how probability distributions are encoded within sensory neural populations—remains unresolved.
 
-**Limitations of Prior Work**: Two competing hypotheses exist: the **likelihood coding hypothesis** (exemplified by probabilistic population codes, PPC), which posits that primary sensory areas encode the likelihood function $p(x|\theta)$, and the **posterior coding hypothesis** (exemplified by neural sampling), which posits that primary sensory areas integrate prior information via feedback connections to directly encode the posterior $p(\theta|x)$. The key distinction between the two hypotheses is whether the stimulus prior $p(\theta)$ modulates neural responses in early sensory populations. Nevertheless, most existing neurophysiological experiments employ a single fixed stimulus context (uniform prior), rendering the predictions of the two hypotheses indistinguishable.
+**Limitations of Prior Work**: Two competing hypotheses currently exist: the **likelihood coding hypothesis** (represented by Probabilistic Population Codes, PPC, suggesting primary sensory areas encode the likelihood function $p(x|\theta)$) and the **posterior coding hypothesis** (represented by neural sampling, suggesting primary sensory areas integrate priors via feedback connections to directly encode the posterior distribution $p(\theta|x)$). The key distinction lies in whether the stimulus prior $p(\theta)$ modulates the neural responses of early sensory populations. However, most existing electrophysiological experiments employ a single fixed stimulus context (uniform prior), making the predictions of the two hypotheses indistinguishable.
 
-**Key Challenge**: Distinguishing the two hypotheses requires manipulating stimulus prior distributions across different contexts, but the choice of prior involves a non-trivial trade-off: priors that are too dissimilar yield insufficient stimulus overlap across contexts (preventing comparison of responses to the same stimulus), while priors that are too similar produce negligible differences in the predictions of the two hypotheses. This trade-off cannot be resolved by intuition alone.
+**Key Challenge**: Distinguishing the two hypotheses requires manipulating stimulus prior distributions across different contexts. However, the choice of prior distributions involves a non-trivial trade-off: if the priors are too different, there is insufficient stimulus overlap across contexts (preventing comparisons of responses to the same stimulus); if the priors are too similar, the predicted differences between the two hypotheses are negligible. This trade-off cannot be resolved by intuition alone.
 
-**Goal**: ① How can one quantitatively measure the ability of a given experimental design (i.e., a choice of stimulus prior distributions) to distinguish between the two coding hypotheses? ② How can experimental parameters be systematically optimized to maximize discriminability?
+**Goal**: ① How to quantitatively measure the ability of a given experimental design (i.e., the choice of stimulus prior distributions) to distinguish between the two coding hypotheses? ② How to systematically optimize experimental parameters to maximize this discriminative power?
 
-**Key Insight**: The authors adopt a decoding framework: if a neural population encodes the likelihood function, a likelihood decoder should outperform a posterior decoder, and vice versa. By deriving the cross-entropy performance difference between optimal decoders at the theoretical limit, one can analytically quantify the discriminative power of an experimental design.
+**Key Insight**: Ours approaches this from a decoding framework—if a neural population encodes the likelihood function, a likelihood decoder should outperform a posterior decoder, and vice versa. By deriving the cross-entropy performance difference of optimal decoders at their theoretical limits, the discriminative power of an experimental design can be analytically quantified.
 
-**Core Idea**: The problem of experimental design optimization is recast as maximizing the information gap—the performance difference between optimal decoders when decoding matched versus mismatched probabilistic content—providing a computable and optimizable theoretical framework for distinguishing probabilistic neural coding hypotheses from an information-theoretic perspective.
+**Core Idea**: The experimental design optimization problem is transformed into maximizing the information gap (the performance difference of an optimal decoder when decoding matched vs. mismatched probabilistic content), providing a computable and optimizable theoretical framework for distinguishing probabilistic neural coding hypotheses from an information-theoretic perspective.
 
 ## Method
 
 ### Overall Architecture
 
-The framework is built upon an experimental paradigm with two contexts $c \in \{A, B\}$: each context has a specific stimulus prior $p^c(\theta)$, the latent variable $\theta$ (e.g., orientation angle) is sampled from the prior and generates sensory observations $x$ via a generative model $p(x|\theta)$, and neural populations produce responses $\boldsymbol{r}$ to these observations. The core output is the **information gap** $\Delta^{\text{info}}$—the expected cross-entropy performance difference between the optimal likelihood decoder and the optimal posterior decoder under a given experimental design $(p(c), p^c(\theta))$. Closed-form expressions are derived for $\Delta_L^{\text{info}}$ under the likelihood coding hypothesis and $\Delta_P^{\text{info}}$ under the posterior coding hypothesis. The optimal experimental design is then identified by searching the task parameter space for configurations that simultaneously maximize both information gaps.
+The framework is based on an experimental paradigm involving two contexts $c \in \{A, B\}$: each context has a specific stimulus prior distribution $p^c(\theta)$. A latent variable $\theta$ (e.g., orientation) is sampled according to the prior and produces a sensory observation $x$ through a generative model $p(x|\theta)$, to which the neural population generates a response $\boldsymbol{r}$. The core output is the **information gap** $\Delta^{\text{info}}$—the expected cross-entropy performance difference between an optimal likelihood decoder and an optimal posterior decoder under a given experimental design $(p(c), p^c(\theta))$. The entire pipeline functions as a branching and merging process: first, a set of experimental designs is fixed to generate data; then, assuming either "likelihood coding" or "posterior coding," analytical information gaps $\Delta_L^{\text{info}}$ and $\Delta_P^{\text{info}}$ are derived; finally, these quantities are mapped onto a two-dimensional landscape to search for the optimal experimental design that makes both sufficiently large.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    P["Experimental Design: Select context<br/>priors p^c(θ)"] --> G["Generate Data: Sample θ per prior<br/>→ Observation x → Neural response r"]
+    G -->|"Population encodes likelihood"| L["Info Gap under Likelihood Coding<br/>Posterior decoder converges to proxy posterior<br/>Δ_L = E[KL(True Posterior, Proxy Posterior)]"]
+    G -->|"Population encodes posterior"| Po["Info Gap under Posterior Coding<br/>Likelihood decoder faces posterior collision<br/>Solved via fixed-point iteration Δ_P"]
+    L --> S["Info Gap Landscape: Search for sweet<br/>spot in (d, σ) space"]
+    Po --> S
+    S --> O["Optimal Experimental Design<br/>Prioritize increasing the harder Δ_P"]
+```
 
 ### Key Designs
 
-1. **Information Gap for Likelihood Coding**:
+**1. Info Gap under Likelihood Coding: Quantifying the loss of decoding an "incorrect" posterior**
 
-    - **Function**: Quantifies the performance loss of a posterior decoder relative to a likelihood decoder when the neural population encodes the likelihood function.
-    - **Mechanism**: A likelihood-coding population $\boldsymbol{r}_L \sim p(x|\theta)$ contains no prior information, so a posterior decoder cannot perfectly decode the posterior distribution. The optimal posterior decoder converges to a **task-marginalized surrogate posterior** $q_{P,i}^*(\theta) = \frac{[\sum_c p(c) p^c(\theta)] \cdot p(x_i|\theta)}{\sum_{\theta'} [\sum_c p(c) p^c(\theta')] \cdot p(x_i|\theta')}$, i.e., the true context prior is replaced by a mixture prior. The information gap $\Delta_L^{\text{info}}$ equals the expected KL divergence between the true posterior $p^c(\theta|x_i)$ and the surrogate posterior $q_{P,i}^*(\theta)$: $\Delta_L^{\text{info}} = \mathbb{E}_{p(x_i,c)}[D_{\text{KL}}(p^c(\theta|x_i) \| q_{P,i}^*(\theta))]$
-    - **Design Motivation**: Every observation $x_i$ contributes a non-zero information gap as long as the two context priors differ, so the information gap under likelihood coding is generally large and the two hypotheses are relatively easy to discriminate experimentally.
+The first hypothesis is that the neural population encodes the likelihood function. Here, context information is absent from the population response $\boldsymbol{r}_L \sim p(x|\theta)$, so the posterior decoder cannot determine the current context or recover the true posterior. The key observation is that the optimal posterior decoder does not degrade into random guessing but converges to a **task-marginalized proxy posterior**—it substitutes the true context prior with a mixture prior $\sum_c p(c)p^c(\theta)$:
 
-2. **Information Gap for Posterior Coding**:
+$$q_{P,i}^*(\theta) = \frac{\left[\sum_c p(c)\, p^c(\theta)\right] \cdot p(x_i|\theta)}{\sum_{\theta'} \left[\sum_c p(c)\, p^c(\theta')\right] \cdot p(x_i|\theta')}.$$
 
-    - **Function**: Quantifies the performance loss of a likelihood decoder relative to a posterior decoder when the neural population encodes the posterior distribution.
-    - **Mechanism**: In a posterior-coding population, different contexts may produce identical posterior distributions ($p^A(\theta|x_j) = p^B(\theta|x_k)$) corresponding to different likelihood functions ($p(x_j|\theta) \neq p(x_k|\theta)$). The optimal likelihood decoder converges to a Bayes-optimal likelihood estimate $\ell_{jk}^*(\theta)$, which requires fixed-point iteration to solve. The information gap $\Delta_P^{\text{info}}$ receives contributions only from observation pairs $(x_j, x_k)$ satisfying the posterior-matching condition.
-    - **Design Motivation**: The magnitude of the information gap under posterior coding is typically an order of magnitude smaller than under likelihood coding (since only matching pairs contribute), revealing that distinguishing posterior-coding populations poses a greater experimental challenge and requires more deliberate experimental design.
+The information gap under likelihood coding is then the expected KL divergence between the true posterior $p^c(\theta|x_i)$ and this proxy posterior: $\Delta_L^{\text{info}} = \mathbb{E}_{p(x_i,c)}\big[D_{\text{KL}}(p^c(\theta|x_i)\,\|\,q_{P,i}^*(\theta))\big]$. As long as the priors of the two contexts differ, each observation $x_i$ contributes a non-zero gap, making $\Delta_L^{\text{info}}$ typically large and relatively easy to distinguish experimentally.
 
-3. **Task Optimization via Information Gap Landscape**:
+**2. Info Gap under Posterior Coding: Contribution only from "posterior collision" pairs**
 
-    - **Function**: Systematically searches the task parameter space for the optimal experimental design.
-    - **Mechanism**: For Gaussian context priors $p^c(\theta) = \mathcal{N}(\mu^c, \sigma^2)$, the task parameter space is defined by the prior mean separation $d = |\mu^A - \mu^B|$ and the shared standard deviation $\sigma$. The information gap under each hypothesis is computed over a grid of $(d, \sigma)$ values to obtain a two-dimensional landscape. Since $\Delta_P^{\text{info}}$ is smaller in magnitude and harder to optimize, the strategy prioritizes maximizing $\Delta_P^{\text{info}}$ while ensuring $\Delta_L^{\text{info}}$ remains sufficiently large. For example, under low-contrast stimuli, the optimal parameters are approximately $d \approx 30°$ and $\sigma \approx 20°$.
-    - **Design Motivation**: The information gap landscape directly visualizes the difficulty of discriminating the two hypotheses across parameter settings, transforming experimental design from heuristic trial-and-error into a principled optimization problem. The analysis also reveals that heavy-tailed priors (t-distribution, Cauchy distribution) produce near-zero information gap under posterior coding across almost the entire parameter space, theoretically ruling out their use.
+The second hypothesis is that the neural population directly encodes the posterior. Here, the problem is reversed: the likelihood decoder must recover the "clean" likelihood from responses already modulated by the prior. The difficulty arises because different contexts may produce **identical posteriors** $p^A(\theta|x_j)=p^B(\theta|x_k)$ even though their underlying likelihoods differ ($p(x_j|\theta)\neq p(x_k|\theta)$). The optimal likelihood decoder can only output a compromised Bayes-optimal likelihood estimate $\ell_{jk}^*(\theta)$ for such "posterior collision" pairs, solved via fixed-point iteration. Consequently, $\Delta_P^{\text{info}}$ is only contributed by observation pairs $(x_j, x_k)$ satisfying the posterior matching condition. Since such pairs are rare, the magnitude of $\Delta_P^{\text{info}}$ is often an order of magnitude smaller than $\Delta_L^{\text{info}}$—indicating that "whether the population encodes the posterior" is the true challenge for experimental design.
+
+**3. Info Gap Landscape: Turning prior selection into an optimizable 2D search**
+
+With the two analytical information gaps, experimental design reduces to finding a "sweet spot" in the task parameter space where both are sufficiently large. For Gaussian context priors $p^c(\theta)=\mathcal{N}(\mu^c,\sigma^2)$, the parameter space is spanned by the mean separation $d=|\mu^A-\mu^B|$ and the shared standard deviation $\sigma$. By traversing the $(d, \sigma)$ grid, the 2D landscape visualizes the discriminability of the two hypotheses. Since $\Delta_P^{\text{info}}$ is smaller and harder to increase, the optimization strategy uses it as the bottleneck—prioritizing the maximization of $\Delta_P^{\text{info}}$ while ensuring $\Delta_L^{\text{info}}$ remains sufficiently large (e.g., $d\approx 30°$, $\sigma\approx 20°$ for low-contrast stimuli). This landscape also excludes heavy-tailed distributions (Student's t, Cauchy), which produce almost zero info gap under posterior coding because posterior matching pairs are nearly non-existent.
 
 ### Loss & Training
 
-Decoders are implemented as deep neural networks (MLPs) trained with a cross-entropy loss objective. The likelihood decoder $g_L(\boldsymbol{r})$ outputs a discretized estimate of the likelihood function, and the posterior decoder $g_P(\boldsymbol{r})$ outputs a discretized estimate of the posterior distribution. Training follows standard supervised learning: $(\boldsymbol{r}, \text{target})$ pairs are generated from simulated likelihood-coding or posterior-coding populations, with targets being the discretized true likelihood or posterior distributions, respectively. The theoretical information gap serves as the reference upper bound to which the decoder performance difference is expected to converge.
+Decoders are implemented using Deep Neural Networks (MLP) with cross-entropy loss. The likelihood decoder $g_L(\boldsymbol{r})$ outputs a discretized estimate of the likelihood function, while the posterior decoder $g_P(\boldsymbol{r})$ outputs a discretized estimate of the posterior distribution. Training utilizes standard supervised learning with $(\boldsymbol{r}, \text{target})$ pairs generated from simulated likelihood or posterior coding populations, where targets are the true discretized likelihood or posterior. Theoretical info gap values serve as the reference upper bound for convergence.
 
 ## Key Experimental Results
 
-### Main Results: Theoretical Predictions vs. Simulation Validation
+### Main Results: Theoretical Prediction vs. Simulation Validation
 
-The accuracy of information gap predictions is validated on Poisson neuron models and gain-modulated Poisson models across multiple task parameters and stimulus contrasts.
+Predictions were validated across multiple task parameters and stimulus contrasts using Poisson and gain-modulated Poisson neuron models.
 
-| Validation Dimension | Likelihood Coding $\Delta_L^{\text{info}}$ | Posterior Coding $\Delta_P^{\text{info}}$ | Key Findings |
-|---|---|---|---|
-| High-contrast stimuli | Theory–simulation closely matched | Theory–simulation closely matched | $\Delta_L$ exceeds $\Delta_P$ by an order of magnitude |
-| Medium-contrast stimuli | Information gap increases | Information gap increases | Lower contrast amplifies prior influence |
-| Low-contrast stimuli | Maximum information gap | Maximum information gap | Broadest effective parameter region |
-| Gain-modulated Poisson model | Predictions accurate | Predictions accurate | Framework remains valid under more biologically realistic models |
-| Convergence (trial count) | Converges at 30K trials | Converges at 30K trials | Decoder performance difference converges to theoretical value |
-| Convergence (neuron count) | Converges at 500 neurons | Converges at 500 neurons | Sufficient population size is adequate |
+| Validation Dimension | Likelihood Gap $\Delta_L^{\text{info}}$ | Posterior Gap $\Delta_P^{\text{info}}$ | Key Findings |
+|----------|--------------------------------|--------------------------------|---------|
+| High Contrast | High theory-empirical agreement | High theory-empirical agreement | $\Delta_L$ is an order of magnitude larger than $\Delta_P$ |
+| Mid Contrast | Increased info gap | Increased info gap | Lower contrast increases prior influence |
+| Low Contrast | Maximum info gap | Maximum info gap | Widest region of effective parameters |
+| Gain-modulated Poisson | Accurate prediction | Accurate prediction | Framework remains effective in biologically realistic models |
+| Convergence (Trials) | Converges at 30K trials | Converges at 30K trials | Decoder difference reaches theoretical bound |
+| Convergence (Neurons) | Converges at 500 neurons | Converges at 500 neurons | Sufficient for population scale |
 
-### Real Data Validation: Allen Brain Observatory
+### Allen Brain Observatory Validation
 
 | Dataset | Decoder Performance Difference | Theoretical Prediction | $p$-value | Conclusion |
-|---|---|---|---|---|
+|--------|--------------|---------|-----------|------|
 | Allen Visual Coding (169 sessions, >300 trials each) | $0.0024 \pm 0.064$ | 0 | $p = 0.63$ | Not significant |
 
-Under a single context (uniform prior), the theoretical information gap is predicted to be zero. The empirical result is highly consistent with this prediction, validating the necessity of multi-context prior manipulation.
+In a single context (uniform prior), the theoretical info gap is predicted to be 0. Empirical results perfectly match this, validating the necessity of multi-context prior manipulation.
 
 ### Key Findings
 
-- **Asymmetry in information gap magnitude**: $\Delta_L^{\text{info}}$ exceeds $\Delta_P^{\text{info}}$ by up to an order of magnitude, because under likelihood coding every observation contributes a non-zero gap, whereas under posterior coding only observation pairs satisfying the posterior-matching condition contribute. This implies that distinguishing posterior-coding populations is experimentally more challenging.
-- **Stimulus contrast affects discriminability**: Low-contrast stimuli (high sensory uncertainty) expand the effective parameter region, since the prior exerts greater influence on the posterior under such conditions. Experimental designs should be tailored to the specific stimulus properties (e.g., contrast).
-- **Heavy-tailed priors are unsuitable for distinguishing coding hypotheses**: When Student's t-distribution or Cauchy distribution is used as the context prior, the information gap under posterior coding is effectively zero across nearly the entire parameter space. The theoretical explanation is that such distributions yield almost no observation pairs satisfying the posterior-matching condition.
-- **Trade-off in optimal parameters**: The optimal parameter regions for the two hypotheses do not fully overlap, requiring a strategic choice of a "sweet spot"—prioritizing maximization of the more difficult-to-detect posterior coding information gap while ensuring the likelihood coding information gap remains sufficiently large.
+- **Asymmetry in Magnitude**: The info gap under likelihood coding is up to an order of magnitude larger than under posterior coding because every observation contributes to $\Delta_L$, whereas only matched posterior pairs contribute to $\Delta_P$. This makes the posterior coding hypothesis significantly harder to verify experimentally.
+- **Contrast Affects Discriminability**: Low-contrast stimuli (high sensory uncertainty) expand the region of effective parameters because the relative influence of the prior on the posterior is greater.
+- **Heavy-tailed Priors are Ineffective**: Student's t and Cauchy distributions result in nearly zero info gap for posterior coding across the parameter space due to the lack of posterior matching pairs.
+- **Parameter Trade-offs**: The optimal parameter regions for the two hypotheses do not perfectly overlap. The strategy should prioritize the "bottleneck" $\Delta_P$ while ensuring $\Delta_L$ is sufficiently detectable.
 
 ## Highlights & Insights
 
-1. **Unifying experimental design optimization within an information-theoretic framework**: The core contribution is not a new neural coding model or decoding algorithm, but the theoretical establishment of a paradigm in which "the discriminative power of an experimental design" can be analytically computed and optimized. This elevates experimental design in neuroscience from empirical trial-and-error to a theoretically grounded optimization problem.
+1. **Unifying Experimental Design as an Optimization Framework**: The core contribution is not a new neural model but the establishment of a paradigm where "design discriminability" is analytically computable. This elevates experimental design from empirical trial-and-error to a theory-grounded optimization problem.
 
-2. **Elegant derivation of the surrogate posterior**: When a decoder is forced to extract probabilistic information from a mismatched encoding, the optimal output converges to a task-marginalized Bayes-optimal estimate (rather than random guessing). This result is both intuitively elegant and mathematically rigorous, forming the theoretical cornerstone of the entire framework.
+2. **Elegant Proxy Posterior Derivation**: When a decoder is forced to extract mismatched probabilistic information, the optimal output converges to a task-marginalized Bayes-optimal estimate. This result is both intuitive and mathematically rigorous.
 
-3. **Practical insight from the magnitude asymmetry**: The finding that $\Delta_L^{\text{info}} \gg \Delta_P^{\text{info}}$ directly informs experimental design strategy—the distinguishability of posterior coding should be treated as the bottleneck when optimizing experimental parameters, rather than simply maximizing discriminability for likelihood coding.
+3. **Magnitude Asymmetry Insight**: The finding that $\Delta_L^{\text{info}} \gg \Delta_P^{\text{info}}$ directly informs strategy—experiments should be optimized for the detectability of posterior coding rather than simply maximizing likelihood discriminability.
 
-4. **Theoretical value of negative results**: Demonstrating that heavy-tailed priors are unsuitable for distinguishing coding hypotheses, and that single-context experimental designs are uninformative, provides equally clear theoretical guidance on what should be avoided in experimental design.
+4. **Value of Theoretical Negative Results**: Proving that heavy-tailed priors or single-context designs cannot distinguish between hypotheses provides definitive theoretical constraints on what *not* to do in experimental neurobiology.
 
 ## Limitations & Future Work
 
-1. **Ideal decoder assumption**: The framework derivations are based on the theoretical limit of optimal decoders. Practical decoders (even deep networks) may underfit, causing empirically observed information gaps to fall below theoretical values. The paper mitigates this through extensive training and large datasets, but reliability under limited-data regimes is not thoroughly discussed.
+1. **Ideal Decoder Assumption**: Derivations assume optimal theoretical limits. Real-world decoders might underfit, though this is mitigated by large-scale simulation and deep learning.
 
-2. **Dependence on prior knowledge of the generative model**: Computing the information gap requires a known generative model $p(x|\theta)$, which must be established through preliminary experiments in practice. This introduces the risk of model misspecification—if the assumed generative model deviates substantially from the true one, the optimized experimental design may be suboptimal.
+2. **Reliance on Generative Model Knowledge**: Calculating the info gap requires an assumed generative model $p(x|\theta)$. Model misspecification in real experiments could lead to sub-optimal designs.
 
-3. **Binary hypothesis framing**: Although the paper discusses extensions to mixed coding hypotheses in the appendix, the core framework remains a binary likelihood-vs.-posterior dichotomy. Real neural systems may adopt intermediate strategies on a continuous spectrum, and the framework's sensitivity to such fine-grained distinctions remains to be validated.
+3. **Binary Hypothesis Limitation**: While Ours discusses hybrid coding, the core framework is likelihood vs. posterior. Real neural systems might employ intermediate strategies.
 
-4. **Predominantly simulation-based validation, lacking prospective real-data experiments**: The real-data analysis is used only to validate the negative conclusion that "a single context cannot distinguish the hypotheses." The core value of the framework—whether optimized experimental designs can effectively distinguish coding hypotheses in real neural recordings—still requires prospective experimental validation.
-
-5. **Computational scalability**: Computing the information gap under posterior coding requires enumerating observation pairs satisfying the posterior-matching condition and solving fixed-point iterations, which may become computationally intractable as the dimensionality of the observation space increases.
+4. **Lack of Prospective Empirical Validation**: Real-world data analysis was limited to confirming the "single context is insufficient" conclusion. The proactive use of optimized designs in new neural recordings remains to be demonstrated.
 
 ## Related Work & Insights
 
-| Method / Work | Core Idea | Relation to This Paper |
-|---|---|---|
-| PPC (Ma et al., 2006) | Poisson population codes naturally represent likelihood functions | Representative model of the likelihood coding hypothesis; one end of the framework |
-| Neural Sampling (Hoyer & Hyvärinen, 2002) | Neural variability reflects sampling from the posterior | Representative model of the posterior coding hypothesis; the other end of the framework |
-| Walker et al. (2020) | Decodes likelihood functions from V1 population responses to predict behavioral choices | Direct predecessor of the decoding framework used here; however, that experimental design cannot distinguish the two hypotheses |
-| STRING (Lange et al., 2023) | Proposes that encoding and decoding represent two distinct perspectives on neural coding | Theoretically complementary; this paper focuses on experimental discrimination, while STRING focuses on the conceptual framework |
-| Optimal stimulus design (Lewi et al., 2006/2011) | Information-theoretic optimization of electrophysiological stimuli | Methodological inspiration—extends information-theoretic optimization from single-neuron tuning curve estimation to population coding hypothesis testing |
-
-**Directions for Inspiration**: The core idea of the information gap framework—quantifying the performance loss of mismatched decoding to distinguish encoding strategies—is transferable to representation learning analysis in machine learning. For example, analogous approaches could be used to assess whether pretrained models encode specific types of information (local features vs. global semantics).
+| Method/Work | Mechanism | Relation to Ours |
+|----------|---------|-----------|
+| PPC (Ma et al., 2006) | Poisson populations naturally represent likelihoods | Representative model for one end of the framework |
+| Neural Sampling (Hoyer & Hyvärinen, 2002) | Variability reflects sampling from posterior | Representative model for the other end of the framework |
+| Walker et al. (2020) | Decoding likelihoods from V1 to predict behavior | Direct precursor, but lacked design to distinguish hypotheses |
+| STRING (Lange et al., 2023) | Coding and decoding as distinct perspectives | Theoretically complementary; STRING focuses on concepts, Ours on experimental distinction |
+| Optimal stimulus design (Lewi et al., 2006/2011) | Optimizing stimuli via information theory | Methodological inspiration for population-level hypothesis testing |
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ The theoretical derivation of the information gap and the concept of the surrogate posterior are original; however, the experimental paradigm itself (multi-context prior manipulation) is not entirely new.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Simulation validation is comprehensive (two neuron models, multiple parameters, multiple contrast levels), but prospective validation with real multi-context experiments is absent.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ The logical progression from intuition to theory to experiment is exceptionally clear, with excellent figure design and consistent notation.
-- **Value**: ⭐⭐⭐⭐ Provides an actionable theoretical tool for a fundamental debate in computational neuroscience, though impact is limited by the scale of the field.
+- Novelty: ⭐⭐⭐⭐ Analytical info gap and proxy posterior concepts are highly original.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive simulations, but lacks prospective real-world validation.
+- Writing Quality: ⭐⭐⭐⭐⭐ Extremely clear logic from intuition to theory to experiment.
+- Value: ⭐⭐⭐⭐ Provides an actionable theoretical tool for a fundamental debate in neuroscience.
 
 <!-- RELATED:START -->
 
@@ -148,11 +149,11 @@ Under a single context (uniform prior), the theoretical information gap is predi
 
 ## Related Papers
 
+- [\[ACL 2025\] Entropy-UID: A Method for Optimizing Information Density](../../ACL2025/others/entropy-uid_a_method_for_optimizing_information_density.md)
+- [\[ICLR 2026\] Homeostatic Adaptation of Optimal Population Codes under Metabolic Stress](homeostatic_adaptation_of_optimal_population_codes_under_metabolic_stress.md)
 - [\[ICLR 2026\] Probabilistic Kernel Function for Fast Angle Testing](probabilistic_kernel_function_for_fast_angle_testing.md)
+- [\[ICLR 2026\] OSIRIS: Bridging Analog Circuit Design and Machine Learning with Scalable Dataset Generation](osiris_bridging_analog_circuit_design_and_machine_learning_with_scalable_dataset.md)
 - [\[AAAI 2026\] DeepRWCap: Neural-Guided Random-Walk Capacitance Solver for IC Design](../../AAAI2026/others/deeprwcap_neural-guided_random-walk_capacitance_solver_for_ic_design.md)
-- [\[ICLR 2026\] Characterizing and Optimizing the Spatial Kernel of Multi Resolution Hash Encodings](characterizing_and_optimizing_the_spatial_kernel_of_multi_resolution_hash_encodi.md)
-- [\[ICLR 2026\] Disentangling Shared and Private Neural Dynamics with SPIRE: A Latent Modeling Framework for Deep Brain Stimulation](disentangling_shared_and_private_neural_dynamics_with_spire_a_latent_modeling_fr.md)
-- [\[ICLR 2026\] DA-AC: Distributions as Actions — A Unified RL Framework for Diverse Action Spaces](distributions_as_actions_a_unified_framework_for_diverse_action_spaces.md)
 
 </div>
 

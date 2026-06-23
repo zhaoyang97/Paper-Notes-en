@@ -2,70 +2,79 @@
 title: >-
   [Paper Note] A Representer Theorem for Hawkes Processes via Penalized Least Squares Minimization
 description: >-
-  [ICLR 2026][Hawkes process] This paper establishes a novel representer theorem for estimating triggering kernels of linear multivariate Hawkes processes within the RKHS framework…
+  [ICLR 2026][Others][RKHS] A new representer theorem is established for estimating triggering kernels in linear multivariate Hawkes processes within an RKHS framework. It proves that the optimal estimator is represented as a linear combination of equivalent kernels at data points with dual coefficients analytically equal to 1, eliminating the ne
 tags:
-  - "ICLR 2026"
-  - "Hawkes process"
-  - "representer theorem"
-  - "RKHS"
-  - "Fredholm integral equation"
-  - "nonparametric estimation"
+  - ICLR 2026
+  - Others
+  - RKHS
 date: 2026-05-08
-content_hash: f827f52d8e555ec6
+content_hash: 26b2b575e19b4500
 ---
+**A Representer Theorem for Hawkes Processes via Penalized Least Squares Minimization**
 
-# A Representer Theorem for Hawkes Processes via Penalized Least Squares Minimization
-
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2510.08916](https://arxiv.org/abs/2510.08916)  
 **Code**: None  
-**Area**: Point Processes / Kernel Methods
-**Keywords**: Hawkes process, representer theorem, RKHS, Fredholm integral equation, nonparametric estimation
+**Area**: Point Processes / Kernel Methods  
+**Keywords**: Hawkes Processes, Representer Theorem, RKHS, Fredholm Integral Equations, Non-parametric Estimation  
 
 ## TL;DR
-This paper establishes a novel representer theorem for estimating triggering kernels of linear multivariate Hawkes processes within the RKHS framework, proving that the optimal estimator admits a finite representation as a linear combination of equivalent kernels evaluated at data points, with all dual coefficients analytically equal to 1. This eliminates the need to solve a dual optimization problem, enabling efficient and scalable nonparametric estimation.
+A new representer theorem is established for estimating triggering kernels in linear multivariate Hawkes processes within an RKHS framework. It proves that the optimal estimator is represented as a linear combination of equivalent kernels at data points with dual coefficients analytically equal to 1, eliminating the need for dual optimization and enabling scalable non-parametric estimation.
 
 ## Background & Motivation
 
-**Background**: Kernel methods enable nonparametric function estimation via RKHS, and representer theorems reduce infinite-dimensional optimization to finite-dimensional problems. Recent work has extended kernel methods to intensity function estimation for point processes; Bonnet & Sangnier (2025) derived a representer theorem for Hawkes processes but relied on discretization approximations.
+**Background**: Kernel methods implement non-parametric function estimation via RKHS, with representer theorems transforming infinite-dimensional optimization into finite-dimensional problems. Recently, these methods have been extended to intensity function estimation of point processes, with Bonnet & Sangnier (2025) deriving a representer theorem for Hawkes processes based on discretization approximations.
 
-**Limitations of Prior Work**: The approach of Bonnet & Sangnier requires solving a nonlinear optimization problem to obtain dual coefficients, whose dimensionality grows with the data size, making the method computationally infeasible at scale. Furthermore, it relies on discretized approximations of the likelihood/least-squares loss.
+**Limitations of Prior Work**: Bonnet & Sangnier's method requires solving a non-linear optimization problem to obtain dual coefficients, where the dimensionality scales with the data volume, making it computationally infeasible for large-scale data. Moreover, it relies on discretization approximations of the likelihood or least-squares loss.
 
-**Key Challenge**: The loss function for Hawkes processes involves integrals of the intensity over the observation domain and violates the independence assumptions underlying classical representer theorems. Exact variational analysis, in turn, leads to coupled systems of integral equations.
+**Key Challenge**: The loss function of a Hawkes process involves the integral of the intensity function over the observation domain and violates independence assumptions, rendering classical representer theorems inapplicable. Precise variational analysis faces complex systems of simultaneous integral equations.
 
-**Goal**: To establish a representer theorem for an exact, non-approximate penalized least-squares formulation for linear Hawkes processes, enabling scalable nonparametric triggering kernel estimation.
+**Goal**: Establish a representer theorem for a non-approximate penalized least-squares formulation of linear Hawkes processes to achieve scalable non-parametric triggering kernel estimation.
 
-**Key Insight**: Leveraging path-integral representations and variational analysis, the paper derives exact variational equations directly in the continuous domain, revealing that the quadratic structure of the least-squares loss causes all dual coefficients to be automatically equal to 1.
+**Key Insight**: By utilizing path integral representations and variational analysis, exact variational equations are derived directly in the continuous domain. The quadratic structure of the least-squares loss causes the dual coefficients to automatically equal 1.
 
-**Core Idea**: The quadratic structure of the least-squares loss in RKHS causes all dual coefficients in the representer theorem for Hawkes processes to be analytically fixed at 1, eliminating the need for dual optimization.
+**Core Idea**: The quadratic structure of the least-squares loss in RKHS ensures that the dual coefficients in the representer theorem for Hawkes processes are analytically fixed to 1, removing the need for dual optimization.
 
 ## Method
 
 ### Overall Architecture
-For a linear multivariate Hawkes process $\lambda_i(t) = \mu_i + \sum_j \int_0^t g_{ij}(t-s) dN_j(s)$, the triggering kernels $g_{ij}$ are estimated by minimizing a penalized least-squares loss within the RKHS. A representer theorem is derived via variational analysis, and equivalent kernels are approximated using random feature maps to yield an efficient estimator.
+The objective is to estimate triggering kernels for linear multivariate Hawkes processes, where the intensity function is $\lambda_i(t) = \mu_i + \sum_j \int_0^t g_{ij}(t-s) dN_j(s)$. Here $\mu_i$ is the baseline intensity and $g_{ij}$ characterizes the excitation of type $i$ events by type $j$. Each $g_{ij}$ is embedded in a Reproducing Kernel Hilbert Space (RKHS), and infinite-dimensional optimization is performed on the penalized least-squares loss. The pipeline consists of three steps: exact continuous-domain variational analysis of the loss to derive a representer theorem (discovering dual coefficients are identically 1); using Random Feature mappings to solve the resulting Fredholm integral equations in closed form; and reduction to a single matrix inversion whose size is independent of the data volume.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Event Sequence + Penalized Least Squares Loss<br/>(Triggering kernel g_ij embedded in RKHS)"] --> B["Continuous-domain Variational Analysis<br/>Set functional derivative of loss to zero"]
+    B --> C["Simultaneous Fredholm Integral Equations of the Second Kind"]
+    C --> D["New Representer Theorem<br/>Finite-dim kernel expansion · Dual coefficients analytically 1"]
+    D --> E["Closed-form Construction of Equivalent Kernels<br/>Degenerate kernels (Random Features) solve Fredholm eq."]
+    E --> F["Efficient Scalable Estimator<br/>Single MU×MU matrix inversion · Independent of data volume"]
+    F --> G["Estimated Triggering Kernels ĝ_ij + Baseline Intensity μ̂_i"]
+```
 
 ### Key Designs
 
-1. **Novel Representer Theorem (Theorem 1)**:
+**1. New Representer Theorem: Reducing infinite-dimensional optimization to finite dimensions with dual coefficients analytically fixed to 1**
 
-    - **Function**: Proves that the optimal triggering kernel estimator admits a finite-dimensional representation with all dual coefficients equal to 1.
-    - **Mechanism**: Setting the functional derivative of the penalized least-squares objective to zero yields a coupled system of Fredholm integral equations. The optimal estimator takes the form $\hat{g}_{ij}(s) = \sum_{n \in \mathcal{N}_i} h_j(s, t_n) - \hat{\mu}_i \int h_j(s,t) dt$, where the equivalent kernel $h_j$ is defined by a system of Fredholm integral equations of the second kind.
-    - **Design Motivation**: The quadratic structure of the least-squares loss—unlike the nonlinearity of the log-likelihood—linearizes the variational equations, making the dual coefficients analytically equal to 1. This is the key theoretical insight.
+Hawkes processes fail standard representer theorems due to the integral of the intensity function and the violation of independence. This paper avoids the discretization-then-optimization route. By taking the functional derivative of the penalized least-squares objective in the continuous domain, the authors obtain simultaneous Fredholm integral equations of the second kind. The optimal estimator takes the form:
 
-2. **Closed-Form Construction of Equivalent Kernels (Proposition 3)**:
+$$\hat{g}_{ij}(s) = \sum_{n \in \mathcal{N}_i} h_j(s, t_n) - \hat{\mu}_i \int h_j(s,t)\, dt,$$
 
-    - **Function**: Approximates the solution to the coupled Fredholm integral equations using degenerate kernels (random feature maps).
-    - **Mechanism**: Using $M$ random feature maps with $k(s,s') = \phi(s)^\top \phi(s')$, the equivalent kernel takes the form $h_j(s,s') = \phi(s)^\top [(\frac{1}{\gamma}I_{MU} + \Xi)^{-1} \tilde{\phi}(s')]$, requiring only the inversion of a matrix of size $MU \times MU$, which is independent of the data size.
-    - **Design Motivation**: This avoids the numerical errors of Riemann approximations, as all integrals can be computed in closed form under the random feature map.
+where $h_j$ is the equivalent kernel. The core insight is that the quadratic nature of the least-squares loss linearizes the variational equations, causing dual coefficients—which usually require optimization—to be analytically fixed to 1. This allows coefficients to be "calculated" rather than "optimized," serving as the source of efficiency.
 
-3. **Efficient and Scalable Estimator**:
+**2. Closed-form construction of equivalent kernels: Solving Fredholm integral equations via Random Feature mapping**
 
-    - **Function**: Reduces the entire estimation procedure to additive matrix operations and a single matrix inversion.
-    - **Mechanism**: The matrix $\Xi$ is constructed via incremental matrix additions over the data, and the matrix to be inverted has size $MU \times MU$ (where $M$ is the feature dimension and $U$ is the event dimension), independent of the total event count $N(T)$.
-    - **Design Motivation**: In contrast to Bonnet & Sangnier, which requires solving an $O(N(T))$-dimensional nonlinear optimization, the core computational cost of the proposed method is decoupled from the data size.
+Equivalent kernels $h_j$ are implicitly defined by integral equations. To avoid discretization errors, degenerate kernels (Random Feature mapping) approximate the RKHS kernel: $k(s,s') = \phi(s)^\top \phi(s')$. The equivalent kernel is then derived in closed form:
+
+$$h_j(s,s') = \phi(s)^\top \Big[\big(\tfrac{1}{\gamma}I_{MU} + \Xi\big)^{-1} \tilde{\phi}(s')\Big].$$
+
+This allows all integrals in the representer theorem to be calculated analytically, circumventing grid discretization and error accumulation. The computational cost is reduced to inverting an $MU \times MU$ matrix, where $M$ is feature dimension and $U$ is event types, independent of data volume.
+
+**3. Efficient Scalable Estimator: Decoupling core computation from data volume**
+
+The estimation process is reduced to additive matrix operations and a single matrix inversion. The matrix $\Xi$ is constructed via incremental additions over the data, while the inversion dimension is always $MU \times MU$, which is independent of the total number of events $N(T)$. Unlike prior work which scales $O(N(T))$, this method decouples computation from data volume, providing a significant advantage for large datasets.
 
 ### Loss & Training
-Penalized least-squares loss with RKHS regularization $\frac{1}{\gamma}\sum \|g_{ij}\|_{\mathcal{H}_k}^2$. The baseline intensity $\mu_i$ also admits a closed-form solution (Proposition 2). Random Fourier features are used for kernel approximation.
+The objective is the penalized least-squares loss plus an RKHS regularization term $\frac{1}{\gamma}\sum \|g_{ij}\|_{\mathcal{H}_k}^2$. The baseline intensity $\mu_i$ is also given as a closed-form solution via variational analysis. Random Fourier Features are utilized for kernel approximation.
 
 ## Key Experimental Results
 
@@ -73,58 +82,59 @@ Penalized least-squares loss with RKHS regularization $\frac{1}{\gamma}\sum \|g_
 
 **Prediction accuracy and computational efficiency on synthetic data:**
 
-| Method | Prediction Error↓ | Computation Time↓ | Scalability |
+| Method | Prediction Error ↓ | Compute Time ↓ | Scalability |
 |------|---------|---------|---------|
-| Ours (RFF) | Competitive | **Significantly faster** | $O(M^3 U^3 + NM^2U)$ |
-| Bonnet & Sangnier | Competitive | Slow (requires dual optimization) | $O(N^3)$ |
+| Ours (RFF) | Competitive | **Significantly Faster** | $O(M^3 U^3 + NM^2U)$ |
+| Bonnet & Sangnier | Competitive | Slow (Requires Dual Opt) | $O(N^3)$ |
 
 ### Ablation Study
 
 | Configuration | Description |
 |------|------|
-| Increasing $M$ (feature dimension) | Higher accuracy, increased computation |
-| Increasing $\gamma$ (regularization) | Bias–variance tradeoff |
-| Increasing $N$ (data size) | Efficiency advantage of the proposed method becomes more pronounced |
+| Increase M (Feature dim) | Accuracy improves, computation increases |
+| Increase $\gamma$ (Regularization) | Bias-variance trade-off |
+| Increase N (Data volume) | Efficiency advantage of Ours becomes more pronounced |
 
 ### Key Findings
-- The theoretical result that all dual coefficients equal 1 is confirmed empirically; eliminating dual optimization yields substantial reductions in computation time.
-- The random feature map approximation enables closed-form computation of all integrals, avoiding the error accumulation associated with discretization.
-- On large-scale datasets, the proposed method is orders of magnitude faster than Bonnet & Sangnier while maintaining competitive prediction accuracy.
-- The matrix to be inverted has size $MU \times MU$, independent of the data size, which is the key to scalability.
+- Theoretical results for dual coefficients equaling 1 were verified, significantly reducing compute time by removing dual optimization.
+- Random features allow closed-form integration, avoiding discretization errors.
+- On large datasets, the method is several orders of magnitude faster than prior work while maintaining accuracy.
+- Matrix inversion size is $MU \times MU$, independent of data volume.
 
 ## Highlights & Insights
-- **Hidden Structure of Least Squares**: The quadratic nature of the least-squares loss—rather than the nonlinearity of the log-likelihood—linearizes the variational equations, automatically setting the dual coefficients to 1. This is an elegant theoretical finding: the choice of loss function affects not only statistical properties but also the computational structure of the representer theorem.
-- **Two-Stage Dimensionality Reduction**: The representer theorem reduces the problem from function space to a kernel expansion, and random feature maps further reduce the kernel expansion to a finite-dimensional vector. These two steps make otherwise intractable nonparametric estimation efficient.
-- **Application of Integral Equation Theory**: The degenerate kernel method for Fredholm integral equations of the second kind represents a modern application of classical mathematics.
+- **Hidden Structure of Least Squares**: The quadratic nature of the loss—unlike non-linear log-likelihood—linearizes the variational equations, making dual coefficients automatically 1.
+- **Double Dimensionality Reduction**: The theorem reduces function space to kernel expansion, and random features reduce that to finite-dimensional vectors.
+- **Integral Equation Theory**: Degenerate kernel methods for Fredholm equations of the second kind are uniquely applied to point processes.
 
 ## Limitations & Future Work
-- Applicable only to linear Hawkes processes (identity link function); inhibitory interactions cannot be modeled.
-- The estimated triggering kernels are not guaranteed to be non-negative, potentially yielding negative conditional intensities.
-- The approximation quality of random feature maps depends on the choice of feature dimension $M$.
-- Theoretical analysis is restricted to RKHS kernels on a one-dimensional time domain; extensions to spatiotemporal settings remain to be explored.
+- Restricted to linear Hawkes processes; cannot handle inhibitory interactions.
+- Estimated kernels are not guaranteed to be non-negative.
+- Approximation quality is dependent on the random feature dimension $M$.
+- Theoretical analysis is restricted to 1D time domains.
 
 ## Related Work & Insights
-- **vs. Bonnet & Sangnier 2025**: Their approach uses a discretized approximation of the least-squares/likelihood objective and obtains a representer theorem requiring dual optimization; the proposed method employs exact variational analysis and achieves a more elegant result that requires no dual optimization.
-- **vs. Flaxman et al. 2017**: Flaxman et al. extend the representer theorem to point processes but only for univariate intensity functions; the present work handles triggering kernels in multivariate Hawkes processes, introducing the additional challenge of coupled integral equations.
-- **vs. Classical Representer Theorems**: Classical representer theorems require optimization over dual coefficients; this work demonstrates that under certain loss functions the dual coefficients can be analytically fixed, representing a new member of the representer theorem family.
+- **vs Bonnet & Sangnier 2025**: They require dual optimization for discretized least-squares; this work uses exact variational analysis to prove dual coefficients are 1.
+- **vs Flaxman et al. 2017**: Flaxman handled univariate intensities; this work addresses multivariate triggering kernels and simultaneous integral equations.
+- **vs Classical Representer Theorem**: While classical coefficients require optimization, this version proves they can be fixed analytically under specific losses.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ The finding that all dual coefficients equal 1 is an elegant theoretical contribution and constitutes the first representer theorem for non-approximate penalized least-squares estimation of Hawkes processes.
-- Experimental Thoroughness: ⭐⭐⭐ Validation is limited to synthetic data; experiments on real-world datasets are absent.
-- Writing Quality: ⭐⭐⭐⭐ Mathematical derivations are rigorous and complete, though the high notational density limits readability.
-- Value: ⭐⭐⭐⭐ Provides both theoretical foundations and an efficient algorithm for nonparametric estimation of Hawkes processes.
-
-<!-- RELATED:START -->
-
-<div class="related-papers" markdown="1">
+- Novelty: ⭐⭐⭐⭐⭐ The analytical discovery of dual coefficients being 1 is an elegant contribution.
+- Experimental Thoroughness: ⭐⭐⭐ Validated on synthetic data but lacks real-world evaluation.
+- Writing Quality: ⭐⭐⭐⭐ Rigorous derivation, though symbol density is high.
+- Value: ⭐⭐⭐⭐ Provides a scalable foundation for non-parametric Hawkes process estimation.
 
 ## Related Papers
 
+<!-- RELATED:START -->
+<!-- RELATED:END -->
+
+## Related Papers
+
+- [\[CVPR 2025\] PLeaS: Merging Models with Permutations and Least Squares](../../CVPR2025/others/pleas_-_merging_models_with_permutations_and_least_squares.md)
 - [\[ICLR 2026\] Revisiting Sharpness-Aware Minimization: A More Faithful and Effective Implementation](revisiting_sharpness-aware_minimization_a_more_faithful_and_effective_implementa.md)
-- [\[NeurIPS 2025\] Sharpness-Aware Minimization with Z-Score Gradient Filtering](../../NeurIPS2025/others/sharpness-aware_minimization_with_z-score_gradient_filtering.md)
-- [\[NeurIPS 2025\] Addressing Mark Imbalance in Integration-free Neural Marked Temporal Point Processes](../../NeurIPS2025/others/addressing_mark_imbalance_in_integrationfree_neural_marked_t.md)
-- [\[ICLR 2026\] Noise-Aware Generalization: Robustness to In-Domain Noise and Out-of-Domain Generalization](noise-aware_generalization_robustness_to_in-domain_noise_and_out-of-domain_gener.md)
-- [\[ICLR 2026\] Noisy-Pair Robust Representation Alignment for Positive-Unlabeled Learning](noisy-pair_robust_representation_alignment_for_positive-unlabeled_learning.md)
+- [\[CVPR 2026\] Neural Mixture Density Processes](../../CVPR2026/others/neural_mixture_density_processes.md)
+- [\[ICML 2025\] Discrepancy Minimization in Input-Sparsity Time](../../ICML2025/others/discrepancy_minimization_in_input-sparsity_time.md)
+- [\[ICLR 2026\] PriorGuide: Test-Time Prior Adaptation for Simulation-Based Inference](priorguide_test-time_prior_adaptation_for_simulation-based_inference.md)
 
 </div>
 

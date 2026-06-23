@@ -2,181 +2,135 @@
 title: >-
   [Paper Note] Personalized Collaborative Learning with Affinity-Based Variance Reduction
 description: >-
-  [ICLR 2026][Optimization][Personalized Federated Learning] This paper proposes AffPCL, a personalized collaborative learning framework that enables heterogeneous agents to collaboratively learn personalized solutions wit…
+  [ICLR 2026][Optimization & Theory][Paper Note] Proposes the personalized collaborative learning framework AffPCL. Through bias correction and importance correction mechanisms, heterogeneous agents collaboratively learn personalized solutions without prior knowledge, achieving an adaptive convergence rate of $O(t^{-1} \cdot \max\{n^{-1}, \delta\})$. This results in
 tags:
-  - "ICLR 2026"
-  - "Optimization"
-  - "Personalized Federated Learning"
-  - "Collaborative Learning"
-  - "Variance Reduction"
-  - "Heterogeneity"
-  - "Affinity-Based Acceleration"
+  - ICLR 2026
+  - Optimization & Theory
 date: 2026-05-08
-content_hash: e9864c0f5f203f9a
+content_hash: 966c241e1f87b032
 ---
-
 # Personalized Collaborative Learning with Affinity-Based Variance Reduction
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2510.16232](https://arxiv.org/abs/2510.16232)  
 **Code**: None  
-**Area**: Optimization
+**Area**: Optimization  
 **Keywords**: Personalized Federated Learning, Collaborative Learning, Variance Reduction, Heterogeneity, Affinity-Based Acceleration
 
 ## TL;DR
 
-This paper proposes AffPCL, a personalized collaborative learning framework that enables heterogeneous agents to collaboratively learn personalized solutions without prior knowledge, via bias correction and importance correction mechanisms. It achieves an adaptive convergence rate of $O(t^{-1} \cdot \max\{n^{-1}, \delta\})$—yielding linear speedup when agents are similar, and no worse than independent learning when they are dissimilar.
+Proposes the personalized collaborative learning framework AffPCL. Through bias correction and importance correction mechanisms, heterogeneous agents collaboratively learn personalized solutions without prior knowledge, achieving an adaptive convergence rate of $O(t^{-1} \cdot \max\{n^{-1}, \delta\})$. This results in linear acceleration when agents are similar and performance no worse than independent learning when differences are large.
 
 ## Background & Motivation
 
-### State of the Field
+**Background**: Multi-agent learning faces a fundamental tension—**collaborative efficiency vs. personalization needs**. Collaborative systems typically adopt the federated learning (FL) paradigm, where agents jointly learn a unified solution via a central server. However, in the presence of heterogeneity, this unified solution is often suboptimal or even irrelevant for individual agents, making personalization a necessity for heterogeneous agent collaboration.
 
-**Background**: Multi-agent learning faces a fundamental tension: **collaboration efficiency vs. personalization needs**. In the presence of heterogeneity, the unified solution pursued by Federated Learning (FL) may be suboptimal or even irrelevant for individual agents. This issue is widespread in practice:
+**Limitations of Prior Work**: Personalized recommendation for different users, autonomous driving for local road conditions, robotics for varying environments, medical diagnosis for diverse patient groups, and LLM agents for specific user styles—all these scenarios demand simultaneous "collaboration and personalization."
 
-### Limitations of Prior Work
+**Goal**: (1) Find a **fully personalized** solution $x^i_*$ for each agent; (2) achieve **performance gain** through collaboration; (3) **adapt** to unknown heterogeneity—accelerating when agents are similar and not degrading when they differ, all without prior knowledge or parameter tuning.
 
-**Limitations of Prior Work**: Personalized recommendation requires adaptation to different users.
-
-### Root Cause
-
-**Key Challenge**: Autonomous driving requires adaptation to local traffic conditions.
-
-### Solution Direction
-
-**Solution Direction**: Medical diagnosis requires adaptation to different patient populations.
-
-### Additional Notes
-
-**Additional Notes**: LLM agents require adaptation to specific user styles.
-
-An ideal personalized collaborative learning algorithm should simultaneously satisfy three objectives:
-1. Find a **fully personalized** solution for each agent.
-2. Achieve **performance gains** through collaboration.
-
-**Adaptively** handle unknown heterogeneity—accelerate when agents are similar, and not degrade when they are dissimilar.
-
-Shortcomings of existing approaches:
-
-### Additional Notes
-
-**Additional Notes**: **Classic FL**: Learns only a unified solution, with no personalization guarantee.
-
-### Additional Notes
-
-**Additional Notes**: **Regularization/mixture methods**: Provide only partial personalization; the trade-off may be heuristic.
-
-### Additional Notes
-
-**Additional Notes**: **Clustering methods**: No personalization within clusters; sensitive to hyperparameters.
-
-### Additional Notes
-
-**Additional Notes**: **FL + fine-tuning**: Suboptimal rates; small initialization error from FL vanishes quickly.
-
-### Additional Notes
-
-**Additional Notes**: **Global + local decomposition**: Requires specific structural assumptions; the independent learning component dominates overall complexity.
-
-### Additional Notes
-
-**Additional Notes**: **Selective collaboration** (Chayti et al., Even et al.): Collaborates only with similar agents, requiring prior knowledge of heterogeneity or a bias estimation oracle.
+**Key Insight**: Existing methods fall short: classic FL only learns a unified solution with no personalization guarantees; regularization/mixture methods (e.g., Ditto) provide only partial personalization and rely on heuristic trade-offs; clustering methods lack personalization within clusters and are sensitive to hyperparameters; FL + fine-tuning yields suboptimal rates (small initialization errors from FL vanish quickly, with independent learning variance dominating finite-time complexity); global + local decomposition requires specific structural assumptions and is limited by the complexity of the independent learning part. Selective collaboration (Chayti et al., Even et al.), the closest to this work, only collaborates with similar agents and requires either heterogeneity priors or bias estimation oracles. This work aims to allow any heterogeneous agents to collaborate and learn their respective personalized solutions without relying on any priors.
 
 ## Method
 
 ### Overall Architecture
 
-Consider a general multi-agent linear system with $n$ agents:
+AffPCL models personalized collaborative learning as $n$ agents each solving a stochastic linear system $\bar{A}^i x^i_* = \bar{b}^i$ (satisfying $\text{sym}( \bar{A}^i ) \succ 0$). At each step, each agent obtains noisy observations $A(s^i_t)$ and $b^i(s^i_t)$, where objectives $\bar{b}^i$ and environment distributions $\mu_i$ may differ. The core idea is to let each agent learn its own personalized solution $x^i_*$ while borrowing a shared federated anchor to reduce variance. Two correction mechanisms remove the bias introduced by "borrowing strength," allowing the convergence rate to automatically interpolate between "federated linear acceleration" and "independent learning" based on agent similarity.
 
-$$\bar{A}^i x^i_* = \bar{b}^i, \quad i = 1, ..., n$$
+In a specific update step: each agent first computes its local stochastic update direction $g^i_t(x^i_t)$. Simultaneously, a shared anchor $x^0$ is maintained, and the central server aggregates information to obtain a low-variance federated direction $g^0_t(x^0_t)$. During aggregation, importance re-weighting is applied for samples from different environment distributions, and a personalized bias correction term $g^{0\to i}_t(x^0_t)$ is subtracted to project the unified direction back onto agent $i$'s own direction. The three components combine into the corrected update direction to obtain $x^i_{t+1}$. Repeating this step allows the affinity-adaptive convergence rate to emerge naturally.
 
-where $\text{sym}(\bar{A}^i) \succ 0$. Each agent can only access stochastic observations $A(s^i_t)$ and $b^i(s^i_t)$. Agents may have different objectives (objective heterogeneity) and environment distributions (environment heterogeneity).
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    OBS["Agent i's Noisy Observation<br/>A(s_t^i), b^i(s_t^i)"] --> LOC["Local Stochastic Update Direction<br/>g_t^i(x_t^i)"]
+    OBS --> AGG["Shared Federated Anchor x^0 Aggregation<br/>Low-variance Direction g_t^0(x_t^0)"]
+    AGG --> IMP["Importance Correction<br/>Re-weight others' samples by environment distribution ratios"]
+    IMP --> BIAS["Personalized Bias Correction<br/>Subtract g_t^(0→i), project back to own direction"]
+    LOC --> COMB["Combined Update Direction<br/>g̃_t^i = g_t^i + g_t^0 − g_t^(0→i)"]
+    BIAS --> COMB
+    COMB --> UPD["Update Personalized Solution<br/>x_(t+1)^i = x_t^i − α_t · g̃_t^i"]
+    UPD -->|"Loop t steps"| OBS
+    UPD --> RATE["Emergence: Affinity-Adaptive Convergence Rate<br/>O(t^-1 · max{n^-1, δ})"]
+```
 
 ### Key Designs
 
-1. **Personalized Bias Correction**:
+**1. Personalized Bias Correction: Enabling Fully Personalized Updates to Benefit from Federated Variance Reduction**
 
-    - In FL, bias correction is shared across all agents (aligned to a unified direction), enabling federated variance reduction.
-    - In personalized learning, bias correction must be tailored to each agent's unique direction, which prevents federated variance reduction.
-    - Core update rule of AffPCL: $x^i_{t+1} = x^i_t - \alpha_t \tilde{g}^i_t$
-    - Where $\tilde{g}^i_t = g^i_t(x^i_t) + g^0_t(x^0_t) - g^{0 \to i}_t(x^0_t)$
-    - Three components: local update + federated aggregation − personalized bias correction.
-    - **Design Motivation**: Even when learning fully personalized solutions, variance reduction can still be obtained via federated aggregation.
+Federated learning reduces stochastic gradient variance to $1/n$ because all agents move toward a unified solution, canceling out noise during aggregation. Once each agent moves toward its unique $x^i_*$, simple aggregation introduces others' "target bias," causing variance reduction to fail. AffPCL solves this by maintaining a shared anchor variable $x^0$ and writing the update as $x^i_{t+1} = x^i_t - \alpha_t \tilde{g}^i_t$, where the corrected direction
 
-2. **Importance Correction**:
+$$\tilde{g}^i_t = g^i_t(x^i_t) + g^0_t(x^0_t) - g^{0\to i}_t(x^0_t)$$
 
-    - Handles environment heterogeneity (different agents have different environment distributions $\mu_i$).
-    - Adjusts for bias introduced by differing environment distributions via importance weights.
+consists of three parts: the local stochastic update $g^i_t(x^i_t)$ ensures movement toward the personalized solution, the federated aggregation term $g^0_t(x^0_t)$ provides a low-variance shared signal, and the personalized bias correction term $g^{0\to i}_t(x^0_t)$ projects the "unified direction" back to agent $i$'s own direction, canceling the systematic bias introduced by aggregation. Thus, the variance reduction from aggregation is preserved while the fixed point remains $x^i_*$ rather than a unified solution.
 
-3. **Affinity Adaptation**:
+**2. Importance Correction: Correcting Bias from Different Environment Distributions**
 
-    - Heterogeneity measure $\delta \in [0, 1]$, where $\delta = 0$ denotes homogeneity and larger values indicate stronger heterogeneity.
-    - Convergence rate: $O(t^{-1} \cdot \max\{n^{-1}, \delta\})$
-    - When $\delta \ll n^{-1}$: achieves FL's linear speedup $O(t^{-1} n^{-1})$.
-    - When $\delta \gg n^{-1}$: degrades to the independent learning rate $O(t^{-1})$.
-    - Intermediate cases are interpolated automatically, without prior knowledge.
+In addition to target heterogeneity, agents may sample from different environment distributions $\mu_i$. Averaging others' observations corresponds to "others' environments," introducing a second type of bias. AffPCL applies importance weights during aggregation, re-weighting samples by the ratio of environment distributions. This ensures the borrowed observations are unbiased for agent $i$'s environment $\mu_i$. An asynchronous variant is provided where importance weights are estimated using lagged statistics, relaxing the requirement for strict synchronous communication.
+
+**3. Affinity-Based Adaptivity: Acceleration for Similar Agents, No Degradation for Dissimilar Ones, Without Priors**
+
+The algorithm uses a heterogeneity measure $\delta \in [0,1]$ to describe group similarity, where $\delta = 0$ is homogeneous and larger $\delta$ indicates higher heterogeneity. AffPCL's convergence rate is $O\!\left(t^{-1}\cdot\max\{n^{-1},\,\delta\}\right)$. This $\max$ form is key to adaptivity: when $\delta \ll n^{-1}$ (high similarity), the rate becomes $O(t^{-1}n^{-1})$, achieving $n$-fold linear acceleration. When $\delta \gg n^{-1}$ (high heterogeneity), the rate becomes $O(t^{-1})$, matching independent learning. The process requires no prior knowledge of $\delta$ or bias estimation oracles—similarity is automatically handled by the bias-corrected aggregation.
 
 ### Loss & Training
 
-- Step size strategy: $\alpha \equiv \frac{\ln t}{\lambda t}$ (a variant of constant step size).
-- Federated variance reduction is activated by automatically detecting inter-agent affinity.
-- Progressive paper organization: simplified FL → personalization → adaptivity → environment heterogeneity → full setting.
+Training utilizes a near-constant step size decay strategy $\alpha_t \equiv \frac{\ln t}{\lambda t}$ (where $\lambda$ is the strong monotonicity constant) to match the $O(t^{-1})$ convergence analysis. The complexity is introduced layer by layer: starting from simplified homogeneous FL, then personalized bias correction, affinity adaptivity, importance correction for environmental heterogeneity, and finally a full setting with asynchronous communication.
 
 ## Key Experimental Results
 
 ### Main Results
 
-The paper adopts a progressive theoretical analysis. Core theoretical results:
+Core theoretical results based on progressive analysis:
 
-| Setting | Convergence Rate | Note |
-|---------|-----------------|------|
-| FL (homogeneous) | $\tilde{O}(\kappa^2 t^{-1} n^{-1})$ | Baseline: linear speedup |
-| Independent learning | $O(t^{-1})$ | Baseline: no collaboration |
+| Setting | Convergence Rate | Description |
+|------|--------|------|
+| FL (Homogeneous) | $\tilde{O}(\kappa^2 t^{-1} n^{-1})$ | Baseline: Linear acceleration |
+| Independent Learning | $O(t^{-1})$ | Baseline: No collaboration |
 | AffPCL | $O(t^{-1} \cdot \max\{n^{-1}, \delta\})$ | Adaptive interpolation |
-| Asynchronous AffPCL | Same + asynchronous importance estimation | Relaxed synchrony requirement |
+| Async AffPCL | Same + Async Importance Estimation | Relaxes synchronization |
 
 ### Ablation Study
 
-| Configuration | Key Metric | Note |
-|--------------|-----------|------|
-| Pure FL vs. AffPCL | FL bias does not diminish with $t$ | FL converges to incorrect solution under heterogeneity |
-| Independent learning vs. AffPCL | AffPCL variance reduction factor $\max\{n^{-1}, \delta\}$ | No worse than independent learning |
-| Selective collaboration vs. AffPCL | AffPCL can achieve speedup even when collaborating with dissimilar agents | The former requires prior knowledge or an oracle |
+| Configuration | Key Metric | Description |
+|------|---------|------|
+| Pure FL vs. AffPCL | FL bias does not decrease with $t$ | FL converges to wrong solution under heterogeneity |
+| Independent vs. AffPCL | AffPCL variance reduction factor $\max\{n^{-1}, \delta\}$ | No worse than independent learning |
+| Selective vs. AffPCL | AffPCL benefits even with dissimilar agents | Former requires priors or oracles |
 
 ### Key Findings
 
-1. **Affinity-based variance reduction**: AffPCL enables variance reduction from federated aggregation via personalized bias correction, even when different agents optimize different objectives.
-2. **Linear speedup for individual agents**: Even if a given agent is dissimilar to all others, it may still benefit from linear speedup, as similarity among other agents yields better aggregated estimates.
-3. **No prior knowledge required**: No need to know the heterogeneity level $\delta$, a bias estimation oracle, or hyperparameter tuning.
-4. **Tight theoretical rates**: Matches known lower bounds in $\kappa$, $t$, and $n$.
+1. **Affinity Variance Reduction**: AffPCL achieves variance reduction from federated aggregation even when agents learn different targets via personalized bias correction.
+2. **Linear Acceleration for Single Agents**: An agent dissimilar to all others can still achieve linear acceleration if other agents are similar to each other, improving the aggregate estimate.
+3. **No Prior Knowledge Required**: Does not require the heterogeneity level $\delta$, bias estimation oracles, or specialized hyperparameter tuning.
+4. **Tight Theoretical Rates**: Matches known lower bounds in terms of $\kappa$, $t$, and $n$.
 
 ## Highlights & Insights
 
-- **Elegant theoretical framework**: Formalizes the tension between personalization and collaboration as a unified learning rate problem, with clear and precise analysis.
-- **Adaptive interpolation**: Smoothly transitions from FL's linear speedup to the independent learning baseline without parameter tuning.
-- **Counterintuitive finding**: Collaborating with dissimilar agents can still be beneficial—challenging the intuition of "only collaborate with similar agents."
-- **Strong generality**: The framework covers supervised learning, reinforcement learning (TD learning), and statistical decision-making.
+- **Elegant Theoretical Framework**: Formalizes the tension between personalization and collaboration as a unified learning rate problem.
+- **Adaptive Interpolation**: Smooth transition from $n$-fold acceleration in FL to the independent learning baseline without manual tuning.
+- **Counter-intuitive Discovery**: Collaborating with dissimilar agents can be beneficial, challenging the intuition of "only collaborate with those like you."
+- **High Generality**: The framework covers supervised learning, reinforcement learning (TD learning), and statistical decision-making.
 
 ## Limitations & Future Work
 
-1. **Linear system assumption**: The core theory is grounded in the linear system $\bar{A}^i x^i_* = \bar{b}^i$; extension to nonlinear deep learning settings requires further investigation.
-2. **Communication efficiency**: The current framework assumes per-step communication; more practical settings should consider intermittent communication and compression.
-3. **One sample per agent**: The assumption of one sample per agent per step is idealized.
-4. **Privacy considerations**: Performance under constraints such as differential privacy is not discussed.
-5. **Experimental scale**: The work is primarily theoretical; large-scale deep learning experiments are limited.
+1. **Linear System Assumption**: Theory is based on $\bar{A}^i x^i_* = \bar{b}^i$; extension to deep learning requires further work.
+2. **Communication Efficiency**: Assumes communication at every step; future work should consider intermittent communication and compression.
+3. **Single Sample per Agent**: The one-sample-per-step setting is idealized.
+4. **Privacy Considerations**: Performance under differential privacy constraints is not discussed.
+5. **Experimental Scale**: Primarily a theoretical work; large-scale deep learning experiments are limited.
 
 ## Related Work & Insights
 
-- **SCAFFOLD** (Karimireddy et al., 2021): Variance reduction in federated learning, but without personalization support.
-- **Ditto** (Li et al., 2021): Achieves partial personalization via regularization.
+- **SCAFFOLD** (Karimireddy et al., 2021): Variance reduction in FL, but lacks personalization.
+- **Ditto** (Li et al., 2021): Partial personalization via regularization.
 - **MAML/Per-FedAvg** (Fallah et al., 2020): FL + fine-tuning strategies.
-- **Chayti et al., Even et al.**: Fully personalized collaborative learning, but requires selective collaboration or prior knowledge.
-- **Insight**: The key to variance reduction in personalized learning lies in identifying and leveraging inter-agent affinity, rather than enforcing consensus.
+- **Chayti et al., Even et al.**: Fully personalized collaborative learning requiring selective collaboration or priors.
+- **Insight**: The key to variance reduction in personalized learning lies in identifying and utilizing affinity between agents rather than forcing consistency.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ (Affinity-driven personalized collaborative learning is an entirely novel perspective)
-- Experimental Thoroughness: ⭐⭐⭐ (Primarily theoretical; empirical validation is relatively limited)
-- Writing Quality: ⭐⭐⭐⭐⭐ (Progressive exposition is exceptionally clear; theory is refined)
-- Value: ⭐⭐⭐⭐ (Provides a new theoretical foundation and practical framework for personalized federated learning)
+- Novelty: ⭐⭐⭐⭐⭐
+- Experimental Thoroughness: ⭐⭐⭐
+- Writing Quality: ⭐⭐⭐⭐⭐
+- Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
 
@@ -184,11 +138,11 @@ The paper adopts a progressive theoretical analysis. Core theoretical results:
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Personalized Subgraph Federated Learning with Differentiable Auxiliary Projections](../../NeurIPS2025/optimization/personalized_subgraph_federated_learning_with_differentiable_auxiliary_projectio.md)
-- [\[AAAI 2026\] pFed1BS: Personalized Federated Learning with Bidirectional Communication Compression via One-Bit Random Sketching](../../AAAI2026/optimization/personalized_federated_learning_with_bidirectional_communication_compression_via.md)
+- [\[CVPR 2026\] Few-for-Many Personalized Federated Learning](../../CVPR2026/optimization/few-for-many_personalized_federated_learning.md)
+- [\[ICML 2026\] CLoVE: Personalized Federated Learning through Clustering of Loss Vector Embeddings](../../ICML2026/optimization/clove_personalized_federated_learning_through_clustering_of_loss_vector_embeddin.md)
 - [\[ICML 2026\] TPV: Parameter Perturbations Through the Lens of Test Prediction Variance](../../ICML2026/optimization/tpv_parameter_perturbations_through_the_lens_of_test_prediction_variance.md)
-- [\[ICLR 2026\] Incentives in Federated Learning with Heterogeneous Agents](incentives_in_federated_learning_with_heterogeneous_agents.md)
-- [\[NeurIPS 2025\] Sharper Convergence Rates for Nonconvex Optimisation via Reduction Mappings](../../NeurIPS2025/optimization/sharper_convergence_rates_for_nonconvex_optimisation_via_reduction_mappings.md)
+- [\[AAAI 2026\] Personalized Federated Learning with Bidirectional Communication Compression via One-Bit Random Sketching](../../AAAI2026/optimization/personalized_federated_learning_with_bidirectional_communication_compression_via.md)
+- [\[NeurIPS 2025\] Personalized Subgraph Federated Learning with Differentiable Auxiliary Projections](../../NeurIPS2025/optimization/personalized_subgraph_federated_learning_with_differentiable_auxiliary_projectio.md)
 
 </div>
 

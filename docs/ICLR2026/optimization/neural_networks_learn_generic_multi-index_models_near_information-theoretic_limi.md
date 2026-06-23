@@ -2,129 +2,121 @@
 title: >-
   [Paper Note] Neural Networks Learn Generic Multi-Index Models Near Information-Theoretic Limit
 description: >-
-  [ICLR 2026][Optimization][Multi-Index Models] This paper proves that, under generic non-degeneracy assumptions, standard two-layer neural networks trained via hierarchical gradient descent can learn generic Gaussian Mult…
+  [ICLR 2026][Optimization & Theory][Paper Note] This paper proves that under generic non-degenerate assumptions, standard two-layer neural networks trained via layer-wise gradient descent can learn generic Gaussian Multi-Index models $f(\bm{x})=g(\bm{U}\bm{x})$ using $\tilde{O}(d)$ samples and $\tilde{O}(d^2)$ time. Both sample and time complexities reach informatio
 tags:
-  - "ICLR 2026"
-  - "Optimization"
-  - "Multi-Index Models"
-  - "Information-Theoretic Lower Bounds"
-  - "Feature Learning"
-  - "Power Iteration"
-  - "Two-Layer Neural Networks"
+  - ICLR 2026
+  - Optimization & Theory
 date: 2026-05-08
-content_hash: 19d4cc6ab401e5ac
+content_hash: f10e6f2a3898ed71
 ---
-
 # Neural Networks Learn Generic Multi-Index Models Near Information-Theoretic Limit
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2511.15120](https://arxiv.org/abs/2511.15120)  
 **Code**: None  
-**Area**: Optimization
-**Keywords**: Multi-Index Models, Information-Theoretic Lower Bounds, Feature Learning, Power Iteration, Two-Layer Neural Networks
+**Area**: Optimization  
+**Keywords**: Multi-Index model, Information-theoretic lower bound, Feature learning, Power iteration, Two-layer neural network
 
 ## TL;DR
-This paper proves that, under generic non-degeneracy assumptions, standard two-layer neural networks trained via hierarchical gradient descent can learn generic Gaussian Multi-Index models $f(\bm{x})=g(\bm{U}\bm{x})$ with $\tilde{O}(d)$ samples and $\tilde{O}(d^2)$ time, achieving information-theoretically optimal sample and time complexity. This constitutes the first proof that neural networks can efficiently learn hierarchical functions.
+This paper proves that under generic non-degenerate assumptions, standard two-layer neural networks trained via layer-wise gradient descent can learn generic Gaussian Multi-Index models $f(\bm{x})=g(\bm{U}\bm{x})$ using $\tilde{O}(d)$ samples and $\tilde{O}(d^2)$ time. Both sample and time complexities reach information-theoretic optimality, providing the first proof that neural networks can efficiently learn hierarchical functions.
 
 ## Background & Motivation
 
-**Background**: The Multi-Index model $f^*(\bm{x})=g^*(\bm{U}\bm{x})$ is a standard framework for studying representation learning, where the output depends on the input only through its projection onto a low-dimensional subspace. Information-theoretic lower bounds require $\Theta(d)$ samples, and polynomial-time spectral algorithms are known to attain this bound.
+**Background**: The Multi-Index model $f^*(\bm{x})=g^*(\bm{U}\bm{x})$ is a standard framework for studying representation learning, where the output depends only on the projection of high-dimensional inputs onto a low-dimensional subspace. Information-theoretic lower bounds require $\Theta(d)$ samples, and polynomial-time spectral algorithms can achieve this bound.
 
 **Limitations of Prior Work**:
-   - Single-index models ($r=1$) are well understood theoretically, but guarantees for neural network learning of Multi-Index models ($r>1$) remain extremely limited.
-   - Damian et al. (2022) showed that neural networks can learn Multi-Index models, but require a suboptimal $\tilde{\Theta}(d^2)$ samples.
-   - Arnaboldi et al. address only a special subclass with staircase structure, far from the general case.
-   - The concurrent work of Mousavi-Hosseini & Wu (2026) achieves only weak recovery of partial feature directions and cannot guarantee full subspace recovery.
+   - While Single-Index models ($r=1$) have established theories, learning guarantees for Multi-Index models ($r>1$) in neural networks remain extremely limited.
+   - Damian et al. (2022) proved that neural networks can learn Multi-Index models but require a suboptimal $\tilde{\Theta}(d^2)$ samples.
+   - Arnaboldi et al. focused only on a specific subclass with leapfrog structures, which is far from optimal.
+   - Recently, Mousavi-Hosseini & Wu (2026) could only weakly recover partial feature directions, failing to guarantee full subspace recovery.
 
-**Key Challenge**: Information theory guarantees that $\Theta(d)$ samples suffice, and spectral methods achieve this bound—yet whether **neural networks** trained via standard gradient descent can attain the same complexity remained unproven.
+**Key Challenge**: Information theory suggests $\Theta(d)$ samples are sufficient and spectral methods achieve this, but can **neural networks** (trained via standard gradient descent) reach this bound? This remained unproven.
 
-**Key Insight**: By analyzing gradient descent dynamics under small initialization, the paper identifies that the inner-layer weights implicitly perform a power iteration procedure, analogous to spectral initialization on the local Hessian. Critically, the number of training steps must be carefully calibrated: too few steps leave sample noise unreduced; too many cause all neurons to align with the leading eigenvector direction, losing coverage of non-dominant subspace directions.
+**Key Insight**: By analyzing the dynamics of gradient descent under small initialization, it is observed that the inner layer weights implicitly perform a power iteration process. This is similar to spectral initialization on a local Hessian; however, the number of training steps must be precise. Too few steps fail to eliminate noise, while too many steps cause all features to align with the direction of the largest eigenvalue, losing non-dominant directions.
 
-**Core Idea**: Gradient descent on neural networks implicitly performs "power iteration with early stopping"—an appropriate number of training steps suffices to suppress finite-sample noise while preserving subspace diversity, thereby approaching the information-theoretic optimum.
+**Core Idea**: Neural network gradient descent implicitly executes "power iteration with early stopping." A suitable number of training steps precisely eliminates finite-sample noise without losing subspace diversity, thereby approaching information-theoretic optimality.
 
 ## Method
 
 ### Overall Architecture
-A two-layer neural network $f_{\Theta}(\bm{x}) = \sum_j a_j \sigma(\bm{w}_j^T \bm{x} + b_j)$ is trained via hierarchical gradient descent: **Phase 1**: Train inner-layer weights $\bm{W}$ on dataset $\mathcal{D}_1$ for $T_1$ steps; **Phase 2**: Re-initialize biases $\bm{b}$, then train outer-layer weights $\bm{a}$ on dataset $\mathcal{D}_2$ for $T_2$ steps.
+The goal is to enable a standard two-layer network $f_{\Theta}(\bm{x}) = \sum_j a_j \sigma(\bm{w}_j^T \bm{x} + b_j)$ to learn the $r$-dimensional hidden subspace $\bm{U}$ of a Multi-Index model $f^*(\bm{x})=g^*(\bm{U}\bm{x})$ using only gradient descent, with sample complexity approaching the information-theoretic lower bound $\tilde{O}(d)$. Instead of using exotic algorithms, this work decomposes training into two sequential phases for the inner and outer layers: **Phase 1** trains the inner weights $\bm{W}$ on dataset $\mathcal{D}_1$ (for $T_1$ steps) to align neuron directions with the hidden subspace—this phase implicitly performs "power iteration with early stopping" and is the core contribution; **Phase 2** re-initializes the biases $\bm{b}$ and trains the outer weights $\bm{a}$ on an independent dataset $\mathcal{D}_2$ (for $T_2$ steps), which is a convex problem where standard GD converges to the optimum. The following three key designs revolve around the inner layer dynamics of Phase 1.
 
 ### Key Designs
 
-1. **Implicit Power Iteration Mechanism**:
+**1. Implicit Power Iteration Mechanism: Reducing Inner GD to the Power Method on Local Hessian**
 
-    - Function: Proves that the first $T_1$ steps of gradient descent implicitly simulate power iteration on the local Hessian $\hat{\Sigma}_\ell = \frac{1}{n}\sum_i \ell_i \bm{x}_i\bm{x}_i^T$.
-    - Mechanism: Under small initialization ($\epsilon_0 \to 0$), the activation approximates a quadratic ($\sigma''(0)=1$), neuron gradient updates are nearly independent, and each update $\bm{w}_j^{(t+1)} \approx \hat{\Sigma}_\ell \bm{w}_j^{(t)}$ resembles the power method. The large eigenvalues of $\hat{\Sigma}_\ell$ correspond to signal (the latent subspace), while small eigenvalues correspond to finite-sample noise.
-    - Design Motivation: Power iteration naturally amplifies signal directions and attenuates noise—but must be stopped at the right step.
+Why can neural networks find the hidden subspace through pure gradient descent? This paper proves that the first $T_1$ steps of inner weight updates in Phase 1 essentially perform power iteration on the local Hessian $\hat{\Sigma}_\ell = \frac{1}{n}\sum_i \ell_i \bm{x}_i\bm{x}_i^T$. Crucially, under small initialization ($\epsilon_0 \to 0$), the activation function is approximated by a Taylor expansion as quadratic ($\sigma''(0)=1$), and the gradient updates of individual neurons become nearly decoupled and independent. Each step reduces to:
 
-2. **Critical Stopping Time Condition**:
+$$\bm{w}_j^{(t+1)} \approx \hat{\Sigma}_\ell\, \bm{w}_j^{(t)},$$
 
-    - Function: Determines the optimal number of inner-layer training steps $T_1$.
-    - Mechanism: $T_1$ too small → noise directions are insufficiently attenuated (especially when $n \sim d$); $T_1$ too large → all neurons align to the leading eigenvector direction, losing full coverage of the subspace. The optimal $T_1$ ensures that all $r$ signal directions are covered by sufficiently many neurons, while noise is reduced to a negligible level.
-    - Design Motivation: This reveals a counterintuitive phenomenon—optimal learning requires a **diverging** (rather than $O(1)$) number of first-layer training steps.
+which is the standard iteration for the power method. The spectrum of $\hat{\Sigma}_\ell$ separates signal from noise: large eigenvalues correspond to true hidden subspace directions, while small eigenvalues correspond to sampling noise from finite $n$. Power iteration naturally amplifies large eigenvalues and suppresses small ones, causing signal directions to grow exponentially while noise decays—provided the iteration stops at the correct number of steps.
 
-3. **Generic Loss Function as Data Preprocessing**:
+**2. Critical Stopping Condition: The Inner Training Steps $T_1$ Must Be Exact**
 
-    - Function: Interprets the choice of loss function as a form of data preprocessing.
-    - Mechanism: The choice of $\ell'(0, y)$ determines the spectral structure of $\Sigma_\ell$. For Multi-Index models with generative exponent 2, an appropriate loss function can make $\Sigma_\ell$ non-degenerate (Assumption 5). This extends the role of the loss function from an "optimization objective" to a "preprocessor for feature extraction."
-    - Design Motivation: Broadens the applicable class of objective functions beyond squared loss to include $\ell^1$, Huber loss, and others.
+The amplification of signals by power iteration is a double-edged sword. Stopping too early or too late is problematic. If $T_1$ is too small, noise directions are not sufficiently suppressed (especially at the most difficult sample size $n \sim d$), leading to a subspace estimate contaminated by noise. If $T_1$ is too large, all neurons are pulled toward the direction of the maximum eigenvalue, resulting in only one direction being learned and the remaining $r-1$ non-dominant directions being lost. The optimal $T_1$ falls within a window that allows all $r$ signal directions to be covered by enough neurons while suppressing noise to negligible levels. A counter-intuitive corollary is that the optimal number of steps for the first layer is **not** $O(1)$ but divergent ($T_1 \to \infty$), which contradicts analysis frameworks based on DMFT or state evolution that only run for $O(1)$ steps.
+
+**3. General Loss Function = Data Preprocessing: Tuning the Spectrum of $\Sigma_\ell$ via Loss Selection**
+
+This work reinterprets the choice of loss function as a form of feature preprocessing. The rationale is that the spectral structure of the local Hessian is determined by the first derivative of the loss $\ell'(0, y)$. Changing the loss function alters the spectral structure of $\Sigma_\ell$, thereby changing which directions are amplified by the power iteration. For Multi-Index models with a generative index of 2, there exists a loss that makes $\Sigma_\ell$ non-degenerate (Assumption 5), ensuring all signal directions can be activated. This elevates the loss function from a mere "optimization objective" to a "feature extraction preprocessor," extending the applicability from squared loss to more general functions like $\ell^1$ and Huber loss.
 
 ### Loss & Training
 - Phase 1: $\bm{W}^{(t)} \leftarrow \bm{W}^{(t-1)} - \eta_1[\nabla_W \hat{\mathcal{L}}_{\mathcal{D}_1} + \beta_1 \bm{W}^{(t-1)}]$ (GD with weight decay)
-- Phase 2: Standard GD on outer weights $\bm{a}$ (convex optimization, converges to optimum)
-- Symmetric initialization: $a_j = -a_{m-j}$, $\bm{w}_j^{(0)} = \bm{w}_{m-j}^{(0)}$ (eliminates mean bias)
-- Learning rate selection is critical: excessively small learning rates cause the power iteration approximation to break down.
+- Phase 2: Standard GD on outer weights $\bm{a}$ (convex optimization, converges to optimality)
+- Symmetric Initialization: $a_j = -a_{m-j}$, $\bm{w}_j^{(0)} = \bm{w}_{m-j}^{(0)}$ (to eliminate mean bias)
+- Critical Learning Rate: Learning rates that are too small cause the power iteration approximation to fail.
 
 ## Key Experimental Results
 
-### Main Results (Key Quantities in Theorem 1)
+### Main Results (Key Metrics from Theorem 1)
 
-| Quantity | Complexity | Information-Theoretically Optimal? |
+| Metric | Complexity | Info-theoretic Optimal? |
 |----|--------|-----------|
-| Sample complexity | $\tilde{O}(d)$ | Yes (leading order) |
-| Time complexity | $\tilde{O}(d^2)$ | Yes (leading order) |
-| Test error | $o_d(1) \to 0$ | Yes |
-| Applicable rank | Any constant $r$ | — |
-| Applicable losses | Squared, $\ell^1$, Huber, etc. | — |
+| Sample Complexity | $\tilde{O}(d)$ | Yes (Leading order) |
+| Time Complexity | $\tilde{O}(d^2)$ | Yes (Leading order) |
+| Test Error | $o_d(1)$ → 0 | Yes |
+| Applicable Rank | Any constant $r$ | - |
+| Applicable Loss | Squared, $\ell^1$, Huber, etc. | - |
 
-### Comparison with Prior Work
+### Comparison with Existing Results
 
-| Work | Sample Complexity | End-to-End Learning? | Generic Model? |
+| Work | Sample Complexity | End-to-End? | Generic Model? |
 |------|----------|-----------|---------|
 | Damian et al. 2022 | $\tilde{\Theta}(d^2)$ | Yes | Partial |
-| Arnaboldi et al. 2023 | $\tilde{O}(d^L)$ ($L$=staircase steps) | Yes | Staircase structure |
-| Mousavi-Hosseini & Wu 2026 | $O(d)$ | **No** (weak recovery only) | Yes |
-| **Ours** | **$\tilde{O}(d)$** | **Yes** | **Yes** (non-staircase) |
+| Arnaboldi et al. 2023 | $\tilde{O}(d^L)$ ($L$=leapfrog steps) | Yes | Leapfrog structure |
+| Mousavi-Hosseini & Wu 2026 | $O(d)$ | **No** (Weak recovery only) | Yes |
+| **Ours** | **$\tilde{O}(d)$** | **Yes** | **Yes** (Non-leapfrog) |
 
 ### Key Findings
-- **First end-to-end optimal guarantee**: Neural networks trained with GD fully learn Multi-Index models with information-theoretically optimal $\tilde{O}(d)$ samples.
-- **Training steps cannot be too few**: Optimal results require $T_1 \to \infty$ first-layer training steps, ruling out all DMFT/state-evolution-based analyses that assume $O(1)$ steps.
-- **Learning rate cannot be too small**: The power iteration approximation requires a moderately large learning rate; too small a rate causes the dynamics to degenerate.
-- **No spectral initialization or warm-starting required**: Standard random initialization suffices—neural networks learn the correct features through gradient descent alone.
-- **Loss function as preprocessing**: Choosing an appropriate loss function is equivalent to selecting a data preprocessing scheme, which can activate additional signal directions.
+- **First End-to-End Optimal Guarantee**: NN + GD learns the full Multi-Index model with info-theoretically optimal $\tilde{O}(d)$ samples.
+- **Training Steps Cannot Be Too Few**: Optimal results require the first layer training steps $T_1 \to \infty$ (ruling out DMFT/state evolution frameworks requiring $O(1)$ steps).
+- **Learning Rates Cannot Be Too Small**: The power iteration approximation requires moderately large learning rates—dynamics degrade if too small.
+- **No Spectral Initialization/Warm Start Required**: Standard random initialization suffices—the network learns correct features purely via GD.
+- **Loss Function as Preprocessing**: Choosing a suitable loss is equivalent to data preprocessing, activating more signal directions.
 
 ## Highlights & Insights
-- The discovery of the **"implicit power iteration with early stopping" mechanism** is the paper's central theoretical contribution—gradient descent is not merely an optimizer; its dynamics inherently encode a spectral method. This provides a new perspective on understanding why deep learning works.
-- The **counterintuitive finding that $O(1)$ steps are insufficient** challenges DMFT-based analytical frameworks, suggesting that the true mechanism of neural network learning may differ from the predictions of these simplified theories.
-- **Treating the loss function as preprocessing** establishes a connection between loss selection and feature extraction—in practice, the choice of loss function can be informed by its effect on signal extraction, not solely by its optimization properties.
+- The discovery of the **"Implicit Power Iteration + Early Stopping" mechanism** is the core theoretical contribution—gradient descent is not just an optimizer; its dynamics encode spectral methods. This provides a new perspective on why deep learning is effective.
+- The **counter-intuitive conclusion that "$O(1)$ steps are insufficient"** challenges the DMFT-based analysis framework, suggesting that the true mechanism of neural network learning may differ from what simplified theories predict.
+- **Treating the loss function as a preprocessor** bridges the gap between loss selection and feature extraction. In practice, loss functions can be chosen for their signal extraction properties rather than just their optimization attributes.
 
 ## Limitations & Future Work
-- The **non-staircase assumption** is a key limitation—target functions with a generative staircase structure are not covered.
-- Hierarchical training (W before a) rather than standard joint GD—theoretically cleaner but less aligned with practice.
-- Requires sample splitting (two independent datasets)—a cost of theoretical tractability.
-- Only two-layer networks are considered—analysis of deeper networks remains to be developed.
-- Constant $r$ (subspace dimension) and $p$ (polynomial degree)—high-dimensional settings are not addressed.
-- Leading-order optimal but constants are not precisely characterized—the gap in constants relative to optimal spectral methods is not quantified.
+- The **non-leapfrog assumption** is a key limitation—target functions with a generative leapfrog structure are not covered.
+- Layer-wise training (W then a) rather than standard joint GD—while theoretically clearer, it differs from common practice.
+- Requirement for sample splitting (two independent datasets)—a cost of theoretical simplicity.
+- Analysis is limited to two-layer networks—extension to deep networks is needed.
+- Constant $r$ (subspace dimension) and $p$ (polynomial degree)—high-dimensional scaling is not covered.
+- Leading-order optimality is achieved, but constants are not sharpened—the constant gap with optimal spectral methods remains unquantified.
 
 ## Related Work & Insights
-- **vs. Damian et al. 2022**: The first neural network learning result for Multi-Index models, but requiring $d^2$ samples; this paper reduces the requirement to $d$—a leading-order improvement.
-- **vs. Mousavi-Hosseini & Wu 2026**: A concurrent work achieving $O(d)$ samples but only weak, incomplete subspace recovery; this paper proves full recovery with end-to-end learning.
-- **vs. Spectral methods (DLB25)**: Information-theoretically optimal but not based on neural networks; this paper demonstrates that neural networks can match the efficiency of spectral methods.
-- **vs. DMFT/state-evolution methods**: These require $O(1)$ training steps or warm-starting; this paper proves that optimal learning requires a diverging number of steps.
+- **vs. Damian et al. 2022**: First Multi-Index NN learning result but required $d^2$ samples; ours reduces this to $d$—a leading-order improvement.
+- **vs. Mousavi-Hosseini & Wu 2026**: Concurrent work achieving $O(d)$ samples but only weak recovery of incomplete subspaces; ours proves full recovery and end-to-end learning.
+- **vs. Spectral Methods (DLB25)**: Info-theoretically optimal but not neural networks; ours proves NNs can match the efficiency of spectral methods.
+- **vs. DMFT/State Evolution**: Those require $O(1)$ training steps or warm starts; ours proves optimal learning requires divergent steps.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ First proof that neural networks attain the information-theoretic optimum for Multi-Index learning; exceptionally deep theoretical contributions.
-- Experimental Thoroughness: ⭐⭐ Purely theoretical work with no empirical validation (though the theory is self-contained and complete).
+- Novelty: ⭐⭐⭐⭐⭐ First proof of NNs reaching info-theoretic optimality for Multi-Index learning; high theoretical depth.
+- Experimental Thoroughness: ⭐⭐ Purely theoretical work, no experimental validation (though theoretical completeness makes it unnecessary).
 - Writing Quality: ⭐⭐⭐⭐ Mathematically rigorous with clear problem positioning, though notation density is high.
-- Value: ⭐⭐⭐⭐⭐ A milestone contribution to the theory of feature learning in neural networks.
+- Value: ⭐⭐⭐⭐⭐ A milestone contribution to neural network feature learning theory.
 
 <!-- RELATED:START -->
 
@@ -135,8 +127,8 @@ A two-layer neural network $f_{\Theta}(\bm{x}) = \sum_j a_j \sigma(\bm{w}_j^T \b
 - [\[NeurIPS 2025\] Learning Orthogonal Multi-Index Models: A Fine-Grained Information Exponent Analysis](../../NeurIPS2025/optimization/learning_orthogonal_multi-index_models_a_fine-grained_information_exponent_analy.md)
 - [\[ICLR 2026\] Unifying Formal Explanations: A Complexity-Theoretic Perspective](unifying_formal_explanations_a_complexity-theoretic_perspective.md)
 - [\[ICLR 2026\] Entropic Confinement and Mode Connectivity in Overparameterized Neural Networks](entropic_confinement_and_mode_connectivity_in_overparameterized_neural_networks.md)
-- [\[ICLR 2026\] Rethinking Consistent Multi-Label Classification Under Inexact Supervision](rethinking_consistent_multi-label_classification_under_inexact_supervision.md)
-- [\[ICLR 2026\] MT-DAO: Multi-Timescale Distributed Adaptive Optimizers with Local Updates](mt-dao_multi-timescale_distributed_adaptive_optimizers_with_local_updates.md)
+- [\[ICLR 2026\] Multi-Action Self-Improvement for Neural Combinatorial Optimization](multi-action_self-improvement_for_neural_combinatorial_optimization.md)
+- [\[ICLR 2026\] High-dimensional limit theorems for SGD: Momentum and Adaptive Step-sizes](high-dimensional_limit_theorems_for_sgd_momentum_and_adaptive_step-sizes.md)
 
 </div>
 

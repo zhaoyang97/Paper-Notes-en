@@ -2,76 +2,94 @@
 title: >-
   [Paper Note] Reasoning Boosts Opinion Alignment in LLMs
 description: >-
-  [ICLR 2026][Reinforcement Learning][opinion alignment] GRPO-based reinforcement learning is applied to train LLMs to align with individual political opinions via structured reasoning. SFT+GRPO consistently outperforms IC…
+  [ICLR 2026][Reinforcement Learning][opinion alignment] LLMs are trained via GRPO reinforcement learning to align with individual political opinions through structured reasoning. SFT+GRPO consistently outperforms ICL and ORPO baselines on datasets from the US, Germany, and Switzerland, while systematically revealing fundamental difficulties in predicting neutral stances and
 tags:
-  - "ICLR 2026"
-  - "Reinforcement Learning"
-  - "opinion alignment"
-  - "GRPO"
-  - "political reasoning"
-  - "survey data"
-  - "digital democracy"
+  - ICLR 2026
+  - Reinforcement Learning
+  - opinion alignment
+  - GRPO
+  - political reasoning
+  - survey data
+  - digital democracy
 date: 2026-05-08
-content_hash: d82089129845a305
+content_hash: 52e51cba2b2a2496
 ---
-
 # Reasoning Boosts Opinion Alignment in LLMs
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2603.01214](https://arxiv.org/abs/2603.01214)  
 **Code**: [GitHub](https://github.com/ETH-DISCO/reasoning-boosts-llm-alignment)  
-**Area**: Reinforcement Learning
+**Area**: Reinforcement Learning  
 **Keywords**: opinion alignment, GRPO, political reasoning, survey data, digital democracy
 
 ## TL;DR
-GRPO-based reinforcement learning is applied to train LLMs to align with individual political opinions via structured reasoning. SFT+GRPO consistently outperforms ICL and ORPO baselines across U.S., German, and Swiss datasets, while systematically revealing left–right ideological asymmetry and fundamental difficulty in predicting Neutral stances.
+LLMs are trained via GRPO reinforcement learning to align with individual political opinions through structured reasoning. SFT+GRPO consistently outperforms ICL and ORPO baselines on datasets from the US, Germany, and Switzerland, while systematically revealing fundamental difficulties in predicting neutral stances and right-wing biases.
 
 ## Background & Motivation
 
-**Background**: Modeling political opinions holds significant value for digital democracy. LLMs have been widely used to simulate group-level political preferences, primarily through demographic prompts (e.g., "You are a Democrat"), but this approach suffers from three major shortcomings: representativeness, controllability, and consistency.
+**Background**: Modeling political opinions is of significant value to digital democracy. While LLMs have been widely used to simulate group political tendencies, they primarily rely on demographic prompts (e.g., "You are a Democrat"), which suffer from three major defects: lack of representativeness, poor controllability, and low consistency.
 
-**Limitations of Prior Work**: (1) Demographic prompts fail to capture individual-level preferences, as intra-group variance is substantial; (2) interview transcript–based methods (Park et al., 2024) are accurate but prohibitively expensive to collect; (3) political survey data (ANES/VAA) is abundant yet provides only stance labels without reasoning chains, requiring models to learn the reasoning process on their own.
+**Limitations of Prior Work**: 1) Demographic prompts fail to simulate individual-level preferences due to high intra-group variance; 2) Interview transcript methods (Park et al. 2024) are accurate but incur prohibitive data collection costs; 3) Political survey data (ANES/VAA) is abundant but often contains only stance labels without reasoning chains, requiring models to learn the reasoning process autonomously.
 
-**Key Challenge**: The statistical nature of LLMs and their limited causal understanding stand in tension with the requirement to faithfully represent diverse political opinions.
+**Key Challenge**: The tension between the statistical nature and limited causal understanding of LLMs versus the requirement to faithfully reflect diverse political opinions.
 
-**Goal**: Can RL training enable LLMs to learn a "reason-then-answer" strategy that improves individual-level political opinion alignment?
+**Goal**: Can LLMs learn to "reason before answering" through RL training to improve individual-level political opinion alignment?
 
-**Key Insight**: Opinion formation is framed as a reasoning problem—drawing on GRPO's success in mathematical reasoning and transferring it to political reasoning scenarios.
+**Key Insight**: Treating opinion formation as a reasoning problem—drawing from the success of GRPO in mathematical reasoning and migrating it to political reasoning scenarios.
 
-**Core Idea**: Political survey data + GRPO rewarding correct stances + SFT warm-start for reasoning format = reasoning-based individual opinion alignment.
+**Core Idea**: Political survey data + GRPO rewarding correct stances + SFT warm-start for reasoning formats = reasoning-based individual opinion alignment.
 
 ## Method
 
 ### Overall Architecture
-Two-stage training: SFT → GRPO. A separate model is trained for each individual (voter, party, or candidate). No explicit persona representation is used; only a country label is provided in the system prompt, with preference alignment achieved implicitly through correct answer prediction.
+The paper addresses whether LLMs can align with the political stance of a **specific individual** (e.g., a voter, a party, or a candidate) through explicit reasoning rather than relying on demographic prompts. It reframes "forming an opinion" as a reasoning problem where the model first generates arguments and then provides a stance, receiving rewards for correct stances. The pipeline consists of two stages: first, SFT is used to teach the model the "reason-then-answer" output format and initialize political argumentation capabilities; then, GRPO is applied using stance correctness as a reward signal to refine the quality of reasoning. A separate model is trained for each individual, with the system prompt containing only a country label and no explicit persona descriptions—individual preferences are implicitly encoded by correctly answering survey questions.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    FMT["Structured Reasoning Output Format<br/>&lt;reasoning&gt;Arguments&lt;/reasoning&gt;&lt;answer&gt;Stance&lt;/answer&gt;"]
+    DATA["Survey Data<br/>(Individual persona, policy question q, stance label y*)"]
+    SYN["Synthetic Argumentation Data<br/>Llama-70B generates pro/con arguments per question"]
+    SFT["SFT Warm-start<br/>Learning output format + political argumentation initialization"]
+    GRPO["GRPO Training<br/>Sample outputs per question, group-relative reward normalization"]
+    REWARD["Composite Reward<br/>R = 0.25·Format + 0.01·Length + 1.0·Correctness"]
+    OUT["Opinion-Aligned Reasoning Model<br/>(One per individual)"]
+    FMT -->|As training target| SFT
+    DATA --> SYN --> SFT
+    SFT --> GRPO
+    GRPO -->|Scores per step| REWARD
+    REWARD -->|Group advantage estimation, policy update| GRPO
+    GRPO --> OUT
+```
 
 ### Key Designs
 
-1. **Structured Reasoning Output Format**
-    - Function: Forces the model to reason before answering, using the format `<reasoning>[reasoning text]</reasoning><answer>[stance]</answer>`
-    - Mechanism: Training data contains only stance labels without reasoning chains; the model must learn to generate reasoning under reward signal, with reasoning quality indirectly optimized through accuracy
-    - Design Motivation: Explicit reasoning chains encourage the model to organize arguments systematically, avoiding ideological bias caused by intuitive pattern matching
+**1. Structured Reasoning Output Format: Transforming Stance Judgment into an Optimizable Reasoning Process**
 
-2. **Composite Reward Function**
-    - Function: Evaluates each generation along three dimensions: format correctness, length compliance, and stance correctness
-    - Mechanism: $R = \alpha_1 R_{\text{format}} + \alpha_2 R_{\text{length}} + \alpha_3 R_{\text{correct}}$, where $R_{\text{format}}$ checks four XML tags (up to 4 points), $R_{\text{length}} = -|L - L^*|$ penalizes deviation from target length, and $R_{\text{correct}} = \mathbb{1}[y_i = y_i^*]$ awards 1 point for matching the survey answer
-    - Design Motivation: $\alpha_1=0.25, \alpha_2=0.01, \alpha_3=1.0$—correctness carries the highest weight, format is secondary, and length serves only as a minor regularizer
+A challenge with survey data is the presence of stance labels without reasoning chains, leaving the model with no reasoning process to emulate. The authors force the model to output following the format `<reasoning>[reasoning text]</reasoning><answer>[stance]</answer>`, explicitly decoupling the reasoning process. Since no supervised labels exist for reasoning, its quality is indirectly optimized—the model explores which arguments lead to a correct `<answer>` under reward signals. This approach encourages the model to organize arguments explicitly rather than relying on intuitive pattern matching, which is a common source of ideological bias. This format serves as the optimization objective for both training stages.
 
-3. **SFT Warm-Start + Synthetic Argumentation Data**
-    - Function: Llama-70B is used to generate pro/con arguments for each policy question, constructing SFT data to teach the model the reasoning format
-    - Mechanism: The SFT stage resolves format compliance issues (reducing the optimization burden of $R_{\text{format}}$ in GRPO) while providing a reasonable initialization for political reasoning
-    - Design Motivation: Direct GRPO training converges slowly (GRPO-only performs significantly worse than SFT+GRPO); SFT warm-starting substantially improves training dynamics
+**2. SFT Warm-start + Synthetic Argumentation Data: Initializing Format and Argumentation before RL**
+
+Running GRPO from scratch requires the model to learn both the format and reasoning simultaneously, resulting in sparse rewards and slow convergence (experiments showed GRPO-only performs significantly worse than SFT+GRPO). The authors use Llama-70B to generate pro/con arguments for each policy question to create SFT data for warm-starting. This stage achieves two goals: ensuring the model masters the output format (reducing the optimization burden for GRPO) and providing a reasonable initialization for political reasoning, allowing subsequent GRPO to focus on refining stance correctness with more stable training dynamics.
+
+**3. Composite Reward Function: Constraining Format, Length, and Correctness Simultaneously**
+
+After warm-starting, GRPO uses a weighted composite reward to drive stance accuracy:
+
+$$R = \alpha_1 R_{\text{format}} + \alpha_2 R_{\text{length}} + \alpha_3 R_{\text{correct}}$$
+
+where $R_{\text{format}}$ checks for all four XML tags (max 4 points), $R_{\text{length}} = -|L - L^*|$ penalizes length deviations from target $L^*$, and $R_{\text{correct}} = \mathbb{1}[y_i = y_i^*]$ grants 1 point for alignment with the survey answer. Weights are set to $\alpha_1=0.25, \alpha_2=0.01, \alpha_3=1.0$, making correctness the primary objective while keeping format as a hard constraint and length as a minor adjustment.
 
 ### Loss & Training
 
-GRPO (Group Relative Policy Optimization): For each prompt, a group of outputs is sampled, and intra-group reward normalization (subtracting the mean and dividing by the standard deviation) replaces the value function in traditional PPO for advantage estimation. LoRA fine-tuning ($r=32, \alpha=32$) with 4-bit quantization. SFT: 800 steps; GRPO: 800 steps; group size: 8; $\beta=0$; temperature $T=1.0$.
+GRPO (Group Relative Policy Optimization) samples a group of outputs for each prompt and estimates the advantage using group-relative reward normalization (subtracting the mean and dividing by the standard deviation), replacing the value function in traditional PPO. Fine-tuning uses LoRA ($r=32, \alpha=32$) with 4-bit quantization. The process involves 800 SFT steps followed by 800 GRPO steps, with a group size of 8, $\beta=0$, and temperature $T=1.0$.
 
 ## Key Experimental Results
 
 ### Main Results (Macro-F1 %, 8 runs, T=1.0)
 
-| Method | smartvote (Switzerland) | WoM (Germany) | ANES (USA) |
-|--------|:---:|:---:|:---:|
+| Method | smartvote (CH) | WoM (DE) | ANES (US) |
+|------|:---:|:---:|:---:|
 | SFT+GRPO (Magistral 24B) | **70.73** | **53.21** | **45.43** |
 | SFT (Magistral 24B) | 67.63 | 51.86 | 39.15 |
 | GRPO only (Magistral 24B) | 60.56 | 51.00 | 43.79 |
@@ -82,44 +100,44 @@ GRPO (Group Relative Policy Optimization): For each prompt, a group of outputs i
 
 ### Ablation Study — Ideological Bias Analysis
 
-| Political Group | smartvote F1 | WoM F1 | ANES F1 | Notes |
-|-----------------|:---:|:---:|:---:|-------|
-| Left | High | High | Relatively high | Easiest for the model to align |
-| Center | Medium | High | Medium | Intermediate performance |
-| Right | Low | Medium | Low | Systematically worst |
+| Political Group | smartvote F1 | WoM F1 | ANES F1 | Description |
+|----------|:---:|:---:|:---:|------|
+| Left | High | High | Relatively High | Easiest for the model to align |
+| Center | Medium | High | Medium | Intermediate level |
+| Right | Low | Medium | Low | Systematically the worst |
 
 ### Key Findings
-- **SFT+GRPO is consistently optimal**: It outperforms or matches SFT in 9/9 model×dataset combinations, with statistical significance (Welch t-test + Bonferroni correction)
-- **Neutral is the hardest class**: Neutral recall is lowest on ANES; the Neutral base rate correlates significantly with F1 at $r=-0.59$; Right-leaning groups answer Neutral most frequently, leading to the greatest performance degradation
-- **Reasoning reversal phenomenon**: After training, models use similar arguments (e.g., "equal opportunity") to support opposing stances—reasoning content is semantically consistent but framed differently (see Table 1 examples)
-- **Answer-flipping experiment**: Reversing all smartvote answers before training improves F1 for Right candidates, yet still falls short of the original Left performance, suggesting that Left-leaning preferences may be intrinsically easier to model
-- **PCA space shift**: Trained agents shift toward the center-right and conservative direction in smartvote PCA space (opposite to the left-liberal bias reported in the literature), reflecting GRPO alignment rather than base model bias
-- **Effect of SFT data bias**: Progressively biased SFT data severely harms Right candidates without necessarily benefiting Left candidates, indicating that bias primarily damages the disadvantaged group
+- **SFT+GRPO is Consistently Optimal**: It outperforms or matches SFT in 9/9 model-dataset combinations with statistical significance (Welch t-test + Bonferroni correction).
+- **Neutral is a "Hard Nut to Crack"**: Neutral recall is lowest on ANES; the neutral base rate shows a significant negative correlation ($r=-0.59$) with F1. Right-wing groups respond with "Neutral" most often, leading to the greatest performance degradation.
+- **Reasoning Flip Phenomenon**: Post-training models use similar arguments (e.g., "equal opportunity") to support opposite stances—the semantic content of reasoning is consistent, but the framing differs.
+- **Answer Inversion Experiment**: Training after flipping all smartvote answers improved F1 for right-wing candidates but still failed to reach the original levels of the left-wing, suggesting left-wing preferences might be inherently easier to model.
+- **PCA Space Shift**: After training, agents shift toward the center-right and conservative directions in the smartvote PCA space (contrary to the left-liberal bias reported in literature). This is a result of GRPO alignment rather than base model bias.
+- **SFT Data Bias Impact**: SFT data with progressive bias severely harms performance for right-wing candidates but does not necessarily benefit the left, suggesting bias primarily hurts the disadvantaged side.
 
 ## Highlights & Insights
-- **Reframing political opinion alignment as a reasoning problem**: Rather than relying on demographic proxies, the method enables models to "understand" each individual's stance through an explicit reasoning process—a conceptual paradigm shift
-- **Validation across three countries and three political systems**: smartvote (binary Yes/No), WoM (ternary + multi-election aggregation), and ANES (heterogeneous question formats requiring recoding)—demonstrating strong methodological generalizability
-- **Deep insight into ideological asymmetry**: Right-leaning preferences are systematically harder to learn, possibly due to imbalanced pretraining corpora or more complex statistical structure inherent to right-leaning positions
-- **Asymmetric effect of SFT data bias**: Bias harms the disadvantaged group more than it benefits the advantaged group—a cautionary finding for trustworthy AI system design
+- **Reframing Political Opinion Alignment as a Reasoning Problem**: Moving beyond demographic proxies to let the model "understand" individual stances through reasoning—a conceptual paradigm shift.
+- **Validation Across Three Countries and Systems**: Tested on smartvote (binary Yes/No), WoM (3-class + multi-election aggregation), and ANES (heterogeneous formats requiring recoding), demonstrating strong generalization.
+- **Deep Insights into Ideological Asymmetry**: Right-wing preferences are systematically harder to learn, potentially due to pre-training corpus bias or a more complex statistical structure in right-wing stances.
+- **Asymmetric Effects of SFT Data Bias**: Bias harms the disadvantaged side more than it benefits the advantaged side, offering a warning for the design of trustworthy AI systems.
 
 ## Limitations & Future Work
-- A separate model must be trained per individual, making computational cost $O(N)$ and thus unscalable; future work should explore persona-conditioned single-model architectures
-- Test sets are very small (12–30 questions), limiting statistical confidence
-- The ternary classification {Yes, Neutral, No} discards fine-grained information from the original Likert scale
-- The choice of ANES recoding scheme (conservative vs. aggressive) affects results, indicating sensitivity to data preprocessing
-- The best F1 of ~70% leaves a substantial gap from a "faithful digital twin"
-- Zero-shot generalization from limited survey data to entirely new policy issues remains unexplored
+- Training a separate model for each individual results in $O(N)$ computational costs that do not scale; future work should explore persona-conditioned single-model architectures.
+- The test sets are very small (12-30 questions), limiting statistical confidence.
+- Simplifying to 3-class {Yes, Neutral, No} labels loses fine-grained information from original Likert scales.
+- Result sensitivity to ANES recoding schemes (conservative vs. aggressive).
+- The best F1 is only ~70%, indicating a significant gap remains before achieving "faithful digital twins."
+- Zero-shot generalization from limited survey data to new policy issues remains unexplored.
 
 ## Related Work & Insights
-- **vs. Santurkar et al. (2023) demographic prompting**: Their work reveals that LLMs' default opinion distributions do not represent real populations; this paper bypasses demographic proxies entirely by aligning individuals directly from survey data
-- **vs. Park et al. (2024) interview transcript modeling**: Their approach achieves high accuracy using rich text to construct individual personas, but data acquisition costs are prohibitive; this paper uses structured survey data as a lightweight alternative
-- **vs. DeepSeek-R1 (2025) GRPO for mathematical reasoning**: GRPO's success in mathematical reasoning motivates its application here; this paper demonstrates its effectiveness in political reasoning, albeit with less pronounced gains than in the mathematical domain
+- **vs. Santurkar et al. (2023) Demographic Prompting**: While they showed LLM default opinions do not represent the public, this work bypasses demographics to align with individuals using survey data.
+- **vs. Park et al. (2024) Interview Transcript Modeling**: Their rich-text personas are accurate but expensive to obtain; this work provides a lightweight alternative using structured survey data.
+- **vs. DeepSeek-R1 (2025) GRPO for Mathematical Reasoning**: GRPO's success in math is validated here for political reasoning, albeit with less pronounced effects.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ — Applying GRPO to political reasoning is a novel contribution; the ideological bias analysis is insightful
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Covers 3 models × 3 datasets, ideological analysis, answer-flipping experiments, and SFT bias experiments
-- Writing Quality: ⭐⭐⭐⭐ — Well-structured; PCA visualizations and reasoning examples are persuasive
-- Value: ⭐⭐⭐ — Direction is promising but scalability is questionable; the finding on the difficulty of learning Right-leaning preferences carries social significance
+- Novelty: ⭐⭐⭐⭐ Applying GRPO to political reasoning is a novel application; the ideological bias analysis is profound.
+- Experimental Thoroughness: ⭐⭐⭐⭐ 3 models × 3 datasets, ideological analysis, answer inversion, and SFT bias experiments are substantial.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure; PCA visualizations and reasoning examples are persuasive.
+- Value: ⭐⭐⭐ Interesting direction, though scalability is questionable; the finding that right-wing preferences are harder to learn has social significance.
 
 <!-- RELATED:START -->
 
@@ -127,11 +145,11 @@ GRPO (Group Relative Policy Optimization): For each prompt, a group of outputs i
 
 ## Related Papers
 
+- [\[ICLR 2026\] Reinforcement Learning with Verifiable Rewards Implicitly Incentivizes Correct Reasoning in Base LLMs](reinforcement_learning_with_verifiable_rewards_implicitly_incentivizes_correct_r.md)
 - [\[ICLR 2026\] AbstRaL: Augmenting LLMs' Reasoning by Reinforcing Abstract Thinking](abstral_augmenting_llms_reasoning_by_reinforcing_abstract_thinking.md)
-- [\[ICLR 2026\] Routing, Cascades, and User Choice for LLMs](routing_cascades_and_user_choice_for_llms.md)
-- [\[ICLR 2026\] References Improve LLM Alignment in Non-Verifiable Domains](references_improve_llm_alignment_in_non-verifiable_domains.md)
-- [\[ACL 2026\] Free Energy-Driven Reinforcement Learning with Adaptive Advantage Shaping for Unsupervised Reasoning in LLMs](../../ACL2026/reinforcement_learning/free_energy-driven_reinforcement_learning_with_adaptive_advantage_shaping_for_un.md)
-- [\[ICLR 2026\] How LLMs Learn to Reason: A Complex Network Perspective](how_llms_learn_to_reason_a_complex_network_perspective.md)
+- [\[ICLR 2026\] QuestA: Expanding Reasoning Capacity in LLMs via Question Augmentation](questa_expanding_reasoning_capacity_in_llms_via_question_augmentation.md)
+- [\[ICLR 2026\] RL Squeezes, SFT Expands: A Comparative Study of Reasoning LLMs](rl_squeezes_sft_expands_a_comparative_study_of_reasoning_llms.md)
+- [\[ICLR 2026\] Boosting Multi-Domain Reasoning of LLMs via Curvature-Guided Policy Optimization](boosting_multi-domain_reasoning_of_llms_via_curvature-guided_policy_optimization.md)
 
 </div>
 

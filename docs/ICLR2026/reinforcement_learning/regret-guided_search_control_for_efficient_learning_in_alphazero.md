@@ -2,171 +2,168 @@
 title: >-
   [Paper Note] Regret-Guided Search Control for Efficient Learning in AlphaZero
 description: >-
-  [ICLR 2026][Reinforcement Learning][AlphaZero] This paper proposes RGSC (Regret-Guided Search Control), a framework that trains a regret network to identify high-regret states and prioritizes restarting self-play from th…
+  [ICLR 2026][Reinforcement Learning][AlphaZero] The Regret-Guided Search Control (RGSC) framework is proposed to identify high-regret states by training a regret network and prioritize restarting self-play from these states. This simulates the human learning method of "repeatedly reviewing mistakes," outperforming AlphaZero by an average of 77 Elo in 9×9 Go, 10×10 O
 tags:
-  - "ICLR 2026"
-  - "Reinforcement Learning"
-  - "AlphaZero"
-  - "search control"
-  - "regret network"
-  - "MCTS"
-  - "board games"
+  - ICLR 2026
+  - Reinforcement Learning
+  - AlphaZero
+  - search control
+  - regret network
+  - MCTS
+  - board games
 date: 2026-05-08
-content_hash: daf9eb417fb3d5a7
+content_hash: f85dc873b19a305f
 ---
-
 # Regret-Guided Search Control for Efficient Learning in AlphaZero
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2602.20809](https://arxiv.org/abs/2602.20809)  
 **Code**: [Project Page](https://rlg.iis.sinica.edu.tw/papers/rgsc)  
-**Area**: Reinforcement Learning
+**Area**: Reinforcement Learning  
 **Keywords**: AlphaZero, search control, regret network, MCTS, board games
 
 ## TL;DR
 
-This paper proposes RGSC (Regret-Guided Search Control), a framework that trains a regret network to identify high-regret states and prioritizes restarting self-play from these states, emulating the human learning strategy of repeatedly reviewing mistakes. RGSC outperforms AlphaZero by an average of 77 Elo across 9×9 Go, 10×10 Othello, and 11×11 Hex.
+The Regret-Guided Search Control (RGSC) framework is proposed to identify high-regret states by training a regret network and prioritize restarting self-play from these states. This simulates the human learning method of "repeatedly reviewing mistakes," outperforming AlphaZero by an average of 77 Elo in 9×9 Go, 10×10 Othello, and 11×11 Hex.
 
 ## Background & Motivation
 
-**Learning Efficiency Gap**: AlphaZero requires millions of self-play games to reach superhuman strength, whereas human players achieve comparable proficiency with far fewer games. The key difference lies in the learning strategy.
+**Learning Efficiency Gap**: AlphaZero requires millions of self-play games to reach superhuman levels, whereas human players achieve comparable strength with significantly fewer games. The key difference lies in the learning methodology.
 
-**Human Learning Patterns**: Human players do not replay complete games from scratch each time; instead, they repeatedly revisit critical positions where mistakes were made until weaknesses are corrected. AlphaZero, by contrast, always begins from an empty board and updates all positions uniformly.
+**Human Learning Pattern**: Human players do not always play complete games from the beginning; instead, they repeatedly review critical positions (where they made mistakes) until weaknesses are corrected. AlphaZero, however, consistently starts from an empty board and updates all positions uniformly.
 
-**The Concept of Search Control**: Sutton & Barto introduced search control in the Dyna framework — selecting informative states as starting points for simulated experience, rather than always beginning from the initial state.
+**Concept of Search Control**: This refers to the idea proposed by Sutton & Barto in the Dyna framework—selecting valuable states as starting points for simulated experience rather than always beginning from initial states.
 
-**Limitations of Go-Exploit**: The prior work Go-Exploit implemented self-play restarts from historical states but used uniform sampling, which cannot distinguish the learning value of different states. As training progresses and most states are mastered, the efficiency of uniform sampling degrades sharply.
+**Limitations of Prior Work (Go-Exploit)**: Previous work Go-Exploit implemented restarting self-play from historical states but used uniform sampling, failing to distinguish the learning value of states. As training progresses, most states are mastered, and the efficiency of uniform sampling drops sharply.
 
-**Non-Stationarity Challenge**: The regret of high-regret states decreases after repeated visits, making direct regret value prediction difficult due to severe distributional imbalance and non-stationary targets.
+**Key Challenge (Non-stationarity)**: Regret values of high-regret states decrease after being visited repeatedly. Directly predicting regret values faces dual difficulties: severe distribution imbalance and target non-stationarity.
 
 ## Method
 
 ### Overall Architecture
 
-RGSC extends AlphaZero with three core components:
-1. **Regret Definition**: Quantifies the regret of each state in a game trajectory (the discrepancy between the agent's evaluation and the actual outcome).
-2. **Regret Network**: Comprising a ranking network and a value network to identify high-regret states.
-3. **Prioritized Regret Buffer (PRB)**: Stores and manages high-regret states, sampling from a softmax distribution to determine self-play restart positions.
+RGSC incorporates the human learning habit of "repeatedly reviewing mistakes" into the AlphaZero self-play loop. It defines a regret value for each game state to measure "how wrong the agent was," then trains a regret network (comprising a ranking head and a value head) to select high-regret states stored in a Prioritized Regret Buffer (PRB). Subsequent self-play does not always start from an empty board but has a probability of restarting from these high-regret states, concentrating training computation on unmastered weaknesses. The process is a closed loop: self-play produces trajectories and search trees $\rightarrow$ compute regret $\rightarrow$ ranking and value heads select high-regret states $\rightarrow$ enter PRB $\rightarrow$ next round of self-play restarts from PRB.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    START["Self-play<br/>(Prob 1-λ from empty board<br/>Prob λ from PRB restart)"] --> TRAJ["Trajectories<br/>+ MCTS Search Tree"]
+    TRAJ --> REGRET["Regret Definition<br/>Mean Squared Deviation of<br/>Evaluation and Outcome R(s)"]
+    REGRET --> RANK["Ranking Network<br/>Select highest regret on<br/>trajectory via relative rank"]
+    REGRET --> VALUE["Value Network<br/>Estimate regret for<br/>internal tree nodes"]
+    RANK --> PRB["Prioritized Regret Buffer PRB<br/>Fixed capacity + EMA dacay"]
+    VALUE --> PRB
+    PRB -->|Temperature softmax sampling| START
+```
 
 ### Key Designs
 
-**Design 1: Regret Definition**
+**1. Regret Definition: Marking unmastered states using "deviation between evaluation and outcome"**
 
-- **Function**: Defines the regret value for each state in a game trajectory.
-- **Mechanism**: The regret $R(s_t)$ is defined as the mean squared deviation between the MCTS evaluation of the selected action and the actual outcome, averaged from state $s_t$ to terminal state $s_T$: `R(st) = (1/(T-t)) Σ(V_selected(si) - z)²`.
-- **Design Motivation**: Captures states where the agent's evaluation diverges most from the actual result — these are the critical positions not yet mastered by the agent, thus carrying the highest learning potential.
+To let the agent know where to review, a signal quantifying "poor learning" is needed. RGSC defines the regret value of state $s_t$ as the mean squared deviation between the MCTS evaluation of the selected action and the final game outcome along the trajectory to the terminal state $s_T$: $R(s_t) = \frac{1}{T-t} \sum_{i=t}^{T-1} (V_{\text{selected}}(s_i) - z)^2$, where $z$ is the true outcome. When the agent's evaluations near a state consistently mismatch the outcome, the regret is high, corresponding to critical positions with the largest evaluation bias—these positions have the highest learning potential.
 
-**Design 2: Regret Ranking Network**
+**2. Ranking Network: Replacing "regret prediction" with "relative ranking" to bypass non-stationary targets**
 
-- **Function**: Learns to rank states by regret value rather than directly predicting regret.
-- **Mechanism**: Outputs an unnormalized ranking score $\gamma_s$, which is converted via softmax into a restart distribution $\rho(s|S)$. The optimization objective is to maximize $J_{\text{rank}} = \sum \rho(s|S) \cdot R(s)$, assigning high sampling probability to high-regret states. A surrogate loss is used in practice: $L_{\text{rank}} = -\log \sum \exp(\log \text{softmax}(\gamma_s) + R(s))$.
-- **Design Motivation**: Direct regret prediction suffers from severe distributional imbalance (most states have near-zero regret) and non-stationarity (high-regret states decline in regret after correction). The ranking objective only needs to identify relatively high-regret states, substantially reducing learning difficulty.
+Direct regression of regret values is difficult: most states have near-zero regret, causing distribution imbalance, and high-regret states decrease in regret once corrected. RGSC instead learns a relative rank—the network outputs unnormalized ranking scores $\gamma_s$, converted to a restart distribution $\rho(s\mid S)$ via softmax. The objective is to assign high sampling probability to high-regret states, maximizing $J_{\text{rank}} = \sum_s \rho(s\mid S)\,R(s)$. The training uses a surrogate loss $L_{\text{rank}} = -\log \sum_s \exp\big(\log\text{softmax}(\gamma_s) + R(s)\big)$. Since it only needs to determine "which regret is relatively higher" rather than exact values, the ranking objective is insensitive to imbalance and non-stationarity.
 
-**Design 3: Regret Value Network**
+**3. Value Network: Estimating regret for internal search tree nodes to increase diversity**
 
-- **Function**: Estimates the regret of internal nodes within the MCTS search tree.
-- **Mechanism**: Regret can be computed directly for states on the self-play trajectory, but internal tree nodes lack complete trajectory information. The value network provides regret estimates for these nodes.
-- **Design Motivation**: The search tree may contain high-regret states that were explored by MCTS but never actually played, and incorporating these states yields more diverse restart positions.
+States on self-play trajectories have complete follow-throughs to calculate regret; however, internal nodes in the MCTS tree that were explored but not traversed lack complete trajectories. RGSC adds a value network specifically to estimate regret for these internal nodes. This ensures that restartable high-regret states are not limited to the actual path taken, covering potential weaknesses explored in the search tree and increasing diversity.
 
-**Design 4: Prioritized Regret Buffer (PRB)**
+**4. Prioritized Regret Buffer (PRB): Simulating the process of "reviewing until understood" via EMA decay**
 
-- **Function**: Maintains a fixed-capacity set of $K$ high-regret states to serve as self-play restart points.
-- **Mechanism**: After each self-play game, the ranking network selects the highest-ranked state, which is added to the PRB only if its regret exceeds the minimum regret among existing entries. During sampling, a softmax distribution $P(s_i) \propto R(s_i)^{1/\tau}$ prioritizes high-regret states. Regret values in the PRB are updated via EMA: $R_{\text{new}} \leftarrow (1-\alpha) \cdot R_{\text{old}} + \alpha \cdot R$.
-- **Design Motivation**: EMA updates prevent abrupt regret drops, ensuring that a state's regret decays gradually only after the agent has truly mastered it, emulating the human process of repeated review until full understanding.
+The PRB maintains a fixed capacity $K$ of high-regret states. After each game, the ranking network selects the highest-ranked state; it replaces the state with the lowest regret in the PRB only if its regret is higher. Restart sampling uses a temperature-controlled softmax $P(s_i) \propto R(s_i)^{1/\tau}$. Crucially, regret is not zeroed out after a state is replayed; instead, it is updated via Exponential Moving Average $R_{\text{new}} \leftarrow (1-\alpha)R_{\text{old}} + \alpha R$. Regret only decays as the agent masters the position through repeated practice, preventing premature disposal of unstable states.
 
 ### Loss & Training
 
-- **Ranking Loss**: $L_{\text{rank}} = -\log \sum \exp(\log \text{softmax}(\gamma_s) + R(s))$ — preserves ranking order via exponential transformation, guiding the model to assign high probability to high-regret states.
-- **Value Loss**: Standard MSE regression loss for predicting state regret values.
-- **Self-Play Strategy**: With probability $1-\lambda$, self-play starts from an empty board; with probability $\lambda$, it restarts from a state sampled from the PRB.
-- **Training Integration**: The ranking and value networks are implemented as additional output heads (regret heads) of the AlphaZero network, incurring negligible computational overhead.
+Both the ranking and value heads are trained jointly as additional outputs of the AlphaZero backbone. Thus, the extra computational overhead is minimal and becomes negligible as the number of network blocks increases. The ranking head uses $L_{\text{rank}}$ to maintain ordering, while the value head uses standard MSE to fit regret values. During self-play, a probability $1-\lambda$ of starting from an empty board ensures game integrity, while a probability $\lambda$ of sampling from the PRB directs computation toward weaknesses.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**Elo improvement across three board games (300 iterations, ~150 A6000 GPU hours each)**:
+**Elo Gains across three games (300 iterations, ~150 A6000 GPU hours each)**:
 
-| Game | AlphaZero | Go-Exploit | RGSC | RGSC vs AZ | RGSC vs GE |
+| Game | AlphaZero | Go-Exploit | RGSC | Gain vs AZ | Gain vs GE |
 |------|-----------|-----------|------|-----------|-----------|
-| 9×9 Go | 1000 (ref) | +low | +76 Elo | +76 | +96 |
+| 9×9 Go | 1000 (ref) | +Low | +76 Elo | +76 | +96 |
 | 10×10 Othello | 1000 (ref) | +20 | +70 Elo | +70 | +50 |
 | 11×11 Hex | 1000 (ref) | -38 | +84 Elo | +84 | +122 |
 
 **Win rates against external strong programs**:
 
-| Game | Opponent | AlphaZero | Go-Exploit | RGSC |
-|------|------|-----------|-----------|------|
+| Game | Adversary | AlphaZero | Go-Exploit | RGSC |
+|------|-----------|-----------|------------|------|
 | 9×9 Go | KataGo | 45.5% | 49.5% | **53.6%** |
 | 10×10 Othello | Ludii α-β | 51.7% | 52.9% | **57.8%** |
 | 11×11 Hex | MoHex | 83.6% | 89.2% | **91.1%** |
 
 ### Ablation Study
 
-**State selection quality: ranking network vs. value network**:
+**State selection quality: Ranking Network vs. Value Network**:
 
-| Method | 9×9 Go avg regret | 10×10 Othello avg regret | Performance |
+| Method | 9×9 Go avg regret | 10×10 Othello avg regret | Effect |
 |------|-------------------|-------------------------|------|
-| Go-Exploit (uniform) | Lowest | Lowest | Baseline |
-| Regret Value Net | Medium | Medium | Sub-optimal |
-| **Regret Ranking Net** | **Highest** | **Highest** | **Best** |
+| Go-Exploit (Uniform) | Lowest | Lowest | Baseline |
+| Regret Value Net | Medium | Medium | Suboptimal |
+| **Regret Ranking Net** | **Highest** | **Highest** | **Optimal** |
 
-**Continued training on a pre-trained model (15-block, 9×9 Go, 40 iterations)**:
+**Continued training on pre-trained models (15-block, 9×9 Go, 40 iterations)**:
 
-| Method | Win rate vs. KataGo |
+| Method | Win rate vs KataGo |
 |------|---------------|
-| Baseline (before training) | 69.3% ± 2.6% |
-| AlphaZero (continued) | 70.2% ± 2.7% (negligible gain) |
-| Go-Exploit | 69.2% ± 2.7% (no gain) |
+| Baseline (Pre-training) | 69.3% ± 2.6% |
+| AlphaZero Continued | 70.2% ± 2.7% (Minimal gain) |
+| Go-Exploit | 69.2% ± 2.7% (No gain) |
 | **RGSC** | **78.2% ± 2.5%** (+8.9%) |
 
 ### Key Findings
 
-1. **Go-Exploit Degrades in Later Training**: Go-Exploit is effective in early training when many states remain unmastered, but its efficiency drops sharply in later stages as uniform sampling becomes less discriminative, eventually underperforming AlphaZero.
-2. **Ranking Outperforms Regression**: The ranking network consistently selects states with higher regret values, validating the advantage of ranking objectives over direct value regression under non-stationary, imbalanced distributions.
-3. **Regret in PRB Decreases as Expected**: Across all games, the average regret of states upon entry into the PRB is significantly higher than upon removal (Go: 0.655 → 0.296), confirming that RGSC effectively corrects mistakes.
-4. **Strong Models Can Still Improve**: RGSC improves win rate by 8.9% on a well-trained model, while AlphaZero and Go-Exploit both plateau.
+1.  **Late-stage Failure of Go-Exploit**: Go-Exploit is effective early (many unmastered states), but as states are mastered, uniform sampling efficiency drops, sometimes falling below AlphaZero.
+2.  **Ranking outperforms Regression**: The ranking network consistently chooses states with higher regret, validating that ranking objectives are superior to direct regression under non-stationary, unbalanced distributions.
+3.  **Regret Decay in PRB**: In all games, the average regret of states entering the PRB is significantly higher than those being removed (Go: 0.655 $\rightarrow$ 0.296), proving that RGSC effectively corrects errors.
+4.  **Improvement of Strong Models**: RGSC improved win rates by 8.9% on already well-trained models where AlphaZero and Go-Exploit plateaued.
 
 ## Highlights & Insights
 
-1. **Elegant Emulation of Human Learning**: The human strategy of repeatedly reviewing errors is naturally formalized as regret-guided search control, with clear motivation and concise implementation.
-2. **Clever Design of the Ranking Objective**: By circumventing the difficulty of directly predicting non-stationary targets, the ranking objective requires only relative ordering, substantially reducing learning complexity.
-3. **Exploitation of Internal Search Tree Nodes**: Beyond trajectory states, RGSC leverages states explored by MCTS but never actually played, increasing the diversity of restart positions.
-4. **Minimal Additional Overhead**: The regret network comprises only two extra output heads on the AlphaZero network; overhead becomes negligible as the number of residual blocks increases.
-5. **Generalization Potential**: Preliminary experiments demonstrate that RGSC is applicable to MuZero (Pac-Man), suggesting broader applicability across RL settings.
+1.  **Elegant Implementation of Human Learning**: The human approach of reviewing errors is naturally translated into regret-guided search control with clear motivation and simple implementation.
+2.  **Clever Ranking Objective**: Avoids the difficulty of predicting non-stationary targets by only requiring relative order, significantly easing the learning task.
+3.  **Utilization of Internal Nodes**: Not only utilizes states on the trajectory but also those unexplored but considered by MCTS, broadening the coverage of reviews.
+4.  **Minimal Overhead**: The regret network consists of only two additional heads; overhead becomes negligible as the backbone grows.
+5.  **Generalization Potential**: Preliminary experiments applying RGSC to MuZero (Pac-Man) suggest applicability to broader RL scenarios.
 
 ## Limitations & Future Work
 
-1. **Validated Only on Board Games**: Board games are deterministic, perfect-information environments; the effectiveness of RGSC in stochastic or imperfect-information settings requires further investigation.
-2. **Limitations of the Regret Definition**: The current regret definition is based on the deviation between MCTS evaluations and outcomes; defining regret for continuous control tasks requires new formulations.
-3. **Fixed PRB Capacity**: A fixed-size buffer may be insufficient to cover all critical states in more complex games.
-4. **19×19 Go Not Explored**: Experiments are conducted on 9×9 Go; scalability to larger boards remains to be verified.
+1.  **Verified on Board Games Only**: These are deterministic, perfect-information games. The effectiveness of RGSC in stochastic or imperfect-information environments requires further validation.
+2.  **Regret Definition Constraints**: The current definition relies on MCTS evaluation-outcome mismatch; new designs are needed for continuous control tasks.
+3.  **Fixed PRB Capacity**: A fixed buffer size might be insufficient to cover all critical states in more complex games.
+4.  **19×19 Go**: The study verified 9×9 Go; scalability to larger boards remains to be tested.
 
 ## Related Work & Insights
 
-- **Go-Exploit**: The first work to systematically study search control in AlphaZero; however, its limitation of uniform sampling is addressed by RGSC's prioritized sampling.
-- **KataGo**'s random opening strategy inspired the idea of starting training from non-initial states.
-- **Prioritized Experience Replay**: The PRB in RGSC can be viewed as an extension of prioritized sampling in experience replay to the level of search control.
-- **Inspiration**: The regret-guided paradigm can be generalized to other settings requiring focused learning on difficult samples, such as curriculum learning and active learning.
+-   **Go-Exploit**: First systematic study of search control in AlphaZero, but its uniform sampling limitation is overcome by RGSC's prioritized sampling.
+-   **KataGo**: Its random opening strategy inspired the idea of training from non-initial states.
+-   **Prioritized Experience Replay (PER)**: PRB in RGSC is effectively an extension of PER principles to the search control layer.
+-   **Insight**: The regret-guided philosophy can be extended to other scenarios requiring concentrated learning on hard samples, such as curriculum or active learning.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ The regret ranking network design is novel, and the approach to handling non-stationary target prediction is clever; however, the overall idea is a natural extension of PER to search control.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Comprehensive validation across three board games, including win-rate evaluation against strong open-source programs, ranking vs. value network ablation, and continued training experiments on pre-trained models.
-- **Writing Quality**: ⭐⭐⭐⭐ Motivation is clearly articulated (the human vs. machine learning comparison figure is intuitive), method derivation is complete, and experimental presentation is clear.
-- **Value**: ⭐⭐⭐⭐ Provides a concise and effective approach for improving AlphaZero training efficiency, with potential for generalization to broader RL settings.
+-   **Novelty**: ⭐⭐⭐⭐ The regret ranking network design is novel and addresses non-stationary prediction cleverly; however, the general idea is a natural extension of PER to search control.
+-   **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Comprehensive validation across three games, including win rates against strong engines, ablation studies, and continued training experiments.
+-   **Writing Quality**: ⭐⭐⭐⭐ Clear motivation (intuitive human vs. ML comparison), complete methodological derivation, and clear presentation.
+-   **Value**: ⭐⭐⭐⭐ Provides a simple and effective solution for AlphaZero efficiency with potential for broader RL application.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1">
+<div class="related-papers" markdown="1"></div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] Multimodal LLM-assisted Evolutionary Search for Programmatic Control Policies](multimodal_llm-assisted_evolutionary_search_for_programmatic_control_policies.md)
+- [\[ICLR 2026\] GoldenStart: Q-Guided Priors and Entropy Control for Distilling Flow Policies](goldenstart_q-guided_priors_and_entropy_control_for_distilling_flow_policies.md)
+- [\[ICLR 2026\] Efficient Morphology-Control Co-Design via Stackelberg Proximal Policy Optimization](efficient_morphology-control_co-design_via_stackelberg_proximal_policy_optimizat.md)
 - [\[ICLR 2026\] WIMLE: Uncertainty-Aware World Models with IMLE for Sample-Efficient Continuous Control](wimle_uncertainty-aware_world_models_with_imle_for_sample-efficient_continuous_c.md)
-- [\[ACL 2026\] AttnPO: Attention-Guided Process Supervision for Efficient Reasoning](../../ACL2026/reinforcement_learning/attnpo_attention-guided_process_supervision_for_efficient_reasoning.md)
-- [\[ICML 2026\] DR.Q: Debiased Model-based Representations for Sample-efficient Continuous Control](../../ICML2026/reinforcement_learning/debiased_model-based_representations_for_sample-efficient_continuous_control.md)
-- [\[ICLR 2026\] BA-MCTS: Bayes Adaptive Monte Carlo Tree Search for Offline Model-based RL](bayes_adaptive_monte_carlo_tree_search_for_offline_model-based_reinforcement_lea.md)
-- [\[ICLR 2026\] QuRL: Efficient Reinforcement Learning with Quantized Rollout](qurl_efficient_reinforcement_learning_with_quantized_rollout.md)
+- [\[ICLR 2026\] Q-Learning with Fine-Grained Gap-Dependent Regret](q-learning_with_fine-grained_gap-dependent_regret.md)
 
 </div>
 

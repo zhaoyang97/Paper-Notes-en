@@ -2,73 +2,83 @@
 title: >-
   [Paper Note] Post-training Large Language Models for Diverse High-Quality Responses
 description: >-
-  [ICLR 2026][Reinforcement Learning][diversity] This paper proposes DQO (Diversity Quality Optimization), which defines a diversity metric in semantic embedding space via determinantal point processes (DPP)…
+  [ICLR 2026][Reinforcement Learning][GRPO] The authors propose DQO (Diversity Quality Optimization), which defines a diversity metric in the semantic embedding space based on Determinantal Point Processes (DPP). By jointly optimizing this metric with reward signals, LLM post-training improves both semantic diversity and response quality. DQO can be integrated o
 tags:
-  - "ICLR 2026"
-  - "Reinforcement Learning"
-  - "diversity"
-  - "determinantal point process"
-  - "GRPO"
-  - "post-training"
-  - "quality-diversity trade-off"
+  - ICLR 2026
+  - Reinforcement Learning
+  - GRPO
 date: 2026-05-08
-content_hash: 9921539252ce6660
+content_hash: 6333b4d41a0485f1
 ---
-
 # Post-training Large Language Models for Diverse High-Quality Responses
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2509.04784](https://arxiv.org/abs/2509.04784)  
 **Code**: [https://github.com/fairytale9/diversity-quality-optimization](https://github.com/fairytale9/diversity-quality-optimization)  
-**Area**: Reinforcement Learning
-**Keywords**: diversity, determinantal point process, GRPO, post-training, quality-diversity trade-off
+**Area**: Reinforcement Learning  
+**Keywords**: Diversity, Determinantal Point Processes, GRPO, Post-training, Quality-Diversity Trade-off  
 
 ## TL;DR
-This paper proposes DQO (Diversity Quality Optimization), which defines a diversity metric in semantic embedding space via determinantal point processes (DPP), and jointly optimizes it with reward signals to simultaneously improve semantic diversity and response quality during LLM post-training. DQO can be stacked on top of GRPO/PPO.
+The authors propose DQO (Diversity Quality Optimization), which defines a diversity metric in the semantic embedding space based on Determinantal Point Processes (DPP). By jointly optimizing this metric with reward signals, LLM post-training improves both semantic diversity and response quality. DQO can be integrated on top of GRPO/PPO.
 
 ## Background & Motivation
 
-**Background**: LLM post-training (RLHF/GRPO, etc.) significantly improves downstream task performance, but as a side effect severely reduces output diversity—models tend to generate narrow "canonical answers," losing the ability to explore diverse solution paths and personalized styles.
+**Background**: LLM post-training (RLHF/GRPO, etc.) significantly improves performance on downstream tasks, but a primary side effect is the severe reduction in output diversity. Models tend to collapse toward narrow "standard answers," losing the ability to explore diverse solution paths and personalized styles.
 
-**Limitations of Prior Work**: Existing diversity-promoting methods focus on the inference side (temperature scaling, top-k sampling) or only address token-level differences (token entropy regularization), which cannot recover missing modes in the base model distribution or capture semantic-level diversity.
+**Limitations of Prior Work**: Existing methods to promote diversity focus on the inference stage (temperature scaling, top-k sampling) or only address token-level differences (token entropy regularization). These methods fail to recover modes missing from the base model distribution and cannot capture diversity at the semantic level.
 
-**Key Challenge**: How to define a semantically meaningful diversity metric that is both computationally efficient and theoretically principled, and balance it against quality objectives? Simple pairwise distance metrics are prone to degeneracy—the model may learn only two widely separated clusters.
+**Key Challenge**: How to define a semantic diversity metric during the training phase that is both computationally efficient and theoretically rigorous while balancing quality objectives. Simple pairwise distance metrics often lead to degradation, where the model might only learn two widely separated clusters.
 
-**Goal**: (a) Define a semantic-level diversity metric; (b) avoid the cluster degeneracy of pairwise distances; (c) jointly optimize quality and diversity during training.
+**Goal**: (a) Define a semantic-level diversity metric; (b) avoid cluster degradation associated with pairwise distances; (c) jointly optimize quality and diversity during training.
 
-**Key Insight**: DPP determinants are used to define diversity—the larger the volume of the parallelepiped spanned by embedding vectors, the higher the diversity. The determinant naturally penalizes linear dependence (clustering), overcoming the degeneracy of pairwise distances.
+**Key Insight**: Utilize the determinant of a DPP to define diversity—the larger the volume spanned by the embedding vectors, the higher the diversity. Determinants naturally penalize linear correlation (clustering), thus overcoming the degradation problem of pairwise distances.
 
-**Core Idea**: Use the DPP determinant as a semantic diversity measure, with rewards serving as scaling factors for embedding vectors, and employ leave-one-out gradient estimation to stabilize training.
+**Core Idea**: Use the DPP determinant as a semantic diversity metric and rewards as scaling factors for embedding vectors, then stabilize training via a leave-one-out gradient estimator.
 
 ## Method
 
 ### Overall Architecture
-A DPP diversity term is added to the standard RL post-training objective. For each prompt $x$, $k$ responses $y_{1:k}$ are sampled and mapped to semantic space via a pretrained embedding model $\phi$, constructing a Gram matrix $L_\phi(y_{1:k})[i,j] = \langle \phi(y_i), \phi(y_j) \rangle$. The diversity score is defined as $\text{Div}(y_{1:k}) = \det(L_\phi(y_{1:k}))$.
+DQO addresses the conflict where post-training improves model quality but collapses diversity. It achieves this by adding a semantic diversity reward term to the standard RL post-training objective, integrated within the GRPO/PPO frameworks. For each prompt $x$, the current policy $\pi_\theta$ samples $k$ responses $y_{1:k}$, which are then mapped to a semantic space using a pre-trained embedding model $\phi$. The **DPP Determinantal Diversity Metric** measures the volume spanned by these semantic vectors $\det(L_\phi)$ as a diversity score. In the **Joint Quality-Diversity Objective**, rewards are folded into the embedding vector lengths via exponential scaling (reward-augmented embeddings $\psi$), ensuring that a "larger volume" implies both "high quality and semantic distinctness." Finally, a **Leave-one-out Gradient Estimator** replaces the unstable $\log\det$ objective with a bounded, low-variance surrogate to update the policy.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    X["prompt x"] --> SAMPLE["Current policy π_θ<br/>Sample k responses y_1..y_k"]
+    SAMPLE --> EMB["Pre-trained embedding φ<br/>Map to semantic space"]
+    SAMPLE --> RM["Reward Model<br/>Score r(x,y_i)"]
+    EMB --> DIV["DPP Determinantal Metric<br/>Volume det(L_φ) represents diversity"]
+    DIV --> OBJ["Joint Objective<br/>Reward-augmented embedding ψ: Direction=Semantics Length=Reward<br/>J_Div = Reward + α·logdet − β·KL"]
+    RM --> OBJ
+    OBJ --> LOO["Leave-one-out Gradient Estimator<br/>Bounded + Low variance"]
+    LOO --> UPD["Update Policy<br/>Overlay on GRPO/PPO"]
+```
 
 ### Key Designs
 
-1. **DPP Determinant Diversity Metric**:
+**1. DPP Determinantal Diversity Metric: Defining Semantic Diversity via "Volume" instead of "Pairwise Distance"**
 
-    - Function: Measures the "volume" spanned by a set of responses in semantic embedding space.
-    - Mechanism: $\det(L)$ equals the squared volume of the parallelepiped spanned by the embedding vectors. The more linearly independent the vectors (i.e., the more semantically distinct), the larger the determinant; clustering (linear dependence) drives the determinant toward zero.
-    - Design Motivation: Pairwise distance metrics are susceptible to pseudo-diversity via two clusters. The determinant is sensitive to linear dependence and can detect degenerate cases where responses appear distant yet lie in a low-dimensional subspace.
+A naive approach is to use pairwise distances between responses as diversity, but this is easily exploited by "pseudo-diversity"—a model could learn two distant clusters, resulting in a large average distance while responses only fluctuate between two modes. This paper uses the DPP determinant: the (squared) volume of the parallelepiped spanned by $k$ response embeddings $\det(L_\phi(y_{1:k}))$ is treated as the diversity score. Geometrically, if vectors are more linearly independent and directions are more spread out, the determinant is larger. If they fall into the same low-dimensional subspace (clustering), the vectors become linearly dependent and the determinant approaches zero. Because the determinant is sensitive to linear dependence, it detects degradation where pairwise distances appear large but samples are actually cramped in a subspace.
 
-2. **Joint Quality-Diversity Objective**:
+**2. Joint Quality-Diversity Objective: Merging Reward into Embedding Length**
 
-    - Function: $J_{Div}(\pi_\theta) = \mathbb{E}[\sum_i r(x,y_i) + \alpha \log\det(L_\phi(y_{1:k})) - \beta \text{KL}(\pi_\theta || \pi_{ref})]$
-    - Mechanism: The optimal policy can be expressed as $\pi_{div}(y_{1:k}|x) \propto \det(L_\psi(x,y_{1:k}))$, where $\psi(x,y) = \sqrt{\exp(r/\alpha)\pi_{ref}(y|x)} \cdot \phi(y)$ is the reward-augmented embedding. Rewards serve as scaling factors (norms) of embedding vectors, while semantics determine their directions.
-    - Design Motivation: Provides a geometric interpretation of the quality-diversity trade-off—maximizing volume requires vectors to be both large (high quality) and orthogonal (high diversity), consistent with D-optimal experimental design theory.
+To balance diversity with quality, a DPP diversity term is added to the standard RL objective:
 
-3. **Leave-one-out Gradient Estimator**:
+$$J_{Div}(\pi_\theta) = \mathbb{E}\Big[\textstyle\sum_i r(x,y_i) + \alpha \log\det(L_\phi(y_{1:k})) - \beta\, \text{KL}(\pi_\theta \| \pi_{ref})\Big]$$
 
-    - Function: Stabilizes training and reduces gradient variance.
-    - Mechanism: Replaces the raw $\log\det(L)$ with $\log\frac{\det(L(y_{1:k})+I_k)}{\det(L(y_{-i})+I_{k-1})}$. Adding $I_k$ ensures a bounded range $[0, \log(1+k)]$; the leave-one-out term subtracts a baseline excluding the $i$-th response.
-    - Design Motivation: The raw $\log\det$ diverges to negative infinity as the determinant approaches zero, causing training instability. Adding the identity regularization combined with the LOO baseline simultaneously addresses both stability and variance.
+where $\alpha$ adjusts the quality-diversity trade-off and $\beta$ is the KL constraint. The optimal policy for this objective can be written as $\pi_{div}(y_{1:k}|x) \propto \det(L_\psi(x,y_{1:k}))$. Crucially, the Gram matrix utilizes **reward-augmented embeddings** $\psi(x,y) = \sqrt{\exp(r/\alpha)\,\pi_{ref}(y|x)} \cdot \phi(y)$. Here, the semantics $\phi(y)$ determine the **direction** of the vector, while the exponentially scaled reward $r$ determines the **length**. Consequently, "maximizing volume" inherently requires vectors to be both long (high reward/quality) and orthogonal (semantically different/diverse). This provides a clean geometric interpretation and aligns theoretically with D-optimal experimental design.
+
+**3. Leave-one-out Gradient Estimator: Stabilizing Training via Regularization and Baselines**
+
+Calculating gradients directly for $\log\det(L)$ presents a major issue: when responses cluster and the determinant approaches zero, $\log\det$ approaches negative infinity, causing gradient explosion and training collapse. This paper employs a bounded and low-variance surrogate:
+
+$$\log\frac{\det(L(y_{1:k})+I_k)}{\det(L(y_{-i})+I_{k-1})}$$
+
+to replace the original $\log\det$. Adding the identity matrix $I_k$ as regularization clamps the value within the bounded range $[0, \log(1+k)]$, eliminating the negative infinity problem (proven in Lemma 1). Using the determinant of the set excluding the $i$-th response $\det(L(y_{-i})+I_{k-1})$ as a leave-one-out baseline removes components unrelated to the $i$-th sample, thereby reducing gradient variance. Together, these solve both stability and variance issues, making the method robust to the number of samples $k$.
 
 ### Loss & Training
-- Compatible as an add-on to GRPO (reasoning tasks) or PPO (non-reasoning tasks).
-- Hyperparameter $\alpha$ controls the quality-diversity trade-off; $k$ controls the number of samples per prompt.
-- A reward model (rather than outcome reward) is used for scoring to prevent reward hacking, where the model provides a correct answer followed by random content to inflate diversity scores.
+- Can be overlaid on GRPO (for reasoning tasks) or PPO (for non-reasoning tasks).
+- Hyperparameter $\alpha$ controls the quality-diversity trade-off; $k$ controls samples per prompt.
+- Uses a Reward Model (rather than outcome rewards) for scoring to avoid reward hacking (where a model might provide a correct answer followed by random content to inflate diversity scores).
 
 ## Key Experimental Results
 
@@ -98,31 +108,31 @@ A DPP diversity term is added to the standard RL post-training objective. For ea
 | 2.0 | 4 | 0.75 | 5.27 | 7.86 |
 
 ### Key Findings
-- DQO is the only method that consistently maintains high quality and high diversity across all tasks. GRPO-entropy achieves good diversity on GSM8K but poor quality on Dolly.
-- DPP determinant vs. pairwise distance: in a city recommendation experiment, pairwise distance leads to two clusters, whereas the determinant produces genuinely broad diversity.
-- DQO's advantage becomes more pronounced as $n$ increases in pass@$n$—higher diversity translates to a greater probability of finding good answers at larger $n$.
+- DQO is the only method that maintains both high quality and high diversity across all tasks. GRPO-entropy performs well on diversity for GSM8K but suffers in quality on Dolly.
+- DPP-determinant vs pairwise distance: In city recommendation experiments, pairwise distance led to two clusters, while determinants produced truly broad diversity.
+- DQO's advantage becomes more pronounced as $n$ in pass@n increases—higher diversity increases the probability of finding a good answer in larger sample sizes.
 - Excessively large $\alpha$ (e.g., 2.0) sacrifices pass@1 quality.
 
 ## Highlights & Insights
-- **The DPP determinant as a diversity metric** resolves the degeneracy of pairwise distances and is theoretically connected to D-optimal experimental design. This metric is transferable to any scenario requiring set-level diversity (recommendation systems, active learning, etc.).
-- **The leave-one-out gradient estimator** provides a bounded guarantee (Lemma 1) that stabilizes training and ensures robustness to varying $k$, representing a key engineering contribution.
-- Outcome rewards are found to be susceptible to reward hacking (answering correctly then generating random content); a reward model must be used instead.
+- Using the **DPP determinant as a diversity metric** resolves the degradation of pairwise distances and connects theoretically to D-optimal design. This metric is transferable to any scenario requiring set diversity (e.g., recommendation systems, active learning).
+- The boundedness guarantee of the **leave-one-out gradient estimator** (Lemma 1) ensures training stability and robustness to $k$, representing a critical engineering contribution.
+- Outcome rewards are found to be susceptible to reward hacking (answering correctly then writing nonsense); using a reward model is essential.
 
 ## Limitations & Future Work
-- Diversity depends on the quality of the pretrained embedding model; different embeddings may yield different results.
-- Sampling $k$ responses simultaneously and computing the determinant introduces additional GPU overhead during training.
-- Diversity gains on reasoning tasks (GSM8K) are limited, likely because the space of correct answers is inherently constrained.
+- Diversity depends on the quality of the pre-trained embedding model; different embeddings may yield different results.
+- Sampling $k$ responses and calculating determinants simultaneously increases GPU overhead during training.
+- Diversity gains on reasoning tasks (GSM8K) are limited, likely because the diversity space for correct answers is inherently constrained.
 
 ## Related Work & Insights
-- **vs. GRPO-entropy (Yao et al.)**: Token-level entropy regularization fails to capture semantic diversity and leads to significant quality degradation on non-reasoning tasks.
-- **vs. GRPO-likelihood (He et al.)**: Generation-probability-based diversity performs poorly on reasoning tasks.
-- **vs. Chung et al.**: Pairwise embedding distance weighting based on DPO is prone to cluster degeneracy.
+- **vs GRPO-entropy (Yao et al.)**: Token-level entropy regularization fails to capture semantic diversity and results in significant quality degradation on non-reasoning tasks.
+- **vs GRPO-likelihood (He et al.)**: Diversity methods based on generation probability perform poorly on reasoning tasks.
+- **vs Chung et al.**: Weighting based on pairwise embedding distances for DPO is prone to clustering degradation.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Combines DPP with LLM post-training and establishes a theoretical connection to experimental design.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Four task types, multiple diversity metrics, complete ablation study.
-- Writing Quality: ⭐⭐⭐⭐ Geometric interpretation is clear; the connection to D-optimal design is insightful.
-- Value: ⭐⭐⭐⭐ Offers a practical contribution to the diversity problem in LLM post-training.
+- Novelty: ⭐⭐⭐⭐ Combines DPP with LLM post-training, linking theory to experimental design.
+- Experimental Thoroughness: ⭐⭐⭐⭐ 4 task types, multiple diversity metrics, comprehensive ablation.
+- Writing Quality: ⭐⭐⭐⭐ Clear geometric interpretations and insightful connections to D-optimal design.
+- Value: ⭐⭐⭐⭐ Practical contribution to the diversity problem in LLM post-training.
 
 <!-- RELATED:START -->
 
@@ -130,11 +140,11 @@ A DPP diversity term is added to the standard RL post-training objective. For ea
 
 ## Related Papers
 
+- [\[ICLR 2026\] Representation-Based Exploration for Language Models: From Test-Time to Post-Training](representation-based_exploration_for_language_models_from_test-time_to_post-trai.md)
+- [\[ICLR 2026\] Using Reinforcement Learning to Train Large Language Models to Explain Human Decisions](using_reinforcement_learning_to_train_large_language_models_to_explain_human_dec.md)
 - [\[ICLR 2026\] AutoQD: Automatic Discovery of Diverse Behaviors with Quality-Diversity Optimization](autoqd_automatic_discovery_of_diverse_behaviors_with_quality-diversity_optimizat.md)
-- [\[NeurIPS 2025\] RePIC: Reinforced Post-Training for Personalizing Multi-Modal Language Models](../../NeurIPS2025/reinforcement_learning/repic_reinforced_post-training_for_personalizing_multi-modal_language_models.md)
-- [\[ACL 2026\] Why Does Reinforcement Learning Generalize? A Feature-Level Mechanistic Study of Post-Training in Large Language Models](../../ACL2026/reinforcement_learning/why_does_reinforcement_learning_generalize_a_feature-level_mechanistic_study_of_.md)
-- [\[ICLR 2026\] Robust Multi-Objective Controlled Decoding of Large Language Models](robust_multi-objective_controlled_decoding_of_large_language_models.md)
-- [\[ICLR 2026\] VerifyBench: Benchmarking Reference-based Reward Systems for Large Language Models](verifybench_benchmarking_reference-based_reward_systems_for_large_language_model.md)
+- [\[ACL 2025\] MAPoRL: Multi-Agent Post-Co-Training for Collaborative Large Language Models with Reinforcement Learning](../../ACL2025/reinforcement_learning/maporl_multi-agent_post-co-training_for_collaborative_large_language_models_with.md)
+- [\[ICLR 2026\] On Predictability of Reinforcement Learning Dynamics for Large Language Models](on_predictability_of_reinforcement_learning_dynamics_for_large_language_models.md)
 
 </div>
 

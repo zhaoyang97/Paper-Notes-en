@@ -2,86 +2,107 @@
 title: >-
   [Paper Note] P-GenRM: Personalized Generative Reward Model with Test-time User-based Scaling
 description: >-
-  [ICLR 2026][Reinforcement Learning][Personalized reward model] This paper proposes P-GenRM, the first personalized generative reward model. Through a three-stage training pipeline—PSI supervised fine-tuning to construct…
+  [ICLR 2026][Reinforcement Learning][Paper Note] Ours proposes P-GenRM, the first personalized generative reward model. Through three-stage training (PSI supervised fine-tuning to build structured evaluation chains → CRE reinforcement learning to enhance reasoning under missing preferences → hard negative curriculum learning to improve robustness), mixed preference s
 tags:
-  - "ICLR 2026"
-  - "Reinforcement Learning"
-  - "Personalized reward model"
-  - "generative evaluation"
-  - "structured evaluation chain"
-  - "test-time scaling"
-  - "collaborative filtering"
+  - ICLR 2026
+  - Reinforcement Learning
 date: 2026-05-08
-content_hash: ed9394794007af21
+content_hash: a53727e6e8091a9c
 ---
-
 # P-GenRM: Personalized Generative Reward Model with Test-time User-based Scaling
 
 **Conference**: ICLR 2026 Oral  
 **arXiv**: [2602.12116](https://arxiv.org/abs/2602.12116)  
 **Code**: [GitHub](https://github.com/Tongyi-ConvAI/Qwen-Character/tree/main/Character-GenRM)  
-**Area**: Reinforcement Learning
-**Keywords**: Personalized reward model, generative evaluation, structured evaluation chain, test-time scaling, collaborative filtering
+**Area**: Reinforcement Learning  
+**Keywords**: Personalized Reward Model, Generative Critique, Structured Evaluation Chain, Test-time Scaling, Collaborative Filtering
 
 ## TL;DR
 
-This paper proposes P-GenRM, the first personalized generative reward model. Through a three-stage training pipeline—PSI supervised fine-tuning to construct structured evaluation chains, CRE reinforcement learning to enhance reasoning under missing preference signals, and hard-negative curriculum learning to improve robustness—P-GenRM converts mixed preference signals into context-adaptive user personas and scoring rubrics. At inference time, a dual-granularity test-time scaling strategy is introduced: individual-level multi-sample aggregation and prototype-level collaborative filtering that borrows preferences from similar users. P-GenRM surpasses the previous SOTA by 2.31% on PersonalRewardBench, with test-time scaling yielding an additional ~3% gain, while generalizing to unseen users.
+Ours proposes P-GenRM, the first personalized generative reward model. Through three-stage training (PSI supervised fine-tuning to build structured evaluation chains → CRE reinforcement learning to enhance reasoning under missing preferences → hard negative curriculum learning to improve robustness), mixed preference signals are transformed into scenario-adaptive user personas and scoring rubrics. By introducing dual-granularity test-time scaling (individual-level multi-sampling aggregation + prototype-level collaborative filtering leveraging similar user preferences), it outperforms the Prev. SOTA by 2.31% on PersonalRewardBench, achieves an additional 3% Gain via test-time scaling, and generalizes to unseen users.
 
 ## Background & Motivation
 
-**Background**: RLHF is the dominant paradigm for LLM alignment, with reward models serving as its core component by providing scoring signals to guide the policy model. As application scenarios shift from "universal value alignment" toward "personalized alignment," reward models must capture each individual user's unique preference criteria rather than learning a single set of global human preferences.
+**Background**: RLHF is the mainstream paradigm for LLM alignment, with the reward model at its core—providing scoring signals to guide the policy model's output. As applications move from "general value alignment" toward "personalized alignment," reward models must capture every user's unique preference standards rather than learning a single set of global human preferences.
 
-**Limitations of Prior Work**: Existing personalized reward methods face two fundamental problems. First, **static preference modeling**—user preferences, which are dynamic and context-dependent, are reduced to a fixed set of rules. The same user may have completely different preferences across contexts (preferring brief answers while driving, detailed discussion during casual conversation), and fixed rules cannot accommodate such variation. Although SynthesizeMe infers synthetic personas from historical preferences, these personas are static and do not adapt to context after generation. Second, **poor generalization to new users**—in cold-start scenarios with very limited interaction history, existing methods struggle to construct reliable reward signals from sparse feedback. Methods such as GPO, VPL, and PAL all require sufficient user data to function effectively.
+**Limitations of Prior Work**: Existing personalized reward methods face two fundamental problems. First, **static preference modeling**—simplifying dynamic, scenario-dependent user preferences into a set of fixed rules. However, the same user may have different preferences in different scenarios (e.g., wanting short answers while driving but detailed discussions when chatting). Fixed rules fail to cover these variations. While SynthesizeMe infers synthetic personas from historical preferences, its personas are static and do not adjust per scenario once generated. Second, **difficulty in generalizing to new users**—historical interactions are extremely sparse in cold-start scenarios, making it difficult for existing methods to build reliable reward signals from limited feedback. Methods like GPO, VPL, and PAL all require sufficient user data to function.
 
-**Key Challenge**: Personalized reward modeling requires fine-grained understanding of user preferences, yet preference signals are inherently sparse and noisy. Explicit preferences (e.g., "I prefer concise responses") are rarely volunteered by users, while implicit preferences derived from interaction history are abundant but noisy. The core challenge is: how to reliably infer context-adaptive evaluation criteria from such mixed signals, and how to produce reasonable scores when user information is extremely limited?
+**Key Challenge**: Personalized rewards require a fine-grained understanding of user preferences, yet preference signals are naturally sparse and noisy—explicit preferences ("I like a concise style") are rarely provided actively, while implicit preferences (interaction history) are abundant but noisy. How can scenario-adaptive evaluation standards be reliably inferred from such mixed signals? How can reasonable scores be provided even when user information is minimal?
 
-**Key Insight**: Generative reward models (GenRM) do not merely output a scalar score; they generate a complete evaluation chain—including user persona inference, rubric formulation, and item-by-item scoring. This affords three advantages: (1) the generation process itself performs reasoning, enabling dynamic adaptation to different contexts; (2) the evaluation chain is textual and inherently interpretable; (3) multiple samples can be drawn and aggregated at test time, analogous to test-time compute scaling in LLMs. The authors further draw on the collaborative filtering paradigm from recommender systems—similar users share similar preferences—clustering users into prototypes so that new users can obtain reliable scores through prototype transfer.
+**Key Insight**: A Generative Reward Model (GenRM) does not just output a single score; it generates a complete evaluation chain—including user persona inference, scoring rubric formulation, and a point-by-point scoring process. This offers three advantages: (1) the generation process itself performs reasoning, allowing for dynamic adaptation to different scenarios; (2) the evaluation chain is textual and naturally interpretable; (3) it allows for multi-sampling and aggregation at test time, similar to LLM test-time compute scaling. The authors further draw on the idea of collaborative filtering from recommendation systems—similar users have similar preferences—clustering users into prototypes to allow new users to obtain reliable scores through prototype transfer.
 
-**Core Idea**: Use a generative reward model to convert mixed preference signals into context-adaptive evaluation chains, and reduce noise while enhancing generalization through dual-granularity test-time scaling at both the individual and prototype levels.
+**Core Idea**: Use a generative reward model to transform mixed preference signals into scenario-adaptive evaluation chains, and reduce noise while enhancing generalization through dual-granularity test-time scaling at both the individual and prototype levels.
 
 ## Method
 
 ### Overall Architecture
 
-P-GenRM takes as input the current query $q_t$, the user's implicit preference history $H_t^{(u)}$ (chosen/rejected response pairs from several interaction turns), optional explicit preference criteria $E^{(u)}$, and the candidate responses to be scored. The model outputs a complete Structured Evaluation Chain (SEC): it first infers the user's persona in the current context, then derives weighted scoring rubrics from the persona, evaluates each candidate response criterion by criterion, and produces a final score. Training proceeds in three stages (SFT → RL → curriculum learning), and dual-granularity scaling is applied at inference time to further improve accuracy.
+P-GenRM aims to solve the problem: how to enable the reward model to understand "what this specific user wants in this specific scenario" and provide reliable scores even with minimal user information. Its inputs include the current query $q_t$, the user's implicit preference history $H_t^{(u)}$ (chosen/rejected response pairs from several interaction rounds), optional explicit preference criteria $E^{(u)}$, and candidate responses to be scored. Unlike traditional reward models that directly output a scalar, P-GenRM outputs a complete Structured Evaluation Chain (SEC): first inferring the user's persona in the current scenario, then deriving a weighted scoring rubric from the persona, and finally scoring the candidate responses point-by-point to aggregate into a final score.
+
+The entire pipeline is divided into two parts. On the **training side**, the model is developed through three progressive stages: PSI uses supervised fine-tuning to teach the model to generate evaluation chains dynamically by scenario; CRE uses reinforcement learning to turn "format writing" into "genuine reasoning"; and hard negative curriculum learning refines the model to distinguish between responses of similar quality that do not match the user's taste. On the **inference side**, dual-granularity test-time scaling is overlaid to further reduce noise and address cold starts—averaging multiple samples for the same user (individual level) and filling information gaps by borrowing preferences from similar users (prototype level), the latter relying on an offline-clustered user prototype library.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["Input: Query q + User Implicit History H<br/>+ Optional Explicit Criteria E + Candidate Responses"]
+
+    subgraph TR["Three-Stage Training"]
+        direction TB
+        D1["PSI: SFT learns dynamic<br/>Structured Evaluation Chain generation"] --> D2["CRE: GRPO<br/>Process Reward + Outcome Reward"] --> D3["Hard Negative Curriculum Learning<br/>Gradually increasing ratio of hard negatives"]
+    end
+
+    D3 --> RM["P-GenRM<br/>Persona → Rubric → Point-by-point Scoring"]
+    IN --> RM
+
+    subgraph SC["Dual-Granularity Test-time Scaling"]
+        direction TB
+        P0["Offline Prototype Library<br/>Persona Embedding → K-means → Attention Refinement"]
+        I1["Individual Level: Average of m samples for the same user"]
+        P1["Prototype Level: Borrowing similar user preferences"]
+        P0 --> P1
+    end
+
+    RM --> I1
+    RM --> P1
+    I1 --> OUT["Aggregation → Final Personalized Score"]
+    P1 --> OUT
+```
 
 ### Key Designs
 
-1. **PSI (Persona-guided Scoring Induction) — Supervised Fine-tuning Stage**:
+The first three points address specific challenges in the three-stage training, while the fourth point covers dual-granularity scaling during inference.
 
-    - Function: Trains the model to generate complete structured evaluation chains from mixed preference signals.
-    - Mechanism: Strong models such as o3 are first used to construct an SEC dataset—given a user's implicit history and explicit criteria, the model infers a context-aware persona, derives preference dimensions and weights for the current scenario, scores each candidate, and produces a final result. After filtering low-quality samples via rejection sampling, the data is used for SFT. The key innovation is that personas are **dynamically generated**: the same user produces different personas and rubrics for different queries, rather than a one-time static persona as in SynthesizeMe.
-    - Design Motivation: Preliminary experiments (Table 6) show that the user persona, used as a preference prior, contributes the largest accuracy gain (+1.6%), surpassing self-descriptions, demographic signals, and other inputs. Embedding persona inference within the generation process—rather than treating it as a fixed input—allows the model to flexibly adapt to the current context.
+**1. PSI: Embedding "Persona Inference" into the generation process to make evaluation criteria scenario-dynamic**
 
-2. **CRE (Criteria-based Reasoning Enhancement) — Reinforcement Learning Stage**:
+The Persona-guided Scoring Induction (PSI) stage addresses the issue that "the model initially cannot generate structured evaluation chains." The authors first use strong models like o3 to construct the SEC dataset: given a user's implicit history and explicit criteria, the strong model infers a scenario-aware persona, derives preference dimensions and weights for that scenario, and provides results after point-by-point scoring. Rejection sampling is used to filter out low-quality samples before performing SFT. The key is not just "generating a persona," but that the persona is **dynamically generated**—the same user will have different personas and scoring rubrics inferred under different queries, rather than a single static persona generated once and placed in the prompt as in SynthesizeMe. This choice is evidence-based: preliminary experiments (Table 6) show that user personas as preference priors provide the largest Gain in scoring accuracy (+1.6%), exceeding other signals like self-descriptions or demographics; making persona inference part of the generation process allows the model to adjust flexibly to the current scenario.
 
-    - Function: Enhances evaluation chain generation quality in scenarios lacking explicit preferences.
-    - Mechanism: Built on the GRPO algorithm, this stage introduces a dual reward: a **process reward** ($PR_t$), assessed by an LLM judge on whether the generated evaluation chain covers the user's true preference dimensions (scored 0–1); and an **outcome reward** ($OR_t$), which is binary (0/1) based on whether the final scores correctly rank chosen over rejected responses (with a −0.1 penalty for formatting errors). The total reward is $R_t = \alpha \cdot PR_t + \beta \cdot OR_t$ ($\alpha=0.5, \beta=1.0$). Training deliberately provides only limited interaction history without explicit preferences, forcing the model to infer preferences from sparse signals.
-    - Design Motivation: Imitation learning via SFT alone is insufficient—the model may learn templated evaluation chains without deep reasoning. The RL stage jointly optimizes process and outcome, ensuring that evaluation chains both accurately capture user preferences (process reward) and lead to correct rankings (outcome reward). Ablation experiments confirm that removing either reward causes significant performance degradation.
+**2. CRE: Using dual signals of process reward + outcome reward to force the model to learn reasoning even without explicit preferences**
 
-3. **Hard-Negative Curriculum Learning**:
+Relying solely on SFT imitation often leads the model to learn "templated" evaluation chains—the format is correct, but the reasoning is empty. The Criteria-based Reasoning Enhancement (CRE) stage is based on GRPO, applying two rewards to the evaluation chain: the process reward $PR_t$ is assessed by an LLM judge to see if the generated evaluation chain covers the user's true preference dimensions, taking a continuous value of 0-1; the outcome reward $OR_t$ checks if the final scores correctly rank the chosen/rejected responses, giving 1 for correct, 0 for incorrect, and a $-0.1$ penalty for format errors. The total reward is:
 
-    - Function: Improves the model's ability to distinguish response pairs that are highly similar in quality but differ in alignment with user preferences.
-    - Mechanism: The proportion of hard negatives in training is gradually increased—these are responses of comparable quality that do not match a particular user's preferences. To enlarge the exploration space for hard samples, the process reward $PR_t$ is removed in this stage, retaining only the outcome reward $OR_t$.
-    - Design Motivation: Personalized scoring is inherently highly subjective; in many cases the quality difference between two responses is minimal and the distinction lies solely in whether each matches the user's unique preferences. The curriculum learning strategy guides the model from easy to hard discrimination, improving robustness.
+$$R_t = \alpha \cdot PR_t + \beta \cdot OR_t,\quad \alpha=0.5,\ \beta=1.0$$
 
-### Test-time User-based Scaling
+During training, the model is intentionally fed limited historical interactions without explicit preferences, forcing it into a situation where it must "infer preferences from sparse signals." Process rewards ensure the evaluation chain covers the correct dimensions, while outcome rewards ensure the final ranking is correct—消融实验 (ablation study) shows that removing either significantly degrades performance, proving both are indispensable.
 
-After training, P-GenRM exploits the natural scalability of GenRM during inference via dual-granularity scaling:
+**3. Hard Negative Curriculum Learning: Feeding response pairs with "similar quality but mismatching user taste" from easy to hard**
 
-**Offline Phase — Prototype Initialization and Refinement**: Qwen3-Embedding-0.6B is used to encode each user's persona $P_t^{(u)}$ across different contexts; the concatenated cross-context preference embedding matrix $\mathbf{P}$ is then clustered via K-means into $k$ user prototypes. Prototype refinement is performed through an attention mechanism—prototype-augmented attention is used to weight and aggregate user history, combined with a discriminative loss (enabling prototypes to distinguish chosen from rejected responses) and two regularization terms to prevent excessive prototype drift. PCA analysis shows that 50 prototypes suffice to capture the vast majority of preference variation across users.
+Personalized scoring is inherently subjective; the difficulty often lies not in "which response is high quality" but in "which of two similar-quality responses better fits this user's unique preference." The curriculum learning stage gradually increases the proportion of "hard negatives" in training—these are responses with similar quality that do not match the specific user's preference. To allow more exploration space for hard samples, the process reward $PR_t$ is removed in this stage, leaving only the outcome reward $OR_t$. Robustness is improved by letting the model transition from simple to difficult distinctions.
 
-**Individual-level Scaling**: For a given user's current query, P-GenRM samples $m$ evaluation plans in parallel, each potentially producing slightly different inferred personas and rubrics; the final score is the average across samples. This amounts to multi-hypothesis exploration in the preference inference space, reducing the noise of any single inference.
+**4. Dual-Granularity Test-time Scaling: Individual multi-sampling + Prototype borrowing to simultaneously reduce noise and address cold starts**
 
-**Prototype-level Scaling**: Based on the user's preference embedding, the nearest prototype is identified, and $n$ most similar users under that prototype are selected. Their preference histories are used to prompt P-GenRM to generate $n$ additional scoring plans. The final score aggregates both individual-level and prototype-level results. This approach draws on the core insight of collaborative filtering—similar users share similar preferences—and is particularly beneficial for new users in cold-start scenarios.
+The trained model still has two weaknesses in single-shot inference: persona/rubric inference from a single sample inevitably carries noise, and cold-start users have too little history. Two granularities are used together during inference. **Individual-level** scaling involves parallel sampling $m$ times for the current query, with each inference producing slightly different personas and scoring rubrics; the average of multiple plans is taken—essentially performing multi-hypothesis exploration in the preference inference space to suppress single-shot noise. **Prototype-level** scaling applies the collaborative filtering assumption that "similar users have similar preferences" to RLHF: first, each user's persona $P_t^{(u)}$ across scenarios is vectorized using Qwen3-Embedding-0.6B and concatenated into a cross-scenario preference embedding matrix $\mathbf{P}$. K-means clusters these into $k$ prototypes, which are refined through prototype-augmented attention (attention-weighted aggregation of history + discriminative loss to distinguish chosen/rejected + two regularization terms to prevent excessive drift; PCA shows 50 prototypes cover most preference variance). During scoring, the closest prototype is found based on the user preference embedding, $n$ most similar users are selected, and the model generates $n$ additional sets of scores based on their histories, which are finally aggregated with individual-level results. Quality is more important than quantity here—Ind-16+Pro-8 outperforms purely stacking individual sampling (Ind-32), but a Pro value that is too large (Pro-16) introduces inconsistent noisy preferences and performance drops; cold-start users benefit most from prototype transfer.
 
 ### Loss & Training
 
-The three stages proceed sequentially: (1) the PSI stage uses standard SFT cross-entropy loss; (2) the CRE stage uses the GRPO objective with total reward $R_t = 0.5 \cdot PR_t + 1.0 \cdot OR_t$ and KL regularization to prevent excessive deviation from the reference policy; (3) the curriculum learning stage retains the GRPO framework but removes $PR_t$, keeping only $OR_t$, while progressively increasing the proportion of hard negatives. The prototype refinement stage uses a discriminative pairwise loss $\mathcal{L}_{\text{pair}} = -\log\sigma(z_t^\top y_t^+ - z_t^\top y_t^-)$, together with centroid regularization and temporal smoothness regularization.
+The three stages are: (1) PSI stage uses standard SFT cross-entropy loss; (2) CRE stage uses the GRPO objective with total reward $R_t = 0.5 \cdot PR_t + 1.0 \cdot OR_t$, including KL regularization to prevent drifting too far from the reference policy; (3) Curriculum Learning stage follows the GRPO framework but removes $PR_t$, keeping only $OR_t$, and gradually increases the ratio of hard negatives. The offline prototype optimization stage uses a discriminative pairwise loss:
+
+$$\mathcal{L}_{\text{pair}} = -\log\sigma(z_t^\top y_t^{+} - z_t^\top y_t^{-})$$
+
+along with center regularization and temporal smoothing regularization.
 
 ## Key Experimental Results
 
-### Main Results — Comparison on PersonalRewardBench
+### Main Results—Comparison on PersonalRewardBench
 
 | Method | Model | Chatbot Arena | PRISM |
 |------|------|:---:|:---:|
@@ -92,29 +113,29 @@ The three stages proceed sequentially: (1) the PSI stage uses standard SFT cross
 | VPL | 8B | 58.12% | 58.25% |
 | FT RM + SynthesizeMe | 8B | 69.78% | 62.84% |
 | **P-GenRM** | **8B** | **72.68%** | **65.32%** |
-| **P-GenRM + Ind-16, Pro-8** | **8B** | **75.92%** | **68.06%** |
+| **P-GenRM + Ind-16,Pro-8** | **8B** | **75.92%** | **68.06%** |
 | FT RM + SynthesizeMe | 70B | 72.05% | 63.74% |
 | P-GenRM | 70B | 73.42% | 66.21% |
 | o3 + PSI | — | 69.14% | 63.87% |
 
-P-GenRM-8B outperforms the previous SOTA (FT RM + SynthesizeMe-70B) by an average of 1.04%; with test-time scaling, a further ~3% gain is achieved. The 8B model even surpasses SynthesizeMe at the 70B scale.
+P-GenRM-8B outperforms the Prev. SOTA (FT RM + SynthesizeMe-70B) by an average of 1.04%, with an additional ~3% Gain after adding test-time scaling. The 8B model even surpasses the 70B level SynthesizeMe.
 
 ### Ablation Study
 
-| Configuration | Chatbot Arena | PRISM | Notes |
+| Config | Chatbot Arena | PRISM | Description |
 |------|:---:|:---:|------|
-| P-GenRM (Full) | 72.68% | 65.32% | Complete model |
-| w/o CL | 71.07% | 63.82% | Removing curriculum learning: −1.5–1.6% |
-| w/o CL, PR | 70.22% | 62.70% | Further removing process reward: −0.8–1.1% |
-| w/o CL, OR | 69.05% | 60.94% | Removing outcome reward causes larger drop than removing process reward |
-| w/o CL, RL | 66.76% | 57.08% | Removing entire RL stage: −6–8% |
+| P-GenRM (Full) | 72.68% | 65.32% | Full Model |
+| w/o CL | 71.07% | 63.82% | Remove Curriculum Learning, drop 1.5-1.6% |
+| w/o CL, PR | 70.22% | 62.70% | Remove Process Reward further, drop 0.8-1.1% |
+| w/o CL, OR | 69.05% | 60.94% | Removing Outcome Reward drops more than Process Reward |
+| w/o CL, RL | 66.76% | 57.08% | Removing entire RL stage drops 6-8% |
 | w/o CL, RL, SFT | 56.37% | 52.04% | Degenerates to baseline LLM-as-Judge |
 
-### Detailed Test-time Scaling Analysis
+### Test-time Scaling Detailed Analysis
 
-| Scaling Configuration | Chatbot Arena | PRISM |
+| Scaling Config | Chatbot Arena | PRISM |
 |------|:---:|:---:|
-| P-GenRM (no scaling) | 72.68% | 65.32% |
+| P-GenRM (No scaling) | 72.68% | 65.32% |
 | + Ind-8 | 73.61% | 65.79% |
 | + Ind-16 | 73.87% | 66.66% |
 | + Ind-32 | 75.59% | 67.65% |
@@ -123,52 +144,43 @@ P-GenRM-8B outperforms the previous SOTA (FT RM + SynthesizeMe-70B) by an averag
 | + Ind-0, Pro-8 | 66.90% | 57.65% |
 | + Ind-16, Pro-16 | 72.59% | 64.61% |
 
-### OOD Generalization (LaMP-QA Cold-start)
-
-| Method | Arts | Personal | Society | Avg |
-|------|:---:|:---:|:---:|:---:|
-| Qwen3-235B-A22B | 0.600 | 0.657 | 0.600 | 0.619 |
-| SynthesizeMe-8B | 0.486 | 0.657 | 0.600 | 0.581 |
-| LLaMA3.1-70B | 0.543 | 0.657 | 0.600 | 0.600 |
-| **P-GenRM-8B + Ind-8, Pro-4** | **0.543** | **0.714** | **0.657** | **0.638** |
-
 ### Key Findings
 
-- **RL is the largest contributor**: Removing the entire RL stage causes a 6–8% drop, demonstrating that SFT-based imitation of evaluation chains alone is far from sufficient; the outcome reward is more critical than the process reward (removing OR causes a larger performance decrease).
-- **Prototype-level scaling helps new users most, but more is not always better**: Ind-16+Pro-8 is the optimal configuration (24 total inference calls), yet Pro-16 underperforms Pro-8—too many similar users introduce noisy preferences inconsistent with the target user.
-- **Prototype-only scaling is ineffective**: Ind-0+Pro-8 drops to 66.90%/57.65%, well below the no-scaling baseline, confirming that the user's own preferences must remain central to the scoring.
-- **Dynamic vs. static personas**: Under the LLM-as-Judge setting, PSI consistently outperforms SynthesizeMe across all base models (Qwen3-8B: +1.65/+1.68; o3: +1.41/+5.38), validating the necessity of context-adaptive persona generation.
-- **Strong cross-distribution generalization**: In the LaMP-QA cold-start setting, P-GenRM-8B outperforms Qwen3-235B, demonstrating that the prototype transfer mechanism is genuinely effective for new users.
-- **No majority-group bias**: Prototype-level macro accuracy (65.21%) is nearly identical to sample-level accuracy (65.32%), a difference of only 0.11%, indicating that minority-group users are not neglected under long-tail distributions.
+- **RL is the largest contributor**: Removing all RL stages leads to a 6-8% drop, indicating that SFT alone is insufficient to mimic evaluation chains; outcome rewards are more critical than process rewards.
+- **Prototype-level scaling helps new users most but is not "the more the better"**: Ind-16+Pro-8 is the optimal configuration (24 total inferences), but Pro-16 performs worse than Pro-8—too many similar users introduce noisy preferences inconsistent with the target user.
+- **Pure prototype scaling is insufficient**: Ind-0+Pro-8 drops to 66.90%/57.65%, far below the baseline without scaling, indicating that the individual's own preferences must remain the primary subject of scoring.
+- **Dynamic Persona vs. Static Persona**: Under the LLM-as-Judge setting, PSI consistently outperforms SynthesizeMe on all base models (Qwen3-8B: +1.65/+1.68, o3: +1.41/+5.38), validating the necessity of scenario-adaptive personas.
+- **Strong OOD Generalization**: In the LaMP-QA cold-start scenario, P-GenRM-8B surpasses the 235B Qwen3, proving the effectiveness of the prototype transfer mechanism for new users.
+- **No bias towards majority groups**: Prototype-level macro accuracy (65.21%) is nearly identical to sample-level accuracy (65.32%, a 0.11% difference), showing that minority groups are not ignored under long-tail distributions.
 
 ## Highlights & Insights
 
-- **Evaluation chains as debuggable reward signals**: Traditional reward models output a scalar with no explanation of why a response scores highly. P-GenRM outputs the complete reasoning process (persona → rubric → item-by-item scoring), allowing users and developers to inspect each step for correctness—this is especially valuable for the highly subjective nature of personalized scoring.
-- **Collaborative filtering transplanted into RLHF**: The core assumption of recommender systems—"similar users share similar preferences"—has historically been confined to the recommendation domain. This paper is the first to introduce it into reward modeling, addressing the cold-start problem through user prototype clustering and prototype-based transfer. This idea is transferable to any scenario requiring personalized evaluation (e.g., personalized summarization, personalized educational feedback).
-- **Quality over quantity in test-time scaling**: Simply increasing individual sampling count (Ind-32) is less effective than combining individual and prototype scaling (Ind-16+Pro-8), which achieves better results with fewer total inference calls. This demonstrates that diversity (incorporating the perspectives of different users) is more valuable than repetition (multiple samples from the same user).
-- **Clear progressive logic in three-stage training**: SFT teaches format and basic capability → RL develops deep reasoning ability → curriculum learning improves discrimination of hard samples. Each stage addresses a specific bottleneck left by the previous one, rather than merely stacking components.
+- **Evaluation Chain = Debuggable Reward Signal**: Traditional reward models output a scalar, failing to explain "why this answer scored high." P-GenRM outputs a full reasoning process (Persona → Rubric → Point-by-point scoring), allowing users and developers to check if each step is reasonable, which is crucial for highly subjective personalized scoring.
+- **Collaborative Filtering Crosses Over to RLHF**: The core assumption from recommendation systems that "similar users have similar preferences" has traditionally stayed within that field. This paper introduces it to reward models—solving cold-start problems through user prototype clustering and prototype-based transfer. This approach can migrate to any scenario requiring personalized evaluation (e.g., personalized summarization, personalized educational feedback).
+- **"Quality" over "Quantity" in Test-time Scaling**: Simply increasing individual sampling (Ind-32) is less effective than mixing individual + prototype scaling (Ind-16+Pro-8), achieveing better results with fewer total inferences. This suggests that diversity (introducing perspectives of different users) is more valuable than redundancy (repeated sampling for the same user).
+- **Logical Progression of Three-stage Training**: SFT for format and basic capability → RL for deep reasoning → Curriculum learning for distinguishing difficult samples. Each stage addresses specific bottlenecks on top of the previous one rather than simple stacking.
 
 ## Limitations & Future Work
 
-- **Prototype count requires manual selection**: The number of prototypes is currently set to 50 via PCA variance retention analysis, without an adaptive mechanism. The optimal number of prototypes may vary substantially across different data distributions.
-- **Inference cost remains high**: The optimal configuration (Ind-16+Pro-8) requires 24 complete generation passes per sample. Although the authors report lower latency than the previous SOTA, this remains demanding for real-time conversational applications.
-- **Preference drift is not modeled**: User preferences evolve over time (short-term vs. long-term preferences), but the current framework randomly samples from interaction history without accounting for recency, making it unable to capture preference change trends.
-- **Evaluation benchmarks are limited**: Evaluation is primarily conducted on PersonalRewardBench (Chatbot Arena + PRISM) and LaMP-QA; validation on real production-level personalized dialogue systems is lacking.
-- **The embedding model for prototype refinement is fixed**: Qwen3-Embedding-0.6B is used for user embeddings, but whether this embedding truly captures "preference similarity" rather than "textual similarity" warrants further investigation.
+- **Manual Selection of Prototype Count**: Currently, 50 prototypes are determined via PCA variance analysis, lacking an adaptive mechanism. The optimal number of prototypes may vary significantly across different data distributions.
+- **High Inference Cost**: The best configuration (Ind-16+Pro-8) requires 24 full generations per sample. Although the authors claim latency is lower than Prev. SOTA, it remains heavy for real-time dialogue scenarios.
+- **Unmodeled Preference Drift**: User preferences evolve over time (short-term vs. long-term). The current framework performs random sampling from history without distinguishing recency, failing to capture preference trends.
+- **Limited Evaluation Benchmarks**: Testing was primarily on PersonalRewardBench and LaMP-QA; validation in real product-level personalized dialogue systems is lacking.
+- **Fixed Embedding Model for Prototype Refinement**: Qwen3-Embedding-0.6B is used for user embeddings, but whether this embedding truly captures "preference similarity" rather than "textual similarity" warrants investigation.
 
 ## Related Work & Insights
 
-- **vs. SynthesizeMe**: SynthesizeMe synthesizes a static persona from historical preferences and uses it as a prompt; PSI in this paper dynamically generates a context-adaptive persona at each scoring step. P-GenRM consistently outperforms SynthesizeMe across all base models, with larger margins on smaller models.
-- **vs. PAL/VPL/GPO**: These methods use latent variables or prototype mixtures to model user preferences, but are all based on traditional discriminative reward models that output scalars. P-GenRM generates evaluation chains via a generative approach, inherently supporting test-time scaling and interpretability—capabilities that discriminative methods cannot provide.
-- **vs. GenRM series (Self-Principled Critique, etc.)**: Existing GenRM work focuses on improving general evaluation quality without considering personalization. P-GenRM is the first work to combine GenRM with personalized alignment, filling this gap.
+- **vs SynthesizeMe**: SynthesizeMe synthesizes static personas from historical preferences as prompts, whereas Ours' PSI generates scenario-adaptive personas dynamically during each scoring. Ours consistently outperforms SynthesizeMe across all base models, with the gap more pronounced in smaller models.
+- **vs PAL/VPL/GPO**: These methods use latent variables or prototype mixtures to model user preferences, but all are based on traditional discriminative reward models (outputting scalars). P-GenRM uses a generative approach to output evaluation chains, naturally supporting test-time scaling and interpretability, which discriminative methods cannot achieve.
+- **vs GenRM Series (Self-Principled Critique, etc.)**: Existing GenRM work focuses on general evaluation quality improvement without considering personalization. P-GenRM is the first to combine GenRM with personalized alignment, filling this gap.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ First personalized GenRM; an organic combination of collaborative filtering and RLHF; the dual-granularity test-time scaling design is elegant.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Two benchmarks + OOD generalization + detailed ablations + scaling configuration analysis + macro accuracy fairness verification.
-- Writing Quality: ⭐⭐⭐⭐ Overall structure is clear, though notation is somewhat dense and some descriptions could be more concise.
-- Value: ⭐⭐⭐⭐⭐ Personalized alignment is a core requirement for deploying LLMs in practice; P-GenRM offers an interpretable and scalable paradigm.
-- Writing Quality: ⭐⭐⭐⭐ Framework description is clear.
-- Value: ⭐⭐⭐⭐⭐ Makes an important contribution to personalized alignment of LLMs.
+- Novelty: ⭐⭐⭐⭐⭐ First personalized GenRM + organic combination of collaborative filtering and RLHF; elegant dual-granularity test-time scaling design.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Two benchmarks + OOD generalization + detailed ablation + scaling configuration analysis + macro accuracy fairness verification.
+- Writing Quality: ⭐⭐⭐⭐ Clear overall structure, though many formulas/symbols; some expressions could be more concise.
+- Value: ⭐⭐⭐⭐⭐ Personalized alignment is a core requirement for LLM deployment; P-GenRM provides an interpretable and scalable paradigm.
+- Mechanism: ⭐⭐⭐⭐ Clear framework description.
+- Value: ⭐⭐⭐⭐⭐ Significant promotion of LLM personalized alignment.
 
 <!-- RELATED:START -->
 
@@ -177,10 +189,10 @@ P-GenRM-8B outperforms the previous SOTA (FT RM + SynthesizeMe-70B) by an averag
 ## Related Papers
 
 - [\[NeurIPS 2025\] Reinforcement Learning Teachers of Test Time Scaling](../../NeurIPS2025/reinforcement_learning/reinforcement_learning_teachers_of_test_time_scaling.md)
-- [\[ICLR 2026\] Thinking on the Fly: Test-Time Reasoning Enhancement via Latent Thought Policy Optimization](thinking_on_the_fly_test-time_reasoning_enhancement_via_latent_thought_policy_op.md)
+- [\[ICLR 2026\] GAS: Enhancing Reward-Cost Balance of Generative Model-assisted Offline Safe RL](gas_enhancing_reward-cost_balance_of_generative_model-assisted_offline_safe_rl.md)
+- [\[ICLR 2026\] Representation-Based Exploration for Language Models: From Test-Time to Post-Training](representation-based_exploration_for_language_models_from_test-time_to_post-trai.md)
 - [\[CVPR 2026\] MSRL: Scaling Generative Multimodal Reward Modeling via Multi-Stage Reinforcement Learning](../../CVPR2026/reinforcement_learning/msrl_scaling_generative_multimodal_reward_modeling.md)
-- [\[ICLR 2026\] Self-Harmony: Learning to Harmonize Self-Supervision and Self-Play in Test-Time Reinforcement Learning](self-harmony_learning_to_harmonize_self-supervision_and_self-play_in_test-time_r.md)
-- [\[ICLR 2026\] AutoTool: Automatic Scaling of Tool-Use Capabilities in RL via Decoupled Entropy Constraints](autotool_automatic_scaling_of_tool-use_capabilities_in_rl_via_decoupled_entropy_.md)
+- [\[ICLR 2026\] Thinking on the Fly: Test-Time Reasoning Enhancement via Latent Thought Policy Optimization](thinking_on_the_fly_test-time_reasoning_enhancement_via_latent_thought_policy_op.md)
 
 </div>
 

@@ -2,119 +2,135 @@
 title: >-
   [Paper Note] Why Prototypes Collapse: Diagnosing and Preventing Partial Collapse in Prototypical Self-Supervised Learning
 description: >-
-  [ICLR 2026][Self-Supervised Learning][prototype collapse] This paper diagnoses that the root cause of partial prototype collapse in prototypical self-supervised learning is shortcut learning induced by joint optimization…
+  [ICLR 2026][Self-Supervised Learning][prototype collapse] This work diagnoses the root cause of partial prototype collapse in prototypical self-supervised learning (SSL) as shortcut learning induced by the joint optimization of the encoder and prototypes. It proposes a fully decoupled training strategy—using an online GMM to independently estimate prototypes—to eliminate coll
 tags:
-  - "ICLR 2026"
-  - "Self-Supervised Learning"
-  - "prototype collapse"
-  - "DINO"
-  - "decoupling"
-  - "Gaussian mixture"
+  - ICLR 2026
+  - Self-Supervised Learning
+  - prototype collapse
+  - DINO
+  - decoupling
+  - Gaussian mixture
 date: 2026-05-08
-content_hash: 667819d38525a89a
+content_hash: 87a3a9da3dd1349d
 ---
-
 # Why Prototypes Collapse: Diagnosing and Preventing Partial Collapse in Prototypical Self-Supervised Learning
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2510.20108](https://arxiv.org/abs/2510.20108)  
 **Code**: [GitHub](https://dsb-ifi.github.com/proto-decoupling)  
-**Area**: Self-Supervised Learning / Prototype Learning / Representation Collapse
+**Area**: Self-Supervised Learning / Prototypical Learning / Representation Collapse  
 **Keywords**: prototype collapse, self-supervised learning, DINO, decoupling, Gaussian mixture
 
 ## TL;DR
-This paper diagnoses that the root cause of partial prototype collapse in prototypical self-supervised learning is shortcut learning induced by joint optimization of the encoder and prototypes. It proposes a fully decoupled training strategy—estimating prototypes independently via an online GMM—to completely eliminate collapse and improve downstream performance.
+This work diagnoses the root cause of partial prototype collapse in prototypical self-supervised learning (SSL) as shortcut learning induced by the joint optimization of the encoder and prototypes. It proposes a fully decoupled training strategy—using an online GMM to independently estimate prototypes—to eliminate collapse and improve downstream performance.
 
 ## Background & Motivation
 
-**Background**: Prototypical SSL frameworks (DINO, DINOv2, CARP, etc.) employ learnable prototype vectors as clustering anchors to guide representations into semantically consistent regions, and have recently achieved performance comparable to language-supervised approaches.
+**Background**: Prototypical SSL frameworks (DINO, DINOv2, CARP, etc.) use learnable prototype vectors as clustering anchors to guide representations into semantically consistent regions. Recently, these methods have achieved performance comparable to language-supervised schemes.
 
-**Limitations of Prior Work**: Several methods suffer from severe **partial prototype collapse**, where a large number of prototypes converge to nearly identical representations. DINO retains only 1.5% unique prototypes, while DINOv2's instance head exhibits 98% collapse. In practice, over-parameterization is the only available mitigation strategy.
+**Limitations of Prior Work**: Several methods suffer from severe **partial prototype collapse**, where a large number of prototypes converge to nearly identical representations. DINO retains only 1.5% unique prototypes, and the DINOv2 instance head collapses by 98%. In practice, this is only mitigated through over-parameterization.
 
-**Key Challenge**: Prototypes are designed to provide diverse targets for guiding rich representations, yet collapse renders them redundant, directly contradicting their intended purpose.
+**Key Challenge**: The purpose of prototypes is to provide diverse targets to guide rich representations, but collapse makes prototypes redundant, violating the original design intent.
 
-**Goal**: (1) Systematically diagnose the root cause of collapse; (2) Design a principled solution.
+**Goal**: (1) Systematically diagnose the root cause of collapse; (2) Design a fundamental solution.
 
-**Key Insight**: The observation that CAPI maintains 99.9% unique prototypes through partially decoupled teacher prototype updates motivates the hypothesis that joint optimization is the root cause.
+**Key Insight**: It was observed that the CAPI method maintains 99.9% unique prototypes due to partial decoupling of teacher prototype updates, suggesting that joint optimization is the root cause.
 
-**Core Idea**: Fully decouple prototype estimation from encoder optimization—estimating prototypes via an independent online GMM while training the encoder with a consistency loss—thereby eliminating the incentive for shortcut learning.
+**Core Idea**: Fully decouple prototype estimation from encoder optimization—estimating prototypes using an independent online GMM while training the encoder with a consistency loss—to eliminate the incentive for shortcut learning.
 
 ## Method
 
 ### Overall Architecture
-Conventional approaches minimize $\min_{\theta, C} \mathcal{L}_f(f_\theta, C)$ jointly. This paper instead alternates between two independent objectives: (1) prototype estimation (online GMM); (2) encoder update (consistency loss with fixed prototypes).
+Standard practice in prototypical SSL is joint optimization of encoder parameters $\theta$ and the prototype matrix $C$ within a single objective: $\min_{\theta, C} \mathcal{L}_f(f_\theta, C)$. This paper argues that this joint optimization enables collapse—since prototypes are learnable, the optimizer allows them to drift toward overlapping positions to minimize the loss via a "shortcut." The paper quantifies collapse across methods and identifies joint optimization as the cause. The proposed solution changes training into two alternating, non-coupled sub-processes. Specifically, the student encoder $f_\theta$ and the EMA-maintained teacher encoder $f_\phi$ map multi-view inputs to latent features $h$. Teacher features are fed into an **online Gaussian Mixture Model (GMM)** to estimate prototypes independently, while the encoder is updated using the consistency loss with fixed prototypes (no gradient backpropagation to prototypes). By removing prototypes from backpropagation, the incentive for shortcut learning is eliminated.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input Images<br/>Multi-view Augmentation"] --> B["Student Encoder fθ + Projection Head<br/>EMA Teacher Encoder fφ"]
+    B --> C["Latent Features h<br/>(Student zs / Teacher zt)"]
+    C -->|Teacher Features| D["Online GMM Prototype Estimation<br/>E-step: Responsibility γ → M-step: Incremental Mean μ Update<br/>Responsibility Forgetting η + Deterministic Annealing β"]
+    D --> E["Prototype C Frozen<br/>No Gradient Backprop to Prototypes"]
+    E -->|Student Assignment vs Teacher Target| F["Consistency Loss Lf<br/>Update Student Encoder Only"]
+    F -->|Teacher EMA Sync and Next Round| C
+```
 
 ### Key Designs
 
-1. **Diagnostic Analysis**:
+**1. Diagnosis of Partial Collapse: Quantifying the root cause in joint optimization**
 
-    - Function: Quantify partial collapse across multiple prototypical SSL methods
-    - Findings: DINO 1.5%, CARP 10.8%, DINOv2 instance head 1.0%, CAPI (partially decoupled) 99.9%
-    - Collapse occurs in the early stages of training (within 10 epochs)
+To resolve collapse, it must be measured. The study calculates the ratio of "unique prototypes" across SSL methods—prototypes with an angular distance greater than a threshold $\epsilon$. Results show that in DINO, only 1.5% of 60,000 prototypes are unique; CARP has 10.8%, and DINOv2’s instance head is as low as 1.0%. A key counterexample is CAPI, which achieves 99.9% unique prototypes (at $\epsilon=0.025$) because it partially decouples teacher prototype updates. Since collapse occurs extremely early in training, these clues point to joint optimization under a shared loss creating shortcut learning, rather than specific framework details.
 
-2. **Full Decoupling Strategy**:
+**2. Fully Decoupled Training: Removing prototypes from backpropagation**
 
-    - Function: Completely separate prototype and encoder optimization
-    - Mechanism: Prototypes are no longer updated via backpropagation; instead, they are estimated by an independent online GMM. Each prototype corresponds to a Gaussian component mean, updated incrementally via an EM-style procedure
-    - Design Motivation: Joint optimization causes prototypes to drift toward redundant representations (shortcut learning); decoupling removes this incentive
+Since joint optimization is the cause, the remedy is to decouple it completely. Unlike CAPI’s "partial decoupling" (where student prototypes are still jointly optimized), this work implements **full decoupling**: prototypes are entirely removed from gradient updates. Training alternates between two separate objectives at iteration $t$: updating prototypes using current teacher features, and then updating the student encoder via consistency loss while the prototypes are frozen. Since prototypes can no longer drift towards redundant positions to lower the loss, the "shortcut" is blocked without requiring explicit regularization.
 
-3. **Online GMM Prototype Estimation**:
+**3. Online GMM Prototype Estimation: Incremental EM with forgetting and annealing**
 
-    - Function: Satisfy three properties—representativeness/discriminability, dataset-wide evolution, and computational efficiency
-    - Mechanism: Stability is maintained via responsibility-weighted forgetting and deterministic annealing
-    - Advantage: Balances efficiency and accuracy compared to K-Means
+The core design after decoupling is the prototype estimation method. Prototypes are modeled as component means $\mu_k$ of an online GMM. For each batch, a two-step update is performed: calculating soft assignment responsibilities $\gamma_{ik}$ for teacher features $h_i$, then incrementally updating mixture weights, means, and diagonal covariances. To prevent responsibility imbalance when the number of components $K$ is large, the method uses responsibility forgetting (decaying old statistics with factor $\eta$) and deterministic annealing (adjusting soft assignment sharpness with factor $\beta$). This online approach incorporates dataset-wide information and fits seamlessly into batch-wise SSL training while saving memory by removing prototypes from the computation graph.
 
 ### Loss & Training
-The encoder is trained with the original consistency loss, while prototypes are provided by the GMM and kept fixed during backpropagation.
+The encoder retains the original consistency loss (e.g., cross-view prediction in DINO/CARP). The only modification is that prototypes $C$ are provided by the online GMM and are frozen during the encoder update step. The two sub-processes alternate: GMM prototypes are refreshed by current features, followed by the backpropagation of the encoder using fixed prototypes.
 
 ## Key Experimental Results
 
 ### Main Results: Prototype Diversity
 
 | Method | Initial Prototypes | Unique Prototypes ($\epsilon=0.025$) | Percentage |
-|--------|-------------------|--------------------------------------|------------|
-| DINO | 60000 | 908 | 1.5% |
-| CARP | 65536 | 7052 | 10.8% |
-| DINOv2 Instance Head | 262144 | 2556 | 1.0% |
-| CAPI (partially decoupled) | 16384 | 16383 | 99.9% |
-| **CARP+Decoupling** | **65536** | **65536** | **100%** |
+|------|----------|----------|--------|
+| DINO | 60,000 | 908 | 1.5% |
+| CARP | 65,536 | 7,052 | 10.8% |
+| DINOv2 Instance Head | 262,144 | 2,556 | 1.0% |
+| CAPI (Partial Decoupling)| 16,384 | 16,383 | 99.9% |
+| **CARP+Decoupling (Ours)** | **65,536** | **65,536** | **100%** |
 
 ### Ablation Study
 
 | Configuration | Unique Prototypes | Downstream Performance |
-|---------------|-------------------|----------------------|
-| Joint optimization (baseline) | Low | Baseline |
-| + KoLeo regularization | Medium | Marginal gain |
-| Partial decoupling | High | Improved |
-| Full decoupling (Ours) | 100% | Best |
+|------|---------|---------|
+| Joint Optimization (Original) | Low | Baseline |
+| + KoLeo Regularization | Medium | Slight Gain |
+| Partial Decoupling | High | Gain |
+| Full Decoupling (Ours) | 100% | Best |
 
 ### Key Findings
-- Partial prototype collapse is not limited to the DINO family but is a pervasive phenomenon in prototypical SSL
-- Collapse occurs very early in training, pointing to a shortcut learning mechanism
-- Full decoupling maintains 100% uniqueness across all threshold values
-- Higher prototype diversity consistently yields better downstream quality
-- The decoupled method demonstrates greater robustness under long-tail distributions
+- Partial prototype collapse is a universal phenomenon in prototypical SSL, not limited to the DINO family.
+- Collapse occurs very early in training, indicating a shortcut learning mechanism.
+- Full decoupling maintains 100% uniqueness across all thresholds.
+- Higher prototype diversity leads to better downstream representation quality.
+- The decoupling method is more robust under long-tailed distributions.
 
 ## Highlights & Insights
-- The work addresses both diagnosis and prescription—root cause is first quantitatively localized before a solution is designed
-- The shortcut learning perspective offers a novel framing distinct from traditional regularization-based views of collapse
-- The online GMM as a prototype estimator is both conceptually clean and practically effective
+- Emphasis on both diagnosis and remedy—quantifying the root cause before desigining the solution.
+- Shortcut learning perspective—joint optimization lets prototypes take a "shortcut," which differs from traditional regularization perspectives.
+- Online GMM serves as a simple and effective prototype estimator.
 
 ## Limitations & Future Work
-- Validation is primarily conducted on instance-level objectives; effectiveness under MIM objectives remains to be explored
-- The GMM introduces additional implementation complexity
-- Gains in downstream performance are sometimes modest
+- Primarily validated on instance-level objectives; effects on MIM (Masked Image Modeling) objectives remain for future work.
+- GMM introduces additional implementation complexity.
+- Downstream performance gains are sometimes incremental.
 
 ## Related Work & Insights
-- **vs. KoLeo-Proto**: Regularization addresses symptoms; the proposed decoupling addresses the root cause
-- **vs. CAPI**: Partial decoupling in CAPI motivates the development of full decoupling
-- **vs. SWaV**: Online prototypes updated via gradients constitute joint optimization and remain susceptible to collapse
+- **vs KoLeo-Proto**: Regularization only treats the symptoms, while decoupling addresses the root cause.
+- **vs CAPI**: Partial decoupling inspired the full decoupling approach.
+- **vs SWaV**: Online prototypes updated via gradients Still involve joint optimization and carry collapse risks.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Both the diagnostic framework and the full decoupling solution are original contributions
-- Experimental Thoroughness: ⭐⭐⭐⭐ Cross-method analysis and training dynamics tracking are comprehensive
-- Writing Quality: ⭐⭐⭐⭐⭐ The narrative from diagnosis to solution is exceptionally clear
-- Value: ⭐⭐⭐⭐ Provides a principled solution for robust training in prototypical SSL
+- Novelty: ⭐⭐⭐⭐ Both the diagnosis and full decoupling solution are innovative.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive cross-method analysis and training dynamics tracking.
+- Writing Quality: ⭐⭐⭐⭐⭐ Extremely clear narrative from diagnosis to solution.
+- Value: ⭐⭐⭐⭐ Provides a key solution for robust prototypical SSL training.
+
+## Related Papers
+
+- [\[ICLR 2026\] ZeroSiam: An Efficient Asymmetry for Test-Time Entropy Optimization without Collapse](zerosiam_an_efficient_asymmetry_for_test-time_entropy_optimization_without_colla.md)
+- [\[ICML 2025\] Collapse-Proof Non-Contrastive Self-Supervised Learning](../../ICML2025/self_supervised/collapse-proof_non-contrastive_self-supervised_learning.md)
+- [\[ICLR 2026\] On the Alignment Between Supervised and Self-Supervised Contrastive Learning](on_the_alignment_between_supervised_and_self-supervised_contrastive_learning.md)
+- [\[ICLR 2026\] Understanding the Learning Phases in Self-Supervised Learning via Critical Periods](understanding_the_learning_phases_in_self-supervised_learning_via_critical_perio.md)
+- [\[ICLR 2026\] Equivariant Splitting: Self-supervised learning from incomplete data](equivariant_splitting_self-supervised_learning_from_incomplete_data.md)
+
+</div>
+
+<!-- RELATED:END -->
 
 <!-- RELATED:START -->
 
@@ -122,11 +138,11 @@ The encoder is trained with the original consistency loss, while prototypes are 
 
 ## Related Papers
 
+- [\[ICLR 2026\] ZeroSiam: An Efficient Asymmetry for Test-Time Entropy Optimization without Collapse](zerosiam_an_efficient_asymmetry_for_test-time_entropy_optimization_without_colla.md)
+- [\[ICLR 2026\] Understanding the Learning Phases in Self-Supervised Learning via Critical Periods](understanding_the_learning_phases_in_self-supervised_learning_via_critical_perio.md)
+- [\[ICLR 2026\] Equivariant Splitting: Self-supervised learning from incomplete data](equivariant_splitting_self-supervised_learning_from_incomplete_data.md)
 - [\[ICML 2026\] The Geometry of Projection Heads: Conditioning, Invariance and Collapse](../../ICML2026/self_supervised/the_geometry_of_projection_heads_conditioning_invariance_and_collapse.md)
-- [\[ICLR 2026\] Soft Equivariance Regularization for Invariant Self-Supervised Learning](soft_equivariance_regularization_for_invariant_self-supervised_learning.md)
-- [\[ICML 2026\] Provable Accuracy Collapse in Embedding-Based Representations under Dimensionality Mismatch](../../ICML2026/self_supervised/provable_accuracy_collapse_in_embedding-based_representations_under_dimensionali.md)
-- [\[ICLR 2026\] SNAP-UQ: Self-supervised Next-Activation Prediction for Single-Pass Uncertainty](snap-uq_self-supervised_next-activation_prediction_for_single-pass_uncertainty_i.md)
-- [\[ICML 2026\] LimiX-2M: Mitigating Low-Rank Collapse and Attention Bottlenecks in Tabular Foundation Models](../../ICML2026/self_supervised/limix-2m_mitigating_low-rank_collapse_and_attention_bottlenecks_in_tabular_found.md)
+- [\[ICLR 2026\] One-Shot Exemplars for Class Grounding in Self-Supervised Learning](one-shot_exemplars_for_class_grounding_in_self-supervised_learning.md)
 
 </div>
 

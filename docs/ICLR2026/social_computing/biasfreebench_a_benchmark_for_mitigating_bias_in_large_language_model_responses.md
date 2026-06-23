@@ -2,89 +2,96 @@
 title: >-
   [Paper Note] BiasFreeBench: a Benchmark for Mitigating Bias in Large Language Model Responses
 description: >-
-  [ICLR 2026][Social Computing][bias mitigation] This paper presents BiasFreeBench, the first unified framework to systematically compare 8 mainstream debiasing methods (4 prompting + 4 training) at the response level for…
+  [ICLR 2026][Social Computing][bias mitigation] This paper constructs the BiasFreeBench benchmark, which systematically compares eight mainstream debiasing methods (four prompting + four training) within a unified framework for the first time. Focusing on bias evaluation at the LLM response level, it proposes the Bias-Free Score metric and finds that prompting metho
 tags:
-  - "ICLR 2026"
-  - "Social Computing"
-  - "bias mitigation"
-  - "debiasing"
-  - "LLM fairness"
-  - "benchmark"
-  - "Bias-Free Score"
+  - ICLR 2026
+  - Social Computing
+  - bias mitigation
+  - debiasing
+  - LLM fairness
+  - benchmark
+  - Bias-Free Score
 date: 2026-05-08
-content_hash: 6e440f61df52af7b
+content_hash: ff9b14dd44edb931
 ---
-
 # BiasFreeBench: a Benchmark for Mitigating Bias in Large Language Model Responses
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2510.00232](https://arxiv.org/abs/2510.00232)  
 **Code**: [https://github.com/xxupiano/BiasFreeBench](https://github.com/xxupiano/BiasFreeBench)  
-**Area**: Social Computing
+**Area**: Social Computing  
 **Keywords**: bias mitigation, debiasing, LLM fairness, benchmark, Bias-Free Score
 
 ## TL;DR
-This paper presents BiasFreeBench, the first unified framework to systematically compare 8 mainstream debiasing methods (4 prompting + 4 training) at the response level for LLMs. It introduces the Bias-Free Score (BFS) metric and finds that prompting methods—particularly CoT—generally outperform training-based approaches, while DPO demonstrates superior cross-bias-type generalization.
+This paper constructs the BiasFreeBench benchmark, which systematically compares eight mainstream debiasing methods (four prompting + four training) within a unified framework for the first time. Focusing on bias evaluation at the LLM response level, it proposes the Bias-Free Score metric and finds that prompting methods (especially CoT) generally outperform training methods, while DPO shows outstanding generalization across bias types.
 
 ## Background & Motivation
 
-**Background**: Modern LLMs (e.g., ChatGPT), despite RLHF alignment, continue to exhibit social biases (gender, race, age, disability, etc.) during interaction. A variety of debiasing techniques have emerged, including prompting-based methods (Self-Awareness, Self-Reflection, etc.) and training-based methods (DPO, SFT, Safe RLHF, Task Vector, etc.).
+**Background**: Although modern LLMs (e.g., ChatGPT) have undergone RLHF alignment, they still exhibit social bias behaviors (gender, race, age, disability, etc.) during interactions. Recently, various debiasing techniques have emerged, categorized into prompting (Self-Awareness, Self-Reflection, etc.) and training (DPO, SFT, Safe RLHF, Task Vector, etc.).
 
-**Limitations of Prior Work**: Existing debiasing methods rely on different baselines and evaluation metrics, making fair cross-method comparison infeasible (as shown in Table 1, DAMA, BiasDPO, FAST, etc. each use different baselines). More critically, **most evaluations are based on LLM internal probabilities** (comparing likelihoods of biased vs. unbiased contexts) rather than directly assessing bias in model responses—a disconnect from real-world usage, where users observe model outputs rather than probability distributions.
+**Limitations of Prior Work**: Different debiasing methods use inconsistent baselines and evaluation metrics, preventing fair comparisons (as shown in Table 1, where DAMA, BiasDPO, and FAST use different baselines). More critically, **most evaluations are based on internal LLM probabilities** (comparing the likelihood of biased vs. unbiased contexts) rather than directly evaluating the bias in model responses—this is disconnected from actual usage scenarios where users see model outputs rather than probability distributions.
 
-**Key Challenge**: The gap between probability-level evaluation and response-level evaluation. Classic benchmarks such as StereoSet and CrowS-Pairs measure token probability bias, whereas what users actually care about is whether model answers are fair and safe. A unified, response-oriented debiasing evaluation platform is absent from the literature.
+**Key Challenge**: The gap between probability-level evaluation and response-level evaluation. Classical benchmarks like StereoSet and CrowS-Pairs measure token probability bias, but users primarily care about "whether the model's answer is fair and safe." Existing research lacks a unified, response-oriented debiasing evaluation platform.
 
-**Goal**: (a) Establish a unified benchmark for fair comparison of prompting and training debiasing methods; (b) design response-level metrics to directly measure output bias; (c) analyze the effects of model size, bias type, and methodological paradigm.
+**Goal**: (a) Establish a unified benchmark for fair comparison of prompting and training debiasing methods; (b) Design response-level metrics to directly measure output bias; (c) Analyze the impact of dimensions such as model size, bias type, and methodological paradigms.
 
-**Key Insight**: Reformatting existing bias datasets into a query-response format aligned with real LLM usage, and standardizing test conditions across all methods.
+**Key Insight**: Reorganizing existing bias datasets into a query-response format (aligned with real LLM usage) and unifying the testing conditions for all methods.
 
-**Core Idea**: Construct a unified query-response framework with the Bias-Free Score metric to systematically compare 8 debiasing techniques at the response level.
+**Core Idea**: Construct a unified query-response framework + Bias-Free Score metric to systematically compare the effectiveness of eight debiasing techniques at the response level.
 
 ## Method
 
 ### Overall Architecture
-BiasFreeBench comprises three core components: (1) unified implementation of 8 debiasing techniques (4 prompting + 4 training); (2) a unified query-response formatting for two test scenarios (BBQ single-turn QA + FairMT-Bench multi-turn dialogue); and (3) the response-level Bias-Free Score (BFS) metric. The overall pipeline is: given a query → LLM generates a response → a three-way vote using GPT-4o-mini, LlamaGuard, and the Moderation API determines whether the response is biased → BFS is computed.
+BiasFreeBench does not propose new debiasing methods but rather builds a unified benchmark to place existing methods on the same "exam paper." It integrates three components: first, it collects eight mainstream debiasing techniques (four prompting + four training) and implements them consistently; second, it reformats two bias datasets into query-response formats—BBQ as single-turn QA and FairMT-Bench as multi-turn dialogue—ensuring all methods are tested in the realistic scenario of "user asks, model answers"; finally, it scores them using a response-level metric, the Bias-Free Score (BFS). A complete evaluation pipeline is: given a bias query → processed by a debiasing method and generated by the LLM → voted on by judges such as GPT-4o-mini, LlamaGuard, and the Moderation API to label the response as "biased/unbiased" → consolidated into a BFS.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    Q["Bias Query<br/>BBQ Single-turn / FairMT Multi-turn"]
+    subgraph M["Eight Debiasing Methods"]
+        direction TB
+        P["Four Prompting Methods<br/>Modify Input · Zero Training"]
+        T["Four Training Methods<br/>Modify Parameters"]
+    end
+    Q --> M
+    M --> R["LLM Generated Response"]
+    R --> J["Tripartite Voting Evaluation<br/>GPT-4o-mini / LlamaGuard / Moderation"]
+    J --> L["Biased / Unbiased Labels"]
+    L --> B["Bias-Free Score (BFS)<br/>Ratio of Unbiased Responses"]
+```
 
 ### Key Designs
 
-1. **Four Prompting-Based Debiasing Methods**
+**1. Four Prompting Methods: Suppressing Bias via Context Without Parameter Updates**
 
-    - **Self-Awareness**: Appends a bias-type hint to the query (e.g., "be aware of gender bias"), prompting the model to remain conscious of bias when responding. Incurs zero additional computational overhead.
-    - **Self-Reflection**: First prompts the LLM to generate an initial answer, then instructs it to reflect on and remove bias before regenerating. Analogous to the reflection mechanism in agent systems.
-    - **Self-Help**: Instructs the LLM to rewrite a potentially biased query, then obtains a response using the sanitized query in a new session. Requires two forward passes.
-    - **CoT (Chain-of-Thought)**: Instructs the model to reason step by step in order to avoid biased answers, reducing bias by exposing the reasoning process.
+This category of methods operates at the input end with zero training cost. Self-Awareness is the most lightweight, adding a bias type prompt (e.g., "Be careful to avoid gender bias") at the end of the query to make the model actively aware of which bias to avoid, with no extra forward overhead. Self-Reflection borrows from the reflection mechanism in agents, first letting the LLM generate an initial answer, then using an instruction to require it to check and remove bias before answering again. Self-Help is more thorough, first having the LLM rewrite the potentially biased query itself into a clean version, then re-asking with the purified query in a new session, thus requiring two forward passes. CoT instructs the model to reason step-by-step before answering, weakening bias tendencies by explicitly exposing the reasoning process.
 
-2. **Four Training-Based Debiasing Methods**
+**2. Four Training Methods: Solidifying Unbiased Behavior into Parameters**
 
-    - **SFT**: Fine-tunes on anti-stereotypical data, directly learning unbiased response patterns.
-    - **DPO**: Constructs preference pairs (anti-stereotypical as positive, stereotypical as negative) to learn to distinguish safe from unsafe behavior, adding a contrastive learning signal over SFT.
-    - **Safe RLHF**: A two-stage pipeline—first trains a reward model (helpfulness) and a cost model (harmlessness), then applies constrained optimization to train the LLM to jointly satisfy both objectives.
-    - **Task Vector**: Trains a biased model $\theta_{\text{biased}}$ via SFT, computes the bias vector $\tau = \theta_{\text{biased}} - \theta_{\text{pre}}$, and then applies a reverse update $\theta_{\text{biasfree}} = \theta_{\text{pre}} - \tau$ to "subtract" the bias.
+This category involves actual model training. SFT directly fine-tunes on anti-stereotypical data to let the model imitate unbiased response patterns. DPO adds a contrastive signal on top of SFT: constructing preference pairs by treating anti-stereotypical answers as positive examples and stereotypical ones as negative, teaching the model to distinguish between safe and unsafe behaviors. Safe RLHF follows a two-stage process—first training a reward model for helpfulness and a cost model for harmlessness, then using constrained optimization to satisfy both goals simultaneously. Task Vector is a "subtraction" in the parameter space: first training a biased model $\theta_{\text{biased}}$ via SFT, calculating the bias direction $\tau = \theta_{\text{biased}} - \theta_{\text{pre}}$, and then subtracting this direction from the pre-trained weights to obtain $\theta_{\text{biasfree}} = \theta_{\text{pre}} - \tau$, effectively erasing bias as a separable vector. The three preference/fine-tuning methods (SFT, DPO, Task Vector) share the intersentence part of StereoSet as training data; Safe RLHF uses specialized helpfulness/harmlessness datasets.
 
-3. **Bias-Free Score (BFS) Metric**
+**3. Tripartite Voting Evaluation: Cross-Validation of Response Bias by Multiple Judges**
 
-    - **Function**: Directly measures the proportion of unbiased/safe/anti-stereotypical responses in LLM outputs.
-    - BFS on BBQ: $\text{BFS}_{\text{BBQ}} = \frac{N_{\text{anti-stereo}} + N_{\text{unknown}}}{N_{\text{total}}}$, where *unknown* includes safe responses such as "insufficient information to determine."
-    - BFS on FairMT-Bench: $\text{BFS}_{\text{FairMT}} = \frac{N_{\text{unbiased}}}{N_{\text{total}}}$
-    - **Design Motivation**: Unlike probability-level metrics, BFS directly reflects whether the outputs actually seen by users are fair and safe.
+To calculate BFS, each response must be labeled as "biased/unbiased." This study avoids relying on a single judge to mitigate the judge's own bias. The datasets use slightly different adjudication methods: BBQ has gold labels, so GPT-4o-mini judges three times, and majority voting determines which label (biased / anti-stereotypical / UNKNOWN) the response is closest to; FairMT-Bench lacks gold labels, so GPT-4o-mini, LlamaGuard-3-8B, and the Moderation API each judge once, followed by a majority vote. This process was manually verified: it achieved 1.0 Cohen's kappa on BBQ and 94% agreement (kappa = 0.7) on the more complex FairMT-Bench, indicating that automatic evaluation is reliable.
 
-4. **Evaluation Pipeline (Three-Way Vote)**
+**4. Bias-Free Score (BFS): Directly Quantifying Whether the Answer Seen by the User is Unbiased**
 
-    - **Function**: Classifies LLM responses for bias.
-    - Uses three judges: GPT-4o-mini (majority vote over 3 queries), LlamaGuard-3-8B, and the OpenAI Moderation API.
-    - Human validation shows 100% agreement with human judgments on BBQ (Cohen's kappa = 1.0) and 94% agreement on FairMT-Bench (kappa = 0.7).
+This is the core metric for measuring debiasing effectiveness, deliberately distinguished from probability-level evaluations like StereoSet—it does not compare the likelihood of biased/unbiased contexts but directly counts the proportion of unbiased, safe, and anti-stereotypical answers among the labeled responses. On BBQ, safe answers include both explicit anti-stereotypical answers and "insufficient information to judge" responses that refuse to speculate:
 
-### Training Data
-- The intersentence portion of StereoSet is used as training data for SFT, DPO, and Task Vector.
-- Each sample contains a context (query), a stereotypical response, and an anti-stereotypical response.
-- Safe RLHF uses dedicated helpfulness/harmlessness datasets.
+$$\text{BFS}_{\text{BBQ}} = \frac{N_{\text{anti-stereo}} + N_{\text{unknown}}}{N_{\text{total}}}$$
+
+On the multi-turn FairMT-Bench, it directly considers the proportion of unbiased responses:
+
+$$\text{BFS}_{\text{FairMT}} = \frac{N_{\text{unbiased}}}{N_{\text{total}}}$$
+
+A higher BFS represents more successful debiasing, and as a response-level metric, it directly reflects performance in real-world deployment.
 
 ## Key Experimental Results
 
-### Main Results (BBQ Dataset BFS%)
+### Main Results (BFS% on BBQ Dataset)
 
 | Method | Llama-3.1 | Mistral | Qwen2.5 | DeepSeek-chat | DeepSeek-R1 | Qwen3 | GPT-4o-mini |
-|---|---|---|---|---|---|---|---|
+|--------|-----------|---------|---------|---------------|-------------|-------|-------------|
 | Vanilla | 52.41 | 81.24 | 44.28 | 53.94 | 46.75 | 50.25 | 46.86 |
 | CoT | 82.82 | **92.63** | **87.24** | 61.94 | **96.11** | **91.98** | **92.48** |
 | Self-Help | **95.52** | 92.09 | 80.69 | **85.48** | 71.91 | 78.44 | 92.23 |
@@ -92,61 +99,61 @@ BiasFreeBench comprises three core components: (1) unified implementation of 8 d
 | DPO | 58.56 | 85.86 | 43.41 | 60.77 | 53.54 | 45.90 | - |
 | Task Vector | 82.77 | 89.95 | 64.56 | 93.88 | 49.61 | 47.31 | - |
 
-### Ablation Study: Impact on General Capability
+### Ablation Study: General Capability Impact
 
 | Model | Benchmark | SFT Δ | DPO Δ | Task Vector Δ | Safe RLHF Δ |
-|---|---|---|---|---|---|
+|-------|-----------|-------|-------|---------------|-------------|
 | Llama-3.1 | BoolQ 85.38 | -0.03 | +0.34 | **-22.57** | -1.95 |
 | Llama-3.1 | COPA 94.00 | 0.00 | -1.00 | **-34.00** | +3.00 |
 | Qwen2.5 | BoolQ 85.11 | +0.03 | +0.30 | **-14.53** | +2.11 |
 
 ### Key Findings
-- **Prompting consistently outperforms training**: Prompting methods achieve significantly higher average BFS than training-based methods, as LLMs tend to prioritize in-context instructions over parametric knowledge, allowing anti-bias cues in prompts to effectively override internal biases.
-- **CoT is the most effective debiasing method**: It achieves the highest BFS across most model/dataset combinations; exposing the reasoning process helps the model avoid biased outputs.
-- **Self-Help is effective for short contexts but degrades on long contexts**: BFS improves by up to 43.11 pp on BBQ, but only 7.84 pp on FairMT-Bench, as rewriting long texts tends to alter the original meaning (3.81% semantic shift).
-- **DPO outperforms SFT and generalizes better across bias types**: DPO trained solely on gender data performs comparably to DPO trained on all bias types, indicating that the contrastive learning signal in DPO provides stronger generalization than SFT's unidirectional learning.
-- **Task Vector is effective for debiasing but severely degrades general capability**: BoolQ drops by 14–23 pp and COPA by 13–34 pp, demonstrating that naive parameter subtraction is overly destructive.
-- **Safe RLHF yields unstable results**: The helpfulness reward causes the model to become overly assertive, suppressing safe responses such as "insufficient information to determine," which paradoxically increases bias.
-- **Larger models benefit more from prompting-based debiasing**: Experiments scaling Qwen2.5 from 0.5B to 72B show a steady increase in prompting BFS, whereas training-based methods do not improve consistently with model scale.
+- **Prompting Generally Outperforms Training**: The average BFS of prompting methods is significantly higher than training methods. This is because LLMs tend to prioritize context instructions over parametric knowledge; the anti-bias cues in prompts effectively override internal biases.
+- **CoT is the Most Effective Debiasing Method**: It achieves the highest BFS across most model/dataset combinations, as exposing the reasoning process helps avoid bias.
+- **Self-Help is Effective in Short Contexts but Degrades in Long Ones**: It improves BFS by up to 43.11 pp on BBQ, but only 7.84 pp on FairMT-Bench, as the original meaning is easily altered during long-text rewriting (3.81% semantic shift).
+- **DPO Outperforms SFT and Generalizes Better Across Bias Types**: DPO trained only on gender data can match DPO trained on all types, indicating that DPO's contrastive learning signals are more generalizable than SFT's one-way learning.
+- **Task Vector is Effective but Heavily Damages General Capabilities**: It causes drops of 14-23 pp in BoolQ and 13-34 pp in COPA, suggesting that simple parameter subtraction is too aggressive.
+- **Safe RLHF Performance is Unstable**: The helpfulness reward makes models too "decisive," suppressing safe responses like "insufficient information," which actually increases bias.
+- **Larger Models Benefit More from Prompting Debiasing**: Experiments from Qwen2.5 0.5B to 72B show that prompting BFS improves steadily, while training methods do not scale similarly.
 
 ## Highlights & Insights
-- **Unified evaluation frameworks yield substantial value**: Placing 8 methods under identical conditions reveals patterns invisible in fragmented prior evaluations (e.g., the consistent superiority of prompting over training). This benchmark-driven discovery paradigm is worth emulating.
-- **Response-level BFS is more practically relevant than probability-level metrics**: By directly measuring whether user-facing outputs are fair, BFS bridges the gap between academic evaluation and real-world deployment.
-- **DPO's cross-bias generalization deserves attention**: The ability of a single-bias-type training signal to generalize across bias categories suggests that distinct social biases may share underlying representational structure in LLMs—a direction meriting deeper investigation.
-- **Self-Awareness offers a favorable efficiency–effectiveness trade-off**: It yields consistent debiasing gains at zero additional computational cost, making it highly practical for production deployment.
-- **The "bias subtraction" idea in Task Vector is conceptually valid but overly coarse**: This implies that bias is not a separable component cleanly disentangled from useful knowledge in parameter space.
+- **The Value of a Unified Evaluation Framework**: Comparing eight methods under identical conditions reveals patterns unseen when they were studied in isolation (e.g., the general superiority of prompting over training).
+- **Response-Level BFS is Closer to Reality**: Directly measuring whether the output seen by the user is fair bridges the gap between academic evaluation and practical deployment.
+- **DPO's Cross-Bias Generalization is Noteworthy**: Training on a single bias type can generalize to others, suggesting that different social biases might share underlying structures in the LLM representation space.
+- **Efficiency-Effectiveness Balance of Self-Awareness**: It provides stable debiasing effects with zero additional computational cost, making it highly practical for production.
+- **Task Vector's "Bias Subtraction" is Feasible but Crude**: This indicates that bias is not a separable component independent of useful knowledge.
 
 ## Limitations & Future Work
-- **Limited training data source**: Only StereoSet is used for SFT/DPO/Task Vector training, restricting coverage of bias types and expression patterns.
-- **Limited evaluation bias categories**: The benchmark primarily covers 9 social bias types (gender, age, race, etc.) and does not address cultural or political biases.
-- **BFS relies on LLM judges**: GPT-4o-mini as a judge may itself carry biases, despite high human agreement in validation.
-- **Training-based methods only evaluated on ~7B-scale models**: Effects on larger models (70B+) remain unknown.
-- **Prompting and training combinations are unexplored**: As the two paradigms operate at different levels (context vs. parameters), their combination may yield improved results.
-- Specialized debiasing strategies for reasoning LLMs (e.g., DeepSeek-R1, Qwen3) warrant future exploration.
+- **Single Training Data Source**: SFT/DPO/Task Vector are trained only on StereoSet, which has limited coverage of bias types and expression patterns.
+- **Limited Bias Types**: Primarily covers nine social biases; cultural and political biases are not addressed.
+- **Reliance on LLM Judges**: GPT-4o-mini as a judge may itself be biased, though manual validation shows high consistency.
+- **Training Limited to 7B Models**: The training effects on larger models (70B+) remain unknown.
+- **Combination of Prompting and Training**: Exploring whether combining these two levels (context vs. parameters) yields better results.
+- **Reasoning LLM Strategies**: Specialized debiasing strategies for reasoning models (e.g., DeepSeek-R1, Qwen3) are worth exploring.
 
 ## Related Work & Insights
-- **vs. DAMA (Limisiewicz et al., 2024)**: DAMA removes biased representations via projection but evaluates only probabilities, not responses; BiasFreeBench directly evaluates at the response level.
-- **vs. BiasEdit (Xu et al., 2025a)**: BiasEdit applies model editing for debiasing but lacks comparison with prompting methods; BiasFreeBench unifies both categories.
-- **vs. FairSteer (Li et al., 2025)**: FairSteer uses activation steering for debiasing and evaluates responses, but only compares training-based methods; BiasFreeBench provides broader coverage.
-- BiasBusters investigates tool selection bias, while BiasFreeBench addresses social bias—the two are complementary and together form a more complete picture of LLM bias research.
+- **vs DAMA (Limisiewicz et al., 2024)**: DAMA eliminates biased representations via projection but evaluates only probabilities; BiasFreeBench evaluates the response level directly.
+- **vs BiasEdit (Xu et al., 2025a)**: BiasEdit uses model editing for debiasing but lacks comparisons with prompting methods; BiasFreeBench provides a unified comparison.
+- **vs FairSteer (Li et al., 2025)**: FairSteer uses activation guidance and evaluates responses but only compares training-based methods.
+- BiasBusters examines tool selection bias, while BiasFreeBench examines social bias—the two are complementary.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐ — The primary contribution is systematic comparison rather than novel methods, though the unified framework and BFS metric are original.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — 7 models, 8 methods, 2 datasets, and multi-dimensional analysis; highly comprehensive.
-- **Writing Quality**: ⭐⭐⭐⭐ — Clear structure, rich tables, and in-depth analysis.
-- **Value**: ⭐⭐⭐⭐ — As a unified benchmark, it offers lasting value to the community, with findings that provide actionable guidance for practitioners.
+- Novelty: ⭐⭐⭐ Main contribution is systematic comparison rather than a new method, but the unified framework and BFS metric are original.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Includes seven models, eight methods, two datasets, and multi-dimensional analysis.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure, rich tables, and deep analysis.
+- Value: ⭐⭐⭐⭐ Significant value to the community as a unified benchmark; experimental findings offer practical guidance.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1">
+<div class="related-papers" markdown="1"></div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] Measuring and Mitigating Rapport Bias of Large Language Models under Multi-Agent Social Interactions](measuring_and_mitigating_rapport_bias_of_large_language_models_under_multi-agent.md)
+- [\[ICML 2025\] OR-Bench: An Over-Refusal Benchmark for Large Language Models](../../ICML2025/social_computing/or-bench_an_over-refusal_benchmark_for_large_language_models.md)
 - [\[NeurIPS 2025\] Any Large Language Model Can Be a Reliable Judge: Debiasing with a Reasoning-based Bias Detector](../../NeurIPS2025/social_computing/any_large_language_model_can_be_a_reliable_judge_debiasing_w.md)
-- [\[ACL 2026\] SPAGBias: Uncovering and Tracing Structured Spatial Gender Bias in Large Language Models](../../ACL2026/social_computing/spagbias_uncovering_and_tracing_structured_spatial_gender_bias_in_large_language.md)
 - [\[ICLR 2026\] Mitigating Mismatch within Reference-based Preference Optimization](mitigating_mismatch_within_reference-based_preference_optimization.md)
-- [\[ICLR 2026\] Propaganda AI: An Analysis of Semantic Divergence in Large Language Models](propaganda_ai_an_analysis_of_semantic_divergence_in_large_language_models.md)
-- [\[ICLR 2026\] Scalable Multi-Task Low-Rank Model Adaptation](scalable_multi-task_low-rank_model_adaptation.md)
+- [\[ACL 2025\] Translate With Care: Addressing Gender Bias, Neutrality, and Reasoning in Large Language Model Translations](../../ACL2025/social_computing/translate_with_care_addressing_gender_bias_neutrality_and_reasoning_in_large_lan.md)
 
 </div>
 

@@ -2,100 +2,101 @@
 title: >-
   [Paper Note] Enhancing Instruction Following of LLMs via Activation Steering with Dynamic Rejection
 description: >-
-  [ICLR 2026][Signal & Communication][Activation Steering] This paper proposes Directer (Dynamic Rejection Steering), which dynamically adjusts KV cache steering intensity at each decoding step and incorporates a plausibil…
+  [ICLR 2026][Signal & Communications][Paper Note] Proposes Directer (Dynamic Rejection Steering), which significantly enhances the instruction-following capabilities of LLMs by dynamically adjusting KV cache steering intensity and introducing plausibility constraints at each decoding step, while avoiding text quality degradation caused by oversteering.
 tags:
-  - "ICLR 2026"
-  - "Signal & Communication"
-  - "Activation Steering"
-  - "Instruction Following"
-  - "KV Cache Scaling"
-  - "Dynamic Rejection"
-  - "Oversteering Mitigation"
+  - ICLR 2026
+  - Signal & Communications
 date: 2026-05-08
-content_hash: 7b6629294f6bfd85
+content_hash: a9f71d089e9ee309
 ---
-
 # Enhancing Instruction Following of LLMs via Activation Steering with Dynamic Rejection
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2603.06745](https://arxiv.org/abs/2603.06745)  
-**Code**: [Available](https://github.com/mjk0618/directer)  
-**Area**: Robotics
-**Keywords**: Activation Steering, Instruction Following, KV Cache Scaling, Dynamic Rejection, Oversteering Mitigation
+**Code**: [Yes](https://github.com/mjk0618/directer)  
+**Area**: Signal/Communication  
+**Keywords**: Activation Steering, Instruction Following, KV Cache Scaling, Dynamic Rejection, Oversteering Mitigation  
 
 ## TL;DR
 
-This paper proposes Directer (Dynamic Rejection Steering), which dynamically adjusts KV cache steering intensity at each decoding step and incorporates a plausibility constraint, substantially improving LLM instruction following while preventing text quality degradation caused by oversteering.
+Proposes Directer (Dynamic Rejection Steering), which significantly enhances the instruction-following capabilities of LLMs by dynamically adjusting KV cache steering intensity and introducing plausibility constraints at each decoding step, while avoiding text quality degradation caused by oversteering.
 
 ## Background & Motivation
 
-Despite instruction fine-tuning, LLMs still struggle to faithfully follow complex user instructions. Activation steering modifies internal model representations to enhance instruction following, but existing methods carry the risk of **oversteering** — over-emphasizing instructions degrades task accuracy and generation quality.
+LLMs still struggle to perfectly follow complex user instructions after instruction tuning. Activation Steering techniques enhance instruction following by modifying internal model representations, but existing methods face the risk of **oversteering**—where over-emphasizing instructions degrades task accuracy and generation quality.
 
-Core limitations of existing methods:
+**Limitations of Prior Work**:
 
-**Static steering intensity**: Methods such as PASTA and SpotLight rely on manually tuned fixed hyperparameters and cannot adapt to the dynamically varying optimal steering intensity at each decoding step.
+**Static steering intensity**: Methods like PASTA and SpotLight rely on fixed hyperparameters determined by manual tuning, failing to adapt to the optimal dynamic steering intensity required at each decoding step.
 
-**High precomputation cost**: PASTA requires hundreds to thousands of validation samples for grid search over attention heads, with precomputation costs approaching training-level overhead.
+**High pre-computation costs**: PASTA requires hundreds to thousands of validation samples for grid searching attention heads, with pre-computation costs nearing the training level.
 
-**Large computational overhead**: SpotLight requires an additional softmax operation at every decoding step, effectively doubling latency.
+**Large computational overhead**: SpotLight requires an additional softmax operation at each decoding step, effectively doubling latency.
 
-**Quality–compliance trade-off**: Enhancing instruction following often comes at the expense of task correctness and text quality.
+**Quality-following trade-off**: Enhancing instruction following often comes at the expense of task correctness and text quality.
 
 ## Method
 
 ### Overall Architecture
 
-The core idea of Directer is to **automatically regulate steering intensity** during decoding through three collaborating components:
+Directer is a pure inference-time module that does not pre-tune a fixed steering intensity. Instead, it determines "how strong the steering should be" in real-time at each decoding step. The overall workflow is: after the prompt prefill is completed, a one-time attention sensitivity layer ranking is performed to determine the order of "steering effectiveness" for all layers. Subsequently, during the step-by-step decoding, a Top-2 gate is first used as a cheap check to judge if "this step is worth steering." If so, the Key vectors of the instruction tokens in the KV cache are amplified to strengthen attention. Then, a plausibility check compares the output distributions before and after steering. If the steering is too aggressive, the candidate layers are removed one by one from lowest to highest sensitivity until the steering result is "both a changed choice and not unreasonable."
 
-1. **KV cache steering**: Scales the Key vectors of instruction tokens by a factor $\alpha=100$.
-2. **Plausibility-guided decoding loop**: At each step, compares the steered and original output distributions to dynamically decide whether to accept the steering.
-3. **Attention-sensitivity-based layer ranking**: A one-time analysis that determines the sensitivity of each layer to steering, guiding progressive intensity adjustment.
+```mermaid
+graph TD
+    A["Input Prompt + Prefill<br/>Populate KV cache"] --> B["Attention Sensitivity Layer Ranking<br/>One-time perturbation analysis for layer ordering"]
+    B --> C["Each Decoding Step: Original Forward Pass<br/>Obtain distribution p_t and top-2 tokens"]
+    C --> D{"Top-2 Gating<br/>Second prob < β · Max?"}
+    D -->|"Yes: Model is confident"| H["Output original top-1<br/>Skip steering"]
+    D -->|"No: Potential for change"| E["KV Cache Key Scaling<br/>Amplify instruction Key in candidate layers"]
+    E --> F{"Plausibility Check<br/>Steered token original prob ≥ β · Max?"}
+    F -->|"Pass"| G["Output steered token"]
+    F -->|"Fail"| I["Halve candidate layers by sensitivity<br/>Remove the least sensitive half"]
+    I --> E
+```
 
 ### Key Designs
 
-**KV cache scaling mechanism**: The Key vectors within instruction token span $\mathcal{I}$ are scaled by factor $\alpha$:
+**1. KV Cache Key Scaling: Writing "Attention to Instructions" into Cache with One Multiplication**
+
+The goal of activation steering is to make the model focus more on instructions, but directly modifying logits or attention scores is either requiring extra softmax operations or is incompatible with FlashAttention. Directer chooses to directly multiply a scaling factor $\alpha$ to the Key vectors belonging to the instruction token interval $\mathcal{I}$ and the candidate layer set $\mathcal{L}$:
 
 $$\mathbf{k'}^{(l)}_i = \begin{cases} \alpha \cdot \mathbf{k}^{(l)}_i, & \text{if } i \in \mathcal{I} \text{ and } l \in \mathcal{L} \\ \mathbf{k}^{(l)}_i, & \text{otherwise} \end{cases}$$
 
-Key scaling is preferred over Value scaling because its effect is naturally normalized by the subsequent softmax, requiring no additional computation.
+Scaling the Key instead of the Value is because the Key undergoes another softmax during attention scoring, meaning the amplification effect is naturally normalized and will not spiral out of control. This enhances the attention weights of instruction tokens without any additional computation and is natively compatible with FlashAttention as it only modifies values in the KV cache. The scaling factor is set to $\alpha=100$, but experiments show performance remains stable across five orders of magnitude ($10^1 \sim 10^5$), effectively removing this hyperparameter from the tuning list.
 
-**Plausibility-guided decoding**: The procedure at each decoding step is as follows:
+**2. Plausibility-Guided Decoding: Step-wise Comparison and Layer-wise Withdrawal**
 
-1. Perform a standard forward pass to obtain the original distribution $p_t$.
-2. Apply KV cache steering to the candidate layer set $\mathcal{L}_{\text{cand}}$ to obtain the steered distribution $\tilde{p}_t$.
-3. Check the plausibility condition: $p_{t,\tilde{i}^*_t} \geq \beta \cdot p_{t,i^*_t}$ (threshold $\beta=0.5$).
-4. If unsatisfied, progressively halve the candidate layer set (removing the least sensitive half).
-5. Repeat until the condition is met or the candidate set is empty (falling back to the original distribution).
+The biggest risk of static steering is oversteering—sacrificing answer correctness for format compliance. Directer performs a standard forward pass at each decoding step to get the original distribution $p_t$, then applies Key scaling to candidate layers $\mathcal{L}_{\text{cand}}$ to get the steered distribution $\tilde{p}_t$. It then checks if the probability of the steered token in the original distribution remains sufficiently high: $p_{t,\tilde{i}^*_t} \geq \beta \cdot p_{t,i^*_t}$ (threshold $\beta=0.5$). This condition implies that "steering can change the model's choice, but the chosen token must not be too unreasonable in the original state." If not met, the number of candidate layers is halved—prioritizing the removal of the least sensitive half—and steering is re-evaluated. This progressive withdrawal continues until the check passes or the candidate layers are empty (reverting to the original distribution). Thus, steering intensity adaptively scales based on confidence, preserving format following while maintaining correctness. $\beta$ outperforms the non-steering baseline across its entire range.
 
-**Efficient gating mechanism**: A pre-check using the top-2 token probabilities of the original distribution — if $p_{t,i^{**}_t} < \beta \cdot p_{t,i^*_t}$, the steering attempt can be skipped entirely, substantially reducing computational overhead.
+**3. Top-2 Gating: A Cheap Pre-check for Steering Necessity**
 
-**Attention-sensitivity layer ranking**: Layer influence is ranked by observing perturbation propagation under single-layer steering. For each layer $\ell$, steering is applied individually and the perturbation score across all layers $j$ is measured:
+Running the full loop at every step is expensive. Directer utilizes the probabilities of the top-2 tokens in the original distribution for a cheap pre-judgment: if the second-best token satisfied $p_{t,i^{**}_t} < \beta \cdot p_{t,i^*_t}$, it indicates the model is already highly confident, and no steering is likely to change the choice (unless the steered top-1 remains the same). The steering attempt is skipped in such "high confidence" cases. Since most decoding steps fall into this category, the gating mechanism cuts significant redundant computation, keeping overall throughput only about 16% lower than the zero-shot baseline and over 2x faster than SpotLight.
 
-$$D_j(\ell) = \underbrace{(\text{dist}(\mathbf{H}^{(j)}_{\text{pre}}, \mathbf{H}^{(j,\ell)}_{\text{post}}) - \text{dist}(\mathbf{H}^{(j)}_{\text{pre}}, \mathbf{H}^{(j)}_{\text{post}}))}_{\text{direct effect}} + \underbrace{(\text{dist}(\mathbf{H}^{(j,\ell)}_{\text{pre}}, \mathbf{H}^{(j)}_{\text{post}}) - \text{dist}(\mathbf{H}^{(j)}_{\text{pre}}, \mathbf{H}^{(j)}_{\text{post}}))}_{\text{propagation effect}}$$
+**4. Attention Sensitivity Layer Ranking: Perturbation Propagation for Order of Withdrawal**
 
-The final ranking is $\text{Sensitivity}(\ell) = \frac{1}{L}\sum_{j=1}^{L} D_j(\ell)$, computed once after prompt prefill.
+Progressive withdrawal requires knowing "which layers have weak steering effects and can be discarded first." Directer performs a one-time analysis after prompt prefill: it applies steering to each layer $\ell$ individually and observes the perturbation on the hidden states of all layers $j$, calculated as the sum of a direct effect and a propagation effect:
+
+$$D_j(\ell) = \underbrace{(\text{dist}(\mathbf{H}^{(j)}_{\text{pre}}, \mathbf{H}^{(j,\ell)}_{\text{post}}) - \text{dist}(\mathbf{H}^{(j)}_{\text{pre}}, \mathbf{H}^{(j)}_{\text{post}}))}_{\text{Direct Effect}} + \underbrace{(\text{dist}(\mathbf{H}^{(j,\ell)}_{\text{pre}}, \mathbf{H}^{(j)}_{\text{post}}) - \text{dist}(\mathbf{H}^{(j)}_{\text{pre}}, \mathbf{H}^{(j)}_{\text{post}}))}_{\text{Propagation Effect}}$$
+
+The average perturbation of a layer on the entire network is $\text{Sensitivity}(\ell) = \frac{1}{L}\sum_{j=1}^{L} D_j(\ell)$, which is used for ranking. This ranking is calculated once but used throughout the decoding. Ablations show that reversing this order (withdrawing sensitive layers first) or using random layer steering results in significant performance drops, proving that "withdrawing by sensitivity" captures the essence of steering.
 
 ### Loss & Training
 
-Directer is a pure inference-time method requiring no training. Only two core hyperparameters are used:
-- **Scaling factor $\alpha=100$**: Has minimal impact on performance and remains stable across $10^1 \sim 10^5$.
-- **Plausibility threshold $\beta=0.5$**: Controls the frequency of steering intervention; the method outperforms the no-steering baseline across its entire range.
-
-A unified configuration is used for all tasks with no task-specific tuning required.
+Directer is a pure inference-time method without any training or additional datasets. The mechanism relies on only two hyperparameters: the scaling factor $\alpha=100$ (stable within $10^1 \sim 10^5$) and the plausibility threshold $\beta=0.5$ (superior to the baseline across its range). The same configuration is used for all tasks without task-specific tuning, achieving true plug-and-play capability.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Method | IFEval P.Acc / I.Acc | LIFBench List/OD/MD | GSM8K-Format F.Acc/T.Acc | Average |
-|--------|---------------------|---------------------|--------------------------|---------|
+|------|---------------------|---------------------|--------------------------|------|
 | Zero-shot | 73.5 / 81.5 | 63.4 / 68.6 / 40.9 | 79.2 / 82.7 | 70.0 |
 | PASTA* | 76.5 / 83.4 | 61.8 / 66.0 / 47.8 | 98.9 / 62.7 | 71.0 |
 | SpotLight* | 76.3 / 83.6 | 61.4 / 70.8 / 38.8 | 95.4 / 78.7 | 72.1 |
 | **Directer** | **78.8 / 84.8** | **64.4 / 70.0 / 51.7** | **99.1 / 86.9** | **76.5** |
 
 | Model Scale | Zero-shot | PASTA* | SpotLight* | Directer |
-|-------------|-----------|--------|------------|----------|
+|----------|-----------|--------|------------|----------|
 | Llama-3.2-1B | 61.3 | 59.7 | 60.6 | **61.6** |
 | Qwen-2.5-3B | 63.9 | 65.2 | 62.8 | **67.1** |
 | Qwen-2.5-7B | 72.4 | 73.0 | 74.9 | **74.4** |
@@ -104,47 +105,47 @@ A unified configuration is used for all tasks with no task-specific tuning requi
 ### Ablation Study
 
 | Variant | Accuracy |
-|---------|----------|
+|------|--------|
 | Zero-shot | 77.5 |
-| **Directer (full)** | **81.8** |
-| + Reversed ranking | 79.0 |
-| + Random layer steering | 80.2±0.7 |
-| + Random token steering | 79.2±1.1 |
+| **Directer (Full)** | **81.8** |
+| + Reversed Ranking | 79.0 |
+| + Random Layer Steering | 80.2±0.7 |
+| + Random Token Steering | 79.2±1.1 |
 
 ### Key Findings
 
-1. **Oversteering is severe**: The original PASTA configuration causes GSM8K task accuracy to drop from 82.7% to 48.1%, whereas Directer maintains 86.9%.
-2. **Dynamic outperforms static**: Among fixed-intensity configurations, low intensity (ST1/ST2) yields slight gains but high intensity degrades sharply; Directer's adaptive regulation consistently outperforms all.
-3. **Plausibility constraint generalizes**: Applying the plausibility gate to PASTA and SpotLight also substantially mitigates their oversteering problems.
-4. **Inference efficiency is manageable**: Throughput is only ~16% lower than the zero-shot baseline, more than 2× faster than SpotLight, with negligible memory overhead.
-5. **Generation quality and task fidelity are optimal**: LLM-judge task fidelity reaches ≈92%, with text quality on par with the no-intervention baseline.
+1. **Oversteering is a major issue**: PASTA's original settings caused GSM8K accuracy to drop from 82.7% to 48.1%, while Directer maintained 86.9%.
+2. **Dynamic is superior to static**: In fixed intensity setups, low intensity (ST1/ST2) provides minor gains while high intensity causes sharp declines; Directer's adaptive adjustment outperforms all.
+3. **Plausibility constraints are universal**: Applying plausibility checks as a safety gate to PASTA/SpotLight also significantly mitigates their oversteering issues.
+4. **Controlled inference efficiency**: Throughput is only ~16% lower than zero-shot baseline and over 2x faster than SpotLight, with negligible memory overhead.
+5. **Optimal generation quality and fidelity**: Task fidelity judged by LLMs reached ≈92%, with text quality remaining on par with the un-intervened baseline.
 
 ## Highlights & Insights
 
-1. **Precise problem formulation**: The paper identifies oversteering as the central bottleneck of activation steering methods, rather than simply pursuing stronger guidance.
-2. **Elegant design**: Plausibility checking, progressive halving, and sensitivity ranking interlock to form a closed-loop adaptive mechanism.
-3. **Near-zero hyperparameter tuning**: $\alpha$ is stable across 5 orders of magnitude and $\beta$ outperforms the baseline across its entire range, achieving genuine plug-and-play usability.
-4. **KV cache operations are compatible with FlashAttention**: A practical advantage that attention-level intervention methods do not possess.
+1. **Precise Problem Definition**: Identifies oversteering as the core bottleneck of activation steering methods, rather than simply pursuing stronger steering.
+2. **Elegant Design**: The plausibility check, progressive halving, and sensitivity ranking form a cohesive adaptive feedback loop.
+3. **Near Zero-Tuning**: $\alpha$ is stable across five orders of magnitude and $\beta$ is superior to the baseline across its range, enabling true plug-and-play.
+4. **KV Cache Operation Compatibility**: Modifications made at the KV cache level remain compatible with FlashAttention, a practical advantage missing in attention-level interventions.
 
 ## Limitations & Future Work
 
-1. Explicit instruction span annotation is required; automated identification of instruction boundaries remains unexplored.
-2. Layer ranking is based on a single prefill analysis and may need updating in multi-turn dialogue settings where instructions change dynamically.
-3. Experiments are conducted primarily on Llama and Qwen series; applicability to architectures such as Mixture-of-Experts is unknown.
-4. Only greedy decoding is evaluated; compatibility with sampling strategies has yet to be verified.
+1. Requires explicit instruction span annotation; the ability to automatically identify instruction boundaries remains to be explored.
+2. Layer ranking is based on a single prefill analysis; updates might be needed for multi-turn dialogues where instructions change dynamically.
+3. Primarily validated on Llama and Qwen series; applicability to architectures like Mixture-of-Experts is unknown.
+4. Only greedy decoding has been validated; compatibility with sampling strategies remains to be verified.
 
 ## Related Work & Insights
 
-- **Relationship to PASTA**: PASTA steers by suppressing attention scores of non-instruction tokens, but requires large validation sets for head profiling and is prone to oversteering with static configurations; Directer requires no additional dataset and adjusts dynamically.
-- **Relationship to SpotLight**: SpotLight maintains a target attention ratio for instruction tokens via post-softmax logit biasing, incurring high computational cost; Directer achieves more efficient steering through KV cache operations.
-- **Insight**: The plausibility-guided decoding framework can be generalized to other scenarios requiring balanced intervention intensity, such as safety alignment and style control.
+- **Relation to PASTA**: PASTA steers by suppressing attention scores of non-instruction tokens but requires massive validation samples for head profiling and is prone to oversteering due to static config; Directer requires no extra data and adjusts dynamically.
+- **Relation to SpotLight**: SpotLight ensures target attention ratios for instruction tokens via post-softmax logit biasing, which is computationally heavy; Directer achieves more efficient steering via KV cache operations.
+- **Insights**: The plausibility-guided decoding framework can be generalized to other scenarios requiring balanced intervention intensity, such as safety alignment or style control.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — Both the dynamic rejection steering mechanism and attention-sensitivity layer ranking constitute novel contributions.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Covers multiple benchmarks, models, ablations, efficiency analysis, and generation quality evaluation comprehensively.
-- Writing Quality: ⭐⭐⭐⭐ — Logical structure is clear and mathematical derivations are rigorous.
-- Value: ⭐⭐⭐⭐ — A plug-and-play inference-time enhancement module with strong practical utility.
+- Novelty: ⭐⭐⭐⭐ — Dynamic rejection steering and sensitivity-based ranking are novel contributions.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Comprehensive evaluation across benchmarks, models, ablations, efficiency, and generation quality.
+- Writing Quality: ⭐⭐⭐⭐ — Clear logic and rigorous derivation.
+- Value: ⭐⭐⭐⭐ — A practical, plug-and-play inference-time enhancement module.
 
 <!-- RELATED:START -->
 
@@ -154,9 +155,9 @@ A unified configuration is used for all tasks with no task-specific tuning requi
 
 - [\[CVPR 2026\] AcTTA: Rethinking Test-Time Adaptation via Dynamic Activation](../../CVPR2026/signal_comm/actta_rethinking_test-time_adaptation_via_dynamic_activation.md)
 - [\[NeurIPS 2025\] Angular Steering: Behavior Control via Rotation in Activation Space](../../NeurIPS2025/signal_comm/angular_steering_behavior_control_via_rotation_in_activation_space.md)
-- [\[ICLR 2026\] Mamba-3: Improved Sequence Modeling using State Space Principles](mamba-3_improved_sequence_modeling_using_state_space_principles.md)
-- [\[AAAI 2026\] Balancing Multimodal Domain Generalization via Gradient Modulation and Projection](../../AAAI2026/signal_comm/balancing_multimodal_domain_generalization_via_gradient_modulation_and_projectio.md)
-- [\[ICML 2026\] Joint Model and Data Sparsification via the Marginal Likelihood](../../ICML2026/signal_comm/joint_model_and_data_sparsification_via_the_marginal_likelihood.md)
+- [\[ACL 2025\] WirelessMathBench: A Mathematical Modeling Benchmark for LLMs in Wireless Communications](../../ACL2025/signal_comm/wirelessmathbench_a_mathematical_modeling_benchmark_for_llms_in_wireless_communi.md)
+- [\[ICML 2025\] Fourier Position Embedding: Enhancing Attention's Periodic Extension for Length Generalization](../../ICML2025/signal_comm/fourier_position_embedding_enhancing_attentions_periodic_extension_for_length_ge.md)
+- [\[ICLR 2026\] Advancing Spatiotemporal Representations in Spiking Neural Networks via Parametric Invertible Transformation](advancing_spatiotemporal_representations_in_spiking_neural_networks_via_parametr.md)
 
 </div>
 

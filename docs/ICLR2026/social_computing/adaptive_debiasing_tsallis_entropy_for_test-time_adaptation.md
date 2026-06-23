@@ -2,117 +2,124 @@
 title: >-
   [Paper Note] Adaptive Debiasing Tsallis Entropy for Test-Time Adaptation
 description: >-
-  [ICLR 2026][Social Computing][Test-Time Adaptation] This paper introduces Tsallis entropy (a generalization of Shannon entropy) into Test-Time Adaptation for vision-language models…
+  [ICLR 2026][Social Computing][Tsallis entropy] This paper proposes introducing Tsallis entropy (a generalized form of Shannon entropy) into Test-Time Adaptation (TTA) for VLMs, further developing it into Adaptive Debiasing Tsallis Entropy (ADTE). By customizing the debiasing parameter $q^l$ for each category, ADTE selects more reliable high-confidence views than Sh
 tags:
-  - "ICLR 2026"
-  - "Social Computing"
-  - "Test-Time Adaptation"
-  - "Tsallis entropy"
-  - "CLIP"
-  - "debiasing"
-  - "uncertainty estimation"
+  - ICLR 2026
+  - Social Computing
+  - Tsallis entropy
+  - CLIP
 date: 2026-05-08
-content_hash: ef12944f26118624
+content_hash: 277fedfb03245273
 ---
-
 # Adaptive Debiasing Tsallis Entropy for Test-Time Adaptation
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2602.11743](https://arxiv.org/abs/2602.11743)  
 **Code**: [https://github.com/Jinx630/ADTE](https://github.com/Jinx630/ADTE)  
-**Area**: Social Computing
-**Keywords**: Test-Time Adaptation, Tsallis entropy, CLIP, debiasing, uncertainty estimation
+**Area**: Social Computing  
+**Keywords**: Test-time adaptation, Tsallis entropy, CLIP, debiasing, uncertainty estimation
 
 ## TL;DR
-This paper introduces Tsallis entropy (a generalization of Shannon entropy) into Test-Time Adaptation for vision-language models, and further develops Adaptive Debiasing Tsallis Entropy (ADTE), which customizes a per-class debiasing parameter $q^l$ to select more reliable high-confidence views than Shannon entropy without distribution-specific hyperparameter tuning. ADTE surpasses the state of the art on ImageNet and its 5 variants as well as 10 cross-domain benchmarks.
+This paper proposes introducing Tsallis entropy (a generalized form of Shannon entropy) into Test-Time Adaptation (TTA) for VLMs, further developing it into Adaptive Debiasing Tsallis Entropy (ADTE). By customizing the debiasing parameter $q^l$ for each category, ADTE selects more reliable high-confidence views than Shannon entropy without distribution-specific hyperparameters. It outperforms SOTA on ImageNet, its five variants, and ten cross-domain benchmarks.
 
 ## Background & Motivation
+**Background**: TTA methods improve the performance of VLMs like CLIP on out-of-distribution (OOD) data by selecting high-confidence augmented views. Representative methods such as TPT and Zero utilize Shannon entropy (SE) to measure uncertainty and filter low-entropy views.
 
-**Background**: TTA methods improve the out-of-distribution performance of VLMs such as CLIP by selecting high-confidence augmented views. Representative methods including TPT and Zero employ Shannon entropy to measure uncertainty and filter low-entropy views.
+**Limitations of Prior Work**: CLIP is pre-trained on unbalanced web-crawled data, leading to overconfidence in head classes and underconfidence in tail classes. SE uses a uniform formula $-\sum p\log p$ for all categories and fails to distinguish between different degrees of bias, causing the entropy estimate itself to be biased. This negatively impacts the selection quality of high-confidence views.
 
-**Limitations of Prior Work**: CLIP is pre-trained on imbalanced web-crawled data, leading to overconfidence on head classes and underconfidence on tail classes. Shannon entropy applies a uniform formula $-p\log p$ to all classes, making it unable to distinguish the degree of bias across different classes. As a result, the entropy estimate itself is biased, which degrades the quality of high-confidence view selection.
+**Key Challenge**: SE assumes that the probability distribution is unbiased (extensivity assumption), whereas the prediction distribution of CLIP exhibits systematic bias (non-extensivity). SE cannot characterize this bias structure.
 
-**Key Challenge**: Shannon entropy assumes an unbiased probability distribution (the extensivity assumption), whereas CLIP's predictive distribution exhibits systematic bias (non-extensivity) that SE cannot characterize.
+**Goal**: How to correct the influence of VLM prediction bias on entropy estimation during the TTA process?
 
-**Goal**: How can the influence of VLM prediction bias on entropy estimation be corrected during TTA?
+**Key Insight**: Tsallis entropy is a generalization of SE that can characterize statistical dependence between probability distributions through a non-extensive parameter $q$. When $q < 1$, Tsallis entropy (TE) tends to select more reliable high-confidence views.
 
-**Key Insight**: Tsallis entropy is a generalization of Shannon entropy that captures statistical dependencies among probability distributions via the non-extensive parameter $q$. When $q<1$, TE tends to select more reliable high-confidence views.
-
-**Core Idea**: Replace Shannon entropy with Tsallis entropy for high-confidence view selection, and adaptively compute a debiasing parameter $q^l$ for each class.
+**Core Idea**: Replace Shannon entropy with Tsallis entropy for high-confidence view selection and adaptively calculate the debiasing parameter $q^l$ for each category.
 
 ## Method
 
 ### Overall Architecture
-ADTE serves as a plug-and-play replacement for Shannon entropy in TTA methods such as Zero and TPT. The pipeline proceeds as follows: a test image is augmented into $N$ views → ADTE computes the uncertainty of each view → low-entropy, high-confidence views are selected → predictions are aggregated. The key distinction lies in the entropy computation and the use of class-specific parameters.
+ADTE addresses the issue that "the entropy used to select high-confidence views in TTA is itself biased." It is positioned as a plug-and-play replacement for Shannon entropy in methods like Zero/TPT without changing the rest of the pipeline: a test image is first expanded into $N$ augmented views; an uncertainty score is calculated for each view using ADTE instead of SE; the views with low scores (high confidence) are selected; and their predictions are aggregated for the final result. This replacement introduces two key changes: the functional form of entropy changes from Shannon to Tsallis, and the parameter $q$ changes from a global constant to a per-category adaptive $q^l$, which is calculated via a separate parameter estimation branch using a memory bank and optional logit adjustment.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    IMG["Test Image"] --> AUG["Data Augmentation<br/>Expand to N views"]
+    subgraph QEST["Adaptive Debiasing Parameter q^l"]
+        direction TB
+        MB["Memory bank<br/>Pseudo-labels approximate categories"] --> PRI["Jacobi Iteration<br/>Estimate category prior bias"]
+        PRI --> QL["Min-Max Normalization<br/>Larger bias -> Smaller q (0.01–0.9)"]
+    end
+    AUG --> ADJ["Logit Adjustment<br/>Logit-level debiasing (Optional)"]
+    QL --> ADTE["ADTE Uncertainty Score<br/>Using Tsallis Entropy + Per-class q^l"]
+    ADJ --> ADTE
+    ADTE --> SEL["Select Low Scores<br/>i.e., High-confidence views"]
+    SEL --> AGG["Aggregate selected view predictions"]
+    AGG --> OUT["Final Classification Result"]
+```
 
 ### Key Designs
 
-1. **Tsallis Entropy as a Replacement for Shannon Entropy**:
+**1. Replacing Shannon Entropy with Tsallis Entropy: Changing the calculation sensitive to tail classes**
 
-    - **Function**: Replace SE $\mathbf{H}_{SE} = -\sum_l P_l \log P_l$ with TE $\mathbf{H}_{TE} = \frac{\sum_l P_l^q - 1}{1-q}$.
-    - **Mechanism**: Theoretically, TE reduces to SE as $q \to 1$ (lower-bound property). When $q < 1$, views selected by TE exhibit higher Top-K cumulative reliability (TcrK). For $0 < q < 1$, TE naturally mitigates the influence of VLM prediction bias.
-    - **Design Motivation**: SE is sensitive to bias in tail classes (where probabilities approach zero). By replacing $p\log p$ with $p^q$, TE alters the treatment of small probabilities.
+SE measures uncertainty using a uniform formula $\mathbf{H}_{SE} = -\sum_l P_l \log P_l$. However, the $p\log p$ term is extremely sensitive to small probabilities near zero. Since CLIP produces small, systematically biased probabilities for tail classes, the entropy estimate is skewed by these categories. ADTE uses Tsallis entropy $\mathbf{H}_{TE} = \frac{\sum_l P_l^q - 1}{1-q}$, which replaces $p\log p$ with $p^q$, thereby altering the processing of small probabilities. Theoretically, this replacement is self-consistent: as $q \to 1$, TE reduces to SE (SE is a special case/lower bound of TE). When $q < 1$, the high-confidence views selected by TE exhibit higher Top-K cumulative reliability (TcrK). In the interval $0 < q < 1$, TE naturally mitigates the impact of VLM bias on view selection without explicit bias modeling.
 
-2. **Adaptive Debiasing Tsallis Entropy (ADTE)**:
+**2. Adaptive Debiasing Tsallis Entropy (ADTE): Letting each category determine its debiasing strength**
 
-    - **Function**: Customize a class-specific parameter $q^l$ for each class $l$ without manual tuning.
-    - **Mechanism**: (1) A memory bank is maintained to estimate the per-class prior probability $\tilde{p}_l$ (solved via Jacobi iteration, approximated with pseudo-labels). (2) The estimated bias is mapped to $[\alpha, \beta] = [0.01, 0.9]$ via min-max normalization to yield $q^l$—classes with larger bias receive smaller $q^l$, implying stronger correction.
-    - **Design Motivation**: Manual tuning of $q$ is infeasible across varying test distributions, and different classes are affected by bias to different extents (head vs. tail classes).
+Fixing a global $q$ has two issues: the optimal $q$ shifts with the test distribution (making manual tuning infeasible), and head vs. tail classes are affected differently by bias. ADTE calculates an individual $q^l$ for each category $l$. The process involves two steps: first, maintaining a memory bank to approximate class priors $\tilde{p}_l$ via pseudo-labels and Jacobi iteration; then, mapping these estimated biases to the interval $[\alpha, \beta] = [0.01, 0.9]$ using min-max normalization to serve as $q^l$. The mapping follows the principle of "larger bias, smaller $q^l$," as a smaller $q$ corresponds to stronger correction. Thus, categories heavily affected by bias are corrected more aggressively, while others remain closer to original SE. This estimation requires no distribution-specific hyperparameter tuning.
 
-3. **Integration with Logit Adjustment**:
+**3. Integration with Logit Adjustment: Layering debiasing at two levels**
 
-    - ADTE integrates seamlessly with logit adjustment strategies: the estimated bias is first used to adjust logits, after which ADTE selects high-confidence views.
-    - The entire process requires no additional training or distribution-specific hyperparameter tuning.
+ADTE performs debiasing at the entropy estimation level, which can seamlessly stack with strategies like logit adjustment that correct bias at the logit level. One can adjust logits first using estimated bias and then use ADTE to select high-confidence views. These two steps are aligned in goal and do not conflict. The entire process remains training-free and requires no distribution-specific hyperparameters.
 
 ### Loss & Training
-No training is required. ADTE is a purely inference-time method that directly replaces Shannon entropy in the TTA pipeline. The memory bank stores 10 samples per class.
+Training-free. ADTE is a pure inference-time method that replaces Shannon entropy in the TTA pipeline. The memory bank size is set to 10 samples per category.
 
 ## Key Experimental Results
 
 ### Main Results (ImageNet + 5 Variants, CLIP ViT-B/16)
 
 | Method | IN | IN-A | IN-R | IN-K | Average | OOD Avg |
-|--------|----|------|------|------|---------|---------|
+|------|-----|------|------|------|---------|---------|
 | CLIP | 68.7 | 50.6 | 77.7 | 48.3 | 61.5 | 59.7 |
 | Zero | 70.9 | 64.0 | 80.8 | 50.3 | 66.2 | 65.0 |
 | BCA | 70.2 | 61.1 | 80.7 | 50.9 | 65.6 | 64.4 |
 | **ADTE** | **71.8** | **65.5** | **81.4** | **53.5** | **67.5** | **66.5** |
 
-### Cross-Domain Benchmarks (Best Average across 10 Datasets)
+### Key Experimental Results (10 Cross-Domain Benchmarks)
 
 | Metric | Description |
-|--------|-------------|
-| ADTE Average Accuracy | Highest average performance across 10 cross-domain benchmarks |
-| Model-agnostic | Outperforms SOTA on both ViT-B/16 and ViT-L/14 |
-| Prompt-agnostic | Effective with both hand-crafted templates and CuPL-generated text |
+|------|------|
+| ADTE Avg Accuracy | Highest average performance across 10 cross-domain benchmarks |
+| Model Agnostic | Outperforms SOTA on both ViT-B/16 and ViT-L/14 |
+| Prompt Agnostic | Effective with both manual templates and CuPL-generated text |
 
 ### Key Findings
-- TE consistently outperforms SE when $q < 1$ (SE is a special case of TE at $q=1$), though the optimal $q$ varies across test distributions.
-- ADTE eliminates the need for manual hyperparameter search via adaptive $q^l$, yielding robust performance across all test distributions.
-- The largest gain is observed on ImageNet-K (48.3→53.5), the variant with the most severe distribution shift.
-- ADTE can directly replace entropy computation in any SE-based TTA method without further modification.
+- TE consistently outperforms SE when $q < 1$ (SE is the $q=1$ case), though the optimal $q$ varies by test distribution.
+- ADTE eliminates the need for manual tuning via adaptive $q^l$ and performs robustly across all test distributions.
+- The largest Gain occurs on ImageNet-K (48.3 → 53.5), which represents the variant with the most severe distribution shift.
+- ADTE can directly replace entropy calculations in any SE-based TTA method without other modifications.
 
 ## Highlights & Insights
-- **First systematic analysis of Shannon entropy bias in VLM TTA**: The extensivity assumption implicitly embedded in SE does not hold in this setting—a long-overlooked issue.
-- **Tsallis entropy as a principled drop-in replacement**: Theoretically elegant (SE is a lower bound) and practically effective; any TTA method using SE can directly substitute TE/ADTE.
-- **Adaptive parameter estimation**: The per-class debiasing parameter $q^l$ is derived from existing bias estimation techniques (from Frolic), reusing available tools without additional overhead.
+- **Systematic analysis of Shannon entropy bias**: The extensivity assumption implicitly held by SE is systematically analyzed and shown to fail in VLM TTA—a problem long overlooked.
+- **Tsallis entropy as a direct replacement**: Theoretically elegant (SE as a lower bound) and practically effective; it is plug-and-play for any TTA method using SE.
+- **Design of adaptive parameter estimation**: Leverages existing bias estimation methods (from Frolic) to transform priors into $q^l$, reusing existing tools effectively.
 
 ## Limitations & Future Work
-- The memory bank size is fixed at 10 samples per class, which may be insufficient when the label space is large (e.g., 1,000 classes in ImageNet).
-- Bias estimation relies on pseudo-label quality; early-stage pseudo-labels may be unreliable.
-- The normalization interval $[\alpha, \beta] = [0.01, 0.9]$ remains a manually specified hyperparameter.
-- Validation is limited to classification tasks; dense prediction tasks such as detection and segmentation are not covered.
+- The memory bank size is fixed at 10 per category, which may be insufficient for datasets with many classes (e.g., ImageNet-1K).
+- Bias estimation relies on pseudo-label quality; early samples may have inaccurate labels.
+- The normalization interval $[\alpha, \beta] = [0.01, 0.9]$ remains a manually set hyperparameter.
+- Only validated on classification tasks; dense prediction tasks like detection or segmentation are not covered.
 
 ## Related Work & Insights
-- **vs. Zero/TPT**: ADTE is a direct upgrade—replacing only the entropy computation yields consistent improvements without modifying other components.
-- **vs. Frolic**: Frolic applies logit adjustment for bias correction, whereas ADTE corrects bias at the entropy estimation level; the two approaches are complementary.
-- **vs. Prior Use of Tsallis Entropy in Domain Adaptation**: Previous work optimizes TE for pseudo-label generation in source-domain adaptation; ADTE is the first to apply it to view selection in online TTA.
+- **vs Zero/TPT**: ADTE is a direct upgrade, yielding improvements simply by replacing the entropy calculation without changing other components.
+- **vs Frolic**: Frolic uses logit adjustment for bias correction; ADTE corrects at the entropy estimation level, making them complementary.
+- **vs Traditional Tsallis Entropy in DA**: Previous work optimized TE for pseudo-labeling in source domain adaptation; ADTE is the first to apply it to view selection in online TTA.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ — Applying Tsallis entropy to VLM TTA represents a novel theoretical perspective.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — ImageNet + 5 variants, 10 cross-domain benchmarks, two model scales, two prompt types.
-- Writing Quality: ⭐⭐⭐⭐ — Theoretical derivations are clear, though notation is dense.
-- Value: ⭐⭐⭐⭐ — A plug-and-play replacement for Shannon entropy with strong practical utility.
+- Novelty: ⭐⭐⭐⭐ Tsallis entropy in VLM TTA offers a novel theoretical perspective.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers ImageNet+5 variants, 10 benchmarks, two models, and two prompt types.
+- Writing Quality: ⭐⭐⭐⭐ Clear theoretical derivation, though formulas are dense.
+- Value: ⭐⭐⭐⭐ A highly practical, plug-and-play replacement for SE.
 
 <!-- RELATED:START -->
 
@@ -122,9 +129,9 @@ No training is required. ADTE is a purely inference-time method that directly re
 
 - [\[ICLR 2026\] Scalable Multi-Task Low-Rank Model Adaptation](scalable_multi-task_low-rank_model_adaptation.md)
 - [\[ICLR 2026\] Human or Machine? A Preliminary Turing Test for Speech-to-Speech Interaction](human_or_machine_a_preliminary_turing_test_for_speech-to-speech_interaction.md)
+- [\[ACL 2025\] FairSteer: Inference Time Debiasing for LLMs with Dynamic Activation Steering](../../ACL2025/social_computing/fairsteer_inference_time_debiasing_for_llms_with_dynamic_activation_steering.md)
 - [\[ICLR 2026\] SAGE: Spatial-visual Adaptive Graph Exploration for Efficient Visual Place Recognition](sage_spatial-visual_adaptive_graph_exploration_for_efficient_visual_place_recogn.md)
 - [\[AAAI 2026\] SceneJailEval: A Scenario-Adaptive Multi-Dimensional Framework for Jailbreak Evaluation](../../AAAI2026/social_computing/scenejaileval_a_scenario-adaptive_multi-dimensional_framework_for_jailbreak_eval.md)
-- [\[ACL 2026\] LiveFact: A Dynamic, Time-Aware Benchmark for LLM-Driven Fake News Detection](../../ACL2026/social_computing/livefact_a_dynamic_time-aware_benchmark_for_llm-driven_fake_news_detection.md)
 
 </div>
 

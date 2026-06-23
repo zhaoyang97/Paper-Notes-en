@@ -2,135 +2,128 @@
 title: >-
   [Paper Note] VCWorld: A Biological World Model for Virtual Cell Simulation
 description: >-
-  [ICLR2026][Computational Biology][Virtual Cell] This paper proposes VCWorld, a cell-level white-box simulator that integrates structured biological knowledge graphs with the iterative reasoning capabilities of large lang…
+  [ICLR 2026][Computational Biology][Virtual Cell] VCWorld is proposed as a cell-level white-box simulator that integrates structured biological knowledge graphs with the iterative reasoning capabilities of Large Language Models (LLMs). It simulates signaling cascades triggered by drug perturbations in a data-efficient manner, generating interpretable step-by-step pred
 tags:
-  - "ICLR2026"
-  - "Computational Biology"
-  - "Virtual Cell"
-  - "world model"
-  - "LLM Reasoning"
-  - "Signaling Cascade"
-  - "Drug Perturbation"
+  - ICLR 2026
+  - Computational Biology
+  - Virtual Cell
+  - world model
+  - LLM Reasoning
+  - Signaling Cascade
+  - Drug Perturbation
 date: 2026-05-08
-content_hash: d766378765a3dc17
+content_hash: b979f312e5224a86
 ---
-
 # VCWorld: A Biological World Model for Virtual Cell Simulation
 
 **Conference**: ICLR2026  
 **arXiv**: [2512.00306](https://arxiv.org/abs/2512.00306)  
-**Code**: N/A  
-**Area**: Interpretability / AI for Science  
+**Code**: None  
+**Area**: Computational Biology  
 **Keywords**: Virtual Cell, world model, LLM Reasoning, Signaling Cascade, Drug Perturbation
 
 ## TL;DR
 
-This paper proposes VCWorld, a cell-level white-box simulator that integrates structured biological knowledge graphs with the iterative reasoning capabilities of large language models (LLMs) to simulate drug perturbation-induced signaling cascades in a data-efficient manner. The framework generates interpretable step-by-step predictions and explicit mechanistic hypotheses, achieving state-of-the-art performance on drug perturbation benchmarks.
+VCWorld is proposed as a cell-level white-box simulator that integrates structured biological knowledge graphs with the iterative reasoning capabilities of Large Language Models (LLMs). It simulates signaling cascades triggered by drug perturbations in a data-efficient manner, generating interpretable step-by-step predictions and explicit mechanistic hypotheses, achieving SOTA on drug perturbation benchmarks.
 
 ## Background & Motivation
 
-**Background**: Virtual Cell Modeling is a frontier direction in computational biology, aiming to predict cellular responses under various perturbations (drug treatment, gene knockout, etc.). This is critical for drug discovery, disease mechanism understanding, and precision medicine. In recent years, deep learning models such as scGPT and GEARS have achieved notable progress by learning mappings between gene expression and perturbations from large-scale single-cell RNA-seq data.
+**Background**: Virtual Cell Modeling is a frontier in computational biology, aiming to predict cellular responses to various perturbations (drug treatment, gene knockout, etc.). This is crucial for drug discovery, understanding disease mechanisms, and precision medicine. Recently, deep learning models such as scGPT and GEARS have made progress by learning the mapping between gene expression and perturbations using large-scale single-cell RNA-seq data.
 
-**Limitations of Prior Work**: (1) **Heavy data dependence** — existing models rely heavily on large-scale, high-quality single-cell datasets, which are costly to acquire and limited in coverage; (2) **Limited generalization** — data quality, coverage, and batch effects jointly constrain model generalization to novel cell types and perturbation conditions; (3) **Black-box problem** — end-to-end trained models only output gene expression predictions without providing mechanistic explanations of how perturbations propagate within cells.
+**Limitations of Prior Work**: (1) **Heavy data dependency**: Existing models rely heavily on large-scale, high-quality single-cell datasets, which are costly to collect and have limited coverage. (2) **Limited generalization**: Performance on new cell types and perturbations is constrained by data quality, coverage, and batch effects. (3) **Black-box issue**: End-to-end models only output predicted gene expression values, failing to provide mechanistic explanations of how perturbations propagate within the cell.
 
-**Key Challenge**: A fundamental conflict exists between the scientific demand for interpretability and mechanistic consistency and the black-box nature of deep learning models. Predictions lacking mechanistic explanation are difficult to validate in scientific research and cannot genuinely advance biological understanding. Even when numerical predictions are accurate, researchers cannot extract verifiable biological hypotheses from them.
+**Key Challenge**: There is a fundamental conflict between the requirements for interpretability and mechanistic consistency in scientific research and the "black-box" nature of deep learning models. Predictions lacking mechanistic explanations are difficult to validate and fail to advance biological understanding. Even if numerical predictions are accurate, researchers cannot extract verifiable biological hypotheses from them.
 
-**Goal**: VCWorld departs from the paradigm of data-driven end-to-end fitting and instead combines structured biological knowledge (e.g., protein–protein interaction networks, signaling pathway maps) with LLM prior knowledge acquired through training on biomedical literature. Rather than learning a black-box mapping from $\text{perturbation} \to \text{gene expression}$, the model explicitly simulates the signaling cascade propagation from target proteins to downstream gene expression changes, producing traceable mechanistic pathways at each reasoning step.
+**Ours**: VCWorld shifts from the "data-driven end-to-end fitting" paradigm to combining structured biological knowledge (e.g., protein interaction networks, signaling pathway maps) with prior knowledge obtained by LLMs trained on biomedical literature. Instead of learning a black-box mapping of $\text{perturbation} \to \text{gene expression}$, the model explicitly simulates the signaling cascade from target proteins to downstream gene expression, with every reasoning step producing a traceable mechanistic path.
 
 ## Method
 
 ### Overall Architecture
 
-VCWorld frames virtual cell simulation as a **Biological World Model**. The core pipeline is:
+VCWorld transforms "predicting cellular response to perturbation" from black-box numerical regression into a knowledge-grounded, step-by-step traceable classification reasoning problem. The minimum prediction unit is a triplet query $(c, p, g)$—how gene $g$ changes under drug perturbation $p$ in cell line $c$, corresponding to two binary classification tasks: Differentially Expressed (DE) and Direction of change (DIR, up or down). Around this query, VCWorld constructs an open-world biological knowledge graph from seven public databases (PubChem, DrugBank, UniProt, GO, Reactome, STRING, CORUM). The LLM then executes three steps: converting entity nodes into context-rich text descriptions; retrieving analogical and contrastive cases from the training library based on "semantic + structural" hybrid similarity; and performing Chain-of-Thought (CoT) reasoning to output binary labels and a mechanistic explanation. This approach avoids learning a black-box mapping $f_\theta(\text{perturbation}) \to \text{expression profile}$, anchoring predictions in readable biological knowledge and historical evidence.
 
-1. **Input**: Drug/perturbation information + structured biological knowledge graphs extracted from public databases
-2. **Reasoning**: LLM-driven iterative reasoning that simulates the cascade propagation of perturbations through cellular signaling networks
-3. **Output**: Step-by-step interpretable gene expression predictions + explicit signaling pathway mechanistic hypotheses
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    Q["Query Triplet<br/>(Cell Line c, Drug p, Gene g)"] --> KG["Open-world Biological KG<br/>PubChem/DrugBank/STRING/Reactome…"]
+    KG --> N["LLM Generative Node Representation<br/>k-hop Neighborhood → Text Description d_v"]
+    N --> R["Graph-guided Causal Evidence Retrieval<br/>Semantic × Structural Hybrid Similarity"]
+    R -->|"Positive top-ka"| AN["Analogy Cases S_analog"]
+    R -->|"Negative top-kc"| CT["Contrast Cases S_contrast"]
+    AN --> C["Evidence Synthesis CoT Reasoning<br/>LLM as Computational Biologist"]
+    CT --> C
+    C --> O["DE / DIR Binary Prediction<br/>+ Step-by-step Mechanistic Explanation"]
+```
 
-In contrast to the conventional end-to-end paradigm $f_\theta(\text{perturbation}, \text{cell\_type}) \to \Delta \text{gene\_expression}$, VCWorld's reasoning chain is:
+### Key Designs
 
-$$\text{Drug} \xrightarrow{\text{Target Identification}} \text{Target Protein} \xrightarrow{\text{Pathway Propagation}} \text{Signaling Cascade} \xrightarrow{\text{Transcriptional Regulation}} \text{Gene Expression Change}$$
+**1. Gene-centric Classification and GeneTAK Benchmark**: This reformulates prediction to be learnable in low-data scenarios. End-to-end models treat "perturbation $\to$ high-dimensional sparse expression profile" as regression, which struggles with data scarcity. VCWorld rewrites the task as gene-centric triplet $(c, p, g)$ binary classification: the DE task determines if a gene is differentially expressed ($l=1$ for DE, $l=0$ otherwise), and the DIR task determines up-regulation ($l=1$) or down-regulation ($l=0$). The GeneTAK benchmark was constructed using 5 cell lines, 348 drugs, and 2000 highly variable genes from Tahoe-100M, with a 3:7 training/testing split to simulate few-shot scenarios.
 
-### Key Design 1: Structured Biological Knowledge Integration
+**2. Open-world KG + LLM Generative Node Representation**: This converts static graph structures into LLM-understandable semantics. Nodes in knowledge graphs are typically symbol IDs, where static embeddings lose biological meaning. VCWorld integrates seven databases into a heterogeneous graph $G=(V, E, R)$. For each node $v$, it extracts a $k$-hop neighborhood $N_k(v)$ and serializes attributes and relations into a natural language prompt $P_v = f_{\text{prompt}}(v, N_k(v))$. The LLM generates a context-aware description $d_v = L(P_v)$, which serves as a feature for retrieval and reasoning.
 
-The white-box nature of VCWorld is grounded in structured knowledge:
+**3. Graph-guided Causal Evidence Retrieval**: This uses analogy and contrast cases to ground reasoning. Standard RAG often retrieves only homogeneous samples based on semantic similarity. VCWorld utilizes a hybrid similarity $\text{Sim}(q_{\text{input}}, q_i) = \alpha \cdot \text{Sim}_{\text{sem}} + (1-\alpha) \cdot \text{Sim}_{\text{struct}}$, balancing semantic cosine similarity of LLM descriptions with path-based structural similarity on the KG. It retrieves two mutually exclusive sets: analogy cases $S_{\text{analog}}$ from positive samples ($l=1$) and contrast cases $S_{\text{contrast}}$ from negative samples ($l=0$). This dual-evidence approach provides the LLM with both supporting and opposing examples.
 
-- **Knowledge sources**: Multi-level biological knowledge — including protein–protein interaction (PPI) networks, signaling pathway topologies, and gene regulatory relationships — is extracted from public databases such as KEGG, Reactome, and STRING.
-- **Knowledge representation**: These relationships are structured into LLM-processable formats (textualized pathway descriptions or graph representations), enabling the LLM to query and leverage these prior constraints during reasoning.
-- **Design Motivation**: Rather than training an end-to-end model purely on data, decades of accumulated biological knowledge are explicitly injected into the reasoning process, ensuring that every prediction step has a clear biological basis.
+**4. Evidence Synthesis CoT Reasoning**: This enables the LLM to act as a computational biologist. VCWorld combines the query description $d_{q_{\text{input}}}$ with retrieved evidence into a final prompt $P_{\text{CoT}}$. The LLM (Gemini2.5-Flash) performs step-by-step reasoning to produce $O_{\text{final}}$, from which structured labels and explanations $(\hat{l}, E)$ are parsed. CoT forces the integration of qualitative knowledge and empirical evidence, ensuring predictions are accompanied by a traceable mechanistic path verifiable by experiments.
 
-### Key Design 2: LLM-Driven Iterative Signaling Cascade Reasoning
+### Example
 
-The core reasoning engine of VCWorld employs an LLM to simulate perturbation propagation within cells:
-
-- **Iterative reasoning process**: The model incrementally infers the signal transduction chain — drug binding to target protein → activation/inhibition of downstream signaling pathways → modulation of transcription factor activity → upregulation/downregulation of specific genes.
-- **LLM as reasoning engine**: Having been trained on vast biomedical literature, the LLM implicitly encodes rich molecular biology knowledge. VCWorld leverages this implicit knowledge to "complete" missing interaction relationships in the knowledge graph and to evaluate the plausibility of each signal transduction path.
-- **Traceable mechanistic pathways**: Each reasoning step produces explicit causal hypotheses (e.g., "Drug X inhibits Protein A → Protein A cannot phosphorylate Protein B → Pathway C is blocked → Gene D is downregulated"), providing direct leads for downstream experimental validation.
-
-### Key Design 3: Data-Efficient Operation
-
-The knowledge-driven paradigm of VCWorld substantially reduces the requirement for training data:
-
-- Conventional methods require large-scale paired (perturbation condition, gene expression change) data to train end-to-end mappings.
-- VCWorld's core reasoning capability derives from structured knowledge graphs combined with LLM prior knowledge; training data are primarily used for calibration and validation.
-- This property allows VCWorld to maintain effective predictions in data-scarce scenarios, such as rare cell types and novel drug perturbations.
+For a query "PANC-1 cell line + kinase inhibitor + gene FN1", VCWorld first locates FN1, the drug, and its targets in the KG to generate descriptions $d$. It then retrieves analogical cases involving similar pathways where genes were differentially expressed, and contrast cases where they were not. The CoT prompt then guides the LLM to infer: "drug inhibits target $\to$ related signaling pathway activity changes $\to$ regulatory module containing FN1 is affected," resulting in a DE=1 judgment with a documented reasoning chain.
 
 ## Key Experimental Results
 
-### Drug Perturbation Benchmark
+### Main Results
 
-| Method | Type | Core Feature | Prediction Accuracy |
-|--------|------|--------------|---------------------|
-| scGPT | Data-driven | Large-scale pretraining + fine-tuning | Baseline level |
-| GEARS | Data-driven | Graph neural network modeling of gene relationships | Moderate |
-| Multi-source fusion methods | Data-driven | Integration of multi-omics data | Limited improvement |
-| **VCWorld (Ours)** | **Knowledge + LLM Reasoning** | **White-box, interpretable** | **SOTA** |
+| Method | Type | Key Features | Accuracy |
+|------|------|---------|---------|
+| scGPT | Data-driven | Large-scale pre-training + fine-tuning | Baseline |
+| GEARS | Data-driven | GNN modeling of gene relations | Medium |
+| Multi-source Fusion | Data-driven | Integrates multi-omics data | Limited improvement |
+| **VCWorld (Ours)** | **Knowledge + LLM Reasoning** | **White-box, Interpretable** | **SOTA** |
 
-VCWorld achieves state-of-the-art performance on drug perturbation prediction benchmarks while being the only method that provides complete mechanistic explanations.
+VCWorld achieves state-of-the-art performance on drug perturbation benchmarks and is the only method providing complete mechanistic explanations.
 
 ### Ablation Study
 
-| Configuration | Performance | Notes |
-|---------------|-------------|-------|
-| Remove structured knowledge | Significant degradation | LLM internal knowledge alone is insufficient for reliable reasoning |
-| Remove iterative reasoning | Performance drop | Single-step prediction loses stepwise propagation information of signaling cascades |
-| Remove LLM reasoning | Large performance drop | Knowledge graphs alone cannot handle knowledge gaps |
-| Full VCWorld | **Best** | Synergistic effect of structured knowledge + LLM reasoning |
+| Configuration | Effect | Description |
+|------|------|------|
+| w/o Structured Knowledge | Significant drop | LLM internal knowledge alone is unreliable |
+| w/o Iterative Reasoning | Performance drop | Step-by-step signal propagation information is lost |
+| w/o LLM Reasoning | Major drop | Pure KG cannot handle knowledge gaps |
+| Full VCWorld | **Optimal** | Synergy between structured knowledge and LLM reasoning |
 
 ### Key Findings
 
-1. **Mechanistic consistency**: Signaling pathways inferred by VCWorld show high agreement with evidence in published biological literature, validating the biological plausibility of the reasoning process.
-2. **Interpretability advantage**: Each prediction is accompanied by a complete signaling cascade pathway, enabling researchers to inspect reasoning logic step by step and identify potential errors.
-3. **Data efficiency**: Performance under limited training data surpasses data-driven baselines that rely on large-scale datasets.
+1. **Mechanistic Consistency**: The inferred signaling pathways are highly consistent with published biological literature, validating the biological plausibility of the reasoning.
+2. **Interpretability Advantage**: Each prediction includes a full signaling cascade path, allowing researchers to audit the logic and identify potential errors.
+3. **Data Efficiency**: Performance in limited-data scenarios exceeds that of data-driven baselines relying on large datasets.
 
 ## Highlights & Insights
 
-- The **white-box simulator concept** breaks beyond the "prediction accuracy first" paradigm in AI for Science — in scientific research, a moderately accurate prediction with a sound mechanistic explanation is often more valuable than a high-accuracy prediction that cannot be explained.
-- **LLM as a "biological reasoning engine"** is an elegant design — having been trained on vast biomedical literature such as PubMed, LLMs implicitly encode extensive intermolecular relationships and biological principles; VCWorld converts this implicit knowledge into explicit reasoning capability.
-- The **"world model" perspective** elevates cellular response prediction from statistical fitting to causal simulation — given an initial perturbation condition, the model can "rehearse" the dynamic response process of a cell.
-- **Cross-domain methodological inspiration**: The paradigm of combining LLM reasoning with domain-specific knowledge graphs can be extended to other scientific domains such as materials science and chemical reaction prediction.
+- The **white-box simulator concept** shifts the focus from "accuracy-only" to "interpretable accuracy"—in science, a mid-precision prediction with a plausible mechanism is often more valuable than an unexplainable high-precision one.
+- **LLM as a "Biological Reasoning Engine"** is an effective design, transforming the implicit knowledge encoded in LLMs during biomedical literature training into explicit reasoning capabilities.
+- The **"World Model" perspective** elevates cell response prediction from statistical fitting to causal simulation, allowing the model to "preview" dynamic responses given initial perturbations.
+- **Cross-domain Methodology**: This paradigm of combining LLM reasoning with domain KGs can be extended to fields like materials science and chemical reaction prediction.
 
 ## Limitations & Future Work
 
-- **LLM hallucination risk**: LLMs may generate reasoning chains that appear plausible but are biologically incorrect; additional verification mechanisms are needed to filter unreliable inferences.
-- **Incomplete knowledge graph coverage**: Databases such as KEGG and Reactome still lack many unknown signaling relationships, and model performance may degrade in regions with knowledge gaps.
-- **Reasoning efficiency**: The computational cost of iteratively invoking the LLM for step-by-step reasoning is significantly higher than end-to-end forward inference.
-- **Perturbation type coverage**: Current validation primarily focuses on drug perturbations; generalization to other perturbation types such as gene knockout and overexpression remains to be verified.
-- **Single-cell-level heterogeneity**: Significant intercellular heterogeneity exists within the same cell type, and the current framework offers limited modeling of this variability.
+- **LLM Hallucination**: LLMs may generate plausible-sounding but biologically incorrect reasoning chains, requiring additional validation mechanisms.
+- **KG Incompleteness**: Many signaling relations remain unknown in databases like KEGG/Reactome, leading to performance degradation in knowledge-sparse regions.
+- **Inference Efficiency**: Iterative LLM calls for step-by-step reasoning are computationally more expensive than end-to-end forward passes.
+- **Perturbation Types**: Currently focused on drug perturbations; generalization to gene knockout or overexpression needs further validation.
+- **Single-cell Heterogeneity**: The current framework has limited modeling of the significant cell-to-cell heterogeneity within the same cell type.
 
 ## Related Work & Insights
 
-- **vs. scGPT / GEARS**: End-to-end data-driven approaches whose prediction accuracy depends on data scale and which cannot provide mechanistic explanations; VCWorld trades knowledge and reasoning for interpretability and data efficiency.
-- **vs. Virtual Cell Initiative (CZI)**: A virtual cell research initiative driven by the Chan Zuckerberg Initiative; VCWorld provides a complementary technical approach from the perspective of a "white-box world model."
-- **vs. GeneGPT / BioGPT**: Early applications of LLMs in biology focused on knowledge question answering; VCWorld further employs LLMs for structured causal reasoning and dynamic simulation.
-- **Inspiration**: The "white-box world model" paradigm combining LLM reasoning with domain knowledge graphs has the potential to be replicated in other knowledge-intensive scientific domains, such as medicinal chemistry and materials design.
+- **vs scGPT / GEARS**: Data-driven methods whose accuracy depends on data scale and lack mechanistic explanations; VCWorld trades pure data for local interpretability and data efficiency.
+- **vs Virtual Cell Initiative (CZI)**: While CZI promotes virtual cell research, VCWorld provides a complementary technical route via the "white-box world model" approach.
+- **vs GeneGPT / BioGPT**: Earlier LLM applications in biology focused on Q&A; VCWorld extends this to structured causal reasoning and dynamic simulation.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ The concept of a white-box biological world model is highly original; combining LLM reasoning with knowledge graphs is a first in the virtual cell domain.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Drug perturbation benchmarks are comprehensive and mechanistic validation is convincing.
-- Writing Quality: ⭐⭐⭐⭐ Concepts are clearly articulated and accessible to readers across disciplines.
-- Value: ⭐⭐⭐⭐⭐ Provides important directional insights for both AI for Science and interpretable AI.
+- Novelty: ⭐⭐⭐⭐⭐ The white-box biological world model is a novel concept, and the combination of LLM reasoning with KGs is pioneering in virtual cells.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive benchmarking with persuasive mechanistic validation.
+- Writing Quality: ⭐⭐⭐⭐ Clear concepts, accessible to cross-disciplinary readers.
+- Value: ⭐⭐⭐⭐⭐ High potential for impact on AI for Science and interpretable AI.
 
 <!-- RELATED:START -->
 
@@ -138,11 +131,11 @@ VCWorld achieves state-of-the-art performance on drug perturbation prediction be
 
 ## Related Papers
 
+- [\[ICLR 2026\] MicroVerse: A Preliminary Exploration Toward a Micro-World Simulation](microverse_a_preliminary_exploration_toward_a_micro-world_simulation.md)
+- [\[ICLR 2026\] BioMD: All-atom Generative Model for Biomolecular Dynamics Simulation](biomd_all-atom_generative_model_for_biomolecular_dynamics_simulation.md)
+- [\[ICLR 2026\] Controllable Diffusion-based Generation for Multi-channel Biological Data](controllable_diffusion-based_generation_for_multi-channel_biological_data.md)
+- [\[ICLR 2026\] CellDuality: Unlocking Biological Reasoning in LLMs with Self-Supervised RLVR](cellduality_unlocking_biological_reasoning_in_llms_with_self-supervised_rlvr.md)
 - [\[ACL 2026\] AROMA: Augmented Reasoning Over a Multimodal Architecture for Virtual Cell Genetic Perturbation Modeling](../../ACL2026/computational_biology/aroma_augmented_reasoning_over_a_multimodal_architecture_for_virtual_cell_geneti.md)
-- [\[ICLR 2026\] Controllable Sequence Editing for Biological and Clinical Trajectories](controllable_sequence_editing_for_biological_and_clinical_trajectories.md)
-- [\[NeurIPS 2025\] scPilot: Large Language Model Reasoning Toward Automated Single-Cell Analysis and Discovery](../../NeurIPS2025/computational_biology/scpilot_large_language_model_reasoning_toward_automated_single-cell_analysis_and.md)
-- [\[ICCV 2025\] Integrating Biological Knowledge for Robust Microscopy Image Profiling on De Novo Cell Lines](../../ICCV2025/computational_biology/integrating_biological_knowledge_for_robust_microscopy_image_profiling_on_de_nov.md)
-- [\[CVPR 2026\] HINGE: Adapting a Pre-trained Single-Cell Foundation Model to Spatial Gene Expression Generation from Histology Images](../../CVPR2026/computational_biology/adapting_a_pre-trained_single-cell_foundation_model_to_spatial_gene_expression_g.md)
 
 </div>
 

@@ -2,72 +2,85 @@
 title: >-
   [Paper Note] Protein Structure Tokenization via Geometric Byte Pair Encoding
 description: >-
-  [ICLR 2026][Computational Biology][GeoBPE] This paper proposes GeoBPE — the first tokenizer to extend Byte Pair Encoding (BPE) from discrete text to continuous protein backbone geometry. By alternating between local merg…
+  [ICLR 2026][Computational Biology][GeoBPE] GeoBPE is proposed as the first framework to extend Byte Pair Encoding (BPE) from discrete text to continuous protein backbone geometry. By alternating between "local merging (k-medoids clustering + quantization)" and "global correction (differentiable inverse kinematics)," it constructs a hierarchical structural motif
 tags:
-  - "ICLR 2026"
-  - "Computational Biology"
-  - "GeoBPE"
-  - "Protein Structure Tokenizer"
-  - "Hierarchical Vocabulary"
-  - "Differentiable IK"
-  - "Multi-resolution"
+  - ICLR 2026
+  - Computational Biology
+  - GeoBPE
+  - Protein Structure Tokenizer
+  - Hierarchical Vocabulary
+  - Differentiable IK
+  - Multi-resolution
 date: 2026-05-08
-content_hash: dc81f9cde781bb5c
+content_hash: f22e6ae6381777d0
 ---
-
 # Protein Structure Tokenization via Geometric Byte Pair Encoding
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2511.11758](https://arxiv.org/abs/2511.11758)  
 **Code**: [GitHub](https://github.com/shiningsunnyday/PT-BPE)  
-**Area**: Protein AI / Structure Tokenization
+**Area**: Protein AI / Structure Tokenization  
 **Keywords**: GeoBPE, Protein Structure Tokenizer, Hierarchical Vocabulary, Differentiable IK, Multi-resolution
 
 ## TL;DR
 
-This paper proposes GeoBPE — the first tokenizer to extend Byte Pair Encoding (BPE) from discrete text to continuous protein backbone geometry. By alternating between local merging (k-medoids clustering + quantization) and global correction (differentiable inverse kinematics), GeoBPE constructs a hierarchical structural motif vocabulary that achieves >10× compression ratio and >10× data efficiency over VQ-VAE-based protein structure tokenizers (PSTs), ranking first across 24 test sets spanning 12 downstream tasks.
+GeoBPE is proposed as the first framework to extend Byte Pair Encoding (BPE) from discrete text to continuous protein backbone geometry. By alternating between "local merging (k-medoids clustering + quantization)" and "global correction (differentiable inverse kinematics)," it constructs a hierarchical structural motif vocabulary. It surpasses VQ-VAE-based PSTs with >10× compression ratios and >10× data efficiency, ranking first across 24 test sets in 12 downstream tasks.
 
 ## Background & Motivation
 
-**Background**: Protein language models (PLMs) such as the ESM series have achieved remarkable success on sequences, but do not explicitly model folding geometry, limiting their performance on structure-dependent functional tasks. Protein structure tokenizers (PSTs) serve as the critical bridge between sequence and structure; the dominant paradigm relies on VQ-VAE methods (e.g., ESM3, FoldSeek's 3Di alphabet, ProToken) that train autoencoders to map continuous structures to discrete codebooks.
+**Background**: Protein Language Models (PLMs) like the ESM series have achieved significant success on sequences but do not explicitly model folding geometry, limiting performance on structure-dependent functional tasks. Protein Structure Tokenizers (PSTs) are critical bridges connecting sequence and structure. Current mainstream methods are VQ-VAE approaches (e.g., ESM3, FoldSeek's 3Di alphabet, ProToken), which map continuous structures to discrete codebooks via autoencoders.
 
-**Limitations of Prior Work**: VQ-VAE-based PSTs suffer from three fundamental limitations: (1) **fixed codebooks are prone to collapse** — codebook collapse leads to imbalanced token utilization and limited compression efficiency; (2) **vector tokens are uninterpretable** — real-valued codebook entries lack the compositional hierarchy exhibited by BPE subwords; (3) **fixed token granularity hinders multi-scale analysis** — all tokens span a fixed number of residues, precluding adaptation to naturally variable-length functional domains. VQ-VAE methods also exhibit poor OOD generalization, with test/train RMSD ratios as high as 6.4×.
+**Limitations of Prior Work**: VQ-VAE-based PSTs face three fundamental limitations: (1) **Fixed codebooks are prone to collapse**, where imbalanced token usage limits compression efficiency; (2) **Vector-based tokens lack interpretability**, as continuous vectors in a codebook do not exhibit the hierarchical compositional relationships found in BPE subwords; (3) **Fixed token sizes hinder multi-scale analysis**, as all tokens have a fixed residue length, failing to adapt to naturally occurring variable-length functional domains. Furthermore, VQ-VAEs exhibit poor OOD generalization (test/train RMSD ratios reaching 6.4×).
 
-**Key Challenge**: Protein structures are continuous, noisy, and multi-scale, whereas BPE was designed for discrete symbols. The central challenge is maintaining global geometric consistency during discretization — local quantization introduces cumulative drift that displaces distal atomic coordinates.
+**Key Challenge**: Protein structures are continuous, noisy, and multi-scale, while BPE is designed for discrete symbols. The core difficulty lies in maintaining global geometric consistency during discretization—local quantization introduces cumulative drift, causing distal atomic coordinates to deviate significantly.
 
-**Key Insight**: Protein folds are composed of modular substructures (helices, sheets, loops, etc.), naturally amenable to BPE's strategy of iteratively merging frequent pairs. A key observation is that quantization-induced drift can be compensated by optimizing the "glue angles" at boundaries, since each boundary provides three degrees of freedom (one bond angle and two dihedral angles).
+**Key Insight**: Protein folding consists of modular substructures (helices, sheets, loops, etc.), naturally suiting BPE’s strategy of "iteratively merging frequent pairs." A key observation is that drift introduced by local quantization can be compensated by optimizing "glue angles" at boundaries, as each boundary provides 3 degrees of freedom (one bond angle + two dihedral angles).
 
-**Core Idea**: Extend BPE from discrete symbols to continuous geometry through alternating iterations of local k-medoids quantization and global differentiable inverse kinematics drift correction, building a hierarchical motif vocabulary for protein structures.
+**Core Idea**: Extend BPE from discrete symbols to continuous geometry by alternating between "local k-medoids quantization + global differentiable inverse kinematics (IK) drift correction" to build a hierarchical motif vocabulary of protein structures.
 
 ## Method
 
 ### Overall Architecture
 
-GeoBPE takes as input the internal coordinate representation of protein backbones (bond lengths, bond angles, dihedral angles). Starting from residue-level initialization, the algorithm alternates four steps: (1) pop the most frequent Geo-Pair (adjacent motif pair); (2) run k-medoids clustering in RMSD space to obtain representative prototypes; (3) quantize all occurrences to their nearest prototype (hard-replacing internal parameters); (4) optimize boundary glue angles via differentiable inverse kinematics to compensate quantization drift. Each iteration adds a new motif type to the vocabulary and updates the segmentation and merge tree. The final output consists of a hierarchical vocabulary $\mathcal{V}$, per-backbone segmentations $\mathcal{P}$, and a merge hierarchy $\mathcal{F}$.
+GeoBPE addresses the challenge of porting BPE, designed for discrete text, to continuous, noisy, and multi-scale protein backbone geometry to build an interpretable, multi-resolution vocabulary. The process starts from residue-level initialization using the internal coordinate representation of the protein backbone (bond lengths, angles, dihedrals) and **repeatedly "finds and merges the most frequent adjacent pairs."** Each merge iteration handles two additional tasks: calculating frequencies for continuous geometry and correcting geometric drift post-quantization.
+
+Specifically, each iteration performs four steps: popping the most frequent Geo-Pair (adjacent motif pair), performing k-medoids clustering in RMSD space to select representative prototype fragments, hard-quantizing all occurrences to the nearest prototype, and finally using differentiable IK to optimize boundary glue angles to absorb the drift. The resulting new motif type is added to the vocabulary, and the partition and merge tree are updated. This loop continues until reaching the target vocabulary size, resulting in a hierarchical vocabulary $\mathcal{V}$, partitions $\mathcal{P}$, and a merge hierarchy $\mathcal{F}$. The merge tree is later reused as a recursive computation tree to aggregate or propagate PLM features for downstream tasks.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Protein Backbone<br/>Internal Coordinates"] --> B["Residue-level Initialization"]
+    B --> C["Geometry Representation & Geo-Pair Definition<br/>Count Most Frequent Motif Pairs"]
+    C --> D["K-medoids Clustering & Adaptive Quantization<br/>Pick Prototype Fragments in RMSD Space"]
+    D --> E["Differentiable IK Drift Correction<br/>Optimize Glue Angles to Compensate Drift"]
+    E --> F["Add New Motif to Vocabulary<br/>Update Partition & Merge Tree"]
+    F -->|Target Size Not Reached| C
+    F -->|Complete| G["Hierarchical Vocabulary V<br/>Partition P + Merge Hierarchy F"]
+    G --> H["Hierarchical Inductive Bias Transfer<br/>Aggregate/Propagate PLM Features along Tree"]
+    H --> I["Downstream Tasks<br/>Functional Sites / Fold Class / Generation"]
+```
 
 ### Key Designs
 
-1. **Backbone Geometry Representation and Geo-Pair Definition**
+**1. Geometry Representation & Geo-Pair Definition: Enabling Frequency Counting for Continuous 3D Geometry**
 
-    - Function: Represent 3D protein backbones as a manipulable internal coordinate system.
-    - Mechanism: Each residue $i$ is represented in bond-residue form — three atomic coordinates $(N_i, CA_i, C_i)$ correspond to bond lengths $\ell^{N-CA}_i, \ell^{CA-C}_i, \ell^{C-N}_i$, bond angles $\theta^{NCAC}_i, \theta^{CACN}_i$, and dihedral angle $\psi_i$. Adjacent residues are linked by glue parameters $\Gamma_i = \{\theta^{CNCA}_i, \phi_i, \omega_i\}$. A contiguous segment $\mathcal{M}_{p:q}$ forms a motif, and a pair of adjacent motifs together with boundary glue angles constitutes a Geo-Pair occurrence. A canonical hashable key maps all occurrences to discrete identifiers, making BPE's frequency-counting operation tractable.
-    - Design Motivation: Internal coordinates are SE(3)-invariant, eliminating the influence of global rotation and translation. They also naturally decompose the backbone into local parameters (intra-motif) and connection parameters (glue angles), enabling the separation of merge, quantize, and correct operations.
+BPE requires counting adjacent symbols, but protein backbones are continuous 3D coordinates. GeoBPE represents the backbone using internal coordinates: each residue $i$ is represented by bond lengths $\ell^{N-CA}_i, \ell^{CA-C}_i, \ell^{C-N}_i$, bond angles $\theta^{NCAC}_i, \theta^{CACN}_i$, and dihedral angle $\psi_i$. Adjacent residues are linked via glue parameters $\Gamma_i = \{\theta^{CNCA}_i, \phi_i, \omega_i\}$. A continuous block $\mathcal{M}_{p:q}$ forms a motif, and two adjacent motifs plus their boundary glue angles constitute a Geo-Pair occurrence. By mapping all occurrences to discrete identifiers via a canonical hashable key, the core BPE operation of "counting frequent pairs" is realized on continuous geometry. This internal coordinate system is SE(3)-invariant and separates local motif geometry from connectivity, enabling the decoupled "merge-quantize-correct" pipeline.
 
-2. **K-medoids Clustering and Adaptive Quantization**
+**2. K-medoids Clustering & Adaptive Quantization: Using Observed Fragments as Prototypes**
 
-    - Function: Extract representative structural prototypes (vocabulary entries) for each Geo-Pair type.
-    - Mechanism: For all occurrences of the most frequent Geo-Pair key, k-medoids clustering is run in RMSD metric space to obtain $K$ prototypes (medoids are actual observed fragments, ensuring structural interpretability). The quantization step hard-copies all internal parameters of each non-medoid occurrence from its assigned medoid. A key innovation is **adaptive multi-resolution**: quantization is lossy, but each step re-quantizes from the original fragments (rather than accumulating on already-quantized results), and $K$ can be adjusted by motif length — coarse granularity for short motifs, fine granularity for long ones — enabling precise control of the compression-reconstruction trade-off.
-    - Design Motivation: BPE directly substitutes discrete symbols, but "substitution" for continuous data is quantization — requiring identification of the best representative among possible conformational variants. Choosing the medoid (rather than the centroid) guarantees that each prototype is a physically plausible protein fragment.
+Continuous BPE requires "quantizing" rather than simple symbol replacement. For all occurrences of a frequent Geo-Pair key, GeoBPE performs k-medoids clustering in the RMSD space to obtain $K$ prototypes. Quantization copies the internal parameters of the assigned medoid to the occurrence. Adaptive multi-resolution is employed: every step re-quantizes from the original fragments, and $K$ scales with motif length—coarse-grained for small motifs and fine-grained for large ones—balancing compression and reconstruction. Choosing medoids over centroids ensures each vocabulary entry is a physically observed protein fragment, enhancing interpretability compared to the abstract vectors found in VQ-VAE codebooks.
 
-3. **Differentiable Inverse Kinematics (IK) Drift Correction**
+**3. Differentiable Inverse Kinematics (IK) Drift Correction: Absorbing Error at Boundary Glue Angles**
 
-    - Function: Compensate for global geometric drift introduced by quantization.
-    - Mechanism: Quantization replaces the occurrence's internal transform $T^{\text{occ}}_u$ with the medoid's $T^{\text{med}}_u$, inducing drift $\Delta T_u = T^{\text{occ}}_u (T^{\text{med}}_u)^{-1}$. To compensate, boundary glue angles are optimized so that the new link transform satisfies $G^{\text{new}}_{i_{u}-1} \approx G^{\text{orig}}_{i_{u}-1} \cdot \Delta T_u$. Concretely, this minimizes the end-frame loss $\mathcal{L}_u(\Gamma) = w_R \|\log(\hat{R}^\top R^*)\|^2 + w_t \|\hat{t} - t^*\|^2$, where $\hat{F}$ is computed by forward kinematics and $F^*$ is the original frame. In practice, a global batch optimization simultaneously optimizes all glue angle degrees of freedom along the backbone, maximizing drift compensation flexibility.
-    - Design Motivation: This is the core technical contribution that distinguishes GeoBPE from naive discretization. Without drift correction, quantization errors accumulate along the chain, causing RMSD at distal atoms to diverge. The three glue degrees of freedom at each boundary provide exactly the parametric space needed for directional compensation.
+Replacing an occurrence's internal transform $T^{\text{occ}}_u$ with the medoid's $T^{\text{med}}_u$ introduces drift $\Delta T_u = T^{\text{occ}}_u (T^{\text{med}}_u)^{-1}$, which accumulates along the peptide chain. GeoBPE optimizes the boundary glue angles without altering motif internals to approximate the original geometry: $G^{\text{new}}_{i_{u}-1} \approx G^{\text{orig}}_{i_{u}-1} \cdot \Delta T_u$. This is achieved by minimizing the endpoint frame loss:
 
-### Hierarchical Inductive Bias Propagation
+$$\mathcal{L}_u(\Gamma) = w_R \|\log(\hat{R}^\top R^*)\|^2 + w_t \|\hat{t} - t^*\|^2$$
 
-The merge hierarchy $\mathcal{F}$ output by GeoBPE can serve as a recursive computation tree: leaf nodes are initialized with pretrained PLM features (e.g., ESM3), aggregated upward along parent-child relations to motif/protein-level representations, and then propagated back down to residue level. This endows residue-level embeddings with hierarchical structural awareness, supporting downstream tasks such as functional site prediction and fold classification.
+where $\hat{F}$ is computed via forward kinematics and $F^*$ is the original frame. Global batch optimization allows all glue angle degrees of freedom across the backbone to be optimized simultaneously. Since each boundary provides 3 degrees of freedom, there is sufficient directional compensation space to maintain global geometric integrity.
+
+**4. Hierarchical Inductive Bias Transfer: Reusing the Merge Tree for Representation**
+
+Unlike discrete PSTs that often lag behind continuous methods due to quantization loss, GeoBPE improves performance by reusing the merge hierarchy $\mathcal{F}$ as a recursive computation tree. Leaf nodes are initialized with pre-trained PLM (e.g., ESM3) features, aggregated bottom-up to motif/protein levels, and then propagated top-down. This embeds hierarchical structural awareness into each residue, benefiting tasks like functional site prediction and fold classification. The merge tree, initially a byproduct of compression, encodes the modular hierarchy of proteins as an inductive bias.
 
 ## Key Experimental Results
 
@@ -79,53 +92,53 @@ The merge hierarchy $\mathcal{F}$ output by GeoBPE can serve as a recursive comp
 | BindBio-Fold | 78.42 | 85.79 | 32.37 | 58.47 | 62.84 | 62.02 | 65.73 | **94.94 (+51.1%)** |
 | CatBio-Fold | 82.49 | 85.85 | 56.33 | 67.68 | 65.33 | 67.58 | 65.95 | **95.01 (+45.4%)** |
 | Con-SupFam | 84.68 | 92.66 | 51.31 | 70.64 | 80.53 | 74.60 | 86.60 | **84.84 (+5.4%)** |
-| Mean AUROC% | 75.92 | 79.82 | 51.90 | 65.37 | 69.24 | 68.30 | 72.43 | **80.20 (+18.1%)** |
+| Average AUROC% | 75.92 | 79.82 | 51.90 | 65.37 | 69.24 | 68.30 | 72.43 | **80.20 (+18.1%)** |
 
-GeoBPE-Transfer ranks first on average across 24 test sets spanning 12 tasks, achieving a +18.13% gain over ESM3 on functional site prediction.
+GeoBPE-Transfer ranks first on average across 24 tests in 12 tasks, achieving an +18.13% gain over ESM3 in functional site prediction.
 
-### Ablation Study (Compression–Reconstruction Trade-off & OOD Generalization)
+### Ablation Study (Compression-Reconstruction & OOD Generalization)
 
 | Tokenizer | BPR (bits/res) | Test RMSD (Å) | Test/Train RMSD Ratio | Training Data |
-|-----------|---------------|---------------|----------------------|---------------|
+|-----------|---------------|---------------|-------------------|-----------|
 | ESM3 | ~30× GeoBPE | Low | ~1.0 | 236M structures |
-| ProToken | 1× (reference) | Reference | ~1.0 | ~700K |
-| VQ-VAE | Moderate | Moderate | **6.4×** | ~48K |
-| **GeoBPE** | **0.27–0.36× ProToken** | Moderate | **1.16–1.28** | **~48K** |
+| ProToken | 1× (Ref) | Ref | ~1.0 | ~700K |
+| VQ-VAE | Medium | Medium | **6.4×** | ~48K |
+| **Ours (GeoBPE)** | **0.27-0.36× ProToken** | Moderate | **1.16-1.28** | **~48K** |
 
-GeoBPE's BPR is only 27–36% of ProToken's (>10× compression advantage) and 1.6–2.1% of ESM3's (>50×), while achieving strong OOD generalization (test/train RMSD ratio 1.16–1.28 vs. 6.4× for VQ-VAE). GeoBPE sustains its performance using only 1% of training data, demonstrating >10× data efficiency.
+GeoBPE's BPR is only 27-36% of ProToken (>10× compression advantage) and 1.6-2.1% of ESM3 (>50×). It demonstrates robust OOD generalization (test/train RMSD ratio of 1.16-1.28 vs. 6.4 for VQ-VAE) and maintains performance with only 1% training data (>10× data efficiency).
 
 ### Key Findings
 
-- **Hierarchical vocabulary reverses the trend of "discretization harming downstream performance"**: Discrete VQ-VAE PSTs typically underperform continuous PSTs due to quantization loss, whereas GeoBPE's hierarchical inductive bias enables it to surpass all continuous and discrete baselines.
-- **GeoBPE tokens align with CATH functional families**: Token boundaries strongly correlate with protein domain annotations, supporting expert-interpretable case studies.
-- **Vocabulary scales smoothly along the Pareto frontier**: Increasing vocabulary size (600→21000) yields smooth movement along the BPR-distortion curve — an elasticity absent from VQ-VAE approaches with fixed codebook dimensions.
-- **Language model generation**: Combined with a ~7.3M-parameter Transformer for unconditional backbone generation, GeoBPE produces backbones that are 99% unique and designable, with scTM scores up to 49% higher than VQ-VAE.
+- **Hierarchical vocabularies reverse the "discretization performance drop"**: While discrete VQ-VAE PSTs usually underperform continuous ones, GeoBPE’s hierarchical inductive bias enables it to outperform both continuous and discrete baselines.
+- **GeoBPE tokens align with CATH functional families**: Token boundaries coincide with domain annotations, supporting expert-interpretable case studies.
+- **Vocabulary scales smoothly along the Pareto front**: Increasing vocabulary size (600 to 21,000) results in a smooth BPR-distortion curve, a flexibility absent in fixed-dimension VQ-VAE codebooks.
+- **Language Modeling Generation**: Paired with a ~7.3M Transformer for unconditional generation, 99% of GeoBPE-generated backbones are unique and designable, with scTM scores up to 49% higher than VQ-VAE.
 
 ## Highlights & Insights
 
-- **Elegant extension of BPE to continuous geometry**: The two central challenges — "how to count frequencies over continuous data" and "how to maintain global consistency after quantization" — are addressed by canonical hashing (discretizing keys) and differentiable IK (correcting glue angles), respectively; the combination of these two mechanisms is particularly elegant.
-- **Medoids as prototypes guarantee physical plausibility**: Unlike the abstract vectors learned by VQ-VAE, medoids are genuinely observed structural fragments, giving each token an unambiguous physical meaning that supports expert-level interpretation.
-- **Dual value of the hierarchical vocabulary**: It simultaneously provides multi-resolution control over the compression–reconstruction trade-off (as a tokenizer) and serves as an inductive bias via a recursive computation tree that improves downstream representation quality — an unexpected but significant benefit.
+- **Elegant Extension of BPE to Continuous Geometry**: Addressing frequency counting for continuous data via canonical hashing and global consistency via differentiable IK is a novel and effective combination.
+- **Medoids as Prototypes for Physical Validity**: Unlike latent vectors in VQ-VAEs, medoids are real protein fragments, giving each token explicit physical meaning that aids in expert interpretation.
+- **Dual Value of Hierarchical Vocabulary**: It serves both as a multi-resolution controller for reconstruction (tokenizer function) and as an inductive bias for recursive computation trees (downstream representation gain).
 
 ## Limitations & Future Work
 
-- **Computational cost**: Iterative k-medoids clustering and global IK optimization are computationally intensive; although mitigated by capping the number of sampled occurrences ($M_{\max}=5000$), overhead remains a barrier to large-scale application.
-- **Backbone-only modeling**: The current method covers only N-CA-C backbone atoms and does not model side-chain conformations, limiting its applicability to side-chain-dependent functional tasks.
-- **Limited language model generation quality**: The Transformer used for generation contains only 7.3M parameters, leaving substantial room for improvement in generation quality.
-- **Comparison with end-to-end training is not entirely fair**: GeoBPE-Transfer relies on ESM3's pretrained features, and a portion of the downstream performance gains is attributable to ESM3's powerful representations.
+- **Computational Complexity**: The iterative overhead of k-medoids clustering and global IK optimization is high; while mitigated by sampling, it remains a constraint for massive-scale applications.
+- **Backbone-only Modeling**: Restricted to N-CA-C atoms, lacking side-chain conformation modeling, which limits performance on side-chain-dependent functional tasks.
+- **Limited Generation Scale**: The 7.3M Transformer used for generation is small; large-scale generation capabilities remain to be explored.
+- **Feature Dependency**: GeoBPE-Transfer relies on ESM3 pre-trained features; performance gains are partially attributable to the quality of the underlying PLM.
 
 ## Related Work & Insights
 
-- **vs. ESM3 VQ-VAE**: ESM3 trains a VQ-VAE on 236M structures to achieve low reconstruction error; GeoBPE attains comparable performance using less than 0.02% of that data, at the cost of slightly higher RMSD, but with far superior generalization and interpretability.
-- **vs. FoldSeek 3Di**: 3Di employs 20 fixed discrete codes for efficient search, whereas GeoBPE's vocabulary can be dynamically expanded and supports multi-resolution analysis.
-- **vs. ProToken**: ProToken and GeoBPE are complementary on the Pareto frontier, but GeoBPE's interpretability (CATH alignment) and data efficiency are its distinctive advantages.
+- **Vs. ESM3 VQ-VAE**: ESM3 uses 236M structures to achieve low reconstruction error; GeoBPE achieves comparable performance with <0.02% of the data, offering superior generalization and interpretability despite slightly higher RMSD.
+- **Vs. FoldSeek 3Di**: 3Di uses 20 fixed symbols for efficient search; GeoBPE offers an expandable, multi-resolution vocabulary.
+- **Vs. ProToken**: Both are on the Pareto front, but GeoBPE’s interpretability (CATH alignment) and data efficiency are unique advantages.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ First work to extend BPE principles to continuous protein geometry, with original contributions in both theory and algorithm design.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Ten research questions covering compression, reconstruction, generalization, efficiency, downstream performance, and interpretability, evaluated on 24 test sets with highly comprehensive analysis.
-- Writing Quality: ⭐⭐⭐⭐ Mathematical notation is rigorous and algorithmic descriptions are clear, though the notation system is complex with a steep learning curve.
-- Value: ⭐⭐⭐⭐⭐ Opens an entirely new paradigm for protein structure representation learning; the hierarchical vocabulary concept offers broader inspiration for other continuous structural data domains (molecules, materials).
+- Novelty: ⭐⭐⭐⭐⭐ Original extension of BPE to continuous protein geometry.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive 10-point analysis across 24 test sets covering compression, generalization, and efficiency.
+- Writing Quality: ⭐⭐⭐⭐ Rigorous math and clear algorithms, though the symbol system is complex.
+- Value: ⭐⭐⭐⭐⭐ Establishes a new paradigm for protein structure representation learning with implications for other structured data (molecules, materials).
 
 <!-- RELATED:START -->
 
@@ -133,11 +146,11 @@ GeoBPE's BPR is only 27–36% of ProToken's (>10× compression advantage) and 1.
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Towards Multiscale Graph-based Protein Learning with Geometric Secondary Structural Motifs](../../NeurIPS2025/computational_biology/towards_multiscale_graph-based_protein_learning_with_geometric_secondary_structu.md)
-- [\[ICML 2026\] Protein Autoregressive Modeling via Multiscale Structure Generation](../../ICML2026/computational_biology/protein_autoregressive_modeling_via_multiscale_structure_generation.md)
-- [\[ICLR 2026\] AntigenLM: Structure-Aware DNA Language Modeling for Influenza](antigenlm_structure-aware_dna_language_modeling_for_influenza.md)
-- [\[ICML 2026\] DNAChunker: Learnable Tokenization for DNA Language Models](../../ICML2026/computational_biology/dnachunker_learnable_tokenization_for_dna_language_models.md)
-- [\[ICML 2026\] Learning Protein Structure-Function Relationships through Knowledge-guided Representation Decomposition](../../ICML2026/computational_biology/learning_protein_structure-function_relationships_through_knowledge-guided_repre.md)
+- [\[ICLR 2026\] ProteinAE: Protein Diffusion Autoencoders for Structure Encoding](proteinae_protein_diffusion_autoencoders_for_structure_encoding.md)
+- [\[ICML 2025\] Protein Structure Tokenization: Benchmarking and New Recipe](../../ICML2025/computational_biology/protein_structure_tokenization_benchmarking_and_new_recipe.md)
+- [\[ICLR 2026\] GeomMotif: A Benchmark for Arbitrary Geometric Preservation in Protein Generation](geommotif_a_benchmark_for_arbitrary_geometric_preservation_in_protein_generation.md)
+- [\[ICLR 2026\] Greater than the Sum of Its Parts: Building Substructure into Protein Encoding Models](greater_than_the_sum_of_its_parts_building_substructure_into_protein_encoding_mo.md)
+- [\[ICLR 2026\] FlexRibbon: Joint Sequence and Structure Pretraining for Protein Modeling](flexribbon_joint_sequence_and_structure_pretraining_for_protein_modeling.md)
 
 </div>
 

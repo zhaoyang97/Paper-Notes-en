@@ -2,79 +2,92 @@
 title: >-
   [Paper Note] ACPBench Hard: Unrestrained Reasoning about Action, Change, and Planning
 description: >-
-  [ICLR 2026][Model Compression][planning benchmark] This paper introduces ACPBench Hard — an open-ended generative planning reasoning benchmark comprising 8 task types grounded in PDDL formal systems (13 domains × 8 tasks…
+  [ICLR 2026][Model Compression][planning benchmark] ACPBench Hard is constructed as an **open-ended generative** planning reasoning benchmark based on the PDDL formal system, containing 8 task categories (13 domains × 8 tasks = 1040 problems). Equipped with a symbolic validator that provides rigorous correctness guarantees, a systematic evaluation of 15 LLMs reveals tha
 tags:
-  - "ICLR 2026"
-  - "Model Compression"
-  - "planning benchmark"
-  - "PDDL"
-  - "generative evaluation"
-  - "symbolic validator"
-  - "action reasoning"
+  - ICLR 2026
+  - Model Compression
+  - planning benchmark
+  - PDDL
+  - generative evaluation
+  - symbolic validator
+  - action reasoning
 date: 2026-05-08
-content_hash: 56144ece10099091
+content_hash: 3b15ac31317b975e
 ---
-
 # ACPBench Hard: Unrestrained Reasoning about Action, Change, and Planning
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2503.24378](https://arxiv.org/abs/2503.24378)  
 **Code**: [https://ibm.github.io/ACPBench](https://ibm.github.io/ACPBench)  
-**Area**: Model Compression
+**Area**: Model Compression  
 **Keywords**: planning benchmark, PDDL, generative evaluation, symbolic validator, action reasoning
 
 ## TL;DR
 
-This paper introduces ACPBench Hard — an open-ended generative planning reasoning benchmark comprising 8 task types grounded in PDDL formal systems (13 domains × 8 tasks = 1,040 questions), equipped with symbolic validators that provide rigorous correctness guarantees. A systematic evaluation of 15 LLMs reveals that even the strongest reasoning model, o1-preview, achieves accuracy ≤66% on half the tasks, and all models fail almost completely on the most fundamental task of enumerating applicable actions, exposing fundamental deficiencies in current LLMs' planning reasoning capabilities.
+ACPBench Hard is constructed as an **open-ended generative** planning reasoning benchmark based on the PDDL formal system, containing 8 task categories (13 domains × 8 tasks = 1040 problems). Equipped with a symbolic validator that provides rigorous correctness guarantees, a systematic evaluation of 15 LLMs reveals that even the strongest reasoning model, o1-preview, achieves an accuracy of $\le 66\%$ on half of the tasks. Furthermore, all models nearly fail the most basic "enumerate executable actions" task, exposing fundamental deficiencies in current LLMs regarding planning reasoning.
 
 ## Background & Motivation
 
-Existing LLM planning evaluations face two layers of bottlenecks. **First**: benchmarks such as PlanBench and AutoPlanBench focus solely on end-to-end plan generation/validation and cannot pinpoint the specific cause of failure when a black-box model fails. ACPBench v1 decomposed the planning process into 7 atomic reasoning tasks (applicability, state progression, reachability, etc.), but used a **Boolean/multiple-choice** format. **Second**: the multiple-choice format is misaligned with the requirements of real planners — planners must *generate* answers from a large action space rather than selecting from 4 options. Answering correctly on multiple-choice questions does not imply the ability to complete generation tasks, and evaluating open-ended generation is itself far more challenging (the verification complexity of some tasks is PSPACE-complete).
+Existing LLM planning evaluations face two levels of bottlenecks. **Level 1**: Benchmarks such as PlanBench and AutoPlanBench focus solely on end-to-end plan generation/verification, making it impossible to locate the specific cause when black-box models fail. ACPBench v1 decomposed the planning process into 7 atomic reasoning tasks (applicability, state progression, reachability, etc.), but utilized **Boolean/multiple-choice** formats. **Level 2**: Multiple-choice formats are decoupled from the requirements of real planners—planners need to *generate* answers from a vast action space rather than selecting one from four options. Success in multiple-choice questions does not imply the ability to perform generative tasks, and the evaluation of open-ended generation is itself far more difficult (the verification complexity of some tasks is PSPACE-complete).
 
-The core idea of this paper is to upgrade ACPBench's 7 tasks from multiple-choice to **open-ended generation**, add a "next action" task (corresponding to optimal planning), and design a PDDL-based **symbolic validator** for each of the 8 tasks, entirely avoiding the unreliability of LLM-as-judge evaluation.
+**Core Idea**: This work upgrades the 7 tasks of ACPBench from multiple-choice to **open-ended generation**, adds a "Next Action" task (corresponding to optimal planning), and designs a PDDL-based **symbolic validator** for each of the 8 tasks to completely eliminate the unreliability of LLM-as-judge.
 
 ## Method
 
-### 8 Atomic Planning Reasoning Tasks
+### Overall Architecture
 
-ACPBench Hard decomposes planning capability into 8 atomic tasks spanning three levels: action-level, state-level, and plan-level.
+ACPBench Hard aims to resolve the issue where "existing planning evaluations only look at end-to-end success or failure, failing to locate the root cause of errors." It decomposes "planning capability" into action-level, state-level, and plan-level tiers across 8 atomic tasks. Each task requires the model to **generate open-ended** answers (rather than selecting from options), which are then scored by a symbolic validator with rigorous correctness guarantees. The pipeline is as follows: batch problem generation from 13 PDDL (Planning Domain Definition Language) domains, template-based conversion of formal descriptions into natural language questions, open-ended model response, extraction of structural answers using a lenient parser to remove formatting noise, and final validation by the symbolic validator. This approach precisely identifies model failure points while bypassing the unreliability of LLM-as-judge.
 
-| Level | Task | Abbr. | Generation Target | Verification Complexity |
-|-------|------|-------|-------------------|------------------------|
-| Action | Applicability | App | Enumerate **all** executable actions in the current state | $O(|A|)$ |
-| Action | Progression | Prog | Given an action, list positive effects (newly true) and negative effects (become false) | $O(|F|)$ |
-| State | Proposition Reachability | Reach | Identify propositions that can **never** become true from the current state | PSPACE-complete |
-| State | Action Reachability | AReach | Identify actions that can **never** become executable | PSPACE-complete |
-| Plan | Plan Validation | Val | Identify the **first** non-executable action in an action sequence | $O(1)$ |
-| Plan | Plan Justification | Just | Remove 1–2 redundant actions from a plan and output the simplified plan | $O(|\pi| \cdot |F|)$ |
-| Plan | Landmarks | Land | Identify **necessary subgoals** that every valid plan must pass through | PSPACE-complete |
-| Plan | Next Action (new) | NextA | Select an action that reduces the optimal goal distance by 1 | PSPACE-complete |
+| Level | Task | Abbreviation | Generation Target | Verification Complexity |
+|------|------|------|----------|-----------|
+| Action-level | Applicability | App | List **all** executable actions in the current state | $O(|A|)$ |
+| Action-level | State Progression | Prog | Given an action, list positive effects (add) and negative effects (delete) | $O(|F|)$ |
+| State-level | Propositional Reachability | Reach | Identify propositions that can **never** be true from the current state | PSPACE-complete |
+| State-level | Action Reachability | AReach | Identify actions that can **never** become executable | PSPACE-complete |
+| Plan-level | Plan Validation | Val | Identify the **first** non-executable action in a sequence | $O(1)$ |
+| Plan-level | Plan Justification | Just | Remove 1-2 redundant actions and output a simplified plan | $O(|\pi| \cdot |F|)$ |
+| Plan-level | Landmarks | Land | Identify **necessary subgoals** that any valid plan must pass through | PSPACE-complete |
+| Plan-level | Next Action (New) | NextA | Select an action that reduces the distance to the optimal goal by 1 | PSPACE-complete |
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["13 PDDL Domains"] --> B["Data Construction Pipeline<br/>Planner generates valid plans<br/>Templates convert to NL questions"]
+    B --> C["1040 Problems<br/>13 Domains × 8 Tasks × 10"]
+    C --> D["LLM Open-ended Generation"]
+    D --> E["Lenient Grammar Parser<br/>Discard illegal tokens<br/>Extract structured answers"]
+    E --> F["Symbolic Validator System<br/>Easy: Set comparison<br/>Hard: Cache lookup / Call PDDL planner"]
+    F --> G["Per-task Accuracy"]
+```
 
 ### Key Designs
 
-1. **Symbolic Validator System**: Each task is equipped with a dedicated verification algorithm. Simple tasks (App/Prog/Val) rely on set comparison; harder tasks (Reach/AReach/Land/NextA) first query a precomputed cache and invoke a PDDL planner upon a cache miss, thereby guaranteeing **completeness** and **correctness** of verification. For example, Landmarks verification is performed by constructing an auxiliary planning task $\Pi'$ (adding a marker proposition $p_\text{nach}$) to check whether a valid plan exists that bypasses the candidate landmark.
+**1. Data Construction Pipeline: Batch Generating 1040 Problems from 13 PDDL Domains**  
+To ensure "open-ended generation" can be accurately scored, every problem must have an objective answer computable by a planner. Problems originate from 13 PDDL domains, with 10 problems per task per domain, totaling $13 \times 8 \times 10 = 1040$. Valid solutions are prioritized using top-quality planners and backed up by diverse planners. Formal descriptions are then translated into natural language using templates. This ensures every question has a ground-truth answer—a prerequisite for symbolic validation.
 
-2. **Data Construction Pipeline**: Based on the 13 PDDL domains from ACPBench, 10 questions are generated per domain per task (1,040 questions total). Plans are generated by a top-quality planner, with a diverse planner as a fallback. Questions are converted from PDDL to natural language via templates.
+**2. Lenient Grammar Parser: Extracting Answers from Formatting Noise**  
+LLM outputs often contain explanations or formatting drifts; exact matching would penalize correct reasoning due to formatting errors. A grammar-based lenient parser was designed to automatically discard non-compliant tokens and extract only the structurally valid portions. This decouples "planning competence" from "format adherence," ensuring validation focuses solely on reasoning.
 
-3. **Lenient Syntax Parser**: To handle inconsistent model output formats, a grammar-based lenient parser is designed that automatically discards syntactically invalid tokens to maximally extract valid answers.
+**3. Symbolic Validator System: Reliable Automatic Scoring for Open-ended Generation**  
+This is the core contribution of the paper. Since open-ended answers are non-unique and inhabit a massive space, traditional benchmarks often revert to multiple-choice or LLM judges. This work assigns a specific validation algorithm to each of the 8 tasks. Simple tasks (App/Prog/Val) use set comparisons. Hard tasks (Reach/AReach/Land/NextA), where verification is PSPACE-complete, involve checking precomputed caches or calling a PDDL planner to ensure **completeness** and **correctness**. For instance, to verify a Landmark (Land), the system constructs an auxiliary planning task $\Pi'$ by introducing a marker proposition $p_{nach}$; if a valid plan exists that bypasses the candidate, it is not a landmark.
 
 ## Key Experimental Results
 
-### Small/Medium Model Results
+### Results for Small/Medium Models
 
 | Model | App | AReach | Just | Land | NextA | Prog | Reach | Val |
-|-------|-----|--------|------|------|-------|------|-------|-----|
+|------|-----|--------|------|------|-------|------|-------|-----|
 | Granite 3.1 8B | 0.00 | 0.00 | 0.21 | 0.08 | 0.22 | 0.36 | 0.33 | 0.09 |
 | Llama 3.1 8B | 0.00 | 0.00 | 0.22 | 0.06 | 0.25 | 0.40 | 0.33 | 0.13 |
 | DeepSeek Coder 33B | 0.02 | 0.02 | 0.21 | 0.10 | 0.17 | 0.42 | 0.18 | 0.15 |
 | Granite 34B Code | 0.02 | 0.00 | 0.17 | 0.11 | 0.18 | 0.43 | 0.28 | 0.12 |
 
-Small models achieve near-zero scores on App and AReach; the highest score across all tasks, Prog, reaches only 43%.
+Small models scoring near zero on App and AReach, with the highest score being 43% on Prog.
 
-### Large Model & Reasoning Model Results
+### Results for Large & Reasoning Models
 
 | Model | App | AReach | Just | Land | NextA | Prog | Reach | Val |
-|-------|-----|--------|------|------|-------|------|-------|-----|
+|------|-----|--------|------|------|-------|------|-------|-----|
 | Mixtral 8x22B | 0.10 | 0.02 | 0.31 | 0.26 | 0.32 | 0.68 | **0.37** | 0.23 |
 | Llama 3.1 70B | 0.12 | 0.02 | 0.44 | 0.20 | 0.42 | 0.65 | 0.28 | 0.20 |
 | GPT-4o mini | 0.07 | 0.01 | 0.14 | 0.04 | 0.35 | 0.59 | 0.22 | 0.27 |
@@ -87,63 +100,64 @@ Small models achieve near-zero scores on App and AReach; the highest score acros
 | **o1-preview** | **0.44** | **0.12** | 0.46 | **0.56** | **0.80** | **0.89** | **0.66** | 0.26 |
 | DeepSeek R1 | 0.05 | 0.01 | 0.52 | 0.20 | 0.36 | 0.77 | 0.24 | 0.53 |
 
-### Representation Ablation (DeepSeek V3)
+### Ablation Study (DeepSeek V3)
 
-| Representation | App | AReach | Just | Land | NextA | Prog | Reach | Val | Avg. |
-|----------------|-----|--------|------|------|-------|------|-------|-----|------|
+| Representation | App | AReach | Just | Land | NextA | Prog | Reach | Val | Average |
+|------|-----|--------|------|------|-------|------|-------|-----|------|
 | NL | 0.21 | 0.05 | 0.65 | 0.12 | 0.47 | 0.76 | 0.32 | 0.56 | 0.39 |
 | PDDL | 0.31 | 0.07 | 0.74 | 0.21 | 0.53 | 0.87 | 0.33 | 0.55 | 0.44 |
 | PDDL+NL | 0.32 | 0.09 | 0.68 | 0.19 | 0.60 | 0.88 | 0.37 | 0.61 | **0.47** |
 
-Including formal PDDL descriptions improves average accuracy from 39% to 47%; however, when PDDL is available, using a classical planner directly is more appropriate.
+Including PDDL formal descriptions improved average accuracy from 39% to 47%, although traditional planners are more suitable when PDDL is available.
 
 ### Key Findings
 
-- **Applicability is near-universally failed**: On the most fundamental task of enumerating all executable actions, small models score ≈0% and the strongest model, o1-preview, reaches only 44%. The strict requirement to generate a **complete** set is the primary cause — switching to Jaccard similarity scoring raises o1-preview to 57% and Mixtral from 10% to 38%.
-- **Action Reachability is the hardest task**: It requires reasoning about the **joint reachability** of multiple propositions in action preconditions; o1-preview scores only 12%. Most correct answers arise from recognizing the "None" case (all actions are reachable).
-- **No universally dominant model**: No model achieves the best performance across all 8 tasks. GPT-4o leads on 5 of 8 tasks, but is outperformed by DeepSeek V3 by 11% on Just and 4% on AReach.
-- **Questionable cost-effectiveness of reasoning models**: The o1 series incurs far greater computational cost than standard LLMs, yet achieves significant advantages only on Prog (89%) and NextA (80%), with scores ≤66% on half the tasks.
-- **Anomalously low Val score for o1-preview (26%)**: In 86% of error cases, the predicted index differs from the correct index by exactly 1, indicating the model is close but consistently off by one step.
-- **Progression is the easiest task** (o1-preview: 89%), yet models still make basic errors such as failing to recognize that after stacking a block, the top block becomes *clear*.
+- **Widespread Failure in Applicability**: Even for the basic task of "listing all executable actions," small models score $\approx 0\%$, and the strongest o1-preview only reaches 44%. The strict requirement to generate the **complete** set is the main reason—using Jaccard similarity scoring, o1-preview reaches 57% and Mixtral improves from 10% to 38%.
+- **Action Reachability is the Hardest**: It requires reasoning about the **joint reachability** of multiple propositions in action preconditions; o1-preview only manages 12%.
+- **No Universal Model**: No model is optimal across all 8 tasks. GPT-4o leads in 5/8 tasks but is outperformed by DeepSeek V3 on Just (by 11%) and AReach (by 4%).
+- **Reasoning Models Cost/Value Trade-off**: The o1 series entails significantly higher computational costs but only shows major advantages in Prog (89%) and NextA (80%), scoring $\le 66\%$ on half of the tasks.
+- **o1-preview Anomaly in Val (26%)**: In 86% of error cases, the answer was off by only 1 index, suggesting the model is close but fails the final step.
+- **Progression is the Easiest Task** (o1-preview 89%), yet models still make elementary errors like failing to recognize "stacking blocks makes the top block clear."
 
 ## Highlights & Insights
 
-- **Precise diagnosis of capability deficits**: By decomposing the planning process into 8 atomic tasks, the framework enables exact identification of where models fail. App ≈ 0% indicates that LLMs cannot even enumerate executable actions — a prerequisite for all planning.
-- **Methodological significance of symbolic validators**: The framework provides a fully reliable automatic evaluation scheme for open-ended generation tasks; the construction of certain verification algorithms (e.g., the auxiliary planning task for Landmarks) constitutes an independent technical contribution.
-- **The gap between generation and multiple-choice**: The same model (GPT-4o) exhibits far lower error rates under multiple-choice format than under generative format (except for Val), demonstrating that multiple-choice questions substantially overestimate models' planning reasoning capabilities.
+- **Precise Deficit Diagnosis**: By decomposing the planning process, the work precisely diagnoses which stages models fail. The near-zero performance on App indicates LLMs cannot even perform action enumeration—the foundational requirement for planning.
+- **Methodological Significance of Symbolic Validators**: Provides a completely reliable automated evaluation for open-ended generation. The construction of validation algorithms (e.g., Landmarks via auxiliary tasks) is an independent technical contribution.
+- **Generation vs. MCQ Gap**: For the same model (GPT-4o), error rates are significantly lower in multiple-choice than in generation (except for Val), indicating that MCQs severely overestimate the planning capabilities of models.
 
 ## Limitations & Future Work
 
-- Template-based natural language is insufficiently naturalistic and diverges from real-world planning scenarios
-- Coverage of only 13 PDDL domains may be insufficient to represent all planning reasoning patterns
-- Only the final answer of a single generation is evaluated, without considering iterative self-correction over multiple steps
-- The lenient parser extracts only the first answer, potentially missing subsequent attempts by the model
-- Future directions include constructing training data with chain-of-thought (CoT) reasoning and extending to new task types such as object counting
+- Template-based natural language is not natural enough and differs from real-world planning scenarios.
+- Only covers 13 PDDL domains, which may not represent all planning reasoning patterns.
+- Evaluates only single-turn final answers, without considering multi-step iterative self-correction.
+- Lenient parser only extracts the first answer, potentially missing subsequent correct attempts by the model.
+- Future work: Construct training data with Chain-of-Thought (CoT) and expand to new task types such as object counting.
 
 ## Related Work & Insights
 
-- **vs. ACPBench v1**: v1 uses Boolean/multiple-choice format; this work upgrades to open-ended generation — a qualitative increase in difficulty
-- **vs. PlanBench / AutoPlanBench**: Those works focus on end-to-end plan generation/validation and cannot diagnose atomic capability deficits
-- **vs. ActionReasoningBench**: That benchmark conflates multiple capabilities into a single question and relies on LLM-as-judge evaluation; this work assigns one atomic capability per task with a corresponding symbolic validator
+- **vs ACPBench v1**: v1 used Boolean/MCQ; this work upgrades to open-ended generation, representing a qualitative leap in difficulty.
+- **vs PlanBench / AutoPlanBench**: These focus on end-to-end plan generation/verification, which cannot pinpoint atomic capacity deficits.
+- **vs ActionReasoningBench**: Combines multiple capabilities into single problems and relies on LLM-as-judge; this work maps each task to an atomic capability and uses symbolic validators.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ Generative planning reasoning benchmark + complete symbolic validators
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 15 models × 8 tasks + representation ablation + complexity analysis + per-domain analysis
-- Writing Quality: ⭐⭐⭐⭐ Task definitions and verification algorithms are clearly presented; observations and analyses are detailed
-- Value: ⭐⭐⭐⭐⭐ A benchmark platform for diagnosing LLM planning reasoning capabilities
+- Novelty: ⭐⭐⭐⭐ Generative planning benchmark + complete symbolic validators
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 15 models × 8 tasks + representation ablation + complexity analysis + domain analysis
+- Writing Quality: ⭐⭐⭐⭐ Clear task definitions and validation algorithms with detailed analysis
+- Value: ⭐⭐⭐⭐⭐ A benchmark for diagnosing LLM planning reasoning capabilities
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
+- [\[CVPR 2026\] Rethinking Dataset Distillation: Hard Truths about Soft Labels](../../CVPR2026/model_compression/rethinking_dataset_distillation_hard_truths_about_soft_labels.md)
 - [\[ACL 2026\] Social Story Frames: Contextual Reasoning about Narrative Intent and Reception](../../ACL2026/model_compression/social_story_frames_contextual_reasoning_about_narrative_intent_and_reception.md)
-- [\[ICML 2026\] Hard Labels In! Rethinking the Role of Hard Labels in Mitigating Local Semantic Drift](../../ICML2026/model_compression/hard_labels_in_rethinking_the_role_of_hard_labels_in_mitigating_local_semantic_d.md)
+- [\[ICLR 2026\] QVLA: Not All Channels Are Equal in Vision-Language-Action Model's Quantization](qvla_not_all_channels_are_equal_in_vision-language-action_models_quantization.md)
 - [\[ICLR 2026\] Efficient Reasoning with Balanced Thinking](efficient_reasoning_with_balanced_thinking.md)
-- [\[ICLR 2026\] BeyondBench: Contamination-Resistant Evaluation of Reasoning in Language Models](beyondbench_contamination-resistant_evaluation_of_reasoning_in_language_models.md)
-- [\[ICLR 2026\] SwiReasoning: Switch-Thinking in Latent and Explicit for Pareto-Superior Reasoning](swireasoning_switch-thinking_in_latent_and_explicit_for_pareto-superior_reasonin.md)
+- [\[ICML 2026\] Hard Labels In! Rethinking the Role of Hard Labels in Mitigating Local Semantic Drift](../../ICML2026/model_compression/hard_labels_in_rethinking_the_role_of_hard_labels_in_mitigating_local_semantic_d.md)
 
 </div>
 

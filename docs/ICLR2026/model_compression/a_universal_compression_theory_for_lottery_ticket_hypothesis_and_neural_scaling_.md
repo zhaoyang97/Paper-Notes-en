@@ -2,119 +2,105 @@
 title: >-
   [Paper Note] A universal compression theory for lottery ticket hypothesis and neural scaling laws
 description: >-
-  [ICLR 2026][Model Compression][Lottery Ticket Hypothesis] This paper proves a Universal Compression Theorem: any permutation-invariant function over $d$ objects can be asymptotically compressed to polylog(d) objects with…
+  [ICLR 2026][Model Compression][Paper Note] The paper proves a universal compression theorem: any permutation-invariant function can be asymptotically compressed to a $\text{polylog}(d)$ scale with error approaching zero (which is the optimal compression rate). This directly leads to the proof of the dynamic lottery ticket hypothesis—any network can be compresse
 tags:
-  - "ICLR 2026"
-  - "Model Compression"
-  - "Lottery Ticket Hypothesis"
-  - "Neural Scaling Laws"
-  - "Data Compression"
-  - "Permutation-Invariant Functions"
-  - "Theoretical Proof"
+  - ICLR 2026
+  - Model Compression
 date: 2026-05-08
-content_hash: 0b3dab3438143cf2
+content_hash: 91392133705f17d6
 ---
-
 # A universal compression theory for lottery ticket hypothesis and neural scaling laws
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2510.00504](https://arxiv.org/abs/2510.00504)  
 **Code**: None  
-**Area**: Model Compression
-**Keywords**: Lottery Ticket Hypothesis, Neural Scaling Laws, Data Compression, Permutation-Invariant Functions, Theoretical Proof
+**Area**: Model Compression  
+**Keywords**: Lottery Ticket Hypothesis, Neural Scaling Laws, Data Compression, Permutation Invariant Functions, Theoretical Proof
 
 ## TL;DR
-This paper proves a Universal Compression Theorem: any permutation-invariant function over $d$ objects can be asymptotically compressed to polylog(d) objects with error approaching zero (which is the optimal compression rate). From this theorem, the authors directly derive: (1) a proof of the dynamic lottery ticket hypothesis — any network can be compressed to polylogarithmic width while preserving its learning dynamics; (2) a dataset compression result — any dataset can be compressed to polylogarithmic size while preserving the loss landscape; and (3) an acceleration of power-law scaling laws to arbitrarily fast decay rates.
+The paper proves a universal compression theorem: any permutation-invariant function can be asymptotically compressed to a $\text{polylog}(d)$ scale with error approaching zero (which is the optimal compression rate). This directly leads to the proof of the dynamic lottery ticket hypothesis—any network can be compressed to polylogarithmic width while maintaining invariant learning dynamics—as well as dataset compression to polylogarithmic size while maintaining the loss landscape, and the acceleration of power-law scaling laws to arbitrarily fast decay rates.
 
 ## Background & Motivation
 
-### Limitations of Prior Work
+**Background**: When training large-scale models, performance typically scales according to a slow power law regarding parameter count and dataset size (neural scaling law), i.e., $L \sim d^{-\alpha}$. Empirically, the exponent $\alpha$ for language models is mostly between 0.1–0.3. This raises a fundamental theoretical and practical question: **Can comparable performance be achieved with significantly smaller models and significantly less data?** The authors highlight this gap with an intuitive comparison—the human brain masters a native language with an input of approximately $10^8$ words, while contemporary large models often require trillions of tokens, a difference in data efficiency of about four orders of magnitude.
 
-**Background**: When training large-scale models, performance typically scales as a slow power law in the number of parameters and dataset size (neural scaling law), i.e., $L \sim d^{-\alpha}$. This raises a fundamental theoretical and practical question: **can comparable performance be achieved with significantly smaller models and significantly less data?**
+This problem is closely related to two widely discussed but separately studied topics in deep learning:
 
-This question is closely related to two widely studied topics in deep learning:
+**Limitations of Prior Work 1: Lack of proof for the dynamic version of the Lottery Ticket Hypothesis**: The Lottery Ticket Hypothesis (LTH) by Frankle & Carlin (2019) suggests that randomly initialized networks contain "winning tickets"—sparse subnetworks that can match the full network's performance when trained independently. While empirical evidence is abundant, the **dynamic version** (where the compressed subnetwork not only matches final performance but also maintains the entire learning dynamics trajectory) has lacked theoretical proof.
 
-**Lottery Ticket Hypothesis (LTH)**: The conjecture proposed by Frankle & Carlin (2019) states that a randomly initialized neural network contains a "winning ticket" — a sparse subnetwork that, when trained in isolation, achieves performance comparable to the full network. Despite abundant empirical evidence, providing a theoretical proof of the **dynamic** version of the lottery ticket hypothesis — where the compressed subnetwork not only achieves comparable final performance but also preserves the entire learning dynamics trajectory — has remained an open problem.
+**Limitations of Prior Work 2: Whether the slow power law of scaling laws can be broken**: The power-law scaling $L \sim d^{-\alpha}$ implies that as scale increases, returns diminish. Currently, there is no principled method to answer whether this slow decay can be accelerated and how fast it can go.
 
-**Acceleration of Neural Scaling Laws**: The existing power-law scaling ($L \sim d^{-\alpha}$) implies that performance improvements slow down as scale increases. Does a theoretical pathway exist to accelerate this slow decay to faster rates?
+**Key Challenge**: These two phenomena have been explored empirically but lack a unified theoretical explanation; existing theories either cover only specific network architectures or rely on overly strong assumptions.
 
-**Key Challenge**: These problems have been extensively explored empirically, but a unified theoretical explanation is lacking. Existing theoretical work either handles only special network architectures or relies on overly strong assumptions.
-
-**Core Idea**: Starting from a compression theory for permutation-invariant functions, this paper provides a unified theoretical framework that simultaneously addresses both questions above.
+**Core Idea**: The authors found that both phenomena share the same underlying structure—permutation symmetry. By treating network neurons and data samples as interchangeable "objects," a single compression theorem for permutation-invariant functions can simultaneously address both questions.
 
 ## Method
 
 ### Overall Architecture
-The centerpiece of this paper is a **Universal Compression Theorem**. The proof framework proceeds as follows:
-1. First, it is shown that any universal permutation-invariant function over $d$ objects can be asymptotically compressed to a function over polylog(d) objects, with error approaching zero.
-2. It is then proved that polylog(d) is the optimal compression rate (i.e., no further improvement is possible).
-3. Finally, the theorem is applied separately to the domain of neural network parameters (yielding the lottery ticket hypothesis) and to the dataset domain (yielding acceleration of scaling laws).
+The entire paper revolves around a **Universal Compression Theorem**: any permutation-invariant function acting on $d$ objects can be asymptotically approximated by a function acting on only $\text{polylog}(d)$ objects, with the error tending to zero as $d\to\infty$. This logarithmic compression rate is proven to be the unimprovable optimal value. Interpreting the objects as neurons yields the dynamic lottery ticket hypothesis; interpreting them as data samples yields dataset compression and scaling law acceleration. Thus, two seemingly unrelated phenomena are unified under a single theorem.
 
 ### Key Designs
-1. **Universal Compression Theorem**: The core claim is: given a universal permutation-invariant function $f$ over $d$ objects, there exists a function $\tilde{f}$ over polylog(d) objects such that $\|f - \tilde{f}\| \to 0$ as $d \to \infty$. Here, "permutation-invariant" means the function's output does not depend on the ordering of its inputs — a symmetry that is pervasive in neural networks.
 
-   **Design Motivation**: Many structures in neural networks (e.g., neurons in fully connected layers, attention heads) possess intrinsic permutation invariance or equivariance, making a compression theory grounded in permutation invariance broadly applicable.
+**1. Universal Compression Theorem: Converting Permutation Symmetry into Logarithmic Compression Rates**
 
-2. **Corollary (Ia) — Dynamic Lottery Ticket Hypothesis**: Derived directly from the Universal Compression Theorem: a large neural network can be compressed to polylogarithmic width while **preserving its learning dynamics**. This is stronger than the classical lottery ticket hypothesis — not only is final performance preserved, but the entire training trajectory (including loss curves, gradient flow, etc.) is maintained.
+The theorem starts from the pervasive permutation invariance in large models—swapping the order of neurons in a fully connected layer or heads in an attention mechanism does not change the function computed by the network. This redundancy is the root of compressibility. The theorem formally asserts: for any universal permutation-invariant function $f$ acting on $d$ objects, there exists a function $\tilde{f}$ depending on only $\text{polylog}(d)$ objects such that $\|f-\tilde{f}\|\to 0$ as $d\to\infty$. The proof uses the representation theory of permutation groups to characterize the structure of $f$ and constructively provides a compression mapping from $d$ dimensions to $\text{polylog}(d)$ dimensions. Thus, the conclusion is not just existential but provides a specific compression target. The accompanying lower bound proof shows that $\text{polylog}(d)$ is the limit: further compression prevents the error from vanishing, fixing the theoretical ceiling for all subsequent compression methods at the logarithmic level.
 
-   Formally, for a network of width $d$, there exists a subnetwork of width polylog(d) such that the two exhibit identical learning dynamics trajectories under the same optimization algorithm, in an asymptotic sense.
+**2. Corollary (Ia) — Dynamic Lottery Ticket Hypothesis: Compressing to Logarithmic Width while Preserving the Training Trajectory**
 
-3. **Corollary (Ib) — Dataset Compression and Scaling Law Acceleration**: Also derived from the Universal Compression Theorem: a large dataset can be compressed to polylogarithmic size while preserving the loss landscape of the corresponding model.
+By substituting network neurons for "objects" in the theorem, a stronger conclusion than the traditional LTH is obtained: for a network of width $d$, there exists a subnetwork of width only $\text{polylog}(d)$ that, under the same optimization algorithm, not only matches final performance but also remains asymptotically consistent across the entire learning dynamics trajectory (loss curves, gradient flow). The original version by Frankle & Carlin only guaranteed that "winning tickets" could match final accuracy after independent training (a static conclusion); here, the entire training process is preserved, hence the term "Dynamic Lottery Ticket Hypothesis," providing the first theoretical proof for this problem.
 
-   More importantly, this implies that a neural scaling law of the form $L \sim d^{-\alpha}$ can be accelerated to an arbitrarily fast power-law decay, or ultimately to an exponential decay of the form $\exp(-\alpha' \sqrt[m]{d})$. This provides a theoretical basis for breaking the slow power-law scaling barrier.
+**3. Corollary (Ib) — Dataset Compression and Scaling Law Acceleration: Replacing Slow Power Laws with Fast Decay**
 
-### Loss & Training
-This paper is a purely theoretical work and does not involve specific training strategies. The core contributions lie in mathematical proofs. Proof techniques include:
-- Applying representation theory of permutation groups to analyze the structure of permutation-invariant functions
-- Constructively establishing the compression mapping
-- Proving the optimality of the polylog(d) compression rate (lower bound proof)
-- Instantiating the abstract compression theorem in the concrete settings of neural networks and datasets
+By substituting data samples for "objects," a large dataset can be compressed to logarithmic size while maintaining the loss landscape of the corresponding model. A more critical corollary falls on scaling laws: the empirical power law $L\sim d^{-\alpha}$ implies performance improves increasingly slowly as scale increases. The compression theorem demonstrates that this slow decay can be accelerated into arbitrarily fast power laws or even exponential forms $\exp(-\alpha'\sqrt[m]{d})$. This theoretically provides a possible path to break the slow power law and approach equivalent performance with significantly less data.
+
+### Mechanism and Applicability
+This paper is a purely theoretical work; the core contributions lie in the mathematical proofs. The technical route is: first, using a Deep Sets-style representation $f(w_1,\dots,w_d)=h\big(\sum_i g(w_i)\big)$ to write any smooth permutation-invariant function in an analyzable form; then, constructively providing a compression mapping from $d$ objects to $\text{polylog}(d)$ objects; establishing that the $\text{polylog}(d)$ rate is optimal within a constant factor via lower bound proofs; and finally, specializing the abstract theorem to neural network width (Corollary Ia) and dataset scale (Corollary Ib). Note that the theorem relies on smoothness and permutation symmetry assumptions. Structures that violate these (e.g., position embeddings, non-smooth ReLU) require additional discussion, and the conclusions hold in the asymptotic sense as $d\to\infty$.
 
 ## Key Experimental Results
 
 ### Main Results
-The paper centers on theoretical proofs; experiments primarily serve to validate the plausibility of the theoretical predictions.
+As a theoretical paper, the experiments primarily serve to verify the plausibility of the theoretical predictions.
 
-| Validation Setting | Theoretical Prediction | Empirical Observation | Consistency |
-|---|---|---|---|
-| Network width compression | polylog(d) width suffices to preserve performance | Performance is well maintained after substantial compression | Consistent |
-| Dataset compression | polylog(d) data points are sufficient | Loss landscape structure is preserved on small datasets | Consistent |
-| Scaling law behavior | Decay can be accelerated beyond power-law | Accelerated scaling observed under appropriate conditions | Consistent |
+| Validation Scenario | Theoretical Prediction | Experimental Observation | Consistency |
+|----------|---------|---------|--------|
+| Network Width Compression | $\text{polylog}(d)$ width suffices for performance | Performance maintained after significant compression | Consistent |
+| Dataset Compression | $\text{polylog}(d)$ data volume is sufficient | Loss landscape structure maintained on small datasets | Consistent |
+| Scaling Law Behavior | Acceleration to faster-than-power-law decay | Accelerated scaling observed under suitable conditions | Consistent |
 
 ### Ablation Study
 
-| Configuration | Key Metric | Description |
-|---|---|---|
-| Varying network width | Compression vs. performance curve | Validates the achievability of polylog compression rate |
-| Varying dataset size | Loss landscape similarity | Validates preservation of loss landscape after dataset compression |
-| Varying scaling exponent $\alpha$ | Decay rate after acceleration | Validates the theoretical prediction that scaling laws can be accelerated |
+| Configuration | Key Metrics | Description |
+|------|---------|------|
+| Different Network Widths | Compression vs. Performance curve | Verifies the achievability of the $\text{polylog}$ rate |
+| Different Dataset Sizes | Loss landscape similarity | Verifies loss landscape preservation after dataset compression |
+| Different Scaling Exponents $\alpha$ | Decay rate after acceleration | Verifies theoretical predictions of accelerated scaling laws |
 
 ### Key Findings
-- **polylog(d) is the optimal compression rate**: Both the achievability of polylog(d) and its optimality as a lower bound are established.
-- **Dynamic lottery ticket hypothesis holds**: A theoretical proof of the dynamic version (preserving learning dynamics) is provided for the first time.
-- **Scaling laws can be broken**: The power-law scaling $L \sim d^{-\alpha}$ can theoretically be accelerated to $\exp(-\alpha' \sqrt[m]{d})$, with profound implications for the efficiency of large-scale model training.
-- **Permutation invariance is the key**: The source of compressibility lies in the permutation symmetry that is pervasive in neural networks.
+- **$\text{polylog}(d)$ is the optimal compression rate**: Not only is its reachability proven, but it is also shown to be a lower bound that cannot be further improved.
+- **Dynamic Lottery Ticket Hypothesis holds**: Provides the first theoretical proof for the dynamic version (maintaining learning dynamics).
+- **Scaling laws can be broken**: Theoretically, the power-law scaling $L \sim d^{-\alpha}$ can be accelerated to $\exp(-\alpha' \sqrt[m]{d})$, which has profound implications for the efficiency of large-scale model training.
+- **Permutation invariance is key**: The source of compression capability lies in the widespread permutation symmetry within neural networks.
 
 ## Highlights & Insights
-- **Unified theoretical framework**: A single Universal Compression Theorem simultaneously addresses the lottery ticket hypothesis and scaling laws — two seemingly unrelated problems — demonstrating deep theoretical insight.
-- **Constructive proof**: The proof is not merely existential but provides an explicit compression construction, enhancing its practical guiding significance.
-- **Optimality guarantee**: The polylog(d) rate is proved to be the unimprovable optimal compression rate, establishing a theoretical ceiling for future compression methods.
-- **Reinterpretation of scaling laws**: The slow power-law scaling is revealed to be breakable — through appropriate compression strategies, efficiency can be substantially improved.
-- **Cross-disciplinary impact**: The theoretical results touch upon statistical physics (disordered systems), information theory, and machine learning.
+- **Unified Theoretical Framework**: Answers two seemingly unrelated questions—the lottery ticket hypothesis and scaling laws—with a single universal compression theorem, demonstrating deep theoretical insight.
+- **Constructive Proof**: The proof is not merely existential but provides a specific compression construction, enhancing its practical guiding significance.
+- **Optimality Guarantee**: Proves that $\text{polylog}(d)$ is the unimprovable optimal rate, setting a theoretical upper bound for future compression methods.
+- **Rethinking Scaling Laws**: Reveals that slow power-law scaling is not unbreakable—efficiency can be significantly improved through appropriate compression strategies.
+- **Cross-disciplinary Impact**: Results involve statistical physics (disordered systems), information theory, and machine learning.
 
 ## Limitations & Future Work
-- **Theory-practice gap**: Although the proof is constructive, the algorithm for practically realizing this compression (especially for large Transformers) remains unclear.
-- **Asymptotic nature**: The theorem holds in an asymptotic sense ($d \to \infty$); its applicability to finite-scale networks requires further analysis.
-- **Permutation invariance assumption**: Not all neural network architectures possess perfect permutation invariance (e.g., positional encodings, fixed architectures); cases that violate this assumption warrant further discussion.
-- **Practical operationalizability of scaling law acceleration**: While the theory establishes that scaling laws can be accelerated, how to realize this acceleration in practice remains to be explored.
-- **Width compression only**: The analysis of depth compression (reduction in the number of layers) has not been addressed.
+- **Gap between Theory and Practice**: Although the proof is constructive, the algorithm to implement this compression (especially for large Transformers) remains unclear.
+- **Asymptotic Properties**: The theorem holds in the asymptotic sense ($d \to \infty$); applicability to finite-scale networks needs further analysis.
+- **Permutation Invariance Assumption**: Not all neural network architectures possess perfect permutation invariance (e.g., position encodings, fixed architectures), necessitating more discussion on violations of this assumption.
+- **Practical Operability of Scaling Law Acceleration**: While theoretically possible, how to achieve this acceleration in actual training remains to be explored.
+- **Width Compression Only**: The analysis of depth compression (layer reduction) has not yet been covered.
 
 ## Related Work & Insights
-- **Frankle & Carlin (2019) Lottery Ticket Hypothesis**: The original version focuses on preserving static performance; this paper extends the result to preserving the dynamic learning process.
-- **Kaplan et al. (2020) Neural Scaling Laws**: Empirically established scaling laws; this paper theoretically reveals the possibility of transcending their limitations.
-- **Information Theory and Compression**: Deep connections exist with Kolmogorov complexity and rate-distortion theory in information theory.
-- **Permutation-Equivariant Networks**: Works such as Deep Sets and Invariant Theory provide background for understanding permutation invariance.
-- **Insights**: Symmetries such as permutation invariance are not merely tools for simplifying computation — they are a fundamental source of compression and generalization. Future model designs can more deliberately exploit such symmetries to improve efficiency.
+- **Frankle & Carlin (2019) Lottery Ticket Hypothesis**: The original version focused on static performance preservation; this paper extends it to the preservation of the dynamic learning process.
+- **Kaplan et al. (2020) Neural Scaling Laws**: Empirically established scaling laws; this paper theoretically reveals the possibility of breaking their limits.
+- **Information Theory and Compression**: Deeply connected to Kolmogorov complexity and Rate-Distortion theory in information theory.
+- **Permutation Equivariant Networks**: Works such as Deep Sets and Invariant Theory provide context for understanding permutation invariance.
+- **Insight**: Symmetry (such as permutation invariance) is not just a tool for simplifying computation but a fundamental source of compression and generalization. Future model designs could more consciously exploit these symmetries to improve efficiency.
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐⭐
@@ -129,10 +115,10 @@ The paper centers on theoretical proofs; experiments primarily serve to validate
 ## Related Papers
 
 - [\[ICML 2026\] Model Merging Scaling Laws in Large Language Models](../../ICML2026/model_compression/model_merging_scaling_laws_in_large_language_models.md)
+- [\[ICLR 2026\] SGD-Based Knowledge Distillation with Bayesian Teachers: Theory and Guidelines](sgd-based_knowledge_distillation_with_bayesian_teachers_theory_and_guidelines.md)
 - [\[ICML 2026\] LLMs as Noisy Channels: A Shannon Perspective on Model Capacity and Scaling Laws](../../ICML2026/model_compression/llms_as_noisy_channels_a_shannon_perspective_on_model_capacity_and_scaling_laws.md)
 - [\[ACL 2026\] Task-Stratified Knowledge Scaling Laws for Post-Training Quantized LLMs](../../ACL2026/model_compression/task-stratified_knowledge_scaling_laws_for_post-training_quantized_large_languag.md)
-- [\[NeurIPS 2025\] ParetoQ: Improving Scaling Laws in Extremely Low-bit LLM Quantization](../../NeurIPS2025/model_compression/paretoq_improving_scaling_laws_in_extremely_low-bit_llm_quantization.md)
-- [\[ICLR 2026\] Adaptive Width Neural Networks](adaptive_width_neural_networks.md)
+- [\[ICLR 2026\] UNITE: Universal Knowledge Integration from Task-Specific Experts](unite_universal_knowledge_integration_from_task-specific_experts.md)
 
 </div>
 

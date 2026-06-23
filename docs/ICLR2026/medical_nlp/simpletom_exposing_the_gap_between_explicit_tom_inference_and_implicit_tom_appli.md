@@ -2,131 +2,122 @@
 title: >-
   [Paper Note] SimpleToM: Exposing the Gap between Explicit ToM Inference and Implicit ToM Application in LLMs
 description: >-
-  [ICLR 2026][Medical NLP][Theory of Mind] SimpleToM exposes a critical gap in LLMs' Theory of Mind capabilities: frontier models can accurately infer others' mental states (explicit ToM)…
+  [ICLR 2026][Medical NLP][Theory of Mind] SimpleToM reveals a critical deficiency in LLM Theory of Mind: while frontier models accurately infer others' mental states (Explicit ToM), their performance drops sharply when applying this knowledge to predict or judge behaviors (Applied ToM), exposing a significant gap between "knowing what" and "how to use what is
 tags:
-  - "ICLR 2026"
-  - "Medical NLP"
-  - "Theory of Mind"
-  - "ToM"
-  - "LLM Social Reasoning"
-  - "Explicit vs. Applied ToM"
-  - "Information Asymmetry"
+  - ICLR 2026
+  - Medical NLP
+  - Theory of Mind
 date: 2026-05-08
-content_hash: 74fc4a7e4a0dfdbc
+content_hash: 46edd3d880cfff8f
 ---
-
 # SimpleToM: Exposing the Gap between Explicit ToM Inference and Implicit ToM Application in LLMs
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2410.13648](https://arxiv.org/abs/2410.13648)  
 **Code**: [https://github.com/yulinggu-cs/SimpleToM](https://github.com/yulinggu-cs/SimpleToM)  
-**Area**: Human Understanding
-**Keywords**: Theory of Mind, ToM, LLM Social Reasoning, Explicit vs. Applied ToM, Information Asymmetry
+**Area**: Human Understanding  
+**Keywords**: Theory of Mind, LLM Social Reasoning, Explicit vs. Applied ToM, Information Asymmetry
 
 ## TL;DR
-SimpleToM exposes a critical gap in LLMs' Theory of Mind capabilities: frontier models can accurately infer others' mental states (explicit ToM), but performance drops sharply when this knowledge must be applied to behavior prediction and behavior judgment (applied ToM), revealing a substantial divide between "knowing what" and "knowing how to use what is known."
+SimpleToM reveals a critical deficiency in LLM Theory of Mind: while frontier models accurately infer others' mental states (Explicit ToM), their performance drops sharply when applying this knowledge to predict or judge behaviors (Applied ToM), exposing a significant gap between "knowing what" and "how to use what is known."
 
 ## Background & Motivation
 
-**Background**: LLMs are widely deployed as conversational agents, and understanding others' beliefs (Theory of Mind) is essential for avoiding catastrophic responses—such as ignoring emotional distress, taking sarcasm literally, or providing inappropriate advice in sensitive situations.
+**Background**: LLMs are widely deployed as conversational agents; understanding others' beliefs (Theory of Mind) is essential to avoid catastrophic responses (e.g., ignoring emotional distress, misinterpreting sarcasm, or giving inappropriate advice in sensitive scenarios).
 
 **Limitations of Prior Work**:
-- Existing ToM evaluations are largely limited to Sally-Anne tasks or templated variants—scenarios are narrow and cover only a restricted range of information asymmetry types.
-- Explicit perception/mentalization verbs such as "sees" and "thinks" are used as trigger words, allowing models to answer without genuine commonsense reasoning.
-- Nearly all evaluations measure only "explicit ToM" (inferring mental states), without testing whether models can apply that knowledge to behavior prediction or judgment.
+   - Existing ToM evaluations are often limited to Sally-Anne tasks or templated variants featuring narrow scenarios and limited types of information asymmetry.
+   - Frequent use of explicit perceptual/mentalizing verbs like "sees" or "thinks" as triggers allow models to answer without genuine commonsense reasoning.
+   - Most benchmarks only measure "Explicit ToM" (inferring mental states) while neglecting the application of that knowledge to behavior prediction or judgment.
 
-**Key Challenge**: LLMs can correctly answer "Does Mary know the chips are moldy?" (explicit ToM), yet fail to correctly infer "Will Mary pay or report the mold?" (applied ToM)—suggesting that LLMs' ToM knowledge is "decoupled" and cannot be reliably applied.
+**Key Challenge**: LLMs can correctly answer "Does Mary know the chips are moldy?" (Explicit ToM) but fail to infer "Will Mary pay for them or report them?" (Applied ToM). This suggests that LLM ToM knowledge is "decoupled" and cannot be reliably applied.
 
 **Goal**:
-- Construct a benchmark covering multiple levels of ToM reasoning (mental state → behavior prediction → behavior judgment).
-- Evaluate across diverse everyday scenarios rather than restricting assessment to classic toy tasks.
-- Reveal and quantify the capability gap between explicit ToM and applied ToM.
+   - Construct a benchmark covering multiple levels of ToM reasoning (Mental State $\rightarrow$ Behavior Prediction $\rightarrow$ Behavior Judgment).
+   - Evaluate models across diverse daily scenarios beyond classic toy tasks.
+   - Reveal and quantify the capability gap between explicit and applied ToM.
 
-**Key Insight**: Ten naturalistic information-asymmetry scenarios (supermarket, hospital, second-hand market, etc.); each story consists of only two sentences yet requires implicit commonsense reasoning; three question tiers progressively increase reasoning depth.
+**Key Insight**: Leveraging 10 natural categories of information asymmetry (supermarkets, hospitals, second-hand markets, etc.), each story contains only two sentences but requires implicit commonsense reasoning across three questions of increasing depth.
 
-**Core Idea**: LLMs exhibit a "knowing–doing split" in ToM—they can identify what another agent does not know (explicit), but cannot leverage that knowledge to predict and judge behavior (applied), even in simple everyday scenarios.
+**Core Idea**: A "separation of knowledge and action" exists in LLM ToM capabilities—models know what others do not know (Explicit) but fail to utilize this knowledge to predict and judge behaviors (Applied), even in simple daily contexts.
 
 ## Method
 
 ### Overall Architecture
-The benchmark comprises 1,147 concise two-sentence stories, each paired with three questions: (a) a mental state question (explicit ToM) → (b) a behavior prediction question (applied ToM) → (c) a behavior judgment question (deep applied ToM). Ten daily information-asymmetry scenarios are covered; the dataset is constructed via LLM-assisted generation followed by rigorous human filtering.
+SimpleToM seeks to decompose the question of "whether a model can use ToM" into measurable layers of capability. It consists of 1,147 minimalist stories, each only two sentences long, which embed a specific information asymmetry: a key fact known to the reader but unknown to a character (e.g., mold inside an opaque chip bag). Each story is paired with three progressive questions: first, the character's mental state (Explicit ToM: Does the character know?); second, the character's subsequent action (Applied ToM: What will they do next?); and third, a judgment of the character's actual behavior (Applied ToM: Is this reasonable?). This structure isolates "inference" from "application," allowing each to be scored independently. The dataset was produced via a pipeline of "seed stories + LLM expansion + rigorous human filtering" to ensure both scale and quality.
 
 ### Key Designs
 
-1. **Three-Tier Question Design**:
+**1. Three-Level Questions: Decomposing a story into "Inference $\rightarrow$ Prediction $\rightarrow$ Judgment"**
 
-    - **Mental State (MS)**: "Does Mary know the chips are moldy?" — directly queries mental state (yes/no).
-    - **Behavior Prediction**: "Will Mary pay or report the mold?" — requires implicit mental-state inference before predicting behavior.
-    - **Judgment**: "Mary paid. Is this reasonable?" — requires first implicitly predicting the expected behavior, then evaluating the rationality of the actual behavior (two layers of implicit reasoning).
-    - **Design Motivation**: Each tier incrementally increases reasoning depth—(a) infer mental state only; (b) map mental state to behavior; (c) infer mental state → predict expected behavior → compare with actual behavior → judge rationality.
+Using the moldy chips story as an example: The Mental State (MS) level asks "Does Mary know the chips are moldy?", requiring a simple Yes/No based on state inference. The Behavior Prediction level asks "Will Mary pay or report it?", requiring mapping the inferred state to a logical action (paying normally). The Behavior Judgment level asks "Mary paid; is this reasonable?", providing the character's action and asking for an evaluation. Judgment requires two layers of implicit reasoning: predicting what Mary *should* do based on her state, and matching it against the actual behavior.
 
-2. **Implicit Information Asymmetry**:
+**2. Implicit Information Asymmetry: Avoidance of "sees" or "thinks" trigger words**
 
-    - **Function**: In all stories, a character's lack of knowledge is conveyed implicitly, without explicit mentalization verbs such as "sees" or "thinks."
-    - **Mechanism**: The first sentence introduces key information ("The chips are moldy"); the second introduces the character's action ("Mary picks up the chips and walks to the checkout")—the character's ignorance must be inferred through commonsense reasoning (e.g., one cannot see through a sealed can).
-    - **Design Motivation**: Prevents models from exploiting trigger words, requiring genuine commonsense inference.
+Many ToM benchmarks include explicit cues like "character saw..." or "character thinks...", allowing models to bypass reasoning. SimpleToM avoids such clues: the first sentence states a fact ("The chips are moldy"), and the second describes an objective action ("Mary walks to the register"). The character's ignorance is entirely implicit—the model must use commonsense to realize humans cannot see through opaque bags.
 
-3. **Ten Everyday Scenarios**:
+**3. 10 Daily Scenarios: Covering physical occlusion, knowledge barriers, deception, etc.**
 
-    - Supermarket food, medical information, false labeling, behind-the-scenes service industry, container contents, unethical behavior, personal item containers, second-hand markets, concealed physical traits, and locked devices.
-    - **Design Motivation**: Each scenario corresponds to a distinct type of information asymmetry (physical occlusion, knowledge barriers, deception, etc.), ensuring evaluative diversity.
+The dataset spans diverse domains: supermarket food, doctor-patient info, false labels, service industry "behind the scenes," container contents, unethical behavior, personal item containers, second-hand markets, hidden physical traits, and locked devices. High scenario variance ensures that the measured gap represents a general ToM phenomenon rather than an artifact of a specific context.
 
-### Dataset Construction
-- **Step 1**: One seed story is hand-written per scenario.
-- **Step 2**: GPT-4 generates diverse stories based on each seed (varied entities and contexts).
-- **Step 3**: Rigorous human filtering—annotators who pass a qualification test review each story for quality and answer correctness.
-- **Final Scale**: 1,147 stories × 3 questions = 3,441 evaluation instances.
+**4. Data Construction: LLM Expansion with Rigorous Human Filtering**
+
+To balance scale and quality, SimpleToM uses a pipeline starting with human-written seed stories. Models like GPT-4 and Claude-3.5-Sonnet expanded these into ~3,600 candidates. Qualified human annotators then audited each story and answer key, eliminating ambiguous samples to produce 1,147 high-quality stories (3,441 evaluation instances).
 
 ## Key Experimental Results
 
-### Main Results (Accuracy Across Three Question Tiers)
+Evaluated on 21 models using binary-choice questions (chance level = 50%).
 
-| Model | Mental State↑ | Behavior↑ | Judgment↑ | Gap (MS−Judgment) |
-|-------|--------------|-----------|-----------|-------------------|
-| GPT-5 | ~95% | ~75% | ~65% | −30% |
-| o1-preview | ~93% | ~70% | ~60% | −33% |
-| Claude-3.5 | ~92% | ~72% | ~62% | −30% |
-| Llama-3-70B | ~85% | ~60% | ~50% | −35% |
-| GPT-4 | ~90% | ~68% | ~58% | −32% |
+### Main Results (Accuracy of representative models across levels, %)
 
-### Cross-Scenario Analysis
+| Model | Mental State (Explicit)↑ | Behavior Prediction (Applied)↑ | Behavior Judgment (Applied)↑ |
+|------|------|------|------|
+| GPT-3.5 | 36.5 | 7.6 | 29.1 |
+| GPT-4o | 95.6 | 49.5 | 15.3 |
+| GPT-4 | 96.6 | 63.0 | 19.5 |
+| Llama-3.1-405B | 97.8 | 58.2 | 10.0 |
+| Claude-3.5-Sonnet | 97.9 | 67.0 | 24.9 |
+| GPT-4.5-preview | 97.0 | 67.8 | 26.7 |
+| GPT-5 | 98.5 | 64.4 | 40.0 |
+| DeepSeek-R1 | 97.3 | 73.8 | 65.8 |
+| o1-preview | 95.6 | 84.1 | 59.5 |
 
-| Scenario | MS Accuracy | Behavior Accuracy | Gap |
-|----------|-------------|-------------------|-----|
-| Supermarket food | ~95% | ~80% | −15% |
-| Medical information | ~90% | ~55% | −35% |
-| Unethical behavior | ~88% | ~50% | −38% |
-| Locked devices | ~92% | ~65% | −27% |
+### Test-Time Interventions (Accuracy on Behavior Prediction/Judgment, %)
+
+| Model | Predict (Ref) | Predict (CoT) | Predict (MS Remind) | Judge (Ref) | Judge (CoT) | Judge (MS Remind) |
+|------|------|------|------|------|------|------|
+| GPT-4o | 49.5 | 62.8 | 82.8 | 15.3 | 39.2 | 42.2 |
+| Llama-3.1-405B | 58.2 | 57.2 | 89.5 | 10.0 | 35.2 | 25.8 |
+| Claude-3.5-Sonnet | 67.0 | 77.2 | 96.9 | 24.9 | 39.4 | 84.1 |
 
 ### Key Findings
-- **Sharp drop of 25–35% from explicit to applied ToM**: Even GPT-5, which achieves ~95% on mental state inference, reaches only ~65% on behavior judgment—a striking gap.
-- **Performance decreases monotonically with tier depth**: MS > Behavior > Judgment is a consistent pattern across all models.
-- **High cross-scenario variance**: Behavior accuracy for the same model can vary by more than 30% across scenarios, indicating that ToM capability is highly context-dependent.
-- **Scaling does not fundamentally resolve the issue**: GPT-5 outperforms Llama-70B, yet the gap remains large—this is not a simple scaling problem.
-- **Chain-of-thought prompting provides limited benefit**: Instructing models to first infer mental state before predicting behavior yields only single-digit accuracy gains.
+- **Strong Inference, Weak Application**: Frontier models consistently score >95% on Mental State tasks, but performance drops to 50–70% for Behavior Prediction and as low as 10–25% for Behavior Judgment (e.g., Llama-3.1-405B at 10.0%, far below chance).
+- **Depth Correlation**: Performance follows a strict MS > Behavior > Judgment pattern; Judgment is the hardest as it requires nested implicit reasoning.
+- **Reasoning Models Help but Do Not Solve**: While o1-preview and DeepSeek-R1 achieve the best scores in applied tasks, they still show a significant gap compared to their mental state accuracy, indicating this is not a simple scaling issue.
+- **High Scenario Variance**: Models behave inconsistently across scenarios. For instance, performance is high in medical scenarios (likely due to safety training regarding health), but fails in daily logistics or containers.
+- **Interventions are Insufficient**: CoT and system prompts do not effectively close the gap; even with directly provided mental state answers (MS remind), Behavior Judgment often remains below 45% for several top models.
 
 ## Highlights & Insights
-- **Conceptualizing the "knowing–doing split"** is highly valuable: LLMs' ToM is not a binary capability but exists on a continuum—knowing what another agent does not know (easy), applying that knowledge to prediction (harder), and applying it to judgment (hardest). This tiered evaluation framework is generalizable to assessments of other cognitive capabilities.
-- **Implicit design that avoids trigger-word exploitation** is a key methodological contribution: many ToM benchmarks inadvertently provide cues (e.g., "sees," "thinks"), whereas SimpleToM mandates genuine commonsense inference.
-- **A warning for safe LLM deployment**: If models cannot reliably predict and evaluate human behavior, their deployment in sensitive social applications—mental health support, customer service, education—warrants extreme caution.
+- **Conceptualization of "Decoupled ToM"**: The distinction between knowing a state (easy) and applying it to prediction (hard) or judgment (harder) provides a valuable hierarchical framework for evaluating cognitive abilities.
+- **Methodological Innovation in Implicit Design**: By excluding mental state trigger words, SimpleToM forces models to rely on genuine commonsense reasoning rather than surface-level linguistic patterns.
+- **Warning for Safety Deployment**: If models cannot reliably predict or judge human behavior based on what humans know, their deployment in sensitive social domains (counseling, customer service, education) warrants extreme caution.
 
 ## Limitations & Future Work
-- Only English-language scenarios are evaluated; cross-cultural and cross-lingual ToM variation remains unexplored.
-- The multiple-choice format may underestimate problems that would emerge in open-ended generation.
-- The fixed two-sentence story format does not cover more complex, multi-turn conversational ToM.
-- Whether fine-tuning or RLHF can close the explicit-to-applied ToM gap has not been explored.
-- Although the ten scenarios are diverse, certain types of information asymmetry may still be absent.
+- Evaluation is limited to English; cross-cultural/linguistic ToM differences are unexplored.
+- The multiple-choice format may underestimate issues present in open-ended generation.
+- The two-sentence story format does not cover more complex, multi-turn conversational ToM.
+- The impact of fine-tuning or RLHF specifically on closing the Explicit-Applied gap remains to be studied.
 
 ## Related Work & Insights
-- **vs. Sally-Anne / BigToM**: Classical ToM tests evaluate only explicit mental-state inference in narrow scenarios; SimpleToM extends evaluation to applied ToM across ten diverse scenario types.
-- **vs. SocialIQA**: A social reasoning benchmark that does not focus on information asymmetry or the hierarchical structure of Theory of Mind.
-- **vs. FANToM**: Also a ToM benchmark, but uses a dialogue format with explicitly annotated mental states; SimpleToM requires implicit reasoning throughout.
+- **vs. Sally-Anne / BigToM**: Classical tests focus on explicit inference in simple toy tasks; SimpleToM extends this to diverse scenarios and applied tasks.
+- **vs. SocialIQA**: General social reasoning benchmarks do not specifically target the information asymmetry or the hierarchical structure of ToM.
+- **vs. FANToM**: While FANToM uses conversational formats and explicit labels, SimpleToM emphasizes implicit reasoning without linguistic mentalizing cues.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ — First systematic distinction between explicit and applied ToM, revealing a striking capability gap.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Comprehensive multi-model, cross-scenario, ablation, and CoT analyses.
-- Writing Quality: ⭐⭐⭐⭐⭐ — The logical chain from motivation to design to results is exceptionally clear, with vivid illustrative examples.
-- Value: ⭐⭐⭐⭐⭐ — A milestone contribution to evaluating LLMs' social reasoning capabilities; dataset is publicly released.
+- Novelty: ⭐⭐⭐⭐⭐ Systematically distinguishes explicit/applied ToM for the first time.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive cross-model, cross-scenario, and intervention analysis.
+- Writing Quality: ⭐⭐⭐⭐⭐ Exceptionally clear logic from motivation to methodology.
+- Value: ⭐⭐⭐⭐⭐ A milestone for evaluating LLM social reasoning with a publicly available dataset.
 
 <!-- RELATED:START -->
 
@@ -136,8 +127,8 @@ The benchmark comprises 1,147 concise two-sentence stories, each paired with thr
 
 - [\[ACL 2026\] Can Continual Pre-training Bridge the Performance Gap between General-purpose and Specialized Language Models in the Medical Domain?](../../ACL2026/medical_nlp/can_continual_pre-training_bridge_the_performance_gap_between_general-purpose_an.md)
 - [\[ICLR 2026\] Can SAEs Reveal and Mitigate Racial Biases of LLMs in Healthcare?](can_saes_reveal_and_mitigate_racial_biases_of_llms_in_healthcare.md)
+- [\[ICML 2026\] Exploring Accurate and Transparent Domain Adaptation in Predictive Healthcare via Concept-Grounded Orthogonal Inference](../../ICML2026/medical_nlp/exploring_accurate_and_transparent_domain_adaptation_in_predictive_healthcare_vi.md)
 - [\[ICLR 2026\] CounselBench: A Large-Scale Expert Evaluation and Adversarial Benchmarking of LLMs in Mental Health QA](counselbench_llm_mental_health_qa.md)
-- [\[AAAI 2026\] MIRAGE: Scaling Test-Time Inference with Parallel Graph-Retrieval-Augmented Reasoning Chains](../../AAAI2026/medical_nlp/mirage_scaling_test-time_inference_with_parallel_graph-retrieval-augmented_reaso.md)
 - [\[ACL 2026\] ProMedical: Hierarchical Fine-Grained Criteria Modeling for Medical LLM Alignment via Explicit Injection](../../ACL2026/medical_nlp/promedical_hierarchical_fine-grained_criteria_modeling_for_medical_llm_alignment.md)
 
 </div>

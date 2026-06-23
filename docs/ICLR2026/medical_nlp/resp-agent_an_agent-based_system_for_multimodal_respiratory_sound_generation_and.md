@@ -2,78 +2,87 @@
 title: >-
   [Paper Note] Resp-Agent: An Agent-Based System for Multimodal Respiratory Sound Generation and Disease Diagnosis
 description: >-
-  [ICLR2026][Medical NLP][Respiratory sound analysis] This paper proposes Resp-Agent, a closed-loop multi-agent framework that coordinates a controllable respiratory sound generator and a multimodal diagnoser via an active…
+  [ICLR 2026][Medical NLP][Flow Matching] Ours proposes the Resp-Agent closed-loop multi-agent framework, which coordinates a controllable respiratory sound generator and a multimodal diagnoser via an active adversarial curriculum planner (Thinker-A2CA). It achieves generation↔diagnosis co-design on a 229k-scale benchmark, significantly improving diagnostic pe
 tags:
-  - "ICLR2026"
-  - "Medical NLP"
-  - "Respiratory sound analysis"
-  - "multimodal fusion"
-  - "controllable audio generation"
-  - "active adversarial curriculum learning"
-  - "flow matching"
-  - "data augmentation"
+  - ICLR 2026
+  - Medical NLP
+  - Flow Matching
 date: 2026-05-08
-content_hash: 9d7aa8c301d8d432
+content_hash: 08886543097d8981
 ---
-
 # Resp-Agent: An Agent-Based System for Multimodal Respiratory Sound Generation and Disease Diagnosis
 
-**Conference**: ICLR2026
+**Conference**: ICLR2026  
 **arXiv**: [2602.15909](https://arxiv.org/abs/2602.15909)  
 **Code**: [github.com/zpforlove/Resp-Agent](https://github.com/zpforlove/Resp-Agent)  
-**Area**: Medical Imaging
+**Area**: Medical Imaging  
 **Keywords**: Respiratory sound analysis, multimodal fusion, controllable audio generation, active adversarial curriculum learning, flow matching, data augmentation
 
 ## TL;DR
 
-This paper proposes Resp-Agent, a closed-loop multi-agent framework that coordinates a controllable respiratory sound generator and a multimodal diagnoser via an active adversarial curriculum planner (Thinker-A2CA). Built upon a 229k-scale benchmark, the system achieves co-design of generation and diagnosis, substantially improving diagnostic performance on long-tail categories.
+Ours proposes the Resp-Agent closed-loop multi-agent framework, which coordinates a controllable respiratory sound generator and a multimodal diagnoser via an active adversarial curriculum planner (Thinker-A2CA). It achieves generation↔diagnosis co-design on a 229k-scale benchmark, significantly improving diagnostic performance for long-tail categories.
 
 ## Background & Motivation
 
-1. **Single-modality representation bottleneck**: Existing methods convert respiratory sounds into mel spectrograms for CNN processing, discarding phase information and transient events (e.g., crackles), and failing to capture millisecond-level clinically critical acoustic features.
-2. **Lack of large-scale multimodal datasets**: Public respiratory sound datasets are small in scale, cover few diseases, and lack systematic text–audio paired supervision, severely limiting multimodal model development.
-3. **Disconnect between analysis and generation**: Existing research focuses on diagnostic tasks such as classification and detection, while generative modeling remains largely unexplored, precluding the use of synthetic data to mitigate class imbalance and data scarcity.
-4. **Insufficient shallow fusion**: Even when auxiliary metadata (demographics, symptoms, etc.) is available, existing methods employ only basic fusion techniques (e.g., concatenation followed by full attention), failing to enable deep cross-modal interaction.
-5. **Non-targeted data augmentation**: Conventional augmentation strategies (e.g., SpecAugment) apply unconditional and untargeted general perturbations, incapable of precisely generating adversarial samples for model failure modes.
-6. **Weak cross-domain generalization**: Most systems are evaluated only on in-distribution data, lacking rigorous cross-institution and cross-device evaluation protocols, which limits clinical deployability.
+1. **Unimodal representation bottleneck**: Existing methods convert respiratory sounds into Mel-spectrograms for CNN processing, which loses phase information and transient events (e.g., crackles), failing to capture millisecond-level clinical acoustic features.
+2. **Lack of large-scale multimodal datasets**: Public respiratory sound datasets are small-scale, cover few diseases, and lack systematic text-audio pair supervision, severely restricting the development of multimodal models.
+3. **Decoupling of analysis and generation**: Existing research focuses on diagnostic tasks like classification/detection, while generative modeling remains largely unexplored, preventing the use of synthetic data to alleviate class imbalance and data scarcity.
+4. **Insufficient shallow fusion**: Even with auxiliary metadata (demographics, symptoms), existing methods use basic fusion techniques (e.g., concatenation followed by full attention), failing to achieve deep cross-modal interaction.
+5. **Lack of targeted data augmentation**: Traditional augmentation strategies (e.g., SpecAugment) are unconditional/unstructured general perturbations that cannot precisely generate adversarial samples for model failure modes.
+6. **Weak cross-domain generalization**: Most systems are only tested on in-distribution data and lack rigorous evaluation protocols across institutions and devices, limiting clinical deployability.
 
 ## Method
 
-### Overall Architecture: Closed-Loop Multi-Agent System
+### Overall Architecture
 
-Resp-Agent consists of three interacting modules:
+Resp-Agent integrates "analysis" and "generation" into a closed-loop multi-agent system, operating on the self-constructed Resp-229k large-scale benchmark. The foundation prepares paired text-audio supervision and strict cross-domain splits; above this, the central Thinker-A2CA planner reads the error profiles of the diagnoser to request the generator to synthesize the most difficult samples, which are then used to retrain the diagnoser. This forms an active loop of "diagnosing weaknesses → targeted synthesis → retraining." The three agents perform distinct roles—the planner decides "what to supplement," the generator handles "controllable sample creation," and the diagnoser performs "multimodal interpretation"—and their collaborative results drive the next round of error profiling.
 
-- **Thinker-A2CA (Active Adversarial Curriculum Planner)**: Built upon DeepSeek-V3.2-Exp as the central controller, it parses diagnostic objectives and schedules tasks. Its core capability is to reuse model error profiles and calibrated confidence scores to identify diagnostic weaknesses, then direct the generator to synthesize hard-to-classify samples, forming a closed loop of "analyze → identify weaknesses → targeted synthesis → retraining."
-- **Generator**: Responsible for controllable respiratory sound synthesis, operating in two stages.
-- **Diagnoser**: Responsible for multimodal disease classification.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    DATA["Resp-229k Benchmark<br/>229k recordings × 16 classes × Cross-domain split<br/>+ LLM-distilled clinical narratives"]
+    DATA --> THINK["Thinker-A2CA Planner<br/>Reads error profiles + calibration confidence<br/>Identifies weak classes, issues synthesis budget"]
+    THINK -->|"Request synthesis of hard pathological samples"| GEN
+    subgraph GEN["Generator: Controllable Synthesis"]
+        direction TB
+        G1["Resp-MLLM<br/>Diagnosis text + Style reference<br/>→ Predict discrete acoustic units"]
+        G1 --> G2["Conditional Flow Matching Decoder<br/>Units → Mel-spec → Vocos Waveform"]
+    end
+    GEN -->|"Retrain with targeted synthetic samples"| DIAG
+    subgraph DIAG["Diagnoser: Multimodal Diagnosis"]
+        direction TB
+        D1["Modality Interweaving<br/>EHR text + Audio placeholders<br/>Input layer replaced by BEATs projections"]
+        D1 --> D2["Strategic Global Attention<br/>Sparse audio anchors ~80.6ms"]
+    end
+    DIAG --> OUT["Disease Classification Output"]
+    DIAG -.->|"Error profile feedback"| THINK
+```
 
-### Generator: Discrete Unit Planning + Conditional Flow Matching Reconstruction
+### Key Designs
 
-**Stage 1: Resp-MLLM (Style-Conditioned Unit Generation)**
+**1. Resp-229k: Large-scale Cross-domain Benchmark Supporting the Closed Loop**
 
-Qwen3-0.6B-Base is repurposed as a multimodal unit generator:
+For the closed-loop to function, large-scale, diverse data with text supervision is required. Five public repositories (UK COVID-19, ICBHI, SPRSound, COUGHVID, KAUH) were aggregated into 229,101 recordings (408 hours) across 16 diagnostic categories. Each recording is paired with a standardized clinical narrative distilled via DeepSeek-R1-Distill-Qwen-7B, providing text-audio supervision. A strict cross-domain split ensures training/validation use ICBHI, SPRSound, and UK COVID-19, while testing is reserved purely for COUGHVID and KAUH to evaluate performance under distribution shifts.
 
-1. BEATs extracts frame-level features $Z \in \mathbb{R}^{T \times D}$ from reference audio, which are compressed into $K$ style descriptors via temporal pooling, then mapped to the LLM hidden space via a two-layer MLP to obtain $E^{\text{style}}$.
-2. The input sequence consists of "diagnostic text $d$ (controlling *what* disease)" and "$K$ [AUDIO] placeholders (controlling *what* style)," achieving content–style disentanglement.
-3. The LLM autoregressively predicts a discrete acoustic unit sequence from the BEATs codebook. During training, ~10% random masking is applied to prevent teacher-forcing leakage.
+**2. Thinker-A2CA: Transforming Data Augmentation into Targeted Curriculum**
 
-**Stage 2: Conditional Flow Matching (CFM) Decoding**
+The Resp-Agent utilizes a Large Language Model (DeepSeek-V3.2-Exp) as a central controller. It parses current diagnostic objectives, reuses error profiles and calibrated confidence from the diagnoser to locate weak categories, and instructs the generator with deterministic I/O to "synthesize hard samples for this category." This upgrades passive data expansion to an active adversarial curriculum, where 10k synthetic samples achieve approximately 52% of the total gain, far exceeding random or class-prior rebalancing.
 
-A Diffusion Transformer (DiT)-parameterized CFM decoder reconstructs discrete units into mel spectrograms, followed by the Vocos vocoder to produce waveforms. CFM learns the velocity field along the linear path $x_t = (1-t)x_0 + tx_1$ with a dual-path conditioning design: (i) content stream—unit indices are embedded and temporally interpolated; (ii) timbre stream—BEATs features are temporally averaged and broadcast.
+**3. Generator: Discrete Unit Planning followed by Flow Matching Reconstruction**
 
-### Diagnoser: Modality Weaving + Strategic Global Attention
+To ensure pathological and stylistic controllability, generation is split into two steps. First, Resp-MLLM (based on Qwen3-0.6B-Base) converts a text LLM into a multimodal unit generator. It extracts frame-level features $Z\in\mathbb{R}^{T\times D}$ from reference audio via BEATs, compresses them into $K$ style descriptors, and projects them into the LLM latent space $E^{style}$. The LLM then autoregressively predicts discrete acoustic units from the BEATs codebook. Second, a Conditional Flow Matching (CFM) decoder reconstructs the units into Mel-spectrograms by learning a velocity field $v_\theta$ along a linear path $x_t=(1-t)x_0+tx_1$. The waveform is finally restored via a Vocos vocoder.
 
-**Input-level modality weaving**: EHR clinical text tokens and 496 audio placeholders are arranged into a single sequence; at the Longformer embedding layer, audio placeholders are replaced with projected BEATs features, enabling cross-modal interaction between text and audio from the very first layer.
+**4. Diagnoser: Modality Interweaving + Sparse Global Anchors for Transient Events**
 
-**Strategic global attention**: On top of Longformer's sliding-window attention, three types of global tokens are assigned: (i) [CLS] classifier; (ii) [DESCRIPTION] EHR sentinel; (iii) audio anchors with stride $s=4$. The anchor spacing of ~80.6 ms provides sub-100 ms temporal resolution, enabling textual symptoms (e.g., "nocturnal dry cough") to directly query distant transient acoustic events, while maintaining linear time complexity.
+Clinical events like crackles are millisecond-scale. The diagnoser uses two strategies: 1) Input-level modality interweaving, where EHR clinical text tokens and 496 audio placeholders are sequenced, directly replacing placeholders with BEATs projections $E_{[A]}=\mathrm{Align}(\Phi_{\text{BEATs}}(x))W$ in the embedding layer. 2) Strategic Global Attention, which places three types of global tokens (classification head [CLS], EHR sentinel [DESCRIPTION], and sparse audio anchors at step $s=4$). Anchors spaced at $\approx 80.6$ms allow the text to query transient acoustic events across long distances with linear time complexity.
 
-### Resp-229k Benchmark Dataset
+### Mechanism
 
-Five public databases are aggregated (UK COVID-19, ICBHI, SPRSound, COUGHVID, KAUH), yielding 229,101 recordings, 408 hours, and 16 diagnostic categories. Each recording is paired with a standardized clinical narrative distilled by an LLM. A strict cross-domain split is applied: the first three datasets are used for training/validation, and only COUGHVID and KAUH are used for testing.
+Taking a tail category (e.g., a rare wheeze-type respiratory sound) as an example: The diagnoser frequently misclassifies this class on the validation set. The error profile shows low confidence and frequent confusion with neighboring classes. Thinker-A2CA reads this signal and requests the generator to "synthesize N samples of this pathology." The Resp-MLLM predicts units based on the pathology text and style reference, which the CFM decoder restores into waveforms with correct transient features. After retraining with these targeted samples, the diagnoser effectively "sees" the millisecond wheezing events, improving the Macro-F1_tail in the next cycle.
 
 ## Key Experimental Results
 
-### Table 1: Respiratory Sound Classification on ICBHI Official 60-40 Split
+### Table 1: Respiratory Sound Classification Performance on ICBHI Official 60-40 Split
 
 | Method | Backbone | Sp (%) | Se (%) | Score (%) |
 |---|---|---|---|---|
@@ -82,64 +91,71 @@ Five public databases are aggregated (UK COVID-19, ICBHI, SPRSound, COUGHVID, KA
 | BTS (Kim et al., 2024c) | CLAP | 81.40 | 45.67 | 63.54 |
 | **Resp-Agent [Ours]** | **LLM+Longformer** | **79.29** | **66.10** | **72.70** |
 
-Resp-Agent achieves a Score of 72.7, surpassing the previous best by over 5 absolute points. In particular, sensitivity (Se) reaches 66.1%, far exceeding other methods (maximum 51.1%), demonstrating that multimodal fusion effectively improves recognition of minority classes.
+Resp-Agent exceeds the Prev. SOTA by over 5 absolute points in Score, with Sensitivity (Se) reaching 66.1%, significantly higher than other methods (max 51.1%).
 
-### Table 2: Diagnostic Performance under Different Planning Strategies on Test-CD (Budget $B=50$k)
+### Table 2: Diagnostic Performance of Different Planning Strategies on Test-CD (Budget B=50k)
 
 | Planning Strategy | Acc | Macro-F1 | Macro-F1_tail |
 |---|---|---|---|
-| No synthesis (CE baseline) | 0.849 | 0.212 | 0.074 |
-| Random sampling | 0.869 | 0.442 | 0.291 |
-| Class-prior rebalancing | 0.876 | 0.512 | 0.349 |
-| Static uncertainty sampling | 0.881 | 0.546 | 0.376 |
+| No Synthesis (CE Baseline) | 0.849 | 0.212 | 0.074 |
+| Random Sampling | 0.869 | 0.442 | 0.291 |
+| Class Prior Rebalancing | 0.876 | 0.512 | 0.349 |
+| Static Uncertainty Sampling | 0.881 | 0.546 | 0.376 |
 | **Thinker-A2CA** | **0.887** | **0.598** | **0.421** |
 
-Thinker-A2CA achieves the best performance across all metrics, improving Macro-F1 from the baseline of 0.212 to 0.598 (+182%) and tail-class Macro-F1_tail from 0.074 to 0.421 (+469%), demonstrating that the active adversarial curriculum substantially outperforms all passive strategies.
+Thinker-A2CA is optimal across all metrics, increasing Macro-F1 from 0.212 to 0.598 (+182%) and Macro-F1_tail by 469%.
 
-### Generator Content–Style Disentanglement Verification
-
-In style-swapping experiments with fixed pathology labels and varying style references, Style-Sim = 0.91, Pathology-Acc = 97.9%, and FAD = 1.18, confirming that the generator can independently control acoustic style without altering disease semantics.
+### Key Findings: Decoupling Verification
+In style swap experiments, fixing pathology labels while changing style references resulted in Style-Sim=0.91 and Pathology-Acc=97.9% (FAD=1.18), proving the generator independently controls acoustic style without altering disease semantics.
 
 ## Highlights & Insights
 
-1. **Closed-loop co-design**: For the first time, respiratory sound analysis and generation are unified within a single agent framework, realizing an active learning loop of "diagnose to find weaknesses → generate targeted synthesis → retrain to improve," as opposed to conventional passive data augmentation.
-2. **Resp-MLLM**: To the authors' knowledge, this is the first respiratory sound multimodal large language model trained under aligned text–audio supervision, enabling controllable disentangled generation of pathological content and acoustic style.
-3. **Strategic audio anchors**: Sparse global attention anchors at ~80 ms intervals enable long-range routing from text to transient acoustic events at linear complexity, addressing the modeling challenge of millisecond-level events such as crackles in respiratory sounds.
-4. **Resp-229k benchmark**: At 229k scale, 16 categories, cross-domain splits, and LLM-distilled clinical narratives, this dataset fills the gap for large-scale multimodal benchmarks in the respiratory sound domain.
-5. **High sample efficiency**: Thinker-A2CA achieves ~52% of the total gain with only 10k synthetic samples, substantially outperforming class-prior and random sampling strategies.
+1. **Closed-loop co-design**: First to unify respiratory sound analysis and generation in a multi-agent framework, achieving an active learning loop.
+2. **Resp-MLLM**: The first multimodal LLM for respiratory sounds trained under aligned text-audio supervision, enabling controllable decoupling of pathology and style.
+3. **Strategic audio anchors**: Sparse global attention anchors at ~80ms intervals enable long-range routing from text to transient acoustic events within linear complexity.
+4. **Resp-229k Benchmark**: Fills the gap for large-scale multimodal benchmarks in the respiratory sound field with cross-domain splits and LLM-distilled narratives.
+5. **High sample efficiency**: Thinker-A2CA achieves ~52% of total gain with only 10k synthetic samples.
 
 ## Limitations & Future Work
 
-1. **Planner dependency on proprietary LLM**: Thinker-A2CA uses DeepSeek-V3.2-Exp as the planner, incurring high deployment costs and limiting full reproducibility; lighter-weight planning strategies warrant exploration.
-2. **Generation quality ceiling**: CFM decoding still relies on mel spectrogram as an intermediate representation, which may be insufficiently precise for certain extremely fine-grained acoustic transients (e.g., faint crackles).
-3. **Text supervision reliance on LLM distillation**: Clinical narratives are generated by an LLM rather than real EHRs, potentially introducing systematic bias; despite an auditing pipeline, hallucination risks cannot be fully eliminated.
-4. **Limitations of the 16-class taxonomy**: Real clinical scenarios involve more complex respiratory diseases and multi-morbidity, which the current framework does not address with multi-label classification.
-5. **Non-certified medical system**: The paper explicitly states that the system is not intended for clinical decision-making; actual deployment requires additional regulatory approval and clinical validation.
+1. **Controller dependency on closed-source LLM**: The use of DeepSeek-V3.2-Exp as a planner introduces high deployment costs and reproducibility challenges.
+2. **Generation quality ceiling**: CFM decoding is based on Mel-spectrograms, which may not precisely reconstruct extremely fine-grained acoustic transients.
+3. **Text supervision via LLM distillation**: Narratives are generated rather than real EHR data, potentially introducing systematic bias or hallucination risks.
+4. **16-class system limitations**: Real clinical scenarios involve multi-morbidity, which the current single-label framework does not handle.
+5. **Non-medical certification**: Explicitly stated as not for clinical decision-making; requires regulatory approval for deployment.
 
 ## Related Work & Insights
 
-- **vs. OPERA/RespLLM**: OPERA provides domain pretraining but remains unimodal; RespLLM fuses text but employs dense full-attention modality concatenation, which is computationally expensive and lacks fine-grained cross-modal routing. Resp-Agent's modality weaving and sparse anchors achieve deeper cross-modal interaction at sub-quadratic complexity.
-- **vs. SpecAugment/unconditional generation**: Conventional augmentation applies untargeted general perturbations, whereas Resp-Agent uses the Thinker to identify failure modes and synthesize targeted adversarial samples, transforming augmentation into a precise curriculum learning tool.
-- **vs. AudioLM/SoundStorm**: General-purpose audio generation models do not account for clinical controllability. Resp-MLLM achieves pathology–timbre disentanglement via dual conditioning on diagnostic text and style reference, constituting a generation solution specifically designed for medical audio.
+- **vs. OPERA/RespLLM**: OPERA is unimodal. RespLLM uses dense concatenations with high computation costs. Resp-Agent’s Modality Interweaving + Sparse Anchors achieves deeper interaction at sub-quadratic complexity.
+- **vs. SpecAugment/Unconditional Generation**: Resp-Agent transforms augmentation into a precise curriculum tool by identifying failure modes via the Thinker agent.
+- **vs. AudioLM/SoundStorm**: General models lack clinical controllability. Resp-MLLM’s dual-condition design for pathology and style is specifically optimized for medical audio.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ (Closed-loop multi-agent + respiratory sound multimodal LLM + active curriculum learning — multiple pioneering contributions)
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ (7 experimental groups covering diagnosis, generation, ablation, cross-domain, sample efficiency, disentanglement verification, and LoSO)
-- Writing Quality: ⭐⭐⭐⭐ (Clear structure and well-formatted equations, though the high system complexity requires repeated reference to the appendix for certain details)
-- Value: ⭐⭐⭐⭐⭐ (Dataset, framework, and models are fully open-sourced, making a significant contribution to the medical audio AI field)
+- Novelty: ⭐⭐⭐⭐⭐ 
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 
+- Writing Quality: ⭐⭐⭐⭐ 
+- Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
 
+- **OPERA**: Uni-modal pre-training for respiratory sound.
+- **RespLLM**: Multimodal fusion for respiratory sounds via concatenation.
+- **ICBHI/SPRSound**: Core public datasets utilized for the benchmark.
+
+</div>
+
+<!-- RELATED:END -->
+
 ## Related Papers
 
 - [\[ACL 2026\] MARCH: Multi-Agent Radiology Clinical Hierarchy for CT Report Generation](../../ACL2026/medical_nlp/march_multi-agent_radiology_clinical_hierarchy_for_ct_report_generation.md)
-- [\[ICLR 2026\] EMR-AGENT: Automating Cohort and Feature Extraction from EMR Databases](emr-agent_automating_cohort_and_feature_extraction_from_emr_databases.md)
 - [\[ACL 2026\] SEMA-RAG: A Self-Evolving Multi-Agent Retrieval-Augmented Generation Framework for Medical Reasoning](../../ACL2026/medical_nlp/sema-rag_a_self-evolving_multi-agent_retrieval-augmented_generation_framework_fo.md)
+- [\[ACL 2025\] LLMs Can Simulate Standardized Patients via Agent Coevolution](../../ACL2025/medical_nlp/evopatient_standardized_patient.md)
+- [\[ICML 2025\] Agent WARPP: Workflow Adherence via Runtime Parallel Personalization](../../ICML2025/medical_nlp/agent_warpp_workflow_adherence_via_runtime_parallel_personalization.md)
 - [\[ACL 2026\] RA-RRG: Multimodal Retrieval-Augmented Radiology Report Generation with Key Phrase Extraction](../../ACL2026/medical_nlp/ra-rrg_multimodal_retrieval-augmented_radiology_report_generation_with_key_phras.md)
-- [\[NeurIPS 2025\] H-DDx: A Hierarchical Evaluation Framework for Differential Diagnosis](../../NeurIPS2025/medical_nlp/h-ddx_a_hierarchical_evaluation_framework_for_differential_diagnosis.md)
 
 </div>
 

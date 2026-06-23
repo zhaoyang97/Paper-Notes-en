@@ -2,123 +2,147 @@
 title: >-
   [Paper Note] MedAgentGym: A Scalable Agentic Training Environment for Code-Centric Reasoning in Biomedical Data Science
 description: >-
-  [ICLR 2026 Oral][Medical NLP][biomedical data science] This work introduces MedAgentGym, the first unified agentic training environment for biomedical data science, comprising 72…
+  [ICLR 2026][Medical NLP][biomedical data science] The authors constructed MedAgentGym, the first unified Agent training environment for biomedical data science. It comprises 72,413 task instances covering 12 real-world scenarios across 129 categories, equipped with executable sandboxes and verifiable ground truth. A systematic benchmark evaluation of 29 LLMs revealed
 tags:
-  - "ICLR 2026 Oral"
-  - "Medical NLP"
-  - "biomedical data science"
-  - "agentic training"
-  - "code-centric reasoning"
-  - "reinforcement-learning"
-  - "Med-Copilot"
-  - "LLM agent"
+  - ICLR 2026
+  - Medical NLP
+  - biomedical data science
+  - agentic training
+  - code-centric reasoning
+  - reinforcement-learning
+  - Med-Copilot
+  - LLM agent
 date: 2026-05-08
-content_hash: 25c20c812e2a88a6
+content_hash: 058ba9aebdd9540f
 ---
-
 # MedAgentGym: A Scalable Agentic Training Environment for Code-Centric Reasoning in Biomedical Data Science
 
 **Conference**: ICLR 2026 Oral  
 **arXiv**: [2506.04405](https://arxiv.org/abs/2506.04405)  
-**Code**: Available  
-**Area**: Medical AI / Agent Training  
+**Code**: Yes  
+**Area**: Medical NLP  
 **Keywords**: biomedical data science, agentic training, code-centric reasoning, reinforcement-learning, Med-Copilot, LLM agent
 
 ## TL;DR
-This work introduces MedAgentGym, the first unified agentic training environment for biomedical data science, comprising 72,413 task instances spanning 12 real-world scenarios and 129 categories, equipped with an executable sandbox and verifiable ground truth. A systematic benchmark evaluation of 29 LLMs reveals a substantial gap between commercial and open-source models. By combining efficient multi-threaded trajectory sampling with offline/online RL, the authors train Med-Copilot, achieving gains of +43.02%/+45.28% respectively and attaining performance competitive with GPT-4o.
+The authors constructed MedAgentGym, the first unified Agent training environment for biomedical data science. It comprises 72,413 task instances covering 12 real-world scenarios across 129 categories, equipped with executable sandboxes and verifiable ground truth. A systematic benchmark evaluation of 29 LLMs revealed a gap between commercial and open-source models. By employing efficient multi-threaded trajectory sampling and offline/online RL, they trained Med-Copilot, achieving +43.02%/+45.28% improvements and reaching performance competitive with GPT-4o.
 
 ## Background & Motivation
-**Background**: Biomedical data science encompasses genomic analysis, clinical data processing, medical image analysis, drug discovery, and other subfields, each demanding complex programming and domain-specific reasoning. While LLMs have demonstrated potential as coding assistants in general software engineering, systematic evaluation and training infrastructure for biomedical coding tasks remain lacking.
+**Background**: Biomedical data science spans multiple subfields such as genomic analysis, clinical data processing, medical image analysis, and drug discovery. Each task requires complex programming and domain reasoning capabilities. While LLMs have demonstrated potential as coding assistants in general programming, systematic evaluation and training infrastructure specifically for biomedical coding tasks are lacking.
 
-**Limitations of Prior Work**: (1) Existing medical AI benchmarks (e.g., MedQA, PubMedQA) are static multiple-choice or QA evaluations that do not support interactive code execution or iterative debugging. (2) No unified platform covers the diverse scenarios in biomedical data science — genomics, clinical informatics, imaging, and drug discovery each maintain separate, siloed benchmarks. (3) Open-source LLMs exhibit a significant performance gap relative to closed-source models (e.g., GPT-4o) on biomedical coding tasks, necessitating effective training methods to narrow this gap.
+**Limitations of Prior Work**: (1) Existing medical AI benchmarks (e.g., MedQA, PubMedQA) are static multiple-choice or QA evaluations that do not support interactive code execution and iterative debugging. (2) There is no unified platform covering diverse biomedical data science scenarios (genomics, clinical, imaging, and drugs are currently independent benchmarks). (3) A significant gap exists between open-source LLMs and closed-source models (like GPT-4o) on biomedical coding tasks, necessitating effective training methods to bridge this gap.
 
-**Key Challenge**: Training an agent capable of writing biomedical analysis code requires a large-scale interactive task environment, yet constructing such an environment is prohibitively costly — demanding real data, ground truth annotations, secure sandboxes, and feedback mechanisms.
+**Key Challenge**: Training an Agent capable of writing biomedical analysis code requires a large-scale interactive environment, but constructing such an environment is extremely costly (requiring real data, ground truth, secure sandboxes, and feedback mechanisms).
 
-**Goal**: To simultaneously address environment construction and agent training by providing a large-scale training environment alongside an RL training pipeline.
+**Goal**: To simultaneously address environment construction and Agent training by providing a large-scale training environment and an RL training pipeline.
 
-**Key Insight**: The authors unify 12 real-world biomedical scenarios into a standardized format — input data + task description → executed code → verified output — supporting interactive feedback and automated scoring.
+**Key Insight**: Unify 12 real-world biomedical scenarios into a standardized format of "input data + task description → execute code → verify output," supporting interactive feedback and automated scoring.
 
-**Core Idea**: A large-scale, interactive, unified training environment combined with an RL training pipeline closes the gap between open-source models and closed-source LLMs on biomedical coding tasks.
+**Core Idea**: A large-scale interactive unified training environment + RL training pipeline = narrowing the performance gap between open-source and closed-source LLMs in biomedical coding.
 
 ## Method
 
 ### Overall Architecture
-MedAgentGym comprises three core components: (1) **Task Repository**: 72,413 task instances, each containing data files, task descriptions, an executable sandbox, ground truth answers, and a scoring function. (2) **Interaction Engine**: Agents interact with the sandbox through multi-turn dialogue — submitting code, receiving execution results or error messages, and iteratively refining solutions. (3) **Training Pipeline**: Efficient multi-threaded trajectory generation supporting both offline and online RL training.
+MedAgentGym fills the infrastructure void where biomedical data science Agents lacked a trainable environment. Previously, genomics, clinical, imaging, and drug domains had independent static QA benchmarks that could neither run code nor be used for Agent training. This work integrates these components into three steps: first, unifying existing datasets from 12 real scenarios into executable tasks (72,413 instances, 129 categories) of "Question → Write Code → Execution → Verify against Gold Standard"; second, wrapping each task in a Docker-isolated sandbox, allowing Agents to iteratively code and debug using CodeAct-style cycles while sampling success and error trajectories in parallel; finally, performing two-stage Reinforcement Learning fine-tuning on these verifiable trajectories to train the open-source Qwen2.5-7B/14B models into Med-Copilot, capable of competing with commercial models.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph S1["Unified Verifiable Task Environment"]
+        direction TB
+        A["12 Real Scenarios<br/>12 Existing Datasets"] --> B["Standardized as<br/>Problem x → Code c → Output y<br/>Validator E=I(y=y*)"]
+        B --> C["72,413 Instances<br/>129 Categories"]
+    end
+    subgraph S2["Isolated Sandbox + Interactive Feedback"]
+        direction TB
+        D["Docker Isolated Sandbox<br/>Pre-installed Bio-dependencies"] --> E["CodeAct Agent Loop<br/>Fetch / Execute / Debug / Terminal"]
+        E --> F["Multi-threaded Trajectory Sampling<br/>Ray + Joblib"]
+        F --> G["Success Trajectories + Error Trajectories"]
+    end
+    subgraph S3["Two-stage RL Fine-tuning → Med-Copilot"]
+        direction TB
+        H["SFT Warm Start<br/>2137 GPT-4-mini Success Trajectories"] --> I["Offline RL: DPO<br/>1646 Preference Pairs"]
+        H --> J["Online RL: PPO / GRPO<br/>2939 Online Pairs · Correctness + Format Reward"]
+    end
+    C --> D
+    G --> H
+    I --> K["Med-Copilot-7B / 14B<br/>Qwen2.5-Instruct Backbone"]
+    J --> K
+```
 
 ### Key Designs
-1. **12-Scenario × 129-Category Task Taxonomy**:
-    - **Function**: Covers 12 real-world scenarios including genomics (RNA-seq analysis, gene expression clustering), clinical data science (EHR prediction, survival analysis), medical imaging (pathology slide classification, X-ray detection), and drug discovery (molecular property prediction, ADMET analysis).
-    - **Mechanism**: Each scenario defines a standardized interface — input (data file path + metadata) + task instruction (natural language description of the analysis objective) + ground truth (exact numeric answer or class label) + scoring function ($\text{score}(\hat{y}, y) \in [0, 1]$).
-    - **Design Motivation**: Unifying multiple domains into a single platform enables agents to transfer and generalize across heterogeneous task types.
 
-2. **Executable Sandbox + Interactive Feedback**:
-    - **Function**: Provides each task with an isolated Python execution environment (pre-installed with pandas, scikit-learn, biopython, etc.); agents receive stdout/stderr feedback upon code submission.
-    - **Mechanism**: Agents interact for at most $K$ rounds. At each round, the agent generates code $c_t$ → the sandbox executes it and returns $(o_t, e_t)$ → the agent decides whether to revise or submit a final answer based on the output/error. The full trajectory is $\tau = [(c_1, o_1, e_1), \ldots, (c_K, o_K, e_K)]$.
-    - **Design Motivation**: Single-pass code generation yields low accuracy on many tasks that require debugging; interactive feedback allows agents to learn from errors.
+**1. Unified Verifiable Task Environment: Consolidating Fragmented Biomedical Benchmarks**
 
-3. **Multi-Threaded Trajectory Generation + RL Training**:
-    - **Function**: Samples interaction trajectories across multiple tasks in parallel, supporting both offline RL (learning from pre-collected trajectories) and online RL (learning through real-time environment interaction).
-    - **Mechanism**:
-        - **Offline RL**: Collects a large corpus of trajectories $\{(\tau_i, r_i)\}$ from multiple LLMs, using ground truth scores $r = \text{score}(\hat{y}, y)$ as rewards, and trains via DPO/rejection sampling. Trajectories with $r > \theta$ are selected as positive samples.
-        - **Online RL**: The agent collects real-time trajectories through environment interaction and optimizes policy $\pi_\theta$ via PPO/GRPO, with reward $R(\tau) = \text{score}(\hat{y}_\tau, y)$.
-    - **Design Motivation**: Offline RL is data-efficient (reusing existing trajectories), while online RL enables continuous exploration and improvement.
+This corresponds to the first step of the framework. The pain point is that genomics, clinical, imaging, and drug domains have separate benchmarks, mostly static MCQs/QA. MedAgentGym unifies existing datasets from 12 scenarios (MIMIC-III, eICU, TREQS, MedCalcBench, MedAgentBench, BioCoder, EHRSHOT, BioDSBench, plus 4 OOD datasets) into a single format: given a problem description $x$, the Agent generates code $c$ to produce output $y$, which is then checked by a validator $E(c, y) = \mathbb{I}(y = y^*)$ against the gold standard $y^*$. For tasks only providing reference code (e.g., BioCoder), the **execution output** of the reference code is used as the gold standard—since multiple equivalent ways to write code exist, "execution results" are more stable than "code strings."
+
+**2. Isolated Sandbox + Interactive Feedback: Enabling Human-like Debugging**
+
+This corresponds to the second step. Biomedical analysis code rarely runs correctly on the first try. MedAgentGym provides a Docker sandbox for each task (pre-installed with pandas, scikit-learn, biopython, etc.) and uses a CodeAct-style POMDP scaffold. The Agent loops through four actions: `request_info`, `terminal` (package management/file ops), `code_execution`, and `debugging` (translating errors into natural language). Feedback is standardized in JSON, and errors are grounded into natural language. Trajectories are recorded as $\tau = [(o_1, a_1), \dots, (o_n, a_n)]$, capturing both success trajectories $\{c^{(i)} \mid y^{(i)} = y^*\}$ and failed trajectories with errors $\{c^{(i)} \mid y^{(i)} \neq y^*\}$.
+
+**3. Two-stage RL for Med-Copilot: Pushing Small Open-Models via Verifiable Rewards**
+
+Using Qwen2.5-7B/14B-Instruct as backbones, the process involves "SFT warm start followed by RL refinement." Warm starting uses 2,137 success trajectories from GPT-4-mini to teach the basic code-debug paradigm. This is followed by two RL paths: **Offline RL** uses 1,646 preference pairs for DPO (success code vs. intermediate error attempts); **Online RL** allows the Agent to interact with the sandbox using 2,939 pairs for PPO/GRPO. The reward consists of a correctness reward $r = \mathbb{I}(y = y^*)$ and a format reward. Additionally, a Qwen2.5-7B Outcome Reward Model (ORM, $r = \frac{e^{l_y}}{e^{l_y} + e^{l_n}}$) was trained to pick trajectories during inference.
 
 ### Loss & Training
-- **Backbone**: Llama-3.1-8B-Instruct serves as the base model for Med-Copilot.
-- **Offline phase**: Trajectories are collected from GPT-4o-mini, Claude-3.5-Sonnet, DeepSeek-V2.5, and other models.
-- **Online phase**: Med-Copilot interacts directly with the environment, updating its policy at each iteration.
+- Backbone Models: Qwen2.5-7B-Instruct and -14B-Instruct (yielding Med-Copilot-7B / -14B) with unified CodeAct scaffold.
+- Warm Start: SFT on 2,137 GPT-4-mini success trajectories.
+- Offline RL: DPO on 1,646 pairs; Online RL: PPO / GRPO on 2,939 pairs.
+- Reward: Correctness reward + Format reward.
+- Open Resource: ~6K training trajectories + Outcome Reward Model (ORM).
 
 ## Key Experimental Results
 
-### Main Results: Benchmark Evaluation of 29 LLMs
+### Main Results: Zero-shot Benchmark of 29 LLMs (Average Score, Max 100)
 
-| Model Category | Representative Model | Avg. Score | Rank |
-|---|---|---|---|
-| Closed-source commercial | GPT-4o | ~0.55 | Top-1 |
-| Closed-source commercial | Claude-3.5-Sonnet | ~0.50 | Top-3 |
-| Open-source base | Llama-3.1-8B-Instruct | ~0.32 | Lower-mid |
-| Med-Copilot (Offline RL) | Llama-3.1-8B + Offline RL | ~0.46 (+43.02%) | Near GPT-4o |
-| Med-Copilot (Online RL) | Llama-3.1-8B + Online RL | ~0.46 (+45.28%) | Competitive with GPT-4o |
+| Model Category | Representative Model | Average Score |
+| :--- | :--- | :--- |
+| Closed-source | gpt-4.1 (2025-04) | 70.15 (SOTA) |
+| Closed-source | gpt-o4-mini | 65.67 |
+| Closed-source | gpt-4o | 48.75 |
+| Open-source Base | Qwen2.5-7B-Instruct (Baseline) | 16.89 |
+| Med-Copilot-7B | Qwen2.5-7B + Online RL (GRPO) | 62.17 (+45.28) |
+| Med-Copilot-14B | Qwen2.5-14B + Online RL (GRPO) | 71.42 (+51.30, matching gpt-4.1) |
 
-### Ablation Study
+### Ablation Study: Post-training Methods for Med-Copilot-7B
 
-| Configuration | Gain | Notes |
-|---|---|---|
-| Offline RL only | +43.02% | Learns from multi-model trajectories |
-| Online RL only | +45.28% | Self-directed exploration; marginally superior |
-| Multi-turn vs. single-turn | Significant improvement | Demonstrates value of interactive feedback |
-| Task difficulty stratification | Larger gains on easy tasks | Hard tasks retain room for improvement |
+| Configuration | Average Score | Gain |
+| :--- | :--- | :--- |
+| Base (Qwen2.5-7B-Instruct) | 16.89 | – |
+| +SFT | 53.87 | +36.98 |
+| +DPO (Offline RL) | 59.90 | +43.02 |
+| +PPO (Online RL) | 57.96 | +41.07 |
+| +GRPO (Online RL) | 62.17 | +45.28 |
 
 ### Key Findings
-- A substantial performance gap (~20 points) exists between commercial and open-source LLMs on biomedical coding tasks, but RL training can significantly narrow this gap.
-- Online RL marginally outperforms offline RL, yet both substantially surpass SFT baselines.
-- Multi-turn interaction (debugging loops) is critical — single-pass code generation achieves far lower success rates than iterative refinement.
-- Task difficulty varies considerably across biomedical scenarios: basic statistical analysis is relatively straightforward, whereas complex genomic pipeline analysis remains challenging.
+- A significant gap exists between commercial and open-source LLMs on biomedical coding, but two-stage RL narrows it: the 7B model jumped from 16.89 to 62.17 via GRPO, surpassing gpt-4o (48.75).
+- Online RL (GRPO +45.28) slightly outperformed offline RL (DPO +43.02), both significantly exceeding the SFT baseline (+36.98). The 14B model matched the strongest gpt-4.1.
+- Multi-turn interaction (debugging loop) is vital; single-pass success rates are much lower than iterative success rates.
+- Difficulty varies across scenarios: structured tasks (queries, calculations) are simpler, while open-ended tasks (data analysis, ML modeling) are harder.
 
 ## Highlights & Insights
-- **Unified Training and Evaluation**: MedAgentGym serves not only as a benchmark (evaluating 29 LLMs) but also as a training environment with a directly usable RL pipeline — a first in the medical AI domain.
-- **Empirical Proof of Gap Closure**: An 8B open-source model trained with RL achieves GPT-4o-level performance, which is of substantial practical value for privacy-sensitive medical settings (local deployment vs. API calls).
-- **Scalable Infrastructure**: 72K tasks + multi-threaded trajectory sampling + standardized interfaces constitute a genuinely scalable training infrastructure.
-- **Code-Centric Rather Than QA-Centric**: Unlike multiple-choice benchmarks such as MedQA, MedAgentGym requires agents to write real, executable analysis code — more closely reflecting actual research practice.
+- **Training + Evaluation Integration**: MedAgentGym is not just a benchmark for 29 LLMs but a ready-to-use RL training environment—a first in the medical AI field.
+- **Evidence for Bridging the Gap**: Proving that 8B parameter open-source models can reach GPT-4o levels via RL training is highly valuable for privacy-sensitive medical settings (local deployment vs. API).
+- **Scalable Design**: 72K tasks + multi-threaded sampling + standardized interfaces provide a truly extensible infrastructure.
+- **Code-Centric Approach**: Unlike MCQ benchmarks like MedQA, MedAgentGym requires writing real analysis code, which is closer to actual scientific research.
 
 ## Limitations & Future Work
-- The task suite is code-centric; knowledge-intensive capabilities such as clinical reasoning and diagnostic decision-making are underrepresented.
-- Ground truth requires predefined standard answers, making the framework unsuitable for open-ended exploratory research tasks.
-- Med-Copilot is only trained at the 8B scale; scaling results for larger models (70B+) are not reported.
-- Scoring functions are primarily based on exact match or numerical error; soft metrics such as code quality, readability, and efficiency are not assessed.
-- Out-of-distribution generalization beyond the training task distribution is not evaluated.
+- The tasks are code-centric; evaluation of knowledge-intensive clinical reasoning or diagnostic decision-making is insufficient.
+- Ground truth requires predefined standard answers, making it less suitable for open-ended exploratory research.
+- Med-Copilot was only trained on 7B/14B models; scaling results for larger models (70B+) were not reported.
+- Scoring is based on exact match or numerical error; soft metrics like code quality, readability, or efficiency were not evaluated.
+- Generalization to out-of-distribution training tasks was not fully assessed.
 
 ## Related Work & Insights
-- **vs. MedQA/PubMedQA**: These are static QA benchmarks with no code execution or interactive feedback; MedAgentGym supports multi-turn code interaction.
-- **vs. SWE-bench**: SWE-bench targets software engineering (bug fixing), whereas MedAgentGym targets biomedical data analysis — fundamentally different task natures.
-- **vs. AgentBench**: AgentBench covers diverse agent tasks but lacks medical focus; MedAgentGym provides deep coverage of biomedical scenarios.
-- **vs. AIME**: AIME and similar benchmarks assess medical reasoning, whereas MedAgentGym evaluates practical medical programming.
+- **vs. MedQA/PubMedQA**: Those are static QA benchmarks; MedAgentGym supports code execution and interactive feedback.
+- **vs. SWE-bench**: SWE-bench focuses on software engineering (fixing bugs), whereas MedAgentGym focuses on biomedical data analysis.
+- **vs. AgentBench**: AgentBench covers general tasks; MedAgentGym provides deep biomedical scenario coverage.
+- **vs. AIME**: AIME evaluates medical reasoning, while MedAgentGym evaluates medical programming practice.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ — First unified agentic training environment for biomedical data science; the problem formulation is valuable, though the RL training methodology itself is not novel.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — 72K tasks + systematic evaluation of 29 LLMs + offline/online RL comparison + Med-Copilot validation.
-- **Writing Quality**: ⭐⭐⭐⭐ — System description is clear; task taxonomy and experimental organization are well-structured.
-- **Value**: ⭐⭐⭐⭐⭐ — Provides critical infrastructure for biomedical AI agent research; the open-source environment offers long-term community value.
+- Novelty: ⭐⭐⭐⭐ First unified biomedical Agent training environment; the problem definition is valuable, though the RL methods are established.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 72K tasks + 29 LLM evaluation + offline/online RL comparisons + Med-Copilot validation.
+- Writing Quality: ⭐⭐⭐⭐ Clear system descriptions and well-organized experimental analysis.
+- Value: ⭐⭐⭐⭐⭐ Provides critical infrastructure for biomedical AI Agent research with long-term community value.
 
 <!-- RELATED:START -->
 
@@ -127,10 +151,10 @@ MedAgentGym comprises three core components: (1) **Task Repository**: 72,413 tas
 ## Related Papers
 
 - [\[ACL 2026\] Ryze: Evidence-Enriched Data Synthesis from Biomedical Papers](../../ACL2026/medical_nlp/ryze_evidence-enriched_data_synthesis_from_biomedical_papers.md)
-- [\[ICLR 2026\] BiomedSQL: Text-to-SQL for Scientific Reasoning on Biomedical Knowledge Bases](biomedsql_text-to-sql_for_scientific_reasoning_on_biomedical_knowledge_bases.md)
 - [\[CVPR 2026\] Towards Efficient Medical Reasoning with Minimal Fine-Tuning Data](../../CVPR2026/medical_nlp/towards_efficient_medical_reasoning_with_minimal_fine-tuning_data.md)
+- [\[ICLR 2026\] Doctor-R1: Mastering Clinical Inquiry with Experiential Agentic Reinforcement Learning](doctor-r1_mastering_clinical_inquiry_with_experiential_agentic_reinforcement_lea.md)
 - [\[NeurIPS 2025\] CureAgent: A Training-Free Executor-Analyst Framework for Clinical Reasoning](../../NeurIPS2025/medical_nlp/cureagent_a_training-free_executor-analyst_framework_for_clinical_reasoning.md)
-- [\[ACL 2026\] Eliciting Medical Reasoning with Knowledge-enhanced Data Synthesis: A Semi-Supervised RL Approach](../../ACL2026/medical_nlp/eliciting_medical_reasoning_with_knowledge-enhanced_data_synthesis_a_semi-superv.md)
+- [\[ACL 2026\] Eliciting Medical Reasoning with Knowledge-enhanced Data Synthesis: A Semi-Supervised Reinforcement Learning Approach](../../ACL2026/medical_nlp/eliciting_medical_reasoning_with_knowledge-enhanced_data_synthesis_a_semi-superv.md)
 
 </div>
 

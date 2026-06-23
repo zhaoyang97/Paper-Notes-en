@@ -2,71 +2,74 @@
 title: >-
   [Paper Note] ABBA-Adapters: Efficient and Expressive Fine-Tuning of Foundation Models
 description: >-
-  [ICLR 2026][Model Compression][Parameter-efficient fine-tuning] This paper proposes ABBA adapters, which parameterize weight updates as the Hadamard product of two independently learnable low-rank matrices…
+  [ICLR 2026][Model Compression][LoRA] Ours proposes ABBA-Adapters, which parameterize weight updates as the Hadamard product of two independent learnable low-rank matrices $\Delta W = s(B_1A_1) \odot (B_2A_2)$. This achieves an effective rank significantly higher than LoRA ($r_1 \cdot r_2$ vs. $r$) under the same parameter budget. Through Khatri-Rao recons
 tags:
-  - "ICLR 2026"
-  - "Model Compression"
-  - "Parameter-efficient fine-tuning"
-  - "LoRA"
-  - "Hadamard product"
-  - "low-rank adaptation"
-  - "Khatri-Rao decomposition"
+  - ICLR 2026
+  - Model Compression
+  - LoRA
 date: 2026-05-08
-content_hash: 6b249d1e2a616c2c
+content_hash: 548fd01489429521
 ---
-
 # ABBA-Adapters: Efficient and Expressive Fine-Tuning of Foundation Models
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2505.14238](https://arxiv.org/abs/2505.14238)  
 **Code**: [https://github.com/CERT-Lab/abba](https://github.com/CERT-Lab/abba)  
-**Area**: Model Compression / PEFT
-**Keywords**: Parameter-efficient fine-tuning, LoRA, Hadamard product, low-rank adaptation, Khatri-Rao decomposition
+**Area**: Model Compression / PEFT  
+**Keywords**: Parameter-efficient fine-tuning, LoRA, Hadamard product, low-rank adaptation, Khatri-Rao decomposition  
 
 ## TL;DR
-This paper proposes ABBA adapters, which parameterize weight updates as the Hadamard product of two independently learnable low-rank matrices, $\Delta W = s(B_1A_1) \odot (B_2A_2)$. Under the same parameter budget, ABBA achieves an effective rank of $r_1 \cdot r_2$ compared to LoRA's $r$, representing a quadratic improvement. Through Khatri-Rao reconstruction, ABBA maintains memory efficiency comparable to LoRA, and significantly outperforms existing PEFT methods on arithmetic and commonsense reasoning tasks.
+Ours proposes ABBA-Adapters, which parameterize weight updates as the Hadamard product of two independent learnable low-rank matrices $\Delta W = s(B_1A_1) \odot (B_2A_2)$. This achieves an effective rank significantly higher than LoRA ($r_1 \cdot r_2$ vs. $r$) under the same parameter budget. Through Khatri-Rao reconstruction, it maintains memory efficiency comparable to LoRA and significantly outperforms existing PEFT methods on arithmetic and commonsense reasoning tasks.
 
 ## Background & Motivation
 
-**Background**: LoRA is the most widely adopted PEFT method, constraining weight updates to a rank-$r$ subspace via $\Delta W = BA$ ($B \in \mathbb{R}^{m \times r}, A \in \mathbb{R}^{r \times n}$).
+**Background**: LoRA is the most popular PEFT method, restricting updates to a rank-$r$ subspace via $\Delta W = BA$ where $B \in \mathbb{R}^{m \times r}, A \in \mathbb{R}^{r \times n}$.
 
-**Limitations of Prior Work**: LoRA's updates are strictly confined to a rank-$r$ subspace, inherently limiting expressiveness. HiRA introduces Hadamard products via $\Delta W = W_0 \odot (BA)$ to increase effective rank, but couples updates to the frozen weight $W_0$—when the target update divided element-wise by $W_0$ is not low-rank, HiRA offers no advantage.
+**Limitations of Prior Work**: LoRA's updates are strictly limited by rank-$r$, fundamentally capping its expressivity. HiRA introduces the Hadamard product $\Delta W = W_0 \odot (BA)$ to increase effective rank, but the update is coupled with the frozen weights $W_0$. When the target update-to-$W_0$ element-wise ratio is not low-rank, HiRA offers no advantage.
 
-**Key Challenge**: High expressiveness (high-rank updates) requires more parameters, yet the fundamental constraint of PEFT is a small parameter count. How can one break the rank barrier under the same parameter budget?
+**Key Challenge**: High expressivity (high-rank updates) typically requires more parameters, yet the core constraint of PEFT is minimizing parameter count. The problem is how to break the rank limit under the same parameter budget.
 
-**Goal**: Substantially increase the expressiveness and effective rank of weight updates while maintaining LoRA-level parameter efficiency.
+**Goal**: Significantly enhance the expressivity and effective rank of updates while maintaining LoRA-level parameter efficiency.
 
-**Key Insight**: Set both factors in the Hadamard product as learnable low-rank matrices, fully decoupling updates from the pretrained weights. Employ Khatri-Rao decomposition to avoid instantiating full-size matrices.
+**Key Insight**: Both factors of the Hadamard product should be learnable low-rank matrices to completely decouple the update from pre-trained weights. Utilize Khatri-Rao decomposition to avoid instantiating full-sized matrices.
 
-**Core Idea**: The Hadamard product of two rank-$r/2$ matrices can achieve an effective rank of $r^2/4$, a quadratic improvement over LoRA's rank $r$ under the same parameter count.
+**Core Idea**: The Hadamard product of two rank-$r/2$ matrices can reach an effective rank of $r^2/4$, representing a quadratic increase over LoRA's rank $r$ for the same parameter count.
 
 ## Method
 
 ### Overall Architecture
-In each target layer, LoRA's $\Delta W = BA$ is replaced by $\Delta W = s(B_1A_1) \odot (B_2A_2)$. The four matrices $A_1, B_1, A_2, B_2$ form the "ABBA" structure. For fair comparison, $r_1 = r_2 = r/2$ is set so that the total parameter count matches LoRA at rank $r$.
+ABBA aims to resolve the contradiction where LoRA's expressivity is constrained by rank-$r$ while parameter counts must remain low. It replaces the LoRA update $\Delta W = BA$ with the Hadamard product of two independent low-rank matrix pairs: $\Delta W = s(B_1A_1) \odot (B_2A_2)$. The four matrices $A_1, B_1, A_2, B_2$ form the name "ABBA". To ensure a fair comparison with LoRA, the rank of both branches is set to $r_1 = r_2 = r/2$, making the total parameters exactly equal to a rank-$r$ LoRA. The mechanism focuses on how element-wise products amplify rank without adding parameters, how to compute this without exhausting memory, and how to stabilize initialization. The data flow passes the input activation $x$ through the frozen backbone $W_0$ in one path, and through two low-rank branches synthesized via Hadamard product in the other.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    X["Input Activation x"] --> W0["Frozen Backbone W0·x"]
+    X --> A1["Branch ① Low-rank pair B1A1<br/>(W0 Truncated SVD Init)"]
+    X --> A2["Branch ② Low-rank pair B2A2<br/>(Standard LoRA Init)"]
+    A1 --> HAD["Hadamard Product ⊙<br/>ΔW = s(B1A1)⊙(B2A2)<br/>Effective Rank boosted to r1·r2"]
+    A2 --> HAD
+    HAD -->|"Khatri-Rao Rewriting:<br/>ΔWx = Bkr(Akr·x)<br/>Avoids full-size matrix instantiation"| DW["Low-rank Update ΔW·x"]
+    W0 --> SUM["Addition y = W0·x + ΔW·x"]
+    DW --> SUM
+    SUM --> OUT["Output y"]
+```
 
 ### Key Designs
 
-1. **Dual Low-Rank Parameterization via Hadamard Product**:
+**1. Hadamard Double Low-rank Parameterization: Amplifying effective rank from $r$ to $r^2/4$ without additional parameters**
 
-    - Function: Expresses the weight update as the Hadamard (element-wise) product of two independent low-rank matrices.
-    - Mechanism: Since $\text{rank}(W_1 \odot W_2) \leq r_1 \cdot r_2$, ABBA's effective rank upper bound is $r_1 \cdot r_2 = r^2/4$, far exceeding LoRA's $r$. Matrix reconstruction experiments confirm that ABBA consistently achieves lower reconstruction error than LoRA under the same parameter budget.
-    - Design Motivation: Unlike HiRA, both factors are fully learnable and not tied to $W_0$, freeing the update capacity from the structural constraints of the pretrained weights.
+LoRA updates are locked within a rank-$r$ subspace. ABBA leverages the rank-amplification property of element-wise products—$\text{rank}(W_1 \odot W_2) \leq r_1 \cdot r_2$. By multiplying two rank-$r/2$ matrices, the upper bound of the effective rank jumps to $r_1 r_2 = r^2/4$. Matrix reconstruction experiments verify that ABBA's reconstruction error is consistently lower than LoRA's at the same parameter count. Unlike HiRA ($\Delta W = W_0 \odot (BA)$), ABBA's factors are both fully learnable and not tied to $W_0$, ensuring the update capability is not bottlenecked by the pre-trained weight structure.
 
-2. **Khatri-Rao Efficient Implementation (Theorem 1)**:
+**2. Efficient Khatri-Rao Implementation (Theorem 1): Rewriting the Hadamard product into LoRA form**
 
-    - Function: Converts ABBA into a LoRA-compatible form via Khatri-Rao decomposition, avoiding the instantiation of full-size matrices.
-    - Mechanism: Define $B_{\text{kr}} = B_1 \odot_r B_2 \in \mathbb{R}^{m \times r_1 r_2}$ and $A_{\text{kr}} = (A_1^\top \odot_r A_2^\top)^\top$; then $\Delta W x = B_{\text{kr}}(A_{\text{kr}} x)$, with intermediate activations of dimension only $r_1 r_2$.
-    - Design Motivation: A naïve implementation would require constructing two $m \times n$ matrices and computing their Hadamard product, incurring memory costs equivalent to full fine-tuning. Khatri-Rao reconstruction keeps both computation and storage at the low-rank level.
+Computing $(B_1A_1) \odot (B_2A_2)$ naively requires constructing two $m \times n$ full-sized matrices, which incurs memory costs equivalent to full fine-tuning. Theorem 1 utilizes the Khatri-Rao (column-wise Kronecker) product to bypass this: defining $B_{\text{kr}} = B_1 \odot_r B_2 \in \mathbb{R}^{m \times r_1 r_2}$ and $A_{\text{kr}} = (A_1^\top \odot_r A_2^\top)^\top$, the update becomes $\Delta W x = B_{\text{kr}}(A_{\text{kr}} x)$. Forward propagation thus reduces to two low-rank matrix-vector multiplications with intermediate activations of dimension $r_1 r_2$. This keeps computation and storage at a low-rank level.
 
-3. **SVD Initialization + Rank Stability**:
+**3. SVD Initialization + Rank Stability: Anchoring primary subspaces and scaling correctly**
 
-    - Function: Initializes $(B_1, A_1)$ via truncated SVD of $W_0$; $(B_2, A_2)$ follows standard LoRA initialization.
-    - Mechanism: The Eckart–Young–Mirsky (EYM) theorem guarantees that truncated SVD is the optimal rank-$r_1$ approximation. The scaling factor $s$ must be adjusted with respect to the effective rank $r_1 r_2$ (not $r$); rank stability is formally proved in the paper.
-    - Design Motivation: The hybrid initialization anchors the update direction to a meaningful low-rank subspace while preserving the second matrix pair's capacity for task-specific exploration.
+ABBA uses asymmetric initialization: $(B_1, A_1)$ is initialized using the truncated SVD of the frozen weights $W_0$, while $(B_2, A_2)$ follows standard LoRA initialization. Per the EYM (Eckart–Young–Mirsky) theorem, truncated SVD provides the optimal rank-$r_1$ approximation, anchoring one branch to the meaningful low-rank principal subspace of $W_0$ while allowing the other branch to explore task-specific directions. For the scaling factor $s$, since the effective rank is $r_1 r_2$, the scaling must be adjusted. Ours proves (Theorem 2) that setting $s_{\text{ABBA}} = \alpha^2/\sqrt{r_1 r_2} \in \Theta(1/\sqrt{r_1 r_2})$ keeps the forward/backward second moments at $\Theta(1)$, extending rsLoRA’s $\alpha/\sqrt{r}$ logic to the double low-rank structure.
 
 ### Loss & Training
-Standard fine-tuning loss is used. Training hyperparameters are identical to LoRA; only the adapter structure is replaced with ABBA. Code is publicly available.
+Standard fine-tuning loss is used. Training hyperparameters are identical to LoRA, with the only modification being the replacement of the adapter structure with ABBA. Code is open-sourced.
 
 ## Key Experimental Results
 
@@ -74,68 +77,69 @@ Standard fine-tuning loss is used. Training hyperparameters are identical to LoR
 
 **Arithmetic Reasoning (GSM8K, MATH, etc.):**
 
-| Method | Parameters | GSM8K | MATH | Avg ↑ |
-|--------|-----------|-------|------|-------|
+| Method | Parameters | GSM8K | MATH | Avg. ↑ |
+|------|-------|-------|------|-------|
 | LoRA (r=16) | Baseline | Baseline | Baseline | Baseline |
-| DoRA | Same | Marginal gain | Marginal gain | Marginal gain |
+| DoRA | Same | Slight improvement | Slight improvement | Slight improvement |
 | HiRA | Same | Better than LoRA | Better than LoRA | Better than LoRA |
-| **ABBA (r=8+8)** | **Same** | **Best by significant margin** | **Best by significant margin** | **Best by significant margin** |
+| **ABBA (r=8+8)** | **Same** | **Significant Best** | **Significant Best** | **Significant Best** |
 
 **Commonsense Reasoning (Average across multiple datasets):**
 
-| Method | LLaMA-7B | LLaMA-3-8B | Notes |
-|--------|---------|-----------|-------|
+| Method | LLaMA-7B | LLaMA-3-8B | Note |
+|------|---------|-----------|------|
 | LoRA | Baseline | Baseline | |
-| **ABBA** | **+2–3 pp** | **+2–3 pp** | Consistently best |
+| **ABBA** | **+2-3pp** | **+2-3pp** | Consistent lead |
 
 ### Ablation Study
 
-| Configuration | Performance | Notes |
-|---------------|-------------|-------|
-| $r_1 = r_2 = r/2$ | Best | Equal split maximizes $r_1 r_2$ |
-| $r_1 \neq r_2$ | Slightly worse | Asymmetric allocation is suboptimal |
-| Random init for $(B_1, A_1)$ | Worse | SVD initialization is critical |
-| No scaling factor | Training unstable | Rank stability requires appropriate scaling |
+| Configuration | Performance | Note |
+|------|------|------|
+| $r_1 = r_2 = r/2$ | Best | Equal rank maximizes $r_1 r_2$ |
+| $r_1 \neq r_2$ | Slightly worse | Asymmetric allocation is sub-optimal |
+| Random Init $(B_1, A_1)$ | Worse | SVD initialization is critical |
+| No scaling factor | Unstable training | Rank stability requires proper scaling |
 
 ### Key Findings
-- Matrix reconstruction experiments confirm that ABBA consistently outperforms same-parameter LoRA across various matrix types, validating its higher expressiveness.
-- ABBA converges faster in practice than LoRA and HiRA (visualized via an MNIST toy experiment).
-- Khatri-Rao reconstruction gives ABBA a memory footprint even smaller than HiRA, which must store the full $W_0$.
-- Rank stability analysis shows that $s = 1/(r_1 r_2)$ is the appropriate scaling, consistent with the generalization of rsLoRA's $1/r$ scaling.
+- Matrix reconstruction tests confirm ABBA consistently outperforms LoRA at equivalent parameter counts, verifying higher expressivity.
+- ABBA exhibits faster convergence than LoRA and HiRA.
+- Khatri-Rao reconstruction makes ABBA’s actual memory usage superior to HiRA (as HiRA requires storing full $W_0$).
+- Rank stability analysis (Theorem 2) indicates scaling should be $s \propto 1/\sqrt{r_1 r_2}$.
 
 ## Highlights & Insights
-- **Quadratic rank gain at constant parameter count**: The effective rank of $r/2 \times r/2 = r^2/4$ is the central contribution—equivalent to obtaining $r/4\times$ greater expressiveness within the same budget.
-- **Engineering elegance of Khatri-Rao**: While Hadamard products cannot be directly "distributed" into matrix-vector multiplication, the Khatri-Rao decomposition elegantly avoids full matrix instantiation—a key technical contribution that makes ABBA practically viable.
-- **Fundamental distinction from HiRA**: HiRA fixes one factor as $W_0$ (free but non-learnable); ABBA makes both factors learnable but low-rank (incurring a parameter cost but offering greater flexibility). This raises an interesting trade-off between exploiting pretrained weight structure versus unconstrained learning.
+- **Quadratic Rank Increase**: Boosting effective rank from $r$ to $r^2/4$ without adding parameters is the core contribution—essentially buying $r/4$ times more expressivity for the same "budget."
+- **Engineering via Khatri-Rao**: The Hadamard product does not naturally distribute over matrix-vector multiplication; KR decomposition is the key technical contribution that makes ABBA practically viable.
+- **Distinction from HiRA**: While HiRA uses a fixed $W_0$ (low cost but inflexible), ABBA makes both factors learnable low-rank matrices (parameter cost but high flexibility), representing a superior trade-off.
 
 ## Limitations & Future Work
-- The intermediate activation dimension in Khatri-Rao reconstruction is $r_1 r_2$ (vs. LoRA's $r$), incurring additional FLOPs.
-- ABBA does not admit a closed-form optimal solution (the EYM theorem does not apply directly), so optimization relies on gradient descent.
-- Initialization requires a truncated SVD of $W_0$ per layer, imposing a one-time upfront cost.
-- Validation is limited to LLMs; applicability to vision and multimodal models remains unexplored.
+- The intermediate activation dimension for the Khatri-Rao reconstruction is $r_1 r_2$ (compared to LoRA’s $r$), leading to some increase in FLOPs.
+- Unlike LoRA, ABBA does not have a closed-form optimal solution (EYM theorem does not apply to Hadamard products), so optimization relies entirely on gradient descent.
+- Initialization requires truncated SVD of $W_0$ for each layer, incurring a small one-time pre-processing cost.
+- Validation is limited to LLMs; applicability to vision or multimodal models remains unexplored.
 
 ## Related Work & Insights
-- **vs. LoRA**: ABBA raises the effective rank from $r$ to $r^2/4$ under the same parameter count, a fundamental gain in expressiveness at the cost of slightly more complex initialization and implementation.
-- **vs. HiRA**: HiRA couples updates to the pretrained weights by fixing one Hadamard factor as $W_0$; ABBA is fully learnable and thus more general.
-- **vs. DoRA**: DoRA decouples direction and magnitude but the update remains low-rank; ABBA breaks the rank barrier via the Hadamard product.
+- **vs. LoRA**: ABBA provides a fundamental leap in expressivity from $r$ to $r^2/4$ at the same parameter count, at the cost of slightly more complex initialization.
+- **vs. HiRA**: ABBA is fully learnable and decoupled from the frozen weights, leading to better generalization than HiRA.
+- **vs. DoRA**: While DoRA decouples magnitude and direction, its update remains low-rank; ABBA breaks the rank limit via the Hadamard product.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ The combination of dual low-rank Hadamard parameterization and Khatri-Rao efficient implementation is elegant, and the quadratic rank improvement insight is profound.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Four models, arithmetic and commonsense reasoning, matrix reconstruction experiments, and comprehensive ablations.
-- Writing Quality: ⭐⭐⭐⭐⭐ The narrative flows smoothly from motivation to theory to experiments, with clear figures and tables.
-- Value: ⭐⭐⭐⭐⭐ As a direct improvement over LoRA, ABBA is simple, practical, and yields significant gains, with open-source code.
+- Novelty: ⭐⭐⭐⭐⭐ The combination of Hadamard double low-rank parameterization and KR efficiency is elegant.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive coverage across 4 models, arithmetic/reasoning tasks, and reconstruction tests.
+- Writing Quality: ⭐⭐⭐⭐⭐ Fluent narrative from motivation to theory.
+- Value: ⭐⭐⭐⭐⭐ A direct, practical improvement over LoRA with significant gains and open-source code.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
-- [\[ICLR 2026\] LoFT: Low-Rank Adaptation That Behaves Like Full Fine-Tuning](loft_low-rank_adaptation_that_behaves_like_full_fine-tuning.md)
-- [\[ICLR 2026\] Memba: Membrane-driven Parameter-Efficient Fine-Tuning for Mamba](memba_membrane-driven_parameter-efficient_fine-tuning_for_mamba.md)
-- [\[NeurIPS 2025\] RefLoRA: Refactored Low-Rank Adaptation for Efficient Fine-Tuning of Large Models](../../NeurIPS2025/model_compression/reflora_refactored_low-rank_adaptation_for_efficient_fine-tuning_of_large_models.md)
-- [\[NeurIPS 2025\] Data Efficient Adaptation in Large Language Models via Continuous Low-Rank Fine-Tuning](../../NeurIPS2025/model_compression/data_efficient_adaptation_in_large_language_models_via_continuous_low-rank_fine-.md)
-- [\[ACL 2026\] A Layer-wise Analysis of Supervised Fine-Tuning](../../ACL2026/model_compression/a_layer-wise_analysis_of_supervised_fine-tuning.md)
+- [\[ICLR 2026\] TRAC: Tensor-Train Based Across-Layer Compression for Parameter-Efficient Fine-Tuning](trac_tensor-train_based_across-layer_compression_for_parameter-efficient_fine-tu.md)
+- [\[ICLR 2026\] PiCa: Parameter-Efficient Fine-Tuning with Column Space Projection](pica_parameter-efficient_fine-tuning_with_column_space_projection.md)
+- [\[CVPR 2026\] Mining Attribute Subspaces for Efficient Fine-tuning of 3D Foundation Models](../../CVPR2026/model_compression/mining_attribute_subspaces_for_efficient_fine-tuning_of_3d_foundation_models.md)
+- [\[ICLR 2026\] SumRA: Parameter Efficient Fine-Tuning with Singular Value Decomposition and Summed Orthogonal Basis](sumra_parameter_efficient_fine-tuning_with_singular_value_decomposition_and_summ.md)
+- [\[ICML 2025\] Parameter-Efficient Fine-Tuning of State Space Models](../../ICML2025/model_compression/parameter-efficient_fine-tuning_of_state_space_models.md)
 
 </div>
 

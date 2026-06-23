@@ -2,129 +2,134 @@
 title: >-
   [Paper Note] HistoPrism: Unlocking Functional Pathway Analysis from Pan-Cancer Histology via Gene Expression Prediction
 description: >-
-  [ICLR 2026][Medical NLP][Spatial Transcriptomics] This paper proposes HistoPrism, an efficient Transformer architecture that injects cancer-type conditioning via cross-attention to predict pan-cancer gene expression from…
+  [ICLR 2026][Medical NLP][Pan-Cancer] This paper proposes HistoPrism, an efficient Transformer architecture that predicts pan-cancer gene expression from H&E histology images by injecting cancer type conditions via cross-attention. It introduces the Gene Pathway Coherence (GPC) evaluation framework based on Hallmark/GO pathways, significantly outperforming
 tags:
-  - "ICLR 2026"
-  - "Medical NLP"
-  - "Spatial Transcriptomics"
-  - "Gene Expression Prediction"
-  - "Pan-Cancer"
-  - "Pathway Analysis"
-  - "Transformer"
+  - ICLR 2026
+  - Medical NLP
+  - Pan-Cancer
+  - Transformer
 date: 2026-05-08
-content_hash: 25574ab1498e34e7
+content_hash: 8ff84a8c94199cd7
 ---
-
 # HistoPrism: Unlocking Functional Pathway Analysis from Pan-Cancer Histology via Gene Expression Prediction
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2601.21560](https://arxiv.org/abs/2601.21560)  
 **Code**: [GitHub](https://github.com/susuhu/HistoPrism)  
-**Area**: Medical Imaging / Computational Pathology
+**Area**: Computational Biology  
 **Keywords**: Spatial Transcriptomics, Gene Expression Prediction, Pan-Cancer, Pathway Analysis, Transformer
 
 ## TL;DR
 
-This paper proposes HistoPrism, an efficient Transformer architecture that injects cancer-type conditioning via cross-attention to predict pan-cancer gene expression from H&E histology images. It further introduces the Gene Pathway Coherence (GPC) evaluation framework based on Hallmark/GO pathways, achieving substantial improvements over STPath at the pathway level—particularly on low-variance, biologically fundamental pathways.
+This paper proposes HistoPrism, an efficient Transformer architecture that predicts pan-cancer gene expression from H&E histology images by injecting cancer type conditions via cross-attention. It introduces the Gene Pathway Coherence (GPC) evaluation framework based on Hallmark/GO pathways, significantly outperforming STPath in pathway-level prediction, especially for core biological pathways with low variance.
 
 ## Background & Motivation
 
-**Background**: Spatial transcriptomics (ST) integrates high-resolution imaging with transcriptomic profiling to map gene expression distributions in situ within tissue sections. However, ST is costly, labor-intensive, and difficult to scale. Since H&E-stained whole-slide images (WSIs) are routinely acquired in clinical settings, computationally inferring gene expression from H&E images has become an active research direction.
+**Background**: Spatial transcriptomics (ST) is a technology that maps gene expression distributions in situ by combining high-resolution imaging with transcriptomic analysis. However, ST is expensive, labor-intensive, and difficult to scale. Since H&E-stained whole-slide images (WSIs) are routinely collected in clinical practice, computational inference of gene expression from H&E has become a prominent research direction.
 
-**Limitations of Prior Work**: (1) Early methods (BLEEP, GraphST, TRIPLEX) rely on complex multi-stage pipelines employing contrastive learning (where negative sample definition is non-trivial) or multi-resolution feature engineering (which incurs high computational overhead). (2) Generative approaches (STEM, STFlow) model one-to-many mappings but are validated only on single cancer types and are computationally intensive. (3) STPath adopts BERT-style masked gene modeling to learn pan-cancer predictions across 38k genes, yet assumes that inter-gene correlations remain stable across tissue types—an assumption that may fail under the high heterogeneity of a pan-cancer setting—and its large model size demands substantial training and inference resources.
+**Limitations of Prior Work**: (1) Early methods (BLEEP, GraphST, TRIPLEX) rely on complex multi-stage pipelines, using contrastive learning (difficult to define negative samples) or multi-resolution engineering (high computational overhead); (2) Generative methods (STEM, STFlow) model one-to-many mappings but are validated only on single cancer types and are computationally intensive; (3) STPath utilizes BERT-style masked gene modeling to learn pan-cancer prediction across 38k genes, but assumes stable gene correlations across tissues (prone to failure in heterogeneous pan-cancer settings) and requires high training/inference resources due to its large model size.
 
-**Key Challenge**: Existing evaluation standards focus exclusively on Pearson correlation of top-N highly variable genes (HVGs), neglecting biological coherence at the functional pathway level. A model can achieve high HVG scores while failing to recover biologically meaningful coordinated expression patterns, thereby limiting its clinical translational value.
+**Key Challenge**: Current evaluation benchmarks focus solely on the Pearson correlation of top-N highly variable genes (HVGs), ignoring biological consistency at the functional pathway level. A model might achieve high scores on HVGs while failing to recover biologically meaningful coordinated expression patterns, limiting its clinical translational value.
 
-**Goal**: (1) Design an efficient direct-mapping architecture to replace complex reconstruction-based methods. (2) Establish pathway-level evaluation criteria to measure the biological meaningfulness of predictions.
+**Goal**: (1) Design an efficient direct mapping architecture to replace complex reconstruction-based methods; (2) Establish a pathway-level evaluation standard to measure the biological significance of predictions.
 
-**Key Insight**: The authors argue that gene expression prediction is fundamentally a modality translation task (image → expression) rather than a reconstruction task, making direct mapping more appropriate than an autoencoder framework. Evaluation should shift from isolated gene-level variance to functional pathway-level coherence.
+**Key Insight**: The authors argue that gene expression prediction is essentially a modality translation task (image → expression) rather than a reconstruction task, making direct mapping more suitable than autoencoder frameworks. Evaluation should shift from isolated gene-level variance toward functional pathway-level coherence.
 
-**Core Idea**: Inject cancer-type conditioning via cross-attention, capture inter-patch context with a Transformer encoder, directly regress gene expression via an MLP head, and assess biological fidelity using the pathway-level GPC benchmark.
+**Core Idea**: Use cross-attention to inject cancer-type conditions + Transformer encoder to capture inter-patch context + MLP to directly regress gene expression, and evaluate biological fidelity using the pathway-level GPC benchmark.
 
 ## Method
 
 ### Overall Architecture
 
-The input consists of patch-level features $\mathbf{x}_i \in \mathbb{R}^{D_{img}}$ extracted from H&E WSIs by a pathology foundation model (UNI PFM) along with a cancer-type one-hot encoding $\mathbf{c}$. These are passed through a cross-attention conditioning module, a Transformer encoder that models inter-patch context, and an MLP regression head to predict the $D_{gene}$-dimensional gene expression for each patch.
+HistoPrism treats "predicting gene expression from H&E images" as a **direct modality translation** task, rather than a masked reconstruction task like STPath. The workflow is streamlined: H&E WSIs are first processed by a pathology foundation model (UNI PFM) to extract features $\mathbf{x}_i \in \mathbb{R}^{D_{img}}$ for each patch. These patch features are conditioned using a cancer-type one-hot encoding $\mathbf{c}$ via cross-attention, injecting global information about the cancer type. The conditioned features pass through a Transformer encoder to model spatial context between patches, and finally, an MLP regression head directly outputs the $D_{gene}$-dimensional gene expression for each patch. Beside this prediction backbone, the paper proposes a separate pathway-level evaluation framework, GPC, to measure the biological validity of the predictions.
+
+```mermaid
+flowchart TD
+    A["H&E Whole Slide Image (WSI)"] --> B["UNI Pathology Foundation Model<br/>Extract patch features x_i"]
+    C["Cancer Type One-hot Encoding c"] --> D["Pan-cancer Conditioning Cross-Attention<br/>c as K/V, patch as Q"]
+    B --> D
+    D --> E["Transformer Encoder<br/>Aggregate inter-patch spatial context"]
+    E --> F["MLP Regression Head<br/>Direct patch-wise expression regression"]
+    F --> G["Predict Full Transcriptome Expression"]
+    G --> H["Gene Pathway Coherence Evaluation<br/>Hallmark/GO Pathway Coherence Score"]
+```
 
 ### Key Designs
 
-1. **Pan-Cancer Conditioning Cross-Attention Module**:
+**1. Pan-cancer Conditioned Cross-Attention: Handling Multiple Cancers with One Model**
 
-    - **Function**: Injects global cancer-type information into local patch representations.
-    - **Mechanism**: The one-hot cancer-type vector is projected via a linear layer to $\mathbf{c}_{\text{emb}} \in \mathbb{R}^{D_{img}}$, serving as Key and Value; patch features serve as Query. Standard cross-attention produces conditioned patch features $\mathbf{X}_{\text{cond}}$.
-    - **Design Motivation**: Enables the model to modulate patch representations according to cancer type, learning both pan-cancer shared patterns and cancer-type-specific patterns. Ablation studies confirm that removing cross-attention consistently degrades performance across all cancer types.
+The difficulty in pan-cancer settings lies in the vast differences in expression patterns across cancer types; training on them mixed together can cause interference. The approach here maps the one-hot cancer type vector through a linear layer to $\mathbf{c}_{\text{emb}} \in \mathbb{R}^{D_{img}}$, serving as the Key and Value for cross-attention, while patch features act as the Query to calculate conditioned patch features $\mathbf{X}_{\text{cond}}$. This ensures each patch representation is modulated by the current cancer type, allowing the model to learn both pan-cancer shared patterns and cancer-specific patterns. Ablation studies show performance drops across all cancer types when this cross-attention is removed, validating its effectiveness.
 
-2. **Transformer Encoder for Contextual Aggregation**:
+**2. Transformer Encoder for Context Aggregation: From Patches to Tissue Structures**
 
-    - **Function**: Captures short- and long-range spatial dependencies among patches.
-    - **Mechanism**: Conditioned patch features are first projected to a hidden dimension $D_{hidden}=256$, then processed by a 2-layer, 8-head Transformer encoder, yielding $\mathbf{H}_{\text{latent}} \in \mathbb{R}^{N \times D_{hidden}}$.
-    - **Design Motivation**: Models high-level tissue structures such as tumor boundaries and immune infiltration patterns. Notably, ablation experiments reveal that **omitting positional encodings yields better performance**—likely because UNI PFM features already encode morphological information, allowing the Transformer to function as a permutation-invariant set operator that exploits global compositional structure rather than fixed spatial positions.
+A single patch only captures local morphology, but gene expression is often related to higher-level tissue structures like tumor boundaries or immune infiltration. Conditioned patch features are projected to a hidden dimension $D_{hidden}=256$ and passed through a 2-layer, 8-head Transformer encoder, outputting $\mathbf{H}_{\text{latent}} \in \mathbb{R}^{N \times D_{hidden}}$, allowing each patch to aggregate information from short-range and long-range neighbors. A counter-intuitive finding was that **excluding positional encodings yielded better results**—likely because UNI PFM features already carry morphological information, making it more appropriate to treat the Transformer as a permutation-invariant set function utilizing global composition.
 
-3. **Gene Pathway Coherence (GPC) Evaluation Framework**:
+**3. Gene Pathway Coherence (GPC): Shifting Evaluation from Gene Variance to Functional Pathways**
 
-    - **Function**: Assesses the biological fidelity of predictions at the functional pathway level.
-    - **Mechanism**: 87 non-redundant pathways are selected from MSigDB Hallmark (50 pathways) and GO databases (50–100 genes per pathway; Jaccard similarity < 0.1 for deduplication). For each pathway, Pearson correlation coefficients across patches are computed for all member genes and averaged: $s_m = \frac{1}{N} \sum_{i=1}^{N} \frac{1}{|P_m|} \sum_{g \in P_m} r_{i,g}$
-    - **Design Motivation**: HVG metrics focus exclusively on high-variance genes, overlooking low-variance pathways that are biologically critical. GPC evaluates the recovery of coordinated expression patterns, better reflecting clinical relevance.
+Existing evaluations focus on Pearson correlations of top-N highly variable genes (HVGs). A model can score highly on HVGs while failing to recover biologically meaningful coordinated expression; pathways that are low-variance but correspond to core biological processes are often ignored. GPC takes a different perspective: it filters 87 non-redundant pathways (50–100 genes each, Jaccard similarity < 0.1) from MSigDB Hallmark (50 pathways) and GO databases. For each pathway, the Pearson correlation coefficient across patches is calculated for member genes and averaged:
+
+$$s_m = \frac{1}{N} \sum_{i=1}^{N} \frac{1}{|P_m|} \sum_{g \in P_m} r_{i,g}$$
+
+Higher $s_m$ indicates more coordinated expression within the pathway, signifying that the prediction is closer to the true functional biological state rather than just predicting isolated high-variance genes.
 
 ### Loss & Training
 
-The model is trained end-to-end with an MSE loss: $\mathcal{L}_{\text{MSE}} = \frac{1}{N} \sum_{i \in N} (\hat{y}_i - y_i)^2$. Training is conducted on the HEST1k dataset, which aggregates spatial transcriptomics data from 153 cohorts across 36 independent studies. HistoPrism requires only approximately 500 WSIs for training—roughly half of what STPath requires.
+The model is trained end-to-end using the MSE loss function: $\mathcal{L}_{\text{MSE}} = \frac{1}{N} \sum_{i \in N} (\hat{y}_i - y_i)^2$. Training is conducted on the HEST1k dataset, which aggregates spatial transcriptomics data from 153 cohorts and 36 independent studies. HistoPrism requires only approximately 500 WSIs for training, about half that of STPath.
 
 ## Key Experimental Results
 
-### Main Results (Top-50 HVG PCC)
+### Main Results (Top50 HVG PCC)
 
-| Cancer Type | STPath (Micro-avg) | HistoPrism (Micro-avg) |
-|---|---|---|
+| Cancer Type | STPath (Micro-avg) | HistoPrism (Ours) (Micro-avg) |
+|------|-------------|-----------------|
 | CCRCC | 0.117 | **0.206** |
 | COAD | **0.459** | 0.397 |
 | HCC | 0.094 | **0.113** |
 | IDC | **0.629** | 0.477 |
 | PRAD | 0.255 | **0.317** |
-| Overall Average (Micro-avg) | 0.292 | **0.318** |
+| Average (Micro-avg) | 0.292 | **0.318** |
 
-### GPC Pathway-Level Evaluation
+### GPC Pathway Evaluation
 
-| Pathway Database | HistoPrism Win Rate |
-|---|---|
+| Pathway Database | HistoPrism (Ours) Win Rate |
+|-----------|-------------------|
 | Hallmark Pathways (50) | **86.0%** |
 | GO Pathways (87) | **74.7%** |
 
 ### Clustering Quality Comparison
 
 | Model | AMI ↑ | ARI ↑ |
-|---|---|---|
+|------|-------|-------|
 | STPath | 0.395 | 0.402 |
-| **HistoPrism** | **0.623** | **0.521** |
+| **HistoPrism (Ours)** | **0.623** | **0.521** |
 
 ### Key Findings
-- HistoPrism surpasses STPath on micro-averaged PCC (0.318 vs. 0.292); micro-averaging better reflects overall prediction quality across cancer types.
-- **Pathway-level prediction is the most significant highlight**: HistoPrism outperforms STPath on 86% of Hallmark pathways and 75% of GO pathways, with the largest advantage on low-variance pathways—which typically correspond to core biological processes.
-- In clustering experiments, AMI improves from 0.395 to 0.623 (+57.7%), indicating that HistoPrism's whole-transcriptome predictions exhibit greater overall biological coherence.
-- Positional encodings do not benefit performance, suggesting that the prediction task is primarily local and that PFM features already capture morphological information.
+- HistoPrism outperforms STPath in micro-average PCC (0.318 vs 0.292), which better reflects overall prediction quality across cancer types.
+- **Pathway-level prediction is the highlight**: HistoPrism excels in 86% of Hallmark pathways and 75% of GO pathways, with the greatest advantage seen in low-variance pathways corresponding to core biological processes.
+- Clustering experiments showed AMI increased from 0.395 to 0.623 (+57.7%), indicating that HistoPrism's full-transcriptome predictions possess higher global biological consistency.
+- Positional encodings do not benefit performance, suggesting the task is primarily local and morphology captures sufficient spatial info via the PFM.
 
 ## Highlights & Insights
-- **The introduction of the GPC evaluation framework** is the most important contribution of this paper—shifting evaluation from isolated high-variance genes to the coordinated expression of functional pathways, which more faithfully reflects clinical and biological requirements. This carries greater methodological significance than simply improving HVG PCC.
-- The choice of a direct-mapping architecture over an autoencoder framework reflects deep insight: gene expression prediction is a unidirectional translation task, and no input-side gene information is available for reconstruction, making the inductive bias of an autoencoder a liability rather than an asset.
-- The cross-attention design for pan-cancer conditioning is elegant and efficient, and its necessity is validated by the performance drop observed upon its removal in ablation studies.
+- **The proposal of the GPC evaluation framework** is the most significant contribution—shifting evaluation from isolated high-variance genes to functional pathway coordination, which aligns better with clinical and biological needs. This holds greater methodological importance than mere improvements in HVG PCC.
+- The choice of a direct mapping architecture over an autoencoder framework is insightful. Since gene expression prediction is a one-way translation task without input-side gene information for reconstruction, the inductive bias of an autoencoder becomes a burden.
+- The use of cross-attention for pan-cancer conditioning is simple and efficient, and its necessity is validated by performance drops in ablation studies.
 
 ## Limitations & Future Work
-- STPath still leads in macro-averaged PCC on IDC (invasive ductal carcinoma) and COAD (colon adenocarcinoma), indicating room for improvement in cancer-type-specific learning for HistoPrism.
-- The pathway selection criteria in the GPC framework (50–100 genes, Jaccard < 0.1) are manually defined; different thresholds may affect evaluation conclusions.
-- Only UNI is used as the PFM feature extractor; the impact of alternative PFMs (e.g., GigaPath, CTransPath) has not been investigated.
-- Generative methods (STEM, STFlow) perform poorly in the pan-cancer setting, though the authors acknowledge that computational constraints led them to train these baselines on only a subset of genes.
+- STPath still leads in macro-average PCC for specific types like IDC (Infiltrating Ductal Carcinoma) and COAD (Colon Adenocarcinoma), indicating room for improvement in cancer-specific learning.
+- The pathway selection criteria for the GPC framework (50-100 genes, Jaccard < 0.1) are heuristic; different thresholds might influence evaluation conclusions.
+- Only the UNI PFM was used as a feature extractor; the impact of different PFMs (e.g., GigaPath, CTransPath) remains untested.
+- While generative methods (STEM, STFlow) performed poorly in the pan-cancer setting, the authors acknowledge they were limited by computational resources and only trained on subsets of genes for these baselines.
 
 ## Related Work & Insights
-- **vs. STPath**: STPath is the current SOTA foundation model for pan-cancer gene prediction, employing BERT-style masked gene modeling to learn inter-gene dependencies. HistoPrism comprehensively surpasses STPath at the pathway level but still falls short on HVG metrics for certain cancer types. The fundamental difference lies in architectural philosophy: STPath is reconstruction-based (predicting masked genes), while HistoPrism is direct-mapping-based (regressing expression from images).
-- **vs. BLEEP**: BLEEP uses contrastive learning to align H&E images and gene expression into a joint space, performing nearest-neighbor retrieval at inference. Retrieval-based inference limits generalization to unseen samples, and negative sample definition is inherently ambiguous in pathology.
-- **vs. TRIPLEX**: TRIPLEX introduces a multi-resolution distillation architecture with high computational complexity and is validated only on single cancer types. HistoPrism substantially outperforms TRIPLEX in both efficiency and generalizability.
+- **vs STPath**: STPath is the current SOTA foundation model for pan-cancer gene prediction, using BERT-style masked modeling for gene dependencies. HistoPrism dominates in pathway-level metrics but trails on HVGs for certain cancers. The core difference lies in philosophy: STPath is reconstruction-based, HistoPrism is direct mapping.
+- **vs BLEEP**: BLEEP uses contrastive learning to align H&E and gene expressions into a joint space, using nearest-neighbor retrieval for inference. Retrieval-based inference limits generalization to unseen samples, and negative samples are ambiguously defined in pathology.
+- **vs TRIPLEX**: TRIPLEX introduces a multi-resolution distillation architecture with high computational complexity, validated only on single cancer types. HistoPrism is superior in efficiency and generalization.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ — The GPC evaluation framework represents an important methodological contribution; the architectural design is clean but lacks breakthrough innovation.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Covers 10 cancer types, multiple baselines, pathway-level evaluation, clustering analysis, efficiency comparison, and ablation studies; highly comprehensive.
-- **Writing Quality**: ⭐⭐⭐⭐ — Problem motivation and evaluation framework are clearly articulated; the methods section is well-formalized.
-- **Value**: ⭐⭐⭐⭐⭐ — The GPC evaluation paradigm has far-reaching implications for computational pathology; HistoPrism itself is a practical and efficient tool.
+- Novelty: ⭐⭐⭐⭐ GPC framework provides important methodological contributions; architecture is clean but not revolutionary.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 10 cancer types, multiple baselines, pathway-level evaluation, clustering, efficiency, and ablation studies.
+- Writing Quality: ⭐⭐⭐⭐ Motivation and evaluation frameworks are clearly explained; methodologies are well-formalized.
+- Value: ⭐⭐⭐⭐⭐ The GPC evaluation paradigm could have a profound impact on computational pathology; HistoPrism itself is a practical, high-efficiency tool.
 
 <!-- RELATED:START -->
 
@@ -134,9 +139,9 @@ The model is trained end-to-end with an MSE loss: $\mathcal{L}_{\text{MSE}} = \f
 
 - [\[ICLR 2026\] mCLM: A Modular Chemical Language Model that Generates Functional and Makeable Molecules](mclm_a_modular_chemical_language_model_that_generates_functional_and_makeable_mo.md)
 - [\[ICLR 2026\] SurvHTE-Bench: A Benchmark for Heterogeneous Treatment Effect Estimation in Survival Analysis](survhte-bench_a_benchmark_for_heterogeneous_treatment_effect_estimation_in_survi.md)
+- [\[ICLR 2026\] Cancer-Myth: Evaluating Large Language Models on Patient Questions with False Presuppositions](cancer-myth_evaluating_large_language_models_on_patient_questions_with_false_pre.md)
 - [\[ACL 2026\] ReMedi: Reasoner for Medical Clinical Prediction](../../ACL2026/medical_nlp/remedi_reasoner_for_medical_clinical_prediction.md)
 - [\[ACL 2026\] Query Pipeline Optimization for Cancer Patient Question Answering Systems](../../ACL2026/medical_nlp/query_pipeline_optimization_for_cancer_patient_question_answering_systems.md)
-- [\[NeurIPS 2025\] Position: Thematic Analysis of Unstructured Clinical Transcripts with Large Language Models](../../NeurIPS2025/medical_nlp/position_thematic_analysis_of_unstructured_clinical_transcripts_with_large_langu.md)
 
 </div>
 

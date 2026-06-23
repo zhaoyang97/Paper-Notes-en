@@ -1,8 +1,8 @@
 ---
 title: >-
-  ICLR2026 Medical LLM Papers · 13 Notes
+  ICLR2026 Medical LLM Papers · 20 Notes
 description: >-
-  13 ICLR2026 papers in the Medical LLM area, covering Medical Imaging, Dialogue, Reasoning, Agents and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  20 ICLR2026 papers in the Medical LLM area, covering Medical Imaging, Dialogue, LLM, Question Answering, Reasoning, Adversarial Robustness and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "ICLR2026"
   - "Medical LLM"
@@ -10,95 +10,139 @@ tags:
   - "paper summaries"
   - "Medical Imaging"
   - "Dialogue"
+  - "LLM"
+  - "Question Answering"
   - "Reasoning"
-  - "Agents"
+  - "Adversarial Robustness"
 item_list:
   - u: "atpo_adaptive_tree_policy_optimization_for_multi-turn_medical_dialogue/"
     t: "ATPO: Adaptive Tree Policy Optimization for Multi-Turn Medical Dialogue"
-  - u: "biomedsql_text-to-sql_for_scientific_reasoning_on_biomedical_knowledge_bases/"
-    t: "BiomedSQL: Text-to-SQL for Scientific Reasoning on Biomedical Knowledge Bases"
+  - u: "can_large_language_models_match_the_conclusions_of_systematic_reviews/"
+    t: "Can Large Language Models Match the Conclusions of Systematic Reviews?"
   - u: "can_saes_reveal_and_mitigate_racial_biases_of_llms_in_healthcare/"
     t: "Can SAEs Reveal and Mitigate Racial Biases of LLMs in Healthcare?"
+  - u: "cancer-myth_evaluating_large_language_models_on_patient_questions_with_false_pre/"
+    t: "Cancer-Myth: Evaluating Large Language Models on Patient Questions with False Presuppositions"
+  - u: "counselbench_a_large-scale_expert_evaluation_and_adversarial_benchmarking_of_lar/"
+    t: "CounselBench: A Large-Scale Expert Evaluation and Adversarial Benchmarking of Large Language Models in Mental Health Question Answering"
   - u: "counselbench_llm_mental_health_qa/"
     t: "CounselBench: A Large-Scale Expert Evaluation and Adversarial Benchmarking of LLMs in Mental Health QA"
-  - u: "emr-agent_automating_cohort_and_feature_extraction_from_emr_databases/"
-    t: "EMR-AGENT: Automating Cohort and Feature Extraction from EMR Databases"
+  - u: "criticadviserreviser_cyclic_refinement_towards_high-quality_emr_corpus_generatio/"
+    t: "Critic-Adviser-Reviser Cyclic Refinement: Towards High-Quality EMR Corpus Generation with LLMs"
+  - u: "doctor-r1_mastering_clinical_inquiry_with_experiential_agentic_reinforcement_lea/"
+    t: "Doctor-R1: Mastering Clinical Inquiry with Experiential Agentic Reinforcement Learning"
   - u: "from_conversation_to_query_execution_benchmarking_user_and_tool_interactions_for/"
     t: "From Conversation to Query Execution: Benchmarking User and Tool Interactions for EHR Database Agents"
+  - u: "from_medical_records_to_diagnostic_dialogues_a_clinical-grounded_approach_and_da/"
+    t: "From Medical Records to Diagnostic Dialogues: A Clinical-Grounded Approach and Dataset for Psychiatric Comorbidity"
+  - u: "galax_graph-augmented_language_model_for_explainable_reinforcement-guided_subgra/"
+    t: "GALAX: Graph-Augmented Language Model for Explainable Reinforcement-Guided Subgraph Reasoning in Precision Medicine"
   - u: "histoprism_unlocking_functional_pathway_analysis_from_pan-cancer_histology_via_g/"
     t: "HistoPrism: Unlocking Functional Pathway Analysis from Pan-Cancer Histology via Gene Expression Prediction"
+  - u: "knowguard_knowledge-driven_abstention_for_multi-round_clinical_reasoning/"
+    t: "KnowGuard: Knowledge-Driven Abstention for Multi-Round Clinical Reasoning"
   - u: "knowledgeable_language_models_as_black-box_optimizers_for_personalized_medicine/"
     t: "Knowledgeable Language Models as Black-Box Optimizers for Personalized Medicine"
   - u: "mclm_a_modular_chemical_language_model_that_generates_functional_and_makeable_mo/"
     t: "mCLM: A Modular Chemical Language Model that Generates Functional and Makeable Molecules"
   - u: "medagentgym_agentic_training_biomedical/"
     t: "MedAgentGym: A Scalable Agentic Training Environment for Code-Centric Reasoning in Biomedical Data Science"
+  - u: "medarabench_large-scale_arabic_medical_question_answering_dataset_and_benchmark/"
+    t: "MedAraBench: Large-scale Arabic Medical Question Answering Dataset and Benchmark"
   - u: "resp-agent_an_agent-based_system_for_multimodal_respiratory_sound_generation_and/"
     t: "Resp-Agent: An Agent-Based System for Multimodal Respiratory Sound Generation and Disease Diagnosis"
   - u: "simpletom_exposing_the_gap_between_explicit_tom_inference_and_implicit_tom_appli/"
     t: "SimpleToM: Exposing the Gap between Explicit ToM Inference and Implicit ToM Application in LLMs"
   - u: "survhte-bench_a_benchmark_for_heterogeneous_treatment_effect_estimation_in_survi/"
     t: "SurvHTE-Bench: A Benchmark for Heterogeneous Treatment Effect Estimation in Survival Analysis"
-item_total: 13
+item_total: 20
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # 🩺 Medical LLM
 
-**🔬 ICLR2026** · **13** paper notes
+**🔬 ICLR2026** · **20** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (1)](../../CVPR2026/medical_nlp/index.md) · [🧪 ICML2026 (2)](../../ICML2026/medical_nlp/index.md) · [💬 ACL2026 (47)](../../ACL2026/medical_nlp/index.md) · [🤖 AAAI2026 (12)](../../AAAI2026/medical_nlp/index.md) · [🧠 NeurIPS2025 (16)](../../NeurIPS2025/medical_nlp/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (1)](../../CVPR2026/medical_nlp/index.md) · [💬 ACL2026 (47)](../../ACL2026/medical_nlp/index.md) · [🧪 ICML2026 (4)](../../ICML2026/medical_nlp/index.md) · [🤖 AAAI2026 (12)](../../AAAI2026/medical_nlp/index.md) · [🧠 NeurIPS2025 (16)](../../NeurIPS2025/medical_nlp/index.md)
 
-🔥 **Top topics:** Medical Imaging ×3 · Dialogue ×2 · Reasoning ×2 · Agents ×2
+🔥 **Top topics:** Medical Imaging ×6 · Dialogue ×3 · LLM ×3 · Question Answering ×3 · Reasoning ×3
 
 **[ATPO: Adaptive Tree Policy Optimization for Multi-Turn Medical Dialogue](atpo_adaptive_tree_policy_optimization_for_multi-turn_medical_dialogue.md)**
 
-:   This paper proposes ATPO (Adaptive Tree Policy Optimization), which models multi-turn medical dialogue as a hierarchical Markov decision process (H-MDP). ATPO dynamically allocates rollout budgets via an uncertainty-aware adaptive tree expansion mechanism, using a composite uncertainty measure combining Bellman error and action-value variance to guide exploration. With Qwen3-8B, ATPO surpasses GPT-4o on three medical dialogue benchmarks.
+:   This paper proposes the ATPO (Adaptive Tree Policy Optimization) algorithm, which models multi-turn medical dialogues as a Hierarchical Markov Decision Process (H-MDP). It dynamically allocates rollout budgets through an uncertainty-aware adaptive tree expansion mechanism, guiding exploration via a composite uncertainty measure of Bellman error and action-value variance. Using Qwen3-8B, it outperforms GPT-4o on three medical dialogue benchmarks.
 
-**[BiomedSQL: Text-to-SQL for Scientific Reasoning on Biomedical Knowledge Bases](biomedsql_text-to-sql_for_scientific_reasoning_on_biomedical_knowledge_bases.md)**
+**[Can Large Language Models Match the Conclusions of Systematic Reviews?](can_large_language_models_match_the_conclusions_of_systematic_reviews.md)**
 
-:   This paper introduces BiomedSQL, the first benchmark specifically designed to evaluate the scientific reasoning capabilities of Text-to-SQL systems on biomedical knowledge bases. It comprises 68,000 question/SQL/answer triples and reveals a substantial gap between the best-performing model (GPT-o3-mini, 62.6%) and domain experts (90%).
+:   The authors constructed the **MedEvidence** benchmark—rewriting conclusions from 100 Cochrane Systematic Reviews (SRs) into 284 closed-ended questions paired with their source studies. This allows LLMs to replicate expert conclusions under "same material" controlled conditions. Evaluating 25 LLMs revealed: reasoning models are not necessarily better, marginal gains diminish with model size, and medical fine-tuning often decreases performance. Models generally lack "scientific skepticism" regarding low-quality evidence, failing to match expert conclusions in at least 37% of cases.
 
 **[Can SAEs Reveal and Mitigate Racial Biases of LLMs in Healthcare?](can_saes_reveal_and_mitigate_racial_biases_of_llms_in_healthcare.md)**
 
-:   This paper investigates whether Sparse Autoencoders (SAEs) can reveal and mitigate racial biases in LLMs within clinical settings. SAEs successfully identify harmful race-associated features (e.g., co-activation of "Black" with violence-related terms), but their effectiveness at bias mitigation in complex clinical tasks is limited (FLDD < 3%), falling far short of simple prompting strategies (FLDD 8–15%).
+:   This paper investigates whether Sparse Autoencoders (SAEs) can reveal and mitigate racial biases in LLMs within healthcare contexts. It finds that SAEs can identify harmful racial associations (e.g., Black patients with violence), but the effectiveness of mitigating bias in complex clinical tasks is limited (FLDD < 3%), significantly underperforming simple prompting strategies (FLDD 8-15%).
+
+**[Cancer-Myth: Evaluating Large Language Models on Patient Questions with False Presuppositions](cancer-myth_evaluating_large_language_models_on_patient_questions_with_false_pre.md)**
+
+:   This paper constructs Cancer-Myth—an adversarial dataset verified by hemato-oncologists containing 585 oncology patient questions with false presuppositions. The study finds that leading LLMs, including GPT-5, Gemini-2.5-Pro, and Claude-4-Sonnet, achieve a success rate of no more than 43% in correcting these false presuppositions. Furthermore, mitigation techniques such as defensive prompting trigger significant over-corrections on "no-false-presupposition" questions and degrade performance on other medical benchmarks, highlighting a critical safety gap in medical LLM patient communication.
+
+**[CounselBench: A Large-Scale Expert Evaluation and Adversarial Benchmarking of Large Language Models in Mental Health Question Answering](counselbench_a_large-scale_expert_evaluation_and_adversarial_benchmarking_of_lar.md)**
+
+:   The authors collaborated with 100 licensed mental health professionals to construct CounselBench, a dual-component benchmark for **open-ended mental health QA**. It includes 2,000 expert evaluations with dimension-level scoring and span annotations (CounselBench-Eval), and 120 clinician-authored adversarial prompts designed to induce specific failure modes (CounselBench-Adv). The study reveals that LLMs currently exhibit "high scores alongside persistent safety hazards" in counseling scenarios and demonstrates that LLM-as-Judge is unreliable in this high-risk domain.
 
 **[CounselBench: A Large-Scale Expert Evaluation and Adversarial Benchmarking of LLMs in Mental Health QA](counselbench_llm_mental_health_qa.md)**
 
-:   CounselBench is a two-component benchmark constructed with 100 licensed mental health professionals — CounselBench-EVAL (2,000 expert annotations across six clinical dimensions) and CounselBench-Adv (120 adversarial questions with 1,080 annotated responses) — systematically revealing that LLMs achieve superficially high scores in mental health open-ended QA while exhibiting safety risks such as over-generalization and unsolicited medical advice, and demonstrating that LLM-as-Judge is severely unreliable in safety-critical domains.
+:   In collaboration with 100 licensed mental health experts, CounselBench was constructed as a dual-component benchmark—CounselBench-EVAL (2,000 expert evaluations across six dimensions) and CounselBench-Adv (120 adversarial questions with 1,080 response annotations). The study systematically reveals that while LLMs achieve high superficial scores in open-ended mental health QA, they harbor safety hazards such as overgeneralization and unauthorized medical advice, while also proving that LLM-as-Judge is severely unreliable in safety-critical domains.
 
-**[EMR-AGENT: Automating Cohort and Feature Extraction from EMR Databases](emr-agent_automating_cohort_and_feature_extraction_from_emr_databases.md)**
+**[Critic-Adviser-Reviser Cyclic Refinement: Towards High-Quality EMR Corpus Generation with LLMs](criticadviserreviser_cyclic_refinement_towards_high-quality_emr_corpus_generatio.md)**
 
-:   This paper proposes EMR-AGENT, the first LLM agent-based framework for automated EMR preprocessing. By replacing hand-crafted rules with dynamic SQL interaction, it achieves cross-database cohort selection, feature extraction, and code mapping, demonstrating strong performance and generalization on MIMIC-III, eICU, and SICdb.
+:   Addressing the issues where LLMs directly generating Electronic Medical Records (EMR) "only imitate, suffer from distribution distortion, and lack quality constraints," this paper proposes LLM-CARe. This framework employs a "corpus → section → document" three-level granularity, with each level refined by a Critic/Adviser/Reviser agent cycle. Without accessing any real EMR text, it significantly pushes the quality of synthetic records and downstream clinical task performance beyond the SOTA.
+
+**[Doctor-R1: Mastering Clinical Inquiry with Experiential Agentic Reinforcement Learning](doctor-r1_mastering_clinical_inquiry_with_experiential_agentic_reinforcement_lea.md)**
+
+:   Doctor-R1 models outpatient inquiry as a partially observable multi-turn decision-making process. By utilizing a "multi-agent interaction environment + two-level reward architecture + experience memory" for experiential agentic reinforcement learning, an 8B doctor agent learns to ask questions strategically and empathetically while maintaining diagnostic accuracy. It outperforms 32B open-source models and closed-source models like GPT-4.1 on HealthBench and MAQuE.
 
 **[From Conversation to Query Execution: Benchmarking User and Tool Interactions for EHR Database Agents](from_conversation_to_query_execution_benchmarking_user_and_tool_interactions_for.md)**
 
-:   This paper proposes EHR-ChatQA, the first benchmark to evaluate the end-to-end interactive workflow of database agents in electronic health record (EHR) settings — covering ambiguity clarification, terminology mismatch resolution, SQL generation, and answer return. Evaluation reveals that the strongest model (o4-mini) achieves Pass@5 above 90% but suffers a substantial drop in Pass∧5 (all-success rate), with a gap of up to 60%, exposing critical robustness deficiencies in safety-sensitive clinical domains.
+:   Proposes the EHR-ChatQA benchmark to evaluate end-to-end interaction workflows of database agents in EHR scenarios (clarifying vague queries → resolving term mismatches → generating SQL → returning answers). Findings reveal that while the strongest model (o4-mini) achieves over 90% Pass@5, its Pass∧5 (all successful) drops significantly (gap up to 60%), exposing robustness defects in safety-critical domains.
+
+**[From Medical Records to Diagnostic Dialogues: A Clinical-Grounded Approach and Dataset for Psychiatric Comorbidity](from_medical_records_to_diagnostic_dialogues_a_clinical-grounded_approach_and_da.md)**
+
+:   This paper proposes a two-stage pipeline of "social media posts $\rightarrow$ structured electronic medical records (EMR) $\rightarrow$ multi-agent diagnostic dialogues." By adapting the SCID-5 clinical interview protocol into a Hierarchical Diagnostic State Machine (HDSM) and a Diagnostic Context Tree (DCT), the authors construct PsyCoTalk—the first large-scale psychiatric comorbidity diagnostic dialogue dataset (3,000 multi-turn dialogues)—validated by practicing psychiatrists for clinical authenticity.
+
+**[GALAX: Graph-Augmented Language Model for Explainable Reinforcement-Guided Subgraph Reasoning in Precision Medicine](galax_graph-augmented_language_model_for_explainable_reinforcement-guided_subgra.md)**
+
+:   GALAX treats a pre-trained GNN as a "process judge," using reinforcement learning to guide an LLM in incrementally constructing disease-related subgraphs. This enables explainable, patient-specific cancer target prediction without the need for step-by-step annotations.
 
 **[HistoPrism: Unlocking Functional Pathway Analysis from Pan-Cancer Histology via Gene Expression Prediction](histoprism_unlocking_functional_pathway_analysis_from_pan-cancer_histology_via_g.md)**
 
-:   This paper proposes HistoPrism, an efficient Transformer architecture that injects cancer-type conditioning via cross-attention to predict pan-cancer gene expression from H&E histology images. It further introduces the Gene Pathway Coherence (GPC) evaluation framework based on Hallmark/GO pathways, achieving substantial improvements over STPath at the pathway level—particularly on low-variance, biologically fundamental pathways.
+:   This paper proposes HistoPrism, an efficient Transformer architecture that predicts pan-cancer gene expression from H&E histology images by injecting cancer type conditions via cross-attention. It introduces the Gene Pathway Coherence (GPC) evaluation framework based on Hallmark/GO pathways, significantly outperforming STPath in pathway-level prediction, especially for core biological pathways with low variance.
+
+**[KnowGuard: Knowledge-Driven Abstention for Multi-Round Clinical Reasoning](knowguard_knowledge-driven_abstention_for_multi-round_clinical_reasoning.md)**
+
+:   Addressing the overconfidence issue where LLMs provide diagnoses despite incomplete information in multi-round clinical consultations, KnowGuard proposes an "investigate-before-abstain" paradigm. This approach shifts abstention decisions from model self-assessment to systematic cross-round evidence exploration over a medical knowledge graph. By using a rolling-updated contextual evidence pool to identify "missing evidence," the model decides whether to continue questioning or provide a diagnosis. On a self-constructed open-ended multi-round benchmark, KnowGuard improved average diagnostic accuracy by 3.93% and converged in an average of only 5.74 rounds.
 
 **[Knowledgeable Language Models as Black-Box Optimizers for Personalized Medicine](knowledgeable_language_models_as_black-box_optimizers_for_personalized_medicine.md)**
 
-:   This paper proposes LEON (LLM-based Entropy-guided Optimization with kNowledgeable priors), a mathematically rigorous framework that models personalized treatment design as a constrained conditional black-box optimization problem. Through entropy constraints and an adversarial source critic, LEON guides an LLM to serve as a zero-shot optimizer that proposes personalized treatment plans without any fine-tuning.
+:   This paper proposes LEON (LLM-based Entropy-guided Optimization with kNowledgeable priors), a mathematically rigorous method that models personalized medical treatment design as a conditional black-box optimization problem. It guides an LLM to serve as a zero-shot optimizer for personalized treatment plans without fine-tuning, utilizing entropy constraints and an adversarial source critic model.
 
 **[mCLM: A Modular Chemical Language Model that Generates Functional and Makeable Molecules](mclm_a_modular_chemical_language_model_that_generates_functional_and_makeable_mo.md)**
 
-:   This paper proposes mCLM (Modular Chemical Language Model), which represents molecules as sequences of synthesizable building blocks, enabling LLMs to generate molecules that simultaneously satisfy pharmacological function and automated synthesis feasibility. mCLM achieves significant improvements in pharmacokinetic and toxicity properties across 430 FDA-approved drugs.
+:   The paper proposes mCLM (Modular Chemical Language Model), which represents molecules as sequences of synthesizable building blocks. This allows LLMs to generate molecules that satisfy both pharmacological functions and automated synthesis feasibility, showing significant improvements in pharmacokinetic and toxicological properties across 430 FDA-approved drugs.
 
 **[MedAgentGym: A Scalable Agentic Training Environment for Code-Centric Reasoning in Biomedical Data Science](medagentgym_agentic_training_biomedical.md)**
 
-:   This work introduces MedAgentGym, the first unified agentic training environment for biomedical data science, comprising 72,413 task instances spanning 12 real-world scenarios and 129 categories, equipped with an executable sandbox and verifiable ground truth. A systematic benchmark evaluation of 29 LLMs reveals a substantial gap between commercial and open-source models. By combining efficient multi-threaded trajectory sampling with offline/online RL, the authors train Med-Copilot, achieving gains of +43.02%/+45.28% respectively and attaining performance competitive with GPT-4o.
+:   The authors constructed MedAgentGym, the first unified Agent training environment for biomedical data science. It comprises 72,413 task instances covering 12 real-world scenarios across 129 categories, equipped with executable sandboxes and verifiable ground truth. A systematic benchmark evaluation of 29 LLMs revealed a gap between commercial and open-source models. By employing efficient multi-threaded trajectory sampling and offline/online RL, they trained Med-Copilot, achieving +43.02%/+45.28% improvements and reaching performance competitive with GPT-4o.
+
+**[MedAraBench: Large-scale Arabic Medical Question Answering Dataset and Benchmark](medarabench_large-scale_arabic_medical_question_answering_dataset_and_benchmark.md)**
+
+:   The authors manually digitized and cleaned paper-based exam questions from medical schools in the Arabic region into 24,883 medical Multiple-Choice Questions (MCQs) with professional department and difficulty annotations. After constructing the large-scale Arabic medical QA benchmark, MedAraBench, and performing double quality checks via expert review and LLM-as-a-judge, 16 open-source and closed-source LLMs were evaluated in a zero-shot setting. Results show that even the strongest model, GPT-o3, achieves an accuracy of only 0.765, exposing significant weaknesses in current models' Arabic medical reasoning.
 
 **[Resp-Agent: An Agent-Based System for Multimodal Respiratory Sound Generation and Disease Diagnosis](resp-agent_an_agent-based_system_for_multimodal_respiratory_sound_generation_and.md)**
 
-:   This paper proposes Resp-Agent, a closed-loop multi-agent framework that coordinates a controllable respiratory sound generator and a multimodal diagnoser via an active adversarial curriculum planner (Thinker-A2CA). Built upon a 229k-scale benchmark, the system achieves co-design of generation and diagnosis, substantially improving diagnostic performance on long-tail categories.
+:   Ours proposes the Resp-Agent closed-loop multi-agent framework, which coordinates a controllable respiratory sound generator and a multimodal diagnoser via an active adversarial curriculum planner (Thinker-A2CA). It achieves generation↔diagnosis co-design on a 229k-scale benchmark, significantly improving diagnostic performance for long-tail categories.
 
 **[SimpleToM: Exposing the Gap between Explicit ToM Inference and Implicit ToM Application in LLMs](simpletom_exposing_the_gap_between_explicit_tom_inference_and_implicit_tom_appli.md)**
 
-:   SimpleToM exposes a critical gap in LLMs' Theory of Mind capabilities: frontier models can accurately infer others' mental states (explicit ToM), but performance drops sharply when this knowledge must be applied to behavior prediction and behavior judgment (applied ToM), revealing a substantial divide between "knowing what" and "knowing how to use what is known."
+:   SimpleToM reveals a critical deficiency in LLM Theory of Mind: while frontier models accurately infer others' mental states (Explicit ToM), their performance drops sharply when applying this knowledge to predict or judge behaviors (Applied ToM), exposing a significant gap between "knowing what" and "how to use what is known."
 
 **[SurvHTE-Bench: A Benchmark for Heterogeneous Treatment Effect Estimation in Survival Analysis](survhte-bench_a_benchmark_for_heterogeneous_treatment_effect_estimation_in_survi.md)**
 
-:   This paper introduces SurvHTE-Bench, the first comprehensive benchmark for heterogeneous treatment effect (HTE) estimation on right-censored survival data, encompassing 40 synthetic datasets, 10 semi-synthetic datasets, and 2 real-world datasets. It systematically evaluates 53 estimation methods under varying causal assumption violations and censoring levels, finding that no single method dominates, and that survival meta-learners—particularly S-Learner-Survival and Matching-Survival—are most robust under high censoring and assumption violations.
+:   Proposes SurvHTE-Bench, the first comprehensive benchmark for Heterogeneous Treatment Effect (HTE) estimation for right-censored survival data. It includes 40 synthetic datasets, 10 semi-synthetic datasets, and 2 real datasets to systematically evaluate 53 estimation methods under different causal assumption violations and censoring levels. The study finds that no single method dominates, but survival meta-learners (especially S-Learner-Survival and Matching-Survival) are the most robust in high censoring and assumption violation scenarios.

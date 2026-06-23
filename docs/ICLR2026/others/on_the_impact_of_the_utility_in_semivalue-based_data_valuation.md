@@ -2,82 +2,86 @@
 title: >-
   [Paper Note] On the Impact of the Utility in Semivalue-based Data Valuation
 description: >-
-  [ICLR 2026][Data Valuation] This paper introduces a geometric representation termed *spatial signature* to unify the modeling of utility selection in data valuation as a directional rotation problem on the unit circle. I…
+  [ICLR 2026][Others][Data Valuation] This paper introduces a geometric representation termed "spatial signature" to unify the problem of utility selection in data valuation as a directional rotation on the unit circle. It proposes a quantitative robustness metric $R_p$, revealing that the Banzhaf value exhibits the highest ranking stability across differe
 tags:
-  - "ICLR 2026"
-  - "Data Valuation"
-  - "Semivalue"
-  - "Shapley Value"
-  - "Banzhaf Value"
-  - "Robustness"
+  - ICLR 2026
+  - Others
+  - Data Valuation
+  - Semivalue
+  - Shapley Value
+  - Banzhaf Value
+  - Robustness
 date: 2026-05-08
-content_hash: 045ba11d1975d836
+content_hash: e92c2e8b166d67ec
 ---
-
 # On the Impact of the Utility in Semivalue-based Data Valuation
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2502.06574](https://arxiv.org/abs/2502.06574)  
 **Code**: [https://github.com/taminemelissa/utility-impact](https://github.com/taminemelissa/utility-impact)  
-**Area**: Data Valuation / AI Theory
+**Area**: Data Valuation / AI Theory  
 **Keywords**: Data Valuation, Semivalue, Shapley Value, Banzhaf Value, Robustness
 
 ## TL;DR
 
-This paper introduces a geometric representation termed *spatial signature* to unify the modeling of utility selection in data valuation as a directional rotation problem on the unit circle. It further proposes a robustness metric $R_p$ and demonstrates that the Banzhaf value exhibits the highest ranking stability across different utility functions.
+This paper introduces a geometric representation termed "spatial signature" to unify the problem of utility selection in data valuation as a directional rotation on the unit circle. It proposes a quantitative robustness metric $R_p$, revealing that the Banzhaf value exhibits the highest ranking stability across different utilities.
 
 ## Background & Motivation
 
-**Background**: Semivalue-based data valuation is a mainstream approach to data quality assessment, employing solution concepts from cooperative game theory—such as the Shapley value, Beta Shapley, and Banzhaf value—to assign a value score to each data point that reflects its contribution to downstream ML tasks. These methods are widely used for identifying high-quality training samples, data cleansing, and fair data pricing.
+**Background**: Semivalue-based data valuation is a predominant method for data quality assessment, utilizing solution concepts from cooperative game theory (such as Shapley Value, Beta Shapley, and Banzhaf Value) to assign value scores to each data point. These metrics measure contribution to downstream ML tasks and are widely used for identifying high-quality training samples, data cleaning, and fair data pricing.
 
-**Limitations of Prior Work**: Computing semivalues requires a user-specified utility function, a choice that is inherently subjective. For instance, when training a cat-dog classifier, accuracy, precision, recall, F1, and AUROC are all plausible utilities, yet different choices may yield entirely different data rankings. Experiments conducted on 8 datasets reveal that, on the Titanic dataset under Shapley values, the rank correlation between accuracy and F1 is as low as $-0.19$, indicating severe ranking instability.
+**Limitations of Prior Work**: The calculation of semivalues relies on the user's choice of utility function, which is often subjective. For instance, when training a cat-dog classifier, accuracy, precision, recall, F1, and AUROC are all reasonable utilities, yet different utilities can lead to entirely different data rankings. Experiments across 8 datasets show that using the Shapley value on the Titanic dataset yields a ranking correlation of $-0.19$ between accuracy and F1, indicating extreme instability.
 
-**Key Challenge**: Data valuation methods purport to objectively assess the importance of individual data points, yet their outputs are highly sensitive to the choice of utility function—a choice for which no uniquely correct answer exists. This leaves practitioners unable to determine whether their valuation results are trustworthy.
+**Key Challenge**: Data valuation methods claim to objectively assess data point importance, yet results are highly dependent on utility choice—for which no unique "correct" answer exists. This makes it difficult for practitioners to judge the reliability of their data valuation results.
 
-**Goal**: (1) How can the problem of utility variation's impact on rankings be modeled in a unified manner? (2) How can this robustness be quantified? (3) How large are the robustness differences between semivalues (Shapley vs. Banzhaf), and why?
+**Goal**: (1) How to unify the modeling of utility-driven ranking changes? (2) How to quantify this robustness? (3) What are the robustness differences between various semivalues (e.g., Shapley vs. Banzhaf), and why?
 
-**Key Insight**: The authors observe that, for any semivalue, the data value scores under all utility functions can be expressed as a linear functional in a low-dimensional space. This implies that ranking changes can be geometrized as variations in projection order induced by directional rotation on the unit circle—a concise and analytically tractable problem.
+**Key Insight**: The authors observe that for any semivalue, data values under all utilities can be represented through a linear functional in a low-dimensional space. This allows ranking changes to be geometrized as changes in projection order when a direction rotates on a unit circle—a concise and analyzable problem.
 
-**Core Idea**: Each data point is embedded into a two-dimensional space (the spatial signature) determined by the semivalue weights and the base utilities, transforming the question of ranking stability under utility variation into a geometric problem that admits precise measurement and comparison.
+**Core Idea**: Embed each data point into a 2D space determined by semivalue weights and base utilities (the spatial signature). This transforms the stability of rankings under utility changes into a geometric problem that can be precisely measured and compared.
 
 ## Method
 
 ### Overall Architecture
 
-Given a dataset $\mathcal{D} = \{z_i\}_{i \in [n]}$, a semivalue weight vector $\omega$, and two base utilities $u_1, u_2$, the proposed method proceeds in three steps: (1) embed each data point $z_i$ into $\mathbb{R}^2$ to form its spatial signature; (2) analyze how rankings induced by projections along all directions $\bar{\alpha}$ on the unit circle $\mathcal{S}^1$ vary with rotation; (3) compute the robustness metric $R_p$ to measure ranking stability.
+This work does not train a model but rather builds an analytical framework to address a practical question: will changing the utility significantly alter the data valuation ranking? Given a dataset $\mathcal{D} = \{z_i\}_{i \in [n]}$, a semivalue weight vector $\omega$, and two base utilities $u_1, u_2$, the paper simplifies the problem in four stages. First, two sources of utility uncertainty (explicit trade-offs and multiple valid metrics) are unified into a linear combination $u_\alpha = \alpha_1 u_1 + \alpha_2 u_2$, collapsing the choice of utility into a coefficient direction $\alpha$. Second, it is proven that each data point can be embedded into a 2D plane as its spatial signature, where the value score under any utility is exactly the projection of that signature onto the direction $\alpha$. Ranking stability is thus equivalent to the geometric question of whether projection orders flip as $\alpha$ rotates on the unit circle $\mathcal{S}^1$. Third, a robustness metric $R_p$ is defined to measure stability as a value in $[0,1]$, representing how much rotation is required to disrupt the ranking. Fourth, this geometric language is used to explain why the Banzhaf value remains the most stable across utilities.
 
 ### Key Designs
 
-1. **Unified Modeling of Two Scenarios**:
+**1. Unified Modeling: Collapsing Utility Selection into a Linear Combination**
 
-    - *Function*: Unifies the utility trade-off scenario and the multiple-valid-utility scenario within a single geometric framework.
-    - *Mechanism*: In the utility trade-off scenario, $u_\nu = \nu u^A + (1-\nu) u^B$, where $\nu$ controls the trade-off between two objectives. In the multiple-valid-utility scenario, common classification metrics (accuracy, F1, precision, etc.) can each be approximated in the linear-fractional form $u(S) = \frac{c_0 + c_1\lambda(S) + c_2\gamma(S)}{d_0 + d_1\lambda(S) + d_2\gamma(S)}$, where $\lambda$ is the true-positive rate and $\gamma$ is the positive-prediction rate; after a first-order expansion, $u$ is approximately affine in $(\lambda, \gamma)$. Both scenarios thus reduce to the form $u_\alpha = \alpha_1 u_1 + \alpha_2 u_2$.
-    - *Design Motivation*: A unified framework allows a single robustness metric to apply to both scenarios, substantially broadening the method's scope of applicability.
+Uncertainty in utility selection stems from two scenarios, which the authors prove can be unified mathematically. One is utility trade-off, where users weight two objectives: $u_\nu = \nu u^A + (1-\nu) u^B$. The other is the "multiple-valid-utility" scenario, where accuracy, F1, and precision all seem reasonable for the same classifier. The key observation is that common classification metrics can be expressed as linear fractional functions of the true-positive rate $\lambda$ and positive-prediction rate $\gamma$: $u(S) = \frac{c_0 + c_1\lambda(S) + c_2\gamma(S)}{d_0 + d_1\lambda(S) + d_2\gamma(S)}$. A first-order expansion shows $u$ is approximately affine concerning $(\lambda, \gamma)$. Consequently, both scenarios collapse into $u_\alpha = \alpha_1 u_1 + \alpha_2 u_2$. Analyzing how $\alpha$ changes the ranking covers both trade-off and multiple-valid-utility problems.
 
-2. **Spatial Signature and Geometric Mapping**:
+**2. Spatial Signature: Mapping Stability to Unit Circle Projections**
 
-    - *Function*: Transforms the data valuation problem into a visualizable and analytically tractable geometric problem.
-    - *Mechanism*: By Proposition 3.1, there exists a mapping $\psi_{\omega,\mathcal{D}}: \mathcal{D} \to \mathbb{R}^2$ such that for any utility $u_\alpha$, $\phi(z; \omega, u_\alpha) = \langle \psi_{\omega,\mathcal{D}}(z), \alpha \rangle$. Ranking stability is then equivalent to asking whether the projection order of all embedded points along direction $\alpha$ changes as the direction rotates. If all embedded points are approximately collinear, rotation has minimal effect on projection order, yielding maximal robustness.
-    - *Design Motivation*: The linear inner-product structure directly links ranking changes to geometric angles, abstracting away the complexity of actual utility computation.
+Given $u_\alpha = \alpha_1 u_1 + \alpha_2 u_2$, Proposition 3.1 provides the fundamental geometric mapping: there exists $\psi_{\omega,\mathcal{D}}: \mathcal{D} \to \mathbb{R}^2$ such that the semivalue score of a point under any utility $u_\alpha$ is an inner product:
 
-3. **Robustness Metric $R_p$**:
+$$\phi(z; \omega, u_\alpha) = \langle \psi_{\omega,\mathcal{D}}(z), \alpha \rangle.$$
 
-    - *Function*: Quantifies the stability of rankings under utility variation.
-    - *Mechanism*: For each pair of data points $(z_i, z_j)$, a *cut direction* is defined as $H_{ij} = \{\alpha \in \mathcal{S}^1 : \langle \alpha, v_{ij} \rangle = 0\}$, where $v_{ij} = \psi(z_i) - \psi(z_j)$. All $\binom{n}{2}$ pairs produce $2N$ cut points that partition the unit circle into arcs of constant ranking. $\rho_p(\bar{\alpha}_0)$ denotes the minimum arc length from a starting direction $\bar{\alpha}_0$ required to produce $p$ pairwise rank swaps. The metric $R_p = \frac{\mathbb{E}[\rho_p]}{\pi/4}$ normalizes the result to $[0,1]$, with denominator $\pi/4$ corresponding to the maximum value attained when all points are collinear.
-    - *Design Motivation*: $R_p$ can be computed exactly in $O(n^2 \log n)$ time and directly corresponds to the degree of Kendall rank correlation degradation.
+Each data point is embedded as a spatial signature in a 2D plane, and "choosing a utility" is equivalent to "projecting onto direction $\alpha$." Data ranking is the order of these 2D points projected onto $\alpha$. Stability is therefore determined by whether the projection order flips as $\alpha$ rotates on the unit circle. If the embedded points are approximately collinear, the ranking remains consistent regardless of the projection direction, indicating high robustness. The more dispersed the points, the more likely a small rotation will flip the ranking.
 
-### Loss & Training
+**3. Robustness Metric $R_p$: Quantifying Stability via Rotation Angles**
 
-This paper presents an analytical framework rather than a neural network training procedure. The central theoretical result, Proposition 3.3, shows that the Pearson correlation between semivalue score vectors under two base utilities decomposes as
+For every pair of data points $(z_i, z_j)$, let $v_{ij} = \psi(z_i) - \psi(z_j)$. The critical direction where their projection order flips is the "cutting angle" $H_{ij} = \{\alpha \in \mathcal{S}^1 : \langle \alpha, v_{ij} \rangle = 0\}$ orthogonal to $v_{ij}$. The $\binom{n}{2}$ pairs generate $2N$ cutting points, partitioning the unit circle into arcs within which the ranking is invariant. The definition of $\rho_p(\bar{\alpha}_0)$ is the minimum arc length to be swept from a starting direction $\bar{\alpha}_0$ to accumulate $p$ pairwise swaps. This angle is normalized to a metric in $[0,1]$ by taking its expectation over starting directions:
+
+$$R_p = \frac{\mathbb{E}[\rho_p]}{\pi/4},$$
+
+where $\pi/4$ is the maximum $\rho_p$ achievable when all points are perfectly collinear. $R_p$ can be calculated in $O(n^2 \log n)$ time, and its magnitude directly corresponds to the degradation of Kendall ranking correlation.
+
+**4. Why Banzhaf is Most Robust: Alignment and Weight Concentration**
+
+Proposition 3.3 decomposes the Pearson correlation between semivalue score vectors under two base utilities:
+
 $$\text{Corr}(\phi(u_1), \phi(u_2)) = \frac{\sum_j \omega_j^2 r_j}{\sqrt{\sum_j \omega_j^2 \text{Var}_j(u_1)} \sqrt{\sum_j \omega_j^2 \text{Var}_j(u_2)}},$$
-where $r_j$ is the size-$j$ alignment factor. Banzhaf weights concentrate mass on the intermediate coalition sizes where $r_j$ tends to be largest, thereby systematically achieving higher correlation and robustness.
+
+where $\omega_j$ is the semivalue weight for coalition size $j$, and $r_j$ is the alignment factor (measuring how aligned marginal contributions of two utilities are at size $j$). Higher correlation implies spatial signature points are closer to a single line, leading to a larger $R_p$. Empirically, $r_j$ is highest at moderate coalition sizes and decays at the extremes. Banzhaf weights $\omega_j = \binom{n-1}{j-1}/2^{n-1}$ are concentrated precisely in this moderate size region. Thus, Banzhaf systematically puts weight where $r_j$ is large, resulting in high correlation and robustness. Shapley, by contrast, distributes weight across all sizes and is hindered by high variance at the extremes, making it less stable.
 
 ## Key Experimental Results
 
-### Main Results: Kendall Rank Correlation Across Semivalues and Datasets
+### Main Results: Kendall Ranking Correlation across Semivalues and Datasets
 
 | Dataset | Shapley | (4,1)-Beta Shapley | Banzhaf |
-|---------|---------|-------------------|---------|
+|--------|---------|-------------------|---------|
 | Breast | 0.95 ± 0.003 | 0.95 ± 0.003 | **0.97 ± 0.008** |
 | Titanic | -0.19 ± 0.007 | -0.17 ± 0.01 | **0.94 ± 0.003** |
 | Credit | -0.47 ± 0.01 | -0.44 ± 0.02 | **0.87 ± 0.01** |
@@ -85,48 +89,48 @@ where $r_j$ is the size-$j$ alignment factor. Banzhaf weights concentrate mass o
 | Wind | 0.81 ± 0.008 | 0.82 ± 0.008 | **0.99 ± 0.002** |
 | Cpu | 0.59 ± 0.02 | 0.62 ± 0.02 | **0.86 ± 0.007** |
 
-Rank correlations between accuracy and F1 as utility functions. The Banzhaf value significantly outperforms Shapley and Beta Shapley across all datasets.
+Ranking correlation between accuracy and F1 utility. Banzhaf significantly outperforms Shapley and Beta Shapley across all datasets.
 
-### Validation of the Robustness Metric $R_p$
+### Robustness Metric $R_p$ Validation
 
 | Dataset | Scenario | Shapley $R_p$ | Banzhaf $R_p$ | Consistency |
-|---------|----------|-------------|-------------|-------------|
-| Breast | Multiple utility | High | Highest | $R_p$ consistent with Kendall correlation |
-| Titanic | Multiple utility | Very low | High | $R_p$ accurately reflects ranking instability |
-| Diabetes | Utility trade-off | Moderate | Highest | Equally applicable to regression tasks |
-| Digits | Utility trade-off | Moderate | Highest | Equally applicable to multi-class tasks |
+|--------|------|-------------|-------------|--------|
+| Breast | Multi-utility | High | Highest | $R_p$ aligns with Kendall correlation |
+| Titanic | Multi-utility | Extremely Low | High | $R_p$ reflects ranking instability |
+| Diabetes | Utility trade-off | Medium | Highest | Applicable to regression tasks |
+| Digits | Utility trade-off | Medium | Highest | Applicable to multi-class tasks |
 
 ### Key Findings
 
-- **Geometric Explanation for Banzhaf's Consistent Advantage**: Banzhaf weights cause the spatial signature embeddings to become nearly collinear, which directly maximizes $R_p$. This occurs because Banzhaf weights $\omega_j = \binom{n-1}{j-1} / 2^{n-1}$ concentrate on intermediate coalition sizes, where the size-specific alignment factor $r_j$ is typically largest.
-- **Consistency Between $R_p$ and Rank Correlation**: Across all experiments, the magnitude of $R_p$ strictly corresponds to Kendall rank correlation, validating the practical utility of the geometric framework.
-- **Counterintuitive Finding**: On certain datasets (e.g., Titanic), rankings produced by Shapley and Beta Shapley under different utilities are even negatively correlated, indicating that these semivalues are entirely unreliable as data valuation tools in such settings.
+- **Geometric Explanation for Banzhaf's Consistency**: Banzhaf weights make spatial signature points nearly collinear, maximizing $R_p$. This is because Banzhaf weights align with the moderate coalition sizes where the alignment factor $r_j$ is typically highest.
+- **Consistency between $R_p$ and Ranking Correlation**: In all experiments, $R_p$ magnitude corresponds strictly with Kendall correlation, validating the geometric framework.
+- **Counter-intuitive Finding**: On certain datasets (e.g., Titanic), Shapley and Beta Shapley rankings under different utilities are even negatively correlated, suggesting these semivalues are unreliable tools for data valuation in such contexts.
 
 ## Highlights & Insights
 
-- **Elegant Geometric Perspective**: Translating the abstract ranking stability problem from cooperative game theory into a two-dimensional projection ordering problem yields clear geometric intuition and precise mathematical correspondences. Such a bridge from algebraic to geometric reasoning is rare in ML theory.
-- **High Practical Guidance Value**: The $R_p$ metric informs practitioners whether their data valuation results are trustworthy—a low $R_p$ indicates that rankings are unstable regardless of utility choice, signaling that semivalue methods should not be used in that setting.
-- **Theoretical Explanation for Banzhaf Superiority**: While prior literature has empirically observed that the Banzhaf value is more stable, this paper provides the first theoretical explanation through the interaction between the weight distribution and alignment factors.
+- **Compelling Geometric Perspective**: Transforming abstract ranking stability in cooperative game theory into a projection problem in 2D space provides clear intuition and precise mathematical mapping, a rare bridge in ML theory.
+- **Practical Guidance**: The $R_p$ metric provides practitioners with a way to check if their data valuation is trustworthy—if $R_p$ is low, the ranking is unstable regardless of utility, and semivalue methods should be avoided.
+- **Theoretical Grounding of Banzhaf Superiority**: While previous literature identified Banzhaf's empirical stability, this paper provides the first theoretical explanation through the interaction of weight distribution and alignment factors.
 
 ## Limitations & Future Work
 
-- **Scope of the Linear-Fractional Approximation**: The analysis of the multiple-valid-utility scenario relies on a first-order linear approximation of utility with respect to $(\lambda, \gamma)$, which does not extend to highly nonlinear metrics such as negative log-loss.
-- **Limited to Binary Classification and Certain Multi-Class Metrics**: Although regression utilities (e.g., MSE vs. MAE) are validated in the trade-off scenario, a unified linear-fractional derivation analogous to that for classification metrics is absent.
-- **Computational Complexity**: Exact computation of $R_p$ requires $O(n^2 \log n)$ time, which may remain costly for very large-scale datasets.
-- **Propagation of Utility Approximation Error**: The impact of errors introduced by the linear approximation on $R_p$ is not quantified.
+- **Scope of Linear Fractional Approximation**: The analysis of the multiple-valid-utility scenario relies on first-order linear approximations of $(\lambda, \gamma)$, which may not apply to non-linear metrics like negative log-loss.
+- **Constraint to Binary and Specific Multi-class Metrics**: While regression utilities (MSE vs. MAE) were validated in trade-off scenarios, they lack a unified linear fractional derivation.
+- **Computational Complexity**: Exact calculation of $R_p$ requires $O(n^2 \log n)$, which may remain expensive for extremely large datasets.
+- **Utility Approximation Error**: The propagation of errors introduced by linear approximations into $R_p$ remains unquantified.
 
 ## Related Work & Insights
 
-- **vs. Data Shapley (Ghorbani & Zou, 2019)**: Data Shapley assigns uniform weights to all coalition sizes, making it susceptible to the high-variance marginal contributions of extreme-size coalitions and thus less robust. This paper explains why Banzhaf outperforms Shapley.
-- **vs. Diehl & Wilson (2025)**: That work similarly identifies the unreliability and manipulability of semivalue-based valuations under ill-defined utilities, but only exposes the problem. The present paper goes further by providing tools to quantify fragility and guidance for selecting semivalues.
-- **vs. Wang & Jia (2023)**: Data Banzhaf establishes robustness to the stochasticity of learning algorithms; this paper extends robustness analysis to the utility dimension.
+- **vs. Data Shapley (Ghorbani & Zou, 2019)**: Data Shapley weights all coalition sizes equally, making it susceptible to high-variance marginal contributions from extreme sizes. This paper explains why Banzhaf is more robust.
+- **vs. Diehl & Wilson (2025)**: While that work highlights that semivalue valuation is unreliable and manipulable when utilities are under-defined, it only exposes the problem. This paper provides tools to quantify vulnerability and choose semivalues.
+- **vs. Wang & Jia (2023)**: Data Banzhaf demonstrated robustness to learning algorithm randomness; this work extends robustness analysis to the dimension of utility choice.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ A genuinely novel perspective on geometric analysis of data valuation robustness, though the problem scope is relatively narrow.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covers multiple datasets, multiple semivalues, and both scenarios; strong agreement between theory and experiments.
-- Writing Quality: ⭐⭐⭐⭐⭐ Clear motivation, complete logical chain, excellent figures, and tight integration of theory and experiments.
-- Value: ⭐⭐⭐⭐ Offers direct practical guidance for data valuation, though the primary audience is largely confined to the data valuation community.
+- Novelty: ⭐⭐⭐⭐ Geometrizing robustness in data valuation is a fresh perspective, though the problem setting is relatively specific.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers multiple datasets, semivalues, and scenarios, with strong alignment between theory and experiments.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear motivation, complete logical chain, and excellent visualizations with tight theory-experiment integration.
+- Value: ⭐⭐⭐⭐ Directly impacts data valuation practice, though primarily targeted at the data valuation research community.
 
 <!-- RELATED:START -->
 
@@ -135,10 +139,10 @@ Rank correlations between accuracy and F1 as utility functions. The Banzhaf valu
 ## Related Papers
 
 - [\[ICLR 2026\] Do We Really Need Permutations? Impact of Model Width on Linear Mode Connectivity](do_we_really_need_permutations_impact_of_model_width_on_linear_mode_connectivity.md)
+- [\[ICML 2026\] TEMPORA: Characterising the Time-Contingent Utility of Online Test-Time Adaptation](../../ICML2026/others/tempora_characterising_the_time-contingent_utility_of_online_test-time_adaptatio.md)
 - [\[ICLR 2026\] Bayesian Influence Functions for Hessian-Free Data Attribution](bayesian_influence_functions_for_hessian-free_data_attribution.md)
 - [\[ICLR 2026\] When to Retrain after Drift: A Data-Only Test of Post-Drift Data Size Sufficiency](when_to_retrain_after_drift_a_data-only_test_of_post-drift_data_size_sufficiency.md)
-- [\[ICML 2026\] TEMPORA: Characterising the Time-Contingent Utility of Online Test-Time Adaptation](../../ICML2026/others/tempora_characterising_the_time-contingent_utility_of_online_test-time_adaptatio.md)
-- [\[ICLR 2026\] TabStruct: Measuring Structural Fidelity of Tabular Data](tabstruct_measuring_structural_fidelity_of_tabular_data.md)
+- [\[NeurIPS 2025\] Impact of Layer Norm on Memorization and Generalization in Transformers](../../NeurIPS2025/others/impact_of_layer_norm_on_memorization_and_generalization_in_transformers.md)
 
 </div>
 

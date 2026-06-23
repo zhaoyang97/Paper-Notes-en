@@ -2,145 +2,138 @@
 title: >-
   [Paper Note] LPWM: Latent Particle World Models for Object-Centric Stochastic Dynamics
 description: >-
-  [ICLR 2026][Object-centric] LPWM is the first self-supervised object-centric world model that scales to real-world multi-object datasets. Its core innovation is learning independent per-particle latent action distributio…
+  [ICLR 2026][Others][World Models] LPWM is the first self-supervised object-centric world model capable of scaling to real-world multi-object datasets. The core innovation is learning independent latent action distributions for each particle (per-particle latent actions). By utilizing a causal spatio-temporal Transformer to encode all frames in parallel
 tags:
-  - "ICLR 2026"
-  - "Object-centric"
-  - "Latent particles"
-  - "Self-supervised"
-  - "World models"
-  - "Stochastic dynamics"
-  - "Latent actions"
+  - ICLR 2026
+  - Others
+  - World Models
 date: 2026-05-08
-content_hash: ba26e10f44c99eac
+content_hash: d363ee5f7aac510d
 ---
-
 # LPWM: Latent Particle World Models for Object-Centric Stochastic Dynamics
 
 **Conference**: ICLR 2026 Oral  
 **arXiv**: [2603.04553](https://arxiv.org/abs/2603.04553)  
 **Code**: [Project Page](https://taldatech.github.io/lpwm-web)  
-**Area**: World Models / Object-Centric Representation / Video Prediction
-**Keywords**: Object-centric, Latent particles, Self-supervised, World models, Stochastic dynamics, Latent actions
+**Area**: World Models / Object-Centric Representation / Video Prediction  
+**Keywords**: Object-Centric, Latent Particles, Self-Supervised, World Model, Stochastic Dynamics, Latent Actions
 
 ## TL;DR
-LPWM is the first self-supervised object-centric world model that scales to real-world multi-object datasets. Its core innovation is learning independent per-particle latent action distributions ($z_c^m$) for each particle, encoding all frames in parallel via a causal spatiotemporal Transformer, supporting diverse conditioning signals (actions, language, image goals, multi-view), achieving state-of-the-art video prediction, and demonstrating imitation learning capability (89% success rate on OGBench task3).
+LPWM is the first self-supervised object-centric world model capable of scaling to real-world multi-object datasets. The core innovation is learning independent latent action distributions for each particle (per-particle latent actions). By utilizing a causal spatio-temporal Transformer to encode all frames in parallel, it supports diverse conditional generation (actions, language, image goals, multi-view). It achieves SOTA in video prediction and demonstrates imitation learning capabilities (89% success rate on OGBench task3).
 
 ## Background & Motivation
-**Background**: Object-centric world models decompose scenes into independent object representations (slots/patches/particles), making them naturally suited for modeling multi-object interactions. The DLP (Deep Latent Particles) framework represents objects via keypoints and extended attributes (position, scale, depth, transparency, visual features).
+**Background**: Object-centric world models decompose scenes into independent object representations (slots/patches/particles), making them naturally suited for understanding multi-object interactions. The DLP (Deep Latent Particles) framework represents objects using keypoints with expanded attributes (position, scale, depth, transparency, visual features).
 
 **Limitations of Prior Work**:
-- **Slot-based methods** (SlotFormer, etc.): suffer from inconsistent decomposition, blurry predictions, and convergence difficulties, and require two-stage training.
-- **Patch-based methods** (G-SWM, etc.): rely on cross-frame post-hoc matching and fail to scale to complex data.
-- **DDLP** (the current best particle-based method): depends on explicit particle tracking and sequential encoding → non-parallelizable and unable to model stochasticity.
-- All object-centric methods are **limited to simple simulated environments** and cannot handle real-world multi-object videos.
+   - **Slot-based methods** (e.g., SlotFormer): Suffer from inconsistent decomposition, blurry predictions, difficult convergence, and require two-stage training.
+   - **Patch-based methods** (e.g., G-SWM): Depend on post-processing matching across frames, failing to scale to complex data.
+   - **DDLP** (Current SOTA particle-based method): Relies on explicit particle tracking and sequential encoding, preventing parallelization and lacking support for stochasticity.
+   - All object-centric methods are **limited to simple simulation environments** and cannot handle real-world multi-object videos.
 
-**Key Challenge**: Object-centric representations offer natural advantages (interpretability, compositional generalization, sparse interaction modeling), but the key bottleneck for scaling to real-world complex scenes is handling the independent stochastic motion of multiple objects. Global latent actions cannot capture independent behaviors such as "object A moves left while object B remains stationary."
+**Key Challenge**: While object-centric representations offer advantages (interpretability, compositional generalization, sparse interaction modeling), the key bottleneck in scaling to complex real-world scenes is handling independent stochastic motions of multiple objects. Global latent actions fail to capture independent behaviors such as "Object A moves left while Object B remains stationary."
 
-**Core Idea**: Learn independent latent action distributions $z_c^m$ for each latent particle — inferred from frame pairs via inverse dynamics during training, and sampled from a learned latent policy at inference time, conditioned into a causal spatiotemporal Transformer via AdaLN.
+**Core Idea**: Learn independent latent action distributions $z_c^m$ for each latent particle. During training, these are inferred from frame pairs using inverse dynamics; during inference, they are sampled from a learned latent policy. These actions condition a causal spatio-temporal Transformer via AdaLN.
 
 ## Method
 
 ### Overall Architecture
-Video frame sequence → Parallel particle encoder (extracting $M$ foreground particles $z_{fg}^m = [z_p, z_s, z_d, z_t, z_f]$ + background particle per frame) → Context Module (learning per-particle latent actions $z_c^m$) → Causal spatiotemporal Transformer for dynamics prediction → Particle decoder for next-frame reconstruction.
+LPWM addresses the scalability of object-centric world models to real-world multi-object videos by modeling independent stochastic motion for each object. Trained end-to-end as a Variational Autoencoder (VAE) driven solely by video, the model consists of four modules: Encoder, Decoder, Context Module, and Dynamics Module. The encoder extracts $M$ foreground particles (each with attribute vector $z_{fg}^m = [z_p, z_s, z_d, z_t, z_f]$ covering 2D position, scale, depth, transparency, and visual features) plus one background particle in parallel for each frame. The context module then samples a latent action $z_c^m$ for each particle, characterizing its intended movement. The dynamics module takes the current particles and their corresponding latent actions to predict the attributes of each particle in the next frame, with latent actions injected via AdaLN. Finally, the decoder renders the predicted particles into the next image, providing a reconstruction loss. Multi-modal conditions (actions, language, image goals, multi-view) are unified and injected via the context module, mapped to per-particle latent actions. Since particle identity is anchored by patch origins rather than tracking, all frames can be encoded in parallel.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input Video sequence"] --> B["Latent Particle Representation (Encoder)<br/>Parallel encoding per frame → M foreground particles<br/>+ Background particle, identities anchored by patch origin"]
+    C["Multi-modal Conditioning<br/>Action / Language / Image Goal / Multi-view"] -->|Mapped to per-particle conditions| D
+    B --> D["Per-Particle Latent Actions (Context Module)<br/>Training: Inverse dynamics head from adjacent frames<br/>Inference: Latent policy head sampling"]
+    B --> E["Causal Spatio-Temporal Transformer Dynamics<br/>Latent actions injected via AdaLN<br/>Predicts attributes of each particle for the next frame"]
+    D -->|Per-particle latent actions| E
+    E --> F["Decoder renders particles"]
+    F --> G["Output next frame / Multi-step rollout"]
+```
 
 ### Key Designs
 
-1. **Latent Particle Representation (Tracking-Free)**
+**1. Latent Particle Representation: Anchoring identity via patch origin, eliminating explicit tracking**
 
-    - **Function**: Each frame is encoded into $M$ foreground particles, each with an attribute vector $z_{fg}^m = [z_p, z_s, z_d, z_t, z_f]$ (2D position, scale, depth, transparency, visual features).
-    - **Key difference from DDLP**: **All $M$ encoded particles retain their identity** (based on patch origin), rather than tracking the trajectories of a small subset of particles. This enables parallel encoding across frames (no sequential dependency).
-    - Positioned as a middle ground between patch-based and fully object-centric: particles can move within a bounded region around their origin but do not roam freely.
-    - **Design Motivation**: Explicit tracking is the scalability bottleneck of DDLP — tracking failures cause compounding errors.
+The scalability bottleneck of particle-based predecessors like DDLP lies in explicit tracking—sequentially tracking the trajectories of a few particles. Tracking failures accumulate errors over time, and sequential dependency prevents parallelization. LPWM independently encodes $M$ foreground particles per frame, where particle identity is directly determined by its patch origin. Thus, particles from the same origin naturally correspond across frames without cross-frame matching or trajectory tracking. This allows parallel encoding of all frames. The representation sits between patch-based and object-centric approaches; particles move within a range around their origin to fit object motion, preserving compositionality while avoiding the rigidity of patch representations.
 
-2. **Per-Particle Latent Actions (Context Module — Core Innovation)**
+**2. Per-Particle Latent Actions (Context Module): Individual stochasticity for each object**
 
-    - **Function**: Learns independent latent action distributions $q(z_c^m | o_t, o_{t+1})$ for each particle $m$.
-    - **During training (inverse dynamics)**: Given two consecutive frames, infers each particle's latent action (analogous to an inverse model).
-    - **During inference (latent policy)**: $\pi(z_c^m | o_{\leq t})$ — predicts the latent action distribution for each particle based solely on historical frames; stochastic prediction is achieved by sampling.
-    - **Training objective**: KL divergence regularization $D_{KL}(q(z_c^m | o_t, o_{t+1}) \| \pi(z_c^m | o_{\leq t}))$.
-    - **vs. global latent actions** (Genie, CADDY): Ablation experiments confirm that per-particle actions are critical — global actions cannot capture independent motion patterns across multiple objects.
-    - **Design Motivation**: In multi-object scenes, object motions are independent (a ball moves left while a block stays still), requiring per-object stochasticity modeling.
+In real-world scenes, object motions are independent. LPWM learns a separate latent action distribution for each particle $m$. The Context Module is a causal spatio-temporal Transformer with two complementary heads. During training, the **inverse dynamics head** infers particles' latent actions $q(z_c^m \mid o_t, o_{t+1})$ from actual transitions. During inference, the **latent policy head** $\pi(z_c^m \mid o_{\leq t})$ predicts the distribution from historical frames and samples from it to enable stochastic prediction. Both are aligned via KL divergence: the latent policy acts as a prior to regularize the inverse dynamics using $D_{KL}\big(q(z_c^m \mid o_t, o_{t+1}) \,\|\, \pi(z_c^m \mid o_{\leq t})\big)$. Ablation studies prove that per-particle actions are crucial for capturing independent motion patterns compared to global latent actions used in Genie or CADDY.
 
-3. **Causal Spatiotemporal Transformer Dynamics**
+**3. Causal Spatio-Temporal Transformer Dynamics: Injecting latent actions via AdaLN**
 
-    - **Function**: Predicts particle attribute changes for the next frame.
-    - **Mechanism**: Causal attention (attending only to historical frames) + spatial attention (inter-particle interactions within the same frame) + AdaLN conditioning (integrating latent actions $z_c^m$ into Transformer layers via Adaptive Layer Normalization).
-    - **Design Motivation**: AdaLN more effectively incorporates conditioning signals than additive positional embeddings (validated by ablation).
+The backbone for predicting particle attribute changes is a Transformer managing both time and space. Causal attention ensures that each particle only observes historical frames, while spatial attention allows interaction between particles within the same frame (modeling collisions and occlusions). Latent actions $z_c^m$ are injected via Adaptive Layer Normalization (AdaLN), modulating the normalization parameters of each Transformer layer. Ablations show that AdaLN-based conditioning is more effective than additive positional embeddings for transmitting conditional signals.
 
-4. **Multimodal Conditioning**
+**4. Multi-modal Conditioning: A unified interface for Action / Language / Image Goal / Multi-view**
 
-    - Action conditioning: External action signals are directly fused into the Transformer.
-    - Language conditioning: Text encodings serve as additional conditioning.
-    - Image goal conditioning: A goal frame encoding guides generation.
-    - Multi-view: Multi-view particles can be jointly modeled for dynamics.
-    - **Design Motivation**: A unified conditioning interface allows the same model to be applied to a variety of downstream tasks.
+LPWM treats external conditions as inputs to the Transformer's conditioning channel. External action signals, encoded text (language), target frames (image goals), or multi-view particles are all mapped into the latent action space. This unified interface allows seamless transfer from video pre-training to robot control without redesigning modules for different conditions.
 
 ### Loss & Training
-- End-to-end self-supervised training on raw video (no object labels or segmentation annotations required).
-- Reconstruction loss + KL regularization (latent action distribution).
-- Training resolution: 128×128; $M$ particles adjusted per dataset.
+- End-to-end self-supervised training on videos by maximizing the temporal ELBO, which involves minimizing the sum of reconstruction error and KL divergence. This is split into $\mathcal{L}_{static}$ for the first frame (per-particle KL and transparency regularization) and $\mathcal{L}_{dynamic}$ for subsequent frames (latent action KL and predicted particle KL).
+- Reconstruction Loss: Pixel-wise MSE for simulation data; MSE + LPIPS for real-world data. KL terms are masked by particle transparency, allowing only visible particles to participate.
+- Latent action dimension $d_{ctx}=7$; training resolution 128×128; $M$ particles adjusted by dataset; Adam optimizer with a learning rate of $8\times10^{-5}$.
 
 ## Key Experimental Results
 
-### Video Prediction (Main Results)
+### Main Results (Video Prediction)
 
-| Dataset | Condition Type | DVAE LPIPS↓ | LPWM LPIPS↓ | DVAE FVD↓ | LPWM FVD↓ |
+| Dataset | Condition | DVAE LPIPS↓ | LPWM LPIPS↓ | DVAE FVD↓ | LPWM FVD↓ |
 |--------|---------|-------------|-------------|-----------|-----------|
-| Sketchy-U | Latent action | 0.113 | **0.070** | 140.06 | **85.45** |
-| BAIR-U | Latent action | 0.063 | **0.062** | 164.41 | **163.91** |
+| Sketchy-U | Latent Action | 0.113 | **0.070** | 140.06 | **85.45** |
+| BAIR-U | Latent Action | 0.063 | **0.062** | 164.41 | **163.91** |
 | Bridge-L | Language | — | — | 146.85 | **47.78** |
-| Mario-U | Latent action | — | **Best** | — | **Best** |
+| Mario-U | Latent Action | — | **Ours** | — | **Ours** |
 
-LPWM surpasses all baselines on LPIPS and FVD across all stochastic dynamics datasets.
+LPWM outperforms all baselines in LPIPS and FVD across various stochastic dynamics datasets.
 
-### Imitation Learning
+### Main Results (Imitation Learning)
 
-| Environment / Task | GCIVL | HIQL | **LPWM** |
+| Env/Task | GCIVL | HIQL | **LPWM** |
 |-----------|-------|------|---------|
 | PandaPush 1 Cube | 74±4 | — | **100±0** |
 | PandaPush 3 Cubes | 62.1±4.4 | — | **89.4±2.5** |
 | OGBench task1 | 84±4 | 80±6 | **100±0** |
 | OGBench task3 | 16±8 | 61±11 | **89±9** |
 
-LPWM significantly outperforms baselines across PandaPush and OGBench tasks. On OGBench task3 (involving 4 atomic behaviors), LPWM achieves 89% success vs. 16% for EC Diffuser.
+LPWM significantly outperforms baselines on PandaPush and OGBench tasks. On OGBench task3 (involving 4 atomic behaviors), it achieves 89% success vs. 16% for EC Diffuser.
 
 ### Ablation Study
 
-| Configuration | Effect | Notes |
+| Configuration | Effect | Description |
 |------|------|------|
-| Global vs. per-particle latent actions | Per-particle significantly superior | Core innovation validated |
-| Latent action dimensionality | Best near effective particle dimension ($6+d_{obj}$) | Model is robust to dimensionality |
-| AdaLN vs. additive positional embedding | AdaLN superior | Conditioning mechanism matters |
+| Global vs. Per-particle latent actions | Per-particle is significantly better | Validates core innovation |
+| Latent action dimension | Optimal near meaningful particle dims ($6+d_{obj}$) | Robust to dimension |
+| AdaLN vs. Additive Positional Embedding | AdaLN is better | Conditioning method matters |
 
 ### Key Findings
-- Per-particle latent actions are the decisive performance factor — global latent actions prevent independent motion modeling in multi-object scenes.
-- LPWM's compact model matches large-scale video generation models on BAIR-64 FVD (89.4), demonstrating the efficiency advantage of object-centric inductive biases.
-- Success on real-world datasets (Sketchy, BAIR, Bridge) challenges the prevailing assumption that object-centric methods are restricted to simulation.
-- Imagined trajectories closely match actual execution (Figure 4), confirming that world model accuracy directly translates to decision-making capability.
+- Per-particle latent actions are the decisive factor for performance; global actions fail to model independent movements in multi-object scenes.
+- LPWM’s compact model matches the FVD of large-scale video generation models on BAIR-64, demonstrating the efficiency of object-centric inductive biases.
+- Success on real-world datasets (Sketchy, BAIR, Bridge) breaks the traditional perception that object-centric methods only suit simulations.
+- High alignment between imagined trajectories and actual execution (Figure 4) proves that the world model's accuracy translates directly into decision-making capability.
 
 ## Highlights & Insights
-- **Scalability breakthrough for object-centric representations**: Object-centric methods have long been considered viable only in simple simulated settings. LPWM demonstrates that the right design choices — per-particle latent actions, removing explicit tracking, and parallel encoding — enable scaling to real-world data, representing a conceptual advance.
-- **Computational realization of the "what-where" visual pathway**: The particle representation naturally corresponds to the object decomposition in the visual system; latent actions correspond to motor prediction; the overall architecture aligns with neuroscientific findings on human visuospatial world models.
-- **Unified multi-condition interface**: A single model supports unconditional, action, language, image goal, and multi-view conditioning, enabling natural transfer from video pretraining to robotic control.
+- **Scalability Breakthrough for Object-Centric Representations**: Object-centric methods were long considered limited to simple simulations. LPWM proves that with correct design (per-particle latent actions + tracking-free parallel encoding), they can scale to the real world.
+- **Computational Implementation of "What-Where" Visual Pathways**: The particle representation naturally aligns with object decomposition in the visual system, while latent actions correspond to motor prediction, matching neuroscience findings on human spatio-visual world models.
+- **Unified Multi-condition Interface**: The model supports unconditional, action, language, image, and multi-view conditioning, facilitating natural transfer from video pre-training to robotic control.
 
 ## Limitations & Future Work
-- Assumes limited camera motion and repetitive scenes (e.g., robot tabletop manipulation); not suitable for arbitrary video (e.g., street scenes, films).
-- Long-horizon tasks involving more than 4 atomic behaviors (OGBench tasks 4/5) remain unsolved across all methods — long-term planning is still a challenge.
-- The particle count $M$ is fixed and cannot dynamically adapt to scenes of varying complexity.
-- Implicit tracking (particles moving near their origin) may fail in large-displacement scenarios.
-- Integration with explicit reward models and reinforcement learning has not been explored.
+- Assumes small camera movements and repetitive scenes (e.g., robotic tabletop manipulation); not applicable to arbitrary videos (e.g., street scenes, movies).
+- Long-horizon tasks (>4 atomic behaviors such as OGBench task4/5) still result in failure across all methods; long-term planning remains a challenge.
+- Fixed number of particles $M$ cannot dynamically adapt to scenes of varying complexity.
+- Implicit tracking (movement near origin) may fail in scenarios with large displacements.
+- Not yet integrated with explicit reward models or Reinforcement Learning.
 
 ## Related Work & Insights
-- **vs. SlotFormer (slot-based)**: Two-stage training, inconsistent decomposition, and blurry predictions; LPWM uses end-to-end training and per-particle latent actions for greater flexibility.
-- **vs. Genie/CADDY (global latent actions)**: Global actions cannot capture independent multi-object motion; PlaySlot adds slot-level latent actions but is constrained by the limitations of slot representations.
-- **vs. DDLP (closest particle-based predecessor)**: DDLP requires explicit tracking and sequential encoding; LPWM removes tracking, enables parallel encoding, and introduces stochasticity.
+- **vs. SlotFormer (Slot-based)**: SlotFormer uses two-stage training and suffers from inconsistent decomposition and blurry predictions; LPWM is end-to-end and more flexible with per-particle latent actions.
+- **vs. Genie/CADDY (Global latent actions)**: Global actions cannot capture independent motions; while PlaySlot added slot-level latent actions, it remained limited by slot-based representation flaws.
+- **vs. DDLP (Recent particle-based predecessor)**: DDLP requires explicit tracking and sequential encoding; LPWM removes tracking, enables parallel encoding, and incorporates stochasticity.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Per-particle latent actions represent a natural yet non-obvious key innovation; scaling object-centric world models to real-world data is a significant breakthrough.
-- Experimental Thoroughness: ⭐⭐⭐⭐ 6+ datasets (synthetic + real) covering video prediction, imitation learning, and ablation studies.
-- Writing Quality: ⭐⭐⭐⭐ Motivation and design logic are clearly presented, with thorough comparison to prior work.
-- Value: ⭐⭐⭐⭐⭐ A pioneering contribution to object-centric world models, with code, data, and models fully open-sourced.
+- Novelty: ⭐⭐⭐⭐⭐ Per-particle latent actions are a natural yet non-obvious key innovation; scaling object-centric world models to the real world is a major breakthrough.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Evaluated on 6+ datasets (synthetic and real) across video prediction, imitation learning, and ablations.
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation and design logic with thorough comparisons to prior work.
+- Value: ⭐⭐⭐⭐⭐ Pioneering work in object-centric world models; code, data, and models are fully open-sourced.
 
 <!-- RELATED:START -->
 
@@ -148,11 +141,11 @@ LPWM significantly outperforms baselines across PandaPush and OGBench tasks. On 
 
 ## Related Papers
 
-- [\[ICLR 2026\] Latent Equivariant Operators for Robust Object Recognition: Promises and Challenges](latent_equivariant_operators_for_robust_object_recognition_promises_and_challeng.md)
 - [\[AAAI 2026\] Beyond World Models: Rethinking Understanding in AI Models](../../AAAI2026/others/beyond_world_models_rethinking_understanding_in_ai_models.md)
+- [\[ICLR 2026\] Latent Fourier Transform](latent_fourier_transform.md)
+- [\[ICML 2025\] General Agents Contain World Models](../../ICML2025/others/general_agents_contain_world_models.md)
 - [\[ICLR 2026\] Building Spatial World Models from Sparse Transitional Episodic Memories](building_spatial_world_models_from_sparse_transitional_episodic_memories.md)
-- [\[ICLR 2026\] Disentangling Shared and Private Neural Dynamics with SPIRE: A Latent Modeling Framework for Deep Brain Stimulation](disentangling_shared_and_private_neural_dynamics_with_spire_a_latent_modeling_fr.md)
-- [\[NeurIPS 2025\] TrackingWorld: World-centric Monocular 3D Tracking of Almost All Pixels](../../NeurIPS2025/others/trackingworld_world-centric_monocular_3d_tracking_of_almost_all_pixels.md)
+- [\[CVPR 2026\] MooCap: A Multi-View Benchmark for Cow-Object-Human Interaction and Behavior Dynamics](../../CVPR2026/others/moocap_a_multi-view_benchmark_for_cow-object-human_interaction_and_behavior_dyna.md)
 
 </div>
 

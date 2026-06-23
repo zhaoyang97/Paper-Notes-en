@@ -2,124 +2,96 @@
 title: >-
   [Paper Note] HAMLET: A Hierarchical and Adaptive Multi-Agent Framework for Live Embodied Theatre
 description: >-
-  [ICLR 2026][Multi-Agent][Multi-agent framework] This paper proposes HAMLET, a multi-agent framework that decouples AI theatrical creation and live performance into an offline planning phase and an online performance phas…
+  [ICLR 2026][Multi-Agent][LLM Agent] The HAMLET multi-agent framework is proposed to decouple AI theatre creation and online performance into two stages: offline planning and online performance. Through a narrative blueprint, a Perception-and-Decision (PAD) module, and a hierarchical control system, it achieves an AI theatre experience characterized by pr
 tags:
-  - "ICLR 2026"
-  - "Multi-Agent"
-  - "Multi-agent framework"
-  - "theatrical performance"
-  - "LLM Agent"
-  - "perception and decision-making"
-  - "interactive narrative"
+  - ICLR 2026
+  - Multi-Agent
+  - LLM Agent
 date: 2026-05-08
-content_hash: 12e995cae489924f
+content_hash: 0bb4f715964e6a72
 ---
-
 # HAMLET: A Hierarchical and Adaptive Multi-Agent Framework for Live Embodied Theatre
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2507.15518](https://arxiv.org/abs/2507.15518)  
 **Code**: [https://github.com/HAMLET-2025/HAMLET](https://github.com/HAMLET-2025/HAMLET)  
-**Area**: LLM Agent / Interactive Narrative
-**Keywords**: Multi-agent framework, theatrical performance, LLM Agent, perception and decision-making, interactive narrative
+**Area**: LLM Agent / Interactive Narrative  
+**Keywords**: Multi-agent framework, Theatre performance, LLM Agent, Perception and decision-making, Interactive narrative
 
 ## TL;DR
 
-This paper proposes HAMLET, a multi-agent framework that decouples AI theatrical creation and live performance into an offline planning phase and an online performance phase. Through a narrative blueprint, a Perceive And Decide (PAD) module, and a hierarchical control system, HAMLET enables an AI theatre experience characterized by proactivity, physical environment interaction, and improvisational freedom.
+The HAMLET multi-agent framework is proposed to decouple AI theatre creation and online performance into two stages: offline planning and online performance. Through a narrative blueprint, a Perception-and-Decision (PAD) module, and a hierarchical control system, it achieves an AI theatre experience characterized by proactive agency, physical environment interaction, and improvisational freedom.
 
 ## Background & Motivation
 
-### State of the Field
-Creating immersive interactive theatrical experiences has been a long-standing goal in interactive narrative research. The emergence of LLMs has opened new pathways toward this goal; however, existing LLM-driven theatre generation methods suffer from three critical limitations:
+### Background
+Creating immersive interactive theatre experiences is a long-standing goal in interactive narrative. While LLMs provide new pathways, existing LLM-driven theatre generation methods suffer from three key issues:
 
-**Lack of proactivity**: AI agents typically wait passively for instructions and cannot make independent decisions.
+**Lack of Initiative**: AI agents typically wait passively for instructions and cannot make independent decisions.
 
-**Inability to interact with the physical environment**: Character actions do not affect the stage environment, reducing drama to abstract dialogue.
+**Inability to Interact with Physical Environments**: Character behaviors do not affect the stage environment, reducing theatre to abstract dialogue.
 
-**Dependence on detailed user input**: Methods require complete story outlines or detailed guiding passages, limiting flexibility.
+**Dependency on Detailed User Input**: Requirements for complete story outlines or detailed guiding paragraphs limit flexibility.
 
-### Root Cause
-The core challenge lies in a paradigm shift from passive response to active narrative guidance — AI actors must be capable of autonomous decision-making, cooperation or conflict in open-ended scenarios, and proactively driving plot development. This represents the concrete instantiation of Agentic AI principles within theatrical performance.
+### Key Challenge
+The paradigm shift from passive response to proactive guidance—AI actors need the ability to make autonomous decisions, cooperate or conflict in open scenarios, and actively drive the plot forward. This is a concrete manifestation of Agentic AI in theatrical performance.
 
 ## Method
 
 ### Overall Architecture
 
-The HAMLET framework is decoupled into two main phases:
+HAMLET addresses the problem of allowing AI to "create + perform in real-time" an immersive play from scratch, ensuring it neither deviates from the plot nor loses improvisational freedom. It decouples this process into two stages. The **Offline Planning Phase** utilizes four specialized agents to condense a simple user-provided theme (or literary work) into a structured **Narrative Blueprint**—defining acts, scenes, interactive props, and segmenting the plot into a series of narrative nodes with "completion flags." After loading the blueprint, the **Online Performance Phase** enters a real-time loop: each character produces candidate actions via their respective Perception-and-Decision (PAD) modules. A Narrator agent adjudicates whether these actions can physically occur on stage and updates the environment, while three control agents manage the "beats," determine if nodes are reached, and provide a fallback to advance the plot when it stalls. The former phase ensures a robust narrative skeleton, while the latter ensures actors are proactive, capable of improvisation, and can truly "act" to change the stage.
 
-**Phase 1: Offline Planning**
-- Input: an arbitrary theme or a complete literary work
-- A multi-agent collaborative workflow generates a structured Narrative Blueprint
-
-**Phase 2: Online Performance**
-- Input: the Narrative Blueprint
-- A hierarchical control system executes the blueprint, manages real-time interactions, and processes environmental feedback
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["User Input<br/>Theme / Literary Work"]
+    subgraph OFF["Offline Planning: Four-Agent Blueprint Factory"]
+        direction TB
+        AD["Character Designer<br/>Generates Character Profiles"] --> PD["Plot Designer<br/>Writes Narrative Draft"]
+        PD --> RV["Reviewer<br/>Reviews Persona Consistency"]
+        RV --> DR["Director<br/>Reverse Planning → Acts/Scenes/Props/Nodes"]
+    end
+    IN --> OFF
+    OFF --> BP["Narrative Blueprint<br/>Acts → Scenes + Nodes + Completion Flags"]
+    subgraph ON["Online Performance (Real-time Loop)"]
+        direction TB
+        PAD["PAD Module: Dual-Process Actor Decision<br/>FAST/SLOW/SILENCE → Action Triplets"]
+        NAR["Narrator Adjudication System<br/>Determines Physical Feasibility → Updates Env/Broadcasts"]
+        CTRL["Online Hierarchical Control<br/>Planner Arranges Beats · Transfer Advances Nodes · Advancer Fallback"]
+        PAD --> NAR --> CTRL
+        CTRL -->|Node Not Reached| PAD
+    end
+    BP --> ON
+    ON --> OUT["Real-time Improvised Theatre Performance"]
+```
 
 ### Key Designs
 
-1. **Offline Planning: Four-Agent Collaborative Workflow**
+**1. Offline Planning: A Blueprint Factory with Four-Agent Collaboration and Reverse Planning**
 
-    - **Actor Designer**: Generates character profiles from user input, including static attributes (background, personality) and dynamic attributes (initial goals, core relationships); can query external knowledge bases.
-    - **Plot Designer**: Drafts a preliminary narrative based on the theme and characters.
-    - **Reviewer**: Evaluates the plausibility of character settings, clarity of motivations, and inter-character relationships.
-    - **Director**: Responsible for final structured processing, performing the following key steps:
-        - Dividing the narrative into Acts and Scenes
-        - Creating environment interaction elements (prop lists per scene)
-        - Defining Narrative Points — each with explicit completion flags and outcomes
-        - **Reverse planning**: generating the ending node first, then constructing preceding nodes in reverse order to prevent plot drift
+Generating a performable script with a single LLM often leads to loose logic and difficulty in maintaining constraints. HAMLET decomposes "playwriting" into a pipeline of four agents with clear divisions of labor. The **Actor Designer** first creates character profiles (static attributes like background/personality and dynamic ones like initial goals/core relationships) based on user input, utilizing external knowledge bases if necessary. The **Plot Designer** then writes a preliminary narrative draft. The **Reviewer** specifically checks for consistent character settings, clear motivations, and logical relationships to prevent discrepancies before performance. Finally, the **Director** performs structural finalization—dividing the play into Acts and Scenes, listing interactive props, and breaking the plot into **Narrative Points**, each with explicit completion flags and outcomes. A critical technique is the Director's use of **reverse planning**: defining the ending node first and working backward to fill in preceding nodes, ensuring every step converges toward the intended conclusion and preventing plot divergence during real-time performance.
 
-2. **Online Performance: Beat-Driven Improvisation System**
+**2. PAD Module: Embedding Dual-Process Theory into the Actor's Mind**
 
-   Performance unit hierarchy: **Act** → **Scene + Narrative Point** → **Beat**
+While the blueprint fixes the trajectory, what a character says or does at any moment is produced by the **Perceive And Decide (PAD)** module, which explicitly integrates intuitive and reflective reasoning. The input provides two perspectives: subjective internal states (Persona, subjective relationships, Memory, Goal) and objective external stimuli (environment descriptions, present characters, dialogue history, interactive objects). Decision-making is driven by **dual goals**—the public completion flag of the current node and the character's private goal (refreshed per node). The output corresponds to the two systems in Kahneman’s dual-process theory: **FAST** (System 1 intuitive response), **SLOW** (System 2 deliberate reflection), and **SILENCE** (choosing not to act), generating structured potential action triplets (Subject-Verb-Object) for environmental adjudication. The PAD itself is a fine-tuned 8B model trained to switch between these systems, allowing characters to react instantly or pause to reflect at critical junctures.
 
-    - A Beat represents one valid interaction step (a character taking a valid action).
-    - Character decisions are driven by a **dual-goal system**: public flags for the current Narrative Point and private individual goals.
-    - **Multiple trajectories** are permitted between two Narrative Points, affording a high degree of improvisational freedom.
+**3. Narrator Adjudication System: Allowing Characters to Truly Change the Stage**
 
-3. **PAD Module (Perceive And Decide)**
+A common flaw in pure dialogue systems is that character actions have no physical consequence. HAMLET introduces a **Narrator Agent** to adjudicate all physical interactions. When a character attempts a physical action, the Narrator judges its feasibility based on current environment states and physical rules. If feasible, the Narrator confirms the action, updates the environment, and broadcasts an objective description to all characters. If infeasible, it declares failure with a logical explanation (e.g., "The dagger is not in your inventory," "Humans cannot fly," or "The character is not in this scene"). This adjudication pulls theatre from abstract dialogue back to an embodied stage with cause and effect.
 
-   Designed on the basis of Kahneman's dual-process theory, integrating intuitive and reflective reasoning:
+**4. Online Hierarchical Control: Multi-Trajectory Improvisation with Three-Agent Scheduling**
 
-   **Dual-perspective input**:
-    - Internal state (subjective): Persona + subjective relationships + Memory + Goal
-    - External stimuli (objective): environment description + character list + dialogue history + interactable objects
-
-   **Decision outputs**:
-    - FAST: rapid intuitive response (System 1)
-    - SLOW: deliberate analytical response (System 2)
-    - SILENCE: silence / inaction
-    - Potential actions (structured action triples generated via tool calls: subject–verb–object)
-
-   The PAD module is an 8B fine-tuned model capable of simulating the dual-system structure of human cognition.
-
-4. **Environment Interaction: Narrator Arbitration System**
-
-   A Narrator Agent is designed to arbitrate all physical interactions:
-    - When a character attempts a physical action, the Narrator assesses feasibility based on environmental state and physical rules.
-    - Success: confirms the action, updates the environmental state, and broadcasts an objective description.
-    - Failure: rules the action as failed and provides a logical explanation.
-
-5. **Hierarchical Control: Three-Agent System**
-
-    - **Planner**: Pre-designs multi-trajectory plans and decomposes narrative flags into executable Beat sequences.
-    - **Transfer**: Periodically checks whether Narrative Point flags are satisfied, advances to the next point, and manages character entrances and exits.
-    - **Advancer**: If the plot stalls beyond a time threshold, guides relevant characters to advance the narrative.
-
-### Evaluation Framework
-
-Three-dimensional evaluation:
-- **Character Performance**: character consistency, emotional expression
-- **Narrative Quality**: plot coherence, structural integrity
-- **Interaction Experience**: naturalness of environmental interaction, sense of immersion
-
-A HAMLETJudge (8B critic model) is trained, with GPT-4o used as a baseline for win-rate comparison.
+Performances are organized into a hierarchy of "Act → Scene + Node → Beat." A **Beat** is the smallest effective interaction step where a character takes an action to advance the situation. The blueprint only mandates the transition between nodes; **multiple trajectories** are allowed between two nodes. How characters argue, cooperate, or take detours is decided on the fly—this is the point of balance between structured narrative and open improvisation. To prevent this freedom from devolving into chaos, three control agents collaborate: the **Planner** breaks node completion flags into executable Beat sequences and presets multiple candidate trajectories; the **Transfer** periodically checks if node flags are met to advance to the next node and manages character entrances/exits; and the **Advancer** serves as a fallback mechanism—actively guiding relevant characters to take action if the plot stalls beyond a time threshold. Ablation studies show that removing the Advancer significantly drops the task completion rate to 68.7% and increases stagnation, proving its necessity as a "safety fuse."
 
 ## Key Experimental Results
 
+To establish a quantifiable metric for theatrical quality, HAMLET is scored across three dimensions: Character Performance (consistency, emotional expression), Narrative Quality (coherence, structural integrity), and Interaction Experience (naturalness of environmental interaction, immersion). To reduce evaluation costs, the authors trained an 8B critic model, **HAMLETJudge**, to replace expensive human or large-model scoring. Win rates were compared against a GPT-4o baseline, allowing automatic 3D scoring across 100 cases.
+
 ### Main Results: Multi-Model Evaluation Leaderboard
 
-| Model | Avg. Score (EN) | Avg. Score (ZH) | Overall |
-|-------|----------------|----------------|---------|
+| Model | English Avg | Chinese Avg | Total |
+|------|----------|----------|------|
 | Claude-4-sonnet-Thinking | 78.98 | 79.92 | **79.45** |
 | Claude-4-sonnet | 76.92 | 79.68 | 78.30 |
 | Qwen3-32B-Thinking | 69.10 | 78.59 | 73.85 |
@@ -132,49 +104,49 @@ A HAMLETJudge (8B critic model) is trained, with GPT-4o used as a baseline for w
 ### Dataset Composition
 
 | Source | Count | Description |
-|--------|-------|-------------|
-| Chinese literary classics | 25 | Literary excerpts |
-| English literary classics | 25 | Literary excerpts |
-| Custom themes | 50 | Spanning 10 distinct themes |
+|------|------|------|
+| Chinese Classics | 25 | Literary excerpts |
+| English Classics | 25 | Literary excerpts |
+| Custom Themes | 50 | Covering 10 different themes |
 | **Total** | **100 cases** | |
 
 ### Key Findings
-- Reasoning-oriented models (e.g., Claude-4-sonnet-Thinking) achieve the best overall performance, though the advantage is less pronounced than expected.
-- Chinese-language performances consistently outperform English-language ones, possibly because Chinese literary works align more closely with the framework's design.
-- Small models (e.g., Llama-3.1-8B) perform significantly worse on theatrical tasks.
-- The PAD module (8B) achieves state-of-the-art performance on decision-making tasks.
+- Reasoning models (e.g., Claude-4-sonnet-Thinking) generally perform best, though the advantage is less pronounced than expected.
+- Performance in Chinese is generally superior to English (possibly due to better alignment between Chinese literature and the framework design).
+- Small models (e.g., Llama-3.1-8B) perform significantly worse in theatrical performance.
+- The PAD module (8B) achieves SOTA performance in specific decision-making tasks.
 - HAMLETJudge (8B) provides a cost-effective and reliable evaluation alternative.
 
 ## Highlights & Insights
 
-1. **End-to-end AI theatre pipeline**: A complete framework from thematic input to real-time live performance, filling a systemic gap in the AI theatre domain.
-2. **Cognitive-theoretic foundation of the PAD module**: Integrating System 1 and System 2 into AI actor decision-making based on Kahneman's dual-process theory produces more human-like responses.
-3. **Reverse planning strategy**: The Director first determines the ending and then constructs preceding plot points in reverse, effectively preventing narrative drift — a clever design in the context of interactive storytelling.
-4. **Beat-driven multi-trajectory improvisation**: Allowing multiple trajectories between two Narrative Points strikes a balance between structured narrative and free improvisation.
-5. **Physical environment interaction**: The Narrator arbitration system moves the drama beyond pure dialogue, enhancing embodiment and immersion.
+1. **Complete AI Theatre Pipeline**: An end-to-end framework from theme input to real-time online performance, filling a systematic gap in AI theatre.
+2. **Cognitive Foundation for PAD**: Incorporates Kahneman's dual-process theory into AI actor decision-making, making responses more human-like.
+3. **Reverse Planning Strategy**: The Director defines the ending first and builds backward, effectively preventing plot drift—a clever design for interactive narratives.
+4. **Beat-driven Multi-trajectory Improvisation**: Allows for multiple paths between narrative nodes, balancing structural narrative with improvisational freedom.
+5. **Physical Environment Interaction**: The Narrator adjudication system moves theatre beyond pure dialogue, enhancing embodiment and immersion.
 
 ## Limitations & Future Work
 
-- Evaluation relies primarily on LLM-as-Judge (GPT-4o and HAMLETJudge), with no large-scale human evaluation.
+- Evaluation relies heavily on LLM-as-Judge (GPT-4o and HAMLETJudge), lacking large-scale human evaluation.
 - The evaluation dataset of 100 cases is limited in scale.
-- The current framework supports text-based theatre only, without addressing multimodal dimensions (speech, vision, motion capture).
-- The PAD module is an 8B fine-tuned model that may introduce latency in real-time performance settings.
-- Interactive experiences involving human players are not sufficiently evaluated in the paper.
-- Maintaining consistency in long-form (multi-act) performances may pose challenges due to long-context limitations.
+- The current framework primarily supports text-based theatre; multi-modal elements (voice, vision, motion capture) are not yet integrated.
+- The PAD module is a fine-tuned 8B model which may face latency issues in real-time performance.
+- Interactive experiences involving human players were not fully evaluated in the paper.
+- Maintaining consistency in long-form (multi-act) performances may face long-context challenges.
 
 ## Related Work & Insights
 
-- **Dramatron** (Mirowski et al., 2023): Employs a hierarchical approach separating planning from generation, but does not support real-time performance.
-- **CoSER** (Wang et al., 2025): Scales up the number of characters but lacks holistic theatrical performance evaluation.
-- **CharacterEval** (Tu et al., 2024): Provides multi-turn, multi-dimensional dialogue scoring, but is limited to two-character scenarios.
-- **Kahneman's dual-process theory**: The cognitive science foundation underlying the PAD module.
-- Insight: The balanced design of hierarchical control and improvisational freedom holds reference value for other agent systems, including game NPCs and virtual assistants.
+- **Dramatron** (Mirowski et al., 2023): Uses a hierarchical approach to separate planning from generation but lacks support for real-time performance.
+- **CoSER** (Wang et al., 2025): Expands character counts but lacks a holistic evaluation of theatrical performance.
+- **CharacterEval** (Tu et al., 2024): Multi-dimensional scoring for multi-turn dialogues, but limited to dual-character scenarios.
+- **Kahneman’s Dual-Process Theory**: Serves as the cognitive science basis for the PAD module.
+- Insight: The balanced design of hierarchical control and improvisational freedom is applicable to other agent systems such as game NPCs and virtual assistants.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ — Comprehensive and novel framework design; the PAD module is grounded in cognitive theory.
-- Experimental Thoroughness: ⭐⭐⭐ — The leaderboard evaluation is valuable but lacks human evaluation and ablation studies.
-- Writing Quality: ⭐⭐⭐⭐ — Framework description is clear and well-illustrated, though the paper is lengthy.
-- Value: ⭐⭐⭐⭐ — Makes a significant contribution to interactive narrative and AI theatre research.
+- Novelty: ⭐⭐⭐⭐ — Comprehensive and novel framework design with cognitive theory support for the PAD module.
+- Experimental Thoroughness: ⭐⭐⭐ — Leaderboard evaluation is valuable, but lacks human assessment and extensive ablation studies.
+- Writing Quality: ⭐⭐⭐⭐ — Clear framework descriptions and rich diagrams, though the paper is lengthier.
+- Value: ⭐⭐⭐⭐ — Significant contribution to the fields of interactive narrative and AI theatre.
 
 <!-- RELATED:START -->
 
@@ -183,10 +155,10 @@ A HAMLETJudge (8B critic model) is trained, with GPT-4o used as a baseline for w
 ## Related Papers
 
 - [\[AAAI 2026\] Hierarchical Pedagogical Oversight: A Multi-Agent Adversarial Framework for Reliable AI Tutoring](../../AAAI2026/multi_agent/hierarchical_pedagogical_oversight_a_multi-agent_adversarial_framework_for_relia.md)
+- [\[ICLR 2026\] From EduVisBench to EduVisAgent: A Benchmark and Multi-Agent Framework for Reasoning-Driven Pedagogical Visualization](from_eduvisbench_to_eduvisagent_a_benchmark_and_multi-agent_framework_for_reason.md)
+- [\[CVPR 2026\] Visual Document Understanding and Reasoning: A Multi-Agent Collaboration Framework with Agent-Wise Adaptive Test-Time Scaling](../../CVPR2026/multi_agent/visual_document_understanding_and_reasoning_a_multi-agent_collaboration_framewor.md)
 - [\[ACL 2026\] PosterForest: Hierarchical Multi-Agent Collaboration for Scientific Poster Generation](../../ACL2026/multi_agent/posterforest_hierarchical_multi-agent_collaboration_for_scientific_poster_genera.md)
-- [\[AAAI 2026\] Adaptive Theory of Mind for LLM-based Multi-Agent Coordination](../../AAAI2026/multi_agent/adaptive_theory_of_mind_for_llm-based_multi-agent_coordination.md)
-- [\[ACL 2026\] ATLAS: Adaptive Trading with LLM AgentS Through Dynamic Prompt Optimization and Multi-Agent Coordination](../../ACL2026/multi_agent/atlas_adaptive_trading_with_llm_agents_through_dynamic_prompt_optimization_and_m.md)
-- [\[NeurIPS 2025\] Communicating Plans, Not Percepts: Scalable Multi-Agent Coordination with Embodied World Models](../../NeurIPS2025/multi_agent/communicating_plans_not_percepts_scalable_multi-agent_coordination_with_embodied.md)
+- [\[ICLR 2026\] Adaptive Collaboration with Humans: Metacognitive Policy Optimization for Multi-Agent LLMs with Continual Learning](adaptive_collaboration_with_humans_metacognitive_policy_optimization_for_multi-a.md)
 
 </div>
 

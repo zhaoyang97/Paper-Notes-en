@@ -2,172 +2,128 @@
 title: >-
   [Paper Note] Topology and Geometry of the Learning Space of ReLU Networks: Connectivity and Size
 description: >-
-  [ICLR 2026][Model Compression][ReLU networks] From the perspectives of algebraic geometry and algebraic topology, this paper systematically investigates the connectivity and singularity of the parameter space of feedforw…
+  [ICLR 2026][Model Compression][Paper Note] This work systematically investigates the connectivity and singularity of the parameter space for feedforward ReLU networks based on general Directed Acyclic Graph (DAG) architectures from the perspectives of algebraic geometry and algebraic topology. It reveals the critical roles of bottleneck nodes and balance condit
 tags:
-  - "ICLR 2026"
-  - "Model Compression"
-  - "ReLU networks"
-  - "parameter space topology"
-  - "connectivity"
-  - "singularity"
-  - "DAG architecture"
-  - "differentiable pruning"
+  - ICLR 2026
+  - Model Compression
 date: 2026-05-08
-content_hash: 81228b13669b172f
+content_hash: 62744a768e167fc4
 ---
-
 # Topology and Geometry of the Learning Space of ReLU Networks: Connectivity and Size
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2602.00693](https://arxiv.org/abs/2602.00693)  
 **Code**: None  
-**Area**: Model Theory / Neural Network Theory
+**Area**: Model Theory / Neural Network Theory  
 **Keywords**: ReLU networks, parameter space topology, connectivity, singularity, DAG architecture, differentiable pruning
 
 ## TL;DR
 
-From the perspectives of algebraic geometry and algebraic topology, this paper systematically investigates the connectivity and singularity of the parameter space of feedforward ReLU networks defined on general DAG architectures. It reveals the critical role of bottleneck nodes and balance conditions in determining the topological structure of the parameter space, and establishes a theoretical connection between singularities and differentiable pruning.
+This work systematically investigates the connectivity and singularity of the parameter space for feedforward ReLU networks based on general Directed Acyclic Graph (DAG) architectures from the perspectives of algebraic geometry and algebraic topology. It reveals the critical roles of bottleneck nodes and balance conditions in determining the topology of the parameter space and establishes a theoretical link between singularities and differentiable pruning.
 
 ## Background & Motivation
 
-### State of the Field
+**Background**: Understanding the geometric and topological properties of ReLU network parameter spaces is essential for analyzing and guiding training dynamics. Under gradient flow training, the positive homogeneity of ReLU restrictively confines reachable parameter configurations to an algebraic variety. The structure of this variety directly determines three aspects: the optimization landscape (whether gradient descent can move freely between different solutions), model equivalence (which parameter configurations represent the same function), and network compression (when certain parameters can be safely removed).
 
-**Background**: Understanding the geometric and topological properties of the parameter space of ReLU networks is essential for analyzing and guiding training dynamics. During gradient-flow training, the homogeneity of the ReLU activation function constrains the parameter space to an algebraic variety. The structure of this variety directly affects:
+**Limitations of Prior Work**: Previous studies primarily targeted simple sequential architectures (i.e., standard multi-layer perceptrons), lacking systematic analysis of more general DAG architectures. This represents a significant gap, as modern networks—such as ResNets with skip connections and DenseNets with dense connections—are essentially DAG structures. Their parameter space topology cannot be directly covered by traditional "layer-by-layer" analysis.
 
-### Limitations of Prior Work
-
-**Limitations of Prior Work**: Optimization landscape: whether gradient descent can move freely among different solutions.
-
-### Root Cause
-
-**Key Challenge**: Model equivalence: which parameter configurations represent the same function.
-
-### Starting Point
-
-**Key Insight**: Network compression: when certain parameters can be safely removed.
-
-Prior work has focused primarily on simple sequential architectures (i.e., standard multilayer perceptrons), leaving general DAG architectures largely unanalyzed. Understanding the parameter space topology of general DAG architectures is particularly important, as modern networks (e.g., skip connections in ResNets, dense connections in DenseNets) are inherently DAG-structured.
-
-This paper addresses two core questions:
-
-**Connectivity**: Is the parameter space connected? If not, what is the structure of its connected components?
-
-**Singularity**: Where are the singular points in the parameter space, and how does their existence relate to the network architecture?
+**Goal**: The authors formalize the characterization of parameter space topology for general DAG architectures into two core problems: connectivity (Is the parameter space connected? If not, how are the connected components determined by the network structure?) and singularity (Where are the singular points, what is their relationship to the network structure, and can they be reached during training?).
 
 ## Method
 
 ### Overall Architecture
 
-The theoretical framework of this paper is built upon the following chain of core concepts:
-
-1. **ReLU homogeneity → balance equations**: ReLU (and its generalizations such as Leaky ReLU) is positively homogeneous, i.e., $\text{ReLU}(\alpha x) = \alpha \cdot \text{ReLU}(x)$ holds for $\alpha > 0$. This implies that training under gradient flow produces "balance conditions"—conservation laws governing the weight norms of adjacent layers.
-2. **Balance conditions → algebraic variety**: Balance conditions define a system of algebraic equations in the parameter space, restricting the parameters to the zero set of these equations (an algebraic variety).
-3. **DAG topology → variety topology**: The connectivity and singularity of the algebraic variety are directly determined by the graph-theoretic properties of the underlying DAG.
+The paper translates the question of "what the parameter space of a ReLU network looks like" into a derivable conceptual chain. Since ReLU and its generalizations are positively homogeneous, gradient flow training exhibits rescaling symmetry (multiplying the input weights of a hidden neuron by $\alpha>0$ and its output weights by $\alpha^{-1}$ does not change the function). This symmetry yields conservation laws, keeping the "balance value" $c_v=\langle\!\langle\theta,\theta\rangle\!\rangle_v$ at each hidden neuron constant along the training trajectory. Collectively, these conservation laws form a set of quadratic equations that pin reachable parameters to their common zero set—termed the invariant set $H_G(c)$, which is an algebraic variety. The problem is thus transformed into studying the geometry of this variety: its connectivity is determined by bottleneck nodes in the DAG, and its singular points correspond to subnetworks degenerated from the DAG, which precisely characterize "pruned" states of the network. Through this chain, the authors reduce the topological characterization of any DAG architecture to the analysis of its underlying graph structure. Since these pruned states are generally unreachable during training, the paper introduces a regularization term to actively approach them.
 
 ### Key Designs
 
-1. **Connectivity analysis**: A complete characterization of when the parameter space is connected.
+**1. Invariant Set: Pinning Training Dynamics to a Graph-Determined Algebraic Variety**
 
-    - Core result: The connectivity of the parameter space is determined by **bottleneck nodes** in the network DAG.
-    - Bottleneck nodes: nodes that lie on every path from input to output. If a bottleneck node has width 1, the parameter space may fracture into disconnected components.
-    - Intuition: A width-1 bottleneck means all information must pass through a scalar channel; the sign (positive/negative) of that scalar creates a barrier that cannot be crossed continuously.
-    - Generalizes previously known results from sequential architectures to general DAGs.
+This is the starting point of the chain. ReLU and Leaky ReLU satisfy positive homogeneity $\sigma(\alpha x)=\alpha\,\sigma(x)$ for $\alpha>0$, leading to rescaling symmetry and conservation laws under gradient flow. The balance value $c_v$ of each hidden neuron $v$ (the difference between the squared norms of input and output weights, determined at initialization) remains constant. Summing these laws for all neurons yields a system of quadratic equations whose common solution set is the invariant set $H_G(c)$. Training trajectories are confined within this variety. The authors prove that any balance configuration $c$ corresponds to a non-empty $H_G(c)$ (feasible balance). Analysis thus shifts from "optimization in Euclidean space" to the geometry of this variety. By using the graph's incidence matrix, the conservation laws are formulated in a compact version applicable to any DAG.
 
-2. **Balance conditions and their relation to subsets**: Fine-grained characterization of connectivity.
+**2. Bottleneck Nodes + Balance Constraints: Determining Parameter Space Connectivity**
 
-    - The authors introduce the notion of "balance conditions" associated with specific subsets of the network.
-    - Balance conditions for different subsets correspond to different algebraic constraints, which together determine the fine topological structure of the parameter space.
-    - This enables the analysis to be refined from global constraints to local ones, providing a powerful tool for understanding complex DAG architectures.
+This step addresses connectivity, which determines whether gradient descent can navigate between different solutions. The authors prove that connectivity is controlled by **bottleneck nodes** in the DAG: hidden neurons with an in-degree of 1 (in-bottleneck) or an out-degree of 1 (out-bottleneck) that serve as unique channels for information flow. Intuitively, a bottleneck forces information through a scalar channel whose sign cannot flip under gradient flow (as crossing zero is prohibited by the balance conditions). If the "supply and demand" (sum of balance values) of its pure ancestors or descendants becomes infeasible, the invariant set splits into disconnected components. Theorem 1 provides the necessary and sufficient condition: $H_G(c)$ is connected if and only if the balance constraints for every bottleneck node are feasible. A corollary is that architectures without bottleneck nodes are inherently connected. While standard MLPs are a special case, the novelty lies in extending this to arbitrary DAGs and using subset-specific balance constraints to characterize whether parallel paths or skip connections bypass a bottleneck and thus restore connectivity.
 
-3. **Singularity analysis**: Points in the parameter space where gradients vanish or are discontinuous.
+**3. Singular Points as Disconnected Subnetworks: Generally Unreachable During Training**
 
-    - Core finding: Singularities are closely related to the **subnetwork topology** of the DAG.
-    - When the weights of certain edges are zero (equivalent to removing the corresponding connections), the network degenerates into a subnetwork, producing singular points in the parameter space.
-    - The structure of the singular point set can be characterized precisely in terms of subgraphs of the DAG.
-    - These singularities are not mathematical pathologies—they correspond to valid "pruned" states of the network.
+This step addresses singularity. Points on the variety where the Jacobian is not full rank are singular points. Theorem 2 states that singular points of $H_G(c)$ correspond to configurations where a set of neurons is "disconnected" (associated edge weights are simultaneously zero, equivalent to deleting those connections), causing the network to degenerate into a subnetwork. Thus, the stratification of singularities is characterized by the induced subgraphs of the DAG. A counterintuitive but crucial finding is that from a general initialization, standard gradient flow **cannot reach** these singular points (generically unreachable). These points represent the effective "pruned" states, but training will not naturally converge to them.
 
-4. **Connection between singularities and differentiable pruning**: Theory guiding practice.
+**4. Nuclear Norm Regularization: Turning "Training to Singularities" into Differentiable Pruning**
 
-    - Differentiable pruning methods achieve network compression by learning weights that approach zero.
-    - This paper proves that the process of approaching singular points along gradient-flow training corresponds mathematically and precisely to differentiable pruning.
-    - The "reachability" of singular points indicates which pruned configurations can be attained through continuous training.
-    - This provides a rigorous geometric foundation for pruning methods.
+This addresses the reachability gap. The authors propose a nuclear norm-based regularization term to encourage convergence toward singular configurations, enabling differentiable, structure-agnostic pruning. Approaching a singularity effectively "learns away" the connections of a subnetwork, thereby compressing the model. Experiments also show that while L1 regularization does not explicitly target neuron sparsity, it empirically induces similar singular behavior, facilitating near-lossless pruning. Consequently, pruning shifts from relying on heuristic sparsity constraints to utilizing the geometric structure of the optimization space itself.
 
 ### Loss & Training
 
-This paper is a theoretical study and does not involve the design of new loss functions. Numerical experiments serve only to validate theoretical predictions:
-- Small-scale ReLU networks are used for visualization of training trajectories.
-- The conservation of balance conditions during training is verified.
-- The disconnectedness of the parameter space and the locations of singular points are demonstrated.
+While primarily theoretical, the paper introduces a nuclear norm regularization term to push parameters toward singular points of the invariant set (disconnecting subnetworks) for differentiable pruning. L1 regularization is also reported to have similar empirical effects. Numerical experiments verify the theory by visualizing training trajectories in small ReLU networks, verifying the conservation of balance conditions, and checking if disconnected components and singular points align with the graph-theoretic characterizations.
 
 ## Key Experimental Results
 
 ### Main Results
 
-The paper is primarily a theoretical contribution; numerical experiments play a supporting and validating role.
+As a theoretical contribution, numerical experiments serve as validation.
 
-| Experimental Setup | Key Conclusion |
-|---|---|
-| 2-layer ReLU, bottleneck width = 1 | Parameter space splits into 2 disconnected components; training cannot cross between them |
+| Experimental Configuration | Key Conclusion |
+|----------|----------|
+| 2-layer ReLU, bottleneck width = 1 | Parameter space splits into 2 disconnected components; training cannot cross them |
 | 2-layer ReLU, bottleneck width ≥ 2 | Parameter space is connected |
 | DAG with skip connections | Connectivity depends on whether skip connections bypass the bottleneck |
-| Singular points across various DAG architectures | Singular point locations are consistent with theoretical predictions |
+| Singularities in various DAGs | Singular point locations align with theoretical predictions |
 
 ### Ablation Study
 
-| Configuration | Key Metric | Remarks |
-|---|---|---|
-| Sequential architecture | Connectivity determined by the minimum-width layer | Consistent with known results |
-| DAG with parallel paths | Connected when no width-1 bottleneck exists | New result |
-| Training trajectory with weights approaching zero | Converges near singular points | Validates reachability |
+| Configuration | Key Metric | Description |
+|------|----------|------|
+| Sequential architecture | Connectivity determined by minimum width layer | Consistent with known results |
+| DAG with parallel paths | Connected if no width-1 bottleneck exists | New result |
+| Trajectories near zero weights | Convergence near singular points | Validates reachability via regularization |
 
 ### Key Findings
 
-1. **Necessary and sufficient condition for connectivity**: The parameter space is connected if and only if the DAG contains no strict bottleneck node of width 1 (after accounting for balance conditions).
-2. **Precise correspondence between singularities and subnetworks**: Each stratum of singularities corresponds exactly to the topology of some induced subgraph of the DAG.
-3. **Hierarchy of reachability**: Not all singular points are reachable via continuous gradient flow; reachability depends on the topology of the current connected component.
-4. **Practical implications for training**: In a disconnected parameter space, different initializations may lead the model into different connected components, potentially of varying quality.
+1.  **Necessary and Sufficient Conditions for Connectivity**: Parameter space connectivity is guaranteed if and only if no strict width-1 bottleneck nodes exist in the DAG (considering balance conditions).
+2.  **Precise Correspondence Between Singularity and Subnetworks**: Every singular stratification corresponds exactly to the topology of an induced subgraph of the DAG.
+3.  **Generic Unreachability of Singularities**: Standard gradient flow from general initialization does not reach these singular (pruned) points; active approximation via nuclear norm regularization is required.
+4.  **Practical Impact on Training**: In disconnected parameter spaces, different initializations can lead the model into different (and potentially sub-optimal) connected components.
 
 ## Highlights & Insights
 
-1. **A perfect marriage of mathematical depth and network theory**: Tools from algebraic geometry (algebraic varieties) and algebraic topology (connectivity, singularity) are introduced into neural network analysis, yielding a precise and elegant theory.
-2. **Generalization from sequential to DAG architectures**: Beyond extending the scope of existing results, this work reveals that DAG topology—not merely layer width—plays a central role in determining the structure of the parameter space.
-3. **A geometric perspective on pruning**: For the first time within a rigorous mathematical framework, singularities are connected to network pruning, providing a fundamentally new angle for understanding why pruning works.
-4. **Conceptual clarity**: Although mathematically sophisticated, concepts such as bottleneck nodes, balance conditions, and singularity stratification align intuitively with practical network design considerations (e.g., avoiding information bottlenecks, the role of skip connections).
+1.  **Symmetry between Mathematics and Network Theory**: The integration of algebraic geometry (varieties) and algebraic topology (connectivity, singularity) provides a precise and elegant theoretical framework for neural network analysis.
+2.  **Generalization from Sequential to DAG**: Beyond extending existing results, it reveals that DAG topology (rather than just layer width) is the central factor in determining parameter space structure.
+3.  **Geometric Perspective on Pruning**: This work is among the first to link singularities to network pruning within a rigorous mathematical framework, offering a new perspective on why pruning is effective.
+4.  **Conceptual Clarity**: Notions like bottleneck nodes, balance conditions, and singular stratification align intuitively with network design practices, such as avoiding information bottlenecks and the utility of skip connections.
 
 ## Limitations & Future Work
 
-1. **Restricted to ReLU-type activations**: The theory relies on positive homogeneity and does not apply to smooth activations such as GELU or Swish.
-2. **Insufficient validation on large-scale networks**: Numerical verification is conducted only on small networks; the implications for practical architectures such as ResNet-50 or Transformers remain unexamined.
-3. **Applicability of balance conditions to practical training**: Strict balance conditions hold only under exact gradient flow; practical techniques such as stochastic gradient descent, learning rate scheduling, and batch normalization may violate these conditions.
-4. **Relationship to generalization not discussed**: Whether the topological properties of the parameter space (connectivity/singularity) affect model generalization is an important open question.
-5. **Bias terms not addressed**: The analysis omits bias terms, which break homogeneity.
+1.  **Limited to ReLU-like Activations**: The theory heavily relies on positive homogeneity and does not apply to smooth activations like GELU or Swish.
+2.  **Insufficient Validation on Large-scale Networks**: Numerical validation is limited to small networks; the guidance for architectures like ResNet-50 or Transformers remains untested.
+3.  **Applicability of Balance Conditions in Practice**: Strict balance conditions hold under exact gradient flow. Techniques like SGD, learning rate scheduling, and Batch Normalization may break these conditions.
+4.  **Link to Generalization**: Whether topological properties (connectivity/singularity) of the parameter space influence model generalization remains an important open question.
+5.  **Exclusion of Bias Terms**: Biases are ignored in the analysis, though they break the homogeneity of the network.
 
 ## Related Work & Insights
 
-- **Loss landscape analysis**: This work has deep connections to research on connectivity in neural network loss landscapes (e.g., mode connectivity), but focuses on the parameter space itself rather than loss function values.
-- **Neural network equivalence classes**: Complementary to work on permutation symmetry—the latter concerns functional equivalence, while this paper concerns equivalence of training dynamics.
-- **Applications of algebraic geometry in ML**: Continues the tradition of bringing algebraic geometry tools into machine learning, as exemplified by Watanabe's singular learning theory.
-- **Insights**: The results provide theoretical grounding for designing better initialization strategies (selecting the correct connected component) and structured pruning methods (leveraging singularities as guidance).
+*   **Loss Landscape Analysis**: This work shares deep connections with research on mode connectivity in loss landscapes but focuses on the parameter space itself rather than loss values.
+*   **Neural Network Equivalence Classes**: Complements studies on permutation symmetry by discussing equivalence in training dynamics.
+*   **Algebraic Geometry in ML**: Continues the tradition of applying algebraic tools to ML, such as Watanabe’s Singular Learning Theory.
+*   **Insights**: Provides a theoretical basis for designing better initialization strategies (selecting the correct connected component) and structured pruning methods (using singularities as guides).
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ — Systematic application of algebraic geometry/topology tools to ReLU networks on general DAG architectures.
-- Experimental Thoroughness: ⭐⭐⭐ — Acceptable for a theoretical work, but large-scale validation is lacking.
-- Writing Quality: ⭐⭐⭐⭐ — Mathematically rigorous and clearly argued, though with a non-trivial barrier for readers without a mathematical background.
-- Value: ⭐⭐⭐⭐ — An important foundational theoretical contribution; the connection to pruning carries practical significance.
+*   Novelty: ⭐⭐⭐⭐⭐ — Systematic application of algebraic geometry/topology to general DAG ReLU networks.
+*   Experimental Thoroughness: ⭐⭐⭐ — Acceptable for a theoretical paper, though large-scale validation is lacking.
+*   Writing Quality: ⭐⭐⭐⭐ — Mathematically rigorous and clear, though potentially challenging for readers without a mathematical background.
+*   Value: ⭐⭐⭐⭐ — Significant fundamental theory contribution with practical implications for pruning.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICLR 2026\] Distilling and Adapting: A Topology-Aware Framework for Zero-Shot Interaction Prediction in Multiplex Biological Networks](distilling_and_adapting_a_topology-aware_framework_for_zero-shot_interaction_pre.md)
 - [\[NeurIPS 2025\] Global Minimizers of ℓp-Regularized Objectives Yield the Sparsest ReLU Neural Networks](../../NeurIPS2025/model_compression/global_minimizers_of_ellp-regularized_objectives_yield_the_sparsest_relu_neural_.md)
-- [\[ICLR 2026\] A Recovery Guarantee for Sparse Neural Networks](a_recovery_guarantee_for_sparse_neural_networks.md)
-- [\[ICLR 2026\] Boomerang Distillation Enables Zero-Shot Model Size Interpolation](boomerang_distillation_enables_zero-shot_model_size_interpolation.md)
-- [\[ICLR 2026\] Adaptive Width Neural Networks](adaptive_width_neural_networks.md)
+- [\[ICLR 2026\] MaskPro: Linear-Space Probabilistic Learning for Strict (N:M)-Sparsity on LLMs](maskpro_linear-space_probabilistic_learning_for_strict_nm-sparsity_on_llms.md)
+- [\[ICLR 2026\] Navigating the Accuracy-Size Trade-Off with Flexible Model Merging](navigating_the_accuracy-size_trade-off_with_flexible_model_merging.md)
+- [\[ICLR 2026\] Alignment-Enhanced Integration of Connectivity and Spectral Sparsity in Dynamic Sparse Training of LLM](alignment-enhanced_integration_of_connectivity_and_spectral_sparsity_in_dynamic_.md)
 
 </div>
 

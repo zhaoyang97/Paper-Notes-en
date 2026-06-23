@@ -2,81 +2,71 @@
 title: >-
   [Paper Note] TiTok: Transfer Token-level Knowledge via Contrastive Excess to Transplant LoRA
 description: >-
-  [ICLR 2026][Model Compression][LoRA Transfer] This paper proposes TiTok, a framework that enables efficient cross-model transfer of LoRA adapters via token-level contrastive excess scores…
+  [ICLR 2026][Model Compression][Knowledge Distillation] Ours proposes the TiTok framework, which achieves efficient LoRA adapter transfer across models through token-level contrastive excess scores. It requires no additional discriminator models and consistently outperforms TransLoRA and knowledge distillation baselines in reasoning and personalization tasks.
 tags:
-  - "ICLR 2026"
-  - "Model Compression"
-  - "LoRA Transfer"
-  - "Knowledge Distillation"
-  - "Token-level Selection"
-  - "Parameter-Efficient Fine-Tuning"
-  - "Contrastive Excess Score"
+  - ICLR 2026
+  - Model Compression
+  - Knowledge Distillation
 date: 2026-05-08
-content_hash: 6a4a649f0e584a8e
+content_hash: 45611759290a4a5d
 ---
-
 # TiTok: Transfer Token-level Knowledge via Contrastive Excess to Transplant LoRA
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2510.04682](https://arxiv.org/abs/2510.04682)  
 **Code**: [https://github.com/NaughtyMaltiz16/TiTok](https://github.com/NaughtyMaltiz16/TiTok)  
-**Area**: Model Compression
-**Keywords**: LoRA Transfer, Knowledge Distillation, Token-level Selection, Parameter-Efficient Fine-Tuning, Contrastive Excess Score
+**Area**: Model Compression  
+**Keywords**: LoRA transfer, knowledge distillation, token-level selection, parameter-efficient fine-tuning, contrastive excess score
 
 ## TL;DR
 
-This paper proposes TiTok, a framework that enables efficient cross-model transfer of LoRA adapters via token-level contrastive excess scores, without requiring an auxiliary discriminator model. TiTok consistently outperforms TransLoRA and knowledge distillation baselines on reasoning and personalization tasks.
+Ours proposes the TiTok framework, which achieves efficient LoRA adapter transfer across models through token-level contrastive excess scores. It requires no additional discriminator models and consistently outperforms TransLoRA and knowledge distillation baselines in reasoning and personalization tasks.
 
 ## Background & Motivation
 
-- **The binding problem of LoRA**: Although PEFT methods such as LoRA are parameter-efficient, adapter parameters are tightly coupled to a specific base model and cannot be directly transferred across models.
+- **Binding issue of LoRA**: Although PEFT methods like LoRA are parameter-efficient, adapter parameters depend on specific base models and cannot be transferred across different models.
 - **Limitations of Prior Work**:
-    - Knowledge distillation (KD) requires access to the original training data, which is typically unavailable.
-    - TransLoRA addresses data dependency through synthetic data but requires training an additional discriminator model for data filtering, introducing extra complexity.
-- **Core Motivation**: Can task-relevant knowledge signals be extracted at the token level from a LoRA adapter in a more lightweight manner, so as to guide cross-model knowledge transfer?
+    - Knowledge Distillation (KD) depends on original training data, which is typically unavailable.
+    - TransLoRA addresses data dependency through synthetic data but requires training additional discriminator models for data filtering, increasing complexity.
+- **Key Motivation**: Is it possible to extract token-level task knowledge signals from LoRA in a more lightweight manner to guide cross-model knowledge transfer?
 
 ## Method
 
 ### Overall Architecture
 
-TiTok consists of three stages:
-1. Synthetic data generation → 2. Excess score computation → 3. Target model training with filtering
+TiTok aims to "transplant" a LoRA trained on a source model to another base model without access to original training data or the need to train an extra discriminator like TransLoRA. The approach first generates synthetic data using the source model, then uses the token-level output difference between the source model "with LoRA" and "without LoRA" as a signal for task knowledge. Based on this, the most valuable supervision is filtered at both the sample and token levels. Finally, the target model's new LoRA is trained using standard NLL loss on this filtered data. The entire process introduces no external models, as all signals come from the internal contrast of the source model.
 
-### Key Design 1: Token-level Contrastive Excess Score
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    A["Seed prompts"] --> B["Source Expert = Source Backbone + Source LoRA<br/>Generate synthetic data"]
+    B --> C["Token-level Contrastive Excess Score<br/>S(y) = log-likelihood difference (With LoRA - Without LoRA)"]
+    C --> D
+    subgraph D["Two-stage Filtering Training"]
+        direction TB
+        D1["Sample Filtering: Keep top-M samples<br/>by mean excess score"] --> D2["Token Selection: Keep top-k% high-score tokens"]
+    end
+    D -->|"Tokenizer mismatch"| E["Tokenizer Alignment<br/>Two-pointer span matching and mask propagation"]
+    D -->|"Consistent"| F["Train Target LoRA<br/>Freeze target backbone, compute NLL on selected tokens"]
+    E --> F
+    F --> G["Transferable target model + new LoRA"]
+```
 
-The token-level score difference between the source model with and without LoRA is defined as:
+### Key Designs
 
-$$S(y_i) = L_e(y_i) - L_a(y_i)$$
+**1. Token-level Contrastive Excess Score: Reading task knowledge from LoRA's internal differences.** The primary missing signal in cross-model transfer is identifying which tokens carry the task capabilities injected by LoRA. TiTok measures this directly via the prediction difference of the source model with and without LoRA. For each generated token $y_i$, the excess score is defined as $S(y_i) = L_e(y_i) - L_a(y_i)$, where $L_a(y_i) = \log P_{\mathcal{M}_s}(y_i \mid \mathbf{q}, \mathbf{y}_{<i})$ is the log-likelihood of the bare base model and $L_e(y_i) = \log P_{\mathcal{M}_s + \mathcal{A}_s}(y_i \mid \mathbf{q}, \mathbf{y}_{<i})$ is the log-likelihood with the source LoRA. When the base model is uncertain about a token but the LoRA-equipped model predicts it with high confidence, that token receives a high score—representing exactly where LoRA changed model behavior. This quantity is essentially a token-level log-likelihood ratio (LLR), which, according to the Neyman-Pearson lemma, is the optimal statistic for distinguishing between "with LoRA" and "without LoRA" distributions, providing theoretical support for token selection.
 
-where:
+**2. Two-stage Filtering Training: Retaining high-information supervision at sample and token granularities.** Synthetic data contains both entire samples with little task information and many irrelevant tokens within samples; training on all such data dilutes the signal. TiTok first performs sample filtering: for each sample, it calculates the mean token excess score $\bar{S}_j = \frac{1}{|\mathbf{y}_j|} \sum_{y_i \in \mathbf{y}_j} S(y_i)$ and retains the top-$M$ most informative samples to form $\mathcal{D}_f$. Then, token selection is performed within the retained samples: loss is only calculated for tokens in the top-$k\%$ of excess scores, with others masked by an indicator function $I_{k\%}(y_i)$. The training objective is $\sum_{(\mathbf{q}_j, \mathbf{y}_j) \in \mathcal{D}_f} \sum_{y_i \in \mathbf{y}_j} I_{k\%}(y_i) \cdot L_t(y_i)$. In experiments, $k\% = 70\%$ is optimal for most settings, and the top 20% of tokens are verified to concentrate the densest task knowledge (0.482 vs. 0.468 for the bottom).
 
-$$L_a(y_i) = \log P_{\mathcal{M}_s}(y_i \mid \mathbf{q}, \mathbf{y}_{<i}), \quad L_e(y_i) = \log P_{\mathcal{M}_s + \mathcal{A}_s}(y_i \mid \mathbf{q}, \mathbf{y}_{<i})$$
-
-- **Intuition**: The excess score quantifies the amount of task knowledge injected by the LoRA adapter. When the base model is uncertain about a token but the LoRA-augmented model predicts it with high confidence, that token receives a high excess score.
-- **Theoretical Basis**: This is equivalent to a token-level log-likelihood ratio (LLR), which is guaranteed by the Neyman–Pearson lemma to be the most powerful statistic for distinguishing the two model distributions.
-
-### Key Design 2: Two-level Filtering for Training
-
-**Stage 1 — Sample Filtering**: The average excess score of each synthetic sample is computed, and the top-$M$ most informative samples are retained:
-
-$$\bar{S}_j = \frac{1}{|\mathbf{y}_j|} \sum_{y_i \in \mathbf{y}_j} S(y_i)$$
-
-**Stage 2 — Token Selection**: Within the retained samples, only tokens in the top-$k\%$ of excess scores are used for training:
-
-$$\mathcal{L}_{\text{TiTok}} = \sum_{(\mathbf{q}_j, \mathbf{y}_j) \in \mathcal{D}_f} \sum_{y_i \in \mathbf{y}_j} I_{k\%}(y_i) \cdot L_t(y_i)$$
-
-### Key Design 3: Tokenizer Alignment Algorithm
-
-When the source and target models employ different tokenizers:
-- A dual-pointer incremental decoding scheme is used to align text spans.
-- Four rules propagate the mask: one-to-one direct copy, one-to-many copy, many-to-one averaging, and many-to-many average copy.
-- A final top-$k\%$ selection retains the most reliable target tokens.
+**3. Tokenizer Alignment: Ensuring mask alignment despite disparate tokenization.** Source and target models often use different tokenizers, leading to misaligned token boundaries. TiTok uses double pointers to match spans at the text level during incremental decoding and propagates masks through four scenarios: one-to-one (direct copy), one-to-many (copying the same score to multiple target tokens), many-to-one (averaging multiple source scores), and many-to-many (averaging then copying). After alignment, top-$k\%$ selection is performed on the target sequence to ensure training focuses on the most credible tokens on the target side.
 
 ### Loss & Training
 
-The target LoRA $\mathcal{A}_t$ is trained on top of the frozen backbone $\mathcal{M}_t$ using filtered synthetic data with a standard NLL loss:
+The target LoRA $\mathcal{A}_t$ is attached to the frozen target backbone $\mathcal{M}_t$ and trained only on the filtered synthetic data by computing standard NLL loss for the selected tokens:
 
-$$\mathcal{L}_{\text{TiTok}} = \sum \sum I_{k\%}(y_i) \cdot (-\log P_{\mathcal{M}_t + \mathcal{A}_t}(y_i \mid \mathbf{q}, \mathbf{y}_{<i}))$$
+$$\mathcal{L}_{\text{TiTok}} = \sum \sum I_{k\%}(y_i) \cdot \bigl(-\log P_{\mathcal{M}_t + \mathcal{A}_t}(y_i \mid \mathbf{q}, \mathbf{y}_{<i})\bigr)$$
+
+The backbone remains frozen, and only the LoRA (rank=8 in experiments) is updated, ensuring the transfer process remains parameter-efficient.
 
 ## Key Experimental Results
 
@@ -103,32 +93,32 @@ $$\mathcal{L}_{\text{TiTok}} = \sum \sum I_{k\%}(y_i) \cdot (-\log P_{\mathcal{M
 
 ### Key Findings
 
-- TiTok outperforms the vanilla target model by an average of +9.94%, KD by +8.5%, and TransLoRA by +4.4%.
-- The method is effective across model families (Mistral→Llama), scales (3B→8B), and versions (Llama2→Llama3).
-- Tokens in the top 20% of excess scores contain the most concentrated task knowledge (0.482 vs. bottom 0.468).
-- Two different model experts (Mistral 7B and Llama2 7B) share a 59.76% overlap in their top 20% token selections.
-- A token selection ratio of $k\%$ = 70% is optimal in most settings.
-- TiTok remains effective when out-of-domain external data is used.
+- TiTok outperforms the vanilla target model by an average Gain of +9.94%, KD by +8.5%, and TransLoRA by +4.4%.
+- It is effective across model families (Mistral→Llama), scales (3B→8B), and versions (Llama2→Llama3).
+- Top 20% excess score tokens contain the most concentrated task knowledge (0.482 vs. bottom 0.468).
+- Different model experts (Mistral 7B and Llama2 7B) show a 59.76% overlap in top 20% token selection.
+- The token selection ratio $k\% = 70\%$ is optimal in most settings.
+- TiTok remains effective even when using external data from unrelated domains.
 
 ## Highlights & Insights
 
-- **Simple yet effective**: No auxiliary model (discriminator) needs to be trained; the method leverages only the difference between the source model with and without LoRA.
-- **Theoretically grounded**: The excess score is backed by statistical hypothesis testing theory via the log-likelihood ratio.
-- **Comprehensive transfer scenarios**: Experiments cover same-family, cross-family, cross-scale, and cross-version transfer settings.
-- **Tokenizer alignment**: An elegant solution is provided for tokenizer mismatches across different models.
+- **Simple and Effective**: Does not require training additional models (discriminators); utilizes only the difference between the source model with and without LoRA.
+- **Solid Theory**: The excess score is supported by the theory of statistical testing using log-likelihood ratios.
+- **Comprehensive Transfer Scenarios**: Covers same-family, cross-family, cross-scale, and cross-version settings.
+- **Tokenizer Alignment**: Elegantly solves the mismatch problem between different model tokenizers.
 
 ## Limitations & Future Work
 
-- The method depends on the quality of synthetic data; a source model with weak generation capability may limit transfer performance.
-- The optimal token selection ratio $k\%$ is not fully consistent across transfer settings (e.g., the optimal value for Llama3 3B→8B is 30%).
-- Validation is limited to LoRA (rank=8); other PEFT methods remain unexplored.
-- Evaluation is concentrated on reasoning (BBH/MMLU) and personalization (LaMP) tasks; generalization to other task types requires further investigation.
+- Dependency on synthetic data quality; source models with weak synthesis capabilities may limit transfer performance.
+- The token selection ratio $k\%$ is not perfectly consistent across different transfer settings (e.g., the optimal value for Llama3 3B→8B is 30%).
+- Validated only on LoRA (rank=8), without exploring other PEFT methods.
+- Evaluation tasks are primarily concentrated on reasoning (BBH/MMLU) and personalization (LaMP), with other task types yet to be verified.
 
 ## Related Work & Insights
 
-- **PEFT Transfer**: TransLoRA transfers LoRA via synthetic data and a discriminator, constituting a heavier pipeline.
-- **Knowledge Distillation**: Traditional KD operates at the logit or sequence level within a teacher–student framework and requires access to the original training data.
-- **Selective Token Training**: Inspired by the selective training literature, TiTok is the first to extend token selection to the knowledge transfer setting.
+- **PEFT Transfer**: TransLoRA transfers LoRA via synthetic data and discriminators, which is a heavier approach.
+- **Knowledge Distillation**: Traditional KD operates at the logit or sequence level within a teacher-student framework and requires original data.
+- **Selective Token Training**: Inspired by selective training literature, this work is the first to extend token selection to the context of knowledge transfer.
 
 ## Rating
 
@@ -146,11 +136,11 @@ $$\mathcal{L}_{\text{TiTok}} = \sum \sum I_{k\%}(y_i) \cdot (-\log P_{\mathcal{M
 
 ## Related Papers
 
+- [\[ICLR 2026\] Generative Diffusion Prior Distillation for Long-Context Knowledge Transfer](generative_diffusion_prior_distillation_for_long-context_knowledge_transfer.md)
 - [\[ACL 2026\] LoRA on the Go: Instance-level Dynamic LoRA Selection and Merging](../../ACL2026/model_compression/lora_on_the_go_instance-level_dynamic_lora_selection_and_merging.md)
-- [\[ICLR 2026\] LD-MoLE: Learnable Dynamic Routing for Mixture of LoRA Experts](ld-mole_learnable_dynamic_routing_for_mixture_of_lora_experts.md)
-- [\[ICLR 2026\] Token Distillation: Attention-Aware Input Embeddings for New Tokens](token_distillation_attention-aware_input_embeddings_for_new_tokens.md)
-- [\[ICLR 2026\] AMiD: Knowledge Distillation for LLMs with α-mixture Assistant Distribution](amid_knowledge_distillation_for_llms_with_α-mixture_assistant_distribution.md)
-- [\[ICLR 2026\] Pedagogically-Inspired Data Synthesis for Language Model Knowledge Distillation](pedagogically-inspired_data_synthesis_for_language_model_knowledge_distillation.md)
+- [\[ICLR 2026\] LoRA-Mixer: Coordinate Modular LoRA Experts Through Serial Attention Routing](lora-mixer_coordinate_modular_lora_experts_through_serial_attention_routing.md)
+- [\[CVPR 2026\] A Unified Framework for Knowledge Transfer in Bidirectional Model Scaling](../../CVPR2026/model_compression/a_unified_framework_for_knowledge_transfer_in_bidirectional_model_scaling.md)
+- [\[CVPR 2026\] SelecTKD: Selective Token-Weighted Knowledge Distillation for LLMs](../../CVPR2026/model_compression/selectkd_selective_token-weighted_knowledge_distillation_for_llms.md)
 
 </div>
 

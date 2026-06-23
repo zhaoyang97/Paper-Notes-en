@@ -2,84 +2,89 @@
 title: >-
   [Paper Note] MAC-AMP: A Closed-Loop Multi-Agent Collaboration System for Multi-Objective Antimicrobial Peptide Design
 description: >-
-  [ICLR 2026][Multi-Agent][antimicrobial peptide design] This paper proposes MAC-AMP, the first closed-loop multi-agent collaboration system that reformulates antimicrobial peptide (AMP) design as a coordinated multi-agent…
+  [ICLR 2026][Multi-Agent][LLM agent] Ours proposes MAC-AMP, the first closed-loop multi-agent collaboration system that reformulates antimicrobial peptide (AMP) design as a coordinated multi-agent optimization problem, achieving multi-objective optimization through AI-simulated peer review and adaptive reward design.
 tags:
-  - "ICLR 2026"
-  - "Multi-Agent"
-  - "antimicrobial peptide design"
-  - "multi-agent collaboration"
-  - "closed-loop reinforcement learning"
-  - "multi-objective optimization"
-  - "LLM agent"
+  - ICLR 2026
+  - Multi-Agent
+  - LLM agent
 date: 2026-05-08
-content_hash: b23a974dc5c53947
+content_hash: 31568ab3d9f59256
 ---
-
 # MAC-AMP: A Closed-Loop Multi-Agent Collaboration System for Multi-Objective Antimicrobial Peptide Design
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2602.14926](https://arxiv.org/abs/2602.14926)  
 **Code**: [GitHub](https://github.com/CLMFAP/MAC-AMP_v1/)  
-**Area**: Image Generation
-**Keywords**: antimicrobial peptide design, multi-agent collaboration, closed-loop reinforcement learning, multi-objective optimization, LLM agent
+**Area**: Multi-Agent Systems  
+**Keywords**: Antimicrobial Peptide Design, Multi-Agent Collaboration, Closed-Loop Reinforcement Learning, Multi-Objective Optimization, LLM agent
 
 ## TL;DR
 
-This paper proposes MAC-AMP, the first closed-loop multi-agent collaboration system that reformulates antimicrobial peptide (AMP) design as a coordinated multi-agent optimization problem, achieving multi-objective optimization through AI-simulated peer review and adaptive reward design.
+Ours proposes MAC-AMP, the first closed-loop multi-agent collaboration system that reformulates antimicrobial peptide (AMP) design as a coordinated multi-agent optimization problem, achieving multi-objective optimization through AI-simulated peer review and adaptive reward design.
 
 ## Background & Motivation
 
-- **Antimicrobial Resistance (AMR) Crisis**: Directly responsible for approximately 1.14 million deaths in 2021, with projections exceeding 39 million direct deaths between 2025 and 2050.
-- **Limitations of Existing AMP Design Models**:
-    - Most optimize only for antimicrobial activity, neglecting toxicity, stability, and novelty.
-    - Multi-objective optimization is unstable; static weights readily cause reward hacking or diversity collapse.
-    - Outputs are typically scattered scores or text, making it difficult to convert them into reproducible learning signals.
-- **Limitations of Existing Multi-Agent Systems**:
-    - Outputs are primarily in natural language, lacking trainable optimization signals.
-    - Most are open-loop systems that rely on human intervention.
+- **Antimicrobial Resistance (AMR) Crisis**: Directly caused approximately 1.14 million deaths in 2021, with projections exceeding 39 million direct deaths between 2025 and 2050.
+- **Limitations of Prior Work**:
+    - Most models optimize only for antimicrobial activity while ignoring toxicity, stability, and novelty.
+    - Multi-objective optimization is unstable; static weights often lead to reward hacking or diversity collapse.
+    - Outputs are typically scattered scores or text, which are difficult to convert into reproducible learning signals.
+- **Key Challenge in Multi-Agent Systems**:
+    - Outputs are mostly natural language, lacking trainable optimization signals.
+    - Most are open-loop systems relying on manual intervention.
 
 ## Method
 
 ### Overall Architecture
 
-MAC-AMP comprises six interconnected modules: Input Module → Property Prediction → AI-Simulated Peer Review → RL Refinement → Peptide Generation → Output Module. Users need only provide the target bacterial name and an example dataset.
+MAC-AMP models AMP design as a closed-loop optimization process: users provide target bacteria names and exemplar datasets, and the system iterates through "Property Prediction — AI Peer Review — Reward Redesign — PPO Training — Generation." The Mechanism utilizes a "Review Committee" composed of LLM agents to distill scattered property scores and natural language feedback into reward signals for reinforcement learning, eliminating reliance on manual heuristic weights. The pipeline starts with a generator producing candidate peptides, which are processed through property prediction, peer review, and RL refinement modules. Finally, PPO updates the generator using these rewards to close the loop.
 
-### 1. Property Prediction Module
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["Input: Target Bacteria Name<br/>+ Exemplar AMP Dataset"] --> GEN["Generator (GPT-2 + Soft Prompt)<br/>Produces Candidate Peptides"]
+    GEN --> PP["Property Prediction Module<br/>Explicit Signal S (Activity / AMP Likelihood)<br/>+ Aux Evidence V (Toxicity / Structure / Physchem / Similarity)"]
+    PP --> PR
+    subgraph PR["AI Simulated Peer Review"]
+        direction TB
+        R["3 Reviewer Agents<br/>4-dimensional Structured Tagging"] --> AC["Area Chair Aggregation & Conflict Resolution<br/>→ Meta-review T + Consensus Score Sc"]
+    end
+    PR --> RL["RL Refinement Module<br/>CS Reward Design + Bio-alignment<br/>→ Rule Verification → Sandbox Pareto Reward Selection"]
+    RL --> PPO["PPO Optimization<br/>Clipped Surrogate Loss Updates Generator"]
+    PPO -->|Epoch Evaluation| PP
+    PPO -->|Reward Redesign x3 (every 15 epochs)| RL
+    PPO --> OUT["Output: Multi-Objective Optimized AMP"]
+```
 
-Evaluates multiple AMP attributes, categorized into two types:
-- **Explicit Reward Signals $S$**: Antimicrobial activity score $S_a$ (MIC predictor fine-tuned on ProtBERT), AMP likelihood score $S_b$ (Macrel 1.5).
-- **Auxiliary Evidence $V$**: Toxicity score $V_a$ (ToxinPred 3.0), structural reliability $V_b$ (OmegaFold), physicochemical properties $V_c$ (ProtParam), template similarity $V_d$ (Foldseek).
+### Key Designs
 
-### 2. AI-Simulated Peer Review Module
+**1. Property Prediction Module: Categorizing Multi-objectives into Reward Signals and Auxiliary Evidence**
 
-- **Three Independent Reviewer Agents** (GPT-5, Gemini 2.5, Perplexity) evaluate peptides across four dimensions: efficacy, safety, developmental structure, and originality.
-- Each dimension is associated with a weighted vocabulary sub-table, using the tag format $\text{ID}(\text{State}, \text{Weight})$ for structured annotation.
-- **Area Chair Agent**: Aggregates review results, resolves semantic conflicts, computes dimension-level meta-scores, and outputs meta-review text $T$ and average meta-score $S_c$.
+To achieve multi-objective optimization, "peptide quality" must be quantified. MAC-AMP uses a suite of established tools to score candidate peptides, intentionally distinguishing between two roles. One category consists of explicit signals $S$ directly entering the reward: antimicrobial activity score $S_a$ (via a ProtBERT-finetuned MIC predictor) and AMP likelihood score $S_b$ (Macrel 1.5). The other category includes auxiliary evidence $V$ not directly used for rewards but interpreted by review agents: toxicity $V_a$ (ToxinPred 3.0), structural reliability $V_b$ (OmegaFold), physicochemical properties $V_c$ (ProtParam), and template similarity $V_d$ (Foldseek). This hierarchical design ensures hard constraints guide training while context-dependent properties like toxicity and stability are handled by the review stage, preventing reward hacking caused by static weighted sums.
 
-### 3. RL Refinement Module
+**2. AI Simulated Peer Review: Converting Natural Language Feedback into Trainable Signals via Structured Tagging**
 
-- **CS-Based Reward Design Agent**: Optimizes the reward function based on observable signals and mathematical properties.
-- **Biomedical Reward Alignment Agent**: Analyzes meta-review text and proposes revision recommendations grounded in domain knowledge.
-- Candidate rewards are filtered by a rule-based validator → short-term sandbox training → Pareto optimization to select the optimal reward function.
-- **Phase-Adaptive Optimization**: The reward function is redesigned every 15 epochs over 3 iterations.
+This is critical for bridging "text to reward." Three independent reviewer agents (GPT-5, Gemini 2.5, Perplexity) evaluate candidates across efficiency, safety, structural development, and originality. Each dimension uses a weighted dictionary sub-table, and feedback is output as structured tags in the format $\text{ID}(\text{State}, \text{Weight})$. This step compresses natural language into programmatically consumable fields. Subsequently, an Area Chair agent aggregates these tags, resolves conflicting judgments, calculates dimension-level meta-scores, and outputs a meta-review text $T$ and an average meta-score $S_c$. This "simulated peer review" bridges the gap between model output formats and training signals.
 
-### 4. PPO Optimization
+**3. RL Refinement Module: Multi-Agent Collaboration + Adaptive Redesign**
 
-Normalized advantage: $A = \text{norm}(R - \bar{V}_\phi)$
+The reward function itself must evolve. MAC-AMP employs two types of agents: the CS Base Reward Design agent creates the reward function skeleton based on observable signals and mathematical properties, while the Biomedical Reward Alignment agent proposes revisions using domain knowledge from the meta-review $T$. Candidate rewards are filtered by a rule verifier, tested through short-term sandbox training, and finally, the best compromise across multiple objectives is selected via Pareto optimization. This process is stage-adaptive: the reward function is redesigned every 15 epochs for 3 iterations, allowing rewards to calibrate dynamically with training progress.
 
-Clipped surrogate loss:
+**4. PPO Optimization: Stabilizing Consensus Reward into Generation Strategy**
+
+PPO maps the rewards back to the generator. Advantages are normalized $A = \text{norm}(R - \bar{V}_\phi)$ to stabilize gradient scales. Strategy updates utilize a clipped surrogate loss:
 
 $$L_{policy}(\theta) = \mathbb{E}[\min(r(\theta)A, \text{clip}(r(\theta), 1-\epsilon, 1+\epsilon)A)]$$
 
-Total loss:
+the policy ratio $r(\theta)$ is restricted to the $1\pm\epsilon$ interval to prevent excessive updates that lead to diversity collapse. The total loss includes value regression loss $L_{value}$ and entropy regularization $L_{ent}$:
 
 $$L = L_{policy} + c_v L_{value} - c_e L_{ent}$$
 
-where $L_{value}$ is the value regression loss and $L_{ent}$ is the entropy regularization term.
+The entropy term with coefficient $c_e$ encourages exploration and maintains diversity, while the value term with coefficient $c_v$ calibrates value estimation. Combined with the rewards refreshed every 15 epochs, this closed-loop ensures continuous approach to multi-objective optimality without mode collapse.
 
 ## Key Experimental Results
 
-### Main Results: Target-Specific AMP Evaluation
+### Main Results: Target-Specific AMP Testing
 
 | Model | Antimicrobial Activity (↑) | AMP Likelihood (↑) | Toxicity (↓) | Structural Reliability (↑) |
 |------|-------------|-------------|---------|-------------|
@@ -89,9 +94,9 @@ where $L_{value}$ is the value regression loss and $L_{ent}$ is the entropy regu
 | PepGAN | 0.823±0.023 | 0.572±0.035 | 0.247±0.064 | 0.637±0.026 |
 | Diff-AMP | 0.822±0.006 | 0.554±0.036 | 0.235±0.072 | 0.752±0.020 |
 
-*Results on E. coli target*
+*Target: E. coli results*
 
-### Broad-Spectrum Activity Evaluation
+### Broad-Spectrum Activity Test
 
 | Model | E. coli | S. aureus | P. aeruginosa | K. pneumoniae | E. faecium |
 |------|---------|-----------|---------------|---------------|------------|
@@ -101,37 +106,37 @@ where $L_{value}$ is the value regression loss and $L_{ent}$ is the entropy regu
 
 ### Key Findings
 
-1. MAC-AMP comprehensively outperforms baselines in antimicrobial activity, toxicity, and structural reliability.
-2. AMPs designed for *E. coli* generalize well to other Gram-negative bacteria (which share outer membrane structures).
-3. Strong generalization is also demonstrated for *E. faecium* (a Gram-positive bacterium).
-4. Training cost: 47.61 GPU hours, 853 API calls, API expenditure of $36.56.
+1. MAC-AMP outperforms baselines across antimicrobial activity, toxicity, and structural reliability.
+2. AMPs designed for *E. coli* show excellent generalization to other Gram-negative bacteria due to shared outer membrane structures.
+3. Strong generalization was also observed for *E. faecium* (Gram-positive).
+4. Training costs: 47.61 GPU hours, 853 API calls, total API cost $36.56.
 
 ## Highlights & Insights
 
-1. **First Closed-Loop Multi-Agent System**: Converts natural-language review consensus into executable RL reward signals, bridging the gap between output format and training signal.
-2. **End-to-End Interpretability**: Overcomes black-box limitations through transparent logging, replay trajectories, and consensus-aware decision tracking.
-3. **Cross-Domain Transferability**: The framework's generality is validated on English table-to-text generation tasks.
-4. **Multi-Objective Balance**: Achieves multi-objective optimization through structured agent consensus rather than manually specified static weights.
+1. **Novel Closed-Loop System**: Converts natural language review consensus into executable RL reward signals, bridging the gap between output formats and training signals.
+2. **Full-Link Explainability**: Overcomes black-box limitations through transparent logs, replay trajectories, and consensus-aware decision tracking.
+3. **Cross-Domain Transferability**: Validated the framework's versatility in English table-to-text generation tasks.
+4. **Multi-Objective Balance**: Achieves multi-objective optimization through structured agent consensus rather than manual static weights.
 
 ## Limitations & Future Work
 
-- Generated peptides have not yet been validated through in vitro experiments.
-- API call costs may limit large-scale deployment.
-- The peer review module relies on specific commercial LLMs, constraining reproducibility.
-- The phase interval (15 epochs) and iteration count (3 rounds) are hyperparameters that may require task-specific tuning.
+- Generated peptides have not yet undergone in-vitro experimental validation.
+- API call costs may limit large-scale application.
+- The peer review module relies on specific commercial LLMs, affecting reproducibility.
+- Hyperparameters such as the number of epochs (15) and iterations (3) may require adjustment for different tasks.
 
 ## Related Work & Insights
 
-- **AMP Generation**: AMPGAN v2, Diff-AMP, AMP Designer
-- **LLM Multi-Agent Collaboration**: Virtual Lab, CAMEL, AutoGen, ReviewAgents
-- **LLM-Augmented RL**: RLAIF, Eureka
+- **AMP Generation**: AMPGAN v2, Diff-AMP, AMP Designer.
+- **LLM Multi-Agent Collaboration**: Virtual Lab, CAMEL, AutoGen, ReviewAgents.
+- **LLM-enhanced RL**: RLAIF, Eureka.
 
 ## Rating
 
 - Novelty: ⭐⭐⭐⭐ — First framework to apply closed-loop multi-agent collaboration to molecular design.
-- Technical Depth: ⭐⭐⭐⭐ — Modular design is sophisticated with thorough multi-level validation.
+- Technical Depth: ⭐⭐⭐⭐ — Sophisticated modular design with thorough multi-level validation.
 - Experimental Thoroughness: ⭐⭐⭐⭐ — Five bacterial targets, four baselines, and multi-dimensional ablation studies.
-- Practical Value: ⭐⭐⭐⭐ — Extensible to other molecular design tasks.
+- Value: ⭐⭐⭐⭐ — Scalable to other molecular design tasks.
 
 <!-- RELATED:START -->
 
@@ -140,10 +145,10 @@ where $L_{value}$ is the value regression loss and $L_{ent}$ is the entropy regu
 ## Related Papers
 
 - [\[ICLR 2026\] Multi-Agent Design: Optimizing Agents with Better Prompts and Topologies](multi-agent_design_optimizing_agents_with_better_prompts_and_topologies.md)
-- [\[ACL 2026\] Social Dynamics as Critical Vulnerabilities that Undermine Objective Decision-Making in LLM Collectives](../../ACL2026/multi_agent/social_dynamics_as_critical_vulnerabilities_that_undermine_objective_decision-ma.md)
-- [\[AAAI 2026\] A Graph-Theoretical Perspective on Law Design for Multiagent Systems](../../AAAI2026/multi_agent/a_graph-theoretical_perspective_on_law_design_for_multiagent_systems.md)
-- [\[AAAI 2026\] LungNoduleAgent: A Collaborative Multi-Agent System for Precision Diagnosis of Lung Nodules](../../AAAI2026/multi_agent/lungnoduleagent_a_collaborative_multi-agent_system_for_precision_diagnosis_of_lu.md)
-- [\[ICLR 2026\] MMedAgent-RL: Optimizing Multi-Agent Collaboration for Multimodal Medical Reasoning](mmedagent-rl_optimizing_multi-agent_collaboration_for_multimodal_medical_reasoni.md)
+- [\[CVPR 2025\] NADER: Neural Architecture Design via Multi-Agent Collaboration](../../CVPR2025/multi_agent/nader_neural_architecture_design_via_multi-agent_collaboration.md)
+- [\[ICLR 2026\] PixelCraft: A Multi-Agent System for High-Fidelity Visual Reasoning on Structured Images](pixelcraft_a_multi-agent_system_for_high-fidelity_visual_reasoning_on_structured.md)
+- [\[ICLR 2026\] From What to Why: A Multi-Agent System for Evidence-based Chemical Reaction Condition Reasoning](from_what_to_why_a_multi-agent_system_for_evidence-based_chemical_reaction_condi.md)
+- [\[ICLR 2026\] AgentPO: Enhancing Multi-Agent Collaboration via Reinforcement Learning](agentpo_enhancing_multi-agent_collaboration_via_reinforcement_learning.md)
 
 </div>
 

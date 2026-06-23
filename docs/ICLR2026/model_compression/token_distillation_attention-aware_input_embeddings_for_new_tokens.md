@@ -2,144 +2,144 @@
 title: >-
   [Paper Note] Token Distillation: Attention-Aware Input Embeddings for New Tokens
 description: >-
-  [ICLR 2026][Model Compression][Vocabulary Expansion] This paper proposes Token Distillation, a method that distills multi-subword interaction information encoded across all Transformer layers into a single token embeddin…
+  [ICLR 2026][Model Compression][Knowledge Distillation] Ours proposes the Token Distillation method, which distills multi-subword interaction information encoded by Transformer layers into a single token embedding. This achieves high-quality initialization for new token embeddings without pre-training hypernetworks and outperforms existing methods.
 tags:
-  - "ICLR 2026"
-  - "Model Compression"
-  - "Vocabulary Expansion"
-  - "Token Embedding Initialization"
-  - "Knowledge Distillation"
-  - "Domain Adaptation"
-  - "Language Adaptation"
+  - ICLR 2026
+  - Model Compression
+  - Knowledge Distillation
 date: 2026-05-08
-content_hash: e1e7d81cbe62469c
+content_hash: 2d105cbc5bad9c66
 ---
-
 # Token Distillation: Attention-Aware Input Embeddings for New Tokens
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2505.20133](https://arxiv.org/abs/2505.20133)  
 **Code**: [https://github.com/konstantinjdobler/token-distillation](https://github.com/konstantinjdobler/token-distillation)  
-**Area**: Model Compression
+**Area**: Model Compression  
 **Keywords**: Vocabulary Expansion, Token Embedding Initialization, Knowledge Distillation, Domain Adaptation, Language Adaptation
 
 ## TL;DR
 
-This paper proposes Token Distillation, a method that distills multi-subword interaction information encoded across all Transformer layers into a single token embedding, enabling high-quality initialization of new token embeddings without requiring a pretrained hypernetwork and outperforming existing approaches.
+Ours proposes the Token Distillation method, which distills multi-subword interaction information encoded by Transformer layers into a single token embedding. This achieves high-quality initialization for new token embeddings without pre-training hypernetworks and outperforms existing methods.
 
 ## Background & Motivation
 
-- **Static vocabulary problem**: Pretrained language models rely on fixed tokenizers that over-segment domain-specific or novel-language vocabulary, leading to performance degradation and increased computational overhead.
-- **Fundamental limitations of existing initialization methods**:
-    - The subword averaging approach exploits only the embedding matrix, ignoring functional knowledge encoded in Transformer layers.
-    - For example, the individual subword embeddings of `<_pal><at><able>` do not carry the semantics of `<_palatable>`.
-    - The semantics of multi-subword spans are progressively constructed through the attention and feed-forward layers during contextualization (i.e., neural detokenization).
-- **Core insight**: Effective new token embeddings must capture information stored across all Transformer layers, not merely the embedding matrix.
+- **Static Vocabulary Issue**: Pre-trained language models use fixed tokenizers, which lead to over-segmentation of domain-specific or new language vocabulary, resulting in performance degradation and increased computational overhead.
+- **Limitations of Prior Work in Initialization**:
+    - Subword averaging only utilizes information from the embedding matrix, ignoring the functional knowledge within Transformer layers.
+    - For example, the individual embeddings of `<_pal><at><able>` do not contain the semantics of `<_palatable>`.
+    - Multi-subword semantics are constructed incrementally by the Transformer's attention and feed-forward layers during contextualization (neural detokenization).
+- **Key Insight**: Effective new token embeddings must capture information stored in all Transformer layers, rather than relying solely on the embedding matrix.
 
 ## Method
 
 ### Overall Architecture
 
-Given a new token $t^{\star}$ and its original subword decomposition $[t_1, \dots, t_n]$, Token Distillation directly optimizes the new embedding $\mathbf{e}^{\star}$ such that the hidden states produced when using the single new token closely match those produced when using the original multi-subword sequence.
+Ours addresses the challenge of providing high-quality input embeddings for newly added vocabulary tokens. The core idea is that the semantics of a new token $t^{\star}$, originally "calculated" layer-by-layer by the Transformer from its corresponding subword sequence $[t_1,\dots,t_n]$ (neural detokenization), are lost when using subword averaging which only considers the embedding matrix. Token Distillation treats the hidden states produced by the original model after reading the full subword sequence as the teacher signal. It then optimizes the single new embedding $\mathbf{e}^{\star}$ via gradient descent, forcing the model's hidden states when seeing only the new token to approximate those of the teacher.
 
-### Key Design: Hidden-State Distillation Objective
+The pipeline consists of three steps: first, **retrieve or generate** a small amount of realistic context containing the target word; second, perform a **forward pass for both teacher (multi-subword sequence) and student (single new embedding)**, performing MSE distillation on hidden states at positions that "attend to the new token"; finally, **supplement the output-side embeddings and stabilize the norm** to obtain a new embedding that can be directly inserted into the frozen model.
 
-The optimization minimizes the MSE of hidden states at a specified layer:
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    A["New token t*<br/>Original subword sequence [t1…tn]"] --> B["Context Retrieval & Lightweight Data<br/>Aho-Corasick Matching / Model Generation"]
+    B --> DIST
+    subgraph DIST["Attention-Aware Hidden State Distillation"]
+        direction TB
+        C["Teacher: Multi-subword sequence forward<br/>Hidden states H(l) per layer"] --> E["Attention-Aware Alignment M<br/>Select positions attending to new token"]
+        D["Student: Single new embedding e* forward<br/>Hidden states H_e*(l)"] --> E
+        E --> F["Aligned Position Hidden State MSE<br/>Gradient optimization of e*"]
+    end
+    DIST --> G["Output Embedding & αNTP<br/>Prediction-side supplement / Norm stabilization"]
+    G --> H["Ready-to-use new token embedding"]
+```
+
+### Key Designs
+
+**1. Context Retrieval and Lightweight Data: Realistic and Efficient Distillation**
+
+Distillation requires real sentences containing the target token to avoid learning embeddings detached from actual usage. Ours provides two paths: the primary method uses the Aho-Corasick multi-pattern matching algorithm to efficiently retrieve snippets containing target words from domain-specific or general corpora. If certain words are missing from the corpora, an alternative path uses the new token as a prompt for the causal model to generate text. Both paths aim for a small amount of high-quality context: approximately 25 snippets per token, each truncated to 50 tokens. Since tokens are independent and the target model is reused throughout, 2500 new tokens can be initialized on a single GPU within 10 minutes—eliminating the pre-training costs associated with hypernetwork methods like ZeTT.
+
+**2. Attention-Aware Hidden State Distillation: Compressing Interactions into one Embedding**
+
+Subword averaging fails because the embeddings for `<_pal><at><able>` do not contain the semantics of `<_palatable>`, which are instead computed by attention layers. Token Distillation frames this as a regression problem: for a sentence $s$ sampled from the corpus, forward passes are run using the original subword sequence (teacher) and the single new token (student). The goal is to minimize the MSE of hidden states at aligned positions in a specified layer $l$:
 
 $$\min_{\mathbf{e}^{\star} \in \mathbb{R}^d} \mathbb{E}_{s \sim S} \left[ \frac{1}{|\mathcal{M}(s_\tau, s_{\tau^{\star}})|} \sum_{(i,j) \in \mathcal{M}(s_\tau, s_{\tau^{\star}})} \left\| \mathcal{H}_{\mathbf{e}^{\star}}^{(l)}(s_{\tau^{\star}})_i - \mathcal{H}^{(l)}(s_\tau)_j \right\|_2^2 \right]$$
 
-- $\mathcal{H}^{(l)}(s_\tau)$: layer-$l$ hidden states under the original tokenization (teacher).
-- $\mathcal{H}_{\mathbf{e}^{\star}}^{(l)}(s_{\tau^{\star}})$: hidden states under the new token embedding (student).
-- $\mathcal{M}(s_\tau, s_{\tau^{\star}})$: alignment position mapping, restricted to positions that attend to the new token.
-- In practice, the final-layer hidden states are used.
+where $\mathcal{H}^{(l)}(s_\tau)$ is the teacher's hidden state at layer $l$ under original tokenization, and $\mathcal{H}_{\mathbf{e}^{\star}}^{(l)}(s_{\tau^{\star}})$ is the student's hidden state. The "attention-aware" aspect is in the alignment mapping $\mathcal{M}$, which only retains positions $i$ in $s_{\tau^{\star}}$ that attend to the new token. Constraining these positions is sufficient to force the multi-subword interaction information into $\mathbf{e}^{\star}$. In practice, the last hidden layer is used for supervision.
 
-### Context Retrieval
+**3. Output Embeddings and αNTP: Prediction Side and Norm Stabilization**
 
-Two strategies are employed to obtain training contexts:
+The distillation objective only constrains the input-side hidden states. Because new tokens are not in the teacher's prediction vocabulary, output embeddings cannot be distilled directly. They are either set to zero or trained via an additional NTP (next-token prediction) objective. For tied-embedding models, this can cause the embedding norm to grow unboundedly. Ours uses $\alpha$NTP to mitigate this by dynamically multiplying the NTP loss by a scaling factor $\alpha$ with a stop-gradient, allowing NTP to implicitly constrain the output embedding norm without interfering with the distillation-learned input embedding.
 
-1. **Primary method**: Efficient retrieval of segments containing the target token from a corpus using the Aho-Corasick algorithm.
-2. **Fallback**: Prompting the model with the new token to generate text containing the target word.
+## Main Results
 
-### Output Embedding Handling
+### Biomedical Domain Adaptation (Average of 8 Models)
 
-- Token Distillation optimizes only input embeddings, since new tokens fall outside the teacher model's prediction vocabulary.
-- Output embeddings can be further trained with a next-token prediction (NTP) objective or initialized to zero vectors.
-- The method can be combined with $\alpha$NTP, which dynamically down-weights the NTP loss to avoid interference.
-
-### Efficiency
-
-- Only 25 context segments per new token are required.
-- Contexts are truncated to 50 tokens in length.
-- 2,500 new tokens can be initialized on a single GPU in under 10 minutes.
-
-## Key Experimental Results
-
-### Main Results: Biomedical Domain Adaptation (Average over 8 Models)
-
-| Method | Average Accuracy |
-|--------|-----------------|
+| Method | Avg. Accuracy |
+|------|-----------|
 | Original tokenization | 66.5 |
 | Random | 57.5 |
 | Subword Mean | 60.8 |
-| NTP (new embeddings only) | 63.0 |
-| ZeTT (pretrained hypernetwork) | — (partial model coverage) |
-| **Token Distillation** | **64.6** |
-| **Token Distillation + αNTP** | **64.7** |
+| NTP (New embedding only) | 63.0 |
+| ZeTT (Hypernetwork) | — (Partial models only) |
+| **Token Distillation (Ours)** | **64.6** |
+| **Ours + αNTP** | **64.7** |
 
-### Definition Generation Quality (LLM-as-Judge)
+### Definition Generation Quality (LLM Judge)
 
 | Method | Similarity Avg | Correctness Avg |
-|--------|---------------|-----------------|
+|------|-----------|-----------|
 | Random | 0.0 | 0.1 |
 | Subword Mean | 16.6 | 18.6 |
 | NTP | 52.0 | 59.4 |
 | ZeTT | — | — |
-| **Token Distillation** | **68.5** | **74.4** |
-| **Token Distillation + αNTP** | **76.7** | **83.3** |
+| **Token Distillation (Ours)** | **68.5** | **74.4** |
+| **Ours + αNTP** | **76.7** | **83.3** |
 
 ### French Language Adaptation
 
 | Method | Mistral-7B | Llama3-8B | Llama3-8B-i | Avg |
-|--------|-----------|-----------|-------------|-----|
+|------|-----------|-----------|-------------|-----|
 | Original | 69.5 | 69.4 | 72.1 | 73.2 |
 | Subword Mean | 56.3 | 58.4 | 61.7 | 61.5 |
 | NTP | 64.7 | 67.0 | 70.1 | 70.8 |
-| **Token Distillation** | **68.5** | **68.9** | **72.9** | **72.9** |
+| **Token Distillation (Ours)** | **68.5** | **68.9** | **72.9** | **72.9** |
 
-### Key Findings
+## Key Findings
 
-- Token Distillation consistently outperforms NTP and subword averaging across all 8 models, and surpasses ZeTT without requiring hypernetwork pretraining.
-- Definition generation experiments confirm that distilled embeddings achieve higher semantic quality and completeness.
-- Freezing original embeddings and updating only the new embeddings (NTP variant) outperforms full embedding fine-tuning.
-- Tied-embedding models (e.g., Llama3.2-3B) may exhibit norm explosion; adding $\alpha$NTP regularization mitigates this issue.
-- In French language adaptation, Token Distillation can even surpass the original tokenization baseline (Llama3-8B-i).
+- Token Distillation consistently outperforms NTP and subword averaging across all 8 models and exceeds ZeTT without needing hypernetwork pre-training.
+- Definition generation experiments confirm that distilled embeddings possess higher quality and more complete semantics.
+- Freezing original embeddings and updating only new ones (NTP variant) is more effective than adjusting all embeddings.
+- Tied embedding models (e.g., Llama3.2-3B) may exhibit norm explosion; $\alpha$NTP regularization effectively mitigates this.
+- In French adaptation, Token Distillation can even surpass the performance of the original tokenization (e.g., Llama3-8B-i).
 
 ## Highlights & Insights
 
-- **Theoretically well-motivated**: Identifies the fundamental flaw of existing methods in ignoring Transformer-layer knowledge.
-- **Extremely lightweight**: Requires only 25 text segments per token and processes 2,500 new tokens in 10 minutes.
-- **No auxiliary model required**: Relies solely on the target model itself, with no pretrained hypernetwork needed.
-- **Broad model coverage**: Evaluated across 3B–8B models, base/instruct variants, and tied/untied embedding configurations.
+- **Deep Theoretical Insight**: Identifies the fundamental flaw in existing methods that ignore functional knowledge in Transformer layers.
+- **Extremely Lightweight**: Requires only 25 text snippets per token; processes 2500 new tokens in 10 minutes.
+- **No Extra Models Required**: Uses the target model itself rather than pre-training an external hypernetwork.
+- **Broad Model Validation**: Robust across settings including 3B-8B parameters, base/instruct versions, and tied/untied embeddings.
 
 ## Limitations & Future Work
 
-- Only input embeddings are learned; output embeddings require separate handling.
-- Norm instability may arise for tied-embedding models.
-- The choice of the final-layer hidden states as the distillation target has not been thoroughly explored for optimality.
-- A small amount of in-context text containing each new token is required, limiting applicability in fully zero-resource scenarios.
-- Compared to hypernetwork-based methods, initialization is slower at inference time due to gradient-based optimization rather than a single forward pass.
+- Currently only learns input embeddings; output embeddings require additional handling.
+- Potential norm instability in tied embedding models.
+- The choice of the last hidden layer for distillation has not been fully explored as the optimal target.
+- Requires a small amount of context for each new token, limiting utility in zero-resource scenarios.
+- Initialization is slower than hypernetwork-based methods (requires gradient optimization versus a single forward pass).
 
 ## Related Work & Insights
 
-- **Gradient-free methods**: Subword averaging, weighted linear combinations (WECHSEL, FVT, etc.) — all neglect Transformer-layer knowledge.
-- **Gradient-based methods**: NTP embedding tuning and hypernetwork ZeTT — the former has an indirect optimization objective, while the latter requires expensive pretraining.
-- **Token-to-Words**: Uses PatchScopes to identify the layer at which subwords are unified into a single representation, but requires training a mapping module.
-- **Token Distillation**: Requires no layer localization and directly captures information from all layers through distillation.
+- **Gradient-free methods**: Subword mean, weighted linear combinations (WECHSEL, FVT)—ignore Transformer layer knowledge.
+- **Gradient-based methods**: NTP embedding tuning, hypernetwork ZeTT—the former has an indirect objective, the latter requires expensive pre-training.
+- **Token-to-Words**: Uses PatchScopes to locate layers where subwords are unified, but requires training mapping modules.
+- **Token Distillation**: Captures information across all layers via distillation without needing to locate specific layers.
 
 ## Rating
 
-| Dimension | Score |
-|-----------|-------|
+| Dimension | Rating |
+|------|------|
 | Novelty | ★★★★☆ |
 | Theoretical Depth | ★★★★☆ |
 | Experimental Thoroughness | ★★★★★ |
@@ -152,11 +152,11 @@ Two strategies are employed to obtain training contexts:
 
 ## Related Papers
 
+- [\[ICLR 2026\] GAPrune: Gradient-Alignment Pruning for Domain-Aware Embeddings](gaprune_gradient-alignment_pruning_for_domain-aware_embeddings.md)
+- [\[ICLR 2026\] Differentiable JPEG-based Input Perturbation for Knowledge Distillation Amplification via Conditional Mutual Information Maximization](differentiable_jpeg-based_input_perturbation_for_knowledge_distillation_amplific.md)
 - [\[ICLR 2026\] FASA: Frequency-Aware Sparse Attention](fasa_frequency-aware_sparse_attention.md)
+- [\[ICLR 2026\] Entropy-Monitored Kernelized Token Distillation for Audio-Visual Compression](entropy-monitored_kernelized_token_distillation_for_audio-visual_compression.md)
 - [\[ICLR 2026\] TurboBoA: Faster and Exact Attention-aware Quantization without Backpropagation](turboboa_faster_and_exact_attention-aware_quantization_without_backpropagation.md)
-- [\[ICLR 2026\] AgilePruner: An Empirical Study of Attention and Diversity for Adaptive Visual Token Pruning in LVLMs](agilepruner_an_empirical_study_of_attention_and_diversity_for_adaptive_visual_to.md)
-- [\[NeurIPS 2025\] A Token is Worth over 1,000 Tokens: Efficient Knowledge Distillation through Low-Rank Clone](../../NeurIPS2025/model_compression/a_token_is_worth_over_1000_tokens_efficient_knowledge_distillation_through_low-r.md)
-- [\[ICML 2026\] Token Sparse Attention: Efficient Long-Context Inference with Interleaved Token Selection](../../ICML2026/model_compression/token_sparse_attention_efficient_long-context_inference_with_interleaved_token_s.md)
 
 </div>
 

@@ -2,157 +2,158 @@
 title: >-
   [Paper Note] Taming Momentum: Rethinking Optimizer States Through Low-Rank Approximation
 description: >-
-  [ICLR 2026][Model Compression][Low-rank optimizer] This work reveals that EMA-based momentum updates are equivalent to gradient descent on an online linear regression objective…
+  [ICLR 2026][Model Compression][LoRA] This work reveals that momentum EMA updates are equivalent to gradient descent for online linear regression. Based on this insight, the authors propose LoRA-Pre, which compresses optimizer momentum through low-rank decomposition to achieve memory-efficient LLM pre-training and fine-tuning, reaching optimal performance
 tags:
-  - "ICLR 2026"
-  - "Model Compression"
-  - "Low-rank optimizer"
-  - "momentum compression"
-  - "pretraining efficiency"
-  - "LoRA"
-  - "Adam"
-  - "Muon"
+  - ICLR 2026
+  - Model Compression
+  - LoRA
+  - Adam
+  - Muon
 date: 2026-05-08
-content_hash: e90c0726c24ef223
+content_hash: 79abb341a79b16a4
 ---
-
 # Taming Momentum: Rethinking Optimizer States Through Low-Rank Approximation
 
 **Conference**: ICLR 2026 Oral  
 **arXiv**: [2602.24283](https://arxiv.org/abs/2602.24283)  
 **Code**: [github.com/mrflogs/LoRA-Pre](https://github.com/mrflogs/LoRA-Pre)  
-**Area**: Model Compression / Efficient Optimizers
-**Keywords**: Low-rank optimizer, momentum compression, pretraining efficiency, LoRA, Adam, Muon
+**Area**: Model Compression / Efficient Optimizers  
+**Keywords**: Low-rank Optimizer, Momentum Compression, Pre-training Efficiency, LoRA, Adam, Muon
 
 ## TL;DR
 
-This work reveals that EMA-based momentum updates are equivalent to gradient descent on an online linear regression objective, and builds upon this insight to propose LoRA-Pre — a method that compresses optimizer momentum via low-rank factorization for memory-efficient LLM pretraining and fine-tuning. LoRA-Pre achieves state-of-the-art performance across all model scales using only 1/8 the rank required by baseline methods.
+This work reveals that momentum EMA updates are equivalent to gradient descent for online linear regression. Based on this insight, the authors propose LoRA-Pre, which compresses optimizer momentum through low-rank decomposition to achieve memory-efficient LLM pre-training and fine-tuning, reaching optimal performance across all model scales with only 1/8 the rank of baseline methods.
 
 ## Background & Motivation
 
-- Optimizers such as Adam maintain first- and second-order momentum, causing memory consumption to reach **three times that of the model weights**.
-- Existing low-rank optimization methods (GaLore, Flora, Fira, etc.) compress optimizer states by projecting gradients into lower-dimensional subspaces.
-    - Periodic subspace updates introduce **optimization discontinuities and error accumulation**.
-    - These methods cannot adapt instantaneously to shifting gradient subspaces.
-- There is a need for an efficient momentum compression approach that **continuously adapts to the gradient subspace**.
+- Optimizers like Adam maintain first- and second-order moments, resulting in memory footprints **three times larger than model weights**.
+- Existing low-rank optimization methods (e.g., GaLore, Flora, Fira) compress optimizer states by projecting gradients into lower dimensions.
+    - Periodic subspace updates lead to **optimization discontinuity and error accumulation**.
+    - These methods cannot instantaneously adapt to changing gradient subspaces.
+- An efficient momentum compression method capable of **continuous subspace adaptation** is required.
 
 ## Method
 
-### Core Insight: Momentum as a Covert Online Linear Regressor
+### Overall Architecture
 
-The EMA momentum update can be rewritten as:
+The goal is not to eliminate model weights but to save the two additional momentum states maintained for each weight—elements that expand Adam's memory usage to 3x the model size. The entry point of this work is a neglected observation: the EMA update of momentum is essentially an online regressor fitting the current gradient. Since it performs regression, it can be compressed using low-rank decomposition like weights; however, instead of periodic re-projection, this low-rank representation is updated online at each step. The pipeline replaces the full-rank momentum $m$ with two thin factors $m_B m_A$, refreshes these factors online using closed-form rules at each step, and multiplies them back to approximate the original momentum during parameter updates. The "momentum as regression" insight handles both first- and second-order moments for both Adam and Muon.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    G["Current Gradient g"] --> LENS["Momentum as Online Regression<br/>EMA Update = Online Regressor fitting g"]
+    LENS --> M["Low-Rank Online Compression of 1st-Order Momentum<br/>Closed-form Update of thin factors mB, mA<br/>Reconstruction m ≈ mB·mA"]
+    LENS --> V["Low-Rank Compression of 2nd-Order Momentum<br/>Regression |g| + Hadamard Element-wise Square<br/>Reconstruction v = (vB·vA) squared"]
+    M --> UP["Unified Framework for Adam and Muon<br/>Parameter Update θ ← θ − γ·m̂ / (√v̂ + ε)"]
+    V --> UP
+    UP -->|Next Step| G
+```
+
+### Key Designs
+
+**1. Reinterpreting Momentum as Online Linear Regression: The Foundation**
+
+Deconstructing the EMA momentum update reveals it is exactly one step of online gradient descent:
 
 $$m_{t+1} = \underbrace{m_t}_{weight} - \underbrace{(1-\beta)}_{lr} \cdot \underbrace{(m_t - g)}_{gradient}$$
 
-This is equivalent to online gradient descent on the objective:
+This minimizes the objective $\min_m L(m; g) = \frac{1}{2}\|m - g\|_F^2$ with learning rate $1-\beta$, where the gradient is $m_t - g$. By reinterpreting "momentum" as "an online regressor fitting gradients," compression becomes equivalent to replacing the regressor with a low-rank parameterization.
 
-$$\min_m L(m; g) = \frac{1}{2} \|m - g\|_F^2$$
+**2. Low-rank Online Compression of First-order Momentum: Regressors in Thin Factors**
 
-with learning rate $1-\beta$ and loss gradient $m_t - g$.
+Since momentum is regressing $g$, the full-rank momentum $m \in \mathbb{R}^{p\times q}$ is decomposed into two thin factors $m = m_B \cdot m_A$ ($m_B \in \mathbb{R}^{p\times r}$, $m_A \in \mathbb{R}^{r\times q}$, $r \ll \min(p,q)$). The regression objective becomes:
 
-### LoRA-Pre: Low-Rank Online Linear Regression
+$$\min_{m_B, m_A} L(m_B, m_A; g) = \frac{1}{2}\|m_B m_A - g\|_F^2,$$
 
-#### First-Order Momentum Compression
+reducing memory from $p\times q$ to $(p+q)\times r$. Instead of backpropagation, Newton's method yields closed-form updates (Theorem 3.1):
 
-The full-rank momentum $m \in \mathbb{R}^{p \times q}$ is factorized as $m = m_B \cdot m_A$, where $m_B \in \mathbb{R}^{p \times r}$, $m_A \in \mathbb{R}^{r \times q}$, and $r \ll \min(p,q)$:
+$$m_B \leftarrow (1-\gamma_1)\, m_B + \gamma_1\, g\, m_A^T (m_A m_A^T)^{-1},$$
+$$m_A \leftarrow (1-\gamma_1)\, m_A + \gamma_1\, (m_B^T m_B)^{-1} m_B^T g,$$
 
-$$\min_{m_B, m_A} L(m_B, m_A; g) = \frac{1}{2} \|m_B m_A - g\|_F^2$$
+These rules maintain an EMA form, allowing online refreshing and continuous tracking of gradient subspaces, unlike the periodic re-projection in GaLore.
 
-Memory cost is reduced from $p \times q$ to $(p+q) \times r$.
+**3. Second-order Momentum Compression: Hadamard Square for Non-negativity**
 
-Closed-form update rules are derived via the Newton method (Theorem 3.1):
+Second-order momentum $v$ cannot be treated identically because Adam requires element-wise non-negativity for $\sqrt{v}$, which the low-rank product $v_B v_A$ cannot guarantee. The solution re-parameterizes $v$ as the element-wise square of a low-rank product $v = (v_B v_A)^{\circ 2}$ to regress gradient magnitudes:
 
-$$m_B \leftarrow (1-\gamma_1) m_B + \gamma_1 g m_A^T (m_A m_A^T)^{-1}$$
-$$m_A \leftarrow (1-\gamma_1) m_A + \gamma_1 (m_B^T m_B)^{-1} m_B^T g$$
+$$\min_{v_B, v_A} L(v_B, v_A; g) = \frac{1}{2}\|v_B v_A - |g|\|_F^2.$$
 
-These updates take the form of EMA and require no backpropagation.
+The square naturally ensures element-wise positivity while $v_B v_A$ remains low-rank, fitting the second-order momentum into the same $(p+q)\times r$ budget.
 
-#### Second-Order Momentum Compression
+**4. A Unified Framework for Adam and Muon**
 
-Challenge: Adam's parameter update requires $\sqrt{v}$, which demands element-wise non-negativity of $v$.
-
-Solution: Reparameterize as $v = (v_B v_A)^{\circ 2}$ (Hadamard square) and optimize:
-
-$$\min_{v_B, v_A} L(v_B, v_A; g) = \frac{1}{2} \|v_B v_A - |g|\|_F^2$$
-
-This guarantees element-wise positivity while preserving the low-rank structure.
-
-### Generality
-
-LoRA-Pre can be applied to any momentum-based optimizer:
-- **LoRA-Pre (Adam)**: compresses both $m$ and $v$
-- **LoRA-Pre (Muon)**: compresses the momentum of the Muon optimizer
+This compression relies only on the premise that the optimizer maintains momentum, making it optimizer-agnostic. The low-rank online regression can be applied to Adam (compressing both $m$ and $v$) or Muon (compressing its specific momentum). LoRA-Pre is thus a general recipe for momentum compression rather than a single-optimizer patch.
 
 ## Key Experimental Results
 
-### Pretraining: Validation Perplexity of Llama Models on C4 (↓)
+### Main Results: Validation Perplexity on C4 Dataset for Llama Models (↓)
 
 | Model | Full-rank Adam | GaLore | Flora | Fira | **LoRA-Pre** |
-|-------|---------------|--------|-------|------|-------------|
-| 60M | baseline | second-best | — | — | **best** |
-| 130M | baseline | second-best | — | — | **best** |
-| 350M | baseline | second-best | — | — | **best** |
-| 1B | baseline | second-best | — | — | **best** |
+|------|---------------|--------|-------|------|-------------|
+| 60M | Baseline | Runner-up | — | — | **Ours** |
+| 130M | Baseline | Runner-up | — | — | **Ours** |
+| 350M | Baseline | Runner-up | — | — | **Ours** |
+| 1B | Baseline | Runner-up | — | — | **Ours** |
 
 ### Rank Efficiency Comparison
 
-| Method | Rank Required (to achieve comparable performance) |
-|--------|--------------------------------------------------|
-| GaLore | baseline rank $r$ |
-| Flora | baseline rank $r$ |
+| Method | Required Rank (for comparable performance) |
+|------|---------------------|
+| GaLore | Baseline rank $r$ |
+| Flora | Baseline rank $r$ |
 | **LoRA-Pre** | **$r/8$** |
 
 ### Fine-tuning: MetaMathQA → GSM8K / MATH-500
 
 | Method | Llama-3.1-8B | Llama-2-7B |
-|--------|-------------|------------|
-| Standard LoRA | baseline | baseline |
+|------|-------------|------------|
+| Standard LoRA | Baseline | Baseline |
 | **LoRA-Pre** | **+3.14** | **+6.17** |
 
 ### Ablation Study
 
 | Component | Effect |
-|-----------|--------|
-| First-order compression only | effective but inferior to both orders |
-| First-order + second-order compression | **best** |
-| Varying rank $r$ | robust to rank variation; $r/8$ suffices |
-| Adam vs. Muon variants | both optimizers benefit |
+|------|------|
+| 1st-order compression only | Effective but suboptimal |
+| 1st + 2nd-order compression | **Optimal** |
+| Different rank $r$ | Robust to rank variations; $r/8$ suffices |
+| Adam vs Muon variants | Both optimizers benefit |
 
 ### Key Findings
 
-1. LoRA-Pre achieves the lowest validation perplexity **across all model scales**.
-2. Only **1/8 the rank** of baseline methods is needed to match or surpass their performance.
-3. The method remains effective in fine-tuning settings, yielding a +6.17 improvement on Llama-2-7B.
-4. Closed-form update rules require no backpropagation, ensuring computational efficiency.
-5. The Hadamard square reparameterization for second-order momentum resolves the positivity constraint.
+1. LoRA-Pre achieves the lowest validation perplexity across **all model scales**.
+2. It requires only **1/8 the rank** of baseline methods to reach comparable or superior performance.
+3. Effectively scales to fine-tuning scenarios, with a +6.17 point improvement on Llama-2-7B.
+4. Closed-form update rules avoid backpropagation, ensuring computational efficiency.
+5. Hadamard square re-parameterization for second-order momentum solves the positivity constraint.
 
 ## Highlights & Insights
 
-- **Elegant theoretical contribution**: The equivalence between EMA and online linear regression reveals a fundamentally new perspective on momentum.
-- **From model compression to optimizer compression**: The core idea of LoRA is transferred from model weights to optimizer states.
-- **Continuous subspace adaptation**: Unlike periodic-update methods such as GaLore, LoRA-Pre adapts to the gradient subspace at every step.
-- **Exceptional rank efficiency**: 1/8 rank = lower memory footprint + better performance.
-- **Unified framework**: The same framework applies to both Adam and Muon, for both pretraining and fine-tuning.
+- **Elegant Theoretical Contribution**: The EMA ↔ online linear regression equivalence reveals a new nature of momentum.
+- **From Weight Compression to Optimizer Compression**: Successfully transfers the LoRA concept from model weights to optimizer states.
+- **Continuous Subspace Adaptation**: Unlike periodic update methods like GaLore, LoRA-Pre adapts to the gradient subspace at every step.
+- **High Rank Efficiency**: 1/8 rank means lower memory overhead and better performance.
+- **Unified Framework**: Applicable to both Adam and Muon across pre-training and fine-tuning.
 
 ## Limitations & Future Work
 
-- Computing $(m_A m_A^T)^{-1}$ or $(m_B^T m_B)^{-1}$ introduces additional overhead when $r$ is large.
-- The Hadamard reparameterization for second-order momentum introduces approximation error.
-- Validation is limited to the Llama architecture; cross-architecture generalization remains to be confirmed.
-- Communication efficiency in distributed training settings is insufficiently analyzed.
+- Computational overhead of $(m_A m_A^T)^{-1}$ or $(m_B^T m_B)^{-1}$ when $r$ is large.
+- Approximation errors introduced by the Hadamard re-parameterization of second-order momentum.
+- Validation limited to Llama architectures; cross-architecture generalization requires further study.
+- Insufficient analysis of communication efficiency in distributed training scenarios.
 
 ## Related Work & Insights
 
-- Low-rank pretraining: GaLore (SVD projection), Flora (random projection), Fira (SGD complementary subspace)
-- Online momentum compression: MLorc, MoFaSGD, ADAPM
-- Parameter-efficient fine-tuning: LoRA, LoRA+, DoRA, LoFT, LoRA-Pro
+- Low-rank Pre-training: GaLore (SVD projection), Flora (Random projection), Fira (SGD complementary subspace).
+- Online Momentum Compression: MLorc, MoFaSGD, ADAPM.
+- Parameter-Efficient Fine-Tuning: LoRA, LoRA+, DoRA, LoFT, LoRA-Pro.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐⭐ — The EMA = online regression insight is remarkably elegant.
-- **Technical Depth**: ⭐⭐⭐⭐⭐ — Rigorous theoretical derivations with clean closed-form solutions.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Comprehensive coverage from 60M–1B pretraining to 7B–8B fine-tuning.
-- **Practical Value**: ⭐⭐⭐⭐⭐ — Directly reduces LLM training memory; highly deployable.
+- **Novelty**: ⭐⭐⭐⭐⭐ — The EMA=online regression insight is highly elegant.
+- **Technical Depth**: ⭐⭐⭐⭐⭐ — Rigorous theoretical derivation and beautiful closed-form solutions.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Comprehensive coverage from 60M-1B pre-training to 7B-8B fine-tuning.
+- **Value**: ⭐⭐⭐⭐⭐ — Directly reduces LLM training memory with high practical utility.
 
 <!-- RELATED:START -->
 
@@ -160,11 +161,11 @@ LoRA-Pre can be applied to any momentum-based optimizer:
 
 ## Related Papers
 
-- [\[ICLR 2026\] LoFT: Low-Rank Adaptation That Behaves Like Full Fine-Tuning](loft_low-rank_adaptation_that_behaves_like_full_fine-tuning.md)
-- [\[CVPR 2026\] UniComp: Rethinking Video Compression Through Informational Uniqueness](../../CVPR2026/model_compression/unicomp_rethinking_video_compression_through_informational_uniqueness.md)
+- [\[ICLR 2026\] GlowQ: Group-Shared Low-Rank Approximation for Quantized LLMs](glowq_group-shared_low-rank_approximation_for_quantized_llms.md)
+- [\[ICLR 2026\] WSVD: Weighted Low-Rank Approximation for Fast and Efficient Execution of Low-Precision Vision-Language Models](wsvd_weighted_low-rank_approximation_for_fast_and_efficient_execution_of_low-pre.md)
+- [\[ICLR 2026\] FlexLoRA: Entropy-Guided Flexible Low-Rank Adaptation](flexlora_entropy-guided_flexible_low-rank_adaptation.md)
 - [\[ICML 2026\] From Per-Image Low-Rank to Encoding Mismatch: Rethinking Feature Distillation in Vision Transformers](../../ICML2026/model_compression/from_per-image_low-rank_to_encoding_mismatch_rethinking_feature_distillation_in_.md)
-- [\[ICLR 2026\] Revisiting Weight Regularization for Low-Rank Continual Learning](revisiting_weight_regularization_for_low-rank_continual_learning.md)
-- [\[NeurIPS 2025\] QSVD: Efficient Low-Rank Approximation for Unified Query-Key-Value Weight Compression](../../NeurIPS2025/model_compression/qsvd_efficient_low-rank_approximation_for_unified_query-key-value_weight_compres.md)
+- [\[ICLR 2026\] Stable-LoRA: Stabilizing Feature Learning of Low-Rank Adaptation](stable-lora_stabilizing_feature_learning_of_low-rank_adaptation.md)
 
 </div>
 

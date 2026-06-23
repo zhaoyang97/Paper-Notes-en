@@ -2,104 +2,93 @@
 title: >-
   [Paper Note] Why Attention Patterns Exist: A Unifying Temporal Perspective Analysis
 description: >-
-  [ICLR 2026][Model Compression][attention patterns] This paper proposes the TAPPA framework, which explains the formation mechanisms of various attention patterns in LLMs (attention sink, diagonal, periodic…
+  [ICLR 2026][Model Compression][attention patterns] Ours proposes the TAPPA framework, which provides a unified explanation for the formation mechanisms of various attention patterns in LLMs (attention sink, diagonal, periodicity, etc.) from a temporal continuity perspective. It introduces the query self-similarity (q-similarity) metric to guide KV cache compression and
 tags:
-  - "ICLR 2026"
-  - "Model Compression"
-  - "attention patterns"
-  - "temporal analysis"
-  - "RoPE"
-  - "query self-similarity"
-  - "KV cache compression"
-  - "LLM pruning"
+  - ICLR 2026
+  - Model Compression
+  - attention patterns
+  - temporal analysis
+  - RoPE
+  - query self-similarity
+  - KV cache compression
+  - LLM pruning
 date: 2026-05-08
-content_hash: 89e6ff4e6e0e51e2
+content_hash: 1cf782ff5971ef35
 ---
-
 # Why Attention Patterns Exist: A Unifying Temporal Perspective Analysis
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2601.21709](https://arxiv.org/abs/2601.21709)  
 **Code**: [GitHub](https://github.com/MIRALab-USTC/LLM-TAPPA)  
-**Area**: Model Compression / Attention Mechanism Analysis / LLM Inference Acceleration
+**Area**: Model Compression / Attention Mechanism Analysis / LLM Inference Acceleration  
 **Keywords**: attention patterns, temporal analysis, RoPE, query self-similarity, KV cache compression, LLM pruning
 
 ## TL;DR
 
-This paper proposes the TAPPA framework, which explains the formation mechanisms of various attention patterns in LLMs (attention sink, diagonal, periodic, etc.) from a temporal continuity perspective in a unified manner, and leverages query self-similarity (q-similarity) as a metric to guide KV cache compression and model pruning tasks.
+Ours proposes the TAPPA framework, which provides a unified explanation for the formation mechanisms of various attention patterns in LLMs (attention sink, diagonal, periodicity, etc.) from a temporal continuity perspective. It introduces the query self-similarity (q-similarity) metric to guide KV cache compression and model pruning tasks.
 
 ## Background & Motivation
 
 Attention heads in LLMs exhibit diverse structured patterns:
-- **Attention sinks**: The first token receives anomalously high attention.
-- **Diagonal patterns**: Attention is focused on neighboring tokens.
-- **Retrieval heads**: Global scanning of the context.
-- **Periodic patterns**: Attention recurs at regular intervals.
+- **Attention sinks**: The first token receives abnormally high attention.
+- **Diagonal patterns**: Focusing on adjacent tokens.
+- **Retrieval heads**: Scanning the context globally.
+- **Periodic patterns**: Repeatedly focusing at fixed intervals.
 
-Prior work typically analyzes individual patterns in isolation, lacking a unified explanation. The core question is: **given the same attention formulation, what factors determine which attention pattern a given head adopts?**
+Prior research typically analyzes individual patterns, lacking a unified explanation. The Core Problem is: **Under the same attention formula, what factors determine why different heads adopt different attention patterns?**
 
 ## Method
 
-### Overall Architecture: TAPPA
+### Overall Architecture
 
-TAPPA (Temporal Attention Pattern Predictability Analysis) categorizes attention patterns into two classes:
-- **Predictable patterns**: Exhibit temporal continuity, with attention metrics evolving smoothly across decoding steps.
-- **Unpredictable patterns**: Exhibit irregular jumps and lack temporal consistency (e.g., retrieval heads).
+TAPPA (Temporal Attention Pattern Predictability Analysis) translates the question of "where attention patterns come from" into a time-series problem. In autoregressive decoding, the attention logit $a_t$ towards a certain position is viewed as a signal evolving over decoding steps $t$. Whether a head's attention is "structured" depends on the continuity of this signal along the temporal direction. Following this line, TAPPA first categorizes all heads into two types: **predictable patterns** (where high-score positions drift smoothly with $t$ and are extrapolatable) and **unpredictable patterns** (which jump across steps and lack temporal consistency, typical of retrieval heads). For the predictable branch, it uses query/key self-similarity and the rotational geometry of RoPE to derive specific shapes (re-access/attention sink, sequential diagonal, periodic diagonal, seasonal). The core variable governing everything is **query self-similarity (q-similarity)**, i.e., the similarity of queries between adjacent decoding steps. Finally, this theoretically derived q-similarity is applied as a decision metric for downstream compression, validating the theory's utility in KV cache compression and model pruning.
 
-The key discriminating factor is **query self-similarity (q-similarity)**.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    A["Attention logit signal a_t<br/>evolves with step t"] --> B["q-similarity watershed<br/>measures magnitude of query change"]
+    B -->|"Low q-sim: query jumps"| C["Unpredictable patterns<br/>retrieval heads global sweep"]
+    B -->|"High q-sim: Necessary prerequisite"| D
+    subgraph D["Three types of predictable patterns (RoPE geometry)"]
+        direction TB
+        D1["Re-access / sink<br/>Low-freq dominant channel + small initial angle<br/>→ Vertical stripes"]
+        D2["Sequential / diagonal<br/>High q, k self-similarity<br/>→ Along main diagonal band"]
+        D3["Periodic diagonal<br/>Dominant channel m*<br/>→ Interval T=2π/θ"]
+        D4["Seasonal<br/>q/k approx period L and resonate with RoPE"]
+        D2 --> D3
+    end
+    C --> E["q-similarity as downstream metric"]
+    D --> E
+    E --> F["KV cache compression + LLM pruning<br/>High q-sim heads more redundant → prioritize"]
+```
 
-### Key Design 1: Predictable vs. Unpredictable Patterns
+### Key Designs
 
-**Proposition 4.1**: If the difference between consecutive queries $\|q_{t+1} - q_t\|$ is large and not orthogonal to the rotated keys, the difference in attention logits must also be large:
+**1. q-similarity: Compressing "Random vs. Structured" into a Measurable Watershed**
 
-$$\|a_{t+1} - a_t\|_\infty \geq c_1 \|q_{t+1} - q_t\| - c_2$$
+To explain why some heads are chaotic while others are regular and predictable, a calculable criterion is needed. Proposition 4.1 provides a lower bound: if the difference between adjacent queries $\|q_{t+1}-q_t\|$ is large and not orthogonal to the rotated key, the bitwise difference of attention logits must be significant, $\|a_{t+1}-a_t\|_\infty \geq c_1\|q_{t+1}-q_t\| - c_2$. In other words, when the query changes drastically (low q-similarity), the attention must jump randomly without forming stable patterns (retrieval heads). Conversely, **high q-similarity is a necessary prerequisite for any predictable pattern to emerge**. This integrates all subsequent structured patterns under a single sufficient condition, allowing q-similarity to serve as a lightweight downstream metric—calculating only the similarity between adjacent queries without training or complex scoring.
 
-That is, low q-similarity leads to random patterns, while high q-similarity is a necessary condition for predictable patterns.
+**2. Deriving Geometric Shapes of Three Predictable Patterns via q-similarity + RoPE**
 
-### Key Design 2: Re-access Patterns (Attention Sink)
+Knowing "high q-similarity is necessary" is insufficient; the specific shapes and intervals of predictable heads must be defined. TAPPA provides a set of sufficient conditions for the predictable branch, deriving three shapes using the same variables (query/key self-similarity + RoPE rotation):
 
-**Theorem 5.1** (Vertical Stability of Attention): When queries are highly self-similar and a dominant low-frequency RoPE channel exists, the attention logits are vertically stable over time:
+- **Re-access / attention sink** (Theorem 5.1, vertical stability): When the query is highly self-similar and the head is dominated by a **low-frequency RoPE channel**, the attention logit remains nearly constant over time $|a_{t+1,i}-a_{t,i}|$. Geometrically, the angle $\phi_{t,i}^{(m)}$ between query and key $k_i$ is small, the cosine term after rotation approaches 1 and drifts slowly with $t$. Consequently, the same position $i$ receives high scores across multiple steps, forming vertical "re-access" stripes, i.e., sinks.
+- **Sequential / diagonal** (Theorem 5.2): When both query and key exhibit high self-similarity ($\|q_{t+1}-q_t\|\leq\varepsilon$, $\|k_{i+1}-k_i\|\leq\varepsilon$), logits shifting synchronously along the diagonal are nearly equal, $|a_{t+1,i+1}-a_{t,i}|\leq C\varepsilon$. Since RoPE only encodes relative positions, shifting both query and key by one step keeps the relative angle constant, preserving the interaction and stretching the attention into a stable band along the main diagonal.
+- **Periodic diagonal** (Theorem 5.3, refinement of sequential): When a dominant channel $m^\star$ exists, multiple diagonals appear, repeating at a fixed interval $T=\frac{2\pi}{\theta_{m^\star}}=2\pi c^{2m^\star/d}$ (where $c$ is the RoPE base). This provides a verifiable prediction: moving the dominant channel to a low-index (high-frequency) position should cause periodic diagonals to appear, and decreasing the base $c$ should shorten the interval—subsequent experiments confirm these phenomena.
+- **Seasonal** (Theorem 5.4, looser than diagonal): When query/key approximately repeat with period $L$ and $L$ resonates with the dominant RoPE frequency, logits separated by $L$ steps remain close, $|a_{t+L,i}-a_{t,i}|\leq C_1(\varepsilon_q+\varepsilon_k)+C_2\delta$. This quantifies the deviation of "returning to a similar distribution every $L$ steps" via periodic errors $\varepsilon_q, \varepsilon_k$ and resonance mismatch $\delta$.
 
-$$|a_{t+1,i} - a_{t,i}| \leq \text{small quantity}$$
+These four cases share the same reasoning framework—**high self-similarity ensures temporal continuity, and RoPE frequency structure determines specific geometry**—which is key to TAPPA's "unified" explanation rather than labeling phenomena individually.
 
-When the angle $\phi_{t,i}^{(m)}$ between $q$ and $k_i$ is small, the cosine term approaches 1, which explains the attention sink phenomenon.
+**3. q-similarity as a Decision Metric for Downstream Compression**
 
-### Key Design 3: Sequential Patterns (Diagonal)
-
-**Theorem 5.2**: When both queries and keys exhibit high self-similarity ($\|q_{t+1} - q_t\| \leq \varepsilon$, $\|k_{i+1} - k_i\| \leq \varepsilon$):
-
-$$|a_{t+1,i+1} - a_{t,i}| \leq C\varepsilon$$
-
-RoPE's relative positional encoding preserves query–key interactions under synchronized position shifts, giving rise to diagonal patterns.
-
-### Key Design 4: Periodic Sequential Patterns
-
-**Theorem 5.3**: When a dominant RoPE channel $m^\star$ exists, the diagonal spacing is:
-
-$$T = \frac{2\pi}{\theta_{m^\star}} = 2\pi c^{2m^\star/d}$$
-
-This is verified experimentally: relocating the dominant channel to a low index (high-frequency) position induces the theoretically predicted periodic diagonals, and adjusting the RoPE base $c$ controls the spacing accordingly.
-
-### Key Design 5: Seasonal Patterns
-
-**Theorem 5.4**: When queries and keys are approximately periodic with period $L$ and resonate with the dominant RoPE frequency:
-
-$$|a_{t+L,i} - a_{t,i}| \leq C_1(\varepsilon_q + \varepsilon_k) + C_2\delta$$
-
-This produces seasonal attention patterns with period $L$.
-
-### Downstream Applications
-
-Q-similarity is used as a simple metric to guide:
-- **KV cache compression**: Heads with high q-similarity can be safely compressed.
-- **LLM pruning**: Identifying redundant heads suitable for pruning.
+Since q-similarity determines whether a head is predictable and whether its attention is stable across steps, it naturally serves as a head-level redundancy metric. Heads with high q-similarity exhibit stable attention and high information redundancy, allowing for more aggressive KV cache compression or prioritized removal during pruning. Conversely, low q-similarity heads are allocated more budget. This approach requires no extra training or complex scoring, relying simply on adjacent query similarity, which explains why a simple metric consistently outperforms baselines in experiments.
 
 ## Key Experimental Results
 
-### KV Cache Compression (LongBench)
+### Main Results: KV Cache Compression (LongBench)
 
-| Method | Budget=512 | Avg. Score |
-|--------|-----------|------------|
+| Method | Budget=512 | Average Score |
+|------|-----------|--------|
 | StreamingLLM | — | 41.75 |
 | H2O | — | 44.39 |
 | SnapKV | — | 46.92 |
@@ -107,56 +96,56 @@ Q-similarity is used as a simple metric to guide:
 | **TAPPA** | — | **47.55** |
 | Full cache | — | 49.06 |
 
-TAPPA's simple q-similarity-based metric consistently outperforms all baseline methods.
+The simple q-similarity-based metric of TAPPA consistently outperforms all baseline methods.
 
 ### LLM Pruning
 
 On Llama-3.1-8B and Qwen-2.5-7B:
-- Q-similarity-guided pruning outperforms uniform pruning without guidance.
-- Pruning heads with high q-similarity yields smaller performance degradation.
+- q-similarity guided pruning outperforms unguided uniform pruning.
+- Pruning high q-similarity heads has a smaller impact on performance.
 
-### Theoretical Validation Experiments
+### Ablation Study (Theoretical Verification)
 
-1. **Dominant channel relocation**: Relocating the dominant channel at index 124 in Qwen2.5 to indices 2/3/5 successfully induces the theoretically predicted periodic diagonal patterns.
-2. **RoPE base adjustment**: Reducing $c$ from $1{,}000{,}000$ to $100{,}000$ shortens the diagonal spacing, consistent with the theoretical prediction $T = 2\pi / \theta_{m^\star}$.
-3. **Q-similarity distribution**: Analysis across layers, heads, models, and datasets confirms the ubiquitous presence of both high- and low-continuity heads.
+1. **Dominant Channel Relocation**: Moving dominant channels from index 124 in Qwen2.5 to indices 2/3/5 successfully generated periodic diagonals as theoretically predicted.
+2. **RoPE Base Adjustment**: Changing $c = 1,000,000 \to 100,000$ shortened the diagonal interval, consistent with the theoretical prediction of $T = 2\pi / \theta_{m^\star}$.
+3. **q-similarity Distribution**: Analysis across layers, heads, models, and datasets verified the universal existence of high and low continuity heads.
 
 ### Key Findings
 
-1. Q-similarity is the key factor distinguishing predictable from unpredictable attention patterns.
-2. Re-access patterns require high q-similarity combined with a dominant low-frequency RoPE channel.
-3. Sequential patterns require high q-similarity combined with high k-similarity.
-4. The spacing of periodic diagonals is determined by the frequency of the dominant RoPE channel.
-5. Q-similarity serves as a simple yet consistently effective metric for downstream tasks.
+1. q-similarity is the key factor distinguishing predictable from unpredictable attention patterns.
+2. Re-access patterns require high q-similarity and a low-frequency RoPE dominant channel.
+3. Sequential patterns require high q-similarity and high k-similarity.
+4. Periodic diagonal intervals are determined by the frequency of the dominant RoPE channel.
+5. q-similarity is a simple yet effective metric for downstream tasks.
 
 ## Highlights & Insights
 
-- First work to provide a unified explanation of diverse attention patterns from a temporal continuity perspective.
-- Four theorems offer rigorous mathematical analysis.
+- First to unify the explanation of multiple attention patterns from a temporal continuity perspective.
+- Four theorems provide rigorous mathematical analysis.
 - The q-similarity metric is extremely simple yet consistently effective.
-- Controlled experiments (channel relocation and RoPE base adjustment) precisely validate the theoretical claims.
+- Precise theoretical validation through controlled experiments (relocating channels/adjusting RoPE base).
 
 ## Limitations & Future Work
 
-- The theoretical analysis assumes that query/key self-similarity is measurable, whereas in practice these quantities vary with context.
-- Analysis of unpredictable patterns (e.g., retrieval heads) remains relatively limited.
-- Seasonal patterns require RoPE resonance conditions, which may have limited applicability in practice.
-- Downstream task improvements, while consistent, are modest in magnitude (~0.5–1 point).
+- Theoretical analysis assumes measurable query/key self-similarity, but these vary with context in practice.
+- Relatively less analysis is provided for unpredictable patterns (e.g., retrieval heads).
+- Seasonal patterns require RoPE resonance conditions, which might have limited applicability in practice.
+- Downstream task improvements are consistent but marginal (~0.5-1 point).
 
 ## Related Work & Insights
 
-- **Attention Patterns**: Attention sinks by Xiao et al. (2023); retrieval heads by Wu et al. (2024).
-- **RoPE Analysis**: Barbero et al. (2025) attribute diagonal patterns to high-frequency RoPE components.
+- **Attention Patterns**: Attention sink (Xiao et al., 2023); retrieval heads (Wu et al., 2024).
+- **RoPE Analysis**: Barbero et al. (2025) attributed diagonals to high-frequency RoPE components.
 - **KV Cache Compression**: H2O, SnapKV, PyramidKV, MInference.
 - **Input Dynamics**: AttentionPredictor (Yang et al., 2025); Lee et al. (2024).
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ — The unified theoretical framework is a significant contribution.
-- Theoretical Depth: ⭐⭐⭐⭐⭐ — Four theorems with rigorous derivations.
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Theoretical validation is impressive; downstream tasks are somewhat limited.
-- Value: ⭐⭐⭐⭐ — Q-similarity is simple and practical.
-- Writing Quality: ⭐⭐⭐⭐⭐ — Clear and elegant, with outstanding visualizations.
+- Novelty: ⭐⭐⭐⭐⭐ — The unified theoretical framework is a major contribution.
+- Theoretical Depth: ⭐⭐⭐⭐⭐ — Rigorous derivation of four theorems.
+- Experimental Thoroughness: ⭐⭐⭐⭐ — Excellent theoretical validation; downstream tasks are somewhat simplistic.
+- Value: ⭐⭐⭐⭐ — q-similarity is simple and practical.
+- Writing Quality: ⭐⭐⭐⭐⭐ — Clear, elegant, and excellent visualization.
 
 <!-- RELATED:START -->
 
@@ -164,11 +153,11 @@ On Llama-3.1-8B and Qwen-2.5-7B:
 
 ## Related Papers
 
-- [\[ICLR 2026\] FASA: Frequency-Aware Sparse Attention](fasa_frequency-aware_sparse_attention.md)
-- [\[ICLR 2026\] Enhancing Multivariate Time Series Forecasting with Global Temporal Retrieval](enhancing_multivariate_time_series_forecasting_with_global_temporal_retrieval.md)
+- [\[ICLR 2026\] Many Eyes, One Mind: Temporal Multi-Perspective and Progressive Distillation for Spiking Neural Networks](many_eyes_one_mind_temporal_multi-perspective_and_progressive_distillation_for_s.md)
+- [\[ICLR 2026\] AgilePruner: An Empirical Study of Attention and Diversity for Adaptive Visual Token Pruning in LVLMs](agilepruner_an_empirical_study_of_attention_and_diversity_for_adaptive_visual_to.md)
+- [\[ICLR 2026\] TurboBoA: Faster and Exact Attention-aware Quantization without Backpropagation](turboboa_faster_and_exact_attention-aware_quantization_without_backpropagation.md)
 - [\[ICCV 2025\] Representation Shift: Unifying Token Compression with FlashAttention](../../ICCV2025/model_compression/representation_shift_unifying_token_compression_with_flashattention.md)
-- [\[ICLR 2026\] FlyPrompt: Brain-Inspired Random-Expanded Routing with Temporal-Ensemble Experts for General Continual Learning](flyprompt_brain-inspired_random-expanded_routing.md)
-- [\[ICLR 2026\] Token Distillation: Attention-Aware Input Embeddings for New Tokens](token_distillation_attention-aware_input_embeddings_for_new_tokens.md)
+- [\[ICLR 2026\] Enhancing Multivariate Time Series Forecasting with Global Temporal Retrieval](enhancing_multivariate_time_series_forecasting_with_global_temporal_retrieval.md)
 
 </div>
 

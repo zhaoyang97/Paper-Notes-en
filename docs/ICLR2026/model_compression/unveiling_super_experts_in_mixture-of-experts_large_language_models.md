@@ -2,152 +2,125 @@
 title: >-
   [Paper Note] Unveiling Super Experts in Mixture-of-Experts Large Language Models
 description: >-
-  [ICLR 2026][Model Compression][Mixture-of-Experts] This paper is the first to discover and systematically study "Super Experts" (SEs) in MoE LLMs—an extremely small subset of experts that are critical to model inference…
+  [ICLR 2026][Model Compression][Mixture-of-Experts] This paper identifies and systematically investigates "Super Experts" (SE) in MoE LLMs—an extremely small subset of experts crucial for model inference, which drive massive activations and attention sinks through extreme activation outliers in `down_proj`.
 tags:
-  - "ICLR 2026"
-  - "Model Compression"
-  - "Mixture-of-Experts"
-  - "super experts"
-  - "massive activations"
-  - "attention sinks"
-  - "expert pruning"
+  - ICLR 2026
+  - Model Compression
+  - Mixture-of-Experts
+  - super experts
+  - massive activations
+  - attention sinks
+  - expert pruning
 date: 2026-05-08
-content_hash: 191ed4b78fa790ea
+content_hash: 7dc80278f8855110
 ---
-
 # Unveiling Super Experts in Mixture-of-Experts Large Language Models
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2507.23279](https://arxiv.org/abs/2507.23279)  
 **Code**: [GitHub](https://github.com/ZunhaiSu/Super-Experts-Profilling)  
-**Area**: Model Compression / MoE / LLM Analysis
+**Area**: Model Compression / MoE / LLM Analysis  
 **Keywords**: Mixture-of-Experts, super experts, massive activations, attention sinks, expert pruning, model compression
 
 ## TL;DR
 
-This paper is the first to discover and systematically study "Super Experts" (SEs) in MoE LLMs—an extremely small subset of experts that are critical to model inference, driving massive activations and attention sink mechanisms through extreme activation outliers in their `down_proj` outputs.
+This paper identifies and systematically investigates "Super Experts" (SE) in MoE LLMs—an extremely small subset of experts crucial for model inference, which drive massive activations and attention sinks through extreme activation outliers in `down_proj`.
 
 ## Background & Motivation
 
-MoE LLMs (e.g., DeepSeek, Qwen3, Mixtral) achieve strong learning capacity through dynamic routing and sparse activation. Existing expert-level compression methods exploit inter-expert importance differences for pruning, merging, or quantization, but mostly rely on heuristic metrics to identify critical experts, lacking a deeper understanding of expert heterogeneity in importance.
+MoE LLMs (such as DeepSeek, Qwen3, and Mixtral) achieve powerful learning capabilities through dynamic routing and sparse activation. Existing expert-level compression methods utilize importance differences for pruning, merging, or quantization, but often rely on heuristic metrics to identify key experts, lacking a deep understanding of expert heterogeneity.
 
-Core problem: **Does a small subset of extremely critical experts exist? What are their underlying mechanisms?**
+Core Problem: **Does a tiny, extremely critical subset of experts exist? What are their operational mechanisms?**
 
 ## Method
 
 ### Overall Architecture
 
-The paper analyzes super experts through three progressively deeper levels:
+This paper does not propose a new model but unveils Super Experts (SE) through a three-step analysis: "Locate, Ablate, and Attribute." First, a lightweight profiling rule automatically locates the few SEs in `down_proj` outputs and characterizes their sparse and stable distribution (corresponding to Designs 1 and 2, §3 Location Stage). Second, dynamic pruning is used to quantify the actual impact of these experts on various tasks (Design 3, §4 Ablation Stage). Finally, through residual connections, SEs are linked with massive activations (MA) and attention sinks into a complete causal chain (Design 4, §5 Attribution Stage). This entire process does not require training and can be completed with a single forward pass. The conclusion establishes a "hard rule" for MoE compression: SEs must receive special protection.
 
-1. **Discovery and Localization**: SEs induce massive activations via extreme activation outliers in `down_proj` outputs.
-2. **Importance Assessment**: The impact of SEs on various tasks is quantified through dynamic pruning.
-3. **Mechanism Revelation**: SEs are the primary source of systematic outlier mechanisms in Transformers; compressing SEs causes attention sinks to collapse.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    IN["Any Open-Source MoE LLM<br/>Single forward pass statistics, no training"]
+    A["SE Profiling Rule<br/>Triple criteria for down_proj maximum magnitude"]
+    B["SE Distribution Profile<br/>Ratio < 0.5%, model-specific, data-independent"]
+    C["Dynamic Pruning Verification<br/>Zeroing SE vs. Random Pruning"]
+    D["Causal Chain Attribution<br/>SE→MA→Attention Sinks→Model Functionality"]
+    OUT["MoE Compression Rule<br/>SE must be identified and specially protected"]
+    IN --> A --> B --> C --> D --> OUT
+```
 
-### Key Design 1: Discovery and Localization of Super Experts
+### Key Designs
 
-MoE LLMs exhibit **massive activations (MAs)**—extreme outliers in hidden states whose values are up to 100,000× larger than other activations.
+**1. SE Profiling Rule: Picking the "Needle" from the Expert Haystack**
 
-Analysis reveals that **a small number of specific experts** consistently produce extreme activation outliers in their `down_proj` outputs, which propagate through residual connections into the hidden states of all subsequent layers.
+Hidden states of MoE LLMs contain massive activations (MA)—extreme outliers where activation values in certain dimensions are hundreds of thousands of times larger than surrounding values. The authors found that these MAs are not spontaneous but are continuously generated by a few experts at the `down_proj` output and accumulated through residual connections. To automatically select these experts, the authors track the maximum output magnitude $a_{l,e}$ of each expert at every layer's `down_proj`. An expert $(l,e)$ is identified as an SE if it satisfies three conditions: $a_{l,e} > P_{99.5}$ (above the 99.5th percentile of all magnitudes), $a_{l,e} > \frac{1}{10}a_{\max}$ (not less than one-tenth of the global maximum magnitude), and $l\in L$ (the layer actually produces MA), where $P_{99.5}=\text{Percentile}_{99.5}(\mathcal{A})$. These conditions exclude common high-activation experts and ensure the selected ones are the true sources of MA. This criterion can be calculated in a single forward pass.
 
-**SE Profiling Definition**: The maximum `down_proj` output magnitude $a_{l,e}$ is computed for all experts across all layers:
+**2. SE Distribution Profile: Extremely Rare but Highly Stable**
 
-$$a_{l,e} > P_{99.5} \quad \text{and} \quad a_{l,e} > \frac{1}{10} a_{\max} \quad \text{and} \quad l \in L$$
+Applying the profiling rule to various MoE models yielded counter-intuitive conclusions: the proportion of SEs is generally below 0.5%, with most models having only a single-digit number of them. Qwen3-30B-A3B has only 3 SEs out of 6144 experts (0.05%, Top 1 max activation 744.0), DeepSeek-R1 has 10 out of 15677 (0.06%, 616.0), DeepSeek-V2-Lite has 2/1782 (0.11%, 1424.0), and Mixtral-8x7B has 1/256 (0.39%, 5600.0). Crucially, this list is **model-specific** but **data-independent**: SEs remain almost identical across vastly different datasets like C4, WikiText-2, C-Eval, GSM8K, and HumanEval. This suggests SEs are inherent structures formed during pre-training rather than temporary activations triggered by specific data.
 
-where $P_{99.5} = \text{Percentile}_{99.5}(\mathcal{A})$ and $L$ denotes the set of layers producing MAs.
+**3. Dynamic Pruning Verification: Removing Three Experts Collapses Mathematical Ability**
 
-### Key Design 2: Distributional Properties of SEs
+Rarity alone does not prove importance. The authors used dynamic pruning as a control experiment to quantify their causal role: zeroing SE outputs during inference and comparing this to "randomly pruning the same number of ordinary experts." The results were stark—after pruning the 3 SEs in Qwen3-30B-A3B, the average score dropped from 70.22 to 55.00 (-21.68%), with GSM8K collapsing from 89.61 to 42.38 (-52.71%) and MMLU dropping from 77.82 to 56.03. In contrast, randomly pruning 3 ordinary experts had almost no impact (average 70.36, GSM8K 89.84). For reasoning models, pruning 10 SEs from DeepSeek-R1 caused Pass@1 on AIME and Math-500 to approach zero. This proves that 0.05% of experts carry functionality far exceeding their proportion, demonstrating an extremely long-tailed importance distribution in MoE.
 
-| Model | Total Experts | # SEs | SE Ratio | Top-1 Max Activation |
-|-------|--------------|-------|----------|----------------------|
-| Qwen3-30B-A3B | 6144 | 3 | 0.05% | 744.0 |
-| DeepSeek-R1 | 15677 | 10 | 0.06% | 616.0 |
-| DeepSeek-V2-Lite | 1782 | 2 | 0.11% | 1424.0 |
-| Mixtral-8x7B | 256 | 1 | 0.39% | 5600.0 |
+**4. Causal Chain Attribution: SE is the Master Switch for Attention Sinks**
 
-Key findings:
-- SEs are universally present in all tested MoE LLMs, accounting for < 0.5% of all experts.
-- SE distributions are **model-specific** and **data-agnostic**.
-- Post-training procedures (e.g., RLHF) do not alter SE distributions.
+The final step analyzes why SEs are so important within the Transformer mechanism. The authors discovered that SEs produce extremely strong activations precisely on attention sink tokens (usually initial tokens). These activations accumulate into MA via residual connections, and MA serves as the physical basis for attention sinks. Sink tokens can stably absorb large amounts of attention because they carry the distinct feature of MA. Thus, if SEs are compressed, the chain collapses: MA disappears, attention sinks fail, attention score distributions become disordered, and model functionality breaks down. This **SE → MA → Attention Sinks → Model Functionality** causal chain explains why such a minor perturbation leads to such drastic performance collapse.
 
-### Key Design 3: Importance Assessment of SEs
-
-Performance degradation is evaluated across multiple tasks by dynamically pruning SEs:
-
-| Model | Setting | Avg. | GSM8K | MMLU | HellaSwag |
-|-------|---------|------|-------|------|-----------|
-| Qwen3-30B-A3B | Baseline | 70.22 | 89.61 | 77.82 | 59.63 |
-| Qwen3-30B-A3B | Prune SEs | 55.00 | 42.38 | 56.03 | 39.31 |
-| Qwen3-30B-A3B | Prune same # randomly | 70.36 | 89.84 | 77.84 | 59.50 |
-
-Pruning only 3 SEs (0.05% of 6,144) results in:
-- Average performance drop of 21.68%.
-- **Mathematical reasoning (GSM8K) drop of 52.71%.**
-- For reasoning LLMs, Pass@1 on AIME and Math-500 drops to near zero.
-
-### Key Design 4: Relationship with Attention Sinks
-
-SEs are central to the systematic outlier mechanism in Transformers:
-
-1. SEs produce extremely strong activations on attention sink tokens.
-2. These activations form massive activations through residual connections.
-3. MAs drive the formation of attention sinks.
-4. Compressing SEs → MAs vanish → attention sinks collapse → attention score distributions become disordered.
-
-This reveals a complete causal chain: **SE → MA → Attention Sinks → Model Functionality**
-
-## Key Experimental Results
+## Experiments
 
 ### Main Results: Non-Reasoning Models
 
-| Metric | Qwen3-30B Baseline | Prune SEs | Drop | Random Prune | Drop |
-|--------|--------------------|-----------|------|--------------|------|
-| Avg. | 70.22 | 55.00 | −21.68% | 70.36 | −0.20% |
-| GSM8K | 89.61 | 42.38 | −52.71% | 89.84 | +0.26% |
-| MMLU | 77.82 | 56.03 | −28.00% | 77.84 | +0.03% |
+| Metric | Qwen3-30B Baseline | Pruned SE | Gain | Random Pruned | Gain |
+|------|-------------|-------|-------|-------|-------|
+| Avg. | 70.22 | 55.00 | -21.68% | 70.36 | -0.20% |
+| GSM8K | 89.61 | 42.38 | -52.71% | 89.84 | +0.26% |
+| MMLU | 77.82 | 56.03 | -28.00% | 77.84 | +0.03% |
 
-### Reasoning Model Experiments
+### Reasoning Model Results
 
 Pruning 10 SEs from DeepSeek-R1:
-- Pass@1 on AIME and Math-500 drops to near zero.
-- Mathematical reasoning capability collapses entirely.
+- AIME/Math-500 Pass@1 dropped to nearly 0.
+- Mathematical reasoning capability completely collapsed.
 
 ### Ablation Study
 
-- Layer-wise SE pruning: pruning a single layer's SE eliminates that layer's contribution to MAs.
-- Full SE removal: MAs disappear completely.
+- Layer-wise SE Pruning: Pruning SEs in a single layer eliminates that layer's contribution to MA.
+- Full SE Pruning: MA completely disappears.
 
-### Cross-Dataset Stability
+### Stability across Datasets
 
-SE distributions are highly consistent across C4, WikiText-2, C-Eval, GSM8K, and HumanEval, confirming data-agnosticity.
+SE distributions are highly consistent across C4, WikiText-2, C-Eval, GSM8K, and HumanEval, verifying data independence.
 
-## Highlights & Insights
+## Highlights
 
-- First systematic discovery and definition of super experts in MoE LLMs.
-- Reveals the complete causal chain: SE → MA → Attention Sinks → Model Functionality.
-- Provides an automated SE profiling tool for rapid localization of SEs.
-- Offers critical guidance for MoE compression: SEs must be treated with special care.
+- First systematic discovery and definition of "Super Experts" in MoE LLMs.
+- Reveals a complete causal chain: SE → MA → Attention Sinks → Model Functionality.
+- Provides an automated SE profiling tool for rapid localization.
+- Offers significant guidance for MoE compression: SEs must be treated specially.
 
 ## Limitations & Future Work
 
-- The root cause of why SEs emerge during pre-training remains unclear.
-- Analysis is limited to open-source MoE models; the situation for closed-source models (e.g., GPT-4) is unknown.
-- Protective strategies for SEs (e.g., allocating higher bit-width budgets) are only preliminarily discussed.
-- Whether a more balanced MoE training mechanism without SEs can be designed is not deeply explored.
+- The fundamental reason why SEs form during pre-training remains unclear.
+- Only open-source MoE models were analyzed; the situation in closed-source models (e.g., GPT-4) is unknown.
+- Protection strategies for SEs (e.g., allocating higher bit budgets) were only briefly discussed.
+- Whether a more balanced MoE training mechanism without SEs can be designed was not explored in depth.
 
 ## Related Work & Insights
 
 - **MoE Models**: DeepSeek (Guo et al., 2025), Qwen (Yang et al., 2025), Mixtral.
-- **Expert-Level Compression**: Expert importance measures based on activation frequency, routing scores, and reconstruction loss.
-- **Massive Activations**: Discovered by Sun et al. (2024), but their origin in MoE models was not explained.
-- **Attention Sinks**: Discovered by Xiao et al. (2023), showing that initial tokens receive disproportionately high attention.
+- **Expert-level Compression**: Expert importance measurements based on frequency, routing scores, and reconstruction loss.
+- **Massive Activations**: Identified by Sun et al. (2024) but the cause within MoE was unexplained.
+- **Attention Sinks**: Identified by Xiao et al. (2023) where initial tokens receive abnormally high attention.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐⭐ — First discovery and systematic study of super experts in MoE models.
-- **Theoretical Depth**: ⭐⭐⭐⭐ — Causal analysis is thorough but lacks formal theoretical explanation.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Comprehensive validation across multiple models, tasks, and datasets.
-- **Value**: ⭐⭐⭐⭐⭐ — Directly guides MoE compression strategies.
-- **Writing Quality**: ⭐⭐⭐⭐ — Progressive analytical structure is clear and well-organized.
+- Novelty: ⭐⭐⭐⭐⭐ — First discovery and systematic study of Super Experts in MoE.
+- Theoretical Depth: ⭐⭐⭐⭐ — Deep causal analysis but lacks formalized theoretical explanation.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Comprehensive validation across multiple models, tasks, and datasets.
+- Value: ⭐⭐⭐⭐⭐ — Directly guides MoE compression strategies.
+- Writing Quality: ⭐⭐⭐⭐ — Clear, incremental analysis structure.
 
 <!-- RELATED:START -->
 
@@ -155,11 +128,11 @@ SE distributions are highly consistent across C4, WikiText-2, C-Eval, GSM8K, and
 
 ## Related Papers
 
+- [\[ICLR 2026\] MoBE: Mixture-of-Basis-Experts for Compressing MoE-based LLMs](mobe_mixture-of-basis-experts_for_compressing_moe-based_llms.md)
 - [\[ICLR 2026\] Coupling Experts and Routers in Mixture-of-Experts via an Auxiliary Loss](coupling_experts_and_routers_in_mixture-of-experts_via_an_auxiliary_loss.md)
 - [\[ICLR 2026\] LD-MoLE: Learnable Dynamic Routing for Mixture of LoRA Experts](ld-mole_learnable_dynamic_routing_for_mixture_of_lora_experts.md)
-- [\[CVPR 2026\] Quant Experts: Token-aware Adaptive Error Reconstruction with Mixture of Experts for Large Vision-Language Models Quantization](../../CVPR2026/model_compression/quant_experts_token_aware_vlm_quantization.md)
+- [\[ICLR 2026\] Efficient Quantization of Mixture-of-Experts with Theoretical Generalization Guarantees](efficient_quantization_of_mixture-of-experts_with_theoretical_generalization_gua.md)
 - [\[ICML 2026\] DAG-MoE: From Simple Mixture to Structural Aggregation in Mixture-of-Experts](../../ICML2026/model_compression/dag-moe_from_simple_mixture_to_structural_aggregation_in_mixture-of-experts.md)
-- [\[CVPR 2026\] Enhancing Mixture-of-Experts Specialization via Cluster-Aware Upcycling](../../CVPR2026/model_compression/enhancing_mixture_of_experts_specialization_via_cluster_aware_upcycling.md)
 
 </div>
 

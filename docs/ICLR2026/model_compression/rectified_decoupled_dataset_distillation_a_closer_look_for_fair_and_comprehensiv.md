@@ -2,77 +2,76 @@
 title: >-
   [Paper Note] Rectified Decoupled Dataset Distillation: A Closer Look for Fair and Comprehensive Evaluation
 description: >-
-  [ICLR 2026][Model Compression][Dataset distillation] This paper proposes RD3 (Rectified Decoupled Dataset Distillation), systematically demonstrating that performance discrepancies among existing decoupled dataset distil…
+  [ICLR 2026][Model Compression][Paper Note] Ours proposes RD3 (Rectified Decoupled Dataset Distillation), systematically revealing that performance gaps in existing decoupled dataset distillation methods stem primarily from inconsistent post-evaluation settings rather than distillation quality. It establishes a unified fair evaluation framework, correcting the r
 tags:
-  - "ICLR 2026"
-  - "Model Compression"
-  - "Dataset distillation"
-  - "decoupled distillation"
-  - "fair evaluation"
-  - "post-evaluation protocol"
-  - "synthetic data"
+  - ICLR 2026
+  - Model Compression
 date: 2026-05-08
-content_hash: 1af035e2fef4e1ea
+content_hash: 303c6a88ad327010
 ---
-
 # Rectified Decoupled Dataset Distillation: A Closer Look for Fair and Comprehensive Evaluation
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2509.19743](https://arxiv.org/abs/2509.19743)  
 **Code**: [GitHub](https://github.com/ndhg1213/RD3)  
-**Area**: Model Compression / Dataset Distillation
-**Keywords**: Dataset distillation, decoupled distillation, fair evaluation, post-evaluation protocol, synthetic data
+**Area**: Model Compression/Dataset Distillation  
+**Keywords**: Dataset Distillation, Decoupled Distillation, Fair Evaluation, Post-evaluation Protocol, Synthetic Data  
 
 ## TL;DR
 
-This paper proposes RD3 (Rectified Decoupled Dataset Distillation), systematically demonstrating that performance discrepancies among existing decoupled dataset distillation methods stem primarily from inconsistent post-evaluation settings rather than differences in distillation quality. By establishing a unified and fair evaluation framework, the reported 27.3% performance gap is corrected to 6.7%.
+Ours proposes RD3 (Rectified Decoupled Dataset Distillation), systematically revealing that performance gaps in existing decoupled dataset distillation methods stem primarily from inconsistent post-evaluation settings rather than distillation quality. It establishes a unified fair evaluation framework, correcting the reported 27.3% performance gap to 6.7%.
 
 ## Background & Motivation
 
-Dataset distillation aims to generate compact synthetic datasets such that models trained on them achieve performance comparable to training on the full dataset. Recent decoupled distillation methods (e.g., SRe2L) have significantly extended scalability to large-scale datasets such as ImageNet-1K by separating teacher pre-training from synthetic data generation.
+Dataset distillation aims to generate compact synthetic datasets that allow models trained on them to achieve performance close to those trained on full datasets. Recently, decoupled distillation methods (e.g., SRe2L) have significantly expanded to large-scale datasets like ImageNet-1K by separating teacher pre-training from synthetic data generation.
 
 **Core Problem**: Existing decoupled distillation methods suffer from severe evaluation inconsistencies:
-- CDA employs a smaller batch size; RDED uses a smoothed learning rate and stronger data augmentation.
-- G-VBSM and EDC utilize multi-teacher mixed soft labels.
-- The majority of the reported 27.3% performance gap is attributable to evaluation discrepancies rather than distillation quality.
+- CDA uses a smaller batch size, while RDED employs smooth learning rates and stronger data augmentation.
+- G-VBSM and EDC utilize multi-teacher ensemble soft labels.
+- Most of the reported 27.3% performance gap is attributed to evaluation differences rather than distillation quality.
 
-This work presents the first systematic investigation of this issue, revealing the problem of "spurious performance gains."
+The authors conduct the first systematic investigation into this, revealing the "spurious performance gain" issue.
 
 ## Method
 
 ### Overall Architecture
 
-RD3 establishes a standardized evaluation protocol along three dimensions: **target dataset, compression ratio, and cross-architecture generalization**.
+RD3 is not a new distillation algorithm but a set of evaluation protocols designed to place all decoupled distillation methods on a level playing field. The core issue addressed is the incomparability of reported ImageNet-1K accuracies due to varying internal post-evaluation recipes. The RD3 workflow consists of three steps: categorizing methods into three paradigms based on data generation, retraining and evaluating all synthetic datasets using a strictly locked post-evaluation configuration (epochs, batch size, learning rate, augmentation), and unifying the soft label source to a single teacher. This decouples "distillation quality" from "evaluation setting variance" to reveal the true learnability of synthetic data.
 
-### 1. Unified Post-Evaluation Settings
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    IN["Synthetic datasets from various<br/>decoupled distillation methods"] --> P1["Paradigm Classification<br/>Optimization / Generation / Selection"]
+    P1 --> P2["Unified Post-evaluation Protocol<br/>400 epochs · batch 50<br/>Adam+Cosine+Smoothing<br/>RDED Data Augmentation"]
+    P2 --> P3["Unified Soft Label Matching<br/>Single ResNet-18 Teacher + KL Divergence"]
+    P3 --> RT["Retrain student models<br/>under unified protocol"]
+    RT --> CMP["Systematic Fair Comparison<br/>Dataset / Ratio / Cross-architecture"]
+```
 
-**Training Epochs**: Unified to 400 epochs (as opposed to method-specific choices such as 300), eliminating bias introduced by differences in convergence speed.
+### Key Designs
 
-**Batch Size**: Unified to 50 (as opposed to 1024 for SRe2L or 128 for CDA), yielding approximately 10% performance improvement.
+**1. Paradigm Classification: Clarifying the Basis of Comparison**
 
-**Smoothed Learning Rate Schedule**: Adam optimizer with an initial learning rate of 0.001 and cosine annealing schedule; smoothing factor $\zeta = 1$ (ResNet-18) or $\zeta = 2$ (other architectures).
+Decoupled methods vary fundamentally in generation mechanisms despite all reporting ImageNet-1K accuracy. RD3 categorizes them into three paradigms: optimization-based (e.g., SRe2L, CDA, G-VBSM, DWA, EDC), which performs pixel-level optimization using pre-trained classifiers; generation-based (e.g., Minimax, D4M), which fine-tunes generative models or optimizes vision-language embeddings; and selection-based (e.g., RDED), which crops category-relevant regions from real images. This classification explains why the unified configuration yields varying improvements—optimization-based methods are highly sensitive to initialization and soft labels.
 
-**Data Augmentation**: RDED's augmentation strategy (CutMix + Random Resized Crop + Random Horizontal Flip) is adopted uniformly, eliminating augmentation-induced variance.
+**2. Unified Post-evaluation Settings: Isolating "Benchmark Tricks" from Quality**
 
-### 2. Systematic Evaluation Across Three Paradigms
+This is the core of RD3 and the source of most of the 27.3% gap. The authors found that methods used disparate recipes: CDA used smaller batches, RDED used smooth learning rates with heavy augmentation, and others used multi-teacher labels. RD3 locks these parameters: 400 epochs (eliminating convergence bias), batch size 50 (which alone provides a ~10% gain over SRe2L's 1024 or CDA's 128 as small batches provide finer gradients on limited data), Adam optimizer with 0.001 initial LR and cosine annealing, and a smoothing factor $\zeta=1$ (ResNet-18) or $\zeta=2$ (others). Augmentation is standardized to RDED's CutMix + RRC + Flip.
 
-Existing methods are categorized by their generation mechanism:
-- **Optimization-based** (SRe2L, CDA, G-VBSM, DWA, EDC): pixel-level optimization of synthetic data via pre-trained classifiers.
-- **Generation-based** (Minimax, D4M): fine-tuning generative models or optimizing vision-text embeddings.
-- **Selection-based** (RDED): cropping class-relevant visual regions.
+**3. Unified Soft Label Matching: Removing Gains from Multi-teacher Supervision**
 
-### 3. Soft Label Matching
+Soft labels are standard for large-scale distillation, but the teacher's identity significantly impacts results. Multi-teacher ensembles inject extra supervision, acting as a "score-boosting channel." RD3 mandates all methods use a single pre-trained ResNet-18 with KL divergence for epoch-wise soft labels. The update at step $t$ is standardized as:
 
-A single pre-trained ResNet-18 with KL divergence is used uniformly to generate soft labels, formulated as:
+$$\theta_{\mathcal{S}}^{t+1} = \arg\min_{\theta \in \Theta} L_{KL}\big(f_{\theta_\mathcal{T}}(\mathcal{A}(\mathcal{S})),\, f_{\theta_\mathcal{S}^t}(\mathcal{A}(\mathcal{S}))\big),$$
 
-$$\theta_{\mathcal{S}}^{t+1} = \arg\min_{\theta \in \Theta} L_{KL}(f_{\theta_\mathcal{T}}(\mathcal{A}(\mathcal{S})), f_{\theta_\mathcal{S}^t}(\mathcal{A}(\mathcal{S})))$$
+where $\mathcal{A}$ is the unified augmentation, $f_{\theta_\mathcal{T}}$ is the fixed teacher, and $\mathcal{S}$ is the synthetic set. This removes artificial gaps created by teacher selection.
 
 ## Key Experimental Results
 
-### Main Results: Pre- and Post-Rectification Comparison on ImageNet-1K (IPC=10, ResNet-18)
+### Main Results: Comparison on ImageNet-1K before and after rectification (IPC=10, ResNet-18)
 
-| Method | Before Rectification | After Rectification | Change |
-|--------|----------------------|---------------------|--------|
+| Method | Before | After | Change |
+|------|--------|--------|------|
 | SRe2L | 21.3 | 40.2 | +18.9↑ |
 | CDA | 33.5 | 41.2 | +7.7↑ |
 | G-VBSM | 31.4 | 41.5 | +10.1↑ |
@@ -82,48 +81,48 @@ $$\theta_{\mathcal{S}}^{t+1} = \arg\min_{\theta \in \Theta} L_{KL}(f_{\theta_\ma
 | D4M | 27.9 | 45.4 | +17.5↑ |
 | RDED | 42.0 | 46.3 | +4.3↑ |
 
-**Key Finding**: After rectification, the performance gap among methods narrows from 27.3% to 6.7%, demonstrating that most reported gains originate from evaluation settings rather than distillation quality.
+**Key Findings**: After rectification, the performance gap between methods shrinks from 27.3% to 6.7%, proving that most reported gains stem from evaluation settings rather than distillation quality.
 
-### Cross-Dataset Comprehensive Comparison (Rectified, IPC=50)
+### Main Results: Cross-dataset Comparison (Rectified, IPC=50)
 
 | Dataset | SRe2L | CDA | DWA | EDC | Minimax | D4M | RDED |
-|---------|-------|-----|-----|-----|---------|-----|------|
+|--------|-------|-----|-----|-----|---------|-----|------|
 | CIFAR-10 | 53.9 | 54.5 | 59.9 | **64.8** | — | 61.9 | 63.3 |
 | CIFAR-100 | 54.4 | 56.2 | 62.1 | **65.2** | — | 64.3 | 64.1 |
 | TinyImageNet | 52.5 | 53.0 | 54.2 | 57.1 | 54.4 | 53.8 | **58.7** |
 | ImageNet-1K | 55.2 | 56.7 | 57.7 | **60.1** | 60.4 | 60.2 | 58.9 |
 
-Under unified settings, EDC (optimization-based) achieves the best overall performance, though the gaps among methods are substantially reduced.
+Under the unified protocol, EDC (Optimization-based) generally performs best, but the performance variance across all methods is significantly reduced.
 
 ## Highlights & Insights
 
-1. **Exposing a critical field-wide issue**: This is the first systematic demonstration that inconsistent evaluation settings constitute the primary confounding factor in decoupled distillation comparisons.
-2. **Practical calibration contribution**: Unifying three key settings—small batch size (50), smoothed learning rate, and RDED augmentation—suffices to eliminate most reported performance discrepancies.
-3. **Methodological significance**: Provides a fair and reproducible benchmark for future research, preventing "leaderboard manipulation via evaluation tuning."
-4. **Impact of simple techniques**: Real-data initialization for optimization-based methods is found to yield substantial performance improvements.
+1.  **Identifies Critical Domain Issue**: Systematically proves that "evaluation inconsistency" is the primary confounding factor in decoupled distillation.
+2.  **Practical Calibration Contribution**: Unified batch size (50), smooth LR, and RDED augmentation can eliminate the majority of performance variance.
+3.  **Methodological Significance**: Provides a fair, reproducible benchmark for future research to prevent "benchmark hacking" via evaluation tuning.
+4.  **Discovery of Simple Tricks**: Finds that initializing optimization-based methods with real data significantly boosts performance.
 
 ## Limitations & Future Work
 
-- The work primarily focuses on the post-evaluation stage without deeply analyzing intrinsic quality differences among synthetic datasets.
-- The unified settings may obscure certain methods' advantages in specific scenarios.
-- Systematic comparison along additional evaluation dimensions such as computational cost is not considered.
-- Generation-based methods (e.g., Minimax) are not applicable to small datasets (CIFAR-10/100).
+- Focuses primarily on the post-evaluation phase without deeply analyzing the inherent quality differences of the synthetic data itself.
+- Unified settings might mask specific advantages of certain methods in niche scenarios.
+- Lacks systematic comparison regarding other dimensions like computation time.
+- Generation-based methods (Minimax) are not applicable to small datasets like CIFAR-10/100.
 
 ## Related Work & Insights
 
-- **Bi-level distillation**: DC, DM, MTT — effective at small scales but lack scalability.
-- **Decoupled distillation**: SRe2L as the pioneering work, followed by refinements such as CDA and EDC.
-- **Soft label matching**: Epoch-wise soft labels have become standard practice in large-scale distillation.
-- **Dataset distillation surveys**: Focus on methodological progress but lack unified evaluation.
+- **Bi-level Distillation**: DC, DM, MTT — Effective on small scales but not scalable.
+- **Decoupled Distillation**: SRe2L as the pioneer, with CDA, EDC, etc., as subsequent optimizations.
+- **Soft Label Matching**: Epoch-wise soft labels have become the standard for large-scale distillation.
+- **Dataset Distillation Surveys**: Focus on methodological progress but lack unified evaluation.
 
 ## Rating
 
-| Dimension | Score | Remarks |
-|-----------|-------|---------|
-| Novelty | ⭐⭐⭐⭐ | Reveals an important and overlooked evaluation consistency issue |
-| Practicality | ⭐⭐⭐⭐⭐ | Provides fair evaluation standards for the community, directly promoting field standardization |
-| Experimental Thoroughness | ⭐⭐⭐⭐⭐ | 6 datasets, 8 methods, comprehensive coverage of IPC 1–100 |
-| Writing Quality | ⭐⭐⭐⭐ | Clear argumentation with persuasive figures and tables |
+| Dimension | Score | Description |
+|------|------|------|
+| Novelty | ⭐⭐⭐⭐ | Reveals a crucial and overlooked issue of evaluation consistency. |
+| Value | ⭐⭐⭐⭐⭐ | Provides fair evaluation standards for the community, directly promoting standardization. |
+| Experimental Thoroughness | ⭐⭐⭐⭐⭐ | Covers 6 datasets, 8 methods, and IPC 1-100 comprehensively. |
+| Writing Quality | ⭐⭐⭐⭐ | Clear arguments with persuasive visualizations. |
 
 <!-- RELATED:START -->
 
@@ -132,9 +131,9 @@ Under unified settings, EDC (optimization-based) achieves the best overall perfo
 ## Related Papers
 
 - [\[AAAI 2026\] A Closer Look at Knowledge Distillation in Spiking Neural Network Training](../../AAAI2026/model_compression/a_closer_look_at_knowledge_distillation_in_spiking_neural_ne.md)
+- [\[ICLR 2026\] Dataset Distillation as Pushforward Optimal Quantization](dataset_distillation_as_pushforward_optimal_quantization.md)
 - [\[ICLR 2026\] Understanding Dataset Distillation via Spectral Filtering](understanding_dataset_distillation_via_spectral_filtering.md)
 - [\[ICLR 2026\] Grounding and Enhancing Informativeness and Utility in Dataset Distillation](grounding_and_enhancing_informativeness_and_utility_in_dataset_distillation.md)
-- [\[ICLR 2026\] Dataset Distillation as Pushforward Optimal Quantization](dataset_distillation_as_pushforward_optimal_quantization.md)
 - [\[AAAI 2026\] TGDD: Trajectory Guided Dataset Distillation with Balanced Distribution](../../AAAI2026/model_compression/tgdd_trajectory_guided_dataset_distillation_with_balanced_distribution.md)
 
 </div>

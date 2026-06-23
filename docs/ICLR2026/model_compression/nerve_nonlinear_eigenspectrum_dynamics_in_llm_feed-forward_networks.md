@@ -2,94 +2,77 @@
 title: >-
   [Paper Note] NerVE: Nonlinear Eigenspectrum Dynamics in LLM Feed-Forward Networks
 description: >-
-  [ICLR 2026][Model Compression][FFN Analysis] This paper proposes NerVE, a lightweight eigenspectrum analysis framework that systematically reveals, via four complementary metrics (Spectral Entropy, Participation Ratio…
+  [ICLR 2026][Model Compression][Paper Note] Proposes NerVE, a lightweight eigenspectrum analysis framework. Through four complementary indicators (Spectral Entropy, Participation Ratio, Early Eigenvalue Enrichment, and JS Divergence), it systematically reveals how nonlinearities in LLM FFNs reinject variance, reshape the eigenspectrum, and how architecture and o
 tags:
-  - "ICLR 2026"
-  - "Model Compression"
-  - "FFN Analysis"
-  - "Eigenspectrum Dynamics"
-  - "Variance Re-injection"
-  - "Optimizer Geometry"
-  - "Spectral Diagnostics"
+  - ICLR 2026
+  - Model Compression
 date: 2026-05-08
-content_hash: e303b1ed03432297
+content_hash: 2f775b16b8f3c60e
 ---
-
 # NerVE: Nonlinear Eigenspectrum Dynamics in LLM Feed-Forward Networks
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2603.06922](https://arxiv.org/abs/2603.06922)  
-**Code**: [Project Page](https://nerve-eigenspectrum.github.io/)  
-**Area**: Video Understanding
-**Keywords**: FFN Analysis, Eigenspectrum Dynamics, Variance Re-injection, Optimizer Geometry, Spectral Diagnostics
+**Code**: [Project Homepage](https://nerve-eigenspectrum.github.io/)  
+**Area**: Model Compression / FFN Analysis  
+**Keywords**: FFN analysis, Eigenspectrum Dynamics, Variance Reinjection, Optimizer Geometry, Spectral Diagnostics
 
 ## TL;DR
 
-This paper proposes NerVE, a lightweight eigenspectrum analysis framework that systematically reveals, via four complementary metrics (Spectral Entropy, Participation Ratio, Eigenvalue Early Enrichment, and JS Divergence), how FFN nonlinearities in LLMs re-inject variance, reshape the eigenspectrum, and how architectural and optimizer choices imprint distinct spectral signatures.
+Proposes NerVE, a lightweight eigenspectrum analysis framework. Through four complementary indicators (Spectral Entropy, Participation Ratio, Early Eigenvalue Enrichment, and JS Divergence), it systematically reveals how nonlinearities in LLM FFNs reinject variance, reshape the eigenspectrum, and how architecture and optimizer choices imprint unique spectral signatures.
 
 ## Background & Motivation
 
-In Transformers, feed-forward networks (FFNs) account for the majority of parameters and computation, yet their internal dynamics remain substantially understudied compared to attention mechanisms. Existing work has focused primarily on attention map visualization and analysis, leaving open the question of how FFNs organize and propagate information in high-dimensional latent spaces.
+In Transformers, Feed-Forward Networks (FFNs) account for the majority of parameters and computation, yet their internal dynamics are severely understudied compared to attention mechanisms. Existing work primarily focuses on attention map visualization and mechanism analysis, leaving how FFNs organize and propagate information in high-dimensional latent spaces an open question.
 
-Key challenges:
-- FFN transformations unfold in high-dimensional spaces and cannot be directly visualized like attention maps
-- Systematic and efficient tools for characterizing how FFN nonlinear activations reshape latent representations are lacking
-- Prior work (Kobayashi et al., 2024; Balestriero et al., 2024) has studied FFNs from the perspectives of attention maps and piecewise-affine partitioning, respectively, but neither reveals how nonlinearities redistribute variance
+Key Challenge:
+- FFN transformations unfold in high-dimensional spaces and cannot be directly visualized like attention maps.
+- Lack of systematic and efficient tools to characterize how nonlinear activations in FFNs reshape latent representations.
+- Prior works (Kobayashi et al., 2024; Balestriero et al., 2024) study FFNs from the perspective of attention maps and piecewise affine partitions, respectively, but fail to reveal how nonlinearities redistribute variance.
 
-Core insight: **FFN nonlinear activations do not merely scale activation values; rather, they actively re-inject variance into underutilized eigendirections, fundamentally governing the utilization of latent dimensions.**
+Key Insight: **The nonlinear activation of an FFN does not simply scale values but actively reinjects variance into underutilized feature directions**, fundamentally controlling the utilization of latent dimensions.
 
 ## Method
 
 ### Overall Architecture
 
-The NerVE framework comprises four main components:
-1. Activation collection (pre-activation and post-activation)
-2. Covariance matrix computation
-3. Eigendecomposition
-4. Spectral metric computation
+NerVE observes the nonlinearity of each FFN layer as a "variance redistribution" event: it takes $\text{PreAct}(X) = W_{up}x + b_1$ after the up-projection but before activation, and $\text{PostAct}(X) = \sigma(W_{up}x + b_1)$ after activation but before down-projection (for Gated FFNs, $\text{PreAct}(X)=W_{gate}x$ and $\text{PostAct}(X)=\sigma(W_{gate}x)\odot(W_{up}x)$). Covariance matrices are estimated and eigen-decomposed for both, yielding pre- and post-activation eigenspectra. Four complementary spectral indicators are defined to compare pre $\rightarrow$ post changes per layer, characterizing exactly what the nonlinearity does to the latent representation. The entire process is layer-independent, relies only on forward activations, and can run online within the training loop.
 
-For each FFN layer $\ell$, the framework collects the post-projection, pre-activation values $\text{PreAct}(X) = W_{up}x + b_1$ and the post-activation, pre-down-projection values $\text{PostAct}(X) = \sigma(W_{up}x + b_1)$, computes the respective covariance matrices, and performs eigendecomposition.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    X["FFN Input<br/>token activation X"] --> UP["Up-projection<br/>W_up·x + b1"]
+    UP --> PRE["PreAct(X)<br/>Before Activation"]
+    UP --> ACT["Activation σ<br/>GELU / ReLU"]
+    ACT --> POST["PostAct(X)<br/>After Activation"]
+    PRE --> SP1["Covariance + Eigendecomposition<br/>→ pre spectrum"]
+    POST --> SP2["Covariance + Eigendecomposition<br/>→ post spectrum"]
+    SP1 --> MET["Four Spectral Metrics<br/>SE / PR / EEE / JS"]
+    SP2 --> MET
+    MET --> OUT["Layer-wise pre→post comparison<br/>Low-overhead online diagnostics"]
+```
 
 ### Key Designs
 
-1. **Spectral Entropy (SE)**:
+**1. Spectral Entropy (SE): Characterizing variance spreading via spectral uniformity**
 
-    - $SE = -\sum_{i=1}^{D} \hat{\lambda}_i \log \hat{\lambda}_i$ (Shannon entropy of normalized eigenvalues)
-    - Equivalent to the von Neumann entropy in quantum information theory
-    - High SE indicates uniformly distributed variance; low SE indicates variance concentrated in a few directions
-    - More sensitive to mid-tail eigenvalues
+The top eigenvalues alone cannot determine variance utilization, as the long tail may hide many squashed directions. SE treats normalized eigenvalues $\hat{\lambda}_i$ as a probability distribution and calculates the Shannon entropy $SE = -\sum_{i=1}^{D} \hat{\lambda}_i \log \hat{\lambda}_i$, equivalent to von Neumann entropy in quantum information. Higher SE indicates variance is spread more uniformly across directions; lower SE indicates concentration in a few modes. Since entropy is sensitive to changes in middle-to-tail eigenvalues, it detects "slightly awakened" secondary directions, crucial for determining if nonlinearities fill dead zones in latent space.
 
-2. **Participation Ratio (PR)**:
+**2. Participation Ratio (PR): Directly reading the number of active dimensions**
 
-    - $PR = \frac{(\sum_i \lambda_i)^2}{\sum_i \lambda_i^2}$, range $[1, D]$
-    - Measures effective dimensionality — how many directions substantively contribute to total variance
-    - PR ≈ 1 indicates high anisotropy; PR ≈ D indicates uniformly distributed variance
-    - More sensitive to leading eigenvalues
+SE provides an abstract entropy value; researchers also require an "effective dimension" reading. PR is defined as $PR = \frac{(\sum_i \lambda_i)^2}{\sum_i \lambda_i^2}$, ranging in $[1, D]$. $PR \approx 1$ indicates high anisotropy (collapse to a line), while $PR \approx D$ indicates uniform spread. Complementary to SE, PR is dominated by squared terms and is more sensitive to top eigenvalues. Thus, they cover different spectral regions—ReLU’s PR gain of 20$\times$-300$\times$ in NormFree models is captured by this metric.
 
-3. **Eigenvalue Early Enrichment (EEE)**:
+**3. Early Eigenvalue Enrichment (EEE): Quantifying "top-heavy" spectra**
 
-    - $EEE = \frac{2}{D} \sum_{k=1}^{D} (\tilde{S}_k - \frac{k}{D})$
-    - Measures the "top-heaviness" of the eigenspectrum — how quickly the cumulative variance exceeds the uniform baseline
-    - EEE ≈ 1 indicates extreme variance concentration; EEE ≈ 0 indicates near-uniform distribution
-    - Distinguishes spectra that exploit different fractions of the latent space
+SE and PR are scalar summaries that lose the shape of cumulative variance climb. EEE measures the integral deviation of the cumulative spectrum $\tilde{S}_k$ relative to a uniform baseline $k/D$: $EEE = \frac{2}{D} \sum_{k=1}^{D} (\tilde{S}_k - \frac{k}{D})$. $EEE \approx 1$ implies extreme concentration in the first few directions, while $EEE \approx 0$ is close to uniform. It distinguishes two spectra with similar PR but different climb rates, showing if the nonlinearity "steeply concentrates" or "smoothly spreads" variance.
 
-4. **Jensen-Shannon Divergence (JS)**:
+**4. Jensen-Shannon Divergence (JS): The metric spanning pre and post spectra**
 
-    - $JS(P_{pre} \| P_{post}) = \frac{1}{2} D_{KL}(P_{pre} \| M) + \frac{1}{2} D_{KL}(P_{post} \| M)$
-    - Quantifies the distributional shift pre → post induced by the nonlinearity
-    - The only metric spanning two spectra; the other three describe individual spectra
-
-Design principles for the four metrics: coverage (sensitivity to different spectral regions), complementary sensitivity, boundedness, and scale invariance.
+The first three indicators describe single spectra but do not quantify the magnitude of change caused by the nonlinearity. JS treats the normalized pre and post spectra as distributions $P_{pre}, P_{post}$, using the midpoint $M=\tfrac{1}{2}(P_{pre}+P_{post})$ to calculate $JS(P_{pre} \| P_{post}) = \frac{1}{2} D_{KL}(P_{pre} \| M) + \frac{1}{2} D_{KL}(P_{post} \| M)$. This quantifies the distribution shift magnitude. A JS near 0 indicates "spectral inertia"—where the nonlinearity barely changes the spectrum (as seen in early layers of NormFree+GELU)—while a high JS marks layers where the nonlinearity actively reshapes the representation. Together, the four metrics provide coverage, complementary sensitivity, boundedness, and scale invariance.
 
 ### Loss & Training
 
-NerVE is an analysis framework rather than a training method. Training configurations for the experimental models are as follows:
-- **GPT-2 (125M)**: CodeParrot dataset, 2.1B tokens, 41K steps
-- **LLaMA variants (71M–1.3B)**: C4 dataset
-- **GPT-2 (350M, 160M)**: FineWeb dataset, for optimizer comparison
-- **MLP-Mixer (B/16)**: CIFAR-100, for cross-architecture validation
-- Memory optimization: layer-by-layer processing; peak GPU memory requires only 2 × 36 MB (3072 × 3072 covariance matrices)
-- Computational overhead: logging every 1,000 steps adds only ~1% training time
+NerVE is an analysis framework rather than a training method. Its low overhead comes from layer-wise streaming: covariance matrices are discarded after calculation. Peak VRAM is only $2 \times 36\text{MB}$ (for $3072 \times 3072$ matrices), adding approximately 1% to training time when recorded every 1000 steps, making it suitable as an online diagnostic. Validations cover several configurations: GPT-2 (125M) on CodeParrot (2.1B tokens); LLaMA variants (71M–1.3B) on C4; GPT-2 (350M, 160M) on FineWeb for optimizer comparison; and MLP-Mixer (B/16) on CIFAR-100 for cross-architecture verification.
 
 ## Key Experimental Results
 
@@ -98,68 +81,68 @@ NerVE is an analysis framework rather than a training method. Training configura
 Perplexity of GPT-2 baseline models under different configurations:
 
 | Config | GELU | ReLU | NormFree GELU | NormFree ReLU | NormFree LReLU | WNorm | SNorm | HNorm |
-|--------|------|------|---------------|---------------|----------------|-------|-------|-------|
+|------|------|------|---------------|---------------|----------------|-------|-------|-------|
 | PPL↓ | 2.714 | 2.774 | 3.223 | 2.988 | 3.081 | 3.041 | 3.000 | 3.122 |
 
 Optimizer comparison (GPT-2 350M, FineWeb):
 
 | Optimizer | PPL (512 ctx) | PPL (1024 ctx) |
-|-----------|---------------|----------------|
+|--------|---------------|----------------|
 | AdamW | 33.24 | 39.26 |
 | Dion | 27.68 | 33.60 |
 | Muon | **25.68** | **30.95** |
 
 ### Ablation Study
 
-| Config | Key Metric | Notes |
-|--------|------------|-------|
-| Pre vs. Post SE/PR | Post > Pre (consistent) | Nonlinearity re-injects variance, expanding effective dimensionality |
-| GELU vs. ReLU | GELU PR_post higher | Smoother nonlinearity explores a broader subspace |
-| NormFree + GELU | EEE_post ≈ 1, JS ≈ 0 (early layers) | Spectral inertia — nonlinearity fails to activate |
-| NormFree + ReLU | PR gain 20×–300× | ReLU aggressively compensates, breaking spectral inertia |
-| PreLN vs. PostLN | PreLN PR/D highest and stable | PreLN yields the best "width return rate" |
-| RoPE vs. NoPE | RoPE higher PR in mid-deep layers | RoPE prevents spectral collapse in mid-to-deep layers |
+| Config | Key Metric | Description |
+|------|---------|------|
+| Pre vs Post SE/PR | Post > Pre (Consistent) | Nonlinearity reinjects variance, expanding effective dimensionality |
+| GELU vs ReLU | GELU Post-PR is higher | Smoother nonlinearities explore broader subspaces |
+| NormFree + GELU | EEE_post ≈ 1, JS ≈ 0 (Early layers) | Spectral inertia—the nonlinearity becomes ineffective |
+| NormFree + ReLU | PR gain 20×-300× | ReLU aggressively compensates, breaking spectral inertia |
+| PreLN vs PostLN | PreLN PR/D highest and stable | PreLN provides the best "width return on investment" |
+| RoPE vs NoPE | RoPE mid-deep PR is higher | RoPE prevents spectral collapse in deeper layers |
 
 ### Key Findings
 
-1. **Variance re-injection is the core function of FFN nonlinearity**: Post-activation consistently exhibits higher SE and PR, and lower EEE — nonlinearities re-inject variance into underutilized directions, "awakening" dormant regions of the latent space.
-2. **Optimizers determine the role of FFN nonlinearity — repair vs. refinement**:
-    - **AdamW**: Causes pre-activation spectral collapse → FFN nonlinearity is forced into a "repair mode" (large PR gain but low final PR_post)
-    - **Muon**: Maintains well-conditioned pre-activation spectra → FFN nonlinearity only needs to "fine-tune" (small PR gain but high PR_post) → lower perplexity
-3. **Spectral signatures predict generalization**: Pearson correlation between NerVE metrics and validation loss satisfies |r| ≥ 0.97 (pre-activation), enabling online diagnostic use during forward passes.
-4. **ReLU can partially substitute for LayerNorm in NormFree models**: Through aggressive variance re-injection (PR gain 20×–300×), ReLU closes ~50% of the perplexity gap.
-5. **Muon concentrates representational capacity in middle FFN layers**: The highest PR_post occurs in middle layers — the perplexity ranking follows the PR_post trend of the middle layers.
+1. **Variance reinjection is the core function of FFN nonlinearities**: Post-activation consistently shows higher SE and PR, and lower EEE—nonlinearities reinject variance into underutilized directions, "awakening" dead zones in latent space.
+2. **Optimizers dictate the role of FFN nonlinearities—Repair vs. Refine**:
+    - **AdamW**: Leads to pre-activation spectral collapse $\rightarrow$ FFN nonlinearity is forced into "repair mode" (large PR gain but low final Post-PR).
+    - **Muon**: Maintains a healthy pre-activation spectrum $\rightarrow$ FFN nonlinearity only needs to "refine" (small PR gain but high final Post-PR), resulting in lower perplexity.
+3. **Spectral signatures predict generalization**: Pearson correlation $|r| \geq 0.97$ between NerVE metrics (pre-activation) and validation loss, making it a viable online diagnostic tool.
+4. **ReLU partially replaces LayerNorm in NormFree models**: Through aggressive variance reinjection (20$\times$-300$\times$ PR gain), ReLU recovers ~50% of the perplexity gap.
+5. **Muon concentrates representation capacity in middle FFN layers**: The highest Post-PR appears in middle layers—perplexity rankings follow the Post-PR trends of middle layers.
 
 ## Highlights & Insights
 
-- **Novel perspective**: Understanding FFNs through eigenspectrum dynamics reveals the previously unrecognized core function of nonlinearity as "variance re-injection."
-- **Practical diagnostic tool**: NerVE enables online monitoring during training with negligible overhead (~1%) and requires no additional forward passes.
-- **Cross-architecture generalization**: Core findings hold across GPT-2, LLaMA, and MLP-Mixer, suggesting these are universal properties of deep feed-forward networks.
-- **Optimizer as inductive bias**: Different optimizers imprint qualitatively distinct geometric signatures on the FFN spectrum, providing a new diagnostic basis for optimizer selection.
-- **Elegant four-metric design**: Each metric is sensitive to a different region of the spectrum; their joint use avoids the pitfalls of relying on any single metric.
+- **New Perspective**: Understands FFNs via eigenspectrum dynamics, revealing the previously unrecognized core function of "variance reinjection."
+- **Practical Diagnostic Tool**: NerVE monitors training online with minimal overhead (~1%) without requiring additional forward passes.
+- **Cross-architecture Generalization**: Findings hold across GPT-2, LLaMA, and MLP-Mixer, suggesting a universal property of deep feed-forward networks.
+- **Optimizer as Inductive Bias**: Different optimizers imprint distinct geometric signatures on FFN spectra, providing new diagnostic criteria for optimizer selection.
+- **Sophisticated Metric Design**: The four metrics are sensitive to different spectral regions, preventing misinterpretation from any single scalar.
 
 ## Limitations & Future Work
 
-1. **Layer-independent analysis**: Cross-layer spectral relationships are not explicitly quantified, precluding the capture of inter-layer spectral coherence.
-2. **Token aggregation**: All token positions are pooled for computation, ignoring position-specific spectral structure (Appendix J shows significant positional dependence in LayerNorm models).
-3. **No direct prediction of downstream task quality**: NerVE metrics are highly correlated with generalization but do not imply causation.
-4. **Computational cost for large-scale models**: For large FFN dimensions with $D > 10K$, full-batch covariance computation and eigendecomposition may be expensive (though 10% token subsampling can preserve pre-activation diagnostic capability).
-5. **Attention–FFN interaction not covered**: How the FFN spectrum is influenced by upstream attention layers remains unanalyzed.
+1. **Layer Independence**: Does not explicitly quantify cross-layer spectral relationships, failing to capture inter-layer spectral coherence.
+2. **Token Aggregation**: Mixes all token positions, ignoring position-specific spectral structures (Appendix J shows significant position dependence in LayerNorm models).
+3. **Lack of Direct Causality**: NerVE metrics correlate highly with generalization but do not establish a causal link to downstream task quality.
+4. **Scale Costs**: For large FFN dimensions ($D > 10K$), full-batch covariance and eigendecomposition may become expensive (though 10% token sampling retains pre-activation diagnostic power).
+5. **Attention-FFN Interaction**: How FFN spectra are influenced by upstream attention layers remains unanalyzed.
 
 ## Related Work & Insights
 
 - **RankMe** (Garrido et al., 2023) and **Diff-eRank** (Wei et al., 2024): Use spectral entropy to predict downstream performance.
-- **Bao et al. (2024)**: Studies the relationship between spectral concentration of QK weight matrices and attention localization.
-- **Poole et al. (2016)**: Order-to-chaos phase transitions induced by nonlinearity in randomly initialized networks.
-- **Kobayashi et al. (2024)**: Studies FFNs from the perspective of attention maps.
-- **Pascanu et al. (2025)**: Optimizers qualitatively alter solutions — NerVE provides concrete spectral-level evidence.
-- **Insights**: FFN nonlinearity is not a "supporting role" but a central regulator of information flow; optimizer geometry and the internal representational geometry of the network are deeply coupled.
+- **Bao et al. (2024)**: Relation between QK weight matrix spectral concentration and attention localization.
+- **Poole et al. (2016)**: Order-to-chaos phase transitions caused by nonlinearities in random networks.
+- **Kobayashi et al. (2024)**: Studying FFNs from the perspective of attention maps.
+- **Pascanu et al. (2025)**: Optimizers qualitatively change solutions—NerVE provides concrete spectral evidence.
+- **Insight**: FFN nonlinearities are core regulators of information flow, not "auxiliary roles"; optimizer geometry is deeply coupled with the network's internal representation geometry.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ (A genuinely novel FFN eigenspectrum analysis framework; the core insight of "variance re-injection" is highly original)
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ (Exceptionally comprehensive: multiple architectures × optimizers × normalization schemes × activation functions × scales × cross-architecture validation)
-- Writing Quality: ⭐⭐⭐⭐ (Content-rich but lengthy; appendices are thorough)
-- Value: ⭐⭐⭐⭐⭐ (Provides substantive diagnostic tools and theoretical insights for LLM architecture design and optimizer selection)
+- Novelty: ⭐⭐⭐⭐⭐ (A fresh FFN eigenspectrum analysis framework; variance reinjection is a highly novel insight)
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ (Extremely comprehensive: architectures × optimizers × normalization × activation × multi-scale)
+- Writing Quality: ⭐⭐⭐⭐ (Content-rich, albeit long with extensive appendices)
+- Value: ⭐⭐⭐⭐⭐ (Provides substantial diagnostic tools and theoretical insights for LLM architecture and optimizer design)
 
 <!-- RELATED:START -->
 
@@ -167,11 +150,11 @@ Optimizer comparison (GPT-2 350M, FineWeb):
 
 ## Related Papers
 
+- [\[ICLR 2026\] Adaptive Nonlinear Compression for Large Foundation Models](adaptive_nonlinear_compression_for_large_foundation_models.md)
 - [\[NeurIPS 2025\] Fin3R: Fine-tuning Feed-forward 3D Reconstruction Models via Monocular Knowledge Distillation](../../NeurIPS2025/model_compression/fin3r_fine-tuning_feed-forward_3d_reconstruction_models_via_monocular_knowledge_.md)
-- [\[ICLR 2026\] Adaptive Width Neural Networks](adaptive_width_neural_networks.md)
-- [\[ICLR 2026\] A Recovery Guarantee for Sparse Neural Networks](a_recovery_guarantee_for_sparse_neural_networks.md)
-- [\[ICLR 2026\] Fine-tuning Quantized Neural Networks with Zeroth-order Optimization](fine-tuning_quantized_neural_networks_with_zeroth-order_optimization.md)
-- [\[ICLR 2026\] Topology and Geometry of the Learning Space of ReLU Networks: Connectivity and Size](topology_and_geometry_of_the_learning_space_of_relu_networks_connectivity_and_si.md)
+- [\[ICLR 2026\] KDP: Simplifying Representation Dynamics in Kernel Space](kdp_simplifying_representation_dynamics_in_kernel_space.md)
+- [\[ICML 2025\] Eigenspectrum Analysis of Neural Networks without Aspect Ratio Bias](../../ICML2025/model_compression/eigenspectrum_analysis_of_neural_networks_without_aspect_ratio_bias.md)
+- [\[ICLR 2026\] Training Dynamics Impact Post-Training Quantization Robustness](training_dynamics_impact_post-training_quantization_robustness.md)
 
 </div>
 

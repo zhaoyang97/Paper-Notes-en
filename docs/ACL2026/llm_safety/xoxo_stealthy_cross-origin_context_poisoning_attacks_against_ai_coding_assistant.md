@@ -2,12 +2,12 @@
 title: >-
   [Paper Note] XOXO: Stealthy Cross-Origin Context Poisoning Attacks against AI Coding Assistants
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] This work reveals a design vulnerability in AI coding assistants that automatically collect context. It proposes the Cross-Origin Context Poisoning (XOXO) attack: by applying semantic-preserving code transformations (e.g., variable renaming) to poison shared repositories, assistants like GitHub Copilot are induced to g
+  [ACL 2026][LLM Safety][Paper Note] This work identifies a design vulnerability in the automatic context collection of AI coding assistants and proposes the Cross-Origin Context Poisoning (XOXO) attack. By applying semantics-preserving transformations (e.g., variable renaming) to poison shared codebases, assistants like GitHub Copilot are misled into gen
 tags:
   - ACL 2026
   - LLM Safety
 date: 2026-05-08
-content_hash: ba1416a3b757d115
+content_hash: 6a16da6e19db6d8d
 ---
 # XOXO: Stealthy Cross-Origin Context Poisoning Attacks against AI Coding Assistants
 
@@ -15,125 +15,118 @@ content_hash: ba1416a3b757d115
 **arXiv**: [2503.14281](https://arxiv.org/abs/2503.14281)  
 **Code**: [https://github.com/adamstorek/cross-origin-context-poisoning](https://github.com/adamstorek/cross-origin-context-poisoning)  
 **Area**: Robotics  
-**Keywords**: Adversarial attacks, AI coding assistants, Context poisoning, Semantic-preserving transformations, Code security
+**Keywords**: Adversarial Attacks, AI Coding Assistants, Context Poisoning, Semantics-Preserving Transformations, Code Security
 
 ## TL;DR
 
-This work reveals a design vulnerability in AI coding assistants that automatically collect context. It proposes the Cross-Origin Context Poisoning (XOXO) attack: by applying semantic-preserving code transformations (e.g., variable renaming) to poison shared repositories, assistants like GitHub Copilot are induced to generate vulnerable code without the user's knowledge. The attack achieves an average success rate of 73.20% across 8 SOTA models.
+This work identifies a design vulnerability in the automatic context collection of AI coding assistants and proposes the Cross-Origin Context Poisoning (XOXO) attack. By applying semantics-preserving transformations (e.g., variable renaming) to poison shared codebases, assistants like GitHub Copilot are misled into generating buggy or vulnerable code. The attack achieves an average success rate of 73.20% across 8 SOTA models.
 
 ## Background & Motivation
 
-**Background**: AI coding assistants (e.g., GitHub Copilot) have become the second most popular AI tools after chat-based AI. They enhance LLM code generation by automatically gathering contextual code fragments from projects.
+**Background**: AI coding assistants (such as GitHub Copilot) have become the second most popular AI tools after chat-based LLMs. They improve code generation by automatically retrieving context snippets from across a project.
 
-**Limitations of Prior Work**: Existing assistants possess critical security design flaws in context collection: (1) they scrape code fragments from the entire project as context without distinguishing the trustworthiness of the source; (2) they mix code from different origins into a single prompt sent to the LLM, leaving developers unable to view, restrict, or log the collected context; (3) an investigation of 7 mainstream assistants revealed that all employ automatic context collection without origin differentiation.
+**Limitations of Prior Work**: Current assistants exhibit critical security flaws in context collection: (1) they scrape snippets from the entire project without verifying source trust; (2) multi-source code is merged into a single prompt hidden from the user, preventing inspection or restriction; (3) a survey of 7 major assistants reveals that all employ automatic collection without source differentiation.
 
-**Key Challenge**: While automatic context collection improves generation quality, it creates a new attack surface. An attacker only needs to perform semantic-preserving modifications to shared code (preserving functionality) to cause coding assistants to generate buggy or vulnerable code when that code is later used as context. Because these modifications are legitimate and functionally unchanged, they are extremely difficult to detect during code review.
+**Key Challenge**: While automatic collection improves generation quality, it creates a new attack surface. Attackers can commit semantics-preserving modifications—functionally identical to the original—that cause assistants to generate buggy code when used as context. Such attacks are difficult to detect during code review because the modifications are legitimate.
 
-**Goal**: (1) Define the XOXO attack paradigm; (2) propose an algorithm for automatically discovering effective attack transformations; (3) verify the attack on real-world coding assistants.
+**Goal**: (1) Define the XOXO attack paradigm; (2) propose an algorithm to automatically discover effective attack transformations; (3) validate the attack on commercially used coding assistants.
 
-**Key Insight**: It is observed that LLMs produce varying outputs for semantically equivalent but syntactically different code inputs, revealing a fundamental deficiency in current LLM architectures when processing semantically equivalent code.
+**Key Insight**: LLMs generate different outputs for semantically equivalent but syntactically distinct code inputs, revealing a fundamental weakness in current LLM architectures.
 
-**Core Idea**: Leveraging the monotonicity of LLM confidence (where combining multiple confidence-reducing transformations further lowers confidence), a greedy Cayley graph search algorithm is designed to efficiently find combinations of semantic-preserving transformations that induce erroneous outputs.
+**Core Idea**: Leveraging the monotonicity of LLM confidence (composing multiple transformations that reduce confidence further decreases it), the authors design a greedy Cayley graph search algorithm to efficiently find combinations that induce incorrect outputs.
 
 ## Method
 
 ### Overall Architecture
 
-The XOXO attack does not rely on injecting malicious instructions into inputs but exploits the "automatic context collection" of coding assistants. The process is as follows: After an attacker gains commit access to a shared repository, the GCGS algorithm is used to identify which combinations of semantic-preserving transformations most effectively mislead the model. These transformations (e.g., renaming variables while keeping functionality identical) are applied to the code. The transformations are then integrated into the victim's project through version control. When the victim uses a coding assistant, it automatically picks up the poisoned code as context for its prompt. The LLM then generates buggy or vulnerable code based on the contaminated context. The entire pipeline is validated end-to-end on GitHub Copilot.
+The XOXO attack does not rely on malicious instructions but exploits the "automatic context collection" mechanism. An attacker with write access to a shared repository uses the GCGS algorithm to identify optimal semantics-preserving transformations. These changes (e.g., renaming variables) flow into the victim's project via version control. When the victim uses a coding assistant, the poisoned code is automatically pulled into the prompt context, leading the LLM to generate buggy or vulnerable code. The entire workflow is validated end-to-end on GitHub Copilot.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    A["Attacker gains commit access to shared repository"] --> GCGS
+    A["Attacker Gains Write Access to Shared Repository"] --> GCGS
     subgraph GCGS["Confidence Monotonicity + Greedy Cayley Graph Search (GCGS)"]
         direction TB
-        B["Shallow exploration of atomic transformations;<br/>Record confidence changes"] --> C["Greedily stack combinations in ascending order of confidence;<br/>Follow confidence-increasing path"]
+        B["Shallow Exploration of Atomic Transformations<br/>Record Confidence Changes"] --> C["Greedy Stacking by Ascending Confidence<br/>Follow Confidence Descent Path"]
     end
-    GCGS --> D["Apply semantic-preserving transformation to shared code<br/>(e.g., variable renaming, functionality unchanged)"]
-    D --> E["Transformations flow into victim project via version control"]
-    E --> F["Coding assistant automatically collects context;<br/>No source distinction (XOXO threat surface)"]
-    F --> G["LLM generates buggy / vulnerable code<br/>on poisoned context"]
-    G --> H["End-to-end GitHub Copilot verification;<br/>Real-world SQL injection reproduction"]
+    GCGS --> D["Apply Semantics-Preserving Transformations<br/>(e.g., Variable Renaming)"]
+    D --> E["Poisoned Code Injected into Victim Project via VCS"]
+    E --> F["Assistant Automatically Collects Context<br/>No Source Discrimination (XOXO Attack Surface)"]
+    F --> G["LLM Generates Buggy/Vulnerable Code<br/>from Poisoned Context"]
+    G --> H["End-to-End GitHub Copilot Verification<br/>Real SQL Injection Exploitation"]
 ```
 
 ### Key Designs
 
-**1. Cross-Origin Context Poisoning (XOXO) Threat Model: Turning "Automatic Context Collection" into an Attack Surface**
+**1. XOXO Threat Model (Function)**: The attack exploits three characteristics of coding assistants: automatic context collection regardless of source, stable outputs from greedy decoding/low-temperature sampling, and reversible prompt templates. An attacker only needs permission to submit code. Since variable renaming is common and functionally neutral, it evades suspicion during code review more effectively than traditional prompt injection.
 
-The attack succeeds by exploiting three assistant characteristics: automatic context collection that does not distinguish the trustworthiness of code sources; the use of greedy decoding or low-temperature sampling (e.g., Copilot temperature 0.1), which makes attack effects stable and reproducible; and the fact that prompt templates and sampling parameters can be reversed through network traffic analysis. Thus, an attacker does not require high privileges—commit access to submit a semantic-preserving yet poisoning transformation is sufficient. This threat model is highly realistic: malicious contributors in open-source projects are not rare, and changes like variable renaming are unlikely to trigger suspicion during code review, making them more stealthy than traditional prompt injection.
+**2. Confidence Monotonicity and Greedy Cayley Graph Search (Mechanism)**: Since the space of transformation combinations is exponential, exhaustive search is infeasible. GCGS defines atomic transformations as a generating set $G$ and structures the space as a Cayley graph $\mathcal{T}$. The key find is **confidence monotonicity**: if transformations $g_i$ and $g_j$ individually reduce confidence, their combination $g_i \cdot g_j$ tends to reduce it further. The algorithm performs shallow exploration followed by greedy stacking. T-tests confirm this property is statistically significant ($p < 1.7 \times 10^{-10}$).
 
-**2. Confidence Monotonicity and Greedy Cayley Graph Search (GCGS): Finding Effective Combinations in Exponential Space**
-
-The space of semantic-preserving transformation combinations is exponential, making exhaustive search infeasible. GCGS defines atomic transformations (variable renaming, statement reordering, etc.) as a generating set $G$ and structures the search space using a Cayley graph $\mathcal{T}$. The key to efficient searching is the discovered **confidence monotonicity**: if transformations $g_i$ and $g_j$ each independently reduce model confidence, their combination $g_i \cdot g_j$ tends to depress confidence even further. This provides a clear search direction: explore atomic transformations shallowly, record confidence changes, and greedily layer combinations in ascending order of confidence until an erroneous output is induced. A t-test verifies that this monotonicity is statistically significant ($p < 1.7 \times 10^{-10}$), indicating that following this path highly likely induces errors.
-
-**3. End-to-End GitHub Copilot Attack Verification: Realizing SQL Injection on a Production Assistant**
-
-To demonstrate practical impact, the attack was deployed on the actual GitHub Copilot. In a Django web application, the attacker renamed the variable `USE_RAW_QUERIES` to `RAW_QUERIES` (functionally identical). When the victim later implemented search functionality, Copilot automatically included the code with the renamed variable in the context. This resulted in the generation of a SQL query that directly concatenated unsanitized user input—a live SQL injection vulnerability consistently reproduced across multiple sessions. This case is significant as it bypassed Copilot's built-in security guardrails and succeeded even in cross-file scenarios where variables were imported from `models.py`.
+**3. End-to-End GitHub Copilot Verification (Novelty)**: The authors demonstrated a real SQL injection attack. In a Django application, the attacker renamed `USE_RAW_QUERIES` to `RAW_QUERIES`. When the victim subsequently implemented a search feature, Copilot used this context and generated a raw SQL query concatenating unsanitized user input. This bypassed Copilot's security filters and worked even when the variable was imported from a different file (`models.py`).
 
 ### Loss & Training
 
-GCGS is a search algorithm, not a training method. It uses length-normalized log-likelihood as a confidence score to measure how certain the model is about its output:
+GCGS is a search algorithm. It uses length-normalized log-likelihood as the confidence score $\alpha(c)$ to measure the model's certainty:
 
 $$\alpha(c) = \frac{1}{|y|} \sum_{t=1}^{|y|} \log p(y_t \mid c, y_{<t})$$
 
-The search alternates between "shallow exploration of atomic transformations" and "deep greedy combination" within a given query budget until a model error is induced or the budget is exhausted.
+The search alternates between shallow exploration of atomic transformations and deep greedy composition until the model fails or the query budget is exhausted.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Bug injection attack success rate (HumanEval+ and MBPP+):
+Bug Injection Attack Success Rate (ASR) on HumanEval+ and MBPP+:
 
-| Model | HumanEval+ ASR | MBPP+ ASR | CWEval Vulnerability Rate |
+| Model | HumanEval+ ASR | MBPP+ ASR | CWEval Vuln. Rate |
 |------|---------------|-----------|------------------|
 | Claude 3.5 Sonnet v2 | 92.00% | 98.42% | 40.00% |
 | GPT 4.1 | 81.82% | 40.69% | 50.00% |
 | DeepSeek Coder 33B | 85.69% | 96.41% | 63.97% |
 | Llama 3.1 8B | 97.11% | 99.88% | 54.00% |
-| Qwen 2.5 Coder 7B | - | - | - |
 
-The average attack success rate across 8 SOTA models is 83.67% (bug) and 52.26% (vulnerability).
+Average ASR across 8 SOTA models: 83.67% (bugs), 52.26% (vulnerabilities).
 
 ### Ablation Study
 
 | Configuration | Key Metric | Description |
 |------|---------|------|
-| XOXO (Unguided Search) | ASR 73.20% | Random transformation combinations |
-| XOXO + GCGS | ASR 83.67% | Confidence-guided search consistently outperforms unguided search |
-| Atomic Transformations Only | Partial Success | A single transformation is sometimes sufficient |
-| Cross-file Attack | Valid | Success persists after moving variables to `models.py` and importing them |
+| XOXO (Unguided) | ASR 73.20% | Random combination of transformations |
+| XOXO + GCGS | ASR 83.67% | Confidence-guided search consistently outperforms unguided |
+| Atomic Only | Partial Success | Single transformations are sometimes sufficient |
+| Cross-file Attack | Remains Effective | Attack succeeds even when variables are moved and imported |
 
 ### Key Findings
 
 - Confidence monotonicity holds across all tested models and datasets ($p < 1.7 \times 10^{-10}$), indicating a universal property of LLMs.
-- The attack triggered 17 different Common Weakness Enumeration (CWE) categories, proving a wide range of impact.
-- Even state-of-the-art models with safety alignment (Claude 3.5, GPT 4.1) are vulnerable.
-- All 7 mainstream coding assistants investigated share the same architectural vulnerability: no distinction of context origin.
+- The attack triggered 17 different Common Weakness Enumeration (CWE) types.
+- Even safety-aligned models like Claude 3.5 and GPT-4 are susceptible.
+- All 7 surveyed coding assistants share the same architectural vulnerability: lack of context source discrimination.
 
 ## Highlights & Insights
 
-- **High Stealth**: Semantic-preserving variable renaming is nearly impossible to detect during code review, contrasting sharply with traditional prompt injection that requires obvious malicious instructions.
-- **Value of Confidence Monotonicity**: This discovery serves not only as the technical foundation for the attack but also reveals the over-reliance of LLMs on surface-level code forms rather than semantics, representing a fundamental flaw in current LLM architectures.
-- From a defensive perspective, this work points to a specific design improvement: coding assistants should distinguish the source trustworthiness of context instead of blindly mixing all code fragments.
+- **High Stealth**: Semantics-preserving renaming is nearly impossible to detect in code reviews, whereas traditional prompt injection requires visible malicious tokens.
+- **Confidence Monotonicity**: This technical insight reveals that LLMs over-rely on surface forms rather than underlying semantics, exposing a fundamental architectural flaw.
+- **Defensive Direction**: The work suggests that coding assistants must implement source-aware trust levels for context rather than mixing all project code indiscriminately.
 
 ## Limitations & Future Work
 
-- The attack assumes the attacker has commit access, which is realistic in open-source projects but more difficult in strictly controlled private environments.
-- GCGS requires multiple queries to the target model to search for effective transformations, which may be costly for commercial APIs.
-- Defensive solutions are not discussed in depth—how to distinguish source trustworthiness without degrading generation quality remains an open question.
-- Testing was limited to Python; the effectiveness of the attack on other programming languages has not been verified.
+- Assumes the attacker has commit access, which is easier in open-source projects than strictly controlled private ones.
+- GCGS requires multiple queries to the target model, which may be costly for commercial APIs.
+- Defense implementation details are not fully explored (e.g., maintaining generation quality while filtering context).
+- Testing was primarily conducted on Python; effectiveness across all programming languages remains to be verified.
 
 ## Related Work & Insights
 
-- **vs Prompt Injection**: Traditional prompt injection requires inserting malicious instructions into the input, which is easily detected. XOXO uses semantic-preserving code transformations that are entirely legal, making it significantly more stealthy.
-- **vs Code Classification Attacks**: Previous semantic-preserving attacks primarily targeted code classification tasks (defect detection, clone detection) and required class confidence feedback. XOXO is the first to extend such attacks to code generation tasks.
+- **vs. Prompt Injection**: Unlike traditional injection requiring malicious commands, XOXO uses legal code transformations, providing superior stealth.
+- **vs. Code Classification Attacks**: Previous attacks targeted classification tasks (e.g., defect detection). XOXO is the first to extend these techniques to code generation via poisoned context.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ Defines an entirely new attack paradigm, XOXO; the discovery of confidence monotonicity has theoretical value.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Includes 8 models, multiple benchmarks, real-world Copilot verification, and statistical significance testing.
-- Writing Quality: ⭐⭐⭐⭐⭐ Clear description of attack motivation and threat models; the real-world attack case is highly persuasive.
-- Value: ⭐⭐⭐⭐⭐ Reveals major security risks in AI coding assistants with direct industrial impact; responsibly disclosed to vendors.
+- Novelty: ⭐⭐⭐⭐⭐ Defines the new XOXO paradigm; theoretical value in confidence monotonicity.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 8 models, multiple benchmarks, real Copilot validation, and statistical tests.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear threat model and compelling real-world cases.
+- Value: ⭐⭐⭐⭐⭐ Highlights major safety risks for the industry; responsible disclosure was performed.
 
 <!-- RELATED:START -->
 
@@ -145,7 +138,7 @@ The average attack success rate across 8 SOTA models is 83.67% (bug) and 52.26% 
 - [\[ACL 2026\] Knowledge Poisoning Attacks on Medical Multi-Modal Retrieval-Augmented Generation](knowledge_poisoning_attacks_on_medical_multi-modal_retrieval-augmented_generatio.md)
 - [\[ACL 2026\] CrossGuard: Safeguarding MLLMs against Joint-Modal Implicit Malicious Attacks](crossguard_safeguarding_mllms_against_joint-modal_implicit_malicious_attacks.md)
 - [\[ACL 2026\] Evaluating Answer Leakage Robustness of LLM Tutors against Adversarial Student Attacks](evaluating_answer_leakage_robustness_of_llm_tutors_against_adversarial_student_a.md)
-- [\[ACL 2026\] Compiling Activation Steering into Weights via Null-Space Constraints for Stealthy Backdoors](compiling_activation_steering_into_weights_via_null-space_constraints_for_stealt.md)
+- [\[ACL 2026\] ProxyPrompt: Securing System Prompts against Prompt Extraction Attacks](proxyprompt_securing_system_prompts_against_prompt_extraction_attacks.md)
 
 </div>
 

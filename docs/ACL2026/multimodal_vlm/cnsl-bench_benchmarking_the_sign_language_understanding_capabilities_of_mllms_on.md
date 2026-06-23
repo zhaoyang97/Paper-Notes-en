@@ -2,13 +2,13 @@
 title: >-
   [Paper Note] CNSL-bench: Benchmarking the Sign Language Understanding Capabilities of MLLMs on Chinese National Sign Language
 description: >-
-  [ACL 2026][Multimodal VLM][manual articulation] CNSL-bench is the first authoritative evaluation benchmark for Chinese Sign Language (CSL) MLLMs based on the *National Common Sign Language Dictionary*. It covers 6,707 unique sign entries across text, image, and video modalities, combined with three types of manual articulation (air-writing, finger-spelling, and manu
+  [ACL 2026][Multimodal VLM][manual articulation] CNSL-bench is the first authoritative benchmark for evaluating Chinese sign language in MLLMs based on the *National Common Sign Language Dictionary*. It covers 6,707 unique sign entries across text, image, and video modalities, featuring three types of hand articulation (air-writing, finger-spelling, and manual-alphab
 tags:
   - ACL 2026
   - Multimodal VLM
   - manual articulation
 date: 2026-05-08
-content_hash: 29c518b7b83f0a79
+content_hash: 0f7887dd67f05d04
 ---
 # CNSL-bench: Benchmarking the Sign Language Understanding Capabilities of MLLMs on Chinese National Sign Language
 
@@ -19,45 +19,54 @@ content_hash: 29c518b7b83f0a79
 **Keywords**: Chinese National Sign Language, Sign Language Benchmark, MLLM Evaluation, Modality Imbalance, manual articulation
 
 ## TL;DR
-CNSL-bench is the first authoritative evaluation benchmark for Chinese Sign Language (CSL) MLLMs based on the *National Common Sign Language Dictionary*. It covers 6,707 unique sign entries across text, image, and video modalities, combined with three types of manual articulation (air-writing, finger-spelling, and manual-alphabet), totaling 20,121 four-way multiple-choice questions. Evaluations of 21 SOTA MLLMs reveal that while GPT-5 achieves 89.6% in text, 67.0% in image, and 56.7% in video, a substantial gap remains compared to the 97% human baseline, and CoT reasoning provides negligible improvements for video understanding.
+CNSL-bench is the first authoritative benchmark for evaluating Chinese sign language in MLLMs based on the *National Common Sign Language Dictionary*. It covers 6,707 unique sign entries across text, image, and video modalities, featuring three types of hand articulation (air-writing, finger-spelling, and manual-alphabet), totaling 20,121 four-way multiple-choice questions. Evaluations across 21 SOTA MLLMs reveal that while GPT-5 achieves 89.6% in text, it drops to 67.0% in image and 56.7% in video—a significant gap compared to the 97% human performance. Furthermore, CoT reasoning provides minimal benefit for video understanding.
 
 ## Background & Motivation
 
-**Background**: LLMs have transitioned sign language research from traditional SLR/SLT pipelines into the LLM-as-decoder phase (e.g., Sign2GPT, SignLLM). Although recent MLLMs have demonstrated strong visual and video understanding capabilities, most existing works embed LLMs into specific downstream tasks (such as translation or recognition) as semantic enhancement modules.
+**Background**: LLMs have propelled sign language research from pure SLR/SLT pipelines into the LLM-as-decoder phase (e.g., Sign2GPT, SignLLM). Recent MLLMs have further enhanced visual and video understanding. However, most work embeds LLMs into specific downstream tasks (translation, recognition) as semantic enhancement modules.
 
-**Limitations of Prior Work**: **The intrinsic sign language understanding capabilities of MLLMs have never been systematically evaluated**. Existing sign language datasets (WLASL, PHOENIX, CSL-Daily, How2Sign, etc.) are primarily designed for training specific tasks and lack aligned lexical-level evaluation across modalities. Furthermore, general MLLM benchmarks (MME, MMMU, Video-MME, etc.) do not include sign language content. Consequently, the specific strengths, weaknesses, and modality gaps of MLLMs in sign language remain unknown.
+**Limitations of Prior Work**: **The intrinsic sign language understanding capability of MLLMs has never been systematically evaluated**. Existing sign language datasets (WLASL, PHOENIX, CSL-Daily, How2Sign, etc.) are designed for training specific tasks and lack cross-modal aligned lexical-level evaluation. General MLLM benchmarks (MME, MMMU, Video-MME, etc.) do not include sign language. Consequently, it remains unclear where MLLMs excel or fail in sign language and how large the modality gap truly is.
 
-**Key Challenge**: Sign language is inherently a **multimodal language** (spatio-temporal dynamics + linguistic structure), requiring both visual perception from VLMs and semantic reasoning from LLMs. Current evaluations either focus exclusively on vision without semantic grounding or on language without visual input, failing to determine whether MLLMs truly understand linguistic structures or merely exploit surface-level visual correlations.
+**Key Challenge**: Sign language is inherently a **multimodal language** involving visuospatial dynamics and linguistic structures. It requires both the visual perception of VLMs and the semantic understanding of LLMs. Existing evaluations either test vision alone (without semantic grounding) or language alone (without vision), failing to determine if MLLMs truly understand linguistic structures or merely process surface-level visual cues.
 
-**Goal**: To construct the first sign language MLLM evaluation benchmark featuring **(1) authoritative lexical grounding, (2) multimodal alignment (text/image/video), and (3) articulation diversity (air-writing/finger-spelling/manual-alphabet)**, and to systematically evaluate 21 SOTA MLLMs.
+**Goal**: To construct the first sign language MLLM benchmark featuring **(1) authoritative lexical grounding, (2) multimodal alignment (text/image/video), and (3) articulation diversity (air-writing/finger-spelling/manual-alphabet)**, and to systematically evaluate 21 SOTA MLLMs.
 
-**Key Insight**: By utilizing the *National Common Sign Language Dictionary* (jointly released by the Ministry of Education, State Language Commission, and China Association of the Deaf), the benchmark anchors to the only official sign language standard in China. This approach eliminates ambiguities from dialects or non-standard variants, providing **controllable, consistent, and reproducible** semantic references. Aligning each entry with the CNSL-DP dataset (Xiamen University 2025) ensures a perfectly aligned lexical-level benchmark across three modalities.
+**Key Insight**: Utilizing the *National Common Sign Language Dictionary*—the only official standard in China—anchors the evaluation to eliminate ambiguities from dialects or non-standard variations. This ensures **controllable, consistent, and reproducible** semantic references. By aligning each entry with videos from CNSL-DP (a 2025 dual-view dataset), a lexical-level benchmark fully aligned across three modalities is achieved.
 
-**Core Idea**: A 4-way multiple-choice benchmark is constructed based on the principles of "authoritative lexical grounding, multimodal alignment, and manual articulation categorization." This converts open-ended sign language understanding—currently unattainable for MLLMs—into a controlled closed-form evaluation. Comprehensive testing across 21 MLLMs, multiple modalities, and various frame rates reveals systematic failure patterns in sign language understanding.
+**Core Idea**: The benchmark is constructed as a 4-way multiple-choice task based on the three principles of "authoritative lexical grounding + multimodal alignment + manual articulation subdivision." This transforms open-ended sign language understanding (currently beyond MLLM capabilities) into a controlled closed-form evaluation. Dense testing of 21 MLLMs across 3 modalities, 3 articulations, and 2 video frame rates reveals systematic failure modes in MLLM sign language understanding.
 
 ## Method
 
 ### Overall Architecture
-The construction of CNSL-bench follows two primary tracks:
+The construction of CNSL-bench follows two main tracks:
 
-- **Lexical grounding**: Starting from 8,214 glosses in the *National Common Sign Language Dictionary*, sign-level preprocessing is performed (merging different glosses with identical gestures, splitting polysemous entries with different gestures, and retaining stylistic variants), resulting in 6,707 unique sign entries.
-- **Multimodal alignment**: Each sign entry is aligned across three modalities: (1) original text descriptions from the dictionary; (2) dictionary illustrations; (3) representative video segments from CNSL-DP (24 fps, 512×512 center-cropped, centered signer).
-- **Articulation subsets**: A total of 407 air-writing (AW), 77 finger-spelling (FS), and 592 manual-alphabet (MA) entries (based on the *Chinese Finger Spelling Scheme*) were manually annotated for fine-grained analysis.
-- **Task format**: A 4-way multiple-choice format is used. Each question provides one modal input, one correct answer, and three random distractors.
+- **Lexical grounding**: Starting from 8,214 glosses in the *National Common Sign Language Dictionary*, sign-level preprocessing is performed (merging different glosses with identical hand movements, splitting polysemous entries, and retaining variations) to obtain 6,707 unique sign entries.
+- **Multimodal alignment**: Each sign entry is aligned across three modalities: (1) the original text description from the dictionary; (2) dictionary illustrations; (3) a representative video from CNSL-DP (24 fps, 512×512 center-cropped, signer centered).
+- **Articulation Subsets**: 407 air-writing, 77 finger-spelling, and 592 manual-alphabet entries (based on the *Chinese Finger Spelling Scheme*) were manually labeled as dedicated subsets for fine-grained analysis.
+- **Task Format**: 4-way multiple-choice questions. Each question provides one modal input, one correct answer, and three random distractors (semantic distractors were also tested with consistent findings).
 - **Scale**: 6,707 entries × 3 modalities = 20,121 questions.
-- **Evaluation**: Zero-shot evaluations are conducted on 21 MLLMs (including LLaVA-NeXT, Qwen-VL, InternVL-3.5, GLM-4.1V, Gemini-2.5, and GPT-5) across all modalities and articulations. Fast and slow thinking modes are tested for reasoning-supported models.
+- **Evaluation**: Zero-shot testing of 21 MLLMs (including open-source LLaVA-NeXT, Qwen-VL, InternVL-3.5, GLM-4.1V and closed-source Qwen-Plus/Max, Gemini-2.5, GPT-4o/5) across text/image/video (2 fps & 10 fps) × AW/FS/MA/All. Fast/slow thinking was tested for reasoning-capable models.
 
 ### Key Designs
 
-**1. Authoritative dictionary lexical grounding + sign-level deduplication alignment**: To ensure each question has a unique standard answer, the benchmark is anchored to China's national sign language standards. Preprocessing addresses three types of redundancy: merging different glosses sharing the same gesture, splitting identical glosses with multiple meanings/gestures, and retaining synonymous variants.
+**1. Authoritative lexical grounding + sign-level deduplication alignment: Ensuring a unique standard answer.**
 
-**2. Manual articulation classification (AW / FS / MA)**: Articulation is categorized into three types based on sign language linguistics. **Air-writing (AW)** involves drawing shapes or strokes in the air, testing spatial trajectory tracking. **Finger-spelling (FS)** depicts the shapes of Chinese characters, emphasizing graphic cues. **Manual-alphabet (MA)** maps gestures to Pinyin letters, requiring symbolic recognition. This categorization reveals that while models perform best on FS (which resembles OCR), they struggle with the spatial trajectories of AW and the symbolic combinations of MA.
+The primary noise in sign language evaluation stems from regional variations for the same meaning, leading to irreproducible benchmarks. CNSL-bench anchors truth in China's national standard (2018/2019 authorities) to eliminate variation ambiguity. Sign-level preprocessing addresses three redundancies: merging different glosses sharing the same gesture; splitting glosses with multiple meanings (e.g., "seatbelt" in cars vs. planes); and retaining multiple gesture variants for a single meaning.
 
-**3. Multimodal alignment evaluation + modality gap quantification**: By evaluating the same sign entry across text, image, and video, the "modality dependency bias" can be quantified. Results show that GPT-5 drops from 89.6% (text) to 56.7% (video), a 33% decrease, while humans maintain near-constant performance (~97%) across all modalities. This indicates that MLLMs rely heavily on linguistic priors, with significant deficiencies in spatio-temporal visual understanding.
+**2. Manual articulation classification (AW / FS / MA): Identifying structural strengths and weaknesses.**
+
+To diagnose specific failure points, articulation is categorized based on linguistics: **Air-writing (AW)** involves drawing shapes in the air, testing spatial trajectory tracking. **Finger-spelling (FS)** depicts the glyphs of Chinese characters, emphasizing graphic cues. **Manual-alphabet (MA)** maps gestures to Pinyin letters, requiring symbol recognition and combination.
+
+**3. Multimodal alignment evaluation + modality gap quantification.**
+
+Testing the same sign across text, image, and video modalities quantifies "modality dependency bias." The protocol uses one modality as input for each 4-way MCQ. Video is tested at 2 fps and 10 fps. A human baseline (experts and native signers) provides a reference point.
+
+### Loss & Training
+This work is a benchmark; no training was performed. Evaluation settings: temperature=0, max_tokens=2048. Reasoning models were tested at low, medium, and high execution levels.
 
 ## Key Experimental Results
 
-### Main Results (Accuracy % for 21 MLLMs across modalities and articulations)
+### Main Results (21 MLLM Accuracy %)
 
 | Model | Text-All | Image-All | Video 2fps-All | Video 10fps-All | FS-Text | FS-Video10 |
 |-------|----------|-----------|-----------------|------------------|---------|------------|
@@ -71,65 +80,50 @@ The construction of CNSL-bench follows two primary tracks:
 | GLM-4.1V-9B (slow) | 68.24 | 39.62 | 28.03 | 29.75 | 84.42 | 24.68 |
 | Qwen2.5-VL-3B | 60.07 | 34.26 | 28.36 | 30.34 | 72.73 | 28.57 |
 | Qwen2-VL-2B | 43.36 | 30.62 | 27.23 | 27.58 | 51.95 | 18.18 |
-| LLaVA-NeXT-Video-7B | 1.34 | 12.94 | 15.43 | 15.91 | 2.60 | 14.29 |
 | **Random** | 25.23 | 24.73 | 25.03 | 25.04 | 27.27 | 24.67 |
 | **Human** | **96.93** | **97.39** | **97.39** | **97.39** | **97.40** | **98.70** |
 
 ### Ablation Study (Test-time scaling, Reasoning effort L/M/H)
 
-| Model | Text-All | Image-All | Video-All | Notes |
-|-------|----------|-----------|-----------|-------|
+| Model | Text-All | Image-All | Video-All | Description |
+|-------|----------|-----------|-----------|------|
 | GPT-5 (L) | 88.94 | 66.77 | 51.89 | Low reasoning |
-| GPT-5 (M) | **89.64** | 66.96 | **53.42** | Mid reasoning (Best) |
+| GPT-5 (M) | **89.64** | 66.96 | **53.42** | Med reasoning (Strongest) |
 | GPT-5 (H) | 89.95 | **68.34** | 53.09 | High reasoning |
-| Gemini-2.5-Pro (L) | 81.32 | 58.09 | 48.83 | |
-| Gemini-2.5-Pro (M) | 84.79 | 61.13 | 48.32 | |
-| Gemini-2.5-Pro (H) | 84.84 | 61.92 | 48.17 | High reasoning declines in video |
-| Gemini-2.5-Flash fast | 73.04 | 43.57 | 36.62 | |
-| Gemini-2.5-Flash slow | **79.95** | **51.62** | **42.28** | Max avg gain +6.45% |
-| Qwen3-VL-Plus fast | 76.68 | 43.69 | 33.74 | |
-| Qwen3-VL-Plus slow | 76.22 | 42.41 | 35.34 | **Slow thinking decreases performance** |
+| Qwen3-VL-Plus slow | 76.22 | 42.41 | 35.34 | Slow thinking drops performance |
 
 ### Key Findings
-- **Significant gap between MLLMs and humans**: The best-performing model, GPT-5, reaches only 56.7% in the video modality compared to 97.4% for humans, representing a 41-point gap.
-- **Strong modality imbalance**: Performance follows a consistent text >> image > video trend across all models. This suggests that "multimodal alignment" in MLLMs is incomplete, with models relying heavily on linguistic priors.
-- **Uneven articulation performance**: Finger-spelling (FS) is consistently the easiest category, while AW and MA are significantly harder, indicating that models struggle with continuous spatial trajectories and symbolic combinations.
-- **CoT is largely ineffective for video**: For top-tier models like Gemini-2.5-Pro and GPT-5, increasing reasoning effort does not improve video accuracy. This suggests the bottleneck in sign language understanding lies in visual perception rather than reasoning.
-- **Modality-biased reasoning tokens**: Models consume significantly more reasoning tokens for text than for images or videos, reflecting a "textual thinking" habit.
+- **MLLMs significantly trail humans**: The strongest GPT-5 scores 56.7% in video, while humans achieve 97.4% (a 41-point gap).
+- **Strong modality imbalance**: Performance consistently drops from text to image to video. MLLMs rely heavily on linguistic priors rather than visual/temporal understanding.
+- **Articulation disparity**: FS is consistently the easiest (similar to character OCR), while AW and MA are significantly harder due to reliance on spatial tracking and complex symbol combination.
+- **CoT is ineffective for video**: Reasoning from low to high effort barely improves video accuracy (and sometimes reduces it), suggesting the bottleneck is visual perception, not secondary reasoning.
+- **The gap between open and closed source is narrowing**: Models like InternVL-3.5 and GLM-4.1V approach GPT-4o levels on specific subsets.
 
 ## Highlights & Insights
-- **Formalization of sign language understanding**: By converting sign language comprehension into a controlled lexical-level MCQ benchmark, the study provides a reproducible paradigm for evaluating MLLMs.
-- **Dimensional diagnosis**: The benchmark's multi-dimensional design allows for the isolation of "modality gaps," "articulation gaps," and "reasoning effects," providing clear directions for future MLLM improvements (specifically, prioritizing visual perception).
-- **Authoritative grounding**: Using national standard dictionaries as the lexical truth serves as a model for evaluating MLLMs in other low-resource or professional domains.
-- **Reasoning token perspective**: The quantification of token consumption across modalities reveals a strong textual bias, offering new dimensions for training multimodal alignment goals.
+- **Standardized Evaluation**: Transforms sign language understanding into a reproducible lexical MCQ task, providing a new paradigm for MLLM assessment.
+- **Multidimensional Design**: Effectively decomposes model performance into modality, articulation, and reasoning gaps, offering clear directions for improvement (focusing on visual perception).
+- **Reasoning Token Bias**: Models consume significantly more tokens reasoning about text than video, highlighting a dependency on "thinking in text."
 
 ## Limitations & Future Work
-- **Ours**: The study is limited to lexical-level evaluation, omitting sentence-level SLT. It covers only Chinese National Sign Language, excluding ASL or regional dialects.
-- **Additional limitations**: Random distractors may simplify the task; the study did not systematically explore the full frame rate-accuracy curve or continuous sequences. The human baseline was limited to four participants.
-- **Future Work**: Expansion to sentence-level evaluation, cross-linguistic comparisons (ASL, BSL), and improving the vision encoder (e.g., through hand-region attention or temporal motion encoders).
-
-## Related Work & Insights
-- **Comparison to SLR/SLT datasets**: Unlike WLASL or CSL-Daily, which are training-centric, CNSL-bench is a dedicated MLLM evaluation benchmark.
-- **Comparison to general MLLM benchmarks**: CNSL-bench fills the gap left by benchmarks like MMMU or Video-MME, which lack professional sign language content.
-- **Relationship to recent LLM-SLR works**: While works like Sign2GPT use LLMs as enhancers, CNSL-bench assesses the intrinsic capabilities of MLLMs.
+- **Ours**: (1) Limited to lexical-level; (2) covers only National Sign Language (excluding ASL/dialects); (3) MCQ format may not capture full open-ended nuances.
+- **Future Work**: Scaling to sentence-level SLT, expanding to international sign languages, and investigating specialized vision encoders (hand-region attention/motion encoders) to bridge the modality gap.
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐⭐ 
 - Experimental Thoroughness: ⭐⭐⭐⭐⭐ 
 - Writing Quality: ⭐⭐⭐⭐ 
-- Value: ⭐⭐⭐⭐⭐
+- Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ACL 2026\] Hybrid Autoregressive-Diffusion Model for Real-Time Sign Language Production](hybrid_autoregressive-diffusion_model_for_real-time_sign_language_production.md)
 - [\[ACL 2026\] CArtBench: Evaluating Vision-Language Models on Chinese Art Understanding, Interpretation, and Authenticity](cartbench_evaluating_vision-language_models_on_chinese_art_understanding_interpr.md)
 - [\[ACL 2026\] GroupToM-Bench: Benchmarking Group Theory of Mind and Nonlinear Social Emergence in MLLMs](grouptom-bench_benchmarking_group_theory_of_mind_and_nonlinear_social_emergence_.md)
 - [\[ACL 2026\] VULCA-Bench: A Multicultural Vision-Language Benchmark for Evaluating Cultural Understanding](vulca-bench_a_multicultural_vision-language_benchmark_for_evaluating_cultural_un.md)
 - [\[ACL 2026\] AICA-Bench: Holistically Examining the Capabilities of VLMs in Affective Image Content Analysis](aica-bench_holistically_examining_the_capabilities_of_vlms_in_affective_image_co.md)
-- [\[CVPR 2026\] IF-Bench: Benchmarking and Enhancing MLLMs for Infrared Images with Generative Visual Prompting](../../CVPR2026/multimodal_vlm/if-bench_benchmarking_and_enhancing_mllms_for_infrared_images_with_generative_vi.md)
 
 </div>
 

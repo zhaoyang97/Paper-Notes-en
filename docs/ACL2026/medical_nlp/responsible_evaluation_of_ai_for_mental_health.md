@@ -2,13 +2,14 @@
 title: >-
   [Paper Note] Responsible Evaluation of AI for Mental Health
 description: >-
-  [ACL 2026][Medical NLP][Paper Note] Through a systematic analysis of 135 ACL Anthology papers, this work reveals five major flaws in the evaluation of AI mental health tools (reliance on generic metrics, lack of human evaluation, neglect of safety and fairness, etc.) and proposes an interdisciplinary evaluation taxonomy integrating clinical psychometrics
+  [ACL 2026][Medical NLP][Paper Note] Through a systematic analysis of 135 ACL Anthology papers, this work reveals five major flaws in the evaluation of AI mental health tools (reliance on generic metrics, lack of human evaluation, neglect of safety and fairness, etc.) and proposes an interdisciplinary evaluation taxonomy (assessment/intervention/informati
 tags:
   - ACL 2026
   - Medical NLP
 date: 2026-05-08
-content_hash: 2970349fb053b7eb
+content_hash: f7573a90f95fd418
 ---
+<!-- Generated automatically by src/gen_stubs.py -->
 # Responsible Evaluation of AI for Mental Health
 
 **Conference**: ACL 2026  
@@ -18,93 +19,93 @@ content_hash: 2970349fb053b7eb
 **Keywords**: Mental Health AI, Evaluation Framework, Clinical Validity, Responsible AI, Taxonomy
 
 ## TL;DR
-Through a systematic analysis of 135 ACL Anthology papers, this work reveals five major flaws in the evaluation of AI mental health tools (reliance on generic metrics, lack of human evaluation, neglect of safety and fairness, etc.) and proposes an interdisciplinary evaluation taxonomy integrating clinical psychometrics and implementation science (assessment/intervention/information synthesis × validity/reliability/implementation/maintenance).
+Through a systematic analysis of 135 ACL Anthology papers, this work reveals five major flaws in the evaluation of AI mental health tools (reliance on generic metrics, lack of human evaluation, neglect of safety and fairness, etc.) and proposes an interdisciplinary evaluation taxonomy (assessment/intervention/information synthesis $\times$ validity/reliability/implementation/maintenance) that integrates clinical psychometrics and implementation science.
 
 ## Background & Motivation
-**Background**: LLMs demonstrate broad potential in mental health—from depression detection in social media to therapeutic dialogue systems and clinical summarization—but evaluation practices remain fragmented and disconnected from clinical reality.
+**Background**: LLMs demonstrate broad potential in mental health—ranging from depression detection on social media to therapeutic dialogue systems and clinical summarization—but evaluation practices remain fragmented and disconnected from clinical reality.
 
-**Limitations of Prior Work**: Current evaluations rely excessively on technical metrics (accuracy, F1, BLEU, etc.), ignoring psychometric validity, therapeutic appropriateness, and user experience. 50% of the papers use only AI/NLP metrics, and 52% lack any human evaluation.
+**Limitations of Prior Work**: Current evaluations rely excessively on technical metrics (Accuracy, F1, BLEU, etc.), ignoring psychometric validity, therapeutic appropriateness, and user experience. 50% of the papers use only AI/NLP metrics, and 52% lack any human evaluation.
 
-**Key Challenge**: AI tools may score high on general NLG metrics yet fail to meet clinical standards or user needs. In high-risk fields like mental health, insufficient evaluation can lead to misleading conclusions, unintended harm, and inequitable outcomes.
+**Key Challenge**: AI tools may achieve high scores on general NLG metrics yet fail to meet clinical standards or user needs. In the high-stakes domain of mental health, insufficient evaluation can lead to misleading conclusions, unintended harm, and inequitable outcomes.
 
-**Goal**: To rethink "responsible evaluation"—what is evaluated, by whom, and for what purpose—and propose a structured interdisciplinary evaluation framework.
+**Goal**: To rethink "responsible evaluation"—what is evaluated, who evaluates, and for what purpose—and to propose a structured interdisciplinary evaluation framework.
 
-**Key Insight**: By combining 100-year traditions of psychometrics (validity/reliability) with modern implementation science (feasibility/acceptability/sustainability), differentiated evaluation dimensions are defined for three categories of AI mental health tools.
+**Key Insight**: By combining the century-old psychometric tradition (validity/reliability) with modern implementation science (feasibility/acceptability/sustainability), differentiated evaluation dimensions are defined for three categories of AI mental health tools.
 
-**Core Idea**: Different types of AI mental health tools (assessment/intervention/information synthesis) face distinct risks and require layered evaluation strategies matched to their maturity.
+**Core Idea**: Different types of AI mental health tools (assessment/intervention/information synthesis) face distinct risks and require layered evaluation strategies aligned with their maturity levels.
 
 ## Method
 
 ### Overall Architecture
-This is a position paper that does not propose a new model but rather establishes "rules" for responsible evaluation of AI mental health tools. It performs three tasks: first, a coded analysis of 135 *CL papers to quantify biases in current evaluation practices; second, it establishes three pillars of an evaluation framework—categorizing tools by critical risk, evaluating across four dimensions (validity × reliability × implementation × maintenance), and calibrating evaluation expectations across three maturity levels; finally, it uses five case studies to demonstrate how this framework exposes evaluation blind spots.
+This is a position paper that establishes guidelines for the "responsible evaluation of AI mental health tools" rather than proposing a new model. The work involves three components: first, a coding analysis of 135 *CL papers to quantify biases in current evaluation practices; second, the establishment of three pillars for the evaluation framework—categorizing tools by their most critical risks, evaluating via four dimensions ("Validity $\times$ Reliability $\times$ Implementation $\times$ Maintenance"), and calibrating evaluation expectations across three maturity levels; third, the use of five case studies to demonstrate how the framework identifies evaluation blind spots in existing research.
 
 ### Key Designs
 
-**1. Classification of Three AI Mental Health Tool Types (Assessment / Intervention / Information Synthesis): Categorizing by critical risk rather than technology**
+**1. Classification of Three AI Mental Health Tools (Assessment / Intervention / Information Synthesis): Categorization by critical risk rather than technical approach**
 
-One-size-fits-all evaluation criteria cannot cover the unique risks of different tools—assessment tools risk misdiagnosis, intervention tools risk causing harm, and synthesis tools risk information omission. Thus, tools are first split into three categories: Assessment (e.g., depression detection) requires validation of construct and criterion validity, asking "does it truly measure the intended psychological construct?"; Intervention (e.g., CBT chatbots) requires validation of therapeutic efficacy and safety, asking "is it effective and safe?"; Information Synthesis (e.g., clinical summaries) requires validation of accuracy and workflow improvement, asking "does it miss key information and truly assist the clinician?". By prioritizing classification, subsequent evaluation dimensions can be targeted effectively.
+A "one-size-fits-all" evaluation standard cannot address the unique risks of different tools—assessment tools risk misdiagnosis, intervention tools risk causing harm, and synthesis tools risk information omission. This paper categorizes tools by risk: Assessment (e.g., depression detection) must verify construct and criterion validity; Intervention (e.g., CBT chatbots) must verify therapeutic efficacy and safety; Information Synthesis (e.g., clinical summaries) must verify accuracy and workflow improvement. This classification allows for targeted evaluation dimensions.
 
-**2. Four-Dimensional Evaluation Framework (Validity × Reliability × Implementation × Maintenance): Merging core concepts of psychometrics and implementation science into an evaluation matrix**
+**2. Four-Dimensional Evaluation Framework (Validity $\times$ Reliability $\times$ Implementation $\times$ Maintenance): Integrating core concepts of psychometrics and implementation science**
 
-Existing evaluations are almost entirely concentrated on a single subtype of validity (construct validity), while reliability, implementation, and long-term maintenance are largely ignored. This framework lays out four areas: Validity (is it doing the right thing?), including construct and criterion validity; Reliability (is it consistent?), including consistency across time, populations, and internal consistency; Implementation (is it usable?), including feasibility, effectiveness, and acceptability; Maintenance (is it sustainable?), including generalizability, safety monitoring, and unintended consequences. By bringing these terms into a single matrix, researchers can immediately identify which evaluation cells they have missed.
+Existing evaluations are almost entirely concentrated on one subtype of validity (construct validity), while reliability, implementation, and maintenance are largely ignored. This framework addresses four areas: Validity (Is it correct? Includes construct and criterion validity); Reliability (Is it consistent? Includes cross-temporal, cross-population, and internal consistency); Implementation (Is it usable? Includes feasibility, effectiveness, and acceptability); Maintenance (Is it persistent? Includes generalizability, safety monitoring, and unintended consequences). By merging psychometric traditions with implementation science, researchers can identify missing evaluation cells.
 
-**3. Three-Layer Maturity Path (Exploratory → Validation → Deployment): Calibrating evaluation expectations by development stage**
+**3. Three-Tier Maturity Path (Exploratory → Validation → Deployment): Calibrating expectations by development stage**
 
-Early exploratory papers should not be required to complete full clinical deployment-level evaluations, yet they should not be allowed to ignore evaluation limitations. This design divides research into three layers: the early exploratory stage (68% of papers) focuses on technical verification; the intermediate validation stage (32%) begins to introduce human evaluation and expert judgment; and the advanced deployment stage requires comprehensive clinical integration and long-term monitoring. Its intent is not to grade papers but to allow each work to clarify "which layer I am at and which dimensions are still missing," aligning evaluation expectations with tool maturity.
+Early exploratory research should not be required to meet clinical deployment-level evaluation standards, yet it should not ignore evaluation limitations. Research is divided into three tiers: Early Exploratory (68% of papers) focused on technical verification; Intermediate Validation (32%) introducing human evaluation and expert judgment; and Advanced Deployment requiring comprehensive clinical integration and long-term monitoring. This mechanism aligns evaluation expectations with tool maturity.
 
 ### Loss & Training
-Not applicable (Position paper/Review). Annotation methodology: two annotators (one postdoc + one PhD student) coded 135 papers, with 50% of the data double-coded. Cohen's kappa = 0.67 (substantial agreement), with disagreements resolved by a senior annotator.
+Not applicable (Position paper/Review). Annotation methodology: Two annotators (one postdoc and one PhD student) encoded 135 papers, with 50% of the data double-annotated, achieving Cohen's $\kappa=0.67$ (substantial agreement); discrepancies were resolved by a senior annotator.
 
 ## Key Experimental Results
 
-### ACL Anthology Paper Analysis (135 papers, last 5 years)
+### ACL Anthology Paper Analysis (135 papers, past 5 years)
 
-| Observed Evaluation Practices | Percentage |
+| Observed Evaluation Practice | Proportion |
 |----------------|------|
-| Only use AI/NLP metrics | 50% |
+| AI/NLP metrics only | 50% |
 | No human evaluation | 52% |
-| Human evaluation without expert participation | 29% |
-| Evaluation guidelines not shared | 17% |
-| Evaluation limitations not discussed | 36% |
+| Human evaluation without experts | 29% |
+| Not sharing evaluation guidelines | 17% |
+| No discussion of evaluation limitations | 36% |
 
-### Maturity Distribution (60 randomly sampled papers)
+### Maturity Distribution (60-paper random sample)
 
-| Maturity Level | Percentage | Description |
+| Maturity Level | Proportion | Description |
 |-----------|------|------|
-| Early Exploratory (Technical Verification) | 68% | Retrospective datasets + automatic metrics |
-| Intermediate Validation (Human Evaluation) | 32% | Expert judgment + user studies |
-| Advanced Deployment | 0% | Clinical integration + long-term monitoring |
+| Early Exploratory (Technical Verification) | 68% | Retrospective datasets + Automated metrics |
+| Intermediate Validation (Human Evaluation) | 32% | Expert judgment + User studies |
+| Advanced Deployment | 0% | Clinical integration + Long-term monitoring |
 
 ### Key Findings
-- Over half of the papers lack human evaluation entirely, which is concerning in the high-risk field of mental health.
-- Trends in recent years are improving: papers published in 2025 more frequently involve clinical experts.
-- Five case studies show that the taxonomy effectively identifies blind spots: e.g., an LLM rating scale (Study I) demonstrated psychometric validity but lacked validation of generalizability across populations; a CBT reframing tool (Study IV) was the only case to reach implementation-level evaluation (N=15,531 users).
-- Performance on adolescents (ages 13-17) was significantly lower than on adults but improved after targeted adaptation, illustrating the necessity of fairness monitoring.
+- Over half of the papers lack any human evaluation, a concerning finding in the high-stakes field of mental health.
+- Recent trends are improving: papers published in 2025 involve clinical experts more frequently.
+- Five case studies demonstrate that the taxonomy effectively identifies blind spots: for instance, an LLM rating scale (Study I) demonstrated psychometric validity but lacked cross-population generalizability, while a CBT restructuring tool (Study IV) was the only case reaching implementation-level evaluation ($N=15,531$ users).
+- Efficacy for the adolescent group (13-17 years old) was significantly lower than for adults but improved after targeted adaptation, illustrating the necessity of fairness monitoring.
 
 ## Highlights & Insights
-- Bridges century-old psychometric traditions with NLP evaluation practices, providing a clinically acceptable evaluation language for AI mental health researchers.
-- The taxonomy design is pragmatic: rather than requiring RCTs for all papers, it sets evaluation expectations based on maturity layers.
-- Five case studies spanning assessment, intervention, and synthesis tools concretely demonstrate how the taxonomy exposes evaluation blind spots.
-- Call to the NLP community: even if a tool is not intended for clinical deployment, rigorous evaluation is the foundation for gaining the trust of domain experts.
+- Bridges century-old psychometric traditions with NLP evaluation practices, providing a clinically acceptable language for AI mental health researchers.
+- The taxonomy design is pragmatic: rather than requiring RCTs for all papers, it layers evaluation expectations based on maturity.
+- Five case studies across assessment, intervention, and synthesis categories specifically demonstrate how the taxonomy exposes evaluation blind spots.
+- A call to the NLP community: rigorous evaluation is the foundation for gaining the trust of domain experts, even if the tools are not intended for clinical deployment.
 
 ## Limitations & Future Work
-- The taxonomy is a conceptual framework and has not yet undergone empirical validation.
+- The taxonomy is a conceptual framework that has not yet been empirically validated.
 - The selection of case studies may not represent all emerging AI mental health tools.
-- Specific operational metrics are not provided, leaving refinement for future work.
-- The framework is primarily oriented towards Western clinical contexts; its applicability across cultures and languages remains to be tested.
-- Suggestion: For researchers without clinical resources, proxy evaluations such as structured patient simulations, scenario-based assessments grounded in clinical guidelines, and bias audits can substitute for some high-level evaluations.
+- Specific operational metrics are not provided and remain for future work to detail.
+- The framework primarily addresses Western clinical contexts; its cross-cultural and cross-linguistic applicability requires testing.
+- Recommendation: For researchers lacking clinical resources, technical proxies such as structured patient simulation, guideline-based scenario evaluation, and bias audits can serve as partial high-level evaluations.
 
 ## Related Work & Insights
-- **Wallach et al. (2025)**: Frames generative AI evaluation as a social science measurement problem; this work specifies it for the mental health domain.
-- **Sharma et al. (2023, 2024)**: The multi-stage evaluation of the CBT reframing tool serves as a model for the evaluation paradigm recommended here (N=15,531 users + fairness monitoring).
-- **Eberhardt et al. (2025)**: The LLM rating scale demonstrates how to apply psychometric principles (CFI=0.968, ω=0.953) to AI evaluation.
-- Insight: The AI for Mental Health field needs a "common language" of evaluation standards to connect NLP researchers, clinicians, and implementation scientists.
+- **Wallach et al. (2025)**: Frames generative AI evaluation as a social science measurement problem; this paper contextualizes that for the mental health domain.
+- **Sharma et al. (2023, 2024)**: The multi-stage evaluation of CBT restructuring tools serves as a model evaluation paradigm recommended by this paper ($N=15,531$ users + fairness monitoring).
+- **Eberhardt et al. (2025)**: LLM rating scales demonstrate how psychometric principles (CFI=0.968, $\omega$=0.953) can be applied to AI evaluation.
+- Insight: The AI for Mental Health field needs a "common language" of evaluation standards to bridge the gap between NLP researchers, clinicians, and implementation scientists.
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐ Systematically introduces psychometrics into the NLP evaluation framework with a necessary interdisciplinary perspective.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Systematic coding of 135 papers + 5 case studies, combining quantitative and qualitative analysis.
-- Writing Quality: ⭐⭐⭐⭐⭐ Rigorous logic, clear taxonomy, and tight connection between case studies and the framework.
-- Value: ⭐⭐⭐⭐⭐ Plays an important role in promoting the standardization of AI mental health evaluations.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Systematic encoding of 135 papers combined with 5 case studies provides both quantitative and qualitative depth.
+- Writing Quality: ⭐⭐⭐⭐⭐ Logical rigor, clear taxonomy, and tight integration between case studies and the framework.
+- Value: ⭐⭐⭐⭐⭐ Acts as a significant driver for the standardization of AI mental health evaluation.
 
 ## Rating
 - Novelty: TBD

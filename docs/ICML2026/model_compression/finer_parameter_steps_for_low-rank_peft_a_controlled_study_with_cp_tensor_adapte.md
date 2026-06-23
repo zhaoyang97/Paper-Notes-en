@@ -2,13 +2,13 @@
 title: >-
   [Paper Note] Finer Parameter Steps for Low-Rank PEFT: A Controlled Study with CP Tensor Adapters
 description: >-
-  [ICML 2026][Model Compression][LoRA] The authors replace LoRA's "rank-based growth" with "CP tensor component growth," successfully reducing the single-step parameter increment from 4096 to 193 (a 21$\times$ reduction). Through a rigorous controlled study on OPT-1.3B with SST-2, RTE, and BoolQ, they demonstrate that finer parameter granularity serves as a
+  [ICML 2026][Model Compression][LoRA] The authors replace LoRA's "growth by rank" with "growth by CP tensor component," reducing the single-step parameter increment from 4096 to 193 (a 21× reduction). Through a strict controlled study on OPT-1.3B / SST-2/RTE/BoolQ, they prove that finer parameter granularity serves as a tool for "diagnosing PEFT budget sen
 tags:
   - ICML 2026
   - Model Compression
   - LoRA
 date: 2026-05-08
-content_hash: eb4c6a82ee0a9add
+content_hash: 32fd4cdcee556e9b
 ---
 # Finer Parameter Steps for Low-Rank PEFT: A Controlled Study with CP Tensor Adapters
 
@@ -16,58 +16,60 @@ content_hash: eb4c6a82ee0a9add
 **arXiv**: [2606.00428](https://arxiv.org/abs/2606.00428)  
 **Code**: Not yet public  
 **Area**: Model Compression  
-**Keywords**: Parameter-efficient fine-tuning, CP tensor decomposition, LoRA, budget granularity, ablation study  
+**Keywords**: Parameter-Efficient Fine-Tuning, CP Tensor Decomposition, LoRA, Budget Granularity, Ablation Study  
 
 ## TL;DR
-The authors replace LoRA's "rank-based growth" with "CP tensor component growth," successfully reducing the single-step parameter increment from 4096 to 193 (a 21$\times$ reduction). Through a rigorous controlled study on OPT-1.3B with SST-2, RTE, and BoolQ, they demonstrate that finer parameter granularity serves as an effective tool for "diagnosing PEFT budget sensitivity," though it does not inherently yield a superior accuracy-budget curve—presenting a sober negative-neutral conclusion rather than "our method is better" promotion.
+The authors replace LoRA's "growth by rank" with "growth by CP tensor component," reducing the single-step parameter increment from 4096 to 193 (a 21× reduction). Through a strict controlled study on OPT-1.3B / SST-2/RTE/BoolQ, they prove that finer parameter granularity serves as a tool for "diagnosing PEFT budget sensitivity," but does not inherently yield a better accuracy-budget curve—yielding a sober negative-neutral conclusion rather than "our method is stronger" propaganda.
 
 ## Background & Motivation
-**Background**: Parameter-efficient fine-tuning (PEFT) has become the de facto standard for adapting large models. LoRA is the most widely adopted baseline, where updates are expressed as $\Delta W = BA$, and rank $r$ simultaneously controls expressivity and the number of trainable parameters. Subsequent works (AdaLoRA, DoRA, CapaBoost, etc.) mostly focus on "rank allocation" or "reparameterizing updates," while few have questioned "rank as the unit of budget granularity" itself.
+**Background**: Parameter-Efficient Fine-Tuning (PEFT) has become the de facto standard for adapting large models. LoRA is the most widely adopted baseline—where the update is written as $\Delta W = BA$, and the rank $r$ controls both expressivity and the number of trainable parameters. Subsequent works (AdaLoRA, DoRA, CapaBoost, etc.) mostly revolve around "how to allocate rank" or "how to reparameterize updates," but few question "rank as a unit of budget granularity" itself.
 
-**Limitations of Prior Work**: Rank acts not only as a knob for expressivity but also as a discrete scale for the parameter budget. For an attention projection of $2048\times 2048$ in OPT-1.3B, adding one rank requires storing $r(m+n)=4096$ scalars. This implies LoRA has no observable data points between $r=1$ and $r=2$, leaving the low-budget region extremely sparsely sampled. If one aims to observe whether "adding 200 parameters is useful," LoRA lacks the resolution to capture that change.
+**Limitations of Prior Work**: Rank is not only a dial for expressivity but also a discrete scale for the budget. On a $2048\times 2048$ attention projection in OPT-1.3B, adding one rank requires storing $r(m+n)=4096$ scalars. This means LoRA has no observable points between $r=1$ and $r=2$, leaving the low-budget region extremely sparsely sampled. If one wants to see "if adding 200 parameters is actually useful," LoRA cannot sample at that resolution.
 
-**Key Challenge**: When the parameter step size of two PEFT methods differs by 20$\times$, traditional "matched-budget" comparisons systematically favor coarse-grained methods—since fine-grained methods are forced to compete only at those few coarse budget points, missing the opportunity to showcase intermediate performance between LoRA ranks. Conversely, merely displaying results at points LoRA cannot reach is unfair, as those points might exist in a region of diminishing returns. A new comparison protocol is required.
+**Key Challenge**: When two PEFT methods differ in parameter step size by 20x, traditional "matched-budget" comparisons systematically favor coarse-grained methods—because fine-grained methods are forced to compete only at those few coarse budget points, losing the chance to demonstrate intermediate performance between two LoRA ranks. Conversely, simply showing "our method has results at points LoRA cannot measure" is also unfair, as those points might exist in a low-yield region of the curve. A new comparison protocol is needed.
 
-**Goal**: (1) Identify a control method with significantly finer steps than LoRA; (2) Design a more honest comparison protocol than matched-budget; (3) Determine through a strict controlled study whether "fine granularity itself brings better accuracy-budget curves."
+**Goal**: (1) Find a control method with much finer steps than LoRA; (2) Design a more honest comparison protocol than matched-budget; (3) Answer through a strict controlled study whether "finer granularity itself brings a better accuracy-budget curve."
 
-**Key Insight**: CP tensor decomposition naturally provides finer granularity. Reshaping a $2048\times 2048$ $\Delta W$ into a $32\times 64\times 32\times 64$ 4-way tensor means each rank-1 component only requires $32+64+32+64+1=193$ scalars. One CP component equals approximately $1/21$ of a LoRA rank. The cost is that these rank-1 directions are Kronecker-structured, making expressivity more constrained than general dense outer products.
+**Key Insight**: CP tensor decomposition naturally provides finer granularity—reshaping the $2048\times 2048$ $\Delta W$ into a $32\times 64\times 32\times 64$ 4-way tensor, where each rank-1 component requires only $32+64+32+64+1=193$ scalars. One CP component is approximately equivalent to $1/21$ of a LoRA rank. The cost is that these rank-1 directions are Kronecker-structured, typically having more limited expressivity than a dense outer product.
 
-**Core Idea**: Use fixed-component CP adapters as a fine-grained control and define a "best-under-budget" curve $U_\mathcal{A}(B)=\max_{k:P_\mathcal{A}(k)\le B} A_\mathcal{A}(k)$. Compare the methods under a protocol with strictly fixed target modules, trainer, data caps, and seeds, confirming key cells with 100 seeds.
+**Core Idea**: Use fixed-component CP adapters as a fine-grained control, define a "best-under-budget" curve $U_\mathcal{A}(B)=\max_{k:P_\mathcal{A}(k)\le B} A_\mathcal{A}(k)$, and compare the two under a protocol with strictly fixed target modules / trainer / data caps / seeds, confirming key cells with 100-seed experiments.
 
 ## Method
 
 ### Overall Architecture
-This paper addresses whether finer parameter granularity itself yields a better accuracy-budget curve in PEFT. To this end, it structures the approach into two layers: an upper-level **comparison protocol** that treats "parameter step size" as an observable variable, and a lower-level **ultra-fine step CP tensor adapter** acting as the fine-grained control against LoRA. For each $2048\times 2048$ update $\Delta W$ in the q_proj and v_proj of OPT-1.3B (48 projections across 24 layers), the update is reshaped into a 4-way tensor $\mathcal{T}(\Delta W)\in\mathbb{R}^{32\times 64\times 32\times 64}$ and fitted with $c$ normalized rank-1 components. During training, the backbone is frozen in fp16, updating only the CP factors (or LoRA $A, B$) and the classification head.
+The question ours aims to answer is whether finer parameter granularity itself in PEFT can result in a better accuracy-budget curve. To this end, the method is built on two levels: the upper level is a **comparison protocol** that treats "parameter step size"—previously an ignored variable—as an observable variable; the lower level is a **CP tensor adapter with extremely fine steps** acting as the fine-grained control against LoRA. The process is as follows: for the q_proj and v_proj of OPT-1.3B (48 projections across 24 layers), each $2048\times 2048$ update $\Delta W$ is first reshaped into a 4-way tensor $\mathcal{T}(\Delta W)\in\mathbb{R}^{32\times 64\times 32\times 64}$, then fitted with $c$ normalized rank-1 components. During training, the backbone is frozen in fp16, and only the CP factors (or LoRA's $A,B$) and the classification head are updated, finally placing CP and LoRA together for comparison under a strictly controlled protocol.
 
 ### Key Designs
 
-**1. Parameter Step + best-under-budget Comparison Protocol: Elevating the "20x step difference" to an explicit metric**
+**1. Parameter Step + best-under-budget Comparison Protocol: Turning the "20x step difference" from a hidden assumption into an explicit metric**
 
-Traditional PEFT comparisons overlook a trap: rank is both an expressivity knob and a discrete budget scale, yet different methods have vastly different scale densities. The paper makes this explicit by defining a parameter step $\Delta P_\mathcal{A}(k)=P_\mathcal{A}(k+1)-P_\mathcal{A}(k)$ for each adapter family $\mathcal{A}$. For $2048\times 2048$, LoRA's step is $\Delta P_{\text{LoRA}}=4096$, while CP's step is 193, a 21$\times$ difference. Based on this, the best-under-budget curve $U_\mathcal{A}(B)=\max_{k\in\mathcal{K}_\mathcal{A}:P_\mathcal{A}(k)\le B} A_\mathcal{A}(k)$ is defined, where $A_\mathcal{A}(k)$ is the accuracy on the held-out evaluation set chosen by the best-dev checkpoint. This curve makes the density of sampled points visible. The authors honestly state that because CP samples more points, small differences on the curve should not be interpreted as a reliable win—a self-restrained stance that sets the tone for the study.
+A hidden trap in traditional PEFT comparison is that rank is not just an expressivity dial but a discrete budget scale, and the density of these scales varies wildly across methods. Ours makes this explicit—defining the parameter step size for each adapter family $\mathcal{A}$ as $\Delta P_\mathcal{A}(k)=P_\mathcal{A}(k+1)-P_\mathcal{A}(k)$. LoRA's budget is $P_{\text{LoRA}}(r)=r(m+n)$, so on a $2048\times 2048$ matrix, adding one rank results in a step $\Delta P_{\text{LoRA}}=m+n=4096$, while CP adds only 193 scalars per component, a 21x difference. Based on this, given a budget cap $B$, the best-under-budget curve is defined as $U_\mathcal{A}(B)=\max_{k\in\mathcal{K}_\mathcal{A}:P_\mathcal{A}(k)\le B} A_\mathcal{A}(k)$, where $\mathcal{K}_\mathcal{A}$ is the set of discrete budget points actually tested for that family, and $A_\mathcal{A}(k)$ is the held-out eval accuracy selected by the best-dev checkpoint. This curve reads as "the best result achievable within budget $B$ across all points tested for this family," explicitly showing the sparsity of test points.
 
-**2. Normalized CP Tensor Parameterization: A stable control family with steps 21x finer than LoRA**
+Crucially, the authors deliberately define $U_\mathcal{A}(B)$ as a **descriptive** metric rather than a model selection rule—traditional papers either match a few budget points (hiding that LoRA has no intermediate options) or report the best run for each (hiding that one family might have tested more points); whereas here it is explicitly stated that "CP tests more points, so minor differences on the best curve should not be interpreted as a reliable win." This self-restraint sets the temperate tone of the work.
 
-To observe the "unsampled" interval between LoRA ranks, the authors reshape $\Delta W\in\mathbb{R}^{2048\times 2048}$ into a 4-way tensor $\mathcal{T}(\Delta W)\in\mathbb{R}^{32\times 64\times 32\times 64}$ and express it in CP form: $\mathcal{T}(\Delta W)=\sum_{s=1}^{c}\lambda_s\, u_s^{(1)}\circ u_s^{(2)}\circ u_s^{(3)}\circ u_s^{(4)}$ with $\|u_s^{(\ell)}\|_2=1$. A single component stores 193 scalars, roughly $1/21$ of a LoRA rank. After reshaping back to a matrix, a single component corresponds to:
+**2. Normalized CP Tensor Parameterization: Providing a control family with 21x finer steps than LoRA and stable training**
+
+To observe the "unsampled" interval between two LoRA ranks, a control with sufficiently fine steps is needed. $\Delta W\in\mathbb{R}^{2048\times 2048}$ is reshaped by row/column splits into a 4-way tensor $\mathcal{T}(\Delta W)\in\mathbb{R}^{32\times 64\times 32\times 64}$, and written in CP form as $\mathcal{T}(\Delta W)=\sum_{s=1}^{c}\lambda_s\, u_s^{(1)}\circ u_s^{(2)}\circ u_s^{(3)}\circ u_s^{(4)}$, where each factor vector is constrained by $\|u_s^{(\ell)}\|_2=1$. Such a component stores only $32+64+32+64=192$ factor scalars plus one magnitude $\lambda_s$, totaling 193 scalars, which is exactly $\approx 1/21$ of a LoRA rank. After reshaping back to a matrix, a single component corresponds to:
 
 $$\Delta W_s=\lambda_s\,(u_s^{(1)}\otimes u_s^{(2)})(u_s^{(3)}\otimes u_s^{(4)})^\top$$
 
-This is a Kronecker-structured rank-1 matrix. Its expressivity is more constrained than LoRA’s dense rank-1 product, meaning fine granularity comes at the cost of expressivity. Forward-pass normalization is used to eliminate scale ambiguity and maintain first-order optimization stability.
+This is a Kronecker-structured rank-1 matrix where the directions are constrained by the tensor structure, making its expressivity more limited than a standard LoRA dense rank-1 outer product—finer granularity comes at an expressivity cost. Implementation-wise, unit normalization is performed in the forward pass (optimizer still stores original factors), which eliminates scale ambiguity and preserves the stability of first-order optimization. In terms of memory, adding one LoRA rank across 48 projections adds 196,608 parameters + 1.50 MB Adam state, while one CP component adds 9,264 parameters + 0.071 MB Adam state; parameters and optimizer memory are strictly proportional. The authors also clarify why CP was chosen over Tucker / Tensor-Train / BTT: CP has the smallest step size and most stable training among candidates, providing a pure control for "fine-grained but expressivity-limited" updates; furthermore, $c$ is fixed rather than adaptive to isolate the "budget granularity" variable from adaptive allocation.
 
-**3. Strict Control Protocol + Selective 100-seed Confirmation: Separating "fine-grained advantage" from experimental noise**
+**3. Strict Control Protocol + Selective 100-seed Validation: Decoupling "granularity advantage" from "experimental noise"**
 
-PEFT comparisons can easily fail when small gains are buried in seed noise. Consequently, all methods share the same HuggingFace Trainer, fp16 backbone, 48 target modules, and data caps (1000 train / 500 dev / 1000 eval). While base experiments use seeds 0, 1, and 2, critical cells for each task—such as the SST-2 low-budget plateau or the BoolQ saturation point—utilize 100 seeds to obtain reliable mean and variance.
+The easiest place for a PEFT comparison to fail is when a seemingly 0.2% improvement is actually buried in seed noise. To address this, all methods share the same HuggingFace Trainer, the same fp16 backbone, the same 48 target q/v projection modules, the same data cap (1000 train / 500 dev / 1000 eval), the same 5000 steps with eval every 1000 steps, and the same best-dev checkpoint selection rule. LoRA uses lr=$10^{-4}$ and CP uses $2\times 10^{-4}$, both pre-selected without per-method sweeps to avoid comparing "who tuned more carefully." Base grids are run with seeds 0,1,2, but for the most critical cells of each task (SST-2 low-budget plateau, BoolQ rise-and-saturation, RTE persistent gap), an additional 100 runs (seeds 0-99) are performed to obtain reliable mean ± variance. The best-under-budget curve is simply the max across all tested $r$ or $c$. The authors also honestly disclose that CP tested 13 capacities (1, 2, 4, 8, 16, 21, 28, 36, 43, 64, 85, 128, 171) while LoRA only tested 6 (1, 2, 3, 4, 6, 8), so CP naturally benefits from more sampling in the best-curve comparison.
 
 ### Loss & Training
-Standard cross-entropy is applied to the classification head. The backbone is frozen, and only adapter parameters and the classification head are updated. The setup uses an fp16 backbone and the AdamW optimizer. CP factors are normalized in the forward pass. Training runs for 5000 steps, with evaluation every 1000 steps to select the best-dev checkpoint for reporting.
+Standard cross-entropy is used on the classification head. The backbone is frozen; only the adapter parameters and classification head are updated with an AdamW optimizer on an fp16 backbone. CP factors are unit-norm normalized in the forward pass to eliminate scale ambiguity. Each task is capped at 1000 train / 500 dev / 1000 eval; 5000 steps are run, with evaluation on the dev set every 1000 steps to select the best-dev checkpoint for reporting eval results. Both CP and LoRA are applied to q_proj / v_proj, consistent with typical LoRA configurations.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**Matched-budget comparison** (Average of seeds 0, 1, 2; $\Delta$ eval = CP - LoRA):
+**Matched-budget Comparison** (Average of seeds 0,1,2, $\Delta$ eval = CP - LoRA):
 
 | Task | Budget Tier | LoRA eval | CP eval | $\Delta$ eval |
-|------|--------|-----------|---------|--------------|
+|------|-------------|-----------|---------|---------------|
 | SST-2 | Low ($r=2$) | 0.937 | 0.931 | -0.006 |
 | SST-2 | Mid ($r=4$) | 0.939 | 0.933 | -0.005 |
 | SST-2 | High ($r=8$) | 0.932 | 0.936 | +0.004 |
@@ -78,14 +80,14 @@ Standard cross-entropy is applied to the classification head. The backbone is fr
 | BoolQ | Mid | 0.742 | 0.740 | -0.001 |
 | BoolQ | High | 0.735 | 0.740 | +0.005 |
 
-The matched-budget results show that while methods appear tied on SST-2 and BoolQ, LoRA consistently outperforms CP on RTE by 1.6–3.1%, indicating that matching budgets does not imply equivalence.
+Conclusion: Under matched-budget, the two methods effectively "tie" on SST-2 and BoolQ (within ±0.6% gap), but LoRA consistently outperforms by 1.6–3.1% on RTE—indicating that matching budget does not imply method equivalence.
 
-**Best-under-budget + 100-seed confirmation** (Key cells from Table 4):
+**Best-under-budget + 100-seed Validation** (Key cells from Table 4):
 
 | Task | Setting | Params | Eval (seed 0-99) |
 |------|---------|--------|------------------|
 | SST-2 | LoRA $r=1$ | 196,608 | $0.937\pm0.005$ |
-| SST-2 | CP $c=21$ (≈matched) | 194,544 | $0.930\pm0.005$ |
+| SST-2 | CP $c=21$ (≈Budget) | 194,544 | $0.930\pm0.005$ |
 | RTE | LoRA $r=6$ | 1,179,648 | $0.760\pm0.015$ |
 | RTE | CP $c=28$ | 259,392 | $0.738\pm0.030$ |
 | BoolQ | LoRA $r=1$ | 196,608 | $0.743\pm0.013$ |
@@ -94,48 +96,54 @@ The matched-budget results show that while methods appear tied on SST-2 and Bool
 
 ### Ablation Study
 
-| Configuration | Key Findings | Description |
-|------|---------|------|
-| SST-2 + $c\in\{1,2,4,8,16\}$ (Below $r=1$) | Tiny CP reaches ~0.93 at points LoRA cannot measure | Early plateau; adding more components yields no gain |
-| BoolQ + $c\in\{1,...,43\}$ | Accuracy rises monotonically from 0.662 to 0.737, then saturates | Fine granularity is useful at low budget, but caps below LoRA |
-| RTE + $c\in\{1,...,171\}$ | CP consistently lower than LoRA by 1.7-2.2% | Expressivity gap cannot be remedied by fine granularity |
-| Tensorization split sensitivity (Table 5) | Alternative splits have minimal impact | Choice of reshape is not the performance bottleneck |
+| Configuration | Key Finding | Description |
+|---------------|-------------|-------------|
+| SST-2 + $c\in\{1,2,4,8,16\}$ (Below $r=1$) | Tiny CP reaches ~0.93 at budget points LoRA cannot measure | Early plateau; adding more components yields no gain |
+| BoolQ + $c\in\{1,...,43\}$ | Accuracy rises monotonically from 0.662 to 0.737, then saturates | Finer granularity is useful at low budget, but caps below LoRA |
+| RTE + $c\in\{1,...,171\}$ | CP consistently lower than LoRA by 1.7-2.2% | Expressivity gap cannot be overcome by finer granularity |
+| Tensorization split sensitivity (Table 5) | Minimal impact of alternative splits | Choice of reshape is not the performance bottleneck |
 
 ### Key Findings
-- **SST-2 Early Plateau**: A tiny CP adapter ($c=2$, 9.4% of LoRA $r=1$ budget) reaches 0.934±0.009. This demonstrates that SST-2 saturates at an extremely low budget—a plateau LoRA’s coarse grid cannot detect.
-- **BoolQ Rise-and-Saturation**: The CP curve rises monotonically from $c=1$ (0.662) to $c=43$ (0.737) before leveling off. This interval reveals that BoolQ requires more capacity at low budgets, although it still caps below LoRA $r=1$ (0.743).
-- **RTE Persistent Gap**: CP fails to reach LoRA’s performance in any configuration. This confirms that Kronecker-structured expressivity constraints are a definitive disadvantage on certain tasks.
-- **Honest Declaration**: The authors explicitly note that because CP is sampled at more capacity points, minor advantages in the best-under-budget curve should not be interpreted as superiority.
-- **Proportional Memory**: One LoRA rank step in Adam state (1.50 MB) matches 21 CP component steps (1.49 MB), ensuring the comparison is not "hiding" optimizer memory costs.
+- **Early plateau on SST-2**: A tiny CP adapter ($c=2$, 9.4% of LoRA $r=1$ budget) already reaches 0.934±0.009, indicating that SST-2 saturates in the extremely low-budget region; LoRA's sparse rank grid fails to even see this plateau—a prime demonstration of finer granularity as a "diagnostic tool."
+- **Rise-and-saturation on BoolQ**: The CP curve rises monotonically from $c=1$ (0.662) to $c=43$ (0.737) before slowly leveling off to 0.739 at $c=64$. The interval $c=1$ to $c=43$ is the info-rich zone telling us that "BoolQ definitely needs more capacity at low budgets," yet it still caps below LoRA $r=1$ (0.743).
+- **Persistent gap on RTE**: After 100-seed validation, CP $c=28$ is 0.738±0.030 and CP $c=64$ is 0.736±0.013, while LoRA $r=6$ is 0.760±0.015—no CP configuration caught up to LoRA. This shows the limited expressivity of the Kronecker structure is a hard bottleneck on some tasks.
+- **Honest Disclaimer**: The authors explicitly write that "CP tested more capacity points than LoRA; thus, small differences on the best-under-budget curve should not be interpreted as a reliable win"—this level of self-restraint is rare in PEFT literature.
+- One LoRA rank step of Adam state (1.50 MB) corresponds exactly to 21 CP component steps (totaling 1.49 MB); parameter and optimizer memory ratios are strictly matched, ensuring No "budget theft" occurred.
 
 ## Highlights & Insights
-- **Methodology > Algorithm**: The true contribution is framing "parameter step size" as an observable variable. Future PEFT papers should ideally report $\Delta P$ and best-under-budget curves.
-- **Value of Negative-Neutral Results**: The paper proves that "finer granularity $\neq$ better curve," debunking claims that smaller step sizes inherently imply superiority.
-- **CP as a Diagnostic Tool**: While CP may not be the new SOTA, it identifies task-specific budget sensitivities (e.g., early saturation in SST-2 vs. capacity needs in BoolQ) that LoRA alone cannot provide.
+- **Methodology > Algorithm**: The true contribution is framing "parameter step size" as a neglected hidden variable in PEFT comparisons. Any future PEFT paper should be viewed with caution if it does not report $\Delta P$ and the best-under-budget curve.
+- **Value of Negative-Neutral Conclusions**: Ours clearly proves that "finer granularity $\neq$ better curve," debunking the rhetoric of "our method is better because its steps are smaller." The whole PEFT community should read this.
+- **CP as a Diagnostic Tool**: Even if CP isn't the new SOTA, it tells you that "SST-2 saturates at 9.4% budget, BoolQ needs medium capacity, and RTE is expressivity-bound"—task-level budget sensitivity analysis that cannot be obtained by running LoRA alone.
+- **Transferability**: The parameter step + best-under-budget protocol can be applied to any PEFT comparison (DoRA vs AdaLoRA, prefix tuning vs prompt tuning), model compression (varying sparsity patterns), or NAS (varying discrete search space density).
+- **The Double-Edged Sword of Kronecker Structures**: CP components reshape to $(u^{(1)}\otimes u^{(2)})(u^{(3)}\otimes u^{(4)})^\top$. This constraint doesn't hurt on "low-rank signal" tasks like SST-2 but causes drops on tasks like RTE that require more free directions—consistent with observations in structured low-rank methods like ASVD/CapaBoost.
 
 ## Limitations & Future Work
-- The study is limited to OPT-1.3B and three classification tasks, excluding larger models like Llama-2-7B or generative/reasoning tasks.
-- No per-method learning rate sweep was performed; the CP learning rate ($2\times 10^{-4}$) might not be optimal.
-- Tensorization splits were primarily fixed at $32\times 64\times 32\times 64$; more irregular or higher-way splits were not fully explored.
-- Inherent CP structures cannot be directly merged into dense matrices as easily as LoRA, affecting deployment considerations.
+- Only tested on OPT-1.3B; not scaled to LLaMA-2-7B or larger. Tasks only cover three classification benchmarks, missing generative/reasoning tasks.
+- No per-method learning rate sweep; CP's lr=$2\times 10^{-4}$ might not be optimal. The authors admit this is a "controlled pilot" rather than a fully optimized benchmark.
+- Tensorization split focused on $32\times 64\times 32\times 64$; while Table 5 explores sensitivity, irregular splits (e.g., $16\times 128$) or higher way-counts (5-way) are not fully explored.
+- $c$ is fixed and non-growing; obvious directions like adaptive/hybrid CP-LoRA or dynamic component allocation were excluded—though this was a deliberate choice to isolate the granularity variable.
+- The best-under-budget curve depends on the test grid density; CP tested 13 $c$ points while LoRA tested 6 $r$ points, giving CP an inherent sampling advantage.
+- Inference latency and deployment cost after merging weights were not analyzed; unlike LoRA, CP cannot be directly merged back into a dense matrix because of its Kronecker structure.
 
 ## Related Work & Insights
-- **vs. LoRA**: Both are reparameterized $\Delta W$; CP has 21$\times$ finer steps but limited expressivity.
-- **vs. AdaLoRA/DoRA**: These focus on rank allocation, whereas this study isolates "budget granularity."
-- **vs. Tensorized PEFT (LoRETTA, TeRA, etc.)**: Most tensor methods use complex adaptive schemes; this paper uses fixed CP as a "pure" control to avoid engineering confounding factors.
-- **Insight**: PEFT evaluation should move from matched-budget to best-under-budget protocols with disclosed step sizes.
+- **vs LoRA**: Both are reparameterized $\Delta W$, CP steps are 21× smaller but expressivity is limited; ours proves "finer step $\neq$ superior."
+- **vs AdaLoRA / DoRA / Adaptive Rank Allocation**: These modify LoRA's rank allocation strategy and are orthogonal to ours. Combining them with CP might yield higher curves, but ours fixed $c$ to isolate the granularity variable.
+- **vs LoRETTA / LoRTA / CaRA / TensLoRA / AdaZeta / TeRA / KRAdapter** (Various Tensorized PEFT): Most are combinations of "tensorization + sharing/initialization/adaptation"; ours takes fixed CP as the purest control to avoid confounding engineering improvements.
+- **vs Fixed-Rank / Riemannian LoRA (Bian 2025, Zhang & Pilanci 2024)**: These study low-rank geometric properties; ours studies "discrete budget resolution"—they are complementary.
+- **vs Surveys** (Yang 2024a, Li 2026): Surveys classify PEFT by "architecture/optimization/deployment," but none discuss "parameter step" as an independent axis; ours fills this gap.
+- Insights: (1) All future PEFT papers should report $\Delta P$; (2) Evaluation protocols should upgrade from matched-budget to best-under-budget + step size disclosure; (3) Similar step analysis applies to PTQ (different bit-widths), structured pruning (different block sizes); (4) Repeating this study on BERT / LLaMA / VLM to find "low-granularity sensitive" tasks would be a great follow-up.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐
-- Experimental Thoroughness: ⭐⭐⭐⭐
-- Writing Quality: ⭐⭐⭐⭐⭐
-- Value: ⭐⭐⭐⭐
+- Novelty: ⭐⭐⭐⭐ (Parameter step size as an observable framing is novel; CP adapter usage is novel in this context).
+- Experimental Thoroughness: ⭐⭐⭐⭐ (Controlled protocol is strict, 100-seed validation is solid, though limited to OPT-1.3B and three tasks).
+- Writing Quality: ⭐⭐⭐⭐⭐ (Uncommon honesty; explicitly disclaims CP sampling bias and doesn't claim SOTA; methodology is clear).
+- Value: ⭐⭐⭐⭐ (Not a new algorithm, but the framing changes future PEFT comparison protocols; a must-read for practitioners and reviewers).
 
 ## Rating
-- Novelty: TBD
-- Experimental Thoroughness: TBD
-- Writing Quality: TBD
-- Value: TBD
+- Novelty: To be rated
+- Experimental Thoroughness: To be rated
+- Writing Quality: To be rated
+- Value: To be rated
 
 <!-- RELATED:START -->
 

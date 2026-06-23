@@ -2,44 +2,44 @@
 title: >-
   [Paper Note] Breaking Dual Bottlenecks: Evolving Unified Multimodal Models into Self-Adaptive Interleaved Visual Reasoners
 description: >-
-  [ICML 2026][Multimodal VLM][X2I] To address the "understanding–generation gap" (capable of understanding but failing to generate) in unified multimodal models for anything-to-image (X2I) tasks, this paper proposes the Self-Adaptive Interleaved Reasoner. Using a hierarchical data synthesis pipeline, 50,000 samples are diverted into three modes: direct
+  [ICML 2026][vlm_reasoning][X2I] To address the "understanding-generation gap" (capable of understanding but failing to generate) in unified multimodal models for anything-to-image (X2I) tasks, this paper proposes the Self-Adaptive Interleaved Reasoner. Using a hierarchical data synthesis pipeline, 50,000 samples are routed between three modes: direct
 tags:
   - ICML 2026
-  - Multimodal VLM
+  - vlm_reasoning
   - X2I
   - GRPO
 date: 2026-05-08
-content_hash: fe797991624bbef7
+content_hash: 97e1b3ce2b569646
 ---
 # Breaking Dual Bottlenecks: Evolving Unified Multimodal Models into Self-Adaptive Interleaved Visual Reasoners
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.14709](https://arxiv.org/abs/2605.14709)  
-**Code**: GitHub (Available, noted as "released at GitHub" in the paper but no specific URL provided)  
+**Code**: GitHub (Indicated as "released at GitHub" in the paper, but URL not provided)  
 **Area**: Multimodal VLM / Unified Models / Reinforcement Learning  
-**Keywords**: Unified Multimodal Models, X2I, Interleaved Reasoning, GRPO, Self-adaptive Planning  
+**Keywords**: Unified Multimodal Models, X2I, Interleaved Reasoning, GRPO, Adaptive Planning
 
 ## TL;DR
-To address the "understanding–generation gap" (capable of understanding but failing to generate) in unified multimodal models for anything-to-image (X2I) tasks, this paper proposes the Self-Adaptive Interleaved Reasoner. Using a hierarchical data synthesis pipeline, 50,000 samples are diverted into three modes: direct generation, self-reflection, and multi-step planning. By employing SFT and GRPO training with step-wise reasoning rewards and intra-group complexity penalties, Emu3.5 outperforms closed-source models such as GPT-4o and Gemini 2.5 Flash on KRIS-Bench and OmniContext.
+To address the "understanding-generation gap" (capable of understanding but failing to generate) in unified multimodal models for anything-to-image (X2I) tasks, this paper proposes the Self-Adaptive Interleaved Reasoner. Using a hierarchical data synthesis pipeline, 50,000 samples are routed between three modes: direct generation, self-reflection, and multi-step planning. The model is trained via SFT + GRPO with step-wise reasoning rewards and intra-group complexity penalties, enabling Emu3.5 to outperform closed-source models like GPT-4o and Gemini 2.5 Flash on KRIS-Bench and OmniContext.
 
 ## Background & Motivation
 
-**Background**: Unified multimodal models (e.g., Emu3.5, BAGEL, OmniGen) can perform both understanding and generation within a single framework and have begun incorporating CoT-style interleaved reasoning for X2I (arbitrary conditions → image) tasks.
+**Background**: Unified multimodal models (e.g., Emu3.5, BAGEL, OmniGen) can perform both understanding and generation within a single framework and have begun introducing CoT-style interleaved reasoning for X2I tasks (any condition → image).
 
-**Limitations of Prior Work**: The authors attribute the failure of unified models in complex X2I tasks to an "understanding–generation gap," decomposed into two specific bottlenecks: (i) **attention entanglement bottleneck**—direct one-pass generation for complex prompts almost inevitably fails, necessitating a step-by-step approach. However, existing Plan-then-Generate methods perform "blind planning," where the planner is unaware of the generator's actual capabilities, often leading to infeasible plans. (ii) **visual refinement bottleneck**—single-pass pixel synthesis often contains flaws, requiring further reflection and repair. However, existing Generate-then-Reflect methods mix "what is wrong" and "how to fix it" in unstructured text, which is inefficient for composite errors and often relies on frequent switching between multiple models, causing inference costs to soar.
+**Limitations of Prior Work**: The authors attribute the failure of unified models in complex X2I tasks to an "understanding-generation gap," decomposed into two specific bottlenecks: (i) **attention entanglement bottleneck**—direct one-shot generation for complex prompts almost inevitably fails, requiring step-by-step execution. However, existing Plan-then-Generate methods perform "blind planning," where the planner is unaware of the generator's actual execution capabilities, often producing impractical plans. (ii) **visual refinement bottleneck**—single-pass pixel synthesis often contains flaws, requiring reflection and repair. However, existing Generate-then-Reflect methods mix "what is wrong" and "how to fix it" in unstructured text, which is inefficient for composite errors and often relies on frequent model switching, causing inference costs to soar.
 
-**Key Challenge**: Both strategies (Plan-then-Generate and Generate-then-Reflect) only solve one bottleneck and follow fixed workflows. Given the high variance in instruction complexity, applying a single mode leads to either over-reasoning for simple prompts or under-reasoning for complex ones. No existing method can "adaptively select the mode based on prompt complexity."
+**Key Challenge**: Plan-then-Generate and Generate-then-Reflect strategies each address only one bottleneck and typically follow fixed workflows. Since instruction complexity varies significantly, applying a single mode leads to over-reasoning for simple prompts or insufficient reasoning for complex ones. No existing method can "adaptively select the mode based on prompt complexity."
 
-**Goal**: To train a unified model capable of autonomously switching between "direct generation, reflection-correction, and multi-step planning" based on instruction complexity and its own capabilities, maintaining efficiency without relying on external models.
+**Goal**: To train a unified model capable of autonomously switching between "direct generation," "reflection/correction," and "multi-step planning" based on instruction complexity and its own capabilities while maintaining generation efficiency without relying on external models.
 
-**Key Insight**: First, a hierarchical escalation data pipeline automatically categorizes prompts of varying complexity into the three modes. Then, SFT teaches the model the syntax, and finally, RL teaches the strategy (when each mode is most cost-effective).
+**Key Insight**: A hierarchical escalation data pipeline is used to automatically categorize prompts of varying complexity into three modes. SFT then teaches the model the required syntax, followed by RL to teach the strategy (deciding when each mode is most cost-effective).
 
-**Core Idea**: Formulate "when to think harder" as a reinforcement learning objective for autonomous model decision-making—using step-wise rewards to ensure logical reasoning and intra-group complexity penalties to suppress over-reasoning for marginal gains.
+**Core Idea**: Transforming "when to think more" into an autonomous reinforcement learning objective—using step-wise rewards to ensure logical reasoning and intra-group complexity penalties to suppress over-reasoning (marginal gains at the cost of excessive steps).
 
 ## Method
 
 ### Overall Architecture
-A two-stage pipeline: **(A) Data Construction**—Given raw X2I inputs, the baseline unified model generates an initial result. Qwen3-VL-235B (Analyzer) scores it across four dimensions: "instruction, consistency, quality, and common sense." If it passes, it is categorized as *Direct*. If not, it enters a self-reflection loop (max 3 rounds), where the Analyzer writes reflection prompts and Gemini-3-Pro-Image acts as the Generator for redrawing. If it still fails after 3 rounds, the Analyzer diagnoses the cause; if the cause is "prompt too complex," it escalates to *Multi-step* mode (decomposing sub-tasks for step-by-step execution + intermediate evaluation); otherwise (e.g., lacking domain knowledge), it is discarded. After human review, 50,000 high-quality interleaved samples are obtained. **(B) Training**—SFT adapts to interleaved reasoning syntax with selective loss masking to skip failed intermediate images. GRPO strengthens strategy selection, with rewards weighted by Outcome, Format, and Step-wise reasoning, plus an intra-group complexity penalty to encourage "winning with fewer steps."
+The pipeline consists of two stages: **(A) Data Construction**—Given a raw X2I input, the baseline unified model first generates an output. Qwen3-VL-235B (Analyzer) scores it across four dimensions: instruction adherence, consistency, quality, and common sense. If it passes, it is categorized as *Direct*. Otherwise, it enters a self-reflection loop (max 3 rounds) where the Analyzer writes a reflection prompt and Gemini-3-Pro-Image (Generator) redraws. If it still fails after 3 rounds, the Analyzer diagnoses the failure: if due to "excessive prompt complexity," it escalates to *Multi-step* mode (decomposing sub-tasks for step-by-step execution + intermediate evaluation); otherwise (e.g., lacking domain knowledge), it is discarded. After human verification, 50,000 high-quality interleaved samples are obtained. **(B) Training**—SFT adapts the model to interleaved reasoning syntax with selective loss masking to skip failed intermediate images. GRPO reinforces strategy selection with a weighted reward comprising Outcome, Format, and Step-wise reasoning terms, plus an intra-group complexity penalty to encourage "winning with fewer steps."
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
@@ -51,33 +51,33 @@ flowchart TD
         D1 -->|Pass| M1["Direct Mode"]
         D1 -->|Fail| R1["Self-reflection Loop ≤3 Rounds<br/>Analyzer Reflection → Generator Redraw"]
         R1 -->|Fixed| M2["Self-Reflection Mode"]
-        R1 -->|3 Rounds Fail · Prompt Complex| M3["Multi-step Mode<br/>Sub-task Decomposition"]
-        R1 -->|3 Rounds Fail · Domain Knowledge| DROP["Discard"]
+        R1 -->|3 Rounds Fail · Too Complex| M3["Multi-step Mode<br/>Sub-task Decomposition"]
+        R1 -->|3 Rounds Fail · Lacks Knowledge| DROP["Discard"]
     end
     M1 --> CLEAN
     M2 --> CLEAN
     M3 --> CLEAN
-    CLEAN["Trajectory Pruning + Human Review<br/>50k Interleaved Data"] --> SFT["SFT with Selective Loss Masking<br/>Failed intermediate images as context only"]
-    SFT --> GRPO["GRPO + Step-wise Reward + Complexity Penalty<br/>Optimize 'Win with Minimum Steps' in RL"]
+    CLEAN["Trajectory Pruning + Human Review<br/>50k Interleaved Data"] --> SFT["SFT with Selective Loss Masking<br/>Failed intermediate images context-only"]
+    SFT --> GRPO["GRPO + Step-wise Reward + Complexity Penalty<br/>Optimize 'winning with minimum steps'"]
     GRPO --> OUT["Self-Adaptive Interleaved Reasoner"]
 ```
 
 ### Key Designs
 
-**1. Hierarchical Escalation Data Pipeline (Analyzer ⇋ Generator): Demonstrating "Mode Selection by Complexity"**
+**1. Hierarchical Escalation Data Pipeline (Analyzer ⇋ Generator): Modeling "Mode Selection by Complexity"**
 
-For the model to learn adaptive mode selection, the training data must demonstrate the three modes categorized by difficulty. The authors built an automated escalation pipeline: Qwen3-VL-235B serves as "judge, diagnostician, and planner," while Gemini-3-Pro-Image acts as the generator. Each X2I sample is first generated directly and scored across dimensions (instruction, consistency, quality, common sense). Successful cases are marked as *Direct*. Failures enter up to 3 rounds of self-reflection; if fixed, they are categorized as *Self-Reflection*. For persistent failures, the Analyzer diagnoses the cause—if it is "prompt too complex," the sample escalates to *Multi-step* (sub-task decomposition + step-wise evaluation). Successful multi-step trajectories undergo pruning to remove failed reflection attempts, leaving clean "failed direct trial → sub-task decomposition → step-by-step execution" trajectories. This ensures the model learns to output directly for simple prompts, reflect for medium ones, and decompose for complex ones.
+To enable the model to select modes adaptively, training data must demonstrate three distinct modes categorized by complexity. The authors built an automated escalation pipeline using Qwen3-VL-235B as the "Reviewer + Diagnostician + Planner" and Gemini-3-Pro-Image as the Generator. Each sample starts with direct generation and is scored. Successes are filed under *Direct*. Failures enter up to 3 rounds of *Self-Reflection*. If fixed, they become *Self-Reflection* data. If failure persists, the Analyzer diagnoses the cause: "complex prompts" escalate to *Multi-step* (sub-task decomposition), while "lack of domain knowledge" leads to discarding. After successful multi-step completion, trajectory pruning is applied to remove failed attempts, leaving a clean "direct trial failure → sub-task decomposition → step-by-step execution" sequence. This ensures simple prompts learn direct generation, while complex ones learn explicit decomposition.
 
-**2. SFT with Selective Loss Masking: Failed Intermediate Images as "Context" not "Targets"**
+**2. SFT with Selective Loss Masking: Failed Intermediate Images as "Context," not "Targets"**
 
-Multi-step trajectories contain numerous failed intermediate images. If standard SFT AR-NLL calculates loss on these, it teaches the model "how to generate low-quality images," harming fidelity. The authors apply loss only to selected subsequences $\mathcal{O}$: *Direct* mode calculates $\{G_1, E_1\}$; *Self-Reflection* mode calculates only the final diagnosis $E_{K-1}$, reflection prompt $R_{K-1}$, and final successful image $G_K, E_K$, masking all prior failures; *Multi-step* mode calculates $E_1$ plus the full planned sequence $\{S_i, G_i, E_i\}$. Consequently, failure information serves only as textual context for "reflection," while pixel-level artifacts are never imitated as generation goals.
+Multi-step trajectories contain failed intermediate images. Applying standard NLL loss to these would teach the model to generate low-quality images, harming fidelity. The solution is masking the loss to apply only to the selected subsequence $\mathcal{O}$: *Direct* mode only trains on $\{G_1, E_1\}$; *Self-Reflection* mode trains on the final diagnosis $E_{K-1}$, reflection prompt $R_{K-1}$, and the successful image $G_K, E_K$, masking all prior failures; *Multi-step* mode trains on $E_1$ and the full planning sequence $\{S_i, G_i, E_i\}$. Failure information thus enters the context as text for "reflection" without having their pixel artifacts imitated as generation targets.
 
-**3. GRPO + Step-wise Reasoning Reward + Intra-group Complexity Penalty: Optimizing "Win with Minimum Steps"**
+**3. GRPO + Step-wise Reasoning Reward + Intra-group Complexity Penalty: Incorporating Efficiency into RL**
 
-SFT teaches syntax, but "when to think more" is a strategic issue addressed via RL. The composite reward $\mathcal{R}_{\text{total}}=\alpha_1\mathcal{R}_o+\alpha_2\mathcal{R}_f+\alpha_3\mathcal{R}_s$ includes an outcome reward $\mathcal{R}_o$, a format binary reward $\mathcal{R}_f$, and a dense reasoning reward $\mathcal{R}_s=\frac{1}{T}\sum_t \text{Analyzer}(\text{text}_t)$ for each segment of intermediate text. To prevent over-reasoning induced by pure outcome rewards, the authors introduce the **intra-group complexity penalty**: within a set of sampled trajectories, a subset with "near-highest rewards" (within threshold $\epsilon$) is selected and scaled by the image count $N_{\text{img}}^*/N_{\text{img}}^i$. Trajectories achieving equivalent results with fewer images receive higher scores. This makes "winning the same score with minimum steps" an implicit optimization goal, naturally leaving simple prompts to *Direct* and reserved *Multi-step* for complex ones.
+While SFT teaches syntax, "when to think more" is a strategic problem addressed by RL. The total reward is defined as $\mathcal{R}_{\text{total}}=\alpha_1\mathcal{R}_o+\alpha_2\mathcal{R}_f+\alpha_3\mathcal{R}_s$. Here, $\mathcal{R}_o$ is the weighted average of the 4D outcome score, $\mathcal{R}_f$ is binary format validity, and $\mathcal{R}_s=\frac{1}{T}\sum_t \text{Analyzer}(\text{text}_t)$ provides dense reasoning rewards by scoring intermediate text (failure analysis, reflection prompts, decompositions). To prevent the model from defaulting to higher-scoring multi-step modes (over-reasoning), an intra-group complexity penalty is introduced. Within a group of sampled trajectories, a subset with "near-optimal rewards" (within threshold $\epsilon$) is selected and scaled by the image count: rewards are multiplied by $N_{\text{img}}^*/N_{\text{img}}^i$. This extra credit for achieving equivalent effects with fewer images implicitly optimizes the model to use *Direct* for simple prompts and reserve *Multi-step* for complex ones. Ablations show that removing this term causes the average number of generated images to jump from 1.56 to 2.73 (+75%) with almost no quality gain.
 
 ### Loss & Training
-SFT: Standard AR-NLL on subset $\mathcal{O}$ (Eq. 1). RL: GRPO policy + composite rewards (Eq. 2–5). Backbone = Emu3.5; RL data = 50k samples from UnicEdit-10M / X2Edit / AnyEdit / Pick-a-Pic / UltraEdit.
+SFT: Standard AR-NLL on subset $\mathcal{O}$ (Eq. 1). RL: GRPO policy with the combined reward (Eq. 2–5). Backbone: Emu3.5; RL data: 50,000 samples from UnicEdit-10M, X2Edit, AnyEdit, Pick-a-Pic, and UltraEdit.
 
 ## Key Experimental Results
 
@@ -105,31 +105,31 @@ SFT: Standard AR-NLL on subset $\mathcal{O}$ (Eq. 1). RL: GRPO policy + composit
 | SFT + RL (Full) | **0.89** | **80.18** | **9.35** | **1.56** |
 
 ### Key Findings
-- Removing Reflection drops KRIS by 3 points (78.24 → 75.21); removing Multi-step drops Omni by 0.2 (9.15 → 8.95). Each mode handles distinct issues (quality repair vs. complex multi-subject) and cannot replace the other.
-- Removing the intra-group complexity penalty spikes the average image count from 1.56 to 2.73 (+75%), while Omni scores barely improve (9.38), confirming its role in suppressing over-reasoning.
-- Moving from SFT to SFT+RL reduces avg. images from 2.45 to 1.56 while improving quality, proving RL learns "winning with fewer steps."
-- Gain is most significant in complex multi-subject scenes like OmniContext’s Multiple/Scene (9.56/9.44 vs Emu3.5's 8.65/8.78), validating the planning mode against "attention entanglement."
+- Removing *Reflection* drops KRIS by 3 points (78.24 → 75.21), while removing *Multi-step* drops Omni by 0.2 (9.15 → 8.95), suggesting the two modes specifically handle "quality repair" and "complex multi-entity scenes" respectively and cannot replace each other.
+- Without the intra-group complexity penalty, the average number of generated images surged from 1.56 to 2.73 (+75%), confirming its role in suppressing over-reasoning.
+- The shift from SFT to SFT+RL decreased average images from 2.45 to 1.56 while simultaneously increasing quality, proving RL learns "winning with fewer steps."
+- Significant gains were observed in OmniContext's "Multiple/Scene" complex multi-entity scenarios (9.56/9.44 vs. Emu3.5's 8.65/8.78), validating that the planning mode effectively resolves "attention entanglement."
 
 ## Highlights & Insights
-- Upgrades "when to think more" to an optimizable strategy and uses an intra-group complexity penalty to integrate efficiency into RL signals—a rare explicit modeling of both quality and efficiency in generation reasoning.
-- The data pipeline uses an Analyzer ⇋ Generator dual-LLM automated escalation, creating a scalable pipeline for complexity-based branching that does not rely on fixed templates.
-- Selective loss masking is a critical trick; in multi-step tasks involving intermediate failures, including those steps in NLL directly determines whether the final model is contaminated by failure samples.
+- "When to think more" is elevated to an optimizable policy, and efficiency is integrated into the RL signal via the intra-group complexity penalty—a rare instance of explicit modeling for both quality and efficiency in generation reasoning.
+- The data pipeline utilizes an automated escalation workflow (Analyzer ⇋ Generator), categorizing data by complexity without relying on static "plan-then-generate" templates, making it transferable to other multimodal tasks requiring adaptive reasoning depth.
+- Selective loss masking is a critical "small trick"; in multi-step tasks involving intermediate failures, including failure steps in NLL can contaminate the model with low-quality examples.
 
 ## Limitations & Future Work
-- Heavy reliance on closed-source models (Qwen3-VL-235B and Gemini-3-Pro-Image) for data construction and step-wise rewards, making reproduction costly and potentially transferring Analyzer bias.
-- Evaluated only on X2I editing/synthesis tasks; applicability to longer-horizon tasks like video or 3D generation is unverified.
-- The hard 3-round threshold for escalating from reflection to multi-step might skip medium-complexity cases that could be fixed in 4-5 rounds; learned confidence could replace fixed thresholds.
+- Strong reliance on closed-source models (Qwen3-VL-235B, Gemini-3-Pro-Image) for data construction and step-wise rewards makes replication costly and risks inheriting Analyzer biases.
+- The experiments focus on X2I editing and synthesis; whether this extends to longer-horizon tasks like video or 3D generation remains unverified.
+- The hard threshold (3-round limit before escalating to multi-step) might overlook moderately complex cases that could be resolved with 4-5 rounds of reflection; learned confidence intervals could replace fixed limits.
 
 ## Related Work & Insights
-- **vs. Plan-then-Generate (Uni-CoT / Echo-4o)**: These use static text planning; Ours performs both reflection and planning with RL-based mode selection, gaining +1.1–1.5 points on OmniContext.
-- **vs. Generate-then-Reflect (VACoT)**: These use iterative reflection without explicit planning; Ours separates "analysis" and "improvement" and adds multi-step planning for complex prompts.
-- **vs. Emu3.5**: Comparing vanilla Emu3.5 (0.86 / 73.75 / 8.82) to Ours (0.89 / 80.18 / 9.35) demonstrates that "adaptive strategy" is a valid next dimension for unified model gains.
+- **vs. Plan-then-Generate (Uni-CoT / Echo-4o)**: Previous works used static textual planning; ours combines reflection and planning, selecting modes via RL, achieving a +1.1–1.5 gain on OmniContext.
+- **vs. Generate-then-Reflect (VACoT)**: Previous works performed iterative reflection without explicit planning; ours explicitly separates "analysis" from "improvement" and adds multi-step planning for complex prompts.
+- **vs. Emu3.5 (Backbone)**: Interleaved reasoning + RL improved KRIS from 73.75 to 80.18 and Omni from 8.82 to 9.35, demonstrating that "adaptive strategy" is the next frontier for unified model improvements.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ First to formulate "adaptive mode selection" as an explicit RL optimization goal with a clever complexity penalty; individual components are known but the synthesis is new.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covers GenEval, KRIS-Bench, and OmniContext with detailed ablations on data modes and RL components, including efficiency metrics.
-- Writing Quality: ⭐⭐⭐⭐ Clear narrative (gap → bottlenecks → adaptive solution) with effective figures for comparison, data, and RL structure.
-- Value: ⭐⭐⭐⭐⭐ Surpasses GPT-4o on KRIS-Bench using the open-source Emu3.5, providing a clear "strategy learning via RL" path for the unified model community.
+- Novelty: ⭐⭐⭐⭐ First to make "adaptive mode selection" an explicit RL optimization goal with a clever complexity penalty; individual components, however, are existing concepts.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers major benchmarks with detailed ablations on data modes and RL components, reporting image count to reflect efficiency.
+- Writing Quality: ⭐⭐⭐⭐ Clear narrative flow (gap → bottlenecks → adaptive solution) with well-structured figures.
+- Value: ⭐⭐⭐⭐⭐ Surpasses GPT-4o using an open-source backbone on KRIS-Bench, providing a practical "strategy learning via RL" roadmap for the unified model community.
 
 <!-- RELATED:START -->
 
@@ -137,11 +137,11 @@ SFT: Standard AR-NLL on subset $\mathcal{O}$ (Eq. 1). RL: GRPO policy + composit
 
 ## Related Papers
 
-- [\[CVPR 2026\] VisPlay: Self-Evolving Vision-Language Models](../../CVPR2026/multimodal_vlm/visplay_self-evolving_vision-language_models.md)
-- [\[ICML 2026\] DIVA: Harnessing the Representation Divergence in Unified Multimodal Models for Mutual Reinforcement](diva_harnessing_the_representation_divergence_in_unified_multimodal_models_for_m.md)
-- [\[CVPR 2026\] EvoLMM: Self-Evolving Large Multimodal Models with Continuous Rewards](../../CVPR2026/multimodal_vlm/evolmm_self_evolving_lmm_continuous_rewards.md)
-- [\[ICCV 2025\] Iris: Breaking GUI Complexity with Adaptive Focus and Self-Refining](../../ICCV2025/multimodal_vlm/iris_breaking_gui_complexity_with_adaptive_focus_and_self-refining.md)
-- [\[CVPR 2026\] TUNA: Taming Unified Visual Representations for Native Unified Multimodal Models](../../CVPR2026/multimodal_vlm/tuna_taming_unified_visual_representations_for_native_unified_multimodal_models.md)
+- [\[CVPR 2026\] POINTS-Long: Adaptive Dual-Mode Visual Reasoning in MLLMs](../../CVPR2026/vlm_reasoning/points-long_adaptive_dual-mode_visual_reasoning_in_mllms.md)
+- [\[ACL 2026\] iReasoner: Trajectory-Aware Intrinsic Reasoning Supervision for Self-Evolving Large Multimodal Models](../../ACL2026/vlm_reasoning/ireasoner_trajectory-aware_intrinsic_reasoning_supervision_for_self-evolving_lar.md)
+- [\[CVPR 2026\] Unified Generation and Self-Verification for Vision-Language Models via Advantage Decoupled Preference Optimization](../../CVPR2026/vlm_reasoning/unified_generation_and_self-verification_for_vision-language_models_via_advantag.md)
+- [\[CVPR 2026\] GGBench: A Geometric Generative Reasoning Benchmark for Unified Multimodal Models](../../CVPR2026/vlm_reasoning/ggbench_a_geometric_generative_reasoning_benchmark_for_unified_multimodal_models.md)
+- [\[ICML 2026\] Learn to Think: Improving Multimodal Reasoning through Vision-Aware Self-Improvement Training](learn_to_think_improving_multimodal_reasoning_through_vision-aware_self-improvem.md)
 
 </div>
 

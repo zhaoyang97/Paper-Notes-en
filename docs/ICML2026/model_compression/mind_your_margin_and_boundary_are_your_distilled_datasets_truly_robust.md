@@ -2,12 +2,12 @@
 title: >-
   [Paper Note] Mind Your Margin and Boundary: Are Your Distilled Datasets Truly Robust?
 description: >-
-  [ICML 2026][Model Compression][Paper Note] This paper proposes the C2R framework, which decomposes the robustness problem in dataset distillation into a "minimum robust margin" problem. By utilizing a "triad" of Attack-Aware Curriculum (AAC), Contrastive Robustness Loss (CRL), and Line Search PGD (LS-PGD), models trained on the synthetic sets achieve an average
+  [ICML 2026][Model Compression][Paper Note] This paper proposes the C2R framework, which reframes the robustness issue in dataset distillation as a "minimum robust margin" problem. By utilizing a triad of "Attack-Aware Curriculum (AAC) + Contrastive Robustness Loss (CRL) + Line-Search PGD (LS-PGD)," models trained on the resulting synthetic sets achieve approxim
 tags:
   - ICML 2026
   - Model Compression
 date: 2026-05-08
-content_hash: bebc90788da4107a
+content_hash: 1d32f740ce286f94
 ---
 # Mind Your Margin and Boundary: Are Your Distilled Datasets Truly Robust?
 
@@ -18,38 +18,38 @@ content_hash: bebc90788da4107a
 **Keywords**: Dataset Distillation, Robust Distillation, Adversarial Curriculum, Robust Margin, Contrastive Learning
 
 ## TL;DR
-This paper proposes the C2R framework, which decomposes the robustness problem in dataset distillation into a "minimum robust margin" problem. By utilizing a "triad" of Attack-Aware Curriculum (AAC), Contrastive Robustness Loss (CRL), and Line Search PGD (LS-PGD), models trained on the synthetic sets achieve an average improvement of approximately 2.8% in robust accuracy across six types of attacks compared to previous robust distillation SOTA.
+This paper proposes the C2R framework, which reframes the robustness issue in dataset distillation as a "minimum robust margin" problem. By utilizing a triad of "Attack-Aware Curriculum (AAC) + Contrastive Robustness Loss (CRL) + Line-Search PGD (LS-PGD)," models trained on the resulting synthetic sets achieve approximately 2.8% higher average robust accuracy across six types of attacks compared to previous robust distillation SOTAs.
 
 ## Background & Motivation
 
-**Background**: Dataset Distillation (DD) compresses a large training set into tens to thousands of synthetic samples, allowing small models trained on the synthetic set to approach the accuracy of those trained on the full dataset. Mainstream approaches include gradient matching, matching training trajectories (MTT), distribution matching, generative distillation, and decoupled methods like SRe2L/D4M. Most methods optimize only for clean accuracy, with adversarial robustness rarely entering the objective function.
+**Background**: Dataset Distillation (DD) compresses a large training set into a few dozen to thousands of synthetic samples, allowing small models trained on the synthetic set to approach the accuracy of full-data training. Mainstream approaches include gradient matching, trajectory matching (MTT), distribution matching, generative distillation, and decoupled methods like SRe2L/D4M. Most methods only optimize for clean accuracy, with adversarial robustness rarely entering the objective function.
 
-**Limitations of Prior Work**: When distilled data is used in security-sensitive scenarios, attacks such as PGD/CW/VMI/Jitter can easily compromise the model. Existing "robust distillation" works (e.g., curvature regularization in GUARD, information bottleneck alignment in ROME, NTK meta-learning by Tsilivis et al.) improve robustness but suffer from a **poor accuracy–robustness trade-off**: clean accuracy drops too much, or they still collapse under strong attacks.
+**Limitations of Prior Work**: When distilled data is used in security-sensitive scenarios, attacks such as PGD, CW, VMI, and Jitter can easily compromise the models. Existing "robust distillation" works (e.g., curvature regularization in GUARD, information bottleneck alignment in ROME, NTK meta-learning by Tsilivis et al.) improve robustness but suffer from a **poor accuracy–robustness trade-off**: clean accuracy drops significantly, or robustness collapses under strong attacks.
 
-**Key Challenge**: The authors identify two structural vulnerabilities in existing methods—(i) **Margin Mismatch**: Robust risk is dominated by a small fraction of samples with the "minimum robust margin" (Schmidt et al. 2018), but existing methods treat all adversarial counterparts equally, diluting the optimization budget on many "already robust enough" easy points; (ii) **Boundary Neglect**: Popular "class-mean alignment" $\mathcal{L}_{\mathrm{rob}}=\sum_c \|\mathbb{E}[e(x_c)]-\mathbb{E}[e(\tilde x_c)]\|_2^2$ only pursues global intra-class similarity without explicitly widening inter-class distances near the decision boundary, where adversarial errors actually occur.
+**Key Challenge**: The authors identify two structural vulnerabilities in existing methods: (i) **Margin Mismatch**: Robust risk is dominated by a small subset of samples with the "minimum robust margin" (Schmidt et al. 2018), yet current methods treat all adversarial counterparts equally, diluting the optimization budget on many "already robust" easy points; (ii) **Boundary Neglect**: Popular "class-mean alignment" $\mathcal{L}_{\mathrm{rob}}=\sum_c \|\mathbb{E}[e(x_c)]-\mathbb{E}[e(\tilde x_c)]\|_2^2$ only seeks global intra-class similarity without explicitly increasing inter-class distance near decision boundaries, where adversarial errors occur.
 
-**Goal**: Design a robust distillation objective that can (a) concentrate optimization on adversarial samples with "minimum margin," (b) explicitly expand class margins near decision boundaries, and (c) avoid exploding distillation costs.
+**Goal**: Design a robust distillation objective that can (a) concentrate optimization on adversarial samples with the "minimum margin," (b) explicitly expand the class separation near decision boundaries, and (c) prevent distillation costs from exploding.
 
-**Key Insight**: Starting from the robust hinge loss $\mathcal{L}_{\mathrm{hinge}}=\mathbb{E}[[1-\underline{m}(x;\theta)]_+]$, it is proven that $\max_i v_i(\theta) = [1-\min_i \underline{m}(x_i;\theta)]_+$, meaning "improving the worst hinge = improving the minimum robust margin." This transforms the question of "whom to optimize" from a heuristic into a provable ranking.
+**Key Insight**: Starting from the robust hinge loss $\mathcal{L}_{\mathrm{hinge}}=\mathbb{E}[[1-\underline{m}(x;\theta)]_+]$, the authors prove that $\max_i v_i(\theta) = [1-\min_i \underline{m}(x_i;\theta)]_+$, meaning "improving the worst hinge loss = improving the minimum robust margin." This transforms the decision of "which sample to optimize" from a heuristic into a provable ranking.
 
-**Core Idea**: Use PGD to estimate the robust margin of each sample $\widehat{m}_{\mathrm{rob}}(x;\theta)=g_\theta(x+\delta_T)$, arrange a curriculum from hard to easy according to $s(x)=[1-\widehat{m}_{\mathrm{rob}}]_+$, and employ an instance-level supervised contrast to force "clean–adv intra-class attraction and nearest inter-class repulsion," while controlling costs via Line Search PGD and class-balanced queues.
+**Core Idea**: Estimate the robust margin $\widehat{m}_{\mathrm{rob}}(x;\theta)=g_\theta(x+\delta_T)$ for each sample using PGD, and sequence the curriculum from hard to easy based on $s(x)=[1-\widehat{m}_{\mathrm{rob}}]_+$. This is coupled with instance-level supervised contrast to force "clean–adv intra-class closeness and nearest inter-class separation," while controlling costs via LS-PGD and class-balanced queues.
 
 ## Method
 
 ### Overall Architecture
 
-C2R follows the standard bi-level structure of DD: the outer loop updates the synthetic set $X=\{(x_s,y_s)\}_{s=1}^N$, and the inner loop short-trains a model $f_\theta$ on $X$. The input is the real dataset and a distillation budget IPC (images per class), and the output is a synthetic set $X$ optimized for robust training. Downstream, standard adversarial training (PGD-AT) is performed on $X$. The cycle of each epoch involves: first using LS-PGD to calculate an adversarial counterpart $\tilde x=x+\delta$ for each synthetic sample $x$ and determining the robust margin score $s(x)=[1-\widehat{m}_{\mathrm{rob}}(x;\theta)]_+$ (higher scores indicate proximity to the decision boundary); then organizing batches from hard to easy (AAC) to focus the Contrastive Robustness Loss (CRL) on the low-margin tail; finally optimizing $\mathcal{L}_{\mathrm{C^2R}}=(1-\eta)\mathcal{L}_{\mathrm{perf}}+\eta\mathcal{L}_{\mathrm{CRL}}$, where clean CE maintains accuracy and CRL protects the boundary, with a class-balanced memory queue providing sufficient hard negatives for CRL while suppressing computation.
+C2R follows the standard bi-level structure of DD: the outer loop updates the synthetic set $X=\{(x_s,y_s)\}_{s=1}^N$, while the inner loop short-trains a model $f_\theta$ on $X$. The input is a real dataset and distillation budget IPC (images per class), and the output is a synthetic set $X$ optimized for robust training. Downstream, standard adversarial training (PGD-AT) is performed on $X$. Each epoch loop functions as follows: first, LS-PGD computes an adversarial counterpart $\tilde x=x+\delta$ for each synthetic sample $x$, deriving a robust margin score $s(x)=[1-\widehat{m}_{\mathrm{rob}}(x;\theta)]_+$ (higher values indicate proximity to the decision boundary). Then, batches are formed from hard to easy via AAC, concentrating the CRL optimization on the low-margin tail. Finally, the total objective $\mathcal{L}_{\mathrm{C^2R}}=(1-\eta)\mathcal{L}_{\mathrm{perf}}+\eta\mathcal{L}_{\mathrm{CRL}}$ is optimized, where clean CE maintains accuracy and CRL secures the boundaries, supported by a class-balanced memory queue to provide sufficient hard negatives while minimizing computation.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    IN["Real Dataset + Distillation Budget IPC"] --> INIT["Initialize Synthetic Set X<br/>Inner Short-training Model"]
+    IN["Real Dataset + Budget IPC"] --> INIT["Initialize Synthetic Set X<br/>Inner short-train model"]
     INIT --> PGD
-    subgraph LOOP["Epoch Loop (Outer Update of Synthetic Set X)"]
+    subgraph LOOP["Epoch Loop (Outer update of synthetic set X)"]
         direction TB
-        PGD["LS-PGD Attack<br/>Warm-start reuse of previous perturbation to generate adv-counterparts<br/>Calculate robust margin score s(x)=[1−margin]₊"]
-        PGD --> AAC["AAC Attack-Aware Curriculum<br/>Batching from hard to easy by s(x)<br/>Focusing on the minimum margin tail"]
-        AAC --> CRL["CRL Contrastive Robustness Loss<br/>Clean–adv same-class attraction + nearest diff-class repulsion<br/>Class-balanced memory queue for hard negatives"]
+        PGD["LS-PGD Attack<br/>Warm-start reuse of perturbations<br/>Calculate margin score s(x)=[1−margin]₊"]
+        PGD --> AAC["AAC Attack-Aware Curriculum<br/>Batching from hard to easy via s(x)<br/>Focus on minimum-margin tail"]
+        AAC --> CRL["CRL Contrastive Robustness Loss<br/>Clean–adv alignment + push nearest negative<br/>Class-balanced memory queue for hard negatives"]
         CRL --> UPD["Optimize Total Loss (1−η)·CE + η·CRL<br/>Update Synthetic Set X"]
     end
     UPD -->|Not converged, next epoch| PGD
@@ -58,31 +58,31 @@ flowchart TD
 
 ### Key Designs
 
-**1. Attack-Aware Curriculum (AAC): Allocating update budgets to samples with the "minimum robust margin"**
+**1. Attack-Aware Curriculum (AAC): Allocating update budget to the "Minimum Robust Margin" subset**
 
-Specifically addressing "margin mismatch"—where previous robust DD diluted optimization across many easy points—AAC relies on the identity $\arg\max_i [1-\underline{m}(x_i)]_+ = \arg\min_i \underline{m}(x_i)$. Improving the worst hinge loss is equivalent to improving the minimum robust margin. Implementation-wise, an inner PGD loop $\delta_{t+1}=\Pi_\Delta(\delta_t+\alpha\,\mathrm{sign}(\nabla_x\ell(f_\theta(x+\delta_t),y)))$ approximates the worst-case perturbation, and the score is set as $s(x)=[1-g_\theta(x+\delta_T)]_+$. Batches are assembled by $s(x)$ in descending order each epoch. This is effective because it directly incorporates the decisive statistic (minimum margin) that determines robust risk in theory into the training loop.
+This targets "margin mismatch." Previous robust DD used class-mean alignment or averaged all adversarial samples, diluting optimization on easy points. AAC is justified by the identity $\arg\max_i [1-\underline{m}(x_i)]_+ = \arg\min_i \underline{m}(x_i)$: improving the worst hinge loss is equivalent to improving the minimum robust margin. In practice, PGD inner loops $\delta_{t+1}=\Pi_\Delta(\delta_t+\alpha\,\mathrm{sign}(\nabla_x\ell(f_\theta(x+\delta_t),y)))$ approximate the worst-case perturbation, with scores $s(x)=[1-g_\theta(x+\delta_T)]_+$ used to sort batches in descending order. This is effective because it directly incorporates the robust theory statistic (minimum margin) into the training loop.
 
-**2. Contrastive Robustness Loss (CRL): Explicitly pushing class intervals near the decision boundary**
+**2. Contrastive Robustness Loss (CRL): Explicitly expanding class intervals near decision boundaries**
 
-Addressing "boundary neglect"—where class-mean alignment $\|\mathbb{E}[e(x_c)]-\mathbb{E}[e(\tilde x_c)]\|^2$ lacks pressure on vulnerable sub-patterns near margins—CRL utilizes instance-level supervised contrast. For an anchor $x_i$, define the positive set $P(i)=\{\tilde x_i\}\cup\{x_j,\tilde x_j: y_j=y_i\}$ and candidate set $A(i)=P(i)\cup\{x_k,\tilde x_k: y_k\neq y_i\}$. The loss is:
+This targets "boundary neglect." Class-mean alignment $\|\mathbb{E}[e(x_c)]-\mathbb{E}[e(\tilde x_c)]\|^2$ only pursues intra-class invariance, failing to apply pressure to fragile sub-patterns near margins. CRL uses instance-level supervised contrast: for an anchor $x_i$, define the positive set $P(i)=\{\tilde x_i\}\cup\{x_j,\tilde x_j: y_j=y_i\}$ and candidate set $A(i)=P(i)\cup\{x_k,\tilde x_k: y_k\neq y_i\}$, with loss:
 
 $$\mathcal{L}_{\mathrm{CRL}}=\frac{1}{M}\sum_i \Big[-\sum_{a\in P(i)} \frac{1}{|P(i)|}\log\frac{\exp(g_{i,a}/\tau)}{\sum_{b\in A(i)}\exp(g_{i,b}/\tau)}\Big],\quad g_{i,a}=\mathrm{sim}(e(x_i),e(a)).$$
 
-The numerator pulls "clean-adv same-class" pairs together, while the denominator applies maximum pressure to the most similar different classes (including their adv versions), which corresponds to the $\max_{k\neq y}f_k(x+\delta)$ term in robust margin formulas. CRL aligns the "adversarial geometry" with "contrastive learning," explicitly pushing the robust boundary.
+The numerator aligns clean–adv pairs, while the denominator exerts maximum pressure on the most similar negatives (including their adv versions)—this $\max$ term directly corresponds to $\max_{k\neq y}f_k(x+\delta)$ in the robust margin formula. CRL thus aligns "adversarial geometry" with "contrastive learning" to push boundaries.
 
-**3. LS-PGD + Class-Balanced Memory Queue: Amortizing costs of inner attacks and full contrast**
+**3. LS-PGD + Class-Balanced Memory Queue: Scaling inner attacks and contrastive sampling**
 
-The first two designs introduce high costs—AAC requires multi-step PGD, and a naive CRL is $O(M^2)$. LS-PGD utilizes warm-starts: caching the previous perturbation $\hat\delta(x)$. If the loss does not decrease at $x+\hat\delta(x)$, it is reused; otherwise, it calculates **one backward pass** to obtain direction $v=\mathrm{sign}(\nabla_x \ell)$, then performs a line search via **pure forward passes** on a geometric sequence $\mathcal{S}=\{\alpha\beta^q\}_{q=0}^{Z-1}$ ($Z\in\{2,3\}$). By starting from the "last optimal $\delta$," the $T$ backward passes are amortized to nearly 1 without decaying attack strength. The memory queue maintains a FIFO buffer of capacity $Q$ for each class. Using low-dimensional random projections $R\in\mathbb{R}^{r\times d}$, it filters the top-$k$ hard negatives, reducing CRL complexity from $O(M^2)$ to $O(Mk)$ and providing a steady supply of informative impostors.
+LS-PGD uses warm-starts: caching the previous perturbation $\hat\delta(x)$; if the loss at $x+\hat\delta(x)$ has not decreased, it is reused. Otherwise, **one backward pass** computes the direction $v=\mathrm{sign}(\nabla_x \ell)$, followed by **pure forward passes** in a line search over a geometric sequence $\mathcal{S}=\{\alpha\beta^q\}_{q=0}^{Z-1}$ to find the optimal $\delta'$. This reduces $T$ backward passes to nearly 1 without losing attack strength. The memory queue maintains historical embeddings per class; a random projection $R\in\mathbb{R}^{r\times d}$ identifies top-$k$ hard negatives, reducing cost from $O(M^2)$ to $O(Mk)$ and solving the hardware-limited batch size issue for contrastive learning.
 
 ### Loss & Training
 
-The outer objective is $\mathcal{L}_{\mathrm{C^2R}}=(1-\eta)\mathcal{L}_{\mathrm{perf}}+\eta\mathcal{L}_{\mathrm{CRL}}$, where $\eta\in[0,1]$ controls the robust/clean trade-off. Note that AAC itself **does not introduce additional loss terms**; it only changes the batch sampling order to concentrate CRL gradients on the low-margin tail. Downstream training on the distilled set follows standard PGD adversarial training with a perturbation budget $|\varepsilon|=2/255$.
+The outer objective is $\mathcal{L}_{\mathrm{C^2R}}=(1-\eta)\mathcal{L}_{\mathrm{perf}}+\eta\mathcal{L}_{\mathrm{CRL}}$, where $\eta\in[0,1]$ controls the robust/clean trade-off. AAC **does not introduce additional loss terms**; it simply reorders batch sampling to concentrate gradients. Downstream training on the distilled set uses standard PGD-AT with a perturbation budget of $|\varepsilon|=2/255$.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Evaluated across 3 foundation datasets (CIFAR-10/100, Tiny-ImageNet) × 5 IPC levels × 5 attack types (FGSM/PGD/CW/VMI/Jitter), plus 6 ImageNet-1K subsets. Representative results for IPC=10 are shown below:
+Evaluated across 3 datasets (CIFAR-10/100, Tiny-ImageNet) × 5 IPCs × 5 attacks (FGSM/PGD/CW/VMI/Jitter) plus 6 ImageNet-1K subsets. Representative results for IPC=10 are shown below:
 
 | Dataset / Attack | IPC | SRe2L | D4M | ROME | C2R | Gain vs ROME |
 |--------------|-----|-------|-----|------|-----|--------------|
@@ -90,65 +90,63 @@ Evaluated across 3 foundation datasets (CIFAR-10/100, Tiny-ImageNet) × 5 IPC le
 | CIFAR-10 / VMI | 10 | 13.28 | 20.14 | ≈ROME | 28.49 | +4.37 |
 | CIFAR-100 / PGD | 10 | 7.08 | 4.25 | 8.42 | 12.92 | **+2.82** |
 | Tiny-ImageNet / PGD | 10 | 1.59 | 0.97 | 1.36 | 3.27 | +1.73 |
-| CIFAR-10 / Clean | 10 | 37.53 | 48.16 | 47.94 | ~46–48 | On par with ROME |
+| CIFAR-10 / Clean | 10 | 37.53 | 48.16 | 47.94 | ~46–48 | Comparable |
 
-Averaged across six attacks: **C2R is approximately 2.8% more robust than the previous best robust DD** without significantly sacrificing clean accuracy.
+Averaged across six attacks: **C2R achieves ~2.8% higher robust accuracy** than previous SOTA robust DD without significant clean accuracy degradation.
 
 ### Ablation Study
 
-| Configuration | Key Observation | Explanation |
+| Configuration | Key Observation | Description |
 |------|---------|------|
 | Full C2R | Best robust accuracy | AAC + CRL + LS-PGD |
-| w/o AAC (uniform sampling) | Significant drop in robust accuracy | Validates "low-margin samples drive robust risk" prediction |
-| w/o CRL (return to mean alignment) | Vulnerable near boundaries | Validates necessity of boundary-level class separation |
-| LS-PGD → Standard $T$-step PGD | Similar accuracy, higher VRAM/Time | LS-PGD is efficient within fixed compute budgets |
-| w/o memory queue | Insufficient hard negatives | Queue is necessary for CRL scalability |
+| w/o AAC (uniform sampling) | Robust accuracy drops significantly | Validates "low-margin samples drive robust risk" |
+| w/o CRL (Mean alignment) | Fragile at boundaries, collapses under strong attacks | Validates necessity of boundary-level separation |
+| LS-PGD → Standard $T$-step PGD | Similar accuracy, higher memory/time | LS-PGD matches performance at lower cost |
+| w/o memory queue | Insufficient hard negatives, CRL gain halved | Queue is essential for CRL scalability |
 
 ### Key Findings
 
-- **Theory-Empirical Consistency**: Disabling AAC leads to the largest loss in robust accuracy, matching the proposition that "min margin dominates robust risk."
-- **CRL > Class-Mean Alignment**: CRL wins across all IPCs, suggesting class-mean alignment is an underfitting objective for boundary geometry.
-- **Larger Gains at Small IPC**: Improvements are most significant at IPC=1/5, as each sample is more critical when the synthetic set is smaller.
-- **Wider Gap under Strong Attacks**: The gap between C2R and baselines is larger under VMI/CW than FGSM, indicating boundary regularization truly widens the robust margin rather than just stopping weak attacks.
+- **Theory-Practice Alignment**: Removing AAC results in the largest robust accuracy drop, confirming the proposition that minimum margins dominate robust risk.
+- **CRL > Class-Mean Alignment**: CRL wins across all IPCs, suggesting mean alignment is an under-fitted objective for boundary geometry.
+- **Greater Gains at Small IPC**: C2R relative improvements are most significant at IPC=1, as fewer samples make margin optimization more critical.
+- **Gap Widens under Strong Attacks**: The gap between C2R and baselines is larger for VMI/CW than FGSM, proving boundary regularization truly widens robust margins.
 
 ## Highlights & Insights
 
-- **Translates robust distillation into a "minimum margin optimization" problem**, providing a computable proxy $s(x)=[1-\widehat{m}_{\mathrm{rob}}]_+$. This approach of "theory points to the worst sample, engineering provides the curriculum" is directly applicable to other robust training tasks.
-- **CRL explicitly encodes the robust margin formula $\max_{k\neq y}f_k(x+\delta)$ into the loss**: The hard negatives in the denominator directly correspond to the $\max$ term, making it more theoretically sound than "class-mean alignment."
-- **LS-PGD is a lightweight engineering trick**: Warm-starts and forward probes maintain PGD intensity while reducing inner costs to nearly 1 backward pass, useful for any method requiring repeated inner-loop attacks.
+- **Translates robust distillation into a "minimum margin optimization" problem**, providing a computable proxy $s(x)=[1-\widehat{m}_{\mathrm{rob}}]_+$ to turn heuristics into provable rankings.
+- **CRL explicitly encodes the robust margin formula $\max_{k\neq y}f_k(x+\delta)$ into the loss**: Hard negatives in the denominator directly map to the $\max$ term, making it more theoretically sound than class-mean alignment.
+- **LS-PGD as an efficient engineering trick**: Warm-starts and forward probes maintain PGD strength while reducing inner costs to nearly one backward pass, applicable to any task requiring repeated inner-loop attacks.
 
 ## Limitations & Future Work
 
-- Experiments focus on classification with a small $\ell_\infty$ budget ($\varepsilon=2/255$); performance under larger budgets, $\ell_2$/general perturbations, or adaptive/AutoAttack is not systematically shown.
-- AAC scores depend on the current $\theta$; early in distillation, $\theta$ is immature, and margin estimates may be unstable.
-- CRL depends on hyperparameters for the memory queue (capacity $Q$, projection dimension $r$), which may require per-dataset tuning.
-- While it includes a clean accuracy constraint, future work could explore if the AAC concept can simultaneously improve clean accuracy by targeting clean hard samples.
+- Experiments focus on classification and small $\ell_\infty$ budgets ($\varepsilon=2/255$); performance under larger budgets, $\ell_2$ perturbations, or AutoAttack was not exhaustively explored.
+- AAC scores depend on the current $\theta$; early-stage estimates of "minimum margin" may be unstable when the model is poorly trained.
+- CRL depends on hyperparameters like queue capacity $Q$ and projection dimension $r$, which currently require manual tuning.
+- While it includes a clean accuracy constraint, the paper does not explore if AAC logic can simultaneously improve hard samples for clean accuracy.
 
 ## Related Work & Insights
-- **vs ROME (Information Bottleneck Alignment)**: ROME uses distribution alignment; C2R moves the focus down to "minimum margin + boundary geometry," proving more stable under strong attacks.
-- **vs GUARD (Curvature Regularization)**: GUARD reduces adversarial sensitivity via curvature; C2R avoids explicit curvature constraints, using a margin-based perspective with clearer theoretical motivation.
-- **vs Standard Robust Training (Madry et al.)**: Madry's AT is a "per-sample worst-case"; C2R elevates this to a "per-dataset worst-case" via curriculum-level selection of min-margin samples, which is better suited for the low-sample regime of DD.
-- **vs SupCon (Khosla et al.)**: CRL is a natural extension of supervised contrast for adversarial geometry, explicitly including $\tilde x$ in the positive set and "nearest inter-class samples" in the negative set.
+- **vs ROME (Information Bottleneck)**: ROME uses global distribution alignment; C2R shifts focus to "minimum margin + boundary geometry," proving more stable under strong attacks.
+- **vs GUARD (Curvature Reg.)**: GUARD regularizes curvature; C2R achieves robustness via margin theory, offering clearer theoretical motivation.
+- **vs Standard Robust Training (Madry et al.)**: Madry's AT targets per-sample worst-case; C2R targets per-dataset worst-case via curricula, fitting the extreme low-data regime of DD.
+- **vs SupCon**: CRL is a natural extension of supervised contrast to adversarial geometry by including $\tilde x$ in positive sets and "nearest negatives" in the denominator.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Combines margin theory, curriculum, and contrastive loss into a clean framework. 
-- Experimental Thoroughness: ⭐⭐⭐⭐ Coverage of multiple datasets, IPCs, and attacks with propositions validated by ablations.
-- Writing Quality: ⭐⭐⭐⭐ Propositions 8/9 clearly explain the "why" behind the minimum margin.
-- Value: ⭐⭐⭐⭐ Robust DD is a key bottleneck for deployment; +2.8% average gain is significant in high-compression scenarios.
+- Novelty: ⭐⭐⭐⭐ Successfully bundles "minimum robust margin" theory, curricula, and contrastive loss into a clean framework. 
+- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive coverage across datasets, IPCs, and attack types with theoretical validation via ablation.
+- Writing Quality: ⭐⭐⭐⭐ Propositions 8/9 provide concise and accurate theoretical grounding for the curriculum.
+- Value: ⭐⭐⭐⭐ Advancing robust DD is critical for deployment; +2.8% gain in high-compression regimes is significant.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
-- [\[ICML 2026\] DIVER: Diving Deeper into Distilled Data via Expressive Semantic Recovery](diverdiving_deeper_into_distilled_data_via_expressive_semantic_recovery.md)
 - [\[NeurIPS 2025\] Graph Your Own Prompt](../../NeurIPS2025/model_compression/graph_your_own_prompt.md)
-- [\[CVPR 2026\] How to Choose Your Teacher for Fine Grained Image Recognition](../../CVPR2026/model_compression/how_to_choose_your_teacher_for_fine_grained_image_recognition.md)
+- [\[ICML 2026\] DIVER: Diving Deeper into Distilled Data via Expressive Semantic Recovery](diverdiving_deeper_into_distilled_data_via_expressive_semantic_recovery.md)
 - [\[ICML 2026\] IDLM: Inverse-distilled Diffusion Language Models](idlm_inverse-distilled_diffusion_language_models.md)
 - [\[ICML 2026\] ArcVQ-VAE: A Spherical Vector Quantization Framework with ArcCosine Additive Margin](arcvq-vae_a_spherical_vector_quantization_framework_with_arccosine_additive_marg.md)
+- [\[ICML 2026\] Critique-Guided Distillation for Robust Reasoning via Refinement](critique-guided_distillation_for_robust_reasoning_via_refinement.md)
 
 </div>
 

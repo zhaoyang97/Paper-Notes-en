@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SWAN: Semantic Watermarking with Abstract Meaning Representation
 description: >-
-  [ACL 2026][LLM Safety][AMR] SWAN uses Abstract Meaning Representation templates to embed watermarks into the semantic graph structure of sentences rather than token or embedding regions. Consequently, the watermark remains detectable through AMR parsing, template matching, and proportion z-tests even after meaning-preserving paraphrasing.
+  [ACL 2026][LLM Safety][AMR] SWAN embeds watermarks into the semantic graph structure of sentences using Abstract Meaning Representation (AMR) templates rather than token or embedding regions. Consequently, after paraphrasing that preserves the original meaning, the watermark can still be detected through AMR parsing, template matching, and propor
 tags:
   - ACL 2026
   - LLM Safety
@@ -10,7 +10,7 @@ tags:
   - paraphrase robustness
   - S2match
 date: 2026-05-08
-content_hash: fa4890afebb815d3
+content_hash: 4e5a0fac97c1e6fc
 ---
 # SWAN: Semantic Watermarking with Abstract Meaning Representation
 
@@ -18,75 +18,75 @@ content_hash: fa4890afebb815d3
 **arXiv**: [2605.04305](https://arxiv.org/abs/2605.04305)  
 **Code**: None  
 **Area**: LLM Security / Text Watermarking / Semantic Representation  
-**Keywords**: Semantic watermarking, AMR, paraphrase robustness, S2match, Text provenance  
+**Keywords**: Semantic Watermarking, AMR, paraphrase robustness, S2match, text provenance  
 
 ## TL;DR
-SWAN uses Abstract Meaning Representation templates to embed watermarks into the semantic graph structure of sentences rather than token or embedding regions. Consequently, the watermark remains detectable through AMR parsing, template matching, and proportion z-tests even after meaning-preserving paraphrasing.
+SWAN embeds watermarks into the semantic graph structure of sentences using Abstract Meaning Representation (AMR) templates rather than token or embedding regions. Consequently, after paraphrasing that preserves the original meaning, the watermark can still be detected through AMR parsing, template matching, and proportion z-testing.
 
 ## Background & Motivation
-**Background**: As LLM-generated text becomes increasingly natural, text watermarking has emerged as a critical technical route for identifying AI-generated content, tracing content sources, and mitigating large-scale misinformation.
+**Background**: LLM-generated text is becoming increasingly natural. Text watermarking has become an important technical route for identifying AI-generated content, tracing content sources, and mitigating large-scale misinformation.
 
-**Limitations of Prior Work**: Mainstream token-level watermarks change token sampling preferences during generation to push more tokens into a secret green list. While simple to implement and detect, these methods easily lose signals when encountering paraphrasing, synonymous replacement, or slight rewriting.
+**Limitations of Prior Work**: Prevailing token-level watermarks inject signals by altering token sampling preferences during generation to push more tokens toward a secret green list. These methods are simple to implement and easy to detect but quickly lose signals when encountering paraphrasing, synonym substitution, or slight rewriting.
 
-**Key Challenge**: Watermarks must be covert and detectable while simultaneously withstanding meaning-preserving rewriting. Token-level signals are too superficial; while embedding-level semantic watermarks are more stable, detection still degrades if paraphrasing pushes the sentence vector into a different semantic region.
+**Key Challenge**: Watermarks must be both imperceptible and detectable while also withstanding semantic-preserving rewrites. Token-level signals are too superficial; while embedding-level semantic watermarks are more stable, detection still degrades if paraphrasing pushes sentence vectors into a different semantic region.
 
-**Goal**: The authors aim to anchor the watermark at a level more stable than tokens and sentence embeddings: the abstract semantic structure of the sentence. As long as rewriting does not alter core semantic relations (e.g., "who did what to whom"), the watermark should be preserved.
+**Goal**: The authors aim to anchor watermarks to a level more stable than tokens or sentence embeddings: the abstract semantic structure of the sentence. As long as rewriting does not change core semantic relations like "who did what to whom," the watermark should remain.
 
-**Key Insight**: Abstract Meaning Representation (AMR) uses graphs to represent sentence semantics, where nodes represent concepts or events and edges represent semantic roles. Various linguistically different paraphrases can map to the same or highly similar AMR graphs, which is naturally suited for paraphrase-robust watermarking.
+**Key Insight**: Abstract Meaning Representation (AMR) represents sentence semantics as graphs, where nodes represent concepts or events and edges represent semantic roles. Since multiple surface-level paraphrases can map to the same or highly similar AMR graphs, it is naturally suitable for paraphrase-robust watermarking.
 
-**Core Idea**: Build a private AMR template bank. During generation, each sentence is matched to a randomly selected AMR template. During detection, the AMR of the text is parsed, and the proportion of sentences matching the private templates is statistically analyzed.
+**Core Idea**: Build a private AMR template bank. During generation, each sentence is matched to a randomly sampled AMR template. During detection, the AMR of the text is parsed to count the proportion of sentences matching the private templates.
 
 ## Method
 
 ### Overall Architecture
 
-The core modification of SWAN is replacing the "watermark key" from vocabulary hashes or embedding partitions with a private AMR template library. The entire method is training-free—it does not train a watermark model or access the target LLM's logits; it relies solely on prompt guidance and rejection sampling to "squeeze" sentences into the target semantic structure.
+The core change in SWAN is replacing the "watermark key" from vocabulary hashes or embedding partitions with a private AMR template bank. The method is training-free—it does not train a watermark model or access target LLM logits, relying instead on prompt guidance and rejection sampling to "nudge" sentences into the target semantic structure.
 
-During the construction phase, the authors start from MASSIVE-AMR (approximately 84K AMR graphs corresponding to 1685 information query statements) and further abstract the original AMRs into templates: specific named entities are replaced with NE, common nouns with N, and unspecified concepts with X. Only patterns with frequencies between 3 and 20 that contain at least 3 concept nodes are retained to form a private template bank.
+In the construction phase, starting from MASSIVE-AMR (approximately 84K AMR graphs corresponding to 1,685 information query statements), the authors further abstract original AMRs into templates: specific named entities are replaced with NE, common nouns with N, and unspecified concepts with X. Patterns with frequencies between 3 and 20 that contain at least 3 concept nodes are retained to form a private template bank.
 
-In the generation phase, a template is randomly sampled from the private library for each sentence. The current context and the template are provided to the LLM via a prompt, requiring it to generate a sentence that is coherent, satisfies the user's original intent, and conforms to the template's semantic structure. After generation, an AMR parser converts the candidate sentence into a graph, and the similarity with the target template is calculated using S2match. If it exceeds the injection threshold, the sentence is accepted; otherwise, it is resampled. If a template repeatedly fails in the current context, it is replaced to avoid getting stuck on incompatible structures. In the detection phase, the candidate paragraph is split into sentences, and their AMRs are parsed sentence-by-sentence. The maximum S2match between each sentence and all templates in the private library is calculated. If it exceeds the detection threshold, the sentence is marked as watermarked. Finally, a one-proportion z-test is performed on the proportion of watermarked sentences in the entire paragraph.
+In the generation phase, for each sentence generated, a template is randomly sampled from the private library. The current context and template are placed into the LLM prompt, requiring it to generate a sentence that is coherent, satisfies the user's intent, and fits the template's semantic structure. After generation, an AMR parser parses the candidate sentence into a graph, and its similarity to the target template is calculated using S2match. It is accepted if it exceeds an injection threshold; otherwise, it is resampled. If a template repeatedly fails in the current context, it is swapped to avoid incompatible structures. In the detection phase, the candidate paragraph is segmented into sentences and parsed. The maximum S2match between each sentence and all templates in the private bank is calculated. If it exceeds a detection threshold, it is marked as watermarked. Finally, a one-proportion z-test is performed on the ratio of watermarked sentences in the sequence.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
     subgraph BANK["Private AMR Template Bank"]
         direction TB
-        A["MASSIVE-AMR<br/>~84K AMR Graphs"] --> B["Abstract into Templates<br/>Entity→NE / Noun→N / Concept→X, Freq 3~20"]
+        A["MASSIVE-AMR<br/>~84K AMR Graphs"] --> B["Abstract into Templates<br/>Entity→NE / Noun→N / Concept→X, Freq 3-20"]
     end
     BANK --> C["Randomly Sample a Template"]
-    C --> D["AMR-guided Rejection Sampling Injection<br/>Context + Template in Prompt, LLM generates candidate"]
-    D --> E["AMR Parser parses candidate, calculates S2match with target"]
-    E -->|"S2match ≥ θ_accept Accept"| F["Write Sentence"]
-    E -->|"Below threshold: resample; switch template if repeatedly fails"| C
+    C --> D["AMR-guided Rejection Sampling Injection<br/>Context + Template in Prompt, LLM Generates Candidate"]
+    D --> E["AMR Parser parses Candidate, Calculate S2match with Target"]
+    E -->|"S2match ≥ θ_accept: Accept"| F["Write Sentence"]
+    E -->|"Below Threshold: Resample; Swap Template on Repeat Failure"| C
     F --> G["Paragraph-level z-test<br/>Max S2match ≥ θ_detect per sentence counts as hit k"]
-    G --> H["One-proportion z-test<br/>Determine if hit proportion is abnormally high → Watermarked"]
+    G --> H["One-proportion z-test<br/>Determine if hit ratio is abnormally high → Watermarked"]
 ```
 
 ### Key Designs
 
-**1. Private AMR Template Bank: Changing the Watermark Key from "Vocabulary/Vector Regions" to "Abstract Semantic Graph Structures"**
+**1. Private AMR Template Bank: Replacing the key from "vocab/vector regions" to "abstract semantic graph structures"**
 
-The key for token-level methods is a green-list vocabulary, and for embedding-level methods, it is a vector region. Both exist in surface-level or continuous spaces and are easily shifted by paraphrasing. SWAN defines the key as a set of abstract semantic graphs: after extracting graph structures from MASSIVE-AMR, specific entities and lexical details are stripped, leaving only predicates, semantic roles, and conceptual relations. The template frequency interval (3–20) is deliberately chosen—patterns with low frequency are too rare and hard to hit during generation, while those with high frequency are too common and increase false positives. Moderate frequencies balance generativity and discriminability. As long as this bank remains private, the detector can verify structural matches while an attacker remains unaware of which AMR patterns to avoid.
+The key for token-level methods is a green-list vocabulary, and for embedding-level methods, it is a vector region. Both reside in superficial or continuous spaces and are easily shifted by paraphrasing. SWAN defines the key as a set of abstract semantic graphs: after extracting graph structures from MASSIVE-AMR, specific entities and lexical details are stripped, leaving only predicates, semantic roles, and conceptual relations. The frequency interval (3-20) is deliberate—patterns with low frequency are too rare and difficult to hit during generation, while those with high frequency are too common and increase false positives. As long as this bank remains secret, the detector can verify structural matches while attackers remain unaware of which AMR patterns to avoid.
 
-**2. AMR-guided Rejection Sampling Injection: Pushing Sentences Toward Target Semantic Structures Without Parameter Tuning or Logit Access**
+**2. AMR-guided Rejection Sampling Injection: Nudging sentences toward target semantic structures without parameter or logit access**
 
-Hard-coding keywords into sentences destroys fluency and is easy to delete. SWAN instead forces the model to "write around the template": the prompt provides both the historical context and the target AMR template, requiring the generation of a natural sentence where placeholders like NE/N/X are instantiated. Each candidate sentence $\hat{g}$ is parsed and compared with the target template $g$ using S2match. It is accepted only when $S2match(\hat{g}, g) \geq \theta_{accept}$; otherwise, it is resampled. Thus, the watermark is hidden within the predicate-argument structure while the surface text remains natural. Since it does not rely on logits and utilizes black-box generation, the method can be directly applied to closed-source API models.
+Hard-inserting keywords into sentences disrupts fluency and is easily removed. SWAN instead requires the model to "write around the template": the prompt provides both historical context and a target AMR template, asking for a natural sentence that instantiates placeholder concepts like NE/N/X. Each candidate sentence is parsed into $\hat{g}$ and compared to the target $g$ via S2match. It is accepted only when $S2match(\hat{g}, g) \geq \theta_{accept}$. This hides the watermark in the predicate-argument structure while keeping the surface text natural; because it is black-box generation, it can be applied to closed-source API models.
 
-**3. Paragraph-level z-test: Accumulating Sentence-level Template Matching into Paragraph-level Provenance Decisions**
+**3. Paragraph-level z-test: Accumulating sentence-level template matches into paragraph-level provenance decisions**
 
-Single-sentence AMR parsing is inherently noisy, and single-sentence false positives are unavoidable. Analyzing one sentence is insufficient for a conclusion. SWAN calculates the maximum template similarity for each sentence in a paragraph against the bank. If it exceeds $\theta_{detect}$, it is counted as a hit $k$. Given the total number of sentences $n$ and the random hit rate $\lambda$ under the null hypothesis, the detection uses:
+Individual AMR parsing is noisy, and sentence-level false positives are unavoidable. SWAN calculates the maximum similarity to the bank for each sentence in a paragraph. If it exceeds $\theta_{detect}$, it is counted as a hit $k$. Given the total sentences $n$ and the random hit rate $\lambda$ under the null hypothesis, the statistic:
 
 $$z = \frac{k - \lambda n}{\sqrt{n\lambda(1-\lambda)}}$$
 
-to judge if the hit proportion is abnormally high. This aggregates weak sentence-level signals into strong paragraph-level statistics, following the same logic as the z-score detector in token watermarking, but replacing "token hits" with "semantic template hits."
+is used to determine if the hit proportion is significantly high. This aggregates weak sentence-level signals into strong paragraph-level statistics, mirroring the logic of z-score detectors in token watermarking but replacing "token hits" with "semantic template hits."
 
 ### Loss & Training
-SWAN has no training loss. Key hyperparameters come from the generation and detection processes. The default AMR bank size is 50, but the authors also tested settings of 100, 500, and 800. Watermark generation uses DeepSeek-R1-Distill-Qwen-14B with temperature 0.6 and top_p 0.9, attempting up to 50 trials per sentence (up to 10 templates, each with 5 generation attempts). Detection uses the `amrlib` `parse_xfm_bart_large` pipeline (based on BART-large, trained on AMR-3). Paraphrase attacks use Pegasus, Parrot, and Claude 3.7 Sonnet. Text quality is evaluated by Claude 3.7 using reference-free scoring across coherence, fluency, and diversity.
+SWAN has no training loss. Key hyperparameters come from generation and detection. The AMR bank size is 50 by default, with tests also conducted at 100, 500, and 800. Watermark generation uses DeepSeek-R1-Distill-Qwen-14B with temperature 0.6 and top_p 0.9, allowing up to 50 attempts per sentence (up to 10 templates, 5 generations each). Detection uses the `amrlib` `parse_xfm_bart_large` pipeline. Paraphrase attacks use Pegasus, Parrot, and Claude 3.7 Sonnet. Text quality is scored by Claude 3.7 across coherence, fluency, and diversity.
 
 ## Key Experimental Results
 
 ### Main Results
-In scenarios without paraphrasing, the raw detectability of SWAN is close to strong sentence-level baselines and superior to the low FPR metrics of the token-level SynthID.
+In scenarios without paraphrasing, SWAN's raw detectability is close to strong sentence-level baselines and outperforms the low FPR metrics of the token-level SynthID.
 
 | Method | AUC↑ | TPR@1%↑ | TPR@5%↑ |
 |------|------|----------|----------|
@@ -95,7 +95,7 @@ In scenarios without paraphrasing, the raw detectability of SWAN is close to str
 | k-SemStamp | 99.1 | 96.8 | 96.4 |
 | SWAN | 99.1 | 91.6 | 97.6 |
 
-Regarding the critical paraphrase robustness, SWAN achieves the highest AUC under all three types of attacks, showing significant advantages particularly against strong LLM rewriting by Claude 3.7.
+Regarding the critical paraphrase robustness, SWAN achieves the highest AUC under all three types of attacks, showing significant advantages particularly against strong LLM rewriting like Claude 3.7.
 
 | Method | Pegasus AUC/TPR@1%/TPR@5% | Parrot AUC/TPR@1%/TPR@5% | Claude AUC/TPR@1%/TPR@5% |
 |------|----------------------------|---------------------------|---------------------------|
@@ -103,10 +103,10 @@ Regarding the critical paraphrase robustness, SWAN achieves the highest AUC unde
 | k-SemStamp | 97.3 / 88.8 / 88.4 | 92.8 / 68.0 / 66.8 | 87.6 / 53.6 / 53.2 |
 | SWAN | 98.1 / 81.2 / 92.8 | 97.5 / 82.0 / 92.4 | 98.3 / 86.0 / 95.2 |
 
-This table demonstrates the value of AMR semantic anchoring: while Claude's rewriting significantly weakens SemStamp and k-SemStamp, SWAN maintains an AUC of 98.3.
+This table demonstrates the value of AMR semantic anchoring: while Claude rewriting significantly weakens SemStamp and k-SemStamp, SWAN maintains an AUC of 98.3.
 
 ### Ablation Study
-The size of the AMR bank has a minimal impact on AUC, indicating the method is not sensitive to the scale of the template library.
+The AMR bank size has a minimal impact on AUC, indicating that the method is not sensitive to the scale of the template library.
 
 | AMR bank size | AUC↑ |
 |---------------|------|
@@ -115,47 +115,47 @@ The size of the AMR bank has a minimal impact on AUC, indicating the method is n
 | 500 | 98.4 |
 | 800 | 99.3 |
 
-In terms of sampling efficiency, SWAN is slightly slower than SemStamp, but most sentences converge quickly.
+In terms of sampling efficiency, SWAN is slower than SemStamp, but most sentences converge quickly.
 
-| Metric | SWAN | Comparison / Description |
+| Metric | SWAN | Comparison / Note |
 |------|------|-------------|
-| Avg. attempts to accept | 17.7 | SemStamp is 13.8 |
-| Acceptance rate within 10 trials | 42% | Indicates many templates are easily satisfied |
-| Acceptance rate within 15 trials | 54% | Over half of sentences succeed within a low budget |
-| Spike near max budget | 46-50 trials | Represents some templates being incompatible with context |
-| Generation scale | 1,250 sentences | 250 samples × 5 sentences per paragraph |
+| Avg. acceptance trials | 17.7 | SemStamp: 13.8 |
+| Accepted within 10 trials | 42% | Many templates are easily satisfied |
+| Accepted within 15 trials | 54% | Over half succeed within a low budget |
+| Spike near max budget | 46-50 trials | Some templates are semantically incompatible |
+| Generation Scale | 1,250 sentences | 250 samples × 5 sentences/para |
 
 ### Key Findings
-- SWAN does not sacrifice detectability in scenarios without rewriting, with AUC comparable to SemStamp/k-SemStamp.
-- The gap widens significantly after paraphrasing; notably, under Claude's rewriting, SWAN's AUC is 98.3, whereas SemStamp is 84.4 and k-SemStamp is 87.6.
-- AUC remains above 98 even when the AMR bank expands from 50 to 800, showing that the balance between template coverage and false positives is stable.
-- Rejection sampling overhead exists, but 42% of sentences succeed within 10 trials, making the overall overhead acceptable. The real challenge lies in context-aware template selection.
-- Text quality assessments show all watermarking methods cause a slight decline in quality, but SWAN is similar to sentence-level baselines, paying no significant extra price in quality for its robustness.
+- SWAN does not sacrifice detectability in original text scenarios, with AUC comparable to SemStamp/k-SemStamp.
+- The gap widens significantly after paraphrasing; SWAN maintains an AUC of 98.3 under Claude rewriting, whereas SemStamp drops to 84.4.
+- AUC remains 98+ as the AMR bank expands from 50 to 800, showing a stable balance between template coverage and false positives.
+- Rejection sampling overhead exists, but 42% of sentences succeed within 10 trials, making the overhead acceptable. The real challenge lies in context-aware template selection.
+- Text quality evaluation shows that all watermarking methods cause slight degradation, but SWAN is similar to sentence-level baselines and does not pay a significant extra quality price for robustness.
 
 ## Highlights & Insights
-- The most valuable insight of SWAN is that "paraphrasing preserves meaning, so the watermark should be written into the meaning representation." This is more natural than chasing paraphrases at the token or embedding level.
-- The AMR template bank transforms the watermark into an interpretable structural signal. Detection failure can be analyzed by identifying which predicate-argument structures were not parsed, rather than receiving an opaque embedding hash.
-- The training-free and black-box generation approach makes the method easier to integrate with closed-source or API-based models, as it requires neither logit access nor model weight modification.
-- The paragraph-level z-test inherits statistical concepts from traditional watermark detectors while replacing token hits with semantic template hits, representing a clean abstract migration.
+- SWAN’s most valuable insight is that "paraphasings preserve meaning, so the watermark should be written into the meaning representation." This is more natural than chasing paraphrases across tokens or embeddings.
+- The AMR template bank transforms the watermark into an interpretable structural signal. Detection failure can be analyzed by identifying which predicate-argument structures failed to parse, rather than relying on an opaque embedding hash.
+- The training-free and black-box generation approach makes the method easily applicable to closed-source or API-based models as it requires neither logit access nor model weight modifications.
+- The paragraph-level z-test inherits statistical principles from traditional watermark detectors while effectively mapping "token hits" to "semantic template hits."
 
 ## Limitations & Future Work
-- Detection is highly dependent on AMR parser quality; parsing errors can lead to missed detections or false positives. AMR parsing may be unstable in low-resource languages, technical texts, or non-news genres.
-- The AMR bank serves as a private key. If an attacker guesses or leaks the template library, they could deliberately rewrite semantic structures to bypass detection.
-- The current method is primarily evaluated on English RealNews, with limited language and domain coverage.
-- Rejection sampling still involves costs; repeated failures occur when templates are incompatible with the context. Smarter template-context matching is needed.
-- SWAN focuses on sentence-level AMR. Against attacks like merging, splitting, or cross-sentence rewriting, the watermark structure might be reorganized. Future work could explore paragraph-level AMR or AMR subgraph watermarking.
+- Detection is highly dependent on the quality of the AMR parser; parsing errors lead to misses or false positives. AMR parsing may be unstable in low-resource languages, technical texts, or non-news genres.
+- The AMR bank serves as a private key; if an attacker guesses or leaks the library, they could deliberately rewrite semantic structures to bypass detection.
+- The current evaluation is primarily on English RealNews, with limited language and domain coverage.
+- Rejection sampling remains costly; repeated failures occur when templates are incompatible with context, necessitating more intelligent template-context matching.
+- SWAN focuses on sentence-level AMR. In the face of attacks like sentence merging, splitting, or cross-sentence rewriting, the watermark structure may be reorganized. Future work could explore paragraph-level AMR or AMR subgraph watermarking.
 
 ## Related Work & Insights
-- **vs SynthID / token-level watermark**: SynthID relies on token distribution perturbations, effective for low-FPR detection but fragile against paraphrasing. SWAN constrains semantic structure rather than token preferences, making it more resistant to surface rewriting.
-- **vs SemStamp**: SemStamp partitions the sentence vector space into green buckets, providing some paraphrase robustness, but strong rewriting shifts embeddings. SWAN uses AMR graph matching, which maintains structural signals under semantically equivalent rewriting.
-- **vs k-SemStamp**: k-SemStamp improves semantic region partitioning using clustering but still relies on continuous embedding regions. SWAN's discrete graph structure is more interpretable and closer to the definition of "invariant meaning."
-- **vs PostMark / post-hoc watermark**: PostMark injects signals through paragraph semantics and watermark words. It is practical but may leave lexical traces. SWAN does not rely on fixed vocabularies; the signal is hidden in semantic role combinations.
+- **vs SynthID / token-level watermark**: SynthID relies on token distribution perturbations, which are effective for low FPR detection but fragile against paraphrasing. SWAN constrains semantic structure rather than token preference to resist superficial rewriting.
+- **vs SemStamp**: SemStamp partitions the sentence vector space into green buckets, providing some paraphrase robustness, but strong rewriting still shifts embeddings. SWAN uses AMR graph matching to maintain signals under semantically equivalent rewrites.
+- **vs k-SemStamp**: k-SemStamp improves semantic region partitioning via clustering but remains in the continuous embedding space. SWAN’s discrete graph structure is more interpretable and closer to the definition of "invariant meaning."
+- **vs PostMark / post-hoc watermark**: PostMark injects signals through paragraph semantics and watermark words, which is practical but may leave lexical traces. SWAN signals are hidden within predicate-argument combinations.
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐⭐ Using AMR graph structures for text watermarking is highly novel and distinct from token/embedding routes.
-- Experimental Thoroughness: ⭐⭐⭐⭐☆ Covers detection, paraphrasing, bank size, sampling efficiency, and quality evaluation, though language and domain scope remain narrow.
-- Writing Quality: ⭐⭐⭐⭐☆ Methods are clearly explained and experimental tables are direct, though AMR parsing error and threshold selection could be further elaborated.
-- Value: ⭐⭐⭐⭐⭐ Provides practical insights for robust text watermarking and AI-generated content provenance, especially for semantic-level provenance research.
+- Experimental Thoroughness: ⭐⭐⭐⭐☆ Detection, paraphrasing, bank size, sampling efficiency, and quality assessments are covered, though language and domain scope remain narrow.
+- Writing Quality: ⭐⭐⭐⭐☆ Method descriptions are clear and experimental tables are direct, though AMR parsing errors and threshold selection could be explored further.
+- Value: ⭐⭐⭐⭐⭐ Provides practical insights for robust text watermarking and AI-generated content provenance, particularly for semantic-level research.
 
 <!-- RELATED:START -->
 
@@ -166,8 +166,8 @@ In terms of sampling efficiency, SWAN is slightly slower than SemStamp, but most
 - [\[ICLR 2026\] PMark: Towards Robust and Distortion-free Semantic-level Watermarking with Channel Constraints](../../ICLR2026/llm_safety/pmark_towards_robust_and_distortion-free_semantic-level_watermarking_with_channe.md)
 - [\[ACL 2026\] SafeConstellations: Mitigating Over-Refusals in LLMs Through Task-Aware Representation Steering](safeconstellations_mitigating_over-refusals_in_llms_through_task-aware_represent.md)
 - [\[ACL 2026\] Representation-Guided Parameter-Efficient LLM Unlearning](representation-guided_parameter-efficient_llm_unlearning.md)
-- [\[ACL 2026\] AGSC: Adaptive Granularity and Semantic Clustering for Uncertainty Quantification in Long-text Generation](agsc_adaptive_granularity_and_semantic_clustering_for_uncertainty_quantification.md)
 - [\[ACL 2026\] XMark: Reliable Multi-Bit Watermarking for LLM-Generated Texts](xmark_reliable_multi-bit_watermarking_for_llm-generated_texts.md)
+- [\[ACL 2026\] AGSC: Adaptive Granularity and Semantic Clustering for Uncertainty Quantification in Long-text Generation](agsc_adaptive_granularity_and_semantic_clustering_for_uncertainty_quantification.md)
 
 </div>
 

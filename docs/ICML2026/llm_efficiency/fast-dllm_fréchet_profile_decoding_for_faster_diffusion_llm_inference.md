@@ -2,12 +2,12 @@
 title: >-
   [Paper Note] Fast-dLLM++: Fréchet Profile Decoding for Faster Diffusion LLM Inference
 description: >-
-  [ICML 2026][LLM Efficiency][Paper Note] Addressing the parallel decoding bottleneck of diffusion language models (dLLMs), this paper proposes training-free Fréchet Profile Decoding: using the entire sorted confidence profile rather than just the "weakest selected token" to determine how many tokens to commit in each parallel step. This strictly generalizes t
+  [ICML 2026][LLM Efficiency][Paper Note] Addressing the parallel decoding bottleneck of diffusion language models (dLLMs), this paper proposes training-free Fréchet Profile Decoding. It uses the entire sorted confidence profile—rather than just the "weakest selected token"—to determine the number of tokens to commit per step. This strictly generalizes the fac
 tags:
   - ICML 2026
   - LLM Efficiency
 date: 2026-05-08
-content_hash: 7b10035b2f633e2f
+content_hash: f1c00fcd486f379c
 ---
 # Fast-dLLM++: Fréchet Profile Decoding for Faster Diffusion LLM Inference
 
@@ -18,47 +18,47 @@ content_hash: 7b10035b2f633e2f
 **Keywords**: Diffusion LLM, Parallel Decoding, Fréchet Lower Bound, Confidence Profile, Heterogeneity Reward
 
 ## TL;DR
-Addressing the parallel decoding bottleneck of diffusion language models (dLLMs), this paper proposes training-free Fréchet Profile Decoding: using the entire sorted confidence profile rather than just the "weakest selected token" to determine how many tokens to commit in each parallel step. This strictly generalizes the factor rule of Fast-dLLM to heterogeneous confidence scenarios, achieving an average throughput of 1.36× and a 29% reduction in NFE on LLaDA-8B across four benchmarks with almost no loss in precision.
+Addressing the parallel decoding bottleneck of diffusion language models (dLLMs), this paper proposes training-free Fréchet Profile Decoding. It uses the entire sorted confidence profile—rather than just the "weakest selected token"—to determine the number of tokens to commit per step. This strictly generalizes the factor rule of Fast-dLLM to heterogeneous confidence scenarios, achieving a 1.36× average throughput increase and 29% NFE reduction on LLaDA-8B across four benchmarks with almost no loss in accuracy.
 
 ## Background & Motivation
-**Background**: Masked diffusion LLMs (MDLMs) start from a fully masked sequence and predict the marginal distributions of all masked positions in parallel at each step. Theoretically, they can commit multiple tokens at once to achieve throughput far exceeding auto-regression. however, a gap exists between the "product of marginal distributions" and the true joint distribution; the more tokens are parallelized, the more severe the "curse of parallelism" becomes—single tokens may appear correct, but their combination might be incoherent.
+**Background**: Masked diffusion LLMs (MDLM) start from a fully masked sequence and predict marginal distributions for all masked positions in parallel at each step. In theory, committing multiple tokens at once can achieve throughput far exceeding autoregressive models. However, the gap between the "product of marginals" and the true joint distribution leads to the "curse of parallelism"—while individual tokens appear correct, their combination might be incoherent.
 
-**Limitations of Prior Work**: Fast-dLLM mitigates this issue using confidence-aware parallel decoding with two rules: the threshold rule $c_i \ge \tau$ for independent commits, and the factor rule $(n+1)(1-c_{(n)}) < f$ to decide on accepting the top $n$ candidates. The theoretical basis of factor is a "high-confidence assumption," which assumes the confidence of all $n$ selected tokens equals $c_{(n)}$ (the weakest one), essentially "flattening" the entire confidence profile to its minimum value.
+**Limitations of Prior Work**: Fast-dLLM mitigates this with confidence-aware parallel decoding using two rules: a threshold rule ($c_i \ge \tau$) for independent commitment, and a factor rule ($(n+1)(1-c_{(n)}) < f$) for accepting the top-$n$ candidates. The factor rule relies on a "high-confidence hypothesis"—it assumes all $n$ selected tokens have a confidence equal to $c_{(n)}$ (the weakest one), essentially "flattening" the entire confidence profile to its minimum.
 
-**Key Challenge**: In practice, the confidence profile of a decoding step is highly heterogeneous—for example, $(0.99, 0.95, 0.82, 0.78, 0.74)$. The first few tokens are nearly certain, while the later ones weaken gradually. The factor rule replaces the entire profile with a flat proxy of $(0.82, 0.82, 0.82)$, discarding the safety information provided by "strong tokens," which leads to conservative rejection of tokens that could have been committed together.
+**Key Challenge**: In practice, the confidence profile at a decoding step is highly heterogeneous—e.g., $(0.99, 0.95, 0.82, 0.78, 0.74)$. The first few tokens are almost certain, while subsequent ones weaken. The factor rule replaces the profile with a flat proxy $(0.82, 0.82, 0.82)$, discarding the safety information provided by "strong tokens" and conservatively rejecting tokens that could have been committed.
 
-**Goal**: Without modifying the model, diffusion process, or KV cache, generalize the factor rule from "homogeneous confidence" to an optimal marginal-only proof for "heterogeneous confidence," and translate this generalization into a larger set of parallel commits.
+**Goal**: To generalize the factor rule from "homogeneous confidence" to "heterogeneous confidence" via an optimal marginal-only proof, translating this generalization into larger parallel commit sets without modifying the model, diffusion process, or KV cache.
 
-**Key Insight**: Starting from the classic Fréchet–Hoeffding / Bonferroni inequalities—when only marginal probabilities of events are known, the distribution-free tight lower bound for the probability of their intersection is exactly $L_n = \max\{0, \sum_{j=1}^n c_{(j)} - (n-1)\}$. Applying this lower bound to the event that "all selected marginal-argmax tokens are simultaneously correct" yields a safety certificate that utilizes the entire profile.
+**Key Insight**: Starting from classical Fréchet–Hoeffding / Bonferroni inequalities—given only marginal probabilities of events, the distribution-free tight lower bound for the probability of their intersection is $L_n = \max\{0, \sum_{j=1}^n c_{(j)} - (n-1)\}$. Applying this bound to the event "all selected marginal-argmax tokens are correct simultaneously" provides a safety certificate that utilizes the entire profile.
 
-**Core Idea**: Subtract the competitor's upper bound $U_n = 1 - c_{(n)}$ (the probability upper bound of any other tuple) from the Fréchet lower bound $L_n$ (the probability lower bound of joint correctness) to obtain a "safety margin" $G_n = L_n - U_n$. Committing the maximum prefix $n^*$ satisfying $G_n > \delta$ allows for strictly more tokens than those accepted by the factor rule under heterogeneous profiles.
+**Core Idea**: Subtract the competitor upper bound $U_n = 1 - c_{(n)}$ (the probability upper bound for any other tuple) from the Fréchet lower bound $L_n$ (joint correctness lower bound) to obtain a "safety margin" $G_n = L_n - U_n$. Committing the maximum prefix $n^*$ where $G_n > \delta$ allows for strictly more tokens than the factor rule under heterogeneous profiles.
 
 ## Method
 
 ### Overall Architecture
-Fast-dLLM++ replaces the "how many tokens to commit per step" logic in Fast-dLLM with a tighter metric, without altering the model, diffusion scheduler, or KV cache. In each denoising step, after the forward pass and obtaining marginal predictions $p_\theta(X_i = v \mid x_k)$ for all masked positions, it takes the argmax and confidence $c_i$ for each position, sorts $c_i$ in descending order as $c_{(1)} \ge c_{(2)} \ge \cdots \ge c_{(m)}$, and then uses a "profile-aware" selector to determine the prefix of tokens to commit. The remaining positions keep their masks for the next step. Implementation-wise, it only replaces the token selection logic in lines 11–18 of Fast-dLLM Algorithm 1. The extra overhead consists solely of one sorting operation and one prefix sum, making it fully transparent to NONE / PrefixCache / DualCache modes.
+Fast-dLLM++ replaces the "how many tokens to commit" logic in Fast-dLLM with a tighter metric, while leaving the model, diffusion schedule, and KV cache unchanged. After the forward pass in each denoising step, marginal predictions $p_\theta(X_i = v \mid x_k)$ for all masked positions are obtained. The argmax and confidence $c_i$ for each position are extracted and sorted descending as $c_{(1)} \ge c_{(2)} \ge \cdots \ge c_{(m)}$. A "profile-aware" selector then decides the number of tokens to commit. This logic replaces rows 11–18 of Fast-dLLM Algorithm 1, with overhead limited to one sorting operation and one prefix sum, making it transparent to NONE / PrefixCache / DualCache modes.
 
 ### Key Designs
 
-**1. Fréchet Profile Certificate: Using the entire confidence profile instead of the weakest entry**
+**1. Fréchet Profile Certificate: Using the individual values of the entire confidence profile**
 
-The factor rule of Fast-dLLM only considers the weakest selected token $c_{(n)}$, which is equivalent to flattening the profile to its minimum and discarding safety information from stronger tokens. This paper (Theorem 4.1) instead uses the lower bound given by the Fréchet–Hoeffding / Bonferroni inequality: when only marginal probabilities are known, the distribution-free tight lower bound for their joint probability is $L_n = \max\{0, \sum_{j=1}^n c_{(j)} - (n-1)\}$. This is exactly the probability lower bound for "the $n$ selected marginal-argmax tokens being correct simultaneously." In contrast, the probability upper bound for any "at least one error" competitor tuple is $U_n = 1 - c_{(n)}$, as it must hit the position with confidence $c_{(n)}$. If $L_n > U_n$, the selected tuple is the unique maximizer under the true joint distribution $P_S$ and can be safely committed. Since $L_n$ is the tightest unimprovable lower bound under marginal-only information, this upgrades the "safety check" from "checking the weakest token" to "checking the entire profile," theoretically including factor as a homogeneous special case while accounting for the safety margin of stronger tokens.
+Fast-dLLM's factor rule only considers the weakest selected token $c_{(n)}$, effectively flattening the profile and losing safety information. Ours (Theorem 4.1) adopts the lower bound from Fréchet–Hoeffding / Bonferroni inequalities: $L_n = \max\{0, \sum_{j=1}^n c_{(j)} - (n-1)\}$. This is the tightest possible lower bound for joint correctness given only marginals. In contrast, any competitor tuple that is "wrong in at least one position" has a probability upper bound $U_n = 1 - c_{(n)}$. If $L_n > U_n$, the selected tuple is the unique maximizer of the joint distribution $P_S$. This upgrades the "safety check" from looking at the weakest link to evaluating the whole chain, accounting for the surplus safety of strong tokens.
 
-**2. Profile-aware Selection Rules & Algorithm 1: Scanning prefixes to find the "largest safe" commit count**
+**2. Profile-Aware Selection Rule and Algorithm 1: Scanning for the "Largest Safe" prefix**
 
-With the certificate, token selection becomes a one-dimensional scan: iterate the candidate count $n$ from 1 to $m$, calculate the safety margin $G_n = L_n - U_n$, and select the maximum prefix $n^* = \max\{n: G_n > \delta\}$, where $\delta \ge 0$ is a user-defined margin. If no $n$ satisfies the condition, it defaults to $n^* = 1$ to ensure at least one token progresses. The process only requires sorting the calculated confidence vectors, performing prefix sums, and calculating $L_n, U_n, G_n$ item by item. It requires no additional forward passes; thus, replacing it in Fast-dLLM Algorithm 1 adds no extra persistent memory and negligible computation, while remaining orthogonal to the underlying cache. This step directly converts the theoretical tightness of Theorem 4.1 into a higher tokens-per-step parallelism.
+With the certificate, token selection becomes a 1D scan: for $n$ from 1 to $m$, calculate $G_n = L_n - U_n$ and select $n^* = \max\{n: G_n > \delta\}$, where $\delta \ge 0$ is a user-defined margin. If no $n$ satisfies the condition, it defaults to $n^* = 1$. This process requires no additional network passes and is orthogonal to underlying cache mechanisms, directly translating theoretical tightness into increased tokens-per-step.
 
-**3. Heterogeneity Reward Decomposition: Decomposing "why it is faster" into a profile-interpretable metric**
+**3. Heterogeneity Reward Decomposition: Explaining "Why It Is Faster"**
 
-To explain when Fréchet is more aggressive than a matched factor (where $f = 1 - \delta$), the paper (Proposition 4.3) decomposes the margin into $G_n = F_n + B_n$ when $L_n > 0$. Here, the factor kernel $F_n = (n+1)c_{(n)} - n$ depends only on the weakest confidence and corresponds exactly to the factor rule. The heterogeneity reward $B_n = \sum_{j=1}^{n-1}(c_{(j)} - c_{(n)}) \ge 0$ represents the area between the actual profile and the "flat weakest line." The more heterogeneous the profile, the larger this reward. Equivalently, Fréchet acts as a data-adaptive factor $f_{\text{eff}}(n) = 1 - \delta + B_n$, becoming more aggressive as heterogeneity increases. Corollary 4.4 strictly proves that any prefix accepted by matched factor is necessarily accepted by Fréchet (ensuring it is never slower), while Fréchet accepts strictly more tokens if and only if $F_n \le \delta < F_n + B_n$. This decomposition turns the empirical observation of effectiveness into quantifiable profile evidence and reinterprets the engineering success of Fast-dLLM as a homogeneous special case of the marginal-only framework, providing an interface for future dependence-aware extensions (§4.2 using TV / KL stability).
+To explain when Fréchet is more aggressive than a matched factor rule (where $f = 1 - \delta$), the paper (Proposition 4.3) decomposes the margin as $G_n = F_n + B_n$ when $L_n > 0$. Here, the factor kernel $F_n = (n+1)c_{(n)} - n$ depends only on the weakest confidence. The heterogeneity reward $B_n = \sum_{j=1}^{n-1}(c_{(j)} - c_{(n)}) \ge 0$ represents the area between the profile and the "flat minimum line." Fréchet acts as a data-adaptive factor $f_{\text{eff}}(n) = 1 - \delta + B_n$. Corollary 4.4 proves that a Fréchet decoder will always accept at least as many tokens as a matched factor rule, accepting more whenever the heterogeneity reward is large enough to cross the decision boundary.
 
 ### Loss & Training
-Completely training-free. $\delta$ is the only new hyperparameter, defaulting to $\delta = 0.25$ (corresponding to matched factor $f = 0.75$). The paper also provides a calibration-robust variant (Appendix C) using conservative lower bounds of confidence to handle model over-confidence.
+Completely training-free. $\delta$ is the only new hyperparameter (default $\delta = 0.25$, corresponding to matched factor $f = 0.75$). The paper also introduces a calibration-robust variant (Appendix C) using conservative lower bounds for confidence to handle model over-confidence.
 
 ## Key Experimental Results
 
 ### Main Results
-LLaDA-8B-Instruct, PrefixCache, block size 32, single H100 GPU; threshold $\tau = 0.9$ (Fast-dLLM's primary rule), factor $f = 0.75$, Fréchet $\delta = 0.25$.
+LLaDA-8B-Instruct, PrefixCache, block size 32, single H100 GPU; threshold $\tau = 0.9$, factor $f = 0.75$, Fréchet $\delta = 0.25$.
 
 | Dataset (Len) | Method | Acc (%) | Tok/s ↑ | NFE ↓ | Tok/NFE |
 |---|---|---|---|---|---|
@@ -73,7 +73,7 @@ LLaDA-8B-Instruct, PrefixCache, block size 32, single H100 GPU; threshold $\tau 
 | HumanEval (512) | Fréchet | 41.5 | 75.5 (1.40×) | 18,909 (↓30.9%) | 4.05 |
 | MBPP (512) | Fréchet | 14.2 | 82.7 (1.36×) | 42,893 (↓28.5%) | 3.49 |
 
-Across 8 (dataset × length) settings: Fréchet achieved an average throughput of **1.36×** and an NFE reduction of **29.2%** relative to threshold, with an average precision change of only −0.48 pt. Compared to the LLaDA-8B baseline without early exit, average throughput was **4.31×** and NFE decreased by **79.1%**.
+Across 8 settings: Fréchet achieved **1.36×** average throughput and **29.2%** NFE reduction relative to the threshold rule, with a tiny mean accuracy change of −0.48 pt. Compared to the LLaDA-8B baseline, average throughput is **4.31×** and NFE is reduced by **79.1%**.
 
 ### Ablation Study
 
@@ -85,31 +85,31 @@ Across 8 (dataset × length) settings: Fréchet achieved an average throughput o
 | Fréchet w/ DualCache | 80.9 | 78,901 | 50.4 | 102,145 |
 
 ### Key Findings
-- **Throughput gain stems from heterogeneity reward**: In GSM8K frequency scans ($\delta \in [0, 0.30]$, matched $f = 1 - \delta$, $\tau \in [0.5, 0.9]$), Fréchet pushes the entire accuracy–throughput boundary to the right, with the most stable gains in conservative regions (small $\delta$ / large $f$)—where $B_n$ is large enough to cross decision boundaries.
-- **Dominance under matched parameters**: Fréchet necessarily accepts any setting accepted by matched factor, meaning it is never slower. It commits more tokens than factor only under heterogeneous profiles (where leading tokens are significantly higher than trailing ones), which is an engineering "free lunch."
-- **Cache-agnostic**: Fréchet maintains the highest speed and lowest NFE across no-cache, PrefixCache, and DualCache modes, demonstrating that modifying the token selection layer is orthogonal to caching. On MBPP (256), factor accuracy dropped by 6 pt while Fréchet only dropped by 2 pt, suggesting profile-aware selection is more robust for fragile tasks.
+- **Throughput gain from heterogeneity reward**: On GSM8K frequency scans, Fréchet shifts the accuracy–throughput Pareto frontier to the right, especially in conservative regions (small $\delta$ / large $f$) where $B_n$ is significant.
+- **Dominance under matched parameters**: Fréchet strictly accepts any prefix accepted by a matched factor rule, ensuring no speed loss. It commits more tokens only when profiles are heterogeneous.
+- **Cache-agnostic performance**: Gains are consistent across no-cache, PrefixCache, and DualCache, proving the method is orthogonal to memory optimization.
 
 ## Highlights & Insights
-- **Isomorphic Improvement in Theory and Engineering**: Fréchet decoding is not an empirical trick but the tightest generalization of the Fast-dLLM factor rule under marginal-only information (derived from the distribution-free Fréchet–Hoeffding bound). This "theoretical tightening → engineering more commits" isomorphism is rare.
-- **Profile-aware = Adaptive Factor**: Reinterpreting Fréchet as $f_{\text{eff}}(n) = 1 - \delta + B_n$ is the paper's most elegant perspective—threshold is a constant gate, factor is set-size aware, and Fréchet is a "data-adaptive" factor that becomes more aggressive with heterogeneity. This idea of calibrating hyperparameters using data itself can be transferred to acceptance thresholds in speculative decoding, early-exit confidence margins, and any scenario using marginal certificates for batch decisions.
-- **Drop-in Friendly**: Modifying only 8 lines of choice logic in Algorithm 1 without touching the model, scheduler, or cache makes this a rare "zero migration cost" acceleration trick reproducible on a single H100.
+- **Isomorphism between Theory and Engineering**: Fréchet decoding is not just an empirical trick; it is a tight generalization of the factor rule under marginal-only information.
+- **Profile-aware = Adaptive Factor**: Viewing Fréchet as $1 - \delta + B_n$ is powerful. While threshold is a constant gate and factor is set-size aware, Fréchet is data-adaptive, using heterogeneity to calibrate the aggressiveness.
+- **Drop-in Friendly**: By modifying only 8 lines of logic in Algorithm 1, it provides a "zero-migration cost" acceleration for diffusion LLMs.
 
 ## Limitations & Future Work
-- **Marginal-only is intentional but acts as a ceiling**: The paper admits Fréchet does not utilize joint dependency information between tokens. The TV / KL stability proofs in §4.2 (Lemma 4.6 / Corollary 4.7) imply that estimating $d_{TV}(P_S, Q_S)$ or total correlation $D_{KL}(P_S \| Q_S)$ could theoretically allow for more commits, but this requires additional dependency modeling not implemented in Fast-dLLM++.
-- **Reliance on Confidence Calibration**: If the model is over-confident, $c_{(n)}$ is no longer reliable, and profile certificates may fail. Appendix C offers a calibration-robust version, but it has not been extensively verified.
-- **Task-specific Margin Sensitivity**: A single global $\delta = 0.25$ is stable across four benchmarks, but on MBPP 512, both factor and Fréchet showed accuracy drops compared to threshold (14.2 for threshold vs 12.0 for factor), indicating that the trade-off for "aggressive parallelism" still requires per-task tuning in distribution-shifted or short-sequence tasks.
-- **Validation Limited to LLaDA-8B / Dream-7B**: Systemic evaluation on larger scales (e.g., 70B class dLLMs) or longer generations (>1024) is missing; whether throughput gains scale with model size remains unclear.
+- **The Marginal-only Ceiling**: Fréchet does not utilize joint dependencies between tokens. Theoretical results in §4.2 suggest that estimating $d_{TV}$ or $D_{KL}$ could allow for even more commits, but this requires extra dependency modeling.
+- **Calibration Dependency**: If the model is over-confident, the certificates fail. Conservative lower bounds are a potential but less-tested remedy.
+- **Task-specific Sensitivity**: While $\delta = 0.25$ is robust, some performance drops in fragile tasks (like MBPP) suggest that the aggressive parallelism trade-off may still require per-task tuning.
+- **Scope of Validation**: Testing was primarily on LLaDA-8B and Dream-7B; performance on 70B+ models or sequences longer than 1024 tokens remains to be verified.
 
 ## Related Work & Insights
-- **vs Fast-dLLM (Wu et al., 2026)**: Threshold and factor are homogeneous simplifications of marginal-only information. This paper generalizes the framework to heterogeneous profiles, proving factor is a special case when $f = 1 - \delta$ and providing a strictly larger acceptance set as a drop-in replacement.
-- **vs Speculative / Blockwise Parallel Decoding (Stern 2018; Leviathan 2023; Chen 2023)**: The auto-regressive camp uses drafter + verifier dual-model schemes for parallelism. Fast-dLLM++ uses marginal certificates within a diffusion LLM for commit decisions without a second model—lighter but only applicable to the "synchronous multi-position commit" scenario of diffusion decoding.
-- **vs Copula / dependence-aware methods (Kasa 2020/2021/2022)**: This paper deliberately avoids joint dependency modeling to stay within marginal-only safety, yet provides a dependency-aware extension interface in §4.2 that could eventually be combined with total correlation estimation to capture more safety certificates beyond Fréchet.
+- **vs Fast-dLLM (Wu et al., 2026)**: Threshold/factor are homogeneous simplifications. This work generalizes them, providing a strictly larger acceptance set.
+- **vs Speculative Decoding**: Autoregressive models use draft-then-verify. Fast-dLLM++ uses marginal certificates for internal commitment decisions within a single model, which is lighter but specific to diffusion decoding.
+- **vs Copula/Dependence-aware Methods**: This work intentionally avoids joint modeling to remain marginal-only but provides an interface for future dependence-aware expansions.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Uses the classic Fréchet–Hoeffding inequality to generalize the Fast-dLLM factor to heterogeneous profiles; theoretically sound and strictly tighter, though the core probabilistic bound is a classic concept applied to a new context.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive across four benchmarks, three cache modes, two generation lengths, and multiple models (LLaDA-8B / Dream-7B / LLaDA-V); however, lacks larger dLLMs, longer sequences (>1024), and comparisons with non-Fast-dLLM systems (like speculative diffusion).
-- Writing Quality: ⭐⭐⭐⭐⭐ The five-column chart in Figure 1 clearly explains how factor flattens profiles, what heterogeneity reward represents, and why Fréchet accepts $n=4$ while matched factor only accepts $n=2$. The narrative flow from Theorem 4.1 to Corollary 4.4 is seamless.
-- Value: ⭐⭐⭐⭐ Training-free, drop-in, and providing an average 1.36× throughput / 29% NFE saving; this is a directly applicable acceleration for any team using Fast-dLLM for diffusion LLM inference, while leaving a clear interface for future dependence-aware parallel decoding.
+- Novelty: ⭐⭐⭐⭐ Uses classical inequalities to tighten inference rules; the innovation lies in the specific application to decoding profiles.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive across benchmarks, cache modes, and lengths, though lacks massive scale (70B+).
+- Writing Quality: ⭐⭐⭐⭐⭐ Excellent visualizations (Figure 1) and clear theoretical derivation.
+- Value: ⭐⭐⭐⭐ A training-free, drop-in acceleration with significant gains for dLLM practitioners.
 
 <!-- RELATED:START -->
 
@@ -117,11 +117,11 @@ Across 8 (dataset × length) settings: Fréchet achieved an average throughput o
 
 ## Related Papers
 
+- [\[CVPR 2026\] Rejection Mixing: Fast Semantic Propagation of Mask Tokens for Efficient DLLM Inference](../../CVPR2026/llm_efficiency/rejection_mixing_fast_semantic_propagation_of_mask_tokens_for_efficient_dllm_inf.md)
 - [\[ICML 2026\] dLLM-Cache: Accelerating Diffusion Large Language Models with Adaptive Caching](dllm-cache_accelerating_diffusion_large_language_models_with_adaptive_caching.md)
+- [\[ICML 2026\] Structuring The Future: Diffusion LLM Speculative Decoding via Calibrated Draft Graphs](structuring_the_future_diffusion_llm_speculative_decoding_via_calibrated_draft_g.md)
 - [\[ACL 2025\] Smarter, Better, Faster, Longer: A Modern Bidirectional Encoder for Fast, Memory Efficient, and Long Context Finetuning and Inference](../../ACL2025/llm_efficiency/smarter_better_faster_longer_a_modern_bidirectional_encoder_for_fast_memory_effi.md)
-- [\[ACL 2026\] CreditDecoding: Accelerating Parallel Decoding in Diffusion Large Language Models with Trace Credit](../../ACL2026/llm_efficiency/creditdecoding_accelerating_parallel_decoding_in_diffusion_large_language_models.md)
 - [\[ICML 2026\] Ekka: Automated Diagnosis of Silent Errors in LLM Inference](ekka_automated_diagnosis_of_silent_errors_in_llm_inference.md)
-- [\[ICLR 2026\] LycheeDecode: Accelerating Long-Context LLM Inference via Hybrid-Head Sparse Decoding](../../ICLR2026/llm_efficiency/lycheedecode_accelerating_long-context_llm_inference_via_hybrid-head_sparse_deco.md)
 
 </div>
 

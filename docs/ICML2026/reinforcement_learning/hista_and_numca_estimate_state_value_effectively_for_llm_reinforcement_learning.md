@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Hista and Numca: Estimate State Value Effectively for LLM Reinforcement Learning
 description: >-
-  [ICML 2026][Reinforcement Learning][LLM RL] This paper empirically demonstrates via a new State Value Estimation Benchmark (SVEB) that the PPO critic in LLM RL almost entirely degenerates into the group average reward baseline of GRPO. It proposes two state value estimation methods aimed at "no extra rollouts and near-zero additional computation": Numca uses num
+  [ICML 2026][Reinforcement Learning][LLM RL] This paper first empirically demonstrates through a newly created State Value Estimation Benchmark (SVEB) that PPO critics in LLM RL almost completely degenerate into the group relative reward baseline of GRPO. It then proposes two state value estimation methods aimed at "no extra rollouts and nearly zero additional co
 tags:
   - ICML 2026
   - Reinforcement Learning
@@ -10,7 +10,7 @@ tags:
   - GRPO
   - Hindsight
 date: 2026-05-08
-content_hash: 31dbebfd0ec1e2fa
+content_hash: 70b4de86964f93cb
 ---
 # Hista and Numca: Estimate State Value Effectively for LLM Reinforcement Learning
 
@@ -18,144 +18,147 @@ content_hash: 31dbebfd0ec1e2fa
 **arXiv**: [2605.29782](https://arxiv.org/abs/2605.29782)  
 **Code**: https://github.com/VOXXXX1874/Hista  
 **Area**: Reinforcement Learning / LLM Post-training / Credit Assignment  
-**Keywords**: LLM RL, GRPO, State Value Estimation, Hindsight, Hidden State Representation  
+**Keywords**: LLM RL, GRPO, State Value Estimation, Hindsight, Latent Representation  
 
 ## TL;DR
-This paper empirically demonstrates via a new State Value Estimation Benchmark (SVEB) that the PPO critic in LLM RL almost entirely degenerates into the group average reward baseline of GRPO. It proposes two state value estimation methods aimed at "no extra rollouts and near-zero additional computation": Numca uses numeric milestones to rewrite mathematical reasoning as goal-conditioned RL for credit assignment, while Hista utilizes the LLM's final-layer hidden states and MinDistance for probability-weighted reward averaging. Both methods reduce MAE below GRPO/PPO across five SVEB subsets and yield consistent improvements for strong algorithms like DAPO/CSIPO on multiple mathematical benchmarks.
+This paper first empirically demonstrates through a newly created State Value Estimation Benchmark (SVEB) that PPO critics in LLM RL almost completely degenerate into the group relative reward baseline of GRPO. It then proposes two state value estimation methods aimed at "no extra rollouts and nearly zero additional compute": Numca Uses numerical milestones to rewrite mathematical reasoning as goal-conditioned RL for credit assignment, while Hista uses the last-layer hidden states of the LLM plus MinDistance for probability-weighted reward averaging. These methods reduce MAE below GRPO/PPO across five SVEB subsets and consistently improve strong algorithms like DAPO/CSIPO on multiple mathematical benchmarks.
 
 ## Background & Motivation
 
-**Background**: Since DeepSeek-R1, the RL post-training paradigm represented by GRPO and its successors (DAPO, GSPO, CSIPO) has become the de facto standard for LLM reasoning alignment. Their common architecture treats the "entire response" as an action, using a group mean reward $\bar r$ as the baseline for each token before performing policy gradients. This design bypasses the difficulty of token-level state value estimation but sacrifices the fine-grained credit assignment of the classic RL critic.
+**Background**: Since DeepSeek-R1, the RL post-training paradigm represented by GRPO and its successors (DAPO, GSPO, CSIPO) has become the de facto standard for LLM reasoning alignment. Their common framework treats an "entire response" as a single action, using a group mean reward $\bar r$ as the baseline for every token to compute policy gradients. This design bypasses the difficulty of token-level state value estimation but sacrifices the fine-grained credit assignment of a critic in classical RL.
 
-**Limitations of Prior Work**: Upon constructing SVEB, the authors found that the widely used PPO critic does not provide "guidance finer than the group mean" in LLM scenarios. PPO-1 (unseen data) scores almost identically to GRPO (0.169 vs. 0.164), and even PPO-N (seen data) is only slightly better (0.158 vs. 0.164). More directly, the distribution of $\widehat V_{PPO}(s_t)-\widehat V_{GRPO}(s_t)$ is tightly centered around zero, indicating that the PPO critic's output is essentially the group mean reward itself.
+**Limitations of Prior Work**: Upon constructing SVEB, the authors found that widely used PPO critics do not provide "finer guidance than the group mean" in LLM scenarios. PPO-1 (unseen data) scores nearly the same as GRPO (0.169 vs. 0.164), and even PPO-N (seen data) is only slightly better (0.158 vs. 0.164). More directly, the distribution of $\widehat V_{PPO}(s_t)-\widehat V_{GRPO}(s_t)$ is tightly clustered around zero, indicating the PPO critic's output is essentially the group mean reward itself.
 
-**Key Challenge**: Alternative solutions are either non-scalable (PRM and MCTS require expensive annotation or heavy extra rollouts; VAPO/VC-PPO still require training a critic as large as the actor) or were not originally designed as "baseline estimators" (PRM focuses on correctness verification). The "compute tax" in the LLM RL training loop is extremely high; therefore, a truly viable state value estimator must: not increase the number of rollouts / not introduce a large-model-scale critic / not rely on additional manual annotation / be plug-and-play with existing GRPO-style loops.
+**Key Challenge**: Alternative solutions are either non-scalable (PRM and MCTS require expensive annotation or heavy extra rollouts; VAPO/VC-PPO requires training a critic comparable in scale to the actor) or were not designed as "estimation baselines" (PRM is mainly for correctness verification). Given the high "compute tax" of LLM RL training loops, a viable state value estimator must satisfy: no increase in rollouts / no large-scale critic / no extra manual annotation / plug-and-play with existing GRPO-style loops.
 
-**Goal**: (i) Establish a quantifiable metric for "state value estimation quality" (SVEB); (ii) Provide a lightweight, immediately usable method for mathematical reasoning (Numca); (iii) Provide a general-purpose method requiring no priors (Hista) and prove its theoretical superiority over group mean estimators.
+**Goal**: (i) Quantify the quality of state value estimation via the SVEB benchmark; (ii) Provide a lightweight, immediately usable method for mathematical reasoning (Numca); (iii) Provide a general-purpose method requiring no priors (Hista) and theoretically prove its superiority over group mean estimators.
 
-**Key Insight**: The authors reframe LLM reasoning within the classic RL MDP framework: the state is the token prefix, the action is the next token, and rewards are provided only at termination. Consequently, the essence of the state value $V^\pi(s_t)=\mathbb{E}_\pi[r(s_T)\mid s_t]$ is the "expected future terminal reward starting from this prefix." Any method that can aggregate and average "multiple rollouts starting from $s_t$" based on some similarity measure is a potential state value estimator. The problem reduces to finding "state equivalence classes" or "state similarities" that are both cheap and meaningful.
+**Key Insight**: The authors reframe LLM reasoning within the classical RL MDP framework: the state is the token prefix, the action is the next token, and rewards are only provided upon termination. Thus, the state value $V^\pi(s_t)=\mathbb{E}_\pi[r(s_T)\mid s_t]$ is essentially the "expected future terminal reward starting from this prefix." Any method that can aggregate and average "multiple rollouts starting from $s_t$" based on some similarity is a potential state value estimator. The problem reduces to finding an efficient yet meaningful "state equivalence class" or "state similarity."
 
-**Core Idea**: Utilize a "cheap similarity" that requires no training—equivalence classes of numeric milestones for math (Numca) and MinDistance between LLM final-layer hidden states for general domains (Hista)—to perform weighted reward averaging over existing rollouts under the same prompt as a fine-grained baseline.
+**Core Idea**: Use a "cheap similarity" that requires no training—equivalence classes of numerical milestones for math (Numca) or MinDistance between LLM last-layer hidden states for general domains (Hista)—to perform weighted reward averaging over existing rollouts of the same prompt as a fine-grained baseline.
 
 ## Method
 
 ### Overall Architecture
-The authors frame all methods within a unified MDP: state $s_t=(x_1,\dots,x_t)$, action $a_t\in\mathcal V$, deterministic transitions, and rewards $r(s_T)$ given only when $a_t=\langle\mathrm{eos}\rangle$ or truncation occurs. Given $\mathcal N$ rollouts for a prompt with terminal rewards $r_i$, the goal is to provide $\widehat V(s_t)$ for an intermediate state $s_t$, which then serves as the baseline for policy gradients like in GRPO.
+The authors fit all methods into a unified MDP: state $s_t=(x_1,\dots,x_t)$, action $a_t\in\mathcal V$, deterministic transitions, and reward $r(s_T)$ given at $a_t=\langle\mathrm{eos}\rangle$ or truncation. Given $\mathcal N$ rollouts for a prompt with terminal rewards $r_i$, the goal is to provide $\widehat V(s_t)$ for an intermediate state $s_t$ to serve as the baseline for policy gradients.
 
-SVEB is constructed by selecting a set of prompts, running rollouts with a fixed $\pi$, and uniformly sampling intermediate $s_t$. For each $s_t$, $n$ independent continuations are sampled to obtain $\widehat V(s_t)=\frac{1}{n}\sum_i r(s_T^{(i)})$ (using MCS@20) as the reference ground truth. Scoring is based on MAE. Subsets are divided into five domains: number, math, science, general, and programming.
+SVEB is constructed by selecting prompts, running rollouts with a fixed $\pi$, and uniformly sampling intermediate $s_t$. For each $s_t$, $n$ independent continuations are sampled to obtain $\widehat V(s_t)=\frac{1}{n}\sum_i r(s_T^{(i)})$ (using MCS@20) as the reference ground truth, scored via MAE. The subsets cover number, math, science, general, and programming.
 
-Numca and Hista are designed as "baseline replacements within the GRPO pipeline"—maintaining the rollout count, introducing no new critic, and requiring no extra labels.
+Numca and Hista are designed as "baseline replacements" within the GRPO pipeline—no change in rollout count, no new critics, and no extra labels.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    A["Unified MDP Framework<br/>State=token prefix, Action=next token<br/>Reward given at termination"] --> B["N rollouts per prompt<br/>+ Terminal rewards r_i"]
-    B --> SVEB["SVEB: MCS@20 for ground truth, MAE scoring<br/>Shows PPO critic degenerates to GRPO mean<br/>→ Need finer baseline"]
+    A["Unified MDP Framework<br/>State=token prefix, Action=next token<br/>Reward only at termination"] --> B["N existing rollouts for same prompt<br/>+ Terminal rewards r_i"]
+    B --> SVEB["SVEB: MCS@20 ground truth, MAE scoring<br/>Empirical evidence: PPO critic = GRPO mean<br/>→ Need finer baseline"]
     SVEB -->|Math Scenarios| NUMCA
     SVEB -->|General Scenarios| HISTA
-    subgraph NUMCA["Numca: Numeric Milestone Credit Assignment (Math-Specific)"]
+    subgraph NUMCA["Numca: Numerical Milestone Credit Assignment (Math-specific)"]
         direction TB
-        N1["Pattern match milestones from digits"] --> N2["Abstract State = Set of observed milestones"]
-        N2 --> N3["Update dictionary count and reward_sum<br/>V=reward_sum/count<br/>Assign V to tokens in macro action"]
+        N1["Numerical pattern matching for milestones"] --> N2["Abstract state = set of occurred milestones"]
+        N2 --> N3["Dict accumulates count and reward_sum<br/>V=reward_sum/count<br/>Distributed to macro action tokens"]
     end
-    subgraph HISTA["Hista: Hidden State + MinDistance Prob-Weighting (General)"]
+    subgraph HISTA["Hista: Hidden States + MinDistance Prob. Weighting (General)"]
         direction TB
-        H1["Use last-layer hidden states as representation"] --> H2["EMA compression + interval sampling"]
-        H2 --> H3["MinDistance k-nearest neighbors"]
-        H3 --> H4["Weighted reward average via 1/MD"]
+        H1["Last-layer hidden states as state representation"] --> H2["EMA compression + interval sampling for finite space"]
+        H2 --> H3["MinDistance for k-nearest neighbors"]
+        H3 --> H4["Prob. weighted reward average via 1/MD"]
     end
     NUMCA --> V["Estimated State Value V(s_t)"]
     HISTA --> V
-    V --> ADV["Replace GRPO group mean baseline<br/>→ Calculate advantage → Policy Gradient<br/>DAPO / CSIPO Plug-and-Play"]
+    V --> ADV["Replace GRPO group mean baseline<br/>→ Compute advantage → Policy Gradient<br/>DAPO / CSIPO Plug-and-Play"]
 ```
 
 ### Key Designs
 
-**1. SVEB: Quantifying "Value Estimator Quality" through Monte Carlo Ground Truth MAE**
+**1. SVEB: Measuring "Value Estimator Quality" via Measurable MAE**
 
-Previously, baseline quality was evaluated by "whether downstream RL improved," which conflates optimization noise and algorithmic differences. SVEB calculates a reference ground truth for each intermediate state $s_t$ using large-scale Monte Carlo sampling $\widehat V(s_t)=\frac{1}{n}\sum_{i=1}^n r(s_T^{(i)})$ (using MCS@20; by the law of large numbers, $\widehat V(s_t)\to V^\pi(s_t)$). Estimators are then scored using $\mathrm{MAE}(f,D_s)=\frac{1}{|D_s|}\sum_j |f(s_t^{(j)},\theta)-\widehat V(s_t^{(j)})|$. With this offline, reproducible metric, the authors quantify that the PPO critic outputs are essentially group means.
+Previous evaluations of baseline quality depended on downstream RL performance, which mixes optimization noise and algorithmic differences. SVEB computes a reference ground truth $\widehat V(s_t)=\frac{1}{n}\sum_{i=1}^n r(s_T^{(i)})$ for each intermediate state $s_t$ using large-scale Monte Carlo continuations (MCS@20, where $\widehat V(s_t)\to V^\pi(s_t)$ by the law of large numbers). Any estimator can then be scored using $\mathrm{MAE}(f,D_s)=\frac{1}{|D_s|}\sum_j |f(s_t^{(j)},\theta)-\widehat V(s_t^{(j)})|$. Using this offline, reproducible metric, the authors quantify that the PPO critic's output center is essentially the group mean reward itself.
 
-**2. Numca: Numeric Milestones as Hindsight Goals for Zero-Cost Credit Assignment**
+**2. Numca: Numerical Milestones as Anchor Points for Zero-Cost Credit Assignment**
 
-Directly applying HER (final states as alternate goals) fails on text due to lack of discrete structure. However, "calculating an intermediate number" in math problems is inherently parsable and verifiable. Numca defines a pattern set $\mathcal P$ (integers, decimals, fractions); a milestone $m$ is a token subsequence matching $\mathcal P$. The state $s_t$ is abstracted as $s_t^M\triangleq\mathbb M(s_t)$, the set of milestones appeared so far. A dictionary $\mathcal T[s^M]=(\mathrm{count}, \mathrm{reward\_sum})$ is maintained across rollouts. $V(s^M)$ is computed as the mean reward of rollouts hitting that abstract state and distributed across corresponding tokens. This process is merely a dictionary lookup with negligible overhead.
+Applying HER by using final states as alternate goals fails in text due to unstructured semantics. However, in math, "calculating a specific intermediate number" is a naturally parsable sub-goal. Numca defines a pattern set $\mathcal P$ (integers, decimals, etc.); a milestone $m$ is a token subsequence matching $\mathcal P$. The state $s_t$ is abstracted as $s_t^M\triangleq\mathbb M(s_t)$, the set of all milestones occurred so far. A dictionary $\mathcal T[s^M]=(\mathrm{count}, \mathrm{reward\_sum})$ is maintained across rollouts. Finally, $V(s^M)=\mathcal T[s^M].\mathrm{reward\_sum}/\mathcal T[s^M].\mathrm{count}$ is distributed across tokens in the macro-action. 
 
-**3. Hista: Probability-Weighted Reward Averaging via Latent Representations and MinDistance**
+**3. Hista: Probability-Weighted Reward Averaging via Last-Layer Hidden States and MinDistance**
 
-To estimate value for arbitrary $s_t$ without domain priors, Hista uses final-layer hidden states as natural representations. The distance between variable-length latent sequences is defined by MinDistance (MD):
+To estimate values for any $s_t$ without domain priors, Hista uses the last-layer hidden states as intrinsic state representations. The distance between two variable-length hidden state sequences is defined via MinDistance:
 
 $$\mathrm{MD}(\mathbf X_1,\mathbf X_2)=\sum_i \min_j \|\mathbf x_{1,i}-\mathbf x_{2,j}\|_2.$$
 
-This design is theoretically supported: Theorem 5.2 proves the probability of two states having the same final reward is inversely proportional to MD: $P(R_1=R_2)\propto 1/\mathrm{MD}$. Theorem 5.5 proves that the bias of the probability-weighted estimator $\widehat V_{PW}(s_t)=\sum_i P_{t,i} r_i/\sum_i P_{t,i}$ is no greater than that of the naive mean estimator. Effectively, this converts the intuition that "similar states should have similar rewards" into a theoretically sound weighting scheme.
+Theorem 5.2 proves the probability of two states achieving the same final reward is inversely proportional to $\mathrm{MD}$: $P(R_1=R_2)\propto 1/\mathrm{MD}$. Theorem 5.5 further proves that the bias of the probability-weighted estimator $\widehat V_{PW}(s_t)=\sum_i P_{t,i} r_i/\sum_i P_{t,i}$ is no greater than that of a naive average estimator. For efficiency, $\mathbf X_\tau$ is compressed into $\mathbf E_\tau$ using EMA with smoothing $\alpha$, and $V(s_t)$ is computed using $k$-nearest neighbors weighted by $\omega_i=1/\mathrm{MD}(s_t,s_i)$.
 
 ### Loss & Training
-All methods retain the original clipping, KL regularization, and importance sampling mechanisms of GRPO/DAPO/CSIPO. They only replace the baseline in the advantage formula: substituting the group mean reward with $\widehat V(s_t)$ provided by Numca or Hista.
+All methods retain the original clipping, KL regularization, and importance sampling of GRPO/DAPO/CSIPO, only replacing the baseline in the advantage formula: replacing the group mean reward with $\widehat V(s_t)$ provided by Numca or Hista. Neither requires additional training steps or new model parameters.
 
 ## Key Experimental Results
 
 ### Main Results
-MAE on five SVEB subsets (@40 rollouts, reference MCS@20, lower is better):
+MAE across five SVEB subsets (@40 rollouts, reference MCS@20, lower is better):
 
 | Method | Number ↓ | Math ↓ | Science ↓ | General ↓ | Programming ↓ |
 |------|----------|--------|-----------|-----------|---------------|
 | GRPO@40 | 0.175 | 0.208 | 0.215 | 0.202 | 0.157 |
 | PPO-N@40 | 0.159 | 0.187 | 0.198 | 0.185 | 0.144 |
-| Numca@40 | **0.132** | 0.194 | 0.217 | 0.200 | 0.154 |
-| Hista@40 | 0.142 | **0.145** | **0.173** | **0.157** | **0.119** |
+| Numca@40 | **0.132** ↓0.027 | 0.194 ↑0.007 | 0.217 ↑0.019 | 0.200 ↑0.015 | 0.154 ↑0.010 |
+| Hista@40 | 0.142 ↓0.017 | **0.145** ↓0.042 | **0.173** ↓0.025 | **0.157** ↓0.028 | **0.119** ↓0.025 |
+| MCS@1 (Ref) | 0.223 | 0.235 | 0.272 | 0.283 | 0.162 |
+| MCS@2 (Ref) | 0.133 | 0.160 | 0.188 | 0.139 | 0.113 |
 
-Numca excels specifically in the Number subset. Hista outperforms GRPO/PPO-N across all subsets, approaching the accuracy of MCS@2 (which uses double the rollouts).
+Numca significantly outperforms in the Number subset; Hista outperforms GRPO/PPO-N across all subsets and approaches the accuracy of MCS@2.
 
 ### Ablation Study
-Switching the GRPO baseline to Numca on Qwen2.5-Math-1.5B-Instruct downstream results:
+Downstream math evaluation results on Qwen2.5-Math-1.5B-Instruct replacing the GRPO baseline with Numca:
 
 | Benchmark | Qwen | + GRPO | + Numca |
 |-----------|------|--------|---------|
 | MATH-500 | 0.740 | 0.746 | **0.760** |
 | GSM8K | 0.849 | 0.848 | **0.864** |
+| MinervaMath | 0.286 | 0.301 | **0.313** |
+| OlympiadBench | 0.425 | 0.413 | **0.426** |
+| AMC23 | 0.528 | 0.553 | **0.584** |
 | AVERAGE | 0.528 | 0.541 | **0.555** |
 
-Training curves indicate that Numca leads to steadier improvement in validation accuracy compared to the fluctuations seen in GRPO/PPO, attributed to variance reduction from the more accurate baseline.
-
 ### Key Findings
-- The "PPO critic degeneration" is consistent across multiple data sources, suggesting that training a full-scale critic is often a waste of compute in LLM RL.
-- Higher estimation accuracy correlates with more stable training curves; improved baselines are the most cost-effective way to reduce policy gradient variance besides increasing rollout counts.
-- Numca's limitation on AIME benchmarks (small answer space, long steps) highlights the necessity of the general-purpose Hista method.
+- The degeneration of the PPO critic to GRPO is replicated across multiple data sources, suggesting that training a full-scale critic is often a waste of compute in LLM RL.
+- Higher estimation accuracy translates to smoother training: Numca's training-validation curves are more stable with higher peaks, proving baseline variance is strongly correlated with policy gradient variance.
+- On AIME24&25, Numca did not outperform GRPO, likely due to the small answer space but long intermediate steps, highlighting the necessity of Hista's general-purpose approach.
 
 ## Highlights & Insights
-- **SVEB as a Benchmark**: Provides an independent measure of baseline quality, allowing future research to perform cheap ablation studies before committing to full RL training.
-- **Lightweight Hindsight**: Numca demonstrates that "milestone" concepts can be applied to text-based RL via simple regex, potentially extendable to code execution stacks or theorem proving steps.
-- **LLM as Implicit Encoder**: Hista leverages the final-layer hidden states directly as state representations, avoiding the need for separate representation models and fulfilling the "similar states, similar rewards" intuition with theoretical guarantees.
+- **SVEB as a Standardized Metric**: It provides a measure for baseline quality independent of downstream RL, allowing for cheap ablation before committing to full RL training.
+- **Numca as Lightweight Hindsight**: By using "numbers" as milestones, it applies hindsight principles with just a dictionary and regular expressions, reaching accuracy near MCS@2 in numerical tasks.
+- **Hista Operationalizes LLMs as Latent Representers**: It leverages last-layer hidden states and probability weighting to achieve peak estimation accuracy without extra models or rollouts, backed by Theorem 5.5.
+- **Plugging into Existing Stacks**: Since it only modifies the baseline, it is orthogonal to and improves upon algorithms like DAPO and CSIPO.
 
 ## Limitations & Future Work
-- **Numca's Domain Dependence**: Heavily reliant on numeric density; performs similarly to GRPO in non-math domains.
-- **Complexity**: Hista's MD metric has $O((T/d)^2)$ spatial complexity, which might be intensive for extremely long contexts (100k+ tokens), necessitating further compression.
-- **Assumptions**: Theoretical assumptions in Hista regarding the latent space of LLMs require further empirical validation across diverse model architectures.
+- Numca depends heavily on numerical density and performs similarly to GRPO in non-mathematical reasoning.
+- Hista's MD metric relies on specific theoretical assumptions regarding the LLM latent space that require further empirical validation.
+- Evaluation focuses on offline MAE and standard benchmarks, lacking coverage of multi-turn dialogues or long-horizon agent tasks.
+- Space complexity of $O((T/d)^2)$ may be problematic for extremely long sequences (e.g., 100k+ tokens), requiring further compression.
 
 ## Related Work & Insights
-- **vs. PPO / VAPO**: Unlike methods requiring an actor-sized critic, this work proves such critics often converge to group means, justifying their replacement with lightweight estimators.
-- **vs. PRM / MCTS**: Unlike PRM which requires expensive process labels, Hista reuses existing hidden states from the training rollouts at near-zero cost.
-- **vs. HER / GCRL**: Numca represents a concrete implementation of hindsight goals for LLMs by treating intermediate numbers as milestones.
+- **vs. PPO / VAPO**: Unlike methods requiring actor-scale critics that often degenerate to the mean, Hista/Numca replace the baseline directly to save training costs.
+- **vs. PRM / MCTS**: These rely on expensive process labels or rollouts; Hista reuses existing hidden states at nearly zero cost and provides direct value estimates rather than just verification.
+- **vs. HER**: Numca treats "reaching a number" as a hindsight goal, while Hista generalizes "reached semantic state" via hidden states.
+- **vs. GRPO / DAPO**: These algorithms focus on KL/IS/clipping. This work is orthogonal, improving the baseline component of these algorithms.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ (SVEB, Numca, and Hista collectively optimize a previously overlooked axis in LLM RL).
-- Experimental Thoroughness: ⭐⭐⭐⭐ (Extensive coverage across 5 SVEB domains and downstream mathematical benchmarks).
-- Writing Quality: ⭐⭐⭐⭐ (Clear logical flow from empirical findings to theoretical justifications).
-- Value: ⭐⭐⭐⭐⭐ (Offers immediate engineering gains for RL post-training with near-zero extra compute).
+- Novelty: ⭐⭐⭐⭐ SVEB + Numca + Hista identifies "baseline quality" as an independent optimization axis.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers 5 SVEB domains and downstream math tasks across multiple models.
+- Writing Quality: ⭐⭐⭐⭐ Clear logical chain from the "PPO degeneration" empirical claim to the proposed solutions.
+- Value: ⭐⭐⭐⭐⭐ High engineering utility for industrial LLM post-training with nearly zero extra compute.
 
 <!-- RELATED:START -->
 <div class="related-papers" markdown="1">
-- **DeepSeek-V3/R1**: Representative of the GRPO paradigm.
-- **Lightman et al. 2023**: Process-supervised reward models for math.
-- **Andrychowicz et al. 2018**: Hindsight Experience Replay (HER) foundations.
 </div>
 <!-- RELATED:END -->
 
 ## Related Papers
 
 - [\[ICML 2026\] DARTS: Distribution-Aware Active Rollout Trajectory Shaping for Accelerating LLM Reinforcement Learning](darts_distribution-aware_active_rollout_trajectory_shaping_for_accelerating_llm_.md)
-- [\[ICML 2026\] Multi-Agent Decision-Focused Learning via Value-Aware Sequential Communication](multi-agent_decision-focused_learning_via_value-aware_sequential_communication.md)
 - [\[ACL 2026\] Efficient Hyperparameter Optimization for LLM Reinforcement Learning](../../ACL2026/reinforcement_learning/efficient_hyperparameter_optimization_for_llm_reinforcement_learning.md)
+- [\[ICML 2026\] Multi-Agent Decision-Focused Learning via Value-Aware Sequential Communication](multi-agent_decision-focused_learning_via_value-aware_sequential_communication.md)
 - [\[ICLR 2026\] Value Flows](../../ICLR2026/reinforcement_learning/value_flows.md)
-- [\[ICLR 2026\] Continuous-Time Value Iteration for Multi-Agent Reinforcement Learning](../../ICLR2026/reinforcement_learning/continuous-time_value_iteration_for_multi-agent_reinforcement_learning.md)
+- [\[ICML 2026\] LLM-Guided Communication for Cooperative Multi-Agent Reinforcement Learning](llm-guided_communication_for_cooperative_multi-agent_reinforcement_learning.md)
 
 </div>
 

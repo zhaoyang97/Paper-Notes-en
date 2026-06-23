@@ -2,75 +2,75 @@
 title: >-
   [Paper Note] Causal-JEPA: Learning World Models through Object-Level Latent Masking
 description: >-
-  [ICML 2026][Causal Inference][World Models] This paper proposes C-JEPA, which extends the masked prediction of JEPA from image patch level to object-level latent representations. By using object-level masking as a latent intervention, the model is forced to learn interaction-dependent dynamics. It achieves an improvement of approximately 20% in counterfactual re
+  [ICML 2026][Causal Inference][World Models] Ours proposes C-JEPA, which extends JEPA's mask prediction from image patch-level to object-level latent representations. By using object-level masking as latent interventions, the model is forced to learn interaction-dependent dynamics. It achieves approximately a 20% gain in counterfactual reasoning over non-masked b
 tags:
   - ICML 2026
   - Causal Inference
   - World Models
   - JEPA
 date: 2026-05-08
-content_hash: 3f2b6e923fc4772e
+content_hash: a0d4582e7b79658b
 ---
 # Causal-JEPA: Learning World Models through Object-Level Latent Masking
 
 **Conference**: ICML2026  
 **arXiv**: [2602.11389](https://arxiv.org/abs/2602.11389)  
 **Code**: https://github.com/galilai-group/cjepa  
-**Area**: Causal Inference / World Models  
-**Keywords**: World Models, Object-Level Masking, JEPA, Causal Inductive Bias, Object-Centric Representations  
+**Area**: Causal Inference/World Models  
+**Keywords**: World Models, Object-level Masking, JEPA, Causal Inductive Bias, Object-centric Representations  
 
 ## TL;DR
 
-This paper proposes C-JEPA, which extends the masked prediction of JEPA from image patch level to object-level latent representations. By using object-level masking as a latent intervention, the model is forced to learn interaction-dependent dynamics. It achieves an improvement of approximately 20% in counterfactual reasoning compared to non-masked baselines and reaches comparable performance in control tasks using only 1% of the tokens, with planning accelerated by more than 8 times.
+Ours proposes C-JEPA, which extends JEPA's mask prediction from image patch-level to object-level latent representations. By using object-level masking as latent interventions, the model is forced to learn interaction-dependent dynamics. It achieves approximately a 20% gain in counterfactual reasoning over non-masked baselines and reaches comparable performance in control tasks using only 1% of tokens with over 8x planning acceleration.
 
 ## Background & Motivation
 
-**Background**: World models provide a unified framework for scalable planning and control by learning, predicting, and reasoning about environmental dynamics within a latent space. Object-centric representations (e.g., Slot Attention) serve as a useful abstraction widely used for learning visual dynamics and building world models.
+**Background**: World models provide a unified framework for scalable planning and control by learning, predicting, and reasoning about environment dynamics in latent space. Object-centric representations (e.g., Slot Attention) serve as useful abstractions widely used for learning visual dynamics and building world models.
 
-**Limitations of Prior Work**: Merely using object-centric representations is insufficient to capture interaction-dependent dynamics. Existing studies show that without an explicit mechanism to guide interaction learning, models tend to degenerate into relying on an object's own dynamics or exploiting coincidental correlations. Current methods enforce interactions by separating temporal dynamics from object interactions, regularizing attention sparsity, utilizing graph structures, or relying on downstream task-specific methods, but these either introduce additional architectural constraints or depend on reconstruction loss.
+**Limitations of Prior Work**: Merely using object-centric representations is insufficient to capture interaction-dependent dynamics. Existing research suggests that without explicit mechanisms to guide interaction learning, models tend to degenerate into relying on an object's own dynamics or exploiting coincidental correlations. Current methods enforce interactions by decoupling temporal dynamics and object interactions, regularizing attention sparsity, utilizing graph structures, or relying on downstream task-specific methods, but these either introduce additional architectural constraints or depend on reconstruction loss.
 
-**Key Challenge**: Existing patch-level masked prediction methods (e.g., I-JEPA, V-JEPA) optimize for local patch correlations and fail to enforce object-level interaction reasoning. How interaction structures can become functionally necessary through the learning objective itself remains an open problem.
+**Key Challenge**: Existing patch-level mask prediction methods (e.g., I-JEPA, V-JEPA) optimize local patch correlations and cannot enforce object-level interaction reasoning. How interaction structures become functionally necessary through the learning objective itself remains an open problem.
 
-**Goal**: Design a simple and flexible object-centric world model where interaction reasoning becomes a necessary condition for minimizing the prediction objective, rather than being forced through architectural constraints or reconstruction loss.
+**Goal**: Design a simple and flexible object-centric world model where interaction reasoning becomes a requirement for minimizing the prediction objective, rather than being forced through architectural constraints or reconstruction loss.
 
-**Key Insight**: If the historical latent trajectory of an object is masked during training, the model must infer the masked object's state from the state evolution of other objects—this essentially constitutes a counterfactual prediction query, preventing shortcuts like trivial temporal interpolation.
+**Key Insight**: If the historical latent trajectory of an object is masked during training, the model must infer the masked object's state from the evolution of other objects—this essentially constitutes a counterfactual prediction query, preventing shortcuts like trivial temporal interpolation.
 
-**Core Idea**: Elevate JEPA's masked prediction from the patch level to the object level. By using object-level latent masking as an observational intervention, the predictor is forced to rely on interaction-relevant variables, thereby introducing a causal inductive bias.
+**Core Idea**: Elevate JEPA's mask prediction from the patch level to the object level. By using object-level latent masking as observational interventions, the predictor is forced to depend on interaction-relevant variables, thereby introducing a causal inductive bias.
 
 ## Method
 
 ### Overall Architecture
 
-C-JEPA aims to solve the problem where object-centric world models take shortcuts by only observing an individual object's motion instead of learning interactions. It transforms "learning interactions" into an unavoidable requirement of the prediction task. During training, the latent trajectory of a selected object throughout the history is removed, forcing the model to reconstruct it by inferring from how other objects evolve. The pipeline is: a frozen object-centric encoder (e.g., VideoSAUR) first decomposes video frames into object-level slot representations $S_t = \{s_t^1, \dots, s_t^N\}$; then, selected objects are masked within the historical window, leaving only the earliest frame as an identity anchor; finally, a ViT-style bidirectional attention predictor simultaneously reconstructs the masked history slots and predicts future slots. During inference, no masking is applied, and the full history is used for forward prediction.
+C-JEPA aims to solve the problem where object-centric world models take shortcuts by only observing individual object self-motion without learning interactions. The approach makes "learning interactions" an unavoidable task: during training, the historical latent trajectory of a selected object is entirely masked, forcing the model to reconstruct it by inferring from the evolution of other objects. The pipeline is: a frozen object-centric encoder (e.g., VideoSAUR) first decomposes video frames into object-level slot representations $S_t = \{s_t^1, \dots, s_t^N\}$; then, selected objects are masked within the history window, leaving only the earliest frame as an identity anchor; finally, a ViT-style bidirectional attention predictor simultaneously reconstructs the masked history slots and predicts future slots. During inference, masking is removed, and the full history is used for forward prediction.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["Video Frames"] --> B["Frozen Object-Centric Encoder<br/>VideoSAUR extracts object-level slot representations"]
-    B --> C["Object-Level Latent Masking<br/>Mask entire history trajectory of selected objects, leaving the first frame as anchor"]
+    A["Video Frames"] --> B["Frozen Object-centric Encoder<br/>VideoSAUR extracts object-level slot representations"]
+    B --> C["Object-level Latent Masking<br/>Mask entire historical trajectory of selected objects, leaving the first frame as identity anchor"]
     AUX["Auxiliary variables as independent entity nodes<br/>Actions / Proprioception as extra tokens"] --> D
     C --> D["ViT Bidirectional Attention Predictor<br/>Entity tokens = Object slots + Auxiliary variables"]
-    D --> E["Joint Masked History + Forward Prediction<br/>History Reconstruction Loss + Future Prediction Loss"]
-    E -->|"No masking during inference, use full history for forward prediction"| F["Future Object States"]
+    D --> E["Joint Masked History + Forward Prediction<br/>History reconstruction loss + Future prediction loss"]
+    E -->|"No masking during inference, use full history for prediction"| F["Future Object States"]
 ```
 
 ### Key Designs
 
-**1. Object-Level Latent Masking: Forcing Interaction-based Inference**
+**1. Object-level Latent Masking: Forcing interaction inference**
 
-Patch-level masking (I-JEPA, V-JEPA) optimizes for local patch correlations, allowing models to cheat via temporal interpolation without understanding interactions. C-JEPA raises the masking granularity to the object level: given a mask index set $\mathcal{M} \subset \{1,\dots,N\}$, the slots of masked objects across the entire history window are replaced with mask tokens $\tilde{z}_\tau^i = \phi(z_{t_0}^i) + e_\tau$, where $\phi$ is a linear projection, $z_{t_0}^i$ is the identity anchor from the earliest timestep, and $e_\tau$ is a learnable embedding with temporal positional encoding. The identity anchor is a crucial detail—slot representations are permutation equivariant; without the first frame, the Transformer would not know which entity is masked. By masking the entire trajectory, the model cannot rely on the object's own history and must observe how other objects move or collide, essentially creating a counterfactual query that blocks the "auto-dynamic interpolation" shortcut.
+Patch-level masking (I-JEPA, V-JEPA) optimizes local patch correlations, allowing models to bypass understanding interactions via temporal interpolation. C-JEPA raises the masking granularity to the object level: given a mask index set $\mathcal{M} \subset \{1,\dots,N\}$, the slots of masked objects across the entire history window are replaced by mask tokens $\tilde{z}_\tau^i = \phi(z_{t_0}^i) + e_\tau$, where $\phi$ is a linear projection, $z_{t_0}^i$ is the identity anchor from the earliest timestep, and $e_\tau$ is a learnable embedding with temporal positional encoding. The identity anchor is a crucial detail—slot representations are permutation equivariant; without the first frame, the Transformer would not know which entity is being masked. By masking the entire trajectory, the model has no self-history to rely on and must observe how other objects move or collide, effectively creating a counterfactual query during training that blocks the "auto-dynamic interpolation" shortcut.
 
-**2. Joint Masked History + Forward Prediction: Forcing Interaction Reasoning**
+**2. Joint Masked History + Forward Prediction: Making interaction reasoning necessary via dual losses**
 
-Masking history alone is insufficient; the prediction objective must ensure the model performs while partially observed and models forward dynamics correctly. The total loss is defined as $\mathcal{L}_{\text{mask}} = \mathcal{L}_{\text{history}} + \mathcal{L}_{\text{future}}$: the predictor takes the masked sequence $\bar{Z}_\mathcal{T}$ and outputs $\hat{Z}_\mathcal{T} = f(\bar{Z}_\mathcal{T})$. $\mathcal{L}_{\text{history}}$ computes the L2 reconstruction error only for masked object tokens in the history window, while $\mathcal{L}_{\text{future}}$ computes the L2 prediction error for all future tokens. The history term suppresses the tendency to rely on individual dynamics when information is missing, and the future term ensures the model functions as a standard forward world model. Together, interaction reasoning shifts from being optional to a necessary condition for minimizing the objective.
+Masking history alone is insufficient; the prediction target must handle both "minimizing laziness under partial observability" and "normal forward modeling." The total loss is defined as $\mathcal{L}_{\text{mask}} = \mathcal{L}_{\text{history}} + \mathcal{L}_{\text{future}}$: the predictor takes the masked sequence $\bar{Z}_\mathcal{T}$ and outputs $\hat{Z}_\mathcal{T} = f(\bar{Z}_\mathcal{T})$. $\mathcal{L}_{\text{history}}$ calculates the L2 reconstruction error only for masked object tokens in the history window, while $\mathcal{L}_{\text{future}}$ calculates the L2 prediction error for all future tokens. The history term specifically suppresses the tendency to degenerate into self-dynamics when information is missing, and the future term ensures the model remains a functional forward world model. Together, interaction reasoning shifts from being optional to a necessary condition for objective minimization.
 
-**3. Auxiliary Variables as Independent Entity Nodes: Action/Proprioception beyond Slots**
+**3. Auxiliary Variables as Independent Entity Nodes: Actions/Proprioception separate from slots**
 
-Feeding action and proprioception signals into the model can be tricky—concatenating them into object slots contaminates object representations. C-JEPA treats them as independent tokens: the entity set is defined as $Z_t = \{S_t, U_t\}$, where $U_t = \{a_t, p_t\}$ contains actions $a_t$ and proprioception $p_t$. These auxiliary variables enter the attention calculation as additional conditional tokens rather than being mixed with object slots. This preserves the purity of object representations and allows the model to explicitly model "how actions affect objects." Experiments show this independent entity treatment significantly outperforms concatenation.
+How to feed action and proprioception signals is a common pitfall—concatenating them into object slots can contaminate object representations. C-JEPA treats them as independent tokens: the entity set is defined as $Z_t = \{S_t, U_t\}$, where $U_t = \{a_t, p_t\}$ contains actions $a_t$ and proprioception $p_t$. These auxiliary variables enter the attention calculation as additional conditioning tokens rather than being mixed with object slots. This preserves the purity of object representations and allows the model to explicitly model "how actions act on objects." Experiments show this independent entity approach significantly outperforms concatenation.
 
 ## Key Experimental Results
 
-### Main Results — CLEVRER Visual Question Answering
+### Main Results—CLEVRER Visual Question Answering
 
 | Model | Encoder | Mask Count $\|\mathcal{M}\|$ | Overall Acc (%) | Counterfactual per-opt (%) | Counterfactual per-que (%) |
 |------|--------|------|---------|---------|---------|
@@ -81,38 +81,38 @@ Feeding action and proprioception signals into the model can be tricky—concate
 | OCVP-Seq | SAVi | — | 83.11 | 83.21 | 56.06 |
 | C-JEPA | SAVi | 2 | **83.88** | **85.16** | **60.19** |
 
-### Push-T Robot Manipulation Task
+### Push-T Robotic Manipulation Task
 
-| Model | Tokens × Dim | Success Rate (%) | Planning Time |
+| Model | Token Count × Dim | Success Rate (%) | Planning Time |
 |------|-----------------|-----------|---------|
-| DINO-WM | 196 × 384 | 91.33 | 5763s |
+| DINO-WM | 196 × 384 | 91.33 | 5763 s |
 | DINO-WM-Reg. | 196 × 384 | 88.00 | — |
 | OC-DINO-WM | 6 × 128 | 60.67 | — |
 | OC-JEPA | 6 × 128 | 76.00 | — |
-| C-JEPA | 6 × 128 | **88.67** | **673s (8x speedup)** |
+| C-JEPA | 6 × 128 | **88.67** | **673 s (8× speedup)** |
 
 ### Key Findings
-- The gain from object-level masking is most significant in counterfactual reasoning: counterfactual per-question accuracy improved from 47.68% to 68.81% (+21.13%), which is much larger than the overall accuracy gain (+6.61%), indicating that masking indeed enhances counterfactual reasoning rather than just prediction precision.
-- Excessive masking can remove meaningful dependencies: when using the SAVi encoder, masking 4 objects resulted in a 4% drop, suggesting the optimal masking ratio depends on the representation quality of the encoder.
-- C-JEPA achieves control performance comparable to patch-level world models using only 1.02% of the token space (6×128 vs 196×384), while increasing planning speed by over 8 times.
-- SlotFormer performance plummeted by 34.5% when reconstruction loss was removed, showing its heavy reliance on pixel-level supervision; C-JEPA requires no reconstruction loss at all.
+- The Gain from object-level masking is most significant in counterfactual reasoning: counterfactual per-question accuracy increased from 47.68% to 68.81% (+21.13%), which is much larger than the overall accuracy increase (+6.61%), indicating that masking indeed enhances counterfactual reasoning rather than just prediction precision.
+- Excessive masking can remove meaningful dependencies: using the SAVi encoder with 4 masked objects actually caused a 4% drop, suggesting the optimal masking ratio depends on the encoder's representation quality.
+- C-JEPA achieves control performance comparable to patch-level world models using only 1.02% of the token space (6×128 vs 196×384), resulting in over 8x planning acceleration. This paradigm is directly valuable for real-time robot control.
+- SlotFormer's performance plummeted by 34.5% when the reconstruction loss was removed, indicating a heavy reliance on pixel-level supervision; C-JEPA requires no reconstruction loss at all.
 
 ## Highlights & Insights
-- **Object-level Masking as Latent Intervention**: The masking operation is reinterpreted as an intervention on the predictor’s observability, essentially creating counterfactual queries during training. This perspective cleverly links self-supervised masked learning with causal inference without requiring a ground-truth causal graph or multi-environment data.
-- **Efficiency-Performance Trade-off**: Object-centric representations reduce token counts from 196 to 6. Combined with object-level masking, C-JEPA recovers performance lost due to representation compression and achieves 8x planning acceleration. This paradigm has direct value for real-time robotic control.
-- **Neighborhood of Influence Theory**: The paper formalizes the concept of a "minimal sufficient set of context variables," proving that object-level masking makes interaction reasoning a necessary condition for optimal prediction, providing a theoretical foundation for masking strategies.
+- **Object-level Masking as Latent Intervention**: Interpreting the masking operation as an intervention on the predictor's observability essentially creates counterfactual queries during training. This perspective cleverly links self-supervised masked learning with causal inference without requiring explicit causal graphs or multi-environment data.
+- **Efficiency-Performance Synergy**: Object-centric representations reduce the token count from 196 to 6, and object-level masking recovers the performance lost due to representation compression, achieving 8x planning speedup.
+- **Neighborhood of Influence Theory**: Formalized the concept of the "minimal sufficient set of contextual variables," proving that object-level masking makes interaction reasoning a necessity for optimal prediction, providing a theoretical foundation for masking strategies.
 
 ## Limitations & Future Work
-- Performance is limited by the quality of the object-centric encoder: excessive masking on the SAVi encoder leads to performance degradation, indicating that encoder representation capability is a system bottleneck.
-- The "Neighborhood of Influence" was not validated on datasets with explicit temporal causal graphs.
-- Experimental scenarios are relatively simple (CLEVRER synthetic video, Push-T 2D manipulation); more complex 3D scenes and multi-agent interactions remain to be verified.
-- Future directions: Jointly fine-tuning object-centric encoders to avoid representation collapse; expanding to more complex interactive environments.
+- Performance is bottlenecked by the quality of the object-centric encoder: performance degradation under excessive masking on the SAVi encoder indicates the encoder's capability is a system limit.
+- Influence neighborhood correctness has not been verified on datasets with explicit temporal causal graphs.
+- Experimental scenarios are relatively simple (CLEVRER synthetic videos, Push-T 2D manipulation); more complex 3D scenes and multi-agent interactions remain to be validated.
+- Future directions: Jointly fine-tuning the object-centric encoder to avoid representation collapse; extending to more complex interaction environments.
 
 ## Related Work & Insights
-- **JEPA Series**: I-JEPA → V-JEPA → V-JEPA2; this paper is the first to combine JEPA with object-centric world models.
-- **DINO-WM**: A patch-level world model baseline that performs well but has high token overhead; C-JEPA achieves equivalent performance with object-level representations.
-- **SlotFormer / OCVP-Seq**: Previous object-centric world models that rely on reconstruction loss or architectural separation to guide interaction learning.
-- **Insights**: The idea of using object-level masking as an inductive bias can be transferred to other domains requiring interaction reasoning, such as multi-agent reinforcement learning, social behavior prediction, or molecular dynamics simulation.
+- **JEPA Series**: I-JEPA → V-JEPA → V-JEPA2; Ours combines JEPA with object-centric world models for the first time.
+- **DINO-WM**: A patch-level world model baseline; performs well but with high token overhead. C-JEPA achieves equivalent performance using object-level representations.
+- **SlotFormer / OCVP-Seq**: Prior object-centric world models that rely on reconstruction loss or architectural separation to guide interaction learning.
+- **Insights**: The idea of object-level masking as an inductive bias is transferable to other fields requiring interaction reasoning, such as multi-agent reinforcement learning, social behavior prediction, and molecular dynamics simulation.
 
 <!-- RELATED:START -->
 
@@ -121,10 +121,10 @@ Feeding action and proprioception signals into the model can be tricky—concate
 ## Related Papers
 
 - [\[ICLR 2026\] Distributional Equivalence in Linear Non-Gaussian Latent-Variable Cyclic Causal Models](../../ICLR2026/causal_inference/distributional_equivalence_in_linear_non-gaussian_latent-variable_cyclic_causal_.md)
+- [\[ICLR 2026\] Beyond DAGs: A Latent Partial Causal Model for Multimodal Learning](../../ICLR2026/causal_inference/beyond_dags_a_latent_partial_causal_model_for_multimodal_learning.md)
 - [\[NeurIPS 2025\] Bi-Level Decision-Focused Causal Learning for Large-Scale Marketing Optimization](../../NeurIPS2025/causal_inference/bi-level_decision-focused_causal_learning_for_large-scale_marketing_optimization.md)
-- [\[ICML 2025\] Latent Variable Causal Discovery under Selection Bias](../../ICML2025/causal_inference/latent_variable_causal_discovery_under_selection_bias.md)
 - [\[ECCV 2024\] Understanding Physical Dynamics with Counterfactual World Modeling](../../ECCV2024/causal_inference/understanding_physical_dynamics_with_counterfactual_world_modeling.md)
-- [\[AAAI 2026\] From Theory of Mind to Theory of Environment: Counterfactual Simulation of Latent Environmental Dynamics](../../AAAI2026/causal_inference/from_theory_of_mind_to_theory_of_environment_counterfactual_simulation_of_latent.md)
+- [\[ICLR 2026\] Adjusting Prediction Model Through Wasserstein Geodesic for Causal Inference](../../ICLR2026/causal_inference/adjusting_prediction_model_through_wasserstein_geodesic_for_causal_inference.md)
 
 </div>
 

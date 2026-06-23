@@ -12,52 +12,52 @@ tags:
   - benchmark
   - task composition
 date: 2026-05-08
-content_hash: 8b1d9e83ea7586e7
+content_hash: 31132646ec64ad6a
 ---
 # Revisiting a Pain in the Neck: A Semantic Reasoning Benchmark for Language Models
 
 **Conference**: ACL2026 Oral  
 **arXiv**: [2604.16593](https://arxiv.org/abs/2604.16593)  
 **Code**: https://github.com/jacklanda/SemanticQA  
-**Area**: LLM Evaluation / Semantic Reasoning / Phrase Semantics  
+**Area**: LLM Evaluation / Semantic Reasoning / Phrasal Semantics  
 **Keywords**: SEMANTICQA, semantic phrase, multiword expression, benchmark, task composition
 
 ## TL;DR
 This paper proposes SEMANTICQA, which unifies idioms, lexical collocations, noun compounds, and verbal multiword expressions into classification, extraction, interpretation, and sequential composition tasks. It finds that while strong LLMs perform well in open-ended interpretation, they remain significantly unstable in structured extraction, fine-grained semantic classification, and cascaded workflows.
 
 ## Background & Motivation
-**Background**: Large language models are frequently evaluated on benchmarks like mathematics, code, and logical reasoning, which primarily test explicit symbolic or procedural reasoning. Phrase semantics differs by requiring models to understand multiword expressions (MWEs) in context, such as idioms, lexical collocations, noun compounds, and verbal constructions.
+**Background**: Large Language Models (LLMs) are frequently evaluated on benchmarks for mathematics, code, and logical reasoning. However, these tasks primarily test explicit symbolic or procedural reasoning. Phrasal semantics differs by requiring models to understand multiword expressions (MWEs) within context, such as idioms, lexical collocations, noun compounds, and verbal constructions.
 
-**Limitations of Prior Work**: Existing MWE resources are abundant but typically focus on a single phrase type, a single task format, or a single semantic phenomenon. A model performing well on one task might have merely learned a specific format or prompt template, which does not necessarily indicate stable phrase-level semantic representation.
+**Limitations of Prior Work**: While multiword expression resources are abundant, they typically focus on a single phrase type, a single task format, or a single semantic phenomenon. A model's high performance on a specific task may result from learning a format or prompt template rather than possessing stable phrase-level semantic representations.
 
-**Key Challenge**: Phrase semantic capability cannot be summarized by a single score. Classification requires selecting correct semantic relations, extraction requires precise span localization, and interpretation requires generating contextualized paraphrases; these operations share underlying phrasal meaning but have entirely different output constraints and error profiles.
+**Key Challenge**: Phrasal semantic ability cannot be summarized by a single score. Classification requires selecting the correct semantic relationship, extraction requires precise span localization, and interpretation requires generating contextualized paraphrases. These operations share an underlying phrasal meaning but possess entirely different output constraints and error patterns.
 
-**Goal**: The authors aim to construct an operation-aligned benchmark that reorganizes existing MWE resources into a unified testbed to systematically evaluate model semantic stability across atomic tasks, few-shot settings, fine-grained category scaling, and sequential task compositions.
+**Goal**: The authors aim to construct an operation-aligned benchmark that reorganizes existing MWE resources into a unified testbed. This enables systematic evaluation of model semantic stability across atomic tasks, few-shot settings, fine-grained category expansion, and sequential task compositions.
 
 **Key Insight**: Instead of proposing a new semantic theory, the paper maps existing resources to controlled operations: classification, extraction, and interpretation. It also designs sequential task compositions, such as extracting a phrase before interpreting or classifying it.
 
-**Core Idea**: By using unified prompts and a multi-task structure to control for format differences, SEMANTICQA measures whether a model maintains phrase semantic consistency across different operations, rather than checking surface scores on isolated tasks.
+**Core Idea**: By using unified prompts and a multi-task structure to control for format variance, SEMANTICQA measures whether a model maintains phrasal semantic consistency across different operations, rather than merely achieving surface-level scores on isolated tasks.
 
 ## Method
 
 ### Overall Architecture
-The core mechanism of SEMANTICQA is to replace "adding datasets" with "decoupling operations": four types of phrases—idiomatic expressions (IE), lexical collocations (LC), noun compounds (NC), and verbal multiword expressions (VMWE)—are reorganized into unified semantic operations of classification, extraction, and interpretation. Each sample consists of a fixed prompt template, a contextual sentence, and a target output to control for format variance. Evaluation does not simply average all tasks into a leaderboard; instead, it observes whether the same model maintains semantic consistency across the three operations and whether few-shot learning truly improves grounding or if upstream extraction errors are amplified downstream. Classification uses accuracy, extraction uses sequence-level exact match, and interpretation primarily uses METEOR supplemented by ROUGE-L and BERTScore.
+The core mechanism of SEMANTICQA is to replace "adding datasets" with "decoupling operations." It reorganizes four types of phrases—idiomatic expressions (IE), lexical collocations (LC), noun compounds (NC), and verbal multiword expressions (VMWE)—into unified semantic operations: classification, extraction, and interpretation. Each sample consists of a fixed prompt template, a context sentence, and a target output to control for format differences. Evaluation does not simply average all tasks into a single leaderboard; instead, it observes whether the same model maintains consistency across operations and assesses whether few-shot learning improves grounding or if upstream extraction errors are amplified downstream. Accuracy is used for classification, sequence-level exact match for extraction, and METEOR (supplemented by ROUGE-L and BERTScore) for interpretation.
 
 ### Key Designs
-**1. Operation-aligned benchmark construction: Aligning fragmented resources to unified semantic operations**
+**1. Operation-aligned benchmark construction: Aligning dispersed resources to a unified set of semantic operations**
 
-Existing MWE resources often target only one phrase type or task format. High scores might stem from learning format templates. This work remaps four phrase types to controlled operations: IE for detection/extraction/interpretation, LC for semantic relation categorization/extraction/interpretation, NC for compositionality classification/extraction/interpretation, and VMWE for verbal construction extraction. Every task uses a unified prompt structure and explicit output constraints. Consequently, while a model might gain points via fluent paraphrasing in open interpretation, strict extraction and multi-class classification reveal whether it is truly grounded in phrasal structures and semantic relations.
+Existing MWE resources often focus on one phrase type or task format. High scores may indicate only that a model has learned a specific template. This work re-maps four phrase categories to controlled operations: detection/extraction/interpretation for IE; semantic relation categorization/extraction/interpretation for LC; compositionality classification/extraction/interpretation for NC; and verbal construction extraction for VMWE. Each task employs a unified prompt structure and explicit output constraints. Consequently, while a model might "game" open interpretation via fluent paraphrasing, strict extraction and multi-class classification reveal whether it is truly grounded in phrasal structure and semantic relations.
 
-**2. Sequential task composition: Decoupling atomic capabilities from workflow robustness**
+**2. Sequential task composition: Separating atomic capabilities from workflow robustness**
 
-Real-world phrase processing often involves "identification followed by understanding" in cascaded scenarios. If intermediate outputs are consumed by downstream steps, errors propagate. The paper designs two composite tasks, extraction-interpretation and extraction-classification, reporting both conditional scores (downstream performance given correct upstream extraction) and overall scores (end-to-end performance). Comparing these two scores allows for a decoupled diagnosis of whether a model has adequate atomic capability but fails when integrated into a workflow.
+Real-world phrase processing often involves cascaded scenarios where identification precedes understanding. If intermediate outputs are consumed by downstream steps, errors propagate. The paper designs two composite tasks—extraction-interpretation and extraction-classification—and reports both conditional scores (downstream performance given correct upstream extraction) and overall scores (end-to-end performance). Comparing these scores helps diagnose whether a model's failure stems from weak atomic capabilities or instability within a workflow.
 
-**3. Oracle Schema and category scale analysis: Probing the impact of explicit semantic definitions and category granularity**
+**3. Oracle Schema and Category Scale Analysis: Probing the impact of explicit semantic definitions and category granularity**
 
-Oracle Schema adds target types and definitions (e.g., explaining the non-compositionality of verb-particle constructions) into the prompt for VMWE extraction to test if models fail due to a lack of explicit schema. Category scale analysis expands the number of semantic categories in LC classification from 1, 2, 4, 8 to 16 to observe how accuracy declines with refinement. If performance collapses as categories become more granular, it suggests that in-context semantic reasoning cannot yet replace supervised learning.
+The Oracle Schema adds target types and definitions to prompts for VMWE extraction (e.g., explaining the non-compositionality of verb-particle constructions) to check if models fail simply because they "do not know which category to extract." Category scale analysis expands the number of semantic categories in LC classification from 1, 2, 4, 8 to 16 to observe how accuracy declines. If performance collapses as categories refine, it suggests that in-context semantic reasoning cannot yet replace supervised learning.
 
 ### Loss & Training
-SEMANTICQA is a benchmark and does not involve training new models. API-based and open-source LLMs are evaluated under zero-shot, three-shot, and five-shot settings with temperature 0 and top-p 1.0. Non-API baselines include supervised fine-tuned (SFT) models like BERT and T5. Three linguistics graduate students randomly labeled 100 samples per task as a difficulty reference (rather than an absolute upper bound). Due to varying generation formats across models, pre-runs were conducted, and task-specific heuristics were used to parse model outputs.
+SEMANTICQA is an evaluation benchmark and does not involve training new models. API-based and open-source LLMs are evaluated in zero-shot, three-shot, and five-shot settings with a sampling temperature of $0$ and top-p of $1.0$. Non-API baselines include supervised fine-tuned models like BERT and T5. Three linguistics graduate students randomly annotated 100 samples per task to serve as a reference for task difficulty (rather than an absolute upper bound). Due to varying generation formats, a pre-run is conducted, and task-specific heuristics are used to parse model outputs.
 
 ## Key Experimental Results
 
@@ -73,42 +73,42 @@ SEMANTICQA is a benchmark and does not involve training new models. API-based an
 
 ### Ablation Study
 
-| Analysis Setting | Key Metric | Description |
+| Analysis Setting | Key Metrics | Description |
 |----------|---------|------|
-| LC Category Scale: DeepSeek-R1 zero-shot | Acc@2 81.7, Acc@16 35.4 | Increasing categories makes fine-grained semantic relation classification significantly harder |
-| LC Category Scale: GPT-5 zero-shot | Acc@2 92.2, Acc@16 56.3 | Frontier models also drop significantly as category scale increases |
-| LC Category Scale: GPT-5 five-shot | Acc@2 94.4, Acc@16 65.2 | Few-shot mitigates but does not eliminate degradation from category refinement |
-| VMWE Oracle Schema: DeepSeek-R1 zero-shot | 64.1 vs 51.6, +12.5 | Providing target type definitions significantly improves extraction |
-| VMWE Oracle Schema: GPT-5 five-shot | 72.6 vs 65.7, +6.9 | Strong models also benefit from explicit schemas |
+| LC Category Expansion: DeepSeek-R1 zero-shot | Acc@2 81.7, Acc@16 35.4 | Fine-grained semantic relation classification becomes significantly harder as categories increase. |
+| LC Category Expansion: GPT-5 zero-shot | Acc@2 92.2, Acc@16 56.3 | Frontier models also show significant degradation as category scale expands. |
+| LC Category Expansion: GPT-5 five-shot | Acc@2 94.4, Acc@16 65.2 | Few-shot learning mitigates but does not eliminate degradation from category refinement. |
+| VMWE Oracle Schema: DeepSeek-R1 zero-shot | 64.1 vs 51.6, +12.5 | Providing target type definitions significantly improves extraction performance. |
+| VMWE Oracle Schema: GPT-5 five-shot | 72.6 vs 65.7, +6.9 | Strong models also benefit from an explicit schema. |
 
 ### Key Findings
 - Few-shot learning is most stable and effective for interpretation tasks, but this does not necessarily equate to strict semantic grounding; gains in ROUGE-L and BERTScore may reflect exemplar-guided reconstruction.
-- Extraction tasks are the most unstable as they require precise span grounding; generating fluent interpretations does not guarantee the model can correctly extract the phrase.
-- In sequential extraction-interpretation, overall MTR is significantly lower than conditional MTR. For example, GPT-5 in LC five-shot achieves 41.3 in extraction and 41.8 in conditional MTR, but the overall MTR is only 17.3, indicating that upstream extraction is the primary bottleneck.
-- Sequential classification also degrades significantly with the number of categories. GPT-5 in LC 16-class five-shot has a conditional accuracy of 73.4, but an overall accuracy of only 44.8.
+- Extraction tasks are the most unstable as they require precise span grounding; fluent interpretation generation does not guarantee successful phrase extraction.
+- In sequential extraction-interpretation, the overall MTR is significantly lower than the conditional MTR. For instance, GPT-5 under LC five-shot achieves an extraction score of 41.3 and a conditional MTR of 41.8, but an overall MTR of only 17.3, identifying upstream extraction as the primary bottleneck.
+- Sequential classification also degrades markedly with an increase in the number of categories. GPT-5 in a 16-class LC setting achieves a five-shot conditional accuracy of 73.4, but an overall accuracy of only 44.8.
 
 ## Highlights & Insights
-- The value of SEMANTICQA lies in "decoupling operations" rather than just adding a new dataset. By placing the same phrase semantics under different output constraints, it exposes localized strengths and weaknesses in model capabilities.
-- The paper is cautious about interpretation metrics: high BERTScore or METEOR may indicate close paraphrasing but not necessarily correct grounding during extraction or classification.
-- Sequential composition provides an excellent diagnostic perspective. Many real-world systems are not single-step QA but involve identifying an entity/phrase before interpreting, classifying, or retrieving it; SEMANTICQA shows that current models remain unreliable in this type of workflow robustness.
+- The value of SEMANTICQA lies in "decoupling operations" rather than simply adding a new dataset. By placing the same phrasal semantics under different output constraints, it exposes local strengths and weaknesses in model capability.
+- The paper is cautious regarding interpretation metrics: high BERTScore or METEOR may indicate only close paraphrasing and does not prove the model correctly grounded the phrase during extraction or classification.
+- Sequential composition provides a valuable diagnostic perspective. Many real-world systems are not single-step QA but involve locating an entity/phrase before interpreting, classifying, or retrieving it; SEMANTICQA shows that current models remain unreliable in this type of workflow robustness.
 
 ## Limitations & Future Work
-- The authors acknowledge that SEMANTICQA only covers English and four common phrase categories, omitting long-tail types like multiword named entities or complex functional words.
-- While it includes various task formats, future work should incorporate more complex sequential compositions and semantic retrieval evaluation paradigms.
-- Models evolve rapidly; the benchmark needs continuous updates with broader model families and stronger post-training versions.
-- Human scores are derived from 100 samples per task and three linguistics graduate students, making them more suitable as a difficulty reference than an absolute human ceiling.
+- The authors acknowledge that SEMANTICQA currently covers only English and four common types of phrasal phenomena, excluding long-tail types like multiword named entities or complex functional words.
+- While it includes multiple task formats, future work should incorporate more complex sequential compositions and semantic retrieval paradigms.
+- Given the rapid pace of model development, the benchmark requires continuous updates to include broader model families and stronger post-training models.
+- Human scores were derived from 100 samples per task by three linguistics graduate students, making them suitable as difficulty references rather than absolute human ceilings.
 
 ## Related Work & Insights
-- **vs. Math/Code/Logic Benchmarks**: Those tasks emphasize explicit symbolic steps, whereas SEMANTICQA emphasizes internal phrase semantics, contextual disambiguation, and MWE grounding.
-- **vs. Traditional MWE Resources**: Existing resources are often fragmented by phrase type; this work reorganizes them into a unified operational framework to compare model consistency across different semantic operations.
-- **vs. Single-task Idiom Benchmarks**: Isolated idiom detection or paraphrase tasks make it difficult to judge if a model truly understands the phrase; SEMANTICQA uses cross-verification through extraction, classification, interpretation, and composition tasks.
-- **Insight**: LLM evaluation should focus more on "consistency of the same knowledge across different operations" rather than high scores in a single format.
+- **vs Mathematics/Code/Logic Benchmarks**: Those tasks emphasize explicit symbolic steps, whereas SEMANTICQA emphasizes internal phrasal semantics, contextual disambiguation, and multiword expression grounding.
+- **vs Traditional MWE Resources**: Existing resources are often fragmented by phrase type. This work reorganizes them into a unified operational framework to compare model consistency across semantic operations.
+- **vs Single-task Idiom Benchmarks**: Isolated idiom detection or paraphrase tasks make it difficult to judge true understanding; SEMANTICQA uses cross-validation through extraction, classification, interpretation, and composite tasks.
+- **Insight**: LLM evaluation should focus more on "consistency of the same knowledge across different operations" rather than performance on a single format.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐☆ The main innovation is in benchmark organization and operation alignment rather than a new model, but the problem framing is precise.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers multiple models, zero/few-shot, human references, category scaling, sequential composition, and Oracle schemas, providing rich diagnostic dimensions.
-- Writing Quality: ⭐⭐⭐⭐☆ Clear structure and cautious discussion; the main table is large and requires focusing on task operations rather than cell-by-cell comparison.
-- Value: ⭐⭐⭐⭐⭐ Highly valuable for LLM semantic understanding evaluation, MWE processing, and benchmark design.
+- Novelty: ⭐⭐⭐⭐☆ The main innovation lies in benchmark organization and operation alignment rather than a new model, but it identifies the core problem accurately.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Includes multi-model evaluation, zero/few-shot settings, human references, category scaling, sequential composition, and Oracle schemas.
+- Writing Quality: ⭐⭐⭐⭐☆ Clear structure and cautious discussion; the main tables are large and require focusing on task operations rather than cell-by-cell comparison.
+- Value: ⭐⭐⭐⭐⭐ Highly relevant for evaluating LLM semantic understanding, MWE processing, and benchmark design.
 
 <!-- RELATED:START -->
 

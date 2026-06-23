@@ -2,12 +2,12 @@
 title: >-
   [Paper Note] Why Supervised Fine-Tuning Fails to Learn: A Systematic Study of Incomplete Learning in Large Language Models
 description: >-
-  [ACL 2026][Alignment & RLHF][Paper Note] This paper provides the first systematic study of the "Incomplete Learning Phenomenon" (ILP) in SFT—where models fail to accurately reproduce training data after convergence. It identifies five recurring causes (Knowledge Absence, Knowledge Conflict, Data Contradiction, Leftward Forgetting, and Insufficient Optimizatio
+  [ACL 2026][Alignment & RLHF][Paper Note] This paper provides the first systematic study of "Incomplete Learning Phenomenon" (ILP) in SFT—where models fail to correctly reproduce part of the training data despite convergence. It identifies five recurring causes (Knowledge Absence, Knowledge Conflict, Internal Data Contradiction, Left-side Forgetting, Insuffici
 tags:
   - ACL 2026
   - Alignment & RLHF
 date: 2026-05-08
-content_hash: bff79b7555b5b7c2
+content_hash: 8fa3ed9137b11ca9
 ---
 # Why Supervised Fine-Tuning Fails to Learn: A Systematic Study of Incomplete Learning in Large Language Models
 
@@ -15,121 +15,121 @@ content_hash: bff79b7555b5b7c2
 **arXiv**: [2604.10079](https://arxiv.org/abs/2604.10079)  
 **Code**: None  
 **Area**: LLM Safety  
-**Keywords**: Incomplete Learning, SFT Diagnosis, Knowledge Conflict, Forgetting, Fine-tuning Failure Modes
+**Keywords**: Incomplete Learning, SFT Diagnosis, Knowledge Conflict, Forgetting, Fine-tuning failure modes
 
 ## TL;DR
 
-This paper provides the first systematic study of the "Incomplete Learning Phenomenon" (ILP) in SFT—where models fail to accurately reproduce training data after convergence. It identifies five recurring causes (Knowledge Absence, Knowledge Conflict, Data Contradiction, Leftward Forgetting, and Insufficient Optimization) and proposes a diagnostic framework along with targeted mitigation strategies.
+This paper provides the first systematic study of "Incomplete Learning Phenomenon" (ILP) in SFT—where models fail to correctly reproduce part of the training data despite convergence. It identifies five recurring causes (Knowledge Absence, Knowledge Conflict, Internal Data Contradiction, Left-side Forgetting, Insufficient Optimization) and proposes a diagnostic framework along with targeted mitigation strategies.
 
 ## Background & Motivation
 
-**Background**: SFT is the standard method for adapting LLMs to downstream tasks and is widely regarded as a reliable and efficient mechanism for specialization.
+**Background**: SFT is the standard method for adapting LLMs to downstream tasks and is widely regarded as a reliable and efficient specialization mechanism.
 
-**Limitations of Prior Work**: (1) Even when training loss fully converges, models frequently fail to correctly answer certain training samples—this is not an issue of overfitting or generalization, but a failure on the training set itself; (2) Unlearned samples are often not random but correspond to rare cases, compositional patterns, or knowledge-intensive instances; (3) Improvements in aggregate metrics can mask the persistence of unlearned subsets.
+**Limitations of Prior Work**: (1) Even when training loss fully converges, models frequently fail to correctly answer certain training samples—this is not an issue of overfitting or generalization, but a failure on the training set itself; (2) Unlearned samples are often non-random, corresponding to rare cases, compositional patterns, or knowledge-intensive instances; (3) Improvement in aggregate metrics may mask a persistent unlearned subset.
 
-**Key Challenge**: SFT datasets (especially in specialized fields like law and medicine) are expensive to construct, yet $15.3\% \pm 2.1\%$ of samples remain unlearned after training—directly reducing the utility of the data.
+**Key Challenge**: SFT datasets (especially in professional domains like law or medicine) are expensive to construct, yet $15.3\% \pm 2.1\%$ of samples remain unlearned after training—this directly reduces data utilization efficiency.
 
-**Goal**: The objective is not to propose a new fine-tuning algorithm, but to systematically characterize, diagnose, and verify the sources of incomplete learning in SFT.
+**Goal**: Instead of proposing a new fine-tuning algorithm, this study systematically characterizes, diagnoses, and validates the sources of incomplete learning in SFT.
 
-**Key Insight**: Unlearned samples are treated as diagnostic signals rather than noise—understanding the limitations of SFT by analyzing why these specific samples were not learned.
+**Key Insight**: Unlearned samples are treated as diagnostic signals rather than noise—understanding why these specific samples are not learned reveals the limitations of SFT.
 
-**Core Idea**: The five sources of ILP each require different mitigation strategies—there is no "one-size-fits-all" solution, necessitating fine-grained, sample-level diagnosis.
+**Core Idea**: The five sources of ILP each require different mitigation strategies—there is no "one-size-fits-all" solution, necessitating fine-grained sample-level diagnosis.
 
 ## Method
 
 ### Overall Architecture
 
-Rather than proposing a new fine-tuning algorithm, this work establishes a diagnostic pipeline consisting of "detection, attribution, and intervention." It treats the failure where "training loss converges but samples remain incorrect" as an analyzable signal. Specifically: the model is first SFT-trained to convergence; then, every training sample is converted into a multiple-choice question (MCQ) to detect the "unlearned subset" via multiple sampling; distribution-level signals are used to probe the knowledge state of each stubborn sample to determine if it is "completely unknown" or "known but overridden"; samples are then attributed to one of five causes based on this; finally, corresponding repair methods are applied to each cause, and improvements are used to validate the correctness of the attribution.
+This work does not propose a new fine-tuning algorithm but establishes a "detection-attribution-intervention" diagnostic pipeline. It treats failures where "training loss converges but samples are incorrect" as analyzable signals. Specifically: the model is first SFTed to convergence; then, each training sample is converted into a multiple-choice question to detect the "unlearned subset" via multi-sampling; distribution-level signals are used to probe the knowledge state of each stubborn sample to determine if it is "completely unknown" or "known but overridden"; samples are then categorized into one of five causes; finally, corresponding repair methods are applied to each cause, and the correctness of the attribution is verified by checking if the samples improve.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    A["SFT Training to Convergence"] --> B["Unlearned Sample Detection<br/>BoN-5 Sampling, pass@5 < 0.2 classified as unlearned, take top-K=1000"]
-    B --> C["Knowledge State Probing<br/>Compare JSD between Base and SFT distributions, distinguish 'Unknown' vs 'Known but Wrong'"]
-    subgraph D["Diagnosis and Causal Intervention for Five Causes"]
-        D1["Knowledge Absence<br/>→ Knowledge-Augmented CPT"]
-        D2["Knowledge Conflict<br/>→ External Knowledge Correction + CPT"]
-        D3["Data Contradiction<br/>→ Bucketed Training for Similar Samples"]
-        D4["Leftward Forgetting<br/>→ Shuffling + Dynamic Resampling"]
-        D5["Insufficient Optimization<br/>→ Progressively Increasing Training Epochs"]
+    A["SFT training to convergence"] --> B["Unlearned sample detection<br/>BoN-5 multi-sampling, pass@5 < 0.2 judged as unlearned, take top-K=1000"]
+    B --> C["Knowledge state probing<br/>Compare JSD between base ↔ fine-tuned distributions, distinguish 'not knowing' from 'knowing but answering incorrectly'"]
+    subgraph D["Diagnostic and causal intervention for five causes"]
+        D1["Knowledge Absence<br/>→ Knowledge-augmented corpus CPT"]
+        D2["Knowledge Conflict<br/>→ External knowledge correction + CPT"]
+        D3["Internal Data Contradiction<br/>→ Binning training for similar samples"]
+        D4["Left-side Forgetting<br/>→ Shuffling + dynamic resampling"]
+        D5["Insufficient Optimization<br/>→ Progressively increase training epochs"]
     end
     C --> D
-    D --> E["Causal Verification<br/>Improvement after repair → Validates the identified cause"]
+    D --> E["Causal verification<br/>Sample improves after repair → Proves the cause is valid"]
 ```
 
 ### Key Designs
 
-**1. Unlearned Sample Detection: Separating Decoding Noise from Genuine Learning Failure via BoN-5**
+**1. Unlearned Sample Detection: Separating decoding noise from true learning failure using BoN-5**
 
-Aggregate accuracy masks the fact that a single sample might be correct or incorrect across different samplings. A single failure could be a genuine learning failure or merely random decoding jitter. To address this, each SFT sample is rewritten as an MCQ, and $N$ independent inferences are performed to calculate $\text{pass@N}$. Samples with $\text{pass@5} < 0.2$ that fail consistently across random seeds are classified as "unlearned," from which the top $K=1000$ most severe cases are selected for in-depth analysis. Only repeated failures count, ensuring that the filtered data represents knowledge the model truly failed to internalize.
+Aggregate accuracy hides the fact that the same sample might be correct in some sampling rounds and incorrect in others. A single failure could be a genuine learning failure or just random decoding jitter. Thus, each SFT sample is rewritten as a multiple-choice question, and $N$ independent inferences are performed to calculate pass@N. Samples with $\text{pass@5} < 0.2$ that consistently fail across random seeds are judged as "unlearned," and the top-$K=1000$ most severe cases are selected for in-depth analysis. Only repeated sampling failures count, ensuring the identified samples represent knowledge the model failed to internalize rather than stochastic noise.
 
-**2. Knowledge State Probing: Distinguishing "Unknown" from "Known but Wrong" via JSD**
+**2. Knowledge State Probing: Distinguishing "not knowing" from "knowing but answering incorrectly" using JSD**
 
-After filtering unlearned samples, the first task is to determine where they are stuck. Final accuracy alone cannot distinguish between knowledge absence and knowledge conflict, as both result in incorrect answers. This work instead compares the Jensen-Shannon Divergence ($\mathrm{JSD}$) between the predictive distributions of the base model and the fine-tuned model. A high $\mathrm{JSD}$ where the base model was originally incorrect indicates SFT attempted to override a deep-seated incorrect prior (Knowledge Conflict); a low $\mathrm{JSD}$ where the model remains incorrect suggests the distribution barely moved and the model failed to receive the knowledge (Knowledge Absence). This distribution-level signal serves as the basis for distinguishing the two causes and deciding the repair path.
+After filtering unlearned samples, the first task is to determine where the bottleneck lies—final accuracy alone cannot distinguish between lack of knowledge and knowledge conflict, as both appear as incorrect answers. This paper compares the Jensen-Shannon Divergence $\mathrm{JSD}$ between the base model and fine-tuned model prediction distributions: a high $\mathrm{JSD}$ where the base model is already incorrect suggests SFT is trying to override a deep-seated erroneous prior, indicating Knowledge Conflict; a low $\mathrm{JSD}$ where the model remains incorrect after fine-tuning suggests the distribution barely moved and the model failed to receive the knowledge, indicating Knowledge Absence. This distribution-level signal identifies the cause and determines the repair path.
 
-**3. Diagnosis and Causal Intervention: Positioning and Repairing for Five ILP Sources**
+**3. Diagnosis and Causal Intervention for Five ILP Sources: A set of localization tools and repairs for each cause**
 
-Using the knowledge state signals, unlearned samples are categorized into five distinct causes, with specific detection and intervention methods for each: **Knowledge Absence in Pre-training**—extracting factual triples via OpenIE and probing the base model; if confirmed, Continued Pre-training (CPT) is used with knowledge-augmented corpora. **Knowledge Conflict**—detecting cases where the base model provides answers with high confidence that contradict SFT labels; these are corrected with external knowledge before CPT. **SFT Data Contradictions**—identifying sample pairs with semantic similarity but inconsistent labels; after GPT evaluation, they are trained in separate buckets to avoid conflicting supervisory signals in the same mini-batch. **Leftward Forgetting**—addressing cases where earlier samples in sequential training are overridden by later ones via shuffling and dynamic resampling. **Insufficient Optimization**—compensating for weak signals in rare or complex patterns by progressively increasing training epochs. Crucially, these repairs are causal interventions: if applying strategy $X$ for cause $Y$ results in the sample being learned, it confirms $Y$ was indeed the cause.
+Using knowledge state signals, unlearned samples are categorized into five distinct causes, with specific detection and intervention methods for each: **Knowledge Absence**—fact triplets are extracted using OpenIE and probed via BoN on the base model; lack of knowledge is addressed using knowledge-augmented Continued Pre-training (CPT). **Knowledge Conflict**—detected when the base model provides an answer with high confidence that contradicts the SFT label; it is corrected via external knowledge then CPT. **Internal Data Contradiction**—pairs of samples with similar semantics but inconsistent labels are identified; they are evaluated by GPT and trained in separate bins to avoid conflicting supervisory signals in the same mini-batch. **Left-side Forgetting**—samples earlier in the sequential training are overridden by later ones; this is mitigated through random shuffling and dynamic resampling. **Insufficient Optimization**—weak training signals for rare or complex patterns are compensated for by progressively increasing training epochs. Crucially, these repairs are causal interventions: if applying strategy $X$ for cause $Y$ results in the sample being learned, it validates $Y$ as the true cause.
 
 ### Loss & Training
 
-Standard SFT cross-entropy loss was used throughout, with evaluations on Qwen, LLaMA, and OLMo2 model families. For CPT interventions addressing knowledge absence/conflict, a mixed corpus of $\mathcal{C}_{\text{mix}} = 0.8\,\mathcal{C}_{\text{general}} + 0.2\,\mathcal{C}_{\text{aug}}$ was used. This 80/20 ratio incorporates knowledge-augmented corpora to fill gaps or correct conflicts without diluting general capabilities.
+Standard SFT cross-entropy loss is used throughout, evaluated across Qwen, LLaMA, and OLMo2 model families. For CPT interventions in knowledge absence/conflict categories, a mixed corpus $\mathcal{C}_{\text{mix}} = 0.8\,\mathcal{C}_{\text{general}} + 0.2\,\mathcal{C}_{\text{aug}}$ is used, blending knowledge-augmented data at a 20% ratio to supplement/correct knowledge without diluting general capabilities.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**Universality of ILP (Average across 10 benchmark SFT datasets)**
+**Prevalence of ILP (Average across 10 benchmark SFT datasets)**
 
 | Metric | Value |
 |------|------|
-| Average Unlearned Ratio | 15.3% ± 2.1% |
-| Consistency across Models | Observed in Qwen, LLaMA, and OLMo2 |
-| Consistency across Domains | Exists in Medical, Legal, and Finance |
+| Average unlearned ratio | 15.3% ± 2.1% |
+| Cross-model consistency | Observed across Qwen/LLaMA/OLMo2 |
+| Cross-domain consistency | Present in Medical/Legal/Finance |
 
 ### Ablation Study
 
-**Effectiveness of CPT Intervention (Knowledge Absence + Conflict)**
+**Effectiveness of CPT interventions (Knowledge Absence + Conflict)**
 
 | Domain | SFT only Acc | +CPT Acc | Gain |
 |------|-------------|---------|------|
-| Medical (MedQA) | baseline | Significant Increase | Validates Knowledge Absence |
-| Legal (LegalBench) | baseline | Significant Increase | Validates Knowledge Conflict |
-| Finance (FinanceBench) | baseline | Significant Increase | — |
+| Medical (MedQA) | baseline | Significant gain | Validates knowledge absence hypothesis |
+| Legal (LegalBench) | baseline | Significant gain | Validates knowledge conflict hypothesis |
+| Finance (FinanceBench) | baseline | Significant gain | — |
 
 ### Key Findings
 
-- ILP is universal and heterogeneous—no single intervention can solve all failures.
+- ILP is ubiquitous and heterogeneous—no single intervention solves all failures.
 - Knowledge Absence and Knowledge Conflict are the two most common causes; CPT is effective for both.
-- Leftward Forgetting is particularly severe in multi-task SFT—simple shuffling of data order mitigates most of it.
-- ILP caused by internal SFT data contradictions (inconsistent labeling) can be partially resolved through bucketed training.
-- Improvements in aggregate metrics can mask the persistent existence of unlearned subsets—sample-level monitoring is required.
+- Left-side Forgetting is particularly severe in multi-task SFT—simple shuffling of data order mitigates most of it.
+- ILP caused by internal SFT data contradictions (inconsistent labeling) can be partially resolved through binning training.
+- Improvements in aggregate metrics can mask the persistence of unlearned subsets—sample-level monitoring is required.
 
 ## Highlights & Insights
 
-- The conceptualization of "ILP" is a major contribution—formalizing a widespread but unsystematically studied phenomenon.
+- The conceptualization of "ILP" itself is a major contribution—formalizing a widespread but unsystematically studied phenomenon.
 - The taxonomy of five sources provides direct guidance for SFT practitioners to audit their own data and models.
-- A philosophy of diagnosis before treatment—understanding why a failure occurs before designing targeted repairs.
+- The philosophy of "diagnosis before treatment"—understanding why a failure occurs before designing targeted repairs.
 
 ## Limitations & Future Work
 
-- Sample-level evaluation using MCQ formats may introduce evaluation bias.
-- The computational costs of mitigation strategies (e.g., CPT, bucketed training) are not reported in detail.
-- The taxonomy of five sources may be incomplete—other unidentified ILP causes may exist.
-- It is unanalyzed whether subsequent training stages like RLHF/DPO exacerbate or mitigate ILP.
+- Sample-level evaluation in multiple-choice format may introduce evaluation bias.
+- Computational costs for mitigation strategies (CPT, binning training, etc.) are not reported in detail.
+- The taxonomy of five sources may be incomplete—other unidentified causes of ILP may exist.
+- Analysis focused on SFT; whether subsequent stages like RLHF/DPO exacerbate or mitigate ILP remains unexplored.
 
 ## Related Work & Insights
 
-- **vs Catastrophic Forgetting**: The latter focuses on losing acquired abilities, while ILP focuses on the failure to acquire new knowledge—the directions are opposite.
+- **vs Catastrophic Forgetting**: The latter focuses on losing previously learned abilities, while ILP focuses on the failure to acquire new knowledge—opposite directions.
 - **vs Data Quality Research**: The latter generally focuses on improving overall performance, while ILP focuses on why specific samples cannot be learned.
-- **vs Curriculum Learning (Bengio et al., 2009)**: Curriculum learning sorts training by complexity, whereas ILP diagnosis shows that sorting alone is insufficient—one must identify and handle five different failure modes.
+- **vs Curriculum Learning (Bengio et al., 2009)**: Curriculum learning sorts training by complexity, but ILP diagnosis suggests sorting alone is insufficient—one must identify and handle five different failure modes.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ First systematic study of SFT incomplete learning; both the concept and taxonomy are original.
+- Novelty: ⭐⭐⭐⭐⭐ First systematic study of incomplete learning in SFT; both the concept and taxonomy are original.
 - Experimental Thoroughness: ⭐⭐⭐⭐ Multi-model × Multi-domain + Causal intervention validation + 10 benchmarks.
-- Writing Quality: ⭐⭐⭐⭐ Clear problem definition and logically rigorous diagnostic framework.
-- Value: ⭐⭐⭐⭐⭐ Significant impact on both the practice and theory of SFT.
+- Writing Quality: ⭐⭐⭐⭐ Problem definition is clear, and the diagnostic framework is logically rigorous.
+- Value: ⭐⭐⭐⭐⭐ Significant implications for both the practice and theory of SFT.
 
 <!-- RELATED:START -->
 
@@ -137,11 +137,11 @@ Standard SFT cross-entropy loss was used throughout, with evaluations on Qwen, L
 
 ## Related Papers
 
+- [\[ACL 2026\] Compatibility-Aware Dynamic Fine-Tuning for Large Language Models](compatibility-aware_dynamic_fine-tuning_for_large_language_models.md)
 - [\[ICLR 2026\] Safety Subspaces are Not Linearly Distinct: A Fine-Tuning Case Study](../../ICLR2026/llm_alignment/safety_subspaces_are_not_linearly_distinct_a_fine-tuning_case_study.md)
-- [\[ACL 2026\] Too Correct to Learn: Reinforcement Learning on Saturated Reasoning Data](too_correct_to_learn_reinforcement_learning_on_saturated_reasoning_data.md)
-- [\[ACL 2026\] Team-Based Self-Play With Dual Adaptive Weighting for Fine-Tuning LLMs](team-based_self-play_with_dual_adaptive_weighting_for_fine-tuning_llms.md)
 - [\[ACL 2026\] BACH-V: Bridging Abstract and Concrete Human-Values in Large Language Models](bach-v_bridging_abstract_and_concrete_human-values_in_large_language_models.md)
 - [\[ACL 2026\] Mitigating Selection Bias in Large Language Models via Permutation-Aware GRPO](mitigating_selection_bias_in_large_language_models_via_permutation-aware_grpo.md)
+- [\[ACL 2026\] Team-Based Self-Play With Dual Adaptive Weighting for Fine-Tuning LLMs](team-based_self-play_with_dual_adaptive_weighting_for_fine-tuning_llms.md)
 
 </div>
 

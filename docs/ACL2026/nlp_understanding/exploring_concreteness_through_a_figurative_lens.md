@@ -2,12 +2,12 @@
 title: >-
   [Paper Note] Exploring Concreteness Through a Figurative Lens
 description: >-
-  [ACL 2026][NLP Understanding][Paper Note] The authors use prompt-based probing + DiffMean + SVD to dissect the internal representation of "concreteness" in four LLMs (Llama-3.1-8B / Qwen3-8B / Gemma2-9B / GPT-OSS-20B). They find that early layers already distinguish between literal (high concrete) and figurative (low concrete) usages of nouns, while mid-to-lat
+  [ACL 2026][NLP Understanding][Paper Note] The authors decompose the internal representation of "concreteness" across four LLMs (Llama-3.1-8B / Qwen3-8B / Gemma2-9B / GPT-OSS-20B) using prompt-based probing, DiffMean, and SVD. They find that early layers already distinguish between literal (high concrete) and figurative (low concrete) noun usage. Mid-to-late la
 tags:
   - ACL 2026
   - NLP Understanding
 date: 2026-05-08
-content_hash: 5354160944ad84b6
+content_hash: 17b606f4e4e06791
 ---
 # Exploring Concreteness Through a Figurative Lens
 
@@ -15,67 +15,62 @@ content_hash: 5354160944ad84b6
 **arXiv**: [2604.18296](https://arxiv.org/abs/2604.18296)  
 **Code**: https://github.com/cincynlp/concreteness-interpretability  
 **Area**: NLP Understanding / Linguistics / LLM Interpretability  
-**Keywords**: Concreteness, Figurative Language, LLM Internal Representation, Geometric Subspace, Representation Intervention
+**Keywords**: Concreteness, Figurative Language, LLM Internal Representations, Geometric Subspaces, Representation Intervention  
 
 ## TL;DR
-The authors use prompt-based probing + DiffMean + SVD to dissect the internal representation of "concreteness" in four LLMs (Llama-3.1-8B / Qwen3-8B / Gemma2-9B / GPT-OSS-20B). They find that early layers already distinguish between literal (high concrete) and figurative (low concrete) usages of nouns, while mid-to-late layers compress the entire concreteness information into **a single one-dimensional direction**. It is demonstrated that this axis can perform zero-shot figurative text classification nearly on par with a supervised 4096-dimensional classifier and can be added to hidden states to perform controllable "literal ↔ figurative" rewriting.
+The authors decompose the internal representation of "concreteness" across four LLMs (Llama-3.1-8B / Qwen3-8B / Gemma2-9B / GPT-OSS-20B) using prompt-based probing, DiffMean, and SVD. They find that early layers already distinguish between literal (high concrete) and figurative (low concrete) noun usage. Mid-to-late layers compress concreteness information into a **single one-dimensional direction**. This axis achieves zero-shot figurative text classification performance nearly on par with supervised 4096-dimensional classifiers and can be directly added to hidden states to perform controllable "literal ↔ figurative" rewrites during generation.
 
 ## Background & Motivation
-**Background**: Psycholinguistics and NLP have long regarded "concreteness" as a core semantic dimension of words—high-concrete words refer to tangible objects perceptible by senses (apple, chair), while low-concrete words refer to abstract concepts (justice, idea). Brysbaert et al. (2014) provided 1-5 static concreteness scores for 40k English words using 4000+ annotators, serving as the gold standard. Subsequent works (Charbonnier & Wartena 2019, Tater 2022, Wartena 2024) predicted these scores using contextual embeddings, proving that models like BERT can already encode "concreteness shifts in context."
+**Background**: Psycholinguistics and NLP have long recognized "concreteness" as a core semantic dimension of words. High-concreteness words refer to tangible objects perceptible by senses (apple, chair), while low-concreteness words refer to abstract concepts (justice, idea). Brysbaert et al. (2014) provided a gold standard by having 4000+ annotators rate 40k English words on a 1-5 scale. Subsequent work (Charbonnier & Wartena 2019, Tater 2022, Wartena 2024) predicted these scores using contextual embeddings, proving that models like BERT can encode "contextual concreteness shifts."
 
-**Limitations of Prior Work**: However, these works are limited to external evaluations such as "predicting concreteness scores" or "embedding correlation." No systematic research has addressed: (i) **which layers** of modern decoder LLMs truly encode concreteness? (ii) Does concreteness occupy a **dedicated geometric direction** in the hidden representation space? (iii) Can this direction be used to **intervene** in the literal/figurative tendency of generation?
+**Limitations of Prior Work**: Existing research is confined to external evaluations such as "predicting concreteness scores" or "embedding correlations." No systematic study has addressed: (i) **which layers** of modern decoder LLMs truly encode concreteness? (ii) Does concreteness inhabit a **dedicated geometric direction** in the hidden representation space? (iii) Can this direction be used to **intervene** in the literal/figurative tendencies of generated text?
 
-**Key Challenge**: Concreteness is context-sensitive—for the same word "window," "window was broken" is a high-concrete literal usage, while "window of opportunity" is a low-concrete figurative usage (metaphor, metonymy, and idioms all trigger this shift, as per Lakoff & Johnson 1980). Existing probing methods face a bottleneck in decoder-only LLMs: directly extracting noun contextual embeddings is limited by "left-to-right" causal masking, meaning the model might not yet "see" the figurative cues provided in the later text (e.g., in "chain of events led to his downfall," the embedding of "chain" is calculated before reading "events/downfall").
+**Key Challenge**: Concreteness is context-sensitive—the word "window" in "window was broken" is a high-concrete literal use, while in "window of opportunity," it is a low-concrete figurative use (metaphor, metonymy, or idioms trigger this shift, following Lakoff & Johnson 1980). However, existing probing methods for decoder-only LLMs face an engineering bottleneck: extracting contextual embeddings of a noun is limited by "left-to-right" causal masking, meaning the model might not yet "see" the figurative cues provided in the subsequent text (e.g., the embedding of "chain" in "chain of events led to his downfall" is calculated before reading "events/downfall").
 
-**Goal**: (1) Design a probing scheme that correctly captures **contextual concreteness** in decoder LLMs; (2) Characterize the internal representation from both hierarchical and geometric dimensions; (3) Verify that this representation is interpretable, usable for downstream tasks, and capable of causal intervention.
+**Goal**: (1) Design a probing scheme for decoder LLMs to correctly capture **contextual concreteness**; (2) Characterize internal representations via hierarchical and geometric dimensions; (3) Verify that these representations are interpretable, applicable to downstream tasks, and controllable via intervention.
 
-**Key Insight**: The authors borrow the DiffMean method from Marks & Tegmark (2024)'s "Geometry of Truth"—a simple linear direction formed by "mean of high-class minus mean of low-class" can capture many semantic dimensions. SVD is then used to synthesize multi-layer DiffMeans into a global axis.
+**Key Insight**: The authors borrow the DiffMean method from the "Geometry of Truth" work by Marks & Tegmark (2024), where a simple linear direction formed by "mean of high class minus mean of low class" captures semantic dimensions. They further use SVD to synthesize multi-layer DiffMean vectors into a global axis.
 
-**Core Idea**: By using the prompt "On a scale of 1 to 5, what is the concreteness of [word] in this sentence?", the LLM is forced to aggregate the entire sentence information into the last token. The hidden state of that token then carries "contextual concreteness." Treating these hidden states as probe inputs allows for quantitative analysis of hierarchical encoding, geometric structure, and causal intervention.
+**Core Idea**: Using the prompt "On a scale of 1 to 5, what is the concreteness of [word] in this sentence?" allows the LLM to aggregate sentence-wide information into the last token. The hidden state of that token then carries "contextual concreteness." Treating these hidden states as probe inputs enables quantitative analysis of layer-wise encoding, geometric structure, and causal intervention.
 
 ## Method
 
 ### Overall Architecture
-The method consists of three steps: (a) **Layer-wise probing**: Using 25,000 sentences from Wikipedia and 600 pairs of literal/figurative synthetic sentences generated by GPT-5.1, the hidden states of the last token at each layer are collected using the prompt. An MLP regression is trained to predict Brysbaert concreteness scores, and a "layer × Pearson r" curve is plotted to locate encoding layers. (b) **Geometric axis**: Nouns in Wikipedia sentences are categorized as high (static score > 4) or low (static score < 2). For each layer, a DiffMean vector $w^{(l)} = \mu^{(l)}_{high} - \mu^{(l)}_{low}$ is calculated. All layer-wise DiffMeans are stacked into a matrix $W$, and SVD is applied to extract the top-$k$ right singular vectors $B_k = V^\top_{1:k}$ as the "global concreteness subspace." Testing with $k=1$ determines if it can be compressed into a single direction. (c) **Causal steering**: The unit direction $\mathbf{u}$ is directly added to the hidden state $h^{(\ell)}$ of a mid-to-late layer: $h^{(\ell)}_{\text{steer}} = h^{(\ell)} + \alpha \mathbf{u}$ ($\alpha > 0$ steers toward literal, $\alpha < 0$ toward figurative), and the model continues decoding to generate a rewrite.
+The method consists of three steps: (a) **Layer-wise probing**: Using 25,000 Wikipedia sentences and 600 pairs of literal/figurative synthetic sentences generated by GPT-5.1. By placing the target word at the end of a prompt, the hidden states of the last token at each layer are extracted to train an MLP regressor for predicting Brysbaert scores. This produces a "layer × Pearson r" curve to locate encoding layers. (b) **Geometric axis**: Nouns in Wikipedia sentences are categorized as high (static concreteness > 4) or low (< 2). For each layer, a DiffMean vector is calculated as $w^{(l)} = \mu^{(l)}_{high} - \mu^{(l)}_{low}$. DiffMean vectors across layers are stacked into matrix $W$, and SVD is applied to extract the top-$k$ right singular vectors $B_k = V^\top_{1:k}$ as the "global concreteness subspace." Testing $k=1$ determines if the information is compressed into a single direction. (c) **Causal steering**: A unit direction $\mathbf{u}$ is added to the hidden state $h^{(\ell)}$ of a selected mid-to-late layer: $h^{(\ell)}_{\text{steer}} = h^{(\ell)} + \alpha \mathbf{u}$ ($\alpha > 0$ shifts toward literal, $\alpha < 0$ shifts toward figurative). The model then continues decoding to generate a rewrite.
 
 ```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["Input Corpus<br/>Wikipedia 25k sentences + GPT-5.1 600 literal/figurative pairs"]
-    A --> B["Prompt-based probing + Last token representation<br/>Target word in prompt, collect last token hidden states"]
-    B --> C["MLP regression for concreteness scores<br/>Layer × Pearson r curve to locate encoding"]
-    B --> D["DiffMean + Multi-layer SVD for global 1D axis<br/>μhigh − μlow per layer stacked into W, SVD for top-k"]
-    D --> E["Projection to 1D subspace (k=1)<br/>ROC AUC ≈ 0.90 verifies 1D compression"]
-    E --> F["Causal steering<br/>Selected layer h + α·u, α>0 for literal / α<0 for figurative"]
+    A["Input Corpus<br/>25k Wikipedia sentences + 600 GPT-5.1 synthetic Lit/Fig pairs"]
+    A --> B["Prompt-based probing + Last token representation<br/>Target word at end of prompt; extract hidden states of last token"]
+    B --> C["MLP Regression for Concreteness Scores<br/>Plot layer × Pearson r curve to locate encoding"]
+    B --> D["DiffMean + Multi-layer SVD for Global 1D Axis<br/>Stack μhigh − μlow into W; take top-k SVD components"]
+    D --> E["Projection to 1D Subspace (k=1)<br/>ROC AUC ≈ 0.90 validates 1D compression"]
+    E --> F["Causal Steering<br/>h + α·u where α>0 moves to literal, α<0 moves to figurative"]
     F --> G["Controllable Literal ↔ Figurative Rewrite Output"]
 ```
 
 ### Key Designs
 
-**1. Prompt-based probing + Last token representation: Bypassing the "no lookahead" causal mask limit**
+**1. Prompt-based probing + Last token representation: Circumventing the "no future context" limit of decoder masking**
 
-Directly extracting noun contextual embeddings in decoder-only LLMs has a fatal flaw: the token has not yet read the subsequent context. For example, in "chain of events led to his downfall," the embedding for `chain` is computed without seeing `events/downfall`, failing to capture cues shifting it toward figurative usage. The authors' solution is to use the prompt: "Sentence: [sentence] On a scale of 1 to 5 (5 being the highest), in the context of the sentence, what is the concreteness of the word [target_word]?" By placing the entire sentence and the target word in the prompt and **extracting the hidden state of the final token**, the model aggregates the full context via causal attention.
+Taking the contextual embedding of a noun directly in a decoder-only LLM is problematic: due to causal masking, the token hasn't "read" the subsequent text. The authors solve this by designing a prompt: "Sentence: [sentence] On a scale of 1 to 5 (5 being the highest), in the context of the sentence, what is the concreteness of the word [target_word]?" By placing the target word and entire context inside the prompt and **extracting the hidden state of the final token**, they ensure the representation aggregates the full context via causal attention.
 
-After obtaining the representation, two paths are used: (Gen) letting the model generate a number directly, and (Tok) feeding the hidden state into an MLP regression. Two details ensure probing reliability: first, if the target word is not at the end of the prompt, the Pearson $r$ drops from 0.98 to 0.80 ± 0.10, confirming a strong recency bias. Second, the Gen path only achieves an $r$ of 0.58-0.70, significantly lower than the Tok path's 0.82-0.92, indicating that hidden states contain more precise signals than the generated output.
+**2. DiffMean + Multi-layer SVD for a global 1D axis: Validating 1D geometric compression**
 
-**2. DiffMean + Multi-layer SVD for global 1D axis: Verifying 1D geometric compression**
+To determine if concreteness occupies a specific direction, the authors use the DiffMean method—a lightweight linear approach more interpretable than logistic regression. High and low concrete instances are drawn from Wikipedia. While individual layer DiffMeans reflect layer-specific discriminative directions, SVD on the stacked matrix $W$ identifies a "layer-agnostic" global direction. Results show that at $k=1$, the AUROC stabilizes around ~0.90 in mid-to-late layers, while increasing $k$ to 2, 3, or 4 actually decreases performance, providing clear evidence of inverse scaling and 1D compression.
 
-To determine if concreteness occupies a specific direction, the authors use DiffMean, a lightweight linear method validated by Marks & Tegmark (2024). It provides a concrete direction vector in geometric space more interpretable than logistic regression. High (>4) and low (<2) concrete instances are extracted from Wikipedia (2,256 high / 2,116 low). For each layer, $w^{(l)} = \mu^{(l)}_{high} - \mu^{(l)}_{low}$ is calculated.
+**3. Causal steering: Turning an axis into a "control knob"**
 
-To find a "global direction" across layers, the $w^{(l)}$ vectors are stacked as rows in matrix $W$. SVD is performed, and the top-$k$ right singular vectors $B_k = V^\top_{1:k}$ form a layer-agnostic subspace. Projecting hidden states onto this $k$-dimensional space yields an AUROC of ~0.90 for $k=1$ in mid-to-late layers, proving 1-D compression. Increasing $k$ to 2/3/4 actually decreases AUROC, clear evidence of inverse scaling.
-
-**3. Causal steering: Direct hidden state intervention as control knob**
-
-An axis distinguishing categories does not prove causality. To demonstrate control, the authors add the axis to the hidden state at layers where concreteness is clearest: $h^{(\ell)}_{\text{steer}} = h^{(\ell)} + \alpha \mathbf{u}$ ($\alpha=+40$ for literal, $\alpha=-40$ for figurative). Subsequent layers perform a normal forward pass for the prompt "Rewrite the following sentence clearly and naturally:".
-
-Crucially, the prompt does not mention "figurative" or "literal." All control signals come from the axis intervention. Human evaluation of 100 sentences shows Lit→Fig improvements from 0 to 15% and Fig→Lit from 39-52% to 67-75%, proving the axis is a controllable knob while revealing that figurative generation remains harder than literal paraphrasing.
+To prove the axis is causal rather than just correlative, the authors modify hidden states during decoding at a specific layer (e.g., Llama-3.1-8B layer 20) by adding $h^{(\ell)}_{\text{steer}} = h^{(\ell)} + \alpha \mathbf{u}$. Parameters $\alpha=+40$ (literal) and $\alpha=-40$ (figurative) are used. The subsequent generation "Rewrite the following sentence clearly and naturally:" is executed without mentioning figurativity in the prompt. Any style change in the output serves as clean causal evidence.
 
 ### Loss & Training
-No traditional training is used: (a) the probing MLP uses hyper-parameters from Wartena (2024) (512→256→128, ReLU, 0.2 dropout, AdamW lr=1e-5, 50 epochs, batch=15); (b) DiffMean is a closed-form calculation; (c) SVD is a closed-form decomposition; (d) Steering is an inference-time addition with zero parameter updates.
+The work involves no traditional training of the LLMs: (a) Probing MLPs use standard hyperparameters (512→256→128, ReLU, dropout, AdamW); (b) DiffMean and SVD are closed-form calculations; (c) Steering is an inference-time addition. This training-free nature significantly reduces the cost of reproduction.
 
 ## Key Experimental Results
 
 ### Main Results
-**Probing Correlation** (Pearson $r$ between predicted and Brysbaert human ratings):
+**Probing Correlation** (Pearson r between predicted concreteness and Brysbaert human ratings):
 
 | Model | With Context (Gen) | With Context (Tok) | W/o Context (Gen) | W/o Context (Tok) |
 |-------|---------------------|---------------------|--------------------|--------------------|
@@ -84,65 +79,52 @@ No traditional training is used: (a) the probing MLP uses hyper-parameters from 
 | Gemma2-9B | 0.64 | 0.92 | 0.68 | **0.98** |
 | GPT-OSS-20B | 0.58 | 0.82 | 0.63 | **0.98** |
 
-**Zero-shot figurative classification** (Llama-3.1-8B, AUROC, 1-D axis vs. 4096-D trained classifier):
+**Zero-shot Figurative Classification** (Llama-3.1-8B, AUROC, 1-D axis vs. 4096-D trained classifier):
 
 | Task | Dataset | 1-D Subspace (zero-shot) | Full Rep. (trained) | Retention |
 |------|---------|--------------------------|---------------------|-----------|
 | Idioms | MAGPIE | 95.2 | 98.5 | 96.6% |
-| Idioms | EPIE | 95.3 | 99.2 | 96.1% |
 | Metaphor | VUA | 95.7 | 97.6 | 98.1% |
-| Metaphor | MUNCH | 93.2 | 95.1 | 98.0% |
-| Metonymy | ConMeC | 60.2 | 62.6 | 96.2% |
 | Metonymy | MetFuse | 85.7 | 96.3 | 89.0% |
 
 ### Ablation Study
-**Impact of dimension $k$ and Steering Human Eval** (100 samples, 2 annotators):
+**Causal Steering Human Evaluation** (100 samples, 2 annotators):
 
-| Configuration | Key Metric | Description |
-|---------------|------------|-------------|
-| $k=1$ subspace | AUROC ≈ 0.90 | Single direction is sufficient; validates 1-D compression |
-| $k=2$ | AUROC ↓ | Information diluted by extra directions |
-| $k=3$ | AUROC ↓↓ | Further decline |
-| Lit→Fig Llama (no steer) | 0/100 | Literal input remains literal |
-| Lit→Fig Llama ($\alpha=-40$) | 12/100 | 12% converted to figurative |
-| Fig→Lit Llama (no steer) | 42/100 | Model inherently biased toward literal |
-| Fig→Lit Llama ($\alpha=+40$) | 71/100 | Literal proportion nearly doubles after intervention |
+| Configuration | Gain/Metric | Explanation |
+|---------------|-------------|-------------|
+| Lit→Fig Llama-3.1-8B $\alpha=-40$ | 12/100 | Intervention forces 12% shift to figurative |
+| Fig→Lit Llama-3.1-8B $\alpha=+40$ | 71/100 | Literal ratio nearly doubles from baseline (42% to 71%) |
 
 ### Key Findings
-- **Early layers perform "Literal vs. Figurative" classification**: In synthetic data, the delta $\delta^{(l)}_{\text{mean}} = C^{(l)}_{\text{pred}} - C_{\text{static}}$ separates from layer 2, consistent with the mechanistic interpretability finding that early layers handle semantic categorization.
-- **Mid-to-late layers perform 1D compression**: AUROC is stable at ~0.90 for $k=1$ in mid-to-late layers across all models.
-- **1-D axis matches 4096-D supervised classifier**: The 1-D zero-shot axis retains 95-98% of the performance of a full supervised classifier on idioms/metaphors.
-- **Metonymy is an exception**: AUROC is lower (60-86%) because metonymy involves smaller concreteness shifts since the referent remains a tangible entity.
-- **Steering Asymmetry**: Fig→Lit is easy (+25 to +36 pp improvement), while Lit→Fig is difficult (only 9-15%), indicating a strong "literal bias" in LLMs.
-- **Verbs perform worse**: Concreteness shifts are smaller in verbs than in nouns, matching linguistic theory.
+- **Early layers distinguish Literal vs. Figurative**: Probing shows that predicted concreteness offsets $\delta^{(l)}_{\text{mean}}$ separate as early as Layer 2.
+- **Mid-to-late layer 1D compression**: All 4 models compress concreteness into a single dimension in later layers (AUROC ~0.90).
+- **Metonymy as an exception**: 1-D AUROC for metonymy is lower (60-86%) than metaphors/idioms, aligning with linguistics: metonymy shifts concreteness less as it still refers to concrete entities.
+- **Steering Asymmetry**: Shifting figurative text to literal is easier than the reverse, confirming that LLMs possess a strong "literal bias."
 
 ## Highlights & Insights
-- **Probing engineering details dictate conclusions**: The necessity of placing the target word at the end of the prompt highlights the recency bias of decoder LLMs—a trap for future probing research.
-- **Representation-as-control paradigm**: Controlling generation via geometric directions without changing parameters or prompts is an emerging paradigm, parallel to truth or sycophancy control.
-- **DiffMean + SVD design**: Using SVD to merge layer-wise DiffMeans into a single direction provides a more stable and layer-agnostic interpretation than single-layer probes.
-- **"Models know, but cannot say"**: The gap between Tok and Gen paths suggests hidden states are more accurate than verbalized outputs for internal model assessment.
-- **Downstream value**: This allows for pedagogical or literary style transfer with significantly lower cost than fine-tuning.
+- **Engineering details matter**: Moving the target word to the prompt end increased Pearson r from 0.80 to 0.98, highlighting the recency bias in decoders.
+- **Representation-as-control paradigm**: Using a geometric direction as a control knob without modifying parameters or prompts is a powerful emergent paradigm for steerability.
+- **Hidden states are more accurate than text**: The gap between "Gen" (outputting numbers) and "Tok" (probing hidden states) reveals that internal representations contain more precise signals than what the model can verbalize.
 
 ## Limitations & Future Work
-- **Lack of human contextual labels**: Predicted values are aligned with Brysbaert static scores; direct human ground truth for contextual concreteness is missing.
-- **Axis purity**: The direction may encode other features like frequency or imageability.
-- **Concreteness vs. Figurativity**: Word sense disambiguation (e.g., "root of tree" vs "root of number") also causes shifts but isn't always figurative.
-- **Limited Lit→Fig effect**: Higher $\alpha$ introduces noise; figurative generation likely requires higher-dimensional conceptual mapping.
+- **Static vs. Contextual Ground Truth**: The probe is trained on static Brysbaert scores; there is a lack of direct human ground truth for "contextual concreteness."
+- **Axis Purity**: A single dimension may encode entangled signals like frequency or imageability.
+- **Lit→Fig Difficulty**: The limited success in generating figurative text suggests that figurativity involves high-dimensional concept mapping beyond just a concreteness axis.
 
 ## Related Work & Insights
-- **vs. Wartena (2024)**: Upgrades the paradigm from BERT-based prediction to decoder-only LLM geometric analysis and causal control.
-- **vs. Marks & Tegmark (2024)**: Applies the "Geometry of Truth" framework to the new dimension of figurativity, suggesting "linear axis + steering" is a universal framework.
-- **vs. Chakrabarty (2021) MERMAID**: Offers a training-free alternative to fine-tuning-based figurative generation.
+- Compared to **Wartena (2024)**, this work upgrades the paradigm from BERT-based score prediction to decoder-based geometric analysis and causal control.
+- It extends the **Marks & Tegmark (2024)** "Geometry of Truth" framework to a new linguistic dimension.
+- It provides a training-free alternative to models like **MERMAID** for controllable figurative generation.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Applies "linear axis + DiffMean + SVD" to concreteness; solid engineering.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Extensive cross-model and cross-dataset validation with human evaluation.
-- Writing Quality: ⭐⭐⭐⭐ Clear visualization of core findings; honest assessment of limitations.
-- Value: ⭐⭐⭐⭐ High utility for both the interpretability community and controllable generation tasks.
+- **Novelty**: ⭐⭐⭐⭐ (Solid application of mechanistic interpretability frameworks to linguistics)
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ (Extensive testing across 4 models and multiple datasets)
+- **Writing Quality**: ⭐⭐⭐⭐ (Clear visualization and honest discussion of limitations)
+- **Value**: ⭐⭐⭐⭐ (Provides a direct tool for controllable generation and interpretability study)
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
@@ -150,7 +132,7 @@ No traditional training is used: (a) the probing MLP uses hyper-parameters from 
 - [\[ACL 2026\] MetFuse: Figurative Fusion between Metonymy and Metaphor](metfuse_figurative_fusion_between_metonymy_and_metaphor.md)
 - [\[NeurIPS 2025\] Generalization Error Analysis for Selective State-Space Models Through the Lens of Attention](../../NeurIPS2025/nlp_understanding/generalization_error_analysis_for_selective_state-space_models_through_the_lens_.md)
 - [\[ACL 2026\] BoundRL: Efficient Structured Text Segmentation through Reinforced Boundary Generation](boundrl_efficient_structured_text_segmentation_through_reinforced_boundary_gener.md)
-- [\[ACL 2025\] CaLMQA: Exploring Culturally Specific Long-Form Question Answering across 23 Languages](../../ACL2025/nlp_understanding/calmqa_cultural_multilingual_qa.md)
+- [\[ACL 2026\] TruthSplit: Operationalizing Conditional Validity in Arguments Through Multi-Perspective Reasoning](truthsplit_operationalizing_conditional_validity_in_arguments_through_multi-pers.md)
 
 </div>
 

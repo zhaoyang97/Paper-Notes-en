@@ -2,13 +2,13 @@
 title: >-
   [Paper Note] Follow the Flow: On Information Flow Across Textual Tokens in Text-to-Image Models
 description: >-
-  [ACL 2026][Interpretability][Text-to-Image] This paper systematically investigates the token-level information distribution of text encoder outputs in text-to-image models through a causal intervention framework. It discovers that the semantics of lexical items are typically concentrated on 1-2 representative tokens, and cross-item information flow leads to sema
+  [ACL 2026][Interpretability][Text-to-Image] This paper systematically investigates the token-level information distribution in text encoder outputs within text-to-image models using a causal intervention framework. It finds that the semantics of lexical items are typically concentrated on 1-2 representative tokens, and cross-item information flow leads to semant
 tags:
   - ACL 2026
   - Interpretability
   - Text-to-Image
 date: 2026-05-08
-content_hash: 144dfd1091b816f0
+content_hash: 1f86c43e28dbe872
 ---
 # Follow the Flow: On Information Flow Across Textual Tokens in Text-to-Image Models
 
@@ -20,44 +20,43 @@ content_hash: 144dfd1091b816f0
 
 
 ## TL;DR
-This paper systematically investigates the token-level information distribution of text encoder outputs in text-to-image models through a causal intervention framework. It discovers that the semantics of lexical items are typically concentrated on 1-2 representative tokens, and cross-item information flow leads to semantic leakage and image misinterpretation in 11% of cases. The authors propose simple and effective token-level intervention methods to improve alignment.
+This paper systematically investigates the token-level information distribution in text encoder outputs within text-to-image models using a causal intervention framework. It finds that the semantics of lexical items are typically concentrated on 1-2 representative tokens, and cross-item information flow leads to semantic leakage and image misinterpretation in 11% of cases. A simple yet effective token-level intervention method is proposed to improve alignment.
 
 ## Background & Motivation
 
-**Background**: Text-to-image (T2I) models consist of two parts: a text encoder and a diffusion model. The text encoder transforms user prompts into representations that guide the diffusion process. Despite their widespread use, T2I models frequently suffer from text-image misalignment, where generated images fail to accurately capture the objects and relationships in the text.
+**Background**: Text-to-image (T2I) models consist of two main components: a text encoder and a diffusion model. The text encoder transforms user prompts into representations that guide the diffusion process. Despite their wide use, T2I models frequently suffer from text-image misalignment, where generated images fail to accurately capture the objects and relationships described in the text.
 
-**Limitations of Prior Work**: Previous work mainly focused on improving alignment by modifying the diffusion process (especially the cross-attention mechanism), implicitly assuming that each text token reliably encodes its corresponding concept. However, this assumption has never been systematically verified—is the information distribution in token representations uniform or concentrated? Is there information crossover between different lexical items?
+**Limitations of Prior Work**: Previous work mainly improved alignment by modifying the diffusion process (especially the cross-attention mechanism), implicitly assuming that each text token reliably encodes its corresponding concept. However, this assumption has never been systematically verified—is information distribution in token representations uniform or concentrated? Is there information crosstalk between different lexical items?
 
-**Key Challenge**: Many alignment improvement methods in T2I models (such as Attend-and-Excite) treat all tokens equally. However, if the information distribution is non-uniform or if semantic leakage occurs between tokens, the effectiveness of these methods is fundamentally constrained.
+**Key Challenge**: Many alignment improvement methods in T2I models (such as Attend-and-Excite) treat all tokens equally. However, if information distribution is non-uniform or if semantic leakage occurs between tokens, the effectiveness of these methods is fundamentally constrained.
 
-**Goal**: To answer two fundamental questions—(1) is the semantics of a lexical item uniformly distributed across all its tokens or concentrated on a few? (2) Does each token only encode its own lexical item, or does it also absorb information from neighboring items?
+**Goal**: To answer two fundamental questions: (1) Is the semantics of a lexical item uniformly distributed across all its tokens or concentrated on a few? (2) Does each token only encode its own lexical item, or does it also absorb information from neighboring items?
 
-**Key Insight**: Using causal intervention (patching) techniques to isolate the contribution of specific tokens by replacing other tokens with pad embeddings, and then generating images to directly examine what information those tokens encode. This is more reliable than probing methods because it tests the information that the diffusion model actually utilizes.
+**Key Insight**: Using causal intervention (patching) techniques, the contribution of specific tokens is isolated by replacing other tokens with pad embeddings. Images are then generated to directly examine what information those tokens encode—this is more reliable than probing methods because it tests the information actually utilized by the diffusion model.
 
-**Core Idea**: Reveal the patterns of information distribution in text encoders through token-by-token causal intervention, and design token-level intervention methods based on these findings to improve T2I alignment.
+**Core Idea**: Reveal information distribution patterns in text encoders through per-token causal intervention and design token-level intervention methods based on these findings to improve T2I alignment.
 
 ## Method
 
 ### Overall Architecture
-The core of this paper is a set of causal intervention probes that "infer token meaning from generation results." Given a T2I prompt, the text encoder first produces contextualized representations $h_1, \ldots, h_N$ for all tokens. To test what a specific token subset $S$ encodes, the representations within $S$ are preserved while all other tokens are replaced with pad embeddings. This patched sequence is then fed into the diffusion model to generate an image, and a VLM (Qwen2-VL-72B) judges whether the target concept appears in the image. "Appearance in the image = the subset indeed encodes that concept." Thus, the same intervention can address intra-item distribution—"where is the semantics of a word concentrated?"—and cross-item flow—"does a token absorb information from neighbors?"
+The core of this paper is a set of causal intervention probes that "infer token meaning from generation results." Given a T2I prompt, the text encoder outputs contextualized representations $h_1, \ldots, h_N$ for all tokens. To examine what a specific token subset $S$ encodes, the representations within $S$ are retained while all other tokens are replaced with pad embeddings. This patched sequence is sent to the diffusion model to generate an image, and a VLM (Qwen2-VL-72B) determines if the target concept appears. "Presence in image = the subset indeed encodes the concept." Thus, the same intervention can address "where a word's semantics are concentrated" at the intra-item level and "whether a token absorbs information from neighbors" at the cross-item level.
 
 ```mermaid
-%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
     A["Prompt"] --> B["Text Encoder<br/>Output contextualized token representations h₁…h_N"]
     subgraph CP["Causal Patching Framework"]
         direction TB
-        C["Preserve representations of target subset S<br/>Replace others with pad embedding"] --> D["Patched sequence guides diffusion model to generate image"]
+        C["Retain representations of target subset S<br/>Replace others with pad embeddings"] --> D["Patched sequence guides diffusion model for generation"]
         D --> E["VLM determines if target concept appears"]
     end
     B --> C
-    subgraph II["Intra-Item Distribution Analysis"]
+    subgraph II["Intra-item Information Distribution Analysis"]
         direction TB
-        F["Token-by-token intervention locates representative tokens (1-2)"] --> H["Remove non-representative tokens<br/>Alignment failure rate drops by 21% relative"]
+        F["Per-token intervention identifies representative tokens (1-2)"] --> H["Remove non-representative tokens<br/>Relative failure rate reduction of 21%"]
     end
-    subgraph CI["Cross-Item Flow Analysis & Leakage Mitigation"]
+    subgraph CI["Cross-item Information Flow & Leakage Mitigation"]
         direction TB
-        G["Contextual vs. Non-contextual contrast for information flow"] -->|Detect 11% semantic leakage| I["Replace leaked tokens with clean non-contextual representations"]
+        G["Contextual vs. Non-contextual comparison of information flow"] -->|Detects 11% semantic leakage| I["Replace leaked tokens with clean, non-contextual representations"]
     end
     E --> II
     E --> CI
@@ -65,26 +64,26 @@ flowchart TD
 
 ### Key Designs
 
-**1. Causal Patching: Verifying if information is truly used via downstream generation**
+**1. Causal Patching: Verifying if information is actually used via downstream generation**
 
-Probing methods may learn spurious correlations, and attention analysis can often be misleading; both only "observe" representations without testing whether the diffusion model actually relies on that information. Causal Patching directly delegates the judgment to the generation results: for a target token subset $S$, it constructs $\tilde{t}_i = h_i$ (if $i \in S$), otherwise $\tilde{t}_i = p_i$ (pad embedding). This representation, which only preserves $S$, guides the diffusion process. Whether the target concept appears in the generated image determines if $S$ is composed of "representative tokens." Since the signal chain reaches the actual generated image, this verification measures "what information the downstream component actually uses," which is far more reliable than indirect observation and serves as the basic tool for both subsequent analyses.
+Probing methods may learn spurious correlations, and attention analysis can be misleading; both only "observe" representations without testing if the diffusion model truly relies on that information. Causal Patching leaves the judgment to the generation results: for a target token subset $S$, construct $\tilde{t}_i = h_i$ if $i \in S$, otherwise $\tilde{t}_i = p_i$ (pad embedding). This representation, retaining only $S$, guides the diffusion. The presence of the target concept in the generated image determines if $S$ represents "representative tokens." Since the signal chain reaches the actual generated image, this verification measures "what information the downstream components truly use," making it more reliable than indirect observations.
 
-**2. Intra-Item Representation: Word semantics are actually compressed into 1-2 tokens**
+**2. Intra-item Representation: Word semantics are concentrated on only 1-2 tokens**
 
-By applying the above intervention token-by-token within the same lexical item, one can see whether semantics are diluted or concentrated. The authors perform patching for each token of a word individually and determine if the generated image contains that word. The results show that in 89% of cases, at least one representative token exists, and usually only 1-2 tokens are sufficient to represent the entire concept (e.g., in the three tokens of "pelican," only "lic" sustains the pelican concept). Non-representative tokens account for 52% in multi-token lexical items. Even more counter-intuitively, removing these non-representative tokens does not degrade quality but instead reduces the generation failure rate by a relative 21%—indicating that the encoder output contains many "noise" tokens that interfere with diffusion, and simple pruning yields benefits.
+Applying the above intervention per-token within the same lexical item reveals whether semantics are diluted or concentrated. The authors perform patching for each token of a word and determine the presence of the word in the generated image. Results show that in 89% of cases, at least one representative token exists, and usually only 1-2 tokens suffice to represent the entire concept (e.g., in "pelican," only "lic" among the three tokens supports the concept). Non-representative tokens account for 52% of multi-token lexical items. Counter-intuitively, removing these non-representative tokens does not degrade quality but reduces the generation failure rate by a relative 21%—indicating that encoder outputs contain "noise" tokens that interfere with diffusion. Simple pruning yields gains.
 
-**3. Cross-Item & Semantic Leakage Mitigation: Locating and blocking encoder-side semantic "contamination"**
+**3. Cross-item & Semantic Leakage Mitigation: Locating and blocking encoder-side semantic "crosstalk"**
 
-Applying the same intervention to different targets allows tracking whether information flows between different lexical items. For each lexical item, images are generated under "contextual" and "non-contextual" conditions to compare whether contextualized representations have absorbed information from other items. Statistics show that 89% of word pairs remain isolated, but information flow still occurs in 11% of cases, with polysemous words being particularly problematic—for example, "pool" in "a pool by a table" is influenced by context to be interpreted as a billiard table rather than a swimming pool. Once a misinterpretation caused by such leakage is identified, the fix is lightweight: replace the contextualized representation of the leaked token back with its "clean" non-contextual representation. On FLUX-Schnell, this can suppress the semantic leakage rate from 94% to 14%, directly hitting the root cause of alignment failure at the encoder side.
+The same intervention can track information flow between different lexical items: images are generated for each lexical item under "contextual" and "non-contextual" conditions to compare whether contextualized representations absorb information from other items. Statistics show 89% of word pairs remain isolated, but information flow occurs in 11% of cases, particularly with polysemous words—for example, "pool" in "a pool by a table" is influenced by context to mean a billiard table rather than a swimming pool. Once identified as the cause of misinterpretation, the fix is lightweight: replace the contextualized representation of the leaked token with its "clean" non-contextual representation. On FLUX-Schnell, this reduces the semantic leakage rate from 94% to 14%, directly addressing the root of alignment failure at the encoder.
 
 ### Loss & Training
-To avoid running a full generation every time to find redundant tokens, the authors trained an additional single-layer linear classifier. It predicts whether a token is redundant directly from its token embedding, achieving 90% precision and 83% accuracy, thereby allowing real-time filtering of redundant tokens during the encoding stage.
+To avoid running generation every time to find redundant tokens, the authors trained an additional single-layer linear classifier. It predicts whether a token is redundant directly from its token embedding, achieving 90% precision and 83% accuracy. This allows real-time filtering of redundant tokens during the encoding stage.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Non-representative tokens removed | Number of Prompts | Accuracy Before Removal | Accuracy After Removal | Unaffected | Improved |
+| Number of non-representative tokens removed | Number of Prompts | Accuracy Before Removal | Accuracy After Removal | Unaffected | Gain |
 |----------------------|---------|------------|------------|---------|------|
 | 1 | 144 | 81.25% | 83.33% | 98.29% | 14.83% |
 | 2 | 98 | 82.65% | 88.78% | 100% | 35.27% |
@@ -98,34 +97,34 @@ To avoid running a full generation every time to find redundant tokens, the auth
 | FLUX-Schnell | 94% | 43% | 14% |
 
 ### Key Findings
-- Word semantics are typically concentrated on 1-2 representative tokens; non-representative tokens account for 52% of multi-token items, and removing them relatively improves alignment by 21%.
-- Cross-item information flow does not exist between 89% of lexical items, but it occurs in 11% of cases, leading to semantic leakage especially in polysemous words.
-- Encoder type affects representative token position: in bidirectional T5, representative tokens can appear anywhere; in unidirectional Gemma/CLIP, they always appear at the last token.
-- The [CLS] token of the CLIP encoder concentrates most of the semantic information, leading to weak information content in other tokens and limiting token-level interpretability.
+- Word semantics are typically concentrated on 1-2 representative tokens. Non-representative tokens account for 52% of multi-token items, and removing them relatively improves alignment by 21%.
+- No cross-item information flow exists between 89% of lexical items, but information flow occurs in 11% of cases, where polysemous words are particularly prone to semantic leakage.
+- Encoder types affect representative token positions: in bidirectional T5, representative tokens can appear anywhere; in unidirectional Gemma/CLIP, they are always the last token.
+- The [CLS] token in CLIP encoders concentrates most semantic information, resulting in weak information in other tokens and limiting token-level interpretability.
 
 ## Highlights & Insights
-- The discovery that "removing non-representative tokens actually improves alignment" is a counter-intuitive but far-reaching conclusion—it implies that T2I model text encoder outputs contain significant "noise" tokens that may interfere with the diffusion model. Simple token pruning can enhance alignment quality by 21%.
-- The mechanism analysis of semantic leakage is insightful: in "a pool by a table," the representation of "pool" is contaminated by context and encoded as the "billiard table" concept, whereas in "a pool by a chair," it maintains the "swimming pool" meaning. This reveals a systematic failure mode of word disambiguation in text encoders.
+- The finding that "removing non-representative tokens improves alignment" is counter-intuitive but far-reaching—it implies that T2I text encoder outputs contain significant "noise" tokens that may interfere with the diffusion model. Simple token pruning can enhance alignment quality by 21%.
+- The analysis of semantic leakage mechanisms is excellent: in "a pool by a table," the "pool" representation is contaminated by context and encoded as a "billiard table" concept, whereas in "a pool by a chair," it retains the "swimming pool" meaning. This reveals a systematic failure mode of polysemy disambiguation in text encoders.
 - The generalization potential of the Patching method is noteworthy: the same mechanism can be used for polysemy control (users actively choosing word meanings) and bias mitigation (e.g., eliminating gender-context-driven biases for "runway" between fashion and airports), transforming an analytical tool into a practical generation control method.
 
 ## Limitations & Future Work
-- Prompts are concentrated on object-centric simple syntax; generalization to spelling errors, rare words, or abstract concepts remains to be explored.
-- Although VLM judgment shows high consistency with human judgment (Cohen's Kappa 0.868), it is still an approximate evaluation.
-- The formation mechanism of representative tokens in bidirectional encoders (e.g., why "T" becomes the representative token in "T-shirt") remains an open question.
-- The redundant token classifier was only trained and evaluated on FLUX-schnell; its transferability to other T2I models needs verification.
+- Prompts are focused on object-centric simple grammatical cases; generalization to typos, rare words, or abstract concepts remains to be explored.
+- While VLM evaluation shows high consistency with human judgment (评估 coefficients 0.868), it remains an approximate assessment.
+- The mechanism of representative token formation in bidirectional encoders (e.g., why "T" becomes the representative token in "T-shirt") is still an open question.
+- The redundant token classifier was only trained and evaluated on FLUX-schnell; transferability to other T2I models requires verification.
 
 ## Related Work & Insights
-- **vs Attend-and-Excite (Chefer et al., 2023)**: Attend-and-Excite modifies attention during the diffusion stage to improve alignment but implicitly assumes correct token encoding; this paper proves the problem may originate in the encoding stage, making root-cause fixes more efficient.
-- **vs RAG-Diffusion (Tan et al., 2024)**: RAG-Diffusion improves alignment by restricting diffusion attention via bounding boxes, but it is less effective than this paper's patching method in semantic leakage scenarios (FLUX-Schnell: 43% vs 14% leakage rate).
-- **vs Patchscopes (Ghandeharioun et al., 2024)**: Patchscopes analyze token information through representation decoding but do not test whether downstream components actually use that information; this paper's causal intervention method directly validates information effectiveness via image generation.
+- **vs Attend-and-Excite (Chefer et al., 2023)**: Attend-and-Excite modifies attention during diffusion to improve alignment but assumes tokens are encoded correctly; this paper proves the problem may stem from the encoding stage and fixes it more efficiently at the root.
+- **vs RAG-Diffusion (Tan et al., 2024)**: RAG-Diffusion improves alignment by restricting diffusion attention via bounding boxes, but is less effective than the patching method in semantic leakage scenarios (FLUX-Schnell: 43% vs 14% leakage rate).
+- **vs Patchscopes (Ghandeharioun et al., 2024)**: Patchscopes analyzes token information through representation decoding but does not test if downstream components actually use that information; this paper's causal intervention method directly verifies information validity through image generation.
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐ First systematic study of token-level information distribution in T2I text encoders, revealing representative tokens and semantic leakage.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Validated across 4 T2I models and 3 encoder types, with human evaluation and quantitative analysis.
-- Writing Quality: ⭐⭐⭐⭐⭐ Extremely intuitive diagrams; the transition from analysis to application is natural and smooth.
-- Overall Recommendation: ⭐⭐⭐⭐ Provides a new perspective and practical tools for researching text encoders in T2I models.
-- Reproducibility: ⭐⭐⭐⭐ Code is open-sourced; experimental setup is clear, based on public models and datasets.
-- Impact: ⭐⭐⭐⭐ Holds practical guidance significance for understanding and improving T2I alignment.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Validated across 4 T2I models and 3 encoder types, including human evaluation and quantitative analysis.
+- Writing Quality: ⭐⭐⭐⭐⭐ Extremely intuitive diagrams, with a natural transition from analysis to application.
+- Overall Recommendation: ⭐⭐⭐⭐ Provides a new perspective and practical tools for researching T2I text encoders.
+- Reproducibility: ⭐⭐⭐⭐ Open-sourced code with clear experimental settings based on public models and datasets.
+- Impact: ⭐⭐⭐⭐ Offers practical guidance for understanding and improving T2I alignment.
 
 <!-- RELATED:START -->
 
@@ -137,7 +136,7 @@ To avoid running a full generation every time to find redundant tokens, the auth
 - [\[ACL 2026\] Compositional Steering of Large Language Models with Steering Tokens](compositional_steering_of_large_language_models_with_steering_tokens.md)
 - [\[ACL 2026\] HistLens: Mapping Idea Change across Concepts and Corpora](histlens_mapping_idea_change_across_concepts_and_corpora.md)
 - [\[ICLR 2026\] Concepts' Information Bottleneck Models](../../ICLR2026/interpretability/concepts_information_bottleneck_models.md)
-- [\[ACL 2026\] A Systematic Comparison between Extractive Self-Explanations and Human Rationales in Text Classification](a_systematic_comparison_between_extractive_self-explanations_and_human_rationale.md)
+- [\[CVPR 2026\] Where Culture Fades: Revealing the Cultural Gap in Text-to-Image Generation](../../CVPR2026/interpretability/where_culture_fades_revealing_the_cultural_gap_in_text-to-image_generation.md)
 
 </div>
 

@@ -2,13 +2,13 @@
 title: >-
   [Paper Note] MASFactory: A Graph-centric Framework for Orchestrating LLM-Based Multi-Agent Systems with Vibe Graphing
 description: >-
-  [ACL 2026][Multi-Agent][Vibe Graphing] MASFactory models LLM multi-agent systems as Node/Edge computational graphs and introduces the "Vibe Graphing" three-stage pipeline (Role Assignment → Structure Design → Semantic Completion) to compile natural language intents into executable MAS workflows. It provides Context/Message Adapters, ComposedGraph template r
+  [ACL 2026][Multi-Agent][Vibe Graphing] MASFactory models LLM Multi-Agent Systems (MAS) as Node/Edge computational graphs and introduces the "Vibe Graphing" three-stage pipeline (Role Assignment → Structure Design → Semantic Completion) to compile natural language intent into executable MAS workflows. It provides Context/Message Adapters, ComposedGraph templ
 tags:
   - ACL 2026
   - Multi-Agent
   - Vibe Graphing
 date: 2026-05-08
-content_hash: b91e3f928eb5bdb7
+content_hash: d1cfd511609daf28
 ---
 # MASFactory: A Graph-centric Framework for Orchestrating LLM-Based Multi-Agent Systems with Vibe Graphing
 
@@ -19,82 +19,70 @@ content_hash: b91e3f928eb5bdb7
 **Keywords**: Multi-agent Orchestration, Vibe Graphing, Computational Graph, Human-AI Collaboration, Context Adaptation
 
 ## TL;DR
-MASFactory models LLM multi-agent systems as Node/Edge computational graphs and introduces the "Vibe Graphing" three-stage pipeline (Role Assignment → Structure Design → Semantic Completion) to compile natural language intents into executable MAS workflows. It provides Context/Message Adapters, ComposedGraph template reuse, and VS Code visualization. On 7 benchmarks, it reproduces 5 representative MAS with comparable or superior performance. End-to-end Vibe Graphing reduces ChatDev's code from 1511 lines to 45, with API costs an order of magnitude lower than Vibe Coding.
+MASFactory models LLM Multi-Agent Systems (MAS) as Node/Edge computational graphs and introduces the "Vibe Graphing" three-stage pipeline (Role Assignment → Structure Design → Semantic Completion) to compile natural language intent into executable MAS workflows. It provides Context/Message Adapters, ComposedGraph templates for reuse, and VS Code visualization. On 7 benchmarks, it replicates 5 representative MAS with comparable or superior performance; end-to-end Vibe Graphing reduces ChatDev's 1,511 lines of code to 45 lines, with API costs an order of magnitude lower than Vibe Coding.
 
 ## Background & Motivation
 
-**Background**: LLM-based Multi-Agent Systems (MAS) extend single-agent capabilities through role specialization, mutual verification, and iterative collaboration. Representative systems include AutoGen, MetaGPT, ChatDev, AgentVerse, and CAMEL. The dominant orchestration abstraction is the directed computational graph—LangGraph models workflows as stateful graphs, while Dify provides a DAG canvas.
+**Background**: LLM-based MAS extend single-agent capabilities through role division, mutual verification, and iterative collaboration (e.g., AutoGen, MetaGPT, ChatDev, AgentVerse, CAMEL). Mainstream orchestration abstractions use directed computational graphs—LangGraph models workflows as stateful graphs, and Dify provides a DAG canvas.
 
-**Limitations of Prior Work**: ① Implementing a complete MAS incurs high engineering costs, requiring developers to manually write role prompts, wire node routing, and define inter-agent communication protocols. ② Real-world applications require integration with heterogeneous context sources like memory (Mem0, MemGPT), RAG (LlamaIndex, GraphRAG), and MCP, but existing frameworks rely on workflow-specific glue code, resulting in poor portability. ③ MAS contains numerous repetitive subgraphs that are "globally similar but locally different," yet current frameworks offer limited support for versioned and templated reuse. ④ Even with graph frameworks like LangGraph, writing complex MAS still requires thousands of lines of code (the original ChatDev is 1511 lines of Python).
+**Limitations of Prior Work**: ① High engineering costs to implement a full MAS, requiring manual role prompting, node routing, and inter-agent communication protocols. ② Real-world applications require connecting heterogeneous context sources (Mem0, MemGPT, LlamaIndex, GraphRAG, MCP), leading to poor portability due to workflow-specific glue code. ③ Massive amounts of "globally similar, locally distinct" repetitive subgraphs lack versioning or template support. ④ Even with graph frameworks like LangGraph, complex MAS still require thousands of lines of code (ChatDev original: 1,511 Python lines).
 
-**Key Challenge**: User intent is typically expressed in natural language ("I want a coding MAS: PM breaks down requirements, Dev writes code, QA reviews"). However, existing systems force developers to translate intent into a "graph wiring + prompt + protocol" triad, leading to high conversion costs and heavy maintenance burdens.
+**Key Challenge**: User intent is typically natural language ("I want a coding MAS: PM breaks requirements, dev writes, QA reviews"), but existing systems force developers to translate intent into a "graph wiring + prompt + protocol" triad, resulting in high conversion costs and maintenance burdens.
 
-**Goal**: To enable users to generate runnable, editable, and reusable MAS workflows from natural language intents while maintaining performance comparable to manual implementations.
+**Goal**: Enable users to obtain runnable, editable, and reusable MAS workflows from natural language intents while guaranteeing performance comparable to manual implementations.
 
-**Key Insight**: Drawing inspiration from "Vibe Coding" but with more structure—instead of generating code directly, the system generates a structured intermediate representation (graph skeleton + node configurations). This allows the LLM to focus on "graph design" while the framework handles "graph execution," incorporating human-in-the-loop reviews at each stage.
+**Key Insight**: Borrow the "Vibe Coding" philosophy but make it more structured—instead of direct code generation, generate a structured intermediate representation (IR) involving a graph skeleton and node configurations. LLMs handle "graph design," while the framework handles "graph execution," incorporating human-in-the-loop reviews at each stage.
 
-**Core Idea**: Reformulate MAS construction as a three-stage compilation of "intent → structured graph → executable workflow," paired with reusable ComposedGraph templates and pluggable Context/Message Adapters.
+**Core Idea**: Reformulate MAS construction as a three-stage "intent → structured graph → executable workflow" compilation, supported by reusable ComposedGraph templates and pluggable Context/Message Adapters.
 
 ## Method
 
 ### Overall Architecture
 
-The underlying structure is a Node/Edge computational graph: Nodes are computational units (extensible to Graph, Loop, Agent, CustomNode, Interaction, Switch), and Edges represent dependencies and message paths. Collaboration flows are explicitly decoupled into three types: **Control flow** (scheduling), **Message flow** (horizontal transmission of node outputs), and **State flow** (synchronizing shared context across parent-child graphs). The runtime uses readiness-based scheduling to execute multiple ready nodes concurrently, natively supporting serial, parallel, branching, and looping patterns. Agent nodes follow a Perception-Reasoning-Action loop and are decoupled via pluggable Message Adapters (JSON, Markdown, or free text) and Context Adapters (supporting Mem0, LlamaIndex, MCP, and RAG). The top layer provides three orchestration interfaces: (a) Vibe Graphing driven by natural language, (b) Imperative manual Python code, and (c) Declarative configuration files. An accompanying VS Code Visualizer provides topology previews, runtime tracing, and human-in-the-loop interaction.
+The foundation is a Node/Edge computational graph: Nodes are computing units (extendable to Graph, Loop, Agent, CustomNode, Interaction, Switch), and Edges represent dependencies and message paths. Collaboration flows are explicitly split into three types: **Control flow** (scheduling), **Message flow** (horizontal transmission of node outputs), and **State flow** (synchronizing shared context across parent-child graphs). The Runtime employs readiness-based scheduling for concurrent execution of ready nodes, natively supporting serial, parallel, branching, and looping patterns. Agent nodes follow a Perception-Reasoning-Action loop, decoupled via pluggable Message Adapters (JSON, Markdown, free text) and Context Adapters (standardizing Mem0, LlamaIndex, MCP, RAG). Three orchestration interfaces are provided: (a) Vibe Graphing (NL-driven), (b) Imperative (Python), and (c) Declarative (Config). A VS Code Visualizer provides topology previews, runtime tracing, and human-in-the-loop interaction.
 
 ```mermaid
-graph TD
-    A["Natural Language Intent<br/>(e.g., PM breaks down reqs → Dev writes → QA reviews)"] --> VG
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Natural Language Intent<br/>(e.g., PM breaks reqs → Dev writes → QA reviews)"] --> VG
     subgraph VG["Vibe Graphing Three-stage Compilation"]
         direction TB
-        B["Role Assignment<br/>Intent → Candidate roles with boundaries"] --> C["Structure Design<br/>Generate directed graph topology skeleton"]
-        C --> D["Semantic Completion<br/>Equip nodes with prompts and tools"]
+        B["Role Assignment<br/>Intent → Bounded Candidate Roles"] --> C["Structure Design<br/>Generate Directed Graph Topology"]
+        C --> D["Semantic Completion<br/>Equip Nodes with Prompts & Tools"]
     end
-    TPL["ComposedGraph + NodeTemplate Reuse<br/>Predefined collaboration subgraphs / Parameterized templates"] -.Reuse.-> C
-    VG --> E["Executable Node/Edge Computational Graph<br/>Control / Message / State Flows + Readiness Scheduling"]
-    ADP["Context / Message Dual Adaptation Layers<br/>Normalize Mem0·RAG·MCP / JSON·Markdown·Text"] -.Decouple.-> E
+    TPL["Reuse via ComposedGraph + NodeTemplate<br/>Predefined Collaboration Subgraphs"] -.Reuse.-> C
+    VG --> E["Executable Node/Edge Graph<br/>Control / Message / State Flows + Readiness Scheduling"]
+    ADP["Context / Message Adapters<br/>Unify Mem0·RAG·MCP / JSON·Markdown·Text"] -.Decouple.-> E
     E --> F["Runnable MAS Workflow"]
-    F --> G["VS Code Visualizer<br/>Topology preview + Human-in-the-loop review/edit"]
+    F --> G["VS Code Visualizer<br/>Topology Preview + HITL Review/Edit"]
     G -.Intervene/Modify IR.-> VG
 ```
 
 ### Key Designs
 
-**1. Vibe Graphing Three-stage Compilation Pipeline: Compiling natural language into executable graphs instead of direct code**
+**1. Vibe Graphing Pipeline: Compiling Intent to Executable Graphs instead of Code**
 
-Asking LLMs to write code directly (Vibe Coding) often results in logical errors and non-runnable graphs, along with high API costs. MASFactory addresses this by splitting the "intent → executable workflow" process into three stages, each producing a readable and editable structured Intermediate Representation (IR): (i) Role Assignment maps task intent to a set of candidate agent roles with clear boundaries; (ii) Structure Design generates a directed graph topology based on information dependencies and control constraints; (iii) Semantic Completion instantiates and parameterizes the skeleton by assigning prompts and tools to each node, producing a workflow ready for compilation/execution.
+Directly asking LLMs to write code (Vibe Coding) often results in logical errors and unrunnable graphs, alongside high API costs. MASFactory splits the "intent → executable workflow" process into three compilation steps, each producing a readable and editable structured intermediate representation (IR): (i) Role Assignment maps task intent to a set of bounded candidate agent roles; (ii) Structure Design generates a topological skeleton based on information dependencies and control constraints; (iii) Semantic Completion parameterizes the skeleton with prompts and tools. This isolates "structural correctness" from LLM generation—the LLM fills semantics while the framework ensures executability, reducing errors via a more constrained task space.
 
-The essence of this staged approach is decoupling "graph structure correctness" from the LLM’s free-form generation. The LLM only provides semantics (roles, connections, prompts), while the framework ensures executability. Consequently, the LLM faces a more constrained and less error-prone task. Each stage's structured IR can be modified via human-in-the-loop intervention in the VS Code Visualizer. In engineering practice, gpt-5.2 is used to generate the IR, while the cheaper gpt-4o-mini handles execution.
+**2. Context / Message Adapter Layers: Decoupling Heterogeneous Dependencies**
 
-> ⚠️ Model names such as gpt-5.2 follow the original text.
+Real-world MAS rely on external context sources (Mem0, LlamaIndex, MCP) with varying APIs and formats. Historically, this required workflow-specific glue code, coupling topology to specific frameworks. MASFactory abstracts this: Context Adapters break sources into standardized units with unified interfaces; Message Adapters format agent IO according to protocols (JSON Schema, Markdown, plain text). This allows swapping memory backends or communication protocols without altering the graph structure.
 
-**2. Context Adapter / Message Adapter Dual Adaptation Layers: Decoupling heterogeneous external dependencies from collaboration graphs**
+**3. ComposedGraph + NodeTemplate Reuse Mechanism**
 
-Real-world MAS rely heavily on external context sources, but Mem0 long-term memory, LlamaIndex RAG, and Anthropic MCP each have distinct APIs and data formats. Previously, developers had to write extensive workflow-specific glue code to stitch these into each agent, resulting in topologies tightly coupled to specific frameworks. Ours abstracts this via two layers: the Context Adapter slices different context sources into standardized units with a unified interface for graph nodes, and the Message Adapter formats agent I/O according to specified protocols (JSON Schema, Markdown sections, or plain text) with support for custom protocols.
+Common collaboration patterns—such as "review-critique-revise" or "propose-vote-merge"—are often rewritten manually. This framework provides two-level reuse: NodeTemplate allows defining structural templates for cloning nodes with different parameters, while ComposedGraph offers predefined specialized graphs. For instance, replicating ChatDev via ComposedGraph allowed fixing original routing bugs, yielding a 22-point improvement on HumanEval by decoupling engineering flaws from the methodology.
 
-The direct benefit of this decoupling is that a collaboration graph can seamlessly switch memory backends or communication protocols without changing its topology—switching from Mem0 to LlamaIndex or from JSON to Markdown only requires modifying the adapter configuration.
+### A Complete Example: ChatDev in 45 Lines
 
-**3. ComposedGraph + NodeTemplate Reuse Mechanism: Declaring, reusing, and versioning repetitive subgraphs as templates**
-
-Collaboration patterns like "review-critique-revise" or "propose-vote-merge" recur frequently. Manual implementation is time-consuming and inconsistent. Ours provides two levels of reuse: NodeTemplate allows users to declare structure templates before instantiation, enabling the cloning of multiple graphs that are globally identical but locally parameterized. ComposedGraph is a specialized Graph with a predefined structure that users can instantiate by filling node configs or activating specific branches. The framework includes common collaboration subgraphs (e.g., DyLan-style dynamic scheduling), and users can package their own designs into reusable components.
-
-Templating reduces code redundancy and allows subgraphs to be managed like software libraries. A strong piece of evidence: implementing ChatDev with ComposedGraph fixed routing bugs present in the original version, leading to a reproduce version that outperformed the original by 22 points on HumanEval—the underlying methodology's effectiveness was revealed once the messy engineering was decoupled into templates.
-
-### A Complete Example: Orchestrating ChatDev in 45 Lines
-
-Taking the natural language intent "I want a coding MAS: first PM breaks down requirements, then dev writes code, and QA reviews" through the Vibe Graphing pipeline:
-
-- **Role Assignment** parses the intent into three roles: Product Manager (requirement breakdown), Developer (coding), and QA (review), defining their respective boundaries.
-- **Structure Design** generates the topology based on information dependencies: a directed chain of PM → Dev → QA, with a feedback edge for message/control looping back from QA to Dev if the review fails.
-- **Semantic Completion** assigns prompts to each node (PM's breakdown template, Dev's coding instructions, QA's review criteria) and tools, compiling them into an executable workflow.
-
-The end-to-end Vibe Graphing description replaces ChatDev's **1511 lines** of Python with just **45 lines**. The construction cost is approximately **$0.26** (compared to over $3 for Vibe Coding on the same task), while performance remains parity with or superior to the manual version. Users can review the IR at any of the three stages in the VS Code Visualizer to adjust role boundaries or feedback loops manually.
-
-### Loss & Training
-The framework has no training objective; all agents use LLM inference (defaulting to gpt-4o-mini). The Vibe Graphing stage uses gpt-5.2 for IR generation. Evaluation includes 5 reproduced MAS and 2 Vibe Graphing variants (Staged ChatDev and Task-Specific end-to-end).
+Given the intent "I want a coding MAS: PM breaks requirements, dev writes, QA reviews":
+- **Role Assignment** parses roles: Product Manager, Developer, QA.
+- **Structure Design** generates the skeleton: PM → Dev → QA, with a feedback edge from QA to Dev for failed reviews.
+- **Semantic Completion** fills prompts (e.g., PM req templates, coding instructions) and tools.
+This end-to-end Vibe Graphing description uses **45 lines** to replace ChatDev's original **1,511 lines** of Python, with construction costs of approximately $\$0.26$ (compared to $>\$3$ for Vibe Coding).
 
 ## Key Experimental Results
 
-### Main Results (Scores out of 100, "–" indicates the framework is not applicable to general reasoning benchmarks)
+### Main Results (Scores out of 100)
 
 | Method | HumanEval | MBPP | BigCodeBench | SRDD | MMLU-Pro | GAIA | GPQA |
 |---|---|---|---|---|---|---|---|
@@ -104,72 +92,62 @@ The framework has no training objective; all agents use LLM inference (defaultin
 | MetaGPT (MASFactory) | **89.02** | **59.14** | 51.70 | 72.77 | – | – | – |
 | AgentVerse (orig) | 85.00 | 74.54 | 65.92 | 87.55 | 64.64 | 12.12 | 38.39 |
 | AgentVerse (MASFactory) | 85.00 | 75.15 | 64.12 | **91.06** | 64.16 | **12.73** | 37.50 |
-| CAMEL (orig) | 62.20 | 60.60 | 63.51 | 89.42 | 50.08 | 9.70 | 32.59 |
-| CAMEL (MASFactory) | **71.85** | 57.80 | **78.16** | 89.69 | **63.04** | **12.73** | 24.78 |
-| HuggingGPT (orig) | 82.32 | 68.60 | 28.42 | 87.96 | 65.59 | 9.09 | 56.67 |
-| HuggingGPT (MASFactory) | 80.49 | 64.40 | 29.91 | 83.26 | 63.66 | 10.91 | 47.32 |
 | **Vibe Graphing-ChatDev** | 83.50 | 74.20 | 45.30 | 88.13 | – | – | – |
 | **Vibe Graphing-Task Specific** | 84.76 | 72.37 | 51.67 | 90.71 | 51.73 | 12.12 | 39.51 |
 
-Reproduction versions are broadly consistent or better (MetaGPT's +22 on HumanEval is due to ComposedGraph fixing original routing bugs). Workflows automatically generated via Vibe Graphing achieve or surpass manual originals in most tasks.
+Replicated versions are broadly consistent or better than originals. Vibe Graphing workflows match or exceed manual versions in most tasks.
 
-### Ablation Study (Code Volume + Cost)
+### Ablation Study (LOC & Cost)
 
-| Implementation | Code Volume (lines) | Notes |
+| Implementation | Code Volume (lines) | Note |
 |---|---|---|
-| ChatDev (Original) | 1,511 | Hand-written |
-| MASFactory Reproduction | 1,114 | ComposedGraph reuse |
-| Vibe Graphing-ChatDev (Staged) | 203 | One VibeGraph component per stage |
-| Vibe Graphing-Task Specific (E2E) | 45 | Single VibeGraph compilation |
+| ChatDev (Original) | 1,511 | Manual |
+| MASFactory Replicated | 1,114 | ComposedGraph Reuse |
+| Vibe Graphing-ChatDev (Staged) | 203 | Per-stage VibeGraph component |
+| Vibe Graphing-Task Specific (End-to-End) | 45 | Single VibeGraph compilation |
 
-| Workflow | Vibe Graphing Cost ($) | Vibe Coding low ($) | Vibe Coding medium ($) |
+| Workflow | Vibe Graphing Cost ($) | Vibe Coding (Low) ($) | Vibe Coding (Med) ($) |
 |---|---|---|---|
 | ChatDev | **0.26** | 3.49 | 3.02 |
 | AgentVerse | **0.59** | 4.43 | 6.08 |
 
-Vibe Graphing is approximately 10x cheaper than Vibe Coding, and Vibe Coding outputs frequently suffer from graph logic errors making them non-executable.
-
 ### Key Findings
-- Using structured IR instead of direct code generation is key to Vibe Graphing's cost-efficiency and stability—LLMs handle the constrained task of "graph structure + prompt design," while the framework ensures "executability."
-- ComposedGraph allowed the MetaGPT reproduction to outperform the original (HumanEval +22, MBPP +23), suggesting that decoupling messy engineering into templates allows the underlying methodology's true potential to emerge.
-- On general reasoning tasks like GAIA and GPQA, workflows automatically generated by Vibe Graphing are comparable to or slightly better than manual AgentVerse (GPQA 39.51 vs 38.39), proving the paradigm generalizes beyond coding scenarios.
-- HuggingGPT reproduction was slightly lower (GPQA 47.32 vs 56.67), attributed to detailed tool-calling interface differences—indicating that Vibe Graphing requires more refined Context Adapters for tool-heavy MAS.
+- Structured IR is the key to cost-efficiency and stability; LLMs focus on structural design while the framework ensures executability.
+- Decoupling engineering implementations into templates reveals the true effectiveness of the underlying methodologies (e.g., MetaGPT +22 on HumanEval).
+- Generalization to GAIA/GPQA proves the paradigm works beyond programming scenarios.
 
 ## Highlights & Insights
-- Decomposing MAS construction into "intent → structure → semantics" explicitly encodes human design intuition: "select roles," "draw connections," and "define prompts." This is more controllable and cheaper than the "one-shot magic" of Vibe Coding.
-- The Context Adapter abstraction is highly pragmatic: normalizing Mem0, LlamaIndex, MCP, and RAG into standardized context units decouples graph topology from the external ecosystem.
-- The separation of three flows (control, message, state) is a significant systems design insight: by separating scheduling signals, data, and shared state, complex control flows like loops and concurrency naturally fall into readiness-based scheduling.
-- Reducing ChatDev from 1511 lines to 45 lines via Vibe Graphing is a powerful testament to developer experience—the future of MAS frameworks likely lies in "writing less code and more intent."
+- The three-stage decomposition aligns MAS construction with human design intuition, offering better control and lower costs than one-shot Vibe Coding.
+- The Context Adapter layer provides significant engineering value by unifying disparate sources (Mem0/RAG/MCP), allowing the graph to remain agnostic to external ecosystem shifts.
+- The separation of "Three Flows" (Control, Message, State) provides a robust systems design where complex logic naturally maps to readiness-based scheduling.
 
 ## Limitations & Future Work
-- Lack of checkpointing/interrupt recovery means long workflows must restart upon failure, a critical issue for production deployment.
-- The ComposedGraph component library is still being built and lacks coverage of many collaboration patterns.
-- Vibe Graphing construction heavily relies on gpt-5.2 (top-tier model); whether small models can stably generate the IR has not been systematically evaluated.
-- Experimental metrics lack system indicators like latency or throughput; performance under high concurrency for readiness-based scheduling is unknown.
-- The gap in HuggingGPT reproduction suggests Context/Message Adapters are not yet fully comprehensive for tool protocols.
-- Absence of RL or learned routing policies means all control flow decisions are LLM-based or predefined, which may become a bottleneck in long-chain dynamic decision-making.
+- Lack of checkpointing/recovery for long workflows.
+- The ComposedGraph library requires more diverse collaboration patterns.
+- High dependency on gpt-5.2 for the construction stage; stability with smaller models is unverified.
+- Tool-intensive tasks (e.g., HuggingGPT replication) show a gap, suggesting the need for more granular adapters.
 
 ## Related Work & Insights
-- **vs LangGraph / Dify**: All use computational graphs, but LangGraph/Dify still require manual coding for node logic. Ours simplifies developer experience through Vibe Graphing, ComposedGraph reuse, and Context Adapters.
-- **vs AutoGen / MetaGPT / ChatDev / CAMEL**: These are specific MAS methodologies; Ours is a meta-framework that reproduces these with significantly less code. The MetaGPT reproduction outperforming the original validates the framework's abstraction level.
-- **vs CrewAI / Google ADK**: These are code-first programmatic orchestrators. Ours uses a "graph + natural language" dual drive, offering better visualization and human-in-the-loop support.
-- **vs Vibe Coding**: Ours proves that structured IR and staged compilation significantly outperform end-to-end code generation in cost (10×) and accuracy (avoiding broken code), an insight valuable for all LLM-based software generation.
+- **vs LangGraph/Dify**: Offers higher-level abstraction via Vibe Graphing, ComposedGraphs, and Adapters, reducing manual node logic implementation.
+- **vs AutoGen/MetaGPT**: Acts as a meta-framework capable of replicating these specific methods with significantly reduced code.
+- **vs Vibe Coding**: Demonstrates that structured IR and stage-wise compilation outperform end-to-end code generation in cost ($10 \times$ lower) and reliability.
 
 ## Rating
-- Novelty: ⭐⭐⭐ The primary contribution is the engineering framework and the "structured IR + three-stage compilation" pipeline.
-- Experimental Thoroughness: ⭐⭐⭐ Cover 7 benchmarks, 5 reproductions, and 2 Vibe variants with code/cost analysis, but lacks latency and failure mode analysis.
-- Writing Quality: ⭐⭐⭐⭐ Clear architecture diagrams and tables; highly accessible for framework users.
-- Value: ⭐⭐⭐⭐ For MAS developers, the 1511 → 45 line improvement is a direct, tangible, and reusable enhancement to developer experience.
+- Novelty: ⭐⭐⭐ (Solid integration of engineering framework and staged compilation)
+- Experimental Thoroughness: ⭐⭐⭐ (Broad benchmark coverage; lacks latency/failure analysis)
+- Writing Quality: ⭐⭐⭐⭐ (Clear architecture and tables)
+- Value: ⭐⭐⭐⭐ (Drastic reduction in developer effort via 1511 → 45 lines)
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
+</div>
+<!-- RELATED:END -->
 
 ## Related Papers
 
 - [\[ACL 2026\] BookAgent: Orchestrating Safety-Aware Visual Narratives via Multi-Agent Cognitive Calibration](bookagent_orchestrating_safety-aware_visual_narratives_via_multi-agent_cognitive.md)
-- [\[AAAI 2026\] A Graph-Theoretical Perspective on Law Design for Multiagent Systems](../../AAAI2026/multi_agent/a_graph-theoretical_perspective_on_law_design_for_multiagent_systems.md)
 - [\[AAAI 2026\] Scalable and Accurate Graph Reasoning with LLM-Based Multi-Agents](../../AAAI2026/multi_agent/scalable_and_accurate_graph_reasoning_with_llm-based_multi-agents.md)
+- [\[AAAI 2026\] A Graph-Theoretical Perspective on Law Design for Multiagent Systems](../../AAAI2026/multi_agent/a_graph-theoretical_perspective_on_law_design_for_multiagent_systems.md)
 - [\[ACL 2026\] Conjunctive Prompt Attacks in Multi-Agent LLM Systems](conjunctive_prompt_attacks_in_multi-agent_llm_systems.md)
 - [\[ACL 2026\] CIA: Inferring the Communication Topology from LLM-based Multi-Agent Systems](cia_inferring_the_communication_topology_from_llm-based_multi-agent_systems.md)
 

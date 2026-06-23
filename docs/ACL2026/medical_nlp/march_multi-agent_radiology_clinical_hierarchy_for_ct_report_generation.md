@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] MARCH: Multi-Agent Radiology Clinical Hierarchy for CT Report Generation
 description: >-
-  [ACL 2026][Medical NLP][Multi-Agent] This paper proposes MARCH, a multi-agent framework that simulates the clinical resident-fellow-attending hierarchical collaboration. Through a three-stage process (initial drafting, retrieval-augmented revision, and consensus-driven finalization), it generates CT reports. It achieves a CE-F1 of 0.399 on the RadGenome-C
+  [ACL 2026][Medical NLP][Multi-Agent] This paper proposes MARCH, a multi-agent framework that simulates the hierarchical collaboration of radiology Residents, Fellows, and Attending physicians. Through a three-stage process (initial drafting, retrieval-augmented revision, and consensus-driven finalization), it generates CT reports. On the RadGenome-ChestCT
 tags:
   - ACL 2026
   - Medical NLP
   - Multi-Agent
   - 3D CT
 date: 2026-05-08
-content_hash: 3970a9088f275fd0
+content_hash: 4e707c131ec54db2
 ---
 # MARCH: Multi-Agent Radiology Clinical Hierarchy for CT Report Generation
 
@@ -17,36 +17,36 @@ content_hash: 3970a9088f275fd0
 **arXiv**: [2604.16175](https://arxiv.org/abs/2604.16175)  
 **Code**: None  
 **Area**: Medical NLP  
-**Keywords**: Multi-Agent, Radiology Report Generation, Consensus-driven, Retrieval-Augmented, 3D CT
+**Keywords**: Multi-agent, Radiology report generation, Consensus-driven, Retrieval-augmented, 3D CT
 
 ## TL;DR
 
-This paper proposes MARCH, a multi-agent framework that simulates the clinical resident-fellow-attending hierarchical collaboration. Through a three-stage process (initial drafting, retrieval-augmented revision, and consensus-driven finalization), it generates CT reports. It achieves a CE-F1 of 0.399 on the RadGenome-ChestCT dataset, representing a 57.7% improvement over the best baseline, Reg2RG (0.253).
+This paper proposes MARCH, a multi-agent framework that simulates the hierarchical collaboration of radiology Residents, Fellows, and Attending physicians. Through a three-stage process (initial drafting, retrieval-augmented revision, and consensus-driven finalization), it generates CT reports. On the RadGenome-ChestCT dataset, it achieves a CE-F1 of 0.399, representing a 57.7% improvement over the best baseline, Reg2RG (0.253).
 
 ## Background & Motivation
 
-**Background**: Automated radiology report generation is a critical direction in medical AI. While Vision-Language Models (VLMs) have progressed in 2D chest X-ray reports, report generation for 3D volumetric data (e.g., chest CT) remains in its early stages.
+**Background**: Automated radiology report generation is a critical direction in medical AI. While existing vision-language models (VLMs) have made progress on 2D chest X-ray reports, report generation for 3D volumetric data (e.g., chest CT) remains in its early stages.
 
-**Limitations of Prior Work**: (1) End-to-end "black-box" models lack the iterative verification and cross-checking mechanisms found in clinical workflows, making them prone to clinical hallucinations; (2) Abnormal findings in 3D CT data are sparse, making it difficult for a single model to reliably detect all pathologies; (3) The inherent cognitive bias of a single-reader mode cannot be corrected.
+**Limitations of Prior Work**: (1) End-to-end "black-box" models lack iterative validation and cross-checking mechanisms found in clinical workflows, making them prone to clinical hallucinations; (2) Abnormal findings in 3D CT data are sparse, making it difficult for a single model to reliably detect all pathologies; (3) Cognitive biases inherent in a single-reader mode cannot be corrected.
 
-**Key Challenge**: In clinical practice, departments reduce misdiagnosis rates through a hierarchical review process (resident-fellow-attending). Existing automated systems are single-agent and lack this multi-layered verification mechanism.
+**Key Challenge**: In clinical practice, departments reduce misdiagnosis rates through a hierarchical review process (Resident-Fellow-Attending). However, existing automated systems are single-agent and lack this multi-layer verification mechanism.
 
-**Goal**: Design a multi-agent framework reflecting the clinical hierarchy of radiology to achieve interpretable and verifiable CT report generation.
+**Goal**: To design a multi-agent framework that simulates the clinical hierarchy of radiology to achieve interpretable and verifiable CT report generation.
 
-**Key Insight**: Drawing from the "readout session" system—where a resident drafts, a fellow reviews, and an attending finalizes—different responsibilities are assigned to different AI agents.
+**Key Insight**: Drawing inspiration from the radiology readout session system—where residents perform an initial reading, fellows review, and attendings finalize—different responsibilities are assigned to different AI agents.
 
-**Core Idea**: Replace a single end-to-end model with a multi-agent hierarchical structure, significantly enhancing clinical accuracy through retrieval augmentation and multi-round consensus discussions.
+**Core Idea**: Replace the single end-to-end model with a multi-agent hierarchical structure, significantly improving clinical accuracy through retrieval augmentation and multi-round consensus discussions.
 
 ## Method
 
 ### Overall Architecture
 
-MARCH addresses the "single-reader bias" in 3D chest CT report generation. In an end-to-end model, a single reader functions without oversight, often missing sparse anomalies. The authors map the clinical readout session—Resident drafting, Fellow reviewing, and Attending certifying—directly onto a multi-agent pipeline. Input consists of chest CT volume data, and the output is the final report, following three stages: the Resident agent drafts the initial report; the Retrieval agent identifies similar cases for the Fellow agent to revise; and the Attending agent moderates multi-round consensus discussions until clinical agreement is reached.
+MARCH addresses the "single-reader bias" in 3D chest CT report generation: end-to-end models act like a solitary physician reading scans without peer review, often missing sparse abnormalities or hallucinating findings. The authors map the real-world radiology readout session—Resident initial reading, Fellow review, and Attending finalization—directly into a multi-agent pipeline. The input is 3D chest CT volumetric data, and the output is the final radiology report, processed in three stages: the Resident agent first drafts an initial report; the Retrieval agent fetches similar cases, and the Fellow agent revises accordingly; finally, the Attending agent chairs multi-round consensus discussions where multiple Fellow agents repeatedly exchange stances until a clinical consensus is reached.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    IN["Chest CT Volume Data"]
+    IN["Chest CT Volumetric Data"]
     subgraph S1["Resident Agent + Multi-region Segmentation"]
         direction TB
         A["SAT segments 10 anatomical sub-regions"] --> B["Frozen dual-stream ViT3D extracts spatial features"]
@@ -54,12 +54,12 @@ flowchart TD
     end
     subgraph S2["Retrieval-Augmented Revision"]
         direction TB
-        D["Retrieval Agent<br/>Image-Image / Image-Text / Logits triple-retrieval top-3"] --> E["Fellow Agent<br/>Integrates evidence to revise to T′"]
+        D["Retrieval Agent<br/>Image-Image / Image-Text / Logits triple-retrieval top-3"] --> E["Fellow Agent<br/>Fuses evidence to revise into T′"]
     end
     subgraph S3["Consensus-Driven Finalization"]
         direction TB
-        F["Attending aggregates Fellow revisions<br/>to generate initial consensus T(0)"] --> G["Each Fellow provides stance<br/>Agree / Correct / Supplement"]
-        G --> H["Attending integrates stances<br/>and updates report T(t+1)"]
+        F["Attending Agent aggregates Fellow revisions<br/>to generate initial consensus T(0)"] --> G["Each Fellow provides stance<br/>Agree / Correct / Supplement"]
+        G --> H["Attending integrates stances<br/>to update report T(t+1)"]
         H -->|"Consensus not stable"| G
     end
     IN --> S1
@@ -70,25 +70,25 @@ flowchart TD
 
 ### Key Designs
 
-**1. Resident Agent + Multi-region Segmentation: Driving sparse anomalies into specific anatomical regions**
+**1. Resident Agent + Multi-region Segmentation: Focusing Sparse Abnormalities on Specific Anatomical Regions**
 
-Anomalies in 3D CT are often localized and sparse; global encoding tends to miss them. The Resident agent first uses SAT (Segment Anything with Text) to segment the CT into 10 anatomical sub-regions (e.g., bones, breasts). It then uses a frozen dual-stream ViT3D (pre-trained from RadFM) to extract spatial features. Finally, a LoRA-fine-tuned LLaMA-2-Chat-7B generates a draft $T = A_{res}(I; \theta_{res})$. Segmenting before reading forces the model to focus on local anatomy and pathological entities, mitigating the sparsity of anomaly detection.
+Abnormalities in 3D CT are often confined to specific anatomical sub-regions and are highly sparse; global encoding often smears these details. The Resident agent first uses SAT (Segment Anything with Text) to segment the CT into 10 anatomical sub-regions (e.g., bone, breast), then uses a frozen dual-stream ViT3D (pre-trained from RadFM) to extract spatial features, and finally employs a LoRA-fine-tuned LLaMA-2-Chat-7B to generate a text draft $T = A_{res}(I; \theta_{res})$. Segmenting before reading forces the model to focus on local anatomy and pathological entities, mitigating the sparsity of abnormality detection.
 
-**2. Retrieval-Augmented Revision: Providing an "evidence-based second opinion"**
+**2. Retrieval-Augmented Revision: Providing an "Evidence-Based Second Opinion"**
 
-Since single generative models may hallucinate, the authors use retrieval as an external evidence source. Three complementary retrieval paradigms are designed: Image-to-Image and Image-to-Text retrieval use a 3D vision encoder to find visually similar CTs and their reports; Logits retrieval uses a classification head to predict 18 clinical anomalies and finds reports with similar diagnostic profiles. The top-3 from each are combined into structured evidence $R = A_{ret}(I, D)$, which the Fellow agent uses to revise the draft: $T' = A_{fel}(T, R)$. This mimics the clinical process of looking up literature or reference cases.
+Since a single generative model may miss details or hallucinate, the authors use retrieval to provide an external evidence source. Three complementary retrieval paradigms are designed: image-to-image/image-to-text retrieval uses 3D vision encoders to find visually similar CTs and their reports; logits retrieval uses a classification head to predict logits for 18 clinical abnormalities and finds reports with similar diagnostic profiles. The top-3 from each method are aggregated into structured evidence $R = A_{ret}(I, D)$, which is handed to the Fellow agent to fuse and revise the draft: $T' = A_{fel}(T, R)$. This step analogous to consulting literature or reference cases in clinical practice, and evidence-based revision contributes the most to performance in subsequent experiments.
 
-**3. Consensus-Driven Finalization: Solving disagreements through multi-round stance exchange rather than simple voting**
+**3. Consensus-Driven Finalization: Resolving Discrepancies via Multi-turn Stance Exchange Instead of Voting**
 
-Reports modified by multiple Fellows may not be consistent, and simple voting loses nuanced information. The Attending agent $A_{att}$ first aggregates revisions to generate an initial consensus $T^{(0)}$. In each subsequent round, each Fellow agent $A_{fel,i}$ reviews the current consensus and provides a stance $S_i^{(t)}$ (Agree, Correct, or Supplement). The Attending integrates these to update the report $T^{(t+1)} = A_{att}(T^{(t)}, \{S_i^{(t)}\})$, iterating until consensus stabilizes or the round limit is reached.
+Reports modified by multiple Fellow agents may not be consistent, and simple voting loses the information contained in disagreements. The Attending agent $A_{att}$ first aggregates revisions to generate an initial consensus $T^{(0)}$. In each subsequent round, every Fellow agent $A_{fel,i}$ reviews the current consensus and provides a stance $S_i^{(t)}$ (Agree / Correct / Supplement). The Attending agent integrates all stances to update the report $T^{(t+1)} = A_{att}(T^{(t)}, \{S_i^{(t)}\})$, iterating until consensus stabilizes or the round limit is reached. This replicates the "devil's advocate" mechanism in real readout sessions—resolving differences through discussion rather than majority rule has been clinically proven to reduce misdiagnosis.
 
-### Mechanism Example: Processing a Chest CT
+### Mechanism: A Walkthrough of a 3D Chest CT Case
 
-Consider a chest CT with subtle pericardial effusion. **Resident Stage**: The CT is partitioned into 10 regions. ViT3D extracts features and LLaMA drafts the report. Due to the weak signal, the draft might mention lung fields but miss the pericardium. **Revision Stage**: Retrieval fetches visually similar CTs; logits retrieval identifies reports with pericardial issues. The Fellow agent incorporates "pericardial effusion" into the revised draft based on this evidence. **Finalization Stage**: The Attending aggregates revisions. One Fellow might "Correct" the magnitude of the effusion while another "Supplements" follow-up advice. The Attending updates the report until stable. The final report captures low-frequency anomalies missed by the Resident alone.
+Consider a chest CT with subtle pericardial effusion. In the Resident stage, the CT is segmented into 10 regions, and LLaMA drafts the report after ViT3D feature extraction; however, due to the faint signs of effusion, the draft might only mention lung fields and miss the pericardium. In the Revision stage, image retrieval pulls visually similar CTs, and logits retrieval finds reports containing pericardial abnormalities; the Fellow agent then incorporates "pericardial effusion" into the revised draft based on this evidence. In the Finalization stage, the Attending agent aggregates revisions into an initial consensus. One Fellow agent might provide a "Correct" stance regarding the volume of the effusion, while another adds "Supplement" for follow-up recommendations. The Attending integrates these into the updated report until consensus is reached. The final report captures the low-frequency abnormality missed during the Resident's solitary reading—explaining why MARCH shows significant gains for conditions like hiatal hernia and pericardial effusion.
 
 ### Loss & Training
 
-The Resident agent is trained using AdamW (lr=1e-5) for 10 epochs. The ViT3D backbone is frozen, and LLaMA-2-Chat-7B is fine-tuned via LoRA. Fellow and Attending agents utilize GPT-4/GPT-4o as LLM backbones (temperature=0) without additional training.
+The Resident agent is trained using AdamW (lr=1e-5) for 10 epochs, with the ViT3D backbone frozen and LLaMA-2-Chat-7B fine-tuned via LoRA. The Fellow and Attending agents directly use GPT-4.1/GPT-4o as the LLM backbone (temperature=0) without additional training.
 
 ## Key Experimental Results
 
@@ -115,36 +115,36 @@ The Resident agent is trained using AdamW (lr=1e-5) for 10 epochs. The ViT3D bac
 
 ### Key Findings
 
-- CE-F1 improved from 0.219 (Resident-only) to 0.399 (Full MARCH), an 82% increase, driven primarily by retrieval (+0.113) and consensus (+0.037).
-- Retrieval augmentation contributed most to clinical utility (SR-SA vs Resident-only: CE-F1 +0.113), indicating evidence-based revision is key to reducing hallucinations.
-- Performance variance across different LLM backbones (GPT-4/4o/5) was minimal (CE-F1 0.391-0.399), suggesting framework design is more critical than LLM capacity.
-- MARCH showed particularly significant improvements in detecting low-frequency anomalies like hiatal hernia and pericardial effusion.
+- CE-F1 improved from 0.219 (Resident-only) to 0.399 (Full MARCH), an 82% increase, primarily driven by retrieval augmentation (+0.113) and the consensus mechanism (+0.037).
+- Retrieval augmentation contributed the most to clinical efficacy (SR-SA vs. Resident-only: CE-F1 +0.113), indicating that evidence-based revision is key to reducing hallucinations.
+- Performance variance across different LLM backbones (GPT-4.1-mini/GPT-4.1/GPT-4o/GPT-5) was minimal (CE-F1 0.391-0.399), suggesting the framework design is more important than the specific LLM capability.
+- MARCH showed particularly significant improvements in detecting low-frequency abnormalities such as hiatal hernia and pericardial effusion.
 
 ## Highlights & Insights
 
-- Mapping the clinical hierarchy to a multi-agent architecture is an elegant design that mirrors verified error-prevention mechanisms in medicine.
-- The three complementary retrieval paradigms (visual, text, logits) ensure different types of similarity are covered; this multi-modal ensemble is transferable to other evidence-based medical AI tasks.
-- The consensus mechanism uses "stances" (Agree/Correct/Supplement) rather than voting, preserving the information density of disagreements.
+- Mapping the radiology hierarchical collaboration workflow directly to a multi-agent architecture is an elegant design—roles are not assigned arbitrarily but correspond to clinically validated misdiagnosis prevention mechanisms.
+- The three complementary retrieval paradigms (visual, text, and logits) cover different types of similarity; this multi-modal retrieval combination is transferable to other medical AI tasks requiring evidence-based reasoning.
+- The consensus mechanism uses "stances" (Agree/Correct/Supplement) rather than simple voting, preserving the information depth contained in disagreements.
 
 ## Limitations & Future Work
 
-- Reliance on the GPT-4 family for reasoning is costly and difficult to deploy within hospitals; the feasibility of open-source LLMs remains unverified.
-- Lack of a long-term memory mechanism prevents utilization of historical longitudinal imaging or learning from past diagnostic errors.
-- Evaluation was limited to RadGenome-ChestCT; generalization to other anatomical regions (e.g., brain, abdomen) has not been tested.
-- The number of consensus rounds requires a preset limit; there is no adaptive mechanism for determining the optimal number of iterations.
+- Reliance on the GPT-4 series as the reasoning backbone is costly and difficult to deploy within hospitals; the feasibility of open-source LLMs has not been verified.
+- Lack of a long-term memory mechanism prevents the system from utilizing historical patient imaging for comparison or learning from past diagnostic errors.
+- Evaluation was conducted only on RadGenome-ChestCT; generalization to other anatomical regions (e.g., brain, abdomen) has not been demonstrated.
+- The number of consensus rounds requires a preset upper limit; there is no adaptive mechanism to determine the optimal number of rounds.
 
 ## Related Work & Insights
 
-- **vs Reg2RG**: Reg2RG uses region-guided retrieval but remains single-agent; MARCH adds multi-agent consensus, increasing CE-F1 from 0.253 to 0.399.
-- **vs RadFM**: RadFM is a general 3D medical foundation model that uses end-to-end generation, lacking verification and error-correction.
-- **vs MedAgent**: General medical multi-agent systems focus on diagnosis and recommendation; MARCH is the first multi-agent framework specifically for 3D report generation.
+- **vs. Reg2RG**: Reg2RG uses region-guided retrieval augmentation but remains single-agent; MARCH adds a multi-agent consensus on top of this, increasing CE-F1 from 0.253 to 0.399.
+- **vs. RadFM**: RadFM is a general 3D medical foundation model that uses end-to-end generation, lacking verification and correction mechanisms.
+- **vs. MedAgent**: General medical multi-agent systems are primarily used for diagnosis and recommendation; MARCH is the first multi-agent framework specifically targeting 3D report generation.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ The mapping of clinical hierarchy to multi-agent roles is natural and meaningful.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive ablation, backbone comparison, and anomaly-specific analysis.
-- Writing Quality: ⭐⭐⭐⭐ Clear framework description and clinical context.
-- Value: ⭐⭐⭐⭐ Provides a verifiable collaborative paradigm for high-stakes medical AI.
+- Novelty: ⭐⭐⭐⭐ Natural and meaningful mapping from clinical hierarchy to multi-agent architecture.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Complete ablation, including LLM backbone comparisons and abnormality-specific analysis.
+- Writing Quality: ⭐⭐⭐⭐ Clear framework description and well-explained clinical background.
+- Value: ⭐⭐⭐⭐ Provides an interpretable collaboration paradigm for high-stakes medical AI.
 
 <!-- RELATED:START -->
 

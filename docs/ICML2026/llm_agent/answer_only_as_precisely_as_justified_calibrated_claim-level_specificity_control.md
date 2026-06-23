@@ -2,85 +2,87 @@
 title: >-
   [Paper Note] Answer Only as Precisely as Justified: Calibrated Claim-Level Specificity Control for Agentic Systems
 description: >-
-  [ICML 2026][LLM Agent][Paper Note] This paper models the issue of "overly detailed expression with insufficient evidence" in agentic systems as a claim-level over-commitment problem and proposes calibrated CSS: a method that performs calibrated selection among precise expression, coarse-grained backoff, and omission for each atomic claim. In full LongFa
+  [ICML 2026][LLM Agent][Paper Note] This paper models the issue of "stating details without sufficient evidence" in agentic systems as a claim-level over-commitment problem. It proposes calibrated CSS: a calibrated selection for each atomic claim among precise expression, coarse-grained backoff, and omission. In LongFact full-scale experiments, it improv
 tags:
   - ICML 2026
   - LLM Agent
 date: 2026-05-08
-content_hash: 7f393b8fe759aef2
+content_hash: 590f6efd284f9309
 ---
 # Answer Only as Precisely as Justified: Calibrated Claim-Level Specificity Control for Agentic Systems
 
 **Conference**: ICML 2026  
 **arXiv**: [2604.17487](https://arxiv.org/abs/2604.17487)  
-**Code**: Not provided in cached body  
+**Code**: Not provided in the cached text  
 **Area**: LLM Agent / Uncertainty Calibration  
 **Keywords**: claim-level fact-checking, specificity control, calibrated selection, over-commitment, long-form factuality  
 
 ## TL;DR
-This paper models the issue of "overly detailed expression with insufficient evidence" in agentic systems as a claim-level over-commitment problem and proposes calibrated CSS: a method that performs calibrated selection among precise expression, coarse-grained backoff, and omission for each atomic claim. In full LongFact experiments, it improves OAU from 0.8460 (without post-processing) to 0.9130 while retaining a specificity of 0.9381.
+This paper models the issue of "stating details without sufficient evidence" in agentic systems as a claim-level over-commitment problem. It proposes calibrated CSS: a calibrated selection for each atomic claim among precise expression, coarse-grained backoff, and omission. In LongFact full-scale experiments, it improves OAU from 0.8460 (without post-processing) to 0.9130 while retaining a specificity of 0.9381.
 
 ## Background & Motivation
-**Background**: Modern LLM agents typically do not generate a single-turn answer but instead retrieve evidence, call tools, aggregate multiple facts, and deliver results to users or downstream modules. Such outputs are naturally composed of many claims: some are strongly supported by evidence, some are true only in a general sense, and others contain details not supported by the evidence.
+**Background**: Modern LLM agents often do not generate a single-turn answer but instead retrieve evidence, call tools, aggregate multiple facts, and deliver results to users or downstream modules. Such outputs are naturally composed of many claims: some are strongly supported by evidence, some only hold in a broad sense, and some specific details are not supported.
 
-**Limitations of Prior Work**: Traditional answer-level uncertainty handling is too coarse. Refusing the entire answer causes the system to discard much useful and supported content; providing the answer as-is risks over-committing to details like dates, numbers, or entity relations. Research on long-form factuality has shown that an answer often mixes correct and incorrect content, so a single confidence score for the entire block cannot guide the system on which information to retain.
+**Limitations of Prior Work**: Traditional answer-level uncertainty handling is too coarse. Rejecting the entire answer results in the loss of useful, supported content; providing the answer as-is risks over-committing to details such as dates, numbers, and entity relations. Long-form factuality research has shown that an answer often contains a mix of correct and incorrect content, so a single confidence score for the entire paragraph cannot guide the system on which information to retain.
 
-**Key Challenge**: The tension between reliability and informativeness exists not just in "to answer or not," but in "at what level of semantic granularity to answer." A coarse-grained version of a claim might be supported by evidence while the original fine-grained version is not; deleting the entire claim is too conservative, while keeping the original sentence leads to over-commitment.
+**Key Challenge**: The conflict between reliability and informativeness manifests not just in "to answer or not," but in "at what semantic granularity to answer." A coarse-grained version of a claim may be supported by evidence, while the original fine-grained version is not; deleting the entire claim is too conservative, but keeping the original sentence leads to over-commitment.
 
-**Goal**: The authors aim to construct a black-box post-processing layer that does not retrain the upstream model or modify the retrieval stack. Instead, it determines the most appropriate semantic precision for each claim in a fixed draft. It performs three tasks: identifying the original claim, generating a usable coarse-grained backoff, and using calibration rules to select between fine, coarse, or omit.
+**Goal**: The authors aim to construct a black-box post-processing layer that does not retrain the upstream model or modify the retrieval stack. Instead, it decides the most appropriate semantic precision claim-by-claim on a fixed draft. It performs three tasks: identifies the original claim, generates usable coarse-grained backoffs, and uses calibration rules to select between fine, coarse, or omit.
 
-**Key Insight**: The paper's key observation is that uncertainty can be expressed as local semantic backoff rather than vague phrasing or global refusal. For instance, if evidence supports "the treaty was signed in Geneva" but not "signed in a specific year," the system should back off to the former instead of deleting the sentence or retaining the wrong year.
+**Key Insight**: A key observation is that uncertainty can be expressed as local semantic backoff instead of vague phrasing or global rejection. For example, if evidence supports "the treaty was signed in Geneva" but not "signed in a specific year," the system should back off to the former rather than deleting the entire sentence or retaining the incorrect year.
 
-**Core Idea**: Use a calibrated claim-level selector to choose the highest precision allowed by evidence among three tiers—"original precise claim / coarse-grained claim / omit"—ensuring the agentic system only speaks at a granularity justified by the evidence.
+**Core Idea**: Use a calibrated claim-level selector to choose the highest precision allowed by evidence among "original fine-grained claim / coarse-grained claim / omit," thereby allowing the agentic system to speak only at the granularity supported by evidence.
 
 ## Method
-The proposed CSS (compositional selective specificity) acts as a semantic precision controller placed after the generator. The inputs are the prompt, available evidence, and a draft answer generated by the upstream LLM; the output is not a regenerated answer but a local edit of each claim within the draft.
+The proposed CSS (compositional selective specificity) can be viewed as a semantic precision controller placed after the generator. The inputs are the prompt, available evidence, and a draft answer generated by the upstream LLM; the output is not a regenerated answer but a local edit of each claim within the draft.
 
-The focus is not on training a new verifier but on turning existing support scores into a deployable selection strategy. The support estimator itself consists of LLM-based support judgments combined with lightweight lexical/entity features and remains fixed during a run; the core contribution is how to use these noisy scores to select the output granularity of a claim.
+The focus of this design is not on training a new verifier but on transforming existing support scores into deployable selection strategies. The support estimator itself is composed of LLM-based support judgments and lightweight lexical/entity features, fixed during a single run; the core contribution is how to use these noisy scores to select the output granularity of claims.
 
 ### Overall Architecture
-The workflow consists of four steps.
+The overall process is divided into four steps.
 
-First is draft generation: the upstream LLM generates an initial answer based on the prompt and evidence. All comparison strategies use the same fixed drafts, so experiments compare post-processing selection strategies rather than differences between generators.
+Step 1 is draft generation: The upstream LLM generates an initial answer based on the prompt and evidence. All comparison strategies are based on the same set of fixed drafts; thus, the experiment compares post-processing selection strategies rather than differences between generators.
 
-Second is claim extraction and backoff proposal: the system decomposes the draft into atomic claims $c_1, \ldots, c_m$. For each original claim $c_i$, the system generates a coarse-grained version $\tilde{c}_i$, aiming to preserve the central meaning while removing details likely unsupported by evidence.
+Step 2 is claim extraction and backoff proposal: The system breaks the draft into atomic claims $c_1, \ldots, c_m$. For each original claim $c_i$, the system generates a coarse-grained version $\tilde{c}_i$, aiming to retain the core meaning while removing details that might not be supported.
 
-Third is support scoring: support scores $s_i^{\mathrm{fine}}$ and $s_i^{\mathrm{coarse}}$ are estimated for the fine and coarse claims, respectively. Offline evaluation uses binary support labels $y_i^{\mathrm{fine}}$ and $y_i^{\mathrm{coarse}}$, but these are only used for scoring and oracle bounds, not provided to the deployable selector.
+Step 3 is support scoring: Support scores $s_i^{\mathrm{fine}}$ and $s_i^{\mathrm{coarse}}$ are estimated for the fine and coarse claims respectively. During offline evaluation, binary support labels $y_i^{\mathrm{fine}}$ and $y_i^{\mathrm{coarse}}$ are available, but these are used only for scoring and oracle upper bounds, not provided to the deployable selector.
 
-Fourth is claimwise selection: the selector takes an action $\pi_i \in \{\mathrm{fine}, \mathrm{coarse}, \mathrm{omit}\}$ for each claim. If the fine score exceeds a threshold, the original claim is kept; if the fine score fails but the coarse score succeeds, the coarse version is output; if both fail, the claim is omitted.
+Step 4 is claimwise selection: The selector takes an action $\pi_i \in \{\mathrm{fine}, \mathrm{coarse}, \mathrm{omit}\}$ for each claim. If the fine score exceeds a threshold, the original claim is kept; if the fine score fails but the coarse score exceeds a threshold, the coarse version is output; if both fail, the claim is omitted.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["Upstream LLM draft<br/>(prompt + evidence, shared across methods)"] --> B["Claim extraction + coarse backoff proposal<br/>Each original claim paired with a de-detailed version"]
-    B --> C["Support scoring (off-the-shelf scorer)<br/>Calculate scores for both fine and coarse levels"]
-    C --> D["Claimwise calibrated selection<br/>Select between fine / coarse / omit"]
-    E["Enumerate threshold pairs on calibration set<br/>Constrain unsupported rate via Clopper-Pearson + Maximize OAU"] -->|"Select τ_fine, τ_coarse"| D
-    D --> F["Edited answer<br/>Each claim limited to the granularity justified by evidence"]
+    A["Upstream LLM draft<br/>(prompt + evidence, same fixed drafts across methods)"] --> B["Claim extraction + coarse-grained backoff proposal<br/>Each original claim is paired with a de-detailed coarse version"]
+    B --> C["Support scoring (off-the-shelf scorer, not the main contribution)<br/>Calculate support scores for fine / coarse"]
+    C --> D["Claimwise calibrated selection<br/>Three levels: fine (original) / coarse (backoff) / omit (omission)"]
+    E["Enumerate threshold pairs on calibration set<br/>Clopper-Pearson constraints on unsupported rate + max OAU"] -->|"Select τ_fine, τ_coarse"| D
+    D --> F["Edited answer<br/>Each claim is stated only at the granularity supported by evidence"]
 ```
 
 ### Key Designs
-**1. Three-tier semantic specificity ladder: Adding granular options beyond "Answer/Refuse"**
+**1. Three-tier semantic specificity ladder: Adding semantic granularity beyond "Answer/Abstain"**
 
-Traditional uncertainty handling only chooses between "Keep all" and "Refuse all"—refusal discards much useful supported content, while keeping original text over-commits to details like dates or entities not supported by evidence. CSS refines the output space of each claim into three tiers: fine (original fine-grained claim), coarse (a rewrite removing unstable details, reducing local precision without deletion), and omit (no output). Values are characterized by specificity weights: $w(\mathrm{omit})=0$, $w(\mathrm{coarse})=\gamma$, and $w(\mathrm{fine})=1$ (set to $\gamma=0.6$ in experiments). This is more suited to real-world errors where claims aren't entirely invalid but are merely too specific; coarse backoff allows the system to step back when fine details are indefensible, preserving the core meaning supported by evidence.
+Traditional uncertainty handling only chooses between "retaining the whole" and "rejecting the whole"—rejection loses much useful content that was originally supported, while retention over-commits to unsupported details like dates or numbers. CSS refines the output space of each claim into three tiers: fine is the original fine-grained claim, coarse is a rewrite removing unstable details (local precision reduction rather than deletion), and omit is complete removal. The value of the three tiers is described by specificity weights: $w(\mathrm{omit})=0$, $w(\mathrm{coarse})=\gamma$, and $w(\mathrm{fine})=1$ (the experiment uses $\gamma=0.6$). This is more aligned with real-world error patterns than binary "keep/delete" actions—many claims are not completely invalid but are simply too specific; coarse backoff allows the system to step back when fine granularity is indefensible, retaining the core meaning supported by evidence.
 
-**2. Over-commitment-aware utility (OAU): Measuring "useful retention" vs. "incorrect over-commitment" on one scale**
+**2. Over-commitment-aware utility (OAU): Measuring "useful retention" and "unsupported over-commitment" on the same scale**
 
-If evaluating only by support precision, systems can inflate scores via massive deletion/refusal; if evaluating only by specificity retention, they are permitted to keep unsupported details. The paper uses OAU to bridge these: providing positive rewards for supported specificity and negative penalties for unsupported emissions. It is formally approximated as the average of $w(\pi_i)y_i^{\mathrm{sel}} - e_i(1-y_i^{\mathrm{sel}})$ for each claim. Crucially, OAU is not just an evaluation metric but the objective maximized during threshold calibration, directly defining what constitutes an "optimal" claimwise selection strategy.
+If only support precision is measured, the system can achieve falsely high scores through "excessive deletion/rejection"; if only specificity retention is measured, it tolerates the retention of unsupported details. The paper uses OAU (over-commitment-aware utility) to combine both tendencies into one objective: positive rewards for supported specificity and negative penalties for claims that are "emitted but unsupported," formally approximated as the average of $w(\pi_i)y_i^{\mathrm{sel}} - e_i(1-y_i^{\mathrm{sel}})$ for each claim (the paper also reports support precision, specificity retention, and supported specificity as side metrics). Crucially, OAU is not just an evaluation metric; it is the objective maximized when calibrating thresholds, thus directly defining "what makes a good claimwise selection strategy."
 
-**3. Calibration under Clopper-Pearson constraints: Turning noisy scores into deployable thresholds**
+**3. Calibration threshold selection under Clopper-Pearson constraints: Mapping noisy scores to deployable thresholds via upper confidence bounds**
 
-Support scores are noisy and their distributions shift with datasets, models, or runs; manual thresholds are either too conservative or fail to control risk. CSS enumerates threshold pairs $(\tau_{\mathrm{fine}}, \tau_{\mathrm{coarse}})$ on a held-out calibration set. For each pair, it counts unsupported emitted claims $k$ and total emitted claims $n$, calculates the one-sided Clopper-Pearson upper confidence bound, and retains only pairs satisfying $\mathrm{CPUpper}(k,n;\delta) \leq \alpha$ (using $\alpha=0.10, \delta=0.05$). Among valid pairs, the one with the highest calibration OAU is selected. This allows the selector to keep the risk of unsupported emissions within a budget while automatically moving to higher-utility operating points. The paper notes this is a conservative calibration rule, not an end-to-end distribution-free conformal guarantee.
+Support scores are inherently noisy, and their distributions shift with datasets, models, and runs; manually fixing thresholds is either too conservative or fails to suppress risk. CSS instead enumerates threshold pairs $(\tau_{\mathrm{fine}}, \tau_{\mathrm{coarse}})$ on a held-out calibration set: for each pair, it counts the number of unsupported emitted claims $k$ and emitted claims $n$ in the calibration set, calculates a one-sided Clopper-Pearson upper confidence bound, and only retains threshold pairs satisfying $\mathrm{CPUpper}(k,n;\delta) \leq \alpha$ (experiments use $\alpha=0.10, \delta=0.05$). Among valid pairs, the one with the highest calibration OAU is selected. This allows the selector to keep the risk of unsupported emission within a budget while automatically moving to a higher utility operating point. The paper cautiously notes that since the same calibration set is used both to filter thresholds and maximize OAU, this is a conservative calibration rule rather than an end-to-end distribution-free conformal guarantee.
 
 ### Loss & Training
-CSS is not an end-to-end training method and thus lacks a traditional training loss. Its "training/selection" occurs at two levels: the support scorer is fit once per run and fixed, and calibrated CSS selects threshold pairs on a calibration split. The full LongFact experiment employs five-fold out-of-fold evaluation: each prompt is evaluated on a held-out fold, while scorer fitting and threshold calibration are performed on the remaining folds.
+CSS is not an end-to-end training method and thus has no training loss in the traditional sense. Its "training/selection" occurs at two levels: first, the support scorer is fit once per run and fixed; second, calibrated CSS selects threshold pairs on a calibration split. The full LongFact experiment employs five-fold out-of-fold evaluation: each prompt is evaluated on a held-out fold, with scorer fitting and threshold calibration performed on the remaining folds.
+
+The paper also emphasizes that this calibration step is not a full conformal guarantee. Because the same calibration split is used for both filtering threshold pairs and maximizing OAU, the authors refer to it as a conservative calibration rule rather than an end-to-end distribution-free guarantee.
 
 ## Key Experimental Results
 
 ### Main Results
-The main experiment uses the full LongFact set of 2,280 prompts with 11,705 extracted claims. All methods are compared on the same fixed GPT-5.4 drafts. Metrics are calculated using a claimwise protocol rather than standard LongFact SAFE/F1@K leaderboard metrics.
+The main experiment uses the full LongFact set of 2,280 prompts, extracting a total of 11,705 claims. All methods are compared on the same batch of fixed GPT-5.4 drafts. Metrics are calculated according to a claimwise protocol rather than the official SAFE/F1@K leaderboard metrics.
 
-| Dataset / Run | Strategy | Samples | Output claims / Total claims | Support precision | Specificity retention | Supported specificity | OAU |
+| Dataset / Run | Strategy | Samples | Emitted claims / Total claims | Support precision | Specificity retention | Supported specificity | OAU |
 |---------------|------|--------|--------------------------|-------------------|------------------------|-----------------------|-----|
 | LongFact full / GPT-5.4 | No CSS | 2280 | 11705 / 11705 | 0.9230 | 1.0000 | 0.9230 | 0.8460 |
 | LongFact full / GPT-5.4 | Whole abstain | 2280 | 7365 / 11705 | 0.9825 | 0.6292 | 0.6182 | 0.6072 |
@@ -89,10 +91,10 @@ The main experiment uses the full LongFact set of 2,280 prompts with 11,705 extr
 | LongFact full / GPT-5.4 | Calibrated CSS | 2280 | 11085 / 11705 | 0.9865 | 0.9381 | 0.9258 | 0.9130 |
 | LongFact full / GPT-5.4 | Oracle CSS | 2280 | 11056 / 11705 | 1.0000 | 0.9359 | 0.9359 | 0.9359 |
 
-The core conclusion is that calibrated CSS does not simply chase the highest precision. Compared to "No CSS," it raises support precision from 0.9230 to 0.9865 and OAU from 0.8460 to 0.9130. Compared to uncalibrated CSS, it sacrifices a small amount of precision to increase specificity retention from 0.8633 to 0.9381, resulting in a 0.0609 higher OAU.
+The core conclusion of this table is that calibrated CSS does not merely pursue the highest precision. Compared to No CSS, it increases support precision from 0.9230 to 0.9865 and OAU from 0.8460 to 0.9130. Compared to uncalibrated CSS, it sacrifices a tiny amount of precision but increases specificity retention from 0.8633 to 0.9381, resulting in a 0.0609 higher final OAU.
 
 ### Ablation Study
-The key ablation compares fixed-threshold CSS against calibrated CSS across LongFact pilot and HotpotQA pilot datasets. Each pilot consists of 200 samples (30 fit, 30 calibration, 140 test).
+The key ablation in the paper compares fixed-threshold CSS with calibrated CSS, replicated on LongFact pilot and HotpotQA pilot datasets. Each pilot uses 200 samples, divided into 30 for fitting, 30 for calibration, and 140 for testing.
 
 | Dataset / Model | Strategy | Test Samples | claims | Support precision | Specificity retention | Supported specificity | OAU |
 |---------------|------|------------|--------|-------------------|------------------------|-----------------------|-----|
@@ -104,49 +106,47 @@ The key ablation compares fixed-threshold CSS against calibrated CSS across Long
 | HotpotQA pilot / Claude Sonnet 4.6 | Calibrated CSS | 140 | 628 / 648 | 0.9904 | 0.9475 | 0.9395 | 0.9302 |
 
 ### Key Findings
-- Uncalibrated CSS is "extremely safe but too conservative" across pilots: precision is near 0.99, but specificity retention is significantly lower (0.5900 in LongFact pilot).
-- The gain from calibration stems from selecting the operating point rather than changing the verifier. In all three pilots, calibrated CSS loses only ~0.0027 to 0.0039 in precision while drastically improving retention and OAU.
-- Claim-drop is a strong baseline but lacks coarse backoff and can only delete fine claims that fail thresholds. Calibrated CSS outperforms claim-drop on LongFact full, proving "local precision reduction" preserves more useful information than "detail deletion."
-- Oracle CSS achieved a full-run OAU of 0.9359 while calibrated CSS reached 0.9130. This suggests the current selection layer captures most available gains, and future improvements should come from better claim extraction, backoff generation, and support estimation.
+- Fixed-threshold CSS across multiple pilots appears "extremely safe but too conservative": precision is near 0.99, but specificity retention is significantly low (0.5900 on LongFact pilot).
+- The gains from calibration come primarily from selecting an operating point rather than changing the verifier. In the three pilots, calibrated CSS loses only around 0.0027 to 0.0039 in precision but vastly improves retention and OAU.
+- Claim-drop is a strong baseline, but it lacks coarse backoff and can only delete fine claims that fail the threshold. Calibrated CSS outperforms claim-drop on LongFact full, indicating that "local precision reduction" retains more useful information than "deleting details."
+- The full-run OAU for Oracle CSS is 0.9359, while calibrated CSS achieves 0.9130. The gap exists but is small, suggesting the current selection layer captures most available gains and further improvements likely require stronger claim extraction, backoff generation, and support estimation.
 
 ## Highlights & Insights
-- Reframing the "hallucination" problem as an "over-commitment" problem is a practical perspective. Many agent outputs are not entirely wrong but provide excessively specific dates or relations when evidence is insufficient; CSS targets this gray area.
-- Coarse backoff is a better uncertainty interface for agentic pipelines than total abstention. Instead of simply saying "I don't know," it explicitly details the extent of its knowledge, allowing downstream modules to decide on re-retrieval or human escalation.
-- The design of OAU avoids the "high precision with no content" trap. While whole-answer abstention reduces errors, only calibrated CSS maintains high support precision while preserving useful specificity.
-- The most transferable insight is "transforming uncertainty into local editing strategies." Similar logic could apply to backoff for uncertain API details in code generation, diagnostic levels in medical reports, or granularity control for time/location/entities in multi-hop QA.
+- Reframing the "hallucination" problem as an "over-commitment" problem is a practical perspective. Many agent outputs are not entirely wrong but provide overly specific dates, numbers, or relations when evidence is insufficient; CSS targets this gray area perfectly.
+- Coarse backoff is a more suitable uncertainty interface for agentic pipelines than abstention. Instead of simply saying "I don't know," it explicitly writes out what the system knows to a certain level, allowing downstream modules to decide whether to re-retrieve, upgrade the verifier, or hand off to a human.
+- The design of OAU avoids a "false victory" of high precision with no content. While whole-answer abstention and uncalibrated CSS both reduce errors, only calibrated CSS maintains high support precision while retaining useful specificity.
+- The most transferable value of this paper is "converting uncertainty into local editing strategies." Similar ideas can be applied to back off uncertain API details in code generation, control diagnostic levels in medical reports, or control the granularity of time, location, and entity relations in multi-hop QA.
 
 ## Limitations & Future Work
-- The full LongFact experiment uses a custom claimwise protocol rather than the official SAFE/F1@K pipeline. These figures illustrate claim-level post-processing but shouldn't be compared directly to LongFact leaderboard scores.
-- HotpotQA and LongFact pilots are small (200 samples). While they demonstrate calibration trends, they may not cover complex retrieval failures or multi-turn agent interactions.
-- Oracle CSS represents an upper bound, not a deployable method. Actual systems will inherit errors from claim extraction, backoff generation, and support estimation; if the backoff itself is semantically distorted, no calibration can guarantee correctness.
-- The calibration rule currently lacks a full distribution-free guarantee. While using Clopper-Pearson bounds, the same calibration set is used to maximize OAU, requiring more rigorous finite-sample validity layers in future work.
-- The method focuses on post-processing fixed drafts and does not yet address continuous monitoring or sequential agent scenarios where agents might re-retrieve or adjust plans based on downgraded claims.
+- The full LongFact experiment uses a custom claimwise protocol rather than the official SAFE/F1@K pipeline. Thus, these numbers illustrate claim-level post-processing effects and should not be directly compared with official LongFact leaderboard scores.
+- HotpotQA and LongFact pilots consist of only 200 samples, with 140 for testing. While they show calibration trends, they are insufficient to cover complex retrieval failures, tool call failures, and multi-turn agent interactions.
+- Oracle CSS is merely an upper bound, not a deployable method. Real systems still inherit errors from claim extraction, coarse backoff generation, and support estimation; if the backoff itself is a distorted rewrite, no calibration can guarantee semantic correctness.
+- The calibration rule is currently not a full distribution-free guarantee. The paper uses the Clopper-Pearson bound to constrain unsupported emission, but the same set is used to select the max OAU threshold; thus, a stricter finite-sample validity layer is needed.
+- The current method primarily handles post-processing of fixed drafts and has not yet studied continuous monitoring or sequential agent scenarios. Real agents might re-retrieve or adjust task plans based on downgraded claims, introducing new feedback loops.
 
 ## Related Work & Insights
-- **vs. selective prediction / conformal prediction**: Traditional selective prediction often accepts/rejects entire samples; this work adapts risk control ideas to the semantic granularity of individual claims within an answer.
-- **vs. FActScore / LongFact**: These focus on evaluating atomic facts in long-form text; CSS goes further by asking "how to edit the output if a fact is not fully supported," moving from evaluation to executable control.
-- **vs. SelfCheckGPT / Chain-of-Verification**: These emphasize post-hoc verification and hallucination reduction; this paper explicitly links verifier scores to fine/coarse/omit decision-making.
-- **vs. Conformal Linguistic Calibration / Selective Abstraction**: These also weigh factuality against specificity; CSS emphasizes agentic deployment, treating outputs as claim-level uncertainty interfaces for downstream auditing and re-retrieval.
+- **vs Selective Prediction / Conformal Prediction**: Traditional selective prediction often accepts or rejects an entire sample; conformal prediction provides distribution-free uncertainty sets. This work draws on risk control ideas but applies them to the semantic granularity of each claim within an answer.
+- **vs FActScore / LongFact**: FActScore and LongFact focus on the factuality evaluation of atomic facts in long-form outputs; CSS goes a step further by asking "how to edit the output if a fact is not fully supported," moving from evaluation to an executable control layer.
+- **vs SelfCheckGPT / Chain-of-Verification**: These methods emphasize posterior verification and hallucination reduction, usually outputting verifier judgments or rewrite prompts; this paper explicitly links verifier scores to fine/coarse/omit decisions, forming a more structured output strategy.
+- **vs Conformal Linguistic Calibration / Selective Abstraction**: These works similarly focus on trading off factuality and specificity; this paper emphasizes agentic deployment, viewing the output as a claim-level uncertainty interface for downstream auditing, upgrading, and re-retrieval.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐☆ Clearly defines over-commitment as a claim-level specificity control problem combining backoff with calibrated selection.
-- Experimental Thoroughness: ⭐⭐⭐⭐☆ Strong support from full LongFact runs, though pilot sizes are small and protocols are custom.
-- Writing Quality: ⭐⭐⭐⭐☆ Well-structured, distinguishes clearly between deployable selectors and oracle ceilings.
-- Value: ⭐⭐⭐⭐⭐ Highly inspiring for practical agent systems by providing a reliability interface more granular than simple refusal.
+- Novelty: ⭐⭐⭐⭐☆ Clear problem definition modeling over-commitment as claim-level specificity control, combining coarse backoff with calibrated selection.
+- Experimental Thoroughness: ⭐⭐⭐⭐☆ Supports main conclusions with full LongFact (2,280 prompts) plus multiple pilots, though pilots are small and the protocol is not official SAFE/F1@K.
+- Writing Quality: ⭐⭐⭐⭐☆ Clear structure and well-explained metrics and baselines, with a cautious distinction between the deployable selector and the oracle ceiling.
+- Value: ⭐⭐⭐⭐⭐ Highly insightful for practical agent systems by providing a reliability interface that is finer than abstention and safer than as-is answers.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
 - [\[ICML 2026\] AgentXRay: White-Boxing Agentic Systems via Workflow Reconstruction](agentxray_white-boxing_agentic_systems_via_workflow_reconstruction.md)
 - [\[ICML 2026\] OTora: A Unified Red Teaming Framework for Reasoning-Level Denial-of-Service in LLM Agents](otora_a_unified_red_teaming_framework_for_reasoning-level_denial-of-service_in_l.md)
+- [\[ICLR 2026\] AgenTracer: Who Is Inducing Failure in the LLM Agentic Systems?](../../ICLR2026/llm_agent/agentracer_who_is_inducing_failure_in_the_llm_agentic_systems.md)
 - [\[ACL 2026\] Rethinking Reasoning-Intensive Retrieval: Evaluating and Advancing Retrievers in Agentic Search Systems](../../ACL2026/llm_agent/rethinking_reasoning-intensive_retrieval_evaluating_and_advancing_retrievers_in_.md)
 - [\[AAAI 2026\] With Great Capabilities Come Great Responsibilities: Introducing the Agentic Risk & Capability Framework for Governing Agentic AI Systems](../../AAAI2026/llm_agent/with_great_capabilities_come_great_responsibilities_introducing_the_agentic_risk.md)
-- [\[AAAI 2026\] Reflection-Driven Control for Trustworthy Code Agents](../../AAAI2026/llm_agent/reflection-driven_control_for_trustworthy_code_agents.md)
 
 </div>
 

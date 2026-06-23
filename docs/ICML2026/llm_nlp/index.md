@@ -1,16 +1,16 @@
 ---
 title: >-
-  ICML2026 LLM (Other) Papers · 33 Notes
+  ICML2026 LLM (Other) Papers · 39 Notes
 description: >-
-  33 ICML2026 papers in the LLM (Other) area, covering LLM, Adversarial Robustness, Diffusion Models and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  39 ICML2026 papers in the LLM (Other) area, covering LLM, Diffusion Models, Adversarial Robustness and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "ICML2026"
   - "LLM (Other)"
   - "AI paper notes"
   - "paper summaries"
   - "LLM"
-  - "Adversarial Robustness"
   - "Diffusion Models"
+  - "Adversarial Robustness"
 item_list:
   - u: "a_geometric_relation_of_the_error_introduced_by_sampling_a_language_models_outpu/"
     t: "A Geometric Relation of the Error Introduced by Sampling a Language Model's Output Distribution to its Internal State"
@@ -20,16 +20,22 @@ item_list:
     t: "Automated Formal Proofs of Combinatorial Identities via Wilf–Zeilberger Guidance and LLMs"
   - u: "compute_as_teacher_turning_inference_compute_into_reference-free_supervision/"
     t: "Compute as Teacher: Turning Inference Compute Into Reference-Free Supervision"
+  - u: "creative_collision_directorial_persona_steering_and_competition_in_large_languag/"
+    t: "Creative Collision: Directorial Persona Steering and Competition in Large Language Models"
   - u: "deep_networks_learn_to_parse_uniform-depth_context-free_languages_from_local_sta/"
     t: "Deep Networks Learn to Parse Uniform-Depth Context-Free Languages from Local Statistics"
   - u: "differential_syntactic_and_semantic_encoding_in_llms/"
     t: "Differential Syntactic and Semantic Encoding in LLMs"
+  - u: "emergence_of_hierarchical_emotion_organization_in_large_language_models/"
+    t: "Emergence of Hierarchical Emotion Organization in Large Language Models"
   - u: "express_your_doubts_--_probabilistic_world_modeling_should_not_be_based_on_token/"
     t: "Express Your Doubts: Probabilistic World Modeling Should Not Be Based on Token logprobs"
   - u: "how_many_different_outputs_can_a_transformer_generate/"
     t: "How Many Different Outputs Can a Transformer Generate?"
   - u: "ive_seen_how_this_goes_characterizing_diversity_via_progressive_conditional_surp/"
     t: "\"I've Seen How This Goes\": Characterizing LLM vs. Human Writing Diversity using Progressive Conditional Surprisal"
+  - u: "masks_can_be_distracting_on_context_comprehension_in_diffusion_language_models/"
+    t: "Masks Can Be Distracting: On Context Comprehension in Diffusion Language Models"
   - u: "mitigating_staleness_in_asynchronous_pipeline_parallelism_via_basis_rotation/"
     t: "Mitigating Staleness in Asynchronous Pipeline Parallelism via Basis Rotation"
   - u: "model-preserving_adaptive_rounding/"
@@ -42,8 +48,14 @@ item_list:
     t: "Optimizing Diversity and Quality through Base-Aligned Model Collaboration"
   - u: "position_adversarial_ml_for_llms_is_not_making_any_progress/"
     t: "Position: Adversarial ML for LLMs Is Not Making Any Progress"
+  - u: "position_hippocampal_explicit_memory_is_the_cornerstone_for_agi/"
+    t: "Position: Hippocampal Explicit Memory Is the Cornerstone for AGI"
+  - u: "position_the_ml_community_must_build_an_ai-augmented_peer-review_ecosystem/"
+    t: "Position: The ML Community Must Build an AI-Augmented Peer-Review Ecosystem"
   - u: "position_the_turing-completeness_of_autoregressive_transformers_relies_heavily_o/"
     t: "Position: The Turing-Completeness of Autoregressive Transformers Relies Heavily on Context Management"
+  - u: "preregistration_for_experiments_with_ai_agents/"
+    t: "Preregistration for Experiments with AI Agents"
   - u: "rare_event_analysis_of_large_language_models/"
     t: "Rare Event Analysis of Large Language Models"
   - u: "reasoning_on_the_manifold_bidirectional_consistency_for_self-verification_in_dif/"
@@ -60,29 +72,17 @@ item_list:
     t: "SLAY: Geometry-Aware Spherical Linearized Attention with Yat-Kernel"
   - u: "spa-cache_singular_proxies_for_adaptive_caching_in_diffusion_language_models/"
     t: "SPA-Cache: Singular Proxies for Adaptive Caching in Diffusion Language Models"
-  - u: "sphericaldreamer_generating_navigable_immersive_3d_worlds_with_panorama_fusion/"
-    t: "SphericalDreamer: Generating Navigable Immersive 3D Worlds with Panorama Fusion"
-  - u: "stop_automating_peer_review_without_rigorous_evaluation/"
-    t: "Stop Automating Peer Review Without Rigorous Evaluation"
-  - u: "t2po_uncertainty-guided_exploration_control_for_stable_multi-turn_agentic_reinfo/"
-    t: "T$^2$PO: Uncertainty-Guided Exploration Control for Stable Multi-Turn Agentic Reinforcement Learning"
-  - u: "the_cylindrical_representation_hypothesis_for_language_model_steering/"
-    t: "The Cylindrical Representation Hypothesis for Language Model Steering"
-  - u: "token-efficient_change_detection_in_llm_apis/"
-    t: "Token-Efficient Change Detection in LLM APIs"
-  - u: "trading_complexity_for_expressivity_through_structured_generalized_linear_token_/"
-    t: "Structured Generalized Linear Token Mixing: Shifting Gears Between Complexity and Expressivity with SND + Kronecker"
-item_total: 33
+item_total: 39
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # 💬 LLM (Other)
 
-**🧪 ICML2026** · **33** paper notes
+**🧪 ICML2026** · **39** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (2)](../../CVPR2026/llm_nlp/index.md) · [💬 ACL2026 (59)](../../ACL2026/llm_nlp/index.md) · [🔬 ICLR2026 (33)](../../ICLR2026/llm_nlp/index.md) · [🤖 AAAI2026 (29)](../../AAAI2026/llm_nlp/index.md) · [🧠 NeurIPS2025 (53)](../../NeurIPS2025/llm_nlp/index.md) · [📹 ICCV2025 (6)](../../ICCV2025/llm_nlp/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (2)](../../CVPR2026/llm_nlp/index.md) · [🔬 ICLR2026 (56)](../../ICLR2026/llm_nlp/index.md) · [💬 ACL2026 (62)](../../ACL2026/llm_nlp/index.md) · [🤖 AAAI2026 (29)](../../AAAI2026/llm_nlp/index.md) · [🧠 NeurIPS2025 (53)](../../NeurIPS2025/llm_nlp/index.md) · [📹 ICCV2025 (6)](../../ICCV2025/llm_nlp/index.md)
 
-🔥 **Top topics:** LLM ×9 · Adversarial Robustness ×2 · Diffusion Models ×2
+🔥 **Top topics:** LLM ×11 · Diffusion Models ×3 · Adversarial Robustness ×2
 
 **[A Geometric Relation of the Error Introduced by Sampling a Language Model's Output Distribution to its Internal State](a_geometric_relation_of_the_error_introduced_by_sampling_a_language_models_outpu.md)**
 
@@ -90,15 +90,19 @@ item_total: 33
 
 **[ANCHOR: Abductive Network Construction with Hierarchical Orchestration for Reliable Probability Inference in Large Language Models](anchor_abductive_network_construction_with_hierarchical_orchestration_for_reliab.md)**
 
-:   ANCHOR utilizes "bottom-up abduction + hierarchical clustering" to construct a dense factor space. It performs coarse-to-fine retrieval for downstream conditions to obtain sparse relevant factor sets and then performs posterior aggregation by combining Naïve Bayes with a query-level latent variable Causal Bayesian Network (CBN). This significantly reduces "unknown" predictions and improves probability calibration in high-risk LLM decision-making scenarios.
+:   ANCHOR constructs a dense factor space using "bottom-up abduction + hierarchical clustering." For downstream conditions, it performs coarse-to-fine retrieval to obtain a sparse set of relevant factors. It then aggregates posteriors by combining Naïve Bayes with a dynamically constructed Causal Bayesian Network (CBN) featuring latent variables. In high-risk LLM decision-making scenarios, it significantly reduces "unknown" predictions and improves probability calibration.
 
 **[Automated Formal Proofs of Combinatorial Identities via Wilf–Zeilberger Guidance and LLMs](automated_formal_proofs_of_combinatorial_identities_via_wilf-zeilberger_guidance.md)**
 
-:   WZ-LLM compiles the classic Wilf–Zeilberger symbolic proof process into executable proof sketches in Lean 4 (recurrence + boundary conditions + side conditions). These are then discharged term-by-term by WZ-Prover, a model specifically trained via SFT + expert-iteration + DAPO. On 100 classic combinatorial identities, it improves the pass@32 from Goedel-Prover-V2's 9% to 34%.
+:   WZ-LLM compiles the classic Wilf–Zeilberger symbolic proof pipeline into an executable proof skeleton (recurrence + boundary conditions + side conditions) in Lean 4. These components are discharged by WZ-Prover, a specialized model trained via SFT + expert-iteration + DAPO. On 100 classic combinatorial identities, it improves the pass@32 from Goedel-Prover-V2's 9% to 34%.
 
 **[Compute as Teacher: Turning Inference Compute Into Reference-Free Supervision](compute_as_teacher_turning_inference_compute_into_reference-free_supervision.md)**
 
 :   This paper proposes Compute as Teacher (CaT): it "synthesizes" a pseudo-reference answer from $G$ rollouts already sampled by GRPO using a frozen anchor model. In non-verifiable domains, the model uses binary rubrics self-derived from this pseudo-reference to score each rollout as an RL reward. This directly converts inference compute into supervision signals without any human annotation, achieving up to a 30% improvement over baselines on HealthBench and matching or exceeding inference-time aggregation with 9× lower test-time compute.
+
+**[Creative Collision: Directorial Persona Steering and Competition in Large Language Models](creative_collision_directorial_persona_steering_and_competition_in_large_languag.md)**
+
+:   Two semantically opposing "directorial persona" steering vectors (Spielberg's optimistic redemption vs. Scorsese's dark moral ambiguity) are simultaneously injected into the residual stream of an LLM. This study systematically characterizes the moral tone, coherence, and geometric changes during the competition between these two directions, discovering three counter-intuitive phenomena: "directional dominance," "coherence trough," and the "Layer 28 moral hub."
 
 **[Deep Networks Learn to Parse Uniform-Depth Context-Free Languages from Local Statistics](deep_networks_learn_to_parse_uniform-depth_context-free_languages_from_local_sta.md)**
 
@@ -106,7 +110,11 @@ item_total: 33
 
 **[Differential Syntactic and Semantic Encoding in LLMs](differential_syntactic_and_semantic_encoding_in_llms.md)**
 
-:   By averaging latent representations of sentences sharing either syntactic structures or semantic meanings to obtain "syntactic centroids" and "semantic centroids," the authors demonstrate that a significant portion of syntactic and semantic information in LLM sentence vectors (such as DeepSeek-V3) is encoded via **linear superposition**. These two types of information exhibit clear separability in layer-wise distribution and orthogonal ablation—supporting the linguistic hypothesis of "syntactic autonomy."
+:   By averaging hidden representations of sentences sharing the same syntactic structure or the same meaning to obtain "syntactic centroids" and "semantic centroids," the authors demonstrate that a significant portion of syntactic/semantic information in LLMs like DeepSeek-V3 is encoded via **linear superposition**. Moreover, these two types of information exhibit clear separability in layer-wise distribution and orthogonal ablation—supporting the linguistic hypothesis of "syntactic autonomy."
+
+**[Emergence of Hierarchical Emotion Organization in Large Language Models](emergence_of_hierarchical_emotion_organization_in_large_language_models.md)**
+
+:   The paper utilizes a tree-building algorithm that relies solely on LLM output logits without any annotations to "excavate" a hierarchical emotion tree from the model's next-token distribution of emotion words. It finds that as the model scale increases, these trees increasingly resemble the human psychological "emotion wheel." Furthermore, it demonstrates that LLMs under different demographic personas reproduce systematic emotion recognition biases consistent with those of human subjects.
 
 **[Express Your Doubts: Probabilistic World Modeling Should Not Be Based on Token logprobs](express_your_doubts_--_probabilistic_world_modeling_should_not_be_based_on_token.md)**
 
@@ -119,6 +127,10 @@ item_total: 33
 **["I've Seen How This Goes": Characterizing LLM vs. Human Writing Diversity using Progressive Conditional Surprisal](ive_seen_how_this_goes_characterizing_diversity_via_progressive_conditional_surp.md)**
 
 :   This paper proposes $D_{Ca_n}=C\cdot a_n$, an embedding-free, reference-free, and label-free diversity metric. It uses a base model $\theta$ to process all responses in a single forward pass to measure "how much per-byte conditional surprisal remains in the last response after seeing $n-1$ priors," multiplied by the "overall coherence of the responses." It approaches SentBERT performance on the McDiv human evaluation benchmark and captures the monotonic decrease in diversity (mode collapse) across the OLMo-2-7B post-training pipeline (base → SFT → DPO → RLVR).
+
+**[Masks Can Be Distracting: On Context Comprehension in Diffusion Language Models](masks_can_be_distracting_on_context_comprehension_in_diffusion_language_models.md)**
+
+:   This paper systematically reveals two overlooked defects of Masked Diffusion Language Models (MDLM): like autoregressive models, they exhibit a strong locality bias; furthermore, the mask tokens appended for parallel generation act as distractors that degrade context comprehension. The authors propose a mask-agnostic fine-tuning loss that enforces prediction invariance to the number of mask tokens, significantly restoring robustness.
 
 **[Mitigating Staleness in Asynchronous Pipeline Parallelism via Basis Rotation](mitigating_staleness_in_asynchronous_pipeline_parallelism_via_basis_rotation.md)**
 
@@ -134,19 +146,31 @@ item_total: 33
 
 **[On the Limits of LLM Adaptability: Impact of Model-Internalized Priors on Annotation](on_the_limits_of_llm_adaptability_impact_of_model-internalized_priors_on_annotat.md)**
 
-:   Through large-scale experiments on toxicity detection (9 models × 5 datasets), the paper finds that LLM annotation performance is primarily determined by **definition alignment** rather than text memorization; model-internalized priors render the vast majority of zero-shot errors "resilient" to prompt correction—even with explicit definitions and examples, **two thirds of errors** remain unfixable (rescue rate of only 34.8%), and confidence cannot be used to detect definition errors.
+:   Through large-scale experiments on toxicity detection (9 models × 5 datasets), this paper finds that LLM annotation performance is primarily determined by **definition alignment** rather than text memorization. Model-internalized priors render the vast majority of zero-shot errors "resilient" to prompt-based correction—even when explicit definitions and examples are provided, **two-thirds of errors** remain uncorrectable (rescue rate of only 34.8%), and confidence scores cannot be used to detect definition errors.
 
 **[Optimizing Diversity and Quality through Base-Aligned Model Collaboration](optimizing_diversity_and_quality_through_base-aligned_model_collaboration.md)**
 
-:   The authors propose BACO, an inference-time token-level routing framework. It enables an "unaligned base model" and an "aligned instruct model" to switch per-token during a single decoding pass. By using logit uncertainty and content-word signals to decide which model to trust, the method achieves the diversity of the base model and the quality of the aligned model without additional training or multiple sampling passes. The best router achieves a 21.3% joint improvement in diversity and quality over the strongest baseline.
+:   The authors propose BACO, an inference-time token-level routing framework. It allows an "unaligned base model" and an "aligned instruct model" to switch token-by-token during a single decoding pass. Decisions are based on logit uncertainty and content signals, achieving base-level diversity and aligned-level quality without re-training or multiple sampling. The best router achieves a 21.3% joint improvement in diversity and quality over the strongest baseline.
 
 **[Position: Adversarial ML for LLMs Is Not Making Any Progress](position_adversarial_ml_for_llms_is_not_making_any_progress.md)**
 
-:   This position paper argues that adversarial machine learning in the LLM era focuses on problems that are "harder to define, harder to solve, and harder to evaluate" compared to traditional classifier scenarios. Having made slow progress on "toy problems" like $\ell_p$ robustness over the past decade, the field's full pivot to LLMs risks another decade of research without producing measurable or reproducible safety guarantees.
+:   This position paper argues that adversarial machine learning (ML) research in the LLM era focuses on problems that are "harder to define, harder to solve, and harder to evaluate" compared to traditional classifier scenarios. Having made slow progress on "toy problems" like $\ell_p$ robustness over the past decade, the full shift to LLMs risks another decade of research without producing measurable or reproducible security guarantees.
+
+**[Position: Hippocampal Explicit Memory Is the Cornerstone for AGI](position_hippocampal_explicit_memory_is_the_cornerstone_for_agi.md)**
+
+:   This position paper leverages neuroscientific evidence to argue that the underlying learning mechanism of LLMs corresponds to "implicit memory" in the human brain (habitual/procedural learning in the basal ganglia). However, higher-order cognition essential for AGI—such as long-range planning, metacognition, and symbolic reasoning—depends on hippocampal "explicit memory" and cannot emerge from purely statistical implicit learning. Consequently, **supplementing LLMs with an explicit memory system is the cornerstone of the transition to AGI**. The authors further propose eight computational requirements for an artificial explicit memory system.
+
+**[Position: The ML Community Must Build an AI-Augmented Peer-Review Ecosystem](position_the_ml_community_must_build_an_ai-augmented_peer-review_ecosystem.md)**
+
+:   This is a position paper arguing that the machine learning community must urgently build an "AI-augmented" peer-review ecosystem—treating LLMs as collaborative assistants for authors, reviewers, and Area Chairs (ACs) rather than replacements. The paper identifies that the primary near-term bottleneck is not the lack of stronger models, but the absence of structured process data that records "why scores changed" or "which specific rebuttal addressed which concern."
 
 **[Position: The Turing-Completeness of Autoregressive Transformers Relies Heavily on Context Management](position_the_turing-completeness_of_autoregressive_transformers_relies_heavily_o.md)**
 
 :   The authors point out that the popular claim "Transformers are Turing-complete" in most existing proofs actually substitutes "a family of different Transformers together can simulate a Turing machine." They formalize a fixed system $(T, D, C)$ reflective of real-world deployment, proving that the computational power of the same fixed Transformer can shift from merely recognizing regular languages to reaching Turing-completeness under different context management strategies, thereby shifting the research focus from the model itself to the context manager.
+
+**[Preregistration for Experiments with AI Agents](preregistration_for_experiments_with_ai_agents.md)**
+
+:   This is a position paper advocating for the extension of preregistration practices—used in social sciences to combat the "reproducibility crisis"—to behavioral experiments where LLMs/AI agents serve as experimental subjects. It systematically catalogs the unique "researcher degrees of freedom" in AI agent experiments and provides a tailored preregistration template for such studies.
 
 **[Rare Event Analysis of Large Language Models](rare_event_analysis_of_large_language_models.md)**
 
@@ -154,7 +178,7 @@ item_total: 33
 
 **[Reasoning on the Manifold: Bidirectional Consistency for Self-Verification in Diffusion Language Models](reasoning_on_the_manifold_bidirectional_consistency_for_self-verification_in_dif.md)**
 
-:   Starting from the geometric perspective that "effective reasoning trajectories are stable attractors on the learned distribution," this paper proposes BMC (Bidirectional Manifold Consistency), an unsupervised, training-free metric. By performing a "forward re-masking + backward few-step reconstruction" on the generated results of a diffusion Language Model (dLLM), it scores the output based on reconstruction stability. BMC simultaneously supports error diagnosis, inference-time rejection sampling, and RL dense rewards, systematically outperforming baselines such as Confidence, Self-Consistency, and Self-Evaluation across four reasoning benchmarks.
+:   This paper proposes BMC (Bidirectional Manifold Consistency), an unsupervised, training-free metric based on the geometric perspective that "valid reasoning trajectories are stable attractors on the learned distribution." By performing a "forward re-masking + backward few-step reconstruction" on the outputs of a Diffusion Language Model (dLLM), reconstruction stability is used for scoring. BMC supports error diagnosis, inference-time rejection sampling, and dense RL rewards, systematically outperforming baselines such as confidence, Self-Consistency, and Self-Evaluation across four reasoning benchmarks.
 
 **[Resting Neurons, Active Insights: Robustify Activation Sparsity for Large Language Models](resting_neurons_active_insights_robustify_activation_sparsity_for_large_language.md)**
 
@@ -162,11 +186,11 @@ item_total: 33
 
 **[Rethinking LLM Ensembling from the Perspective of Mixture Models](rethinking_llm_ensembling_from_the_perspective_of_mixture_models.md)**
 
-:   This paper demonstrates that token-level ensembling of $n$ LLMs does not require executing all models at every step. By randomly selecting one model according to weights to sample the next token, the output distribution is strictly equivalent to "averaging before sampling." This reduces the forward pass overhead from $n\times$ back to $1\times$, achieving practical speedups of 1.78×–2.68× when combined with "Lazy Sync KV Cache."
+:   This paper proves that token-level ensembling of $n$ LLMs does not require running all models at every step. By randomly selecting one model per step based on weights to sample the next token, the output distribution is strictly equivalent to the "average then sample" approach. This reduces the $n$-fold forward passes back to a $1\times$ forward pass, achieving actual speedups of 1.78×–2.68× when combined with "Lazy Synchronous KV Cache."
 
 **[SAC-Opt: Semantic Anchors for Iterative Correction in Optimization Modeling](sac-opt_semantic_anchors_for_iterative_correction_in_optimization_modeling.md)**
 
-:   SAC-Opt "back-translates" LLM-generated optimization solver code into structured semantic anchors (constraints and objectives) and compares them line-by-line with the original problem description. By iteratively rewriting only the inconsistent anchors until full alignment, it achieves an average improvement of 7.7% across seven public datasets, with a significant 21.9% boost on ComplexLP.
+:   SAC-Opt "back-translates" LLM-generated optimization solver code into structured semantic anchors (constraints and objectives), compares them item-by-item with the original problem description's anchors, and iteratively rewrites only the inconsistent parts. It achieves an average performance gain of 7.7% across 7 public datasets and 21.9% on ComplexLP.
 
 **[Scheduling LLM Inference with Uncertainty-Aware Output Length Predictions](scheduling_llm_inference_with_uncertainty-aware_output_length_predictions.md)**
 
@@ -182,15 +206,15 @@ item_total: 33
 
 **[SphericalDreamer: Generating Navigable Immersive 3D Worlds with Panorama Fusion](sphericaldreamer_generating_navigable_immersive_3d_worlds_with_panorama_fusion.md)**
 
-:   SphericalDreamer generates the first outdoor 3D world with both 360°×180° omnidirectional immersion and long-range navigability by lifting multiple text-generated Layered Depth Panoramas (LDP) into 3D "spherical building blocks" and synthesizing missing transition regions between adjacent spheres using harmonic blending and stitching.
+:   SphericalDreamer generates the first outdoor 3D world that simultaneously possesses $360^\circ \times 180^\circ$ omnidirectional immersion and long-distance navigability. It achieves this by lifting multiple text-generated Layered Depth Panoramas (LDP) into 3D "spherical building blocks" and employing harmonic blending to synthesize and stitch the missing transition regions between adjacent spheres.
 
 **[Stop Automating Peer Review Without Rigorous Evaluation](stop_automating_peer_review_without_rigorous_evaluation.md)**
 
-:   This is a position paper: through empirical measurements of real ICLR 2026 reviews and 60 simulated reviews, the authors identify two major failures in current LLM reviewing—hivemind (high convergence) and paper laundering (zero-shot rewriting can increase scores by 0.45). Consequently, they argue that "LLM review should not be directly generated without rigorous evaluation" and call for the establishment of a "science of review automation."
+:   This is a position paper: through empirical measurements of real ICLR 2026 reviews and 60 simulated reviews, the authors identify two major failures in current LLM reviewing: the hivemind effect (high convergence) and paper laundering (zero-shot paraphrasing alone can increase scores by 0.45). Consequently, they argue that "LLMs should not directly generate review comments without rigorous evaluation" and call for the establishment of a "science of review automation."
 
 **[T$^2$PO: Uncertainty-Guided Exploration Control for Stable Multi-Turn Agentic Reinforcement Learning](t2po_uncertainty-guided_exploration_control_for_stable_multi-turn_agentic_reinfo.md)**
 
-:   T$^2$PO attributes the training collapse of multi-turn agentic RL to "hesitation"—over-thinking at the token level and repetitive ineffectiveness at the turn level. By using a self-calibrated uncertainty signal $M_t$ that fuses entropy and confidence, it simultaneously drives Token-level Thinking Intervention (TTI) to dynamically truncate "think" segments and Turn-level Dynamical Sampling (TDS) to resample ineffective turns. It consistently outperforms PPO/GRPO/GiGPO on WebShop, ALFWorld, and Search QA with superior stability.
+:   T$^2$PO attributes the training collapse of multi-turn agentic RL to "hesitation"—characterized by over-thinking at the token level and repetitive invalidity at the turn level. It utilizes a self-calibrated uncertainty signal $M_t$, which fuses entropy and confidence, to simultaneously drive Token-level Thinking Intervention (dynamically truncating think blocks) and Turn-level Dynamical Sampling (resampling ineffective turns). This approach consistently outperforms PPO, GRPO, and GiGPO across WebShop, ALFWorld, and Search QA.
 
 **[The Cylindrical Representation Hypothesis for Language Model Steering](the_cylindrical_representation_hypothesis_for_language_model_steering.md)**
 
@@ -214,4 +238,4 @@ item_total: 33
 
 **[Why Are Linear RNNs More Parallelizable?](why_are_linear_rnns_more_parallelizable.md)**
 
-:   This paper provides a rigorous explanation through circuit complexity as to why Linear RNNs are more parallelizable like Transformers compared to traditional non-linear RNNs: LRNNs fall within arithmetic circuit classes with approximate log-depth, whereas non-linear RNNs can express harder-to-parallelize logspace / polynomial-time complete problems, forming a fundamental trade-off between expressivity and parallelizability.
+:   This paper uses circuit complexity to strictly explain why Linear RNNs are more easily parallelized like Transformers compared to traditional non-linear RNNs: LRNNs fall within arithmetic circuit classes of approximate log-depth, whereas non-linear RNNs can express harder-to-parallelize $\mathsf{logspace}$ / $\mathsf{polynomial}$-time complete problems, forming a fundamental trade-off between expressivity and parallelizability.

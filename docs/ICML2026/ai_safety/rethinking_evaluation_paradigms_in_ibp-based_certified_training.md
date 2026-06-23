@@ -2,12 +2,12 @@
 title: >-
   [Paper Note] Rethinking Evaluation Paradigms in IBP-based Certified Training
 description: >-
-  [ICML 2026][AI Safety][Paper Note] The authors argue that comparing IBP-based certified training methods by selecting "biased individual configurations" is inherently unfair. They propose using multi-objective Bayesian hyperparameter search to plot the Pareto front for each method, demonstrating that existing SOTA is significantly undertuned—CROWN-IBP c
+  [ICML 2026][AI Safety][Paper Note] The authors point out that comparing IBP-based certified training methods using "biased configurations" is unfair. They propose drawing the Pareto front for each method using multi-objective Bayesian hyperparameter search, proving that existing SOTA methods are generally under-tuned—CROWN-IBP clean accuracy can increas
 tags:
   - ICML 2026
   - AI Safety
 date: 2026-05-08
-content_hash: 7ceedd7678cb6133
+content_hash: 372f2bde32932ee9
 ---
 # Rethinking Evaluation Paradigms in IBP-based Certified Training
 
@@ -15,121 +15,121 @@ content_hash: 7ceedd7678cb6133
 **arXiv**: [2606.02134](https://arxiv.org/abs/2606.02134)  
 **Code**: https://github.com/ada-research/CTRAIN  
 **Area**: AI Safety / Certified Robust Training / Multi-objective Hyperparameter Optimization  
-**Keywords**: Interval Bound Propagation (IBP), Certified Training, Pareto Front, Multi-Objective Bayesian Optimization, Robust-Accuracy Trade-off  
+**Keywords**: Interval Bound Propagation, Certified Training, Pareto Front, Multi-objective Bayesian Optimization, Robust-Accuracy trade-off  
 
 ## TL;DR
-The authors argue that comparing IBP-based certified training methods by selecting "biased individual configurations" is inherently unfair. They propose using multi-objective Bayesian hyperparameter search to plot the Pareto front for each method, demonstrating that existing SOTA is significantly undertuned—CROWN-IBP can gain $\sim6\%$ in clean accuracy, while MTL-IBP on Tiny ImageNet improves both clean and certified accuracy by $\sim2\%$.
+The authors point out that comparing IBP-based certified training methods using "biased configurations" is unfair. They propose drawing the Pareto front for each method using multi-objective Bayesian hyperparameter search, proving that existing SOTA methods are generally under-tuned—CROWN-IBP clean accuracy can increase by approximately $6\%$, and MTL-IBP on Tiny ImageNet can simultaneously gain $\sim2\%$ in both clean and certified accuracy.
 
 ## Background & Motivation
 
-**Background**: Under $\ell_\infty$ threat models, certified training utilizes incomplete verifiers (IBP / CROWN-IBP / SABR / MTL-IBP) to upper-bound the worst-case loss during training, allowing networks to obtain formal robustness certificates via full verifiers (e.g., $\alpha\beta$-CROWN) post-hoc. These methods inherently involve a trade-off parameter ($\kappa$, $\tau$, or $\alpha$) to balance "clean accuracy vs. certified accuracy."
+**Background**: Under the $\ell_\infty$ threat model, certified training utilizes incomplete verifiers (IBP / CROWN-IBP / SABR / MTL-IBP) to upper-bound worst-case loss during training, allowing networks to obtain formal robustness certificates via complete verifiers (e.g., $\alpha\beta$-CROWN) post-hoc. These methods naturally involve a trade-off parameter ($\kappa$, $\tau$, or $\alpha$) to balance "clean accuracy vs. certified accuracy."
 
-**Limitations of Prior Work**: From Gowal 2019 to De Palma 2024b, nearly all papers report performance based on a single biased point on the trade-off curve. Although the recent CTBench (Mao 2025) performed grid searches, it still treated the problem as single-objective, tending to suppress certified accuracy. Consequently, reported points from different papers are often not on the same scale, making "SOTA" status dependent on which objective is prioritized.
+**Limitations of Prior Work**: From Gowal 2019 to De Palma 2024b, almost all papers report results at a single biased point on the curve. Even the recent CTBench (Mao 2025), which performs grid searches, treats it as a single-objective problem biased towards certified accuracy. Consequently, reported points from different papers are not on the same scale, making "SOTA" dependent on which side of the trade-off is favored.
 
-**Key Challenge**: When objectives are conflicting, picking a single configuration is equivalent to "choosing a position before selecting evidence." The true capability of IBP-based methods lies across the entire Pareto front, which the community has failed to systematically map; this prevents the revelation of complementarity between methods and masks substantial undertuning.
+**Key Challenge**: When objectives are inherently conflicting, comparing methods via a single configuration is equivalent to "choosing the standpoint before choosing the evidence." The true capability of IBP-type methods is reflected across the entire Pareto front, yet the community has lacked a systematic way to map it, failing to reveal method complementarity and masking substantial space for tuning.
 
-**Goal**: To upgrade certified training evaluation from single-point comparisons to Pareto front comparisons and provide a reusable, computationally affordable multi-objective hyperparameter search protocol.
+**Goal**: Upgrade certified training evaluation from single-point comparison to Pareto front comparison and provide a reusable, computationally affordable multi-objective hyperparameter search protocol.
 
-**Key Insight**: The authors employ multi-objective Bayesian optimization with Expected Hypervolume Improvement (EHVI) to directly search for the Pareto front. To make the search feasible within a budget similar to single-point tuning, they replace the "expensive full verification rate" with a "cheap incomplete verification rate" as a proxy objective and reduce the verification timeout from $1000\,\text{s}$ to $100\,\text{s}$, followed by a final pass of full verification on candidate points.
+**Key Insight**: The authors utilize Multi-Objective Bayesian Optimization with Expected Hypervolume Improvement (EHVI) to directly search for the Pareto front. To keep the search budget comparable to single-point tuning, they replace "expensive complete verification rate" with "cheap incomplete verification rate" as a proxy objective and reduce the verification timeout from $1000\,\text{s}$ to $100\,\text{s}$ for candidates before a final pass with full verification.
 
-**Core Idea**: Use constrained multi-objective Bayesian optimization to search for the Pareto set in the 2D "clean accuracy / certified accuracy" space. After deduplication via clustering, expensive full verification is only performed on representative points—distributing the same search budget across four methods to generate a method-agnostic, reproducible "true SOTA" map.
+**Core Idea**: Use constrained multi-objective Bayesian optimization to search the Pareto set in the 2D "clean accuracy / certified accuracy" space. After deduplication via clustering, only representative points undergo expensive complete verification—allocating the same search budget across four methods to produce a method-agnostic, reproducible "true SOTA" map.
 
 ## Method
 
 ### Overall Architecture
-The evaluation protocol consists of four components. **First**, a unified search space: each method (IBP / CROWN-IBP / SABR / MTL-IBP) is searched over a "general + method-specific" hyperparameter set, including learning rate, $\ell_1$ weight, Shi 2021 regularization weight, warm-up/ramp-up epochs, scaling factors for training $\epsilon$, and method-specific $\kappa_{\text{start}} \ge \kappa_{\text{end}}$, $\beta$, $\tau$, $\alpha$, as well as PGD steps and step size. **Second**, a constrained multi-objective Bayesian optimizer: each objective (clean accuracy, incomplete certified accuracy) is modeled via independent Gaussian Processes using EHVI as the acquisition function. The search is constrained to regions of interest (e.g., CIFAR-10 $\epsilon=2/255$ requires clean $\ge 60\%$ and certified $\ge 40\%$). Each method runs for 100 trials across 3 random seeds to merge fronts. **Third**, cheap proxy targets: after training, a cascaded incomplete verification (IBP $\to$ CROWN-IBP $\to$ CROWN) provides an underestimate of certified accuracy, reserving expensive full verification for the final step. **Fourth**, Pareto front refinement: single-linkage clustering ($d_{\min}=0.05$) merges adjacent points in the Pareto set. One representative configuration from each cluster is subjected to full verification using $\alpha\beta$-CROWN (cutoff $1000\,\text{s}$), reconstructing the final front. Fronts from multiple methods are merged into a "combined Pareto front" as the evaluation benchmark.
+The evaluation protocol consists of four components. **First**, a unified search space: each method (IBP / CROWN-IBP / SABR / MTL-IBP) is searched over a "general + method-specific" hyperparameter set, including learning rate, $\ell_1$ regularization weight, Shi 2021 regularization weight, warm-up / ramp-up epochs, and training $\epsilon$ scaling factor, plus method-specific $\kappa_{\text{start}} \ge \kappa_{\text{end}}$, $\beta$, $\tau$, $\alpha$, and PGD parameters. **Second**, a constrained multi-objective Bayesian optimizer: each objective (clean accuracy, incomplete certified accuracy) is modeled by independent Gaussian Processes with EHVI as the acquisition function. The search is constrained to regions of interest (e.g., CIFAR-10 $\epsilon=2/255$ requires clean $\ge 60\%$, certified $\ge 40\%$), running 100 trials across 3 random seeds per method. **Third**, a cheap proxy objective: after training, a cascaded incomplete verification (IBP→CROWN-IBP→CROWN) provides an underestimate of certified accuracy, saving complete verification for the end. **Fourth**, Pareto front refinement: single-linkage clustering ($d_{\min}=0.05$) merges adjacent points in the Pareto set. One representative point per cluster is verified using $\alpha\beta$-CROWN (cutoff $1000\,\text{s}$) to reconstruct the final front. Fronts from multiple methods are then merged into a "combined Pareto front" benchmark.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    A["Unified Expert Search Space<br/>Open κ/β, warm-up≤5, training ε scaling"] --> B
-    subgraph LOOP["Constrained Multi-objective BO Inner Loop (3 seeds × 100 trials)"]
+    A["Unified Expert Search Space<br/>Enable κ/β, warm-up≤5, train ε scaling"] --> B
+    subgraph LOOP["Constrained MOBO Inner Loop (3 seeds × 100 trials)"]
         direction TB
-        B["BO Proposed Config λ"] --> C["Train Network (Existing Method Loss)"]
-        C --> D["Cheap Proxy via Incomplete Verification<br/>IBP→CROWN-IBP→CROWN Cascade<br/>Yields (Clean Acc, Certified Rate Lower Bound)"]
-        D -->|EHVI for Undominated Regions| B
+        B["BO Proposed Config λ"] --> C["Train Network (Method-specific loss)"]
+        C --> D["Incomplete Verification Proxy<br/>IBP→CROWN-IBP→CROWN Cascade<br/>Get (Clean Acc, Cert Lower Bound)"]
+        D -->|EHVI for non-dominated region| B
     end
-    LOOP --> E["Merge 3 Seeds → Pareto Set"]
+    LOOP --> E["Merge 3 seeds → Pareto Set"]
     E --> F["Single-linkage Clustering<br/>d_min = 0.05"]
-    F --> G["Full Verification of Cluster Reps via αβ-CROWN"]
-    G --> H["Reconstruct and Merge Fronts<br/>Combined Pareto Front"]
+    F --> G["Representative Point αβ-CROWN Complete Verification"]
+    G --> H["Reconstruct & Merge<br/>Combined Pareto Front"]
 ```
 
 ### Key Designs
 
-**1. Unified Expert Search Space: Surfacing Hidden Hyperparameters**
+**1. Unified Expert Search Space: Exposing hyperparameters previously hidden by default values**
 
-Previously, "older methods" appeared inferior largely due to undertuning—previous literature only tuned within a narrow range of verified configurations, often assuming default values for $\kappa$/$\beta$ transitions or using only 1 epoch for warm-up. This work constructs a comprehensive search space covering all reasonable values: allowing flexible $\kappa_{\text{start}} \ge \kappa_{\text{end}}$, up to 5 warm-up epochs, training $\epsilon$ larger than the evaluation $\epsilon$, and incorporating $\ell_1$ and Shi 2021 regularization. fANOVA importance analysis reveals that $\kappa_{\text{start}}$/$\kappa_{\text{end}}$ and warm-up epochs are the primary controllers of the trade-off. By opening these up, methods like CROWN-IBP (from 2020) see clean accuracy improvements of $\sim6\%$.
+Past "legacy methods" appeared inferior largely due to under-tuning—prior literature tuned only near a few validated configurations, particularly assuming $\kappa$ / $\beta$ transitions to be 0 or using at most 1 warm-up epoch. Ours constructs a search space covering all reasonable values: enabling $\kappa_{\text{start}} \ge \kappa_{\text{end}}$, allowing up to 5 warm-up epochs, permitting training $\epsilon$ to be larger than evaluation $\epsilon$, and including $\ell_1$ and Shi 2021 regularization. fANOVA importance analysis shows $\kappa_{\text{start}}$ / $\kappa_{\text{end}}$ and warm-up epochs are primary drivers of the trade-off. By unlocking these, CROWN-IBP (a 2020 method) gains $\sim 6\%$ in clean accuracy.
 
-**2. Multi-objective BO + Constrained EHVI: Modeling Independent Objectives**
+**2. MOBO + Constrained EHVI: Letting objectives manifest naturally**
 
-Since clean and certified accuracy are in direct conflict, the authors formulate the objective as a vector $\mathbf{f}(\boldsymbol{\theta})=(\text{acc}_{\text{clean}},\text{acc}_{\text{cert}})$. Instead of optimizing a weighted sum, they use independent GPs and the Expected Hypervolume Improvement (EHVI) to target undominated regions:
+IBP methods depend on trade-off parameters where clean and certified accuracies conflict. Ours avoids optimizing weighted sums and instead treats the objective as a vector $\mathbf{f}(\boldsymbol{\theta})=(\text{acc}_{\text{clean}},\text{acc}_{\text{cert}})$. Two independent GPs fit the objectives, while EHVI targets non-dominated regions:
 
 $$\mathrm{EHVI}(\boldsymbol{\theta})=\mathbb{E}_{\mathbf{f}}\big[\max(0,\ \mathrm{HV}(P\cup\{\mathbf{f}\})-\mathrm{HV}(P))\big]$$
 
-where $P$ is the current Pareto front. Hand-coded constraints filter out regions that degenerate into standard adversarial training. Multi-objective BO is necessary because hyperparameters interact highly (e.g., $\kappa$ coupled with warm-up length); scalarization would distort the true reachable boundary.
+Where $P$ is the current Pareto front. Hard constraints prune regions effectively degenerating into adversarial training. MOBO is essential because hyperparameters like $\kappa$ and warm-up length are highly coupled; scalarization would distort the true front.
 
-**3. Incomplete Verification as a Cheap Proxy for Certified Accuracy**
+**3. Incomplete Verification as a Cheap Proxy: Budgeting search costs**
 
-Full verification is $\mathcal{NP}$-complete. To keep the 100-trial search budget affordable, the authors use a cascaded IBP $\to$ CROWN-IBP $\to$ CROWN approach during the search phase, calculating a provable lower bound $\widehat{\text{acc}}_{\text{cert}}\le\text{acc}_{\text{cert}}$. This is effective because the proxy is a monotonic underestimate that preserves the Pareto ranking, allowing the search to prioritize the correct configurations. Full $\alpha\beta$-CROWN verification is reserved for a small set of final candidates, where the cutoff can further be reduced from $1000\,\text{s}$ to $100\,\text{s}$ without shifting the front.
+Complete verification is $\mathcal{NP}$-complete. Evaluating every trial would be unaffordable. The key strategy is to use a cascaded IBP → CROWN-IBP → CROWN sequence during the search—calling stronger methods only if the previous fails—to obtain a verifiable lower bound $\widehat{\text{acc}}_{\text{cert}}\le\text{acc}_{\text{cert}}$. This works because monotonic proxies rarely change Pareto ordering. Only for the final Pareto set is $\alpha\beta$-CROWN used. Reducing the cutoff from $1000\,\text{s}$ to $100\,\text{s}$ during search further reduced MTL-IBP verification time on CIFAR-10 from 1311 to 208 hours without altering the front.
 
-**4. Single-linkage Clustering + Full Verification Refinement: Efficient Budget Allocation**
+**4. Single-linkage Clustering + Verification Refinement: Spending budget where it matters**
 
-BO tends to sample densely near the front, producing many configurations with accuracy differences $<0.5\%$. To avoid wasting the full verification budget on decorative details, the authors apply single-linkage hierarchical clustering in the 2D objective space (merging points with distance $\le d_{\min}=0.05$). One configuration per cluster is evaluated via $\alpha\beta$-CROWN. This keeps total verification costs comparable to single-point tuning while ensuring every point on the final "combined Pareto front" is backed by hard numbers from full verification.
+BO often samples densely along the curve, producing clusters of points with $<0.5\%$ performance difference. Ours uses single-linkage hierarchical clustering in the objective space ($d_{\min}=0.05$) to merge candidates. Only one configuration per cluster undergoes full $\alpha\beta$-CROWN verification. This keeps verification costs comparable to single-point tuning while ensuring every point on the final "combined Pareto front" is based on hard numbers from complete verification.
 
 ### Loss & Training
-The training side uses the original losses of each method but wraps them in the unified search: IBP uses $\kappa \cdot \mathcal{L} + (1-\kappa) \cdot \mathcal{L}_{\text{ver}}$, CROWN-IBP adds $\beta$ for transition, SABR uses $\tau \epsilon$ sub-intervals + ReLU shrinking, and MTL-IBP uses $\alpha \cdot \mathcal{L}_{\text{ver}} + (1-\alpha) \cdot \mathcal{L}_{\text{adv}}$. All experiments use the CNN7 architecture (Shi 2021). Optimization is performed using BoTorch + Optuna with a budget of 3 seeds $\times$ 100 trials.
+The training side uses existing loss functions for each method but places them within the unified search framework: IBP's $\kappa \cdot \mathcal{L} + (1-\kappa) \cdot \mathcal{L}_{\text{ver}}$, CROWN-IBP's $\beta$-based transition, SABR's $\tau \epsilon$ sub-interval + ReLU shrinking, and MTL-IBP's $\alpha \cdot \mathcal{L}_{\text{ver}} + (1-\alpha) \cdot \mathcal{L}_{\text{adv}}$. All experiments use the CNN7 architecture from Shi 2021, optimized via BoTorch + Optuna using an EHVI budget of 3 seeds × 100 trials.
 
 ## Key Experimental Results
 
 ### Main Results
-Comparisons conducted on CIFAR-10 ($\epsilon \in \{2/255, 8/255\}$) and Tiny ImageNet ($\epsilon = 1/255$) using CNN7 against original papers and CTBench.
+Evaluated on CIFAR-10 ($\epsilon \in \{2/255, 8/255\}$) and Tiny ImageNet ($\epsilon = 1/255$) using CNN7, comparing the four methods against original papers and CTBench.
 
 | Dataset | $\epsilon$ | Method | Clean vs. Prev. SOTA | Certified vs. Prev. SOTA |
 |--------|-----------|------|--------------------|--------------------|
 | CIFAR-10 | $2/255$ | SABR | $\ge +1\%$ | $\ge +1\%$ |
-| CIFAR-10 | $2/255$ | CROWN-IBP | $\sim +6\%$ | Parity |
-| CIFAR-10 | $8/255$ | IBP | Significant gain | Parity |
+| CIFAR-10 | $2/255$ | CROWN-IBP | $\sim +6\%$ | Comparable |
+| CIFAR-10 | $8/255$ | IBP | Significant lifting | Comparable |
 | Tiny ImageNet | $1/255$ | MTL-IBP | $\sim +2\%$ | $\sim +2\%$ |
-| Tiny ImageNet | $1/255$ | SABR | Slightly higher clean | Slightly lower cert |
+| Tiny ImageNet | $1/255$ | SABR | Slightly > MTL-IBP (clean) | Slightly < MTL-IBP (cert) |
 
-Findings from the merged Pareto front: On CIFAR-10 ($2/255$), SABR and MTL-IBP are complementary, both contributing to the front. At $8/255$, all four methods contribute points. On Tiny ImageNet, SABR dominates the "high clean accuracy" end, while MTL-IBP dominates the "high certified accuracy" end. "SOTA" becomes a question of "which objective range do you care about?"
+Key Findings: On CIFAR-10 $2/255$, SABR and MTL-IBP are complementary, together forming the front. At $8/255$, all four methods contribute points. On Tiny ImageNet, SABR dominates the high-accuracy end, while MTL-IBP dominates high certification. "Who is SOTA" now depends on the target trade-off interval.
 
 ### Ablation Study
 
 | Configuration | Key Metric | Description |
 |------|---------|------|
-| Val-tuning vs. Test-tuning | Front strictly dominated | Existing work largely overestimates performance by tuning on test sets |
-| Cutoff $1000\,\text{s} \to 100\,\text{s}$ | Front unchanged | Verification cost can be reduced by over an order of magnitude |
-| BO Trial count $100 \to 50$ | Front significantly degrades | Optimization budget is more sensitive than verification timeout |
-| Removing $\kappa$ transition | IBP / CROWN-IBP drop off front | $\kappa_{\text{start}}, \kappa_{\text{end}}$ are high-importance hyperparameters in all scenarios |
+| Val vs. Test Tuning | Front strictly dominated | Prior work usually tunes on test sets; absolute figures are inflated. |
+| Cutoff $1000\,\text{s}$ → $100\,\text{s}$ | Unchanged front | Computational cost can be reduced by over an order of magnitude. |
+| BO Trials $100 \to 50$ | Significant degradation | Optimization budget is more sensitive than verification timeout. |
+| Removing $\kappa$ transition | IBP/CROWN-IBP drop out | $\kappa_{\text{start}}, \kappa_{\text{end}}$ are high-importance hyperparameters in all scenarios. |
 
 ### Key Findings
-- fANOVA importance analysis shows IBP/CROWN-IBP $\kappa$ transitions are the primary drivers of the trade-off; setting this to 0 by default is why older methods appeared weaker.
-- SABR's sub-selection dominates its front position more than $\tau$ or PGD parameters; MTL-IBP's $\alpha$ and $\epsilon$ scaling factors determine its reachable region.
-- At large radii like $8/255$, the four methods converge, suggesting the bottleneck is the inherent looseness of IBP bounds rather than the loss function designs.
-- Tuning on the test set is common but leads to generalization overestimation; the Pareto front from validation tuning is strictly worse.
+- fANOVA analysis confirms $\kappa$ transition in IBP/CROWN-IBP is the primary trade-off controller; defaults in literature caused legacy methods to be underestimated.
+- SABR’s sub-selection dominates its front position more than $\tau$ or PGD parameters.
+- At large radii like $8/255$, all methods converge, suggesting the bottleneck is the inherent slackness of IBP bounds rather than loss design.
+- Tuning on the test set is a common community habit, but validation-tuned fronts are strictly lower, indicating generalization overestimation in prior work.
 
 ## Highlights & Insights
-- A paradigm-shifting "methodological surgery" that quantitatively rewrites 5 years of SOTA rankings: CROWN-IBP was marginalized simply due to poor $\kappa$ tuning, suggesting that "algorithmic progress" has been significantly overestimated.
-- The three-stage pipeline (cheap proxy + clustering + late full verification) successfully incorporates expensive evaluation into the BO loop, providing a template for any "cheap training, expensive evaluation" benchmark in robustness or fairness.
-- Method complementarity is quantified for the first time: practitioners should not ask "SABR or MTL-IBP," but rather "where is my target in the trade-off space?"
+- A methodological shift redefines the SOTA leaderboard of the last 5 years: CROWN-IBP was marginalized simply due to poor $\kappa$ tuning, suggesting "algorithmic progress" has been overestimated.
+- The three-stage pipeline (proxy → clustering → complete verification) successfully integrates expensive evaluation into the BO loop, providing a template for any "cheap training, expensive evaluation" benchmark.
+- "Method complementarity" is quantified: researchers should ask which method is optimal for a specific trade-off interval rather than seeking a universal winner.
 
 ## Limitations & Future Work
-- Experiments are restricted to $\ell_\infty$ threat models and the CNN7 architecture; consistency on $\ell_2$, $\ell_1$, or Transformers remains an open question.
-- The protocol is computationally intensive (3 seeds $\times$ 100 trials + full verification), potentially raising the bar for "fair evaluation" beyond the reach of smaller labs.
-- The authors suggest future work should shift toward "cheaply verifiable" training objectives rather than simply extending verification timeouts—an implicit critique of current practices in SABR/MTL-IBP, though specific solutions are not provided.
+- Experiments are limited to the $\ell_\infty$ threat model and CNN7 architecture; consistency on $\ell_2, \ell_1$, or Transformers remains an open question.
+- The protocol is computationally intensive (300 trials + complete verification), potentially creating a barrier for smaller research groups despite optimized proxies.
+- Future work should move towards "cheap-to-verify" training objectives rather than relying on longer timeouts—a subtle critique of current SABR/MTL-IBP practices.
 
 ## Related Work & Insights
-- **vs. CTBench (Mao 2025)**: CTBench uses 250 grid search trials for single-objective comparison, favoring "high certified accuracy." This work uses 300 BO trials for multi-objective comparison, revealing a previously underestimated front and emphasizing method complementarity.
-- **vs. De Palma 2024b (MTL-IBP)**: The original paper reported a single certified-heavy point. This work shows MTL-IBP can achieve a $\sim2\%$ gain in clean accuracy on Tiny ImageNet that the owners themselves missed.
-- **vs. Müller 2023 (SABR)**: The original best point on CIFAR-10 ($2/255$) is outperformed by this work by $1\%$ in both clean and certified metrics; it also shows SABR is not globally optimal at large $\epsilon$.
+- **vs. CTBench (Mao 2025)**: CTBench uses 250 grid search trials for single-objective comparison, favoring high certification. Ours uses 300 BO trials for multi-objective comparison, revealing underestimated fronts and method complementarity.
+- **vs. De Palma 2024b (MTL-IBP)**: The original paper reported a certification-heavy point; Ours shows a $\sim 2\%$ gain in clean accuracy on Tiny ImageNet that the original authors missed.
+- **vs. Müller 2023 (SABR)**: The best point from the SABR paper on CIFAR-10 $2/255$ is surpassed by Ours by $1\%$ in both clean and certified accuracy.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ While multi-objective BO is a mature method, applying the "Pareto front evaluation" to certified training is a clear paradigm shift.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 4 methods $\times$ 3 benchmarks $\times$ multiple ablations, including fANOVA and budget sensitivity.
-- Writing Quality: ⭐⭐⭐⭐ Clear arguments, though the "democratization of the protocol" could be addressed more deeply.
-- Value: ⭐⭐⭐⭐⭐ Directly rewrites the certified training leaderboard and provides the open-source CTRAIN tool, carrying high community impact.
+- Novelty: ⭐⭐⭐⭐ Adaptation of MOBO is mature, but shifting the paradigm to Pareto fronts in certified training is a clear breakthrough.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive coverage across 4 methods, 3 benchmarks, and extensive fANOVA/budget ablations.
+- Writing Quality: ⭐⭐⭐⭐ Clear argumentation, though democratization of the compute-heavy protocol could be discussed further.
+- Value: ⭐⭐⭐⭐⭐ Rewrites the certified training leaderboard and provides the CTRAIN open-source tool.
 
 <!-- RELATED:START -->
 
@@ -137,11 +137,11 @@ Findings from the merged Pareto front: On CIFAR-10 ($2/255$), SABR and MTL-IBP a
 
 ## Related Papers
 
+- [\[ICML 2026\] BioAgent Bench: An AI Agent Evaluation Suite for Bioinformatics](bioagent_bench_an_ai_agent_evaluation_suite_for_bioinformatics.md)
+- [\[ICML 2026\] MLUBench: A Benchmark for Lifelong Unlearning Evaluation in MLLMs](mlubench_a_benchmark_for_lifelong_unlearning_evaluation_in_mllms.md)
 - [\[AAAI 2026\] An Information Theoretic Evaluation Metric for Strong Unlearning](../../AAAI2026/ai_safety/an_information_theoretic_evaluation_metric_for_strong_unlearning.md)
-- [\[CVPR 2026\] Towards Reliable Evaluation of Adversarial Robustness for Spiking Neural Networks](../../CVPR2026/ai_safety/towards_reliable_evaluation_of_adversarial_robustness_for_spiking_neural_network.md)
 - [\[ICML 2026\] SORA: Free Second-Order Attacks in Fast Adversarial Training](sora_free_second-order_attacks_in_fast_adversarial_training.md)
 - [\[ICML 2026\] Training-Free Coverless Multi-Image Steganography with Access Control](training-free_coverless_multi-image_steganography_with_access_control.md)
-- [\[ICML 2026\] TimeGuard: Channel-wise Pool Training for Backdoor Defense in Time Series Forecasting](timeguard_channel-wise_pool_training_for_backdoor_defense_in_time_series_forecas.md)
 
 </div>
 

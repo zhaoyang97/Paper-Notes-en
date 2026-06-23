@@ -2,13 +2,13 @@
 title: >-
   [Paper Note] Find, Fix, Reason: Context Repair for Video Reasoning
 description: >-
-  [ICML 2026][Multimodal VLM][GRPO] This paper addresses the dilemma in video reasoning where on-policy RL stagnates at capability ceilings while off-policy distillation suffers from entropy collapse. It introduces a frozen, tool-augmented large teacher model that inserts minimal "evidence patches" (key-frame intervals, error types) when student rollouts
+  [ICML 2026][vlm_reasoning][GRPO] Addressing the dilemma in video reasoning where "on-policy RL stagnates at capacity ceilings and off-policy distillation suffers from entropy collapse," this paper introduces a frozen, tool-integrated large teacher model. When a student's rollout fails, the teacher inserts minimal "evidence patches" (e.g., key-frame in
 tags:
   - ICML 2026
-  - Multimodal VLM
+  - vlm_reasoning
   - GRPO
 date: 2026-05-08
-content_hash: fbf3753d2a472f1d
+content_hash: 07c72028548019b3
 ---
 # Find, Fix, Reason: Context Repair for Video Reasoning
 
@@ -16,90 +16,86 @@ content_hash: fbf3753d2a472f1d
 **arXiv**: [2604.16243](https://arxiv.org/abs/2604.16243)  
 **Code**: Yes (FFR, anonymous link)  
 **Area**: Multimodal VLM / Video Reasoning / Reinforcement Learning  
-**Keywords**: Video Reasoning, GRPO, Tool-Augmented Teacher, Context Repair, Spatio-temporal Dependency
+**Keywords**: Video Reasoning, GRPO, Tool-Integrated Teacher, Context Repair, Spatio-Temporal Dependency
 
 ## TL;DR
-This paper addresses the dilemma in video reasoning where on-policy RL stagnates at capability ceilings while off-policy distillation suffers from entropy collapse. It introduces a frozen, tool-augmented large teacher model that inserts minimal "evidence patches" (key-frame intervals, error types) when student rollouts fail. The student re-answers the same question under these refined conditions, and the repaired trajectories are incorporated into GRPO optimization via a chosen-rollout mechanism.
+Addressing the dilemma in video reasoning where "on-policy RL stagnates at capacity ceilings and off-policy distillation suffers from entropy collapse," this paper introduces a frozen, tool-integrated large teacher model. When a student's rollout fails, the teacher inserts minimal "evidence patches" (e.g., key-frame intervals, error types), enabling the student to re-attempt the same question. These repaired trajectories are then incorporated into GRPO optimization through a chosen-rollout mechanism.
 
 ## Background & Motivation
 
-**Background**: GRPO-based video reasoning LMMs (e.g., Video-R1, VideoRFT, VideoChat-R1) typically follow a pure on-policy RLVR route, using binary 0/1 signals to verify answer correctness. While successful in textual mathematical reasoning, this paradigm struggles with complex spatio-temporal dependencies and sparse reasoning templates in video, often leading to self-exploration plateaus.
+**Background**: GRPO-based video reasoning LMMs (Video-R1, VideoRFT, VideoChat-R1) generally follow a pure on-policy RLVR route, using binary 0/1 signals as rewards for answer correctness. While successful in textual mathematical reasoning, this paradigm struggles in video tasks due to complex spatio-temporal dependencies and a lack of reasoning templates, often leading to self-exploration plateaus once the model reaches its inherent capacity limit.
 
-**Limitations of Prior Work**: Three existing "breakthrough" routes have significant drawbacks: (a) hybrid policy (LUFFY, Replay) inserts strong teacher trajectories into a buffer, alleviating entropy collapse but remaining wholesale imitation that requires heavy regularization; (b) tool-integrated reasoners (Pixel-Reasoner, Video-Thinker) allow small models to call tools for evidence, but are limited by the small model's tool-calling accuracy, often falling into "self-doubt" loops; (c) SFT teacher distillation is simple but causes the student to lose on-policy exploration capabilities.
+**Limitations of Prior Work**: Existing "wall-breaking" strategies have significant drawbacks: (a) Hybrid policies (LUFFY, Replay) inject strong teacher trajectories into buffers, mitigating entropy collapse but resulting in wholesale imitation that requires heavy regularization; (b) Tool-integrated reasoners (Pixel-Reasoner, Video-Thinker) let small models invoke tools iteratively, but are limited by the small model's tool-calling accuracy, often leading to "self-doubt" loops; (c) SFT-teacher distillation is simpler but causes students to lose on-policy exploration capabilities.
 
-**Key Challenge**: The trade-off between the student model’s capability ceiling and the distribution shift caused by teacher guidance—the more the student sees, the more it becomes a replica of the teacher; the less it sees, the harder it is to break its own ceiling. The essence of the problem lies in the *granularity of intervention*: should one modify rewards, trajectories, or observations?
+**Key Challenge**: The trade-off between the student's capacity ceiling and the distribution drift caused by teacher guidance—the more the student sees from the teacher, the more it becomes a replica; too little, and it cannot break its own ceiling. The problem is essentially the *granularity of intervention*: whether to modify the reward, the trajectory, or the observation.
 
-**Goal**: To find an "observation-level" intervention that modifies neither the task, the reward, nor the policy, but only the "evidence" seen by the student, thereby preserving on-policy characteristics while guiding exploration toward causal directions.
+**Goal**: To find an "observation-level" intervention that does not alter the task, reward, or policy, but only modifies the "evidence" seen by the student, thereby maintaining on-policy properties while guiding exploration toward a causal direction.
 
-**Key Insight**: The authors observe that large models (GLM-4.5V) are significantly stronger than 7B students in instruction following and tool usage. They can reliably diagnose which spatio-temporal dependency caused a student's failure and locate evidence via simple tools (frame range, object region).
+**Key Insight**: Authors observe that large models (GLM-4.5V) are significantly stronger in instruction following and tool usage than 7B students, reliably diagnosing "where the spatio-temporal dependency failed" and locating evidence via tools (frame ranges, object regions).
 
-**Core Idea**: A frozen tool-augmented large teacher acts as a "diagnostician," outputting minimal evidence patches $c_i$ (e.g., "re-examine frames 13-17, notice the color of the lifted object") for failed student rollouts **without revealing the answer**. The student re-attempts the question given the original query + patch, and the repaired trajectory is included in the GRPO update as a chosen rollout.
+**Core Idea**: A frozen tool-integrated large teacher acts as a "diagnostician," outputting a minimal evidence patch $c_i$ (e.g., "re-examine frames 13-17, note the color of the lifted object") for a student's failed rollout, **without directly revealing the answer**. The student re-attempts the question given the original problem + patch, and the repaired trajectory is used as a chosen rollout for GRPO updates.
 
 ## Method
 
 ### Overall Architecture
-Each video-question pair $x=(v,q)$ undergoes two stages: ① The student samples $G$ first-pass rollouts $\{\tau_i\}$ using $\pi_{\theta_{old}}$, which are scored by a verifier; ② For failed rollouts $\tau_i$ ($z_i=0$), a frozen teacher $\mathcal{T}$ outputs an error type $e_i\in\{$temporal, spatial, attribute, counting, dynamics, logic$\}$ and an evidence patch $c_i$. The student re-samples a repaired rollout $\tau_i^*$ using $\pi_{\theta_{old}}(\cdot|x,c_i)$. Correct rollouts $\tau_i$ are kept directly. Finally, the "chosen rollout" $\hat\tau_i$ ($\tau_i$ if $z_i=1$, otherwise $\tau_i^*$) is used to calculate token-level importance ratios for the GRPO update.
+Each video-question pair $x=(v,q)$ undergoes two stages: ① The student samples $G$ first-pass rollouts $\{\tau_i\}$ using $\pi_{\theta_{old}}$, which are scored by a verifier; ② For failed rollouts $\tau_i$ ($z_i=0$), the frozen teacher $\mathcal{T}$ outputs an error type $e_i \in \{$temporal, spatial, attribute, counting, dynamics, logic$\}$ and an evidence patch $c_i$. The student re-samples a repaired rollout $\tau_i^*$ using $\pi_{\theta_{old}}(\cdot|x,c_i)$, while correct $\tau_i$ are kept. Finally, the "chosen rollout" $\hat\tau_i$ ($\tau_i$ if $z_i=1$, else $\tau_i^*$) is used to calculate token-level importance ratios for GRPO updates.
 
 ```mermaid
-%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
-flowchart TD
-    A["Video-Question Pair x=(v,q)"] --> B["Student π_old Samples<br/>G First-Pass Rollouts τ_i"]
-    B --> C["Verifier Scorer z_i"]
-    C -->|"z_i=1 (Correct)"| F["Chosen Rollout τ̂_i = τ_i"]
-    C -->|"z_i=0 (Incorrect)"| D
-    subgraph TEA["Frozen Teacher Diagnosis (No Answer Leakage)"]
+graph TD
+    A["Video-Question Pair x=(v,q)"] --> B["Student π_old samples<br/>G first-pass rollouts τ_i"]
+    B --> C["Verifier scores z_i"]
+    C -->|"z_i=1 Correct"| F["Chosen rollout τ̂_i = τ_i"]
+    C -->|"z_i=0 Incorrect"| D
+    subgraph TEA["Teacher Diagnosis (No Answer Leakage)"]
         direction TB
-        D["Error-Driven Tool Calling<br/>6 Error Types → Tool Evidence"] --> E["Zero-Leakage Evidence Patch c_i"]
+        D["Error-classification driven tool calling<br/>6 types -> corresponding tool for evidence"] --> E["Zero-leakage evidence patch c_i"]
     end
-    E --> G["Student π_old(·|x,c_i)<br/>Re-samples Repaired Rollout τ_i*"]
-    G --> H["Chosen Rollout τ̂_i = τ_i*"]
-    F --> I["Robust Improved Reward (RIR)<br/>Patch Tax κ for Assisted Success"]
+    E --> G["Student π_old(·|x,c_i)<br/>Re-samples repaired rollout τ_i*"]
+    G --> H["Chosen rollout τ̂_i = τ_i*"]
+    F --> I["RIR Robust Improved Reward<br/>Patch tax κ penalizes patch reliance"]
     H --> I
-    I --> J["GRPO Update<br/>Backprop only on Chosen Rollout Tokens"]
+    I --> J["GRPO Update<br/>Backprop only on chosen rollout tokens"]
 ```
 
 ### Key Designs
 
-**1. Error-Driven Tool Calling: Granular Repair Signals for Different Root Causes**
+**1. Error-classification driven tool calling: Tailoring repair signals to root causes**
+For observation-level intervention to work, the teacher must first identify "where the student should look," but different root causes require vastly different granularities. FFR classifies errors into six categories (temporal, spatial, attribute, counting, dynamics, logic) and invokes corresponding tools: temporal outputs frame intervals, spatial outputs regional coordinates, attribute outputs descriptive features, etc. These textual error classes + optional visual context (frame indices, region masks) are assembled into patch $c_i$. Ablations show these signals are complementary: removing visual context drops Video-Holmes by 10.0 points, and removing GT references drops it by 7.6.
 
-For observation-level intervention to work, the teacher must know "where the student should look again." Different error causes require vastly different information—signals that are too vague (text only) or too localized (visual boxes only) lose information. FFR directs the teacher to classify failed rollouts into six categories (temporal / spatial / attribute / counting / dynamics / logic) and call corresponding tools: temporal outputs frame intervals, spatial outputs region coordinates, attribute outputs descriptive object features, etc. These textual error classes + optional visual contexts (frame indices, region masks) are assembled into patches $c_i$ and injected into the student prompt. Ablations confirm these signals are complementary; removing visual context drops Video-Holmes performance by 10.0 points, while removing GT references drops it by 7.6 points.
+**2. Zero-leakage Teacher Evidence Patches (Teacher Negative Constraint Strategy)**
+A prerequisite for observation-level intervention is that the teacher "points the way but does not provide the answer." Once a teacher reveals the answer, the student degrades into wholesale imitation. FFR utilizes the teacher's ICL capabilities with designed negative prompts and format constraints to separate "diagnosis" from "answer." The teacher receives $\mathcal{S}_i=(x,y,\tau_i)$ (with GT) or $(x,\tau_i)$ (without GT) but is only permitted to output $e_i$ and $c_i$. For example, in a counting task, it cannot say "exactly 3 people in frame 15," but must say "please recount within the [13,17] frame interval." This forces the student to **re-observe** rather than copy. Manual verification of 200 interactions showed leakage was reduced from 39.5% to 0%.
 
-**2. Zero-Leakage Teacher Evidence Patch: Diagnosing without Revealing**
-
-The efficacy of observation-level intervention relies on the teacher "pointing the way without giving the answer." If the teacher reveals the answer, the student degrades into wholesale imitation. FFR utilizes the teacher's ICL capabilities with designed negative prompts and format constraints to separate "diagnosis" from "answer." The teacher receives $\mathcal{S}_i=(x,y,\tau_i)$ (with GT) or $(x,\tau_i)$ (without GT) and is strictly forbidden from leaking the answer: in counting tasks, it cannot say "exactly 3 people in frame 15," but instead "please recount within frames [13,17]." This forces the student to **re-observe** rather than copy. Manual verification of 200 interactions showed a leakage rate reduction from 39.5% (unconstrained) to 0%.
-
-**3. Chosen Rollout and Robust Improved Reward (RIR): Integrating Repaired Trajectories into GRPO**
-
-Since repaired rollouts are sampled under modified observations (original query + patch), treating them as off-policy samples for importance sampling is unstable. FFR treats them as on-policy samples under different observations. A scalar score is calculated for each chosen rollout $\hat\tau_i$:
+**3. Chosen Rollout and Robust Improved Reward (RIR): Safely integrating repaired trajectories**
+Repaired rollouts are sampled under a modified observation (original question + patch). Treating them as standard off-policy samples for importance sampling would be unstable. FFR treats them as "on-policy samples from the same policy under different observations." Defining chosen rollout $\hat\tau_i$ ($\tau_i$ if $z_i=1$, else $\tau_i^*$), it calculates a scalar score:
 
 $$\tilde R_i=z_i\big(R(\tau_i)+R_{fmt}(\tau_i)\big)+(1-z_i)\big(R(\tau_i^*)+R_{fmt}(\tau_i^*)-\kappa\big),$$
 
-where $\kappa\ge 0$ is the "patch tax," penalizing samples that only succeeded due to teacher assistance. Group normalization yields advantages $A_i=(\tilde R_i-\text{mean})/\text{std}$, and updates are performed using the token-level ratio $r_{i,t}(\theta)$ within the PPO clip framework, backpropagating only through chosen rollout tokens. The patch tax $\kappa=0.3$ proved optimal, balancing imitation and independent exploration.
+where $\kappa\ge 0$ is a patch tax that penalizes samples that only achieve correctness via teacher patches. Group normalization $A_i=(\tilde R_i-\text{mean})/\text{std}$ is applied within $G$ samples, and updates utilize the token-level ratio $r_{i,t}(\theta)$ within the PPO clip framework. The patch tax balances imitation vs. exploration; $\kappa=0.3$ was found optimal.
 
 ### Loss & Training
-The GRPO objective is $\mathcal{J}_{FFR}(\theta)=\tfrac{1}{\sum|\hat\tau_i|}\sum_i\sum_{t\in\hat\tau_i}\text{CLIP}(r_{i,t}(\theta),A_i,\epsilon)-\beta D_{KL}[\pi_\theta\|\pi_{ref}]$, applied only to chosen rollout tokens. Training used 4,000 samples, 8 rollouts/sample, 1 epoch, lr=5e-6, on 8×A100, with GLM-4.5V as the default teacher.
+The GRPO objective is $\mathcal{J}_{FFR}(\theta)=\tfrac{1}{\sum|\hat\tau_i|}\sum_i\sum_{t\in\hat\tau_i}\text{CLIP}(r_{i,t}(\theta),A_i,\epsilon)-\beta D_{KL}[\pi_\theta\|\pi_{ref}]$, calculating loss only for chosen rollout tokens. The training utilizes 4000 samples, 8 rollouts/sample, 1 epoch, lr=5e-6, 8×A100, with GLM-4.5V as the teacher.
 
 ## Key Experimental Results
 
 ### Main Results
-Performance was evaluated on 4 video reasoning (MMVU/VSI-Bench/VideoMMMU/Video-Holmes) and 4 general video understanding (LongVideoBench/LVBench/MVBench/TempCompass) benchmarks against 7B student baselines.
+Comparison on 4 video reasoning (MMVU/VSI-Bench/VideoMMMU/Video-Holmes) and 4 general video understanding benchmarks.
 
 | Baseline/Method | MMVU | VSI-Bench | Video-Holmes | LVBench |
-|---|---|---|---|---|
+| :--- | :---: | :---: | :---: | :---: |
 | GPT-4o | 75.4 | 34.0 | 42.0 | 48.9 |
 | GLM-4.5V (Teacher) | 68.7 | - | - | 53.8 |
 | Video-R1 | 63.8 | 35.8 | 36.5 | 35.3 |
 | **+ FFR** | **68.5** | **38.9** | **52.3** | **38.1** |
-| Gain | +11.75% | +22.33% | +51.16% | +24.10% |
+| Relative Gain | +11.75% | +22.33% | +51.16% | +24.10% |
 | VideoRFT | 68.5 | 36.8 | 40.0 | 33.9 |
 | **+ FFR** | **70.1** | **38.6** | **48.0** | **37.8** |
 
-Notably, the 7B student outperformed GPT-4o by 10 points on Video-Holmes (causal narrative reasoning).
+Significantly, the 7B student outperforms GPT-4o by 10 points on Video-Holmes (causal narrative reasoning).
 
 ### Ablation Study
 
 | Configuration | MMVU | Video-Holmes |
-|---|---|---|
+| :--- | :---: | :---: |
 | vanilla GRPO | 60.3 | 45.6 |
 | SFT + T-GRPO (Video-R1) | 63.8 | 36.5 |
 | FFR (no visual context) | 64.4 | 42.3 |
@@ -111,37 +107,39 @@ Notably, the 7B student outperformed GPT-4o by 10 points on Video-Holmes (causal
 | FFR (teacher=235B) | **68.2** | **51.6** |
 
 ### Key Findings
-- FFR with a 32B teacher (51.2 avg) outperformed SFT with a 235B teacher (50.7), suggesting targeted intervention is significantly more data-efficient than wholesale distillation.
-- The intervention ratio decreased from 26.3% in early training to 13.7% later, while accuracy rose from 77.5% to 80.2%, indicating the student internalized diagnostic capabilities rather than relying on "cheating."
-- Error distribution: Misconception (41.2%) > Spatial (32%) > Temporal (26.8%). Students primarily struggle with "understanding what is being asked" rather than failing to "see" the image.
+- FFR + 32B teacher (51.2 avg) surpasses SFT + 235B teacher (50.7), demonstrating that targeted intervention is far more data-efficient than full distillation.
+- Intervention ratios dropped from 26.3% early in training to 13.7% late, while accuracy rose from 77.5% to 80.2%, suggesting the student internalized diagnostic capabilities.
+- Error distribution: misconception 41.2% > spatial 32% > temporal 26.8%. Students primarily fail at "understanding the question" rather than "seeing the image," aligning with FFR's strategy.
 
 ## Highlights & Insights
-- **Innovation in Granularity**: Observation-level intervention is a distinct innovation. Unlike prior works that modify rewards (downstream), trajectories (output), or policies (parameters), FFR modifies only what the student sees—the most lightweight yet targeted intervention.
-- **Counter-intuitive "Diagnosis $\neq$ Answering"**: The teacher does not need to be correct; it only needs to diagnose where the student was wrong. This allows "diagnostic-only" distillation where a small model (Qwen3-VL-8B + FFR) can outperform its 32B teacher.
-- **Patch Tax Nuance**: Using $\kappa$ to penalize assisted success forces the student to rank independent success higher than teacher-assisted success in advantage sorting, elegantly managing the tension between imitation and exploration.
+- **Observation-level intervention is the core innovation**: Unlike prior works that modify rewards, trajectories, or policies, FFR only modifies what the student sees—the most lightweight yet targeted intervention.
+- **Counter-intuitive finding (Diagnosis ≠ Answering)**: The teacher does not need to answer correctly; it only needs to diagnose where the student failed. This allows "diagnostic-only" distillation to enable small models to surpass their teachers.
+- **The Patch Tax $\kappa$**: Using a scalar to penalize "patch-assisted" correctness forces students to prioritize independent correctness in advantage ranking.
 
 ## Limitations & Future Work
-- Computational overhead is high due to teacher calls (vision understanding + tool use) for every failed rollout. GLM-4.5V was used for Pareto efficiency, but it remains costlier than pure RLVR.
-- Potential teacher bias: If the teacher systematically misdiagnoses a specific problem type, the student may be misled.
-- Leakage prevention relies on prompt engineering without mathematical guarantees.
-- Generalization to architectures beyond Qwen2.5-VL and Qwen3-VL remains unverified.
-- While the "declining intervention ratio" suggests internalization, further trajectory probing is needed to distinguish this from reward or distribution drift.
+- Computational overhead is high, as failed rollouts require teacher calls (comprising image understanding + tool usage).
+- The impact of teacher bias is not discussed; systematic misdiagnosis could lead students astray.
+- Reliability currently relies on prompt engineering for leakage prevention without mathematical guarantees.
+- Internalization of capability was interpreted through intervention ratios; trajectory probing remains needed for verification.
 
 ## Related Work & Insights
-- **vs. LUFFY/Replay (hybrid policy)**: These mix off-policy teacher trajectories into the buffer, requiring complex regularization. FFR intervenes only at the observation level, preserving on-policy nature and leading across 8 benchmarks.
-- **vs. Pixel-Reasoner/Video-Thinker (tool-use reasoner)**: These have students call tools themselves, which is unstable for small models. FFR out-sources tool use to the teacher, allowing the student to focus solely on evidence-based reasoning.
-- **vs. SFT-Teacher**: SFT is wholesale imitation. FFR intervenes only during failure and provides "where to look" rather than "what to say"—FFR significantly outperforms SFT for any given teacher size.
-- **Insight**: Observation-level intervention can be extended to any scenario where small models lack capability but large models excel at locating evidence, such as medical image diagnosis, code debugging, or agent task planning.
+- **vs. LUFFY/Replay (Hybrid policy)**: These mix off-policy teacher trajectories with high regularization; FFR intervenes only at the observation layer, maintaining on-policy properties and leading across all 8 benchmarks.
+- **vs. Pixel-Reasoner/Video-Thinker (Tool-use reasoner)**: These rely on the student's own unstable tool calling; FFR outsources tool use to the teacher, allowing the student to focus solely on "evidence-based reasoning."
+- **vs. SFT-Teacher**: SFT is wholesale imitation; FFR only intervenes on failures and provides "where to look" rather than "what to answer."
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ The choice of observation-level intervention, combined with zero-leakage prompt design and chosen rollouts, forms a robust new paradigm.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive coverage across 8 benchmarks, multiple base models, various teachers, and detailed ablation/dynamic analyses.
-- Writing Quality: ⭐⭐⭐⭐ Comparisons of paradigms are clear (Figure 1), and case studies (Figure 3) are instructional, though some math notation is dense.
-- Value: ⭐⭐⭐⭐⭐ The result of a 7B model surpassing GPT-4o is highly practical, and the method integrates seamlessly into existing GRPO pipelines.
+- Novelty: ⭐⭐⭐⭐⭐ "Observation-level intervention" is a fresh paradigm.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Extensive analysis across 8 benchmarks and multiple architectures.
+- Writing Quality: ⭐⭐⭐⭐ Clear paradigm comparisons; Figure 1 and 3 are very helpful.
+- Value: ⭐⭐⭐⭐⭐ Strong practical results with a 7B model outperforming GPT-4o.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+
+- **Video-RFT**: DeepSeek-style RL applied to video logic.
+- **LUFFY**: Hybrid RL for multimodal reasoning with trajectory buffers.
+- **GLM-4.5V**: The backbone teacher model used for diagnostic patches.
 
 </div>
 
@@ -149,11 +147,11 @@ Notably, the 7B student outperformed GPT-4o by 10 points on Video-Holmes (causal
 
 ## Related Papers
 
-- [\[CVPR 2026\] Select Less, Reason More: Prioritizing Evidence Purity for Video Reasoning](../../CVPR2026/multimodal_vlm/select_less_reason_more_prioritizing_evidence_purity_for_video_reasoning.md)
-- [\[CVPR 2026\] CoVR-R: Reason-Aware Composed Video Retrieval](../../CVPR2026/multimodal_vlm/covr-rreason-aware_composed_video_retrieval.md)
-- [\[NeurIPS 2025\] Video-R1: Reinforcing Video Reasoning in MLLMs](../../NeurIPS2025/multimodal_vlm/video-r1_reinforcing_video_reasoning_in_mllms.md)
-- [\[CVPR 2026\] OneThinker: All-in-one Reasoning Model for Image and Video](../../CVPR2026/multimodal_vlm/onethinker_all-in-one_reasoning_model_for_image_and_video.md)
-- [\[CVPR 2026\] Think Visually, Reason Textually: Vision-Language Synergy in Abstract Reasoning](../../CVPR2026/multimodal_vlm/think_visually_reason_textually_vision-language_synergy_in_abstract_reasoning.md)
+- [\[CVPR 2026\] Reinforce to Learn, Elect to Reason: A Dual Paradigm for Video Reasoning](../../CVPR2026/vlm_reasoning/reinforce_to_learn_elect_to_reason_a_dual_paradigm_for_video_reasoning.md)
+- [\[NeurIPS 2025\] Can LLMs Reason Over Non-Text Modalities in a Training-Free Manner? A Case Study with In-Context Representation Learning](../../NeurIPS2025/vlm_reasoning/can_llms_reason_over_non-text_modalities_in_a_training-free_manner_a_case_study_.md)
+- [\[CVPR 2026\] Select Less, Reason More: Prioritizing Evidence Purity for Video Reasoning](../../CVPR2026/vlm_reasoning/select_less_reason_more_prioritizing_evidence_purity_for_video_reasoning.md)
+- [\[ICML 2026\] Reason, Then Re-reason: Cross-view Revisiting Improves Spatial Reasoning](reason_then_re-reason_cross-view_revisiting_improves_spatial_reasoning.md)
+- [\[NeurIPS 2025\] Video-R1: Reinforcing Video Reasoning in MLLMs](../../NeurIPS2025/vlm_reasoning/video-r1_reinforcing_video_reasoning_in_mllms.md)
 
 </div>
 

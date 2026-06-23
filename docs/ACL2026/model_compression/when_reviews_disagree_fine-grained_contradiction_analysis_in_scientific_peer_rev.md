@@ -2,13 +2,13 @@
 title: >-
   [Paper Note] When Reviews Disagree: Fine-Grained Contradiction Analysis in Scientific Peer Reviews
 description: >-
-  [ACL 2026][Model Compression][Knowledge Distillation] This paper advances the analysis of scientific review disagreements from sentence-pair binary classification to evidence extraction and intensity scoring on full reviews. It employs the IMPACT multi-agent teacher framework to distill a small TIDE model capable of single-forward pass deployment.
+  [ACL 2026][Model Compression][Knowledge Distillation] This paper advances reviewer disagreement analysis from sentence-pair binary classification to evidence extraction and intensity scoring on full reviews, utilizing the IMPACT multi-agent teacher to distill a TIDE student model deployable via a single forward pass.
 tags:
   - ACL 2026
   - Model Compression
   - Knowledge Distillation
 date: 2026-05-08
-content_hash: 0515b6bf322cdb4d
+content_hash: 26e20f0356c7b773
 ---
 # When Reviews Disagree: Fine-Grained Contradiction Analysis in Scientific Peer Reviews
 
@@ -16,121 +16,128 @@ content_hash: 0515b6bf322cdb4d
 **arXiv**: [2605.10171](https://arxiv.org/abs/2605.10171)  
 **Code**: https://github.com/sandeep82945/Contradiction-Intensity.git  
 **Area**: Model Compression  
-**Keywords**: Peer review, contradiction detection, intensity scoring, multi-agent deliberation, knowledge distillation
+**Keywords**: Peer Review, Contradiction Detection, Intensity Scoring, Multi-Agent Deliberation, Knowledge Distillation
 
 ## TL;DR
-This paper advances the analysis of scientific review disagreements from sentence-pair binary classification to evidence extraction and intensity scoring on full reviews. It employs the IMPACT multi-agent teacher framework to distill a small TIDE model capable of single-forward pass deployment.
+This paper advances reviewer disagreement analysis from sentence-pair binary classification to evidence extraction and intensity scoring on full reviews, utilizing the IMPACT multi-agent teacher to distill a TIDE student model deployable via a single forward pass.
 
 ## Background & Motivation
-**Background**: Resolving disagreements in scientific peer reviews is the most time-consuming task for Area Chairs (ACs) and editors. Existing computational approaches primarily frame reviewer disagreement as Natural Language Inference (NLI) or binary contradiction detection, such as determining "contradiction/non-contradiction" between two isolated sentences.
+**Background**: Resolving disagreements in scientific peer reviews is the most time-consuming part for Area Chairs (ACs) and editors. Existing computational methods mostly treat reviewer disagreement as natural language inference (NLI) or binary contradiction detection, such as determining contradiction/non-contradiction between two sentences.
 
-**Limitations of Prior Work**: Contradictions in reviews are not always explicit sentence-pair conflicts. Reviewers may hold differing judgments on aspects such as novelty, soundness, clarity, or meaningful comparisons, which are often dispersed across multiple paragraphs. Binary sentence-pair models lose review-level discourse context and fail to inform ACs whether a conflict is minor, moderate, or severe.
+**Limitations of Prior Work**: Review contradictions are not always explicit sentence-pair conflicts. Two reviewers may give different judgments on novelty, soundness, clarity, or meaningful comparison, and these judgments are often scattered across multiple paragraphs of full reviews. Binary sentence-pair models lose review-level discourse and fail to inform the AC whether the conflict is minor, moderate, or severe.
 
-**Key Challenge**: A review assistance system must be fine-grained enough to provide contradictory evidence, aspects, and intensities, yet efficient enough to avoid expensive multi-agent deliberations for every instance. There is a clear trade-off between high-quality reasoning and low-latency deployment.
+**Key Challenge**: Review assistant systems must be fine-grained enough to provide evidence, aspects, and intensity, while being efficient enough to avoid expensive multi-agent deliberation for every call. There is a clear trade-off between high-quality reasoning and low-latency deployment.
 
-**Goal**: This paper proposes a new fine-grained task: given two complete peer reviews, the system outputs contradictory evidence pairs, their corresponding evaluation aspects, intensity levels, and explanations. To achieve this, the authors construct the RevCI expert-annotated dataset, design the high-quality IMPACT multi-agent framework, and distill it into a more efficient TIDE small model.
+**Goal**: The paper proposes a new fine-grained task: given two complete peer reviews, output contradiction evidence pairs, corresponding evaluation aspects, intensity levels, and explanations. Simultaneously, it constructs the RevCI expert-labeled dataset, designs the high-quality IMPACT multi-agent framework, and distills it into the more affordable TIDE small model.
 
-**Key Insight**: Instead of focusing on whether individual sentences contradict, the authors align with the actual editorial workflow of ACs: first extracting potential contradictory evidence by aspect, then employing multiple agents for independent judgment and debate on intensity, and finally producing a unified output via an adjudicator. This aligns model outputs with the "evidence + severity + rationale" required by editors.
+**Key Insight**: Instead of focusing on "whether sentences contradict," the authors start from the actual workflow of an AC: first identifying potentially conflicting evidence by aspect, then having multiple agents independently judge and debate the intensity, and finally outputting a unified result via an adjudicator. This aligns model output with the "evidence + severity + rationale" actually needed by editors.
 
-**Core Idea**: Use a task-specific multi-agent deliberation framework to generate high-quality, interpretable contradiction intensity judgments, then apply teacher-student distillation to enable a smaller model to learn this evidence-grounded intensity reasoning, achieving a balance between quality and deployment cost.
+**Core Idea**: Utilize a task-customized multi-agent deliberation framework to generate high-quality, interpretable contradiction intensity judgments, then use teacher-student distillation to let a small model learn this evidence-grounded intensity reasoning, achieving a balance between quality and deployment cost.
 
 ## Method
 
 ### Overall Architecture
-The paper first constructs the RevCI dataset. Based on the ASAP-Review source used in ContraSciView, it covers 8,582 reviews from ICLR 2017-2020 and NeurIPS 2016-2019. Multiple reviews for the same paper are paired, resulting in approximately 28K pairs. Since explicit contradictions are rare, GPT-4o mini is used for preliminary screening before expert re-annotation. The final RevCI set contains 800 review pairs, with 352 containing at least one contradiction and 448 serving as negative examples.
+The paper first constructs the RevCI dataset. Based on the ASAP-Review source used in ContraSciView, it covers 8,582 paper reviews from ICLR 2017-2020 and NeurIPS 2016-2019. The authors pair multiple reviews of the same paper, resulting in approximately 28K pairs. Since explicit contradictions are rare, GPT-4o mini is used for initial filtering before expert re-labeling. The final RevCI contains 800 review pairs, with 352 containing at least one contradiction and 448 as negative samples.
 
-The method consists of two layers. The first layer is IMPACT, an inference-time multi-agent framework. It takes two full reviews as input, extracts candidate evidence by aspect, and utilizes two intensity agents for independent scoring and explanation. If they disagree, a Disagreement Orchestrator organizes a structured discussion, an Adjudication Agent decides based on the discussion trajectory, and a Contradiction Validity Gate filters invalid contradictions.
+The methodology consists of two layers. The first is IMPACT, a multi-agent framework run at inference time. It takes two complete reviews as input, extracts candidate evidence by aspect, and two intensity agents score and explain independently. If they disagree, a Disagreement Orchestrator organizes a structured discussion, an Adjudication Agent decides based on the discussion trajectory, and finally, a Contradiction Validity Gate filters invalid contradictions.
 
-The second layer is TIDE. Since IMPACT is high-quality but slow, the authors use IMPACT-P to generate synthetic contradiction annotations on' approximately 2,000 additional ICLR 2021-2023 review pairs. These map full review pairs to structured outputs, which are used to fine-tune Meta-Llama-3-8B-Instruct via LoRA. During testing, TIDE produces evidence, intensity, and explanations in a single forward pass.
+The second is TIDE. While IMPACT is high-quality, it is slow; thus, the authors use IMPACT-P to generate synthetic contradiction annotations on an additional ~2,000 ICLR 2021-2023 review pairs. This maps full review pairs to structured outputs, followed by LoRA fine-tuning of Meta-Llama-3-8B-Instruct. At test time, TIDE requires only a single forward pass to output evidence, intensity, and explanations.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    IN["Two Full Reviews"]
-    subgraph IMPACT["IMPACT Multi-Agent Deliberation (Inference-time, Accurate but Slow)"]
+    IN["Two complete reviews"]
+    subgraph IMPACT["IMPACT Multi-Agent Deliberation (Inference-time, slow but accurate)"]
         direction TB
-        ACEA["Aspect-Based Evidence Extraction (ACEA)<br/>Extract candidate pairs per evaluation dimension"]
+        ACEA["Aspect-Conditioned Evidence Agent (ACEA)<br/>Extract candidate evidence pairs per aspect"]
         DIA["Intensity Deliberation (Two DIAs)<br/>Independent scoring α∈0/1/2/3 + Explanation"]
-        DEC{"Agents Consistent?"}
-        ADJ["Score-locking & Adjudication<br/>Orchestrator debate → Adjudication determines intensity"]
-        CVG["Validity Gate (CVG)<br/>Filter invalid contradictions"]
+        DEC{"Consistent?"}
+        ADJ["Score-locking + Adjudication<br/>Orchestrator discussion → Adjudication determines intensity"]
+        CVG["Contradiction Validity Gate (CVG)<br/>Filter invalid contradictions"]
         ACEA --> DIA --> DEC
         DEC -->|Yes| CVG
         DEC -->|No| ADJ --> CVG
     end
     IN --> ACEA
-    CVG --> OUT["Structured Output: Evidence Pairs + Intensity + Explanation"]
-    OUT -->|IMPACT-P generates labels for ~2K pairs| DIS["Teacher-Student Distillation<br/>LoRA Fine-tuning Llama-3-8B"]
-    DIS --> TIDE["TIDE Small Model (Efficient)<br/>Single Forward Pass"]
+    CVG --> OUT["Structured Output: Evidence pair + Intensity + Explanation"]
+    OUT -->|IMPACT-P generates labels on ~2K pairs| DIS["Teacher→Student Distillation<br/>LoRA fine-tuning Llama-3-8B"]
+    DIS --> TIDE["TIDE Model (Fast & sufficient)<br/>Single forward pass for evidence/intensity/explanation"]
 ```
 
 ### Key Designs
-**1. Aspect-Conditioned Evidence Agent (ACEA): Decomposing "finding contradictions" into aspect-specific searches to improve recall of implicit conflicts in long reviews.**
+**1. Aspect-Conditioned Evidence Agent (ACEA): Breaking "finding contradictions" into "finding by aspect" to improve recall of implicit conflicts in long reviews.**
 
-Contradictions in reviews are often not explicit sentence-level clashes but differing judgments scattered across multiple paragraphs. If a model searches broadly for conflicts in long texts, it may miss subtle disagreements or generate excessive false positives. ACEA addresses this by focusing on specific evaluation dimensions—Motivation, Clarity, Soundness, Substance, Originality, and Meaningful Comparison—forcing the model to examine one dimension at a time to extract candidate evidence span pairs from two reviews:
+Review contradictions are often not explicit sentence-pair conflicts but differing judgments scattered across multiple paragraphs. If the model looks for conflicts broadly in long text, it either misses implicit, scattered disagreements or generates excessive false positives. ACEA addresses this by using a set of evaluation aspects—Motivation, Clarity, Soundness, Substance, Originality, Meaningful Comparison—forcing it to focus on one aspect at a time to extract candidate evidence span pairs from two reviews:
 
 $$\mathcal{E}_{a_m}^{(i,j)}=f_{ACEA}(r_i,r_j,a_m),$$
 
-Candidate evidence is then aggregated into aspect-specific pools. Prompting the model to specifically look for "Clarity conflicts" significantly improves recall and constrains intensity scoring within a clearer semantic framework. While this increases the number of candidates (including false positives), the subsequent validity gate filters these out.
+The candidates for all review pairs are then aggregated into aspect-specific evidence pools. Prompting the model to "specifically look for novelty conflicts" or "clarity conflicts" significantly boosts recall and constrains subsequent intensity scoring within a clearer semantic framework. The trade-off is an increase in false positives, which is mitigated by the subsequent validity gate.
 
-**2. Deliberative Intensity Agents + Disagreement Orchestrator: "Score-locked" deliberation to force agents to expose underlying reasons rather than converging for the sake of consensus.**
+**2. Deliberative Intensity Agents + Disagreement Orchestrator: Using "score-locking deliberation" to force agents to expose the rationale for disagreement rather than converging for the sake of harmony.**
 
-Intensity judgment is not a binary task but requires a graded scale from minor to severe. Two DIAs independently predict an intensity level $\alpha\in\{0,1,2,3\}$ (0 = invalid, 1-3 = low/mid/high) for the same evidence pair, accompanied by an explanation. If they agree, the score is adopted. When they disagree, conventional multi-agent debates often result in "bandwagoning" or lazy consensus. The Disagreement Orchestrator introduces "score-locking": during discussion, agents must maintain their original scores and are only allowed to provide additional evidence, clarify rubrics, or respond to the other agent's rationale. This shifts the goal from "reaching a common score" to "surfacing the evidence behind both judgments for the adjudicator," which better suits intensity scoring where reasonable disagreement is possible.
+Intensity judgment is not a binary classification of presence but a multi-level grading. Two DIAs independently predict an intensity $\alpha\in\{0,1,2,3\}$ (0 = invalid, 1–3 = low/medium/high) and provide an explanation; if they agree, the score is adopted. When they disagree, ordinary multi-agent debates often result in "bandwagoning"—changing votes lazily to reach consensus. The key design of the Disagreement Orchestrator is score-locking: agents are required to keep their original scores unchanged during discussion and may only provide additional evidence, clarify scoring rubrics, or respond to the other's reasoning. This shifts the goal of deliberation from "negotiating a consensus score" to "exposing the evidence behind both judgments for the adjudicator," which better suits a task where reasonable disagreement is expected.
 
-**3. IMPACT to TIDE Teacher-Student Distillation: Compressing slow, multi-agent deliberation into a single-model, single-forward-pass deployment format.**
+**3. Teacher-Student Distillation from IMPACT to TIDE: Compressing slow multi-agent deliberation into a single-model, single-forward deployment form.**
 
-While IMPACT is accurate, its multi-agent, multi-round discussion process is too latent and costly for daily large-scale screening. IMPACT is therefore used as a teacher to generate structured annotations $c_j=(e_j,\alpha_j^*,\rho_j)$—including evidence pairs, adjudicated intensity, and explanations—for ~2,000 ICLR 2021-2023 review pairs. The student model, TIDE, uses SFT to learn the mapping from full review pairs to these structured outputs $p_\theta(\{c_j\}|r_i,r_j)$. Through LoRA, only the adapters are updated while the base model is frozen. Consequently, TIDE can output evidence, intensity, and explanations in a single pass at test time. High-value reviews or offline labeling are handled by the "accurate" IMPACT, while massive pre-screening uses the "efficient" TIDE.
+While high-quality, IMPACT is too slow and costly for routine batch pre-screening due to multiple agents and discussion rounds. IMPACT is thus used as a teacher to generate structured annotations $c_j=(e_j,\alpha_j^*,\rho_j)$—each containing evidence pairs, adjudicated intensity, and explanations—on roughly 2,000 additional ICLR 2021–2023 review pairs. The student model, TIDE, uses SFT to learn the mapping $p_\theta(\{c_j\}|r_i,r_j)$ from full review pairs to these structured outputs, updating only the adapters via LoRA while freezing the base. Consequently, TIDE outputs evidence, intensity, and explanations in one forward pass: high-value reviews or offline labeling are handled by the "slow but accurate" IMPACT, while large-scale pre-screening is handled by the "fast and sufficient" TIDE.
 
-### Key Experimental Results
+### A Walkthrough Example: How IMPACT handles a pair of conflicting reviews
+
+Given two complete reviews $r_i, r_j$ for the same paper. ACEA first scans by aspect: for Originality, it extracts "the method is a direct combination of existing work, limited novelty" from $r_i$ and "as far as I know, this is the first work to jointly model X and Y" from $r_j$, pairing them in the Originality evidence pool. Two DIAs then score this pair independently: DIA-1 predicts $\alpha=3$ (severe contradiction, one says no novelty, the other says totally new), while DIA-2 predicts $\alpha=2$ (viewing it as a difference in emphasis). They disagree, triggering the Disagreement Orchestrator—but score-locking prevents them from changing votes: DIA-1 defends the 3-point score by proving both refer to the same contribution, whereas DIA-2 defends the 2-point score by explaining the perceived hedging. The Adjudication Agent reads the discussion to decide the final intensity, and finally, the Contradiction Validity Gate ensures it is a valid contradiction (rather than unrelated comments). If passed, $(Evidence Pair,\ \alpha^*,\ Explanation)$ is outputted. The AC receives an aspect-filed list of conflicts with intensity and rationale.
+
+### Loss & Training
+IMPACT does not train models but fixes temperature to 0 at inference, disabling nucleus and top-k sampling, and uses a fixed seed for reproducibility; duplicate contradictions are removed via a ROUGE-L threshold of 0.9. TIDE uses Meta-Llama-3-8B-Instruct with LoRA injected into attention and FFN projection layers, trained for 5 epochs using AdamW, a learning rate of $5\times10^{-5}$, a cosine schedule, and a 0.03 warmup ratio. Only LoRA adapters are updated.
+
+## Key Experimental Results
 
 ### Main Results
-Evaluation metrics include FNR/FPR at the review-pair level, and Cohen's $\kappa$, Spearman $\rho$, and Kendall $\tau$ for matched evidence pairs. Lower FNR/FPR and higher intensity consistency are preferred. Evidence matching utilizes ROUGE-L and Hungarian matching to ensure fair evaluation of variable-length evidence sets.
+Evaluation metrics include review-pair level FNR/FPR, as well as Cohen's $\kappa$, Spearman $\rho$, and Kendall $\tau$ for matched evidence pairs. Lower FNR/FPR and higher intensity consistency are preferred. Evidence matching utilizes ROUGE-L and Hungarian matching.
 
-| Category / Method | FNR ↓ | FPR ↓ | $\kappa$ ↑ | $\rho$ ↑ | $\tau$ ↑ | Note |
-|:---|:---:|:---:|:---:|:---:|:---:|:---|
+| Category / Method | FNR ↓ | FPR ↓ | $\kappa$ ↑ | $\rho$ ↑ | $\tau$ ↑ | Description |
+|-----------|-------|-------|------------|----------|----------|-------------|
 | GPT-5.2 CoT | 0.2935 | 0.3012 | 0.2612 | 0.3679 | 0.3043 | Strong single-model baseline; limited consistency |
-| CourtEval | 0.2520 | 0.2590 | 0.2860 | 0.4100 | 0.3490 | State-of-the-art general multi-agent baseline |
+| CourtEval | 0.2520 | 0.2590 | 0.2860 | 0.4100 | 0.3490 | Strongest generic multi-agent baseline |
 | IMPACT-OA | 0.2390 | 0.2287 | 0.3270 | 0.4783 | 0.4421 | Open-source version; outperforms CourtEval |
-| IMPACT-P | 0.1901 | 0.1613 | 0.3862 | 0.6193 | 0.5826 | Best performance; demonstrates utility of task-specific deliberation |
-| TIDE | 0.3771 | 0.3048 | 0.2202 | 0.3793 | 0.3549 | Single-forward pass; high efficiency; superior consistency compared to some large models |
+| IMPACT-P | 0.1901 | 0.1613 | 0.3862 | 0.6193 | 0.5826 | Best performance; proves task-specific utility |
+| TIDE | 0.3771 | 0.3048 | 0.2202 | 0.3793 | 0.3549 | Single forward pass; efficient; outperforms some LLMs |
 
 ### Ablation Study
-The authors conducted ablations on IMPACT and TIDE to verify the contributions of aspect conditioning, intensity exemplars, intensity scoring, the validity gate, multi-agent discussion, fine-tuning, and intensity reasoning supervision.
+The authors ablate IMPACT and TIDE separately to verify the effects of aspect conditioning, intensity examples, intensity scoring, the validity gate, multi-agent discussion, fine-tuning, and intensity reasoning supervision.
 
-| Configuration | Key Metrics | Note |
-|:---|:---|:---|
-| w/o ACEA / w/o Deliberation | FNR 0.2969, FPR 0.3661 | Base setup misses many conflicts and has high false positives |
-| ACEA Only | FNR 0.1092, FPR 0.5120 | Aspect conditioning drastically improves recall but introduces false positives |
-| IS + IEx | FNR 0.3293, FPR 0.3346, $\rho$ 0.5134 | Intensity exemplars help the model understand the 1-3 rubric |
-| ACEA + IEx + IS + CVG | FNR 0.1953, FPR 0.2614 | Validity gate suppresses false positives introduced by ACEA |
-| Full IMPACT | FNR 0.1901, FPR 0.1613, $\rho$ 0.6193 | DO, DIA, and Adjudicator significantly reduce FPR and improve consistency |
-| TIDE Full | FNR 0.3771, FPR 0.3048, $\rho$ 0.3793 | Joint training of fine-tuning + intensity scoring + explanation yields best results |
+| Configuration | Key Metrics | Description |
+|---------------|-------------|-------------|
+| w/o ACEA / w/o Deliberation | FNR 0.2969, FPR 0.3661 | Base setup has high misses and false alarms |
+| ACEA only | FNR 0.1092, FPR 0.5120 | Aspect conditioning reduces misses but increases false positives |
+| IS + IEx | FNR 0.3293, FPR 0.3346, $\rho$ 0.5134 | Intensity examples help clarify the 1-3 rubric |
+| ACEA + IEx + IS + CVG | FNR 0.1953, FPR 0.2614 | Validity gate suppresses false positives from ACEA |
+| Full IMPACT | FNR 0.1901, FPR 0.1613, $\rho$ 0.6193 | DO, DIA, and Adjudicator significantly reduce FPR and boost consistency |
+| TIDE full | FNR 0.3771, FPR 0.3048, $\rho$ 0.3793 | Finetuning + Intensity + Explanation joint training is best |
 
 ### Key Findings
-- Compared to CourtEval, IMPACT-P reduces average detection error by 31.2% and improves average consistency by 52.0%. IMPACT-OA also shows significant gains (8.5% and 19.4%), proving benefits stem from task-specific design rather than just stronger proprietary models.
-- Increasing discussion rounds beyond a certain point has diminishing returns. Performance improves from round 1 (0.3608) to round 3 (0.4068), peaks near round 4 ($D=4$), and saturates or slightly declines thereafter.
-- While TIDE does not outperform IMPACT, it successfully compresses evidence-grounded intensity reasoning into an 8B model and a single forward pass, making it suitable for large-scale pre-screening.
+- Compared to CourtEval, IMPACT-P reduces average detection error by 31.2% and improves average consistency by 52.0%; IMPACT-OA also shows gains, indicating improvements are from task structure, not just closed-source power.
+- Discussion rounds follow a law of diminishing returns. Performance boosts significantly from 1 round (0.3608) to 3 rounds (0.4068) and further at 4 rounds, but saturates after 5 rounds. $D=4$ is the optimal operating point.
+- TIDE does not fully surpass IMPACT but successfully compresses evidence-grounded intensity reasoning into an 8B model, making it suitable for large-scale pre-screening.
 
 ## Highlights & Insights
-- The task definition accurately mirrors the real-world AC workflow. Instead of a binary label, it provides evidence, aspects, intensity, and explanations, allowing humans to quickly identify which disagreements require attention.
-- The "score-locking" design for multi-agent deliberation is clever. It prevents agents from caving in to reach consensus, focusing instead on exposing the reasoning behind divergent views—a valuable paradigm for evaluation-type tasks.
-- TIDE represents a natural model compression path: using high-quality, multi-step, interpretable signals from a teacher to distill capabilities into a small model. This paradigm is transferable to other domains like review quality checks, rebuttal handling, and fact-checking.
+- Task definition is closely aligned with the real AC workflow. It outputs evidence, aspects, intensity, and explanations rather than a binary label, enabling humans to quickly judge which disagreements warrant further discussion.
+- The score-locking multi-agent deliberation is clever. It prevents agent "acquiescence" in dialogue, shifting the goal from consensus to exposing rationales for divergence—a valuable paradigm for evaluation tasks.
+- TIDE follows a natural model compression route: using a high-quality, multi-step, interpretable teacher to produce training signals for an efficient student. This can be transferred to review quality checks, rebuttal handling, or fact-conflict detection.
 
 ## Limitations & Future Work
-- The RevCI dataset consists of only 800 pairs. While expert annotation is costly, the scale limits model generalization. Subtle contradictions might be underrepresented due to the initial LLM screening.
-- The experiment focuses on CS reviews (ICLR/NeurIPS) and six high-frequency aspects. Review styles, evaluation dimensions, and conflict expressions in other disciplines may differ, requiring further cross-domain validation.
-- IMPACT can be updated via ACEA prompts for new aspects, but TIDE requires retraining. Future work could explore aspect-description-conditioned training for open-ended dimensions in small models.
+- RevCI contains only 800 review pairs; while expert labeling is costly, the scale limits generalization. Subtler contradictions might be underestimated due to LLM pre-filtering.
+- The experiment focuses on CS reviews (ICLR/NeurIPS) and six aspects. Review styles and conflict expressions may differ in other disciplines; cross-domain validation is required.
+- While IMPACT can be updated via ACEA prompts for new aspects, TIDE requires retraining. Future work could consider aspect-description conditional training for open evaluation aspects.
 
 ## Related Work & Insights
-- **vs ContraSciView**: ContraSciView models disagreement as isolated sentence-pair binary detection. Ours processes full reviews and outputs evidence sets with intensity levels, better serving editorial decision-making.
-- **vs General NLI Models**: NLI models excel at standard premise-hypothesis pairs but struggle with the hedging, technical assumptions, and varying evaluation scales in peer reviews. IMPACT handles these pragmatic nuances through aspect conditioning and context-aware reasoning.
-- **vs General Multi-agent Frameworks**: While frameworks like Self-Refine, Debate, and CourtEval use generic flows, IMPACT's advantage lies in task-specific components like ACEA, score-locking, and CVG, showing that gains come from task structure rather than sheer agent count.
+- **vs ContraSciView**: ContraSciView models disagreement as isolated sentence-pair binary detection; this work handles full reviews and outputs evidence sets and intensity levels, better serving AC decision-making.
+- **vs General NLI**: NLI models excel at standard premise-hypothesis judgments, but peer reviews contain hedging, technical assumptions, and scale differences; IMPACT handles this pragmatic information via aspect conditioning and full-context reasoning.
+- **vs Generic Multi-Agent Frameworks**: Unlike Self-Refine or CourtEval's general flows, IMPACT’s gains come from task-specific structures like ACEA, score-locking, and intensity adjudication rather than just agent count.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐☆
-- Experimental Thoroughness: ⭐⭐⭐⭐☆
-- Writing Quality: ⭐⭐⭐⭐☆
-- Value: ⭐⭐⭐⭐☆
+- Novelty: ⭐⭐⭐⭐☆ The task definition and score-locking deliberation are highly innovative; the TIDE distillation is natural yet practical.
+- Experimental Thoroughness: ⭐⭐⭐⭐☆ Main experiments, ablations, and error analyses are comprehensive, though dataset scale and domain coverage are limited.
+- Writing Quality: ⭐⭐⭐⭐☆ Methodology is clear and metrics are well-defined; tables are dense but supportive of conclusions.
+- Value: ⭐⭐⭐⭐☆ Highly applicable to peer review assistance and long-form contradiction detection; provides a paradigm for compressing multi-agent teachers.
 
 <!-- RELATED:START -->
 
@@ -139,9 +146,9 @@ The authors conducted ablations on IMPACT and TIDE to verify the contributions o
 ## Related Papers
 
 - [\[ACL 2026\] A Layer-wise Analysis of Supervised Fine-Tuning](a_layer-wise_analysis_of_supervised_fine-tuning.md)
-- [\[CVPR 2026\] How to Choose Your Teacher for Fine Grained Image Recognition](../../CVPR2026/model_compression/how_to_choose_your_teacher_for_fine_grained_image_recognition.md)
 - [\[CVPR 2026\] DAGE: Dual-Stream Architecture for Efficient and Fine-Grained Geometry Estimation](../../CVPR2026/model_compression/dage_dual-stream_architecture_for_efficient_and_fine-grained_geometry_estimation.md)
 - [\[CVPR 2026\] DiT-Distill: Open-Set Fine-Grained Retrieval via Generative Curriculum Knowledge](../../CVPR2026/model_compression/dit-distill_open-set_fine-grained_retrieval_via_generative_curriculum_knowledge.md)
+- [\[ACL 2025\] BlockPruner: Fine-grained Pruning for Large Language Models](../../ACL2025/model_compression/blockpruner_fine-grained_pruning_for_large_language_models.md)
 - [\[ICLR 2026\] Paper Copilot: Tracking the Evolution of Peer Review in AI Conferences](../../ICLR2026/model_compression/paper_copilot_tracking_the_evolution_of_peer_review_in_ai_conferences.md)
 
 </div>

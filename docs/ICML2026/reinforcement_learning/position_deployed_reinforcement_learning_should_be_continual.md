@@ -2,13 +2,13 @@
 title: >-
   [Paper Note] Position: Deployed Reinforcement Learning should be Continual
 description: >-
-  [ICML 2026][Reinforcement Learning][train-then-fix] This position paper argues that any RL system that continues to receive evaluative reward signals after deployment in an environment exceeding the agent's representational/computational capacity is fundamentally a Continual Reinforcement Learning (CRL) problem. The authors advocate for abandoning the "train-then-fix" p
+  [ICML 2026][Reinforcement Learning][train-then-fix] This is a position paper: the authors argue that any RL system that still obtains evaluative reward signals after deployment and whose environmental complexity exceeds the agent's representation/computational capacity is essentially a Continual Reinforcement Learning (CRL) problem. It advocates for abandoning the "trai
 tags:
   - ICML 2026
   - Reinforcement Learning
   - train-then-fix
 date: 2026-05-08
-content_hash: 5e119808fa2e8e01
+content_hash: b45228e6b5e88ca4
 ---
 # Position: Deployed Reinforcement Learning should be Continual
 
@@ -16,97 +16,93 @@ content_hash: 5e119808fa2e8e01
 **arXiv**: [2606.04029](https://arxiv.org/abs/2606.04029)  
 **Code**: None (position paper)  
 **Area**: Reinforcement Learning / Continual Learning / Post-deployment Adaptation  
-**Keywords**: Continual Reinforcement Learning, Measurable Deployment, History Process, Non-stationarity, train-then-fix  
+**Keywords**: Continual RL, Measurable Deployment, History Process, Non-stationarity, Train-then-fix
 
 ## TL;DR
-This position paper argues that any RL system that continues to receive evaluative reward signals after deployment in an environment exceeding the agent's representational/computational capacity is fundamentally a Continual Reinforcement Learning (CRL) problem. The authors advocate for abandoning the "train-then-fix" paradigm in favor of agents that continuously update policies during deployment.
+This is a position paper: the authors argue that any RL system that still obtains evaluative reward signals after deployment and whose environmental complexity exceeds the agent's representation/computational capacity is essentially a Continual Reinforcement Learning (CRL) problem. It advocates for abandoning the "train-then-fix" paradigm in favor of allowing agents to continuously update policies during deployment.
 
 ## Background & Motivation
-**Background**: Landmark achievements in RL (TD-Gammon, AlphaGo, OpenAI Five, GT Sophy, stratospheric balloons, Tokamak control) almost exclusively follow the "train-then-fix" paradigm—extensive offline training followed by a frozen policy deployment. This convention stems from engineering stability needs and the mathematical tradition of "converging to $\pi^\star$" under MDP formalization.
+**Background**: Iconic RL achievements (TD-Gammon, AlphaGo, OpenAI Five, GT Sophy, stratus balloons, Tokamak control) almost all follow the train-then-fix paradigm—deploying a frozen policy after massive offline training. This convention stems from both engineering stability requirements and the mathematical tradition of "converging to $\pi^\star$" under MDP formalization.
 
-**Limitations of Prior Work**: Frozen policies cannot maintain performance in real-world deployments and rely on periodic retraining, resulting in a sawtooth performance curve (decay followed by manual retraining). Systems like Cursor Tab and Lyft process hundreds of millions of requests daily; fixed policies fail to keep pace with changes in user behavior, library versions, and market structures. Robotics sim-to-real also demonstrates that fixed policies fail when encountering wear, lighting changes, or sensor drift.
+**Limitations of Prior Work**: Frozen policies fail to maintain performance in real-world deployments and rely on periodic retraining, resulting in a sawtooth performance curve (decay followed by manual retraining). Systems like Cursor Tab and Lyft process hundreds of millions of requests daily; fixed policies cannot keep pace with changes in user behavior, library versions, or market structures. Sim-to-real transitions in robotics also demonstrate that fixed policies fail due to wear and tear, lighting changes, or sensor drift.
 
-**Key Challenge**: Traditional MDP formalization assumes environmental stationarity, state reachability, and the existence of a fixed point $\pi^\star$, modeling learning as a "one-time solution." However, the Big World Hypothesis suggests that real-world complexity far exceeds any agent's representational capacity, making the optimal policy neither expressible nor reachable. Furthermore, there are four sources of non-stationarity post-deployment: action-induced, dynamic drift, goal evolution, and emergent novelty. An agent constrained by the "solve-then-freeze" mindset is destined to continually lose performance to the environment.
+**Key Challenge**: Traditional MDP formalization assumes a stationary environment, state accessibility, and the existence of a fixed point $\pi^\star$, thereby modeling learning as a "one-time solution." However, the Big World Hypothesis points out that real-world complexity far exceeds any agent's representation capacity, making the optimal policy neither expressible nor reachable. Furthermore, there are four sources of non-stationarity post-deployment: action-induced non-stationarity, dynamic drift, goal evolution, and emergent novelty. An agent constrained by the "solve-then-freeze" mindset is destined to continuously yield performance to the environment.
 
-**Goal**: (1) Formally name the common scenario where evaluative feedback remains available after deployment as "measurable deployment"; (2) Use the history process formalization to prove it is essentially a CRL problem; (3) Provide action checklists for both practitioners and researchers.
+**Goal**: (1) Formally name the common scenario "measurable deployment" where evaluative feedback is still received post-deployment; (2) Use the history process formalization to argue that it is essentially a CRL problem; (3) Provide action lists for both practitioners and researchers.
 
-**Key Insight**: Building on the definition of CRL by Abel et al. (2023)—"problems where the best agent never stops learning"—and the history process formalization by Bowling et al., the necessity of continual learning is shifted from an algorithmic attribute to a problem attribute.
+**Key Insight**: Starting from the definition of CRL by Abel et al. (2023)—"the problem where the best agent never stops learning"—combined with the history process formalization proposed by Bowling et al., this paper reframes "whether continual learning is required" from an algorithmic attribute back to a problem property.
 
-**Core Idea**: When reward signals persist but the optimal policy is not within the reachable policy set, "stopping the search" is a suboptimal behavior. The optimal solution for measurable deployment is to treat deployment itself as a learning process.
+**Core Idea**: When reward signals persist while the optimal policy is not within the reachable policy set, "stopping the search" is a suboptimal behavior. The optimal solution for measurable deployment is to treat deployment itself as a learning process.
 
 ## Method
-As a position paper, no new algorithms are introduced. Instead, the paper provides a formal argument, three real-world deployment cases, and action checklists for two types of audiences.
+As a position paper, this work introduces no new algorithms but provides a set of formal arguments, three real-world deployment cases, and action lists for two categories of audiences.
 
 ### Overall Architecture
-The argument chain consists of four parts: (1) Reformulating RL using the history process to bypass MDP stationarity/resettability assumptions; (2) Listing four types of non-stationarity sources in measurable deployment to prove it is a CRL problem; (3) Mapping Cursor Tab, Lyft, and Sim-to-Real cases to different non-stationarity sources; (4) Introducing the dichotomy of continual learner vs. non-continual learner, reducing "continuality" to whether the learning rule $\sigma$ terminates the search in the policy set.
+The argument chain consists of four components: (1) Rewriting RL formalization using history processes to bypass MDP stationarity/reset assumptions; (2) Listing four sources of non-stationarity in measurable deployment to prove it is inherently a CRL problem; (3) Mapping three real-world cases (Cursor Tab, Lyft, Sim-to-Real) to different non-stationarity sources; (4) Introducing the dichotomy of continual vs. non-continual learners to reduce "continuality" to whether a learning rule $\sigma$ terminates the search within a policy set.
 
 ### Key Designs
 
-**1. Formal Definition of Measurable Deployment: Transforming "whether to continue learning" into a decidable condition**
+**1. Formal Definition of Measurable Deployment: Making "Should we continue learning" a Decidable Condition**
 
-The MDP framework carries the implication of a fixed point $\pi^\star$, inducing researchers into the "end after training" mindset. The authors utilize the history process to describe the environment: $e:\mathcal H\times\mathcal A\to\Delta(\mathcal O)$, where $\mathcal H=\bigcup_{n=0}^\infty(\mathcal A\times\mathcal O)^n$ represents all finite histories. The agent is defined by a policy $\pi:\mathcal S\to\Delta(\mathcal A)$ and a learning rule $\sigma:\mathcal H\to\Delta(\Pi)$. This framework does not assume countability, Markov properties, or state revisitability, making it more suitable for real deployment. A deployment is defined as measurable if and only if: (i) It exists in the big world regime, where $\pi^\star$ is outside the reachable policy set $\Pi$ or computationally unreachable; (ii) Evaluative rewards continue to be received post-deployment. If both are met, the best agent cannot stop searching, and the problem is categorized as CRL.
+MDP language carries the implication of the existence of a fixed point $\pi^\star$, inducing researchers into a "train-then-finish" mindset. The authors instead use history processes to describe the environment—$e:\mathcal H\times\mathcal A\to\Delta(\mathcal O)$, where $\mathcal H=\bigcup_{n=0}^\infty(\mathcal A\times\mathcal O)^n$ represents all finite histories. An agent is defined by a policy $\pi:\mathcal S\to\Delta(\mathcal A)$ plus a learning rule $\sigma:\mathcal H\to\Delta(\Pi)$. This language makes no assumptions about resets, Markov properties, or state reachability, making it a better fit for real deployment. A deployment is defined as measurable if and only if: (i) it operates in the big world regime, where the optimal policy $\pi^\star$ is outside the reachable policy set $\Pi$ or is computationally unreachable; (ii) evaluative rewards continue to be received after deployment. Once both conditions are met, the best agent cannot terminate its search, and the problem necessarily falls under CRL.
 
-**2. Four Sources of Post-deployment Non-stationarity: Decomposing "why CRL is necessary" into four dimensions**
+**2. Four Sources of Post-deployment Non-stationarity: Decomposing "Why CRL is Mandatory" into Four Verifiable Dimensions**
 
-The paper identifies four identifiable sources of non-stationarity: (i) Action-induced—the agent’s actions change the future history distribution (e.g., recommendation systems reshaping user preferences), closely related to performative prediction; (ii) Dynamic environmental changes—external factors like seasons, hardware aging, and regulations; (iii) Goal evolution—per the reward hypothesis, goals may change or weights in multi-objective scenarios may drift; (iv) Emergent novelty—the Big World Hypothesis ensures a finite agent will encounter unseen action-observation sequences.
+The authors decompose non-stationarity into four identifiable sources: (i) Action-induced—the agent's own actions change the future history distribution (e.g., recommendation systems reshaping user preferences), closely related to performative prediction; (ii) Dynamic environmental changes—external factors like seasonality, hardware aging, or market structures; (iii) Goal evolution—according to the reward hypothesis, the goal itself may change, or weights in multi-objective scenarios may drift; (iv) Emergent novelty—the Big World Hypothesis ensures a finite-capacity agent will encounter action-observation sequences never seen during training. Through cases like Cursor Tab, Lyft, and Sim-to-Real, these sources are identified as Primary, Present, or Implicit.
 
-**3. Continual vs. Non-Continual Learner Dichotomy: Reducing "continuality" to the learning rule**
+**3. Continual vs. Non-Continual Learner Dichotomy: Reducing "Continuality" to the Learning Rule**
 
-The authors clarify that catastrophic forgetting or plasticity loss are side effects of algorithms in CRL, not defining characteristics of the problem. Learning is viewed as a search over the policy set $\Pi$: an agent either stops searching at some history (non-continual learner) or never terminates (continual learner). For example, a small network with SGD is non-continual if the step-size anneals to zero, but becomes continual if meta-gradients (like IDBD) keep the step-size non-zero. CRL is thus defined as a problem where the best agent cannot terminate the search.
-
-### Mechanism
-The paper uses three real-world deployment cases (Cursor Tab, Lyft dispatch, Sim-to-Real robotics) as existence proofs: in successful industrial CRL systems, every category of non-stationarity exists as a primary driver, and continual learning provides quantitative gains. The "Rusting Pendulum" experiment further proves that while "train-then-fix" fails as friction accumulates, a continual learner maintains performance.
+Author points out that many mistake catastrophic forgetting or plasticity loss for the defining features of CRL, but those are algorithmic side effects. From a history process perspective, learning is a search over a policy set $\Pi$. An agent either stops searching at some history and locks a policy (non-continual learner) or never terminates the search (continual learner). A minimal example is provided: a small network with 64 parameters using SGD. If the step-size anneals to 0, it is non-continual; if using meta-gradients like IDBD to prevent the step-size from reaching zero, it is continual. CRL is thus defined as "a problem where the best agent cannot terminate the search."
 
 ## Key Experimental Results
 
 ### Case Comparison Table
-The paper aligns three deployment systems against the four sources of non-stationarity:
+The paper uses a table to align three real-world deployment systems with the four non-stationarity sources:
 
 | Source of Non-stationarity | Cursor Tab | Lyft | Sim-to-Real |
 |----------|------------|------|-------------|
 | Action-induced NS | Implicit | **Primary** | Implicit |
-| Environmental Dynamics | Implicit | Present | **Primary** |
+| Environmental Dynamic Changes | Implicit | Present | **Primary** |
 | Goal Evolution | Present | Implicit | Implicit |
 | Emergent Novelty | **Primary** | Present | Present |
 
-*Primary* indicates a dominant driver, *Present* indicates significant presence, and *Implicit* indicates presence without being a focus.
+*Primary* indicates the dominant driver, *Present* indicates clear existence, and *Implicit* indicates existence without prominence.
 
 ### Industrial Deployment Gains
 
 | System | Quantitative Gain | Continual Learning Cadence |
 |------|----------|--------------|
-| Cursor Tab | 400M daily requests; Suggestions −21%, Acceptance +28% | Policy updates every 1.5–2 hours |
-| Lyft Matching | Millions of extra completed rides/year, +$30M revenue | Online RL + switchback verification |
-| Rusting Pendulum | Fixed policy decays with friction; CRL agent maintains performance | Experimental toy environment |
+| Cursor Tab | 400M daily requests; suggestions −21%, acceptance rate +28% | Policy updates every 1.5–2 hours |
+| Lyft Matching | Millions of extra completed trips annually, +$30M revenue | Online RL + switchback safety verification |
+| Rusting Pendulum | Train-then-fix degrades with friction accumulation; continual learner maintains performance | Experimental toy environment |
 
 ### Key Findings
-- All three industrial systems use evaluative rewards (acceptance rate, completion rate, performance metrics) for online updates; the paper emphasizes that such signals often already exist but are underutilized.
-- Cursor Tab's choice of policy gradient forces an on-policy, 1.5–2 hour iteration cycle, showing how solution-level constraints shape engineering.
-- Safety is addressed via multi-layer protection: pre-deployment validation, continuous online validation (switchback), and fallback policies.
+- All three industrial systems rely on evaluative rewards (acceptance rates, trip completion rates) for online updates; the paper emphasizes that this signal often already exists in deployments but is frequently discarded.
+- Cursor Tab's choice of policy gradient forces on-policy updates and a 1.5–2 hour iteration cycle, demonstrating how solution-level constraints shape engineering practices.
+- Lyft engineers maintain safety through switchback experiments; the paper recommends a three-layer assurance: pre-deployment verification + continuous online verification + fallback policies.
 
 ## Highlights & Insights
-- **Repurposing Deployment as a Learning Process**: Traditional MLOps views deployment as the end of training; this paper flips it—the deployed model is the learning system, and production data is the training data.
-- **Engineering Significance of History Processes**: Moving to history processes exposes hidden assumptions like "resettability," which are almost always violated in real-world deployments.
-- **Problem vs. Solution Distinction**: Catastrophic forgetting is an algorithmic challenge, while non-stationarity is a problem feature. Solving forgetting does not equate to solving the CRL problem.
-- **Transferable Tricks**: Using "controlled non-stationarity" (perturbing rewards or shifting observations) as a standard dev practice for stress-testing adaptation.
+- **Defining deployment as a learning process**: Traditional MLOps views deployment as the "end of training and start of service." This paper flips it: "the deployed model is a learning system, and production data is training data."
+- **Engineering significance of history processes**: Shifting from MDPs to history processes exposes default engineering assumptions (like resetability) that are almost always violated in real-world deployments.
+- **Problem vs. Solution distinction**: By categorizing catastrophic forgetting as an algorithmic challenge and non-stationarity as a problem feature, it prevents the community from equating "solving forgetting" with "solving CRL."
+- **Transferable Trick**: Using controlled non-stationarity (perturbed rewards, shifted observations) to stress-test system adaptability is recommended as a standard development practice for CRL.
 
 ## Limitations & Future Work
-- The scope is limited to measurable deployment; scenarios with sparse, delayed, or unobservable rewards (e.g., home vacuum quality) are not covered.
-- The "Rusting Pendulum" is a simplified demo, and industrial cases are retrospective; there is a lack of controlled benchmarks like a "big-world simulator."
-- Regarding safety, the authors argue "adaptation is safer than stagnation" but offer directions (Shielded RL, Cautious agents) rather than deployment-ready solutions.
-- Potential issues like Reward Hacking or the Goodhart effect in continual deployment were not discussed in detail.
+- The scope of "measurable deployment" is narrow; scenarios with sparse, delayed, noisy, or unobservable rewards (e.g., a home Roomba unable to judge cleaning quality) are not covered.
+- The "Rusting Pendulum" is a minimal demo, and industrial cases are retrospective; there is a lack of controlled comparisons to quantify the gap between "continual vs. fixed" in academic benchmarks.
+- Regarding safety, the authors argue "adaptation is safer than stagnation," but provide only directions (shielded RL, constrained MDPs) rather than deployment-ready formal safety verification solutions.
+- The paper does not discuss in detail how reward hacking or the Goodhart effect might worsen under continuous deployment.
 
 ## Related Work & Insights
-- **vs. Abel et al. (2023)**: This paper applies Abel's formal definition to industrial deployment and introduces "measurable deployment" to engage the existing RL community.
-- **vs. Big World Hypothesis (Javed & Sutton 2024)**: BWH provides the existential proof that CRL is necessary because agent capacity is always less than world complexity.
-- **vs. Khetarpal et al. (2022)**: While surveys focus on algorithmic challenges, this paper refocuses on problem settings.
-- **vs. Alberta Plan (Sutton et al. 2022)**: Complementary to the long-term Alberta Plan, this paper serves as a short-term deployment manual.
+- **vs. Abel et al. (2023)**: While Abel provided a formal definition of CRL, this paper applies it to industrial deployment and introduces "measurable deployment" to engage the research community with existing RL systems.
+- **vs. Big World Hypothesis (Javed & Sutton 2024)**: BWH argues agent capacity is always less than world complexity; this paper uses that as an existential argument for why measurable deployment must be CRL.
+- **vs. Alberta Plan (Sutton et al. 2022)**: While the Alberta Plan is a long-term research roadmap, this paper acts as a short-term deployment manual.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ (Strong synthesis of measurable deployment and non-stationarity sources).
-- Experimental Thoroughness: ⭐⭐⭐ (Primary focus on industrial cases and toy demos; lacks controlled comparisons).
-- Writing Quality: ⭐⭐⭐⭐⭐ (Clear logic, good mix of theory and case studies).
-- Value: ⭐⭐⭐⭐⭐ (Provides a clear direction and actionable checklist for RL deployment).
+- Novelty: ⭐⭐⭐⭐ Strong concept synthesis (measurable deployment + 4 NS sources), though the underlying definition builds on Abel et al.
+- Experimental Thoroughness: ⭐⭐⭐ Primarily relies on industrial cases and toy demos; lacks controlled comparative experiments.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear argument chain with a good balance between theory and case studies.
+- Value: ⭐⭐⭐⭐⭐ Provides a clear direction for the RL deployment community with actionable practical advice.
 
 <!-- RELATED:START -->
 

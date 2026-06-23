@@ -2,128 +2,129 @@
 title: >-
   [Paper Note] Do Audio LLMs Listen or Read? Analyzing and Mitigating Paralinguistic Failures with VoxParadox
 description: >-
-  [ICML 2026][Audio & Speech][Audio LLM] The authors construct VoxParadox, a 2000-question MCQ benchmark where textual content intentionally conflicts with acoustic signals, proving that current Audio LLMs almost exclusively "read rather than listen" for paralinguistic tasks. By employing PCLM (a lightweight module for prompt-conditioned adaptive mixing of en
+  [ICML 2026][Audio & Speech][Audio LLM] The authors construct VoxParadox, a benchmark of 2,000 Multiple Choice Questions (MCQs) designed with intentional contradictions between "what the text says" and "what the audio sounds like." They demonstrate that current Audio LLMs almost exclusively "read but do not listen" in paralinguistic tasks. By introducing PCL
 tags:
   - ICML 2026
   - Audio & Speech
   - Audio LLM
   - DPO
 date: 2026-05-08
-content_hash: f0b509a5ca875455
+content_hash: b84369bfd5a80813
 ---
 # Do Audio LLMs Listen or Read? Analyzing and Mitigating Paralinguistic Failures with VoxParadox
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.27772](https://arxiv.org/abs/2605.27772)  
 **Code**: https://voxparadox.github.io/ (Project Homepage)  
-**Area**: Audio & Speech / Audio LLM / Paralinguistics  
-**Keywords**: Audio LLM, Paralinguistics, Adversarial Benchmark, Inter-layer mixing, DPO
+**Area**: Audio & Speech / Audio LLM / Paralinguistic Understanding  
+**Keywords**: Audio LLM, Paralinguistics, Adversarial Benchmark, Layer-wise Mixing, DPO
 
 ## TL;DR
-The authors construct VoxParadox, a 2000-question MCQ benchmark where textual content intentionally conflicts with acoustic signals, proving that current Audio LLMs almost exclusively "read rather than listen" for paralinguistic tasks. By employing PCLM (a lightweight module for prompt-conditioned adaptive mixing of encoder intermediate layers) and DPO (Preference Optimization), the performance of Audio Flamingo 3 on VoxParadox is improved from 17.40% to 65.20%.
+The authors construct VoxParadox, a benchmark of 2,000 Multiple Choice Questions (MCQs) designed with intentional contradictions between "what the text says" and "what the audio sounds like." They demonstrate that current Audio LLMs almost exclusively "read but do not listen" in paralinguistic tasks. By introducing PCLM, a lightweight module that adaptively mixes intermediate audio encoder features based on the prompt, combined with DPO, they improve Audio Flamingo 3's performance on VoxParadox from 17.40% to 65.20%.
 
 ## Background & Motivation
 
-**Background**: Audio LLMs, represented by Qwen2-Audio, SALMONN, Audio Flamingo 3, and Kimi-Audio, connect speech encoders (mostly from the Whisper family) to powerful LLMs, achieving competent instruction following and conversational speech understanding. However, their "paralinguistic" capabilities—extracting information such as emotion, age, gender, pitch, speaking rate, tone, and speaker identity from *how* and *who* is speaking—have not been rigorously evaluated.
+**Background**: Audio LLMs such as Qwen2-Audio, SALMONN, Audio Flamingo 3, and Kimi-Audio connect audio encoders (mostly from the Whisper family) to powerful LLMs, achieving impressive instruction following and conversational speech understanding. However, the "paralinguistic" capabilities of these models—extracting information such as emotion, age, gender, pitch, speed, tone, and speaker identity from "how things are said" and "who is speaking"—have not been rigorously evaluated.
 
-**Limitations of Prior Work**: Existing general audio benchmarks like MMAU, MMAU-Pro, MMSU, and MMAR either emphasize broad audio understanding or conflate linguistic and acoustic cues. Although MMSU includes a paralinguistic subset, it fails to explicitly decouple "textually implied answers" from "true acoustic answers." Consequently, models can achieve high scores simply by guessing based on ASR literal semantics without truly "listening."
+**Limitations of Prior Work**: General audio benchmarks like MMAU, MMAU-Pro, MMSU, and MMAR either emphasize broad audio understanding or conflate linguistic cues with acoustic cues. Although MMSU includes a paralinguistic subset, it does not explicitly decouple "linguistically suggested answers" from "acoustic ground truth." Consequently, models can achieve high scores by simply guessing based on the literal meaning of the ASR (Automatic Speech Recognition) transcript without truly "listening."
 
-**Key Challenge**: The training paradigm of Audio LLMs (ASR-centric + text alignment) naturally favors literal semantics, whereas paralinguistic signals require the model to actively abandon semantic shortcuts and focus on acoustic textures. A modality imbalance exists between the two, yet tools to directly quantify this imbalance are lacking.
+**Key Challenge**: The training paradigms of Audio LLMs (ASR-centric + text alignment) naturally favor literal semantics. Paralinguistic signals require models to actively abandon semantic shortcuts to focus on acoustic textures. This creates a modality imbalance, yet tools to directly quantify this imbalance are lacking.
 
-**Goal**: (1) Create a benchmark capable of forcing a gap between "listening vs. reading"; (2) determine whether paralinguistic information is lost in deep encoder layers, the projection layer, or if the LLM simply ignores it; (3) provide a fix that works without retraining the entire Audio LLM.
+**Goal**: (1) Create a benchmark capable of exposing the "listening vs. reading" gap; (2) Determine whether paralinguistic information is lost in the deep layers of the encoder, the projection layer, or if the LLM simply fails to utilize it; (3) Propose a mitigation strategy that is effective without retraining the entire Audio LLM.
 
-**Key Insight**: Borrowing the idea of using contradictory captions to expose modality shortcuts in Vision-Language models (Shekhar 2017, GVQA), the authors construct samples with systematic conflicts between "what is spoken" and "what the text says"—e.g., an elderly person saying "I am a child," or multiple people saying "only one person is speaking." If the model selects the textually implied incorrect option, it proves the model is not listening.
+**Key Insight**: Drawing inspiration from the use of contradictory captions to expose modality shortcuts in Vision-Language Models (Shekhar 2017, GVQA), the authors construct samples with systematic contradictions between the audio and the text—e.g., an elderly person saying "I am a child," or multiple people saying "Only one person is speaking." If a model selects the incorrect option suggested by the text, it proves it is not listening.
 
-**Core Idea**: First, use the adversarial benchmark to locate the pathology in two complementary bottlenecks: "feature loss" and "insufficient utilization." Then, use Prompt-Conditioned Layer Mixing (PCLM) to recover features and DPO to improve utilization.
+**Core Idea**: The authors first use the adversarial benchmark to localize the failure to two complementary bottlenecks: "feature loss" and "insufficient utilization." They then address feature loss using Prompt-Conditioned Layer Mixing (PCLM) and utilization using DPO.
 
 ## Method
 
 ### Overall Architecture
 
-The workflow forms a "diagnosis–localization–treatment" closed loop. The diagnosis phase creates VoxParadox, an adversarial benchmark where text and voice conflict, evaluating existing Audio LLMs and using layer-wise probing to locate the pathology in two complementary bottlenecks: paralinguistic features being discarded in deep encoder layers and the LLM's reluctance to use features even when present. The treatment phase, which leaves the audio encoder and LLM backbone weights untouched, inserts a PCLM module at the interface to adaptively select layers based on the prompt, followed by a round of DPO to train "following the voice" as a preference.
+The work follows a "Diagnosis—Localization—Treatment" closed loop. In the diagnosis phase, the VoxParadox adversarial benchmark is created to pit text against audio. Existing Audio LLMs are evaluated, and layer-wise probing is used to localize the issues to two bottlenecks: the loss of paralinguistic features in deep encoder layers and the LLM's failure to utilize available features. For the treatment, the audio encoder and LLM backbone weights are frozen. A PCLM module is inserted at the interface to adaptively select layers based on the prompt to recover features, followed by a round of DPO to train "following the audio" as a preference to improve utilization.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["VoxParadox<br/>2000 Language–Acoustic Conflict MCQs"] --> B["Evaluation of Existing Audio LLMs<br/>Low Acc_GT / High ALA"]
-    B --> C["Layer-wise Probing<br/>Locating Two Complementary Bottlenecks"]
-    C -->|Bottleneck ① Feature Loss| D["PCLM<br/>Adaptive Mixing of Encoder Layers via Prompt"]
-    C -->|Bottleneck ② Low Utilization| E["DPO Acoustic Preference Alignment<br/>Acoustic Answer > Textual Hint"]
+    A["VoxParadox<br/>2000 Language–Acoustic Contradictory MCQs"] --> B["Existing Audio LLM Evaluation<br/>Low Acc_GT / High ALA"]
+    B --> C["Layer-wise Probing<br/>Localizing Two Complementary Bottlenecks"]
+    C -->|Bottleneck ①: Feature Loss| D["PCLM<br/>Prompt-adaptive Mixing of Encoder Intermediate Layers"]
+    C -->|Bottleneck ②: Insufficient Utilization| E["DPO Acoustic Preference Alignment<br/>Acoustic Truth > Linguistic Suggestion"]
     D --> F["Enhanced Audio LLM<br/>17.40% → 65.20%"]
     E --> F
 ```
 
 ### Key Designs
 
-**1. VoxParadox: Forcing the Listen vs. Read Gap via Language–Acoustic Conflict**
+**1. VoxParadox: Forcing the "Listen vs. Read" Gap through Linguistic-Acoustic Contradictions**
 
-The core pain point of previous benchmarks like MMSU and CP-Bench is the coupling of linguistic and acoustic cues. VoxParadox solves this by fixing the textual statement attribute $y_{\text{adv}}$ and the true acoustic attribute $y_{\text{true}}$ to be systematically opposite (e.g., an old man says "I am a child"). Both $y_{\text{true}}$ and $y_{\text{adv}}$ appear in the options—thus, "answering correctly" necessitates reliance on non-linguistic acoustic evidence, blocking modality shortcuts. On the text side, GPT-4o generates scripts asserting $y_{\text{adv}}$; on the acoustic side, deterministic mechanisms anchor $y_{\text{true}}$ (e.g., metadata for age/gender, signal processing for pitch/rate). Quality control uses Whisper large-v3 to ensure WER = 0 and SpeechBrain for emotion filtering. Evaluation uses two metrics: $\mathrm{Acc}_{\mathrm{GT}} = \frac{1}{N}\sum_i \mathbb{I}[\hat{y}_i = y_{\text{true}}^{(i)}]$ measures "correct listening," and $\mathrm{ALA} = \frac{1}{N}\sum_i \mathbb{I}[\hat{y}_i = y_{\text{adv}}^{(i)}]$ (Adversarial Language Alignment) measures how much the model follows textual hints.
+In previous benchmarks like MMSU and CP-Bench, linguistic and acoustic cues are coupled, allowing models to score by following ASR transcripts. VoxParadox breaks this by making the textual attribute $y_{\text{adv}}$ and the acoustic attribute $y_{\text{true}}$ systematically contradictory (e.g., an old man saying "I am a child"). Both $y_{\text{true}}$ and $y_{\text{adv}}$ are present in the options, so a correct answer necessitates relying on non-linguistic acoustic evidence, blocking modality shortcuts. The construction is controllable on both sides: GPT-4o generates scripts that assert $y_{\text{adv}}$ while excluding $y_{\text{true}}$; deterministic mechanisms anchor $y_{\text{true}}$ (e.g., fixed metadata for age/gender, signal processing for low-level attributes, SSML for pitch, and concatenation for speaker identity). Quality control includes Whisper large-v3 to ensure WER = 0 for transcripts, SpeechBrain Wav2Vec2 for emotion filtering, and 10% human spot-checking, resulting in 2,000 verified MCQs across 10 tasks. Two metrics are used: $\mathrm{Acc}_{\mathrm{GT}} = \frac{1}{N}\sum_i \mathbb{I}[\hat{y}_i = y_{\text{true}}^{(i)}]$ (how often it listens correctly) and $\mathrm{ALA} = \frac{1}{N}\sum_i \mathbb{I}[\hat{y}_i = y_{\text{adv}}^{(i)}]$ (how often it is misled by text).
 
-**2. PCLM: Prompt-Conditioned Layer Mixing for "Feature Loss"**
+**2. PCLM: Mitigating "Feature Loss" via Prompt-Conditioned Layer Mixing**
 
-Layer-wise probing reveals that paralinguistic cues are strongest in middle layers of ASR-pretrained encoders and are suppressed in deeper layers, while standard architectures only pass the final layer to the LLM. PCLM replaces this interface: it calculates weights $\alpha_\ell(\text{prompt})$ conditioned on the prompt embedding for each encoder layer output $h^{(\ell)}$, then feeds the weighted sum $\tilde{h} = \sum_\ell \alpha_\ell(\text{prompt}) \cdot h^{(\ell)}$ to the LLM. Prompt conditioning allows the module to route layers based on the question (e.g., emotion vs. age), which is more efficient than multi-encoder mixing.
+Probing reveals that paralinguistic cues are strongest in the middle layers of ASR-pretrained encoders and are suppressed in deeper layers, while standard architectures typically only feed the final layer to the LLM. PCLM replaces this interface by calculating a weight $\alpha_\ell(\text{prompt})$ for each layer $h^{(\ell)}$ conditioned on the prompt embedding, then computing $\tilde{h} = \sum_\ell \alpha_\ell(\text{prompt}) \cdot h^{(\ell)}$. Conditioning on the prompt is crucial because tasks like emotion vs. age recognition require different layers. This allows the model to route specific layers based on the question, making it more efficient and tailored than previous multi-encoder or input-only dependent methods.
 
-**3. DPO Acoustic Preference Alignment for "Utilization Gap"**
+**3. DPO Acoustic Preference Alignment: Filling the "Utilization Gap"**
 
-The second bottleneck is that LLMs systematically ignore acoustic cues even when they exist in tokens (utilization gap). Standard SFT loss rarely penalizes the "literal-first" shortcut. DPO is used here by setting the "acoustically grounded correct answer" as the chosen $y_w$ and the "textually implied incorrect answer" as the rejected $y_l$. Optimizing $\log \pi(y_w \mid x) - \log \pi(y_l \mid x)$ explicitly rewards following the audio when text and audio conflict.
+The second bottleneck is the "utilization gap": even when acoustic cues are available in the tokens, LLMs systematically ignore them. Standard SFT token-level loss rarely penalizes the "text-first" shortcut. This work uses DPO, treating the acoustically-grounded correct answer as the chosen $y_w$ and the linguistically-suggested incorrect answer as the rejected $y_l$. By optimizing $\log \pi(y_w \mid x) - \log \pi(y_l \mid x)$, the model is explicitly rewarded for favoring the audio when it conflicts with the text. VoxParadox samples naturally provide these $(y_{\text{true}}, y_{\text{adv}})$ pairs, serving as both evaluation data and alignment signals.
 
 ### Loss & Training
 
-A two-stage training process is used, freezing the audio encoder and LLM backbone: (1) SFT on general paralinguistic data to update the PCLM module, and (2) DPO on paired "acoustically grounded vs. language-implied" data to align preferences.
+A two-stage training strategy is employed with the audio encoder and LLM backbone frozen. First, the PCLM module is updated via SFT on conventional paralinguistic data to develop layer-selection capabilities. Second, DPO is performed on paired "acoustically grounded vs. language-implied" data to align preferences, making the LLM more inclined to use the selected acoustic features.
 
 ## Key Experimental Results
 
 ### Main Results
 
-VoxParadox covers 10 tasks including age, gender, emotion, pitch, volume, rate, tone, speaker count, recognition, and signal comparison.
+VoxParadox covers 10 tasks including age, gender, emotion, pitch, volume, speed, tone, speaker counting, speaker identification, and signal comparison. Baselines include Qwen2-Audio, SALMONN, Audio Flamingo 3, and Kimi-Audio.
 
-| Model | VoxParadox Avg | MMSU Paralinguistics | Remarks |
-|------|---------------|---------------|------|
+| Model | VoxParadox Avg | MMSU Paralinguistic Subset | Notes |
+| :--- | :--- | :--- | :--- |
 | Audio Flamingo 3 (Original) | 17.40% | 37.74% | Strong baseline, yet near random |
-| Standard Audio LLMs | Generally Low | Medium | ALA significantly higher than $\mathrm{Acc}_{\mathrm{GT}}$ |
-| Audio Flamingo 3 + PCLM + DPO (Ours) | **65.20%** | **54.78%** | **Gain**: +47.80 on VoxParadox |
+| Representative Audio LLMs | Generally Low | Median | ALA significantly higher than $\mathrm{Acc}_{\mathrm{GT}}$ |
+| Audio Flamingo 3 + PCLM + DPO (**Ours**) | **65.20%** | **54.78%** | +47.80 Gain on VoxParadox, +17.04 on MMSU |
 
 ### Ablation Study
 
-| Configuration | VoxParadox Avg | Explanation |
-|------|---------------|------|
-| Base Audio Flamingo 3 | 17.40% | Final layer only + No preference alignment |
-| + PCLM only | Moderate improvement | Fixes "feature loss," benefits pitch/tone |
-| + DPO only | Partial improvement | Fixes "utilization," but limited by feature quality |
-| Full: PCLM + DPO | 65.20% | Both bottlenecks must be addressed |
+| Configuration | VoxParadox Avg | Description |
+| :--- | :--- | :--- |
+| Base Audio Flamingo 3 | 17.40% | Last layer only + no preference alignment |
+| + PCLM only | Moderate Gain | Fixes "feature loss," benefits emotion, pitch, tone |
+| + DPO only | Partial Gain | Fixes "utilization gap," but limited without good features |
+| Full: PCLM + DPO | **65.20%** | Both bottlenecks addressed |
 
 ### Key Findings
 
-- **Audio LLMs "read" rather than "listen"**: Modern Audio LLMs exhibit low GT accuracy and high ALA on VoxParadox, proving a systematic bias toward transcription text.
-- **Two complementary bottlenecks**: (i) Paralinguistic information degrades in deep layers and the encoder-LLM interface; (ii) LLMs often ignore these cues even when present (utilization gap).
-- **PCLM and DPO are synergistic**: PCLM ensures features are sent to the LLM, whereas DPO ensures the LLM uses them.
+- **Audio LLMs "Read" Rather Than "Listen"**: All evaluated models showed low GT accuracy and high ALA on VoxParadox, proving a systematic bias toward following text transcripts over acoustic evidence.
+- **Two Complementary Bottlenecks**: Probing indicates that paralinguistic info degrades in deep encoder layers and the projector, and even when present, LLMs often ignore it (a phenomenon similar to "hidden in plain sight" in VLMs).
+- **PCLM and DPO are Synergistic**: PCLM addresses the presence of information ("is it there?"), while DPO addresses its usage ("will the model use it?"). Both are required to reach 65.20%.
 
 ## Highlights & Insights
 
-- **Dual Use of Adversarial Benchmarks**: VoxParadox is both an evaluation tool and a source of paired preference data for DPO.
-- **Quantifiable "Read vs. Listen"**: Modality shortcuts are quantified via the ALA metric, turning an intuition into a measurable scalar.
-- **Lightweight Intervention**: Drastic improvements are achieved without retraining the encoder or LLM from scratch.
-- **Transferable Diagnostic Template**: The process of separating "information loss" from "utilization gaps" can be applied to any encoder+LLM multimodal architecture.
+- **Dual Use of Adversarial Benchmarks**: VoxParadox is not just an evaluation tool; its $(y_{\text{true}}, y_{\text{adv}})$ structure serves as preference data for DPO, creating a clean "diagnosis and treatment" loop.
+- **Quantifiable Definition of "Reading vs. Listening"**: Using $\mathrm{ALA}$ as a single scalar to quantify modality shortcuts makes linguistic bias measurable and optimizable, a framework applicable to other multimodal systems like Video or 3D LLMs.
+- **Lightweight Intervention**: Improving paralinguistic performance does not require retraining a new encoder from scratch, making it engineering-friendly.
+- **Transferable Diagnostic Template**: The approach of using layer-wise probing to separate "information loss" from "utilization gaps" can be applied to any "encoder + LLM" multimodal architecture.
 
 ## Limitations & Future Work
 
-- **TTS Synthesis Realism**: Samples are TTS-generated; performance on real-world, noisy, or accented speech remains to be verified.
-- **Task Imbalance**: Continuous attributes like emotion are harder to control than discrete ones.
-- **"Listening" vs. "Understanding"**: Success is defined by selecting $y_{\text{true}}$, but the downstream value of paralinguistics lies in conversational decisions, which were not evaluated.
-- **PCLM Robustness**: Whether prompt-conditioned weights overfit specific prompt styles requires further testing.
+- **Authenticity of TTS Synthesis**: All 2,000 samples are TTS-synthesized. While verified, there remains a distribution gap with real human voices, noisy environments, and diverse accents.
+- **Task Imbalance**: Continuous attributes like emotion and tone are less controllable than discrete ones; the reliance on emotion referees suggests that the adversarial paradigm is harder to scale across all dimensions.
+- **"Listening" vs. "Understanding"**: Success is defined as selecting $y_{\text{true}}$, but the real value of paralinguistics lies in downstream decisions (e.g., empathetic responses). Evaluating these models in conversational tasks is a natural next step.
+- **Prompt Condition Robustness**: Whether the learned layer weights generalize to different prompt styles or languages remains to be tested in robustness experiments.
 
 ## Related Work & Insights
 
-- **vs. LISTEN (Chen 2025)**: LISTEN probes emotion via decoupled samples; VoxParadox scales "contradiction by design" to 10 tasks and adds a treatment method.
-- **vs. MMSU / MMAU / MMAR**: These are wide-breadth benchmarks; VoxParadox is a narrow, deep stress test isolating paralinguistics.
-- **vs. PaM (Shan 2025)**: PaM mixes multiple encoders; PCLM mixes layers within a single encoder, which is more cost-effective and aligned with layer-wise feature distribution findings.
-- **vsV. VARAN (Diatlova 2025)**: PCLM adds prompt conditioning to layer aggregation, making it task-sensitive.
+- **vs. LISTEN (Chen 2025)**: LISTEN uses decorrelated pairs for emotion recognition; VoxParadox scales "contradiction by design" to 10 tasks and provides a mitigation strategy.
+- **vs. MMSU / MMAU / MMAU-Pro / MMAR**: These are general benchmarks; VoxParadox is a targeted stress test for isolating paralinguistics.
+- **vs. PaM (Shan 2025)**: PaM blends multiple encoders; PCLM blends layers within a single encoder, which is more cost-effective and aligns with empirical findings on feature distribution.
+- **vs. DPO in TTS (Liu 2025)**: While others use DPO for expressive generation, this work applies it to the understanding side to favor acoustic evidence.
+- **Cross-modal Inspiration**: The "language-implied vs. visually-grounded" contradiction logic can be directly ported to VLM evaluation and alignment.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Systematically migrates "contradiction" to audio paralinguistics and reuses the benchmark for DPO.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covers multiple models, probing, and human verification.
-- Writing Quality: ⭐⭐⭐⭐ Clear narrative arc from diagnosis to treatment.
-- Value: ⭐⭐⭐⭐⭐ Provides both a metric for modality bias and a practical, high-gain fix.
+- Novelty: ⭐⭐⭐⭐ Systematically migrates the "contradiction" concept from VLM to audio and reuses the benchmark for DPO.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers multiple LLMs with detailed probing, main experiments, and ablation studies.
+- Writing Quality: ⭐⭐⭐⭐ Clear narrative flow from diagnosis to treatment.
+- Value: ⭐⭐⭐⭐⭐ Provides both a metric for modality bias and a practical, high-gain mitigation method.
 
 <!-- RELATED:START -->
 
@@ -134,8 +135,8 @@ VoxParadox covers 10 tasks including age, gender, emotion, pitch, volume, rate, 
 - [\[ACL 2025\] Analyzing and Mitigating Inconsistency in Discrete Audio Tokens for Neural Codec Language Models](../../ACL2025/audio_speech/audio_token_consistency.md)
 - [\[ICML 2026\] Probing Cross-modal Information Hubs in Audio-Visual LLMs](probing_cross-modal_information_hubs_in_audio-visual_llms.md)
 - [\[AAAI 2026\] Do LLMs Feel? Teaching Emotion Recognition with Prompts, Retrieval, and Curriculum Learning](../../AAAI2026/audio_speech/do_llms_feel_teaching_emotion_recognition_with_prompts_retrieval_and_curriculum_.md)
+- [\[ICML 2026\] Focus Then Listen: An Empirical Study of Plug-and-Play Audio Enhancer for Noise-Robust Large Audio Language Models](focus_then_listen_an_empirical_study_of_plug-and-play_audio_enhancer_for_noise-r.md)
 - [\[ACL 2026\] Protecting Bystander Privacy via Selective Hearing in Audio LLMs](../../ACL2026/audio_speech/protecting_bystander_privacy_via_selective_hearing_in_audio_llms.md)
-- [\[ACL 2026\] Omni-Embed-Audio: Leveraging Multimodal LLMs for Robust Audio-Text Retrieval](../../ACL2026/audio_speech/omni-embed-audio_leveraging_multimodal_llms_for_robust_audio-text_retrieval.md)
 
 </div>
 

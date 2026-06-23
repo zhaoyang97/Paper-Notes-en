@@ -59,7 +59,7 @@ item_total: 19
 
 **🧠 NeurIPS2025** · **19** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (1)](../../CVPR2026/code_intelligence/index.md) · [🧪 ICML2026 (15)](../../ICML2026/code_intelligence/index.md) · [💬 ACL2026 (49)](../../ACL2026/code_intelligence/index.md) · [🔬 ICLR2026 (18)](../../ICLR2026/code_intelligence/index.md) · [🤖 AAAI2026 (10)](../../AAAI2026/code_intelligence/index.md) · [📹 ICCV2025 (1)](../../ICCV2025/code_intelligence/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (1)](../../CVPR2026/code_intelligence/index.md) · [🔬 ICLR2026 (59)](../../ICLR2026/code_intelligence/index.md) · [💬 ACL2026 (50)](../../ACL2026/code_intelligence/index.md) · [🧪 ICML2026 (22)](../../ICML2026/code_intelligence/index.md) · [🤖 AAAI2026 (10)](../../AAAI2026/code_intelligence/index.md) · [📹 ICCV2025 (1)](../../ICCV2025/code_intelligence/index.md)
 
 🔥 **Top topics:** LLM ×4 · Code Intelligence ×4 · Agents ×2 · Reasoning ×2 · Layout & Composition ×2
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Stage-wise Distortion-Perception Traversal in Zero-shot Inverse Problems with Diffusion Models
 description: >-
-  [ICML 2026][Image Generation][distortion-perception tradeoff] A two-stage framework, MAP-RPS, is proposed: first, a MAP estimate is performed using the diffusion model score to approximate the MMSE solution (a low-distortion starting point); subsequently, the MAP result is re-noised to a specific timestep $t_0$ followed by posterior sampling (sliding along the D-P curve towards h
+  [ICML 2026][Image Generation][distortion-perception tradeoff] A two-stage framework, MAP-RPS, is proposed: it first uses the diffusion model's score for Maximum A Posteriori (MAP) estimation to approach the Minimum Mean Square Error (MMSE) solution (low-distortion anchor), then re-noises the MAP result to time $t_0$ followed by posterior sampling (sliding along the D-P curve towa
 tags:
   - ICML 2026
   - Image Generation
@@ -12,7 +12,7 @@ tags:
   - MAP estimation
   - latent diffusion
 date: 2026-05-08
-content_hash: c78f009027d1a943
+content_hash: 7ef10384ff720129
 ---
 # Stage-wise Distortion-Perception Traversal in Zero-shot Inverse Problems with Diffusion Models
 
@@ -23,61 +23,61 @@ content_hash: c78f009027d1a943
 **Keywords**: distortion-perception tradeoff, zero-shot inverse problem, diffusion posterior sampling, MAP estimation, latent diffusion
 
 ## TL;DR
-A two-stage framework, MAP-RPS, is proposed: first, a MAP estimate is performed using the diffusion model score to approximate the MMSE solution (a low-distortion starting point); subsequently, the MAP result is re-noised to a specific timestep $t_0$ followed by posterior sampling (sliding along the D-P curve towards high perceptual quality). A single pre-trained diffusion model can flexibly traverse the distortion-perception trade-off during inference. The method achieves multi-task SOTA on MS-COCO after extension to latent diffusion.
+A two-stage framework, MAP-RPS, is proposed: it first uses the diffusion model's score for Maximum A Posteriori (MAP) estimation to approach the Minimum Mean Square Error (MMSE) solution (low-distortion anchor), then re-noises the MAP result to time $t_0$ followed by posterior sampling (sliding along the D-P curve towards high perceptual quality). A single pre-trained diffusion model enables flexible traversal of the distortion-perception trade-off during inference and achieves SOTA multi-task performance on MS-COCO when extended to latent diffusion.
 
 ## Background & Motivation
 
-**Background**: Diffusion models have become the mainstream framework for zero-shot solving of Bayesian inverse problems (super-resolution, deblurring, inpainting, compressed sensing, HDR). Representative methods such as DPS, $\Pi$GDM, ReSample, and PSLD sample from the posterior $p_{X\mid Y}$ by approximating $\nabla_{\mathbf{x}_t}\log p_t(\mathbf{y}\mid\mathbf{x}_t)$.
+**Background**: Diffusion models have become the mainstream framework for zero-shot Bayesian inverse problem solving (Super-Resolution, deblurring, inpainting, compressed sensing, HDR). Representative methods like DPS, $\Pi$GDM, ReSample, and PSLD sample from the posterior $p_{X\mid Y}$ by approximating $\nabla_{\mathbf{x}_t}\log p_t(\mathbf{y}\mid\mathbf{x}_t)$.
 
-**Limitations of Prior Work**: As proven by Blau & Michaeli (2018), the distortion-perception (D-P) trade-off dictates that distortion metrics (PSNR/SSIM) and perception metrics (LPIPS/FID) are inherently adversarial. Pure posterior sampling resides at the "high perception/high distortion" end of the D-P curve, while pure MMSE estimation resides at the opposite end. Practical applications (e.g., medical imaging favoring fidelity, consumer photography favoring perception) require free movement between these ends. However, existing methods either rely on tuning sampling steps, averaging multiple samples, manual hyperparameter tuning, or training new models. **A principled, inference-controlled, and computationally efficient D-P traversal mechanism is lacking.**
+**Limitations of Prior Work**: As proven by Blau & Michaeli (2018), the distortion-perception (D-P) trade-off dictates that distortion metrics (PSNR/SSIM) and perception metrics (LPIPS/FID) are fundamentally at odds. Pure posterior sampling resides at the "high perception/high distortion" end of the D-P curve, while pure MMSE estimation resides at the other. Practical applications (e.g., medical imaging favoring fidelity, consumer photography favoring perception) require free movement between these ends, but existing methods either rely on manual tuning of sampling steps, averaging multiple samples, or tedious hyperparameter adjustment, or they require training new models. **A principled, inference-time controllable, and computationally efficient D-P traversal mechanism is missing.**
 
-**Key Challenge**: The two optimal estimators at the ends of the D-P curve—$X_{\text{MMSE}}=\mathbb{E}[X\mid Y]$ and the perception-optimal estimator (e.g., posterior sampling)—arise from completely different optimization objectives. Theoretically, Freirich et al. showed that linear interpolation between the two can traverse the D-P curve (Eq. 15). However, in zero-shot diffusion scenarios, the MMSE end is difficult to compute as it requires repeated posterior sampling and averaging, leading to explosive computational costs for a single sample.
+**Key Challenge**: The two optimal estimators at the ends of the D-P curve, $X_{\text{MMSE}}=\mathbb{E}[X\mid Y]$ and the perception-optimal estimator (e.g., posterior sampling), stem from entirely different optimization objectives. Theoretically, Freirich et al. showed that linear interpolation between the two can traverse the D-P curve (Eq. 15), but in zero-shot diffusion, the MMSE end is extremely difficult to compute—it requires repeated posterior sampling and averaging, making the computational cost of a single sample explode.
 
-**Goal**: Decomposition into two sub-problems: (1) How to efficiently obtain a low-distortion starting point (approximating MMSE) in a zero-shot diffusion framework without repeated sampling; (2) Given this low-distortion point, how to **continuously and controllably** "push" it toward the high-perception end.
+**Goal**: Decomposition into two sub-problems: (1) efficiently obtaining a low-distortion starting point (approximating MMSE) in a zero-shot diffusion framework without repeated sampling; (2) **continuously and controllably** "pushing" this low-distortion point toward the high-perception end.
 
-**Key Insight**: The authors observe that in image restoration, the "ground truth" is often nearly unique, implying the posterior distribution $p_{X\mid Y}$ is approximately **strongly log-concave** (unimodal and concentrated) in many scenarios. Under this mild assumption, the distance between MAP and MMSE is provably bounded ($\mathcal{O}(\sqrt{n_x/\mu})$), yet MAP is significantly cheaper (gradient optimization instead of repeated sampling). For the second stage, the "forward-backward" flow of diffusion models is utilized: the MAP result is re-noised to an intermediate timestep $t_0$, and then the posterior sampling SDE is run from $t_0$ back to 0. A larger $t_0$ approaches pure posterior sampling (perceptual-optimal), while $t_0=0$ reduces to MAP (distortion-optimal). **A single scalar $t_0$ traverses the D-P curve at inference time.**
+**Key Insight**: The authors observe that in image restoration, the "ground truth image" is typically nearly unique—implying that the posterior distribution $p_{X\mid Y}$ is approximately **strongly log-concave** (unimodal and concentrated) in many scenarios. Under this mild assumption, the distance between MAP and MMSE estimates is provably bounded ($\mathcal{O}(\sqrt{n_x/\mu})$), yet MAP is significantly cheaper (gradient optimization instead of repeated sampling). For the second stage, the "noise-denoise" bidirectional flow of diffusion models is utilized: the MAP result is re-noised to an intermediate time $t_0$, and then the posterior sampling SDE is run from $t_0$ back to 0. A larger $t_0$ leads to pure posterior sampling (perceptual optimum), while $t_0=0$ degrades to MAP (distortion optimum). **A single scalar $t_0$ traverses the D-P curve at inference time.**
 
-**Core Idea**: Use **MAP as a low-distortion anchor instead of MMSE + use the re-noise timestep $t_0$ as a D-P slider**, transforming the binary choice between MMSE and posterior sampling into a continuous adjustment without retraining or multi-sample averaging.
+**Core Idea**: Use **MAP as a replacement for MMSE as the low-distortion anchor + re-noise time $t_0$ as the D-P slider**, transforming the binary choice between MMSE and posterior sampling into a continuous adjustment without retraining or multi-sample averaging.
 
 ## Method
 
 ### Overall Architecture
-MAP-RPS solves the problem of how to freely slide the distortion-perception trade-off at inference using a fixed pre-trained diffusion model. It is split into two sequential stages: first, using the diffusion score as a prior and gradient optimization to find a low-distortion MAP anchor (distortion end); second, re-noising this anchor along the forward SDE to an intermediate timestep $t_0$, and running an off-the-shelf posterior sampler from $t_0$ to 0 (sliding toward the perception end). The inputs are the observation $\mathbf{y}=\mathcal{A}(\mathbf{x})+\sigma_{\mathbf{y}}\mathbf{n}$ and a pre-trained score network $\mathbf{s}_\theta(\mathbf{x}_t,t)$. The output is the reconstructed image $\hat{\mathbf{x}}_0$, where the user tunes a scalar $t_0\in[0,T]$ to pick any point on the curve. This workflow can be shifted to the VAE latent space (LMAP-RPS) to leverage Stable Diffusion for near-real-world tasks on MS-COCO.
+MAP-RPS enables a fixed pre-trained diffusion model to freely traverse the distortion-perception trade-off at inference time. It executes this in two sequential stages: first, using the diffusion score as a prior and gradient optimization to find a low-distortion MAP anchor (the distortion end of the D-P curve); second, re-noising this anchor along the forward SDE to an intermediate time $t_0$ and using an existing posterior sampler to denoise back to 0 (sliding toward the perception end). The inputs are observation $\mathbf{y}=\mathcal{A}(\mathbf{x})+\sigma_{\mathbf{y}}\mathbf{n}$ and a pre-trained score network $\mathbf{s}_\theta(\mathbf{x}_t,t)$. The output is the reconstructed image $\hat{\mathbf{x}}_0$, with the user adjusting a scalar $t_0\in[0,T]$ to select any point on the curve. This process can be implemented in VAE latent space (LMAP-RPS) to leverage Stable Diffusion for near-real-world MS-COCO tasks.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    A["Observation y and Pre-trained score network"] --> B
-    subgraph CORE["Two-stage MAP-RPS (Pixel Space)"]
+    A["Observation y and pre-trained score network"] --> B
+    subgraph CORE["MAP-RPS Two-Stage (Pixel Space)"]
         direction TB
-        B["MAP Anchor: Score as prior, SGD optimization for low-distortion x_MAP"] --> C["re-noise: Add noise to x_MAP up to intermediate t₀"]
+        B["MAP Anchor: Score as prior, SGD optimization for low-distortion x_MAP"] --> C["re-noise: Add noise to x_MAP up to time t₀"]
         C --> D["Stage 2 Posterior Sampling: Denoise from t₀ back to 0"]
     end
-    D --> E["Reconstructed x̂₀: Tune t₀ to traverse D-P curve"]
-    CORE -.Shift to latent space.-> F["LMAP-RPS: Running on latent z via Stable Diffusion"]
+    D --> E["Reconstruction x̂₀: Adjust scalar t₀ to traverse D-P curve"]
+    CORE -.Extension to latent space.-> F["LMAP-RPS: Operates on latent z using Stable Diffusion"]
 ```
 
 ### Key Designs
 
-**1. MAP instead of MMSE as a low-distortion anchor: Provable error bounds + single-forward score gradients**
+**1. MAP as a Low-distortion Anchor: Provable Error Bounds + Score Gradients**
 
-The distortion end of the D-P curve is theoretically the MMSE solution $X_{\text{MMSE}}=\mathbb{E}[X\mid Y]$, which is computationally prohibitive in zero-shot diffusion. The authors use the much cheaper MAP solution, supported by the engineering intuition that image restoration targets are nearly unique and the posterior is approximately $\mu$-strongly log-concave. Theorem 3.2 proves $\mathbb{E}\|X_{\text{MAP}}-X_{\text{MMSE}}\|\le\sqrt{n_x/\mu}$ and $\mathbb{E}\|X-X_{\text{MAP}}\|^2\le D^*+n_x/\mu$, meaning the additional distortion from MAP is bounded by $\mathcal{O}(n_x^{1/2})$, with tighter bounds as the posterior becomes more concentrated (larger $\mu$). Algorithmically, Stage 1 starts from random initialization to solve $\mathbf{x}_{\text{MAP}}=\arg\max_{\mathbf{x}}\log p_{Y\mid X}(\mathbf{y}\mid\mathbf{x})+\log p_X(\mathbf{x})$, where the likelihood reduces to an $\ell_2$ term and the prior gradient is given by the computable closed-form in Theorem 3.3: $\nabla_{\mathbf{x}}\log p_X(\mathbf{x})=\frac{1-\bar\alpha_{t_1}}{r_{t_1}^2\sqrt{\bar\alpha_{t_1}}}\mathbb{E}_{p_{X_{t_1}\mid X_0}}\nabla_{\mathbf{x}_{t_1}}\log p_{t_1}(\mathbf{x}_{t_1})$. Thus, a single SGD path (one score forward pass per iteration) yields the anchor, which is orders of magnitude cheaper than MMSE averaging.
+The distortion end of the D-P curve is theoretically the MMSE solution $X_{\text{MMSE}}=\mathbb{E}[X\mid Y]$, which is computationally prohibitive in zero-shot diffusion due to the need for averaging samples. The authors use the much cheaper MAP solution, supported by the observation that the posterior is approximately $\mu$-strongly log-concave. Theorem 3.2 proves $\mathbb{E}\|X_{\text{MAP}}-X_{\text{MMSE}}\|\le\sqrt{n_x/\mu}$ and $\mathbb{E}\|X-X_{\text{MAP}}\|^2\le D^*+n_x/\mu$, indicating that the additional distortion introduced by MAP is bounded by $\mathcal{O}(n_x^{1/2})$. Algorithmically, Stage 1 solves $\mathbf{x}_{\text{MAP}}=\arg\max_{\mathbf{x}}\log p_{Y\mid X}(\mathbf{y}\mid\mathbf{x})+\log p_X(\mathbf{x})$ starting from random initialization. The likelihood term is an $\ell_2$ data term, and the prior gradient is given by the computable closed form in Theorem 3.3: $\nabla_{\mathbf{x}}\log p_X(\mathbf{x})=\frac{1-\bar\alpha_{t_1}}{r_{t_1}^2\sqrt{\bar\alpha_{t_1}}}\mathbb{E}_{p_{X_{t_1}\mid X_0}}\nabla_{\mathbf{x}_{t_1}}\log p_{t_1}(\mathbf{x}_{t_1})$. Thus, a single SGD optimization path (1 score forward pass per iteration) provides the anchor, orders of magnitude cheaper than MMSE.
 
-**2. re-noised posterior sampling: Traversing the D-P curve with a single parameter $t_0$**
+**2. Re-noised Posterior Sampling: Traversal with a Single Parameter $t_0$**
 
-The authors utilize the symmetric "noise/denoise" structure of diffusion models as a linear interpolator. Stage 2 re-noises $\mathbf{x}_{\text{MAP}}$ along the forward SDE to $\mathbf{x}_{t_0}\sim\mathcal{T}(0,t_0)_\#\delta_{\mathbf{x}_{\text{MAP}}}$, and then uses a posterior sampling SDE $\tilde{\mathcal{T}}(t_0,0;\mathbf{y})_\#$ to denoise from $t_0$ back to 0. Here, $t_0=0$ reduces entirely to MAP (minimal distortion), while $t_0=T$ reduces to standard posterior sampling (optimal perception). Any $t_0 \in (0, T)$ provides an interpolation point—anchored by MAP at the distortion end and re-introducing stochasticity via the score at the perception end. Theoretically, Theorem 3.5 provides a Wasserstein-2 upper bound $W_2(p_X,\,p_{0\to t_0\to 0})\le(\bar\alpha_{t_0})^{1-L_s}\sqrt{2n_x/\mu}+\epsilon_{\text{score}}$. Corollary 3.6 further notes that when the score network Lipschitz constant $L_s < 1$, this bound decreases monotonically with $t_0$, meaning "more noise $\rightarrow$ better perception."
+To continuously shift the low-distortion anchor toward high perception, the authors utilize the symmetric "re-noise/denoise" structure. Stage 2 re-noises $\mathbf{x}_{\text{MAP}}$ via the forward SDE to $\mathbf{x}_{t_0}\sim\mathcal{T}(0,t_0)_\#\delta_{\mathbf{x}_{\text{MAP}}}$, and then applies the posterior sampling SDE $\tilde{\mathcal{T}}(t_0,0;\mathbf{y})_\#$ back to 0. At $t_0=0$, the result is purely MAP (lowest distortion); at $t_0=T$, it is standard posterior sampling (best perception). intermediate $t_0$ values provide interpolation points. Theorem 3.5 provides a Wasserstein-2 upper bound $W_2(p_X,\,p_{0\to t_0\to 0})\le(\bar\alpha_{t_0})^{1-L_s}\sqrt{2n_x/\mu}+\epsilon_{\text{score}}$, and Corollary 3.6 states that when the score network Lipschitz constant $L_s<1$, this bound decreases monotonically with $t_0$. This makes the D-P theory a plug-and-play inference control.
 
-**3. LMAP-RPS: Operation in latent space for large-scale models**
+**3. LMAP-RPS: Latent Space Execution for Large Models**
 
-To leverage the power of Latent Diffusion Models (LDMs), the authors move the MAP optimization and re-noised posterior sampling into the latent space $\mathbf{z}\in\mathbb{R}^d$. Observation constraints are mapped back to pixel space via the decoder $\mathcal{D}$ to approximate $\log p_{Y\mid Z}(\mathbf{y}\mid\mathbf{z})\approx\log p_{Y\mid X}(\mathbf{y}\mid\mathcal{D}(\mathbf{z}))$. Theorems C.2 and C.3 in Appendix C extend the pixel-space theoretical guarantees to the latent version. This allows direct application of Stable Diffusion on MS-COCO, and since the latent dimension is lower, MAP optimization is faster, resulting in lower total computational complexity than multi-step refinement baselines like ReSample or PSLD.
+To handle high-resolution inverse problems, the MAP optimization and re-noised posterior sampling are shifted to the latent space $\mathbf{z}\in\mathbb{R}^d$. Observation constraints are mapped back to pixel space via the decoder $\mathcal{D}$ to approximate $\log p_{Y\mid Z}(\mathbf{y}\mid\mathbf{z})\approx\log p_{Y\mid X}(\mathbf{y}\mid\mathcal{D}(\mathbf{z}))$. This allows the use of Stable Diffusion on datasets like MS-COCO. Because the latent dimension is lower, MAP optimization is faster, and the overall complexity is lower than baselines like ReSample or PSLD.
 
 ### Loss & Training
-The entire process is zero-shot inference, updating no diffusion model parameters. The Stage 1 objective is $-\log p_{Y\mid X}(\mathbf{y}\mid\mathbf{x})-\log p_X(\mathbf{x})$ (data term is $\ell_2$, prior term is implemented via score estimation from Theorem 3.3), optimized via standard SGD. Stage 2 uses Euler–Maruyama to solve the posterior sampling SDE, where the posterior score can be replaced by existing implementations like DPS or $\Pi$GDM. Tunable hyperparameters are limited to three: MAP iterations $N$, step size $\gamma$, and re-noise timestep $t_0$.
+The method is entire zero-shot and does not update diffusion model parameters. Stage 1 minimizes $-\log p_{Y\mid X}(\mathbf{y}\mid\mathbf{x})-\log p_X(\mathbf{x})$ using SGD. Stage 2 uses Euler–Maruyama to solve the posterior sampling SDE, where the posterior score can be implemented via standard methods like DPS or $\Pi$GDM. Hyperparameters include MAP iterations $N$, step size $\gamma$, and re-noise time $t_0$.
 
 ## Key Experimental Results
 
 ### Main Results
-On MS-COCO, 6 latent-space inverse problems (inpainting / SR 4× / anisotropic deblur / CS 2× / HDR / nonlinear deblur) were compared against Latent-DPS, ReSample, PSLD, STSL, LDIR, Latent-DCDP, Latent-DMAP, Latent-DAPS, and Latent-SITCOM:
+Evaluated on 6 latent-space inverse problems (inpainting, SR 4×, deblur, CS 2×, HDR, nonlinear deblur) on MS-COCO, compared against Latent-DPS, ReSample, PSLD, and others:
 
 | Task | Metric | LMAP-RPS (0) | LMAP-RPS (600) | Runner-up Baseline |
 |------|------|---------------|------------------|----------|
@@ -90,43 +90,42 @@ On MS-COCO, 6 latent-space inverse problems (inpainting / SR 4× / anisotropic d
 
 ### Ablation Study
 
-| Config | Key Observation | Explanation |
+| Configuration | Key Observation | Explanation |
 |------|---------|------|
-| $t_0=0$ (Pure MAP) | Highest PSNR, poorer LPIPS/FID | Lowest distortion end; $(\bar\alpha_{t_0})^{1-L_s}$ term in $W_2$ bound is maximal |
-| $t_0=600$ (Strong re-noise) | Better LPIPS/FID, lower PSNR | $t_0$ increase $\rightarrow$ $\bar\alpha_{t_0}$ decrease $\rightarrow$ monotonic decrease in perception bound (Corollary 3.6) |
-| $t_0$ Continuous Scan | D-P curve on FFHQ most closely matches "ideal D-P curve" | Closer to the theoretical Pareto frontier than variance scaling (Wang 2025) or ReSample |
-| Remove Stage 1 | Degrades to standard posterior sampling | Loses low-distortion anchor, sharp drop in PSNR |
-| Remove Stage 2 (MAP only) | Significantly worse LPIPS/FID | Perceptual quality limited to the MAP unimodal peak |
+| $t_0=0$ (Pure MAP) | Highest PSNR, poor LPIPS/FID | Target at distortion end; corresponds to the max $(\bar\alpha_{t_0})^{1-L_s}$ in the $W_2$ bound. |
+| $t_0=600$ (Strong re-noise) | Better LPIPS/FID, lower PSNR | Increasing $t_0 \to$ decreasing $\bar\alpha_{t_0} \to$ monotonic decrease in perception error bound (Corollary 3.6). |
+| $t_0$ Continuous Scan | D-P curve on FFHQ closest to "ideal" | Superior to Latent-DPS or variance scaling in approximating the theoretical Pareto front. |
+| Without Stage 1 | Degrades to standard posterior sampling | Loses low-distortion anchor, lead to significant PSNR drop. |
+| Without Stage 2 | Perception significantly worse | Perceptual quality limited to MAP's unimodal estimate. |
 
 ### Key Findings
-- **Two $t_0$ settings cover most SOTA results**: LMAP-RPS(0) excels in distortion-sensitive tasks (Best in HDR, nonlinear deblur), while LMAP-RPS(600) excels in perception-sensitive tasks (Best LPIPS/FID in SR 4×). The same algorithm and model cover both ends via a single inference parameter.
-- **Computation is cheaper than baselines**: Total NFEs are lower than multi-step refinement methods like ReSample and PSLD because MAP optimization requires only one score forward pass per step, and Stage 2 starts from an intermediate $t_0$ instead of $T$.
-- **Robustness of theoretical assumptions**: Experiments in Appendix E.1 show that even when the image distribution isn't strictly log-concave, the distortion overhead of MAP over MMSE remains small.
+- **Two $t_0$ settings cover majority of SOTA**: LMAP-RPS(0) excels in distortion-sensitive tasks (HDR, nonlinear deblur), while LMAP-RPS(600) excels in perception-sensitive tasks (SR 4×). The same algorithm/model covers both ends by tuning one parameter.
+- **Lower computational cost**: Total Neural Function Evaluations (NFE) are fewer than refinement methods like ReSample or PSLD, as Stage 1 gradients are cheap and Stage 2 starts from an intermediate $t_0$.
+- **Robustness of theoretical assumptions**: Even in real distributions that are not strictly log-concave, the distortion delta between MAP and MMSE remains small.
 
 ## Highlights & Insights
-- **Diffusion noise/denoise re-interpreted as a D-P interpolator**: The theoretical linear interpolation between MMSE and perception-optimal (Freirich 2021) is operationalized as "pushing" the anchor point along the diffusion time axis.
-- **Using MAP as MMSE + strong log-concavity as a safeguard**: A clever engineering strategy that replaces an uncomputable theoretical optimum with a computable theoretical sub-optimum, complete with error bounds.
-- **Transferable Insight**: Any "dual-objective trade-off + one expensive/one cheap" scenario (e.g., fidelity vs. diversity) can adopt this template: cheap anchor point + perturbation to intermediate state + expensive sampling back to zero.
+- **Reinterpreting Diffusion flow as a D-P Interpolator**: The authors operationalize the theoretical interpolation of Freirich (2021) using the diffusion time axis $t_0$.
+- **MAP as MMSE + Theoretical Safeguards**: Using a "computable theoretical sub-optimum" (MAP) with a provable error bound is an effective engineering strategy.
+- **Transferable Insight**: Any dual-objective trade-off scenario with one "cheap" end and one "expensive" end can potentially adopt this two-stage "anchor + re-noise + sample" template.
 
 ## Limitations & Future Work
-- **Dependency on strong log-concavity**: In highly multi-modal inverse problems (e.g., strong occlusions), theoretical guarantees might weaken.
-- **Manual $t_0$ selection**: While a single parameter is simple, an automatic strategy for selecting $t_0$ based on downstream tasks or user preference is missing.
-- **Initialization sensitivity in Stage 1**: Random initialization + SGD might get stuck in local modes of the prior; warm-start strategies from coarse posterior sampling could be explored.
-- **Latent likelihood approximation**: Approximating $\log p_{Y\mid X}(\mathbf{y}\mid\mathcal{D}(\mathbf{z}))$ remains a point estimate; incorporating VAE posterior variance could refine this.
+- **Dependency on strong log-concavity**: The theoretical guarantee may fail in highly multimodal inverse problems (e.g., strong occlusions with multiple solutions).
+- **Manual $t_0$ selection**: Lacks an automated strategy for selecting $t_0$ based on downstream application or user preferences.
+- **MAP initialization sensitivity**: Stage 1 optimization might stall in local modes; warm-starting with a coarse posterior sample could be explored.
+- **Latent space likelihood approximation**: The decoder error is not theoretically quantified and could be refined using VAE posterior variance.
 
 ## Related Work & Insights
-- **vs DPS / $\Pi$GDM**: These are limited to the perception end (standard posterior sampling). MAP-RPS uses them as sub-modules in Stage 2, adding a MAP anchor and $t_0$ slider to enable D-P control.
-- **vs Wang et al. 2025 (variance-scaled posterior sampling)**: Wang scales injection noise variance, requiring Gaussian assumptions; MAP-RPS uses an interpretable time parameter $t_0$ with clearer bounds and better Pareto frontier approximation.
-- **vs ReSample / PSLD / Latent-DAPS**: These address latent diffusion inverse problems but provide fixed trade-off points; LMAP-RPS scans the entire curve with fewer NFEs.
+- **vs DPS / $\Pi$GDM**: These are limited to the perception end; MAP-RPS uses them as sub-modules for Stage 2 to achieve D-P control.
+- **vs Wang et al. 2025 (variance-scaling)**: MAP-RPS uses the interpretable $t_0$ time parameter, which provides clearer theoretical bounds and better performance on the FFHQ Pareto front.
+- **vs ReSample / PSLD / Latent-DAPS**: These target latent diffusion inverse problems but provide fixed trade-off points; LMAP-RPS scans the entire curve with fewer NFEs.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Using $t_0$ as a D-P slider is a clean, powerful perspective.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive tasks (6) and baselines (9) on MS-COCO, including D-P curve analysis.
-- Writing Quality: ⭐⭐⭐⭐ Clear theoretical-to-experimental loop.
-- Value: ⭐⭐⭐⭐ Provides a zero-cost "slide-to-control D-P" capability for diffusion-based image restoration.
+- Novelty: ⭐⭐⭐⭐ Treating $t_0$ as a D-P slider is simple yet powerful; effectively integrates existing sub-techniques into a theoretically grounded framework.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive testing on FFHQ and MS-COCO across 6 tasks against 9 baselines; could be expanded to higher resolutions (>1K) or video.
+- Writing Quality: ⭐⭐⭐⭐ Clear progression from theory to experiment; SDE notation may be dense for some readers.
+- Value: ⭐⭐⭐⭐ Provides a zero-cost "traversal slider" for engineers using diffusion inverse problems and links D-P theory to the diffusion process for researchers.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers

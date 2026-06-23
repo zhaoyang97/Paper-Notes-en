@@ -82,7 +82,7 @@ item_total: 140
 
 **🧠 NeurIPS2025** · **140** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (98)](../../CVPR2026/model_compression/index.md) · [🧪 ICML2026 (100)](../../ICML2026/model_compression/index.md) · [💬 ACL2026 (59)](../../ACL2026/model_compression/index.md) · [🔬 ICLR2026 (100)](../../ICLR2026/model_compression/index.md) · [🤖 AAAI2026 (60)](../../AAAI2026/model_compression/index.md) · [📹 ICCV2025 (52)](../../ICCV2025/model_compression/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (98)](../../CVPR2026/model_compression/index.md) · [🔬 ICLR2026 (241)](../../ICLR2026/model_compression/index.md) · [💬 ACL2026 (59)](../../ACL2026/model_compression/index.md) · [🧪 ICML2026 (117)](../../ICML2026/model_compression/index.md) · [🤖 AAAI2026 (60)](../../AAAI2026/model_compression/index.md) · [📹 ICCV2025 (52)](../../ICCV2025/model_compression/index.md)
 
 🔥 **Top topics:** LLM ×23 · Compression ×19 · Model Compression ×16 · Knowledge Distillation ×8 · Adversarial Robustness ×7
 

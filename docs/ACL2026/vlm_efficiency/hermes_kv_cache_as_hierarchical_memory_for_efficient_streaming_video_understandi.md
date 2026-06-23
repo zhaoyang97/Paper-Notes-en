@@ -2,12 +2,12 @@
 title: >-
   [Paper Note] HERMES: KV Cache as Hierarchical Memory for Efficient Streaming Video Understanding
 description: >-
-  [ACL 2026][Video Understanding][Paper Note] This paper proposes HERMES, which conceptualizes the KV cache as a hierarchical memory framework (Shallow = Sensory, Middle = Working, Deep = Long-term) based on a mechanistic analysis of the hierarchical attention preferences in MLLM decoders. HERMES achieves training-free, efficient streaming video understanding, mai
+  [ACL 2026][vlm_efficiency][Paper Note] This paper proposes HERMES, which conceptualizes KV cache as a hierarchical memory framework (shallow = sensory memory, middle = working memory, deep = long-term memory) based on a mechanistic analysis of MLLM decoder hierarchical attention preferences. It achieves training-free efficient streaming video understanding,
 tags:
   - ACL 2026
-  - Video Understanding
+  - vlm_efficiency
 date: 2026-05-08
-content_hash: 168cfe402315e5a5
+content_hash: 11d6543379ee6d56
 ---
 # HERMES: KV Cache as Hierarchical Memory for Efficient Streaming Video Understanding
 
@@ -19,63 +19,63 @@ content_hash: 168cfe402315e5a5
 
 ## TL;DR
 
-This paper proposes HERMES, which conceptualizes the KV cache as a hierarchical memory framework (Shallow = Sensory, Middle = Working, Deep = Long-term) based on a mechanistic analysis of the hierarchical attention preferences in MLLM decoders. HERMES achieves training-free, efficient streaming video understanding, maintaining or improving accuracy while reducing video tokens by 68%, with a TTFT latency under 30ms—10 times faster than previous SOTA.
+This paper proposes HERMES, which conceptualizes KV cache as a hierarchical memory framework (shallow = sensory memory, middle = working memory, deep = long-term memory) based on a mechanistic analysis of MLLM decoder hierarchical attention preferences. It achieves training-free efficient streaming video understanding, maintaining or improving accuracy while reducing video tokens by 68%. The TTFT latency is <30ms, 10x faster than the previous SOTA.
 
 ## Background & Motivation
 
-**Background**: MLLMs have made significant progress in offline video understanding, but extending them to streaming video inputs remains challenging. It is necessary to simultaneously maintain understanding performance, real-time responsiveness, and low GPU memory overhead. Existing streaming methods are categorized into external memory (storing content as descriptions or patches for retrieval) and internal memory (managing directly within the KV cache).
+**Background**: MLLMs have made significant progress in offline video understanding, but extending them to streaming video inputs remains challenging—requiring simultaneous maintenance of performance, real-time response, and low GPU memory overhead. Existing streaming methods are categorized into external memory (storing video content as descriptions or patches for retrieval) and internal memory (direct management within the KV cache).
 
-**Limitations of Prior Work**: (1) External memory methods require retrieval and multimodal pre-filling when a query arrives, leading to high latency and a lack of end-to-end coherence; (2) Cache methods like ReKV and LiveVLM offload video segments to CPU/disk, requiring additional retrieval operations during querying, which results in significant latency; (3) Existing methods use coarse-grained eviction strategies (such as applying FIFO uniformly across all layers), ignoring differences in attention preferences between layers.
+**Limitations of Prior Work**: (1) External memory methods require retrieval and multimodal pre-filling when a query arrives, leading to high latency and a lack of end-to-end coherence; (2) Cache methods like ReKV and LiveVLM offload video segments to CPU/disk, requiring additional retrieval operations during querying, which results in significant latency; (3) Existing methods use coarse-grained eviction strategies (e.g., applying FIFO uniformly to all layers), ignoring differences in attention preferences across layers.
 
-**Key Challenge**: The KV cache is inherently a latent memory of the model, suitable for training-free management in streaming scenarios. However, existing methods do not exploit differences in inter-layer attention patterns—different layers "remember" video information in distinct ways.
+**Key Challenge**: While the KV cache is inherently the model's internal latent memory and suitable for training-free management in streaming scenarios, existing methods fail to exploit inter-layer attention patterns—different layers "remember" video information in different ways.
 
 **Goal**: Design a KV cache management method based on hierarchical attention analysis that can be integrated into existing MLLMs without training, enabling true real-time streaming video QA.
 
-**Key Insight**: An attention visualization analysis of the 28-layer decoder in LLaVA-OV-7B reveals three distinct hierarchical memory patterns.
+**Key Insight**: An attention visualization analysis of the 28-layer LLaVA-OV-7B decoder reveals three distinct hierarchical memory patterns.
 
-**Core Idea**: Shallow layers exhibit a strong recency preference (sensory memory), managed via exponential decay; deep layers focus on frame-level "anchor tokens" (long-term memory), managed via attention weights; middle layers transition between the two (working memory), managed via interpolation. Cross-layer smoothing and position re-indexing are added to ensure consistency.
+**Core Idea**: Shallow layers exhibit strong recency preference (sensory memory), managed by exponential decay; deep layers focus on frame-level "anchor tokens" (long-term memory), managed by attention weights; middle layers transition between the two (working memory), managed by interpolation. Cross-layer smoothing and position re-indexing are added to ensure consistency.
 
 ## Method
 
 ### Overall Architecture
 
-HERMES aims to solve the persistent problem in streaming video QA: balancing understanding performance, real-time response, and GPU memory constraints. It starts by treating the KV cache as the model's intrinsic "latent memory," managing it directly without training. The methodology centers on an observation—attention visualization of the 28-layer LLaVA-OV-7B decoder shows distinct "memory styles": shallow layers prefer recent frames (sensory memory), deep layers fixate on frame-level anchor tokens (long-term memory), and middle layers transition between them (working memory). Accordingly, HERMES incorporates three components: hierarchical KV cache management using different scoring and eviction strategies per layer type; cross-layer memory smoothing to prevent inconsistency caused by independent layer evictions; and position re-indexing to restore position embeddings after eviction. During inference, the compressed KV cache is reused directly, requiring zero extra computation when the user asks a question.
+HERMES aims to solve the long-standing problem in streaming video QA: maintaining performance while ensuring real-time response and bounded GPU memory. Its starting point is treating the KV cache as the model's internal "latent memory," managed directly without training. The methodology centers on an observation: attention visualization of the 28-layer LLaVA-OV-7B decoder shows that different layers have vastly different "memory modes." Shallow layers strongly prefer recent frames (sensory memory), deep layers focus solely on frame-level anchor tokens (long-term memory), and middle layers transition between them (working memory). Accordingly, HERMES incorporates three components: Hierarchical KV Cache Management applying different scoring and eviction strategies per layer type; Cross-Layer Memory Smoothing to prevent inconsistency across layers; and Position Re-indexing to repair position encodings after eviction. During inference, the compressed KV cache is reused directly, requiring zero extra computation when a user asks a question.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    A["Streaming Video Frames<br/>Incremental Write to KV Cache"] --> B["Hierarchical Attention Analysis<br/>28 Decoder Layers Classified into 3 Memory Types"]
+    A["Streaming Video Frames<br/>Incremental Write to KV Cache"] --> B["Hierarchical Attention Analysis<br/>28 Decoder Layers Categorized into 3 Memory Types"]
     B --> KV
     subgraph KV["Hierarchical KV Cache Management"]
         direction TB
         C1["Shallow Layers · Sensory Memory<br/>Exponential Forgetting Curve Scoring"]
-        C2["Middle Layers · Working Memory<br/>Recency and Attention Interpolation"]
+        C2["Middle Layers · Working Memory<br/>Recency & Attention Interpolation"]
         C3["Deep Layers · Long-term Memory<br/>Anchor Token Attention Scoring"]
     end
-    KV --> D["Cross-Layer Memory Smoothing<br/>Neighboring Layers Share Eviction Decisions"]
-    D --> E["Position Re-Indexing<br/>Reconnecting Positional Embeddings After Eviction"]
-    E --> F["Reuse Compressed KV Cache<br/>Zero Extra Computation for User Queries"]
+    KV --> D["Cross-Layer Memory Smoothing<br/>Decision Sharing Between Adjacent Layers"]
+    D --> E["Position Re-Indexing<br/>Reconnect Position Encodings Continuously Post-Eviction"]
+    E --> F["Reuse Compressed KV Cache<br/>Zero Extra Computation for Queries"]
 ```
 
 ### Key Designs
 
 **1. Hierarchical KV Cache Management: Different "Forgetting Rules" for Different Layers**
 
-Existing cache methods use coarse global eviction policies (e.g., FIFO for all layers), ignoring variations in inter-layer attention preferences. Based on attention analysis, HERMES assigns token importance scores for three types of layers: shallow layers use an exponential forgetting curve $S_i^l = \alpha_i^l \cdot e^{-k\Delta t_i}$ where newer tokens are more important; deep layers use attention weights based on pseudo-queries $S_i^l = \alpha_i^l \cdot W_i^l$ to retain only anchors; middle layers use a layer-dependent weight $\omega_l$ to interpolate between recency and attention scores: $S_i^l = (1-\omega_l) A_i^l + \omega_l R_i^l$.
+Existing cache methods use coarse, uniform eviction strategies (e.g., applying FIFO to all layers), ignoring inter-layer attention preference differences. Based on attention analysis, HERMES assigns token importance scores for three categories: shallow layers use an exponential forgetting curve $S_i^l = \alpha_i^l \cdot e^{-k\Delta t_i}$, where newer tokens are more important; deep layers use attention weights based on pseudo-queries $S_i^l = \alpha_i^l \cdot W_i^l$, retaining only anchors; middle layers use a layer-dependent weight $\omega_l$ to interpolate between recency and attention scores: $S_i^l = (1-\omega_l) A_i^l + \omega_l R_i^l$.
 
-This differentiation is grounded in direct observation—attention visualizations clearly show distinct memory functions per layer. Uniform FIFO or pure attention eviction cannot satisfy the opposing needs of shallow layers ("freshness") and deep layers ("anchors"). Further evidence shows deep anchor tokens are spaced exactly by the number of tokens per frame (196), confirming deep layers capture key points frame-by-frame.
+The justification for this differentiation is direct—attention visualization clearly shows unique memory functions per layer. A "one-size-fits-all" FIFO or pure attention eviction cannot simultaneously satisfy the shallow layers' need for "freshness" and the deep layers' need for "anchors." Supporting evidence shows the interval between deep-layer anchor tokens exactly matches the tokens per frame (196), confirming deep layers capture key points frame-by-frame.
 
-**2. Cross-Layer Memory Smoothing: Preventing Disparate Fates for the Same Token**
+**2. Cross-Layer Memory Smoothing: Preventing Disparate Token Fates**
 
-If layers evict independently, information from the same frame might be retained in some layers but dropped in others, fragmenting visual memory and breaking end-to-end inference coherence. HERMES enables adjacent layers to share parts of their eviction decisions, maintaining consistency in the retention/eviction of the same video token across multiple layers, thus balancing hierarchical flexibility with inference coherence.
+If each layer evicts independently, information from the same frame might be kept in some layers but discarded in others, fragmenting visual memory and breaking end-to-end inference coherence. HERMES allows adjacent layers to share partial eviction decisions, ensuring consistency for video tokens across multiple layers. This balances the flexibility of hierarchical management with the coherence of cross-layer inference.
 
-**3. Position Re-Indexing: Reconnecting Positional Embeddings After Eviction**
+**3. Position Re-Indexing: Reconnecting Indices After Eviction**
 
-Removing intermediate tokens creates jumps in position embeddings. Position-based attention mechanisms like RoPE are sensitive to this, leading to anomalous calculations. After each eviction, HERMES re-maps the positions of retained tokens into a continuous range $[0, |M|)$, avoiding attention disorder caused by positional discontinuity and ensuring the compressed cache remains functional.
+Directly removing intermediate tokens creates jumps in position indices, to which position-based attention mechanisms like RoPE are sensitive, leading to anomalous calculations. After each eviction, HERMES re-maps the positions of retained tokens into a continuous sequence $[0, |M|)$, preventing attention disordered caused by position discontinuity and ensuring the compressed cache remains functional.
 
 ### Loss & Training
 
-Completely training-free. The design draws from Ebbinghaus's Forgetting Curve theory and hierarchical memory models in cognitive psychology. To calculate deep attention weights, a generic guidance prompt serves as a pseudo-query. The exponential forgetting rate $k$ and interpolation parameters are manually set hyperparameters.
+Completely training-free. The design draws inspiration from Ebbinghaus's Forgetting Curve theory and cognitive psychology models of hierarchical memory. To calculate deep-layer attention weights, a generic guidance prompt serves as a pseudo-query. The exponential decay rate $k$ and interpolation parameters are manually set hyperparameters.
 
 ## Key Experimental Results
 
@@ -97,41 +97,41 @@ Completely training-free. The design draws from Ebbinghaus's Forgetting Curve th
 | Method | TTFT (ms) | GPU Memory | Token Reduction |
 |------|----------|---------|-----------|
 | Full | ~3000+ | Linear Growth | 0% |
-| ReKV | ~1500 | Req. CPU Mem | ~50% |
+| ReKV | ~1500 | Requires CPU Mem | ~50% |
 | **HERMES** | **<30** | **Constant** | **68%** |
 
 ### Key Findings
 
-- HERMES improved performance on streaming benchmarks by 11.4% while reducing video tokens by 68%, proving that removing redundant tokens actually benefits inference quality.
-- TTFT is < 30ms with constant GPU memory, eliminating OOM risks as input frames increase and requiring zero extra computation when a query arrives.
-- The hierarchical memory model generalizes across multiple MLLMs beyond LLaVA-OV.
-- The recency preference in shallow layers aligns with Ebbinghaus's forgetting curve, and the anchor pattern in deep layers matches the per-frame token count (196).
+- While reducing video tokens by 68%, HERMES improves performance on streaming benchmarks by 11.4%—proving that removing redundant tokens actually improves inference quality.
+- TTFT < 30ms with constant GPU memory ensures zero OOM risk as input frames increase—zero extra computation when a query arrives.
+- The hierarchical memory model generalizes across multiple MLLMs—it is not limited to LLaVA-OV.
+- The recency preference in shallow layers aligns with the Ebbinghaus Forgetting Curve, and the anchor pattern in deep layers matches the per-frame token count (196).
 
 ## Highlights & Insights
 
-- The hierarchical memory concept inspired by cognitive psychology corresponds precisely to transformer layer attention patterns—this is not just an analogy but a finding supported by quantitative attention analysis.
-- The zero-latency design is critical for real-time applications; methods like ReKV reduce storage but still suffer from retrieval latency during querying.
-- The training-free, plug-and-play nature allows for direct application to existing MLLMs, lowering the barrier for practical deployment.
+- The hierarchical memory concept from cognitive psychology maps precisely to Transformer layer attention patterns—this is not just an analogy but a finding supported by quantitative attention analysis.
+- The zero-extra-latency design is critical for real-time applications—methods like ReKV reduce storage but still require retrieval during querying.
+- Its training-free and plug-and-play nature allows for direct application to existing MLLMs, lowering the barrier to practical use.
 
 ## Limitations & Future Work
 
-- Determination of hierarchical boundaries (shallow/middle/deep) depends on the analysis of specific models; different architectures may need recalibration.
+- The definition of hierarchical boundaries (shallow/middle/deep) depends on specific model analysis; different architectures may require re-determination.
 - Using pseudo-queries instead of real user queries might introduce bias in specific scenarios.
 - Validation was limited to video streaming; applicability to text or multimodal streaming has not been explored.
-- The exponential forgetting rate $k$ and interpolation parameters require manual tuning.
+- The exponential decay rate $k$ and interpolation parameters require manual tuning.
 
 ## Related Work & Insights
 
 - **vs ReKV/LiveVLM**: These require CPU offloading and retrieval, causing high latency; HERMES reuses the KV cache directly on the GPU.
-- **vs StreamMem**: Uses chat template tokens to guide compression but lacks fine-grained management; HERMES achieves precision through hierarchical analysis.
-- **vs StreamingLLM**: The attention sink mechanism preserves initial tokens but ignores layer differences; HERMES uses hierarchical specialization for smarter eviction.
+- **vs StreamMem**: Uses chat template tokens to guide compression but lacks fine-grained management; HERMES implements precise management based on hierarchical attention.
+- **vs StreamingLLM**: The attention sink mechanism retains initial tokens but ignores inter-layer differences; HERMES uses hierarchical specialization for smarter eviction.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ The conceptualization of hierarchical memory and differentiated management strategies based on attention analysis is highly novel.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Multiple streaming benchmarks, efficiency analysis, attention visualization, and ablation studies.
-- Writing Quality: ⭐⭐⭐⭐⭐ The logical chain from mechanistic analysis to methodological design is very clear.
-- Value: ⭐⭐⭐⭐⭐ A practical solution for real-time streaming video understanding with 10x TTFT acceleration.
+- Novelty: ⭐⭐⭐⭐⭐ Hierarchical memory conceptualization and differentiated management strategies are highly novel.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Multiple streaming benchmarks, efficiency analysis, attention visualization, and ablations.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear logical chain from mechanistic analysis to methodology design.
+- Value: ⭐⭐⭐⭐⭐ A practical solution for real-time streaming video understanding with 10x TTFT speedup.
 
 <!-- RELATED:START -->
 
@@ -139,11 +139,11 @@ Completely training-free. The design draws from Ebbinghaus's Forgetting Curve th
 
 ## Related Papers
 
-- [\[CVPR 2026\] FluxMem: Adaptive Hierarchical Memory for Streaming Video Understanding](../../CVPR2026/video_understanding/fluxmem_adaptive_hierarchical_memory_for_streaming_video_understanding.md)
-- [\[NeurIPS 2025\] InfiniPot-V: Memory-Constrained KV Cache Compression for Streaming Video Understanding](../../NeurIPS2025/video_understanding/infinipot-v_memory-constrained_kv_cache_compression_for_streaming_video_understa.md)
-- [\[CVPR 2026\] MuKV: Multi-Grained KV Cache Compression for Long Streaming Video Question-Answering](../../CVPR2026/video_understanding/mukv_multi-grained_kv_cache_compression_for_long_streaming_video_question-answer.md)
-- [\[CVPR 2026\] OASIS: On-Demand Hierarchical Event Memory for Streaming Video Reasoning](../../CVPR2026/video_understanding/oasis_on-demand_hierarchical_event_memory_for_streaming_video_reasoning.md)
-- [\[ICCV 2025\] VideoLLaMB: Long Streaming Video Understanding with Recurrent Memory Bridges](../../ICCV2025/video_understanding/videollamb_long_streaming_video_understanding_with_recurrent_memory_bridges.md)
+- [\[CVPR 2026\] Accelerating Streaming Video Large Language Models via Hierarchical Token Compression](../../CVPR2026/vlm_efficiency/accelerating_streaming_video_large_language_models_via_hierarchical_token_compre.md)
+- [\[ACL 2026\] APB-V: Accelerating Long-Video Understanding via Sequence-Parallelism-aware Approximate Attention](apb-v_accelerating_long-video_understanding_via_sequence-parallelism-aware_appro.md)
+- [\[CVPR 2026\] FlashCache: Frequency-Domain-Guided Outlier-KV-Aware Multimodal KV Cache Compression](../../CVPR2026/vlm_efficiency/flashcache_frequency_kv_cache_compression.md)
+- [\[ACL 2026\] HiPrune: Hierarchical Attention for Efficient Token Pruning in Vision-Language Models](hiprune_hierarchical_attention_for_efficient_token_pruning_in_vision-language_mo.md)
+- [\[CVPR 2026\] TimeViper: A Hybrid Mamba-Transformer Vision-Language Model for Efficient Long Video Understanding](../../CVPR2026/vlm_efficiency/timeviper_a_hybrid_mamba-transformer_vision-language_model_for_efficient_long_vi.md)
 
 </div>
 

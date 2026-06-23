@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Latent Agents: A Post-Training Procedure for Internalized Multi-Agent Debate
 description: >-
-  [ACL 2026][Multi-Agent][Knowledge Distillation] The paper proposes the IMAD (Internalized Multi-Agent Debate) framework, which "internalizes" multi-agent debate into a single LLM using a two-stage post-training pipeline (SFT + GRPO). This approach reduces token consumption by up to 93% and demonstrates through activation steering that the internalized model retains
+  [ACL 2026][Multi-Agent][Knowledge Distillation] The Internalized Multi-Agent Debate (IMAD) framework is proposed, utilizing a two-stage post-training pipeline (SFT + GRPO) to "internalize" multi-agent debate into a single LLM. This approach reduces token consumption by up to 93% and demonstrates through activation steering that the internalized model retains separab
 tags:
   - ACL 2026
   - Multi-Agent
   - Knowledge Distillation
   - GRPO
 date: 2026-05-08
-content_hash: 122ccab77149c106
+content_hash: 528bb5f159780f26
 ---
 # Latent Agents: A Post-Training Procedure for Internalized Multi-Agent Debate
 
@@ -20,21 +20,21 @@ content_hash: 122ccab77149c106
 **Keywords**: Multi-Agent Debate, Knowledge Distillation, Activation Steering, Agent Subspace, GRPO
 
 ## TL;DR
-The paper proposes the IMAD (Internalized Multi-Agent Debate) framework, which "internalizes" multi-agent debate into a single LLM using a two-stage post-training pipeline (SFT + GRPO). This approach reduces token consumption by up to 93% and demonstrates through activation steering that the internalized model retains separable and controllable "agent subspaces" within its latent space.
+The Internalized Multi-Agent Debate (IMAD) framework is proposed, utilizing a two-stage post-training pipeline (SFT + GRPO) to "internalize" multi-agent debate into a single LLM. This approach reduces token consumption by up to 93% and demonstrates through activation steering that the internalized model retains separable and controllable "agent subspaces" within its latent space.
 
 ## Background & Motivation
 
-**Background**: Multi-Agent Debate (MAD) has been widely proven to improve LLM reasoning accuracy and reduce hallucinations. This is achieved by allowing multiple LLM instances to criticize and refine each other's answers over multiple rounds of dialogue, finally reaching a conclusion through voting.
+**Background**: Multi-Agent Debate (MAD) has been widely proven to improve the reasoning accuracy of LLMs and reduce hallucinations. This is achieved by allowing multiple LLM instances to criticize and correct each other's answers over multiple rounds of dialogue, finally reaching a conclusion through voting.
 
-**Limitations of Prior Work**: MAD incurs massive inference costs—a typical setup (3 agents × 2 rounds) can generate tens of thousands of tokens in dialogue logs to produce a final answer, making the cost per inference 5–16 times that of a single agent. Existing distillation work (e.g., DebateGPT, Subramaniam et al.) only fine-tunes on the "final consensus answer," failing to inherit the benefits of intermediate multi-perspective reasoning.
+**Limitations of Prior Work**: The inference cost of MAD is substantial—a typical setup (3 agents × 2 rounds) can generate tens of thousands of tokens in dialogue logs to produce a single final answer, with inference costs reaching 5–16 times that of a single agent. Existing distillation works (e.g., DebateGPT, Subramaniam et al.) only fine-tune on the "final consensus answer," failing to inherit the benefits of multi-perspective intermediate reasoning.
 
-**Key Challenge**: The reasoning gains of MAD stem from the **process** of "multi-perspective collision + iterative refinement," rather than just the final conclusion. However, retaining this process consumes tokens, while removing it sacrifices performance gains—presenting a fundamental trade-off between performance and efficiency.
+**Key Challenge**: The reasoning gains of MAD stem from the **process** of "multi-perspective collision + iterative refinement," rather than just the final conclusion. However, retaining this process incurs high token costs, while removing it leads to a loss of performance gains—representing a fundamental trade-off between performance and efficiency.
 
 **Goal**: (1) Distill the complete MAD debate process (not just the conclusion) into a single LLM; (2) Verify whether internalization truly embeds "multiple agents" into the model's latent space or merely memorizes input-output mappings; (3) Utilize this internalized structure for selective behavioral control (e.g., suppressing malicious/hallucinating agents).
 
-**Key Insight**: The authors observe that if a model learns the structure of the entire debate trace (using structural tags like `<|Agent 1|>`) during the SFT stage, subsequent RL—combined with **linearly decaying format rewards** and **gradually tightening length constraints**—can force the model to compress multi-perspective reasoning from "explicit output" into "latent computation."
+**Key Insight**: The authors observed that if a model is taught the structure of the entire debate trace (using structural tags like `<|Agent 1|>`) during the SFT stage, RL can subsequently be used with **gradually decaying format rewards** and **gradually tightening length constraints** to force the model to compress multi-perspective reasoning from "explicit generation" into "latent computation."
 
-**Core Idea**: Use a two-stage post-training approach (first learning structure, then internalizing via dynamic rewards) to compress explicit debate into implicit reasoning. Subsequently, the "difference-in-means" method is used to extract steering vectors for each agent, proving that the internalized model forms separable "agent subspaces" that allow for precise suppression of "bad agents" via negative steering.
+**Core Idea**: A two-stage post-training approach—"learning structure first, then internalizing with dynamic rewards"—is used to compress external debate into implicit reasoning. Furthermore, difference-in-means is used to extract steering vectors for each agent, proving that the internalized model forms separable "agent subspaces" which allow for precise suppression of "bad agents" via negative steering.
 
 ## Method
 
@@ -42,56 +42,56 @@ The paper proposes the IMAD (Internalized Multi-Agent Debate) framework, which "
 
 The entire pipeline consists of three stages:
 
-1.  **Debate Data Collection**: A standard 3-agent × 2-round MAD is executed using GPT-3.5 turbo on arithmetic expressions composed of six two-digit numbers (e.g., $91+24\times 13+45-41\times 38$). Samples where a majority consensus is not reached are filtered out. Each trace is prefixed with structural tags such as `<|Agent i|>`, `<|Round j|>`, `<|Consensus|>`, and `<|endofdebate|>`, resulting in 944 `{Question, Trace, Answer}` triplets.
-2.  **Structure Learning (SFT)**: Standard autoregressive next-token prediction is performed on the complete traces (rather than just the final answer), enabling the single LLM to learn the entire debate format—actively generating multi-agent dialogues, iterative rounds, and the final consensus.
-3.  **Internalization (RL/GRPO)**: Group Relative Policy Optimization is employed with dual dynamic rewards: "format reward weight decay" + "length limit annealing." This forces the explicit debate to be gradually compressed into implicit reasoning.
+1.  **Debate Data Collection**: Standard 3 agent × 2 round MAD is run using GPT-3.5 turbo on arithmetic expressions consisting of six two-digit numbers (e.g., $91+24\times 13+45-41\times 38$). Samples without a majority consensus are filtered out. Each trace is annotated with structural tags such as `<|Agent i|>`, `<|Round j|>`, `<|Consensus|>`, and `<|endofdebate|>`, resulting in 944 `{Question, Trace, Answer}` triplets.
+2.  **Structure Learning (SFT)**: Standard autoregressive next-token prediction is performed on the full traces (not just the final answer), enabling the single LLM to mimic the entire debate format—including initiating multi-agent speeches, multi-round iterations, and the final consensus.
+3.  **Internalization (RL/GRPO)**: Group Relative Policy Optimization is used for further optimization, introducing a dual dynamic reward of "format reward weight decay" + "length limit annealing" to gradually compress explicit debate into implicit reasoning.
 
-The input is a problem. During early training, the output is the complete debate trace with structural tags + the final answer; by the end of training, the model directly outputs the final answer (with intermediate reasoning remaining in the hidden states).
+The input is a problem. At the beginning of training, the output is a complete debate trace with structural tags + the final answer; by the end of training, it directly outputs the final answer (with intermediate reasoning remaining in hidden states).
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["Arithmetic Problem Input"] --> B["Debate Data Collection (Scaffolding)<br/>GPT-3.5 runs 3 agent × 2 round MAD<br/>Add Agent/Round/Consensus tags, filter 944 traces"]
-    B --> C["Structure Tag + Full Trace SFT<br/>Learn full debate discourse structure on complete logs"]
+    A["Arithmetic Problem Input"] --> B["Debate Data Collection (Scaffolding)<br/>GPT-3.5 runs 3 agent × 2 round MAD<br/>Add Agent/Round/Consensus tags, 944 traces filtered"]
+    B --> C["Structure Tag + Full Trace SFT<br/>Learn full debate discourse structure on complete records"]
     C --> D["Dynamic Dual-Reward RL (GRPO)<br/>Format weight 1.0→0.05 + Length limit 2000→500"]
-    D --> E["Internalized Single Model<br/>Multi-view reasoning compressed into latent space, direct answer output"]
-    E --> F["Agent Steering Vectors<br/>Extract latent space directions for each agent via difference-in-means"]
+    D --> E["Internalized Single Model<br/>Multi-perspective reasoning compressed into latent space, direct answer output"]
+    E --> F["Agent Steering Vectors<br/>Extract latent directions for each agent via difference-in-means"]
     F -->|Positive α Amplify / Negative α Suppress| G["Selective Behavioral Control<br/>Precisely suppress malicious agents without damaging core capability"]
 ```
 
 ### Key Designs
 
-**1. Structure Tag + Full Trace SFT: Learning the structure of the entire debate rather than just the final answer**
+**1. Structure Tag + Full Trace SFT: Learning Structure on Full Debate Records Instead of Just the Final Answer**
 
-Distillation efforts like DebateGPT only perform SFT on the "final consensus answer," which essentially discards the process of multi-perspective collision and only inherits the conclusion. Consequently, the reasoning gains of MAD are lost. This paper takes the opposite approach, performing standard cross-entropy next-token training on complete traces containing structural tags like `<|Agent i|>`, `<|Round j|>`, `<|Consensus|>`, and `<|endofdebate|>`. and This allows the single model to learn the entire discourse structure of generating multi-agent utterances and iterating until consensus.
+Distillation works like DebateGPT only perform SFT on the "final consensus answer," essentially discarding the multi-perspective collision process and inheriting only the conclusion—thereby failing to capture MAD's reasoning gains. This work takes the opposite approach, performing standard cross-entropy next-token training on complete traces with tags like `<|Agent i|>`, `<|Round j|>`, `<|Consensus|>`, and `<|endofdebate|>`. This allows the single model to learn the entire discourse structure of generating multi-agent responses and iterating until consensus.
 
-These structural tags serve more than just formatting: they provide parsable reward hooks for subsequent RL (format rewards depend on tag matching) and make different agents more separable in the latent space. Ablations show that removing tags significantly decreases the separability of agent subspaces. Interestingly, because the SFT model "sees" all previous agent utterances during step-by-step generation (unlike real MAD where agents are parallel and only see others at the end of a round), it is even less prone to coordination failures than explicit MAD.
+These structural tags are not merely decorative: they provide parsable reward hooks for subsequent RL (format rewards depend on matching these tags) and facilitate the separation of different agents in the latent space. Ablations show that removing these tags significantly decreases the separability of agent subspaces. Interestingly, the SFT model can "see" all previous agent responses during generation (whereas agents are parallel in real MAD), leading to fewer coordination failures and making the SFT stage alone stronger than explicit debate.
 
-**2. Dynamic Dual-Reward RL: Using format weight decay + length annealing to push explicit debate into latent space**
+**2. Dynamic Dual-Reward RL: Using Format Weight Decay + Length Annealing to Force Explicit Debate into Latent Space**
 
-The SFT-trained model still explicitly outputs the entire debate trace, saving no token costs. The goal of the RL stage is to transition from "explicitly outputting the debate" to "reasoning in the latent space" while ensuring answer accuracy. The reward is a weighted sum $r(x,y)=w_{fmt}R^{fmt}+w_{clip}R(y;l)$: where $R^{fmt}$ is the structural tag matching reward encouraging the retention of the debate format in early stages (with $w_{fmt}$ decaying linearly from 1.0 to 0.05); and $R(y;l)$ is a length-clipping accuracy reward, giving 1 if and only if the correct answer $y^*$ appears within the first $l$ tokens of $y$, and 0 otherwise. The length limit $l$ is annealed from 2000 down to 500.
+The model learned via SFT still explicitly generates the entire debate, saving no token costs. The goal of the RL stage is to transition from "explicitly generating the debate" to "reasoning in the latent space" while ensuring answer accuracy. The reward is a weighted sum $r(x,y)=w_{fmt}R^{fmt}+w_{clip}R(y;l)$: where $R^{fmt}$ is the structural tag matching reward encouraging the retention of the debate format in early stages, with its weight $w_{fmt}$ linearly decaying from 1.0 to 0.05. $R(y;l)$ is a length-clipping correctness reward, giving 1 if and only if the correct answer $y^*$ appears within the first $l$ tokens of $y$, and 0 otherwise. The length limit $l$ anneals from 2000 down to 500.
 
-The combination of these two dynamic signals creates an "impossible task": the model must write a full debate while fitting the answer into the first 500 tokens. To resolve this, the model's only viable strategy is to move multi-perspective reasoning into the hidden states. Gradually tightening $l$ instead of imposing a strict limit from the start ensures the model has room to explore the reasoning space initially. This approach draws inspiration from the internalization of long CoT by Hou et al. (2025) but is applied to multi-agent scenarios for the first time.
+These two dynamic signals create an "impossible task": writing a full debate while fitting the answer within the first 500 tokens. The only viable strategy for the model is to move multi-perspective reasoning into hidden states. Gradually tightening $l$ instead of setting a strict limit immediately prevents the model from losing the room to explore the reasoning space. Simultaneously phasing out the length limit and format reward smoothly pushes the model from being an "explicit debater" to an "implicit debater." This approach draws inspiration from the internalization of long CoT by Hou et al. (2025) but applies it to a multi-agent scenario for the first time.
 
-**3. Agent Steering Vectors based on Difference-in-Means: Explicitly extracting directions for each internalized agent**
+**3. Agent Steering Vectors based on Difference-in-Means: Explicitly Extracting Internalized Agent Directions**
 
-After internalization, a key question remains: does the multi-agent structure truly exist in the latent space, or has it been compressed into an undifferentiated single reasoning path? The most direct way to answer this is to see if agent-specific directions can be found in the latent space. This paper uses Contrastive Activation Addition (CAA) to construct positive samples (an agent $i$'s real response following a debate history) and negative samples (the average activation of the other two agents' responses following the same history) for each agent $i$. The steering vector is obtained at layer $\ell$ using difference-in-means:
+A key question remains after internalization: does the multi-agent structure truly exist in the latent space, or is it compressed into an undifferentiated single reasoning path? The most direct way to answer this is to check for agent-specific directions in the latent space. Contrastive Activation Addition (CAA) is used to construct positive samples (an agent's true response following a debate history) and negative samples (the average activation of other agents' responses following the same history) for each agent $i$. The steering vector is obtained by taking the difference-in-means at layer $\ell$:
 
 $$\mathbf{v}_i = \frac{1}{|\mathcal{D}|}\sum_{p,c\in\mathcal{D}}\left(\mathbf{h}_\ell(p,c_i) - \mathbf{h}_\ell(p,c_{\neg i})\right)$$
 
-During inference, $\alpha\cdot \mathbf{v}_i$ is added to the hidden states. A positive $\alpha$ amplifies the agent's characteristics, while a negative $\alpha$ suppresses them. Vectors are extracted from the SFT checkpoint to avoid artifacts introduced by RL optimization. These separable directions not only prove that "internalization did not erase the multi-agent structure" but also provide a handle for behavioral control—applying negative steering to a malicious agent's direction can selectively suppress bad behavior without destroying general capabilities, turning "controllability" into a "designable" property.
+During inference, $\alpha\cdot \mathbf{v}_i$ is added to the hidden states; a positive $\alpha$ amplifies the agent's characteristics, while a negative $\alpha$ suppresses them. Vectors are extracted from the SFT checkpoint to avoid artifacts introduced by RL optimization. Separable directions not only prove that "internalization did not erase the multi-agent structure" but also provide a handle for behavioral control—negatively adding the vector of a malicious agent allows for the selective suppression of bad behavior without destroying general capabilities, turning a "controllability" problem into a "designability" problem.
 
 ### Loss & Training
 
-SFT uses standard next-token CE, trained for 3–6 epochs. RL uses GRPO for 2 epochs: $k$ candidates are sampled for each query, scored by $r(x,y)$, and the differences form an on-the-fly preference dataset; $w_{fmt}$ goes from 1.0 → 0.05; $l$ goes from 2000 → 500. Both stages use LoRA. For "malicious agent suppression" experiments, $R^{fmt}$ is replaced with an "ethics/honesty" reward provided by an LLM-judge during the RL stage.
+SFT uses standard next-token CE for 3–6 epochs. RL uses GRPO for 2 epochs: $k$ candidates are sampled per query and scored by $r(x,y)$, with the difference pairs forming an on-the-fly preference dataset. $w_{fmt}$ decays from 1.0 → 0.05; $l$ anneals from 2000 → 500. LoRA is used in both stages. For "malicious agent suppression" experiments, $R^{fmt}$ is replaced with an "ethics/honesty" reward provided by an LLM-judge during the RL stage.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Five settings—Single / Debate / DebateGPT / SFT / IMAD (SFT+RL)—were compared across three benchmarks (GSM8K, MMLU-Pro, BBH), with 1,000 problems randomly sampled per benchmark and averaged over 3 runs.
+Five settings—Single / Debate / DebateGPT / SFT / IMAD (SFT+RL)—are compared across three benchmarks: GSM8K, MMLU-Pro, and BBH. 1000 problems are randomly sampled per benchmark, and the mean of 3 runs is reported.
 
-| Model | Method | GSM8K | MMLU-Pro | BBH | GSM8K tokens | Savings vs. Debate |
+| Model | Method | GSM8K | MMLU-Pro | BBH | GSM8K tokens | Relative Debate Gain |
 |------|------|-------|----------|-----|--------------|------------------|
 | LLaMA-3.1 8B | Debate | 83.03 | 64.60 | 51.06 | 5757.78 | — |
 | LLaMA-3.1 8B | **IMAD** | **85.20** | 62.00 | **58.53** | 644.33 | **88.8%** |
@@ -100,51 +100,51 @@ Five settings—Single / Debate / DebateGPT / SFT / IMAD (SFT+RL)—were compare
 | Mistral Nemo 12B | Debate | 61.03 | 41.30 | 62.76 | 1696.99 | — |
 | Mistral Nemo 12B | **IMAD** | **80.00** | 38.97 | **63.73** | 358.01 | **78.9%** |
 
-Across three models, IMAD achieved comparable or superior accuracy using only 6.3%–21.1% of the tokens required by Debate, with the most extreme case being Mistral Nemo 12B on GSM8K, which outperformed explicit Debate by 18.97 percentage points.
+Across three models, IMAD achieves comparable or better accuracy than Debate using only 6.3%–21.1% of the tokens. The most extreme case is on GSM8K with Mistral Nemo 12B, where it outperforms explicit Debate by 18.97 points.
 
 ### Ablation Study
 
 | Experiment | Configuration | Key Metric | Description |
 |------|------|----------|------|
-| Pipeline Ablation | SFT only | LLaMA GSM8K 79.23 / 992 tokens | SFT already stronger than most baselines but uses more tokens than IMAD |
-| Pipeline Ablation | SFT + RL (IMAD) | LLaMA GSM8K 85.20 / 644 tokens | RL stage simultaneously improves score and cuts tokens by up to 66% |
-| Tag Ablation | Remove tags | Sig. drop in subspace separation | Verifies importance of tags for forming agent subspaces |
-| Agent steering | IMAD vs base, ROUGE-L AUC | IMAD higher by **15.41%** avg. | Agent 3 (PoT) improved most (21–25%), proving code-like styles are most distinct |
-| Evil Suppression | $\alpha=-3.0\sim-5.0$ | IMAD score drops to 0; base persists at 1.01 | Internalization makes malicious traits highly localized and eradicable |
-| Hallucination | $\alpha$ range | Partial suppression for both (baseline ≈65) | Hallucination is a distributed trait, but IMAD remains linearly controllable |
-| Task Retention | GSM8K @ extreme $\alpha$ | IMAD remains stable; base collapses | IMAD's subspaces are "cleaner"; steering does not break core capabilities |
+| Pipeline Ablation | SFT only | LLaMA GSM8K 79.23 / token 992 | SFT already outperforms most baselines but uses more tokens than IMAD |
+| Pipeline Ablation | SFT + RL (IMAD) | LLaMA GSM8K 85.20 / token 644 | RL stage simultaneously improves accuracy and cuts tokens by up to 66% |
+| Structure Tag Ablation | Remove tags | Significant drop in subspace separability | Verifies the importance of tags for forming agent subspaces |
+| Agent Steering | IMAD vs base, ROUGE-L AUC | IMAD is on average **15.41%** higher (6.1%–24.97%) | Agent 3 (PoT) shows the largest gain (21–25%), proving code-like styles are most separable |
+| Evil Suppression | $\alpha=-3.0\sim-5.0$ | IMAD score drops to 0; base remains at 1.01 | Internalization makes malicious traits highly localized and fully suppressible |
+| Hallucination Suppression | Within $\alpha$ range | Both models only partially suppress (baseline ≈65) | Hallucination is a distributed trait, but IMAD remains linearly controllable |
+| Task Preservation | GSM8K @ extreme $\alpha$ | IMAD remains stable; base collapses | IMAD's subspaces are "cleaner," steering does not destroy main capability |
 
 ### Key Findings
-- **RL stage is both a token killer and a performance booster**: Compared to SFT, GRPO + length annealing can cut 66% more tokens on LLaMA while gaining 6 points, validating the efficacy of dynamic dual rewards.
-- **Strong cross-domain generalization**: Although trained only on arithmetic, the model showed synchronous improvements on knowledge and reasoning tasks like MMLU-Pro and BBH, indicating that the "multi-perspective reasoning schema" was internalized rather than just arithmetic skills.
-- **Personas truly exist in latent space**: A minor steering of $\alpha=0.5$ in IMAD yields outputs distinctly featuring step enumeration (Agent 1), self-criticism (Agent 2), or code/equations (Agent 3), whereas the base model produces mixed styles under the same steering.
-- **Trait distribution determines controllability**: "Evil" is a localized trait in latent space that can be completely neutralized; "hallucination" is a distributed trait that can only be linearly weakened—providing a diagnostic framework for LLM safety research.
-- **Model capacity threshold**: Models ≤7B perform poorly at internalization; 7B+ parameters are required to stably host multi-agent subspaces.
+- **RL stage is both a token killer and a performance booster**: Compared to SFT, GRPO + length annealing can cut an additional 66% of tokens while gaining 6 points on LLaMA, verifying the effectiveness of dynamic dual rewards.
+- **Good cross-domain generalization**: Although trained only on arithmetic, performance improved simultaneously on knowledge and reasoning tasks like MMLU-Pro and BBH, indicating the internalization of a "multi-perspective reasoning schema" rather than just arithmetic skills.
+- **Personas truly exist in latent space**: A small steering of $\alpha=0.5$ causes IMAD's output to clearly exhibit three styles: step enumeration (Agent 1), self-criticism (Agent 2), and code/equations (Agent 3), while the base model shows mixed styles under the same steering.
+- **Trait distribution determines controllability**: "Evil" is a localized trait in latent space that can be zeroed out via steering; "hallucination" is a distributed trait that can only be linearly weakened. This provides a diagnostic framework for LLM safety research.
+- **Model capacity threshold**: Models ≤ 7B perform poorly in internalization; 7B+ is required to stably host multi-agent subspaces.
 
 ## Highlights & Insights
-- **"Dynamic Reward Annealing = Explicit-to-Implicit Training Topology Control"**: Simultaneously annealing reward weights and length limits is an elegant way to induce the model to shift observable computation into the latent space. This design is more stable than simple length penalties and can be directly transferred to scenarios like long CoT compression, ReAct internalization, and tool-use simplification.
-- **"Internalization creates separable subspaces" is a counter-intuitive finding**: One might fear that distillation would collapse multi-perspective views into a single representation. However, the authors provide triple evidence (ROUGE AUC, persona steering, and GSM8K retention) that the agent structure is "etched" into the latent space and can be extracted using a simple difference-in-means approach, opening a new path for interpretability research.
-- **Safety application of "Malicious Agent Internalization → Precise Removal via Negative Steering"**: Instead of searching for harmful directions in a general model (which risk "friendly fire"), it is better to **actively plant** a bad agent and then surgically remove it. This transforms controllability into a designability problem—a brilliant reverse-engineering approach applicable to jailbreak defense, persona fine-tuning, and value alignment.
+- **"Dynamic Reward Annealing = Topology Control for Training Explicit → Implicit"**: Simultaneously annealing reward weights and length limits is an elegant way to induce the model to shift observable computation to the latent space. This is more stable than simple length penalties or one-time cuts and can be directly transferred to scenarios like long CoT compression or ReAct internalization.
+- **"Internalization creating separable subspaces" is a counterintuitive discovery**: Usually, there is concern that distillation might compress multiple perspectives into a single representation. The authors provide triple evidence (ROUGE AUC + persona steering + GSM8K preservation) that agent structures are truly "etched" into the latent space and can be read out via simple difference-in-means, opening a new avenue for interpretability research.
+- **Safety application of "Malicious Agent Internalization → Precise Removal via Negative Steering"**: Instead of searching for harmful directions in a general model (which risk "overkill"), it is better to **actively seed** a bad agent and then remove it. Converting controllability into designability is a brilliant reverse-engineering style idea that could be applied to jailbreak defense and value alignment.
 
 ## Limitations & Future Work
-- **Narrow Data Distribution**: Training data is limited to 6-number arithmetic expressions with a fixed 3 agent × 2 round setup. Generalization to more complex debate structures and open-ended tasks (e.g., long-form QA, creative writing) requires further validation.
-- **Dependence on SFT Stage Format Learning**: While LLaMA stably learns the structure, Qwen/Mistral occasionally fails to do so thoroughly in certain settings, causing the lower bound of internalization to be limited by the base model's in-context schema-following ability.
-- **LLM-judge Bias**: Evil/Hallucination scores rely on GPT-4o-mini as a judge. While human-LLM consistency experiments were performed, a protocol entirely independent of self-evaluation is still needed.
-- **Capacity Threshold of 7B+**: Small models (<7B) show negligible gains from internalization, likely due to a capacity bottleneck. Future work could explore reproducing these effects in small models via MoE or mixture-of-personas.
-- **Improvement Ideas**: (a) Upgrade difference-in-means to Sparse Autoencoders (SAE) to extract finer-grained agent circuits; (b) Use internalized agents as inference-time control knobs linked to sampling temperature or CoT length; (c) Extend the "plant-and-remove" framework to precise implantation of positive traits (e.g., politeness, NDA compliance).
+- **Narrow data distribution**: Training data is limited to 6-number arithmetic expressions with a fixed 3 agent × 2 round setup. Generalization to more complex debate structures and open-ended tasks requires further validation.
+- **Reliance on SFT stage format learning**: LLaMA learns the structure stably, but Qwen/Mistral fail to do so completely in some settings, leading to poor subspace separability—the floor of internalization is limited by the base model's in-context schema-following ability.
+- **Bias in LLM-judge evaluation**: Evil/Hallucination scores rely on GPT-4o-mini as a judge. While human-LLM consistency experiments were performed, protocols independent of self-evaluation still need development.
+- **Capacity threshold 7B+**: Internalization gains are not obvious for small models (<7B), likely due to a capacity bottleneck. Future work could explore reproducing effects on small models via smarter LoRA configurations or MoE.
+- **Improvement ideas**: (a) Upgrade difference-in-means to Sparse Dictionary Learning/SAE for finer-grained agent circuits; (b) Use internalized agents as inference-time control knobs linked to sampling temperature or CoT length; (c) Extend the "seed-and-remove" framework to the precise implantation of positive traits.
 
 ## Related Work & Insights
-- **vs. Debate (Du et al., 2023)**: Classic MAD is an inference-time protocol; this work is a train-time distillation that absorbs the protocol into the weights, plunging inference costs. MAD is flexible but expensive; IMAD is cheap after training but has a fixed schema.
-- **vs. DebateGPT / Subramaniam et al.**: They perform SFT only on the "final consensus answer"; this work uses complete traces + structural tags for SFT + dynamic RL, inheriting reasoning gains from intermediate processes (IMAD consistently outperforms DebateGPT).
-- **vs. Hou et al. (2025) Long CoT Internalization**: Both use length-based RL for internalization, but Hou focuses on a single agent/view. This work handles multiple agents/views + dual rewards + subspace interpretability, upgrading internalization from "compression" to "structure-preserving compression."
-- **vs. Persona Vectors (Chen et al., 2025)**: They extract persona/trait directions from general models; this work **actively plants** personas using IMAD before extraction, resulting in subspaces with higher separation and more thorough trait suppression without hurting core capabilities—a "training-enhanced" version of persona steering.
-- **vs. Coconut (Hao et al., 2024) Continuous Latent Reasoning**: Both move reasoning into the latent space, but Coconut passes hidden states as thought tokens in the forward pass. This work uses reward pressure to let the model learn implicit reasoning on its own, maintaining the utility of a discrete token interface.
+- **vs Debate (Du et al., 2023)**: Classic MAD is an inference-time protocol; this work is train-time distillation that absorbs the protocol into weights, drastically lowering inference costs. The trade-off is MAD's flexibility vs IMAD's efficiency and fixed schema.
+- **vs DebateGPT / Subramaniam et al.**: They only perform SFT on the "final consensus answer"; this work utilizes full traces + tags for SFT + dynamic RL, inheriting reasoning gains from intermediate processes (IMAD consistently outperforms DebateGPT).
+- **vs Hou et al. (2025) Long CoT Internalization**: Also uses length-based RL for internalization, but Hou's work is single-agent/single-perspective. This work is multi-agent/multi-perspective with dual rewards and subspace interpretability, upgrading internalization from "compression" to "structure-preserving compression."
+- **vs Persona Vectors (Chen et al., 2025)**: They extract persona/trait directions from general models; this work **seeds** personas via IMAD before extraction, obtaining subspaces with higher separability and enabling more thorough trait suppression without hurting core capabilities—a "training-enhanced version" of persona steering.
+- **vs Coconut (Hao et al., 2024) Continuous Latent Reasoning**: Both move reasoning into the latent space, but Coconut passes hidden states as thought tokens in the forward pass, whereas this work uses reward pressure to let the model learn implicit reasoning while maintaining a practical discrete token interface.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ First to distill the complete multi-agent debate structure into a single model with accompanying subspace analysis and safety applications.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Cross-model/benchmark evaluation with extensive ablations and steering/safety/perplexity analysis; however, training data is limited to arithmetic.
-- Writing Quality: ⭐⭐⭐⭐ Clear three-part narrative (efficiency → interpretability → controllability) with well-integrated formulas and intuitive explanations.
-- Value: ⭐⭐⭐⭐⭐ Simultaneously advances "reasoning efficiency," "LLM interpretability," and "safety steering," with open-sourced, reproducible code.
+- Novelty: ⭐⭐⭐⭐⭐ First to distill the full structure of multi-agent debate into a single model, combined with subspace analysis and safety applications.
+- Experimental Thoroughness: ⭐⭐⭐⭐ 3 models × 3 benchmarks + extensive ablations + steering/safety/perplexity analysis; however, training data is limited to arithmetic.
+- Writing Quality: ⭐⭐⭐⭐ Clear three-part narrative (efficiency → interpretability → controllability) with well-integrated formulas and intuition.
+- Value: ⭐⭐⭐⭐⭐ Simultaneously advances reasoning efficiency, LLM interpretability, and safety steering; code is open-source and reproducible.
 
 <!-- RELATED:START -->
 
@@ -155,8 +155,8 @@ Across three models, IMAD achieved comparable or superior accuracy using only 6.
 - [\[ACL 2026\] Efficient Multi-Agent System Training with Data Influence-Oriented Tree Search](efficient_multi-agent_system_training_with_data_influence-oriented_tree_search.md)
 - [\[ACL 2026\] When Identity Skews Debate: Anonymization for Bias-Reduced Multi-Agent Reasoning](when_identity_skews_debate_anonymization_for_bias-reduced_multi-agent_reasoning.md)
 - [\[ACL 2026\] HACHIMI: Scalable and Controllable Student Persona Generation via Orchestrated Agents](hachimi_scalable_and_controllable_student_persona_generation_via_orchestrated_ag.md)
+- [\[AAAI 2026\] Beyond Detection: Exploring Evidence-based Multi-Agent Debate for Misinformation Intervention and Persuasion](../../AAAI2026/multi_agent/beyond_detection_exploring_evidence-based_multi-agent_debate_for_misinformation_.md)
 - [\[ACL 2026\] ATLAS: Adaptive Trading with LLM AgentS Through Dynamic Prompt Optimization and Multi-Agent Coordination](atlas_adaptive_trading_with_llm_agents_through_dynamic_prompt_optimization_and_m.md)
-- [\[ICML 2026\] When Cloud Agents Meet Device Agents: Lessons from Hybrid Multi-Agent Systems](../../ICML2026/multi_agent/when_cloud_agents_meet_device_agents_lessons_from_hybrid_multi-agent_systems.md)
 
 </div>
 

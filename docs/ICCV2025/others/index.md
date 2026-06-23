@@ -81,7 +81,7 @@ item_total: 33
 
 **📹 ICCV2025** · **33** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (98)](../../CVPR2026/others/index.md) · [🧪 ICML2026 (63)](../../ICML2026/others/index.md) · [💬 ACL2026 (3)](../../ACL2026/others/index.md) · [🔬 ICLR2026 (70)](../../ICLR2026/others/index.md) · [🤖 AAAI2026 (117)](../../AAAI2026/others/index.md) · [🧠 NeurIPS2025 (118)](../../NeurIPS2025/others/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (98)](../../CVPR2026/others/index.md) · [🔬 ICLR2026 (116)](../../ICLR2026/others/index.md) · [💬 ACL2026 (4)](../../ACL2026/others/index.md) · [🧪 ICML2026 (70)](../../ICML2026/others/index.md) · [🤖 AAAI2026 (117)](../../AAAI2026/others/index.md) · [🧠 NeurIPS2025 (118)](../../NeurIPS2025/others/index.md)
 
 🔥 **Top topics:** Dynamic Scenes ×2 · Adversarial Robustness ×2 · Few-/Zero-Shot Learning ×2 · Diffusion Models ×2
 

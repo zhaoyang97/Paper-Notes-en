@@ -2,12 +2,12 @@
 title: >-
   [Paper Note] ChemVLR: Prioritizing Reasoning in Perception for Chemical Vision-Language Understanding
 description: >-
-  [ACL 2026][Multimodal VLM][Paper Note] Ours proposes ChemVLR, the first reasoning-based VLM in the chemistry domain. It constructs a 760K reasoning dataset through a cross-modal reverse engineering strategy and employs a three-stage training process (CPT-SFT-RL), significantly outperforming proprietary models and domain-expert VLMs in molecular recognition
+  [ACL 2026][vlm_reasoning][Paper Note] ChemVLR is proposed as the first reasoning-based VLM in the chemical domain. It constructs a 760K reasoning dataset via a cross-modal reverse engineering strategy and employs a three-stage training pipeline (CPT-SFT-RL), significantly outperforming proprietary models and domain-specific VLMs in molecular recognition an
 tags:
   - ACL 2026
-  - Multimodal VLM
+  - vlm_reasoning
 date: 2026-05-08
-content_hash: 98683d1c93d9696c
+content_hash: 48965fa80dc0e823
 ---
 # ChemVLR: Prioritizing Reasoning in Perception for Chemical Vision-Language Understanding
 
@@ -15,80 +15,77 @@ content_hash: 98683d1c93d9696c
 **arXiv**: [2604.06685](https://arxiv.org/abs/2604.06685)  
 **Code**: [https://github.com/xxlllz/ChemVLR](https://github.com/xxlllz/ChemVLR)  
 **Area**: Interpretability  
-**Keywords**: Chemical vision understanding, Reasoning VLM, Cross-modal reverse engineering, Three-stage training, Molecular recognition
+**Keywords**: Chemical Visual Understanding, Reasoning VLM, Cross-modal Reverse Engineering, Three-stage Training, Molecular Recognition
 
 ## TL;DR
-Ours proposes ChemVLR, the first reasoning-based VLM in the chemistry domain. It constructs a 760K reasoning dataset through a cross-modal reverse engineering strategy and employs a three-stage training process (CPT-SFT-RL), significantly outperforming proprietary models and domain-expert VLMs in molecular recognition and reaction prediction tasks.
+ChemVLR is proposed as the first reasoning-based VLM in the chemical domain. It constructs a 760K reasoning dataset via a cross-modal reverse engineering strategy and employs a three-stage training pipeline (CPT-SFT-RL), significantly outperforming proprietary models and domain-specific VLMs in molecular recognition and reaction prediction.
 
 ## Background & Motivation
 
-**Background**: Chemistry VLMs (e.g., ChemVLM, TinyChemVL) have made some progress but mainly adopt an end-to-end direct answering paradigm relying on SFT. Meanwhile, RLVR has demonstrated strong reasoning enhancement capabilities in fields such as mathematics and programming.
+**Background**: VLMs in the chemical field (e.g., ChemVLM, TinyChemVL) have made progress but primarily follow an end-to-end direct answering paradigm relying on SFT. Meanwhile, RLVR has demonstrated powerful reasoning enhancement capabilities in domains like mathematics and programming.
 
-**Limitations of Prior Work**: Existing chemistry VLMs are "black-box" systems—jumping directly from molecular images to answers without generating interpretable reasoning paths. They do not fully utilize the LLM's ability to infer underlying reaction mechanisms and perform poorly on complex visual chemistry problems. Furthermore, high-quality chemical reasoning data is extremely scarce, especially visually-grounded reasoning annotations.
+**Limitations of Prior Work**: Existing chemical VLMs are "black box" systems that jump directly from molecular images to answers without generating interpretable reasoning paths. They fail to fully utilize the LLM's ability to infer underlying reaction mechanisms and perform poorly on complex visual chemical problems. Furthermore, high-quality chemical reasoning data, especially vision-based reasoning annotations, is extremely scarce.
 
-**Key Challenge**: Chemical image understanding requires fine-grained substructure analysis (e.g., functional group recognition), but general VLMs lack domain knowledge, and direct SFT cannot fully activate pre-trained knowledge.
+**Key Challenge**: Chemical image understanding requires fine-grained substructure analysis (e.g., functional group recognition). However, general VLMs lack specific chemical domain knowledge, and direct SFT is insufficient to activate pre-trained knowledge effectively.
 
-**Goal**: To build a chemistry VLM that prioritizes reasoning in the perception process—explicitly identifying fine-grained chemical descriptors (e.g., functional groups) first, then deriving the final answer.
+**Goal**: To build a chemical VLM that prioritizes reasoning during perception—explicitly identifying fine-grained chemical descriptors (e.g., functional groups) before deriving the final answer.
 
-**Key Insight**: Utilize textual chemical queries + ground truth answers to reconstruct the reasoning process via an LLM, then pair this with image rendering to generate visual reasoning data.
+**Key Insight**: Utilize textual chemical queries combined with ground-truth answers to reconstruct reasoning processes via LLMs, followed by image rendering to generate visual reasoning data.
 
-**Core Idea**: Large-scale reasoning data generation through cross-modal reverse engineering + CPT→SFT→RL three-stage progressive training.
+**Core Idea**: Generation of large-scale reasoning data through cross-modal reverse engineering combined with a progressive CPT $\rightarrow$ SFT $\rightarrow$ RL three-stage training process.
 
 ## Method
 
 ### Overall Architecture
-Regarding data construction, reasoning processes are reconstructed from textual SMILES QA pairs using Gemini-2.5-Flash, supplemented by IUPAC names, RDKit functional groups, and expert demonstrations as semantic anchors. High-quality samples (760K) are generated via three-stage filtering. Regarding training, a three-stage workflow is adopted: CPT (chemo-visual alignment) → SFT (reasoning + instruction mixture) → RL (DAPO optimization).
+For data construction, reasoning processes are reconstructed from textual SMILES QA pairs using Gemini-2.5-Flash, utilizing IUPAC names, RDKit functional groups, and expert demonstrations as semantic anchors. High-quality samples (760K) are generated after three-stage filtering. Training follows a progressive process: CPT (chemical-visual alignment) $\rightarrow$ SFT (mixed reasoning and instruction training) $\rightarrow$ RL (DAPO optimization).
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
     subgraph DATA["Cross-modal Reverse Engineering Data Generation (Design 1)"]
         direction TB
-        Q["Textual SMILES 'query + answer' pairs"] --> G["Gemini-2.5-Flash<br/>Reconstruct reasoning chain from known answers"]
-        ANC["Three types of semantic anchors<br/>IUPAC names · RDKit functional groups · Expert demos"] --> G
-        G --> F["Three-stage filtering<br/>Structural filtering · Answer consistency · GPT-4.1-mini review"]
-        F --> DS["760K visual reasoning data<br/>360K reasoning + 400K description + 1.4M instruction"]
+        Q["Textual SMILES 'Query+Answer' Pairs"] --> G["Gemini-2.5-Flash<br/>Reconstruct reasoning chain with known answers"]
+        ANC["Three Semantic Anchors<br/>IUPAC Names · RDKit Groups · Expert Demos"] --> G
+        G --> F["Triple Filtering<br/>Structural Filter · Consistency Check · GPT-4.1-mini Review"]
+        F --> DS["760K Visual Reasoning Data<br/>360K Reasoning + 400K Description + 1.4M Instructions"]
     end
-    IUPAC["IUPAC knowledge activation<br/>300K image→IUPAC conversion samples"] --> ANC
+    IUPAC["IUPAC Knowledge Activation<br/>300K Image-to-IUPAC Conversion Samples"] --> ANC
     IUPAC --> DS
     DS --> TRAIN
     subgraph TRAIN["Three-stage Progressive Training (Design 2)"]
         direction TB
-        CPT["CPT Chemo-visual alignment<br/>Freeze LLM, train ViT+Projector only"] --> SFTS["SFT Reasoning + Instruction mixture<br/>Full parameter fine-tuning, &lt;think&gt;/&lt;answer&gt; separation"]
-        SFTS --> RL["RL · DAPO optimization<br/>SMILES accuracy + format dual reward"]
+        CPT["CPT Chemical-Visual Alignment<br/>Freeze LLM, train ViT+Projector only"] --> SFTS["SFT Reasoning + Instruction Mix<br/>Full-parameter tuning, &lt;think&gt;/&lt;answer&gt; separation"]
+        SFTS --> RL["RL · DAPO Optimization<br/>SMILES Accuracy + Format Double Reward"]
     end
-    TRAIN --> OUT["ChemVLR-8B Reasoning-based Chemistry VLM"]
+    TRAIN --> OUT["ChemVLR-8B Reasoning Chemical VLM"]
 ```
 
 ### Key Designs
 
-**1. Cross-modal reverse engineering data generation: Deducing reasoning from answers to solve the lack of visual chemical reasoning annotations.**
+**1. Cross-modal Reverse Engineering: Reversing reasoning processes from answers to solve the zero-annotation dilemma in visual chemistry.**
 
-The chemistry field lacks ready-made "image—reasoning—answer" annotations, and manual labeling cannot scale. ChemVLR reverses the approach: using existing textual SMILES "query + answer" pairs, Gemini-2.5-Flash reconstructs a reasoning chain that leads to the correct answer. To prevent hallucination, each sample is anchored with IUPAC names retrieved from PubChem, functional groups calculated by RDKit, and expert demonstrations. Post-generation, three filters are applied: structural filtering, answer consistency checks (derived SMILES must match ground truth), and external LLM verification (GPT-4.1-mini). 
+As manual annotation for "image-reasoning-answer" triplets is not scalable, ChemVLR reverses the process. Given existing textual SMILES QA pairs, Gemini-2.5-Flash reconstructs reasoning chains leading to known answers. To prevent hallucinations, three semantic anchors are provided: IUPAC names from PubChem, RDKit-calculated functional groups, and curated expert demonstrations. Samples undergo structural filtering, answer consistency checks, and external LLM verification, increasing data retention from 55%–78% to 73%–95%.
 
-This anchor + filter setup increased data retention from 55%–78% to 73%–95%, yielding 360K reasoning, 400K description, and 1.4M instruction samples. Its value lies in converting "annotation scarcity" into "reverse generation from answers + multi-layer verification," a method transferable to other specialized domains.
+**2. Three-stage Progressive Training: Grounding visual perception before teaching reasoning and optimizing with RL.**
 
-**2. Three-stage progressive training: Supplementing chemo-visual perception before teaching reasoning and refining with RL.**
+General VLMs struggle with molecular images initially. Directly applying SFT or RL is ineffective because the model cannot accurately recognize functional groups. ChemVLR builds capabilities layer by layer: 
+- **CPT**: Aligns vision and chemical domains using 500K pairs with a frozen LLM backbone.
+- **SFT**: Full-parameter fine-tuning on 360K reasoning and 1.4M instruction samples using `<think>/<answer>` tags.
+- **RL**: DAPO optimization using rewards based on SMILES accuracy ($Tanimoto\ similarity = 1.0$) and format correctness.
 
-General VLMs are largely "blind" to molecular images; direct SFT or RL shows little effect because the models cannot even identify functional groups accurately. ChemVLR builds capabilities incrementally: the CPT stage freezes the LLM backbone and trains the ViT+Projector using 500K chemo-image-text pairs for domain alignment; the SFT stage performs full parameter fine-tuning on mixed reasoning and instruction data using `<think>/<answer>` tags; the RL stage employs DAPO optimization with rewards based on SMILES accuracy ($Tanimoto \ similarity = 1.0$) and format correctness. 
+**3. IUPAC Knowledge Activation: Awakening pre-trained chemical knowledge through alternative representations.**
 
-This sequence—"perception before reasoning"—underpins the title "Prioritizing Reasoning in Perception." Without CPT, RL lacks a foundation (RL-only is ineffective in ablations); after bridging the domain gap, RL provides an average gain of ~9% across all tasks.
-
-**3. IUPAC knowledge activation: Changing representation to awaken chemical knowledge already present in pre-training corpora.**
-
-Models encounter vast chemical content during general pre-training, but this knowledge often appears as IUPAC names (e.g., "2-methylbutane") rather than SMILES strings. Training solely on SMILES is akin to asking questions in an unfamiliar dialect. Ours constructs 300K image→IUPAC conversion samples to trigger the model's inherent chemical common sense using familiar representations. 
-
-The effect is direct: adding IUPAC data increased the retention rate of reverse engineering data from 78% to 92%. This reveals that the utilization of pre-trained knowledge often depends on whether the representation aligns with the pre-training distribution.
+VLMs encounter chemical knowledge during pre-training primarily in IUPAC nomenclature rather than SMILES strings. ChemVLR constructs 300K image-to-IUPAC conversion samples to trigger the model's inherent chemical common sense. This increased the data generation retention rate from 78% to 92%, demonstrating that utilizing pre-trained knowledge depends heavily on whether the data representation aligns with the pre-training distribution.
 
 ### Loss & Training
-The RL stage uses DAPO (Decoupled Clip and Dynamic Sampling Policy Optimization) with binary rewards (accuracy + format). The SFT model filters 100K medium-difficulty samples for training.
+The RL stage utilizes DAPO (Decoupled Clip and Dynamic Sampling Policy Optimization) with binary rewards for accuracy and format. Training is performed on 100K medium-difficulty samples filtered by the SFT model.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Model | MMChemOCR Avg Sim. | MMChemOCR Tani@1.0 | img2smiles Tani@1.0 | ChemRxn-V Pred |
-| :--- | :--- | :--- | :--- | :--- |
+| :--- | :---: | :---: | :---: | :---: |
 | ChemVLR-8B | **93.8** | **84.6** | **92.7** | **67.8** |
 | TinyChemVL | 91.2 | 77.4 | 75.6 | 52.4 |
 | Gemini-3-Flash | 77.6 | 61.2 | 63.8 | 51.7 |
@@ -96,49 +93,49 @@ The RL stage uses DAPO (Decoupled Clip and Dynamic Sampling Policy Optimization)
 
 ### Ablation Study
 
-| Configuration | Effect | Description |
-| :--- | :--- | :--- |
-| SFT only | Baseline | Lacks chemo-visual understanding |
-| CPT + SFT | Gain | Visual alignment improves perception |
-| CPT + SFT + RL | **Optimal** | RL improves performance by 9% on average |
-| RL only | Ineffective | Lacks domain foundation for effective optimization |
+| Configuration | Gain | Description |
+| :--- | :---: | :--- |
+| SFT only | Baseline | Lacks chemical visual understanding |
+| CPT + SFT | Improvement | Visual alignment improves perception |
+| CPT + SFT + RL | **Optimal** | RL improves average performance by 9% |
+| RL only | Minimal | Ineffective without domain foundations |
 
 ### Key Findings
-- ChemVLR is the first VLM to match the precision of specialized SMILES OCR models like Decimer.
-- RL training exhibits an "Aha moment"—rewards rise sharply between 200-400 steps.
-- IUPAC data acts as a critical catalyst, significantly activating pre-trained knowledge.
+- ChemVLR achieves accuracy comparable to specialized SMILES OCR models (e.g., Decimer) for the first time in a VLM.
+- RL training exhibits an "Aha! moment," where rewards rise sharply between steps 200 and 400.
+- IUPAC data serves as a crucial catalyst for activating pre-trained knowledge.
 
 ## Highlights & Insights
-- The **reverse engineering data generation strategy** is highly practical—deducing reasoning from answers with multi-stage verification is applicable to other data-scarce professional fields.
-- The **discovery of IUPAC knowledge activation** is insightful—the utilization of pre-trained knowledge depends on the training data's representation matching the pre-training distribution.
-- The **RL "Aha moment"** confirms the effectiveness of RLVR for reasoning enhancement in specialized domains.
+- The **reverse engineering data generation strategy** is highly practical for specialized domains where reasoning annotations are scarce.
+- The **IUPAC knowledge activation finding** suggests that the utility of pre-trained knowledge depends on the alignment of the representation format.
+- The **RL "Aha! moment"** validates the effectiveness of RLVR for enhancing reasoning in professional domains.
 
 ## Limitations & Future Work
-- Training requires 16xH800 GPUs, involving high resource demands.
-- The correctness of the reasoning process depends on filtering quality; logical inconsistencies may exist even if the reasoning path is superficially correct.
-- Validation is limited to organic molecules/reactions; inorganic chemistry and complex mechanisms remain unexplored.
+- The high resource requirement (16xH800 GPUs) for training.
+- Reasoning correctness depends on filtering quality; logical inconsistencies may still exist despite correct answers.
+- Evaluation is limited to organic molecules/reactions; inorganic chemistry and complex mechanisms are not yet covered.
 
 ## Related Work & Insights
-- **vs TinyChemVL**: Both are chemistry VLMs, but TinyChemVL uses SFT only. ChemVLR enhances reasoning capabilities through RL.
+- **vs TinyChemVL**: While both are chemical VLMs, ChemVLR enhances reasoning via RL whereas TinyChemVL relies solely on SFT.
 - **vs ChemDFM-R/Chem-R**: These models enhance reasoning in the text domain; ChemVLR extends this to multimodal visual reasoning.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ First chemistry reasoning VLM; novel reverse engineering data strategy.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Multiple benchmarks, baselines, and detailed ablations.
-- Writing Quality: ⭐⭐⭐⭐ Clear description of data construction and training workflows.
-- Value: ⭐⭐⭐⭐ Significant contribution to Chemistry AI and scientific reasoning.
+- Novelty: ⭐⭐⭐⭐ First chemical reasoning VLM with a novel reverse engineering strategy.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Extensive benchmarks, baselines, and ablations.
+- Writing Quality: ⭐⭐⭐⭐ Clear descriptions of data construction and training.
+- Value: ⭐⭐⭐⭐ Significant advancement for AI in chemistry and scientific reasoning.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1">
+<div class="related-papers" markdown="1"></div>
 
 ## Related Papers
 
 - [\[ACL 2026\] Decoding Scientific Experimental Images: The SPUR Benchmark for Perception, Understanding, and Reasoning](decoding_scientific_experimental_images_the_spur_benchmark_for_perception_unders.md)
 - [\[ACL 2026\] Addressing Overthinking in Large Vision-Language Models via Gated Perception-Reasoning Optimization](addressing_overthinking_in_large_vision-language_models_via_gated_perception-rea.md)
-- [\[CVPR 2026\] Select Less, Reason More: Prioritizing Evidence Purity for Video Reasoning](../../CVPR2026/multimodal_vlm/select_less_reason_more_prioritizing_evidence_purity_for_video_reasoning.md)
-- [\[AAAI 2026\] TinyChemVL: Advancing Chemical Vision-Language Models via Efficient Visual Token Reduction and Complex Reaction Tasks](../../AAAI2026/multimodal_vlm/tinychemvl_advancing_chemical_vision-language_models_via_efficient_visual_token_.md)
-- [\[CVPR 2026\] PDCR: Perception-Decomposed Confidence Reward for Vision-Language Reasoning](../../CVPR2026/multimodal_vlm/pdcr_perception-decomposed_confidence_reward_for_vision-language_reasoning.md)
+- [\[ICCV 2025\] Understanding Museum Exhibits using Vision-Language Reasoning](../../ICCV2025/vlm_reasoning/understanding_museum_exhibits_using_vision-language_reasoning.md)
+- [\[ICML 2026\] Bad Seeing or Bad Thinking? Rewarding Perception for Vision-Language Reasoning](../../ICML2026/vlm_reasoning/bad_seeing_or_bad_thinking_rewarding_perception_for_vision-language_reasoning.md)
+- [\[ICML 2026\] Native Active Perception as Reasoning for Omni-Modal Understanding](../../ICML2026/vlm_reasoning/native_active_perception_as_reasoning_for_omni-modal_understanding.md)
 
 </div>
 

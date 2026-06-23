@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] A Goal Without a Plan Is Just a Wish: Efficient and Effective Global Planner Training for Long-Horizon Agent Tasks (EAGLET)
 description: >-
-  [ACL 2026][Reinforcement Learning][plan-and-execute] EAGLET decomposes long-horizon agent tasks into two modules: a "global planner + local executor." It trains a plug-and-play planner through a two-step process: "cold-start SFT using homologous consensus filtering" and "GRPO fine-tuning using executor capability gain as a reward." It achieves new SOTA on three long-hori
+  [ACL 2026][Reinforcement Learning][plan-and-execute] EAGLET decouples long-horizon agent tasks into "global planner + local executor" modules. It trains a plug-and-play planner through a two-step pipeline: "cold-start SFT with homologous consensus filtering" followed by "GRPO fine-tuning using executor capability gain as reward." It achieves new SOTA on three long-horizo
 tags:
   - ACL 2026
   - Reinforcement Learning
@@ -10,56 +10,56 @@ tags:
   - GRPO
   - executor capability gain reward
 date: 2026-05-08
-content_hash: 4dcd12af07317fab
+content_hash: 2a30851102922513
 ---
 # A Goal Without a Plan Is Just a Wish: Efficient and Effective Global Planner Training for Long-Horizon Agent Tasks (EAGLET)
 
 **Conference**: ACL 2026  
 **arXiv**: [2510.05608](https://arxiv.org/abs/2510.05608)  
-**Code**: Public link not provided in the abstract  
+**Code**: No public link provided in the abstract  
 **Area**: Reinforcement Learning / LLM Agent  
-**Keywords**: plan-and-execute, GRPO, Global Planner, Long-horizon tasks, executor capability gain reward
+**Keywords**: plan-and-execute, GRPO, global planner, long-horizon tasks, executor capability gain reward
 
 ## TL;DR
-EAGLET decomposes long-horizon agent tasks into two modules: a "global planner + local executor." It trains a plug-and-play planner through a two-step process: "cold-start SFT using homologous consensus filtering" and "GRPO fine-tuning using executor capability gain as a reward." It achieves new SOTA on three long-horizon tasks and reduces training costs to 1/8 of RL baselines.
+EAGLET decouples long-horizon agent tasks into "global planner + local executor" modules. It trains a plug-and-play planner through a two-step pipeline: "cold-start SFT with homologous consensus filtering" followed by "GRPO fine-tuning using executor capability gain as reward." It achieves new SOTA on three long-horizon benchmarks while reducing training costs to 1/8 of RL baselines.
 
 ## Background & Motivation
-**Background**: LLM agents currently handle long-horizon tasks (multi-turn interaction, dynamic environments like ScienceWorld, ALFWorld, WebShop) via two main paradigms: implicit planning (ReAct series + SFT/RL, where planning is hidden within each reasoning step) and explicit planning (KnowAgent constructing knowledge bases, MPO training a specific planner).
+**Background**: LLM agents for long-horizon tasks (multi-turn interactions, dynamic environments such as ScienceWorld, ALFWorld, WebShop) currently follow two main paths: implicit planning (ReAct series + SFT/RL, where planning is hidden within each step of reasoning) and explicit planning (KnowAgent for knowledge base construction, MPO for planner training).
 
-**Limitations of Prior Work**: Implicit methods treat the agent solely as an executor, relying on local reason-action interleaving for planning. This leads to frequent brainless trial-and-error and planning hallucinations in long-horizon tasks. SFT requires large amounts of expert trajectories (data-inefficient), while RL suffers from sparse/delayed rewards and long episodes, making training slow and unstable. Explicit methods, while providing visible plans, require extensive human effort for verifying or modifying collected plan data, leading to high cross-environment migration costs.
+**Limitations of Prior Work**: Implicit methods treat the agent as an executor relying solely on local reason-action interleaving for planning, which leads to frequent "brainless trial-and-error" and planning hallucinations in long-horizon tasks. SFT requires large-scale expert trajectories (data-inefficient), while RL suffers from sparse and delayed rewards and long episodes, making training extremely slow and unstable. Explicit methods, though providing显式 plans, require intensive human labor to verify/modify collected plan data, resulting in high cross-environment migration costs.
 
-**Key Challenge**: Planner training faces a trade-off between quality (plans must effectively guide the executor rather than being "pretty but useless"), efficiency (avoiding manual plan labeling), and generalization (a single planner must drive executors with varying capabilities).
+**Key Challenge**: Planner training requires a trade-off between quality (the plan must truly guide the executor to complete the task, rather than being "pretty but useless talk"), efficiency (avoiding manual per-item plan labeling), and generalization (a single planner should drive executors with varying capabilities).
 
-**Goal**: (1) Automatically synthesize high-quality global plan data without human intervention; (2) Design RL reward signals that generalize across executors; (3) Enable a plug-and-play planner that can be directly utilized by any new executor.
+**Goal**: (1) Automatically synthesize high-quality global plan data without human intervention; (2) Design an RL reward signal that generalizes across executors; (3) Ensure the trained planner is plug-and-play and compatible with any new executor.
 
-**Key Insight**: The authors observe that strong LLMs (e.g., GPT-5, DeepSeek-V3.1-Think) can synthesize data by reverse-generating plans and thinking from existing expert trajectories. This can be refined through "homologous executor dual verification" to both denoise the data and prevent plan quality from being contaminated by the capability bias of a specific executor.
+**Key Insight**: The authors observe that strong LLMs (e.g., GPT-5, DeepSeek-V3.1-Think) can synthesize (plan, thinking) pairs from existing expert trajectories via reverse engineering. By applying "homologous executor dual verification" for filtering, noise can be removed while preventing plan quality from being contaminated by the capability bias of a specific executor.
 
-**Core Idea**: Use "homologous expert/novice executor pairs" for both data filtering (HCF) and RL rewards (ECGR). The reward quantifies "whether the plan truly improves the executor," followed by GRPO optimization to achieve high efficiency, quality, and cross-executor utility.
+**Core Idea**: Use "homologous expert/novice executor pairs" for both data filtering (HCF) and RL reward (ECGR). This quantifies "whether the plan truly improves the executor" as a direct reward, followed by GRPO optimization to achieve fast training, high quality, and cross-executor utility.
 
 ## Method
 
 ### Overall Architecture
-EAGLET reformulates agent tasks $\pi_\theta(e \mid u) = \prod_t \pi_\theta(a_t \mid u, a_{<t}, o_{<t})$ into a plan-conditioned version: $\pi_\theta(e \mid u, p) = \pi_g(p \mid u) \cdot \prod_t \pi_\theta(a_t \mid u, p, a_{<t}, o_{<t})$, introducing a trainable global planner $\pi_g$. The pipeline consists of two stages:
+EAGLET reformulates the agent task $\pi_\theta(e \mid u) = \prod_t \pi_\theta(a_t \mid u, a_{<t}, o_{<t})$ into a plan-conditioned version: $\pi_\theta(e \mid u, p) = \pi_g(p \mid u) \cdot \prod_t \pi_\theta(a_t \mid u, p, a_{<t}, o_{<t})$, introducing a trainable global planner $\pi_g$. The pipeline consists of two stages:
 
-1. **Cold-start SFT**: Reverse-synthesize (plan, thinking) from expert trajectories using strong reasoning LLMs, filter via HCF, and perform next-token SFT to obtain $\pi_g^\text{SFT}$.
-2. **Rule-based RL**: Optimize $\pi_g^\text{SFT}$ using GRPO. The reward signals include ECGR (Executor Capability Gain Reward) and format rewards. Executors remain frozen throughout, with gradients flowing only to the planner.
+1. **Cold-start SFT**: A strong reasoning LLM synthesizes (plan, thinking) from expert trajectories, which is then filtered via HCF and used for next-token SFT to obtain $\pi_g^\text{SFT}$.
+2. **Rule-based RL**: GRPO optimizes $\pi_g^\text{SFT}$ using ECGR (Executor Capability Gain Reward) and format rewards. The executors remain frozen throughout, with gradients backpropagated only to the planner.
 
-During inference, a new executor uses the plan generated by $\pi_g$ as a prefix to the task instruction without requiring any additional training.
+During inference, a new executor simply uses the plan generated by $\pi_g$ as a prefix to the task instruction, requiring no executor-specific training.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    A["Expert Trajectories (from benchmarks)"] --> B["Strong LLM Reverse Synthesis<br/>(plan, thinking) candidates"]
-    subgraph SFT["Cold-start SFT Phase"]
+    A["Expert Trajectories (from benchmarks)"] --> B["Strong LLM Reverse Synthesis<br/>(plan, thinking) Candidates"]
+    subgraph SFT["Cold-start SFT Stage"]
         direction TB
-        B --> C["Homologous Consensus Filtering (HCF)<br/>Keep only if both expert/novice executors benefit"]
-        C --> D["Next-token SFT<br/>Obtain planner π_g^SFT"]
+        B --> C["Homologous Consensus Filtering (HCF)<br/>Keep only if plan doesn't harm both expert/novice"]
+        C --> D["Next-token SFT<br/>to obtain planner π_g^SFT"]
     end
-    subgraph RL["Rule-based RL Phase (Executors Frozen)"]
+    subgraph RL["Rule-based RL Stage (Executors Frozen)"]
         direction TB
-        D --> E["Planner samples G candidate plans"]
-        E --> F["Executor Capability Gain Reward (ECGR)<br/>Differential of homologous pair w/ and w/o plan + step decay"]
-        F --> G["GRPO updates planner<br/>Gradients backprop to planner only"]
+        D --> E["Planner Samples G Candidate Plans"]
+        E --> F["Executor Capability Gain Reward (ECGR)<br/>Homologous pair w/ and w/o plan diff + step decay"]
+        F --> G["GRPO Updates Planner<br/>Gradients backprop to planner only"]
         G -->|Intra-group relative advantage guidance| E
     end
     G --> H["Plug-and-play Planner<br/>New executor uses it as prefix"]
@@ -67,82 +67,76 @@ flowchart TD
 
 ### Key Designs
 
-**1. Homologous Consensus Filtering (HCF): Replacing human annotation with homologous executor consensus**
+**1. Homologous Consensus Filtering (HCF): Using homologous executors to replace manual labeling**
 
-Plans reverse-synthesized by strong LLMs vary in quality. Some appear logical but mislead the executor. SFT would be contaminated by this noise without filtering, while manual verification is too costly. HCF pairs each candidate plan $p$ with a **homologous** executor pair: an expert $\hat\pi_\theta$ (e.g., GiGPO-Llama-3.1) and a novice $\hat\pi_\tau$ (original Llama-3.1). These share the same base model and architecture, differing only after post-training. The pair runs twice (with and without the plan). $p$ is kept only if $r(u, e_{p; \hat\pi_\theta}) \geq r(u, e_{\hat\pi_\theta})$ **and** $r(u, e_{p; \hat\pi_\tau}) \geq r(u, e_{\hat\pi_\tau})$, defined as $F_\text{quality}(p) = \mathbb{I}\{\text{neither executor is hindered by the plan}\}$.
+Plans synthesized by strong LLMs vary in quality; some look polished but actually mislead executors. HCF pairs each candidate plan $p$ with a **homologous** executor set—an expert $\hat\pi_\theta$ (e.g., GiGPO-Llama-3.1) and a novice $\hat\pi_\tau$ (original Llama-3.1). They share the same base model and architecture, differing only in post-training capabilities. Each executor runs twice (with/without plan). The plan is retained only if $r(u, e_{p; \hat\pi_\theta}) \geq r(u, e_{\hat\pi_\theta})$ **and** $r(u, e_{p; \hat\pi_\tau}) \geq r(u, e_{\hat\pi_\tau})$, defined as $F_\text{quality}(p) = \mathbb{I}\{\text{both executors are not harmed by the plan}\}$. This excludes extraneous variables like context window or parameter count, ensuring the signal reflects the marginal contribution of the plan.
 
-A homologous pair is used instead of a single executor because a single executor’s assessment is biased: a strong executor might complete a task even with a poor plan. Using models with the same base eliminates confounding factors like context window or parameter size, ensuring the filtering signal reflects the "marginal contribution of the plan."
+**2. Executor Capability Gain Reward (ECGR): Quantifying plan net gain as RL reward**
 
-**2. Executor Capability Gain Reward (ECGR): Quantifying "net plan gain" as RL reward**
+Instead of using task success rate as a reward (which fails to isolate the plan's contribution), ECGR uses a differential signal. For each (task, plan), the homologous pair $\hat\pi_\theta, \hat\pi_\tau$ runs twice (with/without plan). The base reward $R(p, \pi_\theta) = \mathbb{I}\{r(u, e_{p; \pi_\theta}) > r(u, e_{\pi_\theta})\}$ is given only when the plan provides a genuine improvement. This is multiplied by a step-decay factor $\hat R = R \cdot (1+\alpha)^{n-m}$ (where $n$ is steps without plan, $m$ is steps with plan, and $\alpha$ is a hyperparameter), rewarding plans that make execution more efficient. The final reward is $R_\text{ECGR} = \hat R(p, \hat\pi_\theta) + \hat R(p, \hat\pi_\tau)$.
 
-Using only task success rate as a reward fails to distinguish the plan's specific contribution and is biased by executor strength. ECGR uses a differential signal: for each (task, plan), the homologous pair $\hat\pi_\theta, \hat\pi_\tau$ runs with and without the plan. The base reward $R(p, \pi_\theta) = \mathbb{I}\{r(u, e_{p; \pi_\theta}) > r(u, e_{\pi_\theta})\}$ credits the planner only when the plan yields actual improvement. This is multiplied by a step decay factor $\hat R = R \cdot (1+\alpha)^{n-m}$ ($n$ is steps without plan, $m$ is steps with plan, $\alpha$ is a hyperparameter), rewarding plans that shorten execution. The finalized reward is $R_\text{ECGR} = \hat R(p, \hat\pi_\theta) + \hat R(p, \hat\pi_\tau)$, with $R_\text{Final} = R_\text{ECGR} + R_\text{Format}$.
+**3. GRPO with frozen executors: Optimizing efficiency**
 
-This "differential + dual executor" approach anchors the reward to the net contribution of the plan, penalizing "pretty but useless" plans. The decay factor implicitly encourages the planner to find shortcuts, counteracting brainless trial-and-error.
-
-**3. GRPO with frozen executors: Optimizing via gradients to the planner only**
-
-The planner samples $G$ candidate plans $\{p_1, \dots, p_G\}$ for each task. Each is scored using ECGR and updated via intra-group relative advantage $A_i$. The loss is $\mathcal{L}_\text{GRPO} = \mathbb{E}[\frac{1}{G}\sum_i \mathcal{L}_i - \beta \mathbb{D}_\text{KL}(\pi_g \Vert \pi_g^\text{ref})]$, with standard PPO clipping $\mathcal{L}_i = \min(w_i A_i, \text{clip}(w_i, 1-\epsilon, 1+\epsilon) A_i)$. Compared to PPO, GRPO eliminates reward model training, fitting the low-noise, rule-based reward setting. Crucially, executors are frozen during ECGR calculation; RL costs scale linearly with the small planner, shifting the bottleneck from "LLM multi-step rollout" to "one-time planner generation + evaluation," achieving 8× acceleration.
+The planner samples $G$ candidate plans $\{p_1, \dots, p_G\}$ for each task, scored via ECGR, and updated using intra-group relative advantage $A_i$. The loss is $\mathcal{L}_\text{GRPO} = \mathbb{E}[\frac{1}{G}\sum_i \mathcal{L}_i - \beta \mathbb{D}_\text{KL}(\pi_g \Vert \pi_g^\text{ref})]$. Since executors are frozen during ECGR calculation, RL costs scale only with the small planner, shifting the bottleneck from "multi-step LLM rollouts" to "one-time planner generation and evaluation," resulting in an 8× speedup.
 
 ### Loss & Training
-SFT Phase: $\mathcal{L}_\text{SFT} = -\mathbb{E}_{(u, t, p) \sim \mathcal{D}}[\log \pi_g(t, p \mid u)]$, learning both thinking $t$ and plan $p$.
-RL Phase: GRPO + ECGR + Format reward. KL regularization coefficient $\beta$ controls deviation from the reference model. Expert trajectories are sourced from existing agent benchmarks (ScienceWorld / ALFWorld / WebShop).
+SFT Stage: $\mathcal{L}_\text{SFT} = -\mathbb{E}_{(u, t, p) \sim \mathcal{D}}[\log \pi_g(t, p \mid u)]$, learning thinking $t$ and plan $p$ simultaneously.
+RL Stage: GRPO + ECGR + Format reward. Expert trajectories are sourced from standard agent benchmarks (ScienceWorld / ALFWorld / WebShop).
 
 ## Key Experimental Results
 
-### Main Results: Three Long-Horizon Agent Benchmarks (Success Rate, EAGLET vs. Baselines)
+### Main Results: Three Long-Horizon Agent Benchmarks (Success Rate)
 
-| Setting | ScienceWorld Seen | ScienceWorld Unseen | ALFWorld Seen | ALFWorld Unseen | WebShop Seen | Average |
+| Setup | ScienceWorld Seen | ScienceWorld Unseen | ALFWorld Seen | ALFWorld Unseen | WebShop Seen | Average |
 |------|-------------------|---------------------|---------------|-----------------|--------------|------|
-| Executor w/o training (Base LLM) | Low baseline | — | — | — | — | — |
-| SFT-only baseline (Implicit) | Medium | Lower than Seen | Medium | Lower than Seen | Medium | Significant Split Gap |
-| GiGPO (RL on executor, SOTA prior) | High | Mid-High | High | Mid-High | High | Strong but expensive |
-| **EAGLET (Plug-in planner)** | **New SOTA** | **New SOTA** | **New SOTA** | **New SOTA** | **New SOTA** | Comprehensive Lead |
+| Executor w/o training (Base LLM) | Low Baseline | — | — | — | — | — |
+| SFT-only baseline (implicit) | Medium | Sig. lower than Seen | Medium | Sig. lower than Seen | Medium | Large gap across splits |
+| GiGPO (RL on executor, prior SOTA) | High | Med-High | High | Med-High | High | Strong but expensive |
+| **EAGLET (plug-in planner)** | **New SOTA** | **New SOTA** | **New SOTA** | **New SOTA** | **New SOTA** | Comprehensive lead |
 
-Note: EAGLET consistently sets new SOTAs across all 5 splits. Its lead over implicit SFT is most pronounced in the "Unseen" split, demonstrating that explicit planning offers superior generalization.
-
-### Efficiency Comparison
+### Training Efficiency Comparison
 
 | Method | Training Time (Relative) | Manual Plan Labeling | Extra Data Required |
 |------|-----------------|---------------------|----------------|
 | GiGPO (RL on executor) | 1× (baseline) | No | No |
-| MPO (Explicit planner, prior) | ~ | Yes (Verification) | Yes |
+| MPO (explicit planner) | ~ | Yes (validation/edit) | Yes |
 | **EAGLET** | **1/8 ×** | **No** | **No** |
 
 ### Key Findings
-- HCF filtering is critical for SFT: unfiltered synthetic plans caused a **negative** contribution in several splits, proving that consensus filtering is a necessity.
-- Both components of the "homologous pair" are essential: using only the expert leads to plans over-optimized for strong models (harmful to weak ones), while using only the novice results in over-simplification. The pair minimizes the generalization gap.
-- The decay factor $\alpha$ significantly reduced average interaction steps, suppressing brainless trials.
-- Decoupling planner and executor allows a trained planner to provide gains even when paired with an **untrained** new executor, confirming the "plug-and-play" property.
+- HCF filtering is crucial for SFT: unfiltered synthetic plans can lead to **negative** contributions, where having a plan is worse than none.
+- The dual-executor setup in ECGR prevents bias: using only an expert leads to plans that over-optimize for strong executors (harming weak ones), while using only a novice results in over-simplified plans.
+- The decay factor $\alpha$ significantly reduces average interaction steps, suppressing brainless trial-and-error.
+- Decoupling allows a planner to provide gains to **unseen** executors, verifying the "plug-and-play" property.
 
 ## Highlights & Insights
-- **Dual utility of "homologous pairs"**: They serve as both a data filter and an RL reward signal. This reuse is elegant: it filters noise at the SFT stage and provides dense, discriminative signals during RL.
-- **Engineering significance of decoupling**: Separating planning from execution means that as base LLMs (executors) evolve, the planner does not necessarily need retraining. Likewise, planner improvements benefit all downstream agents immediately.
-- **Reward for execution efficiency**: While many RL agents focus only on success, EAGLET rewards path efficiency via $(1+\alpha)^{n-m}$, a simple term that can be applied to other multi-step decision tasks.
-- **Scalability through 8× acceleration**: Restricting RL to a small planner while freezing the executor shifts the computational burden from "multi-step large LLM rollouts" to "small model generation," providing a scalable paradigm for RL agents.
+- **Dual-use Homologous Pairs**: Leveraging the same pair for both data filtering and RL reward is an elegant way to maintain consistency across training stages.
+- **Engineering Decoupling**: Decoupling the planner from the executor means that when the base LLM is upgraded, only the executor needs to be swapped, not the planner. This is highly practical for deployment.
+- **Rewarding Efficiency**: By injecting $(1+\alpha)^{n-m}$ into the reward, the model is explicitly taught to reduce path length, which is vital for long-horizon decision-making.
+- **8× Training Acceleration**: Moving the RL bottleneck away from massive LLM rollouts to small planner updates provides a scalable paradigm for agent training.
 
 ## Limitations & Future Work
-- Dependency on the existence of "homologous pairs," which may be unavailable for languages or tasks without mature model ecosystems.
-- Plans are fixed in natural language (with think/plan tags); structured planning (e.g., PDDL, code) remains unexplored.
-- Focused on single-agent benchmarks; utility in multi-agent collaboration is not verified.
-- Heavy reliance on GPT-5 / DeepSeek-V3.1-Think for SFT data synthesis, inheriting the limitations of these models.
-- The relationship between plan length and executor context windows in ultra-long tasks (>100 steps) was not discussed.
+- Dependence on the availability of "homologous pairs," which may be difficult to find for specialized or low-resource tasks.
+- Plans are restricted to natural language; structured plans (e.g., PDDL, code) were not explored.
+- Lack of multi-agent collaboration validation.
+- Indirectly constrained by the upper-bound capabilities of the teacher models (GPT-5/DeepSeek) used for SFT data synthesis.
+- Potential context window issues for extremely long tasks (>100 steps) where the plan itself might consume significant token space.
 
 ## Related Work & Insights
-- **vs. ReAct / Implicit RL agent**: EAGLET extracts planning into an explicit module to provide global foresight, fundamentally suppressing hallucinations seen in ReAct.
-- **vs. KnowAgent**: KnowAgent relies on manually constructed knowledge bases; EAGLET uses automated synthesis and filtering, reducing migration costs across environments.
-- **vs. MPO**: MPO requires manual plan verification; EAGLET replaces this with homologous executor consensus, improving efficiency by orders of magnitude.
-- **vs. GiGPO**: GiGPO conducts fine-grained RL on the executor requiring long rollouts; EAGLET moves RL to the planner (small model, short output) for an 8× speedup.
-- **vs. GRPO (DeepSeek)**: EAGLET adapts GRPO from mathematical reasoning to agent planning with the task-specific ECGR reward, demonstrating successful cross-domain generalization.
+- **vs ReAct / Implicit RL agent**: ReAct lacks global foresight; EAGLET provides explicit global plans to suppress hallucinations.
+- **vs KnowAgent**: KnowAgent relies on manual knowledge base construction; EAGLET is fully automated.
+- **vs MPO**: MPO requires manual intervention for data collection; EAGLET uses HCF for automated consensus.
+- **vs GiGPO**: GiGPO trains the executor directly with long rollouts; EAGLET trains a small planner, gaining 8× speedup.
+- **vs GRPO (DeepSeek)**: EAGLET adapts the GRPO framework from mathematical reasoning to agent planning by designing the task-specific ECGR reward.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ "Dual-use homologous pairs" is a clean conceptual innovation.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Proven across three benchmarks and Seen/Unseen splits with 8× speedup; lacks real-world task validation.
-- Writing Quality: ⭐⭐⭐⭐⭐ Clear motivation, formal notation, and well-executed ablation studies.
-- Value: ⭐⭐⭐⭐⭐ The decoupling of planner/executor and 8× acceleration provide high practical value for long-horizon agent deployment.
+- Novelty: ⭐⭐⭐⭐ The "dual-use homologous pair" is a clean conceptual innovation.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Strong results across multiple splits and benchmarks.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear motivation, formal definitions, and insightful ablations.
+- Value: ⭐⭐⭐⭐⭐ Decoupling plus 8× speedup offers significant practical utility for long-horizon agent deployment.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1">
+<div class="related-papers" markdown="1"></div>
 
 ## Related Papers
 
@@ -150,7 +144,7 @@ Note: EAGLET consistently sets new SOTAs across all 5 splits. Its lead over impl
 - [\[ICML 2026\] Long-Horizon Model-Based Offline Reinforcement Learning Without Explicit Conservatism](../../ICML2026/reinforcement_learning/long-horizon_model-based_offline_reinforcement_learning_without_explicit_conserv.md)
 - [\[ACL 2026\] LoVeC: Reinforcement Learning for Better Verbalized Confidence in Long-Form Generations](lovec_reinforcement_learning_for_better_verbalized_confidence_in_long-form_gener.md)
 - [\[ICLR 2026\] Don't Just Fine-tune the Agent, Tune the Environment](../../ICLR2026/reinforcement_learning/dont_just_fine-tune_the_agent_tune_the_environment.md)
-- [\[NeurIPS 2025\] Reinforcement Learning for Long-Horizon Multi-Turn Search Agents](../../NeurIPS2025/reinforcement_learning/reinforcement_learning_for_long-horizon_multi-turn_search_agents.md)
+- [\[ACL 2026\] NaviMaster: Learning a Unified Policy for GUI and Embodied Navigation Tasks](navimaster_learning_a_unified_policy_for_gui_and_embodied_navigation_tasks.md)
 
 </div>
 

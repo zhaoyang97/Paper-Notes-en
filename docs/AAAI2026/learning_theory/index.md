@@ -24,7 +24,7 @@ item_total: 3
 
 **🤖 AAAI2026** · **3** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (17)](../../ICML2026/learning_theory/index.md) · [🔬 ICLR2026 (7)](../../ICLR2026/learning_theory/index.md) · [🧠 NeurIPS2025 (25)](../../NeurIPS2025/learning_theory/index.md)
+📌 **Same area in other venues:** [🔬 ICLR2026 (293)](../../ICLR2026/learning_theory/index.md) · [🧪 ICML2026 (45)](../../ICML2026/learning_theory/index.md) · [🧠 NeurIPS2025 (25)](../../NeurIPS2025/learning_theory/index.md)
 
 **[A Switching Framework for Online Interval Scheduling with Predictions](a_switching_framework_for_online_interval_scheduling_with_pr.md)**
 

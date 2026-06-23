@@ -2,12 +2,12 @@
 title: >-
   [Paper Note] MM-Snowball: Evaluating and Mitigating Hallucination Snowballing in Multimodal Multi-Turn Dialogue
 description: >-
-  [ICML 2026][Hallucination Detection][Paper Note] This paper introduces the MM-Snowball benchmark (4,992 6-turn adversarial dialogues) to systematically characterize the "hallucination snowballing" phenomenon in multimodal large language models (MLLMs) during long dialogues. Based on this, the training-free CAVR method is designed to refresh visual signals at the repr
+  [ICML 2026][Hallucination Detection][Paper Note] Ours proposes the MM-Snowball benchmark (4992 trajectories of 6-turn adversarial dialogues) to systematically characterize the "hallucination snowballing" phenomenon in Multimodal Large Language Models (MLLMs) during long dialogues. Based on this, ours designs a training-free Conflict-Aware Visual Rectification (CAVR)
 tags:
   - ICML 2026
   - Hallucination Detection
 date: 2026-05-08
-content_hash: 784b9d17092f6f07
+content_hash: c64d13f54c177c0b
 ---
 # MM-Snowball: Evaluating and Mitigating Hallucination Snowballing in Multimodal Multi-Turn Dialogue
 
@@ -15,133 +15,133 @@ content_hash: 784b9d17092f6f07
 **arXiv**: [2606.00622](https://arxiv.org/abs/2606.00622)  
 **Code**: https://frenkie-chiang.github.io/MM-Snowball (Project Page)  
 **Area**: Hallucination Detection  
-**Keywords**: Multi-turn dialogue, Hallucination snowballing, Visual fading, Training-free correction, Diagnostic benchmark
+**Keywords**: Multi-turn Dialogue, Hallucination Snowballing, Visual Fading, Training-free Correction, Diagnostic Benchmark
 
 ## TL;DR
-This paper introduces the MM-Snowball benchmark (4,992 6-turn adversarial dialogues) to systematically characterize the "hallucination snowballing" phenomenon in multimodal large language models (MLLMs) during long dialogues. Based on this, the training-free CAVR method is designed to refresh visual signals at the representation layer and arbitrate text-visual conflicts at the logit layer, significantly flattening the performance collapse curve in later dialogue stages.
+Ours proposes the MM-Snowball benchmark (4992 trajectories of 6-turn adversarial dialogues) to systematically characterize the "hallucination snowballing" phenomenon in Multimodal Large Language Models (MLLMs) during long dialogues. Based on this, ours designs a training-free Conflict-Aware Visual Rectification (CAVR) method that refreshes visual signals at the representation layer and adjudicates text-visual conflicts at the logit layer, significantly flattening the performance collapse curve in later dialogue stages.
 
 ## Background & Motivation
-**Background**: MLLMs have demonstrated strong performance on single-turn tasks such as VQA, captioning, and instruction following. However, real-world deployment scenarios are almost entirely multi-turn dialogues where users follow up, correct, or guide based on previous model responses. Existing benchmarks like POPE, HallusionBench, and MMHal-Bench are largely limited to single-turn yes-no or MCQ settings, at most extending to a two-turn "caption-then-question" mode.
+**Background**: MLLMs have been proven powerful on single-turn tasks such as VQA, captioning, and instruction following. However, real-world deployment scenarios are almost entirely multi-turn, where users follow up, correct, or guide the model based on previous answers. Existing hallucination benchmarks like POPE, HallusionBench, and MMHal-Bench are mostly limited to single-turn yes-no or MCQ settings, or at most extend to a "caption-then-question" two-turn mode.
 
-**Limitations of Prior Work**: When dialogues extend to 5–6 turns, once a model makes an error in an early response (e.g., miscounting "two cats" as "three"), every subsequent turn treats this error as a contextual fact for reasoning. This amplifies local perceptual failures into systemic cognitive delusions—a cascade termed *hallucination snowballing* by the authors. Multi-turn benchmarks either induce hallucinations using edited "fake" images that lose real visual distributions (VisDiaHalBench) or only have a 2-turn horizon, failing to observe long-term evolution (MMHalSnowball).
+**Limitations of Prior Work**: When dialogues extend to 5–6 turns, once a model makes an error in an early response (e.g., misidentifying "two cats" as "three cats"), every subsequent turn treats this error as a contextual fact for further reasoning. This transforms a local perceptual failure into a systemic cognitive delusion—the authors term this cascade of hallucinations *hallucination snowballing*. Multi-turn benchmarks either use Photoshop-edited "fake images" which lose real visual distributions (VisDiaHalBench) or have only a 2-turn horizon, failing to observe long-term evolution (MMHalSnowball).
 
-**Key Challenge**: Mitigation strategies for single-turn scenarios (e.g., VCD, OPERA, MemVR) are built on the implicit assumption that "textual context is clean." In long dialogues, the context itself is contaminated by previous hallucinations. Applying local corrections to the decoding distribution in such cases can actually strengthen the contaminated linguistic prior. The root cause is *modal decoupling* in long dialogues: the reasoning engine gradually ignores visual tokens and instead pursues internal consistency with the "dirty textual history."
+**Key Challenge**: Mitigation strategies for single-turn scenarios (such as VCD, OPERA, MemVR) are built on the implicit assumption that "the textual context is clean." In long dialogues, the context itself is contaminated by previous hallucinations. Applying local corrections to the decoding distribution may inadvertently strengthen the contaminated linguistic priors. The fundamental problem is *modal decoupling* in long dialogues: the reasoning engine gradually ignores visual tokens and pursues internal consistency with the "dirty text history."
 
-**Goal**: (1) Construct a truly evolutionary, 6+ turn dialogue benchmark oriented towards real images to finely measure the process of hallucination snowballing; (2) Provide a training-free correction method compatible with mainstream MLLMs to anchor the model back to visual facts in later dialogue turns.
+**Goal**: (1) Construct a truly evolutionary, 6+ turn dialogue benchmark using real images to finely measure the entire process of hallucination snowballing; (2) Provide a training-free correction method compatible with mainstream MLLMs to re-anchor the model to visual facts in later dialogue turns.
 
-**Key Insight**: The authors discovered a counter-intuitive "V-shaped" performance curve: accuracy drops sharply in turns 3–5 but rebounds significantly in turn 6 when explicitly prompted to "look at the image again carefully." This indicates that visual evidence is not "forgotten" at the weight level but is suppressed by accumulated contaminated text, which can be reactivated by refreshing visual representations or intervening at the logit level.
+**Key Insight**: The authors discovered a counter-intuitive "V-shaped" performance curve via experiments: accuracy drops sharply in turns 3–5, but rebounds significantly in turn 6 when explicitly prompted to "look at the image more carefully." This suggests that visual evidence is not "forgotten" at the weight level but is suppressed by accumulated contaminated text, and can be reactivated by explicitly refreshing visual representations or intervening at the logit layer.
 
-**Core Idea**: Construct the stage-wise 6-turn adversarial dialogue benchmark MM-Snowball using *Adversarial Hallucination Trajectory Synthesis (AHTS)*; then use *Conflict-Aware Visual Rectification (CAVR)* to "re-anchor" vision at both the representation and logit layers, upgrading point-wise mitigation to dialogue-level mitigation.
+**Core Idea**: Utilize *Adversarial Hallucination Trajectory Synthesis (AHTS)* to construct a staged 6-turn adversarial dialogue benchmark, MM-Snowball. Then, employ *Conflict-Aware Visual Rectification (CAVR)* to "re-anchor" vision at both the representation and logit layers, upgrading point-wise mitigation to dialogue-level mitigation.
 
 ## Method
 
 ### Overall Architecture
-The paper advances through two main lines. **First main line (Benchmark)**: The AHTS pipeline generates 4,992 6-turn dialogue trajectories (29,952 OE questions) for real images $v_i$. The pipeline consists of three stages: (A) *Visual Atomic Proposition Construction* parses images into structural semantic units to establish a ground-truth state $S_{GT}$; (B) *Causal Intervention & State Perturbation* applies counterfactual perturbations to $S_{GT}$ via semantic operators to obtain a hallucinated state $S_{Hall}$; (C) *Adversarial Dialogue Trajectory Simulation* uses a "deceptive attacker" and a "bifurcated responder" to play out 6 turns, pushing the dialogue through five cognitive stages: Perception Anchoring → Adversarial Bifurcation → Reasoning Escalation → Systemic Hallucination → Visual Correction. **Second main line (CAVR Method)**: A training-free correction method applied during inference. It targets two types of "visual fading" observed by the authors through dual-mechanism intervention at the representation and logit layers, acting as a "hallucination circuit breaker."
+The paper advances along two lines. **Benchmark Side**: Generating 4992 trajectories of 6-turn dialogues (29,952 OE questions) for real images $v_i$ via the AHTS pipeline. This involves three stages: (A) *Visual Atomic Proposition Construction* to parse images into structured semantic units and establish ground-truth state $S_{GT}$; (B) *Causal Intervention & State Perturbation* to apply counterfactual perturbations via semantic operators to obtain hallucination state $S_{Hall}$; (C) *Adversarial Dialogue Trajectory Simulation* where a "deceptive attacker" and a "bifurcated responder" act out 6 turns, pushing the dialogue through five cognitive stages. **Method Side (CAVR)**: A training-free correction method that acts as a "hallucination circuit breaker" on any autoregressive MLLM, providing dual intervention mechanisms at the representation and logit layers to address observed "visual fading."
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
     V["Real Image v_i"]
-    subgraph AHTS["AHTS Adversarial Trajectory Synthesis (Benchmark)"]
+    subgraph AHTS["AHTS (Benchmark)"]
         direction TB
-        A["A Visual Atomic Proposition Construction<br/>Parse objects/attributes/relations → Ground-truth S_GT"]
-        B["B Causal Intervention & State Perturbation<br/>Counterfactual rewriting via semantic operators → Hallucinated S_Hall"]
-        C["C Adversarial Dialogue Trajectory Simulation<br/>Deceptive attacker vs. Evaluated responder, 6 turns 5 stages"]
+        A["A Visual Atomic Proposition Construction<br/>Parse objects/attributes/relations → S_GT"]
+        B["B Causal Intervention & State Perturbation<br/>Counterfactual rewriting via operators → S_Hall"]
+        C["C Adversarial Dialogue Trajectory Simulation<br/>Deceptive attacker vs Responder, 6 turns 5 stages"]
         A --> B --> C
     end
     V --> AHTS
     AHTS --> BENCH["MM-Snowball Benchmark<br/>4992 6-turn dialogues, VFR↓ / SRS↑"]
-    BENCH --> DIAG["Evaluating Major MLLMs<br/>V-shaped curve → Attributed to visual fading"]
-    DIAG -->|Design Training-free CAVR| RVR
-    subgraph CAVR["CAVR Hallucination Breaker (Method)"]
+    BENCH --> DIAG["Evaluate Mainstream MLLMs<br/>V-shaped curve → Attribution to visual fading"]
+    DIAG -->|Design training-free CAVR| RVR
+    subgraph CAVR["CAVR Hallucination Circuit Breaker (Method)"]
         direction TB
-        RVR["Representation-layer Visual Rectification RVR<br/>Gated by uncertainty, rewrites visual tokens into mid-layer KV"]
-        LCR["Logit-layer Conflict Rectification LCR<br/>Contaminated history vs. Pure visual distribution, bias towards vision"]
+        RVR["Representation-level Visual Rectification RVR<br/>Gated by uncertainty, rewrite visual tokens into KV"]
+        LCR["Logit-level Conflict Rectification LCR<br/>Polluted history vs Pure vision, bias toward vision"]
         RVR --> LCR
     end
-    LCR --> OUT["Re-anchoring Visual Facts<br/>Flattening the later collapse curve"]
+    LCR --> OUT["Re-anchor Visual Facts<br/>Flatten collapse curve"]
 ```
 
 ### Key Designs
 
-**1. AHTS Adversarial Trajectory Synthesis: Decomposing "Hallucination Snowballing" into Controllable, Annotated, Stage-wise Trajectories**
+**1. AHTS Adversarial Trajectory Synthesis: Deconstructing "Hallucination Snowballing" into Staged Dialogue Trajectories**
 
-Snowballing is a temporal phenomenon. To measure it, each turn must be parsable. AHTS first decomposes the image into sets of object/attribute/relation triples $S_{GT}=\{(o_k,a_k,r_k)\}$ to establish the ground-truth state. It then applies counterfactual perturbations (attribute replacement, object deletion, relation reversal) to the triples to obtain the hallucinated state $S_{Hall}$. Two roles then enact a 6-turn dialogue: the Deceptive Attacker injects a misleading premise consistent with $S_{Hall}$ in turn 3, while the Bifurcated Responder is the MLLM under test. Each turn's question is strictly aligned with one of five cognitive stages (Perception Anchoring → Adversarial Bifurcation → Reasoning Escalation → Systemic Hallucination → Visual Correction). The trajectory length can be extrapolated beyond 6 turns. Finally, Visual Fallacy Rate (VFR↓) and Success Rate of Snowball (SRS↑) quantify turn-by-turn collapse and cascade success rates. The explicit attacker and stage labels distinguish whether a model "withstood the attack" or "just made a different error."
+Snowballing is a temporal phenomenon; measuring it requires every turn to be parsable. AHTS first decomposes the image into a set of object/attribute/relation triplets $S_{GT}=\{(o_k,a_k,r_k)\}$ to establish the ground-truth state. Semantic operators (attribute substitution, object deletion, relation reversal) defined on these triplets apply counterfactual perturbations to reach $S_{Hall}$. Then, two roles perform 6 turns: a Deceptive Attacker injects misleading premises consistent with $S_{Hall}$ in turn 3, while the Bifurcated Responder is the MLLM under test. Questions are strictly aligned with five cognitive stages (Perceptual Anchoring → Adversarial Bifurcation → Reasoning Escalation → Systemic Hallucination → Visual Correction). Quantitative metrics like Visual Fallacy Rate (VFR↓) and Success Rate of Snowball (SRS↑) measure turn-by-turn collapse and cascade success. This design distinguishes instances where the model "resists the attack" from where it simply "errs differently."
 
-**2. Representation-layer Visual Rectification (RVR): Sustaining Visual Signals Before the Model Suppresses the Image**
+**2. Representation-level Visual Rectification (RVR): Re-injecting Visual Signals Before Suppression**
 
-The authors found that the bottom of the V-shaped curve corresponds to a significant drop in mid-layer visual attention—meaning *visual fading* occurs within the representation channels. Restoring it at the logit layer is often too late. RVR monitors the epistemic uncertainty signal $U_\ell$ (e.g., token distribution entropy or a proxy for the visual/textual attention ratio) at selected intermediate layers during generation. Once $U_\ell$ crosses a threshold, suggesting that visual grounding is decaying, the original visual token representation $h_v$ is rewritten into the key-value cache of that layer (extending the idea of "visual memory re-injection" from MemVR). This forces the model to "look at the image again" mid-dialogue without changing parameters or introducing training.
+The authors found that the bottom of the V-shaped curve corresponds to a significant decrease in visual attention in middle layers—i.e., *visual fading* occurs in the representation channel. RVR monitors the epistemic uncertainty signal $U_\ell$ (e.g., token distribution entropy) at selected middle layers during every generation step. Once $U_\ell$ crosses a threshold, suggesting visual grounding is decaying, it re-injects the original visual token representation $h_v$ back into the key-value cache of that layer. This functions as a forced "re-look" at the image without modifying parameters or training. It addresses the fading itself to provide a clean representational base for subsequent logit intervention.
 
-**3. Logit-layer Conflict Rectification (LCR): Explicitly Arbitrating "Contaminated History vs. Current Visual Anchor"**
+**3. Logit-level Conflict Rectification (LCR): Explicitly Adjudicating "Polluted History vs. Current Visual Anchor"**
 
-A major source of "dirt" in multi-turn dialogues is the history contaminated by previous hallucinations. Contrastive decoding against just a language prior (like VCD/OPERA) is insufficient. LCR constructs two distributions: $p_\text{ctx}(y|x_{1:t})$ conditioned on the full dialogue history and $p_\text{vis}(y|v,q_t)$ which strips away the contaminated history, keeping only the image and the current question. Discrepancies between the two identify "conflict points," where the distribution is biased towards the visual one using adaptive weights:
+In multi-turn settings, the primary source of "pollution" is the dialogue history contaminated by previous hallucinations. LCR constructs two distributions: $p_\text{ctx}(y|x_{1:t})$ conditioned on the full dialogue history, and $p_\text{vis}(y|v,q_t)$ which strips the contaminated history to leave only the image and current question. Token positions with high divergence between these two are identified as "conflict points." At these positions, the distribution is biased towards vision based on an adaptive weight:
 
-$$p_\text{out}(y) \propto p_\text{ctx}(y)^{1-\alpha_t} \cdot p_\text{vis}(y)^{\alpha_t}$$
+$$p_\text{out}(y) \propto p_\text{ctx}(y)^{1-\alpha_t}\, p_\text{vis}(y)^{\alpha_t}$$
 
-Where $\alpha_t$ is driven by the RVR uncertainty signal. When there is no conflict, $\alpha_t \to 0$ to avoid excessive intervention. Thus, wherever the contaminated history clashes with visual facts, the output is pulled back towards vision. Together, RVR (representation survival) and LCR (logit arbitration) form a "hallucination circuit breaker."
+$\alpha_t$ is driven by the RVR uncertainty signal. When no conflict is detected, $\alpha_t \to 0$ to avoid excessive intervention. Thus, where polluted history conflicts with visual facts, the output is pulled back to the visual evidence.
 
 ### Loss & Training
-CAVR is completely training-free: it updates no parameters, does not rely on preference data, and introduces no additional decoding heads. It attaches as hooks (RVR and LCR) to the inference path, making it plug-and-play for models like Qwen2.5-VL, LLaVA, and InternVL. The benchmark side involves no training, only synthesis and human verification.
+CAVR is entirely training-free: it updates no parameters, does not rely on preference data, and introduces no extra decoding heads. It functions by attaching RVR and LCR hooks to the inference path, making it plug-and-play for series like Qwen2.5-VL, LLaVA, and InternVL. The benchmark side involves only synthesis and human verification.
 
 ## Key Experimental Results
 
 ### Main Results
-The authors compared the 6-turn accuracy of open-source and proprietary MLLMs on MM-Snowball, summarizing hallucination behavior via VFR↓ and SRS↑. Key qualitative conclusions:
+The authors compared open-source and proprietary MLLMs on MM-Snowball. Key qualitative conclusions include:
 
-| Evaluation Dimension | Key Finding |
+| Metric | Key Finding |
 |---------|---------|
-| 6-Turn Accuracy Curve | All baselines exhibit a "V-shape"—accuracy collapses after the Turn 3 adversarial bifurcation and partially recovers after the Turn 6 visual re-prompting. |
-| Mid-stage Collapse (Turns 3–5) | Major MLLMs drop 15%–30% in accuracy; once an adversarial premise is introduced, it dominates reasoning long-term. |
-| Turn 6 Visual Re-prompting | Accuracy rebounds by 5%–15%, proving visual evidence is not forgotten but suppressed. |
-| Model Scale | 7B, 32B, and 70B models are not immune; larger models merely collapse slightly later. |
+| 6-Turn Acc Curve | All baselines exhibit a "V-shape"—accuracy drops precipitously after the turn 3 adversarial bifurcation and partially recovers after turn 6 visual re-prompting. |
+| Mid-stage Collapse | Mainstream MLLMs show a 15%–30% drop in accuracy; once a misleading premise is introduced, it dominates reasoning for multiple turns. |
+| Turn 6 Re-prompting | Accuracy rebounds by 5%–15%, proving visual evidence was suppressed rather than forgotten. |
+| Model Scale | 7B / 32B / 70B models are not immune; larger models simply collapse slightly later. |
 
-Comparison of CAVR with existing mitigation strategies (qualitative summary):
+CAVR vs. existing strategies (Qualitative summary):
 
-| Mitigation Method | Single-turn VQA Effect | MM-Snowball Long Dialogue Effect |
+| Method | Single-turn VQA | MM-Snowball Multi-turn |
 |---------|--------------|----------------------|
-| VCD (Contrastive Decoding) | Effective | Later collapse remains obvious |
-| OPERA (Penalty on Summary Tokens) | Effective | Ineffective against contaminated history |
-| MemVR (Visual Re-injection) | Effective | Mitigated, but Turn 5/6 still drop significantly |
-| **CAVR (Ours)** | **Effective** | **Significantly flattens the V-curve, maintains high fidelity at Turn 5/6** |
+| VCD | Effective | Late-stage collapse remains evident |
+| OPERA | Effective | Powerless against polluted history |
+| MemVR | Effective | Mitigation exists but significant turn 5/6 drop |
+| **CAVR (Ours)** | Effective | **Significantly flattens the V-curve, high fidelity in turns 5/6** |
 
 ### Ablation Study
 
-| Configuration | Key Phenomenon | Insight |
+| Configuration | Phenomenon | Insight |
 |------|---------|------|
-| Full CAVR | Lowest VFR and SRS in later dialogue | Full dual-mechanism is optimal |
-| RVR Only | Mid-stage collapse partially blocked, but logits still lean toward dirty history | Representation refresh solves "visual fading" but not conflict arbitration |
-| LCR Only | Conflict tokens locally smoothed, but deep representations already degraded | Logit intervention occurs after representation decay |
-| Constant RVR (No Gating) | Interferes with normal tokens, overall drop | Must be uncertainty-gated and triggered on-demand |
+| Full CAVR | Lowest VFR and SRS | Full dual-mechanism is optimal. |
+| RVR Only | Partial prevention of collapse | Refreshing representations solves "fading" but not conflict adjudication. |
+| LCR Only | Local smoothing of conflict tokens | Logit intervention is too late if deep representations have degraded. |
+| Always-on RVR | Interference with normal tokens | Must be gated by uncertainty and triggered on-demand. |
 
 ### Key Findings
-- *Visual fading is the primary cause of snowballing*: Through attention analysis and Turn 6 re-prompting experiments, the root cause of snowballing was refined from "forgetting the image" to "suppressing the image." This distinction determines that mitigation should refresh representations rather than just re-inputting images.
-- *The recoverability of the V-shaped curve* indicates that post-processing methods applied only to the final turn overestimate their actual capability. Robustness should be reported turn-by-turn via VFR/SRS.
-- The *training-free + representation-layer + logit-layer* combination allows existing MLLMs to gain multi-turn robustness without extra training costs—a property lacking in many single-turn SOTA mitigators.
+- *Visual fading is the primary cause of snowballing*: Through attention analysis and turn 6 experiments, the cause is corrected from "forgetting the image" to "suppressing the image." This distinction dictates that methods should refresh representations rather than re-inputting images.
+- *Recoverability of the V-curve* implies that post-processing methods applied only to the final turn overestimate their robustness. VFR/SRS must be reported turn-by-turn.
+- The combination of *training-free + representation layer + logit layer* allows existing MLLMs to gain multi-turn robustness without additional training costs.
 
 ## Highlights & Insights
-- Explicitly decomposing "hallucination snowballing" into five cognitive stages and designing adversarial dialogue roles represents a paradigm for "engineering" temporal cognitive failures into annotatable events.
-- The use of the "Turn 6 visual re-prompting rebound" to prove visual information is not forgotten subverts the simple narrative of "long dialogue = forgotten image," reshaping the design direction for future mitigation work.
-- The "representation → logit" dual-layer intervention of RVR + LCR, coupled with attention/uncertainty gating, is a natural extension of single-layer mitigators like MemVR / VCD for multi-turn scenarios.
+- Explicitly deconstructing "hallucination snowballing" into 5 cognitive stages and designing adversarial dialogue roles is a paradigm that "engineers" temporal cognitive failure into annotatable events.
+- The proof that visual information is not forgotten (via turn 6 rebounds) subverts the naive narrative that "long dialogues = model forgot the image," reshaping the design direction for future mitigation work.
+- The dual-layer "representation $\to$ logit" intervention of RVR + LCR, coupled with attention/uncertainty gating, is a natural extension of single-layer mitigators like MemVR and VCD for multi-turn scenarios.
 
 ## Limitations & Future Work
-- AHTS uses an LLM-based attacker-responder setup; there may be a distribution gap between the LLM's adversarial strategies and real-world user misleading.
-- CAVR only intervenes during inference; it "rectifies" but does not "cure" models biased during training (e.g., those trained on instruction tuning data that neglects vision). RVR uncertainty signals could potentially be used as training-time regularization.
-- The evaluation covers 6 turns; whether logit bias magnitudes need dynamic adjustment over longer horizons (>10 turns) remains to be verified.
+- AHTS uses LLMs for both attacker and responder; there may be a distribution gap between synthetic adversarial strategies and real user misleading behaviors.
+- CAVR serves as an inference-time intervention; for models fundamentally biased during training (e.g., poor instruction tuning data), it acts as a "correction" rather than a "cure."
+- Evaluation covers 6 turns; whether the logit bias magnitude requires dynamic adjustment over longer horizons (>10 turns) remains to be verified.
 
 ## Related Work & Insights
-- **vs MMHalSnowball (zhong2024)**: Both focus on snowballing, but the latter is limited to 2 turns (caption+VQA) and lacks continuous dialogue. This work upgrades "whether a mistake is made" to "when it collapses and whether it self-corrects" via 6-turn evolvable dialogues.
-- **vs VisDiaHalBench (cao2024)**: Uses multi-turn dialogues but relies on edited/synthetic images with potential artifacts. This work uses real images + visual atomic propositions to isolate failures to the dialogue level.
-- **vs VCD / OPERA / MemVR**: Single-turn mitigators assume clean context. This work reveals failures in "self-contaminated" contexts. CAVR moves these tools into multi-turn settings via representation re-anchoring and logit arbitration.
+- **vs MMHalSnowball (Zhong et al. 2024)**: Also targets snowballing, but only for 2 turns (caption+VQA) lacking continuous dialogue. Ours upgrades "whether an error occurs" to "when it collapses and can it self-correct."
+- **vs VisDiaHalBench (Cao et al. 2024)**: Also multi-turn but relies on edited/synthetic images with artifacts. Ours insists on real images + visual atomic propositions to attribute failure strictly to the dialogue level.
+- **Insight**: Future visual dialogue and video QA agents can borrow the "uncertainty-gated visual representation re-injection" concept to ensure periodic "evidence look-backs" during free generation.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ First 6-turn evolvable multimodal hallucination benchmark + training-free dual-layer mitigation.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Covers various MLLMs and mitigation strategies.
-- **Writing Quality**: ⭐⭐⭐⭐ Clear logical chain: Phenomenon (V-curve) → Attribution (visual fading) → Method (RVR+LCR) → Validation.
-- **Value**: ⭐⭐⭐⭐ A directly applicable diagnosis and plugin for all multi-turn MLLM deployments.
+- Novelty: ⭐⭐⭐⭐ First 6-turn scalable evolutionary benchmark + training-free dual-layer mitigation.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers multiple open/proprietary MLLMs and various mitigation strategies.
+- Writing Quality: ⭐⭐⭐⭐ Clear logical chain: Phenomenon (V-curve) $\to$ Attribution (visual fading) $\to$ Method (RVR+LCR) $\to$ Verification.
+- Value: ⭐⭐⭐⭐ Directly usable diagnosis and plugin for MLLMs requiring multi-turn deployment.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 

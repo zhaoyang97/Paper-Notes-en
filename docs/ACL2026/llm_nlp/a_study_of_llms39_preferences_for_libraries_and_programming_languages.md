@@ -2,12 +2,12 @@
 title: >-
   [Paper Note] A Study of LLMs' Preferences for Libraries and Programming Languages
 description: >-
-  [ACL 2026][LLM (Other)][Paper Note] The first systematic study of eight LLMs' preference behaviors regarding libraries and programming languages in code generation. Results reveal that LLMs significantly favor popular libraries such as NumPy (45% of usage being unnecessary) and the Python language (58% preference even for high-performance tasks), and dem
+  [ACL 2026][LLM (Other)][Paper Note] This study presents the first systematic investigation into the preferences of 8 LLMs regarding libraries and programming languages during code generation. It reveals that LLMs exhibit a severe bias toward popular libraries like NumPy (45% unnecessary usage) and the Python language (chosen in 58% of high-performance ta
 tags:
   - ACL 2026
   - LLM (Other)
 date: 2026-05-08
-content_hash: 25f0eeaddafc457f
+content_hash: bed6dd68ea651683
 ---
 # A Study of LLMs' Preferences for Libraries and Programming Languages
 
@@ -15,45 +15,45 @@ content_hash: 25f0eeaddafc457f
 **arXiv**: [2503.17181](https://arxiv.org/abs/2503.17181)  
 **Code**: [GitHub](https://github.com/itsluketwist/llm-code-bias)  
 **Area**: LLM/NLP  
-**Keywords**: Code generation preference, library selection bias, programming language preference, LLM behavior analysis, technical diversity
+**Keywords**: Code generation preferences, library choice bias, programming language preference, LLM behavior analysis, technical diversity
 
 ## TL;DR
 
-The first systematic study of eight LLMs' preference behaviors regarding libraries and programming languages in code generation. Results reveal that LLMs significantly favor popular libraries such as NumPy (45% of usage being unnecessary) and the Python language (58% preference even for high-performance tasks), and demonstrate inconsistency between natural language recommendations and actual code selection.
+This study presents the first systematic investigation into the preferences of 8 LLMs regarding libraries and programming languages during code generation. It reveals that LLMs exhibit a severe bias toward popular libraries like NumPy (45% unnecessary usage) and the Python language (chosen in 58% of high-performance tasks), and that natural language recommendations often diverge from actual code selection behavior.
 
 ## Background & Motivation
 
-**Background**: LLMs have made tremendous progress in code generation. However, existing evaluations focus primarily on functional correctness and syntactic validity, ignoring critical design decisions made by LLMs—such as the choice of libraries and programming languages.
+**Background**: LLMs have made significant strides in code generation. However, existing evaluations primarily focus on functional correctness and syntactic validity, overlooking critical design decisions made by LLMs during generation—specifically, the choice of libraries and programming languages.
 
-**Limitations of Prior Work**: Developers often do not specify specific libraries when prompting LLMs, and many end users lack the expertise to judge whether an LLM's language choice is appropriate. This implies that the technical preferences of LLMs may profoundly impact the diversity of the software ecosystem.
+**Limitations of Prior Work**: Developers often do not specify specific libraries in their prompts, and many end-users lack the expertise to judge whether an LLM's language choice is appropriate. This implies that the technical preferences of LLMs may profoundly influence the diversity of the software ecosystem.
 
-**Key Challenge**: LLMs should select the most suitable tech stack based on task requirements, but the frequency distribution in training data may cause them to be systematically biased toward popular technologies, even when they are not optimal.
+**Key Challenge**: LLMs should ideally select the technical stack best suited to the task requirements. However, the frequency distribution in training data may cause them to systematically favor popular technologies, even when they are not optimal.
 
-**Goal**: Quantify the preference patterns of LLMs in selecting libraries and programming languages, and evaluate the rationality and potential risks of these preferences.
+**Goal**: To quantify the preference patterns of LLMs in library and programming language selection and to evaluate the rationality and potential risks of these biases.
 
-**Key Insight**: Design three sets of experiments—library selection for benchmark tasks, library/language selection for project initialization, and consistency checking between natural language recommendations and coding behavior.
+**Key Insight**: The authors design three sets of experiments: library selection for benchmark tasks, library/language selection for project initialization, and consistency checks between natural language recommendations and actual coding behavior.
 
-**Core Idea**: LLMs exhibit a significant "familiarity bias" in code generation, prioritizing popular technologies over those best suited for the task.
+**Core Idea**: LLMs exhibit a significant "familiarity bias" in code generation, prioritizing popular technologies over those most technically appropriate for the task.
 
 ## Method
 
 ### Overall Architecture
 
-This study is an empirical investigation designed to measure the "hidden technical choices" made by LLMs during coding. The overall design consists of three sets of experiments covering two dimensions (library and language) across two scenarios (benchmark tasks and project initialization), plus a consistency check. The first two sets count the actual distribution of technologies generated by LLMs without specified constraints, while the third compares this behavior against the "best" recommendations given by the LLM in text. Input consists of code generations from eight diverse LLMs (GPT-4o-mini, GPT-3.5-turbo, Claude-3.5 Sonnet/Haiku, Llama-3.2-3B, Mistral-7B, Qwen-2.5-Coder, DeepSeek-LLM) on standard tasks. Each task was sampled 3–100 times to minimize randomness using new sessions, default API parameters, and no system prompts to reflect baseline model behavior.
+This is an empirical study aimed at measuring the implicit technical choices LLMs make during code generation. The design consists of three experiments covering two dimensions (libraries and languages) across two scenarios (benchmark tasks and project initialization), supplemented by a consistency check. The first two experiments measure the distribution of technologies actually generated when no library or language is specified. The third experiment compares this actual behavior with the "best" recommendations provided by the LLMs in natural language. Inputs consist of code generated by 8 diverse LLMs (GPT-4o-mini, GPT-3.5-turbo, Claude-3.5 Sonnet/Haiku, Llama-3.2-3B, Mistral-7B, Qwen-2.5-Coder, DeepSeek-LLM) on standard tasks. Each task was sampled 3–100 times to minimize randomness, using new sessions and default API parameters without system prompts to reflect baseline model behavior.
 
 ### Key Designs
 
-**1. Library Preference Experiment (Experiment 1): Quantifying Python library tendencies in common scenarios without specified libraries**
+**1. Library Preference (Experiment 1): Quantifying Python library selection tendencies in unconstrained scenarios**
 
-Developers frequently request code without specifying which library to use, making this realistic scenario highly relevant. The authors utilized 525 tasks from BigCodeBench, filtered out items where the ground-truth library was explicitly mentioned to avoid leakage, and then required the LLMs to generate code using external libraries. Usage frequencies were analyzed against ground-truth to determine if LLMs systematically lean toward a few popular libraries.
+Since developers frequently request code without specifying libraries, this realistic scenario is highly significant. The authors utilized 525 tasks from BigCodeBench, filtering out prompts that explicitly named the ground-truth library to avoid leakage. LLMs were then required to generate code using external libraries. Usage frequencies were calculated and compared against ground-truth data to determine if LLMs systematically default to a few popular libraries.
 
-**2. Language Preference Experiment (Experiment 2): Testing whether LLMs select languages based on task characteristics or default to Python**
+**2. Language Preference (Experiment 2): Testing whether LLMs select languages based on task characteristics or default to Python**
 
-Beyond libraries, inertia at the language level has deeper implications. This experiment tested language selection on benchmark tasks using six language-agnostic datasets (Multi-HumanEval, MBXP, AixBench, CoNaLa, APPS, CodeContests) and five additionally designed project initialization tasks for high-performance scenarios—such as concurrent web servers, cross-platform GUIs, and low-latency trading platforms. Selection of Python in these high-performance contexts would expose a failure to adjust language choice to task requirements.
+Beyond libraries, language-level inertia has deeper implications. This experiment utilized 6 language-agnostic datasets (Multi-HumanEval, MBXP, AixBench, CoNaLa, APPS, CodeContests) to test language selection for benchmark tasks. Additionally, 5 project initialization tasks for high-performance scenarios—such as concurrent web servers, cross-platform GUIs, and low-latency trading platforms—were designed. In these scenarios, Python is typically not the optimal choice. If LLMs default to Python for tasks requiring high performance, it reveals a failure to adapt language selection to task demands.
 
-**3. Recommendation Consistency Experiment (Experiment 3): Assessing consistency between "verbal recommendations" and "actual implementations"**
+**3. Recommendation Consistency (Experiment 3): Verifying the consistency between "recommendations" and "implementations"**
 
-If an LLM knows a superior choice but fails to implement it in code, the preference is rooted in generation behavior rather than a lack of knowledge. Authors asked LLMs to rank "best" libraries/languages in natural language and compared these to the actual usage frequencies from Experiments 1 and 2. The Kendall's $\tau_b$ coefficient was used to measure consistency. A low $\tau_b$ suggests that "knowing" and "doing" are misaligned, with preferences embedded in the implicit behavior of code generation.
+If an LLM identifies a superior choice but fails to implement it in code, the preference is rooted in generation behavior rather than a lack of knowledge. The authors asked LLMs to rank the "best" libraries/languages in natural language and compared these against the actual usage frequencies from Experiments 1 and 2. The consistency between the two rankings was measured using the Kendall's $\tau_b$ coefficient. A low $\tau_b$ indicates a "knowledge-action gap," where preferences are embedded as implicit biases in code generation.
 
 ## Key Experimental Results
 
@@ -61,44 +61,44 @@ If an LLM knows a superior choice but fails to implement it in code, the prefere
 
 | Finding | Specific Data | Impact |
 |------|---------|------|
-| Overuse of NumPy | 192 out of 305 tasks (63%) where NumPy was unnecessary used it anyway | Significant bias |
-| Lack of Library Diversity | Each LLM used only 32-39 distinct libraries | Ecosystem homogenization |
-| Python Preference | Python was still chosen in 58% of high-performance tasks | Technological mismatch |
-| Absence of Rust | Rust usage rate was 0 in high-performance projects | Extreme bias |
-| NL-Code Inconsistency | Kendall's $\tau_b$ was extremely low | Word-action misalignment |
+| NumPy Overuse | Used in 192 (63%) of 305 tasks where NumPy was not required | Severe Preference |
+| Lack of Library Diversity | Each LLM used only 32-39 distinct libraries | Ecosystem Monopolization |
+| Python Preference | Python chosen in 58% of high-performance tasks | Technical Mismatch |
+| Absence of Rust | Rust usage was 0% in high-performance projects | Extreme Bias |
+| NL-Code Inconsistency | Extremely low Kendall's $\tau_b$ | Knowledge-Action Gap |
 
 ### Ablation Study
 
-| Configuration | Key Indicator | Description |
+| Configuration | Key Metrics | Description |
 |------|---------|------|
-| Prompt Sensitivity | Preference patterns unchanged | Similar results across various prompt strictness levels |
-| Cross-LLM Consistency | Top-3 libraries identical | The top three libraries for all 8 LLMs were identical (NumPy, pandas, Matplotlib) |
+| Prompt Sensitivity | Stable preference patterns | Similar results across varying levels of prompt strictness |
+| Cross-LLM Consistency | Identical Top-3 libraries | The top three libraries (NumPy, pandas, Matplotlib) were identical across all 8 LLMs |
 
 ### Key Findings
-- Library usage distributions are highly similar across all LLMs, with identical top three rankings (NumPy > pandas > Matplotlib), regardless of model size or open/closed source status.
-- Even when tasks explicitly require high performance (low-latency trading, parallel processing), Python dominates while Rust is entirely absent.
-- The consistency between the tech stacks LLMs "recommend" and those they actually use is extremely low, suggesting preferences are rooted in generation behavior rather than knowledge assets.
+- Library usage distributions are highly similar across all LLMs; the top three libraries (NumPy > pandas > Matplotlib) are consistent regardless of model size or open-source status.
+- Even when tasks explicitly require high performance (e.g., low-latency trading, parallel execution), Python remains dominant, while Rust is entirely absent.
+- There is very low consistency between the tech stacks LLMs "recommend" and those they actually use, suggesting that preferences are rooted in generation behavior rather than factual knowledge.
 
 ## Highlights & Insights
-- The finding that "LLMs know what is better but do not necessarily do it" is significant, indicating that preferences in code generation may stem from training data distribution rather than reasoning.
-- Warning for the software ecosystem: Large-scale LLM usage may form a positive feedback loop—preference for popular libraries → generation of more code using those libraries → more training data → stronger preference.
-- The experimental design is concise and powerful, with three experiments forming a complete chain of evidence.
+- The finding that "LLMs know what is better but do not necessarily do it" is significant, indicating that code generation preferences may stem from training data distribution rather than reasoning capabilities.
+- This serves as a warning for the software ecosystem: Large-scale LLM deployment may create a positive feedback loop—preference for popular libraries leads to more generated code for those libraries, which creates more training data, further strengthening the bias.
+- The experimental design is concise and effective, with three experiments forming a complete chain of evidence.
 
 ## Limitations & Future Work
-- Only 8 LLMs were tested, excluding the latest reasoning-enhanced models (e.g., o1, DeepSeek-R1).
-- Library analysis was focused on Python; preferences in other languages were not explored.
-- No specific de-biasing methods were proposed; the study remains primarily descriptive of the phenomenon.
-- Future research could investigate how fine-tuning and RLHF influence technical preferences.
+- Only 8 LLMs were tested, and the study did not cover the latest reasoning-enhanced models (e.g., o1, DeepSeek-R1).
+- Library analysis focused heavily on Python; preferences in other languages remain unexplored.
+- No specific debiasing methods were proposed; the study remains primarily descriptive of the phenomenon.
+- Future work could investigate how fine-tuning and RLHF influence technical preferences.
 
 ## Related Work & Insights
-- **vs LLM Social Bias Research**: Expands bias analysis from social dimensions to technical dimensions, opening a new research direction.
-- **vs Code Generation Evaluation**: Proposes "design decision quality" as an overlooked but important evaluation dimension.
+- **vs LLM Social Bias**: Expands bias analysis from social dimensions to technical dimensions, opening a new research direction.
+- **vs Code Generation Evaluation**: Proposes "quality of design decisions" as a neglected but critical evaluation dimension.
 - **vs Tool Recommendation Systems**: Reveals the limitations of LLMs acting as "implicit recommendation systems."
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ First systematic study of technical preferences in LLMs, opening a new direction.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Eight models, multiple scenarios, and consistency testing provide a complete design.
-- Writing Quality: ⭐⭐⭐⭐⭐ Clear problem definition, concise experiments, and impactful findings.
+- Novelty: ⭐⭐⭐⭐⭐ First systematic study of LLM technical preferences; opens a new direction.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive design involving 8 models, multiple scenarios, and consistency testing.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear problem statement, concise experiments, and impactful findings.
 - Value: ⭐⭐⭐⭐ Provides an important warning for both LLM developers and users.
 
 <!-- RELATED:START -->
@@ -110,8 +110,8 @@ If an LLM knows a superior choice but fails to implement it in code, the prefere
 - [\[ACL 2026\] Understanding Structured Financial Data with LLMs: A Case Study on Fraud Detection](understanding_structured_financial_data_with_llms_a_case_study_on_fraud_detectio.md)
 - [\[ACL 2025\] Planning-Driven Programming: A Large Language Model Programming Workflow](../../ACL2025/llm_nlp/planning-driven_programming_a_large_language_model_programming_workflow.md)
 - [\[ACL 2025\] Can LLMs Interpret and Leverage Structured Linguistic Representations? A Case Study with AMRs](../../ACL2025/llm_nlp/can_llms_interpret_and_leverage_structured_linguistic_representations_a_case_stu.md)
-- [\[ACL 2025\] Analyzing LLMs' Knowledge Boundary Cognition Across Languages Through the Lens of Internal Representations](../../ACL2025/llm_nlp/knowledge_boundary_crosslingual.md)
 - [\[ACL 2025\] How LLMs Comprehend Temporal Meaning in Narratives: A Case Study in Cognitive Evaluation of LLMs](../../ACL2025/llm_nlp/how_llms_comprehend_temporal_meaning_in_narratives_a_case_study_in_cognitive_eva.md)
+- [\[ACL 2025\] Analyzing LLMs' Knowledge Boundary Cognition Across Languages Through the Lens of Internal Representations](../../ACL2025/llm_nlp/knowledge_boundary_crosslingual.md)
 
 </div>
 

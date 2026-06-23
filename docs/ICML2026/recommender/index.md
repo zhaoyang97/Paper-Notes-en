@@ -44,7 +44,7 @@ item_total: 11
 
 **🧪 ICML2026** · **11** paper notes
 
-📌 **Same area in other venues:** [💬 ACL2026 (21)](../../ACL2026/recommender/index.md) · [🔬 ICLR2026 (9)](../../ICLR2026/recommender/index.md) · [🤖 AAAI2026 (27)](../../AAAI2026/recommender/index.md) · [🧠 NeurIPS2025 (24)](../../NeurIPS2025/recommender/index.md)
+📌 **Same area in other venues:** [🔬 ICLR2026 (24)](../../ICLR2026/recommender/index.md) · [💬 ACL2026 (22)](../../ACL2026/recommender/index.md) · [🤖 AAAI2026 (27)](../../AAAI2026/recommender/index.md) · [🧠 NeurIPS2025 (24)](../../NeurIPS2025/recommender/index.md)
 
 🔥 **Top topics:** Recommendation ×3
 
@@ -58,15 +58,15 @@ item_total: 11
 
 **[GCIB: Graph Contrastive Information Bottleneck for Multi-Behavior Recommendation](gcib_graph_contrastive_information_bottleneck_for_multi-behavior_recommendation.md)**
 
-:   GCIB utilizes a dual strategy of "Graph Information Bottleneck + Cross-behavior Contrastive Learning." It first prunes edges in the auxiliary behavior graph that are irrelevant to the target task at the structural level (maximizing mutual information with the target behavior and minimizing mutual information with the original auxiliary graph via HSIC surrogates). Then, it aligns the denoised auxiliary representations with the sparse target representations via InfoNCE at the feature level, pushing HR@10 / NDCG@10 metrics 7%–40% higher than the best baselines across four multi-behavior recommendation benchmarks.
+:   GCIB employs a dual approach of "Graph Information Bottleneck + Cross-behavior Contrastive Learning." It first prunes edges in auxiliary behavior graphs that are irrelevant to the target task at the structural level (maximizing mutual information with the target behavior and minimizing mutual information with the original auxiliary graph via HSIC surrogates). It then aligns denoised auxiliary representations with sparse target representations using InfoNCE at the feature level, achieving a 7%–40% relative improvement in HR@10 / NDCG@10 across four multi-behavior recommendation benchmarks.
 
 **[Incentivized Exploration with Stochastic Covariates: A Two-Stage Mechanism Design for Recommender System](incentivized_exploration_with_stochastic_covariates_a_two-stage_mechanism_design.md)**
 
-:   RCB integrates "exploration-exploitation" and "user incentive compatibility" in recommendation systems into a contextual bandit problem under Dynamic Bayesian Incentive Compatibility (DBIC) constraints. It proposes a two-stage algorithm (Cold Start + IPGS) for stochastic user covariate scenarios, proving $\tilde{O}(\sqrt{KdT})$ regret with support for arbitrary offline learning oracles. It quantifies the "incentive price"—the cold start sample size grows at $1/\epsilon^2$ as the incentive constraint $\epsilon$ tightens.
+:   RCB integrates "exploration-exploitation" and "user incentive compatibility" into a contextual bandit problem under Dynamic Bayesian Incentive Compatibility (DBIC) constraints. It proposes a two-stage algorithm (Cold Start + IPGS), proves $\tilde{O}(\sqrt{KdT})$ regret in stochastic user covariate scenarios, allows for the integration of any offline learning oracle, and quantifies the "incentive price" — showing that the cold start sample size grows as $1/\epsilon^2$ as the $\epsilon$ constraint tightens.
 
 **[Learning Design Skills as Memory Policies for Agentic Photonic Inverse Design](learning_design_skills_as_memory_policies_for_agentic_photonic_inverse_design.md)**
 
-:   SkillPCF reframes the inverse design of Photonic Crystal Fibers (PCF) as a "memory policy learning" problem. A PPO-trained controller selects Top-K memory operations from an evolvable skill library for each trajectory span, which an executor implements into trajectory memory. Both the controller and the skill library are optimized simultaneously using MEEP electromagnetic simulation rewards, achieving a superior trade-off between design success rate and simulation budget compared to multi-LLM backends and classical optimization baselines.
+:   SkillPCF reformulates the inverse design of Photonic Crystal Fibers (PCF) as a "memory policy learning" problem. A PPO-trained controller selects Top-K memory operations from an evolvable skill library for each trajectory span. An executor implements these in trajectory memory, while MEEP electromagnetic simulation rewards simultaneously optimize both the controller and the skill library. This approach achieves a superior trade-off between design success rate and simulation budget compared to multiple LLM backends and classical optimization baselines.
 
 **[Position: Neglecting the Sustainability of AI is Fuelling a Global AI Arms Race](position_neglecting_the_sustainability_of_ai_is_fuelling_a_global_ai_arms_race.md)**
 

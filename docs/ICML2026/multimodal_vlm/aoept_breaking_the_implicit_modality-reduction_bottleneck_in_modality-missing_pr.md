@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] AOEPT: Breaking the Implicit Modality-Reduction Bottleneck in Modality-Missing Prompt Tuning
 description: >-
-  [ICML 2026][Multimodal VLM][Prompt Tuning] AOEPT identifies that existing missing-modality prompt tuning compresses the reasoning scope of multimodal Transformers into a visible modality subspace. By utilizing Modal-Contextualized Prompts (MCPs) distilled from the training set as retrievable implicit information sources to compensate for missing modalities, AOE
+  [ICML 2026][Multimodal VLM][Prompt Tuning] AOEPT points out that existing missing-modality prompt tuning compresses the inference scope of Multimodal Transformers into visible modality subspaces. It utilizes Modal-Contextualized Prompts (MCPs) distilled from the training set as a retrievable implicit information source for missing modalities, consistently outpe
 tags:
   - ICML 2026
   - Multimodal VLM
   - Prompt Tuning
   - NM2I
 date: 2026-05-08
-content_hash: 61e3a22f7c523fa9
+content_hash: be655864fadef239
 ---
 # AOEPT: Breaking the Implicit Modality-Reduction Bottleneck in Modality-Missing Prompt Tuning
 
@@ -20,76 +20,73 @@ content_hash: 61e3a22f7c523fa9
 **Keywords**: Missing Modality, Multimodal Transformer, Prompt Tuning, Modal-Contextualized Prompt, NM2I  
 
 ## TL;DR
-AOEPT identifies that existing missing-modality prompt tuning compresses the reasoning scope of multimodal Transformers into a visible modality subspace. By utilizing Modal-Contextualized Prompts (MCPs) distilled from the training set as retrievable implicit information sources to compensate for missing modalities, AOEPT consistently outperforms existing methods across multiple datasets, missing rates, and backbones.
+AOEPT points out that existing missing-modality prompt tuning compresses the inference scope of Multimodal Transformers into visible modality subspaces. It utilizes Modal-Contextualized Prompts (MCPs) distilled from the training set as a retrievable implicit information source for missing modalities, consistently outperforming existing methods across multiple datasets, missing rates, and backbones.
 
 ## Background & Motivation
-**Background**: Multimodal systems typically rely on multi-source signals such as images, text, and audio to perform classification, understanding, or QA tasks. As multimodal Transformers (MT) like CLIP, ViLT, and MulT become universal backbones, recent research on missing modalities has shifted from customized networks to lightweight prompt tuning: freezing the pre-trained MT and learning only a few prompts and task heads to adapt the model to scenarios with missing images, text, or incomplete modalities at deployment.
+**Background**: Multimodal systems typically rely on multi-source signals such as images, text, and audio to complete classification, understanding, or QA tasks. As Multimodal Transformers (MTs) like CLIP, ViLT, and MulT become general backbones, recent research on missing modalities has shifted from custom networks to lightweight prompt tuning: freezing the pre-trained MT and learning a small number of prompts and task heads to adapt to scenarios of missing images, missing text, or incomplete modalities during deployment.
 
-**Limitations of Prior Work**: While methods like MAPs, DCP, MemPrompt, and SyP are more robust than vanilla MT, their prompts are often determined solely by the missing pattern or currently visible modalities. For instance, when an image is missing, the conditional signal for the prompt comes mainly from text. Although seemingly reasonable, this forces the model to reason based only on the remaining single-modality evidence.
+**Limitations of Prior Work**: Methods like MAPs, DCP, MemPrompt, and SyP are more robust than vanilla MTs, but their prompts are often determined solely by the missing pattern or currently visible modalities. For example, when images are missing, the conditional signals for the prompt mainly come from text. This makes the model reason only around the remaining single-modality evidence.
 
-**Key Challenge**: Pre-trained MTs originally possess cross-modal modeling capabilities, but missing-modality prompt tuning degrades the problem to a "visible modality to label" mapping. The authors term this the Implicit Modality-Reduction (IMR) bottleneck: prompts lack explicit access to potential information sources of the missing modality, implicitly restricting the MT's reasoning scope to the reduced modality subspace.
+**Key Challenge**: While pre-trained MTs inherently possess cross-modal modeling capabilities, missing-modality prompt tuning degrades the problem into a "visible modality to label" mapping. The authors term this the Implicit Modality-Reduction (IMR) bottleneck: prompts lack explicit access to latent information sources of the missing modality, implicitly restricting the MT's inference range to the reduced modality subspace.
 
-**Goal**: This paper aims to solve three specific problems: explaining why existing prompt tuning fails to fully release the multimodal capability of MT in missing scenarios, designing a lightweight prompt mechanism that functions as an implicit information base for missing modalities without external retrieval or reconstruction modules, and providing a diagnostic metric for the IMR bottleneck beyond final classification scores.
+**Goal**: This paper aims to solve three specific problems. First, to explain why existing prompt tuning still fails to fully release the multimodal capabilities of MTs in missing-modality scenarios. Second, to design a prompt mechanism that remains lightweight and avoids external retrieval or large reconstruction modules, allowing missing modalities to enter inference as implicit information bases. Third, to provide a metric to diagnose the IMR bottleneck rather than just reporting final classification metrics.
 
-**Key Insight**: The authors conducted a pilot experiment: replacing the randomly initialized prompts in MAPs with global priors obtained by clustering modality tokens from the training set. This minor change improved performance on MM-IMDb, suggesting that global context for the missing modality can indeed break the single-modality reasoning bottleneck.
+**Key Insight**: The authors conducted a pilot experiment: replacing the randomly initialized prompts in MAPs with global priors obtained by clustering modality token representations from the training set. This small change improved performance on MM-IMDb, indicating that global context from the missing modality can indeed break the single-modal inference bottleneck.
 
-**Core Idea**: AOEPT replaces "generating prompts based only on visible modalities" with "modality-level global information base + instance-level conditional activation." This allows the prompts not just to adapt to the degraded input structure but to actively supplement the current sample with implicit context of the missing modality.
+**Core Idea**: AOEPT replaces "generating prompts based only on visible modalities" with "modality-level global information base + instance-level conditional activation." This allows prompts to actively supplement the missing modality's implicit context for the current sample rather than just adapting to the degraded input structure.
 
 ## Method
-The methodology follows a clear pipeline: first, extract layer-wise representations of a modality from the training set and compress them into lightweight Modal-Contextualized Prompts (MCPs); then, instantiate these global MCPs into instance-specific prompts based on the remaining modalities of the current sample; finally, insert these prompts into layers of a frozen MT for training prompts and classification heads. For example, if the text is missing, AOEPT constructs Text-Contextualized Prompts (TCPs) to allow the image sample to access an implicit semantic library of the text modality during inference.
+The main pipeline of AOEPT is clear: first, collect layer-wise representations of a modality from the training set and compress them into lightweight Modal-Contextualized Prompts (MCPs); then, instantiate these global MCPs into instance-specific prompts based on the remaining modalities of the current sample; finally, insert these prompts into several layers of the frozen MT and train only the prompts and the classification head.
 
 ### Overall Architecture
-The input consists of multimodal samples with potentially missing modalities, such as $(t, v)$, $(t, \varnothing)$, or $(v, \varnothing)$. AOEPT does not alter the main MT structure but inserts prompt tokens between layers of the pre-trained Transformer. During training, representations for each layer are extracted by forward-passing "modality-available" samples through the frozen MT. These are clustered and compressed into semantic prototypes to construct the corresponding MCPs.
+Input consists of multimodal samples with potential modality missingness, such as $(t, v)$, $(t, \varnothing)$, or $(v, \varnothing)$. AOEPT keeps the MT main structure unchanged and inserts prompt tokens between layers of the pre-trained Transformer. During training, representations are extracted from samples where the modality is available; these are clustered and compressed to construct corresponding MCPs.
 
-When text is missing, the model retrieves TCPs; when images are missing, it retrieves ICPs. Since MCPs are global, they are gated using the remaining modality representations of the current sample to generate instance-aware prompts. These prompts are concatenated with original hidden tokens and fed into MT layers.
+When a test sample lacks text, the model retrieves Text-Contextualized Prompts (TCPs); when it lacks images, it retrieves Image-Contextualized Prompts (ICPs). These global MCPs are then gated by representations from the remaining modalities to produce instance-aware prompts.
 
 ```mermaid
-%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
-flowchart TD
-    subgraph MCP["1. Modal-Contextualized Prompts (Distilled from Training Set)"]
+graph TD
+    subgraph MCP["1. Modal-Contextualized Prompt Base (Distilled from Training Set)"]
         direction TB
-        A["Pass modality-available samples through frozen MT to extract layer-wise representations<br/>→ K-means clustering into semantic prototypes"] --> B["Use learnable prompts as queries for cross-attention to refine<br/>into global MCPs (TCPs for missing text / ICPs for missing images)"]
+        A["Available samples pass through frozen MT <br/>→ K-means clustering into semantic prototypes"] --> B["Learnable prompts as query, cross-attention <br/>condenses into global MCPs (TCPs/ICPs)"]
     end
-    C["Missing modality sample<br/>(e.g., Image visible, Text missing)"] --> D
+    C["Missing Modality Sample<br/>(e.g., Image present, Text missing)"] --> D
     B --> D
     subgraph INST["2. Instance-level Instantiation"]
         direction TB
-        D["Select corresponding MCP based on missing pattern"] --> E["Remaining modalities pass through MLP+sigmoid gating<br/>Element-wise multiplication with MCP → Instance-specific prompt"]
+        D["Select corresponding MCP by missing pattern"] --> E["Remaining modality via MLP+sigmoid gating <br/>element-wise multiplication → Instance-specific prompt"]
     end
     E --> F
     subgraph PROP["3. Consistency Constraint + Layer-wise Insertion"]
         direction TB
-        F["Instance instantiation and insertion for first N layers; propagation for subsequent layers<br/>Intra-modal InfoNCE loss during training to align with real modality Latent"]
+        F["First N layers: instantiated and inserted<br/>Training: intra-modal InfoNCE vs. real latent"]
     end
-    F --> G["Concatenate with hidden tokens and enter frozen MT"]
+    F --> G["Concatenate with hidden tokens into frozen MT"]
     G --> H["Classification head outputs prediction"]
 ```
 
 ### Key Designs
-1.  **MCP as Missing Modality Information Base**:
-    - **Function**: Compresses the global context of a modality from the training set into prompt tokens, acting as an implicit information source for that modality when it is missing.
-    - **Mechanism**: For TCPs, text-available samples are fed into the frozen MT to obtain text token representations $C_t^l$. These are clustered into $N_t'$ semantic prototypes via K-means. The default construction uses learnable prompts as queries to perform cross-attention over these prototypes.
-    - **Design Motivation**: Random prompts only signal "a modality is missing" but provide no information on what it could have contained. MCPs explicitly store the distribution context, effectively giving the MT internalized modal memory.
+1. **Modal-Contextualized Prompt (MCP) as Missing Information Base**:
+	- **Function**: Compresses global context of a modality from the training set into prompt tokens, acting as an implicit information source.
+	- **Mechanism**: Taking TCP as an example, text tokens $C_t^l$ from each layer are extracted; K-means compresses these into $N_t'$ semantic prototypes. In the default attention-based construction, learnable prompts act as queries to perform cross-attention over these prototypes.
+	- **Design Motivation**: Random prompts only signal "a modality is missing" but do not provide information about what might be there. MCPs explicitly store the context of the training distribution, effectively reconnecting a lightweight modality memory to the frozen MT.
 
-2.  **Instance-aware Instantiation**:
-    - **Function**: Converts global MCPs into prompts specific to the current sample, preventing all missing samples from sharing the same coarse compensation.
-    - **Mechanism**: For image-visible, text-missing samples, the image representation passes through an MLP and sigmoid to generate a gating vector, which is element-wise multiplied with TCPs: $P_{TCP,i}^l = P_{TCP}^l \odot \sigma(MLP(\bar{V}_i^{l-1}))$.
-    - **Design Motivation**: MCPs are modality-level; instantiation projects the "global text distribution" onto the "local text semantics likely corresponding to this image."
+2. **Instance-aware Instantiation**:
+	- **Function**: Converts global MCPs into prompts specific to the current sample to avoid sharing coarse-grained information.
+	- **Mechanism**: For image-visible samples, image representations generate a gating vector via MLP and sigmoid: $P_{TCP,i}^l = P_{TCP}^l \odot \sigma(MLP(\bar{V}_i^{l-1}))$.
+	- **Design Motivation**: Global MCPs are too averaged. Instantiation projects the "global text distribution" onto the local space of "what text might correspond to this specific image."
 
-3.  **Consistency Constraint and Adaptive Insertion**:
-    - **Function**: Ensures instantiated prompts resemble real missing modality latent representations and controls prompt propagation.
-    - **Mechanism**: An intra-modal latent consistency regularization is used on modality-available training samples. The instance-aware prompt and the real modality representation are treated as positive pairs in an InfoNCE loss. Prompts are re-instantiated and inserted in the first $N$ layers, then propagated in subsequent layers.
-    - **Design Motivation**: Classification loss alone might lead prompts to learn label-related info that doesn't represent the missing modality. Consistency loss pulls prompts toward the real modality latent space.
+3. **Consistency Regularization and Adaptive Insertion**:
+	- **Function**: Ensures instantiated prompts resemble real missing modality latent representations and controls propagation.
+	- **Mechanism**: Intra-modal latent consistency regularization uses InfoNCE-style objectives to pull instance-aware prompts toward the real modality latents of the same sample. Prompts are re-instantiated in the first $N$ layers and inherited in subsequent layers.
+	- **Design Motivation**: Classification loss alone might lead prompts to learn label-related info that isn't representative of the missing modality. Consistency constraints ground the prompts in the latent space.
 
 ### Loss & Training
-AOEPT freezes the pre-trained MT and only trains MCPs and the classification head. The total objective is the classification loss $L_{CE}$ plus the consistency regularization $L_{CR}$. $L_{CR}$ constrains instantiation quality using similarity between prompts and real latent representations.
-
-The main experiments use CLIP ViT-B/16 as a dual-stream backbone, with extensions to ViLT and MulT. The compressed modality prototype capacity is 256, prompt length $M=16$, and insertion depth $N=6$.
+AOEPT freezes the pre-trained MT and trains only the MCPs and the classification head. The total objective is classification loss $L_{CE}$ plus consistency regularization $L_{CR}$. Experiments use CLIP ViT-B/16, ViLT, and MulT. Default hyper-parameters include a modality set capacity of 256, prompt length $M=16$, and prompt tuning depth $N=6$.
 
 ## Key Experimental Results
 
 ### Main Results
-Evaluated on MM-IMDb, HateMemes, and Food101 with 70% or 90% missing rates. AOEPT outperforms baselines like MAPs, DCP, and SyP across all metrics.
+The method was evaluated on MM-IMDb, HateMemes, and Food101 benchmarks with 70% and 90% missing rates.
 
 | Missing Rate | Dataset | Metric | AOEPT Avg. | Prev. SOTA Avg. | Gain |
 |--------------|---------|--------|------------|-----------------|------|
@@ -101,34 +98,36 @@ Evaluated on MM-IMDb, HateMemes, and Food101 with 70% or 90% missing rates. AOEP
 | 90%          | Food101 | ACC    | 82.06      | 81.26 (SyP)     | +0.80|
 
 ### Ablation Study
-Validated on MM-IMDb with 70% text missing. Removing MCP, instantiation, or consistency leads to performance drops.
+Ablation on 70% text missing scenario in MM-IMDb:
 
-| Config | MM-IMDb F1-M | HateMemes AUC | Food101 ACC | Note |
-|--------|--------------|---------------|-------------|------|
-| w/o MCP | 48.93 | 68.63 | 78.78 | Random prompt replacement |
-| w/o Instantiation | 49.17 | 69.42 | 79.13 | Global MCP without gating |
-| w/o Consistency | 50.56 | 69.85 | 79.59 | No latent regularization |
-| Ours (AOEPT) | 51.50 | 71.12 | 80.77 | Full method |
+| Config | MM-IMDb F1-M | HateMemes AUC | Food101 ACC | Description |
+|--------|--------------|---------------|-------------|-------------|
+| w/o MCP| 48.93        | 68.63         | 78.78       | Replace MCP with random prompts |
+| w/o Instantiation| 49.17 | 69.42       | 79.13       | Direct MCP insertion without gating |
+| w/o Consistency| 50.56 | 69.85         | 79.59       | Remove latent consistency reg |
+| AOEPT  | 51.50        | 71.12         | 80.77       | Complete Method |
 
 ### Key Findings
-- **MCP is the core** for breaking the IMR bottleneck. Without it, the model reverts to merely adapting structures, with F1-M dropping from 51.50 to 48.93 on MM-IMDb.
-- **NM2I serves as a diagnostic tool**. While baseline NM2I scores are near 0 (indicating prompts share little info with missing latents), AOEPT scores are significantly higher, proving prompts carry missing modality information.
-- **Reconstruction is not a substitute**. Lightweight reconstruction networks perform worse than MCPs (76.81 vs 80.77 on Food101), likely due to the difficulty of fitting complex cross-modal mappings with limited parameters.
+- MCP is the core of breaking the IMR bottleneck. Without MCP, performance drops significantly (e.g., from 51.50 to 48.93 on MM-IMDb).
+- Instance-level instantiation is crucial; global modality bases must be selectively activated based on visible inputs.
+- NM2I diagnosis supports the central thesis: baseline prompts share almost no information with missing modality latents (NM2I $\approx 0$), while AOEPT's NM2I is significantly higher.
+- AOEPT generalizes well to single-stream backbones like ViLT, outperforming MemPrompt by 1.79 points in average F1-M.
 
 ## Highlights & Insights
-- Success comes from shifting the perspective from "adapting to degraded input" to "restoring reasoning range."
-- The design of MCP is restrained; it avoids external retrieval/large generators by distilling modality-level context internally from the training set.
-- NM2I provides a mechanistic diagnostic for whether prompts actually carry the missing modality's information, facilitating deeper analysis beyond accuracy.
+- The key highlight is redefining the missing modality problem from "adapting to degraded input" to "restoring inference scope."
+- MCP design is restrained: it avoids external retrieval and heavy generative modules, distilling modality-level context from the training set instead.
+- NM2I (Normalized Mutual Information) serves as a valuable diagnostic tool to verify if prompts truly carry missing modality information.
+- Layer-wise analysis suggests that missing modality compensation requires intervention in early layers ($N=6$) and sufficient token capacity ($M=16$).
 
 ## Limitations & Future Work
-- NM2I is not always monotonically correlated with task performance, especially when the visible modality is already sufficient for classification.
-- AOEPT relies on the training set distribution; severe domain shifts at deployment might render the distilled modal context inaccurate.
-- Future work could integrate uncertainty estimation to adjust compensation intensity based on the reliability of the activated MCP.
+- NM2I is not always monotonically correlated with task performance; visible modalities alone might be sufficient for some tasks.
+- MCPs rely on the training distribution; severe domain shifts at deployment may cause activation of mismatched priors.
+- Future work could integrate uncertainty estimation to adjust compensation strength when the missing modality prior is unreliable.
 
 ## Related Work & Insights
-- **vs MAPs**: MAPs introduced missing-aware prompts as structural markers. AOEPT argues this remains trapped in the IMR bottleneck and uses MCPs to provide explicit content.
-- **vs RAGPT**: Retrieval-based methods use external samples for evidence. AOEPT "internalizes" retrieval into prompt parameters, offering global context without the overhead of external queries.
-- **Insight**: AOEPT suggests that for multimodal robustness, maintaining a lightweight modal prior library that can be dynamically activated is superior to simply training the model to guess from partial inputs.
+- **vs MAPs**: MAPs introduced missing-aware prompts as structural markers. AOEPT argues this remains stuck in the IMR bottleneck and provides explicit context.
+- **vs RAGPT**: Retrieval-based methods are more explicit but have higher overhead and sensitivity to retrieval noise. AOEPT "internalizes" retrieval into prompt parameters.
+- **vs Reconstruction**: Reconstruction methods often require heavy networks. AOEPT supplements the latent prompt space, which is more parameter-efficient for frozen MTs.
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐⭐ 
@@ -138,19 +137,19 @@ Validated on MM-IMDb with 70% text missing. Removing MCP, instantiation, or cons
 
 <!-- RELATED:START -->
 <div class="related-papers" markdown="1">
-- Missing Modality Prompt Tuning for Multimodal Learning (MAPs)
-- Learning with Missing Modalities via Decoupled Prompting (DCP)
-- Prompting with Memory for Missing Modality (MemPrompt)
+- MAPs: Prompting for Missing Modality Learning.
+- SyP: Synergistic Prompting for Multimodal Transformers.
+- DCP: Dynamic Contextual Prompts for VLM.
 </div>
 <!-- RELATED:END -->
 
 ## Related Papers
 
 - [\[CVPR 2026\] Parameter-Efficient Adaptation for MLLMs via Implicit Modality Decomposition](../../CVPR2026/multimodal_vlm/parameter-efficient_adaptation_for_mllms_via_implicit_modality_decomposition.md)
-- [\[CVPR 2026\] Dual-Modality Anchor-Guided Filtering for Test-time Prompt Tuning](../../CVPR2026/multimodal_vlm/dual-modality_anchor-guided_filtering_for_test-time_prompt_tuning.md)
-- [\[ICML 2026\] Calibrated Multimodal Representation Learning with Missing Modalities](calibrated_multimodal_representation_learning_with_missing_modalities.md)
 - [\[ICML 2026\] Jailbreaking Vision-Language Models Through the Visual Modality](jailbreaking_vision-language_models_through_the_visual_modality.md)
+- [\[ICML 2026\] Calibrated Multimodal Representation Learning with Missing Modalities](calibrated_multimodal_representation_learning_with_missing_modalities.md)
 - [\[CVPR 2026\] DeepAlign: Mitigating Modality Conflict through Modality-Specific Alignment](../../CVPR2026/multimodal_vlm/deepalign_mitigating_modality_conflict_through_modality-specific_alignment.md)
+- [\[ICML 2026\] Seeing is Understanding: Unlocking Causal Attention into Modality-Mutual Attention for Multimodal LLMs](seeing_is_understanding_unlocking_causal_attention_into_modality-mutual_attentio.md)
 
 </div>
 

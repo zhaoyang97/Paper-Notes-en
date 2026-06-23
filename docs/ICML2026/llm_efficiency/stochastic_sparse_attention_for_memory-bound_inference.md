@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Stochastic Sparse Attention for Memory-Bound Inference
 description: >-
-  [ICML 2026][LLM Efficiency][KV-cache] SANTA reinterprets the value aggregation $AV$ of attention as "weighted summation of value rows $V$ based on softmax probabilities $A$." It transforms this into an unbiased estimate by sampling $S \ll n_k$ indices from $A$ without replacement and directly averaging the corresponding $V$ rows. By utilizing stratified/sy
+  [ICML 2026][LLM Efficiency][KV-cache] SANTA treats the value aggregation $AV$ of attention as an "expectation of value rows $V$ weighted by softmax probabilities $A$." It transforms this into an unbiased estimator that samples $S \ll n_k$ indices from $A$ without replacement and directly averages the corresponding $V$ rows. By employing stratified/systemat
 tags:
   - ICML 2026
   - LLM Efficiency
@@ -10,7 +10,7 @@ tags:
   - Stratified Sampling
   - GPU kernel
 date: 2026-05-08
-content_hash: d4139ebc92da9dd3
+content_hash: 8e556e4b5738dda4
 ---
 # Stochastic Sparse Attention for Memory-Bound Inference
 
@@ -18,49 +18,49 @@ content_hash: d4139ebc92da9dd3
 **arXiv**: [2605.01910](https://arxiv.org/abs/2605.01910)  
 **Code**: <https://github.com/OPUSLab/SANTA.git>  
 **Area**: Model Compression / LLM Inference Acceleration / Attention Optimization  
-**Keywords**: Sparse Attention, Stochastic Sampling, KV-cache, Stratified Sampling, GPU kernel
+**Keywords**: Sparse Attention, Random Sampling, KV-cache, Stratified Sampling, GPU kernel
 
 ## TL;DR
-SANTA reinterprets the value aggregation $AV$ of attention as "weighted summation of value rows $V$ based on softmax probabilities $A$." It transforms this into an unbiased estimate by sampling $S \ll n_k$ indices from $A$ without replacement and directly averaging the corresponding $V$ rows. By utilizing stratified/systematic sampling to reduce variance and implementing a GPU kernel aligned with FlashDecoding, it achieves a 1.5× end-to-end speedup over FlashInfer/FlashDecoding under 32k context without accuracy degradation.
+SANTA treats the value aggregation $AV$ of attention as an "expectation of value rows $V$ weighted by softmax probabilities $A$." It transforms this into an unbiased estimator that samples $S \ll n_k$ indices from $A$ without replacement and directly averages the corresponding $V$ rows. By employing stratified/systematic sampling to reduce variance and implementing GPU kernels aligned with FlashDecoding, SANTA achieves a 1.5× end-to-end speedup compared to FlashInfer/FlashDecoding in 32k context scenarios without accuracy degradation.
 
 ## Background & Motivation
 
-**Background**: Long-context autoregressive decoding is a bottleneck for LLM deployment. Each generated token requires streaming the entire KV cache, making bandwidth the primary constraint (e.g., Llama-3.1-8B with 32k context requires transferring ~128 MB per layer per token). Existing mitigation strategies include: KV quantization/compression (KIVI, etc.), cache management (Quest, H2O), structured sparse attention (Longformer, BigBird), and kernel optimization (FlashAttention, FlashDecoding), often combined with GQA. However, even the most optimized exact kernels must touch the entire KV state at every step, meaning the bandwidth wall persists.
+**Background**: Autoregressive decoding with long contexts is a bottleneck in LLM deployment. Each generated token requires streaming the entire KV cache, making bandwidth the primary constraint (e.g., Llama-3.1-8B with a 32k context requires transferring ~128 MB per layer per token). Current mitigation strategies fall into four categories: KV quantization/compression (e.g., KIVI), cache management (Quest, H2O), structured sparse attention (Longformer, BigBird), and kernel optimization (FlashAttention, FlashDecoding)—often stacked with GQA. However, even with optimal exact kernels, the entire KV state must be accessed at each step, leaving the bandwidth wall intact.
 
-**Limitations of Prior Work**: Top-$k$ or threshold-based sparse methods are **biased estimators** and typically require sorting. Quantization/compression damages KV numerical precision. Structured sparsity (e.g., sliding window) sacrifices expressiveness. FlashDecoding has nearly exhausted IO locality; further acceleration requires **reducing the number of V rows read**, rather than just optimizing the reading process.
+**Limitations of Prior Work**: Top-$k$ or threshold-based sparse methods are **biased estimators** and typically require overhead-heavy sorting. Quantization and compression compromise the numerical precision of KV states. Structured sparsity (e.g., sliding window) sacrifices representational capacity. While FlashDecoding maximizes IO locality, further acceleration requires directly **reducing the number of V rows read**, rather than just optimizing the reading process.
 
-**Key Challenge**: The attention output $AV$ is an **expectation**—$A$ itself is a probability distribution. Why treat it as a deterministic weighted sum? A Monte Carlo approach could compute only the sum of samples. However, random sampling on GPUs disrupts parallelism (requiring a global CDF), which presents a significant engineering challenge.
+**Key Challenge**: The attention output $AV$ is an **expectation**—$A$ itself represents a probability distribution. Why treat it as a deterministic weighted sum for matrix multiplication? It can be computed more efficiently via Monte Carlo sampling using only a subset of rows. However, implementing random sampling on GPUs typically breaks parallelism due to the need for a global Cumulative Distribution Function (CDF), posing a significant engineering challenge.
 
-**Goal**: (a) Rewrite $AV$ as an unbiased Monte Carlo estimate, reducing $V$ row accesses from $n_k$ to $S \ll n_k$ and eliminating all multiplications after softmax; (b) reduce variance to match SDPA precision; (c) implement a GPU kernel to achieve real wall-clock acceleration; (d) provide a sparsification scheme for the score stage (Bernoulli $qK^T$).
+**Goal**: (a) Reformulate $AV$ as an unbiased Monte Carlo estimator to reduce $V$ row accesses from $n_k$ to $S \ll n_k$, effectively eliminating multiplications post-softmax; (b) reduce variance to match SDPA precision; (c) develop a GPU kernel that achieves real-world wall-clock speedup; (d) provide a sparsification scheme for the score stage (Bernoulli $qK^T$).
 
-**Key Insight**: View attention from a probabilistic perspective—treating $A$ as a categorical distribution and replacing matrix multiplication with sampling. Combine "per-head independent CDFs" with FlashDecoding's tiling strategy, using two schemes (proportional/flash) to resolve the "global CDF vs. global synchronization" contradiction.
+**Key Insight**: View attention from a probabilistic perspective—treat $A$ as a categorical distribution and replace matrix multiplication with sampling. By combining "per-head independent CDFs" with the tiling strategy of FlashDecoding, the conflict between "global CDF" and "global synchronization" can be resolved using two approaches: proportional and flash.
 
-**Core Idea**: $\widehat{AV}=\frac1S\sum_{s=1}^S V_{i_s}$, where $i_s\sim A$ i.i.d., is an unbiased estimate of $AV$ with variance $O(1/S)$. Variance is further reduced using stratified/systematic sampling. On GPU, serial CDF dependencies are avoided via "lightweight global sync + per-tile probability mass-based budget allocation."
+**Core Idea**: $\widehat{AV}=\frac1S\sum_{s=1}^S V_{i_s}$, where $i_s\sim A$ i.i.d. is an unbiased estimator of $AV$ with variance $O(1/S)$. Variance is further reduced using stratified or systematic sampling. On GPUs, "lightweight global sync + per-tile probability mass budget allocation" is used to avoid serial CDF dependencies.
 
 ## Method
 
 ### Overall Architecture
-SANTA is an attention replacement scheme for the **decoding phase** (usable in prefill but with smaller gains). It splits attention into two stages: the score stage, where $qK^T$ and softmax produce the probability distribution $A$, and the value stage, where $AV$ aggregates the values. This work applies stochastic sparsification to both, but the **focus is on the value stage**, as the bandwidth wall for long-context decoding stems from repeatedly reading the entire $V$. The main value stage pipeline uses **SANTA unbiased estimation + stratified variance reduction** to change $AV$ from a "full $n_k$ row weighted multiply-accumulate" to a "direct average of $S \ll n_k$ sampled rows," implemented in two GPU kernels: **S²ANTA-prop** (lightweight global sync, exact budget allocation) and **S²ANTA-flash** (barrier-free, speculative local sampling). The score stage is an orthogonal supplement using **Bernoulli $qK^T$** to ternarize queries and sparsely read $K$. Prefill still uses SDPA; only decoding steps are replaced, remaining orthogonal to and stackable with GQA, FlashInfer, quantization, and cache compression.
+SANTA is an attention replacement scheme designed for the **decoding phase** (it is applicable to prefill but yields smaller gains). It divides attention into two stages: the score stage, which computes $qK^T$ followed by softmax to obtain distribution $A$, and the value stage, which computes $AV$ to aggregate values. While both stages are sparsified, the **core contribution lies in the value stage**, as the bandwidth wall in long-context decoding stems from repeatedly reading the entire $V$ cache. In the value stage, **SANTA unbiased estimation and stratified variance reduction** convert the "weighted sum of all $n_k$ rows" into a "direct average of $S \ll n_k$ sampled rows," eliminating multiplications after softmax. This is implemented via two GPU kernels: **S²ANTA-prop** (lightweight global sync for precise budget allocation) and **S²ANTA-flash** (barrier-free speculative local sampling) to achieve wall-clock acceleration. As an orthogonal supplement, the score stage utilizes **Bernoulli $qK^T$** to ternarize queries for sparse $K$ feature access. Prefill still uses SDPA; SANTA replaces only the decoding steps and is compatible with GQA, FlashInfer, quantization, and cache compression.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    Q["Decoding Step: Query q + KV cache"] --> SC["Score Stage: q·Kᵀ → softmax<br/>to get distribution A"]
-    BN["Bernoulli qKᵀ Sparsification<br/>Query ternarization {−1,0,+1}<br/>Unbiased estimate of qKᵀ, sparse K reads"] -.Orthogonal supplement.-> SC
-    SC --> EST["SANTA Unbiased Estimation + Stratified Variance Reduction<br/>Sample S indices from A (S ≪ n_k)<br/>Gather-and-add to average V rows"]
-    EST --> K{"Select GPU Kernel"}
-    K -->|Global lightweight sync| PROP
-    K -->|Barrier-free speculative| FLASH
+    Q["Decode step: query q + KV cache"] --> SC["Score stage: q·Kᵀ → softmax<br/>to obtain distribution A"]
+    BN["Bernoulli qKᵀ sparsification<br/>Query ternarization {−1,0,+1}<br/>Unbiased qKᵀ estimation, sparse K access"] -.Orthogonal supplement.-> SC
+    SC --> EST["SANTA unbiased estimation + stratified variance reduction<br/>Sample S indices from A (S << n_k)<br/>Gather-and-add V rows, no post-softmax multiplication"]
+    EST --> K{"Choose GPU kernel"}
+    K -->|Global lightweight sync (Precise)| PROP
+    K -->|No barrier (Speculative)| FLASH
     subgraph PROP["S²ANTA-prop"]
         direction TB
-        P1["Pass 1: Compute scores & stash<br/>Write out Z_tile for each tile"] --> RED["Global Reducer: Z = ΣZ_tile<br/>Allocate budget S_tile ∝ Z_tile/Z<br/>Skip V-read for low-prob tiles"]
-        RED --> P2["Pass 2: Systematic sampling per S_tile<br/>Gather corresponding V rows"]
+        P1["Pass 1: Calculate exact scores and stash<br/>Output Z_tile for each tile"] --> RED["Global reducer: Z = ΣZ_tile<br/>Budget S_tile allocation via Z_tile/Z<br/>Low-prob tiles get 0, skip V-read"]
+        RED --> P2["Pass 2: Systematic sampling via S_tile<br/>Gather corresponding V rows"]
     end
     subgraph FLASH["S²ANTA-flash"]
         direction TB
-        F1["Sample S/T per tile<br/>Assuming local full probability mass"] --> F2["Merge with actual Z_tile/Z<br/>Deferred scaling; low-prob tiles scaled to 0"]
+        F1["Each tile samples S/T points<br/>Assuming local dominance of probability"] --> F2["Merge via actual Z_tile/Z<br/>Delayed scaling, low-prob tiles scaled to 0"]
     end
-    PROP --> OUT["Unbiased AV Estimate<br/>V-row access reduced to < 2%"]
+    PROP --> OUT["Unbiased AV estimation output<br/>V row access reduced to < 2%"]
     FLASH --> OUT
 ```
 
@@ -68,28 +68,28 @@ flowchart TD
 
 **1. SANTA Unbiased Estimation + Stratified/Systematic Variance Reduction**
 
-The value stage $AV$ is essentially a weighted sum of $V$ rows according to softmax probability $A$, i.e., an expectation. Since $A$ is already a probability distribution, it is unnecessary to perform a full $n_k$ row multiply-accumulate. SANTA replaces this with a Monte Carlo estimate: sample $S \ll n_k$ indices $i_s$ independently from the categorical distribution $A$, outputting $\widehat{AV}=\frac1S\sum_{s=1}^S V_{i_s}$. This is an unbiased estimate ($\mathbb E[\widehat{AV}]=AV$, variance $\propto 1/S$), which simultaneously cuts $V$ row reads to $S$ and eliminates all multiplications after softmax, leaving only gather-and-add operations. However, naive i.i.d. sampling has high variance—at $S=16$, GSM8K accuracy collapses to 5.5%. Thus, S²ANTA introduces stratified sampling: splitting the CDF into $S$ equal probability segments and sampling once per segment to ensure more uniform coverage. **S²ANTA-strat** draws an independent offset $T_m\sim\mathrm{Unif}(I_m)$ for each segment, while **S²ANTA-sys** draws a single global offset $U\sim\mathrm{Unif}[0,1/S)$ to generate all $S$ samples via thresholds $T_m=U+m/S$. Both provide significant variance reduction, with systematic sampling being hardware-friendly as it requires only one random number.
+The $AV$ calculation in the value stage is essentially a weighted sum of $V$ rows based on softmax probabilities $A$, which is an expectation. Since $A$ is already a probability distribution, SANTA replaces the full dot-product with a Monte Carlo estimate: sample $S \ll n_k$ indices $i_s$ independently from the categorical distribution $A$ and output $\widehat{AV}=\frac1S\sum_{s=1}^S V_{i_s}$. This is an unbiased estimator ($\mathbb E[\widehat{AV}]=AV$ with variance $\propto 1/S$) that simultaneously reduces $V$ row reads to $S$ and eliminates all multiplications post-softmax by using gather-and-add operations. To address the high variance of naive i.i.d. sampling (where GSM8K drops to 5.5% with $S=16$), S²ANTA introduces stratified sampling: the CDF is partitioned into $S$ equal probability intervals, with one sample per interval to ensure uniform coverage. **S²ANTA-strat** draws an independent offset $T_m\sim\mathrm{Unif}(I_m)$ for each interval and takes $J_m=F_q^{-1}(T_m)$, providing theoretical guarantees for variance reduction. **S²ANTA-sys** uses a single global offset $U\sim\mathrm{Unif}[0,1/S)$ to generate all $S$ samples via thresholds $T_m=U+m/S$. Though lacking theoretical guarantees, systematic sampling performs on par with stratified sampling in practice while requiring only one random number, making it highly hardware-friendly.
 
-**2. S²ANTA-prop: Exact Budget Allocation with Global Lightweight Sync**
+**2. S²ANTA-prop: Precise Budget Allocation via Lightweight Global Sync**
 
-Mapping the sampler to GPU is difficult because determining which $V$ rows to sample requires a global CDF—a serial dependency that breaks FlashDecoding-style Split-KV parallelism. The "prop" kernel resolves this by making global normalization "lightweight," synchronizing only $T$ scalars. It splits the attention into $T$ tiles and runs two passes: **Pass 1** computes exact scores and stashes exponentiated scores (scalars requiring only $1/d_k$ bandwidth) along with local partition functions $Z_{tile}$. A **global reducer** sums $Z=\sum Z_{tile}$ and allocates the sampling budget $S_{tile}\propto S\cdot(Z_{tile}/Z)$ precisely. Low-probability tiles ($S_{tile}=0$) skip the expensive V-reads entirely. **Pass 2** uses the stashed scores and allocated $S_{tile}$ for systematic sampling. The barrier only synchronizes $T$ scalars, making the cost negligible while enabling precise load balancing. Under a 32k context with $S=128$ (0.39% of KV), it aligns with SDPA accuracy while reducing $V$ row access below 1.56%, running 1.50× faster than FlashInfer.
+Implementing the sampler on GPUs is difficult because determining which $V$ rows to sample typically requires a global CDF—a serial dependency that violates the parallel split-KV philosophy of FlashDecoding. S²ANTA-prop resolves this by "lightening" the global normalization to synchronize only $T$ scalars. It treats attention in $T$ tiles and executes two passes: **Pass 1** computes scores precisely, stashing exponentiated scores (small scalars occupying $1/d_k$ bandwidth) and local partition functions $Z_{tile}$ in global memory. A **global reducer** sums $Z=\sum Z_{tile}$ and allocates the sampling budget $S_{tile}\propto S\cdot(Z_{tile}/Z)$ proportionally. Tiles with low probability receive $S_{tile}=0$ and skip the expensive $V$-read. **Pass 2** performs systematic sampling using the stashed scores and allocated budgets to gather $V$ rows. The barrier only synchronizes $T$ scalars rather than the full score matrix, making the cost negligible while ensuring precise load balancing. In 32k contexts, $S=128$ (0.39% of KV) matches SDPA accuracy, reducing $V$ row access below 1.56% and achieving a 1.50× speedup over FlashInfer.
 
-**3. S²ANTA-flash: Speculative Sampling + Deferred Normalization**
+**3. S²ANTA-flash: Speculative Sampling + Delayed Normalization**
 
-For scenarios where any global barrier is unacceptable, S²ANTA-flash follows the FlashDecoding philosophy without synchronization. Each tile assumes it holds the total probability mass and samples $S/T$ local samples. The reducer later computes the actual $Z$ and $Z_{tile}/Z$, scale-shifting low-probability partial sums toward 0. The penalty is "sample waste"—sampling and V-reads in low-probability tiles are essentially wasted—requiring a larger total budget ($S=2048$ vs. $S=128$ for prop) to match SDPA accuracy. However, because it eliminates the barrier, it still achieves a 1.51× wall-clock speedup. This demonstrates that in skewed probability distributions like attention, **a small investment in global synchronization is more efficient than speculative execution.**
+For scenarios where any global barrier is unacceptable, S²ANTA-flash removes synchronization entirely, following the FlashDecoding philosophy. Each tile assumes it holds the entire probability mass and samples $S/T$ points to produce a local sum. The reducer later calculates the actual $Z$ and ratios $Z_{tile}/Z$, applying **delayed scaling** to squash partial sums from low-probability tiles toward zero. The downside is "sample waste," where sampling and $V$-reads in low-probability tiles are essentially discarded. Consequently, matching SDPA accuracy requires a significantly larger budget ($S=2048$ vs. $S=128$ for prop). However, by eliminating the barrier, it still achieves a 1.51× wall-clock speedup. This highlights that in highly non-uniform distributions like attention, **spending a small overhead on global sync is more efficient than speculative execution.**
 
 **4. Bernoulli $qK^T$: Orthogonal Sparsification of the Score Stage**
 
-While the previous designs sparsify the value stage ($AV$), the score stage ($qK^T$) still requires streaming the entire $K$. Bernoulli $qK^T$ is an orthogonal supplement: it normalizes query elements to $[-1,1]$ as Bernoulli probabilities, sampling them into ternary values $\{-1,0,+1\}$. This creates a sparse ternary query that provides an unbiased estimate of $qK^T$, allowing feature-wise sparse access to $K$. On BitNet-2B with $B=4$, it reads only 67.5% of $K$ features with 64.5% accuracy (SDPA 65.7%). While primary speedups come from the value stage, Bernoulli serves as a mechanism validator, particularly for BitNet-style models.
+While the previous designs target the value stage ($AV$), the score stage ($qK^T$) also requires a full pass over $K$. Bernoulli $qK^T$ provides an orthogonal supplement by normalizing query elements to $[-1,1]$ and treating them as Bernoulli probabilities to produce a sparse ternary query $\{-1,0,+1\}$. This yields an unbiased estimate of $qK^T$ and allows feature-wise sparse access to $K$. This extends stochastic sparsification to both branches of attention. On BitNet-2B with $B=4$, it reads only 67.5% of $K$ features with 64.5% accuracy (vs. 65.7% for SDPA). The primary acceleration comes from the value stage, while Bernoulli is a complementary mechanism validated on BitNet-like models.
 
 ### Loss & Training
-Ours is a **purely inference-time method** that requires no retraining, introduces no losses, and acts as a plug-and-play replacement for attention operators. It is orthogonal to and stackable with quantization, GQA, and cache compression.
+Ours is a **pure inference-time method** that requires no retraining or additional loss functions. All components (including Bernoulli $qK^T$) are plug-and-play replacements for attention operators and are orthogonal to quantization, GQA, and cache compression.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**32k Context RULER (Llama-3.1-8B-Instruct)** Table 1: SDPA used for prefill, replacement only for decoding.
+**32k Context RULER (Llama-3.1-8B-Instruct)** Table 1: SDPA used for prefill, replacement in decode only.
 
 | Kernel | $S$ | FWE | NIAH | QA1 | QA2 |
 |---|---|---|---|---|---|
@@ -101,54 +101,64 @@ Ours is a **purely inference-time method** that requires no retraining, introduc
 
 Prop achieves SDPA-level accuracy at $S=128$ (0.39% of $n_k$), while flash requires $S=2048$ (6.25%). Kernel latency (Fig 4): prop 1.50× / flash 1.51× speedup vs. FlashInfer.
 
-**GSM8K (Llama 8B)** Table 2: Accuracy comparison of SANTA / S²ANTA-strat / S²ANTA-sys across different $S$.
+**GSM8K (Llama 8B)** Table 2 (excerpt): Comparing accuracy of SANTA / S²ANTA-strat / S²ANTA-sys across different $S$.
 
 | $S$ | S²ANTA-sys | S²ANTA-strat | SANTA |
 |---|---|---|---|
 | 16 | 44.63 | 39.12 | 5.51 |
+| 32 | 68.59 | 67.00 | 38.26 |
+| 64 | 76.42 | 74.43 | 63.63 |
 | 128 | **77.33** | 75.64 | 70.23 |
+| 256 | 77.56 | **78.17** | 75.61 |
 | SDPA | – | – | 78.06 |
 
-Variance reduction is critical: at $S=16$, sys outperforms basic SANTA by 39 percentage points.
+Variance reduction is critical: at $S=16$, sys outperforms basic SANTA by 39 points.
+
+**MMLU** Table 3: Stratified variants significantly outperform SANTA at small $S$. All three converge within ±1% of SDPA (49.86 baseline) at $S=256$.
 
 ### Ablation Study
 
-| Config | Key Finding |
+| Configuration | Key Finding |
 |------|---------|
-| SANTA vs. S²ANTA-strat vs. S²ANTA-sys | Stratified series significantly leads when $S \le 64$, validating the variance reduction. |
-| Prop vs. Flash kernel | Similar speedup, but prop uses 1/16th of the samples, minimizing "sample waste." |
-| Bernoulli $qK^T$ on BitNet 2B | At $B=4$, reads 67.5% of K, accuracy 64.5% (SDPA 65.7%). |
+| SANTA vs. S²ANTA-strat vs. S²ANTA-sys | Stratified variants lead significantly when $S \le 64$, validating variance reduction. |
+| Prop vs. Flash kernel | Similar speedups, but prop uses 1/16 the budget of flash, demonstrating efficiency over sample waste. |
+| Bernoulli $qK^T$ on BitNet 2B (GSM8K) | Reading 67.5% of K features at $B=4$ yields 64.5% accuracy, proving score-stage sparsification is viable. |
+| Mean group query | $B=4$ results in 84.7% K access (vs 97.9% alone), mitigating union explosion from GQA sharing. |
 
 ### Key Findings
-- **Sampling provides more than just multiplication elimination**: In long-context decoding, the gain primarily comes from reduced V-read bandwidth (< 2% at 32k). Multiplication elimination (1.1 pJ → 0.4 pJ per op) is a benefit that will be fully realized by future adder-centric hardware.
-- **Stratified variance reduction is mandatory**: Standard SANTA at $S=16$ on GSM8K is unusable (5.5%). Adding stratified/systematic sampling makes it immediately viable.
-- **Systematic vs. Stratified**: Performance is nearly identical, but systematic sampling's single-random-number requirement is highly production-friendly.
-- **Sample waste in flash is real**: To achieve the same speedup, flash needs 16× more samples than prop, proving that global sync is more economical for skewed attention distributions.
+- **Sampling goes beyond eliminating multiplications**: The primary gain in long-context decoding stems from reduced $V$ read bandwidth ( < 2% at 32k context). Multiplication elimination (energy reduction from 1.1 pJ to 0.4 pJ per op) is a dividend for future adder-optimized hardware.
+- **Stratified variance reduction is mandatory**: Without it, SANTA fails on GSM8K (5.5% at $S=16$). Adding stratified/systematic sampling makes it immediately viable, proving that naive Monte Carlo suffers from variance explosion in attention.
+- **Systematic vs. Stratified**: Performance is nearly identical, but systematic sampling's single random number requirement is highly hardware-friendly.
+- **Flash kernel "sample waste" is significant**: To match wall-clock speedup, flash needs 16× more samples than prop, indicating that global sync is remarkably economical for non-uniform attention distributions.
 
 ## Highlights & Insights
-- **Probabilistic Attention View**: Treating attention as an expectation to be sampled is elegant and generalizable to other softmax-based operations like MoE gating or retrieval ranking.
-- **Eliminating Multiplications**: The energy consumption ratio between adders and multipliers (~0.36×) aligns with trends like BitNet, positioning this work for sparse, adder-centric accelerators.
-- **Prop Kernel Design**: The use of lightweight sync to break the CDF serial dependency provides a template for any sparsification task requiring global normalization.
-- **Plug-and-play**: No retraining, no accuracy loss, and compatible with existing KV-cache optimization techniques.
+- **Probabilistic Perspective**: Reinterpreting attention through sampling is elegant. This idea can be extended to other softmax-based operations like MoE gating or retrieval ranking.
+- **"Multiplier Elimination" for Future Hardware**: The large energy gap between adders and multipliers (~0.36×) aligns SANTA with the trend of 1-bit LLMs and adder-centric accelerators.
+- **Cheap Sampling**: Systematic sampling using 1 random number for $S$ samples is a major advantage for embedded or custom silicon deployments.
+- **Breaking CDF Seriality**: The prop kernel's "lightweight sync" design can be applied to any sparsification task requiring global normalization, such as sparse softmax MoE routing.
+- **Plug-and-Play**: The method requires no retraining, maintains accuracy, and is compatible with existing tools like quantization and GQA.
 
 ## Limitations & Future Work
-- Wall-clock speedups on current GPUs primarily come from bandwidth reduction; multiplication elimination is less significant due to optimized NVIDIA FMA units.
-- No gains in the prefill stage as row-wise sparsification is "eaten" by the union of queries.
-- Sampling quality depends on the "well-behavedness" of the softmax distribution; accuracy in extremely flat distributions was not analyzed.
-- Bernoulli $qK^T$ performance on non-BitNet models remains unknown.
+- Current GPU speedups primarily come from bandwidth reduction. Multiplication elimination dividends are less pronounced under NVIDIA's FMA optimizations; benefits will increase with adder-oriented hardware.
+- Prefill stage shows minimal gains because $n_q = n_k$ causes the union of sampled $V$ rows to span nearly the entire cache.
+- Sampling quality depends on the "well-behaved" nature of the softmax distribution. If attention is extremely flat, even stratified sampling might struggle.
+- Bernoulli $qK^T$ effectiveness on non-BitNet (fp16) models remains unproven; tolerance for query ternarization might be lower.
+- Combined experiments with cache management methods (Quest, H2O) are needed for production environments.
 
 ## Related Work & Insights
-- **vs. FlashDecoding / FlashInfer**: These optimize IO for exact attention. SANTA is an orthogonal direction that reduces the rows actually accessed.
-- **vs. Top-$k$ Attention (Quest, H2O)**: Top-$k$ is biased and requires sorting. SANTA is unbiased and reaches SDPA accuracy with $S=128$.
-- **vs. KV Quantization (KIVI)**: Quantization reduces bytes per element; SANTA reduces the number of elements. They are complementary.
+- **vs. FlashDecoding / FlashInfer (Dao 2023, Ye 2025)**: These optimize IO for exact attention. SANTA is an orthogonal approach that reduces the amount of data accessed, achieving 1.5× speedup over these baselines.
+- **vs. Top-$k$ Attention (Quest, H2O)**: Top-$k$ is biased and requires sorting. SANTA is unbiased and requires only $S=128$ to match SDPA at 32k context.
+- **vs. Sparse Transformer / Longformer**: These utilize structured sparsity patterns fixed at training. SANTA is stochastic at inference time and requires no training changes.
+- **vs. KV Quantization (KIVI)**: Quantization reduces bytes per element, while SANTA reduces the number of elements read. They are perfectly complementary.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Reinterpreting the value stage through Monte Carlo is elegant and well-supported by kernels.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covers various benchmarks including long-context RULER and real latency metrics.
-- Writing Quality: ⭐⭐⭐⭐⭐ Clear concepts and intuitive diagrams.
-- Value: ⭐⭐⭐⭐⭐ Vital for teams working on long-context LLM inference; open-sourced kernels provide 1.5× acceleration.
+- Novelty: ⭐⭐⭐⭐ Re-interpreting the value stage through Monte Carlo sampling with stratified/systematic implementations is elegant.
+- Experimental Thoroughness: ⭐⭐⭐⭐ covers GSM8K, MMLU, RULER, real kernel latency, and Bernoulli $qK^T$.
+- Writing Quality: ⭐⭐⭐⭐⭐ Concepts are clear; the core estimator in Eq.(4) and the prop/flash comparisons are intuitive.
+- Value: ⭐⭐⭐⭐⭐ Open-sourcing kernels for 1.5× long-context acceleration is highly valuable for LLM inference teams.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -157,7 +167,7 @@ Variance reduction is critical: at $S=16$, sys outperforms basic SANTA by 39 per
 - [\[ICML 2026\] Sparser Block-Sparse Attention via Token Permutation](sparser_block-sparse_attention_via_token_permutation.md)
 - [\[ACL 2025\] Native Sparse Attention: Hardware-Aligned and Natively Trainable Sparse Attention](../../ACL2025/llm_efficiency/native_sparse_attention.md)
 - [\[ICML 2026\] ReMoE: Boosting Expert Reuse through Router Fine-Tuning in Memory-Constrained MoE LLM Inference](remoe_boosting_expert_reuse_through_router_fine-tuning_in_memory-constrained_moe.md)
-- [\[ICCV 2025\] MixANT: Observation-dependent Memory Propagation for Stochastic Dense Action Anticipation](../../ICCV2025/llm_efficiency/mixant_observation-dependent_memory_propagation_for_stochastic_dense_action_anti.md)
+- [\[ICLR 2026\] Understanding and Improving Length Generalization in Hierarchical Sparse Attention Models](../../ICLR2026/llm_efficiency/understanding_and_improving_length_generalization_in_hierarchical_sparse_attenti.md)
 
 </div>
 

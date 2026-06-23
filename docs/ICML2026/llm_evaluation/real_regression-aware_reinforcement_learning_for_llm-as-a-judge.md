@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] REAL：把回归感知奖励塞进 RL，让 LLM-as-a-Judge 学会"差一分也是差"
 description: >-
-  [ICML 2026][LLM Evaluation][LLM-as-a-Judge] Addressing the inherent flaw of 0/1 binary rewards in RL for LLM-as-a-Judge, which ignores ordinal structures, the authors integrate the "expected value prediction + squared error" from RAFT into the RL objective. Since the reward explicitly depends on policy parameters, a generalized policy gradient is employed—it cle
+  [ICML 2026][LLM Evaluation][LLM-as-a-Judge] Addressing the inherent flaw of binary 0/1 rewards in RL for LLM-as-a-Judge which ignores ordinal structures, the authors integrate RAFT's "expected value prediction + squared error" into the RL objective. Since the reward explicitly depends on policy parameters, a Generalized Policy Gradient is employed—decomposing cl
 tags:
   - ICML 2026
   - LLM Evaluation
   - LLM-as-a-Judge
 date: 2026-05-08
-content_hash: 8e477741c358214e
+content_hash: 24cce3a136a6e562
 ---
-# REAL: Integrating Regression-Aware Rewards into RL, Enabling LLM-as-a-Judge to Recognize "Small Gaps Matter"
+# REAL: Integrating Regression-Aware Rewards into RL, Teaching LLM-as-a-Judge that "Even a One-Point Difference Matters"
 
 **Conference**: ICML 2026  
 **arXiv**: [2603.17145](https://arxiv.org/abs/2603.17145)  
@@ -19,36 +19,35 @@ content_hash: 8e477741c358214e
 **Keywords**: LLM-as-a-Judge, Regression-Aware Reward, Generalized Policy Gradient, Policy-Dependent Reward, Correlation Optimization  
 
 ## TL;DR
-Addressing the inherent flaw of 0/1 binary rewards in RL for LLM-as-a-Judge, which ignores ordinal structures, the authors integrate the "expected value prediction + squared error" from RAFT into the RL objective. Since the reward explicitly depends on policy parameters, a generalized policy gradient is employed—it cleanly decomposes into a "CoT exploration term" and a "prediction refinement term." It consistently outperforms SFT and standard RL across 8B–32B base models; on Qwen3-32B, the Pearson/Spearman correlations improve by 8.4/7.2 points over SFT.
+Addressing the inherent flaw of binary 0/1 rewards in RL for LLM-as-a-Judge which ignores ordinal structures, the authors integrate RAFT's "expected value prediction + squared error" into the RL objective. Since the reward explicitly depends on policy parameters, a Generalized Policy Gradient is employed—decomposing cleanly into a "CoT Exploration term" and a "Prediction Refinement term." Across 8B–32B base models, it consistently outperforms SFT and standard RL, with Qwen3-32B showing an 8.4/7.2 point gain in Pearson/Spearman correlation over SFT.
 
 ## Background & Motivation
-**Background**: LLM-as-a-Judge is the core vehicle for current evaluation, alignment, and preference modeling—where the model outputs a numeric score representing "quality / correctness / preference strength." Mainstream training schemes include: (1) SFT (e.g., Prometheus), which treats scores as discrete tokens via cross-entropy; (2) Regression-aware SFT (e.g., RAFT / TRACT), which combines "expected value prediction $\hat y_\theta(x, c) = \sum_{k \in \mathcal{K}} k \cdot \pi_\theta(k|x,c)$" with squared error to recover ordinal structure.
+**Background**: LLM-as-a-Judge is a core component for evaluation, alignment, and preference modeling—requiring models to output a numerical score representing "quality/correctness/preference intensity." Mainstream training schemes include: (1) SFT (e.g., Prometheus), where scores are learned as discrete tokens using cross-entropy; (2) Regression-aware SFT (e.g., RAFT/TRACT), which integrates "expected value prediction $\hat y_\theta(x, c) = \sum_{k \in \mathcal{K}} k \cdot \pi_\theta(k|x,c)$" with squared error to recover ordinal structure.
 
-**Limitations of Prior Work**: Extending regression-aware logic from RAFT/TRACT to RL post-training is the natural next step—RL allows models to **actively explore** their own CoT trajectories, whereas SFT only mimics fixed ground-truth reasoning chains. However, current RL post-training frameworks (PPO/GRPO/DPO/Guo 2025) rely on rule-based verifiers providing 0/1 rewards $r = \mathbf{1}(y = y^*)$. This is disastrous for regression: if the ground truth is 5, predictions of 4 and 1 are equally "bad" to standard RL, though humans clearly prefer the former. Fig. 2 empirically confirms this: standard RL continued from a TRACT checkpoint causes correlation metrics to collapse.
+**Limitations of Prior Work**: Extending the regression-aware logic of RAFT/TRACT to RL post-training is a natural next step—RL allows the model to **actively explore** its own CoT trajectories, whereas SFT only mimics fixed ground-truth reasoning chains. However, current RL post-training frameworks (PPO/GRPO/DPO/Guo 2025) rely on rule-based verifiers providing 0/1 rewards like $r = \mathbf{1}(y = y^*)$. This is catastrophic for regression tasks: if the ground truth is 5, a prediction of 4 is seen as equally "bad" as a prediction of 1 by standard RL, even though humans consider the former much closer. The authors' Fig. 2 empirically confirms this: standard RL continuing from TRACT checkpoints leads to a collapse in correlation metrics.
 
-**Key Challenge**: To retain the advantage of "exploring CoT reasoning space" while acknowledging that "the magnitude of score gaps matters," regression rewards must be used in RL. However, regression rewards $r = -(\hat y_\theta - y^*)^2$ explicitly depend on policy parameters $\theta$. This violates the prerequisite $\nabla_\theta r = 0$ in standard REINFORCE derivations, making standard policy gradient formulas incorrect.
+**Key Challenge**: To retain the advantage of "exploring CoT reasoning space" while acknowledging that "magnitude of score discrepancy matters," regression rewards must be used in RL. However, in the regression reward form $r = -(\hat y_\theta - y^*)^2$, $\hat y_\theta$ explicitly depends on policy parameters $\theta$. This violates the premise $\nabla_\theta r = 0$ in standard REINFORCE derivations, rendering standard policy gradient formulas incorrect.
 
-**Goal**: (1) Propose a formal framework for legally integrating regression rewards into RL; (2) Theoretically link this to correlation metrics—as downstream evaluation for LLM-as-a-Judge uses Pearson/Spearman rather than sample-level MSE; (3) Verify improvements in OOD generalization across 8B–32B scales.
+**Goal**: (1) Propose a formal framework to legally incorporate regression rewards into RL; (2) Theoretically link this to correlation metrics—as downstream evaluation for LLM-as-a-Judge uses Pearson/Spearman rather than sample-level MSE; (3) Verify improvements in OOD generalization across 8B–32B model scales.
 
-**Key Insight**: Utilize the **generalized policy gradient estimator** (Schulman 2015) to explicitly handle the unconventional setting of parameter-dependent rewards.
+**Key Insight**: Utilize the **Generalized Policy Gradient estimator** from Schulman 2015 to explicitly handle the unconventional "parameter-dependent reward" setting.
 
-**Core Idea**: Leverage the mathematical fact that "generalized policy gradient → natural decomposition into CoT exploration + prediction refinement" to elegantly embed regression awareness into RL, and theoretically prove that minimizing squared error is equivalent to optimizing Pearson correlation.
+**Core Idea**: By leveraging the mathematical fact that "Generalized Policy Gradient → natural decomposition into CoT Exploration + Prediction Refinement," regression awareness is elegantly embedded into RL. It is also theoretically proven that minimizing squared error is equivalent to optimizing Pearson correlation.
 
 ## Method
 
 ### Overall Architecture
-REAL addresses a specific task: allowing LLM-as-a-Judge to recognize that "small gaps still matter" during RL post-training. Given evaluation pairs $(x, y^*)$, where $x$ is the "prompt + response" and $y^* \in \mathcal{K} = \{0, 1, \dots, 9\}$ is the ground-truth label, the policy $\pi_\theta$ autoregressively generates a CoT $c$ before the score. Crucially, it does not directly sample the score; instead, it uses the RAIL expected value predictor $\hat y_\theta(x, c) = \sum_{k \in \mathcal{K}} k \cdot \pi_\theta(k | x, c)$ to collapse the 0–9 distribution into a continuous expectation for squared error calculation. During training, $K$ CoT paths are sampled per $x$, RLOO estimates the advantage, and the policy is updated using a dual-term gradient—one for CoT exploration and one for prediction refinement.
+REAL targets a specific goal: enabling LLM-as-a-Judge to recognize that "even a one-point difference counts" during RL post-training. The input is an evaluation sample pair $(x, y^*)$, where $x$ is a "prompt + response" combination and $y^* \in \mathcal{K} = \{0, 1, \dots, 9\}$ is a single-character numerical label. The policy $\pi_\theta$ first autoregressively generates a CoT $c$, and then provides a numerical score. The crucial pivot is that it does not sample this number directly; instead, it uses the RAIL expected value predictor $\hat y_\theta(x, c) = \sum_{k \in \mathcal{K}} k \cdot \pi_\theta(k | x, c)$ to collapse the 0–9 distribution into a continuous expectation, applying squared error to it. During training, $K$ CoT samples are taken for each $x$, the advantage is estimated via RLOO, and the policy is updated using a gradient decomposed into two terms—one for CoT exploration and one for prediction refinement.
 
 ```mermaid
-%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
-flowchart TD
-    A["Evaluation Sample (x, y*)<br/>x = prompt + response, y* ∈ {0..9}"] --> B["Policy πθ samples K CoT paths c"]
+graph TD
+    A["Evaluation Sample (x, y*)<br/>x = prompt + response, y* ∈ {0..9}"] --> B["Policy πθ samples K CoTs c"]
     subgraph D1["REAL Objective & Policy-Dependent Reward"]
         direction TB
-        C["RAIL Expected Prediction<br/>ŷθ = Σ k·πθ(k|x,c)"] --> R["Regression Reward r = −(ŷθ−y*)² + λ·log πθ(y*|c,x)<br/>Explicitly depends on θ"]
+        C["RAIL Expected Value Prediction<br/>ŷθ = Σ k·πθ(k|x,c)"] --> R["Regression Reward r = −(ŷθ−y*)² + λ·log πθ(y*|c,x)<br/>Explicitly depends on θ"]
     end
     B --> C
-    subgraph D2["Decomposition of Generalized Policy Gradient"]
+    subgraph D2["Natural Decomposition of Generalized Policy Gradient"]
         direction TB
         T1["Term 1: CoT Exploration<br/>r·∇log πθ(c|x)"]
         T2["Term 2: Prediction Refinement<br/>−2(ŷθ−y*)∇ŷθ + λ∇log πθ(y*)"]
@@ -66,26 +65,26 @@ flowchart TD
 
 ### Key Designs
 
-**1. REAL Objective and Implicit Policy-Dependent Rewards: Legally Integrating Regression Loss into RL**
+**1. REAL Objective and Implicit Policy-Dependent Reward: Legitimizing Regression Loss in RL**
 
-RAFT/TRACT proved that "expected value prediction + squared error" recovers ordinal score structures, but their CoT paths are from fixed sampling sources, remaining fundamentally SFT. REAL's first step is to port this regression objective to RL: $\mathcal{L}_{\text{REAL}}(\theta) = \mathbb{E}_{(x, y^*) \sim \mathcal{D},\, c \sim \pi_\theta(\cdot | x)}[(\hat y_\theta(x, c) - y^*)^2 - \lambda \log \pi_\theta(y^* | x, c)]$. The first term is squared error, and the second is an NTP auxiliary loss for the final-answer token. The implicit reward $r_{\text{REAL}}(\theta, x, c) = -(\hat y_\theta(x, c) - y^*)^2 + \lambda \log \pi_\theta(y^* | c, x)$ **explicitly depends on $\theta$**, distinguishing it from standard RL.
+RAFT/TRACT demonstrated that "expected value prediction + squared error" can recover the ordinal structure of scores, but their CoTs are provided by fixed sampling sources, making them essentially SFT. The first step of REAL is to move this regression objective entirely into RL. The objective function is defined as $\mathcal{L}_{\text{REAL}}(\theta) = \mathbb{E}_{(x, y^*) \sim \mathcal{D},\, c \sim \pi_\theta(\cdot | x)}[(\hat y_\theta(x, c) - y^*)^2 - \lambda \log \pi_\theta(y^* | x, c)]$, where the first term is squared error forcing the expected predictor towards ground truth, and the second is an NTP auxiliary loss for the final-answer token (collapsing to pure regression if $\lambda = 0$). The corresponding implicit reward $r_{\text{REAL}}(\theta, x, c) = -(\hat y_\theta(x, c) - y^*)^2 + \lambda \log \pi_\theta(y^* | c, x)$ **explicitly depends on $\theta$**, which is the watershed between it and standard RL.
 
-The effectiveness stems from two substitutions. First, replacing fixed sampling with the active policy $\pi_\theta$ allows CoT and rewards to evolve synchronously. Second, the RAIL predictor uses the entire 0–9 distribution shape rather than a single token probability, providing significantly higher information density.
+Its effectiveness stems from two substitutions. First, replacing the fixed $\pi_{\text{temp}}$ sampling source of TRACT with the current policy $\pi_\theta$ allows CoT and rewards to evolve synchronously, combining "regression awareness" and "active exploration" for the first time. Second, the RAIL expected predictor incorporates the shape of the entire 0–9 distribution into the gradient, rather than just individual token probabilities, providing an order of magnitude higher information density—in experiments, simply switching the inference to RAIL yields "free lunch" improvements.
 
-**2. Natural Decomposition of Generalized Policy Gradient: Turning Parameter Dependency into Elegant Structure**
+**2. Natural Decomposition of Generalized Policy Gradient: Turning Parameter-Dependent Rewards into Elegant Structure**
 
-Since $\nabla_\theta r \ne 0$, standard policy gradient formulas fail. REAL applies the generalized policy gradient lemma (Schulman 2015) to $\mathcal{L}(\theta) = \mathbb{E}_{x,\, c \sim \pi_\theta}[r(\theta, x, c)]$ via the chain rule:
+Since $\hat y_\theta$ appears in the reward, $\nabla_\theta r \ne 0$, and the premise of standard REINFORCE (gradient of reward with respect to $\theta$ is zero) fails. REAL applies the Generalized Policy Gradient lemma from Schulman 2015 to directly expand the chain rule on $\mathcal{L}(\theta) = \mathbb{E}_{x,\, c \sim \pi_\theta}[r(\theta, x, c)]$:
 
 $$\nabla_\theta \mathcal{L} = \mathbb{E}\Big[\underbrace{r(\theta, x, c)\, \nabla_\theta \log \pi_\theta(c | x)}_{\text{Term 1: CoT Exploration}} + \underbrace{\nabla_\theta r(\theta, x, c)}_{\text{Term 2: Prediction Refinement}}\Big]$$
 
-For REAL, Term 2 expands to $-2(\hat y_\theta - y^*)\nabla_\theta \hat y_\theta + \lambda \nabla_\theta \log \pi_\theta(y^* | x, c)$, where $\nabla_\theta \hat y_\theta = \sum_k k \cdot \nabla_\theta \pi_\theta(k | x, c)$. This decomposition reflects two learning modes: Term 1 treats CoT $c$ as an "action" for exploration (policy-gradient style), while Term 2 treats the score as "ground truth" for refinement (backprop style). Unlike GRPO which treats $c$ and $y$ as homogeneous tokens, REAL acknowledges their structural difference: CoT is a high-dimensional sequence requiring exploration, while the final answer is a low-cardinality variable suitable for direct regression.
+Substituting the REAL reward, Term 2 expands into $-2(\hat y_\theta - y^*)\nabla_\theta \hat y_\theta + \lambda \nabla_\theta \log \pi_\theta(y^* | x, c)$, where $\nabla_\theta \hat y_\theta = \sum_k k \cdot \nabla_\theta \pi_\theta(k | x, c)$. The beauty of this decomposition is its correspondence to two distinct learning modes: Term 1 treats CoT $c$ as an "action" to be explored via REINFORCE (policy-gradient style), while Term 2 treats the number $y$ as a "known ground truth" to be refined via backpropagation (backprop style). While GRPO updates $c$ and $y$ using the same rule as homogeneous tokens, REAL explicitly acknowledges their structural differences—CoT is a high-dimensional sequence requiring exploration, whereas final answers are low-cardinality discrete variables suitable for direct regression. This also distinguishes it from JEPO (Tang et al., 2025): JEPO solves for "non-verifiable $y^*$," while REAL solves for "ordered numerical $y^*$."
 
-**3. RLOO Stabilization and $\beta$ Weighting: Engineering the Theoretical Gradient**
+**3. RLOO Stabilization and $\beta$ Weighting: Mapping Theoretical Gradients to Engineering Objectives**
 
-To handle the high variance of theoretical gradients, REAL samples $K$ CoT paths per $x$ and uses a leave-one-out baseline for the advantage $A^{(i)} = r^{(i)} - \frac{1}{K-1}\sum_{j \ne i} r^{(j)}$, normalized and clipped to $[-1, 1]$ as $\tilde A^{(i)}$. The final gradient is $\nabla \mathcal{L} \approx \frac{1}{K} \sum_i [\tilde A^{(i)} \nabla_\theta \log \pi_\theta(c_i | x) + \beta \nabla_\theta r_{\text{REAL}}(\theta, x, c_i)]$. Here $\beta$ controls the relative strength of prediction refinement vs CoT exploration—$\beta = 1.0$ is mathematically accurate and performs well, though it remains an engineering handle for future adjustments.
+Because the theoretical gradient has high variance, REAL samples $K$ CoTs per $x$, using a leave-one-out baseline to compute the advantage $A^{(i)} = r^{(i)} - \frac{1}{K-1}\sum_{j \ne i} r^{(j)}$. This is normalized by intra-group std and clipped to $[-1, 1]$ to produce $\tilde A^{(i)}$. The final stabilized gradient is $\nabla \mathcal{L} \approx \frac{1}{K} \sum_i [\tilde A^{(i)} \nabla_\theta \log \pi_\theta(c_i | x) + \beta \nabla_\theta r_{\text{REAL}}(\theta, x, c_i)]$. Here, $\beta$ controls the strength of Prediction Refinement relative to CoT Exploration. It is the only hyperparameter introduced but is not strictly necessary—theoretically, $\beta = 1.0$ is the mathematically exact value, and experiments show it works well. It serves mainly as an engineering interface for future "exploration-heavy" or "refinement-heavy" adjustments. Choosing RLOO over GRPO/PPO is consistent with the "dual-term decomposition" philosophy: since the refinement term provides low-variance signals, the exploration term does not require the additional complexity of PPO.
 
 ### Loss & Training
-The complete objective is $\mathcal{L}_{\text{REAL}}(\theta) = \mathbb{E}_{(x, y^*),\, c \sim \pi_\theta}[(\hat y_\theta(x, c) - y^*)^2 - \lambda \log \pi_\theta(y^* | x, c)]$, using the RLOO estimator with $\beta = 1.0$. $\lambda$ follows RAFT/TRACT defaults, and the CoT group size $K$ is maintained at mid-range (similar to GRPO).
+The full objective is $\mathcal{L}_{\text{REAL}}(\theta) = \mathbb{E}_{(x, y^*),\, c \sim \pi_\theta}[(\hat y_\theta(x, c) - y^*)^2 - \lambda \log \pi_\theta(y^* | x, c)]$, used with the RLOO estimator and $\beta = 1.0$. $\lambda$ follows the default settings from RAFT/TRACT. The CoT group size $K$ is kept moderate in the style of GRPO (specific values are in the appendix).
 
 ## Key Experimental Results
 
@@ -97,58 +96,60 @@ The complete objective is $\mathcal{L}_{\text{REAL}}(\theta) = \mathbb{E}_{(x, y
 | Mistral2-7B | RAFT | SFT | RAIL | 87.9 / 88.0 | 41.8 / 41.9 | 52.8 / 51.3 | 39.9 / 41.8 | 55.6 | 55.8 |
 | Mistral2-7B | TRACT | SFT | RAIL | 93.9 / 93.7 | 50.7 / 50.0 | 56.2 / 54.8 | 52.1 / 50.1 | 63.2 | 62.2 |
 | Mistral2-7B | Standard RL | RL | RAIL | 93.7 / 93.7 | 51.6 / 50.5 | 58.0 / 56.0 | 52.9 / 50.7 | 64.1 | 62.7 |
-| Mistral2-7B | **Ours** (REAL) | RL | RAIL | 93.2 / 93.4 | **56.0 / 54.1** | **63.3 / 60.2** | **59.3 / 56.9** | **67.9** | **66.2** |
+| Mistral2-7B | **Ours (REAL)** | RL | RAIL | 93.2 / 93.4 | **56.0 / 54.1** | **63.3 / 60.2** | **59.3 / 56.9** | **67.9** | **66.2** |
 | Qwen3-32B | Base | – | RAIL | 63.4 / 70.8 | 54.3 / 60.4 | 50.8 / 57.4 | 42.5 / 46.8 | 52.7 | 58.8 |
 | Qwen3-32B | RAFT | SFT | RAIL | 85.4 / 86.5 | 52.1 / 52.9 | 51.9 / 52.0 | 61.1 / 59.6 | 62.6 | 62.8 |
-| Qwen3-32B | **Ours** (REAL) | RL | RAIL | **91.1 / 91.7** | **58.9 / 58.6** | **65.1 / 60.7** | **68.9 / 69.1** | **71.0** | **70.0** |
+| Qwen3-32B | **Ours (REAL)** | RL | RAIL | **91.1 / 91.7** | **58.9 / 58.6** | **65.1 / 60.7** | **68.9 / 69.1** | **71.0** | **70.0** |
 
-Note that on the in-domain FB Bench, REAL is comparable to standard RL. However, on OOD benchmarks (FLASK / Vic. Bench / MT Bench), REAL outperforms by 4–8 points—demonstrating that regression-aware rewards benefit generalization over memorizing training distributions.
+Note that on the in-domain FB Bench, REAL is only on par with or 0.5 points lower than standard RL. However, on OOD benchmarks like FLASK, Vicuna Bench, and MT Bench, REAL leads by 4–8 points. This demonstrates that the advantage of regression-aware rewards lies in generalization rather than overfitting to the training distribution. On Qwen3-32B, REAL improves Pearson/Spearman by 8.4/7.2 over SFT and 18.3/11.2 over the base model.
 
 ### Ablation Study (Selected from Table 4.4 + Tab 14)
 
-| Configuration | Key Change | Observation |
+| Configuration | Key Change | Phenomenon |
 |------|---------|------|
-| Full REAL | RL + Regression Reward + Dual Gradient | OOD SOTA |
+| REAL Full | RL + Regression Reward + Dual Term Gradient | Overall OOD SOTA |
 | Remove Term 1 (≈ TRACT) | Degenerates to SFT static refinement | Loses CoT exploration, OOD drops 3–5 points |
-| Remove Term 2 (≈ Std RL with $r = -(\hat y - y^*)^2$ without pred gradient) | CoT exploration remains but loses distribution signal | Correlation collapses during training (Fig. 2) |
-| $\lambda = 0$ | Remove NTP auxiliary | Performance close to $\lambda > 0$, regression term is primary |
-| $\beta = 1.0$ | Theoretical weight | Optimal; no scanning required |
-| vs JEPO (Tab. 14) | Replace with marginal log-likelihood | REAL wins on all regression metrics |
+| Remove Term 2 (≈ Standard RL with $r = -(\hat y - y^*)^2$ without prediction gradient) | CoT exploration kept, distribution signal removed | Correlation collapses during training (Fig. 2) |
+| $\lambda = 0$ | Remove NTP auxiliary loss | Performance close to $\lambda > 0$, regression term is the driver |
+| $\beta = 1.0$ | Theoretically accurate weighting | Already optimal, no need to sweep |
+| vs JEPO (Tab. 14) | Replaced with marginal log-likelihood | REAL wins on all regression metrics |
 
 ### Key Findings
-- **OOD > in-domain**: REAL's primary strength is OOD benchmarks. Binary rewards learn to "remember" training patterns, but fail to capture the universal structure of "score distance."
-- **Standard RL collapses correlation**: Continued training with standard RL from a TRACT checkpoint leads to a decrease in Pearson/Spearman (Fig. 2), exposing the anti-optimization effect of binary rewards on regression tasks.
-- **Term 2 (Prediction Refinement) does 80% of the work**: Removing Term 2 makes training impossible; removing Term 1 retains decent performance (≈ TRACT) but sacrifices OOD exploration.
-- **Lemma 3.1**: Proof that minimizing squared error is equivalent to Pearson optimality bridges the gap between the training objective (MSE) and evaluation metrics (correlation).
-- **RAIL Free Lunch**: Simply switching inference to RAIL provides a boost, but REAL adds another 6–8 points on top.
+- **OOD > in-domain** is the most persuasive argument for REAL: it performs similarly to standard RL in-domain but pulls ahead by 4–8 points on OOD benchmarks. Binary rewards can "remember" correctness patterns in-domain, but fail to learn the universal structure of "score distances."
+- Standard RL **actively collapses** correlation: continuing training from TRACT checkpoints with binary rewards causes Pearson/Spearman to drop (Fig. 2), exposing the anti-optimization effect of binary rewards on regression tasks.
+- Term 2 (Prediction Refinement) handles 80% of the work: removing Term 2 makes training impossible; removing Term 1 maintains decent performance (≈ TRACT) but loses OOD exploration capabilities.
+- **Lemma 3.1** (Minimizing squared error is equivalent to Pearson optimality) builds a mathematical bridge between "sample-level MSE (convenient for engineering)" and "population-level correlation (relevant for evaluation)."
+- The RAIL expected value predictor itself is a "free lunch" (base+RAIL > base+Standard), but RAIL without RL is insufficient—REAL adds another 6–8 points on top.
 
 ## Highlights & Insights
-- **Breaking the parameter-dependent reward barrier**: Using generalized policy gradient to handle rewards that depend on $\theta$ opens a door: any differentiable metric calculated from the model's own distribution (entropy, calibration, confidence) can now be an RL reward.
-- **Unified framework**: The decomposition shows how TRACT is a Term 2-only version and Standard RL is a Term 1-only version (with binary $r$). This $X = A + B$ logic is highly persuasive.
-- **Refinement vs Exploration**: Treating numeric prediction as backprop-supervised while treating CoT as high-variance sequences is a superior architectural choice for judge tasks.
-- **Robustness**: The fact that $\beta = 1.0$ works optimally without tuning suggests the formalization aligns with the underlying mathematical reality.
+- **The "illegal" setting where reward depends on policy parameters is elegantly resolved via Generalized Policy Gradient**—this opens a door: any "differentiable metric calculated from the model's own distribution" (e.g., entropy, calibration, confidence) can now be integrated into RL rewards. REAL serves as a paradigm.
+- The decomposition theorem clarifies the relationship between RL and SFT: TRACT is a Term 2-only version of REAL; Standard RL is a version of REAL's Term 1 using binary $r$. REAL unifies both. This "$X = A + B$" decomposition is structurally persuasive in academic writing.
+- Treating numerical prediction as direct backprop supervision, rather than an RL action to be sampled, respects the structure of the evaluation task: $y^*$ is fully observable, so there is no need to pass it through high-variance policy gradients. This trick can be applied to any task where the final answer is a low-cardinality discrete variable (math answers [0-100], classification labels).
+- The fact that $\beta = 1.0$ works directly is a proxy for method quality—it suggests the formalization is mathematically grounded.
 
 ## Limitations & Future Work
-- **Single scalar output**: Currently limited to $y^* \in \{0, ..., 9\}$. Multi-dimensional rubrics (e.g., Prometheus) or free-form text require extensions.
-- **Semantic calibration**: REAL does not supervise CoT content quality. Whether CoT becomes a "placeholder" under pure regression pressure remains an open question.
-- **Orthogonality to verifiers**: REAL doesn't yet merge with rule-check rewards (math/code). Future work should explore multi-task RL weighting for hybrid judge/verifier models.
-- **Computational cost**: Calculating $\nabla_\theta \hat y_\theta$ across $K$ paths involves backpropagating through digit tokens, which increases overhead.
+- Task scope is limited to **single scalar output** evaluation tasks where $y^* \in \{0, \dots, 9\}$; multidimensional scoring (e.g., Prometheus rubrics) or free-text judgment requires extending the RAIL form.
+- "Semantic calibration" of regression rewards is not addressed: the model might learn to output values closer to the truth using worse reasoning. REAL does not supervise CoT quality; whether CoT degrades into placeholders under pure regression is an open question.
+- Orthogonality to verifier-friendly tasks (math/code): REAL handles regression tasks where 0/1 rule checks are impossible but does not address integration with binary rewards. Future multi-task RL for comprehensive judges/verifiers will need weighting strategies.
+- Theoretical assumptions specify conditional independence $c \perp y^* | x$ (Lemma 3.1); in reality, CoT content might leak the label, leaving room for refined conclusions.
+- Computational overhead for $K$ CoTs × $\nabla_\theta \hat y_\theta$ (requiring backprop for each digit token) might be significant; throughput numbers were not provided.
 
 ## Related Work & Insights
-- **vs TRACT (Chiang et al., 2025)**: TRACT uses SFT; REAL allows CoT to be sampled and ranked by the current policy—TRACT is effectively a special case of REAL's Term 2.
-- **vs Standard RL (PPO/GRPO/DPO with $r = \mathbf{1}(y = y^*)$)**: Standard RL collapses "almost right" into 0 reward; REAL preserves ordinal information through continuous expectations.
-- **vs JEPO (Tang et al., 2025)**: JEPO uses marginal log-likelihood for non-verifiable $y^*$; REAL specifically targets ordered numeric scoring and outperforms JEPO in this domain.
-- **Insight**: The "generalized policy gradient + parameter-dependent reward" paradigm can generalize to optimizing any differentiable evaluation metric, such as ECE for calibration or robustness indices.
+- **vs TRACT (Chiang et al., 2025)**: TRACT treats self-generated CoT as ground truth for SFT, unable to evaluate intermediate quality. REAL allows CoTs to be sampled by the current policy and ranked via regression rewards—mathematically, TRACT is a special case of REAL.
+- **vs Standard RL (PPO/GRPO/DPO with $r = \mathbf{1}(y = y^*)$)**: Standard RL collapses all "not entirely correct" answers into zero reward, while REAL preserves ordinal information via $\hat y_\theta$'s continuous expectation.
+- **vs JEPO (Tang et al., 2025)**: JEPO uses a Jensen bound for marginal log-likelihood to solve non-verifiable $y^*$ problems, but it remains non-ordinal. REAL specializes in ordered numerical scores.
+- **vs RAFT/RAIL**: RAFT is the SFT version of regression-awareness; RAIL is inference-time expected prediction. REAL pulls these tools into the RL phase with legality proofs, marking the natural conclusion of this line of work.
+- Insight: The paradigm of Generalized Policy Gradient + "policy-dependent rewards" can be generalized to optimize any differentiable evaluation metrics like calibration (ECE), coverage, or adversarial robustness.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ First instance of legally integrating regression rewards into RL for scorers.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Broad scale (8B–32B) and OOD coverage; training throughput data could be more transparent.
-- Writing Quality: ⭐⭐⭐⭐⭐ Highly structured mathematical/conceptual flow.
-- Value: ⭐⭐⭐⭐⭐ Establishes a standard for "scoring-type RL" as LLM-as-a-Judge becomes dominant.
+- Novelty: ⭐⭐⭐⭐⭐ First instance of incorporating regression-aware rewards into RL; clever use of Generalized Policy Gradient.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Coverage of 8B–32B scales across 4 benchmarks with clear OOD/in-domain comparisons; however, throughput/training cost transparency is limited.
+- Writing Quality: ⭐⭐⭐⭐⭐ Lemma 3.1, Table 1 comparison, and the dual-term decomposition are seamlessly integrated; a textbook ICML-style paper.
+- Value: ⭐⭐⭐⭐⭐ In an era where LLM-as-a-Judge is the primary path for RLHF and evaluation, this establishes the correct paradigm for "scoring-based RL."
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

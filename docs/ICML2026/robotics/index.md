@@ -1,8 +1,8 @@
 ---
 title: >-
-  ICML2026 Robotics & Embodied AI Papers · 42 Notes
+  ICML2026 Robotics & Embodied AI Papers · 53 Notes
 description: >-
-  42 ICML2026 papers in the Robotics & Embodied AI area, covering Multimodal/VLM, Robotics, Diffusion Models, Agents, Navigation, Reasoning and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
+  53 ICML2026 papers in the Robotics & Embodied AI area, covering Multimodal/VLM, Robotics, Diffusion Models, Agents, Reasoning, Adversarial Robustness and more. Each note has TL;DR, motivation, method, experiments, highlights, and limitations — 5-minute reads of core ideas.
 tags:
   - "ICML2026"
   - "Robotics & Embodied AI"
@@ -12,8 +12,8 @@ tags:
   - "Robotics"
   - "Diffusion Models"
   - "Agents"
-  - "Navigation"
   - "Reasoning"
+  - "Adversarial Robustness"
 item_list:
   - u: "contrastive_representation_regularization_for_vision-language-action_models/"
     t: "Contrastive Representation Regularization for Vision-Language-Action Models"
@@ -35,16 +35,22 @@ item_list:
     t: "Dual Advantage Fields"
   - u: "dual_quaternion_se3_synchronization_with_recovery_guarantees/"
     t: "Dual Quaternion SE(3) Synchronization with Recovery Guarantees"
+  - u: "efficient_skill_grounding_via_code_refactoring_with_small_language_models/"
+    t: "Efficient Skill Grounding via Code Refactoring with Small Language Models"
   - u: "embguard_constructing_hazard-aware_guardrails_for_safe_planning_in_embodied_agen/"
     t: "EMBGuard: Constructing Hazard-Aware Guardrails for Safe Planning in Embodied Agents"
   - u: "embodied_interpretability_linking_causal_understanding_to_generalization_in_visi/"
     t: "Embodied Interpretability: Linking Causal Understanding to Generalization in Vision-Language-Action Models"
   - u: "embodied_task_planning_via_graph-informed_action_generation_with_large_language_/"
     t: "Embodied Task Planning via Graph-Informed Action Generation with Large Language Models"
+  - u: "fourier_features_let_agents_learn_high_precision_policies_with_imitation_learnin/"
+    t: "Fourier Features Let Agents Learn High Precision Policies with Imitation Learning"
   - u: "from_abstraction_to_instantiation_learning_behavioral_representation_for_vision-/"
     t: "From Abstraction to Instantiation: Learning Behavioral Representation for Vision-Language-Action Model"
   - u: "from_imagined_futures_to_executable_actions_mixture_of_latent_actions_for_robot_/"
     t: "From Imagined Futures to Executable Actions: Mixture of Latent Actions for Robot Manipulation"
+  - u: "functional_cache_grafting_robust_and_rapid_code-policy_synthesis_for_embodied_ag/"
+    t: "Functional Cache Grafting: Robust and Rapid Code-Policy Synthesis for Embodied Agents"
   - u: "generalizable_and_actionable_parts_pose_estimation_with_symmetry_annotation-free/"
     t: "SAFAG: Generalizable Actionable Part Pose Estimation without Symmetry Annotation"
   - u: "hdflow_hierarchical_diffusion-flow_planning_for_long-horizon_tasks/"
@@ -55,45 +61,39 @@ item_list:
     t: "LangForce: Bayesian Decomposition of Vision-Language-Action Models via Latent Action Queries"
   - u: "latent_reasoning_vla_latent_thinking_and_prediction_for_vision-language-action_m/"
     t: "Latent Reasoning VLA: Latent Thinking and Prediction for Vision-Language-Action Models"
+  - u: "limmt_less_is_more_for_motion_tracking/"
+    t: "LIMMT: Less is More for Motion Tracking"
   - u: "manisoft_towards_vision-language_manipulation_for_soft_continuum_robotics/"
     t: "ManiSoft: Towards Vision-Language Manipulation for Soft Continuum Robotics"
   - u: "mixture_of_horizons_in_action_chunking/"
     t: "Mixture of Horizons in Action Chunking"
+  - u: "moving_out_physically-grounded_human-ai_collaboration/"
+    t: "Moving Out: Physically-grounded Human-AI Collaboration"
   - u: "neural_implicit_action_fields_from_discrete_waypoints_to_continuous_functions_fo/"
     t: "Neural Implicit Action Fields: From Discrete Waypoints to Continuous Functions for Vision-Language-Action Models"
   - u: "neural_low-discrepancy_sequences/"
     t: "Neural Low-Discrepancy Sequences"
-  - u: "optimal_and_scalable_mapf_via_multi-marginal_optimal_transport_and_schrödinger_b/"
-    t: "Optimal and Scalable MAPF via Multi-Marginal Optimal Transport and Schrödinger Bridges"
-  - u: "plan_in_sandbox_navigate_in_open_worlds_learning_physics-grounded_abstracted_exp/"
-    t: "Plan in Sandbox, Navigate in Open Worlds: Learning Physics-Grounded Abstracted Experience for Embodied Navigation"
-  - u: "position_good_embodied_reward_models_need_bad_behavior_data/"
-    t: "Position: Good Embodied Reward Models Need Bad Behavior Data"
-  - u: "psg-nav_probabilistic_scene_graph_navigation_via_multiverse_decision_making/"
-    t: "PSG-Nav: Probabilistic Scene Graph Navigation via Multiverse Decision Making"
-  - u: "r2r2_robust_representation_for_intensive_experience_reuse_via_redundancy_reducti/"
-    t: "R2R2: Robust Representation for Intensive Experience Reuse via Redundancy Reduction in Self-Predictive Learning"
-  - u: "robomme_benchmarking_and_understanding_memory_for_robotic_generalist_policies/"
-    t: "RoboMME: Benchmarking and Understanding Memory for Robotic Generalist Policies"
-item_total: 42
+  - u: "online_self-training_for_co-adaptation_in_hierarchical_diffusion_policies/"
+    t: "Online Self-Training for Co-Adaptation in Hierarchical Diffusion Policies"
+item_total: 53
 ---
 
 <!-- Auto-generated by src/gen_blog_index.py --lang en -->
 # 🤖 Robotics & Embodied AI
 
-**🧪 ICML2026** · **42** paper notes
+**🧪 ICML2026** · **53** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (130)](../../CVPR2026/robotics/index.md) · [💬 ACL2026 (10)](../../ACL2026/robotics/index.md) · [🔬 ICLR2026 (46)](../../ICLR2026/robotics/index.md) · [🤖 AAAI2026 (30)](../../AAAI2026/robotics/index.md) · [🧠 NeurIPS2025 (73)](../../NeurIPS2025/robotics/index.md) · [📹 ICCV2025 (26)](../../ICCV2025/robotics/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (130)](../../CVPR2026/robotics/index.md) · [🔬 ICLR2026 (162)](../../ICLR2026/robotics/index.md) · [💬 ACL2026 (11)](../../ACL2026/robotics/index.md) · [🤖 AAAI2026 (30)](../../AAAI2026/robotics/index.md) · [🧠 NeurIPS2025 (73)](../../NeurIPS2025/robotics/index.md) · [📹 ICCV2025 (26)](../../ICCV2025/robotics/index.md)
 
-🔥 **Top topics:** Multimodal/VLM ×17 · Robotics ×9 · Diffusion Models ×5 · Agents ×4 · Navigation ×3
+🔥 **Top topics:** Multimodal/VLM ×21 · Robotics ×9 · Diffusion Models ×7 · Agents ×4 · Reasoning ×3
 
 **[Contrastive Representation Regularization for Vision-Language-Action Models](contrastive_representation_regularization_for_vision-language-action_models.md)**
 
-:   The authors identify that representations in VLA models inherited from VLMs are dominated by visual appearance and insensitive to robot proprioceptive states. They propose Robot State-aware Contrastive Loss (RS-CL), which utilizes the Euclidean distance between proprioceptive states as "soft contrastive labels" to reshape representations. Combined with "view cutoff" representation-level augmentation, this method pushes GR00T N1.5 to a 69.7% SOTA success rate on RoboCasa-Kitchen and increases the success rate from 45.0% to 58.3% on real Franka pick-and-place tasks.
+:   The authors observe that representations in VLA models inherited from VLMs are dominated by visual appearance and are insensitive to robot proprioceptive states. They propose Robot State-aware Contrastive Loss (RS-CL), which uses the Euclidean distance between proprioceptive states as "soft contrastive labels" to reshape representations. Combined with "view cutoff" feature-level augmentation, this method achieves a SOTA success rate of 69.7% on RoboCasa-Kitchen using GR00T N1.5 and improves success rates from 45.0% to 58.3% on real-world Franka pick-and-place tasks.
 
 **[Decompose and Recompose: Reasoning New Skills from Existing Abilities for Cross-Task Robotic Manipulation](decompose_and_recompose_reasoning_new_skills_from_existing_abilities_for_cross-t.md)**
 
-:   Targeting zero-shot robotic manipulation from training tasks to entirely new tasks, the authors decompose demonstrations into "atomic skill-action" pairs as an intermediate representation. A dual-library mechanism (dynamic retrieval for visual/planning similarity + static library for IDF-weighted completion of missing skill tokens) provides LLMs with skill-comprehensive in-context demonstrations, evolving "trajectory imitation" into "compositional skill reasoning."
+:   For zero-shot robotic manipulation transferring from trained tasks to entirely new tasks, the authors decompose demonstrations into "atomic skill-action" pairs as intermediate representations. They utilize a dual-library (dynamic library retrieving by visual/planning similarity + static library completing missing skill tokens via IDF weighting) to provide LLMs with skill-comprehensive in-context demonstrations, upgrading "trajectory imitation" to "compositional skill reasoning."
 
 **[Discrete Diffusion VLA: Bringing Discrete Diffusion to Action Decoding in Vision-Language-Action Policies](discrete_diffusion_vla_bringing_discrete_diffusion_to_action_decoding_in_vision-.md)**
 
@@ -101,23 +101,23 @@ item_total: 42
 
 **[BEAR: Dissecting Embodied Abilities in Multimodal Language Models through Skill-level Evaluation and Diagnosis](dissecting_embodied_abilities_in_multimodal_language_models_through_skill-level_.md)**
 
-:   BEAR decomposes embodied tasks into 14 atomic skills and constructs 4,469 interleaved image-video-text VQAs. By performing skill-level horizontal and vertical diagnoses on 20 MLLMs, it identifies perception (rather than reasoning) as the primary bottleneck. Based on this, BEAR-Agent is developed using external visual/spatial tools such as GroundingDINO, 3D scene graphs, and trajectory visualization, achieving a 17.5% relative improvement for GPT-5 on the benchmark and a 20.17% gain in real-world robot grasping.
+:   BEAR decomposes embodied tasks into 14 atomic skills and constructs 4,469 interleaved image-video-text VQA pairs. By performing horizontal and vertical skill-level diagnosis on 20 MLLMs, it discovers that perception (rather than reasoning) is the primary bottleneck. Consequently, BEAR-Agent is developed using external visual/spatial tools—such as GroundingDINO, 3D scene graphs, and trajectory visualization—improving GPT-5 performance by 17.5% relative to the baseline and increasing real-robot grasping success by 20.17%.
 
 **[Dive into the Scene: Breaking the Perceptual Bottleneck in Vision-Language Decision Making via Focus Plan Generation](dive_into_the_scene_breaking_the_perceptual_bottleneck_in_vision-language_decisi.md)**
 
-:   SceneDiver filters task-relevant objects and feeds them back to the VLM for decision-making through a two-stage focus planning process: "building a scene graph for coarse-grained sub-scene decomposition, followed by agentic sub-scene verification by the VLM." This explicit reasoning is distilled into a VLA via a Slot Attention adapter, simultaneously mitigating visual hallucinations in both high-level planning and reactive control.
+:   SceneDiver mitigates visual hallucinations in both high-level planning and reactive control by filtering task-related objects before feeding them back into the model. It employs a two-stage focus plan—coarse-grained sub-scene decomposition via scene graphs followed by agentic VLM verification—and distills this explicit reasoning into VLA using a Slot Attention adapter.
 
 **[DLO-Lab: Benchmarking Deformable Linear Object Manipulations with Differentiable Physics](dlo-lab_benchmarking_deformable_linear_object_manipulations_with_differentiable_.md)**
 
-:   DLO-Lab develops a differentiable simulator on the Genesis platform using Taichi, featuring a Discrete Elastic Rods (DER) core that supports bidirectional coupling, bending plasticity, and closed-loop topologies. It provides 10 benchmark tasks (rope/cable/rubber band) and a specialized agent using VLM for "grasp proposal + task decomposition," enabling a unified evaluation of PPO, SAC, SHAC, SAPO, CMA-ES, and GD algorithms, with sim-to-real validation via system identification.
+:   DLO-Lab develops a differentiable simulator based on Taichi on the Genesis platform, utilizing Discrete Elastic Rods (DER) as its core. It supports bidirectional coupling, bending plasticity, and closed-loop topology. The platform includes 10 benchmark tasks for rope/cable/elastic bands and a specialized agent using VLM for "grasp proposal + task decomposition." It evaluates various policy learning algorithms (PPO/SAC/SHAC/SAPO/CMA-ES/GD) and validates sim-to-real transitions via system identification.
 
 **[Drift is a Sampling Error: SNR-Aware Power Distributions for Long-Horizon Robotic Planning](drift_is_a_sampling_error_snr-aware_power_distributions_for_long-horizon_robotic.md)**
 
-:   This paper proposes CAPS: reinterpreting "instruction drift" as a systematic sampling error. Using SNR ($= \log|\mathcal{A}|-\mathcal{H}$) as a metacognitive switch, it triggers Metropolis-Hastings iterative refinement based on the power distribution $\pi \propto p^\alpha$ only during high-entropy "Pivotal Windows." It outperforms OpenVLA and TACO on RoboTwin, Simpler-WindowX, and Libero-long without additional training.
+:   This paper proposes CAPS: reinterpreting "instruction drift" as a systematic sampling error. It uses SNR ($= \log|\mathcal{A}|-\mathcal{H}$) as a metacognitive switch to trigger Metropolis-Hastings iterative refinement based on a power distribution $\pi \propto p^\alpha$ only during high-entropy "Pivotal Windows." It outperforms OpenVLA and TACO training-free on RoboTwin, Simpler-WindowX, and Libero-long.
 
 **[Dual-Stream Diffusion for World-Model Augmented Vision-Language-Action Model](dual-stream_diffusion_for_world-model_augmented_vision-language-action_model.md)**
 
-:   DUST employs a "dual-stream" Multimodal Diffusion Transformer (MMDiT) that aligns action streams alongside future vision embedding streams. Utilizing shared attention for cross-modal fusion, independent noise scheduling, and asynchronous action-vision sampling, DUST enables the VLA to simultaneously learn "what action to take" and "what consequences the action will produce," consistently outperforming GR00T-N1.5+FLARE on RoboCasa, GR-1, and Franka physical robots.
+:   DUST utilizes a "dual-stream" multi-modal diffusion Transformer (MMDiT) to process action flows and future visual embedding flows in parallel. By employing shared attention for cross-modal fusion, combined with independent noise scheduling and asynchronous action-vision sampling, it enables the VLA to simultaneously learn "what actions to perform" and "what consequences those actions produce." It consistently outperforms GR00T-N1.5+FLARE on RoboCasa, GR-1, and real-world Franka robots.
 
 **[Dual Advantage Fields](dual_advantage_fields.md)**
 
@@ -125,11 +125,15 @@ item_total: 42
 
 **[Dual Quaternion SE(3) Synchronization with Recovery Guarantees](dual_quaternion_se3_synchronization_with_recovery_guarantees.md)**
 
-:   This paper parameterizes the SE(3) synchronization problem using Unit Dual Quaternions (UDQ) instead of $4\times4$ matrices. The authors calculate a spectral initialization using power iteration on a Hermitian dual quaternion matrix, followed by iterative refinement using the Dual Quaternion Generalized Power Method (DQGPM) with element-wise projection onto $\mathrm{UDQ}^n$. This approach provides the first finite-step linear convergence guarantee and explicit error bounds for SE(3) synchronization. In multi-scan point cloud registration, it outperforms matrix-based methods in terms of rotation/translation error and computational efficiency.
+:   This paper parameterizes the SE(3) synchronization problem using Unit Dual Quaternions (UDQ) instead of $4\times4$ matrices. It calculates spectral initialization via power iteration on Hermitian dual quaternion matrices, followed by iterative refinement using the Dual Quaternion Generalized Power Method (DQGPM) with element-wise projection to $\mathrm{UDQ}^n$. It provides the first finite-step linear convergence and explicit error bounds for SE(3) synchronization, reducing both rotation/translation errors and computational time below those of matrix-based methods in multi-scan point cloud registration.
+
+**[Efficient Skill Grounding via Code Refactoring with Small Language Models](efficient_skill_grounding_via_code_refactoring_with_small_language_models.md)**
+
+:   RECENT enables robots to adapt to different morphologies (different arms or grippers) or dynamic environments without using Large Language Models (LLMs) to rewrite skill code from scratch. Instead, it decouples "semantic intent" from "execution binding" in executable code. A 7B Small Language Model (sLM) performs local refactoring via Fill-in-the-Middle (FIM) only on the execution binding lines—addressing morphological differences through ontological reasoning before deployment and environmental differences via in-situ patches during runtime. This achieves success rates close to GPT-5.2-Codex using only edge-side small models.
 
 **[EMBGuard: Constructing Hazard-Aware Guardrails for Safe Planning in Embodied Agents](embguard_constructing_hazard-aware_guardrails_for_safe_planning_in_embodied_agen.md)**
 
-:   EmbGuard decouples "physical safety judgment of embodied agents" from the policy into an independent small guardrail model. It takes (observation image, candidate action) as input and outputs (safety status, risk category, hazard explanation). With 2B/4B parameters, it matches the performance of GPT-5.1/Gemini-2.5-Pro while significantly suppressing the "over-conservative false positive" issues prevalent in baselines.
+:   EmbGuard decouples "physical safety judgment for embodied agents" from the policy into an independent, lightweight guardrail model. It takes (observation image, candidate action) as input and outputs (risk binary, risk category, hazard explanation). With only 2B/4B parameters, it matches the performance of GPT-5.1/Gemini-2.5-Pro while significantly suppressing the "over-conservative false positive" issues prevalent in baseline models.
 
 **[Embodied Interpretability: Linking Causal Understanding to Generalization in Vision-Language-Action Models](embodied_interpretability_linking_causal_understanding_to_generalization_in_visi.md)**
 
@@ -139,13 +143,21 @@ item_total: 42
 
 :   GiG equips the LLM planner with "graph-in-graph" dual-layer memory (Scene Graph + State Transition Graph) + GNN encoding + 1-step lookahead, improving Pass@1 by 6–37 percentage points over ReCAP on Robotouille (Sync/Async) and ALFWorld.
 
+**[Fourier Features Let Agents Learn High Precision Policies with Imitation Learning](fourier_features_let_agents_learn_high_precision_policies_with_imitation_learnin.md)**
+
+:   By applying a NeRF-style Fourier feature mapping to point cloud Cartesian coordinates before feeding them into a point cloud encoder, this work eliminates the "spectral bias" where point cloud policies focus on low frequencies and fail to capture high frequencies. This approach significantly improves the success rates of diffusion imitation learning policies in high-precision manipulation tasks across RoboCasa, ManiSkill3, and real-world setups (increasing the real-world normalized score from 14.8% to 40.2%), while remaining robust across various encoders and hyperparameters.
+
 **[From Abstraction to Instantiation: Learning Behavioral Representation for Vision-Language-Action Model](from_abstraction_to_instantiation_learning_behavioral_representation_for_vision-.md)**
 
-:   BehaviorVLA utilizes a causal three-stream Mamba encoder (VBE) to compress long-horizon demonstrations into time-invariant "behavioral prototypes $z_{\text{proto}}$" and time-variant "phase states $z_{\text{phase}}$". A phase-conditioned behavior decoder (PBD) then expands the behavioral skeleton into phase-aligned Gaussian priors using a Predictor-Corrector approach to guide a flow matching policy. This method achieves SOTA performance on LIBERO, RoboTwin 2.0, and CALVIN, and matches OpenVLA-OFT with only 50% of real-world data.
+:   BehaviorVLA utilizes a causal triple-stream Mamba encoder (VBE) to compress long-horizon demonstrations into a time-invariant "behavioral prototype $z_{\text{proto}}$" and a time-variant "phase state $z_{\text{phase}}$". A phase-conditioned behavior decoder (PBD) then expands the behavioral skeleton into phase-aligned Gaussian priors via a Predictor-Corrector mechanism to guide the flow matching strategy. It sets new SOTA benchmarks on LIBERO, RoboTwin 2.0, and CALVIN, matching OpenVLA-OFT performance using only 50% of real-world data.
 
 **[From Imagined Futures to Executable Actions: Mixture of Latent Actions for Robot Manipulation](from_imagined_futures_to_executable_actions_mixture_of_latent_actions_for_robot_.md)**
 
-:   MoLA employs a set of pre-trained "Modality-aware Inverse Dynamics Models (IDMs)" on large-scale robot data to translate future frames predicted by a video generation model into semantic, depth, and optical flow discrete latent actions. A policy head then performs control based on these action-centric representations, achieving robust and precise "imagine-and-execute" interfaces across CALVIN, LIBERO, LIBERO-Plus, and real-world UR5e platforms.
+:   MoLA utilizes a set of "Modality-aware Inverse Dynamics Models (IDM)" pre-trained on large-scale robotic data to translate future frames predicted by a video generation model into three-way discrete latent actions (semantic, depth, and optical flow). A policy head then performs control based on these action-centric representations, making the "imagine-execute" interface both stable and precise across CALVIN, LIBERO, LIBERO-Plus, and real UR5e platforms.
+
+**[Functional Cache Grafting: Robust and Rapid Code-Policy Synthesis for Embodied Agents](functional_cache_grafting_robust_and_rapid_code-policy_synthesis_for_embodied_ag.md)**
+
+:   Addressing the dual issues of Code-as-Policies (CaP)—specifically, their slow response (repeated prefilling of long prompts) and fragility (API mismatches, lack of safety checks) due to generating code from scratch—FCGraft maintains a library of "function-level verified code skeletons + corresponding KV caches." It utilizes cache-stitching to assemble the KV pairs of cached functions into new policies and cache-patching to locally regenerate only the erroneous segments. On open-domain tasks like ALFRED and RLBench, FCGraft achieves an 18.31% higher success rate and a 2.3× reduction in synthesis latency compared to RAGCache.
 
 **[SAFAG: Generalizable Actionable Part Pose Estimation without Symmetry Annotation](generalizable_and_actionable_parts_pose_estimation_with_symmetry_annotation-free.md)**
 
@@ -153,11 +165,11 @@ item_total: 42
 
 **[HDFlow: Hierarchical Diffusion-Flow Planning for Long-horizon Tasks](hdflow_hierarchical_diffusion-flow_planning_for_long-horizon_tasks.md)**
 
-:   HDFlow utilizes diffusion models to generate sparse strategic subgoals and rectified flow to generate dense trajectories. By integrating energy guidance and manifold projection, it constructs a dual-layer planner with a slow-fast division of labor, improving the success rate of long-horizon sparse reward tasks such as furniture assembly by 20–30 percentage points.
+:   HDFlow employs diffusion models to generate sparse strategic sub-goals and rectified flows to generate dense trajectories, integrated with energy guidance and manifold projection. This forms a dual-layer "slow-fast" planner that improves success rates by 20–30% in long-horizon sparse-reward tasks such as furniture assembly.
 
 **[Lagrangian Perturbation Diffusion Steering: Latent Reinforcement Learning for Generative Policies](lagrangian_perturbation_diffusion_steering_latent_reinforcement_learning_for_gen.md)**
 
-:   LP-DS treats frozen diffusion or flow matching policies as black-box decoders $\Phi(s,w)$. It learns a state-conditional residual only on the initial noise $w=\epsilon+\Delta_\theta(s)$ and constrains the perturbation magnitude via a Lagrangian trust region $\mathbb{E}_s[\|\Delta_\theta(s)\|_2^2]\le\delta$. This enables sample-efficient online RL fine-tuning while preserving multimodal priors. It outperforms DSRL and DPPO in stability across RoboMimic, Gym, Adroit, and LIBERO, achieving up to +25% return gains.
+:   LP-DS treats a frozen diffusion/flow-matching policy as a black-box decoder $\Phi(s,w)$ and learns a state-conditional residual only on its initial noise $w=\epsilon+\Delta_\theta(s)$. By using a Lagrangian trust region $\mathbb{E}_s[\|\Delta_\theta(s)\|_2^2]\le\delta$ to constrain the perturbation magnitude, it achieves sample-efficient online RL fine-tuning while preserving multimodal priors. It is more stable than DSRL and DPPO on RoboMimic / Gym / Adroit / LIBERO, with reward gains up to +25%.
 
 **[LangForce: Bayesian Decomposition of Vision-Language-Action Models via Latent Action Queries](langforce_bayesian_decomposition_of_vision_language_action_models_via_latent_act.md)**
 
@@ -165,27 +177,39 @@ item_total: 42
 
 **[Latent Reasoning VLA: Latent Thinking and Prediction for Vision-Language-Action Models](latent_reasoning_vla_latent_thinking_and_prediction_for_vision-language-action_m.md)**
 
-:   LaRA-VLA internalizes both textual and visual Chain-of-Thought (CoT) in VLA models into continuous latents. Through a three-stage curriculum training process (explicit CoT → latent replacement → action expert adaptation), reasoning is performed entirely within the latent space. This reduces inference latency by up to 90% compared to explicit CoT, returning control frequencies to the real-time range.
+:   LaRA-VLA internalizes both textual and visual Chain-of-Thought (CoT) into continuous latents. Through a three-stage curriculum training process (explicit CoT → latent replacement → action expert adaptation), reasoning is performed within the latent space. This reduces inference latency by up to 90% compared to explicit CoT, restoring control frequencies to real-time ranges.
+
+**[LIMMT: Less is More for Motion Tracking](limmt_less_is_more_for_motion_tracking.md)**
+
+:   This paper investigates physics-based humanoid motion tracking from a "data-centric" perspective and proposes a three-stage filtering framework, GQS (Physical Feasibility Filtering → Semantic Motion Embedding → Complexity-Weighted Subset Sampling). It demonstrates that **training with less than 3% of the AMASS dataset achieves tracking performance superior to using the full dataset**, and this filtering approach can be migrated to various trackers like Any2Track and TWIST2 in a plug-and-play manner.
 
 **[ManiSoft: Towards Vision-Language Manipulation for Soft Continuum Robotics](manisoft_towards_vision-language_manipulation_for_soft_continuum_robotics.md)**
 
-:   This paper addresses the gap where vision-language manipulation research almost exclusively covers rigid arms and ignores soft continuum arms by constructing the ManiSoft benchmark. Using a hybrid simulator that couples "Cosserat rod soft dynamics + MuJoCo rigid body contact + elastic force constraints," it defines four task categories reflecting soft arm control challenges. Through a "high-level rule planner + low-level RL torque executor," 6,300 scenarios and expert trajectories were automatically generated. The study reveals that DP/RDT/OpenVLA-OFT are moderately solvable in clean scenarios (~30%) but suffer a cliff-like performance drop in randomized scenarios (up to 29.4 points). The root causes of failure lie in the inability to estimate proprioceptive states from vision and the failure to utilize soft deformability for obstacle avoidance.
+:   This work addresses the gap where vision-language manipulation research primarily covers rigid arms and ignores soft continuum arms. ManiSoft benchmark is constructed using a hybrid simulator coupling "Cosserat rod soft dynamics + MuJoCo rigid body contact + elastic force constraints." It defines 4 categories of tasks reflecting soft arm control difficulties and automatically generates 6,300 scenes and expert trajectories via a "high-level rule planner + low-level RL torque actuator." Results systematically reveal that DP/RDT/OpenVLA-OFT are moderately successful in clean scenes (~30%) but suffer a cliff-like drop in randomized scenes (up to 29.4 points). The root causes of failure lie in the inability to estimate proprioceptive states from vision and the failure to utilize soft body deformability for obstacle avoidance.
 
 **[Mixture of Horizons in Action Chunking](mixture_of_horizons_in_action_chunking.md)**
 
 :   Addressing the "long-horizon planning vs. short-horizon precision" trade-off caused by "action chunk length (horizon) selection" in VLA models, this paper proposes Mixture of Horizons (MoH). By decomposing a single action chunk into various sub-chunks of different lengths, predicting them in parallel using a shared action transformer, and fusing them with a 2k-parameter linear gate—complemented by a load-balancing loss and dynamic inference via "cross-horizon consensus"—the authors enable $\pi_{0.5}$ to reach a 99% average success rate on LIBERO for the first time while increasing throughput to 2.5× the baseline.
 
+**[Moving Out: Physically-grounded Human-AI Collaboration](moving_out_physically-grounded_human-ai_collaboration.md)**
+
+:   To address the lack of "physics-grounded constraints" in existing discrete/symbolic benchmarks, this paper introduces **Moving Out**, a collaborative environment based on a 2D rigid-body physics engine with continuous state-action spaces (e.g., two agents carrying heavy objects around corners). It proposes **BASS** (Behavior Augmentation, Simulation, and Selection), which enables the AI to collaborate stably when facing unseen human behaviors and object properties, nearly doubling the task completion rate in real human-AI trials.
+
 **[Neural Implicit Action Fields: From Discrete Waypoints to Continuous Functions for Vision-Language-Action Models](neural_implicit_action_fields_from_discrete_waypoints_to_continuous_functions_fo.md)**
 
-:   NIAF redefines VLA "action chunks" from a sequence of discrete waypoints into a continuous time function $\mathcal{A}(\tau)=\Phi(\tau;\theta)$. By using MLLMs as "hierarchical spectral modulators" to output parameters $\theta$ for SIREN, the method achieves $C^\infty$ smooth trajectories, arbitrary frequency queries, and analytically derivable velocity/jerk signals. It achieves SOTA on CALVIN/LIBERO and eliminates jitter in real-world impedance control.
+:   NIAF redefines the "action chunk" of VLA models from a sequence of discrete waypoints to a continuous time function $\mathcal{A}(\tau)=\Phi(\tau;\theta)$. By utilizing an MLLM as a "hierarchical spectral modulator" to output parameters $\theta$ for a SIREN, the model achieves $C^\infty$ smooth trajectories, arbitrary frequency querying, and analytically derivable velocity/jerk signals. It achieves SOTA results on CALVIN/LIBERO and eliminates jitter in real-robot impedance control.
 
 **[Neural Low-Discrepancy Sequences](neural_low-discrepancy_sequences.md)**
 
-:   NeuroLDS utilizes a small MLP that maps integer indices through sinusoidal positional encoding. It first regresses to Sobol' sequences and is then fine-tuned using a closed-form $L_2$ discrepancy loss across all prefixes. This results in the first neural low-discrepancy sequence that is both extensible and supports arbitrary lengths, outperforming Sobol'/Halton across 4D discrepancy metrics, Borehole integration, RRT motion planning, and Black–Scholes PDE solving.
+:   NeuroLDS utilizes a small MLP that maps integer indices via sinusoidal position encoding to points. By first regressing against Sobol' sequences and then fine-tuning using a closed-form $L_2$ discrepancy loss over all prefixes, it generates the first extensible neural low-discrepancy sequence. It consistently outperforms Sobol'/Halton across 4D discrepancy metrics, Borehole integration, RRT motion planning, and Black–Scholes PDE solving.
+
+**[Online Self-Training for Co-Adaptation in Hierarchical Diffusion Policies](online_self-training_for_co-adaptation_in_hierarchical_diffusion_policies.md)**
+
+:   ORCHID utilizes "self-training" to enable hierarchical diffusion robot policies to improve online. By repeatedly sampling trajectories and filtering for those where both the planner and controller succeed using sparse environment signals, it distills these successes back into both the **high-level planner** and **low-level controller**. This mechanism induces bidirectional co-adaptation between the high-level (HL) and low-level (LL) layers, allowing a lightweight model to outperform VLAs twice its size on the CALVIN benchmark.
 
 **[Optimal and Scalable MAPF via Multi-Marginal Optimal Transport and Schrödinger Bridges](optimal_and_scalable_mapf_via_multi-marginal_optimal_transport_and_schrödinger_b.md)**
 
-:   This paper proves that anonymous Multi-Agent Pathfinding (MAPF) belongs to a class of **Markovian Multi-Marginal Optimal Transport (MMOT)**. This formulation compresses the original $K^{T+1}$-dimensional transport tensor into a polynomial-scale LP (P1), ensuring integer optimality via total unimodularity. This is further generalized to a Schrödinger bridge to obtain a Sinkhorn-style entropic relaxation (P2) yielding "shadow transports." Finally, pruning is performed on the shadows followed by solving a simplified LP (P3) to recover integer solutions, achieving 3.6×–7.1× speedup with <10% cost gap at $K^{1.15}$ complexity.
+:   This paper characterizes anonymous Multi-Agent Path Finding (MAPF) as a class of **Markovian Multi-Marginal Optimal Transport (MMOT)**, compressing the $K^{T+1}$ dimensional transport tensor into a polynomial-scale LP (P1) and guaranteeing integer optimality through Total Unimodularity (TU). It further generalizes this into a Schrödinger bridge for Sinkhorn-style entropic relaxation (P2) to produce a "shadow transport," followed by pruning the graph based on the shadow and solving a sparse LP (P3) to recover integer solutions, achieving 3.6×–7.1× speedup under $K^{1.15}$ complexity with a cost gap <10%.
 
 **[Plan in Sandbox, Navigate in Open Worlds: Learning Physics-Grounded Abstracted Experience for Embodied Navigation](plan_in_sandbox_navigate_in_open_worlds_learning_physics-grounded_abstracted_exp.md)**
 
@@ -193,19 +217,31 @@ item_total: 42
 
 **[Position: Good Embodied Reward Models Need Bad Behavior Data](position_good_embodied_reward_models_need_bad_behavior_data.md)**
 
-:   A position paper providing empirical evidence via RoboArena human ratings that three types of SOTA embodied reward models (ReWind / GVL / Dopamine) systematically "overestimate" actual failed robotic behaviors. The root cause is identified as training data consisting almost exclusively of expert success demonstrations. By injecting real "bad" behavior videos + dense negative reward labels into the in-context prompts of GVL, the authors demonstrate that even a minimal amount of negative samples can significantly correct preference ranking, thereby calling on the community to actively collect and release "bad" robotic data.
+:   This position paper utilizes human ratings from RoboArena to empirically demonstrate that three types of SOTA embodied reward models (ReWind, GVL, and Dopamine) systematically "overestimate" actual failed robot behaviors. The root cause is identified as the training data consisting almost exclusively of expert success demonstrations. By inserting real "bad" behavior videos and dense negative reward labels into GVL's in-context prompts, the authors prove that even a minimal amount of negative samples significantly corrects preference ranking, thus calling for the community to actively collect and release "bad" robot data.
 
 **[PSG-Nav: Probabilistic Scene Graph Navigation via Multiverse Decision Making](psg-nav_probabilistic_scene_graph_navigation_via_multiverse_decision_making.md)**
 
-:   This work proposes PSG-Nav, which replaces traditional deterministic scene graph navigation with a three-component system: a 3D probabilistic scene graph that preserves full category distributions, multiverse sampling of multiple consistent worlds from the joint distribution for decision making, and evidence calibration using a success/failure memory bank. It achieves new SOTA results on HM3D, MP3D, and HSSD with 66.1%, 44.8%, and 67.9% SR, respectively.
+:   This paper proposes PSG-Nav, which replaces traditional deterministic scene graph navigation with a "three-piece suite": a 3D probabilistic scene graph that retains full category distributions, a multiverse decision-making process that samples multiple consistent worlds from a joint distribution, and an evidential calibration library based on success/failure memories. It achieves new SOTA results on three major ObjectNav benchmarks—HM3D, MP3D, and HSSD—with SR of 66.1%, 44.8%, and 67.9%, respectively.
 
 **[R2R2: Robust Representation for Intensive Experience Reuse via Redundancy Reduction in Self-Predictive Learning](r2r2_robust_representation_for_intensive_experience_reuse_via_redundancy_reducti.md)**
 
-:   R2R2 integrates VICReg-style redundancy reduction constraints into Self-Predictive Learning (SPL) to stabilize high UTD training. The **key modification is the removal of zero-centering**—theoretically proving that zero-centering eliminates constant eigenmodes (i.e., global dynamics information) in the SPL spectral decomposition. Experiments on TD7 at UTD=20 improved the score from 1.02 to 1.24 (+22%) and established a new continuous control SOTA using the proposed SimbaV2-SPL architecture.
+:   R2R2 incorporates VICReg-style redundancy reduction constraints into Self-Predictive Learning (SPL) to stabilize high UTD training. A **key modification is the removal of zero-centering**—theoretically proving that zero-centering eliminates constant eigenmodes (i.e., global dynamics information) in SPL spectral decomposition. Experiments on TD7 with UTD=20 improved scores from 1.02 to 1.24 (+22%), and the newly proposed SimbaV2-SPL architecture achieved a new SOTA in continuous control.
 
 **[RoboMME: Benchmarking and Understanding Memory for Robotic Generalist Policies](robomme_benchmarking_and_understanding_memory_for_robotic_generalist_policies.md)**
 
-:   RoboMME systematically maps the four categories of human cognitive memory—"temporal, spatial, object, and procedural"—to 16 long-horizon robotic manipulation tasks (770k high-quality timesteps) for the first time. It performs systematic ablations on 14 "memory representation × integration mechanism" combinations using a π0.5 backbone, concluding that "perceptual memory + AdaLN modulator" offers the current best comprehensive trade-off.
+:   RoboMME is the first to systematically map "temporal/spatial/object/procedural" memory from human cognition to 16 long-horizon robotic manipulation tasks (770k high-quality timesteps). By performing a systematic ablation of 14 "memory representation × integration method" combinations on a π0.5 base, it concludes that "Perceptual Memory + AdaLN Modulator" currently offers the best comprehensive trade-off.
+
+**[Sample from What You See: Visuomotor Policy Learning via Diffusion Bridge with Observation-Embedded Stochastic Differential Equation](sample_from_what_you_see_visuomotor_policy_learning_via_diffusion_bridge_with_ob.md)**
+
+:   BridgePolicy reformulates the diffusion policy paradigm—moving from "observation as a condition with sampling starting from random noise" to using a diffusion bridge that embeds observations directly into the endpoint of the forward SDE. This allows action sampling to originate from an "information-rich observation prior." By utilizing a semantic aligner to compress heterogeneous observations into an isomorphic representation with actions, the method consistently outperforms existing generative policies across 52 simulation tasks and 5 real-robot tasks.
+
+**[SCALE: Self-uncertainty Conditioned Adaptive Looking and Execution for Vision-Language-Action Models](scale_self-uncertainty_conditioned_adaptive_looking_and_execution_for_vision-lan.md)**
+
+:   SCALE enables autoregressive VLAs to utilize a "self-uncertainty" score, calculated solely from output logits during inference, to simultaneously modulate **action sampling temperature** and **visual attention temperature**. By exploring broadly when uncertain and focusing greedily when certain, SCALE significantly improves the success rates of multiple SOTA VLAs with zero additional training, no external verifiers, and a single forward pass.
+
+**[Scaling by Diversified Experience for Vision-Language-Action Models](scaling_by_diversified_experience_for_vision-language-action_models.md)**
+
+:   SyVLA utilizes a dual-system architecture comprising a "VLM + Flow Matching Action Expert + Feature Query Token" for "think-before-act" robotic control. It incorporates two core designs: an **intention decoupling** algorithm based on gradient norm masking (stripping high-level reasoning from control intent) and **similar-sample guided RL** (fixing expert sample advantage at 1.0 to stabilize real-world online RL). Using less than 5% of the $\pi_0$ pre-training data, it achieves higher real-world success rates and stronger OOD generalization while preserving the original VLM's vision-language capabilities.
 
 **[Seeing Realism from Simulation: Efficient Video Transfer for Vision-Language-Action Data Augmentation](seeing_realism_from_simulation_efficient_video_transfer_for_vision-language-acti.md)**
 
@@ -213,31 +249,39 @@ item_total: 42
 
 **[Spatial Memory for Out-of-Vision Manipulation in Vision-Language-Action](spatial_memory_for_out-of-vision_manipulation_in_vision-language-action.md)**
 
-:   SOMA equips VLA with persistent spatial-semantic memory built via scans from a movable head camera, permitting incremental online updates and instruction-based retrieval. This enables robots to stably manipulate objects outside the current field of view (FOV), reducing first-gaze time, head search paths, and grasp attempts by 40-60% across 5 real OOV tasks.
+:   SOMA equips VLA with a persistent spatial-semantic memory built via active scanning with a movable head camera. This memory supports incremental online updates and instruction-based retrieval, enabling robots to stably manipulate objects outside the current field of view (OOV). In five real-world OOV grasping tasks, SOMA reduces the time to first gaze, head search path, and number of grasp attempts by 40-60%.
 
 **[SpecPrune-VLA: Accelerating Vision-Language-Action Models via Action-Aware Self-Speculative Pruning](specprune-vla_accelerating_vision-language-action_models_via_action-aware_self-s.md)**
 
-:   The authors observe that VLA inference is compute-bound, making pruning the optimal strategy, particularly since visual information overlaps significantly across consecutive action steps. They propose SpecPrune-VLA: a training-free framework that fuses previous global attention, current early-layer local attention, and frame-difference dynamic tokens for static pruning, supplemented by intra-layer dynamic pruning and a velocity-aware coarse/fine controller. It achieves 1.57× acceleration in simulation (LIBERO) and 1.70× on real-world robots with negligible success rate loss.
+:   The authors observe that VLA inference is compute-bound, making pruning the optimal acceleration path. Given the high overlap of visual information between consecutive action steps, they propose SpecPrune-VLA. This training-free method uses a three-way fusion (previous global attention + current early-layer local attention + frame-difference dynamic tokens) for static pruning, combined with intra-layer dynamic pruning and a velocity-aware coarse/fine granularity controller. It achieves 1.57× speedup on LIBERO and 1.70× on real robots with negligible success rate loss.
 
 **[StableVLA: Towards Robust Vision-Language-Action Models without Extra Data](stablevla_towards_robust_vision-language-action_models_without_extra_data.md)**
 
-:   Addressing the issue of VLA models collapsing under visual perturbations, the authors identify the vulnerable root cause as the MLP projector between the vision encoder and the LLM. By replacing it with a "Channel-wise Information Bottleneck Adapter (IB-Adapter)" with fewer than 10M parameters, the 0.5B StableVLA achieves an average improvement of approximately 35% under severe LIBERO perturbations without any additional training data or augmentation strategies. It also demonstrates superior stability compared to the 14× larger OpenPi in real-world pick-and-place tasks.
+:   Addressing the collapse of VLA models under visual perturbations, the authors identify the MLP projector between the vision encoder and the LLM as the primary source of vulnerability. By replacing it with a "Channel-wise Information Bottleneck Adapter (IB-Adapter)" with fewer than 10M parameters, the 0.5B StableVLA achieves an average performance gain of approximately 35% under severe LIBERO perturbations without any additional training data or augmentation strategies. It also exhibits higher stability than the 14× larger OpenPi in real-world pick-and-place tasks.
 
 **[STEP: Warm-Started Visuomotor Policies with Spatiotemporal Consistency Prediction](step_warm-started_visuomotor_policies_with_spatiotemporal_consistency_prediction.md)**
 
-:   STEP integrates a lightweight Transformer predictor ("previous action history + current observation → next action") with a diffusion policy to serve as a denoising starting point (warm-start). This reduces 100 denoising steps to 2 while adding a velocity-aware defense mechanism against execution deadlocks. It achieves an average success rate improvement of 21.6% and 27.5% over BRIDGER and DDIM, respectively, across 9 simulation and 2 real-world tasks.
+:   STEP attaches a lightweight Transformer predictor ("previous action history + current observation → next action") to the diffusion policy. Its output serves as a denoising starting point (warm-start), compressing 100 denoising steps to 2. It also includes a "velocity-aware" execution deadlock defense mechanism that injects noise when action changes are too small. It outperforms BRIDGER/DDIM by an average of 21.6% / 27.5% in success rate across 9 simulation and 2 real-robot tasks.
 
 **[TapSampling: Inference-Time Sampling with a Task-Progress-Understanding Verifier for Robotic Manipulation](tapsampling_inference-time_sampling_with_a_task-progress-understanding_verifier_.md)**
 
-:   TapSampling proposes a policy-agnostic, plug-and-play inference-time sampling framework: it first uses Action-VAE to learn a low-dimensional posterior from a small set of actions generated by the policy, then efficiently samples a large number of candidate actions. A semantically interpretable verifier that "predicts task progress changes" scores the candidates for weighted fusion. Without fine-tuning the original policies, it consistently improves the success rates of various generalist robot policies such as Diffusion Policy, OpenVLA, VPP, $\pi_0$, and $\pi_{0.5}$ on CALVIN/LIBERO and real-world robots.
+:   TapSampling proposes a policy-agnostic, plug-and-play inference-time sampling framework. It first learns a low-dimensional posterior from a small number of policy-generated actions using an Action-VAE to efficiently sample many candidate actions. Subsequently, a semantically interpretable verifier, which predicts "changes in task progress," is used to score and fuse candidates via weighted averaging. Without fine-tuning original policies, it consistently improves the success rates of various general robotic policies such as Diffusion Policy, OpenVLA, VPP, $\pi_0$, and $\pi_{0.5}$ on CALVIN/LIBERO and real-world robots.
+
+**[Test-Time Training for Visual Foresight Vision-Language-Action Models](test-time_training_for_visual_foresight_vision-language-action_models.md)**
+
+:   Addressing the simultaneous dual-stage misalignment of Visual Foresight VLA (VF-VLA) — which predicts future images before generating actions — in Out-of-Distribution (OOD) scenarios, this paper proposes T3VF. It treats the predicted future images and the actual observations after several steps as natural self-supervised pairs. During test-time, the model updates only the minimal visual query modules while filtering noisy steps using "action variance + adaptive quantile buffering." T3VF improves the average success rate on LIBERO-Plus by approximately 5% (relative) with ~1.3× inference overhead, without modifying any network architecture.
 
 **[The Lie We Tell: Correcting the Euclidean Fallacy in Vision-Language-Action Policies via Score Matching on Tangent Space](the_lie_we_tell_correcting_the_euclidean_fallacy_in_vision_language_action_polic.md)**
 
 :   Lie Diffuser Actor (LDA) corrects the "Euclidean Fallacy" of flattening $SE(3)$ poses into $\mathbb{R}^{12}$ by returning to manifold-native diffusion: injecting noise into the Lie algebra $\mathfrak{se}(3)$ via left-invariant SDEs, pulling back via the exponential map, and predicting scores in the tangent space. Theoretically, this achieves manifold closure, coordinate equivariance, and geodesic optimality, pushing the average task length on CALVIN ABC→D from 3.27 to 3.51.
 
+**[Think Less, Act Early: Reinforced Latent Reasoning with Early Exit in Vision-Language-Action Models](think_less_act_early_reinforced_latent_reasoning_with_early_exit_in_vision-langu.md)**
+
+:   To address the issues of low speed and error accumulation in explicit Chain-of-Thought (CoT) for VLA, the authors propose AVA-VLA—modeling reasoning as a sequence of invisible latent variables, using Reinforcement Learning (RL) to denoise the latent trajectory, and employing an early exit mechanism to adaptively determine reasoning steps based on state confidence. It achieves a 98.3% average success rate on LIBERO while being approximately 6 times faster than explicit CoT reasoning.
+
 **[TimeRewarder: Learning Dense Reward from Passive Videos via Frame-wise Temporal Distance](timerewarder_learning_dense_reward_from_passive_videos_via_frame-wise_temporal_d.md)**
 
-:   TimeRewarder formalizes "task progress" as the normalized temporal distance between video frame pairs. It trains a ViT distance regressor using self-supervised learning on action-free expert videos and provides the distance between adjacent frames as a dense reward to DrQ-v2. It achieves near-perfect scores (9/10 tasks) on Meta-World within 200K interactions, even surpassing manually designed environment dense rewards.
+:   TimeRewarder formalizes "task progress" as the normalized temporal distance between video frame pairs. It trains a self-supervised ViT distance regressor using only action-free expert videos and provides the predicted distance between adjacent frames as a dense reward to DrQ-v2. On 10 Meta-World tasks, it approaches a 9/10 success rate within 200K interactions, even outperforming manually designed environmental dense rewards.
 
 **[Towards Efficient and Expressive Offline RL via Flow-Anchored Noise-conditioned Q-Learning](towards_efficient_and_expressive_offline_rl_via_flow-anchored_noise-conditioned_.md)**
 
@@ -249,7 +293,7 @@ item_total: 42
 
 **[Turning Adaptation into Assets: Cross-Domain Bridging for Online Vision-Language Navigation](turning_adaptation_into_assets_cross-domain_bridging_for_online_vision-language_.md)**
 
-:   To address the continuous environment distribution shift in online vision-language navigation, this paper proposes the IDEA framework. It encapsulates soft prompts learned during each test-time adaptation, along with domain coordinates and uncertainty, into reusable "assets." It then uses Wasserstein convex hull projection to map the target domain onto a combination of historical assets, obtaining a training-free cross-domain bridge. This achieves an average of +2.5% SR and +1.9% SPL on REVERIE / R2R.
+:   To address the continuous environment distribution drift in online vision-language navigation, this paper proposes the IDEA framework. It encapsulates soft prompts learned during each test-time adaptation, along with domain coordinates and uncertainty, into reusable "assets." By utilizing Wasserstein convex hull projection to map the target domain onto a combination of historical assets, a training-free cross-domain bridge is achieved, resulting in an average improvement of +2.5% SR and +1.9% SPL on REVERIE / R2R.
 
 **[WestWorld: Scalable Trajectory World Models with Knowledge Encoding](westworld_a_knowledge-encoded_scalable_trajectory_world_model_for_diverse_roboti.md)**
 

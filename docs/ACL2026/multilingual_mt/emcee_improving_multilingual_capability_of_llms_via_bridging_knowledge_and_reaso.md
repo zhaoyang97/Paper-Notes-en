@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] EMCEE: Improving Multilingual Capability of LLMs via Bridging Knowledge and Reasoning with Extracted Synthetic Multilingual Context
 description: >-
-  [ACL 2026][Multilingual & Translation][multilingual prompting] EMCEE enables LLMs to first extract synthetic multilingual context related to non-English queries from their own parameters, then merges the context-enriched responses with CoT reasoning responses using an LLM-as-a-Judge, significantly improving performance on low-resource languages across four multilingual tasks.
+  [ACL 2026][Multilingual & Translation][multilingual prompting] EMCEE enables LLMs to first extract synthetic multilingual context related to non-English queries from their internal parameters, then merges context-augmented responses with CoT reasoning responses via an LLM-as-a-Judge, significantly improving performance on low-resource languages across four multilingual tasks.
 tags:
   - ACL 2026
   - Multilingual & Translation
@@ -12,92 +12,92 @@ tags:
   - low-resource languages
   - cultural knowledge
 date: 2026-05-08
-content_hash: e44fe2b558ef522e
+content_hash: 2b8b7a19976e2af9
 ---
 # EMCEE: Improving Multilingual Capability of LLMs via Bridging Knowledge and Reasoning with Extracted Synthetic Multilingual Context
 
-**Conference**: ACL2026  
+**Conference**: ACL 2026  
 **arXiv**: [2503.05846](https://arxiv.org/abs/2503.05846)  
 **Code**: https://github.com/hamin2065/EMCEE  
 **Area**: Multilingual LLM / Prompting  
 **Keywords**: multilingual prompting, synthetic context, LLM-as-a-Judge, low-resource languages, cultural knowledge
 
 ## TL;DR
-EMCEE enables LLMs to first extract synthetic multilingual context related to non-English queries from their own parameters, then merges the context-enriched responses with CoT reasoning responses using an LLM-as-a-Judge, significantly improving performance on low-resource languages across four multilingual tasks.
+EMCEE enables LLMs to first extract synthetic multilingual context related to non-English queries from their internal parameters, then merges context-augmented responses with CoT reasoning responses via an LLM-as-a-Judge, significantly improving performance on low-resource languages across four multilingual tasks.
 
 ## Background & Motivation
-**Background**: LLMs perform strongly on English tasks, but pre-training corpora are highly English-centric, often leading to degradation when facing non-English queries. Common remedies include translating queries into English, using English instructions for Chain-of-Thought (CoT), or integrating external retrieval to supplement background knowledge.
+**Background**: While LLMs exhibit strong performance on English tasks, pre-training corpora are heavily English-centric, often leading to degradation when facing non-English queries. Common remedies include translating queries into English, using English instructions for CoT, or incorporating external retrieval to supplement background knowledge.
 
-**Limitations of Prior Work**: Translation and English CoT are effective for reasoning-heavy problems like mathematics and natural sciences but tend to lose local context in knowledge-intensive areas such as linguistics, social sciences, and cultural common sense. External RAG depends on retrievers and external corpora, where retrieved content may not align with the cultural nuances of the query.
+**Limitations of Prior Work**: Translation and English CoT are effective for reasoning-heavy problems like mathematics and natural sciences but tend to lose local context for knowledge-intensive issues in linguistics, social sciences, and cultural common sense. External RAG depends on specific retrievers and external corpora, where retrieved content might not align with the cultural nuances of the query.
 
-**Key Challenge**: Multilingual queries simultaneously contain two types of needs: some require abstract reasoning, while others require linguistic, cultural, or national background. A single path struggle to cover both simultaneously; pre-determined routing may fail due to insufficient information in the query itself.
+**Key Challenge**: Multilingual queries often encompass two types of requirements: abstract reasoning and language/cultural background. A single pathway struggles to cover both simultaneously; furthermore, pre-determining which path to take may result in routing errors due to insufficient information in the query itself.
 
-**Goal**: To construct a prompting framework that does not rely on external retrieval or additional training, allowing the LLM to generate both "context-enriched answers" and "reasoning-enhanced answers" before dynamically selecting the most appropriate output.
+**Goal**: To construct a prompting framework that generates both "context-enriched responses" and "reasoning-enhanced responses" without relying on external retrieval or additional training, then dynamically selects the most appropriate output.
 
-**Key Insight**: The authors observe that LLM parameters may already store linguistic and cultural knowledge that is not explicitly evoked during direct answering. Instead of translating all non-English questions into English, it is better to require the model to "extract" relevant background knowledge in text form first.
+**Key Insight**: The authors observe that LLM parameters may already store language and cultural knowledge that is not explicitly evoked during direct answering. Rather than translating all non-English questions into English, it is more effective to require the model to "extract" relevant background knowledge in text form first.
 
-**Core Idea**: Extract synthetic multilingual context first, then Merge with reasoning; the name EMCEE is derived from **E**xtracting synthetic **M**ultilingual **C**ontext and **E**rging.
+**Core Idea**: First Extract synthetic multilingual context, then Merge with reasoning; the name EMCEE is derived from Extracting synthetic Multilingual Context and mErging.
 
 ## Method
-EMCEE is a pure prompting pipeline. It does not update model parameters or call external knowledge bases. Instead, it runs the LLM multiple times during inference: once to extract query-relevant context, once for standard CoT reasoning, and once for judging/merging. The key is not the "extra token cost" itself, but ensuring the two candidate answers originate from different information sources: one emphasizing cultural and linguistic background, and the other emphasizing general reasoning.
+EMCEE is a pure prompting pipeline. It does not update model parameters or call external knowledge bases; instead, it executes the LLM multiple times during inference: once for extracting query-relevant context, once for standard CoT reasoning, and once for the judge/merge step. The significance lies not in "spending more tokens" but in ensuring that two candidate answers stem from different information sources: one emphasizing cultural and linguistic background, the other emphasizing general reasoning.
 
 ### Overall Architecture
-The input is a non-English native query. The first path directs the LLM to extract 3 to 5 sentences of synthetic context relevant to the query using English instructions; this context can include cultural, historical, domain-specific, or local linguistic knowledge. The context is then appended to the native query to generate a context-enriched response. The second path uses English CoT instructions to generate a reasoning-focused response without additional context. The third step passes both responses to an LLM-as-a-Judge to compare their suitability regarding linguistic background, cultural context, and reasoning adequacy, selecting or synthesizing them into the final answer.
+The input is a non-English native query. The first path directs the LLM to extract 3 to 5 sentences of synthetic context related to the query using English instructions; this context can include cultural, historical, domain-specific, or local linguistic knowledge. The context is then appended back to the native query to generate a context-enriched response. The second path utilizes English CoT instructions to generate a reasoning-focused response without additional extracted context. The third step passes both responses to an LLM-as-a-Judge, which compares their fit regarding linguistic background, cultural context, and reasoning sufficiency to select or synthesize the final answer.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
     Q["Non-English native query"]
-    Q --> E["Synthetic Multilingual Context Extraction<br/>Extract 3-5 sentences of cultural/linguistic background via English instructions"]
-    Q --> C["Reasoning-Focused CoT Path<br/>Direct English CoT reasoning without extracted context"]
-    E --> ER["context-enriched response<br/>Answering with background appended to native query"]
+    Q --> E["Synthetic Multilingual Context Extraction<br/>Extract 3-5 sentences of cultural/linguistic background using English instructions"]
+    Q --> C["Reasoning-Focused CoT Path<br/>Direct reasoning via English CoT without extracted context"]
+    E --> ER["context-enriched response<br/>Native query response with appended background"]
     C --> CR["reasoning-focused response"]
-    ER --> J["LLM-as-a-Judge Merging<br/>Compare cultural fit and reasoning adequacy of both answers"]
+    ER --> J["LLM-as-a-Judge Merging<br/>Compare cultural fit and reasoning sufficiency of both answers"]
     CR --> J
     J --> O["Final Answer"]
 ```
 
 ### Key Designs
 
-**1. Synthetic Multilingual Context Extraction: Explicitly articulating cultural knowledge hidden in model parameters**
+**1. Synthetic Multilingual Context Extraction: Explicitly eliciting hidden cultural knowledge from model parameters**
 
-Low-resource language problems often fail not because the reasoning chain is too short, but because the model fails to evoke local vocabulary, cultural entities, or social norms it actually knows—this information remains in the parameters rather than the context window during direct answering. EMCEE’s first path specifically addresses this: it uses English instructions on a native query to require the model to extract background knowledge needed to answer the question, typically limited to 3-5 sentences, using few-shot examples to demonstrate "useful background." Crucially, this context does not come from external retrieval but from the model's own latent knowledge. This forces the model to recall relevant common sense before answering, significantly reducing the probability of missing key background.
+Models are often hindered in low-resource language tasks not by short reasoning chains, but by the failure to evoke local vocabulary, cultural entities, or social norms that they actually possess—this information remains latent in the parameters during direct answering. EMCEE's first path addresses this by using English instructions to prompt the model to extract the background knowledge required to answer the native query, typically limited to 3-5 sentences with few-shot examples illustrating "useful background." Crucially, this context is derived from the model's own latent knowledge rather than external retrieval—effectively forcing the model to "write out" relevant common sense before answering, thereby significantly reducing the probability of missing key background details.
 
-**2. Reasoning-Focused CoT Path: Parallel preservation of a pure reasoning path to avoid knowledge-extraction bias**
+**2. Reasoning-Focused CoT Path: Maintaining a parallel pure reasoning path to avoid knowledge-extraction bias**
 
-Multilingual tasks are inherently heterogeneous: some depend on cultural common sense, others on pure logical inference. If only context extraction is performed, it may not help with reasoning problems like math or science, and irrelevant extracted background might interfere with judgment. Thus, EMCEE runs a parallel English CoT path without synthetic context, allowing the model to solve problems using its inherently strong English reasoning capabilities. For questions requiring no cultural background, the system is not forced toward knowledge extraction; both paths play to their strengths.
+Multilingual tasks are inherently heterogeneous: some rely on cultural common sense, while others depend on pure logical inference. For reasoning-heavy problems such as mathematics or natural sciences, context extraction may be unhelpful or even distracting. Therefore, EMCEE runs a parallel English CoT path without synthetic context, leveraging the model's existing strengths in English-based reasoning. This ensures the system is not forcibly pulled toward knowledge extraction for problems that do not require cultural background; both paths play to their respective strengths to cover both "knowledge-based" and "reasoning-based" queries.
 
-**3. LLM-as-a-Judge Merging: Comparing two generated answers instead of hard routing in advance**
+**3. LLM-as-a-Judge Merging: Comparing generated answers instead of early hard routing**
 
-An intuitive approach would be to judge the query type (knowledge vs. reasoning) first and then decide the path, but the model may misjudge since it has not seen the extracted knowledge yet—an observation confirmed by the EMCEE (Route) ablation. EMCEE instead finishes both paths first and presents the context-enriched response and reasoning-focused response to the LLM-as-a-Judge. The judge evaluates which answer fits the linguistic-cultural context better and which is more reasoned. With two pieces of evidence rather than just the query, the selection is more stable.
+While it seems intuitive to pre-classify a query as knowledge-based or reasoning-based to decide the path, the model often misjudges the type before seeing the extracted knowledge—an observation confirmed by the EMCEE (Route) ablation study. EMCEE instead executes both paths fully and presents the context-enriched response and the reasoning-focused response to an LLM-as-a-Judge. The judge evaluates the specific content of both answers to determine which is more culturally appropriate and which has more robust reasoning. With two pieces of evidence in hand, the judge's selection is significantly more stable than guessing based on the query alone.
 
 ### A Complete Example: Javanese "pagupon"
 
-Consider a Javanese multiple-choice question where the keyword is `pagupon`, and the correct option D relates to pigeons/doves. The English-CoT path lacks knowledge of this local vocabulary and incorrectly associates `pagupon` with a chicken coop, leading to a wrong option. Meanwhile, the Extraction path extracts the background that "pagupon in Javanese refers to a dovehouse/pigeon loft," and the context-enriched response provides the correct answer based on this. Finally, the LLM-as-a-Judge sees both, recognizes the solid cultural-linguistic grounding of the extraction version, and selects option D.
+Consider a Javanese multiple-choice question where the keyword is `pagupon`, and the correct option D relates to pigeon/dove. The Eng-CoT reasoning-focused path, lacking this local vocabulary knowledge, incorrectly associates `pagupon` with a chicken coop, leading to an wrong answer. Conversely, the Extraction path first identifies that "pagupon refers to a pigeon house in Javanese," and the context-enriched response provides the correct answer based on this. Finally, the LLM-as-a-Judge reviews both answers, identifies the superior linguistic and cultural grounding of the extraction version, and selects the correct option D. This workflow clearly demonstrates how the three steps cooperate: extraction supplements missing knowledge, CoT provides a reasoning baseline, and the judge makes an evidenced decision between them.
 
-> ⚠️ Counter-examples also define boundaries: When a question concerns globally famous entities, extraction may mistakenly assume a need for local background—e.g., the Japanese query for "Wake Me Up Before You Go-Go" was incorrectly directed to Japanese singer Koda Kumi, while the correct answer was Wham!.
+> ⚠️ A counterexample illustrates the boundaries: when a question concerns globally famous entities, extraction may hallucinate a need for local background—e.g., the English song "Wake Me Up Before You Go-Go" in a Japanese query was erroneously linked to the Japanese singer Koda Kumi, whereas the correct answer was Wham!.
 
 ### Loss & Training
-EMCEE involves no training loss or parameter fine-tuning. In experiments, the API model temperature was set to 0.0, and the open-source Llama used greedy decoding to reduce randomness. The default primary model was GPT-4o-mini, evaluated on M3-Exam, MKQA, XNLI, and XCOPA; accuracy was used for M3-Exam/XNLI/XCOPA, and span-level F1 for MKQA. Languages were categorized into high-resource and low-resource based on Native-Basic performance.
+EMCEE involves no training loss or parameter fine-tuning. In experiments, the API model temperature was set to 0.0, and the open-source Llama model used greedy decoding to minimize stochastic effects. The default model for main experiments was GPT-4o-mini, with evaluations on M3-Exam, MKQA, XNLI, and XCOPA; accuracy was used for M3-Exam, XNLI, and XCOPA, while span-level F1 was used for MKQA. The authors also categorized languages into high-resource and low-resource based on Native-Basic performance.
 
 ## Key Experimental Results
 
 ### Main Results
-The main experiment compared various multilingual prompting baselines on GPT-4o-mini. The table below highlights the All/Low results; in the full paper, EMCEE achieved the highest or tied-highest scores across all four datasets.
+The main experiment compared various multilingual prompting baselines using GPT-4o-mini. The table below highlights the All/Low trends; in the full paper, EMCEE achieved the highest or tied-for-highest scores on All metrics across four datasets.
 
 | Method | M3-Exam All | M3-Exam Low | MKQA All | MKQA Low | XNLI All | XNLI Low | XCOPA All | XCOPA Low |
-|------|------------:|------------:|---------:|---------:|---------:|---------:|----------:|----------:|
+|------|-----------:|-----------:|---------:|---------:|---------:|---------:|----------:|----------:|
 | Native-Basic | 65.2 | 57.7 | 44.1 | 38.5 | 66.2 | 58.4 | 79.3 | 61.4 |
 | Eng-CoT | 74.6 | 67.3 | 49.4 | 49.3 | 73.2 | 72.7 | 90.5 | 83.8 |
 | XLT | 70.4 | 63.8 | 51.1 | 51.5 | 72.6 | 71.0 | 91.1 | 85.4 |
 | RAG (Eng) | 72.1 | 63.9 | 44.7 | 44.5 | 70.4 | 69.7 | 87.9 | 80.6 |
 | EMCEE (Route) | 76.2 | 69.2 | 50.8 | 49.8 | 73.1 | 72.3 | 90.5 | 83.8 |
-| EMCEE | 77.4 | 71.5 | 52.3 | 52.4 | 74.3 | 73.9 | 92.0 | 86.2 |
+| **Ours** (EMCEE) | **77.4** | **71.5** | **52.3** | **52.4** | **74.3** | **73.9** | **92.0** | **86.2** |
 
-The paper reports an average relative improvement of 16.4% over Native-Basic, reaching 31.7% for low-resource languages. Specific relative improvements for low-resource languages were M3-Exam 23.7%, MKQA 36.1%, XNLI 27.7%, and XCOPA 40.4%.
+The paper notes an average relative gain of 16.4% for EMCEE over Native-Basic, reaching 31.7% in low-resource languages. Specific relative gains for low-resource languages were 23.7% for M3-Exam, 36.1% for MKQA, 27.7% for XNLI, and 40.4% for XCOPA.
 
 ### Ablation Study
-Ablations on M3-Exam decoupled the CoT, ExT (Extraction), and MeR (Merging) components. ExT alone performed close to Eng-CoT, but the full EMCEE showed the greatest gain on low-resource languages.
+Ablations on M3-Exam decoupled CoT, ExT (Extraction), and MeR (Merging). while ExT alone approached Eng-CoT levels, the full EMCEE provided the largest gains in low-resource settings.
 
 | Configuration | CoT | ExT | MeR | All / High / Low |
 |------|-----|-----|-----|------------------|
@@ -105,50 +105,51 @@ Ablations on M3-Exam decoupled the CoT, ExT (Extraction), and MeR (Merging) comp
 | Eng-CoT | ✓ | ✗ | ✗ | 74.6 / 81.8 / 67.3 |
 | Extraction only | ✗ | ✓ | ✗ | 74.7 / 82.0 / 67.5 |
 | CoT + MeR variant | ✓ | ✗ | ✓ | 75.2 / 83.4 / 67.1 |
-| EMCEE | ✓ | ✓ | ✓ | 77.4 / 83.3 / 71.5 |
+| **Ours** (EMCEE) | ✓ | ✓ | ✓ | **77.4 / 83.3 / 71.5** |
 
-### Generalization & Cost Analysis
+### Generalization and Cost Analysis
 
-| Experiment | Comparison | EMCEE Result | Key Information |
+| Experiment | Control | EMCEE Result | Key Information |
 |------|------|------------|----------|
-| GPT-4o M3-Exam | Native-Basic 78.1 | 85.7 | 8.9% relative gain |
-| Claude-Haiku M3-Exam | Native-Basic 67.4 | 75.6 | 10.8% relative gain |
+| GPT-4o M3-Exam | Native-Basic 78.1 | 85.7 | Relative gain: 8.9% |
+| Claude-Haiku M3-Exam | Native-Basic 67.4 | 75.6 | Relative gain: 10.8% |
 | Llama-3.1-8B M3-Exam | Native-Basic 49.8 | 56.9 | XLT/CoT were weaker on this model |
-| GlobalOpinionQA | Native-Basic 65.3 | 69.0 | Low-resource countries 53.7 to 60.4 |
-| Aya-8B | Native-Basic 46.0 | 49.8 | Average gain even on specialized multilingual models |
-| Qwen3-8B w/o Think | Native-Basic 37.8 | 67.3 | Extraction proved more critical than think-mode |
-| Cost | 3x Eng-CoT + Merge: 76.9, $0.149 | EMCEE: 78.8, $0.140 | Higher input tokens but lower output tokens and total cost |
+| GlobalOpinionQA | Native-Basic 65.3 | 69.0 | Low-resource countries rose from 53.7 to 60.4 |
+| Aya-8B | Native-Basic 46.0 | 49.8 | Average gains on multilingual-specific model |
+| GPT-4o subset | Native-Basic 74.3 | 76.0 | High-resource rose from 83.8 to 87.5 |
+| Qwen3-8B w/o Think | Native-Basic 37.8 | 67.3 | Extraction is more critical than think-mode |
+| Cost | 3x Eng-CoT + Merge: 76.9, $0.149 | EMCEE: 78.8, $0.140 | Higher input tokens but lower output and total cost |
 
 ### Key Findings
-- EMCEE gains are concentrated in low-resource languages and cultural-knowledge tasks, rather than simply stacking more reasoning rounds.
-- RAG (Native/Eng) underperformed EMCEE on multiple tasks, suggesting external retrieval may be less effective than query-aligned context extracted from model parameters.
-- EMCEE (Route) performed worse than the full version, supporting the view that comparing two candidate answers is superior to routing based on the query alone.
-- Failure cases indicate that for global entities, extraction may misidentify the need for local background (e.g., the Wham! vs. Koda Kumi example).
+- EMCEE's benefits are concentrated in low-resource languages and cultural knowledge tasks, rather than being a simple result of stacked reasoning rounds.
+- RAG (Native/Eng) underperformed compared to EMCEE across multiple tasks, suggesting that external retrieval content is not necessarily more effective than query-aligned context extracted internally.
+- EMCEE (Route) was weaker than the full EMCEE, supporting the idea that merging after seeing candidate answers is superior to choosing a path based on the query alone.
+- Failure cases are illustrative: for global entities, extraction may misidentify a need for local cultural knowledge (e.g., misattributing a Wham! song to a Japanese artist in a Japanese query).
 
 ## Highlights & Insights
-- The paper decomposes multilingual prompting into "knowledge arousal" and "reasoning selection" instead of iterating on translation or CoT language choices.
-- The role of synthetic context is clever: it acts as a mechanism for the model to explicitly state internal background that might otherwise be overlooked.
-- The superiority of merging over routing is of practical value. It is difficult to determine if a complex query relies on knowledge or reasoning beforehand, but much easier to spot contextual inconsistencies when comparing two answers.
-- The cost analysis addresses the misconception that EMCEE is stronger simply via "more calls," as 3x Eng-CoT + Merge incurred higher costs with lower accuracy.
+- The paper decouples multilingual prompting into "knowledge elicitation" and "reasoning selection" processes, rather than just refining prompts for translation or CoT language selection.
+- The positioning of synthetic context is clever: it acts not as an external fact base, but as a mechanism to make the model explicitly state background knowledge it knows but might overlook during direct answering.
+- The insight that merging is more stable than routing has high practical value. It is difficult to determine whether a complex query relies on knowledge or reasoning beforehand, but much easier to judge which explanation fits the context once candidate answers are provided.
+- The cost analysis dispels the misconception that EMCEE is stronger simply due to more calls, as 3x Eng-CoT + Merge resulted in higher costs but lower accuracy.
 
 ## Limitations & Future Work
-- Multiple LLM inferences increase computational cost and latency. While more efficient than 3x Eng-CoT, it remains more expensive than single-round prompting.
-- There is a risk of irrelevant contextualization. For queries involving global entities or general knowledge, forced local background extraction can mislead the model.
-- The method relies entirely on internal model knowledge; if the model lacks knowledge of a specific language or culture, the synthetic context may result in confident hallucinations.
-- The authors suggest combining with RAG to mitigate knowledge gaps, but this would alter the "self-contained prompting" setting and require more granular retrieval control.
-- For open-ended subjective questions, the judge's cultural positioning and value preferences may influence results; while GlobalOpinionQA offered some validation, further granular evaluation is needed.
+- Multiple LLM inferences incur computational cost and latency; while more cost-effective than 3x Eng-CoT, it remains more expensive than single-turn prompting.
+- There is a risk of irrelevant contextualization in the extraction step. For queries involving global entities or general knowledge, forced local context extraction can mislead the model.
+- The current method relies entirely on internal knowledge; if the model lacks knowledge of a specific language or culture, synthetic context may result in confident but incorrect hallucinations.
+- While the authors suggest RAG could mitigate knowledge deficits, this would shift the "self-contained prompting" setting and require finer retrieval quality control.
+- For open-ended subjective questions, the judge's cultural positioning and value preferences may impact results; while GlobalOpinionQA provides some validation, more granular evaluations for varied regions/groups are needed.
 
 ## Related Work & Insights
-- **vs XLT**: XLT improves tasks by translating to English and reasoning in English; EMCEE retains the native query and extracts linguistic/cultural background.
-- **vs Trans-Google**: Machine translation improves understanding but may lose local semantics; EMCEE generates background around the original query to minimize translation loss.
-- **vs RAG**: RAG retrieves external passages with quality dependent on the retriever; EMCEE extracts internal context, which is more lightweight and query-aligned but capped by internal knowledge.
-- **vs Multi-agent Debate / Response Merging**: EMCEE's merge involves comparing candidate answers from different information sources rather than debate; this design is transferable to specialized Q&A and cross-cultural recommendations.
+- **vs XLT**: XLT improves multilingual tasks via translation to English and English reasoning; EMCEE preserves the native query and extracts linguistic/cultural background instead of full English-centrism.
+- **vs Trans-Google**: Machine translation improves comprehension but may lose local semantics; EMCEE generates background directly around the original query to minimize translation loss.
+- **vs RAG**: RAG retrieves passages externally with quality dependent on the retriever; EMCEE extracts query-aligned context internally, making it more lightweight but constrained by the model's internal knowledge ceiling.
+- **vs multi-agent debate / response merging**: EMCEE's merge step compares candidate answers from different information sources rather than simulating a debate; this design is transferable to specialized QA, medical QA, and cross-cultural recommendations.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐☆ The combination of synthetic context extraction and LLM-as-a-Judge merging is clear and insightful without requiring complex model modification.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers four major benchmarks, low/high-resource splits, cross-model analysis, cost-benefit analysis, and failure mode sections.
-- Writing Quality: ⭐⭐⭐⭐☆ Intuitive examples, comprehensive tables, and honest discussion of boundaries and failure modes.
-- Value: ⭐⭐⭐⭐⭐ Highly practical for multilingual LLM applications, especially in scenarios lacking external retrieval resources but requiring cultural sensitivity.
+- Novelty: ⭐⭐⭐⭐☆ The combination of synthetic context extraction and LLM-as-a-Judge merging is clear, effective, and insightful without requiring complex model architecture changes.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers four major benchmarks, low/high-resource splits, cross-model analysis, strong models, cost, failure cases, and extensive appendix analysis.
+- Writing Quality: ⭐⭐⭐⭐☆ Visual examples are intuitive, tables are comprehensive, and the authors are transparent about method boundaries and failure modes.
+- Value: ⭐⭐⭐⭐⭐ Highly practical for multilingual LLM applications, particularly in scenarios needing cultural context without external retrieval resources.
 
 <!-- RELATED:START -->
 

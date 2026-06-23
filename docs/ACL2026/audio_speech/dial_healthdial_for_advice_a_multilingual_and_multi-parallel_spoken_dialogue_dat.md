@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Dial HEALTHDIAL for Advice: A Multilingual and Multi-Parallel Spoken Dialogue Dataset for Knowledge-Grounded Information Seeking
 description: >-
-  [ACL 2026][Audio & Speech][spoken dialogue] HEALTHDIAL introduces a dataset comprising 6,000 multi-parallel health information-seeking dialogues across 4 official WHO languages, featuring 163 hours of authentic user speech. It establishes a multilingual spoken RAG benchmark encompassing ASR, TTS, retrieval, knowledge filtering, and user studies.
+  [ACL 2026][Audio & Speech][spoken dialogue] HEALTHDIAL constructs a dataset comprising 6,000 multi-parallel health information-seeking dialogues in 4 official WHO languages and 163 hours of real user speech. It establishes a multilingual spoken RAG benchmark based on ASR, TTS, retrieval, knowledge filtering, and user studies.
 tags:
   - ACL 2026
   - Audio & Speech
@@ -12,7 +12,7 @@ tags:
   - WHO knowledge
   - ASR
 date: 2026-05-08
-content_hash: c880a3026d016c59
+content_hash: c021a8e9fdc01eb7
 ---
 # Dial HEALTHDIAL for Advice: A Multilingual and Multi-Parallel Spoken Dialogue Dataset for Knowledge-Grounded Information Seeking
 
@@ -23,42 +23,43 @@ content_hash: c880a3026d016c59
 **Keywords**: spoken dialogue, multilingual benchmark, health RAG, WHO knowledge, ASR
 
 ## TL;DR
-HEALTHDIAL introduces a dataset comprising 6,000 multi-parallel health information-seeking dialogues across 4 official WHO languages, featuring 163 hours of authentic user speech. It establishes a multilingual spoken RAG benchmark encompassing ASR, TTS, retrieval, knowledge filtering, and user studies.
+HEALTHDIAL constructs a dataset comprising 6,000 multi-parallel health information-seeking dialogues in 4 official WHO languages and 163 hours of real user speech. It establishes a multilingual spoken RAG benchmark based on ASR, TTS, retrieval, knowledge filtering, and user studies.
 
 ## Background & Motivation
-**Background**: Most dialogue system research remains text-centric. Even systems supporting voice often adopt a modular pipeline (ASR → Text Dialogue Model → TTS). Existing multilingual dialogue datasets typically cover tourism, casual conversation, or task-oriented text, lacking support for authentic speech, knowledge grounding, multi-parallel structures, and speaker metadata.
+**Background**: Most dialogue system research remains text-centric. Even when speech is supported, modular pipelines (ASR → Text Dialogue Model → TTS) are typically adopted. Existing multilingual dialogue datasets usually cover tourism, daily conversation, or task-oriented text, but lack support for real speech, knowledge grounding, multi-parallel structures, and speaker metadata.
 
-**Limitations of Prior Work**: While speech is the most natural form of communication, constructing speech-first dialogue datasets entails high costs and privacy risks. Authentic patient consultations contain personal health information (PHI), making direct collection risky. Without high-quality spoken dialogue data, evaluating future speech-native or multilingual RAG systems is challenging.
+**Limitations of Prior Work**: While speech is the most natural form of human communication, constructing speech-first dialogue datasets involves high costs, privacy risks, and difficulties in naturally collecting cross-lingual parallel data. The health domain is particularly sensitive: consulting real patients involves personal health information (PHI), making direct collection risky. Without high-quality spoken dialogue data, it is difficult to evaluate future speech-native or multilingual RAG systems.
 
-**Key Challenge**: The research community requires authentic and natural multilingual spoken dialogues, but real health consultation data cannot be public. Fully machine-generated dialogues tend to be repetitive and lack natural oral variation, while purely translated data produces "translationese," undermining the naturalness of each language.
+**Key Challenge**: The research community requires realistic and natural multilingual spoken dialogue data, but real health consultation data cannot be easily publicized. Fully machine-generated dialogues tend to be repetitive and lack natural oral variation, while pure translation results in "translationese," undermining the naturalness of each language.
 
-**Goal**: The authors aim to construct a dataset that is multilingual, multi-parallel, and knowledge-grounded, containing authentic user speech and sociolinguistic speaker variables. Additionally, they provide baselines, a prototype system, and a reusable data collection toolkit.
+**Goal**: The authors aim to construct a dataset that is multilingual, multi-parallel, and knowledge-grounded, while including real user speech and sociolinguistic variables of speakers. They also provide baselines, a prototype system, and a reusable data collection toolkit.
 
-**Key Insight**: This paper adopts a bottom-up, outline-based data collection approach. It constructs a controlled knowledge base from WHO resources, derives dialogue schemas via pilot dialogues and Markov chains, and then allows native speakers to naturally implement user utterances based on improvisational prompts rather than simple reading or translation of LLM outputs.
+**Key Insight**: The paper adopts a bottom-up, outline-based approach for data collection. It first uses WHO knowledge to build a controlled knowledge base, then uses pilot dialogues and Markov chains to generate dialogue schemas. Native speakers then naturally realize user utterances based on improvisational prompts rather than simply reading or translating LLM outputs.
 
-**Core Idea**: Content control and linguistic naturalness are decoupled: LLMs and schemas control dialogue structure and knowledge grounding, while native speakers provide natural oral expressions and recordings.
+**Core Idea**: Differentiate content control from linguistic naturalness: use LLMs and schemas to control dialogue structure and knowledge grounding, while employing native speakers for natural oral expression and recording.
 
 ## Method
 
 ### Overall Architecture
-HEALTHDIAL is both a dataset and a benchmark. It addresses the challenge of creating a knowledge-grounded, multilingual, and multi-parallel resource with authentic user speech when real health data is restricted. The core mechanism separates "content control" from "linguistic naturalness"—using WHO knowledge and dialogue schemas to control structure while native speakers flesh out the "skeleton" into natural oral speech. Data collection follows four steps: extracting knowledge snippets with parallel tags from WHO Q&A and Fact Sheets, inducing dialogue acts from 20 pilot text consultations, sampling dialogue skeletons via Markov chains filled by GPT-4o, and finally delivering improvisational prompts to native speakers for recording and transcription. It covers Arabic, Chinese, English, and Spanish (1,500 dialogues each), totaling 6,000 dialogues, 41,988 turns, ~163 hours of user speech, and 208 hours of system speech. Each system turn is explicitly linked to a WHO knowledge snippet. The benchmark evaluates ASR, retrieval turn classification, knowledge retrieval, knowledge filtering, response generation, and TTS components individually.
+HEALTHDIAL serves as both a dataset and a benchmark. To address the privacy concerns of real health consultations and the lack of naturalness in LLM-generated speech, the system separates "content control" from "linguistic naturalness." It first controls structure and grounding via WHO knowledge and dialogue schemas, and then native speakers realize and record these frameworks into their native dialects. Data collection follows four steps: extracting knowledge snippets from WHO Q&A and Fact Sheets with parallel tagging; inducing dialogue acts from 20 pilot text consultations; sampling dialogue frameworks via Markov chains and filling them with hypothetical English dialogues using GPT-4o; and finally converting these into improvisational prompts for native speakers of four languages to perform recording and transcription. The final dataset covers Arabic, Chinese, English, and Spanish (1,500 dialogues each), totaling 6,000 dialogues, 41,988 turns, ~163 hours of user speech, and 208 hours of system speech. Each system turn is explicitly linked to a WHO knowledge snippet with retrieval labels. For the benchmark, current user speech with history passes through six components: ASR, retrieval turn classification, knowledge retrieval, knowledge filtering, response generation, and TTS.
 
 ```mermaid
-graph TD
-    K["Multi-parallel WHO Knowledge Grounding<br/>Snippets from WHO Q&A / Fact Sheets, aligned across 4 languages"]
-    subgraph GEN["Schema-guided Outline-based Data Generation"]
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    K["Multi-parallel WHO knowledge grounding<br/>Extract snippets from WHO Q&A / Fact Sheets, aligned across 4 languages"]
+    subgraph GEN["Schema-guided outline-based data generation"]
         direction TB
-        P["Build Scaffold: 20 pilots inducing dialogue acts<br/>Markov chain sampling + gpt-4o English dialogues"]
-        P --> I["Add Content: Improvisational prompts<br/>Native speaker recordings + ASR/Manual revision"]
+        P["Framework: Induce dialogue acts from 20 pilots<br/>Markov chain sampling + GPT-4o English dialogues"]
+        P --> I["Realization: Convert to improvisational prompts<br/>Native speaker recordings + ASR transcription & manual revision"]
     end
     K --> GEN
-    I --> D["HEALTHDIAL Dataset<br/>4 languages x 1,500, 6,000 dialogues, 163h user speech"]
-    subgraph BENCH["Component-level Spoken RAG Benchmark"]
+    I --> D["HEALTHDIAL Dataset<br/>4 languages × 1,500, 6,000 dialogues, 163h user speech"]
+    subgraph BENCH["Component-level spoken RAG benchmark"]
         direction TB
-        B1["ASR (WER / CER)"] --> B2["Retrieval Turn Classification"]
-        B2 --> B3["Knowledge Retrieval<br/>text / speech-to-text"]
-        B3 --> B4["Knowledge Filtering<br/>EM / OOK Recall"]
-        B4 --> B5["Response Generation"]
+        B1["ASR (WER / CER)"] --> B2["Retrieval turn classification"]
+        B2 --> B3["Knowledge retrieval<br/>text / speech-to-text"]
+        B3 --> B4["Knowledge filtering<br/>EM / OOK Recall"]
+        B4 --> B5["Response generation"]
         B5 --> B6["TTS (MCD / CER)"]
     end
     D --> BENCH
@@ -67,63 +68,63 @@ graph TD
 
 ### Key Designs
 
-**1. Multi-parallel WHO Knowledge Grounding: Anchoring Responses to Verifiable Knowledge**
-Health dialogues risk hallucinations if models rely on unconstrained parametric knowledge. HEALTHDIAL constrains all system responses to a controlled knowledge base of 12,045 snippets (Arabic: 2,317, Chinese: 2,431, English: 4,785, Spanish: 2,512) sourced from WHO Q&A and Fact Sheets. 1,618 snippets are fully parallel across all four languages, aligned via parallel identifiers. This allows for an operational definition of hallucinations—any response not supported by the KB is an extrinsic hallucination—and enables the evaluation of out-of-knowledge (OOK) scenarios.
+**1. Multi-parallel WHO knowledge grounding: Locking responses to traceable authoritative knowledge**
+In health dialogues, unconstrained parametric knowledge in models risks producing unverifiable or dangerous suggestions. HEALTHDIAL constrains all system responses to a controlled knowledge base: all snippets originate from WHO Q&A and Fact Sheets, totaling 12,045 entries. Among these, 1,618 snippets are fully parallel across four languages, aligned via parallel identifiers. This design provides an operational definition of hallucination—any response unsupported by the knowledge base is an extrinsic hallucination—and allows for explicit evaluation of out-of-knowledge (OOK) scenarios.
 
-**2. Schema-guided Outline-based Data Generation: Building the Scaffold Before Adding Content**
-End-to-end LLM generation often lacks variety, while machine translation introduces translationese. The authors use a bottom-up outline method: inducing 11 types of dialogue acts from 20 pilot dialogues, sampling 1,500 act sequences using a first-order Markov chain, and generating hypothetical English dialogues using GPT-4o and WHO snippets. Crucially, user utterances are converted into improvisational prompts, which native speakers then record as natural speech. This ensures cross-lingual comparability while preserving natural oral morphology.
+**2. Schema-guided outline-based data generation: Building the skeleton before adding the flesh**
+End-to-end LLM generation often lacks variety, and machine translation introduces translationese. The authors use a bottom-up outline method: 11 categories of dialogue acts are induced from 20 pilot dialogues; a first-order Markov chain samples 1,500 act sequences as frameworks; GPT-4o generates hypothetical English dialogues based on WHO snippets. Crucially, user utterances are converted into improvisational prompts for native speakers to speak naturally, record, and transcribe, rather than reading a script.
 
-**3. Component-level Spoken RAG Benchmark: Diagnosing Modular Failures**
-Since current speech-native models are not yet robust, end-to-end scores fail to explain specific failure points. HEALTHDIAL provides customized metrics for each pipeline stage: WER/CER for ASR, MCD and ASR-based CER for TTS, accuracy for retrieval turn classification, and both text-to-text and speech-to-text metrics for knowledge retrieval. Knowledge filtering is evaluated using Exact Match (EM) and OOK Recall, identifying whether the bottleneck lies in ASR accuracy, cross-modal retrieval, or deductive filtering.
+**3. Component-level spoken RAG benchmark: Diagnosing failures module by module**
+Since current speech-native models are not yet stable, end-to-end scores are difficult to interpret. HEALTHDIAL customizes metrics for each stage: WER/CER for ASR, MCD and ASR-based CER for TTS, and accuracy for retrieval turn classification. Knowledge retrieval includes both text-to-text and speech-to-text, while knowledge filtering uses Exact Match (EM) and OOK Recall to judge which of the top-5 retrieved snippets actually support the response.
 
 ### Loss & Training
-The paper focuses on the dataset and benchmark rather than new loss functions. Baselines for components include fine-tuned XLM-R_large and LLaMA3.1-8B-Inst for turn classification. Knowledge retrieval baselines include text-embedding-3L, gte-multilingual-B, MiniLM-L12-v2, NV-Embed-v2, and BM25, along with CLAP and SpeechT5 for speech-to-text. Knowledge filtering compares fixed thresholds, GPT-4o versions, and LLaMA3.1. TTS uses gpt-4o-mini-tts conditioned on speaker variables like age and primary language.
+The paper focuses on the dataset and benchmark rather than new loss functions. It provides baseline comparisons for each component. Retrieval turn classification compares fine-tuned XLM-R_large and LLaMA3.1-8B-Inst (10-shot). Knowledge retrieval evaluates text-embedding-3L, gte-multilingual-B, MiniLM-L12-v2, NV-Embed-v2, BM25, and speech-to-text encoders like CLAP and SpeechT5. Knowledge filtering compares fixed thresholds, GPT-4.1-nano, LLaMA3.1-8B-Inst, and OpenAI GPT models. TTS uses gpt-4o-mini-tts, conditioned on speaker variables such as age, primary language, and education level.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Language | ASR WER ↓ | ASR CER ↓ | TTS MCD ↓ | TTS CER ↓ | Turn Cls. Acc. ↑ | R@10 (Text) ↑ | R@10 (Speech) ↑ | Filtering EM ↑ | OOK Recall ↑ |
-|:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+|--------|------|------|------|------|------|------|------|------|------|
 | Arabic | 0.23 | 0.07 | 12.08 | 0.10 | 95.39 | 65.88 | 0.20 | 34.27 | 0.00 |
 | Chinese | 0.24 | 0.14 | 11.46 | 0.17 | 95.23 | 70.63 | 0.23 | 39.19 | 14.29 |
 | English | 0.03 | 0.01 | 11.44 | 0.06 | 96.30 | 75.72 | 0.52 | 44.29 | 42.86 |
 | Spanish | 0.02 | 0.01 | 10.84 | 0.07 | 95.93 | 71.82 | 0.42 | 39.54 | 14.29 |
-| **Average** | 0.13 | 0.06 | 11.46 | 0.10 | 95.71 | 71.01 | 0.34 | 39.32 | 17.36 |
+| Average | 0.13 | 0.06 | 11.46 | 0.10 | 95.71 | 71.01 | 0.34 | 39.32 | 17.36 |
 
 ### Ablation Study
 
-| Knowledge Filtering Method | Arabic EM | Chinese EM | English EM | Spanish EM | Average EM | Note |
-|:---|:---:|:---:|:---:|:---:|:---:|:---|
-| Threshold | 6.26 | 6.61 | 6.88 | 6.46 | 6.55 | Fixed similarity threshold; poor performance |
-| LLM @ Top-5 | 19.96 | 19.86 | 23.02 | 21.09 | 21.05 | gpt-4.1-nano filtering; best average |
-| LLM @ Top-10 | 12.58 | 17.15 | 23.33 | 19.55 | 18.15 | More distractors; performance drop |
-| LLM @ Top-50 | 10.85 | 12.28 | 18.72 | 11.03 | 13.72 | Long candidate lists significantly hurt EM |
+| Knowledge Filtering Method | Arabic EM | Chinese EM | English EM | Spanish EM | Average EM | Description |
+|------|---------|------|------|------|------|------|
+| Threshold | 6.26 | 6.61 | 6.88 | 6.46 | 6.55 | Fixed similarity threshold; very low performance |
+| LLM @ Top-5 | 19.96 | 19.86 | 23.02 | 21.09 | 21.05 | GPT-4.1-nano filtering from Top-5; best on average |
+| LLM @ Top-10 | 12.58 | 17.15 | 23.33 | 19.55 | 18.15 | Increased candidates lead to more distraction |
+| LLM @ Top-50 | 10.85 | 12.28 | 18.72 | 11.03 | 13.72 | Long candidate lists significantly hurt accuracy |
 
 ### Key Findings
-- ASR is robust for English and Spanish but significantly more difficult for Arabic and Chinese (WER $0.23$-$0.24$ vs $0.02$-$0.03$).
-- Text-to-text retrieval far outperforms speech-to-text retrieval. The average R@10 (Speech) is only $0.34$, indicating that current cross-modal speech-text retrieval is nearly unusable.
-- Retrieval turn classification is relatively straightforward, with accuracy around $95\%$ across languages, partly because $75.5\%$ of turns require retrieval.
-- Knowledge filtering is a high-value bottleneck. Even using GPT-4.1-nano on top-5 candidates yields only $21.05$ EM; expanding to top-50 reduces this further.
-- English consistently performs best across components while Arabic is the weakest. This gap persists in a fully parallel setting, suggesting systemic issues in model representation rather than data inconsistency.
+- ASR is strong for English and Spanish, but significantly more difficult for Arabic and Chinese (WER: Arabic 0.23, Chinese 0.24 vs. English 0.03, Spanish 0.02).
+- Text-to-text retrieval far outperforms speech-to-text retrieval. Average R@10(Text) is 71.01, while R@10(Speech) is only 0.34, suggesting cross-modal speech-text retrieval is currently nearly unusable.
+- Retrieval turn classification is relatively simple, with accuracy around 95% across all languages, partly because 75.5% of turns require retrieval.
+- Knowledge filtering is a high-value bottleneck. Even with GPT-4.1-nano on top-5 candidates, average EM is only 21.05; expanding to top-50 drops EM to 13.72.
+- English performs best across multiple components while Arabic reflects the weakest performance, even in a fully parallel setting, indicating systematic performance gaps in model capabilities.
 
 ## Highlights & Insights
-- HEALTHDIAL's data design is meticulous, satisfying multilingual, multi-parallel, knowledge-grounded, and speaker metadata requirements simultaneously.
-- The outline-based collection method is a methodological highlight, bypassing PHI concerns while avoiding the robotic nature of pure LLM dialogues.
-- The component-level benchmark is pragmatic, acknowledging the instability of speech-native models by isolating failures in ASR, retrieval, filtering, and TTS.
-- A critical insight from the filtering experiments is that "more is not better"—providing more retrieved snippets to the LLM introduces distractors that sharply decrease filtering accuracy.
+- HEALTHDIAL's data design is meticulous, simultaneously addressing multilingualism, parallel structure, knowledge grounding, real speech, and OOK scenarios.
+- Skeleton-based collection is a methodological highlight, bypassing patient privacy while avoiding the robotic nature of pure LLM generation.
+- Component-level benchmarking is practical, acknowledging that current speech-native models are unstable and diagnosing failures across ASR, retrieval, filtering, and TTS.
+- A critical insight from the knowledge filtering experiment is that "more is not always better": providing too many retrieved snippets (top-50) significantly degrades LLM filtering accuracy due to distraction.
 
 ## Limitations & Future Work
-- Content is LLM-assisted and not validated by medical professionals; it remains a linguistic resource for dialogue research rather than a source of clinical advice.
-- While the WHO KB ensures authority and parallelism, it lacks local cultural adaptation (e.g., traditional medicine or regional health practices).
-- The current benchmark still uses a pipeline architecture, which might not fully represent future end-to-end speech-native systems.
-- User studies were limited to 25 English speakers; large-scale multilingual evaluations for usability and trust are needed.
+- HEALTHDIAL content is assisted by LLMs and not verified by medical experts; it should be used for linguistics and RAG research, not clinical advice.
+- While WHO knowledge ensures authority, it lacks local cultural adaptation. Future work should involve medical and cultural experts to supplement regional health practices.
+- The benchmark currently relies on a pipeline architecture. While useful for diagnosis, it does not fully represent future speech-native end-to-end systems.
+- User studies were limited to 25 English-proficient participants; large-scale multilingual assessment of usability, trust, and satisfaction remains future work.
 
 ## Related Work & Insights
-- **vs. MultiWOZ / Multi3WOZ**: These are primarily text-based; HEALTHDIAL adds authentic user speech, health grounding, and sociolinguistic variables.
-- **vs. MedDialog**: Medical forums are realistic but noisy with high PHI risk. HEALTHDIAL trades clinical realism for public, multi-parallel, and controllable grounding.
-- **vs. Common Voice**: These provide speaker metadata but lack multi-turn knowledge-grounded dialogue tasks.
-- **vs. RAG Benchmarks**: Traditional RAG focuses on text; HEALTHDIAL integrates spoken input, turn classification, and knowledge filtering into the evaluation system.
+- **vs MultiWOZ / Multi3WOZ**: These focus on text; HEALTHDIAL adds real user speech, health knowledge grounding, and sociolinguistic variables.
+- **vs MedDialog / Medical Forum Data**: Real forum data is noisier and has privacy issues. HEALTHDIAL sacrifices clinical "realism" for public availability, parallelism, and controlled grounding.
+- **vs Common Voice / Switchboard**: While these have speaker metadata, they lack knowledge-grounded multi-turn health dialogues.
+- **vs RAG benchmarks**: Traditional benchmarks are text-based; HEALTHDIAL integrates spoken input, turn classification, and knowledge filtering into the evaluation system.
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐⭐ 

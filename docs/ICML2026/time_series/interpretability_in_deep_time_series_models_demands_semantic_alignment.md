@@ -2,13 +2,13 @@
 title: >-
   [Paper Note] Interpretability in Deep Time Series Models Demands Semantic Alignment
 description: >-
-  [ICML 2026][Time Series][Interpretability] This is a **position paper** proposing that deep time series models should enforce **semantic alignment**: ensuring that internal variables and mechanisms correspond to the reasoning processes of domain experts rather than merely explaining internal computations. The core innovation is the definition of persistence con
+  [ICML 2026][Time Series][Interpretability] This is a **position paper**—proposing that deep time series models should enforce **semantic alignment**: making a model's internal variables and mechanisms correspond to a domain expert's reasoning rather than just explaining internal computations. The core innovation defines persistence constraints for semantic alig
 tags:
   - ICML 2026
   - Time Series
   - Interpretability
 date: 2026-05-08
-content_hash: 5e643bf56bc0a0be
+content_hash: 9e42cf2479394392
 ---
 # Interpretability in Deep Time Series Models Demands Semantic Alignment
 
@@ -16,57 +16,61 @@ content_hash: 5e643bf56bc0a0be
 **arXiv**: [2602.02239](https://arxiv.org/abs/2602.02239)  
 **Code**: To be confirmed  
 **Area**: Time Series / Interpretability  
-**Keywords**: Semantic alignment, interpretability, time series, concept bottleneck, neuro-symbolic
+**Keywords**: Semantic Alignment, Interpretability, Time Series, Concept Bottleneck, Neuro-symbolic
 
 ## TL;DR
-This is a **position paper** proposing that deep time series models should enforce **semantic alignment**: ensuring that internal variables and mechanisms correspond to the reasoning processes of domain experts rather than merely explaining internal computations. The core innovation is the definition of persistence constraints for semantic alignment specific to temporal evolution, which is an issue unique to time series.
+This is a **position paper**—proposing that deep time series models should enforce **semantic alignment**: making a model's internal variables and mechanisms correspond to a domain expert's reasoning rather than just explaining internal computations. The core innovation defines persistence constraints for semantic alignment regarding temporal evolution (a challenge unique to time series).
 
 ## Background & Motivation
 
-**Background**: Deep learning has shown significant performance in time series forecasting, but the black-box nature of these models limits their application in high-risk areas such as finance and healthcare. Existing interpretability methods (attention mechanisms, post-hoc explanations, mechanistic interpretability) primarily attempt to explain internal model computations.
+**Background**: Deep learning has shown significant effectiveness in time series forecasting, but the black-box nature of these models limits their application in high-stakes fields such as finance and healthcare. Existing interpretability methods (attention mechanisms, post-hoc explanations, mechanistic interpretability) all attempt to explain internal model computations.
 
-**Limitations of Prior Work**: These methods only address **structural opacity** (how to understand internal computations) but fail to resolve **semantic opacity**. For example, a physician cannot understand the meaning of "hidden variable activation at timestep 47" because it does not map to any medical concept they understand (e.g., "tachycardia onset").
+**Limitations of Prior Work**: These methods only address **structural opacity** (how to understand internal computations) but fail to resolve **semantic opacity**. For instance, a doctor cannot understand the meaning of "latent variable activation at timestep 47" because it does not map to medical concepts they understand (e.g., "tachycardia episode").
 
-**Key Challenge**: Even if a model's predictions are accurate, users cannot meaningfully verify, debug, or intervene in model behavior because the conceptual level of model operations does not match the user's reasoning level.
+**Key Challenge**: Even if a model's predictions are accurate, users cannot meaningfully verify, debug, or intervene in the model's behavior because the conceptual level of the model's operations does not match the user's reasoning level.
 
-**Goal**: (1) Formally define semantic alignment in time series; (2) provide a design blueprint for interpretable time series models; and (3) discuss properties that support trustworthiness and new design opportunities.
+**Goal**: (1) Formally define semantic alignment in time series; (2) Provide a design blueprint for interpretable time series models; (3) Discuss properties supporting trustworthiness and new design opportunities.
 
-**Key Insight**: Inspired by Concept Bottleneck Models (CBM) in computer vision, the authors argue that existing CBM methods are unsuitable for time series due to a lack of semantic alignment guarantees regarding temporal evolution.
+**Key Insight**: Inspired by Concept Bottleneck Models (CBM) in Computer Vision, but recognizing that existing CBM methods are unsuitable for time series as they lack semantic alignment guarantees regarding temporal evolution.
 
-**Core Idea**: Extend CBMs to the temporal domain by decomposing the model into [Concept Encoding → Concept Propagation → Task Decoding] and constraining the propagation mechanisms to satisfy domain knowledge.
+**Core Idea**: Extend Concept Bottleneck Models to the temporal domain by decomposing the model into [Concept Encoding → Concept Propagation → Task Decoding] and constraining the propagation mechanism to satisfy domain knowledge constraints.
 
 ## Method
 
 ### Overall Architecture
-All time series models considered in this paper can be categorized under a single **Encoding-Propagation-Decoding** (Enc-Prop-Dec) template:
+All time series models considered in this paper follow the same **Encoding-Propagation-Decoding** (Enc-Prop-Dec) template:
 $$\mathbf{u}_t = \text{Enc}(\mathbf{x}_{\leq t}), \quad \mathbf{z}_{t+1} = \text{Prop}(\mathbf{z}_{\leq t}, \mathbf{u}_t), \quad \hat{\mathbf{y}} = \text{Dec}(\mathbf{z}_{t+1})$$
-Where $\mathbf{u}_t$ is the instantaneous representation generated by the encoder, and $\mathbf{z}_t$ is the dynamic representation generated by the propagation layer. In standard deep models, both are semantically opaque latent variables. The paper's logic involves formalizing "semantic alignment" (distinguishing between structural/semantic opacity, defining concepts and mechanisms, and identifying instantaneous and dynamic concept alignment) to provide an actionable **design blueprint**. The blueprint follows the same Enc-Prop-Dec backbone but forces $\mathbf{u}_t$ to correspond to instantaneous concepts and $\mathbf{z}_{t+1}$ to dynamic concepts, applying alignment and mechanism constraints throughout.
+Where $\mathbf{u}_t$ is the instantaneous representation generated by the encoder, and $\mathbf{z}_t$ is the dynamic representation generated by the propagation layer—both of which are semantically opaque latent variables in standard deep models. The logic of this paper is to first formalize "semantic alignment" (distinguishing structural/semantic opacity, defining concepts and mechanisms, and providing instantaneous and dynamic concept alignment along with mechanism alignment constraints), and then provide an actionable **design blueprint**. The blueprint follows the same Enc-Prop-Dec skeleton but forces $\mathbf{u}_t$ to correspond to instantaneous concepts and $\mathbf{z}_{t+1}$ to correspond to dynamic concepts, applying instantaneous alignment at encoding and dynamic alignment (persistence) plus mechanism constraints at propagation, trained using a three-term loss (task + concept + propagation).
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 26, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 420}}}%%
 flowchart TD
-    X["Raw Time Series x≤t"] --> ENC["Concept Encoding<br/>Extract Instantaneous Concepts U_t (Source)"]
-    ENC -->|Instantaneous Alignment| PROP["Concept Propagation<br/>Dynamic Concepts Z_t+1 via Temporal/Spatiotemporal Mechanisms"]
-    PROP -->|Dynamic Alignment & Persistence| DEC["Task Decoding<br/>Optional if output is a concept"]
+    X["Original Time Series x≤t"] --> ENC["Concept Encoding<br/>Extract Instantaneous Concepts U_t (Source)"]
+    ENC -->|Instantaneous Concept Alignment| PROP["Concept Propagation<br/>Temporal/Spatio-temporal mechanisms evolve dynamic concepts Z_t+1"]
+    PROP -->|Dynamic Concept Alignment & Persistence| DEC["Task Decoding<br/>Optional if output itself is a concept"]
     DEC --> Y["Prediction ŷ"]
-    MECH["Mechanism Alignment: Constrain mechanisms<br/>to Monotonic / Linear / Physical Law families"] -.Constrains.-> PROP
-    LOSS["Three-term Loss Training<br/>L = α·Task + β·Concept + γ·Propagation"] -.Supervises.-> ENC
+    MECH["Mechanism Alignment: Constrain mechanisms to<br/>acceptable families (Monotonic/Linear/Physical)"] -.Labels Prop.-> PROP
+    LOSS["Three-term Loss Training<br/>L = α·Task + β·Concept + γ·Prop"] -.Supervises Enc & Prop.-> ENC
     LOSS -.-> PROP
 ```
 
 ### Key Designs
 
-**1. Formalization of Semantic Opacity: Separating Computation from Meaning**
-Most interpretability work focuses on "how the model computes," but few ask if users can map internal activations to domain concepts. This paper separates structural opacity (hidden internal logic) from semantic opacity (inability to express reasoning via domain concepts). It introduces "concepts" as interpretable random variables and "mechanisms" as conditional probability distributions $P(V_{\text{out}} \mid V_{\text{in}})$. This distinction reveals that existing methods either focus purely on structure or ignore how temporal evolution disrupts alignment over time.
+**1. Formalizing Semantic Opacity: Separating "Incomprehensible Computation" from "Undefinable Domain Meaning"**
 
-**2. Binary Classification of Instantaneous and Dynamic Concepts: Persistence Constraints**
-User-relevant concepts are split into two categories: Instantaneous concepts $C_t^U$ (snapshots of the system state, e.g., "temperature exceeds threshold") and Dynamic concepts $C_t^Z$ (the user's prediction targets whose semantics must persist over time, e.g., "heat stress accumulation"). Semantic alignment is formalized as the simultaneous satisfaction of: $P(U_t = C_t^U \mid \mathbf{x}_{\leq t}) = 1$ and $P(Z_{t+1} = C_{t+1}^Z \mid \mathbf{x}_{\leq t}) = 1$. The latter is unique to time series—without ensuring that alignment persists into the future, semantic clarity decays exponentially during multi-step propagation.
+Most existing interpretability work focuses on explaining "how it computes internally," but few ask if a doctor can map "latent variable activation at timestep 47" to a medical concept like "tachycardia onset." This paper first separates the two types of opacity: structural opacity refers to the inability to see internal processes, while semantic opacity refers to the inability to express model reasoning using domain concepts. To this end, two basic objects are introduced: "Concepts" (human-interpretable random variables) and "Mechanisms" (conditional probability distributions between concepts $P(V_{\text{out}} \mid V_{\text{in}})$). Semantic alignment is then defined as the matching between model representations and domain concepts. This distinction allows the identification of blind spots in existing methods: they either focus only on structural computation or ignore how temporal evolution destroys alignment—even if aligned at time $t$, it may drift at $t+1$.
 
-**3. Mechanism Alignment as Constraint Satisfaction: Aligning "How Concepts Interact"**
-Aligning concepts is insufficient; the relations between concepts must also be acceptable to the user. Mechanism alignment is defined as a constraint satisfaction problem: $P(V_{\text{out}} \mid V_{\text{in}}) \in \mathcal{M}^{(h)}_{V_{\text{out}} \mid V_{\text{in}}}$, where $\mathcal{M}^{(h)}$ is a family of acceptable distributions (e.g., monotonic, linear, or physically constrained). This allows users to control the reasoning steps and enables formal verification.
+**2. Binary Classification of Instantaneous and Dynamic Concepts: Adding Temporal Persistence Constraints**
 
-**4. Design Blueprint: Projecting Definitions onto the Enc-Prop-Dec Skeleton**
-The paper provides an actionable blueprint extending CBMs to the temporal domain. **Concept Encoding** maps raw windows to human-interpretable source concepts $c^{(k)}_{\leq t}$ (ensuring instantaneous alignment). **Concept Propagation** uses temporal mechanisms $P(c^{(k)}_{t+1}\mid c^{(k)}_{\leq t})$ and spatiotemporal mechanisms $P(c^{(k)}_{t+1}\mid c^{(j)}_{\leq t},\dots)$ to evolve concepts (ensuring dynamic alignment and mechanism constraints). **Task Decoding** $P(Y\mid\mathbf{c})$ maps concepts to outputs. Training involves a triple loss: $\mathcal{L}=\alpha\mathcal{L}_{\text{task}}+\beta\mathcal{L}_{\text{concept}}+\gamma\mathcal{L}_{\text{prop}}$.
+Concepts of interest to users fall into two categories, and conflating them misses the specific difficulty of time series. This paper splits them into: Instantaneous Concepts $C_t^U$, which are snapshots of the system's current state independent of temporal evolution (e.g., "current temperature exceeds threshold"), and Dynamic Concepts $C_t^Z$, which are concepts whose future values the user wants to predict and whose semantics must remain consistent over time (e.g., "heat stress accumulation"). Consequently, semantic alignment is formalized as two simultaneous constraints: $P(U_t = C_t^U \mid \mathbf{x}_{\leq t}) = 1$ and $P(Z_{t+1} = C_{t+1}^Z \mid \mathbf{x}_{\leq t}) = 1$. The second constraint has no equivalent in static models and is a unique contribution of this paper—if alignment is satisfied only at time $t$ without guaranteeing persistence at $t+1$, semantic alignment will decay exponentially, rendering the model untrustworthy after multi-step propagation.
+
+**3. Mechanism Alignment as a Constraint Satisfaction Problem: Making "How Concepts Relate" Consistent with User Understanding**
+
+Concept alignment alone is insufficient; the way a model expresses relationships between concepts must also be recognized by the user, otherwise, the user cannot verify or intervene in reasoning steps. This paper formalizes mechanism alignment as constraint satisfaction: requiring $P(V_{\text{out}} \mid V_{\text{in}}) \in \mathcal{M}^{(h)}_{V_{\text{out}} \mid V_{\text{in}}}$, where $\mathcal{M}^{(h)}$ is a user-acceptable family of conditional probability distributions (e.g., monotonic functions, linear relationships, or physical constraints). By restricting reasoning mechanisms to such a declarative family, users regain control over reasoning steps, creating interfaces for formal verification and human-AI interaction.
+
+**4. Design Blueprint for Interpretable Models: Mapping Abstract Definitions to the "Enc-Prop-Dec" Skeleton**
+
+To guide modeling, the paper provides an actionable blueprint mapping the three alignment types onto the Enc-Prop-Dec skeleton—essentially extending Concept Bottleneck Models (CBM) from CV to the temporal domain. **Concept Encoding** maps the raw window to a set of human-interpretable source concepts $c^{(k)}_{\leq t},\, k\in\mathcal{S}$ (handling instantaneous alignment); **Concept Propagation** uses two types of mechanisms to evolve concepts—Temporal Mechanisms $P(c^{(k)}_{t+1}\mid c^{(k)}_{\leq t})$ handle individual concept evolution, while Spatio-temporal Mechanisms $P(c^{(k)}_{t+1}\mid c^{(j)}_{\leq t},\dots)$ handle dependencies between concepts (handling dynamic alignment and mechanism constraints); **Task Decoding** $P(Y\mid\mathbf{c})$ maps concepts to the output (optional if the output is an interpretable concept). Training utilizes a three-term loss: $\mathcal{L}=\alpha\mathcal{L}_{\text{task}}+\beta\mathcal{L}_{\text{concept}}+\gamma\mathcal{L}_{\text{prop}}$, where the concept loss supervises the encoder and the propagation loss supervises the propagation layer—explaining why, in ablation studies, removing the propagation loss collapses concept alignment during long-term prediction. The blueprint serves as a **research guide** rather than a finalized system: achieving mechanism alignment while maintaining expressivity remains an open problem.
 
 ## Key Experimental Results
 
@@ -74,51 +78,51 @@ The paper provides an actionable blueprint extending CBMs to the temporal domain
 
 | Interpretability Paradigm | Instantaneous Alignment | Dynamic Alignment | Mechanism Alignment |
 |-----------|-----------|-----------|--------|
-| Input Importance / Surrogate / Post-hoc | ✗ | ✗ | ✗ |
+| Input Importance / Proxy / Post-hoc | ✗ | ✗ | ✗ |
 | Attention Mechanisms | ✗ | ✗ | ✗ |
 | Koopman Linearization | ✗ | ~ | ~ |
 | Symbolic Regression | ~ | ~ | ✓ |
 | Mechanistic Interpretability | ✗ | ✗ | ✗ |
 | Prototype Methods | ~ | ✗ | ✗ |
-| Physics-informed Constraints | ~ | ~ | ✓ |
+| Physics-Informed Constraints | ~ | ~ | ✓ |
 | **Ours (Semantic Alignment)** | **✓** | **✓** | **✓** |
 
 ### Ablation Study
 
-| Design Options | Key Properties | Description |
+| Design Option | Key Property | Description |
 |--------|--------|------|
-| Instantaneous Only | Incomplete | Fails to ensure semantic stability during temporal evolution. |
-| Add Dynamic Alignment | Necessary | Prevents the exponential decay of semantic alignment. |
-| 3 Losses vs. 2 Losses | Crucial | Removing the propagation loss leads to misalignment in long-term forecasts. |
+| Instantaneous Only | Incomplete | Cannot guarantee semantic stability during temporal evolution |
+| Adding Dynamic Alignment | Necessary | Prevents exponential decay of semantic drift |
+| 3-term Loss vs. 2-term | Critical | Removing propagation loss leads to loss of concept alignment in long-term forecasting |
 
 ### Key Findings
-- **Necessity of Dynamic Alignment**: If the second alignment constraint is ignored, the model's trajectory will deviate from the user's conceptual understanding after multi-step propagation, even if instantaneous predictions are accurate.
-- **Relationship with Static CBM**: The framework is compatible with current CBM advancements (probabilistic concepts, embeddings) but adds dimensions of temporal constraints.
-- **Mitigating Accuracy-Interpretability Trade-offs**: By utilizing residual paths, concept embeddings, or unsupervised concepts, semantically aligned models can maintain performance comparable to black-box models.
+- **Necessity of Dynamic Alignment**: If the second alignment constraint is ignored, even if concept predictions at each timestep are accurate, the model will deviate from user-understood concept trajectories after multi-step propagation—a problem specific to time series.
+- **Relationship with Static CBM**: The framework is directly compatible with existing CBM advancements (probabilistic concepts, concept embeddings, etc.) but adds temporal constraints.
+- **Mitigating the Accuracy-Interpretability Trade-off**: Through residual paths, concept embeddings, or unsupervised concepts, semantically aligned models can maintain accuracy comparable to black-box models.
 
 ## Highlights & Insights
-- **Conceptual Framework Innovation**: Reframing interpretability from "explaining internal computation" to "ensuring concepts and mechanisms match user mental models" is a significant shift for the field.
-- **Time-Series Specific Challenges**: Unlike static models, time series models must maintain alignment across multiple steps. Post-hoc explanations cannot solve this; it must be enforced at the architectural level.
-- **Transferable Design Principles**: The blueprint applies to prediction, classification, and generation, pointing toward the integration of neuro-symbolic methods and formal verification in time series.
-- **Rational Critique of Existing Methods**: Table 1 systematically demonstrates that existing mechanistic or linearization methods lack either concept alignment, mechanism alignment, or dynamic persistence.
+- **Conceptual Framework Innovation**: Reframing interpretability from "explaining internal computation" to "ensuring concepts and mechanisms align with user thinking"—a shift insightful for the entire field.
+- **Unique Time Series Challenges**: Unlike static models, time series models must maintain semantic alignment across multiple timesteps; post-hoc explanations or attention visualizations cannot solve this—it must be enforced at the design level.
+- **Transferable Design Principles**: The blueprint applies to various tasks (forecasting, classification, generation) and points toward combining neuro-symbolic methods and formal verification with time series.
+- **Rational Critique of Existing Methods**: Systematically demonstrating via Table 1 that existing mechanistic interpretability and linearization methods lack concept alignment, mechanism alignment, or ignore dynamic alignment.
 
 ## Limitations & Future Work
-- **Labeling Bottleneck**: Semantic alignment requires extensive concept-level annotations. The authors suggest LLM labeling or concept discovery as alternatives.
-- **Lack of Complete Formal Theory**: The paper focuses on definitions and blueprints but does not provide a full theory for quantifying alignment levels or formal verification algorithms.
-- **Missing Implementation**: As a position paper, it lacks a specific system implementation or case studies to validate the blueprint's feasibility.
-- **Mechanism Alignment Trade-offs**: Discussion on the impact of physical constraints on model capacity and the balance between expression and constraint satisfaction is limited.
+- **Annotation Bottleneck**: Achieving semantic alignment requires substantial concept-level labels; the paper acknowledges this but suggests alternatives (LLM labeling, concept discovery, formal constraints).
+- **Lack of Complete Formal Theory**: The paper focuses on definitions and blueprints but does not provide a complete theory (e.g., quantifying alignment degree, formal verification algorithms).
+- **Absence of Practical Systems**: As a position paper, it lacks a specific system implementation or case studies to validate the blueprint's feasibility.
+- **Mechanism Alignment Trade-offs**: Enforcing constraints through physical laws or modularity may impact accuracy; the balance between satisfying constraints and maintaining expressivity needs deeper discussion.
 
 ## Related Work & Insights
-- **vs. Traditional Interpretability (LIME, SHAP)**: These explain individual predictions but do not build an intervenable semantic structure. 
-- **vs. Neuro-symbolic Methods**: Most symbolic work is static or simplified; this paper extends it to full time series frameworks.
-- **vs. Koopman / Linear Dynamics**: These constrain the learning space but not necessarily in alignment with human concepts.
-- **vs. Concept Bottleneck Models (CBM)**: While CBMs target static classification, this paper's primary contribution is the **formalization of semantic alignment for temporal propagation layers**.
+- **vs. Traditional Interpretability (LIME, SHAP)**: These explain individual predictions but do not build testable, intervenable semantic structures; this paper emphasizes that post-hoc explanations cannot guarantee alignment.
+- **vs. Neuro-symbolic Methods**: Combines symbolic reasoning but mostly in static or simple dynamic settings; this paper extends it to a full time-series framework.
+- **vs. Koopman / Linearized Dynamics**: These methods learn spatially constrained models but are not necessarily aligned with user concepts; this paper adds concept-level constraints.
+- **vs. Concept Bottleneck Models (CBM)**: CBM literature primarily targets static classification; this paper's primary contribution is the **formalization of semantic alignment in temporal propagation layers**.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ (Systematically formalizes semantic alignment for time series and introduces dynamic persistence constraints).
-- Experimental Thoroughness: ⭐⭐⭐ (As a position paper, it lacks empirical data but uses rigorous logic and a design blueprint to support its claims).
-- Writing Quality: ⭐⭐⭐⭐⭐ (Logically clear with consistent notation and a compelling running example).
-- Value: ⭐⭐⭐⭐⭐ (Highly significant for the temporal interpretability community, identifying several new research directions).
+- Novelty: ⭐⭐⭐⭐⭐ Formulates semantic alignment in time series for the first time; extends CBM to dynamic domains; introduces dynamic alignment persistence constraints.
+- Experimental Thoroughness: ⭐⭐⭐ As a position paper, it lacks experimental data but supports its points through comparison tables, counter-arguments, and design blueprints; a prototype system would increase persuasiveness.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear logic, consistent notation, and strong motivation; the running example (industrial equipment fault diagnosis) aids understanding.
+- Value: ⭐⭐⭐⭐⭐ Significant guidance for the time series interpretability community; formalizes long-neglected issues and provides an actionable blueprint with at least 5 new research directions.
 
 <!-- RELATED:START -->
 
@@ -126,8 +130,8 @@ The paper provides an actionable blueprint extending CBMs to the temporal domain
 
 ## Related Papers
 
-- [\[ICML 2026\] PATRA: Pattern-Aware Alignment and Balanced Reasoning for Time Series Question Answering](patra_pattern-aware_alignment_and_balanced_reasoning_for_time_series_question_an.md)
 - [\[ICML 2026\] Position: Current Benchmarking Hinders Real Progress in Deep Learning for Time Series](position_current_benchmarking_hinders_real_progress_in_deep_learning_for_time_se.md)
+- [\[ICML 2026\] PATRA: Pattern-Aware Alignment and Balanced Reasoning for Time Series Question Answering](patra_pattern-aware_alignment_and_balanced_reasoning_for_time_series_question_an.md)
 - [\[NeurIPS 2025\] SynTSBench: Rethinking Temporal Pattern Learning in Deep Learning Models for Time Series](../../NeurIPS2025/time_series/syntsbench_rethinking_temporal_pattern_learning_in_deep_learning_models_for_time.md)
 - [\[ICML 2026\] OLIVIA: Harmonizing Time Series Foundation Models with Power Spectral Density](olivia_harmonizing_time_series_foundation_models_with_power_spectral_density.md)
 - [\[ICML 2026\] TimeOmni-VL: Unified Models for Time Series Understanding and Generation](timeomni-vl_unified_models_for_time_series_understanding_and_generation.md)

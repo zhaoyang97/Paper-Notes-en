@@ -2,13 +2,13 @@
 title: >-
   [Paper Note] Two-Dimensional Quantization for Geometry-Aware Audio Coding
 description: >-
-  [ICML 2026][Audio & Speech][FSQ] The authors replace the scalar quantizer in neural audio codecs with Q2D2, a geometry-aware quantizer that utilizes "paired channels + structured 2D grids." By substituting learnable codebooks with fixed hexagonal, rectangular, or rhombic lattice points, it matches or exceeds the speech reconstruction quality of RVQ, V
+  [ICML 2026][Audio & Speech][FSQ] The authors replace scalar quantizers in neural audio codecs with Q2D2, a geometric quantizer using "paired channels + structured 2D grids." By replacing learnable codebooks with fixed hexagonal, rectangular, or rhombic lattices, they achieve speech reconstruction quality that matches or surpasses RVQ, VQ, and FSQ usin
 tags:
   - ICML 2026
   - Audio & Speech
   - FSQ
 date: 2026-05-08
-content_hash: b0745f7366c37c4e
+content_hash: 229d74ac584a8e42
 ---
 # Two-Dimensional Quantization for Geometry-Aware Audio Coding
 
@@ -16,124 +16,124 @@ content_hash: b0745f7366c37c4e
 **arXiv**: [2512.01537](https://arxiv.org/abs/2512.01537)  
 **Code**: https://github.com/tashQ/Q2D2 (Available)  
 **Area**: Neural Audio Coding / Quantization Methods / Speech Representation  
-**Keywords**: Two-dimensional quantization, Geometry-aware, Neural audio codec, FSQ, Implicit codebook  
+**Keywords**: 2D Quantization, Geometry-Aware, Neural Audio Codec, FSQ, Implicit Codebook
 
 ## TL;DR
-The authors replace the scalar quantizer in neural audio codecs with Q2D2, a geometry-aware quantizer that utilizes "paired channels + structured 2D grids." By substituting learnable codebooks with fixed hexagonal, rectangular, or rhombic lattice points, it matches or exceeds the speech reconstruction quality of RVQ, VQ, and FSQ using a single quantizer and an extremely low token rate.
+The authors replace scalar quantizers in neural audio codecs with Q2D2, a geometric quantizer using "paired channels + structured 2D grids." By replacing learnable codebooks with fixed hexagonal, rectangular, or rhombic lattices, they achieve speech reconstruction quality that matches or surpasses RVQ, VQ, and FSQ using a single quantizer at extremely low token rates.
 
 ## Background & Motivation
-**Background**: Current mainstream neural audio codecs (e.g., Encodec, DAC, WavTokenizer) typically follow a three-stage "Encoder → Quantizer → Decoder" structure. Quantizers generally choose between VQ-VAE, Residual VQ (RVQ), or Finite Scalar Quantization (FSQ), outputting discrete tokens for downstream audio LLMs.
+**Background**: Modern neural audio codecs (e.g., Encodec, DAC, WavTokenizer) follow an "Encoder → Quantizer → Decoder" architecture. Quantizers typically use VQ-VAE, Residual VQ (RVQ), or Finite Scalar Quantization (FSQ) to produce discrete tokens for downstream audio LLMs.
 
-**Limitations of Prior Work**: VQ and RVQ suffer from training instability, and codebook utilization drops sharply as the codebook size increases, necessitating various tricks like commitment loss, codebook reboots, and random restarts. FSQ addresses codebook collapse by defining an implicit product codebook via "per-channel independent scalar quantization." However, quantizing each channel individually completely ignores the correlations between channels, compressing the expressive capacity onto a 1D grid.
+**Limitations of Prior Work**: VQ and RVQ suffer from training instability and sharply decreasing codebook utilization as size increases, requiring tricks like commitment loss, codebook re-initialization, and random perturbations. FSQ defines an implicit product codebook via "per-channel independent scalar quantization," avoiding collapse; however, quantizing each channel separately ignores inter-channel correlations, compressing representation power into a 1D grid.
 
-**Key Challenge**: Achieving "high codebook utilization" and "modeling channel correlation" appears to be mutually exclusive; FSQ chooses the former at the expense of the latter, while VQ does the opposite.
+**Key Challenge**: There appears to be a trade-off between "high codebook utilization" and "modeling channel correlations"—FSQ prioritizes the former at the expense of the latter, while VQ does the opposite.
 
-**Goal**: (i) Retain the simplicity and high utilization of FSQ; (ii) Reintroduce geometric structures between channels in discrete space; (iii) Match or exceed SOTA speech reconstruction quality at low token rates.
+**Goal**: (i) Inherit the simplicity and high utilization of FSQ; (ii) Reintroduce geometric structure between channels in discrete space; (iii) Match or exceed SOTA speech reconstruction quality at low token rates.
 
-**Key Insight**: The authors observe that the "1D scalar grid" of FSQ can naturally generalize to "2D geometric grids." By pairing channels and mapping each pair to a fixed 2D tiling, one obtains both (a) the stability of implicit product codebooks and (b) the ability to model channel correlations through 2D grids.
+**Key Insight**: The authors observe that the "1D scalar grid" of FSQ can naturally generalize to a "2D geometric grid." By pairing channels and mapping each pair to a fixed 2D tiling, they gain both (a) the stability of implicit product codebooks and (b) the ability to model channel correlations through 2D lattices.
 
-**Core Idea**: Replace "per-channel independent scalar quantization" with "pair-wise channel nearest neighbor quantization on 2D structured grids." This upgrades the quantizer from a 1D scalar grid to a 2D geometric tiling. The codebook remains implicit and requires no embedding learning.
+**Core Idea**: Replace "per-channel independent scalar quantization" with "pair-wise channel → nearest neighbor quantization on 2D structured grids." This upgrades the quantizer from a 1D scalar grid to a 2D geometric tiling while maintaining an implicit product codebook without learnable embeddings.
 
 ## Method
 
 ### Overall Architecture
-Q2D2 preserves the overall framework of the codec, specifically replacing the scalar quantizer in the "encoder → single quantizer → decoder" pipeline (similar to WavTokenizer) with a geometric quantizer that pairs channels and maps them to fixed 2D grids. The core problem it addresses is how to recover the inter-channel correlations discarded by FSQ while maintaining FSQ's stability as an implicit product codebook without learned embeddings. The answer lies in upgrading from a "1D scalar grid" to a "2D geometric tiling."
+Q2D2 maintains the overall codec framework, specifically replacing the scalar quantizer in the "encoder → single quantizer → decoder" pipeline of WavTokenizer with a geometric quantizer that pairs channels and applies nearest neighbor mapping on fixed 2D grids. The core problem addressed is how to recover inter-channel correlations lost in FSQ while retaining its "implicit product codebook, no learnable parameters" stability. The solution is upgrading from "1D scalar grids" to "2D geometric tilings."
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    ENC["Encoder output z (dimension d=6, even)"]
-    PROJ["Lightweight projection: Affine + tanh + per-dimension scaling to [−l_i/2, l_i/2]"]
-    TILE["2D Geometric Tiling Nearest Neighbor<br/>Paired channels mapped to hexagonal / rectangular / rhombic grids"]
-    CB["Implicit Product Codebook<br/>Cartesian product index |C|=∏ L_j, zero storage for embeddings"]
-    STE["STE (Straight-Through Estimator) + Even dimension alignment<br/>Forward discrete, backward gradient copy, end-to-end training"]
+    ENC["Encoder output z (dim d=6, even)"]
+    PROJ["Light Projection: Affine + tanh + per-dim scale to [−l_i/2, l_i/2]"]
+    TILE["2D Geometric Tiling Nearest Neighbor<br/>Paired channels mapped to Hexagonal / Rectangular / Rhombic grid"]
+    CB["Implicit Product Codebook<br/>Cartesian product index |C|=∏ L_j, zero storage embedding"]
+    STE["STE + Even Dimension Alignment<br/>Forward discrete, Backward gradient copy, E2E training"]
     OUT["Out-projection → Decoder reconstructs waveform"]
     ENC --> PROJ --> TILE --> CB --> STE --> OUT
 ```
 
 ### Key Designs
 
-**1. 2D Geometrical Tiling: Embedding Correlation into Discrete Grids**
+**1. 2D Geometric Tiling: Embedding Correlations into Discrete Grids**
 
-FSQ compresses each channel onto a 1D scalar line, assuming channels are independent. Q2D2 instead reshapes dimension $d$ (enforced as even, optimally $d=6$) into $P=d/2$ two-dimensional pairs. Each pair $z''_j=(z'_{2j-1}, z'_{2j})$ is mapped to a predefined 2D grid $\mathcal{G}_j$ via nearest neighbor quantization: $\hat z''_j=\arg\min_{g\in\mathcal{G}_j}\lVert z''_j-g\rVert_2$. Three grid shapes are explored: rectangular (orthogonal lattice), hexagonal (optimal circle packing in 2D with equidistant neighbors), and rhombic (an additional layer of points in the center of rectangular cells, doubling the density). Each tiling is controlled by a spread factor $e_i=(l_i-1)/2$ and computed offline before training.
+FSQ compresses each channel into a 1D scalar line, assuming independence. Q2D2 reshapes dimension $d$ (enforced as even, optimally $d=6$) into $P=d/2$ two-dimensional pairs. Each pair $z''_j=(z'_{2j-1}, z'_{2j})$ is mapped to a predefined 2D grid $\mathcal{G}_j$ using the nearest neighbor: $\hat z''_j=\arg\min_{g\in\mathcal{G}_j}\lVert z''_j-g\rVert_2$. Three lattice shapes are explored: rectangular (standard orthogonal), hexagonal (optimal circle packing in 2D, equidistant neighbors), and rhombic (adding a mid-point layer to the rectangle to double density). Tilings are controlled by a spread factor $e_i=(l_i-1)/2$ and are computed offline (Alg. 1/2/3) and frozen during training.
 
-The "shape" matters because a more uniform coverage of the space $[-e,e]^2$ for a fixed number of points leads to higher codebook utilization and lower quantization error. Hexagonal tiling is the most efficient packing theoretically. In experiments, rhombic tiling often matches hexagonal quality with slightly fewer levels. Rectangular tiling performs worst as it ignores diagonal filling. This is the leverage point: generalizing 1D scalar quantization to geometry-aware quantization with minimal modification.
+The "shape" affects performance because more uniform coverage of $[-e,e]^2$ leads to higher codebook utilization and lower quantization error. Hexagonal is the theoretically optimal packing. Experimentally, rhombic tilings often match hexagonal performance with slightly fewer levels, while rectangular grids perform worst due to inefficient diagonal coverage. This "channel pairing + 2D tiling" serves as the lever to generalize scalar quantization to geometry-aware quantization.
 
-**2. Implicit Product Codebook + Lightweight Projection: Large Codebooks with Zero Parameters**
+**2. Implicit Product Codebook + Light Projection: Scale without Parameters**
 
-Q2D2 does not explicitly store embeddings. Instead, the codebook is defined as the Cartesian product of the 2D grids of all pairs. Given $L_j=l_{2j-1}\cdot l_{2j}$ points for the $j$-th pair, the total codebook size is $|\mathcal{C}|=\prod_{j=1}^P L_j$. During inference, discrete indices are derived by finding the nearest grid point for each pair. To allow the encoder and decoder to operate in continuous space, linear projections are added before and after quantization. The encoder output is projected to $\mathbb{R}^d$, passed through $\tanh$ to $[-1,1]^d$, and scaled per dimension to bound the $i$-th dimension to $[-l_i/2, l_i/2]$ (where $l_i$ is the number of quantization levels, typically $5\le l_i\le 11$).
+Q2D2 does not explicitly store embeddings. The codebook is defined as the Cartesian product of the 2D grids of all pairs. For $P$ pairs where the $j$-th pair has $L_j=l_{2j-1}\cdot l_{2j}$ points, the total codebook size is $|\mathcal{C}|=\prod_{j=1}^P L_j$. Discrete indices are derived mathematically from the nearest coordinates. To keep the encoder/decoder in continuous space, linear projections are used. The encoder output is mapped via an affine transform and $\tanh$ to $[-1,1]^d$, then scaled by $l_i/2$ to bound the $i$-th dimension to $[-l_i/2, l_i/2]$ ($l_i$ typically ranges between 5 and 11).
 
-This design eliminates the memory overhead of learned codebooks in VQ (which scales with $|\mathcal{C}|\cdot d$). Q2D2 achieves codebook sizes comparable to VQ with learnable parameters limited only to the projection matrices. Crucially, because the codebook is a "fixed geometric structure" rather than "learned high-dimensional vectors," codebook collapse is mathematically impossible. This removes the need for stabilization tricks like commitment loss, entropy loss, EMA, or codebook reboots.
+This design minimizes memory overhead. While learnable codebooks in VQ scale with $|\mathcal{C}|\cdot d$ (e.g., 2M parameters for 4096 entries $\times$ 512 dims), Q2D2 achieves similar codebook sizes with only two projection matrices as learnable parameters. Since the codebook is a fixed geometric structure, collapse is mathematically impossible, allowing for the removal of stabilization tricks like commitment loss, entropy loss, EMA, and re-seeding.
 
-**3. STE + Even Dimension Alignment: End-to-End Training for Discrete Quantization**
+**3. STE + Dimension Alignment: End-to-End Training**
 
-Since the $\arg\min$ operation in 2D nearest neighbor search is non-differentiable, Q2D2 employs the Straight-Through Estimator (STE). In the forward pass, discrete nearest neighbors are selected; in the backward pass, gradients for $\hat z''_j$ are copied directly to $z''_j$. The dimension $d$ must be even to facilitate pair-wise reshaping. Experiments show that $d=6$ (3 pairs) is optimal and significantly smaller than the hundreds of dimensions typically used in VQ. This reduction not only makes the quantizer parameter-free but also slims down the projection layers, maintaining a real-time factor (RTF) comparable to WavTokenizer (0.0039 vs 0.0032) and low memory usage (~820 MB).
+The $\arg\min$ operation is non-differentiable. Q2D2 utilizes a Straight-Through Estimator (STE), passing the gradient of $\hat z''_j$ directly to $z''_j$ during the backward pass. The dimension $d$ must be even to form pairs. The optimal $d=6$ found in experiments is significantly smaller than the hundreds of dimensions used in VQ, which reduces the size of the final encoder projection. Inference RTF stays comparable to WavTokenizer (0.0039 vs 0.0032) with a stable memory footprint of ~820 MB.
 
 ### Mechanism
-Consider a pair of channels: Let $d=6$ and take the first pair with quantization levels $l_1=l_2=9$, resulting in a spread factor $e=(9-1)/2=4$. The encoder output for this pair is transformed via $\tanh$ and scaled to continuous coordinates, e.g., $z''_1=(2.7, -1.3)$. Using rectangular tiling, the nearest lattice point is $(3, -1)$. With rhombic tiling, which includes an offset layer of points, the nearest neighbor might be $(2.5, -1.5)$, reducing quantization error. The codebook for this pair contains $9\times 9=81$ points. With 3 such pairs, the total implicit codebook $|\mathcal{C}|=81^3\approx 5.3\times 10^5$. Coordinates like $(3, -1)$ are encoded as discrete indices and passed to the decoder.
+Consider a pair of channels: set $d=6$ and take the 1st pair with quantization levels $l_1=l_2=9$ (spread factor $e=(9-1)/2=4$). The encoder output for this pair is scaled to continuous coordinates, e.g., $z''_1=(2.7, -1.3)$. In a rectangular tiling, the nearest point is $(3,-1)$. In a rhombic tiling, which includes half-offset points, the nearest neighbor might be $(2.5,-1.5)$, resulting in lower error. With 3 pairs, the implicit codebook size $|\mathcal{C}|=81^3\approx 5.3\times 10^5$, all without storing embeddings.
 
 ### Loss & Training
-The reconstruction loss follows WavTokenizer (adversarial + multi-scale spectral reconstruction loss). The quantizer **requires no commitment, entropy, or auxiliary losses**. Training uses AdamW with an initial learning rate of $8\text{e}{-5}$ and cosine decay over ~40 epochs on 24 kHz audio. Hardware: 2× RTX 6000 48G or 2× L40S 48G.
+The reconstruction side uses adversarial and multi-scale spectral losses from WavTokenizer. The quantizer **requires no commitment, entropy, or auxiliary losses**. Training uses AdamW, initial LR $8\text{e}{-5}$, cosine decay, batch 16, and 24 kHz sampling for ~40 epochs on 2× RTX 6000 or L40S GPUs.
 
 ## Key Experimental Results
 
 ### Main Results
-Testing was performed on an 8K-hour WavTokenizer dataset and a 150K-hour multilingual Emilia+MLS dataset. Metrics include UTMOS, PESQ, STOI, V/UV F1, MUSHRA, and CMOS.
+Evaluation was conducted on an 8K-hour WavTokenizer dataset and 150K-hour Emilia+MLS datasets using UTMOS, PESQ, STOI, V/UV F1, MUSHRA, and CMOS metrics.
 
 | Dataset | Model | Nq | token/s | UTMOS ↑ | PESQ ↑ | STOI ↑ |
 |--------|------|----|---------|---------|--------|--------|
 | LibriSpeech test-clean | GT | – | – | 4.09 | – | – |
 | LibriSpeech test-clean | DAC | 12 | 600 | 4.00 | 4.15 | 0.95 |
 | LibriSpeech test-clean | Encodec | 8 | 600 | 3.09 | 3.18 | 0.94 |
-| LibriSpeech test-clean | **Q2D2 (rhombic)** | **1** | **333** | **4.07** | **3.79** | **0.96** |
+| LibriSpeech test-clean | **Ours (rhombic)** | **1** | **333** | **4.07** | **3.79** | **0.96** |
 | LibriSpeech test-clean | X-codec | 2 | 100 | 4.21 | 2.88 | 0.86 |
 | LibriSpeech test-clean | Mimi | 8 | 100 | 3.56 | 2.80 | 0.91 |
-| LibriSpeech test-clean | **Q2D2** | **1** | **166** | **4.07** | **3.36** | **0.95** |
+| LibriSpeech test-clean | **Ours** | **1** | **166** | **4.07** | **3.36** | **0.95** |
 | LibriSpeech test-clean | BigCodec | 1 | 80 | 4.11 | 3.27 | 0.93 |
 | LibriSpeech test-clean | WavTokenizer | 1 | 75 | 3.79 | 2.63 | 0.90 |
 
-Key Observation: Q2D2 with a **single quantizer at 333 tokens/s** matches the UTMOS of DAC (12 quantizers at 600 tokens/s) and achieves higher STOI. At 166 tokens/s, it significantly outperforms Mimi, Encodec, and DAC within the same token budget.
+Key Observation: **Ours** with **1 quantizer + 333 token/s** matches the UTMOS of DAC's 12 quantizer + 600 token/s configuration with higher STOI. At the 166 token/s tier, it significantly outperforms Mimi, Encodec, and DAC within the same token budget.
 
 ### Ablation Study
 
 | Configuration | Key Observation | Description |
 |------|---------|------|
-| Q2D2 (rhombic) | best PESQ / STOI / F1 | Optimal packing for levels $\le 9$. |
-| Q2D2 (hexagonal) | Slightly lower than rhombic | Requires more levels to match rhombic performance. |
-| Q2D2 (rectangle) | Worst | Wastes 2D space by ignoring diagonal filling. |
-| $d=6$ | Optimal | Smaller values lack expressiveness; larger values hinder training. |
-| $5\le l_i\le 11$ | Stable range | Errors increase outside this range. |
-| No commitment / reseed | Utilization remains ~100% | Confirms that implicit codebooks are inherently resistant to collapse. |
+| Ours (rhombic) | best PESQ / STOI / F1 | Rhombic offers optimal packing at $\le 9$ levels. |
+| Ours (hexagonal) | Slightly lower than rhombic | Hexagonal requires more levels to reach parity. |
+| Ours (rectangle) | Worst | Orthogonal grid ignores diagonal packing, wasting 2D space. |
+| $d=6$ | Optimal | Too small lacks expression; too large hinders training. |
+| $5\le l_i\le 11$ | Stable range | Utilization or quality drops outside this range. |
+| No commitment / reseed | ~100% utilization | Confirms the inherent robustness of implicit codebooks. |
 
 ### Key Findings
-- **Geometry Matters**: Rhombic > Hexagonal > Rectangular. The performance gap stems from 2D packing efficiency, validating the intuition that "2D geometry $\neq$ 1D scalar × 2."
-- **Drastic Reduction in Token Rate**: Q2D2 at 166 tokens/s with one quantizer matches DAC at 600 tokens/s with 12 quantizers, offering significant sequence length savings for downstream audio LLMs.
-- **~100% Codebook Utilization**: Achieved without commitment, entropy, or reseed tricks, relying purely on the implicit product codebook structure.
-- **Minimal Parameters**: The only learnable components are the linear projections (proportional to $d$, not $|\mathcal{C}|$), saving over 2M parameters compared to VQ's learned embeddings.
+- **Geometric shape matters**: Rhombic > Hexagonal > Rectangle, confirming that 2D geometric structure is more than just "1D scalar $\times$ 2."
+- **Token rate reduction**: Q2D2 at 166 token/s with a single quantizer matches DAC at 600 token/s with 12 quantizers, offering massive sequence length savings for audio LLMs.
+- **~100% Utilization**: No commitment, entropy, or reseed tricks are required due to the implicit product codebook.
+- **Zero codebook parameters**: Only linear projections (proportional to $d$, not $|\mathcal{C}|$) are learnable, saving over 2M parameters compared to VQ.
 
 ## Highlights & Insights
-- **Generalizing FSQ to $n$-dimensional grids** is a natural progression, but the authors are the first to systematically implement it in 2D and prove the importance of geometric shapes. The "pair-wise channel" approach is an elegant, minimal modification.
-- **The true power of implicit codebooks**: When a codebook is a "fixed geometric tiling" rather than "learned high-dimensional embeddings," codebook collapse is mathematically impossible. This is a fundamental advantage of FSQ-based methods over VQ, and Q2D2 proves that geometric structure itself can encode correlations.
-- **Transferability**: This approach can be applied to image tokenizers (replacing VQ-VAE codebooks), video codecs, or 3D point cloud quantization. Appendix E previews 3D tiling extensions.
-- **Reducing quantizer count saves sequence length**: Lowering the number of tokens/quantizers directly reduces training and inference costs for multimodal/audio LLMs.
+- **Natural generalization of FSQ**: Moving from 1D to $n$-D grids is intuitive, but the authors are the first to systematically apply it to 2D and prove the importance of geometric shape.
+- **Power of Implicit Codebooks**: When the codebook is a fixed geometric tiling rather than learned high-dimensional embeddings, collapse is mathematically non-existent.
+- **Transferability**: The approach is applicable to image tokenizers (replacing VQ-VAE), video codecs, or 3D point cloud quantization. Appendix E discusses 3D tiling extensions.
+- **Sequence Efficiency**: Reducing quantizers directly reduces sequence length for multimodal training, offering significant cost savings.
 
 ## Limitations & Future Work
-- Currently limited to 2D; while 3D or higher-dimensional structured tilings are theoretically superior, they are left for future work (Appendix E).
-- Geometric shapes are selected manually; there is no automated mechanism to search for optimal tilings for different domains (speech vs. music).
-- The spread factor $e_i$ and number of levels $l_i$ remain hyperparameters explored within a relatively narrow grid search.
-- Validation is primarily speech-focused; comparisons on general audio and music are less extensive.
+- Currently limited to 2D; 3D or higher-order structured tilings are mentioned as future work (Appendix E).
+- Lattice geometry is manually selected; there is no automated search mechanism for different audio domains (music, speech, ambient).
+- Hyperparameters like spread factor $e_i$ and level $l_i$ were explored within a relatively narrow grid search window.
+- Evaluation focuses primarily on speech; comparisons for general audio and music are less exhaustive.
 
 ## Related Work & Insights
-- **vs FSQ (Mentzer et al., 2023)**: FSQ uses 1D scalar product codebooks. Q2D2 upgrades to 2D, explicitly modeling correlations within channel pairs. While Q2D2 requires even-numbered dimensions, it provides significantly higher reconstruction quality at equivalent token rates.
-- **vs VQ / VQ-VAE**: VQ learns high-dimensional embedding codebooks, whereas Q2D2 avoids learned codebooks entirely. Q2D2 sacrifices the flexibility of "completely free codebooks" for stability, zero codebook parameters, and zero auxiliary losses.
-- **vs RVQ (Encodec / DAC)**: RVQ uses multiple residual quantization layers for high fidelity, requiring 8–12 quantizers. Q2D2 matches this quality with a **single quantizer**, which is much more favorable for downstream sequence modeling.
-- **vs WavTokenizer (Ji et al., 2025b)**: WavTokenizer reduced RVQ to a single VQ but still faced training instabilities. Q2D2 replaces the learnable VQ codebook with an implicit 2D codebook, achieving superior PESQ, STOI, and F1.
+- **vs FSQ (Mentzer et al., 2023)**: FSQ uses 1D scalar product codebooks. Q2D2 upgrades to 2D grids to model inter-channel correlations.
+- **vs VQ / VQ-VAE**: VQ learns high-dimensional embedding codebooks. Q2D2 uses zero-parameter fixed tilings, trading VQ's total flexibility for stability and parameter efficiency.
+- **vs RVQ (Encodec / DAC)**: RVQ uses multiple layers for high-fidelity reconstruction. Q2D2 achieves comparable quality with a **single quantizer**.
+- **vs WavTokenizer (Ji et al., 2025b)**: While WavTokenizer reduced RVQ to a single VQ, it still experiences VQ instability. Q2D2 replaces the learnable VQ codebook with an implicit 2D codebook, yielding better PESQ, STOI, and F1.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Beautifully generalizes FSQ to 2D geometric tilings; simple yet effective.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covers various domains and large-scale datasets, though 3D and image transfers are left as future work.
-- Writing Quality: ⭐⭐⭐⭐ Clear pseudocode, comprehensive tables, and well-integrated visualizations.
-- Value: ⭐⭐⭐⭐ High-quality single-quantizer codecs at 166 tokens/s are highly practical for the audio LLM era.
+- Novelty: ⭐⭐⭐⭐ 
+- Experimental Thoroughness: ⭐⭐⭐⭐ 
+- Writing Quality: ⭐⭐⭐⭐ 
+- Value: ⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
 

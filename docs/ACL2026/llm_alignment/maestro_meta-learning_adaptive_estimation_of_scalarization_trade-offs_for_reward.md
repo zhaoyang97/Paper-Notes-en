@@ -2,13 +2,13 @@
 title: >-
   [Paper Note] MAESTRO: Meta-learning Adaptive Estimation of Scalarization Trade-offs for Reward Optimization
 description: >-
-  [ACL 2026][Alignment & RLHF][GRPO] This work proposes MAESTRO, which reframes reward scalarization in GRPO as a contextual bandit problem. By utilizing a lightweight Conductor network to adaptively select reward weights for each prompt-response pair based on last-layer hidden states, it consistently outperforms static and single-reward baselines across
+  [ACL 2026][Alignment & RLHF][GRPO] Ours proposes MAESTRO, which reformulates reward scalarization in GRPO as a contextual bandit problem. By utilizing a lightweight Conductor network to leverage last-layer hidden states of the model, it adaptively selects reward weights for each prompt-response pair, consistently outperforming static and single reward b
 tags:
   - ACL 2026
   - Alignment & RLHF
   - GRPO
 date: 2026-05-08
-content_hash: b0cb88ee4cbbaa65
+content_hash: 3b35e49a3271109d
 ---
 # MAESTRO: Meta-learning Adaptive Estimation of Scalarization Trade-offs for Reward Optimization
 
@@ -20,71 +20,71 @@ content_hash: b0cb88ee4cbbaa65
 
 ## TL;DR
 
-This work proposes MAESTRO, which reframes reward scalarization in GRPO as a contextual bandit problem. By utilizing a lightweight Conductor network to adaptively select reward weights for each prompt-response pair based on last-layer hidden states, it consistently outperforms static and single-reward baselines across seven open-domain benchmarks.
+Ours proposes MAESTRO, which reformulates reward scalarization in GRPO as a contextual bandit problem. By utilizing a lightweight Conductor network to leverage last-layer hidden states of the model, it adaptively selects reward weights for each prompt-response pair, consistently outperforming static and single reward baselines across seven open-domain benchmarks.
 
 ## Background & Motivation
 
-**Background**: GRPO has become a mainstream paradigm for LLM alignment, excelling in tasks with verifiable ground truths such as mathematics and code. However, extending GRPO to open-domain generation (e.g., creative writing, social intelligence) remains a critical challenge due to the lack of objective verification rules.
+**Background**: GRPO has become a mainstream paradigm for LLM alignment, performing excellently on tasks with verifiable ground truths such as mathematics and code. However, extending GRPO to open-domain generation (e.g., creative writing, social intelligence) remains a critical challenge due to the lack of objective verification rules.
 
-**Limitations of Prior Work**: Current open-domain alignment primarily relies on two approaches: (1) LLM-as-a-Judge, which is computationally expensive and introduces style biases (e.g., favoring longer responses); (2) heuristic proxy signals based on perplexity or entropy, which correlate poorly with human utility and use static, context-independent scalarization weights. Neither solution captures the fine-grained multi-objective trade-offs in open-domain generation.
+**Limitations of Prior Work**: Current open-domain alignment primarily follows two routes: (1) LLM-as-a-Judge, which is computationally expensive and introduces stylistic biases (e.g., favoring longer responses); (2) methods based on heuristic proxy signals like perplexity and entropy, which correlate poorly with human utility and use static, context-independent scalarization weights. Neither approach captures the fine-grained multi-objective trade-offs inherent in open-domain generation.
 
-**Key Challenge**: Open-domain alignment is inherently a multi-objective optimization problem—conflicts exist between creativity and factuality, or conciseness and richness. Existing methods collapse the high-dimensional Pareto frontier into a single point using fixed weights. Applying the same reward preferences to mathematical reasoning and creative writing is fundamentally suboptimal.
+**Key Challenge**: Open-domain alignment is essentially a multi-objective optimization problem—contradictions exist between creativity and factuality, or conciseness and richness. However, existing methods collapse the high-dimensional Pareto front into a single point using fixed weights; it is suboptimal to apply identical reward preferences to both mathematical reasoning and creative writing.
 
-**Goal**: To design a framework capable of dynamically adjusting reward weights based on the semantic content of prompt-response pairs, enabling GRPO to adaptively switch reward preferences across different tasks and contexts.
+**Goal**: Design a framework capable of dynamically adjusting reward weights based on the semantic content of prompt-response pairs, enabling GRPO to adaptively switch reward preferences across different tasks and contexts.
 
-**Key Insight**: It is observed that the last-layer hidden states of a Transformer serve as a semantic bottleneck, encoding high-level information about task intent and generative features. These representations can be used as context to train a lightweight meta-policy for selecting reward scalarization strategies.
+**Key Insight**: It is observed that the last-layer hidden states of a Transformer serve as a semantic bottleneck, encoding high-level information regarding task intent and generation features. Using these latent representations as context, a lightweight meta-policy can be trained to select reward scalarization strategies.
 
-**Core Idea**: Reward orchestration is modeled as a contextual bandit problem. Using the group-relative advantage of GRPO as a meta-reward signal, a Conductor network is co-evolved with the policy model within a bi-level optimization framework.
+**Core Idea**: Model reward orchestration as a contextual bandit problem, using the group-relative advantage of GRPO as the meta-reward signal. Within a bilevel optimization framework, let the Conductor network co-evolve with the policy model.
 
 ## Method
 
 ### Overall Architecture
 
-MAESTRO integrates a lightweight Conductor layer atop standard GRPO, transforming reward weight selection from fixed constants into semantic-dependent decisions. Given a prompt $q$, the policy model $\pi_\theta$ first samples a set of candidate outputs $\{o_i\}$. The Conductor $\pi_\phi$ reads the last-layer hidden states of each prompt-response pair and samples a reward-focusing action to induce a weight vector $\mathbf{w}^{(a)}$. The raw reward vector $\mathbf{r}$ is then fused with the KL penalty into a scalar reward $R$, which is group-normalized to obtain the advantage $\hat{A}$. The training follows a bi-level optimization: the inner loop updates the policy $\pi_\theta$ via GRPO using $\hat{A}$, while the outer loop uses the same $\hat{A}$ as a meta-reward to update the Conductor $\pi_\phi$.
+MAESTRO attaches a lightweight Conductor layer atop standard GRPO, transforming reward scalarization weights from fixed constants into semantic-dependent decisions. Given a prompt $q$, the policy model $\pi_\theta$ first samples a set of candidate outputs $\{o_i\}$. The Conductor $\pi_\phi$ reads the last-layer hidden state of each prompt-response pair and samples a reward-focusing action, inducing a weight vector $\mathbf{w}^{(a)}$. The raw reward vector $\mathbf{r}$ is fused with the KL penalty into a scalar reward $R$, which is then group-normalized to obtain the advantage $\hat{A}$. The training follows a bilevel optimization: the inner loop updates the policy $\pi_\theta$ via $\hat{A}$ at a high frequency, while the outer loop uses $\hat{A}$ as a meta-reward to update the Conductor $\pi_\phi$, allowing both to co-evolve.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    A["Prompt q → Policy π_θ samples candidates {o_i}"] --> B["Extract last-layer hidden states h for each pair"]
+    A["prompt q → Policy π_θ samples candidates {o_i}"] --> B["Extract last-layer hidden state h for each pair"]
     subgraph COND["Conductor Network"]
         direction TB
-        B --> C["Linear head softmax: Independent action a<br/>sampling for each response → weight vector w"]
+        B --> C["Linear head softmax: Independent reward action<br/>sampling a per response → Induce weight vector w"]
     end
-    C --> D["Fuse r + KL penalty via w → Scalar R<br/>Group normalization → Advantage Â"]
-    subgraph BILEVEL["Advantage-driven Bi-level Meta-optimization"]
+    C --> D["Fuse reward r and KL penalty via w → Scalar reward R<br/>Group normalization → Advantage Â"]
+    subgraph BILEVEL["Advantage-driven Bilevel Meta-optimization"]
         direction TB
-        D --> E["Inner: GRPO updates policy π_θ using Â (token-level high freq)"]
-        D --> F["Outer: Â as meta-reward updates Conductor π_φ (episode-level low freq)"]
+        D --> E["Inner: GRPO updates policy π_θ via Â (Token-level high freq)"]
+        D --> F["Outer: Â as meta-reward updates Conductor π_φ (Episode-level low freq)"]
     end
-    E -->|"Buffer (h, a, Â) triplets"| G["Asynchronous two-time-scale update: Decoupling gradients"]
+    E -->|"Buffer (h, a, Â) triplets"| G["Asynchronous two-timescale update: Decouple gradients"]
     G --> F
     F -.Next Round.-> B
 ```
 
 ### Key Designs
 
-**1. Conductor Network: Semantic-conditioned Dynamic Reward Weighting**
+**1. Conductor Network: Dynamic Reward Weight Selection via Last-layer Hidden States**
 
-Open-domain alignment is a multi-objective problem, yet fixed weights collapse the Pareto frontier, imposing identical preferences on disparate tasks. MAESTRO leverages the fact that the last-layer hidden state $h \in \mathbb{R}^{d_{\text{model}}}$ encodes task intent. The Conductor is implemented as a linear projection head $\pi_\phi(\cdot|h) = \text{softmax}((W_\phi h + b_\phi)/\tau)$. During training, discrete actions $a$ are sampled to select reward modes; during inference, the continuous distribution serves as deterministic weights. The use of a simple linear head ensures minimal overhead while effectively distinguishing task semantics.
+Open-domain alignment is a multi-objective problem, yet fixed weights collapse the high-dimensional Pareto front unnecessarily. MAESTRO notes that the last-layer hidden state $h \in \mathbb{R}^{d_{\text{model}}}$ acts as a semantic bottleneck encoding task intent and generation features. The Conductor is implemented as a linear projection head $\pi_\phi(\cdot|h) = \text{softmax}((W_\phi h + b_\phi)/\tau)$. During training, discrete actions $a$ are sampled from this categorical distribution to select reward-focusing modes; during inference, the distribution is used as deterministic weights. A linear head is sufficient because last-layer representations are already linearly separable for task semantics, ensuring minimal overhead.
 
-**2. Advantage-driven Bi-level Meta-optimization: Heterogeneous Sampling for Meta-gradients**
+**2. Advantage-driven Bilevel Meta-optimization: Solving Signal Vanishing via Intra-group Heterogeneous Sampling**
 
-To provide stable signals for the Conductor, MAESTRO maximizes the meta-objective $J(\phi) = \mathbb{E}[\hat{A}(x,y;w(h,a))]$. Under group-relative normalization, using uniform weights for all responses to a single prompt results in a zero-mean advantage, causing meta-gradients to vanish. MAESTRO solves this via heterogeneous sampling—independently sampling reward actions $a_{i,j}$ for each response within a group. This breaks the symmetry of the group baseline, creating "meta-competition" that exposes informative variance for weight optimization.
+The Conductor requires a stable training signal. MAESTRO's meta-objective is $J(\phi) = \mathbb{E}[\hat{A}(x,y;w(h,a))]$. A critical challenge is that under group-relative normalization, if all responses for a single prompt use the same weights, the mean advantage is always zero, causing meta-gradients to vanish. The solution is intra-group heterogeneous sampling—independently sampling reward actions $a_{i,j}$ for each response within the group. This breaks the symmetry of the group baseline and introduces "meta-competition," exposing informative variance for the meta-gradient.
 
-**3. Asynchronous Two-time-scale Update: Decoupling Meta and Policy Optimization**
+**3. Asynchronous Two-timescale Update: Decoupling Conductor and Policy Optimization**
 
-Tightly coupling meta and policy gradients can lead to instability. MAESTRO buffers $(h_{i,j}, a_{i,j}, \hat{A}_{i,j})$ triplets during GRPO training and periodically updates $\phi$ using the Policy Gradient Theorem. This creates two time scales: high-frequency token-level updates for the policy (inner loop) and low-frequency episode-level updates for the Conductor (outer loop). This design prevents gradient interference and ensures stable learning of meaningful trade-offs.
+Tightly coupling meta-gradients with policy gradients can lead to training instability. MAESTRO buffers $(h_{i,j}, a_{i,j}, \hat{A}_{i,j})$ triplets and periodically updates $\phi$ using the Policy Gradient Theorem. Consequently, the policy model updates at a high token-level frequency (inner loop) while the Conductor updates at a lower episode-level frequency (outer loop). This asynchronous design prevents gradient interference and ensures stable learning of meaningful trade-offs.
 
 ### Loss & Training
 
-The reward space consists of $K=5$ components: perplexity reward $r_{\text{ppl}}$ (proxy for reasoning consistency), format validity $r_{\text{fmt}}$, entropy reward $r_{\text{ent}}$ (exploration vs. redundancy), length penalty $r_{\text{len}}$, and semantic preference reward $r_{\text{pref}}$ (from Skywork-Reward). The inner loop uses standard GRPO loss, while the outer loop employs REINFORCE gradients with entropy regularization.
+The reward space consists of $K=5$ components: perplexity reward $r_{\text{ppl}}$ (proxy for reasoning consistency), format validity reward $r_{\text{fmt}}$, entropy reward $r_{\text{ent}}$ (balancing exploration and redundancy), length penalty $r_{\text{len}}$, and semantic preference reward $r_{\text{pref}}$ (from Skywork-Reward). The inner loop uses standard GRPO loss for the policy model, while the outer loop utilizes REINFORCE gradients (with entropy regularization) to update the Conductor.
 
 ## Key Experimental Results
 
 ### Main Results (Qwen3-8B)
 
-| Dataset | Base | SFT | NOVER | EM-GRPO | MAESTRO | Gain vs. Best Baseline |
-|---------|------|-----|-------|---------|---------|------------------------|
+| Dataset | Base | SFT | NOVER | EM-GRPO | MAESTRO | Gain vs Prev. SOTA |
+|--------|------|-----|-------|---------|---------|------------|
 | Natural Reasoning | 39.6 | 26.0 | 46.9 | 52.0 | **53.2** | +1.2 |
 | SS-GEN | 33.1 | 68.7 | 77.8 | 88.8 | **92.5** | +1.9 |
 | WebInstruct | 7.8 | 34.6 | 42.7 | 43.4 | **43.5** | +0.1 |
@@ -95,47 +95,47 @@ The reward space consists of $K=5$ components: perplexity reward $r_{\text{ppl}}
 
 ### Ablation Study
 
-| Configuration | Description | Effect |
-|---------------|-------------|--------|
-| Equal-Weights (Eq) | Fixed uniform weights | Moderate gain but unstable (e.g., 38.27% on ToMBench) |
-| Random-Weights (Rand) | Randomized weights | Occasionally detrimental (35.7% on GeneralThoughts) |
+| Configuration | Description | Result |
+|------|------|------|
+| Equal-Weights (Eq) | Fixed uniform weights | Moderate gain but unstable; e.g., only 38.27% on ToMBench |
+| Random-Weights (Rand) | Random weights | Occasionally detrimental (35.7% on GeneralThoughts) |
 | MAESTRO (Ours) | Conductor dynamic weights | Optimal across almost all tasks |
-| Train Time SS-GEN | w/ Conductor vs w/o | **20.1% Speedup** (reduced redundant generation) |
-| Train Time WebInstruct | w/ Conductor vs w/o | Marginal overhead (+4.0%) |
+| Training Time SS-GEN | w/ Conductor vs w/o | **Accelerated by 20.1%** (reduced redundant generation) |
+| Training Time WebInstruct | w/ Conductor vs w/o | Overhead of only +4.0% |
 
 ### Key Findings
 
-- **Significant Gain on ToMBench (+8.1%)**: Social intelligence tasks require flexible expression and emotional understanding, where the advantages of dynamic reward orchestration are most pronounced.
-- **EM-GRPO performance**: While entropy minimization aids deterministic reasoning, it degrades significantly on open-domain tasks (SS-GEN, ToMBench), illustrating that a single inductive bias cannot generalize across domains.
-- **Efficiency via Redundancy Reduction**: On SS-GEN, the Conductor learns to suppress verbose outputs early, shortening average sequence lengths and increasing training throughput by 20.1%.
-- **Semantic Weight Patterns**: The Conductor learns distinct patterns—creative writing favors entropy rewards, while structured reasoning favors perplexity rewards. These patterns converge rapidly.
+- **Largest gain on ToMBench (+8.1%)**: Social intelligence tasks require flexible expression and emotional understanding, where the advantages of dynamic reward orchestration are most pronounced.
+- **EM-GRPO vs. MAESTRO in Reasoning**: Entropy minimization favors deterministic reasoning but degrades severely on open-domain tasks (SS-GEN, ToMBench), illustrating that a single inductive bias cannot generalize across domains.
+- **Dynamic weights reduce redundancy**: On SS-GEN, the Conductor learns to suppress lengthy outputs early, shortening average sequence length and increasing training throughput by 20.1%.
+- **Semantic patterns in weights**: Creative writing tasks focus on entropy rewards, while structured reasoning tasks emphasize perplexity rewards; weight patterns converge and stabilize early in training.
 
 ## Highlights & Insights
 
-- **Elegant Fusion of Contextual Bandits and GRPO**: Modeling reward weighting as a decision problem conditioned on semantics is both intuitive and efficient. This paradigm is extensible to any RL alignment scenario requiring multi-reward trade-offs.
-- **Solving Meta-signal Vanishing via Heterogeneous Sampling**: Exploiting the zero-mean property of group-relative advantage to introduce variance through diverse intra-group reward configurations is a refined solution to meta-credit assignment.
-- **Efficiency Gains**: Dynamic orchestration does not merely maintain efficiency; it can accelerate training in long-form generation by penalizing redundancy, countering the intuition that increased complexity necessitates slower training.
+- **Integration of Contextual Bandits and GRPO**: Modeling reward weight selection as a decision-making problem dependent on prompt-response semantics is elegant and efficient, requiring only a linear head. This paradigm is generalizable to any RL alignment scenario involving multi-reward trade-offs.
+- **Solving Meta-signal Vanishing via Heterogeneous Sampling**: Leveraging the zero-mean property of group-relative advantage by assigning different reward configurations to responses within the same group is a sophisticated solution to meta-credit assignment in bilevel optimization.
+- **Efficiency Gains**: Dynamic reward orchestration does not merely avoid increasing training overhead; in long-text scenarios, it significantly accelerates training by reducing redundant outputs, defying the intuition that more complex methods are slower.
 
 ## Limitations & Future Work
 
-- Evaluations were limited to 7-8B scale models; scalability to larger models remains to be explored.
-- The Conductor uses a simple linear projection; more complex architectures might capture finer trade-offs.
-- Reward components are fixed to 5 predefined signals; automatic discovery and combination of rewards remain open problems.
-- Reliance on external LLM Judges (Qwen3-235B, Gemini-2.5-Flash) may introduce evaluation biases.
+- Validated only on 7-8B scale models; performance on larger models remains to be explored.
+- The Conductor uses a simple linear projection head; more complex architectures might capture finer trade-offs.
+- Reward components are limited to 5 predefined signals; automatic discovery and combination of rewards remain open problems.
+- Evaluation relies on external LLM Judges (e.g., Qwen3-235B), which may introduce their own biases.
 
 ## Related Work & Insights
 
-- **vs. NOVER (Liu et al., 2025b)**: NOVER uses conditional perplexity as the sole reward in GRPO, excelling in reasoning but failing in open-domain tasks. MAESTRO generalizes this via multi-reward orchestration.
-- **vs. EM-GRPO**: Entropy minimization matches MAESTRO on reasoning but fails on creative/social tasks (SS-GEN 88.8% vs 92.5%), proving the limitations of static inductive biases.
-- **vs. DYNAOPT (Pérez-Rosas et al., 2024)**: While DYNAOPT adjusts weights at the training stage level, MAESTRO operates at the instance level, providing finer granularity.
-- **vs. Pareto-based MORL**: Multi-policy Pareto methods are computationally expensive. MAESTRO achieves dynamic Pareto frontier exploration with a single policy and a lightweight Conductor.
+- **vs NOVER (Liu et al., 2025b)**: NOVER uses conditional perplexity as the sole reward signal, excelling in reasoning but failing in open-domain tasks. MAESTRO consistently outperforms it through multi-reward orchestration.
+- **vs EM-GRPO**: Entropy minimization methods are competitive in reasoning but degrade in creative and social tasks (e.g., SS-GEN 88.8% vs 92.5%), proving the limitations of a single inductive bias.
+- **vs DYNAOPT (Pérez-Rosas et al., 2024)**: While DYNAOPT adjusts weights at global training stages, MAESTRO performs orchestration at the instance level with semantic conditioning, offering finer granularity.
+- **vs Pareto-based MORL**: Multi-policy Pareto methods require training and maintaining multiple large models with massive overhead. MAESTRO explores the dynamic Pareto front using a single policy and a lightweight Conductor.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ The combination of contextual bandits and bi-level optimization for GRPO is highly original.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive benchmarks and baselines, though lacking validation on very large models.
-- Writing Quality: ⭐⭐⭐⭐⭐ Clear motivation, rigorous methodology, and insightful analysis.
-- Value: ⭐⭐⭐⭐⭐ Provides a practical and efficient new paradigm for open-domain LLM alignment.
+- Novelty: ⭐⭐⭐⭐⭐ The combination of Contextual Bandits and GRPO bilevel optimization is novel, and the solution to the meta-credit assignment problem is elegant.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Seven benchmarks, two backbones, and multiple baselines, though validation on larger models is missing.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear motivation, rigorous methodology, and deep analysis (especially the visualization of reward weight evolution).
+- Value: ⭐⭐⭐⭐⭐ Provides a practical and efficient new paradigm for open-domain LLM alignment; the Conductor design is plug-and-play.
 
 <!-- RELATED:START -->
 
@@ -147,7 +147,7 @@ The reward space consists of $K=5$ components: perplexity reward $r_{\text{ppl}}
 - [\[ACL 2026\] ARES: Adaptive Red-Teaming and End-to-End Repair of Policy-Reward System](ares_adaptive_red-teaming_and_end-to-end_repair_of_policy-reward_system.md)
 - [\[ACL 2026\] AgentV-RL: Scaling Reward Modeling with Agentic Verifier](agentv-rl_scaling_reward_modeling_with_agentic_verifier.md)
 - [\[ACL 2026\] Team-Based Self-Play With Dual Adaptive Weighting for Fine-Tuning LLMs](team-based_self-play_with_dual_adaptive_weighting_for_fine-tuning_llms.md)
-- [\[ACL 2026\] P-Check: Advancing Personalized Reward Model via Learning to Generate Dynamic Checklist](p-check_advancing_personalized_reward_model_via_learning_to_generate_dynamic_che.md)
+- [\[ACL 2026\] AdaJudge: Adaptive Multi-Perspective Judging for Reward Modeling](adajudge_adaptive_multi-perspective_judging_for_reward_modeling.md)
 
 </div>
 

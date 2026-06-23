@@ -2,13 +2,13 @@
 title: >-
   [Paper Note] Memory-Augmented LLM-based Multi-Agent System for Automated Feature Generation on Tabular Data
 description: >-
-  [ACL 2026][Multi-Agent][AutoML] The authors propose MALMAS, a memory-augmented LLM multi-agent system for automated feature generation on tabular data. It utilizes six specialized agents to explore different feature space dimensions and a three-level memory mechanism (procedural, feedback, and conceptual) to achieve cross-iteration optimization. The
+  [ACL 2026][Multi-Agent][AutoML] MALMAS is proposed as a memory-augmented LLM multi-agent system for automated feature generation on tabular data. Through a workforce of six specialized Agents exploring different feature space dimensions and a three-level memory mechanism (Procedural/Feedback/Conceptual) for cross-iteration optimization, it outperform
 tags:
   - ACL 2026
   - Multi-Agent
   - AutoML
 date: 2026-05-08
-content_hash: 5a8b7b35d4b84328
+content_hash: 18f1dbbbd54778cf
 ---
 # Memory-Augmented LLM-based Multi-Agent System for Automated Feature Generation on Tabular Data
 
@@ -16,70 +16,70 @@ content_hash: 5a8b7b35d4b84328
 **arXiv**: [2604.20261](https://arxiv.org/abs/2604.20261)  
 **Code**: [GitHub](https://github.com/fxdong24/MALMAS)  
 **Area**: LLM/NLP  
-**Keywords**: Automated Feature Engineering, Multi-Agent System, Memory-Augmented, Tabular Data, AutoML
+**Keywords**: Automated Feature Engineering, Multi-Agent System, Memory Augmentation, Tabular Data, AutoML
 
 ## TL;DR
-The authors propose MALMAS, a memory-augmented LLM multi-agent system for automated feature generation on tabular data. It utilizes six specialized agents to explore different feature space dimensions and a three-level memory mechanism (procedural, feedback, and conceptual) to achieve cross-iteration optimization. The system outperforms existing baselines across 16 classification and 7 regression datasets.
+MALMAS is proposed as a memory-augmented LLM multi-agent system for automated feature generation on tabular data. Through a workforce of six specialized Agents exploring different feature space dimensions and a three-level memory mechanism (Procedural/Feedback/Conceptual) for cross-iteration optimization, it outperforms existing baselines across 16 classification and 7 regression datasets.
 
 ## Background & Motivation
 
-**Background**: Automated feature generation is a critical component of AutoML, aiming to construct high-quality features from raw tabular data. Traditional methods (e.g., DFS, OpenFE) rely on predefined operator libraries for combinatorial search, while recent LLM-based approaches (e.g., CAAFE) introduce semantic information to guide transformations but still face limitations.
+**Background**: Automated feature generation is a critical component of AutoML, aiming to construct high-quality features from raw tabular data automatically. Traditional methods (e.g., DFS, OpenFE) rely on predefined operator libraries for combinatorial search, while recent LLM-based methods (e.g., CAAFE) introduce semantic information to guide feature transformations, yet limitations persist.
 
-**Limitations of Prior Work**: (1) Traditional methods are restricted by fixed operator sets and cannot utilize task semantics, leading to a narrow search space. (2) Existing LLM methods rely on a single generation strategy and rigid thinking patterns, which limits feature space exploration. (3) Critically, current LLM methods lack feedback mechanisms from downstream learning objectives—the generation process is decoupled from model performance, resulting in inefficient trial-and-error exploration.
+**Limitations of Prior Work**: (1) Traditional methods are constrained by fixed operator sets and cannot leverage task semantics, resulting in a narrow search space; (2) Although LLM methods introduce semantic signals, they depend on single generation strategies and suffer from rigid thinking patterns, leading to restricted feature space exploration; (3) Crucially, existing LLM methods lack a feedback mechanism from downstream learning objectives—the generation process is decoupled from model performance, resulting in inefficient trial-and-error exploration.
 
-**Key Challenge**: The contradiction between the high dimensionality and diversity of the feature space and the limited exploration capacity of a single agent, coupled with the absence of a "generation -> evaluation -> optimization" closed loop.
+**Key Challenge**: The contradiction between the high dimensionality and diversity of the feature space and the limited exploration capability of a single Agent, alongside the absence of a "generation $\rightarrow$ evaluation $\rightarrow$ optimization" closed loop.
 
-**Goal**: To design a multi-agent collaborative and memory-driven automated feature generation framework capable of (1) extensively exploring the feature space through role specialization and (2) accumulating experience and adjusting strategies across iterations via multi-level memory.
+**Goal**: Design a multi-Agent collaborative and memory-driven automated feature generation framework capable of (1) extensively exploring the feature space through role differentiation and (2) achieving cross-iteration experience accumulation and strategy adjustment through multi-level memory.
 
-**Key Insight**: Starting from the categorization of "golden features" in feature engineering practice, specialized agents are designed along three orthogonal dimensions (transformation complexity, data scope, and data type dependency). Furthermore, a three-level experience system is introduced: procedural memory (what was done), feedback memory (effectiveness), and conceptual memory (why it worked).
+**Key Insight**: Starting from the classification of "golden features" in feature engineering practice, specialized Agents are designed along three orthogonal dimensions (transformation complexity, data scope, and data type dependency), coupled with a three-level experience system: Procedural Memory (what was done), Feedback Memory (how effective it was), and Conceptual Memory (why it worked).
 
-**Core Idea**: Decomposing feature generation into parallel exploration by multiple specialized agents, dynamic scheduling by a Router Agent, and iterative optimization driven by three-level memory.
+**Core Idea**: Decomposing feature generation into parallel exploration by multiple specialized Agents + dynamic scheduling by a Router Agent + iterative optimization driven by three-level memory.
 
 ## Method
 
 ### Overall Architecture
-In each iteration: the Router Agent selects an active subset from the agent pool → each active agent constructs a prompt based on metadata and memory to generate features through LLM interaction → the performance of generated features is evaluated on a downstream model → the three-level memory is updated → the Summary Agent aggregates global conceptual memory → the TopN features are selected for the dataset → moving to the next round.
+Each iteration: The Router Agent selects a subset of active Agents for the current round from the Agent pool $\rightarrow$ each active Agent constructs prompts based on metadata and memory to generate features through multi-turn interactions with the LLM $\rightarrow$ evaluate the validation performance of generated features on a downstream model $\rightarrow$ update the three-level memory $\rightarrow$ the Summary Agent aggregates global conceptual memory $\rightarrow$ select TopN features to add to the dataset $\rightarrow$ proceed to the next round.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
     A["Tabular Data + Task Metadata"] --> B["Router Agent Dynamic Scheduling<br/>Reads metadata & memory to select active subset"]
-    subgraph AG["Parallel Architecture: 6 Specialized Agents + Router"]
+    subgraph AG["Parallel Architecture of 6 Specialized Agents + Router"]
         direction TB
-        C["Unary / Cross-Compositional / Temporal / Aggregation / Local-Transform / Local-Pattern<br/>Each handles specific transformations across three dimensions"]
+        C["Unary / Cross / Temporal / Aggregation / Local Transform / Local Pattern<br/>Each handles one type of feature transformation, covering three orthogonal dimensions"]
     end
     B --> AG
-    AG --> D["Downstream Model Evaluation<br/>XGBoost Validation AUC / NRMSE"]
+    AG --> D["Downstream Evaluation<br/>XGBoost Validation AUC / NRMSE"]
     subgraph MEM["Three-Level Memory Mechanism"]
         direction TB
-        E["Procedural Memory (ProcMem)<br/>What was done"] --> F["Feedback Memory (FeedMem)<br/>Effectiveness & Credit Assignment"] --> G["Conceptual Memory (ConMem)<br/>Why it worked"]
+        E["Procedural Memory ProcMem<br/>What was done"] --> F["Feedback Memory FeedMem<br/>Effectiveness & Credit Assignment"] --> G["Conceptual Memory ConMem<br/>Why it worked"]
     end
     D --> MEM
     MEM --> H["Global Conceptual Memory & Cross-Agent Knowledge Transfer<br/>Summary Agent aggregates GlobalMem"]
-    H -->|"Add TopN features, start next round"| B
+    H -->|"TopN features added to dataset, next round"| B
     H --> I["Output Enhanced Feature Set"]
 ```
 
 ### Key Designs
 
-**1. Parallel Architecture with 6 Specialized Agents + Router: Specialization across transformation categories to avoid homogenization.**
+**1. Parallel Architecture of 6 Specialized Agents + Router: Functional specialization avoids homogenization.**
 
-Repeated feature generation by a single LLM often leads to "feature homogenization," where ideas solidify around a few transformations. MALMAS assigns feature construction to six specialized agents: Unary, Cross-Compositional, Temporal, Aggregation-Construct, Local-Transform, and Local-Pattern. These roles cover orthogonal dimensions (complexity, scope, type), exploring complementary feature regions. Not all agents participate in every round; the Router Agent reads task metadata and accumulated memory to dynamically select an active subset, focusing compute power on directions most likely to yield results for the current dataset.
+Individual LLMs tend to produce homogenized features when generating repeatedly, with logic getting stuck on a few transformation types. MALMAS decomposes feature construction into six specialized Agents: Unary, Cross-Compositional, Temporal, Aggregation-Construct, Local-Transform, and Local-Pattern. This set of roles covers transformation complexity, data scope, and data types, allowing them to explore complementary rather than overlapping feature regions. Not all Agents participate in every round; the Router Agent first reads task metadata and accumulated memory to dynamically select the subset of Agents to activate, focusing computing resources on directions most likely to yield results for the current dataset.
 
-**2. Three-Level Memory Mechanism (Procedural + Feedback + Conceptual): Equipping stateless LLMs with experience chains.**
+**2. Three-Level Memory Mechanism (Procedural + Feedback + Conceptual): Establishing an experience chain of "what $\rightarrow$ how $\rightarrow$ why" for stateless LLMs.**
 
-Without memory, an LLM starts from scratch every round, repeating failed transformations and failing to learn from success. MALMAS uses three levels to solidify feedback: Procedural Memory (ProcMem) records the full trace (base columns, operator, name, description, round) to avoid duplicates; Feedback Memory (FeedMem) binds features to downstream metrics for explicit credit assignment; Conceptual Memory (ConMem) distills reusable heuristic rules. These represent short-term error avoidance, mid-term orientation, and long-term strategy adaptation.
+Without memory, an LLM starts from scratch every round, repeatedly exploring the same transformations and failing to learn which operations are truly useful. MALMAS uses three levels of memory to crystallize feedback: Procedural Memory (ProcMem) records the full trace of each transformation (base columns, transformation type, feature name, description, round), allowing subsequent rounds to avoid redundant paths; Feedback Memory (FeedMem) binds each generated feature with its validation metric on the downstream model for explicit credit assignment; Conceptual Memory (ConMem) distills reusable heuristic rules from the first two. These three layers of abstraction correspond to short-term error avoidance, mid-term goal orientation, and long-term strategic adaptation, transforming iterations from blind trial-and-error into structured optimization.
 
 **3. Global Conceptual Memory and Cross-Agent Knowledge Transfer: Broadcasting effective patterns to the entire team.**
 
-Local memory serves only individual agents; experience learned by Agent A is unavailable to Agent B, leading to redundant exploration. After each round, the Summary Agent aggregates conceptual and feedback memories into a `GlobalMem`. This global record informs the Router's scheduling and each agent's prompt construction in the next round, enabling effective patterns found by one agent to propagate and be reused across the system.
+Local memory serves only a single Agent; if Agent B cannot use experience learned by Agent A, redundant features will still be created. After each round, the Summary Agent aggregates the conceptual and feedback memories of all active Agents into a Global Conceptual Memory (GlobalMem). This is referenced by the Router for scheduling decisions and by each Agent for prompt construction in the next round. Consequently, effective patterns discovered by one Agent can propagate through the team, and the Router can assign tasks more intelligently, reusing the results of successful exploration across the system.
 
-### A Complete Example: Iteration on the Titanic Dataset
+### Example: One Iteration on Titanic
 
-Consider the Titanic dataset. At the start of a round, the Router detects task metadata (Age, Fare, Pclass, Sex, etc.) and existing memory. Determining that temporal features are irrelevant, it activates only the Unary, Cross-Compositional, and Aggregation agents. The Unary Agent applies a log transform to `Fare`, the Cross-Compositional Agent combines `Pclass` and `Sex`, and the Aggregation Agent calculates average fares per class. After evaluation via XGBoost, FeedMem records that "Pclass×Sex provided the largest gain." The Summary Agent notes "interactions between class and sex are effective" in the `GlobalMem`. In the next round, the Router emphasizes the cross-compositional direction, while ProcMem ensures `log(Fare)` is not recalculated. After several iterations, the AUC on Titanic reaches 0.872, surpassing the next best method (0.849).
+Using the Titanic dataset as an example: At the start of a round, the Router reads task metadata (containing columns like Age, Fare, Pclass, Sex) and existing memory. It determines that temporal features are irrelevant and activates only Unary, Cross-Compositional, and Aggregation-Construct Agents. The Unary Agent performs a log transformation on Fare; the Cross Agent combines Pclass and Sex into a new category; the Aggregation Agent calculates the mean fare per class. The features generated by the three are evaluated by XGBoost. FeedMem records that "log(Fare) slightly increased AUC, while Pclass×Sex provided the maximum gain." The Summary Agent writes "The interaction between class and sex is effective for survival prediction" into GlobalMem. In the next round, the Router continues to emphasize the cross-compositional direction, while ProcMem ensures log(Fare) is not generated again. After several iterations, the AUC for Titanic converges to 0.872, surpassing the 0.849 of the next best method.
 
 ### Loss & Training
-The objective is to maximize the performance metrics of the downstream model on the validation set (AUC for classification, NRMSE for regression). XGBoost is used as the downstream model, and the TopN features are retained after each round via a selection process.
+The objective is to maximize the performance metrics of the downstream model on the validation set (AUC for classification and NRMSE for regression). XGBoost is employed as the downstream model, and the optimal features are retained via TopN-feature selection in each round.
 
 ## Key Experimental Results
 
@@ -100,50 +100,50 @@ The objective is to maximize the performance metrics of the downstream model on 
 |------|------|
 | Single Agent (No Router) | Feature diversity drops; high homogenization |
 | No Memory | Independent generation each round; massive redundant exploration |
-| No Global Memory | No knowledge transfer between agents; increased redundant features |
+| No Global Memory | No knowledge transfer between Agents; increased redundant features |
 | No Feedback Memory | Inability to learn which transformations are effective from history |
 | **MALMAS (Full)** | Optimal performance, Mean Rank 1.12 |
 
 ### Key Findings
-- **MALMAS achieves an average rank of 1.12 across 16 classification datasets**, significantly exceeding the runner-up OpenFE (3.12).
-- **Stronger advantages on difficult datasets**: e.g., Titanic (0.872 vs 0.849 next best) and Credit_G (0.775 vs 0.758 next best).
-- **Memory mechanism is critical**: Conceptual memory abstracts "why a transformation works" into reusable rules to guide subsequent exploration.
-- **Dynamic scheduling via the Router Agent** avoids the overhead of activating all agents for every dataset.
+- **MALMAS achieves an average rank of 1.12 across 16 classification datasets**, significantly ahead of the runner-up OpenFE (3.12).
+- **Advantages are more pronounced on difficult datasets**: e.g., Titanic (0.872 vs. 0.849) and Credit_G (0.775 vs. 0.758).
+- **The memory mechanism is crucial**: Conceptual memory abstracts "why a transformation is effective" into reusable rules to guide subsequent exploration.
+- **Dynamic scheduling by the Router Agent** avoids the computational waste of activating all Agents for every dataset.
 
 ## Highlights & Insights
-- The **hierarchical memory design** is highly instructive: mapping operation traces to credit assignment to strategy abstraction mirrors procedural memory → working memory → metacognition in cognitive psychology. This is transferable to any multi-agent system requiring iterative optimization.
-- **Dynamic scheduling by the Router Agent** solves the computational waste of "running every agent every time," achieving task-dependent resource allocation.
-- **Designing Agent roles based on "Golden Feature" categories** is a best practice—encoding domain knowledge into the structural division of labor.
+- **Hierarchical Design of Three-Level Memory**: The progression from operation traces to credit assignment to policy abstraction mirrors the cognitive psychology concepts of procedural memory $\rightarrow$ working memory $\rightarrow$ metacognition. This is transferable to any multi-Agent system requiring iterative optimization.
+- **Dynamic Scheduling via Router Agent**: Solves the inefficiency of "running all Agents," achieving task-dependent resource allocation.
+- **Design of Agent Roles based on "Golden Features"**: A strong practice of encoding domain knowledge into the division of labor between Agents.
 
 ## Limitations & Future Work
-- Agent roles are manually designed; can optimal roles be discovered automatically?
-- The memory management lacks a forgetting mechanism, potentially leading to context bloat over many rounds.
-- The downstream model is fixed to XGBoost; effectiveness on deep learning models remains unverified.
-- End-to-end comparisons with full AutoML frameworks (e.g., Auto-sklearn) are missing.
-- Competitive/debate mechanisms between agents could be explored to further enhance feature quality.
+- Agent role division is manually designed; can optimal divisions be discovered automatically?
+- Memory management lacks a forgetting mechanism, which may lead to context bloat in long-running iterations.
+- The downstream model is fixed to XGBoost; effectiveness on deep learning models has not been verified.
+- No end-to-end comparison with full AutoML frameworks (e.g., Auto-sklearn).
+- Potential to explore adversarial/debate mechanisms between Agents to further improve feature quality.
 
 ## Related Work & Insights
-- **vs CAAFE**: CAAFE uses a single LLM, limited by a single generation strategy. MALMAS expands the exploration space through multi-agent specialization and memory feedback.
-- **vs OpenFE**: OpenFE uses tree-based operator searches, which are efficient but limited to predefined operators. MALMAS leverages LLM semantic understanding for more diverse transformations.
-- **vs Generative Agents**: While the latter uses multi-agent memory for social simulation, MALMAS applies this paradigm to feature engineering, representing a new application direction.
+- **vs CAAFE**: CAAFE uses a single LLM and is limited by a single generation strategy. MALMAS significantly expands the exploration space through Agent specialization and memory feedback.
+- **vs OpenFE**: OpenFE uses operator search on tree models, which is efficient but limited to predefined operators. MALMAS leverages the semantic understanding of LLMs to generate more diverse transformations.
+- **vs Generative Agents**: While the latter uses multi-Agent with memory for social simulation, MALMAS introduces a similar paradigm to feature engineering, representing a new application direction.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The combination of multi-agent and three-level memory for feature generation is novel, though individual components are established.
+- Novelty: ⭐⭐⭐⭐ Multi-Agent + three-level memory for feature generation is a novel combination, though components are individually known.
 - Experimental Thoroughness: ⭐⭐⭐⭐ Broad coverage with 23 datasets, though ablation details could be more granular.
-- Writing Quality: ⭐⭐⭐⭐ Framework diagrams are clear, though some notation is slightly redundant.
-- Value: ⭐⭐⭐⭐ Significant contribution to the AutoML community; the memory design strategy has broad transferability.
+- Writing Quality: ⭐⭐⭐⭐ Framework diagrams are clear, though notation is slightly redundant.
+- Value: ⭐⭐⭐⭐ Practical contribution to the AutoML community; the three-level memory design has high transferability.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ACL 2026\] Efficient Multi-Agent System Training with Data Influence-Oriented Tree Search](efficient_multi-agent_system_training_with_data_influence-oriented_tree_search.md)
 - [\[ACL 2025\] DocAgent: A Multi-Agent System for Automated Code Documentation Generation](../../ACL2025/multi_agent/docagent_a_multi-agent_system_for_automated_code_documentation_generation.md)
 - [\[ACL 2026\] A Multi-Agent Framework for Feature-Constrained Difficulty Control in Reading Comprehension Item Generation](a_multi-agent_framework_for_feature-constrained_difficulty_control_in_reading_co.md)
-- [\[ACL 2026\] ODUTQA-MDC: A Task for Open-Domain Underspecified Tabular QA with Multi-turn Dialogue-based Clarification](odutqa-mdc_a_task_for_open-domain_underspecified_tabular_qa_with_multi-turn_dial.md)
 - [\[AAAI 2026\] AgentODRL: A Large Language Model-based Multi-agent System for ODRL Generation](../../AAAI2026/multi_agent/agentodrl_a_large_language_model-based_multi-agent_system_fo.md)
+- [\[ACL 2026\] RoadMapper: A Multi-Agent System for Roadmap Generation of Solving Complex Research Problems](roadmapper_a_multi-agent_system_for_roadmap_generation_of_solving_complex_resear.md)
 
 </div>
 

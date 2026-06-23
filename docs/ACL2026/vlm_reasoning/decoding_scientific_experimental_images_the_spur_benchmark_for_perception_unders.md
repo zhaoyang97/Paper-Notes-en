@@ -2,84 +2,75 @@
 title: >-
   [Paper Note] Decoding Scientific Experimental Images: The SPUR Benchmark for Perception, Understanding, and Reasoning
 description: >-
-  [ACL 2026][Multimodal VLM][MCoT] SPUR is the first benchmark for the "Perception → Understanding → Reasoning" three-stage evaluation of biomedical experimental images (multi-panel staining/Western blot/statistical charts). Containing 4264 expert-verified MCQs, it reveals that current MLLMs struggle, with only Gemini 3 Pro Preview barely exceeding 60%,
+  [ACL 2026][vlm_reasoning][MCoT] SPUR is the first benchmark designed for the "Perception $\rightarrow$ Understanding $\rightarrow$ Reasoning" three-stage evaluation of biomedical experimental images (multi-panel staining, Western blots, and statistical charts). It contains 4,264 expert-verified MCQs, revealing that current MLLMs (with Gemini 3 Pro Pr
 tags:
   - ACL 2026
-  - Multimodal VLM
+  - vlm_reasoning
   - MCoT
   - PMC
 date: 2026-05-08
-content_hash: a6e1fde39b936c67
+content_hash: b693f32734f69a29
 ---
 # Decoding Scientific Experimental Images: The SPUR Benchmark for Perception, Understanding, and Reasoning
 
 **Conference**: ACL 2026  
 **arXiv**: [2604.27604](https://arxiv.org/abs/2604.27604)  
 **Code**: https://github.com/BUPT-Reasoning-Lab/SPUR (Available)  
-**Area**: Multi-modal VLM / Scientific Image Understanding / AI4S  
-**Keywords**: Experimental images, multi-panel understanding, quantitative reasoning, MCoT, PMC
+**Area**: Multimodal VLM / Scientific Image Understanding / AI4S  
+**Keywords**: Experimental Images, Multi-panel Understanding, Quantitative Reasoning, MCoT, PMC
 
 ## TL;DR
-SPUR is the first benchmark for the "Perception → Understanding → Reasoning" three-stage evaluation of biomedical experimental images (multi-panel staining/Western blot/statistical charts). Containing 4264 expert-verified MCQs, it reveals that current MLLMs struggle, with only Gemini 3 Pro Preview barely exceeding 60%, and quantitative reasoning accuracy generally 12.76%–31.41% lower than qualitative reasoning.
+SPUR is the first benchmark designed for the "Perception $\rightarrow$ Understanding $\rightarrow$ Reasoning" three-stage evaluation of biomedical experimental images (multi-panel staining, Western blots, and statistical charts). It contains 4,264 expert-verified MCQs, revealing that current MLLMs (with Gemini 3 Pro Preview barely exceeding 60%) generally perform 12.76%–31.41% lower in quantitative reasoning than in qualitative reasoning.
 
 ## Background & Motivation
-**Background**: MLLM capabilities on scientific images (statistical charts, tables, biological diagrams, chemical structures) are rapidly improving, leading to benchmarks like ScienceQA, MMMU, M3CoT, MMSci, SciAssess, and MicroVQA. Simultaneously, MCoT methods (prompt-based, plan-based, training-based) are used to enhance multi-modal reasoning.
+**Background**: MLLM performance on scientific images (statistical charts, tables, biological diagrams, chemical structures) is improving rapidly, leading to benchmarks such as ScienceQA, MMMU, M3CoT, MMSci, SciAssess, and MicroVQA. Concurrently, MCoT methods (prompt-based, plan-based, training-based) are employed to strengthen multimodal reasoning.
 
-**Limitations of Prior Work**: The true test of "image reading ability" in scientific papers lies in **multi-panel experimental figures** (e.g., Western blot + staining + trend curves telling a story). Existing benchmarks lack in three aspects: (1) low proportion of experimental images, mostly using statistical charts or academic diagrams; (2) an average of $\leq 8$ panels per figure, lacking cross-panel relationship modeling; (3) focusing almost exclusively on qualitative conclusions ("A promotes B") rather than quantitative reasoning ("A increases by 50%").
+**Limitations of Prior Work**: The true test of "image reading" capabilities in scientific papers lies in **multi-panel experimental figures** (e.g., Western blot + staining + trend curves telling a single story). However, existing benchmarks suffer from three deficiencies: (1) an extremely low proportion of experimental images, mostly consisting of statistical charts or academic diagrams; (2) low complexity, with an average of $\leq 8$ panels per figure, lacking cross-panel relationship modeling; (3) a predominant focus on qualitative conclusions ("A promotes B") rather than quantitative reasoning ("A increases by 50%").
 
-**Key Challenge**: The ability truly required for AI4S is "deriving quantifiable scientific conclusions from complex multi-panel visual evidence via cross-panel comparison/trend synthesis." Existing benchmarks only measure segments of this chain, masking the true bottlenecks of MLLMs.
+**Key Challenge**: The capability truly required for AI4S is "deriving quantifiable scientific conclusions from complex multi-panel visual evidence via cross-panel comparison and trend synthesis." Existing benchmarks only test specific segments of this chain, masking the true bottlenecks of MLLMs.
 
-**Goal**: To construct a benchmark **specifically for multi-panel experimental figures**, explicitly decomposed into **Perception → Understanding → Reasoning** stages, covering both **qualitative + quantitative** reasoning. The study systematically tests 20 MLLMs and 4 MCoT methods to analyze capability gaps.
+**Goal**: To construct a benchmark specifically targeting **multi-panel experimental figures**, explicitly decomposed into **Perception $\rightarrow$ Understanding $\rightarrow$ Reasoning** stages, covering both **qualitative and quantitative** reasoning. The study systematically evaluates 20 MLLMs and 4 MCoT methods to analyze capability shortfalls.
 
-**Key Insight**: Screen experimental figures from PMC open-access papers with IF > 3, requiring **$\geq 6$ panels per figure** (77.6% filtered by YOLO detection). Use expert-level hierarchical review + GPT-4o for QA generation, followed by "text-only shortcut" filtering to ensure the visual content is essential for answering.
+**Key Insight**: Experimental figures from PMC open-access papers with IF > 3 were curated, requiring **$\geq 6$ panels per figure** (77.6% were filtered out via YOLO detection). Expert-level hierarchical auditing and GPT-4o were used for QA generation, followed by a "text-only shortcut" filter to ensure questions require visual input.
 
-**Core Idea**: Use a seven-task hierarchy "Perception (NP/MP/IL) → Understanding (TA/HI) → Reasoning (Qual./Quant.)" to decompose the task of "understanding an experimental figure" into independently diagnosable sub-capabilities. This allows for pinpointing MLLM bottlenecks to specific stages like "fine-grained numerical perception" and "cross-panel trend analysis."
+**Core Idea**: A seven-task hierarchy—"Perception (NP/MP/IL) $\rightarrow$ Understanding (TA/HI) $\rightarrow$ Reasoning (Qual./Quant.)"—is used to decompose the understanding of experimental figures into independently diagnosable sub-capabilities. This identifies MLLM bottlenecks in "fine-grained numerical perception" and "cross-panel trend analysis."
 
 ## Method
 
 ### Overall Architecture
-SPUR is a benchmark and evaluation framework rather than a model. Pipeline: ① **Image Acquisition**—crawl 5000+ papers with IF > 3 from PMC, automatically extract 5632 images, manually add 3–5 sentences of relevant text + standardized captions + disciplinary classification; ② **Image Filtering**—YOLO panel detector discards figures with $\leq 6$ panels (77.6% eliminated), followed by expert review to discard those without complete experimental workflows (another 14.2% eliminated), leaving 1084 images; ③ **QA Generation**—experts create prompts based on a 7-task template, and GPT-4o generates 7608 candidate MCQs; ④ **Quality Assurance**—textual shortcut elimination (discarding items correctly answered $\geq 5/10$ times by GPT-4o without images, 21.2% eliminated) + double-expert blind review (another 28.9% eliminated), resulting in 4264 final questions; ⑤ **Evaluation**—running accuracy tests on 8 closed-source and 12 open-source MLLMs across 7 tasks, comparing 4 MCoT methods.
+SPUR is a benchmark and evaluation framework rather than a model. The pipeline consists of: ① **Image Acquisition**: Scraping 5,000+ papers (IF > 3) from PMC, extracting 5,632 figures with associated text, standardized captions, and domain classifications; ② **Image Filtering**: Removing figures with $\leq 6$ panels using a YOLO detector (77.6% rejection), followed by expert review to remove incomplete experimental processes (14.2% rejection), leaving 1,084 figures; ③ **QA Generation**: Experts created prompts based on 7 task templates, and GPT-4o produced 7,608 candidate MCQs; ④ **Quality Assurance**: Textual shortcut elimination (discarding questions where GPT-4o scores $\geq 5/10$ without images, 21.2% rejection) and double expert blind review (28.9% rejection), resulting in 4,264 questions; ⑤ **Evaluation**: Testing accuracy across 20 MLLMs and 4 MCoT methods.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    A["5000+ PMC Papers with IF&gt;3"] --> SG1
-    subgraph SG1["Multi-panel High-complexity Images + Six Fine-grained Panel Types"]
+    A["5000+ PMC Papers (IF &gt; 3)"] --> SG1
+    subgraph SG1["High-complexity Multi-panel Images + Six Fine-grained Panel Types"]
         direction TB
-        B["Auto-extract 5632 images<br/>Add text + standardized caption + classification"] --> C["YOLO Panel Detection<br/>$\leq 6$ panels eliminated (77.6%)"]
-        C --> D["Expert review of workflow integrity<br/>Discard 14.2% → 1084 images"]
+        B["Extract 5632 figures<br/>Append text + standardized captions"] --> C["YOLO Panel Detection<br/>淘汰 77.6% with ≤ 6 panels"]
+        C --> D["Expert review of experimental flow<br/>淘汰 14.2% → 1084 figures"]
     end
-    SG1 --> E["Three-stage Seven-task Hierarchical Evaluation<br/>Expert templates → GPT-4o generates 7608 candidate MCQs"]
+    SG1 --> E["Three-stage Seven-task Hierarchical Evaluation<br/>Expert templates → GPT-4o 7608 candidate MCQs"]
     E --> SG2
-    subgraph SG2["Double Shortcut Elimination + Expert Hierarchical Auditing"]
+    subgraph SG2["Double Shortcut Elimination + Expert Audit"]
         direction TB
-        G["Text-only shortcut filtering<br/>$\geq 5/10$ correct without image → 21.2% eliminated"] --> H["Double-expert blind review<br/>3D scoring → 28.9% eliminated → 4264 questions"]
+        G["Text-only shortcut filtering<br/>Discard if ≥ 5/10 correct without image (21.2%)"] --> H["Double expert blind review<br/>3D scoring, discard 28.9% → 4264 questions"]
     end
-    SG2 --> I["Evaluation: 20 MLLMs + 4 MCoT<br/>Report accuracy per 7 tasks"]
+    SG2 --> I["Evaluation: 20 MLLMs + 4 MCoTs<br/>Report accuracy across 7 tasks"]
 ```
 
 ### Key Designs
 
-**1. Multi-panel High-complexity Images + Six Fine-grained Panel Types: Pushing image complexity to real top-tier journal figure density**
+**1. High-complexity Multi-panel Images + Six Fine-grained Panel Types: Pushing image complexity to realistic journal density**
 
-Low-complexity figures (1–3 panels) fail to test cross-panel relationships, as MLLMs can guess correctly by referencing the caption. SPUR mandates an average of 14.3 panels per figure (far exceeding MMSci's 7.4, SFE's 2.3, and MicroVQA's 1.9), with up to 6 types of fine-grained panels (4 types of staining + statistical charts + Western blot). Implementation-wise, a YOLO detector filters 5632 candidates for $\geq 6$ panels; staining images are further categorized into Cell / Tissue / Microorganism / Subcellular, allowing the MP task to perform fine-grained analysis by panel category.
+Low-complexity figures (1–3 panels) fail to test cross-panel relationships, and MLLMs can often guess correctly by reading the caption. SPUR enforces an average of 14.3 panels per figure (far exceeding MMSci's 7.4, SFE's 2.3, and MicroVQA's 1.9), with up to 6 mixed fine-grained panel types (4 staining types + statistical charts + Western blots). Staining images are further categorized into Cell, Tissue, Microorganism, and Subcellular, allowing the MP task to perform fine-grained analysis by panel category.
 
-This granularity exposes training data biases—Ministral 3 14B achieves 70.52% on Subcellular panels but only 42.80% on Microorganism panels, appearing as two different models for the same perception task. High panel counts and multi-type mixing truly simulate the scientific scenario of "reading a Nature figure."
+**2. Three-stage Seven-task Hierarchical Evaluation: Decomposing experimental image understanding into a diagnosable capability chain**
 
-**2. Three-stage Seven-task Hierarchical Evaluation: Decomposing "understanding multi-panel experimental graphs" into an independently diagnosable capability chain**
+Traditional VQA-style benchmarks provide only an overall accuracy. SPUR explicitly decomposes the process: **Perception** is panel-level (NP: estimating numerical values in curves; MP: identifying cell morphology; IL: mapping panels to conditions); **Understanding** is cross-panel (TA: trend analysis of isomorphic panels; HI: cross-modal integration of heterogeneous panels); **Reasoning** is expert-level (Qual.: directional conclusions; Quant.: quantitative ratios or significance).
 
-Traditional VQA-style benchmarks provide only an overall accuracy, leaving the point of failure unclear. SPUR explicitly splits "understanding an experimental image" into three stages and seven sub-tasks, calculating accuracy for each: the Perception stage is panel-level—NP estimates kinetic curve values, MP identifies cell morphology, and IL maps panels to experimental conditions; the Understanding stage is cross-panel—TA analyzes trend directions of isomorphic panels, and HI integrates cross-modal information between heterogeneous panels; the Reasoning stage is expert-level—Qual. provides directional conclusions, and Quant. provides quantitative conclusions such as ratios or significance.
+**3. Double Shortcut Elimination + Expert Audit: Forcing visual reliance and blocking caption/common-sense exploits**
 
-This metric space allows authors to locate bottlenecks specifically: NP is the systematic low point; TA accuracy drops from 60.7% to 34.0% as the number of cross-panel relationships increases from 1 to 4; Quant. remains 12.76%–31.41% lower than Qual. throughout—diagnostic conclusions that rely on hierarchical visibility of the failure point.
-
-**3. Double Shortcut Elimination + Expert Hierarchical Auditing: Forcing the model to look at the image by closing shortcuts from captions and common sense**
-
-The biggest trap in scientific image QA is answer leakage into captions or pre-training knowledge, making the benchmark a test of the LLM's knowledge rather than visual capability. SPUR blocks this with three gates: (a) textual shortcut filter—feeding questions + options without images to GPT-4o for 10 iterations, discarding any with $\geq 5$ correct answers (21.2% or 1612 questions); (b) double-expert blind review—4 domain experts with $>40$ papers + 2 senior experts with $>100$ papers score items on Scientific Validity / Task Alignment / Visual Reasoning Necessity, with seniors arbitrating disagreements (28.9% or 1732 questions eliminated); (c) a design phase that prohibits deriving questions directly from captions, forcing items to be grounded in panel visual information.
-
-After these filters, GPT-4o cannot correctly answer more than 50% of the questions in a text-only setting, proving that visual information is essential.
-
-### Loss & Training
-SPUR is an evaluation benchmark with no training involved. Evaluation protocol: direct prompting + accuracy on MCQ; MCoT evaluation uses four inference-time enhancement methods: DDCoT/VoT (prompt-based) and VIC/Cantor (plan-based) for fair comparison.
+Scientific image QA often suffers from answer leakage in captions or pre-training knowledge. SPUR uses three "gates": (a) **Textual shortcut filter**: GPT-4o attempts the MCQs 10 times without the image; if it succeeds $\geq 5$ times, the question is discarded (21.2%); (b) **Double expert blind review**: 4 domain experts (>40 papers) and 2 senior experts (>100 papers) score based on Scientific Validity, Task Alignment, and Visual Reasoning Necessity; (c) **Visual-centric generation**: Prohibits deriving questions directly from captions, forcing questions to rely on visual panel data.
 
 ## Key Experimental Results
 
@@ -98,11 +89,11 @@ Overall accuracy of 20 MLLMs on SPUR (Excerpt):
 | Qwen2.5-VL-72B | 38.10 | 45.34 | 49.11 | 51.87 | 61.90 | 73.10 | 52.51 | 48.21 |
 | LLaVA-v1.5-13B | 33.05 | 28.11 | 34.15 | 34.52 | 44.96 | 62.19 | 35.58 | 35.97 |
 
-**Conclusion**: All models except Gemini 3 Pro Preview **failed to reach 60%**; the best open-source model GLM-4.5V is close to the closed-source mid-range; NP is generally the lowest; the gap between Qual. and Quant. can reach 31.41% (Llama 4 Maverick 84.64 vs 57.02).
+**Conclusion**: All models except Gemini 3 Pro Preview fail to surpass 60%. The best open-source model, GLM-4.5V, approaches middle-tier closed-source models. NP is consistently the lowest-scoring task.
 
 ### Ablation Study
 
-Four MCoT methods vs direct prompting (Excerpt for GLM-4.5V):
+Four MCoT methods vs. Direct prompting (Excerpt for GLM-4.5V):
 
 | Configuration | NP | TA | Qual. | Quant. | Overall |
 |------|-----|------|--------|---------|---------|
@@ -112,7 +103,7 @@ Four MCoT methods vs direct prompting (Excerpt for GLM-4.5V):
 | VIC (plan) | 35.50 | 27.20 | 34.59 | 36.52 | 32.02 |
 | Cantor (plan) | 53.41 | 51.23 | 77.12 | 56.61 | 55.59 |
 
-Decoupling reasoning accuracy by "Perception Correct/Incorrect" (Qwen3-VL-30B-A3B-Instruct):
+Decoupled reasoning accuracy based on Perception correctness (Qwen3-VL-30B-A3B-Instruct):
 
 | Condition | Direct | DDCoT | VoT | VIC | Cantor |
 |-----------|--------|--------|------|------|---------|
@@ -120,34 +111,33 @@ Decoupling reasoning accuracy by "Perception Correct/Incorrect" (Qwen3-VL-30B-A3
 | Perception Incorrect | 32.40 | 23.68 ($\downarrow$8.7) | 9.32 ($\downarrow$23.1) | 30.30 ($\downarrow$2.1) | 40.23 ($\uparrow$7.8) |
 
 ### Key Findings
-- **MCoT is an "amplifier," not a "fixer"**: If perception is correct, MCoT can add 8–27 points; if perception is wrong, MCoT amplifies the error, with VoT dropping 23 points. This quantifies the priority of "perceiving before thinking."
-- **TA is inversely correlated with relationship complexity**: As cross-panel relationships increase from 1 to 4, Claude 3.7 thinking's TA accuracy drops from 60.70% to 34.00%, indicating that joint reasoning over multiple relationships is a bottleneck.
-- **MP shows significant discipline bias**: Ministral 3 14B scores 70.52% on Subcellular but only 42.80% on Microorganism, reflecting uneven distribution of experimental images in training corpora and weak generalization.
-- **Closed-source thinking models approach the ceiling in Qual.** Gemini 3 Pro Preview / Claude 3.7 thinking reach 87–90% in Qual. but only 59–60% in Quant., suggesting that "drawing conclusions" $\neq$ "calculating numbers," with quantitative reasoning being a universal weakness.
+- **MCoT is an "Amplifier," not a "Fixer"**: If perception is correct, MCoT can increase scores by 8–27 points. If perception is incorrect, MCoT amplifies errors (VoT drops by 23 points).
+- **TA is inversely correlated with relationship complexity**: As cross-panel relationships increase from 1 to 4, TA accuracy for Claude 3.7 thinking drops from 60.70% to 34.00%.
+- **MP shows significant discipline bias**: Ministral 3 14B scores 70.52% on Subcellular images but only 42.80% on Microorganism images.
+- **Closed-source "thinking" models approach the ceiling for Qualitative Reasoning**: Gemini 3 Pro Preview / Claude 3.7 score 87–90% in Qual., but only 59–60% in Quant.
 
 ## Highlights & Insights
-- **Diagnostic rather than leaderboard benchmark**: The seven-task hierarchy allows a single number (overall) to trace back to "which segment of the chain broke," offering better guidance for AI4S model development than simple MMMU-style overall accuracy.
-- **Reusable "double filtering + double-blind auditing" pipeline**: The textual shortcut detection + mandatory multi-panel lower bound serves as a universal template to prevent caption-based cheating, transferable to any scientific image QA.
-- **Decoupled MCoT analysis is impressive**: Splitting MCoT gains based on perception correctness debunks the "CoT panacea" myth and provides a clear recommendation: train VLM perceptual ability first before layering CoT for it to be meaningful.
-- **Average 14.3 panels/image** is the highest to date, closely simulating the density of figures in top journals. Performance drops on SPUR are more reflective of real-world scenarios than on MMMU.
+- **Diagnostic rather than Leaderboard-centric**: The seven-task hierarchy allows a single overall accuracy figure to be traced back to specific broken links in the pipeline, which is more informative for AI4S development than MMMU-style overall scores.
+- **Reusable "Double Filter + Review" Pipeline**: The combination of text-only shortcut detection and multi-panel enforcement provides a general template for visual-dependent QA that can be migrated to other scientific domains.
+- **Comparison reveals MCoT's performance is conditional**: By decoupling MCoT gains based on perception correctness, the study quantifies that perceptual ability must be prioritized before layering CoT.
+- **High Figure Density**: The average of 14.3 panels per figure is the highest to date, closely mimicking the density of figures in top-tier journals.
 
 ## Limitations & Future Work
-- **MCQ format masks reasoning processes**: It is impossible to directly observe *why* the model failed (numerical error? trend reversal? logical skip?); the authors acknowledge this as a trade-off and plan to introduce free-form rationales + step-wise scoring.
-- **Discipline coverage biased toward biomedicine**: All 7 disciplines fall under life sciences (cells/molecules/tumors, etc.). Experimental images from physics/chemistry/materials (e.g., SEM, EDS, crystals) are not covered, requiring adaptation for extrapolation.
-- **No training set provided**: As a zero-shot evaluation benchmark, the question of how to improve experimental image perception remains open. The publication of a companion SPUR-Train for instruction tuning is recommended.
-- **Baseline MCoT methods are training-free**: A lack of training-based MCoT (e.g., R1-V, MM-R1) means it cannot be asserted whether "training + RL" can break the NP bottleneck.
+- **MCQ format obscures the reasoning process**: It is impossible to directly observe whether a model's error was due to numerical misestimation, trend reversal, or logical gaps. Future work should introduce free-form rationales.
+- **Biomedical-centric discipline coverage**: The current dataset covers 7 life science sub-disciplines. Physics, chemistry, and materials science (e.g., SEM, spectra, crystal structures) are not yet covered.
+- **Absence of a training set**: SPUR is a zero-shot evaluation benchmark. A matching SPUR-Train for instruction tuning is suggested for future release.
+- **Training-free MCoTs only**: The baseline lacks training-based MCoT (e.g., R1-V, MM-R1) for comparison.
 
 ## Related Work & Insights
-- **vs MicroVQA (CVPR 2025)**: MicroVQA also handles experimental images but with only 1.9 panels/image and Qual. only; SPUR provides an order-of-magnitude increase in panel complexity (14.3 vs 1.9) and quantitative reasoning coverage.
-- **vs MMMU / M3CoT / ScienceQA**: These benchmarks consist of 1–2.5 panel "non-experimental" images and lack cross-panel relation modeling; SPUR's "complex multi-panel + cross-panel relation" fills a genuine gap in experimental image understanding.
-- **vs SciAssess / MMSci**: The latter have high image isolation ($\leq 8$ panels). SPUR pushes the physical complexity of "scientific image reading" to real top-tier standards.
-- **Insight**: In any "multi-modal + scientific reasoning" project, perception accuracy and reasoning accuracy should be reported separately; otherwise, gains from MCoT/SFT/RL cannot be correctly attributed.
+- **vs. MicroVQA (CVPR 2025)**: MicroVQA also handles experimental images but features only 1.9 panels/figure and targets only qualitative tasks. SPUR provides a significant increase in panel complexity (14.3) and quantitative coverage.
+- **vs. MMMU / M3CoT / ScienceQA**: These benchmarks focus on 1–2.5 panel "non-experimental" figures. SPUR fills the gap in complex multi-panel and cross-panel relationship modeling.
+- **Insight**: In any "Multimodal + Scientific Reasoning" project, perception accuracy and reasoning accuracy should be reported separately; otherwise, the source of improvements from MCoT, SFT, or RL remains ambiguous.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The multi-panel experimental image track has been explored (e.g., MicroVQA), but this work pushes complexity to 14.3 panels + explicit 7-task decomposition with clear positioning.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 20 MLLMs + 4 MCoT + five disciplines + diagnostic analysis decoupling perception-reasoning.
-- Writing Quality: ⭐⭐⭐⭐ Three diagnostic figures (Fig 1, 5, 6) support the claims well. The storyline "Benchmark Gap → 7 Tasks → Diagnostic Results → MCoT Failure Analysis" is clear.
-- Value: ⭐⭐⭐⭐ Highly practical as a diagnostic benchmark for the AI4S community. Insights like "NP is the bottleneck" and "MCoT cannot fix perception errors" provide actionable research directions.
+- Novelty: ⭐⭐⭐⭐ While experimental images have been explored (e.g., MicroVQA), pushing complexity to 14.3 panels and defining a 7-task hierarchy is a significant step forward.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive testing with 20 MLLMs, 4 MCoTs, and perception-reasoning decoupling.
+- Writing Quality: ⭐⭐⭐⭐ Strong narrative flow; figures for diagnosis are clear and support the core arguments.
+- Value: ⭐⭐⭐⭐ Strong utility as a diagnostic benchmark for the AI4S community, with actionable insights on the limitations of MCoT.
 
 <!-- RELATED:START -->
 
@@ -155,11 +145,11 @@ Decoupling reasoning accuracy by "Perception Correct/Incorrect" (Qwen3-VL-30B-A3
 
 ## Related Papers
 
-- [\[ACL 2026\] SciMDR: Advancing Scientific Multimodal Document Reasoning](scimdr_advancing_scientific_multimodal_document_reasoning.md)
 - [\[ACL 2026\] ChemVLR: Prioritizing Reasoning in Perception for Chemical Vision-Language Understanding](chemvlr_prioritizing_reasoning_in_perception_for_chemical_vision-language_unders.md)
-- [\[ACL 2026\] A Survey of Multimodal Mathematical Reasoning: From Perception, Alignment to Reasoning](a_survey_of_multimodal_mathematical_reasoning_from_perception_alignment_to_reaso.md)
-- [\[CVPR 2026\] Beyond Single Images: A Comprehensive Benchmark for Album-Level Vision-Language Understanding](../../CVPR2026/multimodal_vlm/beyond_single_images_a_comprehensive_benchmark_for_album-level_vision-language_u.md)
-- [\[ACL 2026\] GeoRC: A Benchmark for Geolocation Reasoning Chains](georc_a_benchmark_for_geolocation_reasoning_chains.md)
+- [\[ACL 2026\] SciMDR: Advancing Scientific Multimodal Document Reasoning](scimdr_advancing_scientific_multimodal_document_reasoning.md)
+- [\[ACL 2026\] Position: Multimodal Large Language Models Can Significantly Advance Scientific Reasoning](position_multimodal_large_language_models_can_significantly_advance_scientific_r.md)
+- [\[ICML 2026\] Native Active Perception as Reasoning for Omni-Modal Understanding](../../ICML2026/vlm_reasoning/native_active_perception_as_reasoning_for_omni-modal_understanding.md)
+- [\[ACL 2026\] Structured and Abstractive Reasoning on Multi-modal Relational Knowledge Images](structured_and_abstractive_reasoning_on_multi-modal_relational_knowledge_images.md)
 
 </div>
 

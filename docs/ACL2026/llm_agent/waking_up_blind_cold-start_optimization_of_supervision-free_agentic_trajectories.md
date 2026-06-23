@@ -2,12 +2,12 @@
 title: >-
   [Paper Note] Waking Up Blind: Cold-Start Optimization of Supervision-Free Agentic Trajectories
 description: >-
-  [ACL 2026][LLM Agent][Paper Note] This paper proposes SPECTRA, a framework that requires no supervised trajectories. Through cold-start Reinforcement Learning (GRPO) and soft-structured multi-round rollout topology constraints, Small Vision-Language Models (SVLMs) autonomously discover effective tool-calling and visual reasoning behaviors in pure envir
+  [ACL 2026][LLM Agent][Paper Note] This paper proposes SPECTRA, a framework that requires no supervised trajectories. By utilizing cold-start Reinforcement Learning (GRPO) and soft-structured multi-round rollout topological constraints, it enables Small Vision-Language Models (SVLMs) to autonomously discover effective tool-calling and visual reasoning b
 tags:
   - ACL 2026
   - LLM Agent
 date: 2026-05-08
-content_hash: 3274ff6593332935
+content_hash: 3f59c3dc42488566
 ---
 # Waking Up Blind: Cold-Start Optimization of Supervision-Free Agentic Trajectories
 
@@ -15,64 +15,66 @@ content_hash: 3274ff6593332935
 **arXiv**: [2604.17475](https://arxiv.org/abs/2604.17475)  
 **Code**: [GitHub](https://github.com/ab-iitd/spectra)  
 **Area**: Multimodal Agent / Visual Reasoning  
-**Keywords**: Small VLM, Tool Calling, Cold-Start RL, Multi-Objective Reward, Agent Trajectory Optimization
+**Keywords**: Small VLM, Tool Calling, Cold-start RL, Multi-objective Reward, Agent Trajectory Optimization
 
 ## TL;DR
 
-This paper proposes SPECTRA, a framework that requires no supervised trajectories. Through cold-start Reinforcement Learning (GRPO) and soft-structured multi-round rollout topology constraints, Small Vision-Language Models (SVLMs) autonomously discover effective tool-calling and visual reasoning behaviors in pure environment interactions. It improves task accuracy by up to 5% and tool efficiency by 9% across 4 multimodal benchmarks, while introducing the Tool Instrumental Utility (TIU) metric to quantify tool efficacy in unsupervised settings.
+This paper proposes SPECTRA, a framework that requires no supervised trajectories. By utilizing cold-start Reinforcement Learning (GRPO) and soft-structured multi-round rollout topological constraints, it enables Small Vision-Language Models (SVLMs) to autonomously discover effective tool-calling and visual reasoning behaviors through pure environment interaction. It achieves up to a 5% increase in task accuracy and a 9% improvement in tool efficiency across 4 multimodal benchmarks, while introducing the Tool Instrumental Utility (TIU) metric to quantify tool efficacy in unsupervised settings.
 
 ## Background & Motivation
 
-**Background**: Small Vision-Language Models (SVLMs, such as Qwen2.5-VL-7B) are suitable as agent controllers due to low latency and deployment costs, but they lag behind large models in long-range reasoning, fine-grained visual perception, and tool orchestration. Existing improvement methods follow two paths: (1) Trajectory Fine-Tuning—supervised fine-tuning using synthetic tool-calling data (e.g., MM-Traj in T3-Agent), yielding ~20% gains; (2) Reinforcement Learning—e.g., Tool-R1 optimizing sampling efficiency for tool calls via RL.
+**Background**: Small Vision-Language Models (SVLMs, such as Qwen2.5-VL-7B) are suitable as Agent controllers due to low latency and deployment costs. However, they lag behind large models in long-range reasoning, fine-grained visual perception, and tool orchestration. Existing improvement methods follow two paths: (1) Trajectory Fine-tuning—using synthetic tool-calling data (e.g., T3-Agent's MM-Traj) for Supervised Fine-Tuning (SFT), yielding ~20% gains; (2) Reinforcement Learning—such as Tool-R1, which optimizes tool-calling sampling efficiency via RL.
 
-**Limitations of Prior Work**: (1) Trajectory fine-tuning relies on expensive synthetic supervised data (usually distilled from large models), limiting scalability and generalization; (2) Existing methods optimizing tool-calling reasoning do not directly improve visual perception—tool usage and visual understanding are decoupled; (3) There is a lack of metrics to evaluate tool efficacy when labeled trajectory ground truths are absent—existing Tool Accuracy depends on ground truth trajectories.
+**Limitations of Prior Work**: (1) Trajectory fine-tuning relies on expensive synthetic supervision data (usually distilled from large models), limiting scalability and generalization; (2) Existing methods for optimizing tool-calling reasoning do not directly improve visual perception—tool usage and visual understanding remain disjointed; (3) There is a lack of metrics to evaluate tool efficacy when no ground truth trajectories are available—existing Tool Accuracy relies on ground truth paths.
 
-**Key Challenge**: Equipping SVLMs with effective multi-step tool calling requires high-quality supervised trajectories, but acquiring these is expensive and restricts generalization. Can models start from zero (cold-start) and discover effective tool-usage strategies solely through environmental feedback?
+**Key Challenge**: Enabling SVLMs to learn effective multi-step tool calling requires high-quality supervised trajectories, but obtaining these trajectories is expensive and limits generalization. Can a model start from zero (cold-start) and discover effective tool-use strategies solely through environment feedback?
 
-**Goal**: (1) Design an unsupervised agent policy optimization method to bypass reliance on supervised trajectories; (2) Improve SVLM visual perception through structured rollout constraints; (3) Propose tool efficacy evaluation metrics that do not depend on ground truth.
+**Goal**: (1) Design an unsupervised Agent policy optimization method to bypass dependence on supervised trajectories; (2) Improve SVLM visual perception through structured rollout constraints; (3) Propose a tool efficacy evaluation metric that does not rely on ground truth.
 
-**Key Insight**: It is observed that the "visual blind spots" of SVLMs can be mitigated by enforcing a structured sequence of tool calling-observation-perception—forcing the model to acquire visual evidence via tools first, then reason based on evidence, rather than reasoning directly from the raw image. This topological constraint serves as a structural prior for RL.
+**Key Insight**: It is observed that the "visual blind spots" of SVLMs can be mitigated by enforcing a structured sequence of tool calling-observation-perception. This forces the model to acquire visual evidence via tools and then reason based on that evidence, rather than reasoning directly from the raw image. This topological constraint serves as a structural prior for RL.
 
-**Core Idea**: Utilizing GRPO reinforcement learning + soft-structured rollout topology constraints + multi-objective rewards (correctness + structural integrity + tool utility) to allow SVLMs to discover tool-driven visual reasoning strategies under cold-start conditions.
+**Core Idea**: Utilize GRPO reinforcement learning combined with soft-structured rollout topological constraints and multi-objective rewards (correctness + structural integrity + tool utility) to allow SVLMs to discover tool-driven visual reasoning strategies under cold-start conditions.
 
 ## Method
 
 ### Overall Architecture
 
-SPECTRA enables SVLMs to learn the strategy of "evidence collection before reasoning" under cold-start conditions without any supervised trajectories, relying solely on environmental feedback. Using Qwen2.5-VL as the backbone, the visual encoder is frozen while the language decoder is adapted via LoRA. For each multimodal input $(I, q)$, $G$ structured rollout trajectories are sampled and scored by a multi-objective reward (correctness, structural integrity, tool utility, and termination). Relative group advantages are calculated to update the policy using GRPO. The action space consists of natural language tokens plus four visual tool primitives (Image Captioning, Object Detection, OCR, Visual Perception). The soft-structured topological constraint acts as "training wheels" to guide the model from blind direct reasoning toward tool-driven reasoning paths. After training convergence, the TIU metric evaluates tool performance without ground truth.
+SPECTRA enables small vision-language models to autonomously learn the strategy of "evidence collection before reasoning" under cold-start conditions without any supervised trajectories. Using Qwen2.5-VL as the backbone, it freezes the visual encoder and uses LoRA for the language decoder. For each multimodal input $(I, q)$, $G$ structured rollout trajectories are sampled and scored using a multi-objective reward (correctness + structural integrity + tool utility + termination). Relative advantages within the group are calculated to update the policy via GRPO. The action space consists of natural language tokens and four visual tool primitives (Image Captioning, Object Detection, OCR, Visual Perception). Soft-structured topological constraints act as "training wheels," guiding the model from blind direct reasoning to tool-driven reasoning paths. After training convergence, the TIU metric is used to evaluate tool effectiveness without ground truth.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["Multimodal Input (I, q)"] --> B["Qwen2.5-VL Base<br/>Frozen Visual Encoder + LoRA Adapted Decoder"]
-    B --> C["Soft-Structured Multi-Round Rollout (SSMR)<br/>Sample G Trajectories, Topology: Reason→Call Tool→Obs→Percept→Reason→Answer<br/>4 Visual Tools: Captioning / Detection / OCR / Perception"]
-    C --> D["Multi-Objective Agent Reward<br/>R_corr + R_struct + R_tool + R_term"]
+    A["Multimodal Input (I, q)"] --> B["Qwen2.5-VL Backbone<br/>Frozen Vision Encoder + LoRA Adapted Decoder"]
+    B --> C["Soft-Structured Multi-round Rollout (SSMR)<br/>Sample G trajectories following topology: Reason→Tool→Obs→Percep→Reason→Ans<br/>4 Visual Tools: Captioning / Detection / OCR / Perception"]
+    C --> D["Multi-objective Agent Reward<br/>R_corr + R_struct + R_tool + R_term"]
     D --> E["Group Relative Advantage + GRPO Policy Update"]
     E -->|Iterative Optimization| B
-    E --> F["TIU Tool Utility Evaluation<br/>TER × (1+TTAC)/2 × tanh(TSS)"]
+    E -->|Evaluation| F["TIU Tool Utility Evaluation<br/>TER × (1+TTAC)/2 × tanh(TSS)"]
 ```
 
 ### Key Designs
 
-**1. Soft-Structured Multi-Round Rollout (SSMR): Anchoring Reasoning to Visual Evidence via Topological Priors**
+**1. Soft-Structured Multi-round Rollout (SSMR): Anchoring Reasoning to Visual Evidence via Topological Priors**
 
-SVLMs reasoning directly from images are prone to visual hallucinations because they skip evidence collection. SSMR mandates that optimal trajectories follow the topological sequence $\tau = \langle reason \to tool \to obs \to percep \to reason \to ans \rangle$—reasoning to select a tool, obtaining the tool output (Observation), integrating the output with visual features (Perception), then reasoning again before answering. This forces the model to ground conclusions in tool-provided evidence.
+SVLMs performing direct visual reasoning are prone to hallucinations because they skip evidence collection and answer based on impressions. SSMR mandates that optimal trajectories follow the topological sequence $\tau = \langle reason \to tool \to obs \to percep \to reason \to ans \rangle$. By first reasoning to select a tool, obtaining the tool output (Observation), and integrating the output with visual features (Perception) before final reasoning, the model is forced to base conclusions on evidence provided by tools.
 
-This constraint is "soft": deviations are not strictly prohibited but penalized via a structural integrity reward $R_{struct} = \alpha \cdot \gamma^{\phi(\tau)}$ ($\alpha=2.0$, $\gamma=0.75$, where $\phi(\tau)$ measures the degree of deviation). Soft constraints provide sufficient inductive bias for cold-start learning while preserving exploration space—ablation shows a >5% drop on ScienceQA without it.
+This constraint is "soft": deviations are not strictly prohibited but are progressively penalized via a structural integrity reward $R_{struct} = \alpha \cdot \gamma^{\phi(\tau)}$ (where $\alpha=2.0$, $\gamma=0.75$, and $\phi(\tau)$ measures the degree of deviation). Exponential decay of the reward for higher deviation provides enough inductive bias for cold-start learning while maintaining exploration space—ablations show a drop of over 5% on ScienceQA without it.
 
-**2. Multi-Objective Agent Reward: Learning "Correct Answer" and "Correct Process"**
+**2. Multi-objective Agent Reward: Learning "Correct Process" Alongside "Correct Answer"**
 
-Correctness rewards alone may lead models to take shortcuts, such as guessing without tools or repeatedly using only OCR. SPECTRA decomposes the reward: $R_{total} = \lambda_1 R_{corr} + \lambda_2 R_{struct} + \lambda_3 R_{tool} + \lambda_4 R_{term}$. Task correctness $R_{corr} = C_1 \cdot \mathbb{1}(y_{pred} = y_{gt})$ governs the answer, $R_{struct}$ governs the trajectory topology, and the termination flag $R_{term}$ ensures convergence to a definitive answer.
+Relying solely on correctness rewards leads to shortcuts, such as guessing answers without tools or repeatedly using only one tool like OCR. SPECTRA decomposes the reward into four parts: $R_{total} = \lambda_1 R_{corr} + \lambda_2 R_{struct} + \lambda_3 R_{tool} + \lambda_4 R_{term}$. While task correctness $R_{corr} = C_1 \cdot \mathbb{1}(y_{pred} = y_{gt})$ governs the accuracy, $R_{struct}$ manages topological adherence, and the termination flag $R_{term}$ ensures reasoning converges to a clear answer.
 
-The tool utility term is particularly novel: $R_{tool} = \mathbb{1}_{syntax} + \mathbb{1}_{success} + R_{div}$ rewards valid syntax, successful execution, and tool diversity. The diversity term $R_{div}$ includes per-tool saturation caps $\kappa$ and a global cap $\eta$, encouraging multi-tool usage while preventing reward hacking. All terms are normalized as $R_{Total} = S \times R_{total} / N_{norm}$ to align multi-objective signals.
+The tool utility term is particularly clever: $R_{tool} = \mathbb{1}_{syntax} + \mathbb{1}_{success} + R_{div}$ rewards legal syntax, successful execution, and diversity in tool usage. The diversity term $R_{div}$ includes per-tool saturation limits $\kappa$ and a global limit $\eta$, encouraging the use of multiple tools while preventing reward hacking through excessive tool calling. All terms are normalized as $R_{Total} = S \times R_{total} / N_{norm}$ to align multi-objective signals.
 
-**3. Tool Instrumental Utility (TIU): Quantifying Tool Efficacy without Ground Truth**
+**3. Tool Instrumental Utility (TIU): Quantifying Tool Efficacy Without Ground Truth**
 
-Existing Tool Accuracy metrics rely on labeled correct tool sequences, which is impossible in unsupervised settings. TIU synthesizes three dimensions that do not require labels: $TIU = TER \times \frac{1+TTAC}{2} \times \tanh(TSS)$. Tool Execution Reliability (TER) is the success rate of tool calls; Task-Tool Alignment Coefficient (TTAC) is the point-biserial correlation between tool usage and task success (positive values imply tools help); Tool Selectivity Score (TSS) is the KL divergence between tool usage distribution and a uniform distribution, where high values indicate strategic tool selection.
+Existing Tool Accuracy metrics depend on annotated correct tool sequences, which are unavailable in unsupervised settings. TIU synthesizes a metric from three annotation-free dimensions: $TIU = TER \times \frac{1+TTAC}{2} \times \tanh(TSS)$. Tool Execution Reliability (TER) measures the success rate of tool calls, reflecting reliability. The Task-Tool Alignment Coefficient (TTAC) measures the point-biserial correlation between tool usage and task success; positive values indicate that tool usage helps in getting the right answer. The Tool Selectivity Score (TSS) is the KL divergence between the tool usage distribution and a uniform distribution, where high values indicate strategic tool selection.
 
-**Loss & Training**
+These dimensions are bounded—$(1+TTAC)/2$ maps the correlation to $[0,1]$ and $\tanh(TSS)$ bounds selectivity—ensuring that failure in any single dimension significantly lowers the total score. This allows TIU to evaluate whether tools are being used reliably, relevantly, and selectively without relying on ground truth trajectories.
 
-GRPO Objective: $\mathcal{J}_{SPECTRA}(\theta) = \mathbb{E}[\frac{1}{G}\sum_i \frac{1}{|\tau_i|}\sum_t \min(\rho_{i,t} \hat{A}_{i,t}, \text{clip}(\rho_{i,t}, 1-\epsilon_l, 1+\epsilon_h)\hat{A}_{i,t})] - \psi D_{KL}(\pi_\theta \| \pi_{\theta_{ref}})$. Using the VERL framework + vLLM engine, LoRA fine-tuning is applied to Qwen2.5-VL (3B/7B), with 1000 training and 200 test samples per dataset.
+### Loss & Training
+
+GRPO Objective: $\mathcal{J}_{SPECTRA}(\theta) = \mathbb{E}[\frac{1}{G}\sum_i \frac{1}{|\tau_i|}\sum_t \min(\rho_{i,t} \hat{A}_{i,t}, \text{clip}(\rho_{i,t}, 1-\epsilon_l, 1+\epsilon_h)\hat{A}_{i,t})] - \psi D_{KL}(\pi_\theta \| \pi_{\theta_{ref}})$. Using the VERL framework + vLLM engine, LoRA fine-tuning is applied to Qwen2.5-VL (3B/7B), with 1,000 training and 200 testing samples per dataset.
 
 ## Key Experimental Results
 
@@ -85,14 +87,14 @@ GRPO Objective: $\mathcal{J}_{SPECTRA}(\theta) = \mathbb{E}[\frac{1}{G}\sum_i \f
 | GPT-4o | 76.5 | 77.0 | 88.5 | 86.0 | 82.0 | 61.8 |
 | Qwen2.5-VL [7B] (base) | 63.8 | 74.6 | 71.5 | 73.5 | 70.9 | 40.5 |
 | VERL Baseline [7B] | 67.5 | 73.3 | 74.6 | 78.3 | 73.4 | 44.3 |
-| **Ours [7B]** | **71.1** | **77.5** | **79.6** | **83.1** | **77.8** | **46.7** |
+| **SPECTRA [7B]** | **71.1** | **77.5** | **79.6** | **83.1** | **77.8** | **46.7** |
 
-**Tool Instrumental Utility (TIU, 7B variants)**
+**Tool Instrumental Utility (TIU, 7B Variant)**
 
 | Configuration | TER(%) | TTAC | TSS | TIU(%) |
 |------|--------|------|-----|--------|
 | Baseline Agent | 77.30 | -0.003 | 2.05 | 35.63 |
-| **Ours** | **88.69** | **0.009** | **2.98** | **44.66** |
+| **SPECTRA** | **88.69** | **0.009** | **2.98** | **44.66** |
 
 ### Ablation Study
 
@@ -108,37 +110,37 @@ GRPO Objective: $\mathcal{J}_{SPECTRA}(\theta) = \mathbb{E}[\frac{1}{G}\sum_i \f
 
 ### Key Findings
 
-- SPECTRA 7B improves by 4.4 percentage points over the strongest VERL baseline, and by 2.4 points on OOD (MMMU-Pro).
-- TIU increased from 35.63% to 44.66%—TER improved by 11.4% and TTAC shifted from negative to positive (tool usage became "positively correlated" with success).
-- Trajectory Analysis: SPECTRA significantly increased Reason→Terminal correct paths (+48) and reduced Tool_Call→Tool_Call recursive loops (-103).
-- On ScienceQA, removing any reward component resulted in a >5% drop, proving the multi-objective framework is critical for complex reasoning.
-- The 3B variant showed consistent gains (60.3→63.9), proving efficacy for small models.
+- SPECTRA 7B improves by an average of 4.4 percentage points over the strongest VERL baseline and by 2.4 points on OOD (MMMU-Pro).
+- TIU increased from 35.63% to 44.66%—TER improved by 11.4% (tool execution success), and TTAC shifted from negative to positive (tool use moved from "irrelevant" to "positively correlated" with success).
+- Trajectory Analysis: SPECTRA significantly increased Reasoning→Terminal correct paths (+48) and reduced Tool_Call→Tool_Call recursive loops (-103).
+- On ScienceQA, removing any reward component led to a >5% drop, highlighting the importance of the full multi-objective framework for complex reasoning.
+- Small model effectiveness: The 3B variant also showed consistent improvements (60.3→63.9).
 
 ## Highlights & Insights
 
-- The concept of "cold-start RL" is valuable—allowing models to discover tool-usage strategies without supervised trajectories reduces data costs. The structural prior (SSMR) provides the necessary inductive bias.
-- The TIU metric's three-dimensional decomposition (reliability-alignment-selectivity) provides a reusable framework for unsupervised agent evaluation.
-- The saturation design of the diversity reward $R_{div}$ is a practical trick—encouraging tool variety while preventing reward hacking, proving sturdier than simple counter rewards.
+- The concept of "Cold-start RL" is highly valuable—allowing models to discover tool-use strategies without supervised trajectories, significantly reducing data costs. The success hinges on the structural prior (SSMR) providing sufficient inductive bias.
+- The TIU metric's three-dimensional decomposition (reliability-alignment-selectivity) provides a reusable framework for unsupervised Agent evaluation that can be migrated to other tool-calling scenarios.
+- The saturation design of the reward diversity term $R_{div}$ is a practical trick—encouraging variety while preventing reward hacking, making it more robust than simple counting rewards.
 
 ## Limitations & Future Work
 
-- Only 4 visual tools are integrated; lacking code execution or search engines limits applicability to complex tasks requiring external knowledge.
-- Despite correct final results, intermediate reasoning steps occasionally show hallucinations (e.g., fantasizing non-existent tools).
-- Training and evaluation were conducted only on MCQ scenarios; performance on open-ended generation tasks remains unknown.
-- Efficiency of cold-start learning depends on reasonable reward design; new tasks require re-designing reward signals.
+- Only 4 visual tools were integrated; the lack of general tools like code execution or search engines limits applicability to complex tasks requiring external knowledge.
+- Despite correct final results, intermediate reasoning steps occasionally display hallucinations (e.g., fantasizing about non-existent tools).
+- Training and evaluation were conducted only in MCQ scenarios; performance in open-ended generation tasks remains unknown.
+- Efficiency in cold-start learning depends heavily on a well-designed reward structure—new tasks may require re-engineering the reward signals.
 
 ## Related Work & Insights
 
-- **vs T3-Agent**: T3-Agent uses automatically generated supervised trajectories (MM-Traj) for fine-tuning. SPECTRA is entirely unsupervised, reducing data costs, although T3-Agent may have a higher upper bound with sufficient supervision.
-- **vs Tool-R1**: Tool-R1 uses RL to optimize tool calling but does not directly improve visual perception. SPECTRA anchors tool outputs to visual understanding via SSMR.
-- **vs RL4VLM**: RL4VLM uses environmental rewards without structural priors. SPECTRA's topological constraints provide essential inductive bias for cold-start scenarios.
+- **vs T3-Agent**: T3-Agent uses automatically generated supervised trajectories (MM-Traj) for fine-tuning. SPECTRA is fully unsupervised, reducing data costs, although T3-Agent might have a higher performance ceiling with sufficient supervised data.
+- **vs Tool-R1**: Tool-R1 uses RL to optimize tool calls but does not directly improve visual perception. SPECTRA anchors tool outputs to visual understanding via SSMR.
+- **vs RL4VLM**: RL4VLM uses environment rewards without structural priors. SPECTRA's topological constraints provide the critical inductive bias needed for cold-start learning.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ Cold-start RL + Soft topology + TIU metric, though base technologies (GRPO, LoRA) are established.
-- Experimental Thoroughness: ⭐⭐⭐⭐ 4 benchmarks + OOD + ablation + trajectory/qualitative analysis with full statistical testing.
-- Writing Quality: ⭐⭐⭐⭐ Clear motivation, complete formulas, though dense notation requires careful reading.
-- Value: ⭐⭐⭐⭐ Provides a practical framework for unsupervised agent training; the TIU metric is independently useful.
+- Novelty: ⭐⭐⭐⭐ Cold-start RL + Soft topological constraints + TIU metric represent strong contributions, though base techniques (GRPO, LoRA) are established.
+- Experimental Thoroughness: ⭐⭐⭐⭐ 4 benchmarks + OOD + Ablations + Trajectory analysis + Qualitative analysis with complete statistical testing.
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation and complete formulas, though dense notation requires careful reading.
+- Value: ⭐⭐⭐⭐ Provides a practical framework for unsupervised Agent training; the TIU metric is independently useful.
 
 <!-- RELATED:START -->
 
@@ -150,7 +152,7 @@ GRPO Objective: $\mathcal{J}_{SPECTRA}(\theta) = \mathbb{E}[\frac{1}{G}\sum_i \f
 - [\[ACL 2026\] BAPO: Boundary-Aware Policy Optimization for Reliable Agentic Search](bapo_boundary-aware_policy_optimization_for_reliable_agentic_search.md)
 - [\[ICLR 2026\] Towards Scalable Oversight via Partitioned Human Supervision](../../ICLR2026/llm_agent/towards_scalable_oversight_via_partitioned_human_supervision.md)
 - [\[ACL 2026\] Your LLM Agents are Temporally Blind: The Misalignment Between Tool Use Decisions and Human Time Perception](your_llm_agents_are_temporally_blind_the_misalignment_between_tool_use_decisions.md)
-- [\[ACL 2026\] LPO: Towards Accurate GUI Agent Interaction via Location Preference Optimization](lpo_towards_accurate_gui_agent_interaction_via_location_preference_optimization.md)
+- [\[CVPR 2026\] BAMI: Training-Free Bias Mitigation in GUI Grounding](../../CVPR2026/llm_agent/bami_training-free_bias_mitigation_in_gui_grounding.md)
 
 </div>
 

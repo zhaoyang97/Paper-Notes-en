@@ -2,112 +2,112 @@
 title: >-
   [Paper Note] Dimension-Free Multimodal Sampling via Preconditioned Annealed Langevin Dynamics
 description: >-
-  [ICML 2026][Multimodal VLM][Paper Note] The study presents the first **dimension-free** non-asymptotic convergence analysis for Preconditioned Annealed Langevin Dynamics (PALD)—reducing the sampling complexity for multimodal distributions from $\tilde{O}(d/\epsilon^2)$ to $\tilde{O}(1/\epsilon^2)$, effectively liberating diffusion-based sampling algorithms f
+  [ICML 2026][Multimodal VLM][Paper Note] This work provides the first **dimension-free** non-asymptotic convergence analysis for Preconditioned Annealed Langevin Dynamics (PALD)—reducing the sampling complexity for multimodal distributions from $\tilde{O}(d/\epsilon^2)$ to $\tilde{O}(1/\epsilon^2)$, liberating diffusion-based sampling algorithms from the "cur
 tags:
   - ICML 2026
   - Multimodal VLM
 date: 2026-05-08
-content_hash: 4817bfe67764e196
+content_hash: bfc8d44ac13ea2aa
 ---
 # Dimension-Free Multimodal Sampling via Preconditioned Annealed Langevin Dynamics
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.30396](https://arxiv.org/abs/2605.30396)  
 **Code**: To be confirmed  
-**Area**: Optimization / Sampling Algorithms / Diffusion Model Theory  
+**Area**: Optimization / Sampling Algorithms / Theory of Diffusion Models  
 **Keywords**: Annealed Langevin Dynamics, Multimodal Distributions, Dimension-Free Convergence, Hessian Preconditioning
 
 ## TL;DR
-The study presents the first **dimension-free** non-asymptotic convergence analysis for Preconditioned Annealed Langevin Dynamics (PALD)—reducing the sampling complexity for multimodal distributions from $\tilde{O}(d/\epsilon^2)$ to $\tilde{O}(1/\epsilon^2)$, effectively liberating diffusion-based sampling algorithms from the "dimension explosion" in high-dimensional settings.
+This work provides the first **dimension-free** non-asymptotic convergence analysis for Preconditioned Annealed Langevin Dynamics (PALD)—reducing the sampling complexity for multimodal distributions from $\tilde{O}(d/\epsilon^2)$ to $\tilde{O}(1/\epsilon^2)$, liberating diffusion-based sampling algorithms from the "curse of dimensionality" in high-dimensional settings.
 
 ## Background & Motivation
 
-**Background**: Sampling from multimodal distributions is a central challenge in machine learning and statistics. Standard Langevin Dynamics (LD) requires exponential time to traverse the "potential barriers" of a distribution. Annealed LD (ALD) addresses this by gradually lowering the energy landscape via temperature annealing, a technique proven practical in NCSN and diffusion models.
+**Background**: Sampling from multimodal distributions is a central challenge in machine learning and statistics. Langevin Dynamics (LD) requires exponential time to cross the "potential barriers" of a distribution. Annealed LD (ALD) gradually lowers the energy landscape through temperature annealing and has proven practical in NCSN and diffusion models.
 
-**Limitations of Prior Work**: Existing convergence analyses for ALD, while providing guarantees, show a **complexity that depends linearly on the dimension $d$** or worse. This results in a sample count explosion in high-dimensional settings (e.g., ImageNet where $d \approx 10^6$).
+**Limitations of Prior Work**: Although existing convergence analyses for ALD provide guarantees, the **complexity depends linearly on the dimension $d$** or even worse. This leads to a sample complexity explosion in high-dimensional tasks (e.g., ImageNet where $d \approx 10^6$).
 
-**Key Challenge**: In practice, ALD performs efficient sampling in million-dimensional spaces, yet theoretical analysis fails to explain this phenomenon, creating a "dimensionality gap" between the theory and practice of ALD.
+**Key Challenge**: ALD effectively performs sampling in millions of dimensions in practice, yet theoretical analysis fails to explain this phenomenon—resulting in a "dimensionality gap" between theory and practice.
 
-**Goal**: To establish a **dimension-free convergence guarantee** for ALD on high-dimensional multimodal distributions, thereby bridging the gap between theory and practice.
+**Goal**: To establish **dimension-free convergence guarantees** for ALD on high-dimensional multimodal distributions, bridging the gap between theory and practice.
 
-**Key Insight**: The authors observe that the dimension dependence in current analyses stems from the assumption of **equidistant isotropic step sizes**. By utilizing **preconditioning** (local Hessian adaptation), one can maintain effective step sizes along high-dimensional directions, achieving dimension-independent convergence.
+**Key Insight**: The dimensionality dependence in existing analyses stems from the assumption of an **equidistant isotropic step-size**. By employing **preconditioning** (local Hessian adaptation), an effective step size can be maintained across high-dimensional directions, thereby achieving dimension-free convergence.
 
-**Core Idea**: The LD update rule is replaced with a local Hessian-based preconditioned version: $\theta_{t+1} = \theta_t - \eta H(\theta_t)^{-1} \nabla U(\theta_t) + \sqrt{2\eta H(\theta_t)^{-1}} \xi_t$. This allows for dimension-free convergence while preserving the annealing framework.
+**Core Idea**: The update rule of Langevin Dynamics is replaced with a version preconditioned by the local Hessian—$\theta_{t+1} = \theta_t - \eta H(\theta_t)^{-1} \nabla U(\theta_t) + \sqrt{2\eta H(\theta_t)^{-1}} \xi_t$—to obtain dimension-free convergence while preserving the annealing framework.
 
 ## Method
 
 ### Overall Architecture
-The algorithmic flow is straightforward: (1) Define the target distribution $\pi(\theta) \propto \exp(-U(\theta))$; (2) Construct a temperature sequence $\beta_1 < \beta_2 < ... < \beta_K = 1$; (3) Perform preconditioned Langevin updates at each temperature; (4) Compute the preconditioner $H(\theta_t)$ via Hessian adaptation or low-rank approximation; (5) Obtain target samples at the final temperature. The modification of PALD relative to standard ALD is solely the replacement of isotropic step sizes with Hessian preconditioning. The true contribution of **Ours** lies not in the update rule itself, but in **proving that its sampling complexity on multimodal distributions is independent of the dimension $d$**. Consequently, the following three key designs form a progressive logical chain: how preconditioning decouples effective steps from dimension (Design 1), how annealing decouples barrier height from dimension (Design 2), and how log-Sobolev inequalities tighten these into a strict dimension-free bound (Design 3).
+The algorithmic procedure is straightforward: (1) Define the target distribution $\pi(\theta) \propto \exp(-U(\theta))$; (2) Construct a temperature sequence $\beta_1 < \beta_2 < ... < \beta_K = 1$; (3) Execute preconditioned Langevin updates at each temperature; (4) Obtain the preconditioner $H(\theta_t)$ via Hessian adaptation or low-rank approximation; (5) Collect target samples at the final temperature. The modification of PALD relative to standard Annealed Langevin (ALD) is limited to replacing the isotropic step size with Hessian preconditioning. The true contribution of this work lies in **proving that its sampling complexity on multimodal distributions is independent of the dimension $d$**. Consequently, the following three key designs form a progressive logical chain: how preconditioning decouples effective step size from dimension (Design 1), how annealing decouples potential barrier height from dimension (Design 2), and how log-Sobolev inequalities tighten these synergistic effects into a rigorous dimension-free upper bound (Design 3).
 
 ### Key Designs
 
-**1. Preconditioned Hessian Adaptation: Compensating Step Sizes via Local Curvature to Decouple Effective "Steps" from Dimension**
+**1. Preconditioned Hessian Adaptation: Compensating step sizes with local curvature to decouple "effective steps" from dimension.**
 
-Standard LD uses a uniform step size in all directions, causing the entire process to be bottlenecked by the sharpest direction; as dimensions increase, this bottleneck worsens. **Ours** employs the local Hessian $H(\theta) = \nabla^2 U(\theta)$ (or a regularized version $H + \lambda I$) as a preconditioner: decreasing step size in sharp directions (large eigenvalues) for stability and increasing it in flat directions (small eigenvalues) to accelerate exploration. As a result, the relative step size $\eta / \lambda_i$ reaches its respective stability threshold in every direction. Consequently, the effective "number of steps" required for convergence is no longer inflated by the dimension, which is the source of dimension-independence.
+Standard Langevin Dynamics uses a uniform step size in all directions, causing the overall progress to be bottlenecked by the sharpest direction; this bottleneck worsens as dimensions increase. This method utilizes the local Hessian $H(\theta) = \nabla^2 U(\theta)$ (or a regularized version $H + \lambda I$) as a preconditioner: step sizes are reduced in sharp directions (large eigenvalues) to ensure stability and increased in flat directions (small eigenvalues) to accelerate exploration. As a result, the relative step size $\eta / \lambda_i$ in each direction reaches its own stability threshold. Consequently, the effective number of steps required for convergence no longer expands with dimension, which is the source of dimension independence.
 
-**2. Annealing Schedule + Dimension-Free Barrier Crossing: Decoupling Barrier Height from Dimension**
+**2. Annealing Schedule + Dimension-Free Barrier Crossing: Decoupling barrier height from dimension.**
 
-The difficulty of multimodal sampling lies in crossing "potential barriers"—LD requires infinite time to jump between modes. Annealing bridges global exploration and local refinement through a temperature sequence $\beta_k$. At high temperatures (small $\beta_k$), the potential function is flattened, facilitating mode transitions. Specifically, a geometric annealing schedule $\beta_k = \beta_0 \cdot r^k$ ($r>1$) is used. Conventional ALD complexity proofs depend on the maximum barrier height, which scales as $O(d)$. With preconditioning, the "effort" required for crossing is determined by the effective curvature across potential directions rather than the dimension. Thus, the barrier height $\Delta$ no longer grows linearly with $d$.
+Multimodal sampling is difficult due to the "potential barriers"—LD requires infinite time to jump from one mode to another. Annealing bridges global exploration and local refinement via a temperature sequence $\beta_1 < \beta_2 < ... < \beta_K = 1$: at high temperatures (small $\beta_k$), the potential function is flattened and modes are easily crossed. This work utilizes geometric annealing $\beta_k = \beta_0 \cdot r^k$ ($r>1$). Traditional complexity proofs for annealing depend on the maximum barrier height, a quantity roughly $O(d)$. With preconditioning, the "effort" required for crossing is determined by the effective curvature across potential directions rather than dimension, so the barrier height $\Delta$ no longer grows linearly with $d$. The synergy of preconditioning and annealing decouples dimension from the potential barriers.
 
-**3. Theoretical Analysis Framework: Providing a Dimension-Free Upper Bound of $\tilde{O}(\log(1/\epsilon)/\epsilon^2)$ via Log-Sobolev + Transport Inequalities**
+**3. Theoretical Analysis Framework: Dimension-free upper bound of $\tilde{O}(\log(1/\epsilon)/\epsilon^2)$ via log-Sobolev and transport inequalities.**
 
-To transform the intuition above into rigorous guarantees, the analysis proves that the KL divergence $\text{KL}(p_k \| \pi_{\beta_k})$ decreases monotonically along the temperature sequence. Log-Sobolev inequalities and Talagrand transport inequalities are used to provide the complexity upper bound, and a preconditioner-assisted synchronous coupling is explicitly constructed to avoid dimension explosion. The technical challenge is that Log-Sobolev constants are typically $O(d^{-1})$, which reintroduces dimension dependence. Preconditioning allows the analysis to be performed in a "transformed isotropic space," where the $d^{-1}$ factor is absorbed, resulting in a final complexity of $\tilde{O}(\log K / \epsilon^2)$, which is dimension-free.
+To transform these intuitions into rigorous guarantees, the analysis proves that the KL divergence $\text{KL}(p_k \| \pi_{\beta_k})$ decreases monotonically along the temperature sequence. It uses log-Sobolev inequalities and Talagrand transport inequalities to derive the complexity upper bound and explicitly constructs a preconditioning-assisted synchronous coupling to avoid dimensionality explosion. The difficulty lies in the fact that log-Sobolev constants are typically $O(d^{-1})$, which would reintroduce dimensionality dependence; the role of preconditioning is to map the analysis into a "transformed equidistant space" where this $d^{-1}$ factor is absorbed. The final complexity is $\tilde{O}(\log K / \epsilon^2)$, independent of dimension.
 
 ## Key Experimental Results
 
 ### Convergence Complexity
 
 | Method | Sampling Complexity | Dimension Dependence |
-|------|------------|---------|
+| :--- | :--- | :--- |
 | Standard LD | $\tilde{O}(d \beta^* / \epsilon^2)$ | Linear $d$ |
 | Standard ALD | $\tilde{O}(d \log K / \epsilon^2)$ | Linear $d$ |
 | **PALD (Ours)** | $\tilde{O}(\log K / \epsilon^2)$ | **None** |
 | MCMC (HMC) | $\tilde{O}(d^{1/4} / \epsilon^{1/2})$ | $d^{1/4}$ |
 
-### Synthetic Multimodal Distribution Experiments
+### Main Results: Synthetic Multimodal Distributions
 
-| Distribution | Dimension | Modes | LD Jump Rate | ALD Jump Rate | **PALD Jump Rate** |
-|------|------|------|---------|-----------|-----------|
-| GMM (2 components) | 100 | 2 | 12% | 89% | **97%** |
-| GMM (2 components) | 10000 | 2 | 0% | 23% | **94%** |
-| GMM (4 components, rotated) | 100 | 4 | 8% | 73% | **96%** |
-| GMM (4 components, rotated) | 10000 | 4 | 0% | 12% | **91%** |
+| Distribution | Dimension | Modes | LD Crossing Rate | ALD Crossing Rate | **PALD Crossing Rate** |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Mixture of 2 Gaussians | 100 | 2 | 12% | 89% | **97%** |
+| Mixture of 2 Gaussians | 10000 | 2 | 0% | 23% | **94%** |
+| 4-Mixture (Rotated) | 100 | 4 | 8% | 73% | **96%** |
+| 4-Mixture (Rotated) | 10000 | 4 | 0% | 12% | **91%** |
 
-PALD maintains high jump rates in high dimensions, whereas ALD and LD degrade significantly.
+PALD maintains high crossing rates in high dimensions, while ALD/LD degrade severely.
 
 ### High-Dimensional Specific Benchmarks
 
 | Task | Algorithm | Dimension | Convergence Time (vs ALD) |
-|------|------|------|----------------|
-| NN Posterior Sampling | PALD vs ALD | 50000 | **0.07× Time** |
-| High-Dim GMM | PALD vs ALD | 100000 | **0.02× Time** |
+| :--- | :--- | :--- | :--- |
+| Neural Network Posterior | PALD vs ALD | 50000 | **0.07× Time** |
+| High-dim GMM | PALD vs ALD | 100000 | **0.02× Time** |
 
 ### Key Findings
-- **Experimental Verification of Dimension-Independence**: The convergence time of PALD remains relatively stable as dimensions increase from 100 to 10,000, while ALD degrades sharply.
+- **Experimental Verification of Dimension-Free Property**: PALD convergence time remains relatively stable from 100 to 10,000 dimensions, whereas ALD degrades sharply.
 - **Multimodal Preservation**: In 4-mode distributions, PALD accurately captures the relative weights of all modes, whereas ALD tends to bias toward the initial mode in high dimensions.
 - **Preconditioner Update Frequency**: Updating every 100 steps is found to be optimal; excessive updates increase computational overhead.
 
 ## Highlights & Insights
-- **First Dimension-Free Convergence Proof**: A breakthrough in the "curse of dimensionality" for multimodal sampling, providing theoretical support for high-dimensional diffusion models.
-- **Elegant Fusion of Preconditioning + Annealing**: The synergistic effect of these independent techniques far exceeds their individual use—preconditioning ensures step size efficiency, while annealing ensures global exploration.
-- **Rigorous Experimental Validation**: Systematically demonstrates dimension-independence from low (100) to high ($10^5$) dimensions, showing high alignment with theoretical predictions.
+- **First Dimension-Free Convergence Proof**: Breaks the "curse of dimensionality" in multimodal sampling, providing theoretical support for high-dimensional diffusion models.
+- **Elegant Combination of Preconditioning + Annealing**: The synergy between these two independent techniques far exceeds their individual use—preconditioning ensures step-size efficiency, while annealing ensures global exploration.
+- **Rigorous Experimental Validation**: Systematically demonstrates dimension independence from low (100) to high ($10^5$) dimensions, highly consistent with theoretical predictions.
 
 ## Limitations & Future Work
-- Hessian Computational Cost: Each step requires $O(d^2)$ storage or $O(d^3)$ factorization, which remains difficult for ultra-high dimensions ($d > 10^7$).
-- Precision Loss in Low-Rank Approximation: The theoretical analysis assumes an exact Hessian preconditioner; in practice, common low-rank or diagonal approximations might violate dimension-free conditions.
-- Non-Smooth Potentials: Current analysis requires $U$ to be twice-differentiable; it is not directly applicable to non-smooth potentials or distributions on Stiefel manifolds.
-- Future Improvements: Explore fast approximations based on efficient preconditioners like K-FAC or Shampoo; extend analysis to non-smooth or geometrically constrained distributions.
+- Hessian Computation Cost: Each step requires $O(d^2)$ storage or $O(d^3)$ factorization; this remains difficult for ultra-high dimensions ($d > 10^7$).
+- Accuracy Loss in Low-Rank Approximations: Theoretical analysis assumes an exact Hessian preconditioner; the low-rank or diagonal approximations commonly used in practice might violate dimension-free conditions.
+- Non-Smooth Potentials: Current analysis requires $U$ to be twice differentiable; distributions with non-smooth potentials or those on Stiefel manifolds are not directly applicable.
+- Improvements: Explore fast approximations based on efficient preconditioners like K-FAC or Shampoo; extend the analysis to non-smooth or geometrically constrained distributions.
 
 ## Related Work & Insights
-- **vs Standard ALD (Song-Ermon 2019)**: The primary innovation of **Ours** is the preconditioning mechanism and the theoretical analysis providing dimension-free convergence proofs.
-- **vs Hamiltonian Monte Carlo (HMC)**: HMC accelerates mixing via momentum, but its theoretical analysis remains dimension-dependent; PALD directly addresses dimensionality through preconditioning.
-- **vs Second-Order Preconditioning in Adam/SGD**: **Ours** represents the first application of preconditioning specifically for sampling rather than optimization scenarios.
+- **vs Standard ALD (Song-Ermon 2019)**: The primary innovation of this work is the preconditioning mechanism and the theoretical analysis providing dimension-free convergence proofs.
+- **vs Hamiltonian Monte Carlo (HMC)**: HMC accelerates mixing by introducing momentum, but theoretical analysis remains dimension-dependent; PALD directly tackles dimensionality through preconditioning.
+- **vs Second-Order Preconditioning in Adam/SGD**: This work is the first to apply preconditioning to sampling instead of optimization scenarios.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐  First dimension-free multimodal sampling guarantee, a major theoretical breakthrough.
-- Experimental Thoroughness: ⭐⭐⭐⭐  Synthetic multimodal experiments are comprehensive; real-world high-dimensional task validation is limited.
-- Writing Quality: ⭐⭐⭐⭐  Mathematically rigorous with clear proof steps; theory and experiments corroborate each other.
-- Value: ⭐⭐⭐⭐⭐  Establishes a theoretical foundation for diffusion models and high-dimensional Bayesian inference.
+- Novelty: ⭐⭐⭐⭐⭐ (First dimension-free multimodal sampling guarantee, a major theoretical breakthrough)
+- Experimental Thoroughness: ⭐⭐⭐⭐ (Synthetic multimodal experiments are complete; verification on real-world high-dimensional tasks is limited)
+- Writing Quality: ⭐⭐⭐⭐ (Mathematically rigorous, clear proof steps, theory and experiments support each other)
+- Value: ⭐⭐⭐⭐⭐ (Establishes a theoretical foundation for diffusion models and high-dimensional Bayesian inference)
 
 <!-- RELATED:START -->
 
@@ -116,10 +116,10 @@ PALD maintains high jump rates in high dimensions, whereas ALD and LD degrade si
 ## Related Papers
 
 - [\[ICML 2026\] Conditional Diffusion Sampling](conditional_diffusion_sampling.md)
-- [\[CVPR 2026\] Thinking in Dynamics: How Multimodal Large Language Models Perceive, Track, and Reason Dynamics in Physical 4D World](../../CVPR2026/multimodal_vlm/thinking_in_dynamics_how_multimodal_large_language_models_perceive_track_and_rea.md)
 - [\[ICML 2026\] FreeRet: MLLMs as Training-Free Retrievers](freeret_mllms_as_training-free_retrievers.md)
-- [\[ICML 2025\] Importance Corrected Neural JKO Sampling](../../ICML2025/multimodal_vlm/importance_corrected_neural_jko_sampling.md)
 - [\[ICML 2025\] RollingQ: Reviving the Cooperation Dynamics in Multimodal Transformer](../../ICML2025/multimodal_vlm/rollingq_reviving_the_cooperation_dynamics_in_multimodal_transformer.md)
+- [\[ICML 2025\] Importance Corrected Neural JKO Sampling](../../ICML2025/multimodal_vlm/importance_corrected_neural_jko_sampling.md)
+- [\[ICML 2026\] Model-Dowser: Data-Free Importance Probing to Mitigate Catastrophic Forgetting in Multimodal Large Language Models](model-dowser_data-free_importance_probing_to_mitigate_catastrophic_forgetting_in.md)
 
 </div>
 

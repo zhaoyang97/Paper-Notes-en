@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] SteerEval: Inference-time Interventions Strengthen Multilingual Generalization in Neural Summarization Metrics
 description: >-
-  [ACL 2026][Multilingual & Translation][activation steering] SteerEval investigates aligning the hidden representations of multilingual evaluation models toward high-resource pivot languages during inference. It finds that steering toward English or French universally improves the correlation between automatic multilingual summarization metrics and human scores, particularly ben
+  [ACL 2026][Multilingual & Translation][activation steering] SteerEval investigates aligning the hidden representations of multilingual evaluation models toward high-resource pivot languages during inference. It finds that steering toward English or French generally improves the correlation between automated multilingual summarization metrics and human scores, particularly benef
 tags:
   - ACL 2026
   - Multilingual & Translation
@@ -10,139 +10,142 @@ tags:
   - LLM-as-a-judge
   - COMET
 date: 2026-05-08
-content_hash: 2dfd516fbc018afb
+content_hash: 0e5a6ad36b5d5633
 ---
 # SteerEval: Inference-time Interventions Strengthen Multilingual Generalization in Neural Summarization Metrics
 
 **Conference**: ACL2026  
 **arXiv**: [2601.15809](https://arxiv.org/abs/2601.15809)  
-**Code**: No public repository link provided in the paper  
-**Area**: Multilingual Evaluation / Machine Translation & Summarization Evaluation  
+**Code**: The paper does not provide a public repository link  
+**Area**: Multilingual Evaluation / Machine Translation and Summarization Evaluation  
 **Keywords**: activation steering, multilingual summarization evaluation, LLM-as-a-judge, COMET, English pivot language
 
 ## TL;DR
-SteerEval investigates aligning the hidden representations of multilingual evaluation models toward high-resource pivot languages during inference. It finds that steering toward English or French universally improves the correlation between automatic multilingual summarization metrics and human scores, particularly benefiting low-baseline languages and encoder-based COMET metrics.
+SteerEval investigates aligning the hidden representations of multilingual evaluation models toward high-resource pivot languages during inference. It finds that steering toward English or French generally improves the correlation between automated multilingual summarization metrics and human scores, particularly benefiting low-baseline languages and encoder-based COMET metrics.
 
 ## Background & Motivation
-**Background**: Summarization and natural language generation tasks have long relied on automatic metrics to replace expensive human evaluation. From BLEU and ROUGE to COMET, BERTScore, and recently LLM-as-a-judge, model-based metrics are increasingly common for English tasks and are gradually being adopted for multilingual evaluation.
+**Background**: Summarization and natural language generation (NLG) tasks have long relied on automated metrics to replace expensive human evaluation. From BLEU and ROUGE to COMET and BERTScore, and recently to LLM-as-a-judge, model-based metrics have become increasingly common in English tasks and are gradually being applied to multilingual evaluation.
 
-**Limitations of Prior Work**: In multilingual scenarios, the correlation between model metrics and human judgment is unstable. For languages such as Yoruba, Hebrew, and Turkish, some LLM scorers even exhibit near-zero or negative correlations. This implies that directly migrating English evaluation paradigms to low-resource languages introduces noise into system comparisons and research progress.
+**Limitations of Prior Work**: In multilingual scenarios, the correlation between model metrics and human judgment is unstable. Specifically, on languages such as Yoruba, Hebrew, and Turkish, some LLM evaluators even exhibit near-zero or negative correlations. This implies that directly transferring English evaluation paradigms to low-resource languages introduces noise into system comparisons and research progress.
 
-**Key Challenge**: Multilingual LLMs are often thought to use English as an internal pivot language. This internal geometric structure aids cross-lingual generalization, but when target language representations are not well-aligned with this pivot space, downstream generation or evaluation quality degrades. The core question is: does this representation misalignment also affect automatic evaluation metrics?
+**Key Challenge**: Multilingual LLMs are often hypothesized to use English as an internal pivot language. This internal geometric structure aids cross-lingual generalization, but when target language representations are not well-aligned to this pivot space, the quality of downstream generation or evaluation declines. The core question is: does this representation misalignment also affect automated evaluation metrics?
 
-**Goal**: The authors aim to test a simple hypothesis: whether steering the internal representations of low-resource or non-English inputs toward the English direction during inference can bring neural summarization metrics closer to human judgment.
+**Goal**: The authors aim to verify a simple hypothesis: whether steering the internal representations of low-resource or non-English inputs toward the English direction during inference can make neural summarization metrics more closely align with human judgment.
 
-**Key Insight**: Instead of retraining metrics, the paper performs test-time interventions on frozen models. It covers both decoder-based LLM-as-a-judge and encoder-based COMET to observe if steering is a universal corrective tool for multilingual evaluation.
+**Key Insight**: Instead of retraining metrics, the authors perform test-time intervention within frozen models. The study covers both decoder-based LLM-as-a-judge and encoder-based COMET to observe if steering serves as a more universal corrective tool for multilingual evaluation.
 
-**Core Idea**: Use parallel sentences from FLORES to learn "Language X to English" vectors or linear mappings. During evaluation, apply controllable interpolation or offsets to the model's hidden representations and measure if the Pearson correlation improves.
+**Core Idea**: Utilize 500 parallel sentence pairs from FLORES to learn "Language X to English" vectors or linear mappings. During evaluation, perform controllable interpolation or offsets on model hidden representations to examine if the Pearson correlation improves.
 
 ## Method
 
 ### Overall Architecture
-SteerEval does not retrain any evaluation metrics. Instead, it validates whether "pushing" the hidden representations of low-resource inputs toward the English pivot space improves correlation with human judgment. The pipeline consists of three steps. First, hidden representations of source languages and English are extracted from a frozen model using 500 parallel sentence pairs from FLORES to learn steering directions or linear mappings. Second, during inference, intermediate representations of the summaries being evaluated are adjusted toward the English direction based on a strength parameter. Third, system summaries are scored using the adjusted neural metrics, and the Pearson correlation with multilingual human scores is calculated.
+SteerEval does not retrain any evaluation metrics. Instead, it validates whether "pushing" the hidden representations of low-resource inputs toward the English pivot space improves the correlation between metrics and human evaluation. The pipeline consists of three steps. First, hidden representations of the source language and English are extracted from a frozen model using 500 FLORES parallel pairs to learn the "Language X → English" steering direction or linear mapping. Second, during evaluation inference, the intermediate representations of the summary are adjusted toward the English direction according to a strength parameter. Third, the adjusted neural metrics are used to score system summaries, followed by calculating the Pearson correlation with multilingual human scores.
 
-The authors test this intervention across three types of metrics: Direct Prompting (LLM outputs 1-5 scores), GPTScore (scoring based on conditional generation probability), and COMET (using wmt22-comet-da adapted for summarization by leaving the source empty and treating the system summary as hypothesis and human summary as reference).
+The authors test this intervention across three categories of metrics: Direct Prompting (LLM outputs a 1-5 score); GPTScore (scoring via conditional generation probability); and COMET (using wmt22-comet-da adapted for summarization by leaving the source empty, treating the system summary as the hypothesis and the human summary as the reference).
 
 ```mermaid
-graph TD
-    A["FLORES (500 parallel pairs)<br/>Extract source & English hidden reps from frozen model"]
-    subgraph STEER["Learning steering parameters (Language X → English)"]
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["FLORES 500 parallel pairs<br/>Extract source and English hidden representations from frozen model"]
+    subgraph STEER["Learn steering parameters (Language X → English)"]
         direction TB
-        B["Vector-based intervention<br/>Difference in means between target & source → direction vector"]
-        C["Map-based intervention<br/>Learn linear map W_l per layer to align spaces"]
+        B["Vector-based intervention<br/>Difference between target and source mean representations → direction vector"]
+        C["Map-based intervention<br/>Learn linear mapping W_l for each layer to align language spaces"]
     end
     A --> B
     A --> C
-    B -->|"Shift along direction with strength ρ"| D["Inference-time intervention on hidden reps"]
-    C -->|"Interpolate between original & mapped reps with σ"| D
+    B -->|"Strength ρ translation along direction"| D["Inference-time intervention on intermediate representations"]
+    C -->|"Parameter σ interpolation between original and mapped representations"| D
     D --> E["Neural metric scoring<br/>Direct Prompting / GPTScore / COMET"]
-    E --> F["Calculate Pearson correlation with human ratings"]
-    F --> G["Multi-metric, multi-lingual meta-evaluation<br/>Grid validation of steering effectiveness"]
+    E --> F["Calculate Pearson correlation with multilingual human scores"]
+    F --> G["Multi-metric, multi-language meta-evaluation<br/>Grid verification of steering universality"]
 ```
 
 ### Key Designs
 **1. Vector-based intervention: Translating representations using a language direction vector**
 
-If the "English pivot" corresponds to an approximately linear direction in the representation space, the simplest method is to shift along this direction. Specifically, for parallel sentences, the language direction vector for each layer is the difference between the mean representation of the target language and the source language. During evaluation, this vector is multiplied by strength $\rho$ and added to the source language input's hidden states. For LLMs, this is applied layer-wise; for COMET, it is applied only to the pooled representation. This method is direct with few parameters, though the lack of normalization means the semantic intensity of $\rho$ varies across languages.
+If the "English pivot" truly corresponds to an approximately linear direction in the representation space, the simplest method is direct translation. Specifically, for a set of parallel sentences, the difference between the mean representation of the target language and the source language is calculated to obtain a per-layer language direction vector. During evaluation, this direction multiplied by strength $\rho$ is added to the hidden states. For LLM metrics, this is applied layer-wise, while for COMET, it is applied only to the pooled representation. This method involves minimal parameters but, as directions and distances are not normalized, the numerical meaning of $\rho$ is inconsistent across languages.
 
-**2. Map-based intervention: Learning a linear mapping to project representations**
+**2. Map-based intervention: Learning a linear mapping to project source representations into the target space**
 
-A vector difference only models translation, but misalignment between languages often involves rotation and scaling. This method learns a matrix $W_l$ for each layer to minimize the distance between the transformed source representation and the target representation. At inference, parameter $\sigma$ interpolates between the original and mapped representations. Linear mapping handles more complex geometric transformations than translation but requires more parameters and uses least squares for alignment.
+Vector differences only model translation, whereas representation misalignment between languages often involves rotation and scaling. This method learns a matrix $W_l$ for each layer to minimize the distance between the transformed source representation and the target representation. During inference, parameter $\sigma$ is used for interpolation between the original representation and the mapped target representation; a larger $\sigma$ moves the representation closer to the target language. Compared to vector translation, linear mapping accounts for more complex geometric transformations at the cost of requiring parallel sentences for least-squares alignment.
 
-**3. Multi-metric, multi-lingual meta-evaluation: Cross-grid validation**
+**3. Multi-metric, multi-language meta-evaluation: Systematic verification across a cross-grid**
 
-Multilingual evaluation is prone to confounding factors like models, prompts, and evaluation dimensions. To ensure robustness, the authors use backbones including Llama-3-8B Instruct, Bloom-7B, Aya-expanse-8B, and Aya-expanse-32B. Testing covers Arabic, Spanish, Hebrew, Japanese, Turkish, Ukrainian, Yoruba, and Chinese across "coherence" and "completeness" dimensions. Steering is considered effective only if improvements are consistent across this grid.
+The difficulty of multilingual evaluation lies in the entanglement of languages, models, prompts, and evaluation dimensions. To ensure robustness, the authors test across multiple LLM backbones (Llama-3-8B Instruct, Bloom-7B, Aya-expanse-8B, and Aya-expanse-32B) and languages (Arabic, Spanish, Hebrew, Japanese, Turkish, Ukrainian, Yoruba, and Chinese). Evaluation dimensions cover coherence and completeness. By comparing performance across this entire grid, the authors demonstrate that steering is a general corrective tool rather than an artifact of a specific backbone.
 
 ### Loss & Training
-Ours does not involve retraining the evaluation models. Steering parameters are derived from frozen model representations: the vector method calculates mean differences, while the map method uses parallel sentences for least-squares alignment. Since no language-specific development sets were used, the main results report "oracle" results using the best steering strength for each setting. The authors scan $\sigma$ and $\rho$ in the analysis section and discuss the need for validation sets in real deployments.
+No metrics were retrained in this study. Steering parameters are derived entirely from the hidden representations of frozen models: the vector method uses mean differences, while the map method uses least-squares alignment on parallel sentences. Due to the lack of language-specific development sets, the main results report "oracle" results using the best steering intensity for each language; the analysis section systematically scans $\sigma$ and $\rho$ and discusses the necessity of validation sets for parameter selection in real-world deployment.
 
 ## Key Experimental Results
 
 ### Main Results
-Baselines without steering show that multilingual neural evaluation metrics are inherently unstable. The highest Pearson correlation is only 0.34, with several negative correlations observed across languages and models.
+The baseline without steering shows that multilingual neural evaluation metrics are inherently unstable. The highest Pearson correlation is only 0.34, and negative correlations appear across multiple languages, models, and dimensions.
 
 | Metric / Model | Representative Strength | Representative Weakness | Conclusion |
-|----------------|--------------------------|-------------------------|------------|
-| COMET wmt22-comet-da | Arabic completeness 0.27, Japanese completeness 0.23 | Yoruba coherence -0.05, Yoruba completeness -0.04 | Small encoder metrics are competitive but unstable for low-resource languages |
-| Direct Prompting Bloom-7B | Chinese coherence 0.08 | Negative for multiple languages (e.g., Arabic) | Direct scoring is highly sensitive to model and language |
-| Direct Prompting Llama3-8B | Japanese coherence 0.24, Japanese completeness 0.29 | Hebrew coherence -0.05 | Llama3 is a more stable backbone for direct prompting |
+|----------------|-------------------------|-------------------------|------------|
+| COMET wmt22-comet-da | Arabic completeness 0.27, Japanese completeness 0.23 | Yoruba coherence -0.05, Yoruba completeness -0.04 | Small encoder metrics are competitive in some languages but unstable in low-resource ones |
+| Direct Prompting Bloom-7B | Chinese coherence 0.08 | Negative for multiple languages, e.g., Arabic completeness -0.14 | Direct scoring is highly sensitive to models and languages |
+| Direct Prompting Llama3-8B | Japanese coherence 0.24, Japanese completeness 0.29 | Hebrew coherence -0.05, Hebrew completeness -0.08 | Llama3 is a more stable backbone for direct prompting |
 | GPTScore Aya-exp 32B | Japanese completeness 0.34 | Yoruba completeness -0.07 | GPTScore is generally more stable than direct prompting |
-| GPTScore Llama3-8B | Spanish coherence 0.23 | Yoruba coherence -0.06 | Better correlation for mid-to-high resource languages |
+| GPTScore Llama3-8B | Spanish coherence 0.23, Chinese coherence 0.22 | Yoruba coherence -0.06 | Correlation is better for mid-to-high resource languages |
 
-After steering, correlation improves in the vast majority of settings, with low-baseline settings seeing the largest gains.
+After steering, the overall trend shows improved correlation in the vast majority of settings, with larger gains in low-baseline settings.
 
-| Phenomenon | Key Data / Example | Implementation |
-|------------|---------------------|----------------|
-| Steering is nearly universally effective | Improvement in most languages/metrics; some relative gains >100% | Representation alignment improves consistency with human judgment |
-| Low-baseline languages benefit more | Hebrew, Turkish, Yoruba often show larger relative gains | Languages with severe misalignment require more intervention |
-| Direct Prompting improves but remains limited | Japanese coherence (Bloom-7B) from ~0 up to 0.18 | Relative gains are high due to low denominators; still less stable than others |
-| Mid-baseline settings also improve | Llama3-8B Spanish coherence from 0.15 to 0.20 | Steering provides robust gains beyond just fixing "broken" settings |
-| COMET is sensitive to steering | Relative gains > +50% in multiple settings | Encoder-based metrics also benefit from hidden rep intervention |
+| Phenomenon | Key Figures or Examples | Implication |
+|------------|-------------------------|-------------|
+| Steering is nearly universally effective | Improvement in most languages, metrics, and dimensions; some relative improvements exceed 100% | Representation alignment improves consistency between metrics and human judgment |
+| Larger gains for low-baseline languages | Hebrew, Turkish, and Yoruba often see larger relative improvements | Languages with more severe representation misalignment benefit more from intervention |
+| Direct Prompting improves drastically but remains limited | Bloom-7B Japanese coherence improved from near 0 to 0.18 | Percentage gains can be inflated by low denominators; direct prompting is still not the most stable metric |
+| Mid-baseline settings also improve | Llama3-8B Spanish coherence improved from 0.15 to 0.20 | Steering does not just "fix" broken settings but provides robust gains |
+| COMET is highly sensitive to steering | Multiple languages/dimensions saw relative improvements over +50% | Encoder-based metrics also benefit from hidden representation intervention |
 
 ### Ablation Study
-**Vector vs Map**: Both generally yield improvements. Vector-based intervention often sees higher gains in COMET and low-baseline settings due to its more aggressive nature despite fewer parameters.
+The analysis experiments focus on steering methods, strength parameters, and target languages.
 
-**Map Strength $\sigma$**: Larger $\sigma$ typically yields higher average relative improvement, with $\sigma=1$ being best on average. Moving entirely toward the target representation is often beneficial, though not for all languages.
-
-**Vector Strength $\rho$**: $\rho=-5$ yielded the highest average relative improvement, with ~60% of settings outperforming the baseline. Positive $\rho$ was generally detrimental, highlighting that direction and distance are not normalized.
-
-**Language Vector Similarity**: Most Language X-to-English vectors are similar in middle layers, except for Yoruba. This supports the concept of a shared cross-lingual geometry, though outliers exist.
-
-**French as Target**: Using French as a pivot also yielded significant improvements in most settings, suggesting other high-resource languages can serve as pivot spaces.
+| Analysis Item | Finding | Explanation |
+|---------------|---------|-------------|
+| Vector vs Map | Both generally show improvement; Vector often provides larger gains for COMET and low-baseline settings | Vector method is simpler but more language-specific in intensity; can be more aggressive |
+| Map Strength $\sigma$ | Larger $\sigma$ typically yields higher average relative improvement; $\sigma=1$ is best on average | Moving entirely toward the target representation is often beneficial but doesn't guarantee a rise for all languages |
+| Vector Strength $\rho$ | $\rho=-5$ yields the highest average relative improvement; ~60% of settings outperform no steering; positive $\rho$ is generally harmful | Direction and distance are not normalized; numerical meaning is inconsistent across languages |
+| Language Vector Similarity | Except for Yoruba, most "Language X to English" vectors show high similarity in middle layers | Supports the hypothesis of a shared cross-lingual geometric structure; Yoruba is a clear outlier |
+| French as Target | Significant improvements in most settings | High-resource languages well-aligned with the English space can also serve as pivots |
 
 ### Key Findings
-- The bottleneck in multilingual summarization evaluation is not just data scarcity but the misalignment of internal representations with high-resource pivot spaces preferred by the models.
-- Direct Prompting has the highest variance; GPTScore is more stable; COMET shows surprisingly large room for improvement under steering.
-- The choice of steering factor is highly sensitive; oracle results indicate potential but require validation sets for actual deployment.
-- Cross-lingual similarity of language vectors supports the "shared geometry" hypothesis, but outliers like Yoruba warn against treating all languages as having a single direction.
+- The bottleneck in multilingual summarization evaluation is not only data scarcity but also the misalignment of the model's internal representations with its preferred high-resource pivot space.
+- Direct Prompting exhibits the highest variance, GPTScore is more stable, and COMET has unexpectedly large room for improvement under steering.
+- The choice of steering factors is highly sensitive; oracle results demonstrate potential rather than immediate deployment effectiveness.
+- The cross-lingual similarity of language vectors supports the "shared language geometry" hypothesis, but outliers like Yoruba warn against treating all languages as having identical directions.
 
 ## Highlights & Insights
-- The paper extends activation steering from generation control to "evaluation metric calibration."
-- The results for COMET are particularly insightful: even encoder-based metrics can be improved via pooled representation intervention.
-- The method is lightweight and requires no retraining, making it suitable as a test-time correction module for existing evaluation pipelines.
-- Results emphasize that the reliability of LLM-as-a-judge cannot be assumed based on English performance; low-resource languages may even exhibit negative correlations.
+- The paper extends activation steering from generation quality control to "evaluation metric calibration," representing a significant shift in application.
+- The experiments on COMET are particularly enlightening: even encoder-based metrics can benefit from pooled representation intervention to improve correlation with human judgment.
+- The method does not require retraining metrics, making it suitable as a lightweight test-time correction module in existing evaluation pipelines.
+- The results serve as a reminder that the reliability of LLM-as-a-judge for multilingual tasks cannot be assumed based on English performance; negative correlations may occur in low-resource settings.
 
 ## Limitations & Future Work
-- Main results utilize oracle steering strengths; real-world systems would need validation sets or unsupervised criteria for parameter selection.
-- The human evaluation dataset has a limited sample size and number of annotators per language, leading to potential variance in correlation estimates.
-- The task focuses on coherence and completeness in summarization; it does not yet cover factual consistency, style, or open-ended generation.
-- Gains depend on the target language; while English and French work, the optimal source-target combination requires systematic study.
+- Main results utilize oracle steering strength due to the lack of language-specific development sets; real-world systems require validation sets or unsupervised criteria for selecting $\rho$ / $\sigma$.
+- Human evaluation data has limited sample sizes and annotators per language, leading to potentially high variance in correlation estimates.
+- The task focuses on coherence and completeness in summarization; it has not yet covered factual consistency, style, Q&A, or open-ended generation.
+- The benefits of steering depend on the target language; while English and French are effective, the optimal source-target combinations require further systematic research.
+- Absolute correlation for Direct Prompting remains low; steering is not a substitute for better metric design and multilingual annotated data.
 
 ## Related Work & Insights
-- **vs BLEU / ROUGE**: Traditional overlap metrics are simple but lack semantic depth; SteerEval focuses on internal calibration of model-based metrics.
-- **vs COMET**: Originally a machine translation metric, adapting it to summarization and applying steering proves encoder metrics are also improvable.
-- **vs LLM-as-a-judge**: Direct scoring is usable but unstable; SteerEval shows that aligning representations before scoring significantly impacts judge behavior.
-- **vs Wang et al. multilingual steering**: Previous work improved generation; this work transfers the idea to automatic evaluation, shifting the goal from generation quality to human correlation.
+- **vs BLEU / ROUGE**: Traditional overlap metrics are simple and reproducible but lack cross-lingual and semantic depth; SteerEval targets internal representation calibration for model-based metrics.
+- **vs COMET**: Originally a machine translation metric, this paper adapts COMET for summarization and proves that encoder metrics can be improved via steering.
+- **vs LLM-as-a-judge**: Direct LLM scoring is useful but unstable; SteerEval demonstrates that hidden representation alignment before scoring influences judge behavior.
+- **vs Wang et al. multilingual steering**: Prior work used language mapping to improve generation; this paper transfers the idea to automated evaluation, shifting the goal from generation quality to human correlation.
+- **Key Insight**: Multilingual evaluation may require a "metric calibration layer," potentially combining activation steering, language-specific prompts, and small human-annotated development sets.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐☆ Applies activation steering to metric calibration, providing a fresh perspective.
-- Experimental Thoroughness: ⭐⭐⭐⭐☆ Covers many metrics, models, and languages, though reliance on oracle selection slightly limits deployment proof.
-- Writing Quality: ⭐⭐⭐⭐☆ Clear motivation and detailed explanations, though relative gains can be misleading starting from low baselines.
-- Value: ⭐⭐⭐⭐☆ Significant implications for the reliability of multilingual NLG evaluation and LLM-as-a-judge.
+- Novelty: ⭐⭐⭐⭐☆ Using inference-time representation intervention for evaluation metric calibration is a fresh and important perspective.
+- Experimental Thoroughness: ⭐⭐⭐⭐☆ Covers multiple metrics, models, languages, and parameter analyses, though oracle tuning limits claims regarding immediate deployment.
+- Writing Quality: ⭐⭐⭐⭐☆ Motivation is clear, and results are explained meticulously; note the reliance on relative improvements which can amplify low-baseline effects.
+- Value: ⭐⭐⭐⭐☆ Provides significant insights into multilingual NLG evaluation and the reliability of LLM-as-a-judge.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1">
+<div class="related-papers" markdown="1"></div>
 
 ## Related Papers
 
@@ -150,7 +153,7 @@ After steering, correlation improves in the vast majority of settings, with low-
 - [\[ACL 2026\] Enhancing BiGRU with a KAN Block for Legal Document Classification and Summarization](enhancing_bigru_with_a_kan_block_for_legal_document_classification_and_summariza.md)
 - [\[ACL 2025\] Bridging the Language Gaps in Large Language Models with Inference-Time Cross-Lingual Intervention](../../ACL2025/multilingual_mt/bridging_the_language_gaps_in_large_language_models_with_inference-time_cross-li.md)
 - [\[ACL 2026\] Scripts Through Time: A Survey of the Evolving Role of Transliteration in NLP](scripts_through_time_a_survey_of_the_evolving_role_of_transliteration_in_nlp.md)
-- [\[ACL 2026\] LQM: Linguistically Motivated Multidimensional Quality Metrics for Machine Translation](lqm_linguistically_motivated_multidimensional_quality_metrics_for_machine_transl.md)
+- [\[ACL 2026\] Multilingual Steering by Design: Multilingual Sparse Autoencoders and Principled Layer Selection](multilingual_steering_by_design_multilingual_sparse_autoencoders_and_principled_.md)
 
 </div>
 

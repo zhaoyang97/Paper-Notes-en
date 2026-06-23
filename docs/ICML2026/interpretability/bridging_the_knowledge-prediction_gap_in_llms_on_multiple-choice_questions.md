@@ -2,12 +2,12 @@
 title: >-
   [Paper Note] Bridging the Knowledge-Prediction Gap in LLMs on Multiple-Choice Questions
 description: >-
-  [ICML 2026][Interpretability][Paper Note] This paper reveals a ubiquitous "knowledge-prediction gap" in LLMs on multiple-choice questions (MCQs)—where hidden layers linearly encode the correct answer, but the final prediction deviates. Through geometric analysis, this gap is attributed to the misalignment between the knowledge subspace and the prediction subsp
+  [ICML 2026][Interpretability][Paper Note] This paper reveals a widespread "knowledge-prediction gap" in LLMs on MCQs—correct answers are already linearly encoded in hidden layers, but the final predictions deviate. Through geometric analysis, this gap is attributed to the misalignment between knowledge and prediction subspaces. The authors propose KAPPA, which
 tags:
   - ICML 2026
   - Interpretability
 date: 2026-05-08
-content_hash: b88cc99dabff0f0d
+content_hash: 8c06f8c51e59c51b
 ---
 # Bridging the Knowledge-Prediction Gap in LLMs on Multiple-Choice Questions
 
@@ -15,57 +15,57 @@ content_hash: b88cc99dabff0f0d
 **arXiv**: [2509.23782](https://arxiv.org/abs/2509.23782)  
 **Code**: https://github.com/holi-lab/KAPPA  
 **Area**: Interpretability  
-**Keywords**: Knowledge-Prediction Gap, Linear Probes, Subspace Alignment, Inference-time Intervention, Multiple-Choice Questions  
+**Keywords**: knowledge-prediction gap, linear probes, subspace alignment, inference-time intervention, multiple-choice questions  
 
 ## TL;DR
 
-This paper reveals a ubiquitous "knowledge-prediction gap" in LLMs on multiple-choice questions (MCQs)—where hidden layers linearly encode the correct answer, but the final prediction deviates. Through geometric analysis, this gap is attributed to the misalignment between the knowledge subspace and the prediction subspace. The authors propose KAPPA, a method that uses closed-form affine transformations at inference time to align these two subspaces, consistently narrowing the gap and improving accuracy across various models and benchmarks.
+This paper reveals a widespread "knowledge-prediction gap" in LLMs on MCQs—correct answers are already linearly encoded in hidden layers, but the final predictions deviate. Through geometric analysis, this gap is attributed to the misalignment between knowledge and prediction subspaces. The authors propose KAPPA, which uses closed-form affine transformations to align these subspaces during inference, consistently closing the gap and improving accuracy across models and benchmarks.
 
 ## Background & Motivation
 
-**Background**: Evaluating LLMs on MCQ benchmarks is a mainstream practice. However, models frequently exhibit "capability inconsistency"—providing the correct answer in free-form generation but failing when switched to an MCQ format. Existing research indicates that even when a model fails, correct answers can be extracted by applying simple linear classifiers to its hidden layers, implying that sufficient knowledge is already encoded internally.
+**Background**: Evaluating LLMs on multiple-choice question (MCQ) benchmarks is a standard practice. However, models frequently exhibit "capability inconsistency"—giving the correct answer in free-form generation but failing when switched to an MCQ format. Existing research shows that even when a model fails, correct answers can be extracted from its hidden layers using simple linear classifiers, suggesting that sufficient knowledge is already encoded internally.
 
-**Limitations of Prior Work**: Previous work primarily attributed MCQ errors to "surface factors" such as option bias, surface cues, or stylistic artifacts, lacking an explanatory framework that unified these failures with internal representations. Research on the "knowledge-prediction gap" has also been limited to narrow scenarios like truthfulness detection and simple arithmetic, failing to generalize to diverse MCQ tasks.
+**Limitations of Prior Work**: Previous work primarily attributes MCQ errors to "surface-level factors" such as option bias, surface cues, or stylistic artifacts. However, there is a lack of an explanatory framework that unifies these failures with the model's internal representations. Research on the "knowledge-prediction gap" has also been limited to narrow scenarios like truthfulness detection and simple arithmetic, without generalization to diverse MCQ tasks.
 
-**Key Challenge**: Correct answers (knowledge signals) and actual output answers (prediction signals) are both linearly encoded within the residual stream, but these signals are routed along geometrically distinct directions. Consequently, the prediction signal "overrides" the knowledge signal during final generation. This represents a failure in knowledge utilization rather than a lack of knowledge.
+**Key Challenge**: Both the correct answer (knowledge signal) and the actual output (prediction signal) are linearly encoded in the residual stream, but these signals are routed along geometrically distinct directions. This causes the prediction signal to "override" the knowledge signal during final generation. This is not a lack of knowledge, but a failure in knowledge utilization.
 
-**Goal**: (1) Quantify the prevalence and severity of the knowledge-prediction gap across multiple MCQ benchmarks and model families; (2) Explain the structural causes of the gap from the perspective of residual stream geometry; (3) Design an inference-time intervention that requires no additional training to bridge this gap.
+**Goal**: (1) Quantify the prevalence and severity of the knowledge-prediction gap across various MCQ benchmarks and model families; (2) Explain the structural cause of the gap from a residual stream geometry perspective; (3) Design training-free inference-time interventions to bridge the gap.
 
-**Key Insight**: By training two linear probes—a knowledge probe to predict the ground truth and a prediction probe to predict the model's output—their respective weight matrices can be viewed as basis vectors defining subspaces. If the two subspaces are aligned, model predictions should be consistent with internal knowledge. In practice, however, benchmarks with large gaps show severe deviation in the mean principal angles between these two subspaces.
+**Key Insight**: By training two linear probes—a knowledge probe to predict the ground truth and a prediction probe to predict model outputs—their weight matrices can be viewed as basis vectors defining subspaces. If the two subspaces are aligned, model predictions should be consistent with internal knowledge; empirical measurements show that principal angles deviate significantly in benchmarks with large gaps.
 
-**Core Idea**: Use minimum $\ell_2$ perturbation to correct the coordinates of hidden states in the prediction subspace to match their coordinates in the knowledge subspace—effectively "aligning prediction to knowledge."
+**Core Idea**: Use minimal $\ell_2$ perturbations to correct the coordinates of hidden states in the prediction subspace to match their coordinates in the knowledge subspace—essentially "aligning prediction to knowledge."
 
 ## Method
 
 ### Overall Architecture
 
-Given an MCQ input, KAPPA extracts the hidden state $h$ at an intermediate layer of the residual stream. It projects $h$ into two $k$-dimensional subspaces defined by the weights of a knowledge probe and a prediction probe, calculating the respective coordinates (probe logits). When these two sets of coordinates are inconsistent, KAPPA applies a closed-form affine transformation to $h$, aligning its coordinates in the prediction subspace with those in the knowledge subspace. The modified state $h'$ is written back to the residual stream to continue forward propagation. This process requires no gradient updates, using only the weights of two pre-trained linear probes.
+Given an MCQ input, KAPPA extracts the hidden state $h$ from intermediate layers of the residual stream. It projects $h$ onto two $k$-dimensional subspaces defined by the weights of the knowledge and prediction probes to calculate their respective coordinates (probe logits). When the two sets of coordinates are inconsistent, KAPPA applies a closed-form affine transformation to $h$ to align its coordinates in the prediction subspace with those in the knowledge subspace. The modified $h'$ is written back to the residual stream for further forward propagation. The entire process requires no gradient updates and only utilizes two sets of pre-trained linear probe weights.
 
 ### Key Designs
 
-**1. Dual-Probe Gap Quantification: Separating "What the Model Knows" from "What it Outputs"**
+**1. Dual-Probe Gap Quantization: Separating "what the model knows" from "what it outputs" into comparable signals**
 
-Previous work could identify model failures but could not horizontally compare the magnitude of the gap across benchmarks and models. KAPPA extracts residual stream activations $h^l(x)$ at each layer $l$ and constructs two parallel datasets: a knowledge dataset $D_{\text{know}}^{(l)} = \{(h^l(x), y)\}$ pairing activations with ground-truth labels, and a prediction dataset $D_{\text{pred}}^{(l)} = \{(h^l(x), \tilde{y})\}$ pairing the same activations with the model's own output labels. Two $k$-class linear classifiers are trained to obtain the knowledge distribution $p_K$ and prediction distribution $p_M$. The discrepancy is characterized by two complementary metrics: Prediction Agreement Rate $\text{AGR}(x) = \mathbb{I}[\arg\max p_K(x) = \arg\max p_M(x)]$ for hard differences, and KL Divergence $\text{KLD}(x) = \text{KL}(p_M \| p_K)$ for soft shifts in confidence.
+Prior work could only state that a model failed, but could not compare the magnitude of the gap across different benchmarks and models. KAPPA extracts residual stream activations $h^l(x)$ at each layer $l$ and constructs two parallel datasets: a knowledge dataset $D_{\text{know}}^{(l)} = \{(h^l(x), y)\}$ pairing activations with ground-truth labels, and a prediction dataset $D_{\text{pred}}^{(l)} = \{(h^l(x), \tilde{y})\}$ pairing the same activations with the model's own output labels. Two $k$-class linear classifiers are trained to obtain the knowledge distribution $p_K$ and prediction distribution $p_M$. The gap is characterized by two complementary metrics: the Agreement Rate $\text{AGR}(x) = \mathbb{I}[\arg\max p_K(x) = \arg\max p_M(x)]$ captures hard differences in selection, while the KL Divergence $\text{KLD}(x) = \text{KL}(p_M \| p_K)$ captures soft shifts in confidence distributions.
 
-**2. Subspace Geometric Analysis: Anchoring Knowledge Utilization Failures to Residual Stream Misalignment**
+**2. Subspace Geometric Analysis: Anchoring "internal disagreement" to geometric misalignment in the residual stream**
 
-To explain the gap's origin, KAPPA treats the column vectors of each probe's weight matrix $W \in \mathbb{R}^{d \times k}$ as the basis for a subspace—the "knowledge subspace" and the "prediction subspace." Alignment is measured using mean principal angles and CKA. Results show that in deeper layers, the mean principal angle approaches $90^\circ$ (near the random baseline), while CKA falls between 0.4 and 0.8, indicating that knowledge and prediction signals coexist in the same residual stream but propagate in nearly orthogonal directions. Crucially, Spearman correlation analysis across 8 benchmarks shows that more severe subspace misalignment correlates with a larger empirical gap ($\rho = 0.976, p = 0.001$ for Llama 3.1 8B). This identifies a measurable structural cause for abstract "knowledge utilization failure."
+KAPPA treats the column vectors of each probe's weight matrix $W \in \mathbb{R}^{d \times k}$ as the basis for a subspace—the "knowledge subspace" for the knowledge probe and the "prediction subspace" for the prediction probe. The alignment between these two subspaces is measured using the mean principal angle and CKA. Results show that in deep layers, the mean principal angle approaches $90°$ (near random baseline), and CKA falls in the 0.4–0.8 range, indicating that knowledge and prediction signals coexist in the same residual stream but propagate in nearly orthogonal geometric directions. Spearman correlation analysis across 8 benchmarks confirms: the more severe the subspace misalignment, the larger the measured gap ($\rho = 0.976, p = 0.001$ on Llama 3.1 8B).
 
-**3. KAPPA Inference-time Alignment: Pulling Prediction back to Knowledge via Closed-form Minimum Perturbation**
+**3. KAPPA Inference-time Alignment: Pulling prediction back to knowledge via closed-form minimal perturbation**
 
-KAPPA directly modifies hidden states during inference to align coordinates in the prediction subspace with those in the knowledge subspace. This is formulated as a constrained optimization problem: $\min_{\tilde{h}'} \|\tilde{h}' - \tilde{h}\|_2^2$ subject to $\tilde{W}_{\text{pred}}^\top \tilde{h}' = \tilde{W}_{\text{know}}^\top \tilde{h}$. This problem has a closed-form solution:
+KAPPA directly modifies the hidden state during inference to align its coordinates in the prediction subspace with its coordinates in the knowledge subspace. Formally, this is a constrained optimization problem: $\min_{\tilde{h}'} \|\tilde{h}' - \tilde{h}\|_2^2$ such that $\tilde{W}_{\text{pred}}^\top \tilde{h}' = \tilde{W}_{\text{know}}^\top \tilde{h}$. This problem has a closed-form solution:
 
 $$h' = h + W_{\text{pred}}(W_{\text{pred}}^\top W_{\text{pred}})^{-1}(\tilde{W}_{\text{know}}^\top \tilde{h} - \tilde{W}_{\text{pred}}^\top \tilde{h})$$
 
-The modified $h'$ is returned to the residual stream. An extended version introduces two hyperparameters to tighten alignment: $\tilde{W}_{\text{pred}}^\top \tilde{h}' = \alpha \cdot \tilde{W}_{\text{know}}^\top \tilde{h} + \beta \cdot \text{sign}(\tilde{W}_{\text{know}}^\top \tilde{h})$, where $\alpha$ amplifies relative differences between options and $\beta$ pushes logits toward extremes. Unlike CAA, which uses fixed activation steering, KAPPA dynamically calculates the "just enough" minimum perturbation for each input, only modifying components within the prediction subspace and preserving information in orthogonal directions with negligible computational overhead.
+The modified $h'$ is written back for the remaining forward pass. An extended version introduces two hyperparameters to tighten the alignment: $\tilde{W}_{\text{pred}}^\top \tilde{h}' = \alpha \cdot \tilde{W}_{\text{know}}^\top \tilde{h} + \beta \cdot \text{sign}(\tilde{W}_{\text{know}}^\top \tilde{h})$, where $\alpha$ amplifies relative differences between options and $\beta$ pushes logits toward extremes. Unlike activation steering methods like CAA that use fixed directions, KAPPA dynamically calculates the "just enough" minimal perturbation for each input.
 
 ## Key Experimental Results
 
 ### Main Results
 
-On six benchmarks with significant gaps, KAPPA consistently improves ACC and AGR across models:
+On 6 benchmarks with significant gaps, KAPPA consistently improves ACC and AGR across models:
 
-| Benchmark (options) | Model | Base ACC | KAPPA(6) ACC | Δ ACC | Base AGR | KAPPA(6) AGR |
+| Benchmark (options) | Model | Base ACC | KAPPA(6) ACC | Gain | Base AGR | KAPPA(6) AGR |
 |---|---|---|---|---|---|---|
 | TruthfulQA (4) | Llama 3.1 8B | 56.7 | 73.5 | +16.8 | 62.1 | 77.6 |
 | TruthfulQA (4) | Qwen 2.5 7B | 58.8 | 64.1 | +5.3 | 61.8 | 67.3 |
@@ -86,39 +86,39 @@ Cross-model TruthfulQA results (KAPPA(6) vs Base):
 
 ### Ablation Study
 
-| Dimension | Metric | Description |
+| Analysis Dimension | Key Metrics | Note |
 |---|---|---|
-| Comparison vs CAA/DoLA | KAPPA superior in 12/12 settings | Existing interventions fail to systematically narrow the gap |
-| Intervention Layers (1/3/6) | 6 layers > 3 > 1 (most settings) | Multi-layer interventions have a stronger cumulative effect |
-| $\alpha, \beta$ Hyperparam Sweep | Increasing $\alpha$ or $\beta$ monotonically improves AGR | Hyperparameters causally control alignment strength |
-| Training Data Sensitivity | Outperforms Base with only 10% data | Remains effective in low-data scenarios |
-| Cross-dataset Transfer | TruthfulQA → BBQ-Age: +5.72 AGR | Subspaces are partially shared between similar skill tasks |
-| Free-generation Transfer | TruthfulQA ACC: 41.7 → 44.2 | MCQ probes generalize to open-ended generation |
+| vs. CAA/DoLA | KAPPA superior in 12/12 settings | Existing interventions fail to systematically close the gap |
+| Number of layers (1/3/6) | 6 layers > 3 layers > 1 layer | Cumulative effect of multi-layer intervention is stronger |
+| α, β Hyperparameters | Increasing α or β monotonically improves AGR | Both parameters causally control alignment strength |
+| Training Data Sensitivity | Superior to Base with only 10% data | Effective in low-data scenarios |
+| Cross-dataset Transfer | TruthfulQA → BBQ-Age: +5.72 AGR | Subspaces are partially shared among similar skill tasks |
+| Free Generation Transfer | TruthfulQA ACC: 41.7 → 44.2 | MCQ probes can generalize to open-ended generation |
 
 ### Key Findings
 
-- The knowledge-prediction gap is largest in truthfulness/bias benchmarks (TruthfulQA knowledge probe is +19–21 points higher than the model), followed by reasoning, and smallest in knowledge-intensive benchmarks.
-- Subspace misalignment is highly correlated with the gap ($\rho = 0.976$), confirming a geometric root.
-- KAPPA does not directly modify the logits of answer tokens (the mean principal angle between the intervention layer's prediction subspace and the logit space is ~65°–70°); instead, it indirectly influences decision-making through abstract representations.
+- The knowledge-prediction gap is largest on truthfulness/bias benchmarks (TruthfulQA knowledge probes outperform models by +19–21 points), followed by reasoning benchmarks, and is smallest on knowledge-intensive benchmarks.
+- Subspace misalignment is highly correlated with the gap ($\rho = 0.976$), confirming the geometric root of the gap.
+- KAPPA does not directly modify the logits of answer tokens (the angle between the prediction subspace and logit space in intervention layers is approx. 65°–70°); instead, it indirectly influences subsequent decisions by modifying abstract representations in intermediate layers.
 
 ## Highlights & Insights
 
-- **Closed-form Minimum Perturbation Alignment**: Modeling knowledge-prediction alignment as a constrained optimization problem and deriving a closed-form solution provides a mathematically grounded, efficient alternative to iterative optimization.
-- **Dual Probes as Diagnostic Tools**: Training two probes with different targets on the same hidden state and comparing their geometric relationships offers a general framework for diagnosing "internal signal divergence," applicable to hallucination detection and alignment auditing.
-- **Cross-format Generalization**: Probes and interventions trained on MCQs can transfer to free generation, suggesting that intermediate subspaces encode abstract semantic directions rather than specific symbols, deepening the understanding of LLM representation hierarchy.
+- **Closed-form Minimal Perturbation Alignment**: Modeling knowledge-prediction alignment as a constrained optimization problem and deriving a closed-form solution allows for negligible computational overhead and guaranteed minimal modification. This "math over gradients" approach is highly efficient for inference-time intervention.
+- **Dual Probes as a Diagnostic Tool**: Training two linear probes with different targets on the same hidden state and comparing their subspace geometry provides a general framework for diagnosing internal model signal divergence, applicable to hallucination detection or alignment auditing.
+- **Cross-format Generalization**: Probes and interventions trained on MCQs can transfer to free-form generation, suggesting that intermediate subspaces encode abstract semantic directions rather than specific answer tokens. This deepens the understanding of the hierarchical structure of LLM internal representations.
 
 ## Limitations & Future Work
 
-- Only addresses linearly accessible knowledge signals; deeper non-linearly encoded knowledge remains untouched.
-- Probe training requires annotated data and model prediction labels, making it unsuitable for fully black-box scenarios.
-- Transfer effect to free generation is limited (e.g., GSM8k accuracy slightly decreased by 0.9 points), indicating differences between MCQ and open-generation subspaces.
-- Future work could explore high-dimensional non-linear alignment, unsupervised probe discovery, and integration with CoT prompting to bridge gaps at both reasoning and representation levels.
+- Currently only addresses linearly accessible knowledge signals; deeper non-linearly encoded knowledge remains untouched.
+- Probe training requires labeled data and model predictions, making it inapplicable in purely black-box scenarios.
+- Transfer effectiveness to free generation is limited (GSM8k accuracy slightly decreased by 0.9 points), indicating differences between MCQ and open-ended generation subspaces.
+- Future Work: Explore high-dimensional non-linear alignment, unsupervised probe discovery, and integration with CoT prompting to bridge gaps at both the reasoning and representation levels.
 
 ## Related Work & Insights
 
-- **Knowledge-Prediction Gap**: Marks & Tegmark (2024) first identified that hidden layers can extract correct answers in truthfulness tasks; this work generalizes the phenomenon and provides a geometric explanation.
-- **Inference-time Intervention**: CAA (Rimsky et al., 2024) uses mean difference vectors for steering, and DoLA (Chuang et al., 2024) contrasts layer logits—neither is specifically designed for the knowledge-prediction gap.
-- **Mechanistic Interpretability**: Results align with findings by Geva et al. (2023) and Park et al. (2024) regarding how high-level features are converted into token predictions, supporting the information flow perspective of the residual stream.
+- **Knowledge-Prediction Gap Literature**: Marks & Tegmark (2024) first observed that hidden layers could extract correct answers in truthfulness tasks; this work generalizes the phenomenon to general MCQs and provides a geometric explanation.
+- **Inference-time Intervention**: CAA (Rimsky et al., 2024) uses mean difference vectors for activation steering, and DoLA (Chuang et al., 2024) uses contrastive layer logits—neither was designed for the knowledge-prediction gap, and experiments show their limited efficacy.
+- **Mechanistic Interpretability**: Consistent with Geva et al. (2023) and Park et al. (2024) regarding how high-level features in the residual stream are transformed into token predictions by subsequent layers, the effectiveness of KAPPA further corroborates this view of information flow.
 
 <!-- RELATED:START -->
 
@@ -130,7 +130,7 @@ Cross-model TruthfulQA results (KAPPA(6) vs Base):
 - [\[ICML 2026\] PINE: Pruning Boosted Tree Ensembles with Conformal In-Distribution Prediction Equivalence](pine_pruning_boosted_tree_ensembles_with_conformal_in-distribution_prediction_eq.md)
 - [\[ICLR 2026\] Bridging Explainability and Embeddings: BEE Aware of Spuriousness](../../ICLR2026/interpretability/bridging_explainability_and_embeddings_bee_aware_of_spuriousness.md)
 - [\[ACL 2026\] Tracing Relational Knowledge Recall in Large Language Models](../../ACL2026/interpretability/tracing_relational_knowledge_recall_in_large_language_models.md)
-- [\[ICLR 2026\] Closing the Curvature Gap: Full Transformer Hessians and Their Implications for Scaling Laws](../../ICLR2026/interpretability/closing_the_curvature_gap_full_transformer_hessians_and_their_implications_for_s.md)
+- [\[CVPR 2026\] Where Culture Fades: Revealing the Cultural Gap in Text-to-Image Generation](../../CVPR2026/interpretability/where_culture_fades_revealing_the_cultural_gap_in_text-to-image_generation.md)
 
 </div>
 

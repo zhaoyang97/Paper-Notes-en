@@ -2,137 +2,136 @@
 title: >-
   [Paper Note] DAPD: Dependency-Aware Parallel Decoding via Attention for Diffusion LLMs
 description: >-
-  [ICML 2026][Image Restoration][dLLM] DAPD transforms the single-step parallel unmasking problem in dLLMs into a dynamic graph coloring problem of "selecting independent sets on an attention-induced MRF." Without additional training, it simultaneously unmasks weak-dependency positions. On LLaDA/Dream, it reduces the decoding steps for multi-query mixed pro
+  [ICML 2026][Image Restoration][dLLM] DAPD transforms the single-step parallel unmasking problem of dLLMs into a dynamic graph coloring problem of "selecting independent sets on self-attention-induced MRFs." Without any training, it simultaneously unmasks weakly dependent positions, reducing decoding steps to 1/3.87 of the original on LLaDA / Dream for mul
 tags:
   - ICML 2026
   - Image Restoration
   - dLLM
 date: 2026-05-08
-content_hash: 33ba8b26be9234ea
+content_hash: 6eaac4e95260719f
 ---
 # DAPD: Dependency-Aware Parallel Decoding via Attention for Diffusion LLMs
 
 **Conference**: ICML 2026  
 **arXiv**: [2603.12996](https://arxiv.org/abs/2603.12996)  
 **Code**: https://ai-isl.github.io/dapd (Project Page)  
-**Area**: LLM Efficiency / Diffusion LLMs / Parallel Decoding  
+**Area**: LLM Efficiency / Diffusion Language Models / Parallel Decoding  
 **Keywords**: dLLM, Parallel Decoding, Self-Attention, Markov Random Field, Graph Coloring
 
 ## TL;DR
-DAPD transforms the single-step parallel unmasking problem in dLLMs into a dynamic graph coloring problem of "selecting independent sets on an attention-induced MRF." Without additional training, it simultaneously unmasks weak-dependency positions. On LLaDA/Dream, it reduces the decoding steps for multi-query mixed prompts to 1/3.87 of the original while maintaining near-identical accuracy.
+DAPD transforms the single-step parallel unmasking problem of dLLMs into a dynamic graph coloring problem of "selecting independent sets on self-attention-induced MRFs." Without any training, it simultaneously unmasks weakly dependent positions, reducing decoding steps to 1/3.87 of the original on LLaDA / Dream for multi-question mixed prompts with almost no loss in accuracy.
 
 ## Background & Motivation
-**Background**: Diffusion Language Models (dLLMs), represented by LLaDA and Dream, generate text by repeatedly denoising mask tokens. Their primary claimed advantage over autoregressive models is the ability to "unmask multiple tokens in parallel in a single step," which significantly reduces the Number of Function Evaluations (NFE)—the main determinant of inference latency.
+**Background**: Diffusion Language Models (dLLMs), represented by LLaDA and Dream, generate text by repeatedly denoising masked tokens. Their primary claimed advantage over autoregressive models is the ability to unmask multiple tokens in a single step, significantly reducing the number of function evaluations (NFE) — the main determinant of inference latency.
 
-**Limitations of Prior Work**: The training objective of dLLMs only models the conditional **marginal distribution** $p_\theta(x^i\mid\mathbf{x})$ for each mask position, without explicitly modeling the joint distribution. Sampling multiple tokens independently from these marginals leads to a "joint-marginal mismatch": for example, the prompt "The capital of [M] is [M]" might yield high probabilities for "France" and "London" at two separate mask positions. Each is reasonable individually, but together they are incorrect.
+**Limitations of Prior Work**: dLLM training objectives only model the conditional **marginal distribution** $p_\theta(x^i\mid\mathbf{x})$ for each mask position rather than explicitly modeling the joint distribution. Sampling multiple tokens independently from their respective marginals leads to a "joint-marginal mismatch": for instance, the prompt "The capital of [M] is [M]" might yield high marginal probabilities for "France" and "London" at the two mask positions. Individually they are reasonable, but together they are incorrect.
 
-**Key Challenge**: Existing training-free parallel decoding methods (Fast-dLLM / EB-Sampler / KLASS) use only token-wise signals like "marginal confidence / entropy / KL stability" to filter positions, **entirely ignoring dependencies between mask positions**. Consequently, they are either too conservative, unmasking only a few tokens (slow), or too aggressive, unmasking strongly coupled tokens (quality collapse). Introducing auxiliary planners or re-training (dParallel, Learn-to-Parallel) breaks the ELBO framework and incurs high overhead.
+**Key Challenge**: Existing training-free parallel decoding methods (Fast-dLLM / EB-Sampler / KLASS) only use token-wise signals like "marginal confidence / entropy / KL stability" to filter positions, **entirely ignoring dependencies between masked positions**. Consequently, they are either conservative (unmasking few tokens at a time, limiting speed) or aggressive (unmasking strongly coupled tokens simultaneously, collapsing quality). Introducing auxiliary planners or retraining (dParallel, Learn-to-Parallel) disrupts the ELBO framework and incurs high overhead.
 
-**Goal**: To explicitly estimate "which mask positions can be safely unmasked together" at each decoding step without additional training or auxiliary models.
+**Goal**: To explicitly estimate which mask positions can be safely unmasked together in each decoding step without additional training or auxiliary models.
 
-**Key Insight**: dLLMs already compute a self-attention map. If position $i$ barely attends to position $j$, then given other context, the prediction of $X_i$ is largely independent of $X_j$. In other words, **self-attention itself serves as a free probe for conditional independence**.
+**Key Insight**: dLLMs already compute a self-attention map during the forward pass. If position $i$ barely attends to position $j$, then the prediction of $X_i$ is largely independent of $X_j$ given the other context. In other words, **self-attention itself serves as a free probe for conditional independence**.
 
-**Core Idea**: Use symmetrized attention scores $s_{ij}=\tfrac{1}{2}(a_{ij}+a_{ji})$ to induce an MRF dependency graph over mask positions. Parallel decoding is reduced to finding "independent sets" on this graph, using a Welsh–Powell degree-priority greedy coloring strategy to select a maximal independent set for simultaneous unmasking at each step.
+**Core Idea**: Induce an MRF dependency graph over mask positions using symmetrized attention scores $s_{ij}=\tfrac{1}{2}(a_{ij}+a_{ji})$. Parallel decoding is then reduced to finding "independent sets" on this graph. A maximal independent set is selected in each step using the Welsh–Powell degree-first greedy coloring strategy for simultaneous unmasking.
 
 ## Method
 
 ### Overall Architecture
-DAPD addresses the scheduling problem of "which masks should be unmasked simultaneously without disrupting the joint distribution." It treats this as a graph theory problem: after the forward pass of each step, the already computed attention is reused to organize current mask positions into a dependency graph. A subset of nodes with no mutual connections is then selected for simultaneous unmasking. Specifically, a single forward pass on the current mask sequence $\mathbf{x}_t$ yields marginals $p_\theta(x^i\mid\mathbf{x}_t)$ and multi-head attention. Attention scores $a_{ij}$ are averaged across all heads of approximately the last 30% of layers and symmetrized into $s_{ij}$. Edges are formed in the dependency graph $G_t=(V_t,E_t)$ via a threshold $\tau_t$. A maximal independent set $S$ is selected greedily based on the descending order of "confidence-weighted proxy degree" $\tilde d_i\cdot\mathrm{conf}_i$. All tokens in $S$ are unmasked according to their marginal argmax. When the remaining mask ratio drops below 50%, the system switches to a fast late-stage strategy where all positions with "confidence > 0.9" are unmasked. This process requires no extra models or training, with overhead limited to negligible graph construction and greedy sorting.
+DAPD addresses the scheduling problem of "which masks should be unmasked simultaneously without violating the joint distribution" by converting it into a graph theory problem. After each forward pass, the already computed attention scores are reused to organize current mask positions into a dependency graph. An internally unconnected subset (independent set) is then selected for parallel unmasking. Specifically, a forward pass on the current masked sequence $\mathbf{x}_t$ yields marginals $p_\theta(x^i\mid\mathbf{x}_t)$ and multi-layer multi-head attention. Scores $a_{ij}$ are averaged over all heads in approximately the last 30% of layers and symmetrized to $s_{ij}$. Edges are formed in the mask dependency graph $G_t=(V_t,E_t)$ based on a threshold $\tau_t$. Nodes are greedily selected into an independent set $S$ in descending order of a "confidence-weighted proxy degree" $\tilde d_i\cdot\mathrm{conf}_i$. All tokens in $S$ are unmasked simultaneously using their respective marginal argmax. When the mask ratio drops below 50%, the system switches to a fast tail-end strategy that unmasks all tokens with confidence > 0.9. This process requires no extra models or retraining, with the only additional overhead being graph construction and greedy sorting, which is negligible compared to a single forward pass.
 
 ```mermaid
 graph TD
-    A["Masked sequence x_t"] --> B["Forward pass Transformer<br/>Get marginals p and attention"]
-    B --> C["Self-attention → MRF Graph<br/>Avg last 30% layers a_ij, symmetrize s_ij, threshold τ"]
-    C --> D["Dynamic Graph Coloring · Welsh–Powell<br/>Greedy maximal independent set S by d̃·conf"]
-    D --> E["Simultaneously unmask tokens in S"]
-    E -->|"Remaining mask ≥ 50%"| B
-    E -->|"Remaining mask < 50%"| F["Late-stage sparsification<br/>Unmask all positions where conf > 0.9"]
+    A["Masked sequence x_t"] --> B["Forward pass through Transformer<br/>Get marginals p and multi-layer attention"]
+    B --> C["Self-attention → MRF Dependency Graph<br/>Average a_ij over last 30% layers, symmetrize s_ij, connect via threshold τ"]
+    C --> D["Dynamic Graph Coloring · Welsh–Powell Degree-First<br/>Greedily select maximal independent set S by d̃·conf"]
+    D --> E["Simultaneously unmask all tokens in S"]
+    E -->|"Remaining masks ≥ 50%"| B
+    E -->|"Remaining masks < 50%"| F["Tail-end Confidence Sparsification<br/>Unmask all positions with conf > 0.9 at once"]
     F --> G["Output full sequence"]
 ```
 
 ### Key Designs
 
-**1. Self-attention → MRF Dependency Graph: Using internal attention as a free independence probe**
+**1. Self-Attention → MRF Dependency Graph: Treating internal attention as a free conditional independence probe**
 
-Previous training-free methods treated mask positions as independent units, filtering them only with marginal signals like confidence. This discarded the fundamental information of whether positions are coupled. DAPD's insight is that the attention map in dLLMs indicates conditional independence: if position $i$ rarely attends to $j$, they are approximately independent given other context. The symmetric edge score $s_{ij}=\tfrac{1}{2}(a_{ij}+a_{ji})$ is defined on the mask index set $V_t$, and an edge is triggered if $s_{ij}>\tau_t$. This is theoretically grounded in the local Markov property of Transformers: $p_\theta(X_i\mid X_{V_t\setminus\{i\}})\approx p_\theta(X_i\mid X_{V_t\setminus\{i,j\}})$. Controlled validation on synthetic data (length-9 sequences with known MRF structures) showed an edge detection AUC of 0.928 and a very low Order Violation Ratio (OVR) of 0.04 for degree estimation, proving attention reliably recovers dependency structures with zero extra training.
+Previous training-free methods treated mask positions as isolated units, filtering them only using marginal signals like confidence, entropy, or KL. This misses the fundamental information regarding whether positions are coupled—the very source of joint-marginal mismatch. DAPD's entry point is that the self-attention map already calculated during the forward pass reflects dependencies. If position $i$ has low attention to $j$, they are approximately conditionally independent given other context. Thus, symmetric edge scores $s_{ij}=\tfrac{1}{2}(a_{ij}+a_{ji})$ are defined over the mask index set $V_t$, where an edge $(i,j)\in E_t \iff s_{ij}>\tau_t$. This uses attention as the MRF edge weights. The theoretical basis is the local Markov property of Transformers: $p_\theta(X_i\mid X_{V_t\setminus\{i\}})\approx p_\theta(X_i\mid X_{V_t\setminus\{i,j\}})$, implying $X_i\perp X_j \mid X_{V_t\setminus\{i,j\}}$. Controlled validation on synthetic data (length-9 sequences with known cyclical dependencies) showed that attention-recovered edges achieved an AUC of 0.928 for edge detection and an Order Violation Ratio (OVR) of only 0.04 for degree estimation, proving attention reliably recovers reality with zero extra parameters.
 
-**2. Dynamic Graph Coloring + Welsh–Powell Degree Priority: Covering masks in minimum steps rather than maximum width**
+**2. Dynamic Graph Coloring + Welsh–Powell Degree-First: Covering all masks in minimum steps, not maximum step width**
 
-With the dependency graph, the goal of "finishing all masks in minimum steps" corresponds to the "minimum coloring of $G_t$." Since $V_t$ shrinks and new context changes $E_t$ at each step, this is a **dynamic** graph coloring problem. DAPD makes a counter-intuitive choice: instead of greedily seeking the largest independent set (which favors low-degree nodes and leaves high-degree "hubs" for later, dragging out the tail steps), it uses Welsh–Powell degree priority. By processing nodes in descending order of proxy degree $\tilde d_i:=\sum_{j\ne i}s_{ij}$, it clears "hubs" early, allowing the remaining graph to sparsify rapidly for massive parallel unmasking in later steps. The sorting key is refined to $\tilde d_i\cdot\mathrm{conf}_i$ to balance structural importance with predictive reliability.
+With the dependency graph, the problem of "unmasking all tokens in minimum steps" corresponds to finding the minimum number of colors to legally color $G_t$—where tokens of the same color are unmasked in parallel. However, since $V_t$ shrinks and $E_t$ changes as context is added, this is a **dynamic** graph coloring problem. DAPD makes a counter-intuitive choice: instead of seeking the maximum independent set (which favors low-degree nodes and leaves "hubs" for later), it uses the Welsh–Powell degree-first heuristic. Nodes are scanned in descending order of proxy degree $\tilde d_i:=\sum_{j\ne i}s_{ij}$ to build a **maximal** (not necessarily maximum) independent set $S$. Eliminating hubs early allows the remaining graph to sparsify rapidly, enabling large-batch unmasking in subsequent steps. The sorting key is refined to $\tilde d_i\cdot\mathrm{conf}_i$, representing an "expected effective degree" that balances structural importance with predictive reliability.
 
-**3. Late-stage Confidence Sparsification: Aggressive finishing once dependencies vanish**
+**3. Tail-end Confidence Sparsification: Discarding graph construction as dependencies vanish**
 
-When the remaining mask ratio falls below 50%, most nodes have a degree near 0 and are approximately independent. Continuing graph construction at this stage provides little information. DAPD then switches to a strategy of unmasking all positions where $\mathrm{conf}_i>0.9$ at once. Here, the confidence threshold serves as a low-cost approximation of an independent set. An even more aggressive variant unmasks any position with confidence exactly 1.0 immediately, as no feasible joint distribution would differ at that position. This strategy flattens the step-count curve compared to pure confidence methods while preserving accuracy.
+When the mask ratio falls below 50%, most nodes have degrees near zero and are approximately conditionally independent. At this stage, graph construction provides little information relative to its cost. DAPD then disables graph construction and switches to a strategy where all positions with $\mathrm{conf}_i > 0.9$ are unmasked at once. Here, the confidence threshold acts as a low-cost approximation of an independent set. A more aggressive variant discussed is unmasking any position with confidence exactly 1.0 immediately, as a marginal probability of 1 ensures any compatible joint distribution must take the same value, avoiding mismatch risk. This step pushes DAPD's step count below pure confidence-based methods while preserving accuracy.
 
 ### Loss & Training
-Completely training-free: DAPD does not modify dLLM weights or introduce trainable parameters. It is evaluated directly on public LLaDA-8B-Instruct and Dream-7B-Instruct models.
+Fully training-free: DAPD does not modify dLLM weights or introduce additional trainable parameters. It reuses existing attention. Evaluations were performed directly on LLaDA-8B-Instruct and Dream-7B-Instruct.
 
 ## Key Experimental Results
 
 ### Main Results
-Evaluated on LLaDA / Dream across code (HumanEval / MBPP), math (GSM8K / Math500), instruction following (IFEval), and ParallelBench (max 256 tokens). Key comparison on "Multi-query Mixed Prompt" TriviaQA × 5 (LLaDA, single block):
+Evaluation was conducted on LLaDA / Dream across code (HumanEval / MBPP), math (GSM8K / Math500), instruction following (IFEval), and ParallelBench, with a max generation of 256 tokens using lm-eval. Below are the core results for the "Multi-question Mixed Prompt" TriviaQA × 5 setup (LLaDA, single block, EOS suppression disabled):
 
 | Method | Accuracy (↑) | Steps | Gain |
 |------|-----------|------|---------|
-| Token-wise Baseline (Confidence) | 52.64 | 256.0 | 1.00× |
+| Per-token Original (confidence) | 52.64 | 256.0 | 1.00× |
 | Fast-dLLM | 52.12 | 124.4 | 2.06× |
 | KLASS | 52.20 | 177.4 | 1.44× |
 | EB-Sampler | 51.20 | 131.3 | 1.95× |
 | **DAPD (Ours)** | **52.08** | **66.2** | **3.87×** |
 
-DAPD significantly outperforms baselines that require block-splitting or EOS suppression to maintain accuracy. On ParallelBench, DAPD consistently occupies the Score-Steps Pareto frontier.
+On tasks like MBPP and IFEval, DAPD significantly outperformed baselines that require block-wise decoding or EOS suppression to maintain accuracy under single-block settings. On ParallelBench (designed to stress-test dependency robustness), DAPD consistently held the Score-Steps Pareto frontier.
 
 ### Ablation Study
 
-| Configuration | Key Observation |
-|------|---------|
-| Attention Layer Selection | Best results using the last ~30% of layers (global integration). |
-| Sorting Key: $\tilde d_i$ vs $\tilde d_i\cdot\mathrm{conf}_i$ | Weighted version is superior by balancing structure and reliability. |
-| Welsh–Powell vs. Max Independent Set | Degree-priority yields fewer total steps by clearing hubs early. |
-| Late-stage thresholding (mask < 50%) | Successfully reduces steps when graph edges are sparse. |
+| Configuration | Key Observation | Description |
+|------|---------|------|
+| Attention Layer Selection | Optimal with last ~30% layers | High layers integrate global info; low layers favor local token-level signals. |
+| Sorting Key: $\tilde d_i$ vs $\tilde d_i\cdot\mathrm{conf}_i$ | Weighted version is superior | Considers both structural importance and prediction reliability. |
+| Welsh–Powell vs. MIS | Degree-first yields fewer steps | Unmasking hub nodes early sparsifies the remaining graph faster. |
+| Late-stage Threshold Switch | Further reduces steps | Confidence thresholds approximate independent sets when the graph is near-edgeless. |
 
 ### Key Findings
-- **Trajectory shift**: Visualizing prompts containing five independent questions shows that baselines use a "bi-directional inward" pseudo-autoregressive pattern. DAPD disperses unmasking across the entire sequence in the first 50% of steps, truly leveraging the any-order capability of dLLMs.
-- **Acceleration Source**: The 3.87x gain (vs 2.06x for Fast-dLLM) suggests that explicit dependency modeling uncovers significantly more parallel opportunities than marginal confidence alone.
-- **Generalization**: Similar performance gains on the Dream model confirm the method is not LLaDA-specific.
-- **Low Overhead**: End-to-end TPS (tokens/sec) is higher than baselines, confirming that the reduction in steps is not offset by per-step computation cost.
+- **Qualitative Change in Decoding Trajectories**: Visualizing prompts containing five independent sub-questions shows that baselines (Fast-dLLM / KLASS / EB-Sampler) follow a pseudo-autoregressive "outside-in" pattern. DAPD unmasks tokens scattered across the entire sequence in the first 50% of steps, truly leveraging the bidirectional, any-order capabilities of dLLMs.
+- **Speedup via Independent Sub-problems**: The 3.87× speedup of DAPD is ~1.88× that of Fast-dLLM, indicating that explicit dependency modeling uncovers far more parallelism than marginal confidence alone.
+- **Cross-model Generalization**: DAPD consistently outperforms on Dream without specialized tricks like block decoding, proving that improvements stem from the method rather than LLaDA-specific tuning.
+- **Negligible Graph Overhead**: By reusing computed attention, the end-to-end TPS (tokens/sec) shows actual gains over baselines, representing real-world acceleration rather than just fewer "expensive" steps.
 
 ## Highlights & Insights
-- **"Self-attention = Free Independence Probe"**: A highly reusable perspective. DAPD is the first to systematically reinterpret attention as a dependency graph, addressing the "joint-marginal mismatch" at its root with zero extra training.
-- **Formalization to "Dynamic Graph Coloring"**: This elevates parallel decoding from a heuristic parameter search to a combinatorial optimization framework, allowing the use of mature algorithms like Welsh–Powell.
-- **Hub-node Priority**: Prioritizing hubs is a smart trade-off—sacrificing single-step width for long-term graph sparsification.
-- **Natural Avoidance of EOS Issues**: Baselines often fail in single-block settings due to premature EOS generation. DAPD's dispersed unmasking naturally avoids this "unstructured tail" pitfall.
+- **"Self-Attention = Free Conditional Independence Probe" is a high-utility perspective**: While previous token-wise signals (confidence/entropy) are purely marginal, DAPD is the first to systematically reinterpret attention as a dependency graph. It targets the root cause of joint-marginal mismatch with zero extra training.
+- **Elegant Formalization as Dynamic Graph Coloring**: DAPD shifts parallel decoding from a continuous parameter tuning problem ("how many tokens to pick") to a combinatorial optimization framework, enabling the use of mature heuristics like Welsh–Powell.
+- **Degree-First over Maximum Independent Set**: A counter-intuitive but correct choice—maximizing single-step width is a greedy trap that drags out total steps. Prioritizing hub nodes is a strategy transferable to other global batch scheduling scenarios, such as KV cache replacement or draft selection in speculative decoding.
+- **Sidestepping EOS Pitfalls**: Baselines often collapse in single-block settings due to premature EOS generation. Because DAPD unmasks tokens in a scattered fashion and generates structured endings later, it naturally avoids this issue.
 
 ## Limitations & Future Work
-- **Graph Overhead**: While negligible for 256 tokens, the $O(L^2)$ edge score calculation may become a bottleneck for sequences several thousand tokens long.
-- **Hyperparameter Robustness**: Choices like the attention layers and the 50% switching point are somewhat specialized for LLaDA/Dream; automatic selection rules are not yet provided.
-- **First-order Approximation**: The assumption "low attention ⟹ independence" is a simplification that might fail in structures with complex indirect dependencies.
-- **Task Dependence**: The advantage of DAPD is most pronounced in prompts with independent sub-structures (like multi-query batches) rather than monolithically dependent tasks.
+- **Graph Construction Overhead**: While currently negligible, the $O(L^2)$ edge score calculation may become a bottleneck for sequences with several thousand tokens; long-sequence performance (>1k tokens) was not reported.
+- **Robustness of Threshold $\tau_t$ and Layer Selection**: Core hyperparameters are somewhat specialized for LLaDA/Dream. Different architectures may require retuning; no automatic selection rule was provided.
+- **Theoretical Approximation Boundaries**: The "low attention $\implies$ conditional independence" assumption is a first-order approximation. Path-based indirect dependencies and task-specific semantics are collapsed into simple averages, which might fail on specially constructed adversarial dependency structures.
+- **Task Dependency**: On tasks with a single global answer (e.g., GSM8K), the gap between DAPD and baselines is smaller than on prompts with naturally independent sub-structures (e.g., combined queries).
 
 ## Related Work & Insights
-- **vs. Fast-dLLM**: Fast-dLLM uses a fixed confidence threshold. DAPD adopts its late-stage logic but achieves double the acceleration (3.87x vs 2.06x) by modeling dependencies in the early stages.
-- **vs. EB-Sampler / KLASS**: These rely on marginal signals (entropy/KL). DAPD introduces structural interaction via attention, better addressing joint-marginal mismatch.
-- **vs. Training-based methods (dParallel, APD)**: Those require re-training or auxiliary planners. DAPD achieves competitive results by optimizing the use of existing internal signals.
+- **vs. Fast-dLLM (Wu et al., 2026)**: Fast-dLLM uses a fixed confidence threshold; DAPD shares its tail-end logic but uses MRF independent sets for the early stages, doubling the speedup (3.87× vs 2.06×).
+- **vs. EB-Sampler (Ben-Hamu et al., 2025)**: EB-Sampler uses entropy bounds, which are still marginal. DAPD's attention-based interactions target joint-marginal mismatch directly.
+- **vs. KLASS (Kim et al., 2025b)**: KLASS focuses on token stability via KL divergence; DAPD uses structural signals (graphs) to distinguish between positions that are highly confident but mutually conflicting.
+- **vs. Training-based Methods (dParallel, Learn-to-Parallel)**: These introduce extra planners or retrain models. DAPD offers a training-free path by performing geometric/combinatorial optimization on internal signals.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ (Clean new perspective using attention as MRF edges).
-- Experimental Thoroughness: ⭐⭐⭐⭐ (Solid across models and tasks; needs more long-sequence data).
-- Writing Quality: ⭐⭐⭐⭐ (Clear formalization and logical flow).
-- Value: ⭐⭐⭐⭐⭐ (Training-free, plug-and-play, significant SOTA speedup).
+- Novelty: ⭐⭐⭐⭐⭐ Using self-attention as MRF edges and applying dynamic graph coloring is a clean, novel perspective that unifies previous heuristics.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covered two dLLMs, five tasks, and synthetic verification. Lacks evaluation on very long sequences or larger model scales.
+- Writing Quality: ⭐⭐⭐⭐ Logical flow from math to visualization is strong; analogies like "hub nodes first" are intuitive.
+- Value: ⭐⭐⭐⭐⭐ Training-free, plug-and-play, and doubles SOTA acceleration; high engineering and conceptual value.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
-</div>
-<!-- RELATED:END -->
 
 ## Related Papers
 
 - [\[ICML 2026\] DyLLM: Efficient Diffusion LLM Inference via Saliency-based Token Selection and Partial Attention](dyllm_efficient_diffusion_llm_inference_via_saliency-based_token_selection_and_p.md)
-- [\[ICLR 2026\] Skip to the Good Part: Representation Structure & Inference-Time Layer Skipping in Diffusion vs. Autoregressive LLMs](../../ICLR2026/image_restoration/skip_to_the_good_part_representation_structure_inference-time_layer_skipping_in_.md)
 - [\[ICML 2026\] Triadic Dynamics Aware Diffusion Posterior Sampling for Inverse Problems: Optimizing Guidance and Stochasticity Schedules](triadic_dynamics_aware_diffusion_posterior_sampling_for_inverse_problems_optimiz.md)
+- [\[ICLR 2026\] Skip to the Good Part: Representation Structure & Inference-Time Layer Skipping in Diffusion vs. Autoregressive LLMs](../../ICLR2026/image_restoration/skip_to_the_good_part_representation_structure_inference-time_layer_skipping_in_.md)
 - [\[ICML 2025\] ε-VAE: Denoising as Visual Decoding](../../ICML2025/image_restoration/epsilon-vae_denoising_as_visual_decoding.md)
-- [\[CVPR 2026\] CARD: Correlation Aware Restoration with Diffusion](../../CVPR2026/image_restoration/card_correlation_aware_restoration_with_diffusion.md)
+- [\[ICML 2026\] Degradation-Aware Metric Prompting for Hyperspectral Image Restoration](degradation-aware_metric_prompting_for_hyperspectral_image_restoration.md)
 
 </div>
 

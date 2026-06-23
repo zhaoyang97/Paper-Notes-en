@@ -2,118 +2,118 @@
 title: >-
   [Paper Note] Post-Training LLMs as Better Decision-Making Agents: A Regret-Minimization Approach
 description: >-
-  [ICML 2026][LLM Agent][Paper Note] The authors propose Iterative RMFT, which ranks decision trajectories rolled out by the LLM from lowest to highest regret. The top $k$ optimal trajectories are selected for repeated fine-tuning using SFT. Without depending on known optimal algorithms (e.g., UCB/FTRL) or manually designed CoT templates, this approach al
+  [ICML 2026][LLM Agent][Paper Note] The authors propose Iterative RMFT, which ranks decision trajectories rolled out by the LLM itself based on regret from low to high. The top $k$ optimal trajectories are selected for iterative SFT. This approach allows LLMs to automatically emerge with no-regret behavior and a reasonable exploration-exploitation balanc
 tags:
   - ICML 2026
   - LLM Agent
 date: 2026-05-08
-content_hash: 0e5a600b65f578db
+content_hash: 60cf834052cdbebd
 ---
 # Post-Training LLMs as Better Decision-Making Agents: A Regret-Minimization Approach
 
 **Conference**: ICML 2026  
 **arXiv**: [2511.04393](https://arxiv.org/abs/2511.04393)  
-**Code**: Not yet public  
+**Code**: Not yet released  
 **Area**: LLM Agent / Online Decision Making / Post-training  
-**Keywords**: Regret minimization, Iterative SFT, Online decision making, Multi-armed bandits, Self-generated reasoning
+**Keywords**: Regret Minimization, Iterative SFT, Online Decision Making, Multi-Armed Bandits, Self-generated Reasoning
 
 ## TL;DR
-The authors propose Iterative RMFT, which ranks decision trajectories rolled out by the LLM from lowest to highest regret. The top $k$ optimal trajectories are selected for repeated fine-tuning using SFT. Without depending on known optimal algorithms (e.g., UCB/FTRL) or manually designed CoT templates, this approach allows no-regret behavior and a reasonable exploration-exploitation balance to automatically emerge in LLMs across three types of verbalized decision tasks: multi-armed bandits, online learning, and non-stationary bandits.
+The authors propose Iterative RMFT, which ranks decision trajectories rolled out by the LLM itself based on regret from low to high. The top $k$ optimal trajectories are selected for iterative SFT. This approach allows LLMs to automatically emerge with no-regret behavior and a reasonable exploration-exploitation balance across three types of verbalized decision tasks—Multi-Armed Bandits (MAB), online learning, and non-stationary bandits—without relying on known optimal algorithms (e.g., UCB/FTRL) or manually designed CoT templates.
 
 ## Background & Motivation
 
-**Background**: Deploying LLMs as decision-making agents in multi-round interactive environments (recommendation, gaming, healthcare, operations) has become a prominent trend. However, the pre-training objective of LLMs is next-token prediction, which is not explicitly optimized for online decision-making; thus, there is no theoretical guarantee as to why LLMs can make good decisions.
+**Background**: Deploying LLMs as decision-making agents in multi-round interactive environments (recommendation, gaming, healthcare, operations) is a clear trend. However, the pre-training objective of LLMs is next-token prediction, which is not explicitly optimized for online decision-making. Thus, there is no theoretical guarantee for "why LLMs can make good decisions."
 
-**Limitations of Prior Work**: A series of empirical studies indicates that LLMs without targeted training fail at fundamental online decision problems: they are reluctant to explore in stochastic MAB, exhibit linear regret growth in adversarial online learning, and fail to track reward drifts in non-stationary environments. In other words, out-of-the-box LLMs are not no-regret learners even on "textbook" tasks.
+**Limitations of Prior Work**: Empirical studies show that LLMs without targeted training fail at fundamental online decision problems: they are reluctant to explore in stochastic MAB, exhibit linear regret growth in adversarial online learning, and fail to track reward drifts in non-stationary environments. In other words, out-of-the-box LLMs are not no-regret learners even on "textbook" tasks.
 
-**Key Challenge**: Among existing LLM post-training methods, two main routes attempt to fix this:
-One is "algorithm distillation," which distills action sequences from known optimal algorithms (e.g., UCB, EXP3) into the LLM. This requires prior knowledge of the environment's optimal algorithm, and the trained models are sensitive to problem structures like action space size, time horizon, and reward distribution, often failing when transferred to new verbalized tasks. The other is RL fine-tuning, but using rewards directly as signals only solves reward maximization and does not naturally include exploration incentives, nor can it be directly applied to adversarial or non-stationary settings.
+**Key Challenge**: Traditional LLM post-training methods follow two main paths to address this:
+One is "algorithm distillation"—distilling action sequences of known optimal algorithms (e.g., UCB, EXP3) into the LLM. However, this requires prior knowledge of the optimal algorithm and results in models sensitive to problem structures like action space size, time horizon, and reward distribution, often failing when transferred to verbalized new tasks. The other is RL fine-tuning; however, using rewards directly as signals only solves reward maximization, which does not naturally include exploration incentives and cannot be directly applied to adversarial or non-stationary settings.
 
-**Goal**: To find a unified post-training paradigm that does not rely on known optimal algorithms, improves LLM decision-making capabilities in verbalized tasks, and simultaneously preserves and enhances the LLM's CoT reasoning process.
+**Goal**: To find a unified post-training paradigm that enhances LLM decision-making capabilities in verbalized tasks without relying on known optimal algorithms, while preserving and strengthening the CoT reasoning process.
 
-**Key Insight**: The authors note that regret is a highly versatile metric in online decision-making—FOL, MAB, and NS-MAB can all be characterized by regret or dynamic regret—and it can be calculated post-hoc once a decision trajectory is obtained. Since an LLM can calculate regret after rolling out its own trajectory, regret can serve as a "post-hoc judge" to filter which self-generated trajectories are worth SFT.
+**Key Insight**: The authors observe that regret is a universal metric in online decision-making—Full-Information Online Learning (FOL), MAB, and NS-MAB can all be characterized by regret/dynamic regret—and it can be calculated post-hoc once a trajectory is obtained. Since the LLM can calculate regret after rolling out its own trajectories, regret can serve as a "post-hoc judge" to filter which self-generated trajectories are worth SFT.
 
-**Core Idea**: Use regret as the sole signal for trajectory filtering and repeatedly distill the low-regret trajectories generated by the LLM back into itself (self-imitation). This allows no-regret behavior to "emerge" rather than being forced in.
+**Core Idea**: Use regret as the sole trajectory filtering signal to iteratively distill low-regret trajectories generated by the LLM into itself (self-imitation). This allows no-regret behavior to "emerge" rather than being forced into the model.
 
 ## Method
 
 ### Overall Architecture
-Iterative RMFT is a meta-algorithm: the same outer loop can be applied to three online decision environments: FOL (Full-information Online Learning), MAB (Multi-Armed Bandits), and NS-MAB (Non-Stationary Bandits). In one outer iteration, the LLM rolls out $L$ trajectories for each of $M$ different scenarios (verbally described decision tasks). Each trajectory consists of several (CoT reasoning, action) pairs with interaction in natural language. After the trajectories are completed, cumulative regret is calculated. The $k$ trajectories with the lowest regret from each scenario are selected to form the SFT dataset $\mathcal{D}$, and the model is updated using the standard SFT loss. The new model replaces the old one for the next round, cycling until convergence. The essence of this paradigm is that the training signal is only the scalar of regret, making no assumptions about action formats, CoT templates, or optimal algorithms, while the model's inherent reasoning is preserved and reinforced.
+Iterative RMFT is a meta-algorithm: the same outer loop applies to FOL, MAB, and NS-MAB environments. In one outer iteration, the LLM rollouts $L$ trajectories for $M$ different verbalized scenarios. Each trajectory consists of (CoT reasoning, action) pairs in natural language. After trajectories are completed, cumulative regret is calculated. The $k$ trajectories with the lowest regret from each scenario form the SFT dataset $\mathcal{D}$, used to update the model via standard SFT loss. The new model replaces the old one for the next round until convergence. The essence of the paradigm is that the only training signal is the scalar regret; it assumes nothing about action formats, CoT templates, or optimal algorithms, while model reasoning is preserved and reinforced.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["M Verbalized Scenarios (FOL / MAB / NS-MAB)"] --> B["Current LLM rolls out L trajectories each<br/>Each = (CoT Reasoning, Action) sequence"]
-    B --> C["Regret-based Trajectory Filtering<br/>Calculate regret / dynamic regret, take lowest k per scenario"]
-    C --> D["SFT Preserving Self-generated CoT<br/>Cross-entropy on full trajectory in dialogue format"]
+    A["M verbalized scenarios (FOL / MAB / NS-MAB)"] --> B["Current LLM rollouts L trajectories each<br/>(Sequence of CoT + Action)"]
+    B --> C["Regret-based Trajectory Filtering<br/>Calculate regret/dynamic regret, select top-k per scenario"]
+    C --> D["SFT with Self-generated CoTs<br/>Cross-entropy on full trajectories"]
     D --> E["Update Model → Replace Old Model"]
-    E -->|Not converged, enter next iteration| B
-    E -->|Converged| F["Output: No-regret Decision Agent"]
+    E -->|Not converged, next iteration| B
+    E -->|Converged| F["Output: No-regret decision agent"]
 ```
 
 ### Key Designs
 
 **1. Regret-based Trajectory Filtering: Unifying Evaluation and Data Generation with a Scalar**
 
-As mentioned, LLMs are not no-regret learners in classic online decision tasks, and fixing this without relying on optimal algorithms is difficult. The authors' entry point is that regret is a universal metric for online decision-making. Once a complete trajectory is obtained, regret can be calculated post-hoc, allowing it to serve both as an "evaluation metric" and a "filter for SFT data." Specifically, for each scenario $i$, $L$ trajectories $C_{1,i}, \dots, C_{L,i}$ are rolled out. After each, regret is calculated—static regret $\text{Regret}_\mathcal{A}((R_t)_{t\in[T]}, T) = \max_{\pi\in\Pi} \sum_t \langle \pi, R_t\rangle - \sum_t \langle \pi_{\mathcal{A}, t}, R_t\rangle$ for FOL, expected regret for MAB, and dynamic regret $\text{D-Regret} = \mathbb{E}[\sum_t \max_a r_t(a) - \sum_t r_t(a_{\mathcal{A},t})]$ for NS-MAB. The $k$ trajectories with the lowest regret (in ascending order) are added to $\mathcal{D}$. This selection works because regret does not depend on whether the optimal algorithm is known, nor on action space size or horizon, naturally supporting training across tasks and problem structures. Moreover, filtering occurs at the trajectory level rather than the token level, automatically preserving the full CoT and avoiding the difficult reward-credit-assignment problem in RL.
+As mentioned, LLMs are not no-regret learners on classic tasks. To fix this without optimal algorithms, the authors use regret as the universal metric. It acts as both an evaluation metric and an SFT data filter. Specifically, for scenario $i$, $L$ trajectories $C_{1,i}, \dots, C_{L,i}$ are generated, and regret is calculated post-hoc. For FOL, static regret $\text{Regret}_\mathcal{A}((R_t)_{t\in[T]}, T) = \max_{\pi\in\Pi} \sum_t \langle \pi, R_t\rangle - \sum_t \langle \pi_{\mathcal{A}, t}, R_t\rangle$ is used; for MAB, expected regret; for NS-MAB, dynamic regret $\text{D-Regret} = \mathbb{E}[\sum_t \max_a r_t(a) - \sum_t r_t(a_{\mathcal{A},t})]$. The top $k$ trajectories with the lowest regret enter $\mathcal{D}$. This logic works because regret does not depend on whether the optimal algorithm is known or the specific horizon, supporting cross-task training naturally. Filtering at the trajectory level instead of the token level preserves the full CoT and bypasses the reward-credit-assignment problem in RL.
 
-**2. SFT Preserving Self-generated CoT: Updating via Self-Imitation instead of RL**
+**2. CoT-preserving SFT: Updating the Model via Self-Imitation instead of RL**
 
-If output formats are forced as in algorithm distillation, or if only rewards are used as token-level signals as in RLFT, the model's free reasoning is flattened, and regret in adversarial/non-stationary settings cannot be captured. The authors use the simplest approach: treating selected trajectories in their full dialogue format (task description + historical interaction + reasoning + action) as SFT samples. Standard cross-entropy loss is applied to each token without introducing a reward model, token-level RL, or forcing the CoT into a fixed template. Consequently, all natural language parts (reasoning + actions) become supervision targets. The model "imitates its own most successful decision-making instances." This offers three benefits: direct utilization of closed-source APIs (like GPT-4o mini's fine-tune interface), no constraints on CoT form, and the emergence of new "algorithmic style" reasoning, leading to better generalization than forced templates.
+If output formats are forced (algorithm distillation) or signals are token-level rewards (RLFT), free-form reasoning is flattened, and regret in adversarial settings cannot be captured. The authors use the simplest approach: treat selected trajectories as SFT samples in dialogue format (Task Description + Interaction History + Reasoning + Action) using standard cross-entropy loss. There is no reward model, no token-level RL, and no fixed CoT template. The model "imitates its own most successful decisions." This approach allows the use of closed-source APIs (e.g., GPT-4o mini fine-tuning), does not constrain CoT form, and allows the emergence of new "algorithmic-style" reasoning, leading to better generalization.
 
-**3. Cross-Environment Meta-algorithm Instantiation: One Signal for FOL / MAB / NS-MAB**
+**3. Meta-algorithm Instantiation across Environments: Covering FOL / MAB / NS-MAB**
 
-To prove the universality of the regret signal, the same outer loop must work across three typical environments, with differences only in regret calculation and feedback completeness. FOL uses the full-information reward vector $R_t$ to evaluate each action; MAB only has partial feedback $R_t(a_t)$ and takes expectations over randomness; NS-MAB additionally introduces a variation budget $V_T = \sum_{t=2}^T \|r_t - r_{t-1}\|_\infty$ and uses dynamic regret as the filtering criterion. The scenario library consists of verbalized tasks (healthcare recommendation, resource allocation, marketing, etc.), where each scenario is translated into natural language dialogue each round. The agent outputs an action + CoT, and a program parses $a_t$ or $\pi_t \in \Delta(\mathcal{A})$ from the output. The fact that a single signal covers all three environments is empirical evidence of the universal nature of regret. Furthermore, the authors randomized scenarios extensively (horizon, action space, reward generation, domain context), forcing the model to learn general decision strategies rather than memorizing lookup tables for specific horizons.
+To prove the universality of the regret signal, the same outer loop is applied to three environments. FOL uses the full reward vector $R_t$; MAB uses partial feedback $R_t(a_t)$; NS-MAB introduces violation budget $V_T = \sum_{t=2}^T \|r_t - r_{t-1}\|_\infty$ and dynamic regret. Scenarios are verbalized (medical recommendation, resource allocation, etc.). The agent outputs actions and CoT, and $a_t$ or $\pi_t \in \Delta(\mathcal{A})$ is parsed. The success of a single signal across these environments provides empirical evidence for the universality of regret. Extensive randomization in scenario dimensions (horizon, action space, reward generation, context) ensures the model learns general decision strategies rather than lookup tables for specific horizons.
 
 ### Loss & Training
-The inner layer is standard SFT: minimizing cross-entropy on tokens of selected trajectories without additional regularization. The number of outer iterations and the parameters $k$, $L$, and $M$ for each round are hyperparameters. Theoretically, the authors prove in a simplified 1-layer attention Transformer setting that the fixed point of this "iterative imitation of lowest regret trajectories" corresponds to the FTRL algorithm. Thus, no-regret behavior is induced by this paradigm in the theoretical model rather than being a coincidence.
+The inner loop is standard SFT: minimize cross-entropy on selected trajectory tokens without additional regularization. Outer iteration counts and $k, L, M$ are hyperparameters. On the theoretical side, the authors prove in a simplified single-layer attention Transformer setting that the fixed point of this "iterative imitation of lowest regret trajectories" corresponds to the FTRL algorithm, suggesting that no-regret behavior is induced by this paradigm rather than being a coincidence.
 
 ## Key Experimental Results
 
 ### Main Results
-The study covers three types of models: (1) Small Transformers with numerical I/O as a controlled warm-up; (2) Open-source LLMs: Phi-3.5-mini, Gemma-2-9b-it, Qwen3-8B; (3) Closed-source LLMs: GPT-4o mini, trained via its SFT API.
+Three model types were covered: (1) Small numerical Transformers for warm-up; (2) Open-source LLMs: Phi-3.5-mini, Gemma-2-9b-it, Qwen3-8B; (3) Closed-source LLM: GPT-4o mini via SFT API.
 
 | Environment | Model Type | Pre-training Behavior | After Iterative RMFT |
 |------|----------|-----------|------------------|
-| FOL (Verbalized) | Open-source LLMs (Phi-3.5 / Gemma-2-9b / Qwen3-8B) | Linear regret growth, $\hat\beta \approx 1$ | $\hat\beta < 1$, significant $p_{\text{reg}}$, sublinear regret observed |
-| MAB (Verbalized) | GPT-4o mini | High SuffFailFreq, reluctant to explore | Significant drop in SuffFailFreq, MinFrac increase, more uniform exploration |
-| NS-MAB (Verbalized) | Open-source LLMs + GPT-4o mini | Dynamic regret cannot track drift | Dynamic regret growth slows down; can switch arms after reward drift |
-| FOL (Numerical Transformer) | Single/Multi-layer attention | No no-regret guarantee at default initialization | $\hat\beta < 1$ after training, close to FTRL baseline |
+| FOL (Verbalized) | Open-source LLMs | Linear regret growth, $\hat\beta \approx 1$ | $\hat\beta < 1$, significant $p_{\text{reg}}$, sublinear regret |
+| MAB (Verbalized) | GPT-4o mini | High SuffFailFreq, reluctant to explore | Significant SuffFailFreq decrease, MinFrac increase, uniform exploration |
+| NS-MAB (Verbalized) | Open/Closed LLMs | Dynamic regret fails to track drift | Slower growth in dynamic regret, switches arms after reward drift |
+| FOL (Numerical Trans.) | Single/Multi-layer Attention | No no-regret guarantee at init | $\hat\beta < 1$ after training, close to FTRL baseline |
 
 ### Ablation Study
 
 | Configuration | Key Metric | Description |
 |------|---------|------|
-| Iterative RMFT (Full) | Sublinear regret growth; Exploration-exploitation balance | Complete method |
-| RMFT 1-round only (Non-iterative) | Improved regret but still near linear | Single-round SFT insufficient to "amplify" low-regret behavior; iteration is key |
-| Filtering with reward (instead of regret) | Regret bounces back in FOL/NS-MAB | Validates that cumulative reward maximization $\neq$ regret minimization, especially in adversarial/non-stationary settings |
-| Removing self-generated CoT (SFT actions only) | Cross-scenario generalization performance drops | Self-generated reasoning is key for the model to maintain no-regret in new scenarios |
-| Cross-task Generalization (Train FOL, Test MAB / change horizon, actions, reward dist) | Maintains sublinear regret | Indicates the model learns general decision strategies rather than patterns for a specific horizon |
+| Iterative RMFT (Full) | Sublinear regret growth; Exploration balance | Full method |
+| 1-round RMFT (Non-iterative) | Improved regret but still near-linear | Single SFT round is insufficient to "amplify" low-regret behavior; iteration is key |
+| Filtering by Reward (not Regret) | Regret rebounds in FOL/NS-MAB | Verifies cumulative reward maximization $\neq$ regret minimization in adversarial/non-stationary settings |
+| Removing self-CoT (Action only) | Decreased cross-scenario generalization | Self-generated reasoning is key for no-regret in new scenarios |
+| Cross-task generalization (Train FOL, Test MAB/Diff. Horizon) | Maintains sublinear regret | Learns general decision strategies rather than fixed-horizon patterns |
 
 ### Key Findings
-- Regret is a better post-training signal than reward: Reward might suffice in stochastic environments, but in adversarial/non-stationary settings, cumulative reward maximization is not equivalent to regret minimization, leading to model degradation.
-- Self-generated CoT is the key source of generalization: Forcing the removal of CoT and only performing SFT on action tokens during training leads to collapse when scenarios change (e.g., changes in reward description or domain). Preserving self-generated reasoning allows for cross-task transfer.
-- Iteration is mandatory: A single RMFT can only lower regret slightly; multiple iterations gradually amplify the minority of low-regret behavior modes into the model's default behavior.
-- Theoretical evidence: In a simplified setting with 1-layer attention Transformers, the fixed point of "imitating the lowest regret trajectory" is FTRL, suggesting that no-regret behavior is a natural attractor for this paradigm.
+- Regret is a better post-training signal than reward: Reward may suffice in stochastic settings, but in adversarial/non-stationary settings, cumulative reward maximization is not equivalent to regret minimization, leading to model degradation.
+- Self-generated CoT is the source of generalization: Removing CoT for action-only SFT causes model failure when scenarios change. Preserving reasoning enables cross-task transfer.
+- Iteration is mandatory: Single RMFT only slightly reduces regret; multiple iterations amplify low-regret behavioral patterns into the model's default behavior.
+- Theoretical evidence: In simplified single-layer attention settings, "imitating the lowest regret trajectory" has FTRL as a fixed point, indicating no-regret behavior is a natural attractor.
 
 ## Highlights & Insights
-- Treating regret as a "post-hoc judge" rather than a "training loss" bypasses the difficulty of direct backpropagation for regret in token-level autoregressive generation. This is a very clever way to migrate classic online learning tools to LLM training.
-- Using SFT instead of RL makes the method naturally compatible with closed-source fine-tune APIs (like GPT-4o mini), significantly lowering the barrier for deployment from an engineering perspective—something most RLHF/RLFT works cannot achieve.
-- The theoretical result that "self-imitation converges to FTRL" provides a specific limit property for "why this self-distillation emerges no-regret behavior," beyond just empirical observation.
-- Transferable logic: Any task where a full trajectory can be evaluated post-hoc by a scalar metric (multi-turn tool calling, code agent, game playing) can adopt the "rollout → rank by metric → top-$k$ self-SFT → iteration" paradigm by replacing regret with task-relevant metrics.
+- Using regret as a "post-hoc judge" rather than a "training loss" bypasses the difficulty of backpropagating regret through token-level autoregressive generation.
+- The use of SFT makes the method natively compatible with closed-source fine-tuning APIs (GPT-4o mini), lowering the bar for deployment—a challenge for most RLHF/RLFT work.
+- The "self-imitation converges to FTRL" theoretical result provides a concrete property for why this self-distillation emerges no-regret behavior.
+- Transferable logic: Any task where a scalar post-hoc metric can evaluate a full trajectory (multi-turn tool use, code agents, gaming) can benefit from the "rollout → rank → top-$k$ SFT → iterate" paradigm.
 
 ## Limitations & Future Work
-- The authors acknowledge that training APIs for closed-source models like GPT-4o mini lack full hyperparameter control, and training costs grow linearly with the number of scenarios and iterations.
-- Theoretical results are limited to simplified 1-layer attention settings; whether self-imitation still converges to no-regret algorithms on multi-layer Transformers remains an open question.
-- Evaluation still focuses on canonical online DM tasks; truly complex verbal decision-making (e.g., multi-step tool use + long context) only covers variant scenarios and hasn't been tested on end-to-end agent benchmarks.
-- Sorting by regret requires calculating regret post-hoc, which necessitates either an oracle optimal strategy or full reward feedback. For many real-world scenarios (like RLHF-style human preference feedback), the problem of "how to define regret" must be solved first.
-- Future improvements: Replacing regret estimation with "relative gap estimation from the optimal strategy" provided by an LLM-as-judge could extend this paradigm to real tasks without an oracle. Alternatively, replacing SFT with DPO for preference optimization between "low-regret vs high-regret trajectories" could improve sample efficiency.
+- Closed-source training APIs for GPT-4o mini do not allow full hyperparameter control, and training costs scale linearly with scenarios and iterations.
+- Theoretical results are limited to simplified single-layer attention settings; whether self-imitation converges to no-regret algorithms on deep Transformers remains an open question.
+- Evaluation focuses on canonical online DM tasks; complex verbal decisions (long context, multi-step tool use) were only covered by variant scenarios, not full end-to-end agent benchmarks.
+- Regret ranking requires the ability to calculate regret post-hoc, necessitating an oracle policy or full reward feedback. Defining regret in real-world scenarios (like RLHF preference feedback) is a challenge.
+- Future improvements: Replacing regret estimation with "distance to optimal policy" estimated by LLM-as-judge could extend the paradigm to real-world tasks without oracles. Replacing SFT with DPO for preference optimization between low and high regret trajectories could improve sample efficiency.
 
 ## Related Work & Insights
-- **vs Nie et al. 2025 (Algorithm Distillation)**: They distill action sequences of known optimal algorithms (e.g., UCB); this paper does not rely on known optimal algorithms and filters self-generated trajectories via regret, providing better generalization.
-- **vs Schmied et al. 2026 (RLFT)**: Both use self-generated CoT, but RLFT uses reward as a signal and relies on UCB-style manual CoT templates. This paper uses regret and does not constrain CoT format, covering adversarial and non-stationary environments.
-- **vs Park et al. 2025b (regret-loss)**: They directly backpropagate regret as a loss to numerical Transformers to obtain FTRL; this paper extends that idea from "explicitly optimizing regret" to "filtering trajectories with regret for SFT," making it applicable to verbalized I/O and closed-source LLMs.
-- **vs General RLHF / RLAIF**: The training goal of RLHF is reward maximization rather than regret minimization, and it usually doesn't explicitly incentivize exploration. This paper demonstrates that for decision tasks, regret is a more suitable training signal than reward.
+- **vs Nie et al. 2025 (Algorithm Distillation)**: They distill action sequences from known optimal algorithms (e.g., UCB); **Ours** does not rely on known optimal algorithms and filters self-generated trajectories via regret, providing better generalization.
+- **vs Schmied et al. 2026 (RLFT)**: Both use self-generated CoT, but RLFT uses reward signals and depends on UCB-style manual CoT templates; **Ours** uses regret signals, does not constrain CoT format, and covers adversarial/non-stationary environments.
+- **vs Park et al. 2025b (Regret-loss)**: They backpropagate regret as loss in numerical Transformers to get FTRL; **Ours** extends this to filtering trajectories for SFT, making it applicable to verbalized I/O and closed-source LLMs.
+- **vs Standard RLHF / RLAIF**: RLHF targets reward maximization rather than regret minimization and lacks explicit exploration incentives; **Ours** shows regret is a more suitable training signal for decision tasks.
 
 <!-- RELATED:START -->
 
@@ -123,9 +123,9 @@ The study covers three types of models: (1) Small Transformers with numerical I/
 
 - [\[ACL 2025\] R2D2: Remembering, Replaying and Dynamic Decision Making with a Reflective Agentic Memory](../../ACL2025/llm_agent/r2d2_reflective_agentic_memory.md)
 - [\[ACL 2026\] MemSearcher: Training LLMs to Reason, Search and Manage Memory via End-to-End RL](../../ACL2026/llm_agent/memsearcher_training_llms_to_reason_search_and_manage_memory_via_end-to-end_rein.md)
+- [\[ICLR 2026\] AgentGym-RL: An Open-Source Framework to Train LLM Agents for Long-Horizon Decision Making via Multi-Turn RL](../../ICLR2026/llm_agent/agentgym-rl_an_open-source_framework_to_train_llm_agents_for_long-horizon_decisi.md)
 - [\[ICML 2026\] SafeHarbor: Defining Precise Decision Boundaries via Hierarchical Memory-Augmented Guardrail for LLM Agent Safety](safeharbor_hierarchical_memory-augmented_guardrail_for_llm_agent_safety.md)
 - [\[ACL 2025\] LLM Agents Making Agent Tools](../../ACL2025/llm_agent/llm_agents_making_agent_tools.md)
-- [\[AAAI 2026\] MoralReason: Generalizable Moral Decision Alignment For LLM Agents Using Reasoning-Level Reinforcement Learning](../../AAAI2026/llm_agent/moralreason_generalizable_moral_decision_alignment_for_llm_agents_using_reasonin.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] DFKI-MLT at SemEval-2026 TASK 7: Steering Multilingual Models Towards Cultural Knowledge
 description: >-
-  [ACL 2026][Multilingual & Translation][activation steering] This SemEval system paper extracts language directions using FLORES parallel corpora and injects language steering vectors into the residual stream of multilingual LLMs during inference. The system achieved a 86.96% accuracy in the official MCQ track (ranking 7th out of 17 teams), though post-hoc analysis reveals that
+  [ACL 2026][Multilingual & Translation][activation steering] This SemEval system paper utilizes the FLORES parallel corpus to extract language directions and injects language steering vectors into the residual stream of multilingual LLMs during inference. The system achieved an official MCQ accuracy of 86.96% (7th out of 17 teams), though post-hoc analysis indicates that gains a
 tags:
   - ACL 2026
   - Multilingual & Translation
@@ -12,7 +12,7 @@ tags:
   - BLEnD
   - SemEval
 date: 2026-05-08
-content_hash: a0fc87294e85058b
+content_hash: 2fdc57b7d085c81b
 ---
 # DFKI-MLT at SemEval-2026 TASK 7: Steering Multilingual Models Towards Cultural Knowledge
 
@@ -23,64 +23,65 @@ content_hash: a0fc87294e85058b
 **Keywords**: activation steering, cultural awareness, FLORES, BLEnD, SemEval
 
 ## TL;DR
-This SemEval system paper extracts language directions using FLORES parallel corpora and injects language steering vectors into the residual stream of multilingual LLMs during inference. The system achieved a 86.96% accuracy in the official MCQ track (ranking 7th out of 17 teams), though post-hoc analysis reveals that gains are highly dependent on layers, prompts, models, and locales.
+This SemEval system paper utilizes the FLORES parallel corpus to extract language directions and injects language steering vectors into the residual stream of multilingual LLMs during inference. The system achieved an official MCQ accuracy of 86.96% (7th out of 17 teams), though post-hoc analysis indicates that gains are highly sensitive to layers, prompts, models, and locales.
 
 ## Background & Motivation
-**Background**: Multilingual LLMs can process multiple languages fluently, but linguistic fluency does not equate to cultural knowledge reliability. Benchmarks like BLEnD and SemEval-2026 Task 7 focus on whether models can answer questions specific to languages, regions, and cultural backgrounds rather than merely producing grammatically correct text.
+**Background**: Multilingual LLMs can process multiple languages fluently, but linguistic fluency does not equate to cultural knowledge reliability. Benchmarks such as BLEnD and SemEval-2026 Task 7 focus on whether models can answer questions within specific linguistic, regional, and cultural contexts, rather than merely outputting grammatically correct text.
 
-**Limitations of Prior Work**: Many cultural knowledge gaps cannot be resolved through simple translation or general multilingual instruction tuning. A model may understand a language but lack knowledge of local daily culture, food, festivals, social habits, or local trivia. While fine-tuning can improve specific tasks, the SemEval shared task did not provide BLEnD training data, and fine-tuning is costly and prone to overfitting.
+**Limitations of Prior Work**: Many cultural knowledge gaps cannot be resolved through simple translation or general multilingual instruction tuning. Models may understand a language but lack knowledge of regional daily culture, food, festivals, social customs, or local common sense. While fine-tuning can improve specific tasks, the SemEval shared task did not provide BLEnD training data, and fine-tuning is costly and prone to overfitting.
 
-**Key Challenge**: Cultural knowledge and linguistic representations may overlap within the model, but how to leverage this overlap without updating parameters remains unclear. Activation steering offers a lightweight solution, yet its stability in enhancing cultural reasoning across multiple languages, locales, prompts, and models requires verification.
+**Key Challenge**: Cultural knowledge and linguistic representations may overlap within the model, but how to exploit this overlap without updating parameters remains unclear. Activation steering provides a lightweight solution, yet its ability to consistently improve cultural reasoning across multiple languages, locales, prompts, and models requires verification.
 
-**Goal**: The DFKI-MLT system aims to use language vectors for inference-time adaptation for the SAQ and MCQ tracks of SemEval-2026 Task 7, while analyzing the real gains and failure modes of steering on cultural questions.
+**Goal**: The DFKI-MLT system aims to use language vectors for inference-time adaptation to participate in the SAQ and MCQ tracks of SemEval-2026 Task 7, while analyzing the actual benefits and failure modes of steering on cultural tasks.
 
-**Key Insight**: The authors hypothesize that linguistic identity forms stable directions in the residual stream, and cultural knowledge access partially depends on language- or region-related directions. They extract language vectors from FLORES parallel sentences and add a target language vector to the residual stream of specified transformer layers during generation.
+**Key Insight**: The authors hypothesize that language identity forms stable directions in the residual stream, and cultural knowledge access partially depends on language/region-related directions. They extract language vectors from FLORES parallel sentences and add target language vectors to the residual stream of specified transformer layers during generation.
 
-**Core Idea**: Instead of fine-tuning model parameters, the internal representation is "nudged" along the target language direction during inference to make the model more likely to access the corresponding linguistic and cultural context.
+**Core Idea**: Instead of fine-tuning model parameters, the internal representations are nudged along the target language direction during inference to make the model more likely to access the corresponding linguistic and cultural context.
 
 ## Method
-The system consists of three parts: task setup, language vector extraction, and inference-time steering. The tasks include Track 1 (SAQ) and Track 2 (MCQ). SAQ requires generating short answers in the input language, matched against a set of acceptable answers; MCQ involves English questions with four regional cultural options, where the system selects the correct option for the target region. The official metric for both is accuracy.
+The system consists of three parts: task setup, language vector extraction, and inference-time steering. The tasks include Track 1 SAQ and Track 2 MCQ. SAQ requires generating short answers in the input language, matched against a set of acceptable answers; MCQ involves English questions with four regional cultural options, where the system must select the correct option for the target region. The official metric for both is accuracy.
 
 ### Overall Architecture
-The authors first map the BLEnD language-region pairs to FLORES language/script identifiers. For each mappable language, the first 1,000 sentences from FLORES dev are taken and fed into a multilingual instruction-tuned LLM to collect post-normalization residual-stream activations at specified layers. Language vectors are constructed using DiffMean, calculated as the difference between the mean activation of the target language and the mean activation of a reference set.
+The authors first map BLEnD language-region pairs to FLORES language/script identifiers. For each mappable language, the first 1,000 sentences from FLORES dev are taken and fed into a multilingual instruction-tuned LLM. Post-normalization residual-stream activations at specified layers are collected. Language vectors are constructed using DiffMean, defined as the difference between the mean activation of the target language and the mean activation of a reference set.
 
-During inference, $\beta v_{lang}$ is added to the hidden state of a specific transformer layer, where $v_{lang}$ is the normalized language direction and $\beta$ is the steering strength. The final submission uses Qwen2.5-72B-Instruct, Layer 26, $\beta=1$, and a cultural prompt. All tracks employ greedy decoding (temperature=0) to minimize the interference of sampling noise on the assessment of steering effectiveness.
+During inference, $\beta v_{lang}$ is added to the hidden state of a specific transformer layer, where $v_{lang}$ is the normalized language direction and $\beta$ is the steering strength. The final submission uses Qwen2.5-72B-Instruct, Layer 26, $\beta=1$, and a cultural prompt. All tracks employ greedy decoding with temperature=0 to minimize the interference of sampling noise on steering evaluation.
 
 ```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
     A["BLEnD Language-Region Pairs"] --> S1
     subgraph S1["FLORES DiffMean Language Vectors"]
         direction TB
-        B["Mapping to FLORES<br/>language/script identifiers"] --> C["Select first 1,000 sentences from FLORES dev"]
-        C --> D["Feed into multilingual instruction-tuned LLMs;<br/>collect residual stream activations"]
-        D --> E["DiffMean: Target language mean − Reference set mean"]
+        B["Map to FLORES<br/>language/script identifiers"] --> C["Take first 1000 FLORES dev sentences"]
+        C --> D["Feed into multilingual instruction LLM<br/>Collect residual stream activations"]
+        D --> E["DiffMean: Target Mean − Reference Mean"]
     end
-    S1 --> F["Normalized language direction v_lang"]
-    F --> G["Inference-time activation steering<br/>h′ = h + β·v_lang"]
-    G -->|"Qwen2.5-72B / Layer 26 / β=1 / cultural prompt"| H["Outputs: MCQ options / SAQ short answers"]
-    H --> I["Post-hoc sensitivity analysis<br/>layer / prompt / β / model / locale sweep"]
+    S1 --> F["Normalized Language Direction v_lang"]
+    F --> G["Inference-time Activation Steering<br/>h′ = h + β·v_lang"]
+    G -->|"Qwen2.5-72B / Layer 26 / β=1 / cultural prompt"| H["Output: MCQ Option / SAQ Short Answer"]
+    H --> I["Post-hoc Sensitivity Analysis<br/>layer / prompt / β / model / locale sweep"]
 ```
 
 ### Key Designs
 
-**1. FLORES DiffMean language vectors: Extracting "linguistic identity" as an injectable direction using parallel corpora**
+**1. FLORES DiffMean language vectors: Extracting "Language Identity" via parallel corpora as an injectable direction**
 
-The prerequisite for "adding a target language" during inference is having a clean language direction. The authors map BLEnD pairs to FLORES identifiers and collect activations from 1,000 parallel sentences. Using FLORES ensures that the sentences describe the same content across languages; thus, the "mean difference" cancels out semantic/topic variations, leaving a pure linguistic identity direction rather than one biased by topic.
+To "add a bit of target language" during inference, a clean language direction must first be established. The authors map BLEnD pairs to FLORES identifiers, feed sentences through the model's tokenizer, and collect post-normalization activations. The vector is the DiffMean of the target vs. reference set. Using FLORES ensures content alignment—since sentences across languages share the same meaning, the mean difference cancels out semantic variance, leaving a pure language identity direction rather than one confounded by topical bias.
 
-**2. Inference-time activation steering: Nudging the residual stream without parameter changes**
+**2. Inference-time activation steering: Nudging the residual stream without changing parameters**
 
-The intervention involves an additive injection into the hidden states of a selected transformer layer:
+With the direction $v_{lang}$, the intervention is an additive injection into the hidden state of a chosen transformer layer:
 
 $$h' = h + \beta v_{lang}$$
 
-Where $v_{lang}$ is the normalized direction and $\beta$ is the strength. During development, searches were conducted over $\beta \in \{1, 3, 5\}$ and various candidate layers. The method is low-cost, allows instantaneous switching between languages, and fits the shared task setting where no BLEnD training data is available.
+Where $v_{lang}$ is the normalized direction and $\beta$ is steering strength. During development, a search was conducted across $\beta \in \{1, 3, 5\}$ and candidate layers. The final submission used Qwen2.5-72B-Instruct, Layer 26, and $\beta=1$ with a cultural prompt. Greedy decoding was used to isolate the steering effect from sampling noise. This approach is low-cost and ideal for shared tasks without training data.
 
-**3. Post-hoc sensitivity analysis of prompts, layers, and models: Explaining why singular configurations lack global stability**
+**3. Post-hoc sensitivity analysis: Explaining why a single configuration lacks global stability**
 
-Since a single official submission $(\text{model}, \text{layer}, \beta, \text{prompt})$ cannot demonstrate robustness, the authors performed comprehensive sensitivity analyses post-competition. They compared Qwen, Aya, and other models across layer sweeps, prompt types (generic vs. cultural), and steering strengths, including a control group using random Gaussian vectors. This step highlights that cultural steering gains are highly localized, with optimal layers shifting significantly based on the prompt or locale.
+Since a fixed official submission $(\text{model}, \text{layer}, \beta, \text{prompt})$ cannot reveal the robustness of steering, the authors conducted a post-hoc analysis. They performed layer sweeps, prompt comparisons (generic vs. cultural), and steering strength tests across multiple models (Qwen2.5, Aya Expanse, Qwen3) and compared language vectors against random Gaussian directions. This analysis quantified that cultural reasoning steering is highly localized—optimal layers shift between early (Layer 2/3) and middle (Layer 26) layers depending on the prompt, and gains do not generalize consistently across locales.
 
 ### Loss & Training
-The system has no training loss as model parameters are not updated. The development strategy involved selecting models, layers, and $\beta$ based on the SemEval development phase. Final track configurations utilized Qwen2.5-72B-Instruct + Layer 26 + $\beta=1$.
+The system has no training loss as it does not update model parameters. The development strategy selected models, layers, and $\beta$ based on the SemEval development phase. Final configuration: Qwen2.5-72B-Instruct + Layer 26 + $\beta=1$.
 
 ## Key Experimental Results
 
@@ -89,12 +90,12 @@ The system has no training loss as model parameters are not updated. The develop
 | Track | Metric | DFKI-MLT | Rank | Description |
 |--------|------|------|----------|------|
 | Track 1 (SAQ) | Acc. | N/A | - / 10 | Official submission file corrupted; not evaluated. |
-| Track 2 (MCQ) | Acc. | 86.96 | 7 / 17 | Official score using cultural prompt and steering. |
-| Track 2 best system | Acc. | 96.78 | 1 / 17 | Leaderboard winner, leading DFKI-MLT by 9.82 points. |
+| Track 2 (MCQ) | Acc. | 86.96 | 7 / 17 | Official score using cultural prompt + steering. |
+| Track 2 best system | Acc. | 96.78 | 1 / 17 | Leading system, +9.82% ahead of DFKI-MLT. |
 
 ### Ablation Study
 
-| Locale | DFKI-MLT (%) | System Rank for Locale | Best Official (%) | Gain/Gap |
+| Locale | DFKI-MLT (%) | System Locale Rank | Official Best (%) | Gap |
 |------|---------|------|---------|------|
 | es-EC | 97.54 | 7 | 98.67 | -1.13 |
 | en-GB | 96.12 | 6 | 99.17 | -3.05 |
@@ -103,37 +104,37 @@ The system has no training loss as model parameters are not updated. The develop
 | bg-BG | 94.60 | 8 | 99.54 | -4.94 |
 
 ### Key Findings
-- The best locale does not represent global optimality. For ar-EG, DFKI-MLT reached 94.84% (outperforming the overall winner for this specific locale), but it trailed by nearly 5 points in bg-BG.
-- Average gains from steering are small and unstable. Individual locales saw up to +1.5% absolute accuracy gains, but other configurations caused performance degradation.
-- Layer selection is highly sensitive. Post-hoc sweeps showed the optimal layer for MCQ shifted to Layer 2/3 and for SAQ to Layer 8/7 depending on the prompt; Layer 26 was merely a compromise.
-- $\beta=1$ is a safe default. Larger strengths often cause instability in early layers.
-- FLORES sample size is not the primary source of instability. DiffMean vectors reached a median cosine similarity of $>0.99$ with $N=100$.
+- **Locale performance is not uniform**: On ar-EG, the system reached 94.84%, outperforming the overall leaderboard champion's 91.03% for that locale by 3.81%. However, it trailed significantly on bg-BG.
+- **Inconsistent average gains**: Individual locales saw up to +1.5% absolute accuracy gains, but other configurations degraded performance; gains do not generalize across language-region pairs.
+- **Layer sensitivity**: In post-hoc sweeps for Qwen2.5-72B, the optimal layer for MCQ shifted to Layer 2/3 with cultural prompts, while Layer 26 was a compromise found on dev splits.
+- **Steering Strength**: $\beta=1$ is a robust default. Higher strengths cause instability in early layers, though some models (Aya/Qwen3) tolerate stronger steering.
+- **FLORES Sample Size**: The DiffMean vector is stable; at $N=500$, the cosine similarity with $N=1000$ is at least 0.999 across models.
 
 ## Highlights & Insights
-- The paper honestly presents the boundaries of activation steering, noting that gains depend on the interaction between locale, layer, and prompt.
-- Extracting directions via FLORES is lightweight and requires no task-specific training data.
-- The use of random vector controls was crucial; it demonstrated that language vectors are not purely random perturbations, though they do not guarantee positive results.
-- SAQ and MCQ have different prompting needs; cultural prompts help MCQ probability but can lead to overly long or explanatory answers in SAQ, hindering matching.
+- **Honesty regarding limits**: The paper demonstrates the boundaries of activation steering, noting that gains are highly dependent on locale, layer, and prompt rather than being a "magic bullet" for cultural alignment.
+- **Lightweight adaptation**: Extracting directions from FLORES parallel corpora requires no cultural training sets or parameter updates, making it suitable for rapid prototyping.
+- **Control comparison**: Random vector controls showed that language vectors produce distinct (though sometimes negative) outliers, proving they represent more than just random noise.
+- **Task-specific prompt needs**: Cultural prompts help MCQ probabilities but can hinder SAQ by inducing long-winded answers that fail exact-match evaluation.
 
 ## Limitations & Future Work
-- The missing official SAQ result is a major experimental regret. Only post-hoc offline re-evaluation is available.
-- The scope of comparison is limited; there was no systematic comparison against prompt-only, fine-tuning, CAA, or SAE-based steering.
-- A single global configuration is sub-optimal. Future work should explore per-locale or per-prompt adaptive steering.
-- Language vectors are only an approximate proxy for cultural knowledge. Language and culture are related but not identical; many cultural differences are regional or social and may not be fully captured by a FLORES language direction.
+- **Lack of official SAQ results**: Due to submission errors, Track 1 only has post-hoc offline evaluations, preventing direct leaderboard comparison.
+- **Limited baseline comparison**: The study lacks systematic comparisons against alternatives like full fine-tuning, CAA, ReFT, or SAE-based steering.
+- **Static global configuration**: The submission uses a single $(\beta, layer)$ pair; post-hoc analysis suggests per-locale or per-prompt adaptive steering is necessary.
+- **Proxy limitations**: Language directions are only a proxy for cultural knowledge. Many cultural differences are regional or social and cannot be fully captured by a FLORES language vector.
 
 ## Related Work & Insights
 - **vs BLEnD / SemEval**: This is a participant system focusing on lightweight adaptation without training data.
-- **vs activation steering / CAA**: While general steering controls behavior, this work defines the direction specifically as linguistic identity and tests its transfer to cultural domain reasoning.
-- **vs Fine-tuning**: Fine-tuning is robust but costly; this method serves as a parameter-efficient alternative for shared tasks.
-- **vs Prompt-only methods**: Prompts provide explicit instructions, while steering acts on internal representations. The results suggest these components need joint optimization.
+- **vs Activation Steering / CAA**: While general steering controls model behavior via internal directions, this work defines the direction as language identity and tests its transfer to cultural tasks.
+- **vs Fine-tuning**: Fine-tuning learns culture directly but is costly. This method is faster but less stable than task-specific optimization.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐☆ Using language-vector steering for a cultural knowledge shared task is interesting, though it builds on existing steering concepts.
-- Experimental Thoroughness: ⭐⭐⭐⭐☆ Strong MCQ analysis and post-hoc sweeps, but official SAQ data is missing and comparisons to strong baselines are a bit narrow.
-- Writing Quality: ⭐⭐⭐⭐☆ Transparent about negative results and sensitivities; system description is clear.
-- Value: ⭐⭐⭐⭐☆ Insightful for multilingual cultural evaluation and inference-time intervention, highlighting that linguistic fluency is not cultural competence.
+- **Novelty**: ⭐⭐⭐⭐☆ Applying language-vector steering to cultural shared tasks is innovative, though based on established steering concepts.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐☆ Extensive post-hoc sweeps are valuable, though official SAQ results are missing.
+- **Writing Quality**: ⭐⭐⭐⭐☆ Transparent about negative results; the system description is clear.
+- **Value**: ⭐⭐⭐⭐☆ Insights into the relationship between linguistic identity and cultural knowledge are valuable for the community.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

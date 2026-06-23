@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Industrializing Prediction-Powered Inference: The GLIDE Library for Reliable GenAI and Agentic Systems Evaluation
 description: >-
-  [ICML 2026][Others][Prediction-Powered Inference] GLIDE unifies the latest estimators (PPI++, Stratified PPI, PTD, ASI) and samplers (uniform, stratified, active, cost-optimal) from the PPI (prediction-powered inference) family into a scipy-style mean estimation library. It is designed to solve the hybrid evaluation problem of "expensive human annotation + cheap but b
+  [ICML 2026][Others][Prediction-Powered Inference] GLIDE unifies the latest estimators (PPI++, Stratified PPI, PTD, ASI) and samplers (uniform, stratified, active, cost-optimal) from the PPI (prediction-powered inference) family into a scipy-style mean estimation library. It specifically addresses the hybrid evaluation challenge of "expensive human annotation + cheap b
 tags:
   - ICML 2026
   - Others
@@ -11,7 +11,7 @@ tags:
   - Stratified Sampling
   - Active Sampling
 date: 2026-05-08
-content_hash: 73256d28907016f6
+content_hash: 9e85896ccee67826
 ---
 # Industrializing Prediction-Powered Inference: The GLIDE Library for Reliable GenAI and Agentic Systems Evaluation
 
@@ -22,64 +22,70 @@ content_hash: 73256d28907016f6
 **Keywords**: Prediction-Powered Inference, LLM-as-Judge, Stratified Sampling, Active Sampling, Effective Sample Size  
 
 ## TL;DR
-GLIDE unifies the latest estimators (PPI++, Stratified PPI, PTD, ASI) and samplers (uniform, stratified, active, cost-optimal) from the PPI (prediction-powered inference) family into a scipy-style mean estimation library. It is designed to solve the hybrid evaluation problem of "expensive human annotation + cheap but biased LLM-as-judge," providing Monte Carlo validation and a decision tree to enable industrial-grade reliable assessment for GenAI and Agentic systems.
+GLIDE unifies the latest estimators (PPI++, Stratified PPI, PTD, ASI) and samplers (uniform, stratified, active, cost-optimal) from the PPI (prediction-powered inference) family into a scipy-style mean estimation library. It specifically addresses the hybrid evaluation challenge of "expensive human annotation + cheap but biased LLM-as-judge," accompanied by Monte Carlo validation and a decision tree to enable industrialized, reliable assessment of GenAI and Agentic systems.
 
 ## Background & Motivation
 
-**Background**: Evaluating the "quality" of GenAI/Agentic systems often reduces to a mean estimation task—accurate rate, relevance rate, hallucination rate, toxicity rate, or tool-use success rate are all $\theta^\star=\mathbb{E}[Y]$. Current mainstream practices have distinct flaws: (i) full human annotation is reliable but expensive and slow; analyzing one agentic trajectory (including retrieval, tool calls, reasoning, and final response) can cost experts several dollars; (ii) LLM-as-judge is inexpensive (cents per item) but suffers from systematic bias, particularly in knowledge-intensive domains like medicine, law, and finance.
+**Background**: Evaluating the "quality" of GenAI or Agentic systems typically boils down to a mean estimation task—accuracy, relevance rate, hallucination rate, toxicity rate, and tool-use success rate are all $\theta^\star=\mathbb{E}[Y]$. Currently, two mainstream approaches have flaws: (i) full human annotation, which is reliable but slow and expensive (expert review of an agentic trajectory—including retrieval, tool calls, reasoning, and final response—can cost several dollars); (ii) LLM-as-judge, which is cheap (cents per instance) but prone to systematic bias, especially in knowledge-intensive domains like medicine, law, and finance.
 
-**Limitations of Prior Work**: The PPI framework proposed by Angelopoulos et al. (2023) was originally designed for this "small ground truth + large proxy predictions" scenario—providing unbiased estimates and nominal confidence intervals. However: (i) extensions of PPI (PPI++, Stratified, PTD, ASI, cost-optimal) are scattered across various papers with inconsistent notation and fragmented reference implementations; (ii) the existing `ppi_py` library represents early implementations, covering GLM/M-estimators but lacking depth in mean estimation or integration of newer methods; (iii) Agentic evaluation possesses four unique attributes (extreme cost asymmetry, natural stratification, available proxy uncertainty, and critical deployment scenarios) that align perfectly with PPI branches, yet no library connects them end-to-end.
+**Limitations of Prior Work**: The PPI framework proposed by Angelopoulos et al. (2023) was originally designed for this "small gold standard + large proxy prediction" scenario—providing unbiased estimates and nominal coverage confidence intervals. However, (i) extensions of PPI (PPI++, Stratified, PTD, ASI, cost-optimal) are scattered across various papers with inconsistent notation and fragmented reference implementations; (ii) the existing `ppi_py` library is an early foundational implementation of PPI that covers GLM/M-estimators but lacks depth for specialized mean estimation and integration of new methods; (iii) Agentic evaluation possesses four unique attributes (extreme cost asymmetry, natural stratification, available proxy uncertainty, and critical deployment scenarios) that perfectly match PPI branches, yet no library connects them end-to-end.
 
-**Key Challenge**: In production, engineers need a path that provides unbiased estimation, valid confidence intervals, and minimized annotation budgets, while automatically selecting methods based on specific conditions (availability of cost estimates, proxy uncertainty, natural stratification, or budget constraints). The fragmentation of academic implementations makes this industrially unfeasible.
+**Key Challenge**: In actual deployment, engineers need a path that provides unbiased estimation, valid confidence intervals, and maximizes annotation budget savings, with an automated way to select methods based on specific conditions (e.g., availability of cost estimates, proxy uncertainty, or natural stratification). The fragmentation of academic implementations makes this engineering-wise infeasible.
 
-**Goal**: Industrialize the progress of the PPI family from the last three years into a single scipy-style library, covering: (1) unified estimator encapsulation; (2) unified sampler encapsulation; (3) a reproducible Monte Carlo validation suite; (4) an empirically calibrated decision tree for method selection; and (5) real-world agentic benchmark cases.
+**Goal**: Industrialize the progress of the PPI family from the past three years into a single scipy-style library, covering (1) unified estimator encapsulation; (2) unified sampler encapsulation; (3) a reproducible Monte Carlo validation suite; (4) an empirically calibrated decision tree for method selection; and (5) real-world agentic benchmark cases.
 
-**Key Insight**: Ours focuses exclusively on **mean estimation**—the form taken by 90% of deployment-side evaluation metrics. Removing the generality of GLM/M-estimation significantly simplifies the codebase. Several estimators that diverge in general M-estimation collapse into the same form for mean estimation, improving API consistency. Simultaneously, "sampling, annotation, and estimation" are explicitly separated into three stages, allowing independent substitution and combination of samplers and estimators.
+**Key Insight**: The authors intentionally focus **only on mean estimation**—the form taken by 90% of deployment-side evaluation metrics. Removing the generality of GLM/M-estimators significantly simplifies the codebase. Multiple estimators that diverge in general M-estimation collapse into the same form for mean estimation, improving API consistency. Simultaneously, "sampling / annotation / estimation" are explicitly divided into three stages, allowing samplers and estimators to be swapped and combined independently.
 
-**Core Idea**: Use PPI++ style "small human annotation + large LLM-as-judge predictions → unbiased mean + valid confidence intervals" as the core. Integrate stratified, active, and cost-optimal components as orthogonal plugins, emphasizing the engineering slogan: "A better proxy does not replace human annotation; it amplifies the human annotation budget."
+**Core Idea**: Use the PPI++ style of "small human annotation + large LLM-as-judge prediction → unbiased mean + valid confidence interval" as the core, with stratified/active/cost-optimal methods as orthogonal plugins. It emphasizes an engineering slogan: "A better proxy does not replace human annotation but amplifies the human annotation budget."
 
 ## Method
 
 ### Overall Architecture
-GLIDE divides the evaluation pipeline into three steps: **Sampling → Annotation → Estimation**. Given a pool of $N$ proxy-labeled data points (from LLM-as-judge): (1) a sampler selects $n$ items for human annotation; (2) the annotation step is domain-specific and handled externally; (3) an estimator merges $n$ human ground truths with $N$ proxy predictions to produce a debiased estimate $\hat\theta$ and a confidence interval. This sampler-estimator decoupling allows for arbitrary mix-and-match and simplifies the contribution of new methods.
+GLIDE divides the evaluation pipeline into three steps: **Sampling → Annotation → Estimation**. Given a pool of $N$ proxy-labeled data points (from LLM-as-judge), (1) a sampler selects $n$ instances for human annotation; (2) the annotation step is business-specific and external to the library; (3) an estimator merges $n$ human gold labels with $N$ proxy predictions to produce a debiased estimate $\hat\theta$ and a confidence interval. This sampler ↔ estimator decoupling allows for flexible mix-and-match, and new method contributors only need to implement a single file.
 
-The core formula for PPI (PPI++, Angelopoulos 2023b) is:
+The core formula of PPI (PPI++, Angelopoulos 2023b):
 $$\hat\theta^{\text{PPI++}}_\lambda = \frac{1}{n}\sum_{i=1}^n Y_i + \lambda\left(\frac{1}{N}\sum_{j=1}^N f(X_j) - \frac{1}{n}\sum_{i=1}^n f(X_i)\right)$$
 
-Where $f$ is the proxy (LLM-as-judge) and $\lambda\in\mathbb{R}$ is the power-tuning parameter. The optimal $\lambda^\star$ has a closed-form solution that minimizes asymptotic variance, ensuring that PPI++ is asymptotically **never worse** than a classical estimator using only human labels, even if the proxy is adversarial. The library structure employs a decision tree to select methods for both sampling and estimation:
+Where $f$ is the proxy (LLM-as-judge), and $\lambda\in\mathbb{R}$ is the power-tuning parameter. $\lambda^\star$ has a closed-form solution to minimize asymptotic variance, ensuring that PPI++ is asymptotically **never worse** than classical estimators using only human labels, even if the proxy is adversarial. The library structure can be viewed as "a decision tree selecting methods at the sampling and estimation ends, with a business-managed annotation step in between":
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    P["Proxy Pool (N items)<br/>LLM-as-judge predictions"] --> D1["Sampling Router<br/>4-Signal Decision Tree"]
-    D1 -->|Cost estimates available| S1["CostOptimal Sampler"]
-    D1 -->|Proxy uncertainty available| S2["Active Sampler"]
-    D1 -->|Natural stratification exists| S3["Stratified Sampler"]
+    P["Proxy Data Pool (N instances)<br/>LLM-as-judge Predictions"] --> D1["Sampling Routing<br/>Four-Signal Decision Tree"]
+    D1 -->|Has cost estimates| S1["CostOptimal Sampler"]
+    D1 -->|Has proxy uncertainty| S2["Active Sampler"]
+    D1 -->|Has natural stratification| S3["Stratified Sampler"]
     D1 -->|None of the above| S4["Uniform Sampler"]
-    S1 & S2 & S3 & S4 --> A["Human Annotation (n items)<br/>Domain-specific"]
-    A --> D2{"Human samples<br/>n ≥ 50?"}
+    S1 & S2 & S3 & S4 --> A["Human Annotation (n instances)<br/>External Process"]
+    A --> D2{"Human Labels<br/>n ≥ 50?"}
     D2 -->|Yes| E1["CLT Estimator<br/>PPI++ / Stratified / ASI"]
     D2 -->|No| E2["Bootstrap Estimator<br/>PTD / Stratified PTD"]
-    E1 & E2 --> O["Debiased Mean θ̂<br/>+ Confidence Interval + n_eff"]
+    E1 & E2 --> O["Debiased Mean θ̂<br/>+ Confidence Interval + Effective Sample Size n_eff"]
 ```
 
 ### Key Designs
 
-**1. Three-step Decoupling + Scipy-style API: Plug-and-Play Orthogonal Objects**
-Recent improvements in PPI literature often address only one segment—either sampling or estimation—but remain scattered in separate papers. GLIDE segments the pipeline into Sampling → Annotation → Estimation. Samplers expose a `sample` method returning $(\pi,\xi)$, where $\pi\in[0,1]^N$ is the sampling probability for each observation and $\xi\in\{0,1\}^N$ is the inclusion indicator. Estimators are stateful objects where `estimate` returns a dataclass containing point estimates, confidence intervals, effective sample size $n_{\text{eff}}$, and metric labels. This allows researchers to contribute new methods by writing a single file.
+**1. Three-step decoupling + scipy-style API: Making sampling and estimation pluggable orthogonal objects**
 
-**2. 5 Samplers × 5 Estimators: Mapping Agentic Evaluation Properties**
-Agentic evaluation has unique properties addressed by specific PPI branches. Samplers include: `UniformSampler`, `StratifiedSampler` (supporting proportional or Neyman allocation $n_h\propto N_h\sigma_h$), `ActiveSampler` (Bernoulli sampling proportional to proxy uncertainty), and `CostOptimalSampler` (optimal probability based on proxy/annotation cost ratios). Estimators include: `PPIMeanEstimator` (PPI++ with power tuning), `StratifiedPPIMeanEstimator`, `PTDMeanEstimator` (Predict-Then-Debias using bootstrap for $n<50$), and `ASIMeanEstimator` (IPW debiasing for active sampling).
+Recent improvements in PPI literature over the last three years address different segments—some modify sampling, others modify estimation—but they are scattered across papers, making them difficult to combine. GLIDE splits the pipeline into Sampling → Annotation → Estimation, making both ends independently replaceable. Samplers expose a `sample` method returning $(\pi, \xi)$, where $\pi\in[0,1]^N$ is the sampling probability for each observation and $\xi\in\{0,1\}^N$ is the actual inclusion indicator. Estimators are stateful objects where `estimate` returns a dataclass containing the point estimate, confidence interval, effective sample size $n_{\text{eff}}$, and metric labels. Consequently, an end-to-end flow (sampling + annotation + estimation) can be executed in just 6 lines of Python. Adopting the scipy/scikit-learn paradigms minimizes the learning curve, while the decoupling allows independent improvements in sampling and estimation to overlap seamlessly.
 
-**3. Four-Signal Decision Tree: Automated Method Selection**
-GLIDE embeds method selection into a decision tree for engineers unfamiliar with statistical details. The sampling branch routes based on: availability of cost estimates → CostOptimal; proxy uncertainty → ActiveSampler; heterogeneous-proxy stratification → StratifiedSampler. The estimation branch depends on a threshold: if human samples $n \ge 50$ (per stratum), CLT-based estimators are used; otherwise, bootstrap-based PTD variants are selected. This tree is empirically calibrated using the Monte Carlo validation suite in Section 5.
+**2. 5 Sampler Categories × 5 Estimator Categories: Mapping Agentic evaluation attributes to a method menu**
+
+Agentic evaluation has four unique attributes—extreme cost asymmetry, natural stratification, available proxy uncertainty, and critical deployment scenarios—each corresponding to a branch of PPI. GLIDE presents these as a continuous "If X, then use Y" menu. Samplers include: `UniformSampler` (baseline), `StratifiedSampler` (supporting proportional or Neyman allocation $n_h\propto N_h\sigma_h$, using Hamilton’s method for integer constraints), `ActiveSampler` (independent Bernoulli sampling proportional to proxy uncertainty), and `CostOptimalSampler` variants. Estimators include: `PPIMeanEstimator` (PPI++ + power tuning), `StratifiedPPIMeanEstimator`, `PTDMeanEstimator` (Predict-Then-Debias, bootstrap-based for small $n<50$), `StratifiedPTDMeanEstimator`, and `ASIMeanEstimator` (IPW debiasing with active sampling), alongside 3 classical baselines. This prevents practitioners from having to cross-reference multiple papers and repositories.
+
+**3. Four-signal decision tree: Helping engineers select the right combination in 30 seconds**
+
+Simplifying selection is crucial for industrialization. GLIDE embeds method selection into a decision tree. The first half (sampling) routes based on three boolean signals: cost estimates available → CostOptimal; proxy uncertainty available → ActiveSampler; natural stratification with heterogeneous proxies → StratifiedSampler; else → UniformSampler. The second half (estimation) uses a single threshold: if human labels $n \ge 50$ (per stratum), use CLT-based estimators (PPI++ / Stratified PPI++ / ASI); otherwise, use bootstrap-based PTD variants. This tree is empirically calibrated using the Monte Carlo validation suite in Section 5, downgrading method selection from a research problem to a table lookup.
+
+### Loss & Training
+This work does not involve training but focuses on statistical inference. All estimators return a `PredictionPoweredMeanInferenceResult`. The Key Performance Indicator (KPI) is the effective sample size $n_{\text{eff}}=n\cdot\widehat{\text{Var}}(\bar Y_n)/\widehat{\text{Var}}(\hat\theta^{\text{PPI++}}_\lambda)$. The ratio $n_{\text{eff}}/n \ge 1$ translates directly into "saved annotation hours."
 
 ## Key Experimental Results
 
 ### Main Results
-**Monte Carlo Validation**: A synthetic binary classification task with $\theta^\star=0.55$ and a biased proxy mean of $0.50$. Proxy quality is controlled by Pearson correlation $\rho$. $N_{\text{true}}=500, N_{\text{proxy}}=1000$, confidence level 90%, 1000 iterations.
+**Monte Carlo Validation**: Synthetic binary classification task, true value $\theta^\star=0.55$, proxy mean $0.50$ (biased), controlled by Pearson correlation $\rho$ for proxy quality. $N_{\text{true}}=500$, $N_{\text{proxy}}=1000$, 90% confidence level, 1000 repetitions, $\rho\in\{0.1, 0.2, \dots, 0.9\}$.
 
-| Correlation $\rho$ | Method | Empirical Coverage | Interval Width | Effective Sample Size $n_{\text{eff}}$ |
+| Correlation $\rho$ | Method | Empirical Coverage | Interval Width | $n_{\text{eff}}$ |
 |-------------|------|-----------|----------|------------------------------|
 | 0.1 | Labeled-only | 0.90 | 0.073 | 500 |
 | 0.1 | PTD | 0.90 | 0.072 | ≈ 500 |
@@ -88,58 +94,68 @@ GLIDE embeds method selection into a decision tree for engineers unfamiliar with
 | 0.9 | Labeled-only | 0.90 | 0.073 | 500 |
 | 0.9 | **PTD** | **0.90** | **0.049** | **≈ 1100 (2.2×)** |
 
-PTD maintains 90% nominal coverage across all $\rho$. Better proxies lead to narrower intervals and higher $n_{\text{eff}}$.
+PTD matches the 90% nominal coverage across all $\rho$; better proxies result in narrower intervals and larger $n_{\text{eff}}$. If the proxy is uninformative, PTD automatically collapses to the labeled-only width, never performing worse.
 
-**Agentic Case: R-Judge Safety Evaluation**: 568 user/agent dialogues across 5 domains. $\theta^\star\approx 0.525$. Claude-3-sonnet acts as the judge with 1–10 verbalized confidence. Proxy mean $\approx 0.655$ (bias +13 pp), $\rho\approx 0.59$. Budget $n=100, N=468$.
+**Agentic Case: R-Judge Safety Evaluation**: 568 user/agent dialogues across 5 domains (general, programming, finance, web, IoT), true value $\theta^\star\approx 0.525$. Proxy uses `claude-sonnet-4.5` as LLM-as-judge with 1–10 verbalized confidence; overall proxy mean ≈0.655 (+13 pp bias), $\rho\approx 0.59$. Budget $n=100$ human labels, $N=468$ proxy labels, 1000 repetitions.
 
 | Protocol | 90% Coverage | Interval Width | $n_{\text{eff}}$ |
 |------|-----------|----------|------------------|
 | Labeled-only ($n=100$) | 0.90 | 0.164 | 100 |
 | Proxy-only (No debiasing) | <0.05 | 0.066 | — |
-| PPI++ (Uniform) | 0.90 | 0.137 | ≈ 143 |
-| ASI (Active) | 0.90 | 0.135 | ≈ 148 |
+| PPI++ (uniform) | 0.90 | 0.137 | ≈ 143 |
+| ASI (active) | 0.90 | 0.135 | ≈ 148 |
 | **Stratified PPI++ (Neyman)** | **0.90** | **0.131** | **≈ 157 (1.57×)** |
 
 ### Ablation Study
 
-| Configuration | Empirical Coverage (90%) | Mean Interval Width | Description |
+| Configuration | Empirical Coverage (90%) | Avg Interval Width | Description |
 |------|------------------|--------------|------|
 | Full: PPI++ + power tuning | 0.90 | 0.137 | Default recommended combination |
-| w/o power tuning ($\lambda=1$) | 0.90 | 0.142 | Slightly wider, maintains coverage |
-| w/o stratification | 0.90 | 0.137 | Reverts to standard PPI++ |
-| w/o active sampling | 0.90 | 0.137 | Same as PPI++ |
-| Low Proxy Quality ($\rho=0.1$) | 0.90 | 0.072 ≈ baseline | Intervals widen automatically |
-| Proxy-only (No human labels) | < 0.05 | 0.066 | Narrow but biased; coverage fails |
+| w/o power tuning ($\lambda=1$) | 0.90 | 0.142 | Slightly wider, but maintains coverage |
+| w/o stratification | 0.90 | 0.137 | Reverts to standard PPI++, loses stratification gain |
+| w/o active sampling (using uniform) | 0.90 | 0.137 | Same as PPI++ |
+| Poor Proxy ($\rho=0.1$ simulation) | 0.90 | 0.072 ≈ baseline | Proxy degrades; interval widens; coverage holds |
+| Proxy-only (No human labels) | < 0.05 | 0.066 | Narrow but centered incorrectly; coverage fails |
 
 ### Key Findings
-- **Robust "Never-Broken" Coverage**: All protocols using human labels maintain nominal coverage across all $\rho$. Only the "proxy-only" baseline fails, validating PPI's theoretical guarantees in real LLM-as-judge scenarios.
-- **Stratification > Active (on R-Judge)**: Stratifying by application domain outperformed active sampling based on proxy uncertainty on this benchmark and is more engineer-friendly as it doesn't require uncertainty signals.
-- **Proxy Quality ↔ $n_{\text{eff}}$ Monotonicity**: Increasing $\rho$ from 0.1 to 0.9 increases $n_{\text{eff}}$ from 500 to 1100, directly translating better judges into amplified budgets.
-- **PTD for Small Samples**: CLT-based estimators require $n \gtrsim 50$ per stratum; otherwise, they underestimate width. Bootstrap-based PTD is the reliable engineering fallback.
+- **Robustness of "Coverage Never Fails"**: All 4 protocols with human labels adhere to nominal coverage across all $\rho$ and confidence levels. Only the "proxy-only" baseline fails spectacularly, confirming that PPI’s "unconditional-on-proxy" theoretical guarantee holds in real LLM-as-judge scenarios.
+- **Stratification > Active** (on R-Judge): In this benchmark, stratification (by the 5 application domains) slightly outperformed active sampling based on proxy uncertainty, while being more engineer-friendly as it doesn't require uncertainty signals.
+- **Monotonic Function of Proxy Quality ↔ $n_{\text{eff}}$**: Improving $\rho$ from 0.1 to 0.9 increased $n_{\text{eff}}$ from ≈500 to ≈1100 (while holding human $n=500$ constant), translating "better LLM-as-judge" directly into a 2.2× budget multiplier.
+- **PTD is Essential for Small Samples**: CLT-based estimators underestimate interval width when $n \lesssim 50$ per stratum; the bootstrap-based PTD version is the stable engineering fallback.
 
 ## Highlights & Insights
-- **Three-Stage Decoupling**: Designing the library around Sampling/Annotation/Estimation allows contributors to work on independent segments, which is a significant win for software engineering scalability.
-- **Amplifying Human Budget**: Quantifying the return on LLM-as-judge investments through the $n_{\text{eff}}/n$ ratio provides "hard numbers" for product decisions.
-- **Embedded Decision Tree**: Lowering the barrier to entry by turning a research question into a look-up table is an excellent model for statistical software design.
-- **Mean Estimation Focus**: Trading generality for depth in mean estimation ensures consistency for 90% of real-world deployment metrics.
+- **Decoupling is the Scalable Library Design**: Sampler and estimator contributors can work independently, allowing external academic work to be absorbed continuously—a victory for software engineering in statistics.
+- **"Better proxies amplify, not replace"**: Quantifying the return on investment for LLM-as-judge as an $n_{\text{eff}}/n$ ratio provides "hard numbers" for product decisions on whether to upgrade judges.
+- **Embedded Decision Tree**: Encapsulating statistical expertise into the API entry point by downgrading "which estimator to choose" to a table lookup is a model for other statistical inference libraries.
+- **Strategic Focus on Mean Estimation**: Sacrificing the generality of GLMs or quantiles allows for deeper mean estimation implementation and consistent APIs; given that 90% of industry metrics are means, this is the correct trade-off.
 
 ## Limitations & Future Work
-- **Mean Estimation Only**: Scenarios involving quantiles (e.g., P95 latency) or GLM coefficients still require `ppi_py`.
-- **Sample Size Constraints**: $n < 50$ requires bootstrap PTD; validity for extremely small samples ($n < 20$) lacks strict upper bounds.
-- **i.i.d. Assumption**: Currently lacks support for multiple proxy aggregation, covariate/label shift, or anytime-valid streaming monitoring.
-- **Non-deterministic Evaluations**: For agentic systems where one input has multiple outputs, budget allocation between "input coverage" and "output replication" remains an open question.
-- **Multi-annotator Truth**: The framework needs extension for cases where multiple experts disagree, moving from population mean to latent label means.
+- **Inference only for Means**: Scenarios involving quantiles (e.g., P95 latency, toxicity in worst-case scenarios) or regression coefficients still require `ppi_py`.
+- **Sample Size Constraints**: CLT-based estimators require $n \ge 50$ per stratum; validation for ultra-small samples ($n < 20$) lacks rigorous upper bounds.
+- **Identity Assumptions**: Currently assumes single proxy and i.i.d. data; does not yet support multi-proxy aggregation, covariate/label shift, or anytime-valid (streaming) monitoring.
+- **Annotation Process Excluded**: In vertical domains, the annotation pipeline itself is the hardest and most expensive part; GLIDE assumes this capability already exists.
+- **Non-deterministic Evaluation**: Agentic systems vary across runs; how to allocate budget between "input coverage" and "output replication" remains an open question.
+- **Multi-annotator Truth**: When experts disagree, the target isn't the population mean but the latent label mean with annotation uncertainty; the framework needs extension here.
 
 ## Related Work & Insights
-- **vs. `ppi_py`**: GLIDE provides recent methods (Stratified, PTD, ASI) and a systematic validation suite specifically for mean estimation in LLM contexts.
-- **vs. Eval Harnesses (HELM, RAGAS)**: These are upstream orchestrators that produce proxies and ground truths; GLIDE is the downstream statistical layer providing debiased estimates with coverage guarantees.
-- **vs. Csillag et al. 2025 (PPI e-values)**: Provides potential for anytime-valid streaming in future iterations.
+- **vs `ppi_py` (Angelopoulos et al. 2023a)**: The foundational library. GLIDE is a "production-enhanced" version for mean estimation, providing newer methods and validation suites. They are complementary.
+- **vs HELM / DeepEval / RAGAS**: These act as upstream orchestrators that run evaluations and produce proxies/labels; GLIDE is the downstream statistical layer that converts their output into debiased estimates with coverage guarantees.
+- **vs Egami et al. 2023 (design-based supervised learning)**: Similar concepts in social sciences; GLIDE systemizes this for ML engineering.
+- **vs Csillag et al. 2025 (PPI e-values)**: Provides a path for anytime-valid PPI for streaming monitoring in the GLIDE roadmap.
+- **vs Cowen-Breen et al. 2026 / Shan et al. 2025 (multi-proxy aggregation)**: Multi-judge aggregation is the top priority for the GLIDE roadmap.
 
 ## Rating
-- Novelty: ⭐⭐⭐ High engineering value in industrialization and decision-tree design rather than new theoretical methods.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Detailed Monte Carlo validation and real-world agentic case study.
-- Writing Quality: ⭐⭐⭐⭐⭐ Clear segmentation of the framework; effective explanation of statistical concepts for engineering contexts.
-- Value: ⭐⭐⭐⭐⭐ Addresses a critical pain point in Agentic/GenAI evaluation with an out-of-the-box solution.
+- Novelty: ⭐⭐⭐ (Technically a synthesis of existing methods, but high engineering value in **industrialization + decision tree design**)
+- Experimental Thoroughness: ⭐⭐⭐⭐ (Comprehensive Monte Carlo coverage and real agentic case studies)
+- Writing Quality: ⭐⭐⭐⭐⭐ (Framework and decision tree explained with exceptional clarity)
+- Value: ⭐⭐⭐⭐⭐ (Directly addresses the industry pain point of Agentic/GenAI evaluation; likely to gain rapid adoption)
+
+## Related Papers
+- [\[ICML 2025\] Prediction-Powered Adaptive Shrinkage Estimation](../../ICML2025/others/prediction-powered_adaptive_shrinkage_estimation.md)
+- [\[ACL 2025\] Identifying Reliable Evaluation Metrics for Scientific Text Revision](../../ACL2025/others/reliable_eval_metrics_scientific.md)
+- [\[NeurIPS 2025\] Prediction-Powered Semi-Supervised Learning with Online Power Tuning](../../NeurIPS2025/others/prediction-powered_semi-supervised_learning_with_online_power_tuning.md)
+- [\[ICML 2026\] Inference of Online Newton Methods with Nesterov's Accelerated Sketching](inference_of_online_newton_methods_with_nesterovs_accelerated_sketching.md)
+- [\[ACL 2025\] SEOE: A Scalable and Reliable Semantic Evaluation Framework for Open Domain Event Detection](../../ACL2025/others/seoe_semantic_eval.md)
 
 ## Related Papers
 
@@ -161,9 +177,9 @@ PTD maintains 90% nominal coverage across all $\rho$. Better proxies lead to nar
 
 - [\[ICML 2026\] Inference of Online Newton Methods with Nesterov's Accelerated Sketching](inference_of_online_newton_methods_with_nesterovs_accelerated_sketching.md)
 - [\[ICML 2026\] Beyond Model Readiness: Institutional Readiness for AI Deployment in Public Systems](beyond_model_readiness_institutional_readiness_for_ai_deployment_in_public_syste.md)
+- [\[ICML 2026\] Position: Evaluation of ML Resource Utilization Requires Model Life Cycle Assessment](evaluation_of_ml_resource_utilization_requires_model_life_cycle_assessment.md)
 - [\[ICML 2026\] Decoupled Conformal Optimisation: Efficient Prediction Sets via Independent Tuning and Calibration](decoupled_conformal_optimisation_efficient_prediction_sets_via_independent_tunin.md)
 - [\[ICML 2026\] Mapping Human Anti-collusion Mechanisms to Multi-agent AI Systems](mapping_human_anti-collusion_mechanisms_to_multi-agent_ai_systems.md)
-- [\[AAAI 2026\] MicroEvoEval: A Systematic Evaluation Framework for Image-Based Microstructure Evolution Prediction](../../AAAI2026/others/microevoeval_a_systematic_evaluation_framework_for_image-based_microstructure_ev.md)
 
 </div>
 

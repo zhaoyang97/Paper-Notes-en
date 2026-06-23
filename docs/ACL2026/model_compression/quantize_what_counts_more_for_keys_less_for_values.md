@@ -2,14 +2,13 @@
 title: >-
   [Paper Note] Quantize What Counts: More for Keys, Less for Values
 description: >-
-  [ACL 2026][Model Compression][Paper Note] From a linear algebra perspective, this paper proves that the spectral and Frobenius norms of Key weights in Transformers are systematically larger than those of Value weights. Based on this, it proposes a Key-prioritized mixed-precision KV cache quantization strategy (e.g., K4V2), reducing memory by 25% while maintain
+  [ACL 2026][Model Compression][Paper Note] This paper theoretically demonstrates from a linear algebra perspective that the spectral and Frobenius norms of Key weights in Transformers are systematically larger than those of Value weights. Based on this, it proposes a Key-priority mixed-precision KV cache quantization strategy (e.g., K4V2), which reduces memory
 tags:
   - ACL 2026
   - Model Compression
 date: 2026-05-08
-content_hash: b1010d3a82d80307
+content_hash: 53ace721d88dac5e
 ---
-<!-- Automatically generated from src/gen_stubs.py -->
 # Quantize What Counts: More for Keys, Less for Values
 
 **Conference**: ACL 2026  
@@ -19,42 +18,42 @@ content_hash: b1010d3a82d80307
 **Keywords**: KV Cache Quantization, Mixed Precision, Spectral Norm, Key-Value Asymmetry, LLM Inference Optimization
 
 ## TL;DR
-From a linear algebra perspective, this paper proves that the spectral and Frobenius norms of Key weights in Transformers are systematically larger than those of Value weights. Based on this, it proposes a Key-prioritized mixed-precision KV cache quantization strategy (e.g., K4V2), reducing memory by 25% while maintaining 98.3% of full-precision accuracy.
+This paper theoretically demonstrates from a linear algebra perspective that the spectral and Frobenius norms of Key weights in Transformers are systematically larger than those of Value weights. Based on this, it proposes a Key-priority mixed-precision KV cache quantization strategy (e.g., K4V2), which reduces memory by 25% while maintaining 98.3% of full-precision accuracy.
 
 ## Background & Motivation
-**Background**: KV cache is the primary memory bottleneck during LLM inference. As context lengths (reaching 10 million tokens) and model scales grow, KV cache quantization has become a critical necessity.
+**Background**: The KV cache is a primary memory bottleneck during LLM inference. As context lengths (reaching up to 10 million tokens) and model scales grow, KV cache quantization has become a critical requirement.
 
-**Limitations of Prior Work**: Existing KV quantization methods either assign fixed precision to Key and Value (ignoring their differences) or tune parameters through heuristic grid searches (lacking theoretical foundation and generalizability).
+**Limitations of Prior Work**: Existing KV quantization methods either assign fixed precision to both Key and Value (ignoring their differences) or rely on heuristic grid searches for parameter tuning (lacking a theoretical foundation and failing to generalize).
 
-**Key Challenge**: Key and Value play fundamentally different roles in the attention mechanism, yet existing methods lack theoretical guidance to determine how to allocate quantization bits asymmetrically.
+**Key Challenge**: Keys and Values play fundamentally different roles in the attention mechanism; however, existing methods lack theoretical guidance on how to allocate quantization bits asymmetrically.
 
-**Goal**: Establish a theoretically grounded KV mixed-precision quantization strategy based on the intrinsic geometric properties of model weights.
+**Goal**: To establish a theoretically grounded KV mixed-precision quantization strategy based on the intrinsic geometric properties of model weights.
 
-**Key Insight**: Analyze the differences in spectral and Frobenius norms of Key/Value projection weight matrices and derive the relationship between quantization error and these norms.
+**Key Insight**: By analyzing the differences in spectral and Frobenius norms of Key/Value projection weight matrices, the relationship between quantization error and norms is derived.
 
-**Core Idea**: Key weights accumulate larger norms during training because they participate in both attention map computation and cache storage, making them more sensitive to quantization errors—thus, higher precision should be prioritized for Keys.
+**Core Idea**: Since Key weights are involved in both attention map computation and cache storage, they accumulate larger norms during training, making them more sensitive to quantization errors. Therefore, higher precision should be prioritized for Keys.
 
 ## Method
 
 ### Overall Architecture
-This paper follows a purely theoretical path: "prove norm disparity, derive bit allocation, and demonstrate stackability," introducing no overhead during training or inference. The first step proves the **Key-Value Norm Inequality Theorem**: the Frobenius norm of Key projection weights after training is systematically larger than that of Value weights ($\mathbb{E}[\|W^K\|_F^2] > \mathbb{E}[\|W^V\|_F^2]$). The second step substitutes this disparity into the error bounds of uniform quantization to derive the **Key-Priority Quantization Theorem**: under a fixed bit budget, assigning higher precision to Keys and lower precision to Values (e.g., K4V2) strictly minimizes total quantization error. The third step demonstrates that this mixed-precision allocation is **orthogonal** to rotation-based outlier methods like QuaRot and can be integrated into existing quantization frameworks as a plug-and-play component. This strategy requires only a one-time analysis of weight norms and is validated across 11 models, 6 datasets, and 2 quantization backends.
+The paper follows a purely theoretical trajectory: "proving the norm gap $\rightarrow$ deriving bit allocation $\rightarrow$ demonstrating orthogonality," without introducing any training or inference overhead. The first step proves the **Key-Value Norm Inequality Theorem**: the Frobenius norm of Key projection weights after training is systematically larger than that of the Value weights ($\mathbb{E}[\|W^K\|_F^2] > \mathbb{E}[\|W^V\|_F^2]$). The second step substitutes this gap into the error bounds of uniform quantization to derive the **Key-priority Quantization Theorem**: under a fixed bit budget, assigning high precision to Keys and low precision to Values (e.g., K4V2) strictly minimizes the total quantization error. The third step demonstrates that this mixed-precision allocation is **orthogonal** to rotation-based outlier methods like QuaRot and can be integrated into existing quantization frameworks as a plug-and-play component. The entire strategy requires only a one-time analysis of model weight norms and has been validated across 11 models, 6 datasets, and 2 quantization backends.
 
 ### Key Designs
 
-**1. Key-Value Norm Inequality Theorem (Theorem 3.1): Key weights are systematically "heavier" than Value weights after training.**
+**1. Key-Value Norm Inequality Theorem (Theorem 3.1): Key weights are systematically "heavier" than Values after training**
 
-Previous methods relied on grid searches for bit allocation because the difference between Key and Value remained unclear. This paper establishes it as a provable proposition: $\mathbb{E}[\|W^K\|_F^2] > \mathbb{E}[\|W^V\|_F^2]$ holds generally after training. The proof starts from Xavier initialization and tracks SGD gradient updates—the key lies in $W^K$ serving a dual role: shaping attention maps and determining cache content. Consequently, the growth of $W^Q$ during training amplifies the backpropagated gradient signal to $W^K$ through the chain rule, causing its norm to accumulate; whereas $W^V$ only affects post-attention representations and lacks this multiplicative amplification. This asymmetric gradient path provides a geometric basis—rather than just empirical observation—for "Keys being more information-dense and deserving of precision preservation."
+Previous methods relied on grid searches for bit allocation because the fundamental difference between Keys and Values was unclear. This paper establishes it as a provable proposition: $\mathbb{E}[\|W^K\|_F^2] > \mathbb{E}[\|W^V\|_F^2]$ holds generally after training. The proof tracks SGD gradient updates starting from Xavier initialization—the key lies in $W^K$ having a dual role: shaping the attention map and determining cache content. Consequently, the growth of $W^Q$ during training amplifies the backpropagated gradient signal to $W^K$ via the chain rule, causing its norm to accumulate; whereas $W^V$ only affects the post-attention representation and lacks this multiplicative amplification. This asymmetric gradient path provides a geometric basis for the idea that "Keys are more information-dense and deserve higher precision."
 
-**2. Key-Priority Quantization Theorem (Theorem 3.2): Prioritizing Key precision strictly minimizes total quantization error under a fixed bit budget.**
+**2. Key-priority Quantization Theorem (Theorem 3.2): Prioritizing high precision for Keys strictly minimizes total error under a fixed budget**
 
-With the norm disparity established, bit allocation can be calculated directly. The expected MSE for uniform scalar quantization at $b$ bits is $\Theta(\|M\|_F^2 \cdot 2^{-2b})$, meaning larger matrix norms lead to higher sensitivity to quantization. Applying the fact that $\|K\|_F \gg \|V\|_F$, Key quantization error dominates total error under equal-precision allocation (e.g., K2V2). Conversely, reallocating bits saved from Value to Key (e.g., K4V2) strictly reduces the error upper bound. This step elevates "allocating more bits to Key" from empirical intuition to a provably optimal, geometry-driven design principle under fixed memory budgets.
+With the norm gap established, bit allocation can be directly calculated. The expected MSE for uniform scalar quantization at $b$ bits is $\Theta(\|M\|_F^2 \cdot 2^{-2b})$, meaning the larger the norm of a matrix, the more sensitive it is to quantization precision. Applying this to the fact that $\|K\|_F \gg \|V\|_F$, the quantization error of the Key dominates the total error under equal precision allocation (e.g., K2V2). Conversely, reallocating bits saved from the Value to the Key (e.g., K4V2) strictly lowers the error upper bound. This step upgrades "giving Keys more bits" from an empirical intuition to a provably optimal geometric-driven design principle under fixed memory budgets.
 
-**3. Orthogonal Combination with Rotation Methods: Mixed precision can be stacked directly on outlier redistribution methods like QuaRot.**
+**3. Orthogonal Combination with Rotation Methods: Mixed precision can be stacked directly on outlier redistribution methods like QuaRot**
 
-In practice, a concern is whether this bit allocation conflicts with existing KV quantization techniques. This paper proves it is orthogonal to rotation methods—QuaRot applies Hadamard rotations to activations to disperse outliers (addressing "value distribution"), while bit allocation addresses "how many bits for whom." Since they operate on different dimensions, experiments sweep bit width × group size × rotation strategy as a three-dimensional design space, verifying that mixed precision works as a plug-and-play component.
+A practical concern is whether this bit allocation conflicts with existing KV quantization techniques. The paper proves it is orthogonal to rotation-based methods—QuaRot applies Hadamard rotations to activations to disperse outliers (addressing "value distribution"), while bit allocation addresses "how many bits for whom." These operate on different dimensions. Experiments explore the design space across bit-width, group size, and rotation strategy, verifying that mixed precision serves as a plug-and-play component for existing frameworks rather than a replacement.
 
 ### Loss & Training
-This method is purely Post-Training Quantization (PTQ) and requires no additional training. Quantization error analysis is based on theoretical bounds of uniform scalar quantization. Experiments utilize two quantization backends: Optimum Quanto (token-wise) and HQQ (channel-wise).
+The method is pure Post-Training Quantization (PTQ) and requires no additional training. Quantization error analysis is based on theoretical bounds for uniform scalar quantization. Experiments utilize two quantization backends: Optimum Quanto (token-wise) and HQQ (channel-wise).
 
 ## Key Experimental Results
 
@@ -67,9 +66,9 @@ This method is purely Post-Training Quantization (PTQ) and requires no additiona
 | Phi-4-14B (1-shot) | 0.759 | 0.783 | **0.913** | 0.923 |
 | DeepSeek-R1Q-14B (1-shot) | 0.772 | 0.775 | **0.865** | 0.867 |
 
-### Key Experimental Results (MMLU, 2-bit, MSE ↓)
+### Key Reconstruction Error Comparison (MMLU, 2-bit, MSE ↓)
 
-| Model | K₂ Error | V₂ Error | K/V Error Ratio |
+| Model | $K_2$ Error | $V_2$ Error | K/V Error Ratio |
 |------|---------|---------|-----------|
 | Llama-3.2-1B | 4.851 | 0.127 | 38.2× |
 | Llama-3.1-8B | 6.003 | 0.187 | 32.1× |
@@ -78,34 +77,34 @@ This method is purely Post-Training Quantization (PTQ) and requires no additiona
 | Mistral-0.3-7B | 4.718 | 0.398 | 11.9× |
 
 ### Key Findings
-- K4V2 recovers approximately 98.3% of the full-precision K4V4 baseline accuracy on 1-shot GSM8K while reducing KV cache memory by 25%.
-- K4V2 outperforms K2V4 by 30 percentage points on Llama-3.2-1B and by 16 percentage points on Phi-4-14B.
-- Quantization reconstruction error for Key cache at the same bit width is 9-44x higher than that of Value, validating the Norm Inequality Theorem.
-- Combining K4V2 with QuaRot's Key-only rotation surpasses the K4V4 baseline by 4.4-18% on CoQA/GSM8K/EQ-Bench.
+- K4V2 recovers ~98.3% of the full-precision K4V4 accuracy baseline on 1-shot GSM8K while reducing KV cache memory by 25%.
+- K4V2 outperforms K2V4 by 30 percentage points on Llama-3.2-1B and 16 percentage points on Phi-4-14B.
+- The quantization reconstruction error of the Key cache at the same bit-width is 9-44 times that of the Value, validating the Norm Inequality Theorem.
+- Combining K4V2 with QuaRot's Key-only rotation exceeds the K4V4 baseline by 4.4-18% on CoQA/GSM8K/EQ-Bench.
 
 ## Highlights & Insights
-- Provides the first rigorous theoretical foundation (two theorems) for KV asymmetric quantization, transforming ad hoc tuning into geometry-driven principles.
-- Extremely lightweight: requires only one-time analysis of weight norms without inference-time introspection or additional training.
-- Key-priority strategy is consistently effective across five model families (Llama/Phi/Mistral/Qwen/DeepSeek), showing strong generalizability.
-- Proved orthogonality with rotation methods, serving as a plug-and-play module for existing quantization frameworks.
+- Provides the first rigorous theoretical foundation (two theorems) for asymmetric KV quantization, elevating ad hoc tuning to a geometric-driven principle.
+- Highly lightweight: Requires only a one-time analysis of model weight norms, with no inference-time introspection or extra training.
+- The Key-priority strategy is consistently effective across five model families (Llama, Phi, Mistral, Qwen, DeepSeek), demonstrating strong generalization.
+- Proves orthogonality with rotation methods, serving as a plug-and-play module for existing quantization frameworks.
 
 ## Limitations & Future Work
 - Theoretical analysis is based on SGD + Xavier initialization assumptions; rigorous derivation for optimizers like AdamW is not yet complete.
 - Experiments do not cover extreme long-context scenarios (e.g., 100K+ tokens).
-- Currently only validates 2/4-bit combinations; finer-grained mixed precision (e.g., 3-bit Key + 1.5-bit Value) remains to be explored.
+- Currently, only 2/4-bit combinations are validated; finer-grained mixed precision (e.g., 3-bit Key + 1.5-bit Value) remains to be explored.
 - Applicability to MoE architectures (e.g., Mixtral) has not been discussed.
 
 ## Related Work & Insights
-- **KIVI / FlashDecoding**: Fixed-precision KV quantization methods; the mixed-precision strategy can be stacked on them.
-- **KVTuner / SKVQ / QAQ**: Observed that Key should be allocated more bits, but all lack theoretical explanation.
-- **QuaRot**: Rotation-based outlier redistribution method, which is orthogonal and complementary to the bit allocation strategy.
+- **KIVI / FlashDecoding**: Fixed-precision KV quantization methods; the mixed-precision strategy of this paper can be stacked with them.
+- **KVTuner / SKVQ / QAQ**: Observed that Keys should be assigned more bits but lacked theoretical explanation.
+- **QuaRot**: Rotation-based outlier redistribution method, which is orthogonally complementary to the bit allocation strategy here.
 - Insight: In LLM inference optimization, understanding the intrinsic geometric structure of the model is more valuable than pure empirical tuning.
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐⭐ Provides a theoretical foundation for KV quantization from a spectral analysis perspective; the viewpoint is novel and profound.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers 11 models, 6 datasets, and 2 quantization backends with comprehensive 3D ablations.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers 11 models, 6 datasets, and 2 quantization backends with comprehensive three-dimensional ablations.
 - Writing Quality: ⭐⭐⭐⭐ Theoretical derivations are clear, though some notation is dense.
-- Value: ⭐⭐⭐⭐⭐ Provides a directly implementable quantization strategy with theoretical universality.
+- Value: ⭐⭐⭐⭐⭐ Provides a directly applicable quantization strategy with theoretical universality.
 
 ## Rating
 - Novelty: TBD

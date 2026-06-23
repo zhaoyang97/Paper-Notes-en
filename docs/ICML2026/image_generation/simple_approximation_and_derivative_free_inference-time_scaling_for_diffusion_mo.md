@@ -2,12 +2,12 @@
 title: >-
   [Paper Note] Simple Approximation and Derivative Free Inference-Time Scaling for Diffusion Models via Sequential Monte Carlo on Path Measures
 description: >-
-  [ICML 2026][Image Generation][Paper Note] The authors upgrade diffusion model inference-time reward guidance from "particle-space SMC + higher-order derivatives" to "path-space SMC + Girsanov likelihood ratio," resulting in the URGE algorithm. Each trajectory only requires a first-order gradient of the guidance $G$ and accumulates a simple Itô term as weight,
+  [ICML 2026][Image Generation][Paper Note] The authors upgrade inference-time reward guidance for diffusion models from "particle-space SMC + high-order derivatives" to "path-space SMC + Girsanov likelihood ratios," resulting in the URGE algorithm. Each trajectory only requires a first-order gradient of the guidance $G$ and an accumulated simple Itô term as wei
 tags:
   - ICML 2026
   - Image Generation
 date: 2026-05-08
-content_hash: 2b82352751c6f4ff
+content_hash: 84d9408ec0f1ef34
 ---
 # Simple Approximation and Derivative Free Inference-Time Scaling for Diffusion Models via Sequential Monte Carlo on Path Measures
 
@@ -18,47 +18,45 @@ content_hash: 2b82352751c6f4ff
 **Keywords**: Inference-time scaling, Girsanov Theorem, Path-space SMC, Derivative-free guidance, reward-tilted sampling  
 
 ## TL;DR
-The authors upgrade diffusion model inference-time reward guidance from "particle-space SMC + higher-order derivatives" to "path-space SMC + Girsanov likelihood ratio," resulting in the URGE algorithm. Each trajectory only requires a first-order gradient of the guidance $G$ and accumulates a simple Itô term as weight, completely eliminating the need for derivatives, Hessians, or score estimation of the reward $r$. It matches or outperforms FK-Corrector, AFDPS, and FK-Steering on Gaussian Mixture Models (GMM), inverse problems, and text-to-image tasks.
+The authors upgrade inference-time reward guidance for diffusion models from "particle-space SMC + high-order derivatives" to "path-space SMC + Girsanov likelihood ratios," resulting in the URGE algorithm. Each trajectory only requires a first-order gradient of the guidance $G$ and an accumulated simple Itô term as weight, completely eliminating the need for derivatives of the reward $r$, the Hessian, or score estimation. It matches or exceeds FK-Corrector / AFDPS / FK-Steering on GMM, inverse problems, and text-to-image tasks.
 
 ## Background & Motivation
 
-**Background**: Diffusion models view generation as an SDE $dX_t = v(X_t,t)dt + V(t)dW_t$. In practice, there is often a need to "tilt" samples toward a specific reward $\mathbf{r}(x)$ without fine-tuning, where the target distribution is the reward-tilted posterior $q(x)\propto p_\text{data}(x)\mathbf{r}(x)$. The mainstream approach is guidance—modifying the drift to $v + V^2\nabla_x G$ to approximate this posterior.
+**Background**: Diffusion models view generation as an SDE $dX_t = v(X_t,t)dt + V(t)dW_t$. During deployment, it is often necessary to "tilt" samples toward a reward $\mathbf{r}(x)$ without fine-tuning, where the target distribution is the reward-tilted posterior $q(x)\propto p_\text{data}(x)\mathbf{r}(x)$. The standard approach is guidance—modifying the drift to $v + V^2\nabla_x G$ to approximate this posterior.
 
-**Limitations of Prior Work**: Standard guidance does not sample from the true $q$ because a rigorous approach requires the Doob $h$-transform $h(x,t)=\mathbb{E}[\mathbf{r}(X_T)\mid X_t=x]$. Computing $h$ requires solving a backward Kolmogorov equation, which is intractable in high dimensions. Recent refinement schemes (FK-Corrector, AFDPS) follow a "particle-space SMC" route, calculating unbiased weights for each particle and then resampling. However, these weights involve higher-order terms like $\Delta_x r$, $\|\nabla_x r\|^2$, and $\nabla_x \log p_t$, requiring second derivatives of the reward and score function evaluations. This becomes a bottleneck when using black-box neural reward models (e.g., ImageReward, HPS).
+**Limitations of Prior Work**: Actual guidance does not sample from the true $q$ because the rigorous approach requires a Doob $h$-transform $h(x,t)=\mathbb{E}[\mathbf{r}(X_T)\mid X_t=x]$, where $h$ solves a backward Kolmogorov equation, which is intractable in high dimensions. Recent correction schemes (FK-Corrector, AFDPS) use "particle-space SMC" to compute an unbiased weight for each particle and resample. However, these weights contain high-order terms like $\Delta_x r$, $\|\nabla_x r\|^2$, and $\nabla_x \log p_t$, requiring second-order derivatives of the reward and score evaluations, which fail for black-box neural scorers (e.g., ImageReward, HPS).
 
-**Key Challenge**: The gap between the desire for "unbiased reward-tilted sampling" and the "actually computable weight terms." Unbiased correction in particle space naturally involves the generator $\mathcal{L}^G$, and applying the generator to $r$ inevitably introduces second derivatives.
+**Key Challenge**: The gap between "the desire for unbiased reward-tilted sampling" and "the actually computable weight terms": unbiased corrections in particle space naturally involve the generator $\mathcal{L}^G$, and the generator acting on $r$ inevitably introduces second-order derivatives.
 
-**Goal**: Find a weight construction method that retains the unbiasedness of SMC without requiring reward derivatives, allowing black-box neural rewards to be used directly.
+**Goal**: Find a weight construction that maintains SMC unbiasedness without requiring reward derivatives, enabling the direct use of black-box neural rewards.
 
-**Key Insight**: The authors shift from the framework of "weighting particles at each time step" to "weighting the entire trajectory." Since the path measure ratio between the guided SDE and the reference SDE can be expressed in closed-form via the Girsanov Theorem, SMC can be performed directly in the path space.
+**Key Insight**: Instead of weighting particles at each time step, weight the entire trajectory. Since the path measure ratio between the guided SDE and the reference SDE has a closed-form expression via the Girsanov theorem, SMC can be performed directly in the path space.
 
-**Core Idea**: Use the Girsanov path likelihood ratio $\mathrm{d}\mathbb{P}/\mathrm{d}\mathbb{P}^G$ multiplied by $\mathrm{d}\mathbb{Q}/\mathrm{d}\mathbb{P}=\exp(r(X_t)-r(X_0))$ as the importance weight for the trajectory. The weights only contain $\nabla_x G$ (the gradient of the guidance itself, which is already computed) and the difference in $r$, without any derivatives of $r$.
+**Core Idea**: Use the Girsanov path likelihood ratio $\mathrm{d}\mathbb{P}/\mathrm{d}\mathbb{P}^G$ multiplied by $\mathrm{d}\mathbb{Q}/\mathrm{d}\mathbb{P}=\exp(r(X_t)-r(X_0))$ as the importance weight for trajectories. The weight only involves $\nabla_x G$ (the gradient of the guidance itself, which is already computed) and differences in $r$, without any derivatives of $r$.
 
 ## Method
 
 ### Overall Architecture
-URGE aims to solve the problem of unbiased sampling from the reward-tilted posterior $q(x)\propto p_\text{data}(x)e^{\mathbf{r}(x)}$ without fine-tuning a pre-trained diffusion model. Its mechanism is as follows: rather than assigning a weight containing second derivatives to a single particle at each moment (as in FK-Corrector / AFDPS), it calculates the Girsanov path likelihood ratio once for the entire trajectory as the weight. Specifically, given a drift $v(x,t)$, guidance potential $G(x,t)$, and reward $r(x,t)$ (where $r(x,T)=\mathbf{r}(x)$), the algorithm simulates $N$ guided trajectories in parallel. After each Euler-Maruyama (EM) step $\Delta t$, each trajectory is multiplied by a weight $\beta^{(i)}$ that depends only on $\nabla_x G$ and the difference in $r$. Then, Categorical resampling is performed based on normalized $\beta$ to replicate high-weight particles and eliminate low-weight ones. After $K$ steps, the terminal particles $\{X_T^{(i)}\}$ serve as approximate samples from $q$, becoming strictly unbiased as $\Delta t\to 0$ and $N\to\infty$.
+URGE addresses unbiased sampling for reward-tilted posteriors $q(x)\propto p_\text{data}(x)e^{(x)}$ without fine-tuning. Its logic is: instead of assigning high-order derivative weights to particles at each step (like FK-Corrector or AFDPS), it computes a Girsanov path likelihood ratio once per trajectory. Specifically, given drift $v(x,t)$, guidance potential $G(x,t)$, and reward $r(x,t)$ (where $r(x,T)=\mathbf{r}(x)$), the algorithm parallelly simulates $N$ guided trajectories. After each Euler-Maruyama step $\Delta t$, each trajectory is multiplied by a weight $\beta^{(i)}$ that depends only on $\nabla_x G$ and differences in $r$. Particles are then resampled according to normalized $\beta$ using Categorical weights to replicate high-weight particles and prune low-weight ones. After $K$ steps, the final particles $\{X_T^{(i)}\}$ approximate $q$ and are strictly unbiased as $\Delta t\to 0$ and $N\to\infty$.
 
 ### Key Designs
 
-**1. Path-space Girsanov weights: Packaging second derivatives into first-order quantities and incorporating stochastic path information**  
+**1. Path-space Girsanov weights: Packaging second-order derivatives into first-order terms and incorporating stochastic information**
 
-Existing particle-space corrections (FK-Corrector / AFDPS) require $\Delta_x r$, $\|\nabla_x r\|^2$, and $\nabla_x\log p_t$. When facing black-box neural rewards like ImageReward or HPS, these methods fail because the Hessian cannot be computed. URGE circumvents this by moving the unbiasedness requirement to the path measure: using the Girsanov Theorem, the closed-form ratio between the reference measure $\mathbb{P}$ (without guidance) and the guided measure $\mathbb{P}^G$ is written as $\mathrm{d}\mathbb{P}/\mathrm{d}\mathbb{P}^G \propto \exp(-\int_0^t V(s)\nabla_x G^\top dW_s - \tfrac{1}{2}\int_0^t V^2\|\nabla_x G\|^2 ds)$. Multiplying this by the density of the reward-tilted measure relative to $\mathbb{P}$ ($\exp(r(X_t)-r(X_0))$) yields the target weight $\mathrm{d}\mathbb{Q}/\mathrm{d}\mathbb{P}^G$. After EM discretization, this becomes:
-$$\beta^{(i)}_{s,t}=\exp\!\big(r(X_t)-r(X_s) - V(s)\nabla_x G^\top\sqrt{t-s}\,\xi^{(i)} - \tfrac{1}{2}V(s)^2\|\nabla_x G\|^2(t-s)\big)$$
-where $\xi^{(i)}$ is the Gaussian noise already sampled during the EM step, allowing for reuse with nearly zero extra cost. The expression contains only $\nabla_x G$ and numerical differences of $r$, with absolutely no reward derivatives. This allows URGE to be the first method to interface directly with black-box neural scorers. Moreover, the first term $-V(s)\nabla_x G^\top\sqrt{t-s}\,\xi^{(i)}$ is an Itô integral (continuous form $\int_s^t -V(\tau)\nabla_x G^\top dW_\tau$) that reintroduces the noise $\xi^{(i)}$ into the weight. In contrast, AFDPS and FK-Corrector weights are deterministic functions of the endpoint $x$, assuming "any path reaching the same endpoint is equally valid," which discards critical stochasticity from the diffusion process. In URGE, two trajectories reaching the same endpoint—one "drifting with guidance" and another "colliding against noise"—receive different weights, leading to more precise resampling, lower variance, and more stable scaling with the number of particles $N$.
+Prior particle-space corrections (FK-Corrector / AFDPS) require $\Delta_x r$, $\|\nabla_x r\|^2$, and $\nabla_x\log p_t$, making them unusable for black-box neural rewards like ImageReward / HPS where the Hessian is unavailable. URGE shifts the unbiasedness requirement to path measures: it uses the Girsanov theorem to write the closed-form ratio between the reference measure $\mathbb{P}$ and the guided measure $\mathbb{P}^G$ as $\mathrm{d}\mathbb{P}/\mathrm{d}\mathbb{P}^G \propto \exp(-\int_0^t V(s)\nabla_x G^\top dW_s - \tfrac{1}{2}\int_0^t V^2\|\nabla_x G\|^2 ds)$. Combined with the reward-tilted density $\exp(r(X_t)-r(X_0))$, the target weight $\mathrm{d}\mathbb{Q}/\mathrm{d}\mathbb{P}^G$ is obtained. After Euler-Maruyama discretization, it becomes $\beta^{(i)}_{s,t}=\exp\!\big(r(X_t)-r(X_s) - V(s)\nabla_x G^\top\sqrt{t-s}\,\xi^{(i)} - \tfrac{1}{2}V(s)^2\|\nabla_x G\|^2(t-s)\big)$, where $\xi^{(i)}$ is the Gaussian noise already sampled for the EM step, resulting in zero extra overhead. The expression contains only $\nabla_x G$ (already used for guidance) and numerical differences of $r$, effectively making the method derivative-free. Furthermore, the term $-V(s)\nabla_x G^\top\sqrt{t-s}\,\xi^{(i)}$ is an Itô integral that incorporates the noise $\xi^{(i)}$ into the weight. Unlike AFDPS / FK-Corrector, which use deterministic functions of the terminal point $x$, URGE distinguishes between two trajectories reaching the same endpoint based on whether they "drifted with guidance" or "forced by noise," leading to lower variance and better scaling with $N$.
 
-**2. Path-particle equivalence theorem: Proving URGE is the parent of AFDPS rather than another approximation**  
+**2. Path-particle equivalence theorem: Proving URGE is the parent of AFDPS rather than another approximation**
 
-To demonstrate that moving to path space does not introduce further approximations, the authors define an instantaneous intensity $\lambda(x,t):=\lim_{h\to 0}\tfrac{1}{h}\big(\mathbb{E}_{\mathbb{P}^G}[w^\text{URGE}_{t-h,t}\mid X_t=x]-1\big)$. Using the Feynman-Kac backward value function, they derive the marginalized generator $\mathcal{L}^\text{eff}_t = \mathcal{L}^G_t + \lambda(\cdot,t)$. In Theorem 3.3, they prove that $\lambda(x,t)\equiv w_\text{AFDPS}(x,t)$. This implies that taking the conditional expectation of URGE’s path weights at the endpoint exactly recovers all second-order terms of AFDPS. This equivalence ensures that URGE inherits the unbiasedness of AFDPS while highlighting that AFDPS is merely a special case after conditional expectation. Thus, path space offers greater design flexibility for higher-order discretization and sparser time grids.
+To show that shifting to path space does not introduce new approximations, the authors define an instantaneous intensity $\lambda(x,t):=\lim_{h\to 0}\tfrac{1}{h}\big(\mathbb{E}_{\mathbb{P}^G}[w^\text{URGE}_{t-h,t}\mid X_t=x]-1\big)$. Using the Feynman-Kac backward value function, they derive the marginalized generator $\mathcal{L}^\text{eff}_t = \mathcal{L}^G_t + \lambda(\cdot,t)$ and prove in Theorem 3.3 that $\lambda(x,t)\equiv w_\text{AFDPS}(x,t)$. This implies that the conditional expectation of URGE path weights given the endpoint exactly recovers all second-order terms in AFDPS. This equivalence ensures URGE inherits the unbiasedness of AFDPS while retaining greater design flexibility (e.g., higher-order discretization or sparser grids).
 
 ### Loss & Training
-URGE is a pure inference-time algorithm and **requires no additional training**. Hyperparameters include the number of particles $N$, the number of discretization steps $K$, and the guidance strength (typically setting $G=r$ or using CFG terms in text-to-image). The simplest version with EM discretization works effectively, and the weight construction can be replaced with higher-order formats to improve accuracy when $N$ is limited.
+URGE is a pure inference-time algorithm and **requires no additional training**. Hyperparameters include the number of particles $N$, discretization steps $K$, and guidance strength (standardly $G=r$ or CFG terms). The paper demonstrates that the simplest EM discretization (Equation 7) works well, noting that weight construction can be replaced with higher-order schemes if $N$ is limited.
 
 ## Key Experimental Results
 
 ### Main Results
 
-30-dimensional 40-component GMM toy task (reward chosen as a known quadratic function for analytical comparison):
+30-dimensional 40-component GMM toy task (reward chosen as a known quadratic for analytical ground truth):
 
 | Method | MMD↓ | SWD↓ | Mean $\ell_2$↓ | Cov Frob↓ |
 |------|------|------|----------------|-----------|
@@ -68,9 +66,9 @@ URGE is a pure inference-time algorithm and **requires no additional training**.
 | FK-Steering | 0.07 | 0.85 | 4.86 | 198.20 |
 | **URGE** | **0.06** | **0.62** | **3.20** | **181.31** |
 
-URGE outperformed other methods across all four metrics, particularly achieving a 26% lower covariance Frobenius error than AFDPS+VCG, without requiring additional learned control drifts.
+URGE outperforms on all four metrics, notably achieving 26% lower Covariance Frobenius error than AFDPS+VCG without requiring the additional drift-control training of VCG.
 
-Four inverse problems on ImageNet-256 (PSNR↑/LPIPS↓):
+ImageNet-256 inverse problems (PSNR↑/LPIPS↓):
 
 | Method | Gaussian Deblur PSNR | Motion Deblur LPIPS | Super-Res PSNR | Box Inpaint LPIPS |
 |------|----------------------|---------------------|----------------|--------------------|
@@ -80,61 +78,62 @@ Four inverse problems on ImageNet-256 (PSNR↑/LPIPS↓):
 | AFDPS-ODE | 22.57 | 0.503 | 19.60 | **0.275** |
 | **URGE** | 22.38 | 0.525 | 21.00 | 0.305 |
 
-URGE performed on par with the strongest AFDPS variants and significantly exceeded FK-Corrector.
+URGE matches the strongest AFDPS variants (though $\nabla\log p_t$ as reward still requires a score function, the path weight construction remains derivative-free) and significantly outperforms FK-Corrector.
 
 ### Ablation Study
 
-Text-to-Image (Stable Diffusion v1.5, 50 prompts × 3 seeds):
+Text-to-image (Stable Diffusion v1.5, 50 prompts × 3 seeds):
 
 | Sampler | CLIP-Score↑ | HPS↑ | ImageReward↑ | GenEval↑ |
 |--------|-------------|------|--------------|----------|
 | Base $N=1$ | 0.273 | 0.262 | 0.214 | 0.640 |
-| Grad Guidance $N=1$ | 0.273 | 0.262 | 0.207 | 0.640 |
+| Grad-Guidance $N=1$ | 0.273 | 0.262 | 0.207 | 0.640 |
 | FK-Steering $N=4$ | 0.290 | 0.285 | 0.840 | 0.720 |
-| Gradient FK $N=4$ | 0.290 | 0.284 | 0.791 | 0.747 |
+| Grad FK $N=4$ | 0.290 | 0.284 | 0.791 | 0.747 |
 | **URGE $N=4$** | **0.300** | **0.293** | **0.996** | **0.780** |
 
-ImageReward jumped from a base of 0.21 to 0.996 ($\approx 4.7\times$). Metrics for CLIP, HPS, and GenEval were also leading. The authors noted that SDv1.5 + URGE often matched or surpassed SDXL baselines on dual-object prompts.
+ImageReward jumps from 0.21 (base) to 0.996 ($\times 4.7$), with CLIP / HPS / GenEval also leading. SDv1.5 + URGE often matches or exceeds the SDXL baseline on dual-object prompts.
 
 ### Key Findings
-- **Derivative-free maintains accuracy**: After removing $\Delta_x r$, $\|\nabla_x r\|^2$, and $\nabla_x \log p_t$, URGE was more accurate in GMM and inverse problems than AFDPS, which retains these terms. This suggests that the stochastic information from the Itô path term compensates for the removal of second-order terms.
-- **Monotonic particle scaling**: Results showed ImageReward growing monotonically with $N$, whereas FK-Steering plateaued at larger $N$, indicating more stable weight variance in path space.
-- **Small model outperforms large model**: SDv1.5 + URGE ($N=4$) achieved a higher ImageReward than base SDXL, implying that adding SMC resampling may be more cost-effective than using a larger model for the same compute budget.
-- **Black-box reward is the killer feature**: URGE is the only SMC solution compatible with black-box neural scorers like ImageReward/HPS.
+- **Derivative-free maintains accuracy**: Removing $\Delta_x r$, $\|\nabla_x r\|^2$, and $\nabla_x \log p_t$ results in URGE performing better on GMM and inverse problems than AFDPS, suggesting Itô stochastic information compensates for the lack of second-order terms.
+- **Monotonic particle scaling**: Figure 3 shows ImageReward grows monotonically with $N$, while FK-Steering plateaus, indicating more stable weight variance in path space.
+- **Small models can surpass large models**: SDv1.5 + URGE ($N=4$) yields higher ImageReward than base SDXL, suggesting that adding SMC resampling might be more cost-effective than using larger models for the same compute budget.
+- **Black-box rewards as the killer app**: FK-Corrector / AFDPS are unusable in the text-to-image setting (cannot compute Hessian of neural rewards), making URGE the only SMC solution capable of directly using ImageReward / HPS.
 
 ## Highlights & Insights
-- **Measure-theoretic substitution**: Changing from "weighting particles" to "weighting trajectories" seems like a notation change, but the Girsanov Theorem packages all second-order terms from the infinitesimal generator into an Itô integral. This simplifies engineering to "reusing noise from the EM step."
-- **Explanatory power of the equivalence theorem**: Theorem 3.3 serves as both a proof of correctness and a justification for design freedom—since AFDPS is a special case of URGE, URGE naturally allows for more options such as higher-order formats or different time grids.
-- **Transferable techniques**: The Feynman-Kac duality argument that "path weight $\equiv$ particle weight conditioned on the endpoint" can be applied to any SMC-based diffusion algorithm, such as reward fine-tuning or molecular conformation sampling.
+- **Measure-theoretic transformation**: Replacing particle weighting with path weighting via the Girsanov theorem packages all second-order infinitesimal generator terms into an Itô integral. This simplifies implementation: "just reuse EM noise $\xi^{(i)}$."
+- **Equivalence theorem's explanatory power**: Theorem 3.3 serves both as a proof of correctness and a rationale for design flexibility—since AFDPS is a special case of marginalized URGE, URGE naturally opens avenues for sparse schedules and higher-order formats.
+- **Transferable techniques**: The "path weight $\equiv$ conditional expectation of particle weight" argument can be applied to any SMC-based diffusion inference, such as reward fine-tuning, molecular conformation sampling, or protein inverse folding.
 
 ## Limitations & Future Work
-- Experiments were limited to $N=4 \sim 16$; it is unclear if performance saturates at $N \approx 100$ due to particle degeneracy.
-- The weights still contain $\nabla_x G$, so "derivative-free" specifically refers to "no reward derivatives." If $G$ also becomes a black-box, URGE loses its unbiasedness.
-- Discretization step $\Delta t$ must be small enough for Girsanov stability; an adaptive $\Delta t$ scheme was not provided, which could be a bottleneck for long-horizon video diffusion.
-- Future work: Coupling URGE with higher-order SDE solvers (Heun / DPM-Solver-2); studying URGE variants for non-smooth rewards (e.g., discrete GenEval metrics); extending URGE to jump diffusion for categorical or discrete diffusion models.
+- Experiments only scales up to $N=4 \sim 16$; the degree of particle degeneracy at large $N$ (e.g., $\sim 100$) was not systematically tested.
+- Weights still contain $\nabla_x G$, so "derivative-free" strictly means "no reward derivatives." Guidance potential $G$ must remain differentiable (standard in CFG).
+- Discrete step size $\Delta t$ must be small for Girsanov stability. No adaptive $\Delta t$ scheme is provided, which might be a bottleneck for long-horizon video diffusion.
+- Equivalence holds in the $N\to\infty$ and continuous-time limit; variance bounds for finite $N$ were not explicitly derived.
+- Future Work: Coupling URGE path weights with high-order SDE solvers (Heun / DPM-Solver-2); studying URGE variants for non-smooth rewards; extension to jump diffusions for categorical/discrete diffusion.
 
 ## Related Work & Insights
-- **vs FK-Corrector (Skreta et al., 2025) / AFDPS (Chen et al., 2025)**: They modify the generator in particle space using weights containing second-order terms. URGE uses Girsanov weights in path space, which are simpler to implement and support black-box rewards.
-- **vs FK-Steering (Singhal et al., 2025)**: FK-Steering uses reward differences but omits the Girsanov path correction term, making it biased.
-- **vs Doob $h$-transform methods (DEFT / adjoint matching)**: These typically require training a network to estimate $h$; URGE is training-free.
-- **vs VCG (Ren et al., 2025a)**: VCG learns a control drift to reduce variance; URGE achieves lower error in GMM tasks without learning.
+- **vs FK-Corrector (Skreta et al., 2025) / AFDPS (Chen et al., 2025)**: These use $\mathcal{L}^G + w_\text{AFDPS}$ in particle space with weights involving $\Delta_x r$, etc. URGE uses Girsanov weights in path space, which are theoretically equivalent but simpler to implement and black-box-reward friendly.
+- **vs FK-Steering (Singhal et al., 2025)**: FK-Steering uses $r(X_{t+\Delta t})-r(X_t)$ as weight, omitting the Girsanov path correction term, making it biased. URGE includes the path term for guaranteed unbiasedness and superior performance.
+- **vs Doob $h$-transform methods (DEFT / Adjoint matching)**: These require training a network to estimate $h$. URGE is training-free, costing only $N$ times more forward passes at inference.
+- **vs VCG (Ren et al., 2025a)**: VCG learns a control drift via weighted least squares to reduce variance. URGE achieves 26% lower error on GMM without any learning, proving path-space stability.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ 
-- Experimental Thoroughness: ⭐⭐⭐⭐ 
-- Writing Quality: ⭐⭐⭐⭐ 
-- Value: ⭐⭐⭐⭐⭐ 
+- Novelty: ⭐⭐⭐⭐ Path-space SMC + Girsanov is new for diffusion scaling, though Girsanov IS is classic in finance/molecular dynamics.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers GMM, inverse problems, and text-to-image, though $N$ range is small and lacks detailed runtime comparison.
+- Writing Quality: ⭐⭐⭐⭐ Clearly organizes Girsanov, Feynman-Kac, and Kolmogorov backward; Table 1 effectively differentiates weights.
+- Value: ⭐⭐⭐⭐⭐ Derivative-free and black-box reward compatibility means ImageReward / HPS can be plugged in directly for any scenario (video, 3D, etc.). High reuse value.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
-- [\[CVPR 2026\] Tiny Inference-Time Scaling with Latent Verifiers](../../CVPR2026/image_generation/tiny_inference-time_scaling_with_latent_verifiers.md)
 - [\[ICML 2026\] SURGE: Approximation and Training Free Particle Filter for Diffusion Surrogate](surge_approximation_and_training_free_particle_filter_for_diffusion_surrogate.md)
 - [\[CVPR 2026\] Rethinking Prompt Design for Inference-time Scaling in Text-to-Visual Generation](../../CVPR2026/image_generation/rethinking_prompt_design_for_inference-time_scaling_in_text-to-visual_generation.md)
 - [\[ICML 2025\] Performance Plateaus in Inference-Time Scaling for Text-to-Image Diffusion Without External Models](../../ICML2025/image_generation/performance_plateaus_in_inference-time_scaling_for_text-to-image_diffusion_witho.md)
+- [\[NeurIPS 2025\] Inference-Time Scaling for Flow Models via Stochastic Generation and Rollover Budget Forcing](../../NeurIPS2025/image_generation/inference-time_scaling_for_flow_models_via_stochastic_generation_and_rollover_bu.md)
 - [\[CVPR 2026\] Denoising as Path Planning: Training-Free Acceleration of Diffusion Models with DPCache](../../CVPR2026/image_generation/dpcache_denoising_path_planning_diffusion_accel.md)
 
 </div>

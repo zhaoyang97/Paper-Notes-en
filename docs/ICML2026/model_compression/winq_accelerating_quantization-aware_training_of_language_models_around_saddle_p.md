@@ -2,12 +2,12 @@
 title: >-
   [Paper Note] WinQ: Accelerating Quantization-Aware Training of Language Models Around Saddle Points
 description: >-
-  [ICML 2026][Model Compression][Paper Note] WinQ attributes the slow convergence of low-bit Large Language Model (LLM) Quantization-Aware Training (QAT) to weights being trapped near low-curvature saddle points. It accelerates 1-2 bit QAT by 1.5-4.0x with minimal training overhead by using periodic weight-quantization interpolation re-initialization and noise-pe
+  [ICML 2026][Model Compression][Paper Note] WinQ attributes the slow convergence of low-bit language model QAT to weights being trapped near low-curvature saddle points. By utilizing periodic weight-quantization interpolation for re-initialization and noise perturbation for gradients, it accelerates 1-2 bit QAT by 1.5-4x with almost no additional training overhe
 tags:
   - ICML 2026
   - Model Compression
 date: 2026-05-08
-content_hash: 8b02a44b76d426d1
+content_hash: 5195ed78a2cd8050
 ---
 # WinQ: Accelerating Quantization-Aware Training of Language Models Around Saddle Points
 
@@ -18,121 +18,134 @@ content_hash: 8b02a44b76d426d1
 **Keywords**: Quantization-Aware Training, Low-bit LLM, Hessian Spectrum, Saddle Point Optimization, Noise Injection  
 
 ## TL;DR
-WinQ attributes the slow convergence of low-bit Large Language Model (LLM) Quantization-Aware Training (QAT) to weights being trapped near low-curvature saddle points. It accelerates 1-2 bit QAT by 1.5-4.0x with minimal training overhead by using periodic weight-quantization interpolation re-initialization and noise-perturbed gradients, improving perplexity and zero-shot accuracy across multiple LLaMA/Qwen configurations under identical training budgets.
+WinQ attributes the slow convergence of low-bit language model QAT to weights being trapped near low-curvature saddle points. By utilizing periodic weight-quantization interpolation for re-initialization and noise perturbation for gradients, it accelerates 1-2 bit QAT by 1.5-4x with almost no additional training overhead, improving perplexity and zero-shot accuracy across various LLaMA/Qwen quantization configurations under the same training budget.
 
 ## Background & Motivation
-**Background**: Deploying LLMs increasingly relies on low-bit quantization. While Post-Training Quantization (PTQ) maintains performance above 4 bits, it fails significantly at extreme precisions like 1-2 bits or 1.58 bits. Consequently, Quantization-Aware Training (QAT) is the mainstream solution, where full-precision latent weights are maintained, but forward passes and gradient estimations are performed using quantized weights.
+**Background**: The deployment of Large Language Models increasingly relies on low-bit quantization. Post-training quantization (PTQ) usually maintains performance above 4 bits but collapses significantly at ultra-low precisions like 1-2 bits or 1.58 bits. Consequently, mainstream solutions shift toward quantization-aware training (QAT), which maintains full-precision latent weights during training while performing forward passes and gradient estimation based on quantized weights.
 
-**Limitations of Prior Work**: QAT is effective but costly. The paper notes that even 4-bit QAT costs nearly 10% of full-precision pre-training, and 1-bit QAT is even slower, often requiring billions of tokens to achieve usable performance. Existing methods like ParetoQ and QuEST focus on modifying quantization functions, Hadamard transforms, or gradient estimators but fail to explain why low-bit QAT plateaus early.
+**Limitations of Prior Work**: QAT is effective but costly. This paper notes that even 4-bit QAT training costs can approach 10% of full-precision pre-training; 1-bit QAT is even slower, often requiring training on billions of tokens to achieve usable performance. Existing methods like ParetoQ and QuEST primarily modify quantization functions, Hadamard transforms, or gradient estimation, but fail to explain why low-bit QAT enters a plateau quickly after the early training stages.
 
-**Key Challenge**: Low-bit quantization requires latent weights to be close to discrete grids, while optimization occurs in continuous space. The authors observe that relative gradient norms decrease quickly while the loss remains high, suggesting the model is stuck in regions with extremely weak local curvature rather than lacking a sufficient learning rate. Hessian spectrum analysis reveals that many eigenvalues in low-bit QAT cluster near zero, with both positive and negative signs present—a characteristic of stagnation near flat saddle points.
+**Key Challenge**: Low-bit quantization requires latent weights to be close to a discrete quantization grid, while optimization still occurs in a continuous weight space. The authors' key observation is that the relative gradient norm decreases rapidly during training while the loss fails to drop sufficiently, suggesting the model is stuck in regions with weak local curvature rather than simply lacking a sufficient learning rate. Hessian spectrum analysis shows that a large number of eigenvalues in low-bit QAT concentrate around 0, with both positive and negative eigenvalues present, typically corresponding to stagnation near flat saddle points.
 
-**Goal**: The paper aims to answer two questions: first, the underlying optimization cause of slow convergence in low-bit QAT; and second, whether a quantization-independent, low-cost training trick can extract the model from these low-curvature stagnation zones.
+**Goal**: The paper aims to answer two questions: first, what is the optimization cause of slow convergence in low-bit QAT; second, can a training trick be designed that is independent of specific quantizers and carries minimal extra cost to pull the model out of these low-curvature stagnation zones.
 
-**Key Insight**: Instead of designing complex quantizers, the authors treat QAT as a non-convex optimization problem and measure the spectral distribution of the loss Hessian. This perspective translates the difficulty of low-bit training into a measurable curvature problem: lower bit-widths lead to smaller maximum Hessian eigenvalue magnitudes and a higher proportion of near-zero eigenvalues, resulting in slower convergence.
+**Key Insight**: Instead of designing a complex quantizer based on quantization error, the authors treat QAT as a non-convex optimization problem and measure the spectral distribution of the loss Hessian. This perspective is interesting because it transforms "lower bit quantization is harder to train" into a measurable curvature problem: the lower the bit-width, the smaller the magnitude of the largest Hessian eigenvalues and the higher the proportion of eigenvalues near 0, leading to slower convergence.
 
-**Core Idea**: Use periodic $W \leftarrow (1-\alpha)W+\alpha Q(W)$ to pull latent weights closer to quantized weights and lift local curvature, combined with noise perturbation $Q(W+U)$ at each step to help gradients escape saddle points.
+**Core Idea**: Use periodic $W \leftarrow (1-\alpha)W+\alpha Q(W)$ to pull latent weights closer to quantized weights to increase local curvature, and inject noise $Q(W+U)$ at each step to perturb gradients and assist in escaping saddle points.
 
 ## Method
-The WinQ methodology consists of "Diagnosis" and "Intervention" layers. The diagnosis uses the Hessian spectrum to prove slow convergence is structural; the intervention converts this into two lightweight operations: periodic re-initialization and step-wise noise injection.
+The WinQ method consists of "diagnosis" and "intervention" layers. The diagnosis layer uses the Hessian spectrum to prove that slow convergence in low-bit QAT is not accidental; the intervention layer translates this into two lightweight training operations: periodic weight interpolation re-initialization and step-wise noise injection.
 
 ### Overall Architecture
-The input is an existing QAT pipeline with latent weights $W$, a quantization function $Q(\cdot)$, and a language model $f_W$. WinQ supplements the standard QAT loop with two mechanisms.
+The input is an existing QAT training pipeline: given full-precision latent weights $W$, a quantization function $Q(\cdot)$, a language model $f_W$, and training data. Standard QAT performs a forward pass using $Q(W)$ at each step and updates $W$ via STE or related gradient estimators. WinQ wraps two processes around this training loop.
 
-First, at each training step, Gaussian noise $U \sim \mathcal{N}(0, \sigma^2 I)$ is sampled. Gradients are calculated using $Q(W+U)$, which then update the original $W$. Second, every $K$ steps, latent weights are reset via linear interpolation: $W \leftarrow (1-\alpha)W+\alpha Q(W)$. After training, the final latent weights are quantized for inference.
+First, at each training step, Gaussian noise $U \sim \mathcal{N}(0, \sigma^2 I)$ is sampled. Gradients are calculated using the quantization of noisy latent weights $Q(W+U)$ to update the original $W$. Second, every $K$ steps, the latent weights are reset to a linear interpolation between the current latent weights and the quantized weights: $W \leftarrow (1-\alpha)W+\alpha Q(W)$. After training, final latent weights are quantized into inference weights as in standard QAT.
 
-A version for Hadamard transforms is also provided. If a method uses $HW$ for quantization, interpolation occurs in the Hadamard space and is mapped back: $W \leftarrow H^\top((1-\alpha)HW+\alpha Q(HW))$, allowing WinQ to be integrated with methods like QuEST.
+The authors also provide a Hadamard transform version. If a method applies $HW$ before quantization, interpolation occurs in the Hadamard space and is mapped back to the weight space via $H^\top$, i.e., $W \leftarrow H^\top((1-\alpha)HW+\alpha Q(HW))$. This allows WinQ to be stacked onto methods like QuEST that involve rotations or transforms.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["Slow Convergence in Low-bit QAT<br/>Small gradient norm but high loss"] --> B["Hessian Spectrum Diagnosis<br/>Eigenvalues cluster at 0, mixed signs → Flat saddle points"]
-    B --> C["Input: Latent weights W + Quantizer Q(·) + Model f_W"]
-    C --> D["Noise-injected Gradient Estimation (Step-wise)<br/>Sample U∼N(0,σ²I), calculate gradient on Q(W+U) to update W"]
-    D -->|Every K steps| E["Weight Interpolation Re-init<br/>W ← (1−α)W + αQ(W): Pull to grid, lift curvature"]
+    A["Slow QAT Convergence<br/>Small gradient norm but high loss"] --> B["Hessian Spectrum Diagnosis<br/>Eigenvalues near 0, positive and negative mixed → Trapped at flat saddle points"]
+    B --> C["Input: Latent weights W + Quantization function Q(·) + LM f_W"]
+    C --> D["Noise-injected Gradient Estimation (Per Step)<br/>Sample U∼N(0,σ²I), update W using gradients from Q(W+U)"]
+    D -->|Triggered every K steps| E["Weight Interpolation Re-initialization<br/>W ← (1−α)W + αQ(W): Move closer to grid, increase curvature"]
     E -->|Steps < T| D
-    D -->|Step T reached| F["Output: Final quantized weights Q(W) for inference"]
+    D -->|Steps = T| F["Output: Final quantized weights Q(W) for inference"]
 ```
 
 ### Key Designs
-**1. Hessian Spectrum Diagnosis: Measuring Curvature Stagnation**
+**1. Hessian Spectrum Diagnosis: Converting "low-bit training difficulty" into a measurable curvature problem**
 
-Using stochastic Lanczos quadrature and Hessian-vector products, the authors estimate the eigenvalue distribution of the loss Hessian. They find that in late-stage 1-4 bit QAT, eigenvalues cluster near zero with both signs present, a hallmark of flat saddle points. Convergence speed is determined by local curvature (maximum eigenvalue magnitude). Lower bits result in over 40% of eigenvalues being near zero, directly explaining slow convergence.
+The authors address "why it is slow" before creating a new quantizer. Using stochastic Lanczos quadrature with Hessian-vector products to estimate the eigenvalue distribution of the loss Hessian, they found that in the late stages of 1-4 bit QAT training, a large number of eigenvalues cluster around 0 with both positive and negative values—a hallmark of flat saddle points. Since the gradient norm is already small, convergence speed is determined by local curvature (magnitude of the largest eigenvalues). The lower the bit-width, the higher the proportion of eigenvalues near 0 and the smaller the magnitude of the largest eigenvalues (over 40% of eigenvalues are near 0 in low-precision settings), directly explaining why lower bits converge slower. This diagnosis serves as the design basis for the two interventions: since the bottleneck is weak curvature and saddle point entrapment, the solution is "injecting perturbations to escape saddle points" and "lifting curvature"—i.e., noise injection and weight interpolation.
 
-**2. Noise-Injected Gradient Estimation: Escaping Saddle Points**
+**2. Noise-injected Gradient Estimation: Lightweight perturbations per step to escape saddle points**
 
-The first intervention modifies the standard QAT step. Instead of calculating gradients on $Q(W)$, WinQ uses $Q(W+U)$. This draws from non-convex optimization theory stating that noisy SGD escapes saddle points more effectively. Hessian analysis shows that suitable noise increases negative curvature magnitude and gradient norms, pushing the model out of stagnation. For 2-bit QAT, $\sigma=0.001$ and $\alpha=0.6$ increase maximum eigenvalue magnitude from 2.65 to 3.96. This adds negligible cost as it requires no extra forward/backward passes.
+The first intervention occurs at every step of the training loop. While standard QAT calculates gradients directly on $Q(W)$, WinQ samples Gaussian noise $U \sim \mathcal{N}(0, \sigma^2 I)$ each step and calculates gradients on the noisy quantized weights $Q(W+U)$ to update $W$. This draws on conclusions from non-convex optimization that "noisy SGD is more likely to escape saddle points" (Jin et al., 2017). Hessian analysis shows that appropriate noise increases the magnitude of negative curvature and slightly increases the gradient norm, pushing the model away from low-curvature stagnation. In 2-bit QAT with $\sigma=0.001$ and $\alpha=0.6$, the maximum eigenvalue magnitude reaches 3.96, significantly higher than the 2.65 without noise. The advantage is near-zero cost—no extra forward/backward passes, just sampling one noise vector.
 
-**3. Weight Interpolation Re-initialization: Lifting Curvature**
+**3. Weight Interpolation Re-initialization: Periodically pulling weights back to the grid and lifting curvature**
 
-Triggered every $K$ steps, this resets latent weights closer to the quantization grid. Under the assumption that the quantized point is locally invariant, this step is equivalent to a proximal update on the $\ell_2$ regularized objective $\Phi(W)=L_Q(W)+\frac{\gamma}{2}\|W-q\|^2$ where $\alpha=\eta\gamma/(1+\eta\gamma)$. The Hessian becomes $\nabla^2 L_Q(W)+\gamma I$, effectively lifting all eigenvalues by $\gamma$. Empirically, $\alpha=0.4$ in 2-bit QAT increases max eigenvalue magnitude by ~84% and reduces near-zero eigenvalues by ~21% without significantly altering the current loss.
+The second intervention is triggered every $K$ steps, resetting latent weights to a linear interpolation between $W$ and $Q(W)$: $W \leftarrow (1-\alpha)W+\alpha Q(W)$. This directly shortens the distance between latent weights and the quantization grid (which is naturally larger in low-bit settings) while lifting the local curvature for subsequent optimization. The paper provides an elegant explanation: assuming the quantization grid is locally invariant, this step is equivalent to a proximal update on an $\ell_2$ regularized objective $\Phi(W)=L_Q(W)+\frac{\gamma}{2}\|W-q\|^2$ ($q=Q(W)$), where $\alpha=\eta\gamma/(1+\eta\gamma)$. This changes the Hessian to $\nabla^2 L_Q(W)+\gamma I$. The regularization term shifts all eigenvalues up by $\gamma$, naturally increasing curvature. Experimentally, $\alpha=0.4$ in 2-bit QAT increases the maximum eigenvalue magnitude by ~84% and reduces the proportion of near-zero eigenvalues by ~21%. Since $Q(W)$ remains largely unchanged, this step barely affects the current loss but drastically improves the subsequent optimization trajectory. It does not modify AdamW optimizer states and supports Hadamard versions, making it compatible with existing QAT methods like ParetoQ or QuEST.
 
 ### Loss & Training
-WinQ does not modify the original LLM objective (autoregressive language modeling on corpora like FineWebEdu). It utilizes the underlying QAT quantizers. Experiments involve training up to 20B tokens (~240K steps). Hyperparameters include $K \in \{40K, 60K, 80K\}$, $\alpha \in [0.1, 0.6]$, and $\sigma \in [0.0002, 0.002]$. AdamW is used with learning rates between $1\times10^{-5}$ and $4\times10^{-5}$. Both components add less than 1% wall-clock overhead.
+WinQ does not modify the original LLM training objective, continuing autoregressive language modeling on corpora like FineWebEdu while utilizing the underlying QAT method's quantization function. Experiments primarily involve training up to 20B tokens (~240K steps). Hyperparameters include re-initialization interval $K \in \{40K, 60K, 80K\}$, interpolation coefficient $\alpha$ roughly between 0.1-0.6, and noise standard deviation $\sigma$ between 0.0002-0.002. AdamW is used with learning rates from $1\times10^{-5}$ to $4\times10^{-5}$. The authors emphasize that the additional wall-clock overhead of both components is less than 1% of the base QAT.
 
 ## Key Experimental Results
 
 ### Main Results
-Evaluation was conducted on LLaMA-3-1B/3B and Qwen-3-0.6B/1.7B across 1, 1.58, 2, 3, and 4-bit weights with 16/8/4-bit activations.
+The paper evaluates 1, 1.58, 2, 3, and 4-bit weight quantization on LLaMA-3-1B/3B and Qwen-3-0.6B/1.7B, combined with 16/8/4-bit activations. Metrics include WikiText2 perplexity and average zero-shot accuracy across 8 QA datasets.
 
-| Model & Config | Baseline | Baseline PPL ↓ | Baseline Acc ↑ | WinQ PPL ↓ | WinQ Acc ↑ | Gain/Notes |
-|--------|------|------|------|------|------|------|
-| LLaMA-1B W1A16 | ParetoQ | 16.9 | 51.9 | 15.3 | 52.6 | Significant PPL drop at 1 bit |
-| LLaMA-1B W1.58A16 | ParetoQ | 14.0 | 54.7 | 12.9 | 55.6 | Ternary PPL -1.1, Acc +0.9 |
-| LLaMA-1B W2A16 | ParetoQ | 12.5 | 56.7 | 11.9 | 56.6 | Lower PPL, stable Acc |
+| Model & Quant. Setting | Baseline | PPL ↓ | Avg. QA Acc ↑ | WinQ PPL ↓ | WinQ Acc ↑ | Major Change |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| LLaMA-1B W1A16 | ParetoQ | 16.9 | 51.9 | 15.3 | 52.6 | PPL drops significantly at 1-bit; Acc +0.7 |
+| LLaMA-1B W1.58A16 | ParetoQ | 14.0 | 54.7 | 12.9 | 55.6 | PPL -1.1, Acc +0.9 in ternary setting |
+| LLaMA-1B W2A16 | ParetoQ | 12.5 | 56.7 | 11.9 | 56.6 | Lower PPL, Acc largely stable |
 | LLaMA-1B W1A8 | ParetoQ | 23.3 | 48.2 | 21.9 | 49.0 | Gains persist with 8-bit activation |
-| LLaMA-3B W1.58A8 | ParetoQ | 13.1 | 55.9 | 12.2 | 58.6 | Large model Acc +2.7 |
+| LLaMA-3B W1.58A8 | ParetoQ | 13.1 | 55.9 | 12.2 | 58.6 | Acc +2.7 for larger low-bit model |
 
-PTQ methods (RTN, GPTQ, AWQ) fail at 1-2 bits (e.g., LLaMA-1B W1A16 PPL reaches $10^8$). WinQ improves QAT efficiency, achieving 1.5-4x acceleration and up to 8.8% performance gains under equal compute budgets for sub-4-bit settings.
+Compared to PTQ methods, RTN/GPTQ/AWQ/SpinQuant often exhibit extreme PPL at 1-2 bits (e.g., $10^8$ for RTN/GPTQ on LLaMA-1B W1A16). QAT itself is necessary, and WinQ further improves its convergence efficiency. The paper reports a 1.5-4x convergence acceleration relative to SOTA QAT under 4 bits, with up to an 8.8% performance improvement for sub-4-bit settings given the same computational budget.
 
 ### Ablation Study
 
-| Config | Metric | Observation |
-|------|---------|------|
-| $\alpha=0.0$ (No interpolation) | 16.5 PPL | Standard training plateaus at higher loss |
-| $\alpha=0.2, K=60K$ | 15.5 PPL | Moderate interpolation improves results |
-| $\alpha=0.4, K=60K$ | 15.3 PPL | Optimal balance for curvature lift |
-| $\alpha=0.8, K=60K$ | 16.0 PPL | Excessive interpolation disrupts training state |
-| $\sigma=0$ | 16.0 PPL | Weak performance without noise injection |
-| $\sigma=0.001$ | 15.3 PPL | Optimal noise helps escape saddle points |
+| Configuration | Key Metric | Description |
+| :--- | :--- | :--- |
+| $\alpha=0.0$, No interpolation | W1A16 LLaMA-1B PPL 16.5 | Standard training stalls at worse PPL |
+| $\alpha=0.2$, $K=60K$ | PPL 15.5 | Moderate interpolation yields clear improvement |
+| $\alpha=0.4$, $K=60K$ | PPL 15.3 | Peak performance near main setting |
+| $\alpha=0.8$, $K=60K$ | PPL 16.0 | Excessive interpolation disrupts training |
+| $\sigma=0$ | PPL 16.0 | Weak improvement without noise injection |
+| $\sigma=0.001$ | PPL 15.3 | Optimal noise helps escape saddle points |
+| $\sigma=0.004$ | PPL 18.5 | Excessive noise destabilizes optimization |
 
 ### Key Findings
-- Slow convergence in low-bit QAT is linked to Hessian spectral properties: fewer bits lead to more near-zero eigenvalues and lower maximum curvature.
-- Weight interpolation and noise injection are complementary; one resets the weight position relative to the grid, while the other provides the perturbation needed to leave saddle points.
-- WinQ is highly generalizable, compatible with ParetoQ and Hadamard-based methods across various model architectures and bit-widths.
+- The most significant finding is that slow QAT convergence can be explained by the Hessian spectrum: lower bits lead to more eigenvalues near 0 and smaller maximum eigenvalue magnitudes, causing the training to stall near flat saddle points.
+- Both weight interpolation and noise injection are indispensable. Interpolation changes the position and curvature relative to the grid, while noise injection enhances local perturbation; both can degrade training if set too high.
+- WinQ demonstrates good generalization: it can be stacked with ParetoQ or extended to Hadamard Transform methods, showing consistent gains across LLaMA/Qwen, various parameter scales, and different weight/activation precisions.
 
 ## Highlights & Insights
-- The primary contribution is identifying slow QAT convergence as an optimization geometry problem rather than just "hard-to-tune" engineering.
-- The design is minimal: it does not change quantizers, optimizer states, or model structures, making it a plug-and-play QAT acceleration trick.
-- The proximal update interpretation clarifies why interpolation works: it explicitly handles the distance between latent and quantized weights as part of the geometry.
+- This paper's primary value lies in transforming the "engineering difficulty" of QAT into a measurable optimization geometry problem. The Hessian spectrum serves as a direct derivation for the interpolation and noise injection operations.
+- The weight interpolation design is restrained: it requires no changes to the quantization function, optimizer state, or model architecture. This makes it a plug-and-play QAT optimizer trick rather than a one-off method tied to a specific quantizer.
+- The proximal-like update interpretation is insightful. The distance between latent and quantized weights is a central difficulty in low-bit training; explicitly incorporating this distance into a geometric explanation clarifies why interpolation lifts curvature more effectively than simple error penalties.
+- A general takeaway: when training plateaus due to constraints such as discretization or pruning, it may be more effective to check if the constrained loss landscape contains low-curvature saddles rather than just modifying surrogate gradients.
 
 ## Limitations & Future Work
-- Verification is limited to 0.6B-3B models. Verification on 7B+ models is needed to ensure Hessian characteristics and hyperparameter stability scale.
-- The method introduces three hyperparameters ($K, \alpha, \sigma$). Automatic tuning or adaptive strategies based on curvature would be more practical.
-- Continuous Hessian analysis is expensive. Future work could use cheaper signals like gradient norms or loss plateaus to trigger re-initialization.
+- The paper primarily validates on 0.6B-3B scale models. While covering LLaMA and Qwen, there remains a scale gap from the most frequently deployed 7B, 13B, and 70B models. Whether the Hessian spectrum phenomenon is equally measurable and hyperparameters remain stable at extreme scales requires further validation.
+- The method requires tuning three hyperparameters: $K, \alpha, \sigma$. Ablations show performance drops significantly with excessive interpolation or noise, making automated or curvature-based adaptive strategies more practical.
+- Hessian analysis itself is computationally expensive. While WinQ is cheap during training, the diagnosis pipeline might not be suitable for routine engineering monitoring. Future work could explore using gradient norms, quantization error, or loss plateaus as cheaper signals for re-initialization timing.
+- The focus is on LLM QAT. Transferring these ideas to vision models, MoE, KV cache quantization, or activation quantization during training remains an open question.
 
 ## Related Work & Insights
-- **vs ParetoQ**: ParetoQ reduces quantization error via learned step sizes; WinQ focuses on convergence speed and can be layered on top.
-- **vs QuEST**: QuEST uses Hadamard Transforms for better estimation; WinQ's interpolation is compatible with this transform-space optimization.
-- **vs PTQ**: PTQ is insufficient for 1-2 bit LLMs; WinQ assumes QAT is necessary and lowers its barrier to entry.
+- **vs. ParetoQ**: ParetoQ focuses on stretched elastic quantization and learnable step sizes to reduce error. WinQ addresses the slow convergence problem and can be stacked on top for extra gains.
+- **vs. QuEST**: QuEST uses Hadamard Transforms and trust gradient estimators for ultra-low bits. WinQ's interpolation is compatible with Hadamard space, suggesting they address different bottlenecks.
+- **vs. PTQ (GPTQ/AWQ/SpinQuant)**: PTQ fails catastrophically at 1-2 bits, proving training adaptation is mandatory. WinQ's contribution is reducing that training cost once QAT is deemed necessary.
+- **vs. ProxQuant/LOTION/CAGE**: These methods formulate quantization training as regularized or smoothed objectives. WinQ differs by specifically targeting saddle-point stagnation identified via Hessian analysis and interpreting interpolation as a proximal-like update for better optimization clarity.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐☆ Clear perspective shift from engineering to optimization geometry.
-- Experimental Thoroughness: ⭐⭐⭐⭐☆ Broad coverage of bit-widths and models, though could use larger 70B+ validation.
-- Writing Quality: ⭐⭐⭐⭐☆ Strong logical flow from diagnosis to solution.
-- Value: ⭐⭐⭐⭐⭐ Highly practical for reducing the high cost of low-bit LLM training.
+- Novelty: ⭐⭐⭐⭐☆ Clear perspective explaining QAT slow convergence via Hessian saddles to derive a lightweight algorithm.
+- Experimental Thoroughness: ⭐⭐⭐⭐☆ Covers multiple models, bit-widths, and precisions with credible results; larger models and real-world throughput could be further explored.
+- Writing Quality: ⭐⭐⭐⭐☆ Solid loop between motivation, analysis, and experiments, though Hessian details may be dense for engineering-focused readers.
+- Value: ⭐⭐⭐⭐⭐ Highly practical for low-bit LLM QAT, especially as a low-cost acceleration plugin for existing methods.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
+
+- **ParetoQ**: Stretching the limits of low-bit quantization, 2024
+- **QuEST**: Quantization-aware LLM training with rotations, 2025
+- **Jin et al.**: How to Escape Saddle Points Efficiently, 2017
+- **Gholami et al.**: Hessian-based analysis of large-scale models, 2019
+
 </div>
+
+<!-- RELATED:END -->
 
 ## Related Papers
 
 - [\[ICLR 2026\] Compute-Optimal Quantization-Aware Training](../../ICLR2026/model_compression/compute-optimal_quantization-aware_training.md)
 - [\[ACL 2025\] EfficientQAT: Efficient Quantization-Aware Training for Large Language Models](../../ACL2025/model_compression/efficientqat.md)
 - [\[ICML 2026\] Entropy-Aware On-Policy Distillation of Language Models](entropy-aware_on-policy_distillation_of_language_models.md)
+- [\[ICML 2026\] FAIR-Calib: Frontier-Aware Instability-Reweighted Calibration for Post-Training Quantization of Diffusion Large Language Models](fair-calib_frontier-aware_instability-reweighted_calibration_for_post-training_q.md)
 - [\[ICCV 2025\] Scheduling Weight Transitions for Quantization-Aware Training](../../ICCV2025/model_compression/scheduling_weight_transitions_for_quantization-aware_training.md)
-- [\[ICML 2026\] RaBiT: Residual-Aware Binarization Training for Accurate and Efficient LLMs](rabit_residual-aware_binarization_training_for_accurate_and_efficient_llms.md)
 
 </div>
 

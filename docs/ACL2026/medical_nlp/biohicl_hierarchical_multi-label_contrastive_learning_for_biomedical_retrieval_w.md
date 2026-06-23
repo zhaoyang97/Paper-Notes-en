@@ -2,55 +2,56 @@
 title: >-
   [Paper Note] BioHiCL: Hierarchical Multi-Label Contrastive Learning for Biomedical Retrieval with MeSH Labels
 description: >-
-  [ACL 2026][Medical NLP][Paper Note] BioHiCL leverages the **hierarchical multi-label annotations** of MeSH (Medical Subject Headings) to provide structured supervision for dense retrievers. By aligning the embedding space with the MeSH semantic space via depth-weighted label similarity, the 0.1B model surpasses most specialized models on biomedical retri
+  [ACL 2026][Medical NLP][Paper Note] BioHiCL utilizes **hierarchical multi-label annotations** of MeSH (Medical Subject Headings) to provide structured supervision for dense retrievers. By aligning the embedding space with the MeSH semantic space through depth-weighted label similarity, a 0.1B model outperforms most specialized models on biomedical retrie
 tags:
   - ACL 2026
   - Medical NLP
 date: 2026-05-08
-content_hash: 694cf71c0875077e
+content_hash: ec893c74c26ba652
 ---
 # BioHiCL: Hierarchical Multi-Label Contrastive Learning for Biomedical Retrieval with MeSH Labels
 
 **Conference**: ACL 2026  
 **arXiv**: [2604.15591](https://arxiv.org/abs/2604.15591)  
 **Code**: [https://github.com/MengfeiLan/BioHiCL](https://github.com/MengfeiLan/BioHiCL)  
-**Area**: Biomedical NLP  
+**Area**: Medical NLP  
 **Keywords**: Biomedical Retrieval, MeSH Hierarchy, Contrastive Learning, Multi-label, Parameter-Efficient Fine-Tuning
 
 ## TL;DR
-BioHiCL leverages the **hierarchical multi-label annotations** of MeSH (Medical Subject Headings) to provide structured supervision for dense retrievers. By aligning the embedding space with the MeSH semantic space via depth-weighted label similarity, the 0.1B model surpasses most specialized models on biomedical retrieval, sentence similarity, and question answering tasks.
+BioHiCL utilizes **hierarchical multi-label annotations** of MeSH (Medical Subject Headings) to provide structured supervision for dense retrievers. By aligning the embedding space with the MeSH semantic space through depth-weighted label similarity, a 0.1B model outperforms most specialized models on biomedical retrieval, sentence similarity, and question-answering tasks.
 
 ## Background & Motivation
 
-**Background**: General-domain dense retrievers (e.g., BGE, E5) perform exceptionally on general IR benchmarks but fail to capture biomedical-specific terminology and semantic relationships. Specialized biomedical retrieval models (e.g., MedCPT, BMRetriever) enhance semantic alignment through large-scale contrastive learning.
+**Background**: General-domain dense retrievers (e.g., BGE, E5) perform excellently on general IR benchmarks but fail to capture biomedical-specific terminology and semantic relationships. Specialized biomedical retrieval models (e.g., MedCPT, BMRetriever) enhance semantic alignment through large-scale contrastive learning.
 
-**Limitations of Prior Work**: Existing biomedical retrieval models rely on coarse-grained relevance signals—either binary labels (relevant/irrelevant) or query-article click data. Such coarse signals cannot capture complex relationships involving **partial semantic overlap** in biomedical texts (e.g., two articles labeled as "unrelated" may actually share a parent concept in the disease hierarchy).
+**Limitations of Prior Work**: Existing biomedical retrieval models rely on coarse-grained relevance signals—either binary labels (relevant/irrelevant) or query-article click data. These coarse signals fail to capture complex relationships of **partial semantic overlap** in biomedical texts (e.g., two articles labeled as "irrelevant" may actually share a parent concept in the disease hierarchy).
 
-**Key Challenge**: Semantic relationships between biomedical texts are graded and hierarchical, but training signals are binary. Learning graded semantic relationships with binary signals limits retrieval precision.
+**Key Challenge**: Semantic relationships between biomedical texts are graded and hierarchical, but training signals are typically binary—using binary signals to learn graded semantic relationships leads to limited retrieval precision.
 
-**Goal**: Design a method to adapt general retrievers to the biomedical domain by utilizing the MeSH hierarchical structure to provide **fine-grained, graded supervision signals**.
+**Goal**: Design a method that adapts general retrievers to the biomedical domain by providing **fine-grained, hierarchical supervision signals** utilizing the MeSH hierarchical structure.
 
-**Key Insight**: MeSH provides natural multi-faceted supervision—each document has multiple MeSH labels, the labels themselves form a hierarchical tree, and the degree of label overlap and hierarchical depth can quantify semantic similarity.
+**Key Insight**: MeSH provides natural multi-faceted supervision—each document has multiple MeSH labels, and the labels themselves form a hierarchical tree. The degree of label overlap and hierarchical depth can quantify semantic similarity.
 
-**Core Idea**: Align the similarity in the embedding space with the similarity in the depth-weighted MeSH label space, replacing binary contrastive learning with hierarchical multi-label contrastive learning.
+**Core Idea**: Align the similarity in the embedding space with the similarity in the depth-weighted label space of MeSH, replacing binary contrastive learning with hierarchical multi-label contrastive learning.
 
 ## Method
 
 ### Overall Architecture
-Building on the general-domain dense retriever BGE, LoRA fine-tuning is performed using 80,000 MeSH-annotated abstracts from BioASQ. The training follows a **dual-path alignment** pipeline: the label path expands the MeSH labels of each abstract along the hierarchy tree and calculates a depth-weighted "Label Similarity" $\text{SimL}$; the embedding path uses the BGE+LoRA encoder to compute "Embedding Similarity" $\text{SimE}$. The two paths converge in two losses: (1) a regression loss $\mathcal{L}_{\text{mse}}$ that fits $\text{SimE}$ to $\text{SimL}$, and (2) a hierarchical contrastive loss $\mathcal{L}_{\text{con}}$ that brings semantically related documents closer in the embedding space while pushing unrelated ones apart.
+Based on the general-domain dense retriever BGE, LoRA fine-tuning is performed using 80,000 abstracts with MeSH annotations from BioASQ. The entire training is a **dual-path alignment** pipeline: the label path expands the MeSH labels of each abstract along the hierarchy tree and calculates "label similarity" $\text{SimL}$ after depth weighting. The embedding path calculates "embedding similarity" $\text{SimE}$ using the BGE+LoRA encoder. The two paths converge in two losses: (1) a regression loss $\mathcal{L}_{\text{mse}}$ to fit $\text{SimE}$ to $\text{SimL}$; (2) a hierarchical contrastive loss $\mathcal{L}_{\text{con}}$ to bring semantically related documents closer in the embedding space and push irrelevant ones further apart.
 
 ```mermaid
-graph TD
-    A["80k BioASQ Abstracts<br/>(with MeSH labels)"] --> B
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["80,000 BioASQ Abstracts<br/>(with MeSH Annotations)"] --> B
     A --> E
     subgraph LBL["Depth-weighted Hierarchical Label Representation"]
         direction TB
-        B["MeSH Label Set<br/>Expanded to all ancestors"] --> C["multi-hot vector y_i + depth weight w_j=log(d+1)"]
+        B["MeSH Label Set<br/>Expanded to All Ancestors"] --> C["multi-hot vector y_i + depth weight w_j=log(d+1)"]
         C --> D["Label Similarity SimL<br/>(Weighted Vector Cosine)"]
     end
-    E["BGE Encoder + LoRA Adapter<br/>(Only 0.3% trainable params)"] --> F["Embedding Similarity SimE"]
-    D --> G["Regression Loss L_mse<br/>Fits SimE to SimL"]
-    D --> H["Hierarchical Contrastive Loss L_con<br/>Positives weighted by SimL"]
+    E["BGE Encoder + LoRA Adapter<br/>(Only 0.3% Trainable Params)"] --> F["Embedding Similarity SimE"]
+    D --> G["Regression Loss L_mse<br/>Fitting SimE to SimL"]
+    D --> H["Hierarchical Multi-label Contrastive Loss L_con<br/>Positives Weighted by SimL"]
     F --> G
     F --> H
     G --> I["Total Loss L = L_mse + λ·L_con"]
@@ -59,24 +60,24 @@ graph TD
 
 ### Key Designs
 
-**1. Depth-weighted Hierarchical Label Representation: Compressing the MeSH tree into a computable similarity**
+**1. Depth-weighted Hierarchical Label Representation: Compressing the MeSH tree structure into a calculable similarity**
 
-In binary annotation, two articles are simply "relevant" or "irrelevant," yet biomedical texts often exhibit partial semantic overlap. BioHiCL quantifies these graded relationships via MeSH labels: the label set for each abstract is expanded along the hierarchy to include all ancestor nodes, resulting in a full path $m_i^{\text{hier}}$ encoded as a multi-hot vector $y_i \in \{0,1\}^C$. A key step is assigning a weight to each concept $c_j$ based on its depth $w_j = \log(d(c_j)+1)$, where deeper, more specific concepts receive higher weights. The label similarity is defined as the cosine similarity of the weighted vectors: $\text{SimL}(k_p, k_q) = \cos(y_p \odot \mathbf{w}, y_q \odot \mathbf{w})$. Consequently, matches of shallow labels (e.g., "Diseases") are less significant, while matches of deep labels (e.g., "Intracranial Hemorrhages") are treated as true semantic relevance, automatically focusing supervision on meaningful fine-grained matches.
+In binary annotations, two articles are only "relevant / irrelevant," but biomedical texts often have partial semantic overlap—two articles labeled as "irrelevant" may share the same parent concept in the disease hierarchy. BioHiCL quantifies this graded relationship using MeSH labels: the MeSH label set of each abstract is first expanded along the hierarchy tree to include all ancestor nodes, resulting in a complete path $m_i^{\text{hier}}$, encoded as a multi-hot vector $y_i \in \{0,1\}^C$. A key step is assigning a weight to each concept $c_j$ based on its depth $w_j = \log(d(c_j)+1)$, where deeper, more specific concepts carry greater weight. The label similarity between two documents is defined as the cosine similarity of the weighted vectors $\text{SimL}(k_p, k_q) = \cos(y_p \odot \mathbf{w}, y_q \odot \mathbf{w})$. Consequently, matches of shallow labels (e.g., "Diseases") are less significant, while matches of deep labels (e.g., "Intracranial Hemorrhages") are treated as true semantic relevance, automatically focusing supervision on meaningful fine-grained matches.
 
-**2. Hierarchical Multi-label Contrastive Loss: Maintaining embedding space structure while fitting similarity**
+**2. Hierarchical Multi-label Contrastive Loss: Bracing the embedding space against collapse while fitting similarity**
 
-Relying solely on a regression loss to force embedding similarity to fit label similarity can lead to embedding collapse, where all vectors converge to a single point. The contrastive loss maintains the discriminative structure: document pairs with $\text{SimL} > \beta$ are treated as positives, while those with no label overlap ($\text{SimL}=0$) are negatives. Furthermore, positive pairs are weighted by their label similarity:
+Relying solely on a regression loss to force embedding similarity to fit label similarity can easily collapse all vectors into a single point, losing discriminative power. The contrastive loss is responsible for keeping the space expanded: document pairs with $\text{SimL} > \beta$ are considered positive samples, while pairs with no label overlap ($\text{SimL}=0$) are considered negative samples. Furthermore, positive pairs are weighted by their label similarity:
 
 $$\mathcal{L}_{\text{con}} = -\mathbb{E}_i \log\frac{\text{SimL}(k_i, k_i^+) \cdot \exp(\text{SimE}(k_i, k_i^+))}{\sum_{k_j^-} \exp(\text{SimE}(k_i, k_j^-))}$$
 
-The threshold $\beta$ filters out weakly associated pairs to reduce noisy supervision. This design is bidirectional: the contrastive term preserves spatial structure by pushing away unrelated documents, while the "label similarity weighting" ensures highly relevant positive pairs contribute larger gradients, directly embedding graded supervision into the contrastive objective.
+The threshold $\beta$ filters out weak association pairs to reduce noisy supervision. This design is bidirectional: the contrastive term maintains spatial structure by pushing away irrelevant documents, while "label similarity weighting" allows truly highly correlated positive pairs to contribute larger gradients, effectively embedding hierarchical supervision directly into the contrastive objective.
 
-**3. LoRA Parameter-Efficient Fine-Tuning: Adapting general retrievers to the biomedical domain with 0.3% parameters**
+**3. LoRA Parameter-Efficient Fine-Tuning: Adapting the general retriever to the biomedical domain with 0.3% parameters**
 
-Full parameter fine-tuning on the specialized BioASQ dataset risks overfitting and high costs, potentially erasing BGE's general language understanding. BioHiCL utilizes LoRA by freezing all original BGE weights and injecting low-rank adapters $W_{\text{adapted}}^{(l)} = W^{(l)} + B^{(l)} A^{(l)}$ into each layer. Trainable parameters account for only 0.3% of the total, preserving the base model's general capabilities while achieving domain adaptation at minimal cost.
+Performing full-parameter fine-tuning on the limited BioASQ data is prone to overfitting, expensive, and risks washing out the original general language understanding of BGE. BioHiCL adopts LoRA: all original weights of BGE are frozen, and low-rank adapters $W_{\text{adapted}}^{(l)} = W^{(l)} + B^{(l)} A^{(l)}$ are injected into each layer. Trainable parameters account for only 0.3%. This preserves the general capability of the base model while completing domain adaptation at a very low cost—its performance in ablations is nearly identical to full-parameter fine-tuning.
 
 ### Loss & Training
-The total loss is $\mathcal{L} = \mathcal{L}_{\text{mse}} + \lambda \mathcal{L}_{\text{con}}$, where $\lambda=0.1$ and $\beta=0.3$. Training is conducted on 80,000 abstracts from BioASQ v2022, with the best checkpoint selected via the TREC-CT 2022 validation set. Training and inference can be completed on a single A100 40GB GPU.
+The total loss is $\mathcal{L} = \mathcal{L}_{\text{mse}} + \lambda \mathcal{L}_{\text{con}}$, with $\lambda=0.1$ and $\beta=0.3$. The model is trained on 80,000 abstracts from BioASQ v2022, and the optimal checkpoint is selected using the TREC-CT 2022 validation set. Training and inference can be completed on a single A100 40GB GPU.
 
 ## Key Experimental Results
 
@@ -94,41 +95,42 @@ The total loss is $\mathcal{L} = \mathcal{L}_{\text{mse}} + \lambda \mathcal{L}_
 
 | Configuration | IR Avg | Description |
 |------|---------|------|
-| BioHiCL-Base | **0.543** | Full model |
-| w/o $\mathcal{L}_{\text{con}}$ | 0.528 | Removes contrastive loss; largest performance drop |
+| BioHiCL-Base | **0.543** | Full Model |
+| w/o $\mathcal{L}_{\text{con}}$ | 0.528 | Removing contrastive loss causes the largest drop |
 | w/o Ancestor Label | 0.538 | No ancestor node expansion |
-| w/o $\mathcal{L}_{\text{mse}}$ | 0.537 | Removes regression loss |
-| w/o Depth Weight | 0.541 | No depth-based weighting |
-| w/o LoRA (Full FT) | 0.542 | LoRA performs comparably to full fine-tuning |
+| w/o $\mathcal{L}_{\text{mse}}$ | 0.537 | Removing regression loss |
+| w/o Depth Weight | 0.541 | No depth weighting |
+| w/o LoRA (Full Parameter) | 0.542 | LoRA performs comparably to full-parameter fine-tuning |
 
 ### Key Findings
-- The 0.1B BioHiCL-Base outperforms the 1B BMRetriever on average IR metrics, suggesting that structured supervision signals can compensate for model scale gaps.
-- The contrastive loss is the most critical component (averaging a 0.015 IR drop when removed), validating the necessity of preventing embedding collapse.
-- If BMRetriever is fine-tuned using the BioHiCL method, performance drops significantly (0.501 → 0.279), as replacing its original instruction-based training objective disrupts its retrieval-specialized embedding geometry.
-- LoRA achieves performance comparable to full fine-tuning using only 0.3% of parameters, verifying the efficacy of parameter-efficient methods in domain adaptation.
+- The 0.1B BioHiCL-Base outperforms the 1B BMRetriever on IR mean metrics, indicating that structured supervision signals can compensate for gaps in model scale.
+- The contrastive loss is the most critical component (IR average drops by 0.015 after removal), validating the necessity of preventing embedding collapse.
+- Fine-tuning BMRetriever using the BioHiCL method leads to a severe performance drop (0.501→0.279), because replacing the original instruction-based training objective disrupts its retrieval-specialized embedding geometry.
+- LoRA achieves performance comparable to full-parameter fine-tuning with only 0.3% of the parameters, validating the effectiveness of parameter-efficient methods for domain adaptation.
 
 ## Highlights & Insights
-- **Utilizing MeSH hierarchy as a graded supervision signal** is a natural and effective design: MeSH is an expert-maintained standardized vocabulary that inherently provides precise measurements of semantic relationships between documents. This "leveraging existing structured knowledge for supervision" approach is transferable to any domain with hierarchical label systems (e.g., legal classification, product taxonomies).
-- **Depth-weighted label similarity** encodes the domain intuition that "specific concepts are more important than abstract ones" in a simple formula: $w_j = \log(d(c_j)+1)$.
-- The high efficiency of the 0.1B model makes it suitable for large-scale practical deployment, offering a clear utility advantage over systems like BMRetriever or MedCPT that require 1B+ parameters.
+- **Utilizing the MeSH hierarchical structure as a hierarchical supervision signal** is a natural and effective design: MeSH is a standardized vocabulary maintained by experts, naturally providing a precise measure of semantic relationships between documents. This concept of "borrowing existing structured knowledge for supervision" can be transferred to any domain with hierarchical label systems (e.g., legal statute classification, product categorization).
+- **Depth-weighted label similarity** encodes the domain intuition that "specific concepts are more important than abstract concepts" in a minimalist way (via the formula $w_j = \log(d(c_j)+1)$).
+- The extreme efficiency of the 0.1B model makes it suitable for large-scale practical deployment, offering a clear practical advantage over systems like BMRetriever/MedCPT that require 1B+ parameters.
 
 ## Limitations & Future Work
-- Training is limited to 80,000 BioASQ abstracts, a much smaller scale than MedCPT (click data) or BMRetriever (multi-task data).
-- The coverage and granularity of MeSH annotations are restricted by the sets maintained by the NLM; emerging concepts may be missing.
-- The potential for combining MeSH hierarchical information with instruction-based retrieval has not yet been explored.
-- Improvement on SCIDOCS is limited (0.215 → 0.225), indicating that cross-domain generalization still needs refinement.
+- Training was conducted on only 80,000 BioASQ abstracts, a data scale significantly smaller than that of MedCPT (click data) and BMRetriever (multi-task data).
+- The coverage and granularity of MeSH annotations are limited by the label set maintained by the NLM; emerging concepts may be lacking.
+- The possibility of combining MeSH hierarchical information with instruction-based retrieval remains unexplored.
+- Improvement on SCIDOCS is limited (0.215→0.225), suggesting that cross-domain generalization still requires improvement.
 
 ## Related Work & Insights
-- **vs MedCPT (Jin et al., 2023)**: MedCPT uses query-article clicks for contrastive learning; BioHiCL uses MeSH hierarchy for finer-grained supervision.
-- **vs BMRetriever (Xu et al., 2024)**: BMRetriever uses large-scale multi-task training for a 1B model; BioHiCL achieves similar performance with 0.1B + MeSH supervision, offering higher efficiency.
-- **vs BiCA (Sinha et al., 2025)**: BiCA performs biomedical adaptation but does not utilize hierarchical label structures; BioHiCL complements this with the hierarchical dimension.
+- **vs MedCPT (Jin et al., 2023)**: The latter uses query-article clicks for contrastive learning, whereas BioHiCL uses MeSH hierarchy to provide finer-grained supervision signals.
+- **vs BMRetriever (Xu et al., 2024)**: The latter employs large-scale multi-task training for a 1B model; BioHiCL achieves equivalent performance with only 0.1B + MeSH supervision, offering higher efficiency.
+- **vs BiCA (Sinha et al., 2025)**: The latter performs biomedical adaptation but does not utilize hierarchical label structures; BioHiCL supplements the hierarchical dimension.
 
 ## Rating
-- Novelty: ⭐⭐⭐ MeSH-supervised contrastive learning is a natural combination, though the core idea is not entirely unexpected.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive coverage with multi-task evaluation (IR, similarity, QA), detailed ablations, and efficiency analysis.
-- Writing Quality: ⭐⭐⭐⭐ The methodology is described clearly and concisely, though the Related Work section is somewhat brief.
+- Novelty: ⭐⭐⭐ Contrastive learning with MeSH supervision is a natural combination, though the core idea is not entirely unexpected.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive coverage with multi-task evaluation (IR+similarity+QA), detailed ablations, and efficiency analysis.
+- Writing Quality: ⭐⭐⭐⭐ Methodology is described clearly and concisely, although Related Work is slightly thin.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

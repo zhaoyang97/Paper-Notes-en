@@ -2,13 +2,13 @@
 title: >-
   [Paper Note] Frame In, Frame Out: Measuring Framing Bias in LLM-Generated News Summaries
 description: >-
-  [ACL 2026][AIGC Detection][XSum] This paper proposes FIFO, a method that utilizes an LLM jury combined with expert calibration to measure whether LLM-generated news summaries introduce framing bias on the XSum dataset at scale. It finds that several high-capacity models exhibit higher framing rates compared to human summary baselines.
+  [ACL 2026][AIGC Detection][XSum] This paper proposes FIFO, a method that uses an LLM jury with expert calibration to measure whether LLM news summaries introduce framing bias on XSum at scale. It finds that several high-capacity models exhibit higher proportions of framed expressions compared to human summary baselines.
 tags:
   - ACL 2026
   - AIGC Detection
   - XSum
 date: 2026-05-08
-content_hash: a58a247a899ea977
+content_hash: 13c415016c21ebbe
 ---
 # Frame In, Frame Out: Measuring Framing Bias in LLM-Generated News Summaries
 
@@ -19,118 +19,118 @@ content_hash: a58a247a899ea977
 **Keywords**: Framing bias, News summarization, LLM evaluation, XSum, Expert calibration  
 
 ## TL;DR
-This paper proposes FIFO, a method that utilizes an LLM jury combined with expert calibration to measure whether LLM-generated news summaries introduce framing bias on the XSum dataset at scale. It finds that several high-capacity models exhibit higher framing rates compared to human summary baselines.
+This paper proposes FIFO, a method that uses an LLM jury with expert calibration to measure whether LLM news summaries introduce framing bias on XSum at scale. It finds that several high-capacity models exhibit higher proportions of framed expressions compared to human summary baselines.
 
 ## Background & Motivation
-**Background**: News summarization models are typically evaluated based on factual consistency, coverage, fluency, and preference scores. Particularly in single-sentence news summarization tasks like XSum, mainstream evaluations focus on "correctness" and "fluency." However, news texts are more than just sets of facts; headlines and summaries influence reader comprehension through selection, emphasis, omission, and attribution of responsibility.
+**Background**: News summarization models are typically evaluated using factual consistency, coverage, fluency, and preference scores. Especially in single-sentence news summarization tasks like XSum, mainstream evaluations focus on "correctness" and "fluency." However, news texts are not just collections of facts; headlines and summaries influence reader understanding through selection, emphasis, omission, and attribution of responsibility.
 
-**Limitations of Prior Work**: Most existing framing research stems from communication studies or supervised framing detection, where the goal is usually to determine which category of frame a news text belongs to. Summarization evaluation rarely checks whether a model introduces interpretive perspectives that were not prominent in the source text. Consequently, a summary can be factually compatible and linguistically fluent while still nudging readers toward emotional, political, or moral interpretations.
+**Limitations of Prior Work**: Existing framing research mostly originates from communication studies or supervised framing detection, where the goal is usually to determine the frame category of a text. Summarization evaluation rarely checks whether a model introduces an interpretive perspective that is not prominent in the original text. Consequently, a summary can be factually compatible and linguistically fluent yet still steer the reader toward emotional, political, or moral interpretations.
 
-**Key Challenge**: The compression process in summarization naturally requires selection and omission, while framing is an interpretive shift generated precisely by these choices. Traditional metrics treat compression as an information fidelity problem; this paper further defines it as a question of whether the "interpretive perspective is altered by the model."
+**Key Challenge**: The compression process in summarization models naturally necessitates selection and omission, which are the very mechanisms that produce framing bias through interpretive shifts. While traditional metrics view compression as an information fidelity problem, this paper views it as a question of whether the "interpretive perspective" is altered by the model.
 
-**Goal**: The authors aim to build an extensible benchmark that covers numerous models and topics while avoiding total reliance on potentially biased LLM annotations, providing analysis of framing rates across models, topics, and training settings.
+**Goal**: The authors aim to construct a scalable benchmark that covers numerous models and topics while avoiding total reliance on biased LLM annotations. It also provides an analysis of framing rates at the model, topic, and training setting levels.
 
-**Key Insight**: Instead of requiring models to identify fine-grained frame types, the paper first addresses a more fundamental question: does identifiable framing exist in the summary? This binary classification makes annotation and calibration more scalable and suitable as an evaluation dimension for summarization systems.
+**Key Insight**: Instead of requiring models to identify fine-grained frame types, the paper first addresses a more fundamental question: does the summary contain identifiable framing? This binary classification makes annotation and calibration more scalable and suitable as an evaluation dimension for summarization systems.
 
-**Core Idea**: Use a three-model LLM jury for batch framing annotation, then use small-scale expert annotations to estimate the reliability weights of the jury. This converts raw silver labels into expert-calibrated framing rates.
+**Core Idea**: Use a three-model LLM jury to batch-annotate framing, then use a small-scale expert annotation to estimate the jury's reliability weights, thereby converting raw silver labels into expert-calibrated framing rates.
 
 ## Method
-The core of FIFO is not training a new summarization model, but proposing a framing-aware summarization evaluation pipeline. It first collects XSum outputs from 27 summarization systems, then uses an LLM jury to assign Framed / Not Framed labels to each summary, and finally uses an expert-labeled set to calibrate these labels for reliability, yielding framing rates comparable across models and topics.
+The core of FIFO is not training a new summarization model, but proposing a framing-aware summarization evaluation pipeline. It collects XSum outputs from 27 summarization systems, uses an LLM jury to assign Framed / Not Framed labels to each summary, and finally performs reliability calibration using an expert-annotated set to obtain framing rates comparable across models and topics.
 
 ### Overall Architecture
-The input consists of news articles and their system-generated single-sentence summaries. For each summary, FIFO determines whether it introduces an interpretive frame via selective emphasis, evaluative language, attribution of responsibility, causal organization, or omission. The output is not a final judgment of an individual summary, but an expert-calibrated framing rate at the model, topic, or subset level.
+The input consists of news articles and single-sentence summaries generated by 27 systems. For each summary, FIFO determines if it introduces an interpretive frame via selective emphasis, evaluative language, responsibility attribution, causal organization, or omission. The output is an expert-calibrated framing rate at the model, topic, or subset level.
 
-The process consists of four steps. First, 15,499 summaries from 27 systems (covering BART, T5, FLAN-T5, GPT, Claude, LLaMA, etc.) are aggregated from XSum. Second, an LLM jury comprising GPT-4.1-nano, GPT-4o, and GPT-3.5-Turbo independently judges Framed / Not Framed, forming silver labels via majority vote. Third, 320 summaries are randomly sampled for manual annotation by framing analysis experts to obtain gold labels, yielding a Cohen's $\kappa=0.616$. Fourth, each silver label is converted into a probability weight based on the correspondence between jury and expert labels, and then aggregated into an expert-calibrated framing rate.
+The process consists of four steps. First, 15,499 summaries from 27 systems (covering BART, T5, FLAN-T5, GPT, Claude, LLaMA, etc.) are aggregated. Second, a jury composed of GPT-4.1-nano, GPT-4o, and GPT-3.5-Turbo independently judges each summary as Framed / Not Framed, forming silver labels via majority voting. Third, 320 summaries are randomly selected for manual annotation by framing analysis experts to obtain gold labels (Cohen's $\kappa=0.616$). Fourth, silver labels are converted into probability weights based on their correspondence with expert labels and aggregated into expert-calibrated framing rates.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    A["XSum News + 15,499 Single-sentence<br/>Summaries from 27 Systems"] --> B["Binary Framing Criteria<br/>Selection Emph/Omission/Eval/Attr → Framed / Not Framed"]
-    subgraph CAL["LLM Jury + Expert Gold Label Calibration"]
+    A["XSum News + 15,499 Single-sentence<br/>Summaries from 27 Systems"] --> B["Binary Framing Criterion<br/>Emphasis/Omission/Evaluation/Attribution → Framed/Not Framed"]
+    subgraph CAL["LLM Jury + Expert Gold Calibration"]
         direction TB
-        C["LLM Jury (GPT-4.1-nano / GPT-4o / GPT-3.5)<br/>Independent Judgments + Majority Vote → Silver Labels"]
-        D["Experts Label 320 Items → Gold Labels<br/>Cohen's κ=0.616"]
-        C --> E["Calculate Conditional Reliability (Jury ↔ Expert)<br/>Framed 0.778 / Not Framed 0.163"]
+        C["LLM Jury（GPT-4.1-nano / GPT-4o / GPT-3.5）<br/>Independent Judgment + Majority Vote → Silver Labels"]
+        D["Expert Annotation (320 items) → Gold Labels<br/>Cohen's κ=0.616"]
+        C --> E["Calculate Conditional Reliability<br/>Framed 0.778 / Not Framed 0.163"]
         D --> E
     end
     B --> C
     B --> D
-    E --> F["Expert-Calibrated Framing Rate<br/>FR(S) = average w_s"]
-    F --> G["Framing Rate Comparison<br/>(Model / Topic / Fine-tuning level)"]
+    E --> F["Expert-Calibrated Framing Rate<br/>FR(S) = Mean w_s"]
+    F --> G["Framing Rate Comparison<br/>Model / Topic / Fine-tuning Levels"]
 ```
 
 ### Key Designs
 
-**1. Binary framing operationalization: Compressing complex framing theory into an evaluable summary attribute—whether the summary possesses an interpretive frame.**
+**1. Binary framing operationalization: Compressing complex framing theory into an evaluable summary attribute—does this summary have an interpretive frame?**
 
-While fine-grained frame taxonomies in communication studies (attribution of responsibility, moral evaluation, conflict framing, etc.) are suitable for content analysis, large-scale evaluation of summarization systems requires a stable, extensible criterion. FIFO thus asks a binary question: when a summary makes a certain interpretation prominent through selective emphasis, omission, evaluative wording, causal organization, or attribution of responsibility, it is labeled as Framed; if it only states the core event without introducing a clear interpretive perspective, it is labeled as Not Framed. This coarse granularity trades detail for annotation consistency and scalability, making it suitable as a new evaluation dimension.
+While fine-grained frame taxonomies from communication studies (responsibility, morality, conflict, etc.) are suitable for content analysis, large-scale evaluation of summarization systems requires a stable, scalable criterion. FIFO simplifies this to a binary question: when a summary makes a certain interpretation prominent through selective emphasis, omission, evaluative wording, causal organization, or attribution of responsibility, it is labeled as Framed; if it only states core events without a clear interpretive perspective, it is labeled Not Framed. This coarseness facilitates annotation consistency and scalability.
 
-**2. LLM jury + Expert gold label calibration: Finding a balance between large-scale coverage and expert reliability.**
+**2. LLM jury + Expert gold calibration: Balancing large-scale coverage with expert reliability.**
 
-Relying solely on experts to label 15,499 summaries is too costly, while relying solely on LLMs risks treating the models' own biases as ground truth. FIFO allows three models (GPT-4.1-nano, GPT-4o, GPT-3.5-Turbo) to judge independently and use majority voting to produce silver labels. Then, 320 summaries are sampled for expert annotation to obtain gold labels, reaching a Cohen's $\kappa=0.616$. Crucially, these gold labels estimate systematic bias: the probability that an expert agrees a summary is Framed when the jury says Framed is 77.8%, and the probability the expert sees it as Framed when the jury says Not Framed is 16.3%. These conditional probabilities bridge "cheap but noisy LLM labels" and "expensive but reliable expert judgments."
+Manually annotating 15,499 summaries is too costly, while relying solely on LLMs risks treating model bias as ground truth. FIFO uses three models (GPT-4.1-nano, GPT-4o, GPT-3.5-Turbo) for independent voting to produce silver labels. Then, 320 items are manually annotated by experts to calculate Cohen's $\kappa=0.616$. Crucially, these gold labels are used to estimate the jury's systematic bias: the probability that an expert agrees a summary is Framed when the jury says it is "Framed" is 77.8%, while the probability that an expert still considers it Framed when the jury says "Not Framed" is 16.3%. These conditional probabilities bridge "cheap but noisy LLM labels" and "expensive but reliable expert judgments."
 
-**3. Expert-calibrated framing rate: Converting framing frequency from raw binary silver labels into an estimate that acknowledges jury error.**
+**3. Expert calibrated framing rate: Converting the framing frequency of a model or topic from raw silver labels to estimates that acknowledge jury error.**
 
-Simply counting the proportion of "jury-labeled Framed" cases assumes LLM labels are ground truth, which would be systematically biased. FIFO uses calibrated weight aggregation: for a summary set $S$,
+Simply counting the proportion of jury-labeled "Framed" items assumes LLM labels are ground truth, leading to systematic bias. FIFO uses calibrated weight aggregation: for a summary set $S$,
 
 $$FR(S)=\frac{1}{|S|}\sum_{s\in S}w_s,$$
 
-where summaries labeled Framed by the jury take $w_s=0.778$ and those labeled Not Framed take $w_s=0.163$, corresponding to the expert agreement rates. This approach acknowledges jury fallibility while maintaining large-scale statistical power to compare the effects of model capacity, fine-tuning, and news topics on framing.
+where $w_s=0.778$ for summaries labeled Framed by the jury, and $w_s=0.163$ for those labeled Not Framed. This acknowledges jury fallibility while maintaining the power of large-scale statistics to compare the effects of model capacity, fine-tuning methods, and news topics.
 
 ### Loss & Training
-Ours does not train a new generative model nor propose a neural loss function. The "training strategy" is closer to an evaluation calibration strategy: using a prompt-based LLM jury to generate silver labels, followed by expert gold labels to estimate conditional reliability, and finally aggregating reliability weights into a framing rate. This design allows FIFO to be used as an external evaluation tool for various summarization systems rather than being dependent on a specific architecture.
+This work does not train a new generative model nor propose a neural network loss function. its "training strategy" is closer to an evaluation calibration strategy: utilizing a prompt-based LLM jury to generate silver labels, followed by expert gold labels to estimate conditional reliability, and finally aggregating framing rates using reliability weights. This design allows FIFO to serve as an external evaluation tool for various summarization systems.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Item | Value / Setting | Function | Remarks |
+| Item | Value / Setting | Role | Notes |
 |------|-------------|------|------|
 | Summary Source | XSum | Single-doc single-sentence summary | Strong compression easily exposes selective emphasis |
-| Number of Systems | 27 Summarization Systems | Model-level comparison | Covers encoder-decoder and decoder-only models |
-| Silver Label Scale | 15,499 summaries | Large-scale framing analysis | Generated by 3-model LLM jury majority vote |
-| Expert Gold Labels | 320 summaries | Calibration and validation | Expert vs. Jury Cohen's $\kappa=0.616$ |
-| Expert Agreement (Jury = Framed) | 77.8% | Calibration weight | Corresponds to $w=0.778$ |
-| Expert Agreement (Jury = Not Framed) | 16.3% | Calibration weight | Corresponds to $w=0.163$ |
+| System Count | 27 summarization systems | Model-level comparison | Covers encoder-decoder and decoder-only models |
+| Silver Label Scale | 15,499 summaries | Large-scale framing analysis | Generated by majority vote of three-model LLM jury |
+| Expert Gold Labels | 320 summaries | Calibration and validation | Expert-jury Cohen's $\kappa=0.616$ |
+| Expert Agreement for Jury "Framed" | 77.8% | Calibration weight | Corresponds to $w=0.778$ |
+| Expert "Framed" when Jury "Not Framed" | 16.3% | Calibration weight | Corresponds to $w=0.163$ |
 
 ### Ablation Study
 
-| Analysis Dimension | Key Finding | Description |
+| Analysis Dimension | Key Findings | Explanation |
 |----------|----------|------|
-| Model Capacity / Pre-training | Large models have significantly higher overall framing rates, $p=0.0012$ | Paradoxically, low rates in small models may stem from lower output quality |
-| XSum Fine-tuning | Fine-tuned models have significantly lower framing rates than base models, $p=0.0006$ | Task-specific fine-tuning may constrain summarization style |
-| Intra-family Size Effect | Pearson $r=-0.44$ | Larger models within the same family have slightly lower rates; data/settings matter more than parameters |
-| Topic Effect | Politics (Human baseline ~53%), Health/Science (Human baseline ~31%) | Several high-capacity models exceed human baselines in these categories |
-| Length Correlation | Point-biserial $r_{pb}\approx0.1904$ | Framing is weakly correlated with length but cannot be fully explained by it |
+| Model Capacity / Pre-training | Large models have significantly higher framing rates ($p=0.0012$) | Lower framing rates in small models may partly stem from poor output quality |
+| XSum Fine-tuning | Fine-tuned models have significantly lower framing rates than base models ($p=0.0006$) | Task-specific fine-tuning may constrain summarization style |
+| Size Effect within Families | Pearson $r=-0.44$ | Larger models within the same family have slightly lower framing rates, suggesting training data/settings outweigh parameter count |
+| Topic Effect | Political news human baseline ~53%, Health & Science ~31% | Multiple high-capacity models exceed human baselines in these categories |
+| Relationship with Length | Point-biserial $r_{pb}\approx0.1904$ | Framing is weakly correlated with length but cannot be fully explained by it |
 
 ### Key Findings
-- FIFO demonstrates that framing is not an occasional phenomenon of specific models but an evaluation dimension that varies systematically with model capability, training methods, and news topics.
-- Large models are more likely to generate linguistically rich and interpretive summaries, which improves readability but increases the room for introducing framing.
-- Fine-tuning on XSum can reduce the framing rate, suggesting that task data and style constraints might be more important than simply scaling up models.
-- The data indicates that "stronger models" are not naturally more neutral. High-capacity models may be more prone to shaping interpretive frames because they are better at organizing narratives, providing context, and generating evaluative language.
+- FIFO demonstrates that framing is not an isolated phenomenon in specific models but an evaluation dimension that varies systematically with model capability, training methods, and news topics.
+- Large models are more likely to produce summaries with rich language and stronger interpretations, which improves readability but increases the space for introducing framing.
+- XSum fine-tuning reduces framing rates, suggesting that task data and stylistic constraints may be more important than simply increasing model size.
+- High-capacity models exceed human baselines in framing for specific sensitive topics like politics and health.
 
 ## Highlights & Insights
-- The most valuable contribution is translating framing from a communication study concept into a summarization evaluation metric. It reminds us that factually correct summaries can still be biased in "how the facts are told."
-- The expert calibration weights are pragmatic. The authors do not pretend the LLM jury is ground truth but use small-scale gold labels to estimate systematic error, which is more credible than reporting raw LLM annotation proportions.
-- While binary framing is coarse, it is effective as a first-layer risk screening. Future summarization systems could use FIFO-like metrics to identify high-risk topics or models before conducting fine-grained frame type analysis.
-- The results imply that "stronger models" do not naturally lead to more neutrality. High-capacity models may be more adept at narrative organization and evaluative language, making them more likely to shape interpretive frameworks.
+- The most valuable contribution is Transforming framing from a communication studies concept into a summarization evaluation metric. It reminds us that factually correct summaries can still be biased in "how they tell the facts."
+- The expert calibration weights are pragmatic. Instead of pretending the LLM jury provides ground truth, the authors use a small gold set to estimate systematic error, which is more credible than reporting raw LLM proportions.
+- While binary framing is coarse, it is effective for initial risk screening. Future systems could use FIFO-like metrics to identify high-risk topics or models before performing fine-grained analysis.
+- The results imply that "stronger models" are not naturally more neutral. High-capacity models, being better at organizing narratives and generating evaluative language, may more easily shape interpretive frames.
 
 ## Limitations & Future Work
 - FIFO relies on an LLM jury for silver labels; despite expert calibration, annotations may still inherit the blind spots or socio-cultural biases of the jury models.
-- The dataset only covers English single-document summaries and XSum style, which does not directly explain framing behavior in multi-document, multilingual, or long-form news generation.
-- The binary setting cannot specify which type of frame is present, such as attribution of responsibility, moral evaluation, conflict, or economic consequences.
-- Future work could extend to multilingual news, different media ecosystems, and fine-grained frame taxonomies, combining them with factuality/stance/sentiment metrics for a more comprehensive news summarization evaluation.
+- The dataset only covers English single-document summaries and XSum style, which does not directly translate to framing behavior in multi-document, multilingual, or long-form news generation.
+- The binary setting cannot specify the type of frame (e.g., responsibility, morality, conflict).
+- Future work could extend to multilingual news, different media ecosystems, and fine-grained frame taxonomies, integrated with factuality, stance, and sentiment metrics.
 
 ## Related Work & Insights
-- **vs. Traditional framing detection**: Traditional work identifies which frame a text expresses (content analysis); this paper focuses on whether a generated summary introduces framing (evaluation of generation systems).
-- **vs. ROUGE / factuality / coherence**: These metrics measure information coverage, factual correctness, and linguistic quality; FIFO measures interpretive shift, filling the gap for "factually compatible but narratively biased" content.
-- **vs. LLM-as-a-judge**: Standard LLM evaluation treats model output as a final verdict; FIFO uses expert gold labels to calibrate judge reliability, inspiring other subjective evaluation tasks to adopt small-scale expert calibration.
+- **vs. Traditional framing detection**: Traditional work identifies what frame a text expresses (content analysis); this work focuses on whether the generated summary *introduces* framing (evaluation task).
+- **vs. ROUGE / factuality / coherence**: These measure information coverage and linguistic quality; FIFO measures interpretive shift, filling the gap for "factually compatible but narratively biased" summaries.
+- **vs. LLM-as-a-judge**: Standard LLM judges treat model output as the final verdict; FIFO uses expert gold labels to calibrate judge reliability, inspiring similar approaches for other subjective evaluation tasks.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐☆ Systematically introduces framing bias into summarization evaluation with clear problem definition.
-- Experimental Thoroughness: ⭐⭐⭐⭐☆ Covers 27 systems and topic analysis; expert set is small but calibrated; lacks multilingual/multi-doc scenarios.
-- Writing Quality: ⭐⭐⭐⭐☆ Motivation, examples, and calibration formulas are clear.
-- Value: ⭐⭐⭐⭐⭐ Highly practical for news summarization, media generation, and LLM content governance; a dimension likely to be reused in subsequent evaluation work.
+- Novelty: ⭐⭐⭐⭐☆ Systematically introduces framing bias to summarization evaluation with a clear definition.
+- Experimental Thoroughness: ⭐⭐⭐⭐☆ Covers 27 systems and topic analysis; expert set is small but calibrated.
+- Writing Quality: ⭐⭐⭐⭐☆ Motivation and calibration formulas are clear.
+- Value: ⭐⭐⭐⭐⭐ Highly practical for news summarization and LLM governance; likely to be reused in future evaluation frameworks.
 
 <!-- RELATED:START -->
 
@@ -138,9 +138,9 @@ Ours does not train a new generative model nor propose a neural loss function. T
 
 ## Related Papers
 
-- [\[CVPR 2026\] FRAME: Forensic Routing and Adaptive Multi-path Evidence Fusion for Image Manipulation Detection](../../CVPR2026/aigc_detection/frame_forensic_routing_and_adaptive_multi-path_evidence_fusion_for_image_manipul.md)
-- [\[AAAI 2026\] BAID: A Benchmark for Bias Assessment of AI Detectors](../../AAAI2026/aigc_detection/baid_a_benchmark_for_bias_assessment_of_ai_detectors.md)
+- [\[CVPR 2026\] Common Inpainted Objects In-N-Out of Context](../../CVPR2026/aigc_detection/common_inpainted_objects_in-n-out_of_context.md)
 - [\[ACL 2025\] Comparing LLM-generated and human-authored news text using formal syntactic theory](../../ACL2025/aigc_detection/llm_vs_human_formal_syntax.md)
+- [\[AAAI 2026\] BAID: A Benchmark for Bias Assessment of AI Detectors](../../AAAI2026/aigc_detection/baid_a_benchmark_for_bias_assessment_of_ai_detectors.md)
 - [\[ACL 2026\] DetectRL-X: Towards Reliable Multilingual and Real-World LLM-Generated Text Detection](detectrl-x_towards_reliable_multilingual_and_real-world_llm-generated_text_detec.md)
 - [\[ACL 2026\] Temporal Flattening in LLM-Generated Text: Comparing Human and LLM Writing Trajectories](temporal_flattening_in_llm-generated_text_comparing_human_and_llm_writing_trajec.md)
 

@@ -2,13 +2,13 @@
 title: >-
   [Paper Note] TGV-KV: Text-Grounded KV Eviction for Vision-Language Models
 description: >-
-  [ICML 2026][Multimodal VLM][KV cache eviction] TGV-KV migrates KV eviction strategies designed for text-only LLMs to VLMs through a "text-grounded vision KV" trio: per-layer budgeting based on text-vision attention, re-ranking visual importance using anchor text tokens, and prioritizing text KV during eviction. At a 5% retention rate on LLaVA-NeXT/Qwen3-VL, it main
+  [ICML 2026][Multimodal VLM][KV cache eviction] TGV-KV introduces a triplet of mechanisms—layer-wise budgeting based on text-vision attention, re-ranking visual importance using dominant text tokens, and prioritizing text KV during eviction—to successfully migrate KV eviction strategies from LLMs to VLMs. Under a 5% retention rate, it maintains performance near full
 tags:
   - ICML 2026
   - Multimodal VLM
   - KV cache eviction
 date: 2026-05-08
-content_hash: d8c823b88520d6d1
+content_hash: 282eb2fdcb5361f9
 ---
 # TGV-KV: Text-Grounded KV Eviction for Vision-Language Models
 
@@ -16,132 +16,132 @@ content_hash: d8c823b88520d6d1
 **arXiv**: [2606.03075](https://arxiv.org/abs/2606.03075)  
 **Code**: "Code Link" provided in the paper, official repository pending open source  
 **Area**: Multimodal VLM  
-**Keywords**: VLM Inference Acceleration, KV cache eviction, Inter-modal Attention, Text-grounded, Budget Allocation  
+**Keywords**: VLM Inference Acceleration, KV cache eviction, Inter-modal Attention, Text-grounding, Budget Allocation  
 
 ## TL;DR
-TGV-KV migrates KV eviction strategies designed for text-only LLMs to VLMs through a "text-grounded vision KV" trio: per-layer budgeting based on text-vision attention, re-ranking visual importance using anchor text tokens, and prioritizing text KV during eviction. At a 5% retention rate on LLaVA-NeXT/Qwen3-VL, it maintains accuracy close to full KV while increasing throughput by 52.6%.
+TGV-KV introduces a triplet of mechanisms—layer-wise budgeting based on text-vision attention, re-ranking visual importance using dominant text tokens, and prioritizing text KV during eviction—to successfully migrate KV eviction strategies from LLMs to VLMs. Under a 5% retention rate, it maintains performance near full KV levels on LLaVA-NeXT and Qwen3-VL, while achieving a 52.6% throughput increase.
 
 ## Background & Motivation
 
-**Background**: VLMs adopt the autoregressive generation paradigm of LLMs, caching K/V for all historical tokens to avoid recomputation. However, high-resolution images and long videos occupy thousands or tens of thousands of tokens. KV cache memory grows linearly with context, forming the primary bottleneck in VLM inference. A complete set of KV cache eviction methods has been developed for LLMs, such as H2O, SnapKV, PyramidKV, and Ada-KV, which decide which KV to discard based on attention scores or observation windows.
+**Background**: VLMs follow the autoregressive generation paradigm of LLMs, caching K/V for all historical tokens to avoid recomputation. However, high-resolution images and long videos can occupy thousands or even tens of thousands of tokens. The KV cache memory grows linearly with context length, serving as the primary bottleneck in VLM inference. A suite of KV cache eviction methods has been developed for LLMs, such as H2O, SnapKV, PyramidKV, and Ada-KV, which decide which KV to discard based on attention scores or observation windows.
 
-**Limitations of Prior Work**: Directly applying these LLM-validated eviction methods to VLMs results in severe performance degradation. Experiments on LLaVA with a 5% retention rate show that SnapKV's performance on ChartQA drops from 18.0 to 0.4, rendering it almost entirely ineffective. This indicates that LLM-based KV importance metrics are unsuitable for VLMs.
+**Limitations of Prior Work**: Directly applying these LLM-verified eviction methods to VLMs leads to severe performance degradation. Experiments on LLaVA with a 5% retention rate show that SnapKV's performance on ChartQA drops from 18.0 to 0.4, becoming almost entirely ineffective. This indicates that importance metrics for LLMs are not applicable to VLMs.
 
-**Key Challenge**: The authors attribute this collapse to the significant "modality gap" in VLMs, verified by three experimental observations: (1) Visual tokens are highly homogeneous, while text tokens are highly diverse; (2) Text-vision cross-modal attention regions are "low-attention troughs," with intra-modal attention being much stronger; (3) When calculating cumulative attention across all layers, sharp jumps appear at the text-visual boundary, causing most text KV to be evicted first when sorted by "cumulative attention"—yet text KV is the most fragile part of a VLM.
+**Key Challenge**: The authors attribute this collapse to the significant "modality gap" in VLMs, verified by three experimental observations: (1) Visual tokens are highly homogeneous, while text tokens are highly diverse; (2) The text-vision cross-modal attention region is a "low attention valley," with intra-modal attention being much stronger than cross-modal attention; (3) When cumulative attention across all layers is summed, sharp jumps occur at the text-vision boundary, causing most text KV to be evicted first when sorting by "cumulative attention"—despite text KV being the most fragile part of a VLM.
 
-**Goal**: Design a "VLM-native" KV eviction pipeline without fine-tuning the model, simultaneously solving three sub-problems: how to allocate budgets across layers, how to measure cross-modal KV importance, and which modality to sacrifice when budgets are extremely tight.
+**Goal**: To design a "VLM-native" KV eviction pipeline without fine-tuning, simultaneously solving three sub-problems: how to allocate budgets across layers, how to measure cross-modal KV importance, and which modality to discard when budgets are tight.
 
-**Key Insight**: Systematic attention deconstruction yields three key observations: inter-layer budgets should be determined by text-vision (TV) cross-modal attention intensity; KV importance should be determined by TV+TT rather than VV; and text KV is extremely sensitive while vision KV is highly redundant. Thus, text KV should be prioritized when budgets are limited.
+**Key Insight**: Architectural deconstruction reveals three key observations: inter-layer budgets should be determined by text-vision (TV) cross-modal attention strength; KV importance should be governed by TV+TT rather than VV; and since text KV is sensitive while vision KV is redundant, text KV should be prioritized under tight budgets.
 
-**Core Idea**: Use text to "ground" the entire eviction process—text is not just an object to be evicted, but rather the anchor for judging "which visual KV are important."
+**Core Idea**: Use text to "ground" the entire eviction process—text is not just an object to be evicted but an anchor for determining "which visual tokens are important."
 
 ## Method
 
 ### Overall Architecture
-TGV-KV is a plug-in KV cache controller deployed after prefill and before the decoding stage; it does not modify model weights or require calibration datasets. The inference flow takes a unified sequence $\mathbf{X} \in \mathbb{R}^{(N_v+N_t) \times d}$ concatenated from $N_v$ visual tokens and $N_t$ text tokens. After the VLM completes a prefill to obtain the attention matrix $\mathbf{A}_l$ for each layer, TGV-KV triggers three sub-modules sequentially: (1) TVB slices the total budget $B$ into $b_l$ per layer according to TV attention distribution; (2) TWR calculates a "text-weighted" importance score for all KV within each layer; (3) TPR selects the retention set based on TopK importance while mandating that text KV be prioritized. The retained KV are accessed during decoding, and KV for newly generated tokens are directly appended.
+TGV-KV is a plug-in KV cache controller deployed after the prefill phase and before the decode phase; it does not modify model weights or require calibration datasets. The input consists of $N_v$ visual tokens from the vision encoder concatenated with $N_t$ text tokens into a unified sequence $\mathbf{X} \in \mathbb{R}^{(N_v+N_t) \times d}$. After the VLM completes a prefill to obtain attention matrices $\mathbf{A}_l$ for each layer, TGV-KV triggers three sub-modules: (1) TVB partitions the total budget $B$ into layer budgets $b_l$ using the inter-layer distribution of TV attention; (2) TWR calculates "text-weighted" importance scores for all KV within each layer; (3) TPR selects the retention set based on TopK importance while mandating that all text KV be prioritized. The retained KV are accessed during the decoding phase, and new token KV are simply appended.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["Visual tokens + Text tokens<br/>concatenated into sequence X"] --> B["VLM Prefill<br/>outputs attention matrices A_l"]
-    B --> C["Text-Vision Budgeting (TVB)<br/>Layer budget b_l based on<br/>TV cross-modal intensity"]
-    C --> D["Text-Weighted Ranking (TWR)<br/>Identify pivot text tokens via TT<br/>Weight TV for vision importance"]
+    A["Concatenate vision + text tokens<br/>into unified sequence X"] --> B["VLM prefill produces<br/>layer attention matrices A_l"]
+    B --> C["Text-Vision Budgeting (TVB)<br/>Allocates layer budget b_l based on<br/>TV cross-modal attention strength"]
+    C --> D["Text-Weighted Ranking (TWR)<br/>Identifies dominant text tokens via TT<br/>to weight visual importance via TV"]
     D -->|"b_l > N_t"| E["Text-Prioritised Retention (TPR)<br/>Keep all text KV<br/>TopK vision for remaining slots"]
-    D -->|"b_l ≤ N_t"| F["Text-Prioritised Retention (TPR)<br/>Discard all vision<br/>TopK within text tokens"]
-    E --> G["Retained KV enter decode<br/>Append new token KV"]
+    D -->|"b_l ≤ N_t"| F["Text-Prioritised Retention (TPR)<br/>Discard all vision KV<br/>TopK within text tokens"]
+    E --> G["Retained KV enter decode phase<br/>New token KV are appended"]
     F --> G
 ```
 
 ### Key Designs
 
-**1. Text-Vision Budgeting (TVB): Using cross-modal intensity as a "barometer" for layer budgets**
+**1. Text-Vision Budgeting (TVB): Using Cross-Modal Attention Strength as a Budget Barometer**
 
-The first step in KV eviction is deciding how much to retain per layer. The authors found that the intensity of "cross-modal information fusion" varies significantly across layers; layers with more intense fusion deserve more KV. TVB extracts the text-to-vision sub-block $\mathbf{A}_l^{(TV)} = \mathrm{softmax}(\mathbf{Q}_l^{(T)} [\mathbf{K}_l^{(V)}]^{\mathsf T}) \in \mathbb{R}^{N_t \times N_v}$ from the $l$-th layer's attention, calculates the "total intensity of text requesting information from vision," and normalizes this into a budget ratio $b_l^{(TV)} = \sum_{i,j} [\mathbf{A}_l^{(TV)}]_{ij} / \sum_{l'} \sum_{i,j} [\mathbf{A}_{l'}^{(TV)}]_{ij}$. Multiplying this by the global budget $B$ gives the KV capacity for that layer. Comparative experiments show that using VV, TT, or uniform allocation at a 5% retention rate lags behind TV—only TV intensity directly corresponds to "cross-modal fusion intensity," allowing budgets to naturally lean toward layers with the heaviest fusion, making it more robust than the regularized pyramid of PyramidKV.
+The first step in KV eviction is determining how many KV to retain per layer. The authors found that the intensity of "cross-modal information fusion" varies significantly across layers; layers with higher fusion deserve larger budgets. TVB extracts the text-to-vision sub-block $\mathbf{A}_l^{(TV)} = \mathrm{softmax}(\mathbf{Q}_l^{(T)} [\mathbf{K}_l^{(V)}]^{\mathsf T}) \in \mathbb{R}^{N_t \times N_v}$ from the $l$-th layer's attention and sums it to find the "total intensity of text requesting information from vision." This is normalized across layers as $b_l^{(TV)} = \sum_{i,j} [\mathbf{A}_l^{(TV)}]_{ij} / \sum_{l'} \sum_{i,j} [\mathbf{A}_{l'}^{(TV)}]_{ij}$. Multiplying this by the global budget $B$ gives the layer's KV quota. Comparative experiments show that swapping this with VV, TT, or uniform allocation under 5% retention leads to inferior performance. TV intensity directly corresponds to "fusion intensity," allowing the budget to naturally shift toward layers with high integration, proving more robust than the fixed pyramid allocation in PyramidKV.
 
-**2. Text-Weighted Ranking (TWR): Letting "pivot text tokens" weight and re-rank visual KV**
+**2. Text-Weighted Ranking (TWR): Re-weighting Visual KV via Dominant Text Tokens**
 
-Each KV within a layer needs an importance score. The challenge is that visual importance must change with user instructions—the visual regions retained for "describe this image" versus "is there a taxi by the streetlight" should be completely different. TWR first identifies "pivot text tokens" (vertical bright lines in the attention map) that are consistently attended to: it calculates the attention level for each text token via the TT sub-block, averaged by the number of subsequent tokens $w_{l,j} = \sum_{i \ge j} [\mathbf{A}_l^{(TT)}]_{ij} / (N_t - j + 1)$, and normalizes it to $\tilde w_{l,i}$. These weights re-weight each row of $\mathbf{A}_l^{(TV)}$ to get the final visual token score $s_{l,j}^{(V)} = \sum_i \tilde w_{l,i} [\mathbf{A}_l^{(TV)}]_{ij}$. For the text side, the column sum is taken directly $s_{l,j}^{(T)} = \sum_{i \ge j} [\mathbf{A}_l^{(TT)}]_{ij}$. Ablations show that using pure self-attention or VV+TT as importance metrics leads to collapse (ChartQA @ 5% drops to ~4 points), whereas TV+TT weighting ensures visual KV retention aligns with the current query.
+Within a layer, each KV needs an importance score. A key challenge is that visual importance must change according to user instructions—"describe this image" vs. "is there a taxi next to the streetlight" require different visual regions. TWR first identifies "dominant text tokens" (vertical lines in the attention map) that are persistently attended to. For the TT sub-block, the attention received by each text token is averaged over its subsequent tokens: $w_{l,j} = \sum_{i \ge j} [\mathbf{A}_l^{(TT)}]_{ij} / (N_t - j + 1)$, and normalized to $\tilde w_{l,i}$. These weights are used to re-weight each row of $\mathbf{A}_l^{(TV)}$ to obtain the final visual token score $s_{l,j}^{(V)} = \sum_i \tilde w_{l,i} [\mathbf{A}_l^{(TV)}]_{ij}$. For text tokens, the column sum is taken directly: $s_{l,j}^{(T)} = \sum_{i \ge j} [\mathbf{A}_l^{(TT)}]_{ij}$. Ablations show that using pure self-attention or VV+TT as metrics leads to collapse (ChartQA drops to ~4 at 5% budget), while TV+TT weighting ensures visual retention aligns with the query.
 
-**3. Text-Prioritised Retention (TPR): Filling budgets with text first, then vision**
+**3. Text-Prioritised Retention (TPR): Filling Text Budget Before Vision**
 
-The retention set is selected based on budget and scores. A minimal random eviction experiment established a hard constraint—at a 5% retention rate, randomly prioritizing vision eviction maintains 10–46 points, while randomly prioritizing text eviction causes a drop to 0.2 points. This indicates that text KV is extremely sensitive while vision KV is redundant; any "fair sorting by score" for text is unsafe. TPR thus uses a piecewise rule: if the layer budget $b_l > N_t$, all text KV are unconditionally retained, and the remaining $b_l - N_t$ slots are filled by visual TopK based on $s_{l,j}^{(V)}$. If $b_l \le N_t$, vision is discarded entirely, and TopK is selected only within the text tokens based on $s_{l,j}^{(T)}$. This asymmetric strategy bakes the "text must not be lost" constraint directly into the algorithm.
+The final retention set is selected based on budget and scores. Simple random eviction experiments show that prioritize-evicting vision maintains scores of 10–46, while prioritize-evicting text drops performance to 0.2. This proves text KV is extremely sensitive while vision KV is redundant, making any "fair score-based sorting" for text risky. TPR uses a piecewise rule: if the layer budget $b_l > N_t$, all text KV are unconditionally retained, and the remaining $b_l - N_t$ slots are allocated to visual TopK via $s_{l,j}^{(V)}$. If $b_l \le N_t$, no visual KV are kept, and TopK text tokens are selected via $s_{l,j}^{(T)}$. This asymmetric strategy embeds the "text cannot be lost" constraint directly into the algorithm.
 
 ### Loss & Training
-TGV-KV is a pure inference-time algorithm. It introduces no additional training or fine-tuning and requires no calibration datasets. All budget and importance calculations are based on the attention matrices produced during a single prefill pass, allowing it to be deployed as a plug-and-play solution for any VLM based on standard self-attention.
+TGV-KV is a pure inference-time algorithm. It introduces no additional training or fine-tuning and requires no calibration datasets. All budget and importance calculations are based on the attention matrix produced during a single prefill pass, enabling plug-and-play deployment on any standard self-attention-based VLM.
 
 ## Key Experimental Results
 
 ### Main Results
 
-The authors evaluated TGV-KV on LLaVA-1.5-7B / LLaVA-NeXT-7B / LLaVA-OV / Qwen3-VL-4B/8B across tasks including ChartQA, DocVQA, VizWiz, TextVQA, TextCaps, COCO-Caption, and Video-TT, comparing it with baselines like StreamingLLM, SnapKV, H2O, ElasticCache, and PrefixKV. The table below extracts representative LLaVA results at a 5% extreme retention rate:
+Evaluated on LLaVA-1.5-7B, LLaVA-NeXT-7B, LLaVA-OV, and Qwen3-VL-4B/8B across tasks including ChartQA, DocVQA, VizWiz, TextVQA, TextCaps, COCO-Caption, and Video-TT. Baseline comparisons include StreamingLLM, SnapKV, H2O, ElasticCache, and PrefixKV. Representative results for LLaVA at a 5% retention rate (data from abstract and Table 2):
 
-| Model / Task | Metric | Vanilla | TGV-KV (5%) | vs. Vanilla |
+| Model / Task | Metric | Full KV (Vanilla) | Ours (5%) | Delta vs Full KV |
 |--------|------|------|------|------|
 | LLaVA-NeXT / VizWiz-VQA | Acc. | 100% | 99.2% | -0.8 pt |
 | Qwen3-VL-8B / DocVQA | ANLS | 100% | 92.5% | -7.5 pt |
-| LLaVA-1.5 / ChartQA (vs best baseline) | Relaxed Acc. | 18.0 | Significantly leads (+33.0 pt relative to best baseline) | / |
+| LLaVA-1.5 / ChartQA (vs best baseline) | Relaxed Acc. | 18.0 | Significantly Leaps (+33.0 pt relative to best baseline) | / |
 | LLaVA-NeXT End-to-End | Throughput | 1.0× | 1.526× | +52.6% |
 | All Models | KV Memory | 1.0× | 0.05× | -95% |
 
-TGV-KV approaches full KV accuracy even under extreme compression, showing particular stability on the LLaVA series. On dense text OCR tasks like DocVQA, it retains over 90% ANLS with only 5% budget.
+TGV-KV approaches Full KV accuracy even under extreme compression, particularly for LLaVA series. On DocVQA, a dense text OCR task, it maintains over 90% ANLS at a 5% budget.
 
 ### Ablation Study
 
-The table below summarizes three key comparisons from Table 1 of the paper (LLaVA, 5% retention rate), verifying the necessity of each TGV-KV module:
+Summary of three key controls from Table 1 (LLaVA, 5% retention) to verify module necessity:
 
-| Setting | ChartQA ↑ | TextVQA-lite ↑ | Description |
+| Setting | ChartQA ↑ | TextVQA-lite ↑ | Mechanism |
 |------|---------|---------|------|
 | Vanilla | 18.0 | 47.9 | Full KV |
-| Uniform layer budget + TV+TT importance | 14.3 | 36.4 | Without TVB |
-| TV layer budget + TV+TT importance (≈TVB) | 14.3 | 36.4 | TVB provides superior layer structure |
-| Uniform + Observation Window | 0.4 | 8.7 | Collapses if importance metric is replaced |
-| Uniform + Pure self-attention | 4.8 | 23.5 | LLM-based methods fail |
-| Uniform + VV+TT importance | 4.6 | 22.8 | Fails without TV |
-| Uniform + TV+TT importance | 11.0 | 37.3 | TWR prototype works effectively |
-| Uniform + Prioritize text eviction | 0.2 | 4.4 | Verifies the lower bound for TPR |
-| Uniform + Prioritize vision eviction | 10.0 | 31.0 | Text protection is key |
+| Uniform layer budget + TV+TT Importance | 14.3 | 36.4 | No TVB |
+| TV layer budget + TV+TT Importance (≈TVB) | 14.3 | 36.4 | TVB provides superior inter-layer structure |
+| Uniform + Observation Window | 0.4 | 8.7 | Importance metric swap leads to collapse |
+| Uniform + Pure self-attention | 4.8 | 23.5 | LLM-style failure |
+| Uniform + VV+TT Importance | 4.6 | 22.8 | Fails without TV |
+| Uniform + TV+TT Importance | 11.0 | 37.3 | TWR effectiveness |
+| Uniform + Prioritize evicting text | 0.2 | 4.4 | Verifies TPR importance |
+| Uniform + Prioritize evicting vision | 10.0 | 31.0 | Text protection is critical |
 
 ### Key Findings
-- The "importance metric," rather than the "layer budget," is the primary factor determining collapse—observation windows or pure self-attention drop performance to single digits at 5%, while introducing text-vision attention immediately restores it to double digits.
-- "Using text as an anchor" is a mandatory conclusion for VLM KV eviction: random prioritization of text eviction drops ChartQA to 0.2, and the 99.2% retention on VizWiz tasks can only be stabilized with the help of TPR.
-- The TV intensity signal in TVB allows layer budgets to naturally shift toward middle layers where "information fusion is most intense," proving more robust than the fixed pyramid allocation of PyramidKV.
-- The +52.6% throughput gain primarily stems from the 95% memory compression, enabling larger batch sizes and longer sequences. The overhead of TGV-KV's budget/scoring is negligible as it reuses the prefill attention matrix.
+- **Importance Metric is Decisive**: Importance metrics are more critical than layer budgets. Using observation windows or pure self-attention at 5% leads to single-digit scores, whereas introducing text-vision attention restores scores to double digits.
+- **Text as Anchor**: Prioritizing text eviction causes ChartQA to drop to 0.2. The 99.2% retention on VizWiz tasks is only possible through TPR.
+- **Robust TVB Signaling**: The TV intensity signal naturally shifts budget to middle layers where information fusion is most intense, proving more robust than the fixed pyramid allocation of PyramidKV across different architectures.
+- **Throughput Gain (+52.6%)**: The throughput gain stems from 95% memory compression, enabling larger batches and longer sequences. TGV-KV's own overhead is minimal as it reuses the prefill attention matrix.
 
 ## Highlights & Insights
-- **Turning the Modality Gap from Problem to Signal**: Previous works viewed the "low-attention troughs" in TV regions as a defect. This paper uses the relative intensity of these troughs (which layer is higher) as the core signal for budget allocation, effectively turning a "lesion" into a "diagnostic tool."
-- **Instruction-Sensitive Visual Importance**: Through "pivot text token" weighting, visual KV importance becomes sensitive to the user's prompt. Visual KV are preserved differently for "describe the image" versus "is there a taxi," a feat prompt-agnostic methods like H2O/SnapKV cannot achieve.
-- **Asymmetric Protection Strategy**: The authors used a minimal random experiment to pin down the hard constraint that "text must not be lost," and then elegantly implemented this via the piecewise formula in TPR. This method of finding bounds empirically and then enforcing them simply is highly effective.
-- The method requires zero training, zero fine-tuning, and zero calibration data. It can be deployed on any standard self-attention VLM just by looking at the prefill attention matrix, offering high engineering feasibility.
+- **Turning Modality Gaps into Signals**: Unlike prior works that view the TV "attention valley" as a defect, this work uses the relative intensity of this valley per layer as a core signal for budget allocation.
+- **Instruction-Sensitive Importance**: TWR ensures that for the same image, different prompts (e.g., "describe this" vs. "is there a taxi") result in different visual KV subsets being retained, correcting a major flaw in prompt-agnostic methods like SnapKV/H2O.
+- **Asymmetric Protection Strategy**: By identifying the sensitivity of text KV vs. the redundancy of vision KV through random eviction tests, the authors gracefully codified a "text-first" hard constraint into a simple algorithm.
+- **Zero Training/Calibration**: The method is highly engineering-friendly, requiring only a single prefill pass to deploy on any standard self-attention VLM.
 
 ## Limitations & Future Work
-- To maintain parallelism, the paper explicitly avoids head-wise budget allocation. If future attention kernels (e.g., PagedAttention, FlashDecoding-v2) allow fine-grained head budgets without breaking parallelism, TGV-KV could be extended.
-- TVB/TWR rely on attention matrices from the prefill stage. For deployment pipelines using FlashAttention (which does not materialize full attention), an additional "light attention recomputation" pass is needed to obtain TV/TT sub-blocks, which must be accounted for.
-- While throughput increases by 52.6% at 5% budget, the specific latency breakdown on Qwen3-VL-8B remains unclear. Combinatory strategies of TGV-KV with token pruning (FastV, VisionZip) for long video contexts merit further study.
-- TPR currently uses a hard rule (prioritize full text). For "image-heavy, text-light" captioning scenarios, this might over-protect text. Introducing learnable modality weights or task-adaptive priorities could provide further improvement.
+- **Parallelism Constraints**: To maintain parallelism, head-wise budget allocation was omitted. If future kernels (e.g., PagedAttention) permit head-level granularity without overhead, TGV-KV could be refined further.
+- **Attention Materialization**: Both TVB and TWR rely on materializing the attention matrix. For deployment chains like FlashAttention that do not explicitly store these, a "light attention recomputation" might be needed.
+- **Extreme Compression Trade-offs**: While throughput is +52.6% at 5% budget, the latency breakdown for Qwen3-VL-8B remains to be detailed. For video-dominant contexts, combinations with token pruning (e.g., FastV) warrant investigation.
+- **Hard Rule for Text**: TPR's mandatory text preservation might over-protect text in "image-heavy, text-light" captioning scenarios. Task-adaptive priority could be a future improvement.
 
 ## Related Work & Insights
-- **vs. H2O / SnapKV / StreamingLLM**: These are designed for LLMs, measuring importance via self-attention or windows. This paper proves these fail on VLMs due to the modality gap causing text KV to be erroneously evicted; TGV-KV's TV+TT weighting restores utility.
-- **vs. PyramidKV / Ada-KV**: These use fixed rules or calibration for layer budgets; TVB uses dynamic allocation based on a single prefill's TV attention intensity, requiring no calibration set.
-- **vs. AirCache**: Also recognizes that "text is important," but AirCache requires extra computation for text token identification and lacks inter-layer mutual information analysis. TGV-KV reuses TT sub-blocks for anchor identification and TV intensity for budget analysis, offering lower overhead.
-- **vs. FastV / VisionZip / CDPruner (token pruning)**: These discard visual tokens before/during prefill; the tokens are lost forever. TGV-KV performs eviction at the KV level and allows subsequent layers to retain more visual information based on budget, offering higher flexibility and compatibility for serial use with pruning.
+- **vs H2O / SnapKV / StreamingLLM**: These are designed for LLMs and rely on self-attention or windows. TGV-KV proves these fail in VLMs due to text KV being incorrectly evicted; TV+TT weighting is the remedy.
+- **vs PyramidKV / Ada-KV**: These use fixed rules or extra calibration for layer budgets; TVB uses dynamic TV intensity from a single prefill pass, decoupling it from specific architectures.
+- **vs AirCache**: Both recognize text importance, but AirCache requires extra computation to identify key text tokens. TGV-KV reuses the TT sub-block and information flow analysis for lower overhead.
+- **vs FastV / VisionZip / CDPruner**: These prune vision tokens permanently before/during prefill. TGV-KV works on the KV cache level and can be concatenated with pruning for a "prune then compress" strategy.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Reversing the "modality gap" from a failure source into a budget signal is a refreshing perspective, supported by strong ablations.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers five VLMs of various sizes and architectures, image + video tasks, 5 baselines, and multiple retention tiers (5%/10%/20%/50%).
-- Writing Quality: ⭐⭐⭐⭐ Clear logical progression through three Observations; formula notation is standardized.
-- Value: ⭐⭐⭐⭐⭐ Provides a 0-training plug-and-play VLM inference compression solution. 95% memory savings and +52.6% throughput translate to direct deployment benefits.
+- **Novelty**: ⭐⭐⭐⭐ Inverting the "modality gap" from a failure source to a budget signal is a refreshing insight.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Covers 5 VLM architectures, image/video tasks, 5 baselines, and multiple retention ratios (5%-50%).
+- **Writing Quality**: ⭐⭐⭐⭐ Logical progression from observations to modules is clear; formulas are well-notated.
+- **Value**: ⭐⭐⭐⭐⭐ A zero-training, plug-and-play inference compression solution with 95% memory savings and 52.6% throughput gain has high industrial utility.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ACL 2025\] MadaKV: Adaptive Modality-Perception KV Cache Eviction for Efficient Multimodal Long-Context Inference](../../ACL2025/multimodal_vlm/madakv_adaptive_modality-perception_kv_cache_eviction_for_efficient_multimodal_l.md)
-- [\[CVPR 2026\] FlashCache: Frequency-Domain-Guided Outlier-KV-Aware Multimodal KV Cache Compression](../../CVPR2026/multimodal_vlm/flashcache_frequency_kv_cache_compression.md)
-- [\[ICLR 2026\] Mixing Importance with Diversity: Joint Optimization for KV Cache Compression in Large Vision-Language Models](../../ICLR2026/multimodal_vlm/mixing_importance_with_diversity_joint_optimization_for_kv_cache_compression_in_.md)
-- [\[NeurIPS 2025\] PrefixKV: Adaptive Prefix KV Cache is What Vision Instruction-Following Models Need for Efficient Generation](../../NeurIPS2025/multimodal_vlm/prefixkv_adaptive_prefix_kv_cache_is_what_vision_instruction.md)
-- [\[ICML 2026\] Contextualized Visual Personalization in Vision-Language Models](contextualized_visual_personalization_in_vision-language_models.md)
+- [\[ACL 2026\] VIGNETTE: Socially Grounded Bias Evaluation for Vision-Language Models](../../ACL2026/multimodal_vlm/vignette_socially_grounded_bias_evaluation_for_vision-language_models.md)
+- [\[ICML 2026\] MedSIGHT: Towards Grounded Visual Comprehension in Medical Large Vision-Language Models](medsight_towards_grounded_visual_comprehension_in_medical_large_vision-language_.md)
+- [\[CVPR 2026\] Mostly Text, Smart Visuals: Asymmetric Text-Visual Pruning for Large Vision-Language Models](../../CVPR2026/multimodal_vlm/mostly_text_smart_visuals_asymmetric_text-visual_pruning_for_large_vision-langua.md)
+- [\[CVPR 2026\] Grounded 3D-Aware Spatial Vision-Language Modeling](../../CVPR2026/multimodal_vlm/grounded_3d-aware_spatial_vision-language_modeling.md)
+- [\[NeurIPS 2025\] Praxis-VLM: Vision-Grounded Decision Making via Text-Driven Reinforcement Learning](../../NeurIPS2025/multimodal_vlm/praxisvlm_visiongrounded_decision_making_via_textdriven_rein.md)
 
 </div>
 

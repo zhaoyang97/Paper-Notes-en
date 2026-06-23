@@ -2,13 +2,13 @@
 title: >-
   [Paper Note] Mind Dreamer: Untethering Imagination via Active Causal Intervention on Latent Manifolds
 description: >-
-  [ICML 2026][Reinforcement Learning][Dreamer] This paper proposes Mind Dreamer for Model-Based Reinforcement Learning (MBRL). It utilizes an adversarial generator to "jump" to key anchor points on the latent manifold learned by the world model that are not covered by historical trajectories. By introducing newly designed Relay Value/Uncertainty functions (incorpor
+  [ICML 2026][Reinforcement Learning][Dreamer] This paper proposes Mind Dreamer for Model-Based Reinforcement Learning (MBRL), which utilizes an adversarial generator to "jump" to key anchors on the learned latent manifold of the world model that are not covered by historical trajectories. It resolves credit assignment across breakpoints through newly designed Rela
 tags:
   - ICML 2026
   - Reinforcement Learning
   - Dreamer
 date: 2026-05-08
-content_hash: ef70f4cc2abc90e5
+content_hash: c50d88c58d5e6aa0
 ---
 # Mind Dreamer: Untethering Imagination via Active Causal Intervention on Latent Manifolds
 
@@ -16,118 +16,118 @@ content_hash: ef70f4cc2abc90e5
 **arXiv**: [2605.16030](https://arxiv.org/abs/2605.16030)  
 **Code**: To be confirmed  
 **Area**: Reinforcement Learning  
-**Keywords**: Model-Based RL, Latent Space Imagination, Active Causal Intervention, Free Energy, Dreamer
+**Keywords**: Model-based RL, Latent Space Imagination, Active Causal Intervention, Free Energy, Dreamer
 
 ## TL;DR
-This paper proposes Mind Dreamer for Model-Based Reinforcement Learning (MBRL). It utilizes an adversarial generator to "jump" to key anchor points on the latent manifold learned by the world model that are not covered by historical trajectories. By introducing newly designed Relay Value/Uncertainty functions (incorporating a $\gamma^2$ discount) to address credit assignment across temporal discontinuities, it achieves an average $1.67\times$ speedup over DreamerV3 on DMC, with up to $8.8\times$ speedup on sparse reward tasks.
+This paper proposes Mind Dreamer for Model-Based Reinforcement Learning (MBRL), which utilizes an adversarial generator to "jump" to key anchors on the learned latent manifold of the world model that are not covered by historical trajectories. It resolves credit assignment across breakpoints through newly designed Relay Value/Uncertainty functions (incorporating a $\gamma^2$ discount), achieving an average $1.67\times$ speedup over DreamerV3 on DMC and up to $8.8\times$ on sparse reward tasks.
 
 ## Background & Motivation
-**Background**: MBRL represented by the Dreamer series achieves high sample efficiency by "imagining" future trajectories in latent space. A critical step involves sampling an initial state $s_0 \sim \mathcal{D}$ from a replay buffer and rolling out trajectories using an RSSM-style world model to train the policy.
+**Background**: MBRL represented by the Dreamer series achieves high sample efficiency by "imagining" future trajectories in latent space. A key step involves sampling an initial state $s_0 \sim \mathcal{D}$ from the replay buffer and rolling out trajectories using an RSSM-like world model to train the policy.
 
-**Limitations of Prior Work**: The authors characterize this practice as *Historical Tethering*—imagination remains a prisoner of history. While the world model quickly learns the global structure of the manifold $\mathcal{M}$ through dense self-supervised signals, the policy crawls slowly based on sparse reward signals, creating a "learning asymmetry." Even if the model knows how two regions connect, the policy must start from historical trajectory points and rely on random walks to re-enter bottleneck regions.
+**Limitations of Prior Work**: The authors characterize this approach as *Historical Tethering*—imagination remains a prisoner of history. While world models can rapidly learn the global structure of the manifold $\mathcal{M}$ through dense self-supervised signals, the policy crawls slowly via sparse rewards, creating "learning asymmetry." Even if the model knows how two regions connect, the policy must start from historical trajectory points and wait for random walks to reach bottleneck regions again.
 
-**Key Challenge**: The coverage of imagination is constrained by the sampling distribution rather than the true capabilities of the world model. Curiosity-driven methods like Plan2Explore encourage exploration, but the rollout starting points must still be drawn from the buffer, remaining essentially *trajectory-bound*. HER/Goal-Conditioned RL merely relabel historical trajectories without stepping outside the buffer's convex hull.
+**Key Challenge**: The coverage of imagination is constrained by the sampling distribution rather than the actual capabilities of the world model. Curiosity methods like Plan2Explore encourage exploration, but the rollout starting points must still be taken from the buffer, making them *trajectory-bound*. Methods like HER or Goal-Conditioned RL merely relabel historical trajectories without escaping the buffer's convex hull.
 
-**Goal**: (i) Enable the synthesis of initial states themselves rather than relying on the buffer; (ii) ensure these synthesized states are physically plausible on the world model's manifold; (iii) correctly propagate value/uncertainty signals when "teleports" (spatial discontinuities) occur in imagination paths.
+**Goal**: (i) Enable initial states to be synthesized rather than drawn from the buffer; (ii) Ensure synthesized states are physically plausible on the world model's manifold; (iii) Correctly propagate value/uncertainty signals when imagination paths encounter "spatial fractures" (teleports).
 
-**Key Insight**: Treat MBRL as an intervention problem within a causal framework—replacing $\mathcal{D}$ with a learned intervention distribution $p_{gen}$, corresponding to Pearl's $do(\cdot)$ operator. Use the Expected Free Energy (EFE) from Active Inference as a global criterion for "where to jump."
+**Key Insight**: MBRL is viewed as an intervention problem within a causal framework—replacing $\mathcal{D}$ with a learned intervention distribution $p_{gen}$, corresponding to Pearl’s $do(\cdot)$ operator; the Expected Free Energy (EFE) from Active Inference is used as a global criterion for "where to jump."
 
-**Core Idea**: Decouple the "imagination starting point" from the buffer. An adversarial generator samples latent anchors with high EFE, and newly designed Relay Value/Uncertainty functions stitch rewards and information gains across anchors back into the Bellman equation.
+**Core Idea**: The "imagination starting point" is untethered from the buffer. An adversarial generator samples latent space anchors with high EFE, and newly designed Relay Value/Uncertainty functions stitch rewards and information gains across anchors back into the Bellman equation.
 
 ## Method
 
 ### Overall Architecture
-Mind Dreamer (MD) inserts two sets of new modules on top of DreamerV3's RSSM:
+Mind Dreamer (MD) inserts two new module sets atop the RSSM of DreamerV3:
 
-1.  **Adversarial Generator $\mathcal{G}_\theta(s,\epsilon)$**: Maps a real state $s$ from the buffer and noise $\epsilon \sim \mathcal{N}(0,I)$ to an "intervention anchor" $s' = \mathcal{G}_\theta(s,\epsilon)$ on the latent manifold. $s'$ does not need to be a state that actually appeared in history but must be a potential state the world model deems "physically reachable."
-2.  **Relay Potentials $V_{RVF}, V_{RUF}$**: Treat $s'$ as an intermediate transition state rather than a final goal, measuring "how much reward can be obtained by continuing through $s'$" and "how much model uncertainty can be eliminated by continuing through $s'$," respectively.
-3.  **Manifold Anchoring Loss $\mathcal{L}_{mf}$**: Prevents the generator from exploiting "manifold cracks" by using dynamics entropy regularization and cycle-consistency to constrain $s'$ within the world model's credible regions.
+1.  **Adversarial Generator $\mathcal{G}_\theta(s,\epsilon)$**: Maps a real state $s$ from the buffer paired with noise $\epsilon \sim \mathcal{N}(0,I)$ to an "intervention anchor" $s' = \mathcal{G}_\theta(s,\epsilon)$ on the latent manifold. $s'$ is not required to be a state that appeared in history but must be a potential state considered "physically reachable" by the world model.
+2.  **Relay Potentials $V_{RVF}, V_{RUF}$**: Treating $s'$ as an intermediate transition state rather than a final goal, these measure "how much reward can be obtained if I go to $s'$ first" and "how much model uncertainty can be eliminated if I go to $s'$ first," respectively.
+3.  **Manifold Anchoring Loss $\mathcal{L}_{mf}$**: Prevents the generator from exploiting "manifold cracks" by using dynamics entropy regularization and cycle-consistency to keep $s'$ within the trusted regions of the world model.
 
-During training, the world model is trained via standard RSSM losses and the policy via standard actor-critic, while $s' \sim \mathcal{G}_\theta$ replaces a portion of $s_0 \sim \mathcal{D}$ as the start of imagination rollouts. The generator, potentials, and policy are updated asynchronously; the world model has the lowest frequency and the generator the highest, ensuring the target distribution is "quasi-static" for the policy.
+During training, the world model is updated via standard RSSM losses and the policy via standard actor-critic. Simultaneously, $s' \sim \mathcal{G}_\theta$ replaces a portion of $s_0 \sim \mathcal{D}$ as the imagination starting point. The generator, potentials, and policy are updated asynchronously; the world model has the lowest frequency and the generator the highest, ensuring the target distribution is "quasi-static" for the policy.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    D["Replay Buffer: Sample real state s₀"] --> G["Active Causal Intervention (ACI)<br/>Adversarial Generator Gθ(s₀,ε) generates intervention anchor s′<br/>InfoNCE pushes s′ toward high EFE regions"]
+    D["Replay Buffer: Sample real state s₀"] --> G["Active Causal Intervention (ACI)<br/>Adversarial generator Gθ(s₀,ε) generates intervention anchors s′<br/>InfoNCE pushes s′ to high EFE regions"]
     G --> R["Imagine rollout from s′"]
-    R --> RELAY["Relay Value/Uncertainty Functions<br/>Credit assignment across teleports: Vφ uses γ, Uφu uses γ²"]
+    R --> RELAY["Relay Value/Uncertainty Function<br/>Credit assignment across breakpoints: Vφ with γ, Uφu with γ²"]
     RELAY --> POL["Update policy πω and Vφ / Uφu"]
-    MF["Manifold Anchoring ℒmf<br/>Dynamics entropy + cycle-consistency"] -. Constrains s′ to credible trust regions .-> G
-    POL -->|Environment execution for data collection| D
+    MF["Manifold Anchoring ℒmf<br/>Dynamics entropy + cycle-consistency"] -. Constraints s′ to stay in the trusted region .-> G
+    POL -->|Environment execution and data collection| D
 ```
 
 ### Key Designs
 
-**1. Active Causal Intervention (ACI): Elevating EFE from path scalars to global curves to determine anchor placement**
+**1. Active Causal Intervention (ACI): Lifting EFE from a path scalar to a global curve for anchor placement**
 
-The world model learns the global manifold structure quickly via dense self-supervision, but the policy crawls slowly via sparse rewards, trapping imagination at buffer starting points. The generator solves "where to jump." For a single anchor $s'$, the local EFE is formulated via Active Inference as $G(s') = -\beta\,\mathcal{I}(s_\tau;o_\tau|\pi) - \eta\,\mathbb{E}_q[\ln p(o_\tau)]$, consisting of epistemic value (uncertainty reduction) and pragmatic value (task priors). This is summed over an $H$-step imagination trajectory to obtain the Relay-EFE $\Psi(s,s') = \mathbb{E}_q\big[\sum_{k=1}^{H}\gamma^k G(s_k) \mid s_0=s, s'\in\xi\big]$. To stabilize training, this is converted into an InfoNCE contrastive loss $\mathcal{L}_{contrast}=\max(0, m-(\Psi(s')-\max\Psi(s_{neg})))$, ensuring the potential of generated anchors is strictly higher than historical or elite baselines. This allows the generator to balance "how much can be learned" and "proximity to task rewards," avoiding aimless drift from pure curiosity.
+The world model learns the global manifold structure quickly through self-supervision, while the policy learns slowly via sparse rewards, trapping imagination at buffer starting points. The generator solves "where to jump." For a single anchor $s'$, the local EFE is defined via Active Inference as $G(s') = -\beta\,\mathcal{I}(s_\tau;o_\tau|\pi) - \eta\,\mathbb{E}_q[\ln p(o_\tau)]$, involving epistemic value (uncertainty reduction) and pragmatic value (matching task priors). The Relay-EFE $\Psi(s,s') = \mathbb{E}_q\big[\sum_{k=1}^{H}\gamma^k G(s_k) \mid s_0=s, s'\in\xi\big]$ is obtained by summing discounted EFE over an $H$-step imagination. To stabilize gradient ascent on $\Psi$, the authors use an InfoNCE contrastive loss $\mathcal{L}_{contrast}=\max(0, m-(\Psi(s')-\max\Psi(s_{neg})))$, ensuring anchor potential is higher than historical/elite baselines. This prevents aimless drifting by simultaneously considering learning potential and task proximity.
 
-**2. Relay Value / Uncertainty Function: Credit assignment across discontinuities**
+**2. Relay Value / Uncertainty Function: Credit Assignment across Breakpoints**
 
-Once an imagination path "teleports" to a synthetic anchor $s'$, a spatial discontinuity occurs. Standard Bellman equations cannot propagate rewards and information gains from after $s'$ back to the starting point $s$, rendering $s'$ unreachable by gradients. MD treats $s'$ as an intermediate state: defining the first hit time $\tau_{s'}=\inf\{t\ge 0: s_t=s'\}$, the Pragmatic Relay operator is $(\mathcal{T}_V V)(s,s')=\mathbb{E}_\pi\big[\sum_{t=0}^{\tau_{s'}-1}\gamma^t r_t + \gamma^{\tau_{s'}} V_\phi(s')\big]$. The Epistemic Relay operator is similar, but information gain $\mathcal{I}_{t+1}$ is discounted by $\gamma^{2t}$: $(\mathcal{T}_U U)(s,s')=\mathbb{E}_\pi\big[\sum_{t=0}^{\tau_{s'}-1}\gamma^{2t}\mathcal{I}_{t+1} + \gamma^{2\tau_{s'}} U_{\phi_u}(s')\big]$. Both are contraction mappings under the $\ell_\infty$ norm (one with $\gamma$, one with $\gamma^2$), guaranteeing unique fixed points. The $\gamma^2$ is not an empirical hyperparameter—per variance operator properties $\mathrm{Var}(\sum\gamma^t\epsilon_t)=\sum\gamma^{2t}\mathrm{Var}(\epsilon_t)$, epistemic shocks naturally decay at a quadratic rate. Linear $\gamma$ would cause distal model variance to explode into hallucinations. The authors term this the *Epistemic Horizon*—providing an endogenous truncation radius for cognitive curiosity.
+Once an imagination path "teleports" to a synthetic anchor $s'$, a spatial fracture occurs where standard Bellman equations cannot propagate rewards or information gain from $s'$ back to the origin $s$. MD treats $s'$ as a transition state: defining hitting time $\tau_{s'}=\inf\{t\ge 0: s_t=s'\}$, the Pragmatic Relay operator is $(\mathcal{T}_V V)(s,s')=\mathbb{E}_\pi\big[\sum_{t=0}^{\tau_{s'}-1}\gamma^t r_t + \gamma^{\tau_{s'}} V_\phi(s')\big]$. The Epistemic Relay operator follows a similar structure, but information gain $\mathcal{I}_{t+1}$ is discounted by $\gamma^{2t}$: $(\mathcal{T}_U U)(s,s')=\mathbb{E}_\pi\big[\sum_{t=0}^{\tau_{s'}-1}\gamma^{2t}\mathcal{I}_{t+1} + \gamma^{2\tau_{s'}} U_{\phi_u}(s')\big]$. Both are contraction mappings under the $\ell_\infty$ norm (one with $\gamma$, one with $\gamma^2$), ensuring a unique fixed point. The $\gamma^2$ discount arises from the property of variance operators $\mathrm{Var}(\sum\gamma^t\epsilon_t)=\sum\gamma^{2t}\mathrm{Var}(\epsilon_t)$; epistemic impacts naturally decay at a quadratic rate. Linear $\gamma$ would cause distal model variance to explode, creating hallucinations; the authors term this the *Epistemic Horizon*—providing an endogenous truncation radius for cognitive curiosity.
 
-**3. Manifold Anchoring $\mathcal{L}_{mf}$ and Adversarial Joint Training: Keeping the generator within the world model's trust region**
+**3. Manifold Anchoring $\mathcal{L}_{mf}$ and Adversarial Co-training: Confining the Generator to Trusted Regions**
 
-The generator can create states outside the buffer's convex hull, but they must lie on the world model's credible manifold; otherwise, the policy might be led into "cracks" where the model is uncertain, fostering hallucinations. The constraint is $\mathcal{L}_{mf} = \mathcal{H}\big(p_\psi(\cdot|s',a)\big) + D_{KL}\big[\mathrm{Enc}(\mathrm{Dec}(s'))\,\|\,s'\big]$: the first term penalizes transition distribution entropy (uncertainty in successors indicates low credibility), and the second is cycle-consistency (acting as a proxy for whether the state lies on the reconstructed manifold). The generator maximizes $\eta V_{RVF} + \beta V_{RUF} - \lambda \mathcal{L}_{mf}$. The authors prove that the teleportation error $\delta=\|s'-\mathrm{Proj}_\mathcal{M}(s')\|$ satisfies $\epsilon_V \le L\delta/(1-\gamma^n)$ under an $L$-Lipschitz value field. By suppressing $\delta$, the adversarial generator is confined to a pessimistic trust region, theoretically ensuring imagination does not trigger policy collapse. Removing $\mathcal{L}_{mf}$ in ablations causes MD to underperform DreamerV3, highlighting it as more critical than the Relay design itself.
+The generator can create states outside the buffer's convex hull, but they must remain on the world model's trusted manifold to avoid leading the policy into "cracks" where hallucinations occur. The constraint is $\mathcal{L}_{mf} = \mathcal{H}\big(p_\psi(\cdot|s',a)\big) + D_{KL}\big[\mathrm{Enc}(\mathrm{Dec}(s'))\,\|\,s'\big]$, penalizing transition distribution entropy (uncertainty indicating unreliability) and ensuring cycle-consistency (re-encoding back to self as a proxy for the reconstruction manifold). The generator maximizes $\eta V_{RVF} + \beta V_{RUF} - \lambda \mathcal{L}_{mf}$. The authors prove that the jump error $\delta=\|s'-\mathrm{Proj}_\mathcal{M}(s')\|$ under an $L$-Lipschitz value field satisfies $\epsilon_V \le L\delta/(1-\gamma^n)$. Suppressing $\delta$ confines the adversarial generator to a pessimistic trust region, theoretically preventing policy collapse. Removing $\mathcal{L}_{mf}$ causes MD to underperform relative to DreamerV3, highlighting its critical role.
 
 ### Loss & Training
-Following Algorithm 1: Within one step, the world model is updated using real buffer data and RSSM losses. Then, $s_0 \sim \mathcal{D}$ and $s' \leftarrow \mathcal{G}_\theta(s_0,\epsilon)$ are sampled along with a negative pool $s_{neg}$ to update $\theta$ via $\mathcal{L}_{contrast}+\lambda\mathcal{L}_{mf}$. Imagination rollouts start from the posterior features $z_{s'}$, utilizing TD learning to update the policy, $V_\phi$, and $U_{\phi_u}$. Relay potentials are updated using $k$-step HER combined with non-recursive bootstrap targets. Finally, $\pi_\omega$ is executed in the real environment to collect data. Relay potentials use a quasi-static target network, and the world model updates significantly less frequently than the generator to prevent adversarial non-stationarity from infecting policy training.
+Following Algorithm 1: Within each step, the world model is updated using real buffer data via RSSM losses. Then $s_0 \sim \mathcal{D}$ is sampled alongside $s' \leftarrow \mathcal{G}_\theta(s_0,\epsilon)$ and a negative pool $s_{neg}$ to update $\theta$ via $\mathcal{L}_{contrast}+\lambda\mathcal{L}_{mf}$. Imagination rollouts begin from the posterior features $z_{s'}$, updating the policy, $V_\phi$, and $U_{\phi_u}$ via TD learning. Relay potentials are updated using $k$-step HER with non-recursive bootstrap targets. Finally, $\pi_\omega$ is executed in the real environment to collect data. Relay potentials use quasi-static target networks, and the world model updates significantly less frequently than the generator to prevent adversarial non-stationarity from affecting policy training.
 
-Theoretical analysis yields three core conclusions: (i) Minimizing R-EFE is equivalent to performing minimum variance importance sampling, where the ideal proposal distribution $q^*(s)\propto \rho(s)\|\nabla G(s)\|_2$ aligns with high $\Psi$ regions. (ii) Under a Gaussian world model, $V_{RUF}$ is asymptotically proportional to the trace of the Fisher Information Matrix $\frac{1}{2}\mathrm{Tr}(\mathcal{F}(\theta)\Sigma_\theta)$, meaning the generator automatically samples where "parameters are hardest to learn." (iii) On discrete abstractions of the latent manifold, intervention reduces the time to hit bottleneck states from $\mathcal{O}(\mathrm{poly}(\Phi^{-1}))$ to $\mathcal{O}(\log|\mathcal{M}|)$, with a speedup $\nu \approx 1+\chi^2(q^*\|q_{traj}) \propto \Phi^{-2}$.
+Theoretical analysis yields three conclusions: (i) Minimizing R-EFE is equivalent to minimum-variance importance sampling; (ii) Under Gaussian world models, $V_{RUF}$ is asymptotically proportional to the trace of the Fisher Information Matrix $\frac{1}{2}\mathrm{Tr}(\mathcal{F}(\theta)\Sigma_\theta)$, meaning the generator samples where parameters are hardest to learn; (iii) On discrete manifold abstractions, interventions reduce the hitting time to bottleneck states from $\mathcal{O}(\mathrm{poly}(\Phi^{-1}))$ to $\mathcal{O}(\log|\mathcal{M}|)$, with a speedup $\nu \approx 1+\chi^2(q^*\|q_{traj}) \propto \Phi^{-2}$.
 
 ## Key Experimental Results
 
 ### Main Results
-On 20 pixel-observation tasks from the DeepMind Control Suite (DMC), using the DreamerV3 RSSM backbone and identical environment interaction budgets across 5 random seeds.
+Evaluation on 20 pixel-observation tasks in DeepMind Control Suite (DMC) using DreamerV3's RSSM backbone and identical interaction budgets across 5 random seeds.
 
 | Setting | Metric | Mind Dreamer | DreamerV3 | Remarks |
 |------|------|--------------|-----------|------|
-| DMC 20 Tasks Average | Environment steps to 90% peak performance | 334.7k | 557.6k | $1.67\times$ avg speedup |
-| Pendulum Swingup (Bottleneck) | Speedup ratio to 90% peak | — | — | $>8.8\times$ |
-| DMC Average Return | Asymptotic performance | 831.1 | 780.3 | Superior across board |
-| Hopper Hop (Sparse Reward) | Return improvement | — | baseline | +59.8% |
-| Quadruped Run | Return improvement | — | baseline | +30.3% |
-| Synthetic Three-Ring | Time to first hit across rings speedup | — | — | $\approx 4.2\times$ |
+| DMC 20 Tasks Avg | Steps to 90% Peak Perf | 334.7k | 557.6k | $1.67\times$ Avg Speedup |
+| Pendulum Swingup (Bottleneck) | Speedup to 90% Peak | — | — | $>8.8\times$ |
+| DMC Avg Return | Asymptotic Performance | 831.1 | 780.3 | Uniformly Superior |
+| Hopper Hop (Sparse) | Return Gain | — | Baseline | +59.8% |
+| Quadruped Run | Return Gain | — | Baseline | +30.3% |
+| Synthetic Three-Ring | Hitting time speedup | — | — | $\approx 4.2\times$ |
 
-Baselines also include DreamerV2 (to isolate improvements from backbone evolution) and Plan2Explore (curiosity-style baseline). MD consistently leads in both sampling efficiency and final return.
+Baselines also include DreamerV2 and Plan2Explore, with MD consistently leading in sample efficiency and final returns.
 
 ### Ablation Study
 
-| Configuration | DMC Avg Return / Phenomenon | Description |
+| Configuration | DMC Avg Return / Observation | Explanation |
 |------|----------------------|------|
 | Full MD | 831.1 | Complete model |
-| w/o $V_{RVF}$ (Pragmatic) | Exploration entropy maintained but slow reward convergence | Relay Advantage disappears; fails to find "reward canyons" |
-| w/o $V_{RUF}$ (Epistemic) | Local refinement only; fails to leave known areas | Loses active manifold repair signal |
-| w/o $\mathcal{L}_{mf}$ | Catastrophic drop, below DreamerV3 | Generator exploits manifold cracks, hallucination infects policy; self-consistency error increases $\times 43.5$ |
+| w/o $V_{RVF}$ (Pragmatic) | Exploration entropy maintained but reward slow | Relay Advantage lost; unable to find "reward canyons" |
+| w/o $V_{RUF}$ (Epistemic) | Locally refined but fails to escape | Loss of active manifold repair signals |
+| w/o $\mathcal{L}_{mf}$ | Catastrophic drop, below DreamerV3 | Generator exploits cracks, hallucinations infect policy |
 
 ### Key Findings
-- $\mathcal{L}_{mf}$ is the bottom line: Removing it causes MD to lose to DreamerV3, proving that "adversarial MBRL must have trust region constraints" is more critical than the Relay design itself.
-- Three-Ring synthetic experiments verify: "DreamerV3 imagination is trapped in the first attractor ring, while MD's $\mathcal{G}$ automatically clusters sampling at ring boundaries," reducing global exploration to local refinement.
-- $\gamma^2$ discount is not heuristic: The authors prove that using $\gamma^3$ would track the third moment (skewness), breaking equivalence with EFE; moreover, aleatoric noise in RSSM is naturally absorbed by the KL term, requiring no additional orders.
+- $\mathcal{L}_{mf}$ is a hard constraint: Its removal causes MD to fall behind DreamerV3, proving trust region constraints are more critical than the Relay design itself in adversarial MBRL.
+- Synthetic Three-Ring experiments show DreamerV3 imagination is trapped in the first attractor ring, while MD’s $\mathcal{G}$ focuses sampling on ring boundaries, converting global exploration into local refinement.
+- The $\gamma^2$ discount is theoretically grounded: Linear variance addition + EFE equivalence. Using $\gamma^3$ would track third-order moments (skewness), breaking EFE equivalence.
 
 ## Highlights & Insights
-- Redefines the MBRL bottleneck from "inaccurate world models" to "incorrect imagination starting distributions." The world model already knows the answer; the policy just fails to ask. This re-characterization opens modification paths for many RSSM-derived methods.
-- The $\gamma^2$ discount has a rigorous theoretical foundation: linear variance addition + EFE equivalence. This is a powerful formula to remember—useful for any algorithm propagating uncertainty under discontinuous/teleporting semantics.
-- Elevating EFE from a "scalar target on a path" to a "global function $\Psi(s,s')$" integrates Active Inference and manifold learning; this "globalization of local goals" perspective can migrate to goal-conditioned RL, option discovery, and state sampling in offline RL.
-- Replacing direct adversarial reward maximization with InfoNCE is a practical trick for stabilizing generator training, worth replicating in any GAN-in-RL setting.
+- Redefines the MBRL bottleneck from "world model accuracy" to "imagination starting point distribution."
+- The $\gamma^2$ discount provides a rigorous theoretical anchor for propagating uncertainty in discontinuous/jump semantics.
+- Lifting EFE to a global functional $\Psi(s,s')$ bridges Active Inference and manifold learning, a perspective applicable to goal-conditioned RL and option discovery.
+- Utilizing InfoNCE instead of direct adversarial reward maximization stabilizes generator training.
 
 ## Limitations & Future Work
-- Computational Overhead: Training $\mathcal{G}$ and computing InfoNCE proxies at every step may not be cost-effective in scenarios where environment steps are cheap but computation is expensive.
-- Static Mechanism Assumption: Current use of latent KL as an epistemic signal assumes stable transition mechanisms. In non-stationary environments where physical parameters drift (e.g., changes in friction/load), the model might misidentify drift as an "epistemic blind spot." Separating structural uncertainty from environment drift is cited as future work.
-- Evaluation Scope: Primarily validated on DMC pixel tasks and synthetic manifolds. Lack of discrete actions (Atari) or robot sim-to-real makes it difficult to judge generator controllability in high-dimensional embodied environments.
-- Lack of direct comparison with non-adversarial "jump-back" baselines like HER or Go-Explore makes it hard to quantify the specific marginal gain of "adversarial generation" over "simple state resets."
+- Computational Overhead: Training $\mathcal{G}$ and computing InfoNCE proxies at every step may be costly in compute-heavy scenarios.
+- Static Mechanism Assumption: Current epistemic signals assume stable latent KL transitions; in non-stationary environments, the model might mistake mechanism drift for "epistemic blind spots."
+- Evaluation Scope: Primarily validated on DMC pixel tasks and synthetic manifolds; performance on discrete actions (Atari) or sim-to-real robotics remains unverified.
+- Lack of direct comparison with non-adversarial "jump-back" baselines like HER/Go-Explore to quantify the specific gains of adversarial generation.
 
 ## Related Work & Insights
-- **vs Plan2Explore**: Both use curiosity as a primary signal, but Plan2Explore starting points are drawn from the buffer. MD decouples the starting point into a learnable distribution and upgrades curiosity from a "step-level reward bonus" to a "global value potential."
-- **vs Go-Explore**: Go-Explore relies on environment-supported explicit resets to return to key states. MD performs "mental teleportation" in latent space, independent of environment reset interfaces, making it applicable to non-resettable physical environments.
-- **vs HER / Goal-Conditioned RL**: HER treats ends of sampled trajectories as pseudo-goals, remaining within the buffer's convex hull. MD's $s'$ is synthetic and can fall outside the convex hull, while $\mathcal{L}_{mf}$ ensures it remains on the world model's credible manifold.
-- **vs Active Inference Series** (Tschantz et al., Friston et al.): Elevates local EFE to Relay-EFE and introduces "credit assignment across discontinuities" as a contraction mapping, allowing EFE concepts to scale to Dreamer-level benchmarks.
+- **vs Plan2Explore**: Both use curiosity, but Plan2Explore rollout starts are buffer-bound. MD untethers the start point and upgrades curiosity to a global potential.
+- **vs Go-Explore**: Go-Explore relies on environment-supported explicit resets. MD perform "mental teleports" in latent space, making it applicable to non-resettable physical environments.
+- **vs HER / Goal-Conditioned RL**: HER uses endpoints of sampled trajectories (within buffer hull). MD’s $s'$ is synthetic and can fall outside the hull while remaining on the world model's manifold.
+- **vs Active Inference**: Lifts local EFE to Relay-EFE and implements credit assignment as a contraction mapping for the first time on Dreamer-level benchmarks.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ The naming of Historical Tethering + Relay Potential + $\gamma^2$ discount triad is compelling with a clear theoretical framework.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Full DMC suite + Three-Ring visualization + complete ablations, though lacking discrete actions and sparse robot tasks.
-- Writing Quality: ⭐⭐⭐⭐⭐ Concept hierarchy is clear; transitions between theory and algorithm are natural; theorems and intuition reinforce each other.
-- Value: ⭐⭐⭐⭐⭐ Provides a fundamental modification to the long-unquestioned setting of imagination starting points in MBRL, serving as a standard plugin for Dreamer-style work.
+- Novelty: ⭐⭐⭐⭐⭐ Introduction of Historical Tethering + Relay Potentials + $\gamma^2$ discount with a clear framework.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive DMC testing + Three-Ring visualization, though lacking discrete/robotics tasks.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear conceptual hierarchy and natural transitions between theory and algorithms.
+- Value: ⭐⭐⭐⭐⭐ Fundamentally modifies the unchallenged imagination starting point in MBRL; serves as a standard plugin for Dreamer-style work.
 
 <!-- RELATED:START -->
 
@@ -139,7 +139,7 @@ Baselines also include DreamerV2 (to isolate improvements from backbone evolutio
 - [\[ICML 2026\] Compositional Transduction with Latent Analogies for Offline Goal-Conditioned Reinforcement Learning](compositional_transduction_with_latent_analogies_for_offline_goal-conditioned_re.md)
 - [\[ICML 2026\] LASER: Learning Active Sensing for Continuum Field Reconstruction](laser_learning_active_sensing_for_continuum_field_reconstruction.md)
 - [\[ICLR 2026\] Unveiling the Cognitive Compass: Theory-of-Mind-Guided Multimodal Emotion Reasoning](../../ICLR2026/reinforcement_learning/unveiling_the_cognitive_compass_theory-of-mind-guided_multimodal_emotion_reasoni.md)
-- [\[ACL 2026\] SpiralThinker: Latent Reasoning through an Iterative Process with Text-Latent Interleaving](../../ACL2026/reinforcement_learning/spiralthinker_latent_reasoning_through_an_iterative_process_with_text-latent_int.md)
+- [\[ICLR 2026\] RebuttalAgent: Strategic Persuasion in Academic Rebuttal via Theory of Mind](../../ICLR2026/reinforcement_learning/rebuttalagent_strategic_persuasion_in_academic_rebuttal_via_theory_of_mind.md)
 
 </div>
 

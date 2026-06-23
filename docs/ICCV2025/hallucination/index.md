@@ -26,7 +26,7 @@ item_total: 4
 
 **📹 ICCV2025** · **4** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (32)](../../CVPR2026/hallucination/index.md) · [🧪 ICML2026 (18)](../../ICML2026/hallucination/index.md) · [💬 ACL2026 (27)](../../ACL2026/hallucination/index.md) · [🔬 ICLR2026 (9)](../../ICLR2026/hallucination/index.md) · [🤖 AAAI2026 (15)](../../AAAI2026/hallucination/index.md) · [🧠 NeurIPS2025 (17)](../../NeurIPS2025/hallucination/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (32)](../../CVPR2026/hallucination/index.md) · [🔬 ICLR2026 (40)](../../ICLR2026/hallucination/index.md) · [💬 ACL2026 (28)](../../ACL2026/hallucination/index.md) · [🧪 ICML2026 (21)](../../ICML2026/hallucination/index.md) · [🤖 AAAI2026 (15)](../../AAAI2026/hallucination/index.md) · [🧠 NeurIPS2025 (17)](../../NeurIPS2025/hallucination/index.md)
 
 **[ChartCap: Mitigating Hallucination of Dense Chart Captioning](chartcap_mitigating_hallucination_of_dense_chart_captioning.md)**
 

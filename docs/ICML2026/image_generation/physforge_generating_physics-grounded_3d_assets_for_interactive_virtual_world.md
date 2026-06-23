@@ -2,12 +2,12 @@
 title: >-
   [Paper Note] PhysForge: Generating Physics-Grounded 3D Assets for Interactive Virtual World
 description: >-
-  [ICML 2026][Image Generation][Paper Note] The process of "creating interactive 3D objects" is reformulated as a two-stage "plan-then-generate" problem. A VLM acts as a physical architect to generate a "Hierarchical Physical Blueprint" containing hierarchical relationships, materials, and kinematic constraints. Subsequently, a diffusion model utilizes KineVoxel
+  [ICML 2026][Image Generation][Paper Note] Interactive 3D object creation is reframed as a two-stage "physical planning followed by physical generation" problem. A VLM acts as a physical architect to generate a "Hierarchical Physical Blueprint" containing hierarchy, materials, and kinematic constraints. Subsequently, a diffusion model utilizes KineVoxel Injecti
 tags:
   - ICML 2026
   - Image Generation
 date: 2026-05-08
-content_hash: 7b57baf8279df7aa
+content_hash: 43a666d85f608351
 ---
 # PhysForge: Generating Physics-Grounded 3D Assets for Interactive Virtual World
 
@@ -18,36 +18,35 @@ content_hash: 7b57baf8279df7aa
 **Keywords**: Physics-aware 3D Generation, VLM Planning, KineVoxel Injection, Hierarchical Physical Blueprint, Interactive Assets
 
 ## TL;DR
-The process of "creating interactive 3D objects" is reformulated as a two-stage "plan-then-generate" problem. A VLM acts as a physical architect to generate a "Hierarchical Physical Blueprint" containing hierarchical relationships, materials, and kinematic constraints. Subsequently, a diffusion model utilizes KineVoxel Injection to co-denoise articulation parameters and geometric voxels. Leveraging the PhysDB dataset with 150k assets and four-tier annotations, this work achieves the first generation of 3D assets from single views that are "graspable, pushable, and articulable" within physics engines.
+Interactive 3D object creation is reframed as a two-stage "physical planning followed by physical generation" problem. A VLM acts as a physical architect to generate a "Hierarchical Physical Blueprint" containing hierarchy, materials, and kinematic constraints. Subsequently, a diffusion model utilizes KineVoxel Injection to jointly denoise articulation parameters and geometric voxels. Combined with the PhysDB dataset—comprising 150k assets with four-tier annotations—this approach achieves the first generation of 3D assets from a single view that are directly graspable, pushable, and articulatable within physics engines.
 
 ## Background & Motivation
 
-**Background**: 3D generation has achieved high-fidelity static geometry (TRELLIS, CLAY, 3DShape2VecSet), leading to part-aware generation (OmniPart, PartPacker) for decomposable objects. Initial physical explorations include EmbodiedGen, which assembles interactive scenes from existing modules, and PhysX-3D, which trains a Physical VAE with physical annotations on PartNet. Articulated object research has branched into "digital twin reconstruction" and "procedural generation" (e.g., CAGE, SINGAPO).
+**Background**: 3D generation has achieved high-fidelity static geometry (TRELLIS, CLAY, 3DShape2VecSet) and evolved toward part-aware generation (OmniPart, PartPacker) for decomposable objects. Initial explorations in the physical domain include EmbodiedGen, which composes scenes with off-the-shelf modules, and PhysX-3D, which trains a Physical VAE on PartNet. Articulated object generation has followed distinct paths: "digital twin reconstruction" and "procedural generation" (e.g., CAGE, SINGAPO).
 
-**Limitations of Prior Work**: Current 3D generation focuses almost exclusively on "static geometry + texture," producing "empty shell" assets that lack graspable handles or pushable hinges, making them undeployable in embodied AI simulators or game engines. Existing part-aware methods (OmniPart, PartPacker) decompose parts based on visual or geometric boundaries rather than functional or physical signals. Procedural generation for articulated objects relies on preset connection graphs or code templates, suffering from poor generalization and low precision.
+**Limitations of Prior Work**: Current 3D generation systems focus almost exclusively on "static geometry + texture," resulting in "empty shell" assets. These assets lack graspable parts or functional hinges, making them unsuitable for deployment in embodied AI simulators or game engines. Even existing part-aware methods (OmniPart, PartPacker) decompose objects based on visual or geometric boundaries, neglecting "function" and "physics" as signals. Meanwhile, procedural generation for articulated objects relies on predefined connection graphs or code templates, leading to poor generalization and low precision.
 
-**Key Challenge**: (1) Object "interactivity" stems from functional logic and hierarchical physics (e.g., the "press" function of a button, the hinge hierarchy of a cabinet door and handle), whereas existing part definitions rely only on visual boundaries; (2) Truly simulatable assets require three layers of information—geometry, material, and kinematics—but diffusion models excel at geometry/texture while VLMs excel at structure/world knowledge, and no method integrates them; (3) The primary bottleneck is the lack of large-scale datasets with fine-grained physical annotations.
+**Key Challenge**: (1) The "interactivity" of an object stems from functional logic and hierarchical physics (e.g., the "press" function of a button, the hinge hierarchy of a cabinet door), whereas current part definitions are purely visual. (2) True simulation-ready assets require complete geometry, material, and kinematic information; however, while diffusion models excel at geometry and VLMs excel at world knowledge, no method effectively unifies them. (3) A critical bottleneck is the lack of large-scale datasets with fine-grained physical annotations.
 
-**Goal**: Construct an end-to-end pipeline from single-view images to simulation-ready 3D assets, ensuring that generated objects can be directly manipulated in simulators like PhysX/Isaac. Simultaneously, establish a supporting physical annotation dataset.
+**Goal**: To construct an end-to-end pipeline from single-view input to simulation-ready 3D assets, ensuring generated objects can be directly manipulated in simulators like PhysX or Isaac, while establishing a supporting physical annotation dataset.
 
-**Key Insight**: The "plan-then-generate" paradigm from 2D generation is adapted for 3D. VLMs use world knowledge for planning, while diffusion models perform precise synthesis of geometry and articulation parameters. Instead of end-to-end training, the VLM outputs a comprehensive "physical blueprint," followed by the diffusion model's execution. Articulation parameters (origin, axis, limit) are elegantly encoded into voxel form and co-denoised with geometric voxels.
+**Key Insight**: This work adopts the successful "plan-then-generate" paradigm from 2D generation for 3D tasks. Recognizing that VLMs possess world knowledge for planning while diffusion models are proficient in precise synthesis, the authors task a VLM with outputting a "physical blueprint" first, which the diffusion model then follows. Furthermore, articulation parameters (origin, axis, limit) are encoded into a voxel format and jointly denoised with geometric voxels.
 
-**Core Idea**: Decouple "physical planning (VLM)" from "physical realization (Diffusion + KVI)," providing supervision through the four-tier annotations of PhysDB (holistic / static / functional / interactive).
+**Core Idea**: Decouple "physical planning (VLM)" from "physical realization (Diffusion + KVI)" and provide supervision via the four-tier annotations (holistic/static/functional/interactive) of the PhysDB dataset.
 
 ## Method
 
 ### Overall Architecture
-PhysForge consists of two stages. **Stage 1: VLM-based Planning**—Inputs include a single-view image $I$, a corresponding 3D voxel representation $V$ (produced by the first stage of TRELLIS), and an optional 2D mask $M$. A fine-tuned Qwen2.5-VL autoregressively generates a Hierarchical Physical Blueprint, including attributes such as bboxes, parent nodes, joint types, materials, functions, and state machines for each part. **Stage 2: Diffusion-based Generation**—Generates geometric voxels and textures based on the blueprint. KineVoxel Injection (KVI) encodes kinematic parameters (origin, axis, limit) into a specialized kinematic voxel, which is co-denoised with geometric voxels in the same diffusion process to ensure synchronization and consistency between geometry and kinematics. The final output is a simulation-ready asset directly importable into physics engines for interactions like grasping, pushing doors, or turning knobs. The PhysDB dataset (150k assets, four-tier annotations, human-verified) provides training data, with articulation precision supplemented by PartNet-Mobility and Infinite-Mobility.
+PhysForge operates in two stages. **Stage 1: VLM-based Planning**—Inputting a single view $I$, its 3D voxel representation $V$ (produced by the first stage of TRELLIS), and an optional 2D mask $M$. A fine-tuned Qwen2.5-VL autoregressively generates a Hierarchical Physical Blueprint, including attributes such as bounding boxes (bboxes), parent nodes, joint types, materials, functions, and state machines for each part. **Stage 2: Diffusion-based Generation**—Geometry voxels and textures are generated based on the blueprint. KineVoxel Injection (KVI) encodes articulation parameters into a specialized kinematic voxel, which is jointly denoised with geometric voxels in a single diffusion process to ensure synchronization. Final simulation-ready assets can be imported into physics engines for tasks like grasping or rotating knobs. The PhysDB dataset (150k assets, human-verified) provides training data, with articulation ground truth supplemented by PartNet-Mobility and Infinite-Mobility.
 
 ```mermaid
-%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
-flowchart TD
+graph TD
     DB["PhysDB Four-Tier Physical Annotation Dataset<br/>holistic / static / functional / interactive"]
-    IN["Input: Single-view I + 3D Voxel V + Optional 2D mask M"]
+    IN["Input: Single View I + 3D Voxel V + Optional 2D Mask M"]
     VLM["VLM Physical Blueprint Planner (Qwen2.5-VL)<br/>PartField Voxel Encoding + 66 BBox Special Tokens"]
-    BP["Hierarchical Physical Blueprint<br/>Per-part BBox + Parent / Material / Function / Joint Type"]
-    KVI["KineVoxel Injection Joint Diffusion<br/>Geometric Voxel + Kinematic Voxel Synced Denoising"]
-    OUT["Simulation-ready Assets<br/>Import to PhysX / Isaac: Grap / Push / Turn"]
+    BP["Hierarchical Physical Blueprint<br/>Part BBox + Parent / Material / Function / Joint Type"]
+    KVI["KineVoxel Injection Joint Diffusion<br/>Geometry Voxel + Kinematic Voxel Joint Denoising"]
+    OUT["Simulation-Ready Assets<br/>Import to PhysX / Isaac: Grasp / Push / Rotate"]
 
     IN --> VLM
     VLM --> BP
@@ -59,17 +58,20 @@ flowchart TD
 
 ### Key Designs
 
-**1. PhysDB Four-Tier Physical Annotation Dataset: Full-stack supervision for plan-then-generate**
-To enable the VLM to "plan physics," data must define physical attributes. The authors filtered 150k assets with meaningful part structures from Objaverse (covering household, industrial, weapons, personal, vehicles, tech & electronics, cultural). Using MLLM initial generation followed by manual verification, a four-tier annotation system was established: **Holistic Tier** (object-level) records real-world scale, category, and usage context; **Static Properties Tier** (part-level) records semantic labels, physical materials, and mass; **Functional Tier** records intrinsic functions (e.g., to contain, to control) and state machines; **Interactive Tier** records atomic affordances, joint types, and joint parameters. This hierarchy supports high-level semantics while providing low-level numerical values. Since 150k-scale manual articulation axis annotation is noisy, the authors utilized PartNet-Mobility and Infinite-Mobility for numerical ground truth.
+**1. PhysDB Four-Tier Physical Annotation Dataset: Full-Stack Supervision for Plan-then-Generate**
 
-**2. VLM as Physical Blueprint Planner: Translating world knowledge into hierarchical blueprints**
-The first stage converts LVLM world knowledge into structured part hierarchies and physical attributes. Based on Qwen2.5-VL, it takes image $I$, 3D voxel $V$, and mask $M$ as input. While images use native encoders, $V$ is encoded via PartField to capture part-specific features and downsampled through position-aware 3D convolutions into 512-dimensional voxel embeddings. To enable 3D bbox output, 66 special tokens were added: `<boxs>`/`<boxe>` wrap a bbox, and 64 tokens `<box0>...<box63>` quantize coordinates. This allows the VLM to autoregressively output bboxes and physical attributes. Predicting physical attributes surprisingly resolves part granularity ambiguity; functional/physical constraints provide strong semantic signals for part decomposition even without 2D masks.
+To teach a VLM to "plan physics," data must define what constitutes physical attributes. The authors curated 150k assets with meaningful part structures from Objaverse, covering seven categories (household, industrial, etc.). Using MLLM initial generation followed by manual verification, they applied a four-tier annotation system: **Holistic Tier** (object-level) records real-world scale, category, and usage context; **Static Properties Tier** (part-level) records semantic labels, physical materials (metal/wood/glass), and mass; **Functional Tier** records internal functions (e.g., to control) and state machines (e.g., [pressed, released]); **Interactive Tier** records atomic affordances (pushable/rotatable), joint types, and parameters (axis origin, direction, limits). While discrete labels come from PhysDB, precise numerical articulation values are sourced from PartNet-Mobility to maintain accuracy.
 
-**3. KineVoxel Injection (KVI): Aligning geometry and kinematics in a single diffusion process**
-Serialized "geometry generation then articulation prediction" often leads to mismatches (e.g., a door with a misaligned hinge). KVI encodes kinematic parameters (origin/axis/limit) into a "kinematic voxel" that undergoes the same diffusion process as geometric voxels. The latent space carries both shape and kinematic information, sharing denoising steps to ensure natural alignment. During generation, the VLM blueprint provides condition signals, and the diffusion model performs high-fidelity synthesis on TRELLIS-style structured latents.
+**2. VLM as Physical Blueprint Planner: Translating World Knowledge into Hierarchical Blueprints**
+
+Stage 1 converts LVLM world knowledge into structured part hierarchies and physical properties. Using Qwen2.5-VL, the model processes image $I$, voxel $V$, and mask $M$. Voxels are encoded via PartField to capture part-level features, then downsampled into a 512-dimensional embedding using position-aware 3D convolutions. To enable the autoregressive model to output 3D bboxes, 66 special tokens are introduced: `<boxs>`/`<boxe>` for wrapping and 64 `<box0>...<box63>` for coordinate quantization. Predicting physical properties alongside bboxes reduces part segmentation ambiguity, as physical/functional constraints act as strong semantic signals.
+
+**3. KineVoxel Injection (KVI): Aligning Geometry and Kinematics in a Shared Diffusion Process**
+
+Running geometry generation and articulation prediction sequentially often leads to misalignment. KVI encodes articulation parameters into a "kinematic voxel" that undergoes denoising alongside the geometric voxel in the same diffusion process. Consequently, the latent space carries both shape and kinematic information. During generation, the VLM blueprint provides condition signals, and the diffusion model performs high-fidelity synthesis on TRELLIS-style structured latents, embedding kinematic consistency directly into the generative process.
 
 ### Loss & Training
-Stage 1: Standard next-token cross-entropy SFT to fine-tune Qwen2.5-VL for bbox and physical attribute sequences. Stage 2: Diffusion loss (following TRELLIS) plus additional parameter supervision for kinematic voxels. Articulation GT is sourced from PartNet-Mobility / Infinite-Mobility. Human-in-the-loop cleaning ensures annotation quality. Evaluation is performed on PhysXNet by comparing geometric (Chamfer Distance / F1) and physical attribute prediction accuracy.
+Stage 1 employs standard next-token cross-entropy SFT to fine-tune Qwen2.5-VL. Stage 2 uses diffusion loss (following TRELLIS) with additional parameter supervision for kinematic voxels. Human-in-the-loop cleaning ensures annotation quality. Evaluation is conducted on PhysXNet, comparing geometric metrics (Chamfer Distance, F1) and physical property prediction accuracy.
 
 ## Key Experimental Results
 
@@ -78,46 +80,47 @@ Comparison with existing part-aware and physics-aware methods on PhysXNet. Key m
 
 | Metric | Prev. SOTA (PhysX-3D series) | PhysForge | Trend |
 |---|---|---|---|
-| CD ↓ | Baseline | Significantly Lower | Improved geometric accuracy |
-| F1-0.1 ↑ | Baseline | Significantly Higher | Improved reconstruction accuracy |
-| F1-0.05 ↑ | Baseline | Noticeably Higher | Better performance under strict thresholds |
-| Absolute Scale (cm) ↓ | High Error | Significantly Reduced | More accurate physical scale |
+| CD ↓ | Baseline | Significantly Lower | Improved Geometry |
+| F1-0.1 ↑ | Baseline | Significantly Higher | Improved Reconstruction |
+| F1-0.05 ↑ | Baseline | Noticeably Higher | Better at Strict Thresholds |
+| Absolute Scale (cm) ↓ | High Error | Greatly Reduced | Precise Physical Scale |
 
 ### Ablation Study
 
-| Configuration | Key Observation | Mechanism |
+| Configuration | Key Observation | Description |
 |---|---|---|
-| Full PhysForge | Geometric + Articulation SOTA | Complete two-stage + KVI |
-| w/o Physics Prediction | Part granularity ambiguity reappears | Physics-guided planning resolves ambiguity |
-| w/o 2D mask input | Still produces reasonable bboxes | Blueprint constraints are sufficient |
-| w/o KineVoxel Injection | Mismatch between geometry and articulation | Serial prediction is error-prone |
-| w/o PhysDB training | Dropped accuracy in physical properties | Dataset is foundational to the paradigm |
-| Replace PartField | Weakened local part representation | PartField is better for part features |
+| Full PhysForge | SOTA in Geometry & Articulation | Full two-stage + KVI |
+| w/o Physical Property Prediction | Part ambiguity reappears | Physics-guided planning resolves ambiguity |
+| w/o 2D mask input | Still produces valid bboxes | Blueprint constraints are sufficient |
+| w/o KineVoxel Injection | Geometry-Articulation misalignment | Sequential prediction is error-prone |
+| w/o PhysDB training | Large drop in property accuracy | Dataset is critical for the paradigm |
+| Swap PartField for 3DShape2VecSet | Weakened local part representation | PartField is better for part features |
 
 ### Key Findings
-- **Physics constraints benefit structural planning**: Training the VLM to predict physical attributes alongside bboxes improves semantic understanding of part decomposition, often removing the need for 2D masks.
-- **Decoupled plan-realize paradigm is scalable**: Clear division between the VLM (architect) and diffusion model (builder) allows for independent upgrades to either component.
-- **KVI is critical for consistency**: Treating articulation parameters as voxels during diffusion embeds kinematic constraints directly into the generation process.
-- **Zero-shot deployment**: Results can be directly imported into simulators for downstream tasks like robotic grasping and door opening.
+- **Physics Constraints Benefit Structural Planning**: Training the VLM to predict physical properties alongside bboxes improves its semantic understanding of part decomposition, often eliminating the need for 2D masks.
+- **Scalable Plan-Realize Paradigm**: The division of labor between the VLM (high-level planning) and Diffusion (low-level synthesis) allows the system to benefit from future improvements in either base model.
+- **KVI for Consistency**: Treating articulation as a voxel for joint diffusion integrates kinematic constraints into the generative process more naturally than post-processing.
+- **Zero-shot Deployment**: Generated assets can be imported into simulators for immediate use in downstream applications like robotic grasping.
 
 ## Highlights & Insights
-- "VLM as the architect, diffusion as the builder"—this division of labor mirrors human engineering and effectively translates the 2D plan-then-generate paradigm to 3D.
-- Packaging articulation parameters into KineVoxels for a single diffusion process is an elegant solution that avoids redundant prediction branches while maintaining generative power.
-- The discovery that physical labels re-inform part decomposition challenges the intuition that decomposition is purely geometric; semantic constraints make the model truly "understand" what constitutes a part.
-- The 6-token bbox encoding is a refined example of fitting 3D structural generation into an LLM's next-token framework, offering high transferability.
-- The four-tier annotation hierarchy (holistic → static → functional → interactive) serves as a refined decomposition of "physical interactivity."
+- "VLM as architect, Diffusion as builder"—this division of labor mirrors human engineering and effectively translates the 2D plan-then-generate paradigm to 3D.
+- Encoding articulation parameters as KineVoxels is an elegant solution that avoids extra prediction branches while maintaining latent diffusion capability.
+- The discovery that physical labels aid part decomposition challenges the intuition that decomposition is a purely geometric task.
+- The 6-token bbox encoding is a refined example of fitting 3D structural generation into a next-token LLM framework.
+- The four-tier annotation hierarchy provides a standardized framework for decomposing the concept of "physical interactivity."
 
 ## Limitations & Future Work
-- Articulation precision remains dependent on datasets like PartNet-Mobility; large-scale precise articulation remains an open problem.
-- Evaluation focuses on geometric and attribute accuracy, lacking systematic assessment of downstream "manipulation success rates."
-- The VLM planning stage may still produce blueprints that violate physical common sense without an explicit consistency check.
-- Currently targets rigid body articulation; modes like soft bodies, fluids, and cloth are not yet covered, requiring future "X-Voxel Injection" extensions.
+- Articulation precision remains dependent on external datasets (PartNet-Mobility); scaling precise articulation labeling for the full PhysDB remains an open problem.
+- Evaluation focuses on geometric and attribute accuracy, lacking systematic assessment of downstream manipulation success rates in simulators.
+- The VLM might still plan blueprints that violate physical common sense (e.g., illogical door orientations) due to the lack of an explicit consistency checker.
+- Future work is needed to extend the framework to soft bodies, fluids, and cloth via new "X-Voxel Injections."
+- Potential category bias exists due to the household-centric nature of Objaverse samples.
 
 ## Related Work & Insights
-- **vs OmniPart**: OmniPart performs semantically decoupled part generation but defines parts purely by geometry; PhysForge anchors parts in function/physics and generates articulation.
-- **vs PartPacker**: PartPacker compresses parts into dual volumes for efficiency; PhysForge adds physical dimensions for interactivity.
-- **vs PhysX-3D**: PhysX-3D uses a Physical VAE; PhysForge uses explicit VLM planning and KVI for stronger consistency.
-- **vs EmbodiedGen**: EmbodiedGen is a system-level integration of modular tools; PhysForge is a unified framework from image to simulation-ready asset.
+- **vs OmniPart**: OmniPart focuses on geometric part decomposition; PhysForge anchors parts in "function + physics" and generates articulation parameters.
+- **vs PartPacker**: PartPacker emphasizes efficiency via dual volumes; PhysForge prioritizes "interactivity" by increasing physical dimensionality.
+- **vs PhysX-3D**: PhysX-3D uses a Physical VAE; PhysForge uses VLM planning and KVI for stronger consistency and articulated generation.
+- **vs EmbodiedGen**: EmbodiedGen is a multi-module system integration; PhysForge is a unified end-to-end framework.
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐⭐ 
@@ -135,7 +138,7 @@ Comparison with existing part-aware and physics-aware methods on PhysXNet. Key m
 - [\[ICML 2026\] Position: AI Evaluations Should be Grounded on a Theory of Capability](position_ai_evaluations_should_be_grounded_on_a_theory_of_capability.md)
 - [\[ECCV 2024\] Generating 3D House Wireframes with Semantics](../../ECCV2024/image_generation/generating_3d_house_wireframes_with_semantics.md)
 - [\[ICCV 2025\] Diffusion-based 3D Hand Motion Recovery with Intuitive Physics](../../ICCV2025/image_generation/diffusion-based_3d_hand_motion_recovery_with_intuitive_physics.md)
-- [\[ICLR 2026\] Unified Multi-Modal Interactive & Reactive 3D Motion Generation via Rectified Flow](../../ICLR2026/image_generation/unified_multi-modal_interactive_reactive_3d_motion_generation_via_rectified_flow.md)
+- [\[ICML 2026\] OcclusionFormer: Arranging Z-Order for Layout-Grounded Image Generation](occlusionformer_arranging_z-order_for_layout-grounded_image_generation.md)
 
 </div>
 

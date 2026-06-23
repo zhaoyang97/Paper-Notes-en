@@ -2,83 +2,83 @@
 title: >-
   [Paper Note] Parametric Prior Mapping Framework for Non-stationary Probabilistic Time Series Forecasting
 description: >-
-  [ICML 2026][Time Series][KDE-NLL] PPM utilizes a lightweight encoder to infer context-aware Gaussian priors from historical sequences and "pushes forward" these priors into full predictive distributions via a two-layer MLP. Optimized with a joint KDE-NLL and mean MSE loss, it outperforms diffusion models like DeepAR and NsDiff across seven benchmarks w
+  [ICML 2026][Time Series][KDE-NLL] PPM utilizes a lightweight encoder to infer context-aware Gaussian priors from historical sequences, then "pushes forward" this prior into a comprehensive predictive distribution using a two-layer MLP. Trained jointly with KDE-NLL and mean MSE, PPM outperforms diffusion models like DeepAR and NsDiff across seven time-s
 tags:
   - ICML 2026
   - Time Series
   - KDE-NLL
 date: 2026-05-08
-content_hash: c0fc22a3a0ae3ced
+content_hash: 8f3296107fe3bee1
 ---
 # Parametric Prior Mapping Framework for Non-stationary Probabilistic Time Series Forecasting
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.23402](https://arxiv.org/abs/2605.23402)  
 **Code**: https://github.com/ljl8336/PPM (Available)  
-**Area**: Time Series
+**Area**: Time Series  
 **Keywords**: Probabilistic Time Series Forecasting, Non-stationarity, Parametric Prior, Push-forward Mapping, KDE-NLL
 
 ## TL;DR
-PPM utilizes a lightweight encoder to infer context-aware Gaussian priors from historical sequences and "pushes forward" these priors into full predictive distributions via a two-layer MLP. Optimized with a joint KDE-NLL and mean MSE loss, it outperforms diffusion models like DeepAR and NsDiff across seven benchmarks while achieving $2\times$ to $100\times$ faster inference.
+PPM utilizes a lightweight encoder to infer context-aware Gaussian priors from historical sequences, then "pushes forward" this prior into a comprehensive predictive distribution using a two-layer MLP. Trained jointly with KDE-NLL and mean MSE, PPM outperforms diffusion models like DeepAR and NsDiff across seven time-series benchmarks while achieving $2 \times$ to $100 \times$ faster inference.
 
 ## Background & Motivation
-**Background**: Probabilistic forecasting for multivariate time series primarily follows two paths. The parametric approach, such as DeepAR (assuming fixed Gaussian likelihood) or BetterDeepAR (learning time-varying covariance), offers stability and efficiency through strong inductive biases. The deep generative approach, including diffusion models like TimeGrad, TMDM, and NsDiff, gradually denoises noise into future trajectories, offering flexibility but at the cost of speed and high data requirements.
+**Background**: Probabilistic forecasting for multivariate time series primarily follows two paths. The first is the parametric route, such as DeepAR assuming a fixed Gaussian likelihood or BetterDeepAR learning time-varying covariance; these provide stability and efficiency through strong inductive biases. The second is the deep generative route, such as TimeGrad, TMDM, and NsDiff diffusion models, which gradually denoise noise into future trajectories; these are flexible but slow and data-intensive.
 
-**Limitations of Prior Work**: While diffusion models can theoretically approximate any distribution using arbitrary priors, **the shape of the prior significantly affects trajectory reachability** under finite samples and computation. TMDM uses $\mathcal{N}(f(\bm{x}),\mathbf{I})$ as the endpoint, forcing the variance to an identity matrix. NsDiff improves this by using sliding window variance as a prior, but the window length is a fixed hyperparameter that fails to track rapidly changing aleatoric uncertainty. The paper illustrates this with Traffic data: traffic volume variance differs drastically between early morning (trough) and evening (peak), which the fixed priors of TMDM/NsDiff fail to capture.
+**Limitations of Prior Work**: While diffusion models can theoretically approximate any distribution from an arbitrary prior, in scenarios with limited samples and computational power, **the prior shape severely affects trajectory reachability**. TMDM uses $\mathcal{N}(f(\bm{x}),\mathbf{I})$ as an endpoint, where the variance is forcibly fixed to an identity matrix. NsDiff improves this by using a sliding window to calculate variance as a prior, but the window length is a fixed hyperparameter that cannot adapt to rapidly changing aleatoric uncertainty. The paper illustrates this using Traffic data: traffic volume variance differs drastically between 5–6 AM (trough) and 5–6 PM (peak), whereas priors in TMDM/NsDiff fail to match the true variance.
 
-**Key Challenge**: Parametric methods possess strong inductive biases but weak expressiveness, while generative models are expressive but lack structural priors and suffer from slow inference. Their respective advantages are complementary yet have been treated as opposing paradigms.
+**Key Challenge**: Parametric methods possess strong inductive biases but weak expressiveness, while generative models offer expressiveness but lack structural priors and suffer from slow inference. Their strengths are complementary but have traditionally been treated as opposing approaches.
 
-**Goal**: (1) Create a data-adaptive prior that varies with the input; (2) Maintain the expressiveness of generative models to fit complex non-Gaussian conditional distributions; (3) Avoid the $T$-step iterative inference of diffusion models.
+**Goal**: (1) Create a data-adaptive prior that changes with the input; (2) Retain the expressiveness of generative models to fit complex non-Gaussian conditional distributions; (3) Avoid the $T$-step iterative process of diffusion during inference.
 
-**Key Insight**: Rather than forcing a generative model to learn a transport map from uninformative noise, a parametric estimator (MLP) can be used to derive a context-aware Gaussian prior from the history window. A learned non-linear mapping then "pushes forward" this structured prior into the final predictive distribution. This significantly reduces the burden on the transport map, allowing for one-step forward generation.
+**Key Insight**: Instead of making a generative model learn a transport mapping from uninformative noise, it is more efficient to "leverage" a context-aware Gaussian prior from the historical window using a parametric estimator (MLP). Then, a learned non-linear mapping "pushes forward" this structured prior into the final predictive distribution—significantly reducing the burden on the transport mapping and enabling single-step forward generation.
 
-**Core Idea**: Generate **adaptive priors** via parametric estimation, followed by **one-step** conditional distribution generation using a push-forward MLP. Training is conducted via a hybrid objective of KDE-based density estimation (NLL) and mean MSE to anchor the first moment.
+**Core Idea**: Construct **adaptive priors** via parametric estimation, then perform **one-step** conditional distribution generation using a push-forward MLP, utilizing a hybrid training strategy of KDE density estimation and mean MSE to anchor the first moment.
 
 ## Method
 
 ### Overall Architecture
-Given a history window $\bm{x}\in\mathbb{R}^{H\times C}$, the model outputs sample-based predictive distributions over the forecast horizon $\bm{y}\in\mathbb{R}^{L\times C}$. The pipeline consists of three stages:
+Given a historical window $\bm{x}\in\mathbb{R}^{H\times C}$, the model outputs a sample-based predictive distribution over the forecast horizon $\bm{y}\in\mathbb{R}^{L\times C}$. The pipeline is divided into three stages:
 
-1.  **Parametric Prior Induction**: An MLP encoder $f_\theta(\bm{x})$ outputs latent variables $(\bm{\mu}, \bm{\sigma})\in\mathbb{R}^{C\times D}$ for each channel, defining a diagonal Gaussian conditional prior $p_\theta(\bm{z}|\bm{x})=\mathcal{N}(\bm{z};\bm{\mu},\text{diag}(\bm{\sigma}^2))$.
-2.  **Distribution Push-forward**: Using reparameterized sampling $\bm{z}^{(k)}=\bm{\mu}+\bm{\sigma}\odot\bm{\epsilon}^{(k)}$, samples are passed through a channel-independent two-layer GeLU MLP mapping $g_\phi:\mathbb{R}^{C\times D}\to\mathbb{R}^{L\times C}$ to obtain $K$ trajectory samples $\hat{\bm{y}}^{(k)}=g_\phi(\bm{z}^{(k)})$. The predictive distribution is formalized as the push-forward measure $q_\phi(\bm{y}|\bm{x})=(g_\phi)_\# p_\theta(\bm{z}|\bm{x})$.
-3.  **Hybrid Objective Optimization**: Marginal densities $\hat{q}_h(y_{c,t}|\bm{x})$ are estimated via Gaussian KDE on the $K$ samples, with NLL calculated using log-sum-exp. An additional MSE term based on the sample mean anchors the first moment. Inference requires only one pass of $f_\theta$ and $K$ passes of $g_\phi$, without KDE.
+1. **Parametric Prior Induction**: An MLP encoder $f_\theta(\bm{x})$ outputs latent variables $(\bm{\mu}, \bm{\sigma})\in\mathbb{R}^{C\times D}$ for each channel, defining a diagonal Gaussian conditional prior $p_\theta(\bm{z}|\bm{x})=\mathcal{N}(\bm{z};\bm{\mu},\text{diag}(\bm{\sigma}^2))$.
+2. **Distribution Push-forward**: Using reparameterized sampling $\bm{z}^{(k)}=\bm{\mu}+\bm{\sigma}\odot\bm{\epsilon}^{(k)}$, the latent codes are mapped through a channel-independent two-layer GeLU MLP $g_\phi:\mathbb{R}^{C\times D}\to\mathbb{R}^{L\times C}$ to obtain $K$ trajectory samples $\hat{\bm{y}}^{(k)}=g_\phi(\bm{z}^{(k)})$. The predictive distribution is formalized as a push-forward measure $q_\phi(\bm{y}|\bm{x})=(g_\phi)_\# p_\theta(\bm{z}|\bm{x})$.
+3. **Hybrid Objective Optimization**: Gaussian KDE is applied to the $K$ samples to estimate marginal densities $\hat{q}_h(y_{c,t}|\bm{x})$, using log-sum-exp to calculate NLL. An additional MSE term based on the sample mean anchors the first moment. Inference requires only one pass through $f_\theta$ followed by $K$ passes through $g_\phi$, without KDE.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["History Window x"] --> B["Context-aware Parametric Prior<br/>MLP Encoder f_θ infers (μ, σ)<br/>Diagonal Gaussian + Reparameterized Sampling z^(k)"]
-    B --> C["Push-forward MLP (One-step Generation)<br/>Two-layer GeLU MLP g_φ Single-step Mapping<br/>Yields K Trajectory Samples ŷ^(k)"]
-    C -->|Training| D["KDE-NLL + Mean MSE Hybrid Objective<br/>KDE Estimates Density for NLL Shaping + Mean MSE Anchors First Moment"]
-    C -->|Inference| E["Sample-based Predictive Distribution q_φ(y|x)<br/>Single Forward Pass, No Iterations"]
-    D -.->|End-to-end Backprop| B
+    A["Historical Window x"] --> B["Context-aware Parametric Prior<br/>MLP Encoder f_θ infers (μ, σ)<br/>Diagonal Gaussian + Reparameterization z^(k)"]
+    B --> C["Push-forward MLP (One-step Generation)<br/>Two-layer GeLU MLP g_φ single mapping<br/>Obtain K trajectory samples ŷ^(k)"]
+    C -->|Training| D["KDE-NLL + Mean MSE Hybrid Objective<br/>KDE estimates NLL for shaping + Mean MSE anchors first moment"]
+    C -->|Inference| E["Sample-based Predictive Distribution q_φ(y|x)<br/>Single-step forward, no iteration"]
+    D -.->|End-to-end backprop| B
 ```
 
 ### Key Designs
 
-**1. Context-aware Parametric Prior: Adapting priors to inputs to address rigid variance in diffusion models.**
+**1. Context-aware Parametric Prior: Adapting priors to inputs to address rigid prior variance in diffusion models**
 
-Diffusion-based forecasting can theoretically approximate any distribution, but the prior shape severely impacts trajectory reachability under limited resources. While TMDM freezes endpoint variance to $\mathcal{N}(f(\bm{x}),\mathbf{I})$ and NsDiff uses sliding windows with fixed hyperparameters, they struggle with data like Traffic, where variance oscillates between peaks and troughs. PPM uses a lightweight MLP $f_\theta$ to map history $\bm{x}$ directly to latent $(\bm{\mu}, \bm{\sigma})$, defining a diagonal Gaussian conditional prior $p_\theta(\bm{z}|\bm{x}) = \mathcal{N}(\bm{z};\bm{\mu},\text{diag}(\bm{\sigma}^2))$. Reparameterized sampling $\bm{z}^{(k)} = \bm{\mu} + \bm{\sigma}\odot\bm{\epsilon}^{(k)}$ maintains differentiability. This "input-dependent" prior addresses time-varying aleatoric uncertainty and remains backbone-agnostic.
+While diffusion-based probabilistic forecasting can theoretically approximate any distribution, finite samples and compute mean the prior shape heavily impacts trajectory reachability. TMDM freezes endpoint variance to identity $\mathcal{N}(f(\bm{x}),\mathbf{I})$, and NsDiff uses fixed-length sliding window variance, which fails on data like Traffic where variance differs significantly between troughs and peaks. PPM uses a lightweight MLP $f_\theta$ to map the historical window $\bm{x}$ directly into latent space $(\bm{\mu},\bm{\sigma})$, defining a diagonal Gaussian conditional prior $p_\theta(\bm{z}|\bm{x}) = \mathcal{N}(\bm{z};\bm{\mu},\text{diag}(\bm{\sigma}^2))$. Reparameterized sampling $\bm{z}^{(k)} = \bm{\mu} + \bm{\sigma}\odot\bm{\epsilon}^{(k)}$ maintains differentiability. The latent dimension $D$ is "over-complete" to allow the prior to encode rich context. By making the prior "follow $\bm{x}$," time-varying aleatoric uncertainty is accounted for, and the framework remains backbone-agnostic (compatible with Transformers or RNNs).
 
-**2. Push-forward MLP (One-step Generation): Mapping structured Gaussian priors to complex distributions, eliminating T-step iterations.**
+**2. Push-forward MLP (One-step Generation): Mapping structured Gaussian priors to complex distributions in one step**
 
-Diffusion's $T$-step denoising bridges the gap between generic noise and complex data. Since the context is already embedded in the parametric prior, the transport map no longer requires iterative refinement. PPM uses a two-layer channel-independent GeLU MLP $g_\phi:\mathbb{R}^{C\times D}\to\mathbb{R}^{L\times C}$ to project latent codes to the prediction window in one step: $\hat{\bm{y}}^{(k)} = g_\phi(\bm{z}^{(k)})$. Theorem 5.2 guarantees that this push-forward measure $q_\phi(\bm{y}|\bm{x}) = (g_\phi)_\# p_\theta(\bm{z}|\bm{x})$ is dense in the space of conditional distributions with finite first moments, providing sufficient expressiveness for non-Gaussian and multi-modal distributions. Inference complexity is reduced from $O(BKT)$ to $O(B+BK)$.
+Diffusion's $T$-step denoising builds a bridge between generic noise and complex data. However, since the context is already embedded into the prior via parametric estimation, the transport mapping does not require iterative refinement. PPM employs a two-layer channel-independent GeLU MLP $g_\phi:\mathbb{R}^{C\times D}\to\mathbb{R}^{L\times C}$ to project latent codes into the prediction window in a single step, yielding $\hat{\bm{y}}^{(k)} = g_\phi(\bm{z}^{(k)})$. The predictive distribution is the push-forward measure $q_\phi(\bm{y}|\bm{x}) = (g_\phi)_\# p_\theta(\bm{z}|\bm{x})$. Theorem 5.2 guarantees that this measure is dense in the $W_1$ sense for any conditional distribution with finite first moments—meaning a single step is sufficient to express complex, non-Gaussian, and multimodal distributions. Because the prior handles context modeling, the mapping burden is low, and inference complexity drops from $O(BKT)$ to $O(B+BK)$.
 
-**3. KDE-NLL + Mean MSE Hybrid Objective: Shaping distributions while anchoring point accuracy.**
+**3. KDE-NLL + Mean MSE Hybrid Objective: Shaping distribution while anchoring point accuracy**
 
-Since the model only outputs samples, pure KDE-NLL can suffer from vanishing gradients early in training when samples are far from targets. PPM applies Gaussian KDE to estimate marginal densities $\hat{q}_h(y_{c,t}|\bm{x}) = \frac{1}{Kh}\sum_k\mathcal{K}(\tfrac{y_{c,t}-\hat{y}_{c,t}^{(k)}}{h})$ for NLL shaping, combined with $\mathcal{L}_{\text{MM}} = \|\bm{y}-\frac{1}{K}\sum_k\hat{\bm{y}}^{(k)}\|^2$ to anchor the first moment. The total loss is $\mathcal{L}_{\text{total}} = \alpha\mathcal{L}_{\text{NLL}} + \mathcal{L}_{\text{MM}}$ ($\alpha=0.1, h=0.3$). Theorem 5.1 expresses KDE bias ($O(h^2/\varepsilon)$) and variance ($O(1/(\varepsilon h\sqrt{K}))$) as functions of $h$ and $K$, guiding their co-tuning. MSE provides stable gradients to pull samples toward the mean, while KDE-NLL shapes the distribution using responsibility-weighted residuals.
+The model only produces samples and cannot provide direct density; pure KDE-NLL suffers from vanishing gradients (via near-zero Gaussian kernels) when samples are far from the ground truth early in training. PPM uses Gaussian KDE for each $(c,t)$ pair to estimate marginal density $\hat{q}_h(y_{c,t}|\bm{x}) = \frac{1}{Kh}\sum_k\mathcal{K}(\tfrac{y_{c,t}-\hat{y}_{c,t}^{(k)}}{h})$ and calculates NLL for distribution shaping. Simultaneously, it adds $\mathcal{L}_{\text{MM}} = \|\bm{y}-\frac{1}{K}\sum_k\hat{\bm{y}}^{(k)}\|^2$ to anchor the first moment. The total loss is $\mathcal{L}_{\text{total}} = \alpha\mathcal{L}_{\text{NLL}} + \mathcal{L}_{\text{MM}}$ ($\alpha=0.1$, $h=0.3$). Theorem 5.1 formulates KDE bias ($O(h^2/\varepsilon)$) and variance ($O(1/(\varepsilon h\sqrt{K}))$) as functions of $h$ and $K$, indicating they must be co-tuned. The division of labor is clear: MSE anchors provide dense, stable gradients "pulling toward the mean" (Eq. 16), while KDE-NLL uses responsibility-weighted residuals (Eq. 15) to shape the distribution—a "dense anchor + sparse shaping" combination universal to sample-based likelihood learning.
 
 ### Loss & Training
-- Training samples $K=100$ trajectories; KDE bandwidth $h=0.3$; weight $\alpha=0.1$.
-- Encoder $f_\theta$ and mapping $g_\phi$ are both MLPs, trained via end-to-end backpropagation.
-- Inference likewise uses 100 samples to approximate the distribution; only one pass of $f_\theta$ and a single step of $g_\phi$ are required.
+- During training, $K=100$ trajectories are sampled; KDE bandwidth $h=0.3$; weight $\alpha=0.1$.
+- Encoder $f_\theta$ and mapping $g_\phi$ are both MLPs, trained with end-to-end backpropagation.
+- For inference, 100 samples approximate the predictive distribution; only one pass of $f_\theta$ and a single-step $g_\phi$ are required.
 
 ## Key Experimental Results
 
 ### Main Results
-Testing on seven real-world datasets (ETTh1/h2/m1/m2, Weather, Electricity, Traffic) against 6 SOTA baselines (DeepAR, TimeGrad, TimeDiff, D3VAE, DiffusionTS, TMDM, NsDiff), averaged over 5 runs.
+On seven real-world datasets (ETTh1/h2/m1/m2, Weather, Electricity, Traffic), compared against 6 SOTA baselines (DeepAR, TimeGrad, TimeDiff, D3VAE, DiffusionTS, TMDM, NsDiff), averaged over 5 runs.
 
-| Dataset | Metric | PPM | 2nd Place (NsDiff) | Gain |
-| :--- | :--- | :--- | :--- | :--- |
+| Dataset | Metric | PPM (Ours) | Runner-up (NsDiff) | Gain |
+|--------|------|------|----------|------|
 | Electricity | CRPS | 0.206 | 0.286 | **-28.0%** |
 | Electricity | QICE | 2.435 | 7.595 | **-67.9%** |
 | Traffic | CRPS | 0.252 | 0.367 | **-31.3%** |
@@ -87,50 +87,50 @@ Testing on seven real-world datasets (ETTh1/h2/m1/m2, Weather, Electricity, Traf
 | ETTh2 | MSE | 0.376 | 0.448 | -16.1% |
 | Weather | CRPS | 0.215 | 0.240 (TMDM) | -10.4% |
 
-Ours achieved SOTA in CRPS across all 7 datasets and SOTA in QICE in 6 out of 7 datasets. MSE/MAE metrics also reached SOTA across all 7 benchmarks. The improvement is most significant on datasets with complex dynamics (high variance), such as Traffic (Variance=14.225).
+CRPS achieved SOTA on all 7 datasets; QICE achieved SOTA on 6/7 (slightly behind NsDiff on ETTh2). MSE/MAE are SOTA across all 7. PPM gains are most significant in datasets with complex dynamics (high Variance), such as Traffic (Variance=14.225).
 
 ### Ablation Study
 
-| Config | ETTm1 MSE | ETTm1 CRPS | ETTm1 QICE | Elec MSE | Elec CRPS | Elec QICE |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Configuration | ETTm1 MSE | ETTm1 CRPS | ETTm1 QICE | Elec MSE | Elec CRPS | Elec QICE |
+|------|-----------|------------|------------|----------|-----------|-----------|
 | Full PPM | **0.381** | **0.314** | **1.782** | **0.182** | **0.206** | **2.435** |
 | w/o NLL | 0.371 | 0.345 | 6.342 | 0.182 | 0.257 | 8.317 |
 | w/o MM (Mean MSE) | 0.407 | 0.324 | 1.912 | 0.191 | 0.213 | 5.697 |
 
-Prior form ablation (Table 4, Traffic): Using raw Gaussian/Uniform as the predictive distribution yielded QICE values of 2.414/3.715. With push-forward mapping, Gaussian reached 2.744 (CRPS 0.266 → 0.252) and Uniform reached 2.616 (CRPS 0.271 → 0.251), indicating that push-forward mapping is **insensitive to the prior form**.
+Ablation of Prior Form (Table 4, Traffic): Using raw Gaussian/Uniform as the predictive distribution yielded QICE of 2.414/3.715. Adding push-forward improved Gaussian $\to$ 2.744 (CRPS 0.266 $\to$ 0.252) and Uniform $\to$ 2.616 (CRPS 0.271 $\to$ 0.251), indicating the push-forward is **insensitive to the prior form**.
 
 ### Key Findings
-- **MM loss stabilizes point forecasting**: Removing MM significantly increases MSE (ETTm1: 0.381 → 0.407), confirming theoretical analysis of KDE-NLL's unstable early gradients.
-- **NLL loss shapes the distribution**: Removing NLL severely degrades QICE (ETTm1: 1.782 → 6.342, Electricity: 2.435 → 8.317), proving that distribution calibration relies on NLL.
-- **2x–100x Speedup**: By collapsing $T$-step denoising into a single-step mapping, PPM reduces complexity by a factor of $\Theta(T)$ compared to diffusion models.
-- **Superiority in Non-stationarity**: On the Traffic dataset (highest Fourier variance of 14.225), PPM achieved the largest gains over NsDiff, validating the advantage of context-aware priors.
-- **Higher Mutual Information**: Figure 4 shows that the lower bound of mutual information between latent $\bm{z}$ and input $\bm{x}$ is higher in PPM than in baselines, proving the prior effectively captures context.
+- **MM loss primarily stabilizes point prediction**: Removing MM significantly increases MSE (ETTm1: 0.381 $\to$ 0.407), confirming theoretical analysis of KDE-NLL's unstable early gradients.
+- **NLL loss primarily shapes distribution**: Removing NLL severely worsens QICE (ETTm1: 1.782 $\to$ 6.342, Electricity: 2.435 $\to$ 8.317) and CRPS, showing distribution calibration depends on NLL.
+- **Inference Speedup $2\times$–$100\times$**: Compared to diffusion models like TimeGrad/TMDM/NsDiff, PPM compresses $T$-step denoising into a single-step mapping, reducing theoretical complexity by $\Theta(T)$.
+- **Superior in Non-stationary settings**: On Traffic, which has the highest Fourier variance (14.225), PPM achieved its largest gains over NsDiff (CRPS -31.3%, QICE -67.2%), validating the importance of context-aware priors.
+- **Higher and Stable MI lower bound**: Figure 4 shows the lower bound of mutual information between latent variable $\bm{z}$ and input $\bm{x}$ is higher for PPM than baselines, proving the prior effectively "absorbs" context.
 
 ## Highlights & Insights
-- **Upgrading priors from rigid to context-aware**: This addresses a core flaw in diffusion-based forecasting where prior shapes were treated as hyperparameters. PPM allows $\bm{x}$ to determine prior parameters, solving mismatch issues in non-stationary scenarios.
-- **"Less is more" - Faster and more accurate**: Folding $T$ denoising steps into a single push-forward step is a classic paradigm of trading iteration for inductive bias. This approach could transfer to other tasks like conditional image generation.
-- **Complementarity of KDE-NLL and Mean MSE**: The authors interpret the division of labor between these gradients—KDE-NLL uses responsibility-weighted residuals (winner-take-all) to shape the distribution, while MM provides a dense anchor toward the mean.
-- **Strong Theoretical Grounding**: Theorem 5.1 provides principled guidance for hyperparameter tuning by expressing KDE bias and variance through $h$ and $K$.
+- **Upgrading Prior from Rigid Gaussian/Sliding Window to Learnable Context-aware Distribution**: This is a simple yet profound modification to diffusion-based forecasting. Existing methods recognize the importance of the prior but treat its "shape" as a hyperparameter; PPM lets $\bm{x}$ determine prior parameters, fundamentally resolving mismatch in non-stationary scenarios.
+- **"Doing Less" is Faster and More Accurate**: Folding $T$-step denoising into single-step push-forward follows the paradigm of "exchanging iterations for inductive bias." As long as the prior handles significant context modeling, the transport mapping requires fewer refinement steps. This approach could transfer to other generative tasks (e.g., conditional image generation) by using a lightweight branch to calculate condition-aware priors.
+- **Complementarity of KDE-NLL and Mean MSE**: Equations 15 and 16 elegantly explain the division of labor—KDE-NLL gradients are sparsified by responsibility weights (winner-take-all), while MM gradients are dense, constantly pulling the mean toward the truth.
+- **Strong Theoretical Foundation**: Theorem 5.1 formulates KDE bias and variance as functions of $h$ and $K$, providing principled guidance for hyperparameter co-tuning rather than relying on trial and error.
 
 ## Limitations & Future Work
-- **KDE Bandwidth Sensitivity**: The authors note that a single fixed $h$ can amplify errors in extreme or rapidly changing regimes. Learned or local multi-bandwidth KDE is a natural extension.
-- **Focus on Marginal Distributions**: Current NLL is calculated per $(c,t)$, without explicitly modeling joint cross-time or cross-variable dependencies. Energy scores or variogram scores could be future alternatives.
-- **Limited Calibration Evaluation**: While CRPS/QICE are reported, reliability diagrams or fine-grained quantile coverage over time are missing.
-- **Theoretical Assumptions**: Theorem 5.2's density is for each fixed $\bm{x}$, without providing uniform approximation rates; sample complexity for conditional distributions remains open.
-- **Simpler Backbone**: The main text focuses on MLPs; while Transformers are in the appendix, maintaining speed advantages on complex architectures is a practical concern.
+- **KDE Bandwidth Sensitivity**: Authors admit that in extreme/rapidly changing regimes, a single fixed $h$ amplifies estimation error. Learnable bandwidths or multi-bandwidth KDE are logical extensions.
+- **Marginal vs. Joint Distribution**: Current NLL is calculated as marginal density per $(c,t)$, without explicitly modeling joint dependencies across time/variables. For path-dependent decisions (e.g., risk management), energy scores or variogram scores might be necessary.
+- **Limited Calibration Evaluation**: Relies primarily on CRPS/QICE; lacks reliability diagrams or fine-grained quantile coverage evaluation over time for non-stationary calibration checks.
+- **Strong Theoretical Assumptions**: Theorem 5.2's density guarantee is "per fixed $\bm{x}$" and doesn't provide uniform approximation rates; sample complexity for conditional distributions remains open.
+- **Narrow Backbone Analysis**: The main text focuses on MLP; more complex backbones like Transformers are relegated to the appendix. Maintaining speed advantages with Transformers is a practical consideration.
 
 ## Related Work & Insights
-- **vs. TMDM (NeurIPS'24)**: Both treat the prior as learnable, but TMDM freezes variance to an identity matrix and uses diffusion; PPM learns variance from $\bm{x}$ and uses one-step mapping, speeding up inference by 2–100×.
-- **vs. NsDiff (ICLR'25)**: NsDiff uses fixed sliding windows for variance, which works for short-term non-stationarity but fails to track fast dynamics like Traffic. PPM adaptive tracking solves this.
-- **vs. Flow-based / Normalizing Flow**: Both use push-forward perspectives. NF requires invertible mappings with easy Jacobian calculations, limiting architecture; PPM uses KDE to bypass likelihood calculations, allowing for free architecture design.
-- **vs. DeepAR**: DeepAR is purely parametric (RNN + fixed Gaussian). PPM retains the efficiency of parametric priors but uses a sample-based output to fit non-Gaussian distributions.
-- **Insight**: The paradigm of context-aware priors + lightweight push-forward can be applied to any "slow diffusion" domain—such as conditional image or video generation—provided a cheap parametric estimator can be constructed.
+- **vs TMDM (NeurIPS'24)**: Both treat the prior as learnable, but TMDM ($\mathcal{N}(f(\bm{x}),\mathbf{I})$) freezes variance to identity and uses diffusion; PPM allows variance to adapt to $\bm{x}$ and compresses denoising to a single step, speeding up inference by 2–100$\times$.
+- **vs NsDiff (ICLR'25)**: NsDiff uses fixed sliding window variance as a prior, which helps with **short-term** non-stationarity but remains rigid. PPM's $\bm{\sigma}(\bm{x})$ tracks dynamics adaptively.
+- **vs Flow-based / Normalizing Flow**: Both use push-forward perspectives; however, NF usually requires invertible mappings and tractable Jacobians, limiting complexity. PPM bypasses likelihood calculation via KDE, allowing freer architectures.
+- **vs DeepAR**: DeepAR is purely parametric (autoregressive RNN + fixed Gaussian); PPM retains this efficiency but uses a sample-based output, enabling fitment of non-Gaussian distributions.
+- **Insight**: The condition-aware prior + lightweight push-forward paradigm can transfer to any field where diffusion is "too slow"—such as conditional image or video generation—provided a cheap parametric estimator can be constructed.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Elegantly bridges parametric and generative paths. Push-forward + context-aware prior is a clear first for probabilistic time series, though individual components are established.
-- Experimental Thoroughness: ⭐⭐⭐⭐ 7 datasets and 6 strong baselines. Comprehensive ablation on objectives and prior forms. Lacks reliability diagrams and long-horizon backbone analysis in the main text.
-- Writing Quality: ⭐⭐⭐⭐ Motivation in Figure 1 is clear. Theorems 5.1/5.2 align well with the method. Minor typos like "triaining" noted.
-- Value: ⭐⭐⭐⭐ High practical value with SOTA accuracy and significant inference speedup. Methodologically valuable for the generative model community.
+- Novelty: ⭐⭐⭐⭐ Elegantly bridges parametric and generative paths. While individual components (reparameterization, KDE-NLL) are known, their specific combination for probabilistic forecasting is novel.
+- Experimental Thoroughness: ⭐⭐⭐⭐ SOTA across 7 datasets and 4 metrics; rigorous ablation of loss and prior forms; logic analysis of MI. Lacks reliability diagrams across horizons.
+- Writing Quality: ⭐⭐⭐⭐ Figure 1 addresses the pain point directly; theorems align with the method. Minor typos ("triaining").
+- Value: ⭐⭐⭐⭐ High practical utility—SOTA accuracy + massive speedup for production environments (energy, finance). The methodology is transferable to the broader generative model community.
 
 <!-- RELATED:START -->
 

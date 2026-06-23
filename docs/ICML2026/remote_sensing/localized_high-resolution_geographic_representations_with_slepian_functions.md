@@ -2,12 +2,12 @@
 title: >-
   [Paper Note] Localized, High-resolution Geographic Representations with Slepian Functions
 description: >-
-  [ICML 2026][Remote Sensing][Paper Note] This paper constructs a geographic positional encoder using spherical Slepian functions to concentrate representation capacity within a Region of Interest (ROI). It proposes a hybrid Slepian-Spherical Harmonic encoding to balance local high resolution with global coarse-grained context, consistently outperforming mains
+  [ICML 2026][Remote Sensing][Paper Note] This paper constructs a geographic positional encoder that concentrates representation capacity on a Region of Interest (ROI) using spherical Slepian functions. It proposes a Slepian-Spherical Harmonic (SH) hybrid encoding to simultaneously capture local high-resolution details and global coarse-grained context. It con
 tags:
   - ICML 2026
   - Remote Sensing
 date: 2026-05-08
-content_hash: 7a684975a75ae357
+content_hash: 7cbd20e8fd4d9db7
 ---
 # Localized, High-resolution Geographic Representations with Slepian Functions
 
@@ -15,29 +15,29 @@ content_hash: 7a684975a75ae357
 **arXiv**: [2602.00392](https://arxiv.org/abs/2602.00392)  
 **Code**: https://github.com/arjunarao619/SlepianPosEnc (Available)  
 **Area**: Remote Sensing / Geographic Representation / Positional Encoding  
-**Keywords**: Slepian Functions, Spherical Harmonics, Positional Encoding, Local High-resolution, Geographic Machine Learning
+**Keywords**: Slepian functions, Spherical harmonics, Positional encoding, Local high-resolution, Geographic machine learning
 
 ## TL;DR
-This paper constructs a geographic positional encoder using spherical Slepian functions to concentrate representation capacity within a Region of Interest (ROI). It proposes a hybrid Slepian-Spherical Harmonic encoding to balance local high resolution with global coarse-grained context, consistently outperforming mainstream baselines such as SH, Wavelet, and RFF across five classification, regression, and image-enhanced prediction tasks.
+This paper constructs a geographic positional encoder that concentrates representation capacity on a Region of Interest (ROI) using spherical Slepian functions. It proposes a Slepian-Spherical Harmonic (SH) hybrid encoding to simultaneously capture local high-resolution details and global coarse-grained context. It consistently outperforms mainstream baselines such as SH, Wavelets, and RFF across five classification, regression, and image-enhancement prediction tasks.
 
 ## Background & Motivation
-**Background**: Standard practice in geographic machine learning involves embedding latitude and longitude $(\lambda, \phi) \in S^2$ into a continuous function $\Phi(x)$, which is then fed into an MLP for downstream prediction. Typical choices include grid-cell style multi-scale sinusoidal encodings (Space2Vec), Double Fourier Sphere series (SphereC/M), Random Fourier Features (RFF), and natively defined Spherical Harmonics (SH) on the sphere. SatCLIP, which uses SH for large-scale pre-training, is currently recognized as a universal global positional encoder.
+**Background**: Embedding latitude and longitude $(\lambda, \phi) \in S^2$ into a continuous function $\Phi(x)$, followed by an MLP for downstream prediction, is the standard practice in geographic machine learning. Typical choices include grid-cell-style multi-scale sinusoidal encodings (Space2Vec), the Double Fourier Sphere series (SphereC/M), Random Fourier Features (RFF), and Spherical Harmonics (SH) defined natively on the sphere. SatCLIP uses SH for large-scale pre-training and is currently recognized as a universal global positional encoder.
 
-**Limitations of Prior Work**: All these encodings distribute the "resolution budget" uniformly across the globe. To capture city-level details ($\sim$ several kilometers), the global resolution must be increased simultaneously, causing the feature dimension to expand quadratically by $(L+1)^2$, leading to prohibitive memory and computational costs. Furthermore, the recurrence of associated Legendre polynomials in SH is numerically unstable; normalization constants $N_{\ell m} \sim \ell^{-m}$ decay rapidly, causing NaNs at $L \gtrsim 40$ in FP32. Consequently, the practical resolution of SH is limited to approximately $20000/40 = 500$ km, which is insufficient for local tasks like California housing prices or Japanese prefectures.
+**Limitations of Prior Work**: All these encodings distribute the "resolution budget" uniformly across the entire globe. To resolve details at a city level ($\sim$ several kilometers), the global resolution must be increased globally, causing the feature dimensionality to expand quadratically as $(L+1)^2$, which leads to prohibitive memory and computational costs. Furthermore, the recurrence of associated Legendre polynomials in SH is numerically unstable; the normalization constants $N_{\ell m} \sim \ell^{-m}$ decay rapidly, causing numerical overflow in FP32 when $L \gtrsim 40$. With lower thresholds for mixed-precision training, the stable resolution for SH is capped at approximately $20000/40 = 500$ km, which is insufficient for local tasks like California housing prices or Japanese prefectures that require ten-kilometer scales.
 
-**Key Challenge**: A structural trade-off exists between "global completeness" and "local high resolution" on the sphere. To achieve global utility, a complete orthogonal basis must span the entire sphere; to achieve local high resolution, one must use exponentially many dimensions for forced refinement.
+**Key Challenge**: There is a structural trade-off between "global completeness" and "local high resolution" on the sphere. To achieve global utility, a complete orthogonal basis must be spread across the sphere, where each basis function spans the entire domain. To achieve local high resolution, one must spend exponential dimensions to force refinement.
 
-**Goal**: (1) Identify basis functions that concentrate energy within a user-specified ROI under a fixed bandwidth; (2) Seamlessly integrate this basis with global SH to retain global context; (3) Ensure the representation is pole-safe; (4) Scale computationally to resolutions like $L_r \sim 256$, where SH is unusable.
+**Goal**: (1) Find a basis function that concentrates the vast majority of energy within a user-specified ROI for a fixed bandwidth; (2) Ensure this basis can seamlessly concatenate with global SH to retain global context; (3) Ensure it is pole-safe; (4) Scale computationally to resolutions like $L_r \sim 256$, which are unattainable for standard SH.
 
-**Key Insight**: A classic concentration problem exists in signal processing (Slepian & Pollak, 1961): among all band-limited functions, which ones maximize energy concentration in a given interval? Extending this to the sphere (Simons et al. 2006) yields spherical Slepian functions, traditionally used for "local signal analysis" in geophysics (e.g., gravity fields, ice sheet changes). This paper shifts the perspective: rather than using Slepian functions to analyze observed signals, it treats them as a positional encoding basis to learn local representations directly.
+**Key Insight**: There is a classic concentration problem in signal processing (Slepian & Pollak, 1961): among all band-limited functions, which ones maximize energy concentration within a given interval? Extending this to the sphere (Simons et al. 2006) yields spherical Slepian functions, which have been used for "localized signal analysis" in geophysical tasks like Earth's gravity field and ice sheet mass changes. The authors' shift is: instead of using Slepian functions to analyze observed signals, use them as a positional encoding basis to directly learn local representations.
 
-**Core Idea**: Project the band-limited SH subspace $\mathcal{H}_{L_r}$ onto the ROI to obtain a concentration matrix $K$. Take the first $K = \lceil N(R,L_r) \rceil$ eigenvectors as the positional encoding basis and concatenate them with a low-bandwidth global SH basis. This enables "local high-resolution Slepian and global low-resolution SH."
+**Core Idea**: Project the band-limited SH subspace $\mathcal{H}_{L_r}$ onto an ROI to obtain a concentration matrix $K$. Take the first $K = \lceil N(R,L_r) \rceil$ eigenvectors as the positional encoding basis. By concatenating this with a low-bandwidth global SH basis, one can achieve "high-resolution Slepian locally and low-resolution SH globally."
 
 ## Method
-The core of the methodology involves reformulating the spherical concentration problem as an eigenvalue problem, making it computable at high bandwidths using spherical caps, and finally concatenating local Slepian and global SH into a hybrid encoding for the MLP.
+The core of the paper involves rewriting the spherical concentration problem as an eigenvalue problem, making it computable at high bandwidths using spherical caps, and finally concatenating local Slepian and global SH into a hybrid encoding for the MLP.
 
 ### Overall Architecture
-The input consists of spherical coordinates $x = (\lambda, \phi) \in S^2$. The encoder $\Phi(x)$ generates a $D$-dimensional feature, which is passed through a Neural Network (MLP / GLU / bottleneck fused with image embeddings) to output a label $y$. This paper focuses on replacing $\Phi$ without altering the NN. The pipeline consists of four steps: (A) Select one or more ROI spherical caps $R_c$ and a high bandwidth $L_r$, pre-calculate the spherical cap Slepian eigenfunctions $\{g_n\}$ sorted by concentration eigenvalues $\mu_n$, and truncate them by the Shannon number; (B) Select a low bandwidth $L_g \ll L_r$ to compute the global SH basis $\Phi_{\text{SH}}$; (C) During online inference, concatenate the Slepian evaluations for each ROI with the global SH evaluations to form $\Phi_{\text{Hybrid}}(x)$; (D) Feed the result into the downstream NN.
+The input is spherical coordinates $x = (\lambda, \phi) \in S^2$. The encoder $\Phi(x)$ provides a $D$-dimensional feature, which is then passed through an arbitrary NN (MLP / GLU / bottleneck fused with image embeddings) to output the label $y$. This paper does not change the NN but only replaces $\Phi$. The pipeline consists of four steps: (A) Select one or more ROI spherical caps $R_c$ and a high bandwidth $L_r$, pre-solve for the spherical cap Slepian eigenfunctions $\{g_n\}$, sort them by concentration eigenvalues $\mu_n$, and truncate according to the Shannon number; (B) Select a low bandwidth $L_g \ll L_r$ to calculate the global SH basis $\Phi_{\text{SH}}$; (C) During online inference, concatenate the Slepian evaluation values of each ROI with the global SH evaluation values to form $\Phi_{\text{Hybrid}}(x)$; (D) Feed this into the downstream NN for classification, regression, or fusion with image features. In the figure below, the offline branch (Designs 1+2) handles solving the "region + bandwidth" into a set of local bases concentrated in the ROI, while the global SH branch provides coarse context, both operating in parallel at the hybrid encoding stage (Design 3):
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
@@ -47,89 +47,96 @@ flowchart TD
         direction TB
         A["Select ROI Spherical Cap R and High Bandwidth Lr"]
         B["Slepian Concentration Problem<br/>Solve Eigenvalue Problem K h = μ h"]
-        C["Block Diagonalization + Rotation<br/>Reduce O(D³) to Lr Small O(Lr³) Problems"]
-        D["Truncate by Shannon Number N(R,Lr)<br/>Take Top K {gn} → Φ_Slep"]
+        C["Spherical Cap Block Diagonalization + Rotation<br/>Reduce O(D³) to Lr instances of O(Lr³)"]
+        D["Truncate by Shannon Number N(R,Lr)<br/>Take top K {gn} → Φ_Slep"]
         A --> B --> C --> D
     end
-    SH["Low Bandwidth SH Global Basis Φ_SH<br/>Lg ≪ Lr, Providing Coarse Global Context"]
+    SH["Low-bandwidth SH Global Basis Φ_SH<br/>Lg ≪ Lr, providing coarse global context"]
     X --> OFF
     X --> SH
-    OFF -->|Φ_Slep Local High-res| H["Hybrid Slepian-SH Encoding<br/>Φ_Hybrid = Concat(Φ_Slep, Φ_SH)"]
+    OFF -->|Φ_Slep local high-resolution| H["Hybrid Slepian-SH Encoding<br/>Φ_Hybrid = Concat(Φ_Slep, Φ_SH)"]
     SH --> H
     H --> NN["Downstream NN (MLP / GLU / Image Fusion)"]
-    NN --> Y["Output y (Classification / Regression / Density)"]
+    NN --> Y["Output y (Classification / Regression / Density Prediction)"]
 ```
 
 ### Key Designs
 
-**1. Slepian Concentration Problem: Selecting Orthogonal Bases with Energy Concentrated in the ROI**
+**1. Slepian Concentration Problem and Basis Construction: Selecting orthogonal bases in the band-limited subspace that fall almost entirely within the ROI**
 
-Standard spherical encodings distribute resolution budget uniformly. To see a city clearly, global resolution must increase, causing the dimension to explode by $(L+1)^2$. Slepian functions instead select basis functions that maximize energy concentration in the ROI. Defining the concentration ratio $\mu = \int_R |h(x)|^2 ds / \int_{S^2} |h(x)|^2 ds \in [0,1)$, maximizing it is equivalent to solving the eigenvalue problem $K h = \mu h$ for a $D_{L_r} \times D_{L_r}$ symmetric concentration matrix $K$, where $K_{\ell m, \ell' m'} = \int_R Y_\ell^m Y_\ell'^{m'} ds$. The eigenvalues exhibit a sharp drop-off (the "Slepian transition") from $\mu_n \approx 1$ to $\mu_n \approx 0$ at the Shannon number $N(R,L_r) = \mathrm{tr}(K) \approx \frac{\text{area}(R)}{4\pi}(L_r+1)^2$. Taking the first $K = \lceil N(R,L_r)\rceil$ eigenfunctions $\{g_n\}$ yields the encoding $\Phi_{\text{Slep}}(x) = [g_1(x), \dots, g_K(x)]^\top$.
+Spherical encoding spreads the "resolution budget" uniformly. Resolving a city requires increasing the global resolution, causing dimensions to expand by $(L+1)^2$. Slepian's approach is the inverse: picking basis functions in the band-limited subspace that maximize "energy concentration in the ROI." Defining the concentration ratio $\mu = \int_R |h(x)|^2 ds / \int_{S^2} |h(x)|^2 ds \in [0,1)$, maximizing it is equivalent to an eigenvalue problem for a $D_{L_r} \times D_{L_r}$ symmetric concentration matrix $K$, where $K_{\ell m, \ell' m'} = \int_R Y_\ell^m Y_{\ell'}^{m'} ds$. Sorting eigenvalues in descending order shows a sharp transition where $\mu_n \approx 1$ drops suddenly to $\mu_n \approx 0$. This transition point is the Shannon number $N(R,L_r) = \mathrm{tr}(K) \approx \frac{\text{area}(R)}{4\pi}(L_r+1)^2$. Taking the first $K = \lceil N(R,L_r)\rceil$ eigenfunctions $\{g_n\}$ yields the positional encoding $\Phi_{\text{Slep}}(x) = [g_1(x), \dots, g_K(x)]^\top$.
 
-The advantage is that the Shannon number naturally translates "region + bandwidth" into the "number of independent modes the region can accommodate," providing an intrinsic upper bound for sparsity. For an area like Sri Lanka ($f_R \approx 1.29 \times 10^{-4}$), $L_r = 256$ requires only $K \approx 9$ Slepian modes, whereas the corresponding global SH would require $D_{L_r} \approx 6.6\times 10^4$ dimensions.
+The beauty is that the Shannon number automatically translates "region + bandwidth" into the "number of independent modes the region can accommodate," acting as a natural upper bound for intrinsic dimensionality—the sparsification is intrinsic rather than manual pruning. For a small area like Sri Lanka ($f_R \approx 1.29 \times 10^{-4}$), only $K \approx 9$ Slepian modes are needed at $L_r = 256$, whereas the corresponding global SH would require $D_{L_r} \approx 6.6\times 10^4$ dimensions.
 
-**2. Spherical Cap Slepian and High-Bandwidth Computability: Using Rotation to Scale Calculations**
+**2. Spherical Cap Slepian and High-Bandwidth Computability: Scaling large eigenvalue problems via spherical caps and rotation**
 
-Directly calculating a dense $K$ matrix for an arbitrary ROI at $L_r = 256$ is infeasible. The authors restrict ROIs to spherical caps with center $c$ and angular radius $\Theta$. In this axisymmetric setting, the concentration matrix becomes block-diagonal by order $m$, with each block size $\leq L_r$. The Shannon number is given by $N_\Theta(L_r) = \frac{1-\cos\Theta}{2}(L_r+1)^2$, where $\Theta$ directly controls the "local information budget." Implementation involves calculating the cap Slepian once at a standard position and using spherical rotation to shift it to any target center.
+Directly calculating the dense $K$ matrix ($\sim 6.6\times 10^4$ dimensions) for an arbitrary ROI at $L_r = 256$ is infeasible in terms of memory and numerical precision. The authors restrict ROIs to spherical caps with center $c$ and angular radius $\Theta$. In this axisymmetric setup, the concentration matrix is block-diagonalized by order $m$, with each block size not exceeding $L_r$. There is an explicit formula for the number of well-concentrated modes $N_\Theta(L_r) = \frac{1-\cos\Theta}{2}(L_r+1)^2$, allowing $\Theta$ to directly control the "local information budget." Implementation-wise, the spherical cap Slepian is calculated once at a canonical position and then moved to any target center via spherical rotation, preserving the first $N_\Theta(L_r)$ modes.
 
-**3. Hybrid Slepian-SH Encoding and Pole Safety: Parallelizing Local and Global Scales**
+Block diagonalization reduces the $O(D_{L_r}^3)$ cost into $L_r$ small $O(L_r^3)$ problems. This is the bridge that makes the paper transition from "theoretically elegant" to "engineered for utility"—without it, $L_r$ could not reach 256, and multi-ROI concatenation would be impossible.
 
-Pure Slepian functions are nearly zero outside the ROI, which fails for tasks like global pre-training or cross-domain species distribution. Pure SH is limited by numerical instability. The authors concatenate them: $\Phi_{\text{Hybrid}}(x) = \mathrm{Concat}(\Phi_{\text{Slep}}(x), \Phi_{\text{SH}}(x))$, where $\Phi_{\text{SH}}$ uses a low bandwidth $L_g \ll L_r$ to provide coarse global context. For multiple ROIs, multiple $\Phi_{\text{Slep}}^{(c)}$ are concatenated. Pole safety is guaranteed because each $g_n = \sum_{\ell,m} h_{\ell m}^{(n)} Y_\ell^m$ is a finite linear combination of spherical harmonics, which are analytic at the poles.
+**3. Hybrid Slepian-SH Encoding and Pole-Safety: Local high-resolution Slepian and global low-resolution SH in parallel**
 
-### Loss & Training
-The positional encoding is non-parametric (Slepian bases are pre-calculated offline). Training occurs only in the downstream NN. Regression/classification uses a 3-layer MLP with ReLU and dropout (0.1). Building density regression uses a 2-layer bottleneck to fuse positional encodings with frozen AlphaEarth/Galileo image features. Species distribution follows the SINR framework with presence-only training and global pseudo-negative sampling.
+Pure Slepian functions are nearly zero outside the ROI, making them unsuitable for tasks requiring global signals like cross-domain species distribution or global pre-training. Pure SH is limited by numerical instability and resolution. The authors parallelize them: $\Phi_{\text{Hybrid}}(x) = \mathrm{Concat}(\Phi_{\text{Slep}}(x), \Phi_{\text{SH}}(x))$, where $\Phi_{\text{SH}}$ uses a low bandwidth $L_g \ll L_r$ to provide coarse "where on Earth" information. For multiple ROIs, each $\Phi_{\text{Slep}}^{(c)}$ is concatenated side-by-side; since Slepian energy does not overlap, cross-regional interference is negligible. Pole-safety comes from the fact that each $g_n = \sum_{\ell,m} h_{\ell m}^{(n)} Y_\ell^m$ is a finite linear combination of spherical harmonics, and since $Y_\ell^m$ is analytic at the poles, $g_n$ is analytic as well. When $R = S^2$, the concentration matrix becomes the identity matrix, and Slepian reduces back to SH.
+
+This decomposes the structural "local vs. global" trade-off into two parallel components. The authors extend this to the temporal dimension using discrete Slepian sequences (DPSS) for time encoding, where the spatio-temporal Shannon number $k_t \approx 2 N_t W$ controls the temporal bandwidth budget, resulting in $\Phi_{\text{ST}}(x,t) = \mathrm{Concat}(\Phi_{\text{SH}}(x), \Phi_{\text{Time}}(t))$.
+
+## Loss & Training
+The positional encoding itself is non-parametric (Slepian bases are pre-calculated offline). Training occurs only within the downstream NN. Classification and regression use a 3-layer MLP with ReLU and 0.1 dropout. Building density regression uses a 2-layer bottleneck, concatenating positional encodings with frozen AlphaEarth/Galileo image features. Species distribution follows the SINR framework with presence-only training, global pseudo-negative sampling, and positional predictions serving as spatial priors via element-wise weighting of Xception outputs. All tasks use a unified positional encoding replacement protocol for comparison.
 
 ## Key Experimental Results
 
 ### Main Results
-Across five tasks and over a dozen baselines, the key findings are identified below.
+Across five tasks and over a dozen baselines, the most critical comparisons are summarized below:
 
-| Dataset | Metric | Ours (Hybrid Slepian) | Strong Baseline SphereC / Theory | Gain |
-| :--- | :--- | :--- | :--- | :--- |
-| California Housing (Regression) | $R^2 \uparrow$ | Significantly Best | SphereC 0.53 / SH(L=40) Weak | Substantial vs. dense RFF |
-| Japan Prefectures (47 classes) | Acc $\uparrow$ | Best | Space2Vec 0.84 | Superior on 2 km boundary hard samples |
-| Arctic MSS (Sea Surface Height) | $R^2 \uparrow$ | Best | SphereM 0.91 | Validates pole-safety |
-| OpenBuildings Density Regression | $R^2$ at $\sigma$ 0–40 km | All Lead | SH degrades at small $\sigma$ | High-frequency details from Slepian |
-| Species (eBird S&T / IUCN) | mAP $\uparrow$ | Best / Superior even out-of-cap | Pure Slepian fails out-of-cap | Demonstrates hybrid necessity |
+| Dataset | Metric | Ours (Hybrid Slepian) | Strong Baselines SphereC / Theory | Gain |
+|--------|------|----------------------|-------------------------|------|
+| California Housing (Regression) | $R^2 \uparrow$ | Significantly Optimal | SphereC 0.53 / SH(L=40) Weak | Large lead over dense RFF |
+| Japan Prefectures (47 Classes) | Acc $\uparrow$ | Best | Space2Vec 0.84 | Clear win on 2 km boundary hard samples |
+| Arctic MSS (Arctic Sea Surface Height) | $R^2 \uparrow$ | Best | SphereM 0.91 | Validates pole-safety |
+| OpenBuildings Density Regression (4 Regions) | $R^2$ at smoothing $\sigma$ 0–40 km | Leading in all | SH degrades significantly at small $\sigma$ | High-frequency details provided by Slepian |
+| Species (eBird S&T / IUCN) | mAP $\uparrow$ | Best / Superior out-of-cap | Pure Slepian collapses outside cap | Demonstrates hybrid necessity |
 
 ### Ablation Study
 
-| Configuration | Key Metric | Description |
-| :--- | :--- | :--- |
-| Full Hybrid Slepian (L_r=120, L_g=10) | **Best** | Complete model |
-| Slepian only (No Global SH) | Significant drop | Fails out-of-cap for global tasks (e.g., IUCN) |
-| SH only, High L | Numerical collapse | $L \gtrsim 40$ produces NaNs in FP32 |
-| High-dim Planar RFF | Cal: 0.42 / JP: 0.59 | Simple dimension increase cannot replace spatio-spectral priors |
+| Configuration | Key Metric | Explanation |
+|------|---------|------|
+| Full Hybrid Slepian ($L_r=120, L_g=10$) | best | Complete model |
+| Slepian only (No global SH) | Significant drop | Near zero outside cap in global tasks/pseudo-negative scenarios |
+| SH only, High $L$ | Numerical collapse | $L \gtrsim 40$ in FP32 yields NaNs, SH path is non-viable |
+| High-dim Planar RFF | California 0.42 / Japan 0.59 | Simple dimension stacking cannot replace spatio-spectral priors |
+| Different NN backbone (MLP / GLU / SIREN) | Stable ranking | Gains come from encoder, not downstream network |
 
 ### Key Findings
-- **Spatio-spectral concentration is the true driver of performance**, not just high dimensionality: Planar RFF with 2000 dimensions still loses to Slepian with 9-200 dimensions.
-- **Physical significance of $N(R,L_r)$**: Using more Slepian modes than the Shannon number introduces noise; truncation at $K$ aligns with the region's intrinsic dimension.
-- **Pole-safety**: Performance on Arctic tasks is comparable to pure SH, proving the encoding does not introduce artifacts at the poles.
-- **Temporal Extension**: The use of DPSS (Discrete Slepian Sequences) for temporal encoding also outperforms Fourier methods in climate simulations.
+- The true source of improvement is spatio-spectral concentration, not high dimensionality: Planar RFF with 2000 dimensions is far inferior to Slepian with 9-200 dimensions, showing that "placing capacity correctly" is more vital than "increasing capacity."
+- The physical meaning of $N(R,L_r)$ is empirically validated: taking Slepian modes beyond the Shannon number introduces noise, while truncation at the first $K$ aligns with the region's intrinsic dimensionality.
+- On polar tasks, hybrid encoding is on par with pure SH, proving that it successfully reduces to SH when $R = S^2$ without introducing new polar artifacts.
+- The temporal DPSS extension outperforms Fourier time encoding in ACE climate simulation, suggesting the concentration framework is reusable across modalities.
 
 ## Highlights & Insights
-- Translating a decades-old tool from geophysics (local concentration bases) into "positional encoding" solves an open problem in geographic ML.
-- The "Region $\to$ Shannon Number $\to$ Dimension" chain provides clean capacity allocation semantics; dimensionality is no longer an arbitrary hyperparameter but an intrinsic quantity.
-- The spherical cap rotation trick provides the bridge from "elegant theory" to "engineering utility" by reducing $O(D^3)$ complexity.
+- Re-purposing "local concentration bases used for decades in geophysics" as "positional encodings" is a rare, hard-core cross-domain transplant in geographic ML. The cost is simply inverting the perspective: instead of decomposing signals with Slepian, represent coordinates with Slepian.
+- The chain "Region → Shannon Number → Dimension" provides a clean semantic for capacity allocation: dimension is no longer a magic hyperparameter but an intrinsic quantity determined by area and bandwidth. This "prior-informed dimensionality" is worth emulating in other spatial data (point clouds, maps, meshes).
+- The spherical cap + rotation engineering trick reduces $O(D^3)$ to $L_r$ small $O(L_r^3)$ problems, serving as the bridge to practical utility and facilitating multi-cap concatenation.
 
 ## Limitations & Future Work
-- **ROI Specification**: Requires manual selection of cap center and radius; adaptive or learnable ROI selection is a logical next step.
-- **Geometry Constraints**: Spherical caps simplify math but may not fit complex shapes like elongated coastlines or administrative boundaries.
-- **Hyperparameter Tuning**: $L_r$ and $L_g$ must be tuned separately; principled guidance for optimal combinations across tasks is needed.
-- **Temporal Scaling**: DPSS was only verified on limited climate data; performance on irregular sampling or decadal scales remains to be tested.
+- ROIs require manual specification of spherical cap center and radius. Tasks that are globally uniform but locally sparse (e.g., randomly distributed rare events) lack obvious ROI partitions; adaptive or learnable ROI selection is a natural next step.
+- The spherical cap assumption simplifies geometry but sacrifices boundary shapes (e.g., elongated coastlines, complex administrative borders). Moving to general ROIs would break block diagonalization.
+- Hybrid dimensionality requires tuning $L_r$ and $L_g$ separately; no principled guidance is provided for the optimal combination across tasks; Shannon numbers + task priors could be used for automated search.
+- Temporal DPSS was only validated on climate data with 6-hour resolution over one year; performance over longer scales (interannual/decadal) and irregular sampling needs testing.
 
 ## Related Work & Insights
-- **vs SatCLIP / Pure SH**: Both are natively spherical and pole-safe, but Slepian scaling to $L_r = 256$ bypasses the numerical limits that hinder SatCLIP on local tasks.
-- **vs Spherical Wavelets**: Wavelets often rely on stereographic projection, leading to polar distortion; Slepian functions, as linear combinations of SH, are more "spherical-native."
-- **vs RFF / Space2Vec**: RFF lacks the ability to "point" capacity toward specific regions; Slepian matches several thousand SH dimensions with just a handful of modes in small regions.
+- **vs. SatCLIP / Pure SH (Klemmer 2025a)**: Both are natively spherical and pole-safe, but this work allows $L_r$ to scale to 256 without numerical collapse, significantly outperforming SatCLIP on local tasks like California housing.
+- **vs. Spherical Wavelets (Cai & Balestriero 2025)**: Wavelets rely on stereographic projection, leading to polar distortion; Slepian functions are finite linear combinations of SH, naturally inheriting analyticity and providing a more "spherical-native" multi-resolution scheme.
+- **vs. Random Fourier Features**: RFF stacks capacity through high dimensionality (2000 in this paper) but cannot "point" capacity to specific regions. Slepian matches the performance of tens of thousands of SH dimensions using just 9 dimensions in small areas like Sri Lanka.
+- **vs. Sphere2Vec / Space2Vec (Mai 2020/2023)**: DFS series have discontinuities at the poles and uniform global resolution; Slepian addresses both polar and local refinement issues, serving as a natural evolution of this line of research.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐⭐ Repositioning spherical Slepian functions as a positional encoding basis is a rare and effective cross-disciplinary insight.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Covers regression, classification, polar, and spatio-temporal tasks, though complex non-cap ROIs remain unexplored.
-- **Writing Quality**: ⭐⭐⭐⭐ Clear explanation of Shannon numbers and concentration problems, though some engineering details are relegated to the appendix.
-- **Value**: ⭐⭐⭐⭐⭐ Provides an open-source, plug-and-play, and mathematically interpretable localized high-resolution encoder for remote sensing and ecology.
+- Novelty: ⭐⭐⭐⭐⭐ Repositioning spherical Slepian from a "signal analysis tool" to a "positional encoding basis" is a sophisticated cross-disciplinary move.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Five tasks covering regression/classification/polar/fusion/spatio-temporal, though complex ROIs beyond caps and cross-continental transfer remain unexplored.
+- Writing Quality: ⭐⭐⭐⭐ Shannon number and concentration problems are clearly explained; visual mapping between formulas and figures is intuitive; the appendix is heavy while main engineering details are brief.
+- Value: ⭐⭐⭐⭐⭐ Directly provides the community with an open-source, plug-and-play, mathematically interpretable local high-resolution encoder, immediately useful for city-scale remote sensing and ecological distribution tasks.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
@@ -137,8 +144,8 @@ Across five tasks and over a dozen baselines, the key findings are identified be
 - [\[CVPR 2026\] YieldSAT: A Multimodal Benchmark Dataset for High-Resolution Crop Yield Prediction](../../CVPR2026/remote_sensing/yieldsat_a_multimodal_benchmark_dataset_for_high-resolution_crop_yield_predictio.md)
 - [\[CVPR 2026\] ZoomEarth: Active Perception for Ultra-High-Resolution Geospatial Vision-Language Tasks](../../CVPR2026/remote_sensing/zoomearth_active_perception_for_ultra-high-resolution_geospatial_vision-language.md)
 - [\[NeurIPS 2025\] Cloud4D: Estimating Cloud Properties at a High Spatial and Temporal Resolution](../../NeurIPS2025/remote_sensing/cloud4d_estimating_cloud_properties_at_a_high_spatial_and_temporal_resolution.md)
-- [\[CVPR 2026\] GeoAgent: Learning to Geolocate Everywhere with Reinforced Geographic Characteristics](../../CVPR2026/remote_sensing/geoagent_learning_to_geolocate_everywhere_with_reinforced_geographic_characteris.md)
 - [\[ICML 2025\] High-Resolution Live Fuel Moisture Content (LFMC) Maps for Wildfire Risk from Multimodal Earth Observation Data](../../ICML2025/remote_sensing/high-resolution_live_fuel_moisture_content_lfmc_maps_for_wildfire_risk_from_mult.md)
+- [\[ICLR 2026\] Measuring the Intrinsic Dimension of Earth Representations](../../ICLR2026/remote_sensing/measuring_the_intrinsic_dimension_of_earth_representations.md)
 
 </div>
 

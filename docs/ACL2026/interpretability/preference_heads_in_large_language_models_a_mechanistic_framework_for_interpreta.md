@@ -2,12 +2,12 @@
 title: >-
   [Paper Note] Preference Heads in Large Language Models: A Mechanistic Framework for Interpretable Personalization
 description: >-
-  [ACL 2026][Interpretability][Paper Note] This paper proposes Preference Heads and Differential Preference Steering, utilizing causal ablation to identify a small number of attention heads that carry user preferences. It then amplifies preference signals from these heads during decoding to improve personalized generation and prediction without modifying model
+  [ACL 2026][Interpretability][Paper Note] This paper proposes Preference Heads and Differential Preference Steering (DPS), using causal ablation to identify a small set of attention heads that carry user preferences. It then amplifies preference signals from these heads during decoding to improve personalized generation and prediction without modifying model p
 tags:
   - ACL 2026
   - Interpretability
 date: 2026-05-08
-content_hash: 46c6936c6b119d4d
+content_hash: d3fdcca28f6f2d35
 ---
 # Preference Heads in Large Language Models: A Mechanistic Framework for Interpretable Personalization
 
@@ -18,81 +18,81 @@ content_hash: 46c6936c6b119d4d
 **Keywords**: Mechanistic Interpretability, Attention Heads, Personalized Generation, Contrastive Decoding, User Preference
 
 ## TL;DR
-This paper proposes Preference Heads and Differential Preference Steering, utilizing causal ablation to identify a small number of attention heads that carry user preferences. It then amplifies preference signals from these heads during decoding to improve personalized generation and prediction without modifying model parameters.
+This paper proposes Preference Heads and Differential Preference Steering (DPS), using causal ablation to identify a small set of attention heads that carry user preferences. It then amplifies preference signals from these heads during decoding to improve personalized generation and prediction without modifying model parameters.
 
 ## Background & Motivation
-**Background**: LLMs have demonstrated strong implicit personalization capabilities. Given user history, profiles, or brief preference descriptions, models can often align with the user in terms of tone, topic selection, headline style, and recommendation reasoning. Existing personalized LLM methods primarily follow three paths: first, including user information in prompts or retrieval-augmented contexts; second, utilizing user data for fine-tuning or preference learning; third, employing contrastive methods at the decoding stage to alter output distributions.
+**Background**: LLMs have demonstrated strong implicit personalization capabilities. Given user history, profiles, or brief preference descriptions, models often align with users in tone, topic selection, headline style, and recommendation rationales. Existing personalized LLM methods primarily follow three routes: prompting/RAG with user info, fine-tuning/preference learning on user data, or altering output distributions via contrastive methods during decoding.
 
-**Limitations of Prior Work**: Most of these methods treat the model as a black box. While they make the output appear more user-aligned, they struggle to answer a mechanistic question: exactly where in the model are user preferences represented? Are all layers contributing uniformly, or do a few modules play a critical role at key moments? Relying solely on final text metrics makes interpretability analysis difficult and makes it hard to determine if personalization failure stems from inaccurate user profiles, poor retrieval, or the failure to activate internal preference pathways.
+**Limitations of Prior Work**: Most methods treat the model as a black box. While they align outputs with users, they struggle to answer mechanistic questions: where are user preferences represented inside the model? Is every layer contributing uniformly, or do a few modules play key roles? Relying solely on final text metrics makes interpretability analysis difficult and fails to diagnose whether personalization failures stem from inaccurate profiles, poor retrieval, or inactivated internal preference pathways.
 
-**Key Challenge**: Personalization requires enhancing user-related signals, but the logits of language models simultaneously mix general linguistic capabilities, task content constraints, and user preference signals. Pure prompting or fine-tuning can change overall behavior but fails to distinguish "which internal components transmit preferences." If preference signals are indeed sparse and localized, global interventions are both non-transparent and may introduce redundant noise.
+**Key Challenge**: Personalization requires enhancing user-related signals, but LLM logits simultaneously mix general linguistic ability, task constraints, and user preference signals. Pure prompting or fine-tuning changes overall behavior without distinguishing "which internal components transmit preferences." If preference signals are sparse and localized, global interventions are neither transparent nor noise-free.
 
-**Goal**: The authors aim to decompose personalization from a black-box behavior into a localizable mechanistic problem: first, identify which attention heads make causal contributions to user-aligned output, and then utilize these heads for controllable preference enhancement during inference while maintaining content relevance and generation fluency.
+**Goal**: The authors aim to decompose personalization from a black-box behavior into a locatable mechanistic problem: first, identify attention heads with a causal contribution to user-aligned outputs, and then utilize these heads for controllable preference enhancement during inference, maintaining content relevance and fluency.
 
-**Key Insight**: The paper draws on analysis methods for induction heads, retrieval heads, and factuality heads from mechanistic interpretability. Since certain transformer behaviors can be explained by a few specialized attention heads, user style and thematic preferences may also have similar "preference heads." The key is not to look at correlation or activation intensity, but to verify through ablation: whether the likelihood of the model's user-referenced output decreases after a specific head is removed.
+**Key Insight**: The paper draws inspiration from mechanistic interpretability analyses of induction heads, retrieval heads, and factuality heads. Since specific transformer behaviors can be explained by specialized attention heads, user style and topic preferences may also reside in "Preference Heads." The key is verifying causal contribution through ablation: whether the likelihood of user reference output drops after removing a head.
 
-**Core Idea**: Discover Preference Heads using causal head ablation, and then reinforce user preference directions during decoding via a differential signal derived from "original model logits minus generic logits after masking preference heads."
+**Core Idea**: Identify Preference Heads using causal head ablation, then use the differential signal between "original model logits" and "generic logits (masking preference heads)" to reinforce user preference directions during decoding.
 
 ## Method
-The main workflow of this paper can be broken down into three steps: first, defining and discovering Preference Heads; second, utilizing these heads for Differential Preference Steering (DPS); third, addressing the issue of non-shared preferences among different users through user clustering and weighted routing for heterogeneous preference scaling.
+The research pipeline consists of three steps: first, defining and discovering Preference Heads; second, performing Differential Preference Steering using these heads; third, extending to heterogeneous preferences using user clustering and weighted routing.
 
 ### Overall Architecture
-The input consists of a set of user-conditioned data, where each sample includes a task input $x$, a user profile or history $u$, and a reference output $y^*$. The authors first traverse the attention heads in the model offline, performing targeted masking on each head to measure if the negative log-likelihood (NLL) of the user reference output worsens after masking. A greater decrease indicates the head's importance to user-aligned output. A small number of heads with the highest scores are selected as Preference Heads.
+The input consists of user-conditioned data, where each sample contains a task input $x$, a user profile or history $u$, and a reference output $y^*$. The authors traverse attention heads offline, performing directional masking on each head to measure the change in Negative Log-Likelihood (NLL) of the reference output. Higher scores indicate greater importance to user alignment. A small set of top-scoring heads is selected as Preference Heads.
 
-During inference, DPS performs two forward passes on the same context: one with the original model to obtain preference-conditioned logits, and another with the preference heads masked to obtain generic logits representing more general behavior. The difference between the two is then amplified to obtain the final decoding logits. The intuition is that the difference between the original and masked models primarily represents the personalization signal contributed by the preference heads.
+During inference, DPS performs two forward passes on the same context: one with the original model to obtain preference-conditioned logits, and one with Preference Heads masked to obtain generic logits. The difference between the two is amplified to produce final decoding logits. The intuition is that the difference primarily captures the personalized signal contributed by the preference heads.
 
-If user groups vary significantly, the paper first encodes user profiles into embeddings and clusters them. Preference Heads are rediscovered within each cluster. During inference, hard routing or soft routing is performed based on the similarity between the user and each cluster to avoid crudely merging all users' preference heads into a global set.
+For diverse user groups, user profiles are encoded into embeddings and clustered. Preference Heads are rediscovered within each cluster. During inference, heads are selected via hard or soft routing based on the user's similarity to each cluster.
 
 ```mermaid
-%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
-flowchart TD
-    A["User Conditioned Data<br/>Task Input x · User Profile u · Ref Output y*"]
+graph TD
+    A["User Conditioned Data<br/>Task input x · User Profile u · Reference Output y*"]
     subgraph PCS["Preference Contribution Score (Causal Ablation)"]
         direction TB
-        B["Targeted Masking of Attention Heads"] --> C["Scoring based on NLL change<br/>of Ref Output"]
+        B["Directional Masking per Attention Head"] --> C["Score NLL change <br/>before/after masking"]
         C --> D["Select top-K Preference Heads"]
     end
     subgraph DPS["Differential Preference Steering (Logit Amplification)"]
         direction TB
         E["Original Forward: Preference Logits"]
         F["Masked Forward: Generic Logits"]
-        E --> G["Differential Combination<br/>(1+γ)·pref − γ·gen"]
+        G["Differential Combination<br/>(1+γ)·Pref − γ·Gen"]
+        E --> G
         F --> G
     end
-    subgraph CLU["Cluster-aware Steering (Heterogeneous Scaling)"]
+    subgraph CLU["Cluster-aware Steering (Heterogeneous Users)"]
         direction TB
-        H["Profile Embedding + k-means"] --> I["Run PCS within each cluster"]
-        I --> J["Hard/Soft Routing for Inference"]
+        H["Profile Embedding + k-means Clustering"] --> I["Individual PCS discovery per cluster"]
+        I --> J["Hard/Soft Routing for Head Selection"]
     end
     A --> B
     D --> E
     D --> F
     G --> K["Personalized Output"]
-    CLU -.Replaces global heads for heterogeneous users.-> PCS
+    CLU -.Replaces Global Heads for Heterogeneous Users.-> PCS
 ```
 
 ### Key Designs
-**1. Preference Contribution Score: Assigning a personalization contribution score to each attention head using causal ablation**
+**1. Preference Contribution Score: Causal Ablation for Individual Attention Heads**
 
-Many interpretability analyses stop at activation visualization or correlation statistics, observing that a certain head "lights up" without being able to say whether it actually changes the output. PCS answers this directly via intervention: by performing targeted masking of the $k$-th head $h_{l,k}$ in the $l$-th layer and comparing the average negative log-likelihood of the user reference output between the masked model $M_{\theta \setminus h_{l,k}}$ and the original model $M_\theta$, the score is defined as $PCS(h_{l,k}) = E[L(M_{\theta \setminus h_{l,k}}, x, u, y^*) - L(M_\theta, x, u, y^*)]$. If the PCS is positive and large, it indicates that removing the head significantly reduces the probability of user-aligned output, proving that the head is not just "correlated" but has a causal contribution to personalized behavior. This causal evaluation, directly tied to personalized output likelihood, is far more reliable than merely looking at attention weights.
+Unlike interpretability analyses limited to activation visualization, PCS uses intervention. By masking head $h_{l,k}$ (layer $l$, head $k$), it compares the masked model $M_{\theta \setminus h_{l,k}}$ with the original model $M_\theta$ regarding the average NLL of user reference outputs: $PCS(h_{l,k}) = E[L(M_{\theta \setminus h_{l,k}}, x, u, y^*) - L(M_\theta, x, u, y^*)]$. A high positive PCS indicates that removing the head significantly lowers preference alignment, proving causal contribution.
 
-**2. Differential Preference Steering: Amplifying differential signals from preference heads during decoding without parameter modification**
+**2. Differential Preference Steering: Enhancing Signals without Parameter Tuning**
 
-Forcing specific output styles directly can often damage content consistency. DPS adopts a different approach. It calculates the original model logits $l_t^{pref}$ and the logits $l_t^{gen}$ after masking Preference Heads for the same context, combining them as $\tilde{l}_t = (1 + \gamma) l_t^{pref} - \gamma l_t^{gen}$. When $\gamma = 0$, it degrades to the original model; as $\gamma$ increases, the model emphasizes the preference direction that the original model has over the generic model. Since this difference is primarily the personalization signal contributed by preference heads, DPS acts more like enhancing existing internal preference pathways rather than imposing a new external control objective—it amplifies the personalized tendency that the model "already wants to express."
+DPS combines the original logits $l_t^{pref}$ and generic logits $l_t^{gen}$ (from the masked model) as $\tilde{l}_t = (1 + \gamma) l_t^{pref} - \gamma l_t^{gen}$. When $\gamma = 0$, it is the original model. As $\gamma$ increases, it emphasizes the preference direction contributed by the specific heads. This acts as an internal pathway enhancer rather than an external steering target.
 
-**3. Cluster-aware Preference Steering: Discovering preference heads per user group to avoid signal dilution in global sets**
+**3. Cluster-aware Preference Steering: Addressing Diluted Signals via User Groups**
 
-Jaccard overlap analysis in the experiments shows that the top-K Preference Heads for different users have very low overlap. Crudely merging all users' preference heads into a global set would dilute the truly useful signals. Therefore, DPS first obtains profile embeddings from user history text and uses k-means to divide users into several preference clusters. The PCS discovery process is run separately within each cluster to obtain cluster-specific head sets. During inference, users can either be hard-assigned to the nearest cluster or soft-routed based on similarity. This achieves a compromise between individualization and statistical stability: shared heads for similar users preserve personalization while preventing sparse single-user samples from producing inaccurate preference head estimates.
+Jaccard overlap analysis shows that top-K Preference Heads for different users have low overlap. Merging all users' heads into a global set dilutes signals. DPS clusters users via profile embeddings. Each cluster receives its own head set. Inference uses hard routing (nearest cluster) or soft routing (weighted similarity), balancing personalization with statistical stability.
 
 ### Loss & Training
-DPS itself does not train model parameters and requires no additional fine-tuning. The offline phase only uses reference outputs to calculate NLL changes for each head to select the top-K heads. The inference phase requires an additional forward pass with Preference Heads masked to control generation intensity using differential logits. The paper also analyzes the $K$ value and routing strategies: smaller $K$ may miss preference signals, while larger $K$ gradually introduces noise; hard routing is better for classification tasks, while soft routing is more stable for generation tasks.
+DPS requires no parameter training. The offline phase calculates NLL changes for top-K head selection. Inference involves one additional forward pass with masked Preference Heads. Routing strategies for different tasks were analyzed: hard routing for classification and soft routing for generation.
 
 ## Key Experimental Results
 
 ### Main Results
-The paper evaluates LLaMA-3-8B-Instruct, Qwen2-7B-Instruct, and Mistral-7B-Instruct on the LaMP personalization benchmark, covering news headline generation, scholarly title generation, tweet paraphrasing, citation identification, movie tagging, and product rating. Generation tasks use ROUGE-1, ROUGE-L, and METEOR; classification tasks use Accuracy/F1; regression tasks use MAE/RMSE. Comparison methods include CAD, DeCoRe, and DoLa.
+Evaluation was performed on the LaMP benchmark using LLaMA-3-8B-Instruct, Qwen2-7B-Instruct, and Mistral-7B-Instruct across news/academic headline generation, tweet paraphrasing, citation identification, movie tagging, and product rating.
 
-| Model | Method | News Headline R-1 / R-L / METEOR | Scholarly Title R-1 / R-L / METEOR | Tweet Paraphrasing R-1 / R-L / METEOR |
+| Model | Method | News R-1 / R-L / METEOR | Academic R-1 / R-L / METEOR | Tweet R-1 / R-L / METEOR |
 |------|------|------------------------------|-------------------------------|-------------------------------|
 | LLaMA-3-8B | CAD | 0.1681 / 0.1498 / 0.1568 | 0.3530 / 0.3068 / 0.3925 | 0.3368 / 0.2893 / 0.2813 |
 | LLaMA-3-8B | DeCoRe | 0.1768 / 0.1572 / 0.1626 | 0.4010 / 0.3527 / 0.4004 | 0.3231 / 0.2764 / 0.2729 |
@@ -107,9 +107,9 @@ The paper evaluates LLaMA-3-8B-Instruct, Qwen2-7B-Instruct, and Mistral-7B-Instr
 | Mistral-7B | DoLa | 0.1362 / 0.1136 / 0.0962 | 0.4364 / 0.3733 / 0.4605 | 0.3291 / 0.2852 / 0.3026 |
 | Mistral-7B | DPS | 0.1536 / 0.1366 / 0.1399 | 0.3983 / 0.3350 / 0.4162 | 0.3441 / 0.2998 / 0.2990 |
 
-The most obvious conclusion is that DPS is very stable on news headline generation and tweet paraphrasing, particularly with Mistral-7B's news headline metrics improving from 0.1361 / 0.1132 / 0.0980 (CAD) to 0.1536 / 0.1366 / 0.1399. On scholarly title generation, DeCoRe or DoLa are stronger on several models, indicating that Preference Heads are not absolutely superior for every task; however, DPS maintains better cross-task consistency, especially for short text generation requiring specific user styles.
+DPS is highly stable in news headline generation and tweet paraphrasing. While DeCoRe/DoLa perform better on academic titles for some models, DPS shows superior cross-task consistency for short-text style alignment.
 
-| Model | Method | Citation ID Acc / F1 | Movie Tagging Acc / F1 | Product Rating MAE / RMSE |
+| Model | Method | Citation Acc / F1 | Movie Tag Acc / F1 | Product MAE / RMSE |
 |------|------|-------------------|-------------------|---------------------|
 | LLaMA-3-8B | CAD | 0.6240 / 0.6070 | 0.4552 / 0.3839 | 0.4426 / 0.9300 |
 | LLaMA-3-8B | DeCoRe | 0.6232 / 0.6200 | 0.4639 / 0.4034 | 0.4442 / 0.9458 |
@@ -120,67 +120,46 @@ The most obvious conclusion is that DPS is very stable on news headline generati
 | Qwen2-7B | DoLa | 0.6790 / 0.6795 | 0.2412 / 0.0958 | 0.3200 / 0.6300 |
 | Qwen2-7B | DPS | 0.6932 / 0.7078 | 0.3902 / 0.3202 | 0.3276 / 0.6719 |
 
-Classification/regression results show that DPS reaches 0.6356 / 0.6288 for citation identification on LLaMA-3-8B and 0.6932 / 0.7078 on Qwen2-7B, significantly outperforming CAD, DeCoRe, and DoLa on the movie tagging task for Qwen2-7B. Product rating results are more mixed as a regression task, with DoLa showing the lowest error on LLaMA-3-8B and CAD showing the lowest on Qwen2-7B, suggesting that preference signal amplification is not always equivalent to numerical prediction optimality.
-
 ### Ablation Study
 
-| Analysis Item | Result | Explanation |
+| Analysis | Result | Description |
 |--------|------|------|
-| Preference Heads Sparsity | High PCS heads are locally concentrated in layer-head heatmaps | Personalization is dominated by a few internal components rather than uniform contribution. |
-| Cross-user Overlap | Pairwise Jaccard overlap of top-K head sets is mostly near 0 | Distinct preference pathways per user justify the cluster-aware design. |
-| Random Heads Control | Replacing Preference Heads with random heads leads to steady degradation | DPS gains come from semantically meaningful causal components, not arbitrary sparsity. |
-| K-value Sensitivity | Performance rises then saturates with K; excessive heads introduce noise | User preference signals are concentrated in finite sets; medium scale is optimal. |
-| Routing Strategy | Hard routing is slightly better for classification; soft routing is more stable for generation | Discrete tasks benefit from specialization; generation benefits from smooth mixing. |
+| Preference Head Sparsity | High PCS heads are localized in heatmaps. | Personalization is driven by sparse internal components rather than uniform contribution. |
+| Cross-user Overlap | Jaccard overlap of top-K head sets is near 0. | Preference pathways vary significantly between users, supporting cluster-aware design. |
+| Random Head Control | Replacing Preference Heads with random ones yields stable degradation. | DPS gains stem from semantically meaningful causal components. |
+| K-value Sensitivity | Performance saturates as K increases; excessive heads add noise. | Signal is concentrated in a limited head set. |
+| Routing Strategy | Hard routing benefits classification; soft routing is more stable for generation. | Discrete vs. smooth preference mixing trade-offs. |
 
-The paper also reports inference overhead. DPS requires two forward passes (original and masked) per decoding step but shares the prompt prefill; thus, the longer the context, the lower the relative overhead.
-
-| Prompt Length | Baseline Dec. TFlop | DPS TFlop | Relative Overhead |
-|-------------|----------------|-----------|----------|
-| 512 | 6.57 | 6.96 | 1.06x |
-| 1024 | 13.04 | 13.43 | 1.03x |
-| 2048 | 26.80 | 27.21 | 1.02x |
-
-Human and LLM-as-judge evaluations focused on the LaMP-4 news headline task. Human annotators preferred DPS in anonymous pairwise comparisons for user profile matching; GPT-5.2 evaluation also showed DPS scored higher than CAD in relevance, fluency, style, alignment, and factuality.
-
-| Evaluation Dimension | CAD | DPS |
-|----------|-----|-----|
-| Relevance | 3.97 | 4.45 |
-| Fluency | 4.51 | 4.83 |
-| Style | 3.62 | 3.91 |
-| Alignment | 3.63 | 3.93 |
-| Factuality | 4.08 | 4.21 |
+Efficiency analysis shows that since prompt prefill is shared, relative overhead decreases as context length increases (e.g., 1.02x at 2048 tokens).
 
 ### Key Findings
-- Preference Heads are sparse and user-specific. PCS heatmaps show high scores concentrated in a few heads rather than being spread across all layers, supporting the argument that personalization can be explained by localized circuits.
-- User preference head overlap is very low. This explains why simple global personalization sets might be unstable and why cluster-aware routing is necessary.
-- DPS advantages are primarily in personalized generation and classification, especially tasks mapping user history to style or topic preferences. For numerical regression like ratings, preference amplification doesn't always reduce error.
-- Efficiency analysis is more optimistic than intuition. Due to prompt prefill sharing, the estimated FLOPs for a 2048-token prompt only increase from 26.80 to 27.21 (approx. 1.02x).
-- Automatic metrics do not fully capture personalization quality. The inclusion of human and LLM evaluations is justified since "sounding like a user" is not always reflected by ROUGE or METEOR.
+- Preference Heads are sparse and user-dependent. PCS heatmaps show localized high-scoring heads rather than a uniform distribution across layers.
+- Low overlap between users' preference heads explains why global personalization sets are unstable and why cluster-aware routing is necessary.
+- DPS excels in personalized generation and classification (mapping history to style/topic), though its impact on numerical regression (ratings) is mixed.
+- Automatic metrics are supplemented by human and LLM-as-judge evaluations, which show DPS is superior in style and alignment.
 
 ## Highlights & Insights
-- The major highlight is transforming personalization from "external condition control" to "internal component localization." This moves personalized LLMs beyond just prompt/parameter tuning to asking: which attention heads carry user preferences?
-- The PCS design is clean: it defines contribution via NLL change after ablation, rather than just attention weight size. For interpretability, this causal evaluation is more reliable than visualization.
-- DPS bridges mechanistic analysis and decoding control. While many interpretability works stop at the explanation stage, this paper utilizes discovered heads as signals for generation control.
-- The cluster-aware extension captures the essence of personalization: user preference is not a global property. The low overlap of preference heads suggests that stable personalization requires hierarchical modeling between individual and group levels.
+- The primary highlight is shifting personalization from "external conditional control" to "internal component localization."
+- PCS provides a clean causal evaluation of contributions instead of relying on attention weight magnitudes.
+- DPS bridges the gap between mechanistic analysis and decoding control by turning discovered heads into steering signals.
+- Cluster-aware extensions address the non-global nature of user preferences, finding a middle ground between individualization and statistical robustness.
 
 ## Limitations & Future Work
-- DPS requires access to internal attention heads and activations, making it inapplicable to black-box APIs. This limits its use in closed commercial models.
-- Inference requires a second forward pass; while FLOPs increase is low for long contexts, it may be a burden for ultra-low latency scenarios.
-- PCS discovery is offline. Efficiently updating Preference Heads for rapidly changing user profiles or massive user counts requires further research.
-- Experiments focus on LaMP. While tasks are diverse, they don't yet prove stability in long-term dialogues, multi-turn preference drift, or cross-lingual personalization.
-- Explicitly amplifying user preferences might reinforce biases. If user history is noisy or contains unwanted tendencies, DPS might narrow model behavior excessively.
+- Requires access to internal heads and activations; not applicable to black-box APIs.
+- Inference requires a second forward pass, posing potential latency issues in some scenarios.
+- Offline PCS discovery may be costly to update frequently for expanding user bases.
+- Bias concerns: amplifying existing user preferences might reinforce narrow patterns or biases found in user histories.
 
 ## Related Work & Insights
-- **vs Prompt / Retrieval Personalization**: Those methods provide external user context; this study asks which internal components transmit those signals. The former is easier to deploy, while the latter is more interpretable and suited for mechanistic analysis.
-- **vs Fine-tuning / Preference Learning**: Fine-tuning changes behavior strongly but incurs training costs. DPS is parameter-efficient and suitable for inference-time control, though its capacity is limited by existing pathways in the base model.
-- **vs CAD / DoLa / DeCoRe**: CAD contrasts contexts, DoLa contrasts layers, and DeCoRe targets retrieval heads; DPS contrasts based on causally identified personalization heads.
-- **Insight for Future Research**: The PCS approach could be used to discover "Safety Heads," "Politeness Heads," or "Term Selection Heads," moving high-level behaviors toward causal component discovery followed by lightweight control.
+- **vs. Prompt/Retrieval**: While others provide more context, DPS identifies which internal components transmit the signal.
+- **vs. Fine-tuning**: DPS avoids training costs and parameter updates, acting as an inference-time steering mechanism.
+- **vs. CAD/DoLa/DeCoRe**: Unlike generic contrastive methods, DPS is mechanism-driven, contrasting against logic explicitly identified through causal personalization analysis.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐☆ Introduces mechanistic interpretability to LLM personalization, connecting causal discovery to decoding control effectively.
-- Experimental Thoroughness: ⭐⭐⭐⭐☆ Covers multiple tasks, models, main results, ablation, efficiency, and human evaluation; benchmarks slightly limited to LaMP.
-- Writing Quality: ⭐⭐⭐⭐☆ Clear structure; the logic chain between PCS and DPS is smooth, and figures support the core arguments well.
-- Value: ⭐⭐⭐⭐☆ Highly valuable for interpretable personalization and inference-time control, inspiring a "mechanism-first, control-second" research path.
+- Novelty: ⭐⭐⭐⭐☆ Introduces mechanistic interpretability to personalization with a clear logic chain from causal discovery to steering.
+- Experimental Thoroughness: ⭐⭐⭐⭐☆ Extensive coverage across models and tasks; human and efficiency analyses are included.
+- Writing Quality: ⭐⭐⭐⭐☆ Logic flow is smooth, though some task-specific wins in the tables require careful interpretation.
+- Value: ⭐⭐⭐⭐☆ Inspires future work on "identify-then-steer" pathways for specialized model behaviors.
 
 <!-- RELATED:START -->
 
@@ -191,8 +170,8 @@ Human and LLM-as-judge evaluations focused on the LaMP-4 news headline task. Hum
 - [\[ACL 2026\] Embracing Anisotropy: Turning Massive Activations into Interpretable Control Knobs for Large Language Models](embracing_anisotropy_turning_massive_activations_into_interpretable_control_knob.md)
 - [\[ACL 2025\] Mechanistic Interpretability of Emotion Inference in Large Language Models](../../ACL2025/interpretability/mechanistic_interpretability_of_emotion_inference_in_large_language_models.md)
 - [\[ACL 2026\] FineSteer: A Unified Framework for Fine-Grained Inference-Time Steering in Large Language Models](finesteer_a_unified_framework_for_fine-grained_inference-time_steering_in_large_.md)
-- [\[ACL 2026\] From Interpretability to Performance: Optimizing Retrieval Heads for Long-Context Language Models](from_interpretability_to_performance_optimizing_retrieval_heads_for_long-context.md)
 - [\[ACL 2026\] Retrieval Heads are Dynamic](retrieval_heads_are_dynamic.md)
+- [\[ACL 2026\] From Interpretability to Performance: Optimizing Retrieval Heads for Long-Context Language Models](from_interpretability_to_performance_optimizing_retrieval_heads_for_long-context.md)
 
 </div>
 

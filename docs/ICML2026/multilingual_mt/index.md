@@ -25,11 +25,11 @@ item_total: 3
 
 **🧪 ICML2026** · **3** paper notes
 
-📌 **Same area in other venues:** [💬 ACL2026 (61)](../../ACL2026/multilingual_mt/index.md) · [🔬 ICLR2026 (5)](../../ICLR2026/multilingual_mt/index.md) · [🤖 AAAI2026 (9)](../../AAAI2026/multilingual_mt/index.md) · [🧠 NeurIPS2025 (11)](../../NeurIPS2025/multilingual_mt/index.md) · [📹 ICCV2025 (1)](../../ICCV2025/multilingual_mt/index.md)
+📌 **Same area in other venues:** [🔬 ICLR2026 (8)](../../ICLR2026/multilingual_mt/index.md) · [💬 ACL2026 (64)](../../ACL2026/multilingual_mt/index.md) · [🤖 AAAI2026 (9)](../../AAAI2026/multilingual_mt/index.md) · [🧠 NeurIPS2025 (11)](../../NeurIPS2025/multilingual_mt/index.md) · [📹 ICCV2025 (1)](../../ICCV2025/multilingual_mt/index.md)
 
 **[Edit-Based Refinement for Parallel Masked Diffusion Language Models](edit-based_refinement_for_parallel_masked_diffusion_language_models.md)**
 
-:   ME-DLM adds a lightweight "post-decoding edit-and-patch" stage to masked diffusion language models (such as LLaDA). The first stage generates a rough draft via standard unmasking, while the second stage performs parallel corrections using three token-level edit operations: replace, delete, and insert. Supervised by the shortest edit script from the edit distance algorithm, it surpasses LLaDA-Instruct by +11.6 on HumanEval and +33.6 on GSM8K using only 1/8 of the diffusion steps.
+:   ME-DLM introduces a lightweight "decode-then-edit" refinement stage to masked diffusion language models (e.g., LLaDA). The first stage generates a draft via standard parallel unmasking, while the second stage performs parallel corrections using replace/delete/insert actions supervised by the shortest edit distance scripts. Using only 1/8 of the diffusion step budget, it outperforms LLaDA-Instruct by +11.6 on HumanEval and +33.6 on GSM8K.
 
 **[Optimizing Language Models for Crosslingual Knowledge Consistency](optimizing_language_models_for_crosslingual_knowledge_consistency.md)**
 

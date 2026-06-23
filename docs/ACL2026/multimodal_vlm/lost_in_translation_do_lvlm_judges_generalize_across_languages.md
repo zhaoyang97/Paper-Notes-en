@@ -2,12 +2,12 @@
 title: >-
   [Paper Note] Lost in Translation: Do LVLM Judges Generalize Across Languages?
 description: >-
-  [ACL 2026][Multilingual & Translation][Paper Note] This paper introduces MM-JudgeBench, the first large-scale multilingual multimodal evaluation benchmark (25 languages, 60K+ preference instances). Evaluating 22 LVLMs reveals significant cross-lingual performance gaps in current LVLM judges—model size and architecture do not predict multilingual robustness, and even st
+  [ACL 2026][Multimodal VLM][Paper Note] This paper introduces MM-JudgeBench, the first large-scale multilingual multimodal judgment benchmark (25 languages, 60K+ preference instances). Evaluating 22 LVLMs reveals significant cross-lingual performance gaps—model size and architecture do not predict multilingual robustness, and even state-of-the-art judges exh
 tags:
   - ACL 2026
-  - Multilingual & Translation
+  - Multimodal VLM
 date: 2026-05-08
-content_hash: 9c27c250f3647cfc
+content_hash: 0e9556a51bddbd3d
 ---
 # Lost in Translation: Do LVLM Judges Generalize Across Languages?
 
@@ -15,51 +15,51 @@ content_hash: 9c27c250f3647cfc
 **arXiv**: [2604.19405](https://arxiv.org/abs/2604.19405)  
 **Code**: [https://github.com/tahmedge/mm-judgebench](https://github.com/tahmedge/mm-judgebench)  
 **Area**: Multilingual / Model Evaluation  
-**Keywords**: Multilingual Evaluation, LVLM Judge, Reward Model, Cross-lingual Generalization, Vision-Language Benchmarks
+**Keywords**: Multilingual Evaluation, LVLM Judging, Reward Model, Cross-lingual Generalization, Vision-Language Benchmark
 
 ## TL;DR
 
-This paper introduces MM-JudgeBench, the first large-scale multilingual multimodal evaluation benchmark (25 languages, 60K+ preference instances). Evaluating 22 LVLMs reveals significant cross-lingual performance gaps in current LVLM judges—model size and architecture do not predict multilingual robustness, and even state-of-the-art judges exhibit inconsistency, highlighting the necessity for multilingual multimodal evaluation benchmarks.
+This paper introduces MM-JudgeBench, the first large-scale multilingual multimodal judgment benchmark (25 languages, 60K+ preference instances). Evaluating 22 LVLMs reveals significant cross-lingual performance gaps—model size and architecture do not predict multilingual robustness, and even state-of-the-art judges exhibit inconsistency, highlighting the necessity for multilingual multimodal evaluation benchmarks.
 
 ## Background & Motivation
 
-**Background**: Automatic evaluators (Reward Models/LLM-as-Judge) play a central role in LVLM development, from training alignment to model selection and benchmarking. However, existing evaluations are almost entirely based on English.
+**Background**: Automated evaluators (Reward Models/LLM-as-Judge) play a central role in LVLM development, shifting from training alignment to model selection and benchmarking. However, existing evaluations are almost entirely based on English.
 
-**Limitations of Prior Work**: (1) VL-RewardBench and Multimodal RewardBench only cover English; (2) Multilingual extensions (e.g., M-RewardBench) are limited to the text modality; (3) No existing benchmark provides a unified study of cross-lingual and cross-modal reward model behavior.
+**Limitations of Prior Work**: (1) VL-RewardBench and Multimodal RewardBench only cover English; (2) Multilingual extensions (e.g., M-RewardBench) are limited to the text modality; (3) No existing benchmark unifies the study of reward model behavior across languages and modalities.
 
-**Key Challenge**: LVLM judges are expected to be used in multilingual multimodal settings, yet their reliability is only verified in English. The same model may perform excellently in English but select the wrong answer in French.
+**Key Challenge**: LVLM judges are expected to function in multilingual multimodal settings, yet their reliability is only verified in English. The same model may perform excellently in English but select the wrong answer in French.
 
-**Goal**: (1) Construct the first multilingual multimodal evaluation benchmark; (2) Evaluate the cross-lingual judgment consistency of 22 LVLMs at scale; (3) Reveal current multilingual limitations in reward modeling.
+**Goal**: (1) Construct the first multilingual multimodal judgment benchmark; (2) Evaluate the cross-lingual judgment consistency of 22 LVLMs at scale; (3) Reveal current multilingual limitations in reward modeling.
 
-**Key Insight**: High-quality translation models (Gemini-3-Pro) are used to translate VL-RewardBench and OpenCQA into 24 languages (25 including English), followed by rigorous quality filtering to construct controlled experiments.
+**Key Insight**: Utilize high-quality translation models (Gemini-3-Pro) to translate VL-RewardBench and OpenCQA into 24 languages (25 total including English), followed by rigorous quality filtering to construct controlled experiments.
 
-**Core Idea**: Isolate cross-lingual evaluation effects by fixing visual inputs and varying only the language, revealing the vulnerability of LVLM judges across linguistic dimensions.
+**Core Idea**: Isolate cross-lingual evaluation effects by fixing visual inputs while varying only the language, revealing the vulnerability of LVLM judges across the language dimension.
 
 ## Method
 
 ### Overall Architecture
 
-The process follows a pipeline of "translator selection, data generation, and multi-dimensional evaluation," while also producing a multilingual training set: (1) Translation model selection—comparing translation quality among Gemini series (using LaBSE and CometKiwi metrics), selecting Gemini-3-Pro; (2) Dataset construction—translating VL-RewardBench (vision-language preference judgment) and OpenCQA (chart-based Q&A judgment) into 24 languages, resulting in 60K+ instances after quality filtering to form MM-JudgeBench; (3) Multi-dimensional evaluation—analyzing pairwise accuracy, position bias, and length bias for 22 LVLMs; (4) Multilingual training set—translating MM-RewardBench into 24 languages to obtain M-MM-RewardBench with 100K+ instances for domain-specific fine-tuning of open-source models. The following three key designs correspond to dataset construction, evaluation protocols, and training sets.
+The overall pipeline involves "selecting a translator, generating data, and performing multi-dimensional evaluation," while simultaneously producing a multilingual training set: (1) Translation Model Selection—comparing translation quality of the Gemini series (using LaBSE and CometKiwi metrics) and selecting Gemini-3-Pro; (2) Dataset Construction—translating VL-RewardBench (vision-language preference judgment) and OpenCQA (chart-based QA judgment) into 24 languages, resulting in 60K+ instances after quality filtering to form MM-JudgeBench; (3) Multi-dimensional Evaluation—analyzing Pairwise Accuracy, Position Bias, and Length Bias for 22 LVLMs; (4) Multilingual Training Set—translating MM-RewardBench into 24 languages to create M-MM-RewardBench with 100K+ instances for domain adaptation fine-tuning of open-source models.
 
 ### Key Designs
 
-**1. MM-JudgeBench Dataset Construction: Fixing Vision, Varying Language to Isolate "Cross-lingual Vulnerability"**
+**1. MM-JudgeBench Construction: Fixed Vision, Variable Language to Isolate "Cross-lingual Vulnerability"**
 
-Existing evaluation benchmarks either focus only on English (VL-RewardBench, Multimodal RewardBench) or extend to multiple languages while losing the visual modality (M-RewardBench). None simultaneously address both language and modality dimensions. Ours fills this gap with two complementary subsets: M-VL-RewardBench for general vision-language preference and M-OpenCQA for chart-centric vision-text reasoning. Each prompt translates the query and two candidate answers into the target language while keeping the image unchanged. Consequently, the only variable across 25 typologically diverse languages (from Arabic to Vietnamese) is the text; judge errors can thus be attributed solely to language rather than content.
+Existing judgment benchmarks either focus only on English (VL-RewardBench, Multimodal RewardBench) or expand multilingually while losing the visual modality (M-RewardBench). Ours fills this gap by simultaneously monitoring language and modality dimensions. Two complementary subsets are used: M-VL-RewardBench measures general vision-language preferences, and M-OpenCQA measures chart-centric vision-text reasoning. For each prompt, the query and two candidate answers are translated into the target language while the image remains unchanged. Consequently, the only variable across 25 typologically diverse languages (from Arabic to Vietnamese) is the text; judge errors can thus be attributed solely to language rather than content.
 
-To ensure cost-effectiveness, the authors translate all 24 languages simultaneously using a single prompt, reducing API costs 24-fold compared to language-by-language calls. Quality is ensured using a 0.75 threshold for both LaBSE and CometKiwi metrics; samples below this threshold are re-translated or deleted after manual back-translation review, resulting in 60K+ high-quality instances.
+To maintain cost-efficiency, a single prompt is used to translate all 24 languages at once, reducing API overhead by 24x. Quality is ensured using LaBSE and CometKiwi with a 0.75 threshold; samples below this threshold are re-translated or deleted after human back-translation review, resulting in 60K+ high-quality instances.
 
-**2. Multi-dimensional Evaluation Protocol: Assessing Why Models are Correct**
+**2. Multi-dimensional Evaluation Protocol: Beyond Accuracy**
 
-Relying solely on pairwise accuracy (the proportion of correctly identified preferred responses) can hide systematic biases—a judge might "coincidentally" choose correctly while consistently favoring the first or longer answer, tendencies which amplify into stable errors in real deployments. Thus, the protocol quantifies two additional biases: position bias (by presenting each pair in both forward and reverse order and comparing accuracy differences) and length bias (checking if the model systematically favors longer but incorrect answers). Combined, these three metrics distinguish "true understanding" from "shortcuts."
+Simply looking at Pairwise Accuracy (the proportion of correctly identified preferred responses) can hide systemic biases. A judge might "accidentally" choose correctly while consistently preferring the first or longer answer, tendencies that amplify into stable errors in real deployments. Therefore, the protocol quantifies two additional biases: Position Bias is measured by presenting answer pairs in both forward and reverse orders and calculating the accuracy delta; Length Bias checks if the model systematically favors longer but incorrect answers. Only the combination of these three metrics distinguishes "true understanding" from "shortcut-based guessing."
 
-**3. Multilingual Training Set M-MM-RewardBench: Providing a Path for Open-source Adaptation**
+**3. Multilingual Training Set M-MM-RewardBench: A Path for Open-Source Model Adaptation**
 
-Experiments show that open-source judges drop most significantly in non-English settings; diagnostic analysis is insufficient without a solution. The authors translate MM-RewardBench into 24 languages, obtaining a training set of 100K+ preference instances that intentionally do not overlap with evaluation data, specifically for domain-adaptive fine-tuning of open-source models. Its value is verified in experiments—multilingual fine-tuning significantly restores judgment performance in non-English languages.
+Experiments found that open-source judges suffer the most in non-English settings. To provide a solution, MM-RewardBench was translated into 24 languages to create a training set of 100K+ preference instances, intentionally non-overlapping with the evaluation data. This set is specifically for domain adaptation fine-tuning, the value of which is validated by experiments showing significant recovery of judgment performance in non-English languages.
 
 ### Loss & Training
 
-Evaluation uses zero-shot prompting, requiring LVLMs to select the better answer and provide a rationale. Domain-adaptive fine-tuning uses standard SFT on M-MM-RewardBench. The evaluation metric is pairwise accuracy.
+Evaluation is conducted via zero-shot prompting, requiring LVLMs to select the better answer and provide reasoning. Domain adaptation fine-tuning uses standard SFT on M-MM-RewardBench. The primary evaluation metric is Pairwise Accuracy.
 
 ## Key Experimental Results
 
@@ -67,58 +67,58 @@ Evaluation uses zero-shot prompting, requiring LVLMs to select the better answer
 
 **Average Accuracy and Variance of 22 LVLMs on MM-JudgeBench**
 
-| Model | Average Accuracy | Variance | Description |
-| :--- | :--- | :--- | :--- |
+| Model | Avg Accuracy | Variance | Note |
+|-------|--------------|----------|------|
 | GPT-5 | 81.3% | 0.2 | Most stable |
 | Gemini-2.5-Flash | ~78% | Low | Close to GPT-5 |
 | Qwen3-VL-32B | ~77% | Low | Best open-source |
-| Gemma-3-27B | ~74% | Medium | Noticeable drop in some languages |
-| InternVL-3.5-8B | ~70% | High | High cross-lingual variation |
+| Gemma-3-27B | ~74% | Medium | Significant drops in some languages |
+| InternVL-3.5-8B | ~70% | High | Large cross-lingual variation |
 | LLaVA-Critic-7B | ~55% | High | Specialized judge but English-only training |
 
 ### Ablation Study
 
-| Configuration | Effect | Description |
-| :--- | :--- | :--- |
+| Configuration | Effect | Note |
+|---------------|--------|------|
 | English Evaluation | Highest | All models strongest in English |
-| Low-resource Languages (e.g., Kazakh) | Largest Drop | Insufficient training data coverage |
-| Efficiency-optimized Variants | Multilingual Collapse | e.g., Gemini-Flash-Lite strong in English but poor in multilingual |
-| + Reasoning Enhancement | Gain | Requiring rationales improves judgment |
+| Low-resource (e.g., Kazakh) | Largest Drop | Insufficient training data coverage |
+| Efficiency-optimized variants | Multilingual Collapse | e.g., Gemini-Flash-Lite strong in English, weak multilingually |
+| + Reasoning Enhancement | Gain | Requiring reasoning improves judgment |
 | + Multilingual Fine-tuning | Significant Gain | Domain adaptation is effective |
 
 ### Key Findings
 
-- Model size does not predict multilingual robustness—the small model Qwen3-VL is more consistent across languages than many larger models.
-- Efficiency-optimized variants (e.g., Flash-Lite) are close to full-size versions in English but degrade severely in multilingual settings.
-- LLaVA-Critic (a specialized judge) performs extremely poorly in multilingual settings due to being trained only in English.
+- Model size does not predict multilingual robustness—the smaller Qwen3-VL is more consistent across languages than many larger models.
+- Efficiency-optimized variants (e.g., Flash-Lite) match full-size versions in English but degrade severely in multilingual settings.
+- LLaVA-Critic (a specialized judge) performs extremely poorly multilingually due to English-only training.
 - Position bias and length bias are more severe in non-English languages.
-- Both domain-adaptive fine-tuning and reasoning-enhanced judgment improve multilingual performance.
+- Both domain adaptation fine-tuning and reasoning-enhanced judgment improve multilingual performance.
 
 ## Highlights & Insights
 
-- Revealed the multilingual "blind spots" of LVLM judges—overall average scores mask huge differences between languages.
-- The multilingual collapse of efficiency-optimized variants is an important practical warning—reducing costs may come at the expense of fairness.
-- The release of the M-MM-RewardBench training set provides direct support for the community to improve multilingual judgment.
+- Revealed the multilingual "blind spots" of LVLM judges—overall averages mask massive disparities between languages.
+- The multilingual collapse of efficiency-optimized variants is a critical practical warning—cost reduction may come at the expense of fairness.
+- The release of M-MM-RewardBench provides direct support for the community to improve multilingual judgment.
 
 ## Limitations & Future Work
 
-- Translation may introduce systematic bias (all translations come from the same model).
-- 25 languages still do not cover the majority of world languages.
-- No analysis of how translation quality specifically affects evaluation results.
-- Future work needs native multilingual (non-translated) evaluation data.
+- Translation may introduce systemic biases (all translations from the same model).
+- 24 languages still do not cover the majority of the world's languages.
+- The impact of translation quality on evaluation results was not deeply analyzed.
+- Native multilingual (non-translated) evaluation data is needed for future work.
 
 ## Related Work & Insights
 
-- **vs VL-RewardBench**: English only; MM-JudgeBench extends to 25 languages.
-- **vs M-RewardBench**: Text modality only; MM-JudgeBench adds visual modality.
+- **vs VL-RewardBench**: English-only; MM-JudgeBench extends to 25 languages.
+- **vs M-RewardBench**: Text-only; MM-JudgeBench adds the visual modality.
 - **vs Multimodal RewardBench**: English multimodal; MM-JudgeBench is simultaneously multilingual and multimodal.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ Fills the gap in multilingual multimodal judge evaluation.
+- Novelty: ⭐⭐⭐⭐ Fills the gap in multilingual multimodal judgment evaluation.
 - Experimental Thoroughness: ⭐⭐⭐⭐⭐ 22 models, 25 languages, 60K+ instances.
-- Writing Quality: ⭐⭐⭐⭐ Clear structure, well-articulated practical implications.
-- Value: ⭐⭐⭐⭐⭐ The release of benchmarks and training sets offers lasting value to the community.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure with well-articulated practical implications.
+- Value: ⭐⭐⭐⭐⭐ The benchmark and training set release offer sustained value to the community.
 
 <!-- RELATED:START -->
 
@@ -126,11 +126,11 @@ Evaluation uses zero-shot prompting, requiring LVLMs to select the better answer
 
 ## Related Papers
 
-- [\[ACL 2026\] Why Do Multilingual Reasoning Gaps Emerge in Reasoning Language Models?](why_do_multilingual_reasoning_gaps_emerge_in_reasoning_language_models.md)
-- [\[NeurIPS 2025\] HelpSteer3-Preference: Open Human-Annotated Preference Data across Diverse Tasks and Languages](../../NeurIPS2025/multilingual_mt/helpsteer3-preference_open_human-annotated_preference_data_across_diverse_tasks_.md)
-- [\[ACL 2025\] Accessible Machine Translation Evaluation For Low-Resource Languages](../../ACL2025/multilingual_mt/accessible_machine_translation_evaluation_for_low-resource_languages.md)
-- [\[ACL 2026\] From Traditional Taggers to LLMs: A Comparative Study of POS Tagging for Medieval Romance Languages](from_traditional_taggers_to_llms_a_comparative_study_of_pos_tagging_for_medieval.md)
-- [\[ACL 2025\] Lost in Multilinguality: Dissecting Cross-lingual Factual Inconsistency in Transformer Language Models](../../ACL2025/multilingual_mt/lost_in_multilinguality_dissecting_cross-lingual_factual_inconsistency_in_transf.md)
+- [\[ACL 2026\] VAUQ: Vision-Aware Uncertainty Quantification for LVLM Self-Evaluation](vauq_vision-aware_uncertainty_quantification_for_lvlm_self-evaluation.md)
+- [\[ICML 2026\] Large Vision-Language Models Get Lost in Attention](../../ICML2026/multimodal_vlm/large_vision-language_models_get_lost_in_attention.md)
+- [\[CVPR 2026\] Multi-Crit: Benchmarking Multimodal Judges on Pluralistic Criteria-Following](../../CVPR2026/multimodal_vlm/multi-crit_benchmarking_multimodal_judges_on_pluralistic_criteria-following.md)
+- [\[CVPR 2026\] LVLM-Aided Alignment of Task-Specific Vision Models](../../CVPR2026/multimodal_vlm/lvlm-aided_alignment_of_task-specific_vision_models.md)
+- [\[ACL 2026\] What Do Vision-Language Models Encode for Personalized Image Aesthetics Assessment?](what_do_vision-language_models_encode_for_personalized_image_aesthetics_assessme.md)
 
 </div>
 

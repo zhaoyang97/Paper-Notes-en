@@ -45,7 +45,7 @@ item_total: 12
 
 **💬 ACL2026** · **12** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (5)](../../CVPR2026/llm_pretraining/index.md) · [🧪 ICML2026 (22)](../../ICML2026/llm_pretraining/index.md) · [🔬 ICLR2026 (25)](../../ICLR2026/llm_pretraining/index.md) · [🤖 AAAI2026 (9)](../../AAAI2026/llm_pretraining/index.md) · [🧠 NeurIPS2025 (51)](../../NeurIPS2025/llm_pretraining/index.md) · [📹 ICCV2025 (9)](../../ICCV2025/llm_pretraining/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (5)](../../CVPR2026/llm_pretraining/index.md) · [🔬 ICLR2026 (79)](../../ICLR2026/llm_pretraining/index.md) · [🧪 ICML2026 (27)](../../ICML2026/llm_pretraining/index.md) · [🤖 AAAI2026 (9)](../../AAAI2026/llm_pretraining/index.md) · [🧠 NeurIPS2025 (51)](../../NeurIPS2025/llm_pretraining/index.md) · [📹 ICCV2025 (9)](../../ICCV2025/llm_pretraining/index.md)
 
 🔥 **Top topics:** LLM ×3
 
@@ -55,11 +55,11 @@ item_total: 12
 
 **[Data Mixing Agent: Learning to Re-weight Domains for Continual Pre-training](data_mixing_agent_learning_to_re-weight_domains_for_continual_pre-training.md)**
 
-:   This paper proposes Data Mixing Agent, the first model-based end-to-end domain re-weighting framework. By training a small agent using CQL reinforcement learning on extensive data mixing trajectories, it learns generalizable data mixing heuristics. It effectively balances source and target domain performance during continual pre-training for mathematical reasoning and generalizes to unseen source domains, target models, and domain spaces.
+:   This paper proposes Data Mixing Agent, the first model-based end-to-end domain re-weighting framework. By training a small agent using CQL reinforcement learning on extensive data mixing trajectories, it learns generalizable data mixing heuristics. It balances performance between source and target domains in mathematical reasoning continual pre-training and generalizes to unseen source domains, target models, and domain spaces.
 
 **[Demystifying Data Organization for Enhanced LLM Training](demystifying_data_organization_for_enhanced_llm_training.md)**
 
-:   This paper systematically investigates the impact of "sample appearance order" in LLM training. By reusing existing sample-level quality/difficulty scores, it proposes four data organization principles: boundary strengthening, cyclic review, continuous curriculum, and local diversity. The proposed STR and SAW strategies consistently improve performance in both pre-training and SFT.
+:   This paper systematically investigates the impact of "sample appearance order" in LLM training. By reusing existing sample-level quality/difficulty scores, it proposes four data organization principles: boundary reinforcement, cyclic review, continuous curriculum, and local diversity. The proposed STR and SAW strategies consistently enhance performance in both pre-training and SFT.
 
 **[Fine-tuning vs. In-context Learning in Large Language Models: A Formal Language Learning Perspective](fine-tuning_vs_in-context_learning_in_large_language_models_a_formal_language_le.md)**
 
@@ -71,7 +71,7 @@ item_total: 12
 
 **[Is a Document Educational or Just Wikipedia-Style? -- Pitfalls of Classifier-Based Quality Filtering](is_a_document_educational_or_just_wikipedia-style_--_pitfalls_of_classifier-base.md)**
 
-:   This paper discovers that Classifier-based Quality Filtering (CQF) mistakenly equates "Wikipedia-style writing" with "higher educational value." Simple rewriting allows low-quality web pages to bypass pre-training data filtering thresholds, causing approximately 7% of samples in FineWeb-Edu to flip their filtering decisions.
+:   This paper discovers that Classifier-based Quality Filtering (CQF) mistakenly equates "Wikipedia-style writing" with "higher educational value." Simple rewriting allows low-quality web pages to bypass pre-training data filtering thresholds; approximately 7% of samples in FineWeb-Edu flip their filtering decisions as a result.
 
 **[KoCo: Conditioning Language Model Pre-training on Knowledge Coordinates](koco_conditioning_language_model_pre-training_on_knowledge_coordinates.md)**
 
@@ -83,7 +83,7 @@ item_total: 12
 
 **[SAGE: Sign-Adaptive Gradient for Memory-Efficient LLM Optimization](sage_sign-adaptive_gradient_for_memory-efficient_llm_optimization.md)**
 
-:   This paper proposes the SAGE optimizer, which addresses the "embedding layer dilemma" where lightweight optimizers fail on embedding layers by employing a Lion-style sign update direction and an $O(d)$ memory-overhead adaptive damping scaling factor. SAGE achieves new SOTA perplexity on Llama models (up to 1.3B) with significantly lower optimizer memory.
+:   Ours proposes the SAGE optimizer, which addresses the "embedding layer dilemma" where lightweight optimizers fail on embedding layers. By combining a Lion-style sign update direction with an $O(d)$ memory overhead adaptive damping scaling factor, SAGE achieves new SOTA perplexity on Llama models (up to 1.3B) with significantly lower optimizer memory.
 
 **[SCRIPT: A Subcharacter Compositional Representation Injection Module for Korean Pre-Trained Language Models](script_a_subcharacter_compositional_representation_injection_module_for_korean_p.md)**
 
@@ -91,7 +91,7 @@ item_total: 12
 
 **[Toward Consistent World Models with Multi-Token Prediction and Latent Semantic Enhancement](toward_consistent_world_models_with_multi-token_prediction_and_latent_semantic_e.md)**
 
-:   This paper theoretically analyzes how Multi-Token Prediction (MTP) induces representation contractivity through a gradient coupling mechanism, facilitating the emergence of belief states. However, it reveals a "structural hallucination" issue in MTP (illegal shortcuts in latent space) and proposes the LSE-MTP framework. By employing latent consistency and semantic anchoring losses, it anchors predictions to true latent state trajectories, significantly improving path legality and robustness in synthetic graphs and real-world Manhattan taxi navigation.
+:   This paper theoretically analyzes how Multi-Token Prediction (MTP) induces representation contractivity through a gradient coupling mechanism, facilitating the emergence of belief states. However, it also reveals the "structural hallucination" problem of MTP (illegal shortcuts in latent space). The proposed LSE-MTP framework anchors predictions to true latent state trajectories through latent consistency and semantic anchoring losses, significantly improving path legality and robustness in synthetic graphs and real-world Manhattan taxi navigation.
 
 **[Working Memory Constraints Scaffold Learning in Transformers under Data Scarcity](working_memory_constraints_scaffold_learning_in_transformers_under_data_scarcity.md)**
 

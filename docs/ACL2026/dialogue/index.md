@@ -75,7 +75,7 @@ item_total: 26
 
 **💬 ACL2026** · **26** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (1)](../../CVPR2026/dialogue/index.md) · [🧪 ICML2026 (4)](../../ICML2026/dialogue/index.md) · [🔬 ICLR2026 (5)](../../ICLR2026/dialogue/index.md) · [🤖 AAAI2026 (5)](../../AAAI2026/dialogue/index.md) · [🧠 NeurIPS2025 (8)](../../NeurIPS2025/dialogue/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (1)](../../CVPR2026/dialogue/index.md) · [🔬 ICLR2026 (10)](../../ICLR2026/dialogue/index.md) · [🧪 ICML2026 (5)](../../ICML2026/dialogue/index.md) · [🤖 AAAI2026 (5)](../../AAAI2026/dialogue/index.md) · [🧠 NeurIPS2025 (8)](../../NeurIPS2025/dialogue/index.md)
 
 🔥 **Top topics:** Dialogue ×18 · Reasoning ×3 · Sentiment Analysis ×3 · Agents ×3 · LLM ×2
 
@@ -109,7 +109,7 @@ item_total: 26
 
 **[Discourse Coherence and Response-Guided Context Rewriting for Multi-Party Dialogue Generation](discourse_coherence_and_response-guided_context_rewriting_for_multi-party_dialog.md)**
 
-:   This paper proposes DRCR, the first framework to introduce context rewriting into multi-party dialogue generation. It utilizes dual feedback signals—discourse coherence and response quality—to construct preference data, enabling the rewriter and responder to mutually enhance each other through iterative training via dynamic self-evolution.
+:   This paper proposes DRCR, the first framework to introduce context rewriting into multi-party dialogue generation. It utilizes dual feedback signals—discourse coherence and response quality—to construct preference data, enabling the rewriter and responder to mutually enhance each other through iterative dynamic self-evolution.
 
 **[Dual Hierarchical Dialogue Policy Learning for Legal Inquisitive Conversational Agents](dual_hierarchical_dialogue_policy_learning_for_legal_inquisitive_conversational_.md)**
 
@@ -117,7 +117,7 @@ item_total: 26
 
 **[ETHICMIND: A Risk-Aware Framework for Ethical-Emotional Alignment in Multi-Turn Dialogue](ethicmind_a_risk-aware_framework_for_ethical-emotional_alignment_in_multi-turn_d.md)**
 
-:   ETHICMIND proposes an inference-time risk-aware alignment framework that jointly analyzes ethical risks and user emotions in each turn of a multi-turn dialogue. It plans high-level response strategies to generate replies that balance ethical guidance and emotional resonance without additional training, achieving consistent alignment performance in high-risk and morally ambiguous scenarios.
+:   ETHICMIND proposes an inference-time risk-aware alignment framework that jointly analyzes ethical risks and user emotions in each turn of a multi-turn dialogue. It plans high-level response strategies to generate replies that balance ethical guidance and emotional resonance, achieving consistent alignment in high-risk and morally ambiguous scenarios without additional training.
 
 **[Frame of Reference: Addressing the Challenges of Common Ground Representation in Dialogue](frame_of_reference_addressing_the_challenges_of_common_ground_representation_in_.md)**
 
@@ -125,7 +125,7 @@ item_total: 26
 
 **[GenesisFunc: Multi-Agent Data Generation for Accurate and Generalizable Function-Calling](genesisfunc_multi-agent_data_generation_for_accurate_and_generalizable_function-.md)**
 
-:   GenesisFunc automatically constructs high-quality function-calling training data through a reliable tool pool, multi-agent dialogue generation, and multi-stage quality control. Fine-tuning Qwen3-8B on this data outperforms open-source function-calling models of equivalent scale on BFCL, API-Bank, and ACEBench, demonstrating strong potential for scalability to broader toolsets and multi-turn RL training.
+:   GenesisFunc automatically constructs high-quality function-calling training data using a reliable tool pool, multi-agent dialogue generation, and multi-stage quality control. After fine-tuning Qwen3-8B, it outperforms open-source function-calling models of the same scale on BFCL, API-Bank, and ACEBench, demonstrating potential for scaling to more tools and multi-turn RL training.
 
 **[LOCKET: Robust Feature-Locking Technique for Language Models](locket_robust_feature-locking_technique_for_language_models.md)**
 
@@ -133,7 +133,7 @@ item_total: 26
 
 **[MA$^2$P: A Meta-Cognitive Autonomous Intelligent Agents Framework for Complex Persuasion](ma2p_a_meta-cognitive_autonomous_intelligent_agents_framework_for_complex_persua.md)**
 
-:   MA$^2$P decomposes complex persuasion dialogue into a closed loop of "meta-strategy selection - task-level multi-agent persuasion - post-hoc knowledge update." Without training the base LLM, it transforms the persuadee's beliefs, desires, and concerns into specific strategic actions, significantly improving the persuasion success rate of various LLMs on CToMPersu.
+:   MA$^2$P decomposes complex persuasive dialogue into a closed loop of "Meta-strategy selection - Task-level multi-agent persuasion - Post-hoc knowledge update". Without training the base LLM, it transforms the persuadee's beliefs, desires, and concerns into specific strategic actions, significantly improving the persuasion success rate of various LLMs on CToMPersu.
 
 **[Metro: Towards Strategy Induction from Expert Dialogue Transcripts for Non-collaborative Dialogues](metro_towards_strategy_induction_from_expert_dialogue_transcripts_for_non-collab.md)**
 
@@ -145,7 +145,7 @@ item_total: 26
 
 **[ReacTOD: Bounded Neuro-Symbolic Agentic NLU for Zero-Shot Dialogue State Tracking](reactod_bounded_neuro-symbolic_agentic_nlu_for_zero-shot_dialogue_state_tracking.md)**
 
-:   ReacTOD decomposes Task-Oriented Dialogue State Tracking (DST) into bounded tool calls and utilizes a deterministic symbolic validator to intercept and provide feedback on LLM errors. This enables 8B to 32B scale models to achieve Joint Goal Accuracy (JGA) on zero-shot MultiWOZ and SGD that exceeds previous large-scale model prompting methods.
+:   ReacTOD decomposes task-oriented Dialogue State Tracking (DST) into bounded tool calls and uses a deterministic symbolic validator to intercept and provide feedback on LLM errors. This allows 8B to 32B-scale models to achieve Joint Goal Accuracy (JGA) on zero-shot MultiWOZ and SGD that surpasses previous large-scale LLM prompting methods.
 
 **[Reasoning Gets Harder for LLMs Inside A Dialogue](reasoning_gets_harder_for_llms_inside_a_dialogue.md)**
 
@@ -157,7 +157,7 @@ item_total: 26
 
 **[SPASM: Stable Persona-driven Agent Simulation for Multi-turn Dialogue Generation](spasm_stable_persona-driven_agent_simulation_for_multi-turn_dialogue_generation.md)**
 
-:   This paper proposes SPASM, a stability-focused persona-driven multi-turn dialogue simulation framework. By utilizing modular persona generation, Egocentric Context Projection (ECP), and termination detection, it significantly reduces character drift and the "echo" effect in LLM-LLM dialogues, constructing a high-quality dataset of 45,000 multi-turn dialogues.
+:   This paper proposes SPASM, a stability-centric persona-driven multi-turn dialogue simulation framework. Through modular persona generation, Egocentric Context Projection (ECP), and termination detection, it significantly reduces character drift and "echo" effects in LLM-LLM dialogues, constructing a high-quality dataset of 45,000 multi-turn dialogues.
 
 **[Stress-Testing Emotional Support Models: Moving from Homogeneous to Diverse Help Seekers](stress-testing_emotional_support_models_moving_from_homogeneous_to_diverse_help_.md)**
 

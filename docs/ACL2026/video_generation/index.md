@@ -26,7 +26,7 @@ item_total: 4
 
 **💬 ACL2026** · **4** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (152)](../../CVPR2026/video_generation/index.md) · [🧪 ICML2026 (28)](../../ICML2026/video_generation/index.md) · [🔬 ICLR2026 (19)](../../ICLR2026/video_generation/index.md) · [🤖 AAAI2026 (11)](../../AAAI2026/video_generation/index.md) · [🧠 NeurIPS2025 (23)](../../NeurIPS2025/video_generation/index.md) · [📹 ICCV2025 (49)](../../ICCV2025/video_generation/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (152)](../../CVPR2026/video_generation/index.md) · [🔬 ICLR2026 (98)](../../ICLR2026/video_generation/index.md) · [🧪 ICML2026 (32)](../../ICML2026/video_generation/index.md) · [🤖 AAAI2026 (11)](../../AAAI2026/video_generation/index.md) · [🧠 NeurIPS2025 (23)](../../NeurIPS2025/video_generation/index.md) · [📹 ICCV2025 (49)](../../ICCV2025/video_generation/index.md)
 
 🔥 **Top topics:** Video Generation ×3
 
@@ -36,12 +36,12 @@ item_total: 4
 
 **[OSCBench: Benchmarking Object State Change in Text-to-Video Generation](oscbench_benchmarking_object_state_change_in_text-to-video_generation.md)**
 
-:   This paper proposes OSCBench—the first benchmark specifically evaluating Object State Change (OSC) capabilities in text-to-video models. Built on cooking scenes with 1,120 prompts covering common, novel, and compositional scenarios, it reveals that even the strongest T2V models achieve an OSC accuracy of only 0.786.
+:   The authors propose OSCBench—the first benchmark specifically designed to evaluate Object State Change (OSC) capabilities in text-to-video (T2V) models. Built on cooking scenarios with 1,120 prompts covering Regular, Novel, and Compositional scenarios, the benchmark reveals that even the strongest T2V models achieve an OSC accuracy of only 0.786.
 
 **[Self-Correcting Text-to-Video Generation with Misalignment Detection and Localized Refinement](self-correcting_text-to-video_generation_with_misalignment_detection_and_localiz.md)**
 
-:   VideoRepair is proposed as the first training-free, model-agnostic self-correction framework for text-to-video (T2V) generation. It utilizes MLLMs to detect fine-grained text-video misalignments, preserves correctly generated regions, and selectively refines problematic areas. The method consistently improves alignment quality across four T2V backbone models on EvalCrafter and T2V-CompBench.
+:   VideoRepair is introduced as the first training-free, model-agnostic self-correction framework for text-to-video generation. It utilizes MLLMs to detect fine-grained text-video misalignments, preserving correct regions while selectively refining problematic ones. It consistently improves alignment quality across four different T2V backbone models on EvalCrafter and T2V-CompBench.
 
 **[TeachMaster: Generative Teaching via Code](teachmaster_generative_teaching_via_code.md)**
 
-:   TeachMaster proposes the Generative Teaching paradigm, using code as an interpretable intermediate representation for educational videos. It employs a collaboration of planning, code generation, narration, debugging, synchronization, and layout agents to generate complete course videos, achieving near-human quality while reducing the production cost of a 45-hour course to approximately 0.3% of traditional methods.
+:   TeachMaster proposes the Generative Teaching paradigm, using code as an interpretable intermediate representation for educational videos. It employs collaborating agents for planning, code generation, narration, debugging, synchronization, and layout to produce full-course videos, achieving near-human quality while reducing the production cost of a 45-hour course to approximately 0.3% of traditional methods.

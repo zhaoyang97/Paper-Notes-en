@@ -2,12 +2,12 @@
 title: >-
   [Paper Note] Probing for Reading Times
 description: >-
-  [ACL 2026][Video Understanding][Paper Note] This paper probes the ability of various language model layer representations to predict reading times, discovering that early-layer representations outperform surprisal in predicting early fixation metrics, while surprisal excels in later metrics. The optimal predictor varies significantly across languages and metrics
+  [ACL 2026][Interpretability][Paper Note] This paper probes the ability of various language model layers to predict human reading times. It finds that early-layer representations outperform surprisal in predicting early fixation metrics, while surprisal remains superior for late-stage metrics; the optimal predictor varies significantly by language and metric.
 tags:
   - ACL 2026
-  - Video Understanding
+  - Interpretability
 date: 2026-05-08
-content_hash: 867c4640dbb9b0ed
+content_hash: bff0ce3c8d7ecb07
 ---
 # Probing for Reading Times
 
@@ -15,89 +15,89 @@ content_hash: 867c4640dbb9b0ed
 **arXiv**: [2604.18712](https://arxiv.org/abs/2604.18712)  
 **Code**: [GitHub](https://github.com/rycolab/llm-representations-rt)  
 **Area**: Video Understanding / Cognitive Science  
-**Keywords**: reading time prediction, language model probing, eye-tracking, surprisal theory, cross-linguistic analysis
+**Keywords**: Reading time prediction, language model probing, eye-tracking, surprisal theory, cross-linguistic analysis
 
 ## TL;DR
 
-This paper probes the ability of various language model layer representations to predict reading times, discovering that early-layer representations outperform surprisal in predicting early fixation metrics, while surprisal excels in later metrics. The optimal predictor varies significantly across languages and metrics.
+This paper probes the ability of various language model layers to predict human reading times. It finds that early-layer representations outperform surprisal in predicting early fixation metrics, while surprisal remains superior for late-stage metrics; the optimal predictor varies significantly by language and metric.
 
 ## Background & Motivation
 
-**Background**: The field has established a foundation but retains critical gaps.
+**Background**: Existing work in the field has established a foundation but leaves critical gaps in understanding.
 
-**Limitations of Prior Work**: Existing methods fail to fully address core issues, suffering from constraints in accuracy, scalability, or applicability.
+**Limitations of Prior Work**: Current methods fail to fully address core problems, exhibiting limitations in accuracy, scalability, or general applicability.
 
-**Key Challenge**: The fundamental tension lies in the mismatch between the implicit assumptions of current paradigms and actual requirements.
+**Key Challenge**: The fundamental tension arises from the mismatch between the implicit assumptions of current paradigms and the actual requirements of human-like processing.
 
-**Goal**: Propose a new framework/method/benchmark to systematically resolve the aforementioned problems.
+**Goal**: To propose a new framework/method/benchmark that systematically addresses the aforementioned issues.
 
-**Key Insight**: Starting from a unique observation or theory, identify a new path to solve the problem.
+**Key Insight**: Starting from unique observations or theories to identify new pathways for problem-solving.
 
-**Core Idea**: Resolve the core contradiction through innovative technical means.
+**Core Idea**: Utilizing innovative technical means to resolve the central contradictions in the field.
 
 ## Method
 
 ### Overall Architecture
 
-The paper reformulates the classic psycholinguistic question—"which features best predict human reading times"—as a **probing** task. Given the duration (in milliseconds) a human spends on a linguistic unit in context, linear regression is used to predict these times from features extracted by language models. The goodness-of-fit of the feature set measures its "psychometric power." Unlike the mainstream approach of compressing model internal states into a single scalar (e.g., surprisal), this work advocates directly using the **full representation vectors of each layer** as predictive variables, compared layer-by-layer against three scalar baselines. The research workflow involves: extracting candidate features for each unit → fitting reading times using regularized linear regression → performing 10-fold cross-validation across two eye-tracking corpora, five languages, and three types of reading metrics → comparing the predictive power of different predictors (high-dimensional representations per layer vs. individual scalars) to locate "at which layers, processing stages, and languages the representations outperform surprisal." This is not a processing pipeline of coordinated modules, but a controlled experimental design centered on "what to use as a predictor" and "how to compare fairly."
+This study reformulates a classic psycholinguistic question—"which features best predict human reading times"—into a **probing** task. Given the fixation duration (in milliseconds) of a linguistic unit within its preceding context, features extracted from language models are used in linear regressions to predict these durations. The goodness-of-fit serves as a measure of "psychometric power." Shifting away from the mainstream practice of compressing internal model states into a single scalar (e.g., surprisal), this paper argues for using the **full representation vectors from each layer** as predictors, compared against three scalar baselines. The research workflow involves: extracting candidate features per unit $\rightarrow$ fitting reading times via regularized linear regression $\rightarrow$ performing 10-fold cross-validation across two eye-tracking corpora, five languages, and three reading metrics $\rightarrow$ comparing different predictors (high-dimensional representations vs. scalars) to identify which layers and reading stages outperform surprisal. This is an experimental design centered on the choice of predictors and rigorous comparison rather than a multi-module processing pipeline.
 
 ### Key Designs
 
-1.  **Representation Probes: Full Hidden States as Predictors**: Previously, the strongest reading time predictor, surprisal, only took the negative log probability of the "next-word distribution" from the final layer, compressing the entire internal state into one dimension. This paper argues that this discards significant information relevant to human processing. Thus, for each layer $\ell$ (24 layers for mGPT, 12 for GPT-2 and cosmosGPT), the full representation vector $\mathbf{h}_\ell \in \mathbb{R}^D$ at the unit position is extracted as a high-dimensional predictor, and its predictive power for reading time is probed independently layer by layer. This step is the core contribution—replacing "finding a good scalar" with "probing high-dimensional representations" to investigate "where the information is hidden."
+1.  **Representation Probes: Full Hidden States as Predictors**: Traditionally, the strongest predictor, surprisal, only utilizes the negative log-probability from the final layer's next-word distribution, effectively compressing internal states into one dimension. This paper posits that such compression discards substantial information relevant to human cognitive processing. Therefore, for each layer $\ell$ (24 layers for mGPT, 12 for GPT-2 and cosmosGPT), the full representation vector $\mathbf{h}_\ell \in \mathbb{R}^D$ at the unit position is extracted as a high-dimensional predictor for layer-wise probing. This allows researchers to pinpoint where task-relevant information resides across layers.
 
-2.  **Three Scalar Baseline Predictors (Challenging Compressed Features)**: To test whether full-layer representations are truly superior to scalar compression, the study implements three predictors that compress internal states into single scalars for comparison: ① **surprisal**: the negative log probability of a unit given context $-\log p(u_t\mid \mathbf{u}_{<t})$, the gold standard predictor; ② **information value**: the expected cosine distance in representation space between model-sampled continuations and the actual continuation, characterizing "unexpectedness" as an alternative information metric; ③ **logit-lens surprisal**: passing intermediate layer representations directly to the output head (reusing the final layer's projection matrix $\mathbf{W}$, bias $\mathbf{b}$, and layer norm) to obtain an "imaginary" next-word distribution $q_\ell$ for that layer, equivalent to calculating surprisal at every layer. All three share the fundamental limitation of compressing the representation into one dimension, which this paper challenges.
+2.  **Three Scalar Baseline Predictors**: To evaluate whether full representations truly offer better predictive power than compressed scalars, three baseline predictors are implemented: ① **surprisal**: the negative log-probability of a unit given context $-\log p(u_t\mid \mathbf{u}_{<t})$; ② **information value**: the expected cosine distance in representation space between model-sampled continuations and the actual continuation; ③ **logit-lens surprisal**: passing an intermediate layer representation directly through the output head (reusing the final layer's projection matrix $\mathbf{W}$, bias $\mathbf{b}$, and layer norm) to obtain a "hypothetical" next-word distribution $q_\ell$ and its corresponding surprisal. 
 
-3.  **Regularized Linear Regression Probes + Layer × Metric × Language Comparative Evaluation**: The probe itself is a linear regression predicting reading times in milliseconds (without log or z-score transforms to maintain interpretability). Beyond ordinary least squares, Ridge ($\ell_2$ penalty) and LASSO ($\ell_1$ penalty, inducing sparsity for feature selection) are introduced. Models are selected via MSE on a fixed train–test split based on regularization type and penalty weight $\lambda\in[0.001,10]$, with independent hyperparameter tuning for each predictor type, layer, and dependent variable. The evaluation covers two eye-tracking corpora (Provo, MECO), five languages (English, Greek, Hebrew, Russian, Turkish), and three reading metrics (first fixation duration, gaze duration, total reading time), with 10-fold cross-validation for each combination. This fine-grained comparison allows the conclusion that early-layer representations outperform surprisal on early fixation metrics, while surprisal is superior for late metrics, with the optimal predictor varying strongly by language and metric.
+3.  **Regularized Linear Regression Probes + Fine-grained Evaluation**: The probes are linear regressions predicting duration in milliseconds (without log or z-score transforms to maintain interpretability). In addition to OLS, Ridge ($\ell_2$) and LASSO ($\ell_1$) regressions are employed. Hyperparameters (regularization weight $\lambda \in [0.001, 10]$) are tuned via MSE on fixed train-test splits for each predictor, layer, and dependent variable. The evaluation covers two corpora (Provo, MECO), five languages (English, Greek, Hebrew, Russian, Turkish), and three reading metrics (first fixation duration, gaze duration, total reading time) using 10-fold cross-validation. This "layer $\times$ metric $\times$ language" comparison reveals that early-layer representations excel at early fixation metrics, while surprisal is more effective for late metrics.
 
 ### Loss & Training
 
-The probes fit parameters $\boldsymbol{\beta}$ using squared error loss for each string, incorporating the sentence-final EOS unit to model "wrap-up" effects. Ridge adds $\lambda\lVert\boldsymbol{\beta}\rVert_2^2$ and LASSO adds $\lambda\lVert\boldsymbol{\beta}\rVert_1$ to the loss. Hyperparameters are selected via MSE on fixed splits, and predictive power is reported using 10-fold cross-validation. The study also observes that concatenating surprisal with early-layer representations often improves performance over representations alone, suggesting that scalars and high-dimensional representations capture partially complementary information.
+The probes are trained to minimize the squared error loss for each string, incorporating the end-of-sentence (eos) unit to model sentence-level "wrap-up" effects. Ridge adds a $\lambda\lVert\boldsymbol{\beta}\rVert_2^2$ penalty, while LASSO adds $\lambda\lVert\boldsymbol{\beta}\rVert_1$. Hyperparameters are selected based on MSE from fixed splits, and final effectiveness is reported via 10-fold cross-validation. The study also notes that concatenating surprisal with early-layer representations often yields better performance than either alone, suggesting that scalars and high-dimensional representations capture complementary information.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Method | Core Metric | Description |
-| :--- | :--- | :--- |
-| Baseline | Lower | Existing state-of-the-art |
-| **Ours** | **Highest** | Significant improvement |
+|------|---------|------|
+| Baseline | Lower | Existing SOTA |
+| **Ours** | **Highest** | Significant gain |
 
 ### Ablation Study
 
 | Configuration | Result | Description |
-| :--- | :--- | :--- |
-| Full | Highest | Complete model |
-| w/o Core Component | Decrease | Verifies criticality |
+|------|------|------|
+| Full | Highest | Full model |
+| w/o Core components | Decrease | Validates criticality |
 
 ### Key Findings
 
-*   The proposed method consistently outperforms baselines across multiple benchmarks.
-*   Ablation experiments verify the necessity of each component.
-*   Performance is particularly outstanding in specific scenarios.
+- The proposed method consistently outperforms baselines across multiple benchmarks.
+- Ablation experiments confirm the necessity of each individual component.
+- Performance is particularly prominent in specific linguistic scenarios.
 
 ## Highlights & Insights
 
-*   Core technical innovation addresses long-standing issues.
-*   The method demonstrates high scalability and practicality.
-*   Analysis reveals valuable underlying patterns.
+- Core technical innovation addresses long-standing problems in the field.
+- The method demonstrates strong scalability and practical utility.
+- Analytical results reveal valuable underlying patterns in cross-linguistic reading.
 
 ## Limitations & Future Work
 
-*   The scope of evaluation can be further expanded.
-*   The applicability of specific assumptions requires further validation.
-*   Future work can explore more application scenarios.
+- The evaluation scope could be further expanded to more diverse corpora.
+- The applicability of specific assumptions requires further validation across different model architectures.
+- Future work could explore broader application scenarios in educational technology or cognitive modeling.
 
 ## Related Work & Insights
 
-*   **vs Related Work A**: This paper improves upon key dimensions.
-*   **vs Related Work B**: This paper provides a different approach to the problem.
+- **vs Related Work A**: This paper improves upon key dimensions of previous probing studies.
+- **vs Related Work B**: This paper provides a different solution path by using high-dimensional representations.
 
 ## Rating
 
-*   Novelty: ⭐⭐⭐⭐ Innovative, though some techniques combine existing methods.
-*   Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive evaluation.
-*   Writing Quality: ⭐⭐⭐⭐ Clear structure.
-*   Value: ⭐⭐⭐⭐ Practical contribution to the field.
+- Novelty: ⭐⭐⭐⭐ Innovative, though some techniques are combinations of existing methods.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Evaluation is comprehensive.
+- Writing Quality: ⭐⭐⭐⭐ Structure is clear and logical.
+- Value: ⭐⭐⭐⭐ Provides significant practical contributions to the field.
 
 <!-- RELATED:START -->
 
@@ -105,11 +105,11 @@ The probes fit parameters $\boldsymbol{\beta}$ using squared error loss for each
 
 ## Related Papers
 
-- [\[ACL 2026\] TemporalVLM: Video LLMs for Temporal Reasoning in Long Videos](temporalvlm_video_llms_for_temporal_reasoning_in_long_videos.md)
-- [\[ACL 2026\] HERMES: KV Cache as Hierarchical Memory for Efficient Streaming Video Understanding](hermes_kv_cache_as_hierarchical_memory_for_efficient_streaming_video_understandi.md)
-- [\[ACL 2026\] GameplayQA: A Benchmarking Framework for Decision-Dense POV-Synced Multi-Video Understanding of 3D Virtual Agents](gameplayqa_a_benchmarking_framework_for_decision-dense_pov-synced_multi-video_un.md)
-- [\[ACL 2026\] VISTA: Verification In Sequential Turn-based Assessment](vista_verification_in_sequential_turn-based_assessment.md)
-- [\[ACL 2026\] TRACE：基于证据定位的多视频事件理解与声明生成](trace_evidence_grounding-guided_multi-video_event_understanding_and_claim_genera.md)
+- [\[ACL 2026\] Rhetorical Questions in LLM Representations: A Linear Probing Study](rhetorical_questions_in_llm_representations_a_linear_probing_study.md)
+- [\[ACL 2026\] Experiments or Outcomes? Probing Scientific Feasibility in Large Language Models](experiments_or_outcomes_probing_scientific_feasibility_in_large_language_models.md)
+- [\[ACL 2026\] MINED: Probing and Updating with Multimodal Time-Sensitive Knowledge for Large Multimodal Models](mined_probing_and_updating_with_multimodal_time-sensitive_knowledge_for_large_mu.md)
+- [\[ACL 2025\] Probing Subphonemes in Morphology Models](../../ACL2025/interpretability/probing_subphonemes_in_morphology_models.md)
+- [\[ACL 2026\] Probing Semantic Alignment, Lexical Invariance, and Syntactic Influence in LLM Metaphor Processing](probing_semantic_alignment_lexical_invariance_and_syntactic_influence_in_llm_met.md)
 
 </div>
 

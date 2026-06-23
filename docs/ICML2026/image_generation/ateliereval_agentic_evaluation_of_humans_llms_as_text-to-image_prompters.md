@@ -2,61 +2,60 @@
 title: >-
   [Paper Note] AtelierEval: Agentic Evaluation of Humans & LLMs as Text-to-Image Prompters
 description: >-
-  [ICML 2026][Image Generation][Text-to-Image] AtelierEval is the first to treat "prompt writers" in the text-to-image workflow as the evaluation target. It quantitatively measures prompting proficiency for both humans and MLLMs using 360 expert tasks across three cognitive categories and the AtelierJudge agentic evaluator, finding that image-imitation prompting is
+  [ICML 2026][Image Generation][Text-to-Image] AtelierEval is the first to evaluate the "prompter" in the text-to-image workflow. Using 360 expert tasks, three cognitive task categories, and the AtelierJudge agentic evaluator system, it quantitatively measures the prompting proficiency of humans and MLLMs, discovering that image-mimicry prompting is often more reli
 tags:
   - ICML 2026
   - Image Generation
   - Text-to-Image
   - Agent-as-a-Judge
 date: 2026-05-08
-content_hash: ff69556a5e4ad566
+content_hash: 31c6753d4609ceb1
 ---
 # AtelierEval: Agentic Evaluation of Humans & LLMs as Text-to-Image Prompters
 
 **Conference**: ICML2026  
 **arXiv**: [2605.22645](https://arxiv.org/abs/2605.22645)  
-**Code**: Paper descriptions mention released tools and data, but the URL is not provided in the cache.  
+**Code**: The paper indicates that tools and data have been released, but the cached text does not provide a repository URL.  
 **Area**: Image Generation / T2I Evaluation  
-**Keywords**: Text-to-Image, Prompting Proficiency, Agent-as-a-Judge, Multimodal Large Language Models (MLLM), Human-machine Comparison  
+**Keywords**: Text-to-Image, Prompting Proficiency Evaluation, Agent-as-a-Judge, Multimodal Large Language Models, Human-AI Comparison
 
 ## TL;DR
-AtelierEval is the first to treat "prompt writers" in the text-to-image workflow as the evaluation target. It quantitatively measures prompting proficiency for both humans and MLLMs using 360 expert tasks across three cognitive categories and the AtelierJudge agentic evaluator, finding that image-imitation prompting is often more reliable than text-only planning.
+AtelierEval is the first to evaluate the "prompter" in the text-to-image workflow. Using 360 expert tasks, three cognitive task categories, and the AtelierJudge agentic evaluator system, it quantitatively measures the prompting proficiency of humans and MLLMs, discovering that image-mimicry prompting is often more reliable than pure text-planning prompting.
 
 ## Background & Motivation
-**Background**: As text-to-image systems grow more powerful, user inputs are rarely directly fed into generative models. Instead, they are first rewritten by human prompt engineers or MLLM middleware. Many commercial systems use MLLMs as implicit middleware, while advanced creators explicitly use MLLMs to decompose scenes, styles, and constraints.
+**Background**: As text-to-image systems become increasingly powerful, user inputs typically do not enter the generative model directly; instead, they are rewritten into more executable prompts by human prompt engineers or MLLM middleware. Many commercial systems already use MLLMs as implicit middleware, and advanced creators explicitly use MLLMs to decompose scenes, styles, and constraints.
 
-**Limitations of Prior Work**: Most T2I benchmarks fix the prompts and evaluate the generative model itself. This ignores the capabilities of the upstream prompter. For the same intent, final image quality and constraint satisfaction can vary significantly depending on which human or MLLM translates the intent into a prompt.
+**Limitations of Prior Work**: Most mainstream T2I benchmarks fix the prompt and evaluate the generative model itself. This ignores the capability of the upstream prompter: for the same user intent, the final image quality and constraint satisfaction rate can vary significantly if translated into prompts by different humans or MLLMs.
 
-**Key Challenge**: Existing evaluations conflate "the model's ability to execute a prompt" with "the prompter's ability to translate intent into a prompt." Furthermore, prompt optimizers often perform local polishing on existing prompts rather than assessing the general translation capability from abstract intent to executable prompt.
+**Key Challenge**: Existing evaluations conflate "whether the model can execute a prompt" with "whether the prompter can translate intent into a prompt." Prompt optimizers also typically perform local polishing on existing prompts rather than assessing the general translation capability from abstract intent to executable prompts.
 
-**Goal**: This paper aims to establish a unified benchmark to specifically measure the intrinsic ability of humans and MLLMs as T2I prompters, assessing both subjective aesthetic quality and objective constraint satisfaction.
+**Goal**: This paper aims to establish a unified benchmark to specifically measure the intrinsic abilities of humans and MLLMs as T2I prompters, simultaneously evaluating subjective aesthetic quality and objective constraint satisfaction.
 
-**Key Insight**: Prompting proficiency is formalized as the capability of a strategy $\pi: I \rightarrow p$, where $I$ represents the user intent, $p$ is the executable prompt, and the T2I backend $M$ generates the image from $p$. The evaluation goal is not to find which model is stronger under fixed prompts, but whether a prompter's strategy consistently translates intent well across tasks and backends.
+**Key Insight**: The authors formalize prompting proficiency as the capability of a strategy $\pi: I \rightarrow p$, where $I$ is the user intent, $p$ is the executable prompt, and the T2I backend $M$ is responsible for generating the image from the prompt. The evaluation goal is not to find which model is stronger under a fixed prompt, but whether the prompter strategy can stably translate intent across different tasks and backends.
 
-**Core Idea**: The benchmark covers three prompting dimensions inspired by cognitive science, using AtelierJudge—an agentic evaluator with skill routing and memory retrieval—to perform simultaneous subjective scoring and objective checklist verification.
+**Core Idea**: Use cognitive-science-inspired task partitioning to cover three types of prompting abilities, and employ an AtelierJudge with skill routing and memory retrieval to perform both subjective scoring and objective checklist verification.
 
 ## Method
-The core contribution of AtelierEval consists of two parts: a prompter-oriented benchmark and a scalable agentic evaluator. The benchmark generates realistic, diagnostic tasks, while AtelierJudge splits each prompt-image pair into subjective quality and objective constraint tracks.
+The core contribution of AtelierEval consists of two parts: a benchmark oriented toward prompters and an agentic evaluator for scalable scoring. The benchmark generates realistic and diagnostic tasks, while AtelierJudge splits each prompt-image pair into subjective quality and objective constraint streams for evaluation.
 
 ### Overall Architecture
-AtelierEval includes 360 expert-designed tasks (120 per category), covering Open-ended Creation (OE), Constrained Creation (CO), and Imitation (IM). OE tests atmospheric and stylistic extraction from abstract narrative needs; CO tests prompt organization under explicit multiple constraints; IM tests reverse-prompting by encoding visual content into text.
+AtelierEval contains 360 expert-designed tasks, with 120 tasks per category, covering Open-ended Creation, Constrained Creation, and Imitation. OE tests the extraction of atmosphere, theme, and style from abstract, narrative requirements; CO tests the organization of prompts under explicit multiple constraints; IM tests deriving prompts from images, encoding visual content into text.
 
-Task construction is based on two sets of challenge primitives: semantic understanding (S1 Abstract Intent, S2 Audience Intent, S3 Implicit Style, S4 Semantic Negation) and constraint implementation (C1 Attribute Binding, C2 Spatial Relations, C3 Count, C4 Text, C5 Hard Constraints). Experts combined these primitives into real T2I scenarios using 24 labels covering objects, characters, environments, styles, structures, and themes.
+Task construction is based on two sets of challenge primitives: semantic understanding (S1 abstract intent, S2 audience intent, S3 implicit style, S4 semantic negation) and constraint realization (C1 attribute binding, C2 spatial relations, C3 quantity, C4 text, C5 hard constraints). Experts combine these primitives into real T2I application scenarios, covering 24 labels including object, character, environment, style, structure, and theme.
 
-The interaction protocol is strictly unified as single-turn, text-only prompting. Humans use a simplified Gradio UI, and MLLMs receive task instructions via standard APIs. No immediate image feedback or refinement rounds are allowed to isolate the "first-pass" translation capability.
+The interaction protocol is strictly unified as single-turn, text-only prompts. Humans input prompts through a simplified Gradio UI, and MLLMs receive the same task instructions via standard APIs. No real-time image feedback or multi-turn refinement is allowed to isolate the "first translation of intent to prompt" capability.
 
 ```mermaid
-%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
-flowchart TD
-    A["Three Cognitive Task Categories<br/>360 Expert Tasks: OE / CO / IM"] --> B["Prompter Strategy π (Human / MLLM)<br/>Single-turn text for executable prompt p"]
-    B --> C["T2I Backend M generates image<br/>(nBanana / GI-1 / Flux / SDXL)"]
+graph TD
+    A["Three Cognitive Task Categories<br/>360 Expert Tasks: OE / CO / IM"] --> B["Prompter Strategy π (Human / MLLM)<br/>Single-turn text-only prompt p"]
+    B --> C["T2I Backend M Generates Image<br/>(nBanana / GI-1 / Flux / SDXL)"]
     B --> D
     C --> D
     subgraph J["AtelierJudge Dual-Process Evaluation"]
         direction TB
-        D["Memory Retrieval & Skill Routing<br/>Safety Filter → Route skills by task type"]
-        D --> E["System 1 Subjective Branch<br/>Retrieve top-K expert examples → 1~5 quality score"]
-        D --> F["System 2 Objective Branch<br/>Prompt/image checklist QA/VQA verification"]
+        D["Memory Retrieval & Skill Routing<br/>Safety Filter → Route Skills by Task Type"]
+        D --> E["System 1 Subjective Branch<br/>Retrieve top-K Expert Examples → 1~5 Quality Score"]
+        D --> F["System 2 Objective Branch<br/>Prompt/Image Checklist-based QA/VQA Verification"]
     end
     E --> G["Subjective Score + Objective Satisfaction Rate"]
     F --> G
@@ -64,79 +63,77 @@ flowchart TD
 
 ### Key Designs
 1.  **Three Cognitive Task Categories: Decomposing Prompting Ability into Diagnostic Dimensions**
-    Existing T2I benchmarks provide a single total score, failing to diagnose whether a prompter excels at creative expansion, constraint execution, or visual description. Borrowing from the Structure of Intellect cognitive theory, the prompter strategy $\pi: I \to p$ is decomposed into three operations: Open-ended Creation (OE, divergent production), Constrained Creation (CO, convergent production), and Imitation (IM, cognition). This allows identifying specific capability gaps rather than providing a generic ranking.
+    Existing T2I benchmarks provide only a total score, failing to show whether a prompter excels at creative expansion, constraint execution, or visual description. Borrowing from the Structure of Intellect cognitive theory, the authors decompose the prompter strategy $\pi: I \to p$ into three constructive cognitive operations: Open-ended Creation (OE, corresponding to divergent production), Constrained Creation (CO, corresponding to convergent production), and Imitation (IM, corresponding to cognition). Each category reveals specific failure modes, allowing for a direct assessment of human and model strengths and weaknesses.
 
-2.  **AtelierJudge Dual-Process Evaluation: Decoupling Subjectivity and Objectivity**
-    Pure MLLM judges often mistake "beauty" for "compliance," giving high scores to attractive images that miss text, count, or spatial requirements (high-quality hallucination). AtelierJudge adopts Dual-Process Theory to split scoring into parallel branches. The System 1 Subjective branch uses memory-augmented skills to grade dimensions like clarity, technical skill, and atmosphere on a 1-5 scale. The System 2 Objective branch decomposes constraints into independent checkpoints, using a prompt/image checklist via QA/VQA to verify if constraints are documented and visualized.
+2.  **AtelierJudge Dual-Process Evaluation: Decoupling Subjective and Objective**
+    Pure MLLM judges often mistake "aesthetic beauty" for "constraint satisfaction," leading to high scores for pretty images that miss text or spatial requirements (high-quality hallucination). AtelierJudge uses Dual-Process Theory to split scoring into two parallel paths: the System 1 Subjective path uses memory-augmented skills to grade dimensions like clarity, creativity, and composition on a 1~5 scale, while the System 2 Objective path breaks every task constraint into independent checkpoints for QA/VQA verification using a checklist.
 
-3.  **Memory Retrieval & Skill Routing: Anchoring Scores with Expert Examples**
-    Direct MLLM scoring tends to be inflated and lacks granularity between scores (e.g., 4 vs 5). AtelierJudge binds each subjective skill to a gold exemplar memory annotated by experts. During evaluation, it retrieves the top-K similar examples using text/image embeddings and provides scores based on those anchors. Ablations show that semantic retrieval improves Spearman correlation from 0.56 (zero-shot) to 0.79, reaching expert-level consistency without needing a significantly more powerful model.
+3.  **Memory Retrieval and Skill Routing: Anchoring Scores with Expert Examples**
+    Direct MLLM scoring often suffers from over-optimism and a flattened gradient between high scores. AtelierJudge binds each subjective skill to a memory of expert-annotated "gold" exemplars. During evaluation, it retrieves top-K similar examples using text or image embeddings. This provides a scoring anchor "near" the current task, stretching the score gradient back out. Ablations show that semantic similarity retrieval increases Spearman rank correlation from 0.56 (zero-shot) to 0.79.
 
 ### Loss & Training
-This paper does not train a new generative model but instead designs an evaluation protocol and automated scoring system. Subjective metrics use MAE, Within-1 accuracy, and Spearman $\rho$ for expert alignment. Objective metrics use checkpoint-level Accuracy and F1. Benchmark results aggregate prompt-side and image-side subjective scores with objective satisfaction rates.
+This paper does not train a new generative model but designs an evaluation protocol and automatic scoring system. Subjective metrics use MAE, Within-1 accuracy, and Spearman $\rho$ for alignment with expert scores; objective metrics use checkpoint-level Acc and F1. Benchmark results aggregate prompt-side/image-side subjective scores and objective satisfaction rates.
 
-Each prompter-task pair generates one natural language prompt. Each prompt generates 4 images per T2I backend, with the top-1 image (highest AtelierJudge score) selected for aggregation.
+In the main experiment, each prompter-task pair generates one prompt, and each prompt generates 4 images per backend. The top-1 image based on AtelierJudge's score is kept for aggregation. Stability analysis in the appendix shows that increasing the number of prompts or images results in plateaus for subjective and objective scores, suggesting the "one prompt, four images" setting is a reasonable balance.
 
 ## Key Experimental Results
 
 ### Main Results
-The experiment compared 8 MLLMs, 48 humans (24 novice, 24 skilled), and 4 T2I backends (nBanana, GI-1, Flux Pro, SDXL).
+The experiment consists of two layers: verifying if AtelierJudge aligns with expert scores, and using AtelierEval to compare 8 MLLMs, 48 humans (24 novices, 24 skilled), and 4 T2I backends (nBanana, GI-1, Flux Pro, SDXL).
 
-| Targeted Subject | Metric | Value | Conclusion |
+| Targeted Subject | Metric | Key Value | Conclusion |
 | :--- | :--- | :--- | :--- |
-| Subjective meta-eval, GPT-5.4 | MAE / W1-A / Spearman $\rho$ | 0.33 / 0.95 / 0.81 | Near human expert levels ($\rho=0.83$) |
-| Objective meta-eval, GPT-5.4 | Overall Acc / F1 | 95.5% / 93.9% | High reliability for checklists |
-| Prompt objective, skilled human | Avg Prompt Obj. | 80.6% | Humans excel at explicitly writing constraints |
-| Image objective, skilled human | Avg Image Obj. | 76.7% | Skilled human prompts yield highest satisfaction |
-| nBanana backend, skilled human | Obj. | 84.9% | Best performance combining middleware and skill |
-| T0 MLLMs vs novice humans | Comprehensive | MLLMs > Novices | MLLMs significantly lift the floor for average users |
+| Subjective meta-eval, GPT-5.4 | MAE / W1-A / Spearman $\rho$ | 0.33 / 0.95 / 0.81 | Close to human experts ($\rho=0.83$), much higher than base ($\rho=0.55$) |
+| Objective meta-eval, GPT-5.4 | Overall Acc / F1 | 95.5% / 93.9% | High reliability reached for both prompt and image checklists |
+| Prompt objective, skilled human | Avg prompt Obj. | 80.6% | Skilled humans are significantly better at explicitly writing constraints |
+| Image objective, skilled human | Avg Image Obj. | 76.7% | Skilled human prompts lead to the highest image constraint satisfaction |
+| nBanana backend, skilled human | Obj. | 84.9% | Strong middleware backend + skilled human achieves highest objective performance |
+| T0 MLLMs vs novice humans | Multi-backend aggregate | T0 MLLMs > Novice | MLLMs significantly raise the starting point for average users |
 
 ### Ablation Study
 
 | Configuration | Key Metrics | Note |
 | :--- | :--- | :--- |
-| Zero-shot judge | MAE 0.72, $\rho=0.56$ | Overly optimistic with poor differentiation |
-| Fixed Few-shot | MAE 0.55, $\rho=0.68$ | Missing task-specific calibration |
-| Similarity Retrieval | MAE 0.34, $\rho=0.79$ | Best alignment with experts |
-| K=3 | MAE 0.34, $\rho=0.79$ | Optimal retrieval count |
-| CO Task on GI-1 | Direct 69.6% vs Skilled 81.5% | External MLLM reasoning can conflict with middleware |
-| IM Task on GI-1 | MLLM Skilled ~77% vs Human 70.4% | MLLMs outperform humans in visual mimicry |
+| Zero-shot judge | MAE 0.72, $\rho=0.56$ | Direct scoring is over-optimistic with poor discrimination |
+| Fixed Few-shot | MAE 0.55, $\rho=0.68$ | Provides a scale but lacks task-dependent calibration |
+| Similarity Retrieval | MAE 0.34, $\rho=0.79$ | Task-relevant exemplars are key to expert alignment |
+| K=3 | MAE 0.34, $\rho=0.79$ | Optimal retrieval count adopted by the paper |
+| CO on GI-1 | Direct 69.6% vs MLLM ~48% | External MLLM reasoning can conflict with strong internal middleware |
+| IM on GI-1 | MLLM > Skilled Human | MLLMs outperform humans in visual-to-text imitation |
 
 ### Key Findings
-*   AtelierJudge’s memory retrieval is the core performance driver, not just model scale. Similarity-based exemplars significantly reduce MAE and boost Spearman correlation.
-*   Strong T2I middleware compresses subjective quality gaps between prompters, but does not necessarily ensure higher constraint satisfaction.
-*   A "Constraint Paradox" exists: In Constrained Creation on strong middleware (like GI-1), direct task descriptions sometimes outperform prompts rewritten by external MLLMs due to logical conflicts between the two reasoning systems.
-*   Skilled humans remain superior at weaving hard constraints into prompts, maintaining a lead in CO objective scores.
-*   The Imitation task shows MLLMs can match or beat skilled humans at encoding visual structures into text, suggesting the value of image-augmented prompting.
+- Memory retrieval in AtelierJudge is the core driver of performance, not just using a "stronger MLLM."
+- Strong T2I middleware masks subjective image quality differences between prompters, but aesthetic success does not equate to constraint satisfaction.
+- A "Constraint Paradox" occurs: on strong middleware like GI-1, simply inputting a task description outperforms external MLLM reasoning, suggesting conflicting optimization logic.
+- Skilled humans remain superior in hard constraint integration for prompts (CO tasks).
+- Imitation tasks reveal that MLLMs are exceptionally good at encoding fine-grained visual structures into prompts, supporting the potential for image-augmented prompting.
 
 ## Highlights & Insights
-*   Ours shifts the T2I evaluation focus from "image generator" to "prompter." Many generation failures result from intent translation errors rather than model execution errors.
-*   The three cognitive task categories provide high diagnostic value: OE for creativity, CO for integration, and IM for encoding.
-*   The subjective/objective decoupling allows detection of "high-quality hallucinations" where an image is beautiful but fails to meet specific requirements.
-*   "Mimicry over planning" is a key insight: Agents should prioritize observing visual examples over pure text planning for complex scenes.
-*   Novelty: Identifies the interaction between skilled humans, T0 MLLMs, and T2I middleware across different cognitive operations.
+- Shifting the evaluation target from the "generative model" to the "prompter" is a critical contribution. Many generation failures are failures in intent translation.
+- The cognitive task division provides high interpretability regarding failure modes (creative expansion vs. constraint integration vs. visual encoding).
+- Decoupling subjective and objective metrics avoids the trap of rewarding "pretty but wrong" images.
+- "Mimicry over planning" is a provocative insight: agents may perform better by retrieving visual exemplars rather than planning complex scenes purely in text.
 
 ## Limitations & Future Work
-*   The human sample reflects active T2I users, potentially introducing demographic or aesthetic biases.
-*   Benchmark restricted to single-turn text-to-image; it does not cover iterative refinement, visual feedback loops, or search-based prompt optimization.
-*   No explicit unified metric for task difficulty itself.
-*   Future work includes extending to image-augmented prompting, human-LLM collaboration, and unified multimodal models that act as both prompter and generator.
+- Human experiments may have demographic biases; expert memories in AtelierJudge might inherit specific aesthetic preferences.
+- The benchmark is limited to single-turn text-to-image and does not cover multi-turn iteration or tool-use.
+- There is no objective unified metric for task difficulty itself.
+- Future work could extend to image-augmented prompting and collaborative human-LLM workflows.
 
 ## Related Work & Insights
-*   **vs Fixed-prompt T2I Benchmarks**: Traditional benchmarks measure generator execution; AtelierEval measures upstream translation. They are complementary.
-*   **vs Prompt Optimization**: Optimization often polishes prompts for a specific model; AtelierEval focuses on general translation from intent.
-*   **vs CLIPScore/VQA-based Evaluators**: Traditional metrics correlate poorly with complex spatial relations or aesthetics. AtelierJudge improves interpretability through skill decomposition.
-*   **Related Work**: Highlights that T2I agents should not just optimize final image scores but also monitor intent alignment and utilize visual exemplars to reduce text-only planning overhead.
+- **vs. Fixed-prompt T2I benchmarks**: AtelierEval complements these by evaluating the upstream translation capability.
+- **vs. Prompt optimization**: AtelierEval focuses on the zero-to-one translation from intent to prompt.
+- **vs. CLIPScore/VQA**: AtelierJudge provides better interpretability and correlation with human experts through skill decomposition.
 
 ## Rating
-*   Novelty: ⭐⭐⭐⭐⭐ 
-*   Experimental Thoroughness: ⭐⭐⭐⭐⭐ 
-*   Writing Quality: ⭐⭐⭐⭐☆ 
-*   Value: ⭐⭐⭐⭐⭐ 
+- Novelty: ⭐⭐⭐⭐⭐ 
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 
+- Writing Quality: ⭐⭐⭐⭐☆ 
+- Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

@@ -34,21 +34,21 @@ item_total: 6
 
 **🧪 ICML2026** · **6** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (97)](../../CVPR2026/object_detection/index.md) · [🔬 ICLR2026 (14)](../../ICLR2026/object_detection/index.md) · [🤖 AAAI2026 (29)](../../AAAI2026/object_detection/index.md) · [🧠 NeurIPS2025 (27)](../../NeurIPS2025/object_detection/index.md) · [📹 ICCV2025 (28)](../../ICCV2025/object_detection/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (97)](../../CVPR2026/object_detection/index.md) · [🔬 ICLR2026 (31)](../../ICLR2026/object_detection/index.md) · [🤖 AAAI2026 (29)](../../AAAI2026/object_detection/index.md) · [🧠 NeurIPS2025 (27)](../../NeurIPS2025/object_detection/index.md) · [📹 ICCV2025 (28)](../../ICCV2025/object_detection/index.md)
 
 🔥 **Top topics:** Anomaly Detection ×2
 
 **[Adversarially Robust Approximate Furthest Neighbor](adversarially_robust_approximate_furthest_neighbor.md)**
 
-:   This theoretical paper provides the first approximate furthest neighbor (AFN) data structure resistant to adaptive query adversaries. While maintaining query complexity dependencies on $n$ similar to Indyk's classical oblivious algorithm, the authors prove that traditional random projection AFN algorithms can be compromised by adaptive queries.
+:   This theoretical paper provides the first approximate furthest neighbor data structure resistant to adaptive query adversaries. While maintaining a query complexity with $n$-dependence similar to Indyk's classical oblivious algorithm, it demonstrates that traditional random projection furthest neighbor algorithms can be broken by adaptive queries.
 
 **[EARL: Towards a Unified Analysis-Guided Reinforcement Learning Framework for Egocentric Interaction Reasoning and Pixel Grounding](earl_towards_a_unified_analysis-guided_reinforcement_learning_framework_for_egoc.md)**
 
-:   EARL utilizes a "coarse-grained interpretation, fine-grained response" two-stage MLLM framework to unify egocentric interaction tasks (description, QA, and pixel masking) into a single pipeline. The first stage generates a global description and uses the final hidden state as a semantic prior. This prior is injected into the second stage through a new Analysis-guided Feature Synthesizer (AFS). The system is jointly trained using GRPO with a triple reward system (format/answer/grounding accuracy), outperforming Seg-Zero by 8.37% cIoU on Ego-IRGBench.
+:   EARL utilizes a two-stage MLLM framework of "coarse interpretation and fine response" to consolidate egocentric interaction reasoning tasks (description + Q&A + pixel mask) into a unified pipeline. The first stage outputs a global interaction description of the full image and treats the last hidden state as a semantic prior. This is injected into the second stage through a novel Analysis-guided Feature Synthesizer (AFS). The system is jointly trained via GRPO with a triple-reward mechanism (format/answer/grounding accuracy), outperforming Seg-Zero by 8.37% cIoU on Ego-IRGBench.
 
 **[FOCUS: Forcing In-Context Object Localization through Visual Support Constraints and Policy Optimization](focus_forcing_in-context_object_localization_through_visual_support_constraints_.md)**
 
-:   FOCUS achieves true in-context object localization based on visual support examples rather than semantic priors through a two-stage training process involving "complete removal of category names + attention mask optimization + GRPO IoU reward." The 7B parameter model outperforms 72B models, proving that task-aligned inductive bias is more critical than pure scaling.
+:   FOCUS uses a two-stage training approach—"complete removal of category names + attention mask optimization + GRPO IoU reward"—to force VLMs to perform in-context object localization based on visual support examples rather than semantic priors. The 7B parameter model outperforms 72B models, proving that task-aligned inductive bias is more important than pure scaling.
 
 **[Mixture Prototype Flow Matching for Open-Set Supervised Anomaly Detection](mixture_prototype_flow_matching_for_open-set_supervised_anomaly_detection.md)**
 
@@ -56,7 +56,7 @@ item_total: 6
 
 **[OmniVerifier-M1: Multimodal Meta-Verifier with Explicit Structured Recalibration](omniverifier-m1_multimodal_meta-verifier_with_explicit_structured_recalibration.md)**
 
-:   To address the issues of coarse True/False binary signals and the vulnerability of text explanations to reward-hacking in multimodal visual verifiers, this paper proposes OmniVerifier-M1. It replaces text with symbolic outputs such as bounding boxes as the meta-verification rationale to support rule-based rewards like IoU. Theoretically and experimentally, it demonstrates that decoupling binary judgment and meta-verification into two independent reward streams (rather than a multiplicative joint reward) significantly improves the SNR. Ultimately, the verifier is upgraded to an agentic system, M1-TTS, capable of driving region-level self-recalibration.
+:   Aiming at the issues that multimodal visual verifiers output binary signals (True/False) that are too coarse and that textual explanations are prone to reward-hacking, this paper proposes OmniVerifier-M1. It utilizes symbolic outputs such as bounding boxes as meta-verification rationales instead of text to support rule-based rewards like IoU. Theoretically and experimentally, it proves that decoupling binary judgment and meta-verification into two independent reward streams (rather than a multiplicative joint reward) significantly improves SNR. Ultimately, the verifier is upgraded to an agentic system, M1-TTS, capable of driving region-level self-recalibration.
 
 **[Testing the Test: Score-Direction Instability in Class-Split Anomaly Detection](testing_the_test_score-direction_instability_in_class-split_anomaly_detection.md)**
 

@@ -33,17 +33,17 @@ item_total: 5
 
 **💬 ACL2026** · **5** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (19)](../../CVPR2026/computational_biology/index.md) · [🧪 ICML2026 (36)](../../ICML2026/computational_biology/index.md) · [🔬 ICLR2026 (38)](../../ICLR2026/computational_biology/index.md) · [🤖 AAAI2026 (20)](../../AAAI2026/computational_biology/index.md) · [🧠 NeurIPS2025 (75)](../../NeurIPS2025/computational_biology/index.md) · [📹 ICCV2025 (4)](../../ICCV2025/computational_biology/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (19)](../../CVPR2026/computational_biology/index.md) · [🔬 ICLR2026 (156)](../../ICLR2026/computational_biology/index.md) · [🧪 ICML2026 (52)](../../ICML2026/computational_biology/index.md) · [🤖 AAAI2026 (20)](../../AAAI2026/computational_biology/index.md) · [🧠 NeurIPS2025 (75)](../../NeurIPS2025/computational_biology/index.md) · [📹 ICCV2025 (4)](../../ICCV2025/computational_biology/index.md)
 
 🔥 **Top topics:** Reasoning ×2
 
 **[AROMA: Augmented Reasoning Over a Multimodal Architecture for Virtual Cell Genetic Perturbation Modeling](aroma_augmented_reasoning_over_a_multimodal_architecture_for_virtual_cell_geneti.md)**
 
-:   Ours proposes the AROMA framework, a multimodal architecture that integrates textual evidence, knowledge graph (KG) topological information, and protein sequence features. Combined with a two-stage training strategy (SFT + GRPO), it achieves interpretable and precise prediction of genetic perturbation effects.
+:   The AROMA framework is proposed, which integrates text evidence, knowledge graph topology, and protein sequence features in a multimodal architecture. Combined with a two-stage training strategy (SFT + GRPO), it achieves interpretable and precise genetic perturbation effect prediction.
 
 **[BioTool: A Comprehensive Tool-Calling Dataset for Enhancing Biomedical Capabilities of Large Language Models](biotool_a_comprehensive_tool-calling_dataset_for_enhancing_biomedical_capabiliti.md)**
 
-:   BioTool constructs an instruction fine-tuning dataset consisting of 7,040 human-verified "query–API call" pairs covering 34 commonly used tools from the NCBI, Ensembl, and UniProt databases. After fine-tuning 4B-scale open-source LLMs with this data, the tool-calling quality exceeds commercial models such as GPT-5.1, Gemini-3 Pro, and Claude-4.5-Sonnet by more than 15%.
+:   BioTool constructs an instruction fine-tuning dataset consisting of 7,040 human-verified "query–API call" pairs covering 34 commonly used tools from three major biomedical databases: NCBI, Ensembl, and UniProt. After fine-tuning 4B-scale open-source LLMs with this data, the tool-calling quality exceeds commercial models such as GPT-5.1, Gemini-3 Pro, and Claude-4.5-Sonnet by over 15%.
 
 **[ChemAmp: Amplified Chemistry Tools via Composable Agents](chemamp_amplified_chemistry_tools_via_composable_agents.md)**
 
@@ -55,4 +55,4 @@ item_total: 5
 
 **[ToxReason: A Benchmark for Mechanistic Chemical Toxicity Reasoning via Adverse Outcome Pathway](toxreason_a_benchmark_for_mechanistic_chemical_toxicity_reasoning_via_adverse_ou.md)**
 
-:   This paper proposes ToxReason, a benchmark for mechanistic chemical toxicity reasoning based on the Adverse Outcome Pathway (AOP) framework. By integrating drug-target experimental data with toxicity labels, the benchmark requires models to reason from molecular initiating events to organ-level adverse outcomes. A 4B model trained via GRPO reinforcement learning outperforms large models like GPT-5 in both toxicity prediction (F1 71.4%) and reasoning quality.
+:   This paper introduces ToxReason, a benchmark for mechanistic chemical toxicity reasoning based on the Adverse Outcome Pathway (AOP) framework. It integrates drug-target experimental data with toxicity labels, requiring models to reason from Molecular Initiating Events (MIE) to organ-level Adverse Outcomes (AO). A 4B model trained with GRPO reinforcement learning outperforms large models like GPT-5 in both toxicity prediction (F1 71.4%) and reasoning quality.

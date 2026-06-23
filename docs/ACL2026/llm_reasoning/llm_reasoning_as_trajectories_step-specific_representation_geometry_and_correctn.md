@@ -2,13 +2,13 @@
 title: >-
   [Paper Note] LLM Reasoning as Trajectories: Step-Specific Representation Geometry and Correctness Signals
 description: >-
-  [ACL 2026][LLM Reasoning][chain-of-thought] This paper views the chain-of-thought (CoT) reasoning of LLMs as a geometric trajectory in the representation space. It discovers that (a) each reasoning step occupies a linearly separable subspace that becomes clearer in deeper layers; (b) correct and incorrect solutions overlap in early steps but diverge systematical
+  [ACL 2026][LLM Reasoning][chain-of-thought] This paper models LLM chain-of-thought reasoning as geometric trajectories in the representation space. It discovers that (a) each reasoning step occupies a linearly separable subspace that becomes clearer in deeper layers, and (b) correct and incorrect solutions overlap in early stages but diverge systematically later
 tags:
   - ACL 2026
   - LLM Reasoning
   - chain-of-thought
 date: 2026-05-08
-content_hash: f40486a599569a76
+content_hash: ce7c3d60cf5d938d
 ---
 # LLM Reasoning as Trajectories: Step-Specific Representation Geometry and Correctness Signals
 
@@ -16,76 +16,76 @@ content_hash: f40486a599569a76
 **arXiv**: [2604.05655](https://arxiv.org/abs/2604.05655)  
 **Code**: https://github.com/slhleosun/reasoning-trajectory  
 **Area**: LLM Reasoning / Interpretability / Representation Geometry  
-**Keywords**: chain-of-thought, representation trajectories, linear separability, correctness prediction, activation steering  
+**Keywords**: chain-of-thought, representation trajectory, linear separability, correctness prediction, activation steering
 
 ## TL;DR
-This paper views the chain-of-thought (CoT) reasoning of LLMs as a geometric trajectory in the representation space. It discovers that (a) each reasoning step occupies a linearly separable subspace that becomes clearer in deeper layers; (b) correct and incorrect solutions overlap in early steps but diverge systematically in later stages, enabling the prediction of final correctness with a ROC-AUC of 0.87 before the answer is generated. Based on these findings, it proposes "trajectory steering" for reasoning correction and length control.
+This paper models LLM chain-of-thought reasoning as geometric trajectories in the representation space. It discovers that (a) each reasoning step occupies a linearly separable subspace that becomes clearer in deeper layers, and (b) correct and incorrect solutions overlap in early stages but diverge systematically later. This allows predicting the final correctness with an ROC-AUC of 0.87 before the answer is output, leading to a proposed "trajectory steering" method for reasoning correction and length control.
 
 ## Background & Motivation
-**Background**: LLM CoT reasoning is often treated as a "text-ordered generation" black box. Interpretability research has mostly focused on identifying specific functions of attention heads or "concept directions," while few have analyzed the entire reasoning process as a continuous geometric object.
+**Background**: LLM CoT reasoning is typically treated as a "text-sequential generation" black box. Interpretability research often focuses on localized components like attention heads or conceptual directions, rarely analyzing the entire reasoning process as a continuous geometric object.
 
-**Limitations of Prior Work**: (a) It remains unclear what stage of reasoning the model has reached during a specific step or why certain problems are solved incorrectly; (b) Existing inference-time interventions (test-time scaling via token injection or fixed steering vectors) are mostly triggered unconditionally, lacking a criterion for when to intervene and resulting in unstable performance; (c) The specific changes brought by reasoning training (such as distillation from DeepSeek-R1) to the internal representations are not well understood.
+**Limitations of Prior Work**: (a) It is unclear what stage of reasoning the model has reached internally or why specific errors occur; (b) Existing inference-time interventions (e.g., test-time scaling with token injection or fixed steering vectors) often trigger unconditionally, lacking criteria for when to intervene, which leads to unstable effects; (c) The internal changes induced by reasoning training (such as distillation from DeepSeek-R1) remain poorly understood.
 
-**Key Challenge**: Reasoning is a **time-series** process, but the vast majority of representation analysis methods only perform probing on single tokens or single layers, losing the critical signal of how states transition between steps.
+**Key Challenge**: Reasoning is a **time-series** process, yet most representation analysis methods focus on single tokens or single layers via probing, discarding the critical "transition between steps" signal.
 
-**Goal**: Model the internal states of the reasoning process as a trajectory $\mathbf{h}_{t(\text{Step }1)-1}^{(\ell)},\mathbf{h}_{t(\text{Step }2)-1}^{(\ell)},\dots,\mathbf{h}_{t(\text{term})-1}^{(\ell)}$ to answer: Do steps correspond to different subspaces? Are correct and incorrect trajectories distinguishable? Can we intervene mid-trajectory based on these signals?
+**Goal**: Model the internal states of the reasoning process as a trajectory $\mathbf{h}_{t(\text{Step }1)-1}^{(\ell)},\mathbf{h}_{t(\text{Step }2)-1}^{(\ell)},\dots,\mathbf{h}_{t(\text{term})-1}^{(\ell)}$ to answer: Do steps correspond to distinct subspaces? Are correct and incorrect trajectories distinguishable? Can midpoint intervention be performed?
 
-**Key Insight**: Under a fixed zero-shot CoT template, each step is naturally preceded by a `Step k:` marker token. By extracting the hidden state immediately before this marker, one can obtain an internal snapshot of the state "after completing step $k$ and about to enter step $k+1$," avoiding contamination from surface formatting tokens.
+**Key Insight**: Using a fixed zero-shot CoT template, each step naturally begins with a "Step k:" marker. By extracting the hidden state immediately preceding this marker, an internal snapshot of the state after completing step $k$ and before entering step $k+1$ is obtained, avoiding contamination from surface-level formatting tokens.
 
-**Core Idea**: Geometrize CoT using "pre-step activation" sequences, use linear probes and distance analysis to reveal step separability and correctness divergence, and finally perform low-rank steering for correction based on an "ideal trajectory."
+**Core Idea**: Geometrize CoT using "pre-step activation" sequences. Employ linear probes and distance analysis to reveal step separability and correctness divergence, and perform low-rank steering corrections based on an "ideal trajectory."
 
 ## Method
 
 ### Overall Architecture
-The study is divided into three parts corresponding to three findings:
-1. **Geometric Structure Analysis**: Uses t-SNE visualization and linear probes (one-vs-rest classification) to measure whether "pre-step activations" occupy step-specific subspaces, comparing the impact of training paradigms across Base, Instruct, and R1-Distill variants (Llama-3.1-8B).
-2. **Correctness Signal Analysis**: Groups trajectories by final correctness and calculates Euclidean/cosine distances step-by-step to locate divergence points. A linear classifier is trained on "late-step features" to predict final correctness.
-3. **Trajectory Steering Intervention**: Constructs an "ideal trajectory" (the average path of correct samples). During runtime, if the current trajectory deviates beyond a threshold, low-rank steering is triggered to pull it back toward the ideal direction or control reasoning length.
+The research consists of three components corresponding to three key findings:
+1. **Geometric Structure Analysis**: Uses t-SNE visualization and linear probing (one-vs-rest classification) to measure whether "pre-step activations" occupy step-specific subspaces, comparing Base, Instruct, and R1-Distill (Llama-3.1-8B variants).
+2. **Correctness Signal Analysis**: Groups trajectories by final answer correctness and calculates Euclidean/cosine distances step-by-step to locate bifurcation points. Linear classifiers are trained on late-step features to predict final correctness.
+3. **Trajectory Steering**: Constructs an "ideal trajectory" (mean path of correct samples). During inference, if the current trajectory deviates beyond a threshold, low-rank steering is triggered to pull it back toward the ideal direction. The same logic is applied to control reasoning length (pushing toward or pulling away from the termination subspace).
 
-Datasets used are GSM8K (7,473 train / 1,319 test) and MATH-500, with prompts forcing each step to start with `Step k:` and the answer to be marked with `####`.
+The study uses GSM8K (7,473 train / 1,319 test) and MATH-500, with prompts forcing each step to start with `Step k:` and answers to be marked with `####`.
 
 ```mermaid
 graph TD
     A["CoT Input<br/>GSM8K / MATH-500, forced Step k: template"]
     subgraph S1["Pre-step Activation Extraction & Linear Separability"]
         direction TB
-        B["Extract hidden states before each Step k: marker"] --> C["Train one-vs-rest linear probes<br/>Verify step-specific linear subspaces"]
+        B["Extract hidden states at each Step k: marker"] --> C["Train one-vs-rest linear probes<br/>Verify step-specific linear subspaces"]
     end
-    subgraph S2["Trajectory Distance & Mid-reasoning Correctness"]
+    subgraph S2["Trajectory Distance & Mid-reasoning Prediction"]
         direction TB
-        D["Calculate Euclidean/cosine distance<br/>Locate correct/incorrect divergence (around Step 4+)"] --> E["Train linear classifier on late-step features<br/>Predict correctness before output (ROC-AUC 0.87)"]
+        D["Calculate Euclidean/cosine distance between steps<br/>Locate correct/incorrect bifurcation (after Step 4)"] --> E["Train linear classifier on late features<br/>Predict correctness before output, ROC-AUC 0.87"]
     end
     A --> S1
     S1 --> S2
-    S2 -->|"Trajectory deviates beyond threshold"| F["Trajectory Steering<br/>Low-rank update h′ = h + αUVᵀh back to ideal / Length control"]
-    S2 -->|"Within threshold"| G["Output Reasoning Result"]
+    S2 -->|"Trajectory deviation > threshold"| F["Trajectory Steering<br/>Low-rank update h′ = h + αUVᵀh toward ideal direction"]
+    S2 -->|"Below threshold"| G["Output Results"]
     F --> G
 ```
 
 ### Key Designs
 
-**1. Pre-step Activation Extraction & Linear Separability: A snapshot of "accumulated reasoning state"**
+**1. Pre-step Activation Extraction & Linear Separability: Snapshots of Accumulated Reasoning State**
 
-Reasoning is often treated as a sequence where signals between steps are lost. The first task is to cleanly extract internal states. The paper extracts hidden states $\mathbf{h}_{t(\text{Step }k)-1}^{(\ell)}$ from all layers immediately before each `Step k:` marker in a fixed zero-shot CoT template. Extracting *before* the marker captures the true reasoning state just as the model completes step $k$, avoiding format token contamination. Linear separability is used as a criterion because, in representation learning, information that can be read by a linear probe is standard evidence of being explicitly encoded. Cross-model transfer tests (Base/Instruct/R1-Distill) are used to ensure probes do not merely learn surface formats.
+To capture how reasoning transitions between steps, hidden states $\mathbf{h}_{t(\text{Step }k)-1}^{(\ell)}$ are extracted at all layers immediately before each `Step k:` marker. Extracting "before" the marker captures the actual reasoning state after completing step $k$ without being contaminated by formatting tokens. Linear separability is used as the criterion because information being readable by a linear probe is standard evidence of explicit encoding. Cross-model transfer tests (Base/Instruct/R1-Distill) are used to ensure the probe learns structural features rather than surface patterns.
 
-**2. Trajectory Distance & Mid-reasoning Correctness: Moving correctness signals from the end to the middle**
+**2. Trajectory Distance & Mid-reasoning Correctness Prediction: Shifting signals from the end to the middle**
 
-The paper aims to judge if reasoning will fail before the answer is output. It calculates distances $d(\mathbf{h}_{t(a)-1}^{(L)}, \mathbf{h}_{t(b)-1}^{(L)})$ between adjacent steps, using Euclidean distance for magnitude and cosine for direction. By comparing the difference $\Delta(\text{Incorrect}-\text{Correct})$, it locates where trajectories diverge. Results show early steps are statistically indistinguishable (95% CI overlap), with systematic divergence starting after Step 4. Based on this, a linear classifier predicts final correctness with a peak AUC of 0.87 at layer 29. This allows interventions to trigger mid-reasoning, saving test-time compute and preventing error propagation.
+To predict failure before the answer is generated, distances $d(\mathbf{h}_{t(a)-1}^{(L)}, \mathbf{h}_{t(b)-1}^{(L)})$ between adjacent steps are calculated. Euclidean distance measures magnitude while cosine distance measures direction. The difference $\Delta(\text{Incorrect}-\text{Correct})$ identifies where trajectories diverge. Signals are statistically indistinguishable in early steps but diverge systematically after roughly step 4. A linear classifier using late-stage activations and distance features achieves a peak ROC-AUC of 0.87 at layer 29. This allows intervention before the answer is finalized, saving test-time compute and blocking error propagation.
 
-**3. Trajectory Steering: Adaptive low-rank correction based on ideal trajectories**
+**3. Trajectory Steering: Adaptive Low-rank Correction Based on Ideal Trajectories**
 
-Once the divergence is identified, the final step is correction. The paper defines an "ideal trajectory" (centroid) using the average path of correct samples and tracks the deviation of the current trajectory in real-time. If the threshold is exceeded, a low-rank steering update is applied:
+The "ideal trajectory" is defined by the centroid of activations from correct samples. During runtime, the deviation of the current trajectory from this centroid is tracked. If it exceeds a threshold, a low-rank steering update is applied:
 
 $$\mathbf{h}' = \mathbf{h} + \alpha U V^\top \mathbf{h}$$
 
-This pushes the model back toward the ideal direction, where the steering matrix $UV^\top$ is derived from the SVD of the correct-incorrect difference vectors. This same logic allows length control: pushing activations toward a termination subspace shortens CoT, while pulling away extends it. Compared to unconditional test-time scaling, this provides an objective criterion for intervention, ensuring perturbations occur primarily on incorrect trajectories.
+The steering matrix $UV^\top$ is derived from the SVD of the correct-incorrect difference vector. This also enables reasoning length control by pushing activations toward or away from the termination subspace. Unlike unconditional test-time scaling (e.g., injecting "Wait" tokens), this gated approach provides an objective criterion for intervention, affecting incorrect trajectories while remaining transparent to correct ones.
 
 ### Loss & Training
-No fine-tuning of the LLM is performed. Only linear probes and classifiers (standard Logistic Regression / SVM) are trained. Steering matrices are computed via closed-form SVD of difference vectors without gradients.
+No models are trained; only linear probes and classifiers (logistic regression/SVM) are used. The steering matrix is obtained via closed-form SVD of the difference vectors, requiring no gradients.
 
 ## Key Experimental Results
 
-### Main Results (Linear probe step recognition accuracy, from Figure 1b / Table 1)
+### Main Results (Step Recognition Accuracy via Linear Probe, from Figure 1b / Table 1)
 
 | Probe From | Eval On | Step 2 | Step 3 | Step 4 | Step 5 | Final Ans Marker |
 |------------|---------|--------|--------|--------|--------|------------------|
@@ -96,59 +96,59 @@ No fine-tuning of the LLM is performed. Only linear probes and classifiers (stan
 | Base | Instruct | 1.00 (L21) | 0.98 (L18) | 0.97 (L18) | 0.97 (L23) | 1.00 (L31) |
 | Base | R1-Distill | 0.99 (L12) | 0.91 (L18) | 0.90 (L18) | 0.92 (L17) | 0.94 (L02) |
 
-Cross-model transfer scores are almost all >0.90, indicating that step-specific linear structures are shared across Base, Instruct, and R1-Distill paradigms. The primary difference for R1-Distill is that the termination subspace forms in much shallower layers (0.99 at Layer 0 vs. 0.80 for Instruct).
+Cross-model transfer accuracy is consistently $>0.90$, suggesting that step-specific linear structures are shared across Base, Instruct, and R1-Distill paradigms. In R1-Distill, the termination subspace forms much earlier (level 0 accuracy of 0.99 vs 0.80 for Instruct).
 
 ### Ablation Study
 
 | Configuration | Key Metric | Description |
 |------|---------|------|
-| Full (Pre-step activation + Ground truth labels) | Step 2 probe 1.00, AUC 0.87 | Full setting |
-| Randomly shuffled step labels (Control) | Avg 0.59 ± 0.04 | Near chance; proves geometry isn't probe overfitting |
-| Freeform prompt (No forced `Step k:` template) | Best-layer ≥ 0.84 | Model spontaneously uses `Step k:` in 64.5% samples; others still transferable at boundaries |
-| Predict correctness using Step 1 features only | AUC ≈ 0.63 | Almost no correctness signal in early steps |
-| Predict correctness using final steps features | AUC 0.83 / Peak 0.87 (L29) | Strong divergence in late steps |
+| Full (Pre-step activations + true labels) | Step 2 probe 1.00, AUC 0.87 | Full setup |
+| Randomly shuffled step labels | Mean 0.59 ± 0.04 | Near chance; proves geometry is not probe overfitting |
+| Freeform prompt (No forced `Step k:`) | Best-layer accuracy ≥ 0.84 | Model spontaneously uses `Step k:` in 64.5% of cases |
+| Step 1 features only for prediction | AUC ≈ 0.63 | Almost no correctness signal in early steps |
+| Last steps features for prediction | AUC 0.83 / Peak 0.87 (L29) | Strong divergence in later steps |
 
 ### Key Findings
-- Step-specific structures exist in Base models. Reasoning training primarily highlights the termination subspace earlier/deeper rather than "creating" new structures.
-- Early trajectories do not differ by correctness; divergence occurs after Step 4. This suggests "early exit" is a poor strategy for reasoning, as the first 4 steps are necessary.
-- In freeform prompts, the model spontaneously chooses the `Step k:` format in 64.5% of cases, and probes transferred from the fixed template still achieve >0.84, proving this is an inherent reasoning structure rather than a prompt artifact.
-- Mid-reasoning prediction gating for intervention is more stable than unconditional token injection or steering across GSM8K/MATH-500.
+- Step-specific structures exist even in Base models; reasoning training highlights the termination subspace earlier rather than "creating" new structures.
+- Early trajectories for correct and incorrect solutions are indistinguishable; bifurcation occurs after step 4, suggesting that early exiting is a poor strategy for reasoning.
+- In freeform settings, models spontaneously use `Step k:` formatting 64.5% of the time, and probes transfer effectively ($>0.84$), proving the geometry is a true reasoning property rather than a prompt artifact.
+- Mid-reasoning prediction-based gated intervention is more stable than unconditional token injection or steering across GSM8K and MATH-500.
 
 ## Highlights & Insights
-- Reframing CoT from discrete token sequences to "continuous trajectories in representation space" is a paradigm shift, providing a new unit of study (trajectory vs. token/direction).
-- Discovery: "Training changes *when* geometry appears, not the geometry itself." This suggests reasoning training's key benefit is "termination calibration" rather than the acquisition of fundamentally new capabilities.
-- The 0.87 AUC mid-trajectory predictor can be used directly as a reward proxy for RL, bypassing the sparsity of outcome-based rewards.
-- The "ideal trajectory + low-rank steering" framework provides a clean geometric abstraction for inference-time intervention, transferable to code agents and planning.
+- Reframing CoT as continuous trajectories in representation space provides a new unit of study for interpretability (trajectory vs. token/direction).
+- The discovery that training primarily affects the timing of geometric emergence rather than the geometric form suggests that reasoning training's primary benefit is "termination calibration" rather than the acquisition of entirely new geometric capabilities.
+- The 0.87 AUC mid-reasoning predictor can serve as a reward proxy for RL training, mitigating the sparsity issues of outcome-based rewards.
+- The "ideal trajectory + low-rank steering" paradigm offers a clean geometric abstraction for inference-time intervention, transferable to code agents and planning.
 
 ## Limitations & Future Work
-- Experiments were restricted to the Llama-3.1-8B backbone and GSM8K/MATH-500. Generality across Qwen/Mistral or commonsense/code reasoning is unverified.
-- Using a centroid for the "ideal trajectory" ignores that correct solutions may have multiple paths (multi-modal distribution), which might fail for open-ended proofs.
-- The practical accuracy gain from steering is "modest but consistent," indicating loss during the transition from signal detection to intervention.
-- Activation extraction relies on `Step k:` markers. For tasks without clear steps (NLG, dialogue), the marking strategy must be redesigned, which is the biggest bottleneck for broader application.
+- Experiments were limited to Llama-3.1-8B and mathematical tasks; generalizability to other backbones (Qwen/Mistral) or domains (commonsense/code) remains to be verified.
+- Defining the "ideal trajectory" via a single centroid ignores cases where multiple valid reasoning paths exist (multi-modal distributions), which may fail for open-ended problems.
+- While consistent, the actual accuracy gains from steering are described as modest, indicating loss during the transition from signal detection to intervention.
+- The reliance on `Step k:` markers limits application to tasks without clear step boundaries (e.g., open dialogue); alternative marking strategies are needed.
 
 ## Related Work & Insights
-- **vs. Lanham et al. (CoT faithfulness)**: They measured if deleting steps affects the answer at a behavioral level; this work provides a geometric explanation from the representation side.
-- **vs. Park et al. (Linear Representation Hypothesis)**: This work extends "concepts are linear directions" to "reasoning stages are linear subspaces."
-- **vs. Turner et al. (Activation Steering)**: Traditional steering adds fixed vectors unconditionally; this work uses trajectory deviation as a gate for more precise, less intrusive interventions.
-- **vs. Muennighoff et al. (s1 / Test-time scaling)**: They extend reasoning via "Wait" tokens; this work uses termination subspace steering for continuous, reversible control.
+- **vs. Lanham et al. (CoT faithfulness)**: While they measure behavioral impacts of step removal, this work provides a geometric explanation at the representation level.
+- **vs. Park et al. (Linear Representation Hypothesis)**: This work extends the idea that "concepts are linear directions" to "reasoning stages are linear subspaces."
+- **vs. Turner et al. (Activation Steering)**: Traditional steering is unconditional; this work uses trajectory deviation as a gate for more precise intervention with fewer side effects.
+- **vs. Muennighoff et al. (s1 / Test-time scaling)**: While they extend reasoning by injecting "Wait" tokens, this work uses termination subspace steering to achieve the same result in a continuous, controllable, and reversible manner.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ "Reasoning = Geometric Trajectory" is a strong new paradigm.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Solid cross-paradigm/format/freeform controls, though limited to one model family.
-- Writing Quality: ⭐⭐⭐⭐ Clear structure with findings mapping directly to sections.
-- Value: ⭐⭐⭐⭐ Opens new interfaces for interpretability, test-time intervention, and reward modeling.
+- Novelty: ⭐⭐⭐⭐⭐ "Reasoning as geometric trajectories" is a significant paradigm shift.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Solid cross-paradigm and freeform controls, though limited to one model family.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure with findings well-aligned to sections.
+- Value: ⭐⭐⭐⭐ Provides new interfaces for interpretability, intervention, and reward modeling.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ACL 2026\] On the Step Length Confounding in LLM Reasoning Data Selection](on_the_step_length_confounding_in_llm_reasoning_data_selection.md)
+- [\[ACL 2026\] Reasoning Fails Where Step Flow Breaks](reasoning_fails_where_step_flow_breaks.md)
+- [\[ACL 2026\] Which Reasoning Trajectories Teach Students to Reason Better? A Simple Metric of Informative Alignment](which_reasoning_trajectories_teach_students_to_reason_better_a_simple_metric_of_.md)
 - [\[ICLR 2026\] The Path of Least Resistance: Guiding LLM Reasoning Trajectories for Efficient Consistency](../../ICLR2026/llm_reasoning/the_path_of_least_resistance_guiding_llm_reasoning_trajectories_for_efficient_co.md)
 - [\[ICLR 2026\] The Path of Least Resistance: Guiding LLM Reasoning Trajectories with Prefix Consensus](../../ICLR2026/llm_reasoning/the_path_of_least_resistance_guiding_llm_reasoning_trajectories_with_prefix_cons.md)
-- [\[ACL 2026\] Which Reasoning Trajectories Teach Students to Reason Better? A Simple Metric of Informative Alignment](which_reasoning_trajectories_teach_students_to_reason_better_a_simple_metric_of_.md)
-- [\[ACL 2026\] Reasoning Fails Where Step Flow Breaks](reasoning_fails_where_step_flow_breaks.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Evaluating and Rewarding LALMs for Expressive Role-Play TTS via Mean Continuation Log-Probability
 description: >-
-  [ICML 2026][Audio & Speech][Role-Play TTS] This paper frames the "continuation probability of a pre-trained Large Audio Language Model (LALM) for ground-truth audio tokens" as an objective style consistency metric named MCLP. Using a gated hybrid reward combining MCLP and CER, the authors employ GRPO on the newly constructed WenetSpeech-RP-TTS dataset to improv
+  [ICML 2026][Audio & Speech][Role-Play TTS] This paper formulates the "continuation probability of a pre-trained Large Audio Language Model (LALM) on ground-truth speech tokens" as an objective style consistency metric named MCLP. By employing a gated hybrid reward of MCLP+CER through GRPO on the newly constructed WenetSpeech-RP-TTS dataset, the subjective MOS o
 tags:
   - ICML 2026
   - Audio & Speech
@@ -11,7 +11,7 @@ tags:
   - Mean Continuation Log-Probability
   - GRPO
 date: 2026-05-08
-content_hash: a2ed378c2d9f60b1
+content_hash: 409f7da93662b118
 ---
 # Evaluating and Rewarding LALMs for Expressive Role-Play TTS via Mean Continuation Log-Probability
 
@@ -22,66 +22,67 @@ content_hash: a2ed378c2d9f60b1
 **Keywords**: Role-Play TTS, LALM, Mean Continuation Log-Probability, GRPO, Style Consistency  
 
 ## TL;DR
-This paper frames the "continuation probability of a pre-trained Large Audio Language Model (LALM) for ground-truth audio tokens" as an objective style consistency metric named MCLP. Using a gated hybrid reward combining MCLP and CER, the authors employ GRPO on the newly constructed WenetSpeech-RP-TTS dataset to improve the subjective MOS of role-play TTS from 1.86 to 3.58.
+This paper formulates the "continuation probability of a pre-trained Large Audio Language Model (LALM) on ground-truth speech tokens" as an objective style consistency metric named MCLP. By employing a gated hybrid reward of MCLP+CER through GRPO on the newly constructed WenetSpeech-RP-TTS dataset, the subjective MOS of role-play TTS is improved from 1.86 to 3.58.
 
 ## Background & Motivation
 
-**Background**: LLM-style TTS models (such as CosyVoice, VALL-E, and Step-Audio) have achieved robust zero-shot voice cloning. Recent Instruct-TTS models allow style control via natural language descriptions. Speech Role-Playing Agents (e.g., OmniCharacter, SpeechRole, VoxRole) go further, requiring models to portray specific characters across multi-turn dialogues.
+**Background**: LLM-style TTS (CosyVoice, VALL-E, Step-Audio, etc.) has achieved strong zero-shot voice cloning. Recent Instruct-TTS works allow style control via natural language descriptions, while Speech Role-Playing Agent research (OmniCharacter, SpeechRole, VoxRole, etc.) further aims for models to portray specific characters in multi-turn dialogues.
 
-**Limitations of Prior Work**: In the "Role-Play TTS (RP-TTS)" scenario—which focuses on **controlling style rather than speaker identity**—existing methods are inadequate. Instruct-TTS only handles single utterances and treats style as a static utterance-level attribute, failing to maintain personas across multiple turns. Role-playing agents prioritize semantic alignment over acoustic style, often sacrificing expressiveness for coherence. Attempts to use Reinforcement Learning (RL) for style alignment are hindered by the **lack of objective style metrics**, forcing a reliance on emotion classifiers as proxy rewards, which only covers a single dimension of expressiveness.
+**Limitations of Prior Work**: In "Role-Playing TTS (RP-TTS)" scenarios—which focus on **controlling style rather than timbre**—existing methods fall short. Instruct-TTS only handles single utterances and treats style as a static attribute, failing to maintain characters across multiple turns. Role-Playing Agents prioritize semantic alignment over acoustic style, often sacrificing expressiveness for coherence. Attempts to use RL for style alignment are hindered by the lack of an **objective style metric**, often regressing to using emotion classifiers as proxy rewards, which only cover the single dimension of emotion.
 
-**Key Challenge**: Style is a continuous, context-dependent, "high-dimensional concept" mixing prosody, emotion, and paralinguistic information. Existing evaluations and rewards attempt to approximate it using discrete labels (emotion categories, speaker IDs), which inevitably results in information loss. Furthermore, single-objective rewards (focused only on CER or similarity) are prone to reward hacking—leading either to highly expressive but unintelligible "gibberish" or extremely clear but monotonous "robotic" speech.
+**Key Challenge**: Style is a continuous, context-dependent, and high-dimensional concept mixing prosody, emotion, and paralinguistic information. Existing evaluations and rewards attempt to approximate it using discrete labels (emotion categories, speaker IDs), inevitably losing information. Furthermore, a single reward (solely CER or similarity) easily triggers reward hacking—either producing highly expressive but unintelligible "gibberish" or generating clear but flat, robotic speech.
 
-**Goal**: Resolve both issues simultaneously: (1) Define an **interpretable, continuous style metric** consistent with human perception; (2) Integrate it into an RL pipeline while maintaining content fidelity.
+**Goal**: To address both issues: (1) define an **interpretable, continuous style metric consistent with human perception**; (2) integrate it into an RL pipeline while maintaining content fidelity.
 
-**Key Insight**: The authors hypothesize that LALMs pre-trained on massive speech data **implicitly learn a continuous latent space for speech style**. Given a transcript and a "candidate audio," if the candidate's style matches the ground truth (GT), the pre-trained LALM should assign a higher continuation probability to the GT audio tokens when using the candidate as context. This translates "style consistency" into "continuation likelihood," which can be quantified numerically.
+**Key Insight**: The authors hypothesize that an LALM pre-trained on massive speech data **implicitly learns a continuous latent space of speech styles**. Given a transcript and "candidate speech," if the candidate's speaking style matches the ground truth (GT), the pre-trained LALM should assign a higher continuation probability to the GT speech tokens when using the candidate as context. This translates "style consistency" into "continuation likelihood," which can be quantified numerically.
 
-**Core Idea**: Use the "mean log-likelihood of GT audio tokens predicted by a pre-trained LALM" directly as the style metric, MCLP. This serves for both offline evaluation and as a reward in GRPO, with CER used as a gate to prevent reward hacking.
+**Core Idea**: Use the "mean log-likelihood of GT audio tokens assigned by a pre-trained LALM" directly as the style metric, MCLP. This can be used for both offline evaluation and as a reward in GRPO, with CER used as a gate to prevent reward hacking.
 
 ## Method
 
 ### Overall Architecture
 
-The study addresses the lack of objective style metrics in RP-TTS. The approach first trains an LALM for speech continuation. Its mean log-likelihood for GT audio tokens (MCLP) is used as a benchmark for style consistency, which is then integrated as an RL reward. The pipeline consists of three stages: (1) Conversational-level autoregressive pre-training initialized with Step-Audio-2 on 3M hours of transcribed speech to obtain the MCLP continuation model (loss is calculated only on audio tokens to learn "continuing the current sentence given text and preceding audio"); (2) Multi-turn dialogue SFT based on Step-Audio-2-mini-Base using the custom WenetSpeech-RP-TTS dataset, enabling the model to generate interleaved TA4 tokens based on scene descriptions $\mathcal{S}$, character profiles $\mathcal{P}$, and history $\mathcal{H}_{<j}$; (3) RL using GRPO applied only to the final turn of each dialogue, with a reward aggregated from the MCLP style score, CER content penalty, and a clarity gate.
+To solve the lack of objective style metrics in RP-TTS, this work first trains a Large Audio Language Model (LALM) capable of speech continuation. Its mean log-likelihood on GT audio tokens, MCLP, serves as the style consistency benchmark for RL rewards. The pipeline consists of three stages: First, conversational-level autoregressive pre-training initialized with Step-Audio-2 on 3M hours of transcribed speech to obtain the MCLP continuation model (loss is only calculated on audio tokens to learn "continue current sentence given text and history audio"). Second, multi-turn dialogue SFT based on Step-Audio-2-mini-Base using the self-constructed WenetSpeech-RP-TTS, enabling the model to generate the $j$-th turn interleaved TA4 token sequence conditioned on scene description $\mathcal{S}$, character profile $\mathcal{P}$, and history $\mathcal{H}_{<j}$. Finally, RL using GRPO is applied only to the last turn of each dialogue, with rewards aggregated from the MCLP style score, CER content penalty, and a clarity gate.
 
-The data loop is built on WenetSpeech: 17k videos were filtered via "YouTube + drama" tags, with 8,556 downloaded. Demucs was used for accompaniment removal and pyannote for speaker diarization. DeepSeek-R1 inferred titles/episodes and generated character profiles $\mathcal{P}$ based on full scripts, while Qwen-VL-7B generated scene descriptions $\mathcal{S}$. Scenes were capped at 30 seconds and split by 5-second silences, resulting in 311k scenes (1435 hours), averaging 7.3 sentences and 2.33 speakers. The test set used strict video-level hold-out.
+The data loop is built on WenetSpeech: 17k videos were filtered by "YouTube + drama" tags (8556 downloaded), with Demucs for accompaniment removal and pyannote for speaker diarization. DeepSeek-R1 was used to infer drama/episode titles and generate profiles $\mathcal{P}$ from full scripts, while Qwen-VL-7B generated scene descriptions $\mathcal{S}$ for each segment. Scenes were clipped at 5s silences (30s max), yielding 311k scenes (1435 hours), averaging 7.3 utterances and 2.33 speakers per scene.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["Conversational Autoregressive Pre-training<br/>Step-Audio-2 Continuation → MCLP Model"] --> B["MCLP Metric<br/>Mean Log-Likelihood of GT via candidate context"]
-    C["WenetSpeech-RP-TTS<br/>R1 Drama Inference + Qwen-VL Scene Description"] --> D["Multi-turn Dialogue SFT<br/>Generate current turn via Scene/Profile/History"]
-    B --> E["Gated MCLP + CER Composite Reward<br/>Style reward given only if CER ≤ τ"]
-    D --> F["GRPO Final Turn Alignment<br/>Intra-group advantage, optimize last turn only"]
+    A["Conversational Autoregressive Pre-training<br/>Step-Audio-2 → MCLP Continuation Model"] --> B["MCLP Metric<br/>Dual Transcript + Inverse Continuation Likelihood"]
+    C["WenetSpeech-RP-TTS<br/>R1 Logic + Qwen-VL Scene Descriptions"] --> D["Multi-turn Dialogue SFT<br/>Generate current turn via Scene/Character/History"]
+    B --> E["Gated MCLP + CER Composite Reward<br/>Style score given only if CER ≤ τ"]
+    D --> F["GRPO Last-turn Alignment<br/>Within-group relative advantage, optimize last turn only"]
     E --> F
     F --> G["Role-Play TTS Model<br/>MOS 1.86 → 3.58"]
 ```
 
 ### Key Designs
 
-**1. MCLP Metric: Transforming style consistency into a likelihood scalar via "Double Transcript + Reverse Continuation"**
+**1. MCLP Metric: Converting style consistency to a likelihood scalar via "dual transcripts + inverse continuation"**
 
-Discrete labels lose information regarding continuous prosody. The authors assume pre-trained LALMs capture continuous style spaces. The context is structured as $\mathcal{H}=[\mathbf{w},\mathbf{z}^{eval},\mathbf{w}]$, where the same transcript $\mathbf{w}$ appears twice, flanking the candidate audio $\mathbf{z}^{eval}$. The LALM then continues the ground truth audio $\mathbf{z}^{gt}$ following $\mathcal{H}$. The metric is defined as $\text{MCLP}=\frac{1}{|\mathbf{z}^{gt}_A|}\sum_{k\in \mathbf{z}^{gt}_A}\log P_\theta(z_k^{gt}\mid \mathcal{H},z_{<k}^{gt})$, averaged only over audio tokens $\mathbf{z}^{gt}_A$. 
+To address the loss of information in discrete labels, MCLP uses a context structure $\mathcal{H}=[\mathbf{w},\mathbf{z}^{eval},\mathbf{w}]$. The same transcript $\mathbf{w}$ appears twice, sandwiching the candidate audio $\mathbf{z}^{eval}$. The LALM then continues the ground-truth audio $\mathbf{z}^{gt}$ after $\mathcal{H}$. The metric is defined as $\text{MCLP}=\frac{1}{|\mathbf{z}^{gt}_A|}\sum_{k\in \mathbf{z}^{gt}_A}\log P_\theta(z_k^{gt}\mid \mathcal{H},z_{<k}^{gt})$, averaging over the audio token subset $\mathbf{z}^{gt}_A$. 
 
-This design ensures likelihood changes reflect only style: repeating $\mathbf{w}$ anchors the text content under teacher-forcing; using Step-Audio-2 focuses the metric on style rather than acoustic details (due to its semantic tokenizer); and "using the candidate to continue the GT" ensures a fixed denominator for fair comparison across candidates.
+Repeating $\mathbf{w}$ ensures the text content is fixed under teacher-forcing, so likelihood variations stem from style rather than text. Step-Audio-2's semantic speech tokenizer preserves style over timbre details. Using the "candidate as context to continue GT" ensures a fixed denominator for fair comparison across multiple candidates.
 
-**2. Gated MCLP + CER Composite Reward: Enforcing intelligibility before style to block reward hacking**
+**2. Gated MCLP + CER Composite Reward: Ensuring intelligibility before pursuing style**
 
-Single-objective rewards are easily hacked: style-only rewards produce "expressive gibberish," while clarity-only rewards produce flat "robotic" speech. The reward is split into two branches with a hard gate: the style branch $R_{style}=\text{MCLP}(\mathbf{z}^{roll},\mathbf{z}^{gt})+C$ with a bias $C=15$ to ensure a positive range, and a content branch $R_{content}=\lambda\cdot\text{CER}(\hat{\mathbf{w}},\mathbf{w})$ ($\lambda=10$), where $\hat{\mathbf{w}}$ is obtained via ASR. The final reward $R(\mathbf{z})=R_{style}-R_{content}$ is applied only if $\text{CER}\le\tau=0.2$; otherwise, it is set to 0. This curriculum forces the model to achieve a clarity threshold before optimizing for expressiveness.
+To prevent reward hacking, the reward is split: style branch $R_{style}=\text{MCLP}(\mathbf{z}^{roll},\mathbf{z}^{gt})+C$ (offset $C=15$) and content branch $R_{content}=\lambda\cdot\text{CER}(\hat{\mathbf{w}},\mathbf{w})$ ($\lambda=10$). The final reward $R(\mathbf{z})=R_{style}-R_{content}$ is only granted if $\text{CER}\le\tau=0.2$; otherwise, it is 0. This forces the model to learn clear pronunciation before optimizing expressiveness.
 
-**3. GRPO Final-Turn Alignment: Optimizing only the last turn with intra-group relative advantage**
+**3. GRPO Last-turn Alignment: Optimizing the final turn with group-relative advantage**
 
-To prevent error accumulation from contaminating the context, history turns are kept at GT values during RL, and policy optimization is limited to the final turn. For each query $\mathbf{q}=(\mathcal{S},\mathcal{P},\mathcal{H})$, $G=8$ rollouts are sampled. The intra-group relative advantage $\hat{A}_i=(R_i-\text{mean})/\text{std}$ is calculated. The objective function uses a clipped importance ratio $\rho_{i,t}$ multiplied by $\hat{A}_i$, with a token-level KL constraint $\beta\mathbb{D}_{KL}$ ($\beta=0.001$) to anchor the policy to the SFT model.
+To prevent error accumulation in history, only the last turn of the dialogue is optimized. For each query $\mathbf{q}=(\mathcal{S},\mathcal{P},\mathcal{H})$, $G=8$ rollouts are sampled. The relative advantage $\hat{A}_i=(R_i-\text{mean})/\text{std}$ is used in the objective function with a clipped importance ratio and a token-level KL constraint $\beta\mathbb{D}_{KL}$ ($\beta=0.001$). Training uses 16,186 high-quality scenes (2–6 turns, last sentence >10 characters, non-neutral style) to maximize expressiveness gains.
 
 ### Loss & Training
 
-SFT: 1 epoch, batch size 64, learning rate $1\times 10^{-5}$ with cosine decay, AdamW ($\beta_1=0.9, \beta_2=0.95$, weight decay 0.1, grad clip 1.0). RL: learning rate $1\times 10^{-6}$, global batch size 128, $G=8$ rollouts, temperature 1.0.
+SFT: 1 epoch, batch 64, LR $1\times 10^{-5}$ cosine decay, max sequence 16,384, AdamW. Objective: $\theta^*=\arg\min_\theta\sum -\log P_\theta(\mathbf{y}\mid \mathcal{S},\mathcal{P},\mathcal{H},\mathcal{I})$.  
+RL: LR $1\times 10^{-6}$, global batch 128, $G=8$ rollouts, temperature 1.0, max decode 1024.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Model | Setting | CER↓ | CAM++↑ | Emo2Vec↑ | MCLP↑ | MOS↑ |
+| Model | Settings | CER↓ | CAM++↑ | Emo2Vec↑ | MCLP↑ | MOS↑ |
 |------|------|------|--------|----------|-------|------|
 | Ground Truth | — | — | — | — | — | 4.461 |
 | GPT-Audio | w/ history | 11.97 | 0.636 | 0.875 | -4.849 | 1.915 |
@@ -89,8 +90,9 @@ SFT: 1 epoch, batch size 64, learning rate $1\times 10^{-5}$ with cosine decay, 
 | Step-Audio-2-mini | w/ history | 3.28 | 0.629 | 0.864 | -4.829 | 1.856 |
 | OV-InstructTTS | w/o history | 7.19 | 0.669 | 0.900 | -4.768 | 2.864 |
 | **Ours** | w/ history | **1.13** | **0.724** | **0.917** | **-4.636** | **3.576** |
+| **Ours** | w/o history | **1.63** | **0.704** | **0.910** | **-4.687** | **3.576** |
 
-CER was reduced to nearly 1/10th of baselines, and MOS improved by 0.71 points over the strongest Instruct-TTS (OV-InstructTTS 2.864).
+CER is roughly 1/10th of baselines. MOS is 0.71 higher than the strongest Instruct-TTS and 1.09 higher than the strongest LALM.
 
 ### Ablation Study
 
@@ -98,31 +100,30 @@ CER was reduced to nearly 1/10th of baselines, and MOS improved by 0.71 points o
 |------|---------------|----------------|-----|
 | Step-Audio-2-mini (baseline) | 3.28 | -4.829 | 1.856 |
 | + SFT only | 3.33 | -4.725 | 3.178 |
-| Full (SFT + RL) | **1.13** | -4.636 | **3.576** |
-| w/o CER Reward (Style only) | 61.14 | **-4.590** | 1.145 |
+| Full (SFT + RL with hybrid reward) | **1.13** | -4.636 | **3.576** |
+| w/o CER Reward (MCLP only) | 61.14 | **-4.590** | 1.145 |
 | w/o MCLP Reward (CER only) | **0.78** | -4.752 | 2.331 |
 
 ### Key Findings
-- SFT alone improves MOS from 1.86 to 3.18, validating the dataset. RL adds an additional 0.40, confirming MCLP's contribution.
-- Removing the CER reward results in the highest MCLP but catastrophic CER (61%) and MOS (1.15), proving that reward hacking generates "expressive nonsense."
-- CER-only optimization yields the lowest CER but significant MOS loss (2.33), indicating clarity is not synonymous with quality.
-- Human pairwise experiments show a win rate $> 0.8$ when $\Delta\text{MCLP}>0.1$, proving the metric's reliability.
+- SFT alone increases MOS from 1.86 to 3.18 (+1.32), proving dataset utility; RL adds another 0.40, proving style rewards provide gains beyond SFT.
+- Removing CER reward results in the highest MCLP (-4.59) but a CER of 61% and MOS of 1.15, confirming that reward hacking produces unintelligible expressive sounds.
+- Human pairwise experiments show that when $\Delta\text{MCLP}>0.1$, the win rate exceeds 0.8, proving MCLP is a reliable preference predictor.
 
 ## Highlights & Insights
-- **"Reverse Continuation + Double Transcript" as a Normalization Technique**: Using evaluations as context to predict fixed GT allows for a fair, content-anchored style comparison.
-- **Gated Hybrid Rewards as a Template**: The combination of hard gating and positive-shifted rewards provides a robust framework for multi-objective RL in multimodal tasks.
-- **Automated Dataset Upgrading**: The pipeline demonstrates how LLMs (R1) and VLMs (Qwen-VL) can augment legacy ASR corpora with character profiles and scene descriptions.
+- **Inverse continuation is a clever normalization**: Using "candidate as context to predict GT" allows for a fixed-length target, ensuring fair normalization. This paradigm of "leveraging LALM linguistic priors to quantify fuzzy concepts" can transfer to other modalities.
+- **Gated hybrid rewards as a template**: The combination of hard gating, positive shifting, and content penalty is more robust than a weighted sum and can be applied to any dual-objective task (e.g., accent or emotion TTS).
+- **Data提质 (Refining Data)**: The pipeline demonstrates how to upgrade ASR corpora using LLMs/VLMs for character profiles and scene descriptions.
 
 ## Limitations & Future Work
-- Experiments primarily focus on Chinese drama; multi-language validation is needed for the MCLP metric.
-- Evaluation is limited to TV dramas; performance in domains like audiobooks or NPC dialogue remains unexplored.
-- Dataset generation involves LLM/VLM noise; future work could incorporate "gold-standard" human-verified subsets.
-- High computational cost: reward calculation requires a 7B LALM forward pass.
+- Experiments primarily focused on Chinese drama; multi-lingual validity remains to be verified.
+- The evaluation domain is restricted to television; other domains like audiobooks or NPC dialogue might require different gate thresholds.
+- Label noise from LLM/VLM generation (e.g., hallucinated plots) remains a bottleneck.
+- MCLP calculation is computationally expensive as it requires a 7B LALM forward pass for every rollout; distilling into a smaller estimator is a future direction.
 
 ## Related Work & Insights
-- **vs. CosyVoice3 / InstructTTS**: These focus on single-turn instructions. Ours utilizes multi-turn history and RL alignment.
-- **vs. Emotion Rewards**: Discrete labels are replaced by continuous likelihood, covering stylistic dimensions beyond emotion.
-- **vs. Role-Playing Agents**: Decouples "what to say" from "how to say it," serving as a modular TTS backend for conversational agents.
+- **vs Instruct-TTS**: While those rely on single-sentence instruction prompts, ours utilizes multi-turn history + style alignment RL for a significant MOS gain.
+- **vs Emotion Rewards**: Instead of discrete labels, MCLP offers a continuous, dense reward signal covering dimensions beyond simple emotion.
+- **vs Speech Agents**: Unlike agents focusing on end-to-end semantic alignment, this work decouples "what to say" from "how to say it," serving as a modular TTS backend.
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐ 
@@ -132,6 +133,11 @@ CER was reduced to nearly 1/10th of baselines, and MOS improved by 0.71 points o
 
 <!-- RELATED:START -->
 <div class="related-papers" markdown="1">
+- Steps-Audio-2: Technical Report (2025)
+- DeepSeek-V3/R1: Technical Report (2025)
+- PPO vs GRPO: DeepSeek-V3 Insights
+</div>
+<!-- RELATED:END -->
 
 ## Related Papers
 
@@ -139,7 +145,7 @@ CER was reduced to nearly 1/10th of baselines, and MOS improved by 0.71 points o
 - [\[ICML 2026\] MultiBreak: A Scalable and Diverse Multi-turn Jailbreak Benchmark for Evaluating LLM Safety](multibreak_a_scalable_and_diverse_multi-turn_jailbreak_benchmark_for_evaluating_.md)
 - [\[ACL 2026\] DRInQ: Evaluating Conversational Implicature with Controlled Context Variation](../../ACL2026/audio_speech/drinq_evaluating_conversational_implicature_with_controlled_context_variation.md)
 - [\[ACL 2026\] ReStyle-TTS: Relative and Continuous Style Control for Zero-Shot Speech Synthesis](../../ACL2026/audio_speech/restyle-tts_relative_and_continuous_style_control_for_zero-shot_speech_synthesis.md)
-- [\[ACL 2026\] S2S-Arena: Evaluating Paralinguistic Instruction Following in Speech-to-Speech Models](../../ACL2026/audio_speech/s2s-arena_evaluating_paralinguistic_instruction_following_in_speech-to-speech_mo.md)
+- [\[ICML 2026\] CMI-RewardBench: Evaluating Music Reward Models with Compositional Multimodal Instruction](cmi-rewardbench_evaluating_music_reward_models_with_compositional_multimodal_ins.md)
 
 </div>
 

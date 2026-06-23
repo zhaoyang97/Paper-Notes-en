@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ODTQA-FoRe: An Open-Domain Tabular Question Answering Dataset for Future Data Forecasting and Reasoning
 description: >-
-  [ACL 2026][Time Series][open-domain tabular QA] ODTQA-FoRe introduces an open-domain tabular QA task for future numerical forecasting and post-forecast reasoning. It also presents TimeFore, a three-agent framework that integrates table retrieval, SQL execution, specialized time-series forecasting, and answer normalization into an evaluable baseline.
+  [ACL 2026][Time Series][open-domain tabular QA] ODTQA-FoRe introduces an open-domain tabular question answering task focused on future numerical forecasting and post-forecast reasoning. It provides the TimeFore three-agent framework, which chains table retrieval, SQL data acquisition, specialized time-series forecasting, and answer normalization into an evaluable ba
 tags:
   - ACL 2026
   - Time Series
@@ -12,98 +12,96 @@ tags:
   - text-to-SQL
   - real estate
 date: 2026-05-08
-content_hash: c6ab4b31c3d0b4ed
+content_hash: bbb9bed3499c98d2
 ---
 # ODTQA-FoRe: An Open-Domain Tabular Question Answering Dataset for Future Data Forecasting and Reasoning
 
 **Conference**: ACL2026 Findings  
 **arXiv**: [2606.02433](https://arxiv.org/abs/2606.02433)  
 **Code**: https://github.com/jensenw1/ODTQA-FoRe  
-**Area**: Time-Series / Tabular QA  
+**Area**: Time-series / Tabular QA  
 **Keywords**: open-domain tabular QA, time-series forecasting, LLM agent, text-to-SQL, real estate
 
 ## TL;DR
-ODTQA-FoRe introduces an open-domain tabular QA task for future numerical forecasting and post-forecast reasoning. It also presents TimeFore, a three-agent framework that integrates table retrieval, SQL execution, specialized time-series forecasting, and answer normalization into an evaluable baseline.
+ODTQA-FoRe introduces an open-domain tabular question answering task focused on future numerical forecasting and post-forecast reasoning. It provides the TimeFore three-agent framework, which chains table retrieval, SQL data acquisition, specialized time-series forecasting, and answer normalization into an evaluable baseline.
 
 ## Background & Motivation
 
-**Background**: LLM + RAG has advanced open-domain QA and tabular QA, with many systems capable of retrieving tables, generating SQL, and performing historical factual or numerical reasoning. Datasets like WikiTableQuestions, Spider, Open-WikiTable, NQ-TABLES, and RETQA cover closed/open-domain tabular QA, SQL generation, or multi-table retrieval.
+**Background**: LLM + RAG has advanced open-domain and tabular QA. Many systems can retrieve tables from a database, generate SQL, and perform historical fact-based or numerical reasoning. Datasets like WikiTableQuestions, Spider, Open-WikiTable, NQ-TABLES, and RETQA cover closed/open-domain tabular QA, SQL generation, or multi-table retrieval.
 
-**Limitations of Prior Work**: Most existing tasks focus on answering queries about "historical data already in the database." They rarely handle future-oriented questions common in real-world scenarios, such as "What will the price of a certain project be next year?" or "Which projects will have future prices exceeding a threshold?" LLMs are inherently unreliable for time-series forecasting, and in open-domain scenarios, users do not provide continuous historical sequences directly; the system must independently find tables, extract data, forecast, and reason.
+**Limitations of Prior Work**: These tasks mostly address "historical data already in the database." They rarely handle future-oriented questions commonly asked by users, such as "What will the price of a certain residential complex be next year?" or "Which projects will have future prices exceeding a threshold?" LLMs themselves are unreliable for time-series forecasting, and in open-domain scenarios, users do not provide continuous historical sequences directly; systems must independently find tables, extract data, forecast, and then reason.
 
-**Key Challenge**: Traditional ODTQA excels at retrieval and tabular reasoning, while time-series models excel at forecasting, but the two are usually decoupled. Future-oriented QA requires a system to simultaneously possess open-domain historical data acquisition capabilities, external numerical forecasting capabilities, and standardized answering capabilities for different question types.
+**Key Challenge**: Traditional ODTQA excels at retrieval and tabular reasoning, while time-series models excel at forecasting, but they are typically isolated. Future-oriented QA requires a system to simultaneously possess open-domain historical data acquisition capabilities, external numerical forecasting capabilities, and standardized answering capabilities for various question types.
 
-**Goal**: The authors propose the ODTQA-FoRe task and dataset, requiring systems to autonomously locate historical data from large-scale candidate tables, forecast future prices for 2024, and answer direct forecasting or forecast-based reasoning questions. They also propose TimeFore as a strong baseline.
+**Goal**: The authors propose the ODTQA-FoRe task and dataset, requiring systems to autonomously locate historical data from large-scale candidate tables, forecast future prices for 2024, and answer direct forecasting or forecast-based reasoning questions. TimeFore is proposed as a strong baseline.
 
-**Key Insight**: The paper focuses on the real estate vertical because it contains continuous time-series data and real decision-making needs. While domain-specific, the task format is transferable to any scenario with historical structured data and future forecasting needs, such as finance, retail, or climate.
+**Key Insight**: The paper focuses on the real estate vertical because it features continuous time series and real-world decision-making needs. While specific to one domain, the task format is transferable to any scenario with historical structured data and future forecasting needs, such as finance, retail, or climate.
 
-**Core Idea**: Utilize an LLM agent for semantic understanding, table retrieval, SQL generation, and final interpretation, while delegating precise numerical forecasting to specialized time-series models like TimesNet and TimeXer.
+**Core Idea**: An LLM agent is used for semantic understanding, table retrieval, SQL generation, and final explanation, while precise numerical forecasting is delegated to specialized time-series models such as TimesNet or TimeXer.
 
 ## Method
 
-The paper comprises two main threads: the construction of the ODTQA-FoRe dataset and the TimeFore framework. The dataset provides natural language questions, answers, historical data SQL, and future label SQL. TimeFore simulates a real system that only accesses historical databases during inference, completing answers through three roles: Retriever, Forecaster, and Analyzer.
+The paper follows two trajectories: the construction of the ODTQA-FoRe dataset and the development of the TimeFore framework. The dataset provides natural language questions, answers, historical data SQL, and future label SQL. TimeFore simulates a real system that only accesses historical databases during inference, completing answers through the roles of Retriever, Forecaster, and Analyzer.
 
 ### Overall Architecture
 
-Data is sourced from RETQA real estate sales and extended from January 2022 to December 2024, covering 10 Chinese cities. The authors set December 31, 2023, as the reference date: 2022-2023 data is visible history, while 2024 data serves as future ground truth used only for evaluation. After filtering, 11,149 projects remain, partitioned 6:2:2 at the project level for training, validation, and testing to prevent leakage.
+Data is derived from RETQA's real estate sales data and expanded to span from January 2022 to December 2024, covering 10 Chinese cities. December 31, 2023, is used as the reference date: 2022-2023 data is visible history, while 2024 data serves as future ground truth for evaluation only. After filtering, 11,149 projects remain, partitioned by project at a 6:2:2 ratio for training, validation, and testing to prevent project leakage.
 
-The historical database aggregates 2022-2023 data into 288 tables by city, district, and year, averaging 845 rows per table. The future database consists of 2024 data and is used only for executing ground-truth SQL. During QA generation, 26 sets of templates were designed: 7 for direct time-series forecasting and 19 for forecast-based reasoning. The authors manually reviewed 10 samples per set (260 QA pairs) before large-scale generation.
+The historical database consists of 288 tables aggregated by city, district, and year from 2022-2023, with an average of 845 rows per table. The future database consists of 2024 data used only for automated execution of ground-truth SQL. The QA generation phase uses 26 sets of templates: 7 for direct time-series forecasting and 19 for forecast-based reasoning. Authors manually reviewed 10 samples per group (260 QA total) before large-scale generation.
 
-The TimeFore framework consists of three types of agents. The Retriever summarizes user questions into table-caption-style text, attempting direct caption matching first, falling back to BM25 retrieval on failure, and then generating SQL via a few-shot LLM with an execution feedback correction loop. The Forecaster receives SQL results, converts `[project, year-month, price]` triplets into numerical sequences, uses TimesNet for imputation, and TimeXer to forecast 12 months for 2024. The Analyzer uses a BERT classifier to determine if a question is direct forecasting or reasoning-based, selects the corresponding prompt to synthesize historical and forecasted data, and uses a numerical extraction module to output standardized answers.
+The TimeFore framework consists of three types of agents. The Retriever summarizes user questions into table caption-style text, matching captions directly or using BM25, then generates SQL via a few-shot LLM with an execution-feedback loop for correction. The Forecaster converts SQL results into numerical sequences and uses TimesNet for missing value imputation followed by TimeXer to forecast 12 months of 2024. The Analyzer uses a BERT classifier to determine if a question is direct forecasting or forecast-based reasoning, selects the corresponding prompt to synthesize data, and uses a numerical extraction module for standardized output.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    subgraph DATA["Future-oriented Open-domain Tabular QA Dataset"]
+    subgraph DATA["Future-Oriented Open-Domain Tabular QA Dataset"]
         direction TB
-        D1["RETQA Real Estate Data<br/>Extended to 2022-2024, 10 Cities"] --> D2["288 Historical Tables (2022-2023)<br/>+ 2024 Future Label Library"]
-        D2 --> D3["26 Template-generated QA groups<br/>Historical SQL + Future Label SQL"]
+        D1["RETQA Real Estate Data<br/>Extended to 2022-2024, 10 Cities"] --> D2["288 Hist. Tables (2022-2023)<br/>+ 2024 Future Label DB"]
+        D2 --> D3["26 Template Groups Generating QA<br/>Historical SQL + Future Label SQL"]
     end
-    DATA --> Q["User Future-oriented Question"]
-    Q --> R["Retriever: Two-stage Retrieval + SQL Self-correction<br/>Question→Caption Summary→Hit / BM25→SQL Feedback Loop"]
+    DATA --> Q["User Future-Oriented Query"]
+    Q --> R["Retriever: 2-Stage Retrieval + SQL Self-Correction<br/>Query → Caption Summary → Match / BM25 → SQL Feedback"]
     R --> H["Historical Price Sequence<br/>[project, year-month, price]"]
-    subgraph FA["Forecaster + Analyzer Division of Labor"]
+    subgraph FA["Forecaster + Analyzer Division"]
         direction TB
-        F["Forecaster: TimesNet Imputation<br/>→ TimeXer Predicts 12 Months of 2024"]
-        F --> A1["Analyzer: BERT for Forecasting/Reasoning Det."]
-        A1 --> A2["Prompt Selection + Numerical Extraction"]
+        F["Forecaster: TimesNet Imputation<br/>→ TimeXer 2024 Forecast (12 Months)"]
+        F --> A1["Analyzer: BERT Classifies Forecast vs. Reasoning"]
+        A1 --> A2["Type-Specific Prompt Synthesis + Numerical Extraction"]
     end
     H --> FA
-    FA --> OUT["Standard Format Answer"]
+    FA --> OUT["Standardized Format Answer"]
 ```
 
 ### Key Designs
 
-**1. Future-Oriented Open-Domain Tabular QA: Moving from "Historical Query" to "Future Forecasting"**
+**1. Future-Oriented Open-Domain Tabular QA Dataset: Pushing QA from "History Search" to "Future Prediction"**
 
-Existing ODTQA datasets mostly answer historical facts already in databases. However, real users often ask future-oriented questions like "What will the price of community X be next year?" Simple historical queries are insufficient for evaluation; it is impossible to judge if a system correctly retrieved the history, forecasted, and reasoned. ODTQA-FoRe provides each QA with natural language questions, answers, historical SQL (data visible during reasoning), and future label SQL (executed on 2024 ground truth to get objective answers). This split ensures answers are derived from rigorous SQL execution rather than subjective text matching.
+Existing ODTQA datasets focus on historical facts. ODTQA-FoRe addresses questions like "What will the price be next year?" To evaluate this fairly, ODTQA-FoRe provides four components per QA: natural language question, answer, historical SQL (data visible to the system), and future label SQL (executed on 2023-2024 ground truth to get an objective answer). This split ensures answers are derived from rigorous SQL execution on future data rather than subjective text matching.
 
 **2. Retriever's Two-Stage Retrieval + SQL Self-Correction: Translating Questions into "Table Language"**
 
-In open-domain settings, retrieval quality determines the upper bound. Matching user queries directly to 288 tables via BM25 is unstable due to semantic gaps. The Retriever uses a 5-shot prompt to compress queries into "table caption" summaries. If a summary hits a caption, it is used; otherwise, it falls back to BM25. After locating a table, a 5-shot LLM generates SQL, refined by an execution feedback loop (up to 25 iterations). This "translation" significantly bridges the semantic gap. Ablations show table retrieval F1 at 97-99% and near-perfect SQL executability, indicating that retrieval is not the primary bottleneck.
+In open-domain scenarios, direct BM25 matching of user queries to 288 tables is unstable due to semantic gaps. The Retriever first uses a 5-shot prompt to compress queries into "table caption-style" summaries. If summary-to-caption matching fails, it reverts to BM25. After locating the table, it generates SQL via 5-shot examples and uses an execution feedback loop (up to 25 cycles) to fix syntax. This summary step translates colloquial questions into database-compatible terms, significantly reducing the semantic gap.
 
-**3. Forecaster + Analyzer Division: Leveraging LLM Strengths While Outsourcing Numerical Prediction**
+**3. Forecaster + Analyzer Division: Delegating Numerical Tasks to Specialized Models**
 
-Experiments show that general-purpose LLMs have significantly higher forecasting errors than specialized models (e.g., Qwen3 30B MRE 0.1706 vs. TimeXer 0.1209) and tend to provide explanations rather than evaluable values. TimeFore outsources forecasting: the Forecaster uses an `imputationThenPredictionTool` (TimesNet for imputation and TimeXer for 2024 forecasting). The Analyzer uses a BERT classifier to distinguish forecasting from reasoning, picking the right prompt and using a numerical extraction module for standardization. This division of labor is far more reliable than a single LLM handling all steps. Ablations confirm this: removing the numerical extraction module drops Qwen3 30B's valid completion rate by 33.08%.
+Experiments show that general LLM forecasting error is significantly higher than that of specialized models (e.g., Qwen3 30B MRE 0.1706 vs. TimeXer 0.1209). TimeFore outsources forecasting: the Forecaster uses an `imputationThenPredictionTool` (TimesNet + TimeXer), while the Analyzer uses a BERT classifier to route the query to a "forecasting" or "reasoning" prompt. A dedicated extraction module then formats the output. This role-based division is more reliable than a single LLM handling all steps.
 
 ### Loss & Training
 
-TimeFore is not trained end-to-end. The BERT classifier is used for query type classification, and time-series modules are trained using their respective official best hyperparameters. The imputation dataset uses projects with at least 6 months of history (8,418 / 2,815 / 2,853 train/val/test). The forecasting dataset uses projects with 9 months of history and 2 months of 2024 data (5,806 / 1,975 / 1,963 train/val/test).
-
-LLM baselines use in-context learning with temperature 0.8. Inference is performed using SGLang on a cluster of 20 NVIDIA A800-SXM4-80GB GPUs; BERT and time-series models are trained on a single RTX 4090.
+TimeFore is not trained end-to-end. A BERT classifier handles query type classification. Time-series modules use official best hyperparameters. The imputation dataset includes 8,418 training sequences with at least 6 months of history. The forecasting dataset includes 5,806 training sequences with at least 9 months of history and 2 months of 2024 labels. LLM baselines use in-context learning with temperature 0.8. Inference uses SGLang on NVIDIA A800 GPUs.
 
 ## Key Experimental Results
 
 ### Dataset Scale
 
-| Item | Value | Description |
+| Item | Value | Note |
 |------|------|------|
-| QA pairs | 28,507 | After deduplication and filtering |
-| Train / Val / Test | 16,944 / 5,742 / 5,821 | Partitioned by project to avoid leakage |
-| Question types | 8,042 forecasting + 20,465 reasoning | 7 forecasting templates, 19 reasoning templates |
-| City and Time | 10 Chinese cities, 2022-2024 | 2022-2023 history, 2024 future labels |
-| Candidate historical tables | 288 | Average 845 rows each |
-| Projects | 11,149 refined projects | Filtered from 60,183 initial items |
+| QA pairs | 28,507 | Post-filtering of invalid/empty results |
+| Train / Val / Test | 16,944 / 5,742 / 5,821 | Split by project to avoid leakage |
+| Question Types | 8,042 forecasting + 20,465 reasoning | 7 forecasting / 19 reasoning templates |
+| Cities & Time | 10 Chinese cities, 2022-2024 | 22-23 History, 24 Future Labels |
+| Candidate Hist. Tables | 288 | Avg. 845 rows per table |
+| Project Count | 11,149 refined projects | Filtered from initial 60,183 |
 
 ### Main Results
 
@@ -120,64 +118,64 @@ LLM baselines use in-context learning with temperature 0.8. Inference is perform
 | GLM4.5 Air | Vanilla | 139,922,250.13 | 3324.41 | 0.1415 | 23.59 | 48.72 |
 | GLM4.5 Air | TimeFore | 90,865,440.59 | 2709.25 | 0.1172 | 35.46 | 61.24 |
 
-### Specialized Model Comparison
+### Specialized Forecasting Models Comparison
 
-| Model | MSE | MAE | MRE | Observations |
+| Model | MSE | MAE | MRE | Observation |
 |------|-----|-----|-----|------|
 | TimesNet | 2.77E+07 | 3103.52 | 0.1254 | Stronger than general LLMs |
 | TimeMixer | 2.78E+07 | 3108.29 | 0.1255 | Similar to TimesNet |
-| TimeXer | 2.50E+07 | 2989.55 | 0.1209 | Best; selected as TimeFore forecaster |
+| TimeXer | 2.50E+07 | 2989.55 | 0.1209 | Best; used as TimeFore forecaster |
 | WPMixer | 2.75E+07 | 3097.81 | 0.1248 | Close to TimesNet |
-| AutoTimes | 2.93E+07 | 3204.13 | 0.1288 | Weaker than lightweight specialized models |
+| AutoTimes | 2.93E+07 | 3204.13 | 0.1288 | Weaker than specialized models |
 | Time-MoE | 2.95E+07 | 3164.47 | 0.1271 | Weaker than TimeXer |
-| Qwen3 30B | 6.69E+07 | 4344.02 | 0.1706 | Direct LLM forecasting is significantly worse |
-| GLM 4.5 Air | 7.30E+07 | 4824.57 | 0.1869 | Largest error among LLM forecasts |
+| Qwen3 30B | 6.69E+07 | 4344.02 | 0.1706 | Direct LLM forecast is significantly worse |
+| GLM 4.5 Air | 7.30E+07 | 4824.57 | 0.1869 | Largest error among direct forecasts |
 
 ### Ablation Study
 
-| Module / Setting | Key Figures | Conclusion |
+| Module / Setting | Key Metric | Conclusion |
 |-------------|----------|------|
-| Table Retrieval Summary+BM25 | GPT OSS 120B F1 99.21, GLM 4.5 Air F1 97.59 | Generally strong; not the main bottleneck |
-| SQL Generation | Qwen3 30B ECR 99.85, Qwen3 Next 80B EA 85.72 | High executability and accuracy |
-| Golden table captions | Max Acc gain ~1.02% | Table location is not the primary error source |
-| Golden history + predicted future | Max Acc gain ~1.93% | SQL/Historical data fetching is not the main bottleneck |
-| Golden history + golden future | Qwen3 30B +46.80%, Qwen3 Next 80B +49.23%, GLM +44.73% | Future forecasting error is the 핵심 bottleneck |
-| Analyzer query Classification | BERT fine-tuned F1 99.98 | Simple classifier is reliable |
-| w/o Numerical Extraction | Qwen3 30B Valid Completion Rate drops 33.08% | Standardization is critical for evaluation |
+| Retrieval Summary+BM25 | GPT OSS 120B F1 99.21 | Table retrieval is strong; not the main bottleneck |
+| SQL Generation | Qwen3 30B ECR 99.85 | High executability and execution accuracy |
+| Golden table captions | Max Acc gain ~1.02% | Table localization is not the primary error source |
+| Golden history + predicted future | Max Acc gain ~1.93% | SQL/Historical data extraction is not the bottleneck |
+| Golden history + golden future | Qwen3 30B +46.80% | Future forecasting error is the core bottleneck |
+| Analyzer query classification | BERT F1 99.98 | Simple classifier is highly reliable |
+| w/o Numerical Extraction | Qwen3 30B Valid Completion Rate -33.08% | Standardized output is vital for evaluation |
 
 ### Key Findings
 
-- TimeFore outperforms Vanilla across five LLMs, proving that direct LLM forecasting is a poor baseline and forecasting should be delegated to specialized models.
-- TimeXer is the selected forecasting backbone with 0.1209 MRE, significantly lower than Qwen3 30B (0.1706) and GLM 4.5 Air (0.1869).
-- The system bottleneck is not table retrieval or SQL, but future data forecasting; this is crucial for the design of future methods on ODTQA-FoRe.
+- TimeFore outperforms Vanilla across all five LLMs, proving "direct LLM forecasting" is a poor baseline and specialized models are necessary.
+- TimeXer is the superior forecasting backbone, with an MRE of 0.1209 compared to Qwen3 30B's 0.1706.
+- System performance is gated by future data forecasting rather than table retrieval or SQL generation.
 
 ## Highlights & Insights
 
-- The task definition is practical: users ask "what will happens in the future," not just "what is in the database." Merging ODTQA and forecasting is a natural yet previously missing benchmark direction.
-- TimeFore's division of labor aligns with engineering intuition: LLMs for language understanding and tool orchestration, time-series models for numerical forecasting, and BERT for classification. This is more reliable than a monolithic LLM approach.
-- The ablation study is highly diagnostic. Rather than reporting only end-to-end scores, the authors use golden components to isolate error sources, clearly identifying forecasting as the primary bottleneck.
-- Using future SQL to generate labels ensures objective, unique answers, which is critical for future-oriented evaluation to avoid subjective text matching.
+- The task definition bridges a practical gap: users ask "What will happen?" not just "What is in the DB?" merging ODTQA and forecasting is a natural evolution for benchmarks.
+- TimeFore's division of labor follows engineering intuition: LLMs for language and orchestration, specialized models for numerical tasks.
+- The ablation study is diagnostic, using "golden" history and future labels to pinpoint forecasting as the primary performance bottleneck.
+- Using future SQL for label generation ensures objective, unique answers, which is crucial for future-oriented questions.
 
 ## Limitations & Future Work
 
-- **Lack of External Factors**: Current forecasting only uses historical price sequences, omitting exogenous variables like macroeconomics, policy, or regional supply-demand.
-- **Single Domain**: The dataset only covers real estate. TimeFore is claimed to be domain-agnostic but needs validation in finance, retail, and climate domains.
-- **Template Generation Limits**: While LLM rewriting improves naturalness, the 26 templates may not cover all complex user variations.
-- **Backbone Generalization**: TimeXer is optimal for this dataset, but its suitability for cross-domain or highly non-stationary scenarios remains to be tested.
-- **End-to-End Optimization**: The current pipeline is modular; future work could explore uncertainty estimates shared among Retriever, Forecaster, and Analyzer to output confidence intervals.
+- **Exogenous Variables**: Current forecasting uses price history only, ignoring macroeconomics, policy, and demand-supply factors.
+- **Single Domain**: Dataset is limited to real estate; domain-agnostic claims require validation in finance or retail.
+- **Template Constraints**: 26 templates may not cover all complex real-world user queries.
+- **Forecasting Generalization**: TimeXer was optimal here, but its performance in non-stationary or high-frequency scenarios requires more study.
+- **End-to-End Optimization**: Future work could involve sharing uncertainty estimations between modules to output confidence intervals.
 
 ## Related Work & Insights
 
-- **vs WikiTableQuestions / Spider**: Focus on given tables or SQL generation without open-domain future forecasting.
-- **vs Open-WikiTable / NQ-TABLES / RETQA**: Advance open-domain retrieval and historical QA, while ODTQA-FoRe explicitly introduces 2024 future ground truth.
-- **vs LLMTIME / TP-BERTa**: Focus on LLMs for time-series forecasting but lack integration with open-domain retrieval and SQL-based QA.
-- **Insight**: Future agent benchmarks should evaluate the combination of "retrieval-tool use-numerical modeling-language answering" rather than just single-step text-to-SQL or forecasting.
+- **vs WikiTableQuestions / Spider**: These lack open-domain future forecasting.
+- **vs Open-WikiTable / RETQA**: These focus on historical/static information.
+- **vs LLMTIME / TP-BERTa**: These focus on LLM forecasting but lack integration with open-domain retrieval and SQL.
+- **Insight**: Future agent benchmarks should evaluate the "chain" of retrieval, tool usage, numerical modeling, and linguistic synthesis.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐☆ Novel task combination and clear dataset positioning; TimeFore is a reasonable modular framework.
-- Experimental Thoroughness: ⭐⭐⭐⭐☆ Comprehensive main results, model comparisons, and ablations; lacks cross-domain validation.
-- Writing Quality: ⭐⭐⭐⭐☆ Clear pipeline and data construction; template details are mostly in the appendix.
-- Value: ⭐⭐⭐⭐⭐ High benchmark value for combining open-domain QA, LLM agents, and time-series forecasting.
+- Novelty: ⭐⭐⭐⭐☆ Novel task combination; TimeFore is a logical modular assembly.
+- Experimental Thoroughness: ⭐⭐⭐⭐☆ Comprehensive main experiments and ablations, though multi-domain validation is missing.
+- Writing Quality: ⭐⭐⭐⭐☆ Clear pipeline and data construction descriptions.
+- Value: ⭐⭐⭐⭐⭐ High benchmark value for the intersection of open-domain QA, LLM agents, and time-series forecasting.
 
 <!-- RELATED:START -->
 
@@ -186,10 +184,10 @@ LLM baselines use in-context learning with temperature 0.8. Inference is perform
 ## Related Papers
 
 - [\[ICML 2026\] PATRA: Pattern-Aware Alignment and Balanced Reasoning for Time Series Question Answering](../../ICML2026/time_series/patra_pattern-aware_alignment_and_balanced_reasoning_for_time_series_question_an.md)
+- [\[ACL 2026\] TSAQA: Time Series Analysis Question And Answering Benchmark](tsaqa_time_series_analysis_question_and_answering_benchmark.md)
 - [\[ACL 2025\] Time-MQA: Time Series Multi-Task Question Answering with Context Enhancement](../../ACL2025/time_series/time-mqa_time_series_multi-task_question_answering_with_context_enhancement.md)
 - [\[AAAI 2026\] Harmonic Dataset Distillation for Time Series Forecasting](../../AAAI2026/time_series/harmonic_dataset_distillation_for_time_series_forecasting.md)
 - [\[ICLR 2026\] Adapt Data to Model: Adaptive Transformation Optimization for Domain-shared Time Series Foundation Models](../../ICLR2026/time_series/adapt_data_to_model_adaptive_transformation_optimization_for_domain-shared_time_.md)
-- [\[AAAI 2026\] Detecting the Future: All-at-Once Event Sequence Forecasting with Horizon Matching](../../AAAI2026/time_series/detecting_the_future_all-at-once_event_sequence_forecasting_with_horizon_matchin.md)
 
 </div>
 

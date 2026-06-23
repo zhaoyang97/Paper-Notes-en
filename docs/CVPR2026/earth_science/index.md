@@ -19,7 +19,7 @@ item_total: 1
 
 **📷 CVPR2026** · **1** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (1)](../../ICML2026/earth_science/index.md) · [🤖 AAAI2026 (2)](../../AAAI2026/earth_science/index.md) · [🧠 NeurIPS2025 (6)](../../NeurIPS2025/earth_science/index.md)
+📌 **Same area in other venues:** [🔬 ICLR2026 (7)](../../ICLR2026/earth_science/index.md) · [🧪 ICML2026 (2)](../../ICML2026/earth_science/index.md) · [🤖 AAAI2026 (2)](../../AAAI2026/earth_science/index.md) · [🧠 NeurIPS2025 (6)](../../NeurIPS2025/earth_science/index.md)
 
 **[SIGMA: A Physics-Based Benchmark for Gas Chimney Understanding in Seismic Images](sigma_a_physics-based_benchmark_for_gas_chimney_understanding_in_seismic_images.md)**
 

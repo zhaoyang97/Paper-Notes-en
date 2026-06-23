@@ -19,7 +19,7 @@ item_total: 1
 
 **📹 ICCV2025** · **1** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (8)](../../CVPR2026/llm_efficiency/index.md) · [🧪 ICML2026 (32)](../../ICML2026/llm_efficiency/index.md) · [💬 ACL2026 (22)](../../ACL2026/llm_efficiency/index.md) · [🔬 ICLR2026 (20)](../../ICLR2026/llm_efficiency/index.md) · [🤖 AAAI2026 (9)](../../AAAI2026/llm_efficiency/index.md) · [🧠 NeurIPS2025 (34)](../../NeurIPS2025/llm_efficiency/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (8)](../../CVPR2026/llm_efficiency/index.md) · [🔬 ICLR2026 (171)](../../ICLR2026/llm_efficiency/index.md) · [💬 ACL2026 (23)](../../ACL2026/llm_efficiency/index.md) · [🧪 ICML2026 (48)](../../ICML2026/llm_efficiency/index.md) · [🤖 AAAI2026 (9)](../../AAAI2026/llm_efficiency/index.md) · [🧠 NeurIPS2025 (34)](../../NeurIPS2025/llm_efficiency/index.md)
 
 **[MixANT: Observation-dependent Memory Propagation for Stochastic Dense Action Anticipation](mixant_observation-dependent_memory_propagation_for_stochastic_dense_action_anti.md)**
 

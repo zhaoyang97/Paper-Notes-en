@@ -2,12 +2,12 @@
 title: >-
   [Paper Note] When Personalization Tricks Detectors: The Feature-Inversion Trap in Machine-Generated Text Detection
 description: >-
-  [ACL 2026][AIGC Detection][Paper Note] This paper reveals the "feature-inversion trap" of MGT detectors in personalized scenarios—features that distinguish human-written text (HWT) from machine-generated text (MGT) in general domains undergo inversion in personalized domains, causing detector performance to crash or even flip. The authors propose the StyloC
+  [ACL 2026][AIGC Detection][Paper Note] This work reveals the "Feature-Inversion Trap" of MGT detectors in personalized scenarios—where features distinguishing human-written text (HWT) and machine-generated text (MGT) in general domains invert in personalized domains, causing detector performance to collapse or even flip. The authors propose the StyloCheck f
 tags:
   - ACL 2026
   - AIGC Detection
 date: 2026-05-08
-content_hash: ad61fce1606668e1
+content_hash: 5ffbe7cab4cb06e6
 ---
 # When Personalization Tricks Detectors: The Feature-Inversion Trap in Machine-Generated Text Detection
 
@@ -19,65 +19,65 @@ content_hash: ad61fce1606668e1
 
 ## TL;DR
 
-This paper reveals the "feature-inversion trap" of MGT detectors in personalized scenarios—features that distinguish human-written text (HWT) from machine-generated text (MGT) in general domains undergo inversion in personalized domains, causing detector performance to crash or even flip. The authors propose the StyloCheck framework to predict cross-domain performance changes by quantifying detector reliance on inverted features, achieving a prediction correlation of over 0.85.
+This work reveals the "Feature-Inversion Trap" of MGT detectors in personalized scenarios—where features distinguishing human-written text (HWT) and machine-generated text (MGT) in general domains invert in personalized domains, causing detector performance to collapse or even flip. The authors propose the StyloCheck framework to predict cross-domain performance changes by quantifying the detector's reliance on inverted features, achieving a prediction correlation of over 0.85.
 
 ## Background & Motivation
 
-**Background**: Large Language Models (LLMs) are increasingly proficient at mimicking individual writing styles, making personalized text generation (e.g., style mimicry, ghostwriting) a realistic threat. Existing MGT detection methods perform well in general scenarios (e.g., News, Wikipedia), achieving AUROC scores of 85%+.
+**Background**: Large Language Models (LLMs) are increasingly proficient at mimicking individual writing styles. Personalized text generation (e.g., style imitation, ghostwriting) has become a realistic threat. Existing MGT detection methods perform well in general scenarios (e.g., News, Wikipedia), with AUROC reaching 85%+.
 
-**Limitations of Prior Work**: No systematic study has examined MGT detector performance in personalized scenarios. The authors constructed StyloBench, the first personalized MGT detection benchmark, and discovered that the performance of existing detectors drops sharply on personalized text, sometimes even reversing. For instance, Fast-DetectGPT achieves 98.78% AUROC in general domains but drops to 8.71% on personalized literary style mimicry, indicating a near-total inversion.
+**Limitations of Prior Work**: No systematic study has examined how MGT detectors perform in personalized scenarios. The authors constructed StyloBench, the first personalized MGT detection benchmark, and found that existing detectors experience sharp performance degradation or even inversion on personalized text. For example, Fast-DetectGPT drops from 98.78% AUROC in the general domain to 8.71% in personalized literary style imitation, a near-complete inversion.
 
-**Key Challenge**: The discriminative features relied upon by detectors (such as text diversity—under the assumption that human writing is more diverse than machine writing) fail in personalized scenarios. Personalized MGT may actually be more diverse and less coherent than the original human-written text, causing the feature direction to flip.
+**Key Challenge**: Discriminative features relied upon by detectors (e.g., text diversity—the assumption that HWT is more diverse than MGT) fail in personalized contexts. Personalized MGT may actually be more diverse or less coherent than the original HWT, causing feature directions to flip.
 
-**Goal**: (1) Construct a personalized MGT detection benchmark; (2) explain the mechanism behind detector performance degradation; (3) propose a diagnostic tool to predict cross-domain transfer performance.
+**Goal**: (1) Construct a personalized MGT detection benchmark; (2) Explain the mechanism of detector performance degradation; (3) Propose a diagnostic tool to predict the cross-domain transfer performance of detectors.
 
-**Key Insight**: By training domain classifiers, the authors found that domain feature values for MGT are slightly lower than for HWT in general domains, but this relationship reverses in personalized domains—suggesting a systematic inversion of a feature direction across domains.
+**Key Insight**: By training domain classifiers, the authors found that domain feature values for MGT are slightly lower than HWT in the general domain, but this relationship inverts in personalized domains. This suggests the existence of a feature direction that systematically inverts across domains.
 
-**Core Idea**: The feature inversion problem is formalized as a Rayleigh quotient optimization problem to extract the direction of maximum inversion, serving as the basis for the StyloCheck diagnostic framework.
+**Core Idea**: Formalize the feature inversion problem as a Rayleigh Quotient optimization problem to extract the direction of maximum inversion, and build the diagnostic framework StyloCheck based on this.
 
 ## Method
 
 ### Overall Architecture
 
-The method consists of three parts: (1) StyloBench benchmark construction—including two sub-scenarios: literary work mimicry (via CPT fine-tuning of LLMs) and blog style mimicry (via few-shot prompting); (2) theoretical analysis of the feature-inversion trap—using the Rayleigh quotient to identify inverted feature directions and verifying their correlation with detector performance; (3) StyloCheck diagnostic framework—generating a probe dataset through token shuffling that preserves only the inverted features to evaluate detector reliance on them. While StyloBench provides the data foundation, the core contributions are the subsequent steps (finding inversion direction → creating probe sets → predicting transfer).
+The method consists of three parts: (1) StyloBench benchmark construction—including two sub-scenarios: literary work imitation (via CPT-tuned LLMs) and blog style imitation (via few-shot prompting); (2) Theoretical analysis of the Feature-Inversion Trap—identifying the inverted feature direction via Rayleigh Quotient and verifying its correlation with detector performance; (3) StyloCheck diagnostic framework—generating a probing dataset through token shuffling to retain only inverted features and evaluating the detector's dependency on them. StyloBench serves as the data foundation, while the subsequent three steps (finding inversion direction → creating probing sets → predicting transfer) constitute the core contributions.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    A["StyloBench Benchmark<br/>Literary Mimicry (CPT) + Blog Mimicry (few-shot)"]
+    A["StyloBench Benchmark<br/>Literary Imitation(CPT) + Blog Imitation(few-shot)"]
     subgraph S1["Inverted Feature Direction Extraction (Rayleigh Quotient)"]
         direction TB
-        B["Extract GPT-2 Residual Streams:<br/>General Difference v_G, Personalized Difference v_S"] --> C["Construct Cross-Domain Matrix A<br/>Solve for Min Eigenvalue Direction w*"]
+        B["GPT-2 Residual Stream differences:<br/>General Domain v_G, Personalized Domain v_S"] --> C["Construct Cross-domain Matrix A<br/>Solve for Min Eigenvalue Direction w*"]
     end
     A --> S1
-    S1 --> E["StyloCheck Probe Dataset Construction<br/>Token Shuffling (Kendall τ) to Remove Semantics/Style<br/>Select Top/Bottom 50 Samples by Feature Value"]
-    E --> F["Cross-Domain Transfer Performance Prediction<br/>AUROC Readings of Detectors on Probe Set"]
-    F -->|"AUROC > 0.5: Positive Reliance → Performance Drop"| G["Predict Personalized Domain Performance Change"]
-    F -->|"AUROC < 0.5: Negative Reliance → Performance Gain"| G
-    F -->|"AUROC ≈ 0.5: No Reliance → Stability"| G
+    S1 --> E["StyloCheck Probing Dataset Construction<br/>Token shuffling (Kendall τ) removes semantics/style<br/>Select top/bottom 50 samples by feature value"]
+    E --> F["Cross-domain Transfer Performance Prediction<br/>Detector AUROC on probing set"]
+    F -->|"AUROC > 0.5 Positive Dependence → Drop"| G["Predict Personalized Domain Performance Change"]
+    F -->|"AUROC < 0.5 Inverse Dependence → Gain"| G
+    F -->|"AUROC ≈ 0.5 Independent → Stable"| G
 ```
 
 ### Key Designs
 
-**1. Inverted Feature Direction Extraction (Rayleigh Quotient Method): Converting intuitive observations of "feature inversion" into a solvable mathematical object.**
+**1. Inverted Feature Direction Extraction (Rayleigh Quotient Method): Converting intuitive observations of feature inversion into a solvable mathematical object.**
 
-The authors aim to find the feature direction where the HWT/MGT difference reverses most drastically between general and personalized domains. Using the deep residual streams of GPT-2 as the representation space, they calculate difference vectors $v_G$ and $v_S$ (MGT minus HWT) for the general and personalized domains, respectively. They then construct the cross-domain matrix $A = \sum_i \frac{1}{2}(v_G v_S^\top + v_S v_G^\top)$ and solve $\min_{\|\mathbf{w}\|=1} \mathbf{w}^\top A \mathbf{w}$. The eigenvector $\mathbf{w}^*$ corresponding to the minimum eigenvalue represents the direction of strongest inversion. Projecting text onto this direction shows that while MGT feature values are significantly higher than HWT in the general domain, the relationship is completely flipped in the personalized domain. The Rayleigh quotient provides a closed-form solution and ensures a globally optimal inversion direction, upgrading an intuitive observation into a quantifiable structural quantity.
+The authors aim to find the feature direction where the HWT/MGT difference inverts most sharply between general and personalized domains. Using the deep residual stream of GPT-2 as the text representation space, they calculate the difference vectors $v_G$ and $v_S$ (MGT minus HWT) for general and personalized domains, respectively. They then construct the cross-domain matrix $A = \sum_i \frac{1}{2}(v_G v_S^\top + v_S v_G^\top)$ and solve $\min_{\|\mathbf{w}\|=1} \mathbf{w}^\top A \mathbf{w}$. The eigenvector $\mathbf{w}^*$ corresponding to the minimum eigenvalue represents the direction of strongest inversion. Projecting text onto this direction shows MGT feature values are significantly higher than HWT in the general domain, but completely reversed in the personalized domain. The Rayleigh Quotient provides a closed-form solution and guarantees a global optimal inversion direction, upgrading empirical observation into a quantifiable structural quantity.
 
-**2. StyloCheck Probe Dataset Construction: Creating samples that differ only in inverted features while stripping away all other information.**
+**2. StyloCheck Probing Dataset Construction: Creating samples that differ only in inverted features while stripping away all other information.**
 
-To accurately measure how much a detector relies on inverted features, semantics, style, and label confounders must be removed. The authors perform token shuffling of varying intensities (controlled by Kendall $\tau$) on the text. Shuffling destroys semantic and stylistic information but preserves inverted feature values. From these shuffled variants, they select 50 samples with the highest feature values as positive samples and 50 with the lowest as negative samples. Validation show that both domain and MGT classifiers perform near chance on this probe set, proving that confounders are removed—leaving only the inverted features themselves to be distinguished.
+To accurately measure a detector's dependence on inverted features, confounding factors like semantics, style, and category must be removed. The authors apply token shuffling of varying intensities (controlled by Kendall $\tau$) to the text. Shuffling destroys semantics and style while preserving inverted feature values. They then select the 50 variants with the highest feature values as positive samples and the 50 lowest as negative samples. Verification shows that domain and MGT classifiers perform near chance on this probing set, proving that confounders are successfully removed—leaving only the inverted features.
 
-**3. Cross-Domain Transfer Performance Prediction: Using a "check-up report" to anticipate detector failure in personalized domains.**
+**3. Cross-domain Transfer Performance Prediction: Using a "physical exam report" to predict if a detector will fail in personalized domains.**
 
-With the inverted-feature-only probe set, the AUROC of a detector on this set serves as a "reliance reading" for inverted features. This predicts performance changes when migrating from general to personalized domains: AUROC > 0.5 indicates positive reliance (performance will drop); AUROC < 0.5 indicates negative reliance (performance might actually increase, which explains why the Entropy detector improves in personalized domains); and AUROC ≈ 0.5 indicates no reliance (stable performance). In experiments, the Pearson correlation between StyloCheck predictions and actual cross-domain performance gaps exceeded 0.7 in 78% of settings. The practical value is that risk can be assessed using only shuffled probe sets without requiring large-scale target domain data collection.
+With a probing set containing only inverted features, the detector's AUROC on this set serves as a "dependency reading" for inverted features. This predicts performance changes when migrating from general to personalized domains: AUROC > 0.5 indicates positive dependence (performance will drop); AUROC < 0.5 indicates inverse dependence (performance may gain, explaining why the Entropy detector improves in personalized domains); AUROC ≈ 0.5 indicates independence (performance remains stable). Experiments show that StyloCheck's predictions have a Pearson correlation exceeding 0.7 with actual cross-domain performance gaps in 78% of settings. The practical value is that risks can be predicted using only shuffled token probing sets without collecting large target-domain datasets before deployment.
 
 ### Loss & Training
 
-StyloCheck is a diagnostic framework rather than a training method. The inverted feature direction is solved via eigenvalue decomposition and does not require training.
+The core StyloCheck method is a diagnostic framework rather than a training method. The inverted feature direction is solved via eigenvalue decomposition and does not require training.
 
 ## Key Experimental Results
 
-### Main Results (Cross-Domain Detector Performance)
+### Main Results (Detector Cross-domain Performance)
 
 | Detector | M4 (General) Avg AUROC | Stylo-Blog Avg | Stylo-Literary Avg |
 |--------|-------------------|---------------|-------------------|
@@ -89,42 +89,42 @@ StyloCheck is a diagnostic framework rather than a training method. The inverted
 
 ### Ablation Study (Reliability of StyloCheck Predictions)
 
-| Number of Probe Datasets | Percentage with Pearson r > 0.5 | Percentage with Pearson r > 0.7 |
+| Number of Probing Datasets | Pearson r > 0.5 Proportion | Pearson r > 0.7 Proportion |
 |--------------|---------------------|---------------------|
 | 5 | 90% | 78% |
 | Increased Number | Higher | Higher |
 
 ### Key Findings
-- Deeper personalization (CPT vs. few-shot) leads to more severe performance degradation—Stylo-Literary (CPT) shows sharper drops than Stylo-Blog (few-shot).
-- The Entropy detector is the only method that improves in personalized domains (AUROC rising from ~35% to ~76%) because its reliance on inverted features is opposite to that of other detectors.
-- The inverted feature direction is highly consistent across different datasets (mean cosine similarity of 0.547), indicating a cross-domain structural phenomenon rather than an artifact of specific datasets.
+- Deeper personalization (CPT vs. few-shot) leads to more severe performance degradation—Stylo-Literary (CPT-trained) shows sharper drops than Stylo-Blog (few-shot).
+- The Entropy detector is the only method that improves in personalized domains (AUROC rising from ~35% to ~76%) because its dependence direction on inverted features is opposite to other detectors.
+- The inverted feature direction is highly consistent across datasets (mean cosine similarity 0.547), indicating a structural cross-domain phenomenon rather than a dataset-specific fluke.
 - Inverted features correlate with "text diversity"—personalized MGT breaks the traditional assumption that "HWT is more diverse than MGT."
 
 ## Highlights & Insights
 
-- **Transforming practical problems into elegant math**: The feature inversion phenomenon is precisely formulated as a Rayleigh quotient problem with a closed-form solution and high interpretability.
-- **The "check-up" approach of StyloCheck is highly practical**: It predicts detector performance in target domains using only shuffled probe sets, significantly reducing the cost of cross-domain risk assessment.
+- **Translating practical problems into elegant mathematical forms**: The feature inversion phenomenon is precisely formulated as a Rayleigh Quotient problem with a closed-form solution. This path from phenomenon to theory is exemplary.
+- **Practical value of the StyloCheck "diagnostic" approach**: By using shuffled token probing sets instead of massive target-domain data, cross-domain performance can be predicted with extremely low deployment costs.
 - **Counter-intuitive discovery**: Personalized MGT is more "diverse" than the original HWT, overturning the fundamental assumption in MGT detection that machine text is more monotonous.
 
 ## Limitations & Future Work
 
-- Restricted to English; stylistic feature distributions may vary across different languages.
-- StyloBench includes only 7 authors and 4 blog generators, representing a limited scale.
-- StyloCheck only predicts changes based on inverted features; it cannot capture degradation caused by other factors.
-- No fundamental mitigation is proposed—how to train detectors that do not rely on inverted features remains an open question.
+- Focused solely on English; stylistic feature distributions may vary across languages.
+- StyloBench includes only 7 authors and 4 blog generators, which is relatively small in scale.
+- StyloCheck only predicts changes based on inverted features and may not capture degradation caused by other factors.
+- No fundamental mitigation was proposed—how to train detectors that do not rely on inverted features remains an open question.
 
 ## Related Work & Insights
 
-- **vs. General Benchmarks (RAID, M4)**: These benchmarks focus on general domain MGT detection and neglect personalized scenarios. StyloBench fills this gap and reveals structural weaknesses in general detectors.
-- **vs. Fast-DetectGPT**: One of the strongest detectors in general domains, yet its AUROC drops to 8.71% in personalized literary mimicry, showing that high general performance does not guarantee robustness.
-- **vs. Training-based Detectors**: While in-domain fine-tuning can restore performance, cross-domain generalization remains limited.
+- **vs. RAID / M4**: These focus on general domain MGT detection without considering personalization; StyloBench fills this gap and reveals structural weaknesses in general detectors.
+- **vs. Fast-DetectGPT**: One of the strongest general domain detectors, yet its AUROC drops to 8.71% in personalized literary imitation, proving that high general performance does not guarantee robustness.
+- **vs. Training-based detectors**: Performance can be recovered after in-domain fine-tuning, but cross-domain generalization remains limited.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ First to reveal the feature-inversion trap with mathematical characterization; the StyloCheck framework is highly original.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Tested 7 detectors and 11 generators across multiple domains, though dataset scale could be larger.
-- Writing Quality: ⭐⭐⭐⭐ Clear logic from phenomenon to theory to application, though heavy notation requires careful reading.
-- Value: ⭐⭐⭐⭐⭐ Highly significant for the MGT detection field; StyloCheck has immediate practical utility.
+- Novelty: ⭐⭐⭐⭐⭐ First to reveal the Feature-Inversion Trap with mathematical characterization and the novel StyloCheck framework.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Included 7 detectors, 11 generators, and multi-domain testing, though dataset scale could be larger.
+- Writing Quality: ⭐⭐⭐⭐ Clear logic from phenomenon to theory to application, though notation-heavy sections require careful reading.
+- Value: ⭐⭐⭐⭐⭐ Significant cautionary implications for the MGT detection field; StyloCheck has direct practical utility.
 
 <!-- RELATED:START -->
 
@@ -132,8 +132,8 @@ StyloCheck is a diagnostic framework rather than a training method. The inverted
 
 ## Related Papers
 
-- [\[ACL 2026\] ExaGPT: Example-Based Machine-Generated Text Detection for Human Interpretability](exagpt_example-based_machine-generated_text_detection_for_human_interpretability.md)
 - [\[ACL 2026\] MASH: Evading Black-Box AI-Generated Text Detectors via Style Humanization](mash_evading_black-box_ai-generated_text_detectors_via_style_humanization.md)
+- [\[ACL 2026\] ExaGPT: Example-Based Machine-Generated Text Detection for Human Interpretability](exagpt_example-based_machine-generated_text_detection_for_human_interpretability.md)
 - [\[ICML 2026\] Feature-Augmented Transformers for Robust AI-Text Detection Across Domains and Generators](../../ICML2026/aigc_detection/feature-augmented_transformers_for_robust_ai-text_detection_across_domains_and_g.md)
 - [\[ACL 2025\] Iron Sharpens Iron: Defending Against Attacks in Machine-Generated Text Detection with Adversarial Training](../../ACL2025/aigc_detection/greater_adversarial_mgt_detection.md)
 - [\[NeurIPS 2025\] DuoLens: A Framework for Robust Detection of Machine-Generated Multilingual Text and Code](../../NeurIPS2025/aigc_detection/duolens_a_framework_for_robust_detection_of_machine-generated_multilingual_text_.md)

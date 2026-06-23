@@ -2,13 +2,13 @@
 title: >-
   [Paper Note] Query Pipeline Optimization for Cancer Patient Question Answering Systems
 description: >-
-  [ACL 2026][Medical NLP][Segmentation] This paper proposes CoMeta, a three-layer controllable metadata-aware RAG framework for Cancer Patient Question Answering (CPQA). By utilizing Clinical Hybrid Semantic-Symbolic Document Retrieval (CHSDR), it fuses E-Utilities real-time Boolean search with MedCPT semantic retrieval. Combined with Semantic-Enhanced Overl
+  [ACL 2026][Medical NLP][Segmentation] This paper proposes CoMeta, a three-layer controllable metadata-aware RAG framework for Cancer Patient Question Answering (CPQA). By integrating Clinical Hybrid Semantic-Symbolic Document Retrieval (CHSDR)—which fuses E-Utilities real-time Boolean search with MedCPT semantic retrieval—and Semantic-Enhanced Overlapping
 tags:
   - ACL 2026
   - Medical NLP
   - Segmentation
 date: 2026-05-08
-content_hash: f850db7c5ca5aa7e
+content_hash: 61f1f5eed5ed6354
 ---
 # Query Pipeline Optimization for Cancer Patient Question Answering Systems
 
@@ -16,23 +16,23 @@ content_hash: f850db7c5ca5aa7e
 **arXiv**: [2412.14751](https://arxiv.org/abs/2412.14751)  
 **Code**: None  
 **Area**: Medical NLP  
-**Keywords**: Cancer QA, RAG Query Pipeline, Hybrid Retrieval, Semantic Segmentation, Metadata-Aware
+**Keywords**: Cancer Question Answering, RAG Query Pipeline, Hybrid Retrieval, Semantic Segmentation, Metadata-Aware
 
 ## TL;DR
 
-This paper proposes CoMeta, a three-layer controllable metadata-aware RAG framework for Cancer Patient Question Answering (CPQA). By utilizing Clinical Hybrid Semantic-Symbolic Document Retrieval (CHSDR), it fuses E-Utilities real-time Boolean search with MedCPT semantic retrieval. Combined with Semantic-Enhanced Overlapping Segmentation (SEOS) to prevent context fragmentation, the framework improves the accuracy of Claude-3-Haiku by 5.24% (vs. CoT) and approximately 3% (vs. naive RAG) on the CMMQA dataset.
+This paper proposes CoMeta, a three-layer controllable metadata-aware RAG framework for Cancer Patient Question Answering (CPQA). By integrating Clinical Hybrid Semantic-Symbolic Document Retrieval (CHSDR)—which fuses E-Utilities real-time Boolean search with MedCPT semantic retrieval—and Semantic-Enhanced Overlapping Segmentation (SEOS) to prevent context fragmentation, the framework improves Claude-3-Haiku's answer accuracy on the CMMQA dataset by 5.24% (vs. CoT) and approximately 3% (vs. naive RAG).
 
 ## Background & Motivation
 
-**Background**: LLMs demonstrate potential in medical question answering, but hallucination issues jeopardize patient safety. RAG mitigates hallucinations by anchoring outputs in external evidence. Existing medical RAG systems primarily adopt the dense retrieval paradigm, using domain-specific embedding models (e.g., MedCPT) for vector similarity search on offline indices. Advanced strategies like hybrid search, adaptive retrieval, and recursive search are essentially optimizations based on static indices.
+**Background**: LLMs demonstrate significant potential in medical QA, yet hallucination risks jeopardize patient safety. RAG mitigates hallucinations by anchoring outputs to external evidence. Current medical RAG systems primarily adopt dense retrieval paradigms, utilizing domain-specific embedding models (e.g., MedCPT) for vector similarity searches on offline indices. Advanced strategies like hybrid search, adaptive retrieval, and recursive search are essentially optimizations based on static indices.
 
-**Limitations of Prior Work**: (1) Recency-Semantic Dilemma: Standard query pipelines (Dense or BM25) operate on static, metadata-blind indices, risking the retrieval of outdated evidence; conversely, real-time metadata-aware interfaces like E-Utilities are semantically fragile to informal patient queries. (2) Retrieval Depth Paradox: Review articles require full-text retrieval to capture high-level therapeutic synthesis, while primary research often only requires abstract retrieval to avoid methodological noise—most pipelines apply a uniform retrieval depth for all article types. (3) Context Fragmentation: Prior encoder-agnostic segmentation (fixed-length or lexical-level) severs the association between clinical qualifiers (e.g., specific mutation criteria) and treatment claims, producing recommendations that appear evidence-supported but lack critical constraints.
+**Limitations of Prior Work**: (1) Staleness-Semantic Dilemma: Standard query pipelines (Dense or BM25) rely on static, metadata-blind indices, risking the retrieval of outdated evidence; conversely, real-time metadata-aware interfaces like E-Utilities are semantically fragile to informal patient queries. (2) Retrieval Depth Paradox: Review articles require full-text retrieval to capture high-level treatment syntheses, whereas original research often only necessitates abstract retrieval to avoid methodological noise—most pipelines apply a uniform retrieval depth across all article types. (3) Context Fragmentation: Prior encoder-agnostic segmentation (fixed-length or lexical-level) severs the association between clinical qualifiers (e.g., specific mutation criteria) and treatment claims, producing recommendations that appear evidence-backed but lack critical constraints.
 
-**Key Challenge**: Existing systems are forced to compromise between semantic robustness (static indexing) and retrieval controllability (real-time interfaces), failing to simultaneously meet the triple requirements of recency, metadata awareness, and semantic integrity for cancer QA.
+**Key Challenge**: Existing systems are forced to trade off between semantic robustness (static indices) and retrieval controllability (real-time interfaces), failing to simultaneously meet the triple requirements of timeliness, metadata awareness, and semantic integrity for cancer QA.
 
-**Goal**: Design a RAG framework specialized for CPQA that implements controllability across three dimensions: (1) robustness against the recency-semantic dilemma; (2) metadata-aware adaptive retrieval depth based on publication types; and (3) protection of clinical logic relational integrity using encoder-aware segmentation.
+**Goal**: Design a RAG framework specifically for CPQA that enforces controllability across three dimensions: (1) robustness against the staleness-semantic dilemma; (2) metadata-aware adaptive retrieval depth based on publication type; and (3) relational integrity protection of clinical logic using encoder-aware segmentation.
 
-**Key Insight**: Rather than further optimizing static index pipelines, this work integrates E-Utilities as a real-time, metadata-aware sparse backend into the RAG system—a design that is orthogonal and complementary to previous RAG optimizations.
+**Key Insight**: Rather than further optimizing static index pipelines, integrate E-Utilities as a real-time, metadata-aware sparse backend into the RAG system—a design that is orthogonal and complementary to previous RAG optimizations.
 
 **Core Idea**: Construct an end-to-end controllable cancer QA pipeline by fusing E-Utilities real-time Boolean search with semantic retrieval to achieve "symbolic-semantic complementarity," combined with publication-type adaptive depth and encoder-aware semantic segmentation.
 
@@ -40,7 +40,7 @@ This paper proposes CoMeta, a three-layer controllable metadata-aware RAG framew
 
 ### Overall Architecture
 
-CoMeta adopts a layered query pipeline design, divided into document-level and passage-level stages. At the document level, CHSDR performs hybrid retrieval and parses metadata, diverting reviews and primary research into different retrieval depths. At the passage level, SEOS performs semantic-aware segmentation, followed by a two-stage refinement (embedding recall + reranking) before being fed to the LLM. Controllability is implemented at every step of the retrieval lifecycle.
+CoMeta employs a layered query pipeline design, divided into document-level and passage-level stages. At the document level, CHSDR performs hybrid retrieval and parses metadata to divert reviews and original research into different retrieval depths. At the passage level, SEOS performs semantic-aware segmentation, followed by a two-stage fine retrieval (embedding recall + reranking) before inputting to the LLM. The entire chain implements controllability at every step of the retrieval lifecycle.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
@@ -48,46 +48,55 @@ flowchart TD
     Q["Colloquial Patient Query"]
     subgraph CHSDR["Clinical Hybrid Semantic-Symbolic Document Retrieval (CHSDR)"]
         direction TB
-        A["Adapt-E Adaptive Boolean Execution<br/>LLM Rewriting + Strict-to-Relaxed"]
+        A["Adapt-E: Adaptive Boolean Execution<br/>LLM Rewriting + Strict-to-Loose Descent"]
         B["Hybrid Semantic-Symbolic Retrieval<br/>E-Utilities Symbolic + MedCPT Semantic, RRF Fusion"]
-        C["Metadata Parsing<br/>PubType D1/D2/D3, Publication Date"]
+        C["Metadata Parsing<br/>Pub Types D1/D2/D3, Date"]
         A --> B --> C
     end
     Q --> CHSDR
-    CHSDR --> D["PubType-Based Adaptive Retrieval Depth<br/>Full-text for Reviews / Abstract for Primary Research"]
-    D --> E["Semantic-Enhanced Overlapping Segmentation (SEOS)<br/>Clinical Qualifiers & Conclusion in Same Chunk"]
-    E --> F["Two-Stage Refinement<br/>Embedding Recall + Reranking"]
+    CHSDR --> D["Adaptive Retrieval Depth by Pub Type<br/>Full-text for Reviews / Abstract for Original Research"]
+    D --> E["Semantic-Enhanced Overlapping Segmentation (SEOS)<br/>Clinical Qualifiers and Conclusions Kept Together"]
+    E --> F["Two-Stage Fine Retrieval<br/>Embedding Recall + Reranking"]
     F --> G["LLM Generates Answer"]
 ```
 
 ### Key Designs
 
-**1. Clinical Hybrid Semantic-Symbolic Document Retrieval (CHSDR): Supplementing static index recency with real-time Boolean search controllability, and Boolean search fragility with semantic retrieval.**
+**1. Clinical Hybrid Semantic-Symbolic Document Retrieval (CHSDR): Supplementing Static Index Timeliness with Real-time Boolean Controllability and Mitigating Boolean Fragility with Semantic Retrieval**
 
-The recency-semantic dilemma represents a trade-off: standard Dense/BM25 pipelines rely on static, metadata-blind indices, risking the retrieval of obsolete evidence; meanwhile, real-time metadata interfaces like E-Utilities are fragile to informal patient colloquialisms. CHSDR integrates both. It first performs **Adaptive Boolean Execution (Adapt-E)**: an LLM rewriter handles error correction, normalization, intent analysis, clinical abstraction (mapping to PICO elements), and generation of Boolean expressions and temporal constraints. These are executed in decreasing order of strictness—strict Boolean → clinical abstraction → relaxed Boolean—until sufficient documents are retrieved, fundamentally addressing the "Zero-Hit" problem. It then performs **Hybrid Semantic-Symbolic Retrieval**: Reciprocal Rank Fusion (RRF) merges results from E-Utilities symbolic search and MedCPT semantic retrieval. Both paths return PMIDs as unified document keys, allowing one to compensate for the other's omissions. During retrieval, **Metadata Utilization** is performed: parsing publication types (D1: PubMed Abstract / D2: PMC Review Full-text / D3: Non-review PMC Paper), publication dates, and abstract availability from E-Utilities XML, setting the stage for adaptive depth.
+The staleness-semantic dilemma arises because standard Dense/BM25 pipelines are built on static, metadata-blind indices, risking outdated evidence retrieval; meanwhile, real-time metadata interfaces like E-Utilities are fragile to informal patient queries. CHSDR combines both. It first executes **Adaptive Boolean Execution (Adapt-E)**: an LLM rewriter performs error correction, normalization, intent analysis, clinical abstraction (mapping to PICO elements), and generates Boolean expressions with temporal constraints. These are executed in descending order of strictness—Strict Boolean → Clinical Abstraction → Loose Boolean—until sufficient documents are retrieved, fundamentally solving the "Zero-Hit" issue. Next, **Hybrid Semantic-Symbolic Retrieval** uses Reciprocal Rank Fusion (RRF) to merge results from E-Utilities symbolic search and MedCPT semantic retrieval. Both paths return PMIDs as unified document keys, allowing one to compensate for the other's omissions. Simultaneously, **Metadata Utilization** parses publication types (D1: PubMed Abstract / D2: PMC Review Full-text / D3: Non-review PMC Full-text), publication dates, and abstract availability from E-Utilities XML, creating hooks for subsequent adaptive depth.
 
-**2. PubType-Based Adaptive Retrieval Depth: Using full-text for reviews and abstracts for primary research to resolve the retrieval depth paradox.**
+**2. Publication-Type-Based Adaptive Retrieval Depth: Full-text for Reviews, Abstracts for Original Research to Resolve the Retrieval Depth Paradox**
 
-Review articles often require full-text content to capture high-level therapeutic synthesis across studies, whereas primary research often requires only the abstract, as full-text might introduce methodological noise. However, most pipelines apply the same retrieval depth to all article types. Leveraging the publication types (D1/D2/D3) parsed by CHSDR, CoMeta diversifies retrieval depth before passage retrieval. This diversion is calibrated by experimental data: the proportion of PMC review articles in Top-5 evidence increased ($0.10 \to 0.12$) more than other PMC papers ($0.28 \to 0.32$). Furthermore, including reviews (D1+D2) raised accuracy from 44.00% to 46.00%, while adding non-review full-text (D1+D2+D3) maintained accuracy but lowered Precision, Recall, and F1. Consequently, the system utilizes full-text for reviews and abstracts only for primary research to block noise without missing comprehensive evidence.
+Review articles need full-text to capture high-level synthesis across studies, while original research often only requires abstracts, as full-text might introduce methodological noise. However, most pipelines apply a single retrieval depth to all article types. Leveraging the publication types parsed by CHSDR (D1/D2/D3), CoMeta diverges depth before passage retrieval. This divergence is calibrated by experimental data: the increase in the proportion of PMC reviews in Top-5 evidence ($0.10 \to 0.12$) exceeds that of other PMC papers ($0.28 \to 0.32$). Furthermore, including reviews (D1+D2) raises accuracy from 44.00% to 46.00%, while adding non-review full-text (D1+D2+D3) maintains accuracy but lowers Precision/Recall/F1. Thus, reviews utilize full-text while original research uses abstracts, preventing noise while retaining comprehensive evidence.
 
-**3. Semantic-Enhanced Overlapping Segmentation (SEOS): Ensuring clinical qualifiers and their corresponding treatment conclusions are not separated during chunking.**
+**3. Semantic-Enhanced Overlapping Segmentation (SEOS): Preventing the Separation of Clinical Qualifiers and Treatment Conclusions**
 
-Once evidence enters the passage layer, prior encoder-agnostic segmentation (fixed-length or lexical-level) tends to split clinical qualifiers (e.g., "specific mutation criteria") and their constrained treatment claims into different chunks, leading to dangerous recommendations that seem evidence-supported but lack key constraints. Inspired by TextTiling, SEOS makes three critical modifications: (a) it replaces bag-of-words representations with domain-specific dense embeddings to handle medical terminology and discourse relations—TextTiling's lexical overlap fails in biomedical literature with high synonymy and complex semantic shifts; (b) it uses a target token budget to derive the optimal number of partitions $N$, selecting the Top-$N$ semantic local minima as split points rather than relying on fragile similarity thresholds; (c) it adaptively determines sentence overlap based on semantic continuity at split points, preserving unresolved semantic dependencies and explicitly storing adjacent chunk identifiers to allow for cross-segment context recovery. This design essentially incorporates the "interaction between chunk size and encoder performance" into the segmentation process rather than relying on a fixed window.
+Once evidence enters the passage layer, prior encoder-agnostic segmentation (fixed-length or lexical) often splits clinical qualifiers (like "specific mutation criteria") and their associated treatment claims into different blocks, producing dangerous recommendations that lack key constraints. Inspired by TextTiling, SEOS introduces three key modifications: (a) replaces Bag-of-Words with domain-specific dense embeddings to handle medical terminology and discourse relations—TextTiling's lexical overlap fails in biomedical literature with high synonymy and complex semantic shifts; (b) uses a target token budget to derive the optimal number of partitions $N$, selecting Top-$N$ semantic minima as breakpoints rather than relying on fragile similarity thresholds; (c) adaptively determines sentence overlap at breakpoints based on semantic continuity, preserving unresolved semantic dependencies and explicitly storing adjacent block identifiers to allow for context recovery. This design essentially considers the "interaction between chunk size and encoder performance" rather than employing a fixed window.
 
-### Key Experimental Results
+### Example Walkthrough: A Colloquial Cancer Query Pipeline
 
-**Main Results: CMMQA Overall Performance (Claude-3-Haiku)**
+Consider the query: "My mom has lung cancer with an EGFR mutation; is Osimertinib still effective?". A direct Boolean search via E-Utilities likely results in a Zero-Hit due to the narrative query's semantic looseness. Adapt-E first rewrites it into a canonical form, extracts PICO (P: EGFR-mutant NSCLC, I: Osimertinib), and generates a strict Boolean expression. If this yields insufficient results, it regresses to clinical abstraction and eventually loose Boolean search until enough PMIDs are retrieved. Simultaneously, MedCPT semantic retrieval runs in parallel, and RRF fuses both results, retrieving relevant reviews missed by the symbolic search. Metadata parsing identifies both PMC reviews (D2) and original research (D3) in the hits; consequently, reviews proceed as full-text while original research is restricted to abstracts for the passage layer. In SEOS segmentation, the "EGFR mutation" qualifier and "Osimertinib efficacy" conclusion are kept in the same block, ensuring critical constraints are preserved for the final two-stage retrieval (embedding + reranking) and LLM answer generation.
+
+### Loss & Training
+CoMeta is an inference-time framework and does not involve model training. Data-wise, CMMQA (520 cancer-related questions) was constructed from HealthSearchQA and MIRAGE benchmarks via MeSH term filtering. Llama-3-70B was used to rewrite questions into clinical narrative variants. Retrieval evaluation utilized PubMedQA and BioASQ with gold-standard citations, while passage retrieval was evaluated using synthetic QA pairs generated from PubMed abstracts, PMC full-texts, and medical textbooks.
+
+## Key Experimental Results
+
+### Main Results
+
+**CMMQA Overall Performance (Claude-3-Haiku)**
 
 | Method | MMLU | MedQA | MedMCQA | PMQA | BioASQ | Avg |
-|:---|:---:|:---:|:---:|:---:|:---:|:---:|
+|------|------|-------|---------|------|--------|-----|
 | LLM + CoT | 78.26 | 68.60 | 65.59 | 45.00 | 80.49 | 67.15 |
 | Naive RAG | 82.61 | 67.44 | 65.59 | 56.67 | 81.71 | 69.48 |
-| **Ours** (CoMeta) | 82.61 | **69.77** | **68.82** | **65.00** | 81.71 | **72.39** |
+| CoMeta | 82.61 | **69.77** | **68.82** | **65.00** | 81.71 | **72.39** |
 
 **CHSDR Ablation (Document Retrieval Performance)**
 
-| Method | BioASQ Hit@10 (Standard) | BioASQ Hit@10 (Narrative) | PubMedQA Hit@10 (Standard) | PubMedQA Hit@10 (Narrative) |
-|:---|:---:|:---:|:---:|:---:|
+| Method | BioASQ Hit@10 (Std) | BioASQ Hit@10 (Narr) | PubMedQA Hit@10 (Std) | PubMedQA Hit@10 (Narr) |
+|------|---------------------|---------------------|----------------------|----------------------|
 | E-utils | 52.44 | 1.22 | 41.67 | 0.00 |
 | Adapt-E | 65.85 | 50.00 | 48.33 | 8.33 |
 | MedCPT | 63.41 | 41.46 | 10.00 | 3.33 |
@@ -95,19 +104,19 @@ Once evidence enters the passage layer, prior encoder-agnostic segmentation (fix
 
 ### Ablation Study
 
-**SEOS vs. Fixed Segmentation Strategies (Passage Retrieval Accuracy %)**
+**SEOS vs. Fixed Splitting Strategies (Passage Retrieval Accuracy %)**
 
 | Segmentation Strategy | PubMedBERT | BM25 | MedCPT |
-|:---|:---:|:---:|:---:|
+|---------|-----------|------|--------|
 | 512 (Overlap 0) | 46 | 20 | 22 |
 | 512 (Overlap 32) | 52 | 18 | 24 |
 | 512 (Overlap 128) | 42 | 16 | 22 |
-| **Ours** (SEOS) | **54** | **36** | **38** |
+| SEOS (Ours) | **54** | **36** | **38** |
 
 **Zero-Hit Failure Rate Comparison**
 
-| Dataset-Setting | E-utils | Adapt-E (**Ours**) |
-|:---|:---:|:---:|
+| Dataset-Setting | E-utils | Adapt-E (Ours) |
+|-----------|---------|--------------|
 | PubMedQA – Standard | 22/60 | 0/60 |
 | PubMedQA – Narrative | 55/60 | 0/60 |
 | BioASQ – Standard | 18/82 | 0/82 |
@@ -115,38 +124,38 @@ Once evidence enters the passage layer, prior encoder-agnostic segmentation (fix
 
 ### Key Findings
 
-- CHSDR hybrid retrieval improved Hit@10 on BioASQ from E-utils' 52.44% to 80.49%, with semantic retrieval successfully recalling relevant documents missed by symbolic search.
-- Adapt-E's adaptive query execution reduced Zero-Hit failures in the PubMedQA narrative setting from 55/60 to 0/60, achieving a qualitative leap in retrieval robustness.
-- SEOS outperformed fixed segmentation strategies across all retrievers, with the most significant advantage seen in BM25 (20% → 36%), proving that semantic-aware segmentation is effective across different retrieval paradigms.
-- The retrieval value of PMC review articles is significantly higher than non-review PMC papers—adding reviews increased accuracy by 2%, whereas further adding non-review full-text decreased the F1 score.
-- The average 2.91% accuracy gain of CoMeta underestimates its actual contribution: it yielded an 8.33% improvement on PubMedQA where retrieval is the bottleneck, while the ceiling effect on saturated tasks like MMLU/BioASQ limited observable gains.
+- CHSDR's hybrid retrieval improved Hit@10 on BioASQ from 52.44% (E-utils) to 80.49%, with semantic retrieval successfully recalling documents missed by symbolic search.
+- Adapt-E's adaptive query execution reduced Zero-Hit failures from 55/60 (PubMedQA Narrative) to 0/60, achieving a qualitative leap in retrieval robustness.
+- SEOS outperformed fixed splitting strategies across all retrievers, with the most significant gain in BM25 (20% → 36%), indicating that semantic-aware segmentation benefits various retrieval paradigms.
+- The retrieval value of PMC reviews is significantly higher than non-review PMC papers—adding reviews increased accuracy by 2%, while further adding non-review full-text decreased F1.
+- CoMeta's average accuracy gain of 2.91% underestimates its actual contribution: it achieved an 8.33% improvement on PubMedQA where retrieval was the bottleneck, whereas ceiling effects on MMLU/BioASQ limited further gains.
 
 ## Highlights & Insights
 
-- Repositions E-Utilities from a traditional Boolean search tool to a real-time metadata-aware backend for RAG systems; this design paradigm is orthogonal and complementary to existing RAG optimizations.
-- The "Adaptive Query Execution" strategy (strict-to-relaxed) is a concise yet highly practical engineering innovation that thoroughly resolves the Zero-Hit problem.
-- The systematic analysis of "why average accuracy underestimates contribution" (ceiling effects, retrieval robustness blind spots, and evidence recency blind spots) demonstrates profound experimental insight.
+- Repositioning E-Utilities from a traditional Boolean search tool to a real-time metadata-aware backend for RAG systems is a design paradigm orthogonal and complementary to existing RAG optimizations.
+- The "Adaptive Query Execution" strategy (strict-to-loose descent) is a concise yet highly practical engineering innovation that thoroughly resolves the Zero-Hit problem.
+- Systematic analysis of "why average accuracy underestimates contribution" (ceiling effects, retrieval robustness blind spots, evidence timeliness blind spots) demonstrates profound experimental insight.
 
 ## Limitations & Future Work
 
-- Primarily validated in the cancer QA domain; while the authors argue this is a subset of general medical QA, generalization to other medical subfields requires further verification.
-- Lack of comparison with emerging high-level semantic segmentation strategies.
+- Validation was primarily conducted in the cancer QA domain; although the authors argue this is a subset of general medical QA, generalization to other medical subfields requires further verification.
+- Comparisons with emerging advanced semantic segmentation strategies are lacking.
 - Dataset size (520 questions) is relatively limited and may not capture the full diversity of clinical scenarios.
-- Dependency on the real-time availability of NCBI E-Utilities, which may be restricted in certain deployment environments.
-- Future directions include adaptive retrieval mechanisms (dynamically deciding whether and how to retrieve) and validation across a broader range of backbone models.
+- Dependence on the real-time availability of NCBI E-Utilities might be restricted in certain deployment environments.
+- Future directions include adaptive retrieval mechanisms (dynamically deciding whether and how to retrieve) and broader backbone model validation.
 
 ## Related Work & Insights
 
-- **vs. MedRAG / Self-BioRAG**: These systems optimize retrieval strategies on static indices. CoMeta introduces a real-time metadata-aware backend, providing an orthogonal design dimension.
-- **vs. Pure E-Utilities**: E-Utilities is semantically fragile to informal queries (55/60 Zero-Hit). CoMeta’s LLM rewriter and adaptive execution completely resolve this issue.
-- **vs. TextTiling**: TextTiling uses bag-of-words and fixed thresholds, which fail in the high-synonymy environment of biomedical literature. SEOS replaces these with dense embeddings and target budgets.
+- **vs. MedRAG/Self-BioRAG**: These systems optimize retrieval strategies on static indices; CoMeta introduces a real-time metadata-aware backend, providing an orthogonal design dimension.
+- **vs. Pure E-Utilities**: E-Utilities are semantically fragile to informal queries (55/60 Zero-Hit); CoMeta’s LLM rewriter and adaptive execution completely resolve this.
+- **vs. TextTiling**: TextTiling uses Bag-of-Words and fixed thresholds, which fail in the high-synonymy environment of biomedical literature; SEOS replaces these with dense embeddings and target budgets.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ Integrating E-Utilities as a RAG real-time backend is a novel design paradigm, and SEOS is a meaningful improvement to segmentation methods.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covers multiple medical QA datasets with detailed ablation and retriever-reranker combination analysis, though limited by dataset size.
-- Writing Quality: ⭐⭐⭐⭐ Problem definitions are clear (the three dilemmas) and analysis is deep, though some sections are slightly verbose.
-- Value: ⭐⭐⭐⭐ Provides a practical query pipeline optimization for medical RAG with direct reference value for clinical applications.
+- Novelty: ⭐⭐⭐⭐ Integrating E-Utilities as a real-time RAG backend is a novel design paradigm; SEOS is a meaningful improvement to segmentation methods.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers multiple medical QA datasets with detailed ablation and retriever-reranker combination analysis, though dataset size is limited.
+- Writing Quality: ⭐⭐⭐⭐ Clear problem definitions (the three dilemmas) and deep analysis, though some sections are slightly verbose.
+- Value: ⭐⭐⭐⭐ Provides practical query pipeline optimizations for medical RAG with direct reference value for clinical applications.
 
 <!-- RELATED:START -->
 
@@ -158,7 +167,7 @@ Once evidence enters the passage layer, prior encoder-agnostic segmentation (fix
 - [\[ACL 2025\] ArgHiTZ at ArchEHR-QA 2025: A Two-Step Divide and Conquer Approach to Patient Question Answering for Top Factuality](../../ACL2025/medical_nlp/arghitz_at_archehr-qa_2025_a_two-step_divide_and_conquer_approach_to_patient_que.md)
 - [\[AAAI 2026\] Expert-Guided Prompting and Retrieval-Augmented Generation for Emergency Medical Service Question Answering](../../AAAI2026/medical_nlp/expert-guided_prompting_and_retrieval-augmented_generation_for_emergency_medical.md)
 - [\[ACL 2025\] Follow-up Question Generation for Enhanced Patient-Provider Conversations](../../ACL2025/medical_nlp/follow-up_question_generation_for_enhanced_patient-provider_conversations.md)
-- [\[ACL 2025\] AfriMed-QA: A Pan-African, Multi-Specialty, Medical Question-Answering Benchmark Dataset](../../ACL2025/medical_nlp/afrimed_qa_pan_african.md)
+- [\[ICLR 2026\] MedAraBench: Large-scale Arabic Medical Question Answering Dataset and Benchmark](../../ICLR2026/medical_nlp/medarabench_large-scale_arabic_medical_question_answering_dataset_and_benchmark.md)
 
 </div>
 

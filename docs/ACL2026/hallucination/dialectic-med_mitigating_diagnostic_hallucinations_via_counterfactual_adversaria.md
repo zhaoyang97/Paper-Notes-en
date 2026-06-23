@@ -2,12 +2,12 @@
 title: >-
   [Paper Note] Dialectic-Med: Mitigating Diagnostic Hallucinations via Counterfactual Adversarial Multi-Agent Debate
 description: >-
-  [ACL 2026][Hallucination Detection][Paper Note] Proposes Dialectic-Med, a multi-agent medical diagnostic framework inspired by Popper’s falsificationism. Through adversarial dialectic reasoning among a Proposer (diagnostic hypothesis), an Opposer (Visual Falsification Module actively retrieving contradictory visual evidence), and a Mediator (weighted consensus graph
+  [ACL 2026][Hallucination Detection][Paper Note] Ours proposes Dialectic-Med, a multi-agent medical diagnostic framework inspired by Popper’s falsificationism. Through adversarial dialectical reasoning among a Proposer (diagnostic hypothesis), an Opponent (Visual Falsification Module actively retrieving contradictory evidence), and a Mediator (weighted consensus grap
 tags:
   - ACL 2026
   - Hallucination Detection
 date: 2026-05-08
-content_hash: e7d0c2dfafdad738
+content_hash: 83012fb49b57a66e
 ---
 # Dialectic-Med: Mitigating Diagnostic Hallucinations via Counterfactual Adversarial Multi-Agent Debate
 
@@ -15,68 +15,68 @@ content_hash: e7d0c2dfafdad738
 **arXiv**: [2604.11258](https://arxiv.org/abs/2604.11258)  
 **Code**: None  
 **Area**: Hallucination Detection  
-**Keywords**: Medical Hallucinations, Multi-Agent Debate, Counterfactual Reasoning, Visual Falsification, Confirmation Bias
+**Keywords**: Medical Hallucination, Multi-Agent Debate, Counterfactual Reasoning, Visual Falsification, Confirmation Bias
 
 ## TL;DR
-Proposes Dialectic-Med, a multi-agent medical diagnostic framework inspired by Popper’s falsificationism. Through adversarial dialectic reasoning among a Proposer (diagnostic hypothesis), an Opposer (Visual Falsification Module actively retrieving contradictory visual evidence), and a Mediator (weighted consensus graph decision), it achieves SOTA on MIMIC-CXR-VQA, VQA-RAD, and PathVQA, improving explanation faithfulness by 12.5% and significantly mitigating diagnostic hallucinations.
+Ours proposes Dialectic-Med, a multi-agent medical diagnostic framework inspired by Popper’s falsificationism. Through adversarial dialectical reasoning among a Proposer (diagnostic hypothesis), an Opponent (Visual Falsification Module actively retrieving contradictory evidence), and a Mediator (weighted consensus graph decision), it achieves SOTA on MIMIC-CXR-VQA, VQA-RAD, and PathVQA, improving explanation faithfulness by 12.5% and significantly mitigating diagnostic hallucinations.
 
 ## Background & Motivation
 
-**Background**: Multimodal LLMs are being integrated into high-stakes medical domains (radiology report generation, medical VQA), but they face severe diagnostic hallucination issues—models tend toward confirmation bias, generating fluent but factually incorrect diagnostic statements.
+**Background**: Multimodal LLMs are being integrated into high-stakes medical fields (radiology report generation, medical VQA), but they face severe diagnostic hallucination issues—models tend toward confirmation bias, generating fluent but factually incorrect diagnostic statements.
 
-**Limitations of Prior Work**: (1) LLMs often "lock" onto initial textual hypotheses and then "hallucinate" visual features to support these potentially erroneous conclusions, leading to error propagation; (2) CoT reasoning is inherently linear forward reasoning, lacking an intrinsic self-correction mechanism—it tends to seek evidence validating current steps rather than challenging them (the "Verificationism Trap"); (3) Most existing multi-agent systems rely on static consensus or text-only debates without being driven by visual evidence.
+**Limitations of Prior Work**: (1) LLMs often "lock onto" a preliminary textual hypothesis and then "hallucinate" visual features to support this potentially erroneous conclusion, leading to error propagation; (2) CoT reasoning is inherently linear forward reasoning, lacking intrinsic self-correction mechanisms—it tends to seek evidence verifying the current step rather than challenging it (the "verificationist trap"); (3) Existing multi-agent systems mostly rely on static consensus or text-only debate without being driven by visual evidence.
 
-**Key Challenge**: Robust diagnosis should not rely solely on finding supporting evidence but should withstand rigorous falsification attempts—yet existing methods lack a falsification mechanism.
+**Key Challenge**: A robust diagnosis should not only rely on finding supportive evidence but should also withstand rigorous falsification attempts—yet existing methods lack a falsification mechanism.
 
-**Goal**: Design a multi-agent framework that explicitly models the falsification process, forcing the system to break confirmation bias loops and ground reasoning firmly in adversarially scrutinized visual regions.
+**Goal**: Design a multi-agent framework that explicitly models the falsification process, forcing the system to break the cycle of confirmation bias and anchor reasoning firmly on adversarially scrutinized visual regions.
 
-**Key Insight**: Stemming from Popper's philosophy of science—falsificationism—a diagnosis should establish credibility by "trying to refute it and failing."
+**Key Insight**: Drawing from Popper's philosophy of science—falsificationism—a diagnosis establishes credibility by "attempting to refute it and failing."
 
-**Core Idea**: An adversarial dialectic loop among three specialized agents (Proposer for diagnosis + Opposer for visual falsification + Mediator for consensus). The key innovation lies in the Opposer's Visual Falsification Module—replacing semantic debate with the active retrieval of contradictory visual evidence.
+**Core Idea**: An adversarial dialectical loop featuring three specialized Agents (Proposer for diagnosis, Opponent for visual falsification, and Mediator for consensus). The key innovation lies in the Opponent's Visual Falsification Module—not a semantic debate, but proactive retrieval of contradictory visual evidence.
 
 ## Method
 
 ### Overall Architecture
 
-Dialectic-Med aims to resolve the most insidious failure mode in medical diagnosis: the model locking onto a hypothesis textually and then "hallucinating" non-existent image features to justify it. It transforms diagnosis into a refereed adversarial debate—the Proposer suggests a diagnostic hypothesis based on medical images; the Opposer, rather than engaging in semantic disputes, generates counterfactual probes to actively search for contradictory evidence in the image; the Mediator assesses the attack strength to decide if the Proposer must revise. Across iterations, all hypotheses, evidence, and their support/refutation relationships are recorded in a dynamic consensus graph until a hypothesis withstands all falsification attempts (consensus reached) or the maximum rounds are met.
+Dialectic-Med aims to resolve the most insidious failure mode in medical diagnosis: the model first locks onto a hypothesis in text, then "hallucinates" features not actually present in the image to justify itself. The solution is to turn diagnosis into a refereed adversarial debate. The Proposer offers a diagnostic hypothesis based on the medical image; the Opponent, instead of engaging in semantic arguments, generates counterfactual probes and returns to the image to actively search for contradictory evidence; the Mediator evaluates the strength of this attack and decides whether to force the Proposer to revise. Through iterations, all hypotheses, evidence, and their support/refutation relationships are recorded in a dynamic consensus graph until a hypothesis withstands all falsification attempts (consensus reached) or the maximum rounds are met.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    A["Medical Image + Question"] --> B["Proposer<br/>Propose Hypothesis H_t"]
+    A["Medical Image + Question"] --> B["Proposer<br/>Formulate Hypothesis H_t"]
     B --> C
     subgraph VFM["Visual Falsification Module (VFM)"]
         direction TB
-        C["Generate Counterfactual Probe Q_cf<br/>'What should be seen if NOT this disease'"] --> D["PubMedCLIP counts Probe × Patch Similarity<br/>to get Counterfactual Attention Map M_cf"]
-        D --> E["Locate Contradictory Evidence Regions R_k in Image"]
+        C["Generate Counterfactual Probe Q_cf<br/>'If not this disease, what should be seen?'"] --> D["PubMedCLIP: Probe × Image Patch Similarity<br/>Produce Counterfactual Map M_cf"]
+        D --> E["Locate actual contradictory evidence regions R_k"]
     end
-    E --> G["Dynamic Consensus Graph<br/>Log Hypothesis/Evidence Nodes + Support/Refute Edges + Cycle Detection"]
-    G --> H["Attack Strength Threshold Termination<br/>Mediator calculates S_attack vs θ_thresh"]
-    H -->|"S_attack still > θ: Hypothesis Refuted"| B
-    H -->|"S_attack < θ: Withstood Falsification"| I["Consensus Reached<br/>Output Final Diagnosis + Auditable Dialectic Trajectory"]
+    E --> G["Dynamic Consensus Graph<br/>Record H/E nodes + Support/Refute edges + Cycle detection"]
+    G --> H["Attack Intensity Threshold Termination<br/>Mediator calculates S_attack vs θ_thresh"]
+    H -->|"S_attack > θ: Hypothesis refuted"| B
+    H -->|"S_attack < θ: Falsification survived"| I["Consensus Achieved<br/>Output final diagnosis + Auditable dialectical trajectory"]
 ```
 
 ### Key Designs
 
-**1. Visual Falsification Module (VFM): Grounding "Refutation" in Image Evidence**
+**1. Visual Falsification Module (VFM): Transforming "Refutation" from Textual Dispute to Evidence Retrieval**
 
-Purely textual multi-agent debates have a fundamental flaw—the Opposer's doubts often stem from priors in parameters rather than the image at hand, leading to disconnected arguments. VFM forces the Opposer to pin its challenges to specific pixel regions: given the current hypothesis $H_t$ (e.g., "pneumonia"), it generates a counterfactual probe query $Q_{cf}$, asking "If this is not pneumonia, what should be seen?" (e.g., "clear costophrenic angles"—a sign pneumonia should not exhibit). It then uses PubMedCLIP to calculate the cosine similarity between this probe and image patches, producing an attention map $M_{cf}$. Regions with high attention represent actual contradictory evidence existing in the image. Consequently, the Opposer no longer refutes arbitrarily but speaks through specific image regions, breaking the confirmation bias loop with the hard constraint of "what is actually in the image."
+Text-only multi-agent debate suffers from a fundamental flaw—the Opponent's skepticism often stems from priors in the parameters rather than the image at hand, leading to a disconnect from visual reality. VFM forces the Opponent to anchor challenges in specific pixel regions. Given the current hypothesis $H_t$ (e.g., "pneumonia"), it generates a counterfactual probe query $Q_{cf}$, asking "if it were not pneumonia, what should be seen" (e.g., "clear costophrenic angles"—a sign that should not exist in pneumonia). It then uses PubMedCLIP to calculate cosine similarity between this probe and image patches, generating an attention map $M_{cf}$. High-attention areas represent contradictory evidence actually existing in the image. Consequently, the Opponent no longer refutes arbitrarily but speaks through specific image regions, breaking the confirmation bias loop with the hard constraint of "what is actually in the image."
 
-**2. Dynamic Consensus Graph: Making the Dialectic Trajectory Traceable and Auditable**
+**2. Dynamic Consensus Graph: Making the Dialectical Trajectory Traceable and Auditable**
 
-Simple majority voting only yields a final count, losing crucial clinical audit information like "why the revision occurred" or "which evidence was fatal." Dialectic-Med precipitates every round of debate into a graph: nodes $\mathcal{V}_t$ are diagnostic hypotheses or visual evidence, and edges $\mathcal{E}_t$ encode supporting/refuting logic and confidence weights. The graph includes cycle detection to prevent hypotheses from circling back to old paths. The credibility of each Opposer attack is quantified as the attack strength:
+Simple majority voting only yields a final count, losing clinical information such as "why the hypothesis changed" or "which evidence was most lethal." Dialectic-Med precipitates every round of debate into a graph: nodes $\mathcal{V}_t$ represent diagnostic hypotheses or visual evidence, and edges $\mathcal{E}_t$ encode the logic of support/refutation and confidence weights. The graph includes cycle detection to prevent hypotheses from reverting to old paths or falling into circular reasoning. The credibility of each Opponent attack is quantified as attack intensity:
 
 $$S_{attack} = \frac{1}{|R_k|}\sum_{r \in R_k} \alpha_r,$$
 
-which is the mean weight of all retrieved contradictory evidence regions $R_k$ in that round. The entire graph preserves the complete dialectic context, ensuring the final diagnosis is not just an answer but a playback of "how it withstood scrutiny," satisfying the explainability needs of medical scenarios.
+defined as the mean weight of all contradictory evidence regions $R_k$ retrieved in that round. The entire graph preserves the complete dialectical context, ensuring the final diagnosis is not just an answer but a playback of "how it withstood scrutiny," meeting the explainability needs of medical scenarios.
 
-**3. Attack Strength Threshold Termination: Deciding When to Stop via "Refutability"**
+**3. Attack Intensity Threshold Termination: Deciding When to Stop via "Resilience to Refutation"**
 
-Debates requires a stopping condition to avoid infinite loops or being misled by trivial weak attacks. Dialectic-Med uses attack strength as the referee: when $S_{attack} < \theta_{thresh}$, it indicates the Opposer can no longer find strong enough contradictory evidence, meaning the current hypothesis has withstood falsification attempts. The debate terminates, and consensus is reached. Otherwise, the Proposer is forced to correct the hypothesis for the next round. This threshold mechanism operationalizes Popper's principle—that credibility comes not from how much supporting evidence is found, but from "failing to refute it" after trying—into an executable criterion.
+Debates require a stopping condition; otherwise, they either loop infinitely or are diverted by trivial weak attacks. Dialectic-Med uses attack intensity as the referee: when $S_{attack} < \theta_{thresh}$, it indicates the Opponent cannot find sufficiently strong contradictory evidence, meaning the current hypothesis has survived falsification attempts. The debate terminates and consensus is reached. Otherwise, the Proposer is forced to revise the hypothesis for the next round. This threshold mechanism operationalizes Popper's principle that "credibility comes from surviving refutation"—a diagnosis is trustworthy not because of how much support it found, but because it "could not be overthrown."
 
-### Mechanism
+### Full Example
 
-Using a chest X-ray with an initial hypothesis of "pneumonia" as an example: The Proposer first gives the "pneumonia" hypothesis and enters it as a node in the consensus graph. The Opposer generates the counterfactual probe "clear costophrenic angle" based on this. PubMedCLIP calculates $M_{cf}$, finding that the costophrenic angle regions are indeed clear and have high attention—this is evidence against pneumonia. Thus, $S_{attack}$ is high, exceeding $\theta_{thresh}$. The Mediator judges the attack as valid, forcing the Proposer to revise the hypothesis to "pleural effusion." In the next round, the Opposer generates probes for the new hypothesis; if no strong contradictory regions are found ($S_{attack} < \theta_{thresh}$), the debate stops. "Pleural effusion" is adopted as the conclusion that withstood falsification. The consensus graph records the auditable trajectory: "pneumonia → refuted by costophrenic angle evidence → pleural effusion → unable to be refuted." The paper reports that such debates typically converge in 3–5 rounds.
+Consider a chest X-ray with an initial hypothesis of "pneumonia": The Proposer offers the "pneumonia" hypothesis, which enters the consensus graph as a node. The Opponent generates a counterfactual probe "clear costophrenic angles." PubMedCLIP calculates the attention map $M_{cf}$ and finds that the costophrenic angle regions are indeed clear with high attention—this is evidence against pneumonia, resulting in a high $S_{attack}$ exceeding $\theta_{thresh}$. The Mediator determines the attack is valid and forces a revision; the hypothesis shifts to "pleural effusion." In the next round, the Opponent generates probes for the new hypothesis. If no strong contradictory regions are found ($S_{attack} < \theta_{thresh}$), the debate stops. "Pleural effusion" is adopted as the conclusion that survived falsification. The consensus graph records the auditable trajectory: "pneumonia $\rightarrow$ refuted by clear costophrenic angles $\rightarrow$ pleural effusion $\rightarrow$ could not be further refuted." The paper reports that such debates typically converge in 3–5 rounds.
 
 ## Key Experimental Results
 
@@ -85,35 +85,43 @@ Using a chest X-ray with an initial hypothesis of "pneumonia" as an example: The
 | Method | MIMIC-CXR-VQA | VQA-RAD | PathVQA |
 |------|--------------|---------|---------|
 | Single Agent CoT | Baseline | Baseline | Baseline |
-| Multi-Agent Consensus | +Medium | +Medium | +Medium |
-| **Ours** | **SOTA** | **SOTA** | **SOTA** |
+| Multi-Agent Consensus | +Moderate | +Moderate | +Moderate |
+| **Dialectic-Med** | **SOTA** | **SOTA** | **SOTA** |
+
+### Key Metric Gains
+
+| Metric | Gain |
+|------|------|
+| Explanation Faithfulness | +12.5% |
+| Diagnostic Accuracy | SOTA |
+| Hallucination Rate | Significantly Reduced |
 
 ### Key Findings
-- **Visual falsification is the key differentiator**: Multi-agent methods using only semantic debate provided limited improvement; VFM brought essential gains.
+- **Visual falsification is the key differentiator**: Multi-agent methods using only semantic debate show limited improvement; VFM provides a fundamental boost.
 - **Confirmation bias is severe in standard CoT**: Models "see" non-existent visual features to support incorrect hypotheses.
-- **3-5 rounds of debate are usually sufficient for consensus**, making computational overhead manageable.
-- **12.5% increase in explanation faithfulness** indicates that diagnoses are not only more accurate but also more explainable and trustworthy.
+- **3-5 rounds of debate are usually sufficient** for consensus, keeping computational overhead manageable.
+- **A 12.5% increase in explanation faithfulness** indicates that diagnoses are not only more accurate but also more explainable and trustworthy.
 
 ## Highlights & Insights
-- **Operationalizing Popper's falsificationism into AI design principles** is a profound insight—not just searching for supporting evidence, but actively seeking opposing evidence. This principle can be transferred to any high-stakes scenario requiring reliable reasoning.
-- **VFM turns "debate" from a language game into a visual evidence-driven scientific process**—Opposers do not refute at will but speak through actual image regions.
-- **Direct value for Medical AI safety**: The falsification mechanism can serve as a safety guarantee layer before clinical deployment.
+- **Operationalizing Popperian falsificationism into AI system design** is a profound insight—not just seeking supporting evidence, but actively seeking opposing evidence. This principle can be transferred to any high-stakes scenario requiring reliable reasoning.
+- **VFM transforms "debate" from a language game into a visual evidence-driven scientific process**—the Opponent refutes based on actual image regions rather than arbitrary claims.
+- **Direct value for Medical AI safety**: The falsification mechanism can serve as a safety assurance layer before clinical deployment.
 
 ## Limitations & Future Work
-- VFM relies on the visual-language alignment quality of PubMedCLIP, which may degrade on rare pathologies.
-- Multi-turn debates increase inference latency, imposing constraints on real-time diagnosis.
+- VFM relies on the quality of PubMedCLIP's vision-language alignment, which may degrade in rare pathologies.
+- Multi-round debate increases inference latency, placing constraints on real-time diagnostics.
 - The quality of counterfactual probes depends on the completeness of medical knowledge $\mathcal{K}_{med}$.
-- Validated only on VQA tasks; more complex tasks like radiology report generation await exploration.
+- Only verified on VQA tasks; more complex tasks like radiology report generation remain to be explored.
 - The construction and traversal of the consensus graph increase system complexity.
 
 ## Related Work & Insights
-- **vs Standard CoT**: CoT is linear verificational reasoning; Dialectic-Med is iterative falsificational reasoning.
-- **vs Multi-Agent (e.g., CAMEL)**: CAMEL uses role-playing for collaboration; Dialectic-Med uses adversarial dialectics—the latter is better suited for scenarios requiring scrutiny.
-- **vs Med-PaLM**: Med-PaLM pursues single-model accuracy; Dialectic-Med ensures trustworthiness through system design.
+- **vs. Standard CoT**: CoT is linear verificationist reasoning; Dialectic-Med is iterative falsificationist reasoning.
+- **vs. Multi-Agent (e.g., CAMEL)**: CAMEL uses role-playing collaboration; Dialectic-Med uses adversarial dialectics—the latter is more suitable for scenarios requiring scrutiny.
+- **vs. Med-PaLM**: Med-PaLM pursues single-model accuracy; Dialectic-Med ensures trustworthiness through system design.
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐⭐ The combination of falsificationism and the Visual Falsification Module is a brand-new paradigm.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Three benchmarks + faithfulness evaluation, though ablation details are slightly sparse.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Three benchmarks plus faithfulness evaluation, though ablation details are slightly sparse.
 - Writing Quality: ⭐⭐⭐⭐⭐ The connection between philosophical motivation and technical implementation is very natural.
 - Value: ⭐⭐⭐⭐⭐ High significance for medical AI safety and trustworthy reasoning.
 
@@ -126,8 +134,8 @@ Using a chest X-ray with an initial hypothesis of "pneumonia" as an example: The
 - [\[AAAI 2026\] MUG: Multi-agent Undercover Gaming — Hallucination Removal via Counterfactual Test for Multimodal Reasoning](../../AAAI2026/hallucination/multi-agent_undercover_gaming_hallucination_removal_via_coun.md)
 - [\[AAAI 2026\] InEx: Hallucination Mitigation via Introspection and Cross-Modal Multi-Agent Collaboration](../../AAAI2026/hallucination/inex_hallucination_mitigation_via_introspection_and_cross-mo.md)
 - [\[ACL 2026\] Stable-RAG: Mitigating Retrieval-Permutation-Induced Hallucinations in Retrieval-Augmented Generation](stable-rag_mitigating_retrieval-permutation-induced_hallucinations_in_retrieval-.md)
-- [\[CVPR 2026\] SEASON: Mitigating Temporal Hallucination in Video Large Language Models via Self-Diagnostic Contrastive Decoding](../../CVPR2026/hallucination/season_mitigating_temporal_hallucination_in_video_large_language_models_via_self.md)
 - [\[ACL 2025\] Removal of Hallucination on Hallucination: Debate-Augmented RAG](../../ACL2025/hallucination/removal_of_hallucination_on_hallucination_debate-augmented_rag.md)
+- [\[ICML 2026\] REALISTA: Realistic Latent Adversarial Attacks that Elicit LLM Hallucinations](../../ICML2026/hallucination/realista_realistic_latent_adversarial_attacks_that_elicit_llm_hallucinations.md)
 
 </div>
 

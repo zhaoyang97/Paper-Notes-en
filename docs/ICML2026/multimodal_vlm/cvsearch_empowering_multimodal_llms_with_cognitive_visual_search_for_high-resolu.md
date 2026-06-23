@@ -2,145 +2,149 @@
 title: >-
   [Paper Note] CVSearch: Empowering Multimodal LLMs with Cognitive Visual Search for High-Resolution Image Perception
 description: >-
-  [ICML 2026][Multimodal VLM][Paper Note] CVSearch proposes a training-free "Assess-then-Search" cognitive framework: it first utilizes a visual expert (SAM 3) for fast localization and triggers semantic-guided adaptive patching + bottom-up search as a fallback when the expert fails, achieving SOTA in accuracy and efficiency on high-resolution benchmarks like
+  [ICML 2026][Multimodal VLM][Paper Note] CVSearch proposes a training-free "Assess-then-Search" cognitive framework: a rapid localization is first performed using a visual expert (SAM 3); if the expert fails, a semantic-guided adaptive patching and bottom-up search are triggered as a fallback. It achieves SOTA in both accuracy and efficiency on high-resolutio
 tags:
   - ICML 2026
   - Multimodal VLM
 date: 2026-05-08
-content_hash: 40e402be900b865f
+content_hash: e74befd13d939460
 ---
 # CVSearch: Empowering Multimodal LLMs with Cognitive Visual Search for High-Resolution Image Perception
 
 **Conference**: ICML2026  
 **arXiv**: [2605.23655](https://arxiv.org/abs/2605.23655)  
-**Code**: https://github.com/ICML26-CVSearch (Open-sourced as stated in the paper)  
+**Code**: https://github.com/ICML26-CVSearch (Open-sourced as declared in the paper)  
 **Area**: Multimodal VLM  
-**Keywords**: High-resolution perception, visual search, training-free framework, semantic adaptive cropping, bottom-up search
+**Keywords**: High-resolution perception, visual search, training-free framework, semantic adaptive patching, bottom-up search  
 
 ## TL;DR
-CVSearch proposes a training-free "Assess-then-Search" cognitive framework: it first utilizes a visual expert (SAM 3) for fast localization and triggers semantic-guided adaptive patching + bottom-up search as a fallback when the expert fails, achieving SOTA in accuracy and efficiency on high-resolution benchmarks like V*Bench and HR-Bench.
+CVSearch proposes a training-free "Assess-then-Search" cognitive framework: a rapid localization is first performed using a visual expert (SAM 3); if the expert fails, a semantic-guided adaptive patching and bottom-up search are triggered as a fallback. It achieves SOTA in both accuracy and efficiency on high-resolution benchmarks such as V*Bench and HR-Bench.
 
 ## Background & Motivation
 
-**Background**: Current Multimodal Large Language Models (MLLMs) mostly process images at a fixed low resolution (e.g., $336\times336$). For high-resolution images in real-world scenarios (thousands of pixels on the long side), they require aggressive downsampling before following the standard pipeline of visual encoder + projection + language model.
+**Background**: Most current Multimodal Large Language Models (MLLMs) process images at fixed low resolutions (e.g., $336\times336$). For high-resolution images in real-world scenarios (thousands of pixels on the long side), aggressive downsampling is required before proceeding through the visual encoder, projection, and language model pipeline.
 
-**Limitations of Prior Work**: Three main technical routes for high-resolution perception have emerged, but none are fully satisfactory. The Cropping route (e.g., LLaVA-NeXT) uses fixed grids, causing "semantic aliasing" where objects are split across patches. The High-resolution encoder route (e.g., LLaVA-HR) modifies architectures to inject high-frequency features but adapts poorly to varied aspect ratios. Visual search routes are divided into two categories: Expert-assisted (e.g., SEAL, DyFo, V2-SAM), which are fast but rely entirely on the proposal quality of external detectors, leading to "blind spots" for small or abstract targets; and Scanning-based (e.g., ZoomEye, RAP, DC²), which use exhaustive tree-grid coverage, being robust but wasting computation on background areas and still suffering from grid-split objects.
+**Limitations of Prior Work**: Three main routes have emerged for high-resolution perception, yet none are entirely satisfactory. The Cropping route (e.g., LLaVA-NeXT) cuts images into fixed grids, causing objects to be split across grids, resulting in "semantic aliasing." The High-resolution Encoder route (e.g., LLaVA-HR) modifies architectures to inject high-frequency features but adapts poorly to varying aspect ratios. The Visual Search route is further divided into two camps: Expert-assisted models (e.g., SEAL, DyFo, V2-SAM) are fast but rely entirely on the proposal quality of external detectors, prone to "blind spots" for small or abstract targets; Scanning models (e.g., ZoomEye, RAP, DC²) use exhaustive tree-grid coverage, which is robust but wastes computation on the background and still suffers from splitting objects with grids.
 
-**Key Challenge**: A dualistic opposition between efficiency and robustness—expert-assisted methods are fast but fragile, while scanning methods are stable but expensive. Both categories are "semantic-unaware," treating the entire image as a uniform grid.
+**Key Challenge**: A dualism exists between efficiency and robustness—expert assistance is fast but brittle, while scanning is stable but expensive. Furthermore, both methods are "semantically unaware," treating the entire image as a uniform grid.
 
-**Goal**: To unify these two routes into a single framework, allowing the model to "glance" before deciding how to "look deep," and to crop based on semantic structure rather than regular grids when intensive search is necessary.
+**Goal**: To unify these two routes into a single framework, enabling the model to "glance" first like a human before deciding how to look deeper, and to partition the image according to semantic structures rather than regular grids when deep inspection is necessary.
 
-**Key Insight**: The authors draw inspiration from the dual-pathway visual search theory in cognitive science—the non-selective pathway extracts a global gist, while the selective pathway performs serial inspection of objects based on attention templates. Scene structure is emphasized as the primary guide for attention deployment. In MLLMs, this translates to a cascade: "Assess if a direct answer is possible → If not, find experts → If experts fail, perform semantic scanning."
+**Key Insight**: The authors draw inspiration from the dual-pathway visual search theory in cognitive science—a non-selective pathway extracts a global gist, while a selective pathway performs serial inspection of objects based on attention templates. It emphasizes that scene structure is the primary guide for attention deployment. Implementing this in MLLMs results in a cascade: "Assess if it can be answered directly → if not, find the expert → if the expert fails, perform semantic scanning."
 
-**Core Idea**: Use the MLLM's own "Yes/No" confidence as an information sufficiency signal, treating visual expert failure as a trigger for semantic scanning rather than an end-point. During the scanning phase, features extracted by the expert are reused for semantic clustering to perform adaptive patching, followed by bottom-up evidence propagation to avoid the error accumulation found in top-down searches.
+**Core Idea**: Use the MLLM's own "Yes/No" confidence as an information sufficiency signal, treating visual expert failure as a trigger to switch to semantic scanning rather than an endpoint. During the scanning stage, the features extracted by the expert are reused for semantic clustering and partitioning, followed by bottom-up evidence transmission to avoid error propagation in top-down searches.
 
 ## Method
 
 ### Overall Architecture
-The input consists of a high-resolution image $\bm{I}\in\mathbb{R}^{H\times W\times 3}$ and a text query $\bm{Q}$. The output is the MLLM-generated answer $Y$. The process follows a three-stage **Assess-then-Search** pipeline:
+The input consists of a high-resolution image $\bm{I}\in\mathbb{R}^{H\times W\times 3}$ and a text query $\bm{Q}$. The output is the answer $Y$ generated by the MLLM. The process follows a three-stage **Assess-then-Search** pipeline:
 
-1. **Assess**: Feed $(\bm{I},\bm{Q})$ into the MLLM and quantify information sufficiency using the Yes-token probability $c_q(\bm{I})$ for the question "Can the answer be determined solely from the current visual information?". If $c_q(\bm{I})>\tau_q$, the answer is generated directly, bypassing the search.
-2. **Expert Search**: When $c_q$ is insufficient, $\bm{Q}$ is decomposed into a set of target objects $\bm{O}=\{o_1,\dots,o_m\}$ via internal in-context extraction (falling back to SpaCy). Open-vocabulary segmentation with SAM 3 yields a set of bounding boxes $\bm{B}_e$ and dense visual features $\bm{H}_e$. If the number of categories identified by SAM 3 matches $|\bm{O}|$, the cropped patches in $\bm{B}_e$ are used for answering; otherwise, the third stage is triggered.
-3. **Scene-aware Scanning**: Reuse $\bm{H}_e$ (saving recomputation cost) for semantic adaptive patching via SLIC and adjacency-graph-constrained agglomerative clustering. A semantic image tree $\bm{T}$ of depth $D$ is recursively constructed. Exploration starts from the deepest leaf nodes and proceeds bottom-up, terminating if the threshold is met. If the root is reached without a target, the highest-priority node at the root level is fed back to the visual expert for a new iteration of searching.
+1. **Assess**: Feed $(\bm{I},\bm{Q})$ into the MLLM and quantify information sufficiency using the Yes-token probability $c_q(\bm{I})$ for the question "Can the current visual information answer the query?". If $c_q(\bm{I})>\tau_q$, the answer is generated directly, bypassing the search process.
+2. **Expert Search**: When $c_q$ is insufficient, extract target objects $\bm{O}=\{o_1,\dots,o_m\}$ via MLLM in-context extraction (falling back to SpaCy). Use SAM 3 for open-vocabulary segmentation to obtain bounding boxes $\bm{B}_e$ and dense visual features $\bm{H}_e$. If the number of object categories segmented matches $|\bm{O}|$, the image is cropped according to $\bm{B}_e$ for answering; otherwise, proceed to the third stage.
+3. **Scene-aware Scanning**: Reuse $\bm{H}_e$ (saving one recalculation) and perform semantic adaptive partitioning using SLIC + agglomerative clustering constrained by an adjacency graph. Construct an image tree $\bm{T}$ of depth $D$ recursively, then explore from the deepest leaf nodes bottom-up. Terminate if the stopping threshold is exceeded. If the root is reached without success, provide the highest priority node at the root level back to the visual expert for the next iteration of search.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    A["Input: High-res Image I + Query Q"] --> B["Cognitive-driven Adaptive Switch<br/>Assess Yes-token confidence c_q"]
-    B -->|"c_q > τ_q: Sufficient Information"| Z["MLLM Generates Answer Y"]
-    B -->|"c_q ≤ τ_q: Insufficient Information"| C["Expert Search<br/>SAM 3 Open-vocabulary Segment + Count Alignment"]
+    A["Input: high-res I + text Q"] --> B["Cognitive-driven Adaptive Switching<br/>Evaluate Yes-token confidence c_q"]
+    B -->|"c_q > τ_q: sufficient info"| Z["MLLM generates answer Y"]
+    B -->|"c_q < τ_q: insufficient info"| C["Expert Search<br/>SAM 3 Segmentation + alignment check"]
     C -->|"Category count matches target count"| Z
-    C -->|"Count mismatch: Expert failure identified"| SCAN
+    C -->|"Category count mismatch: Expert failure"| SCAN
     subgraph SCAN["Scene-aware Scanning"]
         direction TB
-        D["Semantic-guided Adaptive Patching (SGAP)<br/>Reuse H_e + SLIC + Adjacency-graph Clustering"] --> E["Dynamic Bottom-Up Search<br/>Leaf-node assessment, evidence aggregation + annealing threshold"]
+        D["Semantic-guided Adaptive Patching (SGAP)<br/>Reuse H_e + SLIC + Clustering"] --> E["Dynamic Bottom-Up Search<br/>Leaf assessment + evidence aggregation"]
     end
     E -->|"Threshold reached or target found"| Z
-    E -->|"No target at root: Feedback highest-score node"| C
+    E -->|"Root reached: Feedback lead node"| C
 ```
 
 ### Key Designs
 
-**1. Cognitive-driven Adaptive Switching: Translating "Expert Failure" to "Switch to Scan" rather than "Give Up"**
-A common flaw in previous frameworks is either strictly following an expert or strictly scanning, leading to failures on small objects/abstract queries or wasting computation on every image. CVSearch acts as a scheduler across three tiers: information sufficiency is quantified as $c_q(\bm{I})=\mathcal{M}(\text{"Yes"}\mid p_q(\bm{Q}),\bm{I})$, using the normalized probability of the "Yes" token as internal confidence. If it exceeds $\tau_q=0.9$, the search is bypassed. A key innovation is redefining "expert failure" from "no boxes found" to "mismatch between SAM 3 categories and target set $|\bm{O}|$". This is a more reliable signal that triggers a switch to semantic scanning rather than termination. Search termination uses an adaptive descending threshold $\tau_{curr}$ (annealing from $\tau_q$ to a minimum $\hat{\tau}_q=0.5$), maintaining high certainty for easy samples while accepting less confident predictions for hard samples.
+**1. Cognitive-driven adaptive switching: Translating "Expert failure" into "Switch to scanning" instead of "Given up"**
 
-**2. Semantic-guided Adaptive Patching (SGAP): Cropping by Semantic Contiguous Regions**
-Fixed grid cropping creates "semantic aliasing"—when an object is split by grid lines, the subsequent reasoning receives incomplete tokens that VL models struggle to reconstruct. SGAP reuses the features $\bm{H}_e$ already produced by the expert. It performs SLIC on this feature space to obtain $N$ atomic superpixels and builds a spatial adjacency graph $G$. Agglomerative clustering constrained by $G$ then merges atoms into $k$ spatially contiguous semantic clusters, where the bounding box of each cluster forms a patch. The choice of cluster number $k$ is optimized within $[k_\min,k_\max]=[4,8]$ to minimize:
+A common flaw in previous frameworks is either forcing the expert route or forcing the scanning route, leading to failure with small targets or abstract queries and wasting computation on every image. CVSearch lets the MLLM act as a judge, dynamically scheduling among three tiers. Information sufficiency follows ZoomEye's formulation $c_q(\bm{I})=\mathcal{M}(\text{"Yes"}\mid p_q(\bm{Q}),\bm{I})$, using the normalized probability of the "Yes" token as internal confidence. If it exceeds $\tau_q=0.9$, the search is bypassed. The key ingenuity lies in redefining "expert failure" as "SAM 3 segmented category count does not align with $|\bm{O}|$"—a more reliable signal that triggers a switch to semantic scanning. Search termination uses an adaptive descending threshold $\tau_{curr}$ (annealing from $\tau_q$ to a minimum $\hat{\tau}_q=0.5$), maintaining high certainty for easy samples while accepting less confident predictions for hard ones. This ensures expensive scanning is only activated when truly needed.
+
+**2. Scene-guided Adaptive Patching (SGAP): Partitioning by semantic regions to avoid splitting objects**
+
+Fixed grid cropping creates "semantic aliasing"—after an object is cut by grid lines, subsequent reasoning receives incomplete tokens that VL models struggle to reconstruct. SGAP reuses the already computed features $\bm{H}_e$ to run SLIC in the feature space, obtaining $N$ atomic superpixels and constructing a spatial adjacency graph $G$. Agglomerative clustering constrained by $G$ merges these into $k$ spatially-connected semantic clusters. Each cluster's bounding box is a patch. The number of clusters $k$ is selected within $[k_\min,k_\max]=[4,8]$ to minimize:
 
 $$\mathcal{L}(k)=\mathcal{L}_o(\bm{B}_k)-\mathcal{L}_s(\bm{H}_a,\bm{l}_k),$$
 
-where $\mathcal{L}_o$ penalizes spatial overlap between patches and $\mathcal{L}_s$ is the silhouette score for clustering tightness. Each patch also has a Visual Complexity score $c_v(\bm{I}_{d,t})=\max(0,\,1-\tfrac{1}{|\bm{R}|}\sum_{i\in\bm{R}}\mathrm{cosim}(\bm{h}_i,\bar{\bm{h}}))$. Background nodes with $c_v<\tau_v=0.4$ are pruned. Sharing the representation between patching and understanding ensures calculation is concentrated on high-entropy regions while preserving object integrity.
+where $\mathcal{L}_o$ penalizes spatial overlap between patches and $\mathcal{L}_s$ is the silhouette score for cluster compactness. Each patch also has a Visual Complexity $c_v(\bm{I}_{d,t})=\max(0,\,1-\tfrac{1}{|\bm{R}|}\sum_{i\in\bm{R}}\mathrm{cosim}(\bm{h}_i,\bar{\bm{h}}))$, using average cosine distance to measure feature divergence. Background nodes with $c_v<\tau_v=0.4$ are pruned. Aligning the partitioning strategy with visual representation ensures objects remain intact and focuses computational budget on high-entropy areas.
 
-**3. Dynamic Bottom-Up Search: Letting Small Objects be Verified in the Clearest Local Views First**
-Top-down searches start by picking nodes in low-resolution global views, which is difficult for small objects. If a branch is misidentified, the entire path is lost. CVSearch reverses this, evaluating from the deepest leaf nodes of the semantic tree $\bm{T}$ and aggregating evidence upward. Node priority is $c_x=\alpha\cdot c_v+\beta\cdot c_o+\gamma\cdot c_x^*$, where $c_v$ is visual complexity, $c_o$ is the MLLM confidence for "Does $o_i$ exist in the image?", and $c_x^*$ is the maximum priority of child nodes ($0$ for leaves), with $(\alpha,\beta,\gamma)=(0.2,0.4,0.4)$. Multi-target queries use a decoupled strategy. The "closed-loop" design allows for backtracking: if the deepest level ends without termination, it moves up. If the entire tree is traversed, the highest-scored node at the first level is sent back to the visual expert for a new round of Expert Search.
+**3. Dynamic Bottom-Up Search: Allowing small targets to be verified first in the clearest local views**
+
+Top-down search starts by picking nodes in low-resolution global views, which is difficult for small targets. If a branch is wrongly selected, the entire path is wasted. CVSearch reverses this, evaluating from the leaf nodes at the deepest layer of the semantic tree $\bm{T}$ and aggregating evidence upward. Node priority is $c_x=\alpha\cdot c_v+\beta\cdot c_o+\gamma\cdot c_x^*$, where $c_v$ is visual complexity, $c_o$ is Yes-confidence for $o_i$, and $c_x^*$ is the maximum priority of child nodes ($0$ for leaves), with hyperparameters $(\alpha,\beta,\gamma)=(0.2,0.4,0.4)$. Multi-object queries use ZoomEye's decoupling strategy. The loop design is elegant: if search fails at the deepest level, it moves up. If the entire tree is traversed without success, the highest-scoring first-layer node is sent back to the expert for a new "Expert Search"—interpreting "not found" as an iterative state rather than an impasse.
 
 ### Loss & Training
-The entire pipeline is **training-free** with no backpropagation—all "scores" are derived from MLLM forward token probabilities or geometric/clustering heuristics. Major hyperparameters: $\tau_q=0.9$, $\tau_v=0.4$, $\hat{\tau}_q=0.5$, $(k_\min,k_\max)=(4,8)$, depth $D=2$ for single-target, $D=3$ for multi-target, and $(\alpha,\beta,\gamma)=(0.2,0.4,0.4)$. The visual expert is SAM 3. Baseline MLLMs include Qwen2.5-VL-7B, LLaVA-OV-7B, and InternVL2.5-8B. Experiments were conducted on 4×A6000.
+The entire pipeline is **training-free** with no backpropagation—all "scores" are MLLM forward-pass token probabilities or geometric/clustering heuristics. Major hyperparameters: $\tau_q=0.9$, $\tau_v=0.4$, $\hat{\tau}_q=0.5$, $(k_\min,k_\max)=(4,8)$, depth $D=2$ (single object) or $D=3$ (multi-object), $(\alpha,\beta,\gamma)=(0.2,0.4,0.4)$. Visual expert is SAM 3. Baseline MLLMs include Qwen2.5-VL-7B, LLaVA-OV-7B, and InternVL2.5-8B. Experiments were run on 4×A6000, though this refers only to configuration rather than weight training.
 
 ## Key Experimental Results
 
 ### Main Results
-Evaluation covers high-resolution specialized benchmarks (V*Bench, HR-Bench 4K/8K), general real-world scenarios (MME-RealWorld-Lite, TreeBench), and drone-based small object benchmarks (FineRS-4K), with average resolutions of $\approx 2000\times1500$.
+Evaluated on high-resolution benchmarks (V*Bench, HR-Bench 4K/8K), general real-world scenarios (MME-RealWorld-Lite, TreeBench), and drone-view tiny object datasets (FineRS-4K), with average resolutions of $\approx 2000\times1500$.
 
-| Baseline MLLM | V*Bench | HR-Bench 4K | HR-Bench 8K | Source of Gain |
+| Baseline MLLM | V*Bench | HR-Bench 4K | HR-Bench 8K | Gain Source |
 |---|---|---|---|---|
 | LLaVA-OV-7B | 75.4 → **91.6** | 63.0 → **75.6** | 59.8 → **74.8** | +CVSearch |
 | Qwen2.5-VL-7B | 71.2 → **90.1** | 68.8 → **76.6** | 65.3 → **75.6** | +CVSearch |
 | InternVL2.5-8B | 69.1 → **89.0** | 66.0 → **77.0** | 57.4 → **77.6** | +CVSearch |
-| GPT-4o (Closed-source) | 66.0 | 59.0 | 55.5 | — |
-| Qwen2.5-VL-32B | 85.9 | 74.8 | 71.6 | Comparison only |
+| GPT-4o (Closed-source Ref) | 66.0 | 59.0 | 55.5 | — |
+| Qwen2.5-VL-32B | 85.9 | 74.8 | 71.6 | Control only |
 
-Combined with 7B open-source models, the framework outperforms 32B models and GPT-4o, proving that the bottleneck lies in "where to look" rather than parameter count.
+Applying CVSearch to 7B-class models allows them to outperform 32B models and GPT-4o, proving that the bottleneck lies in "where to look" rather than parameter count.
 
 ### Ablation Study
 
-| Configuration | V* / HR-4K / HR-8K (Relative) | Description |
+| Configuration | V* / HR-4K / HR-8K (Representative) | Description |
 |---|---|---|
-| Full CVSearch | 90.1 / 76.6 / 75.6 | Qwen2.5-VL-7B Full Version |
-| w/o Expert Search | Significant Decrease | Simple samples forced into deep search |
-| w/o Scene-aware Scanning | Significant Decrease | Small object blind spots return |
-| w/o SGAP (Grid fallback) | Moderate Decrease | Semantic aliasing and background overhead |
-| w/o Bottom-Up (Top-down) | Moderate Decrease | Failure to recover from wrong top-level paths |
+| Full CVSearch | 90.1 / 76.6 / 75.6 | Complete version with Qwen2.5-VL-7B |
+| w/o Expert Search | Significant Decrease | Loses fast path; simple samples forced into deep search |
+| w/o Scene-aware Scanning | Significant Decrease | Loses fallback for expert failure; small target blind spots return |
+| w/o SGAP (back to grid) | Moderate Decrease | Semantic aliasing and background computation waste |
+| w/o Bottom-Up (changed to top-down) | Moderate Decrease | Small target errors cannot be recovered |
 
 ### Key Findings
-- **Experts and Scanning are Complementary**: Neither alone outperforms the combination, demonstrating that the efficiency-robustness trade-off can be resolved via cascading.
-- **SGAP's Gain comes from Small Objects**: By avoiding the splitting of objects, SGAP ensures the VLM reasoning receives complete semantic units.
-- **Bottom-Up + Annealing is Critical for the Loop**: When the annealing condition is met, unidentified difficult samples are fed back to the expert for a second round, forming a "Search-Assess-Research" cycle.
-- **Training-free is a Structural Advantage**: Using LLaVA-OV, Qwen2.5-VL, or InternVL2.5 out-of-the-box without modifying weights allows for broader deployment.
+- **Expert and Scanning mutually fallback**: Neither branch alone outperforms the combination, proving the efficiency-robustness trade-off can be resolved via cascading rather than architecture modification.
+- **SGAP gains mainly from small targets**: Preventing objects from being split ensures the VL model receives complete tokens, which is crucial for reasoning.
+- **Bottom-Up + Annealing is key to the iterative loop**: When annealing triggers, missing hard samples are fed back to the expert for a second round, creating an "Assess-then-Search" cycle particularly effective for abstract targets.
+- **Training-free is a structural advantage**: No modification of MLLM weights means LLaVA-OV, Qwen2.5-VL, and InternVL2.5 are all plug-and-play.
 
 ## Highlights & Insights
-- Using MLLM's internal "Yes-token" confidence as a scheduler reuses existing capabilities without the cost of training a separate judge model.
-- The "Expert failure → Trigger scan" step treats detector limitations as useful internal signals, reframing single-point failure into a rational state within a multi-stage decision process.
-- SGAP highlights that patching strategies and subsequent VLM representations share the same space; re-using $\bm{H}_e$ instead of introducing new features is an efficient design applicable to any "patch-then-VLM" pipeline.
-- The bottom-up search + annealing threshold strategy is naturally compatible with MLLM uncertainty and can be extended to RAG or Agentic multi-step retrieval tasks.
+- Using the MLLM's own Yes-token confidence as a scheduler reuses existing capabilities and avoids the cost of training a separate judge model; this is transferable to any search process requiring termination criteria.
+- Translating "expert failure" into a trigger for scanning turns detector limitations into useful signals for the framework.
+- SGAP reveals that partitioning strategies and subsequent VLM representations share the same space. Reusing expert features $\bm{H}_e$ instead of introducing new features is a strategy applicable to any "partition-then-VLM" pipeline.
+- Bottom-up search + annealing (strict-to-broad scheduling) naturally integrates with MLLM uncertainty expression and can be extended to RAG or multi-step agent retrieval tasks.
 
 ## Limitations & Future Work
-- The pipeline is sensitive to the performance of SAM 3; if the expert performs poorly in specific domains (e.g., medical, satellite), the "fast path" degrades, and scanning costs rise.
-- Confidence $c_q$ from MLLMs often exhibits overconfidence on OOD samples, potentially allowing the "direct answer" path to bypass necessary searches.
-- Hyperparameters such as $[k_\min,k_\max]$ and depth $D$ are manually set; automatic selection based on scene complexity remains to be explored.
-- The accuracy ceiling is still bounded by the baseline MLLM's fine-grained perception; future work could use this cognitive workflow as a distillation signal to fine-tune the base models.
+- The pipeline's performance is sensitive to SAM 3; if the expert drifts in specific domains (e.g., medical, remote sensing), the fast path degrades, increasing scanning costs.
+- Information sufficiency $c_q$ relies on MLLM Yes-token probabilities, which can exhibit overconfidence on out-of-distribution samples.
+- The search interval $[k_\min,k_\max]$ and tree depth $D$ are manually set. Future work could explore automatic selection of $k$ and $D$ based on scene complexity.
+- Training-free is a double-edged sword: the performance ceiling is largely determined by the baseline MLLM's fine-grained perception. This cognitive workflow could potentially be used as a distillation signal to fine-tune baseline models.
 
 ## Related Work & Insights
-- **vs SEAL / DyFo (Expert-assisted)**: CVSearch preserves the "fast expert" idea but replaces simple box thresholds with SAM 3 + category alignment and adds a scanning fallback.
-- **vs ZoomEye / RAP / DC² (Scanning-based)**: While using tree-search, CVSearch replaces fixed grids with SGAP, prunes background nodes, and uses bottom-up traversal to solve the "expensive, split, and error-prone" issues of traditional scanning.
-- **vs LLaVA-HR / High-res Encoders**: Avoids the engineering cost of architectural changes, allowing 7B models to approach 32B models through search strategy alone.
+- **vs SEAL / DyFo (Expert-assisted)**: Ours retains the "fast expert localization" but uses SAM 3 with category alignment checks instead of simple box thresholds and connects failures to a scanning branch.
+- **vs ZoomEye / RAP / DC² (Scanning)**: Also uses tree search, but SGAP replaces fixed grids, Visual Complexity prunes background nodes, and bottom-up replaces top-down traversal to address cost, aliasing, and error propagation.
+- **vs LLaVA-HR / HR Encoders**: Avoids architecture engineering costs. Proves that without weight updates, a 7B model can approach the performance of 32B closed-source models, making it highly friendly for compute-constrained scenarios.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Connects the two main branches of visual search via a "failure-triggered cascade" with high engineering elegance.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive baseline MLLMs and benchmarks, though OOD scenarios (medical/OCR) would further strengthen results.
-- Writing Quality: ⭐⭐⭐⭐ Clear structure with sound grounding in cognitive science motivations.
-- Value: ⭐⭐⭐⭐ Training-free, plug-and-play, and achieving SOTA; highly friendly for industrial deployment.
+- Novelty: ⭐⭐⭐⭐ Bridging the two visual search routes via "Expert failure triggers semantic scanning" shows high engineering elegance.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers multiple baselines and benchmarks, though cross-domain scenarios like medical imaging would be even more convincing.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure with well-aligned cognitive scientific motivations.
+- Value: ⭐⭐⭐⭐ Training-free, plug-and-play, and significant SOTA gains make it a benchmark difficult to ignore for high-resolution VLMs.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[CVPR 2026\] SenseSearch: Empowering Vision-Language Models with High-Resolution Agentic Search-Reasoning via Reinforcement Learning](../../CVPR2026/multimodal_vlm/sensesearch_empowering_vision-language_models_with_high-resolution_agentic_searc.md)
 - [\[ICML 2026\] Self-Prophetic Decoding to Unlock Visual Search in LVLMs](self-prophetic_decoding_to_unlock_visual_search_in_lvlms.md)
-- [\[ICCV 2025\] HRScene: How Far Are VLMs from Effective High-Resolution Image Understanding?](../../ICCV2025/multimodal_vlm/hrscene_how_far_are_vlms_from_effective_high-resolution_image_understanding.md)
-- [\[ACL 2025\] VisuoThink: Empowering LVLM Reasoning with Multimodal Tree Search](../../ACL2025/multimodal_vlm/visuothink_empowering_lvlm_reasoning_with_multimodal_tree_search.md)
 - [\[ICLR 2026\] GLYPH-SR: Can We Achieve Both High-Quality Image Super-Resolution and High-Fidelity Text Recovery via VLM-Guided Latent Diffusion Model?](../../ICLR2026/multimodal_vlm/glyph-sr_can_we_achieve_both_high-quality_image_super-resolution_and_high-fideli.md)
-- [\[ICCV 2025\] FALCON: Resolving Visual Redundancy and Fragmentation in High-resolution Multimodal Large Language Models via Visual Registers](../../ICCV2025/multimodal_vlm/falcon_resolving_visual_redundancy_and_fragmentation_in_high.md)
+- [\[ICCV 2025\] HRScene: How Far Are VLMs from Effective High-Resolution Image Understanding?](../../ICCV2025/multimodal_vlm/hrscene_how_far_are_vlms_from_effective_high-resolution_image_understanding.md)
+- [\[ICML 2026\] ACTIVE-o3: Empowering MLLMs with Active Perception via Pure Reinforcement Learning](active-o3_empowering_mllms_with_active_perception_via_pure_reinforcement_learnin.md)
 
 </div>
 

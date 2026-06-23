@@ -2,80 +2,80 @@
 title: >-
   [Paper Note] TimeSpot: Benchmarking Geo-Temporal Understanding in Vision-Language Models in Real-World Settings
 description: >-
-  [ICML 2026][Multimodal VLM][Paper Note] The authors construct the TimeSpot benchmark, comprising 1,455 real-world ground-level images from 80 countries. It mandates structured 9-field predictions for "when" (season/month/minute-level local time/diurnal phase) and "where" (continent/country/climate zone/environment/coordinates). Results show that even Gemini-
+  [ICML 2026][Multimodal VLM][Paper Note] The authors construct the TimeSpot benchmark, covering 1,455 real-world ground-level images from 80 countries. It mandates VLMs to provide structured nine-field predictions covering both "When" (season, month, minute-level local time, day phase) and "Where" (continent, country, climate zone, environment type, coordinat
 tags:
   - ICML 2026
   - Multimodal VLM
 date: 2026-05-08
-content_hash: 5a032e8dd0563298
+content_hash: 0378759c2b4e6033
 ---
 # TimeSpot: Benchmarking Geo-Temporal Understanding in Vision-Language Models in Real-World Settings
 
 **Conference**: ICML 2026  
 **arXiv**: [2603.06687](https://arxiv.org/abs/2603.06687)  
 **Code**: https://TimeSpot-GT.github.io  
-**Area**: Multimodal VLM  
-**Keywords**: Geo-temporal Reasoning, VLM Benchmark, Physical Consistency, Calibration, SFT  
+**Area**: Multi-modal VLM  
+**Keywords**: Geo-temporal reasoning, VLM benchmark, Physical consistency, Calibration, SFT
 
 ## TL;DR
-The authors construct the TimeSpot benchmark, comprising 1,455 real-world ground-level images from 80 countries. It mandates structured 9-field predictions for "when" (season/month/minute-level local time/diurnal phase) and "where" (continent/country/climate zone/environment/coordinates). Results show that even Gemini-2.5-Flash-Thinking achieves only 77.59% country accuracy and a median error of 892.54 km, with minute-level time accuracy below 34%, indicating a systematic lack of joint geo-temporal reasoning based on physical cues in VLMs.
+The authors construct the TimeSpot benchmark, covering 1,455 real-world ground-level images from 80 countries. It mandates VLMs to provide structured nine-field predictions covering both "When" (season, month, minute-level local time, day phase) and "Where" (continent, country, climate zone, environment type, coordinates). Results indicate that even the strongest model, Gemini-2.5-Flash-Thinking, achieves only 77.59% country accuracy and a median geographic distance error of 892.54 km, with minute-level time accuracy below 34%, revealing a significant lack of joint geo-temporal reasoning based on physical cues.
 
 ## Background & Motivation
 
-**Background**: Recent VLMs have made significant progress in image geolocation. Prevailing approaches include cross-view retrieval (VIGOR, OpenStreetView-5M), unified embeddings (GeoCLIP), and reasoning-enhanced frameworks like LLMGeo or IMAGEO-Bench. These works primarily model the task as spatial retrieval: "image $\rightarrow$ coordinates".
+**Background**: Recent years have seen significant progress in VLM-based image geolocalization. Mainstream approaches include cross-view retrieval (VIGOR, OpenStreetView-5M), unified embedding (GeoCLIP), and chain-of-thought enhanced benchmarks like LLMGeo or IMAGEO-Bench. These works typically model the task as spatial retrieval from "Image → Coordinates."
 
-**Limitations of Prior Work**: Existing benchmarks focus almost exclusively on "where", reporting retrieval rank or coordinate error. "When" is neglected; models are not required to predict season, month, or local time, nor are they constrained by cross-field consistency (e.g., "no snow in July in the Northern Hemisphere"). Consequently, high spatial accuracy can coexist with physically impossible outputs.
+**Limitations of Prior Work**: Existing benchmarks evaluate "Where" almost exclusively, reporting either retrieval rank or coordinate error. The "When" aspect is largely ignored; models are not required to predict season, month, local time, or day phase, nor are they constrained by cross-field consistency (e.g., "no snow in July in the Northern Hemisphere"). Consequently, high spatial accuracy can coexist with physically impossible outputs.
 
-**Key Challenge**: Real-world deployment (disaster response, traffic planning, embodied navigation, world models) requires *verifiable* spatiotemporal predictions with internal consistency. Current VLMs lack explicit temporal-physical supervision in training and evaluation, leading models to rely on surface semantics (landmarks, text) rather than regressing from physical cues like solar geometry and vegetation phenology.
+**Key Challenge**: Real-world deployment (disaster response, traffic planning, embodied navigation, world models) requires models to provide *verifiable* spatio-temporal predictions while ensuring internal consistency. However, current VLMs lack explicit temporal physical supervision in training objectives and evaluation protocols, causing them to rely on coarse-grained memorization of surface semantics (landmarks, text) rather than long-tail physical cues like solar geometry and vegetation phenology.
 
-**Goal**: (i) Construct a non-landmark-oriented benchmark mandating joint 9-field spatiotemporal prediction with machine-auditable consistency; (ii) Systematically evaluate the limits of open-source, proprietary, and reasoning-enhanced VLMs; (iii) Test whether explicit supervision can bridge this gap via SFT.
+**Goal**: (i) Construct a non-landmark-oriented benchmark that forces VLMs to jointly predict nine spatio-temporal fields with machine-auditable consistency; (ii) systematically evaluate the limits of current open-source, closed-source, and reasoning-enhanced VLMs; (iii) examine whether explicit supervision can bridge this gap via SFT.
 
-**Key Insight**: Utilize "non-landmark ground photos + programmatically derived labels + human verification" as the data skeleton. Programmatic labels derive solar elevation, Köppen climate, and season from timestamps and coordinates, ensuring physical consistency by design.
+**Key Insight**: Utilize "non-landmark ground-level photos + procedurally derived labels + human secondary verification" as the data backbone. Procedural labels derive solar elevation, Köppen climate, month, and season from timestamps and coordinates, naturally ensuring physical consistency. Humans act as auditors only in boundary cases. This approach ensures scalability while providing ground truth with verifiable semantics.
 
-**Core Idea**: Redefine "when and where" as a *constrained structured prediction* problem, treating cross-field consistency as a first-class evaluation metric to expose failures in physical grounding.
+**Core Idea**: Redefine "When and Where" as a *constrained structured prediction* problem and treat cross-field consistency as a first-class evaluation metric to expose systematic failures in physical grounding.
 
 ## Method
 
 ### Overall Architecture
-TimeSpot maps each image $x$ to a structured label $y=(y^{\mathrm{temp}}, y^{\mathrm{geo}})$, where $y^{\mathrm{temp}}=(s, m, \tau, \phi)$ denotes season, month, local time (HH:MM), and diurnal phase; and $y^{\mathrm{geo}}=(C, \kappa, z, e, (\lambda,\varphi))$ denotes continent, country, climate zone, environment type, and coordinates. Dataset construction involves: (1) Recalling ~20,000 candidate images; (2) Filtering landmarks/text to retain phenological/lighting/material cues; (3) *Programmatically* deriving 9 fields from EXIF and coordinates; (4) Two-stage human verification (~600 hours). The evaluation enforces JSON output, auditing field accuracy alongside cross-field alignment (e.g., month-season-hemisphere). LoRA SFT on Qwen-VL2.5-3B serves as a diagnostic probe to test if supervision compensates for grounding deficiencies.
+TimeSpot maps each image $x$ to structured labels $y=(y^{\mathrm{temp}}, y^{\mathrm{geo}})$, where $y^{\mathrm{temp}}=(s, m, \tau, \phi)$ represents season, month, local time HH:MM, and day phase, while $y^{\mathrm{geo}}=(C, \kappa, z, e, (\lambda,\varphi))$ represents continent, country, climate zone, environment type, and coordinates. Dataset construction follows four steps: (1) Recalling ~20,000 candidate ground-level images from the web and author-captured photos; (2) filtering samples dominated by landmarks and text to retain fine-grained physical cues (phenology, lighting, textures); (3) *procedurally* deriving nine fields from EXIF and geographic coordinates; (4) two-stage human verification involving 3 primary annotators and 2 senior auditors (~600 hours). The final product includes 1,455 images covering 80 countries stored in a unified JSON schema. During evaluation, VLMs are forced to output nine-field JSON. In addition to field-level accuracy, audits for cross-field consistency (month-season-hemisphere alignment, day phase-time-longitude compatibility, climate-coordinate rationality) are performed, supplemented by ECE/risk-coverage calibration and hemisphere-flip/OOD robustness tests. Finally, LoRA SFT is used as a diagnostic probe on Qwen-VL2.5-3B to investigate whether explicit supervision can rectify physical grounding issues.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    subgraph BUILD["Structured 9-field Schema + Programmatic Label Derivation (Design 1)"]
+    subgraph BUILD["Structured 9-field schema + Procedural label derivation (Design 1)"]
         direction TB
-        A["Recall ~20k<br/>non-landmark ground images"] --> B["Filter landmarks/text<br/>retain phenological/lighting cues"]
-        B --> C["Programmatically derive 9 fields<br/>Timestamp/Ephemeris/Köppen/Geocoding"]
-        C --> D["Two-stage human verification<br/>Cross-check → Expert arbitration"]
+        A["Recall ~20k<br/>non-landmark ground images"] --> B["Filter landmarks/text,<br/>retain phenology·lighting·texture cues"]
+        B --> C["Procedurally derive 9 fields<br/>Timestamp·Ephemeris·Köppen·Reverse Geocoding"]
+        C --> D["Two-stage human verification<br/>Annotator cross-check → Senior arbitration"]
     end
     D --> E["TimeSpot Benchmark<br/>1,455 images / 80 countries / JSON schema"]
-    subgraph EVAL["Consistency Diagnosis + Calibration (Design 2)"]
+    subgraph EVAL["Cross-field consistency diagnosis + Calibration (Design 2)"]
         direction TB
-        F["VLM Structured JSON Prediction"] --> G["Field Accuracy + Consistency Violation Rate"]
-        G --> H["ECE / Risk-coverage Calibration<br/>Hemisphere Flip · OOD Robustness"]
+        F["VLM forced JSON 9-field prediction"] --> G["Field-level accuracy + Consistency violation rate"]
+        G --> H["ECE / risk-coverage calibration<br/>Hemisphere flip · OOD robustness"]
     end
     E --> F
-    H --> I["SFT Diagnostic Probe (Design 3)<br/>LoRA fine-tuning Qwen-VL2.5-3B<br/>country/time/joint → Exposing gradient conflict"]
+    H --> I["SFT Diagnostic Probe (Design 3)<br/>LoRA fine-tuning Qwen-VL2.5-3B<br/>country/time/joint → exposing gradient conflict"]
 ```
 
 ### Key Designs
 
-**1. Structured 9-field Schema + Programmatic Derivation: Ground Truth from Physics**
-Retrieval benchmarks often lack cross-field semantics. TimeSpot decomposes "when and where" into 9 interdependent fields. Ground truth (GT) is derived via deterministic physics: month from EXIF; season via meteorological definitions with hemisphere correction; diurnal phase by comparing solar elevation $\theta_\odot$ against twilight thresholds (e.g., $\theta_\odot < -6^\circ$ for civil twilight); and climate zones via Köppen-Geiger lookups. This ensures "physically impossible" outputs can be flagged automatically.
+**1. Structured nine-field schema + Procedural label derivation: Grounding GT in physical formulas rather than crowdsourced guesses**  
+Retrieval-based benchmarks suffer when ground truth lacks cross-field semantics—if a model hits top-k, it "wins," even if a "snowy scene in July" is physically contradictory. TimeSpot decomposes "When and Where" into 9 fields that are scored independently but must remain mutually consistent. GT is derived via deterministic physics: Month from EXIF; Season using meteorological definitions with hemisphere correction (June-August is summer in the North, winter in the South); Day phase by comparing solar elevation $\theta_\odot$ with civil/nautical/astronomical thresholds (e.g., $\theta_\odot < -6^\circ$ for civil twilight); Local time from timezone and ephemeris; Climate zone via Köppen-Geiger lookup from $(\lambda, \varphi)$; Continent/Country/Coordinates via reverse geocoding.
 
-**2. Cross-field Consistency Diagnostics & Calibration: Exposing "Accurate but Impossible" Failures**
-Beyond field-level accuracy, TimeSpot introduces consistency violation rates: month-season mismatch (given the predicted hemisphere), phase-time misalignment ($|\Delta t| > 1\text{h}$), and continent-country mismatch. It employs Expected Calibration Error $\mathrm{ECE}=\sum_b \frac{|B_b|}{N}|\mathrm{acc}(B_b)-\mathrm{conf}(B_b)|$ and risk-coverage curves to assess confidence reliability.
+**2. Cross-field consistency diagnostics + Calibration metrics: Isolating failures that are "seemingly accurate but physically contradictory"**  
+High field-level accuracy does not imply self-consistent output. TimeSpot defines a set of consistency violation rates: month-season inconsistency (predicted month not belonging to predicted season for the predicted hemisphere), day phase-time misalignment ($|\Delta t| > 1\text{h}$), and continent-country inconsistency. Expected Calibration Error $\mathrm{ECE}=\sum_b \frac{|B_b|}{N}|\mathrm{acc}(B_b)-\mathrm{conf}(B_b)|$ and risk-coverage curves measure confidence reliability, while robustness is tested via hemisphere flips and hard OOD splits.
 
-**3. SFT Intervention as a Diagnostic Tool**
-The authors apply LoRA SFT on Qwen-VL2.5-3B for country-only, time-only, and joint tasks. This observes how individual task improvements affect others, identifying gradient competition between "lighting-invariant features" (beneficial for countries) and "lighting-sensitive features" (beneficial for time).
+**3. SFT intervention experiments as diagnostic tools: Addressing whether explicit supervision bridges the physical grounding gap**  
+Instead of leaderboard chasing, SFT serves as a probe. The authors perform country-only, time-only, and joint fine-tuning on Qwen-VL2.5-3B using LoRA. They observe the improvement of each task and its impact on others, interpreting training objectives as a gradient competition between "illumination-invariant features" (beneficial for countries) and "illumination-sensitive features" (beneficial for time).
 
 ### Loss & Training
-The benchmark is for evaluation. SFT diagnostics use standard instruction-tuning cross-entropy loss with LoRA adapters on Qwen-VL2.5-3B-Instruct for 5 epochs. During inference, models use temperature=0 with forced JSON formatting and normalized parsing.
+The benchmark itself is for evaluation. The SFT diagnostic uses standard instruction-tuning cross-entropy loss with LoRA adapters on Qwen-VL2.5-3B-Instruct for 5 epochs. During evaluation, all models use temperature=0, outputs are forced into JSON, and normalized parsing is applied.
 
 ## Key Experimental Results
 
 ### Main Results
-Evaluation of 31 VLMs against undergraduate and expert human baselines.
+Evaluation covers 31 VLMs (closed-source, open-source ≤11B, open-source >11B, reasoning-enhanced) compared against human baselines (undergraduates and domain experts). Table 1 summarizes key metrics.
 
 | Model | Country Acc↑ | MD (km)↓ | Season Acc↑ | Time ±1h Acc↑ | Time MAE↓ |
 |------|----------|----------|----------|---------------|-----------|
@@ -89,37 +89,38 @@ Evaluation of 31 VLMs against undergraduate and expert human baselines.
 | Human (Expert) | 67.89 | 1040.42 | 86.56 | 57.89 | **1:36** |
 | Human (Undergrad) | 45.98 | 2800.49 | 68.89 | 41.92 | 2:41 |
 
-### Consistency Diagnostics
-Even SOTA models exhibit physical contradictions; "low violation $\neq$ high accuracy".
+### Ablation Study (Consistency Diagnostics)
+Strong models still exhibit significant cross-field contradictions; "low violation ≠ high accuracy."
 
-| Model | Phase-Time Mismatch (>1h) ↓ | Month-Season Inconsistent ↓ | Country-MD>200 km Conflict ↓ | MD>1000 km Ratio ↓ |
+| Model | Phase-Time Misalign (>1h) ↓ | Month-Season Inconsistent ↓ | Country-MD>200 km Clash ↓ | MD>1000 km Ratio ↓ |
 |------|------------------------|---------------|--------------------|--------------------|
 | GPT-5-mini | 15.95% | 0.89% | 16.98% | 17.25% |
 | InternVL3-78B | 11.82% | 0.62% | 27.42% | 37.73% |
 | QwenVL-3B | 0.21% | 0.82% | 12.78% | **95.19%** |
 
 ### Key Findings
-- Top VLMs exceed undergraduates in country accuracy but lag experts in time prediction by ~2.5 hours, indicating they memorize *geographical stereotypes* rather than possessing continuous 4D world models.
-- "Thinking" mechanisms consistently provide gains (Gemini-2.5-Flash $\rightarrow$ Flash-Thinking: country +0.34%, MD −25 km).
-- Models struggle with autumn, relying on strong color cues (green/snow) rather than subtle phenological grounding.
-- GPT-5-mini handles sun/shadow cues for seasonal accuracy (60.5%) but fails time prediction (±1h < 25%), treating lighting as semantic context rather than physical input.
+- Top VLMs outperform undergraduates in country accuracy, but minute-level time prediction lags behind experts by ~2.5 hours, indicating VLMs memorize *geographic stereotypes* rather than possessing a continuous 4D physical world model.
+- Reasoning enhancement (thinking) consistently provides small gains, suggesting that multi-step explicit reasoning better integrates low-saliency lighting cues.
+- Autumn classification failed across almost all models, reflecting that VLMs rely on strong color cues (greenery/snow) for seasons and lack grounding in phenological transitions.
+- GPT-5-mini achieves 60.5% season accuracy from sun/shadow cues, yet time ±1h remains <25%, showing models treat lighting as a *semantic correlate* rather than a *physical inference input*.
 
 ## Highlights & Insights
-- Reframing geolocation as structured prediction with consistency auditing exposes "physical contradictions" that accuracy metrics hide.
-- Programmatic derivation combined with human auditing provides a scalable paradigm for verifiable benchmarks.
-- SFT as a diagnostic tool reveals gradient conflicts in shared parameters, suggesting a need for lighting-sensitive vs. lighting-invariant feature decoupling.
+- Reframing geolocalization as "structured prediction + consistency auditing" exposes "physical contradictions" in seemingly powerful VLMs—a paradigm transferable to any multi-variable joint reasoning task.
+- The hybrid *procedural derivation + human auditing* approach ensures both scale and physical correctness for future verifiable benchmarks.
+- Using SFT as a diagnostic tool clearly demonstrates gradient conflicts in single-task LoRA, providing motivation for "illumination-sensitive vs. invariant feature decoupling."
+- The orthogonal nature of consistency and accuracy metrics (e.g., QwenVL-3B having the best phase-time consistency despite a 95% error rate for MD>1000 km) cautions researchers against being misled by single-dimension scores.
 
 ## Limitations & Future Work
-- The 1,455-image scale is relatively small; scaling to $\geq$ 10k while maintaining auditing quality is a challenge.
-- Dependency on proprietary APIs (OpenRouter) complicates reproducibility due to version drift and cost.
-- SFT experiments were limited to Qwen-VL2.5-3B; verification on larger architectures is required.
-- Sampling bias persists in some regions (e.g., Southern Hemisphere Summer has only 56 samples).
+- The scale of 1,455 images is relatively small; statistical stability for low-frequency regions relies on stratified sampling. Scaling to ≥10k images while maintaining auditing quality is a challenge.
+- Evaluation relies on OpenRouter APIs (~$1,450 USD), making it sensitive to version drift and pricing of closed-source models.
+- SFT experiments were limited to Qwen-VL2.5-3B; whether larger architectures (e.g., Qwen3-VL-235B) exhibit similar gradient conflicts remains unverified.
+- Data sources (web/personal) result in oversampling of Europe/North America, with weak statistical estimates for Southern Hemisphere Summer (56 samples).
 
 ## Related Work & Insights
-- Complements cross-view localization (VIGOR, GeoCLIP) by focusing on "when" and internal consistency once a spatial prior is established.
-- Extends LLM-geolocation benchmarks (LLMGeo, IMAGEO-Bench) by introducing the temporal dimension and a reusable 9-field schema.
-- Unlike remote sensing VQA, TimeSpot emphasizes ground-level physical grounding.
-- Suggests that 4D world models should incorporate solar geometry and climate heads as auxiliary losses in VLM pretraining rather than relying solely on image-text alignment.
+- Orthogonal to cross-view localization (VIGOR, GeoCLIP): While those optimize "Where" retrieval, this work focuses on "When" and "Cross-field consistency."
+- Complementary to LLM-geolocation benchmarks (LLMGeo, IMAGEO-Bench) that introduce CoT and fairness but lack temporal fields.
+- Different from Remote Sensing VQA (EarthVQA): Those emphasize aerial/satellite imagery and classification/segmentation, whereas TimeSpot emphasizes ground-level physical grounding.
+- Implications for world models: "Soft constraints" like temperature, lighting, and phenology are essential priors. VLM pretraining should include solar geometry or Köppen climate heads as multi-task losses.
 
 ## Rating
 - Novelty: TBD
@@ -128,15 +129,16 @@ Even SOTA models exhibit physical contradictions; "low violation $\neq$ high acc
 - Value: TBD
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] GTR-Bench: Evaluating Geo-Temporal Reasoning in Vision-Language Models](../../ICLR2026/multimodal_vlm/gtr-bench_evaluating_geo-temporal_reasoning_in_vision-language_mod.md)
 - [\[ICLR 2026\] Can Vision-Language Models Answer Face to Face Questions in the Real-World?](../../ICLR2026/multimodal_vlm/can_vision-language_models_answer_face_to_face_questions_in_the_real-world.md)
 - [\[ICML 2026\] Benchmarking and Enhancing VLM for Compressed Image Understanding](benchmarking_and_enhancing_vlm_for_compressed_image_understanding.md)
-- [\[ICML 2026\] Immuno-VLM: Immunizing Large Vision-Language Models via Generative Semantic Antibodies for Open-World Trustworthiness](immuno-vlm_immunizing_large_vision-language_models_via_generative_semantic_antib.md)
 - [\[CVPR 2026\] World in a Frame: Understanding Culture Mixing as a New Challenge for Vision-Language Models](../../CVPR2026/multimodal_vlm/world_in_a_frame_understanding_culture_mixing_as_a_new_challenge_for_vision-lang.md)
+- [\[ICML 2026\] Immuno-VLM: Immunizing Large Vision-Language Models via Generative Semantic Antibodies for Open-World Trustworthiness](immuno-vlm_immunizing_large_vision-language_models_via_generative_semantic_antib.md)
+- [\[ICCV 2025\] AdvDreamer Unveils: Are Vision-Language Models Truly Ready for Real-World 3D Variations?](../../ICCV2025/multimodal_vlm/advdreamer_unveils_are_visionlanguage_models_truly_ready_for.md)
 
 </div>
 

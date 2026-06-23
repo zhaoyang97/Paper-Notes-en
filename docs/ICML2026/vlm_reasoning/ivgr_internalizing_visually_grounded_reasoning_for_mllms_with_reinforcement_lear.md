@@ -2,15 +2,15 @@
 title: >-
   [Paper Note] iVGR: Internalizing Visually Grounded Reasoning for MLLMs with Reinforcement Learning
 description: >-
-  [ICML 2026][Multimodal VLM][CoT] Addressing the counter-intuitive phenomenon where "explicit visual grounding hinders CoT reasoning," the authors propose iVGR—a dual-stream GRPO training framework. It allows textual CoT and grounded CoT (with boxes) to rollout simultaneously, using a consistency reward to "internalize" the visual localization capabili
+  [ICML 2026][vlm_reasoning][CoT] Addressing the counter-intuitive phenomenon where "explicit visual grounding actually hinders CoT reasoning," the authors propose iVGR—a dual-stream GRPO training framework. It allows textual CoT and grounded CoT (with boxes) to rollout simultaneously. Using a consistency reward, the visual localization capabilities of
 tags:
   - ICML 2026
-  - Multimodal VLM
+  - vlm_reasoning
   - CoT
   - Reinforcement Learning
   - GRPO
 date: 2026-05-08
-content_hash: b79cf08894acfaa8
+content_hash: 45f32d9c238a942a
 ---
 # iVGR: Internalizing Visually Grounded Reasoning for MLLMs with Reinforcement Learning
 
@@ -21,73 +21,73 @@ content_hash: b79cf08894acfaa8
 **Keywords**: Visual Reasoning, CoT, Reinforcement Learning, GRPO, Consistency Reward
 
 ## TL;DR
-Addressing the counter-intuitive phenomenon where "explicit visual grounding hinders CoT reasoning," the authors propose iVGR—a dual-stream GRPO training framework. It allows textual CoT and grounded CoT (with boxes) to rollout simultaneously, using a consistency reward to "internalize" the visual localization capabilities of high-quality grounded trajectories into pure textual CoT. This enables the model to reap the benefits of grounded reasoning during inference without explicitly outputting coordinates.
+Addressing the counter-intuitive phenomenon where "explicit visual grounding actually hinders CoT reasoning," the authors propose iVGR—a dual-stream GRPO training framework. It allows textual CoT and grounded CoT (with boxes) to rollout simultaneously. Using a consistency reward, the visual localization capabilities of high-quality grounded trajectories are "internalized" into pure textual CoT, enabling the model to reap the benefits of grounded reasoning without outputting coordinates during inference.
 
 ## Background & Motivation
 
-**Background**: In high-resolution fine-grained VQA, standard textual CoT often misses small objects. The community has diverged into two visually grounded CoT paths: **Tool-calling streams** like DeepEyes/PixelReasoner, which trigger crop tools during inference to view local regions; and **Explicit box streams** like TreeVGR/GRIT, which force the model to intersperse bounding box coordinates within the CoT. Both types are typically trained using RL methods like GRPO to enhance fine-grained perception.
+**Background**: In high-resolution fine-grained VQA, standard textual CoT often misses small objects. Consequently, the community has branched into two visually grounded CoT paths: **tool-based streams** like DeepEyes/PixelReasoner, where MLLMs call crop tools during inference to view local areas; and **explicit box streams** like TreeVGR/GRIT, which force models to intersperse bounding box coordinates within the CoT. Both rely on RL methods like GRPO for training to enhance fine-grained perception.
 
-**Limitations of Prior Work**: The authors conducted counter-intuitive experiments: using models like DeepEyes-7B and TreeVGR-7B (originally trained for grounded CoT), they modified only the inference prompt to run standard textual CoT. Results across eight benchmarks (V*, HR4K, HR8K, MME-RW-Lite, etc.) showed that textual CoT actually yielded higher average scores (DeepEyes 75.1 vs 74.1, TreeVGR 75.7 vs 74.7). Further analysis by IoU bins revealed that the cropping stream only outperformed textual CoT during high-quality localization ($\mathrm{IoU}>0.5$), while the box stream was outperformed by textual CoT across all IoU intervals.
+**Limitations of Prior Work**: The authors conducted a set of counter-intuitive experiments. Using models specifically trained for grounded CoT, such as DeepEyes-7B and TreeVGR-7B, they modified only the inference prompts to run standard textual CoT. Results across eight benchmarks (V*, HR4K, HR8K, MME-RW-Lite, etc.) showed that textual CoT actually performed better on average (75.1 vs. 74.1 for DeepEyes; 75.7 vs. 74.7 for TreeVGR). Detailed analysis by IoU bins revealed that the tool-based stream outperformed textual CoT only during high-quality localization ($\mathrm{IoU}>0.5$), while the box stream was surpassed by textual CoT across all IoU intervals.
 
-**Key Challenge**: Explicit grounding during inference simultaneously handles two tasks—"accurate localization" and "final answering." These two compete for token budget and attention. When localization is suboptimal, incorrect coordinates or erroneous crops contaminate the final answer, leading to more harm than good.
+**Key Challenge**: Explicit grounding during inference simultaneously handles two tasks—"accurate localization" and "final answering"—which compete for token budget and attention. When localization is suboptimal, incorrect coordinates or crops contaminate the final answer, leading to performance degradation.
 
-**Goal**: Decouple "utilizing grounding supervision during training" from "forcing grounding output during inference." The aim is to extract visual priors from grounded CoT during training while allowing the model to perform pure textual CoT during inference, utilizing localization capabilities "silently."
+**Goal**: Decouple "grounding supervision during training" from "mandatory grounding output during inference." The objective is to extract visual priors from grounded CoT during training while allowing the model to execute pure textual CoT during inference to utilize localization capabilities "silently."
 
-**Key Insight**: Since textual CoT already performs better at inference, training should focus on "ensuring the textual CoT still knows where target objects are during generation," rather than forcing it to write coordinates explicitly. This is equivalent to providing an additional reward to the textual rollout in RL training based on whether it "looks at the same place" as a grounded teacher.
+**Key Insight**: Since textual CoT performs better at inference, the training direction should be "ensuring the textual CoT still knows where the targets are during generation" rather than "forcing it to write coordinates explicitly." This is equivalent to providing an additional reward during RL training based on whether the textual rollout "looks at the same place" as the grounded "teacher."
 
-**Core Idea**: Roll out two parallel streams under the GRPO framework—a grounded stream (forced boxes) and a textual stream (text only). An LLM-scored **consistency reward** is used to align the textual stream with high-quality grounded trajectories, internalizing visual localization into pure textual CoT.
+**Core Idea**: Roll out two parallel streams under the GRPO framework—a grounded stream (forced boxes) and a textual stream (text only). An LLM-based **consistency reward** is used to align the textual stream with high-quality grounded trajectories, internalizing visual localization into pure textual CoT.
 
 ## Method
 
 ### Overall Architecture
-iVGR performs GRPO post-training on Qwen2.5-VL / Qwen3-VL. For each query $q$, the policy $\pi_\theta$ samples $N$ rollouts using two different system prompts, resulting in a grounded set $\mathcal{O}^b$ and a textual set $\mathcal{O}^t$. Both sets calculate rewards and undergo group-wise normalization to obtain advantages $\mathcal{A}^b, \mathcal{A}^t$ for joint policy updates. The key coupling point: the textual stream includes an additional **consistency reward** $R_{\text{consistency}}$, where the "teacher" is a high-quality trajectory selected from the grounded stream (persisted via a cross-step Rollout Archive), thereby distilling localization capability into the textual stream. At inference, only the textual stream is run, with an optional tool-assisted test-time scaling workflow to fuse multi-view information.
+iVGR performs GRPO post-training on Qwen2.5-VL / Qwen3-VL. For each query $q$, the policy $\pi_\theta$ samples $N$ rollouts for each of two different system prompts, resulting in a grounded set $\mathcal{O}^b$ and a textual set $\mathcal{O}^t$. Both sets calculate individual rewards and undergo group-wise normalization to obtain advantages $\mathcal{A}^b, \mathcal{A}^t$ for a joint policy update. The key coupling point is the **consistency reward** $R_{\text{consistency}}$ added to the textual stream. Its "teacher" is the high-quality trajectories selected from the grounded stream (maintained via a cross-step Rollout Archive for the historical best teacher), thus distilling localization capabilities into the textual stream. At inference, only the textual stream is executed, with an optional tool-assisted test-time scaling workflow for multi-view fusion.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    Q["Query q + Image<br/>Policy π_θ samples N rollouts each using two prompts"]
+    Q["Query q + Image<br/>Policy π_θ samples N rollouts per prompt set"]
     subgraph DUAL["Dual-Stream GRPO Training"]
         direction TB
-        Q --> G["Grounded Stream: CoT with Boxes<br/>R = Format + Answer + Box(Bi-directional IoU)"]
-        Q --> T["Textual Stream: Text-only CoT<br/>R = Format + Answer + Consistency"]
+        Q --> G["Grounded Stream: Boxed CoT<br/>R = Format + Ans + Box(Bi-IoU)"]
+        Q --> T["Textual Stream: Pure Text CoT<br/>R = Format + Ans + Consistency"]
     end
     subgraph CONS["Consistency Reward + Rollout Archive"]
         direction TB
-        SEL["Filter high-quality teachers (Format=1 AND Answer=1 AND Box > τ)<br/>→ Rollout Archive for cross-step historical best"] --> JUDGE["72B LLM judge for semantic consistency score<br/>α ∈ {1, 0.7, 0.3, 0}"]
+        SEL["Select High-Quality Teacher (Format=1 & Ans=1 & Box > τ)<br/>→ Rollout Archive maintains Best History"] --> JUDGE["72B LLM judge scores semantic consistency<br/>α ∈ {1, 0.7, 0.3, 0}"]
     end
     G --> SEL
-    JUDGE -->|"R_consistency = α injected into textual stream"| T
-    G --> NORM["Group normalization per stream to get advantages<br/>→ Joint policy update π_θ"]
+    JUDGE -->|"R_consistency = α injected into Textual Stream"| T
+    G --> NORM["Group Normalization for Advantages<br/>→ Joint Policy Update π_θ"]
     T --> NORM
-    NORM -.Inference.-> INF["Default: Run only textual CoT for answering"]
-    INF -->|"Optional for details"| TTS["Tool-assisted Test-time Scaling<br/>Grounded CoT extracts boxes → crop + union crop multi-view"]
+    NORM -.Inference.-> INF["Default: Textual CoT only"]
+    INF -->|"Optional for details"| TTS["Tool-Assisted Test-Time Scaling<br/>Grounded CoT boxes → Crop + Union Crop multi-view"]
 ```
 
 ### Key Designs
 
-**1. Dual-stream GRPO Training: Learning two paradigms with one policy via a shared backbone**
+**1. Dual-Stream GRPO Training: Learning two paradigms with one policy via shared backbone**
 
-Training only textual CoT lacks visual supervision, while training only grounded CoT makes localization a must-do, interfering with answering at inference. iVGR solves this by running two streams concurrently. The grounded stream outputs in the TreeVGR format `<think>...</think><answer>...</answer>`, with reward $R^b_i=R_{\text{format}}+R_{\text{acc}}+R_{\text{box}}$. The box term uses bi-directional IoU matching to balance recall and precision:
+Training only on textual CoT lacks visual supervision, while training only on grounded CoT makes localization a "must-do," interfering with answering during inference. iVGR resolves this by running two streams concurrently within the same policy. The grounded stream outputs `<think>...</think><answer>...</answer>` following the TreeVGR format. The reward $R^b_i=R_{\text{format}}+R_{\text{acc}}+R_{\text{box}}$ uses bi-directional IoU matching to balance recall and precision:
 
 $$R_{\text{box}}=\tfrac{1}{2}\Big(\tfrac{1}{|\mathcal{B}_{\text{gt}}|}\sum_{b}\mathrm{MaxIoU}(b,\mathcal{B}_{\text{pred}})+\tfrac{1}{|\mathcal{B}_{\text{pred}}|}\sum_{\hat{b}}\mathrm{MaxIoU}(\hat{b},\mathcal{B}_{\text{gt}})\Big)$$
 
-The textual stream removes box supervision, with reward $R^t_i=R_{\text{format}}+R_{\text{acc}}+R_{\text{consistency}}$. Both streams perform group normalization to get $\mathcal{A}^b,\mathcal{A}^t$. This allows the model to "train localization" and "train coordinate-free reasoning" simultaneously, embedding localization priors and textual reasoning into a single policy.
+The textual stream removes box supervision, using the reward $R^t_i=R_{\text{format}}+R_{\text{acc}}+R_{\text{consistency}}$. By jointly updating the policy, the model learns localization priors and coordinate-free reasoning simultaneously.
 
 **2. Consistency Reward + Rollout Archive: Translating "where to look" into "what is described"**
 
-The difficulty in cross-stream transfer is that the textual stream lacks coordinate output, making direct IoU supervision impossible. The consistency reward bypasses this: it filters "accurate" trajectories from the grounded stream as teachers (requiring $R_{\text{format}}=1$, $R_{\text{acc}}=1$, and $R_{\text{box}}>\tau$), then uses an external LLM (Qwen2.5-72B) judge to score the textual rollout's semantic alignment with the teacher’s visual focus: $\alpha=1.0$ (consistent), $0.7$ (minor deviation), $0.3$ (omissions/additions), or $0.0$ (contradiction), setting $R_{\text{consistency}}=\alpha$. Since teacher quality is non-stationary in RL, a per-query Rollout Archive is used: $\mathcal{Z}_{\text{archive}}^{(q)}\leftarrow\arg\max_{z\in\{\mathcal{Z}_{\text{archive}}^{(q)},o_{\text{best}}^{b}\}}R_{\text{box}}(z)$, ensuring stable supervision.
+The challenge of cross-stream migration is that the textual stream provides no coordinates for IoU calculation. The consistency reward bypasses this by selecting high-quality "accurate" trajectories from the grounded stream as teachers (requiring $R_{\text{format}}=1$, $R_{\text{acc}}=1$, and $R_{\text{box}}>\tau$). An external LLM (Qwen2.5-72B) judge then scores the semantic alignment between the textual rollout and the teacher’s visual focus: $\alpha=1.0$ (consistent), $0.7$ (partial deviation), $0.3$ (missing/redundant), and $0.0$ (contradictory), setting $R_{\text{consistency}}=\alpha$. To handle non-stationary teacher quality in RL, a per-query Rollout Archive is used, updating as $\mathcal{Z}_{\text{archive}}^{(q)}\leftarrow\arg\max_{z\in\{\mathcal{Z}_{\text{archive}}^{(q)},o_{\text{best}}^{b}\}}R_{\text{box}}(z)$.
 
-**3. Tool-assisted Test-time Scaling: Defaulting to Textual CoT with Boxes as Optional Routers**
+**3. Tool-Assisted Test-Time Scaling: Textual CoT by default, boxes as routers when needed**
 
-Dual-stream training preserves the model's ability to output boxes when prompted. iVGR leverages this for optional test-time scaling: the model first generates a grounded CoT to extract boxes, then uses a crop tool to create local views and a **union crop** (minimal bounding rectangle covering all boxes) to maintain relative spatial relationships. Finally, the original image, local crops, and union crop are fed into a standard textual CoT. This elegantly absorbs tool-stream benefits without being bound by them.
+The model retains the ability to output boxes when prompted. iVGR leverages this for optional test-time scaling: the model first runs a grounded prompt to extract boxes, uses a crop tool for local views, and constructs a **union crop** (minimum bounding rectangle) to preserve relative spatial relationships. Finally, the original image, local crops, and the union crop are combined as multi-view inputs for standard textual CoT. Default inference remains text-only to avoid grounding interference, calling tools only when fine-grained details are necessary.
 
 ### Loss & Training
-Each stream independently performs group normalization and calculates the PPO surrogate loss under GRPO, which are then summed for backpropagation. $\tau$ controls the selection threshold for grounded teachers, and $N$ is the number of rollouts per query per stream. The archive persists across steps to stabilize the consistency reward.
+Both streams undergo independent group normalization and PPO surrogate loss calculation within the GRPO framework, followed by combined backpropagation. $\tau$ controls the teacher selection threshold, and $N$ is the number of rollouts per stream per query. The archive persists across steps to ensure stability in consistency rewards.
 
 ## Key Experimental Results
 
 ### Main Results
-Comparing iVGR-Qwen2.5-VL-7B against open-source MLLMs and various grounded reasoning methods across fine-grained VQA (V*, HR4K, HR8K, MME-RW-Lite) and general VQA tasks.
+Evaluation of iVGR (on Qwen2.5-VL-7B) against general MLLMs and grounded reasoning methods across fine-grained VQA and general VQA benchmarks.
 
 | Model | Tools | V* | HR4K | HR8K | MME-RW-Lite | POPE | RWQA | CV-2D | CV-3D |
 |------|-------|----|------|------|-------------|------|------|-------|-------|
@@ -97,34 +97,46 @@ Comparing iVGR-Qwen2.5-VL-7B against open-source MLLMs and various grounded reas
 | Thyme-7B | ✓ | 82.2 | 77.0 | 72.0 | 55.2 | 86.8 | 70.2 | 78.0 | 75.1 |
 | **iVGR-Qwen2.5-VL-7B** | ✗ | **86.4** | **78.3** | **75.5** | **55.6** | **88.9** | 68.6 | **78.4** | — |
 
-iVGR outperforms same-sized grounded models on most fine-grained tasks. Without any external tools, pure textual CoT improves V* scores from 78.5 to 86.4.
+Ours outperforms same-sized grounded models on most fine-grained tasks without external tools, raising the V* score from 78.5 to 86.4 using pure textual CoT.
+
+### Ablation Study (Counter-Intuitive Comparison)
+Results when existing grounded models are forced to use textual CoT via prompt switching.
+
+| Model | CoT Mode | V* | HR4K | HR8K | MME-RW-Lite | Avg. |
+|------|---------|----|------|------|-------------|------|
+| DeepEyes-7B | grounded (G, w/ crop) | 82.7 | 75.1 | 72.6 | 53.2 | 74.1 |
+| DeepEyes-7B | textual (T) | 81.7 | 74.9 | 73.1 | 53.5 | **75.1** |
+| TreeVGR-7B | grounded (G, w/ box) | 83.8 | 77.1 | 73.1 | 54.9 | 74.7 |
+| TreeVGR-7B | textual (T) | 84.3 | 76.9 | 74.7 | 54.7 | **75.7** |
+
+The textual mode is superior on average, falsifying the assumption that "explicit grounding is mandatory during inference."
 
 ### Key Findings
-- **Grounded CoT by IoU Bins**: DeepEyes only outperforms textual CoT when $\mathrm{IoU}>0.5$, while TreeVGR is consistently surpassed. This proves "explicit coordinates" aren't the primary benefit; **"visual priors learned during training" are.**
-- iVGR-Qwen2.5-VL-7B matches or exceeds tool-using models like DeepEyesV2-7B or Thyme-7B without tools, offering efficiency gains (shorter inference tokens).
-- Improvements in general VQA (POPE/CV-Bench) indicate that the "visual focus" learned via consistency rewards does not degrade general reasoning.
+- Per-IoU bin analysis: DeepEyes only beats textual CoT at $\mathrm{IoU}>0.5$, while TreeVGR is consistently outperformed. This suggests that the "visual priors learned during training," rather than the "explicit coordinates," are the true source of gain.
+- iVGR matches or exceeds tool-based models (DeepEyesV2, Mini-o3, Thyme) without tools, offering lower inference costs (shorter tokens).
+- Gains in general VQA show that consistency-reward-learned "visual focus" does not impair general reasoning.
 
 ## Highlights & Insights
-- The "counter-intuitive" scientific narrative is a major strength: it overturns the consensus (that grounded CoT is better for inference), explains why using IoU bins, and then proposes a solution.
-- The consistency reward translates visual alignment into semantic alignment scored by an LLM, solving the "non-coordinate textual stream" problem. This template is applicable to any RL distillation scenario where the teacher has structured output but the student has only natural language.
-- The Rollout Archive effectively handles non-stationary teachers in GRPO, avoiding the need for explicit warmups or two-stage training.
+- The "counter-intuitive" narrative is well-supported: the approach transitions logically from observing grounded CoT's negative impact to explaining why, then proposing a solution.
+- Translating visual alignment into semantic alignment for LLM judging bypasses the inability of text streams to calculate IoU. This trick is applicable to any RL distillation where the teacher has structured output and the student uses natural language.
+- The Rollout Archive is a practical mechanism for handling non-stationary teachers in GRPO, allowing "the teacher to improve as the policy improves."
 
 ## Limitations & Future Work
-- Dependency on external 72B LLM for consistency judging increases training costs and introduces judge bias.
-- Dual-stream rollout doubles the training compute requirements; scalability to 32B+ models remains to be verified.
-- Semantic alignment may lack direct visual attention supervision; judge models might give high scores to similar linguistic descriptions even if the model looks at the wrong ROI in highly similar medical images.
-- The specific trigger policy for tool-assisted test-time scaling is not fully learned.
+- Dependency on an external 72B LLM for judging introduces training costs and potential bias; the impact of smaller judge models remains unquantified.
+- Dual-stream rollouts double the required training compute.
+- Alignment occurs only at the natural language level, lacking direct visual attention supervision. Very small but linguistically similar targets (e.g., different ROIs in medical imaging) might receive inflated scores.
+- The gain from tool-assisted test-time scaling is not fully disclosed, and a learned strategy for when to invoke tools is missing.
 
 ## Related Work & Insights
-- **vs DeepEyes / PixelReasoner**: These are tool-calling streams; iVGR internalizes these capabilities, using tools only as an optional extension, reducing inference costs.
-- **vs TreeVGR / GRIT**: These force box insertion; iVGR treats boxes as auxiliary training tasks, removing the cognitive burden during inference.
-- **vs DeepSeek-R1 / GRPO Series**: iVGR is a dual-stream extension of GRPO, introducing "cross-stream consistency" and "cross-step archiving" as a template for multi-modal GRPO.
+- **vs DeepEyes / PixelReasoner**: These utilize external crop tools. iVGR defaults to no tools but keeps the capability as an optional scaling factor, reducing inference overhead.
+- **vs TreeVGR / GRIT**: These force box insertion. iVGR treats grounding as an auxiliary training task, removing the cognitive burden during inference.
+- **vs DeepSeek-R1 / GRPO**: iVGR serves as a multi-stream extension of GRPO, introducing "cross-stream consistency" and "cross-step archiving" as templates for multimodal/multi-task RL.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ The "internalization over explicit output" perspective is unique and backed by strong empirical evidence.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive benchmarks and IoU analysis; lacks ablation on the robustness of the judge model.
-- Writing Quality: ⭐⭐⭐⭐⭐ Excellent flow from counter-intuitive observation to hypothesis to validation.
-- Value: ⭐⭐⭐⭐⭐ The dual-stream GRPO + consistency reward is a highly transferable RL template.
+- Novelty: ⭐⭐⭐⭐⭐ The "internalization" perspective is unique and the experimental refutation of common assumptions is striking.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive benchmarks and IoU analysis, though lacking judge model robustness ablations.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear, logical progression from refutation to hypothesis to verification.
+- Value: ⭐⭐⭐⭐⭐ Provides a transferable RL template for agent training and multimodal reasoning.
 
 <!-- RELATED:START -->
 
@@ -132,11 +144,11 @@ iVGR outperforms same-sized grounded models on most fine-grained tasks. Without 
 
 ## Related Papers
 
-- [\[ICML 2026\] Injecting Distributional Awareness into MLLMs via Reinforcement Learning for Deep Imbalanced Regression](injecting_distributional_awareness_into_mllms_via_reinforcement_learning_for_dee.md)
-- [\[CVPR 2026\] Reading or Reasoning? Format Decoupled Reinforcement Learning for Document OCR](../../CVPR2026/multimodal_vlm/reading_or_reasoning_format_decoupled_reinforcement_learning_for_document_ocr.md)
-- [\[CVPR 2026\] TempR1: Improving Temporal Understanding of MLLMs via Temporal-Aware Multi-Task Reinforcement Learning](../../CVPR2026/multimodal_vlm/tempr1_improving_temporal_understanding_of_mllms_via_temporal-aware_multi-task_r.md)
-- [\[CVPR 2026\] DeepSketcher: Internalizing Visual Manipulation for Multimodal Reasoning](../../CVPR2026/multimodal_vlm/deepsketcher_internalizing_visual_manipulation_for_multimodal_reasoning.md)
-- [\[CVPR 2026\] Visual Reasoning through Tool-supervised Reinforcement Learning](../../CVPR2026/multimodal_vlm/visual_reasoning_through_tool-supervised_reinforcement_learning.md)
+- [\[CVPR 2026\] Incentivizing Versatile Video Reasoning in MLLMs via Data-Efficient Reinforcement Learning](../../CVPR2026/vlm_reasoning/incentivizing_versatile_video_reasoning_in_mllms_via_data-efficient_reinforcemen.md)
+- [\[CVPR 2026\] Reading or Reasoning? Format Decoupled Reinforcement Learning for Document OCR](../../CVPR2026/vlm_reasoning/reading_or_reasoning_format_decoupled_reinforcement_learning_for_document_ocr.md)
+- [\[ICML 2026\] Learning GUI Grounding with Spatial Reasoning from Visual Feedback](learning_gui_grounding_with_spatial_reasoning_from_visual_feedback.md)
+- [\[CVPR 2026\] MoE-GRPO: Optimizing Mixture-of-Experts via Reinforcement Learning in Vision-Language Models](../../CVPR2026/vlm_reasoning/moe-grpo_optimizing_mixture-of-experts_via_reinforcement_learning_in_vision-lang.md)
+- [\[CVPR 2026\] R-C2: Cycle-Consistent Reinforcement Learning Improves Multimodal Reasoning](../../CVPR2026/vlm_reasoning/r-c2_cycle-consistent_reinforcement_learning_improves_multimodal_reasoning.md)
 
 </div>
 

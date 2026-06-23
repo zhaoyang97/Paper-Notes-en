@@ -2,12 +2,12 @@
 title: >-
   [Paper Note] AutoReproduce: Automatic AI Experiment Reproduction with Paper Lineage
 description: >-
-  [ACL 2026][Multi-Agent][Paper Note] AutoReproduce proposes a multi-agent framework that mines implicit domain knowledge from cited literature through a "paper lineage" algorithm, achieving end-to-end automatic reproduction of paper experiments. It reaches an execution rate of 94.87% on the self-built ReproduceBench with a performance gap of only 19.72%.
+  [ACL 2026][Multi-Agent][Paper Note] AutoReproduce proposes a multi-agent framework that utilizes a "Paper Lineage" algorithm to mine implicit domain knowledge from referenced literature. This enables end-to-end automatic reproduction of paper experiments, achieving a code execution rate of 94.87% and a performance gap of only 19.72% on the self-construct
 tags:
   - ACL 2026
   - Multi-Agent
 date: 2026-05-08
-content_hash: 24f1efac9e8e7c12
+content_hash: 9288353b2b8bcb53
 ---
 # AutoReproduce: Automatic AI Experiment Reproduction with Paper Lineage
 
@@ -15,63 +15,73 @@ content_hash: 24f1efac9e8e7c12
 **arXiv**: [2505.20662](https://arxiv.org/abs/2505.20662)  
 **Code**: [https://github.com/AI9Stars/AutoReproduce](https://github.com/AI9Stars/AutoReproduce)  
 **Area**: LLM Evaluation  
-**Keywords**: Paper reproduction, paper lineage, multi-agent, code generation, scientific automation
+**Keywords**: Paper Reproduction, Paper Lineage, Multi-agent, Code Generation, Scientific Automation
 
 ## TL;DR
 
-AutoReproduce proposes a multi-agent framework that mines implicit domain knowledge from cited literature through a "paper lineage" algorithm, achieving end-to-end automatic reproduction of paper experiments. It reaches an execution rate of 94.87% on the self-built ReproduceBench with a performance gap of only 19.72%.
+AutoReproduce proposes a multi-agent framework that utilizes a "Paper Lineage" algorithm to mine implicit domain knowledge from referenced literature. This enables end-to-end automatic reproduction of paper experiments, achieving a code execution rate of 94.87% and a performance gap of only 19.72% on the self-constructed ReproduceBench.
 
 ## Background & Motivation
 
-**Background**: Reproducing paper experiments is crucial for accelerating scientific progress. However, as methods become increasingly complex, reproduction requires deep domain expertise and significant human labor. LLMs have been utilized for discrete tasks such as paper analysis, idea generation, and environmental configuration, but an end-to-end automatic reproduction framework has yet to emerge.
+**Background**: Reproducing paper experiments is crucial for accelerating scientific progress. However, as methods become increasingly complex, reproduction requires deep domain expertise and significant manual labor. While LLMs have been applied to discrete tasks such as paper analysis, idea generation, and environment configuration, an end-to-end automatic reproduction framework has yet to emerge.
 
-**Limitations of Prior Work**: (1) Papers often lack critical experimental details—different research areas rely on vast amounts of implicit knowledge (e.g., specific module architectures, data processing pipelines); (2) Parallel works like Paper2Code only generate code without considering executability, failing to verify the correctness of the reproduction; (3) Existing methods do not systematically utilize domain conventions and implementation practices contained in cited literature.
+**Limitations of Prior Work**: (1) Papers often lack key experimental details—different research areas rely on vast amounts of implicit knowledge (e.g., specific module architectures, data processing pipelines); (2) Concurrent works like Paper2Code only generate code without considering executability, making it impossible to verify the correctness of the reproduction; (3) Existing methods do not systematically utilize the domain conventions and implementation practices contained within cited literature.
 
-**Key Challenge**: Successful reproduction requires not only understanding the method description of the paper itself but also mastering the regular domain practices not explicitly stated—this "tacit knowledge" is scattered throughout cited literature and related codebases.
+**Key Challenge**: Successful reproduction requires not only an understanding of the method description in the paper itself but also mastery of the conventional practices not explicitly stated—this "tacit knowledge" is scattered throughout cited papers and related code repositories.
 
-**Goal**: (1) Systematically mine implicit knowledge from cited literature; (2) Build an end-to-end executable code reproduction framework; (3) Establish a reproduction evaluation benchmark that includes execution verification.
+**Goal**: (1) Systematically mine implicit knowledge from cited literature; (2) Construct an end-to-end executable code reproduction framework; (3) Establish a reproduction evaluation benchmark that includes execution verification.
 
-**Key Insight**: Propose a "Paper Lineage" algorithm to trace cited literature and associated codebases, using the implementation conventions accumulated in historical research as a knowledge source for reproduction.
+**Key Insight**: A "Paper Lineage" algorithm is proposed to trace cited literature and associated code repositories, using implementation conventions accumulated in historical research as knowledge sources for reproduction.
 
-**Core Idea**: Paper Reproduction = Paper Understanding + Domain Knowledge Mining + Code Generation + Execution Verification. The lineage algorithm compensates for the deficiencies in the paper's own description through implicit knowledge passed along the citation chain.
+**Core Idea**: Paper Reproduction = Paper Understanding + Domain Knowledge Mining + Code Generation + Execution Verification. The lineage algorithm compensates for deficiencies in the paper's own description through implicit knowledge passed along the citation chain.
 
 ## Method
 
 ### Overall Architecture
 
-AutoReproduce is driven by the collaboration of two specialized agents—the research agent handles text-based tasks like reading papers, summarizing, and selecting related work, while the code agent handles code tasks like implementation and debugging. The pipeline runs sequentially through three stages: (1) Literature Review—the research agent performs a three-level summary (Overall / Method / Experiment), compressing the lengthy original text into core information needed for reproduction; (2) Paper Lineage—identifying top-k related papers from citations, fetching their codebases, and extracting key files to supplement domain conventions omitted in the paper; (3) Code Development—two agents collaborate through data acquisition, method reproduction, and experiment execution to generate executable code, during which sampling-based unit testing and EDIT row-level patching are used for continuous verification and error correction.
+AutoReproduce is driven by the collaboration of two specialized agents: the research agent handles text-based tasks such as reading papers, summarizing, and selecting related work, while the code agent is responsible for implementation and debugging. The entire pipeline runs sequentially through three stages: (1) Literature Review—the research agent summarizes the paper at three levels (overall / method / experiment), compressing the lengthy original text into core information required for reproduction; (2) Paper Lineage—the top-k relevant papers are identified from citations, their code repositories are pulled, and key files are extracted to supplement domain conventions not explicitly stated in the paper; (3) Code Development—two agents collaborate to generate executable code through data acquisition, method reproduction, and experiment execution. During this stage, sample-based unit tests are used for continuous verification, and line-level EDIT commands are used to fix errors.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    A["Paper to Reproduce + Instructions"] --> B["Literature Review<br/>Research Agent produces 3-level summaries"]
-    B --> C["Paper Lineage Algorithm<br/>Select top-k related papers from citations → ArXiv / GitHub API → ⟨Summary, Code⟩ examples"]
+    A["Paper to Reproduce + Instructions"] --> B["Literature Review<br/>Research Agent generates Overall / Method / Experiment summaries"]
+    B --> C["Paper Lineage Algorithm<br/>Select top-k related papers from citations → ArXiv / GitHub API → ⟨Summary, Code⟩ reference examples"]
     C --> D
-    subgraph D["Three-stage Code Development (Research ⇄ Code Agent Collaboration)"]
+    subgraph D["Three-stage Code Development (Research Agent ⇄ Code Agent Collaboration)"]
         direction TB
-        D1["Data Acquisition<br/>Distinguish standard / custom datasets"]
-        D2["Method Reproduction<br/>Code Agent implements + Research Agent corrects vs. summary"]
-        D3["Experiment Execution<br/>Early-exit to verify pipeline"]
+        D1["Data Acquisition<br/>Distinguish between standard / custom datasets"]
+        D2["Method Reproduction<br/>Code Agent implementation + Research Agent validation against summary"]
+        D3["Experiment Execution<br/>Early-exit to verify full pipeline"]
         D1 --> D2 --> D3
     end
-    D -->|Execution Error| E["Sampling-based Unit Testing<br/>Mini-batch data flow analysis + EDIT row-level patching"]
+    D -->|Execution Error| E["Sample-based Unit Testing<br/>Mini-batch data flow analysis · Decoupled diagnosis → Line-level EDIT"]
     E -->|Feedback Correction| D
     D --> F["Executable Reproduced Code"]
 ```
 
 ### Key Designs
 
-**1. Paper Lineage Algorithm: Mining domain conventions omitted in the paper along the citation chain**
+**1. Paper Lineage Algorithm: Mining Domain Conventions Along the Citation Chain**
 
-Reproduction failure often occurs not because the paper is misunderstood, but because implementation details that "everyone is assumed to know"—such as module setup or data preprocessing—are not written down. These pieces of tacit knowledge are scattered in cited literature and their codebases. The Paper Lineage algorithm traces this: a research agent identifies top-$k$ (default 3) most relevant papers from the source paper's citations, prioritizing baselines in the main experiments. It then pulls papers via ArXiv API for summarization and clones repositories via GitHub API. The code agent selectively extracts key source files to form $\langle \text{summary}, \text{code} \rangle$ tuples as reference examples. If a cited paper has no public code, it defaults to using its summary as a knowledge source. 
+Reproduction failure often stems not from a lack of understanding but because the paper omits implementation details that are "commonly known"—such as how a specific module is built or how data is pre-processed. These forms of tacit knowledge are scattered in cited papers and their code repositories. The Paper Lineage algorithm traces this line: the research agent identifies the top-k (default 3) most relevant papers from the source paper's citations, prioritizing baselines from the main experiments. It then fetches papers via the ArXiv API and clones repositories via the GitHub API. The code agent selectively extracts key source files based on paper summaries and task instructions, forming ⟨summary, code⟩ tuples as reference examples. If a cited paper has no public code, only its summary is used as a knowledge source. This reflects the cumulative nature of research, where new methods stand on the shoulders of old ones; code from the citation chain fills the gaps in the paper's own description.
 
 **2. Three-stage Code Development: Data Acquisition → Method Reproduction → Experiment Execution**
 
-AutoReproduce sequentializes reproduction into three steps within Docker containers: (a) Data Acquisition—identifying whether standard benchmarks (e.g., using torchvision) or custom datasets are used; (b) Method Reproduction—the code agent synthesizes the implementation based on the paper summary, data attributes, and lineage knowledge, while the research agent verifies each part against the method summary, providing feedback until alignment is achieved; (c) Experiment Execution—verifying the full experimental pipeline can run end-to-end. This division between "implementation" and "alignment with original text" is key to stable convergence.
+Obtaining reference examples from the lineage is insufficient; the code must be written and executed. This stage is the core of AutoReproduce, breaking reproduction into three sequential steps performed by two agents in a Docker container: (a) Data Acquisition—identifying whether the paper uses standard benchmarks or custom datasets. The former uses libraries like `torchvision` for loading, while the latter generates a preprocessing pipeline; (b) Method Reproduction—the code agent synthesizes the implementation based on the summary, data attributes, and lineage knowledge. The research agent verifies this against the method summary, providing feedback and dynamically updating the summary until the code aligns perfectly with the paper; (c) Experiment Execution—verifying that the full experimental pipeline can run end-to-end. This "one-to-write, one-to-verify" division of labor allocates "implementation" and "alignment" to their respective specialized agents, which is key to stable convergence.
 
-**3. Sampling-based Unit Testing + Row-level EDIT: Ensuring executability at low cost**
+**3. Sample-based Unit Testing + Line-level EDIT: Ensuring Executability at Low Cost**
 
-AutoReproduce ensures executability through two main techniques. First, sampling-based unit tests: rather than waiting for long experiments to fail, it uses mini-batch sampling during data acquisition to generate analysis code that proactively detects critical attributes like tensor shape and dtype. Second, row-level EDIT: upon execution errors, the code agent diagnoses the traceback and uses an `EDIT N M` command to replace only lines N to M, rather than regenerating the entire file. Decoupling "error diagnosis" from "code editing" significantly improves debugging success rates and saves tokens.
+Whether generated code can execute is the watershed for reproduction value. Unlike concurrent works that do not verify executability, AutoReproduce uses two strategies. The first is sample-based unit testing: instead of waiting for the full experiment to fail, mini-batch sampling is used during data acquisition to generate and run analysis code, proactively detecting critical attributes like tensor `shape` and `dtype` to prevent runtime crashes caused by attribute mismatches. The second is line-level EDIT: when an execution error occurs, the code agent diagnoses the traceback and uses an `EDIT N M` command to replace only lines $N$ through $M$, rather than regenerating the entire file. Decoupling "error diagnosis" from "code editing" improves debugging success rates, saves tokens, and avoids breaking correct sections during full-file rewrites.
+
+### A Complete Example: Reproducing a Paper with Baselines
+
+Given a paper to reproduce, AutoReproduce first has the research agent produce a three-level summary (Overall / Method / Experiment) to identify main experiments and baselines. The lineage algorithm then selects the 3 most relevant papers from the citations, clones their GitHub repositories, and the code agent extracts key modules as templates. During development, input tensor shapes and types are detected via mini-batch sampling. The code agent then writes the implementation using lineage examples, while the research agent provides feedback based on the paper summary. Finally, an early-exit pipeline is run to verify execution. If an error occurs, it is diagnosed and corrected via line-level EDIT until the code runs. This achieved a 94.87% execution rate on ReproduceBench, compared to only 23.08% for the strongest baseline.
+
+### Loss & Training
+
+No model training involved. LLMs such as GPT-4o, Claude-3.5-Sonnet, o3-mini, and Gemini-2.5-Pro are used as the backbone for the agents.
+
+## Key Experimental Results
 
 ### Main Results
 
@@ -88,43 +98,43 @@ AutoReproduce ensures executability through two main techniques. First, sampling
 
 ### Ablation Study
 
-| Configuration | Key Metrics | Description |
+| Configuration | Key Metric | Description |
 |------|---------|------|
 | Full AutoReproduce | Optimal | Lineage + Three-stage development |
-| W/O Paper Lineage | Decrease | Implementation bias due to lack of domain knowledge |
-| W/O Unit Test | Exec Rate Decrease | Missing executability verification |
+| Without Paper Lineage | Decrease | Implementation bias due to lack of domain knowledge |
+| Without Unit Testing | Exec Rate Decrease | Lack of executability verification |
 
 ### Key Findings
 
-- AutoReproduce's code execution rate (94.87%) far exceeds all baselines (max 23.08%), indicating that end-to-end executability verification is essential.
-- The Paper Lineage algorithm is a critical contribution—removing it significantly drops Align-Score and increases Perf Gap.
-- Gemini-2.5-Pro performs best as the backbone LLM, but even with GPT-4o, AutoReproduce substantially outperforms PaperCoder.
-- A performance gap of 19.72% remains, suggesting that fully automated, high-fidelity reproduction is still challenging.
+- The code execution rate of AutoReproduce (94.87%) far exceeds all baselines (max 23.08%), indicating that end-to-end executability verification is critical.
+- The Paper Lineage algorithm is a key contribution—Align-Score and Perf Gap both degrade significantly without it.
+- Gemini-2.5-Pro performs best as the backbone LLM, but even with GPT-4o, AutoReproduce significantly outperforms PaperCoder.
+- A performance gap of 19.72% remains, suggesting that fully automated high-fidelity reproduction still faces challenges.
 
 ## Highlights & Insights
 
-- The concept of "Paper Lineage" is insightful—turning the cumulative nature of research into an actionable knowledge-mining algorithm.
-- The emphasis on end-to-end executability fills a critical gap in existing works (e.g., Paper2Code)—code that cannot execute has no reproduction value.
+- The concept of "Paper Lineage" is highly insightful—it transforms the cumulative nature of scientific research into an operational knowledge mining algorithm.
+- The emphasis on end-to-end executability fills a critical gap in existing work (e.g., Paper2Code)—code that cannot run has no reproduction value.
 - The strategy of decoupling error diagnosis from code modification is a significant engineering insight.
 
 ## Limitations & Future Work
 
-- ReproduceBench contains only 13 papers, which is a small scale.
-- Dependence on cited papers having public repositories; otherwise, the lineage algorithm reverts to text-only knowledge.
-- The ~20% performance gap suggests high-precision reproduction still requires human intervention.
-- Currently limited to the AI domain; expansion to other disciplines requires additional adaptation.
+- ReproduceBench consists of only 13 papers, which is a relatively small scale.
+- It relies on cited papers having public code repositories; otherwise, the lineage algorithm reverts to using only textual knowledge.
+- A performance gap of roughly 20% remains, indicating that high-precision reproduction likely still requires human intervention.
+- The scope is currently limited to the AI domain; expansion to other disciplines would require additional adaptation.
 
 ## Related Work & Insights
 
-- **vs Paper2Code/PaperCoder**: These methods do not consider code executability; AutoReproduce emphasizes end-to-end execution.
-- **vs Agent Laboratory**: Agent Lab's execution rate is only 23%, whereas AutoReproduce reaches 95%.
+- **vs Paper2Code/PaperCoder**: These methods do not consider code executability, whereas AutoReproduce emphasizes end-to-end execution.
+- **vs Agent Laboratory**: Agent Lab achieves an execution rate of only 23%, while AutoReproduce reaches 95%.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ The paper lineage algorithm and end-to-end reproduction framework are significant innovations.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Comparison across multiple LLMs and baselines, though the benchmark scale is small.
-- Writing Quality: ⭐⭐⭐⭐ Clear framework description and intuitive flowcharts.
-- Value: ⭐⭐⭐⭐⭐ Significant contribution to scientific automation.
+- Novelty: ⭐⭐⭐⭐⭐ The Paper Lineage algorithm and end-to-end reproduction framework are significant innovations.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive multi-LLM comparisons and baseline coverage, though the benchmark scale is small.
+- Writing Quality: ⭐⭐⭐⭐ Clear framework descriptions and intuitive flowcharts.
+- Value: ⭐⭐⭐⭐⭐ Significant impact on the advancement of scientific automation.
 
 <!-- RELATED:START -->
 
@@ -132,11 +142,11 @@ AutoReproduce ensures executability through two main techniques. First, sampling
 
 ## Related Papers
 
-- [\[CVPR 2026\] Paper2Figure: A Multi-Agent Collaborative System for Figure Generation Towards Academic Research Paper](../../CVPR2026/multi_agent/paper2figure_a_multi-agent_collaborative_system_for_figure_generation_towards_ac.md)
-- [\[AAAI 2026\] Hierarchical Pedagogical Oversight: A Multi-Agent Adversarial Framework for Reliable AI Tutoring](../../AAAI2026/multi_agent/hierarchical_pedagogical_oversight_a_multi-agent_adversarial_framework_for_relia.md)
 - [\[AAAI 2026\] Assemble Your Crew: Automatic Multi-agent Communication Topology Design via Autoregressive Graph Generation](../../AAAI2026/multi_agent/assemble_your_crew_automatic_multi-agent_communication_topol.md)
+- [\[ICML 2026\] Searching for Synergy in Shared Workspace Human-AI Collaboration](../../ICML2026/multi_agent/searching_for_synergy_in_shared_workspace_human-ai_collaboration.md)
+- [\[AAAI 2026\] Hierarchical Pedagogical Oversight: A Multi-Agent Adversarial Framework for Reliable AI Tutoring](../../AAAI2026/multi_agent/hierarchical_pedagogical_oversight_a_multi-agent_adversarial_framework_for_relia.md)
+- [\[ACL 2026\] PaperMentor: A Human-Centered Multi-Agent Writing Tutor for AI Research Papers on Overleaf](papermentor_a_human-centered_multi-agent_writing_tutor_for_ai_research_papers_on.md)
 - [\[CVPR 2025\] ComfyBench: Benchmarking LLM-based Agents in ComfyUI for Autonomously Designing Collaborative AI Systems](../../CVPR2025/multi_agent/comfybench_benchmarking_llm-based_agents_in_comfyui_for_autonomously_designing_c.md)
-- [\[ACL 2026\] From Query to Counsel: Structured Reasoning with a Multi-Agent Framework and Dataset for Legal Consultation](from_query_to_counsel_structured_reasoning_with_a_multi-agent_framework_and_data.md)
 
 </div>
 

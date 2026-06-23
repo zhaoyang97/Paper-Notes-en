@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] On the Relationship Between Activation Outliers and Feature Death in Sparse Autoencoders
 description: >-
-  [ICML 2026][Interpretability][feature death] This paper identifies that the true root cause of the "dead feature" problem in SAEs is not training dynamics but the geometric properties of the activation distribution. By quantifying "dimension-level outliers" using $\gamma=\|\bm{\mu}\|/\|\bm{\sigma}\|$, the authors analytically predict death rates from initializati
+  [ICML 2026][Interpretability][feature death] This paper identifies the true root cause of the "dead feature" problem in SAEs as the geometric properties of the activation distribution rather than training dynamics. It quantifies the severity of "dimension-level outliers" using $\gamma=\|\bm{\mu}\|/\|\bm{\sigma}\|$, analytically predicts the death rate from initia
 tags:
   - ICML 2026
   - Interpretability
@@ -10,73 +10,73 @@ tags:
   - mean-centering
   - TopK SAE
 date: 2026-05-08
-content_hash: ee00461571502714
+content_hash: 5cf3d180490a0bb3
 ---
 # On the Relationship Between Activation Outliers and Feature Death in Sparse Autoencoders
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.31518](https://arxiv.org/abs/2605.31518)  
 **Code**: None  
-**Area**: Interpretability
+**Area**: Interpretability  
 **Keywords**: Sparse Autoencoders, feature death, activation outliers, mean-centering, TopK SAE
 
 ## TL;DR
-This paper identifies that the true root cause of the "dead feature" problem in SAEs is not training dynamics but the geometric properties of the activation distribution. By quantifying "dimension-level outliers" using $\gamma=\|\bm{\mu}\|/\|\bm{\sigma}\|$, the authors analytically predict death rates from initialization (Spearman $\rho=0.82\sim0.89$ across 454 model-layer combinations) and demonstrate that mean-centering alone can reduce death rates in high-$\gamma$ models like AlphaFold3/ESM3 from 70%+ to near zero.
+This paper identifies the true root cause of the "dead feature" problem in SAEs as the geometric properties of the activation distribution rather than training dynamics. It quantifies the severity of "dimension-level outliers" using $\gamma=\|\bm{\mu}\|/\|\bm{\sigma}\|$, analytically predicts the death rate from initialization (Spearman $\rho=0.82\sim0.89$ across 454 model-layer combinations), and demonstrates that mean-centering alone can reduce the death rate of high-$\gamma$ models like AlphaFold3/ESM3 from 70%+ to near zero.
 
 ## Background & Motivation
 
-**Background**: Sparse Autoencoders (SAEs) are a primary tool for mechanistic interpretability, mapping neural network activations to a high-dimensional sparse dictionary space ($n>d$), where each dictionary direction represents an interpretable concept. Architectural variants include ReLU-SAE, TopK-SAE, and JumpReLU-SAE, with this paper focusing on TopK-SAE.
+**Background**: Sparse Autoencoders (SAEs) are primary tools for mechanistic interpretability, mapping neural network activations into a high-dimensional sparse dictionary space ($n>d$), where each dictionary direction represents an interpretable concept. Architecturally, variants like ReLU-SAE, TopK-SAE, and JumpReLU-SAE exist; this paper focuses on TopK-SAE.
 
-**Limitations of Prior Work**: The same SAE configuration (identical architecture, dictionary size, sparsity, and AuxK) yields a dead feature rate of <5% on GPT-2 but as high as 72% on AlphaFold3. Even within a single model like ESM3, death rates fluctuate violently between 20% and 80% across different layers. Dead features mean dictionary capacity is severely wasted, forcing surviving features to "crowd in" more concepts, which reintroduces the superposition that SAEs aimed to eliminate.
+**Limitations of Prior Work**: The same SAE configuration (architecture, dictionary size, sparsity, and AuxK) yields a dead feature rate of <5% on GPT-2 but as high as 72% on AlphaFold3. Even within a single model like ESM3, death rates fluctuate drastically between 20%–80% across different layers. Dead features result in wasted dictionary capacity, forcing surviving features to "crowd" into more concepts, reintroduced the superposition that SAEs intended to resolve.
 
-**Key Challenge**: Previous revival techniques (AuxK, Ghost Gradient, Resampling) treat dead features as a "training dynamics problem"—assuming the features are stuck and need a "push" via various tricks. However, these tricks fail entirely on the most problematic models, suggesting the issue does not stem from training.
+**Key Challenge**: Previous revival techniques (AuxK, Ghost Gradient, Resampling) treat dead features as a "training dynamics problem"—if they get stuck, use tricks to push them. However, these tricks fail entirely on the most problematic models, suggesting the issue does not originate in training.
 
-**Goal**: (1) Find an interpretable diagnostic capable of predicting death rates across different modalities and models; (2) Explain why revival methods like AuxK fail on high-death-rate models; (3) Provide a principled preprocessing solution and clarify when its use is mandatory.
+**Goal**: (1) Find an interpretable diagnostic metric that predicts death rates across modalities and models; (2) Explain why revival methods like AuxK fail on high-death-rate models; (3) Provide a principled preprocessing scheme and specify when it must be used.
 
-**Key Insight**: The authors discovered that high-death layers share a common activation pattern: the mean of a few dimensions is significantly larger than the per-token standard deviation ("high mean, low variance" dimension-level outliers). This is distinct from the token-level outliers (spikes in individual tokens) studied in the quantization field. This geometric property determines the fate of most features at initialization.
+**Key Insight**: High-death-rate layers share a common activation pattern: the mean of a few dimensions is significantly larger than the per-token standard deviation ("dimension-level outliers" with high mean and low variance). This is distinct from the token-level outliers (spikes in specific tokens) studied in quantization. This geometric property determines the fate of most features at initialization.
 
-**Core Idea**: Dead features are a geometric issue rather than a training issue. A single scalar $\gamma=\|\bm{\mu}\|/\|\bm{\sigma}\|$ is sufficient to predict the death rate, and mean-centering (initializing the bias with the activation mean) can fundamentally eliminate deaths caused by outliers.
+**Core Idea**: Dead features are a geometric problem rather than a training problem—a single scalar $\gamma=\|\bm{\mu}\|/\|\bm{\sigma}\|$ can predict the death rate, and mean-centering (initializing the bias with the activation mean) can eliminate deaths caused by outliers at their source.
 
 ## Method
 
 ### Overall Architecture
 
-The paper addresses why the same SAE results in 70%+ dead features in certain models. The answer lies in the geometry of the activation distribution rather than the training process. The paper performs three tasks: analytically predicting death rates using a pre-training scalar $\gamma$, decomposing the revival mechanism into fast and slow paths to explain why AuxK fails on difficult models, and providing mean-centering as a preprocessing step that adds zero inference overhead. The input is the activation distribution of a layer from any pre-trained network (GPT-2, Pythia, DINOv3, ESM3, AlphaFold3, Evo2, etc.), and the output is the $\gamma$ diagnostic, an initial death rate formula derived from $\gamma$, and a one-line code modification for SAE bias initialization.
+The paper investigates why the same SAE results in 70%+ dead features in certain models, attributing the cause to the geometry of the activation distribution itself. Around this theme, the paper accomplishes three things: it analytically predicts the death rate using a scalar $\gamma$ calculable before training, decomposes the revival mechanism into fast and slow paths to explain why AuxK fails on difficult models, and provides mean-centering as a zero-inference-overhead preprocessing step. The input is the activation distribution of any layer in a pre-trained network (e.g., GPT-2, Pythia, DINOv3, ESM3, AlphaFold3, Evo2), and the output is the diagnostic value $\gamma$, an initial death rate formula, and a modified code for SAE bias initialization.
 
-The analysis is built on the standard TopK-SAE structure: $\mathbf{z}_{\text{pre}}=\mathbf{W}_{\text{enc}}(\mathbf{x}-\mathbf{b})+\mathbf{b}_{\text{enc}}$, $\mathbf{z}=\text{TopK}(\text{ReLU}(\mathbf{z}_{\text{pre}}))$, $\hat{\mathbf{x}}=\mathbf{W}_{\text{dec}}^{\top}\mathbf{z}+\mathbf{b}$. A feature "dies" through two distinct paths: **dead-by-ReLU** (pre-activation is negative for all inputs, perpetually truncated by ReLU) and **dead-by-TopK** (pre-activation is positive but never enters the top-$k$). The diagnostic, revival analysis, and preprocessing are developed along these two paths.
+The analysis is based on the standard TopK-SAE structure: $\mathbf{z}_{\text{pre}}=\mathbf{W}_{\text{enc}}(\mathbf{x}-\mathbf{b})+\mathbf{b}_{\text{enc}}$, $\mathbf{z}=\text{TopK}(\text{ReLU}(\mathbf{z}_{\text{pre}}))$, and $\hat{\mathbf{x}}=\mathbf{W}_{\text{dec}}^{\top}\mathbf{z}+\mathbf{b}$. A feature "dies" via two distinct paths: **dead-by-ReLU** (pre-activation is negative for all inputs, permanently truncated by ReLU) and **dead-by-TopK** (pre-activation is positive but never enters the top-$k$). The diagnostic metric, revival analysis, and preprocessing follow these two paths.
 
 ### Key Designs
 
-**1. $\gamma=\|\bm{\mu}\|/\|\bm{\sigma}\|$ Diagnostic and Analytical Death Formula: Predicting Death Rates with One Scalar Before Training**
+**1. $\gamma=\|\bm{\mu}\|/\|\bm{\sigma}\|$ Diagnostic and Analytic formula: Predicting death rates with a scalar before training**
 
-The pain point was that prior work either used token-level outlier metrics (like kurtosis) or lacked a diagnostic altogether, failing to explain why death rates fluctuate so much across models. This paper decomposes single-token activations into $\mathbf{x}=\bm{\mu}+(\mathbf{x}-\bm{\mu})$, prompting the pre-activation to split into a constant shift term $\mathbf{w}_i\cdot\bm{\mu}$ and an input-dependent signal term $\mathbf{w}_i\cdot(\mathbf{x}-\bm{\mu})$. $\gamma=\|\bm{\mu}\|/\|\bm{\sigma}\|$ quantifies the ratio of "mean" to "per-token standard deviation" (after per-token LayerNorm to remove scale differences). When $\gamma$ is large, the shift dominates: features aligned opposite to $\bm{\mu}$ have a permanently negative pre-activation and are "dead-by-ReLU"; features strongly aligned with $\bm{\mu}$ activate on every input; only features nearly orthogonal to $\bm{\mu}$ truly respond to input. Treating both shift and signal as projections of random unit vectors onto fixed directions, high-dimensional probability approximations (see Appendix B) yield $P(\text{dead-by-ReLU})\approx \Phi(-C/\gamma)$, where $C=\Phi^{-1}(1-1/N)\approx 4.26$ ($N=10^5$ samples). The TopK case raises the survival threshold to the $(1-k/n)$ quantile of the shift distribution $t_k=\Phi^{-1}(1-k/n)$, resulting in $P(\text{dead-by-TopK})\approx \Phi(t_k-C/\gamma)$. This is effective because $\gamma$ captures a truly "dimension-level" geometric quantity, and the formula requires no fitted parameters—achieving a Spearman $\rho$ as high as 0.89 (dead-by-TopK) / 0.82 (dead-by-ReLU) across 454 cross-modal model-layer combinations. Practitioners can thus predict severe feature death before committing compute to training.
+Prior work either used token-level outlier metrics (like kurtosis) or lacked diagnostic metrics entirely, failing to explain why death rates fluctuate across models. This paper decomposes single-token activations as $\mathbf{x}=\bm{\mu}+(\mathbf{x}-\bm{\mu})$, leading the pre-activation to split into a constant shift term $\mathbf{w}_i\cdot\bm{\mu}$ and an input-varying signal term $\mathbf{w}_i\cdot(\mathbf{x}-\bm{\mu})$. The scalar $\gamma=\|\bm{\mu}\|/\|\bm{\sigma}\|$ quantifies the ratio of the "mean" to the "per-token standard deviation" (after applying per-token LayerNorm to remove scale differences). When $\gamma$ is large, the shift term dominates: features anti-aligned with $\bm{\mu}$ are dead-by-ReLU, while those strongly aligned with $\bm{\mu}$ activate on every input; only features approximately orthogonal to $\bm{\mu}$ truly respond to input. Treating both shift and signal as projections of random unit vectors and using high-dimensional probability approximations, the paper derives $P(\text{dead-by-ReLU})=\Phi(-C/\gamma)$, where $C=\Phi^{-1}(1-1/N)\approx 4.26$ for $N=10^5$ samples. For TopK, the threshold is raised to the $(1-k/n)$ quantile of the shift distribution, $t_k=\Phi^{-1}(1-k/n)$, yielding $P(\text{dead-by-TopK})\approx \Phi(t_k-C/\gamma)$. The key to its effectiveness is that $\gamma$ captures "dimension-level" geometry, and the formula requires no fitted parameters—achieving a Spearman $\rho$ of 0.89 (dead-by-TopK) and 0.82 (dead-by-ReLU) across 454 model-layer combinations.
 
-**2. Two Revival Paths and the "Bias Learning $\bm{\mu}$" Bottleneck: Explaining AuxK Failure under High $\gamma$**
+**2. Two Revival Paths and the "Bias Learning $\bm{\mu}$ Bottleneck": explaining AuxK failure at high $\gamma$**
 
-Prior work implicitly treated dead features as a "failure of training dynamics" and attempted to inject more gradients. This paper ablates bias freezing vs. non-freezing and the presence of AuxK on synthetic data, decoupling the revival mechanism by death path for the first time. **dead-by-TopK** revival depends on alive features lowering their activation magnitudes after convergence to let the $(k+1)$-th ranked feature in—a path that takes roughly 200K steps and is unaffected by bias freezing. **dead-by-ReLU** revival, however, relies entirely on the bias slowly absorbing $\bm{\mu}$, as only the bias can lift a permanently negative pre-activation above zero. The problem is that the speed at which the bias learns $\bm{\mu}$ depends heavily on $\gamma$: at $\gamma\le 5$, it reaches 99% in 200K steps; at $\gamma\approx 20$, it takes 2M steps to reach 90%; and at $\gamma\ge 30$, it only reaches 50–70% after 2M steps. Intuitively, weights act on inputs and their effects scale with input magnitude, whereas the bias is added directly; thus, the larger $\|\bm{\mu}\|$ is, the more the bias lags behind. Furthermore, once alive features learn $\bm{\mu}$, they suppress the bias gradient further. This logic clarifies the true role of AuxK: during TopK revival, some alive features are pushed below zero and become new "dead-by-ReLU" instances; AuxK provides gradients to stabilize "dead-by-TopK" features, preventing them from falling into "dead-by-ReLU." It suppresses "collateral death" rather than performing true revival. Since it does not accelerate bias learning, it is powerless against features that are "dead-by-ReLU" from initialization, explaining why AuxK works for moderate $\gamma$ but fails for high $\gamma$. The conclusion is that high $\gamma$ doesn't need better revival techniques, but rather a bias initialized at $\bm{\mu}$.
+Prior work implicitly treated dead features as a "failure of training dynamics" and focused on injecting gradients. This paper uses ablations on synthetic data (bias frozen/unfrozen, with/without AuxK) to decouple revival mechanisms. **Dead-by-TopK** revival depends on alive features actively reducing their activation magnitude after convergence to let the $(k+1)$-th feature in—this path takes about 200K steps and is unaffected by frozen biases. **Dead-by-ReLU** revival relies on the bias slowly absorbing $\bm{\mu}$ to lift permanently negative pre-activations above zero. However, the speed at which the bias learns $\bm{\mu}$ depends heavily on $\gamma$: it takes 200K steps to reach 99% for $\gamma\le 5$, but 2M steps only reach 90% for $\gamma\approx 20$, and only 50–70% for $\gamma\ge 30$. Intuitively, feature weights work on inputs (scaled by magnitude), while the bias is strictly additive and not amplified, making it harder to catch up as $\|\bm{\mu}\|$ increases. Furthermore, alive features learning $\bm{\mu}$ suppress the bias gradient. This clarifies the role of AuxK: during TopK revival, some alive features are pushed below zero and become new dead-by-ReLU; AuxK provides gradients to stabilize them and prevent this "collateral death," but it does not accelerate bias learning. Thus, AuxK is ineffective for features that are dead-by-ReLU from initialization. The conclusion is that high $\gamma$ requires no better revival technique, only that the bias starts at $\bm{\mu}$.
 
-**3. Mean-centering: Initializing Bias with Activation Mean to Eliminate the Shift Term**
+**3. Mean-centering: Initializing bias with activation mean to eliminate the shift term**
 
-Since the bottleneck is the bias failing to catch up with $\bm{\mu}$, the most direct solution is to initialize the bias to the activation mean. By setting $\mathbf{b}=\bm{\mu}$, the pre-activation becomes $z_i=\mathbf{w}_i\cdot(\mathbf{x}-\bm{\mu})+b_{\text{enc}}$, the shift term $\mathbf{w}_i\cdot\bm{\mu}$ vanishes, and all feature pre-activations center around zero, responding only to input changes. This eliminates deaths caused by outliers from initialization. The geometric median is used by default instead of the arithmetic mean because some activation distributions are heavily skewed (see Appendix D.5). This is equivalent to mean subtraction at runtime but carries no extra inference overhead when folded into bias initialization. Notably, it only eliminates "outlier-induced death"; layers where variance is concentrated in small-dimensional subspaces (common in some protein/gene model layers) may still have residual deaths, requiring PCA whitening (Appendix E). Its true value lies in formalizing a trick that appeared sporadically (Bricken 2023b, Gao 2024) but lacked consistency and criteria. $\gamma$ provides the criterion: mandatory for high $\gamma$, optional for low $\gamma$, upgrading an empirical practice to a theoretically grounded standard preprocessing.
+Since the bottleneck is the bias failing to catch up with $\bm{\mu}$, the direct solution is initializing the bias to the activation mean. By setting $\mathbf{b}=\bm{\mu}$, the pre-activation becomes $z_i=\mathbf{w}_i\cdot(\mathbf{x}-\bm{\mu})+b_{\text{enc}}$, removing the shift term $\mathbf{w}_i\cdot\bm{\mu}$. All pre-activations then center around zero and vary only with the input, preventing outlier-induced deaths from the start. By default, the geometric median is used instead of the arithmetic mean because some activation distributions are heavily skewed; this is equivalent to runtime mean subtraction but involves no additional inference cost when folded into bias initialization. Notably, this only eliminates "outlier-induced death." Layers where variance is concentrated in a small dimensional subspace (common in some protein/gene models) may still have residual deaths, requiring PCA whitening. The value lies in turning a previously scattered trick into a principled standard: $\gamma$ provides the criterion—mandatory for high $\gamma$, optional for low $\gamma$.
 
 ### Loss & Training
 
-The training objective remains standard TopK-SAE (reconstruction MSE + TopK sparsification), with $k$, dictionary size, and learning rate kept consistent across models. Mean-centering does not change the loss; it only modifies the bias initialization. Synthetic experiments average 10 seeds, while real-world data uses mid-network layers across 454 model-layer combinations.
+The training objective remains the standard TopK-SAE (Reconstruction MSE + TopK Sparsification). Hyperparameters like $k$, dictionary size, and learning rate are consistent across comparisons. Mean-centering does not change the loss; it only modifies the bias initialization. Synthetic experiments use an average of 10 seeds, while 454 real model-layer combinations are evaluated using mid-network layers.
 
 ## Key Experimental Results
 
-### Main Results: $\gamma$ Predicting Death Rates on Synthetic and Real Data
+### Main Results: $\gamma$ Predicts Death Rate on Synthetic and Real Data
 
-| Data | Metric | dead-by-ReLU | dead-by-TopK | Remarks |
+| Data | Metric | dead-by-ReLU | dead-by-TopK | Note |
 |------|------|--------------|--------------|------|
-| Synthetic Activations (controlled $\gamma$) | Spearman $\rho$ | 1.0 | 1.0 | Almost perfect alignment with $\Phi(-C/\gamma)$ curve |
-| 454 Real Model-Layers (Language/Vision/Protein/Gene) | Spearman $\rho$ | 0.82 | 0.89 | No fitted parameters |
-| AlphaFold3 mid layer | Dead Feature Rate | — | 98% → <5% | After mean-centering |
-| ESM3 mid layer | Dead Feature Rate | — | 83% → ≈0 | After mean-centering |
+| Synthetic activations (controlled $\gamma$) | Spearman $\rho$ | 1.0 | 1.0 | $\Phi(-C/\gamma)$ curve aligns perfectly |
+| 454 Real model-layers (Language/Vision/Protein/Gene) | Spearman $\rho$ | 0.82 | 0.89 | No fitted parameters |
+| AlphaFold3 mid layer | Death feature rate | — | 98% → <5% | After mean-centering |
+| ESM3 mid layer | Death feature rate | — | 83% → ≈0 | After mean-centering |
 
 ### Ablation Study: mean-centering vs baseline vs AuxK (ESM3 L24, $\gamma\approx 8$)
 
-| Configuration | Final Dead Rate | Interpretable Bio-concepts |
+| Configuration | Final Death Rate | Interpretable Bio-concepts |
 |------|----------------|------------------|
 | baseline | ≈75% | 73 (dict=8192) |
 | baseline + AuxK | ≈25% (plateau) | — |
@@ -84,7 +84,7 @@ The training objective remains standard TopK-SAE (reconstruction MSE + TopK spar
 | mean-centering (dict=2048) | ≈0 | **100** |
 | mean-centering (dict=8192) | ≈0 | Higher |
 
-### Synthetic Ground-truth Feature Recovery ($\gamma=40$)
+### Ground-truth feature recovery (synthetic, $\gamma=40$)
 
 | Configuration | MMCS (Mean Max Cosine Similarity) |
 |------|----------------------------|
@@ -93,41 +93,41 @@ The training objective remains standard TopK-SAE (reconstruction MSE + TopK spar
 
 ### Key Findings
 
-- **$\gamma$ is a genuine "pre-calculable" diagnostic**: Achieving $\rho\approx 0.89$ on 454 real model-layers without fitting means one can check $\gamma$ before deciding to invest compute in training an SAE.
-- **Bias learning is the bottleneck under high $\gamma$**: At $\gamma\ge 30$, the bias only learns 50–70% of $\bm{\mu}$ within 2M steps, leaving "dead-by-ReLU" rates stuck at 75–90%.
-- **AuxK's true role is suppressing collateral death**: It provides gradients to "dead-by-TopK" features to keep them stable, rather than reviving features that were "dead-by-ReLU" from the start.
-- **Mean-centering outperforms baseline with a 4× smaller dictionary**: On ESM3, a mean-centered SAE with dict=2048 (100 concepts) outperforms a baseline with dict=8192 (73 concepts), significantly reducing training compute.
-- **Mean-centering stabilizes learning rate sensitivity**: While the baseline shows high variance in death rates during an LR sweep, mean-centered models maintain consistently low death rates.
-- **Theory slightly overestimates dead-by-ReLU**: When activation distributions are heavy-tailed (diagnosable via per-dim kurtosis), the actual maximum signal can exceed the $C\approx 4.26$ assumed under Gaussianity, reviving some features predicted to be dead.
+- **$\gamma$ is a true "calculable pre-training" diagnostic**: Achieving $\rho\approx 0.89$ across 454 real layers without fitting means $\gamma$ can be calculated to decide whether to invest compute in SAE training.
+- **Bias learning is the bottleneck under high $\gamma$**: At $\gamma\ge 30$, the bias only learns 50–70% of $\bm{\mu}$ within 2M steps, leaving the dead-by-ReLU rate stuck at 75–90%.
+- **AuxK primarily inhibits collateral death**: It provides gradients to dead-by-TopK features to stabilize them, rather than reviving features that were dead-by-ReLU at initialization.
+- **Mean-centering outperforms baseline with a 4× smaller dictionary**: On ESM3, a mean-centered SAE with dict=2048 (100 concepts) outperforms the baseline with dict=8192 (73 concepts), significantly reducing training compute.
+- **Mean-centering stabilizes learning rate sensitivity**: While the baseline shows high death rate variance in LR sweeps, mean-centered SAEs maintain a consistently low death rate.
+- **Theory slightly overestimates dead-by-ReLU**: When the activation distribution is heavy-tailed (diagnosed via per-dim kurtosis), the maximum signal can exceed the Gaussian assumption's $C\approx 4.26$, reviving some features predicted to be dead.
 
 ## Highlights & Insights
 
-- **Reframing a "Training Problem" as a "Geometric Problem"**: The SAE community has long focused on tuning AuxK / Ghost Gradient / Resampling. This paper proves these tricks fail in the hardest cases because most features are dead from initialization—this is a shift in the research paradigm, not just a new method.
-- **A 0-parameter analytical formula outperforms empirical diagnostics**: Previous community metrics like kurtosis were token-level. $\gamma$ captures dimension-level outliers, the true source of the problem. Deriving a formula from high-dimensional geometry that predicts death across four modalities is a powerful application of "prior + geometry."
-- **Asymmetry in bias vs. weight learning speed**: Weights interact with inputs and scale accordingly, while the bias is a direct addition. This observation explains why many normalization/centering techniques work and serves as a reusable intuition.
-- **Reinterpreting the true function of AuxK**: Previously thought to "revive" features, AuxK was found through detailed subdivision to "prevent alive features from dying." This "phenomenon → mechanism re-evaluation" is a model for rigorous analysis.
-- **MMCS from 0.38 → 0.97**: The near-perfect alignment with ground-truth on synthetic data shows mean-centering doesn't just lower death rates; it ensures the SAE learns the correct directions, directly benefiting interpretability.
+- **Reframing "Training Problems" as "Geometric Problems"**: While the SAE community focused on tuning AuxK / Ghost Gradient / Resampling, this paper proves these tricks fail on difficult models because features are dead at initialization due to geometry. This shifts the research paradigm.
+- **A zero-parameter analytic formula beats empirical diagnostics**: Previous kurtosis-based metrics were token-level; $\gamma$ captures dimension-level outliers. The formula is derived from high-dimensional geometry without fitting, yet predicts death rates across four modalities.
+- **Bias vs. Weight Learning Asymmetry**: Weights scale with input magnitude, while bias is additive. This observation explains why normalization/centering techniques are effective and serves as a reusable intuition.
+- **Reinterpretation of AuxK**: Previously thought to "revive" features, this paper shows AuxK actually "prevents alive features from dying." Such mechanistic re-evaluations of phenomena are highly insightful.
+- **MMCS improvement from 0.38 → 0.97**: Perfect alignment with ground-truth in synthetic data suggests mean-centering does more than reduce death rates; it helps SAEs find the correct directions, benefiting interpretability.
 
 ## Limitations & Future Work
 
-- **Inadequacy for a tiny minority of layers**: In protein and gene models, some layers retain dead features even after centering because variance is concentrated in a few directions, requiring PCA whitening (Appendix E). Mean-centering is "necessary but not sufficient."
-- **Gaussian signal assumption**: In the presence of heavy-tailed activations, $\Phi(-C/\gamma)$ overestimates the death rate. While the authors use per-dim kurtosis as a backup, a unified formula for heavy-tailed activations is missing.
-- **Systematic comparison limited to mid-network layers**: While Appendix data exists, the transferability across all layers and tasks is not yet fully comprehensive, particularly regarding unified preprocessing selection when $\gamma$ varies wildly.
-- **No direct comparison with the "low-rank attention" hypothesis (Wang 2025)**: Wang et al. attribute death rates to the low-rank structure of attention activations. The interaction between low-rank properties and dimension-level outliers has not been systematically ablated.
-- **Application extensions**: $\gamma$ could be used as a target for "activation normalization" or "architectural regularization"—reducing $\gamma$ during model training might lower downstream SAE costs or even aid quantization.
+- **Mean-centering is insufficient for a few layers**: Some protein and gene model layers maintain residual deaths after centering due to variance concentrated in few directions, requiring PCA whitening. Mean-centering is "necessary but not sufficient."
+- **Gaussian signal assumption**: Heavy-tailed distributions cause $\Phi(-C/\gamma)$ to overestimate the death rate. While per-dim kurtosis is used as a fallback, a unified formula for heavy-tailed activations is missing.
+- **Systematic comparison limited to mid-network layers**: Although Appendix data exists, the transferability across all layers and tasks is not fully comprehensive, especially regarding how to unify preprocessing when $\gamma$ varies.
+- **No direct comparison with "low-rank attention" hypotheses**: While existing work attributes death rates to low-rank structures in attention activations, this paper attributes them to dimension-level outliers. The interaction between these geometric factors has not been systematically ablated.
+- **Future applications**: $\gamma$ could be used as a target for "activation normalization" or "architecture regularization" during model training—reducing $\gamma$ at the source could lower the cost of training downstream SAEs and potentially aid quantization.
 
 ## Related Work & Insights
 
-- **vs AuxK / Ghost Grad / Resampling (Gao 2024; Bricken 2023b)**: These methods attempt to "revive" dead features with gradients. This paper proves that under high $\gamma$, it's a bias-distance issue rather than a gradient issue. AuxK's true role is preventing collateral death.
-- **vs token-level outlier studies (Sun 2024; Dettmers 2022)**: Those studies focus on spikes in individual tokens for quantization; this paper focuses on dimension-level outliers—dimensions that deviate from zero across every token, which is a different geometric property.
-- **vs Lu et al. 2025 (ESMFold dimension outliers) / Wang et al. 2025 (Low-rank dead features)**: Lu et al. observed similar outliers in ESMFold but offered no diagnostic/solution. Wang et al. attributed death to low-rank attention. This paper provides the first cross-modal predictive diagnostic, analytical formula, and minimal solution.
-- **vs early SAE work (Bricken 2023b; Gao 2024 used mean-centering)**: They used it inconsistently without a criterion. This paper uses $\gamma$ to formalize "when to center," upgrading it from an empirical trick to a theoretically supported standard procedure.
+- **vs. AuxK / Ghost Grad / Resampling (Gao 2024; Bricken 2023b)**: These attempt to inject gradients to revive features. This paper proves that under high $\gamma$, the issue is bias distance, not gradients. AuxK inhibits collateral death rather than reviving initially dead features.
+- **vs. Token-level outlier studies (Sun 2024; Dettmers 2022)**: These focus on individual token spikes for quantization; this paper focuses on dimension-level outliers—dimensions that deviate from zero across all tokens.
+- **vs. Lu et al. 2025 (ESMFold outliers) / Wang et al. 2025 (Low-rank dead features)**: Lu et al. observed similar outliers in ESMFold but lacked diagnostics/solutions. Wang et al. attributed death to low-rank attention. This paper is the first to provide a cross-modal diagnostic, analytic formula, and simple solution.
+- **vs. Early SAE work (Bricken 2023b; Gao 2024 used mean-centering)**: Previous use was inconsistent and lacked criteria. This paper uses $\gamma$ to formalize "when to center," upgrading an empirical trick to a theoretically supported standard.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Reframing feature death from a "training dynamics problem" to an "activation geometry problem" and deriving a zero-parameter death formula is a paradigm-shifting perspective.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Extensive evidence from 454 real model-layers, controlled synthetic experiments, multi-modal data, and bias-freezing ablations.
-- Writing Quality: ⭐⭐⭐⭐⭐ Excellent coordination between derivations and figures. Key insights are clear, and the appendix addresses potential concerns (heavy tails, geometric medians, cross-layer transfer).
-- Value: ⭐⭐⭐⭐⭐ Provides an immediately actionable mean-centering solution and a pre-training diagnostic $\gamma$. Highly recommended for SAE interpretability researchers.
+- Novelty: ⭐⭐⭐⭐⭐ Reframes feature death from training dynamics to activation geometry and provides a zero-parameter formula; a paradigm-shifting perspective.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Evaluates 454 real model-layers, synthetic experiments, multiple modalities, and bias-freezing ablations with consistent evidence.
+- Writing Quality: ⭐⭐⭐⭐⭐ Excellent coordination between derivations and figures; key insights are concise; Appendix addresses heavy-tailed activations and geometric medians.
+- Value: ⭐⭐⭐⭐⭐ Provides an immediately applicable mean-centering solution and pre-training $\gamma$ diagnostic; essential reading for SAE researchers.
 
 <!-- RELATED:START -->
 
@@ -137,9 +137,9 @@ The training objective remains standard TopK-SAE (reconstruction MSE + TopK spar
 
 - [\[ICML 2026\] PolySAE: Modeling Feature Interactions in Sparse Autoencoders via Polynomial Decoding](polysae_modeling_feature_interactions_in_sparse_autoencoders_via_polynomial_deco.md)
 - [\[ICML 2026\] Sparse Autoencoders are Topic Models](sparse_autoencoders_are_topic_models.md)
+- [\[ICML 2026\] Ensembling Sparse Autoencoders](ensembling_sparse_autoencoders.md)
 - [\[ICLR 2026\] Toward Faithful Retrieval-Augmented Generation with Sparse Autoencoders](../../ICLR2026/interpretability/toward_faithful_retrieval-augmented_generation_with_sparse_autoencoders.md)
 - [\[NeurIPS 2025\] A is for Absorption: Studying Feature Splitting and Absorption in Sparse Autoencoders](../../NeurIPS2025/interpretability/a_is_for_absorption_studying_feature_splitting_and_absorption_in_sparse_autoenco.md)
-- [\[ICLR 2026\] Temporal Sparse Autoencoders: Leveraging the Sequential Nature of Language for Interpretability](../../ICLR2026/interpretability/temporal_sparse_autoencoders_leveraging_the_sequential_nature_of_language_for_in.md)
 
 </div>
 

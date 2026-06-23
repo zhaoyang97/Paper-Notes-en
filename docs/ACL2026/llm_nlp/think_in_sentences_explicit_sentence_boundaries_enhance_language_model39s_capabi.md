@@ -2,12 +2,12 @@
 title: >-
   [Paper Note] Think in Sentences: Explicit Sentence Boundaries Enhance Language Model's Capabilities
 description: >-
-  [ACL 2026][LLM (Other)][Paper Note] This paper proposes inserting delimiter tokens at sentence boundaries in LLM inputs to implement a "think-in-sentences" reasoning paradigm through both ICL and SFT. This approach achieves consistent improvements across models ranging from 7B to 600B parameters (GSM8k +7.7%, DROP +12.5%) with virtually no additional com
+  [ACL 2026][LLM (Other)][Paper Note] This paper proposes inserting delimiter tokens at sentence boundaries within LLM inputs to implement a "sentence-by-sentence" reasoning paradigm via ICL and SFT. Constant improvements were achieved across models from 7B to 600B (GSM8k +7.7%, DROP +12.5%) with almost no additional computational overhead.
 tags:
   - ACL 2026
   - LLM (Other)
 date: 2026-05-08
-content_hash: 4e2120298e402765
+content_hash: 6c39af05203eaf72
 ---
 # Think in Sentences: Explicit Sentence Boundaries Enhance Language Model's Capabilities
 
@@ -15,67 +15,68 @@ content_hash: 4e2120298e402765
 **arXiv**: [2604.10135](https://arxiv.org/abs/2604.10135)  
 **Code**: [GitHub](https://github.com/CLCS-SUSTech/think-in-sentence)  
 **Area**: LLM/NLP  
-**Keywords**: Sentence boundaries, Delimiters, In-context learning, Supervised fine-tuning, Free lunch
+**Keywords**: Sentence Boundaries, Delimiters, In-context Learning, SFT, Free Lunch
 
 ## TL;DR
 
-This paper proposes inserting delimiter tokens at sentence boundaries in LLM inputs to implement a "think-in-sentences" reasoning paradigm through both ICL and SFT. This approach achieves consistent improvements across models ranging from 7B to 600B parameters (GSM8k +7.7%, DROP +12.5%) with virtually no additional computational overhead.
+This paper proposes inserting delimiter tokens at sentence boundaries within LLM inputs to implement a "sentence-by-sentence" reasoning paradigm via ICL and SFT. Constant improvements were achieved across models from 7B to 600B (GSM8k +7.7%, DROP +12.5%) with almost no additional computational overhead.
 
 ## Background & Motivation
 
-**Background**: Sentence-level structures were once central to early neural language models—Skip-thought training reconstructed adjacent sentences, and BERT's next-sentence prediction task encoded inter-sentence coherence. However, with the rise of LLMs, sentence boundaries have been demoted to ordinary tokens, and models completely ignore sentence structure in token-by-token processing pipelines.
+**Background**: Sentence-level structure was central to early neural language models—Skip-thought training reconstructed adjacent sentences, and BERT's Next Sentence Prediction (NSP) task encoded inter-sentence coherence. However, with the rise of LLMs, sentence boundaries have been demoted to ordinary tokens, and models completely ignore sentence structure in token-by-token processing pipelines.
 
-**Limitations of Prior Work**: Mainstream methods for enhancing LLM capabilities either require massive training overhead (training-time scaling) or increase inference latency (test-time scaling like CoT). Goyal et al. (2024) proposed inserting "pause" tokens as a free lunch solution, but it has severe limitations: (1) the placement of pause tokens lacks linguistic priors and requires manual adjustment per task; (2) it has not been validated on 7B+ models; (3) it lacks robustness and generalizability.
+**Limitations of Prior Work**: Mainstream methods to enhance LLM capabilities either require massive training overhead (scaling at training time) or increase inference latency (scaling at test time, such as CoT). Goyal et al. (2024) proposed inserting "pause" tokens as a free lunch solution, but it has serious limitations: (1) Pause token placement lacks linguistic priors and requires manual adjustment per task; (2) It has not been validated on 7B+ models; (3) It lacks robustness and generalizability.
 
-**Key Challenge**: Human language generation relies on an incremental cognitive process of sentence-by-sentence construction, but LLMs learn continuous text produced by this process, leading to an inherent misalignment between human cognitive mechanisms and model input processing.
+**Key Challenge**: Human language generation relies on a sentence-by-sentence incremental cognitive process, but LLMs learn continuous text produced by this process, leading to an inherent misalignment between human cognitive mechanisms and model input processing.
 
 **Goal**: Design a strategy that leverages sentence-level linguistic priors to enhance LLM performance in a robust and low-overhead manner.
 
-**Key Insight**: The authors observe that sentences are the most natural "cognitive chunks" in natural language. Inserting structural delimiters at sentence boundaries can trigger a cycle of "context integration $\rightarrow$ next-step planning," simulating the post-sentence reflection process in humans.
+**Key Insight**: The authors observe that sentences are the most natural "cognitive chunks" in natural language. Inserting structural delimiters at sentence boundaries can trigger a cycle of "contextual integration → next-step planning," simulating the human post-sentence reflection process.
 
-**Core Idea**: Insert task-agnostic delimiter tokens at sentence boundaries to allow LLMs to perform implicit sentence-by-sentence reasoning. This is implemented via ICL (demonstrating delimiter patterns in prompts) and SFT (fine-tuning on data with inserted delimiters).
+**Core Idea**: Insert task-agnostic delimiter tokens at sentence boundaries to allow LLMs to perform implicit sentence-by-sentence reasoning. This is achieved through two methods: ICL (demonstrating delimiter patterns in prompts) and SFT (fine-tuning on data with inserted delimiters).
 
 ## Method
 
 ### Overall Architecture
 
-Given a text sequence $T = [t_1, t_2, ..., t_n]$, sentence boundaries are identified using a sentence segmentation tool (SaT-12L-sm), and a delimiter $x_{seg}$ is inserted at the end of each sentence to obtain a structured sequence $S = [s_1, x_{seg}, s_2, x_{seg}, ..., s_n, x_{seg}]$. The model's objective is not only to predict the next token but also to learn when to generate the delimiter, thereby performing implicit sentence segmentation. Building on this "segment-insert" backbone, delimiters are injected through two complementary paths: ICL (in-context learning, demonstrating delimiters in prompts without touching weights) and SFT (supervised fine-tuning, solidifying sentence priors into parameters). The specific symbol used as a delimiter is determined by a unified delimiter selection strategy.
+Given a text sequence $T = [t_1, t_2, ..., t_n]$, sentence boundaries are identified using a sentence segmentation tool (SaT-12L-sm). A delimiter $x_{seg}$ is inserted at the end of each sentence, resulting in a structured sequence $S = [s_1, x_{seg}, s_2, x_{seg}, ..., s_n, x_{seg}]$. The model's objective includes not only predicting the next token but also learning when to generate the delimiter, thereby performing implicit sentence segmentation. Building upon this "segmentation-insertion" backbone, delimiters are injected via two complementary paths: ICL (In-Context Learning, demonstrating delimiters in prompts without weight updates) and SFT (Supervised Fine-Tuning, solidifying sentence priors into parameters). The specific symbol used as a delimiter is determined by a unified delimiter selection strategy.
 
 ```mermaid
-graph TD
-    A["Text sequence T"] --> B["Sentence Segmentation<br/>SaT-12L-sm identifies boundaries"]
-    B --> C["Insert delimiter tokens<br/>to obtain structured sequence S"]
-    SEL["Delimiter Selection Strategy<br/>Structured tokens are optimal, no semantic ambiguity"] -.->|Determines symbol| C
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Text Sequence T"] --> B["Sentence Segmentation<br/>SaT-12L-sm identifies boundaries"]
+    B --> C["Insert Delimiter Token<br/>Get Structured Sequence S"]
+    SEL["Delimiter Selection Strategy<br/>Structural tokens are optimal"] -.->|Determines symbol| C
     C --> D{Injection Method}
-    D -->|No weight changes| E["ICL Sentence-Aware Prompting<br/>few-shot demonstration of delimiters"]
-    D -->|Full-parameter fine-tuning| F["SFT Internalizing Sentence Structure<br/>Delimiters as new special tokens"]
-    E --> G["Think in Sentences<br/>Post-sentence reflection, enhanced multi-step reasoning"]
+    D -->|No weight changes| E["Sentence-Aware ICL<br/>Few-shot demos via analogy"]
+    D -->|Full-parameter fine-tuning| F["SFT Parameterization<br/>Delimiters as new special tokens"]
+    E --> G["Think in Sentences<br/>Post-sentence reflection cycle"]
     F --> G
 ```
 
 ### Key Designs
 
-**1. ICL Sentence-Aware Prompting: Learning sentence-by-sentence generation via analogy without weight changes**
+**1. Sentence-Aware ICL: Learning sentence-by-sentence generation via analogy without weight updates**
 
-The most lightweight injection method is to demonstrate the use of delimiters directly in few-shot examples—explicitly terminating each sentence in every example with `<seg>`. During autoregressive decoding, the model treats this sentence-by-sentence structured layout as a pattern to be continued, automatically inserting `<seg>` after its own sentences via analogy. This implicitly triggers the "context integration $\rightarrow$ next-step planning" reflection cycle. This path does not touch model weights, uses standard autoregressive inference, and incurs almost zero cost; the disadvantage is that it consumes context window space and cannot be used in zero-shot or context-limited scenarios.
+The most lightweight injection method is to demonstrate delimiter usage directly in few-shot examples—explicitly terminating every sentence in each example with `<seg>`. During auto-regressive decoding, the model treats this sentence-by-sentence structural layout as a pattern to be continued, automatically inserting `<seg>` after its own reasoning and output sentences through analogy. This implicitly triggers the post-sentence reflection cycle of "contextual integration → next-step planning." This path does not touch model weights and uses standard auto-regressive inference, making the cost nearly zero. The disadvantage is that it consumes prompt space and is unavailable in zero-shot or context-limited scenarios.
 
-**2. SFT Internalizing Sentence Structure: Writing sentence priors into parameters to eliminate prompt dependency**
+**2. SFT Internalization of Sentence Structure: Writing sentence priors into parameters to remove prompt reliance**
 
-To enable zero-shot sentence-by-sentence thinking, the authors upgrade sentence structure from "temporary demonstration in prompts" to "solidification in parameters." Specifically, they systematically insert delimiters at sentence boundaries in the TULU3 dataset and perform full-parameter fine-tuning using the standard causal language modeling loss. The delimiter $x_{seg}$ is added to the tokenizer as a new special token, and its corresponding embedding and LM head weights are learned during training. After training, the model can natively generate text with delimiters without any prompts. Compared to ICL, this does not consume the context budget and is closer to real deployment scenarios.
+To enable models to think sentence-by-sentence even in zero-shot settings, the authors upgrade the sentence structure from a "temporary prompt demonstration" to "parameter solidification." Specifically, delimiters are systematically inserted at each sentence boundary in the TULU3 dataset, followed by full-parameter fine-tuning using the standard causal language modeling loss. The delimiter $x_{seg}$ is added to the tokenizer as a new special token, and its corresponding embedding and LM head weights are learned during training. After training, the model can natively generate text with delimiters without any prompts. Compared to ICL, this path no longer consumes context budget and is closer to real deployment scenarios.
 
-**3. Delimiter Selection Strategy: Delimiters must be pure structural markers without semantics**
+**3. Delimiter Selection Strategy: Ideal delimiters must be pure structural markers without semantics**
 
-Deciding where to insert delimiters is straightforward; choosing the symbol is the challenge. The authors tested various candidates: structured tokens (`<seg>`, `<and>`, `####`), semantic words ("seg", "and"), punctuation ("\n", "."), and arbitrary symbols. Structured tokens consistently performed best and were the only type to exceed the baseline across all tasks. The reason is that ideal delimiters should only carry the structural signal that "the sentence ends here" and remain independent of the text's semantics. Semantic words cause the model to struggle with whether the token is a boundary marker or sentence content, introducing ambiguity, whereas structured tokens naturally do not belong to the natural language vocabulary and provide unambiguous boundary signals.
+The challenge lies in choosing the symbol. The authors horizontally tested structural tokens (`<seg>`, `<and>`, `####`), semantic words ("seg", "and"), punctuation ("\n", "."), and arbitrary symbols. Structural tokens were consistently optimal and were the only type to exceed the baseline across all tasks. The reason is that an ideal delimiter should only carry the structural signal that "the sentence ends here" and be independent of the content's semantics. Semantic words cause the model to struggle with whether the token is a boundary marker or sentence content, introducing ambiguity, whereas structural tokens do not belong to the natural language vocabulary and provide unambiguous boundary signals.
 
 ### Loss & Training
 
-SFT uses the standard causal language modeling loss: $\mathcal{L}_{SFT}(\theta) = \sum_{s' \in S} \sum_{i=1}^{|s'|} \log P(t_i | t_{<i}; \theta)$, where $s' = [s, x_{seg}]$ and the final token $t_{|s'|} = x_{seg}$. Full-parameter fine-tuning was conducted on 8×L40 GPUs.
+SFT utilizes the standard causal language modeling loss: $\mathcal{L}_{SFT}(\theta) = \sum_{s' \in S} \sum_{i=1}^{|s'|} \log P(t_i | t_{<i}; \theta)$, where $s' = [s, x_{seg}]$ and the final token $t_{|s'|} = x_{seg}$. Full-parameter fine-tuning is conducted on 8×L40 GPUs.
 
 ## Key Experimental Results
 
 ### Main Results (ICL)
 
-| Model | GSM8k $\Delta$ | DROP $\Delta$ | MMLU $\Delta$ | MATH $\Delta$ |
+| Model | GSM8k Δ | DROP Δ | MMLU Δ | MATH Δ |
 |------|---------|--------|--------|--------|
 | Qwen2-7B-Inst | +7.73% | +12.50% | +5.53% | +0.97% |
 | Llama3-8B-Inst | +2.50% | +6.77% | +4.39% | -0.34% |
@@ -91,33 +92,33 @@ SFT uses the standard causal language modeling loss: $\mathcal{L}_{SFT}(\theta) 
 | **Seg-FT** | **60.13** | 74.91 | 54.26 | **40.71** | **62.80** |
 
 ### Key Findings
-- Small models benefit the most (significant gains at the 7B level), while gains for large models are smaller but consistent.
-- DROP (reading comprehension requiring cross-sentence reasoning) showed the most significant improvement, indicating that sentence separation helps models better process sentence-coded facts and their relationships.
-- Seg-FT outperformed Std-FT across all 7 benchmarks, whereas Pause-FT degraded on knowledge-intensive tasks (MMLU, GPQA).
-- Sentence-aware capabilities generalize to code generation (HumanEval +6.09%), as models learn to insert delimiters in code according to line structures.
-- Evaluation via Prob-based vs CoT-based methods reveals that delimiters do not improve knowledge retrieval but rather enhance the multi-step reasoning process.
+- Small models benefit the most (significant improvements at the 7B level), while improvements for large models are smaller but consistent.
+- DROP (reading comprehension requiring cross-sentence reasoning) showed the most significant improvement, suggesting that sentence separation helps models better process sentence-by-sentence facts and their relationships.
+- Seg-FT outperformed Std-FT across all 7 benchmarks, while Pause-FT degraded on knowledge-intensive tasks (MMLU, GPQA).
+- Sentence-aware capability generalizes to code generation (HumanEval +6.09%), with models learning to insert delimiters in code structures.
+- Prob-based vs CoT-based evaluations reveal that delimiters do not improve knowledge retrieval but rather enhance the multi-step reasoning process.
 
 ## Highlights & Insights
-- The insight that **sentences are "natural cognitive chunks"** is profound: performance on fixed n-token chunking follows an inverted U-shape, with the optimal range $n \in [32, 64]$ corresponding to typical sentence lengths. This echoes human cognitive chunking.
-- **Key improvement to "free lunch" methodology**: Compared to the blind insertion of Pause tokens, leveraging linguistic priors (sentence boundaries) makes the method more robust, general, and eliminates the need for per-task parameter tuning.
-- **Unexpected generalization of SFT to code** is inspiring: sentence segmentation patterns in natural language transferred to line structures in code, suggesting a shared structural prior.
+- **Sentences as "natural cognitive chunks"**: This insight is profound. Performance with fixed n-token chunking follows an inverted U-shape, where the optimal range $n \in [32, 64]$ corresponds to typical sentence length, indicating that the sentence level is the optimal granularity for information processing. This is analogous to human cognitive chunking.
+- **Key improvement in "free lunch" methodology**: Compared to the blind insertion of Pause tokens, leveraging linguistic priors (sentence boundaries) makes the method more robust and universal, eliminating the need for per-task parameter tuning.
+- **Unexpected generalization of SFT to code**: The sentence segmentation pattern in natural language transferred to line structures in code, suggesting a shared structural prior between the two.
 
 ## Limitations & Future Work
-- ICL depends on sufficient context length for few-shot examples, limiting its use in zero-shot or context-constrained scenarios.
+- ICL relies on sufficient context length for few-shot examples, which is a limitation in zero-shot or context-constrained scenarios.
 - SFT was only validated on Llama3-8B-Base, lacking SFT experiments on larger models.
-- Sentence segmentation relies on external tools (SaT-12L-sm), which may introduce segmentation errors.
-- The authors did not explore adaptively choosing delimiter placement (e.g., only at critical sentence boundaries).
-- For highly structured tasks like mathematical reasoning, improvements are relatively limited (MATH even slightly decreased for some models).
+- Sentence segmentation depends on external tools (SaT-12L-sm), which may introduce segmentation errors.
+- The authors did not explore adaptively choosing delimiter placement (e.g., only inserting at critical sentence boundaries).
+- For highly structured tasks like mathematical reasoning, the improvement is relatively limited (MATH even slightly decreased on some models).
 
 ## Related Work & Insights
-- **vs Pause Token (Goyal et al. 2024)**: While Pause tokens are inserted blindly and requires task-specific tuning, this work utilizes sentence boundaries as a linguistic prior, offering better robustness and generalization. SFT experiments directly prove that Seg-FT is overall superior to Pause-FT.
-- **vs CoT Reasoning**: CoT enhances capabilities through explicit generation of reasoning steps but increases token consumption. This paper enhances reasoning through implicit sentence separation with almost zero additional overhead. Ablation studies show synergy between the two.
+- **vs Pause Token (Goyal et al. 2024)**: Pause Token blindly inserts markers and requires per-task tuning. Ours uses sentence boundaries as a linguistic prior, which is more robust and generalizes better. SFT experiments directly prove Seg-FT is superior to Pause-FT overall.
+- **vs CoT Reasoning**: CoT enhances capabilities through explicit generation of reasoning steps but increases token consumption. This work enhances reasoning via implicit sentence separation with almost zero additional overhead. Ablation experiments show that the two can work synergistically.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The idea of sentence boundary delimiters is simple yet effective, with a clear intuition grounded in cognitive science.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covers multiple models and tasks with extensive ablation analyses (delimiter choice, granularity, mechanism analysis).
-- Writing Quality: ⭐⭐⭐⭐ Motivation and experimental logic are clear, with in-depth analysis.
-- Value: ⭐⭐⭐⭐ Provides a practical free lunch method, although gains are more limited on very large models.
+- Novelty: ⭐⭐⭐⭐ The idea of sentence boundary delimiters is simple yet effective, with a clear intuition from cognitive science.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers multiple models and tasks, with rich ablation analysis (delimiter choice, granularity, mechanism analysis).
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation and experimental logic, with in-depth analysis.
+- Value: ⭐⭐⭐⭐ Provides a practical free lunch method, although improvements on very large models are more limited.
 
 <!-- RELATED:START -->
 
@@ -127,9 +128,9 @@ SFT uses the standard causal language modeling loss: $\mathcal{L}_{SFT}(\theta) 
 
 - [\[ACL 2025\] ExpliCa: Evaluating Explicit Causal Reasoning in Large Language Models](../../ACL2025/llm_nlp/explica_evaluating_explicit_causal_reasoning_in_large_language_models.md)
 - [\[ACL 2025\] Explicit and Implicit Data Augmentation for Social Event Detection](../../ACL2025/llm_nlp/explicit_and_implicit_data_augmentation_for_social_event_detection.md)
+- [\[ICML 2026\] Position: Hippocampal Explicit Memory Is the Cornerstone for AGI](../../ICML2026/llm_nlp/position_hippocampal_explicit_memory_is_the_cornerstone_for_agi.md)
 - [\[ACL 2025\] PlanGenLLMs: A Modern Survey of LLM Planning Capabilities](../../ACL2025/llm_nlp/plangenllms_planning_survey.md)
 - [\[ACL 2026\] Clozing the Gap: Exploring Why Language Model Surprisal Outperforms Cloze Surprisal](clozing_the_gap_exploring_why_language_model_surprisal_outperforms_cloze_surpris.md)
-- [\[ACL 2025\] Explain-then-Process: Using Grammar Prompting to Enhance Grammatical Acceptability Judgments](../../ACL2025/llm_nlp/explain-then-process_using_grammar_prompting_to_enhance_grammatical_acceptabilit.md)
 
 </div>
 

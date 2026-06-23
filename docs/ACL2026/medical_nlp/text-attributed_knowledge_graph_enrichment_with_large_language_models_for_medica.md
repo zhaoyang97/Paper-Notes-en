@@ -2,12 +2,12 @@
 title: >-
   [Paper Note] Text-Attributed Knowledge Graph Enrichment with Large Language Models for Medical Concept Representation
 description: >-
-  [ACL 2026][Medical NLP][Paper Note] This paper proposes CoMed, an LLM-empowered graph learning framework. By combining statistical evidence from EHR with type-constrained LLM reasoning to construct a global medical KG, then enriching it into a text-attributed graph (TAG) via LLM-generated node descriptions and edge rationales, the framework jointly train
+  [ACL 2026][Medical NLP][Paper Note] This paper proposes CoMed, an LLM-empowered graph learning framework. It constructs a global medical knowledge graph by combining EHR statistical evidence with type-constrained LLM reasoning. It then enriches the graph into a text-attributed graph using LLM-generated node descriptions and edge rationales. Finally, it j
 tags:
   - ACL 2026
   - Medical NLP
 date: 2026-05-08
-content_hash: 0f5494df0315fe06
+content_hash: 04f9978c19425d6b
 ---
 # Text-Attributed Knowledge Graph Enrichment with Large Language Models for Medical Concept Representation
 
@@ -15,71 +15,71 @@ content_hash: 0f5494df0315fe06
 **arXiv**: [2604.13331](https://arxiv.org/abs/2604.13331)  
 **Code**: None  
 **Area**: Medical NLP  
-**Keywords**: Medical concept representation, Knowledge Graph, LLM-GNN co-learning, Electronic Health Records, Text-Attributed Graph
+**Keywords**: Medical concept representation, knowledge graph, LLM-GNN joint learning, Electronic Health Records, text-attributed graphs
 
 ## TL;DR
 
-This paper proposes CoMed, an LLM-empowered graph learning framework. By combining statistical evidence from EHR with type-constrained LLM reasoning to construct a global medical KG, then enriching it into a text-attributed graph (TAG) via LLM-generated node descriptions and edge rationales, the framework jointly trains a LoRA-finetuned LLaMA encoder and a heterogeneous GNN to learn unified medical concept embeddings. It significantly improves diagnosis prediction performance on MIMIC-III/IV.
+This paper proposes CoMed, an LLM-empowered graph learning framework. It constructs a global medical knowledge graph by combining EHR statistical evidence with type-constrained LLM reasoning. It then enriches the graph into a text-attributed graph using LLM-generated node descriptions and edge rationales. Finally, it jointly trains a LoRA-finetuned LLaMA encoder and a heterogeneous GNN to learn unified medical concept embeddings, significantly improving diagnosis prediction performance on MIMIC-III/IV.
 
 ## Background & Motivation
 
-**Background**: Learning high-quality medical concept representations (embeddings for diagnosis/medication/procedure codes) is fundamental for clinical prediction in EHR mining. Existing methods primarily utilize the hierarchical structures of medical ontologies (e.g., parent-child relationships in ICD) or limited cross-type semantics (e.g., UMLS) to guide representation learning.
+**Background**: In EHR mining, learning high-quality medical concept representations (embeddings for diagnosis, medication, and procedure codes) is the foundation for clinical prediction. Existing methods primarily utilize the hierarchical structure of medical ontologies (e.g., ICD parent-child relations) or limited cross-type semantics (e.g., UMLS) to construct knowledge graphs (KGs) that guide representation learning.
 
-**Limitations of Prior Work**: (1) Cross-type dependencies (e.g., diagnosis-treatment relationships, medication-procedure associations) are largely missing or incomplete in existing ontologies; (2) Rich clinical semantics usually exist in textual form but are difficult to integrate with KG structures; (3) Unconstrained LLM prompting may produce plausible-sounding but unsupported edges with inconsistent outputs.
+**Limitations of Prior Work**: (1) Cross-type dependencies (e.g., diagnosis-treatment relations, medication-procedure associations) are largely missing or incomplete in existing ontologies; (2) Rich clinical semantics usually exist in text form but are difficult to integrate with KG structures; (3) Unconstrained LLM prompting may produce plausible but unsupported edges with inconsistent outputs.
 
-**Key Challenge**: While LLMs encode broad biomedical knowledge, KG inference for clinical modeling must remain evidence-based, type-aware, and globally consistent—balancing the semantic richness of LLMs with the empirical support of EHR data.
+**Key Challenge**: LLMs encode broad biomedical knowledge, but KG inference for clinical modeling must remain evidence-based, type-aware, and globally consistent—requiring a balance between the semantic richness of LLMs and the empirical support of EHRs.
 
-**Goal**: To construct a clinically interpretable and evidence-supported heterogeneous KG, and to learn unified medical concept embeddings that fuse textual semantics and graph structures.
+**Goal**: To construct a clinically interpretable and empirically supported heterogeneous KG, and learn unified medical concept embeddings that fuse textual semantics and graph structures.
 
-**Key Insight**: First extract statistically significant code pairs from EHR as candidate relationships, then use LLMs to infer semantic relationship types under type constraints and evidence conditions—a "statistical filtering + LLM inference" dual-insurance strategy.
+**Key Insight**: First extract statistically significant code pairs from EHRs as candidate relations, then use LLMs to infer semantic relation types under type constraints and evidence conditions—a "statistical filtering + LLM inference" double-protection strategy.
 
-**Core Idea**: EHR statistical evidence provides the empirical foundation, while LLMs provide semantic explanations and relationship types. The two complement each other to build the KG, followed by LLM-GNN co-learning to fuse textual and structural information.
+**Core Idea**: EHR statistical evidence provides an empirical foundation, while LLMs provide semantic explanations and relation types—the two complement each other to construct the KG, followed by LLM-GNN joint learning to fuse textual and structural information.
 
 ## Method
 
 ### Overall Architecture
 
-CoMed consists of four steps: (1) Extract co-occurrence and temporal transition statistics from EHR, retaining statistically significant code pairs; (2) Use type-constrained LLM prompting to infer directed relationship types, confidence levels, and rationales for each pair; (3) Enrich the KG into a text-attributed graph using LLM-generated node descriptions and edge features; (4) Jointly train a LoRA-finetuned LLaMA-1B encoder and a heterogeneous GNN to learn concept embeddings.
+CoMed consists of four steps: (1) Extract co-occurrence and temporal transition statistics from EHRs, retaining statistically significant code pairs; (2) Use type-constrained LLM prompting to infer directed relation types, confidence, and rationales for each code pair; (3) Enrich the KG into a text-attributed graph using LLM-generated node descriptions and edge features; (4) Jointly train a LoRA-finetuned LLaMA-1B encoder and a heterogeneous GNN to learn concept embeddings.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["EHR Visit Sequences<br/>Diagnosis / Medication / Procedure Codes"] --> B["EHR Statistical Evidence Extraction & Filtering<br/>Co-occurrence + Temporal Transitions → Prob / PMI / χ²"]
-    B -->|Retain Significant Pairs| C["Type-Constrained LLM Relation Inference<br/>Relation Pool + 8 Statistics → Labels/Triplets/Confidence/Rationale → Heterogeneous KG"]
-    C --> D["Text-Attribute Graph Enrichment<br/>LLM Node Descriptions + Edge Features (Rel/Evidence/Rationale)"]
-    D --> E["LLM-GNN Co-Learning<br/>LoRA LLaMA Encoding → Type Projection → Relation-Aware Hetero-GNN"]
-    E --> F["Unified Medical Concept Embeddings<br/>→ Next Visit Diagnosis Prediction"]
+    A["EHR 就诊序列<br/>诊断 / 药物 / 手术代码"] --> B["EHR 统计证据提取与过滤<br/>共现 + 时序转移 → 条件概率 / PMI / χ²"]
+    B -->|保留统计显著代码对| C["类型约束的 LLM 关系推断<br/>类型关系池 + 8 项统计 → 关系标签/三元组/置信度/理由 → 异构 KG"]
+    C --> D["文本属性图丰富<br/>LLM 生成节点描述 + 边特征(关系/证据/理由)"]
+    D --> E["LLM-GNN 联合学习<br/>LoRA LLaMA 编码 → 类型投影 → 关系感知异构 GNN"]
+    E --> F["统一医学概念嵌入<br/>→ 下一次就诊诊断预测"]
 ```
 
 ### Key Designs
 
-**1. EHR Statistical Evidence Extraction and Filtering: Mining candidate relationships with empirical support**
+**1. EHR Statistical Evidence Extraction and Filtering: Extracting empirical candidate relations from data first**
 
-Relying solely on LLM inference for relationships risks hallucinating "plausible but unsupported" edges. Therefore, CoMed lets the data speak first. It calculates three statistics for each pair of codes—smoothed conditional probability, PMI (Pointwise Mutual Information), and the p-value of a chi-square independence test—under two settings: co-occurrence within the same admission and temporal transitions across visits. Code pairs with low support, low association, or non-significance ($p > 0.05$) are filtered out.
+Pure LLM inference is prone to hallucinating "plausible but unsupported" edges. Therefore, CoMed grounds the process in data first. It calculates three statistics for each code pair: smoothed conditional probability, PMI association, and the p-value from a Chi-square independence test. Statistics are collected under two settings: co-occurrence within the same hospitalization and temporal transitions across visits. Code pairs with low support, low association, or non-significance ($p > 0.05$) are filtered out.
 
-This step tightens the criteria for candidate edges from "clinically plausible" to "actually observed in this dataset," effectively setting an empirically grounded candidate pool for subsequent LLM inference.
+The significance of this step is to tighten the criteria for candidate edges from "clinically plausible" to "actually observed in this dataset," establishing an empirical foundation for subsequent LLM inference rather than allowing the model to wander freely in the entire biomedical knowledge space.
 
-**2. Type-Constrained LLM Relationship Inference: Qualifying relationships under dual constraints**
+**2. Type-Constrained LLM Relation Inference: Defining relations under dual constraints of type and evidence**
 
-Statistical co-occurrence alone does not reveal the specific relationship between two codes, yet unconstrained LLM inference might produce semantically nonsensical edges like "diagnosis-treats-diagnosis." CoMed defines a candidate relationship pool (causes, treats, diagnostic_of, etc.) for each code type combination (dx-dx, rx-dx, px-dx, etc.). It then feeds structured prompts containing code identifiers, frequencies, and 8 statistical indicators (with definitions) to the LLM, which returns relationship labels, directed triplets, confidence scores, and a 50–60 word clinical rationale.
+While statistical co-occurrence reveals connections, it does not define the nature of the relationship. Conversely, unconstrained LLM inference might produce semantically nonsensical edges like "diagnosis treats diagnosis." CoMed predefines candidate relation pools for each code type combination (dx-dx, rx-dx, px-dx, etc.). It then feeds structured prompts containing code identifiers, frequencies, and 8 statistical indicators (with descriptions) to the LLM. The LLM returns relation labels, directed triples, confidence scores, and a clinical rationale of 50–60 words.
 
-Type constraints prevent semantically invalid relationships, while evidence conditions force the LLM to synthesize clinical knowledge with statistical signals. Clinical experts gave an average rating of 4.84/5 for 50 randomly sampled edges, confirming that this "statistical filtering + type-constrained inference" strategy produces high-quality, interpretable edges.
+Type constraints prevent semantically irrational relations, while evidence conditions force the LLM to synthesize clinical knowledge with statistical signals. Clinical experts gave an average rating of 4.84/5 to 50 randomly sampled edges, demonstrating that this "statistical filtering + type-constrained inference" strategy produces high-quality, interpretable edges.
 
-**3. Text-Attributed Graph Enrichment: Upgrading symbolic KG with clinical semantics**
+**3. Text-Attributed Graph Enrichment: Upgrading the symbolic KG to a clinical semantic graph for GNN consumption**
 
-At this stage, the KG is merely a skeleton of "code nodes + relationship types," and GNNs cannot read clinical semantics during message passing. This is the core problem addressed by "text-attributed knowledge graph enrichment." CoMed uses the LLM as a high-coverage medical knowledge base to enrich the KG: on the node side, it generates clinical descriptions (typical presentation, indications, role in treatment) for each code using type-specific prompts; on the edge side, it concatenates relationship labels, confidence, and free-text rationales with the 8 EHR statistical indicators into edge feature vectors.
+At this stage, the KG only contains a skeleton of "code nodes + relation types." GNNs cannot read clinical semantics during message passing. This is the core problem addressed by "Text-Attributed Knowledge Graph Enrichment." CoMed uses the LLM as a high-coverage medical knowledge base to enrich the KG into a text-attributed graph. On the node side, type-specific prompts generate clinical descriptions (typical manifestations, indications, clinical roles, and key considerations), which are attached as node attributes. On the edge side, the relation labels, confidence, rationales, and 8 EHR statistics are concatenated into edge feature vectors.
 
-This acts as the bridge between "symbolic KG" and "semantic encoding." Without node descriptions, the LLaMA encoder would lack readable input; without edge features, the GNN could not utilize relationship types or empirical signals during message passing.
+This step bridges "symbolic KG" and "semantic encoding." Without node descriptions, the LLaMA encoder would have no readable text input; without edge features, the GNN could not utilize relation types and empirical signals during message passing. This allows the KG to possess both the relational power of graphs and the semantic richness of LLMs.
 
-**4. LLM-GNN Co-Learning (CoMed): Mutual compensation of text semantics and graph structure**
+**4. LLM-GNN Joint Learning (CoMed): Enabling text semantics and graph structure to complement each other during training**
 
-GNNs excel at aggregating structural information but cannot read long text; LLMs encode rich semantics but lack global relational constraints. CoMed integrates them end-to-end: a LoRA-finetuned LLaMA-1B encodes node descriptions into text embeddings, which are mapped to the GNN space via type-specific linear projections. The heterogeneous GNN then performs relation-aware message passing on the KG to output final concept embeddings.
+GNNs excel at aggregating structural information but cannot interpret long text; LLMs encode rich semantics but lack global relational constraints. CoMed joins them end-to-end: a LoRA-finetuned LLaMA-1B encodes node descriptions to obtain text embeddings, which are mapped to the GNN space via type-specific linear projections. A heterogeneous GNN then performs relation-aware message passing on the KG to output the final concept embeddings.
 
-To address the long-tail distribution of medical codes, a two-phase LoRA update scheduling is used. Early training prioritizes "least-updated-first" to ensure coverage, while later stages mix low-frequency and high-frequency codes to solve the under-updating of rare codes in mini-batch training. This is key to boosting performance for rare diagnosis labels (0–25% frequency) from 40.60 to 47.67 (+7.07) in ablation studies.
+To address the long-tail distribution of medical codes, a two-stage LoRA update schedule is employed. Early training focuses on "least-update first" to ensure coverage, while later stages mix low-frequency and high-frequency codes to resolve insufficient updates for rare codes in mini-batch training. This is key to the improvement in rare diagnosis labels (0–25% frequency) from 40.60 to 47.67 (+7.07), as the KG allows rare concepts to borrow information from related ones.
 
 ### Loss & Training
 
-A multi-label cross-entropy loss is used for training the next-visit diagnosis prediction task. CoMed acts as a plug-and-play concept encoder integrated into standard EHR models for end-to-end training.
+A multi-label cross-entropy loss is used for the next-visit diagnosis prediction task. CoMed acts as a plug-and-play concept encoder integrated into standard EHR models for end-to-end training.
 
 ## Key Experimental Results
 
@@ -93,14 +93,14 @@ A multi-label cross-entropy loss is used for training the next-visit diagnosis p
 | GRAM | 41.70 | 34.60 | 48.60 |
 | LINKO | 44.91 | 38.20 | 52.30 |
 | GraphCare | 43.35 | 35.46 | 52.76 |
-| **CoMed (Ours)** | **47.21** | **42.28** | **54.20** |
+| **Ours (CoMed)** | **47.21** | **42.28** | **54.20** |
 
 ### Ablation Study
 
 **Plug-and-play analysis (Integrating CoMed into different backbones)**
 
 | Backbone | Without CoMed | With CoMed | Gain |
-|----------|---------|---------|------|
+|----------|---------------|------------|------|
 | Transformer | 41.00 | 47.21 | +6.21 |
 | RETAIN | ~40 | ~46 | +6 |
 | GRAM | 41.70 | ~47 | +5 |
@@ -108,36 +108,36 @@ A multi-label cross-entropy loss is used for training the next-visit diagnosis p
 ### Key Findings
 
 - CoMed improves AUPRC on MIMIC-III from 41.00 to 47.21 (+6.21), ranking first among all baselines.
-- The improvement is particularly significant for rare labels (0-25% frequency)—from 40.60 to 47.67 (+7.07)—as KG relationships allow rare concepts to borrow information from associated ones.
+- Improvements are particularly significant for rare diagnosis labels (0-25% frequency)—from 40.60 to 47.67 (+7.07)—as KG relations help rare concepts leverage information from associated concepts.
 - CoMed consistently improves performance as a plug-and-play concept encoder across multiple backbones.
-- Clinical expert ratings for LLM-inferred edges (4.84±0.29/5) validate the clinical validity of the KG.
-- Consistent improvements on MIMIC-IV demonstrate cross-dataset generalization.
+- Clinical experts rated the LLM-inferred edges at 4.84±0.29/5, validating the clinical validity of the KG.
+- Consistent gains on MIMIC-IV demonstrate cross-dataset generalization.
 
 ## Highlights & Insights
 
-- The "statistical filtering + LLM inference" dual-insurance strategy ensures both empirical support and semantic rationality for the KG.
-- Two-phase LoRA update scheduling cleverly addresses training imbalances caused by the long-tail distribution of medical codes.
-- The significant boost for rare diagnoses is clinically meaningful, as rare diseases are often the hardest to predict and require the most attention.
+- The "statistical filtering + LLM inference" strategy ensures both the empirical grounding and semantic rationality of KG relations.
+- The two-stage LoRA update schedule elegantly addresses the training imbalance caused by the long-tail distribution of medical codes.
+- The significant improvement for rare diagnoses has high clinical value, as rare diseases are often the most difficult to predict and require the most attention.
 
 ## Limitations & Future Work
 
-- LLM-generated node descriptions and rationales may contain subtle hallucinations or biases.
-- Evaluation is limited to diagnosis prediction; performance on medication recommendation or readmission prediction is not yet verified.
-- KG construction depends on statistics from the target dataset; EHRs from different hospitals might generate different KGs.
-- The text encoding capability of LLaMA-1B is finite; larger LLMs might yield better embeddings.
+- LLM-generated node descriptions and relation rationales may contain subtle hallucinations or biases.
+- Evaluation is limited to diagnosis prediction; performance on tasks like medication recommendation or readmission prediction has not been verified.
+- KG construction depends on statistics from the target dataset; different hospital EHRs may yield different KGs.
+- The text encoding capability of LLaMA-1B is limited; larger LLMs might yield better embeddings.
 
 ## Related Work & Insights
 
-- **vs GRAM**: GRAM only uses ICD hierarchies, whereas CoMed introduces cross-type relationships and textual semantics—resulting in +5.51 AUPRC.
-- **vs GraphCare**: The latter uses external medical KGs without aligning with EHR data; CoMed ensures empirical support through statistical filtering.
-- **vs LINKO**: LINKO uses link prediction for KG construction but does not fuse textual semantics; CoMed's LLM-GNN co-learning is more comprehensive.
+- **vs GRAM**: GRAM uses only ICD hierarchy; CoMed introduces cross-type relations and textual semantics—resulting in +5.51 AUPRC.
+- **vs GraphCare**: The latter uses external medical KGs not aligned with EHR data, whereas CoMed ensures empirical support via statistical filtering.
+- **vs LINKO**: The latter uses link prediction to build KGs but does not fuse textual semantics; CoMed's LLM-GNN joint learning is more comprehensive.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ The idea of EHR statistics + LLM inference for KG construction and the LLM-GNN co-learning framework is novel.
+- Novelty: ⭐⭐⭐⭐ The idea of EHR statistics + LLM inference for KG construction and the LLM-GNN joint learning framework is novel.
 - Experimental Thoroughness: ⭐⭐⭐⭐⭐ MIMIC-III/IV × multiple baselines + plug-and-play analysis + clinical expert validation.
-- Writing Quality: ⭐⭐⭐⭐ Clear methodology flow with well-motivated design steps.
-- Value: ⭐⭐⭐⭐⭐ Highly valuable to the EHR research community as a plug-and-play concept encoder.
+- Writing Quality: ⭐⭐⭐⭐ Clear methodological flow with explicit motivation for each design step.
+- Value: ⭐⭐⭐⭐⭐ High value to the EHR research community as a plug-and-play concept encoder.
 
 <!-- RELATED:START -->
 

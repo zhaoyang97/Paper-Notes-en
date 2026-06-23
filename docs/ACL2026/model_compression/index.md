@@ -82,25 +82,25 @@ item_total: 59
 
 **💬 ACL2026** · **59** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (98)](../../CVPR2026/model_compression/index.md) · [🧪 ICML2026 (100)](../../ICML2026/model_compression/index.md) · [🔬 ICLR2026 (100)](../../ICLR2026/model_compression/index.md) · [🤖 AAAI2026 (60)](../../AAAI2026/model_compression/index.md) · [🧠 NeurIPS2025 (140)](../../NeurIPS2025/model_compression/index.md) · [📹 ICCV2025 (52)](../../ICCV2025/model_compression/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (98)](../../CVPR2026/model_compression/index.md) · [🔬 ICLR2026 (241)](../../ICLR2026/model_compression/index.md) · [🧪 ICML2026 (117)](../../ICML2026/model_compression/index.md) · [🤖 AAAI2026 (60)](../../AAAI2026/model_compression/index.md) · [🧠 NeurIPS2025 (140)](../../NeurIPS2025/model_compression/index.md) · [📹 ICCV2025 (52)](../../ICCV2025/model_compression/index.md)
 
 🔥 **Top topics:** LLM ×19 · Model Compression ×9 · Compression ×4 · Reasoning ×4 · Alignment/RLHF ×3
 
 **[A BERTology View of LLM Orchestrations: Token- and Layer-Selective Probes for Efficient Single-Pass Classification](a_bertology_view_of_llm_orchestrations_token-_and_layer-selective_probes_for_eff.md)**
 
-:   This work treats the $token \times layer$ hidden state tensor of a production LLM as a mineable resource. By using a two-stage aggregation probe that "compresses tokens then layers," safety and sentiment classification are completed during the same forward pass. With 35M trainable parameters, this approach approximates independent guard models while eliminating an additional LLM call.
+:   This paper treats the $token \times layer$ hidden state tensor of a production LLM as a minable resource. By utilizing a two-stage aggregation probe that "compresses tokens first, then layers," it performs safety/sentiment classification within the same forward pass. With only 35M trainable parameters, it approaches the performance of standalone guard models while eliminating an extra LLM call.
 
 **[A Layer-wise Analysis of Supervised Fine-Tuning](a_layer-wise_analysis_of_supervised_fine-tuning.md)**
 
-:   This paper conducts a layer-wise analysis of SFT in 1B-32B models through information-theoretic, geometric, and optimization perspectives. It reveals that instruction-following capabilities are concentrated in the intermediate layers (20%-80%) rather than being uniformly distributed. Based on this, a Mid-Block Efficient Tuning strategy is proposed to selectively update intermediate layers, achieving up to a 10.2% improvement on GSM8K compared to standard LoRA.
+:   This work conducts a layer-wise analysis of SFT in 1B-32B models through information-theoretic, geometric, and optimization perspectives. It finds that instruction-following capabilities are concentrated in the middle layers (20%-80%) rather than being uniformly distributed. Based on this, a Mid-Block Efficient Tuning strategy is proposed to selectively update middle layers, achieving up to a 10.2% improvement on GSM8K over standard LoRA.
 
 **[Adaptive Layer Selection for Layer-Wise Token Pruning in LLM Inference](adaptive_layer_selection_for_layer-wise_token_pruning_in_llm_inference.md)**
 
-:   ASL (Adaptive Selection Layer) is proposed to adaptively determine the layer position for KV cache pruning by monitoring the variance of token attention score rankings. It significantly outperforms fixed-layer selection methods on difficult tasks while remaining training-free.
+:   Ours proposes ASL (Adaptive Selection Layer), which adaptively determines the layer location for KV cache pruning by monitoring the variance of token attention score rankings. It significantly outperforms fixed-layer selection methods on difficult tasks while remaining training-free.
 
 **[Alignment Tuning for Large Language Models: A Data-Centric Lens on Alignment Data Pipelines](alignment_tuning_for_large_language_models_a_data-centric_lens_on_alignment_data.md)**
 
-:   This paper reinterprets LLM alignment tuning as a dynamic data pipeline design problem: what the model eventually learns depends not only on optimization algorithms like PPO, DPO, or GRPO, but more crucially on how candidate responses are synthesized, how preferences are evaluated, and how preference signals are instantiated into training objectives.
+:   This paper reinterprets LLM alignment tuning as a dynamic data pipeline design problem: what the model ultimately learns depends not only on optimization algorithms like PPO, DPO, or GRPO, but also on how candidate responses are generated, how preferences are evaluated, and how preference signals are instantiated as training objectives.
 
 **[Analytical FFN-to-MoE Restructuring via Activation Pattern Analysis](analytical_ffn-to-moe_restructuring_via_activation_pattern_analysis.md)**
 
@@ -108,7 +108,7 @@ item_total: 59
 
 **[ArcLight: A Lightweight LLM Inference Architecture for Many-Core CPUs](arclight_a_lightweight_llm_inference_architecture_for_many-core_cpus.md)**
 
-:   ArcLight is a lightweight LLM inference framework written from scratch (approximately 10 C++ files), specifically designed for many-core CPUs with multiple NUMA nodes. By utilizing NUMA-local memory pools, multi-view thread pools, cross-NUMA tensor parallelism, and asynchronous subgraph synchronization, it breaks the "remote memory wall." On a 192-core ARM Kunpeng platform, it improves the decoding throughput of Qwen3-4B Q4_0 by up to 46% compared to llama.cpp.
+:   ArcLight is a lightweight LLM inference framework written from scratch (approximately 10 C++ files) designed for many-core CPUs with multiple NUMA nodes. By utilizing NUMA-local memory pools, multi-view thread pools, cross-NUMA tensor parallelism, and asynchronous subgraph synchronization, it breaks the "remote memory wall." On a 192-core ARM Kunpeng platform, it improves the decode throughput of Qwen3-4B Q4_0 by up to 46% compared to llama.cpp.
 
 **[BaseCal: Unsupervised Confidence Calibration via Base Model Signals](basecal_unsupervised_confidence_calibration_via_base_model_signals.md)**
 
@@ -132,7 +132,7 @@ item_total: 59
 
 **[DeepPrune: Parallel Scaling without Inter-Trace Redundancy](deepprune_parallel_scaling_without_inter-trace_redundancy.md)**
 
-:   This paper proposes DeepPrune, which reduces token consumption by 65.73%-88.50% while maintaining competitive accuracy (within 3 percentage points). It achieves this by training a specialized judge model to predict answer equivalence from partial reasoning traces and employing an online greedy clustering algorithm to dynamically prune redundant parallel CoT paths.
+:   This paper proposes DeepPrune, which trains a specialized judge model to predict answer equivalence from partial reasoning traces. By combining this with an online greedy clustering algorithm to dynamically prune redundant parallel CoT paths, it reduces token consumption by 65.73%-88.50% while maintaining competitive accuracy (within 3 percentage points).
 
 **[Efficient Learned Data Compression via Dual-Stream Feature Decoupling](efficient_learned_data_compression_via_dual-stream_feature_decoupling.md)**
 
@@ -140,7 +140,7 @@ item_total: 59
 
 **[Enabling Agents to Communicate Entirely in Latent Space](enabling_agents_to_communicate_entirely_in_latent_space.md)**
 
-:   This paper proposes Interlat, a framework enabling LLM agents to communicate entirely in latent space. The sender directly transmits the last-layer hidden states as a representation of "thought," while the receiver interprets these latent messages via a communication adapter. Through latent reasoning, messages are compressed to as few as 8 tokens while maintaining competitive performance, achieving up to 24× communication acceleration.
+:   This paper proposes Interlat, a framework that enables LLM agents to communicate entirely in latent space. The sender transmits the final layer's hidden states as a continuous representation of "thought." The receiver interprets these latent messages via a communication adapter and further compresses them to just 8 tokens through latent space reasoning while maintaining competitive performance, achieving a communication speedup of up to 24×.
 
 **[Establishing a Scale for Kullback–Leibler Divergence in Language Models Across Various Settings](establishing_a_scale_for_kullback-leibler_divergence_in_language_models_across_v.md)**
 
@@ -152,11 +152,11 @@ item_total: 59
 
 **[FastKV: Decoupling of Context Reduction and KV Cache Compression for Prefill-Decoding Acceleration](fastkv_decoupling_of_context_reduction_and_kv_cache_compression_for_prefill-deco.md)**
 
-:   This paper proposes FastKV, which decouples context reduction (Token-Selective Propagation in the prefill stage) from KV cache compression (layer-wise KV retention in the decoding stage). It achieves 1.82× prefill and 2.87× decoding acceleration on LLaMA-3.1-8B-Instruct while maintaining accuracy within a 1% drop on LongBench.
+:   This paper proposes FastKV, which decouples context reduction (Token-Selective Propagation during prefill) from KV cache compression (layer-wise KV retention during decoding). It achieves 1.82× prefill and 2.87× decoding speedup on LLaMA-3.1-8B-Instruct, while maintaining accuracy within a 1% drop on LongBench.
 
 **[Find Your Optimal Teacher: Personalized Data Synthesis via Router-Guided Multi-Teacher Distillation](find_your_optimal_teacher_personalized_data_synthesis_via_router-guided_multi-te.md)**
 
-:   This paper proposes PerSyn (Personalized data Synthesis), which adopts a "Route then Generate" paradigm where a router assigns the optimal teacher model for each prompt. It considers both student learnability and teacher response quality. This approach is more efficient and effective than the traditional "Generate then Select" paradigm, consistently surpassing all baselines in instruction tuning and mathematical reasoning scenarios.
+:   Ours propose PerSyn (Personalized data Synthesis), which utilizes a "Route-then-Generate" paradigm where a router assigns the optimal teacher model for each prompt. By considering both student learnability and teacher response quality, this approach is more efficient and effective than the traditional "Generate-then-Select" paradigm, consistently surpassing all baselines in both instruction tuning and mathematical reasoning scenarios.
 
 **[From Signal Degradation to Computation Collapse: Uncovering the Two Failure Modes of LLM Quantization](from_signal_degradation_to_computation_collapse_uncovering_the_two_failure_modes.md)**
 
@@ -176,11 +176,11 @@ item_total: 59
 
 **[IMPACT: Importance-Aware Activation Space Reconstruction](impact_importance-aware_activation_space_reconstruction.md)**
 
-:   Proposes the IMPACT framework, shifting LLM low-rank compression from minimizing weight reconstruction error to minimizing importance-weighted activation reconstruction error. By incorporating gradient information into the activation covariance matrix, a closed-form optimal solution is derived, achieving up to 55.4% model size reduction while maintaining accuracy.
+:   The IMPACT framework is proposed to shift LLM low-rank compression from minimizing weight reconstruction error to minimizing importance-weighted activation reconstruction error. By incorporating gradient information into the activation covariance matrix, a closed-form optimal solution is derived, achieving up to 55.4% model size reduction while maintaining accuracy.
 
 **[CadLLM: Improving the Throughput of Diffusion-based LLMs via Training-Free Confidence-Aware Calibration](improving_the_throughput_of_diffusion-based_large_language_models_via_a_training.md)**
 
-:   CadLLM is proposed as a training-free adaptive inference acceleration method that utilizes token decoding confidence signals from Diffusion Language Models (dLLMs) to dynamically adjust four dimensions: block size, steps, vocabulary sampling range, and commitment threshold. It achieves 1.1-2.28× throughput improvement on LLaDA and DREAM while maintaining competitive accuracy.
+:   CadLLM is proposed as a training-free adaptive inference acceleration method that utilizes token decoding confidence signals from diffusion language models (dLLMs) to dynamically adjust four dimensions: block size, step count, vocabulary sampling range, and submission threshold. It achieves 1.1-2.28× throughput gains on LLaDA and DREAM while maintaining competitive accuracy.
 
 **[IntroLM: Introspective Language Models via Prefilling-Time Self-Evaluation](introlm_introspective_language_models_via_prefilling-time_self-evaluation.md)**
 
@@ -196,7 +196,7 @@ item_total: 59
 
 **[LEAP: Layer-wise Exit-Aware Pretraining for Efficient Transformer Inference](leap_layer-wise_exit-aware_pretraining_for_efficient_transformer_inference.md)**
 
-:   The authors theoretically and empirically demonstrate that "layer-wise alignment distillation" and "convergence-based early exit" are **systemically incompatible** under standard deployment—distilled models utilize every layer efficiently with no redundancy for early exit. They propose LEAP, a training objective with zero extra parameters that forces intermediate layers to approximate final layer representations. On MiniLM-L12, it achieves a 1.61× measured wall-clock speedup (batch=1, with 91.9% of samples exiting at L7).
+:   The authors theoretically and empirically demonstrate that "layer-wise alignment distillation" and "convergence-based early exit" are **systemically incompatible** under standard deployment—distilled models utilize every layer efficiently, leaving no redundancy for early exit. They propose LEAP, a zero-additional-parameter auxiliary training objective that forces intermediate layers to approximate the final layer representation early. LEAP achieves a .61× measured wall-clock speedup on MiniLM-L12 (with batch=1, 91.9% of samples exit at L7).
 
 **[LightReasoner: Can Small Language Models Teach Large Language Models Reasoning?](lightreasoner_can_small_language_models_teach_large_language_models_reasoning.md)**
 
@@ -236,7 +236,7 @@ item_total: 59
 
 **[Quantize What Counts: More for Keys, Less for Values](quantize_what_counts_more_for_keys_less_for_values.md)**
 
-:   From a linear algebra perspective, this paper proves that the spectral and Frobenius norms of Key weights in Transformers are systematically larger than those of Value weights. Based on this, it proposes a Key-prioritized mixed-precision KV cache quantization strategy (e.g., K4V2), reducing memory by 25% while maintaining 98.3% of full-precision accuracy.
+:   This paper theoretically demonstrates from a linear algebra perspective that the spectral and Frobenius norms of Key weights in Transformers are systematically larger than those of Value weights. Based on this, it proposes a Key-priority mixed-precision KV cache quantization strategy (e.g., K4V2), which reduces memory by 25% while maintaining 98.3% of full-precision accuracy.
 
 **[Reason Only When Needed: Efficient Generative Reward Modeling via Model-Internal Uncertainty](reason_only_when_needed_efficient_generative_reward_modeling_via_model-internal_.md)**
 
@@ -248,7 +248,7 @@ item_total: 59
 
 **[Rethinking Table Pruning in TableQA: From Sequential Revisions to Gold Trajectory-Supervised Parallel Search](rethinking_table_pruning_in_tableqa_from_sequential_revisions_to_gold_trajectory.md)**
 
-:   This paper proposes TabTrim, which transforms table pruning from error-prone single-path sequential revisions to a framework consisting of an "SQL trajectory-supervised pruner + loss-aware verifier + parallel trajectory search." It achieves an average accuracy of 73.5% on WikiTQ, TabFact, and TableBench, outperforming the strongest baseline by 3.2 percentage points.
+:   This paper proposes TabTrim, transforming table pruning from error-prone single-path sequential revisions into a "SQL trajectory-supervised pruner + loss-aware verifier + parallel trajectory search" framework. It improves average accuracy to 73.5% on WikiTQ, TabFact, and TableBench, significantly outperforming the strongest baseline by 3.2 percentage points.
 
 **[RouteNLP: Closed-Loop LLM Routing with Conformal Cascading and Distillation Co-Optimization](routenlp_closed-loop_llm_routing_with_conformal_cascading_and_distillation_co-op.md)**
 
@@ -260,7 +260,7 @@ item_total: 59
 
 **[Social Story Frames: Contextual Reasoning about Narrative Intent and Reception](social_story_frames_contextual_reasoning_about_narrative_intent_and_reception.md)**
 
-:   This paper proposes SocialStoryFrames, utilizing a 10-dimensional reader response taxonomy and two distilled models to situate Reddit stories within their community and conversational contexts. It infers narrative intent, reader sentiment, and value judgments, demonstrating a more granular analysis of community narrative practices than semantic similarity across 6,140 social media stories.
+:   This paper proposes SocialStoryFrames, utilizing a reader response taxonomy with 10 dimensions and two distilled models to place Reddit stories back into community and conversational contexts. It infers narrative intent, reader sentiment, and value judgments, demonstrating a more granular analysis of community narrative practices across 6,140 social media stories compared to semantic similarity.
 
 **[SRA: Span Representation Alignment for Large Language Model Distillation](sra_span_representation_alignment_for_large_language_model_distillation.md)**
 
@@ -268,23 +268,23 @@ item_total: 59
 
 **[SSSD: Simply-Scalable Speculative Decoding](sssd_simply-scalable_speculative_decoding.md)**
 
-:   Ours proposes SSSD, a training-free speculative decoding method that combines lightweight n-gram matching with hardware-aware speculative length adjustment. It achieves up to $2.9\times$ inference acceleration without requiring any draft model training or deployment, demonstrating superior robustness over training-based methods in language/domain transfer and long-context scenarios.
+:   The authors propose SSSD, a training-free speculative decoding method that combines lightweight n-gram matching with hardware-aware speculation length adjustment. Without requiring the training or deployment of any draft models, it achieves up to 2.9× inference speedup and demonstrates superior robustness compared to training-based methods in language/domain migration and long-context scenarios.
 
 **[Stable On-Policy Distillation through Adaptive Target Reformulation](stable_on-policy_distillation_through_adaptive_target_reformulation.md)**
 
-:   This paper proposes Veto, a target-level reformulation method that stabilizes on-policy knowledge distillation by constructing a geometric teacher-student bridge distribution in the logit space. A single parameter $\beta$ simultaneously acts as an adaptive gradient veto in forward KL (suppressing harmful gradients from low-confidence tokens) and a decisiveness knob in reverse KL (balancing reward-driven selection and output diversity). It achieves a 9.2% improvement over SFT on GSM8K.
+:   This paper proposes Veto, a target-level reformulation method that stabilizes on-policy knowledge distillation by constructing a teacher-student geometric bridging distribution in logit space. A single parameter $\beta$ simultaneously acts as an adaptive gradient vetoer in forward KL (suppressing harmful gradients from low-confidence tokens) and a decisiveness knob in reverse KL (balancing reward-driven behavior and output diversity). It achieves a 9.2% improvement over SFT on GSM8K.
 
 **[TalkLoRA: Communication-Aware Mixture of Low-Rank Adaptation for Large Language Models](talklora_communication-aware_mixture_of_low-rank_adaptation_for_large_language_m.md)**
 
-:   TalkLoRA introduces a lightweight Talking Module into the MoE-LoRA architecture, allowing low-rank experts to exchange information before routing. This addresses routing instability and expert dominance caused by independent expert operations in traditional MoELoRA, consistently outperforming LoRA and MoELoRA variants on common sense reasoning and NLU tasks with fewer parameters (0.2%).
+:   TalkLoRA introduces a lightweight Talking Module into the MoE-LoRA architecture, allowing low-rank experts to exchange information before routing. This addresses the issues of unstable routing and expert dominance caused by independent expert operation in traditional MoELoRA. On commonsense reasoning and NLU tasks, it consistently outperforms LoRA and MoELoRA variants with fewer parameters (0.2%).
 
 **[Task-Stratified Knowledge Scaling Laws for Post-Training Quantized LLMs](task-stratified_knowledge_scaling_laws_for_post-training_quantized_large_languag.md)**
 
-:   This paper establishes the first task-stratified knowledge scaling law for Post-Training Quantization (PTQ), categorizing LLM capabilities into three layers: memory, application, and reasoning. It uniformly models four factors: model size, bit-width, group size, and calibration set size. Validated on 293 PTQ configurations, it reveals differentiated patterns where reasoning is sensitive to precision, application improves with scale, and memory is sensitive to calibration.
+:   This paper establishes the first task-stratified knowledge scaling laws for post-training quantization (PTQ), categorizing LLM capabilities into memory, application, and reasoning layers. It provides a unified model for four factors: model size, bit-width, group size, and calibration set size. Validated across 293 PTQ configurations, the study reveals distinct patterns: reasoning is highly sensitive to precision, application scales with model size, and memory is sensitive to calibration.
 
 **[TELL-TALE: Task Efficient LLMs with Task Aware Layer Elimination](tell-tale_task_efficient_llms_with_task_aware_layer_elimination.md)**
 
-:   TALE utilizes a training-free greedy search process to directly eliminate "underperforming" Transformer layers for each downstream task, simultaneously improving task accuracy and reducing inference costs across 5 open-source LLMs and 9 benchmarks.
+:   TALE utilizes a retraining-free greedy search process to directly eliminate "impeding" Transformer layers for specific downstream tasks, simultaneously enhancing task accuracy and reducing inference costs across five open-source LLMs and nine benchmarks.
 
 **[The Pitfalls of KV Cache Compression](the_pitfalls_of_kv_cache_compression.md)**
 
@@ -296,11 +296,11 @@ item_total: 59
 
 **[Training-Free Test-Time Contrastive Learning for Large Language Models](training-free_test-time_contrastive_learning_for_large_language_models.md)**
 
-:   This paper proposes TF-TTCL, a training-free test-time contrastive learning framework that enables frozen LLMs to self-improve online through an "Explore-Reflect-Guide" cycle. It utilizes multi-agent role-playing to generate diverse reasoning trajectories, distills textual rules from the contrast between positive and negative samples into a memory bank, and retrieves relevant rules to guide generation during inference.
+:   This paper proposes TF-TTCL, a training-free test-time contrastive learning framework that enables frozen LLMs to self-improve online through an "explore-reflect-guide" loop. The framework utilizes multi-agent role-playing to generate diverse reasoning trajectories, distills textual rules from contrastive positive and negative samples into a memory bank, and retrieves relevant rules during inference to guide generation.
 
 **[Two-Stage Regularization-Based Structured Pruning for LLMs](two-stage_regularization-based_structured_pruning_for_llms.md)**
 
-:   TRSP utilizes a first-stage regularization to learn the importance of each Transformer layer and a second-stage regularization to align the inputs and outputs of layers to be deleted. This proximity forces knowledge transfer into the retained layers, achieving layer-wise structured pruning and actual inference acceleration for LLMs without the need for retraining.
+:   TRSP employs a first-stage regularization to learn the importance of each Transformer layer and a second-stage regularization to minimize the distance between the input and output of candidate layers. This facilitates the transfer of knowledge to retained layers, enabling layer-wise structured pruning and actual inference acceleration for LLMs without requiring retraining.
 
 **[UKP_Psycontrol at SemEval-2026 Task 2: Modeling Valence and Arousal Dynamics from Text](ukp_psycontrol_at_semeval-2026_task_2_modeling_valence_and_arousal_dynamics_from.md)**
 
@@ -312,12 +312,12 @@ item_total: 59
 
 **[When Reviews Disagree: Fine-Grained Contradiction Analysis in Scientific Peer Reviews](when_reviews_disagree_fine-grained_contradiction_analysis_in_scientific_peer_rev.md)**
 
-:   This paper advances the analysis of scientific review disagreements from sentence-pair binary classification to evidence extraction and intensity scoring on full reviews. It employs the IMPACT multi-agent teacher framework to distill a small TIDE model capable of single-forward pass deployment.
+:   This paper advances reviewer disagreement analysis from sentence-pair binary classification to evidence extraction and intensity scoring on full reviews, utilizing the IMPACT multi-agent teacher to distill a TIDE student model deployable via a single forward pass.
 
 **[Why Steering Works: Toward a Unified View of Language Model Parameter Dynamics](why_steering_works_toward_a_unified_view_of_language_model_parameter_dynamics.md)**
 
-:   This paper unifies local weight fine-tuning, LoRA, and activation steering into "control signal-induced dynamic weight updates." Using preference-utility log-odds and the activation manifold, it explains why strong control enhances target preferences but harms generation utility. Consequently, the SPLIT training objective is proposed to better balance preference and utility across three intervention forms.
+:   This paper unifies local weight fine-tuning, LoRA, and activation steering into "control signal-induced dynamic weight updates." Using preference-utility log-odds and activation manifolds, it explains how strong control enhances target preference at the expense of generation utility. Based on this, the SPLIT training objective is proposed to better balance preference and utility across three types of interventions.
 
 **[WISCA: A Lightweight Model Transition Method to Improve LLM Training via Weight Scaling](wisca_a_lightweight_model_transition_method_to_improve_llm_training_via_weight_s.md)**
 
-:   This paper proposes the Equivalent Model Theory and the WISCA weight scaling strategy. By dynamically adjusting the $W_q/W_k$ and $W_v/W_o$ weights of Transformer attention layers during training to equalize their L1 norms (while maintaining the model output), it guides optimization toward flatter loss minima. This achieves an average 5.6% improvement in zero-shot evaluation and 2.12% reduction in training perplexity on GQA architectures.
+:   This paper proposes the Equivalent Model Theory and the WISCA weight scaling strategy. By dynamically adjusting the $W_q/W_k$ and $W_v/W_o$ weights of Transformer attention layers during training to equalize their L1 norms (while maintaining model output), the optimization is guided toward flatter local minima. This achieves an average 5.6% zero-shot evaluation improvement and a 2.12% reduction in training perplexity on GQA architectures.

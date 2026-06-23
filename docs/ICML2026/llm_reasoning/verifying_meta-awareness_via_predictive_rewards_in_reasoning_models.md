@@ -2,13 +2,13 @@
 title: >-
   [Paper Note] Verifying Meta-Awareness via Predictive Rewards in Reasoning Models
 description: >-
-  [ICML 2026][LLM Reasoning][Reinforcement Learning] Metacognition in reasoning models is optimized by aligning self-predictions of solution length, pass rate, and required concepts with actual statistics, significantly enhancing mathematical reasoning performance and accelerating training.
+  [ICML 2026][LLM Reasoning][Reinforcement Learning] Optimizing model metacognition by requiring reasoning models to self-predict solution length, pass rates, and necessary concepts—aligning predictions with ground-truth statistics—significantly enhances mathematical reasoning performance and accelerates training.
 tags:
   - ICML 2026
   - LLM Reasoning
   - Reinforcement Learning
 date: 2026-05-08
-content_hash: 1e00395ea779e6fc
+content_hash: 29a1695872d154db
 ---
 # Verifying Meta-Awareness via Predictive Rewards in Reasoning Models
 
@@ -19,67 +19,67 @@ content_hash: 1e00395ea779e6fc
 **Keywords**: Metacognition, Reasoning Models, Reinforcement Learning, Predictive Rewards
 
 ## TL;DR
-Metacognition in reasoning models is optimized by aligning self-predictions of solution length, pass rate, and required concepts with actual statistics, significantly enhancing mathematical reasoning performance and accelerating training.
+Optimizing model metacognition by requiring reasoning models to self-predict solution length, pass rates, and necessary concepts—aligning predictions with ground-truth statistics—significantly enhances mathematical reasoning performance and accelerates training.
 
 ## Background & Motivation
 
-**Background**: Large Reasoning Models (LRMs) post-trained via RL algorithms like GRPO significantly enhance LLM mathematical reasoning. However, current methods rely solely on answer-level verification and lack awareness of the model's own knowledge boundaries and thought processes.
+**Background**: Post-training Large Reasoning Models (LRMs) via RL algorithms like GRPO has significantly enhanced LLM mathematical reasoning. However, current methods rely solely on answer-level verification and lack awareness of the model's own knowledge boundaries and thought processes.
 
-**Limitations of Prior Work**: Traditional methods face three key issues: (1) models cannot accurately estimate their own solving capabilities (blurred knowledge boundaries); (2) generation of excessively long but incorrect reasoning paths wastes computation; (3) lack of self-awareness regarding problem difficulty prevents adaptive allocation of computational resources.
+**Limitations of Prior Work**: Traditional approaches face three key issues: (1) Models cannot accurately estimate their own problem-solving capabilities (blurred knowledge boundaries); (2) Generating ultra-long but incorrect reasoning paths wastes computation; (3) A lack of self-awareness regarding problem difficulty prevents adaptive allocation of computational resources.
 
-**Key Challenge**: A significant deviation exists between the model's "metacognition" and its actual reasoning ability. Models trained with GRPO exhibit pronounced overconfidence, where predicted difficulty is severely misaligned with true pass rates.
+**Key Challenge**: A significant discrepancy exists between a model's "metacognition" and its actual reasoning ability. Models trained with GRPO exhibit pronounced overconfidence, where predicted difficulty is severely misaligned with actual pass rates.
 
-**Goal**: Construct a self-verifying metacognitive optimization framework where the model is optimized through the consistency between self-generated predictions and ground-truth statistics without external supervision.
+**Goal**: To construct a self-verifying metacognitive optimization framework that allows the model to derive optimization signals through consistency between self-generated predictions and actual statistics, without requiring external supervision.
 
-**Key Insight**: The model can generate two reasoning trajectories in parallel: one for solving the problem and one for meta-prediction. Aligning the predicted values from both trajectories with actual statistics allows the model to learn accurate self-assessment.
+**Key Insight**: The model can generate two reasoning trajectories in parallel—one for problem-solving and one for meta-prediction. Aligning the predicted values from both trajectories with actual statistics facilitates accurate self-assessment learning.
 
-**Core Idea**: Replace traditional "answer rewards" with "predictive rewards" (requiring the model to predict difficulty, length, and concepts and aligning them with ground truth) to drive metacognitive alignment.
+**Core Idea**: Replace traditional "answer rewards" with "predictive rewards" (requiring the model to predict difficulty, length, and concepts, then aligning these with ground truth) to drive the alignment of model metacognition.
 
 ## Method
 
 ### Overall Architecture
-MAPR requires the model to execute two parallel reasoning paths for the same problem: the **solution path** generates $G$ responses as usual, validated by rules to obtain the true pass rate $p$ and the length range of correct solutions $[l_{\min}, l_{\max}]$; the **meta-prediction path** generates $M$ "meta-predictions" where the model estimates its pass rate $\hat{p}$, expected length $\hat{l}$, and the set of required concepts $\hat{\mathcal{G}}_{\text{notion}}$ before solving. Both paths share parameters and are updated under the GRPO framework. The accuracy of the predictions is transformed into an optimizable reward signal (**three-dimensional predictive reward**). In the accelerated version, **MAPR-efficient**, the process shifts from parallel to sequential after $k$ training steps: meta-prediction is performed first, using **predictive gating** to filter out trivial or unsolvable problems, followed by solving the remaining problems with **length cutoff** applied to realize computational savings.
+MAPR requires the model to execute two parallel reasoning paths for the same problem: The **Solution Path** generates $G$ responses as usual, using rule-based verification to obtain the actual pass rate $p$ and the length range $[l_{\min}, l_{\max}]$ of correct solutions; the **Meta-prediction Path** generates $M$ "meta-predictions," requiring the model to state its estimated pass rate $\hat{p}$, expected length $\hat{l}$, and the set of required concepts $\hat{\mathcal{G}}_{\text{notion}}$ before solving. Both paths share parameters and are updated under the GRPO framework, turning prediction accuracy into an optimizable reward signal (**Three-dimensional Predictive Reward**). This is the base version of MAPR. Once training exceeds $k$ steps and meta-predictions stabilize, the accelerated **MAPR-efficient** version switches from parallel to sequential: it runs meta-prediction first, uses competitive **Predicting Gating** to filter out trivial or unsolvable problems, and then applies **Length Cutoff** to the remaining problems, translating metacognitive gains into actual computational savings (predicted concepts can also be fed as hints to the solution path).
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    Q["Problem q"] --> SOL["Solution Path<br/>Generate G responses + Rule verification"]
+    Q["Problem q"] --> SOL["Solution Path<br/>Generate G answers + rule verification"]
     Q --> META["Meta-prediction Path<br/>Generate M predictions: pass rate p̂ / length l̂ / concept set"]
-    SOL --> STAT["Actual Statistics<br/>Pass rate p, correct length interval, concept distribution"]
-    subgraph RW["3D Predictive Reward (Design 1)"]
+    SOL --> STAT["Actual Statistics<br/>Pass rate p, correct length range, concept distribution"]
+    subgraph RW["Three-dimensional Predictive Reward (Design 1)"]
         direction TB
-        D["Difficulty Reward<br/>0.01^|p−p̂|, higher accuracy yields higher reward"]
-        L["Length Reward<br/>Scored if predicted length falls in correct interval"]
-        N["Concept Reward<br/>Scored if concepts in correct solutions rank higher"]
+        D["Difficulty Reward<br/>0.01^|p−p̂|, higher for accurate pass rate prediction"]
+        L["Length Reward<br/>Scored if predicted length falls within correct interval"]
+        N["Concept Reward<br/>Scored if concepts in correct solutions are ranked higher"]
     end
     META --> RW
     STAT --> RW
-    RW --> UP["GRPO Update<br/>r_meta = mean of three terms"]
-    UP -->|"Shift to sequential after k steps (MAPR-efficient)"| EFF
-    subgraph EFF["MAPR-efficient Acceleration"]
+    RW --> UP["GRPO Update<br/>r_meta = average of three terms"]
+    UP -->|"Shift to non-parallel after k steps (MAPR-efficient)"| EFF
+    subgraph EFF["MAPR-efficient Sequential Acceleration"]
         direction TB
-        G["Predictive Gating (Design 2)<br/>Skip if predictions are consistent and near 0/1"]
+        G["Predictive Gating (Design 2)<br/>Skip problem if predictions are consistent and near 0/1"]
         G --> S2["Solve remaining problems"]
-        S2 --> C["Length Cutoff (Design 3)<br/>Stop if predicted length limit is exceeded"]
+        S2 --> C["Length Cutoff (Design 3)<br/>Stop generation if predicted length limit is exceeded"]
     end
 ```
 
 ### Key Designs
 
-**1. Three-dimensional Predictive Reward: Self-calibration across difficulty, length, and concepts**
+**1. Three-dimensional Predictive Reward: Calibrating Difficulty, Length, and Concepts**
 
-Models trained via GRPO often suffer from overconfidence. MAPR decomposes "self-awareness" into three verifiable dimensions. For difficulty, an exponential decay $r_{\text{difficulty}}=0.01^{|p-\hat{p}|}$ is used; rewards collapse rapidly even with slight deviations in $\hat{p}$, forcing precise estimation. For length, an indicator function $r_{\text{length}}=\mathbb{1}[l_{\min}\leq\hat{l}\leq l_{\max}]$ is used. For concepts, $r_{\text{notion}}=\mathbb{E}_{n}[\mathbb{1}[c_{\text{corr,n}}>c_{\text{wrong,n}}]]$ rewards the model for ranking concepts present in correct solutions higher than those in incorrect ones. This decomposition is effective as it expands "understanding a problem" from simple difficulty guessing to multi-faceted cognition involving duration and knowledge points.
+Models trained via GRPO often suffer from overconfidence, where self-reported difficulty poorly matches actual pass rates. MAPR decomposes this "self-awareness" into three verifiable dimensions, each providing a reward. For difficulty, an exponential decay $r_{\text{difficulty}}=0.01^{|p-\hat{p}|}$ is used; any slight deviation of predicted $\hat{p}$ from actual $p$ causes the reward to collapse, forcing the model to provide precise rather than coarse estimates. For length, an indicator function $r_{\text{length}}=\mathbb{1}[l_{\min}\leq\hat{l}\leq l_{\max}]$ awards points only if the predicted length falls within the actual range of correct solutions. For concepts, $r_{\text{notion}}=\mathbb{E}_{n}[\mathbb{1}[c_{\text{corr,n}}>c_{\text{wrong,n}}]]$ rewards models for ranking concepts present in correct solutions higher than those in incorrect ones. This decomposition is effective because it expands "understanding a problem" from a simple difficulty guess to a multi-faceted cognitive assessment of "how long it takes and which knowledge points to use," where deviation in any dimension prevents a maximum score.
 
-**2. Predictive Gating: Filtering trivial and unsolvable problems before solving**
+**2. Predictive Gating: Filtering Trivial and Unsolvable Problems Before Solving**
 
-Parallel sampling wastes computation on problems that are either extremely easy or impossible. MAPR uses the meta-prediction path as a front-end filter: when the standard deviation of $M$ meta-predictions $\sigma<\sigma_{\text{pg}}$ (consensus) and the mean prediction approaches 0 or 1, gating is triggered to skip the problem. This is enabled after $k$ steps once meta-predictions stabilize. Unlike DAPO's posterior pruning, predictive gating shifts judgment before execution, achieving a filtering precision of 0.94 and recall of 0.87.
+A major source of computational waste in parallel sampling is repeatedly solving problems that are either "effortlessly correct" or "persistently wrong." MAPR utilizes the meta-prediction path for pre-filtering: when the standard deviation of $M$ meta-predictions $\sigma<\sigma_{\text{pg}}$ (model consensus) and the average prediction approaches 0 or 1 (unanimous belief of failure or success), gating is triggered to skip the problem. Gating is enabled only after $k$ steps when meta-predictions stabilize. Unlike DAPO’s post-hoc pruning, predictive gating moves judgment before the solution phase, using metacognition to eliminate invalid sampling. Testing shows a filtering precision of 0.94 and recall of 0.87, reliably removing zero-variance problems.
 
-**3. Length Cutoff: Immediate termination at predicted limits**
+**3. Length Cutoff: Stopping Generation at the Predicted Upper Bound**
 
-Reasoning length strongly signals correctness; excessive length often indicates the model is looping in an incorrect path. After MAPR training, $\hat{l}$ becomes an accurate predictor for correct solutions. A hard limit $l_{\text{limit}}=\hat{l}\times l_{\text{LC}}$ is set; generation is forcibly truncated if it exceeds this line, as correct answers are rarely produced beyond this point. This serves as a generation constraint that saves redundant tokens with negligible impact on accuracy.
+Length is a strong signal of reasoning correctness—excessive length often implies a model is looping on an incorrect path. After MAPR training, $\hat{l}$ provides an accurate prediction of correct solution lengths. A hard limit $l_{\text{limit}}=\hat{l}\times l_{\text{LC}}$ is set; generation is forced to truncate if it crosses this line, as correct answers are rarely produced beyond this length. This effectively turns the model's own length prediction into a generation constraint, saving significant redundant tokens with almost no loss in accuracy.
 
 ### Loss & Training
-MAPR is based on GRPO. The reward for the solution path $r_{\text{sol}}$ comes from rule verification, while the reward for the meta-prediction path is the mean of the three dimensions: $r_{\text{meta}}=\frac{r_{\text{difficulty}}+r_{\text{length}}+r_{\text{notion}}}{3}$. In MAPR-efficient, the process switches from parallel to sequential after $k=80$ steps to realize computational gains from meta-cognition.
+MAPR is built on GRPO: the solution path reward $r_{\text{sol}}$ comes from rule-based verification, while the meta-prediction reward is the average of the three dimensions $r_{\text{meta}}=\frac{r_{\text{difficulty}}+r_{\text{length}}+r_{\text{notion}}}{3}$. Its accelerated version, MAPR-efficient, switches from parallel to sequential after $k=80$ steps: meta-prediction is run first to trigger gating for problem filtering, followed by solving the remaining problems, thereby realizing computational efficiency gains from metacognition.
 
 ## Key Experimental Results
 
@@ -101,40 +101,40 @@ Comparison with GRPO baselines on six math benchmarks (Qwen3-4B/8B/14B):
 
 | Configuration | AIME'24 | AIME'25 | AMC23 | Description |
 |------|---------|---------|-------|------|
-| Difficulty Reward Only | 23.41 | 18.92 | 66.28 | Single dimension insufficient |
-| Length Reward Only | 24.67 | 20.13 | 68.55 | Length signal is weaker |
-| Concept Reward Only | 22.89 | 19.56 | 65.87 | Concept dimension is weakest |
+| Difficulty Reward Only | 23.41 | 18.92 | 66.28 | Single-dimension prediction is insufficient |
+| Length Reward Only | 24.67 | 20.13 | 68.55 | Length signal is relatively weak |
+| Concept Reward Only | 22.89 | 19.56 | 65.87 | Concept dimension is the weakest |
 | **Full 3D** | **26.15** | **21.56** | **70.16** | Full model is optimal |
 
-Shapley value decomposition: Difficulty reward contributes most (43%), followed by length (35%) and concepts (22%).
+Shapley value decomposition: Difficulty reward contributes the most (43%), followed by length (35%) and concepts (22%).
 
 ### Key Findings
-- MAPR achieves the largest gains on medium-difficulty problems (AIME/AMC/Olympiad, +20% to +83%), while performance saturates on easy problems (MATH500).
-- Metacognitive improvement drives performance beyond training steps—at equal steps, the slope of performance gain vs. $\Delta r_{\text{pred}}$ growth is 1.8x.
-- Predictive gating achieves 94% precision and 87% recall, reliably filtering zero-variance problems.
-- MAPR-efficient acceleration: 0.78x computation required to reach baseline performance, or 15% performance gain under equal computation.
+- MAPR achieves the largest gains on medium-difficulty problems (AIME/AMC/Olympiad, +20%-+83%), while saturating on easy problems (MATH500).
+- Metacognitive improvements drive performance faster than training steps—at equal steps, the slope of performance growth vs. $\Delta r_{\text{pred}}$ growth is 1.8x.
+- Predictive gating has a precision of 94% and recall of 87%, reliably filtering zero-variance problems.
+- MAPR-efficient acceleration—achieves baseline performance with only 0.78x computation or provides a 15% performance boost at equivalent computation.
 
 ## Highlights & Insights
-- **Metacognition as Internal Signal**: Breaks the paradigm of RL using only answer rewards. Parallel "thought process prediction" allows the model to self-verify capability estimates.
-- **Prediction-to-Control Inversion**: Typically, prediction is for passive understanding; here, it actively drives computational resource scheduling.
-- **Transferability of 3D Decomposition**: The difficulty + length + concept framework is applicable to any task requiring adaptive reasoning.
+- **Metacognition as an Internal Signal**: Breaks the traditional RL paradigm that relies solely on answer rewards. Models self-verify their capability estimates through parallel "thought process prediction."
+- **Inversion of Prediction to Control**: Typically, prediction is used to passively understand a system; this work inverts it to actively drive computational resource scheduling using predictive results.
+- **Portability of Three-dimensional Decomposition**: The difficulty + length + concept decomposition framework is generalizable to any task requiring adaptive reasoning.
 
 ## Limitations & Future Work
-- Concept prediction accuracy is limited—the Shapley value for concepts is only 22%, mainly due to reliance on manual rules for matching.
-- Diminishing returns with model scale—13% gain for 4B, 8.7% for 8B, and 6.6% for 14B.
-- Dataset bias—training was restricted to DeepScaleR.
-- Future improvements: Replace rule matching with learnable concept extractors; explore fine-grained meta-predictions; improve cross-task generalization.
+- Limited concept prediction accuracy—the concept dimension's Shapley value is only 22%, mainly due to the manual rules required for concept matching.
+- Diminishing returns with model size—13% gain for 4B models, 8.7% for 8B, and 6.6% for 14B.
+- Dataset bias—training was conducted only on DeepScaleR.
+- Improvements: Replace rule-based matching with learnable concept extractors; explore finer-grained meta-predictions (e.g., intermediate step accuracy); cross-task generalization.
 
 ## Related Work & Insights
-- **vs. DAPO**: DAPO performs posterior pruning; MAPR prior filtering is more efficient.
+- **vs. DAPO**: DAPO performs post-hoc pruning; MAPR’s prior filtering is more efficient.
 - **vs. Confidence Threshold Stopping**: Traditional heuristics lack true metacognitive alignment; MAPR enforces self-calibration via rewards.
-- **vs. External Verifiers**: External PRMs or multi-agent verification require additional models; MAPR self-verification is more lightweight.
+- **vs. External Verifiers**: External PRMs or multi-agent verification require additional models; MAPR’s self-verification is more lightweight.
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐⭐  Innovative combination of metacognition and predictive rewards.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐  6 math benchmarks, 3 model scales, detailed ablation, and Shapley decomposition.
-- Writing Quality: ⭐⭐⭐⭐  Main ideas are clear, though some concepts are described briefly.
-- Value: ⭐⭐⭐⭐⭐  Improves performance (13%+) and accelerates training by 1.28x.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐  6 math benchmarks + 3 model scales + detailed ablation + Shapley decomposition.
+- Writing Quality: ⭐⭐⭐⭐  Main ideas are clear, though some conceptual descriptions are slightly hurried.
+- Value: ⭐⭐⭐⭐⭐  Not only improves performance (13%+) but also accelerates training by 1.28x.
 
 <!-- RELATED:START -->
 
@@ -142,11 +142,11 @@ Shapley value decomposition: Difficulty reward contributes most (43%), followed 
 
 ## Related Papers
 
-- [\[ICLR 2026\] Dynamics-Predictive Sampling for Active RL Finetuning of Large Reasoning Models](../../ICLR2026/llm_reasoning/dynamics-predictive_sampling_for_active_rl_finetuning_of_large_reasoning_models.md)
 - [\[ICML 2026\] Hidden Error Awareness in Chain-of-Thought Reasoning: The Signal Is Diagnostic, Not Causal](hidden_error_awareness_in_chain-of-thought_reasoning_the_signal_is_diagnostic_no.md)
-- [\[ICLR 2026\] Verifying Chain-of-Thought Reasoning via Its Computational Graph](../../ICLR2026/llm_reasoning/verifying_chain-of-thought_reasoning_via_its_computational_graph.md)
+- [\[ICLR 2026\] Dynamics-Predictive Sampling for Active RL Finetuning of Large Reasoning Models](../../ICLR2026/llm_reasoning/dynamics-predictive_sampling_for_active_rl_finetuning_of_large_reasoning_models.md)
 - [\[ACL 2026\] Self-Awareness before Action: Mitigating Logical Inertia via Proactive Cognitive Awareness](../../ACL2026/llm_reasoning/self-awareness_before_action_mitigating_logical_inertia_via_proactive_cognitive_.md)
 - [\[NeurIPS 2025\] Smaller Models, Smarter Rewards: A Two-Sided Approach to Process and Outcome Rewards](../../NeurIPS2025/llm_reasoning/smaller_models_smarter_rewards_a_two-sided_approach_to_process_and_outcome_rewar.md)
+- [\[NeurIPS 2025\] The Hawthorne Effect in Reasoning Models: Evaluating and Steering Test Awareness](../../NeurIPS2025/llm_reasoning/the_hawthorne_effect_in_reasoning_models_evaluating_and_steering_test_awareness.md)
 
 </div>
 

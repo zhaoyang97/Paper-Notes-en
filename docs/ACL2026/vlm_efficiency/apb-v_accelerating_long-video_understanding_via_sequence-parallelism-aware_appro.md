@@ -2,150 +2,150 @@
 title: >-
   [Paper Note] APB-V: Accelerating Long-Video Understanding via Sequence-Parallelism-aware Approximate Attention
 description: >-
-  [ACL 2026][Video Understanding][Paper Note] APB-V accelerates long-video LMM inference using sequence-parallelism-aware approximate attention and system-level load balancing. While retaining full visual embeddings, it achieves 12.72$\times$, 1.70$\times$, and 1.18$\times$ speedups relative to FlashAttn, ZigZagRing, and APB respectively under 64-frame 1440p setti
+  [ACL 2026][vlm_efficiency][Paper Note] APB-V accelerates long-video LMM inference using sequence-parallelism-aware approximate attention and system-level load balancing. While preserving full visual embeddings, it achieves speedups of 12.72×, 1.70×, and 1.18× compared to FlashAttn, ZigZagRing, and APB, respectively, under a 64-frame 1440p setting without si
 tags:
   - ACL 2026
-  - Video Understanding
+  - vlm_efficiency
 date: 2026-05-08
-content_hash: f513e10958a651e2
+content_hash: 125b7247e66d165f
 ---
 # APB-V: Accelerating Long-Video Understanding via Sequence-Parallelism-aware Approximate Attention
 
 **Conference**: ACL2026  
 **arXiv**: [2601.21444](https://arxiv.org/abs/2601.21444)  
 **Code**: https://github.com/thunlp/APB  
-**Area**: Video Understanding / Multimodal Inference Acceleration  
-**Keywords**: Long-Video Understanding, Sequence Parallelism, Approximate Attention, Multi-GPU Inference, KV Compression  
+**Area**: Video Understanding / Multimodal Reasoning Acceleration  
+**Keywords**: Long-video understanding, Sequence Parallelism, Approximate Attention, Multi-GPU Inference, KV Compression  
 
 ## TL;DR
-APB-V accelerates long-video LMM inference using sequence-parallelism-aware approximate attention and system-level load balancing. While retaining full visual embeddings, it achieves 12.72$\times$, 1.70$\times$, and 1.18$\times$ speedups relative to FlashAttn, ZigZagRing, and APB respectively under 64-frame 1440p settings, without significant performance loss.
+APB-V accelerates long-video LMM inference using sequence-parallelism-aware approximate attention and system-level load balancing. While preserving full visual embeddings, it achieves speedups of 12.72×, 1.70×, and 1.18× compared to FlashAttn, ZigZagRing, and APB, respectively, under a 64-frame 1440p setting without significant performance loss.
 
 ## Background & Motivation
-**Background**: Long-video understanding relies on LMMs to encode large numbers of frames into visual tokens, which are then fed into long-context LLM backbones. As video duration, resolution, and frame counts increase, costs for visual encoding, attention, and FFN during the prefill stage grow rapidly.
+**Background**: Long-video understanding relies on LMMs to encode a large number of frames into visual tokens, which are then fed into long-context LLM backbones. As video duration, resolution, and frame counts increase, the costs of visual encoding, attention, and FFN during the prefill stage grow rapidly.
 
-**Limitations of Prior Work**: Existing methods fall into two categories. One optimizes attention or KV cache, but typically only alleviates part of the LLM backbone burden and cannot handle visual encoding and FFN costs. The other explicitly compresses input tokens (e.g., token pruning or pooling), which reduces computation but risks losing fine-grained video evidence. The paper notes that SlowFast, while achieving less than 3$\times$ speedup, suffers an approximately 25% drop in accuracy.
+**Limitations of Prior Work**: Existing methods fall into two categories. One optimizes attention or KV cache, but typically only alleviates part of the LLM backbone burden, failing to address visual encoding and FFN costs. The other explicitly compresses input tokens (e.g., token pruning or pooling), which reduces computation but risks losing fine-grained video evidence. Notably, the paper points out that SlowFast suffers an approximately 25% drop in accuracy despite achieving less than 3× speedup in experiments.
 
-**Key Challenge**: Long-video inference requires more computational resources to handle longer inputs without sacrificing critical frames and detailed evidence through crude compression. Single-GPU optimizations often fall into efficiency-performance trade-offs, while multi-GPU sequence parallelism encounters communication and load balancing bottlenecks.
+**Key Challenge**: Long-video inference requires more computational resources for longer inputs while prohibiting crude compression that sacrifices key frames and detailed evidence. Single-GPU optimizations often fall into an efficiency-performance trade-off, while multi-GPU sequence parallelism encounters communication and load imbalance bottlenecks.
 
-**Goal**: APB-V aims to solve efficiency and performance simultaneously through "increased parallel computation + suppressed quadratic attention costs." It does not compress visual embeddings but instead performs approximate attention, communication compression, and system-level scheduling across multiple GPUs/hosts.
+**Goal**: APB-V aims to solve both efficiency and performance issues by "increasing parallel computation + suppressing quadratic attention costs." It avoids compressing visual embeddings and instead performs approximate attention, communication compression, and system-level scheduling across multiple GPUs/hosts.
 
-**Key Insight**: Long-video scenarios are naturally suited for parallelism: frame-level visual encoding is independent, and LLM input sequences can be split into blocks. However, precise sequence parallelism is communication-heavy. Therefore, each host should only exchange the specific key KVs truly required by subsequent queries.
+**Key Insight**: Long-video scenarios are naturally suited for parallelism: frame-level visual encoding is independent, and LLM input sequences can be split into blocks. However, exact sequence parallelism is communication-intensive, necessitating a mechanism where each host exchanges only the critical KV pairs truly needed by subsequent queries.
 
-**Core Idea**: Use local KV compression and passing blocks to approximate global attention. Only key context blocks are transferred between hosts. Multi-GPU performance for long-video inference is released via frame parallelism, ZigZag load balancing, fused forward, and communication-computation overlap.
+**Core Idea**: Use local KV compression and passing blocks to approximate global attention, transmitting only essential context blocks between hosts. Simultaneously, unlock multi-GPU performance for long videos through frame parallelism, ZigZag load balancing, fused forward passes, and communication-computation overlapping.
 
 ## Method
 
 ### Overall Architecture
-APB-V aims to accelerate the prefill of long-video LMMs without deleting a single frame or compressing any visual tokens. It assumes each host holds a full copy of the LMM. The input video is distributed by frame to each host for parallel encoding. After an AllGather to reconstruct the full video embedding, the input sequence is partitioned into an initial anchor block, a trailing query block, and intermediate context blocks. Context blocks are distributed to $2H$ virtual hosts and mapped back to $H$ physical hosts. In each attention layer, a host compresses only the key KVs from its local context that are most relevant to the query into a "passing block" to be sent to subsequent hosts. This significantly reduces the remote KV access for each query, and the saved communication time is overlapped with computation at the algorithmic and system levels.
+APB-V aims to accelerate the prefill of long-video LMMs without dropping frames or compressing a single visual token. It assumes each host holds a complete LMM copy. Input videos are distributed by frame to hosts for parallel encoding. After an AllGather operation assembles the full video embedding, the sequence is split into an initial anchor block, a trailing query block, and intermediate context blocks. Context blocks are allocated to $2H$ virtual hosts and mapped back to $H$ physical hosts. In each attention layer, hosts compress only the KV pairs most critical to the query into a passing block to be sent to subsequent hosts. This significantly reduces the remote KV count accessed by each query, while Algorithm and System layers overlap the saved communication with computation.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    IN["Input Long Video<br/>No frame deletion, no visual token compression"]
+    IN["Input Long Video<br/>No frame deletion, No visual token compression"]
     subgraph FP["Frame Parallelism and Context Splitting"]
         direction TB
-        A["Hosts encode frames in parallel"] --> B["AllGather reconstructs full video embedding"]
+        A["Hosts encode frames in parallel"] --> B["AllGather to form full video embedding"]
         B --> C["Split into anchor / context / query blocks"]
-        C --> D["Context assigned to 2H virtual hosts<br/>then mapped to H physical hosts"]
+        C --> D["Context assigned to 2H virtual hosts<br/>mapped to H physical hosts"]
     end
     subgraph AA["Sequence-Parallelism-aware Approximate Attention"]
         direction TB
-        E["Select top-l_p key KVs via query-to-context<br/>Compress into essential KV"] --> F["AllGather into passing blocks for subsequent hosts"]
-        F --> G["Context attention attends to<br/>anchor + local context + passing block"]
-        G --> H["Query block merged across hosts via FlashAttn LSE"]
+        E["Query-to-context selects top-l_p KV<br/>as essential KV"] --> F["AllGather into passing blocks for subsequent hosts"]
+        F --> G["Context attention only considers<br/>anchor + local context + passing blocks"]
+        G --> H["Query block results merged via FlashAttn lse"]
     end
-    SYS["System-level Load Balancing and Communication Hiding<br/>Balanced framing + fused forward + ZigZag mapping + Comm-Comp overlap"]
+    SYS["System-level Load Balancing and Communication Hiding<br/>Frame balancing + fused forward + ZigZag mapping + Overlapping"]
     OUT["Accelerated Prefill Output"]
     IN --> FP
     FP --> AA
     AA --> OUT
-    SYS -.Unified through the process.-> FP
-    SYS -.Unified through the process.-> AA
+    SYS -.Permeates Workflow.-> FP
+    SYS -.Permeates Workflow.-> AA
 ```
 
 ### Key Designs
 
-**1. Frame Parallelism and Context Splitting: Distributing Frame Encoding and Long-Sequence Prefill Across Hosts**
+**1. Frame Parallelism and Context Splitting: Distributing Encoding and Prefill**
 
-The bottleneck in long-video processing is that a single GPU must bear both visual encoding for all frames and prefill for all tokens. APB-V exploits the fact that "frame-level encoding is naturally independent," allowing each host to encode a subset of frames. An AllGather then merges the visual embeddings. The sequence is split into an initial anchor block $B_a$, a trailing query block $B_{qr}$, and context blocks $B^{(h)}$. The anchor provides global prefix information, the query is the actual question, and the context comprises the main video evidence. By chaining frame and sequence parallelism, no single card is burdened with the entire video.
+The bottleneck in long-video processing is a single GPU handling visual encoding for all frames and prefill for all tokens. APB-V leverages the independence of frame-level encoding, allowing each host to encode a subset of frames before an AllGather combines the embeddings. The sequence is then partitioned into an anchor block $B_a$, a query block $B_{qr}$, and context blocks $B^{(h)}$. The anchor provides the global prefix, the query contains the actual question, and the context forms the bulk of the video evidence. This pipeline ensures no single card bears the entire video burden.
 
-**2. Sequence-Parallelism-aware Approximate Attention: Transferring Only Query-Essential KVs Across Hosts**
+**2. Sequence-Parallelism-aware Approximate Attention: Transmitting Only Essential KV**
 
-Precise sequence parallelism requires exchanging all KVs between hosts, which is too communication-intensive. StarAttn avoids inter-host communication entirely but loses long-range dependencies. APB-V takes a middle path: each virtual host uses query-to-context attention scores to select the $l_p$ most important KV pairs from the local context, compresses them into "essential KV," and distributes them as "passing blocks" via AllGather. Consequently, context block attention only considers the anchor, local context, and these compressed passing blocks. Query block results are merged across hosts using FlashAttn's LSE. By transferring only key KVs related to the current question, it maintains dependencies better than StarAttn while saving significant communication and computation compared to precise parallelism.
+Exact sequence parallelism requires exchanging all KV pairs, which is communication-heavy; conversely, StarAttn omits inter-host communication, losing long-range dependencies. APB-V takes a middle ground: each virtual host uses query-to-context attention scores to select the $l_p$ most important KV pairs from the local context, forming essential KV sets. These are AllGathered as passing blocks for subsequent hosts. Context block attention only computes against the anchor, local context, and these compressed passing blocks, while query block results are merged across hosts using FlashAttn LSE. This preserves long-range dependencies better than StarAttn while saving significant communication compared to exact parallelism.
 
-**3. System-level Load Balancing and Communication Hiding: Implementing Approximate Attention for High-Throughput Multi-GPU Systems**
+**3. System-level Load Balancing and Communication Hiding: Achieving High Throughput**
 
-Algorithmic approximation alone is insufficient—short query separate forwards become memory-bound, passing block lengths vary across hosts, and inter-host communication causes stalls. APB-V implements three optimizations: visual load balancing by assigning $F^{(h)}=\lfloor F/H\rfloor+\mathbb{I}[h<F\bmod H]$ frames to equalize host workloads; fused context-query forward to include short queries in context calculations to avoid memory-bound execution; ZigZag mapping to place the $h$-th and $(2H-1-h)$-th virtual hosts on the same physical host to cancel out unbalanced passing block lengths; and overlapped communication to run passing block transmission in parallel with attention computation.
+Algorithmic approximation alone is insufficient—short query forward passes become memory-bound, passing block lengths become unbalanced, and inter-host communication causes stalls. APB-V implements three optimizations: balancing visual load via $F^{(h)}=\lfloor F/H\rfloor+\mathbb{I}[h<F\bmod H]$, using fused context-query forward passes to handle short queries, and ZigZag mapping (placing virtual hosts $h$ and $2H-1-h$ on the same physical host) to cancel out length imbalances. Overlapped communication allows passing block transmission to run concurrently with attention computation.
 
 ### Loss & Training
-APB-V is an inference acceleration framework and does not train new LMMs or introduce task losses. In experiments, the APB baseline's retaining heads are trained on NextQA, while APB-V itself relies on hyperparameter control of anchor length and passing length: default $l_a=n/64$ and $l_p=n/128$, maintaining computation levels similar to APB under 8 physical and $2H$ virtual hosts.
+APB-V is an inference acceleration framework and does not require training new LMMs or task-specific losses. The APB baseline's retaining heads are trained on NextQA, while APB-V primarily controls anchor length and passing length via hyperparameters: default $l_a=n/64$ and $l_p=n/128$ to maintain computational parity with APB under 8 physical hosts and $2H$ virtual hosts.
 
 ## Key Experimental Results
 
 ### Main Results
-APB-V was tested on VNBench and LongVideoBench using InternVL3-2B, Qwen2.5VL-3B, and Qwen2.5VL-7B. Core figures demonstrating "no significant performance drop" are retained below.
+APB-V was tested on VNBench and LongVideoBench using InternVL3-2B, Qwen2.5VL-3B, and Qwen2.5VL-7B. Core metrics demonstrating minimal performance degradation are shown below.
 
 | Dataset / Model | FullAttn | APB | APB-V | Conclusion |
-|---------------|----------|-----|-------|------|
-| VNBench / InternVL3-2B Overall | 44.89 | 41.11 | 43.26 | APB-V approaches FullAttn, significantly better than APB |
-| VNBench / Qwen2.5VL-3B Overall | 52.81 | 43.93 | 50.67 | Retains most accuracy, far superior to token pruning methods |
-| VNBench / Qwen2.5VL-7B Overall | 58.44 | 49.93 | 56.22 | Minimal performance loss on synthetic long-video tasks |
-| LongVideoBench / InternVL3-2B Overall | 55.35 | 55.20 | 55.42 | APB-V slightly exceeds FullAttn |
-| LongVideoBench / Qwen2.5VL-7B Overall | 58.38 | 59.16 | 59.76 | APB-V outperforms APB and FullAttn on real long videos |
+|-----------------|----------|-----|-------|------------|
+| VNBench / InternVL3-2B Overall | 44.89 | 41.11 | 43.26 | APB-V is close to FullAttn, significantly better than APB |
+| VNBench / Qwen2.5VL-3B Overall | 52.81 | 43.93 | 50.67 | Retains most accuracy, far superior to token pruning |
+| VNBench / Qwen2.5VL-7B Overall | 58.44 | 49.93 | 56.22 | Minimal loss on synthetic long-video tasks |
+| LongVideoBench / InternVL3-2B Overall | 55.35 | 55.20 | 55.42 | APB-V slightly outperforms FullAttn |
+| LongVideoBench / Qwen2.5VL-7B Overall | 58.38 | 59.16 | 59.76 | APB-V exceeds APB and FullAttn on real world videos |
 
-Regarding speed, when Qwen2.5-VL-3B processes 64-frame 1440p video, APB-V achieves 12.72$\times$, 1.70$\times$, and 1.18$\times$ speedups relative to FlashAttn, ZigZagRing, and APB, respectively.
+In terms of speed, APB-V achieves 12.72×, 1.70×, and 1.18× speedups over FlashAttn, ZigZagRing, and APB, respectively, when processing 64-frame 1440p video with Qwen2.5-VL-3B.
 
 ### Ablation Study
 
-| Config | 16-frame req/s | 32-frame req/s | 56-frame req/s | Note |
-|------|------------|------------|------------|------|
+| Configuration | 16 frames req/s | 32 frames req/s | 56 frames req/s | Note |
+|---------------|-----------------|-----------------|-----------------|------|
 | APB-V | 1.846 | 0.916 | 0.471 | Full system is fastest |
-| -O | 1.827 | 0.911 | 0.470 | Removing comm-comp overlap has minor impact |
-| -O-F | 1.646 | 0.854 | 0.450 | Removing fused forward decreases speed |
-| -O-F-Z | 1.618 | 0.813 | 0.415 | Removing ZigZag increases load imbalance |
-| -O-F-Z-V | 0.381 | 0.189 | 0.107 | Removing all system optimizations is ~4$\times$ slower |
-| FlashAttn | 0.226 | 0.092 | 0.042 | Single GPU exact attention is slowest |
+| -O | 1.827 | 0.911 | 0.470 | Without communication overlap |
+| -O-F | 1.646 | 0.854 | 0.450 | Without fused forward |
+| -O-F-Z | 1.618 | 0.813 | 0.415 | Without ZigZag (unbalanced load) |
+| -O-F-Z-V | 0.381 | 0.189 | 0.107 | Without system optimizations (~4× slower) |
+| FlashAttn | 0.226 | 0.092 | 0.042 | Single GPU exact attention (slowest) |
 
 ### Key Findings
-- On synthetic long-video tasks, token pruning methods (e.g., SlowFast) significantly damage fine-grained capabilities like retrieval/counting; APB-V avoids this by retaining full visual embeddings.
-- On real long videos, APB-V achieves an Overall of 59.76 on Qwen2.5VL-7B, higher than FullAttn (58.38) and APB (59.16), suggesting approximate attention might offer better trade-offs through system settings and embedding preservation.
-- Passing blocks are more critical than anchor blocks: in counting tasks, removing passing blocks dropped average accuracy from 30.00 to 17.33, while removing anchors only dropped it to 25.33.
-- Multi-host scalability is strong: at $H=8$, APB-V reaches 6.171/2.013 req/s on 720p 16/56-frame settings, outperforming ZigZagRing (5.595/1.666) and APB (4.891/1.766).
+- On synthetic long-video tasks, token pruning methods (e.g., SlowFast) significantly damage fine-grained capabilities like retrieval and counting; APB-V avoids this by preserving full visual embeddings.
+- On real-world long videos, APB-V (Overall 59.76) outperforms FullAttn (58.38) on Qwen2.5VL-7B, suggesting approximate attention can achieve a better trade-off through embedding preservation.
+- Passing blocks are more critical than anchor blocks: in counting tasks, removing passing blocks drops accuracy from 30.00 to 17.33, while removing anchors drops it to 25.33.
+- APB-V scales well: with H=8, it reaches 6.171/2.013 req/s at 720p 16/56 frames, higher than ZigZagRing and APB.
 
 ## Highlights & Insights
-- Instead of "seeing less video," the paper retains visual tokens and performs approximation at the attention computation layer. This is vital for long-video QA, where answers often hide in short segments of subtitles, actions, or objects.
-- APB-V addresses algorithmic and system challenges in tandem: it solves memory-bound issues for short query forwards, load imbalance for passing blocks, and communication wait times.
-- Case studies show that regions containing the "secret word is Nick" are more frequently selected for passing blocks, indicating that query-aware KV selection successfully propagates relevant evidence.
+- Instead of "seeing less video," the paper preserves visual tokens and approximates the attention calculation. This is crucial for long-video QA where the answer might reside in a transient subtitle or action.
+- APB-V codesigns algorithms and systems: approximate attention must be paired with solutions for memory-bound short queries, load imbalance, and communication stalls.
+- Case studies show regions containing critical information (e.g., "secret word is Nick") are more frequently selected for passing blocks, proving query-aware KV selection effectively propagates relevant evidence.
 
 ## Limitations & Future Work
-- APB-V is primarily designed for decoder-only Transformer-based LMMs; it is incompatible with convolutional or non-standard architectures.
-- The method relies on multi-GPU inference and degrades to FlashAttn on a single GPU, making it unsuitable for resource-constrained deployment.
-- The paper focuses on applications where TTFT/end-to-end prefill time is limited (e.g., surveillance, autonomous driving); further analysis is needed for gains in multi-round interaction or decoding stages.
-- Passing length and anchor length remain hyperparameters requiring tuning. Experiments indicate that undersized passing lengths significantly degrade performance.
+- Primarily targets decoder-only Transformer-based LMMs; incompatible with CNNs or non-standard architectures.
+- Dependent on multi-GPU inference; performance regresses to FlashAttn on a single GPU, making it unsuitable for resource-constrained deployments.
+- Focuses on TTFT/end-to-end prefill for latency-sensitive applications (e.g., surveillance, autonomous driving); benefits for multi-turn dialogue or the decoding stage require further analysis.
+- Passing and anchor lengths remain hyperparameters that require tuning.
 
 ## Related Work & Insights
-- **vs FlashAttn / ZigZagRing**: FlashAttn is single-GPU exact; ZigZagRing is precise sequence parallelism. APB-V trades precision for superior scalability via approximation and compression.
-- **vs SlowFast / Token Pruning**: SlowFast accelerates via token reduction but loses fine-grained evidence; APB-V preserves input embeddings for precise retrieval.
-- **vs StarAttn**: StarAttn avoids inter-host communication but lacks long-range dependencies; APB-V uses compressed communication to allow key KVs to flow across hosts.
-- **Key Insight**: The core of long-context multimodal inference is not simply reducing tokens, but allowing "remote evidence relevant to the query" to flow across devices at low cost.
+- **vs FlashAttn / ZigZagRing**: FlashAttn is single-GPU exact; ZigZagRing is exact sequence parallelism. APB-V trades exactness for better scalability.
+- **vs SlowFast / token pruning**: SlowFast reduces tokens at the cost of fine-grained evidence; APB-V keeps all tokens, making it better for precise search.
+- **vs StarAttn**: StarAttn eliminates inter-host communication but loses dependencies; APB-V uses compressed communication to maintain critical KV flow.
+- **Insight**: The core of long-context multimodal reasoning is not just reducing tokens, but enabling the low-cost flow of "query-relevant remote evidence" across devices.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Combining approximate attention with sequence parallelism is not entirely new, but the system design tailored for long-video LMMs is solid.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers two long-video benchmarks, three LMMs, multiple resolutions/frames/hosts, and extensive ablations.
-- Writing Quality: ⭐⭐⭐⭐ Architecture and system diagrams are clear; math notation is dense but supported by visuals.
-- Value: ⭐⭐⭐⭐⭐ Highly practical for multi-GPU long-video LMM deployment, especially for accelerating TTFT in high-resolution, long-frame sequences.
+- Novelty: ⭐⭐⭐⭐ Solid system-level integration of approximate attention and sequence parallelism for long-video LMMs.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers two benchmarks, three LMMs, multiple resolutions/frame counts, and extensive ablations.
+- Writing Quality: ⭐⭐⭐⭐ Clear architectural breakdown, though notation density requires careful reading of charts.
+- Value: ⭐⭐⭐⭐⭐ Highly practical for multi-GPU long-video LMM deployment, particularly for high-resolution TTFT acceleration.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] VecAttention: Vector-wise Sparse Attention for Accelerating Long Context Inference](../../CVPR2026/video_understanding/vecattention_vector-wise_sparse_attention_for_accelerating_long_context_inferenc.md)
-- [\[CVPR 2026\] Seeing the Scene Matters: Revealing Forgetting in Video Understanding Models with a Scene-Aware Long-Video Benchmark](../../CVPR2026/video_understanding/seeing_the_scene_matters_revealing_forgetting_in_video_understanding_models_with.md)
-- [\[CVPR 2026\] Video Panels for Long Video Understanding](../../CVPR2026/video_understanding/video_panels_for_long_video_understanding.md)
-- [\[CVPR 2025\] SEAL: SEmantic Attention Learning for Long Video Representation](../../CVPR2025/video_understanding/seal_semantic_attention_learning_for_long_video_representation.md)
-- [\[ICLR 2026\] VideoNSA: Native Sparse Attention Scales Video Understanding](../../ICLR2026/video_understanding/videonsa_native_sparse_attention_scales_video_understanding.md)
+- [\[CVPR 2026\] TimeViper: A Hybrid Mamba-Transformer Vision-Language Model for Efficient Long Video Understanding](../../CVPR2026/vlm_efficiency/timeviper_a_hybrid_mamba-transformer_vision-language_model_for_efficient_long_vi.md)
+- [\[ICML 2025\] MMInference: Accelerating Pre-filling for Long-Context VLMs via Modality-Aware Permutation Sparse Attention](../../ICML2025/vlm_efficiency/mminference_accelerating_pre-filling_for_long-context_vlms_via_modality-aware_pe.md)
+- [\[ACL 2026\] HERMES: KV Cache as Hierarchical Memory for Efficient Streaming Video Understanding](hermes_kv_cache_as_hierarchical_memory_for_efficient_streaming_video_understandi.md)
+- [\[ACL 2025\] Sharper and Faster mean Better: Towards More Efficient Vision-Language Model for Hour-scale Long Video Understanding](../../ACL2025/vlm_efficiency/sophia_efficient_long_video.md)
+- [\[CVPR 2026\] SegMo: Co-Designing Content-Aware Sparsity and Locally-Cohesive Segment Parallelism for Efficient VLM Inference](../../CVPR2026/vlm_efficiency/segmo_co-designing_content-aware_sparsity_and_locally-cohesive_segment_paralleli.md)
 
 </div>
 

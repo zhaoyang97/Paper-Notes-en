@@ -35,21 +35,21 @@ item_total: 7
 
 **💬 ACL2026** · **7** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (4)](../../CVPR2026/causal_inference/index.md) · [🧪 ICML2026 (15)](../../ICML2026/causal_inference/index.md) · [🔬 ICLR2026 (17)](../../ICLR2026/causal_inference/index.md) · [🤖 AAAI2026 (7)](../../AAAI2026/causal_inference/index.md) · [🧠 NeurIPS2025 (19)](../../NeurIPS2025/causal_inference/index.md) · [📹 ICCV2025 (2)](../../ICCV2025/causal_inference/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (4)](../../CVPR2026/causal_inference/index.md) · [🔬 ICLR2026 (64)](../../ICLR2026/causal_inference/index.md) · [🧪 ICML2026 (19)](../../ICML2026/causal_inference/index.md) · [🤖 AAAI2026 (7)](../../AAAI2026/causal_inference/index.md) · [🧠 NeurIPS2025 (19)](../../NeurIPS2025/causal_inference/index.md) · [📹 ICCV2025 (2)](../../ICCV2025/causal_inference/index.md)
 
 🔥 **Top topics:** LLM ×2
 
 **[Better and Worse with Scale: How Contextual Entrainment Diverges with Model Size](better_and_worse_with_scale_how_contextual_entrainment_diverges_with_model_size.md)**
 
-:   This paper establishes the first scaling laws for the "contextual entrainment effect," discovering that larger models are more resistant to false information in semantic contexts (negative exponent) but more prone to copying irrelevant tokens in non-semantic contexts (positive exponent), revealing a divergence in the scaling of semantic filtering versus mechanical copying functions.
+:   This paper establishes the first scaling laws for the "contextual entrainment effect," discovering that larger models are more resistant to false information in semantic contexts (negative exponent) but more prone to copying irrelevant tokens in non-semantic contexts (positive exponent), revealing opposing scaling behaviors between semantic filtering and mechanical copying functions.
 
 **[ClimateCause: Complex and Implicit Causal Structures in Climate Reports](climatecause_complex_and_implicit_causal_structures_in_climate_reports.md)**
 
-:   ClimateCause constructs the first expert-annotated dataset (874 causal relations) targeting complex and implicit causal structures in climate reports, supporting nested causality, multi-event decomposition, correlation direction, and spatio-temporal context annotation. It proposes a readability metric based on the semantic complexity of causal graphs, with LLM benchmarks revealing that causal chain reasoning remains a significant challenge.
+:   ClimateCause constructs the first expert-annotated dataset for complex and implicit causal structures in climate reports (874 causal relations), supporting nested causality, multi-event decomposition, correlation direction, and spatio-temporal context labeling. It proposes a readability metric based on causal graph semantic complexity, with LLM benchmarking revealing that causal chain reasoning remains a significant challenge.
 
 **[Evaluating Counterfactual Strategic Reasoning in Large Language Models](evaluating_counterfactual_strategic_reasoning_in_large_language_models.md)**
 
-:   This paper evaluates the strategic adaptation of LLMs using label perturbations, payoff perturbations, and joint counterfactual versions of the repeated Prisoner's Dilemma and Rock-Paper-Scissors. It finds that many models appear competent in familiar games but continue to use templated strategies even after payoff structures are altered.
+:   This paper evaluates the strategic adaptation capabilities of LLMs using label perturbations, payoff perturbations, and joint counterfactual versions of the Repeated Prisoner's Dilemma and Rock-Paper-Scissors. It finds that while many models appear proficient in familiar games, they continue to apply templated strategies even after payoff structures are altered.
 
 **[Function Words as Statistical Cues for Language Learning](function_words_as_statistical_cues_for_language_learning.md)**
 
@@ -61,8 +61,8 @@ item_total: 7
 
 **[Learning Invariant Modality Representation for Robust Multimodal Learning from a Causal Inference Perspective](learning_invariant_modality_representation_for_robust_multimodal_learning_from_a.md)**
 
-:   This paper proposes CmIR (Causal Modality Invariant Representation learning), which explicitly disentangles each modality into causal invariant representations and environment-specific spurious representations based on causal inference theory. Through an elegant objective function incorporating invariance constraints, mutual information constraints, and reconstruction constraints, it ensures that invariant representations possess stable predictive relationships across environments. It achieves SOTA on multimodal sentiment, humor, and sarcasm detection, showing particularly outstanding performance in OOD and noisy scenarios.
+:   This paper proposes CmIR (Causal Modality Invariant Representation learning), which explicitly disentangles each modality into causal invariant representations and environment-specific spurious representations based on causal inference theory. Through an elegant objective function combining invariance constraints, mutual information constraints, and reconstruction constraints, it ensures that invariant representations maintain stable predictive relationships across environments. It achieves SOTA performance in multimodal sentiment, humor, and sarcasm detection, particularly excelling in OOD and noisy scenarios.
 
 **[Parallel Universes, Parallel Languages: A Comprehensive Study on LLM-based Multilingual Counterfactual Example Generation](parallel_universes_parallel_languages_a_comprehensive_study_on_llm-based_multili.md)**
 
-:   This paper systematically investigates the capability of LLMs to generate multilingual counterfactual examples across six languages. By comparing direct generation and translation-based paths, it finds that the translation path yields higher label flip rates but requires more editing. The study identifies four common error modes and verifies that multilingual counterfactual data augmentation outperforms cross-lingual augmentation, being particularly effective for low-resource languages.
+:   This paper systematically investigates the multilingual counterfactual generation capabilities of LLMs across six languages. By comparing direct generation and translation-based paths, it finds that the translation path yields higher label flip rates but requires more edits. It identifies four common error patterns and validates that multilingual counterfactual data augmentation outperforms cross-lingual augmentation, particularly for low-resource languages.

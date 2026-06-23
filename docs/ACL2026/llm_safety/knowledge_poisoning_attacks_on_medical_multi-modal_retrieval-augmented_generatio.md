@@ -2,12 +2,12 @@
 title: >-
   [Paper Note] Knowledge Poisoning Attacks on Medical Multi-Modal Retrieval-Augmented Generation
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] The authors propose M3Att—the first **query-agnostic** knowledge poisoning framework for medical multi-modal RAG. It employs "distribution-guided visual PGD triggers" for retrieval hijacking and "clinical ambiguity-guided text rewriting" to bypass LVLM self-correction. Across 5 LVLMs, 5 datasets, and 4 medical tasks, i
+  [ACL 2026][LLM Safety][Paper Note] The authors propose M3Att—the first **query-agnostic** knowledge poisoning framework for medical multi-modal RAG. It utilizes "distribution-guided visual PGD triggers" for retrieval hijacking and "clinical ambiguity-guided text rewriting" to bypass LVLM self-correction. With a poisoning rate of <1% (without querying kn
 tags:
   - ACL 2026
   - LLM Safety
 date: 2026-05-08
-content_hash: f6800143e73e0594
+content_hash: 1cf061e5ed06d6b4
 ---
 # Knowledge Poisoning Attacks on Medical Multi-Modal Retrieval-Augmented Generation
 
@@ -15,79 +15,79 @@ content_hash: f6800143e73e0594
 **arXiv**: [2605.10253](https://arxiv.org/abs/2605.10253)  
 **Code**: https://github.com/ypr17/M3Att  
 **Area**: LLM Security  
-**Keywords**: Knowledge Poisoning, Medical RAG, PGD Perturbation, Clinical Ambiguity, query-agnostic attack
+**Keywords**: Knowledge Poisoning, Medical RAG, PGD Perturbation, Clinical Ambiguity, Query-agnostic Attack
 
 ## TL;DR
-The authors propose M3Att—the first **query-agnostic** knowledge poisoning framework for medical multi-modal RAG. It employs "distribution-guided visual PGD triggers" for retrieval hijacking and "clinical ambiguity-guided text rewriting" to bypass LVLM self-correction. Across 5 LVLMs, 5 datasets, and 4 medical tasks, it reduces downstream utility by an average of 8.78% with a poisoning rate of <1% (requiring no knowledge of user queries, visual perturbation $\epsilon=16/255$). Additionally, it is robust against three types of pre-retrieval defenses: image clustering, text clustering, and image-text consistency.
+The authors propose M3Att—the first **query-agnostic** knowledge poisoning framework for medical multi-modal RAG. It utilizes "distribution-guided visual PGD triggers" for retrieval hijacking and "clinical ambiguity-guided text rewriting" to bypass LVLM self-correction. With a poisoning rate of <1% (without querying knowledge, visual perturbation $\epsilon=16/255$), it reduces downstream utility by an average of 8.78% across 5 LVLMs × 5 datasets × 4 medical tasks, while remaining robust to three types of pre-retrieval defenses: image clustering, text clustering, and image-text consistency.
 
 ## Background & Motivation
-**Background**: Medical multi-modal RAG systems (retrieving pairs of images and reports) are being rapidly deployed. Models such as LLaVA-Med and Med-Gemini heavily rely on external knowledge bases to improve performance in tasks like VQA, report generation, and image classification. This reliance introduces a new attack surface: "poisoning the knowledge base." Ha et al. 2025, Liu et al. 2025b, and Zuo et al. 2025 have already demonstrated knowledge poisoning attacks on general or medical RAG.
+**Background**: Medical multi-modal RAG systems (pairing retrieved images + reports) are being rapidly deployed. Models such as LLaVA-Med and Med-Gemini rely heavily on external knowledge bases to improve performance in tasks like VQA, report generation, and image classification. This has created a new attack surface: "poisoning the knowledge base." Ha et al. 2025, Liu et al. 2025b, and Zuo et al. 2025 have already demonstrated knowledge poisoning attacks on general or medical RAG.
 
-**Limitations of Prior Work**: (1) Almost all existing multi-modal RAG poisoning methods assume the attacker is **query-aware**—the attacker knows what users will ask beforehand and optimizes poisoned entries accordingly. This is unrealistic in real-world deployments where user queries are typically unavailable. (2) Medical images (X-rays, histology slides) possess high anatomical consistency, resulting in highly clustered embedding distributions. Simply increasing the number of poisoned entries to ensure retrieval would expose the attacker. (3) State-of-the-art (SOTA) medical LVLMs, having undergone medical corpus pre-training and safety alignment, can trigger model refusal or self-correction when faced with "obvious factual errors." Conversely, perturbations that are too weak fail to influence the generation. Finding the exact "dosage" to impact output while bypassing self-correction is challenging.
+**Limitations of Prior Work**: (1) Almost all existing multi-modal RAG poisoning methods assume a **query-aware** setting—attackers know in advance what questions users will ask and optimize poisoned entries accordingly. This is unrealistic in real deployments where user queries are typically unavailable. (2) Medical images (X-rays, histology slides) exhibit high anatomical consistency, with embedding distributions being highly clustered. Simply increasing the number of poisoned entries to ensure retrieval would expose the attacker. (3) State-of-the-art (SOTA) medical LVLMs, pre-trained on medical corpora and subject to safety alignment, will trigger refusal or self-correction when "obvious factual errors" are injected, while weak perturbations fail to affect generation. Finding a "dosage" that influences output without triggering self-correction is difficult.
 
-**Key Challenge**: Query-aware attacks fail in real environments. However, under query-agnostic conditions, attackers face the dual difficulty of being submerged in dense embeddings during the retrieval stage and being corrected by the LVLM prior during the generation stage, representing a double-constraint problem.
+**Key Challenge**: Query-aware attacks fail in real environments; however, under a query-agnostic setting, one faces the dual difficulties of "being submerged in dense embeddings during retrieval" and "LVLM prior self-correction during generation," which constitutes a dual-constraint problem.
 
-**Goal**: (1) Construct a query-agnostic poisoning framework with a weak prior (knowing only the library distribution without queries); (2) Design independent mechanisms for the retrieval and generation stages; (3) Demonstrate effectiveness across 5 LVLMs, 3 retrievers, and 4 medical tasks, while verifying robustness against common pre-retrieval defenses.
+**Goal**: (1) Construct a query-agnostic poisoning framework with weak priors (only knowing the database distribution, no queries required); (2) Design independent mechanisms for the retrieval and generation stages; (3) Demonstrate effectiveness across 5 LVLMs × 3 retrievers × 4 medical tasks and verify robustness against common pre-retrieval defenses.
 
-**Key Insight**: (A) The high homogeneity of medical images makes query-specific attacks difficult but also results in highly structured latent spaces where **cluster centers** can serve as "representative query proxies." Perturbations at the cluster centers can cover all unknown queries within those clusters. (B) Medical diagnosis inherently contains clinical ambiguities—such as "severe vs. mild," "differential diagnoses," and "defensive medicine"—which correspond to low-confidence regions of the LLM prior. By lying within these "gray areas," attackers make it difficult for the model to self-correct.
+**Key Insight**: (A) While the high homogeneity of medical images makes query-specific attacks difficult, it also results in a highly structured latent space where **cluster centers** can serve as "representative query proxies"—disturbing these centers can cover all unknown queries within the cluster. (B) Medical diagnosis inherently contains clinical ambiguity, such as "severe vs. mild," "differential diagnoses," and "defensive medicine," which correspond to low-confidence regions in LLM priors. By lying within these "gray areas," attackers make it difficult for the model to self-correct.
 
-**Core Idea**: Use "distribution-guided visual PGD hijacking" to optimize poisoned images near cluster centers to act as query-agnostic triggers. Employ "clinical ambiguity-guided three-layer progressive text rewriting" to inject plausible but incorrect medical conclusions at the levels of severity migration, diagnosis distortion, and risk association. These components are combined into M3Att, a query-agnostic, stealthy, and dual-stage coupled medical RAG poisoning framework.
+**Core Idea**: M3Att uses "distribution-guided visual PGD hijacking" to optimize poisoned images toward cluster centers as query-agnostic triggers. It further employs "clinical ambiguity-guided three-layer progressive text rewriting" to inject plausible but incorrect medical conclusions across three levels: severity migration, diagnostic distortion, and risk association. Together, these form a query-agnostic, stealthy, and dual-stage coupled medical RAG poisoning framework.
 
 ## Method
 
 ### Overall Architecture
-M3Att aims to poison medical multi-modal RAG under a threat model that closely reflects real-world deployment: the attacker does not have access to model parameters, user queries, or retrieval contexts and can only insert fewer than 1% malicious entries into the knowledge base. The difficulty is twofold: the retrieval stage must ensure poisoned entries are selected by future queries within highly clustered medical image embeddings, while the generation stage must deceive safety-aligned medical LVLMs so that poisoned text is not dismissed as a "glaring error." The pipeline consists of three steps: first, Cluster Profiling identifies cluster centers of the knowledge base distribution to serve as "representative query proxies"; second, distribution-guided visual PGD optimizes poisoned images toward these centers for retrieval hijacking; finally, clinical ambiguity-guided text rewriting injects "plausible yet incorrect" medical conclusions. The resulting (poisoned image, poisoned text) pairs are inserted into the knowledge base to await natural triggering by real queries. The visual and text paths are tightly coupled—the former ensures "being retrieved," and the latter ensures "deceiving generation"—with both paths utilizing white-box/black-box dual-gradient routes to ensure effectiveness even on closed-source retrievers.
+M3Att aims to poison medical multi-modal RAG under a threat model closest to real-world deployment: the attacker lacks model parameters, user queries, and retrieval contexts, and can only insert less than 1% malicious entries into the knowledge base. The difficulty is twofold—the retrieval stage must ensure poisoned entries are captured by arbitrary future queries within dense embeddings, and the generation stage must deceive safety-aligned LVLMs. The pipeline consists of three steps: Cluster Profiling to obtain cluster centers as "representative query proxies," distribution-guided visual PGD to optimize images toward these centers for retrieval hijacking, and clinical ambiguity-guided text rewriting to inject "plausible but wrong" conclusions. The (poisoned image, poisoned text) pairs are inserted into the knowledge base. The visual and textual paths are tightly coupled—the former handles retrieval while the latter deceives generation, both utilizing white-box/black-box dual gradients to ensure efficacy on closed-source retrievers.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    KB["Medical Knowledge Base (Reference pool embeddings highly clustered)"]
-    subgraph HIJACK["Distribution-guided Retrieval Hijacking"]
+    KB["Medical Knowledge Base (Reference Pool Embeddings Highly Clustered)"]
+    subgraph HIJACK["Distribution-Guided Retrieval Hijacking"]
         direction TB
-        CP["Cluster Profiling<br/>K-Means K=40, extract centers μc as query proxies"]
-        CS["Candidate Sampling<br/>10-step PGD warm-up to select optimal seed"]
+        CP["Cluster Profiling<br/>K-Means K=40, take cluster center μc as query proxy"]
+        CS["Candidate Sampling<br/>10-step PGD warm-up to pick optimal seed"]
         PGD["Constrained PGD Refinement<br/>ℓ∞ ≤ 16/255, maximize similarity to cluster center"]
         CP --> CS --> PGD
     end
-    subgraph REWRITE["Clinical Ambiguity-guided Three-layer Progressive Text Rewriting"]
+    subgraph REWRITE["Clinical Ambiguity-Guided 3-Layer Progressive Text Rewriting"]
         direction TB
-        L1["① Severity Migration<br/>massive ↔ moderate inducing missed diagnosis/over-intervention"]
-        L2["② Diagnosis Distortion<br/>Pick differential diagnoses with visual overlap as alternatives"]
+        L1["① Severity Migration<br/>massive ↔ moderate inducing misdiagnosis/over-intervention"]
+        L2["② Diagnosis Distortion<br/>Pick visually overlapping differential diagnoses as replacements"]
         L3["③ Risk Association Corruption<br/>Suppress urgency / create false positives"]
         L1 --> L2 --> L3
     end
     KB --> HIJACK
-    PGD -->|White-box backprop / Black-box zeroth-order| PIMG["Poisoned Image<br/>query-agnostic trigger"]
+    PGD -->|White-box BP / Black-box Zeroth-order| PIMG["Poisoned Image<br/>query-agnostic trigger"]
     REWRITE --> PTXT["Poisoned Text<br/>Plausible but incorrect medical conclusion"]
     PIMG --> PAIR["Dual-stage Coupled: (Poisoned Image, Poisoned Text) pair<br/>Insert into KB <1%"]
     PTXT --> PAIR
-    PAIR --> TRIG["Natural Triggering by Real Query<br/>Retrieval hijacked → LVLM generation poisoned"]
+    PAIR --> TRIG["Real Query Natural Trigger<br/>Retrieval hijacking → LVLM generation poisoned"]
 ```
 
 ### Key Designs
 
-**1. Distribution-guided Retrieval Hijacking: Using cluster centers as proxies to cover unknown queries**
+**1. Distribution-Guided Retrieval Hijacking: Using Cluster Centers as Proxies to Cover All Queries**
 
-The primary barrier to query-agnostic attacks is not knowing user queries, preventing targeted optimization. However, medical image embeddings are highly clustered. The authors turn this homogeneity into an advantage: since embeddings are grouped, a cluster center can represent the semantics of the entire cluster. Perturbing near the center covers all unknown queries within that cluster. The process involves three steps: Cluster Profiling performs K-Means (K=40) on the reference pool, averaging the top-50 nearest samples per cluster to obtain centers $\bm{\mu}_c$. Candidate Sampling selects seeds from a non-overlapping candidate pool by evaluating optimization potential via 10-step PGD warm-up. Finally, Constrained PGD Refinement iterates for N=500 steps on selected images:
+The biggest obstacle for query-agnostic attacks is the lack of information regarding user queries. However, the high homogeneity of medical image embeddings can be exploited—since embeddings cluster together, cluster centers represent the semantics of the entire cluster. By perturbing images toward the cluster center, the attack covers all unknown queries within that cluster. Three steps are involved: Cluster Profiling performs K-Means (K=40) on the reference pool, averaging the top-50 nearest samples per cluster to obtain centers $\bm{\mu}_c$; Candidate Sampling ranks non-overlapping candidates and uses a 10-step PGD warm-up to evaluate optimization potential; Constrained PGD Refinement iterates for $N=500$ steps:
 
-$$\bm{x}_c^{(i+1)} = \Pi_{\mathcal{B}_\epsilon}\!\left(\bm{x}_c^{(i)} + \alpha \cdot \mathrm{sign}\big(\nabla_x \mathcal{L}(f(\bm{x}_c^{(i)}), \bm{\mu}_c)\big)\right)$$
+$$\bm{x}_c^{(i+1)} = \Pi_{\mathcal{B}_\epsilon}\!\left(\bm{x}_c^{(i)} + \alpha \cdot \mathrm{sign}\big(\nabla_x \mathcal{L}(f(\bm{x}_c^{(i)}), \bm{\mu}_{c})\big)\right)$$
 
-maximizing cosine similarity to the cluster center under constraints $\ell_\infty \leq \epsilon=16/255$ and $\alpha=1/255$. White-box attacks use direct backpropagation, while black-box attacks utilize symmetric finite difference $\nabla_x \mathcal{L} \approx \frac{1}{K}\sum_k \frac{\mathcal{L}(\bm{x}+\sigma u_k) - \mathcal{L}(\bm{x}-\sigma u_k)}{2\sigma} \cdot u_k$ for zeroth-order estimation. Because cluster centers capture the data's inherent semantic structure rather than a specific model's characteristics, this attack transfers across retrievers (CLIP/BGE-VL/SigLIP). The $\ell_\infty$ constraint ensures the perturbation is nearly invisible to the naked eye, bypassing clinical review.
+maximizing cosine similarity with the cluster center under constraints $\ell_\infty \leq \epsilon=16/255$ and $\alpha=1/255$. White-box attacks use direct backpropagation, while black-box attacks use zeroth-order estimation via symmetric finite differences: $\nabla_x \mathcal{L} \approx \frac{1}{K}\sum_k \frac{\mathcal{L}(\bm{x}+\sigma u_k) - \mathcal{L}(\bm{x}-\sigma u_k)}{2\sigma} \cdot u_k$. Since cluster centers capture the data's semantic structure rather than model-specific features, this attack transfers across retrievers (CLIP/BGE-VL/SigLIP). The $\ell_\infty$ constraint ensures perturbations are nearly invisible to medical review.
 
-**2. Clinical Ambiguity-guided Three-layer Progressive Text Rewriting: Targeting low-confidence regions of the model prior**
+**2. Clinical Ambiguity-Guided Three-Layer Progressive Text Rewriting: Targeting Low-Confidence Regions**
 
-Medical LVLMs trained on expert corpora with safety alignment will reject or correct "obvious factual errors." The authors' insight is that medical diagnosis contains intrinsic ambiguities (e.g., severity levels, differential diagnoses), which reside in the "gray zones" of the LLM's prior. Using GPT-5 as a controlled editor, the framework applies three levels of strategy: **Fine-grained Severity Migration** (e.g., changing "massive" to "moderate" to induce missed diagnosis, or "unremarkable" to "suspicious density" for over-intervention); **Prior-Constrained Diagnosis Distortion** (avoiding radical changes in favor of visually similar differential diagnoses like "Viral Pneumonia" to "Pulmonary Edema"); and **Risk Association Corruption** (manipulating clinical recommendations, such as downgrading "immediate CT" to "follow-up in 6 months"). These correspond to the clinical reasoning stages of evidence perception, diagnostic hypothesis, and decision-making risk.
+Naive injection of "obvious errors" triggers self-correction in safety-aligned medical LVLMs. The key insight is that medical diagnosis inherently contains ambiguity (e.g., "massive vs. moderate"), which resides in the gray areas of LLM priors. Using GPT-5 as a controlled editor, three strategies are executed via system prompts: **Fine-grained Severity Migration** bi-directionally modifies severity (down-scaling "massive" $\to$ "moderate" to induce under-diagnosis; up-scaling "unremarkable" $\to$ "suspicious density" to trigger over-intervention); **Prior-Constrained Diagnosis Distortion** selects target diseases with overlapping visual features and similar prior probabilities (e.g., "Viral Pneumonia" $\to$ "Pulmonary Edema"), leading the model to accept poisoned context as a legitimate differential diagnosis; **Risk Association Corruption** bi-directionally manipulates clinical recommendations (suppressing urgency: "immediate CT" $\to$ "follow-up in 6 months"). These correspond to the clinical reasoning stages of evidence $\to$ hypothesis $\to$ decision-making.
 
-**3. Dual-stage Coupled Hijacking and Injection: Ensuring effectiveness on closed-source retrievers**
+**3. Black-box/White-box Dual Gradient Paths + Dual-Stage Coupling**
 
-Medical RAG retrievers in real-world deployments are often closed-source. To ensure the attack works in black-box settings, visual hijacking utilizes zeroth-order finite difference estimates when direct gradients are unavailable. Furthermore, M3Att relies on the tight coupling of retrieval hijacking and text injection. Ablations show that removing either significantly reduces the attack's impact: without hijacking, poisoned entries fail to enter the top-k, and without injection, even retrieved entries contain harmless text that cannot influence generation.
+To ensure efficacy on closed-source retrievers, visual hijacking utilizes both white-box backpropagation and black-box zeroth-order estimation. Experiments show black-box Attack Success Rates (ASR) are close to white-box ones. Furthermore, M3Att tightly couples retrieval hijacking with text injection—ablation shows that removing either lead to a significant recovery in downstream utility: without hijacking, poisoned entries fail to reach the top-k; without injection, harmless original text fails to influence generation even if retrieved.
 
 ### Loss & Training
-The core loss is cosine similarity $\mathcal{L}(f(\bm{x}), \bm{\mu}_c) = \cos(f(\bm{x}), \bm{\mu}_c)$, constrained within $\bm{x} \in \mathcal{B}_\epsilon(\bm{x}^{(0)}) = \{\bm{x}: \|\bm{x} - \bm{x}^{(0)}\|_\infty \leq \epsilon\}$. Key hyperparameters include K=40 clusters, with 1 candidate injected per cluster (poison rate <0.01), $\epsilon=16/255$, $\alpha=1/255$, 500 PGD steps, and 10 warm-up steps. Text editing is performed by GPT-5 following the system prompt in Appendix Fig. 9 to ensure stealthiness and localized progressive strategy.
+The core loss is cosine similarity $\mathcal{L}(f(\bm{x}), \bm{\mu}_c) = \cos(f(\bm{x}), \bm{\mu}_c)$, constrained within $\bm{x} \in \mathcal{B}_\epsilon(\bm{x}^{(0)}) = \{\bm{x}: \|\bm{x} - \bm{x}^{(0)}\|_\infty \leq \epsilon\}$. Key hyperparameters: $K=40$ clusters, inserting 1 optimized candidate per cluster (poison rate < 0.01), $\epsilon=16/255$, $\alpha=1/255$, PGD 500 steps, warm-up 10 steps. Text editing is performed by GPT-5 with strict system prompts targeting stealthiness and progressive strategy.
 
 ## Key Experimental Results
 
-### Main Results: End-to-end poisoning results across 5 LVLMs and 4 tasks (Extract, lower is worse)
+### Main Results: End-to-End Attack Results on 5 LVLMs (Partial, Lower is Better)
 
 | LVLM | Retriever | Method | True/False (IU-XRay) | MC (MIMIC) | Report FC (IU-XRay) | Img Cls (CRC100k) |
 |------|-----------|--------|---------------------|------------|--------------------|--------------------|
@@ -101,53 +101,54 @@ The core loss is cosine similarity $\mathcal{L}(f(\bm{x}), \bm{\mu}_c) = \cos(f(
 | LLaVA-Med | BGE-VL | M3Att | **46.56%** | **3.51%** | **17.04%** | **50.16%** |
 | Gemini-2.5 | CLIP | M3Att | 76.12% | 39.21% | 32.40% | 79.85% |
 
-M3Att is significantly stronger than the baseline LIAR across **nearly all LVLM × Retriever × Task combinations**, reducing downstream utility by an average of **8.78%** compared to Clean RAG.
+M3Att outperforms the baseline LIAR in **most LVLM × Retriever × Task combinations**, reducing downstream utility from Clean RAG by an average of **8.78%**.
 
-### Ablation Study: Component contribution + Defense robustness + Hyperparameters
+### Ablation Study
 
-| Setting | Key Metric | Key Finding |
+| Setting | Metric | Observation |
 |------|---------|---------|
-| Full M3Att | Overall Effect | Strongest attack |
-| w/o Hijack (using nearest sample to cluster center) | Utility Recovers | Poisoned items cannot reliably enter top-k; text poison is ineffective |
-| w/o Injection (poisoned image with original text) | Utility Recovers | Retrieved items are harmless; generation remains unaffected |
-| Filtered (evaluating only successful retrieval subset)| M3Att still leads LIAR | Once retrieved, poisoned text steadily dominates generation |
-| Defense: Image Clustering | ASR roughly same | Visual perturbations are small; no distributional anomalies |
-| Defense: Text Clustering | ASR roughly same | GPT-5 rewritten text maintains clinical fluency |
-| Defense: Image-Text Consistency | ASR roughly same | Image and text remains highly aligned |
-| ASR ≈ 100% at poison rate 0.08 | – | Significant effects achieved even with low poison rates (<0.01) |
-| ASR saturates as $\epsilon$ increases | – | Moderate perturbations are sufficient |
-| Benefit flattens for K > 40 | – | Semantic clusters in medical images are naturally limited |
+| Full M3Att | Full Effect | Strongest attack. |
+| w/o Hijack (using nearest sample to cluster center) | Utility Recovers | Poisoned entries cannot reliably enter top-k. |
+| w/o Injection (poisoned image, original text) | Utility Recovers | Harmless text does not affect generation even if retrieved. |
+| Filtered (subset where retrieval succeeds) | M3Att > LIAR | Once retrieved, poisoned text effectively dominates generation. |
+| Defense: Image Clustering | ASR Constant | Visual perturbation is too small to be anomalous. |
+| Defense: Text Clustering | ASR Constant | GPT-5 rewritten text remains clinically fluent. |
+| Defense: Image-Text Consistency | ASR Constant | Visual-text pairs remain highly aligned. |
+| Poison rate 0.08 | ASR ≈ 100% | Low poison rates (<0.01) yield significant results. |
+| $\epsilon$ Increase | ASR Saturates | Moderate perturbation is sufficient. |
 
 ### Key Findings
-- **Query-agnostic poisoning is feasible in medical contexts**: Even without query knowledge, using "cluster center proxies + PGD" can raise the top-5 ASR of poisoned images from 0.01% to 5%.
-- **Black-box ≈ White-box**: Zeroth-order gradient estimation achieves effects close to white-box attacks, proving that real closed-source retrievers are equally vulnerable.
-- **Both stages are indispensable**: Removing hijacking or injection causes a significant drop in attack utility, showing that medical RAG attacks require cooperation between retrieval and generation.
-- **Three simple defenses fail**: Image clustering, text clustering, and image-text consistency defense strategies are insufficient, suggesting that deep medical fact-checking is required rather than simple "distributional anomaly" filters.
-- **Clinical ambiguity is a natural attack surface**: Manipulating severity, differential diagnosis, and risk suggestions allows the model to accept the "lie" as a "legitimate alternative interpretation."
+- **Query-agnostic poisoning is feasible in medical scenarios**: Relying on "cluster center proxies + PGD" without query information allows poisoned ASR@Top-5 to jump from 0.01% to 5%.
+- **Black-box ≈ White-box**: Zeroth-order gradient estimation results are close to white-box, proving risks to closed-source retrievers.
+- **Both stages are necessary**: Removing either hijack or injection significantly reduces efficacy, indicating that medical RAG attacks require retrieval and generation synergy.
+- **Simple defenses fail**: Image/Text clustering and consistency checks cannot stop M3Att, suggesting a need for deeper medical fact-checking.
+- **Clinical ambiguity as a natural surface**: Manipulating severity and risk levels allows the model to accept lies as "alternative interpretations."
 
 ## Highlights & Insights
-- **"Homogeneity as an Opportunity" Paradigm Shift**: While medical image homogeneity makes query-specific attacks difficult, the authors convert this into a design lever, using cluster centers to cover a vast number of queries.
-- **Clinical Ambiguity as an Attack Surface**: Explicitly stratifying "severity / differential diagnosis / risk assessment" as three progressive attack strategies is a brilliant example of integrating medical domain knowledge into adversarial design.
-- **Dual Attack Primitives**: Combining PGD on retrieval embeddings with an LLM-as-editor for text provides a recipe that can be applied to almost any future multi-modal RAG attack.
-- **Negative Results on Basic Defenses**: By showing simple filtering fails, the paper provides a valuable red-teaming baseline for the trustworthy medical AI community.
+- **Paradigm Shift (Homogeneity as Opportunity)**: The authors transform the "obstacle" of medical image homogeneity into a "lever," using a few cluster centers to cover a massive number of queries.
+- **Clinical Ambiguity as Attack Surface**: Categorizing clinical reasoning into three progressive attack levels incorporates domain knowledge into adversarial design, transferable to other high-stakes domains like law or finance.
+- **Double Attack Primitives**: Combining visual PGD on embeddings with LLM-as-editor provides a recipe applicable to almost all future multi-modal RAG attacks.
+- **Black-box Evidence**: Proving vulnerability in closed-source medical RAG APIs pushes the threat model to production levels.
+- **Defense Failure as a Baseline**: Demonstrating that simplicity-based filtering is insufficient provides a valuable red-teaming baseline for the trustworthy AI community.
 
 ## Limitations & Future Work
-- **Verified on 2D images only**: While X-rays and histology slides are prominent, 3D volumes (CT/MRI) and medical videos were not tested.
-- **Dependency on strong text editors**: The attack currently relies on GPT-5 to generate sophisticated poisoned text; using a weaker model might reduce editing quality.
-- **Omission of expert review simulation**: The study does not account for human expert-in-the-loop verification or medical Knowledge Graph-based consistency checks.
-- **Lack of proposed defenses**: As an attack-oriented paper, it does not propose a constructive "cure" for the identified vulnerabilities.
-- **Future Directions**: (1) Expansion to 3D and temporal data; (2) Development of retrieval-stage defenses (e.g., leave-one-out perturbation detection); (3) Investigating whether medical-finetuned LVLMs are more or less robust.
+- **Limited to 2D Imaging**: Focuses on X-rays and histology, leaving 3D (CT/MRI) and video medical data for future work.
+- **GPT-5 Dependency**: The quality of text rewriting relies on a strong editor LLM; weaker models may reduce efficacy.
+- **Lack of Regulatory Detection Testing**: The study did not test against expert review panels or knowledge graph-based consistency checks.
+- **Hyperparameter Tuning**: $K=40$ is empirical and may vary across different database scales and imaging types.
+- **Future Directions**: (1) Expansion to 3D and temporal data; (2) Proposal of retrieval-stage defenses (e.g., leave-one-out detection); (3) Investigating if fine-tuned medical LVLMs are more or less robust.
 
 ## Related Work & Insights
-- **vs. LIAR (Tan et al. 2024)**: M3Att extends the concepts of text-only RAG poisoning to multi-modal, medical, and query-agnostic settings, showing superior performance.
-- **vs. MM-PoisonRAG (Ha et al. 2025) / Poisoned-MRAG (Liu et al. 2025b)**: These depend on query-specific optimization, whereas M3Att is query-agnostic.
-- **Translatability to Law / Finance**: The strategy of exploiting clinical ambiguity could be generalized to legal interpretation or financial advice, areas that also feature intrinsic ambiguity and high stakes.
+- **vs. LIAR (Tan et al. 2024)**: M3Att extends text-only RAG poisoning to multi-modal, medical, and query-agnostic settings, showing consistently better performance.
+- **vs. MM-PoisonRAG (Ha et al. 2025)**: M3Att is the first medical multi-modal method to remove the query-specific dependency.
+- **vs. HV-Attack (Luo et al. 2025)**: Generic multi-modal attacks fail on homogeneous medical corpora; M3Att solves this with cluster proxies.
+- **Cross-domain Transfer**: The "gray area attack" paradigm targeting clinical ambiguity is highly applicable to legal interpretation and financial advice RAG systems.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ 
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 
-- Writing Quality: ⭐⭐⭐⭐ 
-- Value: ⭐⭐⭐⭐⭐ 
+- Novelty: ⭐⭐⭐⭐⭐ First practical threat model for medical multi-modal RAG poisoning; several innovative design points.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive coverage across LVLMs, retrievers, datasets, and tasks.
+- Writing Quality: ⭐⭐⭐⭐ Clear formulas and tables; strategies have significant medical domain depth.
+- Value: ⭐⭐⭐⭐⭐ Directly exposes vulnerabilities in deployed medical RAG systems, though the dual-use risk necessitates defensive research.
 
 <!-- RELATED:START -->
 

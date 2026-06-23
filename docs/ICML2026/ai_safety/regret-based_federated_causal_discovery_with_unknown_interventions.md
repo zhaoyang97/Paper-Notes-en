@@ -2,13 +2,13 @@
 title: >-
   [Paper Note] Regret-Based Federated Causal Discovery with Unknown Interventions
 description: >-
-  [ICML 2026][AI Safety][Regret] This paper proposes I-PERI: a two-phase process using "directed-consensus masking + undirected-consensus masking" to recover a new equivalence class, Φ-MEC (tighter than observational MEC but looser than I-MEC), in federated settings where client intervention targets are completely unknown and only regret scalars are s
+  [ICML 2026][AI Safety][Regret] This paper proposes I-PERI: a federated setting where client intervention targets are entirely unknown and only regret scalars can be shared. By employing a two-stage process of "directed-consensus masking + undirected-consensus masking," it recovers a new equivalence class Φ-MEC, which is tighter than the observationa
 tags:
   - ICML 2026
   - AI Safety
   - Regret
 date: 2026-05-08
-content_hash: 2177955899a8cdc2
+content_hash: 22f4b5b2ee891a74
 ---
 # Regret-Based Federated Causal Discovery with Unknown Interventions
 
@@ -19,64 +19,62 @@ content_hash: 2177955899a8cdc2
 **Keywords**: Causal Discovery, Federated Learning, Unknown Interventions, Φ-Markov Equivalence Class, Regret, Differential Privacy
 
 ## TL;DR
-This paper proposes I-PERI: a two-phase process using "directed-consensus masking + undirected-consensus masking" to recover a new equivalence class, Φ-MEC (tighter than observational MEC but looser than I-MEC), in federated settings where client intervention targets are completely unknown and only regret scalars are shared, providing ε-differential privacy guarantees via Laplace noise.
+This paper proposes I-PERI: a federated setting where client intervention targets are entirely unknown and only regret scalars can be shared. By employing a two-stage process of "directed-consensus masking + undirected-consensus masking," it recovers a new equivalence class Φ-MEC, which is tighter than the observational MEC but looser than I-MEC, and provides $\epsilon$-differential privacy guarantees via Laplace noise.
 
 ## Background & Motivation
 
-**Background**: The mainstream goal of causal discovery is to recover a CPDAG representing the Markov Equivalence Class (MEC) of the underlying causal DAG. When data is naturally distributed and cannot be centralized, Federated Causal Discovery (FCD) adapts this task to a "center server + multiple clients" architecture, with methods like PERI, FedDAG, FedCDH, and NOTEARS-ADMM being representative.
+**Background**: The primary goal of causal discovery is to recover a CPDAG representing the Markov Equivalence Class (MEC) of the underlying causal DAG. When data is naturally distributed across hospitals or institutions and cannot be centralized, **Federated Causal Discovery (FCD)** adapts this task to a "central server + multi-client" architecture, with methods like PERI, FedDAG, FedCDH, and NOTEARS-ADMM being representative.
 
-**Limitations of Prior Work**: Almost all FCD methods assume **all clients share the same causal model without interventions**. In real scenarios, treatment protocols or diagnostic standards at different hospitals constitute client-level **structural interventions**—they remove certain incoming edges in the causal graph, causing structural differences between client CPDAGs. Treating this heterogeneity as noise means regret-based methods like PERI **fail to converge to the true CPDAG**.
+**Limitations of Prior Work**: Nearly all FCD methods assume **all clients share the same causal model and no interventions exist**. However, in real-world scenarios, treatments, diagnostic standards, and enrollment policies at different hospitals constitute client-level **structural interventions**—they remove certain incoming edges in the causal graph, creating structural differences between client CPDAGs. Treating this heterogeneity as noise results in regret-based methods like PERI **failing to converge to the true CPDAG**.
 
-**Key Challenge**: (1) Existing "interventional causal discovery" (e.g., Hauser & Bühlmann, Yang et al.) assumes **known intervention targets**, but leaking these targets in federated settings violates privacy. (2) Works on "unknown interventions + multi-environments" (Jaber et al., Squires et al.) assume data can be centralized for direct comparison. **The question of what is the tightest identifiable equivalence class under the simultaneous presence of unknown interventions, strict federated constraints, and differential privacy remains unanswered.**
+**Key Challenge**: (1) Existing "causal discovery with interventions" (e.g., Hauser & Bühlmann, Yang et al., ℐ-MEC) assumes **known intervention targets**, whereas leaking intervention targets in a federated setting violates privacy. (2) Existing work on "unknown interventions + multi-environment" (Jaber et al., Squires et al.) assumes data can be centralized for direct comparison, which is impossible in FL. **The question of what the tightest identifiable equivalence class is under the coexistence of unknown interventions, strict federation, and differential privacy remains unanswered.**
 
-**Goal**: (i) Formalize the identifiable equivalence class under client-level unknown general interventions in a federated + DP setting; (ii) Provide an algorithm that exchanges only regret scalars without leaking client graphs; (iii) Prove convergence and differential privacy.
+**Goal**: (i) Formalize the identifiable equivalence class under client-level unknown general interventions, federation, and DP; (ii) provide an algorithm that exchanges only regret scalars without leaking client graphs; (iii) prove convergence and differential privacy.
 
-**Key Insight**: The authors observe that while interventions prune edges (making client graphs sparse), they may **generate new v-structures** when acting on a parent of a *shielded collider*. This means local client CPDAGs may actually reveal edge directions that observational data cannot orient. By treating "losses from missing edges" and "information from newly oriented edges" separately, one can utilize interventional information without being misled by sparsity.
+**Key Insight**: The authors observe that while interventions make client graphs sparser by **removing edges**, they **generate new v-structures** when acting on a parent of a *shielded collider*. This means local client CPDAGs can expose edge directions that are unorientable from observational data. Separating "losses due to missing edges" from "information gained from new orientations" allows the method to exploit intervention-derived directional information without being misled by structural sparsity.
 
-**Core Idea**: Split PERI's single regret into two phases: The first phase uses **directed-consensus masking** to only penalize edges present in the client but missing in the server, recovering the common CPDAG. The second phase uses **undirected-consensus masking** to back-propagate orientation information gained from interventions to the server CPDAG, finally converging to a new equivalence class, Φ-CPDAG.
+**Core Idea**: The single regret in PERI is decomposed into two stages: the first stage uses **directed-consensus masking** to penalize only edges present in the client but absent in the server to recover the common CPDAG; the second stage uses **undirected-consensus masking** to flow the direction information obtained by clients through intervention back into the server CPDAG, finally converging to a new equivalence class, Φ-CPDAG.
 
 ## Method
 
 ### Overall Architecture
 
-I-PERI addresses the problem where $K$ clients each hold a dataset $\mathbb{D}^k$ and an **unknown** intervention target $\Phi^k \subseteq \mathbb{V}$ (assuming at least one client is purely observational, i.e., $\exists k:\Phi^k=\emptyset$). It avoids data centralization and graph uploading by only exchanging regret scalars while recovering the tightest possible causal structure with DP guarantees. The process splits the original PERI's single regret into two GES searches: the first phase exempts sparsity caused by interventions to recover the common CPDAG, and the second phase refines the structure into a Φ-CPDAG by utilizing new v-structures. Clients always estimate their own mutilated DAG CPDAG $\mathcal{C}(G_{\Phi^k})$ locally using PC/GES and add Laplace noise to regrets before uploading for $\epsilon$-DP.
+The problem addressed by I-PERI is: $K$ clients each hold a dataset $\mathbb{D}^k$ and an **unknown** intervention target $\Phi^k \subseteq \mathbb{V}$ (assuming at least one client is purely observational, $\exists k:\Phi^k=\emptyset$). Data cannot be pooled, and local graphs cannot be uploaded. Only regret scalars are exchanged to recover the tightest possible causal structure at the server with DP guarantees. The approach splits the original PERI's single regret into two GES searches: the first stage exempts sparsity caused by interventions to recover the common CPDAG; the second stage recovers extra direction info. Each client uses PC/GES locally to estimate its mutilated CPDAG $\mathcal{C}(G_{\Phi^k})$, and Laplace noise is added to each regret before upload to achieve $\epsilon$-DP.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["K clients locally estimate mutilated CPDAG C(G_Φk) using PC/GES"] --> B["Apply Laplace noise to regret scalars<br/>ε-DP based on sensitivity upper bound Q"]
-    B --> C["Directed-consensus masking μ<br/>Missing-edge exemption + Directed-first → Recover common CPDAG"]
-    C --> D["Undirected-consensus masking ν for Φ-CPDAG<br/>Undirected-first → Propagate client v-structure directions"]
-    D --> E["Φ-CPDAG<br/>MEC ⊂ Φ-MEC ⊂ I-MEC"]
+    A["K clients local PC/GES estimates mutilated CPDAG C(G_Φk), stored locally"] --> B["Regret scalar with Laplace noise based on sensitivity upper bound Q for ε-DP"]
+    B --> C["Directed-consensus masking μ; missing edge exemption + directed priority → Recover public CPDAG"]
+    C --> D["Undirected-consensus masking ν with Φ-CPDAG; undirected priority → Back-inject client v-structure orientation"]
+    D --> E["Φ-CPDAG; MEC ⊂ Φ-MEC ⊂ I-MEC"]
 ```
 
 ### Key Designs
 
-**1. Directed-consensus Masking: Reclassifying "Missing Edges" from Errors to Exemptions**
+**1. Directed-Consensus Masking: Reclassifying "Missing Edges" as Exemptions**
 
-The original PERI's regret is $L(H,\mathbb{D}^k)-L(\mathcal{C}(G)$, $\mathbb{D}^k)$, assuming a shared $\mathcal{C}(G)$. With interventions, the client's mutilated graph $\mathcal{C}(G_{\Phi^k}) \ne \mathcal{C}(G)$, causing the regret to never reach zero and the search to fail. The authors introduce a masking operator $\mu$ to synthesize the server candidate $H$ and client CPDAG $\mathcal{C}(G_{\Phi^k})$ into a new graph for regret calculation: $R_k(H)=L(\mu(H,\mathcal{C}(G_{\Phi^k})),\mathbb{D}^k)-L(\mathcal{C}(G_{\Phi^k}),\mathbb{D}^k)$.
+Original PERI regret is $L(H,\mathbb{D}^k)-L(\mathcal{C}(G),\mathbb{D}^k)$, assuming a shared $\mathcal{C}(G)$. With interventions, $\mathcal{C}(G_{\Phi^k})\ne\mathcal{C}(G)$, preventing the regret from reaching zero and causing search non-convergence. I-PERI uses a masking operator $\mu$ to combine the server candidate $H$ and client CPDAG $\mathcal{C}(G_{\Phi^k})$ before calculating regret: $R_k(H)=L(\mu(H,\mathcal{C}(G_{\Phi^k})),\mathbb{D}^k)-L(\mathcal{C}(G_{\Phi^k}),\mathbb{D}^k)$.  
+$\mu$ follows three rules: keep edges present in both; **remove** edges absent in either; use **directed** if one is directed and the other undirected ("directed priority"). This ensures edges missing in the client due to intervention are not penalized at the server, while edges present in the client but absent in the server are still penalized. Theorem 3.1 guarantees asymptotic convergence to the common CPDAG $\hat{G}\to\mathcal{C}(G)$.
 
-$\mu$ follows three rules: keep edges present in both; **delete** edges missing in either; use **directed** edges if one graph is directed and the other undirected ("directed-first"). This allows edges missing due to intervention to be exempted from server loss calculation (avoiding erroneous penalties), while edges missing in the server but present in the client are still penalized. Theorem 3.1 provides asymptotic convergence $\hat{G}\to\mathcal{C}(G)$ as $n^k\to\infty$.
+**2. Undirected-Consensus Masking and Φ-CPDAG: Utilizing Interventions as Information**
 
-**2. Undirected-consensus Masking and Φ-CPDAG: Utilizing Interventions as Information Sources**
+The first stage only recovers the observational CPDAG. However, interventions acting on parents of shielded colliders create **new v-structures**, exposing previously unorientable edges. The second stage harvests this information by running another regret search on the first-stage CPDAG, replacing mapping $\mu$ with $\nu$.  
+$\nu$ differs from $\mu$ by using **undirected priority** (opposite of stage one) while maintaining the missing edge exemption. The server treats new v-structure orientations derived from client interventions as authoritative, forcing corresponding undirected edges into those directions. The resulting **Φ-MEC** satisfies an additional condition: two graphs must generate the same new v-structures under some intervention in $\Phi$ (Theorem 3.2). It utilizes intervention-derived directions without knowing the targets, placing it between "observational MEC" and "interventional ℐ-MEC".
 
-The first phase only recovers the observational CPDAG. However, interventions provide extra orientation information. Crucially, when an intervention acts on a parent of a shielded collider, it creates a **new v-structure**, revealing directions unorientable in observational data. The second phase harvests this by running another regret search on the first-phase CPDAG, replacing $\mu$ with $\nu$.
+**3. ε-Differential Privacy Mechanism via Regret Sensitivity Bound**
 
-The $\nu$ operator differs from $\mu$ in only one rule: if one graph is directed and the other is undirected, it uses the **undirected** edge ("undirected-first"). Intuitively, the server treats new v-structures from clients as authoritative and forces its own undirected edges to match those directions. The resulting **Φ-MEC** adds one condition to the MEC definition: two graphs must produce the same new v-structures under some intervention in $\Phi$ (Theorem 3.2). It identifies a structure between the observational MEC and the target-known $\mathcal{I}$-MEC without requiring knowledge of the targets (Theorem 3.3).
-
-**3. ε-Differential Privacy Mechanism Based on Regret Sensitivity Upper Bound**
-
-Typical FCD literature shares local graphs or parameters, which exceeds DP leakage limits. Since I-PERI only exchanges regret scalars, it applies a simple additive noise mechanism. Lemma 3.1 bounds the sensitivity of the regret: for a score function $L$ with parameters $\theta$ such that $\|\theta\|\le M$ and $P_k(x;\theta)\ge r$, the difference in regret induced by two datasets differing by one record is bounded by $Q \le (2M+1)\log r^2+\mathcal{O}(\log n/n)$. Each client adds i.i.d. Laplace noise with scale $\lambda=Q/\epsilon$ before uploading. Proposition 3.1 confirms $\epsilon$-DP. Additionally, reconstructing client graphs from regrets is NP-hard (Chickering et al. 2004), providing "information-theoretic" privacy without encryption.
+Unlike FCD methods that share local graphs, I-PERI exchanges only regret scalars, allowing for simple DP via noise addition. Lemma 3.1 bounds the sensitivity of the regret: for a score function $L$, the difference in regret induced by two datasets differing by one record is bounded by $Q = (2M+1)\log r^2+\mathcal{O}(\log n/n)$. Each client adds i.i.d. Laplace noise with scale $\lambda=Q/\epsilon$ before uploading. Proposition 3.1 confirms the $\epsilon$-DP guarantee. This provides information-theoretic privacy without relying on encryption.
 
 ### Loss & Training
 
-The score function $L$ is BIC (consistent and decomposable). Phase 1 optimizes $\hat{G}=\arg\min_{H\in\mathcal{C}(\mathbb{G})}\max_k R_k^{\mu}(H)$ in the full CPDAG space. Phase 2 narrows the search to partially directed graphs derived from orienting the Phase 1 CPDAG, minimizing $\max_k R_k^{\nu}$. Both phases rely on Assumption 2.1—at least one client has purely observational data ($\Phi^k=\emptyset$) to anchor the common DAG, which is much weaker than knowing all intervention targets.
+The BIC score is used as $L$ (satisfying consistency and decomposability). Stage one optimizes $\hat{G}=\arg\min_{H\in\mathcal{C}(\mathbb{G})}\max_k R_k^{\mu}(H)$ over the full CPDAG space. Stage two narrows the search space to partially oriented graphs derived from the stage-one CPDAG, targeting $\arg\min\max_k R_k^{\nu}$. Both stages rely on Assumption 2.1 (at least one observational client), which is much weaker than knowing intervention targets.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Linear synthetic data generated via Erdős-Rényi (expected edges = $p$). SEM: $V_i = \sum_{V_j \in Pa^G_i} w_{ji} V_j + N_i$. Each client (except one) has a **single structural intervention** biased toward triggering new v-structures. Metrics: SHD (lower is better), F1 (higher is better).
+Linear synthetic data generated via Erdős-Rényi (expected edges = $p$); client data via linear SEM + additive Gaussian noise. Each client (except one observational) contains a **single structural intervention** biased toward creating new v-structures. Metrics: SHD (lower is better), F1 (higher is better).
 
 | Nodes $p$ | Metric | I-PERI | PERI | NOTEARS-ADMM | FedDAG | FedCDH |
 |------|------|------|------|------|------|------|
@@ -87,54 +85,57 @@ Linear synthetic data generated via Erdős-Rényi (expected edges = $p$). SEM: $
 | 20 | SHD | **27.8 ± 4.79** | 30.0 | 29.45 | 30.74 | 61.74 |
 | 8 | F1 | **0.74** | 0.64 | 0.46 | 0.72 | 0.44 |
 
-I-PERI achieved the best SHD in 4 out of 5 scales; F1 advantage is significant in small graphs. Figure 7 shows I-PERI is **several orders of magnitude faster** than baselines on a symlog time axis.
+I-PERI achieved the best SHD in 4 out of 5 scales. Figure 7 shows I-PERI is **several orders of magnitude faster** than baselines on a symlog time axis.
 
 ### Ablation Study
 
-| Configuration | Key Findings |
+| Configuration | Key Finding |
 |------|---------|
 | Full I-PERI | SHD 4.44 ($p=8$). |
-| No Phase 2 (≈ Modified PERI with $\mu$ masking) | SHD 8.40. Degenerates to recovering only the observational CPDAG, losing orientation info. |
-| Client uses GES instead of PC | Consistency in trends; I-PERI remains superior (Appendix B). |
-| Heterogeneous samples (500/1000/2000) | I-PERI remains robust; NOTEARS-ADMM excluded due to equal-sample requirements. |
-| Non-linear data (Appendix B) | I-PERI remains effective. |
+| No Stage 2 | SHD 8.40. Reverts to observational CPDAG; all intervention direction info is lost. |
+| Local GES instead of PC | Identical trends; I-PERI remains superior to all baselines. |
+| Heterogeneous Sample Sizes | I-PERI remains stable; NOTEARS-ADMM excluded due to equal-sample requirements. |
+| Non-linear Data | I-PERI remains effective, demonstrating SEM independence. |
 
 ### Key Findings
 
-- **Interventions can be utilized, not just tolerated**: Removing Phase 2 doubles the SHD error, proving that propagating client v-structures to the server is the key driver of performance.
-- **Client CPDAG quality is the upper bound**: Experiments focused on seeds where client F1 ≥ 0.85, as errors in local graphs propagate to the server.
-- **Low computational overhead**: I-PERI is orders of magnitude faster than NOTEARS-ADMM/FedDAG because it avoids global optimization and uses local regret communication.
-- **DP is "free"**: Since the method only exchanges regret scalars, adding Laplace noise is straightforward and does not alter the communication structure.
+- **Interventions can be "utilized" rather than "tolerated"**: Removing stage two doubles SHD, showing the significance of client v-structures in orientation.
+- **Client CPDAG quality is the upper bound**: Experiments filter for seeds where local F1 ≥ 0.85, as local errors propagate to the server.
+- **Low Computational Overhead**: Orders of magnitude faster than continuous optimization methods due to the absence of joint optimization.
+- **"Free" DP**: Since the method only requires scalar regret, the Laplace mechanism is integrated without structural changes to the protocol.
 
 ## Highlights & Insights
 
-- **Φ-MEC as a new insight**: Extending the identifiability hierarchy from "MEC ⊂ $\mathcal{I}$-MEC" to "MEC ⊂ Φ-MEC ⊂ $\mathcal{I}$-MEC" formalizes the tightest bound under federated + unknown intervention constraints.
-- **Elegant "Double Negative" Masking**: Phase 1 ("directed-first + exemption") avoids wrong penalties, while Phase 2 ("undirected-first + exemption") adopts client orientations. The same framework switches roles by changing one rule.
-- **Portable tricks**: Modeling heterogeneity as "interventions" rather than "noise" can be applied to federated graph learning or RL.
-- **Balance of Theory and Privacy**: I-PERI provides a rigorous DP proof (Lemma 3.1 sensitivity + Proposition 3.1) and fixes a minor error in the original PERI paper.
+- **Concept of Φ-MEC**: Extends the identifiability hierarchy from "MEC ⊂ ℐ-MEC" to "MEC ⊂ Φ-MEC ⊂ ℐ-MEC", defining the tightest upper bound under "unknown interventions + privacy".
+- **Elegant Two-stage Masking**: Uses "directed priority" to avoid false penalties and "undirected priority" to force adoption of client directions. The transition between "recovery" and "refinement" is achieved by changing a single rule.
+- **Transferable Trick**: Modeling client heterogeneity as "interventions" rather than noise is applicable to federated graph/reinforcement learning.
+- **Theory and Privacy Balance**: Provides a formal DP proof and sensitivity bound, which is rare in the FCD literature.
 
 ## Limitations & Future Work
 
-- **Dependence on client CPDAG accuracy**: If local discovery fails, the server will adopt erroneous orientations.
-- **Requirement for Assumption 2.1**: At least one observational client is needed; if all are intervened, convergence guarantees and the Φ-MEC definition must be revisited.
-- **Standard Assumptions**: Assumes causal sufficiency, faithfulness, and no selection bias. Extending to latent variables is future work.
-- **Intervention Type**: Mainly covers structural interventions. Parametric interventions (changing conditional distributions only) result in Phase 2 providing no extra orientation benefits over PERI.
+- **Dependence on Local Accuracy**: Errors in local CPDAGs amplify at the server level.
+- **Assumption 2.1 Necessity**: Requires at least one observational client; if all are intervened upon, convergence and Φ-MEC definitions require reassessment.
+- **Assumptions of Sufficiency/Faithfulness**: Does not yet handle latent confounders or selection bias.
+- **Focus on Structural Interventions**: Parametric interventions (altering distribution only) do not provide the direction info needed for the second stage.
+- **Lack of Empirical DP Curves**: Theoretical sensitivity is provided, but the SHD utility-privacy trade-off is not empirically scanned.
 
 ## Related Work & Insights
 
-- **vs PERI (Mian et al., 2023)**: PERI assumes a shared observational DAG. I-PERI generalizes this to unknown interventions and fixes an error in PERI's sensitivity proof.
-- **vs $\mathcal{I}$-MEC (Hauser & Bühlmann 2012)**: They require known targets to get a tighter $\mathcal{I}$-CPDAG. I-PERI sacrifices some identifiability for privacy feasibility.
-- **vs FedDAG / NOTEARS-ADMM**: These use continuous optimization or distributed tests assuming isomorphism and rarely discuss DP. I-PERI is faster and explicitly handles intervention heterogeneity.
+- **vs PERI (Mian et al., 2023)**: Generalizes PERI to unknown client interventions and adds a refinement mechanism (stage two) that PERI lacks; also fixes a sensitivity proof error in PERI.
+- **vs Hauser & Bühlmann (2012) ℐ-MEC**: ℐ-MEC is tighter but requires known intervention targets, which violates federated privacy.
+- **vs FedDAG / NOTEARS-ADMM**: These assume isomorphic client graphs and lack DP; I-PERI is significantly faster and handles intervention heterogeneity.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Φ-MEC is an original and well-defined equivalence class with solid convergence proofs.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive scaling and robustness tests; lacks a real-world medical data evaluation and ε-utility sweep.
-- Writing Quality: ⭐⭐⭐⭐ High readability with clear definitions and diagrams.
-- Value: ⭐⭐⭐⭐ Provides a practical baseline for cross-institutional multi-center research using causal discovery.
+- Novelty: ⭐⭐⭐⭐⭐ Φ-MEC is a well-defined new equivalence class under specific constraints with solid convergence proofs.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers various variable/client scales and non-linear data; missing empirical utility-privacy curves.
+- Writing Quality: ⭐⭐⭐⭐ Definitions and theorem-figure pairings are clear; math notation is dense.
+- Value: ⭐⭐⭐⭐ Provides a practical baseline for cross-institution studies with clear privacy and intervention handling.
 
 <!-- RELATED:START -->
-
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
+...
+</div>
+<!-- RELATED:END -->
 
 ## Related Papers
 
@@ -142,7 +143,7 @@ I-PERI achieved the best SHD in 4 out of 5 scales; F1 advantage is significant i
 - [\[ICML 2026\] FedHPro: Federated Hyper-Prototype Learning via Gradient Matching](fedhpro_federated_hyper-prototype_learning_via_gradient_matching.md)
 - [\[ICCV 2025\] FakeRadar: Probing Forgery Outliers to Detect Unknown Deepfake Videos](../../ICCV2025/ai_safety/fakeradar_probing_forgery_outliers_to_detect_unknown_deepfake_videos.md)
 - [\[ICCV 2025\] Membership Inference Attacks with False Discovery Rate Control](../../ICCV2025/ai_safety/membership_inference_attacks_with_false_discovery_rate_control.md)
-- [\[ICML 2025\] Avoiding Leakage Poisoning: Concept Interventions Under Distribution Shifts](../../ICML2025/ai_safety/avoiding_leakage_poisoning_concept_interventions_under_distribution_shifts.md)
+- [\[ICML 2026\] When Should an AI Scientist Stop? Verifiable Experiment Steering and Refusal for Autonomous Discovery](when_should_an_ai_scientist_stop_verifiable_experiment_steering_and_refusal_for_.md)
 
 </div>
 

@@ -2,12 +2,12 @@
 title: >-
   [Paper Note] Distributional Open-Ended Evaluation of LLM Cultural Value Alignment Based on Value Codebook
 description: >-
-  [ICML 2026][AIGC Detection][Paper Note] DOVE automatically constructs a compact "value codebook" from 10,000 human texts using rate-distortion variational optimization, then measures the distributional difference between human and LLM long-form texts in the value space via Unbalanced Optimal Transport. Across 12 LLMs, it improves the "evaluation-downstream t
+  [ICML 2026][AIGC Detection][Paper Note] DOVE utilizes rate-distortion variational optimization to automatically construct a compact "Value Codebook" from 10,000 human texts. It then uses Unbalanced Optimal Transport (UOT) to measure distribution differences between human and LLM long-form texts in the value space, improving the "Evaluation-Downstream Task" c
 tags:
   - ICML 2026
   - AIGC Detection
 date: 2026-05-08
-content_hash: 2d045c5330eda209
+content_hash: 5bdc8d193a9a61e1
 ---
 # Distributional Open-Ended Evaluation of LLM Cultural Value Alignment Based on Value Codebook
 
@@ -15,65 +15,65 @@ content_hash: 2d045c5330eda209
 **arXiv**: [2604.06210](https://arxiv.org/abs/2604.06210)  
 **Code**: None  
 **Area**: LLM Alignment / Cultural Value Evaluation  
-**Keywords**: Cultural Alignment, Value Evaluation, Value Codebook, Rate-Distortion, Unbalanced Optimal Transport
+**Keywords**: Cultural Alignment, Value Evaluation, Value Codebook, Rate-Distortion, Unbalanced Optimal Transport  
 
 ## TL;DR
-DOVE automatically constructs a compact "value codebook" from 10,000 human texts using rate-distortion variational optimization, then measures the distributional difference between human and LLM long-form texts in the value space via Unbalanced Optimal Transport. Across 12 LLMs, it improves the "evaluation-downstream task" correlation from $\le 24\%$ to 31.56%.
+DOVE utilizes rate-distortion variational optimization to automatically construct a compact "Value Codebook" from 10,000 human texts. It then uses Unbalanced Optimal Transport (UOT) to measure distribution differences between human and LLM long-form texts in the value space, improving the "Evaluation-Downstream Task" correlation from $\le 24\%$ in baselines to $31.56\%$ across 12 LLMs.
 
 ## Background & Motivation
 
-**Background**: Existing LLM cultural value evaluations either directly apply social science questionnaires (WVS, Hofstede) or use multiple-choice questions (MCQs) written by humans/LLMs to let models select the option closest to a specific culture. A few generative approaches merely extract keywords or use LLMs as judges to score open-ended responses.
+**Background**: Existing LLM cultural value evaluations either directly adopt social science questionnaires (WVS, Hofstede) or use multiple-choice questions (MCQs) written by humans/LLMs to let models select the option closest to a specific culture. A few generative works only extract keywords from open responses or use LLMs as judges for scoring.
 
-**Limitations of Prior Work**: The authors summarize these issues into the **C³ challenge** (Construct / Composition / Context gaps): (1) Construct gap: Discriminative MCQs only test "value knowledge"; correct answers do not imply true value tendencies, and they are sensitive to option framing and social desirability bias. (2) Composition gap: Averaging item scores into a total score completely flattens the "heterogeneity within cultural sub-groups." (3) Context gap: Constrained MCQs are severely misaligned with the open-ended long-text generation scenarios where LLMs are actually deployed.
+**Limitations of Prior Work**: The authors summarize the limitations of this line of work into a unified **C³ challenge** (Construct / Composition / Context gaps): (1) Construct gap: Discriminative MCQs only test "value knowledge"; a correct answer does not imply a true value tendency, and they are highly sensitive to option framing and social desirability bias. (2) Composition gap: Averaging item scores into a total score completely erases the "heterogeneity of sub-groups within the same culture." (3) Context gap: Restricted MCQs are severely misaligned with the open-ended long-text generation scenarios where LLMs are actually deployed.
 
-**Key Challenge**: Faithfully characterizing the "value tendency expressed by an LLM in a cultural context" essentially requires comparing two **long-text distributions** (human-written vs. LLM-generated). However, long texts contain both value signals and substantial value-irrelevant content. Traditional questionnaires cannot handle this, Bag-of-Words/rule-based methods are inaccurate, and pure LLM-as-a-judge is unstable.
+**Key Challenge**: Faithfully characterizing the "value tendency expressed by an LLM when facing a specific culture" essentially involves comparing two **long-text distributions** (human-written vs. LLM-written). However, long texts contain both value signals and a large amount of value-irrelevant content. Traditional questionnaires cannot handle this, bag-of-words/rules are inaccurate, and pure LLM-as-judge is unstable.
 
-**Goal**: Construct an open-ended distribution-level evaluation framework that does not rely on pre-defined value systems or option framing, filling all three C³ gaps and providing stronger predictive power for real downstream tasks.
+**Goal**: Construct an open-ended distribution-level evaluation framework that does not rely on pre-defined value systems or option framing, filling all three C³ gaps simultaneously while providing stronger predictive power for downstream real-world tasks.
 
-**Key Insight**: Borrow the tradition of "coding" from social sciences—compressing long documents into a set of discrete "value codes"—and treat it as a lossy compression problem. This allows the use of **Rate-Distortion theory** + **VQ-VAE style variational optimization** to automatically learn a value codebook. Distributional comparison is handled via **Unbalanced Optimal Transport (UOT)**, which preserves geometric structure while tolerating mass mismatch caused by sub-groups.
+**Key Insight**: Borrowing the "coding" tradition from social science—which compresses long documents into a set of discrete "value codes"—the authors frame this as a lossy compression problem. Thus, a value codebook can be automatically learned using **Rate-Distortion Theory** + **VQ-VAE style variational optimization**. Distribution comparison is then performed using **Unbalanced Optimal Transport (UOT)**, which preserves geometric structure while tolerating mass mismatches caused by sub-groups.
 
-**Core Idea**: Reformulate "Evaluating LLM Cultural Alignment" as "Comparing two distributions via UOT distance on an automatically learned value codebook."
+**Core Idea**: Reformulate "Evaluating LLM cultural alignment" as "comparing two distributions via UOT distance on an automatically learned value codebook."
 
 ## Method
 
 ### Overall Architecture
-The core question DOVE answers is "how close is the value tendency expressed by an LLM in a cultural context to that of real humans," framing it as a distribution comparison problem. Given a target culture $\bm g$ (e.g., Japan) and a model $p_{\bm\theta}$, it first collects human long texts $\hat p^{\bm g}(\bm x)$ and LLM-generated texts $p_{\bm\theta}(\bm x|\bm o)$ on identical topics $\bm o$. Each document is then projected onto a compact, automatically learned **value codebook** $\mathcal{\bm C}=(\bm c_1,\dots,\bm c_K)$ as a $K$-dimensional value probability vector. Finally, Unbalanced Optimal Transport (UOT) measures the distance between the human distribution $\bm a^{\bm g}$ and the LLM distribution $\bm a^{\bm\theta}$, rescaled into an alignment score. The process does not fine-tune any LLM parameters; the value recognizer $q_{\bm\omega}$ and reconstructor $p_{\bm\phi}$ are black-box calls, and the codebook is derived via ICL + variational EM iterations.
+The core problem DOVE addresses is "how close the value tendency expressed by an LLM in a specific cultural context is to that of humans," translating this into a distribution comparison problem. Given a target culture $\bm g$ (e.g., Japan) and a target LLM $p_{\bm\theta}$, it first collects human long texts $\hat p^{\bm g}(\bm x)$ and LLM-generated long texts $p_{\bm\theta}(\bm x|\bm o)$ on the same topic $\bm o$. Then, it projects each document into a $K$-dimensional value probability vector over a set of compact, automatically learned **Value Codebooks** $\mathcal{\bm C}=(\bm c_1,\dots,\bm c_K)$. Finally, it uses Unbalanced Optimal Transport (UOT) to measure the distance between the human-side distribution $\bm a^{\bm g}$ and the LLM-side distribution $\bm a^{\bm\theta}$, rescaling it into an alignment score. The entire process requires no fine-tuning of LLM parameters; the value recognizer $q_{\bm\omega}$ and reconstructor $p_{\bm\phi}$ are black-box calls, and the codebook is obtained via ICL + Variational EM iterations.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
     subgraph CB["Rate-Distortion Variational Value Codebook (Offline Construction)"]
         direction TB
-        H0["10k Human/LLM Long Texts"] --> H1["Rate-Distortion Variational EM Iterations<br/>split / merge / recluster"]
+        H0["10,000 Human/LLM Long Texts"] --> H1["Rate-Distortion Variational EM Iteration<br/>split / merge / recluster"]
         H1 --> H2["Compact Value Codebook C"]
     end
-    G["Long Document Distribution as Eval Signal<br/>Collect Human + LLM Texts for Topic o"]
-    CB --> P["Value Recognizer Soft Assignment<br/>Doc → K-dim Value Prob Vector"]
+    G["Long Document Distribution as Evaluation Signal<br/>Human Texts + LLM Generated Texts under Topic o"]
+    CB --> P["Value Recognizer Soft Assignment<br/>Each Document → K-dim Value Probability Vector"]
     G --> P
-    P --> U["Valuational Unbalanced Optimal Transport (UOT)<br/>Compare Human vs. LLM Value Distributions"]
-    U --> R["Debias + Rescale to Cultural Alignment Score r"]
+    P --> U["Valuized Unbalanced Optimal Transport UOT<br/>Comparing Human vs. LLM Value Distributions"]
+    U --> R["Debiasing + Rescaling to Cultural Alignment Score r"]
 ```
 
 ### Key Designs
 
-**1. Rate-Distortion Variational Value Codebook: Letting Data Define the Value System**
+**1. Rate-Distortion Variational Value Codebook: Leaving the "Which Value System to Use" Question to the Data**
 
-Traditional evaluations fixate on a priori systems like Schwartz/Hofstede (inducing researcher bias) or rely on LLM keyword extraction (noisy and redundant), causing the Construct gap. DOVE treats the mapping "Document $\bm x$ → Value Code Sequence $\bm s$" as lossy compression, using the codebook as discrete latent variables in a VQ-VAE. A compact, informative, low-redundancy set of value codes emerges from unlabeled long texts as a common "coordinate system."
+Traditional value evaluations are either tied to prior systems like Schwartz/Hofstede (introducing researcher bias) or rely on LLMs to extract keywords (noisy and prone to repeating value-irrelevant semantics), which is the root of the Construct gap. DOVE treats the mapping from "document $\bm x$ → value code sequence $\bm s$" as a lossy compression, treating the codebook as discrete latents in VQ-VAE. This allows a compact, informative, and low-redundancy set of value codes to emerge from unlabeled long texts as a common "coordinate system."
 
-The ELBO is derived as: $\mathbb E_{\hat p(\bm x)}[\log p(\bm x|\mathcal{\bm C})] \ge \mathbb E_{\hat p(\bm x)}\{\mathbb E_{q_{\bm\omega}}[\log p(\bm x|\bm s,\mathcal{\bm C})] - \mathrm{KL}[q_{\bm\omega}\|p(\bm s|\mathcal{\bm C})]\}$. Adding rate-distortion regularization yields the target (Eq. 3) with three terms: an information preservation term $-\log p_{\bm\phi}(\bm x|\bm s,\mathcal{\bm C})$ ensuring codes can reconstruct the original, a per-document code entropy term $-\beta_1 H_q(\bm s|\bm x,\mathcal{\bm C})$ encouraging multi-code usage per document, and a prior entropy term $\beta_2 H_q(\bm s|\mathcal{\bm C})$ encouraging uniform code distribution. Black-box optimization follows a Variational EM style: $N_1$ code sets $\bm s_j$ are sampled to estimate the score $\mathcal S(\mathcal{\bm C}^{t-1})$, and the codebook is refreshed via three atomic actions (Algorithm 1)—**Extension** (split high-distortion codes), **Merge** (combine low-usage codes), and **Re-creation** (re-clustering). For projection, $q_{\bm\omega}$ extracts $M'$ natural language value phrases $\bm v$ and performs soft assignment via $q_{\bm\omega}(z=k|\bm x,\mathcal{\bm C})=\frac{1}{M'}\sum_j \mathrm{softmax}_{\mathcal{\bm C}}[\mathrm{sim}(\bm e_{\bm v_j},\bm e_{\bm c_k})/\sigma^2]$.
+Specifically, an ELBO is derived: $\mathbb E_{\hat p(\bm x)}[\log p(\bm x|\mathcal{\bm C})] \ge \mathbb E_{\hat p(\bm x)}\{\mathbb E_{q_{\bm\omega}}[\log p(\bm x|\bm s,\mathcal{\bm C})] - \mathrm{KL}[q_{\bm\omega}\|p(\bm s|\mathcal{\bm C})]\}$. Rate-distortion regularization is added to obtain the final objective (Eq. 3), consisting of three terms: an information retention term $-\log p_{\bm\phi}(\bm x|\bm s,\mathcal{\bm C})$ to ensure codes can reconstruct the original text, a single-document code entropy term $-\beta_1 H_q(\bm s|\bm x,\mathcal{\bm C})$ to encourage multi-code usage per document, and a prior entropy term $\beta_2 H_q(\bm s|\mathcal{\bm C})$ to encourage uniform usage of all codes. By explicitly incorporating "information retention" and "redundancy reduction," the codebook is forced to preserve value signals without piling up redundant dimensions. Optimization uses a Variational EM-style black-box approach: each round samples $N_1$ sets of codes $\bm s_j$ to estimate the codebook score $\mathcal S(\mathcal{\bm C}^{t-1})$, then refreshes the codebook using three atomic actions (Algorithm 1)—**Extension** (splitting codes with high counts and distortion), **Merge** (combining low-utilization codes), and **re-creation** (re-clustering). The value recognizer $q_{\bm\omega}$ extracts $M'$ natural language value phrases $\bm v$, and performs soft assignment $q_{\bm\omega}(z=k|\bm x,\mathcal{\bm C})=\frac{1}{M'}\sum_j \mathrm{softmax}_{\mathcal{\bm C}}[\mathrm{sim}(\bm e_{\bm v_j},\bm e_{\bm c_k})/\sigma^2]$ instead of hard arg-max to suppress noise.
 
-**2. Valuational Unbalanced Optimal Transport: Letting Distribution Shape Speak**
+**2. Valuized Unbalanced Optimal Transport Metric: Letting Distribution Shape Speak Over Means**
 
-To solve the Composition gap, DOVE uses UOT to compare $\bm a^{\bm g}$ and $\bm a^{\bm\theta}$ across $K$ value codes. The objective is $\mathcal D_{\mathrm{UOT}}(\hat p^{\bm g},p_{\bm\theta})=\min_{\bm\pi\ge 0}\sum_{i,j}[D_{i,j}\bm\pi_{i,j}+\epsilon\bm\pi_{i,j}(\log\bm\pi_{i,j}-1)]+\gamma\mathrm{KL}[\bm\pi\bm 1\|\bm a^{\bm g}]+\gamma\mathrm{KL}[\bm\pi^T\bm 1\|\bm a^{\bm\theta}]$. Unlike KL-divergence, which fails on zero-mass terms, UOT allows total masses to be inconsistent, accommodating cases where LLMs or humans lack certain value codes entirely while retaining the geometric properties of Wasserstein distance.
+After addressing the Construct gap, the Composition gap remains—averaging scores (as in WVS/CDEval) collapses "value disagreements between different sub-groups within the same culture" into a single mean, losing critical distribution shape information. DOVE treats $K$ value codes as centers in the transport space and uses UOT to compare $\bm a^{\bm g}$ and $\bm a^{\bm\theta}$: $\mathcal D_{\mathrm{UOT}}(\hat p^{\bm g},p_{\bm\theta})=\min_{\bm\pi\ge 0}\sum_{i,j}[D_{i,j}\bm\pi_{i,j}+\epsilon\bm\pi_{i,j}(\log\bm\pi_{i,j}-1)]+\gamma\mathrm{KL}[\bm\pi\bm 1\|\bm a^{\bm g}]+\gamma\mathrm{KL}[\bm\pi^T\bm 1\|\bm a^{\bm\theta}]$. UOT is preferred over KL or standard OT because KL fails with zero-mass terms, while UOT allows the total mass on both sides to be inconsistent, fitting the reality that LLMs and humans may have structural vacancies in certain value codes, while retaining Wasserstein's geometric properties.
 
-The cost matrix $D_{i,j}$ incorporates a **co-occurrence discount**: $1-\mathbb E[\min(\bm a_i,\bm a_j)]/(\mathbb E[\max(\bm a_i,\bm a_j)]+\epsilon_2)$. If two values frequently co-occur in human texts, their transport cost is reduced. This aligns with the intuition that values appearing together are substitutes, preventing pure semantic OT from overestimating cultural differences between synonyms that appear in different contexts. The score is debiased via $\mathcal D_{\mathrm{UOT}}\leftarrow \hat{\mathcal D}_{\mathrm{UOT}}(\hat p^{\bm g},p_{\bm\theta})-\tfrac12\hat{\mathcal D}_{\mathrm{UOT}}(\hat p^{\bm g},\hat p^{\bm g})-\tfrac12\hat{\mathcal D}_{\mathrm{UOT}}(p_{\bm\theta},p_{\bm\theta})$ and rescaled to $(0.1-\mathcal D_{\mathrm{UOT}})\times 10$.
+The design of the cost matrix $D_{i,j}$ is critical: it calculates semantic distance $\rho(\bm c_i,\bm c_j)$ multiplied by a **co-occurrence discount** $1-\mathbb E[\min(\bm a_i,\bm a_j)]/(\mathbb E[\max(\bm a_i,\bm a_j)]+\epsilon_2)$. If two values frequently co-occur in human documents, their transport cost is reduced. This aligns with the intuition that replacing values that are semantically similar and frequently coexist is reasonable, avoiding the overestimation of cultural differences common in pure semantic OT. Solving via Unbalanced Sinkhorn iterations, the final score $r=(0.1-\mathcal D_{\mathrm{UOT}})\times 10$ is rescaled after debiasing.
 
 **3. Long Document Distribution as Evaluation Signal: Aligning Medium with Deployment**
 
-The Context gap is addressed by using open-ended generation. Rather than MCQs or Likert scales, LLMs are prompted with topics $\bm o$ (e.g., "The role of money in life") to generate essays/blogs $\bm x\sim p_{\bm\theta}(\bm x|\bm o)$. Long texts exhibit more stable value signals than short answers, aligning the evaluation medium with actual deployment scenarios. The authors constructed **DOVE Set**: 824 topics across KR/JP/CN/US, with 15,213 human documents (avg. 1,034 tokens).
+The third Context gap arises from the evaluation medium: restricted options and averaged scoring naturally limit value richness and misalign with open-ended generation deployment. DOVE abandons MCQs and Likert scales, conditioning on a topic $\bm o$ (e.g., "the role of money in life") and allowing the LLM to generate long texts $\bm x\sim p_{\bm\theta}(\bm x|\bm o)$ like essays or blogs. Comparing these distributions mirrors the psychological observation that "writing reflects personality," providing more stable signals and aligning the evaluation signal with the deployment medium. To support this, the authors constructed the **DOVE Set**: covering KR/JP/CN/US cultures, 824 value-oriented topics, and 15,213 human long documents (averaging 1,034 tokens), manually filtered for quality and relevance.
 
 ### Loss & Training
-DOVE does not update LLM parameters. $q_{\bm\omega}$ uses GPT-5.2, $p_{\bm\phi}$ uses GPT-4.1 nano, and embeddings use OpenAI text-embedding-3-large. Codebook optimization involves $T=10$ iterations of Variational EM. Hyperparameters: $N_1=3,N_2=1,\beta_1=0.3,\beta_2=0.08,\tau_1=1.0$. Training corpus contains $N=10,676$ mixed documents from humans and various LLMs (GPT-4o, DeepSeek-v3.1, Llama-4-Maverick).
+DOVE does not update any target LLM parameters. $q_{\bm\omega}$ utilizes GPT-5.2, $p_{\bm\phi}$ uses GPT-4.1 nano, and embeddings use OpenAI text-embedding-3-large. Codebook optimization is an iterative Variational EM process: fixing $\mathcal{\bm C}^{t-1}$ to estimate $\mathcal S(\mathcal{\bm C}^{t-1})$, then applying split/merge/recluster to obtain $\mathcal{\bm C}^t$ until convergence or $T=10$ rounds. Hyperparameters: $N_1=3,N_2=1,\beta_1=0.3,\beta_2=0.08,\tau_1=1.0$. Training corpus includes $N=10,676$ mixed documents from humans and GPT-4o/DeepSeek-v3.1/Llama-4-Maverick.
 
 ## Key Experimental Results
 
@@ -88,45 +88,45 @@ DOVE does not update LLM parameters. $q_{\bm\omega}$ uses GPT-5.2, $p_{\bm\phi}$
 | NaVAB | -1.15% | 4.43% | -88.00% | -20.77% |
 | **DOVE** | **5.60%** | **6.00%** | 0.89% | **31.56%** |
 
-Across 12 LLMs and 4 cultures, DOVE achieves an average correlation of 31.56% with downstream "cultural harmful content detection" tasks (e.g., KOLD, HateXplain), 1.3 times higher than the best baseline (CDEval). Many baselines show negative correlations, indicating their results have little predictive value for real deployment.
+Across 12 LLMs and 4 cultures, DOVE's predictive correlation on downstream "cultural harmful content detection" tasks (e.g., KOLD, HateXplain) reached 31.56%, 1.3x that of the runner-up CDEval. Several baselines yielded negative correlations, suggesting their evaluation results have little indicative value for real-world deployment.
 
 ### Ablation Study
 
 | Dimension | DOVE Performance | Description |
 |------|----------|------|
-| Sample Reliability (Cronbach α) | High | Stability reached with 500 documents per culture. |
-| Test–retest Stability | High | Consistent scores across three independent runs. |
-| Template Invariance | High | Robust to prompt template changes, outperforming WVS/NormAd. |
-| Topic Efficiency | High | 300 topics suffice to outperform all baselines. |
-| Codebook Sensitivity | Positive | $\mathcal S(\mathcal{\bm C})$ correlates with validity; validates R1+R2 design. |
+| Sampling Reliability (Cronbach $\alpha$) | High | Stable after 500 documents per culture |
+| Test–retest Stability | High | Consistent scores across three independent runs |
+| Template Invariance | High | Robust to prompt template changes, outperforming WVS/NormAd |
+| Topic Robustness | > Baselines at 300 topics | More efficient than typical large-scale LLM benchmarks |
+| Codebook Size Sensitivity | $\mathcal S(\mathcal{\bm C})$ correlates with validity | Small capacity vs. large redundancy tradeoff verifies R1+R2 design |
 
 ### Key Findings
-- All constrained methods (WVS, GOQA, CDEval, NormAd) exhibit negative convergent validity, meaning their scores contradict each other. DOVE is the only one to achieve a positive value.
-- NaVAB's discriminant validity is -88%, attributed to its reliance on human-written reference statements; this proves the advantage of automated codebooks over pre-defined references.
-- In value priming experiments, only DOVE and NormAd show significant positive $\Delta^{\bm g}$ when injecting cultural context. DOVE also shows the cleanest directionality with the largest negative $\Delta^{\bm g^-}$ for opposite cultures.
+- All restricted methods (WVS/GOQA/CDEval/NormAd) showed negative convergent validity—meaning their scores contradict each other. Questionnaires and MCQs fail to reach consensus on "measuring the same thing"; only DOVE achieved a positive range.
+- NaVAB's discriminant validity dropped to -88%, attributed to its reliance on human-written reference statements and inability to distinguish culture similarity structures; this highlights the advantage of "Open Generation + Automatic Codebook" over "Open Generation + Pre-defined References."
+- In Value Priming experiments (injecting cultural ICL to see if scores rise), only DOVE and NormAd showed significant positive $\Delta^{\bm g}$, with DOVE showing the cleanest directionality and the largest negative $\Delta^{\bm g^-}=-5.38\%$ for opposing cultures.
 
 ## Highlights & Insights
-- Reformulating evaluation as "Rate-Distortion Compression + Optimal Transport" neatly sidesteps the sociological debate over "correct" value systems by using representation learning tools.
-- The "co-occurrence discount" in the cost matrix prevents overestimating differences by acknowledging that semantically distinct codes often appear together in real human expression.
-- The use of ICL + Variational EM for codebook learning ensures the pipeline is LLM-agnostic and upgrades automatically as foundation models improve.
+- Reformulating "evaluation design" as "rate-distortion lossy compression + Optimal Transport" is the most striking aspect—it bypasses the unresolvable social science debate over "which value system to use" by borrowing mature tools from representation learning.
+- The "co-occurrence discount" in the cost matrix is ingenious: OT based solely on semantic similarity tends to overestimate cultural differences. Introducing data-driven co-occurrence brings the metric closer to "cultural semantic geometry," a trick transferable to any "concept distribution" comparison (e.g., persona or style evaluation).
+- The black-box iteration (ICL + Variational EM) without fine-tuning makes the entire pipeline LLM-agnostic; as LLMs improve, the "evaluator" automatically upgrades without a baseline redesign.
 
 ## Limitations & Future Work
-- Heavy reliance on the GPT-5.2/GPT-4.1 nano toolchain introduces circular risk, where the "evaluator" perspective might be inherent to those closed-source models.
-- Limited to "national" granularity (KR/JP/CN/US); the ability to capture sub-cultures or cross-regional groups remains to be verified.
-- Downstream validity relies on harmful text detection as a proxy; relevance to other tasks like creative preference or ethics is unknown.
-- Future Work: Extend codebooks to hierarchical levels (universal → cultural → sub-group) and transition $q_{\bm\omega}$ to open-source models.
+- The evaluation still relies heavily on the GPT-5.2 / GPT-4.1 nano / OpenAI embedding toolchain. The "value perspective" implicit in the codebook may carry biases from the evaluator LLM itself, creating a circular risk when evaluating LLMs.
+- Coverage is limited to 4 "national" cultures (KR/JP/CN/US); the capacity to capture sub-cultures or trans-regional sub-groups remains implicitly validated through UOT's heterogeneity support but not directly tested on the DOVE Set.
+- Downstream "predictive validity" uses hate/harmful text detection as a proxy; whether the 31.56% correlation holds for other tasks like creative preference or ethics remains to be seen.
+- Future directions: Expanding the codebook to multiple levels (universal → cultural → sub-group) and using contrastive objectives to emphasize cross-cultural distinctions; replacing $q_{\bm\omega}$ with open-source models to break the "closed-source LLM evaluating closed-source LLM" loop.
 
 ## Related Work & Insights
-- **vs WVS / GOQA / CDEval**: These measures "value knowledge," while DOVE measures "value tendency" through long-form distributions, leading to 8–44 pp higher downstream correlation.
-- **vs NaVAB**: Both use open-ended generation, but NaVAB's human-written references lead to severe reference bias. DOVE's data-driven codes resolve this.
-- **vs LLM-as-a-judge (Shi 2024)**: Traditional generative judges are influenced by model bias and framing; DOVE decomposes judgment into "code identification + distribution distance," making it more interpretable and reproducible.
-- **Insight**: This paradigm (distributed comparison on self-learned discrete codes) is applicable to any alignment evaluation involving persona, style, or safety where populations, rather than single data points, are being compared.
+- **vs. WVS / GOQA / CDEval**: These measure "value knowledge" via questionnaires/MCQs, while DOVE measures "value tendency" via long-text distributions; DOVE's downstream correlation is 8–44 pp higher, driven by the evaluation medium.
+- **vs. NaVAB**: Also uses open generation but relies on human-written references, leading to significant reference bias (-88% discriminant validity); DOVE uses self-learned codebooks to abstract references into a data-driven set of codes.
+- **vs. LLM-as-a-judge (Shi 2024, Mushtaq 2025)**: Those methods use direct LLM scoring, which is affected by judge model sentiment/framing; DOVE decomposes "judgment" into "identifying codes + calculating distribution distance," with every step constrained by rate-distortion objectives for improved interpretability and reproducibility.
+- **Insight**: Any evaluation of "alignment between model and human behavior" (personality, style, safety, domain-specific) can adopt the "self-learned discrete codes + OT distribution comparison" paradigm, which reflects group distribution structures better than aggregate scores.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Elegant integration of rate-distortion and UOT to solve the C³ gaps.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive cross-model and cross-culture verification; only lacks human blind-testing of the codebook.
-- Writing Quality: ⭐⭐⭐⭐⭐ Logical C³ framework and clear algorithmic derivations.
-- Value: ⭐⭐⭐⭐⭐ Provides a scalable framework and a scarce dataset (DOVE Set) for the alignment community.
+- Novelty: ⭐⭐⭐⭐⭐ Uses Rate-Distortion + UOT to comprehensively address the three C³ gaps in a clean methodology.
+- Experimental Thoroughness: ⭐⭐⭐⭐ 12 LLMs × 4 Cultures × 5 Baselines + Reliability tests + Codebook visualization with a 15K document set; lacks "blind human evaluation of codebook quality."
+- Writing Quality: ⭐⭐⭐⭐⭐ The C³ framework is solid, and the mathematical derivations and algorithms are cohesive and reproducible.
+- Value: ⭐⭐⭐⭐⭐ Provides a truly scalable framework for LLM cultural alignment evaluation; the DOVE Set itself is a scarce resource with significant drive for the alignment community.
 
 <!-- RELATED:START -->
 
@@ -138,7 +138,7 @@ Across 12 LLMs and 4 cultures, DOVE achieves an average correlation of 31.56% wi
 - [\[CVPR 2025\] SGC-Net: Stratified Granular Comparison Network for Open-Vocabulary HOI Detection](../../CVPR2025/aigc_detection/sgc-net_stratified_granular_comparison_network_for_open-vocabulary_hoi_detection.md)
 - [\[ICML 2026\] Black-Box Detection of LLM-Generated Text Using Generalized Jensen-Shannon Divergence](black-box_detection_of_llm-generated_text_using_generalized_jensen-shannon_diver.md)
 - [\[ACL 2026\] Temporal Flattening in LLM-Generated Text: Comparing Human and LLM Writing Trajectories](../../ACL2026/aigc_detection/temporal_flattening_in_llm-generated_text_comparing_human_and_llm_writing_trajec.md)
-- [\[AAAI 2026\] Optimized Algorithms for Text Clustering with LLM-Generated Constraints](../../AAAI2026/aigc_detection/optimized_algorithms_for_text_clustering_with_llm-generated_constraints.md)
+- [\[ICML 2026\] LLM Self-Recognition: Steering and Retrieving Activation Signatures](llm_self-recognition_steering_and_retrieving_activation_signatures.md)
 
 </div>
 

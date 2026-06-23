@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Proxy Compression for Language Modeling
 description: >-
-  [ICML 2026][LLM Efficiency][byte-level LM] The authors propose "proxy compression"—training a model where 90% of the data is fed as short sequences produced by a tokenizer or neural compressor and 10% as raw UTF-8 bytes, combined with sentinel tokens and a brief in-context translation warm-up. During inference, all compressors are discarded, and the model opera
+  [ICML 2026][LLM Efficiency][byte-level LM] The authors propose "proxy compression"—training where 90% of data is fed as short sequences produced by a tokenizer/neural compressor and 10% as raw UTF-8 bytes, coupled with sentinel tokens and a brief in-context translation warm-up. During inference, all compressors are discarded, and the model processes only raw by
 tags:
   - ICML 2026
   - LLM Efficiency
@@ -12,77 +12,80 @@ tags:
   - arithmetic coding
   - neural compressor
 date: 2026-05-08
-content_hash: bb75538d5d89d0f2
+content_hash: 0317ebb936b32e78
 ---
 # Proxy Compression for Language Modeling
 
 **Conference**: ICML 2026  
 **arXiv**: [2602.04289](https://arxiv.org/abs/2602.04289)  
 **Code**: https://github.com/LZhengisme/proxy-compression (Available)  
-**Area**: LLM Efficiency / Byte-level Modeling / Tokenizer Replacement  
+**Area**: LLM Efficiency / Byte-level Modeling / Tokenization Alternatives  
 **Keywords**: byte-level LM, tokenizer-free inference, mixed-representation training, arithmetic coding, neural compressor
 
 ## TL;DR
-The authors propose "proxy compression"—training a model where 90% of the data is fed as short sequences produced by a tokenizer or neural compressor and 10% as raw UTF-8 bytes, combined with sentinel tokens and a brief in-context translation warm-up. During inference, all compressors are discarded, and the model operates solely on raw bytes. This approach significantly outperforms pure byte-level models under fixed compute and matches or exceeds tokenizer baselines at large scales.
+The authors propose "proxy compression"—training where 90% of data is fed as short sequences produced by a tokenizer/neural compressor and 10% as raw UTF-8 bytes, coupled with sentinel tokens and a brief in-context translation warm-up. During inference, all compressors are discarded, and the model processes only raw bytes; yet, it significantly outperforms pure byte-level models under fixed compute and matches or exceeds tokenizer baselines at larger scales.
 
 ## Background & Motivation
-**Background**: Modern LMs are almost entirely built on "external fixed tokenizers." Methods like BPE or SentencePiece compress UTF-8 bytes into tokens to keep training sequence lengths manageable. Arithmetic coding combined with small byte-level LMs follows a similar compression logic. While tokenizers maximize training efficiency, they permanently bind the token space to the model interface.
+**Background**: Modern LMs are almost entirely built on "fixed external tokenizers"—BPE/SentencePiece compresses UTF-8 bytes into tokens to keep training lengths manageable. Arithmetic coding with small byte LMs falls into the same category of compression. While tokenizers maximize training efficiency, tokens are permanently welded into the model interface.
 
-**Limitations of Prior Work**: Hardwired tokenizers cause numerous documented side effects: prompt-boundary issues, retokenization drift, "glitch tokens" (e.g., "SolidGoldMagikarp"), low-resource language bias, and poor adversarial robustness. Fundamentally, these models learn the statistics of the token space rather than acting as true end-to-end byte modelers. While pure byte-level training solves these issues, it multiplies sequence lengths, significantly reducing data throughput and convergence speed under a fixed compute budget.
+**Limitations of Prior Work**: This hard-coupling brings well-documented side effects: prompt-boundary issues, retokenization drift, "glitch tokens" (e.g., "SolidGoldMagikarp"), bias against low-resource languages, and poor adversarial robustness. More fundamentally, the model only learns the statistics of the token space rather than being a true end-to-end byte modeler. Pure byte training solves these issues, but sequence lengths increase severalfold, causing a massive reduction in the amount of data processed under the same compute budget and poor convergence compared to tokenizer models.
 
-**Key Challenge**: There is a three-way trade-off between training efficiency (short sequences), inference flexibility (byte-level interface), and robustness. Existing solutions typically only satisfy two: tokenizer models provide efficiency and flexibility at the cost of robustness, while pure byte models provide flexibility and robustness at the cost of efficiency. No prior scheme achieves all three simultaneously.
+**Key Challenge**: Training efficiency (short sequences) $\leftrightarrow$ Inference flexibility (byte-level interface) $\leftrightarrow$ Robustness—existing solutions can only achieve two out of three. Tokenizer models take the first two; pure byte models take the last two. No current approach achieves all three.
 
-**Goal**: Retain the training efficiency of "compressed short sequences" while allowing the inference side to run entirely on raw UTF-8 bytes. The objective is to achieve this without architectural modifications (no changes to the transformer, tokenizer, or attention mechanism) and to ensure that benefits scale with model size.
+**Goal**: Retain the training efficiency of "compressed short sequences" while allowing the inference side to run entirely on raw UTF-8 without architectural modifications (same parameters, no tokenizer, same attention), with the benefit scaling as the model size increases.
 
-**Key Insight**: External compressors should be treated as "training-time proxies" rather than permanent interfaces. During training, a single model learns both representations concurrently to establish internal mappings. At inference, the compressor is discarded. The core observation is that large-scale models are capable of internalizing this cross-representation alignment within their weights.
+**Key Insight**: Treat external compressors as "training proxies" rather than permanent interfaces. During training, a single model learns both representations simultaneously and establishes an internal mapping; during inference, the compressor is discarded, leaving only bytes. The critical observation is that large models are capable of internalizing this cross-representation alignment into their weights.
 
-**Core Idea**: Use a shared vocabulary with `<comp>/<raw>` sentinels to perform mixed-representation next-token prediction. An in-context translation pairing warm-up is conducted for the first 10k steps, while inference remains purely byte-based.
+**Core Idea**: Use a shared vocabulary with `<comp>/<raw>` sentinels, perform mixed-representation next-token prediction, and use in-context translation pairing as a warm-up for the first 10k steps; inference is pure byte-level.
 
 ## Method
 
 ### Overall Architecture
-The core concept is to have the same model process both "compressed short sequences" and "raw bytes" during training. By establishing an internal mapping in the weights, the compressor can be discarded at inference, allowing the model to run on raw UTF-8. The pipeline is as follows: for each sample $x_{\text{raw}}$, it is replaced by a compressed stream $x_{\text{comp}}=f(x_{\text{raw}})$ with probability $r$ (default 0.9); otherwise, the raw bytes are kept. Each segment is wrapped in `<raw>` or `<comp>` sentinels. During the first 10k steps (warm-up), both views of the same sample are concatenated in-context for pairing, with $r$ linearly increasing from 0.4 to 0.9. After warm-up, pairing is disabled, and $r$ is fixed at 0.9. Inference only uses raw bytes. All representations share a single vocabulary: indices 0–63 for sentinels, 64–319 for UTF-8 bytes, and the remainder for compressed symbols (e.g., 96,640 for BPE or 65,536 for 16-bit neural packs).
+The core idea is to let the same model ingest both "compressed short sequences" and "raw bytes" during training to establish an internal mapping in the weights. This allows the compressor to be completely removed during inference. The pipeline is as follows: for every sample $x_{\text{raw}}$, it is replaced with a compressed stream $x_{\text{comp}}=f(x_{\text{raw}})$ with probability $r$ (default 0.9), or otherwise kept as raw bytes. Each segment is wrapped with `<raw>/<comp>` sentinels to indicate the representation type. The first 10k steps serve as a warm-up, where two views of the same sample are concatenated in-context for pairing, and $r$ linearly increases from 0.4 to 0.9. After warm-up, pairing is disabled, and $r$ is fixed at 0.9. Inference is fed only raw bytes. All three components share a single vocabulary: the first 64 indices are for sentinels, the next 256 for UTF-8 bytes, and the rest for compressed symbols (OpenCoder BPE uses 96,640, neural uses 16-bit packs for 65,536 symbols, and gzip uses 256).
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    X["Original Sample (UTF-8 Bytes)"]
+    X["Raw Sample (UTF-8 Bytes)"]
     X -->|"Prob r=0.9: Compression"| PC
     X -->|"Prob 1−r=0.1: Keep Raw Bytes"| PACK
     subgraph PC["Proxy Compressor f (Training only, discarded at inference)"]
         direction TB
-        T["Tokenizer proxy<br/>OpenCoder BPE, compression ~2.9×"]
-        N["Neural proxy<br/>40M byte LM + Arithmetic Coding + Entropy Partitioning, ~2.6×"]
+        T["Tokenizer proxy<br/>OpenCoder BPE, ~2.9× compression"]
+        N["Neural proxy<br/>40M byte LM + Arithmetic Coding + Entropy Segmentation, ~2.6×"]
     end
-    subgraph MR["Mixed-Representation Training (Sentinels + Warm-up Pairing)"]
+    subgraph MR["Mixed Representation Training (Sentinels + Warm-up Pairing)"]
         direction TB
-        PACK["Sentinel Wrapping<br/>raw/comp markers, shared vocabulary"]
-        WARM["Warm-up (first 10k steps)<br/>In-context pairing, r 0.4→0.9"]
+        PACK["Sentinel Wrapping<br/>raw/comp tags, shared vocab"]
+        WARM["10k-step Warm-up<br/>In-context pairing, r 0.4→0.9"]
         PACK --> WARM
     end
     PC --> PACK
-    MR --> LM["Single LM: Next-token CE<br/>Treats raw and comp segments equally"]
-    LM --> INF["Inference: Discard Compressor, Raw Byte Input Only"]
+    MR --> LM["Single LM: Next-token CE<br/>Treats raw and comp equally"]
+    LM --> INF["Inference: Discard compressor, use raw bytes"]
 ```
 
 ### Key Designs
 
-**1. Tokenizer-based proxy: Using BPE as the simplest training-time compressor**
-The most straightforward implementation is to use an existing tokenizer to compress raw bytes into token indices as $x_{\text{comp}}$. This utilizes the OpenCoder BPE with an average compression ratio of $\sim 2.9\times$. The tokens are fed into the model under the `<comp>` tag. This proxy is highly stable; perturbations like 10% character deletion result in minimal Levenshtein distance changes, making it easy for the LM to learn the "comp $\leftrightarrow$ raw" mapping. It can be preprocessed offline with zero additional training cost.
+**1. Tokenizer-based proxy: Treating existing BPE as a simple training compressor**
 
-**2. Neural proxy + Entropy Partitioning: Optimal entropy coding via neural compressors**
-While BPE is heuristic, a neural compressor can achieve better optimality. This proxy uses a 40M byte-level LM with arithmetic coding to perform near-optimal entropy coding ($\sim 2.6\times$ compression). To overcome the bottleneck of serial byte-by-byte encoding for large corpora (3.3 TB), the authors introduce "entropy partitioning." High-entropy positions identified by the small LM act as segment boundaries for independent parallel compression. Notably, this "fuzzy" mapping (where different raw chunks might map to similar comp segments in low-entropy regions like whitespace) acts as a form of structural regularization, improving robustness.
+The most direct instantiation is putting a standard BPE tokenizer as the training proxy. Raw bytes are compressed offline into token indices to serve as $x_{\text{comp}}$. OpenCoder BPE is used here, providing an average compression ratio of $\sim 2.9\times$. These tokens are fed into the model just like a standard tokenizer model, with the only difference being their appearance within `<comp>` tags and the 10% probability of being replaced by raw bytes. Tokenizers are chosen as the first candidate because their output is extremely stable—perturbations like 10% character deletion barely affect Levenshtein distance—making it easy for the LM to learn the "comp $\leftrightarrow$ raw" mapping.
 
-**3. In-context pairing + sentinel + high $r$ warm-up: Internalizing alignment**
-To ensure the model internalizes the alignment without becoming dependent on the compressor at inference, three mechanisms are used: 1) `<raw>/<comp>` sentinels condition next-token prediction on the representation type; 2) The warm-up phase concatenates $[\langle\text{raw}\rangle x_{\text{raw}}\langle/\text{raw}\rangle\langle\text{comp}\rangle x_{\text{comp}}\langle/\text{comp}\rangle]$ in the same context to force cross-view learning; 3) Pairing is disabled immediately after warm-up to prevent dependency. Increasing $r$ from 0.4 to 0.9 prevents the model from seeing too few raw bytes early on. Ablations show that "warm-up only" is optimal, as "always-on pairing" makes the model reliant on the compressed prefix during inference.
+**2. Neural proxy + Entropy windowing: Better entropy coding with parallel feasibility**
+
+While tokenizers are heuristic BPE products, neural compressors can theoretically perform better. The second proxy uses a 40M byte-level LM with arithmetic coding to achieve near-optimal entropy coding, reaching a $\sim 2.6\times$ compression ratio. However, serial byte-by-byte encoding is too slow for 3.3 TB of data. To solve this, "entropy windowing" is introduced: the LM calculates per-byte entropy, and high-entropy positions are used as boundaries to split the stream into segments for independent parallel compression. Notably, while the mapping is a deterministic injection for raw $\to$ comp, it is not perfectly injective in reverse: different raw chunks might map to the same comp segment (i.e., "fuzzy"). However, 90%+ of colliding raw chunks share an $\text{LCP} \geq 0.8$, with differences usually in low-entropy tails like whitespace. This "structured fuzziness" acts as a regularizer, improving robustness.
+
+**3. In-context pairing + Sentinels + High-$r$ warm-up: Internalizing alignment without inference dependency**
+
+The challenge is internalizing the comp $\leftrightarrow$ raw alignment without making inference dependent on seeing the compressed form. Three mechanisms work together: first, sentinels explicitly signal the representation type, allowing next-token prediction to be conditioned on it. Second, the warm-up phase concatenates $[\langle\text{raw}\rangle x_{\text{raw}}\langle/\text{raw}\rangle\langle\text{comp}\rangle x_{\text{comp}}\langle/\text{comp}\rangle]$ in the same context to force the model to see both views. Third, pairing is disabled immediately after warm-up to prevent the model from developing a dependence on seeing the compressed prefix. Increasing $r$ from 0.4 to 0.9 prevents the model from seeing too few raw bytes early on, which would hinder alignment learning. This compromise was found through ablation: without pairing, oracle-translation Pass@1 is only 30-46%; with always-on pairing, it exceeds 95% but harms raw-byte performance as the model becomes dependent on the pairing.
 
 ### Loss & Training
-The objective is standard next-token cross-entropy (CE) loss, applied equally to raw and compressed segments. The architecture uses EvaByte (efficient multi-byte prediction). Training runs for 50k steps with a 2M symbol batch size, across scales of 0.5B, 1.5B, 4B, 7B, and 14B parameters.
+The loss function is standard next-token cross-entropy (CE), applied uniformly to both raw and compressed segments. The architecture uses EvaByte (efficient multi-byte prediction). Training runs for 50k steps with a 2M symbol batch size, covering 0.5B, 1.5B, 4B, 7B, and 14B parameter scales.
 
 ## Key Experimental Results
 
 ### Main Results
-Using a fixed 100B symbol training budget (matched compute), the pass@1 results for HumanEval-Plus / MBPP-Plus are:
+Under a fixed 100B symbol training budget (roughly matched compute), Pass@1 on HumanEval-Plus / MBPP-Plus:
 
 | Task | Model | 0.5B | 1.5B | 4B | 7B | 14B |
 |------|------|------|------|----|----|-----|
@@ -95,45 +98,45 @@ Using a fixed 100B symbol training budget (matched compute), the pass@1 results 
 |  | Proxy (Neural) | 22.0 | 29.6 | 41.8 | 41.8 | **49.2** |
 |  | Proxy (Tokenizer) | 25.4 | 38.4 | 44.4 | 45.5 | **49.5** |
 
-Proxy models outperform pure byte models starting at 1.5B parameters and exceed tokenizer baselines at the 14B scale, demonstrating that transfer efficiency increases with model size.
+Proxy models overtake pure byte-level models at $\geq 1.5$B and surpass tokenizer baselines at 14B, showing that transfer efficiency scales with size.
 
 ### Ablation Study
 
-| Configuration | HumanEval-Plus pass@1 (1.5B) | Remarks |
+| Configuration | HumanEval-Plus Pass@1 (1.5B) | Remarks |
 |------|-------------------------------|------|
-| Always-on pairing | 17.0 | High oracle-translation (96%), but lower ordinary pass@1 |
+| Always-on pairing | 17.0 | Oracle-translation 96%, but ordinary performance drops |
 | Warmup-only (Default) | **20.7** | Ensures alignment without creating dependency |
-| No pairs | 17.0 | No explicit cross-representation signal |
-| Gzip proxy | < Byte-level | Unstable stream; transfer fails |
-| Tokenizer / Neural proxy | Significant gain | Stable and structured |
+| No pairs | 17.0 | No explicit cross-rep signal |
+| Gzip proxy | < Byte-level | Unstable stream, impossible to transfer |
+| Tokenizer / Neural proxy | Significant gain | Stable + structured |
 
 ### Key Findings
-- **Scaling Correlation**: Proxy gains are strongly correlated with model size. While 0.5B models show weak or negative transfer, 14B models crush both byte and tokenizer baselines.
-- **Compressor Stability**: Stability is the prerequisite for transfer. Tokenizers have the lowest Levenshtein distance variance, neural compressors are intermediate, and Gzip is the highest. Only the former two succeed.
-- **Inherited Robustness**: On ReCode perturbations (format/syntax/docstring changes), the 7B proxy (Neural) achieves a Robust Pass@1 of 19.1 compared to 14.9 for the tokenizer baseline, showing almost no degradation on format/docstring tasks.
-- **Context vs. Weights**: Always-on pairing improves in-context translation but hurts raw-byte downstream performance, suggesting that "internalizing in weights" and "translating in context" are distinct learning paths.
+- **Scale Correlation**: Proxy gain is strongly positively correlated with model size. At 0.5B, transfer is weak or negative; at 14B, it crushes both byte-level and tokenizer baselines.
+- **Compressor Stability**: Stability is the key to transfer. Tokenizers have the lowest Levenshtein distance under noise, followed by neural proxies; gzip has the highest and fails completely.
+- **Inherited Robustness**: On ReCode perturbations (function rewrite/format/syntax/docstring), the 7B proxy model achieves a Robust Pass@1 of 19.1 (neural) vs the tokenizer baseline of 14.9.
+- **Internalization vs. Context**: Always-on pairing boosts context-based translation to 95%+ but lowers raw-byte performance—suggesting "translating in context" and "internalizing in weights" are distinct paths, with the latter being the key to downstream raw-byte success.
 
 ## Highlights & Insights
-- The decoupling of training efficiency from the inference interface is a powerful concept that can be generalized to latent diffusion VAEs or audio codecs.
-- Using sentinels to explicitly mark representations is significantly simpler than multi-branch or multi-decoder architectures for multi-modal or multi-representation training.
-- "Structured fuzziness" in neural compressors acts as a useful regularizer, abstracting away formatting noise and potentially making the model more robust than lossless tokenizers.
+- Decoupling the external compressor as a "training proxy" that is discarded at inference is a brilliant idea. This paradigm can be extended to any "external encoder + internal modeler" structure, such as VAEs in latent diffusion or codecs in audio.
+- Using sentinel tokens to explicitly mark different representations for the model is far simpler than designing multi-branch or multi-decoder architectures.
+- "Structured fuzziness" is a counter-intuitive discovery: the slight irreversibility of neural compressors acts as a form of regularization, abstracting away format noise and yielding robustness exceeding that of lossless tokenizers.
 
 ## Limitations & Future Work
-- The experiments primarily focus on code (RefineCode). The effectiveness for low-resource languages or broader natural language tasks requires more validation at scale.
-- Memory overhead for the shared vocabulary (token indices + raw bytes + sentinels) is slightly higher.
-- Final inference speed was not extensively detailed; while the tokenizer is removed, raw byte sequences are $\sim 2.9\times$ longer. The extent to which multi-byte prediction (EvaByte) offsets this remains to be quantified.
-- In fixed FLOPs comparisons, the model sees fewer total bytes than a pure byte model. Its performance in purely data-constrained scenarios is still an open question.
+- Experiments were primarily conducted on code corpora (RefineCode). While 1.5B results were verified on natural language, the transfer effect in multilingual and low-resource settings needs further study.
+- Total vocabulary size is byte (256) + tokenizer (96K) + sentinels, which increases embedding table memory overhead. The neural proxy also requires training and maintaining an additional 40M byte LM.
+- Inference speed comparison is missing: while the tokenizer is removed, pure byte inference sequences are longer ($\sim 2.9\times$). Whether EvaByte's multi-byte prediction fully offsets this needs quantification.
+- The model sees fewer total bytes than a pure byte model during training—while fixed-FLOPs comparison is fair, performance under fixed data volume constraints remains to be investigated.
 
 ## Related Work & Insights
-- **vs. Lester 2024**: That work uses neural compressed streams as the final representation for both training and inference. This paper uses them only as a training proxy.
-- **vs. EvaByte / ByT5 / MegaByte**: These are advancements in pure byte-level modeling; this work achieves order-of-magnitude better training efficiency.
-- **vs. Token-Byte Mixed Training**: While appearing similar to simple mixing, this work demonstrates that the sentinel system, warm-up pairing, and specific $r$ ratios are critical to performance.
+- **vs. Lester 2024 (Neural arithmetic coding LM)**: They use neural compressed streams as the final training + inference representation; this paper uses them only as a training proxy.
+- **vs. EvaByte / ByT5 / MegaByte**: Extensions of pure byte-level modeling. This work shares byte-level inference but improves training efficiency by orders of magnitude.
+- **vs. Tokenizer + Raw mixing**: It resembles token-byte mixed training, but the combination of sentinels, warm-up pairing, and high $r$ is the critical differentiator.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ Discarding compressors at inference is a fresh and practical perspective.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Covers 5 scales, 3 proxy types, and multiple robustness probes.
-- **Writing Quality**: ⭐⭐⭐⭐ Clear narrative and intuitive scaling curves.
-- **Value**: ⭐⭐⭐⭐ Provides a viable path for byte-level modeling to overcome efficiency barriers.
+- **Novelty**: ⭐⭐⭐⭐ The perspective of "compressor as a training proxy only" is fresh and practical.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Spans 5 scales, 3 types of proxies, and multiple robustness probes.
+- **Writing Quality**: ⭐⭐⭐⭐ Clear storyline with intuitive scaling curves.
+- **Value**: ⭐⭐⭐⭐ Opens a viable path for the byte-level inference direction, which has long been suppressed by efficiency concerns.
 
 <!-- RELATED:START -->
 
@@ -141,11 +144,11 @@ Proxy models outperform pure byte models starting at 1.5B parameters and exceed 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Autoencoding-Free Context Compression for LLMs via Contextual Semantic Anchors](../../ICLR2026/llm_efficiency/autoencoding-free_context_compression_for_llms_via_contextual_semantic_anchors.md)
 - [\[ACL 2025\] GigaChat Family: Efficient Russian Language Modeling Through Mixture of Experts Architecture](../../ACL2025/llm_efficiency/gigachat_family_efficient_russian_language_modeling_through_mixture_of_experts_a.md)
 - [\[ICML 2025\] Efficient Length-Generalizable Attention via Causal Retrieval for Long-Context Language Modeling](../../ICML2025/llm_efficiency/efficient_length-generalizable_attention_via_causal_retrieval_for_long-context_l.md)
 - [\[ACL 2026\] Native Hybrid Attention for Efficient Sequence Modeling](../../ACL2026/llm_efficiency/native_hybrid_attention_for_efficient_sequence_modeling.md)
 - [\[ACL 2026\] CoMeT: Collaborative Memory Transformer for Efficient Long Context Modeling](../../ACL2026/llm_efficiency/comet_collaborative_memory_transformer_for_efficient_long_context_modeling.md)
-- [\[ICML 2026\] ProactiveLLM: Learning Active Interaction for Streaming Large Language Models](proactivellm_learning_active_interaction_for_streaming_large_language_models.md)
 
 </div>
 

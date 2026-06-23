@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Adaptive Time Series Reasoning via Segment Selection
 description: >-
-  [ICML 2026][Time Series][segment selection] This paper proposes ARTIST, which transforms time series question answering into a sequential decision-making problem of "reasoning while selecting segments." Through a controller-reasoner architecture and hierarchical self-play RL, the model reads only problem-relevant time segments, thereby improving reasoning accura
+  [ICML 2026][Time Series][segment selection] This paper proposes ARTIST, which frames time series question answering (TSQA) as a sequential decision-making problem of "reasoning while selecting segments." Through a controller-reasoner architecture and hierarchical self-play RL, the model selectively reads task-relevant temporal segments, thereby improving reasoni
 tags:
   - ICML 2026
   - Time Series
@@ -10,7 +10,7 @@ tags:
   - controller-reasoner
   - self-play RL
 date: 2026-05-08
-content_hash: 98ef31ce27b0568c
+content_hash: 8de207d71870e70f
 ---
 # Adaptive Time Series Reasoning via Segment Selection
 
@@ -18,51 +18,52 @@ content_hash: 98ef31ce27b0568c
 **arXiv**: [2602.18645](https://arxiv.org/abs/2602.18645)  
 **Code**: https://github.com/mims-harvard/ARTIST  
 **Area**: Time Series  
-**Keywords**: Time series reasoning, segment selection, controller-reasoner, self-play RL, hierarchical policy optimization  
+**Keywords**: Time Series Reasoning, segment selection, controller-reasoner, self-play RL, hierarchical policy optimization  
 
 ## TL;DR
-This paper proposes ARTIST, which transforms time series question answering into a sequential decision-making problem of "reasoning while selecting segments." Through a controller-reasoner architecture and hierarchical self-play RL, the model reads only problem-relevant time segments, thereby improving reasoning accuracy.
+This paper proposes ARTIST, which frames time series question answering (TSQA) as a sequential decision-making problem of "reasoning while selecting segments." Through a controller-reasoner architecture and hierarchical self-play RL, the model selectively reads task-relevant temporal segments, thereby improving reasoning accuracy.
 
 ## Background & Motivation
-**Background**: Time series tasks are expanding from traditional forecasting, classification, and anomaly detection to natural language question-answering reasoning. Given a question, the model must locate relevant intervals, compare patterns, explain changes, and output an answer. Existing methods typically serialize the entire time series into text, render it into images, or encode it as embeddings to feed into an LLM at once.
+**Background**: Time series tasks are expanding from traditional forecasting, classification, and anomaly detection toward natural language question-answering reasoning. Given a question, models must locate relevant intervals, compare patterns, explain changes, and output answers based on the time series. Existing methods typically serialize the entire time series into text, render it as an image, or encode it into embeddings to be fed into an LLM in a single pass.
 
-**Limitations of Prior Work**: Processing the complete time series in one go introduces significant irrelevant segment noise into the context. For long sequences or multi-step reasoning tasks, truly useful information may reside only in a few short intervals and may change based on intermediate reasoning conclusions. A fixed view cannot achieve the dynamic process of "viewing one segment to establish a baseline, then viewing another to verify a hypothesis."
+**Limitations of Prior Work**: Processing the entire time series at once introduces significant amounts of irrelevant segments into the context. For long sequences or multi-step reasoning tasks, truly useful information may reside only in a few short intervals and can change based on intermediate reasoning conclusions. A fixed view cannot achieve the dynamic process of "viewing one segment to establish a baseline, then viewing another to verify a hypothesis."
 
-**Key Challenge**: The model needs to actively select which time segments to view, but training data usually lacks annotations for "which intervals should be viewed for this question." Simultaneously, if token-level RL is used directly to optimize long reasoning trajectories, the credit assignment for segment selection is diluted by long text outputs.
+**Key Challenge**: The model needs to actively choose which temporal segments to observe, but training data typically lacks annotations for "which intervals should be viewed for this question." Furthermore, if optimizing long reasoning trajectories directly with token-level RL, the credit assignment for segment selection is diluted by long-form text output.
 
-**Goal**: To enable LLMs to treat time series as an interactive resource during reasoning: first selecting a segment, reasoning based on that segment, and then deciding whether to continue selecting or stop to answer. Training must separately optimize "where to look" and "how to answer."
+**Goal**: To enable LLMs to treat time series as interactive resources during reasoning: first selecting a segment, reasoning based on that segment, and then deciding whether to continue selecting or stop to answer. Training must separately optimize "where to look" and "how to answer."
 
-**Key Insight**: The paper splits a single model into a controller and a reasoner using role-specific prompts. The controller is responsible for selecting temporal segments and stop conditions; the reasoner generates intermediate reasoning and answers based only on selected segments. This decoupling of evidence acquisition from answer generation allows for distinct rewards for each role.
+**Key Insight**: The paper splits a single model into a controller and a reasoner using role-specific prompts. The controller is responsible for selecting temporal segments and termination conditions; the reasoner generates intermediate reasoning and answers based only on selected segments. This decouples evidence acquisition from answer generation, allowing for distinct reward designs for each role.
 
-**Core Idea**: Use controller-reasoner collaborative self-play to train time series reasoning into an interpretable, adaptive segment selection process.
+**Core Idea**: Use controller-reasoner collaborative self-play to train time series reasoning into an interpretable and adaptive segment selection process.
 
 ## Method
-The core of ARTIST is formalizing time series reasoning as an interaction trajectory. Given a question $q$ and time series $T \in \mathbb{R}^{H \times V}$, the controller sees the question, the full sequence, selected segments, and the previous reasoning/answer at round $i$, then outputs a CONTINUE/ACCEPT decision. If CONTINUE, it selects a new continuous segment $s_i = T_{t_{start}:t_{end}}$. The reasoner receives the accumulated segment list $S_i$ and generates a reasoning trace and candidate answer. If the controller chooses ACCEPT, the reasoner's answer from the previous round becomes the final output.
+The core of ARTIST is formalizing time series reasoning as an interactive trajectory. Given a question $q$ and time series $T\in\mathbb{R}^{H\times V}$, the controller observes the question, the full sequence (at a high level), the already selected segments, and the reasoning/answer from the previous round to output a CONTINUE/ACCEPT decision. If it continues, it selects a new continuous segment $s_i=T_{t_{start}:t_{end}}$. The reasoner receives the accumulated segment list $S_i$ and generates a reasoning trace and a candidate answer for the current round. If the controller selects ACCEPT, the reasoner's answer from the previous round becomes the final output.
 
 ### Overall Architecture
-Training consists of two stages. Stage 1 is SFT, fine-tuning the model with human- or machine-generated structured traces to teach it to alternate between natural language reasoning and segment-selection calls. Stage 2 is RL, using collaborative self-play: the same policy model plays both controller and reasoner via different prompts, generates multiple interaction trajectories, and calculates rewards for both roles using nested rollouts.
+Training consists of two stages. The first stage is SFT, using manually or automatically constructed structured traces to fine-tune the model to alternate between outputting natural language reasoning and segment-selection calls. The second stage is RL, utilizing collaborative self-play: the same policy model plays the roles of controller and reasoner through different prompts, generating multiple interactive trajectories and calculating rewards for both roles using nested rollouts.
 
-In RL, $G$ interaction trajectories are sampled per training instance. For the terminal segment list of each trajectory, the Reasoner is sampled $N$ times (nested rollout) to estimate if "these segments stably support the correct answer." The Controller's reward primarily comes from reliability (the ratio of correct answers under repeated Reasoner sampling); the Reasoner's reward comes from final answer correctness and format compliance. Finally, the Controller's advantage is propagated to all controller decision tokens, while the Reasoner's advantage is propagated only to the final Reasoner output.
+In the RL stage, $G$ controller-reasoner interaction trajectories are sampled for each training instance. For the final segment list of each trajectory, the Reasoner is independently sampled $N$ times (nested rollout) to estimate "whether these segments can stably support the correct answer." The Controller's reward primarily comes from reliability, i.e., the proportion of correct answers across the repeated Reasoner samplings; the Reasoner's reward comes from final answer correctness and format compliance. Finally, the Controller's advantage is propagated to all controller decision tokens, while the Reasoner's advantage is only propagated to the final round's reasoner output.
 
 ```mermaid
-graph TD
-    Q["Question q + Time Series T"] --> SFT["Stage 1: SFT<br/>Learning to alternate reasoning and selection calls via structured traces"]
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 26, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    Q["Question q + Time Series T"] --> SFT["Phase 1: SFT<br/>Learning to alternate reasoning and selection calls via structured traces"]
     SFT --> LOOP
 
-    subgraph LOOP["Interaction Trajectory: Controller-Reasoner Split"]
+    subgraph LOOP["Interaction Trajectory: Controller-Reasoner Role Splitting"]
         direction TB
         CTL["Controller<br/>Selects segment s_i, outputs CONTINUE / ACCEPT"]
         CTL -->|CONTINUE: Append segment| RSN["Reasoner<br/>Generates reasoning and candidate answer based on S_i"]
-        RSN -->|Return previous reasoning/answer| CTL
+        RSN -->|Return prev-round reasoning/answer| CTL
     end
 
     LOOP -->|ACCEPT: Adopt previous answer| ANS["Final Answer ŷ + Evidence Segments S"]
     LOOP --> RL
 
-    subgraph RL["Stage 2: Collaborative Self-Play RL (Nested Rollout)"]
+    subgraph RL["Phase 2: Collaborative Self-play RL (Nested Rollout)"]
         direction TB
-        ROLL["Sample G interaction trajectories"] --> REL["Reliability Reward<br/>Resample Reasoner N times on terminal segments for accuracy"]
-        REL --> HPO["Hierarchical Policy Optimization<br/>Controller credit covers all rounds<br/>Reasoner optimizes final round + Variance-guided selection"]
+        ROLL["Sample G interactive trajectories"] --> REL["Reliability Reward<br/>Resample Reasoner N times on final segments for accuracy"]
+        REL --> HPO["Hierarchical Policy Optimization<br/>Controller credit covers all rounds<br/>Reasoner optimizes only final round + Variance-guided sampling"]
     end
 
     HPO -.Jointly update shared policy π_θ.-> CTL
@@ -70,68 +71,68 @@ graph TD
 
 ### Key Designs
 
-**1. Controller-Reasoner Role Splitting**: Separating "selecting evidence" and "reading evidence to answer" into two independently optimizable roles. If a single long chain-of-thought is responsible for both, RL only sees the final result, failing to distinguish if errors stem from wrong evidence or reasoning failure. ARTIST enables the same policy $\pi_\theta$ to play both roles via prompts. Once separated, specific rewards and advantages can be calculated for each, making error attribution transparent.
+**1. Controller-Reasoner Role Splitting: Decoupling "evidence selection" and "reading evidence to answer" into two independently optimizable roles.** If a single long chain-of-thought is responsible for both picking segments and providing answers, RL only sees the final correctness and cannot determine if an error stemmed from incorrect evidence or a reasoning failure, leading to tangled credit assignment. ARTIST lets the same policy model $\pi_\theta$ play two roles via role prompts: the Controller sees the question, full sequence, selected segment list $S_{i-1}$, and previous reasoning/answers to output a decision $d_i\in\{\mathrm{CONTINUE},\mathrm{ACCEPT}\}$. If it continues, it proposes a segment $s_i=T_{t_{start}:t_{end}}$. The Reasoner only sees the question and accumulated segments $S_i$ to generate a reasoning trace and answer. Once evidence acquisition and answer generation are separated, distinct rewards and advantages can be calculated for each, making error attribution clearer.
 
-**2. Reliability Reward**: Directing the Controller to pursue "evidence sufficient to answer correctly stably" rather than a one-off lucky guess. Due to LLM randomness, a single correct answer might be noise. ARTIST uses reliability as the Controller's primary reward: for fixed terminal segments $S$, the Reasoner is resampled $N$ times to compute $D(q, S, y^*) = \frac{1}{N} \sum_{n} \mathbb{1}[\hat{y}^{(n)} = y^*]$. High rewards are given only when segments allow stable correct answers. Ablation shows that removing this causes average accuracy to drop from 73.4% to 52.0%.
+**2. Reliability Reward: Driving the Controller to pursue "evidence sufficient to answer correctly consistently," rather than by chance.** Due to the stochastic nature of LLMs, a Reasoner might answer correctly once under a certain set of segments by luck. Rewarding the Controller based on single-pass correctness would introduce noise. ARTIST uses reliability as the Controller's main reward instead: fixing the final segment list $S$ selected by the Controller, the Reasoner is independently resampled $N$ times to calculate the accuracy ratio $D(q,S,y^*)=\frac{1}{N}\sum_{n}\mathbb{1}[\hat{y}^{(n)}=y^*]$. The Controller receives a high score only when a set of segments allows the Reasoner to answer correctly and consistently. This shifts the Controller's goal from "making this answer right" to "selecting evidence with sufficient information." Removing this in ablations caused average accuracy to plummet from 73.4% to 52.0%, the most significant drop among all modules.
 
-**3. Hierarchical Policy Optimization + Variance-guided Sampling**: Assigning credit from long trajectories to the correct roles and stages. Segment selection is a multi-round long-term decision that requires rewards across all steps, whereas the Reasoner acts as a local Q&A task once segments are fixed. Using nested rollouts, ARTIST separates the credit: the Controller receives trajectory-level advantages covering all interaction tokens; the Reasoner is optimized only on the final output to avoid interference from previous selection variance. Variance-guided sampling ($p(g) \propto r_\sigma^{(g)}$) prioritizes updates on groups with higher learning signals (higher answer variance).
+**3. Hierarchical Policy Optimization + Variance-guided Sampling: Allocating credit across long trajectories to the correct roles and stages.** Segment selection is a long-term decision spanning multiple rounds (e.g., viewing a baseline then a hypothesis verification); thus, rewards should not only hit the last step. Conversely, the Reasoner acts more like a local Q&A once segments are fixed. ARTIST uses nested rollouts to separate their credit: for each sample, $G$ interaction trajectories are sampled. The Controller receives a trajectory-level advantage, and credit covers all decision tokens throughout the iterations. The Reasoner is only optimized on the final output of the final segments to avoid interference from the variance of earlier selection quality. To save memory while capturing strong learning signals, variance-guided sampling ($p(g)\propto r_\sigma^{(g)}$) is applied based on the Reasoner's accuracy variance across groups, prioritizing updates for groups with higher result discrepancy. Ablations show that removing the trajectory-level objective makes the Controller myopic, failing to learn multi-round segment combination strategies.
 
 ### Loss & Training
-SFT uses LoRA on structured trajectories. The RL stage employs full-parameter fine-tuning, converting controller reward $R_{ctl}$ and reasoner reward $R_{rsn}$ into group-relative advantages for joint updates. The base model is Qwen3-4B. Time series are encoded via a 5-layer MLP for patch-based input. In evaluation, reasoner temperature is 0.7 and controller temperature is 1.0.
+SFT is performed using LoRA on structured trajectories. The RL stage utilizes full-parameter fine-tuning, translating controller reward $R_{ctl}$ and reasoner reward $R_{rsn}$ into group-relative advantages for joint policy updates. The base model used is Qwen3-4B, with time series encoded via a 5-layer MLP for patch-based input. During evaluation, the reasoner temperature is 0.7 and the controller temperature is 1.0. The main setup focuses on univariate time series.
 
 ## Key Experimental Results
 
 ### Main Results
-The main experiment covers 6 benchmarks: ETI, RCW, ECG-QA, Sleep-QA, TSQA, TRQA. Below are average and representative results.
+The main experiments cover 6 time series reasoning benchmarks: ETI, RCW, ECG-QA, Sleep-QA, TSQA, and TRQA. The following table extracts average and representative results.
 
 | Method | ETI Acc/F1 | RCW Acc/F1 | ECG-QA Acc/F1 | TSQA Acc/F1 | TRQA Acc/F1 | Avg Acc/F1 |
 |--------|------|------|----------|------|------|------|
 | OpenTSLM-4B + SFT | 82.69 / 82.66 | 65.49 / 38.29 | 69.50 / 41.00 | 47.50 / 35.81 | 76.25 / 69.36 | 62.80 / 47.68 |
 | ITFormer-4B + SFT | 84.62 / 84.60 | 67.31 / 57.95 | 57.31 / 49.91 | 49.50 / 23.62 | 80.12 / 74.22 | 62.08 / 51.01 |
-| ARTIST + SFT | 85.12 / 85.11 | 69.75 / 61.46 | 56.31 / 55.68 | 60.06 / 57.13 | 82.26 / 62.32 | 63.61 / 56.61 |
-| ARTIST + SFT + RL | 87.03 / 87.10 | 77.00 / 50.00 | 69.81 / 52.67 | 62.00 / 58.66 | 83.06 / 78.02 | 69.26 / 57.61 |
-| Gain (vs. strongest baseline) | +2.41 / +2.50 | +3.11 / +3.51 | +3.14 / +3.89 | +12.50 / +11.91 | +2.94 / +3.80 | +6.46 / +6.60 |
+| Ours + SFT | 85.12 / 85.11 | 69.75 / 61.46 | 56.31 / 55.68 | 60.06 / 57.13 | 82.26 / 62.32 | 63.61 / 56.61 |
+| Ours + SFT + RL | 87.03 / 87.10 | 77.00 / 50.00 | 69.81 / 52.67 | 62.00 / 58.66 | 83.06 / 78.02 | 69.26 / 57.61 |
+| Gain over Prev. SOTA | +2.41 / +2.50 | +3.11 / +3.51 | +3.14 / +3.89 | +12.50 / +11.91 | +2.94 / +3.80 | +6.46 / +6.60 |
 
 ### Ablation Study
-Ablations on ECG-QA and RCW accuracy.
+Ablations report accuracy on ECG-QA and RCW to verify core components.
 
-| Config | ECG Acc | RCW Acc | Avg Acc | Description |
+| Configuration | ECG Acc | RCW Acc | Avg Acc | Description |
 |------|---------|------|------|------|
 | ARTIST | 69.81 | 77.00 | 73.41 | Full controller-reasoner + reliability + hierarchical RL |
-| Reasoner Only | 65.33 | 62.88 | 64.11 | No controller, static input, avg. drop 9.30 |
-| Controller-only RL | 60.81 | 68.13 | 64.47 | Frozen reasoner, fails to adapt to dynamic distributions |
+| Reasoner Only | 65.33 | 62.88 | 64.11 | No controller, processes static input; drop of 9.30 |
+| Controller-only RL | 60.81 | 68.13 | 64.47 | Frozen reasoner; cannot adapt to dynamic distribution |
 | w/o Reliability Reward | 52.50 | 51.44 | 51.97 | Largest drop; single correctness misleads selection |
 | w/o Trajectory-based Objective | 55.19 | 67.06 | 61.13 | Myopic controller fails to learn multi-round strategies |
-| w/o Variance-guided Sampling | 68.13 | 72.75 | 70.44 | Loses effective reasoner learning signals |
+| w/o Variance-guided Sampling | 68.13 | 72.75 | 70.44 | Guided sampling provides better reasoner signals |
 
 ### Key Findings
-- ARTIST improves average accuracy by 6.46 percentage points over the strongest baseline on each dataset, indicating that dynamic segment selection provides both interpretability and substantial quality gains.
-- RL consistently improves over SFT (63.61% to 69.26%), showing that selection policies benefit from post-training reliability rewards beyond imitation learning.
-- Data utilization analysis reveals that more coverage is not always better; Sleep-QA and TRQA peak at 30-50% signal coverage, while near-full sequence usage degrades performance.
-- Inference costs increase: on TRQA, ARTIST (8 runs) takes ~1.68 min vs. OpenTSLM's 1.26 min. However, as sequences scale to 12K, time only increases marginally (1.880 to 1.910 min), as costs are driven by selected segments rather than the full sequence length.
+- ARTIST improves average accuracy by 6.46 percentage points over the strongest baseline on each dataset, demonstrating that dynamic segment selection provides both interpretability and substantial performance gains.
+- RL continues to improve average accuracy over SFT (from 63.61% to 69.26%). This indicates that segment selection cannot rely solely on imitation; reliability rewards in post-training further optimize "where to look."
+- Data utilization analysis reveals that more coverage is not always better. For Sleep-QA and TRQA, accuracy peaks at 30-50% signal usage; using nearly the full sequence actually degrades performance.
+- Inference costs do increase: For TRQA, ARTIST takes approx. 1.68 mins per case (8 runs), compared to 1.26/1.29 mins for OpenTSLM/ITFormer. However, as the sequence length scales to 12K, time only increases from 1.880 to 1.910 mins, showing costs are driven by selected segments and interaction rounds rather than total sequence length.
 
 ## Highlights & Insights
-- The paper shifts the paradigm from "how to encode the whole sequence" to "which segment to view during reasoning," which aligns with real-world analyst behavior (scan, zoom, compare).
-- The Reliability Reward is crucial. It aligns the controller's goal with the essence of information retrieval: selecting evidence sufficient for a stable conclusion.
-- The segment list naturally provides an evidence trajectory, enhancing transparency for domains like healthcare or finance where grounding is critical.
+- The paper shifts the focus of time series reasoning from "how to encode the whole sequence" to "which segment to look at during reasoning." This problem definition is intuitive; many real-world problems require a coarse overview followed by local zooming and comparison of multiple segments.
+- The reliability reward is vital. It redefines the controller's objective from "getting the reasoner to answer correctly now" to "selecting evidence that enables consistent correctness," which is more aligned with the nature of information retrieval.
+- ARTIST's segment list naturally provides an evidence trajectory, making it easy to audit the basis of an answer. This is particularly important for tasks requiring interpretable localization, such as medical monitoring, finance, and environmental sensing.
 
 ## Limitations & Future Work
-- Inference latency is higher than single-pass baselines due to multiple calls. While it scales better for long sequences, real-time scenarios remain challenging.
-- The current study focuses on univariate time series. Multivariable, asynchronous sampling, and cross-variable causality significantly complicate segment selection.
-- Segment selection does not strictly equal causal explanation; selected segments provide evidence clues but are not necessarily comprehensive causal factors.
-- In Sleep-QA, the tokenized version lags behind specialized models like TimeMaster+RL, suggesting that input modality and pre-training priors still dominate performance.
+- Inference latency is higher than single-pass baselines due to multiple controller-reasoner calls. While scaling to long sequences is efficient, latency remains a concern for short sequences or real-time scenarios.
+- Main experiments focus on univariate time series. Multivariate data, asynchronous sampling, missing values, and cross-variable causality will make segment selection significantly more complex.
+- Whether segment selection is always "interpretable" requires caution. The segments selected by the controller provide evidence clues but are not equivalent to strict causal explanations.
+- On Sleep-QA, the tokenized version of ARTIST significantly lags behind TimeMaster+RL, while the VLM backbone version matches it, suggesting that input modalities and pre-training priors remain strong factors.
 
 ## Related Work & Insights
-- **vs ChatTS / OpenTSLM / ITFormer**: These focus on encoding full sequences for LLMs; ARTIST focuses on dynamic selection to avoid context clutter.
-- **vs VL-Time / TimeMaster**: Visual methods use image priors; ARTIST treats segments as tools/resources to be queried.
-- **vs Dynamic Visual Search**: While similar, time series segments have meaning dependent on relative baselines and temporal comparisons, requiring more context-aware multi-round selection.
-- **vs Standard Self-play RL**: Unlike methods with immediate proposer goals, ARTIST's controller requires trajectory-level objectives to learn multi-round selection logic.
+- **vs ChatTS / OpenTSLM / ITFormer**: These methods focus on how to encode the entire time series for the LLM; ARTIST focuses on dynamically selecting segments during reasoning to avoid fixed global representations.
+- **vs VL-Time / TimeMaster**: Visualization methods utilize image priors; ARTIST does not rely on single-pass visual understanding but treats the time series as a resource for tool-like selection.
+- **vs Dynamic Visual Search**: Image searches typically have spatial regions and explicit targets, whereas the meaning of time series segments often depends on relative baselines and comparisons, necessitating multi-round context-aware selection.
+- **vs Standard Self-play RL**: Many self-play methods use immediate goals for proposer/solver roles; ARTIST's controller manages a long-term segment strategy requiring a trajectory-level objective.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ 
-- Experimental Thoroughness: ⭐⭐⭐⭐☆ 
-- Writing Quality: ⭐⭐⭐⭐☆ 
-- Value: ⭐⭐⭐⭐⭐ 
+- Novelty: ⭐⭐⭐⭐⭐ Seamlessly integrates time series reasoning with adaptive segment selection; the problem setting is highly extensible.
+- Experimental Thoroughness: ⭐⭐⭐⭐☆ Covers 6 benchmarks and multiple baseline types, though multivariate scenarios are still missing.
+- Writing Quality: ⭐⭐⭐⭐☆ The framework is clear and the appendix is extensive; the main text requires attention to the controller/reasoner credit assignment.
+- Value: ⭐⭐⭐⭐⭐ Highly insightful for long-sequence QA, medical monitoring, and interpretable temporal reasoning.
 
 <!-- RELATED:START -->
 

@@ -2,102 +2,102 @@
 title: >-
   [Paper Note] WildFeedback: Aligning LLMs With In-situ User Interactions And Feedback
 description: >-
-  [ACL 2026][Alignment & RLHF][SAT/DSAT] WildFeedback automatically identifies satisfaction/dissatisfaction feedback from real-world multi-turn dialogues between users and ChatGPT. It transforms naturally occurring user preferences into preference training samples and instance-level checklist evaluation criteria. This enables small open-source instruction mod
+  [ACL 2026][Alignment & RLHF][SAT/DSAT] WildFeedback automatically identifies satisfied/dissatisfied feedback from real multi-turn ChatGPT conversations. It transforms naturally occurring user preferences into preference training samples and instance-specific checklist evaluation standards. This enables small open-source instruction models to align more clos
 tags:
   - ACL 2026
   - Alignment & RLHF
   - SAT/DSAT
   - DPO
 date: 2026-05-08
-content_hash: afc933493051b47b
+content_hash: 693fe162754b5f5e
 ---
 # WildFeedback: Aligning LLMs With In-situ User Interactions And Feedback
 
-**Conference**: ACL2026  
+**Conference**: ACL2024  
 **arXiv**: [2408.15549](https://arxiv.org/abs/2408.15549)  
 **Code**: No public training code; Dataset: https://huggingface.co/datasets/microsoft/WildFeedback  
 **Area**: LLM Alignment / User Feedback / Preference Learning  
-**Keywords**: In-situ User Feedback, Preference Data Construction, SAT/DSAT, DPO, checklist evaluation
+**Keywords**: In-situ User Feedback, Preference Data Construction, SAT/DSAT, DPO, Checklist Evaluation
 
 ## TL;DR
-WildFeedback automatically identifies satisfaction/dissatisfaction feedback from real-world multi-turn dialogues between users and ChatGPT. It transforms naturally occurring user preferences into preference training samples and instance-level checklist evaluation criteria. This enables small open-source instruction models to align more closely with real user needs on both general benchmarks and real-user preference tests compared to training with UltraFeedback.
+WildFeedback automatically identifies satisfied/dissatisfied feedback from real multi-turn ChatGPT conversations. It transforms naturally occurring user preferences into preference training samples and instance-specific checklist evaluation standards. This enables small open-source instruction models to align more closely with real user needs than those trained on UltraFeedback, both on general benchmarks and in real-world user preference tests.
 
 ## Background & Motivation
-**Background**: LLM alignment typically depends on two types of data: human-annotated preference data or synthetic preference data generated/judged by strong models like GPT-4. The former is high-cost, subjective, and limited in scale, while the latter is cheap and scalable but risks cycling the strong model's own preferences and biases into the target model.
+**Background**: LLM alignment typically relies on two types of data: human-annotated preference data or synthetic preference data generated/judged by strong models like GPT-4. The former is costly, subjective, and limited in scale; the latter is cheap and scalable but risks cyclically infusing the strong model's own preferences and biases into the target model.
 
-**Limitations of Prior Work**: Real users naturally express feedback during product interactions, such as "Thanks, this is exactly what I wanted," "No, please rewrite," or "You ignored my requirements." These signals are closer to actual usage scenarios than offline annotations, yet they are not structured as thumbs-up/down and are often scattered across multi-turn contexts. Simply using the response that triggered feedback for training is insufficient because negative feedback only indicates the old response was poor; a better response matching the user's preference must still be constructed.
+**Limitations of Prior Work**: Real users naturally express feedback during product use, such as "Thanks, this is exactly what I wanted," "No, please rewrite," or "You ignored my requirements." These signals are closer to actual usage scenarios than offline annotations, yet they are not structured as thumbs-up/down and are often scattered across multi-turn contexts. Simply using the response that triggered feedback for training is insufficient because negative feedback only indicates that the old response was poor; a better response matching the user's preference still needs to be constructed.
 
-**Key Challenge**: Alignment requires real user preferences, but these are naturally noisy, implicit, and context-dependent. Relying solely on static annotation sets lacks scale and authenticity, while relying solely on model self-evaluation may weaken the diversity of human preferences.
+**Key Challenge**: Alignment requires real user preferences, but these are naturally noisy, implicit, and context-dependent. Relying solely on static annotation sets lacks scale and authenticity, while relying exclusively on model self-evaluation may weaken the diversity of human preferences.
 
-**Goal**: The authors aim to address three sub-problems: first, detecting which user utterances in real multi-turn sessions contain satisfaction or dissatisfaction signals; second, converting these signals into preferred-dispreferred response pairs for SFT/DPO; third, constructing an evaluation method where the automatic judge assesses based on the real user's expressed preferences in that specific instance rather than just asking GPT-4 "which is better."
+**Goal**: The authors aim to address three sub-problems: first, detecting which user utterances in real multi-turn conversations contain satisfaction or dissatisfaction signals; second, converting these signals into preferred-dispreferred response pairs suitable for SFT/DPO; and third, constructing an evaluation method where automatic assessment is based on the actual preferences expressed by the user in that specific instance, rather than just asking GPT-4 "which response is better."
 
-**Key Insight**: The key observation is that although user feedback lacks explicit labels, it often follows interpretable linguistic patterns within sessions. By summarizing these patterns into SAT/DSAT rubrics and using GPT-4 to detect and summarize preferences according to these rubrics, "wild" feedback can be converted into structured preference data.
+**Key Insight**: The critical observation is that although user feedback lacks explicit labels, it often follows interpretable linguistic patterns within a session. By summarizing these patterns into SAT/DSAT rubrics and leveraging GPT-4 to detect and summarize preferences based on these rubrics, "wild" feedback can be converted into structured preference data.
 
-**Core Idea**: Replace offline human/model preference annotations with in-situ user feedback from real multi-turn interactions, and use instance-level user preference checklists to guide both preference sample construction and model evaluation.
+**Core Idea**: Replace offline human/model preference annotations with in-situ user feedback from real multi-turn conversations, using instance-level user preference checklists to guide both preference sample construction and model evaluation.
 
 ## Method
-WildFeedback does not propose a new alignment loss but rather a data pipeline from real user interactions to preference training and evaluation. The input is a batch of multi-turn user-LLM conversations, and the output is a preference dataset containing prompts, user preference descriptions, preferred responses, and dispreferred responses, along with a held-out benchmark evaluated via user preference checklists.
+WildFeedback does not propose a new alignment loss but rather a data pipeline from real user interactions to preference training and evaluation. The input is a batch of multi-turn user-LLM conversations, and the output is a preference dataset containing prompts, user preference descriptions, preferred responses, and dispreferred responses, along with a held-out benchmark evaluated using user preference checklists.
 
 ### Overall Architecture
-The workflow consists of four steps. First, SAT (satisfaction) and DSAT (dissatisfaction) signals are identified turn-by-turn within 148,715 multi-turn ChatGPT sessions from WildChat. Second, for sessions containing feedback, the full dialogue history preceding the feedback is extracted as the prompt, and the subsequent user feedback is summarized into natural language preferences. Third, response pairs are constructed based on these preferences: the original response triggering DSAT serves as the dispreferred response, while the preferred response is generated by GPT-4 or the current policy model guided by the user preference prompt. Fourth, the generated WildFeedback data is used to perform one round of SFT and one round of DPO on instruction models like Phi-3, LLaMA-3, and Qwen-2, followed by evaluation on general benchmarks and a user preference checklist benchmark.
+The overall process is divided into four steps. First, satisfaction signals (SAT) and dissatisfaction signals (DSAT) are identified turn-by-turn within 148,715 multi-turn ChatGPT conversations from WildChat. Second, for sessions containing feedback, the complete dialogue history prior to the feedback is extracted as the prompt, and the subsequent user feedback is summarized into natural language preferences. Third, response pairs are constructed based on these preferences: the original response triggering a DSAT serves as the dispreferred response, while the preferred response is generated by GPT-4 or the current policy model under the user preference prompt. Fourth, instruction models such as Phi-3, LLaMA-3, and Qwen-2 are trained using the generated WildFeedback data through one round of SFT followed by one round of DPO, then evaluated on general benchmarks and the user preference checklist benchmark.
 
-The paper also incorporates evaluation into the framework. Traditional AlpacaEval/MT-Bench uses GPT-4 for general quality judgments. Here, each sample includes a preference summarized from real feedback (e.g., "be more concise," "needs factual correction," "do not ignore formatting"). During evaluation, these preferences are provided to GPT-4 as a checklist for pairwise comparison, reducing the discrepancy between the judge and real user preferences.
+The paper also integrates evaluation into the framework. Traditional AlpacaEval/MT-Bench uses GPT-4 for general quality judgments. Here, each sample has a preference summarized from real feedback (e.g., "be more concise," "needs factual correction," "don't ignore formatting requirements"). These preferences are provided to GPT-4 as a checklist for pairwise comparison, reducing the discrepancy between the judge and real user preferences.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["Real Multi-turn Conversations<br/>148,715 ChatGPT sessions from WildChat"] --> B["SAT/DSAT Feedback Signal Recognition<br/>9 SAT + 9 DSAT rubrics, classified by GPT-4o per utterance"]
-    B --> C["Extract full history before feedback as prompt<br/>GPT-4 summarizes subsequent feedback into natural language preferences"]
-    C --> D["Construct semi-synthetic preference pairs<br/>dispreferred = original response triggering feedback; preferred = generated by GPT-4 / policy under preference prompt"]
-    D --> E["Checklist Filtering<br/>Discard samples where the preferred response does not beat the dispreferred in on-policy setting"]
+    A["Real Multi-turn Conversations<br/>148,715 ChatGPT sessions from WildChat"] --> B["SAT/DSAT Feedback Signal Identification<br/>9 SAT + 9 DSAT rubrics, GPT-4o classifies each utterance"]
+    B --> C["Extract context before feedback as Prompt<br/>GPT-4 summarizes subsequent feedback into natural language preferences"]
+    C --> D["Construct Semi-synthetic Preference Pairs<br/>dispreferred = original response triggering feedback; preferred = generated by GPT-4 / policy under preference prompt"]
+    D --> E["Checklist Filtering<br/>Discard on-policy samples where preferred does not beat dispreferred"]
     E --> F["Alignment Training<br/>SFT 1 epoch + DPO 1 epoch (Phi-3 / LLaMA-3 / Qwen-2)"]
     F --> G["Checklist-guided Evaluation<br/>Pairwise judgment based on instance-level user preferences"]
 ```
 
 ### Key Designs
 
-**1. SAT/DSAT Feedback Signal Recognition: Summarizing "wild" implicit user reactions into interpretable SAT/DSAT rubrics for localization.**
+**1. SAT/DSAT Feedback Signal Identification: Categorizing "wild" implicit user reactions into interpretable rubrics.**
 
-Real user feedback is rarely an explicit thumbs-up/down; it is usually embedded in the next turn's language—"Thanks, exactly what I needed," "Incorrect, rewrite please," or "You missed my requirement." Inheriting and modifying the user satisfaction estimation ideas from SPUR, the authors structure these reactions using 9 SAT rubrics (Thanks, Learning, Compliance, Praise, Personal Details, Humor, Confirmation, Positive Ending, Progress towards goal) and 9 DSAT rubrics (Negative Feedback, Request Correction, Factual Error, Unrealistic Expectation, No Further Interaction, Ignored, Low Quality, Insufficient Detail, Style Issues). GPT-4o classifies utterances based on these rubrics. Categorizing feedback into interpretable rubrics avoids using vague emotional words as training signals and enables analyzing exactly why users were satisfied or dissatisfied.
+Real user feedback is rarely an explicit thumbs-up/down but is scattered in subsequent utterances—"Thanks, that's exactly it," "Wrong, rewrite it," or "You missed my point." Adapting the satisfaction estimation idea from SPUR, the authors structure these reactions with 9 SAT rubrics (e.g., Appreciation, Learning, Compliance, Humor) and 9 DSAT rubrics (e.g., Negative Feedback, Correction Request, Factual Error, Low Quality). GPT-4o performs utterance-level classification. Mapping feedback to interpretable rubrics avoids using vague emotional words as training signals and enables analysis of why users are satisfied or dissatisfied.
 
-**2. Constructing semi-synthetic preference pairs: Grounding weak supervision like "user said dissatisfied" into `(prompt, preferred, dispreferred)` for DPO.**
+**2. Constructing Semi-synthetic Preference Pairs: Transforming weak supervision into DPO-ready `(prompt, preferred, dispreferred)` triplets.**
 
-Negative feedback only indicates that the old response was bad without providing a better answer. For sessions identified with SAT/DSAT, the system first lets GPT-4 summarize the user preferences, then extracts the full conversation history before the feedback as the prompt. In the GPT-4 expert version, the original response triggering DSAT is used as the dispreferred response, and a preferred response is generated by GPT-4 under user preference and safety prompts. In the on-policy version, Phi-3, Qwen-2, or LLaMA-3 generates both responses, with the preferred one guided by user preference system prompts. Unlike offline data like UltraFeedback where GPT-4 provides uniform scores, the prompts and preferences here originate from real human-AI interactions and preserve multi-turn context.
+Negative feedback only indicates a poor response without providing a better one. For SAT/DSAT sessions, the system first uses GPT-4 to summarize user preferences and extracts the dialogue history prior to feedback as the prompt. In the GPT-4 expert version, the original response triggering a DSAT is the dispreferred response, while the preferred response is generated by GPT-4 under preference and safety prompts. In the on-policy version, Phi-3, Qwen-2, and LLaMA-3 generate their own pairs, with the preferred response guided by user preference system prompts. Unlike UltraFeedback's offline data judged solely by GPT-4, the prompts and preferences here originate from real human-AI interactions and preserve multi-turn context.
 
-**3. Checklist-guided evaluation and filtering: Using instance-level user preferences to constrain judges and data quality instead of general LLM aesthetics.**
+**3. Checklist-guided Evaluation and Filtering: Constraining the judge and data quality with instance-level preferences.**
 
-LLM-as-a-judge tends to favor long responses or its own style, diverging from real user preferences. WildFeedback converts the preferences summarized from real feedback for each sample (e.g., "more concise," "correct facts") into a checklist. The judge performs pairwise judgment based on this checklist. During on-policy data construction, if a generated preferred response cannot beat the dispreferred response under checklist evaluation, the sample is filtered out. The checklist shifts the evaluation standard from "generic good response" to "what this specific user wanted for this specific task," re-aligning atomic judges with instance-level ground truth.
+LLM-as-a-judge tends to favor long responses or its own style, diverging from real user preferences. WildFeedback converts preferences summarized from real feedback (e.g., "more concise," "require factual correction") into a checklist. The judge must perform pairwise comparisons based on this checklist. During on-policy data construction, if a generated preferred response fails to beat the dispreferred response under checklist evaluation, it is filtered out. The checklist shifts the evaluation standard from a "generalized good response" to "what this specific user wanted in this specific task."
 
 ### Loss & Training
-The training does not modify the DPO objective but integrates WildFeedback data into a standard alignment pipeline: each base model undergoes 1 epoch of SFT on preferred responses, followed by 1 epoch of DPO on the full preference pairs. The experiments cover three open-source instruction models: Phi-3-mini-4k-instruct, Meta-Llama-3-8B-Instruct, and Qwen2-7B-Instruct, comparing five settings: Base Instruction Model, WF GPT-4, WF On-policy, UF GPT-4, and UF On-policy.
+The training does not modify the DPO objective but integrates WildFeedback data into a standard alignment pipeline: each base model undergoes 1 epoch of SFT on preferred responses, followed by 1 epoch of DPO on the full preference pairs. Experiments cover three open-source instruction models: Phi-3-mini-4k-instruct, Meta-Llama-3-8B-Instruct, and Qwen2-7B-Instruct, comparing five settings: original models, WF GPT-4, WF On-policy, UF GPT-4, and UF On-policy.
 
-The test set construction also avoids overfitting. The authors use FAISS to cluster user prompts and summarized preferences into 70 groups. Ten samples closest to each cluster center are selected, followed by deduplication and filtering of meaningless tasks, resulting in 540 held-out samples. This ensures evaluation reflects the "mainstream preferences of majority users in similar tasks" rather than idiosyncratic outliers.
+The test set is constructed to prevent overfitting. Users' prompts and summarized preferences are clustered into 70 groups using FAISS. Ten samples closest to each cluster center are selected, followed by deduplication and filtering of meaningless tasks, resulting in 540 held-out samples. This ensures evaluation focuses on mainstream preferences for similar tasks rather than idiosyncratic outliers.
 
 ## Key Experimental Results
 
 ### Main Results
-WildFeedback demonstrates it can mine a significant scale of feedback data from real sessions. Out of 148,715 WildChat multi-turn sessions, approximately 12.8% contain feedback signals, resulting in 20,281 GPT-4 version preference samples and several on-policy versions.
+WildFeedback demonstrates the ability to mine a significant scale of feedback data from real sessions. Out of 148,715 WildChat sessions, approximately 12.8% contain feedback signals, resulting in 20,281 GPT-4 version preference samples.
 
 | Data/Metric | SAT | DSAT | Total |
 |--------|------|------|------|
 | Sessions with feedback | 5,447 | 13,582 | 148,715 |
 | Utterances with feedback | 8,186 | 27,711 | 628,467 |
-| GPT-4 vs Human Consistency | $\kappa=0.69$ | $\kappa=0.50$ | Close to human level |
+| GPT-4 vs Human Agreement | $\kappa=0.69$ | $\kappa=0.50$ | Near-human level |
 
-Compared to existing preference data, WildFeedback features multi-turn context, originates from real in-situ feedback, and has longer prompts reflecting actual product usage.
+Compared to existing preference datasets, WildFeedback is characterized by multi-turn context, in-situ user feedback, and longer prompts.
 
-| Dataset | Samples | Prompt Length | Response Length | Multi-turn? | Feedback Source |
+| Dataset | Samples | Prompt Len | Response Len | Multi-turn? | Feedback Source |
 |--------|------:|-----------:|-------------:|------|----------|
 | WebGPT | 38,925 | 51 | 188 | No | Human Annotation |
 | Anthropic HH | 118,263 | 186 | 95 | No | Human Annotation |
 | OASST1 | 35,905 | 168 | 221 | Yes | Human Written |
 | UltraFeedback | 61,135 | 159 | 256 | No | GPT-4 |
-| WildFeedback GPT-4 | 20,281 | 929 | 440 | Yes | In-situ User Feedback |
-| WildFeedback Qwen-2 | 11,509 | 1,057 | 541 | Yes | In-situ User Feedback |
-| WildFeedback Phi-3 | 9,194 | 931 | 344 | Yes | In-situ User Feedback |
-| WildFeedback LLaMA-3 | 10,659 | 982 | 376 | Yes | In-situ User Feedback |
+| WildFeedback GPT-4 | 20,281 | 929 | 440 | Yes | In-situ Feedback |
+| WildFeedback Qwen-2 | 11,509 | 1,057 | 541 | Yes | In-situ Feedback |
+| WildFeedback Phi-3 | 9,194 | 931 | 344 | Yes | In-situ Feedback |
+| WildFeedback LLaMA-3 | 10,659 | 982 | 376 | Yes | In-situ Feedback |
 
-On general benchmarks, training with WildFeedback generally outperforms the original models and UltraFeedback counterparts. Notably, for Phi-3 and LLaMA-3, WF GPT-4 improves AlpacaEval 2, Arena-Hard, and MT-Bench simultaneously.
+On general benchmarks, training with WildFeedback typically outperforms both the base models and UltraFeedback baselines. Notably, for Phi-3 and LLaMA-3, WF GPT-4 improves performance across AlpacaEval 2, Arena-Hard, and MT-Bench simultaneously.
 
 | Model / Training Data | AlpacaEval2 LC | AlpacaEval2 WR | Arena-Hard WR | MT-Bench |
 |---------------|---------------:|---------------:|--------------:|---------:|
@@ -109,62 +109,59 @@ On general benchmarks, training with WildFeedback generally outperforms the orig
 | LLaMA-3 Original | 22.9 | 22.6 | 20.6 | 7.10 |
 | LLaMA-3 + WF GPT-4 | 34.2 | 42.8 | 32.9 | 7.57 |
 | LLaMA-3 + UF GPT-4 | 32.2 | 43.2 | 32.6 | 7.49 |
-| Qwen-2 Original | 28.7 | 26.0 | 24.9 | 7.55 |
-| Qwen-2 + WF On-policy | 42.6 | 34.4 | 36.1 | 8.02 |
-| Qwen-2 + UF On-policy | 38.3 | 34.2 | 29.2 | 7.72 |
 
 ### Ablation Study
-Instead of traditional deletion-based ablation, the paper validates components through data construction versions, checklist evaluation, UltraFeedback comparison, and feedback type analysis.
+The paper validates components through data construction versions, checklist evaluation, UltraFeedback comparison, and feedback type analysis.
 
-| Configuration / Analysis | Key Metric | Description |
+| Configuration / Analysis | Key Metric | Explanation |
 |------|---------|------|
-| Preference pair validation w/o checklist | GPT-4 does not always prefer responses matching user preferences | Suggests vanilla GPT-4 judges are influenced by generic preferences and fail to identify in-situ user needs. |
-| After adding checklist | >70% of GPT-4 expert preferred responses align with user preferences | Checklists pull the judge's attention back to instance-level user needs. |
-| Small model on-policy preferred responses | ~50% align with user preferences | Small models have weaker controllability; checklists are necessary to filter unqualified pairs. |
-| WildFeedback held-out test | LLaMA-3 + WF GPT-4 vs UF GPT-4 win rate 45.5%, rises to 50.8% with checklist | WF training is more aligned with in-situ feedback on real user preference tests. |
-| Feedback type distribution | DSAT mainly focuses on correction and factual errors; SAT is more dispersed | WildFeedback characterizes specific sources of user dissatisfaction rather than just scores. |
+| Pairs w/o Checklist | GPT-4 is not always biased toward responses matching user preferences | Indicates standard GPT-4 judges are influenced by general aesthetics and can't stably identify in-situ preferences |
+| Pairs w/ Checklist | >70% of GPT-4 expert preferred responses align with user preferences | Checklist steers the judge's attention back to instance-level user needs |
+| Small Model On-policy | ~50% align with user preferences | Small models have weaker controllability, necessitating checklist-based filtering |
+| WF held-out test | LLaMA-3 + WF GPT-4 win rate 50.8% against UF GPT-4 with checklist | WF training is closer to in-situ feedback on real user preference tests |
+| Feedback Distribution | DSAT focused on corrections/factual errors; SAT is more dispersed | WF provides diagnostic insights into user dissatisfaction |
 
 ### Key Findings
-- The benefits of WildFeedback come not just from "more data," but from training data matching actual usage scenarios. Its prompts come from multi-turn sessions and preferences from natural feedback, making its improvements on real user preference benchmarks more interpretable than UltraFeedback.
-- The checklist is the most critical evaluation design. Without it, the GPT-4 judge may select responses based on generic aesthetics; with it, it distinguishes which response satisfies the specific preference expressed by the user in that session.
-- DSAT significantly outweighs SAT, indicating a natural selection bias in product data: users are more likely to stay engaged to correct the model when dissatisfied. This focuses the data on failure cases but also means the training distribution might over-represent negative feedback scenarios.
+- The gain from WildFeedback is not just "more data" but a better match between training data and actual usage scenarios. Its prompts and preferences originate from real interactions, making its improvement on user preference benchmarks more interpretable than UltraFeedback.
+- The checklist is the most critical evaluation design. It prevents GPT-4 judges from selecting responses based on generalized aesthetics and directs them to fulfill the specific goals expressed by users in that session.
+- DSAT significantly outweighs SAT, highlighting a selection bias in real product data: users are more likely to continue interacting to correct a model when dissatisfied.
 
 ## Highlights & Insights
-- The primary highlight is elevating "user feedback" from noise in product logs to trainable preference data. While many alignment works assume preferences must be explicitly scored by annotators or strong models, WildFeedback shows that the user's next-turn reaction itself is a supervisory signal.
-- Checklist-guided evaluation is highly suitable for personalized agents, recommendation dialogues, and customer service systems. As long as "what the user wants" can be summarized from behavior or text, evaluation can transition from general quality scores to instance-level goal fulfillment.
-- The analysis of feedback types is insightful: dissatisfaction often stems from factual errors and modification needs, whereas satisfaction is more diffuse. This suggests that practical system optimization should prioritize fixing hard factual errors over just pursuing a more pleasing tone.
-- The "semi-synthetic" strategy is pragmatic: users provide the real preference, and a strong model completes the preferred response. It does not attempt to avoid model generation entirely but constrains it under user preference.
+- The primary highlight is elevated "user feedback" from noise in product logs to trainable preference data. While many works assume preferences must be explicitly scored, WildFeedback shows that natural next-turn reactions provide a valid supervisory signal.
+- Checklist-guided evaluation is highly suitable for personalized agents and customer service systems. Evaluations can shift from general quality scores to instance-level goal achievement.
+- Analysis of feedback types suggests that dissatisfaction stems mostly from factual errors and ignored instructions. This implies that system optimization should prioritize fixing hard errors over pursuing a more "pleasing" tone.
+- The "semi-synthetic" strategy is pragmatic: users provide the real preference, and a strong model completes the preferred response. It constrains model generation within the bounds of real user intent.
 
 ## Limitations & Future Work
-- In-situ feedback might be malicious, dangerous, or irrational. The authors use safety prompts and OpenAI moderation filters, but this is only a primary defense; a more systematic way to distinguish "real preferences" from "preferences that should not be learned" is needed.
-- Selection bias exists. Users provide feedback more often when dissatisfied, thus WildFeedback might over-represent scenarios like correction, rewriting, and complaining, while underestimating silent but satisfied users.
-- Evaluation still relies on GPT-4o as a judge, only mitigating bias through checklists without eliminating systemic LLM-as-a-judge issues. When the checklist is also summarized by GPT-4, it may introduce model interpretation bias.
-- On-policy small models have weak controllability over user preferences; about half of the "preferred responses" may not actually align with the preference. Future work could use rejection sampling, preference verifiers, or multi-model cross-auditing to improve quality.
-- The work is primarily validated on general chat data; whether it is equally reliable in specialized domains, long-term personalization, or recommendation system interactions remains to be proven.
+- In-situ feedback can be malicious, harmful, or irrational. While safety prompts and moderation filters are used, more robust methods are needed to distinguish "authentic preferences" from "preferences that should not be followed."
+- Selection bias exists; users provide more feedback when dissatisfied, potentially leading to an over-representation of error-correction scenarios and an underestimation of silent but satisfied users.
+- Evaluation still relies on GPT-4o as a judge. Although the checklist reduces bias, it does not eliminate the systematic issues of LLM-as-a-judge, especially since the checklists are also summarized by GPT-4.
+- On-policy generation by small models lacks precision, with about half of the "preferred" responses failing to align with intent. Rejection sampling or cross-model verification could improve data quality.
 
 ## Related Work & Insights
-- **vs UltraFeedback**: UltraFeedback uses GPT-4 to score offline prompt-response pairs, offering scale and reproducibility. WildFeedback mines feedback from real multi-turn sessions; though smaller in scale, it is closer to real user needs and better for studying in-product alignment.
-- **vs Anthropic HH / WebGPT**: These rely on human-annotated preferences, which are controllable but expensive, and annotator preferences may not represent end-users. WildFeedback utilizes actual user feedback within tasks, reducing the "annotator-user" preference gap.
-- **vs OASST1**: OASST1 provides multi-turn dialogues, but many are human-written. WildFeedback's multi-turn context comes from real human-AI interaction, better capturing how users follow up, correct, and supplement requirements after model failures.
-- **Insight**: Alignment data can shift from "annotation tasks" toward "interaction log mining." For education, medical QA, recommendation, and agent toolchains, it is worth studying how to convert behaviors like clicks, dwell time, retries, undos, and rewrites into preference signals.
+- **vs UltraFeedback**: UltraFeedback uses GPT-4 to score offline prompt-response pairs, offering scale and reproducibility; WildFeedback mines real interactions, providing data that is smaller but more aligned with actual user needs.
+- **vs Anthropic HH / WebGPT**: These rely on human-annotated preferences which are high-quality but expensive and may not represent the end user; WildFeedback reduces the "annotator-user" preference mismatch.
+- **vs OASST1**: OASST1 contains multi-turn dialogues, but many are human-written; WildFeedback captures how users actually follow up and correct models in real human-AI loops.
+- **Insight**: Alignment data can shift from "annotation tasks" to "interaction log mining." For specialized domains like education or medical QA, it is worth exploring how to convert behaviors like retries, cancellations, or rewrites into preference signals.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Automatically constructing preference data and checklist evaluations from in-situ feedback is highly relevant to real product alignment.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covers multiple models, benchmarks, UltraFeedback comparisons, and human consistency, though long-term effects at the user level are not yet evaluated.
-- Writing Quality: ⭐⭐⭐⭐ The methodological chain is clear, and the data diagnostics are persuasive. A few details on filtering rules and safety strategies could be expanded.
-- Value: ⭐⭐⭐⭐⭐ Directly inspiring for LLM alignment, conversational recommendation, user simulation, and interactive evaluation, serving as a solid framework for learning from real feedback.
+- Novelty: ⭐⭐⭐⭐⭐ Automating the construction of preference data and checklist evaluations from in-situ feedback is highly relevant to real-world product alignment.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers multiple models, benchmarks, and human consistency checks, though long-term user-side effects remain unassessed.
+- Writing Quality: ⭐⭐⭐⭐ The methodology is clear, and the data diagnostics are persuasive.
+- Value: ⭐⭐⭐⭐⭐ Highly instructive for LLM alignment, conversational recommendation, and interactive evaluation frameworks.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
 - [\[ACL 2026\] PERSA: Reinforcement Learning for Professor-Style Personalized Feedback with LLMs](persa_reinforcement_learning_for_professor-style_personalized_feedback_with_llms.md)
+- [\[ACL 2026\] CuMA: Aligning LLMs with Sparse Cultural Values via Demographic-Aware Mixture of Adapters](cuma_aligning_llms_with_sparse_cultural_values_via_demographic-aware_mixture_of_.md)
 - [\[ACL 2026\] RbtAct: Rebuttal as Supervision for Actionable Review Feedback Generation](rbtact_rebuttal_as_supervision_for_actionable_review_feedback_generation.md)
 - [\[ACL 2026\] Aligning Agents via Planning: A Benchmark for Trajectory-Level Reward Modeling](aligning_agents_via_planning_a_benchmark_for_trajectory-level_reward_modeling.md)
 - [\[ACL 2025\] Aligning to What? Limits to RLHF Based Alignment](../../ACL2025/llm_alignment/aligning_to_what_limits_to_rlhf_based_alignment.md)
-- [\[ACL 2025\] Synergistic Weak-Strong Collaboration by Aligning Preferences](../../ACL2025/llm_alignment/synergistic_weak-strong_collaboration_by_aligning_preferences.md)
 
 </div>
 

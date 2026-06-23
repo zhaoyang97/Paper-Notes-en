@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ForesightKV: Optimizing KV Cache Eviction for Reasoning Models by Learning Long-Term Contribution
 description: >-
-  [ICML 2026][LLM Reasoning][KV cache eviction] ForesightKV trains a lightweight scoring model to dynamically evict KV pairs based on "future attention contribution." It first distills an optimal eviction sequence from complete traces using the Golden Eviction algorithm to serve as supervisory signals. Then, it fine-tunes the strategy using GRPO reinforcement learni
+  [ICML 2026][LLM Reasoning][KV cache eviction] ForesightKV trains a lightweight scoring model to dynamically evict KV pairs based on "future attention contribution." It utilizes a "Golden Eviction" algorithm to distill optimal eviction sequences from complete traces as supervision signals, followed by GRPO reinforcement learning fine-tuning with a reward based on t
 tags:
   - ICML 2026
   - LLM Reasoning
@@ -10,7 +10,7 @@ tags:
   - Golden Eviction
   - GRPO
 date: 2026-05-08
-content_hash: adfff4354c751db7
+content_hash: f66ee961e1902dda
 ---
 # ForesightKV: Optimizing KV Cache Eviction for Reasoning Models by Learning Long-Term Contribution
 
@@ -18,73 +18,74 @@ content_hash: adfff4354c751db7
 **arXiv**: [2602.03203](https://arxiv.org/abs/2602.03203)  
 **Code**: https://github.com/RUCAIBox/ForesightKV  
 **Area**: LLM Efficiency / KV Cache Compression / Long-term Reasoning  
-**Keywords**: KV cache eviction, Reasoning models, Golden Eviction, GRPO, Long-term contribution prediction
+**Keywords**: KV cache eviction, reasoning models, Golden Eviction, GRPO, long-term contribution prediction
 
 ## TL;DR
-ForesightKV trains a lightweight scoring model to dynamically evict KV pairs based on "future attention contribution." It first distills an optimal eviction sequence from complete traces using the Golden Eviction algorithm to serve as supervisory signals. Then, it fine-tunes the strategy using GRPO reinforcement learning with a reward based on the "sum of squares of loss increments for low-entropy tokens." On AIME2024/2025, it outperforms SnapKV/H2O/R-KV with only half the KV budget; a 4K budget preserves 99% of the original model's performance.
+ForesightKV trains a lightweight scoring model to dynamically evict KV pairs based on "future attention contribution." It utilizes a "Golden Eviction" algorithm to distill optimal eviction sequences from complete traces as supervision signals, followed by GRPO reinforcement learning fine-tuning with a reward based on the "sum of squared loss increments of low-entropy tokens." On AIME2024/2025, it outperforms SnapKV/H2O/R-KV with half the KV budget; a 4K budget preserves 99% of the original model performance.
 
 ## Background & Motivation
-**Background**: Reasoning LLMs (DeepSeek-R1, Qwen3 series) achieve breakthroughs in mathematics and coding tasks by generating Chain-of-Thought (CoT) sequences of 8K–32K tokens. However, the KV cache grows linearly with every token generated—for instance, Qwen3-4B consumes 4.5 GB of BFloat16 VRAM for a single sample at a 32K length, severely limiting concurrent batch sizes. Since decoding is memory-bound, moving massive KV caches also slows down throughput. The mainstream solution is KV cache eviction: permanently discarding a portion of KV pairs every few steps based on an "importance score" to compress the cache back to a budget $B$. Representative methods include SnapKV (using recent window attention), H2O (using accumulated attention), and R-KV (designed for reasoning models).
+**Background**: Reasoning LLMs (e.g., DeepSeek-R1, Qwen3 series) have achieved breakthroughs in math and code tasks by generating Chain-of-Thought (CoT) sequences of 8K–32K tokens. However, the KV cache grows linearly with each generated token—a Qwen3-4B model at a 32K length consumes 4.5 GB of BFloat16 VRAM for a single sample, severely limiting concurrent batch sizes. Since decoding is memory-bound, moving the massive KV cache also slows down throughput. The mainstream solution is KV cache eviction: permanently discarding a portion of KV pairs every few steps based on an "importance score" to compress the cache back to a budget $B$. Representative methods include SnapKV (using recent window attention), H2O (accumulative attention), and R-KV (designed for reasoning models).
 
-**Limitations of Prior Work**: Training-free rule-based methods rely on heuristics (recent window attention, cumulative attention, position, etc.) to estimate KV importance, which fails to capture the complex attention patterns in reasoning data. The authors observed three types of heads in Qwen3-4B: global (vertical bars), position-dependent (local), and semantic-dependent (block-wise, dynamic switching). Using the attention of recent tokens as an observation window, as in SnapKV, causes KV pairs that are "semantically unrelated to the window but important for the future" to be discarded, leading to significant performance drops. Another line of research, such as training-based DMC, evaluates importance only once at the start of a sequence, failing to capture dynamic changes in importance across generation stages.
+**Limitations of Prior Work**: Training-free rule-based methods use heuristics (recent window attention, cumulative attention, position, etc.) to estimate KV importance, which fails to capture complex attention patterns in reasoning data. The authors observed three types of heads in Qwen3-4B: global (vertical stripes), position-dependent (local), and semantic-dependent (block-like, dynamically switched). SnapKV uses recent tokens as an observation window, often discarding KV pairs that are "semantically unrelated to the window but crucial for the future," leading to significant performance degradation. Another line of research, such as DMC, evaluates importance only once at the start of a sequence, failing to capture dynamic changes in importance across generation stages.
 
-**Key Challenge**: KV importance is a **function of future attention scores**, yet all existing methods only see **historical** information, essentially "using the past to predict the future." Worse, eviction harms **low-entropy tokens** (the top 80% low-entropy detail/deterministic tokens) much more than high-entropy decision tokens. Table 1 shows that under the same budget, the loss for low-entropy tokens increases by 147% while high-entropy tokens only increase by 52%. Errors occur precisely on numbers, symbols, and entities—facts that appeared earlier—and a single error can derail the subsequent reasoning.
+**Key Challenge**: KV importance is a **function of future attention scores**, yet all existing methods only see **historical** information, essentially "using the past to predict the future." More critically, eviction harms **low-entropy tokens** (top-80% low-entropy details/deterministic tokens) significantly more than high-entropy decision tokens. Table 1 shows that under the same budget, the loss of low-entropy tokens increases by 147% while high-entropy tokens only increase by 52%. Errors occur precisely in facts, numbers, and symbols from the preceding text, where a single mistake can derail the entire subsequent reasoning process.
 
-**Goal**: (1) Identify a "gold standard" eviction strategy that utilizes future information to provide training supervision; (2) Train a lightweight scoring model to distill "future awareness" into a strategy that considers only the current state; (3) Align the training objective with the loss of low-entropy tokens that truly impact reasoning quality.
+**Goal**: (1) Identify a "golden standard" eviction strategy that utilizes future information to provide training supervision; (2) Train a lightweight scoring model to distill "future-awareness" into a policy based only on the current state; (3) Align the training objective with the loss of low-entropy tokens that truly impacts reasoning quality.
 
-**Key Insight**: Since offline traces provide complete future attention, an oracle can be used to construct an "optimal eviction sequence" that minimizes future damage. This sequence is used for supervised pairwise ranking to train an MLP scorer. The entire decoding process is then modeled as an MDP and fine-tuned using GRPO on group-relative advantage, specifically targeting "low-entropy and significantly deteriorated" tokens.
+**Key Insight**: Since offline traces contain complete future attention, an oracle can be used to construct an optimal eviction sequence that minimizes "damage to the future." This sequence can be used for supervised pairwise ranking to train an MLP scorer. The entire decoding process is then modeled as an MDP, fine-tuned using GRPO on group-relative advantages, specifically targeting tokens that are "low-entropy and significantly deteriorated."
 
-**Core Idea**: By combining two-stage training—distillation from oracle future attention and rewards based on low-entropy token loss—an MLP learns to "predict the long-term contribution of each KV pair," upgrading rule-based eviction to data-driven strategy learning.
+**Core Idea**: A two-stage training approach involving oracle future attention distillation and low-entropy token loss rewards allows an MLP to learn to "predict the long-term contribution of each KV pair," upgrading rule-based eviction to data-driven policy learning.
 
 ## Method
 
 ### Overall Architecture
-The core problem ForesightKV addresses is that KV importance is inherently a function of future attention, yet rule-based methods are limited to history. The solution is to train a lightweight MLP scorer as a "future contribution predictor." The pipeline is split into inference and training. During inference, for every $L$ new tokens generated ($L=256$), the KV cache grows to $B+L$. For each layer and attention group (GQA shared KV), the scoring model $\pi_\theta$ takes features $\mathbf{x}_n = \text{Concat}(\mathbf{k}_n, \mathbf{v}_n, \mathbf{a}_n)$ (where $\mathbf{a}_n$ represents fixed-length statistical features of attention scores) and outputs importance $\phi_n$. The most recent $L$ pairs are kept, and $L$ pairs are evicted from the remainder to compress the cache back to $B$. The LLM remains frozen; only a few MLP scorers are trained, resulting in minimal overhead. The training side consists of two stages: Golden Eviction distills the optimal eviction sequence from offline traces, followed by an on-policy refinement where eviction is modeled as an MDP and fine-tuned via GRPO, using "large deterioration of low-entropy tokens" as a negative reward.
+The core problem ForesightKV addresses is that KV importance is inherently a function of future attention, while rule-based methods only view history. It trains a lightweight MLP scorer as a "future contribution predictor." The pipeline is divided into inference and training. During inference, for every $L$ new tokens generated ($L=256$), the KV cache grows to $B+L$. For each attention group (GQA shared KV) in every layer, the scoring model $\pi_\theta$ takes KV pair features $\mathbf{x}_n = \text{Concat}(\mathbf{k}_n, \mathbf{v}_n, \mathbf{a}_n)$ ($\mathbf{a}_n$ represents fixed-length statistical features of attention scores) and outputs importance $\phi_n$. It retains the most recent $L$ pairs and evicts $L$ pairs from the remainder to compress the cache back to $B$. The LLM remains frozen, while only a few MLP scorers are trained with minimal overhead. The training side has two stages: first, Golden Eviction distills the optimal sequences from complete offline traces; second, eviction is modeled as an MDP and fine-tuned on-policy via GRPO with rewards targeting "significant deterioration of low-entropy tokens."
 
 ```mermaid
-graph TD
-    A["Complete Inference Trace<br/>(Offline, Full-length Attention)"] --> B["Golden Eviction<br/>Future Block Attention as Oracle<br/>Construct Optimal Eviction Sequence"]
-    B --> C["Supervised Training<br/>Pairwise Ranking Loss<br/>Align with Oracle Ranking"]
-    C --> D["MDP + GRPO<br/>MSE Negative Reward for Low-Entropy Deterioration<br/>On-policy Correction of Distribution Shift"]
-    D --> E["Lightweight MLP Scorer<br/>(One per Group, LLM Frozen)"]
-    E -.Deployed after training.-> F
-    subgraph INF["Inference Phase: Dynamic Eviction every L steps"]
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Complete Inference Trace<br/>(Offline, full-length attention)"] --> B["Golden Eviction<br/>Future block attention as oracle<br/>Constructs optimal eviction sequence"]
+    B --> C["Supervised Training<br/>Pairwise Ranking Loss<br/>Aligns with oracle ranking"]
+    C --> D["MDP + GRPO<br/>Low-entropy deterioration MSE negative reward<br/>On-policy correction of distribution shift"]
+    D --> E["Lightweight MLP Scorer<br/>(One per group, LLM frozen)"]
+    E -.Deployment.-> F
+    subgraph INF["Inference: Dynamic Eviction every L steps"]
         direction TB
-        F["Cache grows to B+L<br/>Scorer assigns score φ to each KV pair"] --> G["Top-K + Multinomial<br/>Select lowest 2L candidates, Sample L via Softmax"]
-        G --> H["Evict L pairs, compress cache to B<br/>(Recent L pairs always kept)"]
+        F["Cache grows to B+L<br/>Scorer assigns importance φ"] --> G["Top-K + Multinomial<br/>Extract 2L lowest candidates, sample L"]
+        G --> H["Evict L pairs, compress to B<br/>(Recent L pairs mandatory)"]
         H -->|Continue Generation| F
     end
 ```
 
 ### Key Designs
 
-**1. Golden Eviction: Using Future Attention as an Oracle for Supervisory Labels**
+**1. Golden Eviction: Using Future Attention as an Oracle for Supervision**
 
-Rule-based methods (SnapKV/H2O/R-KV) estimate future importance using historical attention, inevitably missing the block-wise, dynamically switching patterns of semantic-dependent heads. ForesightKV breaks this by using the complete future attention hidden in offline traces as the ground truth. Specifically, the full attention matrix $\mathbf{A}^h \in \mathbb{R}^{T\times T}$ is calculated once. Along the query dimension, it is segmented into blocks of size $L$, and average pooling is applied across heads within each GQA group to obtain block scores $\tilde{\mathbf{a}}_t^{h'}$. For an eviction decision at step $t$, each KV pair $i$ is assigned a "future score" $\alpha_{i,t}^{h'} = \max_{t\le j\le M}(\tilde{\mathbf{a}}_{i,j}^{h'})$ based on the maximum block score across **all future blocks**. Pairs with the highest $\alpha$ are retained, and the lowest $B-L$ are discarded. Appendix A proves that this "evict lowest future attention" strategy has the minimal impact on output upper bounds. With this oracle trajectory, the scorer uses Pairwise Ranking Loss $\mathcal{L}_{\text{supervised}} = \sum_t \sum_{\alpha_i < \alpha_j} \max(0, m-(\phi_i - \phi_j))$ to align with the oracle's future score ranking. The strength of this signal is evident: the loss ratio for the Golden Eviction trajectory in Table 2 is only 1.07, compared to 1.41+ for R-KV/SnapKV, providing a robust foundation for distillation.
+Rule-based methods (SnapKV/H2O/R-KV) essentially "estimate future importance using historical attention," which misses block-like, dynamically switched attention patterns in semantic-dependent heads. ForesightKV's breakthrough lies in utilizing the complete future attention hidden in offline traces as ground truth. Specifically, the full-length attention matrix $\mathbf{A}^h \in \mathbb{R}^{T\times T}$ is calculated once. It is sliced into blocks of step size $L$ along the query dimension, and average pooling is applied across blocks and heads within GQA groups to obtain the block score $\tilde{\mathbf{a}}_t^{h'}$. For an eviction decision at step $t$, each KV pair $i$ takes the maximum block score across **all future blocks** as its "future score" $\alpha_{i,t}^{h'} = \max_{t\le j\le M}(\tilde{\mathbf{a}}_{i,j}^{h'})$. Pairs with the largest $\alpha$ are retained. Appendix A proves that this strategy of "discarding those with the lowest future attention" has the minimal impact on the output upper bound. With this oracle trajectory, the scorer uses Pairwise Ranking Loss $\mathcal{L}_{\text{supervised}} = \sum_t \sum_{\alpha_i < \alpha_j} \max(0, m-(\phi_i - \phi_j))$ to align with the oracle's future score ranking. This supervision signal is highly effective: Table 2 shows the Golden Eviction loss ratio is only 1.07, compared to 1.41+ for R-KV/SnapKV.
 
 **2. MDP + GRPO: Correcting Distribution Shift with Real Reasoning Rewards**
 
-Supervised training faces a risk: the scorer learns the oracle trajectory, but during inference, it selects its own KV pairs, potentially entering state distributions not seen during training. Furthermore, "imitating the oracle" does not necessarily equate to "improving reasoning quality." ForesightKV models the decoding process as an MDP where the state $s_t$ is the current KV cache, the action $a_t$ is selecting $B$ pairs from $B+L$ to keep, and the policy is the per-group scorer $\pi_{\theta_{h,l}}$. The reward focuses on the critical observation from §2.2 (low-entropy tokens are the bottleneck): it first filters for tokens $E=\{w_t \mid w_t \in \mathbf{w}_\text{low},\ \Delta\mathcal{L}(w_t)>\eta\}$ where the original entropy is in the bottom 80% (low-entropy) and the loss increment after eviction exceeds threshold $\eta$. The reward is the negative MSE of the loss increment on this subset: $R_t = -\sum_{t\in E}[\Delta\mathcal{L}(w_t)]^2$, using the square to heavily penalize catastrophic deterioration. Optimization uses GRPO: $G$ different eviction trajectories are sampled for the same sequence, advantages $\hat A_t = (R_t - \text{Mean})/\text{Std}$ are calculated via group-relative normalization, and the advantage is broadcast to all eviction steps in the sequence to jointly optimize all scorers (with PPO clipping and KL regularization). Table 4 justifies this design: minimizing total loss blindly drops performance to 50.6 (base 51.7), and targeting high-entropy tokens is even worse (49.6), while the "low-entropy + large deterioration" MSE reward $\mathcal{L}_\text{ours}$ pushes AIME24 from 51.7 to 54.5.
+Supervised training has a drawback: the scorer learns the oracle trajectory, but during inference, it selects KVs itself, potentially entering state distributions not seen during training. ForesightKV models decoding as an MDP where the state $s_t$ is the current KV cache, the action $a_t$ is selecting $B$ pairs from $B+L$, and the policy is the per-group scorer $\pi_{\theta_{h,l}}$. The reward focuses on the observation that low-entropy tokens are the bottleneck: it filters for tokens whose original entropy is in the bottom 80% and whose loss increment after eviction exceeds a threshold $\eta$: $E=\{w_t \mid w_t \in \mathbf{w}_\text{low},\ \Delta\mathcal{L}(w_t)>\eta\}$. The reward $R_t$ is the negative MSE of the loss increment on this subset: $R_t = -\sum_{t\in E}[\Delta\mathcal{L}(w_t)]^2$. Optimization uses GRPO: $G$ different eviction trajectories are sampled for the same sequence, advantages $\hat A_t$ are calculated via group-relative normalization, and all scorers are jointly optimized. Table 4 shows that optimizing total loss actually degrades performance (50.6 vs base 51.7), while the "low-entropy + significant deterioration" MSE reward $\mathcal{L}_\text{ours}$ pushes AIME24 from 51.7 to 54.5.
 
-**3. Top-K + Multinomial: Stable yet Exploratory Discrete Action Parametrization**
+**3. Top-K + Multinomial: Discrete Action Parameterization for Stability and Exploration**
 
-Determining which KV pairs to evict based on scores $\Phi$ is a discrete selection problem. Pure greedy (top-$K$) selection is deterministic and sensitive to local ranking errors while offering no exploration for RL. Pure multinomial sampling is too noisy, and once a KV pair is wrongly evicted, it cannot be recovered. ForesightKV uses a compromise: $\mathcal{D}_t = \text{Multinomial}_L(\text{Softmax}(\text{Top}_{2L}(-\Phi)))$. It first identifies the $2L$ lowest-scoring pairs as high-confidence eviction candidates, then samples the $L$ actual pairs to evict from this pool using softmax on the negative scores. This "prune-then-controlled-sampling" approach maintains stability through pruning while providing trajectory diversity for GRPO through sampling. Table 5 shows this hybrid outperforms both pure top-K and pure multinomial on AIME24.
+Deciding which KV pairs to discard based on scores $\Phi$ is a discrete selection problem. Pure top-$K$ is deterministic and sensitive to local ranking errors, leaving no room for RL exploration. Pure multinomial sampling is too noisy, and errors are irreversible. ForesightKV uses $\mathcal{D}_t = \text{Multinomial}_L(\text{Softmax}(\text{Top}_{2L}(-\Phi)))$ as a compromise: it first selects the $2L$ lowest-scoring pairs as high-confidence eviction candidates, then samples $L$ pairs within this pool according to softmax(negative scores). This "pruning followed by controlled sampling" ensures stability through pruning while providing trajectory diversity for GRPO through sampling.
 
 ### Loss & Training
-The supervised phase uses Pairwise Ranking Loss with hyperparameter margin $m$. The RL phase uses the GRPO objective:
+The supervision stage uses Pairwise Ranking Loss (Eq. 6) with hyperparameter margin $m$. The RL stage uses the GRPO objective:
 $$\mathcal{J}(\theta) = \mathbb{E}_{o\sim\pi_{\theta_\text{old}}}\sum_t \min(r_t(\theta)\hat A_t, \text{clip}(r_t(\theta),1-\epsilon,1+\epsilon)\hat A_t) - \beta\cdot \text{KL}[\pi_\theta\|\pi_\text{ref}]$$
-where $r_t(\theta) = \pi_\theta(a_t|s_t)/\pi_{\theta_\text{old}}(a_t|s_t)$. Each attention group is assigned an independent MLP scorer (16 hidden units), and the LLM is frozen. The training budget is $B\le 2K$, selecting the top 512 candidates and sampling 256 for eviction.
+where $r_t(\theta) = \pi_\theta(a_t|s_t)/\pi_{\theta_\text{old}}(a_t|s_t)$. Each attention group has an independent MLP scorer (hidden size 16); the LLM is frozen. The training budget is $B\le 2K$.
 
 ## Key Experimental Results
 
 ### Main Results
-Models: DeepSeek-R1-Distill-Qwen-7B, Qwen3-4B, Qwen3-1.7B; Benchmarks: AIME2024 / AIME2025; Metric: Average pass@1 over 32 trials.
+Models: DeepSeek-R1-Distill-Qwen-7B, Qwen3-4B, Qwen3-1.7B; Benchmarks: AIME2024 / AIME2025; Metric: pass@1 averaged over 32 trials.
 
 | Setting (Qwen3-4B, AIME24) | Budget | pass@1 | Comparison |
 |------------------------|------|--------|------|
 | Full KV | 32K | 55.6 | Baseline Upper Bound |
 | R-KV | 2K | 44.8 | Previous SOTA |
-| **ForesightKV** | **1K** | **54.5** | Outperforms R-KV by 9.7 pts with half budget |
+| **ForesightKV** | **1K** | **54.5** | Outperforms R-KV by 9.7 with half budget |
 | **ForesightKV** | **4K** | ≈Full | Retains ~99% performance |
 | **ForesightKV** | 2K | — | Retains ~92% performance |
 
@@ -99,69 +100,52 @@ Efficiency (Qwen3-4B, A800, 32K Generation):
 
 ### Ablation Study
 
-| Ablation Dimension | Setting | AIME24 | Description |
+| Ablation Dimension | Setting | AIME24 | Notes |
 |----------|------|--------|------|
-| Reward Function | Base (SL only) | 51.7 | Pre-RL |
-| | $-\mathcal{L}_\text{all}$ | 50.6 | Total loss fails |
-| | $-\mathcal{L}_\text{low}$ | 53.5 | Low-entropy only |
+| Reward Function | base (SL only) | 51.7 | Pre-RL |
+| | $-\mathcal{L}_\text{all}$ | 50.6 | Total loss degrades |
+| | $-\mathcal{L}_\text{low}$ | 53.5 | Low-entropy only slightly better |
 | | $-\mathcal{L}_\text{high}$ | 49.6 | High-entropy backfires |
 | | $-\mathcal{L}_\text{low,large}$ | 53.8 | Target deterioration points |
-| | $-\mathcal{L}_\text{ours}$ (MSE) | **54.5** | MSE best for penalizing disasters |
-| Input Features | Attn-only | ↓ | Inaccurate without KV |
-| Sampling | Pure Top-K | ↓ | No exploration |
-| | Pure Multinomial | ↓ | Too noisy |
-| | Top-K+MN | **best** | Balance of stability & exploration |
-
-Golden Eviction Comparison (Qwen3-4B, lower loss ratio is better):
-
-| Method | (1024,256) | (2048,256) |
-|------|-----------|-----------|
-| **Golden** | **1.0711** | **1.0166** |
-| R-KV | 1.4101 | 1.1606 |
-| SnapKV | 1.4091 | 1.1281 |
-| H2O | 1.2730 | 1.0948 |
+| | $-\mathcal{L}_\text{ours}$ (MSE) | **54.5** | MSE best at punishing catastrophe |
 
 ### Key Findings
-- **Reward design is the key to RL success**: Optimizing total loss blindly leads to drops. Targeting the MSE of "low-entropy and significantly deteriorated" tokens is essential, confirming the observation that low-entropy tokens dominate reasoning quality. This contrasts with the intuition in R1-style work that high-entropy tokens are "decision points"—while decision points affect a branch, errors in facts/numbers contaminate all subsequent reasoning.
-- **Strong Generalization**: Despite being trained with $B\le 2K$, the model retains 99% performance at a 4K budget, suggesting the scorer learns "intrinsic importance" rather than overfitting to a specific budget.
-- **Extreme Compression Yields Massive Gains**: A 1K budget achieves a 9.79× throughput increase on 32K generation. Since decoding is memory-bound, smaller KV caches allow larger batches and fewer HBM transfers. The MLP scorer overhead is negligible compared to the saved attention computation.
+- **Reward design is the key to RL success**: Blindly optimizing total loss leads to performance drops. Focusing on the MSE of "low-entropy and significantly deteriorated" tokens is essential, validating the observation that low-entropy tokens dominate reasoning quality. This contradicts the intuition that high-entropy tokens are the primary decision points; while high-entropy errors impact a branch, fact/number errors pollute the entire subsequent reasoning chain.
+- **Strong Generalization**: Although trained with $B\le 2K$, the performance remains at 99% under a 4K budget, suggesting the scorer learns "intrinsic importance" rather than overfitting to a specific budget.
+- **Aggressive Budget Compression Yields Higher Acceleration**: A 1K budget on 32K generation improves throughput by 9.79×. As decoding is memory-bound, smaller KV caches allow larger batch sizes and reduced HBM movement; the MLP scorer overhead is negligible.
 
 ## Highlights & Insights
-- **The "Oracle Distillation + On-policy RL" two-stage approach elegantly applies data-driven control to KV eviction**: The supervision phase uses future info to create learnable targets (solving "future ignorance"), while the RL phase uses real rewards to correct distribution shifts (solving "oracle $\neq$ self-policy").
-- **Externalizable Insights from Reward Engineering**: By segmenting loss into a four-quadrant matrix (low vs. high entropy × deterioration magnitude), the authors found only "low-entropy/large-deterioration" is worth optimizing. This philosophy of "optimizing catastrophic outliers rather than sample averages" is reusable in LLM alignment, cache strategies, and temperature scheduling.
-- **Top-K + Multinomial "Prune-then-Sample" is a practical discrete action parametrization**: It is applicable to any discrete control problem with many "must-discard" candidates and few "boundary" candidates (e.g., pruning, sparse activation routing, video frame selection).
-- **Minimalist Scorer Design**: The MLP hidden layer is only 16, making the cost almost zero. Since the input features $\mathbf{k},\mathbf{v},\mathbf{a}$ already encode rich semantics, the model only needs to learn a ranking—reaffirming that "feature engineering + small models" remains highly cost-effective for system-side scenarios.
+- **The "Oracle Distillation + On-policy RL" paradigm elegantly applies data-driven control to KV eviction**: Distillation solves "future unknowability," while RL corrects "oracle vs. self-policy" distribution shifts.
+- **Reward engineering insights are transferable**: Decomposing loss into a "low-entropy vs. high-entropy × magnitude of deterioration" quadrant reveals that only the "low-entropy large deterioration" segment is worth optimizing. This philosophy of optimizing "catastrophic minorities" rather than sample averages is applicable to LLM alignment and memory management.
+- **Practical Discrete Parameterization**: The Top-K + Multinomial approach is a versatile discrete control strategy for tasks involving many "must-discard" candidates and few "boundary" candidates requiring exploration.
 
 ## Limitations & Future Work
-- **Dependency on complete offline traces for Golden Eviction**: Data collection is expensive (requiring full long-inference runs and storing $T\times T$ attention), and preparing data for ultra-long context (>32K) is memory-intensive.
-- **Scope Limit**: Verified only on mathematical reasoning with Qwen3/DeepSeek-R1. The "low-entropy dominance" hypothesis needs validation on coding, agents, and long-document QA. Appendix notes that the low-entropy loss ratio increase in coding is 75% (vs. 147% in math).
-- **Per-group Scorer**: Parameters grow with layer × group. For ultra-large models, deployment costs might need further compression via cross-layer/head sharing or LoRA-style parametrization.
-- **Irreversibility**: Eviction remains irreversible. While Top-K+MN mitigates this, it does not fundamentally solve it; future work could combine this with KV offloading/tiered storage or retrieval-based recall.
-- **Manual Hyperparameters**: Budget and eviction interval $L$ are currently manual. Adaptive budgets based on sentence difficulty are a natural next step.
+- **Dependency on Offline Traces**: Calculating Golden Eviction is expensive, requiring full long-context inference and storage of $T\times T$ attention matrices.
+- **Domain Focus**: Primarily validated on mathematical reasoning. The "low-entropy token dominance" hypothesis requires further validation in code or long-document QA.
+- **Per-group Scorer Scaling**: Parameters grow with the number of layers and groups. Cross-layer/head sharing or LoRA-style parameterization could optimize deployment for ultra-large models.
+- **Irreversible Eviction**: Once a KV pair is discarded, it cannot be recalled. 
+- **Manual Hyperparameters**: Budget and eviction interval $L$ remain manual; adaptive budgets based on sentence difficulty are a natural next step.
 
 ## Related Work & Insights
-- **vs. SnapKV / H2O**: These training-free rule-based methods use recent windows or cumulative attention as proxies. ForesightKV trains a scorer via oracle future attention, effectively upgrading "estimating future from history" to "learning the mapping to the future," showing its greatest strength on semantic-dependent heads.
-- **vs. R-KV**: Also designed for reasoning models with periodic eviction but remains rule-based. ForesightKV surpasses it by 9 points with half the budget, proving data-driven > rule-based under the same observations.
-- **vs. DMC / Lancucki et al.**: Those training methods use a one-time evaluation, missing dynamic evolution. ForesightKV's re-scoring every $L$ steps matches its dynamic switching observations.
-- **vs. Token Merging / KV Quantization**: These lines reduce per-pair storage cost and are orthogonal to ForesightKV's reduction of pair quantity; they can be used together.
-- **Transferability**: The "oracle trace distillation + on-policy RL refinement" paradigm has high potential for sparse attention mask learning, draft selection in speculative decoding, and agent memory compression.
+- **Comparison with SnapKV / H2O**: These are training-free rule-based methods. ForesightKV upgrades "using history to estimate the future" to "learning the mapping from history to the future" using oracle data.
+- **Comparison with R-KV**: ForesightKV outperforms R-KV by 9 points at half the budget, proving data-driven strategies significantly outperform human-defined rules under complex reasoning patterns.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The combination of Golden Eviction and low-entropy MSE rewards is new in KV eviction literature, though the SL+RL framework itself is a standard paradigm.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Three models across two benchmarks and multiple budgets, plus comprehensive reward/input/sampling ablations and throughput tests; lacks end-to-end multi-task validation.
-- Writing Quality: ⭐⭐⭐⭐ Clear motivation (three KV patterns + low-entropy loss spikes), well-supported formulas and diagrams, and strong proofs in the appendix.
-- Value: ⭐⭐⭐⭐⭐ 9.79× throughput and outperforming SOTA with half budget while maintaining performance; the lightweight scorer is ready for production.
+- **Novelty**: ⭐⭐⭐⭐ The combination of Golden Eviction and low-entropy MSE rewards is novel in KV eviction literature.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Conducted across three models and multiple benchmarks with thorough reward and sampling ablations.
+- **Writing Quality**: ⭐⭐⭐⭐ Strong motivation based on KV patterns and loss spikes; clear formulas and diagrams.
+- **Value**: ⭐⭐⭐⭐⭐ The ~10x throughput gain and near-lossless performance at high compression ratios make this highly practical for long-reasoning LLM deployment.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
-- [\[ACL 2026\] Revisiting Entropy in Reinforcement Learning for Large Reasoning Models](../../ACL2026/llm_reasoning/revisiting_entropy_in_reinforcement_learning_for_large_reasoning_models.md)
-- [\[ICLR 2026\] Segment-Level Attribution for Selective Learning of Long Reasoning Traces](../../ICLR2026/llm_reasoning/segment-level_attribution_for_selective_learning_of_long_reasoning_traces.md)
+- [\[ICLR 2026\] Bottlenecked Transformers: Periodic KV Cache Consolidation for Generalised Reasoning](../../ICLR2026/llm_reasoning/bottlenecked_transformers_periodic_kv_cache_consolidation_for_generalised_reason.md)
 - [\[ICML 2026\] MOSAIC: Learning When to Act or Refuse — Guarding Agentic Reasoning Models for Safe Multi-step Tool Use](learning_when_to_act_or_refuse_guarding_agentic_reasoning_models_for_safe_multi-.md)
-- [\[ACL 2026\] Evo-Attacker: Memory-Augmented Reinforcement Learning for Long-Horizon Tool Attacks on LLM-MAS](../../ACL2026/llm_reasoning/evo-attacker_memory-augmented_reinforcement_learning_for_long-horizon_tool_attac.md)
+- [\[ACL 2026\] Revisiting Entropy in Reinforcement Learning for Large Reasoning Models](../../ACL2026/llm_reasoning/revisiting_entropy_in_reinforcement_learning_for_large_reasoning_models.md)
+- [\[ICML 2026\] Verifying Meta-Awareness via Predictive Rewards in Reasoning Models](verifying_meta-awareness_via_predictive_rewards_in_reasoning_models.md)
 - [\[ICML 2026\] ResRL: Boosting LLM Reasoning via Negative Sample Projection Residual Reinforcement Learning](resrl_boosting_llm_reasoning_via_negative_sample_projection_residual_reinforceme.md)
 
 </div>

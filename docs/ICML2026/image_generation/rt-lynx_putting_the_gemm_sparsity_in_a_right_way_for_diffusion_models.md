@@ -2,13 +2,13 @@
 title: >-
   [Paper Note] RT-Lynx: Putting the GEMM Sparsity In a Right Way for Diffusion Models
 description: >-
-  [ICML 2026][Image Generation][Sparse Tensor Core] The authors observe that the **activations** of DiT are naturally sparser than its **weights** (with each token activating only 5–10% of channels). Consequently, they migrate 2:4 semi-structured sparsity from the weight side to the activation side, utilizing norm scaling, LoRA residual compensation, and selective layer
+  [ICML 2026][Image Generation][Sparse Tensor Core] Authors find that DiT **activations** are more naturally sparse than **weights** (only 5–10% of channels per token are activated). They migrate 2:4 semi-structured sparsity from the weight side to the activation side, utilizing norm scaling, LoRA residual compensation, and selective layer skipping to recover quality. A
 tags:
   - ICML 2026
   - Image Generation
   - Sparse Tensor Core
 date: 2026-05-08
-content_hash: 41a2fd821da0c927
+content_hash: 1d8f8be028467b8c
 ---
 # RT-Lynx: Putting the GEMM Sparsity In a Right Way for Diffusion Models
 
@@ -19,26 +19,26 @@ content_hash: 41a2fd821da0c927
 **Keywords**: Activation Sparsity, 2:4 Semi-structured Sparsity, DiT Inference Acceleration, LoRA Error Compensation, Sparse Tensor Core
 
 ## TL;DR
-The authors observe that the **activations** of DiT are naturally sparser than its **weights** (with each token activating only 5–10% of channels). Consequently, they migrate 2:4 semi-structured sparsity from the weight side to the activation side, utilizing norm scaling, LoRA residual compensation, and selective layer skipping to recover quality loss. Furthermore, they develop a CUDA pipeline that fuses "online Top-K selection + Sparse GEMM" into a single kernel, achieving an average linear layer speedup of 1.55× on Qwen-Image / FLUX / Z-Image without FID/IR degradation.
+Authors find that DiT **activations** are more naturally sparse than **weights** (only 5–10% of channels per token are activated). They migrate 2:4 semi-structured sparsity from the weight side to the activation side, utilizing norm scaling, LoRA residual compensation, and selective layer skipping to recover quality. A fused CUDA pipeline for "Online Top-K + Sparse GEMM" is implemented, achieving an average 1.55× speedup for linear layers on Qwen-Image / FLUX / Z-Image without FID/IR degradation.
 
 ## Background & Motivation
 
-**Background**: Diffusion Transformer (DiT) has become the mainstream backbone for high-resolution image generation. However, each inference step is a GEMM-dominant operation involving dense large matrices. Coupled with dozens of denoising iterations, reducing latency and energy consumption remains challenging. In the LLM domain, N:M semi-structured sparsity (especially the 2:4 mode natively supported by NVIDIA) has been proven to be a hardware-friendly acceleration path that balances accuracy, represented by methods such as SparseGPT, Wanda, RIA, BaWA, and Slim—all of which primarily focus on **weight pruning**.
+**Background**: Diffusion Transformer (DiT) has become the mainstream backbone for high-resolution image generation. However, each inference step is dominated by dense large matrix multiplications (GEMM), making latency and energy consumption difficult to reduce across dozens of denoising iterations. In the LLM field, N:M semi-structured sparsity (especially the 2:4 mode natively supported by NVIDIA) has proven to be a hardware-friendly acceleration route balancing accuracy, represented by methods like SparseGPT, Wanda, RIA, BaWA, and Slim, yet they almost exclusively focus on **weight pruning**.
 
-**Limitations of Prior Work**: Applying the "weight pruning" paradigm directly to DiT significantly degrades generation quality. Control experiments on Qwen-Image show that naive 2:4 weight sparsity causes FID to surge from 21.98 to 51.63 and Image Reward to drop from 1.219 to −0.16. Even advanced methods like Wanda/RIA/BaWA only recover FID to around 40. While Slim performs better, it utilizes LoRA compensation with rank $R=0.1d$, leading to high inference overhead. Additionally, even with activation sparsity, the total overhead of **online** Top-K selection, format rearrangement, and Sparse GEMM calls can consume 40–59% of the runtime, negating the theoretical 2× speedup.
+**Limitations of Prior Work**: Directly applying "weight pruning" to DiT severely degrades generation quality. Control experiments on Qwen-Image showed that naive 2:4 weight sparsity caused FID to surge from 21.98 to 51.63 and Image Reward to drop from 1.219 to −0.16. Recent methods like Wanda/RIA/BaWA only recover FID to around 40. While Slim performs better, it utilizes LoRA compensation with rank $R=0.1d$, leading to high inference overhead. Furthermore, even with activation sparsity, the overhead of **online** Top-K selection, format restructuring, and calling Sparse GEMM eats up 40–59% of execution time, neutralizing the theoretical 2× speedup.
 
-**Key Challenge**: The weight distribution of DiT is approximately Gaussian with "universally diffused" values, lacking the local sparse structure required for 2:4 patterns. Forcing this pattern cuts critical parameters. Conversely, the decision of "what to prune" is dictated by the fact that **a single token in the FFN activates only a small subset of neurons**—sparsity naturally resides in activations rather than weights. However, migrating to the activation side introduces systematic $\ell_2$ norm drops and loss of high-frequency details, while online sparsification is hindered by kernel scheduling overhead.
+**Key Challenge**: DiT weight distributions are approximately Gaussian and "widely dispersed," lacking the local sparse structure required for 2:4 patterns; forcing this structure removes critical parameters. Conversely, what determines "what to prune" is the fact that **individual tokens in FFNs only activate a small subset of neurons**—sparsity naturally exists in activations rather than weights. However, naive activation pruning causes $\ell_2$ norm drops and loss of high-frequency details, while online sparsification is hampered by kernel scheduling overhead.
 
-**Goal**: (1) Demonstrate that activation sparsity is inherently more compatible with DiT than weight sparsity; (2) Design a sparsification pipeline capable of compensating for quality loss to achieve "lossless" results; (3) Fuse online Top-K and Sparse GEMM into a single CUDA kernel to realize over 1.5× end-to-end acceleration for linear layers.
+**Goal**: (1) Demonstrate that activation sparsity is more naturally suited for DiT than weight sparsity; (2) Design a sparsification pipeline capable of compensating for quality loss to "lossless" levels; (3) Fuse Online Top-K and Sparse GEMM into a single CUDA kernel to achieve over 1.5× end-to-end acceleration for linear layers.
 
-**Key Insight**: The authors observe statistical characteristics of weights and activations at the distribution level. Weight elements are quasi-Gaussian and spread across frequencies without local structure. Activations, due to the superposition phenomenon in Transformers, are concentrated near zero, with only ~5–10% of channels significantly activated. Based on this, the relative error introduced by imposing a 2:4 "keep 2 out of 4" hard constraint on activations is much smaller than that on weights.
+**Key Insight**: Distributional analysis shows weights are quasi-Gaussian with no local structure, while activations are concentrated near zero due to Transformer superposition, with only ~5–10% of channels significantly activated. Consequently, the relative error introduced by 2:4 hard constraints on activations is far lower than on weights.
 
-**Core Idea**: Shift from "weight pruning" to "activation pruning." Use norm scaling and low-rank LoRA residuals to recover discarded energy and high-frequency details. Finally, employ a fused Sparse GEMM kernel to compress online overhead to under 10%, translating theoretical gains into approximately 1.2× end-to-end acceleration.
+**Core Idea**: Shift from "weight pruning" to "activation pruning." Use norm scaling and low-rank LoRA residuals to recover lost energy and high-frequency details. Implement a fused Sparse GEMM kernel to keep online overhead below 10%, translating theoretical gains into ~1.2× end-to-end acceleration.
 
 ## Method
 
 ### Overall Architecture
-RT-Lynx addresses how to enable SpTC 2:4 sparse acceleration for DiT linear layers $\mathbf{Y}=\mathbf{X}\cdot\mathbf{W}^{\top}$ without quality loss. The authors rewrite the traditional weight sparsity $\mathbf{Y}=\mathbf{X}\cdot\mathbf{W}_s^{\top}$ as $\mathbf{Y}=S(\mathbf{X})\cdot\mathbf{W}^{\top}+\mathbf{X}\cdot(\mathbf{L}_A\mathbf{L}_B)^{\top}$. The first term applies sparsity to the **activations** ($S(\cdot)$ denotes token-wise 2:4 Top-K with norm scaling), and the second term is a LoRA branch with rank $R=64$ designed specifically to compensate for the residuals lost during sparsification. The sparsified layers include QKV projections and MLP Up/Down projections in the DiT blocks. Layers that cannot be recovered by LoRA in the single-stream path are skipped. The entire "online Top-K + format rearrangement + Sparse GEMM + LoRA accumulation" sequence is collapsed into a single CUDA execution path. During training, backbone weights are frozen, and only LoRA is fine-tuned.
+RT-Lynx aims to enable 2:4 sparse acceleration via SpTC for DiT linear layers $\mathbf{Y}=\mathbf{X}\cdot\mathbf{W}^{\top}$ without quality loss. Traditional weight sparsity $\mathbf{Y}=\mathbf{X}\cdot\mathbf{W}_s^{\top}$ is rewritten as $\mathbf{Y}=S(\mathbf{X})\cdot\mathbf{W}^{\top}+\mathbf{X}\cdot(\mathbf{L}_A\mathbf{L}_B)^{\top}$: the first term applies sparsity to **activations** ($S(\cdot)$ denotes token-wise 2:4 Top-K plus norm scaling), and the second term is a LoRA branch with rank $R=64$ to compensate for the residual. Sparsified layers include QKV projections and MLP Up/Down projections. Layers in single-stream paths that LoRA cannot fully recover are skipped. The entire "Online Top-K + Format Restructuring + Sparse GEMM + LoRA Accumulation" is folded into a single CUDA execution path. During training, backbone weights are frozen, and only LoRA is fine-tuned.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
@@ -46,7 +46,7 @@ flowchart TD
     X["DiT Linear Layer Activation X<br/>(QKV / MLP Up·Down)"]
     subgraph K["Fused Online Sparse GEMM Kernel (Single CUDA Path)"]
         direction TB
-        SP["Norm-Compensated Activation Sparsity<br/>2:4 Top-K → ℓ2 Norm Scaling → S(X)"]
+        SP["Norm-Compensated Activation Sparsity<br/>2:4 Top-K → ℓ2 Scaling → S(X)"]
         SG["Sparse GEMM on SpTC<br/>Y_s = S(X)·W^T"]
         LR["LoRA Residual Compensation<br/>Y_r = X(L_A·L_B)^T, dense TC"]
         ACC["On-chip Accumulation Y = Y_s + Y_r"]
@@ -55,31 +55,28 @@ flowchart TD
     end
     X --> SP
     X --> LR
-    X -->|Single-stream hard layers o_proj / up·down| SKIP["Skip Sparsification<br/>Retain Dense Computation"]
+    X -->|Hard Single-stream Layers: o_proj / up·down| SKIP["Skip Sparsification<br/>Retain Dense Computation"]
     ACC --> Y["Layer Output Y"]
     SKIP --> Y
 ```
 
 ### Key Designs
 
-**1. Norm-Compensated Activation Sparsification: Eliminating Systematic Bias from Pruning**
+**1. Norm-Compensated Activation Sparsification: Eliminating Systematic Magnitude Bias**
+Naive 2:4 Top-K yields $\tilde{\mathbf{X}}$ by keeping only the two largest absolute values in every 4-element group, but the energy ratio of these two elements varies, leading to systematically smaller token outputs. This skews downstream RMSNorm/Attention statistics, collapsing FID. The authors scale the pruned vector back to its original $\ell_2$ norm using $s=\sqrt{\|\mathbf{X}\|_2^2/(\|\tilde{\mathbf{X}}\|_2^2+\epsilon)}$ ($\epsilon=10^{-8}$), setting $S(\mathbf{X})=s\cdot\tilde{\mathbf{X}}$. This aligns the magnitude with the dense path without changing the direction. The cost is negligible (one reduction and one division fused into the Top-K kernel), but it recovers Qwen-Image FID from 35.85 to 25.28.
 
-Naive 2:4 Top-K introduces a vulnerability: while each token retains the two largest absolute values in a group of four to obtain $\tilde{\mathbf{X}}$, the energy ratio of these elements is inconsistent. This causes the token output to be systematically smaller, biasing the statistics of downstream RMSNorm/Attention and leading to FID collapse. The authors scale the vector back to its original $\ell_2$ norm after pruning by calculating a scaling factor $s=\sqrt{\|\mathbf{X}\|_2^2/(\|\tilde{\mathbf{X}}\|_2^2+\epsilon)}$ (where $\epsilon=10^{-8}$), setting $S(\mathbf{X})=s\cdot\tilde{\mathbf{X}}$. This aligns the magnitude with the dense path without changing the vector direction, eliminating systematic bias. The computational cost is negligible—merely one reduction and one division integrated into the Top-K kernel—yet the benefit is substantial, improving Qwen-Image FID from 35.85 to 25.28 and eliminating magnitude shift.
+**2. LoRA Residual Compensation: Recovering High-Frequency Details**
+While norm compensation aligns magnitude, discarded near-zero activations still carry high-frequency details (edges, textures). A low-rank branch $\mathbf{X}(\mathbf{L}_A\mathbf{L}_B)^{\top}$ fits this residual. The training objective minimizes $\|\mathbf{X}\mathbf{W}^{\top}-(S(\mathbf{X})\mathbf{W}^{\top}+\mathbf{X}(\mathbf{L}_A\mathbf{L}_B)^{\top})\|^2$. Backbone $\mathbf{W}$ is frozen while LoRA is updated. During inference, LoRA computes $\mathbf{Y}_r$ on dense Tensor Cores and accumulates with sparse GEMM result $\mathbf{Y}_s$ on-chip. Authors argue the residual is low-rank as most energy remains in Top-K channels; thus, $R=64$ suffices. This is much more efficient than Slim’s $R\approx 0.1d$ (e.g., 307). Layers in single-stream DiTs that remain challenging (e.g., `attn.o_proj`, `mlp.up` in Z-Image) are kept dense to preserve stability.
 
-**2. LoRA Residual Compensation: Recovering High-Frequency Details via Low-Rank Branches**
-
-Norm compensation aligns magnitude, but discarded near-zero activations still carry high-frequency details like hair, edges, and textures. The authors use a low-rank branch $\mathbf{X}(\mathbf{L}_A\mathbf{L}_B)^{\top}$ to fit this residual, with the training objective minimizing $\|\mathbf{X}\mathbf{W}^{\top}-(S(\mathbf{X})\mathbf{W}^{\top}+\mathbf{X}(\mathbf{L}_A\mathbf{L}_B)^{\top})\|^2$. The backbone $\mathbf{W}$ is frozen while LoRA is updated. During inference, LoRA generates $\mathbf{Y}_r$ on dense Tensor Cores, which is accumulated on-chip with the sparse GEMM output $\mathbf{Y}_s$. The core argument is that the residual itself is low-rank: most energy remains in the Top-K channels, leaving only fine-grained high-frequency perturbations. Thus, $R=64$ is sufficient. Compared to Slim's heavy compensation ($R\approx 0.1d$, e.g., 307), this minimizes extra GEMM overhead while achieving higher accuracy. For "hard" layers in single-stream DiT (e.g., `attn.o_proj`/`mlp.up` in Z-Image), sparsification is skipped to maintain quality.
-
-**3. Fused Online Sparse GEMM Kernel: Realizing Theoretical 2× Speedup End-to-End**
-
-Existing libraries like PyTorch-SpMM, cuSPARSElt, or CUTLASS separate "pruning," "formatting," and "computation" into multiple kernels. The launch overhead and intermediate memory access consume 40–59% of the runtime. The authors collapse the entire pipeline—pattern determination, Top-K, SpTC layout compression, Sparse GEMM, and LoRA accumulation—into a single CUDA path. Structured activations and 2-bit indices are generated at the register level without writing back to global memory. Sparse GEMM uses a streamK-style block-parallel pipeline to stream K-dimension blocks through SpTC, overlapping bandwidth and latency across memory layers. The LoRA branch runs asynchronously with Sparse GEMM, and $\mathbf{Y}_s$ is added directly to the $\mathbf{Y}_r$ register, eliminating materialization of intermediate LoRA tensors and host-side synchronization. By pinning algorithm-level sparsification and hardware-level SpTC to the same register file, online overhead is reduced below 10%. Real-world measurements show 1.88× Sparse GEMM speedup and 1.55× average linear layer speedup.
+**3. Fused Online Sparse GEMM Kernel: Realizing Theoretical 2× Speedup**
+Existing tools (PyTorch-SpMM, cuSPARSElt, CUTLASS) split "pruning, restructuring, and calculation" into multiple kernels, where launch overhead and intermediate memory I/O consume 40–59% of runtime. RT-Lynx folds pattern determination → Top-K → SpTC layout compression → Sparse GEMM → LoRA accumulation into one CUDA path. 2:4 structured activations and 2-bit indices are generated in registers and never written back to global memory. Sparse GEMM uses a streamK-style block-parallel pipeline to stream K-dimensions through SpTC, overlapping bandwidth and latency. The LoRA branch runs asynchronously, and $\mathbf{Y}_s$ is added directly to $\mathbf{Y}_r$ registers. This binds algorithmic sparsification to hardware SpTC on the same register file, keeping online overhead below 10%. Verified speeds: Sparse GEMM 1.88×, linear layers average 1.55×, end-to-end ~1.2×.
 
 ### Loss & Training
-Only the LoRA matrices $\mathbf{L}_A, \mathbf{L}_B$ are trainable; backbone weights and optimizer states are not updated. Training data consists of 20k prompt-image pairs generated by Qwen-Image from user prompts. The loss function is MSE-based: $\|\mathbf{X}\mathbf{W}^{\top}-\mathbf{Y}\|^2$, with convergence reached in approximately 2k steps. Training is conducted on NVIDIA H20 using CUDA 13.0. Inference can be orthogonally combined with FP8 quantization, step distillation, TeaCache, and SpargeAttn.
+Only LoRA matrices $\mathbf{L}_A, \mathbf{L}_B$ are trainable; backbone weights and optimizer states are fixed. Training data consists of 20k prompt-image pairs generated by Qwen-Image. Loss is MSE-based $\|\mathbf{X}\mathbf{W}^{\top}-\mathbf{Y}\|^2$, converging in ~2k steps. All training was performed on NVIDIA H20 using CUDA 13.0. Inference is orthogonal to FP8, step distillation, TeaCache, and SpargeAttn.
 
 ## Key Experimental Results
 
-### Main Results (Comparison of Sparsification Strategies on Qwen-Image, MJHQ / sDCI)
+### Main Results (Sparsity Comparison on Qwen-Image, MJHQ / sDCI)
 
 | Method | MJHQ FID↓ | MJHQ IR↑ | sDCI FID↓ | sDCI IR↑ |
 |------|-----------|----------|-----------|----------|
@@ -91,62 +88,62 @@ Only the LoRA matrices $\mathbf{L}_A, \mathbf{L}_B$ are trainable; backbone weig
 | Slim (ICML'25, $R\approx 0.1d$) | 22.25 | 1.278 | 29.26 | 1.217 |
 | **RT-Lynx (Ours, $R=64$)** | **21.25** | **1.304** | **25.78** | **1.226** |
 
-RT-Lynx is the only sparse method that **outperforms the FP16 dense baseline** in both FID and IR across datasets, while using a LoRA rank less than 1/5 of Slim's.
+RT-Lynx is the only sparse method that **outperforms the FP16 dense baseline** in both FID and IR on both datasets, despite using less than 1/5 of the LoRA rank compared to Slim.
 
-### Kernel and End-to-End Acceleration (H20, specific matrix sizes from Qwen-Image)
+### Kernel and End-to-End Speedup (H20, Qwen-Image matrix sizes)
 
-| $M{=}N$ | $K$ | PyTorch GEMM | cuSPARSElt | RT-Lynx Kernel | Online Sparsity Overhead |
+| $M{=}N$ | $K$ | PyTorch GEMM | cuSPARSElt | RT-Lynx Kernel | Online Overhead |
 |---------|-----|--------------|-----------|----------------|--------------|
 | 4096 | 3072 | 0.781 ms | 0.709 (1.10×) | 0.465 (**1.68×**) | 4.60% |
 | 4096 | 12288 | 3.099 ms | 2.669 (1.16×) | 1.652 (**1.88×**) | 4.83% |
 | 8192 | 12288 | 11.95 ms | 8.202 (1.45×) | 6.754 (**1.77×**) | 2.37% |
 
-End-to-end: Qwen-Image per-image time reduced from 0.75s to 0.62s (1.21×). Combined with 8-step Turbo distillation, Z-Image reaches 11.86× total speedup (compared to 9.91× for Turbo alone). It maintains approximately 1.3× additional speedup when stacked with W8A8, TeaCache, and SpargeAttn.
+End-to-end: Qwen-Image per image 0.75s → 0.62s (1.21×). Combined with 8-step Turbo distillation, Z-Image reached 11.86× total speedup (vs. 9.91× for Turbo alone). It maintains ~1.3× additional speedup when combined with W8A8, TeaCache, or SpargeAttn.
 
-### Ablation Study (Qwen-Image / FLUX / Z-Image, Selected)
+### Ablation Study (Selected)
 
-| Model | Config | MJHQ FID↓ | MJHQ IR↑ | Description |
+| Model | Configuration | MJHQ FID↓ | MJHQ IR↑ | Description |
 |------|------|-----------|----------|------|
-| Qwen-Image | SA-Native | 35.85 | 0.599 | Activation sparsity only, no compensation |
-| Qwen-Image | + Norm Comp. | 25.28 | 0.939 | Norm compensation contributes ~10 FID |
-| Qwen-Image | + LoRA ($R=64$) | **21.25** | **1.304** | LoRA closes the gap, outperforming Full |
+| Qwen-Image | SA-Native | 35.85 | 0.599 | Activation sparse only, no compensation |
+| Qwen-Image | + Norm Comp. | 25.28 | 0.939 | Norm compensation alone contributes ~10 FID |
+| Qwen-Image | + LoRA ($R=64$) | **21.25** | **1.304** | LoRA eliminates remaining gap, beating Full |
 | FLUX.1-dev | SA-NC-LoRA | 22.61 | 0.978 | Dual-stream compensation is sufficient |
-| FLUX.1-dev | + Skip Layers | **21.17** | **1.011** | Skip layers in single-stream path |
-| Z-Image | SA-NC-LoRA | 27.39 | 0.929 | LoRA alone insufficient |
-| Z-Image | + Skip Layers | **26.17** | **0.967** | Skipping `o_proj`/`up` layers approaches Full (25.70) |
+| FLUX.1-dev | + Skip Layers | **21.17** | **1.011** | Skip layers required for single-stream paths |
+| Z-Image | SA-NC-LoRA | 27.39 | 0.929 | LoRA not entirely sufficient |
+| Z-Image | + Skip Layers | **26.17** | **0.967** | Skip `o_proj`/`up` single-stream layers reaches near Full (25.70) |
 
 ### Key Findings
-- The impact of the three compensations follows: LoRA > Norm Comp. > Skip Layer. However, **for single-stream DiTs (FLUX, Z-Image), skipping layers is essential** as LoRA cannot fully compensate otherwise.
-- Reducing online sparsity overhead from 40–59% (PyTorch/cuSPARSElt) to **<10%** is the decisive factor for end-to-end acceleration.
-- RT-Lynx is fully orthogonal to W8A8 quantization, step distillation, TeaCache, and SpargeAttn. While weight sparsity on 8-step models causes FID to collapse to 360.2, RT-Lynx remains nearly lossless.
-- Regarding GEMM performance, the RT-Lynx Kernel achieves 1.88× speedup on $4096\times 4096\times 12288$, approaching the SpTC theoretical limit of 2×.
+- Contribution of the three compensations: LoRA > Norm Comp. > Skip Layer. However, **for single-stream DiTs (FLUX, Z-Image), skipping layers is essential** to avoid quality collapse.
+- Online sparsification overhead was reduced from 40–59% (PyTorch/cuSPARSElt) to **<10%**, which is the decisive factor for end-to-end speedup.
+- RT-Lynx is orthogonal to W8A8, step distillation, TeaCache, and SpargeAttn. On Z-Image, 8-step Turbo + RT-Lynx achieved 11.86× speedup. Weight sparsity on 8-step models resulted in FID of 360.2, while RT-Lynx remained lossless.
+- Purely for GEMM, the RT-Lynx kernel achieved 1.88× speedup on $4096\times 4096\times 12288$ matrices, approaching the 2× theoretical limit of SpTC.
 
 ## Highlights & Insights
-- "Putting sparsity in the right place": The authors use distribution comparisons to demonstrate that 2:4 patterns should not be forced on weights. This is the first systematic migration of LLM superposition observations (where only a few FFN neurons are activated) to DiT acceleration.
-- Norm compensation is a near-zero cost technique with significant impact, alone improving Qwen-Image FID from 35.85 to 25.28. This approach of "rescaling back to original norm after pruning" is applicable to any token-wise sparsity scenario (e.g., LLM decoding, Video DiT).
-- The value of LoRA residual compensation lies in **proving the low-rank nature of residuals**: the fact that $R=64$ suffices suggests that discarded information consists of low-rank, near-zero perturbations rather than dense energy.
-- The core kernel innovation is **fusing online Top-K, format rearrangement, Sparse GEMM, and LoRA accumulation into a single register pipeline**, which is critical for transforming theoretical 2× gains into 1.2× end-to-end speedup.
-- Orthogonality is rigorously verified, demonstrating that RT-Lynx can serve as an independent acceleration module in the DiT inference stack.
+- "Putting sparsity in the right place": Authors use Figure 2 to compare weight vs. activation distributions, arguing 2:4 doesn't fit weights. This is the first systematic migration of LLM superposition observations (few active FFN neurons) to DiT acceleration.
+- Norm compensation is a near zero-cost trick with high impact—alone, it recovers Qwen-Image FID from 35.85 to 25.28. This "rescale back to original norm" approach is applicable to any token-wise sparsity scenario (LLM decoding, video DiT).
+- The value of LoRA residual compensation lies in **proving the residual is low-rank**: $R=64$ being sufficient implies discarded information is a low-rank, near-zero perturbation, not dense energy. This opens a path for "pruning + tiny LoRA repair."
+- The core kernel innovation is **fusing Online Top-K + Format Restructuring + Sparse GEMM + LoRA Accumulation into a single register pipeline**. This enables the 2× theoretical gain to manifest as ~1.2× end-to-end acceleration.
+- "Orthogonal and stackable": Verified compatibility with quantization/distillation/caching means RT-Lynx can serve as an independent building block in the DiT inference stack.
 
 ## Limitations & Future Work
-- The paper relies on **manual selection of skipped layers** (`attn.o_proj` / `mlp.up` or `mlp.down`) for single-stream DiTs, and the skip list varies by model without a principled criterion.
-- Evaluation is concentrated on the H20 GPU. Performance on H100/B200 (FP8/FP4 + 2:4) or consumer-grade cards (without SpTC, e.g., RTX 4090) using PyTorch-SpMM is not documented.
-- Datasets like MJHQ-30K and sDCI have limited sensitivity to "blurring" details. Systemic failure mode analysis for faces, text, and complex scenes is lacking.
-- LoRA is fitted using data generated by the **same** model (20k prompt-image pairs), effectively a form of self-distillation. Cross-model transferability of LoRA weights is unverified.
-- Sparsity is limited to 2:4 (50%). Future research could explore more aggressive patterns (e.g., 4:8 or 1:4) and their corresponding compensation needs.
+- Authors admit that for single-stream DiTs, they must **manually select layers to skip** (`attn.o_proj`, `mlp.up`, or `mlp.down`), and the list varies by model. A principled criterion for "non-sparsifiable layers" is missing.
+- Evaluation is focused on H20 SpTC. Performance of FP8/FP4 + 2:4 on H100/B200 or performance on consumer cards (without SpTC, like RTX 4090) using PyTorch-SpMM is not documented.
+- Datasets like MJHQ-30K and sDCI may lack sensitivity to "blurred details." Systematic failure mode analysis for faces, text, and complex scenes is missing.
+- Training data is generated by the **model itself** to fit LoRA (self-distillation). Cross-model transferability of LoRA recipes is unverified.
+- Currently limited to 2:4 (50% sparsity). Designing for more aggressive sparsity (4:8 or 1:4) if hardware supports it is the next step.
 
 ## Related Work & Insights
-- **vs SparseGPT / Wanda / RIA / BaWA / Slim**: These methods prune **weights** via calibration or sensitivity estimation. RT-Lynx demonstrates that DiT weights lack 2:4 structure, shifts focus to activations, and outperforms Slim using a significantly smaller LoRA rank ($R=64$ vs $R\approx 0.1d$).
-- **vs LLM Activation Sparsity (PowerInfer / CATS / ReLU-strikes-back / Q-Sparse / RoSA)**: These focus on LLM **decoding** (small token counts) and cannot be directly applied to DiT image generation with token counts > 1000. RT-Lynx is the first work to apply activation sparsity to DiT acceleration.
-- **vs Amber / Haziza et al.**: Amber uses 8:16 patterns not natively supported by current GPUs; Haziza et al. focus on LLM **pre-training** activation sparsity for FFNs. RT-Lynx provides a complete solution for native 2:4 + DiT + end-to-end kernels.
-- **vs DiT Acceleration (SVDQuant, DMD2, TeaCache, TaylorSeer, SLA, VSA)**: These address quantization, distillation, feature caching, or sparse attention. RT-Lynx specifically targets GEMM-dominant linear layers and is orthogonally compatible with these methods.
-- **Insights**: (1) Distribution and induced error analysis before applying sparsity constraints is a valuable paradigm; (2) "Norm compensation + low-rank residual" is applicable to all lossy compression involving hard masks; (3) Algorithm-system co-design is essential for realizing theoretical gains.
+- **vs. SparseGPT / Wanda / RIA / BaWA / Slim**: These methods prune **weights**. RT-Lynx proves weights lack 2:4 structure in DiT, moves to the activation side, and surpasses Slim ($R\approx 0.1d$) using only $R=64$ LoRA—improving both accuracy and efficiency.
+- **vs. LLM Activation Sparsity (PowerInfer / CATS / RoSA)**: These typically serve LLM **decoding** (tokens ≤ 4) and cannot be directly applied to DiT generation (tokens > 1000). RT-Lynx is the first to implement activation sparsity for DiT.
+- **vs. Amber / Haziza et al.**: Amber uses 8:16 mode (not natively supported by current GPUs); Haziza et al. focus on LLM **pre-training** activation sparsity for FFNs only. RT-Lynx is the first to solve native 2:4 + DiT + end-to-end kernels.
+- **vs. Other DiT Acceleration (SVDQuant, DMD2, TeaCache, SpargeAttn)**: Those focus on quantization, distillation, feature caching, or sparse attention. RT-Lynx specifically targets GEMM-dominant linear layers and is orthogonal to them.
+- **Insights**: (1) Distribution analysis before applying sparsity constraints is a valuable paradigm; (2) "Norm compensation + Low-rank residual" is applicable to all hard-mask lossy compression; (3) Algorithm-kernel co-design is critical for realizing theoretical gains.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Excellent insight into DiT activation sparsity and comprehensive kernel implementation, though individual components (activation sparsity + LoRA) exist in LLM literature.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers three mainstream DiTs, four quality metrics, systematic ablation, and stacking with four types of orthogonal acceleration across kernel-level and end-to-end benchmarks.
-- Writing Quality: ⭐⭐⭐⭐ Clear motivation and algorithmic figures, though some sections read like an engineering report; high information density in the appendix.
-- Value: ⭐⭐⭐⭐⭐ Realizes ~1.2× end-to-end lossless DiT acceleration on SpTC, directly applicable to industrial deployment and orthogonal to existing stacks.
+- Novelty: ⭐⭐⭐⭐ Solid demonstration of "activation as the true source of DiT sparsity" with full kernel implementation. Single ideas (activation sparsity + LoRA) have precedents in LLM.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Three DiT models, four quality metrics, detailed ablations, and stacking with four orthogonal methods. Both kernel and end-to-end benchmarks provided.
+- Writing Quality: ⭐⭐⭐⭐ Excellent motivation and algorithm diagrams (Figs 1/2/4/5), though some text reflects engineering report style.
+- Value: ⭐⭐⭐⭐⭐ Breakthrough for realizing ~1.2× lossless end-to-end acceleration via SpTC. Highly practical for industrial deployment.
 
 <!-- RELATED:START -->
 
@@ -155,10 +152,10 @@ End-to-end: Qwen-Image per-image time reduced from 0.75s to 0.62s (1.21×). Comb
 ## Related Papers
 
 - [\[CVPR 2026\] Semantics Lead the Way: Harmonizing Semantic and Texture Modeling with Asynchronous Latent Diffusion](../../CVPR2026/image_generation/semantics_lead_the_way_harmonizing_semantic_and_texture_modeling_with_asynchrono.md)
-- [\[ECCV 2024\] Getting it Right: Improving Spatial Consistency in Text-to-Image Models](../../ECCV2024/image_generation/getting_it_right_improving_spatial_consistency_in_text-to-image_models.md)
 - [\[CVPR 2026\] SparVAR: Exploring Sparsity in Visual Autoregressive Modeling for Training-Free Acceleration](../../CVPR2026/image_generation/sparvar_exploring_sparsity_in_visual_autoregressive_modeling_for_training-free_a.md)
+- [\[ECCV 2024\] Getting it Right: Improving Spatial Consistency in Text-to-Image Models](../../ECCV2024/image_generation/getting_it_right_improving_spatial_consistency_in_text-to-image_models.md)
+- [\[ICLR 2026\] ToProVAR: Efficient Visual Autoregressive Modeling via Tri-Dimensional Entropy-Aware Semantic Analysis and Sparsity Optimization](../../ICLR2026/image_generation/toprovar_efficient_visual_autoregressive_modeling_via_tri-dimensional_entropy-aw.md)
 - [\[CVPR 2025\] Panorama Generation From NFoV Image Done Right](../../CVPR2025/image_generation/panorama_generation_from_nfov_image_done_right.md)
-- [\[AAAI 2026\] Right Looks, Wrong Reasons: Compositional Fidelity in Text-to-Image Generation](../../AAAI2026/image_generation/right_looks_wrong_reasons_compositional_fidelity_in_text-to-image_generation.md)
 
 </div>
 

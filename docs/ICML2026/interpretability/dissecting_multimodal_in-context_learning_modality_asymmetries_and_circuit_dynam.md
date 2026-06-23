@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Dissecting Multimodal In-Context Learning: Modality Asymmetries and Circuit Dynamics in modern Transformers
 description: >-
-  [ICML 2026][Interpretability][induction head] The authors decompose the training data conditions and attention circuits of multimodal in-context learning (ICL) using a controllable two-layer Transformer and synthetic GMM data. They identify a "dominant-minor modality asymmetry": after pre-training on a high-diversity dominant modality, the minor modality requires
+  [ICML 2026][Interpretability][induction head] The authors disassemble the training data requirements and attention circuits of multimodal in-context learning (ICL) using a controllable two-layer Transformer and synthetic GMM data. They identify a "primary-secondary modality asymmetry": after pre-training on a high-diversity primary modality, the secondary modality
 tags:
   - ICML 2026
   - Interpretability
   - induction head
   - RoPE
 date: 2026-05-08
-content_hash: bb5e19578cb84101
+content_hash: 4e4afe77dcfceeed
 ---
 # Dissecting Multimodal In-Context Learning: Modality Asymmetries and Circuit Dynamics in modern Transformers
 
@@ -20,105 +20,109 @@ content_hash: bb5e19578cb84101
 **Keywords**: Multimodal ICL, induction head, RoPE, modality asymmetry, circuit dynamics
 
 ## TL;DR
-The authors decompose the training data conditions and attention circuits of multimodal in-context learning (ICL) using a controllable two-layer Transformer and synthetic GMM data. They identify a "dominant-minor modality asymmetry": after pre-training on a high-diversity dominant modality, the minor modality requires only minimal data complexity to unlock multimodal ICL. Through head knockout experiments on Qwen2.5-VL-3B, they verify a circuit landscape where "induction heads dominate multimodal ICL, and multimodal training merely refines rather than rebuilds existing circuits."
+The authors disassemble the training data requirements and attention circuits of multimodal in-context learning (ICL) using a controllable two-layer Transformer and synthetic GMM data. They identify a "primary-secondary modality asymmetry": after pre-training on a high-diversity primary modality, the secondary modality requires significantly lower data complexity to unlock multimodal ICL. Through head knockout experiments on Qwen2.5-VL-3B, they validate a circuit landscape where "induction heads dominate multimodal ICL, and multimodal training primarily refines rather than reconstructs these circuits."
 
 ## Background & Motivation
-**Background**: Unimodal ICL has been relatively well-studied. Researchers like Chan and Reddy noted that distributional properties such as burstiness, high class diversity, and Zipfian skew drive models to switch from "in-weights learning" (IWL) to "in-context learning" (ICL). Olsson et al. discovered a two-step circuit consisting of "previous-token heads + induction heads" in simplified attention-only Transformers. Multimodal ICL (e.g., Flamingo, Qwen-VL) has emerged in practice, but its formation mechanism remains a black box.
+**Background**: Unimodal ICL has been studied relatively thoroughly. Work by Chan, Reddy, et al., indicates that training distribution properties such as burstiness, high class diversity, and Zipfian skew drive models to switch from "In-Weights Learning" (IWL) to "In-Context Learning" (ICL). Olsson et al. discovered a two-step "previous-token head + induction head" circuit in simplified two-layer attention-only Transformers. While multimodal ICL (e.g., Flamingo, Qwen-VL) has been implemented empirically, its formation mechanism remains a black box.
 
-**Limitations of Prior Work**: (1) Most mechanistic studies rely on simplified attention-only models lacking modern LLM components like RMSNorm, SiLU, and RoPE, making extrapolation to real MLLMs uncertain. (2) Multimodal ICL is observed passively in interleaved image-text corpora, making it impossible to attribute drive cleanly to specific data diversity. (3) Prior diagnostics (Chen 2025a, Baldassini 2024) found that MLLM multimodal ICL primarily relies on text, yet no study has investigated "modality asymmetry" as a phenomenon manipulatable by distributional parameters.
+**Limitations of Prior Work**: (1) Most mechanistic studies rely on simplified attention-only models lacking modern LLM components like RMSNorm, SiLU, and RoPE, leaving their extrapolation to real MLLMs uncertain. (2) Multimodal ICL is observed passively in interleaved image-text corpora, preventing clean attribution of which modality's data diversity drives the behavior. (3) Diagnostic work (Chen 2025a, Baldassini 2024) suggests that MLLM "multimodal ICL" relies primarily on text, but "modality asymmetry" has not been studied as a phenomenon manipulated by distributional parameters.
 
-**Key Challenge**: It is nearly impossible to isolate which side's data complexity drives ICL in real corpora due to heavy multi-variable entanglement. Conversely, controlled synthetic data is often criticized for being too far removed from real LLMs.
+**Key Challenge**: It is nearly impossible to isolate which side's data complexity drives ICL in real interleaved corpora due to multi-variable entanglement. Conversely, controlled synthetic data is often criticized for being too detached from real LLMs.
 
-**Goal**: (1) Re-evaluate data-architecture attribution for unimodal ICL using a two-layer decoder with RoPE/RMSNorm/SiLU. (2) Systematically sweep $K_2$, burstiness, $\varepsilon$, and Zipf $\alpha$ in synthetic multimodal GMMs to identify drivers of multimodal ICL. (3) Translate the resulting PH/IH circuit hypotheses to Qwen2.5-VL-3B for head knockout and fine-tuning dynamics validation.
+**Goal**: (1) Re-evaluate data-architecture attribution for unimodal ICL using a two-layer decoder with RoPE/RMSNorm/SiLU. (2) Systematically scan $K_2$, burstiness, $\varepsilon$, and Zipf $\alpha$ in synthetic multimodal GMMs to determine what dominates multimodal ICL. (3) Validate the PH/IH circuit hypothesis on Qwen2.5-VL-3B through head knockout and fine-tuning dynamics.
 
-**Key Insight**: Treat "modalities" as "two independently distributed GMMs." The dominant modality M1 is pre-trained with a large number of classes ($K_1=8192$), while the minor modality M2 is introduced later via an MLP projector + optional ViT encoder. This allows for systematic sweeping of M2's distribution parameters to observe when ICL emerges in a clean environment.
+**Key Insight**: Treat "modalities" as two independently distributed GMMs. Pre-train a primary modality M1 with high diversity ($K_1=8192$), and integrate the secondary modality M2 via an MLP projector and an optional ViT encoder. This allows for scanning M2's distribution parameters in a clean environment to observe when ICL emerges.
 
-**Core Idea**: By employing a two-stage training process—where the high-diversity M1 pre-training installs the induction circuits, and M2 is then embedded into existing circuits via a projector—the study establishes a causally interpretable link: "Multimodal ICL = Dominant Modality Circuits + Minor Modality Alignment."
+**Core Idea**: By using a two-stage training process—"pre-train induction circuits via high-diversity M1, then embed M2 into existing circuits through a projector"—the authors establish "multimodal ICL = primary circuit + secondary alignment" as an interpretable causal chain.
 
 ## Method
 
 ### Overall Architecture
-This paper does not train a new model but constructs a controllable synthetic testbed to investigate the drivers and circuit locations of multimodal ICL. The skeleton is a two-layer decoder Transformer, purposefully equipped with modern components (RMSNorm, SiLU, RoPE) to ensure conclusions generalize to real MLLMs. Data is generated by two GMMs, $\mathcal{X}_1$ and $\mathcal{X}_2$. Class prototypes are $\mu_k \sim \mathcal{N}(0, I_{D_m}/D_m)$, and samples within a class are $x_i = (\mu_k + \varepsilon_m \eta) / \sqrt{1 + \varepsilon_m^2}$. Parameters such as class count $K_m$, noise $\varepsilon_m$, burstiness $B$, and Zipf skew $\alpha_m$ can be independently adjusted. Unimodal contexts follow $x_1, \ell_1, \ldots, x_N, \ell_N, x_q$, while multimodal contexts use interleaved triplets $x_i, x'_i, \ell_i$, with $\mathcal{L}_2 \subset \mathcal{L}_1$ to mirror MLLM practices of aligning minor modalities to a primary vocabulary. Evaluation strictly distinguishes between IWL (i.i.d. testing within training distribution), ICL (unseen classes requiring context), and swapped-label ICL. Training follows two stages: pre-training the decoder on M1, followed by joint training with an MLP projector for M2.
+The authors build a controllable synthetic testbed rather than training a new model from scratch. The backbone is a two-layer decoder Transformer, supplemented with modern components like RMSNorm, SiLU, and RoPE to ensure conclusions generalize to real MLLMs. Data is generated by two GMMs, $\mathcal{X}_1$ and $\mathcal{X}_2$. Class prototypes are $\mu_k \sim \mathcal{N}(0, I_{D_m}/D_m)$, and intra-class samples are $x_i = (\mu_k + \varepsilon_m \eta) / \sqrt{1 + \varepsilon_m^2}$. This allows independent adjustment of class counts $K_m$, noise $\varepsilon_m$, burstiness $B$, and Zipf skew $\alpha_m$ for each modality. Unimodal contexts are $x_1, \ell_1, \ldots, x_N, \ell_N, x_q$. Multimodal contexts use interleaved triplets $x_i, x'_i, \ell_i$, specifying $\mathcal{L}_2 \subset \mathcal{L}_1$ to mirror the practice of aligning secondary modalities to a primary vocabulary in MLLMs. Evaluations strictly distinguish between IWL (i.i.d. test), ICL (unseen classes), and swapped-label ICL. Multimodal training follows two stages: pre-training the decoder on M1, followed by joint training where an MLP projector maps M2 into the M1 embedding space.
 
 ### Key Designs
 
-**1. Re-testing Unimodal ICL under Modern Architectures**
-To ensure the foundation for multimodal conclusions, the authors first replicated unimodal findings on a two-layer decoder with RoPE. They varied data complexity, layers, head counts, and positional encodings (Fig. 2). While distributional conclusions ($K$, $B$, $\alpha$, and $\varepsilon$) were largely reproduced, modern architecture-specific phenomena emerged: scaling the model size biased it toward IWL, and head count had a stronger impact than depth, as multiple heads allow partitioning item-label memory into subspaces, creating a "low-loss shortcut." Crucially, RoPE significantly lowered ICL accuracy in low-complexity regimes compared to APE, as attention visualizations of previous-token and induction heads appeared blurred, requiring higher complexity to overcome this bias.
+**1. Re-evaluating Unimodal ICL under Modern Architectures**
 
-**2. Asymmetry in Multimodal Learning: Causal Specialization**
-This is the core thesis: isolating which modality's complexity determines multimodal ICL. After pre-training on a high-diversity M1 ($K_1=8192$), M2 was introduced. Results showed strong asymmetry: $K_2$ required as few as 256 classes for ICL to reach 95% (Fig. 4a). While burstiness $B$ improved ICL, increasing $\varepsilon_2$ provided greater ICL gains than increasing $\varepsilon_1$. Scaling trends were opposite to unimodal cases: larger decoders achieved equal ICL with less M2 data (Fig. 5), indicating incremental capacity is used for alignment rather than memory. Control experiments with early-fusion (no M1 pre-training) flipped the asymmetry, making the model more sensitive to M2. This yields a picture where M1 installs circuits and M2 provides discriminative signals.
+The authors first re-verify unimodal findings on a two-layer decoder with RoPE to ensure a solid foundation. By fixing data complexity and scanning layers, heads, and positional encodings, they reproduced distributional findings such as "high $K, B$, $\alpha \approx 1$, and large $\varepsilon$ promote ICL." However, modern architectures exhibited unique behaviors: larger models tend to favor IWL, and a higher number of heads has a stronger impact than depth, as multi-head structures allow item-label memory to be partitioned into subspaces, creating a "low-loss shortcut." Crucially, RoPE significantly raises the data complexity threshold for ICL compared to APE, as previous-token and induction heads appear more blurred in attention visualizations.
 
-**3. Progress Metrics + Head Knockout: Circuit Diagnosis Protocol**
-Since RoPE creates diffuse attention patterns, the authors designed a quantifiable diagnosis protocol. Five metrics were defined: $\mathrm{PHStrength}_m^{(1)}$ (average attention of layer $m$ tokens to the preceding token), $\mathrm{PHStrength}_m^{(2)}$ (cross-interleave offset attention), $\mathrm{IndStrength}_m$ (attention of target tokens to relevant context labels), $\mathrm{TLA}_m$ (total attention to all label positions), and $\mathrm{CLA}$ (whether the prediction actually comes from the context). These metrics show Pearson correlations $\ge 0.91$ with accuracy. Causal validation via head knockout revealed that disabling PH heads dropped accuracy from 0.97 to 0.20, and disabling IH heads dropped it to 0.06. Applying the protocol to Qwen2.5-VL-3B showed that its top PH/IH heads highly overlap with those of its text backbone (Qwen2.5-3B-Instruct).
+**2. Multimodal Learning Asymmetry: Causal Division between Primary and Secondary**
+
+This is the core argument: isolating which modality's data complexity determines multimodal ICL. After pre-training on a high-diversity primary modality ($K_1=8192$), the authors scanned $K_2, B, \varepsilon_2, \alpha_2$ for the secondary modality. Results showed a strong asymmetry: $K_2$ only needs to be 256 for ICL to reach nearly $95\%$. Increasing $\varepsilon_2$ provides a larger boost to ICL than increasing $\varepsilon_1$. Scaling trends were opposite to the unimodal case: larger decoders achieved equivalent ICL with less M2 data, suggesting added capacity serves to "connect M2 to existing ICL circuits" rather than memorization. Direct joint training (early-fusion without M1 pre-training) flipped this asymmetry, making the model more sensitive to M2.
+
+**3. Circuit Diagnostics via Progress Metrics and Head Knockout**
+
+Since RoPE makes attention distributions more diffuse, the authors designed a quantitative diagnostic protocol. Five metrics were defined: $\mathrm{PHStrength}_m^{(1)}$ (average weight on the preceding token), $\mathrm{PHStrength}_m^{(2)}$ (cross-interleave offset weight), $\mathrm{IndStrength}_m$ (attention to corresponding class labels), $\mathrm{TLA}_m$ (total attention to label positions), and $\mathrm{CLA}$ (Contextual Label Adherence). Pearson correlations between these metrics and ICL accuracy, along with random forest regressions, achieved $R^2 \geq 0.91$. Causal validation was performed via head knockout (zeroing attention heads): removing PH heads dropped accuracy from 0.97 to 0.20, and removing IH heads dropped it to 0.06. On Qwen2.5-VL-3B, the top PH/IH heads highly overlapped with the ranking of the text backbone, and ablating them reduced Open-MI performance from 0.74 to 0.56 (near random).
 
 ### Loss & Training
-All models were trained to convergence using SGD (lr $1\times 10^{-3}$, weight decay $1\times 10^{-6}$, batch size 128). Default multimodal configurations: $K_1=8192, K_2=256, B=4, \varepsilon_1=\varepsilon_2=0.1, \alpha_1=\alpha_2=0$. Results are averaged over 5 seeds.
+All models were trained using SGD (lr $1\times 10^{-3}$, weight decay $1\times 10^{-6}$, batch 128) until convergence. The default multimodal configuration was $K_1=8192, K_2=256, B=4, \varepsilon_1=\varepsilon_2=0.1, \alpha_1=\alpha_2=0$. Results were averaged over 5 seeds.
 
 ## Key Experimental Results
 
 ### Main Results
-Pearson correlations between metrics and accuracy for synthetic data and Qwen2.5-VL-3B (truncated at $\ge 0.5$):
+Pearson correlations between metrics and accuracy for synthetic data and Qwen2.5-VL-3B:
 
-| Setting | Strongest Correlation Metric | $\rho$ | Second Metric | $\rho$ |
-| :--- | :--- | :--- | :--- | :--- |
+| Setup | Strongest Metric | $\rho$ | Second Strongest | $\rho$ |
+|------|------|------|------|------|
 | Unimodal Pre-training | $\mathrm{PHStrength}_1^{(1)}$ | 0.72 | $\mathrm{CLA}$ | 0.65 |
 | Unimodal Pre-training | $\mathrm{IndStrength}_2$ | 0.61 | $\mathrm{TLA}_1$ | 0.59 |
 | Multimodal Fine-tuning | $\mathrm{IndStrength}_2$ | 0.70 | $\mathrm{PHStrength}_1^{(1)}$ | 0.58 |
 | Multimodal Fine-tuning | $\mathrm{TLA}_2$ | 0.56 | $\mathrm{CLA}$ | 0.02 |
 
-Scaling effects: On 6 VL-ICL subtasks, Qwen2.5-VL improved by +2.3% from 3B to 7B; IDEFICS improved by +10.5% from 9B to 80B.
+Scaling effects: On six VL-ICL subtasks, Qwen2.5-VL improved by +2.3% from 3B to 7B, while IDEFICS improved by +10.5% from 9B to 80B.
 
 ### Ablation Study
 
 | Configuration | ICL Accuracy ($\pm\sigma$) | Description |
-| :--- | :--- | :--- |
-| Synthetic Multimodal Baseline | $0.970\pm 0.025$ | Base model |
-| Previous Token Head Knockout | $0.199\pm 0.005$ | Copy operation fails |
-| Induction Head Knockout | $0.062\pm 0.003$ | Label-matching fails, near random |
-| Zeroing M2 Inference Features | 0.336 | Loss of discriminative signals |
-| Zeroing M1 Inference Features | 0.063 | Circuit collapses without M1 backbone |
-| Qwen2.5-VL-3B Knockout top-5 PH | $0.74 \to 0.65$ | Open-MI evaluation |
-| Qwen2.5-VL-3B Knockout top-5 IH | $0.74 \to 0.58$ | IH-dominated multimodal ICL |
+|------|------|------|
+| Synthetic Multimodal Baseline | $0.970\pm 0.025$ | Baseline |
+| Knockout Previous Token Head | $0.199\pm 0.005$ | Copying mechanism fails |
+| Knockout Induction Head | $0.062\pm 0.003$ | Label-matching fails, near random |
+| Zeroing M2 Inference Features | 0.336 | M2 still provides discriminative signals |
+| Zeroing M1 Inference Features | 0.063 | Circuit rooted in M1; failure without it |
+| Qwen2.5-VL-3B Knockout top-5 PH | $0.74\to 0.65$ | Open-MI 50 samples |
+| Qwen2.5-VL-3B Knockout top-5 IH | $0.74\to 0.58$ | IH dominates multimodal ICL |
+| Qwen2.5-VL-3B Knockout PH+IH | $0.74\to 0.56$ | Near 0.50 random baseline |
 
 ### Key Findings
-- **"M1 Installs, M2 Connects"**: High-diversity M1 pre-training allows M2 to achieve $\ge 95\%$ ICL with only $K_2=256$. Scaling the model reduces M2 data requirements.
-- **RoPE Constraints**: RoPE raises the ICL trigger threshold, as evidenced in both synthetic setups and MLLM fine-tuning dynamics. It does not destroy circuits but makes them more diffuse.
-- **Refinement vs. Reconstruction**: Multimodal training refines existing induction heads rather than building new ones. PHStrength remains flat during training, while $\mathrm{IndStrength}_2$ climbs with accuracy.
-- **Predictive Bottlenecks**: Unimodal ICL is bottlenecked by PHStrength and CLA, whereas multimodal ICL is bottlenecked by $\mathrm{IndStrength}_2$.
-- **Alignment Constraints**: Modal alignment is limited by encoder quality; using a pre-trained ViT encoder improves CKA and reduces $L_2$ distance.
+- **"M1 builds circuits, M2 connects"**: High-diversity primary modality pre-training allows the secondary modality to reach $\geq 95\%$ ICL with only $K_2=256$. Model scaling reduces M2 data requirements.
+- **RoPE raises the ICL trigger threshold**: This was verified in both synthetic setups and MLLM fine-tuning dynamics; RoPE makes induction circuits more diffuse, requiring more data to sharpen.
+- **Multimodal training refines existing circuits**: PHStrength remains flat during training, while $\mathrm{IndStrength}_2$ climbs with accuracy, and CLA stays at 1.0, suggesting the model always copies from context but learns to select the correct label.
+- **Bottleneck differentiation**: Unimodal ICL is limited by PHStrength + CLA, while multimodal ICL is limited by $\mathrm{IndStrength}_2$.
+- **Encoder quality constraints**: Cross-modality alignment is limited by the quality of the encoder; providing a pre-trained ViT encoder reduces $L_2$ distance and improves CKA.
 
 ## Highlights & Insights
-- Elevates "modality asymmetry" from an engineering observation to a phenomenon characterized by distributional parameters.
-- The progress metrics provide a clean "hypothesis-metric-prediction" loop for mechanistic interpretability.
-- The head knockout protocol bridges the gap between toy models and production-scale MLLMs like Qwen2.5-VL-3B.
-- The finding that multimodal training refines rather than rebuilds circuits suggests that future adaptation efforts should focus on the alignment quality of induction heads.
+- Formulated "modality asymmetry" as a quantifiable phenomenon driven by distributional parameters, proving it stems from curriculum rather than architecture.
+- Designed a concise set of progress metrics that correlate strongly ($R^2 \geq 0.91$) with accuracy, closing the "hypothesis-metric-prediction" loop.
+- Demonstrated that multimodal training does not build new circuits but refines induction heads, focusing future adaptation work on alignment quality.
 
 ## Limitations & Future Work
-- Conclusions are based on 2-layer decoders and GMMs; the gap to production-grade MLLMs remains a "qualitative bridge."
-- Real-world modality alignment is significantly more difficult than GMM testbeds.
-- Progress metrics do not cover deeper components like value mixing or the intricacies of query-key formation.
-- Transferability to other multimodal curricula (e.g., cross-attention in Flamingo) is still an open question.
+- Conclusions are based on a 2-layer decoder and GMM data, which represents a simplified "bridge" to production-grade MLLMs.
+- Real-world modality alignment difficulty is likely underestimated by the GMM testbed.
+- Metrics do not cover deeper components like query-key formation or value mixing.
+- Transferability to other multimodal curricula (e.g., cross-attention in Flamingo) remains an open question.
 
 ## Related Work & Insights
-- **vs Reddy 2024 / Chan 2022 / Olsson 2022**: Extends unimodal ICL conclusions from simplified Transformers to modern decoders with RoPE and extends the circuit perspective to multimodal settings.
-- **vs Chen 2025a / Baldassini 2024 (MLLM Diagnosis)**: Complements their findings that MLLMs rely on text for ICL by providing the underlying mechanistic explanation (dominant M1 circuits).
-- **Inspiration**: The paradigm of deploying progress measurements and head knockouts across both synthetic and real models can be generalized to studying other emergent capabilities like reasoning chains or tool use.
+- **vs Reddy 2024 / Chan 2022 / Olsson 2022**: Moves from simplified attention-only models to modern decoders with RoPE/RMSNorm/SiLU and extends analysis to multimodal contexts.
+- **vs Chen 2025a / Baldassini 2024**: Explains their observation that MLLM ICL relies on text by showing that the circuit is rooted in the primary (text) modality.
+- **vs Multimodal ICL Enhancement (Zhao 2023, etc.)**: Instead of modifying prompts or retrieval, this work suggests focusing on induction head alignment quality.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐⭐ First systematic dual-attribution (distribution and mechanism) for multimodal ICL.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Comprehensive synthetic sweeps coupled with large-scale MLLM validation.
-- **Writing Quality**: ⭐⭐⭐⭐ Logical flow and clear notation; some charts are slightly dense.
-- **Value**: ⭐⭐⭐⭐⭐ Provides both a toolkit for interpretability researchers and practical data-budget guidance for MLLM practitioners.
+- Novelty: ⭐⭐⭐⭐⭐ 
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 
+- Writing Quality: ⭐⭐⭐⭐ 
+- Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] Block Recurrent Dynamics in Vision Transformers](../../ICLR2026/interpretability/block_recurrent_dynamics_in_vision_transformers.md)
+- [\[ICML 2026\] Scalable Circuit Learning for Interpreting Large Language Models](scalable_circuit_learning_for_interpreting_large_language_models.md)
 - [\[ICLR 2026\] Implicit Statistical Inference in Transformers: Approximating Likelihood-Ratio Tests In-Context](../../ICLR2026/interpretability/implicit_statistical_inference_in_transformers_approximating_likelihood-ratio_te.md)
-- [\[NeurIPS 2025\] Uncovering Graph Reasoning in Decoder-only Transformers with Circuit Tracing](../../NeurIPS2025/interpretability/uncovering_graph_reasoning_in_decoder-only_transformers_with_circuit_tracing.md)
 - [\[NeurIPS 2025\] Understanding Prompt Tuning and In-Context Learning via Meta-Learning](../../NeurIPS2025/interpretability/understanding_prompt_tuning_and_in-context_learning_via_meta-learning.md)
-- [\[ICML 2025\] On the Power of Context-Enhanced Learning in LLMs](../../ICML2025/interpretability/on_the_power_of_context-enhanced_learning_in_llms.md)
 - [\[ICML 2026\] Optimal Attention Temperature Improves the Robustness of In-Context Learning under Distribution Shift in High Dimensions](optimal_attention_temperature_improves_the_robustness_of_in-context_learning_und.md)
 
 </div>

@@ -2,105 +2,103 @@
 title: >-
   [Paper Note] Position: Machine Learning for Heart Transplant Allocation Policy Optimization Should Account for Incentives
 description: >-
-  [ICML 2026][AI Safety][RLHF] This is an ICML 2026 position paper: Using historical UNOS data, the authors argue that next-generation ML strategies for the U.S. heart transplant allocation system must treat incentive misalignments among "Organ Procurement Organizations (OPOs), transplant centers, physicians, patients, and regulators" as first-class
+  [ICML 2026][AI Safety][RLHF] This ICML 2026 position paper argues, using historical UNOS data, that the next-generation ML strategies for the U.S. heart transplant allocation system must model the incentive misalignment among "organ procurement organizations (OPOs), transplant centers, physicians, patients, and regulators" as a first-class citizen
 tags:
   - ICML 2026
   - AI Safety
   - RLHF
 date: 2026-05-08
-content_hash: 63b8328552a920ee
+content_hash: cf5f737d0ef33d7f
 ---
 # Position: Machine Learning for Heart Transplant Allocation Policy Optimization Should Account for Incentives
 
 **Conference**: ICML 2026  
 **arXiv**: [2602.04990](https://arxiv.org/abs/2602.04990)  
 **Code**: None (Position Paper)  
-**Area**: AI Safety / Mechanism Design / Strategic Classification / Medical Policy  
-**Keywords**: Organ Allocation, Incentive Alignment, Strategic Classification, Mechanism Design, RLHF
+**Area**: AI Safety / Mechanism Design / Strategic Classification / Healthcare Policy  
+**Keywords**: Organ Allocation, Incentive Alignment, Strategic Classification, Mechanism Design, RLHF  
 
 ## TL;DR
-This is an ICML 2026 position paper: Using historical UNOS data, the authors argue that next-generation ML strategies for the U.S. heart transplant allocation system must treat incentive misalignments among "Organ Procurement Organizations (OPOs), transplant centers, physicians, patients, and regulators" as first-class citizens. The paper calls for the integration of mechanism design, strategic classification, causal inference, and social choice into the ML pipeline; otherwise, even the most powerful predictive models will be undermined by the strategic behavior of stakeholders upon deployment.
+This ICML 2026 position paper argues, using historical UNOS data, that the next-generation ML strategies for the U.S. heart transplant allocation system must model the incentive misalignment among "organ procurement organizations (OPOs), transplant centers, physicians, patients, and regulators" as a first-class citizen. It calls for integrating mechanism design, strategic classification, causal inference, and social choice into the ML pipeline; otherwise, even the strongest predictive models will be undermined by strategic behaviors during deployment.
 
 ## Background & Motivation
 
-**Background**: The historical U.S. heart transplant allocation system was a manually designed, rigid priority queue based on medical urgency. Recently, it has been rapidly transitioning toward data-driven ML/optimization methods (e.g., the "Continuous Distribution" framework already deployed for lung transplants, with heart allocation preparations underway). Demand severely exceeds supply—over 100,000 people are on the waiting list in the U.S. alone.
+**Background**: The historical U.S. heart transplant allocation is a manually designed, rigid priority queue based on medical urgency. It is rapidly transitioning toward data-driven ML/optimization methods (e.g., the "Continuous Distribution" framework already deployed for lung transplants, with heart allocation in preparation). Demand significantly outweighs supply—over 100,000 people are on the waiting list in the U.S. alone.
 
-**Limitations of Prior Work**: Existing ML solutions treat allocation as a static optimization problem (learning an optimal policy table or scoring function), completely ignoring the fact that allocation is a multi-agent game. Hospitals, OPOs, clinicians, and patients each have their own objectives and will respond strategically to policy changes. Predictors trained accurately on historical data may fail due to distribution shifts or even produce counterproductive effects after deployment.
+**Limitations of Prior Work**: Existing ML solutions treat allocation as a static optimization problem (learning an optimal policy table or scoring function), completely ignoring the fact that allocation is a multi-party game. Hospitals, OPOs, clinicians, and patients each have their own goals and will respond strategically to policy changes. Predictors trained accurately on historical data may fail or even produce adverse effects post-deployment due to distribution shifts.
 
-**Key Challenge**: Supervised learning is essentially "learning a mapping," whereas real-world features are "actively shaped by participants." This is a manifestation of Goodhart’s Law: "When a measure becomes a target, it ceases to be a good measure." For example, the 2018 policy change gave high priority (Status 2) to patients with IABP (Intra-aortic balloon pump); subsequently, the proportion of patients bridged with IABP surged from 7.0% to 24.9%—a more than three-fold increase accompanied by real clinical risks such as poor organ perfusion and bleeding.
+**Key Challenge**: Supervised learning is essentially "learning a mapping," whereas real-world features are "actively shaped by participants." This is a manifestation of Goodhart’s Law—"When a measure becomes a target, it ceases to be a good measure." For instance, the 2018 policy change placed IABP (Intra-Aortic Balloon Pump) patients in high-priority Status 2, causing the proportion of patients bridged with IABP to skyrocket from 7.0% to 24.9%—a more than three-fold increase accompanied by real clinical risks such as poor organ perfusion and bleeding.
 
-**Goal**: To identify points of incentive misalignment across the entire decision pipeline (feature gaming, out-of-sequence allocation, performance evaluation distortion, strategic listing/de-listing, preference aggregation manipulation) and provide a corresponding research agenda for the ML community.
+**Goal**: To identify incentive misalignment points across the entire decision pipeline (feature gaming, out-of-sequence allocation, performance evaluation distortion, strategic entry/exit from the list, preference aggregation manipulation) and provide a corresponding research agenda for the ML community.
 
-**Key Insight**: Translate each stage of the pipeline into a mechanism design, strategic classification, or social choice problem. Only by explicitly modeling incentives can the next generation of allocation policies remain robust, effective, fair, and trustworthy under strategic behavior.
+**Key Insight**: By translating each stage of the pipeline into a mechanism design, strategic classification, or social choice problem, next-generation allocation strategies can remain robust, effective, fair, and trustworthy under strategic behavior.
 
-**Core Idea**: Next-generation organ allocation ML must be "incentive-aware"—not just learning "who should be prioritized," but learning "who should be prioritized under the condition that all participants will respond strategically."
+**Core Idea**: Next-generation organ allocation ML must be "incentive-aware"—it should not only learn "who should be prioritized" but also "who should be prioritized under the condition that all participants will respond strategically."
 
 ## Method
 
-As a position paper rather than a methodology paper, this work does not introduce new algorithms. Instead, its "method" involves a systematic demonstration: scanning the heart transplant decision pipeline from top to bottom—patient feature reporting $\rightarrow$ OPO offering (including out-of-sequence) $\rightarrow$ transplant center acceptance $\rightarrow$ listing/de-listing $\rightarrow$ top-level policy preference aggregation. At each stage, the authors locate an incentive mismatch, provide quantitative evidence using UNOS 2010–2024 registry data, translate it into a specific mechanism design/strategic classification/social choice problem, and synthesize a research agenda for the ML community. The core claims are expanded below:
+As this is a position paper rather than a methodology paper, it does not present a single algorithm. Instead, its "method" involves a systematic scan of the heart transplant decision pipeline—from patient feature reporting and OPO bidding (including out-of-sequence offers) to transplant center acceptance, list entry/exit, and top-level policy preference aggregation. In each stage, the authors locate incentive misalignments, provide quantitative evidence using UNOS 2010–2024 registry data, translate the issue into a specific mechanism design/strategic classification/social choice problem, and summarize these into a research agenda for the ML community. The core claims are expanded below:
 
-**1. Claim: Urgency tiers are subject to arbitrage through feature gaming and must be modeled as strategic classification.** Current six-tier urgency levels depend on device usage. Clinicians can push a patient across decision boundaries by choosing whether to install a specific device. The paper formalizes this as strategic classification: a patient with feature $x$ incurs a cost $c(x, x')$ to shift to $x'$ to cross the classifier threshold. Optimal manipulation balances the "gains from higher priority" against the "costs of manipulation" (including clinical harm like bleeding). A typical empirical example is the 2018 policy change for IABP; the surge from 7.0% to 24.9% represents a "Goodhart collapse" where the "proxy for urgency" became the goal itself. The proposed ML remedy includes using repeated risk minimization to handle actively shaped distributions (known to converge under certain assumptions [Perdomo et al., 2020]), applying causal inference to distinguish features with true medical effects from mere correlations, and using selective verification (random audits) to raise the cost of manipulation. Mechanism design has proven that even a small amount of random auditing can significantly align incentives. Table 1 also reveals deeper issues: 6.5% of the highest urgency group die within 3 days of listing, yet waiting time rewards stable patients who "hoard time" by listing early, crowding out those in actual crisis.
+**1. Claim: Urgency tiers are prone to feature gaming and must be modeled as strategic classification.** Current urgency tiers rely on device usage, allowing clinicians to push patients across decision boundaries by initiating or withholding specific devices. The paper formalizes this as strategic classification: a patient’s features $x$ shift to $x'$ at a cost $c(x, x')$ to cross a classifier threshold, where optimal manipulation balances the "gains of high priority" against "manipulation costs" (including clinical harm). The most typical empirical evidence is the 2018 policy change that moved IABP patients to Status 2, leading to a jump in IABP bridging from 7.0% to 24.9%—a three-fold increase representing a Goodhart-style collapse. The proposed ML remedy includes using repeated risk minimization to handle actively shaped feature distributions (known to converge under certain assumptions [Perdomo et al., 2020]), using causal inference to distinguish features with real medical effects from mere correlates, and using selective verification (random audits) to raise manipulation costs.
 
-**2. Claim: Out-of-sequence allocation and periodic performance evaluations are system-level misalignments; the "evaluation mechanism" itself must be part of the ML co-design.** Out-of-sequence (open) offers allow OPOs to bypass the priority queue and direct organs to specific centers, intended to save organs at risk of waste. However, trigger thresholds are opaque and subjective. Since CMS began monitoring OPOs for waste rates in 2021, the proportion of out-of-sequence kidney allocations jumped from 2% in 2020 to 18% in 2023, with systemic bias toward wealthier groups—a "safety valve" turned into a primary channel. Performance metrics are similarly distorted: SRTR rates centers on 5 tiers every six months based on waitlist mortality and 1-year survival. This incentivizes risk-aversion, causing centers to reject marginal offers. UNOS data shows acceptance rates and transplant volumes bounce back significantly in May after the April reporting window closes, consistent with a "horizon effect" as centers take higher risks at the start of a new window. The ML agenda here involves: using computer vision and ex-vivo perfusion for real-time organ assessment to learn optimal thresholds for triggering out-of-sequence offers; replacing semi-annual evaluations with CUSUM-style continuous monitoring to weaken periodic gaming; and using better risk-adjustment models to ensure fair evaluation of small vs. large centers. The argument is that if upstream OPO and downstream center incentives remain misaligned, the best priority queue will be bypassed.
+**2. Claim: Out-of-sequence allocation and periodic performance evaluations are system-level misalignments; evaluation mechanisms must be co-designed with ML.** Out-of-sequence (OOS) offers allow OPOs to bypass the priority queue, intended to rescue organs at risk of wastage, but the trigger thresholds are opaque. Since CMS began monitoring OPOs by waste rates in 2021, kidney OOS rates surged from 2% in 2020 to 18% in 2023, systematically favoring wealthier groups. On the performance side, SRTR ranks centers into 5 tiers based on metrics like 1-year survival, incentivizing centers to risk-aversely reject marginal offers. UNOS data shows a statistically significant rebound in acceptance rates in May after the April reporting window closes, consistent with a "horizon effect" where centers accept higher-risk cases at the start of a new window. The ML agenda suggests using computer vision and ex-vivo perfusion for real-time organ assessment to learn optimal OOS triggers, replacing semi-annual evaluations with CUSUM-style continuous monitoring, and using improved risk-adjustment models to evaluate small centers fairly.
 
-**3. Claim: Since optimization objectives themselves are learned from strategic actors, social choice and mechanism design must enter at the source of the ML pipeline.** Top-level policies currently use AHP (Analytic Hierarchy Process) to extract preference weights from the community. However, the Gibbard–Satterthwaite theorem proves that any "reasonable" voting rule can be manipulated. Small rural centers push for "broader sharing and fewer geographic constraints," while large urban centers do the opposite. Patient advocates push for attributes beneficial to them (e.g., the weight for "prior living donors" was adjusted to 13.9%, even though its theoretical weight in a fixed pool should be near 0). Multi-listing is a more explicit form of unfairness: only 2.16% of patients multi-list, yet their transplant rate of 80.44% is significantly higher than the 73.06% for single-listing patients; these patients are predominantly young, white, and college-educated, with an average cross-region distance of 379 nautical miles. The paper advocates for: replacing AHP with frugal preference elicitation plus RLHF; distinguishing "normative ends" from "attributes as means" (letting humans vote on ends while algorithms optimize means); using counterfactual modeling to quantify when multi-listing actually helps the system; and treating the entire pipeline as multi-agent mechanism design, potentially introducing credit systems to encourage offer acceptance. The core argument is that if the preference aggregation stage is manipulated, downstream ML engineering is merely performing local optimization on the wrong objective.
-
-The methodological backbone is empirical: the paper systematically uses UNOS 2010–2024 heart transplant registry data to provide quantitative evidence for every diagnosis (IABP ratios, kidney out-of-sequence surges, May rebounds, multi-listing transplant rates), grounding theoretical claims of "incentive misalignment" in data observation.
+**3. Claim: Optimization targets themselves are learned from strategic parties; therefore, social choice and mechanism design must be at the source of the ML pipeline.** Top-level policies currently use AHP (Analytic Hierarchy Process) to extract preference weights from the community, but the Gibbard–Satterthwaite theorem proves any "reasonable" voting rule is manipulable. Small rural centers push for broader sharing, while large urban centers do the reverse. Multiple listing is a more explicit inequity—only 2.16% of patients list at multiple centers, yet their transplant rate of 80.44% is far higher than the 73.06% for single-listing patients. The paper advocates for: using frugal preference elicitation with RLHF instead of AHP to distinguish "normative ends" from "attributes as means"; using counterfactual modeling to quantify where multiple listing truly helps the system; and treating the pipeline as multi-agent mechanism design by introducing credit systems to encourage offer acceptance and randomized audits to raise the cost of manipulation.
 
 ## Key Experimental Results
 
-Note: As a position paper, there are no traditional algorithmic experiments. The tables below summarize the key statistics used to support the arguments.
+Note: As a position paper, it uses statistical observations from UNOS 2010–2024 registry data rather than traditional algorithmic experiments to support its claims.
 
-### Outcomes for Highest Urgency (Status 1) Patients (2010–2024)
+### Outcomes of Highest Urgency (Status 1) Patients (2010–2024)
 
-| Metric | Value | Meaning |
+| Metric | Value | Implications |
 |------|------|------|
 | Death within 3 days of listing | 6.5% | Significant mortality within one week |
 | Death within 7 days of listing | 13.7% | Significant mortality within one week |
-| Median time to transplant | 26 days | Only 10 days earlier than median time to death |
-| Median time to death | 36 days | Extremely thin margin of safety |
-| Time to death IQR | 13–118 days | Massive heterogeneity within Status 1; single tier is insufficient |
+| Median time to transplant | 26 days | Only 10 days earlier than median death time |
+| Median time to death | 36 days | Razor-thin margin of safety |
+| Time to death IQR | 13–118 days | Massive heterogeneity within Status 1 |
 
 ### System-level Evidence of Incentive Misalignment
 
-| Phenomenon | Key Figure | Explanation |
+| Phenomenon | Key Figures | Explanation |
 |------|----------|------|
-| IABP Bridge Ratio (Post-2018 Policy) | 7.0% → 24.9% | Three-fold increase, suspected feature gaming |
-| Kidney Out-of-Sequence Proportion | 2020: 2% → 2023: 18% → early 2026: 9% | Surged after CMS regulation; dropped after federal audit |
-| Multi-listing Patient Ratio / Transplant Rate | 2.16% / 80.44% (vs 73.06% single-listing) | Significant arbitrage by wealthy groups |
-| Average Distance for Multi-listing Centers | 379 nmi (Max > 2200 nmi) | Cross-regional arbitrage; impaired fairness |
+| IABP bridging share (Post-2018 policy) | 7.0% → 24.9% | Three-fold increase, suspected feature gaming |
+| Kidney OOS allocation rate | 2020: 2% → 2023: 18% → Early 2026: 9% | Spiked after CMS regulation, dropped after federal scrutiny |
+| Multiple listing patients / Transplant rate | 2.16% / 80.44% (vs. 73.06% single-list) | Significant arbitrage by wealthier groups |
+| Avg. distance for multiple listing centers | 379 nautical miles (Max > 2200) | Cross-regional arbitrage impacting equity |
 
 ### Key Findings
 
-- Once evaluation metrics are made public (CMS monitoring OPOs, SRTR rating centers), stakeholders immediately "reshape behavior according to metrics" rather than focusing on what is best for the patient.
-- Waiting time-based ranking disadvantages the most critical patients who cannot survive long enough to accumulate priority; this institutionally makes "listing early to hoard time" the optimal strategy.
-- Federal audits were able to reduce out-of-sequence rates from 20% to 9% in less than two years, proving that stakeholder responses to incentives are immediate and powerful—in both positive and negative directions.
+- Once evaluation metrics are made public (e.g., CMS monitoring OPOs, SRTR ranking centers), participants immediately "reshape behavior to the metric" rather than "what is best for the patient."
+- Waiting time priority disadvantages the most critically ill, as they cannot survive long enough to accumulate priority; this institutionally makes "early listing to stockpile time" the optimal strategy.
+- Federal scrutiny reduced OOS rates from 20% to 9% in less than two years, showing that response to incentives is immediate and powerful in both directions.
 
 ## Highlights & Insights
 
-- **Visualizing Goodhart’s Law as a Research Agenda**: Instead of vaguely stating "ML will be gamed," the paper maps out which step is arbitraged by which type of behavior and which mechanism design tool should fix it. This "system-level mismatch map" is highly actionable for the ML community entering healthcare policy.
-- **Value of "Means vs. Ends" Distinction**: Current preference aggregation tasks (including AI Alignment and RLHF) often ask humans to vote on "specific solutions," which effectively pushes the optimization task onto the human. The paper argues for having humans vote only on "ends," allowing algorithms to search for "means" within those constraints—an insight directly applicable to RLHF preference data collection.
-- **Acknowledging Dissenting Views**: Section 7 seriously discusses the counter-argument that clinician "manipulation" might actually be correcting imperfect policies. Using kidney exchange as an example, it demonstrates that "efficient but non-interpretable" systems can still be accepted by the community. This adds significant credibility to the position.
+- **Concrete Research Agenda for Goodhart's Law**: The paper does not merely state that ML is prone to gaming; it maps specific pipeline stages to types of gaming and provides corresponding mechanism design tools. This "system-level misalignment map" is highly actionable for the ML community.
+- **"Means vs. Ends" Value**: All current preference aggregation tasks (including AI alignment and RLHF) tend to have humans vote on "specific solutions." This paper suggests humans should vote on "ends," while algorithms search for the "means" under those constraints—a concept directly transferable to RLHF preference data design.
+- **Acknowledging Counter-arguments**: Section 7 discusses the view that clinician manipulation might be a way to "correct imperfect policies." By engaging with opposing views, the paper increases the credibility of its position.
 
 ## Limitations & Future Work
 
-- The paper focuses almost entirely on U.S. heart transplants. Specific misalignments (IABP gaming, out-of-sequence allocation) need to be reassessed in liver/kidney/lung systems and other national contexts.
-- Many "incentive explanations" currently rely on correlational evidence (e.g., the May rebound). The authors concede that "a more more rigorous causal analysis remains necessary."
-- The proposed ML agenda is largely directional (e.g., "should use strategic classification"). No end-to-end deployable system has yet been run on organ allocation data, leaving this as an open problem for the community.
-- While randomized audits are effective in theory, practical implementation requires addressing who performs the audit and who bears the cost. Improperly designed audits could be counterproductive.
+- The paper focuses almost entirely on U.S. heart transplants; specific misalignments (IABP gaming, OOS allocation, SRTR cycles) may differ in other countries or organ types (liver/kidney/lung).
+- Many "incentive explanations" are currently correlational (e.g., the May rebound); the authors admit that "a more rigorous causal analysis remains necessary."
+- The proposed ML agendas are mostly directional ("should use strategic classification," "should use RLHF"). End-to-end deployable systems have not yet been built on actual organ allocation data.
+- Randomized audits, while effective in theory, face institutional hurdles regarding who performs the audit and who bears the cost.
 
 ## Related Work & Insights
 
-- **vs. Papalexopoulos et al. (2023) (Continuous Distribution Framework)**: They suggest moving from discrete tiers to continuous scoring to mitigate cliff-edge effects. Ours acknowledges this improvement but notes that continuous scorers still rely on classifiers/regressors that are susceptible to feature manipulation; continuity is necessary but not sufficient.
-- **vs. Hardt et al. (2016), Perdomo et al. (2020) (Strategic Classification and Performative Prediction)**: Existing work provides general frameworks (cost models + convergence of RRM). Ours "grounds" these frameworks in survival analysis and dynamic waitlists—settings not yet fully explored by the strategic classification community.
-- **vs. Anagnostides et al. (2025) (Dynamic Heart Allocation Policy Optimization)**: Previous work by the same team optimized allocation rules and discussed center "rejection rights." Ours broadens the scope: optimizing the policy in isolation is insufficient; upstream performance evaluation and downstream preference aggregation must be co-designed.
-- **vs. Conitzer et al. (2024) (Social Choice and AI Alignment)**: Both emphasize using social choice theory for multi-agent preference aggregation. Ours provides a more specific, high-stakes application scenario (life and death), which in turn makes RLHF/social choice research goals more concrete.
+- **vs. Papalexopoulos et al. (2023) (Continuous Distribution Framework)**: While they proposed continuous scoring to mitigate cliff-edge effects, this paper notes that continuous scores still rely on classifiers/regressors that are susceptible to feature manipulation.
+- **vs. Hardt et al. (2016), Perdomo et al. (2020) (Strategic Classification)**: Existing work provides general frameworks; this paper grounds these frameworks in survival analysis and dynamic waiting lists—settings the strategic classification community has not yet fully explored.
+- **vs. Anagnostides et al. (2025) (Dynamic Heart Allocation)**: Unlike previous work focused on optimizing allocation rules, this paper argues for the "co-design" of upstream performance evaluations and downstream preference aggregation.
+- **vs. Conitzer et al. (2024) (Social Choice and AI Alignment)**: Both emphasize social choice theory; this paper provides a more specific, high-stakes application (life-and-death) that makes the research goals of RLHF/social choice more concrete.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The technical tools (strategic classification, mechanism design, RLHF) are established, but packaging them as an "Organ Allocation ML Agenda" backed by UNOS evidence is a novel system-level problem statement for the ML community.
-- Experimental Thoroughness: ⭐⭐⭐⭐ The "experiments" are UNOS data observations covering multiple mismatch points over 15 years. The evidence chain is complete, though causal analysis could be strengthened.
-- Writing Quality: ⭐⭐⭐⭐⭐ Extremely clear structure; each section follows a "phenomenon $\rightarrow$ data $\rightarrow$ incentive explanation $\rightarrow$ ML solution" pattern. Section 7's inclusion of alternative views is a gold standard for position papers.
-- Value: ⭐⭐⭐⭐⭐ Points out that the real bottleneck for healthcare ML is incentive modeling rather than model capacity. It provides strategic classification and mechanism design researchers with a high-stakes real-world application.
+- Novelty: ⭐⭐⭐⭐ The technical tools are not new, but packaging them as an "Organ Allocation ML Agenda" with UNOS evidence is novel for the ML community.
+- Experimental Thoroughness: ⭐⭐⭐⭐ The "experiments" are UNOS data observations across multiple misalignment points from 2010–2024; the evidence chain is complete, though causal analysis can be further refined.
+- Writing Quality: ⭐⭐⭐⭐⭐ Excellent structure following "phenomenon → data → incentive explanation → ML solution"; the dialogue with alternative views in Section 7 is a benchmark for position papers.
+- Value: ⭐⭐⭐⭐⭐ Points out that the real bottleneck for healthcare ML is incentive modeling rather than model capacity; provides a high-stakes real-world scenario for researchers.
 
 <!-- RELATED:START -->
 
@@ -108,11 +106,11 @@ Note: As a position paper, there are no traditional algorithmic experiments. The
 
 ## Related Papers
 
+- [\[ICML 2026\] LLM Benchmark Datasets Should Be Contamination-Resistant (Position Paper)](llm_benchmark_datasets_should_be_contamination-resistant.md)
 - [\[ICML 2026\] Position: Beyond Sensitive Attributes, ML Fairness Should Quantify Structural Injustice via Social Determinants](position_beyond_sensitive_attributes_ml_fairness_should_quantify_structural_inju.md)
+- [\[ICML 2026\] PRPO: Paragraph-level Policy Optimization for Vision-Language Deepfake Detection](prpo_paragraph-level_policy_optimization_for_vision-language_deepfake_detection.md)
 - [\[NeurIPS 2025\] Position: Bridge the Gaps between Machine Unlearning and AI Regulation](../../NeurIPS2025/ai_safety/position_bridge_the_gaps_between_machine_unlearning_and_ai_regulation.md)
 - [\[ICML 2026\] Position: Embodied AI Requires a Privacy-Utility Trade-off](position_embodied_ai_requires_a_privacy-utility_trade-off.md)
-- [\[CVPR 2026\] Machine Unlearning via Adaptive Gradient Reweighting and Multi-stage Objective Optimization](../../CVPR2026/ai_safety/machine_unlearning_via_adaptive_gradient_reweighting_and_multi-stage_objective_o.md)
-- [\[NeurIPS 2025\] Machine Unlearning Doesn't Do What You Think: Lessons for Generative AI Policy and Research](../../NeurIPS2025/ai_safety/machine_unlearning_doesnt_do_what_you_think_lessons_for_generative_ai_policy_and.md)
 
 </div>
 

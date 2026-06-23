@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AesFormer: Transform Everyday Photos into Beautiful Memories
 description: >-
-  [ICML 2026][Image Generation][Image Editing] AesFormer defines everyday photo enhancement as Aesthetic Photo Reconstruction (APR). By employing a two-stage framework that first generates a photographic action plan and then executes structural editing, it transforms photographic errors in composition, perspective, and pose into executable edits. It significantly o
+  [ICML 2026][Image Generation][Image Editing] AesFormer defines aesthetic photo enhancement as Aesthetic Photo Reconstruction (APR). It introduces a two-stage framework that first generates a photography action plan and then executes structural editing, transforming errors in composition, perspective, and pose into executable edits. It significantly outperforms op
 tags:
   - ICML 2026
   - Image Generation
@@ -10,7 +10,7 @@ tags:
   - GRPO-A
   - AesRecon
 date: 2026-05-08
-content_hash: eef76feb2f7427f8
+content_hash: 396cd504153e0d73
 ---
 # AesFormer: Transform Everyday Photos into Beautiful Memories
 
@@ -21,111 +21,111 @@ content_hash: eef76feb2f7427f8
 **Keywords**: Aesthetic Photo Reconstruction, Image Editing, Structural Reconstruction, GRPO-A, AesRecon  
 
 ## TL;DR
-AesFormer defines everyday photo enhancement as Aesthetic Photo Reconstruction (APR). By employing a two-stage framework that first generates a photographic action plan and then executes structural editing, it transforms photographic errors in composition, perspective, and pose into executable edits. It significantly outperforms open-source editors and approaches Nano Banana Pro on the AesRecon dataset.
+AesFormer defines aesthetic photo enhancement as Aesthetic Photo Reconstruction (APR). It introduces a two-stage framework that first generates a photography action plan and then executes structural editing, transforming errors in composition, perspective, and pose into executable edits. It significantly outperforms open-source editors on AesRecon and approaches the performance of Nano Banana Pro.
 
 ## Background & Motivation
-**Background**: Photo post-processing has long been divided into two categories: retouching, which primarily adjusts exposure, contrast, color, and overall style; and portrait enhancement, which focuses on skin, face, and detail refinement. Recent diffusion and flow-matching image editing models can modify images based on text instructions but focus more on semantic consistency and instruction following.
+**Background**: Photo post-processing has long been divided into two categories: retouching, which primarily adjusts exposure, contrast, color, and overall style; and portrait enhancement, which focuses on skin, face, and detail modification. Recent diffusion and flow-matching image editing models can modify images based on text instructions but focus more on semantic consistency and instruction following.
 
-**Limitations of Prior Work**: Issues in many common photos stem not from poor color, but from suboptimal structural decisions at the moment of capture, such as off-center subject placement, distracting backgrounds, perspective-ruining depth, stiff poses, or imbalanced composition. Traditional retouching cannot "reshoot" the composition. General image editors, even when given instructions like "make it look better," often only perform local appearance adjustments and fail to diagnose or repair structural photography problems.
+**Limitations of Prior Work**: Issues in many casual photos are not due to poor color but poor structural decisions at the moment of capture, such as off-center subjects, distracting backgrounds, ruined depth from camera angles, stiff poses, or imbalanced composition. Traditional retouching cannot "re-shoot" the composition. Even when general image editors receive instructions like "make it look better," they often only make local appearance adjustments, struggling to diagnose and fix structural photography issues.
 
-**Key Challenge**: APR requires the model to reconstruct structural attributes like composition, perspective, pose, and depth of field while maintaining identity and scene semantics. This is neither simple beautification nor arbitrary new image generation; it requires finding a balance between fidelity and "aesthetic reshooting."
+**Key Challenge**: APR requires the model to reconstruct structural attributes like composition, perspective, pose, and depth of field while maintaining person identity and scene semantics. It is neither simple beautification nor arbitrary new image generation; it must find a balance between "fidelity" and "aesthetic re-shooting."
 
-**Goal**: The authors propose the Aesthetic Photo Reconstruction task, construct a strictly aligned poor/good image pair dataset, and train a system capable of first understanding photographic aesthetics and then executing structural edits.
+**Goal**: The authors propose the Aesthetic Photo Reconstruction task, construct a strictly aligned poor/good image pair dataset, and train a system capable of first understanding photography aesthetics and then executing structural editing.
 
-**Key Insight**: The problem is decomposed into two models: AesThinker analyzes the input photo like a photographer and outputs sequential editing actions; AesEditor transforms these actions into pixel-level structural reconstructions. This avoids burdening a single image editor with both aesthetic diagnosis and complex execution.
+**Key Insight**: The paper decomposes the problem into two models: AesThinker, which analyzes the input photo like a photographer and outputs sequential editing actions; and AesEditor, which translates these actions into pixel-level structural reconstruction. This avoids requiring a single image editor to handle both aesthetic diagnosis and complex execution simultaneously.
 
-**Core Idea**: Use photography tutorial videos to mine before/after pairs to learn "action plans" from poor to good photos, then use an action-conditioned editor to execute these plans, decoupling aesthetic planning from image reconstruction.
+**Core Idea**: Use photography tutorial videos to mine before/after pairs to learn "action plans from poor to good photos," then execute these plans with an action-conditional editor, decoupling aesthetic planning from image reconstruction.
 
 ## Method
-The core of AesFormer consists of three parts: data, planning, and editing. On the data side, VCMP mines AesRecon from tutorial videos; on the planning side, AesThinker is trained to generate ordered actions across seven photographic dimensions; on the editing side, AesEditor is trained to execute structural reconstruction based on these actions.
+The core of AesFormer consists of three parts: data, planning, and editing. On the data side, VCMP is used to mine AesRecon from tutorial videos; on the planning side, AesThinker is trained to generate sequential actions across seven photography dimensions; on the editing side, AesEditor is trained to perform structural reconstruction based on these actions.
 
 ### Overall Architecture
-The input is a "poor" photo captured by an ordinary user. Stage 1's AesThinker reads the photo and prompt to output an ordered action plan covering seven progressive dimensions: aspect ratio, framing/composition, camera viewpoint, subject placement, pose/action, focus/depth-of-field, and color/light. Stage 2's AesEditor receives the original image and the action plan to generate the reconstructed photo using a flow-matching editor. During training, action supervision comes from poor/good pairs and tutorial video text cues in AesRecon; editing supervision comes from strictly aligned poor/good/action triplets. The entire pipeline connects data, planning, and editing, corresponding to the three key designs below.
+The input is a poor photo taken by an ordinary user. In Stage 1, AesThinker reads the photo and prompt to output a sequential action plan covering seven progressive dimensions: aspect ratio, framing/composition, camera viewpoint, subject placement, pose/action, focus/depth-of-field, and color/light. In Stage 2, AesEditor receives the original image and the action plan to generate the reconstructed photo using a flow-matching editor. During training, action supervision comes from poor/good pairs and tutorial video text cues in AesRecon; editing supervision comes from strictly aligned poor/good/action triplets.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
     subgraph DATA["VCMP Video Mining to Construct AesRecon"]
         direction TB
-        V["Tutorial Video Retrieval<br/>5700 → 2144 Tutorials"] --> C["Segmentation + Good Frame Detection<br/>Initial frame = poor, clean frame = good"]
+        V["Tutorial Video Retrieval<br/>5700 → 2144 Tutorials"] --> C["Segmentation + Good Frame Detection<br/>Initial Frame = poor, Clean Frame = good"]
         C --> R["Subtitle Filtering + Strict Alignment<br/>9071 poor/good pairs"]
     end
-    P["Input: Common poor photo"] --> T["AesThinker 7D Ordered Action Chain & GRPO-A<br/>SFT Cold Start + GRPO-A Exploration"]
+    P["Input: Ordinary poor photo"] --> T["AesThinker 7D Action Chain & GRPO-A<br/>SFT Cold Start + GRPO-A Exploration"]
     DATA -->|Supervision| T
-    T -->|7D Ordered Action Plan| E["Action-conditioned AesEditor<br/>rectified-flow + LoRA Finetuning"]
+    T -->|7D Sequential Action Plan| E["Action-Conditional AesEditor<br/>rectified-flow + LoRA Fine-tuning"]
     DATA -->|Supervision| E
-    E --> O["Output: Good photo after structural reconstruction"]
+    E --> O["Output: Structurally Reconstructed good photo"]
 ```
 
 ### Key Designs
 
-**1. VCMP Video Mining to Construct AesRecon: Extracting "same subject, same scene" paired training data from tutorial videos**
+**1. VCMP Video Mining for AesRecon: Extracting "Same Subject, Same Scene" Paired Training Data from Tutorials**
 
-Training data for APR is demanding—it requires poor/good pairs of the same subject in the same scene, where aesthetic differences stem from photographic structure (composition, pose) rather than scene changes or simple color grading. Such pairs are virtually non-existent in current datasets. VCMP exploits the fact that photography tutorials naturally record the full process of a single shooting event from "poor" to "good." It retrieves 5,700 candidate videos using photography keywords from Rednote, TikTok, and YouTube, retaining 2,144 tutorials after deduplication and filtering for ads or non-demonstration content. Frames are sampled at 2 fps, and Qwen2.5-VL-72B is used to identify clean good frames, while initial event frames are treated as poor images to form coarse pairs. These undergo three refinement stages: using quality/aesthetic scorers and VLMs to filter low-quality good images; using Qwen-Image-Edit to remove subtitles and camera UIs from poor images (with GPT-4o verifying identity and scene consistency); and finally using VLMs for strict verification of identity, scene, and event. This results in 9,071 strictly aligned pairs. This multi-stage filtering is essential because raw videos contain transitions, blurs, and UI overlays that would otherwise prevent training on structural differences.
+Training data for APR is demanding—it requires poor/good pairs of the same subject in the same scene, where aesthetic differences stem from photography structure (composition, pose) rather than changing the person or environment. VCMP exploits the fact that photography tutorial videos naturally record the process of a single shooting event from "poorly shot" to "well shot." First, 5,700 candidate videos are retrieved from Rednote, TikTok, and YouTube using photography teaching keywords. After removing duplicates and filtering out ads or non-step-by-step demos, 2,144 tutorials remain. Frames are sampled at 2 fps for each event. Qwen2.5-VL-72B identifies clean good frames and treats initial event frames as poor images to form coarse pairs. Following this, three refinement stages are applied: filtering low-quality good images using aesthetic scorers and VLMs; removing subtitles and camera UIs from poor images using Qwen-Image-Edit (with GPT-4o verifying identity/scene consistency); and finally, VLM verification of the same person/scene/event. This results in 9,071 strictly aligned pairs. Multi-stage filtering is essential because raw videos contain ads, transition blurs, and UI overlays that would otherwise hinder training structural differences.
 
-**2. AesThinker 7D Ordered Action Chain & GRPO-A: Translating vague "make it better" into executable, sequential photographic actions**
+**2. AesThinker 7D Sequential Action Chain & GRPO-A: Translating Vague "Better" into Executable Sequential Photography Actions**
 
-General editors struggle with instructions like "beautify this photo" because they lack a diagnosis of structural flaws and an execution order. AesThinker formulates aesthetic planning as an ordered chain across seven dimensions: aspect ratio $\to$ framing/composition $\to$ camera viewpoint $\to$ subject placement $\to$ pose/action $\to$ focus/depth-of-field $\to$ color/light, progressing from global composition to local lighting. This order is not arbitrary—while these decisions are largely separable, unidirectional dependencies exist (e.g., depth of field is ill-posed before subject placement is determined); a fixed order stabilizes planning into a decomposable action space. Training occurs in two steps: first, distilling ground-truth actions using GPT-5.2 based on poor/good/text cues and verifying integrity with Gemini 3, followed by SFT cold-starting Qwen3-VL-8B. Since SFT overfits to single annotation trajectories and photography is inherently multi-solution, GRPO-A is used for reinforcement. For each poor image, multiple action plans are sampled, and a total reward is calculated based on "format reward + semantic alignment with reference + creativity/aesthetic gain" (evaluated by Qwen2.5-VL-32B as a training-free reward model). Using relative group advantage to update the policy encourages diverse yet executable solutions, moving beyond SFT's single-trajectory imitation.
+General editors struggle with instructions like "make the photo more beautiful" because they do not know what is structurally wrong or in what order to fix it. AesThinker formalizes aesthetic planning into a 7D sequential action chain: aspect ratio → framing/composition → camera viewpoint → subject placement → pose/action → focus/depth-of-field → color/light, progressing from global composition to local lighting. This order is not arbitrary—while these decisions are largely separable, unidirectional dependencies exist (e.g., discussing depth of field is ill-posed before the subject’s position is determined). A fixed order stabilizes the planning and yields a decomposable action space. Training involves two steps: first, distilling ground-truth actions using GPT-5.2 based on poor/good/text cues and verifying them with Gemini 3, followed by SFT cold-starting Qwen3-VL-8B. However, SFT alone overfits to single annotated trajectories, whereas aesthetic solutions are multi-modal. Thus, GRPO-A is used: multiple action plans are sampled per poor image, and a total reward is calculated based on "format reward + semantic alignment with reference + creativity/aesthetic gain" (evaluated by Qwen2.5-VL-32B as a training-free reward model). Using relative advantages within groups to update the policy encourages diverse yet executable solutions, breaking the limits of single-trajectory imitation.
 
-**3. Action-conditioned AesEditor: Mapping high-level photographic actions to pixel-level structural reconstruction**
+**3. Action-Conditional AesEditor: Reliably Mapping High-Level Actions to Pixel-Level Reconstruction**
 
-With an upstream action plan, an executor is needed to map "improve composition/perspective/pose" to pixel changes. Standard editors often fail these structural commands. AesEditor uses Qwen-Image-Edit-2511 as a backbone, freezing the multimodal encoder and VAE while performing LoRA fine-tuning on the MMDiT. Given the poor image, good reference, and action sequence, it learns an action-conditioned velocity field in a rectified-flow framework, predicting $v_t=x_0-x_1$. During inference, it generates reconstruction results based on AesThinker's output plan. Finetuning on APR triplets ensures the editor learns the correspondence between photographic actions and structural changes.
+Given an action plan, an executor is needed to map "improve composition/viewpoint/pose" to pixel changes. Generic editors might follow instructions but often fail structural ones. AesEditor uses Qwen-Image-Edit-2511 as a base, freezing the multimodal encoder and VAE while performing LoRA fine-tuning on the MMDiT. Given a poor image and action sequence, it learns the action-conditional velocity field in a rectified-flow framework, predicting $v_t=x_0-x_1$. Tuning on APR triplets helps the editor learn the mapping between "photography actions $\leftrightarrow$ structural reconstruction" rather than just general instruction following.
 
 ### Loss & Training
-Stage 1(a) uses standard autoregressive SFT to maximize the conditional probability of the action sequence given the input photo and prompt. Stage 1(b) utilizes GRPO-A: sampling multiple sequences per input, normalizing rewards within the group to obtain advantage, and adding a KL penalty relative to the reference policy; reward weights are set to $\lambda_f=0.1$, $\lambda_a=0.5$, and $\lambda_c=0.4$. Stage 2 employs the flow-matching loss $\mathcal{L}_{edit}=\mathbb{E}\|v_\psi(x_t,t,h)-v_t\|_2^2$. Experiments were conducted on 10 NVIDIA A40 48GB GPUs.
+Stage 1(a) uses standard autoregressive SFT to maximize the conditional probability of the action sequence. Stage 1(b) utilizes GRPO-A: multiple action sequences are sampled for the same input, advantages are calculated via group reward normalization, and a KL penalty is applied relative to the reference policy. Reward weights are $\lambda_f=0.1$, $\lambda_a=0.5$, and $\lambda_c=0.4$. Stage 2 uses the flow-matching loss $\mathcal{L}_{edit}=\mathbb{E}\|v_\psi(x_t,t,h)-v_t\|_2^2$. Experiments were conducted on 10 NVIDIA A40 48GB GPUs.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Method | Thinker | GPT-4o Win vs. Poor↑ | Human Win vs. Poor↑ | GPT-4o Win vs. Good↑ | Human Win vs. Good↑ | ArtiMuse↑ | LAION-V2↑ | Q-ALIGN↑ |
+| Method | Thinker | GPT-4o win vs. Poor↑ | Human win vs. Poor↑ | GPT-4o win vs. Good↑ | Human win vs. Good↑ | ArtiMuse↑ | LAION-V2↑ | Q-ALIGN↑ |
 |------|---------|-----------------|-----------------|-----------------|-----------------|-----------|-----------|----------|
 | Nano Banana Pro | None | 54.44 | 72.55 | 16.67 | 21.95 | 50.90 | 5.59 | 3.24 |
 | FLUX.1 Kontext | None | 12.96 | 5.88 | 2.66 | 3.66 | 38.34 | 5.07 | 2.83 |
 | Bagel | None | 12.40 | 17.65 | 7.75 | 12.20 | 37.69 | 4.94 | 2.58 |
 | Step1X-Edit-v1.1 | None | 15.28 | 11.76 | 13.84 | 13.41 | 37.14 | 5.33 | 3.37 |
 | Qwen-Image-Edit-2511 | None | 16.50 | 9.80 | 7.64 | 12.20 | 46.65 | 5.44 | 3.20 |
-| AesFormer | AesThinker | 65.33 | 68.63 | 26.25 | 24.39 | 47.76 | 5.60 | 3.51 |
+| **Ours** | AesThinker | 65.33 | 68.63 | 26.25 | 24.39 | 47.76 | 5.60 | 3.51 |
 
 ### Ablation Study
 
-| Configuration | GPT-4o Win vs. Poor↑ | GPT-4o Win vs. Good↑ | ArtiMuse↑ | LAION-V2↑ | Q-ALIGN↑ | Description |
+| Configuration | GPT-4o win vs. Poor↑ | GPT-4o win vs. Good↑ | ArtiMuse↑ | LAION-V2↑ | Q-ALIGN↑ | Description |
 |------|-----------------|-----------------|-----------|-----------|----------|------|
 | Baseline (Edit-2511) | 16.50 | 7.64 | 46.65 | 5.44 | 3.20 | Base editor only |
-| S1a shuffle | 58.69 | 18.60 | 46.16 | 5.49 | 3.36 | Shuffled action order; lower than ordered chain |
-| S1a | 61.04 | 24.58 | 47.70 | 5.58 | 3.48 | Added SFT AesThinker only |
-| S1a + S2 | 61.13 | 24.14 | 47.74 | 5.58 | 3.46 | Added action-conditioned editor, no GRPO-A |
-| S1a + S1b + S2 | 65.33 | 26.25 | 47.76 | 5.60 | 3.51 | Full AesFormer; GRPO-A provides further gains |
+| S1a shuffle | 58.69 | 18.60 | 46.16 | 5.49 | 3.36 | Shuffled 7D action order |
+| S1a | 61.04 | 24.58 | 47.70 | 5.58 | 3.48 | SFT AesThinker only |
+| S1a + S2 | 61.13 | 24.14 | 47.74 | 5.58 | 3.46 | Action-conditional editor w/o GRPO-A |
+| S1a + S1b + S2 | 65.33 | 26.25 | 47.76 | 5.60 | 3.51 | Full AesFormer |
 
 ### Key Findings
-- APR is difficult for general open-source editors: GPT-4o win rates vs. poor for FLUX, Bagel, Step1X, and Qwen-Image-Edit are within 12–17%, indicating they rarely improve structural aesthetics.
-- AesFormer achieves a GPT-4o win rate vs. poor of 65.33%, surpassing Nano Banana Pro (54.44%); its human win rate vs. good is 24.39%, also slightly higher than Nano Banana Pro (21.95%). This demonstrates that specialized APR data and planning-editing decoupling can bridge the gap between open-source and strong closed-source systems.
-- Attaching external general Thinkers is unstable. In Table 1, providing Qwen3 or GPT-4o planners to FLUX, Bagel, Step1X, or Qwen-Image-Edit does not consistently improve performance (sometimes decreasing it), suggesting that both the planner and editor require specific APR alignment.
-- The 7D sequence is a crucial inductive bias. Shuffling it reduces the GPT-4o win rate vs. poor from 61.04 to 58.69, confirming that a "global to local" workflow helps the model form a valid photographic process.
+- APR is difficult for general open-source editors: FLUX, Bagel, Step1X, and Qwen-Image-Edit show GPT-4o win rates vs. poor of only 12–17%, indicating they rarely improve structural aesthetics.
+- AesFormer achieves a GPT-4o win rate vs. poor of 65.33%, surpassing Nano Banana Pro's 54.44%; human win rate vs. good is 24.39%, also slightly higher than Nano Banana Pro’s 21.95%. This shows specialized APR data and decoupling planning from editing can close the gap with high-end closed-source systems.
+- External general Thinkers are unstable. In Table 1, adding Qwen3 or GPT-4o planners to FLUX or Bagel did not yield consistent improvements, suggesting both the planner and editor need specialized APR alignment.
+- The 7D order is an important inductive bias. Shuffling lowered the win rate vs. poor from 61.04 to 58.69, confirming that global-to-local sequencing helps the model form a photography workflow.
 
 ## Highlights & Insights
-- The paper decomposes "better photos" into structural photographic decisions rather than vague aesthetic descriptions. This transforms APR from a subjective slogan into a trainable, evaluable action-conditioned editing task.
-- Mining tutorial videos is highly effective: tutorials naturally provide before/after states, action explanations, and consistent events, which is more reliable than forced poor/good pairings from static image sets.
-- GRPO-A reward design balances format, alignment, and creativity, matching the multi-solution nature of aesthetic tasks. It rewards solutions that are executable and yield aesthetic gains rather than just a single ground truth.
-- The success/failure contrast of AesFormer highlights that strong editing capability does not equate to photographic aesthetic capability. An editor needs to know "how to change pixels," but the upstream planner must know "why to change them."
+- The paper decomposes "making photos better" into structural photography decisions rather than vague aesthetic descriptions, turning APR into a trainable and evaluatable action-conditioned editing task.
+- Mining data from tutorial videos is clever: tutorials naturally contain before/after transitions and action explanations for the same shooting event, which is more reliable than hard-matching poor/good pairs from static sets.
+- The reward design for GRPO-A balances format, alignment, and creativity, matching the multi-solution nature of aesthetic tasks. It rewards executable plans that bring aesthetic gains rather than just one correct answer.
+- The comparison between AesFormer and general editors suggests that strong editing ability $\neq$ photography aesthetic ability. Editors need to know "how to change pixels," but more importantly, the upstream planner must know "why to change them."
 
 ## Limitations & Future Work
-- AesRecon originates from tutorial videos; styles and subjects may lean toward portraits, street photography, and social media content favored by creators. Coverage of news, documentary, or commercial studio photography is unclear.
-- Evaluation relies heavily on GPT-4o and aesthetic scorers. While validated by human subsets, aesthetic preferences may still be influenced by evaluator bias.
-- Nano Banana Pro was only evaluated on a 10% test subset due to API costs, making the comparison somewhat limited.
-- Structural reconstruction may alter the truth of a record, raising authenticity and ethical concerns, especially in documentary photography. Future work should allow for controllable intensity, change explanations, and provenance marking.
+- AesRecon is derived from tutorials, potentially biasing styles towards portraits, street photography, and social media content; coverage of journalism, commercial studio work, or non-portrait scenes is less clear.
+- Evaluation relies heavily on GPT-4o and aesthetic scorers. Despite human validation, aesthetic preferences may still be affected by evaluator bias. More granular user studies would be beneficial.
+- Nano Banana Pro was only evaluated on a 10% subset due to API costs, making closed-source comparisons not perfectly equivalent.
+- Structural reconstruction may alter documented reality, raising authenticity and ethical concerns, especially in documentary photography. Future work should address controllable editing intensity and provenance marking.
 
 ## Related Work & Insights
-- **vs photo retouching**: Retouching primarily adjusts color and light to improve look but cannot change composition or perspective; AesFormer directly targets structural reconstruction.
-- **vs portrait enhancement**: Portrait enhancement focuses on skin, face, and details (appearance-centric); APR focuses on subject placement, pose, depth, and scene relationships.
-- **vs instruction image editing**: General editing models require explicit user instructions; AesFormer diagnoses photo issues and generates action plans independently, acting as a "photography assistant."
-- **vs EditThinker / iterative editing agents**: While related works emphasize reasoning or iterative tool use, this work defines a specific ordered action space and strictly aligned data sources for photographic aesthetics.
+- **vs. photo retouching**: Retouching improves appearance but cannot change composition/viewpoint; AesFormer directly addresses structural reconstruction.
+- **vs. portrait enhancement**: Enhancement focuses on skin and facial details (appearance-centric), while APR focuses on subject placement, pose, and scene relationships.
+- **vs. instruction image editing**: General models require explicit user instructions; AesFormer diagnoses issues and generates plans independently, acting as a "photography assistant."
+- **vs. EditThinker / iterative editing agents**: While related works emphasize reasoning or multi-round tools, this paper defines an ordered action space and strictly aligned data specifically for photography aesthetics.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The combination of APR task definition, tutorial video mining, and 7D action chains is novel; GRPO-A is a reasonable enhancement.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Includes a new benchmark, closed/open source comparisons, and comprehensive ablations, though closed-source comparison uses a subset.
-- Writing Quality: ⭐⭐⭐⭐ Clear storyline from data bottlenecks to planning-editing decoupling; tables are well-explained.
-- Value: ⭐⭐⭐⭐ Insightful for moving image editing from "following instructions" to "aesthetic diagnosis and proactive repair"; the data construction method is reusable.
+- Novelty: ⭐⭐⭐⭐ APR task definition, tutorial mining, and the 7D photography action chain are integrated innovatively. GRPO-A is a reasonable enhancement.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Includes a new benchmark, closed/open-source comparisons, automatic and manual evaluations, and stage ablations; though closed-source models were evaluated on a subset.
+- Writing Quality: ⭐⭐⭐⭐ Clear storyline, logically progressing from data bottlenecks to decoupled planning and editing.
+- Value: ⭐⭐⭐⭐ Inspires a shift from "instruction following" to "aesthetic diagnosis and proactive repair" in image editing, with reusable data construction methods.
 
 <!-- RELATED:START -->
 

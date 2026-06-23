@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] EARL: Towards a Unified Analysis-Guided Reinforcement Learning Framework for Egocentric Interaction Reasoning and Pixel Grounding
 description: >-
-  [ICML 2026][Object Detection][Ego-IRG] EARL utilizes a "coarse-grained interpretation, fine-grained response" two-stage MLLM framework to unify egocentric interaction tasks (description, QA, and pixel masking) into a single pipeline. The first stage generates a global description and uses the final hidden state as a semantic prior. This prior is injected in
+  [ICML 2026][Object Detection][Ego-IRG] EARL utilizes a two-stage MLLM framework of "coarse interpretation and fine response" to consolidate egocentric interaction reasoning tasks (description + Q&A + pixel mask) into a unified pipeline. The first stage outputs a global interaction description of the full image and treats the last hidden state as a semantic
 tags:
   - ICML 2026
   - Object Detection
@@ -11,7 +11,7 @@ tags:
   - Analysis-guided Feature Synthesizer
   - SAM2
 date: 2026-05-08
-content_hash: b651a3bca2237101
+content_hash: 802777f4d3f4c2b4
 ---
 # EARL: Towards a Unified Analysis-Guided Reinforcement Learning Framework for Egocentric Interaction Reasoning and Pixel Grounding
 
@@ -19,78 +19,74 @@ content_hash: b651a3bca2237101
 **arXiv**: [2605.14742](https://arxiv.org/abs/2605.14742)  
 **Code**: https://github.com/yuggiehk/EARL  
 **Area**: Egocentric Vision / MLLM / Pixel-level Grounding / Reinforcement Learning (GRPO)  
-**Keywords**: Ego-IRG, coarse-to-fine, Analysis-guided Feature Synthesizer, multi-faceted reward, SAM2
+**Keywords**: Ego-IRG, coarse-to-fine, Analysis-guided Feature Synthesizer, multi-faceted rewards, SAM2
 
 ## TL;DR
-EARL utilizes a "coarse-grained interpretation, fine-grained response" two-stage MLLM framework to unify egocentric interaction tasks (description, QA, and pixel masking) into a single pipeline. The first stage generates a global description and uses the final hidden state as a semantic prior. This prior is injected into the second stage through a new Analysis-guided Feature Synthesizer (AFS). The system is jointly trained using GRPO with a triple reward system (format/answer/grounding accuracy), outperforming Seg-Zero by 8.37% cIoU on Ego-IRGBench.
+EARL utilizes a two-stage MLLM framework of "coarse interpretation and fine response" to consolidate egocentric interaction reasoning tasks (description + Q&A + pixel mask) into a unified pipeline. The first stage outputs a global interaction description of the full image and treats the last hidden state as a semantic prior. This is injected into the second stage through a novel Analysis-guided Feature Synthesizer (AFS). The system is jointly trained via GRPO with a triple-reward mechanism (format/answer/grounding accuracy), outperforming Seg-Zero by 8.37% cIoU on Ego-IRGBench.
 
 ## Background & Motivation
 
-**Background**: Research in egocentric vision (First-Person View / FPV) has surged due to the popularity of head-mounted devices (GoPro, Aria, etc.). Current mainstream approaches typically treat sub-tasks like action recognition, image captioning, and human-object interaction detection as **independent** tasks, or use MLLMs end-to-end for Ego-IRG (Interaction Reasoning and Grounding), which requires outputting (i) a global interaction analysis, (ii) an answer to a query, and (iii) pixel masks for relevant entities.
+**Background**: Egocentric vision (FPV) research has become a focal point due to the popularity of wearable devices (GoPro, Aria, etc.). Currently, research mainly treats sub-tasks like "action recognition," "image captioning," and "human-object interaction detection" **independently**, or uses MLLMs end-to-end for Ego-IRG (interaction reasoning and grounding)—which requires generating (i) a global interaction analysis text, (ii) an answer to a user query, and (iii) pixel masks for involved entities simultaneously given an egocentric image and a query.
 
-**Limitations of Prior Work**: (1) General-purpose MLLMs (e.g., Qwen2.5-VL, InternVL3) struggle with egocentric data, with cIoU stalling in the 20-30% range due to a lack of understanding of "hand-object" geometric constraints. (2) Specialized Ego-IRG methods like ANNEXE generate good analysis text (CIDEr 1.49) but still only achieve 36% cIoU in grounding. (3) RL-based models like Seg-Zero/Seg-R1 reach ~57% in general reasoning segmentation but lack the "interaction context" priors specific to egocentric tasks.
+**Limitations of Prior Work**: (1) Conventional MLLMs (Qwen2.5-VL/InternVL3) struggle with Ego data, with cIoU stalling in the 20-30% range, failing to learn the geometric constraints of "hand-object" interactions in egocentric views. (2) Specialized Ego-IRG methods like ANNEXE generate good analysis text (CIDEr 1.49) but still only achieve 36% cIoU in grounding. (3) RL-based models like Seg-Zero / Seg-R1 achieve around 57% in general reasoning segmentation but lack the "interaction context" priors specific to egocentric tasks.
 
-**Key Challenge**: The information flow between the interpretation (understanding) and response (answer + grounding) stages is **disconnected**. The former may understand that "a hand is holding a cup," but the latter restarts image processing from scratch for the query. Simply cascading the stages introduces the "noise prior" problem: not all features from the analysis stage are useful, and blind fusion can hinder grounding performance.
+**Key Challenge**: The **information flow is disconnected** between the analysis (understanding) and response (answer+grounding) stages. While the former might understand "a hand is holding a cup," the latter starts from scratch to re-read the image for the query. Simply concatenating the two stages introduces "noisy prior" issues: not all features from the analysis stage are useful, and blind fusion can degrade grounding.
 
-**Goal**: Explicitly transmit semantic information from coarse analysis to the fine-grained response stage, design a fusion module capable of selective prior utilization, and jointly optimize heterogeneous targets (textual correctness and box accuracy) using RL.
+**Goal**: To explicitly pass semantic information from the coarse analysis to the fine response stage, design a fusion module capable of selective prior utilization, and use RL to jointly optimize heterogeneous objectives: "textual correctness" and "bounding box accuracy."
 
-**Key Insight**: The authors observe that the last hidden embedding of the VLM decoder during the analysis stage serves as a natural "interaction semantic prior" (global interaction descriptor $\mathbf{F}_{ana}$). Designing a "select-then-fuse" module can prevent noise contamination.
+**Key Insight**: The authors observe that the last hidden embedding of the VLM decoder in the analysis stage serves as a natural "interaction semantic prior" (global interaction descriptor $\mathbf{F}_{ana}$). Noise contamination can be avoided by designing a "select-then-fuse" module.
 
-**Core Idea**: A coarse-to-fine two-stage approach + AFS (refining analysis priors via self-attention before merging with main features) + GRPO multi-faceted rewards to unify text, box, and mask outputs.
+**Core Idea**: Use a coarse-to-fine two-stage process + AFS (refining analysis priors via self-attention before adding them to primary features) + GRPO multi-faceted rewards to uniformly solve textual, box, and mask outputs.
 
 ## Method
 
 ### Overall Architecture
-Input: An egocentric image $\mathcal{I}$ and a user query $T_q$. The pipeline consists of two stages:
+Input: An egocentric image $\mathcal{I}$ + user query $T_q$. The pipeline consists of two stages:
 
-- **Stage 1 (coarse-grained interpretation)**: Driven by a fixed prompt $T_a$ = "Please analyze the interactions of hands and objects in detail," the VLM decoder $\mathcal{D}_{vlm}$ outputs a global description $T_{ana}$. A **key byproduct** is the last hidden layer state, used as a global descriptor $\mathbf{F}_{ana}$. This stage is trained via standard cross-entropy loss.
-- **Stage 2 (fine-grained response)**: Another VLM decoder $\mathcal{D}_{vlm}^{\prime}$ (Qwen2.5VL-7B) provides a text answer $T_{ans}$ and bounding boxes $\mathcal{B}$ for the query. The boxes are fed into a frozen SAM2 to obtain final masks $\mathcal{M}$. $\mathbf{F}_{ana}$ is injected into the main features via AFS between the stages. This stage is trained using GRPO with a triple-reward system.
+- **Stage 1 (coarse-grained interpretation)**: Driven by a fixed prompt $T_a$ = "Please analyze the interactions of hands and objects in detail," the VLM decoder $\mathcal{D}_{vlm}$ outputs a global description $T_{ana}$. The **key byproduct** is the last hidden layer acting as a global descriptor $\mathbf{F}_{ana}$. This stage is trained via standard cross-entropy loss.
+- **Stage 2 (fine-grained response)**: Another VLM decoder $\mathcal{D}_{vlm}^{\prime}$ (Qwen2.5VL-7B) provides the text answer $T_{ans}$ and bounding boxes $\mathcal{B}$ for the query; boxes are fed into a frozen SAM2 to obtain final masks $\mathcal{M}$. $\mathbf{F}_{ana}$ is injected into the primary features via AFS between the stages. This stage is trained using GRPO with a triple reward.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["Input: Egocentric image I + User query T_q"]
-    B["Stage 1 Coarse Interpretation: Fixed prompt-driven VLM<br/>Outputs global interaction description T_ana"]
-    C["Semantic Prior F_ana<br/>(Explicit transfer from coarse to fine)"]
-    D["AFS Feature Synthesizer<br/>Refines via self-attention, fuses via residual"]
-    E["Unified Representation F_R drives Stage 2 VLM<br/>Outputs text answer T_ans + bounding boxes B"]
-    F["Frozen SAM2 generates mask M from boxes"]
-    G["GRPO + Triple Rewards<br/>Format R_f / Answer R_a / Grounding R_g"]
-    
-    A --> B
-    B -->|"Extract decoder last hidden layer"| C
-    A --> D
+    A["Input: Egocentric Image I + User Query T_q"]
+    A --> B["Stage 1 Coarse Interpretation: Fixed prompt-driven VLM<br/>Outputs global interaction description T_ana"]
+    B -->|"Extract decoder last hidden layer"| C["Semantic Prior F_ana<br/>(Explicit transfer from coarse to fine)"]
+    A --> D["AFS Feature Synthesizer<br/>Self-attention select, then residual fuse"]
     C --> D
-    D --> E
-    E --> F
-    E -.->|Training signal| G
+    D --> E["Unified Representation F_R drives Stage 2 VLM<br/>Outputs text answer T_ans + bounding boxes B"]
+    E --> F["Frozen SAM2 generates mask M from boxes"]
+    E -.->|Training Signal| G["GRPO + Triple Rewards<br/>Format R_f / Answer R_a / Grounding R_g"]
     F -.-> G
-    G -.->|Updates Stage 2 and AFS only| E
+    G -.->|Update Stage 2 and AFS only| E
 ```
 
 ### Key Designs
 
-**1. Coarse-to-fine Stages + Explicit Semantic Transfer: Ensuring Stage 2 understands the image from the start**
-Naive two-stage cascades only concatenate the Stage 1 text $T_{ana}$ into the Stage 2 prompt. Much information is lost during this "understanding $\rightarrow$ response" text compression. EARL instead extracts the last hidden state of $\mathcal{D}_{vlm}$ as a global interaction descriptor $\mathbf{F}_{ana}\in\mathbb{R}^{bs\times dim_i}$. Stage 2 feeds this alongside query encoding $\mathcal{E}_t^{\prime}(T_q)$ and visual encoding $\mathcal{E}_v(\mathcal{I})$ into the AFS to obtain a unified representation $\mathbf{F}_R=\mathcal{F}_s(\mathcal{E}_v(\mathcal{I}),\mathcal{E}_t^{\prime}(T_q),\mathbf{F}_{ana})$. Using hidden states instead of text as a prior offers higher information density and natural alignment with the feature space of the second stage, proving much more effective than text-based prompts.
+**1. Coarse-to-fine stages + Explicit Semantic Prior Transfer: Starting the second stage with "pre-understood" context**
 
-**2. Analysis-guided Feature Synthesizer (AFS): Select-then-fuse to block "noise priors"**
-Directly concatenating $\mathbf{F}_{ana}$ to main features $\mathbf{F}_{emb}$ can introduce useless dimensions that degrade grounding. AFS first re-weights the prior: an MLP $\phi_m$ reduces $\mathbf{F}_{ana}$ to $dim$ dimensions and applies LayerNorm. It is then reshaped to $bs\times h\times w$ ($h=w=\sqrt{dim}$) for convolution-based generation of $\mathcal{Q}, \mathcal{K}, \mathcal{V}$. Self-attention $\mathbf{F}=\text{softmax}(\mathcal{Q}\mathcal{K}^\top/\sqrt{dim})\mathcal{V}$ is performed to re-weight tokens. Finally, an MLP $\phi_m^{\prime}$ projects it back to the main feature dimension for residual addition: $\mathbf{F}_{out}=\mathbf{F}_{emb}+\phi_m^{\prime}(\mathbf{F})$. This self-attention acts as a gate that prioritizes important semantic dimensions while suppressing noise.
+Naive two-stage cascades only append the analysis text $T_{ana}$ to the second-stage prompt, losing significant information during the "understanding $\rightarrow$ response" transition. EARL extracts the last hidden state of $\mathcal{D}_{vlm}$ as a global interaction descriptor $\mathbf{F}_{ana}\in\mathbb{R}^{bs\times dim_i}$. This is sent to the AFS alongside query encoding $\mathcal{E}_t^{\prime}(T_q)$ and visual encoding $\mathcal{E}_v(\mathcal{I})$ to obtain a unified representation $\mathbf{F}_R=\mathcal{F}_s(\mathcal{E}_v(\mathcal{I}),\mathcal{E}_t^{\prime}(T_q),\mathbf{F}_{ana})$, which drives the answer, box, and mask. Using hidden states avoids textual bottlenecks, maintains high information density, and naturally aligns with the second-stage feature space.
 
-**3. GRPO + Triple Rewards: Optimizing text, box, and mask structures in a single output**
-Since text correctness is a semantic goal and box accuracy is a geometric goal, joint optimization via SFT is difficult, and DPO requires paired samples. EARL uses Group Relative Policy Optimization (GRPO) with three weighted rewards: format reward $\mathcal{R}_f$ (checks template compliance like `<answer>`/`<box>`), answer reward $\mathcal{R}_a$ (semantic correlation with GT), and grounding reward $\mathcal{R}_g$ (IoU between the SAM2-generated mask and GT mask). GRPO uses the average reward of $K$ rollouts within a group as a baseline, avoiding the need for a critic. During training, the visual/text encoders and SAM2 are frozen; only $\mathcal{D}_{vlm}^{\prime}$ and AFS are updated.
+**2. Analysis-guided Feature Synthesizer (AFS): Select-then-Fuse to block "noisy priors"**
+
+Directly concatenating or cross-attending $\mathbf{F}_{ana}$ to the main features $\mathbf{F}_{emb}$ (the vision-text aligned output of Qwen2.5-VL) would introduce irrelevant dimensions from the analysis stage. AFS first re-weights the prior: an MLP $\phi_m$ reduces $\mathbf{F}_{ana}$ to $dim$ dimensions followed by LayerNorm, reshapes it to $bs\times h\times w$ ($h=w=\sqrt{dim}$), and uses convolutions to generate $\mathcal{Q},\mathcal{K},\mathcal{V}$. After a self-attention step $\mathbf{F}=\text{softmax}(\mathcal{Q}\mathcal{K}^\top/\sqrt{dim})\mathcal{V}$ to re-weight tokens, it is passed through MLP $\phi_m^{\prime}$ and added to main features via a residual link: $\mathbf{F}_{out}=\mathbf{F}_{emb}+\phi_m^{\prime}(\mathbf{F})$. This selective mechanism passes important semantics while suppressing noise.
+
+**3. GRPO + Triple Rewards: Optimizing heterogeneous text, box, and mask structures in one output**
+
+Balancing "textual accuracy" (semantic) and "box precision" (geometric) is difficult for SFT, and DPO requires paired samples. EARL uses Group Relative Policy Optimization (GRPO) to weigh three signals: format reward $\mathcal{R}_f$ (template compliance), answer reward $\mathcal{R}_a$ (semantic correlation of $T_{ans}$ with GT), and grounding reward $\mathcal{R}_g$ (IoU between the SAM2-generated mask and GT mask). GRPO uses the mean reward of $K$ rollouts in a group as a baseline, avoiding the need for a critic. During training, vision/text encoders and SAM2 are frozen; only $\mathcal{D}_{vlm}^{\prime}$ and AFS are updated.
 
 ### Loss & Training
-- Stage 1: Cross-entropy loss $\mathcal{L}_{des}$ supervising $T_{ana}$.
-- Stage 2: GRPO optimizes expected reward $\mathbb{E}[\mathcal{R}_f+\mathcal{R}_a+\mathcal{R}_g]$ with a K-rollout group baseline. Backbone: Qwen2.5VL-7B; mask generator: SAM2.
+- Stage 1: Cross-entropy loss $\mathcal{L}_{des}$ supervises $T_{ana}$.
+- Stage 2: GRPO optimizes expected rewards $\mathbb{E}[\mathcal{R}_f+\mathcal{R}_a+\mathcal{R}_g]$ with a K-rollout group baseline. Backbone is Qwen2.5VL-7B; mask generator is SAM2.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Tested on Ego-IRGBench test set (metrics: Analysis M/CIDEr, Answer M/CIDEr, Grounding cIoU):
+Ego-IRGBench test set (metrics: Analysis M/CIDEr, Answer M/CIDEr, grounding cIoU):
 
 | Method | Type | Analysis CIDEr | Answer CIDEr | cIoU |
-| :--- | :--- | :--- | :--- | :--- |
+|------|------|---------------|--------------|------|
 | Qwen2.5VL-7B | General | 0.119 | 2.477 | 23.71 |
 | InternVL2.5-7B | General | 0.044 | 1.533 | 27.21 |
 | ANNEXE | Ego-Specific | 1.494 | 2.590 | 36.02 |
@@ -100,63 +96,63 @@ Tested on Ego-IRGBench test set (metrics: Analysis M/CIDEr, Answer M/CIDEr, Grou
 | **EARL** | Ego + RL | **1.522** | **6.682** | **65.48** |
 | vs. Prev. SOTA | | +0.028 | +1.682 | **+8.37** |
 
-OOD Testing (EgoHOS dataset, direct cross-dataset evaluation):
+OOD Testing (EgoHOS dataset, cross-dataset direct evaluation):
 
 | Method | Total cIoU | Left Hand | Right Hand | Two-hand Objects |
-| :--- | :--- | :--- | :--- | :--- |
+|------|---------|-----------|------------|------------------|
 | LISA | 22.46 | 28.93 | 33.06 | 18.10 |
 | Sa2VA-8B | 37.63 | 48.56 | 45.82 | 37.04 |
-| **EARL** | (See Paper) | - | - | - |
+| **EARL** | *Ref. Paper* | - | - | - |
 
 ### Ablation Study
 
-Ablations targeted AFS and reward designs (details in Paper Sec. 4.3). Inferred impacts:
+Ablations focused on AFS and reward design (details in Sec 4.3):
 
-| Configuration | Answer CIDEr | cIoU | Note |
-| :--- | :--- | :--- | :--- |
+| Configuration | Answer CIDEr | cIoU | Description |
+|------|--------------|------|------|
 | Qwen2.5VL-7B baseline | 2.477 | 23.71 | No coarse analysis |
-| ANNEXE (No AFS+GRPO) | 2.590 | 36.02 | Cascade only, no hidden injection |
+| ANNEXE (Two-stage, no AFS/GRPO) | 2.590 | 36.02 | Cascade without hidden injection |
 | EARL (full) | 6.682 | 65.48 | Full methodology |
 
 ### Key Findings
-- **Answer CIDEr surged by 1.68 points**: An unexpected benefit showing that explicit analysis hidden injection improves textual answer accuracy alongside grounding.
-- **+8.37 pp Gain in cIoU**: While Seg-Zero reaches 57% on general images, EARL's ego-analysis prior pushes this to 65%, validating the "understand then ground" philosophy.
-- **Robust OOD Performance**: Indicates that AFS learns universal egocentric interaction knowledge rather than just overfitting Ego-IRGBench.
-- Analysis quality in Stage 1 is similar to Sa2VA, implying that gains come from "explicit feature transmission" rather than just better initial analysis.
+- **Significant Answer CIDEr jump (+1.68)**: An unexpected byproduct—explicitly injecting analysis hidden states significantly improves textual answer accuracy, not just grounding.
+- **+8.37 pp cIoU gain from Ego Knowledge**: While Seg-Zero reaches 57% with general images, EARL hits 65% with ego-analysis priors, validating the "understand then ground" philosophy.
+- **OOD Leadership**: Success on EgoHOS demonstrates that AFS learns transferable egocentric interaction knowledge rather than just overfitting Ego-IRGBench.
+- Analysis quality (M=0.541) remains consistent with Sa2VA, showing grounding gains come from "explicit prior transfer" rather than just improved analysis.
 
 ## Highlights & Insights
-- **Using VLM decoder hidden states as explicit semantic priors is a practical technique**: Unlike text-based cascades (lossy) or shared parameters (tightly coupled), EARL finds a balanced middle ground applicable to any "understand then operate" MLLM task.
-- **The "Self-attention Refine then Residual Fuse" template**: Directly concatenating features introduces noise; AFS's lightweight self-attention gating before residual injection is a simple yet reusable design.
-- **GRPO for Heterogeneous Rewards**: Combining normalized format, semantic, and geometric rewards into a group baseline training setup avoids the complexity of training a critic.
-- The improved OOD performance suggests the architecture learns transferable "egocentric interaction geometry," valuable for robot manipulation and AR systems.
+- **Using VLM decoder hidden states as explicit semantic priors is a practical technique**: Unlike textual cascades (information loss) or shared weights (strong coupling), EARL finds a effective middle ground. This trick is applicable to any "understand then act" MLLM task.
+- **Select-then-fuse pattern for noisy priors**: The AFS design—lightweight self-attention for selection followed by residual addition—effectively handles the engineering challenge of "hidden-state-as-prior."
+- **GRPO for Heterogeneous Outputs**: Normalizing and combining format, semantic, and geometric rewards for group-baseline training avoids the complexity of training a critic.
 
 ## Limitations & Future Work
-- **Analysis CIDEr vs. ANNEXE (-0.021)**: GRPO optimization of Stage 2 may slightly inhibit the diversity of Stage 1 analysis.
-- **Dependency on SAM2**: If SAM2 fails (e.g., low light, motion blur), reward signals become noisy; EARL currently lacks an independent mask head.
-- **Inference Latency**: Two-stage serial processing doubles latency, requiring distillation for real-time application in AR/robotics.
-- **Future Directions**: (i) Using Stage 1 boxes for semi-supervised Stage 2 startup; (ii) parameter sharing via LoRA to reduce overhead; (iii) replacing SAM2 with a trainable lightweight mask head for end-to-end training.
+- **Slight Analysis CIDEr drop (-0.021)**: Using GRPO to optimize Stage 2 might slightly suppress Stage 1 analysis diversity—a noted trade-off.
+- **Dependency on SAM2**: Errors in SAM2 (e.g., low light/blur) can contaminate the reward signal; EARL currently cannot train mask heads independently.
+- **Inference Latency**: The two-stage serial process doubles latency, requiring distillation for real-time AR/robotic applications.
+- **Video Stream Validation**: Testing has been limited to single frames; video-level Ego-IRG is more relevant for actual applications.
 
 ## Related Work & Insights
-- **vs. ANNEXE**: ANNEXE's text-only cascade limits grounding (36%); EARL's feature injection + GRPO hits 65%.
-- **vs. Seg-Zero / Seg-R1**: General RL segmentation lacks ego-specific "hand-object-action" priors; EARL's +8.37 cIoU gain proves domain priors are critical.
-- **vs. Sa2VA / LISA**: These focus on referring image segmentation but lack interaction modeling, resulting in cIoU below 33%. EARL demonstrates that for egocentric tasks, understanding must precede segmentation.
+- **vs. ANNEXE**: Both use two stages, but ANNEXE's textual cascade limits grounding to 36%; EARL's explicit hidden transfer + GRPO reaches 65%.
+- **vs. Seg-Zero / Seg-R1**: These lack ego-specific "hand-object-action" priors; EARL's +8.37 cIoU gain proves the importance of domain-specific understanding.
+- **vs. Sa2VA**: Sa2VA relies on general pixel capabilities without interaction context; EARL demonstrates that ego-tasks require "understanding before segmentation."
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ (AFS + hidden prior is an elegant engineering combination)
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ (Broad coverage of in-domain and OOD tests against 15+ baselines)
-- Writing Quality: ⭐⭐⭐⭐ (Clear formulas and architecture diagrams)
-- Value: ⭐⭐⭐⭐ (Provides a reusable template for MLLM tasks requiring sequential understanding and action)
+- Novelty: ⭐⭐⭐⭐ 
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 
+- Writing Quality: ⭐⭐⭐⭐ 
+- Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] ADSeeker: A Knowledge-Grounded Reasoning Framework for Industry Anomaly Detection and Reasoning](../../CVPR2026/object_detection/adseeker_a_knowledge-grounded_reasoning_framework_for_industry_anomaly_detection.md)
 - [\[AAAI 2026\] Connecting the Dots: Training-Free Visual Grounding via Agentic Reasoning](../../AAAI2026/object_detection/connecting_the_dots_training-free_visual_grounding_via_agent.md)
 - [\[ICML 2025\] Outlier Gradient Analysis: Efficiently Identifying Detrimental Training Samples for Deep Learning Models](../../ICML2025/object_detection/outlier_gradient_analysis_efficiently_identifying_detrimental_training_samples_f.md)
-- [\[CVPR 2026\] Dual-Prototype-Guided Multi-task Learning for Unsupervised Anomaly Detection and Classification](../../CVPR2026/object_detection/dual-prototype-guided_multi-task_learning_for_unsupervised_anomaly_detection_and.md)
 - [\[ECCV 2024\] Nonverbal Interaction Detection](../../ECCV2024/object_detection/nonverbal_interaction_detection.md)
+- [\[CVPR 2026\] PALM: Progress-Aware Policy Learning via Affordance Reasoning for Long-Horizon Robotic Manipulation](../../CVPR2026/object_detection/palm_progress-aware_policy_learning_via_affordance_reasoning_for_long-horizon_ro.md)
+- [\[CVPR 2026\] See What We Cannot See: A Geo-guided Reasoning Benchmark for Object Counting under Adverse Earth Observation Conditions](../../CVPR2026/object_detection/see_what_we_cannot_see_a_geo-guided_reasoning_benchmark_for_object_counting_unde.md)
 
 </div>
 

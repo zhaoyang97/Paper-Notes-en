@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] ANCHOR: Abductive Network Construction with Hierarchical Orchestration for Reliable Probability Inference in Large Language Models
 description: >-
-  [ICML 2026][LLM (Other)][abductive reasoning] ANCHOR utilizes "bottom-up abduction + hierarchical clustering" to construct a dense factor space. It performs coarse-to-fine retrieval for downstream conditions to obtain sparse relevant factor sets and then performs posterior aggregation by combining Naïve Bayes with a query-level latent variable Causal Bayesian Netw
+  [ICML 2026][LLM (Other)][abductive reasoning] ANCHOR constructs a dense factor space using "bottom-up abduction + hierarchical clustering." For downstream conditions, it performs coarse-to-fine retrieval to obtain a sparse set of relevant factors. It then aggregates posteriors by combining Naïve Bayes with a dynamically constructed Causal Bayesian Network (CBN) fe
 tags:
   - ICML 2026
   - LLM (Other)
@@ -12,37 +12,37 @@ tags:
   - causal Bayesian network
   - hierarchical factor space
 date: 2026-05-08
-content_hash: 6a63d43ffd20bbc6
+content_hash: 4393fe09ad122120
 ---
 # ANCHOR: Abductive Network Construction with Hierarchical Orchestration for Reliable Probability Inference in Large Language Models
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.10328](https://arxiv.org/abs/2605.10328)  
-**Code**: Not released  
-**Area**: LLM Reasoning / Probability Inference / Causal Bayesian Networks  
+**Code**: Not disclosed  
+**Area**: LLM Reasoning / Probabilistic Inference / Causal Bayesian Networks  
 **Keywords**: abductive reasoning, Bayesian inference, LLM uncertainty, causal Bayesian network, hierarchical factor space
 
 ## TL;DR
-ANCHOR utilizes "bottom-up abduction + hierarchical clustering" to construct a dense factor space. It performs coarse-to-fine retrieval for downstream conditions to obtain sparse relevant factor sets and then performs posterior aggregation by combining Naïve Bayes with a query-level latent variable Causal Bayesian Network (CBN). This significantly reduces "unknown" predictions and improves probability calibration in high-risk LLM decision-making scenarios.
+ANCHOR constructs a dense factor space using "bottom-up abduction + hierarchical clustering." For downstream conditions, it performs coarse-to-fine retrieval to obtain a sparse set of relevant factors. It then aggregates posteriors by combining Naïve Bayes with a dynamically constructed Causal Bayesian Network (CBN) featuring latent variables. In high-risk LLM decision-making scenarios, it significantly reduces "unknown" predictions and improves probability calibration.
 
 ## Background & Motivation
 
-**Background**: In high-risk decision-making scenarios such as emergency response and infrastructure planning, there is a need for reliable conditional probability $P(O_i|C)$ estimations from LLMs. Mainstream solutions (e.g., BIRD) adopt a two-stage "abduction + Bayesian" approach—the LLM first generates a discrete factor set $F=\{F_1,\dots,F_N\}$ and their values from a scenario *Scen*, and then marginalization is performed via Naïve Bayes: $P(O_i|C)=\sum_f P(O_i|f)\prod_j P(f_j|C)$.
+**Background**: In high-risk decision-making such as emergency response and infrastructure planning, obtaining reliable conditional probability $P(O_i|C)$ estimates from LLMs is critical. Mainstream approaches (e.g., BIRD) adopt a two-stage "abduction + Bayesian" framework: the LLM first generates a discrete set of factors $F=\{F_1,\dots,F_N\}$ and their values from a scenario $Scen$, then uses Naïve Bayes to marginalize $P(O_i|C)=\sum_f P(O_i|f)\prod_j P(f_j|C)$.
 
-**Limitations of Prior Work**: A dual dilemma exists: (a) Forward abduction tends to generate sparse factor spaces, causing downstream conditions $u$ to map to zero factors, leading the model to output "unknown"; (b) Forcing an expansion of the factor set introduces noise and creates spurious correlations (e.g., "cold weather" and "wearing thick clothes" are highly correlated), which violates the conditional independence assumption of Naïve Bayes.
+**Limitations of Prior Work**: A dilemma exists: (a) forward abduction often generates a sparse factor space, leading to downstream conditions $u$ mapping to zero factors and causing the model to output "unknown"; (b) forcibly expanding the factor set introduces noise and pseudo-correlations (e.g., "cold weather" and "wearing heavy coats" are highly correlated), which violates the conditional independence assumption of Naïve Bayes.
 
-**Key Challenge**: There is a trade-off between factor space coverage (to avoid "unknown") and independence (to avoid spurious correlations). Furthermore, numerical confidence scores provided by LLMs themselves are often overconfident and uninterpretable, precluding their direct use as probabilities.
+**Key Challenge**: There is a trade-off between the coverage of the factor space (to avoid "unknown") and independence (to avoid pseudo-correlation). Furthermore, the numerical confidence levels provided by LLMs are often overconfident and lack interpretability, making them unsuitable for direct use as probabilities.
 
-**Goal**: (1) Construct a factor space that is both dense and structured to balance coverage and noise; (2) Design a reliable "condition → relevant factors" retrieval mechanism; (3) Explicitly model latent variable dependencies between factors during the probability inference stage to mitigate the distortion of the Naïve Bayes independence assumption.
+**Goal**: (1) Construct a factor space that is both dense and structured to balance coverage and noise. (2) Design a reliable "condition $\to$ relevant factor" retrieval mechanism. (3) Explicitly model latent variable dependencies between factors during the probability inference stage to mitigate the distortion of the Naïve Bayes independence assumption.
 
-**Key Insight**: Reverse traditional "top-down abduction" into **bottom-up abduction**—first generate a large volume of supporting/opposing sentences freely and then extract factors, finally using clustering and LLM-based topic naming to organize factors into a two-level hierarchy. Additionally, use the LLM for online inference of latent variable structures to create a query-level Causal Bayesian Network (CBN) specifically for the current condition $u$.
+**Key Insight**: Traditional "top-down abduction" is reversed into **bottom-up abduction**—generating a large volume of supporting/opposing sentences first, extracting factors, and then organizing them into a two-level hierarchy using clustering and LLM-based thematic naming. LLMs are also used for online latent variable structure inference to build a query-level Causal Bayesian Network (CBN) tailored to the specific condition $u$.
 
-**Core Idea**: Transform "abduction → factor extraction → retrieval → probability aggregation" into an end-to-end four-stage pipeline. In each stage, the LLM performs tasks it excels at (generation, extraction, naming, causal discovery, flexible priors), while probability computations are handled by two lightweight models—NB and CBN—which are finally fused via weighting.
+**Core Idea**: The process is structured as an end-to-end four-stage pipeline: "Abduction → Factor Extraction → Retrieval → Probability Aggregation." In each stage, the LLM performs tasks it excels at (generation, extraction, naming, causal discovery, flexible priors), while probability calculations are handled by two lightweight models, NB and CBN, which are ultimately fused via weighting.
 
 ## Method
 
 ### Overall Architecture
-ANCHOR receives a scenario description *Scen*, a downstream condition $u$, and two candidate hypotheses $O_1, O_2$, with the goal of outputting a calibrated $P(O_i|C)$. The process is split into four steps: first, a one-time bottom-up abduction constructs a dense hierarchical factor space $\tilde{F}$ (reusable across multiple queries). Once a condition $u$ arrives, coarse-to-fine retrieval and LLM-based self-consistency reflection are performed on $\tilde{F}$ to obtain a sparse relevant factor set $F^*(u)$. Then, the LLM flexibly provides factor-level posteriors and latent variable parameters, while simultaneously building a Naïve Bayes network and a Causal Bayesian Network (CBN) with latent variables. Finally, the posteriors from both networks are weight-fused. If $F^*(u)$ is empty or $\max_i P(O_i|C)<\tau$, the model abstains instead of forcing an answer.
+ANCHOR receives a scenario description $Scen$, a downstream condition $u$, and two candidate hypotheses $O_1, O_2$, and aims to output a calibrated $P(O_i|C)$. The process is divided into four stages: first, a one-time bottom-up abduction constructs a dense, hierarchical factor space $\tilde{F}$ (reusable across multiple queries). When a condition $u$ arrives, a coarse-to-fine retrieval followed by LLM refinement is performed on $\tilde{F}$ to obtain a sparse relevant factor set $F^*(u)$. The LLM then provides factor-level posteriors and latent variable parameters to construct both a Naïve Bayes network and a latent variable Causal Bayesian Network (CBN). Finally, the posteriors from both networks are weighted and fused. If $F^*(u)$ is empty or $\max_i P(O_i|C) < \tau$, the model abstains and outputs "unknown."
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
@@ -50,100 +50,101 @@ flowchart TD
     IN["Input: Scenario Scen + Condition u + Hypotheses O₁/O₂"]
     subgraph D1["Bottom-up Abduction + Hierarchical Clustering (Design 1, Reusable)"]
         direction TB
-        A1["Iterative Abduction<br/>Multi-angle generation → Factor extraction → De-duplication"]
-        A2["Hierarchical Clustering<br/>MiniLM → UMAP → HDBSCAN → LLM naming → Factor space F̃"]
+        A1["Iterative Abduction<br/>LLM Multi-angle Generation → Factor Extraction → Deduplication"]
+        A2["Hierarchical Clustering<br/>MiniLM Embed → UMAP → HDBSCAN → LLM Naming → Factor Space F̃"]
         A1 --> A2
     end
-    subgraph D2["Coarse-to-fine Retrieval + Self-consistency Reflection (Design 2)"]
+    subgraph D2["Coarse-to-fine Retrieval + Self-consistency Refinement (Design 2)"]
         direction TB
-        B1["Two-level KNN<br/>Cluster level top-K₁ → Factor level top-K₂ → F_cand"]
-        B2["Self-consistency Voting<br/>LLM R-round sampling with threshold γ → F_vote"]
-        B3["Reflection Screening<br/>LLM filters irrelevant factors → F*(u)"]
+        B1["Two-level KNN<br/>Cluster-level top-K₁ → Factor-level top-K₂ → F_cand"]
+        B2["Self-consistency Voting<br/>LLM Sampling R times + Threshold γ → F_vote"]
+        B3["Reflection Refinement<br/>LLM Pruning Irrelevant Factors → F*(u)"]
         B1 --> B2 --> B3
     end
-    subgraph D3["NB + Latent CBN Dual-Network Posterior Aggregation (Design 3)"]
+    subgraph D3["NB + Latent CBN Posterior Aggregation (Design 3)"]
         direction TB
         C1["Naïve Bayes<br/>Outcome→Factor, find φ_f = P(O₁|f)"]
-        C2["Latent CBN<br/>Online discovery of latent L → Outcome→L→Factor"]
+        C2["Latent CBN<br/>LLM Online Discovery of L → Outcome→L→Factor"]
         C3["Weighted Fusion → Calibrated P(Oᵢ|C)"]
         C1 --> C3
         C2 --> C3
     end
     IN --> D1
     D1 --> D2
-    D2 -->|"F*(u) not empty and max P ≥ τ"| D3
-    D2 -->|"F*(u) empty or max P < τ"| ABS["Abstain (Output unknown)"]
+    D2 -->|"F*(u) is Non-empty and max P ≥ τ"| D3
+    D2 -->|"F*(u) is Empty or max P < τ"| ABS["Abstain (Output unknown)"]
 ```
 
 ### Key Designs
 
-**1. Bottom-up Abduction + Hierarchical Clustering: Generating Mass Factors Before Structuring**
+**1. Bottom-up Abduction + Hierarchical Clustering: Generating Factors before Structuring**
 
-Forward abduction schemes like BIRD derive factors directly from the scenario, but are limited by prompt context, leading to few factors and causing downstream "unknown" outputs. ANCHOR reverses this: starting from an empty set $F^{(0)}=\emptyset$, it iterates for $T_{max}$ rounds. Each round uses few-shot prompts to let the LLM generate $b$ supporting/opposing sentences from various angles, extracts factors, and merges them into $F$ until convergence. Theoretically, the error rate of the recovered factor set is bounded by $\exp(-2m(q-0.5)^2)$ (where $q$ is single-round accuracy and $m$ is votes), ensuring exponential convergence. After accumulating enough factors, structure is applied: MiniLM embeddings → UMAP → HDBSCAN clustering (no preset $K$) → LLM-based topic naming (e.g., "Economic Feasibility") and redundancy pruning. Each factor is labeled as supports $O_1$ / supports $O_2$ / neutral, resulting in a two-level hierarchy $\tilde{F}$. Decoupling "comprehensiveness" (generation) from "organization" (clustering) ensures both coverage and reusable structure.
+Forward abduction as used in BIRD generates factors directly from scenarios, which is often limited by the prompt's context, resulting in sparse factors and "unknown" outputs. ANCHOR starts from an empty set $F^{(0)}=\emptyset$ and iterates for up to $T_{max}$ rounds. In each round, few-shot prompting is used to generate $b$ supporting/opposing sentences from multiple perspectives. Factors are extracted from these sentences and merged into $F$. Convergence is determined after removing semantic duplicates; theoretically, the error rate of the recovered factor set is bounded by $\exp(-2m(q-0.5)^2)$ under self-consistency voting (where $q$ is single-trial accuracy and $m$ is the number of votes). After gathering sufficient factors, structure is imposed: MiniLM embeddings → UMAP reduction → HDBSCAN clustering (no preset $K$) → LLM-based cluster naming (e.g., "Economic Feasibility") and redundancy pruning. Each factor is labeled as supports $O_1$ / supports $O_2$ / neutral, resulting in a hierarchical space $\tilde{F}$. This decouples "completeness" (free generation) from "organization" (post-hoc clustering), ensuring both coverage and a reusable structure.
 
-**2. Coarse-to-fine Hierarchical Retrieval + Self-consistency Reflection: Mapping $u$ to High-Precision Factor Subsets**
+**2. Coarse-to-fine Hierarchical Retrieval + Self-consistency Refinement: Mapping $u$ to High-Precision Factor Subsets**
 
-Once the factor space is dense, brute-force comparison for every $u$ becomes computationally expensive, and retrieved factors often include spurious correlations. ANCHOR calculates a prototype embedding for each cluster $\tilde{C}_j=\alpha\cdot e_{theme}+(1-\alpha)\cdot \frac{1}{|F_j|}\sum_{f\in F_j} e_f$, mixing topic semantics with member means via $\alpha$. It then uses two-level KNN—first selecting top-$K_1$ clusters, then selecting top-$K_2$ factors within those clusters as candidate set $F_{cand}(u)$, reducing complexity to $O(K_1 K_2)$. This is followed by two complementary LLM screening stages: first, $R$ LLM calls identify factors "directly supported by $u$," counting votes $v_f(u)=\sum_r \mathbf{1}[f\in m^{(r)}(u)]$ to keep those above threshold $\gamma$ as $F_{vote}(u)$; second, a reflection prompt explicitly removes remaining irrelevant factors to reach $F^*(u)$. "Voting" handles stochastic noise, while "reflection" fixes systematic retrieval bias.
+In a dense factor space, brute-force comparison for every $u$ is computationally expensive and introduces pseudo-correlations. ANCHOR calculates a prototype embedding for each cluster: $\tilde{C}_j=\alpha\cdot e_{theme}+(1-\alpha)\cdot \frac{1}{|F_j|}\sum_{f\in F_j} e_f$, blending thematic semantics with member averages. A two-level KNN is performed: top-$K_1$ clusters are selected, followed by top-$K_2$ factors within those clusters. The union forms the high-recall candidates $F_{cand}(u)$, reducing complexity to $O(K_1 K_2)$. Two complementary refinement stages follow: first, the LLM is queried $R$ times to select factors "directly supported by $u$," and factors exceeding a vote threshold $\gamma$ form $F_{vote}(u)$ to suppress stochastic noise. Second, a reflection prompt is used for the LLM to explicitly prune remaining irrelevant factors, resulting in the final $F^*(u)$. Voting handles random noise, while reflection addresses systematic retrieval bias.
 
-**3. NB + Latent Variable CBN Dual-Network Posterior Aggregation: Balancing Simplicity and Correlation**
+**3. NB + Latent CBN Dual-network Flexible Parameters + Posterior Aggregation: Balancing Simplicity and Correlation**
 
-Pure Naïve Bayes assumes conditional independence, but factors within themes (e.g., "Economy") are often highly correlated, biasing probabilities when the assumption fails. ANCHOR constructs two networks simultaneously. The NB side is simple: Outcome ($O_1/O_2$) connects directly to each factor $f_j$, querying the LLM for $\phi_f=P(O_1|f)$ and using symmetric priors $P(f|O_1)\approx\phi_f$ and $P(f|O_2)\approx 1-\phi_f$. On the CBN side, the LLM acts as a causal discovery engine: given the factor list, it outputs latent variables $L=\{L_1,\dots,L_k\}$ and their respective factor groupings. The graph becomes Outcome $\to L_i \to f_j$. The LLM then flexibly fills conditional probability tables like $P(L_i=1|O_k)$ and $P(f_j|L_i,O_k)$. Latent variables absorb intra-class correlations purely through LLM priors without training data. Posteriors $P^{NB}(O_i|C)$ and $P^{CBN}(O_i|C)$ are weight-fused: NB favors simplicity, while CBN captures correlation. The latent variables are inferred per query, providing custom CBNs and avoiding "mismatched shared latent structures."
+Pure Naïve Bayes assumes conditional independence, which fails when factors within "economic factors" are highly correlated (e.g., cold weather ↔ heavy coats), leading to biased probabilities. ANCHOR constructs two networks simultaneously. The NB structure is simple: the root node Outcome ($O_1/O_2$) connects directly to each factor $f_j$. The LLM provides $\phi_f=P(O_1|f)$, and symmetric priors approximate $P(f|O_1)\approx\phi_f$ and $P(f|O_2)\approx 1-\phi_f$. For the CBN, the LLM acts as a causal discovery engine: given a list of factors, it outputs latent variables $L=\{L_1,\dots,L_k\}$ and their respective factor groupings. The graph structure becomes Outcome $\to L_i \to f_j$. The LLM flexibly populates conditional tables such as $P(L_i=1|O_k)$ and $P(f_j|L_i,O_k)$. Latent variables absorb intra-cluster correlations using LLM priors without training data. Posteriors $P^{NB}(O_i|C)$ and $P^{CBN}(O_i|C)$ are fused via weighted averaging. NB is simple but ignores correlations, while CBN captures correlations but may over-parameterize; fusion compensates for these respective biases. Since latent variables are inferred per query, each CBN is customized, avoiding mismatches from shared latent structures across scenarios.
 
 ### Loss & Training
-ANCHOR does not train neural networks; all probability parameters are obtained flexibly from LLMs. Hyperparameters include: $K_1, K_2$ for clustering, $\alpha$ for cluster prototypes, $R$ and $\gamma$ for self-consistency, $\tau$ for abstention, $T_{max}$ for iteration, $N_{target}$ for factors, and NB-CBN fusion weights. Experiments utilized GPT-4 series / Qwen models.
+ANCHOR does not involve training neural networks. All probability parameters are obtained flexibly via LLMs. Consequently, only a set of hyperparameters needs to be configured: clustering parameters $K_1, K_2$, cluster prototype weight $\alpha$, self-consistency trials $R$, voting threshold $\gamma$, abstention threshold $\tau$, iteration limit $T_{max}$, target factor count $N_{target}$, and the NB-CBN fusion weight. Experiments utilized GPT-4 series / Qwen models.
 
 ## Key Experimental Results
 
 ### Main Results
-The authors claim ANCHOR achieves SOTA on a preference-based pairwise benchmark (multiple LLM-driven decision tasks) consistent with BIRD. Representative metrics (summarized from text/tables):
+The authors claim that ANCHOR achieves SOTA on a preference-based pairwise evaluation benchmark identical to BIRD. Representative metrics (synthesized from the text):
 
-| Method | "unknown" Rate ↓ | Alignment w/ Human Preference ↑ | Inference Time ↓ | Token Usage ↓ |
-|------|-------------------|--------------------|----------|--------------|
-| Direct LLM Estimation | Low | Low (Overconfident) | Low | Low |
-| BIRD (Forward Abduction + NB) | High (Sparse factors) | Moderate | Medium | Medium |
-| BIRD + Expanded Factor Set | Moderate | Moderate-Low (Noise) | High | High |
+| Method | "Unknown" Prediction Rate ↓ | Alignment with Human Preference ↑ | Inference Time ↓ | Token Usage ↓ |
+| :--- | :--- | :--- | :--- | :--- |
+| Direct LLM Estimation | Low | Fairly Low (Overconfident) | Low | Low |
+| BIRD (Forward + NB) | High (Sparse Factors) | Moderate | Medium | Medium |
+| BIRD + Expanded Factors | Moderate | Moderate-Low (Noise) | High | High |
 | **ANCHOR (Full)** | **Significantly Reduced** | **SOTA** | **Significantly Reduced** | **Significantly Reduced** |
 
 ### Ablation Study
 
-| Configuration | Phenomenon | Insight |
-|------|------|------|
-| Only Bottom-up Space + NB | "unknown" rate drops significantly vs BIRD, but prob. is biased | Dense factors solve sparsity |
-| + Hierarchical Retrieval (No Refl.) | High recall but poor factor precision | Retrieval alone is insufficient |
-| + Self-consistency Voting | Precision recovers | Voting removes stochastic noise |
-| + Reflection Prompt | Further filters irrelevant factors | Two-stage screening is complementary |
-| Pure NB Inference | Biased on highly correlated factors | Independence assumption fails |
-| Pure CBN Inference | Unstable structure, prone to over-parameterization | Sensitive to latent mismatch |
-| **NB + CBN Fusion** | Best calibration | Complementary noise reduction |
+| Configuration | Observation | Interpretation |
+| :--- | :--- | :--- |
+| Only Bottom-up Space + NB | Unknown rate drops significantly vs. BIRD, but probabilities are biased | Dense coverage solves the sparsity problem |
+| Adding Hierarchical Retrieval (no voting/reflection) | High recall but poor precision in factor selection | Retrieval alone is insufficient; refinement is needed |
+| Adding Self-consistency Voting | Precision increases | Voting eliminates stochastic noise factors |
+| Adding Reflection Prompt | Further prunes irrelevant factors | Two-stage refinement is complementary |
+| Using Pure NB Inference | Biased on strongly correlated factors | Independence assumption fails |
+| Using Pure CBN Inference | Unstable structure/over-parameterization | Sensitive to latent variable mismatch |
+| **NB + CBN Weighted Fusion** | Best calibration | Mutual noise reduction through complementarity |
 
 ### Key Findings
-- Reducing "unknown" while lowering inference cost is ANCHOR's primary engineering contribution—one factor space construction can be reused across multiple queries.
-- $R$ for self-consistency is sensitive for recall-precision trade-offs; reflection prompts are more effective than simply increasing $R$.
-- Latent variables are inferred online per query rather than learned globally, avoiding structure mismatch across scenarios.
+- The simultaneous reduction of "unknown" predictions and inference costs is a major engineering contribution. Once constructed, the structured factor space is reusable, and specific query retrieval + inference requires only $O(K_1 K_2)$ LLM calls, significantly lowering token usage compared to BIRD.
+- Self-consistency voting $R$ is sensitive to the recall-precision trade-off. The introduction of reflection prompts is more effective than simply increasing $R$, indicating that "structured criticism" provides more information than "repeated sampling."
+- Latent variables are inferred online per query rather than learned globally, ensuring each query has a custom CBN structure and avoiding mismatch issues.
 
 ## Highlights & Insights
-- **Clean Division of Labor**: High-level tasks (generation, extraction, causal discovery) go to the LLM; mathematical logic (probability computation) goes to NB+CBN. This "Probability Engine + LLM Knowledge Base" split is an excellent paradigm.
-- **Reusable Structure vs. One-off Inference**: The hierarchy $\tilde{F}$ is built once. Downstream queries use cheap vector retrieval instead of expensive LLM generation, making the system engineering-friendly.
-- **Abstention as a First-Class Citizen**: Explicitly treating "unknown" as a valid output is responsible for high-risk scenarios.
-- **On-demand Causal Inference**: Traditional inference requires stable structures; ANCHOR allows CBN to change per query, effectively performing "on-demand causal inference."
+- **Clean Role Division**: Tasks like generation, extraction, naming, causal discovery, and parameter flexibility are assigned to the LLM (where it excels), while probability calculations are assigned to the graphical models (NB+CBN).
+- **Reusable Structure vs. One-off Reasoning**: The factor hierarchy $\tilde{F}$ is constructed once and retrieved repeatedly. This amortizes expensive LLM reasoning into cheaper vector retrieval.
+- **Abstention as a First-Class Citizen**: "Unknown" is treated as a valid output. In high-risk scenarios, refusing to answer is more responsible than providing a forced numerical value.
+- **Query-level Latent Variable Construction**: Traditional causal inference requires stable structures. This method allows the CBN to vary by query, essentially performing "on-demand causal inference."
 
 ## Limitations & Future Work
-- Parameters rely on LLM flexibility; if LLM conditional probabilities $\phi_f$ are systematically biased, the whole framework follows.
-- CBN structures lack formal validity checks, posing a risk of "hallucinated latent variables."
-- Bottom-up abduction quality varies with LLM diversity; niche scenarios might still result in sparse factors.
-- Evaluation relies on preference-based pairwise metrics without ground-truth probabilities, making it hard to verify actual numerical calibration.
-- NB+CBN fusion weights are manually specified rather than adaptive.
+- Parameter estimation depends on LLM flexibility. If the LLM's conditional probabilities $\phi_f$ are systematically biased (overconfident or reflecting training data bias), the framework will be skewed.
+- There is no formal validity check for the LLM-generated CBN structures, posing a risk of "hallucinated latent variables."
+- Convergence of bottom-up abduction depends on $T_{max}$ and $N_{target}$. While theoretically sound, quality varies with LLM diversity, and niche scenarios might remain sparse.
+- Benchmarking relies on preference-based pairwise comparisons without ground-truth probabilities, making it difficult to judge the absolute calibration of the numerical output.
+- The NB+CBN fusion weight is manually specified and lacks an adaptive scheme.
 
 ## Related Work & Insights
-- **vs BIRD (Feng et al. 2025)**: BIRD uses forward abduction + NB, suffering from sparsity and independence violations. ANCHOR addresses both via bottom-up hierarchy and CBN.
-- **vs CoT / ToT / Belief Graph**: These are reactive decompositions; ANCHOR is proactive by pre-building a reusable factor space.
-- **vs Graph RAG / Hierarchical RAG**: Traditional RAG indexes existing docs; ANCHOR generates the knowledge source (factors) from scratch for decision scenarios.
+- **vs. BIRD (Feng et al. 2025)**: BIRD uses forward abduction + a single NB, leading to sparsity and independence violations. ANCHOR addresses these via bottom-up abduction, hierarchy, and CBN fusion.
+- **vs. CoT / ToT / Belief Graph**: These are reactive decompositions performed per query. ANCHOR is proactive, pre-building a reusable factor space for higher efficiency.
+- **vs. Graph RAG / Hierarchical RAG**: Traditional RAG indexes existing documents. ANCHOR generates the knowledge source (factors) from scratch, suitable for scenarios where domain documents are absent.
+- **vs. Internal LLM Uncertainty Methods**: Verbalized confidence is unreliable; ANCHOR externalizes uncertainty through explicit probability graphs, improving interpretability.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Bottom-up abduction + on-demand CBN + NB-CBN fusion is a novel organic combination.
-- Experimental Thoroughness: ⭐⭐⭐ Comprehensive ablations, but lacks ground-truth probability calibration and large-scale cross-domain tests.
-- Writing Quality: ⭐⭐⭐⭐ Clear logical chain from motivation to pipeline.
-- Value: ⭐⭐⭐⭐ Successfully addresses "unknowns + calibration + cost" simultaneously for high-risk LLM decisions.
+- Novelty: ⭐⭐⭐⭐ Bottom-up abduction + online CBN construction + NB-CBN fusion is a synergistic combination.
+- Experimental Thoroughness: ⭐⭐⭐ Main results and ablations are comprehensive in the appendix, but ground-truth probability calibration and large-scale cross-domain tests are missing.
+- Writing Quality: ⭐⭐⭐⭐ The logical chain from motivation to pipeline is clear.
+- Value: ⭐⭐⭐⭐ Addresses "reduction of unknowns + calibration + cost reduction" in the context of LLM high-risk decision-making.
 
 <!-- RELATED:START -->
 
@@ -151,10 +152,10 @@ The authors claim ANCHOR achieves SOTA on a preference-based pairwise benchmark 
 
 ## Related Papers
 
+- [\[ICML 2026\] Emergence of Hierarchical Emotion Organization in Large Language Models](emergence_of_hierarchical_emotion_organization_in_large_language_models.md)
 - [\[ACL 2026\] From Static Inference to Dynamic Interaction: A Survey of Streaming Large Language Models](../../ACL2026/llm_nlp/from_static_inference_to_dynamic_interaction_a_survey_of_streaming_large_languag.md)
 - [\[ICML 2026\] Scheduling LLM Inference with Uncertainty-Aware Output Length Predictions](scheduling_llm_inference_with_uncertainty-aware_output_length_predictions.md)
 - [\[ICML 2026\] Compute as Teacher: Turning Inference Compute Into Reference-Free Supervision](compute_as_teacher_turning_inference_compute_into_reference-free_supervision.md)
-- [\[ACL 2025\] Turning Trash into Treasure: Accelerating Inference of Large Language Models with Token Recycling](../../ACL2025/llm_nlp/token_recycling.md)
 - [\[ICML 2026\] Resting Neurons, Active Insights: Robustify Activation Sparsity for Large Language Models](resting_neurons_active_insights_robustify_activation_sparsity_for_large_language.md)
 
 </div>

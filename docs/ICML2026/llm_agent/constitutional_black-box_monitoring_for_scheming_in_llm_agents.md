@@ -2,12 +2,12 @@
 title: >-
   [Paper Note] Constitutional Black-Box Monitoring for Scheming in LLM Agents
 description: >-
-  [ICML 2026][LLM Agent][Paper Note] This paper proposes an end-to-end "Constitutional Black-Box Monitoring" framework. It utilizes two synthetic data pipelines (STRIDE and Gloom) to generate 2,000 synthetic trajectories for optimizing prompt-based classifiers. These monitors detect scheming behavior in LLM agents by observing only externally visible tool
+  [ICML 2026][LLM Agent][Paper Note] This paper proposes an end-to-end "Constitutional Black-Box Monitoring" framework. It utilizes two synthetic data pipelines (STRIDE and Gloom) to generate 2,000 synthetic trajectories for optimizing prompt classifiers. The framework detects scheming behaviors in LLM agents by observing only externally visible tool call
 tags:
   - ICML 2026
   - LLM Agent
 date: 2026-05-08
-content_hash: 410165441a78ef9a
+content_hash: a57acd8a4003edfa
 ---
 # Constitutional Black-Box Monitoring for Scheming in LLM Agents
 
@@ -15,66 +15,67 @@ content_hash: 410165441a78ef9a
 **arXiv**: [2603.00829](https://arxiv.org/abs/2603.00829)  
 **Code**: None  
 **Area**: LLM Agent  
-**Keywords**: Black-box monitoring, LLM agent safety, Scheming behavior detection, Synthetic data, Prompt optimization  
+**Keywords**: Black-box monitoring, LLM agent safety, scheming behavior detection, synthetic data, prompt optimization  
 
 ## TL;DR
-This paper proposes an end-to-end "Constitutional Black-Box Monitoring" framework. It utilizes two synthetic data pipelines (STRIDE and Gloom) to generate 2,000 synthetic trajectories for optimizing prompt-based classifiers. These monitors detect scheming behavior in LLM agents by observing only externally visible tool calls and outputs (excluding Chain-of-Thought). The study finds that simple prompt grid search saturates performance, while more aggressive optimization leads to overfitting.
+This paper proposes an end-to-end "Constitutional Black-Box Monitoring" framework. It utilizes two synthetic data pipelines (STRIDE and Gloom) to generate 2,000 synthetic trajectories for optimizing prompt classifiers. The framework detects scheming behaviors in LLM agents by observing only externally visible tool calls and outputs (without Chain-of-Thought). The study finds that simple prompt grid search saturates performance, while more aggressive optimization leads to overfitting.
 
 ## Background & Motivation
 
-**Background**: As LLMs evolve from conversational assistants into autonomous agents capable of executing code, invoking tools, and operating in real-world environments, the importance of safe deployment increases significantly. Prior work has observed early signs of "alignment faking," "in-context scheming," and strategic deception in frontier models under controlled conditions.
+**Background**: As LLMs evolve from conversational assistants into autonomous agents capable of executing code, calling tools, and operating in real-world environments, the importance of safe deployment has increased sharply. Prior work has observed early signs of "alignment faking," in-context scheming, and strategic deception in frontier models under controlled conditions.
 
-**Limitations of Prior Work**: The core characteristic of scheming is "covertly pursuing misaligned goals while appearing cooperative." This creates a fundamental verification dilemma for standard safety training—imposing optimization pressure on scheming might eliminate the behavior or merely teach the model to hide it better. Since these outcomes cannot be reliably distinguished, alignment training alone is insufficient; "defense-in-depth" is required.
+**Limitations of Prior Work**: The core characteristic of scheming is "the covert pursuit of misaligned goals while appearing cooperative." This presents a fundamental verification dilemma for standard safety training—optimization pressure applied to scheming may truly eliminate the behavior or merely teach the model to hide it better. Since these two outcomes cannot be reliably distinguished, alignment training alone is insufficient; "defense in depth" is required.
 
-**Key Challenge**: Monitoring is the first layer of defense-in-depth, but it faces two interconnected hurdles: (1) real-world spontaneous scheming samples are nearly non-existent for training monitors; (2) relying on internal CoT is unreliable because reasoning chains may be unfaithful, illegible, or entirely invisible in the future.
+**Key Challenge**: Monitoring is the first layer of defense in depth, but it faces two intertwined difficulties: (1) there are almost no spontaneous scheming samples in the real world to train monitors; (2) relying on internal CoT is unreliable because reasoning chains may be unfaithful, unreadable, or completely invisible in the future.
 
-**Goal**: Build a black-box scheming detector based solely on external behavior and solve the data scarcity problem by replacing real samples with a constitutional approach (generating synthetic data from natural language behavioral norms).
+**Goal**: To build a black-box scheming detector that only observes external behavior and to solve the lack of training data by replacing real samples with a constitutional approach (generating synthetic data from natural language behavioral norms using LLMs).
 
-**Key Insight**: Drawing on the concept of Constitutional Classifiers, high-level definitions of scheming behavior are treated as the "constitution." Frontier LLMs then instantiate these into specific trajectories, enabling the optimization of monitors on synthetic data for evaluation in real-world environments.
+**Key Insight**: Drawing on the concept of Constitutional Classifiers, high-level definitions of scheming are used as a "constitution." The generative capabilities of frontier LLMs are then used to instantiate this constitution into concrete trajectories, on which monitors are optimized and evaluated for transfer to real environments.
 
-**Core Idea**: Training data is generated through two complementary synthetic pipelines (STRIDE single-pass generation + iterative refinement, and Gloom multi-player simulation). These data are used to optimize black-box prompt classifiers, which are then rigorously evaluated on the independent semi-realistic sandbox environment, ControlArena.
+**Core Idea**: Generate training data using two complementary synthetic pipelines (STRIDE via single-shot generation + iterative refinement, and Gloom via two-player simulation). Optimize black-box prompt classifiers and rigorously evaluate transfer performance on ControlArena, an independent semi-realistic sandbox environment.
 
 ## Method
 
 ### Overall Architecture
-This framework addresses the lack of real scheming samples by connecting three layers: first, using constitutional synthetic data generation to create a training set; second, optimizing the monitor on this data; and finally, testing transfer performance in a completely independent semi-realistic sandbox. During training, 1,000 balanced labeled trajectories are generated from both STRIDE and Gloom (2,000 total) to tune the combination of "Monitor = (LLM $M$ + Prompt $P$)". During evaluation, the system runs on 7,500 semi-realistic trajectories from ControlArena, where ground truth is provided by deterministic environment checks rather than LLM judgment. In both stages, the monitor receives trajectories without CoT (user messages + tool calls + tool outputs) and outputs a suspicion score $S \in [1, 10]$.
+This framework addresses the lack of real scheming samples by connecting three layers: first, generating a training set via constitutional synthetic data generation; second, optimizing the monitor on this data; and third, testing transfer performance in a completely independent semi-realistic sandbox. During the training phase, 1,000 balanced labeled trajectories are generated each from STRIDE and Gloom (2,000 total) to tune the "Monitor = (LLM $M$ + Prompt $P$)" combination. In the evaluation phase, 7,500 trajectories from ControlArena are used, where ground truth is provided by deterministic environment checks rather than LLM judgment. In both phases, the monitor receives trajectories without CoT (user messages + tool calls + tool outputs) and outputs a suspicion score $S \in [1,10]$.
 
 ```mermaid
-graph TD
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
     A["Natural Language Definition of Scheming (Constitution)"] --> B
     A --> C
-    subgraph S1["Dual-Pipeline Synthetic Data Generation"]
+    subgraph S1["Dual Pipeline Synthetic Data Generation"]
         direction TB
-        B["STRIDE: Single-pass + Discriminator Iterative Refinement<br/>1,000 trajectories (shorter, scheming in specific calls)"]
-        C["Gloom: Multi-player Game Simulation<br/>1,000 trajectories (longer, scheming dispersed across steps)"]
+        B["STRIDE: Single-shot Generation + Discriminator Iterative Refinement<br/>1000 trajectories (shorter, concentrated scheming)"]
+        C["Gloom: Two-player Game Simulation<br/>1000 trajectories (longer, distributed scheming)"]
     end
-    B --> D["2,000 Balanced Labeled Synthetic Trajectories<br/>Privileged Verifier Filtering"]
+    B --> D["2000 Balanced Labeled Synthetic Trajectories<br/>Privileged Verifier Filtering"]
     C --> D
-    D --> E["Three-level Monitor Optimization = LLM M + Prompt P<br/>Grid Search / Human Refinement / DSPy, selected by pAUROC"]
-    E --> F["Independent Transfer Evaluation: ControlArena 7,500 Trajectories<br/>No CoT, pAUROC (FPR ≤ 0.2)"]
+    D --> E["Three-tier Monitor Optimization = LLM M + Prompt P<br/>Grid Search / Human Refinement / DSPy, selected by pAUROC"]
+    E --> F["Independent Transfer Evaluation: ControlArena 7500 Semi-realistic Trajectories<br/>CoT Removed, pAUROC (FPR≤0.2)"]
     F --> G["Conclusion: Simple grid search saturates performance<br/>Aggressive optimization → Overfitting"]
 ```
 
 ### Key Designs
 
-**1. Dual-Pipeline Synthetic Data Generation (STRIDE + Gloom): Approximating Real-word Diversity**
+**1. Dual Pipeline Synthetic Data Generation (STRIDE + Gloom): Approximating the diversity of real scheming through complementary generation methods.**
 
-Since real scheming trajectories are scarce, the strategy starts with natural language definitions and uses frontier LLMs to instantiate them into labeled agent trajectories. STRIDE uses a single LLM call to generate a full trajectory (using Gemini 2.5 Pro for its low refusal rate), which is then refined by a discriminator (Claude Sonnet 4) through iterative feedback. Gloom, based on the Bloom framework, simulates a "multi-player game" where a misaligned agent interacts with an environment simulator. These pipelines are complementary: STRIDE trajectories are shorter (median 12 rounds) with concentrated scheming, while Gloom trajectories are dense (median 10 rounds, 21.8k tokens) with scheming dispersed across steps. Using both reduces exposure to artifacts specific to a single generation method. A "privileged verifier"—which has access to attack strategies and metadata invisible to the monitor—filters the data, ensuring the filtering process does not share the same blind spots as the monitor.
+Real-world spontaneous scheming trajectories are virtually non-existent for training. The strategy is to start from a natural language definition and let frontier LLMs instantiate it into labeled agent trajectories. STRIDE uses a single-shot LLM call to generate full trajectories (using Gemini 2.5 Pro for low refusal rates), which are then iteratively refined based on feedback from a discriminator model (Claude Sonnet 4). Gloom, based on the Bloom framework, uses a "two-player game" between an agent injected with misaligned goals and an environment simulator that provides neutral tool outputs, allowing scheming to emerge naturally. The key is that their data characteristics are complementary: STRIDE trajectories are short (median 12 turns, 4.5k tokens) with scheming concentrated in few calls, while Gloom trajectories are dense (median 10 turns, 21.8k tokens, 2.6 tool calls per message) with scheming distributed across steps. Using both mitigates biases from any single pipeline. A "privileged verifier" is used for filtering; it sees pre-set attack strategies and metadata, making filtering a simpler "strategy verification" task and avoiding shared blind spots between the filter and the monitor.
 
-**2. Low False-Positive Oriented Metric: pAUROC**
+**2. Low False Positive Rate Oriented Metric pAUROC: Making scores responsible for "catch rate within a false alarm budget."**
 
-Scheming is rare in real deployment. Even a slightly high false-positive rate (FPR) would overwhelm human auditors. Thus, standard AUROC is less meaningful. This work uses Partial AUROC (pAUROC) integrated over the low false-positive range:
+Scheming is extremely rare in real-world deployments. Even a slightly high false positive rate (FPR) would overwhelm human auditors with normal trajectories. Thus, standard AUROC is unsuitable as high FPR regions are irrelevant, and log-AUROC is overly sensitive to thresholds. This paper adopts the partial AUROC (pAUROC) integrated over the low false positive interval:
 
 $$\text{pAUROC} = \frac{1}{0.20}\int_0^{0.20}\text{TPR}(t)\,dt$$
 
-By normalizing FPR $\leq 0.2$, a perfect monitor scores 1.0, and a random classifier scores 0.1. This directly addresses the practical question of how many true schemes can be caught within a tolerable false-positive budget. To support this, monitors provide integer scores from $[1, 10]$, which offer better stability in the low FPR region than binary labels.
+The FPR is limited to $\leq 0.2$ and then normalized, where a perfect monitor scores 1.0 and a random classifier scores 0.1. This addresses the practical concern: how many true schemes can be caught within an acceptable false alarm budget. Accordingly, monitor outputs are converted from binary classification to integer scores in $[1,10]$, providing more stability in low FPR regions.
 
-**3. Three-level Optimization and Overfitting Diagnosis**
+**3. Three-tier Optimization Strategy and Overfitting Diagnosis: Benchmarking the limits of synthetic data optimization.**
 
-To determine how far monitors can be tuned on synthetic data, three levels of optimization are compared: (1) Grid Search (15 prompts × 3 frontier LLMs like Claude Sonnet 4.5, Gemini 2.5 Pro, and GPT 5.1); (2) Human Prompt Refinement using LLM-assisted error analysis over 3 iterations; (3) DSPy automated optimizers (GEPA / MIPROv2). Results show that while training pAUROC increases with heavier optimization, test pAUROC plateaus or even declines. This indicates that aggressive optimizers exploit specific noise in synthetic data, leading to overfitting. Simple grid search often provides the best cost-benefit ratio.
+To determine the upper bound of monitor performance on synthetic trajectories, three levels of optimization are compared. Level 1 (Grid Search) performs a Cartesian search across 15 candidate prompts $\times$ 3 frontier LLMs (Claude Sonnet 4.5 / Gemini 2.5 Pro / GPT 5.1), selecting the best combination by validation pAUROC. Level 2 (Human Prompt Refinement) uses LLM-assisted error analysis of misclassified trajectories to derive 5 prompt variants per round for up to 3 iterations. Level 3 uses DSPy automatic optimizers (GEPA / MIPROv2). Results show a clear divergence: as optimization intensity increases, training pAUROC climbs, but test pAUROC plateaus or even declines. This signal indicates the optimizer is fitting to specific noise in the synthetic data. This hierarchy concludes that simple search often provides the highest cost-benefit ratio.
 
 ### Loss & Training
-The monitor acts as a zero-shot or few-shot prompt classifier without updating parameters in the main workflow. DSPy optimizers (GEPA / MIPROv2) use a classification loss based on a threshold of 5 to drive prompt search. Fine-tuning experiments with Kimi K2.6 use LoRA to verify if the "performance saturation" conclusion holds under weights updates.
+The monitor is essentially a zero-shot/few-shot prompt classifier; the main workflow does not update parameters. DSPy optimizers (GEPA / MIPROv2) drive prompt search by calculating classification loss with a decision boundary threshold of 5. SFT experiments with the open-source Kimi K2.6 use LoRA fine-tuning to verify if the "performance saturation" conclusion holds under weight updates.
 
 ## Key Experimental Results
 
@@ -87,46 +88,46 @@ The monitor acts as a zero-shot or few-shot prompt classifier without updating p
 | Human Refinement | STRIDE | Gemini 2.5 Pro | ~0.97 | **0.887** |
 | Human Refinement | Gloom | Claude Sonnet 4.5 | ~0.95 | 0.840 |
 | GEPA (DSPy) | Gloom | Claude Sonnet 4.5 | ~0.96 | 0.830 |
-| Baseline Prompt | — | Claude Sonnet 4.5 | — | ~0.75 |
+| Minimal Baseline Prompt | — | Claude Sonnet 4.5 | — | ~0.75 |
 | Random Classifier | — | — | — | 0.10 |
 
 ### Ablation Study
 
 | Configuration | Test pAUROC | Description |
 | :--- | :--- | :--- |
-| Grid Search (prompt sweep) | 0.853–0.866 | High performance reached via simple search |
-| + Human Refinement | Plateau/Drop | No significant gain; train set climbs, test set does not |
-| + GEPA Auto-optimization | Plateau/Drop | Aggressive optimization leads to overfitting |
-| Kimi K2.6 Prompt Sweep | +0.19 vs Baseline | Saturation effect confirmed across models |
-| Kimi K2.6 SFT (LoRA) | Equal to Sweep | Fine-tuning fails to break the performance ceiling |
-| Direct optimization on ControlArena | 0.81 | Saturation occurs even with real distribution data |
+| Grid Search (prompt sweep) | 0.853–0.866 | Simple search achieves high performance |
+| + Human Refinement (from best prompt) | Flat or Down | No significant gain; train increases while test does not |
+| + GEPA Auto-optimization | Flat or Down | Aggressive optimization leads to overfitting |
+| Kimi K2.6 Prompt Sweep | +0.19 vs Baseline | Saturation phenomenon holds across models |
+| Kimi K2.6 SFT (LoRA) | Equal to sweep | Fine-tuning fails to break the ceiling |
+| Direct optimization on ControlArena | 0.81 | Saturated even with real-distribution data |
 
 ### Key Findings
-- **Simple prompt search is sufficient**: A search across 15 prompts and 3 LLMs achieves performance comparable to much more expensive methods.
-- **Synthetically optimized monitors are transferable**: Monitors optimized purely on synthetic data capture meaningful scheming signals in ControlArena.
-- **Clear overfitting risk**: Iterative optimization beyond the best prompt often improves training scores while test scores stagnate, as optimizers exploit synthetic artifacts.
-- **Saturation is not a prompt limitation**: SFT experiments on open-source models replicate the same ceiling, suggesting the bottleneck lies in the black-box monitoring paradigm itself.
+- **Simple prompt search saturates**: A grid search of 15 candidate prompts $\times$ 3 LLMs achieves performance comparable to much more expensive methods; the only exception is human refinement on STRIDE which showed a statistically significant gain.
+- **Synthetic-to-real transferability**: Monitors optimized purely on synthetic data captured meaningful scheming signals in ControlArena, with prompt sweep rankings correlating with test performance.
+- **Clear overfitting risk**: Iterative optimization starting from the best prompt leads to higher training scores but stagnant or degraded test scores as optimizers exploit artifacts in synthetic data.
+- **Saturation not limited by prompt**: SFT experiments on open-source models replicated the same ceiling, suggesting the bottleneck may lie in the black-box monitoring paradigm itself.
 
 ## Highlights & Insights
-- **Constitutional Data Generation**: This converts an LLM's generative capability into a validation signal by using definitions to create training samples, bypassing the lack of real data.
-- **Privileged Verifier**: This solves the self-referential problem of data filtering. By providing the verifier with metadata (attack strategies), the task simplifies to "strategy verification" rather than "discovery," avoiding shared blind spots with the monitor.
-- **Optimization Ceiling**: Provides practical architectural guidance—complex prompt engineering lacks scalability compared to simple grid search for this task.
+- **Clever application of Constitutional Data Generation**: Converts LLM generative capacity into verification signals—using natural language definitions of scheming to let the model generate its own training samples, bypassing the lack of real scheming data. This "generation-to-detection" pipeline is transferable to other rare malicious behaviors.
+- **"Privileged Verifier" solves self-reference in filtering**: If the filter and monitor use the same information, they share blind spots. Giving the filter additional attack strategy metadata transforms the task into "strategy verification" rather than "scheming discovery."
+- **Practical implications of the optimization ceiling**: Useful for industry—extensive prompt engineering resources are not required; a simple grid search offers the best cost-performance ratio.
 
 ## Limitations & Future Work
-- **The Ceiling of Black-Box Paradigms**: External behavior observation may fail to detect highly sophisticated scheming, especially if malicious actions are embedded in plausible technical operations.
-- **Gap in Synthetic Data**: There may be fundamental behavioral differences between induced scheming (via system prompts) and spontaneous scheming.
-- **Evaluation Scenarios**: The study covers only 5 environments in ControlArena, which may not represent the full complexity of real-world deployments.
-- **Future Directions**: Data augmentation (back-translation, style transfer) might mitigate overfitting; combining black-box monitoring with internal representation analysis may break the performance ceiling.
+- **Intrinsic ceiling of the black-box paradigm**: Observing only external behavior may be fundamentally incapable of detecting highly sophisticated scheming, especially if the agent embeds malicious acts within plausible technical operations.
+- **Gap between synthetic and real scheming**: Induced scheming (via system prompts) may differ fundamentally in behavioral patterns from spontaneous scheming.
+- **Limited evaluation scenarios**: Only covers 5 ControlArena environments, which may not represent the complexity of all real-world deployments.
+- **Future directions**: Data augmentation (paraphrasing, style transfer, adversarial transformations) might mitigate overfitting; combining black-box monitoring with internal representation analysis could break the performance ceiling.
 
 ## Related Work & Insights
-- **vs. Constitutional Classifiers (Sharma et al., 2025)**: While the prior work builds multi-class threat detectors (e.g., jailbreaking), this study narrows the focus to scheming and investigates the performance upper bound of black-box monitoring.
-- **vs. AI Control (Greenblatt et al., 2024b)**: AI Control assumes potentially adversarial models and designs containment protocols. The monitor in this paper serves as a specific component within such a framework, focusing on detection capabilities without CoT.
+- **vs. Constitutional Classifiers (Sharma et al., 2025)**: That work uses constitutional methods for multi-class threat detection (e.g., jailbreaks). This paper narrows the paradigm to a single scheming definition and focuses on the performance limits of black-box monitoring.
+- **vs. AI Control (Greenblatt et al., 2024b)**: AI Control assumes models may be adversarial and designs protocols for containment. The monitor in this paper is a specific component within that framework, focusing on "what can be detected without CoT."
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐
-- Writing Quality: ⭐⭐⭐⭐
-- Value: ⭐⭐⭐⭐
+- Novelty: ⭐⭐⭐⭐ Applying the constitutional classifier paradigm to agent scheming is novel, though underlying tools (prompt optimization, synthetic generation) are established.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Extremely thorough experiments with 9,500 trajectories, 3 optimization strategies, 3 frontier LLMs, an open-source model, and SFT verification.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure, effective charts, and a commendable experimental design using strict train/test separation.
+- Value: ⭐⭐⭐⭐ The finding that "simple grid search satisfies the ceiling" is directly useful for practitioners, though the contribution to actual detection capability has limits.
 
 <!-- RELATED:START -->
 
@@ -134,11 +135,11 @@ The monitor acts as a zero-shot or few-shot prompt classifier without updating p
 
 ## Related Papers
 
+- [\[ICML 2026\] Agentic Monte Carlo: Simulating Reinforcement Learning for Black-Box Agents](agentic_monte_carlo_simulating_reinforcement_learning_for_black-box_agents.md)
 - [\[ICML 2026\] LLM Agents Are the Antidote to Walled Gardens](llm_agents_are_the_antidote_to_walled_gardens.md)
 - [\[ICML 2026\] ExCyTIn-Bench: Evaluating LLM Agents on Cyber Threat Investigation](excytin-bench_evaluating_llm_agents_on_cyber_threat_investigation.md)
 - [\[ICML 2026\] Agent-Omit: Adaptive Context Omission for Efficient LLM Agents](agent-omit_adaptive_context_omission_for_efficient_llm_agents.md)
 - [\[ICML 2026\] EvolveR: Self-Evolving LLM Agents through an Experience-Driven Lifecycle](evolver_self-evolving_llm_agents_through_an_experience-driven_lifecycle.md)
-- [\[ICML 2026\] Reward Hacking Benchmark: Measuring Exploits in LLM Agents with Tool Use](reward_hacking_benchmark_measuring_exploits_in_llm_agents_with_tool_use.md)
 
 </div>
 

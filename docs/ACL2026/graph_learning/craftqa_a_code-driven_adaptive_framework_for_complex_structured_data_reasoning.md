@@ -2,12 +2,12 @@
 title: >-
   [Paper Note] CRAFTQA: A Code-Driven Adaptive Framework for Complex Structured Data Reasoning
 description: >-
-  [ACL 2026][Graph Learning][Paper Note] CRAFTQA utilizes CodeSTEP to generate executable step-by-step Python reasoning code and employs CRAFT to dynamically generate custom functions when predefined operators are insufficient. This significantly enhances complex structured data QA capabilities across tables, KGs, and Temporal KGs (TKG), with the GPT-4o versi
+  [ACL 2026][Graph Learning][Paper Note] CRAFTQA uses CodeSTEP to generate executable step-by-step Python reasoning code. When predefined operations are insufficient, CRAFT dynamically generates custom functions, significantly enhancing complex structured data QA capabilities across tables, knowledge graphs (KGs), and temporal knowledge graphs (TKGs). The GPT
 tags:
   - ACL 2026
   - Graph Learning
 date: 2026-05-08
-content_hash: 6781e766d0b8ee68
+content_hash: 2424c1c7bbbffe12
 ---
 # CRAFTQA: A Code-Driven Adaptive Framework for Complex Structured Data Reasoning
 
@@ -15,61 +15,67 @@ content_hash: 6781e766d0b8ee68
 **arXiv**: [2606.02170](https://arxiv.org/abs/2606.02170)  
 **Code**: Not specified  
 **Area**: Structured Data Reasoning / Knowledge Graph Question Answering  
-**Keywords**: Structured Data QA, Code Reasoning, Dynamic Function Generation, Table QA, KG Reasoning  
+**Keywords**: Structured data QA, code reasoning, dynamic function generation, table QA, knowledge graph reasoning  
 
 ## TL;DR
-CRAFTQA utilizes CodeSTEP to generate executable step-by-step Python reasoning code and employs CRAFT to dynamically generate custom functions when predefined operators are insufficient. This significantly enhances complex structured data QA capabilities across tables, KGs, and Temporal KGs (TKG), with the GPT-4o version achieving 76.6% in Overall complex reasoning.
+CRAFTQA uses CodeSTEP to generate executable step-by-step Python reasoning code. When predefined operations are insufficient, CRAFT dynamically generates custom functions, significantly enhancing complex structured data QA capabilities across tables, knowledge graphs (KGs), and temporal knowledge graphs (TKGs). The GPT-4o version achieves 76.6% on the complex reasoning Overall metric.
 
 ## Background & Motivation
-**Background**: Structured data QA requires models to access tables, KGs, or Temporal KGs based on natural language questions and output verifiable answers. Recently, unified structured data QA methods (e.g., StructGPT, Readi, and TrustUQA) have attempted to handle multiple data types within a single framework.
+**Background**: Structured data QA requires models to access tables, KGs, or TKGs based on natural language questions and output verifiable answers. Recently, unified structured data QA methods have attempted to handle multiple data types within a single framework, such as StructGPT, Readi, and TrustUQA.
 
-**Limitations of Prior Work**: Unified frameworks typically rely on a fixed set of functions, such as query, set operations, counting, summation, and min/max. Once a problem requires complex operations exceeding these predefined functions, the system is restricted, making it difficult to complete multi-step numerical reasoning, complex conditional combinations, or customized calculations.
+**Limitations of Prior Work**: Unified frameworks typically rely on a fixed set of functions, such as queries, set operations, counting, summation, and min/max. Once a problem requires complex operations beyond predefined functions, systems become restricted, failing at multi-step numerical reasoning, complex conditional combinations, or customized calculations.
 
-**Key Challenge**: A fixed function set ensures controllability and interpretability but limits reasoning expressivity; conversely, allowing LLMs to generate free-text answers is flexible but difficult to verify and execute. Complex structured data QA requires both "executability" and "dynamic expansion capability."
+**Key Challenge**: A fixed function set ensures controllability and interpretability but limits reasoning expressiveness. Directly letting LLMs generate free-text answers is more flexible but difficult to verify and execute. Complex structured data QA requires both "executability" and "dynamic expansion capabilities."
 
 **Goal**: The authors aim to build a unified framework capable of performing reasoning via code execution across different structured data types while automatically generating specialized functions when encountering out-of-predefined operations.
 
-**Key Insight**: This paper decomposes reasoning into two levels: CodeSTEP handles the backbone of step-by-step code reasoning, while CRAFT dynamically generates custom functions for steps exceeding the library during execution, returning results to the main execution flow.
+**Key Insight**: The paper divides reasoning into two levels: CodeSTEP handles the backbone of step-by-step code reasoning, while CRAFT dynamically generates custom functions for steps that exceed the function library during execution, returning the results to the main execution flow.
 
-**Core Idea**: Instead of only calling fixed tools, the LLM generates an executable and verifiable function on the fly when a new tool is needed, then proceeds with structured reasoning.
+**Core Idea**: Instead of merely calling fixed tools, the LLM writes an executable, verifiable function on-the-fly when a new tool is needed, then continues the structured reasoning.
 
 ## Method
-CRAFTQA addresses the issue where unified structured data QA is constrained by fixed function sets. While tables, KGs, and TKGs can be accessed via a single framework, the system fails whenever a reasoning step exceeds predefined operators (e.g., custom sorting, combined conditions, special format conversions). The solution is to ground reasoning entirely in executable code and generate new functions in real-time when a step cannot be written with existing tools.
+CRAFTQA aims to solve the problem where "unified structured data QA is stalled by fixed function sets": tables, KGs, and TKGs can all be accessed with one framework, but the system fails as soon as a reasoning step exceeds predefined operators (e.g., custom sorting, combinatorial conditions, special format conversions). Its solution is to ground reasoning entirely in executable code and generate a new function on-the-fly for the step where code cannot be written using existing functions.
 
 ### Overall Architecture
-The input consists of a data source $\mathcal{D}$ and a question $\mathcal{Q}$. The system first unifies heterogeneous data into a schema $\mathcal{D}_{schema}$ and a Condition Graph $\mathcal{D}_{cg}$, allowing tables, KGs, and TKGs to be accessed via the same graph query interface. Subsequently, the LLM translates the question into a step-by-step Python code sequence $\mathcal{C}=\{c_i\}_{i=1}^n$ under a few-shot prompt. An executor runs these codes sequentially, accumulates intermediate results, and finally obtains the answer $\mathcal{A}$. Formally, $\mathcal{M}_{\theta}(\mathcal{D}_{schema}, \mathcal{Q}, \mathcal{P}) \rightarrow \mathcal{C}$ followed by $\textsc{Exec}(\mathcal{C}, \mathcal{D}_{cg}) \rightarrow \mathcal{A}$. Crucially, this code does not need to use only predefined functions: standard steps call the library, while operations missing from the library invoke a "generate function" interface fulfilled by the CRAFT module.
+The input consists of a data source $\mathcal{D}$ and a question $\mathcal{Q}$. The system first unifies heterogeneous data into a schema $\mathcal{D}_{schema}$ and a Condition Graph $\mathcal{D}_{cg}$, allowing tables, KGs, and TKGs to be accessed via the same graph query interface. Next, the LLM translates the question into a step-by-step Python code sequence $\mathcal{C}=\{c_i\}_{i=1}^n$ under a few-shot prompt. An executor runs this code sequentially, accumulating intermediate results to obtain the final answer $\mathcal{A}$. Formally, $\mathcal{M}_{\theta}(\mathcal{D}_{schema}, \mathcal{Q}, \mathcal{P}) \rightarrow \mathcal{C}$, then $\textsc{Exec}(\mathcal{C}, \mathcal{D}_{cg}) \rightarrow \mathcal{A}$. The key is that this code does not have to use predefined functions exclusively: conventional steps call the library, while operations missing from the library call an interface to "please help me write a function," which is fulfilled by the CRAFT module.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["Input: Data Source D + Question Q"] --> B["Unified Representation<br/>schema + Condition Graph"]
-    B --> C["CodeSTEP Step-by-step Code Reasoning<br/>Question → reasoning path → Python code"]
-    C -->|Step within predefined library| D["Call Function Library<br/>get / union / count / sum …"]
-    C -->|Step exceeds predefined ops| E["CRAFT Dynamic Function Generation<br/>On-the-fly self-contained functions"]
+    A["Input: Data source D + Question Q"] --> B["Unified Representation<br/>schema + Condition Graph"]
+    B --> C["CodeSTEP Step-by-step Code Reasoning<br/>Question → reasoning path → Step-by-step Python code"]
+    C -->|Steps within predefined library| D["Call Function Library<br/>get / union / count / sum …"]
+    C -->|Out-of-predefined operation| E["CRAFT Dynamic Function Generation<br/>On-the-fly self-contained function"]
     D --> F["Code Verification & Sequential Execution<br/>Interpreter verification, retry ≤ 3"]
     E --> F
-    F --> G["Intermediate Result Accumulation W"]
+    F --> G["Accumulate Intermediate Results W"]
     G -->|Subsequent steps exist| C
     G -->|Reasoning finished| H["Output Answer A"]
 ```
 
 ### Key Designs
 
-**1. CodeSTEP Step-by-step Code Reasoning: Decoupling Reasoning and Computation into Executable Code**
+**1. CodeSTEP Step-by-step Code Reasoning: Decoupling reasoning and calculation into executable, checkable code**
 
-Directly allowing LLMs to generate free-text answers often leads to calculation errors and lack of verification in multi-hop numerical or complex conditional problems. CodeSTEP prompts the model to write a natural language reasoning path first, then translates each step into corresponding code: basic query functions $get$ retrieve entities from the Condition Graph based on relations, entities, and attributes, while set and numerical operators cover union, intersection, difference, min, max, mean, count, and sum. By externalizing reasoning as code, every calculation step becomes executable and reviewable, constraining the model's numerical operations and multi-hop logic within code semantics, which reduces error rates.
+Directly allowing LLMs to generate free-text answers often leads to calculation errors and a lack of verifiability in multi-hop numerical or complex conditional problems. CodeSTEP requires the model to first write a natural language reasoning path and then translate each step into corresponding code: the basic query function $get$ retrieves entities from the Condition Graph based on relations, head/tail entities, comparison operators, and attribute conditions; set and numerical operators cover standard operations like union, intersection, difference, min, max, mean, count, and sum. By externalizing the reasoning process as code, every calculation step becomes executable and reviewable. The model's "creative" freedom in numerical and multi-hop operations is constrained by code semantics, naturally reducing error rates.
 
-**2. CRAFT Dynamic Function Generation: On-the-fly Function Creation for Unmet Operations**
+**2. CRAFT Dynamic Function Generation: Writing a new function on-the-fly when predefined functions cannot express a step**
 
-Fixed function sets have a clear ceiling—once a problem requires an out-of-predefined operation, CodeSTEP cannot write valid code. CRAFT handles this by having CodeSTEP generate a placeholder call $f_{craft}(\mathcal{T}_i, W_i, F_{exp,i})$ when a step cannot be implemented via $\mathcal{F}_{pred}$. This call passes the task description $\mathcal{T}_i$, historical intermediate results $W_i$, and expected function signature $F_{exp,i}$ to CRAFT. CRAFT then generates a self-contained function $\hat{f}_i$ based on the original question and code sequence, returning result $w_i$ to the main flow. This transforms "library expansion" from an offline task into online, on-demand code generation, offering much higher flexibility than pre-enumerating all possible operators.
+The ceiling for fixed function sets is obvious—CodeSTEP cannot write valid code once a problem requires out-of-predefined operations. CRAFT handles this by: when a step cannot be implemented with $\mathcal{F}_{pred}$, CodeSTEP does not force a fit but generates a placeholder call $f_{craft}(\mathcal{T}_i, W_i, F_{exp,i})$, passing the current task description $\mathcal{T}_i$, historical intermediate results $W_i$, and the expected function signature $F_{exp,i}$ to CRAFT. CRAFT then generates a self-contained function $\hat{f}_i$ based on the original question and the full code sequence, returning the result $w_i$ to the main execution flow after execution. This transforms "expanding the tool library" from an offline task into an online, on-demand code generation process, which is far more flexible than pre-enumerating all possible operators and is the source of CRAFTQA's advantage in complex scenarios.
 
-**3. Code Verification and Sequential Execution: Blocking Errors with Pre-execution Validation and Retries**
+**3. Code Verification & Sequential Execution: Blocking syntax/runtime errors with pre-execution verification + limited retries**
 
-The primary risk of code-driven methods is unrunnable code. Both CodeSTEP's main code and CRAFT's custom functions are sent to a Python interpreter for executability verification. If verification fails, it retries with the same input for a maximum of $T=3$ times. Verified code is executed sequentially, and results are merged into the intermediate set $W_{i+1}=W_i \cup \{w_i\}$ for subsequent reference. This process filters out syntax and runtime errors before answer generation, ensuring the stability of the code chain.
+The biggest risk of code-driven methods is that the generated code might not run. Therefore, both CodeSTEP's main code and CRAFT's temporary custom functions are sent to a Python interpreter for executability verification. If verification fails, it retries with the same input for a maximum of $T=3$ times. Verified code is executed sequentially, and the output of each step is merged into the intermediate result set $W_{i+1}=W_i \cup \{w_i\}$ for reference in subsequent steps. This gatekeeper blocks a portion of syntax and runtime errors before answer generation, making the entire code chain more stable.
 
-### Key Experimental Results
+### A Complete Example
+Take a question requiring custom calculation on WikiSQL-E: CodeSTEP first writes a reasoning path. The initial steps use $get$ to extract candidate rows from the Condition Graph and count/sum for standard aggregation; these fall within the predefined functions, execute directly, and store results in $W$. When reaching a step like "sort by a custom rule and then take a conditional value," where no operator exists in the library, CodeSTEP generates an $f_{craft}$ call. It passes the task description "sort entries according to rule X and return those satisfying Y," current intermediate results, and the expected signature to CRAFT. CRAFT writes a self-contained sorting function, which passes interpreter verification (retrying within 3 times if errors occur). Once verified, it executes and the result is filled back into $W$. The main execution flow uses this value to continue subsequent steps, eventually outputting a verifiable answer. In this chain, only the truly stuck step utilized dynamic generation, while the rest remained controlled library function executions.
 
-#### Main Results
+### Loss & Training
+CRAFTQA is an inference framework rather than a trained model. Experiments use various LLMs as reasoning engines, including GPT, LLaMA, DeepSeek, Gemini, and Qwen series. Inference strategies include 5-sample self-consistency, a maximum of $T=3$ retries, and Sentence-BERT semantic entity alignment to map entity names in code to candidate entities in the Condition Graph.
+
+## Key Experimental Results
+
+### Main Results
 
 | Method | Backbone | TableBench-FC DA | TableBench-NR DA | WikiSQL-E DA | Overall |
 |------|----------|------------------|------------------|--------------|---------|
@@ -82,46 +88,46 @@ The primary risk of code-driven methods is unrunnable code. Both CodeSTEP's main
 | CRAFTQA | GPT-4o-mini | 64.6 | 40.7 | 79.0 | 69.2 |
 | CRAFTQA | GPT-4o | 68.8 | 51.3 | 85.6 | 76.6 |
 
-Under the same GPT-4o backbone, CRAFTQA's Overall score of 76.6 significantly outperforms TrustUQA (67.2), Readi (51.5), and StructGPT (44.3). Notably, CRAFTQA-LLaMA-3.1-8B (64.4 Overall) surpasses several traditional baselines using GPT-4o.
+Under the same GPT-4o backbone, CRAFTQA's Overall score of 76.6 is significantly higher than TrustUQA's 67.2, Readi's 51.5, and StructGPT's 44.3. Interestingly, CRAFTQA-LLaMA-3.1-8B's Overall of 64.4 already surpasses several traditional baselines using GPT-4o.
 
-#### Ablation Study
+### Ablation Study
 
 | Configuration | FC DA/F1 | NR DA/F1 | WikiSQL-E DA/F1 | Description |
 |------|----------|----------|-----------------|------|
-| CRAFTQA | 68.8 / 71.6 | 51.3 / 51.9 | 87.3 / 87.6 | Full Framework |
-| w/o CRAFT | 65.3 / 67.7 | 45.9 / 46.3 | 84.5 / 84.6 | Remove dynamic functions |
+| CRAFTQA | 68.8 / 71.6 | 51.3 / 51.9 | 87.3 / 87.6 | Full framework |
+| w/o CRAFT | 65.3 / 67.7 | 45.9 / 46.3 | 84.5 / 84.6 | Remove dynamic custom function |
 | w/o CRAFT & CodeSTEP | 59.4 / 63.2 | 18.4 / 19.7 | 79.8 / 80.0 | Remove code reasoning backbone |
 
-#### Key Findings
-- CRAFT contributes significantly to complex numerical reasoning. Numerical Reasoning DA drops from 51.3 in the full model to 45.9 without CRAFT, and down to 18.4 without the code backbone.
-- Out-of-predefined scenarios are the primary source of CRAFTQA's advantage. On WikiSQL-E, the Calling Denotation Accuracy for GPT-4.1 is 53.57%, compared to only 6.98% for TrustUQA.
-- On Numerical Reasoning, the GPT-4.1 version of CRAFTQA achieves a DA of 56.06%, which is a gain of 26.77 percentage points over TrustUQA's 29.29%.
-- Basic capabilities are preserved on standard reasoning tasks: WebQSP Hit@1 is 85.20, WikiSQL DA is 86.10, and CronQuestions Hit@1 is 97.10.
-- The framework improves as backbone capabilities increase. Fact Checking DA rises from 61.5 (GPT-3.5) to 68.8 (GPT-4o) and 83.3 (o4-mini).
+### Key Findings
+- CRAFT contributes significantly to complex numerical reasoning. Numerical Reasoning DA drops from 51.3 in the full model to 45.9 without CRAFT, and further to 18.4 without the code backbone.
+- Out-of-predefined scenarios are the primary source of CRAFTQA's advantage. On WikiSQL-E, GPT-4.1's Calling Denotation Accuracy is 53.57%, while TrustUQA is only 6.98%.
+- On Numerical Reasoning, the GPT-4.1 version of CRAFTQA achieved a DA of 56.06% compared to TrustUQA's 29.29%, a gain of 26.77 percentage points.
+- CRAFTQA does not sacrifice basic capabilities on standard reasoning tasks: WebQSP Hit@1 is 85.20, WikiSQL DA is 86.10, and CronQuestions Hit@1 is 97.10. The first two are slightly higher than TrustUQA, while CronQuestions is close to TrustUQA's 97.20.
+- The framework improves as backbone capability increases. Fact Checking DA increased from 61.5 with GPT-3.5 to 68.8 with GPT-4o, and reached 83.3 with o4-mini.
 
 ## Highlights & Insights
-- The key insight of this paper is that "toolsets need not be predefined statically." In structured data QA, fixed function sets are controllable but rigid; CRAFT opens the tool space via dynamic code generation.
-- There is a clear division of labor between CodeSTEP and CRAFT. The backbone steps maintain unified execution logic, while only special steps are delegated to dynamic functions, preventing the issues associated with unconstrained code generation for every problem.
-- Calling Denotation Accuracy is a valuable diagnostic metric. By specifically evaluating questions that require out-of-predefined functions, it directly verifies whether the CRAFT module addresses the intended pain point.
-- Small model results are encouraging. A robust reasoning framework can enable 7B/8B models to approach or even exceed larger closed-source models using older frameworks in complex structured reasoning.
+- The key insight of this paper is that "toolsets do not need to be locked in advance." In structured data QA, fixed function sets are controllable but rigid; CRAFT opens up the tool space with dynamic code generation.
+- There is a clear division of labor between CodeSTEP and CRAFT. The backbone steps maintain uniform execution logic, while only special steps are delegated to dynamic functions, avoiding uncontrolled free generation for every problem.
+- Calling Denotation Accuracy is a very useful diagnostic metric. By evaluating "questions that actually required out-of-predefined function calls" separately, it directly tests whether the CRAFT module resolves the target pain points.
+- Insights from small models are enlightening. A well-designed reasoning framework can enable 7B/8B models to approach or even exceed larger closed-source models using older frameworks for complex structured reasoning.
 
 ## Limitations & Future Work
-- Gains are smaller on simple standard reasoning tasks because these rarely require out-of-predefined operations, leaving little room for CRAFT's dynamic capabilities.
-- The framework depends heavily on the backbone's code generation ability. For LLMs with weak programming skills, both dynamic functions and main code sequences may fail or be low quality.
-- Code execution necessitates security and sandboxing. The paper focuses on executability, but real-world deployment requires restricting file system, network, and resource access.
-- Future work could extend to more data formats, such as semi-structured documents, graph databases, and multi-table relational databases, incorporating stronger static analysis or unit-test-style verification.
+- Small gains on simple standard reasoning tasks. Since these tasks rarely require out-of-predefined operations, CRAFT's dynamic function capability has little room to function.
+- The framework depends on the backbone's code generation ability. For LLMs with weaker programming skills, both dynamic function generation and the main code sequence may fail or produce low-quality code.
+- Code execution necessitates security and sandboxing. The paper mainly discusses executability verification, but actual deployment also requires restricting file system, network, and resource access.
+- Future work could extend to more data formats, such as semi-structured documents, graph databases, and multi-table relational databases, while incorporating stronger static analysis or unit-test-style code verification.
 
 ## Related Work & Insights
-- **vs PoT / PAL**: PoT/PAL proven that code enhances numerical reasoning, but mostly for general math or text problems; CRAFTQA connects code reasoning to unified structured data access.
-- **vs StructGPT / Readi**: These methods access structured data through iterative reading or path editing, but expressivity is limited by operator design; CRAFTQA generates functions as needed.
-- **vs TrustUQA**: TrustUQA offers strong Condition Graphs and unified queries but relies on fixed functions; CRAFTQA extends this unified representation with dynamic execution capabilities.
-- **Insights for Future Systems**: Structured data agents do not need to predefine all tools; they can provide a controlled dynamic tool generation interface with execution verification to ensure reliability.
+- **vs PoT / PAL**: PoT/PAL proved code improves numerical reasoning but focuses mostly on general math or text problems; CRAFTQA connects code reasoning to unified structured data access.
+- **vs StructGPT / Readi**: These methods access structured data through iterative reading or path editing, restricted by pre-designed operations; CRAFTQA can generate functions when new operations are needed.
+- **vs TrustUQA**: TrustUQA's Condition Graph and unified queries are strong but still rely on fixed functions; CRAFTQA continues the unified representation while filling the gap in dynamic operation capabilities.
+- **Insights for subsequent systems**: Structured data agents do not necessarily need all tools predefined; they can provide a controlled dynamic tool generation interface and ensure basic reliability through execution verification.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Dynamic custom functions are naturally integrated into structured data QA, addressing a precise problem.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covers complex, standard, and out-of-predefined scenarios across different backbones with complete evidence.
-- Writing Quality: ⭐⭐⭐⭐ Methodology is clearly formalized, and experiments are organized by Research Questions; however, discussions on code security are brief.
-- Value: ⭐⭐⭐⭐ Highly insightful for table/KG QA, enterprise data agents, and complex structured reasoning.
+- Novelty: ⭐⭐⭐⭐ Dynamic custom functions are naturally combined with structured data QA, addressing a precise problem.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers complex, standard, out-of-predefined, cross-backbone, and ablation experiments with comprehensive evidence.
+- Writing Quality: ⭐⭐⭐⭐ Method formalization is clear, and experiments are organized by RQ; however, discussion on code security and runtime environments is limited.
+- Value: ⭐⭐⭐⭐ Highly practical for table/KG QA, enterprise data agents, and complex structured reasoning.
 
 <!-- RELATED:START -->
 

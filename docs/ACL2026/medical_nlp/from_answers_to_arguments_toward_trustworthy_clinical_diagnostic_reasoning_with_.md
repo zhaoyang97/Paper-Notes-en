@@ -2,12 +2,12 @@
 title: >-
   [Paper Note] From Answers to Arguments: Toward Trustworthy Clinical Diagnostic Reasoning with Toulmin-Guided Curriculum Goal-Conditioned Learning
 description: >-
-  [ACL 2026][Medical NLP][Paper Note] This paper adapts the Toulmin Argumentation Model to the clinical diagnostic process and proposes CGCL, a three-stage curriculum training framework (Fact Gathering → Hypothesis Testing → Synthesis). Combined with the T-Eval metric for quantifying reasoning structural integrity, it achieves diagnostic reasoning quality
+  [ACL 2026][Medical NLP][Paper Note] This paper adapts the Toulmin argumentation model to the clinical diagnostic process and proposes the CGCL three-stage curriculum training framework (Fact Collection → Hypothesis Testing → Comprehensive Conclusion). Coupled with T-Eval for quantifying reasoning structural integrity, it achieves diagnostic reasoning qua
 tags:
   - ACL 2026
   - Medical NLP
 date: 2026-05-08
-content_hash: 4ce09393d41d2138
+content_hash: d33273c81e86c609
 ---
 # From Answers to Arguments: Toward Trustworthy Clinical Diagnostic Reasoning with Toulmin-Guided Curriculum Goal-Conditioned Learning
 
@@ -15,29 +15,29 @@ content_hash: 4ce09393d41d2138
 **arXiv**: [2604.11137](https://arxiv.org/abs/2604.11137)  
 **Code**: [https://github.com/Leonard-zc/CGCL](https://github.com/Leonard-zc/CGCL)  
 **Area**: Medical NLP  
-**Keywords**: Clinical Reasoning, Toulmin Argument Model, Curriculum Learning, Goal-Conditioned Learning, Trustworthy Diagnosis
+**Keywords**: Clinical Reasoning, Toulmin Argumentation Model, Curriculum Learning, Goal-Conditioned Learning, Trustworthy Diagnosis
 
 ## TL;DR
-This paper adapts the Toulmin Argumentation Model to the clinical diagnostic process and proposes CGCL, a three-stage curriculum training framework (Fact Gathering → Hypothesis Testing → Synthesis). Combined with the T-Eval metric for quantifying reasoning structural integrity, it achieves diagnostic reasoning quality comparable to Reinforcement Learning (RL) methods without the need for RL.
+This paper adapts the Toulmin argumentation model to the clinical diagnostic process and proposes the CGCL three-stage curriculum training framework (Fact Collection → Hypothesis Testing → Comprehensive Conclusion). Coupled with T-Eval for quantifying reasoning structural integrity, it achieves diagnostic reasoning quality comparable to RL methods without requiring RL.
 
 ## Background & Motivation
 
-**Background**: LLMs perform excellently on medical benchmarks (e.g., MedQA, USMLE), even surpassing human experts. However, standardized tests do not equal real-world clinical practice. Clinical decision-making requires reasoning under uncertainty, integrating incomplete information, and bearing the cost of errors.
+**Background**: LLMs perform excellently on medical benchmarks (e.g., MedQA, USMLE), even surpassing human experts. jedoch, standardized exams $\neq$ real clinical practice. Clinical decision-making requires reasoning under uncertainty, integrating incomplete information, and bearing the cost of errors.
 
-**Limitations of Prior Work**: (1) Current LLMs exhibit the dangerous "right answer + wrong reasoning" phenomenon—reaching correct conclusions through pattern matching while the reasoning process has flawed signals and lacks robust understanding; (2) Existing evaluations focus only on final answer correctness, failing to examine the logicality and evidence support of the reasoning path; (3) RL methods can theoretically optimize reasoning quality, but reward model design is difficult, training is unstable, and computational demands are high.
+**Limitations of Prior Work**: (1) Current LLMs exhibit a dangerous "correct answer + incorrect reasoning" phenomenon—deriving correct conclusions through pattern matching while the reasoning process is flawed and lacks robust understanding; (2) Existing evaluations focus only on the correctness of the final answer, failing to examine the logicality and evidential support of the reasoning path; (3) RL methods can theoretically optimize reasoning quality, but rewarded model design is difficult, training is unstable, and computational demands are high.
 
-**Key Challenge**: In the medical field, a correct answer with incorrect reasoning is more dangerous than a wrong answer—it provides false confidence and fails unpredictably when facing real-world clinical complexity. Current evaluation paradigms systematically overestimate the actual capabilities of LLMs by looking only at results.
+**Key Challenge**: In the medical field, a correct answer with incorrect reasoning is more dangerous than an incorrect answer—it provides false confidence and fails unpredictably when facing real clinical complexities. Current evaluation paradigms systematically overestimate the actual capabilities of LLMs by looking only at outcomes.
 
-**Goal**: (1) Establish a structured clinical reasoning evaluation framework; (2) Design a stable and efficient training method to teach LLMs Toulmin-style argumentative reasoning.
+**Goal**: (1) Establish a structured evaluation framework for clinical reasoning; (2) Design a stable and efficient training method to teach LLMs Toulmin-style argumentative reasoning.
 
-**Key Insight**: The Toulmin Argument Model emphasizes that claims must have evidence support, uncertainty qualifiers, and rebuttals—this highly aligns with the reasoning process of clinicians moving from symptoms to diagnosis. This model is instantiated as a structured output for clinical diagnosis.
+**Key Insight**: The Toulmin argumentation model emphasizes that claims must be supported by evidence, qualified by uncertainty, and defended against rebuttals—highly consistent with the reasoning process of clinicians moving from symptoms to diagnosis. This model is instantiated as a structured output for clinical diagnosis.
 
-**Core Idea**: A three-stage curriculum simulates the natural progression of medical training: residents extract facts and preliminary differentials → senior residents perform hypothesis testing and rebuttals → attending physicians synthesize judgments and qualify conclusions.
+**Core Idea**: A three-stage curriculum simulates the natural progression of medical training—interns extract facts and preliminary differentials → senior residents perform hypothesis testing and rebuttal → attending physicians synthesize judgments and qualify conclusions.
 
 ## Method
 
 ### Overall Architecture
-CGCL bridges "evaluation" and "training": the evaluation side is T-Eval—a framework based on the Toulmin model that directly quantifies reasoning quality; the training side is a three-stage goal-conditioned offline imitation learning pipeline. It uses a frozen policy model to generate candidate reasoning trajectories, uses T-Eval to score and select the optimal ones, and then distills these optimal trajectories into the target model via SFT. The entire process avoids RL while aiming to achieve RL-level reasoning quality.
+CGCL bridges "evaluation" and "training": the evaluation side is T-Eval—a framework based on the Toulmin argumentation model that directly quantifies reasoning quality; the training side is a three-stage goal-conditioned offline imitation learning pipeline—candidate reasoning trajectories are generated by a frozen policy model, T-Eval scores them to select the optimum, and the best trajectories are distilled into the target model via SFT. The entire process avoids RL yet aims to achieve RL-level reasoning quality.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
@@ -45,79 +45,79 @@ flowchart TD
     P["Input: Patient Case P"] --> TM["Toulmin Argument Instantiation<br/>A = {D, R, W, B, Q, Y}"]
     TM --> GEN["Frozen Policy Model Generates Candidate Reasoning Steps"]
     GEN --> TEVAL["T-Eval Reasoning Evaluation Framework<br/>Scoring by Toulmin Component Integrity"]
-    TEVAL --> SEL["Select Best Candidates → Fuse into Coherent Trajectory C^(k)"]
+    TEVAL --> SEL["Select Best Candidate → Fuse into Coherent Trajectory C^(k)"]
     SEL --> CUR
-    subgraph CUR["Three-Stage Curriculum Goal-Conditioned Learning (SFT Distillation, θ^(k) initialized from θ^(k−1))"]
+    subgraph CUR["Three-stage Curriculum Goal-Conditioned Learning (SFT Distillation, θ^(k) initialized from θ^(k−1))"]
         direction TB
-        S1["Stage 1 Fact Gathering<br/>C^(1) = {D, R}"] --> S2["Stage 2 Hypothesis Testing<br/>C^(2) = C^(1) ∪ {W, B}"]
-        S2 --> S3["Stage 3 Synthesis<br/>C^(3) = C^(2) ∪ {Q, Y}<br/>Includes Evidence-Driven Diagnosis Revision Mechanism Δ"]
+        S1["Stage 1 Fact Collection<br/>C^(1) = {D, R}"] --> S2["Stage 2 Hypothesis Testing<br/>C^(2) = C^(1) ∪ {W, B}"]
+        S2 --> S3["Stage 3 Comprehensive Conclusion<br/>C^(3) = C^(2) ∪ {Q, Y}<br/>Including Evidence-driven Diagnosis Revision Mechanism Δ"]
     end
     CUR --> OUT["Output: Trustworthy Diagnostic Argument (Full Toulmin Structure)"]
 ```
 
 ### Key Designs
 
-**1. T-Eval Reasoning Evaluation Framework: Structural Integrity Over Answer Correctness**
+**1. T-Eval Reasoning Evaluation Framework: Focusing on Structural Integrity Rather Than Just Answer Accuracy**
 
-Judging a model solely on whether the final diagnosis is correct conflates models that "guess right via pattern matching" with those that "reason correctly via rigorous logic." Their answer accuracy might be identical, but their clinical reliability differs vastly. T-Eval solves this by formalizing a diagnostic reasoning process as a Toulmin argument $A=\{D,R,W,B,Q,Y\}$: $D$ is the case evidence, $R$ is the differential diagnosis ranking, $W$ is the warrant from evidence to hypothesis (pathophysiological link), $B$ is the backing clinical principles, $Q$ is the uncertainty qualifier, and $Y$ is the final diagnosis. By scoring these six components independently and combining them into an argumentative integrity score, the reasoning path transforms from an "invisible process" into a measurable object. "False confidence" models—those with correct answers but lacking $W/B/Q$ support—are directly exposed.
+Judging a model solely on whether the final diagnosis is correct conflates models that "guess right via pattern matching" with those that "reason correctly via rigorous logic"—their answer accuracies might be identical, but their clinical reliability differs vastly. T-Eval addresses this by formalizing a diagnostic reasoning process as a Toulmin argument $A=\{D,R,W,B,Q,Y\}$: $D$ represents case evidence (Data), $R$ represents differential diagnosis ranking (Rebuttals/Reservations), $W$ is the argument from evidence to hypothesis (Warrant, e.g., pathophysiological links), $B$ is the supporting clinical principles (Backing), $Q$ is the uncertainty calibration (Qualifier), and $Y$ is the final diagnosis (Claim). By scoring these six components independently and synthesizing them into an argumentation integrity score, the reasoning path shifts from an "invisible process" to a measurable object. Models with "false confidence"—correct answers lacking $W/B/Q$ support—are thus directly exposed.
 
-**2. Three-Stage Curriculum Goal-Conditioned Learning: Mimicking Medical Progression**
+**2. Three-stage Curriculum Goal-Conditioned Learning: Mimicking Medical Training Progression from Fact Gathering to Conclusion**
 
-Requiring a model to generate a complete argument in one step is too difficult for models with limited capacity and often results in superficial learning. CGCL instead gradually increases the goal condition $C$, simulating the growth path from resident to senior resident to attending. Stage 1 (Fact Gathering) targets $C^{(1)}=\{D,R\}$, where the model only needs to extract clinical findings and provide preliminary differentials. Stage 2 (Hypothesis Testing) targets $C^{(2)}=C^{(1)}\cup\{W,B\}$, requiring the model to use pathophysiological evidence to argue for the primary hypothesis and rebut alternatives. Stage 3 (Synthesis) targets $C^{(3)}=C^{(2)}\cup\{Q,Y,\Delta\}$, where the model integrates all analysis to give a qualified conclusion, including evidence-driven revisions where necessary. Training data for each stage is generated by a policy model $\rightarrow$ scored by T-Eval $\rightarrow$ fused into trajectories $\rightarrow$ distilled via SFT, with each stage initialized from the previous one to accumulate capabilities layered by layer.
+Requiring a model to generate a complete argument in one step is too difficult for models with limited capacity and often results in superficial learning. CGCL instead increments the target condition $C$ stepwise, simulating the growth path of Intern → Senior Resident → Attending. In Stage 1 (Fact Collection), with target $C^{(1)}=\{D,R\}$, the model only needs to extract clinical findings and provide preliminary differentials. In Stage 2 (Hypothesis Testing), with $C^{(2)}=C^{(1)}\cup\{W,B\}$, the model must use pathophysiological evidence to argue for the primary hypothesis and refute alternatives. In Stage 3 (Comprehensive Conclusion), with $C^{(3)}=C^{(2)}\cup\{Q,Y,\Delta\}$, the model integrates all analyses to provide a conclusion with uncertainty qualifiers and evidence-driven revisions where necessary. Training data for each stage is constructed by generating candidates with a policy model → scoring with T-Eval to select the best → fusing into coherent trajectories → distilling via SFT. Each stage initializes from the previous stage's model, allowing capabilities to accumulate layer by layer.
 
-**3. Evidence-Driven Diagnosis Revision Mechanism: Forcing Updates Based on Evidence**
+**3. Evidence-driven Diagnosis Revision Mechanism: Forcing Models to Revise When Evidence Shifts**
 
-A good clinician does not just get it right once; they must correct themselves based on new evidence if an initial judgment is found wanting. This metacognitive ability is the core of clinical trustworthiness. CGCL encodes this as a hard constraint in Stage 3: when the final diagnosis $Y$ is inconsistent with the preliminary ranking in Stage 1, the model must generate a revision justification $\Delta$, explicitly stating which evidence triggered the change, marked by a revision indicator $\mathbb{I}_{\text{rev}}$. Thus, revision is no longer an accidental "change of mind" but an explicitly trained and verifiable behavior.
+A good clinician does not just get it right once; they must correct themselves based on new evidence when a preliminary judgment is found to be incorrect. This meta-cognitive ability is central to clinical trustworthiness. CGCL encodes this into the hard constraints of Stage 3: when the final diagnosis $Y$ is inconsistent with the preliminary ranking in Stage 1, the model must generate a revision rationale $\Delta$, explicitly stating which evidence triggered the change, marked by a revision indicator $\mathbb{I}_{\text{rev}}$. Thus, revision is no longer an accidental "recantation" but an explicitly trained and verifiable behavior.
 
 ### Loss & Training
-The standard SFT negative log-likelihood loss is used for sequential three-stage training. Training data for each stage consists of candidate trajectories generated by a policy model (e.g., GPT-4), scored by T-Eval, and fused after optimal selection. No RL is used; only imitation learning is employed.
+The framework utilizes the standard negative log-likelihood loss for SFT across three sequential training stages. Training data for each stage is formed by generating candidates with a policy model (e.g., GPT-4), scoring them via T-Eval, and selecting the optimal candidates for fusion. It employs imitation learning only, without using RL.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Method | Diagnostic Accuracy | T-Eval Reasoning Score | Training Stability |
-|--------|---------------------|-----------------------|--------------------|
-| Direct SFT | Medium | Low | High |
-| RL Methods (GRPO, etc.) | High | Medium-High | Low (Unstable) |
-| **CGCL (Ours)** | **High (Comparable to RL)** | **High** | **High** |
+| :--- | :--- | :--- | :--- |
+| Direct SFT | Moderate | Low | High |
+| RL Methods (e.g., GRPO) | High | Medium-High | Low (Unstable) |
+| **Ours (CGCL)** | **High (Comparable to RL)** | **High** | **High** |
 
 ### Ablation Study
 
 | Configuration | Accuracy | T-Eval | Description |
-|---------------|----------|--------|-------------|
-| Full CGCL (3 Stages) | Best | Best | Complete curriculum |
-| Single-stage direct $C^{(3)}$ | Lower | Lower | Lacks progressive capability building |
-| w/o Diagnosis Revision | Slightly lower | Lower than full | Contribution of metacognition |
+| :--- | :--- | :--- | :--- |
+| Full CGCL (3 Stages) | Best | Best | Complete Curriculum |
+| Single-stage direct $C^{(3)}$ generation | Lower | Lower | Lacks progressive capability building |
+| w/o Diagnosis Revision | Slightly Lower | Lower than Full | Contribution of meta-cognitive ability |
 | w/o T-Eval Selection | Decrease | Decrease | Random trajectory quality is insufficient |
 
 ### Key Findings
-- **Ours** is comparable to RL methods in diagnostic accuracy but offers higher training stability and computational efficiency.
-- T-Eval reveals hidden "correct answer but flawed reasoning" issues—some high-accuracy methods are significantly lacking in reasoning quality.
-- Curriculum training provides the most significant boost for small models—limited capacity requires more incremental guidance.
+- CGCL is comparable to RL methods in diagnostic accuracy but offers higher training stability and computational efficiency.
+- T-Eval reveals the hidden issue of "correct answers but flawed reasoning"—some high-accuracy methods are significantly deficient in reasoning quality.
+- Curriculum training provides the most significant boost to smaller models; limited capacity requires more progressive guidance.
 - The evidence-driven revision mechanism is crucial for clinical trustworthiness.
 
 ## Highlights & Insights
-- **Paradigm Shift from "Answering Correctly" to "Explaining Clearly"**: T-Eval upgrades clinical reasoning quality from subjective assessment to quantifiable automated metrics, which is valuable for any domain requiring explainable reasoning.
-- **Curriculum Learning as an RL Alternative**: Carefully designed curricula can reach RL-level reasoning quality while avoiding reward design complexities and training instabilities. This provides a practical option for resource-constrained scenarios.
-- **Clinical Instantiation of the Toulmin Model**: Precisely bridges philosophical argumentation theory with clinical practice, providing an actionable structured reasoning framework.
+- **Paradigm Shift from "Getting the Answer Right" to "Explaining Clearly"**: T-Eval upgrades clinical reasoning quality from subjective assessment to a quantifiable, automated metric, which is valuable for any domain requiring explainable reasoning.
+- **Curriculum Learning as an RL Alternative**: Carefully designed curricula can reach RL-level reasoning quality while avoiding reward design complexity and training instability. This provides a practical choice for resource-constrained scenarios.
+- **Clinical Instantiation of the Toulmin Model**: By precisely aligning philosophical argumentation theory with clinical practice, this work provides an operational framework for structured reasoning.
 
 ## Limitations & Future Work
-- Dependency on GPT-4 as a policy model for candidate trajectory generation remains costly.
-- T-Eval scoring quality depends on the capability of the evaluating LLM.
-- Validated only on diagnostic reasoning; not yet extended to treatment decisions or prognosis assessment.
+- Reliance on GPT-4 as a policy model for candidate trajectory generation remains costly.
+- The quality of T-Eval scoring depends on the capabilities of the evaluator LLM.
+- Verification is limited to diagnostic reasoning; it has not yet been extended to treatment decisions or prognosis assessment.
 - The three-stage division is manually designed; finer-grained or adaptive curricula could be explored.
 
 ## Related Work & Insights
-- **vs HuatuoGPT-O1**: Uses CoT distillation + RL but does not evaluate reasoning structure. **Ours** directly optimizes the Toulmin integrity of reasoning.
-- **vs MedPRM**: Trains process reward models to supervise reasoning paths, which is costly. **Ours** uses T-Eval for offline quality assessment as a surrogate for online PRMs.
-- **vs General Clinical LLMs**: Most clinical LLMs only optimize answer accuracy; **Ours** is the first to treat reasoning structure as a first-class optimization objective.
+- **vs HuatuoGPT-O1**: It uses CoT distillation + RL training but does not evaluate reasoning structure. CGCL directly optimizes the Toulmin integrity of reasoning.
+- **vs MedPRM**: It uses process reward models to supervise reasoning paths at high cost. CGCL uses T-Eval for offline quality assessment as a substitute for online PRM.
+- **vs General Clinical LLMs**: Most clinical LLMs only optimize for answer accuracy; CGCL is the first to treat reasoning structure as a first-class optimization objective.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Clinical instantiation of the Toulmin model and the T-Eval framework are highly original contributions.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Sufficient comparison with multiple baselines; T-Eval provides a new dimension of evaluation.
-- Writing Quality: ⭐⭐⭐⭐⭐ Deep motivation (danger of "correct answer + wrong reasoning"), elegant method design.
-- Value: ⭐⭐⭐⭐⭐ Proposes fundamental methodological contributions to the trustworthiness of medical AI.
+- Novelty: ⭐⭐⭐⭐⭐ The clinical instantiation of the Toulmin model and the T-Eval framework are highly original contributions.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Sufficient comparison with various baselines and methods; T-Eval provides a new dimension of evaluation.
+- Writing Quality: ⭐⭐⭐⭐⭐ Profound motivation (the danger of "correct answer + wrong reasoning"), elegant method design.
+- Value: ⭐⭐⭐⭐⭐ Provides a fundamental methodological contribution to the trustworthiness of medical AI.
 
 <!-- RELATED:START -->
 

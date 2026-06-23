@@ -2,12 +2,12 @@
 title: >-
   [Paper Note] Focus and Dilution: The Multi-stage Learning Process of Attention
 description: >-
-  [ICML 2026][Pretraining][Paper Note] In a simplified scenario where a single-layer Transformer learns Markovian data, this paper reveals and rigorously characterizes the recurring "focus–dilution" cycle in attention training through a stage-by-stage linearized gradient flow analysis around a sequence of critical points. Consistent phenomena are observed o
+  [ICML 2026][Pretraining][Paper Note] By performing phased linearization of gradient flow around a series of critical points in a simplified setting where a single-layer Transformer learns Markovian data, this paper reveals and rigorously characterizes the recurring "focus–dilution" cycles in attention training, observing consistent phenomena on WikiText a
 tags:
   - ICML 2026
   - Pretraining
 date: 2026-05-08
-content_hash: 3666a747e7fa4a88
+content_hash: 19fa1e9ff6d42820
 ---
 # Focus and Dilution: The Multi-stage Learning Process of Attention
 
@@ -15,110 +15,110 @@ content_hash: 3666a747e7fa4a88
 **arXiv**: [2605.01199](https://arxiv.org/abs/2605.01199)  
 **Code**: None  
 **Area**: LLM Pre-training / Transformer Training Dynamics  
-**Keywords**: Attention Training Dynamics, Focus–Dilution Cycle, Condensation Phenomenon, Markovian Data, Saddle Point Linearization
+**Keywords**: Attention Training Dynamics, Focus-Dilution Cycle, Condensation Phenomenon, Markovian Data, Saddle-point Linearization
 
 ## TL;DR
-In a simplified scenario where a single-layer Transformer learns Markovian data, this paper reveals and rigorously characterizes the recurring "focus–dilution" cycle in attention training through a stage-by-stage linearized gradient flow analysis around a sequence of critical points. Consistent phenomena are observed on WikiText and TinyStories.
+By performing phased linearization of gradient flow around a series of critical points in a simplified setting where a single-layer Transformer learns Markovian data, this paper reveals and rigorously characterizes the recurring "focus–dilution" cycles in attention training, observing consistent phenomena on WikiText and TinyStories.
 
 ## Background & Motivation
-**Background**: While many theoretical results exist regarding the approximation capabilities of Transformers, the mechanistic understanding of how attention progressively forms during the training process remains very weak. Existing analyses often rely on reparameterization or proxy dynamics to bypass real coupling, thereby missing the genuine interaction between embeddings, projections, and attention.
+**Background**: While many theoretical results exist regarding the approximation capabilities of Transformers, the mechanistic understanding of how attention gradually forms during the training process remains weak. Existing analyses often rely on reparameterization or proxy dynamics to bypass real coupling, thereby missing the genuine interaction between embeddings, projections, and attention.
 
-**Limitations of Prior Work**: Empirical studies have observed multi-stage switching in Transformer training, where attention can suddenly shift from highly concentrated to diffuse; however, there is no theoretical explanation for "why the switch from focus to dilution occurs" or "why focus reappears." Common NTK or proxy dynamics either wash out these phase transitions or require treating attention as a pre-fixed structure.
+**Limitations of Prior Work**: Empirical studies have observed multi-stage transitions in Transformer training, where attention suddenly shifts from highly concentrated to diffuse; however, there is no theoretical explanation for "why the switch from focus to dilution occurs" or "why focus reappears." Common NTK/proxy dynamics either drown out these phase transitions or require treating attention as a pre-fixed structure.
 
-**Key Challenge**: To preserve the essential "embedding–projection–attention" coupling while simplifying the dynamics enough for closed-form analysis. Past works have almost all made compromises between these two requirements.
+**Key Challenge**: To maintain the essential coupling of "embedding–projection–attention" while simplifying the dynamics enough for closed-form analysis. Previous works have almost all made compromises between these two.
 
-**Goal**: Without breaking the coupled structure, provide a provable mechanistic description that explains the piecewise shape of the complete training curve: explaining why condensation appears first, why attention suddenly grows at a certain moment, why it then dilutes spontaneously, and how it restarts a new cycle from symmetry breaking of low-frequency tokens.
+**Goal**: Without breaking the coupled structure, provide a provable mechanistic description that explains the segmented shape of the entire training curve: explaining why condensation appears first, why attention suddenly grows at a certain moment, why it spontaneously dilutes, and how it restarts a new cycle from the symmetry breaking of low-frequency tokens.
 
-**Key Insight**: Choosing a minimal viable setting—single-layer Transformer + Markovian data + population gradient flow—and performing local linearization near each critical point. Multiple linearized stages are then "stitched" together, where the stable/unstable directions of each stage determine the behavior of the next.
+**Key Insight**: Choose the minimal viable setting—single-layer Transformer + Markovian data + population gradient flow—and perform local linearization near each critical point. Then, "stitch" multiple linearization stages together, where the stable/unstable directions of each stage determine the behavior of the next.
 
-**Core Idea**: Training dynamics do not follow monotonic convergence but rather a trajectory that jumps segment-by-segment between multiple saddle points; the "unstable eigen-directions" at each saddle point determine whether the next stage is condensation, attention growth, or dilution.
+**Core Idea**: Training dynamics do not follow monotonic convergence but rather a trajectory that jumps between multiple saddle points in segments; the "unstable feature direction" at each saddle point determines whether the next stage is condensation, attention growth, or dilution.
 
 ## Method
 
 ### Overall Architecture
-The paper does not propose a new algorithm but rather provides a provable dynamical narrative for the complete training curve shape under the minimal setting of "single-layer Transformer + Markovian data + cross-entropy + population gradient flow." Let the vocabulary be $\mathcal{V}=[d]$, with sequences generated by a transition matrix $P=\lambda I+(1-\lambda)\mathbf{1}\pi^{\top}$ of length $s$. The model includes embeddings $W_0$, attention $W_Q, W_K$, and output $W_1$. The authors pack these into three equivalent matrices $M=W_0W_1$, $\Phi=W_0W_QW_K^{\top}W_0^{\top}$, and $W_{QK}=W_QW_K^{\top}$, deriving closed-form expressions for population gradients $\partial\mathcal{L}/\partial M$ and $\partial\mathcal{L}/\partial \Phi$. The core narrative follows a sequence of critical points: "origin $\to$ second saddle on the condensation ray $\to$ degenerate critical point on the rank-1 manifold $\to$ new critical point after symmetry breaking." Local linearization is performed at each point, and the stages are stitched together. The unstable direction at each saddle determines the next segment of the trajectory. The entire trajectory is a self-restarting loop rather than mono-convergence:
+Rather than proposing a new algorithm, the paper provides a provable dynamical narrative explaining the piecewise shape of the complete training curve for the minimalist setting of "single-layer Transformer + Markovian data + cross-entropy + population gradient flow." Let the vocabulary be $\mathcal{V}=[d]$, with sequences generated by a transition matrix $P=\lambda I+(1-\lambda)\mathbf{1}\pi^{\top}$ of length $s$. The model contains embeddings $W_0$, attention $W_Q, W_K$, and output $W_1$. The authors pack these into three equivalent matrices $M=W_0W_1$, $\Phi=W_0W_QW_K^{\top}W_0^{\top}$, and $W_{QK}=W_QW_K^{\top}$, deriving closed-form expressions for population gradients $\partial\mathcal{L}/\partial M$ and $\partial\mathcal{L}/\partial \Phi$. The core narrative follows a sequence of critical points: "Origin → Second saddle on the condensation ray → Degenerate critical point on the rank-1 manifold → New critical point after symmetry breaking," performing local linearization at each point and stitching the stages. The unstable directions at each saddle determine the next segment of the trajectory:
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 420, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    L["Piecewise Linearization Lemma (Lemma 3.1)<br/>Stays at each saddle for Θ(log 1/ε) then erupts along the most unstable direction"]
+    L["Phased Linearization Lemma (Lemma 3.1)<br/>Stay at each saddle for Θ(log 1/ε) then explode along the most unstable direction"]
     subgraph G2["Condensation Ray + Second Saddle (Design 2)"]
         direction TB
         A["Origin Saddle θ=0: Attention frozen<br/>Stage I Condensation → (W0,W1) becomes rank-1, direction locked to π"]
-        C["Second Saddle θ_c¹: Only unstable direction falls in attention block<br/>Stage II Focus → Φ tends toward ππ⊤, attention concentrates on high-frequency tokens"]
+        C["Second Saddle θ_c¹: Only unstable direction falls in attention block<br/>Stage II Focus → Φ tends toward ππ⊤, attention pushed to high-freq tokens"]
         A --> C
     end
     subgraph G3["Rank-1 Invariant Manifold + Degenerate Critical Point (Design 3)"]
         direction TB
-        E["Mass redistribution on rank-1 manifold<br/>Stage III Dilution → High-frequency and other tokens move in opposite directions, focus weakens spontaneously"]
-        H["Stuck at degenerate critical point → Low-frequency symmetry breaking O(δ) perturbation<br/>Stage IV New direction emerges, transverse unstable modes push off the manifold"]
+        E["Mass redistribution on rank-1 manifold<br/>Stage III Dilution → High-freq and other tokens move in opposite directions, focus weakens spontaneously"]
+        H["Stuck at degenerate point → Low-freq symmetry breaking via O(δ) perturbation<br/>Stage IV New direction emerges, transverse unstable mode pushes off manifold"]
         E --> H
     end
-    L -.Same template drives every saddle eruption.-> A
+    L -.Same template drives every saddle explosion.-> A
     C --> E
-    H -->|"Next cycle of Focus–Dilution"| A
+    H -->|"Next focus-dilution cycle"| A
 ```
 
 ### Key Designs
 
-**1. Piecewise Linearization Lemma (Lemma 3.1): Transforming "Saddle Stalling $\to$ Directional Eruption" into a Provable Template**
+**1. Phased Linearization Lemma (Lemma 3.1): Turning "Saddle Lag → Directional Explosion" into a Provable Template**
 
-In experiments, training curves show plateaus followed by sudden changes, but a tool to characterize these piecewise was missing. The lemma performs Taylor expansion $\dot{\Delta\theta}=J\Delta\theta+O(\|\Delta\theta\|^2)$ at each critical point $\theta_*$. It proves that if the initial perturbation $\|\Delta\theta(0)\|=\varepsilon$ is sufficiently small, the maximum real part of the Jacobian $\mu>0$, and there is a spectral gap $\rho>0$, then the nonlinear flow aligns with the linearized flow $\dot{\widetilde{\Delta\theta}}=J\widetilde{\Delta\theta}$ within an error of $C\varepsilon^2 e^{2\mu t}$. Within time $t=\Theta(\log(1/\varepsilon))$, the normalized direction $\Delta\theta(t)/\|\Delta\theta(t)\|$ is forced to align with the most unstable eigenvector $v_u$. This works because it converts the intuition of "staying near a saddle for a long time then rushing out along the most unstable direction" into a theorem with error bounds, allowing all four subsequent stages to be analyzed using the same template.
+Training curves in experiments show stages of plateaus followed by sudden changes, but a tool to characterize this piecewise was missing. The lemma performs Taylor expansion $\dot{\Delta\theta}=J\Delta\theta+O(\|\Delta\theta\|^2)$ at each critical point $\theta_*$. It proves that if the initial perturbation $\|\Delta\theta(0)\|=\varepsilon$ is small enough, the maximum real part of the Jacobian is $\mu>0$, and there is a spectral gap $\rho>0$, then the nonlinear flow aligns with the linearized flow $\dot{\widetilde{\Delta\theta}}=J\widetilde{\Delta\theta}$ within an error of $C\varepsilon^2 e^{2\mu t}$. Within time $t=\Theta(\log(1/\varepsilon))$, the normalized direction $\Delta\theta(t)/\|\Delta\theta(t)\|$ is forced to align with the most unstable eigenvector $v_u$. Its utility lies in turning the intuition of "staying near a saddle for a long time and then rushing out along the most unstable direction" into a theorem with error bounds, allowing all four stages to be analyzed under one template.
 
-**2. Condensation Ray + Second Saddle (Theorems 3.2–3.5): Explaining why attention stays idle first, then suddenly focuses on high-frequency tokens**
+**2. Condensation Ray + Second Saddle (Theorems 3.2–3.5): Explaining Why Attention Stays Still then Suddenly Focuses on High-Frequency Tokens**
 
-Empirically, attention is observed to do nothing initially and then suddenly concentrate, but the trigger condition was unclear. The key is that at the origin, $\partial\mathcal{L}/\partial\Phi=0$, so the attention subsystem has no gradient drive and remains static. Only $(W_0, W_1)$ are driven to condense into rank-1 according to $W_0/\|W_0\|\to\pi/\|\pi\|\,\alpha_1^{\top}$—this is Stage I Condensation. The trajectory slides along this condensation ray to a second critical point $\theta_c^1$, where the Jacobian cleanly decomposes into a "negative semi-definite outer block + positive semi-definite attention block." Thus, the only unstable direction lies in the attention block. The subsystem satisfies the closed form $\dot{\Delta W_Q}=c\alpha_1\alpha_1^{\top}\Delta W_K$, making $(W_Q, W_K)$ grow exponentially in the same direction, pushing $\Phi/\|\Phi\|$ toward $\pi\pi^{\top}$. Attention for all tokens concentrates on high-frequency tokens—this is Stage II Focus. Consequently, "why focus must happen and must follow condensation" is reduced to the provable fact that "unstable directions exist only in the attention block."
+Empirically, it is observed that attention often does nothing before suddenly concentrating, but the trigger conditions were unclear. The key is that at the origin $\partial\mathcal{L}/\partial\Phi=0$, so the attention subsystem has no gradient drive and remains static. Only $(W_0, W_1)$ are driven to condense into rank-1 according to $W_0/\|W_0\|\to\pi/\|\pi\|\,\alpha_1^{\top}$—this is Stage I Condensation. The trajectory slides along this condensation ray to a second critical point $\theta_c^1$, where the Jacobian cleanly decomposes into a "negative semi-definite outer block + positive semi-definite attention block." Thus, the only unstable direction falls in the attention block. The subsystem satisfies the closed-form $\dot{\Delta W_Q}=c\alpha_1\alpha_1^{\top}\Delta W_K$, where $(W_Q, W_K)$ grow exponentially in the same direction, pushing $\Phi/\|\Phi\|$ towards $\pi\pi^{\top}$. Attention for all tokens concentrates on high-frequency tokens—this is Stage II Focus. Consequently, "why focus must happen and must follow condensation" is reduced to the provable fact that the unstable direction exists only in the attention block.
 
-**3. Rank-1 Invariant Manifold + Mass Redistribution + Degenerate Critical Point (Props 3.6–3.8, Theorem 3.9): Explaining spontaneous dilution and cycle restart**
+**3. Rank-1 Invariant Manifold + Mass Redistribution + Degenerate Critical Point (Props 3.6–3.8, Theorem 3.9): Explaining Spontaneous Dilution and Cycle Restart**
 
-After focus, parameters are trapped on the rank-1 manifold $W_0=\gamma(t)\alpha_1^{\top}$, $W_1=\alpha_1\beta(t)^{\top}$, $W_{Q,K}=\lambda_{Q,K}(t)\alpha_1\tilde\alpha_1^{\top}$. Here, standard linearization is insufficient; next-order feedback from attention must be retained. Reduced dynamics yield $(1-\pi_1)\gamma_1(t)-(d-1)\pi_1\gamma_{i\neq 1}(t)\propto e^{ct}$, meaning embeddings of high-frequency tokens and other tokens are forced to move in opposite directions. This "mass redistribution" occurs without any regularization or schedule, causing attention to undergo automatic dilution (Stage III). When low-frequency tokens are perfectly symmetric, a degenerate critical point where $\partial\mathcal{L}/\partial M=\partial\mathcal{L}/\partial\Phi=0$ appears on the rank-1 manifold, causing linearization to fail and the system to stall. The authors explicitly acknowledge this and introduce an $O(\delta)$ low-frequency symmetry-breaking perturbation. Using Lyapunov–Schmidt reduction, they prove the Hessian develops a $\Theta(\delta)$ transverse unstable mode and at most an $O(\delta^2)$ tangential unstable mode, pushing the trajectory off the rank-1 manifold and birthing a new embedding direction. This initiates the next focus–dilution cycle—Stage IV—providing a physical picture where slight frequency asymmetries in real-world corpora are sufficient to keep the cycle restarting.
+After focusing, parameters are trapped on a rank-1 manifold where $W_0=\gamma(t)\alpha_1^{\top}$, $W_1=\alpha_1\beta(t)^{\top}$, and $W_{Q,K}=\lambda_{Q,K}(t)\alpha_1\tilde\alpha_1^{\top}$. Here, standard linearization is insufficient; next-order feedback from attention must be preserved. Reduced dynamics show $(1-\pi_1)\gamma_1(t)-(d-1)\pi_1\gamma_{i\neq 1}(t)\propto e^{ct}$, meaning embeddings of high-frequency tokens and others are forced to move in opposite directions. This "mass redistribution" occurs without any regularization or scheduler, causing attention to automatically undergo dilution (Stage III). When low-frequency tokens are perfectly symmetric, a degenerate critical point appears on the rank-1 manifold where $\partial\mathcal{L}/\partial M=\partial\mathcal{L}/\partial\Phi=0$, causing the system to get stuck. The authors explicitly acknowledge this and introduce $O(\delta)$ low-frequency symmetry-breaking perturbations. Using Lyapunov–Schmidt reduction, they prove the Hessian produces a transverse unstable mode of $\Theta(\delta)$ and a tangential unstable mode of at most $O(\delta^2)$, pushing the trajectory off the rank-1 manifold and birthing new embedding directions to start the next cycle—this is Stage IV, providing a physical picture where slight frequency asymmetries in real corpora are sufficient to keep the cycles restarting.
 
 ### Loss & Training
-The training objective is the cross-entropy of the final token $\mathcal{L}(\theta)=N^{-1}\sum_i\ell(f_\theta(X_i)_s,y_i)$. The analysis uses population gradient flow $\dot\theta=-\nabla\mathcal{L}(\theta)$ in the $(N,s)\to\infty$ limit. All stages assume an initialization of $\mathcal{N}(0,\varepsilon^2)$ with a tiny scale $\varepsilon\ll 1$, ensuring the trajectory starts within an $O(\varepsilon)$ neighborhood of the origin.
+The training objective is the cross-entropy of the final token $\mathcal{L}(\theta)=N^{-1}\sum_i\ell(f_\theta(X_i)_s,y_i)$. The analysis uses population gradient flow $\dot\theta=-\nabla\mathcal{L}(\theta)$ in the $(N,s)\to\infty$ limit. All stages assume initialization $\mathcal{N}(0,\varepsilon^2)$ with a minimal scale $\varepsilon\ll 1$, ensuring the trajectory starts within an $O(\varepsilon)$ neighborhood of the origin critical point.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Experimental Data | Observed Stages | Theoretical Correspondence |
-|----------|--------------|--------------|
-| Synthetic Markovian data, $\pi=(0.75,0.19,0.05,0.01)$ | Full Stage I–IV appear | $(W_0,W_1)$ become rank-1 first, $W_Q,W_K$ high-rank unchanged (Thm 3.2); then a sudden jump into rank-1 pulls all attention to token 0; subsequently, low-frequency token embeddings retreat; finally, orthogonal directions emerge |
-| WikiText real-world corpus | Mid-frequency token "continue" shows four-phase change: Dilution $\to$ focus to whitespace $\to$ dilution again $\to$ focus back to itself | Consistent with "focus–dilution" periodic prediction |
-| TinyStories | Attention evolution for input [the, comma, a, full, been] is isomorphic to WikiText | Validates applicability of Markov approximation on weakly non-Markovian text |
+| Experimental Data | Observed Stages | Correspondence to Theory |
+| :--- | :--- | :--- |
+| Synthetic Markovian data, $\pi=(0.75,0.19,0.05,0.01)$ | Stages I–IV fully appear | $(W_0,W_1)$ become rank-1 first, $W_Q,W_K$ high-rank unchanged (Thm 3.2); then sudden shift to rank-1 concentrating all attention on token 0; then low-freq token embeddings retract; finally orthogonal directions emerge |
+| WikiText real corpus | Mid-frequency token "continue" shows 4-phase change: Dilution → Focus on whitespace → Dilution again → Focus back on itself | Consistent with periodic "focus-dilution" predictions |
+| TinyStories | Attention evolution for input [the, comma, a, full, been] is isomorphic to WikiText | Validates applicability of Markovian approximation on weakly non-Markovian text |
 
 ### Ablation Study
 
 | Configuration | Key Observation | Explanation |
-|------|----------|------|
-| Different $P$, same $\pi$ | All reproduce four stages in the same order | Stage switching is determined by the frequency structure of $\pi$ rather than specific $P$ |
-| PCA embedding trajectories | Stage I–II unidirectional growth, Stage III contraction, Stage IV orthogonal eruption | Directly corresponds to "mass redistribution" and "de-degeneration" on the rank-1 manifold |
-| Attention entropy and $\|W_0\|$ time series | Entropy decreases then increases then decreases; norm repeatedly expands and contracts on low-freq tokens | "Focus–dilution" cycles occur more than once, validating the predicted periodicity |
+| :--- | :--- | :--- |
+| Different $P$ matrices, same $\pi$ | All reproduce four stages in same order | Stage transitions are determined by the frequency structure of $\pi$ rather than specific $P$ |
+| PCA embedding trajectories | Stage I–II growth in one direction, Stage III contraction, Stage IV explosion in orthogonal direction | Directly corresponds to "mass redistribution" and "degeneracy removal" on the rank-1 manifold |
+| Attention entropy and $\|W_0\|$ time series | Entropy decreases then increases then decreases; norms of low-freq tokens oscillate | "Focus–dilution" cycles appear more than once, validating the predicted periodicity |
 
 ### Key Findings
-- The emergence of the focusing phase is entirely determined by the fact that "at the saddle point on the condensation ray, the attention block is the only unstable direction." This is why attention always "stays idle first, then suddenly concentrates on high-frequency tokens."
-- The dilution phase requires no scheduling; it is a spontaneous result of the "high-frequency vs. other tokens" opposite motion of embeddings on the rank-1 manifold, independent of regularization or learning rate decay.
-- On data with perfectly symmetric low-frequency tokens, the theory predicts the system will stall at a degenerate critical point. Experiments show that if low-frequency frequencies are forced to align manually, training indeed stalls for a long time, proving that weak asymmetry in real corpora is critical for restarting the cycle.
+- The emergence of the focus phase is entirely determined by the fact that "at the saddle point on the condensation ray, the attention block is the only unstable direction"; this explains why attention always "stays still first, then suddenly concentrates on high-frequency tokens."
+- The dilution phase requires no scheduler; it is a spontaneous result of "high-frequency vs. other token reverse movement" among embeddings on the rank-1 manifold, independent of regularization or learning rate decay.
+- On data with perfectly symmetric low-frequency tokens, the theory predicts the system will get stuck at a degenerate critical point. In experiments, manually alignment of low-frequency frequencies indeed leads to long-term training stagnation, proving that weak asymmetry in real corpora is key to restarting the cycle.
 
 ## Highlights & Insights
-- The seemingly indescribable "phase transitions" on the training curve are unified into a framework of "linearization around saddles + unstable modes," avoiding the introduction of extra proxy dynamics. This "piecewise linearization + stitching" approach can be applied to other networks with phase transitions (e.g., two-layer MLPs, GAN training).
-- "Mass redistribution" is the most "aha" discovery of this paper: even when attention is fixed toward high-frequency tokens, next-order feedback alone can cause embeddings to dilute themselves without external scheduling. This implies many empirical "self-correction" behaviors might not be so mysterious.
-- Using "tiny asymmetries between low-frequency tokens" to resolve degenerate critical points elevates subtle distribution non-symmetries to key parameters of training dynamics. This lens can be transferred to analyze "plateau" phenomena in fine-tuning or continual learning.
+- The authors unify seemingly indescribable "phase transitions" on training curves into a framework of "linearization around saddles + unstable modes," avoiding the introduction of extra proxy dynamics. This "phased linearization + stitching" approach can be borrowed for other networks with phase transitions (e.g., two-layer MLPs, GAN training).
+- "Mass redistribution" is the most significant discovery: even when attention is already fixed on high-frequency tokens, next-order feedback alone causes embeddings to dilute themselves without external scheduling. This suggests many empirical "self-correction" behaviors might not be mysterious.
+- Using "slight asymmetry among low-frequency tokens" to resolve degenerate critical points raises subtle data distribution asymmetries to the status of key parameters in training dynamics, a lens that could be transferred to analyze "plateau" phenomena in fine-tuning or continual learning.
 
 ## Limitations & Future Work
-- The theory only covers a minimal model (single-layer, single-head, no LayerNorm, population gradient flow); multi-layer and multi-head setups introduce additional coupling, and it is unclear if the stage structure remains as distinct.
-- It assumes a very small initialization $\varepsilon\ll 1$ for the piecewise linearization to hold. Under standard initialization, the condensation stage might be skipped entirely, and phase transitions could be disrupted.
-- Verification on real corpora is limited to small-scale, single-epoch settings like WikiText/TinyStories. Proving focus–dilution cycles persist throughout LLM pre-training requires extending the analysis to actual optimizers with LayerNorm, AdamW, and warmup, and characterizing the interaction between perturbation $\delta$ and sampling noise.
+- The theory only covers minimalist models: single-layer, single-head, no LayerNorm, and population gradient flow. Multi-layer and multi-head setups introduce extra coupling, and it is unclear if the stage structure remains as distinct.
+- The assumption of very small initialization $\varepsilon\ll 1$ is required for phased linearization; under standard initialization, the condensation stage might be skipped entirely, and phase transitions could be disrupted.
+- Validation on real corpora is limited to small-scale, single-epoch settings like WikiText/TinyStories. To show that these focus–dilution cycles persist throughout LLM pre-training, the analysis needs to be extended to practical optimizers with LayerNorm, AdamW, and warmups, characterizing the interaction between perturbation $\delta$ and sampling noise.
 
 ## Related Work & Insights
-- **vs. Chen & Luo (2025) on condensation**: This paper restates and refines the condensation theorem, explicitly locking the condensation direction to the steady-state distribution $\pi$, and proceeds to analyze everything that happens after condensation.
-- **vs. Tian et al. (2024) experimental observations on concentration-to-diffusion**: This paper provides the first saddle-to-saddle explanation for this phenomenon, noting that "dilution" is not an over-fitting or regularization effect but an inevitable mass-redistribution on the rank-1 manifold.
-- **vs. Chang et al. (2024) on multi-stage learning curves**: This paper elevates multi-stage behavior from empirical description to a provable dynamical structure and provides the specific mechanism for how the next stage is triggered (unstable eigenvectors + symmetry breaking).
+- **vs. Chen & Luo (2025) on condensation**: This work reviews and refines the condensation theorem, explicitly locking the condensation direction to the steady-state distribution $\pi$ and analyzing everything that happens after condensation.
+- **vs. Tian et al. (2024) experimental observations of attention from concentrated to diffuse**: This paper provides the first saddle-to-saddle explanation for this phenomenon, noting that "dilution" is not an over-fitting or regularization effect but an inevitable mass-redistribution on the rank-1 manifold.
+- **vs. Chang et al. (2024) on staged learning curves**: This paper elevates multi-stage studies from empirical description to provable dynamical structures, providing the specific mechanism for "how the next stage is triggered" (unstable eigenvectors + symmetry breaking).
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐⭐ Uses linearization to stitch a multi-stage phase transition map and provides a unique theoretical explanation for "dilution" and "cycle restart."
-- Experimental Thoroughness: ⭐⭐⭐ Synthetic experiments align perfectly with theorems, but real-world corpora only cover two small datasets.
-- Writing Quality: ⭐⭐⭐⭐ Concepts are clear, but theorem statements are dense; readers may need background in spectral theory and Lyapunov–Schmidt reduction.
-- Value: ⭐⭐⭐⭐ Provides a general language for "reading Transformer training curves" and serves as a strong starting point for explaining more complex transitions.
+- Experimental Thoroughness: ⭐⭐⭐ Synthetic experiments align highly with theory, but real corpus validation covers only two small datasets.
+- Writing Quality: ⭐⭐⭐⭐ Concepts are clear, but theorem statements are dense, requiring background in spectral theory and Lyapunov–Schmidt reduction.
+- Value: ⭐⭐⭐⭐ Provides a universal language for "reading Transformer training curves," making it a strong starting point for explaining more complex phase transitions.
 
 <!-- RELATED:START -->
 
@@ -127,10 +127,10 @@ The training objective is the cross-entropy of the final token $\mathcal{L}(\the
 ## Related Papers
 
 - [\[ICML 2025\] On the Role of Label Noise in the Feature Learning Process](../../ICML2025/llm_pretraining/on_the_role_of_label_noise_in_the_feature_learning_process.md)
+- [\[ICLR 2026\] Conditioned Initialization for Attention](../../ICLR2026/llm_pretraining/conditioned_initialization_for_attention.md)
 - [\[NeurIPS 2025\] The Atlas of In-Context Learning: How Attention Heads Shape In-Context Retrieval Augmentation](../../NeurIPS2025/llm_pretraining/the_atlas_of_in-context_learning_how_attention_heads_shape_in-context_retrieval_.md)
 - [\[ICLR 2026\] Deconstructing Positional Information: From Attention Logits to Training Biases](../../ICLR2026/llm_pretraining/deconstructing_positional_information_from_attention_logits_to_training_biases.md)
 - [\[ACL 2026\] Toward Consistent World Models with Multi-Token Prediction and Latent Semantic Enhancement](../../ACL2026/llm_pretraining/toward_consistent_world_models_with_multi-token_prediction_and_latent_semantic_e.md)
-- [\[ICLR 2026\] CHAMMI-75: Pre-training multi-channel models with heterogeneous microscopy images](../../ICLR2026/llm_pretraining/chammi-75_pre-training_multi-channel_models_with_heterogeneous_microscopy_images.md)
 
 </div>
 

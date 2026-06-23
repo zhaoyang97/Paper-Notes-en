@@ -24,7 +24,7 @@ item_total: 3
 
 **🧠 NeurIPS2025** · **3** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (2)](../../ICML2026/nlp_understanding/index.md) · [💬 ACL2026 (33)](../../ACL2026/nlp_understanding/index.md) · [🔬 ICLR2026 (1)](../../ICLR2026/nlp_understanding/index.md) · [🤖 AAAI2026 (1)](../../AAAI2026/nlp_understanding/index.md) · [📹 ICCV2025 (1)](../../ICCV2025/nlp_understanding/index.md)
+📌 **Same area in other venues:** [🔬 ICLR2026 (2)](../../ICLR2026/nlp_understanding/index.md) · [💬 ACL2026 (34)](../../ACL2026/nlp_understanding/index.md) · [🧪 ICML2026 (2)](../../ICML2026/nlp_understanding/index.md) · [🤖 AAAI2026 (1)](../../AAAI2026/nlp_understanding/index.md) · [📹 ICCV2025 (1)](../../ICCV2025/nlp_understanding/index.md)
 
 **[Generalization Error Analysis for Selective State-Space Models Through the Lens of Attention](generalization_error_analysis_for_selective_state-space_models_through_the_lens_.md)**
 

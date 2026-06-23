@@ -2,136 +2,143 @@
 title: >-
   [Paper Note] Geometrically Constrained Outlier Synthesis
 description: >-
-  [ICML 2026][AI Safety][Paper Note] GCOS synthesizes virtual outliers along geometric off-manifold directions in the "small variance subspace" of ID feature PCA. It controls synthesis intensity using a "conformal shell" $[\alpha_\text{inner}, \alpha_\text{outer}]$ derived from calibrated Mahalanobis quantiles. Combined with contrastive regularization usi
+  [ICML 2026][AI Safety][Paper Note] GCOS synthesizes virtual outliers along geometric off-manifold directions within the "small-variance subspace" of ID feature PCA. It regulates synthesis intensity via a "conformal shell" $[\alpha_\text{inner},\alpha_\text{outer}]$ derived from Mahalanobis quantiles of a calibration set. Combined with a contrastive regu
 tags:
   - ICML 2026
   - AI Safety
 date: 2026-05-08
-content_hash: 498855605263c38c
+content_hash: 472527cc8137a2a1
 ---
-markdown
 # Geometrically Constrained Outlier Synthesis
 
 **Conference**: ICML 2026  
 **arXiv**: [2603.08413](https://arxiv.org/abs/2603.08413)  
 **Code**: None  
-**Area**: AI Security / OOD Detection  
-**Keywords**: Virtual Outlier Synthesis, Conformal Prediction, Feature Manifold, Contrastive Regularization, Near-OOD
+**Area**: AI Safety / OOD Detection  
+**Keywords**: Virtual outlier synthesis, conformal prediction, feature manifold, contrastive regularization, near-OOD
 
 ## TL;DR
-GCOS synthesizes virtual outliers along geometric off-manifold directions in the "small variance subspace" of ID feature PCA. It controls synthesis intensity using a "conformal shell" $[\alpha_\text{inner}, \alpha_\text{outer}]$ derived from calibrated Mahalanobis quantiles. Combined with contrastive regularization using an adaptive margin, it improves average AUROC across 4 near-OOD datasets from VOS's 86.21 to 93.47.
+GCOS synthesizes virtual outliers along geometric off-manifold directions within the "small-variance subspace" of ID feature PCA. It regulates synthesis intensity via a "conformal shell" $[\alpha_\text{inner},\alpha_\text{outer}]$ derived from Mahalanobis quantiles of a calibration set. Combined with a contrastive regularization loss using an adaptive margin, it improves average AUROC from 86.21 (VOS) to 93.47 across four near-OOD datasets.
 
 ## Background & Motivation
 
-**Background**: Image classifiers are generally overconfident on OOD inputs. A mainstream mitigation is Outlier Exposure—constructing "virtual outliers" during training and separating them from ID features via energy regularization. A representative work, VOS, fits Gaussians in the feature space of each class and samples from the tails as virtual outliers.
+**Background**: Image classifiers are generally overconfident on OOD inputs. A mainstream mitigation strategy is Outlier Exposure—constructing "virtual outliers" during training and pushing them away from ID data via energy regularization. A representative work, VOS, fits Gaussians in the feature space of each class and samples from the tails as virtual outliers.
 
-**Limitations of Prior Work**: Methods like VOS model outliers as samples from simple parametric distributions (e.g., class-conditional Gaussians), which faces two issues: (1) Real-world anomalies often possess structured, non-Gaussian properties that Gaussian tail sampling cannot cover; (2) If the learned feature space geometry is poor, synthesized points may fall into ID regions or meaningless distant areas, losing the regularization signal.
+**Limitations of Prior Work**: Methods like VOS model outliers as samples from simple parametric distributions (e.g., class-conditional Gaussians), which faces two issues: (1) real-world anomalies are often structured and non-Gaussian, which Gaussian tail sampling fails to cover; (2) if the learned feature space geometry is poor, synthesized points may fall into ID regions or meaningless distant zones, wasting the regularization signal.
 
-**Key Challenge**: Calibrating the "difficulty" of synthesized outliers is difficult—points too close to ID are inseparable, while those too far are trivial. VOS uses a fixed probability density threshold, but such thresholds are sensitive to feature space shape. Furthermore, the field primarily evaluates on far-OOD (semantically unrelated to the training domain), avoiding the more dangerous **near-OOD** (unseen fine-grained classes within the same domain).
+**Key Challenge**: The "difficulty" of synthesized outliers is hard to strike—if they are too close to ID, they become inseparable; if too far, they become trivial. VOS uses fixed probability density thresholds, but these are sensitive to the shape of the feature space. Furthermore, the field mostly evaluates on far-OOD (semantically unrelated to the training domain), avoiding the more dangerous **near-OOD** (unseen fine-grained classes within the same domain).
 
-**Goal**: (1) Eliminate dependence on preset parametric distributions, allowing synthesized points to follow the learned manifold geometry; (2) Use a calibratable mechanism that does not require per-dataset tuning to control the "strangeness" of synthesized points; (3) Shift the evaluation focus to near-OOD.
+**Goal**: (1) Move away from dependence on preset parametric distributions to ensure synthesized points follow the learned manifold geometry; (2) use a calibratable mechanism that does not require per-dataset tuning to control outlier "strangeness"; (3) shift the evaluation focus to near-OOD.
 
-**Key Insight**: The authors observe that "large variance principal components" from PCA characterize the main manifold structure, while moving along "small variance principal components" directions corresponds to off-manifold directions that are rare yet close to the data center—a natural geometric prior determined by the data itself. Simultaneously, Conformal Prediction (CP) provides a natural quantile-based language to judge how "strange" a point is: using $q_{95}$ and $q_{99}$ of nonconformity scores as thresholds allows for defining a "hard negative band" without hyperparameter tuning.
+**Key Insight**: The authors observe that "principal components with large variance" in PCA describe the main structure of the manifold, while moving along "principal components with small variance" corresponds to off-manifold directions that are rare yet close to the data center—a natural geometric prior determined by the data itself. Simultaneously, Conformal Prediction (CP) provides a natural language for "how strange a point is": using $q_{95}$ and $q_{99}$ of nonconformity scores as thresholds allows for defining a "hard negative band" without manual tuning.
 
-**Core Idea**: Use PCA small variance directions to determine "where to go," use CP-inspired Mahalanobis quantile shells to determine "how far to go," and apply contrastive loss to push these geometry-aware virtual outliers away from ID features.
+**Core Idea**: Use small-variance PCA directions to decide "where to go," use a CP-inspired Mahalanobis quantile shell to decide "how far to go," and apply a contrastive loss to push these geometrically aware virtual outliers away from ID features.
 
 ## Method
 
 ### Overall Architecture
-GCOS addresses the two empirical questions of "where to synthesize virtual outliers" and "how far to synthesize them." The mechanism is attached to the penultimate feature layer $\mathbf{z} \in \mathbb{R}^D$ and decoupled from the backbone (WRN-40-2 is used in experiments). Each epoch, it fits subspace statistics and calibrates difficulty thresholds for each class on a calibration set. Each batch then samples virtual outliers along geometric directions to be backpropagated with the classification loss. It reformulates outlier synthesis from a generative task into a geometric sampling problem in PCA subspaces.
+GCOS addresses the empirical problem of "where and how far" to synthesize virtual outliers. It attaches its mechanism to the penultimate layer features $\mathbf{z}\in\mathbb{R}^D$ before the classification layer, decoupling it from the backbone (WRN-40-2 used in experiments). Every epoch, it fits subspace statistics and calibrates difficulty thresholds per class on a calibration set. Every batch, it samples virtual outliers along geometric directions to be backpropagated with the classification loss. Essentially, it reformulates outlier synthesis from a generative task into a geometric sampling problem in the PCA subspace.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["Penultimate ID Feature z<br/>backbone (WRN-40-2)"] --> B["Per-class PCA (Per epoch)<br/>Large PC=Manifold / Small PC=Off-manifold"]
-    B --> C["Geometric-aware Synthesis Direction<br/>Move along small PC direction v"]
-    B --> D["Conformal-inspired Shell [α_inner, α_outer]<br/>Calibration set Mahalanobis q95/q99"]
-    C --> E["Synthesize Virtual Outliers<br/>z_ood(α)=μ+αv, α~U[α_inner,α_outer]"]
+    A["Penultimate ID features z<br/>backbone (WRN-40-2)"] --> B["Per-class PCA (every epoch)<br/>Large PCs = Main structure / Small PCs = Off-manifold"]
+    B --> C["Geometrically-aware synthesis directions<br/>Move along small-variance PC direction v"]
+    B --> D["Conformal-inspired shell [α_inner, α_outer]<br/>Calibration Mahalanobis q95/q99 quantiles"]
+    C --> E["Synthesize virtual outliers<br/>z_ood(α)=μ+αv, α~U[α_inner,α_outer]"]
     D --> E
-    G["ID Samples z_id"] --> F["Adaptive Margin Contrastive Reg L_reg<br/>Energy strangeness + Batch quantile margin"]
+    G["ID samples z_id"] --> F["Contrastive regularization L_reg with adaptive margin<br/>Energy strangeness + batch quantile margin"]
     E --> F
     F --> H["Total Loss L = L_CE + λ·L_reg<br/>Inference uses standard energy score"]
 ```
 
 ### Key Designs
 
-**1. Geometric-aware Synthesis Direction: Replacing Gaussian tail sampling with PCA small variance directions**
+**1. Geometrically-aware synthesis direction: Replacing Gaussian tail sampling with small-variance PCA directions**
 
-The pain point of VOS is the assumption that outliers follow the tail of a class-conditional Gaussian, whereas real anomalies are often structured and non-Gaussian. GCOS shifts to a data-driven perspective: performing eigen-decomposition $(\mathbf{V}_\text{train}, \boldsymbol{\Lambda}_\text{train})$ on features of each class. The first $K$ principal components (PCs) that explain $\ge \eta$ (default 90%) cumulative variance are treated as the "large PCs" of the manifold structure. The remaining "small PCs" are natural off-manifold directions. Moving samples along these directions keeps them "near the data center but rare in training," hitting the weak spots of OOD detectors. The synthesis direction $v$ is either the average of all small PCs or synthesized per direction. $\mathbf{z}_\text{ood}(\alpha) = \mu + \alpha v$, with random signs to support bidirectional movement. This bypasses the Gaussian assumption using PCA geometric priors.
+The limitation of VOS lies in assuming outliers follow the tails of a class-conditional Gaussian, whereas real anomalies are often non-Gaussian. GCOS adopts a data-driven perspective: it performs eigen-decomposition $(\mathbf{V}_\text{train},\boldsymbol{\Lambda}_\text{train})$ on each class's features. The first $K$ principal components (PCs) that explain $\ge\eta$ (default 90%) of the cumulative variance are treated as "large PCs" describing the manifold structure. The remaining "small PCs" are natural off-manifold directions—moving samples along these directions results in points that are "near the data center but virtually unseen during training," precisely hitting the blind spots of OOD detectors. The synthesis direction $v$ is either the average of all small PCs or synthesized per direction. Thus, by moving $\mathbf{z}_\text{ood}(\alpha)=\mu+\alpha v$ (with random sign flipping), PCA provides rare directions that adhere to the manifold geometry without requiring external generative models.
 
-**2. Conformal-inspired Shell $[\alpha_\text{inner}, \alpha_\text{outer}]$: Quantifying "difficulty" as tuning-free quantile intervals**
+**2. Conformal-inspired shell $[\alpha_\text{inner},\alpha_\text{outer}]$: Quantifying "difficulty" as tuning-free quantile intervals**
 
-Once the direction is set, "how far to go" must be decided. GCOS uses Conformal Prediction to quantify this. It computes the Mahalanobis nonconformity score $\mathcal{S}_{Mahal}(z, \mu, \{\lambda_i\}, \{v_i\}) = \sum_i \frac{((z-\mu)^T v_i)^2}{\lambda_i + \epsilon}$ on the calibration set and uses its $q_{95}$ and $q_{99}$ quantiles as shell targets. $\alpha_\text{inner}$ is defined as the minimum $\alpha$ such that $\mathcal{S}(\mathbf{z}_\text{ood}(\alpha)) = q_{95}$, and $\alpha_\text{outer}$ corresponds to $q_{99}$. Since $\mathcal{S}$ is monotonic along $\alpha$, it is solved via binary search. Sampling $\alpha \sim \mathcal{U}[\alpha_\text{inner}, \alpha_\text{outer}]$ targets a principled significance level (0.05 to 0.01) that excludes points "too ID" ($< q_{95}$) and "too trivial" ($> q_{99}$). The CP mechanism is used primarily as a geometric heuristic during training.
+With the direction set, the question is "how far to move." GCOS uses the language of Conformal Prediction to quantify this. On a calibration set, it calculates the Mahalanobis nonconformity score $\mathcal{S}_{Mahal}(z,\mu,\{\lambda_i\},\{v_i\})=\sum_i\frac{((z-\mu)^Tv_i)^2}{\lambda_i+\epsilon}$ and takes its $q_{95}$ and $q_{99}$ quantiles as shell targets. $\alpha_\text{inner}$ is defined as the minimum $\alpha$ such that $\mathcal{S}(\mathbf{z}_\text{ood}(\alpha))=q_{95}$, and $\alpha_\text{outer}$ corresponds to $q_{99}$. Since $\mathcal{S}$ is monotonic along $\alpha$, this is solved via binary search. Choosing $q_{95}/q_{99}$ aligns with standard 0.05 and 0.01 significance levels in hypothesis testing, providing a principled default. This shell excludes samples that are "too ID-like" ($< q_{95}$) or "too trivial" ($> q_{99}$), upgrading hard negative mining from heuristic thresholds to a geometrically controlled interval.
 
-**3. Adaptive Margin Contrastive Regularization Loss $\mathcal{L}_{reg}$: Separating inference scores**
+**3. Contrastive regularization loss $\mathcal{L}_{reg}$ with adaptive margin: Pulling apart the inference scores**
 
-To push ID and OOD apart using the same score used during inference, GCOS defines $\mathcal{L}_{reg} = \mathbb{E}[\max(0, \mathcal{S}_\mathcal{L}(\mathbf{z}_{id}|\mathcal{M}_{y_{id}}) - \min_k \mathcal{S}_\mathcal{L}(\mathbf{z}_{ood}|\mathcal{M}_k) + m)]$. It utilizes a decoupled approach: Mahalanobis for geometric synthesis and Energy Strangeness Score $\mathcal{S}_\mathcal{L}(\mathbf{z}) = \log \sum_i w_i \exp(h_\phi(\mathbf{z})_i)$ for regularization. The margin $m$ is adaptive; since score scales drift per epoch, $m$ is calculated as the difference between the 95th and 50th percentiles of positive scores within each batch, allowing it to contract automatically with the score distribution.
+To ensure ID and OOD samples are separated by the score used at inference, GCOS defines $\mathcal{L}_{reg}=\mathbb{E}[\max(0,\mathcal{S}_\mathcal{L}(\mathbf{z}_{id}|\mathcal{M}_{y_{id}})-\min_k\mathcal{S}_\mathcal{L}(\mathbf{z}_{ood}|\mathcal{M}_k)+m)]$. It intentionally decouples the components: it use Mahalanobis for geometric synthesis, while $\mathcal{S}_\mathcal{L}$ in the regularization term uses the Energy Strangeness Score $\mathcal{S}_\mathcal{L}(\mathbf{z})=\log\sum_i w_i\exp(h_\phi(\mathbf{z})_i)$ to match inference. The margin $m$ is also not a fixed value; as score magnitudes drift during training, $m$ is set to the difference between the 95th and 50th percentiles of the positive class scores within each batch. This trick avoids manual tuning and allows the margin to shrink or expand automatically with the score distribution.
 
 ### Loss & Training
-The total loss is $\mathcal{L} = \mathcal{L}_{CE} + \lambda \mathcal{L}_{reg}$. Inference follows the standard energy score path. To mitigate the loss of exchangeability from using the calibration set in training, authors maintain two independent calibration sets: one for synthesis/regularization and one for final inference-time conformal hypothesis testing. The PCA variance threshold $\eta$ defaults to 90%, and $q_{95}/q_{99}$ require no tuning.
+The total loss is $\mathcal{L}=\mathcal{L}_{CE}+\lambda\mathcal{L}_{reg}$. Inference follows the standard energy score path (with an extension for conformal hypothesis testing in Appendix D). To mitigate the violation of exchangeability caused by using the calibration set during training, the authors maintain two independent calibration sets: one for online synthesis/regularization and one reserved for final inference. The PCA variance threshold $\eta$ defaults to 90%, and $q_{95}/q_{99}$ require no tuning.
 
 ## Key Experimental Results
 
 ### Main Results
-Four near-OOD datasets: Colored MNIST (shuffled color-digit correlation), Stanford Dogs (unseen breeds), MVTec (anomalies within the same category), and Retinopathy (other eye diseases vs. DR grades). Backbone is WRN-40-2.
+Four near-OOD datasets: Colored MNIST (randomized color-digit correlation), Stanford Dogs (unseen breeds), MVTec (defective parts of the same class), and Retinopathy (other eye diseases vs. 5-level DR). Backbone: WRN-40-2.
 
 | Dataset | Metric | GCOS | VOS | NCIS (Prev. SOTA) | Gain |
-| :--- | :--- | :--- | :--- | :--- | :--- |
+|---------|--------|------|-----|------------------|------|
 | C-MNIST | AUROC / FPR95 | **99.50 / 1.00** | 94.71 / 18.50 | 96.72 / 24.50 | +2.78 AUROC, −23.5 FPR95 |
 | Dogs | AUROC / FPR95 | **99.55 / 0.00** | 99.25 / 5.00 | 99.35 / 10.00 | +0.20 AUROC, −10 FPR95 |
-| MVTec | AUROC / FPR95 | 95.61 / 23.08 | 80.37 / 70.77 | **96.50 / 3.08** | Slightly lower than NCIS |
+| MVTec | AUROC / FPR95 | 95.61 / 23.08 | 80.37 / 70.77 | **96.50 / 3.08** | Slightly behind NCIS |
 | Retinopathy | AUROC / FPR95 | **79.23 / 73.00** | 70.52 / 80.00 | 75.29 / 85.50 | +3.94 AUROC, −12.5 FPR95 |
-| **Median AUROC** | — | **93.47** | 86.21 | 91.97 | **+1.50 vs SOTA** |
+| **Avg. AUROC** | — | **93.47** | 86.21 | 91.97 | **+1.50 vs SOTA** |
 
 ### Ablation Study
 
-| Configuration | Avg. AUROC | Note |
-| :--- | :--- | :--- |
-| GCOS Full (Mahalanobis Synthesis + Energy Reg) | 93.47 | Default |
-| Mahalanobis for Reg (same source) | (See App. H) | Decoupled hybrid is better |
-| VOS-style uncertainty loss instead of $\mathcal{L}_{reg}$ | (See App. H) | Validates synthesis strategy |
-| Direction: average vs per direction | — | Per direction is more granular |
-| Variance threshold $\eta$ | Robust | Insensitive to default 90% |
-| No regularization baseline | 84.64 | Drop of ~9 AUROC |
+| Configuration | Avg. AUROC | Description |
+|---------------|------------|-------------|
+| GCOS Full (Mahalanobis Synthesis + Energy Reg) | 93.47 | Default configuration |
+| Mahalanobis for Regularization | App. H | Decoupling is better than homologous |
+| VOS-style Uncertainty loss for $\mathcal{L}_{reg}$ | App. H | Validates synthesis strategy effectiveness |
+| Direction: average vs per direction | App. J | Per direction is finer but costlier |
+| Variance threshold $\eta$ | App. J | Robust to default 90% |
+| No regularization baseline | 84.64 | ~9 AUROC drop on average |
 
 ### Key Findings
-- On near-OOD, geometric-aware synthesis combined with energy inference is significantly more lightweight and effective than heavy synthesis schemes like Diffusion or Normalizing Flows (e.g., NCIS).
-- On C-MNIST, FPR95 dropped from 18.5% (VOS) to 1.0%, indicating that adaptive per-class calibration is critical for complex feature spaces.
-- UMAP visualizations show that VOS outliers scatter near cluster boundaries (risking decision boundary collapse), while GCOS outliers fall "outside" the adjacent classes in off-manifold regions, forcing the decision boundary to shrink more tightly around data clusters.
+- On near-OOD tasks, the combination of geometrically-aware synthesis and energy-based inference is significantly more lightweight and effective than heavy synthesis schemes like NCIS (based on diffusion/normalizing flow).
+- The drop in FPR95 from 18.5% (VOS) to 1.0% on C-MNIST demonstrates that for complex feature spaces with high intra-class variance, adaptive per-class calibration is crucial.
+- UMAP visualizations (Fig. 2) show that while VOS outliers are scattered near class boundaries (potentially harming the decision surface), GCOS outliers fall on the "outer" off-manifold regions of adjacent clusters. This forces the decision boundary to contract more tightly around the data clusters, providing the geometric basis for near-OOD robustness.
 
 ## Highlights & Insights
-- Formalizing the "intensity of hard negative sampling" using CP quantiles ($q_{95}/q_{99}$) provides a principled default, eliminating per-dataset threshold tuning.
-- The observation that "small variance PCs = rare off-manifold directions" is a powerful insight: PCA provides better manifold-aligned synthesis than complex generative models without the training overhead.
-- The adaptive margin using intra-batch score differences is a highly reusable trick for any max-margin scenario where score scales drift.
+- Formalizing the "intensity of hard negative sampling" using the language of CP quantiles as a $q_{95}/q_{99}$ shell provides a principled default for outlier synthesis, eliminating per-dataset threshold tuning.
+- The observation that "small-variance PC directions = rare off-manifold directions" is simple yet powerful: PCA, a tool from 1933, provides more manifold-aligned synthesis than diffusion or normalizing flows, and can be directly integrated into any backbone for training-time outlier exposure.
+- The adaptive margin using batch score differences is a highly reusable trick for any max-margin/triplet loss scenario where score magnitudes drift during training.
 
 ## Limitations & Future Work
-- Authors admit that CP coverage guarantees only strictly hold during post-hoc inference; the training phase uses it as a geometric heuristic.
-- The method depends on a separable feature space—per-class PCA estimation becomes unstable for long-tailed or overlapping distributions.
-- PCA on a rolling queue/epoch basis is cheaper than Diffusion but still heavier than VOS’s simple Gaussian sampling.
-- Future work: Hybridizing "small PC + conformal shell" with Diffusion/Flow synthesis—using the former for geometric alignment and the latter for image-space diversity.
+- The authors admit that CP coverage guarantees strictly hold only during post-hoc inference (Appendix D); during training, CP serves as a geometric heuristic.
+- The method relies on a well-separated feature space—for long-tailed or semantically overlapping settings, per-class PCA covariance estimates may be unstable. Training overhead, while lower than diffusion, is still higher than pure Gaussian sampling in VOS.
+- The evaluation is limited to four relatively small datasets, missing comparisons on major benchmarks like OpenOOD. Code is currently not public.
+- Future work could integrate "small PC + conformal shell" with diffusion synthesis—the former ensures geometric alignment while the latter provides image-space diversity.
 
 ## Related Work & Insights
-- **vs VOS (Du et al., 2022)**: VOS assumes class-conditional Gaussians, which is restrictive. GCOS uses PCA small variance directions and conformal shells, which are more geometrically aware.
-- **vs Dream-OOD / NCIS (Du 2023; Doorenbos 2024)**: These synthesize outliers in image space using complex models. GCOS operates in the feature space without image generation costs and outperforms NCIS by 1.50 AUROC points on average.
-- **vs ViM (Wang et al., 2022)**: ViM uses PCA residual space only during inference. GCOS moves this geometric insight to the training phase for regularization, demonstrating that "geometric-aware synthesis" actively shapes the feature space.
+- **vs VOS (Du et al., 2022)**: VOS uses class-conditional Gaussian tail sampling, which has strong assumptions and lacks manifold awareness. GCOS replaces this with PCA small-variance directions and a conformal quantile shell, improving average AUROC across four datasets from 86.21 to 93.47.
+- **vs Dream-OOD / NCIS (Du 2023; Doorenbos 2024)**: These synthesize outliers in image space using diffusion/normalizing flows, which is computationally expensive. GCOS operates in the penultimate feature space with no image generation cost and outperforms NCIS by 1.50 AUROC points on average.
+- **vs ViM (Wang et al., 2022)**: ViM also utilizes PCA residual space as an OOD score but only during inference. GCOS moves the geometric insight to the training phase via regularization, showing that "geometrically-aware synthesis + training regularization" shapes the feature space more fundamentally than post-hoc geometric inference alone.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Clean combination of PCA and CP quantiles.
-- Experimental Thoroughness: ⭐⭐⭐ Focused on 4 medium-scale datasets; lacks evaluation on massive benchmarks like OpenOOD.
-- Writing Quality: ⭐⭐⭐⭐ Clear motivation and honest discussion regarding CP boundaries.
-- Value: ⭐⭐⭐⭐ Lightweight, plug-and-play, and significantly improves near-OOD robustness.
+- Novelty: ⭐⭐⭐⭐ The combination of PCA small-variance directions and CP quantile shells is elegant and novel, though individual components are established.
+- Experimental Thoroughness: ⭐⭐⭐ Limited to four medium-scale datasets; lacks tests on mainstream OpenOOD benchmarks.
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation, honest discussion of CP boundaries, and well-structured diagrams.
+- Value: ⭐⭐⭐⭐ Lightweight and plug-and-play with substantial gains over VOS. Shifts focus to the practically significant near-OOD problem for safety-critical applications.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
 
+1. (ICLR 2022) VOS: Learning What You Don't Know by Virtual Outlier Synthesis
+2. (NeurIPS 2024) NCIS: Neural Conformal Outlier Synthesis
+3. (CVPR 2022) ViM: Out-of-Distribution Solutions via Virtual Logit Matching
+
+</div>
+
+<!-- RELATED:END -->
+
 ## Related Papers
 
 - [\[CVPR 2026\] Image-based Outlier Synthesis With Training Data](../../CVPR2026/ai_safety/image-based_outlier_synthesis_with_training_data.md)
+- [\[ICML 2026\] Deep Sequence Models Tend to Memorize Geometrically; It Is Unclear Why](deep_sequence_models_tend_to_memorize_geometrically_it_is_unclear_why.md)
+- [\[ICML 2026\] Old Habits Die Hard: How Conversational History Geometrically Traps LLMs](old_habits_die_hard_how_conversational_history_geometrically_traps_llms.md)
+- [\[ICML 2026\] Differentially Private Preference Data Synthesis for Large Language Model Alignment](differentially_private_preference_data_synthesis_for_large_language_model_alignm.md)
 - [\[CVPR 2026\] RAVEN: Erasing Invisible Watermarks via Novel View Synthesis](../../CVPR2026/ai_safety/raven_erasing_invisible_watermarks_via_novel_view_synthesis.md)
-- [\[ICML 2026\] VPD-100K: Towards Generalizable and Fine-grained Visual Privacy Protection](vpd-100k_towards_generalizable_and_fine-grained_visual_privacy_protection.md)
-- [\[ICML 2026\] Extending Fair Null-Space Projections for Continuous Attributes to Kernel Methods](extending_fair_null-space_projections_for_continuous_attributes_to_kernel_method.md)
-- [\[ICML 2026\] Position: Beyond Sensitive Attributes, ML Fairness Should Quantify Structural Injustice via Social Determinants](position_beyond_sensitive_attributes_ml_fairness_should_quantify_structural_inju.md)
 
 </div>
 

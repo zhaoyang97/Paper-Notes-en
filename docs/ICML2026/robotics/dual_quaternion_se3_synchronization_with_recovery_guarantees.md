@@ -2,12 +2,12 @@
 title: >-
   [Paper Note] Dual Quaternion SE(3) Synchronization with Recovery Guarantees
 description: >-
-  [ICML 2026][Robotics & Embodied AI][Paper Note] This paper parameterizes the SE(3) synchronization problem using Unit Dual Quaternions (UDQ) instead of $4\times4$ matrices. The authors calculate a spectral initialization using power iteration on a Hermitian dual quaternion matrix, followed by iterative refinement using the Dual Quaternion Generalized Power Method (D
+  [ICML 2026][Robotics & Embodied AI][Paper Note] This paper parameterizes the SE(3) synchronization problem using Unit Dual Quaternions (UDQ) instead of $4\times4$ matrices. It calculates spectral initialization via power iteration on Hermitian dual quaternion matrices, followed by iterative refinement using the Dual Quaternion Generalized Power Method (DQGPM) with e
 tags:
   - ICML 2026
   - Robotics & Embodied AI
 date: 2026-05-08
-content_hash: ab865331b4d61170
+content_hash: a350c58f08ae043f
 ---
 # Dual Quaternion SE(3) Synchronization with Recovery Guarantees
 
@@ -15,44 +15,44 @@ content_hash: ab865331b4d61170
 **arXiv**: [2602.00324](https://arxiv.org/abs/2602.00324)  
 **Code**: https://github.com/jnzhao333/dq_sync  
 **Area**: 3D Vision / Optimization / Pose Synchronization  
-**Keywords**: SE(3) Synchronization, Dual Quaternions, Spectral Method, Generalized Power Method, Multi-scan Point Cloud Registration  
+**Keywords**: SE(3) synchronization, dual quaternions, spectral methods, generalized power method, multi-scan point cloud registration  
 
 ## TL;DR
-This paper parameterizes the SE(3) synchronization problem using Unit Dual Quaternions (UDQ) instead of $4\times4$ matrices. The authors calculate a spectral initialization using power iteration on a Hermitian dual quaternion matrix, followed by iterative refinement using the Dual Quaternion Generalized Power Method (DQGPM) with element-wise projection onto $\mathrm{UDQ}^n$. This approach provides the first finite-step linear convergence guarantee and explicit error bounds for SE(3) synchronization. In multi-scan point cloud registration, it outperforms matrix-based methods in terms of rotation/translation error and computational efficiency.
+This paper parameterizes the SE(3) synchronization problem using Unit Dual Quaternions (UDQ) instead of $4\times4$ matrices. It calculates spectral initialization via power iteration on Hermitian dual quaternion matrices, followed by iterative refinement using the Dual Quaternion Generalized Power Method (DQGPM) with element-wise projection to $\mathrm{UDQ}^n$. It provides the first finite-step linear convergence and explicit error bounds for SE(3) synchronization, reducing both rotation/translation errors and computational time below those of matrix-based methods in multi-scan point cloud registration.
 
 ## Background & Motivation
 
-**Background**: SE(3) synchronization—estimating absolute poses for all nodes from a set of noisy relative poses $T_{ij}$—is a fundamental primitive for SLAM, multi-scan registration, and SfM. Mainstream approaches use $4\times4$ matrices to represent poses and perform spectral relaxation (EIG), semidefinite relaxation (SDR), or Lie algebraic averaging/Riemannian optimization, followed by a rounding step to project the solution back to SE(3).
+**Background**: SE(3) synchronization—recovering absolute poses from a set of noisy relative poses $T_{ij}$—is a fundamental primitive for SLAM, multi-point cloud registration, and SfM. Mainstream approaches represent poses as $4\times4$ matrices, employing spectral relaxation (EIG), semidefinite relaxation (SDR), or Lie algebraic averaging/Riemannian optimization, followed by a final "rounding" step back to SE(3).
 
-**Limitations of Prior Work**: Matrix representations suffer from a structural **representation gap**. When using complex numbers for $\mathrm{SO}(2)$, the isometry group of the eigenspace is exactly $\mathrm{SO}(2)$, and rounding reduces to simple normalization. For $\mathrm{SO}(d)$ matrix representations, the isometry group is $\mathrm{O}(d)$, introducing a mild reflection ambiguity solvable by SVD. However, for SE(3), since $\mathrm{SE}(3)=\mathrm{SO}(3)\ltimes\mathbb{R}^3$ is **non-compact**, while the relaxed eigenspace geometry is compact and orthogonal, the relaxed solution stays far from the manifold. Rounding becomes an "imposition of structure" rather than "error correction," necessitating multi-step heuristics (splitting rotation/translation and projecting separately) that are unstable and difficult to analyze.
+**Limitations of Prior Work**: Matrix representations suffer from a structural **representation gap**. When using complex numbers for $\mathrm{SO}(2)$, the isometry group of the eigenspace is exactly $\mathrm{SO}(2)$, and rounding simplifies to normalization. For $\mathrm{SO}(d)$ matrix representations, the isometry group is $\mathrm{O}(d)$, introducing a mild reflection ambiguity solvable via SVD. However, for SE(3), since $\mathrm{SE}(3)=\mathrm{SO}(3)\ltimes\mathbb{R}^3$ is **non-compact** while the relaxed eigenspace geometry is compact and orthogonal, the relaxed solution deviates significantly from the manifold. Rounding becomes an "imposition of structure" rather than "error correction," necessitating multi-step heuristics (splitting rotation/translation and projecting separately) that are unstable and difficult to analyze.
 
-**Key Challenge**: The goal is to choose a parameterization where the **ambiguity group of the spectral relaxation aligns exactly with the global gauge symmetry of SE(3)**, making rounding a benign projection and enabling theoretical analysis. Dual quaternions provide this alignment—the Unit Dual Quaternion ($\mathrm{UDQ}$) space is a compact 7D manifold that encodes both rotation and translation, and the eigenstructure of Hermitian dual quaternion matrices matches the gauge symmetry of SE(3) synchronization.
+**Key Challenge**: The goal is to select a parameterization such that the **ambiguity group of the spectral relaxation aligns exactly with the global gauge symmetry of SE(3)**, ensuring that rounding acts as a benign projection. Dual quaternions provide this alignment—Unit Dual Quaternions ($\mathrm{UDQ}$) form a compact 7D manifold encoding both rotation and translation, and the eigenstructure of Hermitian dual quaternion matrices matches the gauge symmetry of SE(3) synchronization.
 
-**Goal**: (1) Formalize SE(3) synchronization as a QCQP over $\mathrm{UDQ}^n$; (2) Design a two-stage algorithm with theoretical guarantees—spectral initialization + iterative refinement; (3) Provide explicit error bounds and finite-step convergence results related to noise.
+**Goal**: (1) Formalize SE(3) synchronization as a QPQC over $\mathrm{UDQ}^n$; (2) Design a two-stage algorithm with theoretical guarantees—spectral initialization followed by iterative refinement; (3) Provide finite-step convergence and explicit noise-dependent error bounds.
 
-**Key Insight**: The authors observe that while dual quaternions $\mathbb{DH}$ form a ring with zero divisors (not a field), where the magnitude is only a dual-valued pseudo-norm and the dominant eigenpair must be defined lexicographically, classic synchronization theory can still be adapted if: (a) the normalization mapping $\mathcal{N}(\cdot)$ on $\mathrm{UDQ}$ is written in closed-form and proven to be Lipschitz; (b) the error is controlled separately using the "primal part + dual part" of the dual numbers. This allows the spectral + GPM analysis framework from matrix cases to be translated to the dual quaternion setting.
+**Key Insight**: The authors observe that while dual quaternions $\mathbb{DH}$ form a ring with zero divisors (not a field), where magnitudes are dual-valued pseudo-norms and principal eigenpairs must be defined lexicographically, classic synchronization theory can be adapted if: (a) the normalization map $\mathcal{N}(\cdot)$ on $\mathrm{UDQ}$ is expressed in closed form and proven to be Lipschitz; (b) errors are controlled using the "primal part + dual part" of dual numbers, allowing the porting of the spectral + GPM analysis framework from the matrix case.
 
-**Core Idea**: By representing each pose as a unit dual quaternion $x_i\in\mathrm{UDQ}$, the problem seeks to solve $\min_{\bm{x}\in\mathrm{UDQ}^n}\|\bm{C}-\bm{x}\bm{x}^*\|_F^2$. Initialization is obtained via dual quaternion power iteration on the Hermitian DQ matrix $\bm{C}$, followed by refinement using the DQGPM, where each step projects onto $\mathrm{UDQ}^n$. This ensures every iteration point is automatically feasible and proves linear convergence to an error floor of $O(\|\bm{\Delta}\hat{\bm{x}}\|_2/n)$.
+**Core Idea**: Represent each pose as a unit dual quaternion $x_i \in \mathrm{UDQ}$ and solve $\min_{\bm{x}\in\mathrm{UDQ}^n}\|\bm{C}-\bm{x}\bm{x}^*\|_F^2$. Spectral initialization is obtained via dual quaternion power iteration on the Hermitian DQ matrix $\bm{C}$, followed by refinement using the Dual Quaternion Generalized Power Method (DQGPM) with step-wise projection to $\mathrm{UDQ}^n$. This ensures every iterate is feasible and facilitates proof of linear convergence to an error floor of $O(\|\bm{\Delta}\hat{\bm{x}}\|_2/n)$.
 
 ## Method
 
 ### Overall Architecture
-The input is a Hermitian dual quaternion measurement matrix $\bm{C}\in\mathbb{DH}^{n\times n}$, where $C_{ij}=\hat{x}_i\hat{x}_j^*+\Delta_{ij}$ and $\Delta_{ij}$ represents observation noise. The output is $\bm{x}\in\mathrm{UDQ}^n$, the estimated dual quaternions for $n$ absolute poses. The pipeline consists of two stages:
+The input is a Hermitian dual quaternion measurement matrix $\bm{C}\in\mathbb{DH}^{n\times n}$, where $C_{ij}=\hat{x}_i\hat{x}_j^*+\Delta_{ij}$ and $\Delta_{ij}$ represents observation noise. The output consists of $n$ absolute pose estimates $\bm{x}\in\mathrm{UDQ}^n$. The pipeline consists of two stages:
 
-1. **Spectral Initialization** (Algorithm 1): Power iteration is performed on $\bm{C}$ to obtain the dominant eigenvector $\bm{u}_1\in\mathbb{DH}^n$ (constrained by $\|\bm{u}_1\|_2^2=n$), followed by element-wise projection $\bm{x}^0=\Pi(\bm{u}_1)\in\mathrm{UDQ}^n$.
+1. **Spectral Initialization** (Algorithm 1): Power iteration on $\bm{C}$ yields the principal eigenvector $\bm{u}_1\in\mathbb{DH}^n$ (subject to $\|\bm{u}_1\|_2^2=n$), followed by element-wise projection $\bm{x}^0=\Pi(\bm{u}_1)\in\mathrm{UDQ}^n$;
 2. **DQGPM Refinement** (Algorithm 2): Each step involves matrix-vector multiplication $\bm{y}^k=\bm{C}\bm{x}^{k-1}$, followed by projection $\bm{x}^k=\Pi(\bm{y}^k)$, iterating until convergence.
 
-The problem is formulated as a QCQP: $\arg\max_{\bm{x}\in\mathrm{UDQ}^n} \bm{x}^*\bm{C}\bm{x}$ (Proposition 2.1 proves this is equivalent to the original least squares problem, with the objective differing by a constant factor of 2). Relaxing $\mathrm{UDQ}^n$ to the dual quaternion sphere $\|\bm{x}\|_2^2=n$ yields the dominant right eigenvector $\bm{u}_1$ of $\bm{C}$, serving as the spectral estimate. The shared operator throughout both stages is the closed-form projection $\Pi$, which transforms "heuristic rounding" into an analyzable single-step operation.
+The problem is formulated as a QPQC: $\arg\max_{\bm{x}\in\mathrm{UDQ}^n} \bm{x}^*\bm{C}\bm{x}$ (Proposition 2.1 proves equivalence to the original least squares with a constant factor of 2). Relaxing $\mathrm{UDQ}^n$ to a dual quaternion sphere $\|\bm{x}\|_2^2=n$ yields the principal right eigenvector $\bm{u}_1$ of $\bm{C}$ as the optimal solution, forming the basis for spectral estimation. The unified operator throughout both stages is the closed-form projection $\Pi$, which transforms "heuristic rounding" into an analytically tractable single step.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
     A["Input: Hermitian dual quaternion measurement matrix C<br/>C_ij = Ground truth pose product + noise Δ_ij"]
-    A --> B["Spectral Initialization via Dual Quaternion Power Iteration<br/>Obtain dominant right eigenvector u_1"]
-    B --> P1["Closed-form Projection Π<br/>Element-wise projection to UDQ^n to get x⁰"]
-    P1 --> C["DQGPM Refinement: Matrix-Vector Multiplication<br/>y^k = C·x^(k−1)"]
+    A --> B["Spectral Initialization via Dual Quaternion Power Iteration<br/>Compute principal right eigenvector u_1"]
+    B --> P1["Closed-form Projection Π<br/>Element-wise projection to UDQ^n to obtain x⁰"]
+    P1 --> C["DQGPM Refinement: Matrix-vector multiplication<br/>y^k = C·x^(k−1)"]
     C --> P2["Closed-form Projection Π<br/>x^k = Π(y^k), ensuring feasibility at each step"]
-    P2 -->|Not converged| C
+    P2 -->|Not Converged| C
     P2 -->|Converged| D["Output: n absolute poses x ∈ UDQ^n"]
 ```
 
@@ -60,71 +60,72 @@ flowchart TD
 
 **1. Closed-form Projection $\Pi:\mathbb{DH}^n\to\mathrm{UDQ}^n$ and Lipschitz Property of $\mathcal{N}(\cdot)$**
 
-Rounding in matrix methods typically involves a series of heuristics (SVD for rotation, centroid calculation, then translation adjustment), which lacks an analytical form. This paper replaces it with a controllable operator. Single-point normalization $\mathcal{N}(x)$ is defined as: when the primal part $x_{\mathrm{st}}\neq 0$, the closed form is $u_{\mathrm{st}}=x_{\mathrm{st}}/|x_{\mathrm{st}}|$, and the dual part $u_{\mathcal{I}}=x_{\mathcal{I}}/|x_{\mathrm{st}}| - (x_{\mathrm{st}}/|x_{\mathrm{st}}|)\cdot\mathrm{sc}(x_{\mathrm{st}}^*/|x_{\mathrm{st}}|\cdot x_{\mathcal{I}}/|x_{\mathrm{st}}|)$. This step explicitly removes the component in the dual part "parallel" to the primal part, corresponding to the projection of translation onto the rotation direction in SE(3). Lemma 2.5 proves $|\mathcal{N}(y)-z|\le 2|y-z|$, meaning the distance to any feasible point is expanded by at most a factor of 2 after projection. This Lipschitz property allows the spectral error bound $4\|\bm{\Delta}\|_{\mathrm{op}}/\sqrt{n}$ (Proposition 2.4) to be translated to $8\|\bm{\Delta}\|_{\mathrm{op}}/\sqrt{n}$ after projection (Theorem 2.8).
+Matrix rounding involves a sequence of heuristics—SVD for rotation, centroid calculation, then translation adjustment—lacking an analytical form. This paper replaces it with a controllable operator. Single-point normalization $\mathcal{N}(x)$ is defined: for a non-zero primal part $x_{\mathrm{st}}$, $u_{\mathrm{st}}=x_{\mathrm{st}}/|x_{\mathrm{st}}|$, and the dual part is $u_{\mathcal{I}}=x_{\mathcal{I}}/|x_{\mathrm{st}}| - (x_{\mathrm{st}}/|x_{\mathrm{st}}|)\cdot\mathrm{sc}(x_{\mathrm{st}}^*/|x_{\mathrm{st}}|\cdot x_{\mathcal{I}}/|x_{\mathrm{st}}|)$. This step explicitly removes the component of the dual part "parallel" to the primal part, corresponding to the projection of translation onto the rotation direction in SE(3). Lemma 2.5 establishes $|\mathcal{N}(y)-z|\le 2|y-z|$, meaning the distance to any feasible point is magnified by at most 2. This Lipschitz property translates the spectral solution error bound $4\|\bm{\Delta}\|_{\mathrm{op}}/\sqrt{n}$ (Proposition 2.4) into $8\|\bm{\Delta}\|_{\mathrm{op}}/\sqrt{n}$ after projection (Theorem 2.8).
 
-**2. Spectral Initialization via Dual Quaternion Power Iteration**
+**2. Dual Quaternion Power Iteration for Spectral Initialization**
 
-Relaxing the QCQP $\arg\max_{\bm{x}\in\mathrm{UDQ}^n} \bm{x}^*\bm{C}\bm{x}$ to the dual quaternion sphere $\|\bm{x}\|_2^2=n$ yields the spectral estimate via the dominant right eigenvector. The iteration is $\bm{y}^k=\bm{C}\bm{w}^{k-1}$, $\bm{w}^k=\bm{y}^k\cdot(\|\bm{y}^k\|_2)^{-1}$. It is well-defined as long as $\lambda_{1,\mathrm{st}}\neq 0$ and the primal part of the initial value is not orthogonal to the primal part of the dominant eigenvector. Convergence is controlled by $r=|\lambda_{1,\mathrm{st}}/\lambda_{2,\mathrm{st}}|>1$. Challenges regarding zero divisors in the dual quaternion ring are bypassed by splitting the analysis into two layers—where the primal part dominates convergence and the dual part follows—avoiding issues where vector division might not be well-defined.
+Relaxing the QPQC to the sphere $\|\bm{x}\|_2^2=n$ allows the optimal solution to be found via the principal right eigenvector. The iteration $\bm{y}^k=\bm{C}\bm{w}^{k-1},\ \bm{w}^k=\bm{y}^k\cdot(\|\bm{y}^k\|_2)^{-1}$ is well-defined provided $\lambda_{1,\mathrm{st}}\neq 0$ and the initial primal part is not orthogonal to the principal eigenvector. The convergence rate is controlled by $r=|\lambda_{1,\mathrm{st}}/\lambda_{2,\mathrm{st}}|>1$. Challenges involving zero divisors in the dual quaternion ring are circumvented by a layered analysis—the primal part drives convergence, while the dual part follows the primal part. Proposition 2.4 provides a nonasymptotic bound $\mathrm{d}(\bm{x},\hat{\bm{x}})\le 4\|\bm{\Delta}\|_{\mathrm{op}}/\sqrt{n}$ under operator norm noise.
 
-**3. DQGPM: Feasible Generalized Power Method with Finite-Step Convergence**
+**3. DQGPM: Feasible Generalized Power Method with Finite-step Convergence**
 
-Starting from the spectral initialization, DQGPM alternates between $\bm{y}^k=\bm{C}\bm{x}^{k-1}$ and $\bm{x}^k=\Pi(\bm{y}^k)$. Each $\bm{x}^k$ is "stop-anytime feasible" on $\mathrm{UDQ}^n$. This extends GPM (Journée et al. 2010) to dual quaternions. Theorem 3.2 proves that under noise $\|\bm{\Delta}\|_{\mathrm{op},\mathrm{st}}\le n/350$, the primal part error contracts linearly as $\mathrm{d}_{\mathrm{st}}(\bm{x}^k,\hat{\bm{x}})\le (1/10)^k\cdot\sqrt{n}/25 + (700/53n)\|(\bm{\Delta}\hat{\bm{x}})_{\mathrm{st}}\|_2$. The dual part error also contracts linearly using auxiliary bounds. The final error floor is $O(\|\bm{\Delta}\hat{\bm{x}}\|_2/n)$, which is tighter than the spectral estimate's $O(\|\bm{\Delta}\|_{\mathrm{op}}/\sqrt{n})$ by a factor of $\sqrt{n}$, explaining DQGPM's superior precision under sparse observations.
+Starting from the spectral initialization, DQGPM alternates between $\bm{y}^k=\bm{C}\bm{x}^{k-1}$ and $\bm{x}^k=\Pi(\bm{y}^k)$. Every $\bm{x}^k$ is automatically "stop-anytime feasible" on $\mathrm{UDQ}^n$. This extends GPM (Journée et al. 2010) to dual quaternions. Theorem 3.2 proves that when noise $\|\bm{\Delta}\|_{\mathrm{op},\mathrm{st}}\le n/350$, the primal part error contracts linearly as $\mathrm{d}_{\mathrm{st}}(\bm{x}^k,\hat{\bm{x}})\le (1/10)^k\cdot\sqrt{n}/25 + (700/53n)\|(\bm{\Delta}\hat{\bm{x}})_{\mathrm{st}}\|_2$. The non-compactness of SE(3) and pseudo-norm issues are bypassed by using Euclidean metrics for the primal part and a coupling inequality for the dual part. The final $O(\|\bm{\Delta}\hat{\bm{x}}\|_2/n)$ floor of DQGPM is tighter than the spectral $O(\|\bm{\Delta}\|_{\mathrm{op}}/\sqrt{n})$ by a factor of $\sqrt{n}$, explaining its superior precision in sparse observation scenarios.
 
 ### Loss & Training
-This is not a learning-based method; it is an iterative algorithm. The stopping criterion is based on the threshold of $\|\bm{x}^k-\bm{x}^{k-1}\|_2$. The number of power iteration steps $K_{\mathrm{init}}$ is estimated based on the explicit lower bound provided in Corollary 3.4.
+The method is an iterative algorithm rather than a learning-based approach. The stopping criterion is based on the threshold $\|\bm{x}^k-\bm{x}^{k-1}\|_2$. The number of power iteration steps $K_{\mathrm{init}}$ is estimated via the explicit lower bound given in Corollary 3.4.
 
 ## Key Experimental Results
 
 ### Main Results
-Synthetic Data: $n$ nodes, relative poses observed on an ER graph (edge probability $p$), with i.i.d. Hermitian dual quaternion noise. Noise levels are marked as (translation noise $\sigma_t$, rotation noise $\sigma_r$). Baselines: EIG (Arrigoni 2016b), SPEC (Doherty 2022), SDR (Rosen 2019).
+Synthetic Data: $n$ nodes, relative poses observed on an ER graph (edge probability $p$) with i.i.d. Hermitian dual quaternion noise (translation $\sigma_t$, rotation $\sigma_r$). Baselines: EIG (Arrigoni 2016b), SPEC (Doherty 2022), SDR (Rosen 2019).
 
-| Setting (Noise / Observation Rate) | Error_r (DQGPM) | Error_r (SPEC) | Error_r (EIG) | Error_t (DQGPM) | Error_t (SPEC) | Error_t (EIG) |
+| Setting (Noise / Sparsity) | Error_r (DQGPM) | Error_r (SPEC) | Error_r (EIG) | Error_t (DQGPM) | Error_t (SPEC) | Error_t (EIG) |
 |---|---|---|---|---|---|---|
 | (0.05, 5°), p=0.05 | **0.132 ± 0.042** | 1.639 ± 1.971 | 0.174 ± 0.156 | **0.102 ± 0.032** | 0.480 ± 0.530 | 0.551 ± 1.109 |
 | (0.20, 20°), p=0.05 | **0.424 ± 0.060** | 2.035 ± 1.823 | 0.585 ± 0.572 | **0.369 ± 0.078** | 0.660 ± 0.455 | 1.043 ± 1.359 |
 | (0.05, 5°), p=0.30 | **0.027 ± 0.001** | 0.032 ± 0.013 | 0.098 ± 0.618 | **0.021 ± 0.001** | 0.023 ± 0.001 | 0.137 ± 0.441 |
 | (0.20, 20°), p=0.30 | **0.111 ± 0.005** | 0.141 ± 0.126 | 0.219 ± 0.613 | **0.085 ± 0.005** | 0.090 ± 0.005 | 0.194 ± 0.257 |
 
-Under sparse observations ($p=0.05$), DQGPM's rotation error is roughly 1/10th of SPEC and 1/3rd of EIG, with translation error showing a similar order-of-magnitude advantage. In dense settings ($p=0.30$), the gap narrows but DQGPM remains consistently superior with significantly lower variance. SDR was excluded from the table due to poor scalability.
+Under sparse observations ($p=0.05$), DQGPM's rotation error is roughly 1/10th of SPEC and 1/3rd of EIG, with similar order-of-magnitude advantages in translation. SDR was excluded due to poor scalability.
 
 ### Multi-scan Point Cloud Registration (Real Data)
 
 | Dataset (sparse) | Missing | DQGPM Time (s) | DQGPM Err | Best Baseline |
 |---|---|---|---|---|
-| Bunny | 48.00% | 0.0010 | Best | EIG/SDR 1-2 orders slower |
-| Buddha | 66.67% | 0.0021 | Best | Same as above |
-| Dragon | 60.44% | 0.0014 | Best | Same as above |
-| Armadillo | 58.33% | — | Best | Same as above |
+| Bunny | 48.00% | 0.0010 | Best | EIG/SDR are 1-2 orders slower |
+| Buddha | 66.67% | 0.0021 | Best | ... |
+| Dragon | 60.44% | 0.0014 | Best | ... |
+| Armadillo | 58.33% | — | Best | ... |
 
-On the Stanford datasets, DQGPM achieves the lowest rotation/translation error in both sparse and dense settings. Each iteration takes milliseconds, making it 1-2 orders of magnitude faster than SDR-based SE-Sync.
+On four Stanford datasets, DQGPM achieved the lowest errors in both sparse and dense settings, with single iterations in the ms range—significantly faster than SDR-based SE-Sync.
 
 ### Key Findings
-- **Sparse observations highlight the gap**: At $p=0.05$, SPEC degrades toward random results, and EIG variance explodes. DQGPM remains robust, indicating that a small "rounding gap" in unit dual quaternions is critical when data is scarce.
-- **Error floor matches theory**: The asymptotic error of DQGPM is $O(\|\bm{\Delta}\hat{\bm{x}}\|_2/n)$, which is tighter than the spectral error by a factor of $\sqrt{n}$. This is most evident in dense settings with large $n$.
-- **Efficiency via "No SDP"**: DQGPM relies only on matrix-vector multiplications and element-wise projections. With $O(n^2)$ complexity per step, it is highly efficient on CPUs, whereas SDR-based solvers fail to scale beyond $n>500$.
+- **Sparse observations highlight the difference**: At $p=0.05$, SPEC degrades toward random, while DQGPM remains robust, confirming that the "rounding gap" in dual quaternion representation is minimal when data is scarce.
+- **Error floor matches theory**: DQGPM's $O(\|\bm{\Delta}\hat{\bm{x}}\|_2/n)$ floor is $\sqrt{n}$ tighter than spectral estimation, becoming most evident in dense, large $n$ settings.
+- **Efficiency through "No SDP"**: DQGPM only requires dual quaternion matrix-vector products and element-wise projections ($O(n^2)$), whereas SDR scales poorly ($O(n^3)$ or worse) due to PSD cone programming.
 
 ## Highlights & Insights
-- **Representation Alignment**: Comparing $\mathrm{SO}(2)$/$\mathrm{SO}(d)$/$\mathrm{SE}(3)$ gaps side-by-side reveals why matrix methods require "patches" for SE(3) and why dual quaternions are a natural choice. This representation-induced gap analysis can be extended to other manifold optimizations like $\mathrm{Sim}(3)$.
-- **Closed-form Projection as Pivot**: Lemma 2.5 elevates projection from a "heuristic step" to an "analyzable operator." This approach is valuable for any "relaxation-rounding" workflow.
-- **Primal-Dual Coupling**: The technique of letting the primal part dominate convergence while the dual part follows allows for handling dual number iterations despite pseudo-norms and zero divisors.
-- **First SE(3) Sync Guarantee**: Unlike previous GPM-like methods that only provide asymptotic results, this paper gives explicit bounds on the error after $k$ steps, enabling the design of adaptive stopping criteria.
+- **Representation Alignment**: The "feature space-sync problem" gap analysis explains why matrix methods inherently require "patches" for SE(3), while dual quaternions are a natural fit.
+- **Closed-form Projection as a Pivot**: Lemma 2.5 elevates projection from a heuristic to an analytically tractable operator, showing that projected error is strictly bounded.
+- **"Primal Leads, Dual Follows"**: This technique allows handling of iteratively updated dual numbers by decoupling the non-compact translational part, bypassing the pseudo-norm issue.
+- **First SE(3) Finite-step Guarantee**: Unlike previous GPM-like methods providing only asymptotic results, this paper gives explicit bounds on error after $k$ steps.
 
 ## Limitations & Future Work
-- **Tightness of Noise Constant**: Theorem 3.2 requires $\|\bm{\Delta}\|_{\mathrm{op},\mathrm{st}}\le n/350$, which is more stringent than the $n/100$ typical for $\mathrm{SO}(d)$ sync. Empirical results suggest the method works under higher noise, implying the theoretical bound could be tightened.
-- **Heterogeneous Noise**: Synthetic experiments assume i.i.d. noise, but SLAM/ICP noise is often correlated and heteroscedastic.
-- **GPU Optimization**: Although the algorithm is well-suited for GPUs (matrix-vector products), it is currently implemented on CPU. Engineering a CUDA-based dual quaternion kernel is a logical next step.
-- **Gross Outliers**: Current analysis focuses on Gaussian-like noise. Future work could integrate truncated least squares or IRLS to handle completely incorrect loop closures (outliers).
+- **Strict Noise Constants**: The requirement $\|\bm{\Delta}\|_{\mathrm{op},\mathrm{st}}\le n/350$ is tighter than typical $\mathrm{SO}(d)$ bounds ($n/100$), though experiments suggest the method works under larger noise.
+- **Heteroscedastic Noise**: The analysis assumes i.i.d. noise, whereas SLAM noise is often trajectory-dependent.
+- **GPU Implementation**: Despite being $O(n^2)$, operations are currently on CPU due to lack of standard dual quaternion CUDA kernels.
+- **Outliers**: The current framework handles Gaussian noise but lacks dedicated handling for gross outliers (e.g., truncated least squares).
 
 ## Related Work & Insights
-- **vs SE-Sync (Rosen 2019)**: SE-Sync uses Burer-Monteiro and necessitates SDP verification for global optimality. DQGPM provides convergence guarantees with first-order iterations and is more accurate under sparse observations.
-- **vs SPEC (Doherty 2022)**: SPEC uses tensor products of SE(3). DQGPM's success at $p=0.05$ compared to SPEC's failure validates the argument that the matrix representation gap is fatal under sparse data.
-- **vs Zhao et al. (2026)**: While concurrent work remains in the matrix domain using anchoring to solve gauge ambiguity, this paper eliminates the ambiguity directly via dual quaternions.
+- **vs SE-Sync (Rosen 2019)**: DQGPM avoids the $O(n^3)$ complexity of SDP verification and offers better accuracy in sparse settings.
+- **vs SPEC (Doherty 2022)**: Confirms that matrix-based representation gaps are fatal under sparse observations.
+- **vs Cheng et al. (2016)**: Previous dual quaternion sync works were heuristic; this is the first rigorous theoretical analysis.
+- **vs Zhao et al. (2026)**: While contemporary works use anchoring to handle matrix ambiguities, this work eliminates the ambiguity fundamentally via dual quaternions.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ (First complete theory + algorithm for DQ SE(3) sync)
-- Experimental Thoroughness: ⭐⭐⭐⭐ (Solid synthetic + real data, though more noise distributions could be explored)
-- Writing Quality: ⭐⭐⭐⭐ (Dense mathematical but clear structure; excellent comparative tables)
-- Value: ⭐⭐⭐⭐⭐ (Directly applicable as a backbone for SLAM and SfM without requiring SDP solvers)
+- Novelty: ⭐⭐⭐⭐⭐ 
+- Experimental Thoroughness: ⭐⭐⭐⭐ 
+- Writing Quality: ⭐⭐⭐⭐ 
+- Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
 
@@ -134,9 +135,9 @@ On the Stanford datasets, DQGPM achieves the lowest rotation/translation error i
 
 - [\[ICLR 2026\] Statistical Guarantees for Offline Domain Randomization](../../ICLR2026/robotics/statistical_guarantees_for_offline_domain_randomization.md)
 - [\[ICML 2026\] Dual Advantage Fields](dual_advantage_fields.md)
+- [\[CVPR 2026\] REACH: Explicit Recovery Behavior for Diffusion Policies](../../CVPR2026/robotics/reach_explicit_recovery_behavior_for_diffusion_policies.md)
 - [\[ICML 2026\] Dual-Stream Diffusion for World-Model Augmented Vision-Language-Action Model](dual-stream_diffusion_for_world-model_augmented_vision-language-action_model.md)
 - [\[CVPR 2026\] FLARE: A Failure-Aware Framework for Autonomous Correction and Recovery in Visual-Language Robotic Manipulation](../../CVPR2026/robotics/flare_a_failure-aware_framework_for_autonomous_correction_and_recovery_in_visual.md)
-- [\[ICLR 2026\] JanusVLN: Decoupling Semantics and Spatiality with Dual Implicit Memory for Vision-Language Navigation](../../ICLR2026/robotics/janusvln_decoupling_semantics_and_spatiality_with_dual_implicit_memory_for_visio.md)
 
 </div>
 

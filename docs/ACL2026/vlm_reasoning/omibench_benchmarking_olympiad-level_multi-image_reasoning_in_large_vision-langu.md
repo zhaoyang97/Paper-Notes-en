@@ -2,12 +2,12 @@
 title: >-
   [Paper Note] OMIBench: Benchmarking Olympiad-Level Multi-Image Reasoning in Large Vision-Language Models
 description: >-
-  [ACL 2026][Multimodal VLM][Paper Note] This paper introduces OMIBench—the first large-scale benchmark for Olympiad-level multi-image reasoning. It covers over 1000 competition problems in Biology, Chemistry, Mathematics, and Physics. The study finds that even the strongest LVLM (Gemini-3-Pro) achieves only approximately 50% accuracy, representing a decline
+  [ACL 2026][vlm_reasoning][Paper Note] This paper introduces OMIBench—the first large-scale benchmark for Olympiad-level multi-image reasoning. It covers over 1000 competition problems across biology, chemistry, mathematics, and physics. The study finds that even the strongest LVLM (Gemini-3-Pro) achieves only about 50% accuracy, representing a drop of over
 tags:
   - ACL 2026
-  - Multimodal VLM
+  - vlm_reasoning
 date: 2026-05-08
-content_hash: 54d6018614b5b964
+content_hash: 69849fec83c13d28
 ---
 # OMIBench: Benchmarking Olympiad-Level Multi-Image Reasoning in Large Vision-Language Models
 
@@ -15,43 +15,43 @@ content_hash: 54d6018614b5b964
 **arXiv**: [2604.20806](https://arxiv.org/abs/2604.20806)  
 **Code**: [GitHub](https://github.com/LightChen233/OMIBench)  
 **Area**: Multimodal VLM / LLM Evaluation  
-**Keywords**: Multi-image Reasoning, Olympiad-level Reasoning, Vision-Language Model Benchmark, Cross-image Association, Scientific Reasoning
+**Keywords**: Multi-image reasoning, Olympiad-level reasoning, Vision-Language Model benchmark, Cross-image association, Scientific reasoning
 
 ## TL;DR
-This paper introduces OMIBench—the first large-scale benchmark for Olympiad-level multi-image reasoning. It covers over 1000 competition problems in Biology, Chemistry, Mathematics, and Physics. The study finds that even the strongest LVLM (Gemini-3-Pro) achieves only approximately 50% accuracy, representing a decline of over 25% compared to single-image benchmarks.
+This paper introduces OMIBench—the first large-scale benchmark for Olympiad-level multi-image reasoning. It covers over 1000 competition problems across biology, chemistry, mathematics, and physics. The study finds that even the strongest LVLM (Gemini-3-Pro) achieves only about 50% accuracy, representing a drop of over 25% compared to single-image benchmarks.
 
 ## Background & Motivation
 
-**Background**: LVLMs have made significant progress in standard reasoning tasks, and Chain-of-Thought (CoT) prompting has achieved major breakthroughs on single-image Olympiad benchmarks. Existing benchmarks like OlympiadBench are nearing saturation by top-tier models.
+**Background**: LVLMs have made significant progress on standard reasoning tasks, and Chain-of-Thought (CoT) prompting has achieved major breakthroughs on single-image Olympiad benchmarks. Existing benchmarks like OlympiadBench are nearing saturation for top-tier models.
 
-**Limitations of Prior Work**: (1) Existing Olympiad-level multimodal benchmarks are almost entirely restricted to single-image problem settings, whereas many real-world scientific competition problems rely on multiple interrelated charts and experimental diagrams; (2) Existing multi-image benchmarks (e.g., MuirBench, MMIU) focus on perception and cross-image referencing but lack difficulty and strong semantic/quantitative cross-image associations, making them insufficient for evaluating Olympiad-level reasoning; (3) There is a lack of expert reasoning path annotations, preventing in-depth analysis of specific failure points in the model's reasoning process.
+**Limitations of Prior Work**: (1) Existing Olympiad-level multimodal benchmarks are almost entirely restricted to single-image settings, whereas many real-world science competition problems rely on multiple interrelated charts and experimental diagrams; (2) current multi-image benchmarks (e.g., MuirBench, MMIU) focus on perception and cross-image referencing but have low difficulty and lack strong semantic/quantitative cross-image associations, making them insufficient for evaluating Olympiad-level reasoning; (3) there is a lack of expert reasoning path annotations, preventing in-depth analysis of specific failure points in model reasoning.
 
-**Key Challenge**: Olympiad-level multi-image reasoning requires models not only to understand individual images but also to (1) maintain consistency in the cross-image information flow and (2) execute deep cross-image and cross-modal reasoning—a qualitative leap from perception to integrated reasoning that existing benchmarks cannot effectively evaluate.
+**Key Challenge**: Olympiad-level multi-image reasoning requires models to not only understand individual images but also (1) maintain coherence of information flow across images and (2) perform deep cross-image and cross-modal reasoning. This represents a qualitative leap from perception to integrated reasoning that existing benchmarks cannot effectively evaluate.
 
-**Goal**: Construct an Olympiad-level multi-image reasoning benchmark covering four major science disciplines, including expert reasoning annotations and multiple evaluation protocols, to systematically expose the reasoning shortcomings of LVLMs in multi-image scenarios.
+**Goal**: Build an Olympiad-level multi-image reasoning benchmark covering four major science subjects, including expert reasoning annotations and various evaluation protocols, to systematically expose the reasoning deficiencies of LVLMs in multi-image scenarios.
 
-**Key Insight**: Collect real competition problems from international and national science competitions that require joint reasoning across multiple images, rather than using synthetic or simplified multi-image tasks.
+**Key Insight**: Collect authentic competition problems from international and national subject competitions that require joint multi-image reasoning, rather than using synthetic or simplified tasks.
 
-**Core Idea**: Extend Olympiad-level reasoning evaluation from single-image to multi-image—reasoning difficulty undergoes a qualitative change rather than a quantitative one when evidence is scattered across multiple images.
+**Core Idea**: Extend Olympiad-level reasoning evaluation from single-image to multi-image—when evidence is scattered across multiple images, the reasoning difficulty undergoes a qualitative transformation rather than a mere quantitative increase.
 
 ## Method
 
 ### Overall Architecture
-OMIBench contains 1000+ Olympiad-level multi-image reasoning problems, with an average of 3.07 images per problem. It supports both multiple-choice and open-ended question formats. Each problem is equipped with an expert-verified reasoning rationale, supporting both exact match and semantic equivalence evaluation modes. The data construction pipeline connects three contributory phases: multi-image competition dataset construction, two-stage expert reasoning path annotation, and dual evaluation protocols, with quality control and classification labeling steps interspersed as scaffolding.
+OMIBench contains 1000+ Olympiad-level multi-image reasoning problems, averaging 3.07 images per problem. It supports multiple-choice and open-ended question formats. Each problem is equipped with an expert-verified rationale, supporting both exact match and semantic equivalence evaluation modes. The data construction pipeline integrates three core contributions: multi-image competition problem dataset construction, two-stage expert reasoning path annotation, and a dual evaluation protocol, supported by quality control and classification labeling.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
     A["Competition PDF Problems<br/>(IPhO / IChO / National Competitions)"] --> B
-    subgraph B["Multi-Image Competition Dataset Construction"]
+    subgraph B["Multi-image Competition Problem Dataset Construction"]
         direction TB
-        B1["Mathpix OCR → Markdown<br/>Manual Verification + Translation Check"] --> B2["Multi-image Filtering: ≥2 images<br/>jointly providing evidence per problem"]
+        B1["Mathpix OCR → Markdown<br/>Manual verification + Translation check"] --> B2["Multi-image screening: Per problem ≥2 images<br/>providing joint evidence"]
     end
     B --> C
-    subgraph C["Two-stage Expert Rationale Annotation"]
+    subgraph C["Two-stage Expert Reasoning Path Annotation"]
         direction TB
-        C1["Gemini-2.5-pro generates<br/>≤16 candidate solutions, keep correct ones"] --> C3["Manual verification and correction by experts"]
-        C1 -->|All 16 incorrect| C2["Regenerate with correct answer provided"]
+        C1["Gemini-2.5-pro generates<br/>≤16 candidate solutions, keep correct ones"] --> C3["Competition experts verify and correct each problem"]
+        C1 -->|16 all wrong| C2["Feed back correct answer and regenerate"]
         C2 --> C3
     end
     C --> D["Quality Control + Classification Labeling<br/>(Scaffolding)"]
@@ -61,26 +61,26 @@ flowchart TD
 
 ### Key Designs
 
-**1. Multi-Image Competition Dataset Construction: Ensuring evidence is truly scattered across multiple images to force cross-image reasoning**
+**1. Multi-image competition problem dataset construction: Scattering evidence to force cross-image reasoning**
 
-Existing Olympiad benchmarks are almost entirely single-image, masking model deficiencies in integrating multi-image information. Therefore, the first step is to ensure every problem "requires multiple images." The authors collected PDF problems from international Olympiads (IPhO, IChO, etc.), national/regional competitions, and mixed-complexity benchmarks, converted them to Markdown using Mathpix OCR with manual verification, and checked translations for non-English problems. A critical filtering criterion is that each problem must contain $\geq 2$ images that jointly provide reasoning evidence—these are not supplementary illustrations but essential components without which the problem cannot be solved. The resulting problems average 3.07 images, ensuring competition-level difficulty and non-trivial semantic/quantitative dependencies between images.
+Existing Olympiad benchmarks are almost entirely single-image, which masks model deficiencies in integrating info across multiple sources. This step ensures every problem requires multi-image integration. Problems are collected from international Olympiads (IPhO, IChO, etc.) and national competitions, converted via Mathpix OCR to Markdown, and manually verified. Multi-language problems are translated via Google Translate and human-checked. The critical criterion is that each problem must contain $\geq 2$ images that jointly provide reasoning evidence—where the absence of any one image makes the problem unsolvable. This ensures an average of 3.07 images per problem with non-trivial semantic/quantitative dependencies.
 
-**2. Two-stage Expert Rationale Annotation: Drafting with strong models followed by expert finalization**
+**2. Two-stage expert reasoning path annotation: Machine drafting followed by expert refinement**
 
-Most competition datasets provide only the final answer without the solution process, making it impossible to pinpoint where a model fails. OMIBench provides expert-verified rationales for each problem using a "machine draft + human refinement" two-stage process. Gemini-2.5-pro-thinking first generates up to 16 candidate solutions per problem, retaining the correct ones. If all 16 are incorrect, the correct answer is fed back to the model for regeneration—a step that reduced manual annotation workload by approximately 20%. Experienced annotators then verify and correct each solution step-by-step to ensure accuracy, completeness, and standardization. This reference path enables fine-grained failure analysis, such as identifying that "46% of key steps contain logical errors."
+Most competition datasets provide only the final answer, making it impossible to locate where a model failed. OMIBench adds expert-verified rationales for each problem. To manage costs, a "machine draft + human refinement" process is used: Gemini-2.5-pro-thinking generates up to 16 candidate solutions, retaining those with correct answers. If all 16 are wrong, the correct answer is fed back to the model for regeneration, reducing manual annotation effort by approximately 20%. Competition experts then verify and correct each step to ensure accuracy and rigor.
 
-**3. Dual Evaluation Protocol (Exact Match + GPTScore): Closing the loophole of underestimated open-ended answers**
+**3. Dual evaluation protocol (Exact Match + GPTScore): Addressing the undervaluation of open-ended answers**
 
-Open-ended scientific answers often have multiple equivalent expressions (different units, equivalent chemical formulas, varied levels of expression simplification). Using only character-level exact matching misidentifies "correct but differently written" answers as wrong, systematically underestimating model capabilities. OMIBench employs two parallel metrics: Exact Match (ACC) for strict consistency as a lower bound, and GPTScore to determine if an open-ended answer is semantically equivalent to the reference under multimodal contextual constraints. This dual approach helps define the true range of model capability.
+Open-ended scientific answers often have multiple equivalent expressions (different units, equivalent chemical formulas, etc.). Character-level exact matching systematically underestimates model capability. OMIBench uses two parallel metrics: Exact Match (ACC) as a strict lower bound, and GPTScore, which determines semantic equivalence between open-ended answers and references within the multimodal context, accounting for expression variations.
 
 ### Loss & Training
-This work is a pure benchmark and does not involve model training.
+This work is a benchmark and does not involve model training.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Model | Biology Score | Chemistry Score | Math Score | Physics Score | Overall Score |
+| Model | Biology Score | Chemistry Score | Math Score | Physics Score | Total Score |
 |------|-----------|-----------|-----------|-----------|-----------|
 | Gemini-3-Pro | 71.31 | 25.35 | 62.56 | 38.92 | **50.53** |
 | GPT-5 | 62.55 | 29.03 | 56.51 | 40.80 | 48.11 |
@@ -88,43 +88,43 @@ This work is a pure benchmark and does not involve model training.
 | Qwen3-VL-32B | 58.57 | 20.74 | 40.70 | 25.00 | 35.78 |
 | InternVL3-78B | 46.61 | 20.74 | 17.21 | 18.63 | 23.83 |
 
-### Analysis
+### Comparison with single-image benchmark
 
 | Analysis | Data |
 |------|------|
 | Gemini-3-Pro: OlympiadBench → OMIBench | 75.67% → 50.53% (↓25%+) |
-| Model Ranking Correlation (Spearman $\rho$) | 0.614 < 0.7 (Moderate correlation) |
-| Manual Review of o4-mini Reasoning Error Rate | 46% of key steps have logical errors |
+| Model Ranking Correlation (Spearman ρ) | 0.614 < 0.7 (Moderate correlation) |
+| Human Audit of o4-mini Reasoning Error Rate | 46% of key steps contain logical errors |
 
 ### Key Findings
-- Even the strongest model, Gemini-3-Pro, only achieves 50.53%, indicating that multi-image Olympiad reasoning remains a massive challenge.
-- Moving from single-image to multi-image causes a >25% drop in accuracy and significantly changes model rankings ($\rho = 0.614$), suggesting multi-image reasoning cannot be simply inferred from single-image capability.
-- A significant gap exists between closed-source and open-source models—Gemini-3-Pro outperforms the best open-source model by ~15%, yet GPT-4o performs similarly to open-source models, indicating that scale is not the sole determinant.
-- Long CoT, test-time scaling, and ICL provide modest but consistent gains; parameter scaling and "think-with-image" methods provide minimal or even negative returns.
-- Chemistry and Physics are the most difficult (lowest scores), while Biology is the "easiest"—likely because Biology questions focus more on knowledge retrieval than multi-step reasoning.
+- The strongest model, Gemini-3-Pro, only reaches 50.53%, showing that multi-image Olympiad reasoning remains highly challenging.
+- Performance drops by over 25% when moving from single-image to multi-image tasks, and model rankings shift significantly (ρ = 0.614), indicating multi-image ability cannot be simply extrapolated from single-image performance.
+- A significant gap exists between closed-source and open-source models; while Gemini-3-Pro outperforms the best open-source model by 15%, GPT-4o is comparable to open-source versions.
+- Long CoT, test-time scaling, and ICL provide limited but consistent gains; parameter scaling and think-with-image methods show minimal or even negative returns.
+- Chemistry and physics are the most difficult, while biology is the "easiest," likely due to its higher reliance on knowledge recall rather than multi-step reasoning.
 
 ## Highlights & Insights
-- The **"qualitative change" from single to multi-image** is supported by solid experimental evidence—the >25% absolute drop and rank reshuffling ($\rho = 0.614$) together show this is not merely an accumulation of difficulty.
-- Manual inspection found that 46% of key reasoning steps contain logical errors—models can generate fluent reasoning chains that are logically flawed, serving as a critical warning for CoT evaluation methodologies.
-- The coverage of four disciplines allows the benchmark to reveal imbalances in reasoning capabilities across subjects, providing a reference for education and capability assessment.
+- The **qualitative leap** hypothesis from single to multi-image is supported by substantial performance drops and ranking reorders.
+- Human auditing revealed logical errors in 46% of key reasoning steps—models can generate fluent reasoning chains that lack actual logic, serving as a caution for CoT evaluation.
+- The four-subject coverage reveals imbalances in reasoning capabilities across disciplines, offering insights for educational assessment.
 
 ## Limitations & Future Work
-- The dataset size is roughly 1000 problems; some subject subsets may be small, limiting statistical power.
-- Dependence on GPTScore for semantic evaluation; the reliability of LLM-as-judge for determining equivalence in math/science answers requires further validation.
-- The types of dependencies between multiple images (supplementary, contradictory, temporal changes, etc.) have not been classified at a fine-grained level.
-- Multimodal RAG or tool-augmented strategies have not been tested.
-- Sources are tilted toward International and Chinese competitions, which may introduce cultural biases for certain models.
+- The dataset size (approx. 1000 problems) results in smaller subsets for some subjects, limiting statistical power.
+- Dependence on GPTScore for semantic evaluation requires further validation of LLM-as-a-judge reliability for scientific equivalence.
+- Types of dependencies between multiple images (complementary, contradictory, temporal, etc.) are not yet classified in a fine-grained manner.
+- Multi-modal RAG or tool-augmented strategies were not tested.
+- Problem sources are biased toward international and Chinese competitions, potentially affecting models from different cultural backgrounds.
 
 ## Related Work & Insights
-- **vs OlympiadBench (He et al., 2024)**: Similarly competition-level but contains <5% multi-image problems. OMIBench is entirely multi-image, exposing deficiencies previously masked by single-image settings.
-- **vs MuirBench / MMIU**: These multi-image benchmarks have lower difficulty, lack competition-level reasoning, and provide no reasoning rationales.
-- **vs ReMI (Kazemi et al., 2024)**: Covers Math and Physics at H/COL difficulty levels but excludes Biology and Chemistry and lacks reasoning annotations.
+- **vs OlympiadBench (He et al., 2024)**: Both are competition-level, but OlympiadBench has <5% multi-image problems. OMIBench is entirely multi-image, exposing deficiencies previously hidden by single-image settings.
+- **vs MuirBench / MMIU**: These multi-image benchmarks are lower in difficulty and lack competition-level reasoning and reasoning path annotations.
+- **vs ReMI (Kazemi et al., 2024)**: Covers math and physics at H/COL levels but lacks biology/chemistry and reasoning annotations.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The combination of multi-image and Olympiad-level is a new evaluation perspective, though the benchmark construction methodology is relatively standard.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 30+ model evaluations, analysis of multiple enhancement strategies, and systematic comparison with single-image benchmarks.
+- Novelty: ⭐⭐⭐⭐ The combination of multi-image and Olympiad-level tasks is a fresh perspective, though the benchmark methodology is standard.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Evaluation of 30+ models, analysis of enhancement strategies, and systematic comparison with single-image benchmarks.
 - Writing Quality: ⭐⭐⭐⭐ Clear structure and rich data.
-- Value: ⭐⭐⭐⭐ Fills the gap in multi-image Olympiad reasoning evaluation and provides valuable insights for model capability analysis.
+- Value: ⭐⭐⭐⭐ Fills a gap in multi-image Olympiad reasoning evaluation and provides valuable insights for model capability analysis.
 
 <!-- RELATED:START -->
 
@@ -132,11 +132,11 @@ This work is a pure benchmark and does not involve model training.
 
 ## Related Papers
 
-- [\[ACL 2026\] LaMI: Augmenting Large Language Models via Late Multi-Image Fusion](lami_augmenting_large_language_models_via_late_multi-image_fusion.md)
-- [\[ICLR 2026\] FRIEDA: Benchmarking Multi-Step Cartographic Reasoning in Vision-Language Models](../../ICLR2026/multimodal_vlm/frieda_benchmarking_multi-step_cartographic_reasoning_in_vision-language_models.md)
-- [\[ACL 2026\] Cross-Cultural Expert-Level Art Critique Evaluation with Vision-Language Models](cross-cultural_expert-level_art_critique_evaluation_with_vision-language_models.md)
-- [\[ACL 2026\] ErrorRadar: Benchmarking Complex Mathematical Reasoning of Multimodal Large Language Models Via Error Detection](errorradar_benchmarking_complex_mathematical_reasoning_of_multimodal_large_langu.md)
+- [\[ACL 2026\] GeoArena: Evaluating Open-World Geographic Reasoning in Large Vision-Language Models](geoarena_evaluating_open-world_geographic_reasoning_in_large_vision-language_mod.md)
 - [\[ACL 2026\] Addressing Overthinking in Large Vision-Language Models via Gated Perception-Reasoning Optimization](addressing_overthinking_in_large_vision-language_models_via_gated_perception-rea.md)
+- [\[ICLR 2026\] FRIEDA: Benchmarking Multi-Step Cartographic Reasoning in Vision-Language Models](../../ICLR2026/vlm_reasoning/frieda_benchmarking_multi-step_cartographic_reasoning_in_vision-language_models.md)
+- [\[ACL 2026\] ErrorRadar: Benchmarking Complex Mathematical Reasoning of Multimodal Large Language Models Via Error Detection](errorradar_benchmarking_complex_mathematical_reasoning_of_multimodal_large_langu.md)
+- [\[ICML 2026\] From Correspondence to Actions: Human-Like Multi-Image Spatial Reasoning in Multi-modal Large Language Models](../../ICML2026/vlm_reasoning/from_correspondence_to_actions_human-like_multi-image_spatial_reasoning_in_multi.md)
 
 </div>
 

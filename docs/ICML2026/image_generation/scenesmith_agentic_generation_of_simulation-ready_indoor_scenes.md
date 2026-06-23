@@ -2,86 +2,86 @@
 title: >-
   [Paper Note] SceneSmith: Agentic Generation of Simulation-Ready Indoor Scenes
 description: >-
-  [ICML 2026][Image Generation][VLM Agent] SceneSmith constructs indoor scenes layer-by-layer on a "layout → furniture → clutter" hierarchical tree using a designer-critic-orchestrator VLM agent triad. It deeply integrates text-to-3D generation, articulated object retrieval, and physical property estimation into the agent's toolchain. From a single natural lang
+  [ICML 2026][Image Generation][VLM Agent] SceneSmith utilizes a designer-critic-orchestrator VLM agent triangle to construct indoor scenes layer-by-layer on a hierarchical tree of "layout $\rightarrow$ furniture $\rightarrow$ small objects." It deeply couples text-to-3D generation, articulated object retrieval, and physical property estimation into the agent t
 tags:
   - ICML 2026
   - Image Generation
   - VLM Agent
 date: 2026-05-08
-content_hash: 8b5333202874275f
+content_hash: c2c64cc64f8bd077
 ---
 # SceneSmith: Agentic Generation of Simulation-Ready Indoor Scenes
 
 **Conference**: ICML 2026 Spotlight  
 **arXiv**: [2602.09153](https://arxiv.org/abs/2602.09153)  
 **Code**: https://scenesmith.github.io/ (Project Homepage)  
-**Area**: 3D Vision / Indoor Scene Generation / Agentic AI / Robot Simulation  
-**Keywords**: Indoor Scene Synthesis, VLM Agent, Robot Simulation, Text-to-3D, Hierarchical Generation
+**Area**: 3D Vision / Indoor Scene Generation / Agentic AI / Robotics Simulation  
+**Keywords**: Indoor Scene Synthesis, VLM Agent, Robotics Simulation, Text-to-3D, Hierarchical Generation
 
 ## TL;DR
-SceneSmith constructs indoor scenes layer-by-layer on a "layout → furniture → clutter" hierarchical tree using a designer-critic-orchestrator VLM agent triad. It deeply integrates text-to-3D generation, articulated object retrieval, and physical property estimation into the agent's toolchain. From a single natural language prompt, it directly produces dense, interactable environments ready for physical simulators. Each room averages 71 objects (compared to 11–23 in baselines), with an inter-object collision rate $< 2\%$ and a 96% stability rate under gravity, significantly outperforming all prior methods.
+SceneSmith utilizes a designer-critic-orchestrator VLM agent triangle to construct indoor scenes layer-by-layer on a hierarchical tree of "layout $\rightarrow$ furniture $\rightarrow$ small objects." It deeply couples text-to-3D generation, articulated object retrieval, and physical property estimation into the agent toolchain. Generating directly from a single natural language prompt, it produces dense, actionable environments ready for physical simulators. Each room averages 71 objects (compared to 11–23 in baselines), with an inter-object collision rate $< 2\%$ and a gravity-based stability rate of $96\%$, significantly outperforming all prior methods.
 
 ## Background & Motivation
-**Background**: Training home robots increasingly relies on large-scale simulations. However, existing simulation scenes are mostly "empty rooms with a few sparsely placed pieces of furniture." They are either procedurally generated (ProcTHOR, Infinigen Indoors) relying on hand-written rules with poor expressiveness, or data-driven (e.g., DiffuScene) limited by SE(2) ground-alignment assumptions. Recent LLM/VLM-driven methods (Holodeck, I-Design, LayoutVLM, SceneWeaver) focus on furniture-level layout and visual realism while ignoring small objects, articulated parts, and physical properties.
+**Background**: Training home robots increasingly relies on large-scale simulations, but existing simulated scenes are mostly "empty rooms with a few sparsely placed pieces of furniture." They are either procedurally generated (ProcTHOR, Infinigen Indoors) based on hand-written rules with poor expressiveness, or data-driven (DiffuScene, etc.) limited by $SE(2)$ ground-alignment assumptions. Recent LLM/VLM-driven methods (Holodeck, I-Design, LayoutVLM, SceneWeaver) focus on furniture-level layout and visual realism while ignoring small objects, articulated objects, and physical properties.
 
-**Limitations of Prior Work**: Real home environments contain dense, articulated, and interactable clutter structures, such as "cabinets filled with plates and cups." In contrast, simulated rooms typically contain only a dozen static objects. Policies learned in sparse environments fail in real-world settings, where clutter manipulation is a core difficulty. Furthermore, many generated scenes lack collision geometry, mass, friction, or inertia, making them incompatible with physical simulators.
+**Limitations of Prior Work**: Real home scenes contain dense, articulated, and actionable cluttered structures like "cabinets filled with cups, plates, and bowls." In contrast, simulated rooms typically contain only a dozen static objects. Policies learned by robots in sparse scenes fail in real environments, as clutter manipulation is a core difficulty. Furthermore, scenes generated by previous methods lack collision geometry and physical properties (mass, friction, inertia), making them unsuitable for direct use in physics simulators.
 
-**Key Challenge**: Current pipelines split "asset generation" and "scene organization." Asset-side research (generating high-quality 3D objects) and scene-side research (layout optimization on fixed libraries) operate independently. Consequently, no system can generate "densely populated, physically feasible, and simulation-ready" houses from a single sentence. Additionally, single-agent reason-act-reflect paradigms (like SceneWeaver) suffer from self-evaluation bias, struggling to converge on dense yet feasible configurations.
+**Key Challenge**: Existing pipelines split "asset generation" and "scene organization." Asset-side research (generating high-quality 3D objects) and scene-side research (arranging layouts on fixed asset libraries) operate independently. Consequently, no system can generate "geometrically realistic, physically attributed, dense, and physically feasible" simulation-ready houses from a single sentence. Additionally, the single-agent reason-act-reflect paradigm (SceneWeaver) is prone to self-evaluation bias, struggling to converge to dense and feasible configurations when generation, evaluation, and control are conflated into one role.
 
-**Goal**: To enable a single natural language prompt to grow "immediately simulation-ready" multi-room indoor environments that satisfy: (1) Object density comparable to real homes; (2) Open-vocabulary asset generation on demand; (3) Geometrical non-penetration and gravitational stability; (4) A fully automated pipeline without human intervention.
+**Goal**: To generate "immediately simulation-ready" multi-room indoor environments from a single natural language prompt that satisfy: (1) object density close to real homes; (2) open-vocabulary assets generated on-demand; (3) geometric non-penetration and physical stability under gravity; (4) a full pipeline without human intervention.
 
-**Key Insight**: Decompose scene construction into a stage-based tree structure (layout → furniture → wall-mounted → ceiling → small objects branching from each support surface). Each stage is managed by a designer/critic/orchestrator VLM agent triad. Text-to-3D, articulated object retrieval, thin-covering materials, and physical property estimation are unified as agent tools dispatched by an asset router.
+**Key Insight**: Decompose scene construction into a tree-structured stage-level pipeline (layout $\rightarrow$ furniture $\rightarrow$ wall-mounted $\rightarrow$ ceiling $\rightarrow$ small object branches for each supporting surface). Each stage is handled by three VLM agents: a designer, a critic, and an orchestrator. Simultaneously, text-to-3D, articulated object retrieval, thin coverings, and physical property estimation are unified as agent tools scheduled by an asset router.
 
-**Core Idea**: Replace single-shot generation or single-agent reflection with a "hierarchical agent tree + designer-critic-orchestrator specialization + asset generation-routing-validation integration." This merges scene generation and asset generation at the agent tool level into an end-to-end, simulation-oriented pipeline.
+**Core Idea**: Replace single-shot generation or single-agent reflection with a "hierarchical agent tree + designer-critic-orchestrator triangle + integrated asset generation-routing-verification." This merges "scene generation" and "asset generation" at the agent tool level into an end-to-end, simulation-ready pipeline.
 
 ## Method
 
 ### Overall Architecture
-The input is a natural language scene prompt $\mathcal{T}$, and the output is a multi-room scene $\mathcal{S}=\{\mathcal{R}_j\}$ exportable to Drake / MuJoCo / Isaac Sim / Genesis. Each room $\mathcal{R}_j=(\mathcal{G}_j, \mathcal{O}_j)$ includes architectural geometry (walls with thickness, floors, doors, windows) and a set of objects $\{(\mathcal{A}_i, \mathcal{X}_i)\}$. Each asset $\mathcal{A}_i$ contains a visual mesh, convex decomposition collision geometry, and physical properties (mass, center of mass, inertia, friction). Articulated objects also include joint definitions.
+The input is a natural language scene prompt $\mathcal{T}$, and the output is a multi-room scene $\mathcal{S}=\{\mathcal{R}_j\}$ that can be directly exported to Drake / MuJoCo / Isaac Sim / Genesis. Each room $\mathcal{R}_j=(\mathcal{G}_j, \mathcal{O}_j)$ includes architectural geometry (walls with thickness, floors, doors/windows) and a set of objects $\{(\mathcal{A}_i, \mathcal{X}_i)\}$. Each asset $\mathcal{A}_i$ contains a visual mesh, convex-decomposed collision geometry, physical properties (mass, center of mass, inertia, friction), and joint definitions for articulated objects.
 
-The construction process follows a stage tree: the root stage generates the architectural geometry for $M$ rooms via a layout agent. Each room then independently follows three stages: "Furniture → Wall-mounted → Ceiling," with prompts refined from the global $\mathcal{T}$ into room-level $\mathcal{T}_j$. Subsequently, selected support entities (furniture surfaces, wall shelves, floor areas) branch out to add small objects using entity-level prompts $\mathcal{T}_{j,k}$. Cross-surface coordination (e.g., "books here, plants there") is explicitly constrained in these branch prompts. After all stages, physical post-processing (projection de-penetration + gravity settling) is performed before flattening into $\mathcal{S}$. Each stage is executed by the designer-critic-orchestrator agent triad.
+The construction process follows a stage tree: the root stage uses a layout agent to generate the architectural geometry of $M$ rooms. Each room independently proceeds through three stages: "Furniture $\rightarrow$ Wall-mounted $\rightarrow$ Ceiling," with the global prompt $\mathcal{T}$ refined into room-level prompts $\mathcal{T}_j$. Subsequently, selected supporting entities (furniture surfaces, wall shelves, floor areas) in each room branch out to add small objects using entity-level prompts $\mathcal{T}_{j,k}$. Cross-surface coordination—such as "books on this shelf, plants on that one"—is explicitly constrained in these branch prompts. After all stages, physical post-processing (projection de-penetration + gravity settling) is performed before flattening into $\mathcal{S}$. Within each stage, execution is managed by the designer-critic-orchestrator agent triangle, with the designer calling the asset router to fetch objects as needed.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 26, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    T["Natural Language Prompt T"] --> LAY["Hierarchical Tree: Layout Stage Generates M Rooms"]
-    LAY --> RM["Room Stage: Furniture → Wall-mounted → Ceiling<br/>Hierarchical Refinement T → T_j → T_jk"]
-    RM --> OBJ["Support Surface Branch: Add Clutter per Surface"]
-    OBJ -->|Each stage managed by| TRI
-    subgraph TRI["Designer-Critic-Orchestrator Triad"]
+    T["Natural Language Prompt T"] --> LAY["Hierarchical Tree: Layout stage generates M room geometries"]
+    LAY --> RM["Room Stages: Furniture -> Wall-mounted -> Ceiling<br/>Prompts refined T -> T_j -> T_jk"]
+    RM --> OBJ["Surface Branches: Adding small objects per surface"]
+    OBJ -->|Each stage assigned to| TRI
+    subgraph TRI["Designer-Critic-Orchestrator Agent Triangle"]
         direction TB
-        D["Designer: Exclusive Modification Tools"] --> CR["Critic: Read-only Observation + Feasibility Scoring"]
-        CR --> OR["Orchestrator: Rollback Checkpoints on Score Drop"]
+        D["Designer: Exclusive scene modification tools"] --> CR["Critic: Read-only observation + Feasibility scoring"]
+        CR --> OR["Orchestrator: Rollback checkpoint on score drop"]
         OR -->|Continue Refinement| D
     end
-    D -->|Request by Object Type| RT["Asset Router + Three-way On-demand Generation<br/>Static Gen / Articulated Retrieval / Thin Decorative + Physics"]
+    D -->|Request by object type| RT["Asset Routing + Three-way On-demand Gen<br/>Static / Articulated / Thin + Physics"]
     RT --> D
-    TRI --> PP["Physical Post-processing: Projection De-penetration + Gravity Settling"]
-    PP --> S["Simulation-Ready Multi-room Scene S"]
+    TRI --> PP["Physical Post-processing: Projection de-penetration + Gravity settling"]
+    PP["Physical Post-processing"] --> S["Simulation-Ready Multi-room Scene S"]
 ```
 
 ### Key Designs
 
-**1. Designer-Critic-Orchestrator Triad: Breaking Self-Evaluation Bias via Tool Privilege Isolation**
+**1. Designer-Critic-Orchestrator Agent Triangle: Breaking self-evaluation bias via tool permission isolation**
 
-Single-agent paradigms often fall into the trap of "rating one's own proposal with a 90/100." Mixing generation, evaluation, and control makes it difficult to converge on dense, feasible configurations. SceneSmith splits these tasks among three roles with distinct tool privileges. The **Designer** has exclusive access to scene modification tools (placement, adjustment, snapping, and assembling complex objects like fruit bowls), allowing multiple atomic edits per turn. The **Critic** is strictly limited to observation and feasibility verification tools (querying poses, rendering views, collision detection, reachability checks), outputting a scalar score and feedback without modification rights. This external perspective helps catch semantic and physical issues overlooked by the designer.
+The single-agent reason-act-reflect paradigm (e.g., SceneWeaver) often falls into the trap of "rating its own proposal 90 points." Mixing generation, evaluation, and control into one role makes it difficult to converge to dense and feasible configurations. SceneSmith splits these tasks among three roles at each stage, assigning them different tool permissions. The Designer exclusively holds scene modification tools (placing/adjusting assets, snapping, assembling compound objects like fruit bowls) and can call any number of tools sequentially within a turn. The Critic is strictly limited to observation and feasibility verification tools (querying poses, rendering views, collision detection, reachability detection) and outputs a scalar score along with natural language feedback. Lacking modification permissions, the Critic provides an external perspective to catch semantic and physical errors missed by the Designer.
 
-The **Orchestrator** manages the designer and critic as dispatchable tools and maintains historical checkpoints. If the critic's score drops, it rolls back to the previous state—turning "exploration" into "safe exploration." Each agent uses a sliding-window memory; earlier turns are compressed via LLM summarization, and visual observations are cleared at the end of each stage to manage context length. This privilege-based isolation is significantly more stable than pure prompt-based roleplay.
+The Orchestrator treats both the Designer and Critic as schedulable tools and maintains historical checkpoints. If the Critic's score drops compared to the previous step, it rolls back to the prior state—turning "exploration" into "safe exploration" and preventing iterations from degrading. Each agent is equipped with a turn-based sliding window memory; earlier turns are compressed by LLM summarization, and visual observations are handled via a limited window cleared at the end of a stage to manage context length. This "role decomposition by permission" is significantly more stable than pure prompt-based role-playing.
 
-**2. Asset Routing + Three-way On-demand Generation: Balancing Open Vocabulary and Simulation-Ready Physics**
+**2. Asset Routing + Three-way On-demand Generation: Balancing open-vocabulary and simulation readiness**
 
-Requests from the designer vary greatly: "a red apple" is static, "a kitchen cabinet with drawers" is articulated, and "a rug" is a thin decorative item. Using a single text-to-3D pipeline for everything would result in cabinets with non-functional doors, while retrieval-only methods are limited by library size. The asset router diverts requests as follows: complex requests (e.g., fruit bowl) are decomposed into atomic assets; static objects follow a generation path (GPT Image 1.5 for reference, SAM3 for segmentation, SAM3D for mesh reconstruction), followed by orientation normalization, scaling, convex decomposition, and VLM-based estimation of physical properties ($m, CoM, \mu, I$). Articulated objects are retrieved from the ArtVIP library (including joint definitions) with supplementary physical properties. Thin coverings use lightweight geometry with PBR materials from ambientCG.
+Designer requests vary greatly: a "red apple" is a static object, a "kitchen cabinet with drawers" is articulated, and a "carpet" is a thin covering. Using a single text-to-3D pipeline for everything would result in cabinets with unopenable doors, while retrieval-only methods are limited by library capacity. SceneSmith's asset router diverts traffic by object type: compound requests (e.g., fruit bowl) are decomposed into atomic assets (a bowl plus multiple fruits). Static objects follow a generation path using GPT Image 1.5 for reference images, SAM3 for foreground segmentation, and SAM3D for textured mesh reconstruction. Poses are normalized, scaled to target sizes, collision parts are convex-decomposed, and physical properties (mass, center of mass, friction, inertia) are estimated by the VLM. Articulated objects are retrieved from the ArtVIP library (providing pre-made multi-link models with joint definitions) and supplemented with physical properties. Thin coverings use lightweight geometric planes paired with PBR materials retrieved from ambientCG to avoid unnecessary rigid-body complexity.
 
-All candidate assets undergo mesh integrity checks and VLM semantic verification. This hybrid "strategy-by-type + unified physical post-processing" approach is the current engineering sweet spot for combining open-vocabulary, articulated functionality, and immediate simulation readiness. On-demand generation also prevents data contamination where robot policies might "cheat" on known asset libraries.
+All candidate assets undergo mesh integrity checks and VLM semantic verification. Failures trigger retries within a budget or a strategy change, with failure reasons fed back to the agent. This "type-specific strategy + unified physical post-processing" is currently the only engineering balance that achieves an open vocabulary, articulation support, and immediate simulation readiness. On-demand generation also prevents robot policies from "cheating" by training on pre-known asset libraries.
 
-**3. Hierarchical Tree Construction + Physical Post-processing: Agents Manage Semantics, Solvers Manage Physics**
+**3. Hierarchical Tree Construction + Physical Post-processing: Agents for semantics, solvers for physical baselines**
 
-Enforcing strict physical constraints solely through agents is costly and slow. SceneSmith delegates semantics and aesthetics to the hierarchical tree and physical feasibility to deterministic solvers. Construction follows a "big-to-small" tree: rooms branch first, followed by support entities within rooms. Prompts are refined hierarchically ($\mathcal{T} \to \mathcal{T}_j \to \mathcal{T}_{j,k}$) to pass global style and room utility down the tree. Related surfaces (e.g., two shelves of one bookcase) are merged to coordinate placement. Objects are placed in the $SE(2)$ pose of the support surface coordinate system, then lifted to $SE(3)$, fundamentally preventing "floating vases" or "cups intersecting tables."
+Enforcing strict physical constraints within agents is extremely costly and slow to converge. SceneSmith assigns semantics and aesthetics to hierarchical tree construction and physical feasibility to deterministic solvers. Construction follows a tree that commits layer-by-layer from large to small: rooms branch first, then selected supporting entities within each room. Prompts refine across levels ($\mathcal{T} \to \mathcal{T}_j \to \mathcal{T}_{j,k}$), passing global style, room purpose, and surface semantics downward. Related surfaces, like two shelves of the same bookcase, are merged into a single branch to coordinate placement (e.g., "books on top, plants on bottom"). Object placement is specified as $SE(2)$ poses in the supporting surface coordinate system, then lifted to full $SE(3)$ using the surface's known $SE(3)$ pose, fundamentally preventing "floating vases" or "cups intersecting tables."
 
-Physical post-processing occurs after the furniture and clutter stages: non-linear optimization projects objects to the nearest collision-free configuration, followed by a gravity simulation in Drake to allow unstable objects to settle into equilibrium. This labor division—agent for "roughly reasonable" and solver for "refined precision"—ensures simulation readiness with minimal penetration (3.8 mm). Walls and floors use volumetric geometry with thickness to prevent tunneling during discrete-time-step physics simulations.
+A physical post-processing pass is run at the end of the furniture and small object stages: first, non-linear optimization projects each object to the nearest collision-free configuration (preserving orientation), then gravity simulation in Drake allows unstable objects to settle into static equilibrium. This division of labor—"agent for rough logic + solver for refinement"—uses cheap, deterministic steps like mm-level de-penetration and gravity settling to ensure simulation readiness. Final residual penetration is only 3.8 mm. Walls and floors are modeled as volumetric geometry with thickness rather than planes to resist penetration during discrete-time-step physical simulation.
 
 ### Loss & Training
-SceneSmith does not train new models; it utilizes off-the-shelf VLMs (GPT-4o, etc.) + visual foundation models (SAM3, SAM3D, T2I). The scalar score from the critic is used for the orchestrator's acceptance/rollback decisions rather than gradient optimization. Agent behavior is controlled entirely via prompt engineering and tool-calling budgets without parameter fine-tuning.
+SceneSmith does not train new models; it combines off-the-shelf VLMs (GPT, etc.) with off-the-shelf vision foundation models (SAM3, SAM3D, text-to-image). The scalar score provided by the Critic is used for the Orchestrator's accept/rollback/refine decisions rather than gradient optimization. Agent behavior is controlled entirely via prompt engineering and tool-call budgets without any parameter fine-tuning.
 
 ## Key Experimental Results
 
@@ -90,63 +90,63 @@ SceneSmith does not train new models; it utilizes off-the-shelf VLMs (GPT-4o, et
 
 | Dataset / Dimension | Metric | Ours (SceneSmith) | Prev. SOTA | Gain |
 |--------|------|------|----------|------|
-| Indoor Scene | Objects/Room | **71.1 ± 13.0** | HSM 22.7 / Holodeck 23.0 | 3–6× |
+| Indoor Scene | Objects per room | **71.1 ± 13.0** | HSM 22.7 / Holodeck 23.0 | 3–6× |
 | Indoor Scene | Collision Rate COL ↓ | **1.2%** | 3–29% (Baselines) | Significant |
 | Indoor Scene | Static Stability STB ↑ | **95.6%** | 8–61% (Baselines) | 1.5–12× |
-| Indoor Scene | Obj-Obj Rel. OOR ↑ | **67.6** | I-Design 28.6 | 2.2× |
+| Indoor Scene | Object-Object Rel. OOR ↑ | **67.6** | I-Design 28.6 | 2.2× |
 | User Study | Realism Win Rate (vs 6 Baselines) | **92.2%** | — | All p < 0.001 |
 | User Study | Prompt Fidelity Win Rate | **91.5%** | — | All p < 0.001 |
 | House-Level | Object Count | **214.1 ± 60.9** | Holodeck 81.3 | 2.6× |
-| House-Level | vs Holodeck Realism Win | **80.3%** | — | p < 0.001 |
-| Policy Eval | Eval-Human agreement | **99.7%** (300 cases) | — | Only 1 edge case |
+| House-Level | vs Holodeck Realism Win Rate | **80.3%** | — | p < 0.001 |
+| Policy Eval | Evaluator-Human Agreement | **99.7%** (300 cases) | — | Only 1 marginal case |
 
 ### Ablation Study
-Six ablations were compared against the full SceneSmith using human studies and automated metrics.
+6 ablations compared SceneSmith against itself via user studies and automated metrics.
 
-| Configuration | Realism / Fidelity Win Rate | Obj Count | Mechanism & Insight |
+| Configuration | Realism / Fidelity Win Rate | Object Count | Key Findings |
 |------|----------------|--------|------|
 | Full SceneSmith | — | 71.1 | Complete method |
-| w/o Generated (HSSD retrieval replacement) | 63.8% / 67.0% (Sig) | 57.7 | Generated assets are critical for realism and open-vocabulary support. |
-| w/o AssetValidation | 63.0% / 62.2% (Sig) | 72.7 | Validation prevents low-quality assets from entering the scene. |
-| w/o ObserveScene (Visual toolkit) | 61.5% / 53.2% | 69.7 | Visual feedback significantly improves realism. |
-| w/o SpecializedTools (snapping/facing/etc.) | 54.8% / 53.2% (N.S.) | 61.5 | Specialized tools had small marginal effects. |
-| w/o AgentMemory | 53.4% / 55.1% (N.S.) | 78.9 | Memory within a single stage has limited impact. |
-| w/o Critic | 51.8% / 47.5% (N.S.) | 54.0 | **Saves 70% cost but obj count drops 24%**; a useful trade-off. |
+| w/o Generated (Replaced with HSSD retrieval) | 63.8% / 67.0% | 57.7 | Generated assets are key contributors; provide open vocabulary. |
+| w/o AssetValidation | 63.0% / 62.2% | 72.7 | Suppresses poor assets (mesh integrity & semantic checks). |
+| w/o ObserveScene (Removes vision tools) | 61.5% / 53.2% | 69.7 | Visual feedback significantly aids realism; marginal for text fidelity. |
+| w/o SpecializedTools (Removes snapping/grouping) | 54.8% / 53.2% | 61.5 | Smaller effect; requires more comparisons to detect. |
+| w/o AgentMemory | 53.4% / 55.1% | 78.9 | Limited effect within a single stage. |
+| w/o Critic | 51.8% / 47.5% | 54.0 | **Saves 70% cost but object count drops 24%**; a cost-effective trade-off. |
 
 ### Key Findings
-- **Density is the primary differentiator**: 71 vs. 11–23 objects per room directly determines if a robot can learn to handle clutter.
-- **Physical readiness is a qualitative shift**: Baseline collision rates of 3–29% and stability as low as 8% mean objects explode or fall through floors upon simulation start. SceneSmith achieves 1.2% collision and 96% stability.
-- **Lower ACC/NAV is expected**: High object density naturally reduces free space, reflecting the realistic messiness of homes.
-- **NoCritic saves money but reduces density**: The Critic's main contribution is "filling the scene" and "increasing diversity" rather than just visual realism.
-- **House Connectivity**: Generated layouts show realistic topology (e.g., entrance → reception → hallway → rooms), whereas baselines like Holodeck often generate isolated or nonsensical room connections.
-- **Policy Evaluation Loop**: 99.7% agreement between the evaluator and human labels demonstrates that the pipeline accurately distinguishes between standard and degraded robot strategies.
+- **Density is the primary axis where SceneSmith distances itself**: 71 vs 11–23 objects is not just a cosmetic improvement; it determines whether robots can learn to handle clutter. House-level results (214 vs 81) are similarly dominant.
+- **Simulation-ready is a qualitative leap, not just quantitative update**: Baseline collision rates of 3–29% and stability as low as 8% mean objects intersect at the start or fly apart when physics starts. SceneSmith crushes collisions to 1.2% and raises stability to 96%.
+- **Slightly lower ACC/NAV** is expected—the 3–6× higher object density naturally reduces free space, reflecting real-world messiness.
+- **NoCritic realism didn't drop significantly but object count fell 24%**: This reveals the Critic's main contribution is "filling the scene" and "increasing object diversity" rather than just boosting realism.
+- **House connectivity** is qualitatively more logical: Generated hotels have "entrance $\rightarrow$ reception $\rightarrow$ corridor $\rightarrow$ rooms," whereas Holodeck often generates houses accessible only through a random guest room.
+- **Closed-loop policy evaluation**: The evaluator achieved 99.7% agreement with humans across 300 cases; successful differentiation between standard (16%) and degraded (12%) policies shows the pipeline's utility.
 
 ## Highlights & Insights
-- **Privilege Isolation in Agent Triads**: Scaling the "roles with restricted tools" concept to other generative tasks (coding, document review) is a robust design pattern to prevent self-bias.
-- **"Agent for Semantics + Solver for Physics" division**: This is a universal paradigm for physics-aware generation. Delegating millimetric de-penetration and settling to cheap, deterministic solvers is far more efficient than agent-based iterative optimization.
-- **Multi-modal Asset Routing**: Orchestrating generation, retrieval, and thin coverings acknowledges the current limitations of Text-to-Articulated models while providing a functional engineering solution.
-- **On-demand asset generation avoids evaluation contamination**: Generating assets rather than retrieving from common libraries ensures that zero-shot robot foundation model evaluation remains unbiased.
-- **Hierarchical Prompt Refinement**: Breaking $\mathcal{T}$ into $\mathcal{T}_j$ and $\mathcal{T}_{j,k}$ allows for parallel local execution while maintaining global stylistic consistency.
+- **Tool permission isolation in the agent triangle** is a transferable design pattern: the Critic cannot modify, the Designer cannot rollback, and the Orchestrator treats colleagues as tools. This "permission-based role separation" is superior for any generative task requiring iterative refinement (code generation, UI design).
+- **The "agent for rough logic + solver for refinement" division** is a universal paradigm for physics-aware generation. Enforcing hard constraints via agents is inefficient; mm-level projection and gravity settling are deterministic and cheap. Assigning hard constraints to solvers and aesthetics to agents finds the "simulation-ready" sweet spot.
+- **Asset Routing by object type**: Co-existence of generation, retrieval, and thin coverings—rather than choosing just one—acknowledges that text-to-3D is still poor for articulated bodies. This is a pragmatic engineering trade-off.
+- **On-demand asset generation avoids data contamination**: Evaluating on generated rather than library-based assets ensures that "seeing the asset during training" is no longer a bias variable, which is crucial for zero-shot evaluation of robot foundation models.
+- **Hierarchical prompt refinement** allows local decisions to be parallelized while maintaining global consistency.
 
 ## Limitations & Future Work
-- Dependency on expensive closed-source VLMs and vision foundation models results in high latency; the NoCritic version is the only cost-efficient alternative.
-- Articulated objects are still limited by the coverage of existing libraries (e.g., ArtVIP); true on-demand generation for articulated assets remains unsolved.
-- Post-processing focuses on static stability. Constraints like dynamic reachability, grasp feasibility, and joint motion envelopes are not explicitly optimized.
-- Automatic evaluation via VLM scoring (SceneEval) has known false positive/negative issues despite high human agreement.
-- Cross-cultural interior design styles and distributions were not explored, as all prompts were in English and reflected Western home layouts.
+- The full pipeline relies heavily on closed-source frontier models (GPT Image 1.5), leading to high costs and latency.
+- Articulated objects are still limited by the coverage of the ArtVIP library; true on-demand generation for articulated objects remains an open problem.
+- Physical post-processing focuses on stability; dynamic reachability, grasp feasibility, and joint motion envelopes are not explicitly optimized, potentially leading to "stable but unreachable" configurations.
+- Automatic evaluation via SceneEval (also VLM-based) has known false positive/negative issues. High realism win rates (92%) are likely influenced by the sheer gap in object density relative to baselines (density confusion).
+- End-to-end policy evaluation is still "toy-level" (pick-and-place, 12–16% success): scene generation capabilities have far outpaced current robot policy capabilities.
 
 ## Related Work & Insights
-- **vs HSM (Pun et al., 2026)**: SceneSmith borrows the support surface detection and hierarchical philosophy but adds hierarchical prompt refinement and the agent triad, leading to significantly higher density and stability.
-- **vs Holodeck (Yang et al., 2024b)**: Holodeck uses constraint solvers for sparse layouts; SceneSmith achieves 2.6× the object count and 1/4 the collision rate at the house level.
-- **vs SceneWeaver (Yang et al., 2025)**: Upgrades single-agent reflection to a triad with expanded toolsets and visual feedback, achieving a 91.7% win rate.
-- **vs ProcTHOR / Infinigen Indoors**: Procedural methods lack semantic flexibility; SceneSmith provides open-vocabulary control while maintaining physical validity via its tool system.
-- **Value**: The claim that "environment generation is no longer the bottleneck for simulation training" is valid—SceneSmith's density and stability move robot simulation training from "research demo" to "industrial utility."
+- **vs HSM (Pun et al., 2026)**: SceneSmith adopts its hierarchical philosophy but adds refined prompts and the agent triangle, resulting in vastly better object counts (71 vs 23) and simulation readiness (STB 96% vs 45%).
+- **vs Holodeck (Yang et al., 2024b)**: Holodeck uses constraint solvers + retrieval for layouts but only supports sparse scenes; SceneSmith achieves 2.6× the object count at the house level.
+- **vs SceneWeaver (Yang et al., 2025)**: SceneWeaver uses a single LLM planner for reason-act-reflect; SceneSmith upgrades this to a three-agent分工 with visual feedback and multi-tool turns, achieving a 91.7% win rate.
+- **vs ProcTHOR (Deitke et al., 2022b)**: Purely rule-based methods have limited semantics; SceneSmith achieves open-vocabulary semantic control while using a tool system to ensure physical feasibility.
+- **vs LayoutVLM / I-Design**: These focus on visual-language layout optimization with low object counts (11–14) and poor stability (8–61%). SceneSmith represents a leap in all relevant dimensions.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The combination of agent triads and hierarchical routing is an engineering consolidation that provides massive functional value.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive evaluation across human study (3,051 pairs), physical metrics, and robot policy closed-loop testing.
-- Writing Quality: ⭐⭐⭐⭐⭐ Clearly articulated motivations and honest discussions of trade-offs and limitations.
-- Value: ⭐⭐⭐⭐⭐ A foundational contribution to the robot learning community by enabling complex, realistic, and physically valid simulation environments.
+- **Novelty**: ⭐⭐⭐⭐ The combination of agent triangles and hierarchical asset routing is a powerful engineering synthesis that creates a truly end-to-end usable system.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ 210 prompts, 205 participants, 3,051 comparisons, 6 ablations, 5 baselines, and real-bot demos across four dimensions.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ Clear motivation ("clutter is the core difficulty") and transparent discussion of trade-offs like the NoCritic alternative.
+- **Value**: ⭐⭐⭐⭐⭐ The claim that "environment generation is no longer the bottleneck for simulation training" is justified. This is an infrastructure-level contribution to the robot learning community.
 
 <!-- RELATED:START -->
 

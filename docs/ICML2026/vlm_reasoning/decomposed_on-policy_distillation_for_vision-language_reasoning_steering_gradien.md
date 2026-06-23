@@ -2,12 +2,12 @@
 title: >-
   [Paper Note] Decomposed On-Policy Distillation for Vision-Language Reasoning: Steering Gradients for Visual Grounding
 description: >-
-  [ICML 2026][Multimodal VLM][Paper Note] The authors decompose the KL loss of multimodal online distillation into two sub-objectives, "language prior" and "visual grounding," based on the Bayes chain rule. They find that the gradients of these two are nearly orthogonal and that standard distillation merely takes a passive bisector. Consequently, they propose
+  [ICML 2026][vlm_reasoning][Paper Note] The authors decompose the KL loss of multimodal on-policy distillation into "language prior" and "visual grounding" sub-objectives based on a Bayesian chain. They find that the gradients of these two are nearly orthogonal, and standard distillation merely takes a passive bisector. Consequently, they propose Visual Grad
 tags:
   - ICML 2026
-  - Multimodal VLM
+  - vlm_reasoning
 date: 2026-05-08
-content_hash: dd18fa31409612ad
+content_hash: 8a9dc6138e130bb3
 ---
 # Decomposed On-Policy Distillation for Vision-Language Reasoning: Steering Gradients for Visual Grounding
 
@@ -15,62 +15,62 @@ content_hash: dd18fa31409612ad
 **arXiv**: [2606.00564](https://arxiv.org/abs/2606.00564)  
 **Code**: https://github.com/hee-suk-yoon/Decomposed_OPD  
 **Area**: Multimodal VLM / LLM Reasoning  
-**Keywords**: Online Distillation, Visual Grounding, Gradient Orthogonality, Visual Gradient Steering, VLM Reasoning  
+**Keywords**: On-Policy Distillation, Visual Grounding, Gradient Orthogonality, Visual Gradient Steering, VLM Reasoning  
 
 ## TL;DR
-The authors decompose the KL loss of multimodal online distillation into two sub-objectives, "language prior" and "visual grounding," based on the Bayes chain rule. They find that the gradients of these two are nearly orthogonal and that standard distillation merely takes a passive bisector. Consequently, they propose Visual Gradient Steering (VGS) to actively bias the update direction toward the visual subspace, achieving average improvements of +2.37%/+1.56% across seven multimodal reasoning benchmarks for Qwen3-VL 8B→2B/4B distillation.
+The authors decompose the KL loss of multimodal on-policy distillation into "language prior" and "visual grounding" sub-objectives based on a Bayesian chain. They find that the gradients of these two are nearly orthogonal, and standard distillation merely takes a passive bisector. Consequently, they propose Visual Gradient Steering (VGS) to actively bias the update direction toward the visual subspace, achieving average gains of +2.37%/+1.56% across seven multimodal reasoning benchmarks for Qwen3-VL 8B→2B/4B.
 
 ## Background & Motivation
 
-**Background**: Two mainstream paths for small models to acquire reasoning capabilities are RLVR and On-Policy Distillation. In on-policy distillation, a teacher model provides token-level dense supervision for trajectories sampled by the student, circumventing the cold-start problem of sparse rewards in RLVR. This has been validated as effective for pure-text LLMs.
+**Background**: The two mainstream paths for small models to acquire reasoning capabilities are RLVR and On-Policy Distillation. On-Policy Distillation involves dense token-level supervision by a teacher model on trajectories sampled by the student, avoiding the cold-start problem of sparse rewards in RLVR, and has been proven effective for text-only LLMs.
 
-**Limitations of Prior Work**: When migrating on-policy distillation directly to VLMs, the industry either avoids it entirely (e.g., Qwen3-VL explicitly limits distillation to pure-text data to fine-tune the LLM backbone, abandoning visual alignment) or crudely fits the multimodal conditional KL as a single objective, leading to insufficient transfer of visual grounding capabilities.
+**Limitations of Prior Work**: When directly applying on-policy distillation to VLMs, the industry either avoids it entirely (e.g., Qwen3-VL explicitly restricts distillation to text-only data to fine-tune the LLM backbone, abandoning visual alignment) or treats the multimodal conditional KL as a single monolithic objective, leading to insufficient transfer of visual grounding capabilities.
 
-**Key Challenge**: Through Bayes decomposition $\log p(\tau\mid I,x)=\log p(\tau\mid x)+\log p(I\mid\tau,x)-\log p(I\mid x)$, the authors reveal that the overall KL actually comprises "language prior alignment" and "visual grounding alignment." Geometric gradient analysis shows that these two are nearly orthogonal on high visual-dependency tokens (angle $\approx 92^\circ$ in the 9th bucket of highest visual dependency). The standard monolithic loss gradient remains at a compromise direction of approximately $42^\circ$ to $50^\circ$ between the two, acting as a static bisector that underserves the visual subspace where the model is truly stuck.
+**Key Challenge**: Through Bayesian decomposition $\log p(\tau\mid I,x)=\log p(\tau\mid x)+\log p(I\mid\tau,x)-\log p(I\mid x)$, the authors reveal that the overall KL actually comprises "language prior alignment" and "visual grounding alignment." Geometric analysis of gradients shows that these two are nearly orthogonal on tokens with high visual dependence (the angle $\approx 92^\circ$ in the 9th bin of highest visual dependence). The standard monolithic loss gradient remains at a compromise direction of approximately $42^\circ$ to $50^\circ$ between the two, acting as a static bisector that underserves the visual subspace where the model is actually bottlenecked.
 
-**Goal**: To actively tilt the optimization direction toward the visual subspace without breaking the language prior, spending the update budget on resolving perceptual ambiguity rather than general language modeling.
+**Goal**: To actively steer the optimization direction toward the visual subspace without breaking the language prior, spending the update budget on resolving perceptual ambiguity rather than general language modeling.
 
-**Key Insight**: The authors propose the "asymmetric maturity hypothesis"—VLM students trained with pre-training + GRPO already possess strong language priors; the real bottleneck is visual perception. Since the two gradients are naturally orthogonal, a "weighted sum" causes the visual term to be pointlessly diluted by the language term in extreme visual regions. Explicitly rotating the update direction toward vision provides a free performance boost.
+**Key Insight**: The authors propose the "Asymmetric Maturity Hypothesis"—VLM students after pre-training and GRPO already possess strong language priors; the true bottleneck is visual perception. If the two gradients are already orthogonal, a "weighted sum" will be pointlessly diluted by the language term in extreme visual regions. Explicitly rotating the update direction toward the visual component provides a "free" improvement.
 
-**Core Idea**: Add an extra KL term $\gamma\ell_{\text{Vis}}$ targeting "visual information gain" atop the standard KL, and apply an additional language preservation regularizer $\lambda\ell_{\text{LP}}$ for high visual-dependency tokens. A gradient norm normalization constant $\eta_{\text{VGS}}(\gamma)$ is then used to ensure that only the direction is changed, not the step size.
+**Core Idea**: An additional KL term $\gamma\ell_{\text{Vis}}$ targeting "visual information gain" is added on top of the standard KL. A language preservation regularizer $\lambda\ell_{\text{LP}}$ is further applied to tokens with high visual dependence. Finally, a gradient norm normalization constant $\eta_{\text{VGS}}(\gamma)$ ensures that only the direction is changed, not the step size.
 
 ## Method
 
 ### Overall Architecture
 
-VGS follows the standard setup for on-policy distillation: the student policy $p_S^\theta$ samples trajectories $\tau$ under multimodal input $(I,x)$, and the teacher $q_T$ (an 8B Qwen3-VL fine-tuned via GRPO) provides token-level supervision. The difference from the standard pipeline lies solely in the loss function: the original multimodal Reverse KL $\ell_{\text{Standard}}(\tau)$ is replaced by the sum of three terms $\ell_{\text{Standard}}(\tau)+\gamma\ell_{\text{Vis}}(\tau)+\lambda\ell_{\text{LP}}(\tau)$, multiplied by a gradient norm normalization coefficient $\eta_{\text{VGS}}(\gamma)$. Trajectory sampling, model architecture, training framework, and batch scheduling remain unchanged, resulting in very low engineering overhead.
+VGS follows the standard setup for on-policy distillation: the student policy $p_S^\theta$ samples trajectories $\tau$ given multimodal inputs $(I,x)$, and the teacher $q_T$ (a GRPO fine-tuned 8B Qwen3-VL) provides token-level supervision. The pipeline differs from standard practices only in the loss function: the original multimodal Reverse KL $\ell_{\text{Standard}}(\tau)$ is replaced by the sum of three terms $\ell_{\text{Standard}}(\tau)+\gamma\ell_{\text{Vis}}(\tau)+\lambda\ell_{\text{LP}}(\tau)$, multiplied by a gradient norm normalization coefficient $\eta_{\text{VGS}}(\gamma)$. Trajectory sampling, model architecture, training framework, and batch scheduling remain unchanged, ensuring low engineering overhead.
 
 ### Key Designs
 
-**1. Visual Information Gain Sub-objective $\ell_{\text{Vis}}$: A handle for independent visual grounding optimization**
+**1. Visual Information Gain Sub-objective $\ell_{\text{Vis}}$: A separate handle for "Visual Grounding"**
 
-Standard distillation treats multimodal KL as a single entity, where the visual term is diluted by the language term. The authors first decompose it: via the Bayes chain rule $\log p(I\mid\tau,x)=[\log p(\tau\mid I,x)-\log p(\tau\mid x)]+\log p(I\mid x)$. By applying the same decomposition to the teacher, a "target distribution" $q_T^*$ can be constructed—it preserves the student's own language prior while replacing only the visual likelihood with the teacher's: $q_T^*(\tau\mid I,x)\propto p_S^\theta(\tau\mid x)\cdot q_T(I\mid\tau,x)$. In logit space, this is equivalent to:
+Standard distillation treats the multimodal KL as a monolith, diluting the visual term with the language term. The authors first decompose it: according to the Bayesian chain rule $\log p(I\mid\tau,x)=[\log p(\tau\mid I,x)-\log p(\tau\mid x)]+\log p(I\mid x)$. By performing the same decomposition on the teacher, they construct a "target distribution" $q_T^*$—which retains the student's own language prior but replaces the visual likelihood with the teacher's: $q_T^*(\tau\mid I,x)\propto p_S^\theta(\tau\mid x)\cdot q_T(I\mid\tau,x)$. In logit space, this is equivalent to:
 
-$$\log q_T^*=\log p_S^\theta(\tau\mid x)+\big(\log q_T(\tau\mid I,x)-\log q_T(\tau\mid x)\big)-\log Z^*,$$
+$$\log q_T^*=\log p_S^\theta(\tau\mid x)+\big(\log q_T(\tau\mid I,x)-\log q_T(\tau\mid x)\big)-\log Z^*$$
 
-Every term can be obtained by running the student/teacher through forward passes on "multimodal context" and "pure-text context" once, requiring no extra networks. The visual sub-objective is then the KL divergence of the student relative to this target distribution: $\ell_{\text{Vis}}(\tau)=\frac{1}{|\tau|}\sum_t D_{KL}(p_S^\theta(\cdot\mid\tau_{<t},I,x)\,\|\,q_T^*(\cdot\mid\tau_{<t},I,x))$, which penalizes only the gap in "visual information gain." This is isolated because empirical findings show that for tokens with higher visual dependency, the angle between $\nabla\ell_{\text{Lang}}$ and $\nabla\ell_{\text{Vis}}$ increases monotonically from $\sim60^\circ$ to $\sim92^\circ$—the two gradients are geometrically nearly independent, and passive averaging via monolithic KL fails to satisfy the visual branch.
+Each term can be obtained by running forward passes of the student/teacher on "multimodal context" and "text-only context" without extra networks. The visual sub-objective is then the KL divergence of the student from this target distribution: $\ell_{\text{Vis}}(\tau)=\frac{1}{|\tau|}\sum_t D_{KL}(p_S^\theta(\cdot\mid\tau_{<t},I,x)\,\|\,q_T^*(\cdot\mid\tau_{<t},I,x))$, punishing only the gap in "visual information gain." This separation is necessary because empirical findings show that for tokens with higher visual dependence, the angle between $\nabla\ell_{\text{Lang}}$ and $\nabla\ell_{\text{Vis}}$ increases monotonically from $\sim60^\circ$ to $\sim92^\circ$—the two gradients are geometrically independent, and a monolithic KL cannot satisfy the visual branch.
 
 **2. Visual Gradient Steering + Norm Normalization $\eta_{\text{VGS}}(\gamma)$: Rotating direction without changing step size**
 
-With an independent visual term, the update direction can be explicitly steered toward the visual subspace: let $\ell_{\text{VGS}}(\tau)=\ell_{\text{Standard}}(\tau)+\gamma\ell_{\text{Vis}}(\tau)$, where $\gamma\ge 0$ controls the rotation magnitude. However, direct weighting has a side effect—$\gamma$ amplifies the gradient magnitude while changing the direction, effectively modifying the learning rate. To prevent direction and step size from contaminating each other during tuning, the authors use a normalization constant to scale the step size back:
+With an independent visual term, the update direction can be explicitly rotated toward the visual subspace: let $\ell_{\text{VGS}}(\tau)=\ell_{\text{Standard}}(\tau)+\gamma\ell_{\text{Vis}}(\tau)$, where $\gamma\ge 0$ controls the rotation magnitude. However, direct weighting changes the gradient norm as well, which is equivalent to implicitly changing the learning rate. the authors use a normalization constant to maintain the step size:
 
-$$\eta_{\text{VGS}}(\gamma)=\frac{\|\nabla_\theta\mathcal{L}_{\text{Standard}}\|_2}{\|\nabla_\theta\mathcal{L}_{\text{Standard}}+\gamma\nabla_\theta\mathcal{L}_{\text{Vis}}\|_2},$$
+$$\eta_{\text{VGS}}(\gamma)=\frac{\|\nabla_\theta\mathcal{L}_{\text{Standard}}\|_2}{\|\nabla_\theta\mathcal{L}_{\text{Standard}}+\gamma\nabla_\theta\mathcal{L}_{\text{Vis}}\|_2}$$
 
-After multiplying this with the overall loss, the norm of the steered gradient always equals the norm of the standard gradient, making $\gamma$ a pure "directional knob." In practice, this ratio remains nearly constant throughout training; the authors fix it as a constant ($\eta=0.41$ for 2B, $\eta=0.36$ for 4B) to avoid dynamic computation. Decoupling direction and step size is a robustness common sense in multi-task learning (e.g., GradNorm), and here it makes the $\gamma$ ablation clean and controllable.
+After multiplying the overall loss by this constant, the steered gradient norm always equals the standard gradient norm, making $\gamma$ a pure "directional knob." Intuitively, this ratio remains nearly constant throughout training, so the authors fix it as a constant ($\eta=0.41$ for 2B, $\eta=0.36$ for 4B). Decoupling direction from magnitude is a robustness standard in multi-task learning (like GradNorm), which here makes $\gamma$ ablation clean and controllable.
 
-**3. Language Preservation Regularization $\ell_{\text{LP}}$: Guarding the language prior on "back-biting" tokens**
+**3. Language Preservation Regularizer $\ell_{\text{LP}}$: Protecting the language prior on "back-biting" tokens**
 
-Visual steering is not universally safe. Geometric analysis shows that in the bucket with the most extreme visual dependency, $\nabla\ell_{\text{Lang}}$ and $\nabla\ell_{\text{Vis}}$ form an obtuse angle ($>90^\circ$). In such cases, pushing forcedly toward the visual direction will inversely decrease the language prior match, leading to divergence in $\ell_{\text{Lang}}$ on the training curve. The authors' strategy is to add a language KL regularizer only to these tokens—selecting the top 30% based on Visual Dependency Score (VDS) ($\text{VDS}_t=D_{KL}(q_T(\cdot\mid\tau_{<t},I,x)\,\|\,q_T(\cdot\mid\tau_{<t},x))$). For these, they apply $\ell_{\text{LP}}(\tau)=\frac{1}{|\tau|}\sum_t \mathbf{1}[\text{VDS}_t>Q_{0.7}]\cdot D_{KL}(p_S^\theta(\cdot\mid\tau_{<t},x)\,\|\,q_T(\cdot\mid\tau_{<t},x))$ with a conservative weight $\lambda\approx 0.01$. Protecting only these few back-biting tokens prevents catastrophic forgetting without adding excessive supervision to general tokens or diluting the visual steering intensity.
+Visual steering is not always safe. Geometric analysis reveals that in the most extreme bin of visual dependence, $\nabla\ell_{\text{Lang}}$ and $\nabla\ell_{\text{Vis}}$ form an obtuse angle ($>90^\circ$). In this case, pushing toward the visual direction inversely reduces the language prior matching, leading to divergence of $\ell_{\text{Lang}}$. The solution is a language KL regularizer applied only to these tokens—specifically the top 30% ranked by Visual Dependence Score (VDS, where $\text{VDS}_t=D_{KL}(q_T(\cdot\mid\tau_{<t},I,x)\,\|\,q_T(\cdot\mid\tau_{<t},x))$). For these, $\ell_{\text{LP}}(\tau)=\frac{1}{|\tau|}\sum_t \mathbf{1}[\text{VDS}_t>Q_{0.7}]\cdot D_{KL}(p_S^\theta(\cdot\mid\tau_{<t},x)\,\|\,q_T(\cdot\mid\tau_{<t},x))$ is applied with a conservative weight $\lambda\approx 0.01$. Protecting only these few tokens prevents catastrophic forgetting without diluting the visual steering for general tokens.
 
 ### Loss & Training
 
-The final training objective is $\mathcal{L}_{\text{VGS-LP}}=\eta_{\text{VGS}}(\gamma)\cdot\mathbb{E}_{\tau\sim p_S^\theta(\cdot\mid I,x)}[\ell_{\text{Standard}}(\tau)+\gamma\ell_{\text{Vis}}(\tau)+\lambda\ell_{\text{LP}}(\tau)]$. All experiments fix $\gamma=2.0$ and $\lambda=0.01$. The teacher is obtained by training Qwen3-VL-8B-Instruct on Vision-SR1-47K for 2 epochs using GRPO; students are Qwen3-VL-2B/4B-Instruct, forced with a unified system prompt to separate the reasoning chain from the final answer. The same loss can be seamlessly integrated into a GRPO training loop for hybrid RL+distillation.
+The final training objective is $\mathcal{L}_{\text{VGS-LP}}=\eta_{\text{VGS}}(\gamma)\cdot\mathbb{E}_{\tau\sim p_S^\theta(\cdot\mid I,x)}[\ell_{\text{Standard}}(\tau)+\gamma\ell_{\text{Vis}}(\tau)+\lambda\ell_{\text{LP}}(\tau)]$. All experiments fix $\gamma=2.0$ and $\lambda=0.01$. The teacher is a Qwen3-VL-8B-Instruct trained on Vision-SR1-47K using GRPO for 2 epochs; the students are Qwen3-VL-2B/4B-Instruct, with a mandatory uniform system prompt to separate the reasoning chain from the final answer. The same loss can be seamlessly integrated into a GRPO training loop for hybrid RL+Distillation.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Main result: Qwen3-VL-8B teacher distilled to 2B / 4B students on Vision-SR1-47K, showing average Acc@1 (greedy) and Acc@16 (T=1.0) across 7 multimodal reasoning benchmarks.
+Qwen3-VL-8B teacher distilled to 2B/4B students on Vision-SR1-47K. Measured by average Acc@1 (greedy) and Acc@16 (T=1.0) across 7 benchmarks.
 
 | Setting | Teacher 8B | Standard Distill Acc@1 | VGS Acc@1 | Gain |
 |------|-----------|-----------------------|-----------|------|
@@ -82,50 +82,50 @@ Main result: Qwen3-VL-8B teacher distilled to 2B / 4B students on Vision-SR1-47K
 | 4B / MathVerse-VD | 79.63 | 71.53 | 74.31 | +2.78 |
 | 4B / MathVision | 44.14 | 37.96 | 40.59 | +2.63 |
 
-VGS gains are more significant when the teacher-student capacity gap is larger (Avg +2.37 for 2B vs. +1.56 for 4B), consistent with the hypothesis that visual perception is the true bottleneck.
+The gain from VGS is more significant when the teacher-student capacity gap is larger (2B avg. +2.37 vs 4B +1.56), consistent with the hypothesis that visual perception is the primary bottleneck.
 
 ### Ablation Study
 
-Ablation of GRPO + distillation (2B student, Vision-SR1-47K):
+GRPO + Distillation ablation (2B Student, Vision-SR1-47K):
 
 | Configuration | Avg Acc@1 | Avg Acc@16 | Description |
-|------|-----------|-------------|------|
-| Initial Student (2B) | 31.32 | – | Starting Point |
-| Pure GRPO | 44.83 | 45.68 | Single RL baseline |
-| GRPO + Standard-KD | 45.41 | 45.22 | Added monolithic distillation |
+|------|-----------|-----------|------|
+| Initial Student (2B) | 31.32 | – | Starting point |
+| Pure GRPO | 44.83 | 45.68 | RL-only baseline |
+| GRPO + Standard-KD | 45.41 | 45.22 | Adding monolithic distillation |
 | GRPO + VGS (full) | 47.20 | 46.57 | +1.79 / +1.35 over Standard-KD |
 
 ### Key Findings
 
-- For tokens with higher visual dependency, VGS results in a faster decline in $\ell_{\text{Vis}}$, confirming that directional rotation indeed spends the update budget on the visual subspace.
-- Disabling the LP regularizer while setting $\gamma$ to 2.0 causes $\ell_{\text{Lang}}$ in high VDS buckets to rise significantly; adding LP pushes the curve back down without hurting multimodal reasoning accuracy, proving the necessity of selective LP activation.
-- An inverse "Language Steering" experiment shows that rotating the steering direction toward the language subspace actually lowers average accuracy, directly disproving naive "symmetrical investment" ideas and validating the asymmetrical hypothesis that the visual subspace is the bottleneck.
-- $\eta_{\text{VGS}}$ norm normalization is critical: removing it makes changing $\gamma$ equivalent to changing the learning rate, making hyperparameters difficult to tune.
+- For tokens with higher visual dependence, the value of $\ell_{\text{Vis}}$ decreases faster under VGS, confirming that the directional rotation indeed spends the update budget on the visual subspace.
+- Disabling the LP regularizer while setting $\gamma=2.0$ causes $\ell_{\text{Lang}}$ to rise significantly in high VDS bins. Adding LP suppresses this curve and prevents drops in multimodal reasoning accuracy, proving the necessity of selective activation.
+- An "Inverse Language Steering" experiment shows that rotating the steering direction toward the language subspace actually lowers average accuracy, falsifying the idea of "symmetric investment" and validating the asymmetric hypothesis that the visual subspace is the bottleneck.
+- The $\eta_{\text{VGS}}$ norm normalization is critical: without it, changing $\gamma$ is equivalent to changing the learning rate, making hyperparameters difficult to tune.
 
 ## Highlights & Insights
 
-- **Returning model distillation to an optimization geometry perspective**: Previous discussions on KL distillation mostly stayed at the probabilistic level (forward vs. backward KL, mode-covering vs. mode-seeking). This work shifts to the cosine relationship of gradient directions, revealing structural flaws like "Standard KL = Static Bisector" that were previously unclearly explained. This idea is transferable to any multi-conditional generation distillation scenario, such as audio-language or video-language.
-- **Computable Visual Information Gain**: Constructing the target distribution $q_T^*$ only requires the logit ratios of the student/teacher across multimodal and pure-text contexts, requiring no additional networks or sampling. It is engineering-friendly as long as the base model supports the removal of image tokens.
-- **VDS Bucket Analysis**: Using $\text{VDS}_t=D_{KL}(q_T(\cdot\mid I,x)\,\|\,q_T(\cdot\mid x))$ to measure token-level visual dependency is a very clean metric that can be used independently as a VLM interpretability tool (e.g., for training data filtering or attention analysis).
+- **Returns model distillation to an optimization geometry perspective**: While previous discussions on KL distillation often remained at the probabilistic level (Forward vs. Reverse KL, mode-covering vs. mode-seeking), this work examines the cosine relationship of gradient directions. It reveals the structural flaw of "Standard KL = Static Bisector" and provides insights transferable to any multi-conditional generation scenario (e.g., audio-language, video-language).
+- **Computable Visual Information Gain**: Constructing the target distribution $q_T^*$ requires only the student/teacher logit ratios between multimodal and text-only contexts. It requires no extra networks or sampling, making it engineering-friendly for any base model supporting image token removal.
+- **VDS Binning Analysis**: Measuring token-level visual dependence via $\text{VDS}_t=D_{KL}(q_T(\cdot\mid I,x)\,\|\,q_T(\cdot\mid x))$ provides a clean metric that can serve as an independent VLM interpretability tool for data filtering or attention analysis.
 
 ## Limitations & Future Work
 
-- The experiments only cover the Qwen3-VL series (2B/4B/8B) and lack cross-validation on the stability of $q_T^*$ construction across LLaVA, InternVL, or Gemma architectures. Since vision-text fusion methods vary greatly across base models, the transferability of the conclusions requires further validation.
-- The concept of "pure-text context" in VLMs assumes the model can still provide a valid distribution without image tokens, which might not hold for architectures using learned image tokens or soft prompts (e.g., Q-Former inserted before word embeddings).
-- $\gamma=2.0$, $\lambda=0.01$, and threshold $Q_{0.7}$ are empirical values. No scheme for automatic tuning based on student size is provided; in particular, the setting of $\alpha$ during the RL phase might be strongly coupled with $\gamma$.
-- Evaluation is currently limited to static image + math/logic reasoning tasks. The transferability of VGS to real-world multimodal dialogues or long-video understanding remains unknown.
+- Experiments are limited to the Qwen3-VL series (2B/4B/8B) and lack cross-validation on architectures like LLaVA, InternVL, or Gemma to test the stability of $q_T^*$.
+- The concept of a "text-only context" in VLMs assumes the model provides a valid distribution without image tokens, which might not hold for architectures using learned image tokens or soft prompts (e.g., Q-Former before word embeddings).
+- Values for $\gamma=2.0$, $\lambda=0.01$, and threshold $Q_{0.7}$ are empirical; no automated tuning scheme based on student size is provided.
+- Evaluation is restricted to static images and math/logic reasoning; the transferability of VGS to real-world multimodal dialogues or long-video understanding remains unknown.
 
 ## Related Work & Insights
 
-- **vs On-Policy Distillation (Agarwal et al., 2024)**: They proposed a pure-text distillation framework using Reverse KL + on-policy sampling; this work is a multimodal extension. The difference is the direct attack on the geometric flaws of monolithic KL rather than changing the KL type.
-- **vs GradNorm / PCGrad / GradVac etc. multi-task gradient surgery**: Traditional methods perform projection/re-weighting after per-task gradients are obtained. This work does not require per-task gradients (visual and language terms share the same tokens), incurs nearly zero overhead, and the directional correction is explicitly interpretable (always tilting toward $\nabla\ell_{\text{Vis}}$).
-- **vs RLVR / GRPO**: RL provides sparse outcome rewards while distillation provides dense token-level supervision; this work treats them as complementary. GRPO + VGS achieves implicit length regularization aligned with the teacher, which is more stable than the length explosion seen in pure GRPO.
+- **vs. On-Policy Distillation (Agarwal et al., 2024)**: This work is a multimodal extension of their text-only Reverse KL + on-policy sampling framework, but it attacks the geometric flaws of monolithic KL rather than changing the KL type.
+- **vs. GradNorm / PCGrad / GradVac**: Traditional multi-task gradient surgery involves projection or re-weighting after computing per-task gradients. VGS does not require per-task gradients (visual and language terms share the same tokens), incurring near-zero overhead with explicit interpretability.
+- **vs. RLVR / GRPO**: RL provide sparse outcome rewards while distillation provides dense token-level supervision; the two are complementary. GRPO + VGS achieves implicit length regularization compared to the length explosion seen in pure GRPO.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Bayes decomposition + gradient orthogonal analysis is the first work in VLM distillation literature to explicitly separate language/vision to examine gradient geometry.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Seven reasoning benchmarks + two student scales + GRPO hybrid training, though only covering one model family.
-- Writing Quality: ⭐⭐⭐⭐⭐ Clear derivations; geometric diagrams (Fig.3) and training dynamics plots (Fig.4) consistently support the core hypothesis.
-- Value: ⭐⭐⭐⭐ Can be integrated into existing on-policy distillation frameworks at almost zero cost, providing a plug-and-play boost for the small VLM training community.
+- Novelty: ⭐⭐⭐⭐⭐ First work in VLM distillation to explicitly decompose "Language/Visual" components to examine gradient geometry.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers seven reasoning benchmarks, two student scales, and GRPO hybrid training, though restricted to one model family.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear derivations; the geometric diagrams (Fig.3) and training dynamics (Fig.4) consistently support the core biological hypothesis.
+- Value: ⭐⭐⭐⭐ Can be integrated into existing on-policy distillation frameworks with near-zero engineering cost, providing a plug-and-play boost for the small VLM community.
 
 <!-- RELATED:START -->
 
@@ -133,11 +133,11 @@ Ablation of GRPO + distillation (2B student, Vision-SR1-47K):
 
 ## Related Papers
 
-- [\[CVPR 2026\] VOLD: Reasoning Transfer from LLMs to Vision-Language Models via On-Policy Distillation](../../CVPR2026/multimodal_vlm/vold_reasoning_transfer_from_llms_to_vision-language_models_via_on-policy_distil.md)
-- [\[CVPR 2026\] PDCR: Perception-Decomposed Confidence Reward for Vision-Language Reasoning](../../CVPR2026/multimodal_vlm/pdcr_perception-decomposed_confidence_reward_for_vision-language_reasoning.md)
+- [\[CVPR 2026\] VOLD: Reasoning Transfer from LLMs to Vision-Language Models via On-Policy Distillation](../../CVPR2026/vlm_reasoning/vold_reasoning_transfer_from_llms_to_vision-language_models_via_on-policy_distil.md)
 - [\[ICML 2026\] Learning GUI Grounding with Spatial Reasoning from Visual Feedback](learning_gui_grounding_with_spatial_reasoning_from_visual_feedback.md)
-- [\[CVPR 2026\] CodeV: Code with Images for Faithful Visual Reasoning via Tool-Aware Policy Optimization](../../CVPR2026/multimodal_vlm/codev_code_with_images_for_faithful_visual_reasoning_via_tool-aware_policy_optim.md)
-- [\[CVPR 2026\] Multimodal Distribution Matching for Vision-Language Dataset Distillation](../../CVPR2026/multimodal_vlm/multimodal_distribution_matching_for_vision-language_dataset_distillation.md)
+- [\[CVPR 2026\] PDCR: Perception-Decomposed Confidence Reward for Vision-Language Reasoning](../../CVPR2026/vlm_reasoning/pdcr_perception-decomposed_confidence_reward_for_vision-language_reasoning.md)
+- [\[ICML 2026\] The Perceptual Bandwidth Bottleneck in Vision-Language Models: Active Visual Reasoning via Sequential Experimental Design](the_perceptual_bandwidth_bottleneck_in_vision-language_models_active_visual_reas.md)
+- [\[CVPR 2026\] Self-Critical Distillation Network for Video-based Commonsense Captioning](../../CVPR2026/vlm_reasoning/self-critical_distillation_network_for_video-based_commonsense_captioning.md)
 
 </div>
 

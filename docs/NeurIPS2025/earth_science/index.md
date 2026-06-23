@@ -30,7 +30,7 @@ item_total: 6
 
 **🧠 NeurIPS2025** · **6** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (1)](../../CVPR2026/earth_science/index.md) · [🧪 ICML2026 (1)](../../ICML2026/earth_science/index.md) · [🤖 AAAI2026 (2)](../../AAAI2026/earth_science/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (1)](../../CVPR2026/earth_science/index.md) · [🔬 ICLR2026 (7)](../../ICLR2026/earth_science/index.md) · [🧪 ICML2026 (2)](../../ICML2026/earth_science/index.md) · [🤖 AAAI2026 (2)](../../AAAI2026/earth_science/index.md)
 
 **[A Probabilistic U-Net Approach to Downscaling Climate Simulations](a_probabilistic_unet_approach_to_downscaling_climate_simulat.md)**
 

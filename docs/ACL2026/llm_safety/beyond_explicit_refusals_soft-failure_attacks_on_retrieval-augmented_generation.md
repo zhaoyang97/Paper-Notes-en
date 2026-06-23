@@ -2,12 +2,12 @@
 title: >-
   [Paper Note] Beyond Explicit Refusals: Soft-Failure Attacks on Retrieval-Augmented Generation
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] Formalizes the "soft-failure" threat in RAG systems (fluent but uninformative responses) and proposes DEJA, a black-box evolutionary attack framework. By inducing models to exploit safety alignment mechanisms through adversarial documents, the framework achieves a SASR exceeding 79% with high stealth.
+  [ACL 2026][LLM Safety][Paper Note] This paper formally defines the "soft-failure" threat in RAG systems—generating fluent yet uninformative responses—and proposes the DEJA black-box evolutionary attack framework. By utilizing adversarial documents to induce model safety alignment mechanisms into producing hedging responses, DEJA achieves a SASR exceedin
 tags:
   - ACL 2026
   - LLM Safety
 date: 2026-05-08
-content_hash: 269e5ab2282ba17e
+content_hash: effcb1c4152bd13a
 ---
 # Beyond Explicit Refusals: Soft-Failure Attacks on Retrieval-Augmented Generation
 
@@ -19,61 +19,61 @@ content_hash: 269e5ab2282ba17e
 
 ## TL;DR
 
-Formalizes the "soft-failure" threat in RAG systems (fluent but uninformative responses) and proposes DEJA, a black-box evolutionary attack framework. By inducing models to exploit safety alignment mechanisms through adversarial documents, the framework achieves a SASR exceeding 79% with high stealth.
+This paper formally defines the "soft-failure" threat in RAG systems—generating fluent yet uninformative responses—and proposes the DEJA black-box evolutionary attack framework. By utilizing adversarial documents to induce model safety alignment mechanisms into producing hedging responses, DEJA achieves a SASR exceeding 79% while remaining highly stealthy.
 
 ## Background & Motivation
 
-**Background**: RAG systems rely on external corpora to improve factual accuracy, creating a critical dependency on corpus integrity. Existing attack research focuses primarily on knowledge poisoning (inducing incorrect outputs) and availability attacks (inducing explicit refusals).
+**Background**: RAG systems rely on external corpora to improve factual accuracy, creating a critical dependency on corpus integrity. Existing attack research primarily focuses on knowledge poisoning (inducing incorrect outputs) and availability attacks (inducing explicit refusals).
 
-**Limitations of Prior Work**: "Hard-failures" (e.g., explicit refusals) induced by existing jamming attacks are too obvious. They manifest as visible refusal responses and abnormal textual statistical features (e.g., high perplexity), making them easily detectable by anomaly-based defenses.
+**Limitations of Prior Work**: "Hard-failures" induced by existing jamming attacks, such as explicit refusals to answer, are too conspicuous. They manifest as visible refusal responses and anomalous text statistics (e.g., high perplexity), making them easily detectable by anomaly-based defenses.
 
-**Key Challenge**: A more stealthy threat exists—"soft-failure": the model produces fluent, coherent, but substantively vacuous answers. These do not trigger refusal keyword detection or perplexity anomalies but effectively negate the core value of RAG.
+**Key Challenge**: A more stealthy threat exists—"soft-failure." The model produces fluent, coherent, but substantively empty responses that neither trigger refusal keyword detection nor produce perplexity anomalies, effectively undermining the core value of RAG.
 
-**Goal**: Formalize the soft-failure threat and develop an automated black-box attack framework to verify the severity of this threat.
+**Goal**: Formally define the soft-failure threat and develop an automated black-box attack framework to validate the severity of this threat.
 
-**Key Insight**: Leveraging the safety alignment mechanisms of LLMs—alignment training makes models prone to "hedging" when facing uncertainty; attackers can manufacture artificial ambiguity to trigger this conservative behavior.
+**Key Insight**: Exploiting the safety alignment mechanisms of LLMs—alignment training makes models prone to "hedging" when facing uncertainty. Attackers can create artificial ambiguity to trigger this conservative behavior.
 
-**Core Idea**: Decompose adversarial documents into a query anchor + retrieval hook + semantic payload, and use evolutionary optimization on the payload to induce low-utility but high-fluency responses.
+**Core Idea**: Adversarial documents are decomposed into a query anchor + retrieval hook + semantic payload. Evolutionary optimization is applied to the payload to induce low-utility but high-fluency responses.
 
 ## Method
 
 ### Overall Architecture
 
-DEJA addresses the problem of how to make an injected document both retrievable and capable of quietly degrading the model's response from "useful" to "fluent but empty," without leaving traces like refusal keywords or perplexity anomalies. It decomposes the adversarial document into three concatenated segments: $d_{adv} = q \oplus h_{hook} \oplus p_{payload}$. The query anchor $q$ at the beginning restates the target question to ensure retrieval; the retrieval hook $h_{hook}$ in the middle is responsible for boosting the rank and semantically linking the anchor and payload; the semantic payload $p_{payload}$ is the functional component, evolved specifically to induce low-information responses. The pipeline first selects an attack strategy based on query features to initialize the payload, then iteratively refines the payload using an evolutionary algorithm until the response utility is sufficiently low, and finally assembles the three segments for injection.
+The problem DEJA solves is how to make an injected document both retrievable and capable of quietly degrading the model's response from "useful" to "fluent but empty," without leaving traces like refusal keywords or perplexity anomalies. It decomposes the adversarial document into three concatenated parts: $d_{adv} = q \oplus h_{hook} \oplus p_{payload}$. The query anchor $q$ at the beginning restates the target question to ensure retrieval; the retrieval hook $h_{hook}$ in the middle is responsible for boosting the ranking and semantically linking the anchor and payload; the semantic payload $p_{payload}$ is the functional component, optimized via evolution to induce uninformative answers. The pipeline involves selecting an attack strategy based on query features to initialize the payload, using an evolutionary algorithm to refine the payload until the response utility is sufficiently low, and finally assembling the three parts for injection.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    Q["Target Query q"] --> S["Context-Aware Strategy Selection<br/>Pick 1/6 blurring strategies by compatibility"]
+    Q["Target Query q"] --> S["Context-Aware Strategy Selection<br/>Select 1/6 Obfuscation Strategy by Compatibility"]
     S --> INIT["Initialize Semantic Payload by Strategy"]
     subgraph EVO["Evolutionary Payload Optimization"]
         direction TB
-        G["Semantic Operator Procreation<br/>Micro-mutation / Crossover / Innovation / Feedback Revision"] --> A["Answer Utility Score (AUS)<br/>Resolution + Specificity + Info Density"]
-        A --> SEL["Fitness Selection<br/>Asymmetric distance towards low utility"]
-        SEL -->|Utility target not met| G
+        G["Semantic Operator Propagation<br/>Micro-mutation / Crossover / Innovation / Feedback Correction"] --> A["Answer Utility Score Calculation<br/>Resolution + Specificity + Info Density"]
+        A --> SEL["Fitness Selection<br/>Asymmetric Distance Driven to Low Utility"]
+        SEL -->|Utility Target Not Met| G
     end
     INIT --> EVO
-    EVO -->|Low utility reached| ASM["Assemble Adversarial Doc<br/>Anchor q ⊕ Hook ⊕ Payload"]
+    EVO -->|Utility Sufficiently Low| ASM["Assemble Adversarial Doc<br/>Anchor q ⊕ Retrieval Hook ⊕ Payload"]
     ASM --> INJ["Inject into Corpus"]
 ```
 
 ### Key Designs
 
-**1. Context-Aware Strategy Selection: Select a blurring strategy by query first to ensure semantic self-consistency**
+**1. Context-Aware Strategy Selection: Ensuring semantic consistency by selecting an obfuscation strategy based on the query**
 
-Different types of questions suit different blurring techniques. If the hook and payload are mismatched, the assembled document will be fragmented and easily detected. DEJA pre-sets 6 attack strategies and first selects the best match for the query $s^* = \arg\max_{s_i} \text{Compatibility}(q, s_i)$, then constrains the semantic themes of both hook and payload with this strategy. This ensures the payload starts within the same semantic context as the query and hook, maintaining coherence throughout the evolutionary process.
+Different types of questions are suited to different obfuscation techniques. If the hook and payload are inconsistent, the resulting document will be fragmented and easily detected. DEJA pre-defines 6 attack strategies and selects the one best matching the current query via compatibility scoring $s^* = \arg\max_{s_i} \text{Compatibility}(q, s_i)$. This strategy then constrains the semantic themes of both the hook and the payload, ensuring the final document is cohesive.
 
-**2. Answer Utility Score (AUS): Using continuous utility scores instead of binary success to optimize "soft-failure"**
+**2. Answer Utility Score (AUS): Using a continuous utility score instead of binary success to optimize "soft-failure"**
 
-Previous jamming attacks used binary criteria like keyword matching or F1. However, "soft-failure" is a gradual semantic degradation—the answer isn't a refusal or necessarily wrong, just empty. AUS quantifies information utility via an LLM-based scoring function across three dimensions: problem resolution (addressing the core question), factual specificity (concrete facts vs. vague generalizations), and information density (new information vs. redundant background). This continuous scale allows for fine-grained optimization targets.
+Previous jamming attacks used binary criteria like keyword matching or F1. However, "soft-failure" is a gradual semantic degradation—the answer is neither a refusal nor strictly incorrect, just empty. Binary standards fail to capture this intermediate state. AUS uses an LLM-based scoring function to quantify information utility across three dimensions: question resolution (whether it addresses the core issue), factual specificity (specific facts vs. vague generalizations), and info density (new info vs. redundant background). This continuous scale allows for fine-grained optimization.
 
-**3. Evolutionary Payload Optimization: Searching for payloads in natural language space to lower utility while maintaining fluency**
+**3. Evolutionary Payload Optimization: Searching the natural language space to suppress utility while maintaining fluency**
 
-Token-level perturbations, while effective at changing output, leave unnatural artifacts detectable by perplexity checks. DEJA optimizes the payload in natural language space using an evolutionary algorithm. The fitness function is defined as $\mathcal{F}(p) = \frac{1}{\mathcal{D}(u) + \epsilon}$, where $\mathcal{D}(u)$ is the asymmetric distance from the current utility to the target utility $\tau_{soft}$—it penalizes higher-than-target utility much more heavily. Each generation uses four LLM-driven operators: micro-mutation (local rewriting), semantic crossover (recombining payloads), innovation mutation (introducing new phrasing), and feedback revision (adjusting based on the previous score).
+Token-level perturbations leave artifacts detectable by perplexity checks. DEJA instead optimizes the payload in the natural language space using an evolutionary algorithm. The fitness function is defined as $\mathcal{F}(p) = \frac{1}{\mathcal{D}(u) + \epsilon}$, where $\mathcal{D}(u)$ is the asymmetric distance from the current utility to the target utility $\tau_{soft}$—penalizing higher utility more heavily. Each generation uses four LLM-driven semantic operators: micro-mutation (local rewriting), semantic crossover (recombining payloads), innovation mutation (introducing new expressions), and feedback correction (adjusting based on prior scores).
 
 ### Loss & Training
 
-No model training is required. Optimization is performed in natural language space via an evolutionary algorithm. The attacker only requires black-box query access, with no need for model parameters or gradients. A single adversarial document is sufficient.
+No model training is required. Optimization occurs in the natural language space via an evolutionary algorithm. The attacker requires only black-box query access, without needing model parameters or gradients. A single adversarial document is sufficient.
 
 ## Key Experimental Results
 
@@ -82,33 +82,33 @@ No model training is required. Optimization is performed in natural language spa
 | Metric | DEJA | Prev. SOTA Attack |
 |------|------|------------|
 | Soft-Failure Attack Success Rate (SASR) | **>79%** | Significantly lower |
-| Hard-Failure Rate | **<15%** | Higher (explicit refusal) |
+| Hard-Failure Rate | **<15%** | Higher (Explicit refusal) |
 | Perplexity Detection Evasion | ✓ Passed | ✗ Detected |
 | Query Rewriting Robustness | ✓ Robust | - |
-| Cross-Model Transferability | ✓ Transferred to closed-source | Limited |
+| Cross-model Transferability | ✓ To closed-source | Limited |
 
 ### Ablation Study
 
 | Component | Effect |
 |------|------|
-| W/o Strategy Selection | SASR decreased |
-| W/o Retrieval Hook | Retrieval success dropped significantly |
-| Random Payload vs. Evolved | Evolutionary optimization significantly higher SASR |
-| Different LLM Families | Effective across model transfers |
+| Without Strategy Selection | SASR decreased |
+| Without Retrieval Hook | Retrieval success rate dropped significantly |
+| Random Payload vs. Evolutionary Optimization | Evolutionary optimization yielded significantly higher SASR |
+| Different LLM Families | Cross-model transfer effective |
 
 ### Key Findings
 
 - Soft-failures are more dangerous than hard-failures: users may attribute uninformative answers to corpus limitations rather than an attack.
-- DEJA exploits safety alignment mechanisms—weaponizing the model's "cautious" behavior.
-- A single adversarial document is effective, making the injection threshold extremely low.
-- Existing perplexity and refusal keyword detections fail entirely to identify soft-failures.
+- DEJA exploits safety alignment mechanisms—the "caution" of models is weaponized.
+- A single adversarial document can effectively attack, making the injection threshold extremely low.
+- Existing perplexity and refusal keyword detections fail completely against soft-failure.
 
 ## Highlights & Insights
 
-- The formal definition of the "soft-failure" concept fills a gap in RAG security research.
-- Reveals the double-edged sword of safety alignment—alignment makes models more "cautious" and thus easier to induce into vacuity.
+- The formal definition of the "soft-failure" concept fills a gap in RAG safety research.
+- Revealed the double-edged sword of safety alignment—alignment makes models more "cautious" and thus easier to induce into uselessness.
 - The AUS scoring framework can be independently used for RAG response quality evaluation.
-- The three-component document decomposition (anchor + hook + payload) provides a general methodology for adversarial document construction.
+- The three-component document decomposition (anchor + hook + payload) is a general methodology for adversarial document construction.
 
 ## Limitations & Future Work
 
@@ -116,21 +116,21 @@ No model training is required. Optimization is performed in natural language spa
 - Evolutionary optimization requires multiple queries to the target system, potentially triggering rate limits.
 - Defense methods (e.g., utility detection) are not fully explored.
 - Attack effectiveness in multi-document retrieval scenarios requires further verification.
-- Research aims to expose vulnerabilities to foster defense, not to provide attack tools.
+- The research aims to expose vulnerabilities to promote defense, not to provide attack tools.
 
 ## Related Work & Insights
 
 - PoisonedRAG (Zou et al., 2025): Knowledge poisoning attacks.
 - Jamming Attack (Shafran et al., 2025): Hard-failure/refusal attacks.
 - LLM Evolutionary Optimization (Fernando et al., 2023; Guo et al., 2025): LLM-driven search.
-- This paper warns the security community to focus on subtler threats that "look normal but are substantively useless."
+- This paper alerts the safety research community to covert threats that "look normal but are substantively useless."
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ The soft-failure concept is novel, revealing unexpected vulnerabilities in safety alignment.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive analysis across configurations, benchmarks, stealth, and robustness.
+- Novelty: ⭐⭐⭐⭐⭐ The soft-failure concept is novel and reveals unexpected vulnerabilities in safety alignment.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive multi-configuration, multi-benchmark, stealth, and robustness analyses.
 - Writing Quality: ⭐⭐⭐⭐ Rigorous threat model definition and clear attack flow.
-- Value: ⭐⭐⭐⭐⭐ Significant warning for RAG security research.
+- Value: ⭐⭐⭐⭐⭐ Significant warning for the RAG safety research community.
 
 <!-- RELATED:START -->
 
@@ -140,8 +140,8 @@ No model training is required. Optimization is performed in natural language spa
 
 - [\[ACL 2026\] Knowledge Poisoning Attacks on Medical Multi-Modal Retrieval-Augmented Generation](knowledge_poisoning_attacks_on_medical_multi-modal_retrieval-augmented_generatio.md)
 - [\[ACL 2026\] Differentially Private Synthetic Text Generation for Retrieval-Augmented Generation (RAG)](differentially_private_synthetic_text_generation_for_retrieval-augmented_generat.md)
-- [\[ACL 2026\] Retrievals Can Be Detrimental: Unveiling the Backdoor Vulnerability of Retrieval-Augmented Diffusion Models](retrievals_can_be_detrimental_unveiling_the_backdoor_vulnerability_of_retrieval-.md)
 - [\[AAAI 2026\] Privacy-protected Retrieval-Augmented Generation for Knowledge Graph Question Answering](../../AAAI2026/llm_safety/privacy-protected_retrieval-augmented_generation_for_knowledge_graph_question_an.md)
+- [\[ACL 2026\] Retrievals Can Be Detrimental: Unveiling the Backdoor Vulnerability of Retrieval-Augmented Diffusion Models](retrievals_can_be_detrimental_unveiling_the_backdoor_vulnerability_of_retrieval-.md)
 - [\[NeurIPS 2025\] ImageSentinel: Protecting Visual Datasets from Unauthorized Retrieval-Augmented Image Generation](../../NeurIPS2025/llm_safety/imagesentinel_protecting_visual_datasets_from_unauthorized_retrieval-augmented_i.md)
 
 </div>

@@ -2,49 +2,49 @@
 title: >-
   [Paper Note] Geometry-Preserving Unsupervised Alignment for Heterogeneous Foundation Models
 description: >-
-  [ICML 2026][Segmentation][Sinkhorn] GPUA treats VLMs like CLIP (rich semantics, low local precision) and VFMs like DINOv3 (fine-grained, lacking semantics) as two "visual languages." It uses optimal transport to mine soft correspondences and solves an orthogonal Procrustes problem to learn a geometry-preserving linear mapping that translates VFM features
+  [ICML 2026][Segmentation][Sinkhorn] GPUA treats VLMs like CLIP (rich semantics, insufficient local precision) and VFMs like DINOv3 (fine-grained detail, lacking semantics) as two "visual languages." It uses Optimal Transport to mine soft correspondences and solves the Orthogonal Procrustes problem to learn a geometry-preserving linear mapping that transl
 tags:
   - ICML 2026
   - Segmentation
   - Sinkhorn
   - hubness
 date: 2026-05-08
-content_hash: 9be8a53fb1960079
+content_hash: ced2c4e9dec28c8b
 ---
 # Geometry-Preserving Unsupervised Alignment for Heterogeneous Foundation Models
 
 **Conference**: ICML 2026  
 **arXiv**: [2606.04385](https://arxiv.org/abs/2606.04385)  
-**Code**: https://github.com/Yuteam14/GPUA (Yes)  
+**Code**: https://github.com/Yuteam14/GPUA (Available)  
 **Area**: Self-Supervised / Representation Learning / Multi-modal Alignment  
-**Keywords**: Vision Foundation Models, VFM-VLM Fusion, Cross-lingual Alignment, Orthogonal Procrustes, Sinkhorn, hubness
+**Keywords**: Visual Foundation Models, VFM-VLM Fusion, Cross-lingual Alignment, Orthogonal Procrustes, Sinkhorn, hubness
 
 ## TL;DR
-GPUA treats VLMs like CLIP (rich semantics, low local precision) and VFMs like DINOv3 (fine-grained, lacking semantics) as two "visual languages." It uses optimal transport to mine soft correspondences and solves an orthogonal Procrustes problem to learn a geometry-preserving linear mapping that translates VFM features into the VLM space. This process is entirely unsupervised, requires no updates to pre-trained parameters, and achieves an average gain of 11.8% in zero-shot classification.
+GPUA treats VLMs like CLIP (rich semantics, insufficient local precision) and VFMs like DINOv3 (fine-grained detail, lacking semantics) as two "visual languages." It uses Optimal Transport to mine soft correspondences and solves the Orthogonal Procrustes problem to learn a geometry-preserving linear mapping that translates VFM features into the VLM space. This process is entirely unsupervised, requires no updates to pre-trained parameters, and achieves an average 11.8% improvement in zero-shot classification.
 
 ## Background & Motivation
-**Background**: The computer vision community identifies two primary camps of foundation models: **VLMs** (e.g., CLIP) use large-scale image-text contrastive pre-training to provide a language-aligned semantic space for open-vocabulary recognition; **VFMs** (e.g., DINOv3) follow self-supervised routes, offering clear patch-level feature structures and strong local discriminative power, but lack language anchors. Combining them is a consensus direction, typically seen in open-vocabulary segmentation pipelines connecting CLIP semantics with DINO fine-grained details.
+**Background**: The computer vision community relies on two major camps of foundation models: **VLMs** such as CLIP, which provide a language-aligned semantic space via large-scale image-text contrastive pre-training and support open-vocabulary recognition; and **VFMs** such as DINOv3, which utilize self-supervised learning to produce patch-level features with clear structures and strong local discriminative power but lack language anchors. Combining both is a consensus direction, typically seen in open-vocabulary segmentation pipelines where CLIP semantics are merged with DINO's fine-grained details.
 
-**Limitations of Prior Work**: Existing fusion schemes suffer from two major flaws: (1) **Requirement for deep access**—they rely on extracting intermediate layer features or issuing dense mask queries, which is infeasible for closed-source models, APIs, or restricted deployments; (2) **Task/structure coupling**—fusion mechanisms are designed around pixel-level prediction, mask generation, or spatial post-processing, making them difficult to transfer to global semantic decision tasks like image-level zero-shot classification.
+**Limitations of Prior Work**: Existing fusion solutions generally suffer from two major flaws: (1) **Dependence on deep access**—they either require internal layer features or dense mask queries, making them incompatible with closed-source models, APIs, or restricted deployments; (2) **Task/Architecture coupling**—the fusion mechanisms are designed specifically for pixel-level prediction, mask generation, or spatial post-processing, making them inapplicable to "global semantic decision" tasks like image-level zero-shot classification.
 
-**Key Challenge**: To make heterogeneous foundation models "directly compatible at the representation layer," one must find a **task-agnostic, feature-only, parameter-free** alignment mechanism. However, representation spaces across models vary in dimensionality, scale, and geometry. Conventional alignment relies on supervised projections or alternating optimization, which are sensitive to initialization and prone to trivial solutions.
+**Key Challenge**: To make heterogeneous foundation models "directly compatible at the representation layer," one must find an **alignment mechanism that is task-agnostic, looks only at features, and leaves parameters untouched**. however, cross-model representation spaces differ in dimensionality, scale, and geometry. Conventional alignment either relies on supervised projections or alternating optimization, which is highly sensitive to initialization and prone to trivial solutions.
 
-**Goal**: (1) Formulate a definition for "translating VFM features to VLM semantic space"; (2) Solve this mapping in a fully unsupervised manner without frozen parameter updates; (3) Suppress the common modality gap and hubness issues in VLM space to ensure translated features work for both zero-shot classification and segmentation.
+**Goal**: (1) Formulate a definition for "translating VFM features into VLM semantic space"; (2) Solve this mapping in a completely unsupervised manner without modifying parameters; (3) Suppress the common modality gap and hubness issues in VLM spaces to ensure translated features are effective for zero-shot classification and segmentation.
 
-**Key Insight**: The authors draw an analogy to **cross-lingual word embedding alignment** in NLP. Word vector spaces of different languages can be aligned via a geometry-preserving linear mapping solved by **orthogonal Procrustes** (Lample et al., 2018; Artetxe et al., 2018), where the "isomorphism hypothesis" has been validated. In vision, VFM features serve as "visual language" word vectors, while the VLM text side provides the "target language dictionary." By mining reliable "pseudo-dictionary" correspondences, the optimal mapping can be directly obtained via SVD.
+**Key Insight**: The authors analogize this problem to **cross-lingual word embedding alignment** in NLP. Word vector spaces of different languages can be aligned using **Orthogonal Procrustes** to solve for a geometry-preserving linear mapping (Lample et al., 2018; Artetxe et al., 2018), as the "isomorphism hypothesis" has been verified. In vision, VFM features serve as "visual language" word vectors, while the VLM text-side provides the "target language dictionary." Once reliable "pseudo-dictionary" correspondences are mined, the optimal mapping can be solved directly via SVD.
 
-**Core Idea**: VFM-VLM alignment is split into two stages: first, use **Sinkhorn-style optimal transport** to mine a soft correspondence matrix $P$ under dual constraints of VLM semantic structure and VFM geometric structure; then, feed $P$ into orthogonal Procrustes to solve for a closed-form mapping $W$, followed by fine-tuning $W$ with a hubness-aware ranking loss to suppress hyper-central prototypes.
+**Core Idea**: VFM-VLM alignment is split into two stages: first, use **Sinkhorn-style Optimal Transport** to mine a soft correspondence matrix $P$ under the dual constraints of VLM semantic structure and VFM geometric structure. Second, input $P$ into Orthogonal Procrustes to obtain a closed-form mapping $W$, followed by fine-tuning $W$ with a hubness-aware ranking loss to suppress "hyper-central" prototypes.
 
 ## Method
 
 ### Overall Architecture
-Input: VFM visual features $Z \in \mathbb{R}^{N \times d_v}$, VLM visual features $X \in \mathbb{R}^{N \times d_t}$, and VLM text prototypes $Y \in \mathbb{R}^{K \times d_t}$ (obtained from prompts like "a photo of {class}" via a text encoder, where $K$ is the number of classes).
+Input: VFM visual features $Z\in\mathbb{R}^{N\times d_v}$, VLM visual features $X\in\mathbb{R}^{N\times d_t}$, and VLM text prototypes $Y\in\mathbb{R}^{K\times d_t}$ (obtained via text encoder from prompts like "a photo of {class}", where $K$ is the number of classes).
 
-Stage 1 (**UCM**, Unsupervised Correspondence Mining): Alternating updates of the soft correspondence matrix $P \in \mathbb{R}^{N \times K}_+$ and latent VFM centers $C \in \mathbb{R}^{K \times d_v}$. $P$ reflects both "VLM semantic scores" and "VFM geometric clustering," solved as an entropy-regularized transport problem via Sinkhorn.
+Stage 1 (**UCM**, Unsupervised Correspondence Mining): Iteratively update the soft correspondence matrix $P\in\mathbb{R}^{N\times K}_+$ and latent VFM centers $C\in\mathbb{R}^{K\times d_v}$. $P$ reflects both "VLM semantic scoring" and "VFM geometric clustering," solving an entropy-regularized transport problem via Sinkhorn.
 
-Stage 2 (**GPA**, Geometry-Preserving Alignment): Use $P$ from Stage 1 to solve for an orthogonal mapping $W_0=UV^\top$ in closed form via SVD, ensuring $ZW$ stays close to the prototype mixture $PY$. $W_0$ is then fine-tuned to $W^*$ using a topology-aware hubness suppression loss $\mathcal{L}_{\text{THS}}$.
+Stage 2 (**GPA**, Geometry-Preserving Alignment): Solve an orthogonal mapping $W_0=UV^\top$ in closed form using $P$ from Stage 1 via SVD, ensuring $Z W$ approximates the prototype mixture $PY$. Then, fine-tune $W_0$ to obtain $W^*$ using a topology-aware hubness suppression loss $\mathcal{L}_{\text{THS}}$.
 
-Inference: Image $\to$ VFM produces CLS/patch tokens $\to$ apply $W^*$ mapping to VLM semantic space $\to$ calculate cosine similarity with text prototypes for classification/segmentation. **Pre-trained VFM and VLM remain frozen; the pipeline learns only a lightweight linear transformation.**
+Inference: Image $\to$ VFM produces CLS / patch tokens $\to$ Apply $W^*$ mapping to VLM semantic space $\to$ Calculate cosine similarity with text prototypes for classification/segmentation results. **Both pre-trained VFM and VLM remain frozen; the pipeline only learns a lightweight linear transformation.**
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
@@ -54,14 +54,14 @@ flowchart TD
     Y["VLM Text Prototypes Y<br/>(a photo of {class})"]
     subgraph UCM["UCM: Dual-source Soft Correspondence Mining (Design 1)"]
         direction TB
-        S["Sinkhorn updates P<br/>Semantic XYᵀ + Geometric ZCᵀ"]
-        C["Closed-form update of VFM centers C<br/>(Weighted barycenter)"]
+        S["Sinkhorn updates P<br/>Semantic Score XYᵀ + Geometric Cluster ZCᵀ"]
+        C["Closed-form update of VFM Centers C<br/>(Weighted barycenter)"]
         S <-->|Alternating Iteration| C
     end
     subgraph GPA["GPA: Orthogonal Procrustes + Hubness Suppression (Design 2)"]
         direction TB
-        W0["SVD Closed-form Orthogonal Mapping W₀=UVᵀ"]
-        WS["THS Ranking Loss Fine-tuning → W*<br/>(Suppress Hyper-central Prototypes)"]
+        W0["SVD closed-form Orthogonal Mapping W₀=UVᵀ"]
+        WS["THS Ranking Loss Fine-tuning → W*<br/>(Suppress hyper-central prototypes)"]
         W0 --> WS
     end
     Z --> UCM
@@ -69,27 +69,27 @@ flowchart TD
     Y --> UCM
     UCM -->|Soft Correspondence P| GPA
     Z --> GPA
-    GPA -->|Linear Mapping W*| INF["Task-agnostic Interface (Design 3)<br/>VFM Features → W* → Cosine with Prototypes"]
+    GPA -->|Linear Mapping W*| INF["Task-Agnostic Interface (Design 3)<br/>VFM Feature → W* → Cosine Sim with Prototype"]
     INF -->|CLS token| CLS["Zero-shot Classification"]
-    INF -->|patch token as plugin| SEG["Open-vocab Segmentation"]
+    INF -->|patch token as Plugin| SEG["Open-vocab Segmentation"]
 ```
 
 ### Key Designs
 
-**1. UCM: Dual-source Soft Correspondence Mining**
+**1. UCM: Dual-source Soft Correspondence Mining (Geometry + Semantics)**
 
-To feed a "pseudo-dictionary" to orthogonal Procrustes, one must mine reliable soft assignments $P$ from VFM samples to VLM text prototypes without labels. The authors highlight a risk: simply assigning images to the nearest prototype in VLM space ($\min_P \|X-PY\|_F^2$) is equivalent to a K-means assignment step with fixed text centers, which is noisy under domain shift. Thus, latent centers $C$ in VFM space are introduced and shared with $P$: $\min_{P,C} (1-\lambda)\|Z-PC\|_F^2 + \lambda\|X-PY\|_F^2$. Geometric clustering and semantic assignment are locked by the same $P$. By relaxing $P$ to a non-negative matrix $\Pi(r,c)$ with marginal constraints and adding entropy regularization $-\varepsilon H(P)$, the $P$ subproblem becomes $\max_{P\in\Pi(r,c)}\langle P,(1-\lambda)ZC^\top+\lambda XY^\top\rangle+\varepsilon H(P)$, solved via Sinkhorn-Knopp. The $C$ subproblem is a closed-form barycenter $C_k=\sum_i P_{ik}Z_i / \sum_i P_{ik}$. This design ensures VLM provides semantic priors while VFM provides geometric priors on which samples belong together.
+To feed a "pseudo-dictionary" into Orthogonal Procrustes, reliable soft assignments $P$ from "VFM sample $\to$ VLM text prototype" must be mined without labels. The authors identify a risk: simply assigning images to the nearest prototype in VLM space ($\min_P \|X-PY\|_F^2$) is equivalent to a K-means assignment step with fixed text centers, which is noisy under domain shift. Thus, latent VFM centers $C$ are introduced to share $P$: $\min_{P,C} (1-\lambda)\|Z-PC\|_F^2 + \lambda\|X-PY\|_F^2$, forcing geometric clustering and semantic assignment to coincide. By relaxing $P$ to a non-negative matrix $\Pi(r,c)$ with marginal constraints and adding entropy regularization $-\varepsilon H(P)$, the $P$ sub-problem becomes $\max_{P\in\Pi(r,c)}\langle P,(1-\lambda)ZC^\top+\lambda XY^\top\rangle+\varepsilon H(P)$, solvable via Sinkhorn-Knopp iterations. The $C$ sub-problem is a closed-form barycenter $C_k=\sum_i P_{ik}Z_i / \sum_i P_{ik}$. Benefits include: VLM provides semantic priors, VFM provides geometric priors, and the decoupling of $P$ and $W$ eliminates sensitivity to initialization.
 
-**2. GPA: Orthogonal Procrustes + Topology-aware Hubness Suppression**
+**2. GPA: Orthogonal Procrustes + Topology-Aware Hubness Suppression**
 
-With $P$, a "geometry-preserving" linear translation $W$ from VFM to VLM is learned. Solving $\min_W \|ZW - PY\|_F^2$ s.t. $W^\top W=I$ using $P$ as a soft dictionary is the classic orthogonal Procrustes problem, with the closed-form solution $W_0=UV^\top$ via $\text{SVD}(Z^\top PY)$. The orthogonality constraint ensures $W$ is approximately isometric, preventing collapse or shearing and preserving the VFM neighborhood geometry in VLM space. To address hubness (where a few prototypes become nearest neighbors for many samples), $W_0$ is refined using a topology-aware ranking loss $\mathcal{L}_{\text{THS}}=\frac{1}{NK}\sum_i\sum_{c\in\mathcal{N}_i^K}(d_i^++m_{i,c}^{\text{base}}+h_c-d_{i,c})_+$, where $d_i^+$ is the distance to the correct prototype, $d_{i,c}$ is the distance to competitor $c$, $m_{i,c}^{\text{base}}$ is a semantic margin, and $h_c$ is a hubness penalty based on frequency.
+Given $P$, the goal is to learn a "geometry-preserving" linear translation $W$. Solving $\min_W \|ZW - PY\|_F^2$ s.t. $W^\top W=I$ is the classical Orthogonal Procrustes problem with a closed-form solution $W_0=UV^\top$, where $U\Sigma V^\top=\text{SVD}(Z^\top PY)$. The orthogonal constraint ensures $W$ is approximately isometric, preventing collapse or shear, and preserving VFM neighborhood geometry in VLM space. To address hubness (where few prototypes become nearest neighbors for many samples), the authors optimize a topology-aware ranking loss $\mathcal{L}_{\text{THS}}=\frac{1}{NK}\sum_i\sum_{c\in\mathcal{N}_i^K}(d_i^++m_{i,c}^{\text{base}}+h_c-d_{i,c})_+$. Here, $h_c=\frac{1}{N}\sum_i \mathbb{I}(c\in\mathcal{N}_i^K)$ is a hubness penalty: the more frequent a prototype acts as a neighbor, the larger the required margin between it and the sample.
 
-**3. Task-agnostic Interface: Feature-level Plug-and-play**
+**3. Task-Agnostic Interface: Feature-level Plug-and-Play**
 
-The alignment framework serves both image-level zero-shot classification and patch-level open-vocabulary segmentation. For classification, the VFM CLS token undergoes UCM+GPA, and $W^*$ is applied during inference. For segmentation, DINOv3 patch features are translated into the semantic space of frameworks like MaskCLIP/SCLIP/SC-CLIP as a plugin, without altering their heads or training. GPUA thus enhances both global discriminative power and fine-grained boundaries. The only requirement is feature access, making it compatible with closed-source models and APIs.
+The same framework serves both image-level zero-shot classification and patch-level open-vocabulary segmentation. Classification applies $W^*$ to the VFM CLS token. Segmentation applies $W^*$ at the patch level, translating DINOv3 patch features into semantic spaces like MaskCLIP, SCLIP, or SC-CLIP as an agnostic plugin. It requires only feature access, making it compatible with closed-source models and APIs, and is orthogonal to existing downstream frameworks.
 
 ### Loss & Training
-$$\mathcal{L}=\underbrace{(1-\lambda)\|Z-PC\|_F^2+\lambda\|X-PY\|_F^2-\varepsilon H(P)}_{\text{Stage 1: UCM}}+\underbrace{\|ZW-PY\|_F^2 \text{ s.t. } W^\top W=I + \eta\mathcal{L}_{\text{THS}}}_{\text{Stage 2: GPA}}$$. Stage 1 uses alternating Sinkhorn and barycenter updates; Stage 2 solves SVD for $W_0$ followed by gradient refinement. GPUA uses the full dataset; GPUA* uses 16 samples per class.
+$\mathcal{L}=\underbrace{(1-\lambda)\|Z-PC\|_F^2+\lambda\|X-PY\|_F^2-\varepsilon H(P)}_{\text{Stage 1: UCM}}+\underbrace{\|ZW-PY\|_F^2 \text{ s.t. } W^\top W=I + \eta\mathcal{L}_{\text{THS}}}_{\text{Stage 2: GPA}}$. Stage 1 iterates via Sinkhorn and closed-form barycenters. Stage 2 solves the SVD for $W_0$ and refines it with gradient descent. GPUA uses the full training set; GPUA* uses 16 samples per class.
 
 ## Key Experimental Results
 
@@ -107,38 +107,38 @@ Zero-shot image classification (11 datasets, CLIP protocol, DINOv3 as VFM):
 | **GPUA (full)** | **83.8** | **95.0** | **95.3** | **33.8** | **88.2** | **80.4** | **58.5** | **89.5** | **77.7** | **74.2** | **75.4** | **77.4** |
 | Gain vs CLIP | +14.0 | +6.0 | +3.8 | +5.5 | **+34.9** | +13.2 | +14.7 | +3.0 | +11.7 | +11.7 | +10.5 | **+11.8** |
 
-GPUA achieves an average gain of 11.8 points. Significant improvements in EuroSAT (+34.9) and Flowers (+14.0) suggest that **VFM geometric details are successfully integrated into the VLM semantic space**.
+GPUA achieves an average gain of 11.8 points. Gains are highest in remote sensing (EuroSAT, +34.9) and fine-grained tasks (Flowers, +14.0), indicating that **VFM geometric details effectively augment VLM semantic space**.
 
 ### Ablation Study
 
 | Configuration | Key Finding |
 |------|---------|
-| Full GPUA | UCM + GPA + THS |
-| w/o VFM term ($\lambda=1$) | Performance degrades; geometric priors are essential. |
-| w/o VLM term ($\lambda=0$) | Lost semantic alignment. |
-| Direct SVD w/o THS | Hubness issues occur; hyper-central prototypes emerge. |
-| w/o Orthogonal Constraint | Training collapse or geometric distortion. |
-| Replacing VFM (DINOv2/v3) | Stronger VFMs lead to higher alignment gains. |
+| Full GPUA | Best performance (UCM + GPA + THS). |
+| w/o VFM term ($\lambda=1$) | Performance degrades to LFA-style; validates geometric prior. |
+| w/o VLM term ($\lambda=0$) | Loses semantic alignment entirely. |
+| w/o THS | Severe hubness; samples converge to few hyper-central prototypes. |
+| w/o Orthogonal Constraint | Training collapse or geometric distortion; orthogonality is essential. |
+| Replace VFM (DINOv2 vs DINOv3) | Stronger VFMs lead to higher alignment gains. |
 
 ### Key Findings
-- Geometric signals from the VFM side ($Z-PC$ term) are critical for preventing noise under domain shift.
-- Orthogonality is the source of stability, preventing overfitting to pseudo-label noise.
-- t-SNE visualizations show that GPUA pulls visual clusters accurately toward semantic anchors while preserving intra-class structure.
+- Geometric signals from the VFM side (the $Z-PC$ term) are critical; relying only on VLM self-scoring leads to high noise under domain shift.
+- The orthogonal constraint is the source of stability; without it, the SVD path degrades to ordinary least squares, over-fitting to pseudo-label noise.
+- t-SNE visualization confirms the original VLM modality gap is mitigated, with visual clusters accurately aligned to semantic anchors while retaining intra-class structures.
 
 ## Highlights & Insights
-- The analogy of **cross-lingual alignment $\to$ cross-model alignment** is elegant, allowing the use of mature NLP tools like Procrustes and Sinkhorn in vision.
-- The **two-stage (P then W) decoupling** improves stability compared to traditional alternating optimization, which is sensitive to initialization.
-- Being **task-agnostic and parameter-frozen** makes GPUA a zero-cost plugin for closed-source APIs, which is more practical for industry deployment than end-to-end fine-tuning.
+- **Cross-lingual to Cross-model**: The归纳偏置 (inductive bias) of treating "VFM features as visual language" allows mature NLP tools (Procrustes, Sinkhorn, hubness loss) to be reused without "reinventing the wheel."
+- **Two-stage Decoupling**: Unlike alternating optimization, solving $P$ first and then $W$ provides significant stability and serves as a useful engineering pattern for correspondence-based mapping problems.
+- **Zero-cost Plugin**: The "task-agnostic, frozen parameters, single matrix" combination makes GPUA suitable for industrial deployment where fine-tuning large models is impractical.
 
 ## Limitations & Future Work
-- The reliance on a **single linear mapping** $W$ might be insufficient for highly non-linear modality gaps (e.g., LLM vs. vision).
-- UCM currently requires an unlabeled calibration set, which is not strictly zero-shot in the purest sense.
-- Orthogonality implies information loss when $d_v$ and $d_t$ differ significantly (e.g., 4096-d DINOv3 to low-d VLM text space).
+- The reliance on a **single linear mapping** $W$ might be insufficient for highly non-linear modality gaps (e.g., LLM text vs. Vision), though it suffices for CLIP/DINO.
+- UCM currently requires an unlabeled calibration set, which adds a cost step compared to "pure" zero-shot CLIP.
+- The orthogonal constraint causes information loss when $d_v \gg d_t$ (e.g., 4096-dim DINOv3 vs low-dim VLM text).
 
 ## Related Work & Insights
-- **vs LFA**: LFA uses alternating optimization; GPUA uses a two-stage approach with geometric priors, offering better stability.
-- **vs Fusion Pipelines**: GPUA acts as a feature-level translator that can be plugged into existing segmentation frameworks.
-- **vs Test-time Adaptation**: Unlike TDA methods that tune CLIP internally, GPUA leaves CLIP untouched and only applies an external mapping $W$.
+- **vs LFA**: LFA uses alternating optimization; GPUA uses two-stage decoupling and geometric priors for higher stability.
+- **vs Multi-model Segmentation Pipelines**: Most methods are deeply coupled with segmentation; GPUA acts as a task-agnostic feature-level translator.
+- **vs Test-Time Adaptation (TDA/DPE)**: TDA tunes internal CLIP representations; GPUA leaves CLIP untouched, making it lighter for deployment.
 
 <!-- RELATED:START -->
 
@@ -148,9 +148,9 @@ GPUA achieves an average gain of 11.8 points. Significant improvements in EuroSA
 
 - [\[CVPR 2026\] GKD: Generalizable Knowledge Distillation from Vision Foundation Models for Semantic Segmentation](../../CVPR2026/segmentation/gkd_generalizable_knowledge_distillation_vfm.md)
 - [\[CVPR 2026\] From 2D Alignment to 3D Plausibility: Unifying Heterogeneous 2D Priors and Penetration-Free Diffusion for Occlusion-Robust Two-Hand Reconstruction](../../CVPR2026/segmentation/from_2d_alignment_to_3d_plausibility_unifying_heterogeneous_2d_priors_and_penetr.md)
-- [\[CVPR 2026\] Unsupervised Multi-Scale Segmentation of 3D Subcellular World with Stable Diffusion Foundation Model](../../CVPR2026/segmentation/unsupervised_multi-scale_segmentation_of_3d_subcellular_world_with_stable_diffus.md)
-- [\[CVPR 2026\] Metric-Guided Feature Fusion of Visual Foundation Models for Segmentation Tasks](../../CVPR2026/segmentation/metric-guided_feature_fusion_of_visual_foundation_models_for_segmentation_tasks.md)
 - [\[CVPR 2025\] Uni4D: Unifying Visual Foundation Models for 4D Modeling from a Single Video](../../CVPR2025/segmentation/uni4d_unifying_visual_foundation_models_for_4d_modeling_from_a_single_video.md)
+- [\[CVPR 2026\] Selective, Regularized, and Calibrated: Harnessing Vision Foundation Models for Cross-Domain Few-Shot Semantic Segmentation](../../CVPR2026/segmentation/selective_regularized_and_calibrated_harnessing_vision_foundation_models_for_cro.md)
+- [\[ICCV 2025\] Can Generative Geospatial Diffusion Models Excel as Discriminative Geospatial Foundation Models?](../../ICCV2025/segmentation/can_generative_geospatial_diffusion_models_excel_as_discriminative_geospatial_fo.md)
 
 </div>
 

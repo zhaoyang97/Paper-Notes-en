@@ -2,12 +2,12 @@
 title: >-
   [Paper Note] SEMA-RAG: A Self-Evolving Multi-Agent Retrieval-Augmented Generation Framework for Medical Reasoning
 description: >-
-  [ACL 2026][Medical NLP][Paper Note] The authors propose SEMA-RAG, a self-evolving multi-agent RAG framework that simulates the phased workflow of clinical reasoning through three specialized agents (Interpreter, Explorer, and Arbiter). It surpasses the strongest baselines by an average of +6.46 accuracy points across 5 medical QA benchmarks.
+  [ACL 2026][Medical NLP][Paper Note] The authors propose SEMA-RAG, a self-evolving multi-agent Retrival-Augmented Generation framework. By simulating phased clinical reasoning via three specialized agents (Interpreter, Explorer, Arbiter), it outperforms the strongest baselines by an average of +6.46 accuracy points across 5 medical QA benchmarks.
 tags:
   - ACL 2026
   - Medical NLP
 date: 2026-05-08
-content_hash: 9b0e393df404f987
+content_hash: 997d964c04164ace
 ---
 # SEMA-RAG: A Self-Evolving Multi-Agent Retrieval-Augmented Generation Framework for Medical Reasoning
 
@@ -15,38 +15,37 @@ content_hash: 9b0e393df404f987
 **arXiv**: [2605.17101](https://arxiv.org/abs/2605.17101)  
 **Code**: None  
 **Area**: Medical NLP  
-**Keywords**: Medical QA, Multi-Agent RAG, Self-evolving retrieval, Evidence chain construction, Clinical reasoning
+**Keywords**: Medical QA, Multi-agent RAG, Self-evolving retrieval, Evidence chain construction, Clinical reasoning
 
 ## TL;DR
-The authors propose SEMA-RAG, a self-evolving multi-agent RAG framework that simulates the phased workflow of clinical reasoning through three specialized agents (Interpreter, Explorer, and Arbiter). It surpasses the strongest baselines by an average of +6.46 accuracy points across 5 medical QA benchmarks.
+The authors propose SEMA-RAG, a self-evolving multi-agent Retrival-Augmented Generation framework. By simulating phased clinical reasoning via three specialized agents (Interpreter, Explorer, Arbiter), it outperforms the strongest baselines by an average of +6.46 accuracy points across 5 medical QA benchmarks.
 
 ## Background & Motivation
-**Background**: RAG is widely used to mitigate hallucinations and knowledge obsolescence in LLMs for medical QA. However, existing RAG methods primarily employ a single-turn static retrieval paradigm.
+**Background**: RAG is widely used to mitigate LLM hallucinations and outdated knowledge in medical QA; however, existing RAG methods primarily adopt a single-turn static retrieval paradigm.
 
-**Limitations of Prior Work**: (1) Question-to-query transformation lacks clinical semantic interpretation, making implicit constraints difficult to explicitize; (2) Retrieval lacks a sufficiency feedback mechanism, hindering the formation of reliable evidence chains; (3) Coupling explanation, exploration, and adjudication tasks within a single reasoning chain imposes excessive cognitive load.
+**Limitations of Prior Work**: (1) The transformation from question to query lacks clinical semantic interpretation, making it difficult to explicitize implicit constraints; (2) Retrieval lacks a sufficiency feedback mechanism, hindering the formation of reliable evidence chains; (3) Coupling three heterogeneous tasks—interpretation, exploration, and adjudication—within a single reasoning chain imposes excessive cognitive load.
 
-**Key Challenge**: Single-turn static RAG requires clinicians to analyze, retrieve, evaluate, and diagnose simultaneously upon receiving an initial medical record. This inability to adjust reasoning as new evidence emerges is severely misaligned with multi-stage clinical reasoning processes.
+**Key Challenge**: Single-turn static RAG effectively asks a clinician to simultaneously analyze, retrieve, evaluate, and diagnose immediately upon receiving an initial case file, failing to adjust reasoning based on new evidence—a significant mismatch with the multi-stage clinical reasoning process.
 
-**Goal**: Restructure the RAG workflow to match phased clinical reasoning by extending single-round queries into multi-round iterative exploration, assessing evidence sufficiency after each retrieval to determine subsequent actions.
+**Goal**: Reconstruct the RAG workflow to match phased clinical reasoning: expanding single-turn queries into multi-turn iterative exploration, evaluating evidence sufficiency after each retrieval turn to decide the next action.
 
-**Key Insight**: Task decoupling + role specialization—assigning interpretation, exploration, and adjudication to three specialized agents.
+**Key Insight**: Task decoupling + role specialization—assigning interpretation, exploration, and adjudication to three collaborating specialized agents.
 
-**Core Idea**: A three-agent division of labor (I-Agent interpretation → E-Agent sufficiency-driven self-evolving retrieval → A-Agent evidence arbitration), enhancing medical RAG reliability through closed-loop evidence chain construction.
+**Core Idea**: A three-agent division of labor (I-Agent interprets $\rightarrow$ E-Agent performs sufficiency-driven self-evolving retrieval $\rightarrow$ A-Agent performs evidence arbitration), enhancing the reliability of medical RAG through closed-loop evidence chain construction.
 
 ## Method
 
 ### Overall Architecture
-SEMA-RAG consists of three role-based agents sharing the same underlying LLM, distinguished only by role prompts: (1) I-Agent maps the raw question to a structured clinical schema; (2) E-Agent accumulates evidence through an iterative self-evolving retrieval loop driven by evidence sufficiency; (3) A-Agent arbitrates the converged evidence set and outputs the final answer.
+SEMA-RAG consists of three agent roles sharing the same underlying LLM, distinguished solely by role prompts: (1) I-Agent maps the raw question to a structured clinical schema; (2) E-Agent accumulates evidence turn-by-turn through a sufficiency-driven self-evolving retrieval loop; (3) A-Agent arbitrates the converged evidence set and outputs the final answer.
 
 ```mermaid
-%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
-flowchart TD
-    A["Medical Question"] --> B["I-Agent Question Interpreter<br/>Maps to clinical schema Q′<br/>Intents / Entities / Constraints / Initial Query"]
-    B --> C["E-Agent Knowledge Explorer<br/>MedCPT Dense Retrieval (Round t)"]
+graph TD
+    A["Medical Question"] --> B["I-Agent Question Interpreter<br/>Maps to clinical schema Q′<br/>Intent / Entities / Constraints / Initial Query"]
+    B --> C["E-Agent Knowledge Explorer<br/>MedCPT Dense Retrieval (Turn t)"]
     C --> D{"Evidence Sufficiency Flag s_t"}
-    D -->|"s_t=0 and t < T_max: Locate gap g_t, generate m follow-up queries"| C
-    D -->|"s_t=1 or t = T_max"| E["Closed Evidence Set C*"]
-    E --> F["A-Agent Evidence Arbiter<br/>Denoising/Hedging, Organize structured report R"]
+    D -->|"s_t=0 & T < T_max: Locate gap g_t, generate m follow-up queries"| C
+    D -->|"s_t=1 or T = T_max"| E["Closed Evidence Set C*"]
+    E --> F["A-Agent Evidence Arbiter<br/>Denoising/Hedging, organize structured report R"]
     F --> G["Final Answer"]
 ```
 
@@ -54,25 +53,25 @@ flowchart TD
 
 **1. I-Agent (Question Interpreter): Mapping questions to structured clinical schemas prior to retrieval**
 
-Critical constraints in medical questions are often implicit; for instance, "hospitalization day 7" suggests nosocomial infection. Retrieving with the raw sentence may miss this semantic layer. The I-Agent maps unstructured questions into a schema tuple $Q' = \langle o_{\text{int}}, o_{\text{ent}}, o_{\text{cons}}, q_{\text{init}} \rangle$, representing clinical intent, medical entities, clinical constraints, and the initial retrieval query. By making implicit constraints explicit, subsequent retrieval rounds have clear alignment targets rather than navigating vague semantics.
+Critical constraints in medical questions are often implicit—"7th day of hospitalization" implies a nosocomial infection. Using the raw sentence for retrieval often misses this semantic layer. The I-Agent maps unstructured questions into a schema tuple $Q' = \langle o_{\text{int}}, o_{\text{ent}}, o_{\text{cons}}, q_{\text{init}} \rangle$, representing clinical intent, medical entities, clinical constraints, and initial retrieval queries. By explicitizing implicit constraints, subsequent retrieval turns have clear alignment targets.
 
-**2. E-Agent (Knowledge Explorer): Sufficiency-driven multi-round self-evolving retrieval**
+**2. E-Agent (Knowledge Explorer): Multi-turn self-evolving retrieval driven by evidence sufficiency**
 
-Single-turn static retrieval cannot guarantee coverage of all key constraints, akin to forcing a clinician to diagnose immediately after a single look at a chart. The E-Agent implements retrieval as a closed loop: after each round (using MedCPT for dense retrieval), it evaluates a sufficiency flag $s_t \in \{0, 1\}$. If $s_t=0$, it identifies an evidence gap $g_t$ and generates $m$ targeted follow-up queries $\mathcal{Q}_{t+1}$ for the next round. The loop terminates when $s_t=1$ or the limit $T_{\max}$ is reached, yielding the closed evidence set $C^*$.
+Single-turn static retrieval cannot guarantee coverage of all key constraints. E-Agent treats retrieval as a closed loop: after each turn (using MedCPT for dense retrieval), it evaluates a sufficiency flag $s_t \in \{0,1\}$. If $s_t=0$ (insufficient), it identifies the evidence gap $g_t$ and generates $m$ targeted follow-up queries $\mathcal{Q}_{t+1}$. The process terminates when $s_t=1$ or $T_{\max}$ is reached, yielding the closed evidence set $C^*$.
 
-This "gap identification → targeted retrieval" early-stopping mechanism is the primary source of performance gain; removing the E-Agent leads to a 6.37 drop on MedQA-US, the largest among all agents. It is also more efficient than fixed-round iteration, gathering sufficient evidence with fewer tokens without the noise introduced by redundant cycles.
+This "gap identification $\rightarrow$ targeted follow-up" early-stopping mechanism is the core performance driver—removing E-Agent leads to a 6.37 point drop on MedQA-US, the largest among the three agents. It is also more efficient than fixed-turn iterations, gathering sufficient evidence with fewer tokens rather than exhausting a budget and potentially introducing noise.
 
-**3. A-Agent (Evidence Arbiter): Denoising and hedging converged evidence for traceable judgments**
+**3. A-Agent (Evidence Arbiter): Denoising and hedging converged evidence for traceable judgment**
 
-Evidence accumulated over multiple rounds is often redundant or contradictory. The A-Agent serves as an arbiter: it removes noise and duplicates from the evidence set, identifies consistencies and conflicts, and organizes supporting/refuting clues into a structured report $R$. It then performs discrete answer selection based on the report: $\tilde{y} = \text{Agent}_A(\text{Pmt}_{\text{ans}}, [Q, R])$. Decoupling evidence integration into a dedicated role provides the model with a stable basis for judgment rather than oscillating between conflicting data points.
+Evidence accumulated via multi-turn retrieval is often redundant or contradictory. The A-Agent serves as an arbitrator: it deduplicates and denoises the evidence set, identifies consistencies and conflicts, and organizes supporting/refuting clues into a structured report $R$. Finally, it performs discrete answer selection: $\tilde{y} = \text{Agent}_A(\text{Pmt}_{\text{ans}}, [Q, R])$. Decoupling evidence integration into a separate role provides the model with a stable basis for judgment.
 
-### Process Example: A "Hospitalization Day 7 Fever" Case
+### Case Example: Workflow for a "Fever on Hospitalization Day 7" question
 
-Consider a case with implicit nosocomial infection clues: The I-Agent parses it into a schema—intent: "differential diagnosis"; entities: "fever + day 7 of hospitalization"; constraints: "nosocomial setting"; and generates $q_{\text{init}}$. After round 1, the E-Agent determines $s_1=0$ because evidence only covers community-acquired infection. It identifies gap $g_1$ as "nosocomial pathogens and catheter-related infections" and generates $m=3$ follow-up queries. Round 2 retrieves targeted evidence, resulting in $s_2=1$. Within $T_{\max}=2$, it converges on $C^*$. The A-Agent then denoises this evidence, hedges against community infection distractors, and selects the answer. The process averages 4.8 LLM calls, 3.4 retrievals, 9.5s latency, and 19,488 tokens—more efficient than i-MedRAG's fixed 3 rounds (21,517 tokens) with 15.17% higher accuracy.
+For a question with implicit nosocomial infection clues: The I-Agent first parses it into a schema—Intent: "Differential Diagnosis," Entities: "Fever + Day 7 Hospitalization," Constraints explicitly labeled: "nosocomial." Based on this, it generates $q_{\text{init}}$. In Turn 1, the E-Agent determines $s_1=0$ because retrieved evidence only covers community-acquired infections. The gap $g_1$ is identified as "nosocomial pathogen spectrum and catheter-related infections," prompting $m=3$ follow-up queries. Turn 2 achieves $s_2=1$ as targeted evidence is found. The A-Agent then denoises this set, hedges against community-acquired distractors, organizes report $R$, and selects the answer. The process averages 4.8 LLM calls, 3.4 retrievals, and 9.5s latency, consuming 19,488 tokens—more efficient and 15.17% more accurate than i-MedRAG's fixed 3-turn approach.
 
 ### Loss & Training
-- Training-free: Agents share the same base LLM and are distinguished via role prompts.
-- Hyperparameters: $T_{\max}=2$, $k=16$ (Top-k retrieval), $m=3$ (follow-up queries per round).
+- Training-free: The three agents share the same base LLM and are distinguished via role prompting.
+- Default Hyperparameters: $T_{\max}=2$, $k=16$ (Top-k retrieval), $m=3$ (follow-up queries per turn).
 - Temperature: 1.0 for I/E-Agent, 0.0 for A-Agent (deterministic output).
 
 ## Key Experimental Results
@@ -98,34 +97,34 @@ Consider a case with implicit nosocomial infection clues: The I-Agent parses it 
 | **Full SEMA-RAG** | **89.95** | **59.20** |
 
 ### Key Findings
-- Removing the E-Agent caused the most significant performance drop (-6.37 on MedQA-US), confirming self-evolving retrieval as the core contributor.
-- Query width $m$: Increasing from $m=1$ (86.72%) to $m=3$ (89.95%) showed diminishing returns.
-- Exploration depth $T_{\max}$ peaks at 2-3 rounds; exceeding this potentially introduces noise.
-- Efficiency: SEMA-RAG averages 4.8 LLM calls / 3.4 retrievals / 9.5s latency, consuming 19,488 tokens (vs. 21,517 for i-MedRAG) while achieving 15.17% higher accuracy.
+- Removing the E-Agent leads to the most significant performance degradation (-6.37 on MedQA-US), confirming self-evolving retrieval as the core benefit.
+- Query width $m$: $m=1$ (86.72%), $m=2$ (89.00%), $m=3$ (89.95%); gains show diminishing returns.
+- Exploration depth $T_{\max}$: Optimal at 2-3 turns; exceeding this may introduce noise.
+- Efficiency: SEMA-RAG averages 4.8 LLM calls / 3.4 retrievals / 9.5s latency and 19,488 tokens—fewer tokens than i-MedRAG (21,517) with a +15.17% accuracy improvement.
 
 ## Highlights & Insights
-- The three-agent architecture simulates the phased clinical reasoning workflow (Interpretation → Exploration → Arbitration) with universal task-decoupling principles.
-- Sufficiency-driven early stopping is more efficient than fixed-round iterations (like i-MedRAG), achieving higher accuracy with fewer tokens.
-- Gains are most pronounced on gemini-2.0-flash (average +23.42), indicating stronger enhancement for relatively weaker models.
-- Case studies demonstrate how structured interpretation → gap identification → targeted retrieval forms a reliable evidence chain.
+- The multi-agent architecture precisely simulates the phased workflow of clinical reasoning (Interpretation → Exploration → Adjudication), demonstrating the universality of task decoupling.
+- The sufficiency-driven early stopping mechanism is more efficient than fixed-turn iterations, achieving higher accuracy with fewer tokens.
+- Significant improvements on Gemini-2.0-flash (+23.42 average) suggest the framework provides stronger enhancement for relatively weaker models.
+- Case studies vividly demonstrate how the "structured interpretation → gap identification → targeted retrieval" sequence forms a reliable evidence chain.
 
 ## Limitations & Future Work
-- Evaluation is limited to benchmark environments and has not been validated in real clinical workflows (e.g., longitudinal EHR reasoning).
-- The framework depends on the quality and coverage of the retrieval corpus; if key evidence is missing or outdated, the loop may converge on incomplete data.
+- Evaluation is limited to benchmark environments and lacks validation in real clinical workflows (e.g., longitudinal EHR reasoning).
+- The framework depends on the quality and coverage of the retrieval corpus; self-evolution may converge on incomplete evidence if key knowledge is missing.
 - Sufficiency judgment criteria are not yet optimized for option-level separability or generative completeness.
-- While more efficient than fixed-step baselines, multi-round reasoning still incurs higher overhead than single-turn methods.
+- Additional overhead from multi-turn reasoning is superior to fixed-step baselines but remains higher than single-turn methods.
 
 ## Related Work & Insights
-- MedRAG / MedCPT provide the retrieval foundation for the medical domain, while SEMA-RAG builds multi-round closed loops upon them.
-- SEMA-RAG improves upon i-MedRAG by introducing sufficiency feedback.
-- Multi-agent collaboration concepts (CAMEL / MetaGPT / MedAgents) can be extended to other high-risk domains requiring multi-stage reasoning.
-- The gap detection + targeted follow-up pattern in self-evolving retrieval can inspire complex RAG system designs in non-medical fields.
+- MedRAG / MedCPT provide the retrieval foundation for medical domains, while SEMA-RAG builds a multi-turn closed loop upon them.
+- SEMA-RAG improves upon i-MedRAG's iterative approach by introducing a sufficiency feedback mechanism.
+- Multi-agent collaboration (CAMEL / MetaGPT / MedAgents) principles can be extended to other high-stakes domains requiring multi-stage reasoning.
+- The "gap detection + targeted follow-up" pattern in self-evolving retrieval can inspire complex RAG system designs outside of medicine.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Task decoupling + sufficiency-driven self-evolving retrieval represent clear innovations.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 5 benchmarks × 5 LLM backbones × complete ablations + efficiency analysis + case studies.
-- Writing Quality: ⭐⭐⭐⭐ Formal expressions are rigorous, and clinical reasoning analogies are intuitive.
-- Value: ⭐⭐⭐⭐⭐ Significant and consistent improvements in medical QA; the framework's philosophy is broadly applicable.
+- Novelty: ⭐⭐⭐⭐ Task decoupling + sufficiency-driven self-evolving retrieval are clear innovations.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 5 benchmarks × 5 LLM backbones + complete ablation + efficiency analysis + case studies.
+- Writing Quality: ⭐⭐⭐⭐ Rigorous formalization and intuitive clinical analogies.
+- Value: ⭐⭐⭐⭐⭐ Significant and consistent improvements in medical QA; framework logic is broadly applicable.
 
 <!-- RELATED:START -->
 
@@ -136,8 +135,8 @@ Consider a case with implicit nosocomial infection clues: The I-Agent parses it 
 - [\[ACL 2026\] HeteroRAG: A Heterogeneous Retrieval-Augmented Generation Framework for Medical Vision Language Tasks](heterorag_a_heterogeneous_retrieval-augmented_generation_framework_for_medical_v.md)
 - [\[ACL 2026\] MultiDx: A Multi-Source Knowledge Integration Framework towards Diagnostic Reasoning](multidx_a_multi-source_knowledge_integration_framework_towards_diagnostic_reason.md)
 - [\[ACL 2026\] MARCH: Multi-Agent Radiology Clinical Hierarchy for CT Report Generation](march_multi-agent_radiology_clinical_hierarchy_for_ct_report_generation.md)
-- [\[ACL 2025\] Towards Omni-RAG: Comprehensive Retrieval-Augmented Generation for Large Language Models in Medical Applications](../../ACL2025/medical_nlp/omni_rag_medical.md)
 - [\[ACL 2026\] RA-RRG: Multimodal Retrieval-Augmented Radiology Report Generation with Key Phrase Extraction](ra-rrg_multimodal_retrieval-augmented_radiology_report_generation_with_key_phras.md)
+- [\[ACL 2025\] Towards Omni-RAG: Comprehensive Retrieval-Augmented Generation for Large Language Models in Medical Applications](../../ACL2025/medical_nlp/omni_rag_medical.md)
 
 </div>
 

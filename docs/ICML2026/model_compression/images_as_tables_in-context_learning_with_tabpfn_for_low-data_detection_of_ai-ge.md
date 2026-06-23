@@ -2,115 +2,115 @@
 title: >-
   [Paper Note] Images as Tables: In-Context Learning with TabPFN for Low-Data Detection of AI-Generated Images
 description: >-
-  [ICML 2026][Model Compression][TabPFN] A three-stage pipeline is proposed for AI-generated image detection: first, images are compressed into 768-dimensional CLS vectors using a frozen DINOv3; second, these are reduced to 500 dimensions via PCA to serve as tabular rows; finally, TabPFN performs in-context inference. This shifts "retraining classification he
+  [ICML 2026][Model Compression][TabPFN] The authors reformulate AI-generated image detection into a three-stage pipeline: first, a frozen DINOv3 compresses each image into a 768-dimensional CLS vector; next, PCA reduces this to 500 dimensions to serve as a single row in a table; finally, TabPFN performs in-context inference. This approach transforms the need
 tags:
   - ICML 2026
   - Model Compression
   - TabPFN
   - DINOv3
 date: 2026-05-08
-content_hash: 3b75b7a550a55bab
+content_hash: 3917f8b1f2ccaae2
 ---
 # Images as Tables: In-Context Learning with TabPFN for Low-Data Detection of AI-Generated Images
 
 **Conference**: ICML 2026  
 **arXiv**: [2606.00872](https://arxiv.org/abs/2606.00872)  
 **Code**: https://github.com/jpwalter30/Towards-Generalizable-Detection-of-AI-Generated-Images  
-**Area**: AI-Generated Content Detection / Tabular Foundation Models / In-Context Learning  
+**Area**: AI-Generated Image Detection / Tabular Foundation Models / In-Context Learning  
 **Keywords**: AIGC Detection, TabPFN, DINOv3, In-Context Learning, Cross-Generator Transfer  
 
 ## TL;DR
-A three-stage pipeline is proposed for AI-generated image detection: first, images are compressed into 768-dimensional CLS vectors using a frozen DINOv3; second, these are reduced to 500 dimensions via PCA to serve as tabular rows; finally, TabPFN performs in-context inference. This shifts "retraining classification heads for new generators" to "replacing TabPFN context samples." In GenImage low-data and cross-generator scenarios, this method outperforms the strong baseline LATTE by up to 8.2% and wins in 54 out of 64 generator transfer pairs.
+The authors reformulate AI-generated image detection into a three-stage pipeline: first, a frozen DINOv3 compresses each image into a 768-dimensional CLS vector; next, PCA reduces this to 500 dimensions to serve as a single row in a table; finally, TabPFN performs in-context inference. This approach transforms the need to "retrain classification heads for new generators" into simply "replacing context samples in TabPFN." In low-data and cross-generator scenarios on GenImage, this method leads the strong baseline LATTE by up to 8.2% and wins in 54 out of 64 generator transfer pairs.
 
 ## Background & Motivation
 
-**Background**: AI-generated image detection is consistently proven to be a "moving target" problem. Detectors trained on specific generators (GAN or Diffusion) often fail when encountering new versions like Midjourney, Stable Diffusion, or Wukong. Current mainstream solutions rely on image-domain classifiers—training a real/fake head on CNN/ViT backbones, or utilizing specialized detection with diffusion denoising trajectories (LATTE), CLIP representations (Cozzolino et al.), and frequency/fingerprint enhancements. These methods perform strongly in large-scale i.i.d. scenarios, and cross-generator evaluation has become a standard requirement.
+**Background**: AI-generated image detection has been repeatedly proven to be a "moving target" problem: detectors trained well on one generator (GAN or Diffusion) often fail when faced with new versions like Midjourney, Stable Diffusion, or Wukong. Current mainstream solutions remain image-domain classifiers—training a real/fake head on CNN/ViT backbones, or utilizing diffusion denoising trajectories (LATTE) and CLIP representations (Cozzolino et al.) as specialized detectors, supplemented by frequency-domain or fingerprint features. While these methods perform strongly in large-scale i.i.d. scenarios, cross-generator evaluation has become the standard benchmark.
 
-**Limitations of Prior Work**: (i) Adapting to new generators still requires "replacing heads or retraining," necessitating either training classifiers from scratch or fine-tuning backbones, which is maintenance-unfriendly. (ii) In real forensic scenarios, available labels for new generators are often limited to dozens or hundreds, far below the scale required to train ViT classification heads. (iii) Almost all existing detectors couple "representation learning" with "discriminative learning," requiring full network updates for new data, which is slow and prone to overfitting generator-specific fingerprints.
+**Limitations of Prior Work**: (i) Adapting to new generators still requires "changing heads or retraining," either by training a classifier from scratch or fine-tuning the backbone on new data, which is operationally inefficient; (ii) in real-world forensic scenarios, the number of available labels for a new generator is often as few as dozens or hundreds, far below the scale required to train a ViT classification head; (iii) almost all existing detectors couple "representation learning" with "discriminative learning," requiring the entire network to be updated when new data arrives, which is slow and prone to overfitting to generator-specific fingerprints.
 
-**Key Challenge**: Detection capability stems primarily from strong visual representations, while adaptation speed is limited by the training paradigm of discriminative heads. Coupling the two means a full deep model gradient pass is required even for minor label updates.
+**Key Challenge**: Detection capability primarily stems from strong visual representations, while adaptation speed is limited by the training paradigm of the discriminative head. Coupling the two means that even small batches of new labels necessitate gradient updates across a deep model.
 
-**Goal**: (1) Validate "Image → Table → In-Context Inference" as a new paradigm for AIGC detection. (2) Systematically compare performance in low-data and cross-generator scenarios across four evaluation protocols on GenImage. (3) Provide a head-to-head comparison with the state-of-the-art diffusion detector LATTE to define the trade-off boundaries between TabPFN-ICL and image classification heads across different data scales.
+**Goal**: (1) Validate "Image → Table → In-Context Inference" as a new paradigm for AIGC detection; (2) systematically compare low-data and cross-generator performance under four assessment protocols on GenImage; (3) conduct a head-to-head comparison with the current SOTA diffusion detector, LATTE, to illustrate the trade-off boundaries between TabPFN-context and image-only classification heads across different data scales.
 
-**Key Insight**: The authors observe that TabPFN (Prior-Data Fitted Network) can perform Bayesian-style inference on small tabular data without training, relying solely on context samples. If each image is compressed into a structured feature row, AIGC detection is reduced to a standard small-data tabular classification problem, where TabPFN’s low-data advantage aligns with the "few labels" constraint in forensic scenarios.
+**Key Insight**: The authors observe that TabPFN, a Prior-Data Fitted Network, can perform Bayesian-style inference on small tabular datasets without training, relying solely on context samples. If each image is compressed into a row of structured features, AIGC detection reduces to a standard small-data tabular classification problem, where TabPFN’s low-data advantage aligns perfectly with the "few labels" constraint of forensic scenarios.
 
-**Core Idea**: A frozen DINOv3 ViT-B/16 acts as the visual encoder. PCA reduces the 768-dimensional CLS token to 500 dimensions (matching the feature limit of the current TabPFN). TabPFN then performs in-context binary classification for each test image using a set of labeled "context rows." Adapting to a new generator requires only updating a small number of labeled samples in the context, while both the encoder and classifier remain static.
+**Core Idea**: Freeze DINOv3 ViT-B/16 as the visual encoder, use PCA to compress the 768-dimensional CLS token to 500 dimensions (matching the 500-feature limit of current TabPFN), and then use TabPFN with a set of labeled "context rows" to perform in-context binary classification for each test image. Adapting to a new generator only requires updating a few labeled samples in the context, leaving both the encoder and the classifier unchanged.
 
 ## Method
 
 ### Overall Architecture
-DINOv3-PCA-TabPFN addresses the pain point of retraining classification heads by decomposing detection into a three-stage conversion chain with near-zero training. A frozen visual model compresses each image into a vector; PCA reduces it to a 500-dimensional structured "tabular record"; finally, the universal tabular foundation model TabPFN predicts real/fake via a single forward pass without gradient updates. Effectively, an image becomes a labeled row in a table, reducing AIGC detection to standard small-data tabular classification.
+The DINOv3-PCA-TabPFN framework addresses the pain point of "retraining classification heads for new generators" by decomposing detection into a three-stage, nearly zero-training transformation chain: a frozen visual model compresses each image into a vector, PCA reduces it to a 500-dimensional "tabular record," and the general-purpose tabular foundation model TabPFN performs real/fake determination via a single forward pass without gradient updates. Effectively, an image is transformed into a labeled tabular row, reducing AIGC detection to standard small-data tabular classification.
 
-Specifically, images are loaded in RGB, resized to 256 pixels on the short side, center-cropped to $224\times 224$, and normalized using ImageNet statistics. They are then fed into DINOv3 ViT-B/16 in eval mode to extract the CLS token, forming an $N\times 768$ feature matrix (backbone gradients remain frozen). Incremental PCA is fitted on training features to project the 768 dimensions into a structured row $z(h(x))\in\mathbb{R}^{500}$, applying the same components to the test set. Finally, the reduced training rows (including 0/1 labels) and the test row are fed into TabPFN for a single-forward-pass posterior prediction. The current TabPFN version is restricted to a maximum of 10,000 rows and 500 dimensions. The essence of this pipeline is that "adaptation = replacing context rows": for a new generator, one only needs to re-extract PCA coefficients on a few samples and assembly the context set, avoiding any deep model gradients.
+Specifically, images are loaded in RGB, resized to a 256-pixel short side, center-cropped to $224\times 224$, and normalized using ImageNet statistics. They are then fed into DINOv3 ViT-B/16 in eval mode to extract a CLS token, resulting in an $N\times 768$ feature matrix (the backbone remains frozen). Incremental PCA is fitted on the training set features to compress the 768 dimensions into a structured row $z(h(x))\in\mathbb{R}^{500}$, and the same principal components are applied to the test set. Finally, the reduced training rows (with 0/1 labels) and the test row are fed into TabPFN, which outputs a prediction through a single forward pass. This version of TabPFN is limited to 10,000 rows and 500 dimensions. The essence of the pipeline is that "adaptation equals changing context rows": for a new generator, one only needs to re-extract PCA coefficients and update rows in the TabPFN context set, requiring no gradient updates for either the encoder or the discriminator.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["Input Image<br/>RGB → Short-side 256 → Center-crop 224×224 → ImageNet Norm"] --> B["Frozen DINOv3 Encoder<br/>ViT-B/16 eval CLS → 768d (Gradients Frozen)"]
-    B --> C["PCA to 500d<br/>Fit IncrementalPCA on Train Features → Tabular Record z(h(x))"]
-    C --> D["TabPFN In-Context Inference<br/>Labeled Context Rows + Test Row Single Forward"]
+    A["Input Image<br/>RGB → Resize 256 → Center Crop 224×224 → ImageNet Norm"] --> B["Frozen DINOv3 Encoder<br/>ViT-B/16 CLS → 768-d (Frozen)"]
+    B --> C["PCA to 500-d<br/>Fit IncrementalPCA on Train → Tabular Row z(h(x))"]
+    C --> D["TabPFN In-Context Inference<br/>Labeled Context Rows + Test Row Forward Pass"]
     D --> E["Output Real/Fake Prediction"]
-    F["Few samples from new generator"] -->|Adaptation = Re-fit PCA + Re-assemble Context (Zero Gradient)| C
+    F["Small Sample Set from New Generator"] -->|Adaptation = Re-fit PCA + Assemble Context (Zero Gradient)| C
 ```
 
 ### Key Designs
 
-**1. Frozen DINOv3 as Universal Visual Encoder: Decoupling Representation from Judgment**
-Forensic literature indicates that end-to-end trained classification heads easily overfit to specific generator fingerprints. The authors respond by offloading representation entirely to self-supervised pre-training. DINOv3 ViT-B/16 CLS tokens serve as global representations while the backbone remains in eval mode without real/fake fine-tuning. Overfitting risks are thus shifted to the TabPFN context. Even if a new generator differs significantly from the training distribution, semantic/texture representations remain valid, and TabPFN only requires context samples to define new decision boundaries. Ablations confirm this encoder's necessity: replacing DINOv3 with DINOv2 or manual frequency features (DCT/FFT) results in lower accuracy, precision, recall, F1, and AUC.
+**1. Frozen DINOv3 as Universal Visual Encoder: Decoupling Representation and Discrimination**
+Forensic literature has long noted that end-to-end trained classification heads are prone to overfitting to specific generator fingerprints. The authors address this by delegating representation entirely to self-supervised pre-training. By using the CLS token from DINOv3 ViT-B/16 as the image representation and keeping the backbone in eval mode without real/fake fine-tuning, the risk of overfitting is shifted to the TabPFN context. Even if a new generator differs significantly from the training distribution, the semantic/textual representations from the encoder remain valid; one only needs to provide context samples to define the decision boundary for TabPFN. Ablations confirm that replacing DINOv3 with DINOv2 or frequency-domain features (DCT/FFT) results in lower accuracy, precision, recall, F1, and AUC.
 
-**2. PCA to 500 Dimensions: Aligning with TabPFN Limits and Removing Irrelevant Variance**
-DINOv3 CLS tokens are 768-dimensional, while the current TabPFN has a 500-dimension limit. Incremental PCA is used to fit a projection on training features, compressing each image to $z(h(x))\in\mathbb{R}^{500}$. During evaluation across four generator-aware protocols (Multi-Multi, Multi-Single, Single-Multi, Single-Single), PCA is fitted only on the training side to prevent data leakage. The cost of "re-fitting PCA coefficients" is included in the adaptation budget—a step orders of magnitude faster than retraining a classification head, ensuring TabPFN input dimensions remain valid while keeping in-context inference truly gradient-free.
+**2. PCA to 500 Dimensions: Adhering to TabPFN Limits and Removing Irrelevant Variance**
+DINOv3 CLS tokens are 768-dimensional, while the current TabPFN version has a 500-dimension limit. The authors use IncrementalPCA to fit a closed-form projection on training features, compressing each image to $z(h(x))\in\mathbb{R}^{500}$. During evaluation across four generator-aware protocols (Multi-Multi, Multi-Single, Single-Multi, Single-Single), PCA is always fitted only on the training side to prevent information leakage. Crucially, "re-fitting PCA coefficients" is considered a negligible cost of adaptation—this step is orders of magnitude faster than training a classification head and ensures TabPFN's input dimensions are always valid, enabling "truly zero-gradient" in-context inference.
 
-**3. TabPFN ICL instead of Gradient-based Heads: Replacing "Training" with "Table Replacement"**
-TabPFN is a Prior-Data Fitted Network that outputs classification posteriors via a single forward pass given a "context set + test row." This approximates Bayesian tabular inference rather than traditional training. The paper leverages this for small data: each generator uses a minimal training size $k\in\{25,30,75,150,300,625\}$ as the context, while the test set is fixed at 10,000 images. In small-data regimes, the advantage of "replacing context" over "retraining a head" is massive. Adding a new generator becomes a lightweight feature extraction and context assembly process, reducing setup time from minutes to seconds.
+**3. TabPFN In-Context Inference as a Substitute for Gradient-Based Training: Replacing "Training a New Head" with "Updating a Context Table"**
+TabPFN is a Prior-Data Fitted Network that outputs posterior classifications using a single forward pass given a "context set + test row." This is essentially a Bayesian tabular inference rather than traditional training. The authors leverage this for small-data scenarios: each generator uses a minimal training set size $k\in\{25,30,75,150,300,625\}$ as context, with a test set of 10,000 images. In these small-data regimes, the advantage of "swapping context" over "retraining a head" is significant. Operationally, adding a new generator becomes a lightweight feature extraction and context assembly task, reducing adaptation time from minutes to seconds.
 
 ### Loss & Training
-No training is performed on the visual side. Both DINOv3 and TabPFN are frozen models, and PCA is a closed-form fit. "Training" is equivalent to "preparing a new context table," which is the core advantage of this paradigm. Baselines like LATTE are trained normally according to their protocols and compared fairly at $k\in\{150,300,625\}$.
+No training is performed on the vision side: DINOv3 and TabPFN are both frozen models, and PCA is a closed-form fit. "Training" is equivalent to "preparing a new context table"—the core advantage of this paradigm. As a baseline, LATTE is trained normally according to its protocols to provide a fair comparison at $k\in\{150,300,625\}$.
 
 ## Key Experimental Results
 
 ### Main Results
-Benchmark is GenImage (ImageNet real images + 8 generators: ADM/BigGAN/GLIDE/Midjourney/SDv1.4/SDv1.5/VQDM/Wukong). Protocols include Multi-Multi (pooled train/test), Multi-Single (pooled train/single test), Single-Multi (single train/pooled test), and Single-Single (pairwise transfer). Accuracy is the primary metric.
+The benchmark is GenImage (ImageNet real images + eight generators including ADM, BigGAN, GLIDE, Midjourney, SDv1.4, SDv1.5, VQDM, and Wukong). Evaluations follow four protocols: Multi-Multi (pooled train/test), Multi-Single (pooled train/single test), Single-Multi (single train/pooled test), and Single-Single (pair-wise transfer).
 
 | Protocol | Training Scale $k$ | LATTE | DINOv3-PCA-TabPFN | Gain |
 |------|--------------|-------|-------------------|------|
-| Multi-Multi Pooled Low-Data | $k=25$ | — | **78%** | Start at 78 |
-| Multi-Multi Pooled Medium | Small Shared $k$ | Behind | TabPFN leads by up to +8.2% | Strongest Region |
-| Multi-Multi Pooled High-Data | $k=625$ | **+7.4% Lead** | Behind | LATTE recovers at scale |
-| Single-Single Pairwise | $k=625$ | — | Wins in 54/64 pairs | Max pair +31.5% |
+| Multi-Multi Low Data | $k=25$ | — | **78%** | Start at 78% |
+| Multi-Multi Medium | Small shared $k$ | Behind | TabPFN leads by up to +8.2% | Ours' strongest regime |
+| Multi-Multi High Data | $k=625$ | Leads by +7.4% | Behind | LATTE recovers at scale |
+| Single-Single Transfer | $k=625$ | — | Wins in 54/64 pairs | Max pair gain +31.5% |
 
 ### Ablation Study
 
-| Configuration | Key Metric | Description |
+| Configuration | Key Metrics | Note |
 |------|---------|------|
-| Full: DINOv3 + PCA-500 + TabPFN | Best in 5 metrics (Multi-Multi) | Full Pipeline |
-| Encoder: DINOv2 + TabPFN | Weaker performance | DINOv3's unique contribution |
-| Encoder: DCT/FFT Frequency + TabPFN | Significant drop | Semantic > Handcrafted Frequency |
-| Head: MLP on DINOv3 features | Equal at scale, behind at low $k$ | TabPFN advantage in small context |
-| Low Data $k=25$ (Pooled) | 78% | Outperforms all MLP-based training |
+| Full: DINOv3 + PCA-500 + TabPFN | Best across 5 metrics in Multi-Multi | Complete pipeline |
+| Encoder replaced with DINOv2 + TabPFN | Consistently weaker | Validates DINOv3 contribution |
+| Encoder replaced with DCT/FFT + TabPFN | Significant drop | Validates semantic over frequency features |
+| Classifier replaced with MLP on DINOv3 | Matches at high data, lags at low | Validates TabPFN small-context advantage |
+| Low Data $k=25$ (Pooled) | 78% | TabPFN starts higher than any MLP method |
 
 ### Key Findings
-- The combination of strong representations and in-context judgment is most advantageous in low-data and cross-generator regimes. DINOv3 and TabPFN are both necessary—replacing either (DINOv2 / MLP / Frequency) leads to performance drops.
-- Under the Single-Single (64 pairs) protocol, DINOv3-PCA-TabPFN outperforms LATTE in 54 pairs (max lead 31.5%). However, as $k$ increases, some cross-pair transfer accuracy decreases, suggesting TabPFN may slightly specialize to generator fingerprints as context density grows.
-- Difficulty varies significantly by generator: BigGAN/GLIDE show high separability in PCA space, while ADM/Midjourney/Wukong distributions heavily overlap in DINOv3 space, requiring more context for slower gains.
-- LATTE overtakes by 7.4% at $k=625$ in pooled settings, primarily due to TabPFN's 10,000-row limit. Once the context is saturated, TabPFN has no room for further improvement, making it naturally non-comparable with sustainable training models like LATTE in large-data regimes.
+- The combination of strong representation and in-context discrimination excels in low-data and cross-generator regimes. Both DINOv3 and TabPFN are necessary; replacing either (with DINOv2, MLP, or frequency features) degrades performance.
+- In the Single-Single protocol (64 pairs), DINOv3-PCA-TabPFN outperforms LATTE in 54 pairs (up to 31.5% lead). However, as $k$ increases, some cross-pair transfer accuracy decreases, suggesting TabPFN may slightly specialize to generator fingerprints as the context set grows.
+- Difficulty varies significantly by generator: BigGAN/GLIDE show high real/fake separability in PCA space, requiring little context. ADM/Midjourney/Wukong distributions overlap heavily in DINOv3 space, requiring more context for slower gains.
+- LATTE leads by 7.4% in the $k=625$ pooled setting, primarily due to the 10,000-row limit of the current TabPFN. This means once the context is "full," TabPFN hits a plateau, whereas LATTE can continue to improve with more training data.
 
 ## Highlights & Insights
-- The study proposes the "Images as Tables" paradigm by end-to-end coupling a universal visual foundation model with a universal tabular foundation model. Once an image is converted to a structured row, all small-data tabular tools (not just TabPFN) become available for AIGC detection.
-- The cost of adapting to new generators is reduced to PCA calculation and context re-assembly. The pipeline is gradient-free, bringing the engineering burden of "training new heads" to near zero, which is highly beneficial for real-world forensics.
-- The paper clearly defines the boundaries of advantage: choose TabPFN for low-data/cross-generator tasks and LATTE for large-data pooled scenarios. It avoids claiming "absolute superiority," leaving room for hybrid detection or switching strategies based on data scale.
-- The two-stage abstraction (frozen encoding followed by tabular foundation model) is potentially portable to other low-data visual problems like medical or remote sensing small-shot classification.
+- Proposes an "Images as Tables" paradigm by end-to-end concatenation of a universal vision foundation model and a universal tabular foundation model. Once an image is a structured row, any tabular tool (not just TabPFN) can be applied to AIGC detection.
+- Compresses the cost of adapting to new generators into two steps: re-fitting PCA and re-assembling the context set. The pipeline involves zero gradients, reducing the engineering burden of "training new heads" to near zero.
+- Clearly defines the boundary between TabPFN and LATTE: TabPFN for low-data/cross-generator tasks, and LATTE for large-scale pooled scenarios. This leaves room for future hybrid or scale-switch strategies.
+- The two-stage abstraction (frozen-encode then tabular-infer) has direct portability beyond forensics to other low-data vision problems like medical or remote sensing few-shot classification.
 
 ## Limitations & Future Work
-- The 10,000 row × 500 dimension limit of the current TabPFN limits context size, preventing it from processing the entire GenImage pooled collection. This is why LATTE catches up at scale. Future versions like TabPFN-2.5 might shift this boundary.
-- The pipeline relies heavily on DINOv3 representation quality. If generators begin to utilize adversarial techniques against DINOv3, the pipeline may lack additional image-domain robustness (e.g., frequency-domain defense).
-- Experiments are limited to binary real/fake classification on GenImage; robustness against degradations (compression, blur, crop) was not evaluated and is cited as future work. Additionally, PCA is a linear reduction; future work could explore stronger non-linear projections.
+- The current TabPFN limit (10,000 rows × 500 dimensions) prevents it from consuming the full GenImage pooled set, which is why LATTE catches up at scale. Newer versions like TabPFN-2.5 might shift this boundary.
+- The pipeline relies heavily on DINOv3 representation quality. If future generators target DINOv3 specifically with adversarial methods, the pipeline lacks image-domain defenses (e.g., frequency-domain buffers).
+- Experiments are restricted to real/fake binary classification on GenImage without evaluating robustness to degradations (compression, blur, cropping). Additionally, PCA is a linear reduction; replacing it with non-linear projections might capture more complex signals.
 
 ## Related Work & Insights
-- **vs LATTE (2025)**: LATTE uses diffusion denoising latent trajectories as signals, peaking in large-data pooled scenarios. Ours uses no diffusion-specific signals, relying on general DINOv3 + TabPFN to lead in low-data/cross-generator tasks without retraining heads.
-- **vs CLIP-based Detection (Cozzolino 2024)**: Both use pre-trained visual representations, but CLIP detectors still train classification heads i.i.d., incurring high migration costs. Ours converts judgment to in-context inference, removing "training" entirely.
-- **vs TabPFN Original**: TabPFN was designed for small structured datasets. This work moves it out of its native domain by treating DINOv3 representations as structured rows, providing a blueprint for cross-modal structured inference (e.g., THz/medical imaging).
-- **vs Frequency/Fingerprint Detection (Yu 2019, Cozzolino 2024)**: Fingerprint detection often fails across generators. This work avoids fingerprint dependency via DINOv3 self-supervised representations and shifts cross-generator transfer pressure to TabPFN's context set, resulting in wins in 54 out of 64 transfer pairs.
+- **vs. LATTE (2025)**: LATTE uses diffusion denoising trajectories as signals, peaking in large-data pooled scenarios. This method uses no diffusion-specific signals and outperforms LATTE in low-data/cross-generator tasks without retraining heads.
+- **vs. CLIP-based Detection (Cozzolino 2024)**: Both use foundation model representations, but CLIP detectors still train a classification head under i.i.d. assumptions, incurring high transfer costs. This method eliminates training in favor of in-context inference.
+- **vs. Vanilla TabPFN**: While TabPFN was designed for small structured tabular data, this work applies it to visual representations as structured rows, providing a template for cross-modal structured inference (e.g., medical imaging).
+- **vs. Frequency/Fingerprint Detection (Yu 2019, Cozzolino 2024)**: Fingerprint-based methods fail when generators change. This method avoids fingerprint dependency through DINOv3 semantic representations and shifts transfer pressure to the TabPFN context, as evidenced by winning in 54/64 transfer pairs.
 
 <!-- RELATED:START -->
 

@@ -2,13 +2,13 @@
 title: >-
   [Paper Note] The Reasoning Trap: How Enhancing LLM Reasoning Amplifies Tool Hallucination
 description: >-
-  [ACL 2026][Hallucination Detection][Reinforcement Learning] This study systematically reveals the "Reasoning Trap" paradox: enhancing LLM reasoning capabilities (whether via RL, distillation, or switchable reasoning modes) systematically amplifies tool hallucinations. This effect is specifically associated with the reasoning process itself rather than RL training procedures. Ex
+  [ACL 2026][Hallucination Detection][Reinforcement Learning] This work systematically reveals the "Reasoning Trap" paradox: enhancing LLM reasoning capabilities (whether through RL, distillation, or switchable reasoning modes) systematically amplifies tool hallucinations. This effect is inherently associated with the reasoning process itself rather than RL training, and existing
 tags:
   - ACL 2026
   - Hallucination Detection
   - Reinforcement Learning
 date: 2026-05-08
-content_hash: de170f0fa29f4042
+content_hash: ddccd4b64c5d6edf
 ---
 # The Reasoning Trap: How Enhancing LLM Reasoning Amplifies Tool Hallucination
 
@@ -20,78 +20,77 @@ content_hash: de170f0fa29f4042
 
 ## TL;DR
 
-This study systematically reveals the "Reasoning Trap" paradox: enhancing LLM reasoning capabilities (whether via RL, distillation, or switchable reasoning modes) systematically amplifies tool hallucinations. This effect is specifically associated with the reasoning process itself rather than RL training procedures. Existing mitigation strategies, such as prompt engineering and DPO, face an unavoidable trade-off between reliability and capability.
+This work systematically reveals the "Reasoning Trap" paradox: enhancing LLM reasoning capabilities (whether through RL, distillation, or switchable reasoning modes) systematically amplifies tool hallucinations. This effect is inherently associated with the reasoning process itself rather than RL training, and existing mitigation strategies (Prompt Engineering, DPO) face an inevitable reliability-capability trade-off.
 
 ## Background & Motivation
 
-**Background**: LLMs are evolving from text generators into "think-before-acting" agents. Through reasoning enhancement (RL, distillation, etc.), their planning and tool-use capabilities are continuously improved, which is a core path toward building reliable AI agents.
+**Background**: LLMs are evolving from text generators into "think-before-acting" agents. Through reasoning enhancement (RL, distillation, etc.), their planning and tool-use capabilities are continuously improved, which is the core path for building reliable AI Agents.
 
-**Limitations of Prior Work**: Stronger reasoning models, such as OpenAI o3, have exhibited more severe hallucination tendencies. However, no prior research has systematically examined whether reasoning enhancement itself leads to tool hallucinations—specifically, instances where models fabricate non-existent tools or incorrectly apply irrelevant tools.
+**Limitations of Prior Work**: Stronger reasoning models, such as OpenAI o3, have exhibited a more pronounced tendency toward hallucinations. However, no prior research has systematically examined whether reasoning enhancement itself leads to tool hallucinations—specifically, the model fabricating non-existent tools or incorrectly using irrelevant ones.
 
-**Key Challenge**: Intuitively, stronger reasoning should lead to higher reliability. However, experimental observations suggest the opposite: enhanced reasoning coexists with higher tool hallucination rates. This is not merely an overfitting issue, as RL training even on non-tool-related tasks (e.g., mathematics) also amplifies tool hallucinations.
+**Key Challenge**: Intuitively, stronger reasoning capabilities should lead to higher reliability. However, experimental observations show the opposite—stronger reasoning coexists with higher tool hallucination rates. This is not merely an overfitting issue, as RL training on non-tool-related tasks (such as mathematics) also amplifies tool hallucinations.
 
-**Goal**: To answer three core questions: (RQ1) Does reasoning enhancement increase tool hallucinations? (RQ2) What is the underlying mechanism? (RQ3) Can this be effectively mitigated?
+**Goal**: This paper aims to answer three core questions: (RQ1) Does reasoning enhancement increase tool hallucinations? (RQ2) What is the underlying mechanism? (RQ3) Can it be effectively mitigated?
 
-**Key Insight**: By constructing a lightweight diagnostic benchmark, SimpleToolHalluBench, the authors use controlled experiments to step-wise exclude alternative explanations, ultimately locating the cause within the reasoning process itself.
+**Key Insight**: The authors construct a lightweight diagnostic benchmark, SimpleToolHalluBench, to exclude alternative explanations through controlled experiments, ultimately locating the cause within the reasoning process itself.
 
-**Core Idea**: Reasoning chain training induces a behavioral pattern in models to "confidently fill the gaps." When applied to tool-use scenarios, this pattern naturally manifests as tool hallucinations—the model tends to generate tool calls that appear plausible but are fundamentally groundless.
+**Core Idea**: Reasoning chain training causes models to develop a behavior pattern of "confidently filling the gap." When placed in tool-use scenarios, this pattern naturally manifests as tool hallucinations—models tend to generate plausible-sounding but ungrounded tool calls.
 
 ## Method
 
 ### Overall Architecture
 
-The study systematically excludes alternative hypotheses in four steps: (1) Verifying that tool-related RL increases hallucinations; (2) Verifying that non-tool RL (math) similarly increases hallucinations (excluding overfitting); (3) Verifying that distillation and switchable reasoning modes also increase hallucinations (excluding RL specificity); (4) Using ablation studies to separate reasoning steps from RL training itself. After identifying reasoning as the primary cause, mechanism analysis (representation collapse + activation probing) is conducted, followed by an evaluation of mitigation strategies and their associated costs.
+The study systematically excludes alternative hypotheses in four steps: (1) Verifying that tool-related RL increases hallucinations; (2) Verifying that non-tool RL (mathematics) similarly increases hallucinations (excluding overfitting); (3) Verifying that distillation and switchable reasoning modes also increase hallucinations (excluding RL specificity); (4) Using ablation experiments to separate reasoning steps from RL training itself. After identifying reasoning as the culprit, a mechanism analysis is performed (representation collapse + activation probes), and finally, mitigation strategies are evaluated, exposing their associated costs.
 
 ```mermaid
-%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
-flowchart TD
-    A["SimpleToolHalluBench Diagnostic Benchmark<br/>NTA + DT Scenarios · 296 Tools: Hallucination if called when inappropriate"]
+graph TD
+    A["SimpleToolHalluBench Diagnostic Benchmark<br/>NTA + DT Scenarios · 296 Tools: Calling when shouldn't is hallucination"]
     A --> S
-    subgraph S["Four-Step Causal Exclusion Experiments"]
+    subgraph S["Four-step Causal Exclusion Experiments"]
         direction TB
         B1["① Tool RL → Hallucination↑ (Suspected Overfitting)"] --> B2["② Math RL → Hallucination↑ (Excludes Overfitting)"]
         B2 --> B3["③ Distillation / Switchable Reasoning → Hallucination↑ (Excludes RL Specificity)"]
-        B3 --> B4["④ Ablating think blocks: Removal results in 34.8→41.4, Retention results in 34.8→90.2"]
+        B3 --> B4["④ Ablate think block: Removal only 34.8→41.4, Retention results in 34.8→90.2"]
     end
-    S -->|Reasoning identified as the cause| C["Mechanism Analysis via Representation Collapse and Activation Probing<br/>CKA measures inter-layer drift + Linear probes locate hallucination signals"]
-    C --> D["Mitigation Strategy Evaluation<br/>Prompt engineering is largely ineffective · DPO is effective but sacrifices tool gains"]
+    S -->|Points to reasoning itself| C["Mechanism Analysis via Representation Collapse & Activation Localization<br/>CKA measures inter-layer drift + Linear probes locate hallucination signals"]
+    C --> D["Mitigation Strategy Evaluation<br/>Prompt Engineering nearly useless · DPO effective but sacrifices tool gains"]
     D --> E["Conclusion: Reliability-Capability Trade-off is Unavoidable"]
 ```
 
 ### Key Designs
 
-**1. SimpleToolHalluBench Diagnostic Benchmark: Measuring the "ability to abstain"**
+**1. SimpleToolHalluBench Diagnostic Benchmark: Specifically measuring "whether the model can resist calling when it shouldn't"**
 
-Existing benchmarks primarily measure whether a model can correctly call a tool, but they fail to measure whether a model can resist calling a tool when it shouldn't. SimpleToolHalluBench renders this measurable by designing two controlled scenarios: NTA (No Tools Available, where the query needs a tool but none are provided) and DT (Distractor Tools, where only irrelevant tools are provided). With 296 tools and corresponding queries—each only solvable by its specific tool—any tool invocation under NTA/DT settings is strictly a hallucination. This isolates the hallucination rate for precise measurement.
+Existing tool benchmarks focus on "whether the model can call tools correctly," but few measure "whether the model will force a call when it shouldn't." SimpleToolHalluBench makes this measurable by designing two controlled scenarios: NTA (No Tool Available—no tools provided, but query requires one) and DT (Distractor Tools—only irrelevant tools provided). With 296 tools and corresponding queries, any tool call under NTA/DT settings is strictly a hallucination, allowing hallucination rates to be cleanly isolated and measured.
 
-**2. Four-step Causal Exclusion: Tracing tool hallucination to "Reasoning Itself"**
+**2. Four-step Causal Exclusion Experiments: Driving the cause of tool hallucination step-by-step toward "reasoning itself"**
 
-Observing that "stronger reasoning models hallucinate more" only establishes a correlation. The authors build a causal chain. First, tool-related RL increases hallucinations, which could be attributed to overfitting. Second, using pure mathematics for RL training still increases hallucinations, rejecting the overfitting hypothesis. Third, alternate methods like distillation and switchable reasoning also yield increased hallucinations, showing this isn't specific to RL. Fourth, direct ablation of reasoning steps shows that removing the `<think>` block only slightly increases hallucinations ($34.8 \rightarrow 41.4$), whereas keeping it causes a surge ($34.8 \rightarrow 90.2$). This identifies the reasoning process itself as the primary driver.
+Observing that "stronger reasoning models hallucinate more" is merely a correlation. The authors establish causality through an exclusion chain. First, tool-related RL increases hallucinations—but this might be overfitting tool data. Second, using pure mathematics RL training still results in increased hallucinations, excluding the overfitting hypothesis. Third, substituting RL with distillation and switchable reasoning modes also yields increased hallucinations, showing it is not specific to RL training. Fourth, ablating the reasoning step directly: removing the `<think>` block only slightly increases hallucinations (34.8→41.4), whereas keeping it causes a surge (34.8→90.2). This identifies the reasoning process itself as the culprit.
 
-**3. Mechanism Analysis: Addressing "Why" and "Where"**
+**3. Mechanism Analysis of Representation Collapse and Activation Localization: Answering "Why" and "Where"**
 
-The authors analyze the model's internal states. CKA (Centered Kernel Alignment) compares representations before and after RL: while in-domain representations remain stable (CKA $> 0.9$), tool-related representations drift significantly in early and middle layers (CKA $< 0.75$), suggesting that reasoning training reshapes the internal processing of tools. Additionally, linear probes show that correct vs. hallucinated responses are most linearly separable in late-stage residual streams (Separability Score $> 0.14$), while attention and MLP outputs are nearly inseparable. This grounds the behavioral phenomenon in specific layers and components.
+After identifying reasoning as the cause, the authors examine internal model dynamics. CKA is used to compare layer representations before and after RL: while in-domain representations are stable (CKA > 0.9), tool-related representations drift significantly in early and intermediate layers (CKA < 0.75), suggesting reasoning training reshapes internal tool processing. Additionally, linear probes locate hallucination signals: correct and hallucinated responses are most linearly separable in late-stage residual streams (separability score > 0.14), while attention and MLP outputs are nearly inseparable. This grounds behavioral phenomena in specific layers and components.
 
-**4. Mitigation Strategy Evaluation: The Trade-off between Reliability and Capability**
+**4. Mitigation Strategy Evaluation: Verifying the choice between reliability and capability**
 
-The authors evaluated two routes: prompt engineering (explicitly instructing "do not use unavailable tools") proved largely ineffective, with the NTA hallucination rate only dropping from $90.2$ to $87.5$. DPO (aligning "honest responses" to preferences) was effective, reducing NTA from $90.2$ to $55.8$, but at the cost of the SynTool reward dropping from $0.45$ to $0.34$. This confirms that current mitigations cannot bypass the reliability-capability trade-off.
+The authors evaluated two mainstream routes: Prompt Engineering (explicitly requesting "do not use unprovided tools") was largely ineffective, with the NTA hallucination rate only dropping from 90.2 to 87.5. DPO (aligning "honest responses" to preferences and suppressing "hallucinated responses") was effective, dropping NTA from 90.2 to 55.8, but it reduced the SynTool reward from 0.45 to 0.34. Consequently, current mitigations involve a reliability-capability trade-off—suppressing hallucinations necessitates sacrificing gains in tool execution.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Model/Configuration | R_NTA(↓) | R_DT(↓) | Description |
+| Model/Config | R_NTA(↓) | R_DT(↓) | Description |
 |----------|----------|---------|------|
 | Qwen2.5-7B-Instruct | 34.8 | 54.7 | Baseline |
-| + ReCall RL (Tools) | 90.2 | 100.0 | Tool RL significantly increases |
+| + ReCall RL (Tool) | 90.2 | 100.0 | Tool RL causes massive increase |
 | + GRPO (Math) | ↑ | ↑ | Non-tool RL also increases |
 | R1-Distill-Qwen-7B | 74.3 | 78.7 | Distillation increases |
 | Qwen3-8B Think Off | 4.1 | 36.2 | Reasoning disabled |
-| Qwen3-8B Think On | 5.4 | 56.8 | Reasoning enabled increases |
+| Qwen3-8B Think On | 5.4 | 56.8 | Reasoning enabled increase |
 
 ### Ablation Study
 
-| Configuration | R_NTA | R_DT | Reward |
+| Config | R_NTA | R_DT | Reward |
 |------|-------|------|--------|
 | Baseline | 34.8 | 54.7 | 0.22 |
 | Direct Tool RL (No Reasoning) | 41.4 | 63.6 | 0.28 |
@@ -101,33 +100,33 @@ The authors evaluated two routes: prompt engineering (explicitly instructing "do
 
 ### Key Findings
 - Reasoning enhancement consistently increases tool hallucinations across all tested methods (RL, distillation, switchable modes).
-- RL training on pure math tasks also increases tool hallucinations, excluding the overfitting hypothesis.
-- Ablation indicates that the reasoning step itself (the `<think>` block), rather than RL training, is the core factor.
-- Instruction following remains stable (IFEval: $-2.6\%$) and tool-calling capability even improves (BFCL: $+9.9\%$), yet hallucinations surge—proving tool hallucination is an independent failure mode.
-- DPO mitigation is effective but involves an unavoidable trade-off between capability and reliability.
+- RL training even on pure math tasks increases tool hallucinations, excluding the overfitting hypothesis.
+- Ablations show the reasoning steps (the `<think>` block) itself, rather than RL training, is the core factor.
+- Instruction following capability remains stable (IFEval: -2.6%) and tool-calling capability even improves (BFCL: +9.9%), while hallucinations surge—proving tool hallucination is an independent failure mode.
+- DPO mitigation is effective but incurs an inevitable capability-reliability trade-off.
 
 ## Highlights & Insights
-- **Identifies a profound paradox**: Reasoning enhancement makes models "smarter but less honest," serving as a fundamental warning for current reasoning scaling research.
-- **Top-tier experimental design**: The four-step exclusion method systematically establishes causal evidence with rigorous logic.
-- **Deep mechanism analysis**: CKA representation analysis and activation probing answer "why" and "where" beyond just "what."
-- **Core Insight**: Tool hallucination is neither overfitting nor instruction-following degradation; it is an inherent side effect of reasoning enhancement.
+- **Reveals a profound paradox**: Reasoning enhancement makes models "smarter but less honest," posing a fundamental warning to current reasoning scaling research.
+- **Textbook-level experimental design**: The four-step exclusion method systematically establishes causal evidence with rigorous logic.
+- **Deep mechanism analysis**: CKA representation analysis and activation probing answer not just "what" but "why" and "where."
+- **Core Insight**: Tool hallucination is neither overfitting nor instruction-following degradation, but an intrinsic side effect of reasoning enhancement.
 
 ## Limitations & Future Work
-- **Focus on single-step tool calling**: Real-world agents involve multi-step chains where hallucination effects might accumulate.
-- **Incomplete causality**: Mechanism analysis reveals patterns but does not provide a complete causal explanation.
-- **Limited mitigation strategies**: Only prompt engineering and DPO were evaluated; methods like process supervision or Constitutional AI remain unexplored.
-- Future work necessitates training objectives that optimize both capability and reliability jointly rather than treating reliability as a post-hoc fix.
+- **Focus on single-step tool calling**: Real-world agents involve multi-step tool chains where hallucination effects may accumulate.
+- **Incomplete causality**: Mechanism analysis reveals correlated patterns but does not provide a complete causal explanation.
+- **Limited mitigation strategies**: Only Prompt Engineering and DPO were evaluated; methods like process supervision or Constitutional AI remain unexplored.
+- Future work requires joint optimization of capability and reliability training objectives rather than post-hoc fixes.
 
 ## Related Work & Insights
-- **vs. ToolBeHonest**: While both focus on tool use evaluation, this work identifies the relationship between reasoning enhancement and hallucination.
-- **vs. ReCall**: Explores the "hidden cost" of SOTA agent reasoning RL frameworks.
-- **vs. DeepSeek-R1**: While R1 transfers reasoning capabilities via distillation, this study proves that hallucination tendencies are transferred as well.
+- **vs ToolBeHonest**: That work focuses on diagnostic evaluation, whereas this study investigates the relationship between reasoning enhancement and hallucination.
+- **vs ReCall**: ReCall is a SOTA agent reasoning RL framework; this paper reveals its "hidden costs."
+- **vs DeepSeek-R1**: While R1 transfers reasoning capabilities via distillation, this paper proves that hallucination tendencies are transferred as well.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ First to systematically correlate reasoning enhancement with tool hallucination.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Rigorous four-step exclusion, mechanism analysis, and mitigation evaluation.
-- Writing Quality: ⭐⭐⭐⭐⭐ Clear logical progression with structured experimental queries.
-- Value: ⭐⭐⭐⭐⭐ Significant implications for reasoning scaling and agent safety.
+- Novelty: ⭐⭐⭐⭐⭐ First to systematically link reasoning enhancement with tool hallucination; findings are highly significant.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Extremely rigorous design with four-step exclusion, mechanism analysis, and mitigation evaluation.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear logical chain; each experiment answers a specific question in a progressive manner.
+- Value: ⭐⭐⭐⭐⭐ Provides a fundamental warning for current reasoning scaling paths and is crucial for Agent safety.
 
 <!-- RELATED:START -->
 
@@ -136,9 +135,9 @@ The authors evaluated two routes: prompt engineering (explicitly instructing "do
 ## Related Papers
 
 - [\[NeurIPS 2025\] Reasoning Models Hallucinate More: Factuality-Aware Reinforcement Learning for Large Reasoning Models](../../NeurIPS2025/hallucination/reasoning_models_hallucinate_more_factuality-aware_reinforcement_learning_for_la.md)
+- [\[ACL 2026\] Enhancing Hallucination Detection via Future Context](enhancing_hallucination_detection_via_future_context.md)
 - [\[ICML 2026\] Harnessing Reasoning Trajectories for Hallucination Detection via Answer-agreement Representation Shaping](../../ICML2026/hallucination/harnessing_reasoning_trajectories_for_hallucination_detection_via_answer-agreeme.md)
 - [\[CVPR 2026\] Understanding the Role of Hallucination in Reinforcement Post-Training of Multimodal Reasoning Models](../../CVPR2026/hallucination/understanding_the_role_of_hallucination_in_reinforcement_post-training_of_multim.md)
-- [\[ACL 2026\] Enhancing Hallucination Detection via Future Context](enhancing_hallucination_detection_via_future_context.md)
 - [\[ACL 2026\] 为什么 LLM 在结构化知识上产生幻觉：推理过程的机制分析](why_llms_hallucinate_on_structured_knowledge_a_mechanistic_analysis_of_reasoning.md)
 
 </div>

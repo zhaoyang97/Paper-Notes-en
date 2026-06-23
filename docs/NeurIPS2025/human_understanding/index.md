@@ -63,7 +63,7 @@ item_total: 21
 
 **🧠 NeurIPS2025** · **21** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (138)](../../CVPR2026/human_understanding/index.md) · [🧪 ICML2026 (4)](../../ICML2026/human_understanding/index.md) · [🔬 ICLR2026 (8)](../../ICLR2026/human_understanding/index.md) · [🤖 AAAI2026 (20)](../../AAAI2026/human_understanding/index.md) · [📹 ICCV2025 (41)](../../ICCV2025/human_understanding/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (138)](../../CVPR2026/human_understanding/index.md) · [🔬 ICLR2026 (45)](../../ICLR2026/human_understanding/index.md) · [🧪 ICML2026 (5)](../../ICML2026/human_understanding/index.md) · [🤖 AAAI2026 (20)](../../AAAI2026/human_understanding/index.md) · [📹 ICCV2025 (41)](../../ICCV2025/human_understanding/index.md)
 
 🔥 **Top topics:** Face & Gaze ×4 · Human Pose ×3 · Reasoning ×2 · Speech & Audio ×2
 

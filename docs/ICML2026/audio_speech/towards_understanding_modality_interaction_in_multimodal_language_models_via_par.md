@@ -2,57 +2,56 @@
 title: >-
   [Paper Note] Towards Understanding Modality Interaction in Multimodal Language Models via Partial Information Decomposition
 description: >-
-  [ICML 2026][Audio & Speech][PID] This paper treats the decision-making of Multimodal Large Language Models (MLLMs) as an information decomposition from input to output. Using Partial Information Decomposition (PID), the mutual information of VL/omni-modal model predictions is decomposed into four components: "Vision-unique / Text-unique / Redundant /
+  [ICML 2026][Audio & Speech][PID] This paper treats the decision-making of multimodal large models as an information decomposition from input to output. Using Partial Information Decomposition (PID), the mutual information of VL/omni-modal model predictions is decomposed into four terms: "Vision-unique / Text-unique / Redundant / Synergistic." It disco
 tags:
   - ICML 2026
   - Audio & Speech
   - PID
 date: 2026-05-08
-content_hash: 9e577a46e40c31bc
+content_hash: 122b9e65e7fbb431
 ---
 # Towards Understanding Modality Interaction in Multimodal Language Models via Partial Information Decomposition
 
 **Conference**: ICML 2026  
 **arXiv**: [2606.00959](https://arxiv.org/abs/2606.00959)  
-**Code**: TBD  
-**Area**: Multimodal VLM / Interpretability / Information-theoretic analysis  
-**Keywords**: PID, Modality Synergy, Omni-modal models, Vision dominance, LoRA reweighting
+**Code**: To be confirmed  
+**Area**: Multimodal VLM / Interpretability / Information-theoretic Analysis  
+**Keywords**: PID, Modality Synergy, Omni-modal Models, Visual Dominance, LoRA Reweighting
 
 ## TL;DR
-This paper treats the decision-making of Multimodal Large Language Models (MLLMs) as an information decomposition from input to output. Using Partial Information Decomposition (PID), the mutual information of VL/omni-modal model predictions is decomposed into four components: "Vision-unique / Text-unique / Redundant / Synergistic." The study finds that the synergy term is the best indicator of predictive vision sensitivity and that omni-modal models suffer from a "vision hegemony" synergy bottleneck. Furthermore, sample-level PID scores are used to guide LoRA reweighted fine-tuning, yielding consistent 1–2 percentage point improvements on MMStar, MMBench, and POPE.
+This paper treats the decision-making of multimodal large models as an information decomposition from input to output. Using Partial Information Decomposition (PID), the mutual information of VL/omni-modal model predictions is decomposed into four terms: "Vision-unique / Text-unique / Redundant / Synergistic." It discovers that the synergistic term is the best indicator of predictive vision sensitivity and that omni-modal models suffer from a "visual hegemony" synergy bottleneck. Finally, sample-level scores derived from PID are used to guide LoRA reweighted fine-tuning, achieving consistent improvements of 1–2 percentage points on MMStar, MMBench, and POPE.
 
 ## Background & Motivation
 
-**Background**: MLLMs have evolved from perception systems to decision-making agents (scientific analysis, medical, embodied interaction). However, current evaluations almost exclusively focus on "prediction accuracy," using accuracy combined with modality ablation to judge if a model truly utilizes vision or audio.
+**Background**: MLLMs have evolved from perception systems to decision-making agents (scientific analysis, medicine, embodied interaction). However, current evaluations almost exclusively focus on "prediction correctness," using accuracy and modality ablation to judge if the model truly utilizes vision or audio.
 
-**Limitations of Prior Work**: Existing analyses such as representation alignment, attention visualization, and modality ablation can identify "which modality is encoded" and "the performance drop when a modality is removed." However, they fail to answer **decision-layer** questions: Is the information used by the model unique to one modality, shared (redundancy), or only obtainable by simultaneously processing both modalities (synergy)? These nuances are conflated in accuracy metrics, and different multimodal fusion patterns are mixed together.
+**Limitations of Prior Work**: Analysis types such as representation alignment, attention visualization, and modality ablation can identify "which modality is encoded" and "how much performance drops when a modality is removed." However, they cannot answer **decision-layer** questions: Is the information used by the model unique to one modality, shared by both (redundant), or obtainable only when both are viewed simultaneously (synergistic)? These three aspects are conflated in accuracy metrics, and different multimodal fusion modes are mixed together.
 
-**Key Challenge**: Accuracy and ablation metrics are **scalars**, while modality usage is **multidimensionally structured** (unique vs. redundant vs. synergistic). Compressing this structure into a scalar inevitably loses critical signals such as whether the model is truly fusing inputs or simply taking shortcuts via language priors.
+**Key Challenge**: Accuracy and ablation metrics are **scalars**, but modality usage is **multidimensional** (Unique vs. Redundant vs. Synergistic). Compressing a multidimensional structure into a scalar inevitably loses critical signals, such as whether the model is truly performing fusion or merely taking shortcuts using language priors.
 
-**Goal**: To achieve three objectives: (a) Establish a decision-layer "modality usage profile" for each model-benchmark pair; (b) Verify if this profile predicts intervention sensitivity (performance drop after removing vision/audio); (c) Use the profile to guide training and enhance true cross-modal fusion.
+**Goal**: To accomplish three things: (a) Establish a decision-layer "modality usage profile" for each model-benchmark pair; (b) Verify whether this profile can predict intervention sensitivity (performance drop after removing vision/audio); (c) Use the profile to guide training and enhance genuine cross-modal fusion.
 
-**Key Insight**: The authors adopt the Partial Information Decomposition (PID) framework, which decomposes $I(Y;X_v,X_t)$ into four non-negative terms: $U_{\text{vis}} + U_{\text{txt}} + R_{\text{vl}} + S_{\text{vl}}$. A crucial observation is that **PID should be constructed on the model-induced predictive distribution $p_\theta(y|x_v,x_t)$ rather than latent representations**. This characterizes "how the model uses modalities" rather than "intrinsic dataset properties."
+**Key Insight**: The authors leverage the existing PID framework from information theory, which decomposes $I(Y;X_v,X_t)$ into four non-negative terms: $U_{\text{vis}} + U_{\text{txt}} + R_{\text{vl}} + S_{\text{vl}}$. A crucial observation is that **PID should be built on the model-induced prediction distribution $p_\theta(y|x_v,x_t)$ rather than on latent representations**. This captures "how the model uses modalities" rather than "what the dataset itself looks like."
 
-**Core Idea**: Use decision-layer PID for VL model diagnostics, extend it to video-audio-text omni-modal models via Sensory PID (using text as a conditional control variable), and finally construct a LoRA reweighting strategy that "up-weights synergy-deficient samples and down-weights language-shortcut samples" based on sample-level PID scores.
+**Core Idea**: Use decision-layer PID for VL model diagnosis, introduce Sensory PID (using text as a conditional control variable) to extend to video-audio-text omni-modal models, and finally construct a LoRA reweighting strategy that "up-weights synergistic-deficient samples and down-weights language-shortcut samples" using sample-level PID scores.
 
 ## Method
 
 ### Overall Architecture
 
-The paper addresses the question of "how models use modalities for decision-making" which accuracy metrics fail to answer. The approach treats the MLLM predictive distribution $p_\theta(y|x_v,x_t)$ as the object of decomposition. It uses PID to split predictive mutual information into vision-unique, text-unique, redundant, and synergistic terms. The pipeline follows three stages: profiling VL models with dual-modality PID, extending to video-audio-text models via Sensory PID, and utilizing sample-level scores from the estimator as weights for LoRA fine-tuning, creating a "diagnosis → prediction → intervention" loop.
+This paper addresses the question of "how models actually use modalities to make decisions," which accuracy metrics fail to answer. The approach treats the MLLM prediction distribution $p_\theta(y|x_v,x_t)$ as the object of decomposition for "input information to output prediction," utilizing PID to split prediction mutual information into vision-unique, text-unique, redundant, and synergistic terms. The workflow follows three lines: establishing bi-modal PID profiles for VL models, extending analysis to video-audio-text omni-modal models via Sensory PID, and using sample-level scores from the same estimator as weights for LoRA fine-tuning, forming a loop of "Diagnosis → Prediction → Intervention."
 
 ```mermaid
-%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
-flowchart TD
-    IN["Input: MLLM Predictive Distribution + Benchmark"]
-    EST["BATCH Estimator + Calibrated Embedding Mask<br/>Generates unimodal conditions & sample-level scores"]
-    P1["Decision-layer Dual-modality PID<br/>Decomposes into Vision-unique / Text-unique / Redundant / Synergistic"]
-    P2["Sensory PID<br/>Text as condition: Vision-unique / Audio-unique / AV Synergy"]
-    DIAG["Diagnosis: Synergy term predicts vision sensitivity<br/>Reveals vision hegemony"]
+graph TD
+    IN["Input: MLLM Prediction Distribution + Benchmark"]
+    EST["BATCH Estimator + Calibrated Embedding Masking<br/>Create Unimodal Conditions & Sample-level Scores"]
+    P1["Decision-layer Bi-modal PID<br/>Split Vision-unique / Text-unique / Redundant / Synergistic"]
+    P2["Sensory PID<br/>Text as Condition: Vision-unique / Audio-unique / AV Synergy"]
+    DIAG["Diagnosis: Synergistic term predicts vision sensitivity<br/>Reveals Visual Hegemony"]
     LORA["PID-Guided LoRA Reweighting<br/>GapScore → Sample Weights → Fine-tuning"]
     IN --> P1
     EST --> P1
-    P1 -->|Multi-modal Extension| P2
+    P1 -->|Omni-modal Extension| P2
     P1 --> DIAG
     P2 --> DIAG
     DIAG --> LORA
@@ -61,94 +60,96 @@ flowchart TD
 
 ### Key Designs
 
-**1. Decision-layer Dual-modality PID: Decomposing Predictive Mutual Information into Comparative Atoms**
+**1. Decision-layer Bi-modal PID: Decomposing Prediction MI into Four Comparable Atoms**
 
-For a VL model's performance on a benchmark, the authors decompose the joint mutual information between prediction $Y$ (distribution over candidate set $\mathcal{C}$) and sources $X_v, X_t$ into $I(Y;X_v,X_t) = U_{\text{vis}} + U_{\text{txt}} + R_{\text{vl}} + S_{\text{vl}}$. The significance is that the decomposition is built on the **model-induced predictive distribution rather than latent representations**, capturing how the model uses modalities to reach an answer. While scalar metrics conflate true fusion with language shortcuts, these four atoms explicitly separate modality usage structures, allowing for questions such as "can the synergy term $S_{\text{vl}}$ predict vision sensitivity?"
+Regarding the performance of a VL model on a benchmark, the authors decompose the joint mutual information between prediction $Y$ (distribution over candidate set $\mathcal{C}$) and sources $X_v, X_t$ into $I(Y;X_v,X_t) = U_{\text{vis}} + U_{\text{txt}} + R_{\text{vl}} + S_{\text{vl}}$. The key is that this decomposition is built on the **model-induced prediction distribution rather than latent representations**. This reveals how the model utilizes modalities to reach an answer. While accuracy and ablation are scalars that conflate "true fusion" with "language shortcuts," these four atoms explicitly separate the multidimensional structure, allowing for decision-layer questions like whether the synergistic term $S_{\text{vl}}$ is the best predictor of vision sensitivity.
 
 **2. Sensory PID: Treating Language as a Condition Rather than a Third Source**
 
-Decomposing omni-modal video/audio/text as three separate sources in a standard PID presents two problems: the number of atoms grows exponentially with the number of sources, and language typically acts as a "task instruction" whose instructional role would be conflated with $U_{\text{txt}}$. The solution is to fix text $T$ as a conditional variable and perform dual-source decomposition on sensory sources: $I(Y;V,A|T) = U_{\text{vis}} + U_{\text{aud}} + R_{\text{sens}} + S_{\text{av}}$. This mathematically separates "what the task requires" from "what evidence the senses provide," giving "audio-unique" $U_{\text{aud}}$ and "AV synergy" $S_{\text{av}}$ comparable meanings and enabling quantitative observation of "vision hegemony" ($S_{\text{av}} \ll U_{\text{vis}}$).
+Treating video/audio/text as three sources in a full PID poses two problems: the number of partial information atoms grows exponentially, making them uninterpretable and hard to estimate; furthermore, language in instructional scenarios is essentially a "task manual," and forcing it as a source mixes its instructional role into $U_{\text{txt}}$. The authors fix text $T$ as a conditional control variable, performing bi-source decomposition on sensory sources: $I(Y;V,A|T) = U_{\text{vis}} + U_{\text{aud}} + R_{\text{sens}} + S_{\text{av}}$. This conditional decomposition ensures the sum equals $I(Y;V,A|T)$ while reducing the parameter dimension to 4 atoms. This mathematically separates "what the task requires" from "what evidence the senses provide," giving "Audio-unique" $U_{\text{aud}}$, "Vision-unique" $U_{\text{vis}}$, and "AV Synergy" $S_{\text{av}}$ comparable physical meanings—facilitating the quantitative observation of "visual hegemony" ($S_{\text{av}} \ll U_{\text{vis}}$).
 
-**3. BATCH + Calibrated Embedding Masking: Estimating Unimodal Distributions from Joint Models**
+**3. BATCH + Calibrated Embedding Masking: Creating Unimodal Conditions from Joint Models**
 
-PID estimation requires unimodal conditions like $p_\theta(y|x_v)$, but MLLMs are jointly trained. The authors use a BATCH estimator to learn a Sinkhorn-normalized coupling $\tilde{Q}$ that matches marginals. To obtain unimodal conditions without pushing the backbone out of its training distribution, they use **Calibrated Embedding Masking**: text token embeddings are replaced with Gaussian noise $\mathcal{N}(\mu_{m'}, \mathrm{diag}(\sigma_{m'}^2))$ based on dimension-wise statistics of the modality. This "blurs" the modality's semantic content while maintaining its distributional presence, allowing the backbone to operate within a familiar domain.
+PID estimation requires unimodal conditions like $p_\theta(y|x_v)$ and $p_\theta(y|x_t)$, but MLLMs are jointly trained without independent heads. The authors use a BATCH estimator to learn a Sinkhorn-normalized coupling $\tilde{Q}$ that matches the marginals of $X_v\text{–}Y$ and $X_t\text{–}Y$. The difficulty lies in obtaining unimodal conditions—empty strings or zero masks push the backbone out-of-distribution. The solution is **Calibrated Embedding Masking**: to calculate $p_\theta(y|x_v)$, the text token embeddings are replaced by Gaussian noise $\mathcal{N}(\mu_{m'}, \mathrm{diag}(\sigma_{m'}^2))$, where $\mu_{m'}, \sigma_{m'}$ are dimension-wise statistics from the profiling set. This "blurs" the modality without destroying its positional or distributional shape, removing specific semantics while keeping the backbone within its familiar distribution. All estimates are averaged over $K=50$ random batches to reduce variance.
 
-**4. PID-Guided LoRA Reweighting: Converting Diagnosis into Training Signals**
+**4. PID-Guided LoRA Reweighting: Transforming Diagnostic Scores into Training Signals**
 
-The BATCH estimator produces local contributions $s_i, u_{\text{vis},i}, u_{\text{txt},i}, r_i$ per sample $i$. These are used for targeted intervention. Sample information quality $I_i^+$ is defined via non-negative truncation. The Synergistic Ratio $\text{SR}_i = [s_i]_+/(I_i^+ + \epsilon)$, Shortcut Score $\text{SC}_i = [u_{\text{txt},i}]_+/(I_i^+ + \epsilon)$, and Fusion Potential $\text{FP}_i = [\min\{H(p_v^{(i)}), H(p_t^{(i)})\} - H(p_{vt}^{(i)})]_+$ are combined into a $\text{GapScore}_i = (1-\text{SR}_i)(1-\text{SC}_i)\cdot \text{FP}_i$. This score is high only when a sample has low synergy and low shortcutting but high potential for reduction in uncertainty via joint prediction. Samples are reweighted ($w_{\text{gap}}=3.0, w_{\text{shortcut}}=0.5$) for LoRA fine-tuning.
+The BATCH estimator yields local contributions $s_i, u_{\text{vis},i}, u_{\text{txt},i}, r_i$ for each sample $i$. These are used for directed sample intervention. After non-negative truncation $[\cdot]_+$, the authors calculate the Synergistic Ratio $\text{SR}_i = [s_i]_+/(I_i^+ + \epsilon)$ and the Shortcut Score $\text{SC}_i = [u_{\text{txt},i}]_+/(I_i^+ + \epsilon)$. Fusion Potential is defined as $\text{FP}_i = [\min\{H(p_v^{(i)}), H(p_t^{(i)})\} - H(p_{vt}^{(i)})]_+$. These are synthesized into $\text{GapScore}_i = (1-\text{SR}_i)(1-\text{SC}_i)\cdot \text{FP}_i$. This multiplicative structure is high only when "synergy is not yet used," "language shortcut is not relied upon," and "joint prediction is more certain." TopK "shortcut" and "gap" samples are selected and assigned weights $w_i = 0.5$ and $w_i = 3.0$ respectively for weighted LoRA fine-tuning. Unlike selection by accuracy or ablation, PID separates "hard due to lack of knowledge" from "hard due to lack of fusion."
 
 ### Loss & Training
 
-The diagnostic phase requires no training. During training, the standard LoRA objective is used, with the loss for each sample multiplied by its weight $w_i$. LoRA adapters are restricted to the final 20% of Transformer layers, as layer-wise analysis indicates that synergy information primarily emerges in these late stages.
+The diagnostic phase requires no training, only BATCH for PID estimation. The training phase uses standard LoRA objectives, with each sample loss multiplied by the calculated $w_i$. LoRA adapters are only applied to the final 20% of transformer layers, as layer-wise analysis (§4.3) shows that synergistic information primarily emerges in these layers. Hyperparameters include confidence threshold $\tau=0.3$, up-weighting factor $3.0$, and down-weighting factor $0.5$.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Evaluations covered 20 VL models (Qwen2.5/InternVL3/LLaVA-OneVision/Gemma3, etc.) across 6 benchmarks (MMBench/MMStar/POPE as "synergy-driven", MMMU/PMC-VQA as "prior-driven") and omni-modal models (Qwen2.5-Omni, VITA-1.5) on MUSIC-AVQA.
+Evaluation covers 20 VL models (Qwen2.5/2/3-VL, InternVL3, LLaVA-OneVision, Cambrian-1, Gemma3, 2B–78B) across 6 VL benchmarks (Synergy-driven: MMBench/MMStar/POPE; Prior-driven: MMMU/PMC-VQA/Reefknot). Omni-modal models (Qwen2.5-Omni, VITA-1.5) are tested on MUSIC-AVQA.
 
 | Validation Dimension | Key Metric | Result | Meaning |
 |:---|:---|:---|:---|
 | Correlation of PID terms with vision removal sensitivity $\Delta_{\text{vision}}$ | Spearman $\rho(S_{\text{vl}}, \Delta_{\text{vision}})$ | MMBench 0.840 / MMStar 0.862 / POPE 0.798 | $S_{\text{vl}}$ is the strongest predictor of vision sensitivity |
-| Same as above, for $U_{\text{txt}}$ | $\rho(U_{\text{txt}}, \Delta_{\text{vision}})$ | $-0.582 / -0.548 / -0.502$ | Higher language-unique info correlates with lower vision sensitivity |
-| Total Mutual Info $I(V,T;Y)$ vs $\Delta_{\text{vision}}$ | $|\rho| \le 0.118$ | Near-zero correlation | Total MI tracks accuracy, not modality dependency |
-| Sensory Synergy $S_{\text{av}}$ on AV-Fusion | Numerical value | All models $\le 0.32$, vs $U_{\text{vis}} \approx 1.25\text{–}1.42$ | Models are dominated by vision even when AV fusion is required |
-| LoRA-PID vs LoRA-Uniform | MMStar / MMBench / POPE | $64.3$ vs $62.0$ / $90.2$ vs $89.1$ / $88.5$ vs $87.2$ | Consistent +1–2 pp gain |
-| PID Profile Shift after Tuning | Post-$S_{\text{vl}}$ / Post-$U_{\text{txt}}$ | $1.20\to 1.36$ / $0.56\to 0.46$ | LoRA-PID shifts models towards more synergy and fewer shortcuts |
+| Same as above, for $U_{\text{txt}}$ | $\rho(U_{\text{txt}}, \Delta_{\text{vision}})$ | $-0.582 / -0.548 / -0.502$ | Higher text-unique info leads to lower vision sensitivity |
+| Total Mutual Information $I(V,T;Y)$ vs. $\Delta_{\text{vision}}$ | $|\rho| \le 0.118$ | Almost no correlation | **Total MI follows accuracy, not modality dependency** |
+| Sensory Synergy $S_{\text{av}}$ on AV-Fusion subset | Value | All models $\le 0.32$, far below $U_{\text{vis}} \approx 1.25\text{–}1.42$ | Models are dominated by vision-unique info even in AV tasks → "Visual Hegemony" |
+| LoRA-PID vs. LoRA-Uniform (Qwen2.5-VL-7B) | MMStar / MMBench / POPE | $64.3$ vs $62.0$ / $90.2$ vs $89.1$ / $88.5$ vs $87.2$ | +2.3 / +1.1 / +1.3 pp, stable across 3 seeds |
+| PID Profile Shift after fine-tuning | Post-$S_{\text{vl}}$ / Post-$U_{\text{txt}}$ | $1.20\to 1.36$ / $0.56\to 0.46$ | LoRA-PID shifts models toward more synergy and fewer shortcuts |
 
 ### Ablation Study
 
-| Configuration | MMStar | Description |
+| Configuration | MMStar | Note |
 |:---|:---|:---|
 | B: LoRA-Uniform | 62.0 | Uniform weighting baseline |
 | C: LoRA-PID | **64.3** | Full PID selection + reweighting |
-| D: LoRA-Random | 61.5 | Randomly assigned 0.5/3.0 weights |
-| E: LoRA-Acc | 62.5 | Reweighting by difficulty; proves difficulty $\neq$ fusion need |
-| F: LoRA-Ablation | 63.0 | Reweighting by ablation sensitivity; weaker than PID by 1.3 pp |
+| D: LoRA-Random | 61.5 | Weights are not the key; **which samples receive them is** |
+| E: LoRA-Acc | 62.5 | Difficulty $\neq$ Fusion need; PID outperforms by +1.8 |
+| F: LoRA-Ablation | 63.0 | Ablation sensitivity captures some fusion need, but remains 1.3 pp weaker |
 
 ### Key Findings
 
-- **Synergy as a Watershed Signal**: In synergy-driven benchmarks, $S_{\text{vl}}$ achieves both high correlation with vision sensitivity and accuracy. Total MI only predicts accuracy, while synergy reveals decision-layer modality usage.
-- **Three-stage Layer Dynamics**: Layer-wise PID shows "Silent Encoding (0–20%) → Unimodal Accumulation (20–80%) → Late Fusion (80–100%)." Synergy emerges almost entirely in the final 20% of layers.
-- **Mechanism of Vision Hegemony**: Omni-modal models reach "vision saturation" ($U_{\text{vis}}$ dominance) in middle layers, causing the decision surface to be fixed by vision priors before fusion can occur.
-- **Language as a Fusion Gate**: Replacing fusion-heavy instructions with simpler paraphrases causes a dramatic drop in $S_{\text{av}}$ in late layers, while early-to-mid layer unimodal trajectories remain unchanged.
+- **Synergy $S_{\text{vl}}$ as a Watershed Signal**: In all synergy-driven benchmarks, it achieves $\rho(\cdot, \Delta_{\text{vision}}) \ge 0.798$ and $\rho(\cdot, \text{Acc}) \ge 0.718$, making it the strongest predictor of whether the model uses vision.
+- **Three-stage Hierarchical Dynamics**: Layer-wise PID reveals a "Silent Encoding (0–20%) → Unimodal Accumulation (20–80%) → Late Fusion (80–100%)" pattern. Synergistic info emerges almost entirely in the final 20% of layers.
+- **Mechanism of Visual Hegemony**: Omni-modal models reach "visual saturation" in middle layers ($U_{\text{vis}}$ rises rapidly), causing the decision space to be fixed by visual priors before fusion occurs.
+- **Language as Fusion Gating**: Replacing instructions requiring fusion with paraphrases that do not significantly decays $S_{\text{av}}$ in later layers while unimodal trajectories remain unchanged, suggesting text acts as a "fusion switch."
+- **POPE vs. Reefknot**: Both are "hallucination benchmarks," but PID classifies POPE as synergy-driven and Reefknot as prior-driven, suggesting that literal labels of benchmarks can hide actual modality usage differences.
 
 ## Highlights & Insights
 
-- **Decision Layer vs. Latent Layer**: While most interpretability research looks at latent tokens (CKA, attention maps), this paper focuses on $p_\theta(y|x)$ to describe functional modality usage.
-- **Synergistic Loop**: The sample-level scores from BATCH allow the framework to transition from a "post-hoc diagnostic" to an "active training signal," creating a closed loop of diagnosis, prediction, and intervention.
-- **Sensory PID Innovation**: Conditioning on language simplifies the PID complexity while isolating the "instructional" role of text from the evidence provided by sensory inputs.
-- **Multi-Conditional Selection**: The $\text{GapScore}$ multiplicative structure elegantly identifies samples that specifically lack fusion capabilities rather than samples that are simply "hard" due to missing knowledge.
+- **Decision Layer vs. Representation Layer**: While most MLLM interpretability focuses on latents (CKA, attention, probing), this paper focuses on $p_\theta(y|x)$. PID describes how the model *uses* modalities to answer, not just how they are encoded.
+- **PID as both Diagnosis and Training Signal**: Sample-level scores from BATCH allow the same tool to transition from "post-hoc analysis" to "pre-hoc selection," creating a closed loop of "Diagnosis → Prediction → Intervention."
+- **Sensory PID as an Underrated Innovation**: Reducing full 3-source PID to "Language-conditioned + Sensory-dual-source" solves exponential complexity and instructional confounding, providing a reusable framing for omni-modal analysis.
+- **Multiplicative Structure of GapScore**: Requiring the intersection of "low synergy," "low shortcut," and "high fusion potential" ensures the selection of truly improvable samples.
 
 ## Limitations & Future Work
 
-- **Estimator Precision**: BATCH relies on mean-pooled representations; its robustness for long-context video or multi-image scenarios remains unverified.
-- **Masking Approximations**: Calibrated Embedding Masking assumes the backbone treats Gaussian noise similarly to missing modalities, which may not hold for highly structured instruction templates (e.g., code/math).
-- **Synergy Ceiling**: The improvement over ablation-based selection is moderate (+1.3 pp), suggesting synergy and ablation sensitivity are highly correlated.
-- **Trade-offs on Prior-Driven Tasks**: LoRA-PID intentionally down-weights language shortcuts, leading to minor regressions (0.3–0.5 pp) on knowledge-intensive benchmarks like MMMU.
+- **Dependence on BATCH Estimation**: BATCH uses Sinkhorn optimization and mean pooling; its robustness for long videos or multi-image scenarios with many tokens is uncertain.
+- **Masking Approximation Boundaries**: The assumption that the backbone responds to "statistically matched Gaussian noise" the same way as "missing modalities" may falter for highly structured instruction templates (e.g., code, math).
+- **Ceiling of PID Reweighting**: The +1.3 pp margin over LoRA-Ablation suggests synergy and modality sensitivity overlap significantly; PID is a refinement rather than a replacement.
+- **Lack of Audio-side Dual Experiments**: While "Visual Hegemony" is noted, there are no experiments specifically strengthening audio-unique samples to see if the "synergy bottleneck" can be broken from the other side.
 
 ## Related Work & Insights
 
-- **Comparison to Representation Alignment**: Alignment methods show *how* modalities are encoded; PID shows *how* they are used. A model can encode vision perfectly yet ignore it during decision-making.
-- **Comparison to Modality Dropout**: While ablation shows sensitivity, it cannot distinguish between unique and synergistic information. PID explicitly separates these dependencies.
-- **Extension of BATCH**: Previous applications of BATCH targeted supervised learning with scalar labels. This work extends it to generative multimodal distributions with token-level masking.
+- **vs. Representation Alignment / CKA**: Alignment describes encoding; Ours describes usage. A model can encode vision perfectly but ignore it during decision-making.
+- **vs. Modality Ablation**: Ablation gives $\Delta_{\text{vision}}$, but cannot distinguish unique from synergistic information.
+- **vs. Liang et al. 2023 (BATCH)**: This work extends BATCH from supervised scalar labels to generative MLLM prediction distributions with masking-based unimodal conditions.
+- **vs. Williams & Beer (Original PID)**: By using conditional Sensory PID, the authors avoid the exponential atom growth of 3-source PID, making it feasible for omni-modal engineering.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ Applying PID to the generative decision layer and introducing Sensory PID is a clean and original framework.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Extensive testing across 20+ models and multiple benchmarks, including layer dynamics and guided fine-tuning.
-- **Writing Quality**: ⭐⭐⭐⭐ Clear findings, though technical details like Sinkhorn optimization and BATCH estimation require significant background knowledge.
-- **Value**: ⭐⭐⭐⭐ Provides a robust diagnostic tool and a training methodology that effectively addresses modality shortcuts and fusion bottlenecks.
+- Novelty: ⭐⭐⭐⭐ Applying PID to MLLM decision layers and proposing Sensory PID is a clean and original framing.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Extensive testing across 20+ models and multiple benchmarks, plus hierarchical and instruction analysis.
+- Writing Quality: ⭐⭐⭐⭐ Highly structured Findings, though technical details like Sinkhorn optimization require prior background.
+- Value: ⭐⭐⭐⭐ The diagnosis-to-training loop is a valuable paradigm for the MLLM evaluation and fine-tuning community.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
-</div>
 
 ## Related Papers
 
 - [\[ACL 2026\] Closing the Modality Reasoning Gap for Speech Large Language Models](../../ACL2026/audio_speech/closing_the_modality_reasoning_gap_for_speech_large_language_models.md)
 - [\[AAAI 2026\] Improving Multimodal Sentiment Analysis via Modality Optimization and Dynamic Primary Modality Selection](../../AAAI2026/audio_speech/improving_multimodal_sentiment_analysis_via_modality_optimization_and_dynamic_pr.md)
 - [\[CVPR 2026\] Omni-MMSI: Toward Identity-Attributed Social Interaction Understanding](../../CVPR2026/audio_speech/omni-mmsi_toward_identity-attributed_social_interaction_understanding.md)
-- [\[CVPR 2026\] Multi-speaker Attention Alignment for Multimodal Social Interaction](../../CVPR2026/audio_speech/multi-speaker_attention_alignment_for_multimodal_social_interaction.md)
+- [\[ICLR 2026\] ParaS2S: Benchmarking and Aligning Spoken Language Models for Paralinguistic-Aware Speech-to-Speech Interaction](../../ICLR2026/audio_speech/paras2s_benchmarking_and_aligning_spoken_language_models_for_paralinguistic-awar.md)
 - [\[ICML 2026\] Probing Cross-modal Information Hubs in Audio-Visual LLMs](probing_cross-modal_information_hubs_in_audio-visual_llms.md)
 
 </div>

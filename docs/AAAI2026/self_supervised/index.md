@@ -52,7 +52,7 @@ item_total: 16
 
 **🤖 AAAI2026** · **16** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (89)](../../CVPR2026/self_supervised/index.md) · [🧪 ICML2026 (24)](../../ICML2026/self_supervised/index.md) · [💬 ACL2026 (1)](../../ACL2026/self_supervised/index.md) · [🔬 ICLR2026 (16)](../../ICLR2026/self_supervised/index.md) · [🧠 NeurIPS2025 (33)](../../NeurIPS2025/self_supervised/index.md) · [📹 ICCV2025 (13)](../../ICCV2025/self_supervised/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (89)](../../CVPR2026/self_supervised/index.md) · [🔬 ICLR2026 (81)](../../ICLR2026/self_supervised/index.md) · [💬 ACL2026 (1)](../../ACL2026/self_supervised/index.md) · [🧪 ICML2026 (28)](../../ICML2026/self_supervised/index.md) · [🧠 NeurIPS2025 (33)](../../NeurIPS2025/self_supervised/index.md) · [📹 ICCV2025 (13)](../../ICCV2025/self_supervised/index.md)
 
 🔥 **Top topics:** Adversarial Robustness ×5 · Continual Learning ×3 · Alignment/RLHF ×3
 

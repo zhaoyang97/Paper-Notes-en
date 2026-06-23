@@ -2,12 +2,12 @@
 title: >-
   [Paper Note] Position: Adversarial ML for LLMs Is Not Making Any Progress
 description: >-
-  [ICML 2026][LLM (Other)][Paper Note] This position paper argues that adversarial machine learning in the LLM era focuses on problems that are "harder to define, harder to solve, and harder to evaluate" compared to traditional classifier scenarios. Having made slow progress on "toy problems" like $\ell_p$ robustness over the past decade, the field's full p
+  [ICML 2026][LLM (Other)][Paper Note] This position paper argues that adversarial machine learning (ML) research in the LLM era focuses on problems that are "harder to define, harder to solve, and harder to evaluate" compared to traditional classifier scenarios. Having made slow progress on "toy problems" like $\ell_p$ robustness over the past decade, the
 tags:
   - ICML 2026
   - LLM (Other)
 date: 2026-05-08
-content_hash: ec3e29b99992e7e1
+content_hash: cc89535e32e0df2d
 ---
 # Position: Adversarial ML for LLMs Is Not Making Any Progress
 
@@ -18,55 +18,51 @@ content_hash: ec3e29b99992e7e1
 **Keywords**: Adversarial ML, LLM Safety, Jailbreaking, Prompt Injection, Evaluation Reproducibility  
 
 ## TL;DR
-This position paper argues that adversarial machine learning in the LLM era focuses on problems that are "harder to define, harder to solve, and harder to evaluate" compared to traditional classifier scenarios. Having made slow progress on "toy problems" like $\ell_p$ robustness over the past decade, the field's full pivot to LLMs risks another decade of research without producing measurable or reproducible safety guarantees.
+This position paper argues that adversarial machine learning (ML) research in the LLM era focuses on problems that are "harder to define, harder to solve, and harder to evaluate" compared to traditional classifier scenarios. Having made slow progress on "toy problems" like $\ell_p$ robustness over the past decade, the full shift to LLMs risks another decade of research without producing measurable or reproducible security guarantees.
 
 ## Background & Motivation
 
-**Background**: Adversarial machine learning originated from "small problems, big methods"—focusing on narrow tasks like spam filters or CNNs on CIFAR/ImageNet. The threat model typically involved adding a perturbation $\ell_p \le \epsilon$ to the input to cause misclassification. Attack objectives were optimized via first-order gradients of cross-entropy loss, and defense effectiveness was compared using test accuracy. Even in this ideal setting, the community spent a decade without truly solving $\ell_p$-bounded robustness, as numerous empirical defenses were eventually broken by subsequent adaptive attacks (Carlini & Wagner 2017, Tramer et al. 2020).
+**Background**: Adversarial ML originated with "small problems, large methods"—targeting narrow tasks like spam filters or CNNs on CIFAR/ImageNet. The threat model was typically defined as "adding a perturbation $\ell_p \le \epsilon$ to the input to cause misclassification," where attacks could be optimized using first-order gradients of cross-entropy loss, and defenses were compared via test accuracy. Even in this ideal setting, the community spent a decade without truly solving $\ell_p$-bounded robustness, as numerous empirical defenses were subsequently broken by adaptive attacks (Carlini & Wagner 2017, Tramer et al. 2020).
 
-**Limitations of Prior Work**: As focus shifts to LLMs, "safety" is no longer a formally defined task. Developers concern themselves with abstract properties like helpfulness, honesty, and harmlessness (HHH); attackers aim to elicit "harmful" content; and threat models have expanded from "small perturbations" to "arbitrary prompts + fine-tuning + pruning." Sub-problems such as jailbreaking, prompt injection, unlearning, and membership inference simultaneously face three dilemmas: (a) attack success is difficult to determine, leading to a reliance on self-referential "LLM-as-a-judge" evaluations; (b) the attack search space is discrete, unbounded, and non-differentiable, where automated attacks generally underperform compared to human red teaming; and (c) mainstream target systems are closed-source, continuously updated APIs, making results impossible to replicate.
+**Limitations of Prior Work**: As the research focus shifts to LLMs, "safety" is no longer a formally defined task. Developers care about abstract attributes like helpfulness, honesty, and harmlessness (HHH); attackers aim to elicit "harmful" content; and threat models have expanded from "small perturbations" to "arbitrary prompts, fine-tuning, and pruning." Sub-problems such as jailbreaking, prompt injection, unlearning, and membership inference face three dilemmas: (a) attack success is difficult to determine, relying heavily on self-referential "LLM-as-a-judge" evaluations; (b) the attack search space is discrete, unbounded, and non-differentiable, where automated attacks generally underperform manual red teaming; (c) the primary targets are closed-source, continuously updated APIs, making results impossible to reproduce.
 
-**Key Challenge**: Traditional adversarial ML was arguably "scientific" because the $\ell_p$ ball and classification accuracy provided a simplified but precisely defined, adversarially optimizable, and reproducible "necessary condition." In pursuing "realistic threats," LLM safety research has abandoned this formal framework without providing measurable alternatives or certified defenses. Consequently, the community suffers from a systemic illusion of "perceived progress" (increasing difficulty in jailbreaking new models) while "actual progress" remains stagnant (worst-case failure rates remain near 100%).
+**Key Challenge**: Traditional adversarial ML qualified as a "science" because the $\ell_p$ ball and classification accuracy provided a simplified, yet precisely defined, optimizable, and reproducible "necessary condition." In pursuing "real-world threats," LLM safety research has abandoned this formal skeleton without providing a measurable alternative or certified defenses. Consequently, the community suffers from a systematic illusion between "apparent progress" (increased difficulty in jailbreaking new models) and "actual lack of progress" (worst-case failure rates remaining near 100%).
 
-**Goal**: This paper systematically categorizes the additional difficulties in adversarial ML for LLMs across three dimensions—definition, solution, and evaluation—and demonstrates how these obstacles hinder cumulative scientific progress through six sub-field case studies (jailbreaking, un-finetunable models, poisoning, prompt injection, membership inference, and unlearning).
+**Goal**: To systematically analyze the additional difficulties of adversarial ML in the LLM era across three dimensions—definition, solution, and evaluation—and empirically demonstrate how these obstacles hinder cumulative scientific progress through six sub-field cases (jailbreak, un-finetunable, poisoning, prompt injection, membership inference, and unlearning).
 
-**Key Insight**: The authors do not deny that LLM safety is a real problem but insist on distinguishing between "researching real-world security vulnerabilities" and "advancing the scientific understanding of adversarial ML." The latter must be built upon formalized, reproducible toy problems. If even scaled-down sub-problems cannot be solved, "progress" in the broader, fuzzy problem remains unfalsifiable.
+**Key Insight**: The author distinguishes between "researching real-world security vulnerabilities" and "advancing the scientific understanding of adversarial ML." The latter must be built on formalized, reproducible toy problems; if scaled-down sub-problems remains unsolved, "progress" on fuzzy, large-scale problems is unfalsifiable.
 
-**Core Idea**: The central thesis is "solve definable sub-problems before talking about safety." The authors call for the community to define minimal formalized versions of each LLM safety direction, similar to $\ell_p$-bounded perturbations; otherwise, looking back in ten years, it will remain impossible to answer "how much have we actually progressed."
+**Core Idea**: Summarized as "solve definable sub-problems before talking about safety." The community is urged to define minimal formalized versions for each LLM safety direction, similar to $\ell_p$-bounded perturbations, to ensure that progress can be meaningfully measured a decade from now.
 
 ## Method
 
-As a position paper, this work proposes an analytical framework rather than an algorithm or training strategy to "health check" adversarial ML research.
+As a position paper, this work does not propose algorithms or training methods. Its "Method" is an analytical framework used to inspect the health of adversarial ML research.
 
 ### Overall Architecture
 
-The authors argue that LLM safety research has significantly deteriorated compared to the classifier era across the "Define–Solve–Evaluate" loop. The argumentation involves decomposing the research process into "Defining the problem → Solving the problem → Evaluating results," identifying the challenges where LLM research has regressed, and mapping these through a challenge matrix (Table 1) across six sub-fields.
+Ours argues that LLM safety research has significantly deteriorated in the "definition-solution-evaluation" loop compared to the classifier era. The argument decomposes the research process into a "define $\rightarrow$ solve $\rightarrow$ evaluate" cycle, identifies challenges at each stage, and uses a challenge matrix (Table 1 in the paper) to evaluate six sub-fields—jailbreak, un-finetunable, poisoning, prompt injection, membership inference, and unlearning—to see which areas have "collapsed across all dimensions."
 
 ### Key Designs
 
-**1. Three Collapses in "Definition": Losing the definition of "Attack Success"**
+**1. Three Collapses in the "Definition" Dimension: Ambiguity in Attack Success**  
+The first collapse is in judging attack success. Unlike classification, "harmfulness" in LLMs cannot be formalized, forcing reliance on LLM-as-a-judge proxies with circular dependencies. The second is the boundary of the attack space: while classifiers have geometric constraints like $\|x' - x\|_p \le \epsilon$, almost any input can trigger unsafe LLM outputs, leading to "unbounded" threat models that even include model modifications (fine-tuning, pruning). The third is the data boundary: the traditional IID train/test split fails on trillion-token corpora, causing membership inference and unlearning to degrade from "containing a specific sample" to "containing a concept," losing sample identity.
 
-The first collapse is the determination of attack success. Unlike classification where predicted labels are compared, "harmful" content in LLMs cannot be formalized, forcing the community back to proxies like LLM-as-a-judge, which introduces circular dependencies. The second is the boundary of the attack space: while classifiers have geometric constraints like $\|x' - x\|_p \le \epsilon$, almost any input to an LLM might trigger unsafe output. Most jailbreak/prompt injection papers default to "unbounded" threat models, even granting attackers the power to fine-tune or prune the model. The third is the training data boundary: traditional IID train/test splits fail on trillion-token corpora, causing membership inference and unlearning to degrade from "identifying a sample" to "identifying a concept," losing sample identity. The authors emphasize that definition is the minimum threshold of science—without it, "X% improvement" loses its baseline.
+**2. Two Collapses in the "Solution" Dimension: Manual Attacks and Unprincipled Defenses**  
+The first collapse is in attack search. In classifiers, white-box attacks like PGD/CW consistently outperform humans by following $\nabla_x \mathcal{L}$. In the discrete token space of LLMs, gradient methods are less effective (e.g., GCG produces gibberish), while the strongest attacks—persona modulation, multi-turn dialogues—rely on manual red teaming, meaning "worst-case performance" cannot be computationally bounded. The second is in defense principles: LLM defenses are mostly ad-hoc (adversarial fine-tuning, Llama Guard, input preprocessing) that fail to define exactly what they protect against and are repeatedly bypassed by new attacks.
 
-**2. Two Collapses in "Solution": Manual attacks dominate, and defenses lack principles**
+**3. Two Collapses in the "Evaluation" Dimension: Circular Dependency and Moving Targets**  
+The first collapse is the measurement of harm vs. utility. LLM-as-a-judge can be attacked by prompts and exhibits bias toward "any non-refusal" as a success. It also shows bias when evaluating defenses based on similar models. The second is reproducibility: closed-source models like GPT-4 are silently updated, making attack prompts obsolete within weeks. Independent verification of reported success rates becomes impossible, preventing the community from accumulating comparable results over time.
 
-The first collapse is attack search. In classifiers, white-box attacks like PGD/CW consistently outperform humans by following $\nabla_x \mathcal{L}$. However, the discrete token space of LLMs renders gradient methods less effective; methods like GCG generate gibberish strings that barely outperform random search. Truly potent attacks—such as persona modulation or social engineering—rely on human red teaming, meaning "worst-case performance" cannot be computationally approximated. The second is defense principles: while the classifier era had certified defenses like randomized smoothing and principled empirical defenses like adversarial training, LLM defenses are largely reactive—adversarial fine-tuning, latent space training, or external guards (e.g., Llama Guard). These fail to explain "what specifically is being defended" and are repeatedly bypassed by new attacks (e.g., Łucki et al. 2024).
-
-**3. Two Collapses in "Evaluation": Circular dependencies and moving targets**
-
-The first is the measurement of harm vs. utility. Traditional tasks use misclassification rates to measure both; LLMs require LLM-as-a-judge, which is susceptible to prompt attacks (Mangaokar et al. 2024), misinterprets any non-refusal as success (Souly et al. 2024), and exhibits bias toward similar discriminators. Simultaneously, "utility" lacks a standard; a trivial defense that refuses everything is "perfectly safe" but useless. The second is reproducibility: mainstream targets like GPT-4 or Claude are silently updated, rendering attack prompts obsolete within weeks. Results in many papers cannot be independently verified, making research akin to shooting at moving targets.
-
-**4. Normative Prescription: Explicitly categorizing papers into "Vulnerability Demos" or "Scientific Research"**
-
-The authors propose a "meta-loss" requirement: every paper must be explicitly categorized. "Real-world vulnerability research" may accept fuzzy evaluation but must specify concentrated harms; "Scientific research on adversarial ML" must restrict itself to formalized toy sub-problems—such as fixed-length suffix jailbreaking or bounded sentence modification—and undergo adaptive evaluation.
+**4. Normative Claim: Explicitly Splitting Papers into "Vulnerability Demos" and "Scientific Research"**  
+The author proposes that every paper should be explicitly categorized. "Real-world vulnerability research" can accept fuzzy evaluations but must specify harms. "Scientific research" must constrain itself to formalized toy sub-problems—such as fixed-length suffix jailbreaking or bounded sentence modification—and accept adaptive evaluations.
 
 ## Key Experimental Results
 
-This position paper replaces quantitative experiments with a "collapse matrix" across six sub-fields and a comparison of key capabilities.
+This position paper does not contain quantitative experiments. Instead, it uses case studies across six sub-fields and a "Collapse Matrix" as the Main Results.
 
-### Main Results: Collapse Matrix (6 Sub-fields × 7 Challenges)
+### Main Results: Collapse Matrix of 6 Sub-fields × 7 Challenges
 
-| Sub-field | Defining Success | Unbounded Space | Fuzzy Data Boundary | Hard Search | No Principles | Hard Utility Metric | Poor Reproducibility |
+| Sub-field | Defined Success | Unbounded Attack Space | Fuzzy Data Boundary | Hard Attack Search | Unprincipled Defense | Hard to Measure Harm/Utility | Low Reproducibility |
 |---|---|---|---|---|---|---|---|
 | Jailbreaks | ✓ | ✓ | — | ✓ | ✓ | ✓ | ✓ |
 | Un-finetunable Models | ✓ | ✓ | — | ✓ | ✓ | ✓ | — |
@@ -75,49 +71,49 @@ This position paper replaces quantitative experiments with a "collapse matrix" a
 | Membership Inference | ✓ | — | ✓ | — | — | ✓ | — |
 | Unlearning | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | — |
 
-Note: ✓ indicates that the sub-field has significantly deteriorated in that dimension due to LLM properties compared to the classifier era.
+*Note: ✓ indicates the sub-field has significantly deteriorated in that dimension due to LLM characteristics.*
 
-### Ablation Study: Comparison of Key Capabilities
+### Ablation Study: Key Comparisons between LLM Era and Classifier Era
 
-| Setting | Attack Goal | Attack Space | Strongest Attack Source | Evaluator | Reproducibility |
+| Setting | Attack Goal | Attack Space | Best Attack Source | Evaluator | Reproducibility |
 |---|---|---|---|---|---|
-| Classical $\ell_p$ | Misclassification (Clear) | $\|x'-x\|_p \le \epsilon$ | White-box PGD/CW (Auto) | Test accuracy | Open weights/data |
-| LLM Jailbreaking | "Harmful" output (Subjective) | Any token sequence + FT | Human red team (Manual) | LLM-as-a-judge | Closed APIs/Updates |
-| LLM Unlearning | Erase "Concept" | Any prompt + Intervention | Adaptive fine-tuning | Hard to isolate utility | Retraining infeasible |
+| Classic $\ell_p$ Adv Examples | Misclassification (Clear) | $\|x'-x\|_p \le \epsilon$ | White-box PGD/CW (Auto) | Test Accuracy | Public Weights/Data |
+| LLM Jailbreaking | Harmful content (Subjective) | Any sequence + Fine-tune | Human Red Team (Manual) | LLM-as-a-judge | Closed-source APIs |
+| LLM Unlearning | Erasing a "concept" | Any prompt + Intervention | Adaptive Fine-tune | Hard to isolate utility | Retraining infeasible |
 
 ### Key Findings
 
-- The most critical deterioration is not that the problem is "harder," but that the standard of success has vanished. The circular dependency of LLM-as-a-judge allows attackers/defenders to "game" the judge.
-- Counter-intuitively, manual attacks on LLMs remain superior to automated optimization, whereas white-box automated attacks dominated the image era.
-- Model safety "improving" over time may be an illusion caused by the degradation of evaluation tools rather than genuine progress.
-- Using the same LLM family for both defense and evaluation creates artificial high scores (structural benchmark contamination).
+- The most critical deterioration is not the difficulty of the problem, but the disappearance of the standard for success; circular dependencies in LLM-as-a-judge allow both sides to "game" the metric.
+- Manual attacks on LLMs remain stronger than automated optimization, meaning "worst-case" scenarios lack a computational upper bound.
+- The increased difficulty in jailbreaking newer models does not necessarily mean "safety is improving"; it may mean evaluation capabilities are deteriorating.
+- Structural benchmark contamination occurs when evaluators and defenses use the same underlying LLM.
 
 ## Highlights & Insights
 
-- The "Define–Solve–Evaluate" framework and the challenge matrix provide a rare horizontal diagnostic perspective for scanning safety literature.
-- The two-lane distinction (Vulnerability Demo vs. Scientific Research) prevents using incorrect metrics to criticize work of a different nature.
-- The discussion on the circular dependency of LLM-as-a-judge and source bias is a blind spot in current benchmarks that deserves formal attention.
-- Migrating the "necessary condition" logic from $\ell_p$ balls to LLM safety—such as "detectability of fixed-length suffix jailbreaks"—provides a programmable research agenda.
+- The "define-solve-evaluate" framework provides a cross-disciplinary diagnostic tool for LLM safety research.
+- The "vulnerability demo" vs. "scientific research" distinction prevents the misuse of evaluation metrics between engineering exploits and scientific proofs.
+- Identifying circular dependencies in LLM-as-a-judge highlights a blind spot in current safety benchmarks.
+- Proposing the migration of the "necessary condition" logic from $\ell_p$ balls to formalized LLM sub-tasks (e.g., fixed-length suffix jailbreakability) provides a roadmap for falsifiable research.
 
 ## Limitations & Future Work
 
-- The authors acknowledge counter-arguments that increased complexity is the price of solving "real problems." Their response (citing how representation engineering is also broken) is qualitative and lacks a quantitative threshold to distinguish "unsolved" from "unsolvable."
-- No specific new toy benchmark is proposed. While the paper calls for "formalized sub-tasks," it does not provide an immediate replacement for HarmBench or JailbreakBench.
-- Coverage of LLM agent safety (tool-calling, multi-agent protocols) is less detailed than jailbreaking.
-- The assumption that "formalization = cumulative science" is itself debatable; the correlation between $\ell_p$ robustness and real-world facial recognition security remains an open question.
+- Opponents may argue that rising complexity is the cost of solving "real-world" problems; the author's response is qualitative and lacks a quantitative threshold to distinguish "currently unsolved" from "unsolvable in principle."
+- The paper lacks a specific proposal for a new toy benchmark to replace existing ones like HarmBench.
+- The analysis of LLM agent safety (e.g., multi-agent protocol attacks) is limited compared to jailbreaking.
+- Formalization does not guarantee alignment with real-world harm; the relevance of $\ell_p$ robustness to real-world security remains an open question.
 
 ## Related Work & Insights
 
-- **vs. Carlini & Wagner 2017 / Tramer et al. 2020**: Extends the "empirical defenses must withstand adaptive attacks" tradition to the LLM context, noting that we now lack consensus even on what an adaptive attack looks like.
-- **vs. HarmBench / JailbreakBench**: These attempt to standardize harm scoring; this paper points out the inherent circular dependency in that standardization.
-- **vs. Representation Engineering / Circuit Breakers**: Draws parallels to detection-based defenses in the image era, warning that these often fail collectively against new attack types.
-- **vs. Cooper et al. 2024**: Echoes pessimism regarding machine unlearning, adding that concept-level and sample-level unlearning cannot be conflated.
+- **vs. Carlini & Wagner 2017 / Tramer et al. 2020**: Follows the tradition of warning against empirical defenses, extending the requirement for adaptive attacks to the LLM era.
+- **vs. HarmBench / JailbreakBench**: Recognizes these as necessary compromises but argues they lack the formal rigor required for cumulative science.
+- **vs. Representation Engineering / Circuit Breakers**: Analogizes these to "detection-based" defenses in the image era, warning that they are likely to be bypassed by adaptive attacks in latent space.
+- **vs. Cooper et al. 2024 (Unlearning position paper)**: Complements existing pessimism by arguing that concept-level unlearning lacks the sample-level identity required for formal verification.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The framework (3-step + challenge matrix) is highly integrated, though specific viewpoints exist disparately in sub-communities.
-- Experimental Thoroughness: ⭐⭐⭐ As a position paper, it lacks experiments; the 6 cases vary in depth.
-- Writing Quality: ⭐⭐⭐⭐⭐ Clear argumentation and a rare instance of "constructive pessimism."
-- Value: ⭐⭐⭐⭐⭐ Provides a crucial mirror for the LLM safety community to evaluate its norms and future directions.
+- Novelty: ⭐⭐⭐⭐ High integration of the framework, though specific points exist separately in sub-communities.
+- Experimental Thoroughness: ⭐⭐⭐ Position paper without experiments; case studies vary in depth.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear argumentation with careful consideration of opposing views.
+- Value: ⭐⭐⭐⭐⭐ Provides a mirror for the LLM safety community to evaluate the scientific validity of their work.
 
 <!-- RELATED:START -->
 
@@ -125,11 +121,11 @@ Note: ✓ indicates that the sub-field has significantly deteriorated in that di
 
 ## Related Papers
 
+- [\[ICML 2026\] Position: The ML Community Must Build an AI-Augmented Peer-Review Ecosystem](position_the_ml_community_must_build_an_ai-augmented_peer-review_ecosystem.md)
 - [\[ACL 2025\] Biased LLMs Can Influence Political Decision-Making](../../ACL2025/llm_nlp/biased_llms_can_influence_political_decision-making.md)
-- [\[ICLR 2026\] When Stability Fails: Hidden Failure Modes of LLMs in Data-Constrained Scientific Decision-Making](../../ICLR2026/llm_nlp/when_stability_fails_hidden_failure_modes_of_llms_in_data-constrained_scientific.md)
 - [\[ICML 2026\] Position: The Turing-Completeness of Autoregressive Transformers Relies Heavily on Context Management](position_the_turing-completeness_of_autoregressive_transformers_relies_heavily_o.md)
-- [\[ACL 2025\] Mitigate Position Bias in LLMs via Scaling a Single Hidden States Channel](../../ACL2025/llm_nlp/mitigate_position_bias_in_large_language_models_via_scaling_a_single_dimension.md)
-- [\[ACL 2025\] Safer or Luckier? LLMs as Safety Evaluators Are Not Robust to Artifacts](../../ACL2025/llm_nlp/safer_or_luckier_llms_as_safety_evaluators_are_not_robust_to_artifacts.md)
+- [\[ICLR 2026\] When Stability Fails: Hidden Failure Modes of LLMs in Data-Constrained Scientific Decision-Making](../../ICLR2026/llm_nlp/when_stability_fails_hidden_failure_modes_of_llms_in_data-constrained_scientific.md)
+- [\[ICML 2026\] Position: Hippocampal Explicit Memory Is the Cornerstone for AGI](position_hippocampal_explicit_memory_is_the_cornerstone_for_agi.md)
 
 </div>
 

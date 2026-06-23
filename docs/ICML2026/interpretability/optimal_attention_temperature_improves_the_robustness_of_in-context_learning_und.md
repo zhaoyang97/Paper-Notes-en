@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Optimal Attention Temperature Improves the Robustness of In-Context Learning under Distribution Shift in High Dimensions
 description: >-
-  [ICML 2026][Interpretability][attention temperature] Under the high-dimensional linear regression ICL framework, this paper adopts an "approximate softmax attention" that preserves softmax normalization and temperature selectivity while remaining analytically solvable. **It provides a closed-form solution for ICL generalization error and an explicit expression for the op
+  [ICML 2026][Interpretability][attention temperature] Within the high-dimensional linear regression ICL framework, this paper adopts "approximate softmax attention"—a surrogate that preserves row-wise normalization and temperature selectivity while remaining analytically solvable—to **derive the closed-form solution for ICL generalization error and an explicit expression
 tags:
   - ICML 2026
   - Interpretability
@@ -10,7 +10,7 @@ tags:
   - ICL
   - approximate softmax
 date: 2026-05-08
-content_hash: c0ba31502922ea1d
+content_hash: e9f794caad241857
 ---
 # Optimal Attention Temperature Improves the Robustness of In-Context Learning under Distribution Shift in High Dimensions
 
@@ -21,94 +21,91 @@ content_hash: c0ba31502922ea1d
 **Keywords**: attention temperature, ICL, distribution shift, high-dimensional linear regression, approximate softmax
 
 ## TL;DR
-Under the high-dimensional linear regression ICL framework, this paper adopts an "approximate softmax attention" that preserves softmax normalization and temperature selectivity while remaining analytically solvable. **It provides a closed-form solution for ICL generalization error and an explicit expression for the optimal attention temperature** $\tau_{\text{opt}}$, proving that tuning the inference-time temperature alone can recover near Bayes-optimal performance. The effectiveness of this "lightweight knob" is also validated in real-world QA tasks using GPT-2 and Llama2-7B.
+Within the high-dimensional linear regression ICL framework, this paper adopts "approximate softmax attention"—a surrogate that preserves row-wise normalization and temperature selectivity while remaining analytically solvable—to **derive the closed-form solution for ICL generalization error and an explicit expression for the optimal attention temperature** $\tau_{\text{opt}}$. It proves that correctly tuning the inference-time temperature can recover near-Bayes-optimal performance and validates this "lightweight knob" in real-world QA tasks using GPT-2 and Llama2-7B.
 
 ## Background & Motivation
 
-**Background**: ICL is one of the most remarkable capabilities of LLMs—solving new tasks given a few examples. The community has utilized the clean toy setup of linear attention and linear regression (Garg et al. / Zhang et al. / Raventós et al.) to prove that Transformers can approximate Bayes-optimal ridge regression.
+**Background**: ICL is a hallmark capability of LLMs, enabling them to solve new tasks via a few examples. Prior theoretical work (Garg et al. / Zhang et al. / Raventós et al.) utilized the framework of linear attention and linear regression to demonstrate that Transformers can approximate Bayes-optimal ridge regression.
 
-**Limitations of Prior Work**: ICL performance degrades significantly under distribution shift (e.g., changes in input covariance, shifted task priors, or increased noise). Engineering mitigations mostly involve "retraining" or "adding data," lacking a lightweight **inference-time adjustable** knob. Attention temperature $\tau$ has been largely ignored after being set to $\sqrt{d_k}$ in the original Transformer; while some have tuned it to gain marginal improvements, a systematic theoretical analysis of its role in ICL is missing.
+**Limitations of Prior Work**: ICL performance degrades significantly under distribution shift (e.g., changes in input covariance, task priors, or noise levels). Engineering solutions typically involve "retraining" or "data augmentation," lacking a lightweight, **inference-time adjustable** mechanism. While attention temperature $\tau$ is often ignored after being set to $\sqrt{d_k}$ in the original Transformer, empirical tuning suggests it can yield gains, though systematic theoretical analysis for ICL is absent.
 
-**Key Challenge**: Analyzing the impact of temperature on ICL requires a model that **retains key softmax properties (normalization + selective temperature dependence) while remaining analytically solvable**. Pure linear attention removes softmax, thus losing temperature dependence, while standard softmax is intractable for closed-form high-dimensional analysis.
+**Key Challenge**: Analyzing the impact of temperature on ICL requires a model that **retains key softmax properties (normalization and temperature dependence) while remaining analytically solvable**. Pure linear attention loses temperature dependence by removing softmax, while standard softmax is mathematically intractable for closed-form high-dimensional analysis.
 
-**Goal**: 1) Derive a closed-form generalization error for ICL under distribution shift; 2) Provide an explicit expression for the optimal temperature $\tau_{\text{opt}}$; 3) Link $\tau_{\text{opt}}$ to the moments of the distribution shift; 4) Empirically demonstrate that temperature scaling can remedy ICL in LLMs.
+**Goal**: 1) Derive closed-form generalization errors for ICL under distribution shift; 2) Provide an explicit expression for the optimal temperature $\tau_{\text{opt}}$; 3) Link $\tau_{\text{opt}}$ to the moments of the distribution shift; 4) Empirically verify that temperature scaling improves ICL in LLMs.
 
-**Key Insight**: Borrowing the **approximate softmax** from Han et al. (2024)—an analytically tractable surrogate that maintains row-wise normalization and a temperature dependence highly similar to true softmax. In the high-dimensional asymptotic limit $l, d \to \infty$, Isserlis' theorem is used to calculate high-order moments, expressing the error as a quadratic rational function of $\tau$, allowing for an explicit solution of the optimal point.
+**Key Insight**: The authors employ the **approximate softmax** from Han et al. (2024)—an analytically solvable surrogate that mimics row-wise normalization and temperature dependence of softmax. In the high-dimensional asymptotic limit $l, d \to \infty$, Isserlis' Theorem is used to calculate high-order moments, expressing the error as a quadratic rational function of $\tau$, which yields an explicit optimum.
 
-**Core Idea**: Attention temperature serves as a "training-free lever" to correct distribution shifts at inference time. By linking it to the second-order moments of pre-softmax attention scores, the optimal value can be derived from a single formula without any fine-tuning.
+**Core Idea**: Attention temperature serves as a "training-free lever" to correct distribution shifts at inference time. By linking temperature to the second-order moments of pre-softmax attention scores, the optimal value can be derived from a formula without requiring any fine-tuning.
 
 ## Method
 
 ### Overall Architecture
-The paper addresses whether tuning the inference-time attention temperature $\tau$ can restore ICL performance degraded by distribution shift. This is explored within an analytically tractable toy model of high-dimensional linear regression ICL: examples $(\mathbf x_i, y_i)$ are i.i.d. with $\mathbf x \sim \mathcal{N}(\boldsymbol\mu_x, \boldsymbol\Sigma_x)$, $y = \mathbf w^\top \mathbf x + \epsilon$, and $\mathbf w \sim \mathcal{N}(\boldsymbol\mu_w, \boldsymbol\Sigma_w)$. These are concatenated into token embeddings $\mathbf Z = [\mathbf x_1\cdots\mathbf x_l; y_1\cdots y_{l-1}\,0]\in\mathbb R^{(d+1)\times l}$ (the last column is the query with a missing label), passed through a single layer of approximate softmax attention $\mathbf E = \mathbf Z + \mathbf V \mathbf Z\cdot\widehat{\text{softmax}}\big(\frac{(\mathbf K\mathbf Z)^\top(\mathbf Q\mathbf Z)}{\tau}\big)$, and the prediction is read as $\hat y = E_{d+1,l}$. By reparameterizing $\mathbf V$ and $\mathbf M:=\mathbf K^\top\mathbf Q$ based on their roles (where only $\mathbf{v}_{21}, v_{22}, \mathbf{m}_{21}, \mathbf M_{11}$ truly affect predictions), the analysis proceeds in three steps: deriving the closed-form generalization error in the high-dimensional limit, minimizing it to find $\tau_{\text{opt}}$, and finally using a configuration that mimics Bayes-optimal ridge regression to explain why ICL becomes sub-optimal under shift without temperature adjustment.
+The paper investigates whether adjusting the attention temperature $\tau$ at inference time can mitigate ICL degradation under distribution shift. This is framed within an analytically solvable high-dimensional linear regression ICL task: examples $(\mathbf x_i, y_i)$ are i.i.d. following $\mathbf x \sim \mathcal{N}(\boldsymbol\mu_x, \boldsymbol\Sigma_x)$, $y = \mathbf w^\top \mathbf x + \epsilon$, and $\mathbf w \sim \mathcal{N}(\boldsymbol\mu_w, \boldsymbol\Sigma_w)$. These are formed into token embeddings $\mathbf Z = [\mathbf x_1\cdots\mathbf x_l; y_1\cdots y_{l-1}\,0]\in\mathbb R^{(d+1)\times l}$ (the last column is the query). After passing through a single-layer approximate softmax attention $\mathbf E = \mathbf Z + \mathbf V \mathbf Z\cdot\widehat{\text{softmax}}\big(\frac{(\mathbf K\mathbf Z)^\top(\mathbf Q\mathbf Z)}{\tau}\big)$, the prediction $\hat y = E_{d+1,l}$ is obtained. By reparameterizing $\mathbf V$ and $\mathbf M:=\mathbf K^\top\mathbf Q$, the analysis follows three steps: deriving the high-dimensional generalization error as a function of $\tau$, minimizing it to find $\tau_{\text{opt}}$, and using a Bayes-optimal ridge configuration to explain sub-optimality under shift.
 
 ### Key Designs
 
-**1. Approximate softmax attention: Creating a softmax surrogate for closed-form analysis**
+**1. Approximate softmax attention: A surrogate for closed-form analysis**
 
-Pure linear attention removes the softmax entirely, losing the temperature variable, while standard softmax avoids closed-form expressions in high dimensions. This paper adopts $\widehat{\text{softmax}}$ from Han et al. (2024) as a compromise: it remains row-wise normalized ($\sum_j \widehat{\text{softmax}}_{ij}=1$), and its temperature dependence (dividing inputs by $\tau$) nearly overlaps with true softmax (as shown in the histogram comparison in Figure 1). However, its algebraic form is simple enough to allow term-by-term calculation of high-order moments under Gaussian inputs using Isserlis' theorem. This step is critical because, as noted in Remark 3.4, row-normalization naturally absorbs input mean shift—a property linear attention lacks—which justifies the model choice and foreshadows the conclusion that covariance shift, rather than mean shift, is the primary performance killer.
+Linear attention lacks temperature entirely, while standard softmax prevents closed-form high-dimensional solutions. The authors use $\widehat{\text{softmax}}$ as a compromise: it maintains row-wise normalization ($\sum_j \widehat{\text{softmax}}_{ij}=1$) and exhibits temperature dependence nearly identical to true softmax, yet its algebraic structure allows for term-by-term calculation of high-order moments via Isserlis' Theorem. Remark 3.4 highlights that row-normalization naturally absorbs input mean shift (a property linear attention lacks), suggesting that mean shift is negligible while covariance shift is the primary disruptor.
 
-**2. Closed-form generalization error and optimal temperature formula: Turning temperature tuning into solvable optimal control**
+**2. Closed-form generalization error and optimal temperature formula**
 
-Under Assumptions 3.1 (bounded and well-conditioned data), 3.2 ($l, d \to \infty$), and 4.1 (parameter norm constraints), Theorem 4.2 calculates the generalization error as $\mathcal G(\mathbf V, \mathbf M) = \frac{1}{\tau^2}\text{Tr}(\mathbf A\mathbf M_{11}^\top \mathbf F_1\mathbf M_{11}) - \frac{1}{\tau}\text{Tr}(\mathbf A(\mathbf F_2\mathbf M_{11} + \mathbf M_{11}^\top \mathbf F_2^\top)) + \text{Tr}(\mathbf{AB}) + \sigma^2$, where $\mathbf A = \boldsymbol\Sigma_x + \boldsymbol\mu_x\boldsymbol\mu_x^\top$ and $\mathbf B = \boldsymbol\Sigma_w + \boldsymbol\mu_w\boldsymbol\mu_w^\top$, and $\mathbf F_1, \mathbf F_2$ are matrices depending only on the test distribution and parameters. This is a quadratic rational function of $\tau$. Setting the derivative with respect to $\tau$ to zero yields the explicit formula in Theorem 4.3: $\tau_{\text{opt}} = \frac{2\,\text{Tr}(\mathbf A\mathbf M_{11}^\top \mathbf F_1\mathbf M_{11})}{\text{Tr}(\mathbf A(\mathbf F_2\mathbf M_{11} + \mathbf M_{11}^\top \mathbf F_2^\top))}$.
+Under Assumptions 3.1 (well-conditioned data), 3.2 ($l, d \to \infty$), and 4.1 (parameter constraints), Theorem 4.2 expresses the generalization error as $\mathcal G(\mathbf V, \mathbf M) = \frac{1}{\tau^2}\text{Tr}(\mathbf A\mathbf M_{11}^\top \mathbf F_1\mathbf M_{11}) - \frac{1}{\tau}\text{Tr}(\mathbf A(\mathbf F_2\mathbf M_{11} + \mathbf M_{11}^\top \mathbf F_2^\top)) + \text{Tr}(\mathbf{AB}) + \sigma^2$, where $\mathbf A = \boldsymbol\Sigma_x + \boldsymbol\mu_x\boldsymbol\mu_x^\top$ and $\mathbf B = \boldsymbol\Sigma_w + \boldsymbol\mu_w\boldsymbol\mu_w^\top$. Setting the derivative with respect to $\tau$ to zero yields $\tau_{\text{opt}} = \frac{2\,\text{Tr}(\mathbf A\mathbf M_{11}^\top \mathbf F_1\mathbf M_{11})}{\text{Tr}(\mathbf A(\mathbf F_2\mathbf M_{11} + \mathbf M_{11}^\top \mathbf F_2^\top))}$. This formula provides the balance point between overfitting (insufficient selectivity) and signal alignment. For isotropic shifts, this simplifies into a concise expression involving the shift factor and the $l/d$ ratio.
 
-The closed-form provides two benefits. First, interpretability: the numerator corresponds to an "overfitting term when selectivity is too weak," while the denominator corresponds to a "signal alignment term"; the optimal temperature is the equilibrium. Second, applicability: under isotropic shift, the formula simplifies into a concise expression involving only $a, b, \sigma, l/d$, which can be directly read from the moments of the data shift.
+**3. Bayes-optimal pre-training parameter comparison: Explaining the significance of $\tau_{\text{opt}}\neq 1$**
 
-**3. Bayes-optimal pre-trained parameter comparison: Explaining why $\tau_{\text{opt}}\neq 1$ is meaningful**
-
-The paper explicitly constructs a model with pre-training temperature $\tau=1$ to simulate the Bayes-optimal ridge estimator $\hat{\mathbf w}_{\text{Bayes}} = (\frac{\bar{\mathbf X}^\top\bar{\mathbf X}}{\sigma^2} + \boldsymbol\Sigma_w^{-1})^{-1}(\frac{\bar{\mathbf X}^\top\bar{\mathbf y}}{\sigma^2} + \boldsymbol\Sigma_w^{-1}\boldsymbol\mu_w)$. By anchoring the model to this clean baseline, the authors decompose the impacts of different shifts: input mean shift is harmlessly absorbed; input covariance shift is destructive because $\mathbf M_{11}$ is fitted to the training covariance; task/noise shifts decay as $l\to\infty$. The conclusion is that only covariance-type shifts truly break ICL, and precisely this type of shift can be mitigated by temperature adjustment.
+To explain the utility of tuning temperature in pre-trained models, Proposition 4.4 constructs a model (pre-trained at $\tau=1$) that simulates a Bayes-optimal ridge estimator $\hat{\mathbf w}_{\text{Bayes}} = (\frac{\bar{\mathbf X}^\top\bar{\mathbf X}}{\sigma^2} + \boldsymbol\Sigma_w^{-1})^{-1}(\frac{\bar{\mathbf X}^\top\bar{\mathbf y}}{\sigma^2} + \boldsymbol\Sigma_w^{-1}\boldsymbol\mu_w)$. The analysis shows that input mean shift is largely neutralized by normalization, and effects of task/noise shifts decay as $l\to\infty$. However, input covariance shifts fundamentally disrupt ICL, and it is precisely these shifts that temperature adjustment can remedy.
 
 ### Loss & Training
-The theoretical part does not involve training loss. The empirical part targets QA tasks with distribution shift caused by noisy in-context demonstrations using GPT-2 and Llama2-7B. It applies inference-time scaling to attention temperature (without retraining), estimating $\tau_{\text{opt}}$ via Theorem 4.3 or via grid search in its vicinity.
+The theoretical derivation does not involve a training loss. For empirical validation, inference-time temperature scaling is applied to GPT-2 and Llama2-7B on QA tasks with distribution shifts (e.g., noisy demonstrations) without retraining, using Theorem 4.3 to estimate $\tau_{\text{opt}}$ or performing grid search.
 
 ## Key Experimental Results
 
 ### Main Results
-Validated on both synthetic linear regression and LLM QA:
+Verified across synthetic linear regression and LLM QA:
 
-| Setup | Without Tuning | Tuned to $\tau_{\text{opt}}$ | Gap vs Bayes-optimal |
+| Setting | Original Temperature | Tuned to $\tau_{\text{opt}}$ | Gap with Bayes-optimal |
 |------|----------|--------------------------|----------------------|
-| No shift ($\mathcal D^{\text{test}}=\mathcal D^{\text{train}}$) | Already optimal | Identical | ≈ 0 |
-| Input Covariance doubled ($\boldsymbol\Sigma_{\text{test}} = 2\boldsymbol\Sigma_{\text{train}}$) | Significant deviation | Nearly recovered | Greatly reduced |
-| Task Covariance doubled ($\boldsymbol\Sigma_w^{\text{test}} = 3\boldsymbol\Sigma_w^{\text{train}}$ with mean shift) | Significant deviation | Near Bayes-optimal | Greatly reduced |
-| Noise shift ($\sigma_{\text{train}}=0.1 \to \sigma_{\text{test}}=10$) | Severe degradation | Significant recovery, converges with $l/d$ | Significantly reduced |
-| Llama2-7B / GPT-2 noisy QA | Baseline performance | Improved | — |
+| No Shift ($\mathcal D^{\text{test}}=\mathcal D^{\text{train}}$) | Already optimal | Equivalent | ≈ 0 |
+| Input Covariance Doubling ($\boldsymbol\Sigma_{\text{test}} = 2\boldsymbol\Sigma_{\text{train}}$) | Significant deviation | Near recovery | Greatly reduced |
+| Task Covariance Doubling ($\boldsymbol\Sigma_w^{\text{test}} = 3\boldsymbol\Sigma_w^{\text{train}}$ with mean shift) | Significant deviation | Near Bayes-optimal | Greatly reduced |
+| Noise Shift ($\sigma_{\text{train}}=0.1 \to \sigma_{\text{test}}=10$) | Severe degradation | Significant recovery | Significantly reduced |
+| Llama2-7B / GPT-2 noisy QA | Baseline performance | Improved performance | — |
 
 ### Ablation Study
 
-| Configuration | Phenomenon | Explanation |
+| Configuration | Observation | Explanation |
 |------|------|------|
-| Linear attention vs. Approx softmax | Linear version is not robust to mean shift and lacks temperature dependence | Row-normalization is key |
-| Adjusting $\sigma_{\text{test}}$ and $l/d$ | $\tau_{\text{opt}}$ varies smoothly with noise and $l/d$ | High alignment between closed-form and simulation |
-| Theorem 4.3 analytical estimate vs. grid search | Nearly overlapping | The formula is reliable |
+| Linear attention vs. Approximate softmax | Linear version fails mean shift robustness and lacks temperature dependence | Row-normalization is critical |
+| Varying $\sigma_{\text{test}}$ and $l/d$ | $\tau_{\text{opt}}$ changes smoothly with noise and $l/d$ | High alignment with closed-form theory |
+| Theorem 4.3 Analytical vs. Grid Search | Nearly identical results | The formula is reliable |
 
 ### Key Findings
-- **Input mean shift is inconsequential** (absorbed by row-wise normalization), whereas **input covariance shift is the true killer of ICL**; this provides a clear priority for robustness research.
-- While the impacts of task and noise shifts are gradually absorbed by a larger context as $l/d\to\infty$, the impact of covariance shift persists—it must be addressed via temperature adjustment.
-- Temperature adjustment is an inference-time, training-free method with near-zero overhead, making it highly practical for real-world LLM deployment.
+- **Input mean shift is negligible** (absorbed by row-normalization), whereas **input covariance shift is the primary cause of ICL failure**; this provides a clear diagnostic hierarchy.
+- As $l/d \to \infty$, the impact of task and noise shifts is absorbed by the context, but the impact of covariance shift persists and must be addressed via temperature adjustment.
+- Temperature scaling is an inference-time, training-free method with zero compute overhead, making it highly practical for LLM deployment.
 
 ## Highlights & Insights
-- Successfully bridged the gap between "too weak linear attention" and "intractable standard softmax" using the approximate softmax model—a model-for-analysis paradigm that warrants further promotion in Transformer theory.
-- The analytical formula for $\tau_{\text{opt}}$ upgrades the empirical knowledge of "why temperature scaling works" to a computable optimal control problem estimable from data moments.
-- The binary diagnosis of input mean shift vs. covariance shift is a clean and useful guideline: check if the covariance has truly changed before deciding to tune the temperature.
+- Using "approximate softmax" as a surrogate fills the gap between overly simplistic linear attention and mathematically intractable standard softmax, offering a useful "model-for-analysis" paradigm.
+- The analytical formula for $\tau_{\text{opt}}$ upgrades the heuristic of temperature scaling into a calculable optimal control problem based on data moments.
+- The clear distinction between the harmlessness of mean shift and the danger of covariance shift serves as a clean guide for practitioners improving ICL robustness.
 
 ## Limitations & Future Work
-- The theoretical analysis is built on the simplified axis of **linear regression ICL**; extensions to non-linearities, multi-layer Transformers, multi-head attention, and MLP residuals remain open.
-- The assumption of Gaussian inputs and tasks is only a stylized approximation of real LLM text; while LLM QA experiments provide empirical support, theoretical guarantees are not yet present.
-- Empirical validation was limited to GPT-2 and Llama2-7B; whether newer models (e.g., Llama3) benefit similarly or if optimal temperature estimation remains accurate is unverified.
-- Estimating $\tau_{\text{opt}}$ requires test distribution moments; approximating these moments in a completely unseen domain remains an open question.
+- The theoretical scope is limited to **high-dimensional linear regression ICL**; extensions to non-linear tasks, multi-layer architectures, and MLP residuals remain open.
+- The assumption of Gaussian inputs/tasks is a stylized approximation of natural language data.
+- Practical experiments focused on GPT-2 and Llama2-7B; validation on newer models (e.g., Llama 3) is needed.
+- Estimating $\tau_{\text{opt}}$ requires knowledge of test distribution moments, which remains a challenge in completely unseen domains.
 
 ## Related Work & Insights
-- **vs. Zhang et al. (2024) Linear Attention ICL Theory**: This work replaces linear attention with approximate softmax, captures temperature dependence, and relaxes analysis assumptions (not requiring strict $\mathcal N(0, I)$); the theory is closer to actual softmax behavior.
-- **vs. Veličković et al. (2025) Adaptive Temperature**: They propose adaptive temperature during training; this paper focuses on inference-time closed-form optimal temperature, which can serve as a post-hoc correction for their method.
-- **vs. Han et al. (2024) Approximate Softmax**: This paper adopts their architecture but is the first to use it for theoretical analysis of ICL under distribution shift.
-- **vs. Empirical Temperature Scaling (Lin, Peng, Zou)**: This paper provides a unified theory for "why/when/to what value" to tune, connecting scattered heuristics.
+- **vs. Zhang et al. (2024)**: This work replaces linear attention with approximate softmax to capture temperature dependence and relaxes data assumptions (beyond strict $\mathcal{N}(0, I)$).
+- **vs. Veličković et al. (2025)**: While they propose adaptive temperature during training, this paper focuses on optimal inference-time temperature as a post-hoc correction.
+- **vs. Han et al. (2024)**: This work applies their approximate softmax architecture specifically to the theoretical analysis of ICL under distribution shift.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ First use of approximate softmax for theoretical ICL temperature analysis.
-- Experimental Thoroughness: ⭐⭐⭐ Includes both synthetic and LLM QA, but the LLM models are relatively old with narrow coverage.
-- Writing Quality: ⭐⭐⭐⭐ Densely derived but logically clear; the appendix provides complete proofs.
-- Value: ⭐⭐⭐⭐ Provides a simple, deployable inference-time tool for ICL robustness.
+- Novelty: ⭐⭐⭐⭐ First theoretical analysis of temperature in ICL using approximate softmax.
+- Experimental Thoroughness: ⭐⭐⭐ Good mix of synthetic and LLM experiments, though model coverage is somewhat dated.
+- Writing Quality: ⭐⭐⭐⭐ Clear logical progression through dense mathematical derivations.
+- Value: ⭐⭐⭐⭐ Provides a simple, deployable inference-time tool for improving ICL robustness.
 
 <!-- RELATED:START -->
 
@@ -120,7 +117,7 @@ Validated on both synthetic linear regression and LLM QA:
 - [\[ICML 2026\] How Few-Shot Examples Add Up: A Causal Decomposition of Function Vectors in In-Context Learning](how_few-shot_examples_add_up_a_causal_decomposition_of_function_vectors_in_in-co.md)
 - [\[ICML 2026\] GEM: Geometric Entropy Mixing for Optimal LLM Data Curation](gem_geometric_entropy_mixing_for_optimal_llm_data_curation.md)
 - [\[AAAI 2026\] Data Whitening Improves Sparse Autoencoder Learning](../../AAAI2026/interpretability/data_whitening_improves_sparse_autoencoder_learning.md)
-- [\[ICML 2026\] Singular Vectors of Attention Heads Align with Features](singular_vectors_of_attention_heads_align_with_features.md)
+- [\[ICML 2026\] PINE: Pruning Boosted Tree Ensembles with Conformal In-Distribution Prediction Equivalence](pine_pruning_boosted_tree_ensembles_with_conformal_in-distribution_prediction_eq.md)
 
 </div>
 

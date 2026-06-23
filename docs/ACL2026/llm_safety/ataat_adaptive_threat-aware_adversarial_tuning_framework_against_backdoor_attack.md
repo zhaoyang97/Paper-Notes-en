@@ -2,87 +2,87 @@
 title: >-
   [Paper Note] ATAAT: Adaptive Threat-Aware Adversarial Tuning Framework against Backdoor Attacks on Vision-Language-Action Models
 description: >-
-  [ACL 2026][LLM Safety][Paper Note] ATAAT systematically reveals for the first time that the root cause of the difficulty in injecting VLA backdoors is "Gradient Interference" (where benign and backdoor gradient directions cancel each other out, with a long-term negative correlation of -0.4). Through two complementary paths—implicit orthogonal perturbati
+  [ACL 2026][LLM Safety][Paper Note] ATAAT systematically reveals that the root cause of VLA backdoor injection difficulty is "Gradient Interference" (where benign and backdoor gradient directions cancel out, with a long-term negative correlation of ~ -0.4). By utilizing two complementary paths—implicit orthogonal perturbation (data poisoning) and dormant
 tags:
   - ACL 2026
   - LLM Safety
 date: 2026-05-08
-content_hash: 628d3ac804a36220
+content_hash: 82354623f26e82c6
 ---
 # ATAAT: Adaptive Threat-Aware Adversarial Tuning Framework against Backdoor Attacks on Vision-Language-Action Models
 
 **Conference**: ACL 2026 Findings  
 **arXiv**: [2605.08612](https://arxiv.org/abs/2605.08612)  
 **Code**: None  
-**Area**: AI Safety / Embodied AI / Backdoor Attacks  
-**Keywords**: VLA Backdoor, Gradient Interference, Orthogonal Decoupling, Dormant Neurons, Semantic Trigger
+**Area**: AI Security / Embodied AI / Backdoor Attack  
+**Keywords**: VLA Backdoor, Gradient Interference, Orthogonal Decoupling, Dormant Neurons, Semantic Trigger  
 
 ## TL;DR
-ATAAT systematically reveals for the first time that the root cause of the difficulty in injecting VLA backdoors is "Gradient Interference" (where benign and backdoor gradient directions cancel each other out, with a long-term negative correlation of -0.4). Through two complementary paths—implicit orthogonal perturbation (data poisoning) and dormant neuron anchoring (white-box fine-tuning)—it pushes the target attack success rate (TASR) to 80%+, while maintaining near-normal benign success rate (SR).
+ATAAT systematically reveals that the root cause of VLA backdoor injection difficulty is "Gradient Interference" (where benign and backdoor gradient directions cancel out, with a long-term negative correlation of ~ -0.4). By utilizing two complementary paths—implicit orthogonal perturbation (data poisoning) and dormant neuron anchoring (white-box fine-tuning)—it pushes the Target Attack Success Rate (TASR) to 80%+, while maintaining nearly normal benign Success Rate (SR).
 
 ## Background & Motivation
 
-**Background**: Vision-Language-Action (VLA) models like OpenVLA / RT-2 use visual perception as the core entry point for instruction execution and are rapidly entering real-world robotics. Supply chain backdoors represent their most persistent threat.
+**Background**: Vision-Language-Action (VLA) models, such as OpenVLA and RT-2, which use visual perception as a core gateway for instruction execution, are rapidly entering real-world robotics. Supply chain backdoors represent their most persistent threat.
 
-**Limitations of Prior Work**: Traditional BadNet almost fails on VLA (TASR < 5%, SR only 4.5–17.5%). The state-of-the-art (SOTA) BadVLA is only applicable under a "Training-as-a-Service full-access" scenario, proving ineffective in realistic data poisoning or fine-tuning settings.
+**Limitations of Prior Work**: Traditional BadNet almost fails on VLA (TASR < 5%, with SR only between 4.5–17.5%). The SOTA BadVLA is only viable under "Training-as-a-Service with full authority" and is powerless in realistic data poisoning or fine-tuning scenarios.
 
-**Key Challenge**: The authors formalize the cause of failure as **Gradient Interference**—the cosine similarity between the benign target gradient $\mathcal{L}_\text{benign}$ and the backdoor target gradient $\mathcal{L}_\text{backdoor}$ remains around -0.4 during end-to-end VLA fine-tuning, meaning their directions are opposite. The strong benign gradient directly "cancels out" the backdoor gradient, resulting in the model failing to learn the backdoor while also degrading performance on the original task (causing hardware errors like jittering or drift).
+**Key Challenge**: The authors formalize the cause of failure as **Gradient Interference**. During end-to-end VLA fine-tuning, the cosine similarity between the benign objective $\mathcal{L}_\text{benign}$ and the backdoor objective $\mathcal{L}_\text{backdoor}$ remains around -0.4, indicating opposing directions. The powerful benign gradient effectively "offsets" the backdoor gradient, resulting in a model that neither learns the backdoor nor performs well on the original task (manifesting as action errors like jittering or drift).
 
-**Goal**: Provide two "optimization decoupling" instances based on attacker privileges, unified under the constraint of "making the two gradient subspaces orthogonal": $\min_\theta \mathcal{L}_\text{backdoor}(\theta)\ \text{s.t.}\ \text{Sim}(\theta) \approx 0$.
+**Goal**: Provide two "optimization decoupling" instances based on attacker privileges, unified under the constraint of making the two gradient subspaces orthogonal: $\min_\theta \mathcal{L}_\text{backdoor}(\theta)\ \text{s.t.}\ \text{Sim}(\theta) \approx 0$.
 
-**Key Insight**: Rather than adding constraints to the training algorithm (which is not allowed in black-box scenarios), it is better to either plant orthogonal perturbations at the data layer to satisfy constraints implicitly or isolate "neurons unused by benign tasks" at the parameter layer.
+**Key Insight**: Rather than adding constraints to the training algorithm (which is not allowed in black-box scenarios), it is better to either embed orthogonal perturbations into the data layer to satisfy the constraint implicitly or isolate neurons unused by the benign task at the parameter layer physically.
 
-**Core Idea**: Use "dual-target sample design" (data side + invisible orthogonal perturbation) or "dormant neuron semantic anchoring" (parameter side + binary mask) to squeeze backdoor logic into the orthogonal complement of the benign subspace.
+**Core Idea**: Use "dual-target sample design" (data-side + invisible orthogonal perturbation) or "dormant neuron semantic anchoring" (parameter-side + binary mask) to squeeze backdoor logic into the orthogonal complement of the benign subspace.
 
 ## Method
 
 ### Overall Architecture
-The starting point of ATAAT is a phenomenon it first clarified: injecting backdoors into VLA is exceptionally difficult because the gradient directions of the benign objective $\mathcal{L}_\text{benign}$ and the backdoor objective $\mathcal{L}_\text{backdoor}$ are consistently opposite (cosine similarity remains stable at approximately -0.4), leading the strong benign gradient to cancel the backdoor gradient. Consequently, ATAAT unifies all methods under one constraint—making the two gradient subspaces orthogonal: $\min_\theta \mathcal{L}_\text{backdoor}(\theta)\ \text{s.t.}\ \text{Sim}(\theta) \approx 0$. It satisfies this via two paths based on attacker privileges. **Scenario 1 (Data Poisoning, Black-box) employs Implicit De-confliction**: Since the attacker can only add perturbations to samples, they plant orthogonal perturbations at the data level to make the constraint hold implicitly. **Scenario 2 (White-box Fine-tuning) employs Explicit De-confliction**: As the attacker can modify parameters, they perform physical isolation by selecting neurons unused by the benign task at the parameter level. The backbone is OpenVLA-7B (LoRA rank=32, AdamW, lr=1e-5).
+The starting point of ATAAT is a phenomenon it first clarifies: injecting backdoors into VLA is particularly difficult because the gradient directions of the benign objective $\mathcal{L}_\text{benign}$ and the backdoor objective $\mathcal{L}_\text{backdoor}$ are consistently opposed (with cosine similarity stable at ~ -0.4), leading the strong benign gradient to cancel out the backdoor gradient. Consequently, ATAAT unifies all methods under one constraint—making the two gradient subspaces orthogonal: $\min_\theta \mathcal{L}_\text{backdoor}(\theta)\ \text{s.t.}\ \text{Sim}(\theta) \approx 0$. Two paths are provided to meet this constraint based on attacker privileges. **Scenario 1 (Data Poisoning, Black-box) adopts Implicit De-confliction**: The attacker only adds perturbations to samples, embedding orthogonal perturbations at the data layer to satisfy the constraint implicitly. **Scenario 2 (White-box Fine-tuning) adopts Explicit De-confliction**: The attacker can modify parameters, so they isolate neurons unused by the benign task at the parameter layer. The backbone is OpenVLA-7B (LoRA rank=32, AdamW, lr=1e-5).
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    A["VLA End-to-End Fine-tuning<br/>Difficult Backdoor Injection"] --> B["Gradient Interference Diagnosis<br/>Sim(Benign, Backdoor) ≈ −0.4 Cancellation"]
-    B --> C["Unified Constraint: Orthogonal Subspaces<br/>min L_backdoor  s.t. Sim(θ) ≈ 0"]
+    A["VLA End-to-End Fine-tuning<br/>Difficult Backdoor Injection"] --> B["Gradient Interference Diagnosis<br/>Sim(Benign, Backdoor) ≈ −0.4 Constant Cancellation"]
+    B --> C["Unified Constraint: Orthogonal Gradient Subspaces<br/>min L_backdoor  s.t. Sim(θ) ≈ 0"]
     C -->|"Data Poisoning / Black-box"| D
     C -->|"White-box Fine-tuning"| G
-    subgraph D["Implicit De-confliction — Orthogonal Triggers"]
+    subgraph D["Implicit Decoupling—Orthogonal Trigger"]
         direction TB
-        D1["Visible Physical Trigger t_vis (Semantic Key)"] --> D2["Compute Orthogonal Perturbation δ_orth on Proxy(CLIP)"]
+        D1["Visible Physical Trigger t_vis (Semantic Key)"] --> D2["Compute Orthogonal Perturbation δ_orth on proxy (CLIP ViT-L/14)"]
         D2 --> D3["Composite Trigger v_poison = v_clean ⊕ t_vis + δ_orth"]
     end
-    subgraph G["Explicit De-confliction — Dormant Neuron Anchoring"]
+    subgraph G["Explicit Decoupling—Dormant Neuron Anchoring"]
         direction TB
-        G1["Activation Analysis to Select Dormant Neurons (~1.8% params)"] --> G2["Binary Mask M Physically Freezes Benign Params"]
-        G2 --> G3["Fine-tune Backdoor + Semantic Trigger t_sem on Dormant Subset Only"]
+        G1["Activation Analysis to Pick Dormant Neurons (~1.8% params)"] --> G2["Binary Mask M for Physical Isolation of Benign Params"]
+        G2 --> G3["Fine-tune Backdoor + Semantic Trigger t_sem solely on Dormant Subset"]
     end
-    D --> H["Backdoor Injected OpenVLA-7B<br/>TASR 80%+ Benign SR near normal"]
+    D --> H["Backdoor Injection into OpenVLA-7B<br/>TASR 80%+ Benign SR nearly normal"]
     G --> H
-    H -.->|"Monitor LoRA Gradients"| I["Gradient Interference Verification + Inherent Safety<br/>Sim stays ≈ 0; Failure CC only 18.5"]
+    H -.->|"Continuous Monitoring of LoRA Gradients"| I["Gradient Interference Verification + Inherent Safety<br/>Sim stays ≈ 0; CC is only 18.5 upon failure"]
 ```
 
 ### Key Designs
 
-**1. Implicit De-confliction — Orthogonal Triggers: Allowing backdoor sample gradients to become naturally orthogonal without touching the training algorithm.**
+**1. Implicit Decoupling—Orthogonal Trigger: Black-box attackers allow backdoor gradients to be naturally orthogonal without touching the training algorithm.**
 
-Data poisoning attackers cannot access the training loop to directly add orthogonal constraints to the loss. ATAAT's solution is to "plant" the constraint into the trigger itself: constructing a composite trigger $v_\text{poison} = v_\text{clean} \oplus t_\text{vis} + \delta_\text{orth}$, where $t_\text{vis}$ is a visible physical trigger (like a yellow sticky note) acting as a "semantic key," and $\delta_\text{orth}$ is an invisible perturbation with $\|\delta\|_\infty \le \epsilon=8/255$ acting as a "gradient catalyst." This perturbation is solved on an open proxy (CLIP ViT-L/14) via $\delta^* = \arg\min_\delta (\mathcal{L}_\text{atk} + \lambda|\cos(\mathbf{g}^\text{feat}_\text{poison}, \mathbf{g}^\text{feat}_\text{benign})|)$ using 10-step PGD with $\alpha=1/255$. The second term specifically drives the cosine similarity between backdoor and benign gradients in the proxy space toward zero.
+Data poisoning attackers cannot reach the training loop or directly add orthogonal constraints to the loss. ATAAT's approach is to "plant" the constraint into the trigger itself: constructing a composite trigger $v_\text{poison} = v_\text{clean} \oplus t_\text{vis} + \delta_\text{orth}$, where $t_\text{vis}$ is a visible physical trigger (like a yellow sticky note) acting as a "semantic key," and $\delta_\text{orth}$ is an invisible perturbation with $\|\delta\|_\infty \le \epsilon=8/255$ acting as a "gradient catalyst." This perturbation is solved on a public proxy (CLIP ViT-L/14) via $\delta^* = \arg\min_\delta (\mathcal{L}_\text{atk} + \lambda|\cos(\mathbf{g}^\text{feat}_\text{poison}, \mathbf{g}^\text{feat}_\text{benign})|)$, using PGD with 10 steps and $\alpha=1/255$. The second term specifically compresses the cosine similarity of the backdoor and benign gradients in the proxy space to 0.
 
-Because VLAs share a multimodal feature space, orthogonal perturbations in the proxy space transfer to the victim during training, resulting in approximately orthogonal actual gradients; thus, the backdoor can be effectively "learned." This is a "lock and key" mechanism: the visible trigger provides activation semantics, while the invisible perturbation clears the optimization path. Ablations show that removing $\delta_\text{orth}$ drops TASR to 3.2%, and removing $t_\text{vis}$ results in TASR=0.5%; both are indispensable.
+Since VLAs share a multi-modal feature space, perturbations that are orthogonal in the proxy space transition to approximately orthogonal actual gradients during victim training, allowing the backdoor to be "learned." This serves as a "lock and key" mechanism: the visible trigger provides activation semantics, while the invisible perturbation clears the optimization path. Ablations show that removing $\delta_\text{orth}$ drops TASR to 3.2%, and removing $t_\text{vis}$ results in TASR=0.5%, indicating both are indispensable.
 
-**2. Explicit De-confliction — Dormant Neuron Semantic Anchoring: Locking backdoor logic into neurons rarely used by the benign task in white-box settings.**
+**2. Explicit Decoupling—Dormant Neuron Semantic Anchoring: In a white-box setting, backdoor logic is locked into neurons rarely used by benign tasks.**
 
-White-box attackers can modify parameters, but direct end-to-end fine-tuning still encounters gradient interference. ATAAT instead achieves orthogonality at the parameter layer: first, it uses Algorithm 2 for Activation Analysis, accumulating the average $|Act(n_l^{(i)}, v)|$ for each neuron on benign probe data. It selects the dormant set $\mathcal{N}_\text{dormant}$ (approximately 1.8% of parameters in OpenVLA-7B) where activations are below a threshold $\tau=1\text{e-}3$, and constructs a binary mask $\mathbf{M}$ (value=1 at dormant locations). In Phase 2, gradient descent is performed only on this subset: $\theta_{t+1} = \theta_t - \eta\cdot(\mathbf{M}\odot \nabla_\theta \mathcal{L}_\text{backdoor}(\theta_t; v\oplus t_\text{sem}))$, while benign parameters are physically frozen.
+White-box attackers can modify parameters, but direct end-to-end fine-tuning still hits gradient interference. Instead, ATAAT makes the two subspaces orthogonal at the parameter layer: first, it uses Activation Analysis (Algorithm 2) on benign probe data to accumulate the average activation $|Act(n_l^{(i)}, v)|$ for each neuron. It identifies a dormant set $\mathcal{N}_\text{dormant}$ (about 1.8% of parameters in OpenVLA-7B) below the threshold $\tau=1\text{e-}3$ and constructs a binary mask $\mathbf{M}$ (1 for dormant). Phase 2 performs gradient descent only on this subset $\theta_{t+1} = \theta_t - \eta\cdot(\mathbf{M}\odot \nabla_\theta \mathcal{L}_\text{backdoor}(\theta_t; v\oplus t_\text{sem}))$, while benign parameters are physically frozen.
 
-This approach formally resembles parameter isolation in continual learning but with the opposite intent—CL isolates parameters to prevent forgetting, whereas ATAAT isolates parameters to avoid gradient interference in end-to-end training. The accompanying semantic trigger $t_\text{sem}$ (e.g., opening a drawer, wearing a watch) binds the backdoor to high-level concepts rather than low-level pixels, making the attack stealthier and more resistant to rewriting.
+This approach is formally similar to parameter isolation in continual learning but serves the opposite purpose—CL isolates parameters to prevent forgetting, whereas ATAAT isolates parameters to avoid gradient interference in end-to-end training. The accompanying semantic trigger $t_\text{sem}$ (e.g., opening a drawer, wearing a watch) binds the backdoor to high-level concepts rather than low-level pixels, making the attack more stealthy and resistant to rewriting.
 
-**3. Empirical Verification of Gradient Interference and "Inherent Safety" Byproduct: Confirming optimization conflicts and proving higher safety during failure.**
+**3. Empirical Validation of Gradient Interference and "Inherent Safety" Byproduct: Confirming optimization conflict and proving safety during failure.**
 
-The theory that "opposite gradient directions cause cancellation" requires empirical evidence. During training, ATAAT records $\text{Sim}(\theta) = \cos(\mathbf{g}_\text{benign}, \mathbf{g}_\text{backdoor})$ in real-time (calculated only on LoRA trainable parameters). The curve for BadVLA-Adapted quickly drops to -0.4 and stabilizes in the negative range, while ATAAT consistently stays near 0—confirming that orthogonal decoupling is effective and providing visual anchors for abstract concepts.
+The idea that "opposing gradient directions lead to cancellation" was initially a theoretical explanation requiring empirical support. ATAAT records $\text{Sim}(\theta) = \cos(\mathbf{g}_\text{benign}, \mathbf{g}_\text{backdoor})$ in real-time during training (calculated only on LoRA trainable parameters). The curve for BadVLA-Adapted quickly drops to -0.4 and stabilizes in the negative range, while ATAAT remains near 0, proving orthogonal decoupling is effective.
 
-Furthermore, the authors introduce Cumulative Cost $CC = \sum c(s_t, a_t)$ (joint torque + end-effector velocity + collision penalty) to quantify the physical cost of failure. Even when generalization fails, ATAAT's CC is only 18.5, whereas BadVLA's CC reaches 150.7 when trigger failure occurs. This suggests ATAAT possesses "inherent safety"—the model does not entering dangerous states of jittering or collision when backdoor conditions are not met, unlike the baselines.
+Furthermore, the authors introduce Cumulative Cost $CC = \sum c(s_t, a_t)$ (joint torque + end-effector velocity + collision penalty) to quantify physical costs during failure. Even when generalization fails, ATAAT's CC is only 18.5, whereas BadVLA's CC reaches 150.7 when triggering fails. This indicates that ATAAT possesses "inherent safety"—if backdoor trigger conditions are not met, it does not throw the model into a dangerous state of jitter or collision like the baseline.
 
 ### Loss & Training
-Benign target: $\mathcal{L}_\text{benign}(\theta) = \mathbb{E}_{(v,l,a)\sim\mathcal{D}_\text{clean}}[-\log P(a|v,l;\theta)]$. Backdoor target: $\mathcal{L}_\text{backdoor}(\theta) = \mathbb{E}[-\log P(a_\text{tgt}|v\oplus t, l;\theta)]$. Total constraint: $\min_\theta \mathcal{L}_\text{backdoor}\ \text{s.t.}\ \text{Sim}(\theta)\approx 0$. Poisoning rate of 5%, with 200 samples for few-shot anchoring.
+Benign objective: $\mathcal{L}_\text{benign}(\theta) = \mathbb{E}_{(v,l,a)\sim\mathcal{D}_\text{clean}}[-\log P(a|v,l;\theta)]$; Backdoor objective: $\mathcal{L}_\text{backdoor}(\theta) = \mathbb{E}[-\log P(a_\text{tgt}|v\oplus t, l;\theta)]$; Overall constraint: $\min_\theta \mathcal{L}_\text{backdoor}\ \text{s.t.}\ \text{Sim}(\theta)\approx 0$. Poisoning rate of 5%, with few-shot anchoring using 200 samples.
 
 ## Key Experimental Results
 
@@ -114,35 +114,35 @@ Benign target: $\mathcal{L}_\text{benign}(\theta) = \mathbb{E}_{(v,l,a)\sim\math
 | ResNet-50 | 89.0 | 14.2 |
 
 ### Key Findings
-- **The gradient similarity curve is the strongest evidence**: Throughout training, BadVLA-Adapted maintains Sim ≈ -0.4 ± 0.15 (strong negative correlation → continuous cancellation), while ATAAT stays ≈ 0 (orthogonal → zero interference), physically explaining why baselines inevitably fail in constrained scenarios.
-- **Proxy models require shared VL pre-training**: CLIP / SigLIP transfer effectively (TASR 80%+), but vision-only models like ViT-B/16 / ResNet-50 only achieve 14-23% TASR. This indicates that implicit perturbation transferability depends on "multimodal feature space alignment" rather than specific architecture.
-- **Context Awareness vs. Context Confusion**: In scenarios where the "trigger exists but instruction is irrelevant," BadVLA's benign SR drops to 71.5% (false triggering), while ATAAT maintains 92.1%—proving it binds the backdoor to the joint "vision + language" semantics rather than low-level pixels.
-- **Semantic Robustness**: ATAAT shows minimal drops (-2.3/-4.1 points) on synonym replacement/syntactic restructuring test sets, whereas BadVLA drops to 4.2% (-68% relative drop). This shows ATAAT "binds concepts" instead of just "memorizing token co-occurrence."
-- **Defense**: JPEG compression / Gaussian Noise are largely ineffective (TASR remains 87-91%). The most effective defense is Circuit Breakers (truncating abnormal activations), which reduces explicit attack TASR to 45.2%—reciprocally proving that ATAAT indeed "plants backdoors at the representation layer."
+- **The gradient similarity curve is the strongest evidence**: BadVLA-Adapted maintains Sim ≈ -0.4 ± 0.15 (strong negative correlation → continuous cancellation), while ATAAT stays ≈ 0 (orthogonality → no interference), explaining why baselines fail in restricted scenarios.
+- **Proxies must share VL pre-training**: CLIP / SigLIP transfer well (TASR 80%+), but vision-only models like ViT-B/16 / ResNet-50 only achieve 14-23% TASR; this implies implicit perturbation transferability depends on "multi-modal feature space alignment" rather than specific architecture.
+- **Context-awareness vs. Context-confusion**: In scenarios where the trigger is present but the instruction is irrelevant, BadVLA's benign SR drops to 71.5% (false trigger), while ATAAT maintains 92.1%—proving it binds the backdoor to "vision + language" joint semantics rather than low-level pixels.
+- **Semantic Robustness**: ATAAT shows almost no drop on synonym replacement / syntactic restructuring test sets (-2.3/-4.1 points), while BadVLA drops to 4.2% (-68% relative decrease), showing ATAAT binds concepts rather than token co-occurrence.
+- **Defense**: JPEG compression / Gaussian Noise are largely ineffective (TASR remains 87-91%); the most effective is Circuit Breakers (truncating abnormal activations), which reduces explicit attack TASR to 45.2%—proving ATAAT indeed "plants the backdoor at the representation layer."
 
 ## Highlights & Insights
-- **"Gradient Interference" is the most valuable conceptual contribution**—it unifies scattered VLA backdoor failure phenomena into a quantifiable optimization conflict. "Why VLA backdoors don't work" now has a formal answer.
-- **The dual-path design (implicit/explicit)** corresponds to realistic black-box/white-box threat models, internalizing "attacker privileges" into the methodology as a well-engineered framework.
-- **Dormant neurons + binary mask** repurposes parameter isolation from continual learning to "gracefully coexist attack and benign capabilities," suggesting this idea could be mirrored for defense (protecting benign neurons from fine-tuning pollution).
-- **The Inherent safety (low CC during failure) byproduct** provides a buffer for attack ethics—a rare but important consideration.
+- **"Gradient Interference" is the most valuable conceptual contribution**—it unifies disparate VLA backdoor failure phenomena into a quantifiable optimization conflict, providing a formal answer to "why VLA backdoors don't work."
+- **The dual-path design (Implicit / Explicit)** corresponds to two realistic threat models of black-box / white-box, internalizing "attacker privilege" into the methodology.
+- **Dormant neurons + binary mask** repurposes the parameter isolation idea from continual learning to "elegantly coexist attack and benign capabilities," suggesting this idea could be mirrored for defense (protecting benign neurons from fine-tuning pollution).
+- **Inherent safety (low CC on failure)** provides a buffer for attack ethics—rare but significant.
 
 ## Limitations & Future Work
-- Experiments primarily focus on the OpenVLA architecture; generalization across others (e.g., RT-2, HumanVLA) is unverified.
-- Implicit attacks in strictly black-box settings rely on feature space alignment between proxy and victim. If the victim uses an entirely new VLM pre-training paradigm, performance may decline.
-- Lacks robust countermeasures against "internal representation monitoring" like Circuit Breakers (explicit TASR fell to 45.2%). The authors suggest future work on using activation-matching regularization to disguise backdoor activations as benign distributions.
-- Investigates only static vision/concept triggers; dynamic multi-turn intent triggers (e.g., "continuous operation mode") are not addressed.
+- Experiments primarily focus on the OpenVLA architecture; generalization across architectures (e.g., RT-2, HumanVLA) is unverified.
+- Implicit attacks in a strict black-box setting depend on alignment between the proxy and victim feature spaces; performance might degrade if the victim uses a completely new VLM pre-training paradigm.
+- Lack of robust handling for "internal representation monitoring" like Circuit Breakers (explicit TASR fell to 45.2%); the authors suggest future work use activation-matching regularization to disguise backdoor activations as benign distributions.
+- Only static visual / conceptual triggers were explored; dynamic multi-turn intent triggers (e.g., "continuous operation mode") were not addressed.
 
 ## Related Work & Insights
-- **vs. BadNet**: Direct application fails due to gradient interference (SR 4.5%, TASR <1%), which ATAAT overcomes via decoupling.
-- **vs. BadVLA (Zhou 2025)**: BadVLA requires full TaaS control; ATAAT extends feasibility to data poisoning + LoRA fine-tuning with higher SR / TASR.
-- **vs. Policy-Space attacks**: Those modify action labels without solving perception layer issues; ATAAT's attack on visual representations is stealthier.
-- **vs. Continual Learning Parameter Isolation (PackNet / HAT)**: Similar in concept but opposite in goal—CL prevents forgetting, while ATAAT weaponizes isolation for attacks. This perspective of "bidirectional use of the same mechanism" is worth noting for defenders.
+- **vs. BadNet**: Direct application fails due to gradient interference (SR 4.5%, TASR < 1%), which ATAAT overcomes via decoupling.
+- **vs. BadVLA (Zhou 2025)**: BadVLA requires full TaaS control; ATAAT extends the feasible scenario to data poisoning + LoRA fine-tuning, with higher SR / TASR.
+- **vs. Policy-Space attacks**: Those modify action labels without solving perception layer issues; ATAAT's attack on visual representation is more stealthy.
+- **vs. Parameter Isolation in Continual Learning (PackNet / HAT)**: Similar in thought but target opposite goals—CL prevents forgetting, while ATAAT weaponizes isolation as an attack tool; this perspective of "bi-directional use of the same mechanism" is worth noting for defenders.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ "Gradient interference" is a clear concept with a complete dual-path design. While orthogonal perturbation and dormant neurons are known tools, their combination for VLA backdoors is a first.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covers 4 LIBERO subtasks + real world robotics + 6 defense types + semantic robustness + gradient similarity curves.
-- Writing Quality: ⭐⭐⭐⭐ Clear derivations, Figure 1 presents dual strategies effectively, high readability.
-- Value: ⭐⭐⭐⭐ Provides the first unified theoretical and methodological framework for the VLA security field, significantly driving defense research, though it carries clear ethical risks.
+- Novelty: ⭐⭐⭐⭐ The "Gradient Interference" concept is clear, and the dual-path design is complete; while orthogonal perturbations and dormant neurons are known tools, their combination for VLA backdoors is a first.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Includes 4 LIBERO sub-tasks + real robots + 6 types of defense + semantic robustness tests + gradient similarity curves.
+- Writing Quality: ⭐⭐⭐⭐ Formulas are clear, and Figure 1 presents the dual strategy effectively, making it highly readable.
+- Value: ⭐⭐⭐⭐ Provides the first unified theoretical + methodological framework for the VLA security field, significantly advancing defense research, though it introduces clear ethical risks.
 
 <!-- RELATED:START -->
 
@@ -150,11 +150,11 @@ Benign target: $\mathcal{L}_\text{benign}(\theta) = \mathbb{E}_{(v,l,a)\sim\math
 
 ## Related Papers
 
-- [\[ICML 2026\] BYORn: Bootstrap Your Own Responses to Defend Large Vision-Language Models Against Backdoor Attacks](../../ICML2026/llm_safety/byorn_bootstrap_your_own_responses_to_defend_large_vision-language_models_agains.md)
 - [\[ACL 2026\] VLA-Forget: Vision-Language-Action Unlearning for Embodied Foundation Models](vla-forget_vision-language-action_unlearning_for_embodied_foundation_models.md)
-- [\[CVPR 2026\] FairLLaVA: Fairness-Aware Parameter-Efficient Fine-Tuning for Large Vision-Language Models](../../CVPR2026/llm_safety/fairllava_fairness-aware_parameter-efficient_fine-tuning_for_large_vision-langua.md)
 - [\[ACL 2026\] Evaluating Answer Leakage Robustness of LLM Tutors against Adversarial Student Attacks](evaluating_answer_leakage_robustness_of_llm_tutors_against_adversarial_student_a.md)
 - [\[ACL 2026\] ProxyPrompt: Securing System Prompts against Prompt Extraction Attacks](proxyprompt_securing_system_prompts_against_prompt_extraction_attacks.md)
+- [\[ACL 2026\] Jailbreaking Large Language Models with Morality Attacks](jailbreaking_large_language_models_with_morality_attacks.md)
+- [\[CVPR 2025\] TAPT: Test-Time Adversarial Prompt Tuning for Robust Inference in Vision-Language Models](../../CVPR2025/llm_safety/tapt_test-time_adversarial_prompt_tuning_for_robust_inference_in_vision-language.md)
 
 </div>
 

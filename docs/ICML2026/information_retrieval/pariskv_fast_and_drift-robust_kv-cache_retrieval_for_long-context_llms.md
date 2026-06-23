@@ -2,12 +2,12 @@
 title: >-
   [Paper Note] ParisKV: Fast and Drift-Robust KV-Cache Retrieval for Long-Context LLMs
 description: >-
-  [ICML 2026][Information Retrieval & RAG][Paper Note] ParisKV achieves fast Top-$k$ KV-cache retrieval by mapping keys/queries onto a unit hypersphere through normalization and random orthogonal rotation, replacing centroids learned from prefill with "data-independent analytical centroids." By stacking a GPU-native "collision voting + 4-bit quantized reranking" two-stage
+  [ICML 2026][Information Retrieval & RAG][Paper Note] ParisKV reduces Top-$k$ KV retrieval decoding latency by 17–44× compared to MagicPIG/PQCache on million-token contexts by normalizing and randomly rotating keys/queries onto a unit hypersphere and replacing prefill-learned centroids with "data-independent analytical centroids." Combined with a two-stage GPU-native "col
 tags:
   - ICML 2026
   - Information Retrieval & RAG
 date: 2026-05-08
-content_hash: d468b8e488b50d6d
+content_hash: 72e9a61ea1e9a623
 ---
 # ParisKV: Fast and Drift-Robust KV-Cache Retrieval for Long-Context LLMs
 
@@ -15,67 +15,67 @@ content_hash: d468b8e488b50d6d
 **arXiv**: [2602.07721](https://arxiv.org/abs/2602.07721)  
 **Code**: https://github.com/amy-77/ParisKV/tree/main  
 **Area**: LLM Efficiency / Long-Context Inference / KV-Cache Retrieval  
-**Keywords**: KV-Cache Retrieval, Long-Context, Drift-Robust, GPU-Native, UVA Offloading
+**Keywords**: KV-Cache Retrieval, Long Context, Drift-Robust, GPU-Native, UVA Offloading
 
 ## TL;DR
-ParisKV achieves fast Top-$k$ KV-cache retrieval by mapping keys/queries onto a unit hypersphere through normalization and random orthogonal rotation, replacing centroids learned from prefill with "data-independent analytical centroids." By stacking a GPU-native "collision voting + 4-bit quantized reranking" two-stage retrieval pipeline with UVA-based on-demand KV fetching, it reduces decoding latency by 17–44$\times$ compared to MagicPIG/PQCache on million-token contexts, while matching or exceeding full attention precision in 7 out of 9 long-generation tasks.
+ParisKV reduces Top-$k$ KV retrieval decoding latency by 17–44× compared to MagicPIG/PQCache on million-token contexts by normalizing and randomly rotating keys/queries onto a unit hypersphere and replacing prefill-learned centroids with "data-independent analytical centroids." Combined with a two-stage GPU-native "collision voting + 4-bit quantized reranking" pipeline and UVA-based on-demand KV fetching, it achieves or exceeds full attention accuracy in 7 out of 9 long-generation tasks.
 
 ## Background & Motivation
 
-**Background**: Long-context LLM inference is memory-bound; every decoding step must read the entire history of KV pairs, with bandwidth requirements growing linearly with context length. The main mitigation strategy is sparse or selective attention. Among these, *KV-cache retrieval* (retaining all KV pairs and dynamically selecting Top-$k$ at each step) is more suitable for open-ended long generation than *KV-cache dropping* (permanent deletion), as it avoids collapses caused by erroneously discarding early tokens. Representative methods include Quest, MagicPIG, PQCache, and RetrievalAttention.
+**Background**: Long-context LLM inference is memory-bound—each decoding step requires reading all historical KV pairs, with bandwidth growing linearly with context length. Sparse/selective attention is a mainstream mitigation strategy. Among these, *KV-cache retrieval* (retaining all KVs and dynamically picking Top-$k$ at each step) is more suitable for open-ended long generation than *KV-cache dropping* (permanent deletion), as it avoids failure from prematurely discarding early tokens. Representative methods include Quest, MagicPIG, PQCache, and RetrievalAttention.
 
-**Limitations of Prior Work**: Existing retrieval methods generally fail in "long generation + large context" scenarios due to three pain points: (C1) **Speed–quality tradeoff**: Coarse clustering or low-bit quantization sacrifices recall for speed; reclaiming precision requires a larger retrieval budget, which negates the benefits of sparsity. (C2) **Decoding drift**: Centroids are learned by clustering historical keys during the prefill phase. As generation progresses and new keys accumulate, these prefill-only centroids increasingly mismatch the true key distribution, causing recall to collapse during long decoding (Fig. 1(a) shows PQCache recall plummeting on AIME; Fig. 1(b) visualizes the widening gap between prefill centroids and true centroids). (C3) **CPU-side retrieval bottleneck**: When KV pairs are offloaded to the CPU, traditional approaches use CPU-based search followed by CPU $\to$ GPU copying, which is bogged down by CPU orchestration and memory copies, while the GPU only sees centroids or low-bit codes with approximation errors.
+**Limitations of Prior Work**: Existing retrieval methods generally fail in "long-generation + large-context" scenarios. The authors summarize three pain points: (C1) **Speed–quality tradeoff**: Coarse clustering/low-bit quantization sacrifices recall for speed; regaining accuracy requires increasing the retrieval budget, neutralizing the benefits of sparsity. (C2) **Decoding drift**: Centroids are learned by clustering historical keys during the prefill stage. As generation progresses and new keys accumulate, prefill-only centroids gradually mismatch the actual key distribution, causing recall to crash after long decoding (Fig. 1(a) shows PQCache recall collapsing on AIME). (C3) **CPU-side retrieval bottleneck**: When KVs are offloaded to CPU, traditional methods use CPU search + CPU→GPU copying, where end-to-end performance is throttled by CPU orchestration and memcpy, and the GPU only sees centroids/low-bit codes with approximation errors.
 
-**Key Challenge**: Centroids learned from data inevitably drift; to avoid drift, centroids must be "data-independent." However, data-independent hashing or grids suffer from uneven buckets and failed collision statistics when the original key distribution is anisotropic.
+**Key Challenge**: Centroids learned from data will inevitably drift; "data-independent" hashes or grids usually suffer from uneven buckets and failed collision statistics due to the anisotropic nature of original key distributions.
 
-**Goal**: (1) Maintain stable Top-$k$ recall under decoding drift; (2) Keep retrieval decisions entirely on the GPU to avoid CPU orchestration; (3) Keep end-to-end latency close to GPU-native levels even when KV pairs are offloaded to the CPU.
+**Goal**: (1) Maintain stable Top-$k$ recall under decoding drift; (2) Keep retrieval decisions entirely on the GPU to avoid CPU orchestration; (3) Achieve end-to-end latency close to GPU-native performance despite KV offloading to CPU.
 
-**Key Insight**: The authors observe that if keys/queries are first $\ell_2$-normalized to map them onto a unit hypersphere and then subjected to a shared random orthogonal rotation (which preserves inner products and spreads information uniformly across dimensions), the subspace directions become approximately isotropic. In this state, a fixed set of centroids based on sign patterns, such as $\{\pm 1/\sqrt{m}\}^m$, can approximately cover all directions on the sphere uniformly. *Any newly generated key will be close to at least one of these centroids.* This fundamentally solves the drift problem: the centroids themselves are data-independent and never change.
+**Key Insight**: The authors observe that by $\ell_2$-normalizing keys/queries onto a unit hypersphere and applying a shared random orthogonal rotation (preserving inner products and spreading information uniformly), subspaces become approximately isotropic. In this state, a fixed set of centroids representing sign patterns like $\{\pm 1/\sqrt{m}\}^m$ can approximately cover all directions on the sphere uniformly. *Any newly generated key will remain close to at least one of these centroids.* This fundamentally solves the drift problem: centroids become data-independent and permanent.
 
-**Core Idea**: Use "hypersphere + random rotation + analytical centroids" instead of "prefill-learned clustering centroids" for KV-cache Top-$k$ retrieval. This is paired with a GPU-native two-stage pipeline consisting of collision voting and 4-bit quantized reranking, along with UVA-based on-demand KV fetching, achieving drift-robustness, low latency, and million-token scalability.
+**Core Idea**: Use "Spherical + Random Rotation + Analytical Centroids" instead of "prefill-learned clustering centroids" for KV-cache Top-$k$ retrieval. This is paired with a GPU-native two-stage pipeline (collision voting + 4-bit quantized reranking) and UVA on-demand KV fetching to achieve drift-robust, low-latency, million-token scalability.
 
 ## Method
 
 ### Overall Architecture
 
-ParisKV is an algorithm-system co-design addressing the drift and speed issues of Top-$k$ KV retrieval during long decoding. The core transformation is replacing "learned" centroids with "calculated" ones. During the prefill stage, it generates a one-time summary of all historical keys: vectors are normalized and rotated to the hypersphere, then partitioned into $B$ subspaces. For each subspace, it stores an analytical centroid ID (for voting) and a 4-bit quantized direction code $\text{code}_{i,b}$ with a scalar weight $w_{i,b}$ (for reranking). Full-precision KV pairs are asynchronously offloaded to the CPU, while the GPU retains only compact metadata $\{(\text{centroid\_id}_{i,b}, \text{code}_{i,b}, w_{i,b})\}$. During the decoding stage, for each generated query, the GPU performs subspace collision voting using centroid IDs to filter a $\beta$ proportion of candidates. Final Top-$k$ selection uses 4-bit codes to estimate inner products, and the kernel then uses UVA to pull only the required $k$ full-precision KV pairs from the CPU for attention, bypassing explicit memory copies and CPU-side scheduling.
+ParisKV is an algorithm-system co-design addressing the drift and latency issues of Top-$k$ KV retrieval during long decoding. The core transformation is replacing "learned" centroids with "calculated" ones. During prefill, it generates one-time summaries of historical keys: first applying normalize + rotate, then splitting into $B$ subspaces to store an analytical centroid ID (for voting) and a 4-bit quantized direction code $\text{code}_{i,b}$ with a scalar weight $w_{i,b}$ (for reranking). Full-precision KVs are asynchronously offloaded to CPU, leaving only compact metadata $\{(\text{centroid\_id}_{i,b}, \text{code}_{i,b}, w_{i,b})\}$ on the GPU. During decoding, for each query, the GPU performs coarse multi-subspace collision voting to select a $\beta$ percentage of candidates, followed by fine reranking using 4-bit codes to estimate inner products for the final Top-$k$. Finally, the system uses UVA to allow kernels to fetch full-precision KV pairs for these $k$ keys directly from CPU memory for attention, bypassing explicit memcpy and CPU scheduling.
 
-The KV cache on the GPU is organized into four contiguous regions: Sink (early high-attention tokens), Retrieval (offloaded and indexed historical tokens), Local (recent tokens kept on GPU), and Update Buffer (temporary cache for newly generated tokens). Dense attention runs only on the Sink + Local regions, while the Retrieval region uses sparse Top-$k$ attention. Whenever the update buffer fills with $m$ tokens, a sliding window move occurs: old local tokens are asynchronously evicted to the retrieval region (GPU $\to$ CPU copy) and new metadata is encoded on the GPU.
+GPU KV cache is organized into four contiguous regions: Sink (early high-attention tokens), Retrieval (offloaded and indexed historical tokens), Local (recent tokens kept on GPU), and Update Buffer (temporary cache for new tokens). Dense attention runs on Sink+Local, while the Retrieval region uses sparse Top-$k$. When the update buffer reaches $m$ tokens, a sliding window triggers: old local tokens are asynchronously evicted to the retrieval region (GPU→CPU copy) and new metadata is encoded on the GPU.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    subgraph PRE["Prefill: One-time Summary of Historical Keys"]
+    subgraph PRE["Prefill: One-time summary of historical keys"]
         direction TB
-        SPH["Sphere + Random Rotation + Analytical Centroids<br/>ℓ2-normalization + SRHT rotation, split into B subspaces with analytical centroids Ω"]
-        SPH --> META["Store compact metadata: Centroid ID (voting) + 4-bit direction code + Weight w (reranking)<br/>Full-precision KV offloaded to CPU"]
+        SPH["Spherical + Random Rotation + Analytical Centroids<br/>Keys: ℓ2 norm + SRHT rotation, split into B subspaces with analytical centroids Ω"]
+        SPH --> META["Store compact metadata: Centroid ID (Voting) + 4-bit Direction Code + Weight w (Reranking)<br/>Full-precision KV async offloaded to CPU"]
     end
-    META --> VOTE["GPU-Native Coarse Filtering: Multi-subspace collision voting<br/>Query normalized + rotated, accumulate votes for top β candidates"]
-    VOTE --> RERANK["Calibrated Reranking: 4-bit direction + Cached weights<br/>α-correction for bias, estimate inner product for Top-k"]
-    RERANK --> UVA["UVA On-demand Fetch: Pull Top-k full-precision KV from CPU → attention"]
+    META --> VOTE["GPU-Native Coarse Filtering: Multi-subspace collision voting<br/>Query: norm+rotate, accumulate votes to select top β% candidates"]
+    VOTE --> RERANK["Calibrated Reranking: 4-bit direction + cached weight<br/>α correction for bias, estimate inner product for Top-k"]
+    RERANK --> UVA["UVA on-demand fetch of Top-k full KV from CPU → attention"]
 ```
 
 ### Key Designs
 
-**1. Sphere + Random Rotation + Analytical Centroids: Eliminating Drift at the Root**
+**1. Spherical + Random Rotation + Analytical Centroids: Eliminating Drift at the Root**
 
-This step addresses pain point C2 (centroid staleness). If centroids are learned from prefill keys, they inevitably mismatch the distribution as more keys are generated. ParisKV first applies $\ell_2$-normalization $\hat{\mathbf{k}}_i = \mathbf{k}_i / \|\mathbf{k}_i\|_2$ to project vectors onto the unit hypersphere, then applies a shared orthogonal matrix $\mathbf{R}$ (implemented via SRHT for efficiency and inner product preservation) to get $\tilde{\mathbf{k}}_i = \mathbf{R}\hat{\mathbf{k}}_i$. This spreads information and makes subspace directions approximately isotropic. The $D$ dimensions are split into $B$ subspaces of $m=D/B$ dimensions, and each subspace uses the analytical centroid set $\Omega = \{\pm 1/\sqrt{m}\}^m$. These $2^m$ points are vertices of an $m$-dimensional hypercube projected onto the sphere, uniformly covering all $2^m$ orthants; thus, any new key is close to at least one centroid. Finally, polar decomposition $\tilde{\mathbf{k}}_{i,b} = r_{i,b}\mathbf{u}_{i,b}$ separates the direction $\mathbf{u}_{i,b}$ (for voting) and radius $r_{i,b}$ (for reranking). Since $\Omega$ is fixed and data-independent, the centroids never expire. Proposition 4.1 proves that after Haar random rotation, the subspace energy $z_b = r_b^2 \sim \mathrm{Beta}(m/2, (D-m)/2)$ and squared direction coordinates $(u_b)_j^2 \sim \mathrm{Beta}(1/2, (m-1)/2)$, which guides the design of quantization levels.
+This step addresses PQCache/MagicPIG's pain point C2 (centroid staleness). If centroids are learned from prefill keys, they inevitably mismatch the distribution as more keys accumulate. ParisKV applies $\ell_2$-normalization $\hat{\mathbf{k}}_i = \mathbf{k}_i / \|\mathbf{k}_i\|_2$ to project vectors onto the unit hypersphere, then uses a shared orthogonal matrix $\mathbf{R}$ (via SRHT) to perform rotation $\tilde{\mathbf{k}}_i = \mathbf{R}\hat{\mathbf{k}}_i$. This spreads information and makes the subspaces approximately isotropic. The $D$ dimensions are split into $B$ subspaces of $m=D/B$ dimensions, where each subspace uses the analytical centroid set $\Omega = \{\pm 1/\sqrt{m}\}^m$. These $2^m$ points correspond to the vertices of an $m$-dimensional hypercube projected onto the sphere, uniformly covering all $2^m$ orthants. Any new key will be close to one of these centroids. Polar decomposition $\tilde{\mathbf{k}}_{i,b} = r_{i,b}\mathbf{u}_{i,b}$ separates the direction $\mathbf{u}_{i,b}$ (voting) and radius $r_{i,b}$ (reranking calibration). Since $\Omega$ is fixed and data-independent, centroids never become stale. This is theoretically grounded by Proposition 4.1, which proves that after Haar random rotation, energy $z_b = r_b^2 \sim \mathrm{Beta}(m/2, (D-m)/2)$ and coordinates $(u_b)_j^2 \sim \mathrm{Beta}(1/2, (m-1)/2)$, guiding the design of quantization levels.
 
-**2. GPU-Native Coarse Filtering: Multi-Subspace Collision Voting**
+**2. GPU-Native Coarse Filtering: Multi-subspace Collision Voting**
 
-Coarse filtering must cheaply reduce $n_t$ candidates to $\beta n_t$ without full sorting. The query undergoes the same normalization, rotation, and splitting. In each subspace $b$, the inner product $\tilde{\mathbf{q}}_b^\top \mathbf{c}$ between $\tilde{\mathbf{q}}_b$ and $2^m$ centroids is computed, and only the top $\rho$ proportion of centroids contributes "non-zero votes." Any key assigned to one of these centroids in a subspace gains 1 vote. Votes are accumulated across $B$ subspaces to form an integer score, and the top $\beta$ proportion (typically 5%–10%) are selected as candidates. This process involves only bit-level matching and integer addition. The authors use a custom `bucket_topk` CUDA kernel to perform bucket selection on small integers alongside a parallel collision kernel. Multi-subspace voting is cheaper and more robust than sorting query-centroid inner products; for example, $\beta=5$–$10\%$ can reduce the candidate pool to less than one-tenth of the original KV size with almost no recall loss, leveraging GPU integer operation speed and parallel atomic addition.
+Coarse filtering reduces $n_t$ candidates to $\beta n_t$ cheaply without sorting. Queries undergo the same norm+rotate+split process. In each subspace $b$, the inner product $\tilde{\mathbf{q}}_b^\top \mathbf{c}$ of $\tilde{\mathbf{q}}_b$ with $2^m$ analytical centroids is computed, and only the top $\rho$ fraction of centroids contribute "non-zero votes." Any key assigned to one of these centroids in a subspace gets 1 vote. Votes are accumulated across $B$ subspaces, and the top $\beta$ fraction (typically 5%–10%) are selected. The process uses bit-level matching and integer addition without sorting; the authors implemented a custom `bucket_topk` CUDA kernel for bucket-based selection and parallel collision kernels. Compared to single hash tables or full query-centroid sorting, multi-subspace voting is cheap and redundant (one subspace error doesn't break the system), naturally resisting noise. Selecting $\beta=5$–$10\%$ reduces the candidate pool by over 10× with high recall, fitting the GPU's efficiency in integer operations and atomic additions.
 
-**3. Calibrated Reranking: 4-bit Quantized Direction + Cached Weights**
+**3. Calibrated Reranking Estimator: 4-bit Quantized Direction + Cached Weights**
 
-Reranking aims to accurately estimate $\langle \mathbf{k}_i, \mathbf{q} \rangle$ without accessing full-precision keys on the CPU. ParisKV quantizes each subspace direction into 4 bits (1-bit sign + 3-bit magnitude) $\mathbf{v}_{i,b}$ and defines an alignment factor $\alpha_{i,b} = \langle \mathbf{v}_{i,b}, \mathbf{u}_{i,b} \rangle$. Since quantization typically compresses these values, the estimation $\langle \mathbf{u}_{i,b}, \tilde{\mathbf{q}}_b \rangle \approx \langle \mathbf{v}_{i,b}, \tilde{\mathbf{q}}_b \rangle / \alpha_{i,b}$ corrects the systematic underestimation. All "key-only" factors are pre-computed as $w_{i,b} = \|\mathbf{k}_i\|_2 \cdot r_{i,b} / \alpha_{i,b}$ during prefill. During decoding, the inner product estimation simplifies to a weighted sum $\widehat{\langle \mathbf{k}_i, \mathbf{q} \rangle} = \|\mathbf{q}\|_2 \sum_{b=1}^{B} w_{i,b} \langle \mathbf{v}_{i,b}, \tilde{\mathbf{q}}_b \rangle$, handled by a fused CUDA kernel. This addresses both C1 (tradeoff) and C3 (CPU bottleneck): 4-bit quantization reduces metadata size to $\sim$1/32, while $\alpha_{i,b}$ correction and $w_{i,b}$ caching ensure high recall. Only the final $k$ selected keys are fetched via UVA for full-precision attention.
+Reranking accurately estimates $\langle \mathbf{k}_i, \mathbf{q} \rangle$ for candidates without accessing CPU full-precision keys. ParisKV quantizes each subspace direction into 4 bits (1-bit sign + 3-bit magnitude) $\mathbf{v}_{i,b}$ and defines alignment $\alpha_{i,b} = \langle \mathbf{v}_{i,b}, \mathbf{u}_{i,b} \rangle$. Since quantization typically compresses this value, using $\langle \mathbf{v}_{i,b}, \tilde{\mathbf{q}}_b \rangle$ would systematically underestimate the inner product. ParisKV uses $\langle \mathbf{u}_{i,b}, \tilde{\mathbf{q}}_b \rangle \approx \langle \mathbf{v}_{i,b}, \tilde{\mathbf{q}}_b \rangle / \alpha_{i,b}$ for correction. All key-dependent terms are pre-calculated into $w_{i,b} = \|\mathbf{k}_i\|_2 \cdot r_{i,b} / \alpha_{i,b}$ during prefill. During decoding, inner product estimation collapses into a weighted accumulation $\widehat{\langle \mathbf{k}_i, \mathbf{q} \rangle} = \|\mathbf{q}\|_2 \sum_{b=1}^{B} w_{i,b} \langle \mathbf{v}_{i,b}, \tilde{\mathbf{q}}_b \rangle$, fused into a single gather+unpack+score CUDA kernel. This addresses C1 and C3: 4-bit quantization reduces metadata to $\sim 1/32$ of the original size, $\alpha_{i,b}$ correction ensures accuracy, and UVA only fetches the final $k$ keys for true attention.
 
-### Training Strategy
+### Loss & Training
 
-ParisKV is a **purely inference-time method** that requires no training or fine-tuning and can be applied to any pre-trained Transformer LLM. All centroids and quantization levels are pre-calculated offline based on Beta priors. The rotation matrix $\mathbf{R}$ is constructed via SRHT. At the system level, it provides four custom CUDA kernels: `bucket_topk`, parallel collision, fused reranking (gather+unpack+score), and a UVA-based fetch kernel.
+ParisKV is a **purely inference-time method** requiring no training or fine-tuning; it is plug-and-play for any pre-trained Transformer LLM. All centroids and quantization levels are pre-calculated offline based on Beta priors. The rotation matrix $\mathbf{R}$ is constructed directly via SRHT. The system provides four custom CUDA kernels: `bucket_topk`, parallel collision, fused reranking, and a UVA-based fetch kernel.
 
 ## Key Experimental Results
 
-Models: Qwen-3-4B/8B, DeepSeek-R1-Llama-8B, Qwen3-4B-Thinking-2507; Datasets: Long-generation reasoning (MATH500 / GPQA-Diamond / AIME25) and long-context understanding (LongBench-V2, RULER). Comparisons: PQCache, MagicPIG (with Quest, ShadowKV, FreeKV, etc., in the appendix). ParisKV uses $K=100$.
+Models: Qwen-3-4B/8B, DeepSeek-R1-Llama-8B; Benchmarks: Long-generation reasoning (MATH500 / GPQA-Diamond / AIME25) and long-context understanding (LongBench-V2, RULER). Baselines: PQCache, MagicPIG (and others in appendix). ParisKV uses $K=100$.
 
 ### Main Results: Long-Generation Reasoning (Accuracy)
 
@@ -87,60 +87,57 @@ Models: Qwen-3-4B/8B, DeepSeek-R1-Llama-8B, Qwen3-4B-Thinking-2507; Datasets: Lo
 | DS-R1-Llama-8B | AIME25 (pass@8) | 50.00 | 13.30 | 13.30 | **53.30** | +40.00 |
 | Qwen-3-8B | MATH500 (pass@1) | 87.40 | 69.21 | 45.80 | **93.00** | +23.79 |
 
-ParisKV meets or exceeds full attention accuracy in 7 out of 9 settings. On AIME25, where PQCache/MagicPIG collapse (pass@8 < 17), ParisKV recovers to 53–80.
+In 7 out of 9 settings, ParisKV matches or exceeds full attention. On AIME25 where PQCache/MagicPIG collapse (pass@8 < 17), ParisKV recovers to 53–80.
 
 ### Main Results: Million-Token Decoding Efficiency
 
 | Context | Full Attn | PQCache | MagicPIG | ParisKV | Speedup |
 |--------|-----------|---------|----------|---------|--------|
-| 128K (bs=1) | runnable | – | – | 24.32 ms/step | 2.1–2.8$\times$ throughput vs full |
+| 128K (bs=1) | runnable | – | – | 24.32 ms/step | 2.1–2.8× throughput vs full |
 | 256K (bs≥2) | **OOM** | – | – | scales to bs=5 | – |
-| 384K (bs=1) | **OOM** | – | – | runnable | – |
-| 1024K (bs=1, Llama3.1-8B) | OOM | 2179 ms/step | 830 ms/step | **49 ms/step** | **44.4$\times$ / 16.9$\times$** |
+| 1024K (bs=1, Llama3.1-8B) | OOM | 2179 ms/step | 830 ms/step | **49 ms/step** | **44.4× / 16.9×** |
 
-Within the runnable range of full attention, ParisKV provides 2.1–2.8$\times$ throughput. At 1M tokens, it is 44$\times$ and 17$\times$ faster than PQCache and MagicPIG, respectively.
+Within the range full attention can run, ParisKV improves throughput by 2.1–2.8×. At 1M tokens, it achieves 44× and 17× speedups over PQCache and MagicPIG, respectively.
 
 ### Ablation Study
 
-| Configuration | Coarse Recall@100 | End-to-end Recall@100 | Description |
+| Configuration | Coarse Recall@100 | End-to-End Recall@100 | Description |
 |------|----------------|------------------|------|
-| Baseline (No normalize/rotate, prefill centroids) | 6% | 36.5% | PQCache style |
-| + normalize + rotate + analytical centroids (N+R+T) | **16.1%** | **64.3%** | Full ParisKV design |
+| Baseline (No norm/rotate, prefill centroids) | 6% | 36.5% | PQCache style |
+| + normalize + rotate + analytical centroids | **16.1%** | **64.3%** | Full ParisKV design |
 
 ### Key Findings
 
-- **Root of drift robustness is data-independence**: The N+R+T design increases end-to-end Recall@100 from 36.5% to 64.3%, which is why ParisKV recovers ~30+ pass@1 points on AIME over PQCache.
-- **Long generation is harder than long input**: In long inputs, drift has less time to accumulate. However, in long-generation tasks like AIME25 (thousands of tokens), drift compounds, causing PQCache collapse.
-- **TPOT scales well with batch size**: On Qwen3-8B 128K, TPOT is 24.32 ms/token (bs=1) and improves to 7.37 ms/token (bs=8).
-- **C2 is the critical bottleneck**: Ablations confirm that centroid stability affects recall far more than the precision of the quantization itself.
+- **Data-independent centroids are the root of robustness**: The "three-piece" design improves coarse recall from 6% to 16.1% and end-to-end recall from 36.5% to 64.3%.
+- **Long generation is harder than long input**: In long-input tasks, decoding is short and drift doesn't accumulate. In reasoning tasks with thousands of decoded tokens (like AIME25), drift collapses recall in learned systems.
+- **TPOT scales well with batch size**: On Qwen3-8B 128K, TPOT is 24.32 ms for $bs=1$ and scales to 7.37 ms per token at $bs=8$ (58.92 ms/step).
+- **C2 is the primary bottleneck**: Analytical ablation confirms that "centroid stability" impacts recall far more than quantization bit-depth.
 
 ## Highlights & Insights
 
-- **Elegance of "data-independent centroids"**: Decoding drift is a fundamental flaw in learning-based retrieval. Mapping to a sphere and using symmetric analytical centroids removes the requirement that centroids must fit the data, making indices "future-proof."
-- **Collision voting over sorting**: Replacing expensive sorting with bit-matching and integer addition exploits GPU architectural strengths (fast atomic adds, poor sorting performance).
-- **Calibrated $\alpha$ + cached weights $w_{i,b}$**: This solves the conflict between low-bit estimation and high-fidelity inner products, allowing inner product estimation to collapse into a simple加权 accumulation.
-- **UVA instead of explicit memcpy**: In CPU offloading architectures, UVA allows GPU kernels to fetch KV pairs from CPU memory on-demand via page-fault semantics, bypassing the CPU scheduling stack.
+- **Elegant escape from data-fitting**: Long decoding drift is a dead-end for learning-based retrieval. Mapping to a sphere with symmetric analytical centroids removes the premise that centroids must fit the data, making them immune to aging.
+- **Hardware-friendly voting**: Replacing "inner products + sorting" with "bit-matching + integer addition + bucket selection" leverages GPU's low-cost integer ops and atomic addition.
+- **Calibrated $\alpha$ + cached weights $w_{i,b}$**: This solves the contradiction between low-bit estimation and high-fidelity results by pre-calculating key-specific biases.
+- **UVA for true system gains**: Using UVA for on-demand fetching allows the GPU kernel to handle CPU memory directly via page-fault semantics, bypassing the high-overhead CPU scheduling stack.
 
 ## Limitations & Future Work
 
-- **Choice of $m$**: There is a tradeoff between $m$ (centroid count $2^m$) and retrieval cost. Small $m$ leads to unstable collision statistics.
-- **SRHT overhead in short context**: The one-time normalization and rotation are overhead for short texts (below ~32K).
-- **Analytical centroid isotropy assumption**: While SRHT "whitens" the distribution, some LLM heads remain structurally sparse (e.g., attention sinks). The efficiency of uniform coverage for these heads is not addressed.
-- **Purely inference-time method**: While convenient, it lacks the potentially higher precision of training-time sparse mechanisms like NSA/MoBA.
-- **Potential improvements**: Tuning $\rho$ and $\beta$ adaptively per layer/head; using lattice or Gosset encoding to improve codebook coverage; and head-specific rotations.
+- **Selection of $m$**: Large $m$ makes centroid inner products expensive; small $m$ reduces voting redundancy and stability.
+- **SRHT overhead for short contexts**: The one-time normalization and rotation may be an unnecessary overhead for contexts below 10K–20K tokens.
+- **Isotropy assumption**: While SRHT spreads the distribution, some LLM heads have structured sparsity (e.g., attention sinks) where uniform hypersphere coverage might "waste" codebook budget.
+- **Future directions**: Self-adaptive $\rho$ and $\beta$ per layer/head; expanding codebooks from binary signs to lattice or Gosset encodings; potentially integrating analytical centroids into training.
 
 ## Related Work & Insights
 
-- **vs PQCache**: Both use retrieval and CPU offloading. PQCache uses product quantization with learned codebooks; ParisKV uses analytical centroids and spherical transforms to solve decoding drift.
-- **vs MagicPIG**: MagicPIG uses LSH for Top-$k$. While LSH is data-independent, it is sensitive to the original anisotropic key distribution. ParisKV "rounds" the distribution first, giving it higher recall for the same budget.
-- **vs Quest**: Quest is GPU-native page-level retrieval but lacks a CPU offloading solution, limiting context size. ParisKV combines GPU-native execution with UVA offloading.
-- **vs RetrievalAttention**: ParisKV addresses the system-level bottlenecks that RetrievalAttention misses at the million-token scale through UVA and custom kernels.
+- **vs PQCache**: Both do KV retrieval + CPU offloading. PQCache uses Product Quantization learned from prefill data; ParisKV uses analytical centroids, preventing the recall collapse seen in long-decoding reasoning tasks.
+- **vs MagicPIG**: MagicPIG uses LSH which is data-independent but sensitive to original anisotropic distributions. ParisKV "roundifies" the distribution before hashing, increasing recall for the same budget.
+- **vs Quest**: Quest is GPU-native but limited by GPU memory; ParisKV combines GPU-native logic with CPU offloading via UVA.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Decoupling centroids from data using spherical mapping and orthogonal rotation is an elegant and rare solution to decoding drift.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ covers 3 model families, 9+ settings, 64K–1M tokens, and multiple strong baselines with both accuracy and system metrics.
-- Writing Quality: ⭐⭐⭐⭐ Clear challenges (C1/C2/C3) and visualization of drift, though some critical kernel details are moved to the appendix.
-- Value: ⭐⭐⭐⭐⭐ Enabling 8B models to handle 1M token decoding on a single card with TPOT in milliseconds is a significant engineering breakthrough for RAG and agents.
+- Novelty: ⭐⭐⭐⭐⭐ Decoupling centroids from data distribution using spherical mapping is an elegant and rare solution to decoding drift.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Covers 3 model families, reasoning and input tasks, and contexts up to 1M tokens with extensive baseline comparisons.
+- Writing Quality: ⭐⭐⭐⭐ Challenges are clearly defined; high-quality visualizations of drift; theory provided via Proposition 4.1.
+- Value: ⭐⭐⭐⭐⭐ Enables 1M-token decoding on a single 8B-model card with millisecond TPOT—a major breakthrough for RAG and agentic workloads.
 
 <!-- RELATED:START -->
 
@@ -149,10 +146,10 @@ Within the runnable range of full attention, ParisKV provides 2.1–2.8$\times$ 
 ## Related Papers
 
 - [\[ACL 2026\] BRIEF-Pro: Universal Context Compression with Short-to-Long Synthesis for Fast and Accurate Multi-Hop Reasoning](../../ACL2026/information_retrieval/brief-pro_universal_context_compression_with_short-to-long_synthesis_for_fast_an.md)
+- [\[ICLR 2026\] Q-RAG: Long Context Multi‑Step Retrieval via Value‑Based Embedder Training](../../ICLR2026/information_retrieval/q-rag_long_context_multistep_retrieval_via_valuebased_embedder_training.md)
 - [\[ICML 2026\] HGMem: Hypergraph-based Working Memory to Improve Multi-step RAG for Long-Context Complex Relational Modeling](hgmem_hypergraph-based_working_memory_to_improve_multi-step_rag_for_long-context.md)
 - [\[ICLR 2026\] Beyond RAG vs. Long-Context: Learning Distraction-Aware Retrieval for Efficient Knowledge Grounding](../../ICLR2026/information_retrieval/beyond_rag_vs_long-context_learning_distraction-aware_retrieval_for_efficient_kn.md)
 - [\[ACL 2025\] Hierarchical Document Refinement for Long-context Retrieval-augmented Generation](../../ACL2025/information_retrieval/hierarchical_document_refinement_for_long-context_retrieval-augmented_generation.md)
-- [\[ICLR 2026\] Q-RAG: Long Context Multi-Step Retrieval via Value-Based Embedder Training](../../ICLR2026/information_retrieval/q_rag_long_context_multi_step_retrieval.md)
 
 </div>
 

@@ -2,12 +2,12 @@
 title: >-
   [Paper Note] Finding the Correct Visual Evidence Without Forgetting: Mitigating Hallucination in LVLMs via Inter-Layer Visual Attention Discrepancy
 description: >-
-  [ICML 2026][Hallucination Detection][Paper Note] This paper discovers that LVLM hallucinations stem from "under-attention to correct visual evidence + forgetting during generation." It observes a significant Inter-Layer Visual Attention Discrepancy (ILVAD) for visual evidence. Based on this, it proposes a train-free/plug-and-play method: constructing a visual evidenc
+  [ICML 2026][Hallucination Detection][Paper Note] This paper identifies that LVLM hallucinations originate from "insufficient attention + forgetting during generation" regarding correct visual evidence. Observing a significant Inter-Layer Visual Attention Discrepancy (ILVAD) for visual evidence, the authors propose a train-free/plug-and-play method: constructing a vis
 tags:
   - ICML 2026
   - Hallucination Detection
 date: 2026-05-08
-content_hash: 4df3b134613c97ed
+content_hash: 6c654a5b8367edd3
 ---
 # Finding the Correct Visual Evidence Without Forgetting: Mitigating Hallucination in LVLMs via Inter-Layer Visual Attention Discrepancy
 
@@ -15,63 +15,62 @@ content_hash: 4df3b134613c97ed
 **arXiv**: [2605.20965](https://arxiv.org/abs/2605.20965)  
 **Code**: https://github.com/ytx-ML/ILVAD (Available)  
 **Area**: Hallucination Detection  
-**Keywords**: Hallucination Mitigation, Visual Attention, Inter-Layer Discrepancy, Saliency Map, Training-Free
+**Keywords**: Hallucination Mitigation, Visual Attention, Inter-Layer Discrepancy, Saliency Map, Train-free
 
 ## TL;DR
-This paper discovers that LVLM hallucinations stem from "under-attention to correct visual evidence + forgetting during generation." It observes a significant Inter-Layer Visual Attention Discrepancy (ILVAD) for visual evidence. Based on this, it proposes a train-free/plug-and-play method: constructing a visual evidence saliency map via inter-layer differentiation, and then continuously weighting visual evidence tokens and "evidence-grounded" text tokens during generation. This consistently reduces hallucinations across 5 LVLMs and 5 hallucination/comprehensive benchmarks.
+This paper identifies that LVLM hallucinations originate from "insufficient attention + forgetting during generation" regarding correct visual evidence. Observing a significant Inter-Layer Visual Attention Discrepancy (ILVAD) for visual evidence, the authors propose a train-free/plug-and-play method: constructing a visual evidence saliency map via inter-layer differentiation, then continuously weighting visual evidence tokens and "evidence-grounded" text tokens during generation. This consistently reduces hallucinations across 5 LVLMs and 5 hallucination/comprehensive benchmarks.
 
 ## Background & Motivation
 
-**Background**: Existing methods for mitigating LVLM hallucinations are categorized into four types: alignment/fine-tuning based on external knowledge bases (high computational cost), post-processing correction, contrastive decoding (e.g., VCD/CODE/AGLA/ONLY, adjusting at the logits layer), and attention intervention (e.g., VAR/SPARC/VHR, based on attention sinks or vision-sensitive heads).
+**Background**: Existing methods to mitigate LVLM hallucinations primarily fall into four categories: alignment/fine-tuning based on external knowledge bases (high computational cost), post-processing correction, contrastive decoding (adjusting logits, e.g., VCD/CODE/AGLA/ONLY), and attention intervention (e.g., VAR/SPARC/VHR based on attention sinks or vision-sensitive heads).
 
-**Limitations of Prior Work**: Decoding-layer methods only adjust logits and fail to make the model truly "look at the image." Attention redistribution methods recognize that models allocate too much attention to query-irrelevant visual sinks, but they do not guarantee that attention shifts to the correct visual evidence, still failing when language priors are too strong.
+**Limitations of Prior Work**: Decoding-level methods only adjust logits without forcing the model to truly "look at the image." Attention redistribution methods recognize that models allocate excessive attention to query-irrelevant visual sinks, but they do not guarantee that attention shifts to the *correct* visual evidence, often failing when linguistic priors are too strong.
 
-**Key Challenge**: The authors empirically find two things: (i) at the sample-level, hallucinated samples show significantly lower average attention to visual evidence than correct samples; (ii) at the step-level, attention to visual evidence decays as long-text generation progresses, with hallucination frequency rising synchronously. This indicates the problem is not a "lack of total attention" but rather "failing to find the right location + failing to maintain it once found."
+**Key Challenge**: The authors empirically discover two phenomena: (i) at the sample level, the average attention on visual evidence in hallucinated samples is significantly lower than in correct samples; (ii) at the step level, attention on visual evidence decays as long-text generation progresses, synchronized with rising hallucination frequency. This suggests the issue is not "insufficient total attention" but "failure to locate correctly + failure to maintain focus."
 
-**Key Insight**: Further layer-level analysis reveals a neglected phenomenon—ILVAD: visual sinks receive high attention in almost every layer, whereas visual evidence is only "seen" in specific layers, with large gaps between adjacent layers. This provides a natural signal to distinguish "evidence vs. sink"—the former is sparsely activated across layers, while the latter is continuously activated.
+**Key Insight**: Layer-level analysis reveals a neglected phenomenon: LVLM attention on visual evidence exhibits a strong Inter-Layer Visual Attention Discrepancy (ILVAD). While visual sinks receive high attention across almost every layer, visual evidence is only "seen" in specific layers, with large gaps between adjacent layers. This provides a natural signal to distinguish "evidence vs. sink"—the former is sparsely activated across layers, while the latter is continuously activated.
 
-**Core Idea**: Accumulate a visual evidence saliency map using inter-layer differentiation (positive part of the difference between subsequent and preceding layer activations) to filter out sinks and retain "true evidence." This map is then used to continuously boost attention to evidence tokens and amplify "evidence-grounded" text tokens during generation.
+**Core Idea**: Use inter-layer differentiation (positive part of subsequent layer activation minus preceding layer activation) to accumulate a visual evidence saliency map, filtering out sinks and retaining "true evidence." This map then boosts attention to evidence tokens and amplifies "evidence-grounded" text tokens during generation.
 
 ## Method
 
 ### Overall Architecture
-ILVAD addresses the issues of failing to attend to correct visual evidence and gradual forgetting during long-text generation. It avoids structural changes or decoding modifications, focusing solely on attention weights. Given an image $I$ and query $q$, the method first processes the first $T$ generated tokens to obtain attention weights $\mathbf{A}^{l,h}$ across layers and heads. It then follows two steps: first, **Evidence Localization**, refining "which visual tokens are true evidence" into a saliency map $\hat{\mathbf{S}} \in [0,1]^{|\mathbf{X}_v|}$; second, **Evidence Guarding**, using this map at each generation step to weight visual evidence tokens and "evidence-grounded" text tokens before re-normalizing to obtain $\hat{\mathbf{A}}$. This workflow is decoupled from specific LVLMs and is compatible with LLaVA-1.5/NeXT, Qwen2/3-VL, and InternVL3.
+ILVAD addresses the dual issues of "failing to see correct evidence" and "gradual forgetting during long-text generation" by modifying attention weights without changing architecture or decoding strategies. Given an image $I$ and query $q$, the method first runs the model for the first $T$ generated tokens to extract attention weights $\mathbf{A}^{l,h}$, followed by two steps: first, **Evidence Localization**, refining "which visual tokens are true evidence" into a saliency map $\hat{\mathbf{S}} \in [0,1]^{|\mathbf{X}_v|}$; second, **Evidence Preservation**, using this map in each subsequent step to weight visual evidence tokens and "evidence-grounded" text tokens before re-normalizing to $\hat{\mathbf{A}}$. This pipeline is decoupled from specific LVLMs and is compatible with LLaVA-1.5/NeXT, Qwen2/3-VL, and InternVL3.
 
 ```mermaid
-%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["Image I + Text Query q"] --> B["Forward pass for first T steps<br/>Extract attention weights per layer/head"]
-    B --> C["Construct Evidence Saliency Map via ILVAD<br/>Vision-sensitive heads → Threshold binarization → Inter-layer diff (positive part)"]
+    A["Image I + Text query q"] --> B["T-step forward pass<br/>Extract attention weights A"]
+    B --> C["Construct evidence saliency map via ILVAD<br/>Visual sensitive heads → Binary threshold → Positive inter-layer diff"]
     C --> D["Evidence Saliency Map Ŝ"]
-    D --> E["Evidence-weighted Visual Attention Enhancement<br/>Amplify via exp(α·Ŝ) on evidence-sensitive heads"]
-    D --> F["Evidence-grounded Text Token Enhancement<br/>Adjust via evidence weight ŵ on text-sensitive heads"]
-    E --> G["Re-normalized Attention Â"]
+    D --> E["Evidence-weighted visual attention enhancement<br/>Exponential scale exp(α·Ŝ) on evidence heads"]
+    D --> F["Evidence-grounded text token enhancement<br/>Adjust via evidence weight ŵ on text heads"]
+    E --> G["Renormalized Attention Â"]
     F --> G
-    G --> H["Step-wise Generation · Reduced Hallucination"]
+    G --> H["Step-wise generation · Hallucination reduction"]
 ```
 
 ### Key Designs
 
-**1. Saliency Map via Inter-layer Differentiation: Filtering Sinks and Locating Evidence Simultaneously**
+**1. Saliency Map via Inter-Layer Differentiation: Filtering Sinks and Locating Evidence**
 
-Visual tokens consist of true evidence, visual sinks, and noise. Effective enhancement requires isolating evidence. The method first ranks heads by total visual attention in each layer $l$, keeping the top 50% vision-sensitive heads $\mathbf{H}_v^l$. It averages attention from the first $T$ generated tokens to each visual token $j$ as $\bar{\mathbf{A}}_j^l$, then binarizes "salient tokens" via $\tilde{\mathbf{A}}_j^l = \mathbb{1}[\bar{\mathbf{A}}_j^l > \tau \cdot \mathrm{mean}(\bar{\mathbf{A}}^l)]$. The critical step is $\mathbf{S} = \sum_{l=1}^{L-1} \max(\tilde{\mathbf{A}}^{l+1} - \tilde{\mathbf{A}}^l, 0)$, which only accumulates tokens "lit up" in layer $l+1$ but not in the previous layer. Finally, it is normalized to $\hat{\mathbf{S}}$. This works because visual sinks are active in almost every layer (differentiation yields near 0), while true evidence appears suddenly in specific layers—allowing a single unsupervised operator to filter sinks and locate evidence.
+Visual tokens contain true evidence, visual sinks, and noise. To refine localization, the method sorts heads by total visual attention per layer $l$ and keeps the top 50% vision-sensitive heads $\mathbf{H}_v^l$. The mean attention $\bar{\mathbf{A}}_j^l$ onto visual token $j$ from the first $T$ tokens is binarized using $\tilde{\mathbf{A}}_j^l = \mathbb{1}[\bar{\mathbf{A}}_j^l > \tau \cdot \mathrm{mean}(\bar{\mathbf{A}}^l)]$. The crucial step is inter-layer differentiation: $\mathbf{S} = \sum_{l=1}^{L-1} \max(\tilde{\mathbf{A}}^{l+1} - \tilde{\mathbf{A}}^l, 0)$. This operator accumulates tokens that "light up" in layer $l+1$ but were dark in $l$. Since visual sinks are persistently active across layers, the diff $\max(\tilde A^{l+1}-\tilde A^l,0)$ approaches 0 for them, while true visual evidence is captured as "appearance events."
 
-**2. Evidence-weighted Visual Attention Enhancement: Strictly Regulated Amplification**
+**2. Evidence-Weighted Visual Attention Enhancement: Proportional Scaling**
 
-Saliency maps alone are insufficient as visual attention decays during long generation. Evidence token attention must be actively boosted. An "evidence ratio" is calculated for each text token $i$ and head $(l,h)$ as $\mathbf{e}_i^{l,h} = \sum_{j \in \mathbf{X}_v} \hat{\mathbf{S}}_j \mathbf{A}_{i,j}^{l,h} / \sum_{j \in \mathbf{X}_v} \mathbf{A}_{i,j}^{l,h}$. The top 50% evidence-sensitive heads $\mathbf{H}_e^l$ are selected for exponential amplification: $\hat{\mathbf{A}}_{i,j}^{l,h} = \mathbf{A}_{i,j}^{l,h} \cdot \exp(\alpha \hat{\mathbf{S}}_j)$. Unlike VAF, which amplifies all visual tokens (including sinks), $\hat{\mathbf{S}}_j$ ensures amplification is strictly tied to "evidence-ness" and restricted to specific heads to avoid polluting semantic modeling.
+To counter attention decay during long generation, the method actively boosts evidence token attention. An "evidence ratio" $\mathbf{e}_i^{l,h} = \sum_{j \in \mathbf{X}_v} \hat{\mathbf{S}}_j \mathbf{A}_{i,j}^{l,h} / \sum_{j \in \mathbf{X}_v} \mathbf{A}_{i,j}^{l,h}$ identifies the top 50% evidence-sensitive heads $\mathbf{H}_e^l$. On these heads, attention is exponentially scaled: $\hat{\mathbf{A}}_{i,j}^{l,h} = \mathbf{A}_{i,j}^{l,h} \cdot \exp(\alpha \hat{\mathbf{S}}_j)$. Unlike methods that amplify all visual tokens (including sinks), $\hat{\mathbf{S}}_j$ ensures only legitimate evidence is boosted, preserving heads responsible for semantic modeling.
 
-**3. Evidence-grounded Text Token Enhancement: Empowering Tokens that "Actually Looked"**
+**3. Evidence-Grounded Text Token Enhancement: Prioritizing "Grounded" History**
 
-Amplifying the visual side only solves "where to look." During generation, models rely heavily on previous tokens; if these tokens are hallucinations, errors propagate. An "evidence weight" is calculated for each generated text token $i$: $\mathbf{w}_i = \frac{1}{L \cdot |\mathbf{H}_t^l|} \sum_{h,l,j} \hat{\mathbf{S}}_j \mathbf{A}_{i,j}^{l,h}$, normalized to $\hat{\mathbf{w}} \in [0,1]^{|\mathbf{X}_t|}$. Attention between text tokens is adjusted via $\hat{\mathbf{A}}_{i,j}^{l,h} = \mathbf{A}_{i,j}^{l,h} \cdot (\hat{\mathbf{w}}_i + \beta)$, where $\beta$ is a baseline protection term. This scores previous tokens by how much evidence they incorporated, favoring "grounded" tokens and suppressing those based solely on "intuition."
+When generating, models often "copy" from previous hallucinated text. The method calculates an "evidence weight" $\mathbf{w}_i = \frac{1}{L \cdot |\mathbf{H}_t^l|} \sum_{h,l,j} \hat{\mathbf{S}}_j \mathbf{A}_{i,j}^{l,h}$ for each generated text token $i$, representing its cumulative attention on visual evidence. These weights $\hat{\mathbf{w}} \in [0,1]^{|\mathbf{X}_t|}$ adjust text-to-text attention via $\hat{\mathbf{A}}_{i,j}^{l,h} = \mathbf{A}_{i,j}^{l,h} \cdot (\hat{\mathbf{w}}_i + \beta)$, where $\beta$ is a baseline protector. This incentivizes the model to reference tokens that were actually grounded in visual evidence while suppressing those generated based on purely linguistic priors.
 
 ### Loss & Training
-**Completely train-free**. All operations directly modify attention weights during inference, followed by standard softmax normalization. Key hyperparameters: $\tau$ (threshold, default $5$), $\alpha$ (visual strength, $3$ for LLaVA-NeXT, $5$ for others), $\beta$ (text baseline, $1$ for discriminative benchmarks, $0.2-0.5$ for generative), $T$ ($10$ steps), and head ratio $\rho=0.5$.
+**Completely train-free**. All operations directly modify attention weights during inference followed by standard softmax normalization. Key hyperparameters: $\tau$ (threshold, default $5$), $\alpha$ (visual intensity, $3$ for LLaVA-NeXT, $5$ for others), $\beta$ (text baseline, $1$ for discriminative, $0.2-0.5$ for generative benchmarks), $T$ (steps, default $10$), and head ratio $\rho=0.5$.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Ours is compared against 10 baselines across 5 LVLMs and 3 hallucination benchmarks (results for LLaVA-1.5-7B):
+Evaluated on 5 LVLMs across 3 hallucination benchmarks (CHAIR / POPE / MMHal-Bench) against 10 baselines (e.g., VCD, AGLA, VHR). Data for LLaVA-1.5-7B:
 
 | Method | CHAIR$_S$↓ | CHAIR$_I$↓ | POPE Acc↑ | POPE F1↑ | MMHal Hal.↓ | MMHal Score↑ |
 |---|---|---|---|---|---|---|
@@ -82,7 +81,7 @@ Ours is compared against 10 baselines across 5 LVLMs and 3 hallucination benchma
 | VHR | 34.5 | 9.86 | 84.74 | 85.45 | 65.6 | 2.10 |
 | **Ours (ILVAD)** | **32.6** | **9.42** | **85.76** | 86.12 | **61.5** | **2.22** |
 
-Ours achieves a 31.6% decrease in CHAIR$_S$ and 9.12% increase in MMHal Score relative to greedy on LLaVA-1.5-7B. Consistent improvements are seen on newer models like Qwen2-VL and InternVL3 (e.g., Qwen2-VL-7B CHAIR$_S$ 20.8→17.8). On MME, LLaVA-1.5-7B total score improved from 631.66 to 641.66.
+Compared to greedy decoding, LLaVA-1.5-7B shows a 31.6% reduction in CHAIR$_S$. Newer models such as Qwen2/3-VL and InternVL3 also show consistent gains (e.g., Qwen2-VL-7B CHAIR$_S$ 20.8→17.8).
 
 ### Ablation Study
 
@@ -93,48 +92,42 @@ Ours achieves a 31.6% decrease in CHAIR$_S$ and 9.12% increase in MMHal Score re
 | w/o Text Enh. | 34.8 | 9.73 | 85.59 | 85.85 |
 | Full ILVAD | **32.6** | **9.42** | **85.76** | **86.12** |
 
-Sensitivity to $\tau$: At $\tau=1$, CHAIR$_S$=44.6 (sinks leak in). $\tau=5$ provides the best balance between benchmarks.
-
 ### Key Findings
-- **Visual enhancement is critical**: Removing it (CHAIR$_S$ 49.4) yields results similar to the baseline (48.6), showing that locating and enhancing evidence is the core. Text enhancement provides an additional 2-point Gain.
-- **Negligible inference overhead**: ILVAD uses element-wise multiplication and normalization, maintaining runtime parity with baseline, outperforming contrastive decoding methods (VCD/AGLA) that require double forward passes.
-- **Robustness to $\alpha$**: Fixed $\alpha=5$ works for most models. $\beta$ requires task-specific tuning—$\beta=1$ for discriminative tasks and $0.2-0.5$ for long-text generation.
-- **Stable Gains on modern models**: For InternVL3-8B, CHAIR$_S$ 21.2→16.8, indicating sink/forgetting issues persist in State-of-the-Art models.
+- **Visual enhancement is the core driver**: Removing it results in performance near the baseline (CHAIR$_S$ 49.4 vs 48.6). Text enhancement provides a supplementary 2-point boost.
+- **Negligible Inference Overhead**: ILVAD uses element-wise multiplication and normalization, maintaining a runtime comparable to greedy decoding and outperforming contrastive methods requiring two forward passes (e.g., VCD).
+- **Step-level Visual Forgetting**: Empirical measurement shows visual evidence attention decays monotonically while hallucination rate rises as generation length increases.
 
 ## Highlights & Insights
-- **"Inter-layer difference = Automatic sink filter"** is the most elegant design: it translates the observation of sink/evidence distribution into a single operator, $\max(\tilde A^{l+1}-\tilde A^l, 0)$, removing the need for external detectors.
-- **Decoupling "Seeing" from "Trusting"**: Visual enhancement addresses "where to look," while text enhancement addresses "which previous tokens to trust," linked by a single saliency map $\hat{\mathbf{S}}$.
-- **Quantifying "Step-level Visual Forgetting"**: Ours provides an observable metric for why hallucinations increase in long text—a monotonic decline in visual evidence attention.
+- **Inter-layer Differentiation as a Sink Filter**: Translating the observation that "sinks are persistent while evidence is sparse across layers" into a simple $\max$-diff operator is elegant. It avoids external detectors or extra training.
+- **Decoupling Perception and Grounding**: Visual enhancement addresses "where to look," while text enhancement addresses "which history to trust." Both are driven by the same saliency map $\hat{\mathbf{S}}$, ensuring conceptual consistency.
+- **Quantifying Forgetting**: The paper provides a measurable attention metric for the synchronization of attention decay and hallucination frequency, confirming that hallucination is often a state of "drifting" away from visual input.
 
 ## Limitations & Future Work
-- The saliency map is computed from the first $T=10$ tokens and "frozen." In long generation, the semantic focus might shift, making the fixed map less adaptive.
-- Evaluation focuses on object-level hallucinations (CHAIR/POPE); Gains in position/color sub-scores on MME are limited, suggesting lower effectiveness when hallucinations stem from blurry visual evidence rather than incorrect attention.
-- $\beta$ requires manual tuning based on task types.
-- Head selection at $\rho=0.5$ is empirical; adaptive selection using EviRatio could be a future direction.
+- The saliency map is "frozen" after $T=10$ tokens. For extremely long generation where the semantic focus shifts (e.g., from foreground to background), a static map might fail. Sliding window updates could be an extension.
+- Effectiveness on relation/attribute hallucinations is weaker than on object existence. MME benchmarks for position/color show limited gains, suggesting ILVAD cannot fix hallucinations caused by inherently ambiguous visual features.
+- $\beta$ requires manual tuning per task type (discriminative vs. generative), lacking an automated adaptation strategy.
 
 ## Related Work & Insights
-- **vs. VAR / EVAS (Sink Redistribution)**: VAR redistributes sink attention to all visual tokens, potentially amplifying noise. ILVAD's refined localization prevents the degradation seen in VAR on CHAIR (52.5 vs 32.6).
-- **vs. SPARC (Temporal Difference)**: SPARC uses differentiation across generation steps (temporal sparsity), while ILVAD uses the layer dimension. These are orthogonal and could be combined.
-- **vs. VHR (Vision-aware Heads)**: VHR operates at the head level; ILVAD adds token-level granularity for significantly better long-text performance.
-- **vs. AGLA / VCD (Contrastive Decoding)**: Contrastive methods double the computational cost. ILVAD achieves superior performance with almost zero extra cost.
+- **vs. VAR / EVAS**: VAR redistributes sink attention to *all* other tokens. ILVAD specifically targets *evidence* tokens via inter-layer diff, which is why VAR degrades on CHAIR (52.5) while ILVAD excels (32.6).
+- **vs. SPARC**: SPARC focuses on differentiation across "time" (generation steps), whereas ILVAD focuses on differentiation across "layers." These are orthogonal and potentially combinable.
+- **vs. AGLA / VCD**: These require contrastive decoding with dual forward passes, doubling the cost. ILVAD achieves superior or comparable results with a single forward pass and minimal tensor ops.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ The inter-layer differentiation for sink filtering is clean and novel.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Broad coverage across models and baselines; lacks target evaluation for attribute/relation hallucinations.
-- **Writing Quality**: ⭐⭐⭐⭐ Logical flow from observation to method is clear; Figure 1 is highly effective.
-- **Value**: ⭐⭐⭐⭐ High utility for deployment due to being train-free and having near-zero overhead.
+- **Novelty**: ⭐⭐⭐⭐ The "inter-layer diff as sink filter" is a clean and original operator.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Extensive coverage across 5 models and 5 benchmarks, though it lacks specialized evaluation for attribute-level hallucinations.
+- **Writing Quality**: ⭐⭐⭐⭐ Clear progression from observation to method; Figure 1 effectively summarizes the core evidence.
+- **Value**: ⭐⭐⭐⭐ The train-free and low-overhead nature makes it highly attractive for deployment, and the inter-layer consistency perspective is insightful for explainability research.
 
 <!-- RELATED:START -->
-
-<div class="related-papers" markdown="1">
+<!-- RELATED:END -->
 
 ## Related Papers
 
 - [\[ICML 2026\] Learning from Fine-Grained Visual Discrepancies: Mitigating Multimodal Hallucinations via In-Context Visual Contrastive Optimization](learning_from_fine-grained_visual_discrepancies_mitigating_multimodal_hallucinat.md)
-- [\[CVPR 2026\] HulluEdit: Single-Pass Evidence-Consistent Subspace Editing for Mitigating Hallucinations in LVLMs](../../CVPR2026/hallucination/hulluedit_subspace_editing_hallucination.md)
-- [\[CVPR 2026\] Mitigating Object Hallucination in LVLMs via Attention Imbalance Rectification](../../CVPR2026/hallucination/mitigating_object_hallucinations_in_lvlms_via_attention_imbalance_rectification.md)
 - [\[ICML 2026\] Automatic Layer Selection for Hallucination Detection](automatic_layer_selection_for_hallucination_detection.md)
 - [\[CVPR 2026\] VES-RFT: Rewarding Visual Evidence Sensitivity to Mitigate Hallucinations in Large Vision-Language Models](../../CVPR2026/hallucination/ves-rft_rewarding_visual_evidence_sensitivity_to_mitigate_hallucinations_in_larg.md)
+- [\[ACL 2025\] Visual Evidence Prompting Mitigates Hallucinations in Large Vision-Language Models](../../ACL2025/hallucination/visual_evidence_prompting.md)
+- [\[CVPR 2026\] Same Attention, Different Truths: Put Logit-Lens over Visual Attention to Detect and Mitigate LVLM Object Hallucination](../../CVPR2026/hallucination/same_attention_different_truths_put_logit-lens_over_visual_attention_to_detect_a.md)
 
 </div>
 

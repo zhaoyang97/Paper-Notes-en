@@ -2,12 +2,12 @@
 title: >-
   [Paper Note] A General Framework for Dynamic Consistent Submodular Maximization
 description: >-
-  [ICML 2026][Optimization & Theory][Paper Note] This paper introduces a general consistency framework for fully dynamic submodular maximization. In a streaming environment permitting both insertions and deletions, it is the first to achieve constant-factor approximations alongside sublinear worst-case per-step solution changes for both cardinality and matroid constr
+  [ICML 2026][Optimization & Theory][Paper Note] This paper presents a general consistency framework for fully dynamic submodular maximization. In streaming environments with insertions and deletions, it provides the first constant approximation guarantees with sublinear worst-case per-step solution changes (recourse) for both cardinality and matroid constraints.
 tags:
   - ICML 2026
   - Optimization & Theory
 date: 2026-05-08
-content_hash: 1e043fb932562d13
+content_hash: 1ceb8f1e755ff271
 ---
 # A General Framework for Dynamic Consistent Submodular Maximization
 
@@ -15,126 +15,121 @@ content_hash: 1e043fb932562d13
 **arXiv**: [2606.04946](https://arxiv.org/abs/2606.04946)  
 **Code**: No code provided  
 **Area**: Optimization / Submodular Maximization / Dynamic Algorithms  
-**Keywords**: Submodular Maximization, Dynamic Algorithms, Consistency, Deletion-robust, Matroid Constraints  
+**Keywords**: Submodular maximization, dynamic algorithms, consistency, deletion-robust, Matroid constraint  
 
 ## TL;DR
-This paper introduces a general consistency framework for fully dynamic submodular maximization. In a streaming environment permitting both insertions and deletions, it is the first to achieve constant-factor approximations alongside sublinear worst-case per-step solution changes for both cardinality and matroid constraints.
+This paper presents a general consistency framework for fully dynamic submodular maximization. In streaming environments with insertions and deletions, it provides the first constant approximation guarantees with sublinear worst-case per-step solution changes (recourse) for both cardinality and matroid constraints.
 
 ## Background & Motivation
-**Background**: Submodular maximization is frequently employed in tasks such as data summarization, recommendation, active learning, and sparse selection. Traditional dynamic algorithms prioritize the speed of maintaining an approximate optimal solution after updates. More recently, consistent optimization also requires that the solution presented to the user does not change drastically after each update.
+**Background**: Submodular maximization is widely used in tasks such as data summarization, recommendation, active learning, and sparse selection. While traditional dynamic algorithms focus on how quickly they can maintain an approximately optimal solution after updates, recent work in consistent optimization requires that the solution presented to the user does not change drastically after each update.
 
-**Limitations of Prior Work**: Existing research on consistent submodular maximization primarily focuses on insertion-only scenarios. In such cases, old solutions typically do not become invalid immediately upon the appearance of new elements. However, fully dynamic scenarios include deletions; if a critical element is removed, the optimal solution may require a complete reconstruction. Directly reapplying dynamic algorithms may yield good approximations but could replace a large number of elements in a single step.
+**Limitations of Prior Work**: Existing research on consistent submodular maximization primarily addresses insertion-only scenarios. In insertion-only cases, old solutions typically do not become invalid due to the appearance of new elements. However, fully dynamic scenarios include deletions; if a critical element is deleted, the optimal solution may require a complete reconstruction. Directly reapplying dynamic algorithms might yield good approximations but could replace a massive number of elements in a single step.
 
-**Key Challenge**: There is an inherent tension between approximation quality and stability. High approximation requires the solution to follow the current optimum rapidly, while stability requires changing only a few elements per step. Insertions and deletions cause the current optimal value to fluctuate, making the monotonicity analysis common in insertion-only settings inapplicable. Matroid constraints further restrict the sets of exchangeable elements, complicating the repair of old solutions.
+**Key Challenge**: There is a conflict between approximation (adjusting solutions quickly to match the current optimum) and stability (modifying few elements per step). Insertions and deletions cause the optimal value to fluctuate, making monotonicity-based analysis from insertion-only settings inapplicable. Matroid constraints further restrict the set of exchangeable elements, complicating the process of repairing old solutions.
 
-**Goal**: Construct a modular framework that, given appropriate robust submodular and non-robust routines, maintains a high-value feasible solution in a fully dynamic environment while limiting the symmetric-difference change at each step to a small scale.
+**Goal**: To construct a modular framework that Maintains high-value feasible solutions in fully dynamic environments while keeping the per-step symmetric-difference change at a small scale, provided a suitable robust submodular routine and a non-robust routine are given.
 
-**Key Insight**: The authors adopt the coreset concept from deletion-robust submodular maximization. Instead of knowing the number of deletions in advance, they maintain multiple robustness levels. Simultaneously, they use a random scheduling mechanism to disperse the recomputations of different levels into transition windows, avoiding large-scale, one-time replacements.
+**Key Insight**: The authors borrow the coreset idea from deletion-robust submodular maximization. Instead of assuming a known number of deletions, they maintain multiple robustness levels. They also use random scheduling to distribute the recomputations of different levels across "transition windows," avoiding large-scale immediate replacements.
 
-**Core Idea**: Candidate solutions for different deletion-robustness levels are recomputed periodically and transitioned block-by-block within short windows, effectively amortizing "global reconstruction" into multiple small changes.
+**Core Idea**: Candidacy solutions for different deletion robustness levels are periodically recomputed, and transitions occur block-by-block within short windows, effectively amortizing "global reconstruction" into multiple small changes.
 
 ## Method
-The paper considers a sequence of operations provided by an oblivious adversary, where each step involves the insertion or deletion of an element. The algorithm maintains a feasible solution $ALG_t\subseteq X_t$ at each time $t$. The dual goals are: approximation quality requiring $\mathbb{E}[f(ALG_t)]\geq \alpha f(OPT_t)$, and consistency requiring the symmetric difference $|ALG_t\triangle ALG_{t-1}|$ between adjacent solutions to be bounded by some small value $C$.
+The paper considers a sequence of operations provided by an oblivious adversary, where each step involves the insertion or deletion of an element. The algorithm maintains a feasible solution $ALG_t\subseteq X_t$ at each time $t$. The goals are two-fold: approximation requires $\mathbb{E}[f(ALG_t)]\geq \alpha f(OPT_t)$, and consistency requires the symmetric difference $|ALG_t\triangle ALG_{t-1}|$ between adjacent solutions to be bounded by a small constant $C$.
 
 ### Overall Architecture
-The framework consists of three components: Random-Scheduling, a robust routine $\mathcal{A}_R$, and a non-robust routine $\mathcal{A}_N$. Random-Scheduling generates multi-level transition times based on maximum and minimum robustness parameters $d_0, d_\ell$, with each level corresponding to a specific deletion robustness level. When a transition time arrives, the algorithm calls the robust routine to recompute the intermediate solution and the remaining candidate set for that level, then gradually transitions the solution during the subsequent transition window. At ordinary time steps (outside any transition window), the algorithm starts from the intermediate solution left by the most recent finest-level (level $\ell$) transition and uses the non-robust routine to process new candidate elements.
+The framework consists of three parts: Random-Scheduling, a robust routine $\mathcal{A}_R$, and a non-robust routine $\mathcal{A}_N$. Random-Scheduling generates multi-level transition times based on maximum and minimum robustness parameters $d_0$ and $d_\ell$, with each level corresponding to a deletion robustness level. When a transition time arrives, the algorithm calls the robust routine to recompute the intermediate solution and remaining candidate set for that level, then gradually switches the solution during a transition window. During normal time steps (outside transition windows), the algorithm uses the non-robust routine to process new candidate elements starting from the intermediate solution left by the most recent level-$\ell$ transition.
 
-Crucially, it is not just about when to recompute, but how to present the solution. Within a transition window, the algorithm does not immediately replace the old solution with the new one. Instead, it partitions the difference between the new and old sets into several blocks, swapping only one block per step while maintaining matroid feasibility throughout, ensuring the user sees only controlled changes in $\text{ALG}_t$.
+The key is not just when to recompute, but how to present the solution. Within a transition window, the algorithm does not immediately replace the old solution with the new one. Instead, it partitions the difference between the new and old sets into blocks, swapping one block at a step while maintaining matroid feasibility using the exchange property. Thus, even if internal solutions change significantly, the user-visible $ALG_t$ only undergoes controlled changes.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["Input: Stream of insertion/deletion operations X_t<br/>Monotone submodular function f + matroid constraint"] --> B["Random-Scheduling<br/>Generates transition times for each level d_i=⌈d_0/2^i⌉ + random shift τ"]
-    B --> C{"Is current step t a<br/>transition time for any level?"}
-    C -->|Yes| D["Robust Routine 𝒜_R<br/>Starts from previous level's solution, samples candidates via inverse marginals<br/>Outputs new solution I_t + candidate residue C_t"]
-    D --> E["Consistency Transition Window<br/>Keep shared elements, partition difference into blocks for gradual swap<br/>Maintain feasibility via matroid exchange"]
-    C -->|No| F["Non-robust Routine 𝒜_N<br/>Starts from most recent level-ℓ intermediate solution<br/>Processes all new candidates in order"]
-    E --> G["Current solution ALG_t ⊆ X_t<br/>Controlled per-step symmetric difference"]
+    A["Input: Stream of insertions/deletions X_t<br/>Monotone submodular function f + Matroid constraint"] --> B["Random-Scheduling<br/>Generate transition times for d_i=⌈d_0/2^i⌉ + Random shift τ"]
+    B --> C{"Is current step t a<br/>transition time for some level?"}
+    C -->|Yes| D["Robust Routine 𝒜_R<br/>Sample high-value candidates based on inverse marginals<br/>Output new solution I_t + candidate set C_t"]
+    D --> E["Consistent Transition Window<br/>Keep shared elements; swap difference blocks step-by-step<br/>Maintain feasibility via Matroid exchange"]
+    C -->|No| F["Non-robust Routine 𝒜_N<br/>Start from recent level-ℓ intermediate solution<br/>Process all new candidate elements in order"]
+    E --> G["Current Feasible Solution ALG_t ⊆ X_t<br/>Controlled symmetric difference per step"]
     F --> G
 ```
 
 ### Key Designs
 
-**1. Random-Scheduling: Determining "when to recompute" offline**
+**1. Random-Scheduling: Determining "When to Recompute" Offline**
+The difficulty of fully dynamic settings lies in the fact that the scale of deletions is unknown and varies over time. The framework does not try to guess a single deletion budget; instead, it maintains a hierarchy of robustness levels $d_i=\lceil d_0/2^i\rceil$ (from $d_0$ down to $d_\ell$). Random-Scheduling recursively partitions the timeline: level 0 segments of length $d_0$ with transition windows of length $\varepsilon' d_0$, and the remaining intervals are recursively divided for lower levels. Finally, a uniform random cyclic shift $\tau$ is applied. This shift is critical for analysis—it ensures that any fixed time step falls into a transition window with probability at most $\varepsilon$ (Lemma 3.2), allowing the loss of approximation during transitions to be averaged out.
 
-The difficulty in fully dynamic settings lies in the fact that the scale of deletions is unknown and varies over time. Rather than guessing a single deletion budget, the framework maintains a family of robustness levels $d_i=\lceil d_0/2^i\rceil$ (decreasing from a maximum $d_0$ to a minimum $d_\ell$), allowing different levels to defend against deletions of varying scales. Random-Scheduling partitions the timeline recursively: level 0 is divided into segments of length $d_0$, with a transition window of length $\varepsilon' d_0$ at the start of each segment; the remaining intervals are recursively bisected for subsequent levels down to $d_\ell$. Finally, a uniform random cyclic shift $\tau$ is applied. This random shift is vital for analysis—it ensures that the probability of any fixed time step falling into a transition window is at most $\varepsilon$ (Lemma 3.2), thereby averaging out the approximation loss during transition periods. High robustness levels are recomputed less frequently, while low levels are recomputed more often, matching the intuition that "large deletions are rare, while small deletions are frequent."
+**2. Deletion-Robust Routine $\mathcal{A}_R$ and Candidate Sets: Retaining Deletion-Resistant Reserves**
+At each transition time, the framework calls $\mathcal{A}_R$ with the previous level's intermediate solution $I_{t'}$ and the candidate set to produce an updated $I_t$ and a **remaining candidate set** $C_t$. The core is the deletion-robust coreset sampling idea: for matroids, Robust-Swap samples candidates with probability inversely proportional to their marginal contribution $f(u\mid I)$ (avoiding over-reliance on a few high-value elements) until the candidate count falls below $d/\varepsilon$. For cardinality, a simpler Robust-Greedy is used. These "leftover" high-value elements in $C_t$ serve as reserves to repair value when dominant elements are deleted without rebuilding the entire solution.
 
-**2. Robust Routine $\mathcal{A}_R$ and Candidate Residue: Retaining a deletion-resistant candidate pool**
+**3. Non-robust Routine $\mathcal{A}_N$: Lightweight Follow-up on Regular Steps**
+Most steps are not transition times. These are handled by $\mathcal{A}_N$, which starts from the most recent level-$\ell$ solution $I_{t'}$ and processes **all** elements in the candidate set in a fixed order (using Swap for matroids: an element is swapped in only if its marginal contribution is at least twice that of the element being replaced). It does not need to be deletion-robust (that foundation is laid by $\mathcal{A}_R$); it simply ensures the solution quickly absorbs new insertions to maintain approximation.
 
-At each transition time, the framework calls $\mathcal{A}_R$. Given the intermediate solution $I_{t'}$ from the previous level, the candidates $X_t\setminus(X_{t'}\setminus C_{t'})$, and the robustness parameter $d_i$, it outputs an updated solution $I_t$ and a **candidate residue** $C_t$. Its core is based on the sampling idea of deletion-robust coresets: for matroids, it uses Robust-Swap, sampling candidates with a probability proportional to the **inverse** of their marginal contribution $f(u\mid I)$ (elements with smaller marginals are more likely to be swapped in, preventing the solution from over-relying on a few high-value elements). For cardinality, a simpler Robust-Greedy is sufficient. Retaining $C_t$ rather than exhausting candidates provides a reserve of high-value elements for repairs after deletions—when a dominant element is removed, value can be recovered from $C_t$ with minimal changes.
-
-**3. Non-robust Routine $\mathcal{A}_N$: Lightweight updates on ordinary steps**
-
-Most time steps are not transition times. These are handled by the non-robust routine $\mathcal{A}_N$, which starts from the solution $I_{t'}$ of the most recent finest-level transition and processes **all** elements in the candidate set $X_t\setminus(X_{t'}\setminus C_{t'})$ in a fixed order. For matroids, it uses Swap: an element is swapped in only if its marginal contribution is at least twice that of the element it replaces. $\mathcal{A}_N$ does not handle deletion robustness (which is ensured by $\mathcal{A}_R$) but rather ensures the solution quickly absorbs new insertions to maintain approximation quality.
-
-**4. Consistency Transition Window: Amortizing large reconstructions into small swaps**
-
-The new solution $I_t$ calculated by the robust routine may differ significantly from the current solution $\text{ALG}_\text{old}$. Direct replacement would lead to a symmetric difference of $\Theta(k)$, violating consistency. The transition window approach keeps shared elements $\text{Shared}_t=\text{ALG}_\text{old}\cap I_t$ stationary and divides the sets $I_t\setminus\text{ALG}_\text{old}$ and $\text{ALG}_\text{old}\setminus I_t$ into $\varepsilon' d_i$ equal blocks. Over the next $\varepsilon' d_i$ steps, one block is swapped in and one block is swapped out per step, using matroid exchange properties to ensure feasibility at every sub-step. This mechanism decouples the algorithm's internal need for large updates from the requirement that the externally visible solution remains stable. The user sees changes of only $O(1/\varepsilon^2)$ (cardinality) or $O(\log k/\varepsilon^2)$ (matroid) elements per step.
-
-### Loss & Training
-This is a theoretical algorithms paper; there is no neural network training loss. Its objective is a monotone submodular function $f$ under cardinality or matroid independent set constraints. The algorithm utilizes a value oracle and a matroid feasibility oracle. The analysis provides approximation ratios, consistency bounds, and amortized oracle complexity.
+**4. Consistency Transition Window: Amortizing Major Reconstructions**
+A new solution $I_t$ calculated by a robust routine may differ significantly from the current solution $ALG_{old}$. Replacing it immediately would lead to a symmetric difference of $\Theta(k)$. The transition window keeps the shared elements $Shared_t = ALG_{old} \cap I_t$, splits the differences $I_t \setminus ALG_{old}$ and $ALG_{old} \setminus I_t$ into $\varepsilon' d_i$ equal blocks, and swaps one block per step over the next $\varepsilon' d_i$ steps. This mechanism decouples internal recomputations from external consistency—internal solutions can change drastically while the user sees a change of only $O(1/\varepsilon^2)$ (cardinality) or $O(\log k/\varepsilon^2)$ (matroid) elements per step.
 
 ## Key Experimental Results
 
 ### Main Results
-The primary results are theoretical guarantees. The following table summarizes the approximation and consistency for the proposed algorithms in the fully dynamic setting.
+This is a theoretical algorithm paper, so results are provided as mathematical guarantees rather than empirical tables.
 
-| Setting | Algorithm | Approximation Guarantee | Consistency Guarantee | Significance |
-|------|----------|----------|------------|--------------------|
-| Cardinality constraint | ConsistentCardinality | $1/2-3\varepsilon$ | $O(1/\varepsilon^2)$ | Approaches the known $1/2$ level of dynamic submodular maximization while maintaining constant per-step changes in fully dynamic settings. |
-| Rank-$k$ matroid constraint | ConsistentMatroid | $1/4-7\varepsilon$ | $O(\log k/\varepsilon^2)$ | Matches the classic $1/4$ approximation in streaming matroids but permits deletions and requires only logarithmic consistency. |
-| Fully dynamic generic framework | Random scheduling + robust/non-robust routines | Defined by routines | Defined by transition window and $d_i$ | Decouples consistent dynamic algorithms into reusable templates. |
-| Prev. SOTA insertion-only cardinality | Constant recourse algorithms | ~0.51 or theoretical upper bounds | Constant consistency | Does not handle deletions; relies on stronger monotonicity of the optimal value. |
+| Setting | Algorithm | Approximation | Consistency (Recourse) | Significance |
+|---------|-----------|---------------|------------------------|--------------|
+| Cardinality constraint | ConsistentCardinality | $1/2-3\varepsilon$ | $O(1/\varepsilon^2)$ | Matches the $1/2$ level of dynamic submodular max while maintaining constant per-step change. |
+| Rank-$k$ matroid constraint | ConsistentMatroid | $1/4-7\varepsilon$ | $O(\log k/\varepsilon^2)$ | Matches the $1/4$ level of streaming matroid max but allows deletions and logarithmic recourse. |
+| Fully dynamic generic framework | Random scheduling + routines | Determined by routines | Determined by windows/ $d_i$ | Deconstructs consistent dynamic algorithms into a reusable template. |
 
 ### Ablation Study
-As a theoretical paper, there is no empirical ablation; however, the role of each component can be viewed as an analytical ablation.
+As a theoretical paper, these represent the analytical roles of components.
 
-| Configuration / Component | Key Metric | Description |
-|-------------|----------|------|
-| Removing robust routine | Likely loss of critical elements after deletion | Cannot guarantee sufficient value in the candidate set; fails in fully dynamic scenarios. |
-| Removing multi-level robustness | Difficulty covering deletion scales in matroids | A single level is either recomputed too often or is not robust to large deletions, making $O(\log k/\varepsilon^2)$ difficult. |
-| Removing transition window | Approximation remains good, but consistency is lost | Symmetric difference can reach $\Theta(k)$ during direct replacement of new/old solutions. |
-| Removing random shift | Fixed times always hit transitions | Approximation analysis cannot use the probability "not in transition $\geq 1-\varepsilon$" to bound losses. |
-| Cardinality-specific Robust-Greedy | $1/2-3\varepsilon$, $O(1/\varepsilon^2)$ | Leverages the simple structure of uniform matroids, requiring only a single level of robustness. |
+| Configuration / Component | Impact | Explanation |
+|---------------------------|--------|-------------|
+| Removing robust routine | Loss of value after deletions | Cannot guarantee enough high-value replacements remain; performance collapses in fully dynamic settings. |
+| Removing multi-level robustness | Inability to cover deletion scales | A single level is either too frequent or insufficiently robust; required for $O(\log k/\varepsilon^2)$ in matroids. |
+| Removing transition window | Symmetric difference spikes | Without the window, direct replacement results in $\Theta(k)$ changes per step. |
+| Removing random shift | Poor worst-case approximation | Certain times would always be in transition; shift ensures high probability of being outside transition periods. |
 
 ### Key Findings
-- The difficulty of the fully dynamic setting arises primarily from deletions rather than insertions. The deletion of a dominant element can force a global change in the optimal solution, necessitating the advance preservation of a robust candidate structure.
-- Matroid constraints are significantly more difficult than cardinality constraints because exchangeable elements are limited by independence constraints; this explains why the matroid result is $1/4$ while cardinality is $1/2$.
-- Consistency is guaranteed in the worst-case for every single step, rather than in an amortized sense, which better serves users requiring stable recommendations or summaries.
+- The primary difficulty of fully dynamic settings comes from deletions, not insertions. Deleting a dominant element forces global changes unless a robust candidate structure is pre-maintained.
+- Matroid constraints are significantly harder than cardinality constraints because the set of exchangeable elements is restricted by independence constraints; this explains the $1/4$ vs $1/2$ gap.
+- Consistency is guaranteed in the worst-case per step, which is superior for stable user interfaces compared to the amortized update time favored by standard dynamic algorithms.
 
 ## Highlights & Insights
-- The framework is highly modular. Scheduling, consistency transitions, and submodular routines are decoupled, allowing future improvements in robust routines to be directly integrated while inheriting the consistency mechanism.
-- Using a random shift to distribute transition losses is a simple yet effective technique. It does not guarantee optimal approximation at every moment but ensures that any fixed time has a high probability of not being in a transition phase.
-- The paper adapts deletion-robust coreset ideas to the online fully dynamic setting and handles unknown, varying deletion scales through multiple robustness levels—a step closer to practical streaming systems than static deletion-robustness.
+- The framework is highly modular. Scheduling, consistency transitions, and submodular routines are decoupled, allowing future improvements in robust routines to be inherited by the consistency mechanism.
+- Distributing transition loss via a random shift is a simple yet effective technique. It guarantees that any fixed time has a high probability of not being in a transition period.
+- The paper adapts deletion-robust coreset concepts to online fully dynamic settings, using multiple robustness levels to handle unknown and varying deletion scales.
 
 ## Limitations & Future Work
-- The results are primarily theoretical guarantees, lacking runtime and stability experiments on real-world data summarization or recommendation tasks. Actual oracle costs might be high, especially independence oracle calls for matroids.
-- The approximation ratios remain constant-factor, with $1/4-O(\varepsilon)$ for matroids. Applications sensitive to quality may need to integrate stronger offline or dynamic submodular routines.
-- The framework assumes an oblivious adversary and uses randomization in its analysis. The guarantees may not apply directly against an adaptive adversary or for non-monotone submodular functions.
-- Block-by-block swapping within the transition window requires specific implementation details; efficiently finding feasible exchange blocks in complex matroids remains an engineering challenge.
+- The results are purely theoretical; empirical validation on real-world data summarization or recommendation tasks is missing.
+- Competitive oracle costs: Particularly in matroid cases, the number of independence oracle calls might be high.
+- The framework assumes an oblivious adversary. Guarantees may not directly apply to adaptive adversaries or non-monotone functions.
+- Engineering challenges: Implementing efficient block swapping in complex matroids during the transition window requires non-trivial care.
 
 ## Related Work & Insights
-- **vs insertion-only consistent submodular maximization**: Previous work achieved constant consistency and better approximations but relied on the monotonic structure of insertion-only settings. This work extends to concurrent insertions and deletions at the cost of more complex robust scheduling.
-- **vs deletion-robust submodular maximization**: Deletion-robust methods typically assume a fixed deletion budget $d$. This paper maintains multiple levels $d_i$ online because future deletion scales are unknown.
-- **vs fully dynamic submodular algorithms**: Classic fully dynamic algorithms prioritize amortized update time and may change the solution drastically. This work treats "solution change as seen by the user" as a first-class metric.
-- **vs online submodular maximization with preemption**: Preemption allows replacing old elements with fresh ones but discarded elements cannot be recovered; the goals differ. This work maintains a stable solution within a dynamic set of currently available elements.
+- **vs Insertion-only Consistent Submodular Maximization**: Previous work achieved constant consistency by relying on the monotonic structure of insertions; this paper extends this to deletions at the cost of complex robustness scheduling.
+- **vs Deletion-robust Submodular Maximization**: Traditional deletion-robust methods assume a fixed deletion budget $d$; this paper maintains multiple $d_i$ levels to handle unknown, time-varying deletion scales.
+- **vs Fully Dynamic Submodular Algorithms**: Conventional fully dynamic algorithms focus on amortized update time and may radically change solutions periodically; this paper treats "recourse" (solution stability) as a first-class objective.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐☆ The combination of fully dynamic settings, consistency, and matroid constraints is challenging, and the framework design is highly reusable.
-- Experimental Thoroughness: ⭐⭐☆☆☆ A purely theoretical paper lacking real-world experiments; however, the theorems and complexity analyses are comprehensive.
-- Writing Quality: ⭐⭐⭐⭐☆ The technical overview is clear and the algorithm components are well-structured, though the proofs are extensive with long symbolic chains.
-- Value: ⭐⭐⭐⭐☆ Significant theoretical value for stable data summarization and recommendation; highlights that dynamic optimization should consider more than just approximation and update time.
+- Novelty: ⭐⭐⭐⭐☆ Combining fully dynamic, consistency, and matroid constraints is challenging.
+- Experimental Thoroughness: ⭐⭐☆☆☆ Purely theoretical; lacks real-world data benchmarks.
+- Writing Quality: ⭐⭐⭐⭐☆ Clear technical overview and modular algorithm description.
+- Value: ⭐⭐⭐⭐☆ Highly significant for stable recommendation and dynamic selection systems.
 
 <!-- RELATED:START -->
 <div class="related-papers" markdown="1">
+- Monotone Submodular Maximization with a Deletion-robust Set (ICML 2017)
+- Dynamic Submodular Maximization (STOC 2020)
+- Consistent Submodular Maximization (NeurIPS 2022)
+</div>
+<!-- RELATED:END -->
 
 ## Related Papers
 
 - [\[ICML 2026\] Budget-Feasible Mechanisms for Submodular Welfare Maximization in Procurement Auctions](budget-feasible_mechanisms_for_submodular_welfare_maximization_in_procurement_au.md)
+- [\[ICML 2026\] Differentially Private Submodular Maximization with a Knapsack Constraint](differentially_private_submodular_maximization_with_a_knapsack_constraint.md)
 - [\[NeurIPS 2025\] A Unified Approach to Submodular Maximization Under Noise](../../NeurIPS2025/optimization/a_unified_approach_to_submodular_maximization_under_noise.md)
 - [\[NeurIPS 2025\] Online Two-Stage Submodular Maximization](../../NeurIPS2025/optimization/online_two-stage_submodular_maximization.md)
 - [\[ICLR 2026\] Rethinking Consistent Multi-Label Classification Under Inexact Supervision](../../ICLR2026/optimization/rethinking_consistent_multi-label_classification_under_inexact_supervision.md)
-- [\[CVPR 2026\] Dynamic Momentum Recalibration in Online Gradient Learning](../../CVPR2026/optimization/dynamic_momentum_recalibration_in_online_gradient_learning.md)
 
 </div>
 

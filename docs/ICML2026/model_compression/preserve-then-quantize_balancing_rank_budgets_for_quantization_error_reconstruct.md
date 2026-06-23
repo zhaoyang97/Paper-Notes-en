@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Preserve-Then-Quantize: Balancing Rank Budgets for Quantization Error Reconstruction in LLMs
 description: >-
-  [ICML 2026][Model Compression][PTQ] The authors propose SRR (Structured Residual Reconstruction), which explicitly splits the fixed low-rank budget $r$ used for compensating quantization residuals in QER (Quantization Error Reconstruction) into two parts: "preserving $k$ principal singular directions before quantization" and "fitting residuals with $r-k$
+  [ICML 2026][Model Compression][PTQ] The authors propose SRR (Structured Residual Reconstruction), which explicitly splits the fixed low-rank budget $r$ in Quantization Error Reconstruction (QER) into two parts: "preserving $k$ principal singular directions before quantization" and "fitting the residual with the remaining $r-k$ rank". Using a closed-form
 tags:
   - ICML 2026
   - Model Compression
   - PTQ
   - QPEFT
 date: 2026-05-08
-content_hash: fe24bae3a85d5459
+content_hash: 887097b993849a52
 ---
 # Preserve-Then-Quantize: Balancing Rank Budgets for Quantization Error Reconstruction in LLMs
 
@@ -20,62 +20,62 @@ content_hash: fe24bae3a85d5459
 **Keywords**: PTQ, Quantization Error Reconstruction, Low-rank Compensation, QPEFT, Rank Budget Allocation
 
 ## TL;DR
-The authors propose SRR (Structured Residual Reconstruction), which explicitly splits the fixed low-rank budget $r$ used for compensating quantization residuals in QER (Quantization Error Reconstruction) into two parts: "preserving $k$ principal singular directions before quantization" and "fitting residuals with $r-k$ ranks." A closed-form criterion requiring only a one-shot random probe is provided to select $k^\star$ per layer, consistently outperforming LQER/QERA in 2/3-bit PTQ and QPEFT.
+The authors propose SRR (Structured Residual Reconstruction), which explicitly splits the fixed low-rank budget $r$ in Quantization Error Reconstruction (QER) into two parts: "preserving $k$ principal singular directions before quantization" and "fitting the residual with the remaining $r-k$ rank". Using a closed-form criterion based on a one-shot random probe to select $k^\star$ per layer, SRR consistently outperforms LQER/QERA in 2/3-bit PTQ and QPEFT.
 
 ## Background & Motivation
 
-**Background**: When low-bit PTQ compresses LLM weights to 3/2-bit, accuracy drops significantly. The mainstream remedy is QER: approximating weights as $\mathbf{W}\approx \mathbf{Q}+\mathbf{L}\mathbf{R}$, where $\mathbf{Q}=\mathcal{Q}(\mathbf{W})$ is the direct quantization result, and $\mathbf{L}\mathbf{R}$ is a correction term of rank $\le r$ to restore quantization errors. Representative methods like ZeroQuant-V2, LQER, and QERA perform truncated SVD in the scaling space $\mathbf{S}\mathbf{W}$ using a diagonal scaling matrix $\mathbf{S}$ derived from calibration activations.
+**Background**: When LLM weights are compressed to 3/2-bit via low-bit PTQ, accuracy significantly drops. The mainstream remedy is QER, which approximates weights as $\mathbf{W}\approx \mathbf{Q}+\mathbf{L}\mathbf{R}$, where $\mathbf{Q}=\mathcal{Q}(\mathbf{W})$ is the direct quantization result and $\mathbf{L}\mathbf{R}$ is a correction term with rank $\le r$ to restore quantization error. Methods like ZeroQuant-V2, LQER, and QERA follow this path, often performing truncated SVD in a scaled space $\mathbf{S}\mathbf{W}$ using a diagonal scaling matrix $\mathbf{S}$ derived from calibrated activations.
 
-**Limitations of Prior Work**: Existing methods allocate the entire rank budget $r$ to fitting the residual $\mathbf{S}(\mathbf{W}-\mathbf{Q})$. However, in low-bit regimes, quantization errors are usually dense and high-rank, whereas $\mathbf{S}\mathbf{W}$ itself is truly "low-rank"—transformer weights are highly anisotropic in the activation-scaled space, with energy concentrated in a few principal singular directions. Consequently, quantization first destroys these high-energy directions, leaving "dirty" high-rank residuals for the limited rank budget to fix, leading to suboptimal reconstruction.
+**Limitations of Prior Work**: Existing methods allocate the entire rank budget $r$ to fitting the residual $\mathbf{S}(\mathbf{W}-\mathbf{Q})$. However, in low-bit regimes, quantization error is typically dense and high-rank, while $\mathbf{S}\mathbf{W}$ itself is actually "low-rank"—Transformer weights in activation-scaled space are highly anisotropic, with energy concentrated in a few principal singular directions. Consequently, quantization first destroys these high-energy directions, leaving a noisy, high-rank residual that the limited rank budget struggles to reconstruct.
 
-**Key Challenge**: The "use case" of the rank budget is default-locked to "compensating residuals." In reality, a rank budget can be used more efficiently in two ways: either preserving the principal subspace before quantization (structure preservation) or reconstructing errors after quantization (error reconstruction). Which is more cost-effective depends on the specific spectral shape of the layer.
+**Key Challenge**: The "usage" of the rank budget is locked into "residual compensation" by default. In reality, a rank budget can be used more efficiently in two ways: either preserving the principal subspace before quantization (structure preservation) or reconstructing errors after quantization (error reconstruction). Which usage is more cost-effective depends on the spectral shape of the specific layer.
 
-**Goal**: Given a fixed rank budget $r$, this paper answers two questions: (i) whether a unified framework exists to "preserve $k$-dim principal structure, then quantize, then reconstruct residuals with $r-k$ dims"; (ii) how to select the optimal $k$ per layer/matrix without exhaustive search?
+**Goal**: Given a fixed rank budget $r$, this work aims to answer two questions: (i) whether there exists a unified framework for "preserving $k$ dimensions of structure, quantizing, and then reconstructing the residual with $r-k$ dimensions"; and (ii) how to select the optimal $k$ per layer and per matrix without brute-force enumeration.
 
-**Key Insight**: The authors treat the singular spectrum shape of $\mathbf{S}\mathbf{W}$ as a "prior signal"—faster spectral decay and more concentrated energy indicate the rank is better spent on preservation; flatter decay favors residual reconstruction. Combined with an "approximate isotropic quantization noise" assumption, the selection of $k$ is formulated as a minimization of $\rho_k(\mathbf{S}\mathbf{W})\cdot\rho_{r-k}(\mathbf{S}\mathbf{E})$, where $\rho_p(\mathbf{A})$ is the energy ratio remaining after rank-$p$ truncation, and $\mathbf{E}$ is a simple $\mathcal{U}[-1,1]$ random matrix proxy.
+**Key Insight**: The authors treat the singular spectrum shape of $\mathbf{S}\mathbf{W}$ as a "prior signal"—the faster the spectral decay and more concentrated the energy, the more valuable it is to spend the rank on preservation; the flatter the decay, the more rank should be reserved for the residual. Combined with the assumption that quantization noise is approximately isotropic, the choice of $k$ can be formulated as minimizing $\rho_k(\mathbf{S}\mathbf{W})\cdot\rho_{r-k}(\mathbf{S}\mathbf{E})$, where $\rho_p(\mathbf{A})$ is the energy ratio of the tail after rank-$p$ truncation, and $\mathbf{E}$ is a simple $\mathcal{U}[-1,1]$ random matrix proxy.
 
-**Core Idea**: Reformulate QER into a three-step "Preserve-Quantize-Reconstruct" process ($\mathbf{W}\approx \mathbf{L}^{(1)}\mathbf{R}^{(1)} + \mathbf{Q} + \mathbf{L}^{(2)}\mathbf{R}^{(2)}$) and solve for the optimal rank split $k^\star$ using a one-shot random probe.
+**Core Idea**: Reformulating QER into a three-step "Preserve-Quantize-Reconstruct" process ($\mathbf{W}\approx \mathbf{L}^{(1)}\mathbf{R}^{(1)} + \mathbf{Q} + \mathbf{L}^{(2)}\mathbf{R}^{(2)}$) and determining the optimal rank split $k^\star$ using a one-shot random probe.
 
 ## Method
 
 ### Overall Architecture
-SRR is a plug-and-play, training-free PTQ post-processing method. For each linear layer weight $\mathbf{W}\in\mathbb{R}^{m\times n}$ and its activation scaling matrix $\mathbf{S}$, given a quantizer $\mathcal{Q}$ and total rank budget $r$, SRR executes four steps: (1) Sample a random matrix $\mathbf{E}_{ij}\sim\mathcal{U}[-1,1]$ and determine the rank split via $k^\star=\arg\min_k \rho_k(\mathbf{S}\mathbf{W})\rho_{r-k}(\mathbf{S}\mathbf{E})$; (2) Extract the top-$k^\star$ singular components of $\mathbf{S}\mathbf{W}$ and map them back to the original space as $\mathbf{L}^{(1)}\mathbf{R}^{(1)}=\mathbf{S}^{-1}\text{SVD}_{k^\star}(\mathbf{S}\mathbf{W})$; (3) Quantize only the remaining components $\mathbf{Q}=\mathcal{Q}(\mathbf{W}-\mathbf{L}^{(1)}\mathbf{R}^{(1)})$; (4) Fit the induced quantization error $\mathbf{E}_k=\mathbf{W}-\mathbf{L}^{(1)}\mathbf{R}^{(1)}-\mathbf{Q}$ in the scaling space using the remaining $r-k^\star$ ranks to obtain $\mathbf{L}^{(2)}\mathbf{R}^{(2)}=\mathbf{S}^{-1}\text{SVD}_{r-k^\star}(\mathbf{S}\mathbf{E}_k)$. The final output concatenates the low-rank blocks into $\mathbf{L}, \mathbf{R}$, maintaining the inference form $\widehat{\mathbf{W}}=\mathbf{Q}+\mathbf{L}\mathbf{R}$, which is fully compatible with existing QER inference kernels.
+SRR is a plug-and-play, training-free PTQ post-processing method. For each linear layer weight $\mathbf{W}\in\mathbb{R}^{m\times n}$ and its activation scaling matrix $\mathbf{S}$, given a quantizer $\mathcal{Q}$ and a total rank budget $r$, SRR follows four steps: (1) Sample a random matrix $\mathbf{E}_{ij}\sim\mathcal{U}[-1,1]$ and determine the rank split $k^\star=\arg\min_k \rho_k(\mathbf{S}\mathbf{W})\rho_{r-k}(\mathbf{S}\mathbf{E})$; (2) Extract the top-$k^\star$ singular components of $\mathbf{S}\mathbf{W}$ and map them back to the original space to get $\mathbf{L}^{(1)}\mathbf{R}^{(1)}=\mathbf{S}^{-1}\mathrm{SVD}_{k^\star}(\mathbf{S}\mathbf{W})$; (3) Quantize only the remaining components $\mathbf{Q}=\mathcal{Q}(\mathbf{W}-\mathbf{L}^{(1)}\mathbf{R}^{(1)})$; (4) Use the remaining $r-k^\star$ rank to fit the induced quantization error $\mathbf{E}_k=\mathbf{W}-\mathbf{L}^{(1)}\mathbf{R}^{(1)}-\mathbf{Q}$ in the scaled space, obtaining $\mathbf{L}^{(2)}\mathbf{R}^{(2)}=\mathbf{S}^{-1}\mathrm{SVD}_{r-k^\star}(\mathbf{S}\mathbf{E}_k)$. Finally, the two low-rank blocks are concatenated into $\mathbf{L},\mathbf{R}$. The inference form remains $\widehat{\mathbf{W}}=\mathbf{Q}+\mathbf{L}\mathbf{R}$, which is fully compatible with existing QER kernels.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    A["Input: Weight W, Scaling S<br/>Quantizer Q, Rank Budget r"] --> B["Closed-form k selection<br/>One-shot random probe E, minimize<br/>Preservation Energy Ratio × Residual Energy Ratio → k*"]
+    A["Input: Weight W, Activation Scaling S<br/>Quantizer Q, Total Rank Budget r"] --> B["Closed-form k Selection Criterion<br/>Sample random probe E, minimize:<br/>Preservation energy ratio × Residual energy ratio → Determine k*"]
     B --> C
-    subgraph C["Preserve-Quantize-Reconstruct Parameterization"]
+    subgraph C["Preserve-Quantize-Reconstruct Parameterization (Unified Framework)"]
         direction TB
-        C1["Preserve: Take top-k* directions of SW<br/>Map back to L¹R¹"] --> C2["Quantize: Q = Q(W − L¹R¹)<br/>Quantize only the remainder"]
-        C2 --> C3["Reconstruct: Use remaining r−k* ranks<br/>Fit induced residuals for L²R²"]
+        C1["Preserve: Take top-k* singular directions of SW<br/>Map back to original space as L¹R¹"] --> C2["Quantize: Q = Quantize(W − L¹R¹)<br/>Quantize only the residual after structure removal"]
+        C2 --> C3["Reconstruct: Use remaining r−k* rank<br/>to fit induced quantization residual as L²R²"]
     end
-    C --> D["Output Ŵ = Q + LR<br/>Compatible with QER kernels"]
-    D -->|Downstream Fine-tuning| E["Two-stage QPEFT Extension<br/>Freeze Q, Init Adapter as LR<br/>Decouple Preservation Gradients via γ"]
+    C --> D["Output Ŵ = Q + LR<br/>Compatible with existing QER inference kernels"]
+    D -->|Downstream Fine-tuning| E["Two-stage QPEFT Extension<br/>Freeze Q, initialize adapter as LR<br/>Decouple gradients for preserved components via γ"]
 ```
 
 ### Key Designs
 
-**1. Differentiable "Preserve-Quantize-Reconstruct" Parameterization**
+**1. Differentiable "Preserve-Quantize-Reconstruct" Parameterization: Exposing Implicit Rank Usage**
 
-Traditional QER defaults to spending the entire $r$ on residuals, implicitly making the decision for the user. SRR explicitly parameterizes this as a tunable split point $k\in\{0,\dots,r\}$. When $k=0$, it reverts to traditional QER (ZeroQuant-V2/LQER/QERA); when $k=r$, it reverts to structure-preserving schemes like LQ-LoRA/SVDQuant. Intermediate values occupy a previously unstudied region. Formally, this minimizes $\min_{0\le k\le r}\|\mathbf{S}(\mathbf{W}-(\Delta_1+\mathcal{Q}(\mathbf{W}-\Delta_1)+\Delta_2))\|_F$, where $\Delta_1$ is the rank-$k$ preserved term and $\Delta_2$ is the rank-$(r-k)$ residual correction. By the Eckart-Young theorem, for a given $k$, optimal $\Delta_1, \Delta_2$ reduce to truncated SVDs, leaving $k$ as the sole scalar degree of freedom. This decomposition is necessary because optimal $k$ values vary drastically across different projection matrices (Query, Output, MLP up/down).
+Traditional QER defaults to spending the entire rank budget $r$ on the residual, implicitly making the decision for the user. SRR makes this explicit via a tunable split point $k\in\{0,\dots,r\}$. $k=0$ reduces to traditional QER (ZeroQuant-V2/LQER/QERA), and $k=r$ reduces to structure-first methods like LQ-LoRA/SVDQuant. This formulation minimizes the reconstruction error in scaled space: $\min_{0\le k\le r}\|\mathbf{S}(\mathbf{W}-(\Delta_1+\mathcal{Q}(\mathbf{W}-\Delta_1)+\Delta_2))\|_F$, where $\Delta_1$ is the rank-$k$ preservation term and $\Delta_2$ is the rank-$(r-k)$ residual correction. By the Eckart-Young theorem, the optimal $\Delta_1,\Delta_2$ for a given $k$ are determined by truncated SVDs, leaving $k$ as the only scalar degree of freedom. This split is necessary because optimal $k$ values vary significantly across different projection matrices (Query, Output, MLP up/down) within the same layer.
 
-**2. Closed-form $k$ Selection via "Approximate Constant Quantization Noise Ratio"**
+**2. Closed-form $k$ Selection Criterion via "Constant Quantization Noise Ratio": One-shot Random Probe**
 
-To avoid expensive $O(r)$ SVD computations for every candidate $k$, authors simplify the loss $\mathcal{L}(k)^2=\|\mathbf{S}\mathbf{E}_k\|_F^2\cdot\rho_{r-k}(\mathbf{S}\mathbf{E}_k)$. Assumption 1 posits that the quantization error energy ratio is approximately constant $\eta_\mathcal{Q}$, thus $\|\mathbf{S}\mathbf{E}_k\|_F^2\approx \eta_\mathcal{Q}^2\rho_k(\mathbf{S}\mathbf{W})\|\mathbf{S}\mathbf{W}\|_F^2$. Assumption 2 posits that the normalized spectrum of quantization residuals is roughly independent of $k$, allowing a random matrix $\mathbf{E}\sim\mathcal{U}[-1,1]$ to serve as a proxy for the empirical $\mathbf{E}_k$. The resulting criterion $k^\star=\arg\min_k \rho_k(\mathbf{S}\mathbf{W})\rho_{r-k}(\mathbf{S}\mathbf{E})$ only requires one SVD for $\mathbf{S}\mathbf{W}$ and one for the random $\mathbf{E}$. This proxy aligns closely with real error curves due to spectral concentration in high-dimensional transformer layers.
+To avoid $O(r)$ expensive computations from brute-force enumeration of $k$, the authors simplify the loss $\mathcal{L}(k)^2=\|\mathbf{S}\mathbf{E}_k\|_F^2\cdot\rho_{r-k}(\mathbf{S}\mathbf{E}_k)$. Two assumptions are used: (1) The quantization error energy ratio is approximately a constant $\eta_\mathcal{Q}$, meaning $\|\mathbf{S}\mathbf{E}_k\|_F^2\approx \eta_\mathcal{Q}^2\rho_k(\mathbf{S}\mathbf{W})\|\mathbf{S}\mathbf{W}\|_F^2$; (2) The normalized spectrum of the quantization residual is approximately independent of $k$, allowing a random matrix $\mathbf{E}\sim\mathcal{U}[-1,1]$ to substitute for the real $\mathbf{E}_k$. The resulting criterion $k^\star=\arg\min_k \rho_k(\mathbf{S}\mathbf{W})\rho_{r-k}(\mathbf{S}\mathbf{E})$ only requires calculating the singular spectrum of $\mathbf{S}\mathbf{W}$ and one random $\mathbf{E}$. This proxy is highly consistent with real reconstruction error curves (Figure 2 in the paper) and is stable across different random probes due to the concentration of singular spectra in large dimensions.
 
-**3. Two-stage QPEFT Initialization + Gradient Decay Decoupling**
+**3. Two-stage QPEFT Initialization + Gradient Decay Decoupling: Stable Preservation and Active Reconstruction**
 
-SRR extends naturally to Quantized PEFT by using $\mathbf{Q}$ as the frozen backbone and initializing the LoRA-style adapter as $\mathbf{L}\mathbf{R}=\mathbf{L}^{(1)}\mathbf{R}^{(1)}+\mathbf{L}^{(2)}\mathbf{R}^{(2)}$. However, the singular values of preserved components $\mathbf{L}^{(1)}\mathbf{R}^{(1)}$ are much larger than residual components $\mathbf{L}^{(2)}\mathbf{R}^{(2)}$, causing training instability. The solution is to multiply preserved gradients by a decay coefficient $\gamma\in(0,1)$ (e.g., $0.1$ or $0.5$): $\nabla_{\mathbf{L}^{(1)}\mathbf{R}^{(1)}}\mathcal{L}\leftarrow \gamma\nabla_{\mathbf{L}^{(1)}\mathbf{R}^{(1)}}\mathcal{L}$. This encourages the preserved directions (carrying original backbone semantics) to stay stable while allowing the residual directions to learn task-specific features.
+SRR naturally extends to Quantized PEFT by initializing LoRA-style adapters with $\mathbf{L}\mathbf{R}=\mathbf{L}^{(1)}\mathbf{R}^{(1)}+\mathbf{L}^{(2)}\mathbf{R}^{(2)}$. However, the singular values of preserved components $\mathbf{L}^{(1)}\mathbf{R}^{(1)}$ are much larger than those of residual components $\mathbf{L}^{(2)}\mathbf{R}^{(2)}$, leading to unbalanced learning. The authors introduce a decay coefficient $\gamma \in (0, 1)$ for the preserved component gradients: $\nabla_{\mathbf{L}^{(1)}\mathbf{R}^{(1)}}\mathcal{L}\leftarrow \gamma\nabla_{\mathbf{L}^{(1)}\mathbf{R}^{(1)}}\mathcal{L}$, while residual gradients remain unchanged. This ensures that preservation directions representing original semantic structures stay stable, while residual directions are free to adapt to downstream tasks.
 
 ### Loss & Training
-PTQ is training-free, utilizing SVD, quantization, and random probes. QPEFT uses standard downstream task losses (e.g., cross-entropy/Pearson for GLUE) with the addition of gradient scaling $\gamma$. Randomized SVD is used for all SVD operations to compute only top-$r$ values efficiently.
+The PTQ stage requires no training and is performed via SVD, quantization, and random probes. The QPEFT stage uses standard downstream task losses (e.g., cross-entropy for GLUE) with the addition of the gradient scaling $\gamma$. All SVDs use randomized SVD for efficiency.
 
 ## Key Experimental Results
 
 ### Main Results
-SRR was compared across 6 models (TinyLlama 1.1B, Gemma-2 2B, LLaMA-2 7B/13B, LLaMA-3.1 8B/70B) and two rank budgets ($r=32, 64$). Representative WikiText2 PPL results (3-bit MXINT):
+Systematic comparisons were conducted across 6 models (TinyLlama 1.1B to LLaMA-3.1 70B) and two rank budgets ($r=32, 64$). Representative data (WikiText2 PPL ↓, 3-bit MXINT quantization):
 
 | Model | Rank | QER Baseline (QERA-exact) | + SRR | Gain |
 |------|----|-----------------------|-------|------|
@@ -85,57 +85,60 @@ SRR was compared across 6 models (TinyLlama 1.1B, Gemma-2 2B, LLaMA-2 7B/13B, LL
 | LLaMA-3.1 8B | $r=64$ | $11.00$ | $10.78$ | $-0.22$ |
 | LLaMA-3.1 70B | $r=32$ | $6.68$ | $6.63$ | $-0.05$ |
 
-SRR consistently reduces perplexity, with most significant gains observed in smaller models and the 3-bit regime. For Zero-shot (average of 5 tasks, $r=64$, 3-bit):
-- LLaMA-3.1 8B: $60.79\%$ (+1.74% over QERA).
-- Gemma-2 2B: $54.38\%$ (+2.23% over QERA).
+SRR consistently reduces perplexity across all combinations; gains are most significant for smaller models and the 3-bit regime. Zero-shot average accuracy (5 tasks, $r=64$, 3-bit):
+
+| Model | BF16 | w-only | QERA-exact | + SRR |
+|------|------|--------|-----------|-------|
+| Gemma-2 2B | $59.26$ | $45.12$ | $52.15$ | $54.38$ |
+| LLaMA-2 7B | $58.90$ | $52.50$ | $55.28$ | $56.56$ |
+| LLaMA-3.1 8B | $67.34$ | $51.17$ | $59.05$ | $60.79$ |
 
 ### Ablation Study
 
-| Configuration | Key Metric | Observation |
+| Configuration | Key Metric | Description |
 |------|---------|------|
-| QER ($k=0$) | Baseline PPL | Suboptimal for anisotropic layers. |
-| LQ-LoRA style ($k=r$) | Slightly worse than $k=0$ | Neglects residual fitting. |
-| One-shot Random Probe | Difference to optimal $k^\star \le \pm 1$ | Extremely stable due to spectral concentration. |
-| QPEFT w/o $\gamma$ | Training unstable | Backbone directions are over-updated. |
-| QPEFT $\gamma \in \{0.1, 0.5\}$ | Consistently better than baseline | Robust to $\gamma$ choice, gain primarily from initialization. |
+| QER ($k=0$) | baseline PPL | All rank to residual (standard practice) |
+| LQ-LoRA-style ($k=r$) | Worse than $k=0$ | All rank to structure (no residual correction) |
+| SRR with one-shot probe | Within $\pm 1$ of optimal $k^\star$ | One-shot spectral proxy is stable |
+| QPEFT w/o gradient decay $\gamma$ | Unstable training | Preserved directions are washed out |
+| QPEFT $\gamma\in\{0.1, 0.5\}$ | Consistently better than baseline | Robust to $\gamma$, gains from initialization |
 
 ### Key Findings
-- The core value is "knowing how much to preserve" per layer. Optimal $k^\star$ varies significantly across matrices, and layer-wise adaptation is critical.
-- One-shot random probes work because high-dimensional transformer layers yield concentrated singular spectra for random matrices.
-- In QPEFT, the $+5.9$ pp gain on GLUE (2-bit) stems from SRR's structural preservation during initialization, whereas gradient decay acts as a necessary "anti-drift" stabilizer.
+- The key is not just "how much to preserve," but "knowing how much to preserve for each layer"—layer-wise adaptation is core to SRR's success.
+- One-shot random probes work because Transformer layer dimensions are large enough for random matrix singular spectra to concentrate.
+- The $5.9$ pp GLUE gain in QPEFT primarily stems from the fidelity of SRR initialization to the original backbone structure, with gradient decay acting as a stabilizer against drift.
 
 ## Highlights & Insights
-- Parameterizing an "apparent single-purpose" resource (rank budget) and solving it via spectral energy ratios is a powerful template. This "exposing implicit design choices" approach is transferable to other domains like KV cache ratios or expert counts in MoE.
-- The use of random matrices as noise proxies leverages the Marchenko-Pastur concentration phenomena.
-- SRR is compatible with existing QER inference kernels with zero cost, making it highly deployment-friendly.
+- Exposing an "implicit" resource allocation (rank budget) and solving it with a closed-form spectral ratio is a powerful template applicable to other areas like MoE expert allocation or KV cache retention.
+- Using random matrices as a proxy for quantization noise spectra leverages the Marchenko-Pastur concentration of measure. LLM dimensions are well within this concentration zone.
+- Zero-cost engineering deployment: The inference form $\widehat{\mathbf{W}}=\mathbf{Q}+\mathbf{L}\mathbf{R}$ is identical to existing QER kernels, requiring only a change in initialization scripts.
 
 ## Limitations & Future Work
-- Assumptions regarding noise energy ratios may falter in extreme 1-bit regimes.
-- The scaling matrix $\mathbf{S}$ still depends on calibration data; future work could investigate SRR's stability under distribution shifts.
-- Gradient decay for QPEFT is a simple heuristic; second-order or preconditioned optimizers might eliminate the need for hyperparameter $\gamma$.
-- The study focuses on weights; whether this split logic applies to activation or KV quantization remains unexplored.
+- The constant energy ratio assumption might fail in extreme 1-bit regimes; the paper only evaluates down to 2-bit.
+- Scaling matrix $\mathbf{S}$ still depends on calibration data; ensuring SRR robustness under calibration distribution drift is a potential future direction.
+- Gradient decay for QPEFT is a simple heuristic; second-order or preconditioned optimizers might remove the need for hyperparameter $\gamma$.
 
 ## Related Work & Insights
-- **vs. LQER/QERA**: These define $k=0$, focusing solely on residuals. SRR shows this is suboptimal for highly anisotropic layers.
-- **vs. LQ-LoRA/SVDQuant**: These define $k=r$, focusing solely on structure. SRR demonstrates that intermediate split points provide a better balance.
-- **vs. LoftQ/QLoRA**: SRR's closed-form initialization outperforms iterative QER methods in 2-bit QPEFT, suggesting initialization quality is more critical than iteration count.
+- **vs LQER / QERA**: These occupy the $k=0$ extreme (residual only). SRR shows this is sub-optimal for highly anisotropic layers and provides a training-free upgrade.
+- **vs LQ-LoRA / SVDQuant**: These occupy the $k=r$ extreme (structure only). SRR demonstrates that this is sub-optimal for layers with high-rank residuals.
+- **vs LoftQ / QLoRA**: SRR shows that initialization quality is more critical than iteration count, achieving significant gains with a one-shot closed-form initialization.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Explicitly parameterizing rank split is a simple yet impactful perspective.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Broad coverage across models and downstream tasks.
-- Writing Quality: ⭐⭐⭐⭐ Clear logical flow from motivation to algorithmic derivation.
-- Value: ⭐⭐⭐⭐ High engineering utility with zero modification to inference kernels.
+- Novelty: ⭐⭐⭐⭐ Explicitly parameterizing the rank budget split is simple but effective.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive coverage across model scales, ranks, and downstream tasks.
+- Writing Quality: ⭐⭐⭐⭐ Clear logical flow from motivation to algorithmic formulation.
+- Value: ⭐⭐⭐⭐ Highly practical for deployment with minimal overhead and significant improvements.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 
 - [\[ICML 2026\] Compress then Merge: From Multiple LoRAs into One Low-Rank Adapter](compress_then_merge_from_multiple_loras_into_one_low-rank_adapter.md)
-- [\[CVPR 2026\] Quant Experts: Token-aware Adaptive Error Reconstruction with Mixture of Experts for Large Vision-Language Models Quantization](../../CVPR2026/model_compression/quant_experts_token_aware_vlm_quantization.md)
 - [\[ICML 2026\] ProjQ: Project-and-Quantize for Adapter-Aware LLM Compression](projq_project-and-quantize_for_adapter-aware_llm_compression.md)
 - [\[ICML 2026\] GEMQ: Global Expert-Level Mixed-Precision Quantization for MoE LLMs](gemq_global_expert-level_mixed-precision_quantization_for_moe_llms.md)
+- [\[NeurIPS 2025\] Quantization Error Propagation: Revisiting Layer-Wise Post-Training Quantization](../../NeurIPS2025/model_compression/quantization_error_propagation_revisiting_layer-wise_post-training_quantization.md)
 - [\[ICML 2026\] NeUQI: Near-Optimal Uniform Quantization Parameter Initialization for Low-Bit LLMs](neuqi_near-optimal_uniform_quantization_parameter_initialization_for_low-bit_llm.md)
 
 </div>

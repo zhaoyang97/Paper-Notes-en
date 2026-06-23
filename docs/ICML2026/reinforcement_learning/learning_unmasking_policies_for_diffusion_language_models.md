@@ -2,13 +2,13 @@
 title: >-
   [Paper Note] Learning Unmasking Policies for Diffusion Language Models
 description: >-
-  [ICML 2026][Reinforcement Learning][GRPO] This paper explicitly models the decoding process of masked diffusion language models (dLLMs) as an MDP. It employs GRPO to train a single-layer Transformer policy—comprising less than 0.01% of the base model's parameters—that takes only token confidence as input to adaptively determine which positions to unmask at eac
+  [ICML 2026][Reinforcement Learning][GRPO] This paper explicitly models the decoding process of masked diffusion language models (dLLMs) as an MDP. Using GRPO, it trains a single-layer Transformer policy—comprising less than 0.01% of the base model's parameters and taking only token confidence as input—to adaptively decide which positions to unmask at each step
 tags:
   - ICML 2026
   - Reinforcement Learning
   - GRPO
 date: 2026-05-08
-content_hash: f126126b4e840a17
+content_hash: a07faeb452e003f2
 ---
 # Learning Unmasking Policies for Diffusion Language Models
 
@@ -16,111 +16,110 @@ content_hash: f126126b4e840a17
 **arXiv**: [2512.09106](https://arxiv.org/abs/2512.09106)  
 **Code**: https://github.com/apple/ml-rl-dllm  
 **Area**: Reinforcement Learning / Diffusion Language Models / GRPO  
-**Keywords**: dLLM sampling, unmasking policy, GRPO, adaptive computation, Bernoulli policy
+**Keywords**: dLLM Sampling, Unmasking Policy, GRPO, Adaptive Computation, Bernoulli Policy  
 
 ## TL;DR
-This paper explicitly models the decoding process of masked diffusion language models (dLLMs) as an MDP. It employs GRPO to train a single-layer Transformer policy—comprising less than 0.01% of the base model's parameters—that takes only token confidence as input to adaptively determine which positions to unmask at each step. This approach matches manual heuristics like Fast-dLLM in semi-AR settings while significantly outperforming them in full-diffusion settings, demonstrating transferability across models, tasks, and sequence lengths.
+This paper explicitly models the decoding process of masked diffusion language models (dLLMs) as an MDP. Using GRPO, it trains a single-layer Transformer policy—comprising less than 0.01% of the base model's parameters and taking only token confidence as input—to adaptively decide which positions to unmask at each step. In the semi-AR setting, it matches manual heuristics like Fast-dLLM; in the full-diffusion setting, it significantly outperforms them and demonstrates transferability across models, tasks, and sequence lengths.
 
 ## Background & Motivation
-**Background**: Masked diffusion large language models (dLLMs), represented by LLaDA and Dream, have matched the performance of autoregressive models of similar scale on downstream tasks. They hold high promise for increased throughput due to their ability to unmask multiple positions in parallel. Works like Fast-dLLM have pushed inference speeds to be comparable to or faster than LLaMA using "confidence thresholding" heuristics.
+**Background**: Masked diffusion large language models (dLLMs) such as LLaDA and Dream have matched the performance of autoregressive models of similar scale on downstream tasks. These models promise higher throughput due to their ability to unmask multiple positions in parallel. Works like Fast-dLLM have pushed inference speeds to parity with or beyond LLaMA using heuristic-based sampling, such as "confidence over threshold."
 
-**Limitations of Prior Work**: Heuristic rules perform well only in semi-AR configurations (sequential block generation). In full-diffusion settings without block constraints, their performance often falls below random unmasking. Furthermore, they are extremely sensitive to the confidence threshold $\lambda$ and block length $BL$, requiring manual tuning for each dataset.
+**Limitations of Prior Work**: Manual heuristics perform well only in semi-AR (sequential chunk generation) configurations. When constraints on blocks are removed for full-diffusion, their performance drops below random unmasking. Furthermore, they are highly sensitive to the confidence threshold $\lambda$ and block length $BL$, requiring per-dataset manual tuning.
 
-**Key Challenge**: Unmasking is essentially a sequential decision-making problem—deciding which positions to reveal and at which step affects both final accuracy and the total step count $T-\hat T$. Manual rules approximate this high-dimensional policy using a single scalar threshold, which collapses in fully parallel settings where "generate within block, then switch blocks" is not allowed.
+**Key Challenge**: Unmasking is essentially a sequential decision-making problem—deciding which positions to reveal at what step simultaneously affects final accuracy and the total number of steps $T-\hat T$. Manual rules approximate this high-dimensional policy using a single scalar threshold, which fails in fully parallel settings that do not allow "first generating within a block, then switching blocks."
 
-**Goal**: (i) Formalize unmasking as an MDP; (ii) Learn a lightweight policy to automatically balance accuracy and step count; (iii) Verify the policy's transferability across models, tasks, and lengths.
+**Goal**: (i) Formalize unmasking as an MDP; (ii) learn a lightweight policy to automatically balance accuracy and step count; (iii) verify that the policy can transfer across models, tasks, and lengths.
 
-**Key Insight**: Since the base dLLM already predicts a distribution $p_t^k$ for each position, treating it as the "environment" eliminates the need to train a separate world model. One only needs to learn a very small "gateway network" on the maximum confidence vector $c_t^k := \max_v p_t^k(v)$, making decision overhead negligible.
+**Key Insight**: Since the base dLLM already predicts a distribution $p_t^k$ for each position, treating it as the "environment" eliminates the need to train a separate world model. One only needs to train an extremely small "gateway network" on the maximum confidence vector $c_t^k:=\max_v p_t^k(v)$, making decision overhead negligible.
 
-**Core Idea**: Use the dLLM as the environment and a small policy as the agent. Train a Bernoulli-style unmasking policy via GRPO to let the model learn when and how much to reveal.
+**Core Idea**: Use the dLLM as the environment and a small policy as the agent. Train a Bernoulli-style unmasking policy via GRPO, allowing the model to learn "when to reveal and how much to reveal."
 
 ## Method
 
 ### Overall Architecture
-The pipeline consists of three components: (1) Formulating dLLM sampling as an MDP—the state is the partially decrypted sequence $(\bm x, \bm y_t)$, the action is a $\{0,1\}^L$ unmasking indicator vector $\bm u_t$, the transition is performed by the original dLLM, and rewards are given only upon completion. (2) The policy $\pi_\phi$ is a single-layer Transformer that takes $(\bm c_t, \bm m_t, t)$ as input and outputs logits $\bm b_t$. These are passed through a sigmoid to obtain Bernoulli parameters $s_t^k=\sigma(b_t^k)$, followed by independent sampling for each position. (3) Training via GRPO: multiple rollouts ($G$) are run for the same prompt; advantages are calculated by subtracting the group mean from the reward and backpropagated to each step's policy likelihood. The base dLLM parameters remain frozen throughout. The entire pipeline forms an "environment-policy" loop: the dLLM environment outputs confidence, the lightweight policy samples unmasking actions, and the feedback advances the dLLM decoding until completion, at which point the reward is calculated and used to update the policy.
+The pipeline consists of three parts: (1) Formulating dLLM sampling as an MDP—where the state consists of the partially unmasked sequence $(\bm x, \bm y_t)$, the action is an unmasking indicator vector $\bm u_t \in \{0,1\}^L$, transitions are handled by the original dLLM, and rewards are given only upon sequence completion; (2) The policy $\pi_\phi$ is a single-layer Transformer that inputs $(\bm c_t, \bm m_t, t)$ and outputs logits $\bm b_t$. These are passed through a sigmoid to obtain Bernoulli parameters $s_t^k=\sigma(b_t^k)$, from which unmasking decisions are sampled independently per position; (3) Training utilizes GRPO: $G$ rollouts are generated for the same prompt, and rewards minus the group mean yield the advantage for backpropagation to the policy likelihood at each step. The base dLLM parameters remain frozen throughout. The entire pipeline forms an "environment-policy" loop: the dLLM environment outputs confidence scores, the lightweight policy samples unmasking actions, which in turn advance the dLLM decoding until completion, at which point rewards are calculated and fed back to update the policy.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    A["Input: prompt x + all-mask sequence y_T"] --> B["Base dLLM Forward (Frozen)<br/>Obtain per-position distribution p_t^k"]
-    B --> C["Confidence as State<br/>c_t^k=max_v p_t^k(v) with mask m_t, step t<br/>→ Single-layer Transformer policy π_φ outputs logit b_t"]
-    C --> D["Bernoulli Dynamic Step Size<br/>s_t^k=σ(b_t^k), u_t^k~Ber(s_t^k)<br/>Independent decision to unmask or not"]
-    D -->|Masks remain| B
-    D -->|Fully unmasked (Final step T̂)| E
-    subgraph TRAIN["Multiplicative Reward + GRPO"]
+    A["输入：prompt x + 全掩码序列 y_T"] --> B["底座 dLLM 前向（参数冻结）<br/>得每位置预测分布 p_t^k"]
+    B --> C["置信度即状态<br/>c_t^k=max_v p_t^k(v) 加 mask m_t、步 t<br/>→ 单层 Transformer 策略 π_φ 输出 logit b_t"]
+    C --> D["Bernoulli 动态步长<br/>s_t^k=σ(b_t^k)，u_t^k~Ber(s_t^k)<br/>逐位置独立决定揭/不揭"]
+    D -->|仍有掩码位| B
+    D -->|全部揭完（终止步 T̂）| E
+    subgraph TRAIN["乘性奖励 + GRPO"]
         direction TB
-        E["Multiplicative Reward<br/>R = r·(1−(T−T̂)/T)^α, Incorrect answers get 0 advantage"] --> F["GRPO: G rollouts per prompt to calculate group advantage<br/>Final reward backpropagated to every step; update π_φ (dLLM fixed)"]
+        E["乘性奖励<br/>R = r·(1−(T−T̂)/T)^α，错答打回 0 优势"] --> F["GRPO：同 prompt G 条 rollout 算组内优势<br/>终步奖励回灌每步、更新 π_φ（dLLM 不动）"]
     end
 ```
 
 ### Key Designs
 
-**1. Confidence as State: Compressing the partially decrypted sequence into a length $L$ real-valued vector for the policy**
+**1. Confidence as State: Compressing the partially unmasked sequence into a length-$L$ real-valued vector for the policy**
 
-By treating the base dLLM (which predicts distributions $p_t^k$) as the environment, the need for a world model is bypassed. The policy makes decisions using an extremely lightweight "gateway" network. Specifically, policy input uses only the maximum token confidence $c_t^k:=\max_v p_t^k(v)$ for each position, a binary mask $\bm m_t$, and the time step $t$. The network is a single-layer Transformer with AdaLN, sized at $<0.01\%$ of the base parameters. Ablations demonstrate why "max is enough": feeding top-50 probabilities does not improve performance, and using hidden states leads to worse performance and training instability. The signal for "whether to unmask" is carried effectively by $c_t^k$ after the unembedding projection. This aligns with Fast-dLLM heuristics but delegates the confidence-usage strategy to learning, avoiding manual thresholds without adding computational overhead.
+The base dLLM already predicts distributions $p_t^k$ for each position. Treating it as the environment avoids training a separate world model, requiring the policy to make decisions on an extremely lightweight "gateway." Specifically, the policy input uses only the maximum token confidence $c_t^k:=\max_v p_t^k(v)$ for each position, combined with a binary mask $\bm m_t$ and time step $t$. The network is a single-layer Transformer with AdaLN, scaling to $<0.01\%$ of the base model's parameters. Ablations crucially show "why max is enough": feeding top-50 probabilities did not improve performance, and using hidden states resulted in inferior performance and training instability—the "reveal or not" signal is effectively carried by $c_t^k$ after the unembedding projection. This approach is rooted in the same logic as heuristics like Fast-dLLM (both monitor confidence), but delegates "how to use confidence" to learning to avoid manual thresholds without adding computational overhead.
 
-**2. Bernoulli Dynamic Steps: Making the unmasking count per step a learnable variable rather than a preset $K$ or fixed threshold**
+**2. Bernoulli Dynamic Steps: Making the number of revealed positions per step a learnable quantity rather than a preset $K$ or fixed threshold**
 
-Optimal unmasking counts vary significantly between semi-AR and full-diffusion settings and across steps. Neither a fixed $K$ nor a fixed threshold can generalize. Here, each position is independently sampled $u_t^k\sim \mathrm{Ber}(s_t^k)$. The analytical policy likelihood is $\pi_\phi(\bm u_t)=\prod_k (s_t^k)^{u_t^k}(1-s_t^k)^{1-u_t^k}$, avoiding approximations like Plackett-Luce. During inference, if $\bm u_t=\bm 0$, the system falls back to "unmasking only the position with the highest $s_t^k$" to prevent stalling. A policy temperature $\tau_\pi$ is introduced to adjust $s_t^k$ to $\sigma(b_t^k/\tau_\pi)$ as a "decisiveness" knob during testing. Compared to DCOLT/DiFFPO's fixed $K$ or threshold prediction, the Bernoulli formulation allows step sizes to be truly adaptive per position and per step while remaining expressive and lightweight.
+The optimal number of unmasked positions in semi-AR versus full-diffusion varies across positions and time; fixed $K$ or thresholds cannot satisfy both. Here, each position is sampled independently via $u_t^k\sim \mathrm{Ber}(s_t^k)$. The policy likelihood is analytically expressed as $\pi_\phi(\bm u_t)=\prod_k (s_t^k)^{u_t^k}(1-s_t^k)^{1-u_t^k}$, avoiding approximations like Plackett-Luce. During inference, if $\bm u_t=\bm 0$, the system falls back to "revealing the position with the largest $s_t^k$" to prevent deadlocks. A policy temperature $\tau_\pi$ is introduced, converting $s_t^k$ to $\sigma(b_t^k/\tau_\pi)$ to act as a "decisiveness" knob during testing. Compared to the fixed $K$ or threshold predictions in DCOLT/DiFFPO, the Bernoulli formulation allows the step size to be truly adaptive per step and per position while remaining lightweight and expressive.
 
-**3. Multiplicative Reward + GRPO: Encoding "correctness" and "speed" into a single scalar while avoiding reward hacking**
+**3. Multiplicative Reward + GRPO: Encoding accuracy and speed within a single scalar to avoid reward hacking**
 
-Initial policies tend to produce many errors. An additive penalty $r-\alpha(T-\hat T)/T$ might result in "faster incorrect answers" retaining positive advantages, causing the policy to collapse into unmasking everything at once regardless of correctness. Ours uses a multiplicative reward, issuing $R = r(\bm y, \bm y_{\hat T})\cdot (1-(T-\hat T)/T)^\alpha$ at the final step $\hat T$ (where $r$ is task correctness and higher $\alpha$ favors fewer steps). By multiplying the speed reward by the correctness mask, "fast but wrong" answers are reduced to 0 advantage. Training utilizes GRPO: dLLM temperature is fixed at $\tau=0$ to ensure group variance stems solely from the policy. Group advantage for $G$ trajectories is calculated as $A_t^g=R^g-\frac{1}{G}\sum_i R^i$, and final rewards are backpropagated to each step using PPO-style clipping. KL regularization is omitted since training starts from scratch.
+Policies trained from scratch often fail early tasks. If using additive penalties like $r-\alpha(T-\hat T)/T$, "fast wrong answers" could retain positive advantage, causing the policy to collapse into "revealing everything at once, regardless of accuracy." The authors switch to a multiplicative reward, issued only at the terminal step $\hat T$: $R = r(\bm y, \bm y_{\hat T})\cdot (1-(T-\hat T)/T)^\alpha$ (where $r$ is task accuracy, and larger $\alpha$ favors fewer steps). By multiplying the speed reward by the accuracy mask, "fast wrong answers" are immediately reduced to zero advantage. Training uses GRPO: the dLLM temperature $\tau=0$ is fixed to ensure intra-group variance originates only from the policy. Advantages $A_t^g=R^g-\frac{1}{G}\sum_i R^i$ are computed for $G$ trajectories per group, with terminal rewards distributed back to each step for PPO-style clipping. KL regularization is omitted since training begins from scratch.
 
 ### Loss & Training
-The GRPO objective is a PPO-style ratio $\rho_t^g = \pi_\phi(\bm u_t^g)/\pi_{\phi_\text{old}}(\bm u_t^g)$ with clipping. Likelihood calculations skip already unmasked positions. Base dLLMs used are LLaDA-8B-Instruct or Dream-7B-Instruct. Training data consists of approx. 15k samples each from GSM8K and MATH, one epoch with $BL=32$, and five separate trainings for each $\alpha\in\{10,3,1,0.3,0\}$. To mitigate insufficient exploration in full-diffusion ($BL=L=256$), "expert steering" is introduced: trajectories generated by Fast-dLLM in semi-AR settings are injected into the rollout pool to guide the policy out of local optima.
+The GRPO objective uses a clipped PPO-style ratio $\rho_t^g = \pi_\phi(\bm u_t^g)/\pi_{\phi_\text{old}}(\bm u_t^g)$, skipping already unmasked positions during likelihood calculation. Base dLLMs include LLaDA-8B-Instruct or Dream-7B-Instruct. Training data consists of approximately 15,000 samples each from GSM8K and MATH, with one epoch at $BL=32$ and five separate models trained for each $\alpha\in\{10,3,1,0.3,0\}$. To mitigate insufficient exploration in full-diffusion ($BL=L=256$), the authors introduce "expert steering": trajectories generated by Fast-dLLM under semi-AR are injected into the rollout pool to guide the policy out of local optima.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Dataset/Setting | Metric | Learned Policy | Fast-dLLM | Top-Confidence / Random |
+| Dataset/Setting | Metric | Learned Policy | Fast-dLLM | High-Confidence Sampling / Random |
 |--------|------|------|------|------|
-| GSM8K, $BL=32$ (semi-AR) | acc @ mid-NFE | Comparable to Fast-dLLM (~80% range) | Strong Baseline | Significantly Worse |
+| GSM8K, $BL=32$ (semi-AR) | acc @ mid-NFE | Comparable to Fast-dLLM (~80%) | Strong Baseline | Significantly worse |
 | GSM8K, $BL=L=256$ (full-diff) | acc @ ~12 NFEs | ~50% | ≤30% | ≤30% |
 | MATH-500, $BL=32$ | acc @ ~25 NFEs (β-scaled) | ~20% | ~10% | — |
-| MATH-500, $BL=256$ | full-diff Pareto | Leads throughout | Significant Drop | Significant Drop |
-| GSM8K, expert steering | acc @ mid-high NFE | ~80% (Matches best semi-AR) | — | — |
-| Model Transfer LLaDA→Dream | GSM8K acc | Near direct training on Dream | Baseline | — |
-| Length Transfer $L=256\to512$ | GSM8K acc | Minimal drop | Significant Baseline Drop | — |
+| MATH-500, $BL=256$ | full-diff Pareto | Leads throughout | Substantial drop | Substantial drop |
+| GSM8K, expert steering | acc @ mid-high NFE | ~80% (Matches semi-AR best) | — | — |
+| LLaDA→Dream Transfer | GSM8K acc | Near Dream-direct training | Baseline | — |
+| Length Transfer $L=256\to512$ | GSM8K acc | Almost no drop | Significant drop | — |
 
 ### Ablation Study
 
-| Configuration | Key Observation | Explanation |
+| Configuration | Key Phenomenon | Explanation |
 |------|---------|------|
 | Bernoulli vs. Dynamic Plackett-Luce | Similar performance | Bernoulli chosen for simpler implementation and closed-form likelihood |
-| Input $c_t^k$ vs. Top-50 Probs | $c_t^k$ slightly better | Finer-grained uncertainty did not yield gains |
-| Input $c_t^k$ vs. Hidden state $\bm h_t^k$ | Hidden states significantly worse + unstable | Key signals reside in confidence after unembedding projection |
-| Zeroing $t$, $\bm m_t$, or both | Accuracy drops in all; zeroing mask has largest impact | Both time and mask vectors contribute to decision-making |
-| Multiplicative vs. Additive Reward ($\alpha=1$) | Additive collapses to one-step reveal/error | Multiplicative reward prevents reward hacking |
-| Math Train → HumanEval/MBPP Transfer | Significant drop | Retraining on KodCode-RL-10K recovers performance; domain diversity is required |
+| Input $c_t^k$ vs. top-50 probabilities | $c_t^k$ slightly better | Finer-grained uncertainty did not yield gains |
+| Input $c_t^k$ vs. Hidden state $\bm h_t^k$ | Hidden states significantly worse + unstable | Critical signals reside in confidence after unembedding projection |
+| Zeroing $t$, zeroing $\bm m_t$, or both | All caused accuracy drops; zeroing mask was worst | Both time and mask vectors contribute to decision-making |
+| Multiplicative vs. Additive Reward ($\alpha=1$) | Additive collapses to one-step reveal with wrong answers | Multiplicative reward prevents reward hacking |
+| Math trained → HumanEval/MBPP transfer | Significant drop; fixed by retraining on KodCode-RL-10K | Cross-domain transfer requires diverse training distributions |
 
 ### Key Findings
-- **Redefining the Optimal Frontier**: In semi-AR, Fast-dLLM is near-optimal, and the learned policy matches it. However, in full-diffusion, where heuristics underperform random unmasking, Ours is among the few solutions that still scale performance with increased NFE.
-- **Qualitative Policy Behavior**: In semi-AR, Fast-dLLM prefers "intensive computation on early blocks and adjacent revealing," whereas the learned policy distributes budget more evenly and "slows down" when generating numerical answers. In full-diffusion with expert steering, the policy learns left-to-right generation, avoiding "reverse decoding" artifacts caused by LLaDA's padding token confidence noise.
-- **$\alpha$ control is coarse; testing scale is better**: Directly tuning $\alpha$ during training often causes collapse into a few discrete policies. Scaling Bernoulli parameters via $\min(1, \beta s_t^k)$ during inference allows for smooth traversal of the accuracy-NFE Pareto frontier.
-- **Fastest policy ($\alpha=10$) has poor transferability**: While best on LLaDA, it collapses to Fast-dLLM levels on Dream, suggesting steep rewards cause overfitting to model-specific confidence patterns.
+- **Redefining Optimal Frontiers**: Fast-dLLM is already near-optimal under semi-AR; the learned policy only matches it. However, once switched to full-diffusion, heuristics fall below random unmasking, while this method remains one of the few that improves performance with higher NFEs.
+- **Distinct Policy Behavior**: Under semi-AR, Fast-dLLM tends to "over-calculate earlier blocks and reveal neighbor positions," whereas the learned policy distributes computation more evenly across blocks and "slows down" when generating numerical answers. In full-diffusion with expert steering, the policy learns left-to-right generation, avoiding "reverse decoding" caused by padding token confidence pollution in LLaDA.
+- **Alpha Control vs. Inference Scaling**: Adjusting $\alpha$ directly leads to value collapses into identical policies. Scaling Bernoulli parameters via $\min(1, \beta s_t^k)$ during inference allows for a smoother traversal of the accuracy-NFE Pareto frontier.
+- **Faster policies trained at $\alpha=10$ have poor transferability**: While performing best on LLaDA, they collapse to Fast-dLLM levels on Dream, suggesting that steep rewards cause the policy to overfit the confidence patterns of a specific model.
 
 ## Highlights & Insights
-- **Using pretrained dLLMs as Environments**: Unlike methods that co-train the policy and LLM (d1, DCOLT, DiFFPO), Ours features minimal parameters, leaves the base model frozen, and is low-cost to train. It effectively acts as a "plug-and-play" lightweight accelerator for any open-source dLLM.
-- **Multiplicative Reward as a Firewall**: With sparse rewards and speed incentives, the "fast but wrong" trap easily misleads policies. Multiplying penalty terms into the correctness term is a versatile strategy transferable to other "accuracy + efficiency" RL tasks like early-exit or adaptive depth.
-- **"Confidence is Sufficient" as a General Lesson**: Following early-exit research, this work confirms that for unmasking, confidence-based signals outperform hidden-state-based signals—the maximum value after vocabulary projection sufficiently compresses semantic uncertainty.
-- **Bernoulli + Max-Fallback**: This combination maintains closed-form likelihood while avoiding infinite loops caused by "all-zero" actions, serving as a robust engineering trick.
-- **$\beta$-scaling for Deployment**: Using $\min(1,\beta s_t^k)$ at inference time to slide along the accuracy-NFE frontier is more efficient than retraining with different $\alpha$ values, providing "one policy, multiple gears."
-- **Forcing $\tau=0$ during training**: Attributing all group variance to policy actions rather than dLLM stochasticity reduces credit assignment noise in GRPO, a critical yet often overlooked engineering decision when training RL with diffusion models.
+- **Using Trained dLLMs Directly as Environments**: Unlike works that jointly train policies with base LMs (d1, DCOLT, DiFFPO, etc.), this method keeps the base model frozen with minimal policy parameters, resulting in low training costs and "plug-and-play" compatibility for open-source dLLMs.
+- **Multiplicative Rewards as a Firewall Against Hacking**: In sparse 0/1 reward settings combined with speed penalties, the trap of "wrong but fast" frequently misleads policies. Multiplying the penalty with correctness is a versatile technique applicable to other "accurate + efficient" RL tasks (e.g., early-exit, adaptive depth).
+- **"Confidence is Sufficient" as a General Rule**: Early research on exits found confidence-based stopping superior to hidden-state-based methods. This work confirms the same for unmasking—maximum values after vocab projection effectively encapsulate semantic uncertainty.
+- **Bernoulli + Fallback Max**: This combination preserves closed-form likelihood while avoiding infinite loops caused by "all-zero actions," serving as a useful engineering trick.
+- **$\beta$-scaling as an Inference Knob**: Using $\min(1,\beta s_t^k)$ to smoothly slide the accuracy-NFE frontier during inference is more efficient than retraining for different $\alpha$ values, providing a practical "one policy, multiple gears" approach for deployment.
+- **Forced $\tau=0$ During Training**: Attributing all group variance to policy actions rather than dLLM stochasticity significantly reduces credit assignment noise in GRPO, a critical but often overlooked engineering decision in RL-Diffusion joint training.
 
 ## Limitations & Future Work
-- **Training Control Granularity**: $\alpha$ is not smooth, and expert steering can increase instability; better KL control or annealing strategies are needed.
-- **Domain Transfer is not Free**: Significant performance drops occur when moving from math to code tasks (HumanEval, MBPP), requiring retraining on domain-specific corpora.
-- **Scope Limited to Unmasking Order**: Remasking, dynamic generation length, and KV cache optimizations are orthogonal and not yet integrated into the MDP.
-- **Limited Interpretability**: While qualitative differences are observed, formal explanations of "why certain revealing patterns are optimal" are still lacking.
-- **Dependency on Calibration**: Since input is $c_t^k$, policy performance is bound by the base model's calibration; issues like padding token noise or overconfidence in the dLLM will directly impact the policy.
-- **From-Scratch Training vs. Fine-tuning**: Omitting KL regularization bypasses "imitation then RL" stages, which avoids certain biases but misses the potential benefits of warm-starting from heuristics.
+- **Imprecise Control Sensitivity**: $\alpha$ is not smooth, and adding expert steering further increases training instability; better KL control or annealing strategies are needed.
+- **Cross-Domain Transfer is Not Free**: Performance drops significantly when transferring from math to code tasks (HumanEval, MBPP), requiring retraining on code corpora; "universal policies" are yet to be achieved.
+- **Only Addresses Unmasking Order**: Orthogonal acceleration methods like remasking, dynamic sequence length, and KV cache are not included; future work could incorporate these into the same MDP.
+- **Limited Policy Interpretability**: Although qualitative differences are observed (e.g., even computation distribution, left-to-right generation), formal explanations for "why this reveal order is optimal" are lacking.
+- **Dependency on Base dLLM Calibration**: Since the policy input is only $c_t^k$, base model issues like padding token confidence pollution (LLaDA) or tail-end overconfidence will degrade policy performance.
+- **Training from Scratch vs. Fine-tuning**: The removal of KL regularization means any "imitate Fast-dLLM then RL" two-stage schemes were avoided, losing potential warm-start benefits worth comparing in the future.
 
 ## Related Work & Insights
-Heuristic sampling (Fast-dLLM and variants by Ben-Hamu, Kim, Wei, etc.) proved that confidence signals are vital for accelerating dLLMs. RL post-training routes (d1, DiffuCoder, DiFFPO, DCOLT) mostly bind the policy to the base model with a focus on reasoning capability. This paper aligns with concurrent work by Hong et al. 2025b—both use GRPO for separate unmasking policies—but this work's Bernoulli formulation allows for truly variable step sizes, whereas others maintain fixed steps.
-From a broader perspective, this line of work extends "Adaptive Computation" (Graves, Bengio, etc.) to diffusion language models, suggesting that "learning the inference path" can be decoupled from "learning the inference itself," leading to generalizable accelerators.
-Furthermore, this work is complementary to KV cache, speculative decoding, and distilled decoders; stacking learned unmasking policies with these engineering optimizations should further push the throughput limits of dLLMs.
+Heuristic sampling routes (Fast-dLLM and its variants by Ben-Hamu, Kim, Wei, etc.) proved that "confidence signals" are vital for accelerating dLLMs. RL post-training routes (d1, DiffuCoder, DiFFPO, DCOLT) mostly bind policies to the base model with a focus on reasoning capabilities. This work is concurrent with Hong et al. 2025b: both use GRPO to train standalone unmasking policies, but the Bernoulli formulation here allows for truly variable step sizes, whereas the latter maintains fixed steps.
+Broadly, this line of work extends "Adaptive Computation" (Graves, Bengio, etc.) to diffusion language models, suggesting that "learning the reasoning path" can be decoupled from "learning the reasoning itself" for generic, transferable accelerators. Furthermore, this work is complementary to KV cache, speculative decoding, and distilled decoders. Combining RL-learned unmasking policies with these optimizations should push dLLM throughput limits even further.
 
 <!-- RELATED:START -->
 

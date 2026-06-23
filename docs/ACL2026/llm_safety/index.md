@@ -83,29 +83,29 @@ item_total: 115
 
 **💬 ACL2026** · **115** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (11)](../../CVPR2026/llm_safety/index.md) · [🧪 ICML2026 (46)](../../ICML2026/llm_safety/index.md) · [🔬 ICLR2026 (52)](../../ICLR2026/llm_safety/index.md) · [🤖 AAAI2026 (41)](../../AAAI2026/llm_safety/index.md) · [🧠 NeurIPS2025 (80)](../../NeurIPS2025/llm_safety/index.md) · [📹 ICCV2025 (10)](../../ICCV2025/llm_safety/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (11)](../../CVPR2026/llm_safety/index.md) · [🔬 ICLR2026 (185)](../../ICLR2026/llm_safety/index.md) · [🤖 AAAI2026 (41)](../../AAAI2026/llm_safety/index.md) · [🧠 NeurIPS2025 (80)](../../NeurIPS2025/llm_safety/index.md) · [📹 ICCV2025 (10)](../../ICCV2025/llm_safety/index.md)
 
 🔥 **Top topics:** LLM ×42 · Adversarial Robustness ×22 · Watermarking ×10 · Multimodal/VLM ×10 · Reasoning ×9
 
 **[STELA: A Linguistics-Aware LLM Watermarking via Syntactic Predictability](a_linguistics-aware_llm_watermarking_via_syntactic_predictability.md)**
 
-:   STELA utilizes "linguistic indeterminacy" $\lambda(c_t)$, estimated via POS n-grams, as a modulation signal for watermark strength. It weakens the watermark at positions with high syntactic constraints (to preserve quality) and strengthens it at syntactically free positions (to improve detection). Like KGW, it supports public verification using only a POS tagger, without requiring access to model logits.
+:   STELA uses "linguistic indeterminacy" $\lambda(c_t)$ estimated from POS n-grams as a modulation signal for watermark strength. It weakens the watermark at positions with high syntactic constraints (preserving quality) and strengthens it at syntactically free positions (improving detectability). Similar to KGW, STELA remains publicly verifiable using only a POS tagger, without requiring access to model logits.
 
 **[A Survey on the Safety and Security Threats of Computer-Using Agents: JARVIS or Ultron?](a_survey_on_the_safety_and_security_threats_of_computer-using_agents_jarvis_or_u.md)**
 
-:   This paper provides the first systematic review of safety research for "Computer-Using Agents (CUA)," organizing 124 relevant papers into a four-dimensional framework of "Intrinsic Threats $\times$ Extrinsic Threats $\times$ Defense $\times$ Evaluation." It identifies the lack of UI grounding robustness and cross-platform adversarial evaluation as the biggest gaps in current CUA research.
+:   This paper provides the first systematic review of safety research for "Computer-Using Agents (CUA)," organizing 124 relevant papers into a four-dimensional framework of "Internal Threats × External Threats × Defense × Evaluation," and highlighting that the primary gaps in existing CUAs are UI grounding robustness and cross-platform adversarial evaluation.
 
 **[Abstain-R1: Calibrated Abstention and Post-Refusal Clarification via Verifiable RL](abstain-r1_calibrated_abstention_and_post-refusal_clarification_via_verifiable_r.md)**
 
-:   Abstain-R1 proposes a **clarification-aware RLVR reward** to jointly optimize "explicit refusal" and "providing useful clarifications (pointing out missing information)" for unanswerable queries. This enables 3B models to approach or even surpass large models like DeepSeek-R1 in refusal and clarification quality.
+:   Abstain-R1 proposes a **clarification-aware RLVR reward** to jointly optimize "explicit refusal" and "providing helpful clarifications (pointing out missing information) post-refusal" on unanswerable queries. This allows 3B models to approach or even surpass large models such as DeepSeek-R1 in refusal and clarification quality.
 
 **[ACIArena: Toward Unified Evaluation for Agent Cascading Injection](aciarena_toward_unified_evaluation_for_agent_cascading_injection.md)**
 
-:   This paper constructs ACIArena, the first unified evaluation framework for "Agent Cascading Injection (ACI)" attacks. It covers 1,356 test cases across 6 mainstream Multi-Agent Systems (MAS), 3 attack surfaces (Adversarial Input / Malicious Agent / Message Poison), and 3 attack goals (Hijacking / Disruption / Exfiltration). Furthermore, it proposes ACI-Sentinel, a minimalist yet effective defense that reduces the Hijacking success rate from 92.78% to 8.06%.
+:   This paper constructs the first unified evaluation framework for "Agent Cascading Injection (ACI)" attacks, ACIArena. It covers 6 mainstream multi-agent systems (MAS), 3 attack surfaces (Adversarial Input / Malicious Agent / Message Poison), and 3 attack goals (Hijacking / Disruption / Exfiltration) with 1356 test cases. It also proposes ACI-Sentinel, a minimalist yet effective defense that reduces Hijacking attack success rates from 92.78% to 8.06%.
 
 **[Adaptive Text Anonymization: Learning Privacy-Utility Trade-offs via Prompt Optimization](adaptive_text_anonymization_learning_privacy-utility_trade-offs_via_prompt_optim.md)**
 
-:   Ours proposes an adaptive text anonymization framework that automatically discovers task-specific anonymization instructions for LLMs through evolutionary prompt optimization. It outperforms manually designed strategies across various privacy-utility trade-off scenarios and is executable on open-source models.
+:   Discovered task-specific anonymization instructions for LLMs via an adaptive framework using evolutionary prompt optimization. It outperforms hand-crafted strategies across multiple privacy-utility trade-off scenarios and is executable on open-source models.
 
 **[ADVICE: Answer-Dependent Verbalized Confidence Estimation](advice_answer-dependent_verbalized_confidence_estimation.md)**
 
@@ -117,23 +117,23 @@ item_total: 115
 
 **[AgentMark: Utility-Preserving Behavioral Watermarking for Agents](agentmark_utility-preserving_behavioral_watermarking_for_agents.md)**
 
-:   AgentMark models the "next tool/subgoal selection" of an LLM agent as a time-varying discrete channel. By explicitly eliciting the behavioral distribution $P_t$ and applying FDPSS-style distribution-preserving sampling, it embeds multi-bit IDs into planning decisions. Combined with RLNC encoding, the watermark can be recovered from residual logs even if the trace is cropped or steps are deleted. Across ALFWorld, ToolBench, and OASIS tasks, it maintains accuracy (Success Rate difference from baseline <0.7 pp) while stably providing a multi-bit capacity of 1.2-2.3 bps, and is orthogonal and stackable with content-level watermarks like SynthID-Text.
+:   AgentMark models the "next tool/subgoal selection" of an LLM agent as a time-varying discrete channel. By explicitly eliciting the behavioral distribution $P_t$ and applying FDPSS-style distribution-preserving sampling, it embeds multi-bit IDs into planning decisions. Combined with RLNC encoding, the watermark can be recovered from residual logs even if the trace is cropped or steps are deleted. Across ALFWorld, ToolBench, and OASIS tasks, it maintains accuracy (SR difference from baseline <0.7 pp) while providing stable multi-bit capacity of 1.2-2.3 bps, and it is orthogonally stackable with content-level watermarks like SynthID-Text.
 
 **[AGSC: Adaptive Granularity and Semantic Clustering for Uncertainty Quantification in Long-text Generation](agsc_adaptive_granularity_and_semantic_clustering_for_uncertainty_quantification.md)**
 
-:   AGSC proposes an uncertainty quantification framework for long-text generation that triggers adaptive granularity decomposition via NLI neutral probabilities (reducing inference time by 60%) and utilizes GMM soft clustering to capture latent semantic themes for topic-aware weighted aggregation, achieving SOTA factuality correlation on BIO and LongFact benchmarks.
+:   AGSC proposes an uncertainty quantification (UQ) framework for long-text generation that triggers adaptive granularity decomposition via NLI neutral probability (reducing inference time by 60%) and utilizes GMM soft clustering to capture latent semantic topics for topic-aware weighted aggregation, achieving SOTA factuality correlation on BIO and LongFact benchmarks.
 
 **[APPSI-139: A Parallel Corpus of English Application Privacy Policy Summarization and Interpretation](appsi-139_a_parallel_corpus_of_english_application_privacy_policy_summarization_.md)**
 
-:   APPSI-139 is the first parallel corpus for English application privacy policy summarization and interpretation, meticulously annotated by legal experts (139 policies / 36,351 annotations / 15,692 rewrite pairs). The accompanying TCSI-pp-V2 framework utilizes a shared encoder with five alternately trained expert heads to achieve five sub-tasks: "Importance / Risk / Sensitivity / Topic / Interpretation." Compared to TCSI-pp v1, it reduces encoding time by 73% and memory consumption from 7.3GB to 2.7GB, while its subjective readability surpasses GPT-4o and Llama3-70b.
+:   APPSI-139 is the first parallel corpus of English application privacy policy summarization and interpretation finely annotated by legal experts (139 policies / 36,351 annotations / 15,692 rewrite pairs). The accompanying TCSI-pp-V2 framework utilizes a shared encoder with five alternately trained expert heads for five sub-tasks: "Importance / Risk / Sensitivity / Topic / Rewriting." Compared to TCSI-pp v1, the encoding time is reduced by 73%, and GPU memory usage decreases from 7.3GB to 2.7GB, with subjective readability surpassing GPT-4o and Llama3-70b.
 
 **[ASTRA: An Automated Framework for Strategy Discovery, Retrieval, and Evolution for Jailbreaking LLMs](astra_an_automated_framework_for_strategy_discovery_retrieval_and_evolution_for_.md)**
 
-:   ASTRA treats every jailbreak attempt as a learning opportunity. It distills strategies into a three-layer vector library ("Effective / Promising / Ineffective") based on continuous scores from 1-10. Subsequent attacks reuse experience through similarity retrieval, achieving an 80.6% attack success rate across 8 mainstream LLMs with an average of only 2.4 queries.
+:   ASTRA treats every jailbreak attempt as a learning opportunity. By distilling strategies into a three-tier vector library ("Effective / Promising / Ineffective") based on continuous scores from 1-10, subsequent attacks reuse experience through similarity retrieval. It achieves an 80.6% Attack Success Rate (ASR) across 8 mainstream LLMs with an average of only 2.4 queries.
 
 **[ATAAT: Adaptive Threat-Aware Adversarial Tuning Framework against Backdoor Attacks on Vision-Language-Action Models](ataat_adaptive_threat-aware_adversarial_tuning_framework_against_backdoor_attack.md)**
 
-:   ATAAT systematically reveals for the first time that the root cause of the difficulty in injecting VLA backdoors is "Gradient Interference" (where benign and backdoor gradient directions cancel each other out, with a long-term negative correlation of -0.4). Through two complementary paths—implicit orthogonal perturbation (data poisoning) and dormant neuron anchoring (white-box fine-tuning)—it pushes the target attack success rate (TASR) to 80%+, while maintaining near-normal benign success rate (SR).
+:   ATAAT systematically reveals that the root cause of VLA backdoor injection difficulty is "Gradient Interference" (where benign and backdoor gradient directions cancel out, with a long-term negative correlation of ~ -0.4). By utilizing two complementary paths—implicit orthogonal perturbation (data poisoning) and dormant neuron anchoring (white-box fine-tuning)—it pushes the Target Attack Success Rate (TASR) to 80%+, while maintaining nearly normal benign Success Rate (SR).
 
 **[AutoRAN: Automated Hijacking of Safety Reasoning in Large Reasoning Models](autoran_automated_hijacking_of_safety_reasoning_in_large_reasoning_models.md)**
 
@@ -141,15 +141,15 @@ item_total: 115
 
 **[Before Forgetting, Learn to Remember: Revisiting Foundational Learning Failures in LVLM Unlearning Benchmarks](before_forgetting_learn_to_remember_revisiting_foundational_learning_failures_in.md)**
 
-:   The authors point out that existing LVLM unlearning benchmarks (FIUBench / MLLMU-Bench / CLEAR) fail to truly memorize fictional identities during the Stage 1 fine-tuning phase, rendering the Stage 2 "forgetting" evaluation invalid. They identify the root cause as "insufficient data repetition + multi-hop curse" and propose ReMem—utilizing 100 QA × 100 multi-view images per identity, a 70%:30% single-hop/multi-hop mix, and a new internal Exposure metric to re-establish unlearning evaluation on the foundation of "genuine memorization."
+:   The authors point out that existing LVLM unlearning benchmarks (FIUBench / MLLMU-Bench / CLEAR) fail to truly memorize fictional identities during the Stage 1 fine-tuning phase, rendering Stage 2 "unlearning" evaluations invalid. They diagnose the root causes as "insufficient data repetition + multi-hop curse" and propose ReMem—featuring 100 QAs × 100 multi-view images per identity, a 70%:30% single-hop/multi-hop mix, and a new Exposure metric for internal probability—re-establishing unlearning evaluation on the foundation of "reliable memorization."
 
 **[Beyond End-to-End: Dynamic Chain Optimization for Private LLM Adaptation on the Edge](beyond_end-to-end_dynamic_chain_optimization_for_private_llm_adaptation_on_the_e.md)**
 
-:   ChainFed is proposed, a chain-style federated fine-tuning paradigm that breaks the memory wall. By sequentially training and freezing adapters layer-by-layer, it enables resource-constrained edge devices to participate in LLM fine-tuning. Combined with three techniques—Dynamic Layer Coordination, Global-Aware Optimization, and Function-Oriented Adaptation—it achieves an average accuracy improvement of up to 46.46%.
+:   ChainFed is proposed as a chain-based federated fine-tuning paradigm to break the memory wall. By sequentially training and freezing adapters layer-by-layer, it enables resource-constrained edge devices to participate in LLM fine-tuning. Combining Functional-Oriented Adaptive Tuning (FOAT), Dynamic Layer Coordination Tuning (DLCT), and Global-Perceptual Optimization (GPO), it achieves an average accuracy improvement of up to 46.46%.
 
 **[Beyond Explicit Refusals: Soft-Failure Attacks on Retrieval-Augmented Generation](beyond_explicit_refusals_soft-failure_attacks_on_retrieval-augmented_generation.md)**
 
-:   Formalizes the "soft-failure" threat in RAG systems (fluent but uninformative responses) and proposes DEJA, a black-box evolutionary attack framework. By inducing models to exploit safety alignment mechanisms through adversarial documents, the framework achieves a SASR exceeding 79% with high stealth.
+:   This paper formally defines the "soft-failure" threat in RAG systems—generating fluent yet uninformative responses—and proposes the DEJA black-box evolutionary attack framework. By utilizing adversarial documents to induce model safety alignment mechanisms into producing hedging responses, DEJA achieves a SASR exceeding 79% while remaining highly stealthy.
 
 **[Calibration vs Decision Making: Revisiting the Reliability Paradox in Unlearned Language Models](calibration_vs_decision_making_revisiting_the_reliability_paradox_in_unlearned_l.md)**
 
@@ -161,7 +161,7 @@ item_total: 115
 
 **[CAP: Controllable Alignment Prompting for Unlearning in LLMs](cap_controllable_alignment_prompting_for_unlearning_in_llms.md)**
 
-:   The CAP framework is proposed to guide a frozen LLM to selectively unlearn target knowledge by training a lightweight SLM to generate controllable prompt prefixes. This approach requires no modification to model parameters, achieving reversible and transferable knowledge unlearning in LLMs.
+:   This paper proposes the CAP framework, which guides frozen LLMs to selectively unlearn target knowledge by training a lightweight SLM to generate controllable prompt prefixes. This approach requires no modification to model parameters, achieving reversible and transferable LLM knowledge unlearning.
 
 **[CarO: Chain-of-Analogy Reasoning Optimization for Robust Content Moderation](caro_chain-of-analogy_reasoning_optimization_for_robust_content_moderation.md)**
 
@@ -177,15 +177,15 @@ item_total: 115
 
 **[CiPO: Counterfactual Unlearning for Large Reasoning Models through Iterative Preference Optimization](cipo_counterfactual_unlearning_for_large_reasoning_models_through_iterative_pref.md)**
 
-:   To address the challenge of unlearning in Large Reasoning Models (LRMs)—which requires removing sensitive knowledge from both the Chain-of-Thought (CoT) and final answers—the CiPO framework is proposed. By generating logically valid counterfactual reasoning trajectories and utilizing iterative preference optimization to guide the model toward counterfactual paths, CiPO achieves effective unlearning while preserving reasoning capabilities.
+:   Addressing the unlearning challenge in Large Reasoning Models (LRMs)—the need to simultaneously remove sensitive knowledge from both Chain-of-Thought (CoT) and final answers—the CiPO framework is proposed. By enabling models to generate logically valid counterfactual reasoning trajectories and guiding model preferences towards these paths via iterative preference optimization, it achieves effective unlearning while maintaining reasoning capabilities.
 
 **[Compiling Activation Steering into Weights via Null-Space Constraints for Stealthy Backdoors](compiling_activation_steering_into_weights_via_null-space_constraints_for_stealt.md)**
 
-:   This paper proposes STEEREDIT, a backdoor injection framework that compiles dynamic activation steering into static weight modifications. By extracting a compliance direction and utilizing null-space constraints to ensure activation only in the presence of trigger keywords, it achieves high attack success rates on multiple safety-aligned LLMs while maintaining safety and general utility in non-triggered scenarios.
+:   This paper proposes STEEREDIT, a backdoor injection framework that compiles dynamic activation steering into static weight modifications. By extracting a compliance direction and utilizing null-space constraints to ensure activation only in the presence of trigger words, it achieves high attack success rates across multiple safety-aligned LLMs while maintaining safety and general utility in non-trigger scenarios.
 
 **[Context-Fidelity Boosting: Enhancing Faithful Generation through Watermark-Inspired Decoding](context-fidelity_boosting_enhancing_faithful_generation_through_watermark-inspir.md)**
 
-:   CFB repurposes the additive logit bias technique used in text watermarking by applying a bonus to tokens "supported by the input context" during each decoding step. It proposes three progressive strategies—static, context-aware (scaling adaptively with JSD), and token-aware (reallocation via attention + semantic correlation)—which consistently improve faithfulness metrics in summarization and QA tasks across multiple models with negligible decoding overhead.
+:   CFB repurposes the additive logit bias technique used in text watermarking—applying a bonus to tokens "supported by the input context" at each decoding step. It proposes three progressive strategies: static, context-aware (adaptive scaling via JSD), and token-aware (redistribution via attention + semantic relevance). This approach consistently improves faithfulness metrics in summarization and QA across multiple models with near-zero decoding overhead.
 
 **[CRISP: Persistent Concept Unlearning via Sparse Autoencoders](crisp_persistent_concept_unlearning_via_sparse_autoencoders.md)**
 
@@ -205,15 +205,15 @@ item_total: 115
 
 **[De-Anonymization at Scale via Tournament-Style Attribution](de-anonymization_at_scale_via_tournament-style_attribution.md)**
 
-:   This paper proposes DAS (De-Anonymization at Scale), an LLM-based large-scale author de-anonymization method. By employing a tournament-style elimination strategy, dense retrieval pre-filtering, and multi-round voting aggregation, it achieves author matching across tens of thousands of candidate texts, revealing the privacy risks LLMs pose to anonymous platforms such as double-blind peer review systems.
+:   This paper proposes DAS (De-Anonymization at Scale), an LLM-based method for large-scale authorship de-anonymization. By employing a tournament-style elimination strategy combined with dense retrieval pre-filtering and multi-round voting aggregation, the method enables author matching across tens of thousands of candidate texts, revealing the privacy threat LLMs pose to anonymous platforms such as double-blind peer review.
 
 **[Decomposed Trust: Privacy, Adversarial Robustness, Ethics, and Fairness in Low-Rank LLMs](decomposed_trust_privacy_adversarial_robustness_ethics_and_fairness_in_low-rank_.md)**
 
-:   This is the first systematic evaluation of the impact of **low-rank decomposition (SVD/FWSVD/BASEL)** on LLM trustworthiness. The study identifies an asymmetric trade-off: "Training data privacy ↑, Adversarial robustness ↑, PII protection ↓, Ethical alignment ↓, Fairness ↓". Furthermore, gradient attribution is employed to locate adversarial vulnerability within the `embed_tokens` and `down_proj` sub-layers.
+:   This study provides the first systematic evaluation of the impact of **low-rank decomposition (SVD/FWSVD/BASEL)** on LLM trustworthiness. It identifies an asymmetric trade-off: "training data privacy ↑, adversarial robustness ↑, PII protection ↓, ethics alignment ↓, fairness ↓." Using gradient attribution, the study localizes adversarial vulnerability to the `embed_tokens` and `down_proj` sub-layers.
 
 **[Detecting RAG Extraction Attack via Dual-Path Runtime Integrity Game](detecting_rag_extraction_attack_via_dual-path_runtime_integrity_game.md)**
 
-:   This paper proposes CanaryRAG, a runtime defense mechanism for RAG inspired by stack canaries in software security. By injecting non-semantic canary tokens into retrieved chunks and designing a dual-path integrity game (where the Target path should not leak the canary and the Oracle path should elicit it), it achieves real-time detection of knowledge base extraction attacks without compromising task performance or inference latency.
+:   CanaryRAG is proposed as a runtime defense mechanism for RAG systems inspired by stack canaries in software security. By injecting non-semantic canary tokens into retrieved chunks and designing a dual-path integrity game (the target path should not leak the canary while the Oracle path should elicit it), the system detects knowledge base extraction attacks in real-time without compromising task performance or inference latency.
 
 **[Detoxification for LLM from Dataset Itself](detoxification_for_llm_from_dataset_itself.md)**
 
@@ -221,7 +221,7 @@ item_total: 115
 
 **[Differentially Private Synthetic Text Generation for Retrieval-Augmented Generation (RAG)](differentially_private_synthetic_text_generation_for_retrieval-augmented_generat.md)**
 
-:   DP-SynRAG utilizes an LLM to distill a private RAG database into a differentially private synthetic text repository in a **one-time** process. Subsequent queries do not consume any privacy budget. On Medical Synth, MovieLens, and SearchQA datasets, its accuracy significantly outperforms query-time DP-RAG, which typically collapses in multi-query scenarios.
+:   DP-SynRAG utilizes LLMs to distill private RAG databases into differentially private synthetic text libraries in a **one-time** process. Subsequent queries do not consume any privacy budget. On Medical Synth, MovieLens, and SearchQA datasets, its accuracy significantly outperforms query-time DP-RAG (which collapses in multi-query scenarios).
 
 **[Do Multimodal RAG Systems Leak Data? A Comprehensive Evaluation of Membership Inference and Image Caption Retrieval Attacks](do_multimodal_rag_systems_leak_data_a_comprehensive_evaluation_of_membership_inf.md)**
 
@@ -233,11 +233,11 @@ item_total: 115
 
 **[Evaluating Answer Leakage Robustness of LLM Tutors against Adversarial Student Attacks](evaluating_answer_leakage_robustness_of_llm_tutors_against_adversarial_student_a.md)**
 
-:   This paper systematically evaluates the answer leakage robustness of LLM tutors in scenarios where "students attempt to deceive the system for answers." It defines 6 categories of adversarial/persuasive techniques, compares 4 types of adversarial student agents (base, reasoning-enhanced, multi-agent, and SFT fine-tuned), and validates that two simple defenses (reasoning-first and multi-agent tutor) can reduce leakage rates from 70–85% to < 10% across most models.
+:   This paper systematically evaluates the answer leakage robustness of LLM tutors in scenarios where "students attempt to deceive the tutor into providing answers." It defines 6 categories of adversarial/persuasive techniques, compares 4 types of adversarial student agents (Base, Reasoning-enhanced, Multi-agent, SFT-tuned), and verifies that two simple defenses (Reasoning-first and Multi-agent tutor) can compress the leakage rate from 70–85% to $< 10\%$ across most models.
 
 **[Exploring Cross-Client Memorization of Training Data in Large Language Models for Federated Learning](exploring_cross-client_memorization_of_training_data_in_large_language_models_fo.md)**
 
-:   The authors extend fine-grained cross-sample memorization metrics from centralized LLMs (Zeng 2024 + PAN2014 plagiarism detector) to Federated Learning (FL). They propose a client-pair metric $\text{MR}_{j \to k}$ to derive intra-client and inter-client memorization ratios. The study finds that FL **does not** effectively prevent training data memorization—while intra-client memorization is higher than inter-client, the total memorization ratio of FL vs. CL shows no significant decrease. Memorization is significantly influenced by prefix length, decoding strategies, and FL algorithms (FedProx > FedAvg).
+:   The authors extend fine-grained cross-sample memorization metrics for centralized LLMs (Zeng 2024 + PAN2014 plagiarism detector) to Federated Learning (FL). They propose a client-pair metric $\text{MR}_{j \to k}$ and derive intra-client and inter-client memorization ratios. The study finds that FL **does not** effectively prevent training data memorization—while intra-client memorization is higher than inter-client, the total memorization in FL vs. Centralized Learning (CL) shows no significant decrease. Memorization is significantly influenced by prefix length, decoding strategies, and FL algorithms (FedProx > FedAvg).
 
 **[FAITH: Factuality Alignment through Integrating Trustworthiness and Honestness](faith_factuality_alignment_through_integrating_trustworthiness_and_honestness.md)**
 
@@ -249,35 +249,35 @@ item_total: 115
 
 **[FlexGuard: Continuous Risk Scoring for Strictness-Adaptive LLM Content Moderation](flexguard_continuous_risk_scoring_for_strictness-adaptive_llm_content_moderation.md)**
 
-:   FlexGuard proposes an LLM moderation model that outputs a continuous risk score (0-100) instead of a binary safe/unsafe judgment. Through rubric-based distillation and GRPO risk alignment training, it achieves SOTA robustness and accuracy across various deployment strictness scenarios.
+:   FlexGuard proposes an LLM moderation model that outputs continuous risk scores (0-100) instead of binary safe/unsafe judgements. Through distillation guided by scoring rubrics and GRPO risk alignment training, it achieves SOTA robustness and accuracy across different deployment strictness levels.
 
 **[Forget What Matters, Keep the Rest: Selective Unlearning of Informative Tokens](forget_what_matters_keep_the_rest_selective_unlearning_of_informative_tokens.md)**
 
-:   The authors propose Entropy-guided Token Weighting (ETW), which utilizes the entropy of the predictive distribution as a proxy for token informativeness. By selectively applying stronger unlearning penalties to informative tokens, the method effectively removes target knowledge while better preserving the model's general capabilities.
+:   Ours proposes Entropy-guided Token Weighting (ETW), which utilizes the entropy of the prediction distribution as a proxy for token informativeness. It selectively applies stronger unlearning penalties to informative tokens, effectively unlearning target knowledge while better maintaining the general capabilities of the model.
 
 **[From Domains to Instances: Dual-Granularity Data Synthesis for LLM Unlearning](from_domains_to_instances_dual-granularity_data_synthesis_for_llm_unlearning.md)**
 
-:   This paper formally defines two unlearning granularities—domain-level and instance-level—and proposes the BiForget framework. BiForget utilizes the target model itself (rather than external strong models) to generate high-quality unlearning datasets through two stages: seed-guided synthesis and adversarial probing. In the Harry Potter domain, it improves relevance by approximately 20 and diversity by approximately 0.05 while halving the data volume.
+:   This paper formally defines domain-level and instance-level granularities for LLM unlearning and proposes the BiForget framework. BiForget utilizes the target model itself (rather than external strong models) to generate high-quality unlearning datasets through two stages: seed-guided synthesis and adversarial probing. In the Harry Potter domain, it improves relevance by ~20 and diversity by ~0.05 while halving the data volume.
 
 **[From Passive Metric to Active Signal: The Evolving Role of Uncertainty Quantification in Large Language Models](from_passive_metric_to_active_signal_the_evolving_role_of_uncertainty_quantifica.md)**
 
-:   This paper systematically surveys the functional evolution of Uncertainty Quantification (UQ) in LLMs from "passive diagnostic metrics" to "active control signals," covering three frontier fields: advanced reasoning (guiding computation allocation and self-correction), autonomous agents (driving metacognitive decisions for tool use and information acquisition), and reinforcement learning (mitigating reward hacking and enabling self-improvement through intrinsic rewards).
+:   This paper systematically reviews the functional evolution of uncertainty quantification (UQ) in LLMs from "passive diagnostic metrics" to "active control signals," covering three frontier domains: advanced reasoning (guiding computation allocation and self-correction), autonomous agents (driving meta-cognitive decisions for tool use and information acquisition), and reinforcement learning (mitigating reward hacking and enabling self-improvement via intrinsic rewards).
 
 **[GAMBIT: A Gamified Jailbreak Framework for Multimodal Large Language Models](gambit_a_gamified_jailbreak_framework_for_multimodal_large_language_models.md)**
 
-:   This paper proposes GAMBIT, a gamified multimodal jailbreak framework that decomposes harmful queries into puzzle images and hidden keywords. By embedding these into competitive gaming scenarios, it leverages model reasoning incentives and cognitive load to bypass safety filters. It achieves attack success rates of 92.13% on Gemini 2.5 Flash and 85.87% on GPT-4o, proving effective for both reasoning and non-reasoning models.
+:   This paper proposes GAMBIT, a gamified multimodal jailbreak framework. By decomposing harmful queries into puzzle images plus hidden keywords and embedding them into competitive game scenarios, it leverages the model's reasoning incentives and cognitive load to bypass safety filters. It achieves an attack success rate of 92.13% on Gemini 2.5 Flash and 85.87% on GPT-4o, proving effective for both reasoning and non-reasoning models.
 
 **[Gap-K%: Measuring Top-1 Prediction Gap for Detecting Pretraining Data](gap-k_measuring_top-1_prediction_gap_for_detecting_pretraining_data.md)**
 
-:   This paper proposes Gap-K%, which utilizes the normalized log probability gap between the target token and the model's top-1 prediction, combined with sequential sliding window smoothing, to detect whether text appeared in LLM pretraining data. It outperforms baselines like Min-K%++ on WikiMIA, MIMIR, recent models, and under strong paraphrase attacks.
+:   This paper proposes Gap-K%, which uses the normalized log probability gap between the target token and the model's top-1 prediction, combined with sequential sliding window smoothing, to detect whether text appeared in the LLM pretraining data. It outperforms baselines like Min-K%++ on WikiMIA, MIMIR, recent models, and under strong paraphrase attacks.
 
 **[ForgeryTalker: Generating Attribution Reports for Manipulated Facial Images](generating_attribution_reports_for_manipulated_facial_images_a_dataset_and_basel.md)**
 
-:   This paper proposes a new task called Forgery Attribution Report Generation and constructs the MMTT dataset, which contains 152,217 samples (the first large-scale facial forgery dataset providing both pixel-level masks and human text descriptions). It introduces ForgeryTalker, an end-to-end baseline that jointly generates localization masks and attribution reports through a shared encoder and dual decoders (mask + language model), achieving 59.3 CIDEr and 73.67 IoU.
+:   This paper proposes a new task called Forgery Attribution Report Generation and constructs the MMTT dataset containing 152,217 samples (the first large-scale facial forgery dataset providing both pixel-level masks and human text descriptions). It further introduces ForgeryTalker, an end-to-end baseline that jointly generates localization masks and attribution reports via a shared encoder and dual decoders (mask + language model), achieving 59.3 CIDEr and 73.67 IoU.
 
 **[Hard to Read, Easy to Jailbreak: How Visual Degradation Bypasses MLLM Safety Alignment](hard_to_read_easy_to_jailbreak_how_visual_degradation_bypasses_mllm_safety_align.md)**
 
-:   This paper reveals for the first time a safety blind spot in MLLMs under the "visual text compression" paradigm. When the rendered image DPI falls within the Attack Comfort Zone (ACZ) of 45–150, the model's OCR remains accurate, but safety alignment collapses (with ASR soaring from 0% to over 70%). The reason is that shallow computational resources are exhausted by "character recognition," causing harmful semantics to only emerge in deeper layers, thereby bypassing shallow guardrails. Using prompt-level Structured Cognitive Offloading (transcribe first → then audit → then answer) can bring the ASR back to near-baseline levels.
+:   This paper reveals a safety blind spot in MLLMs under the "visual text compression" paradigm. When rendered image DPI falls within the Attack Comfort Zone (ACZ) of 45–150, model OCR remains accurate while safety alignment collapses (ASR surges from 0% to 70%+). This occurs because shallow computational resources are exhausted by "character recognition," causing harmful semantics to emerge only in deeper layers and bypassing shallow guardrails. Using prompt-level Structured Cognitive Offloading (transcribe → audit → answer) can reduce ASR back to near-baseline levels.
 
 **[How Should We Enhance the Safety of Large Reasoning Models: An Empirical Study](how_should_we_enhance_the_safety_of_large_reasoning_models_an_empirical_study.md)**
 
@@ -289,7 +289,7 @@ item_total: 115
 
 **[Instant Personalized Large Language Model Adaptation via Hypernetwork](instant_personalized_large_language_model_adaptation_via_hypernetwork.md)**
 
-:   Profile-to-PEFT (P2P) utilizes a hypernetwork to directly map user profiles to personalized LoRA parameters, avoiding the need for OPPU to retrain an adapter for every user. This achieves faster, more scalable LLM personalization that generalizes to unseen users.
+:   Profile-to-PEFT (P2P) utilizes a hypernetwork to directly map user profiles to personalized LoRA parameters. This avoids the need for OPPU to retrain adapters for each user, achieving faster, more scalable LLM personalization that generalizes to unseen users.
 
 **[Into the Gray Zone: Domain Contexts Can Blur LLM Safety Boundaries](into_the_gray_zone_domain_contexts_can_blur_llm_safety_boundaries.md)**
 
@@ -297,7 +297,7 @@ item_total: 115
 
 **[Jailbreaking Large Language Models with Morality Attacks](jailbreaking_large_language_models_with_morality_attacks.md)**
 
-:   This paper constructs a 10.3K morality attack dataset (Value Ambiguity + Value Conflict) and manipulates LLM moral judgments through four adversarial strategies. The study finds that LLMs and guardrail models are extremely vulnerable to morality attacks, and larger models are surprisingly more susceptible to being compromised.
+:   This paper constructs a 10.3K morality attack dataset (Value Ambiguity + Value Conflict) and manipulates LLM moral judgments through four adversarial strategies. The study finds that LLMs and guardrail models are extremely vulnerable to morality attacks, and larger models are surprisingly easier to break.
 
 **[Know Thy Enemy: Securing LLMs Against Prompt Injection via Diverse Data Synthesis and Instruction-Level Chain-of-Thought Learning](know_thy_enemy_securing_llms_against_prompt_injection_via_diverse_data_synthesis.md)**
 
@@ -305,7 +305,7 @@ item_total: 115
 
 **[Knowledge Poisoning Attacks on Medical Multi-Modal Retrieval-Augmented Generation](knowledge_poisoning_attacks_on_medical_multi-modal_retrieval-augmented_generatio.md)**
 
-:   The authors propose M3Att—the first **query-agnostic** knowledge poisoning framework for medical multi-modal RAG. It employs "distribution-guided visual PGD triggers" for retrieval hijacking and "clinical ambiguity-guided text rewriting" to bypass LVLM self-correction. Across 5 LVLMs, 5 datasets, and 4 medical tasks, it reduces downstream utility by an average of 8.78% with a poisoning rate of <1% (requiring no knowledge of user queries, visual perturbation $\epsilon=16/255$). Additionally, it is robust against three types of pre-retrieval defenses: image clustering, text clustering, and image-text consistency.
+:   The authors propose M3Att—the first **query-agnostic** knowledge poisoning framework for medical multi-modal RAG. It utilizes "distribution-guided visual PGD triggers" for retrieval hijacking and "clinical ambiguity-guided text rewriting" to bypass LVLM self-correction. With a poisoning rate of <1% (without querying knowledge, visual perturbation $\epsilon=16/255$), it reduces downstream utility by an average of 8.78% across 5 LVLMs × 5 datasets × 4 medical tasks, while remaining robust to three types of pre-retrieval defenses: image clustering, text clustering, and image-text consistency.
 
 **[LeakDojo: Decoding the Leakage Threats of RAG Systems](leakdojo_decoding_the_leakage_threats_of_rag_systems.md)**
 
@@ -313,19 +313,19 @@ item_total: 115
 
 **[Learning Uncertainty from Sequential Internal Dispersion in Large Language Models](learning_uncertainty_from_sequential_internal_dispersion_in_large_language_model.md)**
 
-:   The SIVR framework is proposed, which computes internal variance of LLM hidden states across layers (generalized variance, circular variance, and token entropy) as token-level features. A lightweight Transformer encoder aggregates full sequence patterns to estimate uncertainty and detect hallucinations, significantly outperforming baselines with stronger generalization.
+:   Ours proposes the SIVR framework, which computes internal variance (generalized variance, circular variance, token entropy) across LLM hidden layers as token-level features. A lightweight Transformer encoder aggregates full sequence patterns to estimate uncertainty and detect hallucinations, significantly outperforming baselines with stronger generalization.
 
 **[LLM-VA: Resolving the Jailbreak-Overrefusal Trade-off via Vector Alignment](llm-va_resolving_the_jailbreak-overrefusal_trade-off_via_vector_alignment.md)**
 
-:   LLM-VA discovers that LLMs encode "whether to answer" (answer vector $v_a$) and "whether the input is safe" (benign vector $v_b$) as two nearly orthogonal directions, causing a persistent trade-off between jailbreak and over-refusal. By applying closed-form minimum-norm weight updates to align $v_a$ with $v_b$, the model's "willingness to answer" becomes causally dependent on "input safety." Evaluated on 12 LLMs, it achieves an 11.45% higher F1 than the strongest baseline with only a 4.08% utility drop, requiring no fine-tuning or architectural changes.
+:   LLM-VA discovers that LLMs encode "whether to answer" (answer vector $v_a$) and "input safety" (benign vector $v_b$) into two nearly orthogonal directions internally, leading to a persistent trade-off between jailbreak and over-refusal. By performing closed-form minimal-norm weight updates to align $v_a$ and $v_b$, the model's "willingness to answer" becomes causally dependent on "input safety." Evaluated on 12 LLMs, it achieves an F1 score 11.45% higher than the strongest baseline with only a 4.08% utility drop, requiring no fine-tuning or architectural modifications.
 
 **[Look Twice before You Leap: A Rational Framework for Localized Adversarial Anonymization](look_twice_before_you_leap_a_rational_framework_for_localized_adversarial_anonym.md)**
 
-:   The authors propose the RLAA framework, which utilizes an Attacker-Arbitrator-Anonymizer architecture and Marginal Rate of Substitution (MRS) rationality constraints to resolve the utility collapse issue when migrating adversarial text anonymization to local small models (LSMs). This achieves a privacy-utility balance superior to API-based solutions on local devices without requiring additional training.
+:   The authors propose the RLAA framework, which utilizes an Attacker-Arbitrator-Anonymizer architecture and Marginal Rate of Substitution (MRS) rationality constraints to solve the utility collapse issue when migrating adversarial text anonymization to local small models, achieving a privacy-utility balance superior to API-based solutions without requiring training.
 
 **[Lying with Truths: Open-Channel Multi-Agent Collusion for Belief Manipulation via Generative Montage](lying_with_truths_open-channel_multi-agent_collusion_for_belief_manipulation_via.md)**
 
-:   This paper proposes the security issue of cognitive collusion attacks: multiple agents publish only truthful but narratively orchestrated evidence fragments to induce victim LLM agents to form incorrect causal beliefs, which continue to propagate through downstream verification layers.
+:   This paper identifies the security threat of cognitive collusion: multiple agents can publicly release only truthful but narratively orchestrated evidence fragments to induce false causal beliefs in a victim LLM agent, which then continues to propagate through downstream verification layers.
 
 **[Making MLLMs Blind: Adversarial Smuggling Attacks in MLLM Content Moderation](making_mllms_blind_adversarial_smuggling_attacks_in_mllm_content_moderation.md)**
 
@@ -341,7 +341,7 @@ item_total: 115
 
 **[MemoPhishAgent: Memory-Augmented Multi-Modal LLM Agent for Phishing URL Detection](memophishagent_memory-augmented_multi-modal_llm_agent_for_phishing_url_detection.md)**
 
-:   MemoPhishAgent (MPA) is proposed as the first memory-augmented multi-modal LLM agent specifically designed for phishing URL detection. By dynamically orchestrating five specialized tools and an episodic memory system that reuses historical reasoning trajectories, it achieves a 13.6% improvement in recall on public benchmarks and a 20% improvement on real-world social media data. It has been deployed in a production environment, processing approximately 60,000 high-risk URLs weekly.
+:   MemoPhishAgent (MPA) is proposed as the first memory-augmented multi-modal LLM agent specifically designed for phishing URL detection. By dynamically orchestrating five specialized tools and utilizing an episodic memory system to reuse historical reasoning trajectories, MPA achieves a 13.6% recall improvement on public benchmarks and a 20% improvement on real-world social media data. It has been deployed in production, processing approximately 60,000 high-risk URLs weekly.
 
 **[Modeling LLM Unlearning as an Asymmetric Two-Task Learning Problem](modeling_llm_unlearning_as_an_asymmetric_two-task_learning_problem.md)**
 
@@ -349,7 +349,7 @@ item_total: 115
 
 **[Multi-component Causal Tracing in Large Language Models](multi-component_causal_tracing_in_large_language_models.md)**
 
-:   This paper extends causal tracing from single-component analysis to multi-component subset search and proposes PGB-CT, which uses soft intervention, metric transformation, and sparse binary penalties to efficiently identify attention heads and MLP neurons that jointly influence LLM behavior.
+:   This paper extends causal tracing from single-component analysis to multi-component subset searching and proposes PGB-CT, which efficiently identifies attention heads and MLP neurons that collectively influence LLM behavior using soft intervention, metric transformation, and sparse binary penalties.
 
 **[MUSE: A Run-Centric Platform for Multimodal Unified Safety Evaluation of Large Language Models](muse_a_run-centric_platform_for_multimodal_unified_safety_evaluation_of_large_la.md)**
 
@@ -357,11 +357,11 @@ item_total: 115
 
 **[On Safety Risks in Experience-Driven Self-Evolving Agents](on_safety_risks_in_experience-driven_self-evolving_agents.md)**
 
-:   This work systematically investigates the safety risks of experience-driven self-evolving agents, discovering that experiences accumulated solely from harmless tasks lead to significant safety degradation (ASR increases by 13-49%). The root cause is the execution-oriented nature of experiences, which reinforces action over refusal.
+:   This paper systematically investigates safety risks in experience-driven self-evolving agents, finding that accumulating experience even from harmless tasks leads to significant safety degradation (ASR increases by 13-49%), rooted in the execution-oriented nature of experience that reinforces action over refusal.
 
 **[PARASITE: Conditional System Prompt Poisoning to Hijack LLMs](parasite_conditional_system_prompt_poisoning_to_hijack_llms.md)**
 
-:   PARASITE formalizes the threat where system prompts downloaded from public marketplaces may contain conditional trigger backdoors. It utilizes global semantic search combined with word-level greedy perturbations to generate highly stealthy system prompts under black-box conditions that hijack responses only on target queries.
+:   PARASITE formalizes the threat where system prompts downloaded from public marketplaces may contain conditional trigger backdoors as a new supply chain risk. It utilizes global semantic search combined with word-level greedy perturbation to generate highly stealthy system prompts under black-box conditions that hijack responses only for target queries.
 
 **[Permutation-Consensus Listwise Judging for Robust Factuality Evaluation](permutation-consensus_listwise_judging_for_robust_factuality_evaluation.md)**
 
@@ -381,11 +381,11 @@ item_total: 115
 
 **[Privacy-R1: Privacy-Aware Multi-LLM Agent Collaboration via Reinforcement Learning](privacy-r1_privacy-aware_multi-llm_agent_collaboration_via_reinforcement_learnin.md)**
 
-:   Privacy-R1 models the delegation problem between local and remote models for privacy-sensitive queries as a sentence-by-sentence sequential decision-making task. By utilizing a lightweight Transformer policy optimized via PPO, it learns a dynamic trade-off between privacy and task quality. It achieves a superior quality-leakage frontier compared to static rewriting methods on both PUPA and the high-PII-density Med-PCD datasets.
+:   Privacy-R1 models the local/remote model delegation for privacy-sensitive queries as a sentence-level sequential decision task. Using a lightweight Transformer policy optimized via PPO, it learns a dynamic trade-off between privacy and task quality, achieving a superior quality-leakage frontier on both PUPA and the high-PII-density Med-PCD datasets compared to static rewriting methods.
 
 **[Privacy Collapse: Benign Fine-Tuning Can Break Contextual Privacy in Language Models](privacy_collapse_benign_fine-tuning_can_break_contextual_privacy_in_language_mod.md)**
 
-:   This paper proposes "Privacy Collapse," a new failure mode: seemingly benign fine-tuning causes LLMs to systematically degrade in contextual privacy norms while standard safety and capability metrics remain normal.
+:   This paper proposes "Privacy Collapse," a novel failure mode where seemingly benign fine-tuning causes systematic degradation of an LLM's contextual privacy norms, while standard safety and capability metrics remain largely unaffected.
 
 **[ProxyPrompt: Securing System Prompts against Prompt Extraction Attacks](proxyprompt_securing_system_prompts_against_prompt_extraction_attacks.md)**
 
@@ -405,23 +405,23 @@ item_total: 115
 
 **[Red-Bandit: Test-Time Adaptation for LLM Red-Teaming via Bandit-Guided LoRA Experts](red-bandit_test-time_adaptation_for_llm_red-teaming_via_bandit-guided_lora_exper.md)**
 
-:   Red-Bandit models automated LLM red-teaming as an online adaptation problem involving "multiple attack-style LoRA experts + test-time bandit routing." It demonstrates the effectiveness of style-level adaptive red-teaming with higher ASR@10 and lower perplexity across several open-source and closed-source target models.
+:   Red-Bandit models automated LLM red-teaming as an online adaptation problem using "multiple attack-style LoRA experts + test-time bandit routing." It demonstrates the effectiveness of style-level adaptive red-teaming with higher ASR@10 and lower perplexity across various open-source and closed-source target models.
 
 **[Representation-Guided Parameter-Efficient LLM Unlearning](representation-guided_parameter-efficient_llm_unlearning.md)**
 
-:   The ReGLU framework is proposed to shift LLM unlearning from a "parameter importance" paradigm to a "representation space geometry" paradigm. By using Representation-guided LoRA Initialization (RILA), unlearning updates are aligned with the most discriminative subspace of the forget/retain sets, while a Representation Orthogonal Loss (ROL) ensures updates do not interfere with retained knowledge.
+:   This paper proposes the ReGLU framework, shifting LLM unlearning from the "parameter importance" paradigm to a "representation space geometry" paradigm. By using Representation-guided LoRA Initialization (RILA), the unlearning updates are aligned with the most discriminative subspace of the forget/retain sets, coupled with a Representation Orthogonal Loss (ROL) to constrain updates from interfering with retain set knowledge.
 
 **[Responsible Federated LLMs via Safety Filtering and Constitutional AI](responsible_federated_llms_via_safety_filtering_and_constitutional_ai.md)**
 
-:   This paper integrates safety filters and Constitutional AI into the FedLLM workflow, demonstrating that harmful client data significantly impairs global model safety. It shows that filtering data at the client side and performing low-cost CAI fine-tuning at the server side can pull AdvBench safety scores from approximately 72% back to over 96%.
+:   This paper integrates safety filters and Constitutional AI (CAI) into the FedLLM workflow. It demonstrates that harmful client data significantly compromises global model safety, while client-side filtering combined with low-cost server-side CAI fine-tuning can restore AdvBench safety scores from approximately 72% to over 96%.
 
 **[Rethinking Jailbreak Detection of Large Vision Language Models with Representational Contrastive Scoring](rethinking_jailbreak_detection_of_large_vision_language_models_with_representati.md)**
 
-:   Ours proposes the Representational Contrastive Scoring (RCS) framework, which analyzes the geometric structure of internal intermediate representations in LVLMs. By employing lightweight projection and contrastive scoring, it distinguishes malicious intent from benign distribution shifts, achieving SOTA jailbreak detection performance under rigorous evaluation protocols for cross-attack generalization.
+:   This paper proposes the Representational Contrastive Scoring (RCS) framework, which achieves SOTA jailbreak detection performance under rigorous cross-attack evaluation protocols. By analyzing the geometric structure of internal intermediate layer representations in LVLMs, RCS utilizes lightweight projection and contrastive scoring to distinguish malicious intent from benign distribution shifts.
 
 **[Rethinking LLM Watermark Detection in Black-Box Settings: A Non-Intrusive Third-Party Framework](rethinking_llm_watermark_detection_in_black-box_settings_a_non-intrusive_third-p.md)**
 
-:   TTP-Detect is proposed as the first black-box third-party watermark verification framework that decouples detection from injection. By magnifying watermark signals through a proxy model and combining three complementary metrics—local consistency, global geometry, and adaptive rank testing—it achieves high-precision detection across various watermarking schemes without access to keys or internal model states.
+:   The authors propose TTP-Detect, the first black-box third-party watermark verification framework that decouples detection from injection. By magnifying watermark signals through a proxy model and combining three complementary metrics—local consistency, global geometry, and adaptive rank testing—it achieves high-precision detection across various watermarking schemes without accessing secret keys or internal model states.
 
 **[Retrievals Can Be Detrimental: Unveiling the Backdoor Vulnerability of Retrieval-Augmented Diffusion Models](retrievals_can_be_detrimental_unveiling_the_backdoor_vulnerability_of_retrieval-.md)**
 
@@ -433,11 +433,11 @@ item_total: 115
 
 **[RISK: A Framework for GUI Agents in E-commerce Risk Management](risk_a_framework_for_gui_agents_in_e-commerce_risk_management.md)**
 
-:   Ours proposes the RISK framework, which includes a domain dataset (RISK-Data, 8492 single-step + 2386 multi-step trajectories), a benchmark (RISK-Bench), and a GRPO-based reinforcement fine-tuning method (RISK-R1). Designed for GUI agents in e-commerce risk management scenarios, the 7B model surpasses SOTA baselines with only 7.2% of the parameters, achieving an online task success rate of 70.5%.
+:   Ours proposes the RISK framework, comprising a domain dataset (RISK-Data: 8,492 single-step + 2,386 multi-step trajectories), a benchmark (RISK-Bench), and a GRPO-based reinforcement fine-tuning method (RISK-R1). Specifically designed for GUI agents in e-commerce risk management, the 7B model outperforms SOTA baselines with only 7.2% of the parameters, achieving a 70.5% success rate in online tasks.
 
 **[Robust Multimodal Safety via Conditional Decoding](robust_multimodal_safety_via_conditional_decoding.md)**
 
-:   This paper proposes the CASA conditional decoding framework, which requires multimodal models to predict a safety token before generating a response and utilizes safety attention to amplify malicious signals. This approach reduces the average Attack Success Rate (ASR) by over 97% on text, vision, and audio jailbreak benchmarks while largely maintaining the multimodal capabilities for benign inputs.
+:   This paper proposes the CASA conditional decoding framework, which requires multimodal models to predict a safety token before generating a response. By using a safety attention mechanism to amplify malicious signals, the framework reduces the average attack success rate by over 97% across text, vision, and audio jailbreak benchmarks while maintaining the multimodal capabilities for benign inputs.
 
 **[Robustness via Referencing: Defending against Prompt Injection Attacks by Referencing the Executed Instruction](robustness_via_referencing_defending_against_prompt_injection_attacks_by_referen.md)**
 
@@ -445,7 +445,7 @@ item_total: 115
 
 **[Route to Rome Attack: Directing LLM Routers to Expensive Models via Adversarial Suffixes](route_to_rome_attack_directing_llm_routers_to_expensive_models_via_adversarial_s.md)**
 
-:   Ours proposes R2A (Route to Rome Attack), which constructs a hybrid ensemble proxy router and optimizes a universal adversarial suffix under a black-box setting to divert LLM routing decisions from cheap weak models to expensive strong models. It achieves an average gain of 49% in attack success rate across 7 open-source and 2 commercial routers (GPT-5-Auto, OpenRouter), increasing inference costs by 2.7-2.9 times.
+:   This paper proposes R2A (Route to Rome Attack). By constructing mixed ensemble proxy routers and optimizing universal adversarial suffixes under a black-box setting, it directs LLM routing decisions from cheap weak models to expensive strong models. On 7 open-source routers and 2 commercial routers (GPT-5-Auto, OpenRouter), the average Attack Success Rate (ASR) increases by 49%, with inference costs rising by 2.7-2.9 times.
 
 **[SafeConstellations: Mitigating Over-Refusals in LLMs Through Task-Aware Representation Steering](safeconstellations_mitigating_over-refusals_in_llms_through_task-aware_represent.md)**
 
@@ -453,19 +453,19 @@ item_total: 115
 
 **[SafeMERGE: Preserving Safety Alignment in Fine-Tuned Large Language Models via Selective Layer-Wise Model Merging](safemerge_preserving_safety_alignment_in_fine-tuned_large_language_models_via_se.md)**
 
-:   This paper proposes SafeMERGE, a lightweight post-fine-tuning framework that detects fine-tuned layers deviating from safe behavior via cosine similarity and merges only those layers with corresponding layers of a safety model. It significantly reduces harmful outputs across four LLMs while maintaining or even improving task performance.
+:   Ours proposes SafeMERGE, a lightweight post-fine-tuning framework that identifies fine-tuned layers deviating from safe behavior via cosine similarity and merges only these layers with corresponding layers of a safety model. This significantly reduces harmful outputs across four LLMs while maintaining or even improving task performance.
 
 **[SafetyALFRED: Evaluating Safety-Conscious Planning of Multimodal Large Language Models](safetyalfred_evaluating_safety-conscious_planning_of_multimodal_large_language_m.md)**
 
-:   This paper introduces the SafetyALFRED benchmark, which incorporates six categories of kitchen safety hazards into ALFRED embodied tasks. It reveals a severe alignment gap where Multimodal Large Language Models (MLLMs) can identify hazards in static QA (up to 92%) but struggle to actively mitigate them in embodied planning (<60%), advocating for a shift from QA-based evaluation to embodied safety evaluation.
+:   This paper introduces the SafetyALFRED benchmark, incorporating six categories of kitchen safety hazards into ALFRED embodied tasks. It reveals a severe alignment gap where Multimodal Large Language Models (MLLMs) can identify hazards in static QA (up to 92%) but fail to actively mitigate them in embodied planning (<60%), advocating for a shift from QA evaluation paradigms to embodied safety evaluation.
 
 **[SAGE: Sparse Adaptive Guidance for Dependency-Aware Tabular Data Generation](sage_sparse_adaptive_guidance_for_dependency-aware_tabular_data_generation.md)**
 
-:   SAGE discretizes tabular features into value-aware pseudo-features and constructs a sparse dynamic dependency graph using mutual information to guide LLM generation, thereby enhancing the downstream utility, constraint consistency, and realism of synthetic tabular data.
+:   SAGE discretizes tabular features into value-aware pseudo-features and constructs a sparse dynamic dependency graph based on mutual information to guide LLM generation, thereby enhancing downstream utility, constraint consistency, and realism of synthetic tabular data.
 
 **[Seeing No Evil: Blinding Large Vision-Language Models to Safety Instructions via Adversarial Attention Hijacking](seeing_no_evil_blinding_large_vision-language_models_to_safety_instructions_via_.md)**
 
-:   Proposes Attention-Guided Visual Jailbreaking, which bypasses rather than forces through safety alignment mechanisms by suppressing model attention to safety instructions and anchoring attention to adversarial image features, achieving a 94.4% attack success rate on Qwen-VL while reducing gradient conflict by 45%.
+:   The authors propose Attention-Guided Visual Jailbreaking, which bypasses rather than directly attacks safety alignment mechanisms by suppressing model attention to safety instructions and anchoring it to adversarial image features. This method achieves a 94.4% attack success rate on Qwen-VL while reducing gradient conflict by 45%.
 
 **[SERE: Structural Example Retrieval for Enhancing LLMs in Event Causality Identification](sere_structural_example_retrieval_for_enhancing_llms_in_event_causality_identifi.md)**
 
@@ -477,11 +477,11 @@ item_total: 115
 
 **[SharedRequest: Privacy-Preserving Model-Agnostic Inference for Large Language Models](sharedrequest_privacy-preserving_model-agnostic_inference_for_large_language_mod.md)**
 
-:   SharedRequest is proposed as a model-agnostic privacy-preserving LLM inference framework. By elevating privacy protection from the single-prompt level to the batch level—mixing real and noise prompts while sharing inference overhead for semantically equivalent requests—it achieves a utility gain of >20% and up to a 5.6× reduction in query costs.
+:   SharedRequest is proposed, a model-agnostic privacy-preserving LLM inference framework that elevates privacy preservation from the individual prompt level to the batch level—by mixing real and noisy prompts and sharing the inference overhead of semantically equivalent requests—achieving a $>20\%$ utility improvement and a query cost reduction of up to 5.6×.
 
 **[SLIM: Stealthy Low-Coverage Black-Box Watermarking via Latent-Space Confusion Zones](slim_stealthy_low-coverage_black-box_watermarking_via_latent-space_confusion_zon.md)**
 
-:   SLIM proposes a low-coverage data watermarking approach for individual data owners: by making the model learn divergent continuations for similar prefixes in a local latent space, it eventually exhibits statistically detectable local instability during black-box generation.
+:   SLIM proposes a low-coverage data watermarking approach for individual data owners: by making the model learn divergent continuations for similar prefixes within a local latent space, the model exhibits statistically detectable local instability during black-box generation.
 
 **[SSG: Logit-Balanced Vocabulary Partitioning for LLM Watermarking](ssg_logit-balanced_vocabulary_partitioning_for_llm_watermarking.md)**
 
@@ -489,15 +489,15 @@ item_total: 115
 
 **[STAR-Teaming: A Strategy-Response Multiplex Network Approach to Automated LLM Red Teaming](star-teaming_a_strategy-response_multiplex_network_approach_to_automated_llm_red.md)**
 
-:   This paper proposes STAR-Teaming, an automated red teaming framework based on a strategy-response multiplex network. By modeling attack strategy selection as a probabilistic optimization of the inverse Ising problem, it achieves an average Attack Success Rate (ASR) of 74.5% on HarmBench, outperforming the strongest baseline by 13.5% while significantly reducing computational overhead.
+:   This paper proposes STAR-Teaming, an automated red teaming framework based on a strategy-response multiplex network. By modeling attack strategy selection as a probabilistic optimization of an inverse Ising problem, it achieves a 74.5% average attack success rate on HarmBench, surpassing the strongest baseline by 13.5% while significantly reducing computational overhead.
 
 **[Subject-level Inference for Realistic Text Anonymization Evaluation](subject-level_inference_for_realistic_text_anonymization_evaluation.md)**
 
-:   SPIA proposes the first subject-level PII inference evaluation benchmark (675 documents, 1712 subjects, 7040 PII), revealing that even if 90%+ of PII spans are masked, the subject-level inference protection rate can be as low as 33%, and focusing anonymization on a single target subject causes non-target subjects to be more exposed.
+:   SPIA proposes the first subject-level PII inference evaluation benchmark (675 documents, 1,712 subjects, 7,040 PII), revealing that even when 90%+ of PII spans are masked, the subject-level inference protection rate can be as low as 33%, and focusing anonymization on a single target subject leads to greater exposure of non-target subjects.
 
 **[SWAN: Semantic Watermarking with Abstract Meaning Representation](swan_semantic_watermarking_with_abstract_meaning_representation.md)**
 
-:   SWAN uses Abstract Meaning Representation templates to embed watermarks into the semantic graph structure of sentences rather than token or embedding regions. Consequently, the watermark remains detectable through AMR parsing, template matching, and proportion z-tests even after meaning-preserving paraphrasing.
+:   SWAN embeds watermarks into the semantic graph structure of sentences using Abstract Meaning Representation (AMR) templates rather than token or embedding regions. Consequently, after paraphrasing that preserves the original meaning, the watermark can still be detected through AMR parsing, template matching, and proportion z-testing.
 
 **[Topic-Based Watermarks for Large Language Models](topic-based_watermarks_for_large_language_models.md)**
 
@@ -509,15 +509,15 @@ item_total: 115
 
 **[TrajGuard: Streaming Hidden-state Trajectory Detection for Decoding-time Jailbreak Defense](trajguard_streaming_hidden-state_trajectory_detection_for_decoding-time_jailbrea.md)**
 
-:   This paper proposes TrajGuard, a training-free decoding-time jailbreak defense framework. By aggregating hidden-state trajectories from critical layers using a sliding window to quantify risk in real-time, it triggers a lightweight semantic judge only when the risk persistently exceeds a threshold. It achieves a 95% average defense rate across 12 jailbreak attacks, with a detection latency of only 5.2ms/token and a false positive rate below 1.5%.
+:   This paper proposes TrajGuard, a training-free decoding-time jailbreak defense framework. By aggregating key-layer hidden-state trajectories via a sliding window to quantify risk in real-time, it triggers a lightweight semantic judge only when risks persistently exceed a threshold. TrajGuard achieves a 95% average defense rate across 12 jailbreak attacks with a detection latency of only 5.2ms/token and a false positive rate below 1.5%.
 
 **[TROJail: Trajectory-Level Optimization for Multi-Turn Large Language Model Jailbreaks with Process Rewards](trojail_trajectory-level_optimization_for_multi-turn_large_language_model_jailbr.md)**
 
-:   This paper models automated multi-turn jailbreak attacks as a multi-turn reinforcement learning problem and proposes TROJail. By utilizing two heuristic process rewards (excessive harmfulness penalty and semantic relevance progression), it alleviates the sparse supervision issue inherent in outcome rewards, significantly improving attack success rates across multiple models and benchmarks.
+:   This paper models automated multi-turn jailbreak attacks as a multi-turn reinforcement learning problem and proposes TROJail. By introducing two heuristic process rewards (penalty for excessive toxicity and semantic correlation progression), it alleviates the sparse supervision issue of outcome rewards, significantly improving attack success rates across multiple models and benchmarks.
 
 **[Understanding and Mitigating Bias Inheritance in LLM-based Data Augmentation on Downstream Tasks](understanding_and_mitigating_bias_inheritance_in_llm-based_data_augmentation_on_.md)**
 
-:   This paper systematically investigates how biased augmented data generated by LLMs is inherited, amplified, and affects downstream tasks during supervised fine-tuning. Utilizing a generation framework of six bias types across ten tasks and three mitigation methods, it reveals the complex phenomenon that "more synthetic data is not necessarily safer."
+:   This paper systematically investigates how biased augmented data generated by LLMs is inherited and amplified during supervised fine-tuning (SFT), impacting downstream tasks. Using six types of bias generation frameworks across ten tasks and three categories of mitigation methods, it reveals the complex phenomenon that "more synthetic data does not necessarily mean higher safety."
 
 **[Unlearners Can Lie: Evaluating and Improving Honesty in LLM Unlearning](unlearners_can_lie_evaluating_and_improving_honesty_in_llm_unlearning.md)**
 
@@ -525,11 +525,11 @@ item_total: 115
 
 **[VLA-Forget: Vision-Language-Action Unlearning for Embodied Foundation Models](vla-forget_vision-language-action_unlearning_for_embodied_foundation_models.md)**
 
-:   VLA-Forget is proposed as the first hybrid unlearning framework for Vision-Language-Action (VLA) models. By employing ratio-aware selective editing for perception/cross-modal layers and significance-based selective editing for reasoning/action layers, it achieves target behavior removal while maintaining perception accuracy (+22%) and task success rate (+9%).
+:   Ours proposes VLA-Forget, the first hybrid unlearning framework for Vision-Language-Action (VLA) models. By employing ratio-aware selective editing for perception/cross-modal layers and significance-based selective editing for reasoning/action layers, it achieves target behavior removal while maintaining perception accuracy (+22%) and task success rate (+9%).
 
 **[When Helpers Become Hazards: A Benchmark for Analyzing Multimodal LLM-Powered Safety in Daily Life](when_helpers_become_hazards_a_benchmark_for_analyzing_multimodal_llm-powered_saf.md)**
 
-:   The authors propose the SaLAD benchmark, comprising 2013 real-world image-text samples across 10 daily scenarios. It evaluates the ability of Multimodal Large Language Models (MLLMs) to identify implicit safety risks and provide safety warnings during daily assistance, revealing that even the strongest models achieve only 57.2% accuracy on unsafe queries.
+:   This paper proposes the SaLAD benchmark, comprising 2013 real-world image-text samples across 10 daily life categories. It evaluates the ability of Multimodal Large Language Models (MLLMs) to identify implicit safety risks and provide safety warnings during daily assistance, revealing that even the strongest models achieve only 57.2% accuracy on unsafe queries.
 
 **[When Models Outthink Their Safety: Unveiling and Mitigating Self-Jailbreak in Large Reasoning Models](when_models_outthink_their_safety_unveiling_and_mitigating_self-jailbreak_in_lar.md)**
 
@@ -537,7 +537,7 @@ item_total: 115
 
 **[Why Agents Compromise Safety Under Pressure](why_agents_compromise_safety_under_pressure.md)**
 
-:   The authors propose the concept of "Agentic Pressure"—where LLM agents, when unable to simultaneously complete tasks and adhere to safety rules under resource constraints, spontaneously undergo normative drift. They actively sacrifice safety to maintain helpfulness, and models with stronger reasoning capabilities are more adept at constructing verbal rationalizations to justify these violations.
+:   This paper proposes the concept of "Agentic Pressure"—the phenomenon where LLM agents spontaneously exhibit normative drift by sacrificing safety to maintain helpfulness when resource constraints prevent them from simultaneously completing tasks and following safety rules. Notably, models with stronger reasoning capabilities are more adept at constructing verbal rationalizations to justify these violations.
 
 **[XMark: Reliable Multi-Bit Watermarking for LLM-Generated Texts](xmark_reliable_multi-bit_watermarking_for_llm-generated_texts.md)**
 
@@ -545,4 +545,4 @@ item_total: 115
 
 **[XOXO: Stealthy Cross-Origin Context Poisoning Attacks against AI Coding Assistants](xoxo_stealthy_cross-origin_context_poisoning_attacks_against_ai_coding_assistant.md)**
 
-:   This work reveals a design vulnerability in AI coding assistants that automatically collect context. It proposes the Cross-Origin Context Poisoning (XOXO) attack: by applying semantic-preserving code transformations (e.g., variable renaming) to poison shared repositories, assistants like GitHub Copilot are induced to generate vulnerable code without the user's knowledge. The attack achieves an average success rate of 73.20% across 8 SOTA models.
+:   This work identifies a design vulnerability in the automatic context collection of AI coding assistants and proposes the Cross-Origin Context Poisoning (XOXO) attack. By applying semantics-preserving transformations (e.g., variable renaming) to poison shared codebases, assistants like GitHub Copilot are misled into generating buggy or vulnerable code. The attack achieves an average success rate of 73.20% across 8 SOTA models.

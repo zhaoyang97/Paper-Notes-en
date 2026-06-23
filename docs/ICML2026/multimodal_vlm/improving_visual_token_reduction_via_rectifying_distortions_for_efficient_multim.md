@@ -2,82 +2,80 @@
 title: >-
   [Paper Note] RESTORE: 通过矫正失真改进视觉 Token 缩减以提升 MLLM 推理效率
 description: >-
-  [ICML 2026][Multimodal VLM][LLaVA] RESTORE highlights the overlooked issues of "positional distortion" and "attention decay" in existing Visual Token Reduction (VTR) methods. By introducing a distance-aware inverse compensation term for RoPE decay and improving token merging with an anchor selection strategy that balances representativeness and discrimi
+  [ICML 2026][Multimodal VLM][LLaVA] RESTORE highlights two overlooked issues in existing Visual Token Reduction (VTR): "position distortion" and "attention decay." By introducing a distance-aware reverse compensation term for RoPE decay and improving token merging with an anchor selection strategy balancing representativeness and discriminativeness, it e
 tags:
   - ICML 2026
   - Multimodal VLM
   - LLaVA
 date: 2026-05-08
-content_hash: 507979c33b5cf6be
+content_hash: 7971767c0cb6df2c
 ---
 # RESTORE: Improving Visual Token Reduction via Distortion Correction for Enhanced MLLM Inference Efficiency
 
 **Conference**: ICML 2026  
 **arXiv**: [2606.01711](https://arxiv.org/abs/2606.01711)  
-**Code**: https://cvlab.yonsei.ac.kr/projects/RESTORE (Project Homepage)  
+**Code**: https://cvlab.yonsei.ac.kr/projects/RESTORE (Project Page)  
 **Area**: Multimodal VLM / LLM Efficiency  
 **Keywords**: Visual Token Reduction, MLLM Acceleration, RoPE Attention Calibration, Anchor Token Selection, LLaVA  
 
 ## TL;DR
-RESTORE highlights the overlooked issues of "positional distortion" and "attention decay" in existing Visual Token Reduction (VTR) methods. By introducing a distance-aware inverse compensation term for RoPE decay and improving token merging with an anchor selection strategy that balances representativeness and discriminativeness, LLaVA-1.5-7B maintains near full-token performance even with only 64 tokens (approximately 11% retention rate).
+RESTORE highlights two overlooked issues in existing Visual Token Reduction (VTR): "position distortion" and "attention decay." By introducing a distance-aware reverse compensation term for RoPE decay and improving token merging with an anchor selection strategy balancing representativeness and discriminativeness, it enables LLaVA-1.5-7B to approach full-token performance even at 64 tokens (~11% retention).
 
 ## Background & Motivation
 
-**Background**: Multimodal Large Language Models (MLLMs, e.g., LLaVA, Qwen2.5-VL) encode visual patches into hundreds or thousands of visual tokens, which are concatenated with text tokens for LLM processing. Due to the $O(N^2)$ complexity of self-attention, these visual tokens represent the primary computational and memory bottleneck. Consequently, Visual Token Reduction (VTR) methods have emerged, primarily falling into two categories: pruning (FastV, SparseVLM, HoloV), which retains high-attention tokens and discards the rest; and merging (ToMe, PruMerge, VisionZip), which aggregates similar tokens into representative anchors.
+**Background**: Multimodal Large Language Models (MLLMs, e.g., LLaVA, Qwen2.5-VL) encode visual patches into hundreds or thousands of visual tokens, which are concatenated with text tokens for LLM processing. Given the $O(N^2)$ complexity of self-attention, these visual tokens represent the primary computational and memory bottleneck. Visual Token Reduction (VTR) methods have emerged, categorized into pruning (FastV, SparseVLM, HoloV), which keeps high-attention tokens, and merging (ToMe, PruMerge, VisionZip), which aggregates similar tokens into representative anchors.
 
-**Limitations of Prior Work**: The authors identify two types of distortions that have long been ignored. The first is **positional distortion**: after sequence reduction, current methods either reassign retained tokens to continuous positions ("reindex" approach) or maintain their original indices ("retain" approach). The former destroys the true spatial distance between visual and text tokens, while the latter suffers from severe suppression of distant tokens due to the long-range decay of RoPE. The second is **attention decay**: softmax normalization redistributes the probability mass originally occupied by pruned tokens. Since text tokens have smaller mutual distances and higher logits, the overall attention proportion of visual tokens becomes significantly lower than the full-sequence baseline after merging/pruning. This forces the model to "look less at images and guess more from text," leading to hallucinations and weakened visual grounding.
+**Limitations of Prior Work**: The authors identify two types of long-ignored distortions. First is **position distortion**: after reduction, methods either renumber tokens sequentially (reindex) or retain original indices (retain). The former destroys the true spatial distance between visual and text tokens, while the latter subjects distant tokens to severe suppression due to RoPE’s long-range decay. Second is **attention decay**: softmax normalization redistributes the probability mass of pruned tokens. Since text tokens have higher logits due to proximity, the overall attention proportion of visual tokens drops significantly compared to the full-sequence baseline, forcing the model to "rely more on text and less on images," leading to hallucinations and weakened visual grounding.
 
-**Key Challenge**: Reindexing sacrifices spatial authenticity for attention volume, while retaining indices preserves spatial authenticity but loses attention volume. Neither path simultaneously satisfies "positional semantic alignment" and "attention distribution alignment."
+**Key Challenge**: Reindex sacrifices spatial authenticity for attention volume, while retain preserves spatial authenticity but loses attention volume. Neither path simultaneously achieves "positional semantic alignment" and "attention distribution alignment."
 
-**Goal**: Without modifying LLM weights or adding significant inference overhead: (1) ensure reduced visual sequences retain original positional indices to maintain spatial relationships; (2) pull the total attention proportion of visual tokens back to full-sequence levels; and (3) select more representative anchors during token merging to reduce detail loss caused by feature averaging.
+**Goal**: Without modifying LLM weights or adding significant inference overhead, (1) retain original position indices to maintain spatial relationships, (2) restore the total attention proportion of visual tokens to full-sequence levels, and (3) select more representative anchors during merging to reduce detail loss from feature averaging.
 
-**Key Insight**: Since the long-range decay function of RoPE $\mathcal{D}(|m-n|)=\frac{2}{d_h}\sum_{j=1}^{d_h/2}\cos(|m-n|\theta_j)$ can be analytically derived, a **distance-inversely-increasing** compensation term $c-\mathcal{D}(|m-n|)$ can be constructed to analytically restore the attention stolen by RoPE. Anchor selection draws inspiration from density peak clustering, requiring tokens to be both "centers of their neighbors" and "sufficiently distant from each other."
+**Key Insight**: Since the long-range decay function of RoPE, $\mathcal{D}(|m-n|)=\frac{2}{d_h}\sum_{j=1}^{d_h/2}\cos(|m-n|\theta_j)$, is analytically derivable, one can directly construct a **distance-aware reverse compensation** term $c-\mathcal{D}(|m-n|)$ to analytically restore the attention "stolen" by RoPE. For anchor selection, inspired by density peak clustering, anchors should be both "centroids of their neighborhoods" and "sufficiently distant from each other."
 
-**Core Idea**: Use "distance-aware softmax calibration" to correct positional/attention distortions and a "representative × discriminative" dual-metric for anchor selection, creating a plug-and-play universal enhancement module for VTR.
+**Core Idea**: Use "distance-aware softmax calibration" to correct position/attention distortion and a "representativeness × discriminativeness" dual-metric for anchor selection, forming a plug-and-play universal enhancement module for VTR.
 
 ## Method
 
 ### Overall Architecture
-RESTORE is a **universal VTR enhancer** designed for standard MLLMs (exemplified by LLaVA-1.5). It does not modify the visual encoder or the LLM. It only intervenes in two places: the softmax formula for attention calculation within the LLM and the anchor selection logic during the token merging phase.
+RESTORE is a **universal VTR enhancer** for standard MLLMs (exemplified by LLaVA-1.5). It modifies only two components without altering the vision encoder or LLM weights: the softmax formula for attention calculation within the LLM and the anchor selection logic during token merging.
 
-Mechanism: Input Image → Visual Encoder + Projector output $\mathbf{X}_{\text{vis}}\in\mathbb{R}^{N_{\text{vis}}\times d}$ ($N_{\text{vis}}{=}576$) → VTR phase (compatible with any pruning/merging/hybrid method) output $\hat{\mathbf{X}}_{\text{vis}}\in\mathbb{R}^{n_{\text{vis}}\times d}$ ($n_{\text{vis}}\in\{64,128,192\}$) → Retained tokens adopt **original positional indices** from the full sequence → LLM uses **calibrated** softmax in each attention layer → Text response output. If the underlying VTR includes a merging step (e.g., VisionZip), RESTORE's discriminative anchor selection replaces the original sampling logic. Because it only modifies the softmax and anchor selection without changing the core "token picking" logic of VTR methods, RESTORE serves as a training-free universal enhancer for backbones like FastV, SparseVLM, ToMe, VisionZip, DivPrune, VisPruner, and HoloV.
+Workflow: Input image → Vision encoder output $\mathbf{X}_{\text{vis}}\in\mathbb{R}^{N_{\text{vis}}\times d}$ ($N_{\text{vis}}{=}576$) → VTR stage (pruning/merging/hybrid) yields $\hat{\mathbf{X}}_{\text{vis}}\in\mathbb{R}^{n_{\text{vis}}\times d}$ ($n_{\text{vis}}\in\{64,128,192\}$) → Retained tokens use **original position indices** → LLM uses **calibrated** softmax in each attention layer → Text response. If the underlying VTR involves merging (e.g., VisionZip), RESTORE's discriminative anchor selection replaces the original sampling. By only modifying softmax and anchor selection, RESTORE serves as a training-free enhancer for backbones like FastV, SparseVLM, ToMe, and HoloV.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["Input Image"] --> B["Visual Encoder + Projector<br/>576 visual tokens"]
-    B --> C["VTR Phase: Pruning / Merging / Hybrid<br/>Reduced to 64~192 tokens"]
-    C -->|With Merging| D["Discriminative Anchor Selection<br/>Representative × Discriminative selection then merge"]
+    A["Input Image"] --> B["Vision Encoder + Projector<br/>576 tokens"]
+    B --> C["VTR Stage: Pruning / Merging / Hybrid<br/>Reduced to 64~192 tokens"]
+    C -->|Merging Step| D["Discriminative Anchor Selection<br/>Rep. × Disc. to pick anchors"]
     C -->|Pure Pruning| E
     D --> E["Retain Original Position Indices<br/>No reindexing, maintain spatial distance"]
-    E --> F["Concatenate [System; Visual; Text] Input to LLM"]
-    F --> G["Distance-Aware Attention Calibration<br/>Softmax + c−𝒟(|m−n|) restores RoPE decay"]
+    E --> F["Concatenate [System; Vision; Text] for LLM"]
+    F --> G["Distance-aware Attention Calibration<br/>Softmax + c−𝒟(|m−n|) to restore RoPE decay"]
     G --> H["Output Text Response"]
 ```
 
 ### Key Designs
 
-**1. Distance-Aware Attention Calibration: Retaining original indices while analytically restoring RoPE-attenuated attention**
+**1. Distance-aware Attention Calibration: Retaining original indices and analytically compensating for RoPE decay**
 
-This step is the core of the LLM stage (Node G) and the primary source of RESTORE's gains. The limitation of the "retain" approach is that long-range RoPE decay lowers the attention logits of distant visual tokens. After softmax normalization, probability mass is redistributed to text tokens that are closer and have higher logits, causing the total visual attention to drop below the full-sequence baseline. RESTORE retains original indices to preserve spatial authenticity and then adds an analytical calibration term to the softmax logits in each attention layer.
+This is the core of node G and the primary source of RESTORE's gains. The limitation is that retaining original indices causes far-away visual tokens to have lower attention logits due to RoPE's long-range decay. After softmax, this mass is redistributed to text tokens, causing visual attention to drop below the baseline. RESTORE retains original indices but adds an analytical calibration term to each attention logit.
 
-The approach analytically isolates the long-range decay of RoPE from the attention logit, obtaining a decay function dependent only on relative distance: $\mathcal{D}(|m-n|)=\frac{2}{d_h}\sum_{j=1}^{d_h/2}\cos(|m-n|\theta_j)$. The calibrated attention is $\hat{A}_{m,n}=\frac{\exp(z_{m,n}+\log s_n(c-\mathcal{D}(|m-n|)))}{\sum_{i}\exp(z_{m,i}+\log s_i(c-\mathcal{D}(|m-i|)))}$, where $z_{m,n}$ is the original logit, $s_n$ is the number of tokens merged into the $n$-th token, and $c$ is a constant ensuring non-negative compensation. While $\log s_n$ follows the ToMe approach of scaling merged tokens, $(c-\mathcal{D})$ is RESTORE's addition—as distance increases, $\mathcal{D}$ decreases and the compensation $(c-\mathcal{D})$ increases, precisely counteracting the RoPE-induced suppression of distant visual tokens. This allows the model to maintain both the true spatial relationships of the "retain" approach and the total attention volume of the "reindex" approach.
+Specifically, RoPE's long-range decay is isolated into the function $\mathcal{D}(|m-n|)=\frac{2}{d_h}\sum_{j=1}^{d_h/2}\cos(|m-n|\theta_j)$. The calibrated attention is $\hat{A}_{m,n}=\frac{\exp(z_{m,n}+\log s_n(c-\mathcal{D}(|m-n|)))}{\sum_{i}\exp(z_{m,i}+\log s_i(c-\mathcal{D}(|m-i|)))}$, where $z_{m,n}$ is the original logit, $s_n$ is the number of tokens merged into the $n$-th token, and $c$ is a constant ensuring non-Negative compensation. While $\log s_n$ handles merging scale (as in ToMe), the term $(c-\mathcal{D})$ is the novel contribution—as distance increases, $\mathcal{D}$ decreases and $(c-\mathcal{D})$ increases, counteracting RoPE's suppression. This simultaneously preserves spatial authenticity and restores total attention volume. This calibration also extends to M-RoPE used in Qwen2.5-VL.
 
-**2. Discriminative Anchor Token Selection: Making anchors both neighborhood centers and non-redundant**
+**2. Discriminative Anchor Token Selection: Making anchors representative centroids and non-redundant**
 
-This step (Node D) applies when the underlying VTR involves merging. Token merging clusters similar tokens into representative anchors. However, prior methods (e.g., PruMerge, VisionZip) do not guarantee that an anchor is truly similar to the tokens it merges, which blurs details. Conversely, selecting multiple highly correlated anchors wastes the token budget on redundant regions.
-
-RESTORE utilizes density peak clustering principles and a pre-computed pairwise correlation matrix $\mathbf{C}=\mathbf{X}_{\text{vis}}\mathbf{X}_{\text{vis}}^T/\|\mathbf{X}_{\text{vis}}\|^2$ to define two metrics. **Representativeness** $\mathcal{R}_i=\sum_j \mathbf{C}_{ij}$ measures how much a token correlates with all others; a higher value indicates a cluster center. **Discriminativeness** $1-\max_j \hat{\mathbf{C}}_{ij}$ measures uniqueness: a binary mask $\mathbf{M}_{ij}=\mathbb{I}(\mathcal{R}_j>\mathcal{R}_i)$ filters for "more central" competitors to create $\hat{\mathbf{C}}$, and the maximum similarity to the strongest competitor is calculated. If a token is not highly covered by any stronger competitor, this maximum is small and $1-\max$ is large. The final anchor set $\mathcal{A}=\operatorname{Top-K}(\mathcal{R}_i\odot(1-\max_j\hat{\mathbf{C}}_{ij}))$ consists of the Top-K products. This ensures anchors are neighborhood centers (reducing blur) and non-redundant.
+This applies to node D when merging is involved. Previous methods used high-attention tokens or uniform sampling, which don't guarantee that an anchor is similar to the tokens it merges. RESTORE uses a precomputed correlation matrix $\mathbf{C}=\mathbf{X}_{\text{vis}}\mathbf{X}_{\text{vis}}^T/\|\mathbf{X}_{\text{vis}}\|^2$ to define two metrics. **Representativeness** $\mathcal{R}_i=\sum_j \mathbf{C}_{ij}$ identifies tokens that act as cluster centers. **Discriminativeness** $1-\max_j \hat{\mathbf{C}}_{ij}$ measures uniqueness by comparing a token only to "more central" competitors; if a token is not covered by a stronger competitor, it captures unique features. The anchor set $\mathcal{A}=\operatorname{Top-K}(\mathcal{R}_i\odot(1-\max_j\hat{\mathbf{C}}_{ij}))$ selects tokens maximizing both, reducing detail loss from averaging and avoiding redundancy.
 
 ### Loss & Training
-RESTORE is a **purely inference-time module**. It introduces no trainable parameters and does not require retraining the LLM or visual encoder. The constant $c$ is fixed, and the decay $\mathcal{D}$ is analytically derived from RoPE parameters. Anchor selection depends only on the feature correlation matrix. Thus, it can be integrated into any pre-trained MLLM with zero training cost.
+RESTORE is a **purely inference-time module** with no trainable parameters. It requires no retraining of the LLM or vision encoder. The calibration term is derived analytically, and anchor selection relies on feature correlations computed during the forward pass.
 
 ## Key Experimental Results
 
 ### Main Results
-Evaluated using LLaVA-1.5-7B across 8 benchmarks (GQA, MMB, MME, POPE, SQA$^{\text{IMG}}$, VQA$^{\text{V2}}$, VQA$^{\text{Text}}$, SEED). The metric is the "relative percentage of full-token average score." Results at 192 tokens (33.3% retention) follow:
+Using LLaVA-1.5-7B across 8 benchmarks, the "relative percentage of full-token average score" serves as the metric. Results at 192 tokens (33.3% retention):
 
-| Method | Type | Avg Score | GQA | MME | POPE | VQA$^{\text{V2}}$ |
+| Method | Type | Avg. Score | GQA | MME | POPE | VQA$^{\text{V2}}$ |
 |------|------|---------|-----|-----|------|-------------------|
 | LLaVA-1.5-7B (Full 576 tokens) | Baseline | 100.0% | 61.9 | 1862 | 85.9 | 78.5 |
 | FastV | Text-aware | 96.0% | 57.1 | 1821 | 75.8 | 74.7 |
@@ -86,65 +84,58 @@ Evaluated using LLaVA-1.5-7B across 8 benchmarks (GQA, MMB, MME, POPE, SQA$^{\te
 | **VisionZip + RESTORE** | Hybrid | **98.0%** | **60.6** | **1782** | **86.6** | 77.0 |
 | DivPrune | Text-agnostic | 96.9% | 58.9 | 1723 | 86.5 | 76.1 |
 | **DivPrune + RESTORE** | Text-agnostic | **98.7%** | **60.9** | **1813** | **86.6** | **77.4** |
-| HoloV | Text-agnostic | 96.5% | 58.6 | 1779 | 85.0 | 76.0 |
-| **HoloV + RESTORE** | Text-agnostic | **98.8%** | **61.0** | **1793** | **86.6** | **77.6** |
 
-At 128 tokens (22.2%), text-agnostic backbones with RESTORE remain stable above 95%, while other methods drop significantly. At 64 tokens (11.1%), RESTORE consistently pushes several VTR backbones toward near full-token performance.
+At 64 tokens (11.1%), RESTORE pushes several VTR backbones to near full-token performance, whereas standard methods like FastV significantly degrade.
 
 ### Ablation Study
 
-| Configuration | Avg Score (192 tokens) | Description |
+| Configuration | Avg. Score (192 tokens) | Description |
 |------|---------------------|------|
-| HoloV (baseline) | 96.5% | Pruning only, reindexed positions |
-| + Retain Original Indices | Slight Decrease | Loss of attention volume, confirms "retain" drawback |
-| + Dist.-Aware Calib. ($c-\mathcal{D}$) | 98.4% | Restores attention volume; main gain source |
-| + Discrim. Anchor (for merging VTR) | +0.3~0.5% | Additional gain on merging methods like VisionZip |
-| **Full RESTORE** | **98.8%** | Calibration + Anchor Selection combined |
+| HoloV (Baseline) | 96.5% | Pruning only, reindexed positions |
+| + Retain Original Indices | Slight Decrease | Loss of total attention (confirms retain pain point) |
+| + Dist.-aware Calib. ($c-\mathcal{D}$) | 98.4% | Restores attention volume; main gain source |
+| + Disc. Anchors | +0.3~0.5% | Additional gain for merging methods |
+| **Full RESTORE** | **98.8%** | Combined effect |
 
 ### Key Findings
-- **Calibration is the main contributor**: Compensating for attention loss while retaining original indices closes the performance gap across all backbones. Significant POPE improvements suggest restored visual grounding.
-- **Backbone agnostic**: RESTORE provides stable gains of 1.5–2.3 points across text-aware, text-agnostic, and hybrid methods, indicating that the addressed distortions are fundamental to the VTR paradigm.
-- **Higher efficiency, higher impact**: Gains are more pronounced at lower token budgets (e.g., 64 tokens), where attention decay is most severe.
-- **M-RoPE Compatibility**: The calibration term analytically extends to M-RoPE used in Qwen2.5-VL with consistent gains.
+- **Calibration is the key**: Competing RoPE decay via $c-\mathcal{D}$ accounts for the most significant gains, particularly in POPE (hallucination), confirming the recovery of visual grounding.
+- **Agnostic to VTR backbones**: RESTORE provides stable gains (1.5–2.3 points) across text-aware, text-agnostic, and hybrid methods.
+- **Critical at high reduction ratios**: The gap between RESTORE and baselines widens as token counts decrease (e.g., at 64 tokens).
+- **M-RoPE Compatibility**: Successfully extended to Qwen2.5-VL’s multi-modal RoPE with consistent improvements.
 
 ## Highlights & Insights
-- **Analytical Use of RoPE**: The RoPE decay function $\mathcal{D}$ is used as an inverse compensation signal. The cost is negligible (a few cos summations), providing a template for correcting model priors analytically.
-- **Taxonomy of Distortion**: The paper independently identifies "positional distortion" and "attention distortion," moving the field beyond simply optimizing token selection strategies.
-- **Efficient Anchor Selection**: By leveraging the correlation matrix already computed, the "representativeness × discriminativeness" strategy improves merging quality without extra overhead.
-- **Zero-training Deployment**: A true plug-and-play module for existing LLaVA or Qwen2.5-VL deployments.
+- **Analytical Use of RoPE**: Instead of treating RoPE as a black box, RESTORE utilizes its decay function $\mathcal{D}$ for reverse compensation with negligible computational cost.
+- **Framework Decomposition**: Decouples VTR distortion into "positional" and "attention" dimensions, demonstrating that neither reindexing nor simple retention is optimal.
+- **Efficient Anchor Selection**: Reuses the correlation matrix to implement density peak clustering, ensuring anchors are representative and non-redundant without extra overhead.
+- **Zero-training Deployment**: A purely plug-and-play solution for deployed MLLMs, offering a "universal tool" for inference acceleration.
 
 ## Limitations & Future Work
-- **Dependency on Base VTR**: RESTORE enhances VTR but cannot recover information if the base method discards critical tokens.
-- **Fixed Calibration Constant $c$**: While selection principles are provided, $c$ is not yet adaptive to different resolutions or token counts.
-- **Vision-only Anchor Selection**: Anchor selection does not yet account for text-vision mutual information, which might benefit text-aware VTR.
-- **Generative Task Validation**: Evaluation focuses on discriminative/QA benchmarks; long-form generation grounding requires further study.
+- **Backbone Dependency**: RESTORE enhances VTR but does not replace it. If the underlying method prunes a critical token early, calibration cannot recover missing information.
+- **Fixed Constant $c$**: The optimal value for $c$ might vary with resolution or token count; an adaptive mechanism is currently lacking.
+- **Vision-only Anchors**: The selection process does not incorporate text/task awareness, potentially overlooking patches that are visually subtle but contextually vital.
+- **Generative Evaluation**: Focuses primarily on discriminative/QA benchmarks; performance in long-form generation needs more validation.
 
 ## Related Work & Insights
-- **vs FastV / SparseVLM**: These rely on cross-modal attention for selection but do not address positional/attention distortion. RESTORE improves their performance by correcting the distribution.
-- **vs ToMe / VisionZip**: ToMe's scaling factor is insufficient in MLLMs due to text token interference; RESTORE's $(c-\mathcal{D})$ fills this gap.
-- **vs DivPrune**: while DivPrune ensures diversity during pruning, RESTORE's discriminative metric ensures anchors are non-redundant during merging. They are complementary.
+- **vs. FastV / SparseVLM**: These methods require full attention in early layers to decide what to prune; RESTORE improves their performance by correcting the resulting attention imbalance.
+- **vs. ToMe / VisionZip**: ToMe's $\log s_n$ fails in MLLMs due to text interference; RESTORE's $(c-\mathcal{D})$ fills this gap.
+- **vs. DivPrune / HoloV**: These handle "where to keep tokens," while RESTORE handles "how preserved tokens attend." They are orthogonal; combining HoloV with RESTORE yields the best 192-token performance.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ 
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 
-- Writing Quality: ⭐⭐⭐⭐ 
-- Value: ⭐⭐⭐⭐⭐ 
+- Novelty: ⭐⭐⭐⭐
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐
+- Writing Quality: ⭐⭐⭐⭐
+- Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
-
-</div>
-
-<!-- RELATED:END -->
 
 ## Related Papers
 
 - [\[CVPR 2026\] Rethinking MLLM Itself as a Segmenter with a Single Segmentation Token](../../CVPR2026/multimodal_vlm/rethinking_mllm_itself_as_a_segmenter_with_a_single_segmentation_token.md)
-- [\[AAAI 2026\] Filter, Correlate, Compress: Training-Free Token Reduction for MLLM Acceleration](../../AAAI2026/multimodal_vlm/filter_correlate_compress_training-free_token_reduction_for_.md)
 - [\[ICML 2026\] V-LynX: Token Interface Alignment for VideoX LLMs](v-lynx_token_interface_alignment_for_videox_llms.md)
 - [\[ICML 2026\] WeatherSyn: An Instruction Tuning MLLM For Weather Forecasting Report Generation](weathersyn_an_instruction_tuning_mllm_for_weather_forecasting_report_generation.md)
 - [\[ICML 2026\] ECG-R1: Protocol-Guided and Modality-Agnostic MLLM for Reliable ECG Interpretation](ecg-r1_protocol-guided_and_modality-agnostic_mllm_for_reliable_ecg_interpretatio.md)
+- [\[ICML 2026\] Detached Skip-Links and $R$-Probe: Decoupling Feature Aggregation from Gradient Propagation for MLLM OCR](detached_skip-links_and_r-probe_decoupling_feature_aggregation_from_gradient_pro.md)
 
 </div>
 

@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] Coevolutionary Continuous Discrete Diffusion: Make Your Diffusion Language Model a Latent Reasoner
 description: >-
-  [ICML 2026][Image Restoration][Diffusion LM] This paper systematically compares continuous diffusion, discrete masked diffusion, and looped transformers across the dimensions of expressivity and trainability. It proves that continuous diffusion is strictly more expressive than discrete diffusion and can simulate looped transformers, but its practical performance
+  [ICML 2026][Image Restoration][Diffusion LM] This paper systematically compares continuous diffusion, discrete masked diffusion, and looped transformers across the dimensions of expressivity and trainability. It proves that "continuous diffusion" is strictly more expressive than discrete diffusion and can simulate looped transformers, but its practical performanc
 tags:
   - ICML 2026
   - Image Restoration
@@ -11,74 +11,74 @@ tags:
   - Looped Transformer
   - CFG
 date: 2026-05-08
-content_hash: 3ef8e86a6ddd5d88
+content_hash: e2163cfea3b84629
 ---
 # Coevolutionary Continuous Discrete Diffusion: Make Your Diffusion Language Model a Latent Reasoner
 
 **Conference**: ICML 2026  
 **arXiv**: [2510.03206](https://arxiv.org/abs/2510.03206)  
 **Code**: https://github.com/zhouc20/CCDD (Available)  
-**Area**: Diffusion Language Models / Latent Reasoning / Multimodal Diffusion  
+**Area**: Diffusion Language Models / Latent Reasoning / Multi-modal Diffusion  
 **Keywords**: Diffusion LM, Latent Reasoning, Joint Continuous-Discrete Diffusion, Looped Transformer, CFG
 
 ## TL;DR
-This paper systematically compares continuous diffusion, discrete masked diffusion, and looped transformers across the dimensions of expressivity and trainability. It proves that continuous diffusion is strictly more expressive than discrete diffusion and can simulate looped transformers, but its practical performance is hindered by decoding and representation space issues. Consequently, it proposes **CCDD (Coevolutionary Continuous Discrete Diffusion)**—a framework that diffuses simultaneously in the discrete token space and the contextual embedding space of a pre-trained LLM, jointly denoised by a single model. CCDD reduces perplexity by 25-35% compared to MDLM on LM1B/OWT and outperforms MDLM at 256 steps with only 8 sampling steps.
+This paper systematically compares continuous diffusion, discrete masked diffusion, and looped transformers across the dimensions of expressivity and trainability. It proves that "continuous diffusion" is strictly more expressive than discrete diffusion and can simulate looped transformers, but its practical performance is limited by decoding and representation space. Consequently, the paper proposes **CCDD (Coevolutionary Continuous Discrete Diffusion)**—diffusion performed simultaneously on the discrete token space and the contextual embedding space of a pre-trained LLM, with a single model for joint denoising. CCDD reduces perplexity by 25-35% compared to MDLM on LM1B/OWT and outperforms MDLM with 256 steps using only 8 sampling steps.
 
 ## Background & Motivation
-**Background**: Language modeling is currently dominated by autoregressive LLMs. Non-autoregressive approaches branch into two directions: continuous diffusion language models (CDM, using SDE/PF-ODE—early but weak) and discrete diffusion language models (DDM, especially masked diffusion like MDLM/SEDD—recently surpassing CDM). Simultaneously, there is a "latent reasoning" path: looped transformers (LT) and continuous CoT, which theoretically break the expressivity upper bound of transformers in $\mathsf{TC^0}$.
+**Background**: Language modeling is currently dominated by autoregressive LLMs. Non-autoregressive approaches fall into two categories: continuous diffusion language models (CDM, SDE/PF-ODE, early but weak) and discrete diffusion language models (DDM, notably masked diffusion like MDLM/SEDD, which recently surpassed CDM). Simultaneously, there is a "latent reasoning" path: looped transformers (LT) and continuous CoT, which theoretically break the expressivity upper bound of transformers in $\mathsf{TC^0}$.
 
-**Limitations of Prior Work**: (1) While LT is theoretically powerful, it lacks intermediate supervision, and the rollout depth often deviates significantly from training, leading to severe OOD issues. (2) CDM should theoretically be stronger but is practically outperformed by DDM; the authors attribute this to the "trainability trio" of a massive decision space, poor embedding space, and complex decoding combinations. (3) While masked DDM is trainable, quantizing logits into tokens at each step loses uncertainty memory across steps and sacrifices self-correction capabilities.
+**Limitations of Prior Work**: (1) LT is theoretically strong but lacks intermediate supervision, leading to severe OOD issues during rollout compared to training, making it hard to use practically; (2) CDM should theoretically be stronger but is outperformed by DDM in practice, which the authors attribute to a triple trainability issue: "excessive decision space, poor embedding space, and complex decoding combinations"; (3) Although masked DDM is trainable, quantizing logits into tokens at each step loses uncertainty memory across steps and sacrifices self-correction capabilities.
 
-**Key Challenge**: The fundamental trade-off between **expressivity upper bounds and practical trainability**. Continuous representations preserve full information beneficial for reasoning but are hard to train and decode; discrete representations have clear training objectives but suffer from information bottlenecks.
+**Key Challenge**: The fundamental trade-off between **expressive power upper bounds $\leftrightarrow$ practical trainability**. Continuous representations preserve complete information for reasoning but are difficult to train and decode; discrete representations provide clear training objectives but suffer from information bottlenecks.
 
-**Goal**: To construct a unified framework that retains (a) the high expressivity of continuous CDM (covering LT), (b) the superior trainability of discrete DDM, (c) the semantic priors of pre-trained LLM embeddings, and (d) flexible NFE sampling.
+**Goal**: To construct a unified framework that combines (a) the high expressivity of continuous CDM (covering LT), (b) the good trainability of discrete DDM, (c) the semantic priors of pre-trained LLM embeddings, and (d) flexible NFE sampling, without sacrificing any component.
 
-**Key Insight**: Redefine "language diffusion" on a **joint multimodal space** $\mathcal{X} \times \mathcal{Z}$—where discrete tokens provide an easily decodable "skeleton" and pre-trained LLM contextual embeddings provide the smooth, information-rich "substance." Two sets of noise are injected in parallel, and a single network performs joint denoising.
+**Key Insight**: Redefine "language diffusion" in a **joint multi-modal space** of $\mathcal{X} \times \mathcal{Z}$—where discrete tokens provide an easily decodable "skeleton" and contextual embeddings from pre-trained LLMs provide smooth, information-rich "flesh." Two sets of noise are injected in parallel, and a single network denoises them simultaneously.
 
-**Core Idea**: Language modeling via a joint CTMC×SDE process of "discrete token diffusion + continuous contextual embedding diffusion," where the continuous part handles latent reasoning memory across steps and the discrete part ensures high-confidence decoding.
+**Core Idea**: Use a joint CTMC × SDE process combining "discrete token diffusion + continuous contextual embedding diffusion" for language modeling. The continuous part handles latent reasoning memory across steps, while the discrete part ensures high-confidence decoding.
 
 ## Method
 
 ### Overall Architecture
-CCDD addresses the conflict where continuous diffusion is most expressive but hardest to train by moving language diffusion to a joint multimodal space $\mathcal{X} \times \mathcal{Z}$. Discrete tokens $x$ provide the "skeleton" for supervision and decoding, while continuous contextual embeddings $z$ provide the "substance" for preserving probability history across steps. During the forward process, independent noise is injected into clean data $(x_0, z_0)$: $x_t \sim \text{Cat}(\eta_t x_0 + (1-\eta_t)\pi_t)$ follows a masked/uniform CTMC, and $z_t \sim \mathcal{N}(\alpha_t z_0, \sigma_t^2 I)$ follows a VP-SDE. During the reverse process, a single network $f_\theta(x_t, z_t, t)$ intakes both noisy states to predict token logits and embedding $\hat{x}_{0,\theta}, \hat{z}_{0,\theta}$. Updates are then performed according to their respective modalities (DDPM/DDIM for $z$, and Bayesian posterior for $x$). The training objective is a weighted sum of the two ELBOs: $\mathcal{L}_{\text{CCDD}} = \gamma_{\text{cont}} \mathcal{L}_{\text{cont}} + \gamma_{\text{disc}} \mathcal{L}_{\text{disc}}$.
+CCDD addresses the old contradiction where "continuous diffusion has the strongest expressivity but is the hardest to train" by moving language diffusion to a joint multi-modal space of $\mathcal{X} \times \mathcal{Z}$: discrete tokens $x$ provide a decodable, strongly supervised "skeleton," while continuous contextual embeddings $z$ provide smooth, information-rich "flesh" capable of preserving probability history across steps. During the forward process, independent noise is injected into clean data $(x_0, z_0)$—$x_t \sim \text{Cat}(\eta_t x_0 + (1-\eta_t)\pi_t)$ follows a masked/uniform CTMC, and $z_t \sim \mathcal{N}(\alpha_t z_0, \sigma_t^2 I)$ follows a VP-SDE. In the reverse process, a single network $f_\theta(x_t, z_t, t)$ intakes both noisy states to predict token logits and embedding $\hat{x}_{0,\theta}, \hat{z}_{0,\theta}$. They are then updated according to their respective modalities (DDPM/DDIM for $z$, and Bayes posterior eq. (8) for $x$). The training objective is a weighted sum of the two ELBOs: $\mathcal{L}_{\text{CCDD}} = \gamma_{\text{cont}} \mathcal{L}_{\text{cont}} + \gamma_{\text{disc}} \mathcal{L}_{\text{disc}}$.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    X0["Clean token x₀"]
-    Z0["Continuous space z₀: Pre-trained LLM contextual embeddings<br/>(Frozen Qwen3-Embedding)"]
-    X0 --> XT["Noisy discrete xₜ (masked/uniform CTMC)"]
-    Z0 --> ZT["Noisy continuous zₜ (VP-SDE)"]
+    X0["Clean tokens x₀"]
+    Z0["Continuous space z₀: Pre-trained LLM Contextual Embeddings<br/>(Frozen Qwen3-Embedding)"]
+    X0 --> XT["Discrete Noising xₜ (masked/uniform CTMC)"]
+    Z0 --> ZT["Continuous Noising zₜ (VP-SDE)"]
     XT --> F["Joint Denoising Network f_θ(xₜ,zₜ,t)<br/>Architecture: MDiT / MMDiT / MoEDiT"]
     ZT --> F
-    F --> PRED["Simultaneous prediction of token logits and ẑ₀"]
-    PRED -->|"Representation-guided CFG: w·logits_c+(1−w)·logits_φ"| UPD["Reverse Joint Update<br/>x via Bayes posterior, z via DDPM/DDIM"]
+    F --> PRED["Predict Token Logits and ẑ₀ Simultaneously"]
+    PRED -->|"Representation-guided CFG: w·logits_c+(1−w)·logits_φ"| UPD["Joint Reverse Update<br/>x via Bayes Posterior, z via DDPM/DDIM"]
     UPD --> OUT["Generated Text"]
 ```
 
 ### Key Designs
 
-**1. Joint Continuous-Discrete Diffusion Process: Running CTMC and SDE in One Network**
+**1. Joint Continuous-Discrete Diffusion Process: One Network Running CTMC and SDE**
 
-To address the pain points of DDM (losing uncertainty memory by quantizing logits every step) and CDM (combinatorial explosion when decoding from continuous space), CCDD designs the forward process as a fully separable product $q_t(x_t,z_t|x_0,z_0) = q_t^{\text{disc}}(x_t|x_0)\, q_t^{\text{cont}}(z_t|z_0)$ for simplicity. However, the reverse process is defined as $p_\theta(x_s,z_s|x_t,z_t) = p_\theta^{\text{disc}}(x_s|x_t,z_t)\, p_\theta^{\text{cont}}(z_s|x_t,z_t)$—where each factor depends on both inputs (Remark 4.1). This "forward independence + reverse conditional coupling" is proven to be asymptotically equivalent to a fully coupled reverse kernel as step size $\to 0$ (Theorem B.19), yet it simplifies parameterization. This allows the continuous path to handle "memory and planning"—retaining logit geometry rather than quantizing (Lemma B.9 proves DDM's "logits→sample→embed" is a hard information bottleneck)—while the discrete path provides high-confidence decoding.
+Addressing the conflicting pain points of DDM (quantizing logits into tokens every step loses uncertainty memory) and CDM (decoding tokens from continuous space leads to combinatorial explosion), CCDD designs the forward process as a fully separable product $q_t(x_t,z_t|x_0,z_0) = q_t^{\text{disc}}(x_t|x_0)\, q_t^{\text{cont}}(z_t|z_0)$ for simple noise injection. However, the reverse process is defined as $p_\theta(x_s,z_s|x_t,z_t) = p_\theta^{\text{disc}}(x_s|x_t,z_t)\, p_\theta^{\text{cont}}(z_s|x_t,z_t)$—where each factor depends on both inputs (Remark 4.1). This "independent forward + coupled reverse" formulation is proven to be asymptotically equivalent in expressivity to a fully coupled reverse kernel as step size $\to 0$ (Theorem B.19), while greatly simplifying parameterization. Thus, the continuous path handles "memory and planning across steps"—retaining logit geometry rather than quantizing at each step (Lemma B.9 proves that the "logits→sample→embed" pipeline in DDM is a hard information bottleneck)—while the discrete path provides "high-confidence decoding."
 
-**2. Using Pre-trained LLM Contextual Embeddings as Continuous Space**
+**2. Using Pre-trained LLM Contextual Embeddings as Continuous Space: Curing the "Poor Embedding" Root Cause of CDM**
 
-The authors trace CDM's failure to "poor embedding space." Instead of learning new embeddings, $z_0$ is taken from the **frozen hidden states of Qwen3-Embedding-0.6B** (hidden dim 32, normalized). Figure 2 compares layer 0 (near token-wise lookup) and layer 28 (fully contextualized). Layer 0 has the lowest cross-entropy reconstruction (easy to decode) but highest MSE (hard to generate); layer 28 is the opposite. Middle layers (12th, 20th) strike a balance. Proposition E.1 proves that token-wise embedding dimensions $d \le V$ do not exceed the expressivity of a simplex and are unfriendly to CDM. Contextual embeddings provide a smooth generation target with pre-trained semantic priors, acting as a built-in "proxy representation guidance"—which allows CCDD to match MDLM's 1000k-step PPL in just 40k steps, a 25× training speedup.
+The authors attribute the failure of CDM to a "huge decision space, poor embedding space, and complex decoding combinations." "Poor embeddings" are identified as the key bottleneck. Therefore, $z_0$ is not a newly learned embedding but is frozen from **contextual embeddings of the final layers of Qwen3-Embedding-0.6B** (hidden dim 32, after normalization). The core ablation in Figure 2 compares the 0-th layer (close to token-wise lookup) and the 28-th layer (fully contextualized) as generation targets. The former has the lowest reconstruction cross-entropy (easy decoding) but the highest MSE (hard generation); the latter is the opposite. Intermediate layers (12-th, 20-th) achieve a balance, leading to the selection of contextualized layers. Table 1 compares simplex vs. token-wise $\mathbb{R}^d$ vs. contextualized $\mathbb{R}^d$, concluding that contextualized embeddings are optimal across dimensionality, smoothness, and decoding ambiguity (the latter being mitigated by the discrete branch). Theoretically, Proposition E.1 proves that token-wise embedding with dimension $d\le V$ is no more expressive than simplex and creates a discrete codebook generation target unfriendly to CDM. Contextual embeddings provide a smooth target and carry pre-trained semantic priors, acting as a built-in "proxy representation guidance" (akin to REPA, Yu 2024). This allows CCDD to match MDLM's 1000k-step PPL in just 40k steps, achieving a 25× training speedup.
 
-**3. Representation-Guided Classifier-Free Guidance and Three Multimodal Architectures**
+**3. Representation-guided Classifier-Free Guidance and Three Multi-modal Architectures**
 
-To adjust the influence of continuous $z$ during inference, CCDD treats it as a "self-generated representation condition" for CFG. During training, $z_t$ is zeroed out with probability $p_{\text{drop}}$, enabling the model to learn both conditional ($z$ present) and unconditional ($z$ zero) forwards. During sampling, logits are mixed as $\text{logits} = w\cdot\text{logits}_c + (1-w)\cdot\text{logits}_\phi$. Higher $w$ strengthens the continuous reasoning component (ablation shows $w=1.5$ reduces Gen NLL from 9.06 to 8.25). Three architectures are proposed: **MDiT** (additive embeddings in DiT, 0 extra parameters), **MMDiT** (dual-stream cross-attention, best performance), and **MoEDiT** (routing modalities to different experts, optimal FLOP efficiency).
+To adjust the influence of continuous $z$ during inference, CCDD treats it as a "self-generated representation condition" for CFG. During training, $z_t$ is zeroed out with probability $p_{\text{drop}}$, enabling the model to learn both conditional ($z$ present) and unconditional ($z$ zero) forwards. During sampling, they are mixed: $\text{logits} = w\cdot\text{logits}_c + (1-w)\cdot\text{logits}_\phi$. Higher guidance scale $w$ strengthens continuous reasoning (ablation shows $w=1.5$ reduces Gen NLL from 9.06 to 8.25 compared to $w=0$). Three architectures are proposed: **MDiT** adds $x_t, z_t$ embeddings directly into the DiT (25% PPL drop with zero extra parameters); **MMDiT** uses dual-stream cross-attention (best results at 2x parameters); and **MoEDiT** uses MoE to route different modalities to specific experts, achieving the best cost-performance ratio.
 
 ### Loss & Training
-The loss is a weighted sum of ELBOs for both modalities, using $x_0$-prediction parameterization. The network adapts SEDD's DiT with rotary embeddings; hidden dim is set to 32 to align with Qwen3-Embedding. For LM1B (seq len 128) and OWT (seq len 512), models were trained for 1M steps with a batch size of 512 (approx. 33B / 131B tokens). Since PPL is not directly comparable between Qwen-2 and GPT-2 tokenizers, all baselines were retrained using Qwen-2 for fair comparison.
+The loss is a weighted sum of the ELBO for both modalities using $x_0$-prediction. The network is an adapted DiT from SEDD with rotary embeddings, and a hidden dimension of 32 aligned with Qwen3-Embedding. Training used a sequence length of 128 for LM1B and 512 for OWT, both trained for 1M steps with a batch size of 512 (33B / 131B tokens respectively). Since PPL between Qwen-2 and GPT-2 tokenizers is not directly comparable, all baselines were retrained using Qwen-2 for alignment.
 
 ## Key Experimental Results
 
 ### Main Results
-PPL comparison on LM1B and OWT, with parameters aligned to the 92.1M MDLM baseline:
+Comparison of PPL on LM1B and OWT, with parameters aligned to the MDLM 92.1M baseline:
 
-| Dataset | Model | Params | Training Tokens | Val PPL ↓ | Relative to MDLM |
+| Dataset | Model | Params | Training tokens | Val PPL ↓ | Gain vs. MDLM |
 |--------|------|------|------------|-----------|-----------|
 | LM1B | MDLM (reimpl.) | 92.1M | 33B | ≤39.17 | — |
 | LM1B | **CCDD-MDiT w/ Qwen3** | 92.1M | 33B | ≤29.22 | **-25.4%** |
@@ -90,9 +90,9 @@ PPL comparison on LM1B and OWT, with parameters aligned to the 92.1M MDLM baseli
 | OWT (GPT-2) | CCDD-MoEDiT w/ RoBERTa | 104M | 131B | ≤24.56 | -10.3% |
 | OWT (GPT-2) | GIDD+ (reimpl.) | 92.1M | 131B | ≤25.82 | -5.7% |
 
-Comparison on complex reasoning tasks using 6M small models:
+Comparison of 6M models on Sudoku / 3-SAT / Countdown reasoning tasks:
 
-| Task | GPT2 (6M) | Llama-7B | MDM (20 steps) | LT (2 layers) | LT (3 layers) | **CCDD (2 steps)** | **CCDD (3 steps)** |
+| Task | GPT2(6M) | Llama-7B | MDM(20 steps) | LT(2 layers) | LT(3 layers) | **CCDD(2 steps)** | **CCDD(3 steps)** |
 |------|----------|----------|-----------|----------|----------|---------------|---------------|
 | Sudoku | 16.2 | 27.1 | 99.9 | 100.0 | 100.0 | **100.0** | **100.0** |
 | 3-SAT | 73.1 | — | 87.0 | 91.3 | — | **91.9** | — |
@@ -100,47 +100,47 @@ Comparison on complex reasoning tasks using 6M small models:
 
 ### Ablation Study
 
-| Configuration | Val PPL / Metric | Note |
+| Configuration | Val PPL / Metric | Description |
 |------|---------------|------|
 | Qwen3-Embedding layer 0 (token-wise) | Min token CE, Max rep MSE | Easy to decode, hard to generate |
-| Qwen3-Embedding layer 28 (contextualized) | Max token CE, Min rep MSE | Easy to generate, requires discrete branch |
-| Qwen3-Embedding internal layer | Balanced loss | Chosen configuration |
-| CCDD w=0 (joint) | Gen NLL 9.06 | Already better than MDLM (9.19) |
-| CCDD w=1 (discrete-only forward) | Gen NLL 8.38 | CFG provides significant boost |
-| CCDD w=1.5 | Gen NLL 8.25 | Guidance further improves results |
-| CCDD 8-step sampling | Better than MDLM 256 steps | **16× sampling speedup** |
+| Qwen3-Embedding layer 28 (contextualized) | Max token CE, Min rep MSE | Easy to generate, requires discrete branch for decoding |
+| Qwen3-Embedding middle layers | Balanced losses | Balanced configuration used in final model |
+| CCDD w=0 (joint) | Gen NLL 9.06 | Already surpasses MDLM (9.19) |
+| CCDD w=1 (discrete-only forward) | Gen NLL 8.38 | Significant CFG boost |
+| CCDD w=1.5 | Gen NLL 8.25 | Inference guidance further improves results |
+| CCDD 8 steps | Better than MDLM 256 steps | **16× sampling acceleration** |
 
 ### Key Findings
-- **Disruptive Advantage in Few-step Sampling**: CCDD at 8 steps outperforms MDLM at 256 steps—a direct dividend of the continuous component's ability to model joint distributions and support ODE sampling, whereas DDM is limited to SDE sampling requiring higher NFE.
-- **25× Training Efficiency**: On LM1B, CCDD reaches MDLM’s 1000k-step PPL in just 40k steps, demonstrating the powerful representation regularization provided by pre-trained LLM embeddings.
-- **CCDD 2 steps ≈ LT Max Depth on Reasoning Tasks**: CCDD saturates Sudoku/3-SAT in 2 steps and surpasses LT 3-layer scores on Countdown in 3 steps, validating the hypothesis that the continuous path handles cross-step reasoning.
-- **Architectural Sensitivity**: MDiT (zero extra parameters) already yields a 25% PPL drop, suggesting the gains stem from the joint diffusion design rather than parameter count; MMDiT/MoEDiT provide further improvements.
+- **Disruptive Advantage in Few-step Sampling**: CCDD at 8 steps outperforms MDLM at 256 steps. This is a direct dividend of the continuous part's ability to model joint distributions and support ODE sampling, whereas DDMs are restricted to SDE sampling requiring many steps for uniformity.
+- **25× Training Efficiency**: On LM1B, CCDD reaches MDLM’s 1000k-step PPL in just 40k steps, demonstrating that pre-trained LLM embeddings provide powerful representation regularization.
+- **CCDD 2 steps ≈ Best LT Depth**: Sudoku/3-SAT are solved by CCDD in 2 steps, and CCDD in 3 steps surpasses the 3-layer LT score on Countdown, verifying the hypothesis that the continuous path performs cross-step reasoning.
+- **Architecture Sensitivity**: MDiT (zero extra parameters) already provides a 25% PPL drop, suggesting the performance stems from the joint diffusion design rather than parameter counts; MMDiT/MoEDiT are incremental.
 
 ## Highlights & Insights
-- **Unified Perspective**: The theoretical conclusions "CDM ⊋ DDM" and "CDM simulates LT" place continuous diffusion, discrete diffusion, and looped transformers on a single expressivity ladder, clearly identifying continuous as the goal.
-- **Diagnosis of Trainability**: Breaking down CDM’s failure into three factors (decision space, embedding quality, decoding complexity) provides a clean logical chain for using pre-trained embeddings and discrete branches as solutions.
-- **CFG-as-representation-guidance**: The fusion of continuous representation and Classifier-Free Guidance (random zeroing during training, strengthening during inference) is a paradigm that can be transferred to other tasks like code-AST or molecule-graph generation.
-- **8 Steps vs. 256 Steps**: This is arguably more impactful than PPL gains; CCDD provides a systematic path to overcoming the sampling bottleneck of diffusion LMs by utilizing more expressive continuous paths rather than just new samplers.
-- **Tight Theory-Experiment Coupling**: The paper forms a complete loop from the "why" (Theorem 3.2) to the "how" (Figure 2) and the validation (Table 6), making it a highly self-consistent work in diffusion language modeling.
+- **Unified Perspective**: The theoretical conclusions that "CDM ⊋ DDM" and "CDM simulates LT" place the previously independent paths (continuous diffusion / discrete diffusion / looped transformer) on a single expressivity ladder, identifying continuous diffusion as the upper bound and trainability as the hurdle.
+- **Three-factor Decomposition of Trainability**: Identifying "large decision space, poor embeddings, and complex decoding" as the root causes is insightful. It directly led to using pre-trained LLM contextual embeddings for the embedding issue and the discrete branch for the decoding issue.
+- **CFG-as-representation-guidance**: The integration of continuous representations with classifier-free guidance—random zeroing during training and enhancement during inference—is a paradigm that could extend to other "primary + auxiliary modality" tasks (e.g., code generation + AST).
+- **8 Steps vs. 256 Steps**: This is more industrially significant than PPL gains. Sampling speed is the bottleneck for Diffusion LMs, and CCDD provides a systematic solution: reduce NFE by using a more expressive continuous branch rather than just a new sampler.
+- **Theory-Experiment Synergy**: Theorem 3.2 and Prop 3.4 provide the "why," Figure 2 explains the selection of contextualized layers, and Table 6 validates theoretical predictions. The paper is remarkably self-consistent.
 
 ## Limitations & Future Work
-- **Dependency on External Pre-trained Embeddings**: Performance is tied to the quality of the encoder (e.g., Qwen3). Switching to weaker encoders (RoBERTa) drops the gain from 35% to ~10%. effectiveness may diminish in niche languages or domains lacking pre-trained embedders.
-- **Model Scale**: Experiments are limited to the 92M-216M range on 1B-level datasets; scaling laws for 7B+ parameters remain unexplored.
-- **Overhead on Long Sequences**: While efficient, the joint input and CFG require dual forward passes, making the per-step cost roughly 2×. No end-to-end wall-clock comparison with AR LLMs at the same FLOP budget is provided.
-- **Loss of Discrete Self-Correction**: Because CCDD uses a masked discrete process (like MDLM), it inherits the lack of self-correction; the potential for using uniform DDM with continuous paths to regain this was not discussed.
+- **Reliance on External Pre-trained Embeddings**: Performance is tied to Qwen3-Embedding quality. With a weaker encoder (RoBERTa), the gain drops from 35% to ~10%. If no suitable pre-trained embedder is available (e.g., low-resource languages), this approach degrades.
+- **Small Experimental Scale**: 92M-216M parameters are much smaller than modern LLMs. Pre-training was only done on 1B-level datasets; the scaling laws for 3.2B or 7B scales remain unknown.
+- **Overhead of Joint Diffusion on Long Sequences**: While efficient, joint input and CFG require double forwards, making the per-step cost roughly 2×. The paper lacks a wall-clock comparison with AR LLMs at equivalent FLOPs.
+- **Loss of Discrete Self-Correction**: Masked DDM sacrifices self-correction for trainability. CCDD also uses a masked discrete process; the authors do not discuss using uniform DDM with the continuous branch to regain this capability.
 
 ## Related Work & Insights
-- **vs. MDLM / SEDD (Masked DDM)**: Proves these are strictly less expressive than CDM; adding a continuous branch breaks the upper bound while maintaining trainability.
-- **vs. Continuous DLM (Score Diffusion)**: Identifies that CDM’s failure was due to the embedding space, not the theory, and proposes pre-trained LLM embeddings as a fix.
-- **vs. Looped / Universal Transformer**: Since CDM simulates LT and naturally provides intermediate supervision, the authors suggest CDM as a superior alternative for latent reasoning.
-- **vs. DiT / MM-DiT / MoE**: CCDD successfully migrates visual diffusion architectures to language diffusion with significant results.
-- **vs. REPA / RCG**: Porting the idea of using pre-trained encoder representations as diffusion guidance from vision to language.
+- **vs. MDLM / SEDD (Masked DDM)**: This paper proves these models are strictly weaker than CDM in expressivity. Adding a continuous branch maintains their trainability while breaking their upper bound.
+- **vs. Continuous DLM (SED, Score Diffusion)**: The authors diagnose that CDM failed due to "poor embedding space" and point to pre-trained LLM embeddings as the solution.
+- **vs. Looped Transformer / Universal Transformer**: Since CDM can simulate LT and provides intermediate supervision, the authors suggest CDM as a replacement for LT in latent reasoning—opening a new diffusion-based direction for reasoning.
+- **vs. DiT / MM-DiT / MoE**: CCDD successfully migrates vision diffusion architectures to language diffusion with significant gains.
+- **vs. REPA / RCG (Rep-guided Diffusion)**: CCDD transplants the core idea of using pre-trained encoder representations as a guidance signal from vision to language.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Joint CTMC × SDE is a paradigm-shifting structure that unifies multiple research paths.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive datasets and architectures compared, though missing large-scale scaling and wall-clock benchmarks.
-- Writing Quality: ⭐⭐⭐⭐⭐ Extremely high logical consistency from motivation to theory and empirical results.
-- Value: ⭐⭐⭐⭐⭐ Provides a viable path for diffusion LMs to compete with AR LLMs in reasoning, with significant practical value in sampling acceleration.
+- Novelty: ⭐⭐⭐⭐⭐ Joint CTMC × SDE diffusion is a paradigm-level structure that unifies several independent research lines.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Complete comparison across datasets, architectures, CFG, and reasoning tasks, though scaling and wall-clock experiments are missing.
+- Writing Quality: ⭐⭐⭐⭐⭐ Extremely high readability with a logical closed-loop from motivation to theory to experiments.
+- Value: ⭐⭐⭐⭐⭐ Proposes a viable path for Diffusion LMs to surpass AR LLMs in reasoning. The few-step sampling is practically significant and likely to become a standard baseline for future DLM work.
 
 <!-- RELATED:START -->
 
@@ -150,8 +150,8 @@ Comparison on complex reasoning tasks using 6M small models:
 
 - [\[ICML 2026\] Consistent Diffusion Language Models](consistent_diffusion_language_models.md)
 - [\[ICML 2026\] Plan for Speed: Dilated Scheduling for Masked Diffusion Language Models](plan_for_speed_dilated_scheduling_for_masked_diffusion_language_models.md)
-- [\[ICML 2026\] PODiff: Latent Diffusion in Proper Orthogonal Decomposition Space for Scientific Super-Resolution](podiff_latent_diffusion_in_proper_orthogonal_decomposition_space_for_scientific_.md)
 - [\[CVPR 2026\] Language-Guided One-Step Diffusion Model for Nighttime Flare Removal](../../CVPR2026/image_restoration/language-guided_one-step_diffusion_model_for_nighttime_flare_removal.md)
+- [\[ICML 2026\] PODiff: Latent Diffusion in Proper Orthogonal Decomposition Space for Scientific Super-Resolution](podiff_latent_diffusion_in_proper_orthogonal_decomposition_space_for_scientific_.md)
 - [\[ICLR 2026\] Activation Steering for Masked Diffusion Language Models](../../ICLR2026/image_restoration/activation_steering_for_masked_diffusion_language_models.md)
 
 </div>

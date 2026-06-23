@@ -54,7 +54,7 @@ item_total: 17
 
 **💬 ACL2026** · **17** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (2)](../../ICML2026/nlp_generation/index.md) · [🔬 ICLR2026 (2)](../../ICLR2026/nlp_generation/index.md) · [🤖 AAAI2026 (3)](../../AAAI2026/nlp_generation/index.md) · [📹 ICCV2025 (1)](../../ICCV2025/nlp_generation/index.md)
+📌 **Same area in other venues:** [🔬 ICLR2026 (12)](../../ICLR2026/nlp_generation/index.md) · [🧪 ICML2026 (2)](../../ICML2026/nlp_generation/index.md) · [🤖 AAAI2026 (3)](../../AAAI2026/nlp_generation/index.md) · [📹 ICCV2025 (1)](../../ICCV2025/nlp_generation/index.md)
 
 🔥 **Top topics:** Summarization ×5 · LLM ×3 · Agents ×2
 
@@ -80,7 +80,7 @@ item_total: 17
 
 **[Difficulty-Controllable Cloze Question Distractor Generation](difficulty-controllable_cloze_question_distractor_generation.md)**
 
-:   This paper proposes DCDG, which enables cloze distractor generation models to control difficulty (easy/hard) through dual-path distractor data augmentation, QA ensemble difficulty clustering, and multi-task seq2seq training, significantly outperforming GPT-4o in both automatic and human evaluations.
+:   This paper proposes DCDG, which enables easy/hard difficulty control for cloze distractor generation via dual-path data augmentation, QA ensemble difficulty clustering, and multi-task seq2seq training, significantly outperforming GPT-4o in both automatic and human evaluations.
 
 **[EDUMATH: Generating Standards-aligned Educational Math Word Problems](edumath_generating_standards-aligned_educational_math_word_problems.md)**
 
@@ -96,11 +96,11 @@ item_total: 17
 
 **[In-depth Research Impact Summarization through Fine-Grained Temporal Citation Analysis](in-depth_research_impact_summarization_through_fine-grained_temporal_citation_an.md)**
 
-:   This paper proposes the task of "Scientific Impact Summarization": first identifying fine-grained intents that reveal true impact from citation contexts, and then generating an evolving narrative of impact over time. This approach better illustrates how a paper is adopted, criticized, and transformed by subsequent work compared to simple citation counts.
+:   This paper proposes the "Scientific Impact Summarization" task: first identifying fine-grained intents that truly reveal impact from the citation contexts of a paper, and then generating an impact narrative that evolves over time. This approach better illustrates how a paper is adopted, criticized, and transformed by subsequent work compared to simple citation counts.
 
 **[Investigating the Representation of Backchannels and Fillers in Fine-tuned Language Models](investigating_the_representation_of_backchannels_and_fillers_in_fine-tuned_langu.md)**
 
-:   The paper trains BERT, GPT-2, TurnGPT, LLaMA-3 8B, and Qwen-3 8B on English and Japanese spoken dialogue corpora using three fine-tuning tasks: MASK, NTP, and TTP. It utilizes t-SNE visualization and silhouette clustering to quantify the representation quality of "reactive tokens" (backchannels like *uh-huh*) and "hesitation tokens" (fillers like *um*). The authors find that fine-tuning enables these "semantically bleached" functional words to be significantly distinguished in the embedding space and allows models to naturally produce diverse backchannels/fillers during NLG, marking a quantifiable first step toward "human-like conversational LMs."
+:   This paper trains BERT, GPT-2, TurnGPT, LLaMA-3 8B, and Qwen-3 8B on English and Japanese spoken dialogue corpora using three fine-tuning tasks: MASK, NTP, and TTP. It utilizes t-SNE visualization and silhouette clustering to quantify the representation quality of "backchannels" (e.g., *uh-huh*) and "fillers" (e.g., *um*). The study finds that fine-tuning significantly distinguishes these "semantically bleached" functional words within the embedding space and enables models to naturally generate diverse backchannels/fillers during NLG, marking a quantifiable step toward "human-like conversational LMs."
 
 **[Losses that Cook: Topological Optimal Transport for Structured Recipe Generation](losses_that_cook_topological_optimal_transport_for_structured_recipe_generation.md)**
 
@@ -112,7 +112,7 @@ item_total: 17
 
 **[Right at My Level: A Unified Multilingual Framework for Proficiency-Aware Text Simplification](right_at_my_level_a_unified_multilingual_framework_for_proficiency-aware_text_si.md)**
 
-:   The Re-RIGHT framework is proposed to achieve precise text simplification according to learner proficiency levels (CEFR/JLPT/TOPIK/HSK) across English, Japanese, Korean, and Chinese. By employing GRPO training with a three-module reward system (vocabulary coverage, semantic preservation, and coherence), a 4B policy model outperforms large-scale models such as GPT-5.2 and Gemini 2.5.
+:   The Re-RIGHT framework is proposed, utilizing a 4B policy model trained via GRPO with a three-module reward (lexical coverage + semantic preservation + coherence). It achieves precise text simplification across English, Japanese, Korean, and Chinese according to learner proficiency levels (CEFR/JLPT/TOPIK/HSK), outperforming large models like GPT-5.2 and Gemini 2.5.
 
 **[SCURank: Ranking Multiple Candidate Summaries with Summary Content Units for Enhanced Summarization](scurank_ranking_multiple_candidate_summaries_with_summary_content_units_for_enha.md)**
 

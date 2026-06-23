@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] Refining and Reusing Annotation Guidelines for LLM Annotation
 description: >-
-  [ACL 2026][NLP Understanding][guideline refinement] This paper transfers the guideline reuse and moderation processes from traditional manual annotation projects to LLM annotation. It demonstrates that explicit annotation guidelines, reasoning models, and iterative refinement driven by a small number of gold discrepancies improve strict span+type F1 in biomedical NER.
+  [ACL 2026][NLP Understanding][guideline refinement] This paper transfers the guideline reuse and moderation processes from traditional manual annotation projects to LLM annotation. It demonstrates that explicit annotation guidelines, reasoning-based models, and iterative guideline refinement driven by a small amount of gold discrepancy can significantly improve strict s
 tags:
   - ACL 2026
   - NLP Understanding
   - guideline refinement
   - moderation
 date: 2026-05-08
-content_hash: 0786f531ffdfbe13
+content_hash: 70153100c2594dfd
 ---
 # Refining and Reusing Annotation Guidelines for LLM Annotation
 
@@ -17,43 +17,43 @@ content_hash: 0786f531ffdfbe13
 **arXiv**: [2605.20809](https://arxiv.org/abs/2605.20809)  
 **Code**: https://github.com/KonWooKim/llm-guideline-moderation  
 **Area**: Biomedical NLP / LLM Annotation / Annotation Guidelines  
-**Keywords**: Annotation Guidelines, LLM Annotation, Biomedical NER, Guideline Refinement, Moderation  
+**Keywords**: Annotation Guidelines, LLM Annotation, Biomedical NER, guideline refinement, moderation  
 
 ## TL;DR
-This paper transfers the guideline reuse and moderation processes from traditional manual annotation projects to LLM annotation. It demonstrates that explicit annotation guidelines, reasoning models, and iterative refinement driven by a small number of gold discrepancies improve strict span+type F1 in biomedical NER.
+This paper transfers the guideline reuse and moderation processes from traditional manual annotation projects to LLM annotation. It demonstrates that explicit annotation guidelines, reasoning-based models, and iterative guideline refinement driven by a small amount of gold discrepancy can significantly improve strict span+type F1 in biomedical NER.
 
 ## Background & Motivation
-**Background**: Text annotation is the foundation for semantic retrieval, information extraction, and text mining. While LLMs perform well in zero-shot or few-shot annotation, benchmark gold annotations often follow specific conventions, particularly in biomedical NER where entity boundaries, types, and gray-area cases have strict rules.
+**Background**: Text annotation is the foundation of semantic retrieval, information extraction, and text mining. LLMs perform well on zero-shot or few-shot annotation tasks, but benchmark gold annotations often follow very specific annotation conventions. Especially in biomedical NER, there are strict rules for entity boundaries, types, and gray-area cases.
 
-**Limitations of Prior Work**: Human annotation projects typically constrain annotators with guidelines, but many methods for LLM annotation provide only simple task descriptions. LLMs may possess domain knowledge but do not necessarily adhere to specific benchmark conventions regarding minimal spans, entity boundaries, or complex entities.
+**Limitations of Prior Work**: Human annotation projects typically use annotation guidelines to constrain annotators. However, when using LLMs for annotation directly, many methods only provide simple task descriptions. While LLMs may possess domain knowledge, they do not necessarily adhere to benchmark details such as minimal spans, entity type boundaries, or conventions for composite entities.
 
-**Key Challenge**: LLMs possess strong linguistic and world knowledge, but this knowledge may not align with the annotation conventions of a specific dataset. Achieving high-quality annotation requires the model to not only "understand medicine" but also to make decisions following specific gold standard rules.
+**Key Challenge**: LLMs have strong linguistic and world knowledge, but this knowledge is not necessarily aligned with the specific annotation conventions of a given dataset. To obtain high-quality annotations, it is not enough for the model to "understand medicine"; it must also make decisions according to the specific rules of the gold standard.
 
-**Goal**: To verify three hypotheses: incorporating original annotation guidelines improves LLM annotation; reasoning models are better suited for guideline-driven annotation than non-reasoning models; and LLMs can iteratively refine guidelines through moderation given minimal gold supervision.
+**Goal**: To verify three hypotheses: adding original human annotation guidelines improves LLM annotation; reasoning-based models are better suited for guideline-driven annotation than non-reasoning models; and LLMs can iteratively refine guidelines through moderation with minimal gold supervision.
 
-**Key Insight**: The authors simulate pilot moderation from the early stages of human annotation projects. An LLM first annotates 10 development documents using current guidelines. The system performs strict matching between predictions and gold labels to identify dominant error patterns, then an LLM moderator explains the errors, generates principles, and updates the guidelines.
+**Key Insight**: The authors simulate "pilot moderation" from the early stages of human annotation projects. The LLM first annotates 10 development documents using existing guidelines. The system performs strict matching between predictions and gold labels to identify dominant error patterns. An LLM moderator then explains the errors, generates principles, and modifies the guidelines.
 
-**Core Idea**: Use annotation guidelines as an intermediate representation to align LLM annotation behavior and drive guideline refinement via discrepancy patterns, rather than directly fine-tuning the model.
+**Core Idea**: Treat annotation guidelines as an intermediate representation for aligning LLM annotation behavior and use discrepancy patterns to drive guideline refinement, rather than fine-tuning the model directly.
 
 ## Method
-The proposed method is an iterative closed loop: the LLM annotator labels documents using current guidelines; the evaluator calculates F1 and error sets via strict span+type matching; the discrepancy analyzer identifies the most frequent error groups; and the LLM moderator updates the guidelines based on error evidence before the next round. The process stops if a quality threshold is reached or if refinement yields no improvement, at which point ineffective edits are discarded.
+The proposed method is an iterative closed-loop: an LLM annotator labels documents using the current guidelines; an evaluator uses strict span+type matching to obtain F1 and an error set; a discrepancy analyzer identifies the most frequent error groups; and an LLM moderator updates the guidelines based on the error evidence before entering the next round. If a quality threshold is met, or if a new round of refinement yields no improvement, the process stops and ineffective modifications are discarded.
 
 ### Overall Architecture
-In round $k$, the input consists of current guidelines $G_k$ and a development set $D$. The LLM annotator generates predictions $A_k$. The evaluator compares $A_k$ with gold labels $A_g$ to compute strict F1. If $IAA_k$ is below the threshold and there is room for improvement, discrepancies are collected. The system categorizes errors into label mismatch, boundary mismatch, false negative, and false positive using soft overlap, then clusters them by predicted/gold label pairs, selecting the most frequent group for moderation. The LLM moderator performs pattern explanation, principle generation, and guideline refinement to produce $G_{k+1}$.
+At round $k$, the input consists of the current guidelines $G_k$ and the development set $D$. The LLM annotator generates predicted annotations $A_k$, and the evaluator compares $A_k$ with gold labels $A_g$ to calculate strict F1. If $IAA_k$ has not reached the threshold and there is room for improvement, all discrepancies are collected. The system categorizes errors into four types—label mismatch, boundary mismatch, false negative, and false positive—using soft overlap and clusters them by predicted/gold label pairs, selecting the most frequent group for moderation. The LLM moderator performs pattern explanation, principle generation, and guideline refinement in sequence to produce $G_{k+1}$.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    A["Input: Current Guidelines G_k + Dev Set D (Min. supervision, only 10 docs)"] --> B["Guideline-driven annotation<br/>LLM annotates via G_k, outputs PubAnnotation JSON → Pred A_k"]
-    B --> C["Evaluator: Strict span+type matching<br/>Calculate strict F1 (IAA_k)"]
-    C -->|"IAA_k ≥ τ or no improvement"| Z["Output final guidelines<br/>Discard this round's edits if no gain"]
-    C -->|"Below target & improvable"| D["Discrepancy Analysis<br/>Categorize 4 error types, cluster by pred/gold pairs, select top group"]
+    A["Input: Current Guidelines G_k + Dev Set D (Min. Supervision, only 10 docs)"] --> B["Guideline-driven annotation<br/>LLM annotates via G_k, outputs PubAnnotation JSON → Predictions A_k"]
+    B --> C["Evaluator: Strict span+type matching<br/>Calculate strict F1 (i.e., IAA_k)"]
+    C -->|"IAA_k ≥ τ or no gain this round"| Z["Output final guidelines<br/>Discard current edits if no gain"]
+    C -->|"Below target & gain possible"| D["Discrepancy Analysis<br/>Categorize 4 error types, cluster by pred/gold pairs, take top group"]
     D --> MOD
     subgraph MOD["Discrepancy-driven moderation"]
         direction TB
-        E["① Pattern explanation<br/>Compare errors vs TP, extract evidence"]
-        F["② Principle generation<br/>Induce a general rule"]
-        G["③ Guideline refinement<br/>Update guidelines with rule → G_(k+1)"]
+        E["① pattern explanation<br/>Compare errors vs TP to extract evidence"]
+        F["② principle generation<br/>Induce a general principle"]
+        G["③ guideline refinement<br/>Write principle into guidelines → G_(k+1)"]
         E --> F --> G
     end
     MOD -->|"Enter round k+1"| B
@@ -61,27 +61,27 @@ flowchart TD
 
 ### Key Designs
 
-**1. Guideline-driven annotation: Explicitly feeding human annotation guidelines to the LLM**
+**1. Guideline-driven annotation: Explicitly feeding existing guidelines to the LLM**
 
-LLM annotation errors often stem not from a lack of "entity knowledge" but from a misalignment between world knowledge and dataset conventions—details like minimal span or complex entities might not match the gold standard. Beyond a simple prompt-only baseline, the authors inject lightly formatted human guidelines into the LLM prompt and require output in PubAnnotation JSON format, evaluating with exact boundary + type matching. Guidelines serve as an alignment vehicle, telling the model the specific project rules more directly than few-shot examples.
+LLM annotation errors often stem from a lack of alignment with dataset-specific conventions rather than a lack of entity knowledge. Models may not follow gold standards for minimal spans or type boundaries. To address this, the authors inject lightly formatted human guidelines directly into the LLM prompt (beyond simple prompt-only baselines) and require outputs in PubAnnotation JSON format. Evaluation uses strict exact boundary + type matching. Guidelines serve as an alignment carrier, informing the model of specific project rules more directly than few-shot examples.
 
-**2. Discrepancy-driven moderation: Refining guidelines via minimal gold error evidence**
+**2. Discrepancy-driven moderation: Refining guidelines using minimal gold error evidence**
 
-Allowing LLMs to freely modify guidelines can lead to divergence. This approach constrains modifications using specific error evidence: the system performs soft matching on predictions versus gold, clusters dominant error patterns, and tasks the LLM moderator with three steps—explaining the linguistic context of the error pattern, inducing a general principle, and rewriting the guidelines. For instance, on NCBI Disease, if the model misses `DiseaseClass` in feature lists, the moderator generates a rule: "Clinical conditions as items in dependency feature-lists should also be annotated as DiseaseClass." Each refinement targets current failure modes, resulting in human-readable and reusable rules.
+Allowing an LLM to freely modify guidelines often leads to divergence. This approach constrains modifications using specific error evidence: the system performs soft matching between predictions and gold labels, categorizes dominant error patterns, and tasks the LLM moderator with three steps: explaining the linguistic context of the error, inducing a general principle, and inserting/rewriting the principle in the guidelines. For example, on NCBI Disease, if the model misses a "DiseaseClass" in a feature list, the moderator generates a rule: "Clinical conditions acting as dependency feature list items should also be labeled as DiseaseClass." Each refinement targets current failures, resulting in human-readable and reusable rules.
 
-**3. Small supervision setting: Simulating early-stage projects with minimal gold docs**
+**3. Minimal supervision setting: Simulating early stages with few gold documents**
 
-The goal is not to achieve SOTA via large-scale statistical learning, but to test if LLMs can induce high-level rules from minimal disagreements. Supervision is kept to a minimum: only 10 documents are sampled from the training set for development refinement. Evaluation is conducted on a 100-document set: the full dev split for NCBI Disease and BioRED, and 100 sampled docs for BC5CDR. Because gold data is scarce, the stopping and rollback logic is critical—refinement stops and changes are discarded if F1 does not check out, preventing overfitting to noise.
+The goal is to test if LLMs can induce high-level rules from minimal disagreement rather than achieving SOTA via large-scale statistical learning. Supervision is deliberately kept minimal: only 10 documents are randomly sampled from the training set for guideline refinement. Evaluation is conducted on an independent set of 100 documents (from NCBI Disease and BioRED dev splits, or a 100-doc sample from BC5CDR dev split). Because visibility into gold data is low, the stop-and-rollback logic is critical—if a refinement round fails to improve F1, it is immediately stopped and discarded to avoid overfitting on small samples.
 
 ### Loss & Training
-No models are trained or fine-tuned. The experiment compares three prompting/moderation strategies: Prompt-only, Original-guidelines, and Guideline-refinement. Models include GPT, Gemini, and DeepSeek families, distinguishing between reasoning and non-reasoning versions (e.g., GPT-5 with low/high reasoning effort, DeepSeek-chat vs. DeepSeek-reasoner).
+No models are trained or fine-tuned. The experiment compares three prompting/moderation strategies: Prompt-only, Original-guidelines, and Guideline-refinement. Models include the GPT, Gemini, and DeepSeek families, distinguishing between reasoning and non-reasoning versions: GPT-5 (low/high reasoning effort), Gemini 2.5 Pro (min/max thinking budget), and deepseek-chat vs. deepseek-reasoner. Default hyperparameters are used for all main experiments.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Dataset / Model | Prompt-only F1 | Original-guidelines F1 | Moderation F1 | Iterations |
-|---------------|----------------|------------------------|---------------|------------|
+|---------------|----------------|------------------------|---------------|-----------|
 | NCBI / GPT-5 | 0.46 | 0.73 (+0.27) | 0.76 (+0.03) | 3 |
 | NCBI / Gemini | 0.40 | 0.63 (+0.23) | 0.66 (+0.03) | 5 |
 | NCBI / DeepSeek | 0.31 | 0.55 (+0.24) | 0.56 (+0.01) | 2 |
@@ -92,7 +92,7 @@ No models are trained or fine-tuned. The experiment compares three prompting/mod
 | BioRED / Gemini | 0.61 | 0.67 (+0.06) | 0.69 (+0.02) | 1 |
 | BioRED / DeepSeek | 0.45 | 0.53 (+0.08) | 0.54 (+0.01) | 1 |
 
-### Reasoning Model Comparison
+### Ablation Study: Reasoning Models
 
 | Dataset | GPT non-reason / reason | Gemini non-reason / reason | DeepSeek non-reason / reason |
 |--------|-------------------------|----------------------------|------------------------------|
@@ -101,37 +101,38 @@ No models are trained or fine-tuned. The experiment compares three prompting/mod
 | BioRED | 0.72 → 0.76 (+0.04) | 0.66 → 0.67 (+0.01) | 0.43 → 0.53 (+0.10) |
 
 ### Key Findings
-- Original guidelines provide the largest gain, e.g., NCBI F1 increased from 0.46 to 0.73 for GPT-5.
-- Moderation provides smaller but consistent absolute gains (+0.01 to +0.03 F1, up to +0.06 in BioRED).
-- Reasoning models outperform non-reasoning counterparts across all datasets, indicating that applying complex guidelines requires reasoning capability.
-- GPT-5 is high-performance but costly; DeepSeek is low-cost but has higher latency and lower performance; Gemini is balanced in cost and stability.
+- Original guidelines provide the largest gain (e.g., NCBI F1 increased from 0.46 to 0.73 for GPT-5).
+- Moderation provides smaller but consistent absolute gains (typically +0.01 to +0.03 F1), reaching +0.06 on BioRED/GPT-5.
+- Reasoning models outperform non-reasoning counterparts across all families, confirming that applying complex guidelines requires reasoning capabilities.
+- GPT-5 is powerful but expensive; DeepSeek is cheap but has high latency and lower performance; Gemini is balanced in cost and stability.
 
 ## Highlights & Insights
-- The paper identifies a key issue in LLM annotation: errors often stem from "not knowing the rules" rather than "not knowing the entities." Guidelines are a more interpretable alignment tool than few-shot examples.
-- The moderation process mirrors real-world annotation projects. Instead of black-box optimization, it induces readable rules, allowing for human review and reuse.
-- Results suggest that while moderation yields consistent gains, the magnitude is limited by small sample sizes, which find some rule gaps but may not cover all long-tail ambiguities.
+- The paper addresses a core issue in LLM annotation: errors often stem from a lack of "project rule knowledge" rather than "entity knowledge." Guidelines are more interpretable alignment carriers than few-shot examples.
+- The moderation workflow closely mirrors real annotation projects. Instead of black-box optimization of F1, it induces readable rules, allowing for human review and reuse.
+- The results are honest: moderation provides consistent positive gains, but the magnitude is modest, suggesting that while small gold samples can identify rule gaps, they cannot cover all long-tail ambiguities.
 
 ## Limitations & Future Work
-- Using only 10 development documents is susceptible to sample selection; dominant error patterns in the sample might not represent the whole dataset.
-- Stopping criteria depend on F1 changes in small samples, which can be statistically unstable.
-- Moderation processes only the most frequent discrepancy group per round, potentially ignoring several mid-frequency but important error types.
-- Future work should incorporate human-in-the-loop experts to audit LLM-generated guideline edits.
+- Using only 10 development documents makes the process sensitive to sample selection; dominant error patterns in the sample may not reflect the entire dataset.
+- Stopping criteria rely on IAA/F1 changes over small samples, which can be statistically unstable, potentially leading to premature stopping or retention of rules effective only by chance.
+- Moderation handles only the most frequent discrepancy group per round, potentially ignoring multiple mid-frequency but important error types.
+- Future work could involve human experts auditing LLM-generated guideline edits, creating a semi-automated moderation loop.
 
 ## Related Work & Insights
-- **Vs. Direct LLM Annotation**: Prompt-only relies on prior knowledge and often deviates from gold conventions; guidelines make project rules explicit.
-- **Vs. Few-shot Annotation**: Few-shot provides examples without explaining the underlying rules; guideline refinement produces readable, reusable text.
-- **Vs. Human Moderation**: Human moderation is more reliable but expensive; LLM moderation can serve as a draft generator to help experts locate rule gaps.
-- **Insight**: For demanding data annotation tasks, maintaining an "LLM-readable and human-auditable" guideline is more sustainable than simple prompt tuning or adding examples.
+- **vs. Direct LLM Annotation**: Prompt-only methods rely on pre-existing knowledge and frequently drift from gold conventions; guideline prompts make project rules explicit.
+- **vs. Few-shot Annotation**: Few-shot provides examples but not necessarily logical rules; guideline refinement produces readable and reusable text.
+- **vs. Manual Moderation**: Human moderation is reliable but costly; LLM moderation can serve as an early-stage draft generator to help experts identify rule gaps.
+- **Insight**: For high-requirement annotation tasks, maintaining an "LLM-readable and human-auditable" guideline is more sustainable than just tuning prompts or adding examples.
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐☆ Formalizing annotation moderation for LLMs is highly practical.
 - Experimental Thoroughness: ⭐⭐⭐⭐☆ Covers three datasets and multiple model families, though cross-task generalization needs more verification.
-- Writing Quality: ⭐⭐⭐⭐☆ Clear hypotheses and complete analysis of limitations.
-- Value: ⭐⭐⭐⭐⭐ Valuable for building auditable and reusable LLM annotation pipelines, especially for domain-specific corpora.
+- Writing Quality: ⭐⭐⭐⭐☆ Clear hypotheses, complete experimental design, and thorough limitation discussion.
+- Value: ⭐⭐⭐⭐⭐ Highly valuable for building auditable and reusable LLM annotation pipelines, particularly in specialized domains.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 

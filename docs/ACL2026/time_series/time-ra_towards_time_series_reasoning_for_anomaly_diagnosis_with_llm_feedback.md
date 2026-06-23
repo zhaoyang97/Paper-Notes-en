@@ -2,12 +2,12 @@
 title: >-
   [Paper Note] Time-RA: Towards Time Series Reasoning for Anomaly Diagnosis with LLM Feedback
 description: >-
-  [ACL 2026][Time Series][Paper Note] Ours defines the new task of Time-RA, upgrading time series anomaly detection from binary classification to generative reasoning diagnosis (detection + classification + explanation). It constructs the first multimodal benchmark RATs40K containing approximately 40,000 samples, 10 domains, and 20 anomaly types, validatin
+  [ACL 2026][Time Series][Paper Note] Defining the new Time-RA task, this work upgrades time series anomaly detection from binary classification to generative reasoning diagnosis (detection + classification + root cause explanation). It constructs RATs40K, the first multimodal benchmark comprising ~40,000 samples across 10 domains and 20 anomaly types, val
 tags:
   - ACL 2026
   - Time Series
 date: 2026-05-08
-content_hash: ed572eb4de141265
+content_hash: bcfcab8c30d60348
 ---
 # Time-RA: Towards Time Series Reasoning for Anomaly Diagnosis with LLM Feedback
 
@@ -15,64 +15,64 @@ content_hash: ed572eb4de141265
 **arXiv**: [2507.15066](https://arxiv.org/abs/2507.15066)  
 **Code**: [yyysjz1997/Time-RA](https://github.com/yyysjz1997/Time-RA)  
 **Area**: Time Series Analysis / LLM Reasoning  
-**Keywords**: Time series anomaly detection, anomaly reasoning diagnosis, multimodal benchmark, LLM fine-tuning, AI feedback annotation
+**Keywords**: Time Series Anomaly Detection, Anomaly Reasoning Diagnosis, Multimodal Benchmark, LLM Fine-tuning, AI Feedback Labeling
 
 ## TL;DR
 
-Ours defines the new task of Time-RA, upgrading time series anomaly detection from binary classification to generative reasoning diagnosis (detection + classification + explanation). It constructs the first multimodal benchmark RATs40K containing approximately 40,000 samples, 10 domains, and 20 anomaly types, validating the feasibility of this paradigm through an AI feedback annotation pipeline and LLM fine-tuning.
+Defining the new Time-RA task, this work upgrades time series anomaly detection from binary classification to generative reasoning diagnosis (detection + classification + root cause explanation). It constructs RATs40K, the first multimodal benchmark comprising ~40,000 samples across 10 domains and 20 anomaly types, validating the feasibility of this paradigm through an AI feedback labeling pipeline and LLM fine-tuning.
 
 ## Background & Motivation
 
-**Background**: Time series anomaly detection (TSAD) is critical in fields such as finance, healthcare, AIOps, and industrial systems. Current deep learning methods primarily treat it as a binary classification task (normal vs. abnormal), lacking fine-grained classification of anomaly types and root cause explanations.
+**Background**: Time Series Anomaly Detection (TSAD) is critical in fields such as finance, healthcare, AIOps, and industrial systems. Current deep learning methods primarily treat this as a binary classification task (normal vs. abnormal), lacking fine-grained classification and causal explanation.
 
-**Limitations of Prior Work**: (1) Traditional TSAD only outputs binary labels and does not provide specific anomaly categories or diagnostic reasoning required for root cause analysis; (2) Existing benchmark datasets lack explanatory reasoning labels and fine-grained anomaly classifications; (3) Most multimodal TSAD datasets are synthetic or limited in scope, failing to capture real-world complexity; (4) The reasoning capabilities of multimodal LLMs in the time series domain remain under-explored.
+**Limitations of Prior Work**: (1) Traditional TSAD only outputs binary labels without providing specific anomaly categories or diagnostic reasoning required for root cause analysis; (2) existing benchmarks lack explanatory reasoning annotations and fine-grained classification; (3) multimodal TSAD datasets are mostly synthetic or limited in scope, failing to capture real-world complexity; (4) the reasoning capabilities of multimodal LLMs remain under-explored in the time series domain.
 
-**Key Challenge**: Anomalies are "detected" but the "why" remains unknown—understanding the root cause is essential for preventive or corrective actions, yet current methods stop at detection.
+**Key Challenge**: The "detected" anomaly lacks an explanation of "why it is abnormal"—understanding the root cause is essential for preventive or corrective actions, yet current methods stop at detection.
 
-**Goal**: (1) Define the new Time-RA task—upgrading TSAD from discriminative to generative reasoning diagnosis; (2) Construct a large-scale multimodal benchmark dataset to support this task; (3) Systematically evaluate the performance of LLMs/MLLMs in time series reasoning diagnosis.
+**Goal**: (1) Define the new Time-RA task—upgrading TSAD from discriminative to generative reasoning diagnosis; (2) build a large-scale multimodal benchmark to support this task; (3) systematically evaluate the capabilities of LLMs/MLLMs in time series reasoning diagnosis.
 
-**Key Insight**: Structure the time series anomaly diagnosis into a three-stage "Observation-Thought-Action" process, aligning it with the diagnostic reasoning of human analysts, enabling LLMs to learn this capability through structured prompting.
+**Key Insight**: Structure the time series anomaly diagnosis into a three-stage "Observation-Thought-Action" workflow, aligning with the diagnostic reasoning process of human analysts, allowing LLMs to learn this capability through structured prompting.
 
-**Core Idea**: Redefine TSAD as a multi-objective generation task (detection + classification + reasoning), training LLMs to perform human-like diagnostic reasoning via multimodal datasets (numerical + text + images) and an AI feedback annotation pipeline.
+**Core Idea**: Redefine TSAD as a multi-objective generation task (detection + classification + reasoning), training LLMs to perform human-like diagnostic reasoning using a multimodal dataset (numerical + text + image) and an AI feedback labeling pipeline.
 
 ## Method
 
 ### Overall Architecture
 
-Time-RA upgrades "detecting anomalies" to "diagnosing anomalies." The pipeline follows four steps: first, collect approximately 40,000 time series segments from 10 real-world domains, combined with textual descriptions and visual charts to form multimodal inputs; next, use an AI feedback annotation pipeline to automatically label each sample with "detection label + anomaly category + diagnostic reasoning"; then, perform LoRA fine-tuning on LLMs/MLLMs using structured diagnostic prompts to teach them to reason like human analysts; finally, evaluate across three dimensions: binary classification accuracy, multi-class classification accuracy, and reasoning quality.
+Time-RA upgrades "anomaly detection" to "anomaly diagnosis." The pipeline consists of four steps: first, collecting ~40,000 time series segments from 10 real-world domains, combined with text descriptions and visualizations to form multimodal inputs; second, using an AI feedback labeling process to automatically generate "detection labels + anomaly categories + diagnostic reasoning" for each sample; third, fine-tuning LLMs/MLLMs using LoRA with structured diagnostic prompts to emulate human analyst reasoning; and finally, evaluating performance across three dimensions: binary classification accuracy, multi-class classification accuracy, and reasoning quality.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    A["Real-world time series segments from 10 domains<br/>Numerical + Text Description + Visual Charts (Multimodal Input)"] --> B["Fine-grained Anomaly Taxonomy<br/>14 Univariate + 6 Multivariate = 20 Anomaly Categories"]
+    A["Real TS segments from 10 domains<br/>Numerical + Text + Visualization (Multimodal Input)"] --> B["Fine-grained Anomaly Taxonomy<br/>14 Univariate + 6 Multivariate = 20 Anomaly Categories"]
     B --> C
-    subgraph C["AI Feedback Annotation Pipeline"]
+    subgraph C["AI Feedback Labeling Process"]
         direction TB
-        C1["Reasoning Completion Sampling<br/>Generated by a pool of four models: GPT-4o / Gemini-2.5 / DeepSeek-R1 / Llama-3.3"] --> C2["Preference Annotation<br/>GPT-4 selects the best via Likert scale ranking"]
-        C2 --> C3["Critique Generation<br/>GPT-4 provides improvement suggestions and integrates them"]
+        C1["Reasoning Completion Sampling<br/>Generated by GPT-4o / Gemini-2.5 / DeepSeek-R1 / Llama-3.3 pool"] --> C2["Preference Labeling<br/>Best selected via GPT-4 ranking (Likert scale)"]
+        C2 --> C3["Critique Generation<br/>GPT-4 provides improvements and integrates feedback"]
     end
-    C --> D["Structured Diagnostic Prompts<br/>Observation → Thought → Action"]
+    C --> D["Structured Diagnostic Prompt<br/>Observation → Thought → Action"]
     D --> E["LoRA Fine-tuning<br/>rank=8, alpha=32, SFT on LLM/MLLM"]
     E --> F["Three-dimensional Evaluation<br/>Binary Acc / Multi-class Acc / Reasoning Quality"]
 ```
 
 ### Key Designs
 
-**1. Fine-grained Anomaly Taxonomy: Providing an "Anomaly Vocabulary" for the Model to Learn**
+**1. Fine-grained Anomaly Taxonomy: Providing a "Vocabulary" for Learning**
 
-Traditional time series anomaly datasets only provide "normal/abnormal" binary labels, leaving the model unable to identify the specific type or explain the root cause. Ours defines 14 univariate anomalies (point anomalies, trend shifts, non-linear pattern anomalies, etc.) and 6 multivariate anomalies (trend deviations, joint contextual anomalies, etc.) for a total of 20 categories. Each category includes a formal definition, sample time series, and real-world scenario descriptions. Each sample thus carries both a binary label and a specific anomaly category, allowing the model to learn to distinguish between different anomaly patterns and provide targeted explanations—the prerequisite for "generative diagnosis."
+Traditional datasets only provide "normal/abnormal" labels, leaving models unable to identify types or explain causes. This work defines 14 univariate anomalies (e.g., point anomalies, trend shifts, non-linear pattern anomalies) and 6 multivariate anomalies (e.g., trend deviation, joint contextual anomalies), totaling 20 categories. Each category includes a formal definition, sample time series, and real-world scenarios. This allows the model to learn to distinguish patterns and provide specific explanations—the prerequisite for "generative diagnosis."
 
-**2. AI Feedback Annotation Pipeline: Replacing Manual Annotation of 40,000 Samples with Model Mutual Evaluation**
+**2. AI Feedback Labeling Process: Replacing Humans with Model Peer-Review for 40k Annotations**
 
-Manual writing of diagnostic explanations for 40,000 samples is impractical. Ours uses a three-stage pipeline to automate and refine the annotation. The first stage is reasoning completion sampling, using GPT-4o, Gemini-2.5, DeepSeek-R1, and Llama-3.3-70B to generate diagnostic reasoning and anomaly classifications. The second stage is preference annotation, where GPT-4 ranks the outputs using a Likert scale to select the best result. The third stage is critique generation, where GPT-4 provides specific improvement suggestions for the best result and integrates them into the final label. The process produced 158,000 model outputs and over 150,000 feedback data points. This refinement via "multi-model generation + preference ranking + critique improvement" brings annotation quality close to expert levels.
+Manually writing reasoning for 40,000 samples is impractical. A three-stage pipeline automates and refines labeling: (1) Reasoning Completion Sampling, where a pool of four strong models (GPT-4o, Gemini-2.5, DeepSeek-R1, Llama-3.3-70B) generates reasoning and classifications; (2) Preference Labeling, where GPT-4 ranks these outputs using a Likert scale to select the best; (3) Critique Generation, where GPT-4 refines the best result. This yields 158k model outputs and 150k+ feedback points, achieving annotation quality nearing expert levels.
 
-**3. Structured Diagnostic Prompting: Deconstructing Diagnosis into "Observation-Thought-Action"**
+**3. Structured Diagnostic Prompt: Splitting Diagnosis into "Observation-Thought-Action"**
 
-Simply asking an LLM "is this time series abnormal" yields fragmented and uncontrollable answers. Ours uses structured prompts to simulate a human analyst's mindset: first setting the persona ("Time Series Anomaly Detection Expert"), then dividing the task into Observation (input series and domain knowledge), Thought (analyzing behavior patterns, variable relationships, deviation laws), and Action (outputting anomaly category). The prompt also embeds a full list of anomaly categories, natural language definitions, and few-shot examples. This Observation-Thought-Action structure stabilizes output in terms of clarity, consistency, and interpretability, providing clear format targets for fine-tuning.
+Asking an LLM "is this abnormal?" results in fragmented answers. This work uses structured prompts to simulate an analyst's mindset: first setting the persona ("Expert in TSAD"), then dividing the task into Observation (input data and domain knowledge), Thought (analyzing patterns, relationships, and deviations), and Action (outputting the final category). Prompts embed the full taxonomy and few-shot examples, leading to stable, clear, and consistent outputs.
 
 ### Loss & Training
 
-Standard SFT objective: $$\max_\theta \mathbb{E}_{(x,y) \sim \mathcal{D}} [\log P_\theta(y|x)]$$, where input $x = \{T, D, V\}$ includes time series data, text descriptions, and visual charts, and output $y = \{y_l, a, r\}$ includes the detection label, anomaly category, and reasoning explanation. Parameter-efficient fine-tuning is performed using LoRA (rank=8, alpha=32).
+Standard SFT objective: $$\max_\theta \mathbb{E}_{(x,y) \sim \mathcal{D}} [\log P_\theta(y|x)]$$, where input $x = \{T, D, V\}$ includes time series data, text descriptions, and visual charts, and output $y = \{y_l, a, r\}$ includes detection labels, anomaly categories, and reasoning explanations. LoRA (rank=8, alpha=32) is used for parameter-efficient fine-tuning.
 
 ## Key Experimental Results
 
@@ -83,48 +83,48 @@ Standard SFT objective: $$\max_\theta \mathbb{E}_{(x,y) \sim \mathcal{D}} [\log 
 | DeepSeek-7B | Zero-shot | 0.47 | 0.07 | 2.17 |
 | DeepSeek-7B | SFT | Gain | Gain | Gain |
 | Qwen2.5-7B | Zero-shot | Lower | Lower | Lower |
-| Qwen2.5-7B | SFT | Significant Gain | Significant Gain | Significant Gain |
+| Qwen2.5-7B | SFT | Sig. Gain | Sig. Gain | Sig. Gain |
 
 ### Dataset Comparison
 
 | Dataset | Samples | Modalities | Domains | Anomaly Types | Reasoning Labels |
 |------|---------|------|------|------|------|
-| RATs40K (Ours) | 39,574 | TS+Text+Image | 10 | 20 (14+6) | AI Feedback (avg 103 tokens) |
-| LLMAD | 37,000 | TS+Text+Image | 3 | 8 | 100 manual entries |
+| RATs40K (Ours) | 39,574 | TS+Text+Image | 10 | 20 (14+6) | AI Feedback (avg 101 tokens) |
+| LLMAD | 37,000 | TS+Text+Image | 3 | 8 | 100 Human |
 | AnomLLM | 3,200 | TS+Text | - | 8 | Synthetic |
 | VisualTimeAnomaly | 12,400 | TS+Text+Image | - | 9 | Synthetic |
 
 ### Key Findings
 
-- LLM anomaly detection and reasoning capabilities improved significantly after SFT, validating the effectiveness of the Time-RA task paradigm.
-- Visual modalities (time series charts) contribute positively to diagnostic accuracy; multimodal input outperforms text-only input.
-- The fine-tuned models demonstrate strong "plug-and-play" transfer capabilities on unseen real-world datasets, outperforming traditional TSAD baselines.
-- Performance decreases as anomaly categories become more complex or involve more cross-variable relationships, indicating that Time-RA remains an open frontier.
+- SFT significantly enhances anomaly detection and reasoning, validating the Time-RA paradigm.
+- The visual modality (TS charts) positively contributes to diagnostic accuracy; multimodal input outperforms text-only.
+- Fine-tuned models demonstrate strong "plug-and-play" transferability on unseen real-world datasets, surpassing traditional TSAD baselines.
+- Performance drops as anomaly categories become more complex or involve intricate cross-variable relationships, indicating that Time-RA remains an open frontier.
 
 ## Highlights & Insights
 
-- **Paradigm Redefinition of TSAD**: Moving from binary classification to a three-layer output of "detection + classification + reasoning" essentially upgrades anomaly detection to anomaly diagnosis, aligning better with the needs of operational analysts. This task definition is a major contribution.
-- **Engineering Value of the AI Feedback Annotation Pipeline**: The three-stage process of multi-model pool + preference ranking + critique improvement is a reusable paradigm for large-scale, high-quality annotation suitable for any scenario requiring reasoning labels.
-- **Scale and Diversity of RATs40K Dataset**: With 10 real domains, 20 anomaly types, and approximately 40,000 samples, it fills the data gap in the field of time series reasoning diagnosis.
+- **Paradigm Redefinition of TSAD**: Moving from binary classification to a tripartite "Detection+Classification+Reasoning" output essentially upgrades anomaly detection to anomaly diagnosis, aligning closer to real-world operational needs.
+- **Engineering Value of AI Feedback Labeling**: The three-stage pipeline (multi-model pool + preference ranking + critique) provides a reusable framework for generating large-scale, high-quality reasoning labels.
+- **Scale and Diversity of RATs40K**: Spanning 10 domains and 20 types across ~40k samples, it addresses the data scarcity in time series reasoning diagnosis.
 
 ## Limitations & Future Work
 
-- Although refined by GPT-4, AI feedback labels may still contain biases; expert validation only covered a subset.
-- There is significant room for improvement in absolute performance for binary and multi-class classification in current evaluations.
-- The high anomaly ratio (83.7%) may lead to a model bias toward predicting anomalies.
-- Future work: Introduce online/streaming anomaly detection settings, integrate domain-specific knowledge graphs to enhance reasoning, and develop interactive diagnostic systems.
+- AI feedback labels refined by GPT-4 may still contain biases; expert validation was limited to a subset.
+- Absolute performance in binary and multi-class classification still has significant room for improvement.
+- The high anomaly ratio (83.7%) in the dataset might bias the model towards predicting anomalies.
+- Future work: Exploring online/streaming detection, integrating domain-specific knowledge graphs, and developing interactive diagnostic systems.
 
 ## Related Work & Insights
 
-- **vs. Traditional TSAD (e.g., Anomaly Transformer)**: Traditional methods only output binary labels; Ours adds anomaly classification and reasoning explanations to provide actionable diagnostic information.
-- **vs. LLMAD/AnomLLM**: These prior works explored LLMs for TSAD but had small data scales, simplistic annotations, and lacked reasoning; RATs40K surpasses them in scale, diversity, and annotation depth.
+- **Comparison with Traditional TSAD (e.g., Anomaly Transformer)**: Traditional methods only output binary labels; Ours adds classification and reasoning to provide actionable insights.
+- **Comparison with LLMAD/AnomLLM**: Earlier works explored LLMs for TSAD but faced small scales, simple labels, or lacked reasoning; RATs40K surpasses them in scale, diversity, and depth of annotation.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ First to define the time series anomaly reasoning diagnosis task and construct the first large-scale multimodal reasoning benchmark.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive multi-model evaluation and transfer experiments, though more comparisons with traditional methods could be included.
+- Novelty: ⭐⭐⭐⭐⭐ First to define TS reasoning diagnosis and build a large-scale multimodal benchmark.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive evaluation and transfer experiments, though more comparisons with traditional methods could be included.
 - Writing Quality: ⭐⭐⭐⭐ Clear task definition and detailed dataset construction process.
-- Value: ⭐⭐⭐⭐⭐ Opens a new direction for the time series analysis community; dataset and code are fully open-sourced.
+- Value: ⭐⭐⭐⭐⭐ Opens a new direction for the time series community; dataset and code are fully open-sourced.
 
 <!-- RELATED:START -->
 
@@ -132,11 +132,11 @@ Standard SFT objective: $$\max_\theta \mathbb{E}_{(x,y) \sim \mathcal{D}} [\log 
 
 ## Related Papers
 
-- [\[ICML 2026\] AnomSeer: Reinforcing Multimodal LLMs to Reason for Time-Series Anomaly Detection](../../ICML2026/time_series/anomseer_reinforcing_multimodal_llms_to_reason_for_time-series_anomaly_detection.md)
 - [\[ICLR 2026\] Reasoning on Time-Series for Financial Technical Analysis](../../ICLR2026/time_series/reasoning_on_time-series_for_financial_technical_analysis.md)
-- [\[ICML 2026\] IMPACT: Influence Modeling for Open-Set Time Series Anomaly Detection](../../ICML2026/time_series/impact_influence_modeling_for_open-set_time_series_anomaly_detection.md)
+- [\[ICML 2026\] AnomSeer: Reinforcing Multimodal LLMs to Reason for Time-Series Anomaly Detection](../../ICML2026/time_series/anomseer_reinforcing_multimodal_llms_to_reason_for_time-series_anomaly_detection.md)
 - [\[ICML 2026\] Adaptive Time Series Reasoning via Segment Selection](../../ICML2026/time_series/adaptive_time_series_reasoning_via_segment_selection.md)
-- [\[ICLR 2026\] Rating Quality of Diverse Time Series Data by Meta-learning from LLM Judgment](../../ICLR2026/time_series/rating_quality_of_diverse_time_series_data_by_meta-learning_from_llm_judgment.md)
+- [\[ICML 2026\] IMPACT: Influence Modeling for Open-Set Time Series Anomaly Detection](../../ICML2026/time_series/impact_influence_modeling_for_open-set_time_series_anomaly_detection.md)
+- [\[ICLR 2026\] Complexity- and Statistics-Guided Anomaly Detection in Time Series Foundation Models](../../ICLR2026/time_series/complexity-_and_statistics-guided_anomaly_detection_in_time_series_foundation_mo.md)
 
 </div>
 

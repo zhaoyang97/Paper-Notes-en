@@ -25,15 +25,15 @@ item_total: 3
 
 **🧪 ICML2026** · **3** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (57)](../../CVPR2026/remote_sensing/index.md) · [🔬 ICLR2026 (5)](../../ICLR2026/remote_sensing/index.md) · [🤖 AAAI2026 (7)](../../AAAI2026/remote_sensing/index.md) · [🧠 NeurIPS2025 (12)](../../NeurIPS2025/remote_sensing/index.md) · [📹 ICCV2025 (11)](../../ICCV2025/remote_sensing/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (57)](../../CVPR2026/remote_sensing/index.md) · [🔬 ICLR2026 (11)](../../ICLR2026/remote_sensing/index.md) · [🤖 AAAI2026 (7)](../../AAAI2026/remote_sensing/index.md) · [🧠 NeurIPS2025 (12)](../../NeurIPS2025/remote_sensing/index.md) · [📹 ICCV2025 (11)](../../ICCV2025/remote_sensing/index.md)
 
 **[Any2Any: Unified Arbitrary Modality Translation for Remote Sensing](any2any_unified_arbitrary_modality_translation_for_remote_sensing.md)**
 
-:   Any2Any transforms remote sensing inter-modal translation (RGB, SAR, NIR, MS, PAN, etc.) from a collection of pairwise models into a unified latent diffusion model within a shared latent space. Utilizing the million-scale RST-1M dataset and target-modality residual adapters, it achieves superior fidelity and generalization across 14 seen translation directions and multiple unseen modality combinations.
+:   Any2Any transforms remote sensing (RS) translation between RGB, SAR, NIR, MS, and PAN from a collection of paired models into a unified latent diffusion model within a shared latent space. By utilizing the million-level RST-1M dataset and target modality residual adapters, it achieves superior fidelity and generalization across 14 seen translation directions and multiple unseen modality combinations.
 
 **[Localized, High-resolution Geographic Representations with Slepian Functions](localized_high-resolution_geographic_representations_with_slepian_functions.md)**
 
-:   This paper constructs a geographic positional encoder using spherical Slepian functions to concentrate representation capacity within a Region of Interest (ROI). It proposes a hybrid Slepian-Spherical Harmonic encoding to balance local high resolution with global coarse-grained context, consistently outperforming mainstream baselines such as SH, Wavelet, and RFF across five classification, regression, and image-enhanced prediction tasks.
+:   This paper constructs a geographic positional encoder that concentrates representation capacity on a Region of Interest (ROI) using spherical Slepian functions. It proposes a Slepian-Spherical Harmonic (SH) hybrid encoding to simultaneously capture local high-resolution details and global coarse-grained context. It consistently outperforms mainstream baselines such as SH, Wavelets, and RFF across five classification, regression, and image-enhancement prediction tasks.
 
 **[The Perception-Physics Paradox: Probing Scientific Alignment with TC-Bench](the_perception-physics_paradox_probing_scientific_alignment_with_tc-bench.md)**
 

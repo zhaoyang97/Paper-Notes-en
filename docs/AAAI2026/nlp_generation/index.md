@@ -24,7 +24,7 @@ item_total: 3
 
 **🤖 AAAI2026** · **3** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (2)](../../ICML2026/nlp_generation/index.md) · [💬 ACL2026 (17)](../../ACL2026/nlp_generation/index.md) · [🔬 ICLR2026 (2)](../../ICLR2026/nlp_generation/index.md) · [📹 ICCV2025 (1)](../../ICCV2025/nlp_generation/index.md)
+📌 **Same area in other venues:** [🔬 ICLR2026 (12)](../../ICLR2026/nlp_generation/index.md) · [💬 ACL2026 (17)](../../ACL2026/nlp_generation/index.md) · [🧪 ICML2026 (2)](../../ICML2026/nlp_generation/index.md) · [📹 ICCV2025 (1)](../../ICCV2025/nlp_generation/index.md)
 
 **[AutoMalDesc: Large-Scale Script Analysis for Cyber Threat Research](automaldesc_large-scale_script_analysis_for_cyber_threat_research.md)**
 

@@ -2,75 +2,75 @@
 title: >-
   [Paper Note] GameplayQA: A Benchmarking Framework for Decision-Dense POV-Synced Multi-Video Understanding of 3D Virtual Agents
 description: >-
-  [ACL 2026][Video Understanding][Paper Note] GameplayQA is proposed as an end-to-end benchmarking framework based on multi-player 3D game videos. Through dense timeline annotations (1.22 labels/second) and a structured distractor taxonomy, it systematically evaluates the perception and reasoning capabilities of Multimodal Large Language Models (MLLMs) in decision
+  [ACL 2026][Multimodal VLM][Paper Note] GameplayQA is proposed as an end-to-end benchmarking framework based on multiplayer 3D game videos. Using dense timeline annotations (1.22 labels/sec) and a structured distractor taxonomy, it systematically evaluates the perception and reasoning capabilities of Multimodal Large Language Models (MLLMs) in decision-dense
 tags:
   - ACL 2026
-  - Video Understanding
+  - Multimodal VLM
 date: 2026-05-08
-content_hash: c254eab80c65d8bd
+content_hash: 47ddc4a7f82895f7
 ---
 # GameplayQA: A Benchmarking Framework for Decision-Dense POV-Synced Multi-Video Understanding of 3D Virtual Agents
 
 **Conference**: ACL 2026  
 **arXiv**: [2603.24329](https://arxiv.org/abs/2603.24329)  
-**Code**: [Project Page](https://hats-ict.github.io/gameplayqa/)  
+**Code**: [Project Homepage](https://hats-ict.github.io/gameplayqa/)  
 **Area**: Video Understanding  
 **Keywords**: Video Question Answering, Multi-view Understanding, Game AI, Hallucination Diagnosis, Multi-agent Perception
 
 ## TL;DR
 
-GameplayQA is proposed as an end-to-end benchmarking framework based on multi-player 3D game videos. Through dense timeline annotations (1.22 labels/second) and a structured distractor taxonomy, it systematically evaluates the perception and reasoning capabilities of Multimodal Large Language Models (MLLMs) in decision-dense, multi-POV synchronized scenarios, revealing a significant gap between frontier models and human performance.
+GameplayQA is proposed as an end-to-end benchmarking framework based on multiplayer 3D game videos. Using dense timeline annotations (1.22 labels/sec) and a structured distractor taxonomy, it systematically evaluates the perception and reasoning capabilities of Multimodal Large Language Models (MLLMs) in decision-dense, POV-synced scenarios, revealing a significant performance gap between frontier models and human performance.
 
 ## Background & Motivation
 
-**Background**: MLLMs are being widely deployed as perception backbones for autonomous agents in 3D environments (e.g., robotics, virtual worlds). This requires models to possess capabilities such as rapid state-change perception, action attribution, and concurrent multi-agent behavioral reasoning.
+**Background**: MLLMs are being widely deployed as perception backbones for autonomous agents in 3D environments (e.g., robotics, virtual worlds). This requires models to possess capabilities such as rapid state-change perception, action attribution recognition, and concurrent multi-agent behavior reasoning.
 
-**Limitations of Prior Work**: Current video understanding benchmarks suffer from three key deficiencies: (1) Lack of embodiment and agent-grounding, mostly consisting of slow-paced passive observation videos that fail to test high-frequency state transitions and decision-dense scenarios; (2) Non-diagnostic hallucinations, providing only global performance metrics without fine-grained localization of model failure causes (temporal misjudgment? object fabrication? role confusion?); (3) Lack of multi-video understanding evaluation, with nearly all focusing on a single perspective.
+**Limitations of Prior Work**: Current video understanding benchmarks suffer from three critical deficiencies: (1) Lack of embodiment and agent grounding, mostly consisting of slow-paced passive observation videos that fail to test high-frequency state transitions and dense decision-making; (2) Non-diagnosable hallucination types, providing only global performance metrics without fine-grained localization of failure causes (temporal misjudgment? object fabrication? agent confusion?); (3) Lack of multi-video understanding evaluation, as almost all focus on a single perspective.
 
-**Key Challenge**: Agent perception requires simultaneous tracking of the agent's own state (Self), modeling other agents' behaviors (Other), and perceiving environmental changes (World). However, existing benchmark annotation and evaluation systems cannot cover these multi-level, multi-perspective cognitive needs.
+**Key Challenge**: Agent perception requires simultaneous tracking of its own state (Self), modeling other agents' behaviors (Other), and perceiving environmental changes (World). However, existing annotation and evaluation systems cannot cover these multi-layered, multi-view cognitive requirements.
 
-**Goal**: To construct an end-to-end benchmark framework capable of evaluating basic perception abilities of models in decision-dense 3D environments and providing diagnostic error analysis.
+**Goal**: To build an end-to-end benchmarking framework capable of evaluating the foundational perception of models in decision-dense 3D environments while providing diagnosable error analysis.
 
-**Key Insight**: Utilize multi-player 3D games as "cognitive sandboxes"—where states and outcomes are highly deterministic and decision-making is fast-paced—making them naturally suitable for evaluating agent perception.
+**Key Insight**: Multiplayer 3D games serve as "cognitive sandboxes"—where states and outcomes are highly deterministic and decision-making is fast-paced, making them naturally suitable for evaluating agent perception.
 
-**Core Idea**: Design an annotation system around a Self–Other–World triad decomposition, combined with compositional template-based QA generation and a structured distractor taxonomy, to achieve multi-level diagnostic evaluation from basic perception to cross-video reasoning.
+**Core Idea**: An annotation system is designed around a Self–Other–World tripartite entity decomposition. Combined with compositional template-based QA generation and a structured distractor taxonomy, this enables multi-layered diagnosable evaluation from basic perception to cross-video reasoning.
 
 ## Method
 
 ### Overall Architecture
 
-GameplayQA addresses the limitations of existing video benchmarks, which are often slow-paced, provide only global scores, and focus on single views. By treating multi-player 3D games as "cognitive sandboxes," the framework establishes an end-to-end pipeline: first, synchronized multi-POV videos are collected from 9 multi-player 3D games; then, dense multi-track timeline annotations are performed across 6 entity types (SA/SS/OA/OS/WO/WE) with a density of 1.22 labels/second; next, a compositional template algorithm generates QA pairs organized into three levels of cognitive complexity, each paired with structured distractors to induce hallucinations—yielding 2,365 final pairs after quality filtering from 400,000 candidates; finally, models are evaluated for both performance and fine-grained hallucination diagnosis. Quality filtering involves two stages: blind filtering (language-prior filtering) to remove questions answerable without visual input, and manual evaluation of a 120-question sample where approximately 8% were identified as flawed and removed.
+GameplayQA addresses the limitations of existing benchmarks—slow-paced passive observation, global-only scoring, and single-view focus—which fail to challenge agent perception in fast-paced 3D environments. Utilizing multiplayer 3D games as "cognitive sandboxes," the framework establishes an end-to-end pipeline: first, synchronized multi-POV videos are collected from 9 multiplayer 3D games; second, dense multi-track timeline annotations are performed across 6 entity types (SA/SS/OA/OS/WO/WE) with a density of 1.22 labels/sec; third, a compositional template algorithm generates QA pairs from these annotations, organized by three levels of cognitive complexity and paired with structured distractors to induce hallucinations (producing 400k initial candidates downsampled to 4k and filtered to 2,365 pairs); finally, models are evaluated with fine-grained hallucination diagnosis. Quality filtering involves two stages: blind filtering (language-prior filtering) to remove questions solvable without vision, followed by human evaluation of 120 sampled questions, resulting in the removal of ~8% flawed entries.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    A["9 Multi-player 3D Games<br/>Synced Multi-POV Videos"] --> B
-    subgraph B["Self–Other–World Triad Annotation"]
+    A["9 Multiplayer 3D Games<br/>Synced Multi-POV Videos"] --> B
+    subgraph B["Self–Other–World Tripartite Entity Annotation System"]
         direction TB
-        B1["6 Primitive Labels<br/>SA/SS/OA/OS/WO/WE"] --> B2["Multi-track Timeline Annotation<br/>1.22 labels/sec, Overlapping tracks"]
+        B1["6 Primitive Label Types<br/>SA/SS/OA/OS/WO/WE"] --> B2["Multi-track Timeline Annotation<br/>1.22 labels/sec, Overlapping Tracks"]
     end
     B --> C
     subgraph C["Compositional Template QA Generation"]
         direction TB
-        C1["3 Complexity Levels<br/>L1 Perception / L2 Temporal / L3 Cross-video"] --> C2["Structured Distractor Taxonomy<br/>Lexical/Scene/Temporal/Agent/Cross-video"]
+        C1["Three-layer Cognitive Complexity Classification<br/>L1 Perception / L2 Temporal / L3 Cross-video"] --> C2["Structured Distractor Taxonomy<br/>Vocab/Scene/Temporal/Agent/Cross-video"]
     end
-    C --> D["Quality Filtering<br/>Blind + Manual, 400k→2,365 pairs"]
-    D --> E["Evaluation + Fine-grained Diagnosis"]
+    C --> D["Quality Filtering<br/>Blind Filtering + Human Eval, 400k→2,365 pairs"]
+    D --> E["Model Evaluation + Fine-grained Hallucination Diagnosis"]
 ```
 
 ### Key Designs
 
-**1. Self–Other–World Triad Annotation: Structuring "What is Seen" into Diagnostic Tracks**
+**1. Self–Other–World Tripartite Annotation: Structuring "What is Seen" into Diagnosable Tracks**
 
-In 3D multi-agent environments, a model must track its own state, model other agents, and perceive environmental changes simultaneously. GameplayQA categorizes observable events along two axes: Entity (Self/Other/World) and Temporal Attribute (Action/State for agents, Object/Event for the environment), resulting in 6 primitive label types (SA/SS/OA/OS/WO/WE). Each type serves as an independent annotation track, allowing temporal overlaps to capture concurrent events. This classification directly maps to the core requirements of Multi-Agent Reinforcement Learning (MARL): dense state-action tracking (Self), opponent modeling (Other), and environmental awareness (World). Consequently, performance drops in specific tracks directly reveal deficiencies in corresponding perception categories.
+In 3D multi-agent environments, a model must track its own state, model others, and perceive the environment. GameplayQA categorizes observable events along two axes: Entity (Self/Other/World) and Attribute (Action/State for agents, Object/Event for environment), resulting in 6 primitive label types (SA/SS/OA/OS/WO/WE). Each type acts as an independent annotation track, allowing temporal overlaps to capture concurrent events. This mapping corresponds directly to the three core needs of multi-agent reinforcement learning: dense state-action tracking (Self), opponent/ally modeling (Other), and world perception (World).
 
-**2. Three Levels of Cognitive Complexity: From Identifying "What" to "When" and "How Perspectives Relate"**
+**2. Three-layer Cognitive Complexity: From Detection to Multi-view Association**
 
-To distinguish basic perception from complex reasoning, questions are categorized into three levels across 15 task classes. L1 (Single-reference Perception) tests basic action/state/object recognition; L2 (Temporal Reasoning) requires cross-entity correlation, temporal localization, missing event identification, ordering, and intent inference; L3 (Cross-video Understanding) involves referencing, ordering, and perspective identification across synchronized multi-POV feeds. This progressive design simulates the deepening of agent cognition, allowing for decomposed capability analysis.
+To differentiate basic perception from complex reasoning, questions are categorized into three levels across 15 task categories. L1 (Single-reference Perception) tests basic recognition; L2 (Temporal Reasoning) requires cross-entity association, temporal localization, and intent inference; L3 (Cross-video Understanding) involves cross-referencing and sequencing across synchronized views. Accuracy typically declines monotonically from L1 to L3, validating that these layers measure distinct cognitive dimensions.
 
-**3. Structured Distractor Taxonomy: Transforming "Wrong Answers" into "Why They Are Wrong"**
+**3. Structured Distractor Taxonomy: Turning "Wrong Answers" into "Why It Failed"**
 
-Traditional benchmarks only indicate that a model chose the wrong option without identifying the cause. GameplayQA categorizes every incorrect option based on its relationship to the ground truth: Lexical distillates (textual variations), Scene distractors (plausible but non-occurring events), Temporal distractors (events occurring outside the query window), Agent distractors (swapping agent attributions), and Cross-video distractors (events from other perspectives). Since distractors are constructed based on failure modes, the choice of a specific distractor exposes the model's weakness—whether it is temporal localization, agent confusion, or semantic misunderstanding.
+Traditional benchmarks only indicate a wrong choice without identifying the cause. GameplayQA categorizes every incorrect option based on its relationship to the truth: Lexical (textual variants), Scene (plausible but non-occurring events), Temporal (events outside the query window), Agent (swapped agent attributions), and Cross-video (events from other perspectives). This transforms the benchmark from a performance meter into a diagnostic tool.
 
 ## Key Experimental Results
 
@@ -95,46 +95,45 @@ Traditional benchmarks only indicate that a model chose the wrong option without
 | Shuffled Frames | 54.8 | 63.1 | 52.6 | 53.4 |
 
 ### Key Findings
-- Accuracy across all models monotonically decreases as cognitive level increases: L1 (61.2%) → L2 (56.0%) → L3 (49.4%), validating the complexity hierarchy.
-- The most challenging tasks are Occurrence Counting (OccCnt, 36.5%) and Cross-video Ordering (X-VOrd, 38.8%), indicating that precise temporal tracking remains a fundamental weakness.
-- Modeling other agents (OA: 54.0%, OS: 55.4%) is approximately 8 percentage points more difficult than world objects (WO: 62.0%).
-- Cross-video and temporal distractors cause the most errors, while scene distractors are the easiest to avoid—demonstrating that models process static visual inputs better than temporal and multi-POV logic.
-- Fast-paced shooters (CS2, Battlefield) yield the highest error rates, while slow-paced exploration games are easier for models.
+- Model accuracy consistently decreases as cognitive levels rise: L1 (61.2%) → L2 (56.0%) → L3 (49.4%).
+- Hardest tasks: Occurrence Counting (OccCnt, 36.5%) and Cross-video Ordering (X-VOrd, 38.8%), indicating that precise temporal tracking is a fundamental weakness.
+- Agent-related tasks (OA: 54.0%, OS: 55.4%) are ~8% more difficult than World Object tasks (WO: 62.0%).
+- Cross-video and Temporal distractors cause the most errors, while Scene distractors are the easiest to refute.
+- Fast-paced FPS games (CS2, Battlefield) show the highest error rates compared to exploration games.
 
 ## Highlights & Insights
-- **Strong Diagnosticity**: The structured distractor taxonomy is the greatest highlight, converting "model errors" into actionable insights on "why models fail."
-- **Framework as a Pipeline**: It is an end-to-end pipeline including annotation protocols, QA generation algorithms, and error analysis, rather than just a static dataset.
-- **Logical Cognitive Hierarchy**: The L1→L2→L3 progression effectively distinguishes capability dimensions, revealing systematic weaknesses in temporal and multi-POV reasoning.
-- **Multi-POV Synchronization**: This is the first benchmark in the gaming domain to provide synchronized multi-POV video QA, filling a gap in multi-video understanding evaluation.
+- **High Diagnosability**: The structured distractor taxonomy turns "failed" into "actionable insight," identifying exactly why a model failed.
+- **Framework over Static Dataset**: It provides a complete end-to-end pipeline (annotation protocols, QA generation, error analysis) extensible to new domains.
+- **Cognitive Hierarchy**: The L1→L2→L3 progression effectively distinguishes failure in perception vs. failure in reasoning.
+- **Multi-view Synchronization**: This is the first benchmark to provide synced multi-POV QA in the gaming domain, filling a gap in multi-video evaluation.
 
 ## Limitations & Future Work
-- **Data Scale**: The scale is relatively limited with 2,365 QA pairs and 100 videos compared to large-scale benchmarks.
-- **Domain Bias**: Focused on competitive 3D games; generalization to other domains like robotics or autonomous driving requires further validation.
-- **Annotation Noise**: Despite manual verification, approximately 8% of quality issues persist due to the automated generation pipeline.
-- **Future Directions**: Scaling to more game genres, introducing open-ended QA, and adding active exploration evaluation for models.
+- **Data Scale**: Limited to 2,365 QA pairs and 100 videos, which is smaller than massive general benchmarks.
+- **Domain Bias**: Focused on competitive 3D games; generalization to robotics or autonomous driving remains to be validated.
+- **Annotation Error**: ~8% quality issues remain after automated generation and manual checking.
+- **Future Directions**: Expansion to more genres, integration of open-ended QA, and inclusion of active exploration evaluation.
 
 ## Related Work & Insights
-- **vs. MarioQA**: While MarioQA pioneered game video QA, it was limited to 2D platformers; GameplayQA extends this to 3D multi-player games with multi-POV support.
-- **vs. Ego4D/EgoSchema**: These focus on first-person video understanding but lack multi-agent and multi-POV dimensions.
-- **vs. MVU-Eval**: MVU-Eval supports multi-video understanding but is not oriented toward agent scenarios and lacks decision density and diagnosticity.
+- **vs. MarioQA**: GameplayQA extends from 2D platformers to 3D multiplayer games with multi-view support.
+- **vs. Ego4D/EgoSchema**: While Ego4D focuses on first-person views, it lacks the multi-agent and multi-POV dimensions of GameplayQA.
+- **vs. MVU-Eval**: Supports multi-video understanding but is not geared toward agent-based decision-dense scenarios and lacks diagnostic depth.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The Self-Other-World triad and structured distractor taxonomy are innovative, filling the gap in multi-POV game video QA.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covers 15+ frontier models with ablation studies and multi-dimensional error analysis, though data scale is modest.
-- Writing Quality: ⭐⭐⭐⭐⭐ Clear framework design with rich tables and a distinct hierarchy.
-- Value: ⭐⭐⭐⭐ Provides a practical diagnostic tool for multi-agent perception, offering insights for embodied AI and world model research.
+- Novelty: ⭐⭐⭐⭐ The Self-Other-World decomposition and structured distractor taxonomy are highly innovative.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers 15+ frontier models with detailed error analysis, though data scale is modest.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear framework design with high-quality visualizations.
+- Value: ⭐⭐⭐⭐ Provides a practical diagnostic tool for multi-agent perception, relevant to embodied AI and world models.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2025\] MLVU: Benchmarking Multi-task Long Video Understanding](../../CVPR2025/video_understanding/mlvu_benchmarking_multi-task_long_video_understanding.md)
 - [\[ACL 2026\] DualFact: A Multimodal Fact Verification Framework for Procedural Video Understanding](dualfact_a_multimodal_fact_verification_framework_for_procedural_video_understan.md)
-- [\[ICCV 2025\] 4D-Bench: Benchmarking Multi-modal Large Language Models for 4D Object Understanding](../../ICCV2025/video_understanding/4d_bench_benchmarking_multimodal_llms_for_4d_object_understanding.md)
-- [\[AAAI 2026\] UVLM: Benchmarking Video Language Model for Underwater World Understanding](../../AAAI2026/video_understanding/uvlm_benchmarking_video_language_model_for_underwater_world_understanding.md)
-- [\[CVPR 2026\] CaST-Bench: Benchmarking Causal Chain-Grounded Spatio-Temporal Reasoning for Video Question Answering](../../CVPR2026/video_understanding/cast-bench_benchmarking_causal_chain-grounded_spatio-temporal_reasoning_for_vide.md)
+- [\[ACL 2026\] SlideAgent: Hierarchical Agentic Framework for Multi-Page Visual Document Understanding](slideagent_hierarchical_agentic_framework_for_multi-page_visual_document_underst.md)
+- [\[CVPR 2026\] ProSoftArena: Benchmarking Hierarchical Capabilities of Multi-modal Agents in Professional Software Environments](../../CVPR2026/multimodal_vlm/prosoftarena_benchmarking_hierarchical_capabilities_of_multi-modal_agents_in_pro.md)
+- [\[CVPR 2026\] VisualOverload: Probing Visual Understanding of VLMs in Really Dense Scenes](../../CVPR2026/multimodal_vlm/visualoverload_probing_visual_understanding_of_vlms_in_really_dense_scenes.md)
+- [\[ACL 2026\] ViLL-E: Video LLM Embeddings for Retrieval](vill-e_video_llm_embeddings_for_retrieval.md)
 
 </div>
 

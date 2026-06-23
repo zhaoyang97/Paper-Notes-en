@@ -2,13 +2,13 @@
 title: >-
   [Paper Note] Rethinking FID Through the Geometry of the Reference Dataset
 description: >-
-  [ICML 2026][Image Generation][FID] This paper points out that the "lower is better" assumption of FID systematically fails across different reference datasets. Using two geometric descriptors—distribution density $\langle -\log d_k\rangle$ and effective rank $\mathrm{erank}(A)$—the authors prove via a hierarchical linear model that these descriptors exp
+  [ICML 2026][Image Generation][FID] This paper demonstrates that the "lower-is-better" assumption of FID systematically fails across different reference datasets. By introducing two geometric descriptors—distribution density $\langle -\log d_k\rangle$ and effective rank $\mathrm{erank}(A)$—the authors use hierarchical linear modeling to prove these descr
 tags:
   - ICML 2026
   - Image Generation
   - FID
 date: 2026-05-08
-content_hash: 085c86457788fc89
+content_hash: 3112e543ffc9ea78
 ---
 # Rethinking FID Through the Geometry of the Reference Dataset
 
@@ -19,38 +19,38 @@ content_hash: 085c86457788fc89
 **Keywords**: FID, Generative Evaluation, Reference Set Geometry, Distribution Density, Effective Rank
 
 ## TL;DR
-This paper points out that the "lower is better" assumption of FID systematically fails across different reference datasets. Using two geometric descriptors—distribution density $\langle -\log d_k\rangle$ and effective rank $\mathrm{erank}(A)$—the authors prove via a hierarchical linear model that these descriptors explain ~70% of the cross-dataset variance in the "sample quality → FID" slope, quantitatively attributing FID's fragility to the reference set itself for the first time.
+This paper demonstrates that the "lower-is-better" assumption of FID systematically fails across different reference datasets. By introducing two geometric descriptors—distribution density $\langle -\log d_k\rangle$ and effective rank $\mathrm{erank}(A)$—the authors use hierarchical linear modeling to prove these descriptors explain ~70% of the cross-dataset variance in the "sample quality → FID" slope, providing the first quantitative attribution of FID's fragility to the reference set itself.
 
 ## Background & Motivation
 
-**Background**: FID uses Inception-v3 features + Fréchet distance to measure the difference between generative and reference distributions. It has become the de facto standard for evaluating image generation, used as a primary benchmark across nearly all diffusion, GAN, and autoregressive model papers.
+**Background**: FID, which utilizes Inception-v3 features and the Fréchet distance to measure the discrepancy between generated and reference distributions, has become the de facto evaluation standard for image generation. It serves as the primary benchmark in nearly all papers involving diffusion, GAN, and autoregressive models.
 
-**Limitations of Prior Work**: Numerous counterexamples have emerged in recent years—Choi et al. (2025) showed that spending more compute on COCO to obtain clearer images actually worsened FID; Lee et al. (2025) found that tuning hyperparameters by minimum FID resulted in samples with the worst ImageReward; Jayasumana et al. (2024) demonstrated that stronger image perturbations could paradoxically "improve" FID. These indicate that "FID decrease = quality increase" no longer consistently holds in practice.
+**Limitations of Prior Work**: Recent counter-examples have emerged—Choi et al. (2025) showed that extra compute on COCO yields clearer images but worse FID; Lee et al. (2025) found that tuning hyperparameters for minimum FID results in the worst ImageReward scores; Jayasumana et al. (2024) demonstrated that stronger image perturbations can paradoxically improve FID. These findings suggest that "FID decrease = quality increase" no longer holds in practice.
 
-**Key Challenge**: Previous explanations either blamed the fragility of Inception-v3 features (Kynkäänniemi et al. 2022, Parmar et al. 2022) or the instability of the Fréchet distance for long-tail estimation (Chong & Forsyth 2020). However, the other core component of FID—the reference dataset itself—has rarely been scrutinized. How are reference sets selected? Why does FID work on CelebA-HQ but fail on COCO? Are there quantifiable "geometric" differences between them?
+**Key Challenge**: Previous explanations either blame the fragility of Inception-v3 features (Kynkäänniemi et al. 2022, Parmar et al. 2022) or the instability of Fréchet distance for long-tail estimation (Chong & Forsyth 2020). However, the other core component of FID—the reference dataset itself—has rarely been scrutinized. How are reference sets selected? Why does FID work on CelebA-HQ but fail on COCO? Are there quantifiable "geometric" differences between them?
 
-**Goal**: To formalize "how the reference set shapes FID behavior" and identify a small set of geometric descriptors capable of predicting FID's sensitivity across different reference sets.
+**Goal**: To formalize how the reference set shapes FID and to identify a small set of geometric descriptors that can predict the behavioral variance of FID across different reference sets.
 
-**Key Insight**: FID is essentially a distribution distance, naturally concerning two properties of the reference set: how tightly it clusters in feature space (density) and how many principal directions it spans (effective dimension). Single-modality face datasets like CelebA-HQ and multi-category open-domain datasets like COCO naturally occupy different regions of the feature space, which should cause the response direction of FID to differ.
+**Key Insight**: As a distribution distance, FID naturally depends on two aspects of the reference set: its clustering density in feature space and the number of principal directions it spans (effective dimension). Single-modality datasets like CelebA-HQ and multi-category open-domain datasets like COCO occupy different regions of the feature space, which should lead to different FID response directions.
 
-**Core Idea**: Describe reference set geometry using two scalars—mean kNN log-density and effective rank—and then use a two-layer hierarchical linear model (HLM) to explicitly model the "sample quality → FID slope" as a function of reference set geometry, followed by cross-dataset statistical testing.
+**Core Idea**: Characterize reference set geometry using two scalars—mean kNN log-density and effective rank. Then, employ a two-level hierarchical linear model (HLM) to explicitly model the "sample quality → FID" slope as a function of the reference set geometry and perform statistical tests across datasets.
 
 ## Method
 
 ### Overall Architecture
-A fixed generator (Stable Diffusion 1.5 + DDIM) is used to generate images for six reference sets with vastly different semantic spans (FFHQ, CelebA-HQ, MJHQ-30K, ImageNet, Flickr30K, COCO). Sample quality is controlled by scanning denoising steps $N \in \{15, 20, \dots, 50\}$, with ImageReward serving as a quality proxy. Two main tasks are performed: (1) calculating two geometric descriptors for each dataset; (2) using an HLM to test whether slope differences can be explained by these geometric quantities. Finally, FID is decomposed using precision/recall to attribute dominant drivers, and ablations are performed by replacing Inception-v3 (with DINOv2) and Fréchet distance (with MMD/KID).
+The study fixes a generator (Stable Diffusion 1.5 + DDIM) and generates images across six reference sets with diverse semantic spans (FFHQ, CelebA-HQ, MJHQ-30K, ImageNet, Flickr30K, COCO). Quality is controlled by scanning denoising steps $N \in \{15, 20, \dots, 50\}$, with ImageReward serving as a quality proxy. Two steps follow: (1) calculating two geometric descriptors for each dataset; (2) using HLM to test if slope differences are explained by these geometric quantities. Finally, FID is decomposed into precision/recall to identify the dominant side, and ablations are performed by replacing Inception-v3 (with DINOv2) and Fréchet (with MMD/KID).
 
 ```mermaid
-graph TD
-    A["Fix Generator: SD1.5 + DDIM<br/>6 Reference Sets, Scan Denoising Steps N"] --> B["Generate Equal-sized Samples per (Dataset, N)<br/>ImageReward as Quality Proxy X"]
-    B --> C["Two Geometric Descriptors Z<br/>Density ⟨−log d_k⟩ + Effective Rank erank"]
-    B --> D["Distance Metric Y<br/>FID / KID / FD_DINOv2"]
+flowchart TD
+    A["Fixed Generator: SD1.5 + DDIM<br/>6 reference sets, scan denoising steps N"] --> B["Generate samples for each (Dataset, N)<br/>ImageReward as quality proxy X"]
+    B --> C["Two geometric descriptors Z<br/>Density ⟨−log d_k⟩ + Effective Rank erank"]
+    B --> D["Distance measurement Y<br/>FID / KID / FD_DINOv2"]
     subgraph HLM["Hierarchical Linear Model + Cross-level Interaction"]
         direction TB
-        E["Level-1: Fit Quality→FID Slope β_d per Dataset"]
+        E["Level-1: Fit Quality→FID slope β_d per dataset"]
         E --> F["Level-2: β_d = γ00 + γ11·Z + u_d"]
-        F --> G["Omnibus Test:<br/>Does Slope Vary Across Sets?"]
-        F --> H["Moderation Test:<br/>Variance explained by Geometry Z (R²)"]
+        F --> G["Omnibus Test:<br/>Do slopes vary across datasets?"]
+        F --> H["Moderation Test:<br/>Variance explained by geometry Z (R²)"]
     end
     C --> F
     D --> E
@@ -58,8 +58,8 @@ graph TD
     H --> ATTRIN
     subgraph ATTR["Precision / Recall Attribution + Ablations"]
         direction TB
-        ATTRIN["P/R Decomposition: Locate FID Driver Side"]
-        ATTRIN --> J["Replace DINOv2 Backbone / MMD Distance<br/>Effect Persists → Not Solely Due to Estimator"]
+        ATTRIN["P/R Decomposition: Locate FID dominance"]
+        ATTRIN --> J["Replace with DINOv2 / MMD<br/>Effect persists → Not just backbone/estimator fault"]
     end
 ```
 
@@ -67,41 +67,38 @@ graph TD
 
 **1. Two Geometric Descriptors: Characterizing Reference "Shape" via Density and Effective Rank**
 
-To clarify the reference set's role in shaping FID, the distribution in feature space must be compressed into comparable scalars. This paper selects two complementary metrics: distribution density using a logarithmic version of $k$-NN:
+To quantify how the reference set shapes FID, its feature space morphology must be compressed into comparable scalars. This paper selects two complementary ones: Distribution density is defined using a log-version of $k$-NN:
 
 $$\langle -\log d_k\rangle = \frac{1}{n}\sum_i -\log d_k(x_i)$$
 
-where $d_k(x_i)$ is the Euclidean distance from the $i$-th sample to its $k$-th nearest neighbor ($k=80$). The log-average is used because Loftsgaarden-Quesenberry estimates $\hat p(x)\propto d_k(x)^{-D}$ span dozens of orders of magnitude in $D=2048$ dimensions. Effective rank is defined as the exponent of the Shannon entropy of normalized singular values: $\mathrm{erank}(A)=\exp(H(\bm\sigma/\|\bm\sigma\|_1))$, where $A$ is the centered feature matrix. This provides a continuous generalization of "weighted dimensionality." Together, these separate distinct distributions—CelebA-HQ is a compact single-modality set (density $-2.36$, erank $1220$), while COCO is a spread-out open-domain set (density $-2.67$, erank $1337$).
+where $d_k(x_i)$ is the Euclidean distance to the $k$-th nearest neighbor ($k=80$). The log-average is used because the Loftsgaarden-Quesenberry estimator $\hat p(x)\propto d_k(x)^{-D}$ spans dozens of magnitudes in $D=2048$ dimensions. Effective rank is defined as the exponential of the Shannon entropy of normalized singular values: $\mathrm{erank}(A)=\exp(H(\bm\sigma/\|\bm\sigma\|_1))$, where $A$ is the centered feature matrix. This provides a continuous extension of dimensionality. Together, they distinguish distributions: CelebA-HQ is a compact single-modality (density $-2.36$, erank $1220$), while COCO is a spread-out open domain (density $-2.67$, erank $1337$).
 
-**2. Hierarchical Linear Model + Cross-level Interaction: Testing Geometric Explanations**
+**2. Hierarchical Linear Model (HLM): Testing if Geometry Explains Slope Variance**
 
-To rigorously quantify differences rather than just plotting scatters, a two-layer HLM is used. Level-1 fits $Y=\alpha_d+\beta_d X+\epsilon$ within each dataset $d$, yielding the intra-dataset slope $\beta_d$ (how much FID changes per unit quality). Level-2 regresses these slopes on dataset-level geometric descriptors: $\beta_d=\gamma_{00}+\gamma_{11}Z_d+u_d$. Two independent tests are then conducted: an Omnibus test using a likelihood ratio test to check if $\beta_d$ are equal (answering if slopes vary across sets), and a Moderation test using a Wald test for $H_0:\gamma_{11}=0$ (reporting $R^2_{\mathrm{slope}}$ to show how much variance geometry explains).
+Simple scatter plots of quality vs. FID are insufficient to quantify differences. The HLM splits the problem: Level-1 fits $Y=\alpha_d+\beta_d X+\epsilon$ within each dataset $d$ to obtain the within-dataset slope $\beta_d$. Level-2 regresses these slopes onto dataset-level geometric descriptors: $\beta_d=\gamma_{00}+\gamma_{11}Z_d+u_d$. Two tests are conducted: The Omnibus test uses a likelihood ratio test to check if all $\beta_d$ are equal, while the Moderation test uses a Wald test for $H_0:\gamma_{11}=0$ and reports $R^2_{\mathrm{slope}}$. Here, $X$ is $N$ or ImageReward, and $Y$ is FID (or KID/$\mathrm{FD_{DINOv2}}$).
 
-**3. Precision / Recall Attribution + Ablations: Locating Bias and Eliminating Backbone Suspicions**
+**3. Precision / Recall Attribution + Ablations: Locating FID Bias**
 
-FID is decomposed into Precision (proportion of generated samples near the real manifold) and Recall (proportion of the real distribution covered by generated samples). The authors calculate $R^2(\text{Precision},\text{FID})$ and $R^2(\text{Recall},\text{FID})$ for each dataset to see which side dominates—explaining mechanisms where higher $N$ on COCO leads to finer samples but narrower modes, causing recall to drop and FID to worsen. To rule out "Inception-v3 or Fréchet bias," backbones are replaced with DINOv2 and the Fréchet distance with MMD (KID), re-running the HLM tests.
-
-### Loss & Training
-This study focuses on evaluation; no training occurs. Generation uses SD 1.5 + DDIM, CFG=7.5, 512×512, with fixed seeds per prompt. The sole variable is the denoising steps $N$. For each (dataset, $N$), samples equal in size to the reference set are generated to calculate FID, KID, FD$_{\text{DINOv2}}$, precision, recall, and ImageReward.
+To understand *why* FID changes, it is decomposed into precision (fidelity) and recall (coverage). The authors calculate $R^2(\text{Precision},\text{FID})$ and $R^2(\text{Recall},\text{FID})$ via OLS for each dataset. This explains the anomaly where COCO samples become more refined as steps increase, but modes narrow and recall drops, causing FID to worsen. To ensure this isn't merely an artifact of Inception-v3 or Fréchet distance, ablations replace the backbone with DINOv2 and the distance with MMD (KID), re-running the HLM tests.
 
 ## Key Experimental Results
 
 ### Main Results
-Geometric descriptors for the six reference sets:
+Geometric descriptors of the six reference sets:
 
 | Dataset | $\langle -\log d_k\rangle$ | $\mathrm{erank}(A)$ | Type |
 |--------|------|------|------|
-| FFHQ | $-2.48$ | $1243$ | Centralized (Single-domain face) |
-| CelebA-HQ | $-2.36$ | $1220$ | Centralized (Single-domain face) |
+| FFHQ | $-2.48$ | $1243$ | Concentrated (Face) |
+| CelebA-HQ | $-2.36$ | $1220$ | Concentrated (Face) |
 | MJHQ-30K | $-2.74$ | $1341$ | Intermediate |
 | ImageNet | $-2.68$ | $1431$ | Dispersed |
 | Flickr30K | $-2.80$ | $1341$ | Dispersed |
 | COCO | $-2.67$ | $1337$ | Dispersed |
 
-Main Findings: For CelebA-HQ / FFHQ, FID decreases as $N$ increases (consistent with quality). For COCO / Flickr30K / ImageNet, FID increases as $N$ increases (contradicts quality). Omnibus test $D = 44.3, p < .001$ (with $X = N$) and $D = 90.9, p < .001$ (with $X = \text{ImageReward}$) strongly reject the hypothesis of identical slopes across datasets.
+Main Finding: As $N$ increases, FID decreases on CelebA-HQ/FFHQ (quality and FID align) but increases on COCO/Flickr30K/ImageNet (inverse relationship). Omnibus tests ($D = 44.3, p < .001$ for $X=N$; $D = 90.9, p < .001$ for $X=\text{ImageReward}$) strongly reject the hypothesis of uniform slopes.
 
 ### Ablation Study
-Moderation test results:
+Moderation test and ablation results:
 
 | $X$ | $Y$ | $Z$ | $\gamma_{11}$ | $p$ | $R^2_{\mathrm{slope}}$ |
 |------|------|------|------|------|------|
@@ -112,30 +109,30 @@ Moderation test results:
 | $N$ | KID | $\langle -\log d_k\rangle$ | $-0.0343$ | $<.001$ | $0.763$ |
 | $N$ | FD$_{\text{DINOv2}}$ | $\langle -\log d_k\rangle$ | $-0.0108$ | $<.001$ | $0.827$ |
 
-Precision / Recall Attribution ($R^2$): FFHQ 0.989 / 0.672; CelebA-HQ 0.951 / 0.001; ImageNet 0.690 / **0.949**; COCO 0.676 / **0.833**. FID is driven by precision in centralized datasets but by recall in dispersed ones.
+Precision / Recall Attribution ($R^2$): FFHQ 0.989 / 0.672, CelebA-HQ 0.951 / 0.001, ImageNet 0.690 / **0.949**, COCO 0.676 / **0.833**. In concentrated datasets, FID follows precision; in dispersed datasets, FID is dominated by recall.
 
 ### Key Findings
-- Density coefficients are consistently negative, while effective rank coefficients are positive: denser reference sets favor quality-FID alignment, whereas broader sets induce contradiction.
-- Replacing the backbone with DINOv2 increases $R^2_{\mathrm{slope}}$ to $0.83$, confirming that Inception-v3 is not the primary cause.
-- In dispersed datasets, FID correlates strongly with recall (COCO Recall $R^2 = 0.833$), signifying that "increased steps → finer samples but mode collapse → reduced recall → worse FID" is the mechanism of FID anomalies.
-- Practical Conclusion: Use FID with confidence on centralized sets (FFHQ, CelebA-HQ); on dispersed sets, geometric descriptors must be reported or alternative metrics used.
+- Density coefficients are consistently negative, while effective rank coefficients are positive: Denser reference sets allow FID to align with quality improvement, whereas broader sets lead to inverse behavior.
+- Switching to DINOv2 increased $R^2_{\mathrm{slope}}$ to $0.83$, proving this is not an Inception-v3 specific issue.
+- On dispersed datasets, FID correlates strongly with recall (COCO $R^2 = 0.833$). The mechanism for the FID anomaly is: increased steps → finer samples but mode collapse/narrowing → recall drop → FID increase.
+- Practical Conclusion: FID is reliable on concentrated sets (FFHQ, CelebA-HQ); on dispersed sets, geometric descriptors must be reported or alternative metrics used.
 
 ## Highlights & Insights
-- **Metric Fragility as a Statistical Problem**: Moves beyond anecdotal counterexamples to a hierarchical linear model approach, advancing the field from "disputing counterexamples" to "empirical science."
-- **Low-dimensional Explanatory Power**: Just two scalars (density + effective rank) explain over half of the FID behavioral variance, allowing benchmark selection to be guided by quantitative metrics rather than intuition.
-- **Reporting Standards**: Proposes a practical norm—either use centralized datasets for FID or report $\langle -\log d_k\rangle$ and $\mathrm{erank}$ alongside FID scores.
-- **Cross-metric Universality**: The effects are even stronger for KID and FD$_{\text{DINOv2}}$, indicating this is a fundamental issue for all "distributional metrics on a reference set."
+- **Metric fragility as a statistical problem**: Unlike previous anecdotal evidence, this work uses HLM to turn "reference set → slope variance" into a testable hypothesis with reportable $p$-values and $R^2$.
+- **Explaining 70%+ variance with two descriptors**: Just two scalars (density and effective rank) explain over half of FID's behavioral differences, shifting benchmark selection from intuition to quantification.
+- **Actionable reporting standards**: The authors suggest either using concentrated datasets for FID or reporting $\langle -\log d_k\rangle$ and $\mathrm{erank}$ alongside FID scores.
+- **Metric Generality**: The effects are even stronger for KID and FD$_{\text{DINOv2}}$, indicating this is a common issue for "distributional metrics on a reference set."
 
 ## Limitations & Future Work
-- The study only used 6 reference sets and 1 generator (SD 1.5); results need replication across more T2I, class-conditional, and unconditional settings.
-- Geometric descriptors are selected post-hoc; a learnable solution to directly correct for geometric bias in FID calculation is missing.
-- Quality proxies still rely on ImageReward, which itself may be biased; human evaluation should ideally be integrated into the regression.
+- Evaluation was limited to 6 datasets and 1 generator (SD 1.5). Conclusions need replication in more text-to-image or class-conditional settings.
+- Geometric descriptors are chosen post-hoc; no learnable solution to directly "correct" geometric bias during FID calculation is provided.
+- Quality proxies still rely on ImageReward, which is biased; human evaluation should be integrated into the regression.
 
 ## Related Work & Insights
-- **vs Kynkäänniemi et al. (2022, 2024)**: While they blame the Inception-v3 feature space, this paper proves the backbone is not the primary driver (effect is stronger on DINOv2).
-- **vs Chong & Forsyth (2020)**: They blame Fréchet estimator bias on finite samples, but the effect persists with MMD, suggesting the estimator is not the main cause.
-- **vs Jayasumana et al. (2024) CMMD**: CMMD proposes changing backbones and distances; this paper provides an "upstream" diagnosis—one must analyze reference set geometry before debating metrics.
-- **vs Precision/Recall Series**: Historically viewed as auxiliary, P/R is repositioned here as a diagnostic tool for understanding FID anomalies under different geometries.
+- **vs. Kynkäänniemi et al. (2022, 2024)**: They blamed the Inception-v3 feature space; this paper shows the effect is stronger on DINOv2.
+- **vs. Chong & Forsyth (2020)**: They blamed the Fréchet distance's estimation bias; this paper shows the effect persists with MMD.
+- **vs. Jayasumana et al. (2024) CMMD**: CMMD proposes changing backbones and distances; this paper provides a more fundamental diagnosis based on reference set geometry.
+- **vs. Precision/Recall (Kynkäänniemi 2019, Sajjadi 2018)**: While traditionally seen as complementary, this paper uses P/R to deconstruct FID's bias under different geometries.
 
 <!-- RELATED:START -->
 
@@ -143,11 +140,11 @@ Precision / Recall Attribution ($R^2$): FFHQ 0.989 / 0.672; CelebA-HQ 0.951 / 0.
 
 ## Related Papers
 
+- [\[ICML 2026\] Geometry-Aware Dataset Condensation for Diffusion Model Training](geometry-aware_dataset_condensation_for_diffusion_model_training.md)
 - [\[ICML 2026\] Geometry-Aware Tabular Diffusion](geometry-aware_tabular_diffusion.md)
 - [\[CVPR 2026\] Garments2Look: A Multi-Reference Dataset for High-Fidelity Outfit-Level Virtual Try-On with Clothing and Accessories](../../CVPR2026/image_generation/garments2look_a_multi-reference_dataset_for_high-fidelity_outfit-level_virtual_t.md)
 - [\[ICML 2026\] Geometry-based Schrödinger Bridges for Trustworthy Multimodal Fusion](geometry-based_schrödinger_bridges_for_trustworthy_multimodal_fusion.md)
 - [\[ICML 2026\] GASS: Geometry-Aware Spherical Sampling for Disentangled Diversity Enhancement in Text-to-Image Generation](gass_geometry-aware_spherical_sampling_for_disentangled_diversity_enhancement_in.md)
-- [\[CVPR 2026\] Refaçade: Editing Object with Given Reference Texture](../../CVPR2026/image_generation/refacade_editing_object_with_given_reference_texture.md)
 
 </div>
 

@@ -57,7 +57,7 @@ item_total: 17
 
 **🧪 ICML2026** · **17** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (178)](../../CVPR2026/video_understanding/index.md) · [🔬 ICLR2026 (10)](../../ICLR2026/video_understanding/index.md) · [🤖 AAAI2026 (27)](../../AAAI2026/video_understanding/index.md) · [🧠 NeurIPS2025 (39)](../../NeurIPS2025/video_understanding/index.md) · [📹 ICCV2025 (56)](../../ICCV2025/video_understanding/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (178)](../../CVPR2026/video_understanding/index.md) · [🔬 ICLR2026 (47)](../../ICLR2026/video_understanding/index.md) · [🤖 AAAI2026 (27)](../../AAAI2026/video_understanding/index.md) · [🧠 NeurIPS2025 (39)](../../NeurIPS2025/video_understanding/index.md) · [📹 ICCV2025 (56)](../../ICCV2025/video_understanding/index.md)
 
 🔥 **Top topics:** Object Tracking ×4 · Reasoning ×2
 
@@ -67,23 +67,23 @@ item_total: 17
 
 **[Foresee-to-Ground: From Predictive Temporal Perception to Evidence-Driven Reasoning](foresee-to-ground_from_predictive_temporal_perception_to_evidence-driven_reasoni.md)**
 
-:   Foresee-to-Ground (F2G) reformulates Video Temporal Grounding (VTG) from direct timestamp regression into an "identify-then-measure" two-stage problem—first constructing a candidate event evidence pool via predictive temporal perception and span evidence encoding, then using an LLM to precisely generate boundaries under the constraints of the selected event. This improves Charades-STA R@0.7 by 4.1 points and ActivityNet by 6.7 points.
+:   Foresee-to-Ground (F2G) reformulates Video Temporal Grounding (VTG) from direct timestamp regression into an "identify-then-measure" two-stage problem. By utilizing predictive temporal perception and a span evidence encoder to build a candidate event evidence pool, the LLM generates precise boundaries constrained by selected events. This approach improves R@0.7 by 4.1 points on Charades-STA and 6.7 points on ActivityNet.
 
 **[MetaphorVU: Towards Metaphorical Video Understanding](metaphorvu_towards_metaphorical_video_understanding.md)**
 
-:   This paper proposes the first metaphorical video understanding benchmark, MetaphorVU-Bench (860 videos + 8 metaphor categories), and an enhancement method, MetaphorBoost. By utilizing a metaphorical knowledge graph with 54K nodes and 200K edges as an external cognitive scaffold, the study quantitatively reveals that the core bottleneck for MLLMs in metaphorical video understanding is the "lack of cross-domain mapping" rather than visual recognition errors. The best-performing model still lags behind humans (83.4) by 17 points.
+:   This paper proposes the first metaphorical video understanding benchmark, MetaphorVU-Bench (860 videos + 8-category metaphor taxonomy), and an enhancement method, MetaphorBoost. By utilizing a metaphor knowledge graph with 54K nodes and 200K edges as an external cognitive scaffold, the study quantitatively reveals that the core bottleneck for MLLMs in metaphorical video understanding is the "lack of cross-domain mapping" rather than visual recognition errors. The optimal model still lags behind humans (83.4) by 17 points.
 
 **[OmniSIFT: Modality-Asymmetric Token Compression for Efficient Omni-modal Large Language Models](omnisift_modality-asymmetric_token_compression_for_efficient_omni-modal_large_la.md)**
 
-:   This paper identifies that existing "modality-symmetric" token compression in Omni-LLMs is suboptimal. It proposes OmniSIFT—a two-stage asymmetric compression framework that first prunes video redundancy via spatio-temporal saliency to obtain "vision anchors," which then guide audio selection. Introducing only 4.85M additional parameters, OmniSIFT consistently outperforms existing compression baselines and even the original model on Qwen2.5-Omni-7B while retaining only 25% of tokens.
+:   This paper argues that existing Omni-LLM token compression methods are suboptimal due to their "symmetric" treatment of audio and video. It proposes OmniSIFT—a two-stage asymmetric compression framework that first prunes video redundancy via spatio-temporal saliency to obtain "visual anchors," which then guide audio selection. With only 4.85M additional parameters, it consistently outperforms existing baselines and even the original model on Qwen2.5-Omni-7B while retaining only 25% of tokens.
 
 **[Privacy-Aware Video Anomaly Detection through Orthogonal Subspace Projection](privacy-aware_video_anomaly_detection_through_orthogonal_subspace_projection.md)**
 
-:   The authors propose the Orthogonal Projection Layer (OPL) and an enhanced G-OPL. Using a learnable orthogonal subspace derived via QR decomposition, they explicitly project out "task-irrelevant variables" and "facial privacy components" within the video anomaly detection (VAD) feature space. They also introduce four privacy-aware metrics (SSC/ARD/PD/FPD), demonstrating that face prediction accuracy by linear SVM probes significantly decreases while maintaining or improving VAD AUC.
+:   The authors propose OPL (Orthogonal Projection Layer) and an enhanced version G-OPL, which utilize a learnable orthogonal subspace derived from QR decomposition to explicitly project out "task-irrelevant variables" and "facial privacy components" within the video anomaly detection feature space. They introduce four privacy-aware metrics (SSC/ARD/PD/FPD), demonstrating that face prediction accuracy by linear SVM probes significantly decreases while maintaining or even improving VAD AUC.
 
 **[ProAct-VL: A Proactive VideoLLM for Real-Time AI Companions](proact-vl_a_proactive_videollm_for_real-time_ai_companions.md)**
 
-:   ProAct-VL enables VideoLLMs to autonomously decide **when to respond** and generate short-segment commentary under streaming input through a chunk-level I/O paradigm, a lightweight FLAG decision head, and a transition-aware loss function. It achieves ~1s low latency and strong proactivity—obtaining a TimeDiff of only 1.20s and a trigger F1 of 63.25% in game commentary tasks, significantly outperforming offline models like GPT-4o.
+:   ProAct-VL enables VideoLLMs to autonomously decide **when to respond** and generate short-segment commentary under streaming input via a chunk-level I/O paradigm, a lightweight FLAG decision head, and transition-aware loss functions. It achieves ~1s low latency and strong proactivity—obtaining a TimeDiff of only 1.20s and a trigger F1 of 63.25% in game commentary tasks, significantly outperforming offline models like GPT-4o.
 
 **[RELO: Reinforcement Learning to Localize for Visual Object Tracking](relo_reinforcement_learning_to_localize_for_visual_object_tracking.md)**
 
@@ -95,35 +95,35 @@ item_total: 17
 
 **[Revisiting Uncertainty: On Evidential Learning for Partially Relevant Video Retrieval](revisiting_uncertainty_on_evidential_learning_for_partially_relevant_video_retri.md)**
 
-:   Addressing the issues of query ambiguity and temporally sparse supervision caused by "short queries vs. long videos" in Partially Relevant Video Retrieval (PRVR), this paper proposes Holmes, a hierarchical evidential learning framework based on the Dirichlet distribution. It employs a triple-principle approach to distinguish between precise, polysemous, and under-determined queries for adaptive label calibration at the inter-video level. At the intra-video level, it utilizes flexible optimal transport with a "dustbin" to achieve dense alignment, achieving SOTA performance on ActivityNet, Charades, and TVR datasets.
+:   To address query ambiguity and temporal sparse supervision caused by "short queries vs. long videos" in Partially Relevant Video Retrieval (PRVR), this paper proposes Holmes, a hierarchical evidential learning framework based on the Dirichlet distribution. It distinguishes precise, polysemous, and under-determined queries using a three-fold principle at the inter-video level for adaptive label calibration, and achieves dense alignment at the intra-video level via flexible optimal transport with a dustbin. Holmes achieves SOTA on ActivityNet, Charades, and TVR datasets.
 
 **[SkelHCC: A Hyperbolic CLIP-Driven Cache Adaptation Framework for Skeleton-based One-Shot Action Recognition](skelhcc_a_hyperbolic_clip-driven_cache_adaptation_framework_for_skeleton-based_o.md)**
 
-:   SkelHCC transfers CLIP to Hyperbolic space to explicitly align skeleton-language representations across three granularities: "Joints → Body Parts → Full Body." It utilizes LLM-generated body part importance masks for training-free multi-granularity voting cache inference, achieving a 9% improvement over SOTA on NTU120 one-shot action recognition with only 0.5M trainable parameters.
+:   SkelHCC maps CLIP to Hyperbolic space to explicitly align skeleton-language representations across three granularities: "Joint → Body Part → Full Body." It utilizes LLM-generated body part importance masks for training-free multi-granularity voting cache inference, achieving a 9% improvement over Prev. SOTA on NTU120 one-shot action recognition with only 0.5M trainable parameters.
 
 **[SLAP: The Semantic Least Action Principle for Variational Video-Language Modeling](slap_the_semantic_least_action_principle_for_variational_video-language_modeling.md)**
 
-:   SLAP applies the "Principle of Least Action" from classical mechanics to the video semantic manifold, modeling the completion of missing frames from sparsely sampled videos as a two-point boundary value problem on a Riemannian manifold. By replacing probabilistic generation with semantic dynamics to enforce object permanence, it achieves 83.9% accuracy on tunnel occlusion tests (outperforming diffusion models by 12 points) with a 177× inference speedup.
+:   SLAP transplants the "Least Action Principle of classical mechanics" onto the video semantic manifold, modeling the completion of missing frames in sparsely sampled videos as a two-point boundary value problem on a Riemannian manifold. By replacing probabilistic generation with semantic dynamics to enforce object permanence, it achieves 83.9% accuracy on tunnel occlusion tests (outperforming diffusion models by 12 points) with a 177× inference speedup.
 
 **[STORM: Segment, Track, and Object Re-Localization from a Single Image](storm_segment_track_and_object_re-localization_from_a_single_image.md)**
 
-:   STORM proposes a "reference-image-only" 6D pose tracking framework: it uses Hierarchical Spatial Fusion Attention (HSFA) for reference-query feature alignment (producing segmentation masks + SAM3D meshes) and trains a Tracking Verifier with BCE binary classification. The negative logit is treated as an energy score $E=-g_\theta$, and an automatic re-localization is triggered when the score exceeds a threshold for $L=3$ consecutive frames, pushing unannotated 6D tracking accuracy on LM-O / YCB-V close to the ground-truth mask upper bound.
+:   STORM proposes a 6D pose tracking framework that "runs with only a single reference image": it utilizes Hierarchical Spatial Fusion Attention (HSFA) for reference-query feature alignment (producing segmentation masks + SAM3D meshes) and trains a Tracking Verifier using BCE binary classification. The negative logit is defined as the energy score $E=-g_\theta$, and re-localization is automatically triggered when the score exceeds a threshold for $L=3$ consecutive frames, pushing zero-shot 6D tracking accuracy on LM-O/YCB-V close to the ground-truth mask upper bound.
 
 **[Unified Multimodal Visual Tracking with Dual Mixture-of-Experts](unified_multimodal_visual_tracking_with_dual_mixture-of-experts.md)**
 
-:   OneTrackerV2 unifies five tracking tasks (RGB, RGB+D, RGB+T, RGB+E, RGB+N) into a single network for end-to-end training. It utilizes a Meta Merger for modality fusion and a Dual MoE to explicitly decouple heterogeneous features—spatiotemporal matching and modality fusion—into T-MoE and M-MoE blocks, maintaining distinct subspaces via dissimilarity loss and router clustering.
+:   OneTrackerV2 unifies five tracking tasks (RGB / RGB+D / RGB+T / RGB+E / RGB+N) into a single network for end-to-end training. It utilizes a Meta Merger for modality fusion and a Dual MoE to explicitly decouple heterogeneous features—"spatial-temporal matching" and "modality fusion"—into T-MoE and M-MoE blocks. A dissimilarity loss and router clustering are employed to prevent these features from collapsing into the same subspace.
 
 **[Video-MTR: Reinforced Multi-Turn Reasoning for Long Video Understanding](video-mtr_reinforced_multi-turn_reasoning_for_long_video_understanding.md)**
 
-:   Video-MTR is a reinforcement learning-based **multi-turn reasoning** framework. By guiding MLLMs through a **gated bi-level reward mechanism** to iteratively select key video segments, it achieves SOTA performance in long video understanding using only **8K data**, improving data efficiency by two orders of magnitude compared to methods requiring 257K–4.4M samples.
+:   Video-MTR is an RL-based **multi-turn reasoning** framework that guides MLLMs to iteratively select key video segments through a **gated dual-level reward mechanism**. It achieves SOTA performance in long video understanding using only **8K data**, outperforming methods that require 257K to 4.4 million samples (improving data efficiency by two orders of magnitude).
 
 **[VideoSEAL: Mitigating Evidence Misalignment in Agentic Long Video Understanding by Decoupling Answer Authority](videoseal_mitigating_evidence_misalignment_in_agentic_long_video_understanding_b.md)**
 
-:   VideoSEAL identifies the "evidence misalignment" issue in existing agentic long video QA systems, where models answer correctly without observing sufficient evidence. This is attributed to the "coupled agent conflating planning and answering authority." The proposed planner-inspector decoupling framework assigns exclusive answering authority to an inspector, which only responds when pixel-level evidence is sufficient. On LVBench, the accuracy improved from 48.2% to 55.1% (↑20.5%), and on LongVideoBench from 52.2% to 62.0%.
+:   VideoSEAL identifies the "evidence misalignment" problem in existing agentic long video QA systems—where agents answer correctly without actually seeing the evidence—and attributes the root cause to "coupled agents conflating planning and answering authority." It proposes a planner-inspector decoupling framework: the planner handles long-horizon evidence search, while the inspector holds exclusive answering authority and only releases the answer when pixel-level evidence is sufficient. This improves accuracy on LVBench from 48.2% to 55.1% (↑20.5%) and on LongVideoBench from 52.2% to 62.0%.
 
 **[VideoTemp-o3: Harmonizing Temporal Grounding and Video Understanding in Agentic Thinking](videotemp-o3_harmonizing_temporal_grounding_and_video_understanding_in_agentic_t.md)**
 
-:   VideoTemp-o3 is a unified Agent video understanding framework—jointly modeling video temporal grounding and question answering (QA) through a **unified masking strategy for cold-start SFT** and **penalty-aware IoU rewards**. It achieves high-quality multi-turn iterative grounding and precise answers in long video understanding, with an mIoU of 15.6% on ultra-long videos (> 20 minutes), surpassing Gemini-2.5-Pro's 14.8%.
+:   VideoTemp-o3 is a unified agentic video understanding framework. By joint modeling of temporal grounding and video QA through a **unified masking strategy for cold-start SFT** and a **penalty-aware IoU reward**, it achieves high-quality multi-round iterative grounding and precise answering in long video understanding. It reaches an mIoU of 15.6% on ultra-long videos (> 20 minutes), surpassing Gemini-2.5-Pro's 14.8%.
 
 **[VSCD: Video Scene Change Detection in Unaligned Scenarios](vscd_video-based_scene_change_detection_in_unaligned_scenes.md)**
 

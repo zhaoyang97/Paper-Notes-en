@@ -2,76 +2,76 @@
 title: >-
   [Paper Note] Conformal Reliability: A New Evaluation Metric for Conditional Generation
 description: >-
-  [ICML 2026][Image Generation][Paper Note] The authors propose CReL, a reliability score based on Conformal Prediction. By constructing convex prediction sets in a latent space and optimizing for worst-case metric performance, CReL achieves uncertainty-aware evaluation for conditional generative models. It reveals differences in model reliability for image-to-t
+  [ICML 2026][Image Generation][Paper Note] The paper proposes CReL, a reliability score based on Conformal Prediction. By constructing convex prediction sets in latent space and optimizing for worst-case metric performance, it achieves uncertainty-aware evaluation for conditional generative models. Experiments on image-to-text and text-to-image tasks reveal rel
 tags:
   - ICML 2026
   - Image Generation
 date: 2026-05-08
-content_hash: a2563a801bf981a8
+content_hash: f4bf9aadafba0625
 ---
 # Conformal Reliability: A New Evaluation Metric for Conditional Generation
 
 **Conference**: ICML2026  
 **arXiv**: [2605.30807](https://arxiv.org/abs/2605.30807)  
-**Code**: https://ggc29.github.io/CReL/ (Yes)  
+**Code**: https://ggc29.github.io/CReL/ (Available)  
 **Area**: Image Generation  
 **Keywords**: Reliability Evaluation, Conformal Prediction, Conditional Generation, Worst-case Analysis, Uncertainty Quantification  
 
 ## TL;DR
-The authors propose CReL, a reliability score based on Conformal Prediction. By constructing convex prediction sets in a latent space and optimizing for worst-case metric performance, CReL achieves uncertainty-aware evaluation for conditional generative models. It reveals differences in model reliability for image-to-text and text-to-image tasks that traditional single-output metrics fail to capture.
+The paper proposes CReL, a reliability score based on Conformal Prediction. By constructing convex prediction sets in latent space and optimizing for worst-case metric performance, it achieves uncertainty-aware evaluation for conditional generative models. Experiments on image-to-text and text-to-image tasks reveal reliability differences that traditional single-output metrics fail to capture.
 
 ## Background & Motivation
 
-**Background**: Conditional generative models (e.g., text-to-image, image-to-text) have made significant progress. Current mainstream evaluation metrics like CLIP Score, BERT-SIM, and FID typically assess only the quality of a single generated output, reflecting the "average performance" of the model.
+**Background**: Conditional generative models (text-to-image, image-to-text, etc.) have made significant progress. Current mainstream evaluation metrics such as CLIP Score, BERT-SIM, and FID typically evaluate only the quality of a single generation output, reflecting the "average performance" of the model.
 
-**Limitations of Prior Work**: Generative models possess inherent stochasticity—the same input can produce drastically different outputs under different sampling seeds. A model might have a high average score but still possess a non-negligible probability of producing catastrophic failures. For instance, in image-to-text tasks, a model usually generates "a person playing guitar" correctly, but under certain seeds, it might produce "a person holding a gun." In safety-critical scenarios, single-output evaluation cannot quantify this tail risk.
+**Limitations of Prior Work**: Generative models possess inherent stochasticity—the same input can produce drastically different outputs under different sampling seeds. A model might have a high average score but still possess a non-negligible probability of producing catastrophic failures. For instance, in an image-to-text task, a model usually generates "a person playing the guitar," but might generate "a person holding a gun" under certain seeds. In safety-critical scenarios, single-output evaluation cannot quantify this tail risk.
 
-**Key Challenge**: Existing metrics measure "how good a model can be," whereas reliability should measure "how bad a model can be at its worst." However, directly constructing prediction sets in high-dimensional output spaces and optimizing worst-case metrics faces the dual challenges of the curse of dimensionality and non-convex optimization.
+**Key Challenge**: Existing metrics measure "how good a model can be," whereas reliability should measure "how bad a model can be at its worst." However, directly constructing prediction sets in high-dimensional output spaces and optimizing for worst-case metrics face the dual difficulties of the curse of dimensionality and non-convex optimization.
 
-**Goal**: Define a reliability score that accounts for uncertainty, quantifying the worst-case performance of a model at a given confidence level $1-\alpha$, and provide an efficient computational framework.
+**Goal**: Define a reliability score that accounts for uncertainty, quantifying the worst-case performance of a model at a given confidence level $1-\alpha$, while providing an efficient computational framework.
 
-**Key Insight**: The high-dimensional output is mapped to a low-dimensional latent space. Directional Quantile Regression (DQR) is used to construct a convex prediction region, followed by conformal calibration to ensure coverage guarantees. Convexity allows the worst-case optimization to be solved via Projected Gradient Descent (PGD).
+**Key Insight**: High-dimensional outputs are mapped to a low-dimensional latent space. Directional Quantile Regression (DQR) is used to construct a convex prediction region, followed by conformal calibration to ensure coverage guarantees. Convexity allows the worst-case optimization to be solved via Projected Gradient Descent (PGD).
 
-**Core Idea**: Construct a convex prediction set in latent space that satisfies coverage guarantees, transforming the originally intractable high-dimensional non-convex reliability optimization problem into a solvable optimization problem over convex constraints.
+**Core Idea**: Construct convex prediction sets in latent space that satisfy coverage guarantees, transforming the originally intractable high-dimensional non-convex reliability optimization into a solvable optimization problem over convex constraints.
 
 ## Method
 
 ### Overall Architecture
-CReL aims to answer "how bad a conditional generative model can be in the worst case." The inputs are the model $f$ to be evaluated, a user-specified similarity metric $\rho$, and a confidence level $1-\alpha$. The difficulty lies in the fact that enumerating all possible outputs in a high-dimensional space to find the worst one is bogged down by both the curse of dimensionality and non-convexity. CReL's strategy is to compress the high-dimensional output into a low-dimensional latent space, construct a convex prediction set with coverage guarantees there, and thus reduce "finding the worst output" to a solvable problem of PGD over a convex set.
+CReL aims to answer "how bad a conditional generative model can be in the worst case." The inputs are the model $f$ to be evaluated, a user-specified similarity metric $\rho$, and a confidence level $1-\alpha$. The difficulty lies in the fact that enumerating all possible outputs in high-dimensional space to find the worst one is computationally expensive and non-convex. CReL addresses this by compressing high-dimensional outputs into a low-dimensional latent space, constructing a convex prediction set with coverage guarantees there. Consequently, "finding the worst output" reduces to a solvable projected gradient descent problem on a convex set.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    IN["Model f + Metric ρ + Confidence level 1−α"] --> SP["Three-fold Data Split<br/>Train LGM / Train DQR / Conformal Calibration"]
+    IN["Model f + Metric ρ + Confidence 1−α"] --> SP["Three-fold Data Partition<br/>Train LGM / Train DQR / Conformal Calibration"]
     subgraph CAL["Latent Space Conformal Calibration"]
         direction TB
-        ENC["LGM Encoder ℰ: High-dim output → Latent Z"] --> DQR["Directional Quantile Regression DQR<br/>Intersection of half-spaces → Convex Region"]
-        DQR --> CON["Conformal Dilation γ_cal<br/>Expand region to satisfy coverage 1−α"]
+        ENC["LGM Encoder ℰ: High-dim Output → Latent Z"] --> DQR["Directional Quantile Regression DQR<br/>Intersection of half-spaces → Convex Region"]
+        DQR --> CON["Conformal Calibration Inflation γ_cal<br/>Expand region for 1−α coverage"]
     end
     SP --> ENC
     CON --> PGD["Reliability Score Solving<br/>PGD on convex set to find worst output"]
-    PGD --> OUT["CReL Score: Worst-case similarity (tail risk)"]
+    PGD --> OUT["CReL Score: Worst-case similarity (Tail Risk)"]
 ```
 
 ### Key Designs
 
-**1. Latent Space Conformal Calibration: Moving Intractable High-Dim Calibration to Low-Dim Convex Regions**
+**1. Latent Space Conformal Calibration: Moving Intractable High-dim Calibration to Low-dim Convex Regions**
 
-The first obstacle to worst-case evaluation is constructing a "set of outputs that the model is truly likely to produce at confidence level $1-\alpha$." Doing this in the original output space requires grid discretization, with computational costs expanding exponentially with dimensionality. CReL splits the training data into three folds: $\mathcal{I}_{\text{lgm}}$ to train a VAE encoder/decoder, $\mathcal{I}_{\text{dqr}}$ to train Directional Quantile Regression (DQR), and $\mathcal{I}_{\text{cal}}$ for conformal calibration. The encoder $\mathcal{E}$ first compresses the output $\hat{Y}$ into a latent variable $Z \in \mathbb{R}^r$. DQR estimates an $\alpha$-quantile half-space $\mathbb{H}_u^+(x)$ for each direction $\mathbf{u} \in \mathbb{S}^{r-1}$. The intersection of all half-spaces yields a convex region $R_\mathcal{Z}(x) = \bigcap_{\mathbf{u}} \mathbb{H}_u^+(x)$.
+The first hurdle in worst-case evaluation is constructing a "set of outputs that the model is truly likely to produce at confidence level $1-\alpha$." Doing this in the original output space requires grid discretization, with computational costs expanding exponentially with dimensionality. CReL splits training data into three folds: $\mathcal{I}_{\text{lgm}}$ to train a VAE encoder/decoder, $\mathcal{I}_{\text{dqr}}$ to train Directional Quantile Regression (DQR), and $\mathcal{I}_{\text{cal}}$ for conformal calibration. The encoder $\mathcal{E}$ compresses the output $\hat{Y}$ into a latent variable $Z \in \mathbb{R}^r$. DQR estimates an $\alpha$-quantile half-space $\mathbb{H}_u^+(x)$ for each direction $\mathbf{u} \in \mathbb{S}^{r-1}$. The intersection of all half-spaces yields a convex region $R_\mathcal{Z}(x) = \bigcap_{\mathbf{u}} \mathbb{H}_u^+(x)$.
 
-Intersecting multiple directions causes the actual coverage to drop below $1-\alpha$, requiring conformal calibration to "inflate" the region: the projection distance $E_i^+$ from each sample in the calibration set to $R_\mathcal{Z}$ is calculated, and the $\lceil(|\mathcal{D}_{\text{cal}}|+1)(1-\alpha)\rceil$ quantile is taken as the dilation amount $\gamma_{\text{cal}}$, expanding the region to $S^{\gamma_{\text{cal}}}(x)$. This step is efficient because convex regions in latent space allow projection distances to be calculated via linear programming rather than grid searches.
+Since intersecting multiple directions causes the actual coverage to fall below $1-\alpha$, conformal calibration is used to "inflate" the region: the projection distance $E_i^+$ of each sample in the calibration set to $R_\mathcal{Z}$ is calculated, and the $\lceil(|\mathcal{D}_{\text{cal}}|+1)(1-\alpha)\rceil$-th quantile is taken as the inflation amount $\gamma_{\text{cal}}$, expanding the region to $S^{\gamma_{\text{cal}}}(x)$. This step is efficient because convex regions in latent space allow for calculating projection distances via linear programming rather than grid-searching in the original space.
 
-**2. Reliability Score Definition and Solving: Finding the Worst Output in a Convex Prediction Set**
+**2. Definition and Solving of the Reliability Score: Finding the Worst Output in Convex Prediction Sets**
 
 With the calibrated convex prediction set $C_\mathcal{Z}$, the reliability score is defined as the score of the output within the set that performs worst according to the metric:
 
 $$\text{CReL} = \min_{z \in C_\mathcal{Z}(X_{n+1})} \rho\big(\mathcal{D}ec(z; X_{n+1}), \text{GT}_{n+1}\big)$$
 
-This involves selecting the result from all "reasonably possible" outputs that is least similar to the ground truth—a lower score indicates higher tail risk. In the original problem, the metric $\rho$ and the constraint set $C_\mathcal{Y}$ are non-convex in the output space; after moving to latent space, the constraints become convex. Although the objective may remain non-convex, it can be solved using PGD. The projection operator itself reduces to linear programming: first solve $y^* = \arg\min_{y_1 \in R_\mathcal{Z}(x)} \|y_1 - y\|_2$, then translate by $\gamma_{\text{cal}}$ along the vector. Running PGD with 50 random starting points mitigates non-convex local optima, yielding stable results with a standard deviation of only 0.00027.
+This involves picking the result least similar to the ground truth from all "reasonably possible" model outputs—a lower score indicates higher tail risk. In the original problem, the metric $\rho$ and constraint set $C_\mathcal{Y}$ are non-convex in the output space. By moving to latent space, the constraints become convex. Although the objective remains non-convex, it can be approached using Projected Gradient Descent (PGD). The projection operator itself is reduced to linear programming: first solving $y^* = \arg\min_{y_1 \in R_\mathcal{Z}(x)} \|y_1 - y\|_2$, then translating by $\gamma_{\text{cal}}$ along the direction. In practice, PGD is run with 50 random starts to mitigate non-convex local optima, yielding stable results with a standard deviation of only 0.00027.
 
-**3. Coverage Guarantee: Calibration in Latent Space, Guarantee in Output Space**
+**3. Theoretical Coverage Guarantees: Calibrating in Latent Space, Guaranteeing in Output Space**
 
-For the reliability score to be trustworthy, the prediction set must cover the true output with probability $1-\alpha$. Based on exchangeability, CReL first proves that $\mathbb{P}(Z_{n+1} \in S^{\gamma_{\text{cal}}}) \geq 1-\alpha$ in latent space. It then argues that when the LGM accurately recovers the conditional distribution $\hat{Y}|X$, the decoder mapping does not decrease coverage, thus $\mathbb{P}(\hat{Y}_{n+1} \in C_\mathcal{Y}(X_{n+1})) \geq 1-\alpha$ holds. The upper bound for coverage is $1-\alpha + 1/(1+|\mathcal{D}_{\text{cal}}|)$, which approaches the target as the calibration set grows. Compared to direct calibration in output space (e.g., Feldman et al.), latent space calibration is slightly more conservative due to decoder expansion but makes the optimization problem "solvable," a trade-off CReL finds acceptable.
+For the reliability score to be trustworthy, the prediction set must cover the true output with probability $1-\alpha$. Based on exchangeability, CReL first proves that $\mathbb{P}(Z_{n+1} \in S^{\gamma_{\text{cal}}}) \geq 1-\alpha$ in the latent space. It then argues that if the LGM accurately recovers the conditional distribution $\hat{Y}|X$, the decoder mapping will not decrease the coverage, ensuring $\mathbb{P}(\hat{Y}_{n+1} \in C_\mathcal{Y}(X_{n+1})) \geq 1-\alpha$. The upper bound for coverage is $1-\alpha + 1/(1+|\mathcal{D}_{\text{cal}}|)$, approaching the target as the calibration set grows. Compared to direct calibration in output space (e.g., Feldman et al.), latent space calibration is slightly more conservative due to decoder expansion, but it transforms the entire optimization problem from "intractable" to "solvable."
 
 ## Key Experimental Results
 
@@ -79,10 +79,10 @@ For the reliability score to be trustworthy, the prediction set must cover the t
 
 | Method | $\alpha$ | Coverage-$\mathcal{Z}$ | Coverage-$\mathcal{Y}$ | Region Area |
 |------|----------|----------------------|----------------------|----------|
-| Ours (CReL) | 0.10 | 0.8953 | 0.8915 | **232.7** |
+| CReL (Ours) | 0.10 | 0.8953 | 0.8915 | **232.7** |
 | Feldman | 0.10 | — | 0.8940 | 234.5 |
 | DQR | 0.10 | 0.8823 | 0.9145 | 287.4 |
-| Ours (CReL) | 0.02 | 0.9770 | 0.9760 | **398.5** |
+| CReL (Ours) | 0.02 | 0.9770 | 0.9760 | **398.5** |
 | DQR | 0.02 | 0.9818 | 0.9872 | 749.1 |
 
 ### Reliability Evaluation for Image-to-Text ($\alpha=0.1$)
@@ -95,26 +95,38 @@ For the reliability score to be trustworthy, the prediction set must cover the t
 | GIT-large | 0.2550 (1st) | −0.0043 (3rd) | **0.8649 (1st)** | 0.6459 (2nd) |
 
 ### Key Findings
-- **Ranking Inversion**: BLIP-base ranks lowest in average CLIP-SIM (0.2330) but first in CReL-CLIP (0.0070) because its score distribution is more concentrated, leading to better worst-case performance.
-- **Region Area Advantage**: The area of CReL's prediction set (232.7) is significantly smaller than DQR (287.4) and comparable to Feldman (234.5), indicating that joint calibration produces more compact information sets.
-- **Scalability**: Unlike Feldman’s grid method, which grows exponentially in high dimensions, CReL’s latent space calibration runtime grows linearly with dimensionality.
-- Similar inversions were observed in **text-to-image tasks**: SD3-M ranked third in CLIP-SIM but first in CReL-CLIP, while Kandinsky-2.2 had the highest average but ranked third in reliability.
+- **Ranking Inversion**: BLIP-base has the lowest average CLIP-SIM (0.2330) but ranks first in CReL-CLIP (0.0070). This is because its score distribution is more concentrated, leading to better worst-case performance.
+- **Region Area Advantage**: CReL's prediction set area (232.7) is significantly smaller than DQR's (287.4) and comparable to Feldman's (234.5), indicating that joint calibration generates more compact information sets.
+- **Scalability**: Unlike Feldman's grid-based method, which grows exponentially with dimensionality, CReL's latent space calibration runtime scales linearly with dimensionality.
+- **Text-to-Image Tasks**: Similar inversions are observed; SD3-M ranks third in CLIP-SIM but first in CReL-CLIP, while Kandinsky-2.2 has the highest average but ranks third in reliability.
 
 ## Highlights & Insights
-- **Redefining Reliability as a Worst-case Problem**: By moving beyond traditional average metrics and using the conformal prediction framework to quantify tail risks, CReL provides a concise concept directly valuable for generating models in safety-critical scenarios (medical, autonomous driving).
-- **Latent Convexification Strategy**: Converting non-convex high-dimensional problems into convex-constrained low-dimensional optimizations via LGM+DQR is an elegant balance between engineering and theory. Reducing the projection operator to linear programming makes the framework practically viable.
-- **Discovery of Model Ranking Inversion**: This provides practical guidance, showing that models with high average scores are not necessarily reliable. Distributional concentration is a key feature of reliability, applicable to any scenario requiring evaluation of generative consistency.
+- **Redefining Reliability as a Worst-case Problem**: Breaking away from traditional average metrics, the paper uses a conformal prediction framework to quantify tail risks of generative models. This concept is concise and applicable to any user-specified metric $\rho$.
+- **Latent Space Convexification Strategy**: Combining LGM and DQR to transform high-dimensional non-convex problems into low-dimensional convex-constrained optimization is an elegant balance of engineering and theory.
+- **Discovery of Model Ranking Inversion**: This provides practical guidance, showing that models with high average scores are not necessarily reliable. Distributional concentration is a key characteristic of reliability.
 
 ## Limitations & Future Work
-- LGM requires additional training (VAE encoder/decoder), increasing evaluation costs, and the coverage guarantee depends on the assumption of LGM reconstruction quality.
-- Evaluation is currently limited to image-to-text tasks on MS-COCO, excluding more complex conditional generation scenarios like video generation or 3D reconstruction.
-- Conformal prediction provides marginal coverage guarantees rather than conditional coverage, which might not be sufficiently strict for specific difficult inputs.
-- Potential for extension to many-to-many mapping scenarios (video, robot control), but this requires new joint latent representations and calibration strategies.
+- LGM requires additional training (VAE encoder/decoder), increasing evaluation costs, and coverage guarantees rely on the assumption of LGM reconstruction quality.
+- Currently only evaluated on MS-COCO for image-text tasks; more complex scenarios like video generation or 3D reconstruction are not yet addressed.
+- Conformal prediction provides marginal coverage guarantees rather than conditional coverage, which may not be strict enough for specific difficult inputs.
+- Potential for expansion to many-to-many mapping scenarios (video, robot control) would require new joint latent space representations and calibration strategies.
 
 ## Related Work & Insights
-- Feldman et al. (2023) calibrate multi-output quantile regression in the output space; non-convexity makes optimization difficult. CReL gains convexity by shifting to the latent space.
-- Directional Quantile Regression (DQR; Kong & Mizera, 2012) provides the foundation for convex prediction sets but is overly conservative in high dimensions.
-- PCP (Wang et al., 2022b) constructs prediction sets for conditional generative models, but its coordinate-wise calibration may be more conservative than joint latent space calibration (Area 854.24 vs 232.70).
+- Feldman et al. (2023) calibrate multi-output quantile regression in output space; non-convexity makes optimization difficult. CReL gains convexity by moving to latent space.
+- Directional Quantile Regression (DQR) (Kong & Mizera, 2012) provides the foundation for convex prediction sets but is overly conservative in high dimensions.
+- PCP (Wang et al., 2022b) constructs prediction sets for conditional generative models, but its coordinate-wise calibration is more conservative than joint latent space calibration (Area 854.24 vs 232.70).
+
+## Related Papers
+
+- [\[ICML 2026\] Conf-Gen: Conformal Uncertainty Quantification for Generative Models](conf-gen_conformal_uncertainty_quantification_for_generative_models.md)
+- [\[ICLR 2026\] PolyGraph Discrepancy: a classifier-based metric for graph generation](../../ICLR2026/image_generation/polygraph_discrepancy_a_classifier-based_metric_for_graph_generation.md)
+- [\[CVPR 2026\] Markovian Scale Prediction: A New Era of Visual Autoregressive Generation](../../CVPR2026/image_generation/markovian_scale_prediction_a_new_era_of_visual_autoregressive_generation.md)
+- [\[ICML 2026\] AtelierEval: Agentic Evaluation of Humans & LLMs as Text-to-Image Prompters](ateliereval_agentic_evaluation_of_humans_llms_as_text-to-image_prompters.md)
+- [\[ICML 2026\] HoloFair: Unified T2I Fairness Evaluation and Fair-GRPO Debiasing](holofair_unified_t2i_fairness_evaluation_and_fair-grpo_debiasing.md)
+
+</div>
+
+<!-- RELATED:END -->
 
 <!-- RELATED:START -->
 
@@ -122,11 +134,11 @@ For the reliability score to be trustworthy, the prediction set must cover the t
 
 ## Related Papers
 
+- [\[ICML 2026\] From Talking to Singing: A New Challenge for Audio-Visual Deepfake Detection](from_talking_to_singing_a_new_challenge_for_audio-visual_deepfake_detection.md)
 - [\[ICML 2026\] Conf-Gen: Conformal Uncertainty Quantification for Generative Models](conf-gen_conformal_uncertainty_quantification_for_generative_models.md)
-- [\[CVPR 2026\] SHOE: Semantic HOI Open-Vocabulary Evaluation Metric](../../CVPR2026/image_generation/shoe_semantic_hoi_open-vocabulary_evaluation_metric.md)
-- [\[ICLR 2026\] PolyGraph Discrepancy: a classifier-based metric for graph generation](../../ICLR2026/image_generation/polygraph_discrepancy_a_classifier-based_metric_for_graph_generation.md)
-- [\[ICML 2026\] AtelierEval: Agentic Evaluation of Humans & LLMs as Text-to-Image Prompters](ateliereval_agentic_evaluation_of_humans_llms_as_text-to-image_prompters.md)
-- [\[ICML 2026\] HoloFair: Unified T2I Fairness Evaluation and Fair-GRPO Debiasing](holofair_unified_t2i_fairness_evaluation_and_fair-grpo_debiasing.md)
+- [\[ICML 2026\] Escaping Mode Collapse in LLM Generation via Geometric Regulation](escaping_mode_collapse_in_llm_generation_via_geometric_regulation.md)
+- [\[ICML 2026\] Skipping the Zeros in Diffusion Models for Sparse Data Generation](skipping_the_zeros_in_diffusion_models_for_sparse_data_generation.md)
+- [\[ICML 2026\] Unified Masked Diffusion Models with Diverse Generation Orders](unifying_masked_diffusion_models_with_various_generation_orders_and_beyond.md)
 
 </div>
 

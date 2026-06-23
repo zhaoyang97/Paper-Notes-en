@@ -83,25 +83,25 @@ item_total: 47
 
 **💬 ACL2026** · **47** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (1)](../../CVPR2026/medical_nlp/index.md) · [🧪 ICML2026 (2)](../../ICML2026/medical_nlp/index.md) · [🔬 ICLR2026 (13)](../../ICLR2026/medical_nlp/index.md) · [🤖 AAAI2026 (12)](../../AAAI2026/medical_nlp/index.md) · [🧠 NeurIPS2025 (16)](../../NeurIPS2025/medical_nlp/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (1)](../../CVPR2026/medical_nlp/index.md) · [🔬 ICLR2026 (20)](../../ICLR2026/medical_nlp/index.md) · [🧪 ICML2026 (4)](../../ICML2026/medical_nlp/index.md) · [🤖 AAAI2026 (12)](../../AAAI2026/medical_nlp/index.md) · [🧠 NeurIPS2025 (16)](../../NeurIPS2025/medical_nlp/index.md)
 
 🔥 **Top topics:** Medical Imaging ×31 · LLM ×12 · Reasoning ×8 · Reinforcement Learning ×4 · Question Answering ×3
 
 **["Excuse Me, May I Say Something…" CoLabScience: A Proactive AI Assistant for Biomedical Discovery](34excuse_me_may_i_say_something34_colabscience_a_proactive_ai_assistant_for_biom.md)**
 
-:   CoLabScience proposes the PULI (Positive-Unlabeled Learning for Intervention) framework to train an LLM assistant capable of **proactively deciding when and how to intervene** in biomedical team discussions. It utilizes GRPO and a reinforcement learning coordinator to automatically identify optimal intervention timings from streaming dialogues and generate scientific recommendations.
+:   CoLabScience utilizes the PULI (Positive-Unlabeled Learning for Intervention) framework to train an LLM assistant capable of **proactively deciding when and how to intervene** in biomedical team discussions. It leverages GRPO and an RL coordinator to automatically identify optimal intervention timings and generate scientific suggestions from streaming dialogues.
 
 **[Anonpsy: A Graph-Based Framework for Structure-Preserving De-identification of Psychiatric Narratives](anonpsy_a_graph-based_framework_for_structure-preserving_de-identification_of_ps.md)**
 
-:   Ours proposes the Anonpsy framework, which reformulates the de-identification of psychiatric narratives as a graph-guided semantic rewriting problem—first converting narratives into semantic graphs, performing constrained perturbations on the graph to modify identity information while maintaining clinical structures, and finally reconstructing the narrative through graph-conditioned generation.
+:   Anonpsy is proposed to redefine the de-identification of psychiatric narratives as a graph-guided semantic rewriting problem—narratives are first converted into semantic graphs, then constrained perturbations are performed on the graph to modify identity information while preserving clinical structure, followed by narrative reconstruction through graph-conditional generation.
 
 **[Beyond Prompt: Fine-grained Simulation of Cognitively Impaired Standardized Patients via Stochastic Steering](beyond_prompt_fine-grained_simulation_of_cognitively_impaired_standardized_patie.md)**
 
-:   This paper proposes StsPatient, which extracts domain-specific steering vectors from contrastive instruction/response pairs and employs a Stochastic Token Modulation (STM) mechanism to simulate standardized patients (SP) across various cognitive impairment domains and severity levels. Results show an average improvement of 11.23% in clinical authenticity and an 18.54% improvement in severity controllability over the best baselines compared to prompt engineering methods.
+:   This paper proposes StsPatient, which simulates standardized patients across various cognitive impairment domains and severity levels by extracting domain-specific Steering Vectors from contrastive instruction/response pairs. Combined with a Stochastic Token Modulation (STM) mechanism to control injection probability, it achieves an average improvement of 11.23% in clinical authenticity compared to prompt engineering methods and exceeds the best baseline by 18.54% in severity controllability.
 
 **[Beyond the Individual: Virtualizing Multi-Disciplinary Reasoning for Clinical Intake via Collaborative Agents](beyond_the_individual_virtualizing_multi-disciplinary_reasoning_for_clinical_int.md)**
 
-:   The Aegle framework is proposed to virtualize Multi-Disciplinary Teams (MDT) through a graph-structured multi-agent architecture. By introducing decoupled parallel reasoning and dynamic topology into the clinical intake process, it outperforms SOTA models across 53 metrics in 24 departments.
+:   The proposed Aegle framework virtualizes Multi-Disciplinary Teams (MDT) through a graph-structured multi-agent architecture. By introducing decoupled parallel reasoning and dynamic topology into the clinical intake process, it outperforms SOTA models on 53 metrics across 24 clinical departments.
 
 **[Beyond the Leaderboard: Rethinking Medical Benchmarks for Large Language Models](beyond_the_leaderboard_rethinking_medical_benchmarks_for_large_language_models.md)**
 
@@ -109,27 +109,27 @@ item_total: 47
 
 **[BioHiCL: Hierarchical Multi-Label Contrastive Learning for Biomedical Retrieval with MeSH Labels](biohicl_hierarchical_multi-label_contrastive_learning_for_biomedical_retrieval_w.md)**
 
-:   BioHiCL leverages the **hierarchical multi-label annotations** of MeSH (Medical Subject Headings) to provide structured supervision for dense retrievers. By aligning the embedding space with the MeSH semantic space via depth-weighted label similarity, the 0.1B model surpasses most specialized models on biomedical retrieval, sentence similarity, and question answering tasks.
+:   BioHiCL utilizes **hierarchical multi-label annotations** of MeSH (Medical Subject Headings) to provide structured supervision for dense retrievers. By aligning the embedding space with the MeSH semantic space through depth-weighted label similarity, a 0.1B model outperforms most specialized models on biomedical retrieval, sentence similarity, and question-answering tasks.
 
 **[Calibrated? Not for Everyone: How Sexual Orientation and Religious Markers Distort LLM Accuracy and Confidence in Medical QA](calibrated_not_for_everyone_how_sexual_orientation_and_religious_markers_distort.md)**
 
-:   This study investigates how social identity markers (sexual orientation and religious beliefs) distort the accuracy and confidence calibration of LLMs in medical QA. It finds that "homosexual" markers consistently lead to performance degradation and calibration crises across 9 LLMs, with intersectional identities producing non-additive, specific harms.
+:   Ours investigates how social identity markers (sexual orientation and religious beliefs) distort the accuracy and confidence calibration of LLMs in medical QA. It is found that "homosexual" markers consistently lead to performance degradation and calibration crises across 9 LLMs, and intersectional identities produce non-additive, specific harm.
 
 **[Can Continual Pre-training Bridge the Performance Gap between General-purpose and Specialized Language Models in the Medical Domain?](can_continual_pre-training_bridge_the_performance_gap_between_general-purpose_an.md)**
 
-:   This paper constructs a high-quality German medical corpus, FineMed-de (7.3 million documents/5.1 billion tokens filtered from FineWeb2), performs continual pre-training and SLERP model merging on three LLMs (7B-24B) to create the DeFineMed model family. It demonstrates that domain-specialized 7B models can significantly bridge the performance gap with 24B general-purpose models on German medical tasks (with approximately a 3.5x increase in win rate).
+:   This paper constructs a high-quality German medical corpus, FineMed-de (7.3 million documents / 5.1 billion tokens filtered from FineWeb2), performs continual pre-training and SLERP model merging on three LLMs (7B-24B) to create the DeFineMed model family. It demonstrates that domain-specialized 7B models can significantly bridge the performance gap with general 24B models on German medical tasks (win rate improved by ~3.5x).
 
 **[CT-FineBench: A Diagnostic Fidelity Benchmark for Fine-Grained Evaluation of CT Report Generation](ct-finebench_a_diagnostic_fidelity_benchmark_for_fine-grained_evaluation_of_ct_r.md)**
 
-:   The authors decompose the ambiguous question of "quality of a CT report" into a QA checklist verifying whether every fine-grained attribute of each finding is correct. They construct CT-FineBench with 44k questions, demonstrating sensitivity to clinical errors and correlation with human expert scores that significantly surpass existing metrics like BLEU, BERTScore, RadGraph, RaTEScore, and GREEN.
+:   The authors decompose the ambiguous question of "quality of a CT report" into a QA checklist of "whether each fine-grained attribute of every finding matches," constructing the CT-FineBench benchmark with 44k questions. Its sensitivity to clinical errors and correlation with human expert scores significantly outperform existing metrics such as BLEU, BERTScore, RadGraph, RaTEScore, and GREEN.
 
 **[CT-Flow: Orchestrating CT Interpretation Workflow with Model Context Protocol Servers](ct-flow_orchestrating_ct_interpretation_workflow_with_model_context_protocol_ser.md)**
 
-:   The authors remodel 3D CT interpretation into an agentic task where "radiologists iteratively explore using tools." Using the Model Context Protocol (MCP), they expose four categories of tools—Data Ingestion, Global Navigation, Detailed Observation, and Advanced Analysis. They construct CT-FlowBench, containing 2000+300 executable trajectories, and perform SFT to develop CT-Flow-8B. This model achieves 69.46% ACC on 3D-RAD, a +22.46% improvement over pure slice-based baselines, with a tool name error rate of only 0.007/case.
+:   The authors remodel 3D CT interpretation as an agentic task where "radiologists iteratively explore via tools." By exposing four categories of tools—Data Ingestion, Global Navigation, Detailed Observation, and Advanced Analysis—through the Model Context Protocol (MCP), they construct CT-FlowBench with 2000+300 executable trajectories. They subsequently perform SFT to develop CT-Flow-8B, which achieves 69.46% ACC on 3D-RAD (a +22.46% improvement over slice-only baselines) with a tool name error rate of only 0.007/case.
 
 **[CURA: Clinical Uncertainty Risk Alignment for Language Model-Based Risk Prediction](cura_clinical_uncertainty_risk_alignment_for_language_model-based_risk_predictio.md)**
 
-:   CURA proposes a dual-level uncertainty calibration framework: the individual level aligns predictive uncertainty with error probability, while the cohort level regularizes predictions via neighborhood risk rates in the embedding space. It consistently improves calibration metrics across five clinical risk prediction tasks on MIMIC-IV without sacrificing discriminative performance.
+:   CURA proposes a dual-level uncertainty calibration framework: the individual level aligns prediction uncertainty with error probability, while the cohort level regularizes predictions via neighborhood risk rates in the embedding space. It consistently improves calibration metrics across five clinical risk prediction tasks on MIMIC-IV without sacrificing discriminative performance.
 
 **[CURE-Med: Curriculum-Informed Reinforcement Learning for Multilingual Medical Reasoning](cure-med_curriculum-informed_reinforcement_learning_for_multilingual_medical_rea.md)**
 
@@ -137,47 +137,47 @@ item_total: 47
 
 **[Dr. Assistant: Enhancing Clinical Diagnostic Inquiry via Structured Diagnostic Reasoning Data and Reinforcement Learning](dr_assistant_enhancing_clinical_diagnostic_inquiry_via_structured_diagnostic_rea.md)**
 
-:   This paper proposes the Clinical Diagnostic Reasoning Data (CDRD) structure to capture abstract clinical reasoning logic from symptoms to differential diagnosis. Based on CDRD, the Dr. Assistant model (14B) is constructed via a two-stage SFT+RL training process, exceeding HuatuoGPT-o1-72B by 13.59% in ICD-Recall on clinical inquiry benchmarks and achieving performance competitive with GPT-5.
+:   This paper proposes the Clinical Diagnostic Reasoning Data (CDRD) structure to capture the abstract clinical reasoning logic from symptoms to differential diagnosis. Based on CDRD, the Dr. Assistant model (14B) is developed using a two-stage SFT+RL training process. It outperforms HuatuoGPT-o1-72B by 13.59% in ICD-Recall on clinical inquiry benchmarks, achieving performance competitive with GPT-5.
 
 **[Efficient and Effective Internal Memory Retrieval for LLM-Based Healthcare Prediction](efficient_and_effective_internal_memory_retrieval_for_llm-based_healthcare_predi.md)**
 
-:   This paper proposes the K2K framework, which treats the FFN parameter space of LLMs as a retrievable knowledge base. By injecting clinical knowledge via LoRA, constructing precise retrieval through activation-guided probes, and adaptively integrating information via cross-attention re-ranking, it achieves SOTA in healthcare prediction without external retrieval latency.
+:   This paper proposes the K2K framework, which treats the LLM's FFN parameter space as a retrievable knowledge base. By injecting clinical knowledge via LoRA, constructing precise retrieval with activation-guided probes, and adaptively integrating via cross-attention re-ranking, it achieves medical prediction SOTA without external retrieval latency.
 
 **[Eliciting Medical Reasoning with Knowledge-enhanced Data Synthesis: A Semi-Supervised Reinforcement Learning Approach](eliciting_medical_reasoning_with_knowledge-enhanced_data_synthesis_a_semi-superv.md)**
 
-:   This paper proposes the MedSSR framework, which efficiently enhances the medical reasoning capabilities of LLMs through controllable data synthesis injected with rare disease knowledge and a "self-supervised RL → supervised RL" semi-supervised training paradigm. It achieves up to a +5.93% improvement on rare disease tasks, breaking the +3% improvement ceiling of existing methods.
+:   This paper proposes the MedSSR framework, which efficiently enhances the medical reasoning capabilities of LLMs through controllable data synthesis injected with rare disease knowledge and a "Self-supervised RL $\rightarrow$ Supervised RL" semi-supervised training paradigm. It achieves a maximum improvement of +5.93% on rare disease tasks, breaking the +3% improvement ceiling of existing methods.
 
 **[Empathy Applicability Modeling for General Health Queries](empathy_applicability_modeling_for_general_health_queries.md)**
 
-:   This paper proposes the Empathy Applicability Framework (EAF) to first determine whether it is "appropriate" to express emotional reactions or interpretive understanding in single-turn patient health queries. By constructing a benchmark with human and GPT-4o annotations and training classifiers, the study provides upstream signals for identifying empathy needs before medical LLMs generate responses.
+:   This paper proposes the Empathy Applicability Framework (EAF) to determine whether it is "appropriate" to express emotional reactions or interpretive understanding in single-turn health queries. By constructing a benchmark with human and GPT-4o annotations and training classifiers, the study provides upstream signals for empathy requirement identification in medical LLMs before response generation.
 
 **[Faithfulness vs. Safety: Evaluating LLM Behavior Under Counterfactual Medical Evidence](faithfulness_vs_safety_evaluating_llm_behavior_under_counterfactual_medical_evid.md)**
 
-:   This paper constructs the MedCounterFact dataset by systematically replacing interventions in clinical trials with nonsense words, medical terms, non-medical items, and toxic substances. It finds that frontier LLMs exhibit nearly unconditional compliance with the provided context when faced with counterfactual medical evidence, confidently answering questions even when "evidence" suggests heroin or mustard gas is effective, revealing a severe lack of a clear boundary between faithfulness and safety.
+:   This paper constructs the MedCounterFact dataset—systematically replacing interventions in clinical trials with nonsense words, medical terms, non-medical objects, and toxic substances. It finds that leading LLMs exhibit nearly unconditional compliance with the context in the face of counterfactual medical evidence, confidently providing answers even when "evidence" suggests heroin or mustard gas is effective, revealing a severe lack of defined boundaries between faithfulness and safety.
 
 **[Forgotten Words: Benchmarking NeoBERT for Dementia Detection in Low-Resource Conversational Filipino and English Speech](forgotten_words_benchmarking_neobert_for_dementia_detection_in_low-resource_conv.md)**
 
-:   This paper evaluates TF-IDF, BERT, NeoBERT, XLM-R, and RoBERTa-Tagalog using 4,000 parallel English-Filipino DementiaBank dialogue transcriptions, finding that cross-lingual robustness in dementia detection primarily stems from language coverage during the training stage rather than modern encoder architectures.
+:   This paper evaluates TF-IDF, BERT, NeoBERT, XLM-R, and RoBERTa-Tagalog using 4,000 parallel English-Filipino DementiaBank dialogue transcripts. It finds that cross-lingual robustness in dementia detection primarily stems from language coverage during training rather than modern encoder architectures.
 
 **[From Answers to Arguments: Toward Trustworthy Clinical Diagnostic Reasoning with Toulmin-Guided Curriculum Goal-Conditioned Learning](from_answers_to_arguments_toward_trustworthy_clinical_diagnostic_reasoning_with_.md)**
 
-:   This paper adapts the Toulmin Argumentation Model to the clinical diagnostic process and proposes CGCL, a three-stage curriculum training framework (Fact Gathering → Hypothesis Testing → Synthesis). Combined with the T-Eval metric for quantifying reasoning structural integrity, it achieves diagnostic reasoning quality comparable to Reinforcement Learning (RL) methods without the need for RL.
+:   This paper adapts the Toulmin argumentation model to the clinical diagnostic process and proposes the CGCL three-stage curriculum training framework (Fact Collection → Hypothesis Testing → Comprehensive Conclusion). Coupled with T-Eval for quantifying reasoning structural integrity, it achieves diagnostic reasoning quality comparable to RL methods without requiring RL.
 
 **[HeteroRAG: A Heterogeneous Retrieval-Augmented Generation Framework for Medical Vision Language Tasks](heterorag_a_heterogeneous_retrieval-augmented_generation_framework_for_medical_v.md)**
 
-:   HeteroRAG constructs the MedAtlas knowledge base containing 2.7 million image-text pairs and five types of corpora. It decomposes medical multimodal RAG into three components—ModCLIPs (modality-specific report retrieval), MQG (corpus-customized query generation), and HKPT (preference fine-tuning to align cross-modal and multi-source knowledge)—enabling a 7B model to consistently outperform open-source Med-LVLMs with 4–5× more parameters across 11 datasets.
+:   HeteroRAG constructs the MedAtlas knowledge base with 2.7 million image-text pairs and five types of corpora. It decomposes medical multimodal RAG into three components—ModCLIPs trained by modality to retrieve reports, MQG generating customized queries per corpus to retrieve documents, and HKPT preference fine-tuning to align cross-modality and multi-source knowledge—enabling a 7B model to consistently outperform open-source Med-LVLMs with 4-5× its parameters across 11 datasets.
 
 **[HypEHR: Hyperbolic Modeling of Electronic Health Records for Efficient Question Answering](hypehr_hyperbolic_modeling_of_electronic_health_records_for_efficient_question_a.md)**
 
-:   Ours proposes HypEHR, a Lorentz hyperbolic model with only 22M parameters. It embeds medical codes, visit records, and questions into hyperbolic space and aligns them with the ICD ontology structure via hierarchical-aware regularization, achieving performance close to LLM-based methods on the MIMIC-IV EHR-QA task.
+:   This paper proposes HypEHR, a Lorentz hyperbolic model with only 22M parameters. It embeds medical codes, visit records, and questions into hyperbolic space and aligns them with the ICD ontology structure via hierarchy-aware regularization, achieving performance close to LLM-based methods on the MIMIC-IV EHR-QA task.
 
 **[IndicMedDialog: A Parallel Multi-Turn Medical Dialogue Dataset for Accessible Healthcare in Indic Languages](indicmeddialog_a_parallel_multi-turn_medical_dialogue_dataset_for_accessible_hea.md)**
 
-:   This paper constructs IndicMedDialog—the first **parallel multi-turn** medical diagnostic dialogue dataset covering English and 9 Indic languages (Assamese / Bengali / Gujarati / Hindi / Marathi / Punjabi / Tamil / Telugu / Urdu), consisting of 2,980 dialogues per language (29,800 instances). The pipeline involves LLaMA-3.3-70B for dialogue synthesis + TranslateGemma for translation + native speaker verification + script-aware post-processing for phonetic/spelling/character spacing correction. Based on 4-bit quantized LLaMA-3.2-3B + LoRA, the authors developed IndicMedLM, which achieves the highest post-processed accuracy in 7/10 languages (including English, Hindi, and Marathi) with a 95.3% medical safety pass rate, while identifying 5 systematic failure modes (ID/LC/CDC/TTF/PLG).
+:   This paper constructs IndicMedDialog, the first **parallel multi-turn** medical diagnostic dialogue dataset covering English and 9 Indic languages (Assamese, Bengali, Gujarati, Hindi, Marathi, Punjabi, Tamil, Telugu, and Urdu), totaling 29,800 instances (2,980 dialogues × 10 languages). The dataset was created using LLaMA-3.3-70B for dialogue synthesis, TranslateGemma for translation, native speaker verification, and script-aware post-processing for phonetic/spelling/spacing corrections. Furthermore, IndicMedLM was trained using 4-bit quantized LLaMA-3.2-3B with LoRA, achieving the highest post-processed accuracy in 7 out of 10 languages and a 95.3% medical safety pass rate, while identifying 5 systematic failure modes (ID/LC/CDC/TTF/PLG).
 
 **[Inflated Excellence or True Performance? Rethinking Medical Diagnostic Benchmarks with Dynamic Evaluation](inflated_excellence_or_true_performance_rethinking_medical_diagnostic_benchmarks.md)**
 
-:   This paper proposes DyReMe, a dynamic medical diagnostic evaluation framework. Through the DyGen module, it generates new diagnostic cases containing clinical distractors such as differential diagnoses and misdiagnosis factors. The EvalMed module evaluates LLMs across four dimensions: accuracy, authenticity, helpfulness, and consistency. The study reveals that existing static benchmarks overestimate LLM diagnostic capabilities—GPT-5's accuracy dropped by 8.25% on DyReMe, and all 12 evaluated LLMs exhibited significant deficiencies in trustworthiness.
+:   This paper proposes DyReMe, a dynamic medical diagnostic evaluation framework. It utilizes the DyGen module to generate brand-new diagnostic cases incorporating clinical distractors such as differential diagnoses and misdiagnosis factors. Through the EvalMed module, LLMs are evaluated across four dimensions—Accuracy, Veracity, Helpfulness, and Consistency—revealing that existing static benchmarks overestimate the diagnostic capabilities of LLMs. For instance, GPT-5's accuracy dropped by 8.25% on DyReMe, and 12 LLMs all exhibited significant deficiencies in trustworthiness.
 
 **[Language Reconstruction with Brain Predictive Coding from fMRI Data](language_reconstruction_with_brain_predictive_coding_from_fmri_data.md)**
 
@@ -185,7 +185,7 @@ item_total: 47
 
 **[Learning Dynamic Representations and Policies from Multimodal Clinical Time-Series with Informative Missingness](learning_dynamic_representations_and_policies_from_multimodal_clinical_time-seri.md)**
 
-:   The OPL-MT-MNAR framework is proposed, which learns dynamic representations of ICU patients from "information carried by the missingness patterns themselves" in structured data and clinical text. By combining MNAR-aware multimodal encoders, Bayesian filtering latent states, and offline policy learning, it achieves sepsis treatment policies superior to clinician behavior (FQE 0.679 vs. 0.528).
+:   Proposes the OPL-MT-MNAR framework, which learns dynamic ICU patient representations by combining MNAR-aware multimodal encoders, Bayesian filtered latent states, and offline policy learning. By utilizing "information carried by the missingness patterns themselves" in structured data and clinical text, it achieves sepsis treatment policies superior to clinician behavior (FQE 0.679 vs 0.528).
 
 **[LinguIUTics at PsyDefDetect: Iterative Imbalance-Aware Fine-tuning of Qwen3-8B for Psychological Defense Mechanism Classification](linguiutics_at_psydefdetect_iterative_imbalance-aware_fine-tuning_of_qwen3-8b_fo.md)**
 
@@ -193,31 +193,31 @@ item_total: 47
 
 **[MARCH: Multi-Agent Radiology Clinical Hierarchy for CT Report Generation](march_multi-agent_radiology_clinical_hierarchy_for_ct_report_generation.md)**
 
-:   This paper proposes MARCH, a multi-agent framework that simulates the clinical resident-fellow-attending hierarchical collaboration. Through a three-stage process (initial drafting, retrieval-augmented revision, and consensus-driven finalization), it generates CT reports. It achieves a CE-F1 of 0.399 on the RadGenome-ChestCT dataset, representing a 57.7% improvement over the best baseline, Reg2RG (0.253).
+:   This paper proposes MARCH, a multi-agent framework that simulates the hierarchical collaboration of radiology Residents, Fellows, and Attending physicians. Through a three-stage process (initial drafting, retrieval-augmented revision, and consensus-driven finalization), it generates CT reports. On the RadGenome-ChestCT dataset, it achieves a CE-F1 of 0.399, representing a 57.7% improvement over the best baseline, Reg2RG (0.253).
 
 **[Measuring What Matters!! Assessing Therapeutic Principles in Mental-Health Conversation](measuring_what_matters_assessing_therapeutic_principles_in_mental-health_convers.md)**
 
-:   Ours proposes the CARE framework and the FAITH-M benchmark dataset. Through dialogue context encoding combined with contrastive exemplar retrieval and Knowledge Distillation Chain-of-Thought (KD-CoT), it performs fine-grained ordinal assessment of AI-generated psychotherapy dialogues across six therapeutic principle dimensions. It achieves a weighted F1 of 63.34, a 64.26% improvement over the strongest baseline, Qwen3.
+:   This paper proposes the CARE framework and the FAITH-M benchmark dataset. By integrating local dialogue context encoding with contrastive exemplar retrieval and Knowledge Distillation Chain-of-Thought (KD-CoT), it performs fine-grained ordinal assessment of AI-generated psychotherapy dialogues across six therapeutic principles. The framework achieves a weighted F1 of 63.34, representing a 64.26% Gain over the strongest baseline, Qwen3.
 
 **[MedFact: Benchmarking the Fact-Checking Capabilities of Large Language Models on Chinese Medical Texts](medfact_benchmarking_the_fact-checking_capabilities_of_large_language_models_on_.md)**
 
-:   MedFact constructs an expert-annotated fact-checking benchmark covering real-world Chinese medical texts and demonstrates through 20 LLMs that current models can relatively easily judge whether a text "contains errors" but still struggle with precise error localization. RAG is helpful, whereas multi-agent strategies and reasoning-time scaling tend to amplify "over-criticism."
+:   MedFact establishes an expert-annotated fact-checking benchmark covering real-world Chinese medical texts. Testing 20 LLMs proves that while current models can easily judge "whether an error exists," they struggle to precisely locate errors. RAG is beneficial, whereas multi-agent systems and reasoning-time scaling tend to amplify "over-criticism."
 
 **[MHGraphBench: Knowledge Graph-Grounded Benchmarking of Mental Health Knowledge in Large Language Models](mhgraphbench_knowledge_graph-grounded_benchmarking_of_mental_health_knowledge_in.md)**
 
-:   MHGraphBench automatically constructs 9 types of multiple-choice tasks from the mental health subgraph of PrimeKG. It finds that LLMs achieve near-perfect scores in entity recognition but remain significantly deficient in drug-disease relational judgment, contraindication boundaries, and two-hop KG reasoning.
+:   MHGraphBench automatically constructs 9 categories of multiple-choice tasks from the mental health subgraph of PrimeKG. It finds that LLMs achieve near-perfect scores in entity recognition but remain significantly deficient in drug-disease relationship judgment, contraindication boundaries, and two-hop KG reasoning.
 
 **[MHSafeEval: Role-Aware Interaction-Level Evaluation of Mental Health Safety in Large Language Models](mhsafeeval_role-aware_interaction-level_evaluation_of_mental_health_safety_in_la.md)**
 
-:   Ours proposes the R-MHSafe role-aware mental health safety classification system and the MHSafeEval closed-loop agent evaluation framework. Through adversarial multi-turn counseling interactions, role-dependent cumulative safety failures of LLMs in mental health scenarios are systematically discovered, revealing interaction-level harms that existing static benchmarks cannot capture.
+:   Ours proposes the R-MHSafe role-aware mental health safety taxonomy and the MHSafeEval closed-loop agent evaluation framework. Through adversarial multi-turn counseling interactions, it systematically identifies role-dependent cumulative safety failures in LLMs within mental health counseling scenarios, revealing interaction-level harms that traditional static benchmarks fail to capture.
 
 **[Multi-View Attention Multiple-Instance Learning Enhanced by LLM Reasoning for Cognitive Distortion Detection](multi-view_attention_multiple-instance_learning_enhanced_by_llm_reasoning_for_co.md)**
 
-:   Ours proposes decomposing utterances into Emotion-Logic-Behavior (ELB) components and reasoning multiple cognitive distortion instances using LLMs, followed by a multi-view gated attention MIL framework for bag-level classification. It outperforms direct LLM reasoning baselines on both Korean (KoACD) and English (Therapist QA) datasets.
+:   This paper proposes decomposing utterances into Emotion-Logic-Behavior (ELB) components and utilizing LLMs to reason about multiple cognitive distortion instances. These instances are then aggregated using a multi-view gated attention MIL framework for bag-level classification. The method outperforms direct LLM reasoning baselines on both Korean (KoACD) and English (Therapist QA) datasets.
 
 **[MultiDx: A Multi-Source Knowledge Integration Framework towards Diagnostic Reasoning](multidx_a_multi-source_knowledge_integration_framework_towards_diagnostic_reason.md)**
 
-:   MultiDx integrates web retrieval, SOAP-structured cases, similar case libraries, and fine-grained reasoning trace retrieval into a two-stage diagnostic reasoning framework. It first generates candidate diseases from multiple evidence paths and then performs final ranking and reasoning trajectory output through disease matching, voting, and differential diagnosis reranking, improving both diagnostic hit rates and reasoning recall on MedCaseReasoning and DiReCT.
+:   MultiDx integrates web retrieval, SOAP structured cases, similar case libraries, and fine-grained reasoning trace retrieval into a two-stage diagnostic reasoning framework. By first generating candidate diseases from multi-path evidence and then performing disease matching, voting, and differential diagnosis reranking, it simultaneously improves diagnostic accuracy and reasoning recall on both MedCaseReasoning and DiReCT benchmarks.
 
 **[PCoA: A New Benchmark for Medical Aspect-Based Summarization With Phrase-Level Context Attribution](pcoa_a_new_benchmark_for_medical_aspect-based_summarization_with_phrase-level_co.md)**
 
@@ -225,27 +225,27 @@ item_total: 47
 
 **[PrinciplismQA: A Philosophy-Grounded Approach to Assessing LLM-Human Clinical Medical Ethics Alignment](principlismqa_a_philosophy-grounded_approach_to_assessing_llm-human_clinical_med.md)**
 
-:   This paper constructs the PrinciplismQA benchmark (3,648 questions, comprising knowledge MCQA and open-ended clinical ethical dilemmas) based on the international gold standard of medical ethics—Principlism (four principles: autonomy, non-maleficence, beneficence, and justice). With an expert-calibrated evaluation pipeline, the study finds that high accuracy on knowledge benchmarks does not equate to clinical ethical reasoning capability—the strongest model, o3, achieved an overall score of only 77.5%.
+:   This paper constructs the PrinciplismQA benchmark (3,648 questions, including knowledge MCQA and open-ended clinical ethical dilemmas) based on Principlism (the four principles of Autonomy, Non-maleficence, Beneficence, and Justice), the international gold standard for medical ethics. Supported by an expert-calibrated evaluation pipeline, the study reveals that high accuracy on knowledge benchmarks does not equate to clinical ethical reasoning capability—the strongest model, o3, achieved an overall score of only 77.5%.
 
 **[ProMedical: Hierarchical Fine-Grained Criteria Modeling for Medical LLM Alignment via Explicit Injection](promedical_hierarchical_fine-grained_criteria_modeling_for_medical_llm_alignment.md)**
 
-:   ProMedical utilizes hierarchical fine-grained clinical rubrics constructed with physician involvement across preference data, reward models, and benchmarks. Through explicit criteria injection for training multi-dimensional reward models, Qwen3-8B achieves a 22.3% gain in overall accuracy and a 21.7% gain in safety compliance during medical alignment.
+:   ProMedical utilizes hierarchical fine-grained clinical rubrics, constructed with physician participation, across preference data, reward models, and benchmarks. Through explicit criteria injection to train multi-dimensional reward models, it achieves a improvement of 22.3% in overall accuracy and 21.7% in safety compliance for Qwen3-8B during medical alignment.
 
 **[Query Pipeline Optimization for Cancer Patient Question Answering Systems](query_pipeline_optimization_for_cancer_patient_question_answering_systems.md)**
 
-:   This paper proposes CoMeta, a three-layer controllable metadata-aware RAG framework for Cancer Patient Question Answering (CPQA). By utilizing Clinical Hybrid Semantic-Symbolic Document Retrieval (CHSDR), it fuses E-Utilities real-time Boolean search with MedCPT semantic retrieval. Combined with Semantic-Enhanced Overlapping Segmentation (SEOS) to prevent context fragmentation, the framework improves the accuracy of Claude-3-Haiku by 5.24% (vs. CoT) and approximately 3% (vs. naive RAG) on the CMMQA dataset.
+:   This paper proposes CoMeta, a three-layer controllable metadata-aware RAG framework for Cancer Patient Question Answering (CPQA). By integrating Clinical Hybrid Semantic-Symbolic Document Retrieval (CHSDR)—which fuses E-Utilities real-time Boolean search with MedCPT semantic retrieval—and Semantic-Enhanced Overlapping Segmentation (SEOS) to prevent context fragmentation, the framework improves Claude-3-Haiku's answer accuracy on the CMMQA dataset by 5.24% (vs. CoT) and approximately 3% (vs. naive RAG).
 
 **[RA-RRG: Multimodal Retrieval-Augmented Radiology Report Generation with Key Phrase Extraction](ra-rrg_multimodal_retrieval-augmented_radiology_report_generation_with_key_phras.md)**
 
-:   The authors propose the RA-RRG framework, which extracts clinical key phrases from radiology reports using an LLM to construct a retrieval library. Given a chest X-ray image, the framework retrieves relevant phrases and inputs them into an LLM to generate the report. This effectively suppresses hallucinations without LLM fine-tuning, requiring only 18 GPU hours for training while achieving SOTA on CheXbert metrics.
+:   The RA-RRG framework is proposed to extract clinical key phrases from radiology reports via LLMs to construct a retrieval database. Given chest X-ray images, relevant phrases are retrieved and input into an LLM to generate reports. This effectively suppresses hallucinations without requiring LLM fine-tuning, achieving SOTA on CheXbert metrics with only 18 GPU hours of training.
 
 **[RADS: Reinforcement Learning-Based Sample Selection Improves Transfer Learning in Low-resource and Imbalanced Clinical Settings](rads_reinforcement_learning-based_sample_selection_improves_transfer_learning_in.md)**
 
-:   This paper proposes RADS (Reinforcement Adaptive Domain Sampling), a reinforcement learning-based sample selection strategy. It significantly enhances cross-domain disease detection in extreme low-resource and class-imbalanced clinical scenarios by intelligently selecting a small number of target-domain samples for annotation and joint fine-tuning.
+:   Ours proposes RADS (Reinforcement Adaptive Domain Sampling), an RL-based sample selection strategy that significantly improves cross-domain disease detection in extreme low-resource and imbalanced clinical scenarios by intelligently selecting a few target domain samples for annotation and joint fine-tuning.
 
 **[Region-Grounded Report Generation for 3D Medical Imaging: A Fine-Grained Dataset and Graph-Enhanced Framework](region-grounded_report_generation_for_3d_medical_imaging_a_fine-grained_dataset_.md)**
 
-:   This paper introduces VietPET-RoI, the first 3D PET/CT dataset (Vietnamese) with fine-grained ROI annotations, and HiRRA, a hierarchical report generation framework that simulates radiologist diagnostic workflows. By modeling spatial-morphological relationships between ROIs via graph neural networks, it achieves a 19.7% improvement in BLEU-4 and a 45.8% increase in the clinical metric RoIQ.
+:   This paper introduces VietPET-RoI, the first 3D PET/CT dataset (Vietnamese) with fine-grained ROI annotations, and HiRRA, a hierarchical report generation framework that simulates the diagnostic workflow of radiologists. By modeling spatial-morphological relationships between ROIs using Graph Neural Networks, the framework achieves a 19.7% improvement in BLEU-4 and a 45.8% increase in the clinical metric RoIQ.
 
 **[Reliable Automated Triage in Spanish Clinical Notes: A Hybrid Framework for Risk-Aware HIV Suspicion Identification](reliable_automated_triage_in_spanish_clinical_notes_a_hybrid_framework_for_risk-.md)**
 
@@ -257,20 +257,20 @@ item_total: 47
 
 **[RePrompT: Recurrent Prompt Tuning for Integrating Structured EHR Encoders with Large Language Models](reprompt_recurrent_prompt_tuning_for_integrating_structured_ehr_encoders_with_la.md)**
 
-:   This paper proposes RePrompT, a time-aware LLM framework. Through two complementary mechanisms—recurrent prompt tuning (passing the hidden state from the previous visit as a soft prompt for the next) and struct-encoded prompt tuning (injecting embeddings from population-level EHR encoders)—it consistently outperforms EHR and LLM baselines on readmission and mortality prediction tasks using MIMIC-III/IV.
+:   This paper proposes RePrompT, a time-aware LLM framework that consistently outperforms EHR and LLM baselines on readmission and mortality prediction tasks in MIMIC-III/IV through two complementary mechanisms: recurrent prompt tuning (using the hidden state of the previous visit as a soft prompt for the next) and struct-encoded prompt tuning (injecting embeddings from population-level EHR encoders).
 
 **[Responsible Evaluation of AI for Mental Health](responsible_evaluation_of_ai_for_mental_health.md)**
 
-:   Through a systematic analysis of 135 ACL Anthology papers, this work reveals five major flaws in the evaluation of AI mental health tools (reliance on generic metrics, lack of human evaluation, neglect of safety and fairness, etc.) and proposes an interdisciplinary evaluation taxonomy integrating clinical psychometrics and implementation science (assessment/intervention/information synthesis × validity/reliability/implementation/maintenance).
+:   Through a systematic analysis of 135 ACL Anthology papers, this work reveals five major flaws in the evaluation of AI mental health tools (reliance on generic metrics, lack of human evaluation, neglect of safety and fairness, etc.) and proposes an interdisciplinary evaluation taxonomy (assessment/intervention/information synthesis $\times$ validity/reliability/implementation/maintenance) that integrates clinical psychometrics and implementation science.
 
 **[Ryze: Evidence-Enriched Data Synthesis from Biomedical Papers](ryze_evidence-enriched_data_synthesis_from_biomedical_papers.md)**
 
-:   Ryze automatically transforms biomedical paper PDFs into evidence-enriched QA data that preserves figures, captions, structured extractions, and cited paragraphs. By employing a schedule-gated SFT+GRPO strategy to train BioVLM-8B, it achieves a 48.0% weighted accuracy on LAB-Bench, outperforming the Qwen3-VL-8B base by 12.6 percentage points and GPT-5.2 by 3.8 percentage points.
+:   Ryze automatically converts biomedical paper PDFs into evidence-enriched QA data that preserves figures, captions, structured extractions, and cited paragraphs. Using a progress-gated SFT+GRPO strategy to train BioVLM-8B, it achieves 48.0% weighted accuracy on LAB-Bench, outperforming the Qwen3-VL-8B base by 12.6 percentage points and GPT-5.2 by 3.8 percentage points.
 
 **[SEMA-RAG: A Self-Evolving Multi-Agent Retrieval-Augmented Generation Framework for Medical Reasoning](sema-rag_a_self-evolving_multi-agent_retrieval-augmented_generation_framework_fo.md)**
 
-:   The authors propose SEMA-RAG, a self-evolving multi-agent RAG framework that simulates the phased workflow of clinical reasoning through three specialized agents (Interpreter, Explorer, and Arbiter). It surpasses the strongest baselines by an average of +6.46 accuracy points across 5 medical QA benchmarks.
+:   The authors propose SEMA-RAG, a self-evolving multi-agent Retrival-Augmented Generation framework. By simulating phased clinical reasoning via three specialized agents (Interpreter, Explorer, Arbiter), it outperforms the strongest baselines by an average of +6.46 accuracy points across 5 medical QA benchmarks.
 
 **[Text-Attributed Knowledge Graph Enrichment with Large Language Models for Medical Concept Representation](text-attributed_knowledge_graph_enrichment_with_large_language_models_for_medica.md)**
 
-:   This paper proposes CoMed, an LLM-empowered graph learning framework. By combining statistical evidence from EHR with type-constrained LLM reasoning to construct a global medical KG, then enriching it into a text-attributed graph (TAG) via LLM-generated node descriptions and edge rationales, the framework jointly trains a LoRA-finetuned LLaMA encoder and a heterogeneous GNN to learn unified medical concept embeddings. It significantly improves diagnosis prediction performance on MIMIC-III/IV.
+:   This paper proposes CoMed, an LLM-empowered graph learning framework. It constructs a global medical knowledge graph by combining EHR statistical evidence with type-constrained LLM reasoning. It then enriches the graph into a text-attributed graph using LLM-generated node descriptions and edge rationales. Finally, it jointly trains a LoRA-finetuned LLaMA encoder and a heterogeneous GNN to learn unified medical concept embeddings, significantly improving diagnosis prediction performance on MIMIC-III/IV.

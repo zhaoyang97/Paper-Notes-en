@@ -2,128 +2,126 @@
 title: >-
   [Paper Note] Pareto-Guided Optimal Transport for Multi-Reward Alignment
 description: >-
-  [ICML 2026][Image Generation][JDR/JCR] PG-OT shifts "multi-reward text-to-image alignment" from "weighted global summation" to "constructing a Pareto front specifically for each prompt and transporting dominated samples to this front using Sinkhorn Optimal Transport." By introducing two new metrics, Joint Domination Rate (JDR) and Joint Collapse Rate (JCR),
+  [ICML 2026][Image Generation][JDR/JCR] PG-OT transforms "multi-reward T2I alignment" from a "weighted global summation" into "constructing a Pareto frontier for each individual prompt and employing Sinkhorn Optimal Transport to move dominated samples toward that frontier." By introducing Joint Domination Rate (JDR) and Joint Collapse Rate (JCR), the method
 tags:
   - ICML 2026
   - Image Generation
   - JDR/JCR
 date: 2026-05-08
-content_hash: 1d500b502fcade4d
+content_hash: b7ee94d4443e3a57
 ---
 # Pareto-Guided Optimal Transport for Multi-Reward Alignment
 
 **Conference**: ICML 2026  
 **arXiv**: [2605.13155](https://arxiv.org/abs/2605.13155)  
 **Code**: None  
-**Area**: Text-to-Image Alignment / Multi-Reward Optimization  
-**Keywords**: Multi-reward alignment, reward hacking, Pareto front, optimal transport, JDR/JCR  
+**Area**: T2I Alignment / Multi-Reward Optimization  
+**Keywords**: Multi-reward alignment, reward hacking, Pareto frontier, optimal transport, JDR/JCR  
 
 ## TL;DR
-PG-OT shifts "multi-reward text-to-image alignment" from "weighted global summation" to "constructing a Pareto front specifically for each prompt and transporting dominated samples to this front using Sinkhorn Optimal Transport." By introducing two new metrics, Joint Domination Rate (JDR) and Joint Collapse Rate (JCR), it exposes reward hacking hidden by mean values. On Parti-Prompts, it achieves a JDR₂ of 47.98%, an 11% improvement over strong baselines, with a human win rate of nearly 80%.
+PG-OT transforms "multi-reward T2I alignment" from a "weighted global summation" into "constructing a Pareto frontier for each individual prompt and employing Sinkhorn Optimal Transport to move dominated samples toward that frontier." By introducing Joint Domination Rate (JDR) and Joint Collapse Rate (JCR), the method exposes reward hacking hidden by average scores, achieving a 47.98% $\text{JDR}_2$ on Parti-Prompts (an 11% improvement over strong baselines) and a human win rate of nearly 80%.
 
 ## Background & Motivation
 
-**Background**: Post-training preference alignment for text-to-image (T2I) generation generally employs RLHF-style fine-tuning using one or more reward models. The objective function typically takes the form $\mathcal{L}(x) = C - \sum_k w_k R^k(x)$, where $C$ is treated as a global upper bound to maximize the weighted rewards.
+**Background**: Post-training preference alignment for Text-to-Image (T2I) generation typically uses RLHF-style fine-tuning with one or more reward models. The objective function often takes the form $\mathcal{L}(x) = C - \sum_k w_k R^k(x)$, treating $C$ as a global upper bound to maximize weighted rewards.
 
-**Limitations of Prior Work**: (i) **Reward hacking** is prevalent—reward scores continue to rise while image quality collapses; (ii) **Multi-reward fusion methods** rely on weight searching, which incurs high tuning costs and unstable gains; (iii) **Mean-based evaluation metrics** (average gain across rewards) mask hacking: a score increase in one dimension may hide a drop in others, yet the average remains positive.
+**Limitations of Prior Work**: (i) **Reward hacking** is prevalent—reward scores increase while image quality collapses; (ii) **Multi-reward fusion** relies on weight searching, which is costly and inconsistent; (iii) **Mean-based evaluation metrics** (average gain across rewards) mask hacking, where one dimension improves while others degrade, yet the average remains positive.
 
-**Key Challenge**: The authors identify the root cause as the mismatch between using a "global constant $C$ as a reward upper bound" and the "significant variance in the actual maximum reward attainable by different prompts." Empirical evidence in Figure 1 shows that the distribution of maximum rewards across 20 prompts under ICT rewards spans a massive range. Using a global $C$ forces all prompts toward the same upper bound; for prompts with naturally low upper bounds, the gradient continues to push until shortcuts are taken, leading to reward hacking.
+**Key Challenge**: The authors identify the root cause as the mismatch between "using a global constant $C$ as a reward upper bound" and the "vast differences in reachable maximum rewards across different prompts." Figure 1 empirically shows that under the ICT reward, the maximum reward distribution for 20 prompts spans a wide range. Using a global $C$ forces all prompts toward the same upper bound; for prompts with naturally low limits, the gradient continues to push until the model takes shortcuts $\rightarrow$ reward hacking.
 
-**Goal**: (a) Theoretically prove that "heterogeneous bounds + global objectives" inevitably push some samples toward hacking; (b) Design a "prompt-specific bound-aware" optimization strategy; (c) Provide evaluation metrics that reliably detect hacking; (d) Differentiate behavioral differences between strong and weak reward models and design corresponding protection mechanisms.
+**Goal**: (a) Theoretically prove that "heterogeneous upper bounds + global objectives" inevitably push some samples toward hacking; (b) Design a "prompt-specific upper-bound-aware" optimization strategy; (c) Provide reliable metrics to detect hacking; (d) Differentiate behavior between strong and weak reward models and design corresponding protection mechanisms.
 
-**Key Insight**: Natural embedding of multi-reward alignment into a Pareto optimization framework—since reachable bounds vary by prompt, the "set of optimal samples within the same prompt" is treated as the Pareto front for that prompt. Optimal Transport (OT) is then used to "transport" non-optimal samples of the same prompt to this front. Strong reward signals expand the front online, while weak reward signals lock the front offline and are monitored by a VLM agent for collapse.
+**Key Insight**: Embed multi-reward alignment naturally into a Pareto optimization framework. Since reachable bounds differ by prompt, the "set of optimal samples for a specific prompt" is treated as its Pareto frontier. OT is then used to "transport" non-optimal samples of that prompt to the frontier. Strong reward signals expand the frontier online, while weak signals lock the frontier offline, monitored by a VLM agent to detect collapse.
 
-**Core Idea**: "Prompt-specific Pareto front as the target distribution + OT as the transport operator," using JDR/JCR as Pareto-style metrics to quantify "real gains vs. fake hacking."
+**Core Idea**: "Prompt-specific Pareto frontiers as target distributions + OT as the transport operator," using JDR/JCR as Pareto-style metrics to quantify "true gain vs. fake hacking."
 
 ## Method
 
 ### Overall Architecture
-The core of PG-OT is to abandon the "global constant upper bound + weighted reward sum" in favor of estimating the true reachable reward upper bound for each prompt individually, represented as a set of Pareto optimal samples (the front). During training, any sample generated by the model that is dominated by the front is "moved" to a corresponding point on the front via Sinkhorn Optimal Transport. The transport cost is directly used as a differentiable loss backpropagated to the T2I model. Strong and weak rewards are handled through online front expansion and offline front locking, respectively, with a VLM agent monitoring early collapse in weak rewards to prune them from optimization if necessary.
+The core of PG-OT is to abandon the "global constant upper bound + weighted summation" in favor of estimating the realistic reward upper bound for each prompt individually as a set of Pareto-optimal samples (the frontier). During training, any sample generated by the current model that is dominated by the frontier is "moved" to a corresponding point on the frontier via Sinkhorn Optimal Transport. The transport cost is used as a differentiable loss backpropagated to the T2I model. Strong and weak rewards are handled via online expansion and offline locking respectively, with a VLM agent monitoring weak rewards for early collapse to prune them if necessary.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
     P["Input prompt p_i"] --> GEN["Generate M candidate samples<br/>Calculate reward vectors"]
-    GEN --> FRONT["Prompt-specific Pareto front<br/>Dominance matrix selects non-dominated samples"]
-    FRONT --> OT["Sinkhorn Optimal Transport<br/>Transport dominated samples to nearest points on front"]
+    GEN --> FRONT["Prompt-specific Pareto Frontier<br/>Domination matrix selects non-dominated samples"]
+    FRONT --> OT["Sinkhorn Optimal Transport<br/>Move dominated samples to nearest frontier points"]
     OT --> LOSS["Transport cost as differentiable loss<br/>DRaFT-K style backprop to T2I model"]
     LOSS --> P
-    STRAT["Online/Offline Strategy + VLM Decision Agent<br/>Strong rewards expand front online / Weak rewards locked offline + collapse mitigation"] -.Regulate Font.-> FRONT
+    STRAT["Online/Offline Strategy + VLM Decision Agent<br/>Strong rewards expand online / Weak rewards lock offline + collapse protection"] -.調節.-> FRONT
 ```
 
 ### Key Designs
 
-**1. Prompt-specific Pareto front: Replacing global constants with per-prompt reachable bounds**
+**1. Prompt-specific Pareto Frontier: Replacing Global Constants with Per-prompt Reachable Bounds**
 
-The limitation of traditional objectives $\mathcal{L}(x)=C-\sum_k w_k R^k(x)$ is the use of a global $C$ as the reward bound for all prompts. Figure 1 shows that the maximum attainable reward varies drastically—for prompts with low natural bounds, gradients push toward unreachable global extrema, triggering hacking. PG-OT generates $M$ candidate samples $\{x_i^j\}_{j=1}^M$ for each prompt $p_i$ to obtain a set of reward vectors $\mathcal{R}_{i,M}^{(pre)}=\{\tilde R(x_i^j)\}$. It then constructs an $M\times M$ dominance matrix $A$ ($A_{mn}=1$ if $\tilde R(x_i^m)\succ\tilde R(x_i^n)$, where dominance means "all dimensions $\ge$ and at least one $>$"). Samples with zero dominated counts are selected as the front $\mathcal{R}^{front}(p_i)=\{\tilde R(x_i^j)\mid\sum_m A_{mj}=0\}$. Thus, each prompt targets its own "realistically reachable" goal, preventing the model from chasing unreachable extrema and eliminating the incentive for shortcuts.
+Traditional objectives $\mathcal{L}(x)=C-\sum_k w_k R^k(x)$ use a global $C$ as the reward upper bound. Figure 1 shows that for prompts with low natural limits, gradients force the model toward unreachable global extrema, triggering hacking. PG-OT generates $M$ candidate samples $\{x_i^j\}_{j=1}^M$ for each prompt $p_i$ to get reward vectors $\mathcal{R}_{i,M}^{(pre)}=\{\tilde R(x_i^j)\}$. It then constructs an $M\times M$ domination matrix $A$ (where $A_{mn}=1$ if $\tilde R(x_i^m)\succ\tilde R(x_i^n)$). Samples with zero domination counts form the frontier $\mathcal{R}^{front}(p_i)=\{\tilde R(x_i^j)\mid\sum_m A_{mj}=0\}$. This provides each prompt with a "realistic" goal, eliminating the incentive to take shortcuts toward unreachable extrema.
 
-**2. Sinkhorn Optimal Transport: Moving dominated samples to the front with minimal cost**
+**2. Sinkhorn Optimal Transport: Differentiable Minimal-Cost Transport to the Frontier**
 
-Given the front as a target distribution, a differentiable operator is needed to "pull" current samples toward it. PG-OT performs Optimal Transport in the reward space: the source distribution $\mu_i$ consists of samples in the current batch dominated by the front, and the target distribution $\nu_i=\mathcal{R}^{front}(p_i)$ represents the front points. The ground cost is the squared Euclidean distance $c(y_i^m,x_i^j)=\|\tilde R(y_i^m)-\tilde R(x_i^j)\|_2^2$. Solving the entropy-regularized OT $\gamma^\ast_i=\arg\min_{\gamma\in\Pi(\mu_i,\nu_i)}\sum_{m,j}c(y_i^m,x_i^j)\gamma(y_i^m,x_i^j)$ yields the transport plan. The inner product of $\gamma^\ast$ and $c$ is the training loss, backpropagated through a DRaFT-K style differentiable reward chain (where the reward model is differentiable with respect to the image). This effectively moves each dominated sample toward the "nearest corresponding point" on the front. Unlike weighted sums, OT preserves the geometric structure of the reward space and avoids collapsing all samples to a single target.
+To pull current samples toward the target distribution, PG-OT performs Optimal Transport in reward space. The source distribution $\mu_i$ consists of samples in the current batch dominated by the frontier, and the target distribution $\nu_i=\mathcal{R}^{front}(p_i)$ consists of frontier points. The ground cost is the squared Euclidean distance $c(y_i^m,x_i^j)=\|\tilde R(y_i^m)-\tilde R(x_i^j)\|_2^2$. Solving the entropy-regularized OT $\gamma^\ast_i=\arg\min_{\gamma\in\Pi(\mu_i,\nu_i)}\sum_{m,j}c(y_i^m,x_i^j)\gamma(y_i^m,x_i^j)$ yields a transport plan. The inner product of $\gamma^\ast$ and $c$ serves as the training loss, backpropagated via a DRaFT-K style differentiable reward chain. This allows samples to move toward the "nearest corresponding points" on the frontier, preserving the geometry of the reward space and preventing collapse to a single point.
 
-**3. Online/Offline Strategy + VLM Decision Agent: Differentiated treatment and active loss prevention**
+**3. Online/Offline Strategy + VLM Decision Agent: Differentiated Treatment by Reward Strength**
 
-Not all rewards are equally trustworthy. The authors measured the accuracy of various rewards on Pick-a-Pic and Pick-High datasets (Table 1: CLIP 60.3%, HPS 72.9%, ICT 87.6%, HP 88.5%), classifying ICT/HP as "strong" and CLIP/HPS as "weak." Strong rewards align well with human preference and use an online strategy—dynamically collecting samples during training to expand the front and encouraging the T2I model to explore new Pareto optima. Weak rewards are inherently unreliable; allowing them to expand the front online would contaminate it with false signals. Therefore, they use an offline strategy—calculating the front once with pre-generated $M$ samples and locking it. Additionally, a GPT-4o agent, equipped with "mild collapse reference sets" for each reward, performs in-context detection. If early mild collapse is detected in a weak reward, it is removed from the optimization and the model rolls back to the last stable checkpoint.
+Rewards are categorized into "strong" (ICT, HP) and "weak" (CLIP, HPS) based on their accuracy against human preferences (Table 1). Strong rewards follow an online strategy, where the frontier is dynamically updated with new samples to encourage exploration. Weak rewards, being less reliable, follow an offline strategy where the frontier is computed once from pre-generated samples and then fixed. Additionally, a GPT-4o agent uses an in-context "mild collapse reference set" to monitor weak rewards; if early collapse is detected, the reward is removed from optimization and the model rolls back to the last stable checkpoint.
 
 ### Loss & Training
-The training loss is the total OT transport cost $\sum_{m,j}c(y_i^m,x_i^j)\gamma^\ast(y_i^m,x_i^j)$, backpropagated to the T2I model using the DRaFT-K style differentiable reward chain. The VLM agent triggers a collapse check at each validation step. Beyond traditional single-reward win rates, PG-OT introduces two Pareto-style metrics: Joint Domination Rate $\mathrm{JDR}_K=\tfrac{1}{N}\sum_i\mathbb{1}(\mathbf{R}_i\succ\mathbf{R}_{i,b})$ (the ratio of prompts where the generated sample jointly dominates the baseline across $K$ dimensions; higher is better) and Joint Collapse Rate $\mathrm{JCR}_K=\tfrac{1}{N}\sum_i\mathbb{1}(\mathbf{R}_{i,b}\succ\mathbf{R}_i)$ (the ratio where the baseline jointly dominates the generated sample, indicating regression across all dimensions; lower is better). These metrics expose hacking masked by "mean-based metrics," where an increase in one dimension and a drop in others might still yield a positive average, but JDR would not increase and JCR would highlight the recession.
+The training loss is the total OT transport cost $\sum_{m,j}c(y_i^m,x_i^j)\gamma^\ast(y_i^m,x_i^j)$, utilizing differentiable reward models in a DRaFT-K style. Evaluation includes traditional win rates plus two Pareto-style metrics: Joint Domination Rate $\mathrm{JDR}_K=\tfrac{1}{N}\sum_i\mathbb{1}(\mathbf{R}_i\succ\mathbf{R}_{i,b})$ (proportion of prompts where the sample jointly dominates the baseline across $K$ dimensions) and Joint Collapse Rate $\mathrm{JCR}_K=\tfrac{1}{N}\sum_i\mathbb{1}(\mathbf{R}_{i,b}\succ\mathbf{R}_i)$ (proportion of prompts where the baseline dominates the sample). These metrics expose hacking that mean-based metrics hide.
 
 ## Key Experimental Results
 
 ### Main Results
-Base model: SD3.5-Turbo. 4 rewards: ICT, HP (strong); CLIP, HPS (weak). Evaluation on Parti-Prompts.
+Base model SD3.5-Turbo, 4 rewards: ICT, HP (strong), CLIP, HPS (weak). Evaluation on Parti-Prompts.
 
-| Method | ICT Win Rate | HP Win Rate | CLIP Win Rate | HPS Win Rate | JDR₂ ↑ | JDR₄ ↑ | JCR₄ ↓ |
+| Method | ICT Win Rate | HP Win Rate | CLIP Win Rate | HPS Win Rate | $\text{JDR}_2$ ↑ | $\text{JDR}_4$ ↑ | $\text{JCR}_4$ ↓ |
 |---|---|---|---|---|---|---|---|
-| +ICT Single Reward | 56.99 | 36.83 | 47.06 | 48.71 | 20.59 | 7.66 | 10.17 |
-| +HP Single Reward | 52.45 | **90.26** | 44.30 | 57.29 | 36.15 | 13.73 | 4.11 |
+| +ICT Only | 56.99 | 36.83 | 47.06 | 48.71 | 20.59 | 7.66 | 10.17 |
+| +HP Only | 52.45 | **90.26** | 44.30 | 57.29 | 36.15 | 13.73 | 4.11 |
 | Weighted 2:3:2:3 | 50.80 | 56.43 | 46.51 | 86.03 | 28.31 | 13.42 | 2.57 |
 | Reward Soup 3:2:1:4 | 50.80 | 53.74 | 43.32 | 85.29 | 26.29 | 10.85 | 3.19 |
 | Weighted-Sum (w/o OT) | 52.63 | 56.86 | 46.94 | 82.48 | 29.84 | 13.66 | 3.49 |
-| **Ours (PG-OT)** | 56.43 | 85.23 | 43.63 | 61.70 | **47.98** | **17.10** | **2.39** |
+| **PG-OT** | 56.43 | 85.23 | 43.63 | 61.70 | **47.98** | **17.10** | **2.39** |
 
-**Human win rate nearly 80%**—this is one of the strongest selling points. PG-OT does not reach the highest score in every single reward (e.g., lower than weighted-sum in CLIP/HPS), but its JDR₂/JDR₄ are significantly higher and JCR₄ is the lowest. This indicates that it produces samples that are more broadly superior across multiple dimensions compared to the baseline, with minimal dimensional collapse.
+**Human win rate nearly 80%**: While PG-OT does not achieve the highest score on every single reward, it significantly maximizes $\text{JDR}_2/\text{JDR}_4$ and minimizes $\text{JCR}_4$, indicating that its samples are broadly superior across multiple dimensions with minimal collapse.
 
 ### Ablation Study
 
 | Variant | Key Observation |
 |---|---|
-| Global Bound (weighted-sum) | Individual rewards rise but JDR is low and JCR is high, proving hacking risks. |
-| OT only (no Pareto front) | OT lacks a clear target; performance is similar to weighted-sum. |
-| Pareto only (no OT) | Front points are discrete, lacking differentiable signals. |
-| No strong/weak distinction | Weak rewards expand the front online and contaminate the target. |
-| No VLM agent detection | Unable to timely stop optimization when weak rewards collapse. |
-| Full PG-OT | JDR₂ 47.98%, JCR₄ only 2.39%; simultaneously improves alignment and suppresses hacking. |
-
-Table 2 shows the trend when optimizing for CLIP-only: CLIP rises +7.27% while HPS drops -2.78% and HP drops -4.38%. This is a typical case of reward conflict and hacking, highlighting the necessity of JDR/JCR detection.
+| Global Bound (weighted-sum) | Individual rewards rise but JDR is low and JCR is high, proving hacking risk. |
+| OT without Pareto Frontier | OT lacks a clear target; results close to weighted-sum. |
+| Pareto without OT | Frontier points are discrete; no differentiable signal. |
+| No Strong/Weak Distinction | Weak rewards online pollute the frontier target. |
+| No VLM Agent | No timely stop-loss after weak reward collapse. |
+| Full PG-OT | $\text{JDR}_2$ 47.98%, $\text{JCR}_4$ only 2.39%; improves quality while suppressing hacking. |
 
 ### Key Findings
-- Single-reward optimization (e.g., +HP achieving 90.26% win rate) performs poorly in JDR/JCR, indicating that traditional "single-reward win rate" metrics are highly misleading.
-- The gains from tuning weights in weighted-sum are limited: JDR₄ remains between 12.44%–13.66%, significantly lower than the 17.10% of PG-OT.
-- JCR reveals hidden collapses that mean-based metrics miss: The Separate-Cons configuration has an HPS win rate of 61.21% which seems acceptable, but its JCR₄ is as high as 6.68%, showing many samples regress across all dimensions.
+- Single-reward optimization (e.g., +HP) results in high single-dimension win rates but poor JDR/JCR, showing that traditional metrics can be misleading.
+- Weighted-sum weight tuning provides limited gains: $\text{JDR}_4$ remains between 12.44%–13.66%, significantly lower than PG-OT's 17.10%.
+- JCR reveals hidden collapse: the "Separate-Cons" configuration has an HPS win rate of 61.21% but a $\text{JCR}_4$ of 6.68%, showing many samples degrade across all dimensions simultaneously.
 
 ## Highlights & Insights
-- The observation of "prompt-wise heterogeneous bounds" is incisive, turning the common "global reward" assumption into an explicitly provably source of hacking through both theory and empirics.
-- Using the Pareto front as an OT target distribution is a **conceptual relay**—upgrading single-point maximization to distribution-to-distribution transport, offering structural advantages in multi-objective settings.
-- JDR/JCR shift multi-reward alignment evaluation from "mean scores" to "Pareto comparison," serving as a potential general diagnostic standard for future multi-reward RLHF work.
-- The symmetrical handling of strong/weak rewards (online expansion vs. offline locking) plus VLM agent dynamic pruning is a pragmatic engineering solution for the varying quality of rewards in real-world RLHF.
+- The observation of "prompt-wise heterogeneous upper bounds" identifies a fundamental source of hacking in global reward assumptions.
+- Using the Pareto frontier as an OT target distribution shifts optimization from single-point maximization to distribution-to-distribution transport, a structural advantage for multi-objective tasks.
+- JDR/JCR metrics move evaluation from "average scores" to "Pareto comparisons," providing a new diagnostic standard for multi-reward RLHF.
+- Differentiated treatment of reward quality (online vs. offline) coupled with VLM-based pruning is a pragmatic solution for real-world reward noise.
 
 ## Limitations & Future Work
-- The quality of the offline Pareto front depends on the number of pre-generated samples $M$ and the reliability of the reward model; if a reward is severely misaligned, the front becomes a false target.
-- Sinkhorn computation on large batches and the choice of regularization coefficients are sensitive to hyperparameters; detailed ablation on these was not provided.
-- The VLM agent relies on "mild collapse reference sets," making it dependent on manual labeling of collapse cases and potentially ineffective against unseen collapse patterns.
-- Experiments were limited to 4 rewards and the SD3.5-Turbo backbone; generalizability across more reward scales and different architectures (Diffusion/AR) requires further validation.
+- Offline frontier quality depends on the number of pre-generated samples ($M$) and reward model reliability.
+- Sinkhorn computation scales with batch size and is sensitive to the regularization coefficient.
+- The VLM agent relies on a reference set of collapse cases and may fail on unseen patterns.
+- Experiments are focused on 4 rewards and one backbone (SD3.5-Turbo); scalability to more rewards and architectures needs verification.
 
 ## Related Work & Insights
-- **vs. Weighted-Sum / Reward Soup**: These methods bypass conflicts by "tuning weights"; PG-OT explicitly acknowledges conflicts using Pareto fronts and transports samples toward them, requiring no weight tuning.
-- **vs. DRaFT / Diffusion-DPO**: Traditional methods push toward global reward targets; PG-OT uses prompt-specific fronts to explicitly lower hacking risks.
-- **vs. Pareto-MTL / Multi-task Learning**: MTL often uses MGDA to find Pareto directions; PG-OT finds directions in sample space via OT rather than weight space, avoiding the instability of MGDA solvers in high-dimensional tasks.
+- **vs. Weighted Sum / Reward Soup**: These methods bypass conflicts by weight tuning; PG-OT acknowledges conflicts via Pareto frontiers and uses OT to transport samples without requiring manual weights.
+- **vs. DRaFT / Diffusion-DPO**: Traditional methods use global targets; PG-OT uses prompt-specific frontiers to suppress hacking risks.
+- **vs. Pareto-MTL / Multi-task Learning**: While MTL often uses MGDA to find directions, PG-OT operates in the sample space via OT, avoiding instabilities associated with MGDA in high-dimensional tasks.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ "Prompt-wise Pareto front + OT" + "JDR/JCR" are highly original and clear.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Includes various baselines and human evaluation, though the backbone is limited.
-- Writing Quality: ⭐⭐⭐⭐ Rigorous theoretical groundwork and insightful motivation analysis of hacking mechanisms.
-- Value: ⭐⭐⭐⭐⭐ Strong general implications for multi-reward RLHF; JDR/JCR can be directly adopted by the community.
+- Novelty: ⭐⭐⭐⭐⭐ (Prompt-wise Pareto + OT + JDR/JCR is highly original)
+- Experimental Thoroughness: ⭐⭐⭐⭐ (Multiple baselines and human eval, though single backbone)
+- Writing Quality: ⭐⭐⭐⭐ (Rigorous theoretical motivation and clear hacking analysis)
+- Value: ⭐⭐⭐⭐⭐ (Offers a general framework and metrics for multi-reward RLHF)
 
 <!-- RELATED:START -->
 
@@ -132,10 +130,10 @@ Table 2 shows the trend when optimizing for CLIP-only: CLIP rises +7.27% while H
 ## Related Papers
 
 - [\[CVPR 2026\] POCA: Pareto-Optimal Curriculum Alignment for Visual Text Generation](../../CVPR2026/image_generation/poca_pareto-optimal_curriculum_alignment_for_visual_text_generation.md)
-- [\[CVPR 2026\] COT-FM: Cluster-wise Optimal Transport Flow Matching](../../CVPR2026/image_generation/cot-fm_cluster-wise_optimal_transport_flow_matching.md)
 - [\[NeurIPS 2025\] On the Relation between Rectified Flows and Optimal Transport](../../NeurIPS2025/image_generation/on_the_relation_between_rectified_flows_and_optimal_transport.md)
 - [\[ICML 2026\] Alignment-Guided Score Matching for Text-to-Image Alignment in Diffusion Models](alignment-guided_score_matching_for_text-to-image_alignment_in_diffusion_models.md)
 - [\[ICML 2026\] Gradient Preconditioning for Efficient and Reliable Reward-Guided Generation](gradient_preconditioning_for_efficient_and_reliable_reward-guided_generation.md)
+- [\[ICLR 2026\] Training-Free Reward-Guided Image Editing via Trajectory Optimal Control](../../ICLR2026/image_generation/training-free_reward-guided_image_editing_via_trajectory_optimal_control.md)
 
 </div>
 

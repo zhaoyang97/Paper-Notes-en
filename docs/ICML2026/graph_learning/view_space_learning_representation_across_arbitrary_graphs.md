@@ -2,75 +2,75 @@
 title: >-
   [Paper Note] View Space：跨任意图的表示学习
 description: >-
-  [ICML 2026][Graph Learning][Paper Note] This paper introduces the concept of View Space by lifting graphs from 2D (node-feature) to 3D (node-feature-view). This enables a unified representation for graphs with arbitrary feature dimensions and semantics—marking the first time a graph model achieves cross-domain reasoning without fine-tuning, akin to NLP/CV fo
+  [ICML 2026][Graph Learning][Paper Note] This paper proposes the concept of View Space, elevating graphs from 2 dimensions (node-feature) to 3 dimensions (node-feature-view) to achieve a unified representation across arbitrary feature dimensions and semantic graphs. This marks the first time a graph model can perform cross-domain reasoning without fine-tuning
 tags:
   - ICML 2026
   - Graph Learning
 date: 2026-05-08
-content_hash: 8ee062b660fe9675
+content_hash: cd202283b75c2d90
 ---
 # View Space: Representation Learning Across Arbitrary Graphs
 
 **Conference**: ICML 2026  
 **arXiv**: [2512.11561](https://arxiv.org/abs/2512.11561)  
-**Code**: TBD  
+**Code**: To be confirmed  
 **Area**: Graph Learning / Graph Neural Networks / Cross-domain Transfer  
 **Keywords**: Graph Representation Learning, Feature Heterogeneity, Fully Inductive Learning, View Space
 
 ## TL;DR
-This paper introduces the concept of View Space by lifting graphs from 2D (node-feature) to 3D (node-feature-view). This enables a unified representation for graphs with arbitrary feature dimensions and semantics—marking the first time a graph model achieves cross-domain reasoning without fine-tuning, akin to NLP/CV foundation models, outperforming GraphAny by an average of 8.93% across 27 downstream tasks.
+This paper proposes the concept of View Space, elevating graphs from 2 dimensions (node-feature) to 3 dimensions (node-feature-view) to achieve a unified representation across arbitrary feature dimensions and semantic graphs. This marks the first time a graph model can perform cross-domain reasoning without fine-tuning, similar to NLP/CV foundation models, outperforming GraphAny by an average of 8.93% across 27 downstream tasks.
 
 ## Background & Motivation
 
-**Background**: Foundation models in NLP and CV achieve cross-dataset reasoning through large-scale pre-training followed by lightweight adaptation. This success stems from standardized input formats—NLP tokens are mapped to a shared vocabulary, and CV images are resized to a fixed resolution.
+**Background**: Foundation models in NLP and CV achieve cross-dataset reasoning through large-scale pre-training followed by lightweight adaptation. This is possible due to standardized input formats—all text in NLP is tokenized into a shared vocabulary, and all images in CV can be resized to a fixed resolution.
 
-**Limitations of Prior Work**: Standardizing graph data is extremely difficult. The dimensions and semantics of node features vary drastically across datasets. Existing GNNs handle this by learning feature transformation matrices, leading to weak generalization across feature spaces. While GraphAny addresses the fully inductive problem via relative distance spaces, it can only perform prediction and cannot learn representations.
+**Limitations of Prior Work**: Standardization of graph data is extremely challenging. The dimensionality and semantics of node features vary significantly across datasets. Existing GNNs handle this by learning feature transformation matrices, resulting in weak generalization across different feature spaces. Although GraphAny partially addresses fully inductive problems via relative distance spaces, it is restricted to prediction rather than learning representations.
 
-**Key Challenge**: How can a model learn universal knowledge across graphs and features while ensuring feature equivariance? Traditional 2D representations cannot simultaneously satisfy node permutation equivariance and feature permutation equivariance.
+**Key Challenge**: How can a model learn general knowledge across graphs and features while maintaining feature equivariance? Traditional 2D representations cannot simultaneously satisfy node permutation equivariance and feature permutation equivariance.
 
-**Goal**: (1) Formalize "Fully Inductive Node Representation Learning" (FI-NRL); (2) Identify the third axis of graph representation: View Space; (3) Design the parameterized Graph View Transform (GVT) and prove its dual permutation equivariance; (4) Instantiate the recursive architecture RGVT to verify cross-task generalization.
+**Goal**: (1) Formalize "Fully Inductive Node Representation Learning" (FI-NRL); (2) Identify the third representation axis of graphs: View Space; (3) Design the parameterized transformation GVT and prove its dual permutation equivariance; (4) Instantiate it as a recursive architecture, RGVT, to verify cross-task generalization.
 
-**Key Insight**: All graphs share connectivity properties. Different adjacency matrix preprocessing methods emphasize different structural facets of a graph. These "views" can be stacked to form a new dimension, allowing the model to learn representations in a unified view space independent of feature dimensionality.
+**Key Insight**: All graphs share connectivity properties. Different adjacency matrix preprocessing methods emphasize different structural facets of a graph. These "views" can be stacked to form a new dimension, allowing the model to learn representations in a unified view space independent of feature dimensions.
 
-**Core Idea**: Elevate 2D representations to 3D—each node-feature pair $(n, f)$ is mapped to a $C$-dimensional "view vector," where the $C$ dimensions correspond to $C$ different graph structural views. A shared learnable function processes these view vectors, automatically adapting to arbitrary dimensions and semantic features.
+**Core Idea**: Elevate the 2D representation to 3D—mapping each node-feature pair $(n,f)$ to a $C$-dimensional "view vector," where $C$ dimensions correspond to $C$ different graph structural views. A shared learnable function processes these view vectors to automatically adapt to arbitrary dimensions and semantic features.
 
 ## Method
 
 ### Overall Architecture
 
-To enable a graph model to work across arbitrary graphs like NLP/CV foundation models, the challenge lies in the misalignment of feature dimensions and semantics. This work adds a new dimension to graph representations: first, multiple preprocessing results of the adjacency matrix are stacked into an $N \times F \times C$ 3D tensor, providing each "node-feature" position with a $C$-dimensional "view vector." Next, a shared learnable function processes these view vectors into scalars, resulting in $N \times F$ node representations independent of feature dimensions. Finally, this transformation is applied recursively using shared parameters $L$ times to match different graph receptive fields. The entire process contains no dimension-tied parameters in the feature space, naturally accommodating features of any dimension or semantics.
+To enable a graph model to work across arbitrary graphs like NLP/CV foundation models, the difficulty lies in the misalignment of feature dimensions and semantics across graphs. This work introduces a new dimension to graph representations: first, multiple preprocessing results of the adjacency matrix are stacked into an $N \times F \times C$ 3D tensor, providing each "node-feature" position with a $C$-dimensional "view vector." Next, a shared learnable function compresses these view vectors into scalars, resulting in an $N \times F$ node representation independent of feature dimensionality. Finally, this transformation is applied recursively using shared parameters to match different graph receptive fields. The entire process contains no parameters tied to feature dimensions, naturally accommodating any feature dimension or semantics.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
     A["Input Graph: Node Features X, Adjacency Matrix A"]
-    A --> B["View Space<br/>C View Finders preprocess A into C versions<br/>Propagated versions stack along a new axis into N×F×C tensor"]
-    B --> C["Graph View Transform (GVT)<br/>Shared function φ maps each C-dim view vector to a scalar → N×F"]
-    C --> D["Recursive Architecture (RGVT)<br/>Ψ with shared parameters applied L times to decouple depth and parameter count"]
-    D --> E["N×F Node Representation → Lightweight Predictor → 27 Downstream Tasks"]
+    A --> B["View Space: C View Finders preprocess A in C ways. Each version is stacked along a new axis into an N×F×C tensor"]
+    B --> C["Graph View Transform (GVT): Shared function φ compresses each C-dimensional view vector into a scalar → N×F"]
+    C --> D["Recursive Architecture (RGVT): The same operator Ψ is applied L times, decoupling depth from parameter count"]
+    D --> E["N×F Node Representation → Lightweight Predictor → 27 Downstream Node Classification Tasks"]
 ```
 
 ### Key Designs
 
-**1. View Space: Gaining Dual Permutation Equivariance via the Third Axis**
+**1. View Space: Trading the Third Axis for Dual Permutation Equivariance**
 
-Fully inductive learning requires a model to be insensitive to two things: node reordering (node permutation equivariance R1) and feature reordering (feature permutation equivariance R2). It is difficult for a traditional 2D node-feature matrix $\bm{X} \in \mathbb{R}^{N \times F}$ to satisfy both, as placing a transformation matrix on the feature dimension destroys feature permutation equivariance. The key observation is that all graphs share "connectivity," and different adjacency matrix prepocessors highlight different structural facets. These "views" can be stacked as a new feature-independent axis. Specifically, for each position, a $C$-dimensional view vector $\bm{v}_{n,f} = \bm{\mathsf{X}}_{n,f,:}$ is extracted, recording the response of the node-feature pair under $C$ structural perspectives. Since $C$ is determined only by the predefined view finder set and is independent of $N$ or $F$, any graph is unified into $N \times F$ vectors of size $C$—the "standardized input format" previously missing in graph learning.
+Fully inductive learning requires the model to be insensitive to two things: reordering nodes must lead to a corresponding reordering of representations (Node Permutation Equivariance R1), and reordering features must lead to a corresponding reordering of representations (Feature Permutation Equivariance R2). Satisfying both in a traditional 2D node-feature matrix $\bm{X} \in \mathbb{R}^{N \times F}$ is difficult because applying a transformation matrix to the feature dimension breaks feature permutation equivariance. The key observation is that all graphs share the property of "connectivity." Different adjacency matrix preprocessing methods highlight different structural facets, allowing these "views" to be stacked into a new, feature-independent axis. Specifically, for each position, a $C$-dimensional view vector $\bm{v}_{n,f} = \bm{\mathsf{X}}_{n,f,:}$ is extracted, recording the response values of that node-feature pair under $C$ structural perspectives. Since the view dimension $C$ is determined solely by a predefined set of view finders (independent of graph size $N$ and feature dimension $F$), any graph is uniquely represented as $N \times F$ vectors of $C$ dimensions—the "standardized input format" previously missing in graph learning.
 
-**2. Graph View Transform (GVT): Parametrization in View Space for Dynamic Aggregation**
+**2. Graph View Transform (GVT): Parameterizing in View Space for Dynamic Aggregation**
 
-With View Space, parameters are placed on the view dimension rather than the feature dimension, bypassing explicit feature transformation matrices $\bm{W}$ and satisfying feature permutation equivariance. GVT is formalized as:
+With View Space, parameters are placed entirely on the view dimension rather than the feature dimension, bypassing explicit feature transformation matrices $\bm{W}$ and automatically satisfying feature permutation equivariance. GVT is formalized as:
 
 $$\Psi(\bm{X}, \bm{A}) = \big[\,\phi(\bm{\mathsf{X}}_{n,f,:} \mid \theta)\,\big]_{n,f},$$
 
-executed in two steps: applying $C$ view finders $\{\nu_c\}_{c=1}^C$ to $\bm{A}$ to stack propagated versions $\nu_c(\bm{A})\bm{X}$ into 3D, then using a shared learnable function $\phi$ to compress each $(n, f, :)$ position into a scalar. When $\phi$ is non-linear, a Taylor expansion proves GVT is equivalent to "node-feature-level dynamic aggregation"—where each $(n, f)$ has unique aggregation weights, exceeding the expressive power of static aggregators like GCN.
+executed in two steps: first, applying $C$ view finders $\{\nu_c\}_{c=1}^C$ to $\bm{A}$ and stacking propagated versions $\nu_c(\bm{A})\bm{X}$ along the new 3D dimension; then, using the same learnable reduction function $\phi$ to compress each position $(n,f,:)$ into a scalar. When $\phi$ is non-linear, a Taylor expansion proves that GVT is equivalent to a "node-feature level dynamic aggregation"—where each $(n,f)$ pair has unique aggregation weights, granting it greater expressive power than static models like GCN that share aggregation coefficients across all nodes.
 
-**3. Recursive Architecture (RGVT): Decoupling Parameters and Propagation Depth**
+**3. Recursive Architecture (RGVT): Decoupling Parametrization and Propagation Depth**
 
-Different graphs require different receptive fields. Stacking multiple layers with distinct parameters leads to parameter explosion and ties "depth" to "parameter count." Inspired by RNNs, RGVT applies $\Psi$ repeatedly $L$ times with shared parameters:
+Different graphs have varying requirements for receptive fields. If depth is increased by stacking layers with different parameters, it leads to parameter explosion and ties "depth" to "parameter count." Inspired by RNNs, RGVT repeatedly applies $\Psi$ with the same set of shared parameters $L$ times:
 
 $$\bm{Z} = \Psi(\cdot, \bm{A} \mid \theta)^L(\bm{X}).$$
 
-This decouples parameterization from depth—pre-training learns a single $\theta$, while for each new graph, one only needs to select an appropriate $L$ without re-optimizing the encoder to match specific information propagation ranges.
+This decouples parameterization from depth—pre-training learns a single $\theta$, and for each new graph, one only needs to select an appropriate recursion depth $L$ without re-optimizing the encoder to accommodate the graph's specific information propagation range.
 
 ## Key Experimental Results
 
@@ -88,46 +88,46 @@ Pre-trained on OGBN-Arxiv and transferred to 27 downstream node classification d
 | **RGVT + Linear** | **70.14** | **64.95** | **76.44** | **84.33** | **85.11** | **62.77** | **58.85** | **70.03** |
 | **RGVT + MLP** | **71.11** | **66.37** | **77.12** | **83.98** | **84.86** | **63.87** | **62.48** | **71.13** |
 
-Ours (RGVT) outperforms the best GraphAny variant by +8.93% (MLP) or +7.24% (Linear) on average.
+RGVT outperforms the best GraphAny variant by an average gain of +8.93% (MLP) or +7.24% (Linear).
 
 ### Ablation Study
 
 | Configuration | OGBN-Arxiv | Signed Dense | Unsigned Dense | Sparse | Binary Dense | Binary Sparse | One-hot | Average |
 |----|-----------|---------|---------|-----|--------|--------|--------|-----|
-| RGVT + MLP (Full)| 71.11 | 66.37 | 77.12 | 83.98 | 84.86 | 63.87 | 62.48 | 71.13 |
+| RGVT + MLP (Full) | 71.11 | 66.37 | 77.12 | 83.98 | 84.86 | 63.87 | 62.48 | 71.13 |
 | w/o Non-linearity | 70.22 | 64.53 | 75.89 | 78.82 | 84.16 | 61.12 | 56.13 | 68.12 |
 | w/o Recursion | 70.91 | 63.73 | 73.79 | 82.61 | 83.90 | 53.29 | 54.53 | 65.73 |
 | w/o Both | 70.53 | 61.69 | 75.10 | 77.52 | 84.57 | 53.41 | 54.73 | 64.96 |
 
 ### Key Findings
 - Removing non-linearity results in a 2.31 percentage point drop.
-- Removing recursion leads to a 5.40 percentage point drop.
-- Compared to 12 dataset-specific GNNs, RGVT + MLP outperforms the strongest baseline UniMP by +3.30% (71.13 vs 68.86) on average.
+- Removing recursion results in a 5.40 percentage point drop.
+- Compared with 12 dataset-specific GNNs, RGVT + MLP outperforms the strongest baseline UniMP by +3.30% on average (71.13 vs 68.86).
 
 ## Highlights & Insights
-- **Third Representation Axis**: Breaks the limitations of 2D representations by abstracting connectivity into a "view" dimension orthogonal to features.
-- **Dual Permutation Equivariance**: Provides formal definitions and necessary/sufficient conditions, establishing a theoretical benchmark for cross-domain graph learning.
-- **Node-Feature-Level Dynamic Aggregation**: Taylor expansion reveals that non-linear GVT allows each node-feature pair to possess its own aggregation weight distribution.
-- **Parametrization-Depth Decoupling**: Inspired by RNNs, allowing the model to flexibly choose recursive depth after pre-training.
-- **Transferable Knowledge**: View space knowledge learned from arXiv transfers directly to 27 downstream tasks with entirely different feature sets.
+- **The Third Representation Axis of Graphs**: Breaks the limitations of 2D representation by abstracting connectivity into a "view" dimension orthogonal to the feature dimension.
+- **Conditions for Dual Permutation Equivariance**: The paper provides formal definitions and necessary/sufficient conditions, serving as a theoretical benchmark for cross-domain graph learning.
+- **Node-Feature level Dynamic Aggregation**: Taylor expansion reveals the expressive power of non-linear GVT—each node-feature pair can have its own aggregation weight distribution.
+- **Parametrization-Depth Decoupling**: Inspired by RNNs, the model allows for flexible selection of recursion depth post-pre-training.
+- **Transferable Knowledge**: View space knowledge learned on arXiv can be directly transferred to 27 downstream tasks with completely different feature sets.
 
 ## Limitations & Future Work
-- Design Trade-offs: GVT learns independently across feature dimensions and cannot explicitly model cross-feature interactions.
-- Predictor Training Cost: Requires training a lightweight predictor for each downstream task.
-- Recursive Depth Selection: Requires training multiple predictors to select the optimal $L$ for each dataset.
-- Scope: Primarily focuses on node classification; extensions to edge/graph classification and hypergraphs remain to be explored.
+- Design trade-off—GVT learns independently in each feature dimension and cannot explicitly model cross-feature interactions.
+- Predictor training cost—lightweight predictors must still be trained for each downstream task.
+- Recursive depth selection overhead—requires training multiple predictors to select the optimal $L$ for each dataset.
+- Scope—primarily focused on node classification; expansion to edge/graph classification or hypergraphs remains to be explored.
 
 ## Related Work & Insights
-- **vs. Traditional GNNs (GCN, GAT, GraphSAGE)**: These struggle with cross-graph generalization due to explicit feature transformation matrices; Ours avoids this by calculating in view space.
-- **vs. GraphAny**: GraphAny predicts via attention in relative distance spaces and only outputs labels; Ours is a flexible representation learning scheme supporting various downstream predictors.
-- **vs. Tabular Foundation Models (TabR, TabM)**: These generalize across feature spaces via synthetic data but do not exploit graph structure; Ours utilizes connectivity as a new axis beyond the feature space.
-- **Insights**: (1) The "lifting" approach can be applied to other cross-domain problems; (2) The formal framework for permutation equivariance aids in designing other fully inductive models.
+- **vs Traditional GNNs (GCN, GAT, GraphSAGE)**: These rely on explicit transformation matrices that generalize poorly across graphs; this work avoids such parametrization by computing directly in View Space.
+- **vs GraphAny**: GraphAny relies on attention in relative distance spaces for prediction and can only output labels; this representation learning scheme is more flexible for various downstream predictors.
+- **vs Tabular Foundation Models (TabR, TabM)**: These generalize across feature spaces via synthetic data pre-training but do not utilize graph structure; this work uses connectivity as a new axis beyond the feature space.
+- **Insights**: (1) The "elevation" strategy can be applied to other cross-domain problems; (2) The formal framework for permutation equivariance assists in designing other fully inductive models.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐  Innovative View Space concept; first formalization of fully inductive learning.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐  27 downstream tasks + multiple feature types + detailed ablation + 12 GNN comparisons.
-- Writing Quality: ⭐⭐⭐⭐⭐  Clear logic and rigorous formalization.
-- Value: ⭐⭐⭐⭐⭐  Addresses long-standing challenges in graph learning; lays the foundation for graph foundation models.
+- Novelty: ⭐⭐⭐⭐⭐ Innovative concept of View Space, first formalization of fully inductive learning.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 27 downstream tasks + multiple feature types + detailed ablation + comparison with 12 GNNs.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear logic and rigorous formalization.
+- Value: ⭐⭐⭐⭐⭐ Addresses long-standing graph learning challenges and lays the foundation for graph foundation models.
 
 <!-- RELATED:START -->
 
@@ -137,9 +137,9 @@ Ours (RGVT) outperforms the best GraphAny variant by +8.93% (MLP) or +7.24% (Lin
 
 - [\[ICML 2026\] Message Tuning Outshines Graph Prompt Tuning: A Prismatic Space Perspective](message_tuning_outshines_graph_prompt_tuning_a_prismatic_space_perspective.md)
 - [\[CVPR 2026\] R2G: A Multi-View Circuit Graph Benchmark Suite from RTL to GDSII](../../CVPR2026/graph_learning/r2g_multi_view_circuit_graph_benchmark_suite_from_rtl_to_gdsii.md)
-- [\[CVPR 2026\] Graph-to-Frame RAG: Visual-Space Knowledge Fusion for Training-Free and Auditable Video Reasoning](../../CVPR2026/graph_learning/graph-to-frame_rag_visual-space_knowledge_fusion_for_training-free_and_auditable.md)
 - [\[CVPR 2025\] Coeff-Tuning: A Graph Filter Subspace View for Tuning Attention-Based Large Models](../../CVPR2025/graph_learning/coeff-tuning_a_graph_filter_subspace_view_for_tuning_attention-based_large_model.md)
 - [\[NeurIPS 2025\] Bridging Graph and State-Space Modeling for Intensive Care Unit Length of Stay Prediction](../../NeurIPS2025/graph_learning/bridging_graph_and_state-space_modeling_for_intensive_care_unit_length_of_stay_p.md)
+- [\[ICML 2026\] T-GINEE: A Tensor-Based Multilayer Graph Representation Learning](t-ginee_a_tensor-based_multilayer_graph_representation_learning.md)
 
 </div>
 

@@ -2,149 +2,154 @@
 title: >-
   [Paper Note] PICACO: Pluralistic In-Context Value Alignment of LLMs via Total Correlation Optimization
 description: >-
-  [ICML 2026][Alignment & RLHF][Paper Note] PICACO formalizes the task of "prompting an LLM to adhere to multiple, potentially conflicting human values simultaneously" as maximizing the "conditional Total Correlation (TC) between the value set and responses." Without altering model parameters, it uses an EM-like two-step iteration of "response enhancement + inst
+  [ICML 2026][Alignment & RLHF][Paper Note] PICACO formalizes the challenge of "making an LLM adhere to multiple or even conflicting human values within a single prompt" as maximizing the "conditional Total Correlation (TC) between value sets and responses." Without updating model parameters, it automatically searches for a meta-instruction through an EM-like tw
 tags:
   - ICML 2026
   - Alignment & RLHF
 date: 2026-05-08
-content_hash: 69fe078c149b90c9
+content_hash: 970498f30c2a56f7
 ---
 # PICACO: Pluralistic In-Context Value Alignment of LLMs via Total Correlation Optimization
 
 **Conference**: ICML 2026  
 **arXiv**: [2507.16679](https://arxiv.org/abs/2507.16679)  
 **Code**: https://github.com/Salomeeeee/PICACO  
-**Area**: RLHF Alignment / Value Alignment / In-Context Alignment  
+**Area**: Alignment RLHF / Value Alignment / In-Context Alignment  
 **Keywords**: Pluralistic Value Alignment, In-Context Alignment (ICA), Total Correlation (TC), Meta-instruction Optimization, Black-box Optimization
 
 ## TL;DR
-PICACO formalizes the task of "prompting an LLM to adhere to multiple, potentially conflicting human values simultaneously" as maximizing the "conditional Total Correlation (TC) between the value set and responses." Without altering model parameters, it uses an EM-like two-step iteration of "response enhancement + instruction refinement" to automatically search for a meta-instruction. This enables GPT-3.5, LLaMA-3.1-8B, and Gemini-1.5-Flash to outperform strong baselines like OPRO and Modular Pluralism on five value combinations involving up to 8 values.
+PICACO formalizes the challenge of "making an LLM adhere to multiple or even conflicting human values within a single prompt" as maximizing the "conditional Total Correlation (TC) between value sets and responses." Without updating model parameters, it automatically searches for a meta-instruction through an EM-like two-step iteration of "response enhancement + instruction refinement." PICACO outperforms strong baselines like OPRO and Modular Pluralism on five value evaluation sets containing up to 8 combined values across GPT-3.5, LLaMA-3.1-8B, and Gemini-1.5-Flash.
 
 ## Background & Motivation
 
-**Background**: Compared to the high cost of RLHF or SFT which modify model parameters, **In-Context Alignment (ICA)** directly embeds value descriptions and examples into the prompt during inference. This leverages the LLM's existing knowledge for alignment, offering flexibility, lower costs, and real-time preference switching, thus becoming a new branch of alignment research (e.g., URIAL, OPRO, Modular Pluralism, CICL).
+**Background**: Compared to the high cost of updating model parameters in RLHF/SFT, **In-Context Alignment (ICA)** directly injects value descriptions and examples into the prompt during inference. This leverages the LLM's existing knowledge for alignment, offering flexibility, low cost, and real-time preference switching, which has emerged as a new branch of alignment research (e.g., URIAL, OPRO, Modular Pluralism, CICL).
 
-**Limitations of Prior Work**: Human values are inherently pluralistic and often conflict (e.g., helpful vs. harmless, stimulation vs. tradition). However, when existing ICA methods place multiple values in one prompt, the LLM often **adheres to only one or two while silently ignoring others**—a phenomenon defined as the **Instruction Bottleneck** (Fig. 1 shows GPT-4o reflecting only a subset of values when required to follow multiple Schwartz values).
+**Limitations of Prior Work**: Human values are naturally pluralistic and frequently in conflict (e.g., helpful vs. harmless, stimulation vs. tradition). However, when existing ICA methods package multiple values into a single prompt, LLMs often **attend to only one or two while silently ignoring others**—a phenomenon the authors term the **Instruction Bottleneck** (as shown in Figure 1, where GPT-4o reflects only a subset of Schwartz values in its response).
 
-**Key Challenge**: The LLM’s process of understanding prompts is "agnostic"—the relative weight or suppression between values in a prompt is determined implicitly by the LLM, making it neither visible nor controllable. Methods like person-based MP or community-model-based Modular Pluralism either require heavy manual labor, rely on predefined sets, or handle only a few values, failing to "explicitly" regulate multi-value relationships.
+**Key Challenge**: The LLM's prompt understanding process is "agnostic." The relative strength and suppression relationship between various values within a prompt are determined internally by the LLM, leaving users with no visibility or explicit control. Methods based on manual prompts (URIAL), personas (MP), or multi-community models (Modular Pluralism) either require heavy manual labor, rely on predefined value sets, or can only handle a few values, failing to "explicitly" regulate multi-value relationships.
 
-**Goal**: To automatically discover a meta-instruction capable of carrying $K$ values simultaneously without fine-tuning, heavy labeling, or restricted value sets, ensuring strong alignment for each $v_k$ without introducing redundant wordings unrelated to $v_k$.
+**Goal**: To automatically search for a meta-instruction capable of carrying $K$ values simultaneously—ensuring strong fit for each $v_k$ without introducing redundant rhetoric unrelated to $v_k$—all without fine-tuning, heavy labeling, or restricted value sets.
 
-**Key Insight**: Borrowing **Total Correlation** from information theory: $\text{TC}(\bm{V},\bm{y})=\sum_k I(\bm{v}_k;\bm{y}) - I(\bm{V};\bm{y})$. This metric rewards the mutual information between each single value and the response while penalizing redundant overlap of the value set, mapping 1:1 to the requirements of "multi-value balance." By treating the LLM as a black box and the meta-instruction $\bm{e}$ as the optimizable variable, the problem becomes one of **Black-Box Optimization**.
+**Key Insight**: Borrowing from information theory, **Total Correlation** $\text{TC}(\bm{V},\bm{y})=\sum_k I(\bm{v}_k;\bm{y}) - I(\bm{V};\bm{y})$ exactly matches the needs of "multi-value balancing": it rewards the mutual information of each individual value with the response while penalizing redundant overlap across the value set. By treating the LLM as a black box and the meta-instruction $\bm{e}$ as the optimizable variable, the problem becomes one of **Black-Box Optimization**.
 
-**Core Idea**: Derive an estimable lower bound for $\text{TC}_{\bm{e}}(\bm{V},\bm{y}|\bm{x})$ and apply an EM-like two-step iteration—one step to enhance the "high-TC response pool" and another to select the next meta-instruction maximizing TC on that pool. This transforms "multi-value balance" from a prompt engineering challenge into an optimization problem with an explicit objective function.
+**Core Idea**: PICACO derives an estimable lower bound for $\text{TC}_{\bm{e}}(\bm{V},\bm{y}|\bm{x})$ and employs an EM-like two-step iteration—one step to enhance a "high TC response pool" and another to select the next meta-instruction that maximizes TC over that pool. This **transforms "multi-value balancing" from a prompt engineering heuristic into an optimization problem with an explicit objective function**.
 
 ## Method
 
 ### Overall Architecture
-**Input**: A set of task prompts $\mathcal{X}=\{\bm{x}_i\}_{i=1}^N$, target LLM $p$, value set $\bm{V}=\{\bm{v}_k\}_{k=1}^K$, textual observations $\bm{s}$ (few-shot examples reflecting these values), and a seed meta-instruction $\bm{e}^0$. **Output**: The meta-instruction $\bm{e}^T$ after $T$ iterations, which is prepended to prompts during inference to align $p$ with all values in $\bm{V}$.
+**Input**: A set of task prompts $\mathcal{X}=\{\bm{x}_i\}_{i=1}^N$, a target LLM $p$, a value composition $\bm{V}=\{\bm{v}_k\}_{k=1}^K$, textual observations $\bm{s}$ (few-shot examples embodying these values), and a seed meta-instruction $\bm{e}^0$. **Output**: An optimized meta-instruction $\bm{e}^T$ after $T$ iterations, which can be prepended to any task prompt to align $p$ with all values in $\bm{V}$ during inference.
 
-The pipeline follows an EM-like loop (Alg. 1): it maintains two response pools for each $\bm{x}_i$—an **aligned pool** $\bm{R}^a_i$ (top $M_1$ samples from $p_{\bm{e}}$ based on TC scores) and a **noisy pool** $\bm{R}^n_i$ (top $M_2$ "counter-examples" from raw $p$ that merely repeat $\bm{s}$). "Response enhancement" and "instruction refinement" are executed alternately until $\bm{e}^t$ converges.
+The pipeline follows an EM-like loop (Alg. 1): it maintains two response pools for each $\bm{x}_i$—an **aligned pool** $\bm{R}^a_i$ (sampled from prompt-instructed $p_{\bm{e}}$ and filtered for top $M_1$ TC scores) and a **noisy pool** $\bm{R}^n_i$ (sampled from the bare LLM $p$, selecting $M_2$ "negative examples" that merely parrot $\bm{s}$). Iterations alternate between "Response Enhancement" and "Instruction Refinement" until $\bm{e}^t$ converges.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    IN["Input: Task X, Target LLM p,<br/>Value Set V, Observation s, Seed Instruction e⁰"]
-    TC["TC Objective + Lower Bound<br/>Value Conformity q_ω Reward − Redundancy q_φ Penalty"]
+    IN["Input: Task X · Target LLM p<br/>Value set V · Observations s · Seed e⁰"]
+    TC["TC Objective + Lower Bound<br/>Conformity Reward q_ω − Redundancy Penalty q_φ"]
     IN --> TC
-    subgraph EM["EM-like Iteration (Frozen LLM, Optimize e)"]
+    subgraph EM["EM-like Iteration (Frozen LLM, Optimize instruction e)"]
         direction TB
-        RE["Response Enhancement<br/>Sample p_e, pick top-M1 TC → aligned pool<br/>Sample raw p, pick M2 repeat-s → noisy pool"]
-        POOL["Aligned + Noisy Pools<br/>Accumulated over rounds; noisy pool as baseline"]
-        IR["Instruction Refinement<br/>Select next e via argmax over pools"]
+        RE["Response Enhancement<br/>Sample p_e, pick top-M1 TC → aligned pool<br/>Sample bare p, pick top-M2 parroting s → noisy pool"]
+        POOL["Aligned + Noisy Response Pools<br/>Accumulated across rounds; noisy pool as baseline"]
+        IR["Instruction Refinement<br/>Select next e using argmax over pools"]
         RE --> POOL --> IR
         IR -->|Not converged| RE
     end
     TC --> RE
-    IR -->|Converged| OUT["Output e^T: Prepend to<br/>prompt to align all values in V"]
+    IR -->|Converged| OUT["Output e^T: Prepend to<br/>prompts for multi-value alignment"]
 ```
 
 ### Key Designs
 
-1.  **TC Objective + Estimable Lower Bound**:
-    - **Function**: Formalizes pluralistic alignment as an optimization problem with an explicit goal rather than manual trial-and-error.
-    - **Mechanism**: Optimizes conditional total correlation $\text{TC}_{\bm{e}}(\bm{V},\bm{y}|\bm{x})=\sum_{k=1}^K I_{\bm{e}}(\bm{v}_k;\bm{y}|\bm{x})-I_{\bm{e}}(\bm{V};\bm{y}|\bm{x})$. It uses the Barber-Agakov lower bound for the first term and a conditional version of the CLUB upper bound for the second. The resulting bound is $\text{TC}_{\bm{e}} \geq \mathbb{E}_{\hat p(\bm{x})}\{\beta\sum_k \mathbb{E}_{p_{\bm{e}}}[\log q_{\bm{\omega}}(\bm{v}_k|\bm{x},\bm{y})] - \mathbb{E}_{p_{\bm{e}}}[\log q_{\bm{\phi}}(\bm{s}|\bm{x},\bm{y})] + \mathbb{E}_{p}[\log q_{\bm{\phi}}(\bm{s}|\bm{x},\bm{y})]\}$, where $q_{\bm{\omega}}$ is an LLM-as-judge value evaluator and $q_{\bm{\phi}}$ uses cosine similarity between $\bm{s},\bm{x},\bm{y}$ to detect "redundant repetition of examples."
-    - **Design Motivation**: Explicitly separates "value conformity" from "instruction redundancy," rewarding multi-value adherence while penalizing superficial imitation. This addresses the "superficial alignment" issue noted by Zhou et al. 2023.
+1.  **TC Objective + Lower Bound**:
+    *   **Function**: Formalizes pluralistic alignment as an optimization problem with a clear objective, replacing trial-and-error prompt engineering.
+    *   **Mechanism**: Targets the conditional total correlation $\text{TC}_{\bm{e}}(\bm{V},\bm{y}|\bm{x})=\sum_{k=1}^K I_{\bm{e}}(\bm{v}_k;\bm{y}|\bm{x})-I_{\bm{e}}(\bm{V};\bm{y}|\bm{x})$. It applies the Barber-Agakov bound to the first term and extends the CLUB upper bound for the conditional second term to derive: $\text{TC}_{\bm{e}} \geq \mathbb{E}_{\hat p(\bm{x})}\{\beta\sum_k \mathbb{E}_{p_{\bm{e}}}[\log q_{\bm{\omega}}(\bm{v}_k|\bm{x},\bm{y})] - \mathbb{E}_{p_{\bm{e}}}[\log q_{\bm{\phi}}(\bm{s}|\bm{x},\bm{y})] + \mathbb{E}_{p}[\log q_{\bm{\phi}}(\bm{s}|\bm{x},\bm{y})]\}$, where $q_{\bm{\omega}}$ is an LLM-as-judge value evaluator and $q_{\bm{\phi}}$ uses cosine similarity between $\bm{s}, \bm{x}, \bm{y}$ to characterize "parrotting redundancy."
+    *   **Design Motivation**: Explicitly splits "value conformity" and "instruction redundancy." **One term rewards pluralistic adherence while the other penalizes shallow imitation/repetition**, theoretically addressing the "superficial alignment" problem noted by Zhou et al. 2023.
 
 2.  **EM-like Iteration: Response Enhancement + Instruction Refinement**:
-    - **Function**: Turns the bound into an executable algorithm while keeping LLM parameters frozen.
-    - **Mechanism**: In round $t$: (a) **Response Enhancement**: Fix $\bm{e}^{t-1}$, sample $\{\bm{y}_{i,j}\}$ from $p_{\bm{e}^{t-1}}$, and add top-$M_1$ samples with the highest $\log q_{\bm{\omega}}(\bm{v}_k|\cdot)-\log q_{\bm{\phi}}(\bm{s}|\cdot)$ to the aligned pool. Sample from raw $p$ to fill the noisy pool with $M_2$ "repetition" counter-examples. (b) **Instruction Refinement**: Fix the pools and select $\bm{e}^t=\arg\max_{\bm{e}}\frac{1}{N}\sum_i\{\sum_{j=1}^{M_1}[\sum_k\log\frac{q_{\bm{\omega}}^{\beta}}{q_{\bm{\phi}}^{1/K}}]p_{\bm{e}}(\bm{y}_{i,j}^t|\bm{x}_i)+\sum_{j=1}^{M_2}p(\hat{\bm{y}}_{i,j}|\bm{x}_i)\log q_{\bm{\phi}}\}$ by scoring candidate instructions.
-    - **Design Motivation**: Since gradients cannot be backpropagated through discrete prompts, EM-like alternating optimization is the most natural choice. **Accumulating pools across rounds** instead of re-sampling stabilizes the process and reduces LLM call costs ($N=50, M_1=10, M_2=15, T=10$).
+    *   **Function**: Implements the lower bound into an executable algorithm with frozen LLM parameters.
+    *   **Mechanism**: In round $t$: (a) **Response Enhancement**: Fix $\bm{e}^{t-1}$, sample responses $\{\bm{y}_{i,j}\}$ from $p_{\bm{e}^{t-1}}$, calculate $q_{\bm{\omega}}, q_{\bm{\phi}}$, and add the top-$M_1$ samples maximizing $\log q_{\bm{\omega}}(\bm{v}_k|\cdot)-\log q_{\bm{\phi}}(\bm{s}|\cdot)$ to the aligned pool. Simultaneously, sample from bare $p$ to populate the noisy pool with $M_2$ "negative examples" showing high $q_{\bm{\phi}}$. (b) **Instruction Refinement**: Fix pools and select $\bm{e}^t=\arg\max_{\bm{e}}\frac{1}{N}\sum_i\{\sum_{j=1}^{M_1}[\sum_k\log\frac{q_{\bm{\omega}}^{\beta}}{q_{\bm{\phi}}^{1/K}}]p_{\bm{e}}(\bm{y}_{i,j}^t|\bm{x}_i)+\sum_{j=1}^{M_2}p(\hat{\bm{y}}_{i,j}|\bm{x}_i)\log q_{\bm{\phi}}\}$ to maximize the probability of "high TC responses" while suppressing "redundant noisy responses." This is done by scoring a set of candidate instructions $\{\bm{e}_k\}$.
+    *   **Design Motivation**: Frozen parameters and discrete prompt space necessitate gradient-free optimization; EM-like alternating optimization is the most natural choice for "executable" and "theoretically justified" optimization. **Accumulating pools across rounds** rather than re-sampling makes expensive LLM calls stable and cost-effective ($N=50, M_1=10, M_2=15, T=10$).
 
-3.  **Aligned + Noisy Dual Pools (Redundancy Regularization)**:
-    - **Function**: Prevents optimization from collapsing into "fake alignment" where the model merely repeats keywords from $\bm{s}$.
-    - **Mechanism**: The term $\mathbb{E}_p[\log q_{\bm{\phi}}(\bm{s}|\bm{x},\bm{y})]$ from the raw model acts as a "baseline repetition probability." The objective uses a "relative redundancy" term $(-\log q_{\bm{\phi}}+\log q_{\bm{\phi}}^{\text{baseline}})$, penalizing $\bm{e}$ only if it causes *more* repetition than the raw model.
-    - **Design Motivation**: Schwartz values are particularly prone to fake alignment where models state the value name without substance. The noisy pool acts as a reference distribution, forcing the model to learn values while maintaining content relevance.
+3.  **Aligned + Noisy Response Pools (Redundancy Regularization)**:
+    *   **Function**: Prevents optimization from collapsing into "fake alignment" where the model simply repeats keywords from $\bm{s}$.
+    *   **Mechanism**: The third term $\mathbb{E}_p[\log q_{\bm{\phi}}(\bm{s}|\bm{x},\bm{y})]$ comes from the bare $p$ (without meta-instruction), acting as a "baseline redundancy probability." The final objective uses $-\log q_{\bm{\phi}}+\log q_{\bm{\phi}}^{\text{baseline}}$ as a "relative redundancy" term—penalizing $\bm{e}$ only if it makes the model **more redundant than the bare model**, avoiding mindless suppression of all similarity.
+    *   **Design Motivation**: Analysis shows that Schwartz values are prone to fake alignment—responses that simply repeat value names without substance but receive high conformity scores. The noisy pool acts as a "reference distribution," compelling the model to learn values while maintaining content relevance (as observed in Finding B of section 4.2).
 
 ### Loss & Training
-No parameter training is involved. The optimizer uses an LLM as a prompt sampler. $q_{\bm{\omega}}$ is GPT-4o-mini; $q_{\bm{\phi}}$ is cosine similarity between $\bm{s},\bm{x},\bm{y}$. Hyperparameters include $N=50, M_1=10, M_2=15, T=10$, and $\beta$ to control the trade-off between conformity and redundancy. LLM call volume grows linearly with $T$ due to pool accumulation.
+No parameter training is involved. The optimizer uses the LLM itself as a prompt sampler (the main experiment uses the same LLM as the target; using GPT-4o instead shows minimal impact per Fig. 4a). $q_{\bm{\omega}}$ is GPT-4o-mini, and $q_{\bm{\phi}}$ is cosine similarity between $\bm{s}, \bm{x}, \bm{y}$. Hyperparameters include $N=50, M_1=10, M_2=15, T=10$, and $\beta$ to control the trade-off between conformity and redundancy. LLM calls scale linearly with $T$ due to cross-iteration pool accumulation.
 
 ## Key Experimental Results
 
 ### Main Results
-Testing on 5 value sets (Helpfulness-4, Harmlessness-4, HH Balance-8, Confucianism-4, Modern Liberalism-4) across 3 target LLMs (GPT-3.5-Turbo, LLaMA-3.1-8B-Instruct, Gemini-1.5-Flash) using GPT-4o as judge. Friedman test $p<10^{-4}$ indicates statistical significance.
+Evaluated on 5 value compositions (Helpfulness-4, Harmlessness-4, HH Balance-8, Confucianism-4, Modern Liberalism-4) across 3 target LLMs (GPT-3.5-Turbo, LLaMA-3.1-8B-Instruct, Gemini-1.5-Flash) with GPT-4o as judge. Friedman tests ($p < 10^{-4}$) confirm statistical significance.
 
-| Target Model | Value Set | PICACO | OPRO | URIAL | Modular | Q+IF |
+| Target Model | Value Composition | PICACO | OPRO | URIAL | Modular | Q+IF |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | GPT-3.5-Turbo | Confucianism-4 | **3.788** | 3.713 | 3.622 | 3.567 | 3.306 |
 | GPT-3.5-Turbo | Liberalism-4 | **3.135** | 2.961 | 3.030 | 3.036 | 2.728 |
 | GPT-3.5-Turbo | HH Balance-8 | 4.257 | **4.286** | 4.097 | 4.245 | 4.082 |
 | GPT-3.5-Turbo | Helpfulness-4 | **4.287** | **4.287** | 4.164 | 4.236 | 4.247 |
 | LLaMA-3.1-8B | Confucianism-4 | **3.471** | 3.437 | 3.530 | 3.427 | 3.164 |
+| LLaMA-3.1-8B | HH Balance-8 | 4.110 | **4.114** | 4.085 | 3.793 | 3.977 |
 
-Observation: PICACO is most stable on Schwartz-type values and competes with OPRO on HH-8. Its **advantage expands as the number of values increases**.
+**Observation**: PICACO is most stable on Schwartz categories (Confucianism / Liberalism) and competitive with OPRO on HH-8. Its **advantage grows as the number of values increases**.
 
 ### Ablation Study
 
-| Configuration | Average Performance Drop | Explanation |
+| Configuration | Avg. Decline (3 Compos) | Description |
 | :--- | :--- | :--- |
 | Full PICACO | — | Complete method |
-| w/o redundancy terms $q_{\bm{\phi}}$ | Significant drop | Leads to fake alignment / copying $\bm{s}$ |
-| w/o EM iteration (1 round only) | Significant drop | Degenerates to single-step optimization; loses pool benefits |
-| w/o Response Enhancement | Significant drop | Lacks supervision for instruction refinement |
-| w/o noisy pool $M_2$ | Significant drop | Redundancy term lacks baseline; over-penalizes correlation |
+| w/o redundancy terms $q_{\bm{\phi}}$ | Significant | Removes penalty → fake alignment / parroting $\bm{s}$ occurs |
+| w/o EM iteration (1 round) | Significant | Degenerates to single-step optimization; loses accumulated pools |
+| w/o Response Enhancement | Significant | No high-TC pool → refinement lacks supervision |
+| w/o Instruction Refinement | Significant | Equivalent to sampling under fixed $\bm{e}^0$; cannot find better instructions |
+| w/o noisy pool $M_2$ | Significant | Redundancy term lacks baseline; prone to over-suppressing relevance |
 
 ### Key Findings
-- **Scalability with Value Count**: As HH values increase from 2 to 8, PICACO maintains the largest delta over baselines and the lowest variance across values, suggesting TC optimization naturally balances attention.
-- **Sensitivity of Small Models**: On LLaMA-3.1-8B, nearly half of the baselines performed worse than raw queries, while PICACO remained stable, verifying it mitigates the Instruction Bottleneck in weaker models.
-- **Cost-Performance tradeoff**: PICACO + GPT-3.5-Turbo approaches the alignment level of more expensive models.
-- **Jailbreak Resistance**: Under jailbreak templates, PICACO results in significantly lower toxicity and higher helpfulness compared to OPRO, attributed to the accumulation of "helpful refusal" patterns in the aligned pool.
-- **OOD Generalization**: On unseen tasks (Value Portrait), PICACO maintains its lead, suggesting meta-instructions are reusable across task types.
+*   **Scalability with Value Count**: As HH values increase from 2 to 8, PICACO maintains the largest delta relative to the bare model and the lowest coefficient of variation in conformity—indicating TC optimization naturally balances attention across multiple values.
+*   **Sensitivity of Smaller Models**: On LLaMA-3.1-8B, nearly half of the baselines performed worse than the bare model, while PICACO remained stable—confirming that the Instruction Bottleneck is more severe in weaker models and PICACO mitigates it.
+*   **Cost-Performance Trade-off**: PICACO + GPT-3.5-Turbo approaches the alignment level of more expensive models, offering a practical alternative.
+*   **Jailbreak Resistance**: Under jailbreak templates (Andriushchenko et al. 2025), PICACO yields significantly fewer toxic responses than OPRO/Modular while maintaining higher helpfulness, attributed to the accumulation of "helpful refusal" patterns in the aligned pool and $q_{\bm{\phi}}$'s penalty on superficial safety scripts.
+*   **OOD Generalizability**: PICACO maintains its lead on unseen "Value Portrait" tasks (creative writing, thread replies, etc.), suggesting meta-instructions are reusable across task types.
+*   **Judge Robustness**: Replacing the judge with a weaker model (Moonshot-V1-8k) still shows PICACO outperforming OPRO, indicating the optimization is not merely overfitting a specific judge.
 
 ## Highlights & Insights
-- **Objective Alignment**: Total Correlation perfectly formalizes the intuition of "reflecting every value + minimizing set redundancy." It shifts ICA from manual trial-and-error to a principled optimization problem.
-- **Anti-Fake Alignment**: The $q_{\bm{\phi}}$ + noisy pool mechanism directly penalizes superficial alignment (copying demos), a mechanism that could be applied to any demonstration-based ICL method.
-- **EM + Accumulation**: Amortizing the cost of LLM calls across rounds and selecting from "historical bests" is a key engineering trick for practical black-box prompt optimization.
-- **Generalizability**: The TC framework can be extended to handle explicit conflicts and dynamic weights, providing a clear interface for future work.
+*   **Perfect Alignment with the Objective**: Total Correlation simultaneously formalizes "reflecting every value" and "avoiding collective redundancy." This elegance—where the problem statement matches the optimization objective—is a major strength.
+*   **Redundancy as an Enemy of Fake Alignment**: Using $q_{\bm{\phi}}$ and a noisy pool to check for "parrotting" is a rare explicit anti-superficial-alignment mechanism in prompt optimization that could generalize to any demonstration-based method.
+*   **Practical EM-like Iteration**: Spreading the cost of LLM sampling across rounds and using historical accumulation for the "top-$M_1$" selection is a critical engineering trick for making black-box LLM tuning feasible.
+*   **Theoretical Extensibility**: While the TC framework handles non-conflicting values naturally, the authors generalize it to "explicit conflict" and "dynamic weights," providing clear interfaces for future work.
 
 ## Limitations & Future Work
-- Primarily addresses the **Instruction Bottleneck**; for **inherently conflicting values** (e.g., Tradition vs. Hedonism), it encourages compromise rather than offering adjustable priority weights.
-- Reliance on LLM-as-judge ($q_{\bm{\omega}}$): Despite high human correlation, some "high-scoring but empty" fake alignment still exists.
-- Cosine similarity $q_{\bm{\phi}}$ is only a proxy; it cannot capture deep semantic repetition obscured by paraphrasing.
-- The cost of optimization (linear with $T$) is still higher than zero-shot prompting, requiring research into amortized optimizers to reduce per-query costs.
+*   **Hard Conflicts**: PICACO primarily addresses the **Instruction Bottleneck** (ensuring values are received) and encourages integration through "compromise." It does not currently provide adjustable priority weights for hard conflicts (e.g., Tradition vs. Hedonism), though this is addressed in theoretical extensions.
+*   **Residual Fake Alignment**: Despite $q_{\bm{\phi}}$, "high score but empty content" cases still occur in Schwartz values. Future work could improve $q_{\bm{\phi}}$ beyond simple cosine similarity to capture semantic parrotting with paraphrasing.
+*   **Computational Cost**: Multiple sampling and EM iterations still result in thousands of LLM calls during optimization. Investigating "amortized" optimizers to reduce per-query costs is necessary.
+*   **Dynamic Value Sets**: The current framework uses a closed set of 4-8 values; its ability to handle "online" additions or removals of values in real-time user scenarios remains to be demonstrated.
 
 ## Related Work & Insights
-- **vs. OPRO**: Both are iterative ICA methods. PICACO replaces OPRO’s "raw score" with a TC lower bound and redundancy penalty, making it superior for large value sets.
-- **vs. URIAL**: URIAL relies on high-quality manual meta-instructions. PICACO is automated and shows better transferability to OOD tasks where manual demos might fail.
-- **vs. Modular Pluralism**: PICACO avoids the cost of multi-model aggregation and demonstrates better balance as value counts grow.
-- **Insights**: The TC optimization approach can be generalized to multi-task prompt optimization, RAG document integration, and multi-intent Agent systems where "balance vs. redundancy" is a bottleneck.
+*   **vs OPRO**: Both are iterative ICA methods. OPRO uses scores as a black-box objective; PICACO replaces this with a TC lower bound and explicit redundancy terms, proving significantly more effective in high-value-count or Schwartz-type scenarios.
+*   **vs URIAL**: URIAL relies on high-quality manual meta-instructions and demos. PICACO's optimized prompts show better generalizability, as URIAL's performance drops significantly when manual components are removed or tasks are OOD.
+*   **vs Modular Pluralism**: Modular Pluralism requires multiple fine-tuned community models; PICACO is training-free and shows better alignment balance as more values are added.
+*   **vs Constitutional AI**: CAI injects values into model weights; PICACO is inference-only, allowing "hot-swapping" of value compositions without re-training.
+*   **Insights**: The TC optimization objective can be transferred to multi-task prompt optimization, multi-document RAG systems, and Agent systems requiring the simultaneous satisfaction of multiple user intents.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐
-- Writing Quality: ⭐⭐⭐⭐
-- Value: ⭐⭐⭐⭐⭐
+*   **Novelty**: ⭐⭐⭐⭐⭐ First application of Total Correlation to ICA; elegantly addresses pluralistic balance and fake alignment.
+*   **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Broad coverage: 5 value sets, 3 LLMs, 9 baselines, significance tests, human eval, OOD, and jailbreak.
+*   **Writing Quality**: ⭐⭐⭐⭐ Complete derivations and consistent terminology, though finding labels in section 4.2 are deeply nested.
+*   **Value**: ⭐⭐⭐⭐⭐ Training-free, black-box compatible, and hot-swappable value sets make it highly relevant for industrial LLM applications.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICML 2026\] VALUEFLOW: Toward Pluralistic and Steerable Value-based Alignment in Large Language Models](valueflow_toward_pluralistic_and_steerable_value-based_alignment_in_large_langua.md)
 - [\[ICML 2026\] Quantifying the Salience of Geo-Cultural Values for Pluralistic Safety Alignment](quantifying_the_salience_of_geo-cultural_values_for_pluralistic_safety_alignment.md)
-- [\[ICML 2026\] Toward Stable Value Alignment: Introducing Independent Modules for Consistent Value Guidance](toward_stable_value_alignment_introducing_independent_modules_for_consistent_val.md)
 - [\[ICML 2026\] Towards Context-Invariant Safety Alignment for Large Language Models](towards_context-invariant_safety_alignment_for_large_language_models.md)
-- [\[ACL 2025\] Internal Value Alignment in Large Language Models through Controlled Value Vector Activation](../../ACL2025/llm_alignment/internal_value_alignment_in_large_language_models_through_controlled_value_vecto.md)
-- [\[ACL 2026\] How Value Induction Reshapes LLM Behaviour](../../ACL2026/llm_alignment/how_value_induction_reshapes_llm_behaviour.md)
+- [\[ICML 2026\] Toward Stable Value Alignment: Introducing Independent Modules for Consistent Value Guidance](toward_stable_value_alignment_introducing_independent_modules_for_consistent_val.md)
+- [\[ICML 2026\] The Realignment Problem: When Right becomes Wrong in LLMs](the_realignment_problem_when_right_becomes_wrong_in_llms.md)
 
 </div>
 

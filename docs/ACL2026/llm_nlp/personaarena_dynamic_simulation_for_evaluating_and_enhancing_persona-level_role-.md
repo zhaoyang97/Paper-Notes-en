@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] PersonaArena: Dynamic Simulation for Evaluating and Enhancing Persona-Level Role-Playing in Large Language Models
 description: >-
-  [ACL 2026][LLM (Other)][LLM-as-Judge] PersonaArena constructs 1,000 fine-grained personas from real-world user-generated content and evaluates/enhances LLM persona-level role-playing capabilities through dynamic social simulation and multi-judge debates.
+  [ACL 2026][LLM (Other)][LLM-as-Judge] PersonaArena utilizes user-generated content to construct 1,000 fine-grained personas and evaluates and enhances the persona-level role-playing capabilities of LLMs through dynamic social simulations and multi-judge debates.
 tags:
   - ACL 2026
   - LLM (Other)
   - LLM-as-Judge
   - DPO
 date: 2026-05-08
-content_hash: dfd647ecbca94b7f
+content_hash: 13b7c48254eb4918
 ---
 # PersonaArena: Dynamic Simulation for Evaluating and Enhancing Persona-Level Role-Playing in Large Language Models
 
@@ -17,75 +17,81 @@ content_hash: dfd647ecbca94b7f
 **arXiv**: [2605.17044](https://arxiv.org/abs/2605.17044)  
 **Code**: https://aka.ms/personaarena  
 **Area**: LLM Role-Playing Evaluation / Persona-level Simulation  
-**Keywords**: Role-Playing, Persona Evaluation, Multi-agent Simulation, LLM-as-Judge, DPO
+**Keywords**: Role-playing, Persona Evaluation, Multi-agent Simulation, LLM-as-Judge, DPO
 
 ## TL;DR
-PersonaArena constructs 1,000 fine-grained personas from real-world user-generated content and evaluates/enhances LLM persona-level role-playing capabilities through dynamic social simulation and multi-judge debates.
+PersonaArena utilizes user-generated content to construct 1,000 fine-grained personas and evaluates and enhances the persona-level role-playing capabilities of LLMs through dynamic social simulations and multi-judge debates.
 
 ## Background & Motivation
-**Background**: LLMs are increasingly utilized as social companions, virtual characters, and social simulation agents. Role-playing capability requires models not only to know character settings but also to maintain behavioral consistency and emotional authenticity across multi-turn interactions, responding to changing scenarios in a persona-congruent manner.
+**Background**: LLMs are increasingly used as social companions, virtual characters, and social simulation agents. Role-playing capability requires models not only to know character settings but also to maintain behavioral consistency and emotional authenticity over multi-turn interactions, responding to scene changes in a manner consistent with the persona.
 
-**Limitations of Prior Work**: Most role-playing research focuses on character-level settings from fiction, movies, or celebrities. These characters often exist in popular culture, allowing models to rely on memorizing common knowledge or imitating exaggerated lines. Persona-level research focuses on the occupations, experiences, values, and social behaviors of ordinary people, but existing evaluations often rely on static QA or superficial metrics, making it difficult to observe long-term consistency in realistic social scenarios.
+**Limitations of Prior Work**: A large volume of role-playing research focuses on character-level settings from novels, films, and celebrities. These characters often exist in popular culture, and models may simply recite common knowledge or mimic exaggerated lines. Persona-level research focuses more on the occupations, experiences, values, and social behaviors of ordinary people, but existing evaluations often stop at static QA or superficial metrics, making it difficult to observe long-term consistency in realistic social scenarios.
 
-**Key Challenge**: Persona expression inherently occurs within dynamic interactions, yet mainstream evaluations often compress it into single-turn QA or identity recognition. A model's ability to answer "who am I" does not guarantee it can consistently act as that person across complex social events.
+**Key Challenge**: Persona expression inherently occurs in dynamic interactions, whereas mainstream evaluations often compress it into single-turn QA or identity recognition. A model’s ability to answer "who am I" does not imply it can consistently act like that person across complex social events.
 
-**Goal**: The authors aim to build a dynamic simulation framework to elicit persona behavioral trajectories within controllable yet realistic multi-agent social environments, evaluating dimensions like fidelity, coherence, and adaptability using a robust multi-judge mechanism.
+**Goal**: The authors aim to construct a dynamic simulation framework to elicit the persona behavioral trajectories of models within controllable yet realistic multi-agent social environments, using a robust multi-judge mechanism to evaluate dimensions such as fidelity, coherence, and adaptability.
 
-**Key Insight**: The paper observes that user-generated content, such as blogs, naturally contains personal experiences, values, and social expressions. A persona bank is extracted from Blog Authorship data, where the LLM under test acts as the protagonist interacting with NPCs and the environment.
+**Key Insight**: The paper observes that user-generated content such as blogs naturally contains personal experiences, values, and social expressions. Thus, a persona bank is extracted from Blog Authorship data, and the tested LLM acts as the protagonist interacting with NPCs and the environment.
 
-**Core Idea**: Replace static persona QA with dynamic social simulation and utilize high-quality simulation trajectories as SFT/DPO data to enhance the model's role-playing capabilities.
+**Core Idea**: Replace static persona QA with dynamic social simulation and use high-quality simulation trajectories as SFT/DPO data to enhance the model's role-playing capabilities.
 
 ## Method
-PersonaArena serves as both an evaluation framework and a data generation framework. It transforms long-term text from ordinary users into persona cards, places these personas into dynamic scenarios, and has the tested model play the protagonist. The system records the interaction trajectory, which is then scored by multiple LLM judges independently, with disagreements resolved through debate-based arbitration.
+PersonaArena serves as both an evaluation framework and a data generation framework. It first transforms long-term text content from ordinary individuals into persona cards, then places these personas into dynamic scenarios where the tested model plays the protagonist. The system records the entire interaction trajectory, which is finally scored independently by multiple LLM judges, with disagreements resolved through debate-based arbitration when necessary.
 
 ### Overall Architecture
-Each scenario is defined as $A=(P,S,E)$, where $P$ is the set of personas, $S$ is the interaction scenario, and $E$ is the evaluation engine. The process consists of three phases: scenario initialization, sandbox social simulation, and multi-judge evaluation.
+Each scenario consists of $A=(P,S,E)$, where $P$ is the set of personas, $S$ is the interaction scenario, and $E$ is the evaluation engine. The process is divided into three stages: scenario initialization, sandbox social simulation, and multi-judge evaluation.
 
-During scenario initialization, the Environment Agent generates realistic social events, time, location, the protagonist, and 2 to 3 NPCs based on the target persona. During the simulation phase, the tested LLM controls the protagonist, while NPCs and the Environment Agent are controlled by fixed strong models to ensure consistent interaction conditions across different tested models. In the evaluation phase, multiple LLM judges score the complete trajectory across 8 dimensions. In case of significant disagreement, an arbiter aggregates arguments and evidence to provide a final score.
+During scenario initialization, the Environment Agent generates realistic social events, times, locations, a protagonist, and 2 to 3 NPCs based on the target persona. During the simulation phase, the tested LLM controls the protagonist, while NPCs and the Environment Agent are controlled by fixed strong models to ensure consistent interaction conditions across different tested models. During the evaluation phase, multiple LLM judges score the complete trajectory across 8 dimensions and provide a final score through an arbiter who synthesizes arguments and evidence in cases of significant disagreement.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    subgraph PB["Construct Persona Bank from User-Generated Content"]
+    subgraph PB["Constructing Persona Bank from User-Generated Content"]
         direction TB
         A["Blog UGC<br/>19k Users / 681k Posts"] --> B["Filtering + Anonymization"]
-        B --> C["LLM Inferred Narrative Descriptions<br/>+ 6 Structured Fact Categories"]
-        C --> D["1,000 Fine-grained Personas"]
+        B --> C["LLM Infers Narrative Descriptions<br/>+ 6 Categories of Structured Facts"]
+        C --> D["1,000 Fine-Grained Personas"]
     end
-    D --> E["Scenario Initialization<br/>Env Agent generates social events + 2-3 NPCs"]
+    D --> E["Scenario Initialization<br/>Environment Agent Generates Social Events + 2-3 NPCs"]
     subgraph SB["Dynamic Social Sandbox and Environment Agent"]
         direction TB
-        E --> F["Tested LLM plays protagonist (BDI: Self/Env-Belief)<br/>↔ NPC multi-turn interaction"]
-        F --> G["Environment Agent monitors 5 persona checkpoints"]
-        G -->|Dimensions insufficiently expressed| F
-        G -->|All five dimensions touched| H["Early stopping to finalize trajectory"]
+        E --> F["Tested LLM Plays Protagonist (BDI: Self/Env-Belief)<br/>↔ NPC Multi-turn Interaction"]
+        F --> G["Environment Agent Monitors 5 Persona Checkpoints"]
+        G -->|Dimensions Under-expressed| F
+        G -->|All Five Dimensions Covered| H["Early Stopping to Finalize Trajectory"]
     end
     subgraph EV["Multi-Judge Debate and Trajectory Post-training"]
         direction TB
-        H --> I["Multiple LLM judges score 8 dimensions independently"]
-        I -->|Low disagreement| J["Take average"]
-        I -->|High disagreement| K["Debate: Reasons + Evidence<br/>Arbiter provides reconciled score"]
-        J --> L["High-score trajectories → SFT; Large score-gap trajectories → DPO"]
+        H --> I["Multiple LLM Judges Score 8 Dimensions Independently"]
+        I -->|Low Disagreement| J["Take Average"]
+        I -->|High Disagreement| K["Debate: Rationale + Evidence<br/>Arbiter Provides Reconciled Score"]
+        J --> L["High-score Trajectories → SFT; Large Score Gaps for Same Persona → DPO"]
         K --> L
     end
 ```
 
 ### Key Designs
 
-**1. Constructing Persona Bank: Replacing hand-written profiles with authentic long-term text**
+**1. Constructing Persona Bank from User-Generated Content: Replacing Hand-written Personas with Long-term Text from Real People**
 
-Hand-written or fictional celebrity profiles often contain only labels like name and occupation, allowing models to cheat using common knowledge or exaggerated imitation. PersonaArena sources data from over 19k users and 681k blog posts. After filtering and anonymizing private information, LLMs infer narrative descriptions and structured facts across six dimensions: demographic, occupation, personality traits, values, interests, and experiences. These personas are grounded in real experiences rather than just tags, making them suitable for testing "daily social authenticity" rather than "celebrity line recitation."
+Hand-written or fictional celebrity personas often only have labels like name and occupation, allowing models to cheat using common knowledge or exaggerated mimicry without revealing whether they truly act like that person in daily social settings. PersonaArena instead draws material from over 19k users and 681k blog posts: it first filters and anonymizes private information, then uses LLMs to infer narrative descriptions and structured facts from these long-term texts, covering six dimensions: demographic, occupation, personality traits, values, interests, and experiences. The resulting personas are not just strings of labels but are supported by real experiences, values, interests, and emotional patterns, making them more suitable for testing "daily social authenticity" rather than "celebrity line recitation."
 
-**2. Dynamic Social Sandbox and Environment Agent: Eliciting personas naturally through multi-turn interaction**
+**2. Dynamic Social Sandbox and Environment Agent: Eliciting Personas Naturally Through Multi-turn Interaction instead of Static QA**
 
-Since persona expression is dynamic, the Environment Agent manages the sandbox. The protagonist (tested LLM) uses BDI-style goal-conditioned reasoning, maintaining Self-Belief and Env-Belief. The Environment Agent handles interaction analysis, adaptive turn control, character state updates, and environment updates while monitoring five checkpoints: Background, Personality, Values, Interests, and Experiences. This design avoids fixed-length runs; the controller pushes the scenario toward unexpressed dimensions and triggers early stopping once coverage is sufficient, balancing efficiency and depth.
+Persona expression essentially occurs in dynamic interactions, but mainstream evaluations often compress this into single-turn QA or identity recognition. A model's ability to answer "who am I" does not mean it can consistently act like that person across social events. PersonaArena's solution is to place the persona in a sandbox: the protagonist played by the tested LLM adopts BDI-style goal-conditioned reasoning, maintaining Self-Belief and Env-Belief, while NPCs maintain fixed self-belief and only update their environment understanding based on the protagonist's actions. The Environment Agent links the session, handling interaction analysis, adaptive turn control, character state updates, and environment updates, while monitoring five checkpoints: Background, Personality, Values, Interests, and Experiences.
 
-**3. Multi-judge Debate and Trajectory Post-training: Mitigating judge bias and recycling trajectories as training signals**
+The beauty of this checkpoint design is that evaluation no longer runs for a fixed number of turns: the environment controller pushes the scenario in directions where certain persona dimensions have not yet been fully expressed and stops when they are sufficient, balancing coverage and efficiency to avoid trajectories that are either too short to reveal problems or unnecessarily long and costly.
 
-Individual LLM judges exhibit different stringency levels (e.g., DeepSeek-R1 is lenient, while Qwen3-32B and GPT-4o are conservative). PersonaArena aggregates scores from multiple judges. If disagreements are high, judges must provide scores, rationales, and evidence, which a referee/arbiter then summarizes to generate a reconciled score. High-scoring trajectories are converted into SFT samples, while trajectories for the same persona with large score gaps between models are paired for DPO, creating a closed loop between evaluation and data generation.
+**3. Multi-judge Debate and Trajectory Post-training: Mitigating Single-judge Biases and Recycling Evaluated Trajectories as Training Signals**
+
+Individual LLM judges have varying levels of stringency—case studies show DeepSeek-R1 tends to be lenient, while Qwen3-32B and GPT-4o are more conservative; relying on a single judge can result in systematically high or low scores. PersonaArena has multiple judges score 8 dimensions independently and takes the mean; if disagreement is high, each judge must provide scores, reasons, and evidence fragments. A referee/arbiter then synthesizes the arguments to generate a unified rationale and reconciled score, making disagreements explicit rather than relying on simple voting. Furthermore, these scored trajectories are high-quality data: high-scoring complete trajectories can be split into SFT samples, and trajectories generated by different models for the same persona can form DPO preference pairs, closing the loop between "evaluation" and "data generation."
+
+### A Complete Example: How a Social Trajectory Runs
+
+Taking a target persona (e.g., a middle-aged nurse) as an example: during scenario initialization, the Environment Agent generates a realistic social event, time, location, and 2–3 NPCs based on her background. Once the simulation starts, the tested LLM plays this nurse (protagonist), interacting with NPCs controlled by fixed strong models, driven by Self-Belief/Env-Belief. The Environment Agent analyzes each interaction turn while monitoring whether Background, Personality, Values, Interests, and Experiences have been touched upon. If the Values dimension remains unexposed, it adjusts events toward value-based choices until all five dimensions are sufficiently expressed, triggering early stopping. The entire interaction trajectory is then handed to multiple LLM judges for independent 8-dimension scoring. Low disagreement leads to an average score, while high disagreement leads to a debate where an arbiter provides a reconciled score. If the trajectory is high-scoring, it is used for SFT; if it shows a large score difference compared to another model’s trajectory for the same nurse persona, the pair is collected for DPO preference pairs.
 
 ### Loss & Training
-The main framework is for evaluation, but the authors select Qwen3-8B for post-training to demonstrate enhancement. In the SFT phase, 1,228 behavior-level instances are extracted from the highest-scoring trajectories. In the DPO phase, 665 preference pairs are constructed from trajectories with the largest score gaps for the same persona. SFT enables the model to imitate high-quality behaviors, while DPO learns implicit preference differences between varying quality levels.
+The main framework of PersonaArena is for evaluation and does not directly train a new model. In enhancement experiments, the authors chose Qwen3-8B for post-training: the SFT phase extracted 1,228 behavior-level training instances from the 50 highest-scoring complete trajectories; the DPO phase selected 50 pairs with the largest score differences generated by different models for the same persona, split into 665 preference pairs. SFT enables the model to mimic high-quality behavior, while DPO further learns implicit preference differences between high- and low-quality trajectories.
 
 ## Key Experimental Results
 
@@ -93,56 +99,56 @@ The main framework is for evaluation, but the authors select Qwen3-8B for post-t
 
 | Model | Average Score | Observation |
 |------|---------------|------|
-| GPT-5.1 | 3.963±0.04 | Highest overall, leading in AD/BC/IR dimensions |
+| GPT-5.1 | 3.963±0.04 | Highest overall, leading in AD/BC/IR etc. |
 | GPT-4.1 | 3.948±0.14 | Close to GPT-5.1, strong across dimensions |
 | Deepseek-V3.2 | 3.902±0.05 | Strongest among open-source models |
-| Qwen3-32B | 3.811±0.06 | Best in Qwen3 series, showing scaling trends |
-| Mistral-small3.2 | 3.753±0.11 | Stable performance for a mid-sized open model |
-| Qwen3-8B | 3.363±0.04 | Selected as the base for SFT/DPO enhancement |
+| Qwen3-32B | 3.811±0.06 | Best in Qwen3 series, showing scaling trend |
+| Mistral-small3.2 | 3.753±0.11 | Stable performance for medium open models |
+| Qwen3-8B | 3.363±0.04 | Selected as the target for SFT/DPO enhancement |
 
 ### Ablation Study
 
 | Analysis Item | Result | Note |
 |--------|------|------|
-| Multi-judge vs. Human Correlation | Multi-judge Overall 0.683; Qwen3-32B 0.669; DeepSeek-R1 0.330 | Multi-judge setup is closest to human scoring |
-| SFT Gain (Qwen3-8B) | Avg Gain ~21.96%; IR +32.07%, BA +30.17% | Trajectory imitation enhances richness and consistency |
-| DPO Gain (Qwen3-8B) | Avg Gain ~27.83% vs. base; +5.21% vs. SFT | Preference optimization captures implicit behaviors better |
-| External PersonaGym | Qwen3-8B 3.66; DPO 4.09; GPT-4.1 4.28 | Gains are transferable to external benchmarks |
-| External RoleBench | Qwen3-8B 0.0%; DPO 37.1%; GPT-4.1 34.3% | DPO version slightly outperforms GPT-4.1 in win rate |
+| Multi-judge vs. Human Correlation | Multi-judge Overall 0.683; Qwen3-32B 0.669; Mistral-small3.2 0.484; DeepSeek-R1 0.330 | Multi-judge is closest to human scoring overall |
+| SFT Enhancement (Qwen3-8B) | Avg improvement ~21.96%; IR +32.07%, BA +30.17%, BC +27.86% | Mimicking high-quality trajectories significantly enhances interaction richness and consistency |
+| DPO Enhancement (Qwen3-8B) | ~27.83% avg improvement over base; 5.21% over SFT, IR +15.71%, AD +14.67% | Preference optimization captures implicit behavioral preferences better |
+| External PersonaGym | Qwen3-8B 3.66; SFT 3.88; DPO 4.09; GPT-4.1 4.28 | Enhancement gains are transferable to external persona benchmarks |
+| External RoleBench | Qwen3-8B 0.0%; SFT 28.6%; DPO 37.1%; GPT-4.1 34.3% | DPO version slightly outperforms GPT-4.1 in GPT-4-based win rate |
 
 ### Key Findings
-- PersonaArena rankings align with intuition: GPT-5.1 and GPT-4.1 lead, Deepseek-V3.2 is the strongest open model, and the Qwen3 series scales with size, validating the benchmark's ability to reflect capability gradients.
-- The multi-judge mechanism is more stable than single judges, reducing model-specific scale bias.
-- Data generated by PersonaArena effectively facilitates training. Both SFT and DPO significantly improve Qwen3-8B, with the DPO version achieving a 37.1% win rate on RoleBench, surpassing GPT-4.1.
-- Early stopping provides significant efficiency gains, reducing runtime by 33.7% to 56.6% with minimal impact on scores.
+- The model ranking in PersonaArena largely aligns with intuition: GPT-5.1 and GPT-4.1 lead, Deepseek-V3.2 is the strongest open model, and the Qwen3 series generally improves with scale. This indicates the benchmark reflects model capability gradients.
+- The multi-judge mechanism is more stable than a single judge. DeepSeek-R1 is lenient in case analyses, while Qwen3-32B and GPT-4o are more conservative; multi-judge aggregation reduces the scale bias of individual models.
+- Data generated by PersonaArena can be used for training as well as evaluation. Both SFT and DPO significantly improve Qwen3-8B, with DPO reaching a 37.1% win rate on the external RoleBench, surpassing GPT-4.1's 34.3%.
+- Early stopping provides significant efficiency gains. Appendices show a 33.7% to 56.6% reduction in runtime when thresholds are enabled, with scores only decreasing by about 0.05 to 0.12, maintaining relative model rankings.
 
 ## Highlights & Insights
-- The paper shifts role-playing evaluation from "character knowledge tests" to "social behavior trajectory evaluation," which is more relevant for persona-level agents.
-- The Environment Agent's checkpoint design is highly practical, controlling evaluation costs by monitoring the semantic coverage of persona dimensions rather than relying on fixed turn counts.
-- Multi-judge debates enhance interpretability and provide high-quality signals for post-training.
-- The "evaluation as data generation" closed loop allows for identifying model failures in specific scenarios and using high-quality trajectories to fix them, providing a roadmap for other agent benchmarks.
+- This paper shifts role-playing evaluation from "character knowledge tests" to "social behavior trajectory evaluation." For persona-level agents, these dynamic trajectories are closer to real-world requirements than static QA.
+- The Environment Agent's checkpoint design is highly practical. Instead of blindly running a fixed number of turns, it checks whether five semantic dimensions of the persona have been sufficiently expressed, thereby controlling evaluation costs.
+- Multi-judge debate is not just voting; it requires judges to provide evidence and rationales. This mechanism enhances interpretability and makes scores more suitable as post-training signals.
+- Using the evaluation environment to generate SFT/DPO data creates a closed loop: first constructing scenarios that expose flaws, then using high-quality trajectories to fix them. This is instructive for other agent benchmarks.
 
 ## Limitations & Future Work
-- LLM-based multi-judges still do not reach ideal human judgment levels and may share training biases, potentially missing subtle persona fidelity issues.
-- The paper focuses on fidelity and consistency without systematically addressing ethical boundaries for dangerous or anti-social personas.
-- The persona bank, derived from public UGC, may inherit demographic, stylistic, and thematic biases from the original platforms.
-- Current benchmark runs use a sample of 10 personas for cost control; broader coverage of long-tail social contexts and rare persona types is needed.
+- The authors admit that LLM-based multi-judges still do not reach ideal human judgment levels. Aggregated automatic judges may still share training biases, and subtle persona fidelity issues might be missed or misjudged.
+- The paper primarily addresses character fidelity and consistency, without systematically discussing the ethical boundaries of playing dangerous, anti-social, or harmful characters. In actual deployment, whether a model should play certain personas needs separate governance.
+- The persona bank is derived from public user-generated content, which, despite anonymization, may still inherit biases in platform demographics, writing styles, and topic distributions.
+- Currently, each benchmark run only randomly samples 10 personas. While helpful for cost control, coverage of rare persona types and long-tail social contexts could be strengthened.
 
 ## Related Work & Insights
-- **vs. Character-level benchmarks**: Unlike RoleBench or CharacterEval which focus on celebrities/fiction, PersonaArena targets ordinary personas for daily social simulation.
-- **vs. Persona-Chat / Synthetic-Persona-Chat**: While these rely on static dialogues, PersonaArena emphasizes environmental changes, NPC reactions, and causal multi-turn trajectories.
-- **vs. LLM-as-Judge**: PersonaArena explicitly manages disagreements through multi-judge arbitration to mitigate model-family bias.
-- **Insights**: For agent evaluation, the most valuable component of a benchmark may be the environment's ability to generate trainable failure cases.
+- **vs Character-level benchmarks**: RoleBench, CharacterEval, and CharacterBox focus on literary, film, or celebrity characters; PersonaArena focuses on the persona-level behavior of ordinary people, making it more suitable for evaluating daily social simulation.
+- **vs Persona-Chat / Synthetic-Persona-Chat**: These datasets are often dominated by static or semi-static dialogues; PersonaArena emphasizes environmental changes, NPC reactions, and multi-turn causal trajectories.
+- **vs Single LLM-as-Judge**: Single judges are prone to model family biases and scoring scale biases; PersonaArena makes disputes explicit through multi-judges and arbiters.
+- **Insight**: For agent evaluation, the most valuable part of a benchmark may not be a single score, but an environment capable of generating trainable failure cases. PersonaArena demonstrates the "evaluation as data generation" path.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐
-- Experimental Thoroughness: ⭐⭐⭐⭐
-- Writing Quality: ⭐⭐⭐⭐
-- Value: ⭐⭐⭐⭐⭐
+- Novelty: ⭐⭐⭐⭐ The combination of dynamic persona-level social simulation and multi-judge debate is quite innovative, though it draws on existing virtual world and LLM judge concepts.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Includes multi-model evaluation, human correlation, post-training, external benchmarks, and robustness appendices; persona sampling scale could still be expanded.
+- Writing Quality: ⭐⭐⭐⭐ Framework description is clear, with rich appendices; some implementation details and cost information are scattered in appendices.
+- Value: ⭐⭐⭐⭐⭐ Highly practical for role-playing agents, social simulation, and agent post-training data construction.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1"></div>
+<div class="related-papers" markdown="1">
 
 ## Related Papers
 

@@ -2,12 +2,12 @@
 title: >-
   [Paper Note] A Semantically Consistent Dataset for Data-Efficient Query-Based Universal Sound Separation
 description: >-
-  [ICML 2026][Audio & Speech][Paper Note] This paper introduces Hive, a universal sound separation dataset constructed through single-event purification and semantically consistent mixing. Using approximately 2.4k hours of high-purity source audio, it enables models like AudioSep and FlowSep to match or even surpass systems trained on million-hour datasets acr
+  [ICML 2026][Audio & Speech][Paper Note] This paper proposes Hive, a universal sound separation dataset constructed via single-event purification and semantically consistent mixing. Using approximately 2.4k hours of high-purity source audio, it enables AudioSep and FlowSep to approach or even exceed the performance of systems trained on million-hour datasets
 tags:
   - ICML 2026
   - Audio & Speech
 date: 2026-05-08
-content_hash: ff82aa1872fa79ac
+content_hash: d000a6c2198c4962
 ---
 # A Semantically Consistent Dataset for Data-Efficient Query-Based Universal Sound Separation
 
@@ -18,111 +18,115 @@ content_hash: ff82aa1872fa79ac
 **Keywords**: Universal Sound Separation, Audio Dataset, Semantically Consistent Mixing, Data-Efficient, Single-Event Mining  
 
 ## TL;DR
-This paper introduces Hive, a universal sound separation dataset constructed through single-event purification and semantically consistent mixing. Using approximately 2.4k hours of high-purity source audio, it enables models like AudioSep and FlowSep to match or even surpass systems trained on million-hour datasets across multiple separation metrics.
+This paper proposes Hive, a universal sound separation dataset constructed via single-event purification and semantically consistent mixing. Using approximately 2.4k hours of high-purity source audio, it enables AudioSep and FlowSep to approach or even exceed the performance of systems trained on million-hour datasets across multiple separation metrics.
 
 ## Background & Motivation
-**Background**: Query-based Universal Sound Separation (USS) aims to separate any target sound from complex mixtures based on text, audio, or visual prompts. Existing approaches generally follow two paths: discriminative methods like AudioSep that directly estimate the target signal, and generative methods like FlowSep or SAM-Audio that leverage distribution modeling or unified prompt interfaces to generate target sources.
+**Background**: Query-based Universal Sound Separation (USS) aims to separate any target sound from complex mixtures based on text, audio, or visual prompts. Existing approaches are generally divided into two categories: discriminative methods like AudioSep that directly estimate the target signal, and generative methods like FlowSep or SAM-Audio that leverage distribution modeling or unified prompting interfaces.
 
-**Limitations of Prior Work**: Many methods rely on large-scale in-the-wild audio such as AudioSet and VGGSound. While large in scale, these datasets often contain only weak labels; for example, a "rain" clip may be accompanied by wind, traffic, or speech. Under such supervision, models easily learn co-occurring backgrounds as part of the target category, resulting in residual interference or generated background textures in the separation results.
+**Limitations of Prior Work**: Many methods rely on large-scale in-the-wild audio from sources like AudioSet and VGGSound. Despite their scale, these datasets often provide only weak labels; for example, a "rain" segment may be persistently accompanied by wind, traffic, or speech. Under such supervision, models easily learn co-occurring backgrounds as part of the target category, resulting in residual interference or unnecessary background textures in the separation results.
 
-**Key Challenge**: Universal sound separation requires both open-category coverage and clean, localizable supervisory signals. Simply increasing data and model scale can mitigate some issues but also amplifies weak labels and co-occurrence biases, while training costs continue to rise.
+**Key Challenge**: Universal sound separation requires both open-category coverage and clean, locatable supervisory signals. Simply increasing data and model scale can mitigate some issues but also amplifies weak labels and co-occurrence biases, leading to ever-increasing training costs.
 
-**Goal**: The authors aim to address a data-centric question: if training source audio is first purified into high-purity single events and then synthesized into mixtures in a semantically reasonable manner, can a competitive USS model be trained with significantly less data?
+**Goal**: The authors aim to address a more data-centric question: If training sources are first purified into high-purity single events and then synthesized using semantically reasonable mixtures, can competitive USS models be trained with significantly less data?
 
-**Key Insight**: Instead of proposing a new separation network, the paper identifies the bottleneck in the data generation process itself. It decouples "source event purity" and "mixture rationality" into two independent quality axes, controlled by multimodal model-assisted cleaning and a semantic compatibility matrix, respectively.
+**Key Insight**: Instead of proposing a new separation network, the paper identifies the bottleneck in the data generation process itself. It treats "source event purity" and "mixture rationality" as two independent quality axes, controlled by multimodal model-assisted cleaning and a semantic compatibility matrix, respectively.
 
-**Core Idea**: Use high-purity single-event mining combined with semantically consistent mixing to replace the random concatenation of training samples from weakly labeled in-the-wild audio.
+**Core Idea**: Replace random concatenation of weakly labeled in-the-wild audio with high-purity single-event mining and semantically consistent mixing.
 
 ## Method
-The Hive methodology focuses on an offline data construction pipeline: first extracting candidate segments from multiple public audio libraries, then aligning them to an ontology better suited for separation tasks, and finally synthesizing multi-source mixtures according to semantic compatibility. The objective is not to make the data "larger," but to make every supervisory sample more reliable.
+The Hive methodology focuses on an offline data construction pipeline: extracting candidate segments from multiple public audio libraries, aligning them to a taxonomy better suited for separation tasks, and synthesizing multi-source mixtures according to semantic compatibility. The goal is to make every supervisory sample more reliable rather than just making the dataset "larger."
 
 ### Overall Architecture
-The input consists of in-the-wild audio from 12 public sources, including AudioSet, VGGSound, FreeSound, and BBC Sound Effects. The output includes two layers of data: approximately 0.9M high-purity single-event clips (totaling ~2,442 hours) and 19.6M training/validation/test mixture samples synthesized from these clips (totaling ~22.4k hours).
+The input consists of in-the-wild audio from 12 public sources including AudioSet, VGGSound, FreeSound, and BBC Sound Effects. The output comprises two data layers: approximately 0.9M high-purity single-event clips totaling about 2,442 hours, and 19.6M training/validation/test mixture samples synthesized from these clips, totaling approximately 22.4k hours of mixed audio.
 
-The pipeline comprises three steps. First, ontology reconstruction: compressing 474 AudioSet leaf nodes into 283 more separable categories, removing environmental or format tags like "indoor," "countryside," or "MP4." Second, single-event semantic-acoustic alignment: combining metadata filtering, multi-event detection, and coarse-to-fine classification to ensure each clip contains only one distinct foreground event. Third, sampling rate and spectral normalization: unifying audio from different sources to 44.1 kHz and using a super-resolution model to compensate for high-frequency details in low-sample-rate audio.
+The pipeline consists of three steps. First, ontology reconstruction: compressing 474 AudioSet leaf nodes into 283 more separable event categories, removing environmental or format labels like "Inside" or "MP4." Second, single-event semantic-acoustic alignment: combining metadata filtering, multi-event detection, and coarse-to-fine classification to ensure each segment contains only one clear foreground event. Third, sampling rate and spectral standardization: unifying sources to 44.1 kHz and using super-resolution models to restore high-frequency details for low-sample-rate audio.
 
-During synthesis, the paper avoids random mixing and instead constructs a binary semantic compatibility matrix between event categories. For each mixture sample, an anchor event is selected, and other sources compatible with all previously selected events are added iteratively (2 to 5 sources). All source clips undergo length, loudness, and SNR normalization before being combined via an additive mixing model.
+In the synthesis stage, instead of random mixing, the paper constructs a binary semantic compatibility matrix between event categories. Each mixture sample starts with an anchor event, then iteratively adds other sources that are pairwise compatible with all selected events, with the number of sources ranging from 2 to 5. All source segments undergo length, loudness, and SNR normalization before being combined via an additive mixing model.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
     A["In-the-wild audio from 12 public libraries<br/>AudioSet / VGGSound / FreeSound / BBC…"] --> B["Separation-oriented ontology reconstruction<br/>474 leaf nodes → 283 separable categories"]
     B --> C["Single-event semantic-acoustic alignment<br/>Metadata filtering → Multi-event detection → Coarse-to-fine classification"]
-    C --> D["Normalization & Spectral SR<br/>Unified 44.1 kHz + HF completion → ≈0.9M single-event clips (≈2,442 hrs)"]
-    D --> E["Semantically consistent mixing protocol<br/>Anchor selection via compatibility matrix + 2~5 sources overlap → ≈19.6M mixtures"]
+    C --> D["Standardization<br/>Unify 44.1 kHz + SR for high-freq → ≈0.9M single-event clips (≈2,442 h)"]
+    D --> E["Semantically consistent mixing protocol<br/>Compatibility matrix + 2~5 sources → ≈19.6M mixtures"]
     E --> F["Train AudioSep / FlowSep"]
 ```
 
 ### Key Designs
 
-**1. Separation-oriented ontology reconstruction: Refining weakly labeled space into separable event categories.**
-USS requires target categories to be mutually exclusive and acoustically distinguishable. However, the standard AudioSet ontology contains 474 leaf nodes with significant semantic overlap and fine-grained labels that are inherently ambiguous—even the strongest models can only learn vague supervision. The authors performed an expert-verified reconstruction: merging synonymous or acoustically overlapping labels (e.g., merging "Drum beat" into "Drum"), elevating fine-grained biological sounds with weak acoustic differences (e.g., "Fowl," "Coo") to parent classes, and removing non-localizable tags describing environments ("indoor"), formats ("MP4"), or abstract attributes. This results in 283 leaf nodes oriented toward "separable foreground events," providing a clean, mutually exclusive target for subsequent cleaning and separation models.
+**1. Separation-oriented ontology reconstruction: Refinement of weakly labeled space into separable event categories.**
 
-**2. Single-event semantic-acoustic alignment: Filtering and accurately labeling foreground events.**
-Raw labels in wild audio are often weak and suffer from heavy event coexistence; accepting them as-is propagates noise to the separation model. This step aggregates audio from 12 libraries and performs coarse-to-fine filtering: first discarding multi-label samples, then using the multimodal large model Qwen3-Omni for zero-shot binary classification to remove unlabeled coexistence or transient interference. Subsequently, an audio-tagging model predicts coarse parent classes, and Qwen3-Omni refines them into leaf nodes within candidate subsets. This division of labor leverages the robustness of discriminative models and the semantic granularity of MLLMs to reduce misallocation in long-tail categories, producing ~0.9M high-purity clips (~2,442 hours).
+Universal sound separation requires target categories to be mutually exclusive and acoustically distinguishable. However, the standard AudioSet ontology contains 474 leaf nodes with significant semantic overlap and fine granularity, making the labels themselves ambiguous. The authors performed an expert-driven reconstruction: merging synonymous or acoustically overlapping labels (e.g., merging "Drum beat" into "Drum"), grouping fine-grained biological sounds with weak acoustic differences (e.g., "Fowl", "Coo") into parent classes, and removing non-locatable labels describing environments ("indoor"), formats ("MP4"), or abstract attributes. This results in 283 leaf nodes focused on "separable foreground events," providing more distinct supervisory targets.
 
-**3. Semantically consistent mixing protocol: Constraining synthesis to avoid irrational combinations.**
-Even with clean source audio, random mixing creates unnatural combinations (e.g., aquatic animals with urban traffic), feeding incorrect contextual priors to the model. The authors constructed a binary semantic compatibility matrix $M \in \{0,1\}^{N \times N}$ to record which event pairs naturally co-occur. Each mixture starts by sampling the number of sources $C \in \{2,\dots,5\}$ and an anchor event, then iteratively adds sources that are pairwise compatible with all selected events. Sources are normalized for duration (4s for training, 10s for testing) and loudness (RMS=0.1), with interference SNR sampled from $[-5,5]$ dB. This protocol ensures the model learns separation in complex but realistic scenarios; without it, AudioSep's SDR drops by 1.0 dB.
+**2. Single-event semantic-acoustic alignment: Filtering wild segments for single foreground events with accurate labels.**
+
+Since raw labels for in-the-wild audio are weak and often involve event co-occurrence, a coarse-to-fine filtering process was implemented. After aggregating audio from 12 public libraries, multi-label samples were discarded. A multimodal LLM, Qwen3-Omni, was used for zero-shot binary classification to remove unlabelled co-occurrences or transient interference. Subsequently, an audio-tagging model predicted coarse-grained parent classes, and Qwen3-Omni refined these within candidate sub-classes to identify specific leaf nodes. This division of labor—robust screening by the tagging model and semantic refinement by the MLLM—reduces misassignments in long-tail categories.
+
+**3. Semantically consistent mixing protocol: Constraint-based synthesis using a compatibility matrix.**
+
+Even with clean source audio, random mixing can create unnatural combinations (e.g., aquatic animals in city traffic), introducing incorrect contextual priors. The authors constructed a binary semantic compatibility matrix $M \in \{0,1\}^{N \times N}$ to define which event types can naturally co-occur. For each mixture, a source count $C \in \{2,\dots,5\}$ and an anchor event are selected. Sources are added only if they are pairwise compatible with all already-selected events. Sources are normalized by duration (4s for training, 10s for testing) and loudness (RMS=0.1), with interference SNR sampled from $[-5,5]$ dB. This semantic constraint forces the model to learn separation in realistic scenarios. Ablation showed that replacing this protocol with random mixing drops AudioSep's SDR by 1.0 dB.
 
 ### Loss & Training
-The primary contribution is the dataset and construction protocol; for training, the original architectures and hyperparameters of AudioSep and FlowSep are maintained. AudioSep uses AdamW, batch size 64, and an initial learning rate of $10^{-3}$, decaying upon plateau. FlowSep uses a fixed learning rate of $5 \times 10^{-5}$. Both models are trained for approximately 3M steps on Hive, with all evaluation outputs resampled to 44.1 kHz.
+The primary contribution is the dataset and its construction protocol. Separation models are trained using the original architectures and hyperparameters of AudioSep and FlowSep. AudioSep uses AdamW, a batch size of 64, and an initial learning rate of $10^{-3}$ with a plateau scheduler. FlowSep uses a fixed learning rate of $5 \times 10^{-5}$. Both were trained for approximately 3M steps on Hive, with outputs resampled to 44.1 kHz for evaluation.
 
 ## Key Experimental Results
 
 ### Main Results
-Hive's results are evaluated across two layers: internal validation on the Hive test set and external generalization on third-party benchmarks.
+The main results for Hive are evaluated on its own test set to verify high-density semantically consistent mixing difficulty, and on third-party benchmarks to verify out-of-distribution (OOD) generalization.
 
 | Dataset / Scenario | Metric | Ours | Key Comparison | Gain / Conclusion |
 |--------|------|------|----------|------|
-| Hive test | AudioSep(Hive) SDR / SI-SDR | 5.67 / 5.02 | AudioSep (original) 2.37 / 1.58 | Small-scale high-purity data significantly outperforms original large-scale weakly labeled training. |
-| Hive test | AudioSep(Hive) MUSHRA | 68.4 | SAM-Audio 62.6, AudioSep (original) 60.9 | Perceptual quality matches or exceeds million-hour baselines. |
-| Hive test | FlowSep(Hive) MUSHRA | 61.8 | FlowSep (original) 54.7 | Generative separation also benefits from Hive. |
-| USS-Bench | AudioSep(Hive) SDR / OQ | 2.29 / 3.56 | AudioSep (original) -1.86 / 2.97 | Deco-occurrence supervision is more effective in OOD scenarios. |
-| MUSDB18-HQ | AudioSep(Hive) SDR | 1.36 | AudioSep (original) -1.01 | Generalization benefits extend to music separation. |
-| VGGClean_eval | FlowSep(Hive) OQ | 3.18 | FlowSep (original) 2.99 | Reference-free quality improvement indicates more than just overfitting to Hive. |
+| Hive test | AudioSep(Hive) SDR / SI-SDR | 5.67 / 5.02 | Orig. AudioSep 2.37 / 1.58 | Small-scale high-purity data significantly outperforms original large-scale weak supervision |
+| Hive test | AudioSep(Hive) MUSHRA | 68.4 | SAM-Audio 62.6, Orig. AudioSep 60.9 | Perceptual quality approaches/exceeds million-hour baselines |
+| Hive test | FlowSep(Hive) MUSHRA | 61.8 | Orig. FlowSep 54.7 | Generative separation also benefits from Hive |
+| USS-Bench | AudioSep(Hive) SDR / OQ | 2.29 / 3.56 | Orig. AudioSep -1.86 / 2.97 | De-correlated supervision is more effective in OOD scenarios |
+| MUSDB18-HQ | AudioSep(Hive) SDR | 1.36 | Orig. AudioSep -1.01 | Generalization gains extend to music separation |
+| VGGClean_eval | FlowSep(Hive) OQ | 3.18 | Orig. FlowSep 2.99 | Reference-free quality improvement proves more than just overfitting |
 
 ### Ablation Study
 
 | Configuration | Key Metrics | Note |
 |------|---------|------|
-| Consistent Mixing AudioSep | SDR 4.12, SI-SDR 3.37, CLAP-T 0.29 | Trained on 175k mixtures using semantic compatibility matrix. |
-| Random Mixing AudioSep | SDR 3.12, SI-SDR 2.35, CLAP-T 0.24 | Same sources but no semantic constraints; SDR 1.0 dB lower. |
-| Consistent Mixing FlowSep | LPAPS 4.24, CLAP-T 0.17, OQ 2.79 | Generative models also benefit from reasonable mixtures. |
-| Random Mixing FlowSep | LPAPS 4.35, CLAP-T 0.13, OQ 2.64 | Both perceptual and semantic metrics decline. |
-| AudioSep (original) shortcut gap | co-occ. 1.65 vs decorr. 3.06, gap -1.41 dB | Original training relies heavily on co-occurrence shortcuts. |
-| AudioSep(Hive) shortcut gap | co-occ. 5.48 vs decorr. 5.87, gap -0.39 dB | Hive significantly reduces dependence on interference co-occurrence. |
+| Consistent Mix AudioSep | SDR 4.12, SI-SDR 3.37, CLAP-T 0.29 | Trained on 175k mixtures with compatibility matrix |
+| Random Mix AudioSep | SDR 3.12, SI-SDR 2.35, CLAP-T 0.24 | Same sources but no semantic compatibility; SDR drops by 1.0 dB |
+| Consistent Mix FlowSep | LPAPS 4.24, CLAP-T 0.17, OQ 2.79 | Generative models also benefit from logical mixtures |
+| Random Mix FlowSep | LPAPS 4.35, CLAP-T 0.13, OQ 2.64 | Perceptual and semantic metrics both decline |
+| Orig. AudioSep shortcut gap | co-occ. 1.65 vs decorr. 3.06, gap -1.41 dB | Original training relies heavily on co-occurrence shortcuts |
+| AudioSep(Hive) shortcut gap | co-occ. 5.48 vs decorr. 5.87, gap -0.39 dB | Hive significantly reduces reliance on interference co-occurrence |
 
 ### Key Findings
-- **Source purity and semantic consistency are complementary**: Purifying sources alone is helpful, but reasonable mixing further improves separation, perceptual, and semantic metrics.
-- **Data efficiency of Hive is remarkable**: Models trained on ~2.4k hours of source audio match or exceed systems using 14.1k hours or even millions of hours of data.
-- **Training scale still matters**: Provided the supervision is clean; when scaling from 175k to 17.5M samples, AudioSep's SDR increases by 1.55 dB, indicating Hive does not saturate quickly.
+- Source purity and semantic consistency are complementary factors: Purifying sources is helpful, but logical mixing further improves separation, perceptual, and semantic metrics.
+- Hive demonstrates remarkable data efficiency: Models trained on ~2.4k hours of source audio approach or exceed systems trained on 14.1k or even 1M+ hours.
+- Training scale still matters provided signals are clean; increasing samples from 175k to 17.5M continued to improve AudioSep's SDR by 1.55 dB, suggesting Hive does not saturate quickly.
 
 ## Highlights & Insights
-- **Precise Problem Identification**: The paper does not blame residual interference on network architecture but validates the impact of weak labels, co-occurrence, and random mixing separately, suggesting the bottleneck in USS lies in the training supervision.
-- **Semantically Consistent Mixing as a Reusable Trick**: This logic can be transferred to audio-visual tasks, video source separation, or event detection. Constructing a category compatibility matrix can reduce bias introduced by irrational negative samples.
-- **Value of Shortcut Paired Evaluation**: Fixing the target, source count, and SNR while only varying the statistical co-occurrence of interference provides a much clearer picture of whether a model depends on background shortcuts than average SDR alone.
+- Accurate identification of the data bottleneck: The paper attributes residual interference to the supervision signal (weak labels, co-occurrence, random mixing) rather than network architecture.
+- Semantically consistent mixing as a reusable dataset trick: This logic can be transferred to audio-visual tasks or event detection; any task that can define a compatibility matrix can reduce bias from nonsensical negative samples.
+- Value of shortcut paired evaluation: By fixing the target, source count, and SNR while only varying the statistical co-occurrence of interference, the authors prove whether the model depends on background shortcuts rather than just looking at average SDR.
 
 ## Limitations & Future Work
-- Hive remains a synthetic mixture dataset and lacks real room impulse responses (RIR), spatial structures of actual recordings, and device noise, which may lead to domain gaps in real-world deployment.
-- Cleaning and compatibility matrices rely on MLLMs like Qwen3-Omni, potentially inheriting category biases, especially for tail classes and ambiguous sound events.
-- The paper primarily trains AudioSep/FlowSep without systematically exploring the scaling laws of newer unified audio foundation models on Hive.
-- Future work could include RIR augmentation, tail-class-aware sampling, LLM relabeling bias audits, and naturally recorded high-density USS benchmarks.
+- Hive still relies on synthetic mixtures, lacking room impulse responses (RIR), real spatial structures, and realistic hardware noise, which may cause a domain gap during deployment.
+- Purification and compatibility matrices rely on MLLMs like Qwen3-Omni, which may inherit categorical biases, particularly regarding long-tail classes and ambiguous sounds.
+- The paper focuses on AudioSep/FlowSep without exploring scaling laws for newer, larger unified audio foundation models on Hive.
+- Future work could incorporate RIR augmentation, tail-class-aware sampling, and audits of LLM labeling bias.
 
 ## Related Work & Insights
-- **vs. AudioSep / CLIPSep**: These methods focus on models and large-scale weakly labeled data. Hive emphasizes purified single-event supervision, yielding higher data efficiency at the cost of a more complex construction pipeline.
-- **vs. SAM-Audio**: SAM-Audio represents million-hour unified models. Hive shows that small-scale, high-purity data can bridge the quality gap, though it does not yet replace the multimodal prompting capabilities of larger models.
-- **vs. Scaper / FUSS**: While Scaper and FUSS act as controlled mixing tools, Hive differs by actively addressing upstream source purification and semantic compatibility.
-- **Insight**: For many foundation model tasks, "high information-density supervision" may be more cost-effective than blindly scaling weakly labeled data; similar purification-synthesis protocols could be applied to video events, robotic multimodal perception, or weakly labeled medical data.
+- **vs AudioSep / CLIPSep**: These focus on scaling models and weak labels; Hive emphasizes purified single-event supervision, achieving high data efficiency at the cost of a more complex pipeline.
+- **vs SAM-Audio**: While SAM-Audio represents million-hour unified models, Hive shows that high-purity data can close the quality gap, though it hasn't yet replaced the multi-modal prompting flexibility of massive models.
+- **vs Scaper / FUSS**: Unlike controlled mixing tools or datasets, Hive actively addresses the upstream purification of in-the-wild sources and semantic compatibility.
+- **Insight**: For many foundation model tasks, "high-information-density supervision" may be more cost-effective than blindly scaling weakly labeled data. Similar purification protocols could apply to video events or robotics.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐☆ The novelty lies in the combination of purification and semantic mixing protocols rather than structural breakthroughs.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Covers Hive, third-party benchmarks, semantic consistency, shortcuts, and scaling, providing a complete chain of evidence.
-- **Writing Quality**: ⭐⭐⭐⭐☆ Narrative is clear with rich tables, though the abundance of appendix metrics requires careful filtering for quick reading.
-- **Value**: ⭐⭐⭐⭐⭐ Highly practical for USS and audio foundation model training, especially for resource-constrained teams seeking reproducibility.
+- Novelty: ⭐⭐⭐⭐☆ The novelty lies in the synthesis of purification and semantic protocol rather than architectural breakthroughs.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive evidence across Hive, benchmarks, consistency, shortcuts, and scaling.
+- Writing Quality: ⭐⭐⭐⭐☆ Clear narrative with rich tables, though the volume of metrics in the appendix requires careful filtering.
+- Value: ⭐⭐⭐⭐⭐ Highly practical for USS and audio foundation model training, particularly for resource-constrained teams.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
+</div>
+<!-- RELATED:END -->
 
 ## Related Papers
 

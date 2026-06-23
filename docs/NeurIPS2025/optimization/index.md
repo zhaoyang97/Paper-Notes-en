@@ -83,7 +83,7 @@ item_total: 121
 
 **🧠 NeurIPS2025** · **121** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (22)](../../CVPR2026/optimization/index.md) · [🧪 ICML2026 (64)](../../ICML2026/optimization/index.md) · [🔬 ICLR2026 (47)](../../ICLR2026/optimization/index.md) · [🤖 AAAI2026 (21)](../../AAAI2026/optimization/index.md) · [📹 ICCV2025 (7)](../../ICCV2025/optimization/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (22)](../../CVPR2026/optimization/index.md) · [🔬 ICLR2026 (222)](../../ICLR2026/optimization/index.md) · [🧪 ICML2026 (88)](../../ICML2026/optimization/index.md) · [🤖 AAAI2026 (21)](../../AAAI2026/optimization/index.md) · [📹 ICCV2025 (7)](../../ICCV2025/optimization/index.md)
 
 🔥 **Top topics:** Federated Learning ×13 · LLM ×12 · Adversarial Robustness ×11 · Alignment/RLHF ×4 · Reasoning ×4
 

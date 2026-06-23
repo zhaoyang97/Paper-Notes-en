@@ -2,13 +2,13 @@
 title: >-
   [Paper Note] Lagrangian Perturbation Diffusion Steering: Latent Reinforcement Learning for Generative Policies
 description: >-
-  [ICML 2026][Robotics & Embodied AI][Lagrangian] LP-DS treats frozen diffusion or flow matching policies as black-box decoders $\Phi(s,w)$. It learns a state-conditional residual only on the initial noise $w=\epsilon+\Delta_\theta(s)$ and constrains the perturbation magnitude via a Lagrangian trust region $\mathbb{E}_s[\|\Delta_\theta(s)\|_2^2]\le\delta$. This enable
+  [ICML 2026][Robotics & Embodied AI][Lagrangian] LP-DS treats a frozen diffusion/flow-matching policy as a black-box decoder $\Phi(s,w)$ and learns a state-conditional residual only on its initial noise $w=\epsilon+\Delta_\theta(s)$. By using a Lagrangian trust region $\mathbb{E}_s[\|\Delta_\theta(s)\|_2^2]\le\delta$ to constrain the perturbation magnitude, it achiev
 tags:
   - ICML 2026
   - Robotics & Embodied AI
   - Lagrangian
 date: 2026-05-08
-content_hash: 858aa740453fac3f
+content_hash: 85d0a289bb12fd79
 ---
 # Lagrangian Perturbation Diffusion Steering: Latent Reinforcement Learning for Generative Policies
 
@@ -16,134 +16,134 @@ content_hash: 858aa740453fac3f
 **arXiv**: [2606.01151](https://arxiv.org/abs/2606.01151)  
 **Code**: https://sites.google.com/view/lp-ds/home (project page)  
 **Area**: Reinforcement Learning / Generative Policies / Trust Region Methods  
-**Keywords**: Diffusion Policy, Latent Space RL, Trust Region, Lagrangian, Mode Collapse
+**Keywords**: Diffusion Policy, Latent RL, Trust Region, Lagrangian, Mode Collapse
 
 ## TL;DR
-LP-DS treats frozen diffusion or flow matching policies as black-box decoders $\Phi(s,w)$. It learns a state-conditional residual only on the initial noise $w=\epsilon+\Delta_\theta(s)$ and constrains the perturbation magnitude via a Lagrangian trust region $\mathbb{E}_s[\|\Delta_\theta(s)\|_2^2]\le\delta$. This enables sample-efficient online RL fine-tuning while preserving multimodal priors. It outperforms DSRL and DPPO in stability across RoboMimic, Gym, Adroit, and LIBERO, achieving up to +25% return gains.
+LP-DS treats a frozen diffusion/flow-matching policy as a black-box decoder $\Phi(s,w)$ and learns a state-conditional residual only on its initial noise $w=\epsilon+\Delta_\theta(s)$. By using a Lagrangian trust region $\mathbb{E}_s[\|\Delta_\theta(s)\|_2^2]\le\delta$ to constrain the perturbation magnitude, it achieves sample-efficient online RL fine-tuning while preserving multimodal priors. It is more stable than DSRL and DPPO on RoboMimic / Gym / Adroit / LIBERO, with reward gains up to +25%.
 
 ## Background & Motivation
 
-**Background**: High-capacity generative policies (Diffusion Policy, flow matching $\pi_0$ series) have become the dominant BC paradigm for continuous control and manipulation due to their multimodal action distributions.
+**Background**: High-capacity generative policies (Diffusion Policy, Flow-matching π0 series) have become the mainstream BC paradigm for continuous control and manipulation due to their multimodal action distributions.
 
-**Limitations of Prior Work**: Pure BC is restricted by the ceiling of demonstration coverage and distribution shift, requiring RL fine-tuning. However, directly updating massive diffusion/flow matching decoders suffers from poor sample efficiency due to unstable gradients through long-chain denoising or ODE integration. Recent DSRL moves RL to the latent noise space (black-box decoding), but it directly learns a new latent policy to **replace** the pre-trained prior, leading to two failure modes: (i) noise drifting out of the $\mathcal{N}(0,I)$ decoder training support, triggering off-manifold behavior; (ii) collapsing the multimodal prior into a single mode.
+**Limitations of Prior Work**: Pure BC is limited by demonstration coverage and distribution shift, requiring RL fine-tuning. However, directly updating large diffusion/flow-matching decoders leads to unstable gradients and poor sample efficiency due to long-chain denoising or ODE integration. Recent work like DSRL moves RL to the latent noise space (black-box decoding), but it directly learns a new latent policy to **replace** the pre-trained prior, leading to two failure modes: (i) noise drifting outside the $\mathcal{N}(0,I)$ training support of the decoder, triggering off-manifold behavior; (ii) collapsing the multimodal prior into a single mode.
 
-**Key Challenge**: The decoder is trained on $\mathcal{N}(0,I)$, but RL value gradients push latent variables toward increasingly extreme high-value regions—creating a direct conflict between "increasing returns" and "staying within the decoder's training support." Figure 2 provides evidence: in DSRL on HalfCheetah, the latent variable magnitude $\|w\|$ grows monotonically until the decoder fails, causing success rates to drop back to zero.
+**Key Challenge**: The decoder is trained on $\mathcal{N}(0,I)$, but RL value gradients push latent variables toward increasingly extreme high-value regions—creating a direct conflict between "improving rewards" and "staying within the decoder's training support." Evidence from Figure 2: DSRL's latent variable magnitude $\|w\|$ grows monotonically on HalfCheetah until decoding fails and success rates drop to 0.
 
-**Goal**: To improve policies via online RL without modifying a single weight of the decoder; to use an explicit mechanism to "clip back to the prior" for controlling latent space perturbation magnitude; and to provide an interpretable knob for users to balance "task gains" and "multimodal preservation."
+**Goal**: Improve online RL without modifying a single weight of the decoder; use an explicit mechanism to "clamp back to the prior" by controlling the magnitude of latent perturbations; and provide an interpretable knob for users to balance "task return" and "multimodality preservation."
 
-**Key Insight**: Reframe latent space RL as **constrained optimization**—learning a residual $\Delta_\theta(s)$ instead of a new latent policy, and incorporating "perturbation magnitude $\approx$ KL divergence from prior" as a hard constraint via a Lagrangian formulation.
+**Key Insight**: Reformulate latent RL as **constrained optimization**—instead of learning a new latent policy, learn a residual $\Delta_\theta(s)$ and incorporate the "perturbation magnitude $\approx$ KL divergence from the prior" as a hard constraint via a Lagrangian.
 
-**Core Idea**: $w=\epsilon+\Delta_\theta(s)$ combined with a trust region constraint $\mathbb{E}_s[\|\Delta_\theta(s)\|_2^2]\le\delta$ and dual variable $\alpha$ updated via projected gradient ascent. This makes "tightening when exceeding the trust region and relaxing when within it" an intrinsic mechanism.
+**Core Idea**: $w=\epsilon+\Delta_\theta(s)$ + Trust region constraint $\mathbb{E}_s[\|\Delta_\theta(s)\|_2^2]\le\delta$ + Dual variable $\alpha$ updated via projected gradient. This creates an intrinsic mechanism where "exceeding the trust region → automatic tightening, returning to the trust region → relaxation."
 
 ## Method
 
 ### Overall Architecture
-LP-DS formulations the frozen generative policy as a black-box decoder $\Phi:\mathcal{S}\times\mathcal{W}\to\mathcal{A}$. For each state $s$, baseline noise $\epsilon\sim\mathcal{N}(0,I)$ is sampled, and a small MLP $\Delta_\theta(s)$ produces a state-conditional latent query $w$. Interaction occurs via $a=\Phi(s,w)$. Value learning adopts a "dual Q" structure: the action-side $Q_\psi^\mathcal{A}(s,a)$ follows standard TD, while the latent-side $Q_\phi^\mathcal{W}(s,w)$ is obtained by distilling "$Q^\mathcal{A}\circ\Phi$" over baseline noise. Actor updates use the latent-side Q to avoid backpropagation through the decoder. Only $\Delta_\theta, Q_\psi^\mathcal{A}, Q_\phi^\mathcal{W}, \text{and } \alpha$ are updated; the decoder remains frozen.
+LP-DS formulates the frozen generative policy as a black-box decoder $\Phi:\mathcal{S}\times\mathcal{W}\to\mathcal{A}$. For each state $s$, baseline noise $\epsilon\sim\mathcal{N}(0,I)$ is sampled, and a small MLP $\Delta_\theta(s)$ generates the latent query $w$; action $a=\Phi(s,w)$ is used for environment interaction. Value learning adopts a "Dual Q" structure: the action-side $Q_\psi^\mathcal{A}(s,a)$ follows standard TD, while the latent-side $Q_\phi^\mathcal{W}(s,w)$ is obtained by distilling "$Q^\mathcal{A}\circ\Phi$" over the baseline noise—actor updates utilize the latent-side Q to avoid backpropagation through the decoder. The entire training process only updates $\Delta_\theta, Q_\psi^\mathcal{A}, Q_\phi^\mathcal{W}, \alpha$, while the decoder remains frozen.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
     S["State s"] --> RES["Latent Residual Perturbation<br/>w = ε + Δθ(s), ε∼N(0,I)"]
-    RES --> DEC["Frozen Decoder Φ(s,w)<br/>Diffusion/Flow Matching, Read-only"]
-    DEC --> ACT["Action a → Environment Interaction<br/>Collect (s,a,r,s') into buffer"]
+    RES --> DEC["Frozen Decoder Φ(s,w)<br/>Diffusion/Flow-matching, Read-only weights"]
+    DEC --> ACT["Action a → Env Interaction<br/>Collect (s,a,r,s') into buffer"]
     subgraph CRITIC["Dual Critic and Latent Distillation"]
         direction TB
-        QA["Action-side Q^A(s,a)<br/>Standard TD for returns"]
-        QA -->|"Distill on baseline noise ε"| QW["Latent-side Q^W(s,w)<br/>Actor gradient path"]
+        QA["Action-side Q^A(s,a)<br/>Standard TD for true return"]
+        QA -->|"Distill on baseline noise ε"| QW["Latent-side Q^W(s,w)<br/>Actor gradient path only"]
     end
     ACT --> QA
-    QW --> UPD["Lagrangian Trust Region Constraint<br/>Actor maximizes Q^W − α(‖Δ‖²−δ)"]
-    UPD -->|"Projected Dual Ascent α←[α+η(‖Δ‖²−δ)]₊"| RES
+    QW --> UPD["Lagrangian Trust Region Constraint<br/>Actor max Q^W − α(‖Δ‖²−δ)"]
+    UPD -->|"Projected dual ascent α←[α+η(‖Δ‖²−δ)]₊"| RES
 ```
 
 ### Key Designs
 
-**1. Latent Space Residual Perturbation: Refining policies without replacing the prior by adding learnable state-conditional offsets to $\mathcal{N}(0,I)$**
+**1. Latent Residual Perturbation: Fixing policies without replacing priors by adding a learnable state-conditional offset on $\mathcal{N}(0,I)$**
 
-The root cause of DSRL failure is learning a new latent policy $w\sim\pi_\theta^\mathcal{W}(\cdot\mid s)$ that replaces the pre-trained prior; value gradients push latent variables to extremes. LP-DS adopts a residual form $w=\epsilon+\Delta_\theta(s)$, where $\epsilon\sim\mathcal{N}(0,I)$, adding only a small state-conditional offset. This offset acts on the starting point of ODE integration ($x_T$ for diffusion or $x_n$ for flow). Combining this with deterministic decoding (DDIM/flow) effectively shifts the generative distribution lightly while anchored to the prior. This preserves multimodal structures and recovers BC behavior when $\Delta_\theta(\cdot)\approx 0$ at initialization.
+The root cause of DSRL's failure is that it replaces the pre-trained prior with a new latent policy $w\sim\pi_\theta^\mathcal{W}(\cdot\mid s)$, causing latent variables to drift off-manifold under value gradients. LP-DS uses a residual form $w=\epsilon+\Delta_\theta(s)$, where $\epsilon\sim\mathcal{N}(0,I)$, adding a state-conditional offset from a small MLP. The perturbation acts on the starting point of ODE integration ($x_T$ for diffusion or $x_n$ for flow). Combined with deterministic decoding, this shifts the generative distribution while anchoring it to the prior. This restores BC behavior at initialization ($\Delta_\theta(\cdot)\approx 0$) and explicitly preserves multimodal coverage by using the prior as an anchor.
 
-**2. Lagrangian Trust Region Constraint: Using an interpretable knob $\delta$ to keep perturbations within the prior support**
+**2. Lagrangian Trust Region Constraint: Using an interpretable knob $\delta$ to keep perturbations within the prior's support**
 
-Residuals alone cannot prevent value gradients from pushing $\Delta_\theta(s)$ off-manifold. LP-DS treats "perturbation magnitude $\approx$ KL divergence from prior" as a hard constraint. For Gaussians with shifted means, the leading KL term is the squared mean shift: $D_{\mathrm{KL}}(q_\theta(\cdot\mid s)\|p_0)\approx\frac{1}{2}\|\Delta_\theta(s)\|_2^2$. This yields the constrained objective:
+Residuals alone cannot stop the value gradient from pushing $\Delta_\theta(s)$ off-manifold. LP-DS treats "perturbation magnitude $\approx$ KL divergence from the prior" as a hard constraint. For a Gaussian with "baseline + offset," the dominant KL term is the square of the mean shift: $D_{\mathrm{KL}}(q_\theta(\cdot\mid s)\|p_0)\approx\frac{1}{2}\|\Delta_\theta(s)\|_2^2$. This yields the constrained objective:
 
 $$\max_\theta\mathbb{E}\big[Q^\mathcal{W}(s,\epsilon+\Delta_\theta(s))\big]\quad\text{s.t.}\quad \mathbb{E}_s\|\Delta_\theta(s)\|_2^2\le\delta.$$
 
-Dualizing gives $\mathcal{L}(\theta,\alpha)=\mathbb{E}[Q^\mathcal{W}(s,w)-\alpha(\|\Delta_\theta(s)\|_2^2-\delta)]$. $\theta$ follows gradient ascent, and $\alpha$ follows projected dual ascent $\alpha\leftarrow[\alpha+\eta_\alpha\mathbb{E}_s(\|\Delta_\theta(s)\|_2^2-\delta)]_+$. This loop is naturally adaptive: if perturbations exceed $\delta$, $\alpha$ rises and the actor becomes conservative; if they stay within, $\alpha$ falls and the actor explores.
+Formulated as a Lagrangian $\mathcal{L}(\theta,\alpha)=\mathbb{E}[Q^\mathcal{W}(s,w)-\alpha(\|\Delta_\theta(s)\|_2^2-\delta)]$, $\theta$ is updated via gradient ascent, and the dual variable $\alpha$ via projected dual ascent $\alpha\leftarrow[\alpha+\eta_\alpha\mathbb{E}_s(\|\Delta_\theta(s)\|_2^2-\delta)]_+$. This loop is naturally adaptive: if perturbations exceed $\delta$, $\alpha$ increases and the actor becomes conservative; if they stay within $\delta$, $\alpha$ decreases and the actor explores more. This allows the same hyperparameters to work across RoboMimic, Gym, and Adroit.
 
 **3. Dual Critic and Latent Distillation: Decoupling value learning and gradient paths at the decoder boundary**
 
-The action-side $Q_\psi^\mathcal{A}(s,a)$ handles standard TD with $y=r+\gamma\bar Q^\mathcal{A}(s',a')$, where $a'=\Phi(w';s')$, which incorporates real returns. The latent-side $Q_\phi^\mathcal{W}(s,w)$ distills the action-side Q over the baseline noise distribution:
+To drive learning with true environment rewards without backpropagating through the complex and unstable gradients of diffusion/flow-matching (especially for large VLAs), LP-DS uses two Q-functions. The action-side $Q_\psi^\mathcal{A}(s,a)$ follows standard TD: $y=r+\gamma\bar Q^\mathcal{A}(s',a')$, where $a'=\Phi(w';s')$. The latent-side $Q_\phi^\mathcal{W}(s,w)$ then distills the action-side Q over the baseline noise distribution:
 
 $$\mathcal{L}_\phi=\mathbb{E}_{s,\epsilon}\big[(Q^\mathcal{W}_\phi(s,\epsilon)-Q^\mathcal{A}_\psi(s,\Phi(\epsilon;s)))^2\big].$$
 
-Actor updates take gradients only from $Q^\mathcal{W}$, removing the need for a differentiable decoder. This satisfies both "using reward signals" and "avoiding gradients through the decoder," keeping the large generative decoder strictly read-only.
+The actor is updated by taking gradients solely through $Q^\mathcal{W}$, requiring no differentiability from the decoder. This satisfies both the need for real reward signals and the requirement to avoid backpropagation through the decoder.
 
 ### Loss & Training
-Loop: Collect 1 environment step → 1 action-side TD update → 1 latent-side distillation update → 1 actor update + 1 projected dual update for $\alpha$. $\delta$ is set to 0.35 for most experiments (e.g., 0.5 for Hopper, 0.10 for Lift, 0.66 for Pen). Uses ODE/DDIM decoding with action chunking $T_a=8$.
+Inner loop: 1 environment step → 1 $Q^\mathcal{A}$ TD update → 1 $Q^\mathcal{W}$ distillation update → 1 actor primal update + 1 $\alpha$ projected dual update. $\delta$ is typically set to 0.35 (Hopper 0.5, Lift 0.10, Pen 0.66). Uses ODE/DDIM decoding with action chunk size $T_a=8$.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Cross-domain comparison (from Figure 3, average of 6 seeds, Success Rate/Return):
+Cross-domain comparison (summarized from Figure 3, average of 6 seeds, units: success rate/return):
 
-| Domain | Task | LP-DS | DSRL | DPPO | IDQL/DQL | Notes |
+| Domain | Task | LP-DS | DSRL | DPPO | IDQL/DQL | Remarks |
 |------|------|-------|------|------|----------|------|
-| RoboMimic | Square | Highest, quickest convergence | Slow convergence | Mid | Low | High advantage in precision-sensitive tasks |
-| Gym Motion Control | Walker2D-v2 | ≈5000 | ≈4000 (strongest baseline) | — | — | **+25%** Gain |
-| Adroit | Pen/Hammer/Door/Relocate | Best overall | Second | Slightly worse | Poor | Optimal success and returns in dexterous manipulation |
-| LIBERO-90 | cream cheese | Sig. higher than frozen $\pi_0$ | — | — | — | Boosts large VLAs via lightweight perturbation |
-| Franka Robot | Pick-and-Place | 33/40 | — | — | 18/40 (frozen base) | Sim-to-real deployment of perturbation module |
-| Franka Robot | Mug hanging | 17/20 | — | — | 11/20 (frozen base) | Same as above |
+| RoboMimic | Square | ≈Highest, fastest to reach high success | Slow convergence | Med | Low | LP-DS excels in precision-sensitive tasks |
+| Gym Control | Walker2D-v2 | ≈5000 | ≈4000 (Strongest baseline) | — | — | Return **+25%** |
+| Adroit | Pen/Hammer/Door/Relocate | Best overall | Second | Slightly worse | Poor | Optimal success and return in dexterous tasks |
+| LIBERO-90 | cream cheese | Sig. higher than frozen π0 | — | — | — | Boots large VLA performance with light module |
+| Franka Real | Pick-and-Place | 33/40 | — | — | 18/40 (Frozen baseline) | Sim-to-real transfer of perturbation |
+| Franka Real | Mug hanging | 17/20 | — | — | 11/20 (Frozen baseline) | Same as above |
 
 ### Ablation Study
 
-| Configuration | Pen Success EMA | k-NN Action Entropy | Description |
+| Configuration | Pen Success Rate EMA | k-NN Action Entropy | Description |
 |------|--------------|------------|------|
-| Full LP-DS | Highest | High | Trust region + Lagrangian synergy |
-| w/o Lagrangian | Mid → Unstable | Monotonic decrease | Collapses without auto-tightening |
-| w/o Lag. & noise bound | Lowest, oscillating | Very low | Latent flies out of $\mathcal{N}(0,I)$ support |
-| DSRL | Low | Lowest | Direct latent policy learning collapses earliest |
-| LP-DS-A (Action-space) | Early plateau | — | Modifying $a$ post-decoding is inferior to noise modification |
+| Full LP-DS | Highest | High | Trust region + Lagrangian both active |
+| w/o Lagrangian | Medium → Unstable | Monotonic decrease | Collapses to single behavior without auto-tightening |
+| w/o Lag. & noise bound | Lowest, high oscillation | Extremely low | Latent variables fly out of $\mathcal{N}(0,I)$ support |
+| DSRL | Low | Lowest | Direct latent policy learning collapses early |
+| LP-DS-A (Action residual) | Early plateau | — | Correcting actions after decoding is much less effective |
 
 ### Key Findings
-- $\delta$ acts as a "Multimodality vs. Specialization" knob: On a 4-mode toy environment, $\delta=0.01$ maintains coverage, $\delta=0.05$ targets modes more directly while remaining multimodal, and $\delta=0.1$ collapses to a single mode. DSRL collapses immediately.
-- Final returns are robust to $\delta$ within the 0.1–0.66 range, proving it to be an interpretable "coarse-tuning" knob rather than a fragile hyperparameter.
-- Latent space residuals consistently outperform action-space residuals, suggesting that for high-capacity decoders, "modifying starting point $w$" provides more information than "locally correcting endpoint $a$."
+- $\delta$ acts as a "multimodality vs. specialization" knob: In a 4-mode symmetric toy environment, $\delta=0.01$ maintains 4 modes, $\delta=0.05$ is more targeted but still multimodal, and $\delta=0.1$ collapses to a single target; DSRL collapses to one mode immediately.
+- Final returns are insensitive to $\delta$ within the [0.1, 0.66] range, making it a "coarse-tuning knob" rather than a fragile hyperparameter.
+- Latent residuals significantly outperform action-space residuals, showing that for high-capacity decoders, "shifting the starting point $w$" is much more informative than "local action correction $a$."
 
 ## Highlights & Insights
-- Approximating KL trust regions as $\frac{1}{2}\|\Delta\|^2$ is a practical simplification: for "baseline + shift" Gaussians, the mean shift squared is the dominant term.
-- Decoupling gradient paths via dual Q-distillation is a clean way to bypass unstable diffusion backpropagation, which is critical for VLAs like $\pi_0$ where the computation graph is too large to store.
-- The projected dual update for $\alpha$ automatically achieves "constraint adaptation," allowing the same hyperparameters to be used across RoboMimic, Gym, and Adroit without major changes.
+- The approximation of KL trust region as $\frac{1}{2}\|\Delta\|^2$ is a highly practical simplification: For "baseline + offset" Gaussians, this term dominates, allowing the Lagrangian derivation to close in one step.
+- The explicit architecture for decoupling gradients (Dual Q + Distillation) is a clean way to bypass unstable diffusion backpropagation, crucial for large VLAs where retaining the computation graph is infeasible.
+- The projected dual update for $\alpha$ automatically achieves "constraint adaptation," explaining why the same hyperparameters generalize across different domains without heavy tuning.
 
 ## Limitations & Future Work
-- The KL approximation assumes "small residuals on $\mathcal{N}(0,I)$"; it may be biased if the decoder prior is non-isotropic (e.g., conditional flow).
-- The paper lacks systematic coverage of partially observable, long-horizon scenarios; future work could involve adaptive $\delta$ based on state/time.
-- Physical experiments were conducted on medium-complexity tasks (pick-and-place, mug hanging); results on high-contact/dexterous tasks are needed.
+- The trust region KL approximation assumes an isotropic prior; it may be biased if the decoder prior is significantly non-isotropic (e.g., conditional flow).
+- Does not systematically cover partially observable or extremely long-horizon scenarios; future work could explore adaptive $\delta$ based on state or time.
+- Real-robot tasks remain at medium difficulty (pick-and-place); more high-contact or long-chain dexterous tasks are needed to further validate sim-to-real robustness.
 
 ## Related Work & Insights
-- **vs DSRL**: DSRL learns $\pi_\theta^\mathcal{W}(w\mid s)$ to replace the prior, whereas LP-DS learns a residual $\Delta_\theta(s)$ with explicit magnitude constraints—preventing the collapse shown in Figures 1 and 2.
-- **vs DPPO**: DPPO fine-tunes all decoder parameters via policy gradients; LP-DS updates only a lightweight MLP, offering significantly better sample efficiency, though the upper bound is influenced by the prior quality.
-- **vs Vision/Text-to-Image Noise Optimization**: LP-DS adapts these ideas to sequential decision-making by optimizing for long-horizon returns with explicit trust regions.
+- **vs DSRL**: DSRL learns $\pi_\theta^\mathcal{W}(w\mid s)$ to replace the prior; LP-DS learns a residual $\Delta_\theta(s)$ with explicit magnitude constraints. Figures 1 and 2 highlight DSRL's collapse versus LP-DS's stability.
+- **vs DPPO**: DPPO fine-tunes all decoder parameters via policy gradients; LP-DS updates only a lightweight perturbation MLP, showing better sample efficiency and stability.
+- **vs IDQL / DQL**: These offline-to-online methods update the main network; LP-DS's "read-only decoder + latent RL" is a more lightweight, deployment-friendly route.
+- **vs Latent Optimization (e.g., ReNO)**: While visual/image generation utilizes noise optimization for quality, LP-DS adapts this for long-horizon returns and explicit trust regions in decision-making.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Elegant application of KL trust regions via residuals in latent RL, though components (latent RL, dual Q) are established.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive coverage across 4 simulation domains, large VLA backbones, and physical Franka tasks.
-- Writing Quality: ⭐⭐⭐⭐ Algorithm 1 and mathematical derivations are compact and clear.
-- Value: ⭐⭐⭐⭐ Provides a reusable pipeline for RL fine-tuning of large, frozen generative decoders, particularly useful for VLA models.
+- Novelty: ⭐⭐⭐⭐ Elegant application of latent trust regions via residual approximation, though individual components (Latent RL, Dual Q) are known.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive coverage across 4 simulation domains, large VLA backbones, and two real-robot Franka tasks.
+- Writing Quality: ⭐⭐⭐⭐ Algorithm 1 and derivations are concise; toy visualizations effectively convey the multimodality-performance trade-off.
+- Value: ⭐⭐⭐⭐ Provides a ready-to-use pipeline for applying RL to large frozen generative models, particularly valuable for the π0-class models.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1">
-</div>
+<div class="related-papers" markdown="1"></div>
 
 ## Related Papers
 
 - [\[ICML 2026\] Discrete Diffusion VLA: Bringing Discrete Diffusion to Action Decoding in Vision-Language-Action Policies](discrete_diffusion_vla_bringing_discrete_diffusion_to_action_decoding_in_vision-.md)
+- [\[CVPR 2026\] REACH: Explicit Recovery Behavior for Diffusion Policies](../../CVPR2026/robotics/reach_explicit_recovery_behavior_for_diffusion_policies.md)
 - [\[CVPR 2026\] GraspLDP: Towards Generalizable Grasping Policy via Latent Diffusion](../../CVPR2026/robotics/graspldp_towards_generalizable_grasping_policy_via_latent_diffusion.md)
+- [\[ICML 2026\] Online Self-Training for Co-Adaptation in Hierarchical Diffusion Policies](online_self-training_for_co-adaptation_in_hierarchical_diffusion_policies.md)
 - [\[ICML 2026\] Latent Reasoning VLA: Latent Thinking and Prediction for Vision-Language-Action Models](latent_reasoning_vla_latent_thinking_and_prediction_for_vision-language-action_m.md)
-- [\[ICML 2026\] RoboMME: Benchmarking and Understanding Memory for Robotic Generalist Policies](robomme_benchmarking_and_understanding_memory_for_robotic_generalist_policies.md)
-- [\[ICML 2026\] STEP: Warm-Started Visuomotor Policies with Spatiotemporal Consistency Prediction](step_warm-started_visuomotor_policies_with_spatiotemporal_consistency_prediction.md)
 
 </div>
 

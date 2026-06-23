@@ -2,13 +2,13 @@
 title: >-
   [Paper Note] DetectRL-X: Towards Reliable Multilingual and Real-World LLM-Generated Text Detection
 description: >-
-  [ACL 2026][AIGC Detection][DetectRL-X] DetectRL-X constructs a benchmark featuring 3.456 million samples across multiple languages, domains, attacks, and lengths with parallel binary and ternary classification tasks. It demonstrates that existing detectors still exhibit significant robustness deficiencies in real-world multilingual and human-machine collabo
+  [ACL 2026][AIGC Detection][DetectRL-X] DetectRL-X constructs a benchmark containing 3.456 million samples across multiple languages, domains, attacks, and lengths with parallel binary/ternary classification, proving that existing detectors still have significant robustness gaps in real-world multilingual and human-AI collaborative writing scenarios.
 tags:
   - ACL 2026
   - AIGC Detection
   - DetectRL-X
 date: 2026-05-08
-content_hash: 98a9551ca46b03e9
+content_hash: 982f8b04f97132a6
 ---
 # DetectRL-X: Towards Reliable Multilingual and Real-World LLM-Generated Text Detection
 
@@ -19,115 +19,117 @@ content_hash: 98a9551ca46b03e9
 **Keywords**: LLM-Generated Text Detection, Multilingual Robustness, Ternary Classification, Attack Evaluation, DetectRL-X
 
 ## TL;DR
-DetectRL-X constructs a benchmark featuring 3.456 million samples across multiple languages, domains, attacks, and lengths with parallel binary and ternary classification tasks. It demonstrates that existing detectors still exhibit significant robustness deficiencies in real-world multilingual and human-machine collaborative writing scenarios.
+DetectRL-X constructs a benchmark containing 3.456 million samples across multiple languages, domains, attacks, and lengths with parallel binary/ternary classification, proving that existing detectors still have significant robustness gaps in real-world multilingual and human-AI collaborative writing scenarios.
 
 ## Background & Motivation
-**Background**: LLM-generated text detection is typically defined as a binary classification task distinguishing between Human-Written Text (HWT) and LLM-Generated Text (LGT). Existing detectors are categorized into statistical methods (e.g., Log-Likelihood, Log-Rank, DetectLLM-LRR, GECScore, Binoculars) and supervised neural detectors (e.g., XLM-RoBERTa-Classifier and mDeBERTa-Classifier).
+**Background**: LLM-generated text detection is typically defined as a binary classification task to distinguish between Human-Written Text (HWT) and LLM-Generated Text (LGT). Existing detectors fall into two categories: statistical-based methods (e.g., Log-Likelihood, Log-Rank, DetectLLM-LRR, GECScore, Binoculars) and supervised neural detectors (e.g., XLM-RoBERTa-Classifier and mDeBERTa-Classifier).
 
-**Limitations of Prior Work**: Many benchmarks only cover a few languages, generators, or clean distributions, failing to address real-world deployment challenges. In commercial scenarios, text may originate from various domains, generators, and languages, and may undergo polishing, expansion, compression, rewriting, back-translation, or character perturbations. Crucially, actual text is often neither purely human nor purely machine-written, but rather human text revised by LLMs. This Hybrid LLM-Text (HLT) makes traditional binary classification unrealistic.
+**Limitations of Prior Work**: Many benchmarks only cover a few languages, generators, or clean distributions, making it difficult to address real-world deployment issues. In commercial scenarios, text may come from different domains, generators, and languages, and may undergo polishing, expanding, condensing, paraphrasing, back-translation, or character perturbation. More critically, actual text is often not purely human-written or purely machine-generated, but human-authored then revised by LLMs. Such Hybrid LLM-Text (HLT) makes traditional binary classification unrealistic.
 
-**Key Challenge**: High scores achieved by detectors in single-domain, single-language, and single-generator settings do not guarantee performance on authentic internet text. Evaluation must simultaneously account for linguistic differences, domain shifts, generator variations, text length, attacks, and collaborative writing; otherwise, detector reliability will be systematically overestimated.
+**Key Challenge**: High scores achieved by detectors in single-domain, single-language, and single-generator settings do not imply their ability to handle real-world internet text. Detection evaluation needs to simultaneously cover linguistic differences, domain gaps, generator variations, text lengths, attacks, and human-AI collaboration; otherwise, the reliability of detectors is systematically overestimated.
 
-**Goal**: The authors aim to construct a detection benchmark closer to real-world usage, covering 8 commercially common languages, 6 high-risk application domains, 4 mainstream generators, 8 attack/perturbation dimensions, 4 text length granularities, and 3 revision operations, while evaluating both binary and ternary tasks.
+**Goal**: The authors aim to construct a detection benchmark closer to real-world usage, covering 8 commercially common languages, 6 high-risk application domains, 4 mainstream generators, 8 attack/perturbation dimensions, 4 text length granularities, and 3 revision operations, while evaluating both Binary and Ternary tasks.
 
-**Key Insight**: Rather than proposing a single new detector, the paper completes the evaluation space. It integrates HWT, LGT, and HLT into a unified framework and establishes a leaderboard to compare 12 representative detection methods under various distribution shifts.
+**Key Insight**: Instead of proposing a single new detector, this paper focuses on completing the evaluation space. It integrates HWT, LGT, and HLT into a unified data framework and establishes a leaderboard to compare the performance of 12 representative detection methods under various distribution shifts.
 
-**Core Idea**: Expose the fragility of detectors through more complex, realistic multilingual evaluations instead of pursuing near-saturated scores on clean binary benchmarks.
+**Core Idea**: Use more complex and realistic multilingual evaluations to expose the vulnerability of detectors, rather than continuing to pursue nearly saturated scores on clean binary classification benchmarks.
 
 ## Method
 
 ### Overall Architecture
-DetectRL-X does not propose a new detector; instead, its "method" lies in the design of data construction, task definitions, attack generation, and evaluation modules. It organizes three categories: HWT (human), LGT (machine), and HLT (human text revised by LLM). These correspond to binary tasks $\{HWT, LGT\}$ and ternary tasks $\{HWT, HLT, LGT\}$. Data construction begins by collecting human text in 8 languages (English, German, Spanish, French, Portuguese, Russian, Arabic, Chinese), categorized by linguistic complexity. Sources cover six domains (Academic, News, Novel, SEO, Wiki, WebText), using pre-2022 data to minimize LGT contamination. Subsequently, LGT is generated using DeepSeek-V3, Gemini-2.5-flash, GPT-4o, and Qwen-Max. HLT is constructed by using Qwen-Max to polish, expand, or condense HWT. Finally, multilingual paraphrase and perturbation attacks are superimposed, and samples are segmented into 64/128/256/512 token lengths. The final dataset consists of 3,456,000 samples, split 2:1 for training and testing.
+DetectRL-X does not propose a new detector; instead, its "method" lies in the design of data construction, task definition, attack generation, and evaluation modules. It organizes around three text categories: HWT (Human-Written), LGT (LLM-Generated), and HLT (Mixed text via LLM-assisted revision). These correspond to the Binary task $\{HWT, LGT\}$ and the Ternary task $\{HWT, HLT, LGT\}$. Data construction begins by collecting human-written text in 8 languages (English, German, Spanish, French, Portuguese, Russian, Arabic, and Chinese), grouped into high/medium/low complexity. Sources cover six domains (Academic, News, Novel, SEO, Wiki, WebText), using only pre-2022 texts to minimize LGT contamination. Subsequently, LGT is generated using DeepSeek-V3, Gemini-2.5-flash, GPT-4o, and Qwen-Max, while HLT is constructed by using Qwen-Max to perform polishing, expanding, and condensing on HWT/LGT. Finally, multilingual paraphrase/perturbation attacks are superimposed, and samples are segmented into lengths of 64/128/256/512 tokens. The final dataset size is 3,456,000 samples, with a 2:1 train/test split.
 
 ```mermaid
-%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
-flowchart TD
-    subgraph TASK["Task Definitions"]
+graph TD
+    subgraph TASK["Binary/Ternary Task Definition"]
         direction TB
         T1["Binary: {HWT, LGT}"]
         T2["Ternary: {HWT, HLT, LGT}"]
     end
-    subgraph DATA["Multilingual/Domain/Generator Construction"]
+    subgraph DATA["Multilingual·Multi-domain·Multi-generator Data Construction"]
         direction TB
         D1["HWT Collection<br/>8 Languages / 6 Domains / ≤2022"] --> D2["LGT Generation<br/>DeepSeek-V3 / Gemini-2.5 / GPT-4o / Qwen-Max"]
-        D2 --> D3["HLT Revision<br/>Qwen-Max Polish / Expand / Condense"]
+        D2 --> D3["HLT Revision<br/>Qwen-Max Polishing / Expanding / Condensing"]
     end
-    subgraph ROBUST["Attack/Length/Revision Robustness"]
+    subgraph ROBUST["Attack·Length·Revision Robustness"]
         direction TB
-        R1["Rewriting Attacks + Character Perturbation"] --> R2["64/128/256/512 Tokens Segmentation"]
+        R1["Paraphrase Attack + Character Perturbation"] --> R2["64 / 128 / 256 / 512 Tokens Segmentation"]
     end
     TASK --> DATA
     DATA --> ROBUST
     ROBUST --> S["3.456M Samples<br/>train/test = 2:1"]
-    S --> EVAL["12 Detectors<br/>Binary / Ternary Leaderboards"]
+    S --> EVAL["12 Detectors<br/>Binary / Ternary Dual Leaderboard"]
 ```
 
 ### Key Designs
 
-**1. Extension from Binary to Ternary Classification: Including Collaborative Writing**
-Traditional detection defines the task as $f_{Binary}: T \to \{HWT, LGT\}$, which identifies "machine flavor" but fails to handle "human drafts polished by LLMs," a common real-world gray area. This paper introduces $f_{Ternary}: T \to \{HWT, HLT, LGT\}$, where HLT represents human-written text that has been polished, expanded, or condensed by an LLM. This directly corresponds to auxiliary writing in office and content production. By introducing this category, the evaluation forces detectors to make boundary judgments on "hybrid authorship"—experiments confirm that HLT blurs the boundary between HWT and LGT, causing a significant drop in ternary performance compared to binary.
+**1. Extending Binary to Ternary: Incorporating the Grey Zone of Human-AI Collaboration**
 
-**2. Multilingual, Multi-domain, Multi-generator Data Construction**
-Most LLMs and detectors are trained on English-heavy distributions, leading to scores on clean English sets that cannot generalize to real internet text. The benchmark covers 8 languages and 6 domains using generators from four providers. Languages are categorized by complexity: High (Arabic, Russian, Chinese), Medium (German, French, Spanish, Portuguese), and Low (English). This allows for explicit testing of the hypothesis that "greater differences in writing systems and morphological structures increase representation difficulty," exposing cross-lingual transfer fragility as a quantifiable metric.
+Traditional detection defines the task as $f_{Binary}: T \to \{HWT, LGT\}$, which can only answer "is it machine-generated" but fails to handle realistic scenarios like "human manuscript polished locally by LLM." This paper introduces $f_{Ternary}: T \to \{HWT, HLT, LGT\}$, where HLT originates from human-written text polished, expanded, or condensed by an LLM, directly corresponding to assisted writing in professional content production. This category forces detectors to make boundary judgments on "hybrid authorship"—experiments confirm that HLT blurs the boundary between HWT and LGT, causing ternary performance to drop significantly compared to binary, thus better reflecting real-world deployment difficulties.
 
-**3. Robustness Evaluation Across Attacks, Lengths, and Revisions**
-Real-world detection rarely encounters raw model outputs; instead, it faces revised LLM text. The benchmark systematizes user modifications into multiple dimensions: Paraphrase Attacks (Encoder/Seq2seq/Decoder Paraphrasing and Back-Translation) and Perturbation Attacks (Character Insertion/Substitution/Deletion and Zero-width Insertion), alongside length sensitivity analysis (64/128/256/512 tokens). This stress test reveals whether detectors rely on fragile surface statistical features that can be erased by rewriting—experiments show paraphrasing is far more destructive than character perturbations.
+**2. Multilingual, Multi-domain, and Multi-generator Construction: Avoiding Inflation on English-Only Styles**
+
+Most LLMs and detectors have training distributions skewed towards English, meaning high scores on clean English sets often fail to extrapolate to real internet text. Thus, the data covers 8 languages and 6 domains across 4 generators (DeepSeek-V3, Gemini-2.5-flash, GPT-4o, Qwen-Max). Languages are categorized by complexity and typological distance from English: High (Arabic, Russian, Chinese), Medium (German, French, Spanish, Portuguese), and Low (English). This allows the hypothesis—that greater script and morphological differences lead to more difficult tokenization and representation—to be explicitly tested, exposing cross-lingual transfer vulnerabilities as quantifiable performance drops.
+
+**3. Robustness Evaluation for Attack, Length, and Revision: Simulating Real-World Rewriting and Noise**
+
+Real-world detection rarely encounters raw model outputs, but rather LLM text that has been modified. Therefore, the benchmark systematizes potential user operations into multiple attack dimensions: Paraphrase Attacks (Encoder/Seq2seq/Decoder Paraphrasing and Back-Translation) and Perturbation Attacks (Character Insertion/Substitution/Deletion and Zero-width Insertion), combined with length sub-samples (64/128/256/512 tokens) to assess length sensitivity. The value of this stress test lies in measuring whether detectors rely on fragile surface statistical features that can be erased by rewriting; experiments show that paraphrasing is much more destructive than character perturbation.
 
 ### Loss & Training
-The paper does not propose new training losses but evaluates 12 existing detectors. Statistical methods include Log-Likelihood, Log-Rank, DetectLLM-LRR, GECScore, ReviseDetect, Fast-DetectGPT, Binoculars, Lastde++, RepreGuard, and Biscope. Neural methods include X-Rob-Classifier and mDeBERTa-Classifier. Watermarking methods are excluded as commercial LLMs are often black boxes. Evaluation uses Binary and Ternary leaderboards, comparing metrics across In-Distribution, Cross-Domain, Cross-Generator, Cross-Language, Cross-Paraphrase, Cross-Perturbation, Cross-Length, and Cross-Operation dimensions.
+The paper does not propose a new training loss but evaluates 12 existing detectors. Statistical methods include Log-Likelihood, Log-Rank, DetectLLM-LRR, GECScore, ReviseDetect, Fast-DetectGPT, Binoculars, Lastde++, RepreGuard, and Biscope; neural methods include X-Rob-Classifier and mDeBERTa-Classifier. Since LLMs are often black-boxes in real scenarios, watermarking methods are excluded. Performance is measured using Binary and Ternary leaderboards, comparing dimensions like In-Distribution, Cross-Domain, Cross-Generator, Cross-Language, Cross-Paraphrase, Cross-Perturbation, Cross-Length, and Cross-Operation.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Task | Best / Rep. Method | Avg $F^B_1$ | Avg $F^F_1$ | Interpretation |
-|--------|------|------|----------|------|
-| Binary | X-Rob-Classifier | 95.58% | 91.31% | Ranked 1st on binary leaderboard; neural detectors are strongest overall. |
-| Binary | mDeBERTa-Classifier | 95.48% | 93.20% | 2nd in binary, but higher $F^F_1$ than X-Rob-Classifier. |
-| Ternary | mDeBERTa-Classifier | 87.68% | 81.10% | Strongest in ternary, but significantly lower than binary. |
-| Binary / Ternary | Biscope | 80.06% / 59.69% | 63.62% / 37.91% | Even weaker neural detectors outperform the best statistical detectors on average. |
-| In-Distribution Stat. | GECScore | 83.22% | N/A | Statistical methods are unstable in complex multilingual mixtures even for ID tasks. |
+| Task | Best/Representative Method | Avg $F^B_1$ | Avg $F^F_1$ | Interpretation |
+| :--- | :--- | :--- | :--- | :--- |
+| Binary | X-Rob-Classifier | 95.58% | 91.31% | Ranked 1st in Binary; neural detectors are strongest overall |
+| Binary | mDeBERTa-Classifier | 95.48% | 93.20% | 2nd in Binary, but higher $F^F_1$ than X-Rob-Classifier |
+| Ternary | mDeBERTa-Classifier | 87.68% | 81.10% | Strongest in Ternary, but significant drop compared to Binary |
+| Binary / Ternary | Biscope | 80.06% / 59.69% | 63.62% / 37.91% | Even weaker neural detectors outperform best statistical methods on avg |
+| ID (Stat. Detector) | GECScore | 83.22% | N/A | Statistical methods are unstable in complex multilingual distributions |
 
 ### Ablation Study
 
-| Robustness Dimension | Performance Change Observed | Description |
-|------|---------|------|
-| Cross-Language | Neural Binary Avg $F^B_1$ dropped from 95.3% to 91.4%; Ternary from 87.10% to 66.28% | Cross-lingual transfer is especially difficult in ternary tasks (mDeBERTa dropped 20.55%). |
-| Cross-Domain vs Generator | Binary Neural detectors: Cross-Domain dropped 2.95%, Cross-Generator dropped 0.78% | Domain shift is a more significant real-world bottleneck than generator shift. |
-| Paraphrase / Perturbation | Binary Neural dropped 28.1% and 13.1%; Ternary dropped 16.8% and 4.3% | Paraphrasing is more destructive to detection signals than fine-grained character noise. |
-| Length / Operation | Binary Neural dropped ~4.5% and 1%; Ternary dropped 11.9% and 13.4% | Text length and revision operations have a larger impact on ternary classification. |
-| Binary vs Ternary | ID Stat. detectors dropped from 67.9% to 39.3%; Neural from 97.6% to 87.1% | HLT category significantly increases task difficulty and reflects hybrid authorship. |
+| Robustness Dimension | Performance Change | Description |
+| :--- | :--- | :--- |
+| Cross-Language | Neural Binary avg $F^B_1$: 95.3% $\to$ 91.4%; Ternary: 87.10% $\to$ 66.28% | Cross-lingual transfer is especially difficult in Ternary tasks |
+| Cross-Domain vs Cross-Generator | Binary Neural: Cross-Domain drop 2.95%, Cross-Generator drop 0.78% | Domain shift is a more significant bottleneck than generator shift |
+| Paraphrase / Perturbation | Binary Neural: -28.1% vs -13.1%; Ternary: -16.8% vs -4.3% | Paraphrasing destroys detection signals more than character junk |
+| Length / Operation | Binary Neural: -4.5% vs -1%; Ternary: -11.9% vs -13.4% | Text length and revision operations have a greater impact on Ternary tasks |
+| Binary vs Ternary | Stat ID: 67.9% $\to$ 39.3%; Neural ID: 97.6% $\to$ 87.1% | HLT category significantly increases difficulty, reflecting hybrid authorship |
 
 ### Key Findings
-- Neural detectors outperform statistical ones but are not "solved." Substantial performance drops occur in Cross-Language, Cross-Domain, and paraphrase scenarios.
-- Statistical detectors are fragile against real hybrid distributions. Even in In-Distribution settings, their average $F^B_1$ is only 67.89%, suggesting single-domain experiments overestimate their efficacy.
-- The Ternary task is closer to real deployment. On average, statistical methods drop from 58.3% to 35.3%, and neural methods from 90.4% to 76.7%, indicating that HLT blurs the HWT/LGT boundary.
-- Paraphrasing is more dangerous than character perturbation. Statistical detectors lose 25-40% under paraphrasing, indicating reliance on surface features that rewriting can eliminate.
-- Language complexity provides an analytical dimension. High-complexity languages (Arabic, Russian, Chinese) pose greater challenges in tokenization and cross-lingual transfer.
+- Neural detectors are generally stronger than statistical ones but the problem is not "solved." Substantial performance drops occur in Cross-Language, Cross-Domain, and paraphrase scenarios.
+- Statistical detectors are fragile against real-world mixed distributions. Even in In-Distribution settings, their average $F^B_1$ is only 67.89%, indicating that single-domain/single-generator experiments overestimate their effectiveness.
+- Ternary tasks are closer to real-world deployment. Overall, statistical methods drop from 58.3% to 35.3%, and neural methods from 90.4% to 76.7%, showing that HLT blurs the boundary between HWT and LGT.
+- Paraphrasing is more dangerous than character perturbation. Statistical detectors lose 25-40% under binary paraphrasing, and neural detectors drop up to 35.5%, suggesting reliance on surface features that can be rewritten.
+- Language complexity provides an analytical dimension. High-complexity languages (Arabic, Russian, Chinese) pose greater challenges in tokenization, representation, and cross-lingual transfer.
 
 ## Highlights & Insights
-- The main highlight is pulling evaluation back from "neat but simple" binary classification to the real world. The HLT category is crucial because most text is polished by models rather than being purely machine-generated.
-- The 8 evaluation dimensions make the benchmark function as a stress test rather than a simple leaderboard, identifying exactly what (e.g., cross-language vs. rewriting) causes failure.
-- The conclusion on statistical methods is practical: while they are low-cost and interpretable, they lack stability in multilingual and attack-prone scenarios and should not be judged solely on clean sets.
-- For future training, models need language-invariant and domain-robust features, and training data must explicitly include HLT rather than just learning generator fingerprints.
+- The biggest highlight is shifting the evaluation task from "pretty but simple" binary classification back to the real world. The HLT category is crucial because most actual text is human-authored and model-polished.
+- The 8 evaluation dimensions make the benchmark more of a stress test than a simple leaderboard. It identifies whether cross-lingual, cross-domain, length, or rewriting factors are undermining the detector.
+- The conclusion for statistical methods is practical: while they have low deployment costs and better interpretability, they are unstable in multilingual and attack scenarios and should not be judged solely on clean test sets.
+- Insight for training: Future detectors need language-invariant features, domain-robust features, and explicit HLT training data rather than just learning the generator "fingerprints" of LGT.
 
 ## Limitations & Future Work
-- The benchmark has temporal sensitivity. As LLM generation quality improves, outputs will closer resemble human text, making current generators and styles obsolete.
-- Language coverage remains limited. While 8 languages are broader than most benchmarks, they exclude many regional languages, low-resource languages, and dialects.
-- Watermarking is excluded because industrial LLMs are black boxes, meaning the benchmark does not cover "active watermarking" routes.
-- The definition of ternary classification could be further refined. HLT currently only covers polishing, expanding, and condensing; future work could include multi-turn co-writing and post-editing of translations.
+- The authors acknowledge the temporal correlation of the benchmark. LLM generation quality is rapidly improving; future model outputs will more closely resemble human text, making current data styles potentially obsolete.
+- Language coverage is still limited. Although 8 languages are broader than most benchmarks, they do not include more regional languages, low-resource languages, or dialect variations.
+- Watermarking methods were excluded. The reasoning is the black-box nature of commercial LLMs, but this means the benchmark does not cover active detection routes.
+- The definition of ternary classification could be further refined. HLT currently only covers polishing, expanding, and condensing; future work could include multi-turn human-AI collaborative writing or cross-lingual post-editing.
 
 ## Related Work & Insights
-- **vs. Traditional LGT Binary Benchmarks**: These usually only distinguish HWT/LGT; DetectRL-X adds HLT to better reflect human-machine collaboration.
-- **vs. M4 / RAID Multi-generator Evaluations**: These already cover multiple generators and attacks, but DetectRL-X emphasizes multilingualism, ternary tasks, and a unified 8-dimensional robustness comparison.
-- **vs. Statistical Detectors**: Methods like DetectLLM-LRR and Binoculars are unsupervised but suffer from poor robustness across domains, languages, and rewriting.
-- **vs. Neural Detectors**: X-Rob and mDeBERTa rank higher, but their performance drop in Cross-Language and Ternary scenarios indicates that supervised detection still requires broader training distributions.
+- **vs Traditional LGT Binary Benchmarks**: Traditional datasets usually only distinguish HWT/LGT; DetectRL-X adds HLT to better match real-world collaboration.
+- **vs Multi-generator Benchmarks (M4/RAID)**: These have expanded generators and attacks, but DetectRL-X emphasizes multilingualism, ternary tasks, and a unified 8-dimensional robustness comparison.
+- **vs Statistical Detectors**: Methods like DetectLLM-LRR and Binoculars rely on probability or logit features. Their advantage is being unsupervised, but their weakness is lack of robustness to domain, language, and paraphrasing.
+- **vs Neural Detectors**: X-Rob-Classifier and mDeBERTa-Classifier rank higher, but their performance still drops in Cross-Language and Ternary settings, indicating that supervised detection requires broader training distributions.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐☆ Few new detection algorithms, but the benchmark design integrates HLT, multilingualism, and real-world attacks thoroughly.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 3.456 million samples, 8 languages, 6 domains, 4 generators, 12 detectors, and 8 evaluation dimensions.
-- Writing Quality: ⭐⭐⭐⭐☆ Argumentation is clear, though some tables are extremely long with a slight learning curve for metric naming.
-- Value: ⭐⭐⭐⭐⭐ Highly valuable for real-world AIGC detection deployment, warning against over-reliance on English-only binary accuracy.
+- Novelty: ⭐⭐⭐⭐☆ Fewer new detection algorithms, but the benchmark design integrates HLT, multilingualism, and real-world attacks comprehensively.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Data scale of 3.456M, covering 8 languages, 6 domains, 4 generators, 12 detectors, and 8 evaluation dimensions.
+- Writing Quality: ⭐⭐⭐⭐☆ Logically clear, though tables are long and some metric naming requires careful reading.
+- Value: ⭐⭐⭐⭐⭐ Highly valuable for actual AIGC detection deployment, specifically warning against over-reliance on English-only clean binary accuracy.
 
 <!-- RELATED:START -->
 
@@ -137,8 +139,8 @@ The paper does not propose new training losses but evaluates 12 existing detecto
 
 - [\[ACL 2026\] C-ReD: A Comprehensive Chinese Benchmark for AI-Generated Text Detection Derived from Real-World Prompts](c-red_a_comprehensive_chinese_benchmark_for_ai-generated_text_detection_derived_.md)
 - [\[ACL 2026\] Temporal Flattening in LLM-Generated Text: Comparing Human and LLM Writing Trajectories](temporal_flattening_in_llm-generated_text_comparing_human_and_llm_writing_trajec.md)
-- [\[ACL 2026\] BIASEDTALES-ML: A Multilingual Dataset for Analyzing Narrative Attribute Distributions in LLM-Generated Stories](biasedtales-ml_a_multilingual_dataset_for_analyzing_narrative_attribute_distribu.md)
 - [\[ACL 2026\] Beyond the Final Actor: Modeling the Dual Roles of Creator and Editor for Fine-Grained LLM-Generated Text Detection](beyond_the_final_actor_modeling_the_dual_roles_of_creator_and_editor_for_fine-gr.md)
+- [\[ACL 2026\] BIASEDTALES-ML: A Multilingual Dataset for Analyzing Narrative Attribute Distributions in LLM-Generated Stories](biasedtales-ml_a_multilingual_dataset_for_analyzing_narrative_attribute_distribu.md)
 - [\[NeurIPS 2025\] DuoLens: A Framework for Robust Detection of Machine-Generated Multilingual Text and Code](../../NeurIPS2025/aigc_detection/duolens_a_framework_for_robust_detection_of_machine-generated_multilingual_text_.md)
 
 </div>

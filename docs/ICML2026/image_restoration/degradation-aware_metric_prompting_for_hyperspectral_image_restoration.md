@@ -2,13 +2,13 @@
 title: >-
   [Paper Note] Degradation-Aware Metric Prompting for Hyperspectral Image Restoration
 description: >-
-  [ICML 2026][Image Restoration][Mixture-of-Experts] DAMP utilizes six interpretable spatial-spectral physical metrics (such as high-frequency energy ratio, texture consistency, and spectral curvature) as "Degradation Prompts" (DP) to replace black-box embeddings and explicit degradation labels. These DPs serve as gating signals for a Spatial-Spectral Adaptive MoE to sel
+  [ICML 2026][Image Restoration][Mixture-of-Experts] DAMP utilizes 6 interpretable spatial-spectral physical metrics (high-frequency energy ratio, texture uniformity, spectral curvature, etc.) as "Degradation Prompts" (DP) to replace black-box embeddings and explicit degradation labels. These DPs act as gating signals driving a Spatial-Spectral Adaptive MoE to select dif
 tags:
   - ICML 2026
   - Image Restoration
   - Mixture-of-Experts
 date: 2026-05-08
-content_hash: a96d56707811f7ae
+content_hash: f54e9c5aaf949b28
 ---
 # Degradation-Aware Metric Prompting for Hyperspectral Image Restoration
 
@@ -16,125 +16,129 @@ content_hash: a96d56707811f7ae
 **arXiv**: [2512.20251](https://arxiv.org/abs/2512.20251)  
 **Code**: https://github.com/MiliLab/DAMP (Available)  
 **Area**: Image Restoration / Hyperspectral Image / Unified Restoration  
-**Keywords**: Hyperspectral Image Restoration, Degradation-Aware Prompting, Interpretable Metrics, Mixture-of-Experts, Zero-shot Generalization
+**Keywords**: Hyperspectral image restoration, degradation-aware prompting, interpretable metrics, Mixture-of-Experts, zero-shot generalization
 
 ## TL;DR
-DAMP utilizes six interpretable spatial-spectral physical metrics (such as high-frequency energy ratio, texture consistency, and spectral curvature) as "Degradation Prompts" (DP) to replace black-box embeddings and explicit degradation labels. These DPs serve as gating signals for a Spatial-Spectral Adaptive MoE to select different "spatial/spectral experts," achieving SOTA performance across five HSI restoration tasks and two unseen degradations (motion blur, Poisson noise) simultaneously.
+DAMP utilizes 6 interpretable spatial-spectral physical metrics (high-frequency energy ratio, texture uniformity, spectral curvature, etc.) as "Degradation Prompts" (DP) to replace black-box embeddings and explicit degradation labels. These DPs act as gating signals driving a Spatial-Spectral Adaptive MoE to select different "spatial/spectral experts," achieving SOTA performance across 5 HSI restoration tasks and 2 unseen degradations (motion blur, Poisson noise) simultaneously.
 
 ## Background & Motivation
-**Background**: Hyperspectral images (HSI) record spectral responses of materials across hundreds of continuous bands, but they are affected by various degradations such as signal-to-noise ratio, motion blur, stripe artifacts, missing bands, and compression. Early methods trained specialized networks for each degradation; subsequently, inspired by "Unified Restoration (UIR)" frameworks in natural images like PromptIR and InstructIR, models such as PromptHSI and MP-HSIR began using a "one model for multiple degradations" paradigm.
+**Background**: Hyperspectral images (HSI) record the spectral response of materials across hundreds of continuous bands but are affected by various degradations such as noise, motion blur, stripe artifacts, band loss, and compression. Early methods trained specialized networks for each degradation; subsequently, inspired by "Unified Restoration (UIR)" frameworks like PromptIR and InstructIR in natural images, methods like PromptHSI and MP-HSIR began adopting the "one model for multiple degradations" paradigm.
 
-**Limitations of Prior Work**: Current HSI unified restoration methods follow two paths, both with significant drawbacks:
-- **Explicit Prior-based** (PromptHSI/MP-HSIR): These require externally provided degradation labels or text descriptions. In real-world scenarios, it is difficult to know the exact combination (e.g., blur + stripe + missing bands) or its severity beforehand.
-- **Implicit Black-box-based** (PromptIR/DFPIR): These encode a latent prompt directly from the input, forcing unseen degradations into the training distribution manifold, leading to poor generalization. Moreover, they lack explicit mechanisms to model spectral correlation, resulting in low spectral fidelity.
+**Limitations of Prior Work**: Current HSI unified restoration methods follow two flawed paths:
 
-**Key Challenge**: HSI degradations are physically "continuous, mixed, and cross-dimensional" (destroying texture in the spatial dimension and distorting spectral curves in the spectral dimension). However, existing prompts are either discrete categories (discontinuous) or uninterpretable latents (dimension-agnostic). The geometric structure of the prompt space does not match the physical structure of the degradation, leading to failures in both generalization and interpretability.
+- **Explicit Prior Methods** (PromptHSI/MP-HSIR): Require externally provided degradation labels or text descriptions. In real-world scenarios, it is difficult to determine the specific combination and severity of degradations (e.g., blur + stripes + missing bands) beforehand.
+- **Implicit Black-box Methods** (PromptIR/DFPIR): Encode a latent prompt directly from the input. These force unseen degradations into the manifold of the training distribution, resulting in poor generalization and lacking an explicit mechanism to model spectral correlation, leading to low spectral fidelity.
 
-**Goal**: To construct a degradation representation that is **independent of external labels, interpretable, cross-dimensional, and naturally continuous for unseen degradations**, enabling the restoration network to allocate computational resources "on-demand" (e.g., deciding when to reconstruct spatial textures versus restoring spectral continuity).
+**Key Challenge**: HSI degradations are physically "continuous, mixed, and cross-dimensional" (textural destruction in the spatial dimension and spectral curve distortion in the spectral dimension). However, existing prompts are either discrete categories (discontinuous) or uninterpretable latents (dimension-agnostic). The mismatch between the geometric structure of the prompt space and the physical structure of the degradation causes failures in both generalization and interpretability.
 
-**Key Insight**: The authors conducted a pilot experiment on 1,000 degraded HSIs using three simple physical metrics: High-Frequency Energy Ratio (HFER), Spatial Texture Uniformity (STU), and Spectral Curvature Mean (SCM). Use of a random forest for classification revealed that five types of degradation could be clearly distinguished. Simultaneously, different degradation types showed overlapping distributions in certain metrics (e.g., slight blur and low noise have similar SCM). This indicates that **a small number of interpretable metrics can both distinguish degradation identity and naturally reflect commonalities between degradations**—the former addresses interpretability, while the latter addresses generalization.
+**Goal**: Construct a degradation representation that is **independent of external labels, interpretable, cross-dimensional, and naturally continuous for unseen degradations**, enabling the restoration network to allocate computational resources "on-demand" (e.g., when to reconstruct spatial texture vs. when to restore spectral continuity).
 
-**Core Idea**: Replace "degradation prompts" from black-box embeddings or category labels with **multi-dimensional physical metric vectors** (Degradation Prompt, DP). Use these as gating signals for MoE, forcing the routing logic to anchor explicitly on physical rules (e.g., "higher high-frequency energy → bias towards spectral filtering experts"), thereby solving interpretability, mixed degradation handling, and zero-shot generalization in one go.
+**Key Insight**: A pilot experiment on 1000 degraded HSIs using three simple physical metrics—High-Frequency Energy Ratio (HFER), Spatial Texture Uniformity (STU), and Spectral Curvature Mean (SCM)—showed that 5 degradation types could be clearly distinguished by a random forest. Furthermore, different degradations overlapped on certain metrics (e.g., slight blur and low noise shared similar SCM). This suggests that **a few interpretable metrics can differentiate degradation identities while naturally reflecting commonalities**, addressing both interpretability and generalization.
+
+**Core Idea**: Replace black-box embeddings or category labels with a **multi-dimensional physical metric vector** (Degradation Prompt, DP) as the gating signal for MoE. This forces routing logic to be explicitly anchored to physical rules (e.g., "higher high-frequency energy $\Rightarrow$ bias towards spectral filtering experts"), simultaneously solving interpretability, mixed degradation handling, and zero-shot generalization.
 
 ## Method
 
 ### Overall Architecture
-DAMP is a hierarchical U-Net style unified HSI restoration network designed to restore multiple HSI degradations using a single model without knowing degradation types or labels. The problem is framed as the collaboration of two parallel flows: one calculates 6-dimensional physical metrics from the input degraded HSI $\mathcal{Y}$, projects them into a degradation prompt vector $\mathbf{e} \in \mathbb{R}^d$ (DP) as a global condition across all layers; the other is a standard feature restoration flow using $3\times3$ convolutions for shallow features, a 4-level hierarchical encoder (standard attention blocks), and a 4-level decoder. Crucially, the standard blocks in each decoder stage are replaced by DAMoE, where the DP serves as a gating signal to dynamically adjust the restoration trajectory. Finally, residual fusion combines the input and decoded features to output $\hat{\mathcal{X}} = \mathcal{R}_\theta(\mathcal{Y})$.
+DAMP is a hierarchical U-Net-style unified HSI restoration network designed to restore multiple HSI degradations without knowing the type or label. It coordinates two parallel streams: one calculates 6-dimensional physical metrics from the input HSI $\mathcal{Y}$, projecting them into a degradation prompt vector $\mathbf{e} \in \mathbb{R}^d$ (DP) as a global condition; the other is the feature restoration stream, using $3\times 3$ convolutions for shallow features, a 4-level hierarchical encoder (standard attention blocks), and a 4-level decoder where standard blocks are replaced by DAMoE. The DP acts as a gating signal to dynamically adjust the restoration trajectory. The final output is $\hat{\mathcal{X}} = \mathcal{R}_\theta(\mathcal{Y})$ via residual fusion. Key innovations include the selection of metrics, DP-driven routing in DAMoE, and the spatial-spectral division within each expert (SSAM).
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["Degraded HSI Y"] --> B["Degradation Prompt (DP)<br/>6-dim physical metrics (HFER/STU/SCM etc.) → Projection e"]
+    A["Degraded HSI Y"] --> B["Degradation Prompt DP<br/>6 Physical Metrics (HFER / STU / SCM etc.) → Projection e"]
     A --> C["3×3 Conv for Shallow Features"]
-    C --> D["4-stage Hierarchical Encoder"]
-    D --> E["4-stage Decoder<br/>Each block replaced by DAMoE"]
+    C --> D["4-Level Hierarchical Encoder"]
+    D --> E["4-Level Decoder<br/>Standard Blocks replaced by DAMoE"]
     B -->|"DP as Gating Signal"| E
-    E --> F["Degradation-Adaptive MoE (DAMoE)<br/>GAP(x) concatenated with e → softmax + top-k selection"]
-    F --> G["Spatial-Spectral Adaptive Expert (SSAM)<br/>Spatial branch E_s + Spectral branch E_c, λ_s/λ_c weighted"]
+    E --> F["Degradation-Adaptive MoE (DAMoE)<br/>GAP(x) concat e → softmax + top-k routing"]
+    F --> G["Spatial-Spectral Adaptive Expert (SSAM)<br/>Spatial Branch E_s + Spectral Branch E_c, λ_s/λ_c weighted"]
     G --> H["Residual Fusion → Output X̂"]
 ```
 
 ### Key Designs
 
-**1. Degradation Prompt: Replacing Black-box Representations with Interpretable Physical Metrics**
+**1. Degradation Prompt: Replacing Black-box Representations with Interpretable Physics**
 
-DP addresses the issue that existing prompts are either discrete (dependent on labels) or black-box latents (uninterpretable). The authors started with 25 candidate metrics (entropy, gradient, frequency stats) and applied a three-stage screening: first removing abstract statistics without clear physical meanings, then ensuring spatial-spectral coverage, and finally selecting the most discriminative features using random forest importance. The resulting 6 dimensions are: High-Frequency Energy Ratio HFER $=\frac{1}{C}\sum_c \frac{\sum_{(u,v)\in\Omega_H}|\mathcal{F}[x_c]|^2}{\sum_{(u,v)}|\mathcal{F}[x_c]|^2}$, Spatial Texture Uniformity (STU), Spectral Curvature Mean SCM $=\frac{1}{C-2}\sum_i|\nabla^2 s_i|$, SCM Standard Deviation, Gradient Standard Deviation, and Spatial Correlation Coefficient. These metrics are effective because they are physical indicators of degradation: HFER reflects the destruction of high-frequency details, while SCM identifies spectral distortion. Since they are not tied to the training distribution, the DP remains in a reasonable numerical range even for unseen degradations like Poisson noise, facilitating zero-shot generalization.
+DP addresses the issue of prompts being either discrete (label-dependent) or black-box latents (distribution-locked). The authors selected 6 metrics from 25 candidates through a three-stage screening process (interpretability, spatial-spectral coverage, and feature importance via random forest): High-Frequency Energy Ratio HFER $=\frac{1}{C}\sum_c \frac{\sum_{(u,v)\in\Omega_H}|\mathcal{F}[x_c]|^2}{\sum_{(u,v)}|\mathcal{F}[x_c]|^2}$, Spatial Texture Uniformity (STU), Spectral Curvature Mean SCM $=\frac{1}{C-2}\sum_i|\nabla^2 s_i|$, Spectral Curvature Std, Gradient Std, and Spatial Correlation Coefficient. These metrics are physical indicators: HFER reflects high-frequency detail destruction (sensitive to noise/blur), and SCM reflects spectral curve smoothness (sensitive to band loss). Because they are not bound to the training distribution, DPs remain valid for unseen degradations like Poisson noise or motion blur.
 
 **2. Degradation-Adaptive MoE: DP-Driven Expert Routing**
 
-DAMoE dynamically selects the top-$k$ experts in each decoder stage. For an input feature $\mathbf{x}$, GAP compresses the spatial dimensions into a global vector, which is concatenated with the DP embedding $\mathbf{e}$. This is passed through two projection layers, softmax, and top-$k$ sparsification to obtain gating scores $\mathbf{g} = \mathcal{T}_k(\text{softmax}(\mathbf{W}_g \cdot \sigma(\mathbf{W}_{proj}[\text{GAP}(\mathbf{x}), \mathbf{e}]) + \epsilon))$. Noise $\epsilon \sim \mathcal{N}(0,1)$ is injected during training for load balancing. The final features $\mathbf{f}_{deg} = \sum_{i \in \mathcal{K}} g_i \cdot \mathbf{f}_i$ are fused with degradation-agnostic features from a shared expert via channel-wise convolution. Unlike MoCE-IR, which uses pure visual feature routing, DAMoE's routing is anchored by "physically interpretable" signals, remaining stable even when visual features are severely blurred.
+DAMoE dynamically selects top-$k$ experts in each decoder level. For input features $\mathbf{x}$, the gating score is $\mathbf{g} = \mathcal{T}_k(\text{softmax}(\mathbf{W}_g \cdot \sigma(\mathbf{W}_{proj}[\text{GAP}(\mathbf{x}), \mathbf{e}]) + \epsilon))$, where $\epsilon \sim \mathcal{N}(0,1)$ is noise for load balancing. Final features $\mathbf{f}_{deg} = \sum_{i \in \mathcal{K}} g_i \cdot \mathbf{f}_i$ are fused with "degradation-agnostic features" from a shared expert. Unlike visual-feature-only MoEs, DAMoE routing is anchored by "physical interpretability": high HFER (heavy noise) explicitly biases the gate towards spectral filtering experts, ensuring stable routing even when visual features are severely blurred.
 
-**3. SSAM: Expert-wise Mixing Coefficients for Differentiation**
+**3. SSAM: Expert-wise Mixture Coefficients for Specialization**
 
-Each expert in DAMoE is implemented via SSAM, which uses two parallel branches: $\mathcal{E}_s$ (Window-based Multi-head Self-Attention) for spatial structure and $\mathcal{E}_c$ (1D Convolution) for inter-band correlation. The $i$-th expert output is $\mathbf{F}_{expert}^{(i)} = \lambda_s^{(i)} \mathcal{E}_s(\mathbf{F}) + \lambda_c^{(i)} \mathcal{E}_c(\mathbf{F})$ with $\lambda_s^{(i)} + \lambda_c^{(i)} = 1$. Crucially, $\lambda_s^{(i)}$ and $\lambda_c^{(i)}$ are expert-specific learnable parameters rather than input-specific predictions. This forces experts to specialize as either "spatial experts" (large $\lambda_s$) or "spectral experts" (large $\lambda_c$). By using expert-wise weights instead of instance-wise weights, the model prevents expert homogenization, allowing the router to choose the optimal spatial/spectral ratio based on the DP.
+Each expert in DAMoE is implemented as an SSAM block with two parallel branches: $\mathcal{E}_s$ (Window-based Multi-head Self-Attention) for spatial structure and $\mathcal{E}_c$ (1D Convolution) for inter-band correlation. The expert output is $\mathbf{F}_{expert}^{(i)} = \lambda_s^{(i)} \mathcal{E}_s(\mathbf{F}) + \lambda_c^{(i)} \mathcal{E}_c(\mathbf{F})$ where $\lambda_s^{(i)} + \lambda_c^{(i)} = 1$. Crucially, $\lambda_s^{(i)}$ and $\lambda_c^{(i)}$ are learnable parameters specific to the expert, not predicted from the input. This "forced alignment" ensures experts specialize as either spatial experts (large $\lambda_s$) or spectral experts (large $\lambda_c$), providing the router with distinct options to optimize the spatial/spectral restoration ratio based on the DP.
 
 ### Loss & Training
-The model uses L1 loss: $\mathcal{L} = \|\hat{\mathcal{X}} - \mathcal{X}\|_1$. Gaussian noise in the gating mechanism is the sole load balancing tool. Training utilizes AdamW ($\beta_1=0.9, \beta_2=0.999$), lr $=1\times 10^{-4}$, batch size 4. Natural scene HSI is trained for 3000 epochs, and remote sensing HSI for 1500 epochs on an RTX 4090.
+The network is optimized using L1 loss: $\mathcal{L} = \|\hat{\mathcal{X}} - \mathcal{X}\|_1$. Gaussian noise in the gate provides load balancing. Training uses AdamW ($\beta_1=0.9, \beta_2=0.999$), lr $=1\times 10^{-4}$, batch size 4 for 3000 epochs (natural HSI) or 1500 epochs (remote sensing HSI) on an RTX 4090.
 
 ## Key Experimental Results
 
 ### Main Results
-Comparison of PSNR/SSIM/SAM across 5 unified restoration tasks (Table 2, units dB / – / °):
+Comparison of PSNR/SSIM/SAM across 5 unified restoration tasks (Table 2 selection, units dB / – / °):
 
-| Task (Dataset) | MP-HSIR | PromptIR | MoCE-IR | **Ours (DAMP)** | Gain |
+| Task (Dataset) | MP-HSIR | PromptIR | MoCE-IR | **Ours** | Gain |
 |---|---|---|---|---|---|
-| Gaussian Deblur (ARAD) | 44.58 / .984 / .900 | 49.18 / .996 / .822 | 50.52 / .996 / .673 | **52.84 / .998 / .508** | +2.32 dB |
-| Super-Resolution (ARAD) | 41.77 / .972 / 1.142 | 40.57 / .966 / 1.168 | 40.62 / .967 / 1.110 | **44.01 / .981 / .866** | +2.24 dB |
-| Inpainting (Xiong'an) | 33.42 / .697 / 11.13 | 31.36 / .579 / 13.60 | 29.04 / .518 / 15.79 | **33.62 / .711 / 10.98** | +0.20 dB |
-| Gaussian Denoise (ICVL) | 42.16 / .968 / 3.030 | 42.35 / .970 / 2.659 | 42.66 / .973 / 2.434 | **42.86 / .974 / 2.229** | +0.20 dB |
-| Avg. on ARAD (5 tasks) | 47.85 / .984 / 1.608 | 47.20 / .984 / 1.510 | 48.72 / .985 / 1.203 | **51.43 / .989 / .936** | +2.71 dB |
+| Gaussian Deblur (ARAD) | 44.58 / 0.984 / 0.900 | 49.18 / 0.996 / 0.822 | 50.52 / 0.996 / 0.673 | **52.84 / 0.998 / 0.508** | +2.32 dB |
+| Super-Resolution (ARAD) | 41.77 / 0.972 / 1.142 | 40.57 / 0.966 / 1.168 | 40.62 / 0.967 / 1.110 | **44.01 / 0.981 / 0.866** | +2.24 dB |
+| Inpainting (Xiong'an) | 33.42 / 0.697 / 11.13 | 31.36 / 0.579 / 13.60 | 29.04 / 0.518 / 15.79 | **33.62 / 0.711 / 10.98** | +0.20 dB |
+| Gaussian Denoise (ICVL) | 42.16 / 0.968 / 3.030 | 42.35 / 0.970 / 2.659 | 42.66 / 0.973 / 2.434 | **42.86 / 0.974 / 2.229** | +0.20 dB |
+| Avg. on ARAD (5 Tasks) | 47.85 / 0.984 / 1.608 | 47.20 / 0.984 / 1.510 | 48.72 / 0.985 / 1.203 | **51.43 / 0.989 / 0.936** | +2.71 dB |
+| Avg. on RS Data | 38.33 / 0.839 / 12.73 | 38.19 / 0.812 / 13.25 | 36.78 / 0.774 / 15.09 | **39.42 / 0.851 / 10.11** | +1.09 dB |
 
-Zero-shot Results (on unseen degradations in CAVE, Table 3):
+Zero-shot performance (Unseen degradations on CAVE, Table 3):
 
 | Method | Motion Blur PSNR/SSIM | Poisson Denoise PSNR/SSIM |
 |---|---|---|
 | PromptIR | 30.53 / 0.881 | 21.98 / 0.442 |
 | MoCE-IR | 30.34 / 0.878 | 19.51 / 0.401 |
-| **Ours (DAMP)** | **31.05 / 0.899** | **24.08 / 0.538** |
+| MP-HSIR | 23.63 / 0.688 | 16.96 / 0.240 |
+| **Ours** | **31.05 / 0.899** | **24.08 / 0.538** |
 
 ### Ablation Study
-Ablation of components (Table 4, avg. PSNR/SSIM on ARAD):
+Component ablation (Table 4, Average PSNR/SSIM on ARAD):
 
-| Configuration | PSNR (dB) | SSIM | Note |
+| Configuration | PSNR (dB) | SSIM | Observation |
 |---|---|---|---|
-| Baseline (No DP/SSAM) | 45.82 | 0.976 | Vanilla U-Net |
-| + DP | 50.02 | 0.986 | **+4.20 dB gain** |
-| + DP + SSAM (Full) | **51.43** | **0.989** | Final model |
+| Baseline (No DP, No SSAM) | 45.82 | 0.976 | Standard U-Net |
+| + DP | 50.02 | 0.986 | **+4.20 dB gain** (Main contributor) |
+| + DP + SSAM (Full) | **51.43** | **0.989** | +1.41 dB additional gain |
 
-Routing strategy ablation (Table 5):
+Routing signal ablation (Table 5):
 
-| Routing Signal | PSNR (dB) | Gap to DP |
+| Routing Signal | PSNR (dB) | Gap vs. DP |
 |---|---|---|
-| Frequency-based | 47.72 | −3.71 |
-| Degradation Type (Labels) | 46.27 | −5.16 |
-| Implicit Prompt | 46.81 | −4.62 |
+| Frequency-based (MoCE-IR type) | 47.72 | −3.71 |
+| Degradation Type (Category labels) | 46.27 | −5.16 |
+| Implicit Prompt (PromptIR type) | 46.81 | −4.62 |
 | **DP (Ours)** | **51.43** | – |
 
 ### Key Findings
-- DP alone contributes a gain of 4.20 dB, significantly higher than SSAM's 1.41 dB, identifying the degradation representation as the core innovation.
-- Category label routing performed worse than implicit prompt routing by 0.5 dB, suggesting that "hard classification" loses information about degradation continuity; DP wins by preserving both continuity and interpretability.
-- Zero-shot Poisson denoising improvement (+2.10 dB) is rare in UIR literature, confirming that DP's physical metrics yield meaningful values even for unseen noise distributions.
+- Adding DP yields a 4.20 dB gain, far exceeding SSAM's 1.41 dB. The **core innovation is the degradation representation**, not just the MoE architecture.
+- Category labels performed worse than implicit prompts, suggesting that "hard classification" loses continuity information. DP succeeds by preserving both continuity and physical interpretability.
+- Cross-spectral band error analysis (Fig. 6) shows SSAM minimizes spectral errors across all tasks, proving that expert-wise learned $\lambda_s/\lambda_c$ allows spectral experts to function effectively.
+- The +2.10 dB gain in zero-shot Poisson denoising confirms that physical metrics generalize beyond the training distribution.
 
 ## Highlights & Insights
-- **Reorienting "Prompts" toward Physics**: While natural image UIR focuses on "textual/visual/implicit" prompts, DAMP uses closed-form frequency and curvature statistics. This "prompt physicalization" approach is highly transferable to tasks with clear physical degradation models (e.g., medical imaging, CT).
-- **Expert-wise vs. Instance-wise mixing**: Forcing fixed learnable coefficients within experts (rather than dynamic prediction) sacrifices individual expert flexibility for collective specialization, providing the router with distinct choices.
-- **Routing Signal determines the MoE ceiling**: Changing the routing signal results in a 3-5 dB difference, suggesting that "what the gate sees" is more critical than "what the expert is."
+- **Shifting "Prompts" from Semantics to Physics**: While natural image UIR focuses on "textual/visual/implicit prompts," DAMP adopts closed-form physical statistics (frequency domain and curvature). This "prompt physicalization" strategy is applicable to any inverse problem with explicit physical models (e.g., medical imaging, seismic signals).
+- **Expert-wise vs. Instance-wise Coefficients**: Forcing fixed learnable coefficients within experts (rather than dynamic prediction) sacrifices individual expert flexibility to achieve global specialization. This ensures the router has truly distinct experts to choose from.
+- **Routing Signals Define the MoE Ceiling**: Replacing routing signals resulted in a 3-5 dB performance drop, suggesting that "what the gate looks at" is more critical than the internal expert structure.
 
 ## Limitations & Future Work
-- **Handcrafted Metrics**: The 6-dimensional DP is selected through manual screening and random forests, involving human bias. A future extension would involve learning the metric pool end-to-end.
-- **Explicit Physical Coupling**: DP describes the degradation degree but does not invert the degradation operator. Adding a light inversion head (to estimate blur kernels, etc.) could further enhance performance.
-- **Domain Separation**: Natural and remote sensing scenes were trained as independent models. A unified cross-domain model using DP as a bridge could be explored.
+- **Hand-crafted Metrics**: The 6 DP metrics were selected manually via random forest, introducing human bias. Future work could explore end-to-end learnable metric dictionaries.
+- **Decoupled from Explicit Physical Models**: DP describes degradation but does not invert the degradation operator $\mathcal{D}(\cdot)$. Coupling DP with a light-weight inversion head (e.g., blur kernel estimation) could provide diagnostic information.
+- **Separated Domain Training**: Natural and Remote Sensing HSIs were trained separately due to domain gaps. Future work could use DP as a cross-domain bridge since the metrics are sensor-independent.
 
 ## Related Work & Insights
-- **vs. PromptIR/InstructIR**: These use high-dimensional prompts coupled with the training distribution. DAMP uses low-dimensional, objectively physical prompts, leading to significantly better zero-shot performance (+2 dB).
-- **vs. MP-HSIR/PromptHSI**: These rely on external labels unavailable in real scenarios. DAMP is self-contained.
-- **vs. MoCE-IR**: While both use MoE, MoCE-IR routes via spatial frequency stats. DAMP uses spatial-spectral physical quantities and expert-wise specialization, leading to a 2.71 dB average lead.
+- **vs. PromptIR / InstructIR**: Both use prompts, but PromptIR uses implicit latents and InstructIR uses text. DAMP uses low-dimensional, physically objective prompts, leading to significantly better zero-shot performance (+2 dB).
+- **vs. MP-HSIR / PromptHSI**: These rely on external labels unavailable in real scenarios. DAMP is self-contained and calculates metrics directly from the input.
+- **vs. MoCE-IR**: MoCE-IR uses frequency-based routing for spatial UIR. DAMP extends this to spatial-spectral physical metrics and forces expert specialization through fixed internal coefficients.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ (Clear conceptual shift to physical prompts in HSI UIR).
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ (5 tasks, 8 datasets, zero-shot, and comprehensive ablations).
-- Writing Quality: ⭐⭐⭐⭐ (Clear motivation and rich visualizations).
-- Value: ⭐⭐⭐⭐ (Directly applicable to multi-spectoral/medical imaging UIR).
+- Novelty: ⭐⭐⭐⭐ "Physicalization of prompts" is a significant shift in HSI UIR.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive 5-task tests across 8 datasets, including zero-shot and error analysis.
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation and rich visualizations.
+- Value: ⭐⭐⭐⭐ Concepts like physically-aligned prompts and expert specialization are highly transferable.
 
 <!-- RELATED:START -->
 
@@ -143,10 +147,10 @@ Routing strategy ablation (Table 5):
 ## Related Papers
 
 - [\[CVPR 2025\] Degradation-Aware Feature Perturbation for All-in-One Image Restoration](../../CVPR2025/image_restoration/degradation-aware_feature_perturbation_for_all-in-one_image_restoration.md)
-- [\[CVPR 2026\] DRFusion: Degradation-Robust Fusion via Degradation-Aware Diffusion Framework](../../CVPR2026/image_restoration/drfusion_degradation_robust_fusion_via_degradation_aware_diffusion_framework.md)
 - [\[CVPR 2025\] DPIR: Dual Prompting Image Restoration with Diffusion Transformers](../../CVPR2025/image_restoration/dpir_dual_prompting_restoration_dit.md)
 - [\[CVPR 2026\] Degradation-Robust Fusion: An Efficient Degradation-Aware Diffusion Framework for Multimodal Image Fusion in Arbitrary Degradation Scenarios](../../CVPR2026/image_restoration/degradation-robust_fusion_an_efficient_degradation-aware_diffusion_framework_for.md)
-- [\[CVPR 2026\] EMR-Diff: Edge-aware Multimodal Residual Diffusion Model for Hyperspectral Image Super-resolution](../../CVPR2026/image_restoration/emr-diff_edge-aware_multimodal_residual_diffusion_model_for_hyperspectral_image_.md)
+- [\[ICCV 2025\] MP-HSIR: A Multi-Prompt Framework for Universal Hyperspectral Image Restoration](../../ICCV2025/image_restoration/mp-hsir_a_multi-prompt_framework_for_universal_hyperspectral_image_restoration.md)
+- [\[CVPR 2026\] Degradation-Consistent Test-Time Adaptation for All-in-One Image Restoration](../../CVPR2026/image_restoration/degradation-consistent_test-time_adaptation_for_all-in-one_image_restoration.md)
 
 </div>
 

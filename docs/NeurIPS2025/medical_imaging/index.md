@@ -82,7 +82,7 @@ item_total: 74
 
 **🧠 NeurIPS2025** · **74** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (163)](../../CVPR2026/medical_imaging/index.md) · [🧪 ICML2026 (24)](../../ICML2026/medical_imaging/index.md) · [🔬 ICLR2026 (22)](../../ICLR2026/medical_imaging/index.md) · [🤖 AAAI2026 (75)](../../AAAI2026/medical_imaging/index.md) · [📹 ICCV2025 (31)](../../ICCV2025/medical_imaging/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (163)](../../CVPR2026/medical_imaging/index.md) · [🔬 ICLR2026 (88)](../../ICLR2026/medical_imaging/index.md) · [🧪 ICML2026 (28)](../../ICML2026/medical_imaging/index.md) · [🤖 AAAI2026 (75)](../../AAAI2026/medical_imaging/index.md) · [📹 ICCV2025 (31)](../../ICCV2025/medical_imaging/index.md)
 
 🔥 **Top topics:** Medical Imaging ×30 · Multimodal/VLM ×8 · Segmentation ×8 · Self-Supervised Learning ×4 · Diffusion Models ×4
 

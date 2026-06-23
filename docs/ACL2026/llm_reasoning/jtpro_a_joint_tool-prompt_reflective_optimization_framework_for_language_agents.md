@@ -2,12 +2,12 @@
 title: >-
   [Paper Note] JTPRO: A Joint Tool-Prompt Reflective Optimization Framework for Language Agents
 description: >-
-  [ACL 2026][LLM Reasoning][Paper Note] JTPRO proposes a joint optimization framework without model fine-tuning. By utilizing reflection-driven iterative editing, it simultaneously optimizes global instructions and per-tool schemas/parameter descriptions. This significantly improves end-to-end success rates in large-scale tool library scenarios, achieving a
+  [ACL 2026][LLM Reasoning][Paper Note] JTPRO proposes a joint optimization framework that avoids model fine-tuning. By using reflection-driven iterative editing, it simultaneously optimizes global instructions and tool-wise schemas/parameter descriptions. This significantly improves end-to-end success rates in large-scale tool library scenarios, achieving a
 tags:
   - ACL 2026
   - LLM Reasoning
 date: 2026-05-08
-content_hash: 4728a4a6da0791f2
+content_hash: df2bebd9ad45f766
 ---
 # JTPRO: A Joint Tool-Prompt Reflective Optimization Framework for Language Agents
 
@@ -15,64 +15,64 @@ content_hash: 4728a4a6da0791f2
 **arXiv**: [2604.19821](https://arxiv.org/abs/2604.19821)  
 **Code**: None  
 **Area**: LLM Reasoning  
-**Keywords**: Tool Call Optimization, Prompt Optimization, Reflective Learning, Large-scale Tool Library, Joint Optimization
+**Keywords**: Tool call optimization, Prompt optimization, Reflective learning, Large tool libraries, Joint optimization
 
 ## TL;DR
-JTPRO proposes a joint optimization framework without model fine-tuning. By utilizing reflection-driven iterative editing, it simultaneously optimizes global instructions and per-tool schemas/parameter descriptions. This significantly improves end-to-end success rates in large-scale tool library scenarios, achieving a 5%–20% OSR improvement over baselines like GEPA.
+JTPRO proposes a joint optimization framework that avoids model fine-tuning. By using reflection-driven iterative editing, it simultaneously optimizes global instructions and tool-wise schemas/parameter descriptions. This significantly improves end-to-end success rates in large-scale tool library scenarios, achieving a 5%–20% gain in OSR compared to baselines like GEPA.
 
 ## Background & Motivation
 
-**Background**: LLM Agents extending their capabilities via external tools has become a mainstream paradigm. However, when the number of tools grows to hundreds or thousands, the reliability of tool calling drops sharply. Existing methods include fine-tuning, retrieval augmentation, and prompt optimization, but most treat global instructions and tool descriptions separately.
+**Background**: The paradigm of extending LLM Agent capabilities via external tools has become mainstream. However, tool call reliability drops sharply as the number of tools grows to hundreds or thousands. Existing methods include fine-tuning, retrieval augmentation, and prompt optimization, yet most treat global instructions and tool descriptions separately.
 
-**Limitations of Prior Work**: Two core problems emerge as tool libraries scale: (1) General global prompts fail to distinguish between similar tools, leading to tool mis-selection; (2) Inprecise tool schema descriptions result in parameter instantiation errors (slot/value errors). The authors' experiments on ToolACE show that when the tool count expands from 300 to 1000, tool selection accuracy drops significantly even for GPT-5 class models.
+**Limitations of Prior Work**: Two core problems emerge in large toolkits: (1) Generic global prompts cannot distinguish between similar tools, leading to tool mis-selection; (2) Tool schema descriptions are insufficiently precise, causing parameter instantiation errors (slot/value errors). Experimental results on ToolACE indicate that even with GPT-5 level models, tool selection accuracy decreases significantly when scaling from 300 to 1000 tools.
 
-**Key Challenge**: There is a coupled dependency between global instructions and local tool descriptions—global strategies rely on discriminative clues between tools, while parameter filling depends on global conventions (e.g., date formats, value ranges). Optimizing either aspect in isolation is insufficient.
+**Key Challenge**: There is a coupled dependency between global instructions and local tool descriptions—the global strategy relies on differentiation cues between tools, while parameter filling depends on global conventions (e.g., date formats, numerical ranges). Optimizing either component in isolation is insufficient.
 
-**Goal**: Design a framework to iteratively optimize global instructions $P$ and per-tool schemas $\{T_i\}$ without model fine-tuning, maximizing call-level correctness (tool + parameters + values) under large-scale tool libraries.
+**Goal**: Design a framework to iteratively optimize global instructions $P$ and tool-wise schemas $\{T_i\}$ without fine-tuning, maximizing the agent's call-level correctness (tool + parameters + values) under large-scale tool libraries.
 
-**Key Insight**: The authors observe that the bottleneck of end-to-end success is often parameter filling (slot filling) rather than tool selection. Furthermore, many parameter semantics (e.g., date formats, boolean flags) repeat across multiple tools, and redundancy/inconsistency can be eliminated through globalization.
+**Key Insight**: The authors observe that the bottleneck for end-to-end success is often parameter filling (slot filling) rather than tool selection. Furthermore, many parameter semantics (such as date formats or boolean flags) recur across multiple tools; redundancy and inconsistency can be eliminated through globalization.
 
-**Core Idea**: Jointly and iteratively optimize the Agent's global instructions and per-tool descriptions through Pareto candidate selection + reflection-driven local editing + shared parameter semantic globalization.
+**Core Idea**: Jointly and iteratively optimize the Agent's global instructions and tool-specific descriptions through Pareto candidate selection, reflection-driven local editing, and globalization of shared parameter semantics.
 
 ## Method
 
 ### Overall Architecture
-JTPRO maintains a candidate context pool $\mathcal{C}$. In each iteration: (1) Select a candidate via Pareto sampling; (2) Perform rollouts on small batches to obtain diagnostic feedback; (3) Propose local edits to global instructions $P$ and relevant tool schemas $\{T_i\}$ based on feedback; (4) Merge edited versions with the current best; (5) Globalize repeated parameter semantics; (6) Update the candidate pool and global optimum after validation.
+JTPRO maintains a candidate context pool $\mathcal{C}$. In each iteration: (1) A candidate is selected via Pareto sampling; (2) Small-batch rollouts are conducted to obtain diagnostic feedback; (3) Local edits to the global instruction $P$ and relevant tool schemas $\{T_i\}$ are proposed based on feedback; (4) The edited version is merged with the current best; (5) Repeated parameter semantics are globalized; (6) The candidate pool and global optimum are updated after validation.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    POOL["Candidate Pool 𝒞<br/>Global Instructions P + Per-tool Schemas"] --> PARETO["Pareto Candidate Selection<br/>Retain frontier candidates, biased toward multi-win sampling"]
-    subgraph EDIT["Reflection-driven Local Editing"]
+    POOL["候选上下文池 𝒞<br/>全局指令 P + 逐工具 schema"] --> PARETO["Pareto 候选选择<br/>保留前沿候选、偏向多赢实例采样"]
+    subgraph EDIT["反思驱动的局部编辑"]
         direction TB
-        RO["Small-batch rollout<br/>Calculate TSA / SFA / OSR"] --> DIAG["Diagnose<br/>Extract structured error signals"]
-        DIAG --> PROP["ProposeEdits<br/>Edit only involved rules and descriptions"]
+        RO["小批量 rollout<br/>算 TSA / SFA / OSR"] --> DIAG["Diagnose<br/>抽结构化错误信号"]
+        DIAG --> PROP["ProposeEdits<br/>只改涉事的全局规则与工具描述"]
     end
     PARETO --> EDIT
-    EDIT --> MERGE["Merge with current global optimum"]
-    MERGE --> GLOB["GlobalizeSlots<br/>Elevate repeated semantics to global rules"]
-    GLOB --> VAL{"Validation score improved?"}
-    VAL -->|Yes| UPD["Add to pool + Update global optimum"]
-    VAL -->|No| POOL
+    EDIT --> MERGE["与当前全局最优合并"]
+    MERGE --> GLOB["GlobalizeSlots<br/>跨工具重复参数语义提升为全局规则"]
+    GLOB --> VAL{"验证集得分提升?"}
+    VAL -->|是| UPD["加回候选池 + 更新全局最优"]
+    VAL -->|否| POOL
     UPD --> POOL
 ```
 
 ### Key Designs
 
-**1. Pareto Candidate Selection: Avoiding single-best bias to preserve exploration diversity**
+**1. Pareto Candidate Selection: Avoiding Single-Optimum Convergence and Preserving Exploration Diversity**
 
-Iterative optimization in text space is prone to early convergence toward a local optimum. JTPRO adopts the Pareto concept from GEPA to hedge against this: a candidate is retained in the pool as long as it achieves the highest score on at least one training instance; those strictly dominated by others are pruned. Candidates are then sampled from this frontier with a probability biased toward those "winning more instances." This prevents being locked into a single global optimum while allowing historically strong versions to be further refined.
+Iterative optimization in text space is prone to converging prematurely to a locally optimal context. JTPRO mitigates this by adopting the Pareto principle from GEPA: any context that achieves the highest score on at least one training instance is kept in the candidate pool, while those strictly dominated by others are pruned. Sampling then occurs from these frontier candidates with a probability biased toward those that "win more instances." This ensures the system is not locked into a single global optimum and allows diverse versions with historical strengths to be further refined.
 
-**2. Reflection-driven Local Editing: Targeted modification of error-prone rules**
+**2. Reflection-driven Local Editing: Target Specific Rules Without Rewriting**
 
-With large tool libraries, failure modes are diverse—wrong tool selection, missing parameters, or format errors. Naive rewriting of the entire prompt causes the context to bloat and risks breaking correctly functioning parts. JTPRO first performs rollouts on small batches, uses a `Diagnose` function to extract structured signals (tool confusion / missing parameters / value errors), and then uses a reflector (`ProposeEdits`) to generate targeted edits. By strictly constraining modifications to the "involved localities," it precisely eliminates the root cause and avoids context expansion.
+Large tool libraries exhibit diverse failure modes—incorrect tool selection, missing parameters, or format/value errors. Coarsely rewriting the entire prompt leads to context bloat and may break previously correct parts. JTPRO first performs small-batch rollouts, uses a `Diagnose` function to extract structured error signals (tool confusion / missing parameters / format errors) for each failure, and then employs a reflector `ProposeEdits` to generate targeted edits. Only the global rules or tool descriptions responsible for the failure are modified. By restricting changes to the "involved local area," specific errors are removed precisely without causing context expansion.
 
-**3. GlobalizeSlots: Elevating cross-tool parameter semantics into global rules**
+**3. GlobalizeSlots: Elevating Recurring Parameter Semantics into Global Rules**
 
-When there are thousands of tools, many parameter semantics repeat—date formats, numerical boundaries, boolean flags, and sorting conventions. In the ETID dataset, parameters like identifiers and datetimes repeat across as many as 77/124 tools. Writing these in every tool schema causes redundancy, consumes space meant for discriminative descriptions, and risks inconsistency. `GlobalizeSlots` identifies these shared semantics and elevates them to named rules in the global instructions (e.g., a unified "DateTime Fields"), leaving only a short pointer reference (like `startDate`) in the local schemas. This enforces consistency, eliminates conflicts, and frees up schema space for tool-specific clues—addressing the finding that slot filling (SFA), not just tool selection, is the critical bottleneck.
+In libraries with thousands of tools, many parameter semantics repeat—such as date formats, numerical boundaries, and boolean flags. In the ETID dataset, parameters like identifiers and datetimes recur across 77/124 tools. Writing these into every tool schema causes text redundancy, occupies space meant for differentiating tools, and risks inconsistency. `GlobalizeSlots` identifies shared semantics and elevates them to named rules in the global instructions (e.g., a unified "DateTime Fields"). Local tool schemas then use short pointers to reference fields like `startDate` or `endDate`. This ensures semantic consistency, eliminates potential conflicts, and reclaims schema space for tool-specific cues—directly addressing the finding that parameter filling (SFA) is a major bottleneck for end-to-end success.
 
 ### Loss & Training
-The optimization objective is to minimize call-level loss, which consists of three components: tool selection, parameter filling, and overall success rate. The entire process requires no gradient updates and is optimized iteratively within the text space.
+The optimization goal is to minimize call-level loss, which comprises tool selection, parameter filling, and overall success rate. The entire process requires no gradient updates and iterates entirely within the text space.
 
 ## Key Experimental Results
 
@@ -93,37 +93,37 @@ The optimization objective is to minimize call-level loss, which consists of thr
 
 | Configuration | Description |
 |------|------|
-| Optimize global instructions $P$ only | Lacks tool-level distinction, lower OSR |
-| Optimize tool schema $T$ only | Lacks global conventions, lower OSR |
-| **Joint optimization P+T (JTPRO)** | Complementary gains, optimal OSR |
+| Optimize Global Instruction $P$ Only | Lacks tool-level differentiation; lower OSR |
+| Optimize Tool Schema $T$ Only | Lacks global conventions; lower OSR |
+| **Joint Optimization $P+T$ (JTPRO)** | Complementary gains; optimal OSR |
 
 ### Key Findings
-- **Joint optimization outperforms individual optimization**: Optimizing only instructions or only schemas is inferior to joint optimization, verifying the coupled dependency between the two.
-- **Largest gains in 1000-tool scenarios**: As the library grows and confusion increases, JTPRO's advantages become more pronounced (o3-mini OSR +13.2 percentage points at 1000 tools).
-- **SFA is a critical OSR bottleneck**: On datasets with complex schemas like ETID, parameter filling accuracy contributes significantly more to end-to-end success than tool selection.
-- **Globalization reduces redundancy and improves consistency**: The `GlobalizeSlots` step shrinks schema length and improves parameter filling accuracy through unified semantics.
+- **Joint Optimization outperforms individual optimization**: Optimizing only instructions or only schemas is inferior to joint optimization, confirming their coupled dependency.
+- **Maximum gains in 1000-tool scenarios**: As the library grows and confusion increases, JTPRO's advantages become more pronounced (o3-mini OSR gain of +13.2 percentage points at 1000 tools).
+- **SFA is the key OSR bottleneck**: In datasets with complex schemas like ETID, parameter filling correctness contributes significantly more to end-to-end success than tool selection.
+- **Globalization reduces redundancy and improves consistency**: The `GlobalizeSlots` step shrinks schema length and improves parameter filling accuracy through semantic unification.
 
 ## Highlights & Insights
-- **The argument for the necessity of joint optimization** is compelling: Figure 1 clearly shows SFA driving OSR, and Figure 2 shows performance degradation due to tool expansion, providing strong motivation for joint optimization.
-- **The design of GlobalizeSlots** is highly practical—in enterprise tool libraries, many parameter semantics (dates, IDs, booleans) repeat. Elevating them to global rules is a clean and effective engineering trick transferable to any multi-tool Agent system.
-- **Fine-tuning-free optimization paradigm**: Operating entirely in the text space makes it applicable to closed-source models, which is highly valuable in practical deployments.
+- The **argument for the necessity of joint optimization** is compelling: Figure 1 clearly shows SFA driving OSR, while Figure 2 illustrates the performance drop caused by tool scaling.
+- The **design of GlobalizeSlots** is highly practical—in enterprise tool libraries where semantics frequently repeat (dates, IDs, booleans), elevating them to global rules is a clean and effective engineering trick applicable to any multi-tool Agent system.
+- **Fine-tuning-free optimization paradigm**: Operates entirely in text space, making it applicable to closed-source models, which is highly valuable for real-world deployment.
 
 ## Limitations & Future Work
-- Primarily evaluates single-turn tool calling, not involving multi-turn tool chains.
-- Relies on high-quality labeled tool-call traces for reflective optimization, resulting in high cold-start costs.
-- Does not consider incremental optimization efficiency in dynamic tool addition/deletion scenarios.
-- Potential to explore deeper integration with retrieval-augmented methods and extension to multi-step planning.
+- Evaluation is limited to single-turn tool call scenarios and does not cover multi-turn tool chain calls.
+- High dependence on high-quality annotated tool-call traces for reflective optimization leads to high cold-start costs.
+- Incremental optimization efficiency in scenarios with dynamic tool addition/deletion was not considered.
+- Deeper integration with retrieval-augmented methods and extension to multi-step planning scenarios could be explored.
 
 ## Related Work & Insights
-- **vs GEPA**: GEPA also uses Pareto selections and reflective optimization but only optimizes global instructions without touching tool schemas. JTPRO extends this to joint optimization, offering clear advantages in tool-specific distinction and parameter constraints.
-- **vs DRAFT**: DRAFT improves per-tool documentation through trial and error but does not optimize global strategies. JTPRO handles both layers simultaneously, preventing global-local inconsistencies.
-- **vs MIPRO**: MIPRO optimizes module prompts and examples but is not designed for tool-calling scenarios, lacking slot-level diagnosis and globalization mechanisms.
+- **vs GEPA**: GEPA also utilizes Pareto selection and reflective optimization but only targets global instructions. JTPRO extends this to joint optimization, offering clear advantages in tool-specific differentiation and parameter constraints.
+- **vs DRAFT**: DRAFT improves tool-wise documentation through trial and error but does not optimize global strategies. JTPRO handles both layers to prevent global-local inconsistency.
+- **vs MIPRO**: MIPRO optimizes module prompts and examples but is not designed for tool-call scenarios, lacking slot-level diagnostics and globalization mechanisms.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The idea of jointly optimizing instructions and schemas is valuable, though the framework is a natural extension of GEPA.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Three datasets, multiple models, detailed ablations, and various tool scales.
-- Writing Quality: ⭐⭐⭐⭐ Clear problem definition, though the paper is long with some internal repetition.
-- Value: ⭐⭐⭐⭐ Provides excellent practical guidance for large-scale tool calling scenarios.
+- Novelty: ⭐⭐⭐⭐ The idea of joint instruction and schema optimization is valuable, though the framework is a natural extension of GEPA.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Three datasets, multiple models, detailed ablation, and various tool scales.
+- Writing Quality: ⭐⭐⭐⭐ Problem definitions are clear, though the paper is long with some repetitive content.
+- Value: ⭐⭐⭐⭐ Highly practical for large-scale tool-calling scenarios.
 
 <!-- RELATED:START -->
 
@@ -132,10 +132,10 @@ The optimization objective is to minimize call-level loss, which consists of thr
 ## Related Papers
 
 - [\[ICLR 2026\] Adaptive Social Learning via Mode Policy Optimization for Language Agents](../../ICLR2026/llm_reasoning/adaptive_social_learning_via_mode_policy_optimization_for_language_agents.md)
-- [\[ICLR 2026\] ReForm: Reflective Autoformalization with Prospective Bounded Sequence Optimization](../../ICLR2026/llm_reasoning/reform_reflective_autoformalization_with_prospective_bounded_sequence_optimizati.md)
 - [\[ACL 2026\] Foresight Optimization for Strategic Reasoning in Large Language Models](foresight_optimization_for_strategic_reasoning_in_large_language_models.md)
 - [\[ICML 2026\] Diversity Over Frequency: Rethinking Tool Use in Visual Chain-of-Thought Agents](../../ICML2026/llm_reasoning/diversity_over_frequency_rethinking_tool_use_in_visual_chain-of-thought_agents.md)
-- [\[ICLR 2026\] Estimating the Empowerment of Language Model Agents](../../ICLR2026/llm_reasoning/estimating_the_empowerment_of_language_model_agents.md)
+- [\[ICLR 2026\] ReForm: Reflective Autoformalization with Prospective Bounded Sequence Optimization](../../ICLR2026/llm_reasoning/reform_reflective_autoformalization_with_prospective_bounded_sequence_optimizati.md)
+- [\[AAAI 2026\] Beyond ReAct: A Planner-Centric Framework for Complex Tool-Augmented LLM Reasoning](../../AAAI2026/llm_reasoning/beyond_react_a_planner-centric_framework_for_complex_tool-au.md)
 
 </div>
 

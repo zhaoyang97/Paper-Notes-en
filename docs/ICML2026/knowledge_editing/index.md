@@ -35,13 +35,13 @@ item_total: 8
 
 **🧪 ICML2026** · **8** paper notes
 
-📌 **Same area in other venues:** [📷 CVPR2026 (2)](../../CVPR2026/knowledge_editing/index.md) · [💬 ACL2026 (9)](../../ACL2026/knowledge_editing/index.md) · [🔬 ICLR2026 (8)](../../ICLR2026/knowledge_editing/index.md) · [🤖 AAAI2026 (4)](../../AAAI2026/knowledge_editing/index.md) · [🧠 NeurIPS2025 (6)](../../NeurIPS2025/knowledge_editing/index.md)
+📌 **Same area in other venues:** [📷 CVPR2026 (2)](../../CVPR2026/knowledge_editing/index.md) · [🔬 ICLR2026 (15)](../../ICLR2026/knowledge_editing/index.md) · [💬 ACL2026 (10)](../../ACL2026/knowledge_editing/index.md) · [🤖 AAAI2026 (4)](../../AAAI2026/knowledge_editing/index.md) · [🧠 NeurIPS2025 (6)](../../NeurIPS2025/knowledge_editing/index.md)
 
 🔥 **Top topics:** LLM ×4
 
 **[AnyEdit++: Adaptive Long-Form Knowledge Editing via Bayesian Surprise](anyedit_adaptive_long-form_knowledge_editing_via_bayesian_surprise.md)**
 
-:   AnyEdit++ utilizes token-level Bayesian Surprise to identify semantic turning points in long-form text, replacing the fixed-window partitioning of AnyEdit with structure-aware Bayes-Chunk. This approach consistently improves BLEU and BERT Scores across long-form knowledge editing tasks including mathematics, code, news, and poetry.
+:   AnyEdit++ utilizes token-level Bayesian Surprise to identify semantic transition points in long-form text, replacing the fixed-window segmentation of AnyEdit with structure-aware Bayes-Chunk. It achieves stable improvements in BLEU and BERT Score across long-form knowledge editing tasks such as mathematics, code, news, and poetry.
 
 **[CrispEdit: Low-Curvature Projections for Scalable Non-Destructive LLM Editing](crispedit_low-curvature_projections_for_scalable_non-destructive_llm_editing.md)**
 
@@ -49,7 +49,7 @@ item_total: 8
 
 **[Do Text Edits Generalize to Visual Generation? Benchmarking Cross-Modal Knowledge Editing in UMMs](do_text_edits_generalize_to_visual_generation_benchmarking_cross-modal_knowledge.md)**
 
-:   This paper proposes UniKE—the first "cross-modal knowledge editing" benchmark for Unified Multimodal Models (UMMs), comprising 2,971 edited subjects and 5,535 VQA-verifiable instances. It systematically reveals a "modality gap" where the text-side editing success rate is $\sim 92\%$ while image generation VQA is only $\sim 18.5\%$. Through a "reasoning-augmented parameter editing" protocol, VQA accuracy is increased by up to 18.6 percentage points. Furthermore, the root cause is localized to the LLM-to-DiT projection bottleneck using a cosine drift metric along the conditioning pathway.
+:   This paper proposes UniKE—the first "cross-modal knowledge editing" benchmark for Unified Multimodal Models (UMMs) (2,971 editing subjects, 5,535 VQA-verifiable instances). It systematically reveals a modality gap where the "text-side editing success rate is ~92%, yet image generation VQA is only ~18.5%." By using a "reasoning-augmented parameter editing" protocol, it increases VQA accuracy by up to 18.6 percentage points and identifies the root cause as the LLM-to-DiT projection bottleneck using cosine drift metrics on the conditioning path.
 
 **[From Backward Spreading to Forward Replay: Revisiting Target Construction in LLM Parameter Editing](from_backward_spreading_to_forward_replay_revisiting_target_construction_in_llm_.md)**
 

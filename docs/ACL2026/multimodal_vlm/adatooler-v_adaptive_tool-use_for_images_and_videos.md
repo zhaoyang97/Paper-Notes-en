@@ -2,7 +2,7 @@
 title: >-
   [Paper Note] AdaTooler-V: Adaptive Tool-Use for Images and Videos
 description: >-
-  [ACL 2026][Multimodal VLM][AT-GRPO] This paper identifies the issue of **blind tool-use** in existing "thinking with images" MLLMs—where visual tools (zoom-in/frame extraction) are forced for all questions, leading to overthinking, reduced accuracy, and increased inference costs. It proposes AdaTooler-V, which introduces the AT-GRPO reinforcement learnin
+  [ACL 2026][Multimodal VLM][AT-GRPO] This paper identifies a widespread **blind tool-use** problem in existing "thinking with images" MLLMs—models tend to force zoom-in or frame extraction for all visual questions, resulting in overthinking that degrades accuracy and increases inference costs. To address this, the authors propose AdaTooler-V, which introd
 tags:
   - ACL 2026
   - Multimodal VLM
@@ -10,7 +10,7 @@ tags:
   - Tool Benefit Score
   - V* bench
 date: 2026-05-08
-content_hash: a622dff99320cafd
+content_hash: d3af6f3c086e5500
 ---
 # AdaTooler-V: Adaptive Tool-Use for Images and Videos
 
@@ -18,43 +18,43 @@ content_hash: a622dff99320cafd
 **arXiv**: [2512.16918](https://arxiv.org/abs/2512.16918)  
 **Code**: https://github.com/CYWang735/AdaTooler-V  
 **Area**: Multimodal VLM / Tool-use / Reinforcement Learning  
-**Keywords**: Multimodal Reasoning, Adaptive Tool-use, AT-GRPO, Tool Benefit Score, V* bench
+**Keywords**: Multimodal Reasoning, Adaptive Tool-use, AT-GRPO, Tool Benefit Score, V* bench  
 
 ## TL;DR
-This paper identifies the issue of **blind tool-use** in existing "thinking with images" MLLMs—where visual tools (zoom-in/frame extraction) are forced for all questions, leading to overthinking, reduced accuracy, and increased inference costs. It proposes AdaTooler-V, which introduces the AT-GRPO reinforcement learning algorithm using a sample-level Tool Benefit Score to dynamically adjust reward scales (rewarding helpful tool use and penalizing unnecessary use). This allows a 7B model to achieve 89.8% on the high-resolution V* benchmark, surpassing GPT-4o and Gemini 1.5 Pro.
+This paper identifies a widespread **blind tool-use** problem in existing "thinking with images" MLLMs—models tend to force zoom-in or frame extraction for all visual questions, resulting in overthinking that degrades accuracy and increases inference costs. To address this, the authors propose AdaTooler-V, which introduces the AT-GRPO reinforcement learning algorithm. By using a sample-level Tool Benefit Score to dynamically adjust reward scales (encouraging tool use when effective and penalizing it when unnecessary), a 7B model achieves 89.8% on the V* high-resolution benchmark, surpassing GPT-4o and Gemini 1.5 Pro.
 
 ## Background & Motivation
 
-**Background**: Recent trends in multimodal LLM reasoning favor the "thinking with images" paradigm—inserting visual tool calls (cropping, frame extraction, path tracing) into the Chain-of-Thought (CoT) to allow the model to ground into detailed pixels. This significantly improves performance on complex visual tasks like high-resolution images and long videos (e.g., OpenThinkIMG, PixelReasoner, VITAL). Open-source examples like Vision-R1, Video-R1, and OneThinker have extended R1-style RL to VLMs.
+**Background**: The field of multimodal LLM reasoning has recently embraced the "thinking with images" paradigm. This involves inserting visual tool calls (cropping, frame extraction, path tracing) into the chain-of-thought, allowing models to repeatedly ground into detailed pixels. This has significantly improved performance on complex visual tasks such as high-resolution images and long videos (e.g., OpenThinkIMG, PixelReasoner, VITAL). Open-source representatives like Vision-R1, Video-R1, and OneThinker have extended R1-style RL to VLMs.
 
-**Limitations of Prior Work**: The authors observe a neglected core issue—**blind tool-use**. This manifests as: (a) existing training rewards implicitly encourage tool usage, leading models to zoom-in or extract frames for all questions; (b) many visual questions can be solved with pure text CoT (e.g., "which of the two clocks shows what time"), and forced tool calls trigger overthinking, deviating the model from the correct reasoning path; (c) repetitive, meaningless tool calls weaken the model's reliance on original visual inputs, making it harder to focus on key cues; (d) redundant calls increase inference costs. Figure 1 shows that in their 300k dataset, roughly half the samples are tool-helpful ($\Delta S > 0$), while the other half are tool-unhelpful or even tool-harmful.
+**Limitations of Prior Work**: The authors observe a neglected core problem—**blind tool-use**. Specific manifestations include: (a) existing training rewards often implicitly encourage tool usage, leading models to zoom-in or extract frames for all questions; (b) many visual questions can be solved with pure text CoT (e.g., "Which of the two clocks shows what time?"), where mandatory tool calls trigger overthinking and divert the model from the correct reasoning path; (c) redundant tool calls weaken the model's dependence on original visual inputs, making it harder to focus on key cues; (d) unnecessary calls increase inference costs. Figure 1 of the paper shows a distribution in their 300k dataset where approximately half of the samples are tool-helpful ($\Delta S > 0$), while the other half are tool-unhelpful or even tool-harmful.
 
-**Key Challenge**: Models lack an explicit mechanism to judge whether a question requires tools. Existing RL rewards are "one-size-fits-all" and cannot distinguish between necessary and unnecessary tool usage at the sample level.
+**Key Challenge**: Models lack an explicit mechanism to judge whether a question requires a tool. Existing RL frameworks use one-size-fits-all reward signals that cannot distinguish between "should use tools" and "should not use tools" at the sample level.
 
-**Goal**: (1) Enable VLMs to **adaptively** decide whether to call visual tools for each question; (2) Introduce a sample-level tool benefit signal in RL training to make rewards aware of whether tool usage actually improves performance.
+**Goal**: (1) Enable VLMs to **adaptively** decide whether to call visual tools for each question; (2) Introduce a sample-level tool benefit signal in RL training to make the rewards aware of whether tool usage actually improved performance.
 
-**Key Insight**: The authors define the Tool Benefit Score as $\Delta S = \text{Mean Acc}(\text{with tool}) - \text{Mean Acc}(\text{without tool})$. Samples are categorized into tool-helpful ($\Delta S > 0$) and tool-unhelpful ($\Delta S \leq 0$). The GRPO reward scale is then modified to be aware of the sample type.
+**Key Insight**: The authors define the Tool Benefit Score $\Delta S$ as the difference in average accuracy between using a tool versus not using a tool for the same sample. Samples are explicitly categorized into tool-helpful ($\Delta S > 0$) and tool-unhelpful ($\Delta S \leq 0$), followed by a modification of the GRPO reward scale to perceive these sample types.
 
-**Core Idea**: Use AT-GRPO (Adaptive Tool-use GRPO)—scaling up rewards for tool usage in tool-helpful samples and penalizing unnecessary calls in tool-unhelpful samples. Combined with a two-stage (SFT cold-start + RL) training process, the model learns when to invoke tools autonomously.
+**Core Idea**: Use AT-GRPO (Adaptive Tool-use GRPO), which amplifies rewards for tool usage in tool-helpful samples and penalizes unnecessary calls in tool-unhelpful samples. Combined with a two-stage (SFT cold start + RL) training process, the model autonomously learns when to invoke tools.
 
 ## Method
 
 ### Overall Architecture
-AdaTooler-V models multimodal reasoning as a thought-action-observation loop. Given a query plus an image/video, the policy model first decides whether a tool is needed: if not, it directly produces a thought $T$ and an answer; if needed, it iteratively generates $(T_i, C_i)$. Each action $C_i$ calls one of four visual tools (CropImg, FrameAt, VideoClip, PathTracer), returning an observation $E_i$, which is fed back into the context for continued reasoning until an answer is reached or the context/turn limit is hit. Training involves two stages: (1) **SFT Cold-start**—fine-tuning on AdaTooler-V-CoT-100k (multi-turn tool-interaction trajectories) to establish basic reasoning patterns and tool-calling priors; (2) **RL with verifiable rewards**—training with AT-GRPO on AdaTooler-V-300k to allow autonomous exploration of "when to use tools."
+AdaTooler-V models multimodal reasoning as a thought-action-observation loop. Given a query plus an image/video, the policy model first decides whether a tool is needed: if not, it produces a thought $T$ to give the answer; if needed, it iteratively generates $(T_i, C_i)$. Each action $C_i$ calls one of four visual tools (CropImg / FrameAt / VideoClip / PathTracer), returning an observation $E_i$ that is fed back into the context to continue reasoning until an answer is reached or context/turn limits are met. Training consists of two stages: (1) **SFT Cold Start**—fine-tuning on AdaTooler-V-CoT-100k (multi-turn tool-interaction trajectories) to establish basic reasoning patterns and tool-calling priors; (2) **RL with verifiable rewards**—training with AT-GRPO on AdaTooler-V-300k to allow the model to autonomously explore "when to use tools."
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    D["Qwen2.5-VL-72B automatically generates multi-turn tool CoT<br/>→ AdaTooler-V-300k, filtered to 100k"]
+    D["Qwen2.5-VL-72B auto-generates multi-turn tool CoT<br/>→ AdaTooler-V-300k, filtered to 100k"]
     DS["Offline measurement of Tool Benefit Score ΔS<br/>Accuracy diff: with tool vs. without tool"]
-    SFT["Two-stage training: SFT Cold-start (100k)<br/>Establish thought-action-observation behavioral priors"]
-    RL["AT-GRPO Enrichment (300k)<br/>Adjust reward by ΔS: encourage use for helpful samples, penalize for useless samples"]
-    P["Policy Model: Per-question judgment on tool necessity"]
+    SFT["Two-stage training: SFT Cold Start (100k)<br/>Establish thought-action-observation priors"]
+    RL["AT-GRPO RL (300k)<br/>Adjust reward by ΔS: encourage if useful, penalize if not"]
+    P["Policy Model: Decide if tool is needed per question"]
     subgraph TOOLS["Four Visual Tools (Unified Action Space)"]
         direction TB
-        T["CropImg (Zoom) · FrameAt (Get Frame)<br/>VideoClip (Segment) · PathTracer (Draw Path)"]
+        T["CropImg Zoom · FrameAt Get Frame<br/>VideoClip Segment · PathTracer Trace Path"]
     end
-    OBS["Observation fed back into context"]
+    OBS["Observation fed back to context"]
     ANS["Output Answer"]
 
     D --> SFT
@@ -65,96 +65,94 @@ flowchart TD
     P -->|No tool needed| ANS
     P -->|Tool needed| TOOLS
     TOOLS --> OBS
-    OBS -->|Not finished| P
-    OBS -->|Result obtained| ANS
+    OBS -->|Continue| P
+    OBS -->|Answer reached| ANS
 ```
 
 ### Key Designs
 
-**1. AT-GRPO: Using Sample-level Tool Benefit Score $\Delta S$ for Adaptive Rewards**
+**1. AT-GRPO: Using Sample-level Tool Benefit Score $\Delta S$ to Learn Tool Necessity**
 
-Standard GRPO rewards only check the final correctness, remaining indifferent to redundant tool calls. This leads models to adopt "lazy" strategies of calling tools regardless of necessity. AdaTooler-V solves this by pre-calculating a Tool Benefit Score $\Delta S = \text{Acc}(\text{with tool}) - \text{Acc}(\text{without tool})$ for each training sample. Qwen2.5-VL-72B runs multiple trials with and without tools to derive this. During RL, the reward scale is rewritten based on $\Delta S$: for tool-helpful samples ($\Delta S > 0$), tool-using trajectories receive higher rewards; for tool-unhelpful samples ($\Delta S \leq 0$), tool calls are penalized to encourage pure text CoT. This meta-signal is more precise than a global step penalty because it is sample-specific.
+Standard GRPO rewards only look at whether the final answer is correct, remaining indifferent to redundant tool calls. Since tool calls introduce overthinking and inference overhead, models easily learn "lazy" strategies of mindless calling. AdaTooler-V solves this by pre-calculating a Tool Benefit Score $\Delta S = \text{Acc}(\text{with tool}) - \text{Acc}(\text{without tool})$ for each training sample. Qwen2.5-VL-72B runs $N$ versions "with tool" and "without tool" for each sample to get the mean accuracy difference. During RL, the reward scale is rewritten: for tool-helpful samples ($\Delta S > 0$), tool-using trajectories get higher rewards; for tool-unhelpful samples ($\Delta S \leq 0$), tool usage is penalized to encourage pure text CoT. This allows the policy gradient to perceive the meta-signal of whether a sample actually needs a tool. It is more precise than a global step penalty because $\Delta S$ is measured per sample.
 
-**2. Unified Action Space with Four Visual Tools**
+**2. Unified Action Space for Four Visual Tools: Composable Interaction for Image and Video**
 
-"Thinking with images" requires iterative grounding. AdaTooler-V converges this into four semantic tools: **CropImg** (crop/zoom based on bbox), **FrameAt** (extract single frame via timestamp), **VideoClip** (clip video via start/end times), and **PathTracer** (draw trajectories/connections between points to aid spatial reasoning). The input and output for all tools are standardized as image patches. After being fed back into the context, they can be operated on by subsequent tools—for instance, a video question might use `FrameAt` to extract a key frame and then `CropImg` to zoom into a specific region. Limiting the space to visual observations prevents training signal dispersion.
+"Thinking with images" requires the model to repeatedly ground details. AdaTooler-V converges this into four semantic tools: **CropImg** (crop/zoom based on bbox for detail "zoom in"), **FrameAt** (extract a single frame from video by timestamp), **VideoClip** (segment video by start/end times), and **PathTracer** (trace trajectories/connections between two points for spatial reasoning). All tool inputs and outputs are unified as image patches. They can be operated on sequentially—for example, a video task can use FrameAt to get a keyframe, then CropImg to zoom into a specific region. The tool space is limited to visual observations to prevent signal dispersion.
 
-**3. Two-stage Training + Multimodal Joint Data**
+**3. Two-Stage Training + Multimodal Joint Data: Learning How, Then Learning When**
 
-The exploration space for multimodal long-trajectories is massive, making cold-starting pure RL difficult. AdaTooler-V follows an "SFT cold-start + RL refine" route. Data is first generated using Qwen2.5-VL-72B across tasks like math, counting, logic, spatial, and temporal video reasoning to create AdaTooler-V-300k, filtered into 100k high-quality SFT samples. After SFT establishes the behavior of "how to use tools," RL refined via AT-GRPO shifts the focus to "when to use them" using verifiable rewards (exact match for MCQ/numbers, WER for OCR, ROUGE for free-form). Joint training across single-image, multi-image, and video allows the model to transfer detail-focusing skills across modalities.
+The exploration space for multimodal long-trajectories is massive, making pure RL cold starts nearly impossible. AdaTooler-V uses an "SFT Cold Start + RL Refine" path. Data is generated via Qwen2.5-VL-72B across math, visual counting, logic, spatial, and video tasks to form 300k samples, filtered to 100k high-quality SFT trajectories. The SFT stage fine-tunes the model to produce coherent (thought, action, observation) loops. The RL stage then uses AT-GRPO on tasks with verifiable rewards (Exact Match for multi-choice/numerical, WER for OCR, ROUGE for free-form) to pull the model from SFT pattern matching toward adaptive strategies. Joint training across single-image, multi-image, and video allows the transfer of detail-focusing skills to temporal scenarios.
 
-### Mechanism Example: Differentiating Samples via $\Delta S$
+### Case Study: $\Delta S$ Differentiation
 
-- A high-resolution V* task—"What is written on the sign in the bottom right?": Pure text CoT likely fails due to small text. `CropImg` significantly boosts accuracy, resulting in $\Delta S > 0$. The model is rewarded for a trajectory that zooms in and then reads.
-- A simple task—"Which of the two clocks shows a later time?": The model can answer via direct visual text CoT. Forced zooming leads to overthinking, resulting in $\Delta S \leq 0$. The model is penalized for calling `CropImg`, forcing it to stick to text reasoning.
-- These two categories are roughly balanced in the 300k dataset, and this per-sample reward differentiation is what allows the 7B model to reach 89.8% on V*, surpassing GPT-4o's 65.2%.
+- For a high-resolution V* question ("What text is on the bottom-right sign?"): Pure text CoT fails due to low resolution. Using CropImg to zoom in significantly increases accuracy, so $\Delta S > 0$. The model receives higher rewards for trajectories involving "CropImg → Read Text," reinforcing tool use for such tasks.
+- For a simple question ("Which clock shows a later time?"): The model answers correctly via text CoT. Forced zoom-in leads to overthinking and errors, so $\Delta S \le 0$. If the model calls CropImg, the trajectory is penalized, forcing it to learn direct textual reasoning.
 
 ### Loss & Training
-SFT Stage: Standard next-token prediction loss on AdaTooler-V-CoT-100k multi-turn trajectories (thoughts, actions, and observations are all included in the loss). RL Stage: AT-GRPO based on group-relative advantage estimation, with rewards scaled by $\Delta S$ factors. The model is based on Qwen2.5-VL-7B-Instruct.
+SFT stage: Standard next-token prediction loss on AdaTooler-V-CoT-100k multi-turn trajectories (thought + action + observation). RL stage: AT-GRPO uses group-relative advantage estimation, but modifies reward calculation by introducing the $\Delta S$ scaling factor. The base model is Qwen2.5-VL-7B-Instruct.
 
 ## Key Experimental Results
 
 ### Main Results
-Evaluated on 12 benchmarks across single-image (V*, MME, InfoVQA, MMBench, MathVista), multi-image (MMSI-Bench, SPAR-Bench), and video.
+Covering 12 benchmarks across single-image (V*, MME, InfoVQA, MathVista), multi-image (MMSI-Bench), and video.
 
 | Model | Params | V* | MME | MathVista | MMSI-Bench |
 |------|--------|------|------|-----------|------------|
 | GPT-4o (Closed) | – | 65.2 | 2328 | 63.8 | 30.3 |
 | Gemini 1.5 Pro (Closed) | – | 71.7 | – | 63.9 | 36.9 |
 | InternVL3-8B | 8B | – | 2415 | 71.6 | 25.7 |
-| Qwen2.5-VL-7B (base) | 7B | – | – | – | – |
 | **AdaTooler-V-7B** | 7B | **89.8** | – | – | – |
 
 (The V* score of 89.8% significantly outperforms GPT-4o's 65.2% and Gemini 1.5 Pro's 71.7%.)
 
 ### Ablation Study
 
-| Configuration | V* | Notes |
+| Configuration | V* | Note |
 |------|------|------|
 | Qwen2.5-VL-7B base | ~– | Baseline without tools |
-| + Multimodal interleaved CoT (No AT-GRPO)| ~– | Tool use present but blind; overthinking occurs |
-| + AT-GRPO (No $\Delta S$ distinction, normal GRPO) | ~– | Adaptive reward disabled |
+| + Multimodal interleaved CoT (no AT-GRPO) | ~– | Blind tool use leads to overthinking |
+| + AT-GRPO (No $\Delta S$ diff, standard GRPO) | ~– | Adaptive reward disabled |
 | + Full AT-GRPO with $\Delta S$ | **89.8** | Complete model |
 
 ### Key Findings
-- **V* Gain of +24.6 over GPT-4o**: High-resolution visual tasks show the largest variance in tool helpfulness, where AT-GRPO yields the highest gains.
-- **Avoiding blind calls reduces inference costs**: AT-GRPO directs the model to use pure text CoT for simple questions.
-- **Multimodal joint training is beneficial**: Skills learned in single-image detail-focusing transfer to video frame selection.
-- **Symmetric $\Delta S$ distribution**: Roughly half of the samples benefit from tools while the other half do not, validating that blind tool-use is a pervasive data-level phenomenon.
+- **Significant Gain on V***: High-resolution detail tasks show the largest variance in tool helpfulness, where AT-GRPO yields the highest gains (+24.6 over GPT-4o).
+- **Reduced Inference Cost**: By avoiding blind tool-use, the model defaults to text CoT for simple questions, saving compute.
+- **Multimodal Joint Training**: Cross-modal transfer allows tool-decision skills learned on images to apply to video frame selection.
+- **Symmetric $\Delta S$ Distribution**: About half of the samples benefit from tools while half do not, confirming that "blind calling" is a data-level phenomenon that requires sample-specific rewards.
 
 ## Highlights & Insights
-- **$\Delta S$ as a sample-level meta-signal**: Using accuracy differences to define tool benefit bypasses the meta-problem of manually defining when to use tools—it is measured empirically and fed back into RL.
-- **First to explicitly identify "blind tool-use" as a bottleneck**: While prior works assumed "more tools are better," this paper uses data to prove tools can be harmful for half the samples.
-- **Unified Action Space**: The four tools (CropImg, FrameAt, VideoClip, PathTracer) are semantic, combinable, and avoid over-specialization.
-- **7B exceeding GPT-4o on V***: This demonstrates that with sophisticated thinking-with-image designs and adaptive decision-making, medium-sized open-source models can achieve SOTA on specific visual tasks.
+- **$\Delta S$ as a Meta-Signal**: Defining tool benefit via the accuracy gap between tool/no-tool versions bypasses the complex "judgment" problem. This "offline measurement to tune reward" approach is transferable to other agentic scenarios.
+- **Critique of "Blind Tool-use"**: While previous works assumed "more tools are better," this paper provides empirical evidence that tools are harmful for nearly half of the samples.
+- **Unified Tool Space**: Limiting the space to CropImg, FrameAt, VideoClip, and PathTracer ensures focused training signals while covering core "thinking-with-image" patterns.
+- **7B Beat GPT-4o on V***: Proves that with adaptive tool-use and thinking-with-image design, mid-sized open-source models can achieve SOTA on specific visual tasks.
 
 ## Limitations & Future Work
-- Offline measurement of $\Delta S$ relies on a powerful "judge model" (Qwen2.5-VL-72B), which is computationally expensive and hard to transfer to new domains zero-shot.
-- The precise reward scaling function for $\Delta S$ in AT-GRPO is not fully detailed in the current text; implementation stability likely depends on these functions.
-- The toolset is limited to 4 visual tools and lacks text-based tools (OCR, search, calculator) or 3D operations.
-- Lacks scaling law analysis; as LLMs become stronger visually, the $\Delta S$ distribution might shift towards "unhelpful," and the efficacy of AT-GRPO for larger models remains an open question.
+- Offline measurement of $\Delta S$ relies on a teacher model (Qwen2.5-VL-72B), which is costly and domain-dependent.
+- Precise mathematical formulations for $\Delta S$ reward scaling were not fully detailed in the introductory sections.
+- The toolset is limited to visual actions, excluding text-based tools like OCR, search, or calculators.
+- Lacks scaling law analysis; it is unclear if larger models (which might need tools less often) exhibit different $\Delta S$ distributions.
 
 ## Related Work & Insights
-- **vs PixelReasoner / OpenThinkIMG / VITAL**: These initiated the thinking-with-images paradigm but implicitly encouraged tool use; AdaTooler-V is the first to optimize the "decision to call."
-- **vs Video-R1 / OneThinker**: These extended R1 to VLMs with single reward signals; AT-GRPO incorporates sample-level priors.
-- **vs Vision-R1**: While Vision-R1 focused on pure text CoT, AdaTooler-V introduces interleaved CoT and addresses the over-tooling issue.
+- **vs. PixelReasoner / VITAL**: These propose the thinking-with-images paradigm but use rewards that implicitly encourage tool usage. AdaTooler-V is the first to optimize the "whether to call" decision.
+- **vs. Video-R1 / OneThinker**: These extend R1 to multimodal data but rely on a single reward signal. AT-GRPO integrates sample-level priors.
+- **vs. Vision-R1**: While Vision-R1 focuses on pure text CoT, AdaTooler-V introduces multimodal interleaved CoT and solves the over-tool problem.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ $\Delta S$-driven adaptive reward is a clean, effective design addressing blind tool-use.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Strong results on 12 benchmarks and V* superiority. 
-- Writing Quality: ⭐⭐⭐⭐ Clear motivation, good use of data distributions, and intuitive case studies.
-- Value: ⭐⭐⭐⭐ High practical value for training deployable agentic VLMs.
+- Novelty: ⭐⭐⭐⭐ The $\Delta S$-driven adaptive reward is a simple yet effective design addressing blind tool-use.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Tested across 12 benchmarks and multimodal scenarios; V* results are particularly impressive.
+- Writing Quality: ⭐⭐⭐⭐ Clear motivation, well-diagnosed pain points, and intuitive case studies.
+- Value: ⭐⭐⭐⭐ Provides a practical roadmap for training deployable agentic VLMs.
 
 <!-- RELATED:START -->
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] VTool-R1: VLMs Learn to Think with Images via Reinforcement Learning on Multimodal Tool Use](../../ICLR2026/multimodal_vlm/vtool-r1_vlms_learn_to_think_with_images_via_reinforcement_learning_on_multimoda.md)
 - [\[AAAI 2026\] VipAct: Visual-Perception Enhancement via Specialized VLM Agent Collaboration and Tool-use](../../AAAI2026/multimodal_vlm/vipact_visual-perception_enhancement_via_specialized_vlm_age.md)
-- [\[CVPR 2026\] Thinking With Videos: Multimodal Tool-Augmented Reinforcement Learning for Long Video Reasoning](../../CVPR2026/multimodal_vlm/thinking_with_videos_multimodal_tool-augmented_reinforcement_learning_for_long_v.md)
-- [\[CVPR 2026\] ARM-Thinker: Reinforcing Multimodal Generative Reward Models with Agentic Tool Use and Visual Reasoning](../../CVPR2026/multimodal_vlm/arm-thinker_reinforcing_multimodal_generative_reward_models_with_agentic_tool_us.md)
-- [\[CVPR 2026\] CodeV: Code with Images for Faithful Visual Reasoning via Tool-Aware Policy Optimization](../../CVPR2026/multimodal_vlm/codev_code_with_images_for_faithful_visual_reasoning_via_tool-aware_policy_optim.md)
+- [\[ECCV 2024\] m&m's: A Benchmark to Evaluate Tool-Use for Multi-step Multi-modal Tasks](../../ECCV2024/multimodal_vlm/m_ampmaposs_a_benchmark_to_evaluate_tool-use_for_multi-step_multi-modal_tasks.md)
+- [\[ACL 2026\] Leave My Images Alone: Preventing Multi-Modal Large Language Models from Analyzing Unauthorized Images](leave_my_images_alone_preventing_multi-modal_large_language_models_from_analyzin.md)
+- [\[CVPR 2026\] EgoSound: Benchmarking Sound Understanding in Egocentric Videos](../../CVPR2026/multimodal_vlm/egosound_benchmarking_sound_understanding_in_egocentric_videos.md)
+- [\[ICML 2026\] AgentHijack: Benchmarking Computer Use Agent Robustness to Common Environment Corruptions](../../ICML2026/multimodal_vlm/agenthijack_benchmarking_computer_use_agent_robustness_to_common_environment_cor.md)
 
 </div>
 

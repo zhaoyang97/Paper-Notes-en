@@ -2,146 +2,143 @@
 title: >-
   [Paper Note] Thinking Like a Botanist: Challenging Multimodal Language Models with Intent-Driven Chain-of-Inquiry
 description: >-
-  [ACL 2026][Multimodal VLM][Chain-of-Inquiry] This paper introduces the PlantInquiryVQA benchmark and the Chain-of-Inquiry (CoI) framework, comprising 24,950 plant images and 138,068 QA pairs. It simulates the adaptive diagnostic questioning strategies of botanists to evaluate the multi-step visual reasoning capabilities of 18 MLLMs in plant pathology diagnosis. T
+  [ACL 2026][vlm_reasoning][Chain-of-Inquiry] This paper introduces the PlantInquiryVQA benchmark and the Chain-of-Inquiry (CoI) framework, comprising 24,950 plant images and 138,068 QA pairs. It simulates the adaptive diagnostic questioning strategies of botanists to evaluate the multi-step visual reasoning capabilities of 18 MLLMs in plant pathology. Findings sh
 tags:
   - ACL 2026
-  - Multimodal VLM
+  - vlm_reasoning
   - Chain-of-Inquiry
 date: 2026-05-08
-content_hash: ed4480f557b3cc0b
+content_hash: b70bc2ddd1498f73
 ---
 # Thinking Like a Botanist: Challenging Multimodal Language Models with Intent-Driven Chain-of-Inquiry
 
 **Conference**: ACL 2026 Findings  
 **arXiv**: [2604.20983](https://arxiv.org/abs/2604.20983)  
 **Code**: [github.com/syed-nazmus-sakib/PlantInquiryVQA](https://github.com/syed-nazmus-sakib/PlantInquiryVQA)  
-**Area**: Medical Imaging / Plant Pathology Diagnosis  
-**Keywords**: Plant Pathology VQA, Chain-of-Inquiry, Multi-step Visual Reasoning, Diagnostic Reasoning, Multimodal Evaluation
+**Area**: Medical Imaging / Plant Pathological Diagnosis  
+**Keywords**: Plant Pathological VQA, Chain-of-Inquiry, Multi-step Visual Reasoning, Diagnostic Reasoning, Multimodal Evaluation
 
 ## TL;DR
-This paper introduces the PlantInquiryVQA benchmark and the Chain-of-Inquiry (CoI) framework, comprising 24,950 plant images and 138,068 QA pairs. It simulates the adaptive diagnostic questioning strategies of botanists to evaluate the multi-step visual reasoning capabilities of 18 MLLMs in plant pathology diagnosis. The study reveals that structured questioning significantly enhances diagnostic accuracy and reduces hallucinations, although even the strongest model achieved a clinical utility score of only 0.188.
+This paper introduces the PlantInquiryVQA benchmark and the Chain-of-Inquiry (CoI) framework, comprising 24,950 plant images and 138,068 QA pairs. It simulates the adaptive diagnostic questioning strategies of botanists to evaluate the multi-step visual reasoning capabilities of 18 MLLMs in plant pathology. Findings show that structured questioning significantly improves diagnostic accuracy and reduces hallucinations, though even the strongest models achieve a clinical utility score of only 0.188.
 
 ## Background & Motivation
 
-**Background**: VQA datasets represent a core paradigm for evaluating multimodal reasoning, expanding into domains such as medical imaging and scientific image analysis. Advanced VQA benchmarks now focus on multi-panel, multiple-choice, and vision-language grounded QA pairs. Existing datasets in agricultural vision (e.g., PlantVillage, PlantDoc) primarily target classification and segmentation tasks, lacking support for interactive QA reasoning.
+**Background**: VQA datasets are core paradigms for evaluating multimodal reasoning, expanding into fields like medical imaging and scientific image analysis. Advanced VQA benchmarks now focus on multi-panel, multiple-choice, and vision-language grounding QA pairs. Agricultural vision datasets (e.g., PlantVillage, PlantDoc) primarily target classification and segmentation, lacking support for interactive QA reasoning.
 
-**Limitations of Prior Work**: Current VQA benchmarks are fundamentally "question-centric," treating each image as an input for an independent query rather than the starting point for goal-oriented, adaptive exploration. However, in specialized fields like plant pathology, effective visual reasoning emerges from a series of interdependent inquiries based on prior observations following a serialized narrative trajectory, rather than answering isolated questions. Expert botanists perform holistic assessments through hierarchical, evidence-driven questioning strategies ranging from species identification to disease diagnosis and prognosis prediction.
+**Limitations of Prior Work**: Current VQA benchmarks are fundamentally "question-centric," treating each image as an input for an independent query rather than the starting point for goal-oriented adaptive inquiry. In specialized fields like plant pathology, effective visual reasoning emerges from a series of interdependent inquiries—where each question builds on prior observations following a serialized narrative. Expert botanists conduct holistic assessments through hierarchical, evidence-driven questioning strategies transitioning from species identification to disease diagnosis and prognosis.
 
-**Key Challenge**: While LLMs have made significant progress in achieving Chain-of-Thought (CoT) reasoning, similar multi-step exploration has not been fully explored in VQA dataset design. CoT is typically viewed as a prompting strategy or an implicit capability of model architectures, rather than an explicit structural requirement of the dataset itself.
+**Key Challenge**: While LLMs have made significant progress in Chain-of-Thought (CoT) reasoning, similar multi-step exploration remains under-explored in VQA dataset design. CoT is often viewed as a prompting strategy or an implicit model capability rather than an explicit structural requirement of the dataset itself.
 
-**Goal**: Construct a dataset-level Chain-of-Inquiry framework so that the question sequences themselves reflect the adaptive, decision-driven workflows of domain experts.
+**Goal**: Construct a dataset-level Chain-of-Inquiry framework where the question sequences themselves reflect the adaptive, decision-driven workflows of domain experts.
 
-**Key Insight**: In plant pathology, each sample receives unique diagnostic considerations based on its visual appearance. When symptoms are ambiguous, experts prioritize differential diagnosis and comparative visual analysis; when symptoms are severe, they shift toward disease management and prevention strategies. The sequence and intent of questioning are as critical as the answers themselves.
+**Key Insight**: In plant pathology, each sample receives unique diagnostic consideration based on its visual appearance. For ambiguous symptoms, experts prioritize differential diagnosis and comparative analysis; for severe symptoms, they shift toward disease management and prevention. The sequence and intent of questioning are as critical as the answers.
 
-**Core Idea**: Formalize a Chain-of-Inquiry framework that models diagnostic trajectories as ordered QA sequences conditioned on visual cues and cognitive intent, automatically adjusting questioning strategies from diagnosis to prognosis and management based on disease severity.
+**Core Idea**: Formalize the Chain-of-Inquiry framework by modeling diagnostic trajectories as ordered QA sequences conditioned on visual cues and cognitive intent. The strategy automatically adjusts from diagnosis to prognosis and management based on disease severity.
 
 ## Method
 
 ### Overall Architecture
 
-The paper addresses the limitation where existing VQA benchmarks treat images as inputs for isolated queries, failing to test the "step-by-step" adaptive reasoning used in expert diagnosis. PlantInquiryVQA structures the dataset itself as a diagnostic chain, enabling question sequences to reproduce the authentic workflow of botanists—from species identification and disease determination to prognosis management. The construction pipeline consists of three stages: extracting fine-grained visual cues from plant images using a VLM based on an expert-defined schema; structuring plant pathology knowledge and mapping disease severity to different diagnostic intents; and dynamically assembling dialogue trajectories using an LLM based on intent and visual evidence. The final dataset covers 34 crop types, 7 question categories, and 12 unique CoI trajectories.
+This paper addresses the following: existing VQA benchmarks treat each image as an independent query with isolated questions, failing to measure the "linked" adaptive reasoning of expert diagnosis. PlantInquiryVQA structures the dataset itself as a diagnostic chain—recreating the botanist's workflow from species identification to disease judgment and prognosis management. The construction pipeline follows three steps: first, a VLM extracts fine-grained visual cues from images using an expert-defined schema; second, plant pathology knowledge is structured to map disease severity to different diagnostic intents; finally, an LLM dynamically assembles dialogue trajectories based on intent and visual evidence. The final dataset covers 34 crops, 7 question categories, and 12 unique CoI trajectories.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    K["Chain-of-Inquiry Formalization<br/>Questions conditioned on visual evidence + history + intent; Intent space K = Diagnosis / Prognosis / Management"]
+    K["Chain-of-Inquiry Formalization<br/>Questions conditioned on Visual Evidence + History + Intent; Intent Space K = Diagnosis / Prognosis / Management"]
     A["Plant Images (34 crops)"]
     subgraph S2["Visual Cue Extraction & CoI Classification"]
         direction TB
-        B["Qwen3-VL-4B extracts visual cues via expert schema<br/>GPT-4V cross-validation (93.8% factuality)"]
-        C["7 Expert-defined question categories<br/>4 Health x 3 Severity x 2 Diversity x 3 Intents = 12 Trajectories"]
+        B["Qwen3-VL-4B extracts visual cues via Expert Schema<br/>GPT-4V cross-validation (93.8% Factuality)"]
+        C["Experts induce 7 question types<br/>4 Health x 3 Severity x 2 Diversity x 3 Intent = 12 Trajectories"]
         B --> C
     end
     A --> S2
     K --> S2
-    S2 --> D["Structured Generation Pipeline<br/>Config tuple T=(c, s, k, V) → Qwen2.5-7B assembles dialogue chain"]
+    S2 --> D["Structured Generation Pipeline<br/>Config Tuple T=(c, s, k, V) → Qwen2.5-7B assembles dialogue chain"]
     K -->|"Severity → Intent: Mild: Diagnosis, Moderate: Prognosis, Severe: Management"| D
-    D --> E["PlantInquiryVQA<br/>24,950 images / 138,068 QA / 12 CoI Trajectories"]
+    D --> E["PlantInquiryVQA<br/>24,950 Images / 138,068 QA / 12 CoI Trajectories"]
 ```
 
 ### Key Designs
 
-**1. Chain-of-Inquiry Formalization: Diagnostic reasoning as intent-conditioned dialogue chains**
+**1. Chain-of-Inquiry Formalization: Diagnostic Reasoning as Intent-Conditioned Dialogue Chains**
 
-The fundamental flaw in legacy benchmarks is their "question-centric" nature, where each question lacks context of prior observations. CoI formalizes the diagnostic trajectory as an ordered $T$-turn dialogue $C(x, v_x) = \langle (q_1, a_1), \ldots, (q_T, a_T) \rangle$, where each question $q_t$ is conditioned on visual evidence $v_x$, prior context $H_{t-1}$, and a latent diagnostic intent $k \in \mathcal{K}$. The intent space is divided into three tiers: Diagnosis ($k_D$, health state identification and differential diagnosis), Prognosis ($k_P$, predicting disease trajectory and causal etiology), and Management ($k_M$, prescription strategies and counterfactual preventive reasoning).
+The fundamental flaw of old benchmarks is being "question-centric," where each question remains unaware of prior observations. CoI formalizes the diagnostic trajectory as an ordered sequence of $T$ dialogue rounds $C(x, v_x) = \langle (q_1, a_1), \ldots, (q_T, a_T) \rangle$, where each question $q_t$ is conditioned on visual evidence $v_x$, previous context $H_{t-1}$, and a latent diagnostic intent $k \in \mathcal{K}$. The intent space is divided into: Diagnosis ($k_D$: health state and differential diagnosis), Prognosis ($k_P$: trajectory and etiology), and Management ($k_M$: prescription and counterfactual prevention).
 
-Critically, intent is not fixed but switches based on disease severity—mild symptoms trigger diagnostic intent, moderate symptoms trigger prognosis, and severe symptoms trigger management. This reflects the fact that for mild symptoms, differential diagnosis (distinguishing between similar-looking diseases) is the primary challenge, while for severe damage, the priority shifts to remediation. Embedding intent explicitly into the dataset tests whether models can adaptively switch reasoning paths based on evidence.
+Critically, intent shifts with severity—mild symptoms trigger diagnostic intent, moderate trigger prognosis, and severe trigger management. This reflects the reality that for mild cases, differential diagnosis (distinguishing similar diseases) is hardest, while for severe cases, the focus shifts to remediation. Encoding intent into the dataset tests if models can adaptively switch reasoning paths based on evidence.
 
-**2. Visual Cue Extraction & CoI Classification: Transforming "vision" into structured diagnostic features via expert schemas**
+**2. Visual Cue Extraction & CoI Classification: Grounding Vision in Expert Schemas**
 
-To ensure valid question generation, the first step requires reliable, structured visual evidence rather than model hallucination. The authors engaged 6 botanists (2 PhDs + 4 graduate students) to define a "Visual Parsing Schema" across three dimensions: symptomatology, distribution patterns, and disease severity quantification. Qwen3-VL-4B was used for automated visual cue extraction (73.6% accuracy), followed by GPT-4V cross-validation and expert clinical facticity checks on 5,000 random samples (93.8% factuality score).
+To ensure question validity, reliable structured visual evidence is required. Six botanists defined a "Visual Parsing Schema" covering symptomatology, distribution patterns, and severity quantification. Qwen3-VL-4B automatically extracted cues (73.6% accuracy), followed by GPT-4V cross-validation and expert factuality checks on 5,000 samples (93.8% factuality score).
 
-The classification layer addresses the lack of standard taxonomy for visual diagnostic dialogues in classical plant pathology. Experts performed clinical evaluations on 600 random samples, recording authentic questioning strategies to derive 7 standard inquiry types (Visual Perception & Grounding, Diagnostic Reasoning, Causal Reasoning, Risk Assessment, Prognostic Prediction, Prescriptive Reasoning, Counterfactual Reasoning). These were crossed with 4 health states, 3 severity levels, 2 instance diversities, and 3 cognitive intents to yield 12 unique CoI trajectories, ensuring each chain mirrors a real-world diagnostic scenario.
+Classification fills another gap: classical phytopathology describes biological stages but lacks a standard taxonomy for "visual dialogue." Experts recorded trajectories for 600 samples, inducing 7 standard inquiry types (Visual Perception, Diagnostic Reasoning, Causal Reasoning, Risk Assessment, Prognostic Prediction, Prescriptive Reasoning, Counterfactual Reasoning). These cross with 4 health states, 3 severities, 2 diversities, and 3 intents to yield 12 unique CoI trajectories.
 
-**3. Structured Generation Pipeline: Decoupling via configuration tuples for multi-difficulty reasoning**
+**3. Structured Generation Pipeline: Decoupling via Configuration Tuples**
 
-Trajectories are assembled using a configuration tuple $T = (c, s, k_s, V_{cues})$, representing biological condition, severity, intent, and visual cues. The cognitive goal $k$ regulates information density based on severity $s$. Qwen2.5-7B-Instruct dynamically assembles trajectories from question templates, injecting specific reasoning modules (e.g., temporal_evolution, remediation_strategy) to increase complexity.
-
-This decoupling enables "multi-chaining per image": a single leaf image can generate a chain focused on differential diagnosis if configured as mild, or a chain focused on management advice if configured as severe. This mechanism allows the dataset to span the entire difficulty spectrum from routine identification to complex multi-step clinical reasoning.
+Dialogue assembly is driven by a configuration tuple $T = (c, s, k_s, V_{cues})$—representing biological condition, severity, intent, and visual cues. Cognitive goal $k$ regulates information density based on severity $s$. Qwen2.5-7B-Instruct then assembles trajectories from templates, injecting modules like `temporal_evolution` or `remediation_strategy` to increase complexity. This mechanism allows "same image, multiple chains"—different severities generate different reasoning paths for the same leaf image.
 
 ### Evaluation Metrics & Benchmark Setup
 
-PlantInquiryVQA is a pure evaluation benchmark. It utilizes standard lexical metrics (F1, BLEU-4, ROUGE-L) alongside seven domain-specific scores: Disease Recognition ($S_{dis}$), Safety ($S_{safe}$), Clinical Utility ($S_{clin}$), Visual Grounding ($S_{vg}$), Visual Feature Extraction Efficiency (E), Popularity Bias (B), and Cross-class Fairness (F). Safety and clinical utility are key dimensions that specifically penalize high-risk errors, such as misidentifying a diseased sample as healthy.
+PlantInquiryVQA is an evaluation-only benchmark. It uses standard vocabulary metrics (F1, BLEU-4, ROUGE-L) alongside seven domain-specific scores: Disease Identification ($S_{dis}$), Safety ($S_{safe}$), Clinical Utility ($S_{clin}$), Visual Grounding ($S_{vg}$), Feature Extraction Efficiency (E), Popularity Bias (B), and Cross-class Fairness (F). Safety and clinical utility specifically penalize high-risk errors like misclassifying disease as healthy.
 
 ## Key Experimental Results
 
-### Main Results (Performance of 18 MLLMs)
+### Main Results (18 MLLMs Performance)
 
-| Model | F1 | Disease Recognition | Clinical Utility | Safety | Visual Grounding |
-| :--- | :--- | :--- | :--- | :--- | :--- |
+| Model | F1 | Disease ID | Clinical Utility | Safety | Visual Grounding |
+|------|-----|---------|-----------|--------|---------|
 | Gemini-3-Flash | **0.255** | **0.444** | **0.188** | **0.147** | 0.259 |
 | Seed-1.6-Flash | 0.226 | 0.344 | 0.120 | 0.075 | 0.394 |
 | Grok-4.1-Fast | 0.203 | 0.224 | 0.067 | 0.009 | **0.498** |
 | Ministral-3B | 0.166 | 0.189 | 0.059 | 0.020 | 0.372 |
 
-### Ablation Study (Impact of Structured Questioning on Diagnostic Efficiency)
+### Ablation Study (Impact of Structured Questioning: Guided vs. Scaffolded)
 
-| Model | Scaffolded Efficiency | Guided Efficiency | Gain |
-| :--- | :--- | :--- | :--- |
+| Model | Scaffolded Efficiency | Guided Efficiency | Efficiency Gain |
+|------|---------------|-----------|---------|
 | Gemini-2.5-Flash | 2.60 | 3.67 | +41.15% |
 | Qwen2.5-VL-32B | 1.60 | 2.94 | +83.75% |
 | Gemma-3-27B | 1.88 | 2.38 | +26.60% |
 
 ### Key Findings
-- **Significant Domain Gap**: Even the strongest model, Gemini-3-Flash, achieved a clinical utility of only 0.188 and safety of 0.147, falling far short of requirements for autonomous deployment.
-- **"Seeing" Does Not Equal "Diagnosing"**: Grok-4.1-Fast achieved the highest visual grounding (0.498) but the lowest disease recognition (0.224), indicating that accurately describing visual symptoms does not equate to making correct diagnoses.
-- **Structured Questioning Reduces Hallucination**: Question-guided diagnosis was significantly more accurate than direct diagnosis across all severity levels. Specific questions force the model to focus on fine-grained features (e.g., lesion margins, presence of halos), constraining the search space.
-- **CoI Structure is the Primary Driver**: The Cascading mode (using the model's own prior answers) retained 96.3% of the efficiency and 81.7% of the diagnostic accuracy of the Guided mode, suggesting that the structured questioning itself, rather than perfect memory, drives the improvements.
+- **Significant Domain Gap**: Even the strongest model, Gemini-3-Flash, achieves only 0.188 in clinical utility and 0.147 in safety, far from autonomous deployment standards.
+- **"Seeing" is not "Diagnosing"**: Grok-4.1-Fast has the highest visual grounding (0.498) but low disease ID (0.224), suggesting that accurate symptom description does not equate to correct diagnosis.
+- **Structured Questioning Reduces Hallucination**: Guided diagnosis is significantly more accurate than direct diagnosis across all severities. Specific questions force models to focus on fine-grained features (e.g., lesion margins, presence of halos), constraining the search space.
+- **CoI Structure is the Main Driver**: Cascading modes (using models' own prior answers) retain 96.3% of the efficiency and 81.7% of the accuracy of Guided modes, proving that the structured inquiry itself drives improvement.
 
 ## Highlights & Insights
-- **Chain-of-Inquiry as a Dataset-Level Structural Constraint**: Elevating CoT from a prompting strategy to an explicit structural requirement of the dataset is a novel contribution that can be generalized to any domain requiring multi-step reasoning evaluation (e.g., medical imaging, engineering troubleshooting).
-- **Intent-Driven Adaptive Questioning**: Automatically adjusting questioning strategies (Diagnosis → Prognosis → Management) based on disease severity provides a design philosophy that could inspire dialogue strategies for Agent systems.
-- **Decoupling Visual Grounding and Diagnostic Reasoning**: Revealing that "describing symptoms" and "making diagnoses" are separable capabilities points to specific directions for model improvement.
+- **Chain-of-Inquiry as Dataset Structural Constraint**: Elevates CoT from a prompting strategy to an explicit dataset design requirement. This approach is generalizable to any field requiring multi-step reasoning evaluation (e.g., medical imaging, engineering failure analysis).
+- **Intent-Driven Adaptive Inquiry**: Automatically adjusting questioning strategies (Diagnosis → Prognosis → Management) based on severity. This intent-visual coupling provides a blueprint for dialogue strategies in Agent systems.
+- **Decoupling Visual Grounding and Diagnostic Reasoning**: Reveals that "describing symptoms" and "making diagnoses" are separable capabilities, highlighting specific directions for model improvement.
 
 ## Limitations & Future Work
-- Plant pathology often involves multi-sensory information (tactile, environmental), which a single image cannot fully replicate for expert diagnostic workflows.
-- Top-tier models still exhibit "false safety" errors (misclassifying diseased samples as healthy), making them suitable only as decision-support tools.
+- Phytopathology often requires multi-sensory information (tactile, environmental); single-frame images cannot fully replicate expert diagnosis.
+- Top models still exhibit "false safety" errors (misidentifying diseased samples as healthy); currently, they serve as decision-support tools rather than replacements.
 - The benchmark is English-only, limiting accessibility for small-scale farmers in non-English speaking regions.
-- Visual cue extraction relied primarily on Qwen3-VL-4B automation; some cues may lack precision.
+- Visual cue extraction relies on automation (Qwen3-VL-4B), which may lack precision in certain contexts.
 
 ## Related Work & Insights
-- **vs. PlantVillage/PlantDoc**: These only support classification/segmentation. PlantInquiryVQA provides multi-step structured QA.
-- **vs. Medical VQA (PMC-VQA, VQA-RAD)**: These focus on human medicine and single-turn QA, whereas PlantInquiryVQA targets plant pathology with multi-step chain reasoning.
-- **vs. BloomVQA**: While BloomVQA organizes questions based on Bloom’s taxonomy, it relies on static classification; PlantInquiryVQA makes question sequences conditional on visual evidence and diagnostic intent.
+- **vs. PlantVillage/PlantDoc**: Those support only classification/segmentation; PlantInquiryVQA provides multi-step structured QA.
+- **vs. Medical VQA (PMC-VQA, VQA-RAD)**: Those focus on human medicine and single-turn QA; PlantInquiryVQA targets plant pathology with multi-step chain reasoning.
+- **vs. BloomVQA**: While BloomVQA organizes questions via Bloom’s Taxonomy, it relies on static classification. PlantInquiryVQA conditions question sequences on visual evidence and diagnostic intent.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The shift of CoI from a prompting strategy to a dataset structure is a significant contribution.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Tested 18 models with complete ablations and diverse metrics, though dataset construction was partially automated.
-- Writing Quality: ⭐⭐⭐⭐ The framework design is clear and experimental analysis is in-depth.
-- Value: ⭐⭐⭐⭐ Provides a vital benchmark for diagnostic reasoning in agricultural AI; CoI concepts have cross-domain transfer value.
-- Overall: ⭐⭐⭐⭐ Addresses a practical problem with a novel perspective, revealing the true gap for MLLMs in professional diagnostic reasoning.
+- Novelty: ⭐⭐⭐⭐ The shift from CoT as a prompt to a dataset structure is a novel contribution.
+- Experimental Thoroughness: ⭐⭐⭐⭐ 18 models and comprehensive ablations, though construction is partially automated.
+- Writing Quality: ⭐⭐⭐⭐ Clear framework design and deep analysis, though some tables are dense.
+- Value: ⭐⭐⭐⭐ Provides a critical benchmark for agricultural AI; the CoI concept has cross-domain transfer value.
+- Overall: ⭐⭐⭐⭐ Innovative perspective revealing the real gaps in MLLM professional reasoning.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] SeD-UD: An Influence-Driven and Hierarchically-Decoupled Information Bottleneck for Multimodal Intent Recognition](../../CVPR2026/multimodal_vlm/sed-ud_an_influence-driven_and_hierarchically-decoupled_information_bottleneck_f.md)
-- [\[AAAI 2026\] Plug-and-Play Clarifier: A Zero-Shot Multimodal Framework for Egocentric Intent Disambiguation](../../AAAI2026/multimodal_vlm/plug-and-play_clarifier_a_zero-shot_multimodal_framework_for_egocentric_intent_d.md)
-- [\[ACL 2026\] Enhancing Multimodal Large Language Models for Ancient Chinese Character Evolution Analysis via Glyph-Driven Fine-Tuning](enhancing_multimodal_large_language_models_for_ancient_chinese_character_evoluti.md)
-- [\[ICCV 2025\] GRAB: A Challenging GRaph Analysis Benchmark for Large Multimodal Models](../../ICCV2025/multimodal_vlm/grab_a_challenging_graph_analysis_benchmark_for_large_multimodal_models.md)
-- [\[CVPR 2026\] Circuit Tracing in Vision-Language Models: Understanding the Internal Mechanisms of Multimodal Thinking](../../CVPR2026/multimodal_vlm/circuit_tracing_in_vision-language_models_understanding_the_internal_mechanisms_.md)
+- [\[CVPR 2026\] Grounded Chain-of-Thought for Multimodal Large Language Models](../../CVPR2026/vlm_reasoning/grounded_chain-of-thought_for_multimodal_large_language_models.md)
+- [\[ICML 2026\] Active Exploring like a Pigeon: Reinforcing Spatial Reasoning via Agentic Vision-Language Models](../../ICML2026/vlm_reasoning/active_exploring_like_a_pigeon_reinforcing_spatial_reasoning_via_agentic_vision-.md)
+- [\[ACL 2026\] Position: Multimodal Large Language Models Can Significantly Advance Scientific Reasoning](position_multimodal_large_language_models_can_significantly_advance_scientific_r.md)
+- [\[ACL 2026\] ErrorRadar: Benchmarking Complex Mathematical Reasoning of Multimodal Large Language Models Via Error Detection](errorradar_benchmarking_complex_mathematical_reasoning_of_multimodal_large_langu.md)
+- [\[CVPR 2025\] Insight-V: Exploring Long-Chain Visual Reasoning with Multimodal Large Language Models](../../CVPR2025/vlm_reasoning/insight-v_exploring_long-chain_visual_reasoning_with_multimodal_large_language_m.md)
 
 </div>
 

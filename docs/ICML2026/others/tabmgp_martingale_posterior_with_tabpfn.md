@@ -2,136 +2,140 @@
 title: >-
   [Paper Note] TabMGP: Martingale Posterior with TabPFN
 description: >-
-  [ICML 2026][Others][TabPFN] This paper treats TabPFN, a pre-trained tabular Transformer, directly as the predictive rule for a Martingale Posterior (MGP). Through in-context forward rollout sampling, it obtains credible sets for parameters $\theta$ under arbitrary loss functions. This approach avoids manual design of priors/likelihoods and tuning
+  [ICML 2026][Others][TabPFN] This paper treats TabPFN, a pre-trained tabular Transformer, directly as a prediction rule for Martingale Posteriors (MGP). Through in-context forward rolling sampling, it obtains credible sets for parameters $\theta$ under arbitrary loss functions. This approach avoids manual design of priors/likelihoods and hyperpara
 tags:
   - ICML 2026
   - Others
   - TabPFN
 date: 2026-05-08
-content_hash: 454db6f17b2248a4
+content_hash: 28300ce087a922d9
 ---
 # TabMGP: Martingale Posterior with TabPFN
 
 **Conference**: ICML 2026  
 **arXiv**: [2510.25154](https://arxiv.org/abs/2510.25154)  
 **Code**: Not yet public  
-**Area**: Self-Supervised / Tabular Foundation Models / Bayesian Uncertainty  
+**Area**: Self-supervised / Tabular Foundation Models / Bayesian Uncertainty  
 **Keywords**: Martingale Posterior, TabPFN, Tabular Foundation Models, Generalized Bayes, Credible Sets
 
 ## TL;DR
-This paper treats TabPFN, a pre-trained tabular Transformer, directly as the predictive rule for a Martingale Posterior (MGP). Through in-context forward rollout sampling, it obtains credible sets for parameters $\theta$ under arbitrary loss functions. This approach avoids manual design of priors/likelihoods and tuning of hyper-parameters; across 30 real and synthetic scenarios, it outperforms both manual MGP and classical Bayesian methods in terms of coverage and credible set area.
+This paper treats TabPFN, a pre-trained tabular Transformer, directly as a prediction rule for Martingale Posteriors (MGP). Through in-context forward rolling sampling, it obtains credible sets for parameters $\theta$ under arbitrary loss functions. This approach avoids manual design of priors/likelihoods and hyperparameter tuning, outperforming manual MGP and classical Bayes in both coverage and credible set area across 30 real/synthetic scenarios.
 
 ## Background & Motivation
 
-**Background**: Classical Bayesian inference provides uncertainty for parameters $\theta$ but requires explicit specification of a prior and a likelihood. The Martingale Posterior (MGP, Fong et al. 2023) replaces the prior-likelihood with a "predictive rule" $(P_i)_{i\ge 0}$ and uses a loss function $\ell(z,\theta)$ to define the functional of interest $\theta(F)=\arg\min_\vartheta \int \ell(z,\vartheta)\,\mathrm{d}F(z)$, bypassing prior specification.
+**Background**: Classical Bayesian inference provides uncertainty for parameters $\theta$ but requires explicit specification of priors and likelihoods. Martingale Posteriors (MGP, Fong et al. 2023) replace the prior-likelihood with a "prediction rule" $(P_i)_{i\ge 0}$, combined with a loss function $\ell(z,\theta)$ to define the functional of interest $\theta(F)=\arg\min_\vartheta \int \ell(z,\vartheta)\,\mathrm{d}F(z)$, bypassing prior specification.
 
-**Limitations of Prior Work**: Existing MGP literature almost exclusively uses "manual" predictive rules (e.g., Bayesian bootstrap, bivariate copula, autoregressive GP, vine copula). Each introduces at least one smoothing or bandwidth hyper-parameter that must be tuned for every dataset. Furthermore, these rules perform well only in low dimensions or for specific distribution families, making it difficult to handle the complex structures of modern tabular data.
+**Limitations of Prior Work**: MGP literature almost exclusively uses "manual" prediction rules (e.g., Bayesian bootstrap, bivariate copulas, autoregressive GPs, vine copulas). Each introduces one or more smoothing/bandwidth hyperparameters that must be retuned for every dataset. Furthermore, they perform well only in low dimensions or specific distribution families, struggling with the complex structures of modern tabular data.
 
-**Key Challenge**: Manual predictive rules persist because the community treats "strictly satisfying the martingale property $\mathbb{E}[P_{i+1}(A)\mid Z_{1:i}]=P_i(A)$" as a necessary condition for designing any new predictive rule. The authors argue that the martingale property is a sufficient, but not necessary, condition for the existence of $F_\infty$; overemphasizing it hinders the integration of high-capacity predictors.
+**Key Challenge**: Manual prediction rules prevail because the community views "strictly satisfying the martingale property $\mathbb{E}[P_{i+1}(A)\mid Z_{1:i}]=P_i(A)$" as a necessary condition. The authors argue that the martingale property is a sufficient, rather than necessary, condition for the existence of $F_\infty$. Overemphasizing it prevents the integration of high-capacity predictors.
 
-**Goal**: Can a foundation model (TabPFN) pre-trained on large-scale synthetic tabular data to approximate the Bayesian PPD be used directly as the MGP predictive rule? This would (i) eliminate manual design, (ii) leverage pre-trained coverage capabilities, and (iii) empirically provide near-nominal coverage even if the strict martingale property is violated.
+**Goal**: Can a foundation model (TabPFN) pre-trained on large-scale synthetic tabular data—approximating the Bayesian PPD—be used directly as an MGP prediction rule? This would (i) eliminate manual design, (ii) leverage pre-trained coverage capabilities, and (iii) provide near-nominal coverage even if the strict martingale property is empirically violated.
 
-**Key Insight**: TabPFN possesses three natural characteristics that align with MGP: ① in-context learning, where predictive distributions for $y\mid x$ are output without fine-tuning; ② row-permutation invariance in its architecture, removing the need for manual averaging over permutations as in copulas; and ③ an optimization objective that approximates the Bayesian PPD, which is the ideal predictive rule in MGP.
+**Key Insight**: Three natural properties of TabPFN align with MGP: ① In-context learning, outputting predictive distributions for $y\mid x$ without fine-tuning; ② Row-permutation invariance, eliminating the need to manually average over permutations like copulas; ③ Its training objective is to approximate the Bayesian PPD, which is the ideal prediction rule in MGP.
 
-**Core Idea**: Use TabPFN to provide the $Y\mid X$ conditional distribution and Bayesian bootstrap to provide the $X$ marginal distribution. Map "forward rollout sampling + loss minimization" into the autoregressive inference of the Transformer to obtain $\theta(F_N^{(l)})$ as an approximate posterior sample of $\theta(F_\infty)\mid z_{1:n}$.
+**Core Idea**: Use TabPFN to provide the $Y\mid X$ conditional distribution and Bayesian bootstrap for the marginal distribution of $X$. Map "forward rolling sampling + loss minimization" into the Transformer's autoregressive inference to obtain $\theta(F_N^{(l)})$ as an approximate posterior sample of $\theta(F_\infty)\mid z_{1:n}$.
 
 ## Method
 
 ### Overall Architecture
-Input: Observational data $z_{1:n}=(x_i,y_i)_{i=1}^n$, loss function $\ell(z,\theta)$, rollout length $N$ (typically $N=n+T$ with $T=500$), and number of samples $L$.  
+Input: Observed data $z_{1:n}=(x_i,y_i)_{i=1}^n$, loss function $\ell(z,\theta)$, rolling length $N$ (typically $N=n+T$, $T=500$), and number of samples $L$.
 Output: $L$ approximate posterior samples $\{\theta^{(l)}\}_{l=1}^L \sim \theta(F_\infty)\mid z_{1:n}$, used to construct the credible set $\widehat{C}_{1-\alpha}(z_{1:n})$.
 
 The pipeline consists of three stages:
-1. **Forward Rollout**: For each $l\in\{1,\dots,L\}$, generate $z_{n+1:N}^{(l)}$ starting from $z_{1:n}$ autoregressively; $x_{i+1}^{(l)}$ is sampled from the empirical distribution of $x_{1:i}^{(l)}$ (Bayesian bootstrap), and $y_{i+1}^{(l)}\sim \mathrm{TabPFN}(\cdot\mid x_{i+1}^{(l)}, z_{1:i}^{(l)})$.
-2. **Risk Minimization**: Form the empirical measure $F_N^{(l)}=\tfrac1N\sum_{i=1}^N\delta_{z_i^{(l)}}$ for each rollout and solve $\theta^{(l)}=\arg\min_\theta\sum_i\ell(z_i^{(l)},\theta)$.
-3. **Credible Set**: Use the covariance trace and ellipsoidal approximation of $\{\theta^{(l)}\}$ to obtain the $(1-\alpha)$ joint credible set.
+1. **Forward Rolling**: For each $l\in\{1,\dots,L\}$, autoregressively generate $z_{n+1:N}^{(l)}$ starting from $z_{1:n}$; $x_{i+1}^{(l)}$ is drawn from the empirical distribution of $x_{1:i}^{(l)}$ (Bayesian bootstrap), and $y_{i+1}^{(l)}\sim \mathrm{TabPFN}(\cdot\mid x_{i+1}^{(l)}, z_{1:i}^{(l)})$.
+2. **Risk Minimization**: Form an empirical measure $F_N^{(l)}=\tfrac1N\sum_{i=1}^N\delta_{z_i^{(l)}}$ for each rollout and solve $\theta^{(l)}=\arg\min_\theta\sum_i\ell(z_i^{(l)},\theta)$.
+3. **Credible Set**: Approximate the $(1-\alpha)$ joint credible set using the covariance trace and ellipsoidal approximation of $\{\theta^{(l)}\}$.
 
-All rollouts $l$ are independent and naturally parallelizable.
+All $l$ samples are independent, allowing for natural parallelization.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    IN["Observation z(1:n) + Loss ℓ(z,θ)<br/>Rollout N, Samples L"]
-    subgraph ROLL["TabPFN as Pred Rule + Bay-Bootstrap as Covariate Marginal"]
+    IN["Observed data z(1:n) + Loss ℓ(z,θ)<br/>Rolling length N, Independent samples L"]
+    subgraph ROLL["TabPFN as Prediction Rule + Bayesian Bootstrap for Covariate Marginal"]
         direction TB
-        X["Covariate x: Bayesian bootstrap<br/>Sample from empirical dist of x"]
-        Y["Response y: TabPFN sampling<br/>y ~ TabPFN(·|x, History)"]
+        X["Covariate x: Bayesian bootstrap<br/>Sample from empirical distribution"]
+        Y["Response y: TabPFN conditional sampling<br/>y ~ TabPFN(·|x, History)"]
         X --> Y
-        Y -.->|Autoregressive loop until N| X
+        Y -.->|Autoregressive appendage, roll to N| X
     end
     IN --> ROLL
     ROLL -->|L independent rollouts| FN["Empirical Measure F_N<br/>n observations + generated samples"]
-    FN --> RISK["Parameter Posterior: Risk Min.<br/>θ = argmin Σ ℓ(z,θ)"]
-    RISK --> CS["Credible Set (1−α)<br/>Covariance + Ellipsoid"]
-    CS -.->|Empirical Validation| DIAG["Diagnosis Suite<br/>Path Stability / Freq. Coverage / Contraction"]
+    FN --> RISK["Posterior generation: Risk minimization<br/>θ = argmin Σ ℓ(z,θ)"]
+    RISK --> CS["Credible Set (1−α)<br/>Covariance trace + Ellipsoid approximation"]
+    CS -.->|Empirical validation| DIAG["Abandoning strict Martingale → Empirical Diagnostics<br/>Path Stability / Freq. Coverage / Posterior Contraction"]
 ```
 
 ### Key Designs
 
-**1. TabPFN as Predictive Rule + Bayesian Bootstrap for Marginal: Allocating hard tasks to specialized components**  
-In supervised settings, MGP requires modeling the joint $(X,Y)$ distribution. However, unconditional modeling of high-dimensional $X$ is difficult, and traditional copula rules require explicit averaging over permutations and manual bandwidth tuning. The authors use a "divide and conquer" approach: following the joint method of Fong et al. (2023), TabPFN handles the conditional distribution $y_{i+1}\sim P_i(\cdot\mid x_{i+1},z_{1:i})$ while the covariate marginal $x_{i+1}\sim\mathrm{Empirical}(x_{1:i})$ is handled by the Bayesian bootstrap. This utilizes TabPFN's strength in supervised prediction while bypassing its weakness in unconditional modeling. This setup also leverages TabPFN’s inherent permutation invariance, eliminating two major engineering bottlenecks of copulas.
+**1. TabPFN as Prediction Rule + Bayesian Bootstrap for Covariate Marginal: Assigning tasks to specialized components**
 
-**2. Relaxing the "Strict Martingale" constraint with Empirical Diagnosis: Replacing unprovable theory with observable utility**  
-The MGP community often treats the martingale property $\mathbb{E}[P_{i+1}(A)\mid Z_{1:i}]=P_i(A)$ as a prerequisite. This excludes TabPFN, as its martingale property cannot be proven with current tools. The authors argue that the martingale property is sufficient but not necessary for the existence of $F_\infty$. Instead of rejecting high-capacity predictors, they propose a verification loop using three empirical diagnoses: (a) Path Stability: monitoring if $\mathbb{E}_{F_N}[\tfrac1p\|\theta(F_n)-\theta(F_N)\|_1]$ plateaus as $N$ increases; (b) Frequentist Coverage: checking if the $(1-\alpha)$ set contains $\theta(F^\star)$ with $\ge 1-\alpha$ frequency; (c) Posterior Contraction: ensuring the set tightens as $n$ increases. All 30 experimental setups reached a plateau and provided near-nominal coverage.
+MGP in supervised settings requires building a joint distribution of $(X,Y)$. However, unconditional modeling of high-dimensional $X$ is difficult. The authors use a "divide and conquer" approach: following the joint method of Fong et al. (2023), TabPFN handles the conditional distribution $y_{i+1}\sim P_i(\cdot\mid x_{i+1},z_{1:i})$, while the covariate marginal $x_{i+1}\sim\mathrm{Empirical}(x_{1:i})$ is handled by Bayesian bootstrap. This leverages TabPFN's strength (supervised prediction) while bypassing its weakness (unconditional modeling).
 
-**3. Generating Parameter Posteriors instead of just Predictive Distributions: Credible sets for any functional**  
-Parameters $\theta$ of interest (e.g., regression coefficients) often have no direct relation to the Transformer's internal latent model. Standard foundation models only provide predictive distributions. TabMGP merges Bayesian Predictive Inference (BPI) with Generalized Bayes (GB), treating the inference target as the minimizer of an arbitrary loss. By combining forward rollout sampling with risk minimization, the method yields posterior samples for $\theta(F_\infty)\mid z_{1:n}$. This allows users to obtain credible sets for any scientifically relevant functional defined by a loss function $\ell(z,\theta)$.
+**2. Abandoning "Strict Martingale Property" for Empirical Diagnostics: Replacing unprovable thresholds with observable utility**
+
+The MGP community generally regards the martingale property as a prerequisite for new prediction rules. This excludes TabPFN, which satisfies neither the martingale property nor the relaxed a.c.i.d. condition. The authors argue that since the property is unprovable for high-capacity neural networks, it is better to validate utility through three empirical diagnostics: (a) Path Stability: monitoring if $\mathbb{E}_{F_N}[\tfrac1p\|\theta(F_n)-\theta(F_N)\|_1]$ plateaus with $N$; (b) Frequentist Coverage: checking if $(1-\alpha)$ sets cover $\theta(F^\star)$ with $\ge 1-\alpha$ frequency; (c) Posterior Contraction: ensuring the set tightens around $\theta(F^\star)$ as $n$ increases.
+
+**3. Generating Parameter Posteriors instead of Predictions: Enabling credible sets for any science quantity**
+
+Scientific estimators $\theta$ (e.g., regression coefficients) are often unrelated to the Transformer's implicit latent model. TabMGP treats MGP as a convergence of Bayesian Predictive Inference (BPI) and Generalized Bayes (GB). By performing risk minimization after forward sampling, it produces posterior samples of $\theta(F_\infty)\mid z_{1:n}$. This structure fills the gap between having only a predictive distribution and needing parameter credible sets.
 
 ### Loss & Training
-TabMGP **itself has no training phase**. TabPFN is used as a pre-trained inference engine for forward passes. The loss function $\ell$ is specified by the user at inference time: squared loss $\ell(x,y,\theta)=(y-[1\ x^\top]\theta)^2$ for linear regression, or cross-entropy $\ell(x,y,\theta)=-\log\Pr(y=k)$ for $K$-class classification. Key hyper-parameters include rollout length $T=500$ (occasionally $T=1000$) and independent rollout count $L$ ($100 \sim 1000$).
+Ours **has no training phase**—TabPFN is pre-trained on synthetic tables and serves as an inference engine. The loss function $\ell$ is defined by the user during inference: e.g., squared loss $(y-[1\ x^\top]\theta)^2$ for linear regression or cross-entropy for classification. Key hyperparameters include rolling length $T=500$ and number of independent rollouts $L$ ($100 \sim 1000$).
 
 ## Key Experimental Results
 
 ### Main Results
-Selection from linear regression experiments across 30 setups (11 synthetic, 19 real). Target coverage is 0.95. Rate is coverage (closer to 1.00 is better), and Size is the trace of the posterior covariance (smaller is better if coverage is met).
+Evaluation across 30 setups (11 synthetic + 19 real OpenML/UCI). Target coverage is 0.95. "Size" refers to the trace of the posterior covariance matrix (lower is better, provided coverage is met).
 
 | Setup | TabMGP Rate / Size | BB Rate / Size | Copula Rate / Size | Bayes Rate / Size | Asymptotic Rate / Size |
 |-------|--------------------|----------------|--------------------|-------------------|------------------------|
 | $\mathcal{N}(0,1)$ | **1.00 / 0.45** | 0.55 / 0.09 | 0.99 / 0.35 | 1.00 / 0.65 | 1.00 / 1.31 |
-| $t_3$ (Heavy Tail) | **1.00 / 0.48** | 0.66 / 0.14 | 0.97 / 0.35 | 0.98 / 0.65 | 0.98 / 1.31 |
-| Heterosc. $s_3$ | **1.00 / 0.33** | 0.53 / 0.02 | 1.00 / 0.37 | 1.00 / 0.65 | 1.00 / 1.31 |
+| $t_3$ (Heavy tail) | **1.00 / 0.48** | 0.66 / 0.14 | 0.97 / 0.35 | 0.98 / 0.65 | 0.98 / 1.31 |
+| heterosc. $s_3$ | **1.00 / 0.33** | 0.53 / 0.02 | 1.00 / 0.37 | 1.00 / 0.65 | 1.00 / 1.31 |
 | concrete (Real) | 0.91 / **0.06** | 0.80 / 0.05 | 1.00 / 0.12 | 0.87 / 0.05 | 1.00 / 0.10 |
 | airfoil (Real) | 0.96 / **0.08** | 0.93 / 0.05 | 0.97 / 0.11 | 0.96 / 0.06 | 1.00 / 0.12 |
 | energy (Real) | **1.00 / 0.04** | 0.80 / 0.01 | 1.00 / 0.06 | — | — |
 
 ### Ablation Study
 
-| Configuration / Diagnosis | Key Metric | Description |
+| Config / Diagnosis | Key Metric | Description |
 |-------------|---------|------|
-| TabMGP $T=500$ | All 30 setups plateaued | Path stability reached convergence within $T=500$ |
-| TabMGP $T=1000$ | Slow-convergence setups plateaued | No path divergence observed, suggesting $F_\infty$ existence |
-| Martingale Check | Visual deviation | TabPFN is not strictly martingale, yet coverage remains near-nominal |
-| Alternative Baseline | Copula+TabPFN init | Outperformed by TabMGP in most setups, validating direct use |
+| TabMGP $T=500$ | All 30 setups plateau | Path stability converges within $T=500$ |
+| TabMGP $T=1000$ | Slow setups plateau | No path divergence observed, suggesting $F_\infty$ exists |
+| Martingale Test | Visual deviation from Martingale | TabPFN violates strict martingale but maintains coverage |
+| Baseline (Copula+TabPFN init) | Underperforms TabMGP | Keeping TabPFN as the prediction rule is more effective than copula smoothing |
 
 ### Key Findings
-- **Coverage Stability**: TabMGP yields the most stable coverage ($\ge 0.97$ in synthetic cases), whereas BB suffers from under-coverage due to limited forward diversity, and Bayes/Asymptotic over-cover with large sets due to failure of asymptotic approximations at low $n$.
-- **Non-Gaussian Posteriors**: TabMGP posteriors often exhibit skewness and multimodality compared to the Gaussian shapes of BB/Copula/Bayes, suggesting the pre-trained Transformer captures non-Gaussian structural information.
-- **Robustness**: Copulas fail when data deviates from Gaussian assumptions (e.g., severe under-coverage on *kin8nm*); TabMGP remains robust due to its large-scale pre-training.
+- TabMGP coverage is the most stable: $\ge 0.97$ in all synthetic scenarios; BB severely undercovers due to lack of forward diversity at low $n$.
+- TabMGP posterior shapes often exhibit skewness and multimodality, whereas others are mostly Gaussian, indicating that the Transformer captures non-Gaussian structure from the pre-training data.
+- Copulas fail when data deviates from Gaussian assumptions (e.g., undercovering on kin8nm), whereas TabMGP is robust due to its large-scale pre-training.
 
 ## Highlights & Insights
-- **Heuristic Breakthrough**: Challenging the "martingale property is necessary" dogma is the paper's main contribution. Decoupling theoretical conditions from empirical utility allows the inclusion of high-capacity predictors.
-- **Strategic Combination**: Using TabPFN for $Y\mid X$ and Bayesian bootstrap for $X$ leverages the strengths of both without forcing TabPFN to simulate $X$ distributions it wasn't trained on.
-- **Structural Advantage**: TabPFN's row-permutation invariance removes the most computationally expensive part of the MGP framework (averaging permutations).
-- **Functional Flexibility**: The bridge between BPI and GB allows any user-defined science quantity $\theta$ to receive a full posterior.
+- **The "sufficiency vs. necessity" argument regarding the martingale property is the pivot point**: By using empirical diagnostics, the authors decouple theoretical conditions from practical utility, allowing for high-capacity predictors.
+- **The "Divide and Conquer" strategy with Bayesian bootstrap is ingenious**: By letting TabPFN handle $Y\mid X$ and bootstrap handle $X$, they leverage the foundation model's strength while avoiding areas where it wasn't trained (unconditional $X$ modeling).
+- **Non-Gaussian posterior shapes are a "free" benefit**: Unlike manual MGP or Bayes which often output Gaussian sets, TabMGP captures skewness/multimodality inherent in real data.
+- **Permutation invariance as a Cost Reduction**: Unlike copula-based MGP which requires expensive averaging over permutations, the TabPFN architecture handles this natively, reducing the engineering cost to zero.
 
 ## Limitations & Future Work
-- **Theoretical Guarantee**: Lack of a formal proof for $F_\infty$ existence; the plateau is only a weak empirical indicator.
-- **Context Length**: TabPFN is limited by Transformer context windows ($10^3 \sim 10^4$); $N$ cannot exceed this without chunking strategies.
-- **High-Dimensional Scaling**: While effective for interpretable linear models, performance on high-dimensional non-linear $\theta$ (like neural net weights) remains untested and potentially ill-posed.
-- **Covariate Bottleneck**: Bayesian bootstrap for $X$ might limit diversity in sparse or imbalanced settings; future work could integrate generative models (VAE/Diffusion).
+- Lack of strict theoretical guarantees; empirical stability is a weak evidence for the existence of $F_\infty$.
+- TabPFN has a context length limit ($10^3\sim 10^4$ rows); rolling beyond this requires chunking strategies not explored here.
+- Restricted to linear/interpretable models and small-to-medium $n$; performance on high-dimensional non-linear $\theta$ is unverified.
+- Bootstrap for $X$ may limit diversity in scenarios with extremely unbalanced or sparse covariates.
 
 ## Related Work & Insights
-- **vs. Fong et al. (2023)**: They use manual copulas to ensure martingale properties; Ours uses pre-trained TabPFN to trade strict theory for zero-tuning and robustness.
-- **vs. Nagler & Rügamer (2025)**: They used TabPFN only as an initialization for copulas; Ours retains TabPFN throughout, arguing that the non-martingale nature does not hinder utility.
-- **vs. Classical Bayes**: Bayes is dominated by priors at low $n/p$; TabMGP uses pre-trained knowledge as an implicit, more effective prior.
+- **vs. Fong et al. (2023) Original MGP**: They use manual copulas to ensure strict martingale properties; Ours uses pre-trained TabPFN for zero-tuning robustness.
+- **vs. Nagler & Rügamer (2025)**: They use TabPFN only as a copula initialization; Ours remains with TabPFN throughout, arguing that non-martingale behavior does not impede utility.
+- **vs. Classical Bayes**: Classical methods are dominated by priors at low $n/p$; TabMGP uses pre-trained knowledge as an implicit, more robust prior.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ 
-- Experimental Thoroughness: ⭐⭐⭐⭐ 
-- Writing Quality: ⭐⭐⭐⭐⭐ 
-- Value: ⭐⭐⭐⭐⭐ 
+- Novelty: ⭐⭐⭐⭐⭐ First to implement "foundation models as prediction rules" in MGP and challenge the necessity of the martingale property.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive setups and diagnostics, though $\theta$ is limited to low-dimensional models.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear conceptual layering; Algorithm 1 makes the forward sampling process highly intuitive.
+- Value: ⭐⭐⭐⭐⭐ High engineering significance as it allows practitioners to plug TabPFN directly into a Bayesian toolkit.
 
 <!-- RELATED:START -->
+
 <div class="related-papers" markdown="1">
 
 ## Related Papers

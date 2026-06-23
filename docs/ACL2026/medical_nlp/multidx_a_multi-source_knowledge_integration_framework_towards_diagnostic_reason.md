@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] MultiDx: A Multi-Source Knowledge Integration Framework towards Diagnostic Reasoning
 description: >-
-  [ACL 2026][Medical NLP][RAG] MultiDx integrates web retrieval, SOAP-structured cases, similar case libraries, and fine-grained reasoning trace retrieval into a two-stage diagnostic reasoning framework. It first generates candidate diseases from multiple evidence paths and then performs final ranking and reasoning trajectory output through disease
+  [ACL 2026][Medical NLP][RAG] MultiDx integrates web retrieval, SOAP structured cases, similar case libraries, and fine-grained reasoning trace retrieval into a two-stage diagnostic reasoning framework. By first generating candidate diseases from multi-path evidence and then performing disease matching, voting, and differential diagnosis reranking,
 tags:
   - ACL 2026
   - Medical NLP
   - RAG
   - Agent
 date: 2026-05-08
-content_hash: fb2c2ab8c87a4fae
+content_hash: acd2be042faba4b5
 ---
 # MultiDx: A Multi-Source Knowledge Integration Framework towards Diagnostic Reasoning
 
@@ -17,55 +17,55 @@ content_hash: fb2c2ab8c87a4fae
 **arXiv**: [2604.24186](https://arxiv.org/abs/2604.24186)  
 **Code**: https://github.com/Applied-Machine-Learning-Lab/ACL2026-MultiDx  
 **Area**: Medical NLP  
-**Keywords**: Multi-source Knowledge Integration, Differential Diagnosis, Medical Reasoning, RAG, Agent  
+**Keywords**: Multi-source knowledge integration, differential diagnosis, medical reasoning, RAG, Agent
 
 ## TL;DR
-MultiDx integrates web retrieval, SOAP-structured cases, similar case libraries, and fine-grained reasoning trace retrieval into a two-stage diagnostic reasoning framework. It first generates candidate diseases from multiple evidence paths and then performs final ranking and reasoning trajectory output through disease matching, voting, and differential diagnosis reranking, improving both diagnostic hit rates and reasoning recall on MedCaseReasoning and DiReCT.
+MultiDx integrates web retrieval, SOAP structured cases, similar case libraries, and fine-grained reasoning trace retrieval into a two-stage diagnostic reasoning framework. By first generating candidate diseases from multi-path evidence and then performing disease matching, voting, and differential diagnosis reranking, it simultaneously improves diagnostic accuracy and reasoning recall on both MedCaseReasoning and DiReCT benchmarks.
 
 ## Background & Motivation
-**Background**: Medical diagnostic reasoning involves more than just providing a disease name; it requires forming a verifiable clinical reasoning chain based on chief complaints, physical signs, tests, imaging, and disease progression. Recently, Large Language Models (LLMs) have been applied to MedQA, PubMedQA, and case-based Q&A, with multi-agent or retrieval-augmented frameworks like MedAgents, MDAgents, ConfAgents, and OpenAI-DR emerging.
+**Background**: Medical diagnostic reasoning is not merely providing a disease name but forming a verifiable clinical reasoning chain based on chief complaints, signs, tests, imaging, and disease progression. Recently, large language models (LLMs) have been applied to MedQA, PubMedQA, and case-based Q&A, with emerging multi-agent or retrieval-augmented frameworks such as MedAgents, MDAgents, ConfAgents, and OpenAI-DR.
 
-**Limitations of Prior Work**: Relying solely on the internal knowledge of LLMs often leads to knowledge deficiency in rare diseases, the latest clinical guidelines, or complex multi-system cases. Static knowledge bases are limited by coverage and update speed. Furthermore, many methods focus only on the final answer, ignoring whether the diagnostic process aligns with clinical practice, making results difficult for physicians to verify.
+**Limitations of Prior Work**: Relying solely on the internal knowledge of LLMs leads to deficiencies in rare diseases, latest medical knowledge, or complex multi-system cases. Conversely, relying on static knowledge bases results in limited coverage and slow updates. Furthermore, many methods focus only on the correctness of the final answer, ignoring whether the diagnostic process adheres to clinical norms, making results difficult for physicians to verify.
 
-**Key Challenge**: Diagnostic reasoning requires two simultaneous capabilities: comprehensive and dynamic medical knowledge, and the ability to organize scattered evidence into a standard differential diagnosis process. Existing methods usually emphasize either "finding more knowledge" or "making the model think more," but lack an explicit integration layer to transform multi-source candidate diagnoses into clinical-style comparative analysis.
+**Key Challenge**: Diagnostic reasoning requires two simultaneous capabilities: comprehensive and dynamic medical knowledge, and the ability to organize scattered evidence into a standard differential diagnosis process. Existing methods typically emphasize either "finding more knowledge" or "making the model think more," but lack an explicit integration layer that transforms multi-source candidate diagnoses into clinical-style differential analysis.
 
-**Goal**: The authors aim to enable the model to list suspicious diseases like a physician, compare supporting and contradicting evidence for these candidates, and output a final diagnosis with a reasoning trajectory. This goal is decomposed into three sub-problems: converting free-text cases into stable clinical structures, retrieving truly useful evidence from external knowledge for the current case, and unifying multi-path candidate results into an interpretable differential diagnosis conclusion.
+**Goal**: The authors aim to enable the model to first list suspicious diseases like a physician, then compare supporting evidence and counter-evidence around these candidates to output a final diagnosis with a reasoning trajectory. This goal is decomposed into three sub-problems: converting free-text cases into stable clinical structures, retrieving truly useful evidence from external knowledge for the current case, and unifying multi-path candidates into an interpretable differential diagnosis conclusion.
 
-**Key Insight**: The paper observes that clinical diagnosis is inherently multi-perspective. The same case can provide different clues through medical record structure, similar cases, similar reasoning steps, and the latest medical web data. While a single path might be biased, consensus and conflict between multiple paths serve as important signals for differential diagnosis.
+**Key Insight**: The paper observes that clinical diagnosis is naturally multi-perspective: the same case can yield different clues from case structures, similar cases, similar reasoning steps, and the latest medical web materials. While a single path might be biased, consensus and conflicts between multiple paths serve as important signals for differential diagnosis.
 
-**Core Idea**: Replace single-turn Q&A-style diagnosis with "multi-source candidate diagnosis generation + explicit differential diagnosis integration." The LLM first collects disease lists from different perspectives and then performs synonymous disease matching, evidence aggregation, and clinical reranking within a unified candidate space.
+**Core Idea**: Replace single-turn Q&A diagnosis with a "multi-source candidate diagnosis generation + explicit differential diagnosis integration" approach. This allows the LLM to first collect disease lists from different perspectives and then perform synonymous disease matching, evidence aggregation, and clinical reranking within a unified candidate space.
 
 ## Method
-MultiDx is a training-free two-stage framework focused on organizing diagnostic reasoning workflows rather than fine-tuning a specific medical model. The input is a case description $C$, and the outputs are the final diagnosis $D$ and reasoning path $R$. Stage one generates candidate disease lists from four knowledge sources; stage two integrates these candidates and evidence into a final ranking and explanation.
+MultiDx is a training-free two-stage framework that focuses on organizing the diagnostic reasoning workflow rather than fine-tuning a specific medical model. The input is a case description $C$, and the output is the final diagnosis $D$ and reasoning path $R$. The first stage generates candidate disease lists from four knowledge sources, and the second stage integrates these candidates and evidence into final rankings and explanations.
 
 ### Overall Architecture
-In the first stage (Multi-source Knowledge-guided Diagnosis Generation), four types of information sources are invoked in parallel for the same case: web search ($H_{web}$), SOAP-structured cases ($H_{SOAP}$), similar case retrieval ($H_{case}$), and similar reasoning trace retrieval ($H_{trace}$). Each path outputs a list of suspected diseases with evidence. In the second stage (Evidence Integration and Differential Diagnosis), the LLM receives the original case and the four paths' candidates, unifies synonymous disease names (e.g., "myocardial infarction / heart attack"), calculates support statistics based on sources and rankings, and finally compares clinical evidence among high-confidence candidates to output the final diagnosis and reasoning trajectory.
+The first stage (Multi-source Knowledge-guided Diagnosis Generation) involves parallel calls to four types of information sources for the same case: web search ($H_{web}$), SOAP structured cases ($H_{SOAP}$), similar case retrieval ($H_{case}$), and similar reasoning trace retrieval ($H_{trace}$). Each path outputs a list of suspected diseases with evidence descriptions. The second stage (Evidence Integration and Differential Diagnosis) takes the original case and the four-path candidates, first unifying synonymous diseases (e.g., "myocardial infarction" and "heart attack") into standard names, then statistically aggregating the support each disease receives from different sources and its ranking. Finally, it compares clinical evidence among high-confidence candidates to output the final diagnosis and reasoning trajectory.
 
-This workflow has a clear clinical correspondence: Stage 1 is equivalent to a doctor listing "suspected diagnoses," and Stage 2 is equivalent to performing "differential diagnosis." MultiDx is not just a simple vote on agent answers; it incorporates the evidence behind candidate diseases into the reranking process.
+This workflow has a clear clinical correspondence: the first stage is equivalent to a physician listing a "provisional diagnosis list," and the second stage is equivalent to performing a "differential diagnosis." Thus, MultiDx does not simply vote on answers from multiple agents but incorporates the evidence behind the candidate diseases into the reranking process.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
     A["Case Description C"] --> S1
 
-    subgraph S1["Stage 1: Multi-source Candidate Generation"]
+    subgraph S1["Stage 1: Multi-source Candidate Diagnosis Generation"]
         direction TB
-        SOAP["SOAP Branch<br/>LLM to S/O/A/P → H_SOAP"]
-        WEB["Web Search Branch<br/>Agent Planning→Iterative Search → H_web"]
-        subgraph HIER["Hierarchical Case Retrieval"]
+        SOAP["SOAP Structuring Branch<br/>LLM converts to S/O/A/P → H_SOAP"]
+        WEB["Web Search Branch<br/>Agent planning → Iterative Search/Browsing → H_web"]
+        subgraph HIER["Hierarchical Case Library Retrieval"]
             direction TB
-            CASE["Case-level: BM25 top-k similar cases → H_case"]
-            TRACE["Trace-level: Step split + Entity Jaccard → H_trace"]
+            CASE["Case-level: BM25 for top-k similar cases → H_case"]
+            TRACE["Reasoning-level: Step segmentation + Entity Jaccard matching → H_trace"]
         end
     end
 
     S1 --> S2
 
-    subgraph S2["Stage 2: Evidence Integration & Reranking"]
+    subgraph S2["Stage 2: Evidence Integration and Differential Reranking"]
         direction TB
-        M["Synonym Matching"] --> AGG["Aggregate by Source & Rank"]
-        AGG --> DIFF["Differential Analysis of Top Candidates"]
-        DIFF --> RANK["Reranked Output"]
+        M["Disease Name Synonym Matching"] --> AGG["Support Aggregation by Source + Rank"]
+        AGG --> DIFF["Differential Analysis of High-rank Candidates"]
+        DIFF --> RANK["Reranking Output"]
     end
 
     S2 --> OUT["Final Diagnosis D + Reasoning Trajectory R"]
@@ -73,82 +73,86 @@ flowchart TD
 
 ### Key Designs
 
-**1. Multi-source Candidate Generation: Complementary perspectives to overcome individual knowledge blind spots**
+**1. Multi-source Candidate Diagnosis Generation: Addressing blind spots of single sources by expanding candidates via four complementary perspectives**
 
-Diagnosis is highly sensitive to knowledge coverage. MultiDx uses four parallel paths: the SOAP branch uses an LLM to transform free-text cases into Subjective/Objective/Assessment/Plan (with missing fields explicitly marked empty) to resolve input clutter. The case library branch uses BM25 to retrieve top-k similar cases from the training set as few-shot clinical examples ($H_{case}$). The reasoning trace branch splits historical reasoning chains into steps, extracts biomedical entities via SciSpacy, and finds the most relevant traces based on Jaccard similarity $|E_C \cap E_{i,j}| / |E_C \cup E_{i,j}|$ for fine-grained alignment ($H_{trace}$). The web branch employs an agent to iteratively search and update internal memory for dynamic and rare disease information ($H_{web}$).
+Diagnosis is highly sensitive to knowledge coverage. MultiDx initiates four parallel paths: the SOAP branch uses an LLM to convert free-text cases into Subjective/Objective/Assessment/Plan (explicitly marking missing sections as empty) to generate $H_{SOAP}$, addressing input clutter; the case library branch uses BM25 to retrieve top-k similar cases from the MedCaseReasoning training set to generate $H_{case}$, providing few-shot clinical paradigms; the reasoning trace branch splits historical reasoning chains into steps, extracts biomedical entities via SciSpacy, and finds reasoning traces most relevant to current entities via Jaccard similarity $|E_C \cap E_{i,j}| / |E_C \cup E_{i,j}|$ to generate $H_{trace}$, performing fine-grained evidence alignment; the web branch allows an agent to plan queries and search steps to generate $H_{web}$, supplementing dynamic knowledge and rare disease information.
 
-**2. Hierarchical Case Retrieval: Balancing full-case context and fine-grained evidence**
+**2. Hierarchical Case Library Retrieval: Balancing contextual loss and irrelevant history through dual-layer retrieval**
 
-The case library is represented as $\mathcal{G}=\{(C_i,R_i,D_i)\}_{i=1}^{N}$. Retrieval occurs at two levels: the case level retrieves whole cases via BM25 to preserve "complete case patterns," while the reasoning level retrieves specific steps matched by medical entity similarity to extract "local evidentiary logic." This prevents the model from being misled by irrelevant details in full histories while retaining clinical context, benefiting both recall and interpretability.
+The case library is represented as $\mathcal{G}=\{(C_i,R_i,D_i)\}_{i=1}^{N}$. Retrieval is performed at two levels: the first layer uses the entire case as a unit with BM25 to find similar cases, preserving the "complete case pattern"; the second layer uses reasoning sentences as units, extracting medical entities for each step and matching them with the input case to retrieve "local evidence logic." Results from both layers enter different prompts to form case-level and reasoning-level candidates. This ensures the model is neither misled by irrelevant details in a full history nor lacks complete clinical context.
 
-**3. Evidence Integration and Differential Diagnosis Reranking: Explicit reasoning over simple voting**
+**3. Evidence Integration and Differential Diagnosis Reranking: Moving beyond simple voting to explicit differential analysis**
 
-Simple voting fails to account for medical synonyms, evidence conflicts, or cases where a disease appears less frequently but has stronger supporting evidence. MultiDx requires the LLM to perform four steps: disease name matching → aggregate support by source and rank → comparative analysis of top candidates → output final reranked list and justification. Formally, the model generates $(R, D)$ given $C, H_{web}, H_{SOAP}, H_{case}, H_{trace}$. Comparing the fit of candidate diseases against symptoms and tests is closer to real clinical decision-making; experiments show differential diagnosis improves H@1/H@5/H@10 from 0.403/0.552/0.604 to 0.420/0.577/0.617 compared to simple voting.
+Simple voting based on the number of mentions fails to handle medical synonyms, evidence conflicts, or cases where a disease with fewer mentions has stronger supporting evidence. MultiDx requires the LLM to perform four steps: disease name matching → support aggregation by source and rank → differential analysis of high-ranked diseases → final reranking with brief rationales. Formally, the model generates $(R, D)$ based on $C, H_{web}, H_{SOAP}, H_{case}, H_{trace}$, where $R$ is the clinical explanation and $D$ is the final disease list. Explicitly comparing the fit of candidate diseases against symptoms and tests is closer to real clinical decision-making; experiments show differential diagnosis improves H@1/H@5/H@10 from 0.403/0.552/0.604 to 0.420/0.577/0.617 compared to simple voting.
 
 ### Loss & Training
-MultiDx introduces no new trainable parameters, relying on prompting, retrieval, and tool-call workflows. The experiments utilize the DeepSeek-R1 API as the backbone. The 13,092 training cases from MedCaseReasoning serve as the retrieval database. For evaluation, 300 samples from MedCaseReasoning and 50 from DiReCT are used due to computational constraints. Web search excludes sources like PubMed and Hugging Face to mitigate data leakage.
+MultiDx introduces no new trainable parameters, relying primarily on prompts, retrieval, and tool-calling workflows. DeepSeek-R1 official API is used as the main backbone. All agentic baselines use the same backbone for fair comparison. Hierarchical retrieval defaults to the top 10 similar cases and top 10 reasoning paths, using SciSpacy 0.5.5 for entity extraction. The training set is used only to construct the case database: 13,092 cases from MedCaseReasoning serve as the retrieval library. Evaluation is conducted on 300 random MedCaseReasoning test samples and 50 DiReCT samples due to computational constraints. Web search excludes sources like PubMed and Hugging Face to mitigate data leakage.
 
 ## Key Experimental Results
 
 ### Main Results
-The framework is evaluated on MedCaseReasoning and DiReCT using Reasoning Recall and Hit@k (H@1/H@5/H@10). Results marked with * are averages over three runs ($p<0.05$).
+The framework was evaluated on MedCaseReasoning (using Reasoning Recall and H@k) and DiReCT. Results followed by * represent averages across three random runs with $p<0.05$ under t-test.
 
 | Dataset | Method | Reasoning Recall | H@1 Acc. | H@5 Acc. | H@10 Acc. | Key Conclusion |
 |--------|------|------------------|----------|----------|-----------|----------|
 | MedCaseReasoning | DeepSeek-R1 | 0.648 | 0.360 | 0.419 | 0.442 | Strong backbone, but lacks candidate recall |
-| MedCaseReasoning | MedAgents | 0.641 | 0.344 | 0.458 | 0.471 | Multi-expert discussion provides gains |
-| MedCaseReasoning | OpenAI-DR | 0.557 | 0.416 | 0.553 | 0.602 | Strong agentic baseline, high accuracy, low recall |
-| MedCaseReasoning | MultiDx | **0.662** | **0.420** | **0.577** | **0.617** | Best across all metrics |
+| MedCaseReasoning | MedAgents | 0.641 | 0.344 | 0.458 | 0.471 | Multi-expert discussion brings some gain |
+| MedCaseReasoning | OpenAI-DR | 0.557 | 0.416 | 0.553 | 0.602 | Strong agentic baseline; high accuracy but low recall |
+| MedCaseReasoning | MultiDx | **0.662** | **0.420** | **0.577** | **0.617** | Best across all metrics; H@5/H@10 advantage most significant |
 | DiReCT | DeepSeek-R1 | 0.473 | 0.293 | 0.413 | 0.473 | Performance drops on clinical notes |
-| DiReCT | Self-refinement | 0.662 | 0.300 | 0.466 | 0.586 | High reasoning recall |
-| DiReCT | OpenAI-DR | 0.586 | 0.297 | 0.452 | 0.479 | Underperforms Self-refinement |
-| DiReCT | MultiDx | **0.665** | **0.333** | **0.503** | **0.587** | Best or tied for best on small samples |
+| DiReCT | Self-refinement | 0.662 | 0.300 | 0.466 | 0.586 | High reasoning recall; H@10 close to MultiDx |
+| DiReCT | OpenAI-DR | 0.586 | 0.297 | 0.452 | 0.479 | Generally underperforms Self-refinement |
+| DiReCT | MultiDx | **0.665** | **0.333** | **0.503** | **0.587** | Maintains best or tied-best performance on DiReCT |
 
-MultiDx significantly expands the probability that the correct diagnosis is included in the candidate list. On MedCaseReasoning, H@5 improves from 0.419 (DeepSeek-R1) to 0.577.
+The primary gain of MultiDx is significantly expanding the probability that the correct diagnosis enters the candidate list. On MedCaseReasoning, compared to DeepSeek-R1, H@5 increases from 0.419 to 0.577 and H@10 from 0.442 to 0.617.
 
 ### Ablation Study
-Baseline (DeepSeek-R1) vs. individual knowledge enhancements.
+Ablation experiments used DeepSeek-R1 as the base model, adding one knowledge enhancement at a time.
 
-| Configuration | H@1 | H@5 | H@10 | Reasoning Recall | Note |
+| Configuration | H@1 | H@5 | H@10 | Reasoning Recall | Observation |
 |------|-----|-----|------|------------------|------|
-| DeepSeek-R1 | 0.360 | 0.419 | 0.442 | 0.648 | No external enhancement |
-| w/ SOAP | 0.379 | 0.467 | 0.502 | 0.638 | Improved accuracy, slightly lower recall |
-| w/ web search | 0.416 | 0.553 | 0.602 | 0.460 | Strongest single module for accuracy |
+| DeepSeek-R1 | 0.360 | 0.419 | 0.442 | 0.648 | Baseline without enhancements |
+| w/ SOAP | 0.379 | 0.467 | 0.502 | 0.638 | Structured input improves accuracy, recall slightly drops |
+| w/ web search | 0.416 | 0.553 | 0.602 | 0.460 | Strongest accuracy gain; poor reasoning recall |
 | w/ related case | 0.393 | 0.489 | 0.523 | 0.634 | Better for seen diseases |
-| w/ related trace | 0.386 | 0.520 | 0.576 | 0.573 | Fine-grained trace recall |
-| MultiDx | **0.420** | **0.577** | **0.617** | **0.662** | Best accuracy and recall |
+| w/ related trace| 0.386 | 0.520 | 0.576 | 0.573 | Reasoning traces improve candidate recall better than full cases |
+| MultiDx | **0.420** | **0.577** | **0.617** | **0.662** | Fusion improves both accuracy and recall |
 
 ### Key Findings
-- **Multi-source fusion is more stable**: Web search is the strongest single accuracy booster, but the full MultiDx is required to maximize both Hit@k and Reasoning Recall.
-- **Differential diagnosis is essential**: Explicit clinical comparison beats simple voting (H@1 0.420 vs 0.403).
-- **Hierarchical retrieval involves a trade-off**: Increasing $k$ for case retrieval improves H@1 but can introduce noise impacting H@5/H@10.
-- **Unseen diseases benefit**: MultiDx improves H@1 on diseases not present in the case library (0.338 vs 0.300), proving generalization via web knowledge.
-- **Cost**: Average end-to-end latency is 8.46 minutes with $\sim$20,000 tokens per case, comparable to other agentic baselines.
+- **Multi-source fusion is more stable**: Web search is the strongest single accuracy booster, but full MultiDx is required to achieve both high H@k and highest Reasoning Recall.
+- **Differential diagnosis is not a decorative module**: Simple voting yields 0.403/0.552/0.604 (H@1/H@5/H@10), while differential diagnosis yields 0.420/0.577/0.617.
+- **Unseen diseases still benefit**: For diseases not in the case library, MultiDx’s H@1/H@5 reached 0.338/0.448, higher than DeepSeek-R1's 0.300/0.366, proving it does not rely solely on memorizing the training set.
+- **Efficiency and Cost**: MultiDx has an end-to-end latency of ~8.46 mins and ~20,000 tokens, comparable to Self-refinement and OpenAI-DR. Parallel execution can reduce wait times to ~2 mins if web search is disabled.
 
 ## Highlights & Insights
-- **Natural workflow**: Decoupling "Candidate Generation" and "Differential Diagnosis" allows the model to compare plausible options rather than rushing to a single answer.
-- **SOAP's value in noise reduction**: Organizing information structure is as important as the information itself for diagnostic accuracy.
-- **Trace retrieval captures local logic**: Since diagnosis often triggers on specific signs, retrieving localized "reasoning steps" is often more effective than retrieving entire similar cases.
-- **Controlled degradation**: Users could disable high-latency modules (like web search) for faster performance in certain scenarios while retaining the core logic.
+- **Decomposing diagnosis into "candidate generation" and "differentiation" is natural**: Treating disease labels as intermediate objects instead of endpoints allows the model to compare plausible diseases rather than committing prematurely.
+- **SOAP's value lies in noise reduction**: Structuring information improves accuracy, suggesting that info organization is a performance bottleneck in medical reasoning.
+- **Trace retrieval aligns with the diagnostic process**: Diagnosis is often triggered by specific signs; retrieving local clinical logic via reasoning steps is more precise than retrieving entire similar cases.
+- **Differential diagnosis over simple voting**: Source count does not equate to evidence strength. A candidate supported by one source with high alignment may be more credible than three vaguely relevant ones.
 
 ## Limitations & Future Work
-- **Dependence on source quality**: Noisy web results or cases can contaminate the candidate list.
-- **One-way flow**: The current decoupled stages prevent Stage 2 from requesting additional specific searches from Stage 1. 
-- **Sample scale**: Evaluations were restricted to small subsets of datasets due to API costs.
-- **Safety**: Hallucination risks and human-in-the-loop mechanisms require further study for clinical deployment.
+- **External knowledge quality affects results**: Noise in web search or retrieved cases can contaminate the candidate list. Medical web information requires stricter filtering for authority and timeliness.
+- **Decoupled two-stage design**: Candidate omission in Stage 1 cannot be corrected in Stage 2. Future work could explore joint planning for iterative retrieval based on differentiation conflicts.
+- **Sample scale**: The evaluation used relatively small subsets (300 and 50 samples). Large-scale, multi-center validation is required before real-world deployment.
+- **Safety and responsibility boundaries**: The paper does not systematically analyze hallucinations, over-diagnosis risks, or human-in-the-loop review mechanisms.
 
 ## Related Work & Insights
-Compared to **MedAgents** or **OpenAI-DR**, MultiDx emphasizes explicit clinical structures (SOAP) and heterogeneous knowledge sources rather than just multi-agent debate. It suggests that medical RAG should distinguish between case-level, trace-level, and real-time evidence. This approach is transferable to other professional domains like legal or financial auditing where conflicting evidence must be reconciled.
+- **vs MedAgents / MDAgents**: Unlike "multi-expert discussion," MultiDx explicitly introduces four specific knowledge sources and performs synonym matching.
+- **vs OpenAI-DR**: While OpenAI-DR represents generalist deep research agents, MultiDx embeds this logic into a specialized clinical workflow using SOAP and differential analysis. This suggests that vertical domains benefit from organizing tool-calling into professionally structured pipelines.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐☆ Solid combination of clinical workflows with multi-source RAG.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐☆ Comprehensive ablation and cross-backbone tests, though sample sizes are limited.
-- **Writing Quality**: ⭐⭐⭐⭐☆ Clear methodology and dense information.
-- **Value**: ⭐⭐⭐⭐⭐ High utility for practical medical LLM applications.
+- Novelty: ⭐⭐⭐⭐☆
+- Experimental Thoroughness: ⭐⭐⭐⭐☆
+- Writing Quality: ⭐⭐⭐⭐☆
+- Value: ⭐⭐⭐⭐⭐
 
 <!-- RELATED:START -->
 <div class="related-papers" markdown="1">
+- OpenAI-DR: Diagnostic Reasoning with Large Language Models (2025)
+- MedAgents: Large Language Models as Collaborators for Medical Reasoning (2024)
+- SOAP: Structuring Clinical Notes for Better Medical Reasoning (2024)
 </div>
+<!-- RELATED:END -->
 
 ## Related Papers
 

@@ -2,77 +2,77 @@
 title: >-
   [Paper Note] Through the Stealth Lens: Attention-Aware Defenses Against Poisoning in RAG
 description: >-
-  [ICML 2026][Information Retrieval & RAG][Paper Note] This paper demonstrates that while existing RAG poisoning attacks can manipulate LLM outputs with few malicious passages, they are **not truly stealthy**. Successful low-budget attacks inevitably cause the model to concentrate excessive attention on malicious segments. The authors introduce Normalized Passage Attention
+  [ICML 2026][Information Retrieval & RAG][Paper Note] This paper points out that while existing RAG poisoning attacks can manipulate LLM outputs using a small number of malicious passages, they are **not truly stealthy**. Successful low-budget attacks inevitably cause the model to focus excessive attention on malicious passages. Consequently, the authors filter out anomal
 tags:
   - ICML 2026
   - Information Retrieval & RAG
 date: 2026-05-08
-content_hash: c23754aa963c3a35
+content_hash: 067ef07d840e754e
 ---
 # Through the Stealth Lens: Attention-Aware Defenses Against Poisoning in RAG
 
 **Conference**: ICML 2026  
 **arXiv**: [2506.04390](https://arxiv.org/abs/2506.04390)  
-**Code**: https://github.com/sarthak-choudhary/Stealthy_Attacks_Against_RAG (Yes)  
+**Code**: https://github.com/sarthak-choudhary/Stealthy_Attacks_Against_RAG (Available)  
 **Area**: Information Retrieval / RAG Security / Retrieval Poisoning Defense  
-**Keywords**: RAG Poisoning, Attention Analysis, Stealthy Game, Poisoning Detection, Adaptive Attacks
+**Keywords**: RAG Poisoning, Attention Analysis, Stealth Game, Poisoning Detection, Adaptive Attacks
 
 ## TL;DR
-This paper demonstrates that while existing RAG poisoning attacks can manipulate LLM outputs with few malicious passages, they are **not truly stealthy**. Successful low-budget attacks inevitably cause the model to concentrate excessive attention on malicious segments. The authors introduce Normalized Passage Attention Score (NPAS) and an AV Filter based on its variance to screen out abnormal passages. Under a setting of 4 datasets × 5 LLMs × 5 attacks, this defense improves RACC by up to 20% compared to Certified Robust RAG.
+This paper points out that while existing RAG poisoning attacks can manipulate LLM outputs using a small number of malicious passages, they are **not truly stealthy**. Successful low-budget attacks inevitably cause the model to focus excessive attention on malicious passages. Consequently, the authors filter out anomalous passages using a Normalized Passage Attention Score (NPAS) and a variance-based AV Filter. Across a setup of 4 datasets × 5 LLMs × 5 attacks, it improves RACC by up to 20% compared to Certified Robust RAG.
 
 ## Background & Motivation
 
-**Background**: RAG compensates for the outdated knowledge and hallucinations of LLMs by prepending the top-$k$ retrieved passages into the prompt. It has become the cornerstone for systems such as Google AI Overview, Bing, and Perplexity. However, the knowledge base serves as an open attack surface; attackers can manipulate generation by injecting a few carefully crafted "malicious passages" into sources like Wikipedia or social media. Work such as PoisonedRAG has shown that corrupting just 1 out of 10 passages allows an attacker to control GPT-4's output.
+**Background**: RAG compensates for outdated knowledge and hallucinations in LLMs by prepending the top-$k$ passages from an external knowledge base to the prompt. It has become the backbone of systems like Google AI Overview, Bing, and Perplexity. However, the knowledge base itself is an open attack surface; attackers can have malicious passages retrieved and used to manipulate generation by placing carefully constructed content on Wikipedia, web pages, or social media. Works like PoisonedRAG demonstrate that corrupting just 1 out of 10 passages allows GPT-4 to output a specified answer.
 
-**Limitations of Prior Work**: Existing defenses fall into two categories: **passage-isolated** filtering (e.g., perplexity, vigilant prompting, or reranking), which is largely ineffective against semantically fluent LLM-generated poisoning; and Certified Robust RAG (Xiang et al., 2024), which uses isolate-then-aggregate to provide an empirical upper bound but suffers from significant clean accuracy degradation (ACC drops ~20% vs. Vanilla). Both lack the utilization of the critical internal signal: "malicious passages are dominating the generation."
+**Limitations of Prior Work**: Existing defenses are mainly divided into two categories: (1) **passage-isolated** filtering like perplexity, vigilant prompting, or reranking, which are largely ineffective against semantically fluent LLM-generated poisoning; (2) Certified Robust RAG (Xiang et al., 2024), which provides an empirical upper bound using isolate-then-aggregate but incurs a high cost in clean accuracy (ACC drops ~20% compared to Vanilla). A common deficiency is the failure to utilize the key internal signal: "malicious passages are dominating the generation."
 
-**Key Challenge**: Under a low corruption budget of $\epsilon < 0.5$, for a few malicious passages to override the majority of benign passages, they **must** exert a significantly higher influence on LLM inference than benign ones—this requirement is inherently inconsistent with "stealthiness." Yet, prior attacks have not formalized stealthiness metrics, nor has anyone systematically detected it using internal model signals.
+**Key Challenge**: Under low corruption budgets ($\epsilon < 0.5$), for an attacker to make a few passages override many benign ones, they **must** cause these passages to have a significantly higher influence on LLM reasoning than benign passages—this is inherently contradictory to "stealth." However, no previous attack has formalized "stealthiness," nor has anyone systematically detected it using internal model signals.
 
-**Goal**: (i) Formalize the "stealthiness" metric for RAG poisoning to falsify existing stealthiness claims; (ii) Design a lightweight, plug-and-play detection and filtering defense that does not require extra forward passes; (iii) Explore the robustness lower bound of this signal through adaptive attacks.
+**Goal**: (i) Formally define a "stealthiness" metric for RAG poisoning to falsify stealthiness claims of existing attacks; (ii) design a lightweight, plug-and-play detection and filtering defense that does not rely on extra forward passes; (iii) explore the robust lower bound of this signal through adaptive attacks.
 
-**Key Insight**: During Transformer inference, **attention weights serve as an available proxy signal reflecting token influence** (Vig & Belinkov 2019). If an attack successfully induces a target answer $s'$, the generated tokens of $s'$ must allocate substantial attention to malicious tokens containing or implying $s'$, leading to a high-variance anomaly in passage-level aggregation where "a few passages hijack excessive attention."
+**Key Insight**: During Transformer inference, **attention weights serve as a free proxy signal reflecting token influence** (Vig & Belinkov 2019). If an attack successfully induces a target answer $s'$, the generated tokens for $s'$ must allocate substantial attention to malicious tokens containing or implying $s'$, manifesting as a high-variance anomaly at the passage-level aggregation where "a few passages seize excessive attention."
 
-**Core Idea**: Treat the Normalized Passage Attention Score (NPAS) of each passage as a "proxy for its influence on the response." Use the **variance of NPAS among $k$ passages** as a statistical signature of poisoning and employ an AV Filter that iteratively strips the highest-scoring passages.
+**Core Idea**: Treat the Normalized Passage Attention Score (NPAS) for each passage as a "proxy for passage influence on the response." Use the **variance of NPAS across $k$ passages** as a statistical signature of being "poisoned," and defend using an AV Filter that iteratively strips the highest-scoring passages.
 
 ## Method
 
 ### Overall Architecture
-The paper addresses a stealth game in the RAG generation phase (Step II): a low-budget poisoning attack must cause a few malicious passages to suppress benign ones, inevitably leaving a trace of "excessive attention hijacking" inside the LLM. This trace is converted into a quantifiable detection signal. Given a query $q$, retrieved top-$k$ passages $z^{(k)}$, $\text{LLM}_\theta$, corruption budget $\epsilon$, and variance threshold $\delta$, the LLM first performs a normal forward pass. The attention matrices (reused without extra computation) across layers and heads are averaged into a single matrix $A \in \mathbb{R}^{l \times T}$ ($l$ response tokens, $T$ input tokens) and aggregated into passage-level NPAS. If the NPAS variance exceeds $\delta$, the highest-scoring passage is stripped and the process is repeated until the variance falls below the threshold or $\lfloor \epsilon k \rfloor$ passages are removed. The purified set $\tilde z$ is then fed back to the LLM for final generation. The same NPAS signal acts as the discriminator $\mathcal{D}_{\text{AV}}$ in the SADG game, unifying detection and stealthiness measurement.
+The paper addresses a stealthiness game during the RAG generation phase (Step II): low-budget poisoning attacks must leave a trace of "a few passages seizing excessive attention" within the LLM to override benign passages. This trace is converted into a quantifiable detection signal. Specifically, given a query $q$, retrieved top-$k$ passages $z^{(k)}$, LLM $\text{LLM}_\theta$, corruption budget $\epsilon$, and variance threshold $\delta$, a normal LLM forward pass is performed first. The resulting attention matrix is reused (no extra compute), averaging multi-layer multi-head attention into a single matrix $A \in \mathbb{R}^{l \times T}$ ($l$ response tokens, $T$ input tokens), which is then aggregated into passage-level NPAS. If the NPAS variance exceeds the threshold, the passage with the highest score is stripped and the process is repeated until the variance falls below the threshold or $\lfloor \epsilon k \rfloor$ passages have been removed. The purified set $\tilde z$ is then fed back to the LLM for final generation. The same NPAS serves as the "discriminator" $\mathcal{D}_{\text{AV}}$ in the SADG game, unifying detection and stealthiness measurement on a single signal.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["query q + retrieved top-k passages"] --> B["LLM single forward pass<br/>Reuse attention matrix A (No extra overhead)"]
-    B --> C["NPAS: Passage-level attention influence score<br/>Multi-layer/head average → top-α aggregation → Cross-passage normalization"]
-    C --> D["AV Filter: Re-ranking by NPAS to eliminate position bias"]
-    D --> E["Calculate NPAS variance σ² for k passages"]
-    E -->|"σ² ≤ δ or ⌊εk⌋ passages removed"| G["Purified passages → Final LLM generation"]
-    E -->|"σ² > δ"| F["Strip passage with highest NPAS<br/>Forward pass to recompute A"]
+    A["query q + retrieved top-k passages"] --> B["Perform normal LLM forward pass<br/>Reuse attention matrix A (no extra forward)"]
+    B --> C["NPAS: Passage-level attention score<br/>Avg layers/heads → top-α aggregation → Inter-passage normalization"]
+    C --> D["AV Filter: Rerank by NPAS to eliminate position bias"]
+    D --> E["Calculate k-passage NPAS variance σ²"]
+    E -->|"σ² ≤ δ or reached ⌊εk⌋ deletions"| G["Purified passages → LLM final generation"]
+    E -->|"σ² > δ"| F["Strip passage with highest NPAS<br/>Re-forward to calculate new A"]
     F --> C
     C -.->|"Same signal as discriminator D_AV"| H["SADG: Stealthiness Game<br/>Falsify attack stealthiness claims"]
 ```
 
 ### Key Designs
 
-**1. SADG: Formalizing "Stealthiness" as a Falsifiable Cryptographic Definition**
+**1. SADG: Making "Stealthiness" a Falsifiable Cryptographic-Style Definition**
 
-Previous papers evaluated stealthiness subjectively (e.g., "can a human detect it"), which cannot be quantified or falsified. The SADG (Stealth Attack Distinguishability Game) upgrades this to an adversarial game: an arbiter samples $q$ and constructs a benign set $z^{(k)}_{\text{benign}}$ and a corrupted set $z^{(k)}_{\text{corrupt}}$. These are **shuffled** and sent to a defender. The defender's advantage is defined as $\mathsf{Adv} = |\Pr[\text{win}] - 1/2|$. An attack is $(\tau\text{-stealthy})$ only if $\mathsf{Adv} \le \tau$ for all PPT defenders; ideal stealth corresponds to $\tau = 0$. This definition allows using any detector to establish the upper bound of an attack's stealthiness.
+Previous papers discussed stealthiness using subjective criteria like "whether a human can spot malicious passages," which is neither falsifiable nor quantifiable. SADG (Stealth Attack Distinguishability Game) upgrades this to an adversarial game: an arbiter samples $q$ and constructs a benign set $z^{(k)}_{\text{benign}}$ and a corrupted set $z^{(k)}_{\text{corrupt}}$. These are **randomly shuffled** and sent to the defender to guess which was poisoned. The defender's advantage is defined as $\mathsf{Adv} = |\Pr[\text{win}] - 1/2|$. An attack is $\tau$-stealthy only if $\mathsf{Adv} \le \tau$ for all PPT defenders. Ideal stealth corresponds to $\tau = 0$. This definition is crucial because any detector can be used to test the upper bound of an attack's stealthiness—all conclusions like "existing attacks are not stealthy" are built on this game.
 
-**2. NPAS: Passage-level Influence Proxy**
+**2. NPAS: Passage-Level Influence Proxy**
 
-Directly analyzing token-level attention is too noisy and lacks cross-passage comparability. NPAS (Normalized Passage Attention Score) provides an influence score from "passage $\to$ response" that is length-invariant and transferable. It averages attention across decoding layers and heads to get $A$, then calculates a raw score for passage $z_t$ by summing attention weights of its top-$\alpha$ attended tokens ($\alpha \in \{5, 10, \infty\}$) in $A$: $\mathsf{Score}_\alpha(z_t, A) = \sum_i \sum_{x_j \in \text{Top}_\alpha(z_t)} A[i,j]$. Finally, it is normalized across passages: $\mathsf{NormScore}_\alpha(z_t) = \mathsf{Score}_\alpha(z_t) / \sum_{i=1}^k \mathsf{Score}_\alpha(z_i)$. Using top-$\alpha$ captures "Heavy Hitters" (often keywords containing the target answer) while masking length differences. Benign passages show near-uniform attention (with slight recency bias), while poisoned ones hijack attention, creating a right-skewed distribution. Thus, the **variance of NPAS among $k$ passages** is a natural and robust discriminant.
+Raw token-level attention is too noisy and difficult to compare across passages. Therefore, an influence score from "passage $\to$ response" is needed that is invariant to passage length and transferable across queries/models. NPAS (Normalized Passage Attention Score) averages $A$ across layers and heads, then takes the sum of attention in $A$ for the top-$\alpha$ attended tokens ($\alpha \in \{5, 10, \infty\}$) in passage $z_t$ as the raw score: $\mathsf{Score}_\alpha(z_t, A) = \sum_i \sum_{x_j \in \text{Top}_\alpha(z_t)} A[i,j]$. Finally, it is normalized across passages: $\mathsf{NormScore}_\alpha(z_t) = \mathsf{Score}_\alpha(z_t) / \sum_{i=1}^k \mathsf{Score}_\alpha(z_i)$. Using top-$\alpha$ captures "Heavy Hitters" (keywords containing the target answer) while masking passage length differences. Cross-passage normalization makes thresholds transferable. Benign passages have nearly uniform attention (with slight recency bias), while poisoned passages seize attention, forming a right-skewed distribution. Thus, the **variance of NPAS among $k$ passages** is a natural and robust metric.
 
-**3. AV Filter: Iterative Stripping + Re-ranking for Position Bias**
+**3. AV Filter: Iterative Stripping + Reranking to Avoid Position Bias**
 
-Without knowing which passage is malicious, the AV Filter (Attention-Variance Filter) screens suspect passages within a budget of $\lfloor \epsilon k \rfloor$ removals. It first re-ranks passages by NPAS to eliminate recency bias (where passages closer to the generation position naturally attract more attention; re-ranking makes true anomalies more prominent, addressing biases observed by Liu et al. 2023). It then enters a loop: calculate NPAS variance $\sigma^2$; if $\sigma^2 \le \delta$, terminate; otherwise, remove $\arg\max \mathsf{NormScore}$, re-run the forward pass to compute a new $A$ and NPAS, and repeat until the budget is hit. Iterative removal is used instead of a single-pass scoring because a malicious passage might hijack 30% of attention while the next highest might still hold 15%; the "second highest" could mask the variance in a single pass. The threshold $\delta = 26.2$ is estimated using mean + 1·std on the clean set of RQA + Llama-2, **prioritizing low false negatives** (as mis-deleting a few benign passages has minimal impact on the final answer). The process requires no training and reuses the LLM’s own attention, resulting in near-zero inference overhead.
+Without knowing which passage is malicious, the AV Filter (Attention-Variance Filter) screens suspicious passages within a budget of at most $\lfloor \epsilon k \rfloor$ deletions. It first reranks passages by NPAS to eliminate recency bias (passages closer to the generation position naturally attract more attention; reranking makes true anomalies more prominent, addressing position biases observed by Liu et al. 2023 / Guo & Vosoughi 2024). It then enters a while loop: calculate NPAS variance $\sigma^2$; if $\sigma^2 \le \delta$, terminate early; otherwise, delete the passage with $\arg\max \mathsf{NormScore}$ and recalculate $A$ and NPAS. Iterative deletion is preferred over a single-pass scoring because when a malicious passage takes 30% attention, the next might still have 15%; a single pass might be masked by "second-largest" passages. The threshold $\delta = 26.2$ was estimated on the clean set of RQA + Llama-2 using mean+1·std, **prioritizing low false negatives** (mis-deleting benign passages has minimal impact on the final answer). The process requires no training and reuses the LLM's own attention, resulting in nearly zero inference cost.
 
 ### Loss & Training
-Ours is a **pure inference-time defense** and requires no LLM training. The threshold $\delta$ is estimated once on a single dataset (RQA + Llama-2) and directly transferred to 4 datasets and 5 models. $\alpha \in \{5, 10, \infty\}$ is a hyperparameter. When closed-source models such as GPT-4o do not expose attention, an open-source Mistral-7B is used as a **proxy model** to compute NPAS; the SADG advantage remains significant in this black-box setting. For adaptive attacks, a GCG-style optimization (similar to jailbreaking) is used to minimize the NPAS gap between malicious and benign passages.
+This is a **purely inference-time defense** requiring no LLM training. The threshold $\delta$ was estimated once (RQA + Llama-2) and transferred to 4 datasets × 5 models. $\alpha \in \{5,10,\infty\}$ is a hyperparameter. For closed-source models like GPT-4o that do not expose attention, the authors use an open-source Mistral-7B as an **auxiliary model** to calculate NPAS; the SADG advantage remains significant in the black-box setting. The adaptive attack uses GCG-style optimization to minimize the "gap between malicious and benign passage NPAS."
 
 ## Key Experimental Results
 
 ### Main Results
-Evaluation on 4 datasets (RQA, RQA-MC, NQ, HotpotQA) × 5 LLMs (Llama2-7B-Chat / Mistral-7B-Instruct / Llama-3.1-8B / Deepseek-R1-Distill-Qwen-7B / GPT-4o) × 5 attacks (Poison, MA, Paradox, CorruptRAG, PIA), $k=10, \epsilon=0.1$, averaged over 5 seeds.
+Evaluation on 4 datasets (RQA, RQA-MC, NQ, HotpotQA) × 5 LLMs (Llama2-7B-Chat / Mistral-7B-Instruct / Llama-3.1-8B / Deepseek-R1-Distill-Qwen-7B / GPT-4o) × 5 attacks (Poison, MA, Paradox, CorruptRAG, PIA), $k=10$, $\epsilon=0.1$, average of 5 seeds.
 
 | Setting | Metric | Vanilla | Keyword (CR-RAG) | Decoding (CR-RAG) | AV Filter (Ours $\alpha=10$) |
 |------|------|---------|------------------|-------------------|------------------------------|
@@ -82,46 +82,48 @@ Evaluation on 4 datasets (RQA, RQA-MC, NQ, HotpotQA) × 5 LLMs (Llama2-7B-Chat /
 | Llama2-C / RQA-MC / PIA | RACC↑ / ASR↓ | 33.4 / 63.0 | 54.0 / 6.0 | 38.0 / 12.0 | **(↑ ~20% vs baseline)** |
 | Avg SADG Win Rate (CIR) | ↑ | — | — | — | **0.78** |
 
-Key Findings: AV Filter maintains **clean RAG utility** with minimal drops (average drop $\le 5\%$ vs. Vanilla), whereas Keyword/Decoding (isolate-then-aggregate) drops by 15-20%. Simultaneously, RACC is up to 20% higher than baselines under PIA/Poison attacks.
+Key Conclusion: AV Filter **preserves RAG clean utility** (dropping ≤ 5% compared to Vanilla), whereas isolate-then-aggregate methods like Keyword/Decoding drop 15-20%. Meanwhile, RACC under PIA/Poison attacks is up to 20% higher than baselines.
 
 ### Ablation Study
 
 | Configuration | Key Finding | Description |
 |------|---------|------|
-| $\alpha = 5 / 10 / \infty$ | Similar performance, $\alpha=10$ is slightly better | The number of top-$\alpha$ tokens should match "Heavy Hitters" in malicious passages. |
-| No re-ranking vs. Re-ranking | False deletions of positions 9-10 increase without re-ranking | Confirms recency bias is a real issue; re-ranking is a necessary engineering step. |
-| Single NPAS vs. Iterative AV Filter | Iterative is significantly more stable for multiple poisoned passages ($\epsilon=0.2$) | Single-pass scoring can be masked by the second-highest passage. |
-| White-box vs. Black-box (GPT-4o + Mistral proxy) | SADG advantage drops from 0.78 → ~0.65 but remains > 0.5 | Attention signals retain discriminative power on proxy models. |
-| Adaptive Attack vs. AV Filter | ASR up to 35% after optimization (Still < Vanilla < Certified bound) | Requires $\sim 10^3\times$ baseline inference time + knowledge of benign passages, unrealistic in practice. |
+| $\alpha = 5 / 10 / \infty$ | Performance is similar across all; $\alpha=10$ slightly better | top-$\alpha$ must match the number of Heavy Hitters; too small misses signals, too large is diluted by noise |
+| No Rerank vs Rerank (by NPAS) | Without reranking, recency bias increases false deletion for positions 9-10 | Confirms position bias is a real issue; reranking is a necessary engineering step |
+| Single NPAS vs Iterative AV Filter | Iterative is significantly more robust for multiple poisoning ($\epsilon=0.2$) | Single pass scoring is masked by the second-largest passage |
+| White-box vs Black-box (GPT-4o + Mistral aux) | SADG advantage drops from 0.78 → ~0.65 in black-box, still > 0.5 | Attention signals retain distinguishability on auxiliary models |
+| Adaptive Attack vs AV Filter | ASR reaches up to 35% (still < Vanilla < Certified bound) | Requires $\sim 10^3\times$ baseline inference time + known benign passages; unrealistic in practice |
 
 ### Key Findings
-- **NPAS is near-uniform on clean sets but spikes to 30%+ for poisoned passages** (Fig 2a), causing a clear right-shift in the variance distribution (Fig 2b). This is the fundamental reason AV Filter works.
-- The threshold $\delta$ estimated once on RQA + Llama-2 transfers to other datasets/models, showing the scale consistency of NPAS due to normalization.
-- **Black-box applicability**: Even for models like GPT-4o, using Mistral-7B as a sidecar to compute NPAS allows the AV Filter to function.
-- Honest assessment of adaptive attacks: While they can recover ASR to 35%, they require 1000x inference time and knowledge of benign passages, serving as an exploration of the stealthy upper bound rather than a practical threat.
+- **NPAS is nearly uniform on clean sets, but a single poisoned passage rises to 30%+** (Fig 2a), showing a clear rightward shift in variance distribution (Fig 2b). This is the fundamental reason AV Filter works reliably.
+- The threshold $\delta$ estimated once on RQA + Llama-2 transfers to all settings, indicating that cross-setting scale consistency is maintained via normalization.
+- **Black-box availability** is a significant engineering value: AV Filter works even for GPT-4o by using Mistral-7B as a sidecar for NPAS calculations.
+- Adaptive attacks can recover ASR to 35%, but the authors honestly note these require 1000x inference time and known benign passages, serving as an upper-bound exploration rather than a practical threat.
 
 ## Highlights & Insights
-- **Upgrading "stealthiness" from intuition to a cryptographic game**: SADG allows any attack's stealthiness claim to be falsified by any detector. Any future claim of a "stealthy RAG attack" should report the $\mathsf{Adv}_{\text{SADG}}$.
-- **Attention as a free defense signal**: Reusing attention from the forward pass requires no training and no extra forward passes (except for re-computation during iterative deletion). It is plug-and-play for any open-source RAG stack.
-- **Honest presentation of adaptive attacks**: Unlike many papers that hide weaknesses, this work quantifies the impracticality ($10^3\times$ time cost) of adaptive attacks, clearly defining the boundaries of the arms race.
+- **Upgrading "Stealthiness" from intuition to a cryptographic game**: SADG allows the stealthiness claims of any attack to be falsified by any detector. This is the most important theoretical contribution—future "stealthy" RAG attacks must report $\mathsf{Adv}_{\text{SADG}}$.
+- **Attention as a free defense signal**: Reuses internal LLM attention without training or extra forward passes (excluding iterative re-computation). It is plug-and-play and virtually zero-cost for open-source RAG stacks.
+- **Honest presentation of adaptive attacks**: Unlike many defense papers, this one explicitly quantifies the practical infeasibility of adaptive attacks ($10^3\times$ time + known benign sets), clearly defining the boundaries of the arms race.
+- Transferable tricks: (i) The top-$\alpha$ aggregation + cross-sample normalization paradigm can be applied to passage attribution or reranking; (ii) "variance as an anomaly signature + iterative deletion" can be reused in multi-source fusion (e.g., multi-modal alignment, multi-agent voting).
 
 ## Limitations & Future Work
-- **Reliance on benign-majority + redundancy assumption**: Assumption 3.2 requires at least 2 benign passages to support the correct answer. If the knowledge base is sparse or the retriever fails, the defense is compromised. Attacks not aiming for specific token outputs (e.g., style poisoning, privacy leaks) are not covered.
-- **$\epsilon < 0.5$ information-theoretic constraint**: The authors state that cases with majority corruption are theoretically unsolvable, the same boundary as Certified Robust RAG.
-- **Success of adaptive attacks (35% ASR)**: NPAS is not an ultimate signal. Attackers with access to the proxy model can use jailbreak optimization to explicitly suppress malicious NPAS. Potential directions include attention rollout or multi-signal ensembles using hidden states.
-- The threshold $\delta$ depends on the existence of a "clean set," which may require recalibration in deployments with significant domain drift.
+- **Dependence on benign-majority + redundancy assumptions**: Assumption 3.2 requires at least 2 benign passages to support the correct answer; it fails if coverage or recall is poor. Attacks not aimed at specific token output (e.g., style poisoning, privacy leaks) are not covered (Assumption 3.4).
+- **Information-theoretic constraint of $\epsilon < 0.5$**: The authors state that cases with majority corruption are theoretically unsolvable, same as the Certified Robust RAG boundary.
+- **Adaptive attacks still reach 35% ASR**: Indicates NPAS is not the ultimate signal. Attackers with access to auxiliary models could use jailbreak optimization to suppress malicious NPAS. Subsequent directions: attention rollout or multi-signal ensembles using hidden states.
+- Threshold $\delta$ depends on the existence of a clean set and may require recalibration for large domain shifts.
 
 ## Related Work & Insights
-- **vs. Certified Robust RAG (Xiang et al., 2024)**: They isolate every passage for independent generation and then aggregate. This provides an empirical bound but drops clean ACC by ~20%. Ours performs **joint attention analysis** of the passage set, maintaining clean ACC while raising RACC by 20%.
-- **vs. Perplexity Filter (Jain et al., 2023)**: Perplexity is a passage-isolated score and is ineffective against fluent poisoning. NPAS is a "passage-response joint score" that captures fluent but highly influential malicious segments.
-- **vs. Vigilant Prompting (Pan et al., 2023)**: Based on content truthfulness, limited by the model's knowledge. Ours shifts to internal signals, independent of content truth, focusing on "excessive influence."
-- **vs. Attention Rollout (Abnar et al., 2020)**: More complex attribution, but the authors chose simple layer/head averaging for stability and deployment ease—an engineering trade-off.
+- **vs Certified Robust RAG (Xiang et al., 2024) — Keyword / Decoding**: They isolate passages for independent generation and aggregate, providing an empirical bound but dropping ~20% clean ACC. Ours analyzes **joint attention of passage sets**, maintains clean ACC, and achieves 20% higher RACC.
+- **vs Perplexity Filter (Jain et al., 2023)**: Perplexity is an isolated score, ineffective against fluent poisoning. NPAS is a "joint passage-response score" capturing highly influential but fluent malicious segments.
+- **vs Vigilant Prompting (Pan et al., 2023) / Misinformation Detection (Hong et al., 2023)**: These rely on content-based truthfulness, limited by world knowledge coverage. Ours turns to internal signals, independent of content truth, focusing on "excessive influence."
+- **vs Attention Rollout (Abnar et al., 2020)**: A more complex attribution method; the authors chose simple layer/head averaging for stability and deployment ease—an engineering trade-off.
+- **vs PoisonedRAG (Zou et al., 2024), etc.**: This work uses the "high-influence trace" left by these attacks to defend and falsifies their stealthiness claims under SADG.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ SADG formalization and using attention variance as a poisoning signature are systematic firsts, though NPAS is a natural extension of attention attribution.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 4 datasets x 5 LLMs x 5 attacks + white/black-box + adaptive attacks, covering all bases and honestly presenting weaknesses.
-- Writing Quality: ⭐⭐⭐⭐ Clear assumptions, SADG definition, and Algorithm 1. Minor issue: notation density and the "Heavy Hitter" concept are only explained later in the experiments.
-- Value: ⭐⭐⭐⭐⭐ Plug-and-play, zero training, works for both white and black-box settings; highly relevant for production-grade RAG systems.
+- Novelty: ⭐⭐⭐⭐ SADG formalization + using attention variance as a signature are novel, though NPAS is a natural extension of attention attribution.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 4 datasets × 5 LLMs × 5 attacks + black/white box + adaptive attacks + SOTA ensemble.
+- Writing Quality: ⭐⭐⭐⭐ Assumptions and SADG definitions are clear; Algorithm 1 is reproducible. Minor issue: symbols are dense, and the Heavy Hitter concept is explained late.
+- Value: ⭐⭐⭐⭐⭐ Plug-and-play, no training, black/white box compatible. Significant engineering relevance for production RAG systems.
 
 <!-- RELATED:START -->
 
@@ -130,10 +132,10 @@ Key Findings: AV Filter maintains **clean RAG utility** with minimal drops (aver
 ## Related Papers
 
 - [\[ACL 2026\] Disco-RAG: Discourse-Aware Retrieval-Augmented Generation](../../ACL2026/information_retrieval/disco-rag_discourse-aware_retrieval-augmented_generation.md)
+- [\[ICML 2026\] LARE: Low-Attention Region Encoding for Text–Image Retrieval](lare_low-attention_region_encoding_for_text-image_retrieval.md)
 - [\[ACL 2026\] VideoStir: Understanding Long Videos via Spatio-Temporally Structured and Intent-Aware RAG](../../ACL2026/information_retrieval/videostir_understanding_long_videos_via_spatio-temporally_structured_and_intent-.md)
 - [\[ICLR 2026\] Bayesian Attention Mechanism: A Probabilistic Framework for Positional Encoding and Context Length Extrapolation](../../ICLR2026/information_retrieval/bayesian_attention_mechanism_a_probabilistic_framework_for_positional_encoding_a.md)
-- [\[AAAI 2026\] SR-KI: Scalable and Real-Time Knowledge Integration into LLMs via Supervised Attention](../../AAAI2026/information_retrieval/sr-ki_scalable_and_real-time_knowledge_integration_into_llms_via_supervised_atte.md)
-- [\[AAAI 2026\] RRRA: Resampling and Reranking through a Retriever Adapter](../../AAAI2026/information_retrieval/rrra_resampling_and_reranking_through_a_retriever_adapter.md)
+- [\[ICLR 2026\] Beyond RAG vs. Long-Context: Learning Distraction-Aware Retrieval for Efficient Knowledge Grounding](../../ICLR2026/information_retrieval/beyond_rag_vs_long-context_learning_distraction-aware_retrieval_for_efficient_kn.md)
 
 </div>
 

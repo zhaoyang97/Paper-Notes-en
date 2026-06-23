@@ -2,77 +2,77 @@
 title: >-
   [Paper Note] Quiver: Quantum-Informed Views for Enhanced Representations in Large ML Models
 description: >-
-  [ICML 2026][Physics & Scientific Computing][Particle Transformer] Quiver feeds categorized inputs into a Variational Quantum Circuit (VQC) to extract the Quantum Fisher Information Matrix (QFIM) as a "Quantum Geometric View." This view is then injected into classical backbones via cross-attention (for Transformers) or residual gating (for GNNs), achieving stable improvements in two d
+  [ICML 2026][Physics & Scientific Computing][Particle Transformer] Quiver feeds categorical inputs into an additional Variational Quantum Circuit (VQC) to extract the Quantum Fisher Information Matrix (QFIM) as a "quantum geometric view." It then injects this into classical backbones using cross-attention (for Transformers) or residual gating (for GNNs), achieving consistent improveme
 tags:
   - ICML 2026
   - Physics & Scientific Computing
   - Particle Transformer
   - DimeNet++
 date: 2026-05-08
-content_hash: 1b224b95fcb5ffa5
+content_hash: 200fc433ff664e01
 ---
 # Quiver: Quantum-Informed Views for Enhanced Representations in Large ML Models
 
 **Conference**: ICML 2026  
 **arXiv**: [2606.02785](https://arxiv.org/abs/2606.02785)  
-**Code**: None (Repository not released in the paper)  
+**Code**: None (Repository not disclosed in the paper)  
 **Area**: Physics / Hybrid Quantum-Classical Learning / High-Energy Physics + Molecular Chemistry  
-**Keywords**: Variational Quantum Circuits, Quantum Fisher Information Matrix, Multimodal Representation, Particle Transformer, DimeNet++  
+**Keywords**: Variational Quantum Circuit (VQC), Quantum Fisher Information Matrix (QFIM), Multimodal Representation, Particle Transformer, DimeNet++  
 
 ## TL;DR
-Quiver feeds categorized inputs into a Variational Quantum Circuit (VQC) to extract the Quantum Fisher Information Matrix (QFIM) as a "Quantum Geometric View." This view is then injected into classical backbones via cross-attention (for Transformers) or residual gating (for GNNs), achieving stable improvements in two distinct physical tasks: JetClass top quark tagging and QM9 HOMO-LUMO gap regression.
+Quiver feeds categorical inputs into an additional Variational Quantum Circuit (VQC) to extract the Quantum Fisher Information Matrix (QFIM) as a "quantum geometric view." It then injects this into classical backbones using cross-attention (for Transformers) or residual gating (for GNNs), achieving consistent improvements across distinct physical tasks: JetClass top quark tagging and QM9 HOMO-LUMO gap regression.
 
 ## Background & Motivation
 
-**Background**: Jet tagging in high-energy physics and property prediction in molecular chemistry (QM9) are high-dimensional structured data problems. Prevailing methods, such as Particle Transformer (~2.14M parameters) and geometric/equivariant GNNs like DimeNet++, have approached SOTA on their respective benchmarks.
+**Background**: Jet tagging in high-energy physics and property prediction in molecular chemistry (QM9) are high-dimensional structured data problems. Mainstream methods such as Particle Transformer (~2.14M parameters) and geometric/equivariant GNNs like DimeNet++ have approached SOTA on their respective benchmarks.
 
-**Limitations of Prior Work**: These models train entirely within classical feature spaces. For samples requiring higher-order or non-local correlations (e.g., color-singlet $W$ jets vs. color-connected QCD jets, or electronic structures in QM9 that depend on multi-body correlations), models must rely on implicit learning via increased capacity, as these correlations are not explicitly "exposed."
+**Limitations of Prior Work**: These models are trained entirely in classical feature spaces. For samples requiring higher-order or non-local correlations (e.g., color-singlet $W$ jets vs. color-connected QCD jets, or electronic structure properties in QM9 depending on multi-body correlations), models must rely on implicit learning via model capacity rather than having these correlations explicitly "exposed."
 
-**Key Challenge**: Classical feature constructions (kinematic variables, structural descriptors) are naturally poor at expressing multi-body coherent correlations. Simply stacking model capacity or data volume does not efficiently bridge this structural blind spot. A fundamentally different geometric perspective is required to complement classical features without redundancy.
+**Key Challenge**: Classical feature engineering (kinematic variables, structural descriptors) is inherently poor at expressing multi-body coherent correlations. Simply scaling model capacity or data volume does not efficiently bridge this structural gap. A fundamentally different geometric perspective is needed that is complementary, rather than redundant, to classical features.
 
-**Goal**: The objective is split into two sub-problems: (1) extracting "geometric correlation structures" from classical inputs using quantum circuits to form a compact, system-agnostic tensor; (2) integrating this tensor into SOTA classical backbones with minimal parameter cost and physical alignment.
+**Goal**: Decomposition into two sub-problems: (1) How to extract "geometric correlation structures" from classical inputs using quantum circuits to form a compact, system-agnostic tensor; (2) How to fuse this tensor into existing SOTA classical backbones with minimal parameter cost and physical alignment.
 
-**Key Insight**: When a VQC $|\psi(\boldsymbol{\Theta})\rangle=U(\boldsymbol{\Theta})|0\rangle^{\otimes N}$ encodes input into a Hilbert space, the parameter manifold naturally carries the Fubini-Study metric, which is equivalent (up to a factor of 4) to the Quantum Fisher Information Matrix (QFIM). The diagonal terms of the QFIM represent "single-parameter sensitivity," while off-diagonal terms represent "coherent coupling"—the geometric encoding of "multi-body correlation" that can be calculated on classical simulators (PennyLane).
+**Key Insight**: After encoding inputs into Hilbert space using a VQC $|\psi(\boldsymbol{\Theta})\rangle=U(\boldsymbol{\Theta})|0\rangle^{\otimes N}$, the parameter manifold naturally carries the Fubini-Study metric, which is equivalent (up to a factor of 4) to the Quantum Fisher Information Matrix (QFIM). The diagonal terms of the QFIM represent "single-parameter sensitivity," while off-diagonal terms represent "coherent coupling"—the geometric encoding of multi-body correlations, computable via classical simulators (e.g., PennyLane).
 
 **Core Idea**: Use the "Quantum Fisher View" as a second modality complementary to the classical view. Once fused, classical backbones can directly consume quantum geometric information instead of learning it implicitly from scratch.
 
 ## Method
 
 ### Overall Architecture
-Quiver = Classical Input → Task-specific VQC → QFIM Measurement → Modality Fusion Layer → SOTA Classical Backbone. Two distinct encodings are used: 1P1Q (one particle, one qubit) for jets, and a novel 2A2Q (two atoms, two qubits as a block for bond coupling) for molecules. Fusion designs are differentiated by backbone: Transformers utilize cross-attention via sequence concatenation, while GNNs use residual gating modulated by the QFIM for edge states. The VQC is simulated classically via PennyLane, with the QFIM pre-computed and cached.
+Quiver = Classical Input → Task-Specific VQC → QFIM Measurement → Modality Fusion Layer → Classical SOTA Backbone. Two quantum encodings are designed: 1P1Q (one qubit per particle) for jets and a novel 2A2Q (one two-qubit block per bonded atom pair) for molecules. Fusion methods are tailored to backbone types: cross-attention via sequence concatenation for Transformers, and QFIM-modulated residual gated edge states for GNNs. The VQC is classically simulated via PennyLane, with QFIM pre-computed and cached.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["Classical Input<br/>Jet: 10 high pT particles / Molecule: 10 heavy atoms"] --> B["VQC Quantum Encoding<br/>Jet: 1P1Q · Molecule: 2A2Q"]
-    B --> C["Quantum Fisher View<br/>QFIM Relationship Tensor"]
+    A["Classical Input<br/>Jet 10 high pT particles / Molecule 10 heavy atoms"] --> B["Quantum Encoding VQC<br/>Jet 1P1Q · Molecule 2A2Q"]
+    B --> C["Quantum Fisher View<br/>Compute QFIM to obtain relation tensor"]
     C -->|Transformer Backbone| E["Cross-attention Injection<br/>QFIM tokens appended to particle sequence"]
-    C -->|GNN Backbone| F["Zero-initialized Gated Residual<br/>QFIM modulates edge states"]
+    C -->|GNN Backbone| F["Zero-initialized Gated Residual<br/>QFIM-modulated edge states"]
     E --> G["Classical SOTA Backbone<br/>ParT / DimeNet++"]
     F --> G
-    G --> H["Prediction<br/>Top Tagging / HOMO-LUMO Gap"]
+    G --> H["Prediction<br/>Top tagging / HOMO-LUMO gap"]
 ```
 
 ### Key Designs
 
-**1. Quantum Fisher View: Extracting Multi-body Structures Challenging for Classical Features**
+**1. Quantum Fisher View: Extracting Multi-body Coherence with VQCs**
 
-Classical features (kinematics, structural descriptors) are inherently limited in expressing multi-body correlations. Quiver maps the classical input $x$ to a parameterized quantum state $|\psi(\boldsymbol{\Theta}(x),\boldsymbol{\theta})\rangle$ and calculates the QFIM at a fixed reference point $\boldsymbol{\theta}_0$:
+Classical features are naturally inept at expressing multi-body coherent correlations, a gap that capacity scaling cannot fill. Quiver maps classical input $x$ to a parameterized quantum state $|\psi(\boldsymbol{\Theta}(x),\boldsymbol{\theta})\rangle$ and calculates the QFIM at a fixed reference point $\boldsymbol{\theta}_0$:
 
 $$F_{ij}(\boldsymbol{\theta};x)=4\,\mathrm{Re}\big[\langle\partial_i\psi|\partial_j\psi\rangle-\langle\partial_i\psi|\psi\rangle\langle\psi|\partial_j\psi\rangle\big],$$
 
-producing a compact relationship tensor determined by the input. Its physical significance is direct: diagonal $F_{ii}$ represents local sensitivity to $\theta_i$ (dynamic importance per qubit), and off-diagonal $F_{ij}$ is non-zero only if two directions act on overlapping qubit subsystems, thus encoding coherent coupling between input dimensions. Under 1P1Q encoding (10 particles × 3 rotations/qubit), this yields a 30×30 matrix; under 2A2Q, it results in a 60×60 matrix organized by atomic pairs. Since the QFIM is the intrinsic geometry of the parameter manifold and is independent of the measurement basis, its off-diagonal elements naturally tag "joint behaviors," making this view fundamentally complementary to classical features.
+generating a compact, input-dependent relation tensor. Its physical significance is direct: diagonal $F_{ii}$ represents local sensitivity (dynamic importance per qubit), while off-diagonal $F_{ij}$ is non-zero only if two directions act on overlapping qubit subsystems, thus directly encoding coherent coupling between input dimensions. Under 1P1Q encoding, 10 particles × 3 rotations per qubit yield a 30×30 real symmetric matrix (stored as 90 channels × 10 particles). Under 2A2Q, 10 qubits × 2 layers × 3 rotations yield a 60×60 matrix, organized into 10×10 sub-blocks of size 6×6, where sub-block $Q_{ij}$ corresponds to atom-pair coupling. As the intrinsic geometry of the parameter manifold, QFIM is independent of the measurement basis; its off-diagonal elements naturally mark "joint behavior," making this view fundamentally complementary to the classical view.
 
-**2. 2A2Q Molecular Encoding: Bonding Info in Entanglement with Symmetry Invariance**
+**2. 2A2Q Molecular Encoding: Fusing Chemical Bond Information into Entanglement while Maintaining Invariance**
 
-Encoding Cartesian coordinates directly into qubits introduces reference frame dependence, which is detrimental for geometric tasks like QM9. 2A2Q employs pairwise encoding: each heavy atom is assigned one qubit with a single-atom embedding $R_Y(w_{\text{atom}}^j)|0\rangle$. For each pair of bonded atoms where $d_{ij}<d_{\text{CUTOFF}}=1.7\,\text{Å}$, three angles $\omega_1^{(ij)}, \omega_2^{(ij)}, \omega_3^{(ij)}$ (based on distance and bond type) are used to entangle the qubits via $\mathcal{U}_{ij}$. By merging encoding and entanglement into pairwise operations, the pairwise distance $d_{ij}$ remains invariant, avoiding coordinate system issues, while $e_{\text{bond}}$ allows entanglement strength to reflect chemical bonding.
+Encoding Cartesian coordinates directly via single-atom-per-qubit mapping introduces frame dependence, which is fatal for geometric tasks like QM9. 2A2Q uses pairwise encoding: each heavy atom is assigned a qubit with an initial embedding $R_Y(w_{\text{atom}}^j)|0\rangle$. For each bonded pair with $d_{ij}<d_{\text{CUTOFF}}=1.7\,\text{Å}$, three angles $\omega_1^{(ij)}=e_{d_1}(1-d_{ij}/d_{\text{CUTOFF}})\cos\theta_{ij}$, $\omega_2^{(ij)}=e_{\text{bond}}^{(ij)}\pi$, and $\omega_3^{(ij)}=e_{d_2}(1-d_{ij}/d_{\text{CUTOFF}})\cos\phi_{ij}$ are used to jointly encode and entangle: $\mathcal{U}_{ij}=(I_{YY}(\omega_3)I_{ZZ}(\omega_2)I_{XX}(\omega_1))(R_Y\otimes R_Y)|00\rangle$, followed by $R_Z R_Y R_Z$ per qubit. Merging "encoding + entanglement" into pairwise operations makes the pairing distance $d_{ij}$ naturally invariant, and $e_{\text{bond}}$ allows entanglement strength to learn chemical bond types, ensuring QFIM sub-blocks directly reflect bonding correlations.
 
-**3. Differentiated Architectural Injection: Transformers vs. GNNs**
+**3. Differentiated Architectural Injection: Cross-attention for Transformers and Zero-initialized Gated Residuals for GNNs**
 
-The QFIM modality must be integrated with minimal parameter cost to distinguish gains from simple capacity increases. For the Particle Transformer, 90 QFIM channels per particle are embedded via an MLP into 128-dimensional tokens $q_i$, which are appended to the classical sequence. For DimeNet++, which lacks built-in cross-modality mechanisms, a residual gate $\tilde{x}_{ij}^{(l)}=(1+\alpha\cdot\Theta(Q_{ij}))x_{ij}^{(l)}$ is used to modulate edge states, where $\alpha$ is a zero-initialized learnable scalar. Zero-initialization is a critical design choice: it ensures that at $\alpha=0$, the model is strictly equivalent to the baseline, forcing any improvement to originate from the QFIM information itself.
+The QFIM modality must be fused with minimal parameter cost while isolating whether Gains stem solely from increased parameters. For Particle Transformer, the 90 QFIM channels per particle are embedded into 128-dimensional tokens $q_i=\mathrm{MLP}_{\text{QFIM}}(\mathbf{Q}[:,i])$ and appended to the classical sequence, forming an input of length $2P$. Transformers naturally utilize cross-attention, making sequence concatenation an intuitive fusion strategy. For DimeNet++, which lacks cross-modality mechanisms, a residual gate $\tilde{x}_{ij}^{(l)}=(1+\alpha\cdot\Theta(Q_{ij}))x_{ij}^{(l)}$ modulates edge states, where $\alpha$ is a zero-initialized global learnable scalar, and $\Theta(Q_{ij})\in[-1,1]$ is processed by a small CNN on the 6×6 QFIM sub-block followed by $\tanh$. The zero-initialized gate is a critical design: it strictly guarantees equivalence to the baseline when $\alpha=0$, ensuring that any improvement must originate from the QFIM information itself.
 
 ### Loss & Training
-JetClass binary classification utilizes standard Cross-Entropy. QM9 utilizes Huber loss for robustness against outliers. VQCs are classically simulated on PennyLane, and QFIMs are computed using its standard implementation. Both tasks were executed with multiple seeds (5 for JetClass, 10 for QM9).
+JetClass binary classification uses standard Cross-Entropy. QM9 uses Huber loss (robust to outliers, combining $\ell_2$ and $\ell_1$). VQCs are simulated in PennyLane, with QFIM computed via its standard implementation. Both tasks use multiple seeds (5 for JetClass, 10 for QM9).
 
 ## Key Experimental Results
 
@@ -87,40 +87,40 @@ JetClass binary classification utilizes standard Cross-Entropy. QM9 utilizes Hub
 | Full | ParT | 0.1M | 0.98875 ± 0.00008 | 570 ± 13 |
 | Full | **Quiver** | 0.1M | **0.98893 ± 0.00005** | **590 ± 7** |
 
-With kinematics features only, Quiver (5M) increases the QCD rejection rate from 176 to 240 (+36%). With full features, it increases from 1306 to 1362 (+4%), with a parameter cost of only +7%.
+With kinematic features only, the 5M parameter Quiver improves the QCD rejection rate from 176 to 240 (+36%). With full features, it improves from 1306 to 1362 (+4%). The parameter cost is only +7% (2.14M → 2.29M).
 
 ### Main Results 2: QM9 HOMO-LUMO Gap Regression
 
-| Model | Params | Test MAE (meV) ↓ | Paired Δ MAE (meV) | Rel. Reduction |
+| Model | Params | Test MAE (meV) ↓ | Paired Δ MAE (meV) | Relative Decr. |
 |------|------|------|------|------|
 | DimeNet++ | 1.886M | 72.42 ± 1.52 | — | — |
 | **𝒬DimeNet++ (Ours)** | 1.891M | **67.92 ± 1.98** | **4.50 ± 2.46** | **6.21%** |
 
-With a param increase of only 0.27%, the paired $t$-test across 10 seeds yields $t_9=5.78, p<10^{-3}$, indicating statistical significance.
+With only a 0.27% parameter increase, a paired $t$-test across 10 seeds yields $t_9=5.78, p<10^{-3}$, proving statistical significance.
 
 ### Key Findings
-- Improvements are "persistent": The Δ MAE between 𝒬DimeNet++ and the baseline remains positive across all training epochs, maintaining a gap from start to convergence.
-- Gains do not vanish with scaling: Quiver outperforms baselines across 0.1M, 0.5M, and 5M parameter scales, suggesting QFIM adds information rather than just capacity.
-- Minimal parameter overhead (+0.27% to +7%) yields percentage-level relative improvements, providing evidence for "quantum advantage without quantum speedup"—quantum geometric features possess intrinsic informational value even when simulated classically.
-- Success across different architectures (Transformer and GNN) validates the architecture-agnostic nature of Quiver.
+- Improvements are "persistent": Training curves show that Δ MAE for 𝒬DimeNet++ remains positive across all epochs, establishing a lead early on.
+- Gains do not vanish with scaling: Quiver outperforms at 0.1M, 0.5M, and 5M scales, indicating QFIM provides "information" rather than just "capacity."
+- Relative improvements are achieved with minimal parameter costs (+0.27% to +7%), providing empirical evidence for "Quantum Advantage ≠ Quantum Speedup"—even simulated VQCs provide informational value.
+- Success across both architectures (Transformer cross-attention and GNN residual gating) validates the "architecture-agnostic" claim.
 
 ## Highlights & Insights
-- **QFIM as a Modality, Not Auxiliary Loss**: Unlike previous hybrid methods that treat VQCs as part of an end-to-end chain, Quiver extracts QFIM as independent data, allowing SOTA classical models to consume it directly. This decoupling permits the method to run on classical simulators today without NISQ hardware dependency.
-- **Experimental Design of Zero-initialized Gating**: Initializing $\alpha$ to 0 ensures baseline equivalence, making the argument that "improvements stem from QFIM information" rigorously sound and more credible than post-hoc ablation studies.
-- **2A2Q Physical Awareness**: Encoding bond information into entanglement and using distance-based thresholds makes the quantum circuit a "physics-aware feature extractor," which is more suitable than general-purpose VQCs.
-- **Cross-domain Stability**: Stable performance gains across high-energy physics (jets) and chemistry (molecules) strongly imply that quantum Fisher geometry captures domain-agnostic multi-body correlation structures.
-- **"Harvesting the Future"**: By demonstrating quantifiable performance gains with classically simulated VQCs, this work provides a practical path for quantum machine learning research in the pre-fault-tolerant era.
+- **QFIM as a Modality, Not Auxiliary Loss**: Unlike prior hybrid methods that treat VQCs as part of an end-to-end chain, Quiver extracts QFIM as "data" to be consumed by SOTA models. This decoupling ensures the method is usable today via classical simulation without relying on NISQ hardware.
+- **Zero-Initialized Gate Design**: Initializing $\alpha=0$ guarantees baseline equivalence, ensuring the claim "improvement stems from QFIM" is rigorous by design. This "falsifiable-by-design" approach is a valuable template for modality fusion research.
+- **2A2Q Encoding**: By using $e_{\text{bond}}$ to learn entanglement strength and residual truncation for sparsity, the VQC acts as a "physics-aware feature extractor" tailored to the task.
+- **Cross-Domain Stability**: Success in both high-energy physics (Transformer + sequence concat) and molecular chemistry (GNN + edge gating) suggests that Quantum Fisher geometry encodes a "domain-agnostic multi-body correlation structure."
+- **"Harvesting the Future"**: Quiver demonstrates quantifiable performance gains for large models using simulated VQCs, offering a practical direction for quantum machine learning in the pre-fault-tolerant era.
 
 ## Limitations & Future Work
-- Classical simulation costs limit the qubit count to $\le 10$, necessitating the truncation of JetClass particles and QM9 hydrogen atoms. Expansion requires multi-GPU nodes or real quantum hardware.
-- The VQC utilizes a fixed reference $\boldsymbol{\theta}_0$. Joint optimization of the VQC and the neural model is a future direction, though it faces the technical challenge of backpropagating through QFIM measurements rather than observable expectations.
-- The paper lacks a comprehensive discussion on the storage and time costs of QFIM pre-computation, particularly for industrial-scale datasets.
-- The comparison against classical baselines is relatively narrow (focused on ParT and DimeNet++), missing comparisons with other "explicit higher-order correlation" methods like EFN or PointNet++.
+- Simulation constraints limit the system to $\le 10$ qubits (10 particles or heavy atoms). Most JetClass particles and QM9 hydrogen atoms are discarded, explaining why absolute precision is slightly lower than reported in original papers. Scaling requires multi-GPU simulation or real hardware.
+- QFIM is computed at a fixed reference $\boldsymbol{\theta}_0$ and not jointly optimized. Future work involves joint optimization, though backpropagating through QFIM measurements (rather than observable expectations) is technically challenging.
+- Storage and time costs for QFIM pre-computation are not fully discussed, leaving scalability questions for industrial datasets.
+- Baseline comparisons are relatively narrow (only ParT and DimeNet++), missing comparisons with other "explicit higher-order" methods like EFN or PointNet++.
 
 ## Related Work & Insights
-- **vs. Bal et al. 2025 (1P1Q)**: While adopting their 1P1Q encoding, Quiver innovatively treats QFIM as a view fused into classical backbones rather than using VQCs for direct prediction, circumventing the performance limitations of stand-alone VQCs.
-- **vs. Classical Multimodal Fusion**: Unlike image/text fusion, Quiver's second modality is generated via a physically interpretable transformation of the first, eliminating cross-modal alignment difficulties.
-- **vs. Increasing Model Capacity**: Comparisons with wider baselines of equivalent parameter counts and the minimal 0.27% overhead for 𝒬DimeNet++ provide rigorous evidence that improvements are driven by information content rather than parameter stacking.
+- **vs. Bal et al. 2025 (1P1Q)**: While adopting their 1P1Q jet encoding, Quiver innovates by using QFIM as a fused view rather than using VQC for direct prediction, bypassing the performance bottleneck of current VQCs.
+- **vs. Classical Multimodal Fusion**: Unlike image/text fusion, the second modality in Quiver is a physically interpretable transformation of the first, eliminating alignment issues—it is purely a "different geometric perspective of the same input."
+- **vs. Model Capacity**: Comparison with "isoparametric widened baselines" and the 0.27% parameter increase in 𝒬DimeNet++ confirm that Gains arise from information content, not parameter stacking.
 
 <!-- RELATED:START -->
 
@@ -130,9 +130,9 @@ With a param increase of only 0.27%, the paired $t$-test across 10 seeds yields 
 
 - [\[ICML 2026\] Softplus Attention with Re-weighting Boosts Length Extrapolation in Large Language Models](softplus_attention_with_re-weighting_boosts_length_extrapolation_in_large_langua.md)
 - [\[ICML 2026\] TriForces: Augmenting Atomistic GNNs for Transferable Representations](triforces_augmenting_atomistic_gnns_for_transferable_representations.md)
+- [\[ICML 2026\] Quantum latent distributions in deep generative models](quantum_latent_distributions_in_deep_generative_models.md)
 - [\[ICML 2025\] L2D: Large Language Models to Diffusion Finetuning](../../ICML2025/physics/large_language_models_to_diffusion_finetuning.md)
 - [\[AAAI 2026\] SAOT: An Enhanced Locality-Aware Spectral Transformer for Solving PDEs](../../AAAI2026/physics/saot_an_enhanced_locality-aware_spectral_transformer_for_solving_pdes.md)
-- [\[ICLR 2026\] Augmenting Representations with Scientific Papers](../../ICLR2026/physics/augmenting_representations_with_scientific_papers.md)
 
 </div>
 

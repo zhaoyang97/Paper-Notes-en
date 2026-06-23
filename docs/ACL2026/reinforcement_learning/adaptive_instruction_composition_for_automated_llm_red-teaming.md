@@ -2,12 +2,12 @@
 title: >-
   [Paper Note] Adaptive Instruction Composition for Automated LLM Red-Teaming
 description: >-
-  [ACL 2026][Reinforcement Learning][Paper Note] The authors propose the Adaptive Instruction Composition (AIC) framework, which utilizes Neural Thompson Sampling to adaptively select attack instructions within the combinatorial space of crowdsourced harmful queries and jailbreak strategies. It optimizes both attack success rate and diversity, significantly outperfor
+  [ACL 2026][Reinforcement Learning][Paper Note] The Adaptive Instruction Composition (AIC) framework is proposed, utilizing Neural Thompson Sampling to adaptively select attack instructions within a combinatorial space of crowdsourced harmful queries and jailbreak tactics. By simultaneously optimizing attack success rate and diversity, it significantly outperforms e
 tags:
   - ACL 2026
   - Reinforcement Learning
 date: 2026-05-08
-content_hash: 2bf0691366c1ca98
+content_hash: 3085c0884e27f827
 ---
 # Adaptive Instruction Composition for Automated LLM Red-Teaming
 
@@ -15,61 +15,59 @@ content_hash: 2bf0691366c1ca98
 **arXiv**: [2604.21159](https://arxiv.org/abs/2604.21159)  
 **Code**: None  
 **Area**: AI Safety / Reinforcement Learning  
-**Keywords**: LLM Red-Teaming, Adaptive Instruction Composition, Contextual Bandits, Jailbreak Attacks, Diversity-Efficiency Trade-off
+**Keywords**: LLM Red-teaming, Adaptive Instruction Composition, Contextual Bandits, Jailbreak Attacks, Diversity-Effectiveness Trade-off
 
 ## TL;DR
-The authors propose the Adaptive Instruction Composition (AIC) framework, which utilizes Neural Thompson Sampling to adaptively select attack instructions within the combinatorial space of crowdsourced harmful queries and jailbreak strategies. It optimizes both attack success rate and diversity, significantly outperforming existing methods on Harmbench.
+The Adaptive Instruction Composition (AIC) framework is proposed, utilizing Neural Thompson Sampling to adaptively select attack instructions within a combinatorial space of crowdsourced harmful queries and jailbreak tactics. By simultaneously optimizing attack success rate and diversity, it significantly outperforms existing methods on Harmbench.
 
 ## Background & Motivation
 
-**Background**: Automated LLM red-teaming is a critical method for enhancing model safety. Existing approaches are primarily divided into two categories: one where an attacker LLM discovers jailbreak strategies through trial-and-error (e.g., PAIR, TAP), and another that uses crowdsourced data to randomly combine attack instructions (e.g., WildTeaming).
+**Background**: Automated LLM red-teaming is a critical means of enhancing model safety. Existing methods generally fall into two categories: trial-and-error approaches where an attacker LLM discovers jailbreak tactics (e.g., PAIR, TAP), and random composition approaches using crowdsourced data (e.g., WildTeaming).
 
-**Limitations of Prior Work**: Successful attacks discovered by trial-and-error methods often have limited semantic diversity, exploring only a finite strategy space. Although WildTeaming utilizes a massive corpus of over 50,000 harmful queries and 13,000 jailbreak strategies, it relies on random combinations and fails to leverage historical attack results for adaptive optimization, resulting in low success rates against well-defended models.
+**Limitations of Prior Work**: Trial-and-error methods often find successful attacks with limited semantic diversity, exploring only a narrow strategy space. While WildTeaming leverages a massive corpus of 50k+ harmful queries and 13k+ jailbreak tactics, its random composition fails to utilize historical attack results for adaptive optimization, leading to low success rates against well-defended models.
 
-**Key Challenge**: The instruction composition space defined by WildTeaming exceeds 8 trillion possibilities ($50000 \times 13000^2$). Random search is extremely inefficient in such a vast space, while trial-and-error methods lack systematic coverage of the known attack space. An adaptive method is required to balance the exploration of diverse attacks with the exploitation of success signals.
+**Key Challenge**: The instruction composition space defined by WildTeaming exceeds 8 trillion possibilities ($50000 \times 13000^2$). Random search is highly inefficient in such a vast space, yet trial-and-error methods lack systematic coverage of the known attack space. An adaptive method is needed to explore diverse attacks while exploiting success signals.
 
-**Goal**: To design an adaptive instruction composition mechanism that balances exploration and exploitation in large-scale combinatorial spaces, optimizing both attack effectiveness and diversity.
+**Goal**: Design an adaptive instruction composition mechanism that balances exploration and exploitation in large-scale combinatorial spaces to optimize both attack effectiveness and diversity.
 
-**Key Insight**: Red-teaming is modeled as a Combinatorial Neural Bandit problem, using reinforcement learning for adaptive selection within a combinatorial space of textual samples.
+**Key Insight**: Model red-teaming as a Combinatorial Neural Bandit problem, using reinforcement learning for adaptive selection within the combinatorial space of text samples.
 
-**Core Idea**: Neural Thompson Sampling is utilized as an adaptive selector. By using contrastive pre-trained sentence embeddings, the combinatorial space is mapped to low-dimensional features, allowing a lightweight network to generalize and learn rapidly across a massive space.
+**Core Idea**: Use Neural Thompson Sampling as an adaptive selector. By mapping the composition space into low-dimensional features via contrastive pre-trained sentence embeddings, a lightweight network can achieve rapid generalization and learning across a massive space.
 
 ## Method
 
 ### Overall Architecture
-The system consists of four models: an Attacker LLM (generates attacks), a Target LLM (the victim), an Evaluator (safety judgment), and a Neural Bandit (adaptively selects instruction compositions). In each trial, the bandit selects the optimal combination from $K=500$ candidates. The attacker generates an attack based on this, the evaluator provides a reward signal as feedback, and the bandit is updated online while successful combinations are blacklisted.
+The system consists of four components: an attacker LLM (generates attacks), a target LLM (the victim), an evaluator (safety judgment), and a neural bandit (adaptively selects instruction compositions). In each trial, the bandit selects the optimal combination from $K=500$ candidates. The attacker generates an instruction based on this choice, the evaluator provides a reward signal based on the target's response, and this signal is used to update the bandit online while the successful combination is blacklisted.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["Crowdsourced Corpus<br/>50k Harmful Queries + 13k Jailbreak Strategies (8T Combinations)"] --> B["Candidate Sampling<br/>Randomly sample K=500 per round"]
-    B --> C["Contrastive Embedding Featurization<br/>SBERT 768-D → UMAP 10-D Concatenation"]
-    C --> D["Neural Thompson Sampling Selector<br/>Sample best combination via posterior distribution"]
-    D --> E["Attacker LLM<br/>Generate attack based on composition"]
+    A["Crowdsourced Corpus<br/>50k Harmful Queries + 13k Tactics (8T combinations)"] --> B["Candidate Sampling<br/>Randomly sample K=500 per round"]
+    B --> C["Contrastive Embedding Featurization<br/>SBERT 768d → UMAP 10d Concatenation"]
+    C --> D["Neural Thompson Sampling Selector<br/>Select best combo via posterior sampling"]
+    D --> E["Attacker LLM<br/>Generate attack via selected combo"]
     E --> F["Target LLM Response"]
-    F --> G["Evaluator (Llama-Guard-2)<br/>Provides reward signal"]
-    G --> H["Online Update + Blacklist Successful Compositions"]
+    F --> G["Evaluator (Llama-Guard-2)<br/>Provide reward signal"]
+    G --> H["Online Update + Success Blacklisting<br/>(Deduplication & Sampling Strategy)"]
     H -->|Next Trial| B
 ```
 
 ### Key Designs
 
-**1. Contextual Embedding Featurization: Compressing text combinations into compact feature vectors for cross-semantic generalization**
+**1. Contrastive Embedding Featurization: Compressing text combinations into compact vectors for bandit generalization**
 
-Managing 8 trillion combinations as discrete arms is infeasible. This work uses SBERT (all-mpnet-base-v2) to map queries and strategies into 768-D embeddings, reduced to 10-D via UMAP. Concatenating these embeddings provides the network input. Contrastive pre-training ensures that semantically similar texts stay close in embedding space, allowing the bandit to extrapolate reward signals and infer attack probabilities across entire semantic neighborhoods from limited samples. Ablations confirm that SBERT achieves faster learning and higher Attack Success Rate (ASR) than BERT.
+Directly learning from 8 trillion discrete combinations as arms is impossible. This work uses SBERT (all-mpnet-base-v2) to map queries and tactics into 768-dimensional embeddings, then reduces them to 10 dimensions using UMAP. The concatenated embeddings serve as network input. Contrastive pre-training ensures semantically similar texts are close in embedding space, allowing the bandit to extrapolate rewards to entire semantic neighborhoods after seeing only a few samples. Ablations confirm that SBERT learns faster and achieves higher ASR than BERT.
 
 **2. Neural Thompson Sampling Selector: Balancing exploration and exploitation via posterior sampling**
 
-Random combinations ignore success signals, while deterministic greedy approaches converge prematurely. This work maintains a two-layer feed-forward network ($\approx 2201$ parameters) to calculate a Gaussian posterior reward distribution for each candidate:
-$$\hat{r}_{t,k} \sim \mathcal{N}(\mu_{t,k}, \sigma^2_{t,k})$$
-The mean is the network output, and the variance is calculated via the Neural Tangent Kernel (NTK). Posterior sampling naturally explores high-uncertainty regions while exploiting high-mean regions. The hyperparameter $\lambda$ scales the variance, serving as an interpretable "knob": larger values favor diversity, while smaller values favor success rate.
+Random composition ignores success signals, while deterministic greedy selection converges prematurely. This method maintains a two-layer feedforward network (~2201 parameters) to calculate a Gaussian posterior reward distribution $\hat{r}_{t,k} \sim \mathcal{N}(\mu_{t,k}, \sigma^2_{t,k})$ for each candidate. The mean is derived from the network output, and the variance is calculated via the Neural Tangent Kernel. Combinations are selected via posterior sampling. High-uncertainty regions are naturally explored, while low-uncertainty, high-mean regions are exploited. The hyperparameter $\lambda$ scales the variance, acting as an interpretable "knob": increasing it favors diversity, while decreasing it favors success rate.
 
-**3. Deduplication and Candidate Sampling: Forcing discovery of new regions while maintaining scalability**
+**3. Deduplication and Candidate Sampling: Forcing continuous discovery and scalable search**
 
-Without constraints, the network might exploit the same successful combination repeatedly (diversity collapse), and scoring 8 trillion combinations is computationally impossible. To address this, successful compositions are blacklisted, forcing the network to generalize to new effective regions in the feature space. Additionally, only $K=500$ candidates are randomly sampled for scoring each round (a many-armed bandit approach), making the search tractable.
+Without constraints, the network would exploit the same successful combinations, causing diversity collapse. To prevent this, successful combinations are blacklisted, forcing the network to generalize in the feature space to remain effective. Furthermore, only $K=500$ candidates are randomly sampled from the full space for scoring each round (a many-armed bandit approach), making search across the massive space computationally feasible.
 
 ### Loss & Training
-The bandit network is trained online using $\ell_2$-regularized squared loss with a learning rate of 0.01 and increasing weight decay. After each trial, network parameters and the uncertainty matrix $U$ are updated using the chosen combination's embedding and the evaluator's reward.
+The bandit network is trained online using squared loss with $\ell_2$ regularization, a learning rate of 0.01, and weight decay that increases with the number of trials. After each trial, the network parameters and the uncertainty matrix $U$ are updated using the selected combination's embedding and the evaluator's reward.
 
 ## Key Experimental Results
 
@@ -86,40 +84,40 @@ The bandit network is trained online using $\ell_2$-regularized squared loss wit
 | GCG-T | 0.645 | 0.238 |
 | PAIR | 0.525 | 0.215 |
 | AutoDAN-Turbo | 0.976 | 0.672 |
-| **Ours (AIC)** | **1.000** | **0.934** |
+| **AIC** | **1.000** | **0.934** |
 
 ### Ablation Study
 
 | Configuration | Key Effect | Description |
 |------|---------|------|
 | SBERT vs BERT | Significant ASR Gain | Contrastive embeddings support rapid generalization |
-| λ=1 (subtle) vs λ=0.01 (aggr.) | Diversity↑ vs ASR↑ | λ provides interpretable exploration-exploitation control |
-| 1 Strategy vs 3 Strategies | Improved Diversity | More strategy slots enhance content variety |
+| λ=1 (subtle) vs λ=0.01 (aggr.) | Diversity↑ vs Success Rate↑ | λ provides interpretable exploration-exploitation control |
+| 1 Tactic vs 3 Tactics | Improved Diversity Metrics | More tactic slots increase content variety |
 
 ### Key Findings
-- AIC achieves near-perfect ASR on Harmbench (1.0 for Mistral, 0.934 for Llama-3), significantly outperforming all baselines.
-- Strong cross-model transferability: strategies trained on Mistral maintain an ASR of 0.184-0.254 when transferred to Llama-3 (vs. 0.088 for WildTeaming).
-- The "Subtle" bandit significantly improves ASR while maintaining diversity levels comparable to WildTeaming.
+- AIC achieves nearly perfect ASR on Harmbench (Mistral: 1.0, Llama-3: 0.934), significantly outperforming all existing baselines.
+- Strong cross-model transferability: Strategies trained on Mistral maintain an ASR of 0.184-0.254 when transferred to Llama-3 (vs. 0.088 for WildTeaming).
+- The "Subtle" bandit significantly improves success rates while maintaining diversity levels comparable to WildTeaming.
 
 ## Highlights & Insights
-- Modeling red-teaming as a combinatorial bandit problem is elegant, mapping the exploration-exploitation trade-off directly to the diversity-effectiveness trade-off. This is applicable to any search task in massive prompt composition spaces.
-- The combination of contrastive pre-trained embeddings and a lightweight network achieves "minimal parameters, maximal generalization," enabling effective learning within an 8-trillion-combination space with only 2201 parameters.
-- The $\lambda$ hyperparameter provides an intuitive "knob" for controlling the balance between diversity and effectiveness.
+- Modeling red-teaming as a combinatorial bandit problem is elegant, naturally mapping the exploration-exploitation trade-off to the diversity-effectiveness trade-off. This is applicable to any search task in large-scale prompt spaces.
+- The combination of contrastive embeddings and a lightweight network achieves "minimal parameters, maximal generalization," enabling effective learning in an 8-trillion-sized space with only 2201 parameters.
+- The $\lambda$ hyperparameter provides an intuitive "knob" for controlling the trade-off between attack diversity and effectiveness.
 
 ## Limitations & Future Work
-- Experiments were limited to three open-source target models; generalization to commercial API models remains unverified.
+- Experiments were limited to three open-source models; performance on commercial API models remains unverified.
 - Dependency on Llama-Guard-2 as an evaluator may introduce false positives/negatives.
-- High computational cost: 10K trials require approximately 70-120 GPU hours.
-- Future work could extend to red-teaming image generators and autonomous agents.
+- Computational costs are high, requiring 70-120 GPU hours for 10K trials.
+- Future work could extend this to red-teaming for image generators and agents.
 
 ## Related Work & Insights
-- **vs WildTeaming**: WildTeaming uses random composition; AIC uses adaptive RL selection, yielding a 40-400% gain in ASR.
-- **vs PAIR/TAP**: Trial-and-error methods suffer from limited diversity; AIC ensures coverage via crowdsourced corpora.
-- **vs AutoDAN-Turbo**: AutoDAN-Turbo discovers new strategies from scratch but has lower ASR than AIC; the two could be complementary.
+- **vs WildTeaming**: WildTeaming uses random composition; AIC uses RL for adaptive selection, improving ASR by 40-400%.
+- **vs PAIR/TAP**: Trial-and-error methods suffer from limited diversity; AIC ensures coverage via a crowdsourced corpus.
+- **vs AutoDAN-Turbo**: While AutoDAN-Turbo discovers new tactics from scratch, its ASR is lower than AIC; the two could be complementary.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Combination bandit is a novel modeling perspective for red-teaming.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive evaluation across target models, baselines, transferability, ablations, and Harmbench.
+- Novelty: ⭐⭐⭐⭐ Combinatorial bandits offer a novel modeling perspective for red-teaming.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive coverage across target models, baselines, transferability, ablations, and Harmbench.
 - Writing Quality: ⭐⭐⭐⭐ Clear structure and detailed algorithmic descriptions.
 - Value: ⭐⭐⭐⭐ High practical value for LLM safety research.
 
@@ -127,15 +125,13 @@ The bandit network is trained online using $\ell_2$-regularized squared loss wit
 
 <div class="related-papers" markdown="1">
 
-</div>
-
 ## Related Papers
 
 - [\[AAAI 2026\] MARS: Multi-Agent Adaptive Reasoning with Socratic Guidance for Automated Prompt Optimization](../../AAAI2026/reinforcement_learning/mars_multi-agent_adaptive_reasoning_with_socratic_guidance_f.md)
 - [\[ACL 2026\] ImpRIF: Stronger Implicit Reasoning Leads to Better Complex Instruction Following](imprif_stronger_implicit_reasoning_leads_to_better_complex_instruction_following.md)
 - [\[ACL 2026\] LENS: Less Noise, More Voice — Reinforcement Learning for Reasoning via Instruction Purification](less_noise_more_voice_reinforcement_learning_for_reasoning_via_instruction_purif.md)
-- [\[ACL 2026\] ARGUS: Policy-Adaptive Ad Governance via Evolving Reinforcement with Adversarial Umpiring](argus_policy-adaptive_ad_governance_via_evolving_reinforcement_with_adversarial_.md)
 - [\[ACL 2026\] Deliberative Searcher: Improving LLM Reliability via Reinforcement Learning with Constraints](deliberative_searcher_improving_llm_reliability_via_reinforcement_learning_with_.md)
+- [\[ACL 2026\] DPEPO: Diverse Parallel Exploration Policy Optimization for LLM-based Agents](dpepo_diverse_parallel_exploration_policy_optimization_for_llm-based_agents.md)
 
 </div>
 

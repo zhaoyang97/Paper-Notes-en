@@ -2,12 +2,12 @@
 title: >-
   [Paper Note] Debating the Unspoken: Role-Anchored Multi-Agent Reasoning for Half-Truth Detection
 description: >-
-  [ACL 2026][Multi-Agent][Paper Note] This paper proposes the RADAR framework, which detects half-truth information based on omitted context through role-anchored (Politician vs. Scientist) multi-agent debate. Coupled with a dual-threshold adaptive early stopping mechanism, it consistently outperforms single-agent and traditional multi-agent baselines unde
+  [ACL 2026][Multi-Agent][Paper Note] This paper proposes the RADAR framework, which detects half-truths based on omitted context through role-anchored (Politician vs. Scientist) multi-agent debate. Combined with a dual-threshold adaptive early stopping mechanism, it consistently outperforms single-agent and traditional multi-agent baselines under noisy re
 tags:
   - ACL 2026
   - Multi-Agent
 date: 2026-05-08
-content_hash: ca881c47804d271e
+content_hash: 23cdec9d3e15d5b0
 ---
 # Debating the Unspoken: Role-Anchored Multi-Agent Reasoning for Half-Truth Detection
 
@@ -15,113 +15,118 @@ content_hash: ca881c47804d271e
 **arXiv**: [2604.19005](https://arxiv.org/abs/2604.19005)  
 **Code**: [https://github.com/tangyixuan/RADAR](https://github.com/tangyixuan/RADAR)  
 **Area**: Fact Verification / Misinformation Detection  
-**Keywords**: Half-truth detection, multi-agent debate, omission reasoning, role-anchoring, adaptive termination
+**Keywords**: Half-truth detection, Multi-agent debate, Omission reasoning, Role-anchoring, Adaptive termination  
 
 ## TL;DR
 
-This paper proposes the RADAR framework, which detects half-truth information based on omitted context through role-anchored (Politician vs. Scientist) multi-agent debate. Coupled with a dual-threshold adaptive early stopping mechanism, it consistently outperforms single-agent and traditional multi-agent baselines under noisy retrieval conditions.
+This paper proposes the RADAR framework, which detects half-truths based on omitted context through role-anchored (Politician vs. Scientist) multi-agent debate. Combined with a dual-threshold adaptive early stopping mechanism, it consistently outperforms single-agent and traditional multi-agent baselines under noisy retrieval conditions.
 
 ## Background & Motivation
 
-**Background**: Fact verification systems have made progress in detecting explicit misinformation but remain blind to "half-truths"—claims that are factually correct but misleading due to the omission of critical context. For instance, the statement "A politician reduced the national debt by 15%" might be correct, but it hides the fact that the debt was first increased by 20% during the same period.
+**Background**: Fact verification systems have made progress in detecting explicit misinformation but remain blind to "half-truths"—claims that are factually correct but misleading due to the omission of critical context. For example, "A politician reduced the national debt by 15%" might be correct in isolation but hides the fact that it first increased by 20% during the same period.
 
-**Limitations of Prior Work**: (1) Single-agent methods (encoder classifiers, instructed LLMs) perform single-pass reasoning, making them prone to misjudgment when key context is missing. (2) Traditional multi-agent debate (MAD) uses fixed Pro/Con roles designed for explicit contradictions, which are unsuitable for omission reasoning where the core issue is missing context rather than opposing claims. (3) TRACER was the first to explicitly model omissions but assumes the existence of golden evidence and uses a single-agent pipeline.
+**Limitations of Prior Work**: (1) Single-agent methods (encoder classifiers, instruction-tuned LLMs) perform single-pass reasoning and easily misjudge when critical context is missing; (2) Traditional Multi-Agent Debate (MAD) uses fixed Pro/Con roles designed for explicit contradictions, which are unsuitable for omission reasoning—the core issue is the missing context rather than an opposing claim; (3) While TRACER first explicitly modeled omissions, it assumes the availability of "gold" evidence and uses a single-agent pipeline.
 
-**Key Challenge**: Omission detection requires reasoning about "what was not said" rather than "what is wrong"—existing verification systems look for contradictions instead of absences.
+**Key Challenge**: Omission detection requires reasoning about "what was not said" rather than "what is wrong"—existing verification systems look for contradictions rather than absences.
 
-**Goal**: Design a fact verification framework capable of discovering missing context under realistic noisy retrieval conditions.
+**Goal**: Design a fact-verification framework capable of discovering missing context under realistic noisy retrieval conditions.
 
-**Key Insight**: Model verification as a structured debate between complementary roles—one side constructing the best possible narrative (exposing the motivation for selective framing) and the other probing for omissions (revealing the missing context).
+**Key Insight**: Model verification as a structured debate between complementary roles—one side constructing the best possible narrative (exposing the motivation for selective framing) and the other probing for omissions (revealing missing context).
 
-**Core Idea**: Replace Pro/Con debates with "Politician" and "Scientist" roles to transform omission detection from contradiction-seeking into active probing of missing context.
+**Core Idea**: Replace Pro/Con debate with "Politician" and "Scientist" role-anchoring to transform omission detection from contradiction searching into active probing of missing context.
 
 ## Method
 
 ### Overall Architecture
 
-RADAR addresses the specific type of lie known as a "half-truth"—where the claim is factually correct but misleading because key context is omitted. The process consists of two steps: first, pulling a shared evidence pool for each claim under realistic noisy retrieval conditions; second, having three role-anchored agents engage in multiple rounds of debate over this pool, with an adaptive early stopping mechanism determining when to conclude. Each agent has a specific function: the Politician constructs the most persuasive supporting narrative from the evidence, the Scientist scrutinizes the same evidence for what was omitted, and the Judge performs a 3-way classification (true/half-true/false) and controls whether to terminate the debate.
+RADAR addresses "half-truths," a specific type of deception where claims are factually correct but misleading through omitted context. The process consists of two steps: first, retrieving a shared evidence pool for each claim under noisy conditions; second, conducting multiple rounds of debate among three role-anchored agents on this pool, governed by an adaptive early stopping mechanism. The three roles serve distinct functions: the Politician weaves evidence into the most persuasive supportive narrative, the Scientist monitors the same evidence to identify what was skipped, and the Judge adjudicates the three-way classification (True/Half-True/False) and controls termination.
 
 ```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
 flowchart TD
-    A["Half-Truth Claim"] --> B["Retrieval-Anchored Evidence Sharing<br/>Top-m Shared Evidence Pool (with noise)"]
+    A["Half-Truth Claim"] --> B["Retrieval-Anchored Evidence Sharing<br/>Top-m Shared Evidence Pool (Noisy)"]
     B --> C
     subgraph DEBATE["Role-Anchored Debate Protocol"]
         direction TB
-        C["Politician Agent<br/>Constructs most persuasive support narrative"] --> D["Scientist Agent<br/>Probes for missing / omitted context"]
-        D --> E["Judge Agent<br/>Integrates debate history for 3-way classification"]
+        C["Politician Agent<br/>Constructs most persuasive supportive narrative"] --> D["Scientist Agent<br/>Probes missing / bypassed context"]
+        D --> E["Judge Agent<br/>Synthesizes debate logs for 3-way classification"]
     end
-    E --> F["Dual-Threshold Adaptive Early Stopping Controller<br/>Calculates s=p(STOP)−p(CONT), c=max p(y)"]
-    F -->|"s<τ_s or c<τ_v: Another round"| C
-    F -->|"s≥τ_s and c≥τ_v: Terminate"| G["Output 3-way classification<br/>true / half-true / false"]
+    E --> F["Dual-Threshold Adaptive Early Stopping<br/>Calculate s=p(STOP)−p(CONT), c=max p(y)"]
+    F -->|"s<τ_s OR c<τ_v: Another round"| C
+    F -->|"s≥τ_s AND c≥τ_v: Terminate"| G["Output Classification<br/>True / Half-True / False"]
 ```
 
 ### Key Designs
 
-**1. Retrieval-Anchored Evidence Sharing: Ensuring divergence stems from reasoning, not information asymmetry**
+**1. Retrieval-Anchored Evidence Sharing: Divergence from Reasoning, Not Information**
 
-If agents rely on internal model knowledge, it becomes unclear whether differing conclusions result from reasoning or disparate information. RADAR requires all agents to share the same evidence pool (top-m retrieval results) and mandates that every argument in the debate cites retrieved evidence rather than internal knowledge. Consequently, different conclusions can only stem from varying interpretations of the same evidence. Compared to traditional MAD which relies on internal knowledge, this approach improves transparency and traceability while allowing the framework to operate under realistic noisy retrieval settings.
+If agents rely on internal knowledge, differences in conclusions cannot be distinguished between superior reasoning or mere information asymmetry. RADAR mandates that all agents share a single evidence pool (top-m retrieval results) and requires every argument to cite this pool rather than internal knowledge. Consequently, differing conclusions stem solely from divergent reasoning over the same data. Compared to traditional MAD, this improves transparency and allows the framework to function under noisy retrieval settings rather than assuming gold evidence.
 
-**2. Role-Anchored Debate Protocol: Replacing Pro/Con with "Politician vs. Scientist" to focus on omissions**
+**2. Role-Anchored Debate Protocol: "Politician vs. Scientist" instead of Pro/Con**
 
-Traditional MAD uses fixed Pro/Con roles designed for "explicit contradictions." However, the root of a half-truth is not a factual error but intentional incompleteness, which simple opposition fails to capture. RADAR employs complementary reasoning personas: the Politician agent constructs the most persuasive narrative from the evidence, naturally leaning toward confirmatory reasoning and selective presentation; the Scientist agent examines the same evidence for missing or weak points, naturally leaning toward analytical skepticism. The debate progresses from opening statements to rebuttals and final summaries, with the Judge making a 3-way judgment. The nuance lies in the Politician acting as the "maker" of the half-truth and the Scientist as the "debunker," simulating the generation and detection mechanisms of such claims.
+Traditional MAD uses Pro/Con roles for "explicit contradictions." However, half-truths stem from intentional incompleteness rather than factual error. RADAR employs complementary reasoning personas: the **Politician** builds a persuasive supportive narrative from the evidence (confirmatory reasoning/selective presentation), while the **Scientist** scrutinizes the same evidence for missing or weak points (analytical skepticism). The debate follows a structure of Opening Statement → Rebuttal → Closing Summary. The Politician acts as the "creator" of the half-truth, and the Scientist as its "debunker," simulating the generation and detection of deception.
 
-**3. Dual-Threshold Adaptive Early Stopping: Terminating only when information is sufficient and judgment is stable**
+**3. Dual-Threshold Adaptive Early Stopping: Balancing Sufficiency and Stability**
 
-Excessive debate rounds waste computation, while stopping too early leads to misjudgments on difficult half-truths. After each round, the Judge calculates two metrics: the stopping margin $s = p(\text{STOP}) - p(\text{CONTINUE})$ and the maximum label confidence $c = \max_y p(y)$. Termination occurs only when $s \geq \tau_s$ and $c \geq \tau_v$ are both satisfied, with both thresholds calibrated on the development set. The dual-threshold approach is used because stopping intent alone might trigger too early on uncertain cases—precisely the category half-truths fall into. It ensures both that enough information has been gathered and that a high-confidence judgment has been reached.
+Excessive debate rounds waste computation, while stopping too early leads to misjudgment on complex half-truths. RADAR requires the Judge to calculate a stop margin $s = p(\text{STOP}) - p(\text{CONTINUE})$ and a maximum label confidence $c = \max_y p(y)$. Termination occurs only when $s \geq \tau_s$ and $c \geq \tau_v$ simultaneously. Using two thresholds prevents premature stopping on uncertain cases where the intent to stop might be high, but confidence remains low—a common scenario for half-truths.
 
-### Key Experimental Results
+### Loss & Training
+
+RADAR is an unsupervised reasoning framework and does not require training. The two early stopping thresholds, $\tau_s$ and $\tau_v$, are calibrated on a development set.
+
+## Key Experimental Results
 
 ### Main Results
 
-On the PolitiFact-Hidden benchmark (under retrieved evidence conditions):
+Results on the PolitiFact-Hidden benchmark (under retrieval conditions):
 
 | Method | Accuracy | F1_macro | F1_HalfTrue |
-|------|----------|---------|-------------|
+| :--- | :--- | :--- | :--- |
 | FIRE | 60.3 | 46.9 | 34.1 |
 | D2D (MAD) | 63.0 | 50.9 | 39.7 |
 | RADAR_single | 58.4 | 51.0 | 41.5 |
-| **Ours (Multi)** | **77.7** | **63.3** | **56.5** |
+| **Ours (RADAR_multi)** | **77.7** | **63.3** | **56.5** |
 
 ### Ablation Study
 
 | Configuration | Accuracy | Description |
-|------|----------|------|
-| Golden Evidence + RADAR | 83.6 | Upper bound with perfect retrieval |
-| Retrieved Evidence + RADAR | 77.7 | Strong performance in realistic conditions |
-| No Early Stopping | ~76 | Slight decrease with increased cost |
-| Fixed Pro/Con Roles | ~65 | Role design is critical |
+| :--- | :--- | :--- |
+| Gold Evidence + RADAR | 83.6 | Upper bound with perfect retrieval |
+| Retrieval Evidence + RADAR | 77.7 | Strong performance in reality |
+| No Early Stopping | ~76 | Slight decline with increased cost |
+| Fixed Pro/Con | ~65 | Role design is critical |
 
 ### Key Findings
 
-- RADAR achieves a 14.7% accuracy Gain over the best traditional method (D2D) under retrieval conditions, with a significant advantage in half-truth detection (F1 improved from 39.7 to 56.5).
-- Role-anchoring is the core contribution: performance drops sharply when replaced by traditional Pro/Con roles, validating the necessity of complementary reasoning designs.
+- **Ours** improves accuracy by 14.7% over the best traditional method (D2D) under retrieval conditions, with a massive gain in half-truth detection (F1 improved from 39.7 to 56.5).
+- Role-anchoring is the core contribution: performance drops significantly when replaced with Pro/Con roles, validating the need for complementary reasoning designs.
 - Adaptive early stopping reduces the average number of debate rounds by approximately 30% without sacrificing performance.
-- It consistently outperforms baselines in both golden and retrieved evidence settings, demonstrating the framework's robustness.
+- Superiority over baselines is consistent across both gold and retrieval evidence settings, demonstrating robustness.
 
 ## Highlights & Insights
 
-- The "Politician-Scientist" metaphor is ingenious: half-truths are common in political discourse, so using roles that simulate these discourse strategies to detect them creates a "fight fire with fire" design philosophy.
-- The dual-threshold early stopping mechanism is a practical engineering innovation: it balances reasoning cost and quality, which is crucial for inherently uncertain categories like half-truths.
-- The paradigm shift from "finding contradictions" to "discovering omissions" opens a new direction for the fact verification field.
+- The **"Politician-Scientist"** metaphor is highly effective: half-truths are a common tactic in political discourse; using roles that simulate these strategies to detect them creates a "fight fire with fire" design philosophy.
+- The **Dual-Threshold Early Stopping** is a practical engineering innovation: it balances reasoning cost and quality, which is crucial for inherently uncertain categories like half-truths.
+- The paradigm shift from **"finding contradictions"** to **"discovering absences"** opens a new direction for the fact-verification field.
 
 ## Limitations & Future Work
 
-- Currently only tested on political fact-checking datasets; half-truth detection in other domains (science, medical) remains to be verified.
-- Role design is effective but relies on manually defined prompt templates, which may limit generalizability.
-- Retrieval quality remains a bottleneck—the ~6% gap between golden and retrieved evidence suggests that improvements in retrieval could lead to further gains.
-- 3-way classification (true/half-true/false) may be too coarse; in reality, the degree of "half-truth" is likely continuous.
+- Tested only on political fact-verification datasets; generalizability to other domains (science, healthcare) remains to be verified.
+- Role design, while effective, relies on manually defined prompt templates, which may limit generalizability.
+- Retrieval quality remains a bottleneck—the 6% gap between gold and retrieval settings suggests that improved retrieval could lead to further gains.
+- Three-way classification (True/Half-True/False) might be too coarse; in reality, "half-truthfulness" exists on a continuum.
 
 ## Related Work & Insights
 
-- **vs TRACER**: First omission detection framework but assumes golden evidence and is single-agent; RADAR achieves stronger performance through multi-agent debate under noisy retrieval.
-- **vs D2D/TED**: Traditional MAD use fixed Pro/Con for explicit contradictions; RADAR's role-anchoring targets omission reasoning, yielding a 12+ point F1 Gain.
+- **vs TRACER**: First omission detection framework but assumes gold evidence and uses a single agent; RADAR achieves higher performance via multi-agent debate under noisy retrieval.
+- **vs D2D/TED**: Traditional MAD uses Pro/Con for explicit contradictions; RADAR's role-anchoring targets omission reasoning, improving F1 by 12+ points.
 - **vs FIRE**: Uses iterative search-verify loops but remains single-agent; RADAR achieves deeper reasoning through structured debate.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ New paradigm for role-anchoring and omission reasoning.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Multi-baseline comparison + ablation + efficiency analysis.
-- Writing Quality: ⭐⭐⭐⭐⭐ Clear motivation, intuitive role design.
-- Value: ⭐⭐⭐⭐⭐ Fills an important gap in half-truth detection.
+- Novelty: ⭐⭐⭐⭐⭐ New paradigm of role-anchoring + omission reasoning
+- Experimental Thoroughness: ⭐⭐⭐⭐ Multi-baseline comparison + ablation + efficiency analysis
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear motivation and intuitive role design
+- Value: ⭐⭐⭐⭐⭐ Fills a critical gap in half-truth detection
 
 <!-- RELATED:START -->
 
@@ -132,8 +137,8 @@ On the PolitiFact-Hidden benchmark (under retrieved evidence conditions):
 - [\[ACL 2025\] CortexDebate: Debating Sparsely and Equally for Multi-Agent Debate](../../ACL2025/multi_agent/cortexdebate_debating_sparsely_and_equally_for_multi-agent_debate.md)
 - [\[AAAI 2026\] Beyond Detection: Exploring Evidence-based Multi-Agent Debate for Misinformation Intervention and Persuasion](../../AAAI2026/multi_agent/beyond_detection_exploring_evidence-based_multi-agent_debate_for_misinformation_.md)
 - [\[ACL 2026\] From Query to Counsel: Structured Reasoning with a Multi-Agent Framework and Dataset for Legal Consultation](from_query_to_counsel_structured_reasoning_with_a_multi-agent_framework_and_data.md)
-- [\[CVPR 2026\] Agent4FaceForgery: Multi-Agent LLM Framework for Realistic Face Forgery Detection](../../CVPR2026/multi_agent/agent4faceforgery_multi-agent_llm_framework_for_realistic_face_forgery_detection.md)
 - [\[ACL 2026\] When Identity Skews Debate: Anonymization for Bias-Reduced Multi-Agent Reasoning](when_identity_skews_debate_anonymization_for_bias-reduced_multi-agent_reasoning.md)
+- [\[ICML 2026\] Voting Protocols as Coordination Mechanisms for Role-Constrained Multi-Agent Tutoring Systems](../../ICML2026/multi_agent/voting_protocols_as_coordination_mechanisms_for_role-constrained_multi-agent_tut.md)
 
 </div>
 

@@ -2,14 +2,14 @@
 title: >-
   [Paper Note] DAG-MoE: From Simple Mixture to Structural Aggregation in Mixture-of-Experts
 description: >-
-  [ICML 2026][Model Compression][Mixture-of-Experts] Replaces the "weighted sum" of top-$K$ expert outputs in standard MoE with structural aggregation via a dynamically learned DAG. This significantly enhances MoE expressiveness and downstream reasoning performance with almost zero increase in routing or parameter overhead.
+  [ICML 2026][Model Compression][Mixture-of-Experts] Replaces the standard "weighted sum" aggregation of top-$K$ expert outputs in MoE with structural aggregation via a dynamically learned Directed Acyclic Graph (DAG), significantly enhancing MoE expressivity and downstream inference performance with negligible increases in routing or parameter overhead.
 tags:
   - ICML 2026
   - Model Compression
   - Mixture-of-Experts
   - DAG
 date: 2026-05-08
-content_hash: 5dbc92d98df0511f
+content_hash: 90a55b8399b20fdd
 ---
 # DAG-MoE: From Simple Mixture to Structural Aggregation in Mixture-of-Experts
 
@@ -17,69 +17,65 @@ content_hash: 5dbc92d98df0511f
 **arXiv**: [2606.01062](https://arxiv.org/abs/2606.01062)  
 **Code**: https://github.com/JiaruiFeng/DAG-MoE  
 **Area**: Model Compression / MoE Architecture  
-**Keywords**: Mixture-of-Experts, Structured Aggregation, DAG, Multi-step Reasoning, Sparse Routing  
+**Keywords**: Mixture-of-Experts, Structural Aggregation, DAG, Multi-step Reasoning, Sparse Routing  
 
 ## TL;DR
-Replaces the "weighted sum" of top-$K$ expert outputs in standard MoE with structural aggregation via a dynamically learned DAG. This significantly enhances MoE expressiveness and downstream reasoning performance with almost zero increase in routing or parameter overhead.
+Replaces the standard "weighted sum" aggregation of top-$K$ expert outputs in MoE with structural aggregation via a dynamically learned Directed Acyclic Graph (DAG), significantly enhancing MoE expressivity and downstream inference performance with negligible increases in routing or parameter overhead.
 
 ## Background & Motivation
 
-**Background**: Modern LLMs generally decouple parameter count and computation via MoE—a router selects top-$K$ FFN experts for each token, and the output is $y=\sum_{i=1}^{N} g_i(x) E_i(x)$. Existing scaling axes focus on two lines: making routing algorithms more accurate (Expert-Choice, RNN router, load-balance loss improvements) or making expert granularity finer (fine-grained, where larger $G=d_f/d_r$ increases the combination space).
+**Background**: Modern LLMs commonly use MoE to decouple parameter counts from computation—a router selects top-$K$ FFN experts for each token, outputting $y=\sum_{i=1}^{N} g_i(x) E_i(x)$. Existing scaling axes focus on improving routing accuracy or making expert granularity finer ($G=d_f/d_r$).
 
-**Limitations of Prior Work**: While fine-grained approaches explode the number of combinations $\binom{N}{K}$ (top-2/8=28 vs. top-4/16=1820), doubling $N$ simultaneously doubles routing parameters and load balancing complexity. Consequently, SOTA systems avoid extreme granularity. Furthermore, routers and experts have been repeatedly optimized, leading to diminishing returns.
+**Limitations of Prior Work**: While fine-grained approaches expand the combination space $\binom{N}{K}$, doubling $N$ simultaneously doubles routing parameters and load-balancing complexity. Furthermore, since routers and experts have been repeatedly optimized, gains from further tuning are diminishing.
 
-**Key Challenge**: The standard aggregation form $\sum g_i E_i$ is **permutation invariant**—once the top-$K$ set is fixed, the output is uniquely determined by this "multiset" of experts. Experts have no order or interaction, making multi-step combinations within a single layer impossible. In other words, the third core component of MoE—**aggregation**—has been neglected, locking the expressive upper bound to the weighted sum function family.
+**Key Challenge**: The standard aggregation form $\sum g_i E_i$ is **permutation-invariant**—once the top-$K$ set is fixed, the output is uniquely determined by this multiset of experts. Experts lack order, interaction, and multi-step combination capabilities within a single layer. Thus, the third core component of MoE—**aggregation**—has been ignored, locking expressivity within the weighted sum function family.
 
-**Goal**: (i) Propose an aggregation form stronger than weighted sum without increasing routing complexity; (ii) Provide rigorous expressiveness comparisons; (iii) Design a lightweight, end-to-end learnable module to implement this aggregation.
+**Goal**: (i) Propose an aggregation form stronger than weighted sum without increasing routing complexity; (ii) Provide rigorous expressivity comparisons; (iii) Design a lightweight, end-to-end learnable module to implement such aggregation.
 
-**Key Insight**: Treat the selected $K$ experts as nodes in a DAG—each node occupies a **different structural role**, and expert outputs are aggregated layer-by-layer along DAG edges. Thus, even with identical expert sets and router scores, a different DAG yields a completely different output. For a fixed $K$, the number of possible DAGs grows exponentially with depth, providing a brand-new scaling axis.
+**Key Insight**: View the selected $K$ experts as nodes on a DAG—each node occupies a **distinct structural role**, and expert outputs are aggregated layer-by-layer along DAG edges. For a fixed $K$, the number of possible DAGs grows exponentially with depth, providing a new scaling axis.
 
-**Core Idea**: Replace the permutation-invariant weighted sum step in the MoE layer with **structured aggregation on a per-token dynamically learned DAG**, thereby amplifying the combination space without touching the router or experts.
+**Core Idea**: Replace the permutation-invariant weighted sum in the MoE layer with a **per-token dynamically learned structural aggregation on a DAG**, thereby amplifying the combination space without modifying the router or experts.
 
 ## Method
 
 ### Overall Architecture
-DAG-MoE only modifies the final aggregation step in the MoE block, leaving the sparse router and expert FFNs intact. When a token enters, the router selects top-$K$ experts and provides $K$ initial node representations as usual. Each initial node is also injected with a $1/K$ scaled residual of the original token as layer 0 of the DAG. Then, a new **DAG learning module** takes over: it iterates $L$ times. In each round, it projects nodes to a lower dimension, dynamically learns a set of "edges" (soft gating) for nodes at the current depth, and updates representations along these edges. Finally, it sums all nodes at layer $L$ as the output for that token in the current layer. Since the router and experts are unchanged, it is natively compatible with existing MoE training stacks.
+DAG-MoE only modifies the final aggregation step in the MoE block. A token enters, the router selects top-$K$ experts, and $K$ initial node representations are initialized (including a $1/K$ scaled residual of the original token). Then, a **DAG learning module** iterates $L$ times: in each round, it reduces nodes to low dimensions, dynamically learns "edges" (soft gates) for current nodes, updates representations along these edges, and finally sums all nodes at layer $L$.
 
 ```mermaid
-graph TD
-    X["Input token x"] --> R["Sparse router selects top-K experts<br/>(Router and expert FFNs unchanged)"]
-    R --> N0["Initial Nodes = Layer 0<br/>Expert output + (1/K)·x residual injection"]
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    X["Input token x"] --> R["Sparse router selects top-K experts<br/>(Router & expert FFNs unchanged)"]
+    R --> N0["Initial nodes = Layer 0<br/>Expert output + (1/K)·x residual injection"]
     subgraph DAG["DAG learning module: Structural aggregation along DAG (L iterations)"]
         direction TB
-        A["Normalization + Dim reduction W_down<br/>Project to low dim d_g"] --> B["Edge Soft Gating<br/>e = σ(W_edge · Concat features)"]
-        B --> C["Node Update: Gated weighted aggregation<br/>+ W_up (Zero init) + Residual"]
+        A["Norm + Dim reduction W_down<br/>to low-dim d_g"] --> B["Edge soft-gating<br/>e = σ(W_edge · concat features)"]
+        B --> C["Node update: Gated weighted aggregation<br/>+ W_up (zero-init) + Residual"]
     end
     N0 --> DAG
-    DAG -->|"Layer-by-layer deepening, repeat L times"| S["Summation of Layer L nodes<br/>y = Σ x_i^L"]
+    DAG -->|"Layer-by-layer, L rounds"| S["Layer L node sum<br/>y = Σ x_i^L"]
     S --> OUT["MoE block output y"]
 ```
 
 ### Key Designs
 
-**1. General Formalization of DAG-style Aggregation: Theoretically proving "structured aggregation" is strictly stronger than "weighted sum"**
+**1. General Formulation and Theory**: 
+The authors prove that structural aggregation is strictly stronger than weighted sum. They show (Prop 3.1) that any DAG can be injectively encoded, leading to (Theorem 3.2) DAG-MoE being strictly stronger than standard MoE. Crucially, Theorem 3.3 states that a single DAG-MoE layer with one attention layer can simulate a complete dynamic program in $O(K\log n)$ input length, a feat standard MoE cannot achieve.
 
-Standard MoE output $y=\sum_i g_i E_i$ is permutation invariant—once the top-$K$ set is fixed, the output is uniquely determined by this multiset. DAG-MoE organizes the top-$K$ list $\bm{k}$ into a DAG $G=(\mathcal{V},\mathcal{A})$ with depth $L$ and $n(l)$ nodes per layer. Node $(l,i)$ specifies its source nodes via incoming edges $A_i^l$, and a single root node $(L,1)$ provides the final output. Formally, the initial layer is $x_i^0 = g_{\bm{k}[i]}(x) E_{\bm{k}[i]}(x)$, intermediate layers are $x_i^l = \mathrm{AGG}(\{x_j^k \mid (k,j)\in A_i^l\})$, and the output is $y=\mathrm{AGG}(\{x_j^k \mid (k,j)\in A_1^L\})$. Using GNN/D-VAE tools, if $\mathrm{AGG}$ is injective (constructed theoretically via MLP+sum/min/max), three conclusions follow: Prop 3.1: Any DAG can be injectively encoded; Theorem 3.2: DAG-MoE is strictly stronger than standard MoE; Theorem 3.3: A single-layer DAG-MoE with one multi-head attention layer can simulate a complete dynamic programming process within $O(K\log n)$ length, while standard MoE cannot. This proof transforms the intuition of "why aggregation matters" into a provable expressiveness gap.
-
-**2. Lightweight DAG learning module: Learning the DAG per-token without ground-truth structure**
-
-The general DAG search space is too large for end-to-end learning, so the space is constrained: fix $n(l)=K$ per layer, and allow node $(l,i)$ to connect only from the adjacent previous layer $l-1$, with earlier information carried via residuals. Each iteration starts with normalization and reduction: $x_{i,\mathrm{input}}^l=\mathrm{LN}(x_i^{l-1})$, $x_{i,\mathrm{down}}^l=W_{\mathrm{down}}^l x_{i,\mathrm{input}}^l$, compressing representations to a low dimension $d_g \ll d$. For each node pair $(i,j)$, candidate edge features are $x^l_{(i,j)}=\mathrm{Concat}(x_{i,\mathrm{down}}^l, x_{j,\mathrm{down}}^l)$, and a soft gate is learned:
-
+**2. Lightweight DAG Learning Module**: 
+The module fixes $n(l)=K$ per layer and allows connectivity from layer $l-1$ to $l$. It reduces representations to a low dimension $d_g \ll d$ for structure learning to minimize overhead. Edge features are concatenated to learn a soft gate:
 $$e^l_{(i,j)} = \sigma(W_{\mathrm{edge}}^l x^l_{(i,j)})$$
+Node information is weighted by these gates, projected back, and added to the residual. Zero-initializing $W_{\mathrm{up}}$ ensures the module acts as an identity mapping early in training, maintaining stability.
 
-to continuously control edge activation. Node information is aggregated via gated weighting $\hat{x}^l_{(i,j)} = e^l_{(i,j)} \odot W_{\mathrm{node}}^l x^l_{(i,j)}$, projected back to original dimension, and added via residual: $x_i^l = W_{\mathrm{up}}^l\sum_j \hat{x}_{(i,j)}^l + x_i^{l-1}$. After $L$ rounds, output $y=\sum_{i=1}^K x_i^L$. This design solves three engineering problems: learning the $K\times K$ adjacency matrix as a sigmoid soft gate avoids discrete structure search (similar to DARTS); structural learning in low-dimensional space keeps overhead comparable to a single shared expert; and zero-initializing $W_{\mathrm{up}}$ ensures the module acts as an identity mapping initially, avoiding scale drift and gradient instability.
-
-**3. Initial Node Token Residual Injection: Maintaining accessibility of original token representations**
-
-If initial nodes only contain expert outputs, the token's own information might be diluted during aggregation. Thus, each initial node is injected with a scaled original representation: $x_i^0 = g_{\bm{k}[i]}(x) E_{\bm{k}[i]}(x) + \tfrac{1}{K} x$. The $1/K$ factor ensures that after summing $K$ nodes in the final $\sum_i x_i^L$, the total residual contribution of the original token is exactly 1, matching the magnitude of the Transformer block's outer residual stream. Ablations show that removing this residual or the $1/K$ scaling causes training divergence or failure to converge.
+**3. Initial Node Residual Injection**: 
+To prevent token information dilution, each initial node receives $x_i^0 = g_{\bm{k}[i]}(x) E_{\bm{k}[i]}(x) + \tfrac{1}{K} x$. Summing $K$ nodes at the end recovers exactly 1x the original residual, matching Transformer block conventions.
 
 ### Loss & Training
-Follows Switch Transformer's token-choice router + load-balance loss, with additional router Z-loss to suppress logit drift. The backbone is modified from Llama3.1-8B. The training objective is standard causal LM.
+The model uses standard token-choice routing with load-balance loss and router Z-loss. The base architecture is adapted from Llama 3.1-8B and trained as a standard causal LM.
 
 ## Key Experimental Results
 
 ### Main Results
-Pre-training on 12B tokens of the Pile using three model tiers (DAG-MoE-s/-m/-l), with a baseline enhanced by a shared expert for strict parameter alignment. Large-scale training on 40B tokens compares DAG-MoE-l ($d_g=256$, $L=2$, 699M params) vs. MoE-l (shared expert $d_r=512$, 699M params):
+Large-scale training on 40B tokens compared DAG-MoE-l ($d_g=256, L=2$) vs. MoE-l (including a shared expert for parameter alignment):
 
 | Dataset | Metric | MoE-l | DAG-MoE-l | Gain |
 |--------|------|-------|-----------|------|
@@ -88,60 +84,40 @@ Pre-training on 12B tokens of the Pile using three model tiers (DAG-MoE-s/-m/-l)
 | FineWeb-Edu (OOD) | PPL ↓ | 25.38 | 24.69 | -0.69 |
 | C4 (OOD) | PPL ↓ | 35.21 | 34.21 | -1.00 |
 
-The OOD gap is significantly larger than in-domain, consistent with Theorem 3.2 stating that expressiveness advantages are more critical under distribution shift.
-
 ### Ablation Study
 
-| Configuration | Param Add | ΔPPL ↑ / Eval Loss ↓ | Description |
+| Configuration | Param Gain | ΔPPL ↑ / Eval Loss ↓ | Description |
 |------|------|----------------------|------|
 | Standard MoE | 0 | 0.000 / 2.7168 | Baseline |
-| + shared expert | 393K | 0.433 | Same params, just more experts |
-| Chain-of-Experts (CoE) | 393K | 0.480 | Same params, iterative router |
-| **DAG-MoE-s ($L=2$)** | 393K | **0.587** | Structural aggregation is strongest |
-| MLP mixing $d_g=64$ | 98K | -0.0838 (Regression) | Unstructured MLP mixing is worse |
-| Downstream Finetuning (DAG-MoE-l vs MoE-l) | — | 26.13 vs 24.06 (avg 7 task) | GPQA +6.06, Lambada +3.46, PIQA +3.15 |
+| Chain-of-Experts | 393K | 0.480 | Iterative routing baseline |
+| **DAG-MoE-s ($L=2$)**| 393K | **0.587** | Best performance |
+| MLP mixing | 98K | -0.0838 | Unstructured mixing causes regression |
 
 ### Key Findings
-- **Structure itself is key**, not just extra parameters: CoE with identical parameters only achieved 0.480, while unstructured MLP performed worse than the baseline. This indicates that the "order and iterative combination" provided by DAG is a truly effective inductive bias.
-- **Iteration count $L$ is more cost-effective than dimension $d_g$**: Moving from $L=0\to1$ and $L=1\to2$ drops PPL by ~0.5, while $L=3$ shows marginal returns. $d_g=64, L=2$ outperforms $d_g=128, L=1$ with fewer parameters.
-- **Low throughput cost**: $L=1$ adds only 1.51% wall-clock overhead; $L=2$ adds 4.49%. FLOPs are nearly identical.
-- **Downstream gains concentrated in multi-step reasoning**: Significant improvements in GPQA, Lambada, PIQA, and BBH, while pattern-matching tasks like HellaSwag/MMLU remain nearly unchanged—confirming that structural aggregation primarily benefits compositional reasoning.
+- **Structure is the key**: Unstructured MLP mixing performs worse than the baseline, confirming that the "order and iterative combination" of a DAG provides essential inductive bias.
+- **Iteration count $L$ is efficient**: Most gains are captured by $L=2$, with minimal marginal utility at $L=3$. 
+- **Low throughput cost**: $L=2$ adds only 4.49% wall-clock overhead.
+- **Gains in multi-step reasoning**: Downstream improvements are concentrated in reasoning tasks (GPQA, BBH) rather than pattern-matching ones.
 
 ## Highlights & Insights
-- Posits the MoE "aggregation operator" as an independent design axis and links it to GNN expressiveness (D-VAE/GIN framework), contributing three progressive theoretical results.
-- Theorem 3.3 (single-layer DAG-MoE + attention can simulate DP) is a bold claim, though the authors conservatively state it is a capacity result and do not claim learned DAGs explicitly correspond to DP procedures.
-- The soft gate $e^l_{(i,j)}$ effectively learns an adjacency matrix as a sigmoid mask, similar to continuous relaxation in NAS/DARTS but performed on a tiny $K\times K$ graph to avoid search costs.
-- The "OOD gap > in-domain gap" phenomenon is rare in MoE literature but theoretically sound: OOD tokens are more likely to fall into unseen expert combinations, where structural aggregation diversity advantages are magnified.
+- Proposes MoE "aggregation" as a new independent design axis and bridges it with GNN expressivity theory.
+- The "theory as motivation, experiment as evidence" approach provides strong justification for structural aggregation.
+- The finding that the OOD gap is larger than the in-domain gap supports the theory that structural diversity is crucial for unseen token-expert combinations.
 
 ## Limitations & Future Work
-- DAG space is artificially restricted (fixed $K$ nodes, adjacent layer connections), which limits the full potential of Prop 3.1 and Thm 3.3.
-- The problem of "finding the optimal DAG" and "stabilizing learning" is largely unaddressed, relying solely on sigmoid gating and gradients.
-- Experiments capped at 699M parameters / 40B tokens. Scaling behavior for multi-billion parameter models remains unknown; the 4.49% time overhead for $L=2$ might be amplified in larger sequential models.
-- The implementation of AGG (simplified to sigmoid gating + sum) lacks full ablation compared to the theoretical injective MLP+sum.
+- The learnable DAG space is currently restricted to adjacent layer connectivity.
+- The method relies on soft-gating gradients; finding the "globally optimal" discrete DAG remains an open problem.
+- Scaling behavior beyond 700M parameters and 40B tokens is yet to be fully validated.
 
 ## Related Work & Insights
-- **vs. Chain-of-Experts (CoE, Wang 2025)**: CoE uses "multi-round routing + incremental refinement," requiring independent routers per round. DAG-MoE routes once and leaves multi-step logic to the DAG module, outperforming CoE by 0.107 PPL at equal parameters.
-- **vs. S′MoRE (Zeng 2025)**: S′MoRE also uses structural aggregation but with fixed tree structures as PEFT adapters; DAG-MoE generalizes this to arbitrary DAGs within the backbone.
-- **vs. DiEP (Bai 2026)**: DiEP uses DAGs for differentiable expert pruning; DAG-MoE uses them to increase expressivity.
-- **vs. Fine-grained MoE (He 2024 et al.)**: Fine-grained focuses on expanding combinations by picking "which" experts; DAG-MoE expands "how" they combine. These axes are orthogonal.
+- **vs Chain-of-Experts**: DAG-MoE routes only once, reducing complexity while achieving better performance (+0.107 PPL). 
+- **vs Fine-grained MoE**: While fine-grained MoE scales via expert selection ($N$), DAG-MoE scales via expert combination (aggregation). These approaches are orthogonal.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Treats aggregation as a standalone axis for expressiveness and links it to GNN theory.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Three model tiers and multiple baselines, though scale is still relatively small.
-- Writing Quality: ⭐⭐⭐⭐⭐ Elegant progression from theory to experiment; excellent qualitative explanation of OOD vs. in-domain results.
-- Value: ⭐⭐⭐⭐ Provides a nearly "free" new axis for MoE improvement (<5% throughput), though sequential scaling is unproven.
-
-<!-- RELATED:START -->
-
-<div class="related-papers" markdown="1">
-
-1. **Switch Transformers**: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity (Fedus et al., 2022)
-2. **DeepSeek-V3 Technical Report**: Explaining Multi-token Prediction and Fine-grained Expert Design (DeepSeek-AI, 2024)
-3. **Chain-of-Experts**: High-order Expert Interaction for Mixture-of-Experts (Wang et al., 2025)
-
-</div>
-
-<!-- RELATED:END -->
+- Novelty: ⭐⭐⭐⭐⭐ 
+- Experimental Thoroughness: ⭐⭐⭐⭐ 
+- Writing Quality: ⭐⭐⭐⭐⭐ 
+- Value: ⭐⭐⭐⭐
 
 ## Related Papers
 
@@ -149,7 +125,23 @@ The OOD gap is significantly larger than in-domain, consistent with Theorem 3.2 
 - [\[ICLR 2026\] Coupling Experts and Routers in Mixture-of-Experts via an Auxiliary Loss](../../ICLR2026/model_compression/coupling_experts_and_routers_in_mixture-of-experts_via_an_auxiliary_loss.md)
 - [\[ICLR 2026\] Unveiling Super Experts in Mixture-of-Experts Large Language Models](../../ICLR2026/model_compression/unveiling_super_experts_in_mixture-of-experts_large_language_models.md)
 - [\[CVPR 2026\] Enhancing Mixture-of-Experts Specialization via Cluster-Aware Upcycling](../../CVPR2026/model_compression/enhancing_mixture_of_experts_specialization_via_cluster_aware_upcycling.md)
-- [\[ICLR 2026\] LD-MoLE: Learnable Dynamic Routing for Mixture of LoRA Experts](../../ICLR2026/model_compression/ld-mole_learnable_dynamic_routing_for_mixture_of_lora_experts.md)
+- [\[ICLR 2026\] Efficient Quantization of Mixture-of-Experts with Theoretical Generalization Guarantees](../../ICLR2026/model_compression/efficient_quantization_of_mixture-of-experts_with_theoretical_generalization_gua.md)
+
+</div>
+
+<!-- RELATED:END -->
+
+<!-- RELATED:START -->
+
+<div class="related-papers" markdown="1">
+
+## Related Papers
+
+- [\[ICLR 2026\] MoBE: Mixture-of-Basis-Experts for Compressing MoE-based LLMs](../../ICLR2026/model_compression/mobe_mixture-of-basis-experts_for_compressing_moe-based_llms.md)
+- [\[ICML 2026\] Breaking the MoE LLM Trilemma: Dynamic Expert Clustering with Structured Compression](breaking_the_moe_llm_trilemma_dynamic_expert_clustering_with_structured_compress.md)
+- [\[ICLR 2026\] Coupling Experts and Routers in Mixture-of-Experts via an Auxiliary Loss](../../ICLR2026/model_compression/coupling_experts_and_routers_in_mixture-of-experts_via_an_auxiliary_loss.md)
+- [\[ICML 2026\] UB-SMoE: Universally Balanced Sparse Mixture-of-Experts for Resource-Adaptive Federated Fine-tuning of Foundation Models](ub-smoe_universally_balanced_sparse_mixture-of-experts_for_resource-adaptive_fed.md)
+- [\[ICML 2026\] RQ-MoE: Residual Quantization via Mixture of Experts for Efficient Input-Dependent Vector Compression](rq-moe_residual_quantization_via_mixture_of_experts_for_efficient_input-dependen.md)
 
 </div>
 

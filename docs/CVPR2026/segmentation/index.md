@@ -82,7 +82,7 @@ item_total: 117
 
 **📷 CVPR2026** · **117** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (13)](../../ICML2026/segmentation/index.md) · [🔬 ICLR2026 (11)](../../ICLR2026/segmentation/index.md) · [🤖 AAAI2026 (29)](../../AAAI2026/segmentation/index.md) · [🧠 NeurIPS2025 (45)](../../NeurIPS2025/segmentation/index.md) · [📹 ICCV2025 (73)](../../ICCV2025/segmentation/index.md)
+📌 **Same area in other venues:** [🔬 ICLR2026 (32)](../../ICLR2026/segmentation/index.md) · [🧪 ICML2026 (14)](../../ICML2026/segmentation/index.md) · [🤖 AAAI2026 (29)](../../AAAI2026/segmentation/index.md) · [🧠 NeurIPS2025 (45)](../../NeurIPS2025/segmentation/index.md) · [📹 ICCV2025 (73)](../../ICCV2025/segmentation/index.md)
 
 🔥 **Top topics:** Segmentation ×82 · Remote Sensing ×7 · Object Detection ×6 · Diffusion Models ×4 · Few-/Zero-Shot Learning ×4
 

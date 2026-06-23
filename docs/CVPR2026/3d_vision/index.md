@@ -83,7 +83,7 @@ item_total: 646
 
 **📷 CVPR2026** · **646** paper notes
 
-📌 **Same area in other venues:** [🧪 ICML2026 (24)](../../ICML2026/3d_vision/index.md) · [🔬 ICLR2026 (62)](../../ICLR2026/3d_vision/index.md) · [🤖 AAAI2026 (79)](../../AAAI2026/3d_vision/index.md) · [🧠 NeurIPS2025 (116)](../../NeurIPS2025/3d_vision/index.md) · [📹 ICCV2025 (267)](../../ICCV2025/3d_vision/index.md)
+📌 **Same area in other venues:** [🔬 ICLR2026 (201)](../../ICLR2026/3d_vision/index.md) · [🧪 ICML2026 (30)](../../ICML2026/3d_vision/index.md) · [🤖 AAAI2026 (79)](../../AAAI2026/3d_vision/index.md) · [🧠 NeurIPS2025 (116)](../../NeurIPS2025/3d_vision/index.md) · [📹 ICCV2025 (267)](../../ICCV2025/3d_vision/index.md)
 
 🔥 **Top topics:** 3D Gaussian Splatting ×102 · Dynamic Scenes ×58 · 3D Reconstruction ×37 · Point Cloud ×32 · Diffusion Models ×27
 

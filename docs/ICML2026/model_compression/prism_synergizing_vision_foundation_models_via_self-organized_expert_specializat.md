@@ -2,13 +2,13 @@
 title: >-
   [Paper Note] PRISM: Synergizing Vision Foundation Models via Self-Organized Expert Specialization
 description: >-
-  [ICML 2026][Model Compression][MoE] PRISM distills three heterogeneous vision foundation models (CLIP, SAM, DINOv2) into a single ViT student using a "dual-stream conditional MoE." This architecture consists of a shared anchor stream for gradient stability and a context-routed sparse expert stream for conflict resolution. This allows experts to self-orga
+  [ICML 2026][Model Compression][MoE] PRISM distills three heterogeneous Vision Foundation Models (CLIP, SAM, and DINOv2) into a single ViT student. By employing a "dual-stream conditional MoE"—consisting of a shared anchor stream for gradient stability and a context-routed sparse expert stream for conflict resolution—experts self-organize to share consens
 tags:
   - ICML 2026
   - Model Compression
   - MoE
 date: 2026-05-08
-content_hash: c59aeb42642bf3f7
+content_hash: 22c8adf372b81d70
 ---
 # PRISM: Synergizing Vision Foundation Models via Self-Organized Expert Specialization
 
@@ -16,70 +16,66 @@ content_hash: c59aeb42642bf3f7
 **arXiv**: [2606.03444](https://arxiv.org/abs/2606.03444)  
 **Code**: https://github.com/robotyingtang/PRISM-VFM  
 **Area**: Multimodal VLM / Vision Foundation Model Distillation  
-**Keywords**: Multi-teacher distillation, Vision Foundation Model, MoE, Context-aware routing, Gradient conflict  
+**Keywords**: Multi-teacher distillation, Vision Foundation Models, MoE, Contextual routing, Gradient conflict  
 
 ## TL;DR
-PRISM distills three heterogeneous vision foundation models (CLIP, SAM, DINOv2) into a single ViT student using a "dual-stream conditional MoE." This architecture consists of a shared anchor stream for gradient stability and a context-routed sparse expert stream for conflict resolution. This allows experts to self-organize—sharing consensus knowledge and branching for conflicting knowledge—outperforming the previous SOTA (SAK) across all five tasks on PASCAL-Context.
+PRISM distills three heterogeneous Vision Foundation Models (CLIP, SAM, and DINOv2) into a single ViT student. By employing a "dual-stream conditional MoE"—consisting of a shared anchor stream for gradient stability and a context-routed sparse expert stream for conflict resolution—experts self-organize to share consensus knowledge and branch for conflicting knowledge. It outperforms the previous SOTA, SAK, across all five tasks on PASCAL-Context.
 
 ## Background & Motivation
-**Background**: Vision foundation models (VFMs) like CLIP (semantic alignment), SAM (boundary/geometry), and DINOv2 (fine-grained local texture) possess distinct strengths. Industrial deployment seeks to compress these capabilities into a single student backbone to reduce memory and latency.
+**Background**: CLIP (semantic alignment), SAM (boundary/geometry), and DINOv2 (fine-grained local texture) each possess distinct strengths. Industrial deployment aims to compress these capabilities into a single student backbone to reduce memory and latency.
 
-**Limitations of Prior Work**: Compressing multi-teacher features into a dense student (e.g., RADIO, Theia, UNIC series) leads to severe gradient conflicts. For instance, CLIP encourages features to be category-invariant (compressing variance), while DINOv2 requires local textures to be discriminative (maintaining variance). Shared parameters receive gradients in opposite directions $\cos(\mathbf{g}_i, \mathbf{g}_j) < 0$, causing magnitude cancellation and resulting in a suboptimal compromise that excels in neither domain.
+**Limitations of Prior Work**: Compressing multiple teacher features into a dense student (e.g., RADIO, Theia, UNIC) leads to severe gradient conflicts. For instance, CLIP favors category-invariant features (variance compression), while DINO demands local texture discriminability (variance preservation). Shared parameters receive opposing gradients $\cos(\mathbf{g}_i, \mathbf{g}_j) < 0$ during backpropagation, causing the synthesized gradient magnitude to cancel out, resulting in a suboptimal compromise that excels at neither.
 
-**Key Challenge**: Existing "divide-and-conquer" solutions (e.g., SAK using Teacher-Agnostic Stems + Teacher-Specific Adapters) mitigate interference via hard branching. However, this assumes a strong hypothesis that "visual knowledge can be explicitly partitioned into disjoint sub-domains." In reality, CLIP and DINO might encode a "cat" as different frequency bands of the same concept (semantics vs. local texture); hard partitioning leads to either parameter redundancy or the death of positive transfer.
+**Key Challenge**: Existing "divide and conquer" schemes (like SAK's Teacher-Agnostic Stem + Teacher-Specific Adapters) mitigate interference via hard branching. However, this relies on the overly strong assumption that "visual knowledge can be explicitly partitioned into disjoint sub-domains." In reality, CLIP and DINO often encode different frequency bands of the same concept (e.g., semantics vs. local texture). Hard partitioning either wastes parameters (copying consensus $K$ times) or stifles positive transfer.
 
-**Goal**: In multi-teacher VFM distillation, avoid both "dense sharing (conflict)" and "hard partitioning (redundancy)." Instead, seek an intermediate path that dynamically decides whether to share or branch based on token, layer, and teacher context.
+**Goal**: In multi-teacher VFM distillation, avoid both "complete sharing leading to conflict" (dense models) and "complete hard splitting leading to redundancy" (SAK-style). The objective is a middle ground that dynamically decides between sharing and branching based on token, layer, and teacher context.
 
-**Key Insight**: Treat the sparse routing of MoE as a tool for "gradient orthogonalization." For conflicting teacher gradients, route them to different experts to minimize the effective inner product $\langle \tilde{\mathbf{g}}_{i,n}, \tilde{\mathbf{g}}_{j,n}\rangle \approx 0$; for consensus knowledge, utilize a shared anchor stream.
+**Key Insight**: Treat sparse MoE routing as a tool for "gradient orthogonalization." For conflicting teacher gradients, route them to different experts to minimize the effective inner product $\langle \tilde{\mathbf{g}}_{i,n}, \tilde{\mathbf{g}}_{j,n}\rangle \approx 0$. For consensus components, route them through a shared anchor stream.
 
-**Core Idea**: A "Decompose-then-Recombine" two-stage paradigm is proposed. Stage 1 uses teacher IDs as context to allow sparse experts to emerge via self-organized specialization. Stage 2 uses task IDs as context to recombine these experts for downstream tasks. A locality-aware decorrelation loss is introduced to prevent premature collapse in shallow layers due to strong semantic supervision.
+**Core Idea**: A "Decompose-then-Recombine" two-stage paradigm is proposed. Stage 1 uses Teacher ID as context to allow sparse experts to undergo emergent specialization during multi-teacher distillation. Stage 2 uses Task ID as context to recombine these experts for downstream tasks. A locality-aware decorrelation loss is introduced to prevent early collapse in shallow layers caused by the strong semantic supervision of CLIP.
 
 ## Method
 
 ### Overall Architecture
-PRISM compresses CLIP, SAM, and DINOv2 into a ViT-B/16 student. The FFNs of layers 2, 5, 8, and 11 are replaced with **PRISM blocks**—a **dual-stream conditional MoE**. This includes a **Universal Anchor** (a shared dense MLP $\mathcal{F}_{\text{anc}}$ handling task-agnostic low-frequency consensus for stability) and a **Specialized Delta** (a sparse MoE $\mathcal{F}_{\text{moe}}$ with 15 experts, Top-3 routing, and one internal shared expert, modulated by context $c$ to resolve conflicts). The output is fused via a learnable gate $\lambda \in [0,1]$ as $\mathbf{y} = \mathbf{x} + \lambda \cdot \mathcal{F}_{\text{anc}}(\text{LN}(\mathbf{x})) + (1-\lambda) \cdot \mathcal{F}_{\text{moe}}(\mathbf{x}, c)$. Training follows a two-stage process: Stage 1 distills from 3 frozen ViT-L teachers on ImageNet-1k (30 epochs) using Teacher IDs as context; Stage 2 recombines experts on PASCAL-Context/NYUD-v2 (40k iterations) using Task IDs as context.
+PRISM compresses CLIP, SAM, and DINOv2 into a ViT-B/16 student without gradient cancellation. The standard FFNs at layers 2, 5, 8, and 11 are replaced with **PRISM blocks**—a **dual-stream conditional MoE**. This includes a **Universal Anchor** (a dense MLP $\mathcal{F}_{\text{anc}}$ shared across all contexts to capture task-agnostic low-frequency consensus for stability) and a **Specialized Delta** (a sparse MoE $\mathcal{F}_{\text{moe}}$ with 15 experts, Top-3 routing, and an internal shared expert, modulated by context $c$ to resolve conflicts). The output is a weighted sum via a learnable gate $\lambda \in [0, 1]$: $\mathbf{y} = \mathbf{x} + \lambda \cdot \mathcal{F}_{\text{anc}}(\text{LN}(\mathbf{x})) + (1-\lambda) \cdot \mathcal{F}_{\text{moe}}(\mathbf{x}, c)$. Training follows the "Decompose-then-Recombine" paradigm: Stage 1 involves distillation on ImageNet-1k (30 epochs) using Teacher IDs to foster self-organized specialization from three frozen ViT-L teachers. Stage 2 fine-tunes on PASCAL-Context/NYUD-v2 (40k iterations) using Task IDs to recombine experts.
 
 ```mermaid
-%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
-flowchart TD
-    X["Input token feature x<br/>ViT-B/16 layers 2/5/8/11 FFN → PRISM Block"]
-    X --> ANC["Universal Anchor (Stable Stream)<br/>Shared dense MLP for low-frequency consensus"]
-    X --> FILM["Context-Modulated Routing<br/>FiLM with Context ID c modulates features"]
-    FILM --> ROUTE["Top-3 Router<br/>15 experts + 1 internal shared expert"]
-    ROUTE --> DELTA["Specialized Delta (Plastic Stream)<br/>Sparse MoE resolves conflicts via context"]
-    ANC -->|"× λ"| GATE["Learnable Gating Fusion<br/>y = x + λ·Anchor + (1−λ)·Delta"]
+graph TD
+    X["Input token features x<br/>ViT-B/16 layers 2/5/8/11 FFN → PRISM Block"]
+    X --> ANC["Universal Anchor (Stable Stream)<br/>Shared dense MLP for consensus"]
+    X --> FILM["Context-Modulated Routing<br/>FiLM modulates features using Context ID c"]
+    FILM --> ROUTE["Top-3 Router<br/>15 Experts + 1 Internal Shared Expert"]
+    ROUTE --> DELTA["Specialized Delta (Plastic Stream)<br/>Sparse MoE for conflict resolution"]
+    ANC -->|"× λ"| GATE["Learnable Gating λ Fusion<br/>y = x + λ·Anchor + (1−λ)·Delta"]
     DELTA -->|"× (1−λ)"| GATE
     GATE --> OUT["Block Output y"]
-    CTX["Context ID c: Switch for Gradient Orthogonalization<br/>Stage 1 = Teacher ID (Decompose conflict)<br/>Stage 2 = Task ID (Recombine downstream)"] -.-> FILM
+    CTX["Context ID c: Gradient Orthogonalization Switch<br/>Stage 1 = Teacher ID<br/>Stage 2 = Task ID"] -.-> FILM
     LDL["Locality-Aware Decorrelation Loss<br/>Applied to shallow layers to prevent rank collapse"] -.-> X
 ```
 
 ### Key Designs
 
 **1. MoE as a Gradient Orthogonalization Tool: Resolving Conflicts via Sparse Routing**
+The core pain point of multi-teacher distillation is optimization conflict: the aggregated gradient in a dense backbone is $\mathbf{g}_{\text{total}} = \sum_k \gamma_k \mathbf{g}_k$. If two teachers have opposing directions $\cos(\mathbf{g}_i, \mathbf{g}_j) < 0$, the magnitude collapses (gradient averaging). PRISM leverages sparse MoE to mitigate this—routing conflicting teacher gradients to different experts $E_n$, ensuring the effective inner product on the same parameters $\langle \tilde{\mathbf{g}}_{i,n}, \tilde{\mathbf{g}}_{j,n}\rangle \approx 0$. Consensus flows through the Universal Anchor, while conflicts are branched via the Conditioned MoE.
 
-The root pain point of multi-teacher distillation is optimization contradiction. In a dense backbone, the aggregate gradient is $\mathbf{g}_{\text{total}} = \sum_k \gamma_k \mathbf{g}_k$. When two teachers point in opposite directions $\cos(\mathbf{g}_i, \mathbf{g}_j) < 0$ (e.g., CLIP vs. DINO), the magnitude collapses $\mathbf{g}_i \approx -\mathbf{g}_j$, leading to "gradient averaging" and suboptimal equilibrium. PRISM argues that sparse MoE naturally alleviates this: by routing conflicting teacher gradients to different experts $E_n$, the effective inner product on the same parameters $\langle \tilde{\mathbf{g}}_{i,n}, \tilde{\mathbf{g}}_{j,n}\rangle \approx 0$ is minimized. Consequently, specialization emerges naturally: consensus knowledge flows through the Universal Anchor, while conflicts are diverted through the Conditioned MoE.
+**2. Context-Modulated Routing: Making the Router "Context-Aware"**
+Standard MoE routers only consider image content. When CLIP and DINO teachers view the same image, they would produce identical routing, causing emergent specialization to fail. PRISM uses FiLM to inject Context ID $c$ as an affine transformation: $\hat{\mathbf{x}} = (1+\gamma(c)) \odot \text{LayerNorm}(\mathbf{x}) + \beta(c)$. The router $G(\hat{\mathbf{x}})$ then performs Top-$K$ dispatching. The MoE output is $\mathcal{F}_{\text{moe}}(\mathbf{x}, c) = E_{\text{shared}}(\mathbf{x}) + \sum_{i \in \text{TopK}} G(\hat{\mathbf{x}})_i E_i(\mathbf{x})$. PRISM modulates only the **routing decision**, keeping the expert parameters focused on feature learning, which separates routing logic from representation learning.
 
-**2. Context-Modulated Routing: Making the Router "Context-Aware" via FiLM**
-
-Standard MoE routers only consider image content. Thus, if a CLIP teacher and a DINO teacher process the same image, they might be routed to the same expert, causing emergent specialization to fail. PRISM uses FiLM to inject the Context ID $c$ (Teacher ID in Stage 1, Task ID in Stage 2) as an affine transformation: $\hat{\mathbf{x}} = (1+\gamma(c)) \odot \text{LayerNorm}(\mathbf{x}) + \beta(c)$. The router $G(\hat{\mathbf{x}})$ then performs Top-K dispatching. The MoE output is $\mathcal{F}_{\text{moe}}(\mathbf{x}, c) = E_{\text{shared}}(\mathbf{x}) + \sum_{i \in \text{TopK}} G(\hat{\mathbf{x}})_i \, E_i(\mathbf{x})$, where $E_{\text{shared}}$ absorbs common biases. Unlike MoFME, which uses FiLM to replace expert computation, PRISM's FiLM only modulates the **routing decision**, maintaining independence between routing and representation learning.
-
-**3. Locality-Aware Decorrelation Loss: Supporting High-Rank Representations to Prevent Collapse**
-
-MoE routing effectiveness depends on token diversity. However, multi-teacher distillation often suffers from "semantic short-circuiting," where strong CLIP supervision causes shallow layers to converge early to global semantics, causing token homogenization (rank collapse). LDL is applied only to the first two layers to penalize high cosine similarity between spatially distant tokens while preserving local correlations: $\mathcal{L}_{\text{decorr}} = \frac{1}{|\mathcal{P}|} \sum_{(i,j) \in \mathcal{P}} \max(0, \cos(\mathbf{z}_i, \mathbf{z}_j) - \epsilon) \cdot \mathbb{I}(d_{ij} > r)$, where $r$ is a local radius and $d_{ij}$ is the Euclidean distance. This injects a "local inductive bias" that forces distant tokens to remain distinct, providing discriminative features for deeper experts.
+**3. Locality-Aware Decorrelation Loss (LDL): Sustaining High-Rank Bases in Shallow Layers**
+Effective MoE routing relies on token diversity. However, multi-teacher distillation often suffers from "semantic short-circuiting," where CLIP’s strong semantic supervision causes shallow layers to converge prematurely to global semantics, causing rank collapse. LDL is applied to the first two layers to penalize high cosine similarity between spatially distant tokens while preserving local correlations: $$\mathcal{L}_{\text{decorr}} = \frac{1}{|\mathcal{P}|} \sum_{(i,j) \in \mathcal{P}} \max(0, \cos(\mathbf{z}_i, \mathbf{z}_j) - \epsilon) \cdot \mathbb{I}(d_{ij} > r)$$, where $r$ is the local radius. This forces distant tokens to remain distinct, providing the deep experts with discriminative "raw materials."
 
 ### Loss & Training
-- **Stage 1**: $\mathcal{L}_{\text{stage1}} = \mathcal{L}_{\text{aux}} + \alpha \mathcal{L}_{\text{distill}} + \beta \mathcal{L}_{\text{decorr}}$, with $\alpha=0.9, \beta=0.1$. A teacher $T_k$ is randomly sampled per iteration.
-- **Stage 2**: $\mathcal{L}_{\text{stage2}} = \mu \mathcal{L}_{\text{distill}} + \sum_{t} w_t \mathcal{L}_t$, with $\mu=1.0$ and fixed task weights $w_t$.
-- Backbone: ViT-B/16. MoE: 15 experts + 1 shared expert per Layer, Top-3 routing. The gate $\lambda$ naturally evolves into a "shallow=stable, deep=specialized" hierarchy.
+- **Stage 1**: $\mathcal{L}_{\text{stage1}} = \mathcal{L}_{\text{aux}} + \alpha \mathcal{L}_{\text{distill}} + \beta \mathcal{L}_{\text{decorr}}$, with $\alpha=0.9, \beta=0.1$. A teacher $T_k$ is randomly sampled each iteration for ID-based context.
+- **Stage 2**: $\mathcal{L}_{\text{stage2}} = \mu \mathcal{L}_{\text{distill}} + \sum_{t} w_t \mathcal{L}_t$, with $\mu=1.0$ and $w_t$ fixed per standard MTL practices.
+- Architecture: ViT-B/16 backbone, 15 experts + 1 shared expert per MoE layer, Top-3 routing. Gating $\lambda$ naturally evolves to be higher in shallow layers (stability) and lower in deep layers (specialization).
 
 ## Key Experimental Results
 
 ### Main Results
-Evaluation conducted on PASCAL-Context (5 tasks: SemSeg, Parsing, Saliency, Normal, Boundary) and NYUD-v2 (4 tasks).
+Evaluated on PASCAL-Context (5 tasks) and NYUD-v2 (4 tasks).
 
 | Method (PASCAL-Context, ViT-B) | SemSeg mIoU↑ | Parsing mIoU↑ | Saliency maxF↑ | Normal mErr↓ | Boundary odsF↑ | $\Delta_m$ %↑ |
-|------|------|------|------|------|------|------|
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
 | Single-task baseline | 80.25 | 70.54 | 84.54 | 13.57 | 74.22 | 0.00 |
 | Multi-task baseline | 76.76 | 65.26 | 84.39 | 13.98 | 70.37 | -4.04 |
 | RADIO | 78.06 | 68.13 | 85.18 | 13.59 | 72.64 | -1.53 |
@@ -87,53 +83,54 @@ Evaluation conducted on PASCAL-Context (5 tasks: SemSeg, Parsing, Saliency, Norm
 | SAK (Prev. SOTA) | 81.88 | 74.30 | 84.79 | 14.02 | 74.09 | 0.83 |
 | **PRISM (Ours)** | **82.20** | **75.34** | **84.81** | **13.47** | **75.92** | **2.29** |
 
-**Key Observations**: (1) Average gain $\Delta_m$ improved from SAK's 0.83% to 2.29%, marking the first time a multi-task unified model significantly outperformed single-task baselines on PASCAL-Context. (2) PRISM outperformed SAK across **all** five tasks. Significant gains in Boundary (+1.83 odsF) and Normal (-0.55 mErr) suggest that emergent experts are more efficient at extracting shared geometric structures than SAK's isolated adapters.
+**Observation**: (1) $\Delta_m$ improves from SAK's 0.83% to 2.29%, marking the first time a multi-task model significantly outperforms the single-task baseline on PASCAL-Context. (2) PRISM exceeds SAK in **all** five tasks, particularly in geometric tasks like Boundary (+1.83 odsF) and Normal (-0.55 mErr).
 
 ### Ablation Study
+On NYUD-v2, PRISM and SAK are competitive. PRISM leads in SemSeg and Depth, while SAK performs slightly better in Normal/Boundary. This suggests SAK’s dedicated adapters might be more localized for high-frequency indoor signals, reflecting a trade-off between flexible recombination and rigid specialization.
 
-| Configuration | Key Finding | Description |
-|------|---------|------|
-| Full PRISM | $\Delta_m = 2.29\%$ | Dual-stream + FiLM + LDL enabled |
-| Shallow vs. Deep $\lambda$ | Shallow $\lambda$ high, Deep $\lambda$ low | Spontaneous hierarchical pattern: "Shallow shared, deep specialized" |
-| Stage 1 Teacher ID Routing | Teachers routed to different experts | Confirms that emergent specialization actually occurred |
+| Configuration | Key Findings |
+| :--- | :--- |
+| Full PRISM | $\Delta_m=2.29\%$ (Dual-stream + FiLM + LDL enabled) |
+| Layerwise $\lambda$ | Higher in shallow layers, lower in deep layers; learned hierarchical pattern. |
+| Stage 1 Routing | Different teachers indeed activate different experts (Emergent specialization). |
 
 ### Key Findings
-- **$\lambda$ Hierarchical Evolution**: The gate $\lambda$ automatically learns that shallow layers require the Universal Anchor for robust optimization, while deep layers utilize sparse experts for fine specialization. This aligns with the semantic hierarchy of ViT.
-- **Cross-Teacher Geometric Knowledge**: Improvement in geometric tasks suggests emergent experts leverage shared boundaries across SAM and DINOv2 better than SAK's hard-branching adapters.
-- **LDL Placement**: LDL is only effective in the first two layers; adding it to deep layers harms specialization, confirming that "short-circuiting" primarily occurs at the beginning of the network.
+- **$\lambda$ Hierarchy**: Shallow layers favor the Universal Anchor for robust optimization, while deep layers favor sparse experts for fine-grained specialization.
+- **Cross-Teacher Geometry**: PRISM's gain in geometric tasks proves that emergent experts are more efficient at mining shared structures (e.g., boundaries common to SAM/DINO) than SAK’s hard-partitioned adapters.
+- **LDL Placement**: Restricting LDL to the first two layers is sufficient; applying it to deep layers harms specialization, confirming that "short-circuiting" is a shallow-layer issue.
 
 ## Highlights & Insights
-- **MoE as an "Orthogonalizer"**: This perspective shifts MoE from merely "increasing capacity" to a structural solution for resolving gradient conflicts in multi-objective optimization.
-- **FiLM on Routing vs. Calculation**: Modulating only the routing decision ensures representational purity. In contrast, approaches that use FiLM for expert computation couple the routing logic too tightly with feature learning.
-- **Dual-stream Philosophy**: The "stable + plastic" design is transferable to scenarios requiring both general capability preservation and downstream specialization, such as multimodal instruction tuning.
+- **MoE for Gradient Orthogonalization**: This perspective reframes MoE from a "capacity/conditional computation" tool to a "structural solution for multi-objective gradient conflict."
+- **Routing vs. Representation**: Using FiLM to modulate only the router ensures specialized decision-making without intertwining expert weight logic with routing logic.
+- **Anchor Philosophy**: The Dual-stream design (Stability + Plasticity) is a transferable motif for scenarios requiring both general robustness and task-specific adaptation.
 
 ## Limitations & Future Work
-- **Training Cost**: The dual-stream MoE architecture is heavier than a dense ViT-B. While inference is sparse (Top-3), Stage 1 requires multiple teacher forward passes.
-- **Teacher Sensitivity**: The study focuses on three teachers (CLIP/SAM/DINOv2). The scalability and convergence stability when adding more models (e.g., Depth Anything) remain to be explored.
-- **Domain Specialization**: On NYUD-v2, SAK still wins on certain tasks, suggesting that for indoor environments with high-frequency geometric signals, hard-branching adapters might provide stronger local inductive biases than MoE.
+- **Training Cost**: The dual-stream MoE is heavier than a dense ViT-B during training. Stage 1 requires multiple teacher forwards, making training time a factor.
+- **Teacher Sensitivity**: The experiments use CLIP/SAM/DINOv2. The scalability and stability of emergent specialization when adding more teachers (e.g., Depth Anything) remain to be explored.
+- **Backbone Scaling**: While ViT-B results are strong, more extensive ViT-L/H scaling experiments would further solidify the value of PRISM for large-scale models.
 
 ## Related Work & Insights
-- **vs. SAK (Lu et al., 2025)**: SAK uses hard-cut branches. PRISM uses "soft-cut + context routing," allowing more granular sharing and achieving better results across all PASCAL-Context tasks.
-- **vs. RADIO / RADIOv2.5 (Ranzinger et al., 2024)**: RADIO uses dense distillation and relies on loss weighting to handle conflicts; PRISM resolves conflicts via structural branching.
-- **vs. Mod-Squad (Chen et al., 2023)**: Uses information-theoretic constraints for specialization within a single task; PRISM achieves emergent specialization across multiple teachers and tasks.
+- **vs. SAK (Lu et al., 2025)**: SAK uses hard physical isolation; PRISM uses soft context-aware routing. PRISM is better at PASCAL-Context but requires LDL to prevent collapse.
+- **vs. RADIO / RADIOv2.5**: RADIO uses dense distillation and manual weighting; PRISM uses structural branching. PRISM shows significantly higher $\Delta_m$.
+- **vs. Mod-Squad (Chen et al., 2023)**: Mod-Squad uses info-theoretic constraints for single-task specialization. PRISM generalizes this to multi-teacher emergent specialization.
+- **vs. MoFME (Zhang et al., 2024)**: MoFME uses FiLM for computation; PRISM uses FiLM for routing, achieving better separation of duties.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ The combination of dual-stream conditional MoE, context-modulated routing, and LDL is a novel and clear recipe for VFM distillation.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Solid evaluation on two benchmarks with ViT-L scaling and detailed diagnostics on hierarchy and LDL layers.
-- **Writing Quality**: ⭐⭐⭐⭐ Strong logical flow from conflict diagnosis to architectural solution.
-- **Value**: ⭐⭐⭐⭐ Provides a reproducible recipe for compressing multiple VFMs into one student, with a significant SOTA gain of $\Delta_m = 2.29\%$.
+- Novelty: ⭐⭐⭐⭐ (Dual-stream MoE + Context-routing + LDL is a potent mix for VFM distillation).
+- Experimental Thoroughness: ⭐⭐⭐⭐ (Solid coverage of baselines and diverse benchmarks).
+- Writing Quality: ⭐⭐⭐⭐ (Logical progression from gradient conflict to structural solution).
+- Value: ⭐⭐⭐⭐ (Provides a reproducible recipe for real-world VFM synergy).
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[CVPR 2026\] SigLino: Efficient Multi-Teacher Distillation for Agglomerative Vision Foundation Models](../../CVPR2026/model_compression/siglino_efficient_multi-teacher_distillation_for_agglomerative_vision_foundation.md)
 - [\[NeurIPS 2025\] VESSA: Video-based objEct-centric Self-Supervised Adaptation for Visual Foundation Models](../../NeurIPS2025/model_compression/vessa_video-based_object-centric_self-supervised_adaptation_for_visual_foundatio.md)
 - [\[ICML 2026\] Quantifying the Uncertainty of Foundation Models with Singular Value Ensembles](quantifying_the_uncertainty_of_foundation_models_with_singular_value_ensembles.md)
 - [\[ICML 2026\] BioArc: Discovering Optimal Neural Architectures for Biological Foundation Models](bioarc_discovering_optimal_neural_architectures_for_biological_foundation_models.md)
 - [\[ICML 2026\] End-to-End Compression for Tabular Foundation Models](end-to-end_compression_for_tabular_foundation_models.md)
-- [\[ICML 2026\] Geo-Expert: 用 LoRA 把 8B 模型微调成专家级地质推理 LLM](geo-expert_towards_expert-level_geological_reasoning_via_parameter-efficient_fin.md)
 
 </div>
 

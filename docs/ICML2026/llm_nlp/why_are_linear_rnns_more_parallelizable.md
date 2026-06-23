@@ -2,122 +2,122 @@
 title: >-
   [Paper Note] Why Are Linear RNNs More Parallelizable?
 description: >-
-  [ICML 2026][LLM (Other)][Linear RNN] This paper provides a rigorous explanation through circuit complexity as to why Linear RNNs are more parallelizable like Transformers compared to traditional non-linear RNNs: LRNNs fall within arithmetic circuit classes with approximate log-depth, whereas non-linear RNNs can express harder-to-parallelize logspace / pol
+  [ICML 2026][LLM (Other)][Linear RNN] This paper uses circuit complexity to strictly explain why Linear RNNs are more easily parallelized like Transformers compared to traditional non-linear RNNs: LRNNs fall within arithmetic circuit classes of approximate log-depth, whereas non-linear RNNs can express harder-to-parallelize $\mathsf{logspace}$ / $\mathsf{p
 tags:
   - ICML 2026
   - LLM (Other)
   - Linear RNN
 date: 2026-05-08
-content_hash: 7f0217bdb0da3725
+content_hash: ffab9218a0bb2e24
 ---
 # Why Are Linear RNNs More Parallelizable?
 
 **Conference**: ICML2026  
 **arXiv**: [2603.03612](https://arxiv.org/abs/2603.03612)  
 **Code**: https://arg-git.informatik.uni-kl.de/pub/LinearRNN  
-**Area**: LLM Efficiency / Theory of Sequence Models / Parallel Computing  
+**Area**: LLM Efficiency / Sequence Model Theory / Parallel Computing  
 **Keywords**: Linear RNN, Parallelization, Circuit Complexity, Expressivity, Long Context Architectures  
 
 ## TL;DR
-This paper provides a rigorous explanation through circuit complexity as to why Linear RNNs are more parallelizable like Transformers compared to traditional non-linear RNNs: LRNNs fall within arithmetic circuit classes with approximate log-depth, whereas non-linear RNNs can express harder-to-parallelize logspace / polynomial-time complete problems, forming a fundamental trade-off between expressivity and parallelizability.
+This paper uses circuit complexity to strictly explain why Linear RNNs are more easily parallelized like Transformers compared to traditional non-linear RNNs: LRNNs fall within arithmetic circuit classes of approximate log-depth, whereas non-linear RNNs can express harder-to-parallelize $\mathsf{logspace}$ / $\mathsf{polynomial}$-time complete problems, forming a fundamental trade-off between expressivity and parallelizability.
 
 ## Background & Motivation
-**Background**: Long-context LLM architectures are refocusing on RNNs and state-space/linear attention-style models. Linear RNN variants like Mamba, RWKV, and DeltaNet aim to combine the length generalization of recurrent states with high parallel throughput similar to Transformers. Thus, understanding why linear recurrence is easy to parallelize is no longer just a theoretical question but directly impacts long-sequence model design.
+**Background**: Long-context LLM architectures are re-focusing on RNN and state-space / linear attention models. Linear RNN variants such as Mamba, RWKV, and DeltaNet aim to combine the length generalization of recurrent states with high parallel throughput similar to Transformers. Therefore, understanding "why linear recursion is easy to parallelize" is no longer just a theoretical question but directly relates to long-sequence model design.
 
-**Limitations of Prior Work**: It is widely recognized that traditional RNNs are sequential while Transformers can be parallelized, and that certain LRNNs can be parallelized via scan algorithms. However, these are algorithmic intuitions. Two specific questions remain unanswered: first, whether non-linear RNNs face unavoidable parallelization barriers; second, whether differences between LRNN variants are merely engineering implementations or involve rigorous expressivity hierarchies.
+**Limitations of Prior Work**: It is well-known that traditional RNNs update sequentially while Transformers can be parallelized; it is also known that certain LRNNs can be parallelized via scans. However, these are algorithmic intuitions that do not clearly answer two specific questions: first, whether non-linear RNNs face inevitable parallelization bottlenecks; second, whether the differences between LRNN variants are merely engineering details or involve strict hierarchies in expressivity.
 
-**Key Challenge**: Stronger model expressivity often leads to behavior resembling general sequential computation, making it harder to compress into shallow parallel circuits. Conversely, models that are easier to parallelize might sacrifice expressivity for certain algorithmic tasks. LRNNs sit in the middle ground: they are stronger than certain simple Transformer categories but seemingly less difficult to parallelize than traditional non-linear RNNs.
+**Key Challenge**: The more expressive a model is, the more it tends toward general sequential computation, making it harder to compress into shallow parallel circuits. Conversely, models that are easier to parallelize may sacrifice expressivity in certain algorithmic tasks. LRNNs sit in the middle ground: they are stronger than certain simple classes of Transformers but appear less difficult to parallelize than traditional non-linear RNNs.
 
-**Goal**: Establish a complexity map for RNNs/LRNNs: identifying which complexity classes non-linear RNNs can express, where the LRNN upper bound lies, and fine-grained differences between linear update parameterizations like DPLR, PD, and Mamba.
+**Goal**: The paper aims to establish a complexity map for RNNs/LRNNs: identifying which complexity classes non-linear RNNs can express, where the upper bound for LRNNs lies, and the fine-grained differences between linear update parameterizations like DPLR, PD, and Mamba.
 
-**Key Insight**: The problem of language recognition by neural networks is mapped to circuit complexity and automata theory. Non-linear RNNs demonstrate sequential computation capabilities through counter/stack machines; LRNNs demonstrate parallelizability through matrix multiplication and arithmetic circuits; different LRNN parameterizations correspond to different Weighted Finite Automata (WFA) capabilities.
+**Key Insight**: The authors map the problem of neural network language recognition to circuit complexity and automata theory. Non-linear RNNs demonstrate sequential computation capabilities via counter machines / stack machines; LRNNs demonstrate parallelizability through matrix multiplication and arithmetic circuits; different LRNN parameterizations correspond to different Weighted Finite Automata (WFA) capabilities.
 
-**Core Idea**: Linear state updates can be expressed as matrix products and sums, thus allowing parallel simulation by log-depth arithmetic circuits. Non-linear recurrences can simulate stronger sequential machines, making them impossible to parallelize as efficiently under standard complexity-theoretic assumptions.
+**Core Idea**: Linear state updates can be formulated as matrix products and sums, which can be simulated in parallel by log-depth arithmetic circuits. Non-linear recursions can simulate stronger sequential machines and thus cannot be parallelized with equal efficiency unless major collapses occur in complexity theory.
 
 ## Method
-This paper does not propose a new model but categorizes the existing RNN family theoretically. The key is transforming "parallelizability" into "simulability by shallow bounded fan-in circuits" and "expressivity" into "completeness for specific complexity classes."
+This paper does not propose a new model but rather provides a theoretical classification of the existing RNN family. The key is translating "ease of parallelization" into "simulability by shallow bounded fan-in circuits" and "expressivity" into "solving complete problems of specific complexity classes."
 
 ### Overall Architecture
-The paper defines two major sequence layers. Non-linear RNN updates are $h_t=f(h_{t-1},x_t)$, where $f$ can include non-linearities like MLP/ReLU. Linear RNN updates are $S_t=A_t(x_t)S_{t-1}+b_t(x_t)$, where each step performs a linear transformation on the previous state plus an input-dependent term. Multi-layer models can interleave recurrent sublayers and feedforward sublayers similarly to Transformers.
+The paper defines two major categories of sequence layers. Non-linear RNN state updates are $h_t=f(h_{t-1},x_t)$, where $f$ can include non-linearities like ReLU/MLPs. Linear RNN state updates are $S_t=A_t(x_t)S_{t-1}+b_t(x_t)$, representing a linear transformation of the previous state plus an input-dependent term at each step. Actual multi-layer models can stack recurrent sublayers and feedforward sublayers alternately, similar to Transformers.
 
-Subsequently, complexity classes are introduced: Transformers and simple LRNNs usually fall near $\mathsf{TC}^0$ or $\mathsf{NC}^1$. The general upper bound for LRNNs is $\mathsf{PNC}^1$ (log-depth arithmetic circuits with positivity checks). Non-linear RNNs can solve $\mathsf{L}$-complete problems with log precision and $\mathsf{P}$-complete problems with polynomial precision. Finally, theoretical predictions are validated on two synthetic tasks: sorted deterministic graph connectivity and iterated $3\times3$ matrix multiplication.
+The authors then introduce complexity classes: Transformers and simple LRNNs often fall near $\mathsf{TC}^0$ or $\mathsf{NC}^1$; the general upper bound for LRNNs is $\mathsf{PNC}^1$ (log-depth arithmetic circuits plus positivity check); non-linear RNNs can solve $\mathsf{L}$-complete problems under log precision and even $\mathsf{P}$-complete problems under polynomial precision. Finally, the paper validates theoretical predictions using two synthetic tasks: sorted deterministic graph connectivity and iterated $3\times3$ matrix multiplication.
 
 ### Key Designs
 
-**1. Mapping parallelizability to provable depth bounds using circuit complexity**
-Previous engineering experience showed RNNs are slow and Transformers are fast, but couldn't distinguish between implementation gaps and inherent barriers. The core method maps a layer's ability to "recognize a language" to standard complexity classes: if it can be simulated by bounded fan-in circuits of $O(\log n)$ or $O(\log n \log^* n)$ depth, it is naturally parallelizable like Transformers. If it expresses a complete problem for a class like $\mathsf{L}$ or $\mathsf{P}$, it cannot be compressed into shallow circuits under standard conjectures (e.g., $\mathsf{PNC}^1 \neq \mathsf{L}$), making it inherently sequential. This "coordinate system" elevates architectural comparison to provable asymptotic depth differences. This is crucial because for context lengths of 64K–1M, $\log n \approx 16$–$20$ while $\log^2 n$ can reach 256–400—theoretical depth differences translate directly into sequential time differences on hardware.
+**1. Using circuit complexity to transform "parallelizability" into provable depth bounds**  
+Previously, "RNNs are slow, Transformers are fast" was an engineering observation without a clear distinction between implementation lags and inherent bottlenecks. The core method of this paper maps a sequence layer's ability to "recognize a language" to standard complexity classes. If it can be simulated by bounded fan-in circuits of depth $O(\log n)$ or approximately $O(\log n \log^* n)$, it is inherently parallelizable like a Transformer. If it expresses a complete problem for a complexity class, then under standard conjectures (e.g., $\mathsf{PNC}^1 \neq \mathsf{L}$, $\mathsf{NC} \neq \mathsf{P}$), it cannot be compressed into such shallow circuits and must be more sequential. This provides a "coordinate system" for architecture comparison, elevating it from empirical experience to provable asymptotic differences in parallel depth. This is critical because at context lengths of 64K–1M, $\log n \approx 16$–$20$, whereas $\log^2 n$ can reach 256–400—theoretical depth differences translate directly into temporal differences on hardware.
 
-**2. Expressivity lower bound of non-linear RNNs: Difficulty in parallelization as a result of strength**
-To explain why traditional RNNs are hard to parallelize, the authors prove an expressivity lower bound: MLP RNNs with log precision can simulate counter machines, solving the sorted deterministic graph connectivity task, which is $\mathsf{L}$-complete. With polynomial precision, they can even simulate multi-stack machines to recognize $\mathsf{P}$-complete languages. The key insight is that non-linear recurrence treats the state as a sequential memory with arbitrary read-write-update capabilities, providing algorithmic power but imposing a depth cost for parallel simulation (approx. $\Omega(\log^2 n)$ depth in log precision), adding an $O(\log n)$ factor over Transformers. Expressivity and parallelizability are thus fundamentally traded off.
+**2. Expressivity lower bound of non-linear RNNs: Simulating stronger sequential machines makes them harder to parallelize**  
+To explain why traditional RNNs are specifically hard to parallelize, the authors prove an expressivity lower bound for non-linear recursion: MLP RNNs with log precision can simulate counter machines, thereby solving the $\mathsf{L}$-complete task of sorted deterministic graph connectivity. With polynomial precision, they can simulate multi-stack machines to recognize $\mathsf{P}$-complete languages. The key insight is that non-linear recursion treats the recurrent state as sequential memory that can be read and written arbitrarily, which is the source of its algorithmic power. Conversely, "fully parallel simulation" of such inherently sequential computation requires deeper circuits (approximately $\Omega(\log^2 n)$ depth at log precision, an $O(\log n)$ factor more than Transformers) assuming $\mathsf{PNC}^1 \neq \mathsf{L}$. This solidifies the trade-off between expressivity and parallelizability.
 
-**3. Fine-grained LRNN hierarchy: DPLR is strictly stronger than PD**
-The authors distinguish between "Linear RNN" parameterizations, noting that specific choices alter expressivity upper bounds. General LRNN updates $S_t = A_t S_{t-1} + b_t$ expand into matrix products and sums, falling into $\mathsf{PNC}^1$. However, diagonal-plus-low-rank (DPLR) variants like RWKV-7 and DeltaNet can express iterated $3\times3$ matrix multiplication, reaching $\mathsf{PNC}^1$-completeness—the highest expressivity within the linearly parallelizable range. Permutation-diagonal (PD) parameterizations are restricted to $\mathsf{NC}^1$. Each RNN type is matched with an automaton model: LRNNs to Weighted Finite Automata (WFA) and PDs to Deterministic WFA (DWFA). For architectural design, DPLR is an attractive midpoint, offering better algebraic computation than PD or Mamba while maintaining near-logarithmic parallel depth.
+**3. LRNNs are not monolithic: DPLR is strictly stronger than PD**  
+The paper further deconstructs "Linear RNNs," noting that parameterization choices change the expressivity upper bound. General LRNN state updates $S_t=A_t S_{t-1}+b_t$ can be expanded into matrix products and sums, placing language recognition within $\mathsf{PNC}^1$. However, specific parameterizations determine how far they reach within this bound: diagonal-plus-low-rank (DPLR) variants like RWKV-7 and DeltaNet can express iterated $3\times3$ matrix multiplication, reaching $\mathsf{PNC}^1$-complete—the most expressive tier within the linear parallelizable range. In contrast, permutation-diagonal (PD) parameterizations maintain a permutation-diagonal structure in matrix products and are restricted to $\mathsf{NC}^1$ (though still capable of $\mathsf{NC}^1$-complete tasks). The authors pair each RNN class with an automata model: LRNNs correspond to Weighted Finite Automata (WFA), and PD corresponds to its deterministic version (DWFA). For architecture design, this serves as a "ruler": DPLR is more capable at expressing iterative algebraic computation than PD or Mamba/S4 while maintaining near-logarithmic parallel depth, making it an attractive midpoint.
 
 ### Loss & Training
-Theoretical sections involve no training. Synthetic tasks use binary or step-wise classification. Models are trained with AdamW, BCEWithLogitsLoss, batch size 128, and gradient clipping at 1.0 for up to 60K steps. Comparison models include non-linear RNNs, Transformer, Mamba, RWKV-7, and DeltaNet. Training lengths are in range $[1,100]$, with testing covering extra-long sequences $[101,200]$ and $[201,300]$.
+The theoretical section involves no training loss. The experimental section uses synthetic algorithmic tasks for binary or step-by-step classification. All models use AdamW, `BCEWithLogitsLoss`, batch size 128, and gradient clipping 1.0, training for up to 60K steps. Baselines include non-linear RNNs, Transformers, Mamba, RWKV-7, and DeltaNet. Training lengths range in $[1,100]$, with testing including out-of-distribution (OOD) extrapolation for $[101,200]$ and $[201,300]$.
 
 ## Key Experimental Results
 
 ### Main Results
-The main finding is the theoretical classification table. It determines the "maximum expressivity" and "minimum parallel depth" for different model families.
+The primary result is the theoretical classification table. It identifies the "maximum expressivity" and "minimum parallel depth" for different model families rather than just benchmark scores.
 
-| Model Category | Complexity Class | Parallel Depth Implication | Representative Model/Task | Conclusion |
+| Model Category | Complexity Class | Parallel Depth Meaning | Representative Model/Task | Conclusion |
 |----------|------------|--------------|---------------|------|
-| Transformer / Simple LRNN | $\approx \mathsf{TC}^0 \subseteq \mathsf{NC}^1$ | $O(\log n)$ bounded fan-in depth | Transformer, Mamba-style structures | Easiest to parallelize, limited expressivity |
-| General LRNN | $\mathsf{PNC}^1$ Upper Bound | $O(\log n \log^* n)$ depth simulation | Linear state update family | Negligible parallel overhead over Transformer |
-| DPLR LRNN | $\mathsf{PNC}^1$-complete | Near LRNN upper bound | RWKV-7, DeltaNet | Strongest expressivity within linearly parallelizable range |
-| PD LRNN | $\mathsf{NC}^1$-complete | log-depth | Permutation-diagonal LRNN | Stronger than simple finite states, weaker than DPLR |
-| log-precision nonlinear RNN | $\mathsf{L}$-complete | Potential $\Omega(\log^2 n)$ depth | MLP RNN solving graph connectivity | Strong expressivity, higher parallel cost |
-| poly-precision nonlinear RNN | $\mathsf{P}$-complete | Non-parallelizable in polylog-depth (standard assumptions) | MLP RNN simulating multi-stack machines | Most expressive but most sequential |
+| Transformer / Simple LRNN | $\approx \mathsf{TC}^0 \subseteq \mathsf{NC}^1$ | $O(\log n)$ bounded fan-in depth | Transformer, Mamba-like simple structures | Easiest to parallelize, limited expressivity |
+| General LRNN | $\mathsf{PNC}^1$ upper bound | $O(\log n \log^* n)$ simulation depth | Linear state update family | Small parallel overhead over Transformer |
+| DPLR LRNN | $\mathsf{PNC}^1$-complete | Approaches LRNN upper bound | RWKV-7, DeltaNet | Strongest expressivity within linear parallel range |
+| PD LRNN | $\mathsf{NC}^1$-complete | Log-depth | Permutation-diagonal LRNN | Stronger than simple finite state, weaker than DPLR |
+| Log-precision non-linear RNN | $\mathsf{L}$-complete | Likely requires $\Omega(\log^2 n)$ depth | MLP RNN on graph connectivity | High expressivity, higher parallel cost |
+| Poly-precision non-linear RNN | $\mathsf{P}$-complete | No polylog-depth parallelization under standard assumptions | MLP RNN simulating multi-stack machines | Strongest but most sequential |
 
-Synthetic experiments validate these predictions. While all models learn ID (In-Distribution) data, OOD (Out-of-Distribution) length extrapolation results are summarized below:
+Synthetic experiments validate these predictions. While all models learn In-Distribution (ID) tasks, their OOD behavior reveals architectural biases.
 
-| Task | Theoretical Expectation | Strongest Model | Weaker Models | Observation |
+| Task | Theoretical Expectation | Strongest Models | Weaker Models | Observation |
 |------|----------|--------------|--------------|------|
-| Sorted deterministic graph connectivity | $\mathsf{L}$-complete; Non-linear RNN should solve it, LRNNs struggle | nonlinear RNN | Transformer, RWKV-7, Mamba, DeltaNet (degrade on OOD) | Only nonlinear RNN achieves near-perfect length extrapolation |
-| Iterated matrix multiplication over $\mathbb{Z}_m$ | DPLR LRNN and nonlinear RNN should be stronger | RWKV-7, DeltaNet, nonlinear RNN | Transformer, Mamba | DPLR and non-linear models show only moderate OOD degradation |
-| Iterated matrix multiplication over $\mathbb{Z}$ | Algebraic state growth; tests algebraic recursion | RWKV-7, DeltaNet, nonlinear RNN | Transformer significantly degrades; Mamba below top models | DPLR linear-algebraic structure excels at matrix products |
+| Sorted deterministic graph connectivity | $\mathsf{L}$-complete, solvable by non-linear RNN, difficult for LRNN | non-linear RNN | Transformer, RWKV-7, Mamba, DeltaNet degrade on OOD | Only non-linear RNN achieves near-perfect OOD extrapolation |
+| Iterated matrix multiplication over $\mathbb{Z}_m$ | DPLR LRNN and non-linear RNN should be stronger | RWKV-7, DeltaNet, non-linear RNN | Transformer, Mamba | DPLR and non-linear models are near-perfect ID; moderate OOD degradation |
+| Iterated matrix multiplication over $\mathbb{Z}$ | Integer growth without modulus tests algebraic state | RWKV-7, DeltaNet, non-linear RNN | Transformer significantly degrades; Mamba below top models | DPLR's linear algebraic structure is ideal for matrix products |
 
 ### Ablation Study
 
-| Configuration | Key Metrics | Explanation |
+| Configuration | Key Metric | Description |
 |------|---------|------|
-| nonlinear RNN on graph connectivity | OOD length score remains high | Consistent with $\mathsf{L}$-complete capability analysis |
-| LRNN/Transformer on graph connectivity | Higher degradation with length | Theoretically difficult to cover sequential reachability issues |
-| RWKV-7 / DeltaNet on IMM | Strong ID and OOD performance | DPLR expresses $\mathsf{PNC}^1$-complete matrix products |
-| Mamba on IMM | Significantly weaker than DPLR models | Simple linear parameterization lacks expressivity |
-| Transformer on IMM | Unstable in training; poor length extrapolation | Shared shallow parallel advantage $\neq$ algebraic recurrence capability |
-| Unified training setup | AdamW, 60K steps, batch 128 | Differences stem primarily from architectural inductive bias |
+| non-linear RNN on graph connectivity | OOD score remains near perfect | Matches $\mathsf{L}$-complete capability analysis |
+| LRNN/Transformer on graph connectivity | Degradation increases with length | Theoretically incapable of covering sequential reachability |
+| RWKV-7 / DeltaNet on IMM | Strong ID and OOD | DPLR can express $\mathsf{PNC}^1$-complete matrix products |
+| Mamba on IMM | Significantly weaker than RWKV-7/DeltaNet | Simple linear parameterization lacks expressivity |
+| Transformer on IMM | Unstable even during training, poor extrapolation | Shallow parallel advantage $\neq$ algebraic recursion capability |
+| Unified training settings | AdamW, 60K steps, batch 128 | Ensures differences stem from architectural inductive bias |
 
 ### Key Findings
-- The fundamental reason LRNNs are more parallelizable is that linear recurrence reduces to matrix products/scans, which have log-depth arithmetic circuit implementations.
-- The parallelization difficulty of non-linear RNNs is not due to poor implementation but because they can simulate stronger sequential computation models; this expressivity yields a depth cost in the complexity sense.
-- DPLR is a compelling midpoint: it is more expressive than simple Mamba/S4 structures for iterated algebraic computation while maintaining parallel depth close to Transformers.
-- Synthetic experiments reflect theoretical predictions, showing that complexity results govern the length generalization behavior of trainable models.
+- The fundamental reason LRNNs are easier to parallelize is that linear recursion reduces to matrix products/scans, which have log-depth arithmetic circuit implementations.
+- The "difficulty" in parallelizing non-linear RNNs is not an implementation failure but a result of their ability to simulate stronger sequential computation; this expressivity comes at a cost in circuit depth.
+- DPLR is an attractive middle ground: it is more capable of expressing iterated algebraic computations than simple structures like Mamba/S4 while maintaining near-logarithmic parallel depth.
+- Although experiments are small, they align with theoretical predictions, suggesting complexity results are not just abstract classifications but reflect training behavior on algorithmic tasks.
 
 ## Highlights & Insights
-- The strongest contribution is elevating the RNN debate from "empirically fast/slow" to "complexity classes and complete problems," providing a theoretical coordinate system for architectural design.
-- It clarifies the trade-off: to obtain the sequential algorithmic power of non-linear RNNs, one must accept deeper parallel simulation; for Transformer-like efficiency, state updates must be restricted to linear/scannable forms.
-- The distinction between DPLR and PD is insightful, showing that parameterization choices like low-rank terms or permutation structures significantly shift expressivity bounds.
-- Synthetic tasks are well-aligned with theory: graph connectivity separates non-linear and linear models, while iterated matrix multiplication separates DPLR from simpler architectures.
+- The major contribution is elevating RNN architecture discussions from "empirical speed" to "complexity classes and complete problems." This provides a valuable theoretical map for long-context architecture design.
+- It presents a clear trade-off: to obtain the sequential algorithmic power of a non-linear RNN, one must accept deeper parallel simulation; to achieve Transformer-like parallel efficiency, state updates must be restricted to linear/scannable forms.
+- The distinction between DPLR and PD is insightful. While many papers group "Linear RNNs" together, this work shows that parameterization choices (low-rank terms vs. permutation-diagonal structures) change the expressivity ceiling.
+- The synthetic tasks are well-chosen: graph connectivity isolates non-linear RNNs from LRNNs, while iterated matrix multiplication separates DPLR from simpler architectures.
 
 ## Limitations & Future Work
-- Complexity analysis depends on formal assumptions (precision, uniformity, bounded fan-in). Asymptotic parallel depth does not directly equate to GPU kernel performance or memory bandwidth.
-- Experiments are restricted to synthetic algorithmic tasks; while they validate expressivity, they do not directly prove superior large-scale language modeling.
-- Theoretical analysis focuses on exact simulation; real networks might use approximate computation or hybrid structures to bypass single-layer limitations.
-- While non-linear RNNs offer extra expressivity at a $\Theta(\log n)$ parallel cost, whether this trade-off is worthwhile for real-world tasks remains an open question.
+- Complexity analysis relies on formal assumptions like precision, uniformity, and bounded fan-in. Asymptotic parallel depth does not directly equate to GPU kernels, memory bandwidth, or training stability.
+- Experiments are restricted to synthetic algorithmic tasks. While they validate expressivity tendencies, they do not directly prove superior performance in large-scale language modeling.
+- The theory focuses on exact simulation and language recognition; real neural networks can perform approximate computation or use multi-layer hybrid structures to bypass the limitations of a single layer.
+- While it is noted that non-linear RNN expressivity requires $\Theta(\log n)$ more parallel overhead, whether this cost is justified in real-world tasks remains an open question.
 
 ## Related Work & Insights
-- **vs Transformer Complexity**: Existing work places Transformers in the $\mathsf{TC}^0/\mathsf{NC}^1$ range; this work places LRNNs in the adjacent $\mathsf{PNC}^1$, explaining their extra expressivity with minimal parallel overhead.
-- **vs Mamba/S4 Theory**: Simple linear RNNs are often structurally limited; this work highlights how DPLR structures like RWKV-7 and DeltaNet reach higher complexity classes.
-- **vs Classical RNN Theory**: Re-applies early concepts (simulating stack/counter machines) to explain the parallelization boundaries of modern LLM architectures.
-- **vs Parallelizing Non-linear RNNs**: Matches recent Newton-style methods that parallelize non-linear RNNs to $O(\log^2 n)$ depth, consistent with the $\mathsf{L}$-complete expectation.
+- **vs. Transformer Complexity**: Existing work places Transformers in the $\mathsf{TC}^0/\mathsf{NC}^1$ range; this paper places LRNNs in the adjacent $\mathsf{PNC}^1$, explaining their slight parallel overhead and additional expressivity.
+- **vs. Mamba/S4 Theory**: Simple state-space/linear RNNs are often expressively limited; this work shows DPLR structures like RWKV-7 and DeltaNet reach higher complexity classes.
+- **vs. Traditional RNN Theory**: Early ideas about RNNs simulating stack/counter machines are reused to explain the parallelization boundaries of LLM architectures.
+- **vs. Parallelizing Non-linear RNNs**: Recent Newton-style methods can parallelize non-linear RNNs to $O(\log^2 n)$; these theoretical results show this is consistent with expectations for $\mathsf{logspace}$ complete problems.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Systematically explains LRNN parallelizability via complexity theory and distinguishes DPLR/PD expressivity.
-- Experimental Thoroughness: ⭐⭐⭐☆☆ Experiments align with theory but are restricted to synthetic validations.
-- Writing Quality: ⭐⭐⭐⭐☆ Clear structure, though notation-dense for non-theory readers.
-- Value: ⭐⭐⭐⭐☆ Highly instructive for long-context architecture choice, highlighting the importance of DPLR-style linear recurrence.
+- Novelty: ⭐⭐⭐⭐⭐ Strong theoretical contribution systematically explaining LRNN parallelization and DPLR/PD expressivity.
+- Experimental Thoroughness: ⭐⭐⭐☆☆ Experiments align well with theory but are restricted to synthetic validation.
+- Writing Quality: ⭐⭐⭐⭐☆ Structure is clear, though complexity notation is dense for non-theoretical readers.
+- Value: ⭐⭐⭐⭐☆ Highly instructive for choosing long-context LLM architectures, particularly for understanding why DPLR-style linear recursion is noteworthy.
 
 <!-- RELATED:START -->
 

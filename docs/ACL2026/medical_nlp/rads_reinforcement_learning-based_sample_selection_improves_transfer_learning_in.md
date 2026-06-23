@@ -2,13 +2,13 @@
 title: >-
   [Paper Note] RADS: Reinforcement Learning-Based Sample Selection Improves Transfer Learning in Low-resource and Imbalanced Clinical Settings
 description: >-
-  [ACL 2026][Medical NLP][Reinforcement Learning] This paper proposes RADS (Reinforcement Adaptive Domain Sampling), a reinforcement learning-based sample selection strategy. It significantly enhances cross-domain disease detection in extreme low-resource and class-imbalanced clinical scenarios by intelligently selecting a small number of target-domain samples for ann
+  [ACL 2026][Medical NLP][Reinforcement Learning] Ours proposes RADS (Reinforcement Adaptive Domain Sampling), an RL-based sample selection strategy that significantly improves cross-domain disease detection in extreme low-resource and imbalanced clinical scenarios by intelligently selecting a few target domain samples for annotation and joint fine-tuning.
 tags:
   - ACL 2026
   - Medical NLP
   - Reinforcement Learning
 date: 2026-05-08
-content_hash: 8a8093885cdb8404
+content_hash: c2218bd5f1b6a498
 ---
 # RADS: Reinforcement Learning-Based Sample Selection Improves Transfer Learning in Low-resource and Imbalanced Clinical Settings
 
@@ -19,67 +19,67 @@ content_hash: 8a8093885cdb8404
 **Keywords**: Reinforcement Learning, Sample Selection, Transfer Learning, Class Imbalance, Clinical NLP
 
 ## TL;DR
-This paper proposes RADS (Reinforcement Adaptive Domain Sampling), a reinforcement learning-based sample selection strategy. It significantly enhances cross-domain disease detection in extreme low-resource and class-imbalanced clinical scenarios by intelligently selecting a small number of target-domain samples for annotation and joint fine-tuning.
+Ours proposes RADS (Reinforcement Adaptive Domain Sampling), an RL-based sample selection strategy that significantly improves cross-domain disease detection in extreme low-resource and imbalanced clinical scenarios by intelligently selecting a few target domain samples for annotation and joint fine-tuning.
 
 ## Background & Motivation
 
-**Background**: NLP tasks for clinical text rely heavily on high-quality annotated data. However, annotation costs in the medical field are extremely high (requiring professional physicians), and many medical conditions are rare, leading to an extreme scarcity of positive samples. Transfer learning is the primary strategy for low-resource scenarios, reducing annotation requirements by transferring knowledge after training on a source domain.
+**Background**: NLP tasks for clinical text rely heavily on high-quality labeled data, but medical annotation costs are extreme (requiring specialists), and many diseases are rare, leading to a severe lack of positive samples. Transfer learning is the primary strategy to mitigate low-resource scenarios by transferring from a source domain after training to reduce annotation needs.
 
-**Limitations of Prior Work**: Traditional active learning methods, such as uncertainty sampling and diversity sampling, perform poorly under extreme low-resource and class-imbalanced conditions. Uncertainty sampling tends to select outliers at the distribution boundary rather than truly informative samples; diversity sampling optimizes only a single metric and fails to simultaneously consider sample informativeness and redundancy. Furthermore, the high heterogeneity of clinical reports (e.g., significant differences in terminology between CT, PET, and cytology reports) increases the difficulty of cross-domain transfer.
+**Limitations of Prior Work**: Traditional active learning methods (e.g., uncertainty and diversity sampling) underperform in extreme low-resource and imbalanced conditions. Uncertainty sampling tends to select outliers on the edge of the distribution rather than informative samples; diversity sampling optimizes only a single metric and cannot simultaneously consider sample informativeness and redundancy. Furthermore, the heterogeneity of clinical reports (e.g., variations in terms used in CT, PET, and cytology reports) increases the difficulty of cross-domain transfer.
 
-**Key Challenge**: When the annotation budget is extremely limited (e.g., only 5 samples can be annotated), how can the most valuable samples be selected from the unlabeled target domain such that the model performs well in both the source and target domains after joint fine-tuning?
+**Key Challenge**: Under a minimal annotation budget (e.g., only 5 samples), how to select the most valuable samples from the unlabeled target domain such that the fine-tuned model performs well on both the source and target domains.
 
-**Goal**: To design an adaptive sample selection strategy that simultaneously considers informativeness, class balance, and sample diversity.
+**Goal**: Design an adaptive sample selection strategy that simultaneously considers informativeness, class balance, and sample diversity.
 
-**Key Insight**: The authors model the sample selection problem as a sequential decision-making problem, using a reinforcement learning agent to learn the optimal selection policy, thereby adaptively balancing informativeness, class proportions, and redundancy.
+**Key Insight**: The authors model the sample selection problem as a sequential decision process, using a reinforcement learning agent to learn an optimal selection strategy that adaptively balances informativeness, class ratios, and redundancy.
 
-**Core Idea**: A sample selection agent is trained using Dueling DQN. Guided by BALD mutual information, and combining a prior-aware utility function with a redundancy penalty mechanism, the agent selects the optimal subset of samples from the target domain for annotation and fine-tuning.
+**Core Idea**: Use a Dueling DQN to train a sample selection agent. Guided by BALD mutual information, the agent combines a prior-aware utility function with a redundancy penalty mechanism to select the optimal subset of samples from the target domain for annotation and fine-tuning.
 
 ## Method
 
 ### Overall Architecture
-The RADS framework consists of three stages: (1) Active Learner Training: A ClinicalBERT classifier is fine-tuned on the source domain, and uncertainty signals for unlabeled target domain samples are calculated via MC dropout; (2) Prior-Aware Utility Calculation: A utility function that considers both informativeness and class balance is constructed by combining BALD mutual information scores with pseudo-label class weights; (3) RL Sampler Training: A Dueling DQN learns a selection policy to maximize utility while penalizing redundant selections. Finally, the selected few samples are used for joint fine-tuning with the source domain to obtain a detection model adapted to both domains.
+The RADS framework consists of three stages: (1) Active learner training: Fine-tune a ClinicalBERT classifier on the source domain, then calculate uncertainty signals for unlabeled target samples via MC dropout; (2) Prior-aware utility calculation: Construct a utility function considering both informativeness and class balance by combining BALD mutual information scores with pseudo-label class weights; (3) RL sampler training: Use a Dueling DQN to learn a selection strategy that maximizes utility while penalizing redundant selections. Finally, the selected samples are used to fine-tune the model jointly with the source domain to obtain a detection model adapted to both domains.
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
 flowchart TD
-    A["Labeled Source Data"] --> B["Fine-tune ClinicalBERT Classifier"]
-    B --> C["Target Domain Unlabeled Samples<br/>K Forward Passes via MC Dropout"]
-    C --> D["BALD Information Estimation<br/>Mutual Information MI = PE − EE"]
-    D --> E["Prior-Aware Utility Function<br/>u(x) = Normalized MI × Class Weight"]
-    E --> F["Redundancy-Aware Sampler<br/>Dueling DQN Sequential Sampling"]
-    F -->|"Reward r = u − λ · Redundancy"| F
-    F --> G["Select Few Samples and Annotate"]
-    G --> H["Joint Fine-tuning (Source + Target)"]
-    H --> I["Cross-domain Disease Detection Output"]
+    A["Source domain labeled data"] --> B["Fine-tune ClinicalBERT classifier"]
+    B --> C["Target domain unlabeled samples<br/>K forward passes via MC Dropout"]
+    C --> D["BALD informativeness estimation<br/>Mutual Information MI = PE − EE"]
+    D --> E["Prior-aware utility function<br/>u(x) = Normalized MI × Class Weight"]
+    E --> F["Redundancy-aware sampler<br/>Dueling DQN sequential sampling"]
+    F -->|"Reward r = u − λ·Redundancy"| F
+    F --> G["Select few samples and annotate"]
+    G --> H["Joint source + target domain fine-tuning"]
+    H --> I["Cross-domain disease detection output"]
 ```
 
 ### Key Designs
 
-**1. BALD Information Estimation via MC Dropout: Selecting samples based on internal model disagreement rather than simple "uncertainty"**
+**1. BALD informativeness estimation via MC Dropout: Selecting samples using internal model disagreement rather than simple uncertainty**
 
-Traditional uncertainty sampling often selects outliers under domain shift—samples that appear "uncertain" but are actually uninformative. RADS utilizes BALD mutual information: by maintaining dropout activations and performing $K$ stochastic forward passes for each target sample, the entropy of the predictive distribution $\mathrm{PE}(x)$ and the mean entropy of individual predictions $\mathrm{EE}(x)$ are computed. The difference represents the mutual information $\mathrm{MI}(x) = \mathrm{PE}(x) - \mathrm{EE}(x)$.
+Traditional uncertainty sampling often picks outliers at the distribution edges under domain shift—samples that appear "uncertain" but are not useful. RADS uses BALD mutual information: by maintaining dropout activations and performing $K$ stochastic forward passes for each target sample, it computes the entropy of the predictive distribution $\mathrm{PE}(x)$ and the mean entropy of individual predictions $\mathrm{EE}(x)$. The difference is the mutual information $\mathrm{MI}(x) = \mathrm{PE}(x) - \mathrm{EE}(x)$.
 
-This difference decomposes uncertainty into two layers: a high $\mathrm{PE}$ indicates the model is generally uncertain, but if predictions across stochastic passes are highly consistent (high $\mathrm{EE}$), the uncertainty is merely aleatoric (inherent data noise) which labels cannot resolve. Only when sub-models disagree significantly is the $\mathrm{MI}$ high, representing epistemic uncertainty (information the model has not seen and is worth annotating). RADS only picks samples with high $\mathrm{MI}$, naturally avoiding outliers.
+This difference decomposes uncertainty into two layers: a high $\mathrm{PE}$ indicates overall model uncertainty, but if individual stochastic predictions are highly consistent (high $\mathrm{EE}$), the uncertainty is merely aleatoric (inherent data noise) which labels cannot resolve. Only when sub-models disagree significantly is the $\mathrm{MI}$ high, representing epistemic uncertainty (knowledge the model lacks). RADS selects samples with high $\mathrm{MI}$, naturally avoiding uninformative outliers.
 
-**2. Prior-Aware Utility Function: Layering class balance over informativeness**
+**2. Prior-Aware Utility: Layering class balance over informativeness**
 
-Relying solely on informativeness fails under extreme imbalance—the most informative samples might all belong to the majority class. RADS estimates the positive class prior $\hat{\pi}_+$ in the target domain using pseudo-labels, then calculates a class weight $w_+ = \rho / \mathrm{clip}(\hat{\pi}_+)$, which is multiplied by the normalized mutual information to get the final utility $u(x) = \widetilde{\mathrm{MI}}(x) \cdot w_{y(x)}$. Rare classes receive higher weights due to smaller priors, making them more likely to be selected at equivalent information levels. The hyperparameter $\rho$ acts as a "dial" to control the trade-off between favoring rare classes vs. high informativeness.
+Relying solely on informativeness fails under extreme imbalance—the most informative samples might all belong to the positive (or negative) class, exacerbating skewness. RADS estimates the positive class prior $\hat{\pi}_+$ of the target domain via pseudo-labels and calculates a class weight $w_+ = \rho / \mathrm{clip}(\hat{\pi}_+)$, which is multiplied by the normalized mutual information to get the final utility $u(x) = \widetilde{\mathrm{MI}}(x) \cdot w_{y(x)}$. Rare classes receive higher weights due to smaller priors, making them more likely to be selected at equal informativeness levels. The hyperparameter $\rho$ acts as a knob to balance preference between rare classes and high informativeness.
 
-**3. Redundancy-Aware Sampler via Dueling DQN: Modeling sample selection as sequential decision-making to naturally avoid redundancy**
+**3. Dueling DQN-based Redundancy-aware Sampler: Modeling sample selection as sequential decision-making to avoid redundancy**
 
-The previous steps evaluate samples independently and ignore inter-sample relationships—two samples with high $u(x)$ but nearly identical content would both be selected, wasting budget. RADS models selection as a sequential decision process for an RL agent. The state vector includes mean log-probabilities, predictive entropy, BALD scores, and budget utilization. The reward for selecting a sample at time $t$ is:
+The previous steps score samples individually without considering mutual relationships—two samples with high $u(x)$ but nearly identical content would both be selected, wasting budget. RADS models selection as a sequential decision process for an RL agent. The state vector includes mean log-probabilities, predictive entropy, BALD scores, and current budget utilization. The reward for selecting a sample is:
 
 $$r_t = u(x_t) - \lambda \cdot \mathrm{Red}(x_t, S_t)$$
 
-where redundancy $\mathrm{Red}(x_t, S_t)$ is measured by the nearest-neighbor distance between $x_t$ and the selected set $S_t$ in the predictive representation space. Using Dueling DQN with $\epsilon$-greedy exploration, the agent can "look back" at what has already been selected and dynamically adjust criteria, automatically avoiding redundancy through the reward signal rather than post-hoc deduplication.
+where redundancy $\mathrm{Red}(x_t, S_t)$ is measured by the nearest neighbor distance between $x_t$ and the selected set $S_t$ in the predictive representation space. Using a Dueling DQN with $\epsilon$-greedy exploration, the agent can "look back" at what has been selected and dynamically adjust its criteria, allowing redundancy to be automatically avoided via rewards rather than post-hoc deduplication.
 
 ### Loss & Training
-The active learner is trained using standard cross-entropy on the source domain. The RL sampler is trained using TD loss for Dueling DQN, with an experience replay buffer and a target network. After sample selection, ClinicalBERT is fine-tuned on the combined source domain and the annotated target samples.
+The active learner is trained on the source domain using standard cross-entropy. The RL sampler uses TD loss to train the Dueling DQN with an experience replay buffer and a target network. After sample selection, ClinicalBERT is fine-tuned on the combined source domain and annotated target domain samples.
 
 ## Key Experimental Results
 
-### Main Results (CHIFIR → PIFIR Transfer, 5 samples selected)
+### Main Results (CHIFIR → PIFIR Transfer, 5 samples)
 
 | Strategy | PIFIR F1 | PIFIR ROC-AUC | CHIFIR F1 | Transfer Gap ΔF1 |
 |------|----------|---------------|-----------|-------------|
@@ -91,44 +91,44 @@ The active learner is trained using standard cross-entropy on the source domain.
 
 ### Ablation Study
 
-| Configuration | Key Metric | Description |
+| Configuration | Key Metrics | Description |
 |------|---------|------|
-| RADS Full | F1=0.871, AUC=0.833 | Complete model |
-| w/o Redundancy Penalty | Near Uncertainty level | Redundancy penalty is crucial for diversity |
-| w/o Prior-Awareness | Increased class skew | Essential under imbalanced conditions |
-| Full-shot (All target labels) | F1=0.900 | Upper bound; RADS approaches this with path 5 samples |
+| Full RADS | F1=0.871, AUC=0.833 | Full model |
+| w/o Redundancy Penalty | Near Uncertainty level | Redundancy penalty is vital for diversity |
+| w/o Prior-Aware | Increased class skew | Necessary under imbalanced conditions |
+| Full-shot (All target labels) | F1=0.900 | Upper bound; RADS approaches this with only 5 samples |
 
 ### Key Findings
-- RADS achieves an F1 of 0.871 with only 5 annotated samples, approaching the full-shot upper bound (0.900) and far outperforming other active learning methods.
-- Traditional uncertainty sampling degrades severely under class imbalance (F1 only 0.545) as it tends to select distribution outliers.
-- While BatchBALD shows high F1 in the target domain (0.849), it severely sacrifices source domain performance (CHIFIR F1 drops to 0.500), showing the largest transfer gap.
-- RADS is the only method that maintains strong performance in both target and source domains, achieving true dual-domain adaptation.
+- RADS achieves an F1 of 0.871 using only 5 annotated samples, approaching the full-shot upper bound (0.900) and significantly outperforming other active learning methods.
+- Traditional uncertainty sampling degrades severely under class imbalance (F1 only 0.545) because it favors outliers.
+- While BatchBALD shows high target F1 (0.849), it severely sacrifices source domain performance (CHIFIR F1 drops to 0.500), leading to the largest transfer gap.
+- RADS is the only method that maintains strong performance across both target and source domains, achieving true dual-domain adaptation.
 
 ## Highlights & Insights
-- **Modeling sample selection as an RL problem** is ingenious—compared to greedy active learning, an RL agent optimizes the collective utility of the selected subset from a global perspective, naturally balancing informativeness, class ratios, and diversity.
-- The **Prior-Aware Utility Function** design is simple yet effective; the $\rho$ hyperparameter allows control over class balance and can be directly transferred to any low-resource classification task.
-- Calculating redundancy in the representation space is a noteworthy approach—measuring distances in the predictive distribution space of MC dropout rather than directly comparing raw text.
+- **Modeling sample selection as an RL problem** is ingenious—compared to greedy active learning, an RL agent can optimize the overall utility of the selected subset from a global perspective, naturally balancing informativeness, class ratio, and diversity.
+- The **prior-aware utility function** design is simple yet effective; a single hyperparameter $\rho$ controls the degree of class balancing, making it easily transferable to any low-resource classification task.
+- Calculating redundancy in the representation space is a noteworthy approach—measuring distances in the MC dropout predictive distribution space rather than comparing raw text.
 
 ## Limitations & Future Work
-- The experimental dataset scale is relatively small (283 CHIFIR, 201 PIFIR); performance on larger datasets remains to be verified.
-- Training the RL sampler introduces additional computational costs and hyperparameter tuning, which might be less cost-effective than simpler methods in certain scenarios.
-- Currently, the approach is only validated for binary classification (disease presence/absence); the utility function requires extension for multi-class scenarios.
-- Future work could consider sharing RL agent selection strategies across multiple transfer tasks to further reduce training costs.
+- The evaluation dataset scale is small (CHIFIR 283, PIFIR 201); effectiveness on larger datasets remains to be verified.
+- Training the RL sampler introduces extra computational costs and hyperparameter tuning, which may be less cost-effective in certain scenarios than simpler methods.
+- Currently only validated on binary classification (disease presence/absence); the prior-aware utility function needs extension for multi-class scenarios.
+- Future work could consider sharing the RL agent's selection policy across multiple transfer tasks to amortize training costs.
 
 ## Related Work & Insights
-- **vs Uncertainty Sampling**: Uncertainty sampling considers only a single metric and is prone to outliers under imbalance and domain shift; RADS avoids this via multi-signal fusion and RL optimization.
-- **vs BatchBALD**: BatchBALD considers inter-sample dependencies via joint mutual information but lacks a class balance mechanism, leading to severe source domain performance degradation.
-- **vs LM-DPP**: While DPP models both uncertainty and diversity, its fixed weighting scheme is less flexible than the adaptive strategy of RL.
+- **vs Uncertainty Sampling**: Uncertainty sampling considers only a single metric and picks outliers under imbalance and domain shift; RADS avoids this through multi-signal fusion and RL optimization.
+- **vs BatchBALD**: BatchBALD selects batches via joint mutual information, theoretically considering inter-sample dependencies, but lacks a class balance mechanism, leading to severe source domain degradation.
+- **vs LM-DPP**: DPP models both uncertainty and diversity, but its fixed weighting scheme is less flexible than the adaptive reinforcement learning strategy.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ RL-driven sample selection in active learning is not entirely new, but the combination with prior-aware utility and redundancy penalties is novel.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Six baselines compared with complete multi-directional transfer experiments, though dataset size is limited.
-- Writing Quality: ⭐⭐⭐⭐ Methodological formalization is clear, and experimental analysis is detailed.
-- Value: ⭐⭐⭐⭐ High practical value for medical low-resource NLP; the method is generalizable to other fields.
+- Novelty: ⭐⭐⭐⭐ RL-driven sample selection in active learning is not entirely new, but the combined design with prior-aware utility and redundancy penalty is innovative.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Compared against 6 baselines with complete multi-directional transfer experiments, though dataset size is limited.
+- Writing Quality: ⭐⭐⭐⭐ The method formalization is clear and experimental analysis is detailed.
+- Value: ⭐⭐⭐⭐ Highly practical for medical low-resource NLP; the method is generalizable to other domains.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1">
+<div class="related-papers" markdown="1"></div>
 
 ## Related Papers
 

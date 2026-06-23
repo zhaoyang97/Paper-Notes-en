@@ -2,13 +2,13 @@
 title: >-
   [Paper Note] Self-Play Only Evolves When Self-Synthetic Pipeline Ensures Learnable Information Gain
 description: >-
-  [ICML 2026][LLM Reasoning][epiplexity] The authors argue that the current collapse of "LLM self-play" within a few rounds is fundamentally because self-synthetic data fails to provide learnable information gain; they formalize "learnable information" using bounded MDL/epiplexity and propose three system-level designs—Asymmetric Co-evolution, Capacity Budget
+  [ICML 2026][LLM Reasoning][epiplexity] The authors argue that the current collapse of "LLM self-play" within a few rounds is fundamentally due to self-synthetic data failing to provide learnable information gain; they formalize "learnable information" using bounded MDL/epiplexity and propose three system-level designs—Asymmetric Co-evolution, Capacity Growt
 tags:
   - ICML 2026
   - LLM Reasoning
   - epiplexity
 date: 2026-05-08
-content_hash: a89c717554516500
+content_hash: b3050c82858acabb
 ---
 # Self-Play Only Evolves When Self-Synthetic Pipeline Ensures Learnable Information Gain
 
@@ -16,36 +16,36 @@ content_hash: a89c717554516500
 **arXiv**: [2603.02218](https://arxiv.org/abs/2603.02218)  
 **Code**: None  
 **Area**: LLM Reasoning / Self-Evolution / Self-Play / Information Theory  
-**Keywords**: Self-evolving LLMs, Triadic roles (Proposer/Solver/Verifier), Learnable information, epiplexity, Self-synthetic data pipeline
+**Keywords**: Self-evolving LLMs, Triadic roles (Proposer/Solver/Verifier), Learnable information, epiplexity, self-synthetic data pipeline
 
 ## TL;DR
-The authors argue that the current collapse of "LLM self-play" within a few rounds is fundamentally because self-synthetic data fails to provide learnable information gain; they formalize "learnable information" using bounded MDL/epiplexity and propose three system-level designs—Asymmetric Co-evolution, Capacity Budget Growth, and Proactive Information Seeking—to collectively ensure the monotonic increase of learnable information in the triadic (Proposer-Solver-Verifier) self-evolution loop.
+The authors argue that the current collapse of "LLM self-play" within a few rounds is fundamentally due to self-synthetic data failing to provide learnable information gain; they formalize "learnable information" using bounded MDL/epiplexity and propose three system-level designs—Asymmetric Co-evolution, Capacity Growth, and Proactive Information Seeking—to collectively ensure the monotonic increase of learnable information in the Proposer-Solver-Verifier self-evolution loop.
 
 ## Background & Motivation
 
-**Background**: LLM self-evolution systems typically employ the same model to play three roles simultaneously: Proposer, Solver, and Verifier. These systems use multi-reward reinforcement learning (RL) in a closed loop for training without external annotations. Representative works include Absolute Zero, R-Zero, Dr. Zero, SPIN, Self-Rewarding, URPO, and Cooper.
+**Background**: LLM self-evolution systems typically involve the same model acting as a Proposer (task generation), Solver (problem solving), and Verifier (scoring), trained via multi-reward reinforcement learning (RL) closed loops without external labels. Representative works include Absolute Zero, R-Zero, Dr. Zero, SPIN, Self-Rewarding, URPO, Cooper, etc.
 
-**Limitations of Prior Work**: These systems generally experience "rapid early growth followed by collapse after a few rounds"—the Proposer degenerates into generating trivial problems ($f(x)=x$), the Solver performance peaks and then declines, and ground truth must be injected periodically to avoid "self-hallucination" states. Even with sophisticated reward designs (such as maintaining a 50% pass rate), multi-reward RL remains unstable.
+**Limitations of Prior Work**: These systems generally exhibit a "rapid early surge followed by collapse after several rounds"—Proposers degenerate into generating trivial problems ($f(x)=x$), Solver performance plateaus and then declines, and ground truth must be injected periodically to avoid "self-hallucination." Even with sophisticated reward designs (e.g., maintaining a 50% pass rate), multi-reward RL remains unstable.
 
-**Key Challenge**: Existing methods equate self-evolution to "self-play RL" and only focus on whether the reward increases monotonically. However, rewards can be hacked, achieved through rote memorization of pre-training knowledge, or inflated by sampling isomorphic problems—**while task-level metrics rise, the "learnable structure" in newly synthesized data does not increase**. Once learnable information saturates, the model stops truly learning.
+**Key Challenge**: Existing methods equate self-evolution with "self-play RL," focusing solely on the monotonic increase of rewards. However, rewards can be hacked, achieved through rote memorization of pre-training knowledge, or inflated by repeatedly sampling isomorphic problems—**while task-level metrics improve, the "learnable structure" in the new synthetic data of each round does not increase**. Once learnable information saturates, the model ceases true learning.
 
-**Goal**: (1) Provide a metric to distinguish "illusory progress" from "true evolution"; (2) Identify system-level conditions that guarantee monotonic growth of learnable information across iterations; (3) Unify existing self-play/triadic-loop/curriculum practices into a single analytical framework and identify their respective failure modes.
+**Goal**: (1) Provide a metric to distinguish "illusory progress" from "true evolution"; (2) Identify system-level conditions that guarantee the monotonic growth of learnable information across iterations; (3) Unify existing self-play / triadic-loop / curriculum approaches into a single analytical framework and identify their respective failure modes.
 
-**Key Insight**: The authors leverage the concept of epiplexity from Finzi et al. (2026)—under a bounded observer (fixed parameter budget $C$ and inference budget $T$), MDL is decomposed into "learnable structure $S_{C,T}(X)$" and "residual entropy $H_{C,T}(X)$." Since the same data might be noise to a weak observer but structure to a strong one, "learnable information" is a **relative quantity** that must be designed alongside the observer's budget.
+**Key Insight**: The authors borrow the concept of epiplexity from Finzi et al. (2026)—under a bounded observer (fixed parameter budget $C$ and inference budget $T$), MDL is decomposed into "learnable structure $S_{C,T}(X)$" and "residual entropy $H_{C,T}(X)$." Since the same data may be noise to a weak observer but structured to a strong one, "learnable information" is a **relative quantity** that must be co-designed with the observer's budget.
 
-**Core Idea**: Self-evolution is not an RL game but a **self-synthetic data pipeline**. The loop only avoids collapse if $S_{C,T}(D^{(t)})$ increases monotonically across iterations $t$. This requires the synchronization of three gears: the generation end (Asymmetry), the receiver end (Capacity), and the raw material end (External Information).
+**Core Idea**: Self-evolution is not an RL game, but a **self-synthetic data pipeline**; the loop will not collapse only if $S_{C,T}(D^{(t)})$ increases monotonically across iterations $t$. This requires the synchronized rotation of three gears: the generation end (Asymmetric), the receiver end (Capacity), and the raw material end (Information Seeking).
 
 ## Method
 
-As a position paper, this work does not provide a specific training algorithm but answers a defining question: whether a self-play loop is "truly evolving." The authors' answer has three layers—quantifying "learnable information" using bounded information theory, providing three system-level design principles to ensure its monotonic growth, and using diagnostic experiments to verify that existing loops fail to meet these conditions.
+As a position paper, this work does not propose a specific training algorithm but answers a diagnostic question: whether a self-play loop is "truly evolving." The authors' answer is three-layered—first quantifying "learnable information" with bounded information theory, then providing three system-level design principles to guarantee its monotonic growth, and finally validating that existing loops fail these conditions through diagnostic experiments.
 
 ### Overall Architecture
 
-The entire loop is abstracted as a "single information source + multi-directional synthesis" pipeline (Figure 1): the pre-trained weights of the same LLM serve as the sole information source, producing data streams $X_d$ along three synthesis directions (proposing, solving, feedback), which are Fed back to train the model itself. To judge true evolution, one monitors whether the iteration sequence $\{S_{C^{(t)},T^{(t)}}(D^{(t)})\}_t$ increases monotonically, rather than just rewards.
+The entire loop is abstracted as a "single information source + multi-directional synthesis" pipeline (Figure 1): the pre-trained weights of the same LLM serve as the sole information source, producing data flows $X_d$ along three synthesis directions (proposing / solving / feedback), which are then fed back to train the model itself. The judgment of true evolution relies not on reward growth, but on the monotonic increase of the iteration sequence $\{S_{C^{(t)},T^{(t)}}(D^{(t)})\}_t$.
 
-The metric $S$ is derived from a bounded MDL optimizer: within an observer family $\mathcal{P}_{C,T}$ framed by parameter budget $C$ and inference budget $T$, the optimal encoding $P^{\star}=\arg\min_{P}\{|P|+\mathbb{E}[\log 1/P(X)]\}$ is found. This is split into two parts: $S_{C,T}(X):=|P^{\star}|$ is the **epiplexity (learnable structure)**, and $H_{C,T}(X):=\mathbb{E}[\log 1/P^{\star}(X)]$ is the **bounded entropy (residual noise that cannot be learned)**. Crucially, this is a relative quantity: data may be pure noise to a weak observer but a learnable structure to a strong one, so "complexity" must be discussed alongside the observer's budget. This decomposition naturally identifies a "Goldilocks Zone"—data should be neither too simple (low $S$, low $H$) nor too difficult (low $S$, high $H$), but should fall in the middle ground where it is "complex enough to be non-trivial, yet structured enough to be learnable."
+Here, $S$ is derived from a bounded MDL optimizer: within an observer family $\mathcal{P}_{C,T}$ defined by a fixed parameter budget $C$ and inference budget $T$, find the optimal code $P^{\star}=\arg\min_{P}\{|P|+\mathbb{E}[\log 1/P(X)]\}$, then decompose it: $S_{C,T}(X):=|P^{\star}|$ is the **epiplexity (learnable structure)**, and $H_{C,T}(X):=\mathbb{E}[\log 1/P^{\star}(X)]$ is the **bounded entropy (residual unlearnable noise)**. Crucially, this is a relative quantity: data may be pure noise to a weak observer but a learnable structure to a strong one, so "complexity" must be discussed alongside the observer's budget. This decomposition naturally defines a "Goldilocks Zone"—data must be neither too simple (low $S$, low $H$) nor too difficult (low $S$, high $H$), but must fall in the middle ground of being "complex enough to be non-trivial, yet structured enough to be learnable" for the loop to have something to learn.
 
-The three key designs act on different stages of this loop: Asymmetric Co-evolution manages the generation end, Capacity Budget Growth manages the receiver end, and Proactive Information Seeking manages the raw material end.
+The three key designs act on different segments of this loop: Asymmetric Co-evolution manages the "generation end," Capacity Growth manages the "receiver end," and Proactive Information Seeking manages the "raw material end."
 
 ```mermaid
 %%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
@@ -55,18 +55,18 @@ flowchart TD
     S["Solver<br/>(Synthetic Solutions)"]
     V["Verifier<br/>(Internal Env, Synthetic Scoring)"]
     D["Self-Synthetic Data D^(t)<br/>Task + Solution + Feedback"]
-    TRAIN["Training the same base model<br/>Enter next round t+1"]
-    JUDGE{"Criterion: Learnable Information S(D^t)<br/>Monotonic increase across iterations?"}
+    TRAIN["Feedback Training on same base model<br/>Enter next round t+1"]
+    JUDGE{"Criterion: Learnable Info S(D^t)<br/>Monotonic Increase across iterations?"}
     EVOLVE["True Evolution"]
     COLLAPSE["Collapse / Plateau"]
 
-    EXT -->|"Proactive Info Seeking: Active context injection"| P
-    P -->|"Asymmetry: Weak Proposer trains strong Solver"| S
+    EXT -->|"Proactive Info Seeking: Active context injection per round"| P
+    P -->|"Asymmetric: Weak Proposer trains strong Solver (weak-to-strong)"| S
     S --> V
     V --> D
-    S -.->|"Asymmetry: Strong Solver syncs back to environment"| P
+    S -.->|"Asymmetric: Sync strong Solver back to internal env (strong-to-weak)"| P
     D --> TRAIN
-    TRAIN -->|"Capacity Growth: Expand C and T with iterations"| P
+    TRAIN -->|"Capacity Growth: Expand parameters C and inference T with t"| P
     D --> JUDGE
     JUDGE -->|Yes| EVOLVE
     JUDGE -->|No| COLLAPSE
@@ -74,70 +74,67 @@ flowchart TD
 
 ### Key Designs
 
-**1. Asymmetric Co-evolution: Making "verification easier than solving" a sustainable capability ladder**
+**1. Asymmetric Co-evolution: Making "Verification easier than Solving" a Sustainable Capability Ladder**
 
-Existing RL only completes the first half of "weak-to-strong"—using a weak Proposer/Verifier to train a strong Solver. But once the Solver becomes strong, if the Proposer/Verifier does not keep up, the task stream degenerates into "low structure" relative to the current observer, and the loop collapses toward trivial problems. This design completes the reverse loop: first weak-to-strong (weak Proposer trains strong Solver), then strong-to-weak (syncing the stronger Solver back to the internal environment to refresh the Proposer/Verifier). This is possible because although the three roles share the same weight source, the $S_{C,T}(X_d)$ produced along different synthetic directions $d(P,S,V)$ differs under a bounded observer. Using one-way permutations as an extreme example, it can be proven that $H_{\text{poly}}(X|Y)-H_{\text{poly}}(Y|X)\ge c\log n$, meaning an $\Omega(\log n)$ bit difficulty gap exists between forward proposing and reverse solving. Training converts this residual uncertainty into reusable structure. Practice involves: (i) organizing synthetic directions by asymmetric gaps (from grammar correction to math proofs to medical diagnosis); (ii) using back-translation (Magicoder, MathGenie) for the Proposer; (iii) attempting verifier-free RL for the Verifier to share beliefs with the Solver.
+Existing RL only completes the first half of the weak-to-strong process—using weak Proposers/Verifiers to train a strong Solver. But once the Solver becomes strong, if the Proposer/Verifier does not follow, the task flow degenerates into "low structure" relative to the current observer, and the loop collapses toward trivial problems. This design completes the reverse closed loop: first weak-to-strong (weak proposer trains strong Solver), then strong-to-weak (syncing the stronger Solver back to the internal environment to refresh Proposer/Verifier). This is possible because, although the three roles share the same weight source, the $S_{C,T}(X_d)$ produced along different synthetic directions $d(P,S,V)$ differs under a bounded observer. Using one-way permutations as a limiting example, one can prove $H_{\text{poly}}(X|Y)-H_{\text{poly}}(Y|X)\ge c\log n$, implying a difficulty gap of $\Omega(\log n)$ bits between forward proposing and reverse solving; training converts this residual uncertainty into reusable structure. Practice involves: (i) organizing synthesis directions from small to large asymmetric gaps; (ii) using back-translation (Magicoder, MathGenie) for Proposers; (iii) attempting verifier-free RL for Verifiers.
 
-**2. Capacity Budget Growth: Scaling observer budgets to keep pace with newly exposed structures**
+**2. Capacity Growth: Expanding Observer Budgets with Iterations to Match New Structures**
 
-While the previous design creates structured data, it is wasted if the receiver does not grow—fixed $(C,T)$ imposes an upper bound on $S_{C,T}(X)$. In practice, this manifests as two mismatches: fixed parameter budget $C^{(t)}$ causes training loss to saturate early, forcing the Proposer to degenerate; fixed inference budget $T^{(t)}$ misinterprets "truncated reasoning" as "insufficient knowledge." Thus, $C^{(t)}$ and $T^{(t)}$ must expand with iterations. Theoretical support is direct: if observer families are monotonically nested $\mathcal{P}_{C_1,T_1}\subseteq\mathcal{P}_{C_2,T_2}$, then $\mathrm{MDL}_{C_2,T_2}(X)\le\mathrm{MDL}_{C_1,T_1}(X)$, and expansion pushes the "learnable/unlearnable" boundary outward. Practical methods include asymmetric role scaling (small Proposer feeding large Solver), adding layers/experts (Net2Net, MoE), and adaptive reasoning tokens or dynamic depth (Mixture-of-Recursions).
+The previous design can continuously create structured data, but it is futile if the receiver remains static—$S_{C,T}(X)$ is upper-bounded for fixed $(C,T)$. Once the observer is saturated, more structure remains "invisible." Empirically, this manifests as two mismatches: fixed parameter budget $C^{(t)}$ leads to early loss saturation, forcing the Proposer to degenerate to tasks the model can easily solve; fixed inference budget $T^{(t)}$ misidentifies "inference truncation" as "lack of knowledge." Thus, $C^{(t)}$ and $T^{(t)}$ must expand with iterations. Theoretical support is direct: if observer families are monotonically nested $\mathcal{P}_{C_1,T_1}\subseteq\mathcal{P}_{C_2,T_2}$, then $\mathrm{MDL}_{C_2,T_2}(X)\le\mathrm{MDL}_{C_1,T_1}(X)$, meaning expansion directly pushes the boundary of "learnable vs unlearnable." On the parameter axis, one can use asymmetric role scaling or cross-iteration layer/expert addition (Net2Net, Stacking, MoE); on the inference axis, adaptive reasoning tokens or Mixture-of-Recursions can be used.
 
-**3. Proactive Information Seeking: Providing an external inlet to break the pre-training weight ceiling**
+**3. Proactive Information Seeking: Opening an External Inlet to Break the Pre-training Ceiling**
 
-The first two designs operate internally, but pure zero-data systems eventually hit a ceiling imposed by pre-training weights. Passively attaching a fixed external corpus degenerates into fine-tuning, and fixed RAG may exceed the Solver's budget early on or become routine later. This design allows the Proposer+Verifier to actively select an external context $d^{(t)}$ each round and inject it as a conditioning context $(Y^{(t)}\mid d^{(t)})$. The corresponding metric is conditional bounded MDL $\mathrm{MDL}(Y\mid d)$. Practices include: (i) Proposer generating queries based on Solver failures/Verifier disagreements to synthesize tasks requiring $d$ (citation support, multi-doc synthesis); (ii) converting $d$ into multiple difficulty levels scheduled by a curriculum; (iii) evolving retrievers/rerankers using self-synthetic signals (Verifier relevance).
+The first two gears rotate within the system, but the learnable information of a pure zero-data system is ultimately capped by its pre-training weights. Passively attaching fixed external corpora results in fine-tuning on that corpora, while fixed RAG either exceeds the Solver's budget early on or becomes a routine later—all three regimes "reactively" consume information without source expansion. This design enables the Proposer+Verifier to actively select an external context $d^{(t)}$ each round and inject it as a conditioning context (not a training label) into the conditional stream $(Y^{(t)}\mid d^{(t)})$. The corresponding metric is conditional bounded MDL $\mathrm{MDL}(Y\mid d):=\min_{P}\{|P|+\mathbb{E}[\log 1/P(Y\mid d)]\}$, where $S_{C,T}(Y\mid d)$ is the "conditional learnable information." Practical steps include: (i) Proposers generating queries from Solver failures or Verifier disagreements; (ii) converting $d$ into synthetic directions of varying difficulty; (iii) evolving retrievers/rerankers using self-synthetic signals.
 
 ### Loss & Training
 
-For the metric, **Prequential Coding** is used to estimate epiplexity (Algorithm 1): the dataset is split into training/validation. During a streaming pass over $\mathcal{D}_{\text{train}}$, online loss $\mathcal{L}_{\text{online}}=\sum_i -\log P_{\theta_i}(Z_i)$ is accumulated. At the end of each epoch, two items are calculated—model cost $S=(\mathcal{L}_{\text{online}}-\mathcal{L}_{\text{train}})/\ln 2$ and data cost $(\mathcal{L}_{\text{val}}/\ln 2)/N_{\text{val}}$. The $S^{\star}$ corresponding to the epoch with the minimum MDL is used as the estimate for learnable information. Intuitively, this equals the "online regret the model pays to learn this data." The three principles do not bind to a specific loss function; engineering手段 are provided in the "Practice" sections for subsequent integration.
+The measurement side uses **Prequential Coding** to estimate epiplexity (Algorithm 1): the dataset is split into training/validation. During the first streaming pass over $\mathcal{D}_{\text{train}}$, the online loss $\mathcal{L}_{\text{online}}=\sum_i -\log P_{\theta_i}(Z_i)$ is accumulated. At the end of each epoch, two terms are calculated—Model cost $S=(\mathcal{L}_{\text{online}}-\mathcal{L}_{\text{train}})/\ln 2$ and Data cost $(\mathcal{L}_{\text{val}}/\ln 2)/N_{\text{val}}$. The $S^{\star}$ corresponding to the epoch with the minimum MDL is taken as the estimate of learnable information. Intuitively, this equals the "accumulated online regret the model pays to learn this batch of data."
 
 ## Key Experimental Results
 
-The experiments are **diagnostic**, aiming to verify two things using the epiplexity metric: (1) whether different combinations of synthesis directions/Proposer/Solver capacities result in significant differences in learnable information; (2) that current self-play loops **do not** show monotonic increases in learnable information after multiple iterations. Tasks follow Absolute Zero (Zhao et al., 2025a) categories: abduction, deduction, and induction in code.
+The experiments are **diagnostic**, aimed at validating two things using the epiplexity metric: (1) learnable information varies significantly under different combinations of synthesis directions/Proposer/Solver capacities; (2) current self-play loops do **not** show monotonic increases in learnable information after multiple iterations. Tasks follow Absolute Zero (Zhao et al., 2025a) coding problems: abduction, deduction, and induction.
 
-### Main Results (Experiment 1: Single-round epiplexity distribution)
+### Main Results (Experiment 1: Single-round Epiplexity Distribution)
 
-| Variable Axis | Values | Observed epiplexity trend | Conclusion |
+| Variable Axis | Values | Observed Epiplexity Trend | Conclusion |
 | :--- | :--- | :--- | :--- |
-| Proposer Capacity | Qwen2.5 7B → 14B → Qwen3 4B | Monotonic increase | Stronger Proposers generate data with more learnable info |
-| Solver Capacity | Small to large | **Increase then decrease** | Consistent with emergence (Finzi et al., 2026): small models learn structure, strong ones switch to memorization |
-| Synthesis Direction | abduction / deduction / induction | induction ≫ abduction ≈ deduction | Learnable information varies significantly across directions |
+| Proposer Capacity | Qwen2.5 7B → Qwen2.5 14B → Qwen3 4B | Monotonic Increase | Stronger Proposers generate more learnable information |
+| Solver Capacity | Small to Large | **Rise then Fall** | Consistent with Finzi et al. (2026): small models are forced to learn structure, then shift to memorization |
+| Synthesis Direction | abduction / deduction / induction | induction ≫ abduction ≈ deduction | Massive variance in info gain across directions |
 
-### Ablation Study (Experiment 2: epiplexity trajectory in multi-round self-play)
+### Ablation Study (Experiment 2: Epiplexity Trajectory in Multi-round Self-play)
 
-| Configuration | epiplexity behavior across iterations | Behavioral Observation |
+| Configuration | Epiplexity Behavior across Iterations | Behavioral Observation |
 | :--- | :--- | :--- |
-| Multi-reward RL self-play (standard) | **Violent oscillation**, non-monotonic | Solver capability drops, Proposer task patterns collapse |
-| (Implicit Control) With three designs | Authors claim restored monotonic growth | Awaiting community verification |
+| Multi-reward RL self-play (no explicit mechanisms) | **Severe Oscillation**, non-monotonic | Solver performance drops, Proposer task patterns collapse |
+| (Implicit Control) With three designs | Claimed monotonic growth | Pending community verification |
 
 ### Key Findings
-- **Strong Proposer $\neq$ Good Data**: When Solver capacity exceeds a threshold, the gain from a stronger Proposer is negated by "Solver degeneration into memorization"—providing empirical evidence that Capacity Growth must scale Proposer, Solver, and Verifier **simultaneously**.
-- **Direction over Quantity**: Induction provides significantly higher learnable information than abduction/deduction, proving that changing synthesis directions is far more effective than just adding tokens or tasks.
-- **RL is Not Enough**: Standard multi-reward self-play causes epiplexity to oscillate rather than rise, explaining why reward shaping alone is insufficient.
+- **Proposer strength ≠ Data quality**: When Solver capacity exceeds a threshold, the gain from a stronger Proposer is offset by the Solver's degeneration into memorization—providing empirical evidence that Capacity Growth must occur **simultaneously** across all roles.
+- **Direction matters more than quantity**: Learnable information in induction is significantly higher than in abduction/deduction, proving that "changing synthesis directions" is far more effective than "adding tokens/problems."
+- **Multi-reward RL is insufficient**: Fixed $(C,T)$ plus multi-reward self-play causes epiplexity to oscillate rather than rise, explaining from an information-theoretic perspective why reward shaping alone is inadequate.
 
 ## Highlights & Insights
-- Translates "true evolution" into a computable quantity $S_{C,T}(D^{(t)})$, separating reward inflation from actual information gain—a key step in converting vague "model collapse" into a monitored metric.
-- Uses the $\Omega(\log n)$ gap of one-way permutations to elevate the "verification is easier than solving" intuition into a formal lower bound for asymmetric task design.
-- The "Goldilocks Zone" provides a scheduling signal: by monitoring (S, H) coordinates, the system can adjust difficulty or directions more interpretably than pass-rate-based scheduling.
-- The synergy of the three principles (Asymmetry as the generator, Capacity as the receiver, Info Seeking as the inlet) provides a diagnostic framework for locating stagnation in agentic systems.
+- Translates "whether self-evolution is truly evolving" into a computable metric $S_{C,T}(D^{(t)})$, ensuring reward growth is no longer conflated with information gain.
+- Uses the $\Omega(\log n)$ gap of one-way permutations to formalize "asymmetry," upgrading the intuitive "verification is easier than solving" into a citable lower bound applicable to any "forward-easy, inverse-hard" task design.
+- The "Goldilocks Zone (high $S$, moderate $H$)" serves as a trick-like scheduling signal: calculating the (S, H) position each round allows for interpretable difficulty adjustment.
 
 ## Limitations & Future Work
-- Epiplexity is based on very recent work (Finzi et al., 2026); its utility and prequential coding costs for LLMs require broader community validation.
-- The three designs are currently easier to implement in easy-to-verify domains (code, math); how to measure and train inverse gaps in hard-to-verify domains (open QA, medical) remains open.
-- The paper lacks a large-scale "full loop" control experiment showing "it monotonicly increases once all three are added"; it relies heavily on future work to fulfill this position.
-- Learnable information is a macro metric and may learn "intrinsic but task-irrelevant" structures.
-- Proactive Information Seeking depends on "knowing what you don’t know," which is itself a challenging research problem.
+- The epiplexity metric is from very recent work (Finzi et al., 2026) and has not been widely validated; prequential coding is computationally expensive.
+- The three designs are currently easier to implement in easy-to-verify domains (code, math); how to measure and train the inverse gap in hard-to-verify domains remains open.
+- The experiments lacks a "large-scale positive proof" showing that adding all three designs guarantees monotonic growth; it relies on future work to fill this gap.
+- Learnable information is a macro metric and may not always correlate positively with downstream task accuracy.
 
 ## Related Work & Insights
-- **vs Self-Training (STaR / ReST)**: These rely on fixed verifiers; this paper notes they saturate once the initial distribution is exhausted (lack of Information Seeking).
-- **vs Solver-Verifier Synergy (Self-Rewarding / SPIN)**: These lack strong-to-weak synchronization to keep Verifiers updated (lack of Asymmetric Co-evolution).
-- **vs Proposer-Solver Self-Play (Absolute Zero / R-Zero)**: Their rapid collapse is attributed to Proposers drifting toward trivial or unsolvable tasks without Verifier alignment.
-- **vs Triadic Loops (SPELL / SPICE)**: Closest to this framework, but lack the unified metric $S_{C,T}$ to judge true evolution.
+- **vs Self-Training (STaR / ReST)**: These rely on fixed verifiers; this paper notes they saturate once the initial distribution is exhausted (Lack of Information Seeking).
+- **vs Solver-Verifier Co-evolution (Self-Rewarding / SPIN)**: They lack strong-to-weak synchronization to ensure Verifiers keep up with Solvers (Lack of Asymmetric reverse loop).
+- **vs Proposer-Solver Self-Play (Absolute Zero / R-Zero)**: Their collapse is attributed to Proposers drifting toward triviality, and they often lack Verifier synchronization.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Formalizes self-play collapse via "lack of learnable information gain" and introduces epiplexity into self-evolving LLM design principles.
-- Experimental Thoroughness: ⭐⭐⭐ Only small-scale diagnostic experiments; lacks direct positive verification of the full improved loop.
-- Writing Quality: ⭐⭐⭐⭐⭐ Extremely clear structure (Framework → Metric → Principles → Practices).
-- Value: ⭐⭐⭐⭐⭐ Provides the self-evolving LLM community with unified diagnostic vocabulary and design principles.
+- **Novelty**: ⭐⭐⭐⭐⭐ Formally introducing information-theoretic criteria into self-evolving LLM design.
+- **Experimental Thoroughness**: ⭐⭐⭐ Small-scale diagnostic experiments only; lacks full-system verification.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ Extremely clear structure (Framework → Metric → Principles → Practice).
+- **Value**: ⭐⭐⭐⭐⭐ Provides a unified diagnostic vocabulary and design criteria for the self-evolving LLM community.
 
 <!-- RELATED:START -->
 
@@ -148,8 +145,8 @@ The experiments are **diagnostic**, aiming to verify two things using the epiple
 - [\[ACL 2026\] Stratagem: Learning Transferable Reasoning via Trajectory-Modulated Game Self-Play](../../ACL2026/llm_reasoning/stratagem_learning_transferable_reasoning_via_trajectory-modulated_game_self-pla.md)
 - [\[ACL 2026\] Self-Consistency from Only Two Samples: CoT-PoT Ensembling for Efficient LLM Reasoning](../../ACL2026/llm_reasoning/self-consistency_from_only_two_samples_cot-pot_ensembling_for_efficient_llm_reas.md)
 - [\[ICML 2026\] On the Generalization Gap in Self-Evolving Language Model Reasoning](on_the_generalization_gap_in_self-evolving_language_model_reasoning.md)
-- [\[ACL 2026\] Does Self-Consistency Improve the Recall of Encyclopedic Knowledge?](../../ACL2026/llm_reasoning/does_self-consistency_improve_the_recall_of_encyclopedic_knowledge.md)
-- [\[AAAI 2026\] SERL: Self-Examining Reinforcement Learning on Open-Domain](../../AAAI2026/llm_reasoning/serl_self-examining_reinforcement_learning_on_open-domain.md)
+- [\[ICML 2026\] The Role of Feedback Alignment in Self-Distillation](the_role_of_feedback_alignment_in_self-distillation.md)
+- [\[ICML 2026\] An Information-Theoretic Criterion for Efficient Data Synthesis](an_information-theoretic_criterion_for_efficient_data_synthesis.md)
 
 </div>
 

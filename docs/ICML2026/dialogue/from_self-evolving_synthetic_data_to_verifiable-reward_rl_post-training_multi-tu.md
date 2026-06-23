@@ -2,85 +2,84 @@
 title: >-
   [Paper Note] From Self-Evolving Synthetic Data to Verifiable-Reward RL: Post-Training Multi-turn Interactive Tool-Using Agents
 description: >-
-  [ICML 2026][Dialogue Systems][GRPO] Addressing the dual bottlenecks in post-training "multi-turn interactive tool-using agents"—expensive high-quality data and RL signal destruction by user simulation noise—the authors propose "Self-evolving multi-agent data synthesis (AReaL-SEA)" with executable verifiers as rewards. Combined with an RL recipe involving
+  [ICML 2026][Dialogue Systems][GRPO] Addressing two major bottlenecks in post-training multi-turn interactive tool-using agents—expensive high-quality data and RL signal degradation from user simulation noise—the authors propose "AReaL-SEA," a self-evolving multi-agent data synthesis pipeline that generates executable verifiers as rewards. Combined with a
 tags:
   - ICML 2026
   - Dialogue Systems
   - GRPO
 date: 2026-05-08
-content_hash: 77ef621937aba611
+content_hash: 02265891bafb4a78
 ---
 # From Self-Evolving Synthetic Data to Verifiable-Reward RL: Post-Training Multi-turn Interactive Tool-Using Agents
 
 **Conference**: ICML 2026  
 **arXiv**: [2601.22607](https://arxiv.org/abs/2601.22607)  
 **Code**: https://github.com/inclusionAI/AReaL/tree/main/examples/tau2 (Available)  
-**Area**: LLM Agent / Reinforcement Learning / Tool-use  
-**Keywords**: Multi-turn Tool-use, Verifiable-Reward RL, Synthetic Data Self-evolution, GRPO, User Simulator Fine-tuning
+**Area**: LLM Agent / Reinforcement Learning / Tool Use  
+**Keywords**: Multi-turn Tool Use, Verifiable Reward RL, Synthetic Data Self-Evolution, GRPO, User Simulator Fine-tuning
 
 ## TL;DR
-Addressing the dual bottlenecks in post-training "multi-turn interactive tool-using agents"—expensive high-quality data and RL signal destruction by user simulation noise—the authors propose "Self-evolving multi-agent data synthesis (AReaL-SEA)" with executable verifiers as rewards. Combined with an RL recipe involving "SFT user models followed by large-batch + dynamic filtering GRPO," Qwen3-235B achieves a $pass^1$ of 73.0 in Airline and 98.3 in Telecom on $\tau^2$-bench, matching or exceeding Claude/Gemini/GPT-5.
+Addressing two major bottlenecks in post-training multi-turn interactive tool-using agents—expensive high-quality data and RL signal degradation from user simulation noise—the authors propose "AReaL-SEA," a self-evolving multi-agent data synthesis pipeline that generates executable verifiers as rewards. Combined with an RL recipe featuring user model SFT, large batches, and dynamic filtering GRPO, Qwen3-235B achieves a pass^1 of 73.0 in Airline and 98.3 in Telecom on τ²-bench, matching or exceeding Claude/Gemini/GPT-5.
 
 ## Background & Motivation
 
-**Background**: LLMs are transitioning from "Q&A machines" to "task-completion assistants," requiring simultaneous human communication and environment (API/tool) interaction to complete complex tasks (e.g., the "rebook → query → verify policy → execute" workflow in $\tau^2$-bench Airline). While base models like ReAct/Toolformer/OpenVLA exist for tool-use, multi-turn interactive agents are more challenging due to the constant presence of a user.
+**Background**: LLMs are transitioning from "Q&A machines" to "task-completion assistants." They must communicate with humans while interacting with environments (APIs/tools) to complete complex tasks, such as the "reschedule → query → verify policy → execute" workflow in τ²-bench. While base models for tool use (ReAct/Toolformer/OpenVLA) exist, multi-turn interactive agents are significant more challenging due to the persistent "human-in-the-loop" dimension.
 
-**Limitations of Prior Work**: Post-training open-source models into competitive interactive agents faces two bottlenecks. **(1) Data issues**: Multi-turn tool dialogue data is extremely difficult to scale—human annotation is costly, and automated synthesis struggles to simultaneously meet "complex domain rules + simulated user private info + sufficient task difficulty for RL" requirements. **(2) RL instability**: Interactive tasks require user-driven rollouts, necessitating a user simulator. However, the authors found that open-source models are unstable user simulators; in $\tau^2$-bench dual-control scenarios, they often misuse tools or ignore instructions, causing rollout failures and incorrect reward attribution to the agent.
+**Limitations of Prior Work**: Post-training open-source models into competitive interactive agents faces two bottlenecks. **(1) Data Scaling**: Multi-turn tool dialogue data is extremely difficult to scale—human annotation is costly, and automated synthesis struggles to simultaneously satisfy complex domain rules, simulated user private information, and sufficient task difficulty for RL. **(2) RL Instability**: Interactive tasks require user-driven rollouts, necessitating the use of user simulators. The authors found that using open-source models as user simulators is highly unstable; in τ²-bench dual-control scenarios, simulators often issue incorrect tool calls or ignore instructions, causing rollout failures where rewards are misattributed to the Agent.
 
-**Key Challenge**: Training an agent with RL requires stable rollouts; stable rollouts require reliable user simulation; user simulation requires good training data; and good training data requires joint rollouts from both agent and user—creating a circular dependency.
+**Key Challenge**: Training an Agent with RL requires stable rollouts; stable rollouts require stable user simulation; stable user simulation requires high-quality training data; and high-quality data requires joint rollouts from both Agent and User models. This creates a circular dependency.
 
-**Goal**: (i) Design a scalable, verifiable multi-turn tool-use data synthesis pipeline; (ii) Design an RL recipe for interactive agents that remains robust against unstable user simulation.
+**Goal**: (i) Design a scalable, verifiable multi-turn tool-use data synthesis pipeline; (ii) develop an RL recipe for interactive agents that is robust against user simulation instability.
 
-**Key Insight**: Data synthesis is structured as a "hierarchical multi-agent system + self-evolving feedback loop," allowing the system to learn from its own failures. User simulators are first SFT-ed with synthetic data before RL rollout to suppress "user noise" at the source, while large batch sizes and dynamic filtering absorb remaining reward variance.
+**Key Insight**: Data synthesis should be a "hierarchical multi-agent system with a self-evolving feedback loop" to learn from failures. The user simulator should be SFT-ed on synthetic data before RL rollouts to suppress noise at the source, while large batch sizes and dynamic filtering should be used to absorb remaining reward variance.
 
-**Core Idea**: Data equals self-evolving multi-agent synthesis + executable verifiers; RL equals stabilizing the user simulator followed by GRPO; together, they form a cyclically improving post-training pipeline.
+**Core Idea**: Data = Self-evolving multi-agent + Executable verifiers; RL = User simulator stabilization followed by GRPO; these components form a cyclic, self-improving post-training pipeline.
 
 ## Method
 
 ### Overall Architecture
-The framework addresses the circular dependency of training competitive interactive agents. It is divided into two modules. The first, **AReaL-SEA**, handles data generation: a meta-planner initiates $N$ non-overlapping synthesis plans, each running an "assignment → verification → simulation → dialogue verification" pipeline, with failures fed back to a reflection module for $K$ iterations. The second is the RL recipe: the user simulator is SFT-ed to suppress noise, followed by agent training via GRPO. Rewards are provided by executable verifiers generated during synthesis, which compare the final trajectory state against ground-truth.
+The system addresses the circular dependency of post-training competitive interactive agents by decoupling the process into two mutually reinforcing modules. **AReaL-SEA** handles data synthesis: a meta-planner generates $N$ non-overlapping synthesis plans, each running an "item generation → verification → simulated dialogue → dialogue verification" pipeline. Failure cases are fed back into a reflection module to iterate on plans over $K$ rounds. The **RL Recipe** first SFTs the user simulator to suppress noise and then trains the Agent using GRPO. Rewards are derived from executable verifiers generated during synthesis, which compare the final state against the ground truth.
 
 ```mermaid
-%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
-flowchart TD
-    subgraph SEA["AReaL-SEA Self-Evolving Synthesis"]
+graph TD
+    subgraph SEA["AReaL-SEA Self-Evolving Data Synthesis"]
         direction TB
-        A["Diversified Plan Generation<br/>Meta-planner generates N plans"] --> B["Four-stage Agent Pipeline<br/>Task Gen → Verification → Rollout → Trajectory Check"]
-        B --> C["Reflection Loop<br/>Failure attribution fed back, update plans for K rounds"]
+        A["Diversified Plan Generation<br/>Meta-planner generates N non-overlapping plans"] --> B["Four-stage Agent Pipeline<br/>Task Gen → Task Verif → Trajectory Rollout → Traj Verif"]
+        B --> C["Reflection Loop<br/>Failure attribution feedback, update plans for K rounds"]
         C -->|Iterative Improvement| A
     end
-    SEA --> D["Executable Per-instance Verifier<br/>Synchronous GT gen, compares final state for 0/1"]
+    SEA --> D["Executable Per-instance Verifier<br/>Ground-truth generated with data, compares final state for 0/1 reward"]
     D --> RL
-    subgraph RL["Stabilized User Simulator + GRPO"]
+    subgraph RL["User Simulation Stabilization & GRPO"]
         direction TB
-        F["SFT User Simulator<br/>Suppress user noise"] --> G["GRPO Agent Training<br/>Large batch + Dynamic Filtering"]
+        F["SFT User Simulator<br/>Suppress user noise first"] --> G["GRPO Agent Training<br/>Large batch + Dynamic Filtering"]
     end
     RL --> H["Competitive Multi-turn Tool-use Agent"]
 ```
 
 ### Key Designs
 
-**1. AReaL-SEA Self-Evolving Data Synthesis: Learning from Failure**
+**1. AReaL-SEA Self-Evolving Data Synthesis: Learning from Pipeline Failures**
 
-Unlike static pipelines (e.g., APIGen-MT), this multi-agent system is evolvable. First, **Diversified Plan Generation** uses a meta-planner to generate non-overlapping (synthesis plan, evaluation plan) pairs, specifying domains, complexity, and user styles. Diversity is constructed rather than random (reducing prompt sets from 64 to 4 drops performance from 56.0 to 42.5). Second, the **Four-stage Agent Pipeline** includes a Task Synthesis Agent producing tuples $q = (u, t, a^*)$, followed by verification and rollout agents. The Trajectory Verification Agent provides attribution tags for failures. Third, the **Reflection Loop** feeds failures into a reflection agent to update plans: $(\mathcal{P}_s^{(n,k+1)}, \mathcal{P}_e^{(n,k+1)}) = \text{Reflect}(\mathcal{P}_s^{(n,k)}, \mathcal{P}_e^{(n,k)}, \{\text{failures}\})$. Removing this loop drops performance from 56.0 to 44.0.
+Multi-turn dialogue data must satisfy complex domain rules, user private info, and RL-level difficulty. Unlike static pipelines (APIGen-MT/TOUCAN), this system is a self-evolving multi-agent system. First, **Diversified Plan Generation** uses a meta-planner to generate non-overlapping (synthesis plan, evaluation plan) pairs, explicitly specifying different domains, complexities, and styles. Ablations show shortening the prompt set from 64 to 4 reduces performance from 56.0 to 42.5. Second, a **Four-stage Agent Pipeline** executes each plan: Task Synthesis generates a task $q = (u, t, a^*)$, Task Verification ensures quality, Trajectory Rollout executes the dialogue, and Trajectory Verification evaluates and tags attribution (identifying if a failure was due to the task or the dialogue). Third, a **Reflection Loop** feeds failures back to a reflection agent to update plans: $(\mathcal{P}_s^{(n,k+1)}, \mathcal{P}_e^{(n,k+1)}) = \text{Reflect}(\mathcal{P}_s^{(n,k)}, \mathcal{P}_e^{(n,k)}, \{\text{failures}\})$. Removing the evolution loop drops performance from 56.0 to 44.0.
 
-**2. Executable per-instance verifier: Anchoring Reward Signals**
+**2. Executable Per-instance Verifier: Anchoring Reward Signals**
 
-LLM-as-judge is slow and noisy for interactive tasks. Instead, each task is synthesized with a ground-truth final state and an executable verifier function. During RL, the verifier checks the final state $s_T$ against ground-truth entities and actions, providing a binary outcome reward: $\mathcal{R}(s_t, a_t) = R(s_T)$ (where $R(s_T) \in \{0, 1\}$). This adapts the Verifiable-Reward RL (RLVR) paradigm from math/code to agents.
+Using LLM-as-judge for interactive tasks is slow and noisy. This method generates a ground-truth final state and an executable verifier function alongside each task. After an RL rollout, the verifier checks the final state $s_T$ against key entities and actions. It provides a deterministic binary reward: $\mathcal{R}(s_t, a_t) = R(s_T)$ (1 if correct at $t = T$, else 0). This adapts the verifiable reward (RLVR) paradigm from math/code to the Agent domain, ensuring speed and accuracy without an external LLM judge.
 
-**3. Stabilizing the User Simulator for GRPO: Suppress Noise, Absorb Variance**
+**3. User Simulation Stabilization & GRPO: Suppressing Noise and Absorbing Variance**
 
-Open-source models are unstable users, often misusing tools and causing incorrect reward attribution. First, the **User Model is SFT-ed** using AReaL-SEA data to ensure instruction following and role-playing. This step is critical: using a base user model for RL drops performance from 85.4 to 75.6, while the SFT user model pushes it to 95.6. The agent is then trained via GRPO with **Large Batches** (total samples increased from 256 to 512, raising $pass^1$ from ~65 to 70.5) to stabilize advantage estimation. **Dynamic Filtering** discards tasks where all trajectories in a group either succeed or fail ($\hat{A}=0$), retaining only groups with learning signals; removing this drops performance from 70.5 to 65.0.
+The authors observe that using base open-source models as user simulators is highly unstable, leading to misattributed reward signals. Thus, the **User Model is SFT-ed** first using AReaL-SEA data to ensure instruction following and role-consistent tool use. This step is critical: using a base user model for RL caused performance to drop from the SFT baseline of 85.4 to 75.6, while the SFT-ed simulator allowed it to reach 95.6. For the Agent, **GRPO** samples $G$ trajectories per task to calculate group-normalized advantage $\hat{A}(\tau^{(g)}) = \frac{R(\tau^{(g)}) - \mu_G}{\sigma_G}$. Stability is further enhanced via **Large Batches** (increasing total samples from 256 to 512 improved pass^1 from ~65 to 70.5) and **Dynamic Filtering** (discarding tasks where all trajectories succeed or fail, i.e., $\hat{A}=0$).
 
 ### Loss & Training
-The RL objective is $\mathcal{J}_\text{RL}(\theta) = \mathbb{E}_{q \sim \mathcal{D}}[\frac{1}{\sum_g N_G}\sum_g \sum_t \sum_i \mathcal{L}_{t,i}^{(g)}(\theta)]$, where $\mathcal{L}_{t,i}^{(g)} = \min(\rho_{t,i}^{(g)} \hat{A}^{(g)}, \text{clip}(\rho_{t,i}^{(g)}, 1-\epsilon, 1+\epsilon)\hat{A}^{(g)})$ and $\rho_{t,i}^{(g)} = \pi_\theta / \pi_{\theta_\text{old}}$. SFT uses standard cross-entropy. 30B models were trained on 64 H200 GPUs; 235B on 80 H200s.
+The RL objective is $\mathcal{J}_\text{RL}(\theta) = \mathbb{E}_{q \sim \mathcal{D}}[\frac{1}{\sum_g N_G}\sum_g \sum_t \sum_i \mathcal{L}_{t,i}^{(g)}(\theta)]$, where $\mathcal{L}_{t,i}^{(g)} = \min(\rho_{t,i}^{(g)} \hat{A}^{(g)}, \text{clip}(\rho_{t,i}^{(g)}, 1-\epsilon, 1+\epsilon)\hat{A}^{(g)})$ with token-level importance ratio $\rho_{t,i}^{(g)} = \pi_\theta / \pi_{\theta_\text{old}}$. SFT uses standard cross-entropy. Training used 64 H200 GPUs for 30B models and 80 H200s for 235B.
 
 ## Key Experimental Results
 
 ### Main Results
-On $\tau^2$-bench across three domains, where $pass^k$ requires $k$ independent attempts to all succeed:
+Pass^k results on τ²-bench (full success across $k$ independent attempts):
 
-| Model | Airline $pass^1$ | Retail $pass^1$ | Telecom $pass^1$ |
+| Model | Airline pass^1 | Retail pass^1 | Telecom pass^1 |
 |-------|----------------|----------------|----------------|
 | Claude-Sonnet-4.5 | 70.0 | 86.2 | 98.0 |
 | Gemini 3.0 Pro | 73.0 | 85.3 | 98.0 |
@@ -88,54 +87,51 @@ On $\tau^2$-bench across three domains, where $pass^k$ requires $k$ independent 
 | Qwen3-235B baseline | 58.0 | 59.9 | 53.7 |
 | Qwen3-235B + SFT | 64.0 | 71.5 | 87.9 |
 | **Qwen3-235B + RL** | **73.0** | 75.0 | **98.3** |
-| Qwen3-30B-A3B-2507 baseline | 56.0 | 54.2 | 28.5 |
-| Qwen3-30B-A3B-2507 + SFT | 60.0 | 69.1 | 85.4 |
-| **Qwen3-30B-A3B-2507 + RL** | 70.5 | 75.0 | 95.6 |
+| Qwen3-30B-A3B-2507 + RL | 70.5 | 75.0 | 95.6 |
 
-The 235B version ties Gemini 3.0 Pro in Airline and exceeds all frontier models in Telecom. The 30B version is also highly competitive, nearing GPT-5 in Telecom.
+Qwen3-235B matches Gemini 3.0 Pro in Airline and outperforms all models in Telecom. Mix Training (combining all domains) resulted in an average pass^1 of 81.3% for Qwen3-235B, exceeding GPT-5 (80.0) and Qwen3-Max-Thinking (80.7).
 
 ### Ablation Study
 
-| Configuration | Airline $pass^1$ (SFT) | Description |
+| Configuration | Airline pass^1 (SFT) | Description |
 |------|----------------------|------|
 | Qwen3-30B baseline | 38.0 | Starting point |
 | Human Expert data | 52.0 | Manual workflow design |
-| **AReaL-SEA Full** | **56.0** | Exceeds human performance |
-| w/o Evolution | 44.0 | Loss of 12 pts without feedback |
+| **AReaL-SEA Full** | **56.0** | Outperforms human experts |
+| w/o Evolution | 44.0 | 12-point drop without reflection |
 
-| User Model | Telecom $pass^1$ (RL) | Description |
+| User Model | Telecom pass^1 (RL) | Description |
 |------------|---------------------|------|
-| Start from SFT | 85.4 | Pre-RL |
-| RL + base user model | 75.6 | **10 pt drop** |
-| RL + SFT user model | **95.6** | 10 pt gain |
+| RL + base user model | 75.6 | **10-point drop from SFT baseline** |
+| RL + SFT user model | **95.6** | 10-point gain |
 
 ### Key Findings
-- **Automated Synth $\ge$ Human Experts**: AReaL-SEA full (56.0) outperforms human expert data (52.0), proving self-evolution enhances data quality while reducing cost.
-- **User SFT is Vital**: Using a base user model caused RL to degrade beyond the SFT checkpoint (75.6 < 85.4). This instability is a critical, previously underemphasized failure mode.
-- **Batch Size Matters**: Increasing total batch size from 256 to 512 pushed $pass^1$ from 64 to 70.5, emphasizing advantage estimation stability.
-- **Mix Training scaling**: Mix training (combined domains) helped the 235B model but hurt the 30B model (average $pass^1$ dropped from 71.5 to 63.7), suggesting smaller models lack the capacity to absorb multiple domains simultaneously.
+- **Automated Synthesis ≥ Human Experts**: AReaL-SEA (56.0) outperforming human expert data (52.0) demonstrates that self-evolution raises the quality ceiling.
+- **User SFT is the Hidden Key for RL**: Using base user models leads to catastrophic regression (75.6 vs 85.4 baseline).
+- **Total Batch Size Matters**: Increasing the total sample count in GRPO is more critical than the specific ratio of prompts to trajectories for stabilizing advantage estimation.
+- **Mix Training scaling law**: Mix training helped the 235B model but hurt the 30B model, suggesting smaller models lack the capacity to absorb multiple complex domains simultaneously.
 
 ## Highlights & Insights
-- **User Simulator SFT is a key contribution**: This is the first work to explicitly demonstrate that user simulator quality dictates RL success in interactive settings, showing a 20-point empirical gap.
-- **Self-evolving synthesis paradigm**: The closed-loop "synthesis → verification → rollout → reflection" architecture is more scalable than static pipelines and portable to other complex synthesis tasks.
-- **Verifiable reward for agents**: Extending RLVR to tool-use agents by generating verifiers during data synthesis avoids the need for expensive LLM judges during training.
+- **User Simulator Quality**: This is the first work to explicitly demonstrate that user simulator quality is a primary bottleneck for Agent RL, providing a 20-point empirical gap.
+- **Self-Evolving Paradigm**: The "reflection-based plan update" loop is a generic framework applicable to other complex synthesis tasks like reasoning or long-context QA.
+- **Verifiable Reward in Agents**: Extending the RLVR paradigm to tool-use by co-generating verifiers with data is highly efficient for post-training.
 
 ## Limitations & Future Work
-- Evaluation is limited to three $\tau^2$-bench domains; performance in the Retail domain still lags behind Claude Sonnet 4.5.
-- The optimal number of reflection steps $K$ remains an open question.
-- Potential distribution gap between synthetic user styles and real-world human behavior.
-- High infrastructure costs (80 H200s for 235B) may limit reproducibility for smaller teams.
+- Evaluation is limited to three domains in τ²-bench; Retail performance still trails Claude Sonnet 4.5.
+- The optimal number of evolution steps $K$ remains an open question.
+- Potential distribution gap between synthetic user styles and real-world production dialogues.
+- High computational requirements (80 H200s for 235B) limit accessibility for smaller teams.
 
 ## Related Work & Insights
-- **vs APIGen-MT**: AReaL-SEA adds self-evolution and synchronous verifier generation.
-- **vs TOUCAN**: While TOUCAN focuses on scale (1.5M trajectories), this work emphasizes high-quality self-evolution, surpassing human expert data with only 64 plans.
-- **vs ToolRL / Search-R1**: Moves beyond single-turn tool-use to the interactive multi-turn setting.
+- **vs APIGen-MT**: APIGen-MT uses static validation; AReaL-SEA adds evolution and co-generated verifiers for RL.
+- **vs ToolRL/Search-R1**: These focus on single-turn tool use, whereas this work tackles the multi-turn interactive setting.
+- **vs π₀/GR00T**: While those use physical environments for ground truth, this work utilizes synthetic program-based verifiers.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ 
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 
-- Writing Quality: ⭐⭐⭐⭐ 
-- Value: ⭐⭐⭐⭐⭐ 
+- **Novelty**: ⭐⭐⭐⭐ Evolution-based synthesis and user-model stabilization are significant contributions to the Agent RL pipeline.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Comprehensive coverage across scales, domains, and algorithmic components.
+- **Writing Quality**: ⭐⭐⭐⭐ Clear problem-solution narrative with solid technical details.
+- **Value**: ⭐⭐⭐⭐⭐ Achieves SOTA on open-source models with reproducible frameworks, offering direct industrial utility.
 
 <!-- RELATED:START -->
 
@@ -144,9 +140,9 @@ The 235B version ties Gemini 3.0 Pro in Airline and exceeds all frontier models 
 ## Related Papers
 
 - [\[AAAI 2026\] Canoe: Teaching LLMs to Maintain Contextual Faithfulness via Synthetic Tasks and RL](../../AAAI2026/dialogue/teaching_large_language_models_to_maintain_contextual_faithfulness_via_synthetic.md)
-- [\[ICML 2026\] Not All Prefills Are Equal: PPD Disaggregation for Multi-turn LLM Serving](not_all_prefills_are_equal_ppd_disaggregation_for_multi-turn_llm_serving.md)
-- [\[ACL 2026\] GenesisFunc: Multi-Agent Data Generation for Accurate and Generalizable Function-Calling](../../ACL2026/dialogue/genesisfunc_multi-agent_data_generation_for_accurate_and_generalizable_function-.md)
 - [\[ICLR 2026\] Non-Collaborative User Simulators for Tool Agents](../../ICLR2026/dialogue/non-collaborative_user_simulators_for_tool_agents.md)
+- [\[ACL 2026\] GenesisFunc: Multi-Agent Data Generation for Accurate and Generalizable Function-Calling](../../ACL2026/dialogue/genesisfunc_multi-agent_data_generation_for_accurate_and_generalizable_function-.md)
+- [\[ICML 2026\] Not All Prefills Are Equal: PPD Disaggregation for Multi-turn LLM Serving](not_all_prefills_are_equal_ppd_disaggregation_for_multi-turn_llm_serving.md)
 - [\[ACL 2025\] Sparse Rewards Can Self-Train Dialogue Agents](../../ACL2025/dialogue/sparse_rewards_can_self-train_dialogue_agents.md)
 
 </div>

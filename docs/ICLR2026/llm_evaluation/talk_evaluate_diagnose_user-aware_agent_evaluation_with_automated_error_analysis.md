@@ -2,66 +2,81 @@
 title: >-
   [Paper Note] Talk, Evaluate, Diagnose: User-aware Agent Evaluation with Automated Error Analysis
 description: >-
-  [ICLR 2026][LLM Evaluation][Agent Evaluation] This paper proposes TED (Talk, Evaluate, Diagnose), a framework that achieves user-aware dynamic agent evaluation via general, reusable expert/non-expert persona templates…
+  [ICLR 2026][LLM Evaluation][LLM-as-judge] The TED (Talk, Evaluate, Diagnose) framework is proposed to achieve user-aware dynamic Agent evaluation through general and reusable expert/non-expert persona templates. It utilizes new indicators such as grading notes + LLM-as-judge + MaxProgressRate@k for fine-grained efficiency assessment, while providing actionable
 tags:
-  - "ICLR 2026"
-  - "LLM Evaluation"
-  - "Agent Evaluation"
-  - "User Awareness"
-  - "LLM-as-Judge"
-  - "Error Analysis"
-  - "Efficiency Metrics"
+  - ICLR 2026
+  - LLM Evaluation
+  - LLM-as-judge
 date: 2026-05-08
-content_hash: 71a246ab2fa32f96
+content_hash: 3c62a7a5db184263
 ---
-
 # Talk, Evaluate, Diagnose: User-aware Agent Evaluation with Automated Error Analysis
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2603.15483](https://arxiv.org/abs/2603.15483)  
 **Code**: [GitHub](https://github.com/SAP-samples/agent-quality-inspect)  
-**Area**: LLM Evaluation
-**Keywords**: Agent Evaluation, User Awareness, LLM-as-Judge, Error Analysis, Efficiency Metrics
+**Area**: LLM Evaluation  
+**Keywords**: Agent evaluation, User-aware, LLM-as-judge, Error analysis, Efficiency metrics  
 
 ## TL;DR
 
-This paper proposes TED (Talk, Evaluate, Diagnose), a framework that achieves user-aware dynamic agent evaluation via general, reusable expert/non-expert persona templates; enables fine-grained efficiency assessment through grading notes, LLM-as-judge scoring, and novel metrics such as MaxProgressRate@k; and provides actionable improvement feedback via automated error discovery and clustering. Experiments on τ²-bench and ToolSandbox reveal new insights into agent performance.
+The TED (Talk, Evaluate, Diagnose) framework is proposed to achieve user-aware dynamic Agent evaluation through general and reusable expert/non-expert persona templates. It utilizes new indicators such as grading notes + LLM-as-judge + MaxProgressRate@k for fine-grained efficiency assessment, while providing actionable improvement feedback through automated error discovery and clustering. Evaluation results on τ²-bench and ToolSandbox reveal new insights into Agent performance.
 
 ## Background & Motivation
 
-- **Background**: LLM agents are increasingly deployed to automate diverse workflows, yet evaluation frameworks remain fragmented—each domain relies on its own methodology (database queries, regex matching, etc.) to determine task success.
-- **Limitations of Prior Work**: (1) No unified cross-domain evaluation methodology exists; (2) the effect of user personas on agent behavior is not systematically considered; (3) evaluation stops at metric reporting, lacking diagnosis and actionable improvement guidance.
-- **Key Challenge**: Agent behavior is heavily shaped by user interaction, yet user personas are left uncontrolled during evaluation.
-- **Goal**: Construct a unified, user-aware, and diagnosable agent evaluation framework.
-- **Key Insight**: A three-stage unification of Talk (user simulation) + Evaluate (assessment) + Diagnose (diagnosis).
-- **Core Idea**: Effective agent evaluation requires not only correctness, but also conversation quality, efficiency, and systematic error diagnosis.
+- **Background**: LLM Agents are increasingly utilized to automate various workflows, yet evaluation frameworks remain fragmented—each domain uses independent methods (database queries, regex matching, etc.) to determine success.
+- **Limitations of Prior Work**: (1) Lack of a unified cross-domain evaluation method; (2) Systematic disregard for the impact of user personas on Agent performance; (3) Evaluation ends at metric reporting, lacking diagnostics and actionable improvement suggestions.
+- **Key Challenge**: Agent behavior is heavily influenced by user interaction, yet user personas are not controlled during evaluation.
+- **Goal**: Construct a unified, user-aware, and diagnostic Agent evaluation framework.
+- **Key Insight**: Unify the three stages: Talk (user simulation), Evaluate (assessment), and Diagnose (diagnosis).
+- **Core Idea**: Effective Agent evaluation requires not only correctness but also conversational quality, efficiency, and systematic error diagnosis.
 
 ## Method
 
 ### Overall Architecture
 
-Talk → Simulate expert/non-expert user interactions with the agent via reusable persona templates. Evaluate → Convert sub-goals into grading notes, score with LLM-as-judge, and compute metrics such as MaxProgressRate@k. Diagnose → Analyze judge–agent inconsistencies, then automatically discover and cluster error patterns.
+TED decomposes Agent evaluation into three serialized stages: Talk, Evaluate, and Diagnose. The framework aims to let the Agent complete multi-turn dialogues under controlled user conditions, quantifying both "progress made" and "failure causes." First, a general persona template decoupled from tasks simulates expert/non-expert users to conduct multi-turn dialogues with the Agent, producing dialogue trajectories. Second, sub-goals of the task are rewritten into natural language grading notes for LLM-as-judge to evaluate step-by-step, deriving a set of metrics characterizing "partial progress + dialogue efficiency." Finally, specific errors are automatically extracted from inconsistencies between the judge and Agent, semantically clustered into high-level error categories, and fed back into Agent prompts to form a "scoring → diagnosis → improvement" closed loop. The framework does not rely on domain-specific success logic, enabling reuse across benchmarks simply by rewriting sub-goals as grading notes.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    P["Persona p<br/>expert / non-expert"] --> U
+    I["Task instruction i"] --> U
+    subgraph TALK["General Reusable Persona Template"]
+        direction TB
+        U["Simulated user u=f(p,i)<br/>Reflect→Respond (2 steps)"]
+    end
+    U <-->|Multi-turn dialogue| AG["Agent under test (tool usage)"]
+    AG -->|Dialogue trajectory τ| GN
+    subgraph EVAL["Grading Notes & Progress Metrics"]
+        direction TB
+        GN["Sub-goals → grading notes<br/>LLM-as-judge assessment (Majority vote)"] --> METRIC["Progress Metrics<br/>MaxProgressRate@k / MaxAUC@k / MaxPPT@k"]
+    end
+    METRIC --> LOW
+    subgraph DIAG["Automated Error Discovery & Clustering"]
+        direction TB
+        LOW["Judge / agent inconsistency<br/>→ Low-level error identification"] --> HIGH["Semantic clustering<br/>→ High-level error categories"]
+    end
+    HIGH -->|Prompt rewrite +8~10%| AG
+```
 
 ### Key Designs
 
-**Design 1: General Reusable Persona Templates**
-- **Function**: Decouple user persona from task instructions, providing general expert/non-expert templates that are independent of specific tasks and agents.
-- **Mechanism**: $u = f(p, i)$, combining persona prompt $p$ with task instruction $i$. Swapping the persona on the same task isolates the effect of user behavior. A reflect-then-respond two-step process is included.
-- **Design Motivation**: Existing methods tightly couple persona with task, making it impossible to isolate the independent effect of user behavior.
+**1. General Reusable Persona Template: Detaching "Who is using" from "What is being done"**
 
-**Design 2: Grading Notes + Efficiency Metrics**
-- **Function**: Unify all sub-goals (tool calls, response content, etc.) into natural-language checklist items; introduce metrics including MaxProgressRate@k, MaxAUC@k, and MaxPPT@k.
-- **Mechanism**: $\text{progress}(i) = \text{fraction of grading notes achieved}$; MaxProgressRate@k is the expected maximum progress across $k$ trials. AUC measures early-stage efficiency, and PPT measures per-turn progress rate.
-- **Design Motivation**: Success rate is too coarse-grained; partial progress and conversational turn efficiency must be captured.
+Prior user simulations hard-coded personas with task instructions, making it difficult to determine whether poor performance stemmed from task difficulty or user behavior. TED formulates the simulated user as $u = f(p, i)$: where the persona prompt $p$ describes the user profile (expert vs. non-expert who provides vague information), and the task instruction $i$ describes the specific task. These are orthogonal. By keeping $i$ fixed and switching $p$, the independent impact of "user expertise" on the Agent is isolated. Simulated users adopt a "reflect-then-respond" strategy: first assessing if goals are met or if the Agent's previous response was adequate, then generating a reply to mimic real-world user behavior like hesitation or follow-up questions.
 
-**Design 3: Automated Error Discovery**
-- **Function**: Two-stage error analysis — low-level error identification followed by semantic clustering.
-- **Mechanism**: For sub-goals where judge and agent disagree, an LLM extracts specific low-level error descriptions; these are then semantically clustered into high-level error categories. Judge variance and agent variance reflect judge unreliability and agent instability, respectively.
-- **Design Motivation**: Close the loop from metric reporting → error discovery → improvement recommendations.
+**2. Grading Notes and Progress Metrics: Quantifying Success from 0/1 to Partial Progress**
+
+Benchmarks like τ²-bench only measure final success rate, treating "90% completion" and "initial failure" identically. TED reformulates all task sub-goals—specific tool calls or required response content—into natural language grading notes for LLM-as-judge evaluation. Based on this, the progress of a single dialogue $\text{progress}(i)$ is defined as the ratio of achieved grading notes. The expected maximum progress over $k$ trials constitutes $\text{MaxProgressRate@}k$. Complementary metrics include $\text{MaxAUC@}k$ (integrating the progress curve over turns) to measure how quickly goals are approached, and $\text{MaxPPT@}k$ (per-turn progress) to measure efficiency. This distinguishes "near success" from "total failure" while incorporating dialogue efficiency.
+
+**3. Automated Error Discovery and Clustering: Diagnostics Beyond Scoring**
+
+To provide actionable feedback, TED performs two-step error analysis. First, for sub-goals where the judge reports failure or inconsistent results across runs, an LLM extracts a specific low-level error description (e.g., "called correct tool but missed required parameters"). Second, these low-level errors are semantically clustered into high-level categories to produce an actionable improvement list. The framework also tracks judge variance vs. agent variance; high judge variance indicates ambiguous grading notes needing refinement, while high agent variance reflects instability. Injecting high-frequency error categories back into Agent prompts yields an 8–10% improvement in MaxProgressRate.
 
 ### Loss & Training
 
-No training is involved; TED is a purely evaluation framework. LLM-as-judge is run multiple times with majority voting. GPT-4.1 serves as both judge and user proxy.
+TED involves no model training and is a pure inference-stage evaluation framework. To mitigate stochasticity in judgment, the LLM-as-judge performs majority voting over multiple runs for each grading note. In experiments, gpt-4.1 served as both judge and user proxy to ensure consistent evaluation conditions across different Agents.
 
 ## Key Experimental Results
 
@@ -70,7 +85,7 @@ No training is involved; TED is a purely evaluation framework. LLM-as-judge is r
 **τ²-bench Airline Easy (Expert | Non-expert)**
 
 | Agent Model | MeanProg@k | MaxProg@k | pass@k |
-|-------------|------------|-----------|--------|
+|-----------|-----------|-----------|--------|
 | gpt-4.1 | 0.95 \| 0.82 | 1.00 \| 1.00 | 1.00 \| 1.00 |
 | gpt-4o | 0.79 \| 0.86 | 1.00 \| 1.00 | 1.00 \| 1.00 |
 | gpt-4o-mini | 0.70 \| 0.61 | 0.90 \| 0.90 | 0.80 \| 0.80 |
@@ -79,42 +94,42 @@ No training is involved; TED is a purely evaluation framework. LLM-as-judge is r
 ### Ablation Study
 
 | Finding | Description |
-|---------|-------------|
-| Expert vs. Non-expert | Non-expert users systematically reduce agent MeanProg across most models |
-| Performance gain after error fixing | 8–10% improvement in MaxProgressRate |
-| Judge variance analysis | High-variance sub-goals are predominantly associated with ambiguously described grading notes |
+|------|------|
+| Expert vs. Non-expert | Non-expert users systematically reduce MeanProg for most models. |
+| Post-fix Improvement | 8-10% gain in MaxProgressRate after fixing identified errors. |
+| Judge Variance Analysis | High-variance sub-goals often correspond to vaguely described grading notes. |
 
 ### Key Findings
 
-1. User expertise systematically affects agent performance — non-expert users lead to more turns and lower average progress.
-2. MaxProgressRate@k provides finer-grained evaluation than pass@k, distinguishing "near success" from "complete failure."
-3. Common error patterns identified through automated error analysis can be directly used to improve agent prompts, yielding 8–10% gains.
-4. GPT-5 underperforms GPT-4o on certain ToolSandbox baselines, demonstrating that model upgrades do not necessarily translate to improved agent capabilities.
+1. User expertise systematically influences Agent performance—non-expert users lead to more dialogue turns and lower average progress.
+2. MaxProgressRate@k provides finer granularity than pass@k, distinguishing between "near success" and "complete failure."
+3. Automated error patterns can be directly used to improve Agent prompts, resulting in 8-10% gains.
+4. Gpt-5 underperformed gpt-4o on certain baselines (ToolSandbox), suggesting that model scaling does not automatically equate to Agent capability enhancement.
 
 ## Highlights & Insights
 
-1. The Talk–Evaluate–Diagnose three-stage closed-loop design is both comprehensive and practically oriented.
-2. The persona decoupling idea is concise yet consequential — isolating the user factor is a prerequisite for fair evaluation.
-3. The complete loop from evaluation to diagnosis to improvement goes beyond merely "reporting scores."
+1. The Talk-Evaluate-Diagnose closed-loop design is complete and practical.
+2. The decoupling of Personas is a simple but impactful idea—isolating user variables is a prerequisite for fair evaluation.
+3. The framework provides a complete loop from evaluation to diagnosis to improvement, going beyond "reporting scores."
 
 ## Limitations & Future Work
 
-1. Constructing grading notes still requires manual effort, limiting the degree of automation.
-2. Only two persona types (expert/non-expert) are considered; finer-grained user modeling remains unexplored.
-3. The reliability of the judge itself is a systemic risk that requires further validation.
+1. Construction of grading notes still requires manual effort, limiting full automation.
+2. Exploration of only two personas (expert/non-expert); finer-grained user modeling remains unexplored.
+3. The reliability of the Judge itself remains a systemic risk requiring further validation.
 
 ## Related Work & Insights
 
-- AgentBoard first introduced progress rate but in an environment-interaction setting; TED extends this to multi-turn dialogue.
-- τ²-bench employs domain-specific personas that are not generalizable; TED achieves generalization.
-- Insight: Agent evaluation should be an integral part of the engineering feedback loop, rather than a standalone academic exercise.
+- AgentBoard introduced progress rates in environmental interactions; TED extends this to multi-turn dialogues.
+- τ²-bench included domain-specific personas but lacked generality; TED achieves universal application.
+- Insight: Agent evaluation should be integrated into the engineering loop rather than being a standalone academic exercise.
 
 ## Rating
 
-| Dimension | Score |
-|-----------|-------|
-| Novelty | ★★★★☆ |
-| Practicality | ★★★★★ |
+| Dimension | Rating |
+|------|------|
+| Innovation | ★★★★☆ |
+| Utility | ★★★★★ |
 | Experimental Thoroughness | ★★★★☆ |
 | Writing Quality | ★★★★★ |
 
@@ -124,11 +139,11 @@ No training is involved; TED is a purely evaluation framework. LLM-as-judge is r
 
 ## Related Papers
 
+- [\[ICLR 2026\] Computer Agent Arena: Toward Human-Centric Evaluation and Analysis of Computer-Use Agents](computer_agent_arena_toward_human-centric_evaluation_and_analysis_of_computer-us.md)
 - [\[ACL 2026\] AJ-Bench: Benchmarking Agent-as-a-Judge for Environment-Aware Evaluation](../../ACL2026/llm_evaluation/aj-bench_benchmarking_agent-as-a-judge_for_environment-aware_evaluation.md)
+- [\[ICLR 2026\] MLE-Smith: Scaling MLE Tasks with Automated Multi-agent Pipeline](mle-smith_scaling_mle_tasks_with_automated_multi-agent_pipeline.md)
+- [\[ICLR 2026\] Holistic Agent Leaderboard: The Missing Infrastructure for AI Agent Evaluation](holistic_agent_leaderboard_the_missing_infrastructure_for_ai_agent_evaluation.md)
 - [\[ICLR 2026\] BiasScope: Towards Automated Detection of Bias in LLM-as-a-Judge Evaluation](biasscope_towards_automated_detection_of_bias_in_llm-as-a-judge_evaluation.md)
-- [\[ACL 2026\] AgentEval: DAG-Structured Step-Level Evaluation for Agentic Workflows with Error Propagation Tracking](../../ACL2026/llm_evaluation/agenteval_dag-structured_step-level_evaluation_for_agentic_workflows_with_error_.md)
-- [\[ICLR 2026\] Unpacking Human Preference for LLMs: Demographically Aware Evaluation with the HUMAINE Framework](unpacking_human_preference_for_llms_demographically_aware_evaluation_of_long-fo.md)
-- [\[ACL 2026\] VC-Inspector: Advancing Reference-free Evaluation of Video Captions with Factual Analysis](../../ACL2026/llm_evaluation/vc-inspector_advancing_reference-free_evaluation_of_video_captions_with_factual_.md)
 
 </div>
 

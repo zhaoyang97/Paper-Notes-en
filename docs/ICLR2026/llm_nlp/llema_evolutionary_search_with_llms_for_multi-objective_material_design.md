@@ -2,107 +2,88 @@
 title: >-
   [Paper Note] LLEMA: Evolutionary Search with LLMs for Multi-Objective Materials Discovery
 description: >-
-  [ICLR 2026][LLM/NLP][materials discovery] This paper proposes LLEMA, a framework that integrates LLM scientific knowledge with chemistry-rule-guided evolutionary search and memory-driven iterative optimization…
+  [ICLR 2026][LLM (Other)][Paper Note] Ours proposes the LLEMA framework, which integrates the scientific knowledge of LLMs with chemical rule-guided evolutionary search and memory-driven iterative optimization. It achieves higher hit rates, stability, and Pareto front quality across 14 multi-objective materials discovery tasks.
 tags:
-  - "ICLR 2026"
-  - "LLM/NLP"
-  - "materials discovery"
-  - "LLM evolutionary search"
-  - "multi-objective optimization"
-  - "crystal structure generation"
-  - "surrogate models"
+  - ICLR 2026
+  - LLM (Other)
 date: 2026-05-08
-content_hash: 20d4d8be2d5f19c5
+content_hash: f842056d05b91eb3
 ---
-
 # LLEMA: Evolutionary Search with LLMs for Multi-Objective Materials Discovery
 
 **Conference**: ICLR 2026  
 **arXiv**: [2510.22503](https://arxiv.org/abs/2510.22503)  
 **Code**: [github.com/scientific-discovery/LLEMA](https://github.com/scientific-discovery/LLEMA)  
 **Area**: LLM NLP  
-**Keywords**: materials discovery, LLM evolutionary search, multi-objective optimization, crystal structure generation, surrogate models  
+**Keywords**: Materials discovery, LLM evolutionary search, multi-objective optimization, crystal structure generation, surrogate models  
 
 ## TL;DR
 
-This paper proposes LLEMA, a framework that integrates LLM scientific knowledge with chemistry-rule-guided evolutionary search and memory-driven iterative optimization, achieving superior hit rates, stability, and Pareto front quality across 14 multi-objective materials discovery tasks.
+Ours proposes the LLEMA framework, which integrates the scientific knowledge of LLMs with chemical rule-guided evolutionary search and memory-driven iterative optimization. It achieves higher hit rates, stability, and Pareto front quality across 14 multi-objective materials discovery tasks.
 
 ## Background & Motivation
 
-Materials discovery requires searching a vast combinatorial space of chemical compositions and crystal structures while simultaneously satisfying multiple, often conflicting, objectives. The traditional discovery process is resource-intensive and slow, and existing approaches face the following challenges:
+Materials discovery requires searching through a vast combinatorial space of chemistry and structure while satisfying multiple, often conflicting, objectives. Traditional discovery processes are resource-intensive and slow, while existing methods face several dilemmas:
 
-1. **Traditional generative models** (CDVAE, G-SchNet, DiffCSP, MatterGen) require task-specific retraining, lack generalization capability, and do not leverage the extensive prior knowledge embedded in LLMs.
-2. **Existing LLM-based methods** (e.g., LLMatDesign) rely on prompt engineering or unguided material generation, producing candidates that are theoretically plausible but often thermodynamically unstable or unsynthesizable.
-3. **Single-objective limitation**: Most methods reduce materials discovery to a single-objective task, whereas real-world scenarios are inherently multi-objective (e.g., thermoelectric materials must simultaneously optimize electrical conductivity and thermal resistance).
+1. **Limitations of Prior Work in Generative Models** (CDVAE, G-SchNet, DiffCSP, MatterGen): These require retraining for specific tasks, lack generalization ability, and miss the extensive prior knowledge embedded in LLMs.
+2. **Limitations of Prior Work in LLM Methods** (e.g., LLMatDesign): These rely on prompt engineering or unguided material generation. The generated candidates may be theoretically feasible but are often unstable or non-synthesizable.
+3. **Key Challenge of Single-objective Optimization**: Most methods simplify materials discovery into single-objective tasks, whereas real-world scenarios are inherently multi-objective (e.g., thermoelectric materials require simultaneous optimization of electrical conductivity and thermal resistance).
 
-LLEMA is the first framework to simultaneously possess all four properties: **domain knowledge integration, multi-objective optimization, rule-guided generation, and evolutionary optimization**.
+LLEMA is the first framework to simultaneously feature **domain knowledge integration, multi-objective optimization, rule-guided generation, and evolutionary optimization improvement**.
 
 ## Method
 
 ### Overall Architecture
 
-LLEMA comprises four core components (see Figure 1):
+Ours formulates materials discovery as a constrained multi-objective optimization problem: find a material $m^*$ in the candidate space $\mathcal{M}$ that maximizes weighted objectives $m^* = \arg\max_{m \in \mathcal{M}} \sum_i w_i f_i(m)$, where each constraint $c_i$ can be an interval constraint $f_i(m) \in [l_i, u_i]$, a lower bound $f_i(m) \geq l_i$, or an upper bound $f_i(m) \leq u_i$. The entire pipeline is a closed loop: users provide only a CSV specifying the task name and attribute constraints. The framework then automatically constructs prompts, directs the LLM to sample candidates and output CIF crystal configurations. Candidates undergo hierarchical attribute prediction to obtain attribute vectors, followed by composite scoring to determine constraint satisfaction. Successes/failures are shunted into two memory pools. In the next iteration, positive and negative demonstrations are sampled from multiple independent "islands" to feed back into the prompt, allowing the LLM to evolve while correcting errors within a chemically valid subspace. This integrates "LLM scientific priors" with "evolutionary iterative correction." After $N$ iterations, the success pool $\mathbb{M}^+$ is returned as the optimized candidate set.
 
-- **(A) Materials candidate generation**: The LLM generates candidates based on task descriptions and property constraints.
-- **(B) Crystallographic representation**: Generated materials are converted into structured CIF files.
-- **(C) Physicochemical property prediction**: Properties such as band gap and formation energy are predicted.
-- **(D) Fitness evaluation and feedback**: Constraint satisfaction is assessed, and results are iteratively fed back via success/failure memory pools.
-
-### Problem Formulation
-
-The materials discovery task $\mathcal{T}$ is modeled as a constrained multi-objective optimization problem:
-
-$$m^* = \arg\max_{m \in \mathcal{M}} \sum_i w_i f_i(m)$$
-
-where each constraint $c_i$ may take the form of an interval, lower-bound, or upper-bound constraint:
-
-$$c_i: f_i(m) \in [l_i, u_i] \quad \text{or} \quad c_i: f_i(m) \geq l_i \quad \text{or} \quad c_i: f_i(m) \leq u_i$$
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    IN["Task CSV<br/>(Task Name + Attribute Constraints)"] --> P["Prompt Construction<br/>Task Specs + Chemical Rules + Demonstrations"]
+    P --> G["Hypothesis Generation<br/>LLM Samples Candidates → Output CIF Configurations"]
+    G --> PR["Hierarchical Property Prediction<br/>Materials Project Lookup → Surrogate Models (CGCNN/ALIGNN)"]
+    PR --> F["Fitness Evaluation & Memory Shunt<br/>Composite Score S → Success Pool M+ / Failure Pool M-"]
+    F --> EV["Multi-island Evolution Strategy<br/>Boltzmann Selection → Top-k Pos/Neg Sampling"]
+    EV -->|"Iterate N Rounds"| P
+    F -->|"Candidates Satisfying All Constraints"| OUT["Optimized Candidate Set M+"]
+```
 
 ### Key Designs
 
-**Hypothesis Generation**:
+**1. Hypothesis Generation: Transforming Prompts into Evolutionary Operators via Chemical Rules**
 
-At each iteration $n$, the LLM $\pi_\theta$ samples a batch of candidate materials from prompt $\mathbf{p}_n$, which consists of four components:
+LLM generation relying purely on prompt engineering often yields "theoretically possible but non-synthesizable" candidates because domain constraints are not integrated into the generation process. In each iteration $n$, LLEMA lets the LLM $\pi_\theta$ sample a batch of candidates $\mathcal{M}^b$ from prompt $\mathbf{p}_n$. The prompt consists of four parts: task specifications (natural language targets and attribute constraints), chemical design principles $\mathcal{R}$ (rules like homologous element substitution, stoichiometry maintenance, and oxidation state consistency acting as mutation/crossover operators), positive/negative demonstrations from pools $\mathbb{M}^+$ and $\mathbb{M}^-$, and instructions for the LLM to directly output crystal configurations (formula, lattice parameters, atomic coordinates) as CIF files. Treating substitution rules and conservation laws as explicit operators forces the LLM to evolve within a chemically valid subspace rather than searching blindly—a fundamental difference from MatterGen (learned priors) or LLMatDesign (unconstrained generation).
 
-1. **Task specification**: Natural-language objectives and property constraints (e.g., "wide-bandgap semiconductor, bandgap ≥ 2.5 eV").
-2. **Chemistry-informed design principles**: Rules such as isoelectronic substitution, stoichiometry preservation, and phase stability, serving as evolutionary operators.
-3. **Demonstration samples**: Positive and negative examples sampled from the success pool $\mathbb{M}^+$ and failure pool $\mathbb{M}^-$.
-4. **Crystallographic representation**: The LLM outputs crystal configurations in JSON format (chemical formula, lattice parameters, atomic coordinates).
+**2. Hierarchical Property Prediction: Ensuring Reliability via Lookups and Surrogates**
 
-**Physicochemical Property Prediction**:
+The true properties of candidate materials must be accurate without running expensive DFT for every case. LLEMA employs a hierarchical oracle: it first queries the Materials Project database for exact or similar matches; if found, the ground truth is used. For out-of-distribution (OOD) candidates, it switches to surrogate models (CGCNN, ALIGNN pretrained on JARVIS-DFT) to predict the attribute vector $f(m) \in \mathbb{R}^d$. Ablation studies show this layer is indispensable—removing surrogate models and relying solely on database lookups causes hit rates and stability to collapse to <5%, as the search cannot evaluate OOD candidates meaningfully.
 
-- A hierarchical prediction system first queries the Materials Project database for exact matches.
-- Out-of-distribution candidates are evaluated using surrogate models (CGCNN, ALIGNN).
-- This yields a property vector $f(m) \in \mathbb{R}^d$.
+**3. Fitness Evaluation and Memory Shunt: Composite Scoring for Pool Management**
 
-**Fitness Evaluation and Memory Management**:
-
-A composite scoring function is defined as:
+In multi-objective scenarios, satisfaction levels of multiple constraints must be compressed into a comparable scalar. LLEMA uses a composite score to aggregate predicted attributes of candidate $\mathcal{M}_j$ based on constraints:
 
 $$S(\mathcal{T}, \mathcal{C}; \mathcal{M}_j) = \sum_{i=1}^k w_i \cdot \Phi_i(f_i(\mathcal{M}_j), c_i)$$
 
-- Candidates satisfying all constraints ($S \geq 0$) are added to the success pool $\mathbb{M}^+$.
-- Candidates violating constraints are added to the failure pool $\mathbb{M}^-$.
+where $w_i$ is the relative weight of the $i$-th attribute, and $\Phi_i$ is a normalized reward function measuring how well $f_i(\mathcal{M}_j)$ fulfills constraint $c_i$. Candidates satisfying all hard constraints ($S \geq 0$, i.e., all $\Phi_i \geq 0$) enter the success pool $\mathbb{M}^+$, while those violating any constraint enter the failure pool $\mathbb{M}^-$. Using both pools as demonstrations teaches the model "what is right" and "what to avoid," improving the hit rate from 4.4 to 15.1 and reducing the database memorization rate from 95.3% to 58.3%.
 
-**Multi-Island Evolutionary Strategy**:
+**4. Multi-island Evolution Strategy: Balancing Exploration and Exploitation**
 
-- The population is divided into $m=5$ independent islands.
-- Islands are selected via Boltzmann sampling: $P_i = \frac{\exp(s_i/\tau_c)}{\sum_j \exp(s_j/\tau_c)}$
-- Within each island, top-$k$ sampling from $\mathbb{M}^+$ and $\mathbb{M}^-$ constructs the prompt for the next iteration.
+A single memory pool may converge prematurely by repeatedly recalling known materials. Drawing from island-model logic (e.g., FunSearch), LLEMA divides the population into $m=5$ independent islands, each with its own $\mathbb{M}^+$ and $\mathbb{M}^-$. In each round, an island is selected via Boltzmann sampling:
+
+$$P_i = \frac{\exp(s_i/\tau_c)}{\sum_j \exp(s_j/\tau_c)}$$
+
+where $s_i$ is the average score of island $i$ and temperature $\tau_c$ controls selection intensity. Within the chosen island, top-k samples are drawn from $\mathbb{M}^+$ and $\mathbb{M}^-$ to construct the next prompt $\mathbf{p}_{n+1}$ alongside chemical rules $\mathcal{R}$. This strategy further boosts hit rates to 29.8% and reduces memorization to 25.3%.
 
 ### Loss & Training
 
-Users need only provide a CSV file containing task names and property constraints; the framework then automatically:
-
-- Constructs prompts from the CSV and iteratively generates candidates.
-- Applies surrogate models using publicly available pretrained weights (no retraining required).
-- Prunes candidates violating hard constraints by assigning them low scores.
+LLEMA does not require retraining any models: surrogate models use public pretrained weights, and the LLM is used strictly for inference. Users only need to provide a CSV with task names and constraints. High-efficiency pruning occurs by assigning low scores to candidates violating hard constraints, focusing compute on searching within the valid subspace.
 
 ## Key Experimental Results
 
 ### Main Results: 14 Materials Discovery Tasks
 
-Hit rate (H.R.) and stability (Stab.) are evaluated across 14 tasks spanning five domains: electronics, energy, coatings, optics, and aerospace.
+Evaluated on Hit Rate (H.R.) and Stability (Stab.) across 14 tasks in electronics, energy, coatings, optics, and aerospace:
 
 | Method | Wide-Bandgap H.R/Stab | SAW/BAW H.R/Stab | Solid-State H.R/Stab | Piezo H.R/Stab | Transparent H.R/Stab |
 |------|:-:|:-:|:-:|:-:|:-:|
@@ -112,53 +93,53 @@ Hit rate (H.R.) and stability (Stab.) are evaluated across 14 tasks spanning fiv
 | LLEMA (Mistral) | 17.08/10.71 | 31.58/6.80 | 31.79/20.78 | 67.11/4.84 | 43.87/18.48 |
 | **LLEMA (GPT)** | **33.62/22.42** | **59.88/10.74** | **46.17/25.37** | 63.46/3.22 | 39.11/14.85 |
 
-LLEMA substantially outperforms all baselines across nearly all tasks, with a particularly pronounced advantage in stability—baseline methods may generate candidates that satisfy property constraints but are thermodynamically unstable.
+LLEMA outperforms baselines in almost all tasks, particularly in stability—baseline candidates often meet attribute constraints but are thermodynamically unstable.
 
-### Ablation Study: Component Contributions
+### Ablation Study
 
-| Method | Hit Rate↑ | Stability↑ | Memorization Rate↓ |
+| Method | H.R. ↑ | Stab. ↑ | Mem. Rate ↓ |
 |------|:-:|:-:|:-:|
-| LLM (direct generation) | 4.4 | 1.8 | 95.3 |
-| + Memory feedback | 15.1 | 20.1 | 58.3 |
-| + Mutation & crossover | 29.8 | 21.5 | 25.3 |
-| **LLEMA (full)** | **30.2** | **27.6** | **16.6** |
+| LLM (Direct Generation) | 4.4 | 1.8 | 95.3 |
+| + Memory Feedback | 15.1 | 20.1 | 58.3 |
+| + Mutation & Crossover | 29.8 | 21.5 | 25.3 |
+| **LLEMA (Full)** | **30.2** | **27.6** | **16.6** |
 
 ### Key Findings
 
-1. **Evolutionary optimization substantially reduces memorization**: The Materials Project repetition rate drops from 95.3% under pure LLM generation to 16.6% under LLEMA.
-2. **Surrogate models are indispensable**: Removing surrogate models causes both hit rate and stability to collapse to <5%, and the search degenerates into trivial repetition.
+1. **Evolutionary optimization significantly reduces memorization**: Pure LLM repetition of Materials Project data drops from 95.3% to 16.6% with LLEMA.
+2. **Surrogate models are indispensable**: Without them, H.R. and stability collapse to <5% as the search degrades into trivial repetition.
 3. **Convergence dynamics**: The proportion of valid candidates increases from ~27% at iteration 250 to ~33% at iteration 1000.
-4. **Pareto front advantage**: For wide-bandgap semiconductor and hard/rigid ceramic tasks, all Pareto-optimal solutions originate from LLEMA.
-5. **Discovered candidates align with domain expert research**: For example, ZrAl₂O₅ and Hf₀.₅Zr₀.₅O₂ correspond to well-known high-$k$ dielectric material families.
+4. **Pareto front superiority**: In wide-bandgap and rigid ceramic tasks, all Pareto optimal solutions originate from LLEMA.
+5. **Consistency with expert knowledge**: Discovered candidates like ZrAl₂O₅ and Hf₀.₅Zr₀.₅O₂ correspond to known high-k dielectric material families.
 
 ## Highlights & Insights
 
-- **Chemical knowledge encoded as evolutionary operators**: Domain knowledge such as substitution rules, stoichiometry conservation, and oxidation state consistency is translated into operators that guide LLM generation, rather than being reduced to simple prompt engineering.
-- **Multi-island evolutionary strategy**: Inspired by works such as FunSearch, the parallel island structure balances exploration and exploitation.
-- **High practical utility**: New tasks can be initiated with only a CSV file; surrogate models use pretrained weights without retraining.
-- **Benchmark contribution**: The paper introduces a benchmark of 14 industrially relevant multi-objective materials discovery tasks, each with well-defined physical constraints.
+- **Encoding chemical knowledge into evolutionary operators**: Domain knowledge (substitution rules, stoichiometry, etc.) is transformed into operators guiding LLM generation rather than simple prompting.
+- **Multi-island evolution strategy**: Inspired by FunSearch, it balances exploration and exploitation through a parallel island structure.
+- **High Practicality**: Users can start new tasks with a single CSV; surrogate models use pretrained weights without retraining.
+- **Benchmark Contribution**: Provides 14 industrially relevant multi-objective materials discovery tasks with clear physical constraints.
 
 ## Limitations & Future Work
 
-1. Reliance on surrogate models (CGCNN, ALIGNN) for property prediction means that prediction errors accumulate and can misdirect the search.
-2. Experimental validation is absent—newly discovered materials are verified only computationally and have not been synthesized in the laboratory.
-3. Iterative LLM queries incur high costs; 250 iterations require a substantial number of API calls.
-4. Chemistry rules are currently designed manually by domain scientists; automated rule discovery is a natural direction for extension.
-5. Evaluation is limited to GPT-4o-mini and Mistral-Small; stronger LLMs may yield further performance gains.
+1. Dependence on surrogate models (CGCNN, ALIGNN) for prediction; errors can accumulate and misguide the search.
+2. Lack of experimental validation—newly discovered materials are computation-validated only, without laboratory synthesis.
+3. High iteration cost for LLM queries; 250 iterations require significant API calls.
+4. Chemical rules are currently manually designed; automated rule discovery is a natural extension.
+5. Performance was validated only on GPT-4o-mini and Mistral-Small; stronger LLMs may yield further improvements.
 
 ## Related Work & Insights
 
-- **Relationship to FunSearch (Romera-Paredes et al., 2024)**: LLEMA's multi-island evolutionary strategy is directly inspired by FunSearch, extending it from program synthesis to materials discovery.
-- **Complementarity with MatterGen**: MatterGen performs inverse design via conditional sampling with diffusion models, whereas LLEMA employs LLM reasoning combined with evolutionary search; the two approaches are complementary.
-- **Implications for AI4Science**: This work demonstrates how to integrate broad LLM knowledge with domain-specific constraints, and the paradigm is transferable to drug design, catalyst discovery, and related fields.
+- **Relation to FunSearch (Romera-Paredes et al., 2024)**: LLEMA's multi-island strategy is directly inspired by FunSearch, extending it from program search to materials discovery.
+- **Complementarity with MatterGen**: MatterGen uses conditional sampling via diffusion models for inverse design; LLEMA uses LLM reasoning + evolutionary search. The two could be complementary.
+- **Insight for AI4Science**: Demonstrates how to combine broad LLM knowledge with domain-specific constraints—a paradigm applicable to drug design and catalyst discovery.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — The first unified framework for materials discovery combining LLM evolutionary search, chemistry rules, and multi-objective optimization.
-- **Technical Depth**: ⭐⭐⭐⭐ — The multi-layered framework incorporates surrogate models, multi-island evolution, and memory management.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — 14 tasks, multiple baselines, comprehensive ablations, and qualitative analysis.
-- **Writing Quality**: ⭐⭐⭐⭐ — Clear structure and rigorous problem formulation.
-- **Value**: ⭐⭐⭐⭐ — Low barrier to entry (CSV only), though dependent on surrogate model quality.
+- **Novelty**: ⭐⭐⭐⭐ — First to unify LLM evolutionary search, chemical rules, and multi-objective optimization for materials discovery.
+- **Technical Depth**: ⭐⭐⭐⭐ — Multi-layered design involving surrogate models, evolution, and memory management.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — 14 tasks, multiple baselines, and extensive ablation/qualitative analysis.
+- **Writing Quality**: ⭐⭐⭐⭐ — Clear structure and rigorous problem modeling.
+- **Value**: ⭐⭐⭐⭐ — Low entry barrier (CSV-based) but reliant on surrogate quality.
 - **Overall Rating**: ⭐⭐⭐⭐ (8/10)
 
 <!-- RELATED:START -->
@@ -167,11 +148,11 @@ LLEMA substantially outperforms all baselines across nearly all tasks, with a pa
 
 ## Related Papers
 
-- [\[ICLR 2026\] Unsupervised Evaluation of Multi-Turn Objective-Driven Interactions](unsupervised_evaluation_of_multi-turn_objective-driven_interactions.md)
-- [\[ACL 2026\] When Gradients Collide: Failure Modes of Multi-Objective Prompt Optimization for LLM Judges](../../ACL2026/llm_nlp/when_gradients_collide_failure_modes_of_multi-objective_prompt_optimization_for_.md)
+- [\[ICLR 2026\] Efficient Multi-objective Prompt Optimization via Pure-exploration Bandits](efficient_multi-objective_prompt_optimization_via_pure-exploration_bandits.md)
 - [\[ICLR 2026\] Toward Safer Diffusion Language Models: Discovery and Mitigation of Priming Vulnerabilities](toward_safer_diffusion_language_models_discovery_and_mitigation_of_priming_vulne.md)
-- [\[NeurIPS 2025\] AceSearcher: Bootstrapping Reasoning and Search for LLMs via Reinforced Self-Play](../../NeurIPS2025/llm_nlp/acesearcher_bootstrapping_reasoning_and_search_for_llms_via_reinforced_self-play.md)
+- [\[ACL 2025\] Gradient-Adaptive Policy Optimization: Towards Multi-Objective Alignment of Large Language Models](../../ACL2025/llm_nlp/gapo_multi_objective_alignment.md)
 - [\[ACL 2026\] AlphaContext: An Evolutionary Tree-based Psychometric Context Generator for Creativity Assessment](../../ACL2026/llm_nlp/alphacontext_an_evolutionary_tree-based_psychometric_context_generator_for_creat.md)
+- [\[ICLR 2026\] VERIFY: A Novel Multi-Domain Dataset Grounding LTL in Contextual Natural Language via Provable Intermediate Logic](verify_a_novel_multi-domain_dataset_grounding_ltl_in_contextual_natural_language.md)
 
 </div>
 

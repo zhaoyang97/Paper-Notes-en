@@ -2,153 +2,154 @@
 title: >-
   [Paper Note] BOTS: A Unified Framework for Bayesian Online Task Selection in LLM Reinforcement Finetuning
 description: >-
-  [ICLR 2026][LLM/NLP][Reinforcement finetuning] This paper proposes BOTS—a unified Bayesian inference framework for online task selection in LLM reinforcement finetuning. BOTS integrates explicit evidence (historical pass…
+  [ICLR 2026][LLM (Other)][Paper Note] Proposes BOTS, a unified framework for online task selection in LLM reinforcement finetuning based on Bayesian inference. By fusing explicit evidence (historical pass rates from direct evaluation) and implicit evidence (inferred difficulty of unevaluated tasks via reference model interpolation) with Thompson sampling f
 tags:
-  - "ICLR 2026"
-  - "LLM/NLP"
-  - "Reinforcement finetuning"
-  - "online task selection"
-  - "Bayesian inference"
-  - "Thompson sampling"
-  - "curriculum learning"
+  - ICLR 2026
+  - LLM (Other)
 date: 2026-05-08
-content_hash: 6bb67491d78ec6fc
+content_hash: f0b8a83e0e170d06
 ---
-
 # BOTS: A Unified Framework for Bayesian Online Task Selection in LLM Reinforcement Finetuning
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2510.26374](https://arxiv.org/abs/2510.26374)  
 **Code**: [GitHub](https://github.com/modelscope/Trinity-RFT/tree/main/examples/bots)  
-**Area**: LLM/NLP
-**Keywords**: Reinforcement finetuning, online task selection, Bayesian inference, Thompson sampling, curriculum learning
+**Area**: LLM/NLP  
+**Keywords**: Reinforcement Finetuning, Online Task Selection, Bayesian Inference, Thompson Sampling, Curriculum Learning
 
 ## TL;DR
 
-This paper proposes BOTS—a unified Bayesian inference framework for online task selection in LLM reinforcement finetuning. BOTS integrates explicit evidence (historical pass rates from direct evaluation) and implicit evidence (difficulty estimates for unevaluated tasks inferred via reference model interpolation), combined with Thompson sampling for exploration–exploitation balance. The framework achieves up to 50% training speedup on math, code, and logic tasks with only 0.2% additional computational overhead.
+Proposes BOTS, a unified framework for online task selection in LLM reinforcement finetuning based on Bayesian inference. By fusing explicit evidence (historical pass rates from direct evaluation) and implicit evidence (inferred difficulty of unevaluated tasks via reference model interpolation) with Thompson sampling for exploration-exploitation balance, BOTS achieves up to 50% training acceleration on math, code, and logic tasks with only 0.2% additional overhead.
 
 ## Background & Motivation
 
-**Background**: Reinforcement finetuning (RFT) has become a core technique for aligning LLM capabilities and improving reasoning performance, with models such as DeepSeek-R1 and OpenAI o1 relying on large-scale RFT. However, the efficiency bottleneck of RFT lies in training data selection—specifically, which tasks the model should practice at each step. The prevailing approach uniformly samples all tasks from the training set, resulting in substantial wasted computation on tasks the model has either fully mastered (pass rate = 1) or cannot solve at all (pass rate = 0), leaving effective learning signals extremely sparse.
+**Background**: Reinforcement Finetuning (RFT) has become a core technology for aligning LLM capabilities and improving reasoning performance, as evidenced by the success of models like DeepSeek-R1 and OpenAI o1. However, the efficiency bottleneck of RFT lies in training data selection—determining which tasks the model should practice at each step. Current mainstream methods involve uniform sampling, which results in significant computational waste on tasks already mastered (pass rate = 1) or those that are completely unsolvable (pass rate = 0), making effective learning signals extremely sparse.
 
-**Limitations of Prior Work**: Existing task selection solutions fall into four categories, each with notable shortcomings: (1) **Offline curriculum learning** (Parashar et al., Shen et al.) pre-schedules a fixed easy-to-hard ordering that cannot adapt to the model's continuously evolving capabilities—tasks deemed "moderate" earlier may be fully mastered after a capability jump mid-training; (2) **Oversampling-and-filtering** (DAPO, StarPO) generates an oversized rollout batch at each step and filters by pass rate, incurring 2–4× additional inference overhead; (3) **Explicit-evidence-only methods** (LIMRL, TTRL/MoPPS) estimate task difficulty from historical direct evaluations but suffer severe cold-start problems when data is extremely sparse in early training—a task can only obtain a pass-rate estimate after being selected for training; (4) **Implicit-evidence-only methods** (AFRL/DOTS) leverage inter-task similarity to predict pass rates but still require additional rollouts to evaluate anchor tasks and completely discard existing historical evaluation information.
+**Limitations of Prior Work**: Existing task selection solutions can be categorized into four types, each with significant drawbacks: (1) **Offline Curriculum Learning** (Parashar et al., Shen et al.) uses fixed schedules from easy to hard, failing to adapt to continuous variations in model capability; (2) **Oversampling/Filtering** (DAPO, StarPO) generates massive rollout batches and filters by pass rate, introducing 2-4x extra inference overhead; (3) **Explicit-only Methods** (LIMRL, TTRL/MoPPS) estimate difficulty based on historical direct evaluation, suffering from severe cold-start issues early in training when data is sparse; (4) **Implicit-only Methods** (AFRL/DOTS) predict pass rates using task similarity but still require extra rollouts for anchor tasks and discard valuable historical evaluation information.
 
-**Key Challenge**: Explicit and implicit evidence offer complementary strengths that are difficult to unify. The authors identify a key complementarity through experiments: explicit evidence (historical direct evaluations) provides accurate and stable difficulty estimates but is unavailable for new tasks or in early training, leading to very slow cold-start; implicit evidence (cross-task inference) quickly supplies difficulty estimates for all tasks with zero history but accumulates increasing error as the model drifts from the reference model over time. Relying on either source alone inevitably fails at some training stage.
+**Key Challenge**: Explicit and implicit evidence have complementary advantages but are difficult to unify. The authors discovered a key complementarity pattern: explicit evidence (direct evaluation) provides accurate and stable difficulty estimates but suffers from slow starts for new tasks; implicit evidence (cross-task inference) provides rapid difficulty estimates for all tasks at zero history but loses reliability as the model evolves and deviates from the reference model. Relying on a single source inevitably leads to failure at certain stages.
 
-**Goal**: (1) How can two heterogeneous evidence sources be fused within a unified framework so that each contributes most at the appropriate training stage? (2) How can implicit evidence be estimated online with negligible computational overhead? (3) How can exploration (evaluating unknown tasks) and exploitation (selecting known moderate tasks) be automatically balanced under evidence uncertainty?
+**Goal**: (1) How to fuse two heterogeneous types of evidence in a unified framework to leverage their respective strengths at different stages? (2) How to implement online estimation of implicit evidence with minimal overhead? (3) How to automatically balance exploration (evaluating unknown tasks) and exploitation (selecting known appropriate tasks) under uncertain evidence?
 
-**Key Insight**: The authors observe that task pass rates naturally follow a Bernoulli distribution, whose conjugate prior—the Beta distribution—elegantly encodes "beliefs about task difficulty": the parameters $\alpha$ and $\beta$ serve as accumulated pseudo-counts of successes and failures. By designing appropriate posterior update rules to fuse both evidence types and applying Thompson sampling to draw decisions from the posterior, both the evidence fusion and exploration–exploitation problems can be addressed simultaneously.
+**Key Insight**: The authors observed that task pass rates naturally follow a Bernoulli distribution, whose conjugate prior—the Beta distribution—can elegantly encode "beliefs about task difficulty." The $\alpha$ and $\beta$ parameters represent accumulated success and failure pseudo-counts. By designing appropriate posterior update rules to fuse both evidence types and using Thompson sampling for decision-making, both evidence fusion and the exploration-exploitation trade-off can be resolved simultaneously.
 
-**Core Idea**: Reformulate online task selection as non-stationary Bayesian inference; fuse explicit and implicit evidence via a generalized posterior update; and use Thompson sampling to automatically balance exploration and exploitation.
+**Core Idea**: Reformulate online task selection as non-stationary Bayesian inference, fusing explicit and implicit evidence via generalized posterior updates and using Thompson sampling for automated exploration-exploitation trade-offs.
 
 ## Method
 
 ### Overall Architecture
 
-BOTS executes a three-stage loop at each training step: **task selection → model training and evidence collection → posterior update**. The input is a pool of $N$ training tasks $\{\mathcal{T}^k\}_{k=1}^N$; each task maintains a Beta posterior $\text{Beta}(\alpha_t^k, \beta_t^k)$ representing the current belief about the model's success probability on that task. The per-step procedure is: sample from the posterior to estimate difficulty → select tasks closest to the target difficulty $p^* = 0.5$ to form the training batch $\mathcal{B}_t$ → train the model with an RL algorithm such as GRPO → collect direct evaluation results for selected tasks (explicit evidence) and interpolation-based predictions for unselected tasks (implicit evidence) → update posterior parameters for all tasks by fusing both evidence sources.
+BOTS executes a three-stage cycle at each training step: **Task Selection → Model Training & Evidence Collection → Posterior Update**. The input is a pool of $N$ training tasks $\{\mathcal{T}^k\}_{k=1}^N$, where each task maintains a Beta posterior $\text{Beta}(\alpha_t^k, \beta_t^k)$ representing the belief of the current model's success probability on that task. The process includes: sampling difficulty from the posterior → selecting tasks close to the target difficulty $p^*=0.5$ for training batch $\mathcal{B}_t$ → training the model using RL algorithms like GRPO → collecting direct evaluation (explicit evidence) for selected tasks and interpolated predictions (implicit evidence) for unselected tasks → fusing and updating posterior parameters for all tasks.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    POOL["Pool of N Training Tasks<br/>Each maintaining Beta(α,β) difficulty posterior"]
+    TS["Thompson Sampling Task Selection<br/>Sample from posteriors, select tasks closest to target difficulty 0.5"]
+    TRAIN["GRPO Model Training<br/>16 rollouts per task in batch, binary reward"]
+    EXP["Explicit Evidence<br/>Direct success/failure counts for selected tasks"]
+    IMP["Ultra-lightweight Interpolation Plugin<br/>Weak/Strong reference model interpolation for unselected tasks"]
+    UPD["Bayesian Difficulty Modeling & Generalized Posterior Update<br/>Fusing explicit + implicit evidence, refreshing all Beta(α,β)"]
+    POOL --> TS --> TRAIN
+    TRAIN -->|Selected Tasks| EXP
+    TRAIN -->|Unselected Tasks| IMP
+    EXP --> UPD
+    IMP --> UPD
+    UPD -->|Next Step| POOL
+```
 
 ### Key Designs
 
-1. **Bayesian Difficulty Modeling and Generalized Posterior Update — Core Fusion Mechanism**
+**1. Bayesian Difficulty Modeling & Generalized Posterior Update**
 
-    - **Function**: Model each task's difficulty estimate as a Beta distribution and design an online update rule that simultaneously absorbs explicit and implicit evidence.
-    - **Mechanism**: The model's success probability $p_t^k$ for task $\mathcal{T}^k$ is modeled as $\text{Beta}(\alpha_t^k, \beta_t^k)$. The posterior update takes a generalized form: $\alpha_{t+1}^k = (1-\lambda)\alpha_t^k + \lambda\alpha_0^k + (1-\rho)s_t^k + \rho\tilde{s}_t^k$ (with a symmetric update for $\beta$). Here $s_t^k, f_t^k$ are the explicit success/failure counts from direct evaluation (nonzero only for selected tasks $k \in \mathcal{B}_t$), while $\tilde{s}_t^k, \tilde{f}_t^k$ are pseudo-counts combining both evidence types—equal to explicit counts for selected tasks and generated via the interpolation estimator $\tilde{p}(k, \mathcal{B}_t)$ for unselected tasks. Parameter $\lambda \in [0,1]$ controls historical discounting (inducing forgetting by interpolating toward the prior $\alpha_0, \beta_0$), and $\rho \in [0,1]$ controls the fusion weight between explicit and implicit evidence. The authors prove that this update rule preserves closure within the Beta family—the posterior remains a Beta distribution, requiring no approximate inference.
-    - **Design Motivation**: Traditional Bayesian updates can only handle direct observations (explicit evidence) and completely ignore unevaluated tasks. By introducing a pseudo-count mechanism, unselected tasks also receive difficulty updates at each step, fundamentally resolving the cold-start problem. The design of $\lambda$ addresses non-stationarity—as model capabilities continuously evolve, older evaluations gradually become stale, necessitating forgetting via regression toward the prior. The authors' theoretical analysis shows that the effective sample size $n_t = \alpha_t + \beta_t$ at steady state satisfies $\rho n/\lambda \leq n_t - n_0 \leq n/\lambda$, meaning $\lambda$ and $\rho$ jointly control the confidence of the estimate.
+The root of the cold-start problem is that only selected tasks yield difficulty data. BOTS models the success probability $p_t^k$ of each task $\mathcal{T}^k$ as a Beta distribution $\text{Beta}(\alpha_t^k, \beta_t^k)$. The key is the generalized posterior update that assimilates both evidence types:
 
-2. **Ultra-Lightweight Interpolation Plugin — Zero-Overhead Implicit Evidence Generation**
+$$\alpha_{t+1}^k = (1-\lambda)\,\alpha_t^k + \lambda\,\alpha_0^k + (1-\rho)\,s_t^k + \rho\,\tilde{s}_t^k$$
 
-    - **Function**: Use two pre-evaluated reference models (one weak, one strong) to estimate the current model's pass rate on unevaluated tasks without any additional rollouts.
-    - **Mechanism**: Given the weak model pass rate $\bar{p}_w^k$ and strong model pass rate $\bar{p}_s^k$ (available in many RL datasets such as GURU), the method computes at each step the current model's relative capability coefficient $\mu_t = (\bar{p}_t^{\text{ref}} - \bar{p}_w^{\text{ref}}) / (\bar{p}_s^{\text{ref}} - \bar{p}_w^{\text{ref}})$—the interpolation position of the current model between the weak and strong references. To reduce noise, $\mu_t$ is smoothed with momentum: $\tilde{\mu}_t = \gamma \tilde{\mu}_{t-1} + (1-\gamma)\mu_t$. The pass rate for any unevaluated task $k$ is then estimated as $\tilde{p}(k, \mathcal{B}_t) = \text{clip}(\tilde{\mu}_t \cdot \bar{p}_s^k + (1-\tilde{\mu}_t) \cdot \bar{p}_w^k, 0, 1)$.
-    - **Design Motivation**: In contrast to AFRL's attention-kernel approach, which requires additional rollouts to evaluate anchor tasks, the interpolation method requires only a one-time reference model evaluation and involves only simple vector arithmetic, yielding training overhead $\leq 0.2\%$. Linear interpolation is a strong assumption, but experiments demonstrate sufficient accuracy within the reasonable range between the weak and strong reference models, and the BOTS framework is inherently robust to noise in implicit evidence via the weighting parameter $\rho$.
+($\beta$ is updated symmetrically). Here, $s_t^k, f_t^k$ are explicit counts from direct evaluation, non-zero only for $k \in \mathcal{B}_t$; $\tilde{s}_t^k, \tilde{f}_t^k$ are fused pseudo-counts—equal to explicit counts for selected tasks and generated by the interpolation estimator $\tilde{p}(k, \mathcal{B}_t)$ for unselected tasks. This pseudo-count mechanism allows unselected tasks to receive updates at every step, solving the cold-start problem. Two hyperparameters manage the process: $\lambda \in [0,1]$ implements "forgetting" by pulling the posterior toward the prior $\alpha_0, \beta_0$ to handle non-stationarity as the model evolves; $\rho \in [0,1]$ controls the fusion weight between explicit and implicit evidence.
 
-3. **Thompson Sampling for Task Selection — Automatic Exploration–Exploitation Balance**
+**2. Ultra-lightweight Interpolation Plugin**
 
-    - **Function**: Select the most educationally valuable tasks from the maintained posterior distributions to form each training batch.
-    - **Mechanism**: For each task, a sample $\hat{p}_k \sim \text{Beta}(\alpha_t^k, \beta_t^k)$ is drawn from the current posterior. The utility is computed as $\hat{u}_k = -|\hat{p}_k - p^*|$ (with $p^* = 0.5$), and tasks with the highest utility are selected. Because the sampling-induced randomness is proportional to the posterior variance, tasks with high uncertainty (few evaluations) are naturally more likely to be sampled toward extreme values and thus selected for exploration, while tasks with tight posteriors tend to be stably exploited.
-    - **Design Motivation**: Greedy selection (using posterior means to pick tasks closest to $p^*$) appears efficient but falls into local optima by ignoring potentially high-value tasks with high posterior uncertainty due to sparse data. Thompson sampling provides theoretical Bayes regret bound guarantees and is trivially simple to implement (a single line: sample from a Beta distribution). Ablation experiments confirm that Thompson sampling produces more stable task selection behavior than greedy selection.
+To estimate difficulty for unevaluated tasks without rollout costs, BOTS uses two pre-evaluated reference models (one weak, one strong). Many RL datasets (e.g., GURU) already provide weak model pass rates $\bar{p}_w^k$ and strong model pass rates $\bar{p}_s^k$. Each step, the relative capability coefficient $\mu_t = (\bar{p}_t^{\text{ref}} - \bar{p}_w^{\text{ref}}) / (\bar{p}_s^{\text{ref}} - \bar{p}_w^{\text{ref}})$ is calculated based on current online results. The pass rate for any unevaluated task $k$ is estimated as $\tilde{p}(k, \mathcal{B}_t) = \text{clip}(\tilde{\mu}_t \cdot \bar{p}_s^k + (1-\tilde{\mu}_t) \cdot \bar{p}_w^k, 0, 1)$, filtered by momentum smoothing $\tilde{\mu}_t$. This requires only basic vector operations, keeping additional overhead $\leq 0.2\%$.
+
+**3. Thompson Sampling Task Selection**
+
+To prevent falling into local optima, BOTS avoids greedy selection. Instead, for each task, it samples $\hat{p}_k \sim \text{Beta}(\alpha_t^k, \beta_t^k)$ and ranks tasks by utility $\hat{u}_k = -|\hat{p}_k - p^*|$ (where target $p^* = 0.5$). The sampling noise is proportional to the posterior variance: tasks with fewer evaluations and wider posteriors are more likely to be "accidentally" sampled with extreme values and selected for exploration, while tasks with narrow posteriors favor stable exploitation.
 
 ### Loss & Training
 
-BOTS is a task selection framework decoupled from the specific RL algorithm. Experiments use GRPO (Group Relative Policy Optimization) as the underlying training algorithm, generating $n = 16$ rollouts per task with binary rewards (correct/incorrect) driving the policy gradient. Task selection occurs in the outer loop of GRPO—determining which tasks to train on at each step—without modifying GRPO's optimization objective itself.
+BOTS is a task selection framework decoupled from specific RL algorithms. Experiments use GRPO (Group Relative Policy Optimization) as the underlying trainer, with $n=16$ rollouts per task and binary rewards (correct/incorrect) driving policy gradients. Task selection occurs in the outer loop of GRPO.
 
 ## Key Experimental Results
 
-**Experimental Setup**: GURU dataset (math, code, and logic subsets); models: Qwen2.5-1.5B-Instruct and Qwen2.5-7B; training algorithm: GRPO; reference models: Qwen2.5-7B-Instruct (weak) and Qwen3-30B-A3B (strong). Evaluation benchmarks include MATH500, AMC23, AIME24 (math), LiveCodeBench (code), and ARC (logic).
+**Settings**: GURU dataset (math, code, logic), Qwen2.5-1.5B/7B-Instruct models, GRPO algorithm. Reference models: Qwen2.5-7B-Instruct (weak) and Qwen3-30B-A3B (strong). Benchmarks: MATH500, AMC23, AIME24, LiveCodeBench, ARC.
 
-**Three Complementary Evaluation Metrics**: ETR (Effective Task Ratio, proportion of tasks with pass rates strictly in $(0,1)$) measures selection quality; TTB (Time-to-Benchmark, steps to reach target performance relative to the random baseline, $<1$ indicates faster) measures training speedup; BSF (Best Score Factor, performance under a fixed budget relative to the random baseline, $>1$ indicates improvement) measures performance gain.
+**Metrics**: ETR (Effective Task Ratio), TTB (Time to Benchmark, relative to random baseline, $<1$ is faster), BSF (Best Performance Ratio, relative to random, $>1$ is better).
 
-### Main Results: Cross-Domain and Cross-Scale Comparison (Qwen2.5-1.5B-Instruct)
+### Main Results: Cross-domain Comparison (Qwen2.5-1.5B-Instruct)
 
 | Method | Math TTB(50%↓) | Math TTB(100%↓) | Math BSF(25%↑) | Code TTB(50%↓) | Code BSF(25%↑) | Logic TTB(50%↓) | Logic BSF(25%↑) |
 |------|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | Random | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 | 1.00 |
-| Offline (easy→hard) | 0.77 | 0.85 | 1.09 | 0.68 | 1.09 | 1.23 | 0.67 |
-| BOTS-MoPPS (explicit only) | 1.02 | 0.89 | 0.98 | 0.78 | 1.09 | 0.87 | 1.13 |
-| BOTS-DOTS (implicit only) | 0.70 | 0.73 | 1.08 | 0.67 | 1.17 | 0.66 | 1.28 |
-| **BOTS (default)** | **0.85** | **0.72** | **1.06** | **0.58** | **1.17** | **0.85** | **1.19** |
+| Offline (Easy→Hard) | 0.77 | 0.85 | 1.09 | 0.68 | 1.09 | 1.23 | 0.67 |
+| BOTS-MoPPS (Explicit-only) | 1.02 | 0.89 | 0.98 | 0.78 | 1.09 | 0.87 | 1.13 |
+| BOTS-DOTS (Implicit-only) | 0.70 | 0.73 | 1.08 | 0.67 | 1.17 | 0.66 | 1.28 |
+| **BOTS (Default)** | **0.85** | **0.72** | **1.06** | **0.58** | **1.17** | **0.85** | **1.19** |
 
-On the 7B model, BOTS achieves TTB(100%) = 0.50 on the logic domain (50% training speedup); on the 1.5B model, it ranks first on 10 and second on 6 of 18 evaluated metrics.
+On the 7B model, BOTS achieved TTB(100%)=0.50 in the logic domain (50% acceleration). On the 1.5B model, it secured first place in 10 out of 18 metrics.
 
-### Ablation Study: Effect of $\rho$ on Evidence Fusion (1.5B, Math Aggregate)
+### Ablation Study: Impact of $\rho$ on Evidence Fusion (1.5B, Math)
 
-| $\rho$ | Meaning | TTB(50%↓) | TTB(100%↓) | BSF(25%↑) | BSF(100%↑) |
+| $\rho$ Setting | Meaning | TTB(50%↓) | TTB(100%↓) | BSF(25%↑) | BSF(100%↑) |
 |:---:|:---|:---:|:---:|:---:|:---:|
-| 0.0 | Explicit evidence only | 0.98 | — | 0.99 | 0.98 |
-| 0.05 | Marginal implicit | 0.78 | 0.64 | 1.06 | 1.06 |
+| 0.0 | Explicit-only | 0.98 | — | 0.99 | 0.98 |
+| 0.05 | Minor Implicit | 0.78 | 0.64 | 1.06 | 1.06 |
 | **0.1** | **Default** | **0.85** | **0.72** | **1.06** | **1.05** |
-| 0.2 | Moderate implicit | 0.78 | 0.69 | 1.07 | 1.05 |
-| 0.5 | Implicit-leaning | 0.79 | 0.89 | 1.09 | 1.00 |
-| 1.0 | Implicit evidence only | 0.78 | 0.99 | 1.05 | 1.01 |
-
-("—" indicates the target performance was not reached within the evaluation window.)
+| 1.0 | Implicit-only | 0.78 | 0.99 | 1.05 | 1.01 |
 
 ### Key Findings
 
-- **Implicit evidence is critical for cold-start**: With $\rho = 0$ (explicit evidence only), ETR during early training is virtually indistinguishable from random sampling—because most tasks have never been selected for evaluation and thus have no historical data. In contrast, all settings with $\rho > 0$ exhibit a sharp ETR increase in early training, primarily by filtering out completely unsolvable tasks ($p = 0$). This quantifies the role of implicit evidence as a "cold-start accelerator."
-- **Over-reliance on implicit evidence is harmful in the long run**: At $\rho = 0.5$ and $\rho = 1.0$, ETR declines in later training—the interpolation estimator's error accumulates as the model's capabilities drift away from the reference models, causing an increasing number of fully mastered tasks ($p = 1$) to be incorrectly identified as "moderate" and selected. This explains why $\rho = 1.0$ achieves TTB(100%) = 0.99 (essentially no speedup).
-- **$\lambda$ controls the adaptability–stability tradeoff**: $\lambda = 0$ (no forgetting) causes the posterior to become overconfident and unable to track improvements in model capabilities, degrading task selection quality in later training; $\lambda = 1$ (complete forgetting) inflates posterior variance so severely that Thompson sampling degenerates toward near-random selection; $\lambda = 0.1$ achieves the best balance across all metrics.
-- **BOTS-DOTS is the strongest baseline**: Even using only implicit evidence without Thompson sampling, BOTS-DOTS significantly outperforms both Offline and Random baselines, demonstrating that the interpolation plugin itself provides valuable task difficulty signals. Full BOTS further improves long-term performance by correcting for implicit evidence bias through explicit evidence and Thompson sampling exploration.
-- **Computational overhead is negligible**: The entire task selection pipeline of BOTS (posterior update + interpolation + sampling) involves only simple vector arithmetic, with a wall-clock overhead of $\leq 0.2\%$ of training time—several times more efficient than oversampling-based methods.
+- **Implicit evidence is vital for cold start**: $\rho=0$ (explicit-only) shows ETR similar to random sampling early on, as most tasks lack historical data. Setting $\rho > 0$ leads to a sharp climb in ETR by filtering unsolvable tasks.
+- **Over-reliance on implicit evidence is harmful long-term**: High $\rho$ settings show ETR drops late in training as interpolation errors accumulate, causing mastered tasks to be incorrectly selected.
+- **$\lambda$ controls adaptability**: $\lambda=0$ (no forgetting) causes overconfidence in stale data, while $\lambda=1$ renders Thompson sampling near-random due to high variance. $\lambda=0.1$ is optimal.
+- **Computational overhead is negligible**: The entire process is based on simple vector math, with wall-clock overhead $\leq 0.2\%$ of training time.
 
 ## Highlights & Insights
 
-- **Unifying task selection as Bayesian inference**: The elegance of this modeling choice is that it simultaneously solves three problems—the Beta-Bernoulli conjugacy yields closed-form posterior updates (no MCMC or variational inference required), the posterior variance naturally encodes uncertainty (driving Thompson sampling's exploratory behavior), and the pseudo-count mechanism provides a natural interface for fusing heterogeneous evidence. The entire framework introduces no neural networks or complex optimization; the core implementation amounts to only a few dozen lines of code.
-- **Quantitative characterization of explicit/implicit evidence complementarity**: Rather than simply asserting that "the two are complementary" and fusing them, the systematic ablation of $\rho$ from 0 to 1 precisely characterizes the complementarity pattern—the value of explicit evidence increases as training progresses (accumulating richer history), while the value of implicit evidence decreases (as the model drifts further from the reference models). This provides interpretable guidance for choosing the fusion weight.
-- **Zero marginal cost design of the interpolation plugin**: The method leverages difficulty labels already present in existing datasets (e.g., reference model evaluations in GURU) as the basis for implicit evidence, avoiding any additional rollouts. This design makes BOTS a genuinely plug-and-play solution—requiring no changes to the training algorithm, no additional inference budget, and no training of auxiliary models.
+- **Unified Bayesian Perspective**: The Beta-Bernoulli conjugate provides analytical updates without MCMC, naturally encodes uncertainty for exploration, and offers a clean interface for fusing heterogeneous evidence.
+- **Quantitative Discovery of Complementarity**: The study precisely characterizes how the value of explicit evidence increases while implicit evidence decreases as training progresses.
+- **Zero-marginal Cost Design**: By leveraging existing dataset labels as implicit evidence bases, BOTS avoids extra rollout costs during training.
 
 ## Limitations & Future Work
 
-- **Dependence on reference models**: Implicit evidence requires pre-evaluated pass rates from weak and strong reference models. While many datasets (GURU, BigMath) already provide such labels, constructing entirely new datasets still requires a one-time rollout. However, this cost is non-recurring and can be amortized over multiple training runs.
-- **Coarseness of linear interpolation**: The assumption that the current model's pass rate is a linear interpolation of the weak and strong model pass rates holds reasonably well for interpolation (when the current model lies between the two references) but degrades significantly under extrapolation (when the model surpasses the strong reference or falls below the weak reference). The authors acknowledge this limitation and propose designing stronger plugins (e.g., embedding-based nonlinear predictors) as a future direction.
-- **Binary reward assumption**: The entire Beta-Bernoulli modeling assumes binary (0/1) rewards. For non-binary reward settings (e.g., dialogue quality scoring, code efficiency ranking), the framework would need to be extended to more general conjugate families such as Gaussian-Normal or Dirichlet.
-- **Fixed target pass rate**: Using $p^* = 0.5$ as the "most informative difficulty" is theoretically optimal under binary rewards (maximizing the expected gradient), but different training stages may benefit from different targets—earlier stages might favor easier tasks ($p^* = 0.7$) to build foundational skills, with difficulty gradually increasing thereafter. Adaptive $p^*$ scheduling is a direct improvement direction.
-- **Non-adaptive fixed hyperparameters**: The optimal values of $\lambda$ and $\rho$ may vary across training stages (larger $\rho$ favoring implicit evidence early on, smaller $\rho$ favoring explicit evidence later), but the current framework uses fixed values throughout training. Designing adaptive schedules $\lambda(t), \rho(t)$ could yield further performance improvements.
+- **Reference Model Dependency**: Requires pre-evaluation by weak/strong models. While common in benchmarks like GURU, new datasets require a one-time rollout cost.
+- **Linear Interpolation Coarseness**: The assumption of linear pass rate interpolation is accurate for interpolation but degrades during extrapolation (when the model exceeds the strong reference).
+- **Binary Reward Assumption**: Modeling relies on 0/1 rewards. Extending to continuous or ranking rewards (e.g., Gaussian or Dirichlet) is a future direction.
+- **Fixed Target Difficulty**: Utilizing a static $p^*=0.5$ might be suboptimal; adaptive $p^*$ scheduling (starting easy, then hard) could further improve results.
 
 ## Related Work & Insights
 
-- **vs. MoPPS (Qu et al., TTRL)**: MoPPS can be viewed as a special case of BOTS with $\lambda = 0, \rho = 0$—fully relying on explicit evidence with no historical forgetting. BOTS extends this by adding implicit evidence and a forgetting mechanism, outperforming it across all 18 metrics. This demonstrates that a pure multi-armed bandit formulation is insufficient to address the non-stationarity and cold-start challenges inherent in RFT.
-- **vs. DOTS (Sun et al., AFRL)**: DOTS uses an attention kernel in embedding space for cross-task prediction, requiring additional rollouts to evaluate anchor sets and entirely ignoring historical evaluation information. BOTS-DOTS (approximating $\lambda = 1, \rho = 1$) replaces the attention kernel with a simpler interpolation, achieving comparable performance at substantially lower overhead. Full BOTS further improves long-term performance over DOTS by incorporating explicit evidence correction.
-- **vs. Oversampling methods (DAPO, StarPO)**: Oversampling generates 4–8× oversized batches to obtain a sufficient number of "moderately difficult" tasks. While effective, this approach is computationally expensive. BOTS replaces brute-force oversampling with intelligent task selection, achieving better training efficiency under the same computational budget.
-- **Broader Inspiration**: The design principles of BOTS—Bayesian belief maintenance, heterogeneous evidence fusion, and Thompson sampling—are highly generalizable and transferable to other online selection scenarios: sample selection in active learning, task weight scheduling in multi-task learning, and adaptive scheduling in curriculum learning.
+- **vs MoPPS (TTRL)**: MoPPS is essentially a special case of BOTS ($\lambda=0, \rho=0$). BOTS outperforms it by incorporating implicit evidence and forgetting mechanisms, addressing non-stationarity.
+- **vs DOTS (AFRL)**: DOTS uses attention kernels for prediction and requires anchor task rollouts. BOTS-DOTS (the implicit-only version) achieves similar performance with lower costs.
+- **Insight**: The BOTS framework—Bayesian belief maintenance + heterogeneous evidence fusion + Thompson sampling—is generalizable to other online selection scenarios like active learning or multi-task weight scheduling.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ The unified perspective reformulating task selection as Bayesian inference is clear and elegant, though the underlying components (Beta-Bernoulli, Thompson sampling, linear interpolation) are all well-established techniques.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Comprehensive comparisons across multiple domains (math/code/logic) and scales (1.5B/7B), with systematic ablations of $\rho$ and $\lambda$ providing deep understanding; three complementary metrics are thoughtfully designed.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ The correspondence between theoretical derivations and experimental validation is exceptionally clear; hyperparameter analysis is supported by both theoretical explanations and empirical verification; practical recommendations (default configurations, reference model selection) are thorough.
-- **Value**: ⭐⭐⭐⭐ Addresses a real and widespread task selection bottleneck in RFT; plug-and-play code is open-sourced; default hyperparameters generalize across settings; deployment barrier is extremely low.
+- Novelty: ⭐⭐⭐⭐ Unified Bayesian perspective is elegant, though components are established techniques.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive cross-domain and cross-scale comparisons with systematic ablations.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear mapping between theory and experiments; practical deployment advice is well-provided.
+- Value: ⭐⭐⭐⭐ Addresses a real bottleneck in RFT with an open-source, plug-and-play solution with minimal overhead.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] ELLMob: Event-Driven Human Mobility Generation with Self-Aligned LLM Framework](ellmob_event-driven_human_mobility_generation_with_self-aligned_language_models.md)
+- [\[ICLR 2026\] Discovering Novel LLM Experts via Task-Capability Coevolution](discovering_novel_llm_experts_via_task-capability_coevolution.md)
 - [\[ICLR 2026\] Near-Optimal Online Deployment and Routing for Streaming LLMs](near-optimal_online_deployment_and_routing_for_streaming_llms.md)
-- [\[ACL 2026\] EVE: A Domain-Specific LLM Framework for Earth Intelligence](../../ACL2026/llm_nlp/eve_a_domain-specific_llm_framework_for_earth_intelligence.md)
-- [\[ACL 2026\] Automatic Combination of Sample Selection Strategies for Few-Shot Learning](../../ACL2026/llm_nlp/automatic_combination_of_sample_selection_strategies_for_few-shot_learning.md)
-- [\[ICLR 2026\] Speculative Actions: A Lossless Framework for Faster AI Agents](speculative_actions_faster_ai_agents.md)
+- [\[ICLR 2026\] ELLMob: Event-Driven Human Mobility Generation with Self-Aligned LLM Framework](ellmob_event-driven_human_mobility_generation_with_self-aligned_language_models.md)
+- [\[ACL 2025\] SSUF: A Semi-supervised Scalable Unified Framework for E-commerce Query Classification](../../ACL2025/llm_nlp/a_semi-supervised_scalable_unified_framework_for_e-commerce_query_classification.md)
+- [\[ACL 2025\] From Selection to Generation: A Survey of LLM-based Active Learning](../../ACL2025/llm_nlp/from_selection_to_generation_a_survey.md)
 
 </div>
 

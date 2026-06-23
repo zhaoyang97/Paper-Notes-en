@@ -2,81 +2,94 @@
 title: >-
   [Paper Note] Boosting Medical Visual Understanding From Multi-Granular Language Learning
 description: >-
-  [ICLR 2026][Medical Imaging][Medical image pre-training] This paper proposes Multi-Granular Language Learning (MGLL), a plug-and-play contrastive learning framework that jointly optimizes a soft CLIP loss…
+  [ICLR 2026][Medical Imaging][Paper Note] This paper proposes Multi-Granular Language Learning (MGLL), a plug-and-play contrastive learning framework. By jointly optimizing soft CLIP loss, point-wise loss, and smooth KL divergence, MGLL aligns medical images with multi-label, multi-granular textual descriptions. It consistently outperforms SOTA methods on fund
 tags:
-  - "ICLR 2026"
-  - "Medical Imaging"
-  - "Medical image pre-training"
-  - "multi-label contrastive learning"
-  - "multi-granular alignment"
-  - "CLIP improvement"
-  - "vision-language pre-training"
+  - ICLR 2026
+  - Medical Imaging
 date: 2026-05-08
-content_hash: 310d989aa73d219f
+content_hash: 583d435ab27beae7
 ---
-
 # Boosting Medical Visual Understanding From Multi-Granular Language Learning
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2511.15943](https://arxiv.org/abs/2511.15943)  
 **Code**: [https://github.com/HUANGLIZI/MGLL](https://github.com/HUANGLIZI/MGLL)  
-**Area**: Medical Imaging / Multimodal VLM
-**Keywords**: Medical image pre-training, multi-label contrastive learning, multi-granular alignment, CLIP improvement, vision-language pre-training
+**Area**: Medical Imaging / Multimodal VLM  
+**Keywords**: Medical Image Pre-training, Multi-label Contrastive Learning, Multi-granular Alignment, CLIP Improvement, Vision-Language Pre-training
 
 ## TL;DR
-This paper proposes Multi-Granular Language Learning (MGLL), a plug-and-play contrastive learning framework that jointly optimizes a soft CLIP loss, a point-wise loss, and a smooth KL divergence to align medical images with multi-label, multi-granular text descriptions. MGLL consistently surpasses state-of-the-art methods on fundus and X-ray datasets, and when used as a visual encoder for multimodal large language models, improves diagnostic accuracy by up to 34.1%.
+This paper proposes Multi-Granular Language Learning (MGLL), a plug-and-play contrastive learning framework. By jointly optimizing soft CLIP loss, point-wise loss, and smooth KL divergence, MGLL aligns medical images with multi-label, multi-granular textual descriptions. It consistently outperforms SOTA methods on fundus and X-ray datasets and can be embedded into multimodal large language models (MLLMs) as a vision encoder, improving diagnostic accuracy by up to 34.1%.
 
 ## Background & Motivation
 
-**Background**: Contrastive learning approaches such as CLIP have achieved remarkable success in general vision by learning cross-modal aligned representations from image-text pairs. Many medical visual foundation models have adopted CLIP-style pre-training.
+**Background**: Contrastive learning methods like CLIP have achieved significant success in general computer vision by learning cross-modal aligned representations through image-text pair matching. Many medical vision foundation models have adopted CLIP for pre-training.
 
-**Limitations of Prior Work**: Standard CLIP relies on a single-label, single-granularity image-text pairing strategy; however, medical images are inherently **multi-label** and **multi-granular**. For example, a single fundus image may simultaneously present diabetic macular edema and diabetic retinopathy (multi-label), each of which can be further described at coarse granularity (disease category) and fine granularity (severity, clinical description). Existing multi-label contrastive methods focus on instance-label associations but neglect cross-granularity semantics.
+**Limitations of Prior Work**: Standard CLIP employs a single-label, single-granular image-text pairing strategy. However, medical images inherently possess **multi-label** and **multi-granular** characteristics. For instance, a single fundus image may contain both "diabetic macular edema" and "diabetic retinopathy" (multi-label), with each disease having coarse-grained (disease category) and fine-grained (severity, clinical description) distinctions (multi-granular). Current multi-label contrastive methods focus on instance-label associations but neglect cross-granular semantics.
 
-**Key Challenge**: Medical images encode more complex and hierarchical information than natural images, yet data are scarcer due to privacy constraints and annotation costs. Single-granularity, single-label supervision wastes rich hierarchical annotation information, while naively mixing multi-granular information in a single encoding causes feature interference across semantic levels.
+**Key Challenge**: Medical images encode information that is more complex and hierarchical than natural images, yet data is scarcer due to privacy and annotation costs. Single-granular, single-label supervision wastes rich hierarchical annotation information, while directly mixing multi-granular information leads to interference between features at different semantic levels.
 
-**Goal**: To achieve, within a unified framework, both multi-label alignment (one image corresponding to multiple labels) and cross-granularity alignment (consistency across annotations at different levels).
+**Goal**: How to achieve both multi-label alignment (one image to multiple labels) and cross-granular alignment (consistency across different annotation levels) within a unified framework?
 
-**Key Insight**: Construct a multi-granular text description dataset and design three complementary loss functions to separately optimize multi-label alignment and cross-granularity consistency.
+**Key Insight**: Construct a multi-granular textual description dataset and design three complementary loss functions to optimize multi-label alignment and cross-granular consistency respectively.
 
-**Core Idea**: Jointly optimize a soft CLIP loss for multi-label soft alignment, a point-wise loss for fine-grained pairwise alignment, and a smooth KL divergence for cross-granularity feature consistency, achieving comprehensive vision-language alignment for medical images.
+**Core Idea**: Utilize soft CLIP loss for multi-label soft alignment, point-wise loss for fine-grained pairwise alignment, and smooth KL divergence for cross-granular feature consistency constraints. Joint optimization of these three components achieves comprehensive vision-language alignment for medical images.
 
 ## Method
 
 ### Overall Architecture
-MGLL consists of an image encoder (ViT-L/14) and a text encoder (BiomedicalBERT). The inputs are medical images paired with multi-granular text descriptions (e.g., disease category, clinical interpretation, examination description). MGLL introduces no additional granularity-sensitive encoders, incurs zero extra computational cost, and can be plugged into any vision-language model.
+MGLL addresses the inherent multi-label and multi-granular structure of medical images (e.g., a fundus image showing both "diabetic macular edema" and "diabetic retinopathy," each with coarse-grained categories and fine-grained clinical descriptions). CLIP-style pre-training uses only single-label, single-granular hard matching, wasting these hierarchical annotations. MGLL retains the dual-tower structure of CLIP—using ViT-L/14 as the image encoder and BiomedicalBERT as the text encoder—without introducing extra granularity-sensitive encoders. Instead, it modifies the contrastive objective: an image is softly aligned with its multiple labels, and representations of the same image under different textual granularities are forced to converge in a consistent feature space. Since only the loss is changed while the architecture remains static, it incurs zero additional computational cost and can be used as a plug-and-play replacement for contrastive objectives in any VLM.
+
+To support this multi-granular supervision, the authors constructed two datasets. **MGLL-Fundus** contains 246,389 fundus image-text pairs from 49 public datasets covering 50+ diseases, with granularities including normal/abnormal labels, specific disease categories, and clinical interpretations. **MGLL-Xray** includes 190,882 X-ray images from the MIDRC database, with granularities covering imaging modality (CR/DX), study description, and series description. These datasets implement the "one image, multi-level text" concept necessary for the three losses to function.
+
+The pipeline follows a "dual-tower encoding $\rightarrow$ three-way parallel loss constraints $\rightarrow$ joint optimization" structure. Features from image and multi-granular text encoders are fed into three complementary losses. Soft CLIP and point-wise losses facilitate multi-label alignment, while smooth KL divergence aligns granularities horizontally.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    DATA["Multi-granular Dataset Construction<br/>MGLL-Fundus / MGLL-Xray<br/>(Image + Multi-label Multi-granular Text)"]
+    DATA --> IMG["Image Encoder ViT-L/14<br/>→ Image Feature V"]
+    DATA --> TXT["Text Encoder BiomedicalBERT<br/>→ Multi-granular Text Features T"]
+    IMG --> SCLIP["Soft CLIP Loss<br/>Multi-label Soft Alignment"]
+    TXT --> SCLIP
+    IMG --> PW["Point-wise Loss<br/>Pairwise Negative Suppression"]
+    TXT --> PW
+    IMG --> SKL["Smooth KL Loss<br/>Cross-granular Representation Alignment"]
+    TXT --> SKL
+    SCLIP --> JOINT["Joint Optimization<br/>L = 0.5·sCLIP + Lp + sKL"]
+    PW --> JOINT
+    SKL --> JOINT
+    JOINT --> OUT["Aligned Vision Encoder<br/>Plug-and-play for VLM/MLLM"]
+```
 
 ### Key Designs
 
-1. **Soft CLIP Loss $\mathcal{L}_{\text{sCLIP}}$**:
+**1. Soft CLIP Loss $\mathcal{L}_{\text{sCLIP}}$: Replacing Hard Matching with Multi-label Soft Alignment**
 
-    - **Function**: Extends the hard single-label matching of standard CLIP to multi-label soft alignment.
-    - **Mechanism**: Allows image feature $V_i$ to align simultaneously with multiple text labels $\{T_{i1}, T_{i2}, ..., T_{iM_i}\}$. The weight $w_{ik}$ for each image-text pair is derived by normalizing a co-occurrence matrix: $w_{ik} = \frac{\text{cooccurrence}(V_i, T_{ik})}{\sum_k \text{cooccurrence}(V_i, T_{ik})}$. The optimization objective is equivalent to driving image features toward the weighted centroid of their associated text features.
-    - **Design Motivation**: CLIP forces each image to align with a single label, producing biased representations in multi-label settings. The soft loss naturally handles one-to-many mappings through soft weights.
+Standard CLIP forces each image to align with only one label. In medical imaging, one image often contains multiple pathologies. Hard matching forces the model to choose only one correct label, leading to biased representations. Soft CLIP loss allows the image feature $V_i$ to align simultaneously with multiple text labels $\{T_{i1}, T_{i2}, ..., T_{iM_i}\}$. Each pair is assigned a soft weight $w_{ik}$ derived from the normalized label co-occurrence matrix: $w_{ik} = \frac{\text{cooccurrence}(V_i, T_{ik})}{\sum_k \text{cooccurrence}(V_i, T_{ik})}$. Through optimization, image features converge to the weighted center of all associated text features rather than being dominated by a single label.
 
-2. **Point-wise Loss $\mathcal{L}_P$**:
+**2. Point-wise Loss $\mathcal{L}_P$: Fine-grained Pairwise Negative Suppression**
 
-    - **Function**: Optimizes point-level image-text alignment within a given granularity level.
-    - **Mechanism**: Uses binary cross-entropy as the loss, where $y_{ij} \in \{0, 1\}$ indicates whether image $V_i$ and text $T_j$ form a valid match. A sigmoid activation normalizes the similarity score into a probability: $\mathcal{L}_P = -\sum_{i,j} \frac{y_{ij} \log \sigma(x_{ij}) + (1-y_{ij}) \log(1-\sigma(x_{ij}))}{N}$
-    - **Design Motivation**: While the soft CLIP loss focuses on soft assignment among positive samples, the point-wise loss additionally and explicitly suppresses similarity for negative pairs (minimizing $\sigma(x_{ij})$ when $y_{ij}=0$), complementing the former to enhance multi-label discriminability.
+While soft CLIP handles the soft distribution among positive samples, it does not explicitly manage negative samples. Multi-label discrimination requires suppressing mismatched pairs. Point-wise loss uses binary cross-entropy where $y_{ij} \in \{0, 1\}$ denotes whether image $V_i$ and text $T_j$ match. Probabilities are normalized via sigmoid to calculate the loss:
 
-3. **Smooth KL Divergence Loss $\mathcal{L}_{\text{sKL}}$**:
+$$\mathcal{L}_P = -\sum_{i,j} \frac{y_{ij} \log \sigma(x_{ij}) + (1-y_{ij}) \log(1-\sigma(x_{ij}))}{N}$$
 
-    - **Function**: Ensures that text features from different granularity levels are aligned into a unified feature space.
-    - **Mechanism**: Given prediction distributions $\{P_1, ..., P_m\}$ for $m$ granularity levels, computes the mean distribution $M = \frac{1}{m}\sum_i P_i$, then minimizes the KL divergence from each granularity distribution to the mean: $\mathcal{L}_{\text{sKL}} = \sum_{i=1}^m D_{\text{KL}}(P_i \| M)$
-    - **Design Motivation**: Without a cross-granularity consistency constraint, features from different granularities scatter across disjoint subspaces, preventing cross-granularity generalization. Minimizing KL divergence to the mean distribution forces all granularity representations to converge ($P_1 = P_2 = ... = P_m = M$).
+When $y_{ij}=0$, this term explicitly minimizes $\sigma(x_{ij})$ to suppress the similarity of irrelevant pairs. It complements soft CLIP loss to bolster multi-label discriminative power; ablation studies show it provides the largest individual contribution.
+
+**3. Smooth KL Divergence $\mathcal{L}_{\text{sKL}}$: Consistent Cross-granular Representations**
+
+The previous losses ensure image-text alignment, but if different granularities (e.g., categories vs. clinical descriptions) are optimized independently, features might scatter into separate subspaces, hindering cross-granular generalization. Smooth KL divergence imposes a consistency constraint. For prediction distributions $\{P_1, ..., P_m\}$ across $m$ granular levels, the mean distribution is defined as $M = \frac{1}{m}\sum_i P_i$. The loss minimizes the KL divergence from each granularity's distribution to this mean:
+
+$$\mathcal{L}_{\text{sKL}} = \sum_{i=1}^m D_{\text{KL}}(P_i \| M)$$
+
+This forces representations across all granularities to converge ($P_1 = P_2 = ... = P_m$ optimally), ensuring that semantics learned at coarse and fine levels are mutually consistent.
 
 ### Loss & Training
-The final loss is a weighted sum of the three terms: $\mathcal{L}_{\text{MGLL}} = 0.5 \cdot \mathcal{L}_{\text{sCLIP}} + 1.0 \cdot \mathcal{L}_P + 1.0 \cdot \mathcal{L}_{\text{sKL}}$
-
-### Large-Scale Multi-Granular Dataset Construction
-
-1. **MGLL-Fundus**: 246,389 fundus image-text pairs with multi-granular annotations, aggregated from 49 public datasets covering 50+ diseases. Granularity levels include: normal/abnormal labels, specific disease categories, and clinical interpretation descriptions.
-2. **MGLL-Xray**: 190,882 chest X-ray images from the MIDRC database. Granularity levels include: imaging modality (CR/DX), study description, and series description.
+The final objective is a weighted sum where point-wise and smooth KL losses dominate: $\mathcal{L}_{\text{MGLL}} = 0.5 \cdot \mathcal{L}_{\text{sCLIP}} + 1.0 \cdot \mathcal{L}_P + 1.0 \cdot \mathcal{L}_{\text{sKL}}$.
 
 ## Key Experimental Results
 
 ### Main Results
-MGLL is compared against CLIP, CheXzero, MRM, UniChest, and other state-of-the-art methods on 9 fundus downstream datasets and 3 X-ray datasets:
+MGLL was compared against SOTA methods (CLIP, CheXzero, MRM, UniChest) on 9 fundus and 3 X-ray datasets:
 
 | Method | MIDRC-XR AUC (LP/FT) | MIDRC-Portable AUC (LP/FT) | ChestX-ray14 AUC (LP/FT) |
 |------|---------------------|--------------------------|-------------------------|
@@ -85,11 +98,11 @@ MGLL is compared against CLIP, CheXzero, MRM, UniChest, and other state-of-the-a
 | FG-CLIP | 58.31 / 93.29 | 80.31 / 96.93 | 76.62 / 85.10 |
 | **MGLL** | **61.25 / 99.08** | **83.86 / 99.75** | **82.94 / 87.37** |
 
-MGLL achieves the best results across all datasets under both linear probe and fine-tuning settings. On the multi-label dataset RFMiD, MGLL outperforms the second-best method by 16.6% in linear probe AUC and 6.7% in fine-tuning AUC.
+MGLL achieves the best results across all datasets in both linear probe (LP) and fine-tuning (FT) settings. On the multi-label dataset RFMiD, MGLL's linear probe outperforms the runner-up by 16.6%, and fine-tuning by 6.7%.
 
-Results when embedded into MLLMs — replacing the visual encoder of 7 MLLMs:
+Efficiency of embedding into MLLMs (replacing vision encoders for 7 MLLMs):
 
-| MLLM | Original Accuracy | +MGLL Accuracy | Gain |
+| MLLM | Original Acc | +MGLL Acc | Gain |
 |------|-----------|-------------|------|
 | InstructBLIP | 47.29% | 61.99% | +14.7% |
 | LLaVA | 72.73% | 79.98% | +7.3% |
@@ -98,51 +111,51 @@ Results when embedded into MLLMs — replacing the visual encoder of 7 MLLMs:
 | InternVL | 77.35% | 81.96% | +4.6% |
 | Janus-Pro | 68.92% | 79.80% | +10.9% |
 
-Gains are most pronounced for medical-domain models (LLaVA-Med, Med-Flamingo), while general-purpose models (LLaVA, InternVL) also show notable improvements.
+Improvements are most significant for medical-specific models (LLaVA-Med, Med-Flamingo), while general-purpose models also show noticeable gains.
 
 ### Ablation Study
 Loss function ablation on the RFMiD dataset:
 
-| Configuration | LP AUC | FT AUC | Notes |
+| Config | LP AUC | FT AUC | Description |
 |------|--------|--------|------|
-| CLIP baseline | 44.66 | 65.10 | Single-label, single-granularity |
-| $\mathcal{L}_P$ only | 70.34 | 88.25 | Point-wise contributes most |
-| $\mathcal{L}_{\text{sCLIP}}$ only | 67.86 | 85.13 | Soft CLIP also yields notable gains |
-| $\mathcal{L}_{\text{sCLIP}} + \mathcal{L}_P$ | 75.73 | 90.31 | Complementary effect |
-| Full MGLL | **79.62** | **92.83** | +sKL yields further improvement |
+| CLIP baseline | 44.66 | 65.10 | Single-label single-granular |
+| $\mathcal{L}_P$ only | 70.34 | 88.25 | Point-wise provides max contribution |
+| $\mathcal{L}_{\text{sCLIP}}$ only | 67.86 | 85.13 | Soft CLIP shows significant gain |
+| $\mathcal{L}_{\text{sCLIP}} + \mathcal{L}_P$ | 75.73 | 90.31 | Complementary effects |
+| Full MGLL | **79.62** | **92.83** | Further gain with sKL |
 
-Ablation on the number of granularity levels (MIDRC-XR-Portable): increasing from 1 to 2 to 3 granularities yields monotonically increasing AUC (LP: 80.54 → 82.92 → 83.86), validating the importance of preserving hierarchical information structure.
+Granularity quantity ablation (MIDRC-XR-Portable): As granularities increase from 1 to 3, AUC increases monotonically (LP: 80.54 $\rightarrow$ 82.92 $\rightarrow$ 83.86), validating the importance of preserving hierarchical information.
 
 ### Key Findings
-- The point-wise loss contributes most (AUC gain of 25.68%), as it jointly optimizes positive and negative pairs.
-- The smooth KL divergence as a cross-granularity constraint provides an additional ~4% AUC improvement.
-- Regarding encoder selection, ViT-L/14 outperforms ViT-H/14 (larger is not always better, suggesting overfitting), and BiomedicalBERT outperforms both the CLIP text encoder and LLaMA.
-- MGLL substantially outperforms CLIP even under low-resolution or noisy text conditions, demonstrating strong robustness.
+- Point-wise loss contributes the most (25.68% AUC increase) by optimizing both positive and negative pairs.
+- Smooth KL divergence provides an additional ~4% AUC boost as a cross-granular constraint.
+- For encoders, ViT-L/14 outperforms ViT-H/14 (suggesting larger is not always better due to overfitting), and BERT outperforms CLIP text encoders or LLaMA.
+- MGLL remains robust and significantly outperforms CLIP even under low resolution or noisy text conditions.
 
 ## Highlights & Insights
-- **Plug-and-play design**: Without introducing any additional encoder parameters, MGLL achieves multi-label and multi-granular alignment purely through improved loss functions, and can directly replace the contrastive objective in any VLM.
-- **Elegant theoretical analysis**: Gradient analysis demonstrates that the soft CLIP loss drives image features toward the weighted centroid of the associated text features (Eq. 10), providing a clear and intuitive interpretation.
-- **Engineering value of large-scale dataset construction**: MGLL-Fundus (246K pairs, 49 datasets, 50+ diseases) and MGLL-Xray (190K images) fill a critical gap in multi-granular pre-training data for medical imaging.
-- **Evaluation paradigm for embedding into MLLMs**: Evaluating MGLL by substituting the visual encoder of 7 MLLMs is a transferable experimental design for assessing domain-specific visual encoders in other fields.
+- **Plug-and-play Design**: Achieves multi-label and multi-granular alignment solely through loss function modifications without adding encoder parameters.
+- **Elegant Theoretical Analysis**: Derives that soft CLIP forces image features to converge to the weighted center of text features (Eq. 10).
+- **Engineering Value**: The creation of MGLL-Fundus (246K pairs, 49 datasets, 50+ diseases) and MGLL-Xray (190K images) fills a gap in multi-granular medical pre-training data.
+- **MLLM Evaluation Paradigm**: Replacing vision encoders in 7 different MLLMs provides a solid framework for evaluating domain-specific vision encoders.
 
 ## Limitations & Future Work
-- **Granularity definition requires domain expertise**: Granularity levels and corresponding texts must be manually designed for each medical domain, limiting generalizability.
-- **Validation limited to classification tasks**: Downstream tasks such as segmentation and detection, which are equally important in medical imaging, are not evaluated.
-- **Dataset bias toward fundus and chest X-ray**: Generalizability to other modalities such as CT, MRI, and pathology slides remains unexplored.
-- **Coarse modeling of inter-granularity relationships**: The smooth KL divergence simply pulls all granularity distributions toward the mean without explicitly modeling hierarchical or containment relationships among granularities (e.g., disease category as a hypernym of severity level).
-- **Future directions**: Exploring automatic extraction of multi-granular annotations from medical reports and encoding hierarchical (tree-structured) relationships into the loss function.
+- **Domain Knowledge Dependency**: Defining granularities and collecting corresponding texts relies on clinical domain knowledge, limiting immediate universality.
+- **Classification Focus**: The framework lacks validation on segmentation or detection tasks, which are equally vital in medical imaging.
+- **Modality Bias**: Primarily validated on fundus and chest X-ray; generalizability to CT, MRI, or pathology slides remains unproven.
+- **Coarse Cross-granular Modeling**: Smooth KL aligns distributions to a mean but does not explicitly model hierarchical/inclusion relationships (e.g., "disease category" as an ancestor of "severity").
+- **Future Improvements**: Exploring automated multi-granular label extraction from medical reports and encoding tree structures directly into the loss function.
 
 ## Related Work & Insights
-- **vs. CLIP**: CLIP performs hard single-label matching, whereas MGLL performs multi-label soft matching with cross-granularity consistency, yielding substantial gains in medical settings (LP AUC on RFMiD: 44.66 → 79.62).
-- **vs. MedCLIP**: MedCLIP addresses false negatives via semantic matching but remains single-granularity; MGLL fundamentally restructures the supervision signal.
-- **vs. UniChest**: UniChest performs domain adaptation for chest X-rays, while MGLL provides a more general multi-granular framework effective for both X-ray and fundus imaging.
-- **vs. SupCon**: Supervised contrastive learning exploits label structure but is limited to a fixed label space; MGLL enables open-vocabulary semantics through the text encoder.
+- **vs. CLIP**: CLIP uses single-label hard matching; MGLL uses multi-label soft matching and cross-granular consistency, yielding massive gains in medical scenarios (RFMiD LP AUC: 44.66 $\rightarrow$ 79.62).
+- **vs. MedCLIP**: MedCLIP addresses false negatives via semantic matching but remains single-granular; MGLL restructures the supervision signal itself.
+- **vs. UniChest**: UniChest adapts to chest X-rays; MGLL provides a more generic multi-granular framework effective across both X-ray and fundus imaging.
+- **vs. SupCon**: Supervised contrastive learning uses label structures but is limited to fixed label spaces; MGLL achieves open semantics via text encoders.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ The combination of multi-label and multi-granular alignment is novel, though each individual loss function is not new in isolation.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Evaluation covers 11 downstream datasets, 7 MLLMs, and comprehensive ablations.
-- **Writing Quality**: ⭐⭐⭐⭐ Theoretical analysis and experimental presentation are clear, though the related work section is somewhat crowded.
-- **Value**: ⭐⭐⭐⭐ Directly applicable to medical visual pre-training; both the dataset and the method are readily reusable.
+- Novelty: ⭐⭐⭐⭐ The combination of multi-label and multi-granular alignment is novel, though individual losses are standard.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive evaluation across 11 datasets and 7 MLLMs with detailed ablations.
+- Writing Quality: ⭐⭐⭐⭐ Clear theoretical analysis and experimental presentation, though related work is somewhat crowded.
+- Value: ⭐⭐⭐⭐ Highly relevant for medical vision pre-training; both the dataset and method are directly reusable.
 
 <!-- RELATED:START -->
 
@@ -150,11 +163,11 @@ Ablation on the number of granularity levels (MIDRC-XR-Portable): increasing fro
 
 ## Related Papers
 
-- [\[CVPR 2026\] MedGRPO: Multi-Task Reinforcement Learning for Heterogeneous Medical Video Understanding](../../CVPR2026/medical_imaging/medgrpo_multi-task_reinforcement_learning_for_heterogeneous_medical_video_unders.md)
 - [\[AAAI 2026\] Sim4Seg: Boosting Multimodal Multi-disease Medical Diagnosis Segmentation with Region-Aware Vision-Language Similarity Masks](../../AAAI2026/medical_imaging/sim4seg_boosting_multimodal_multi-disease_medical_diagnosis_segmentation_with_re.md)
-- [\[ICCV 2025\] Boosting Vision Semantic Density with Anatomy Normality Modeling for Medical Vision-language Pre-training](../../ICCV2025/medical_imaging/boosting_vision_semantic_density_with_anatomy_normality_modeling_for_medical_vis.md)
-- [\[ICLR 2026\] Q-FSRU: Quantum-Augmented Frequency-Spectral Fusion for Medical Visual Question Answering](q-fsru_quantum-augmented_frequency-spectral_for_medical_visual_question_answerin.md)
-- [\[AAAI 2026\] MedEyes: Learning Dynamic Visual Focus for Medical Progressive Diagnosis](../../AAAI2026/medical_imaging/medeyes_learning_dynamic_visual_focus_for_medical_progressive_diagnosis.md)
+- [\[CVPR 2026\] MedGRPO: Multi-Task Reinforcement Learning for Heterogeneous Medical Video Understanding](../../CVPR2026/medical_imaging/medgrpo_multi-task_reinforcement_learning_for_heterogeneous_medical_video_unders.md)
+- [\[ICLR 2026\] U2-BENCH: Benchmarking Large Vision-Language Models on Ultrasound Understanding](u2-bench_benchmarking_large_vision-language_models_on_ultrasound_understanding.md)
+- [\[ICLR 2026\] M3CoTBench: Benchmark Chain-of-Thought of MLLMs in Medical Image Understanding](m3cotbench_benchmark_chain-of-thought_of_mllms_in_medical_image_understanding.md)
+- [\[CVPR 2026\] MedMO: Grounding and Understanding Multimodal Large Language Model for Medical Images](../../CVPR2026/medical_imaging/medmo_grounding_and_understanding_multimodal_large_language_model_for_medical_im.md)
 
 </div>
 

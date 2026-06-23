@@ -2,164 +2,161 @@
 title: >-
   [Paper Note] DISCO: Densely-overlapping Cell Instance Segmentation via Adjacency-aware Collaborative Coloring
 description: >-
-  [ICLR 2026][Medical Imaging][cell instance segmentation] This paper formulates densely-overlapping cell instance segmentation as a graph coloring problem and proposes Disco…
+  [ICLR 2026][Medical Imaging][Paper Note] Ours models densely-overlapping cell instance segmentation as a graph coloring problem and proposes a divide-and-conquer framework, Disco, featuring "explicit marking of conflict nodes + implicit adjacency constraint disambiguation." By decomposing the cell adjacency graph via BFS and introducing five collaborative los
 tags:
-  - "ICLR 2026"
-  - "Medical Imaging"
-  - "cell instance segmentation"
-  - "graph coloring"
-  - "dense overlap"
-  - "adjacency constraints"
-  - "pathology images"
+  - ICLR 2026
+  - Medical Imaging
 date: 2026-05-08
-content_hash: 21597ffedfc21f0c
+content_hash: a6a05ad436f1a379
 ---
-
 # DISCO: Densely-overlapping Cell Instance Segmentation via Adjacency-aware Collaborative Coloring
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2602.05420](https://arxiv.org/abs/2602.05420)  
-**Code**: [https://github.com/SR0920/Disco](https://github.com/SR0920/Disco)  
-**Area**: Medical Imaging / Segmentation
-**Keywords**: cell instance segmentation, graph coloring, dense overlap, adjacency constraints, pathology images
+**Code**: [https://github.com/SR0920/Disco](https://github.com/SR0920/Disco)   
+**Area**: Medical Imaging / Segmentation  
+**Keywords**: Cell Instance Segmentation, Graph Coloring, Dense Overlapping, Adjacency Constraints, Pathological Images
 
 ## TL;DR
 
-This paper formulates densely-overlapping cell instance segmentation as a graph coloring problem and proposes Disco, a divide-and-conquer framework combining explicit conflict node marking with implicit adjacency-constrained disambiguation. By decomposing cell adjacency graphs via BFS and introducing five collaborative loss functions, Disco achieves a 7.08% PQ improvement on the high-density pathology dataset GBC-FS 2025 while attaining state-of-the-art performance across four heterogeneous datasets.
+Ours models densely-overlapping cell instance segmentation as a graph coloring problem and proposes a divide-and-conquer framework, Disco, featuring "explicit marking of conflict nodes + implicit adjacency constraint disambiguation." By decomposing the cell adjacency graph via BFS and introducing five collaborative loss functions, Ours achieves a 7.08% PQ improvement on the high-density pathological dataset GBC-FS 2025 and attains SOTA results across four heterogeneous datasets.
 
 ## Background & Motivation
 
-**Background**: Cell instance segmentation is a core task in digital pathology analysis, essential for cell counting, morphological analysis, and cancer grading. Current mainstream methods fall into four categories: detection-based (Mask R-CNN), relying on bounding boxes and NMS; contour-based (DCAN), sensitive to binarization thresholds; distance/orientation map-based (HoverNet, StarDist), requiring complex post-processing; and graph coloring-based (FCIS), which models the problem from a topological perspective. The shared weakness of the first three categories is their reliance on local pixel-level or geometric information for instance assignment, leading to systematic errors in dense cell clusters.
+**Background**: Cell instance segmentation is a core task in digital pathology analysis, crucial for cell counting, morphological analysis, and cancer grading. Current mainstream methods can be categorized into four types: detection-based (Mask R-CNN) relying on bounding boxes and NMS, contour-based (DCAN) sensitive to binarization thresholds, distance/orientation map-based (HoverNet, StarDist) requiring complex post-processing, and graph coloring-based (FCIS) modeling from a topological perspective. A common weakness of the first three types is the reliance on local pixel-level or geometric information for instance attribution, which leads to systematic errors in dense cell clusters.
 
-**Limitations of Prior Work**: Graph coloring methods offer a globally-aware paradigm for dense segmentation, but their core assumptions are critically flawed. The simplest 2-coloring model assumes the cell adjacency graph (CAG) is bipartite (containing no odd cycles), yet through the first systematic analysis across four datasets, this paper finds that real-world CAGs are mostly non-bipartite. In CryoNuSeg, 56.67% of images contain non-bipartite graphs; in the high-density GBC-FS 2025, as many as 30.49% of nodes are conflict nodes. On the other hand, the 4-coloring used by FCIS, while theoretically complete, introduces unnecessary representational redundancy and optimization difficulty—most regions in practice require only 2 colors.
+**Limitations of Prior Work**: Graph coloring methods provide a new global-aware paradigm for dense segmentation, yet their core assumptions have significant flaws. The simplest 2-coloring model assumes the cell adjacency graph is bipartite (containing no odd cycles). However, this paper's first systematic analysis across four datasets reveals that real-world cell adjacency graphs are largely non-bipartite. In CryoNuSeg, 56.67% of images contain non-bipartite graphs, and in high-density GBC-FS 2025, up to 30.49% of nodes are conflict nodes. Conversely, the 4-coloring used by FCIS, while complete, introduces unnecessary representation redundancy and optimization difficulties, as most regions only require 2 colors.
 
-**Key Challenge**: This is a Goldilocks problem: 2-coloring is too simple to handle odd-cycle topological conflicts, while 4-coloring is unnecessarily complex and imposes learning burdens in simple regions. A solution is needed that efficiently handles the dominant bipartite structure while precisely addressing sparse conflict regions.
+**Key Challenge**: This is a "Goldilocks problem": 2-coloring is too simple to handle odd-cycle topological conflicts, while 4-coloring is too complex, imposing a learning burden on simple regions. A solution is needed that efficiently handles the primary bipartite structure while dynamically addressing sparse conflict regions.
 
-**Goal**: (1) How to systematically characterize the topological properties of real-world cell adjacency graphs? (2) How to design an adaptive coloring framework that degenerates to efficient 2-coloring for simple topologies while dynamically handling conflicts in complex ones? (3) How to enable the network to implicitly learn discriminative representations in continuous feature space when the label system cannot perfectly encode secondary conflicts?
+**Goal**: (1) How to systematically characterize the topological properties of real cell adjacency graphs? (2) How to design an adaptive coloring framework that degrades to efficient 2-coloring for simple topologies and dynamically handles conflicts in complex ones? (3) How to enable the network to implicitly learn distinctions in a continuous feature space when the label system cannot perfectly encode secondary conflicts?
 
-**Key Insight**: The authors conduct rigorous topological analysis—constructing CAGs for four datasets and measuring node degree distributions, odd-cycle distributions, and conflict node ratios. Key findings are: (1) over 90% of odd cycles in all non-bipartite graphs are 3-cycles (triangles); (2) conflict nodes tend not to be isolated but form dense "conflict clusters" with abundant "secondary conflicts" (conflict nodes adjacent to each other). This analysis directly guides the framework design: BFS efficiently extracts the maximal bipartite subgraph to resolve the majority, while a dedicated mechanism handles the conflict remainder.
+**Key Insight**: The authors first performed a rigorous topological analysis by constructing Cell Adjacency Graphs (CAG) for four datasets and statistics on node degree distribution, odd cycle distribution, and conflict node ratios. Key findings: (1) Over 90% of odd cycles in all non-bipartite graphs are 3-cycles (triangles); (2) Conflict nodes are often not isolated but form dense "conflict clusters" with numerous "secondary conflicts" (adjacent conflict nodes). This analysis directly guided the framework design: use BFS to efficiently extract the maximum bipartite subgraph for the majority of cells, then use specialized mechanisms for the remaining conflicts.
 
-**Core Idea**: Divide and conquer the graph coloring problem—BFS separates the bipartite subgraph for 2-coloring, remaining conflict nodes are labeled as a third color, and an adjacency constraint loss implicitly disambiguates them in continuous probability space, realizing a collaborative framework of explicit marking and implicit disambiguation.
+**Core Idea**: Divide and conquer the graph coloring problem—use BFS to separate the bipartite subgraph for 2-coloring, mark the remaining conflict nodes as a 3rd color, and then use an adjacency constraint loss for implicit disambiguation in the continuous probability space, achieving a collaborative "explicit marking + implicit disambiguation" framework.
 
 ## Method
 
 ### Overall Architecture
 
-Given a pathology image and its instance annotations, Disco proceeds in three stages: (1) **Topological Analysis and Label Generation**: a CAG is constructed from instance masks using morphological dilation (3×3 kernel) to define 8-connected adjacency; BFS then extracts the maximal bipartite subgraph, partitioning nodes into two independent sets $V_1, V_2$ (colors 1 and 2) and a conflict set $V_{conf}$ (color 3), yielding a 4-class annotation map $Y_{Disco} \in \{0,1,2,3\}^{H \times W}$ including background; (2) **Dual-Branch Segmentation Network**: a semantic branch predicts the foreground/background semantic map $P_{sem}$, and a coloring branch predicts the 4-class coloring map $P_{color}$; (3) **Decoupled Constraint Loss System**: five losses are jointly optimized—semantic loss $\mathcal{L}_{sem}$, coloring loss $\mathcal{L}_{color}$, consistency loss $\mathcal{L}_{cons}$, conflict loss $\mathcal{L}_{conf}$, and the pivotal adjacency constraint loss $\mathcal{L}_{adj}$. At inference, instances are reconstructed via topological decoding from the coloring map.
+Given a pathological image and its instance annotations, the overall workflow of Disco consists of three stages: (1) **Topology Analysis & Label Generation**: Construct a Cell Adjacency Graph (CAG) from instance masks, define 8-connectivity adjacency via morphological dilation (3×3 kernel), extract the maximum bipartite subgraph via BFS, and partition nodes into two independent sets $V_1, V_2$ (colors 1, 2) and a conflict set $V_{conf}$ (color 3), generating a 4-class annotation map $Y_{Disco} \in \{0,1,2,3\}^{H \times W}$ including background; (2) **Dual-branch Segmentation Network**: A semantic branch predicts the foreground/background semantic map $P_{sem}$, and a coloring branch predicts the 4-class coloring map $P_{color}$; (3) **Decoupled Constraint Loss System**: Five losses optimize collaboratively—semantic loss $\mathcal{L}_{sem}$, coloring loss $\mathcal{L}_{color}$, consistency loss $\mathcal{L}_{cons}$, conflict loss $\mathcal{L}_{conf}$, and the critical adjacency constraint loss $\mathcal{L}_{adj}$. During inference, instances are reconstructed via topological decoding of the coloring map.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    IN["Pathology Image<br/>+ Instance Annotations"] --> CAG["Cross-dataset Topology Analysis & CAG Construction<br/>Instance→Node, Dilation Contact→Edge"]
+    CAG --> MARK["Explicit Marking: BFS for Max Bipartite Subgraph<br/>V1/V2 Color 1·2, Conflict Set V_conf Color 3<br/>→ 4-class Label Map Y_Disco"]
+    MARK --> NET["Dual-branch Segmentation Network<br/>Semantic Branch P_sem + Coloring Branch P_color"]
+    NET --> ADJ["Implicit Disambiguation: Adjacency Constraint Loss L_adj<br/>Probability Space Pushes Adjacent Instances Apart"]
+    NET --> AUX["Auxiliary Losses<br/>L_sem / L_color / L_cons / L_conf"]
+    ADJ --> DEC["Topological Decoding<br/>Reconstruct Cell Instances"]
+    AUX --> DEC
+```
 
 ### Key Designs
 
-1. **Cross-Dataset Topological Analysis and CAG Construction**:
+**1. Cross-dataset Topology Analysis and CAG Construction**
 
-    - Function: Provides a data-driven theoretical foundation for the graph coloring paradigm and guides framework design.
-    - Mechanism: Instance masks are converted into a CAG $G=(V,E)$, where each node $v_i$ corresponds to instance $s_i$, and edges are defined as $E = \{(v_i, v_j) \mid \mathcal{N}(s_i) \cap s_j \neq \emptyset\}$, with $\mathcal{N}(s_i)$ being the pixel set of instance $s_i$ after 3×3 dilation. Analysis across four datasets reveals: PanNuke is 100% bipartite (0% conflict rate), DSB2018 has a 1.99% conflict rate, CryoNuSeg 5.64%, and GBC-FS 2025 30.49%. In all non-bipartite datasets, 3-cycles account for over 90% of odd cycles, and 24.64% of nodes in GBC-FS exhibit secondary conflicts.
-    - Design Motivation: This analysis forms the cornerstone of the paper. It quantitatively reveals the extent to which the 2-coloring assumption breaks down in practice, while demonstrating that conflicts concentrate in local 3-cycle structures—providing ample justification for the divide-and-conquer strategy without globally upgrading to a higher-chromatic-number model.
+The premise of the methodology is verifying whether the graph coloring paradigm fits real cell graphs. The authors converted instance masks into a CAG $G=(V,E)$, where node $v_i$ corresponds to instance $s_i$, and edges are defined by contact after dilation: $E = \{(v_i, v_j) \mid \mathcal{N}(s_i) \cap s_j \neq \emptyset\}$, where $\mathcal{N}(s_i)$ is the pixel set of $s_i$ after 3×3 dilation. Statistics across four datasets showed: PanNuke is 100% bipartite (0% conflict), DSB2018 has a 1.99% conflict rate, CryoNuSeg 5.64%, and high-density GBC-FS 2025 reaches 30.49%. Two structural findings are critical: in all non-bipartite datasets, 3-cycles (triangles) account for over 90% of odd cycles, and in GBC-FS, 24.64% of nodes have "secondary conflicts." This data dictates the framework: conflicts are real but highly localized and mostly triangular, so instead of upgrading to a high-chromatic model, the bipartite majority should be solved minimally while handling conflict residuals separately.
 
-2. **Explicit Marking — Conflict-Aware Label Generation**:
+**2. Explicit Marking**
 
-    - Function: Transforms the NP-hard optimal graph coloring problem into a learnable classification task.
-    - Mechanism: BFS is applied to the CAG to extract the maximal bipartite subgraph, partitioning nodes into $V_1$ (color 1), $V_2$ (color 2), and $V_{conf}$ (color 3). While the residual graph $G_{rem}$ could in principle be recursively decomposed, the authors make a key engineering decision based on the "sufficient representation principle": recursion is terminated and all conflict nodes are uniformly assigned color 3. This is because conflict nodes are few but topologically complex, making further coloring marginally beneficial at increasing computational cost. The resulting annotation map is $Y_{Disco} \in \{0,1,2,3\}^{H \times W}$.
-    - Design Motivation: Optimal coloring is NP-hard; BFS provides an efficient approximation. Splitting the problem into a "resolved bipartite subgraph" and a "pending conflict set" achieves correct coloring for the vast majority of nodes at minimal computational cost, providing clear learning targets for subsequent implicit disambiguation.
+Optimal graph coloring is NP-hard and impractical to solve exactly. Disco runs BFS on the CAG to extract the maximum bipartite subgraph, partitioning nodes into $V_1$ (Color 1), $V_2$ (Color 2), and the conflict set $V_{conf}$ (Color 3). Although one could recursively decompose the residual graph $G_{rem}$, the authors made a key engineering trade-off: all conflict nodes are unified as the 3rd color. The rationale is that conflict nodes are few but topologically complex; further recursive coloring offers diminishing returns with increasing computational cost. This results in a 4-value label map $Y_{Disco} \in \{0,1,2,3\}^{H \times W}$. BFS covers most nodes correctly with minimal cost, cleanly separating the "solved bipartite subgraph" from the "pending conflict set," leaving a clear learning target for implicit disambiguation.
 
-3. **Implicit Disambiguation — Adjacency Constraint Loss $\mathcal{L}_{adj}$**:
+**3. Implicit Disambiguation**
 
-    - Function: Resolves secondary conflicts—which discrete labels cannot encode—in continuous probability space.
-    - Mechanism: For each instance $s_i$, the mean color probability vector $\bar{P}(s_i)$ is computed, and the cosine similarity is minimized over all edges $(v_i, v_j) \in E$ in the adjacency graph: $\mathcal{L}_{adj} = \frac{1}{|E|} \sum_{(v_i,v_j) \in E} \frac{\bar{P}(s_i) \cdot \bar{P}(s_j)}{\|\bar{P}(s_i)\| \|\bar{P}(s_j)\|}$. This can be interpreted as a supervised contrastive loss where pixels of the same instance are positive samples (aggregated by $\mathcal{L}_{color}$) and adjacent instances are explicit negative samples (repelled by $\mathcal{L}_{adj}$). In bipartite regions, this reinforces orthogonal 2-color encodings; in secondary conflict regions, it compels the network to learn separable representations along secondary feature dimensions.
-    - Design Motivation: Since all conflict nodes share the color-3 label under explicit marking, mutually adjacent conflict nodes cannot be distinguished. $\mathcal{L}_{adj}$ provides repulsive gradients in continuous space, pushing conflict nodes with identical labels but different topological contexts toward distinct probability distributions. Ablation results show that $\mathcal{L}_{adj}$ alone contributes PQ +5.69%, the largest individual contribution among the five losses.
+Explicit marking leaves a gap—all conflict nodes share "Color 3," and a discrete label system cannot distinguish two adjacent conflict nodes (secondary conflicts). The adjacency constraint loss $\mathcal{L}_{adj}$ fills this gap. It calculates the average color probability vector $\bar{P}(s_i)$ for each instance $s_i$ and minimizes the cosine similarity between endpoints for all edges $(v_i, v_j) \in E$ in the adjacency graph:
+
+$$\mathcal{L}_{adj} = \frac{1}{|E|} \sum_{(v_i,v_j) \in E} \frac{\bar{P}(s_i) \cdot \bar{P}(s_j)}{\|\bar{P}(s_i)\| \|\bar{P}(s_j)\|}$$
+
+This can be viewed as a supervised contrastive loss: pixels within the same instance are positive samples (aggregated by $\mathcal{L}_{color}$), while adjacent instances are explicit negative samples (pushed apart by $\mathcal{L}_{adj}$). Its elegance lies in reinforcing the orthogonal 2-color coding in bipartite regions while forcing the network to learn separable representations in secondary conflict regions. Since the constraint is applied in the probability space rather than the feature space, backpropagation pushes nodes with the same label but different topologies toward distinct probability distributions. Ablation studies confirm that $\mathcal{L}_{adj}$ alone contributes +5.69% to PQ, the largest contribution among the five losses.
 
 ### Loss & Training
 
 The total loss is a linear combination of five components: $\mathcal{L}_{total} = \mathcal{L}_{sem} + \mathcal{L}_{color} + \mathcal{L}_{cons} + \mathcal{L}_{conf} + \mathcal{L}_{adj}$
 
-- $\mathcal{L}_{sem}$: Semantic segmentation loss for foreground/background binary classification.
-- $\mathcal{L}_{color}$: Weighted cross-entropy loss for 4-class coloring, with class balancing for the conflict class.
-- $\mathcal{L}_{cons}$ (Consistency Loss): Suppresses erroneous conflict-color predictions in bipartite regions: $\mathcal{L}_{cons} = \mathbb{E}_{i \in M_{bip}}[(\sigma(P_{color}(i))_t)^2]$—driving the conflict-color probability of bipartite nodes toward 0.
-- $\mathcal{L}_{conf}$ (Conflict Loss): Encourages accurate conflict-color prediction in conflict regions: $\mathcal{L}_{conf} = \mathbb{E}_{i \in M_{conf}}[(1 - \sigma(P_{color}(i))_t)^2]$—driving the conflict-color probability of conflict nodes toward 1.
-- $\mathcal{L}_{adj}$ (Adjacency Constraint Loss): Repels the probability representations of adjacent instances in probability space (see above).
+- $\mathcal{L}_{sem}$: Binary cross-entropy loss for foreground/background semantic segmentation.
+- $\mathcal{L}_{color}$: Weighted cross-entropy loss for the 4 coloring classes, with class balancing for the conflict category.
+- $\mathcal{L}_{cons}$ (Consistency Loss): Suppresses pixels in bipartite regions from being predicted as the conflict color, $\mathcal{L}_{cons} = \mathbb{E}_{i \in M_{bip}}[(\sigma(P_{color}(i))_t)^2]$—driving conflict color probability toward 0 for bipartite nodes.
+- $\mathcal{L}_{conf}$ (Conflict Loss): Encourages conflict regions to accurately predict the conflict color, $\mathcal{L}_{conf} = \mathbb{E}_{i \in M_{conf}}[(1 - \sigma(P_{color}(i))_t)^2]$—driving conflict color probability toward 1 for conflict nodes.
+- $\mathcal{L}_{adj}$ (Adjacency Constraint Loss): Pushes apart feature representations of adjacent instances in the probability space (as described above).
 
-$\mathcal{L}_{cons}$ and $\mathcal{L}_{conf}$ form a push-pull mechanism: the former pushes conflict-color predictions away in simple regions, while the latter pulls them in for conflict regions. Training uses the Adam optimizer with an initial learning rate of $1 \times 10^{-4}$, weight decay of $5 \times 10^{-4}$, a 10× learning rate decay at epoch 70, linear warmup for the first 100 iterations, 200 total training epochs, and 8 × RTX 4090 GPUs.
+$\mathcal{L}_{cons}$ and $\mathcal{L}_{conf}$ form a "push-pull" mechanism. Training utilizes the Adam optimizer with an initial learning rate of $1 \times 10^{-4}$, weight decay of $5 \times 10^{-4}$, 10x decay at epoch 70, linear warmup for the first 100 iterations, and total 200 epochs on 8 × RTX 4090.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Comprehensive comparison with 8 mainstream methods across four datasets (reporting AJI and PQ only):
+Comprehensive comparison with 8 mainstream methods across four datasets (showing AJI and PQ):
 
 | Dataset | Method | AJI (↑) | PQ (↑) | Note |
-|--------|------|---------|--------|------|
-| PanNuke | CellPose | 0.6262 | 0.5918 | Distance/orientation map |
-| PanNuke | FCIS | 0.6394 | 0.6109 | 4-coloring |
-| PanNuke | **Disco** | **0.6566** | **0.6271** | PQ +1.62% |
-| DSB2018 | CellPose | 0.8247 | 0.7647 | Distance/orientation map |
-| DSB2018 | FCIS | 0.8287 | 0.7739 | 4-coloring |
-| DSB2018 | **Disco** | **0.8426** | **0.7781** | PQ +0.42% |
-| CryoNuSeg | CellPose | 0.5876 | 0.5724 | Distance/orientation map |
-| CryoNuSeg | FCIS | 0.5944 | 0.5793 | 4-coloring |
-| CryoNuSeg | **Disco** | **0.6134** | **0.5970** | PQ +1.77% |
-| GBC-FS 2025 | CellPose | 0.4376 | 0.4218 | Distance/orientation map |
-| GBC-FS 2025 | FCIS | 0.4518 | 0.4379 | 4-coloring |
-| GBC-FS 2025 | **Disco** | **0.5209** | **0.5087** | **PQ +7.08%** |
+|:---|:---|:---:|:---:|:---|
+| PanNuke | CellPose | 0.6262 | 0.5918 | Dist/Orient Map |
+| PanNuke | FCIS | 0.6394 | 0.6109 | 4-Coloring |
+| PanNuke | **Disco** | **0.6566** | **0.6271** | Gain +1.62% PQ |
+| DSB2018 | CellPose | 0.8247 | 0.7647 | Dist/Orient Map |
+| DSB2018 | FCIS | 0.8287 | 0.7739 | 4-Coloring |
+| DSB2018 | **Disco** | **0.8426** | **0.7781** | Gain +0.42% PQ |
+| CryoNuSeg | CellPose | 0.5876 | 0.5724 | Dist/Orient Map |
+| CryoNuSeg | FCIS | 0.5944 | 0.5793 | 4-Coloring |
+| CryoNuSeg | **Disco** | **0.6134** | **0.5970** | Gain +1.77% PQ |
+| GBC-FS 2025 | CellPose | 0.4376 | 0.4218 | Dist/Orient Map |
+| GBC-FS 2025 | FCIS | 0.4518 | 0.4379 | 4-Coloring |
+| GBC-FS 2025 | **Disco** | **0.5209** | **0.5087** | **Gain +7.08% PQ** |
 
 ### Ablation Study
 
 Framework-level comparison (GBC-FS 2025):
 
-| Method | Coloring Scheme | Adjacency Constraint | DICE | AJI | PQ |
-|------|---------|---------|------|-----|-----|
+| Method | Coloring Scheme | Adj. Constraint | DICE | AJI | PQ |
+|:---|:---:|:---:|:---:|:---:|:---:|
 | Baseline | 2-Color | None | 0.727 | 0.379 | 0.338 |
-| FCIS | 4-Color | Feature orthogonality constraint | 0.779 | 0.452 | 0.438 |
-| **Disco** | **Explicit Marking** | **Probability-space $\mathcal{L}_{adj}$** | **0.814** | **0.521** | **0.509** |
+| FCIS | 4-Color | Orthogonal Cons. | 0.779 | 0.452 | 0.438 |
+| **Disco** | **Explicit Marking** | **Prob. Space $\mathcal{L}_{adj}$** | **0.814** | **0.521** | **0.509** |
 
 Loss component ablation (GBC-FS 2025):
 
 | Configuration | $\mathcal{L}_{cons}$ | $\mathcal{L}_{conf}$ | $\mathcal{L}_{adj}$ | AJI | PQ |
-|------|:---:|:---:|:---:|-----|-----|
-| Explicit marking only | ✗ | ✗ | ✗ | 0.449 | 0.426 |
-| + Consistency + Conflict | ✓ | ✓ | ✗ | 0.471 | 0.458 |
-| + Adjacency constraint | ✗ | ✗ | ✓ | 0.506 | 0.483 |
+|:---|:---:|:---:|:---:|:---:|:---:|
+| Explicit Marking Only | ✗ | ✗ | ✗ | 0.449 | 0.426 |
+| + Consist. + Conflict | ✓ | ✓ | ✗ | 0.471 | 0.458 |
+| + Adj. Constraint | ✗ | ✗ | ✓ | 0.506 | 0.483 |
 | **Disco (Full)** | **✓** | **✓** | **✓** | **0.521** | **0.509** |
 
 ### Key Findings
 
-- **Greater conflict node density amplifies Disco's advantage**: With a 30.49% conflict rate in GBC-FS 2025, Disco surpasses FCIS by 7.08% PQ (absolute) / 16.2% (relative); in PanNuke with 0% conflict rate, the gain is only 1.62%, demonstrating that the framework adaptively degenerates to efficient 2-coloring.
-- **$\mathcal{L}_{adj}$ is the core engine**: Adding $\mathcal{L}_{adj}$ alone (without $\mathcal{L}_{cons}$ and $\mathcal{L}_{conf}$) raises PQ from 0.426 to 0.483 (+5.69%), far exceeding the contribution of the consistency + conflict losses (+3.26%). The full combination of five losses achieves PQ 0.509.
-- **Disco vs. 4-coloring**: Disco (dynamic 2+1 coloring) comprehensively outperforms FCIS (fixed 4-coloring) across all datasets, demonstrating that the divide-and-conquer strategy is superior to brute-force color count expansion—fewer colors yield clearer learning targets, with conflict handling delegated to the loss system rather than the label system.
-- **SQ dimension advantage**: On DSB2018, while FCIS is marginally better on DQ, Disco significantly outperforms on SQ, indicating that Disco produces more accurate cell contours.
+- **Higher conflict rates lead to greater advantages for Disco**: In GBC-FS 2025 (30.49% conflict), Disco improves PQ by 7.08% (absolute) / 16.2% (relative) over FCIS. In PanNuke (0% conflict), Disco improves by only 1.62%, indicating adaptive degradation to efficient 2-coloring.
+- **$\mathcal{L}_{adj}$ is the core engine**: Adding $\mathcal{L}_{adj}$ alone (without $\mathcal{L}_{cons}$/$\mathcal{L}_{conf}$) boosts PQ from 0.426 to 0.483 (+5.69%), far exceeding the contribution of consistency + conflict losses (+3.26%).
+- **Disco vs 4-Coloring**: Disco (dynamic 2+1 coloring) consistently outperforms FCIS (fixed 4-coloring), proving that a divide-and-conquer strategy is superior to brute-force color increases—fewer colors provide clearer learning targets, leaving conflict handling to the loss function.
+- **SQ Dimension Advantage**: On DSB2018, while FCIS is slightly better in DQ, Disco leads significantly in SQ, suggesting more precise cell contour generation.
 
 ## Highlights & Insights
 
-- **"Analyze first, then design" paradigm**: Rather than directly proposing a method, the paper first conducts systematic topological analysis across four datasets, quantitatively revealing the failure modes of 2-coloring and the distribution of conflicts, before designing the framework accordingly. This data-structure-driven methodology is highly rigorous and avoids ad hoc design choices.
-- **Elegant realization of divide-and-conquer philosophy**: Instead of pursuing a theoretically complete high-chromatic-number model (4-coloring), the paper exploits the empirical observation that most graphs are bipartite, covering the majority of nodes with minimal cost (2-coloring + conflict marking) and delegating exceptions to continuous-space constraints. This "coarse labels + fine constraints" paradigm is transferable to other label-noisy or ambiguous settings.
-- **Clever design of the adjacency constraint loss**: Cosine similarity constraints are applied in probability space (rather than feature space). Compared to FCIS's orthogonality constraints in feature space, probability space more directly corresponds to classification decision boundaries, and the contrastive loss definition—"positive samples = same instance, negative samples = adjacent instances"—naturally leverages topological information derived from graph structure.
-- **Conflict maps as interpretability tools**: The predicted conflict map itself quantifies the topological complexity of tissue organization, offering a new perspective for data-driven pathology research—not only yielding accurate segmentation but also informing pathologists that "the cellular arrangement in this region is particularly complex."
+- **"Analysis-before-design" paradigm**: The paper performs a systematic topological analysis before proposing the method, revealing the failure modes of 2-coloring. This data-driven methodology avoids arbitrary design.
+- **Elegant divide-and-conquer**: Instead of pursuing a theoretically complete high-chromatic model (4-coloring), Ours utilizes the empirical finding that "most graphs are bipartite." Handling the majority with 2-coloring and exceptions with a 3rd color plus continuous constraints is a robust "coarse label + fine constraint" approach.
+- **Clever adjacency constraint loss**: Applying cosine similarity constraints in the probability space (rather than feature space) directly targets the classification decision boundary. The definition of "positive = same instance, negative = adjacent instance" naturally leverages topological information.
+- **Conflict map as an interpretability tool**: The predicted conflict map can quantify tissue topological complexity, offering new perspectives for data-driven pathology—beyond segmentation, it indicates regions of complex cell arrangement.
 
 ## Limitations & Future Work
 
-- **Non-uniqueness of BFS decomposition**: Maximal bipartite subgraph extraction depends on BFS traversal order, and different random starting points may yield different $V_1, V_2, V_{conf}$ partitions. The paper does not discuss the effect of this randomness on training stability. Deterministic decomposition algorithms or consensus over multiple BFS runs could be explored.
-- **Information loss from assigning all conflict nodes the same label**: When the internal structure of the conflict set is complex (e.g., $\chi(G_{rem}) > 2$), a single conflict color loses potential coloring information. While $\mathcal{L}_{adj}$ partially compensates, it may be insufficient for very large conflict clusters. Recursive decomposition of $V_{conf}$ (at least one level) could be considered.
-- **Dataset homogeneity**: All four datasets consist of H&E or fluorescence-stained cell nuclei, and GBC-FS 2025 is a proprietary single-WSI dataset. The generalizability of the method to other dense instance segmentation scenarios (e.g., satellite remote sensing for buildings, crowded pedestrian detection, dense text detection) remains unvalidated.
-- **Inference efficiency not discussed**: Does inference require constructing a CAG? If so, the latency of building the graph from predicted masks and decoding instances could become a bottleneck in real-time pathology analysis settings.
+- **Non-uniqueness of BFS decomposition**: BFS results depend on the starting node; different random starts might produce different partitions of $V_1, V_2, V_{conf}$. The impact on training stability was not discussed.
+- **Information loss in Color 3**: Tagging all conflict nodes with one label loses information when the conflict set's internal structure is complex (e.g., $\chi(G_{rem}) > 2$). Recursive decomposition of $V_{conf}$ could be considered.
+- **Dataset homogeneity**: All four datasets involve H&E or fluorescence-stained nuclei. Generalization to other dense instance segmentation scenarios (e.g., remote sensing, crowds, dense text) remains unverified.
+- **Inference efficiency**: The overhead of constructing CAG from predicted masks and decoding was not discussed, which could be a bottleneck in real-time pathology analysis.
 
 ## Related Work & Insights
 
-- **vs. FCIS (ICML 2025)**: The first work to apply the four-color theorem to cell segmentation, using fixed 4-coloring with feature orthogonality constraints. Disco's core improvements are twofold: (1) dynamic coloring replaces fixed coloring—using 2 colors to reduce learning burden in simple regions and introducing a third color only for conflict regions; (2) adjacency constraints in probability space replace orthogonality constraints in feature space, more directly corresponding to classification decisions. Disco outperforms FCIS by 7.08% PQ on GBC-FS 2025.
-- **vs. HoverNet / StarDist**: Classic distance/orientation map-based methods relying on local pixel-level information and complex post-processing. Disco avoids error propagation from post-processing through global topological modeling, with particularly pronounced advantages in dense clusters.
-- **vs. CellPose (Nature Methods 2025)**: A general-purpose gradient-flow-based segmentation method with strong performance but still limited by local information in densely overlapping scenarios. Disco surpasses it on all datasets.
-- **Transferable insights**: The framework of "graph-structure-driven divide-and-conquer + continuous-space constraints" is broadly applicable to any dense instance segmentation task with local topological conflicts, such as stuff-thing boundary handling in panoptic segmentation and dense object separation in 3D point cloud instance segmentation.
+- **vs FCIS (ICML 2025)**: The first to introduce 4-coloring with fixed mapping and feature orthogonal constraints. Disco improves this via dynamic coloring (reducing learning burden in simple regions) and probability space constraints (more direct classification targeting).
+- **vs HoverNet / StarDist**: Classic distance/orientation-based methods restricted by local pixel-level info. Disco avoids error propagation in dense clusters through global topological modeling.
+- **vs CellPose (Nature Methods 2025)**: A strong gradient-flow method that still struggles with local information in overlapping scenes. Disco outperforms it across all datasets.
+- **Transferable logic**: This "graph-structured divide-and-conquer + continuous space constraint" framework is applicable to any dense instance segmentation task with local topological conflicts, such as stuff-thing boundary handling in panoptic segmentation.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ Combining graph coloring theory with deep learning via a divide-and-conquer strategy is novel, with rigorous topological analysis directly guiding design; however, the core contributions are primarily at the loss function level.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Four heterogeneous datasets, 8 comparison methods, framework-level ablation, loss component ablation, and feature space visualization provide comprehensive coverage.
-- Writing Quality: ⭐⭐⭐⭐ The narrative logic is clear and the derivation from analysis to design is naturally coherent, though some descriptions are slightly verbose.
-- Value: ⭐⭐⭐⭐ Fills a critical gap in the graph coloring paradigm for practical use (handling non-bipartite graphs) with direct applicability to dense pathology segmentation.
-- **vs. HoVer-Net**: A classic cell segmentation method; DISCO demonstrates clear advantages in dense scenarios.
-
-## Rating
-- Novelty: ⭐⭐⭐⭐ Graph coloring theory-driven divide-and-conquer strategy is novel.
-- Experimental Thoroughness: ⭐⭐⭐⭐ 3 datasets + detailed ablation.
-- Writing Quality: ⭐⭐⭐⭐ Topological analysis is clear.
-- Value: ⭐⭐⭐⭐ Practically meaningful for dense cell segmentation.
+- Novelty: ⭐⭐⭐⭐ Combines graph coloring theory with deep learning via divide-and-conquer; solid analysis-led design.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 4 heterogeneous datasets, 8 baselines, framework/loss ablations, and visualizations.
+- Writing Quality: ⭐⭐⭐⭐ Clear logic; natural derivation from analysis to design, though some descriptions are verbose.
+- Value: ⭐⭐⭐⭐ Practicalizes the graph coloring paradigm (handling non-bipartite graphs) with direct value for dense pathology segmentation.
 
 <!-- RELATED:START -->
 
@@ -167,11 +164,11 @@ Loss component ablation (GBC-FS 2025):
 
 ## Related Papers
 
+- [\[ICML 2025\] The Four Color Theorem for Cell Instance Segmentation](../../ICML2025/medical_imaging/the_four_color_theorem_for_cell_instance_segmentation.md)
+- [\[ICLR 2026\] ASMIL: Attention-Stabilized Multiple Instance Learning for Whole-Slide Imaging](asmil_attention-stabilized_multiple_instance_learning_for_whole-slide_imaging.md)
+- [\[ICLR 2026\] Mixture of Mini Experts: Overcoming the Linear Layer Bottleneck in Multiple Instance Learning](mixture_of_mini_experts_overcoming_the_linear_layer_bottleneck_in_multiple_insta.md)
 - [\[ICCV 2025\] COIN: Confidence Score-Guided Distillation for Annotation-Free Cell Segmentation](../../ICCV2025/medical_imaging/coin_confidence_score-guided_distillation_for_annotation-free_cell_segmentation.md)
-- [\[AAAI 2026\] Ambiguity-aware Truncated Flow Matching for Ambiguous Medical Image Segmentation](../../AAAI2026/medical_imaging/ambiguity-aware_truncated_flow_matching_for_ambiguous_medica.md)
-- [\[AAAI 2026\] Graph-Theoretic Consistency for Robust and Topology-Aware Semi-Supervised Histopathology Segmentation](../../AAAI2026/medical_imaging/graph-theoretic_consistency_for_robust_and_topology-aware_semi-supervised_histop.md)
-- [\[CVPR 2026\] Better than Average: Spatially-Aware Aggregation of Segmentation Uncertainty Improves Downstream Performance](../../CVPR2026/medical_imaging/better_than_average_spatially-aware_aggregation_of_segmentation_uncertainty_impr.md)
-- [\[CVPR 2026\] Every Error has Its Magnitude: Asymmetric Mistake Severity Training for Multiclass Multiple Instance Learning](../../CVPR2026/medical_imaging/every_error_has_its_magnitude_asymmetric_mistake_severity_training_for_multiclas.md)
+- [\[ICLR 2026\] Prior-aware and Context-guided Group Sampling for Active Probabilistic Subsampling](prior-aware_and_context-guided_group_sampling_for_active_probabilistic_subsampli.md)
 
 </div>
 

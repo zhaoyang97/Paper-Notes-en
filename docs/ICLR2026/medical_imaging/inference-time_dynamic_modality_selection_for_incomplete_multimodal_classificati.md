@@ -2,88 +2,98 @@
 title: >-
   [Paper Note] Inference-Time Dynamic Modality Selection for Incomplete Multimodal Classification
 description: >-
-  [ICLR 2026][Medical Imaging][incomplete multimodal] This paper proposes DyMo, an inference-time dynamic modality selection framework that derives a theoretically grounded MTIR reward function (based on a classification-l…
+  [ICLR 2026][Medical Imaging][incomplete multimodal] Ours proposes DyMo—an inference-time dynamic modality selection framework. By theoretically deriving a reward function MTIR (Multimodal Task-Relevant Information Reward) based on a classification loss reduction proxy, class prototype distance, and intra-class similarity calibration, the framework iteratively selects an
 tags:
-  - "ICLR 2026"
-  - "Medical Imaging"
-  - "incomplete multimodal"
-  - "dynamic modality selection"
-  - "inference-time"
-  - "information gain"
-  - "discarding-imputation dilemma"
+  - ICLR 2026
+  - Medical Imaging
+  - incomplete multimodal
+  - dynamic modality selection
+  - inference-time
+  - information gain
+  - discarding-imputation dilemma
 date: 2026-05-08
-content_hash: ae904df1969e7702
+content_hash: 802b5df4448ca9ee
 ---
-
 # Inference-Time Dynamic Modality Selection for Incomplete Multimodal Classification
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2601.22853](https://arxiv.org/abs/2601.22853)  
 **Code**: [GitHub](https://github.com/siyi-wind/DyMo)  
-**Area**: Multimodal Learning / Medical Imaging
+**Area**: Multimodal Learning / Medical Imaging  
 **Keywords**: incomplete multimodal, dynamic modality selection, inference-time, information gain, discarding-imputation dilemma
 
 ## TL;DR
 
-This paper proposes DyMo, an inference-time dynamic modality selection framework that derives a theoretically grounded MTIR reward function (based on a classification-loss-reduction proxy + class prototype distance + intra-class similarity calibration) to iteratively and selectively fuse reliable recovered modalities at inference time, offering the first systematic resolution of the discarding-imputation dilemma: discarding missing modalities loses task-relevant information, while imputation may introduce noise.
+Ours proposes DyMo—an inference-time dynamic modality selection framework. By theoretically deriving a reward function MTIR (Multimodal Task-Relevant Information Reward) based on a classification loss reduction proxy, class prototype distance, and intra-class similarity calibration, the framework iteratively selects and fuses reliable recovered modalities during inference. It systematically addresses the "discarding-imputation dilemma" (loss of information vs. introduction of noise).
 
 ## Background & Motivation
 
-**Background**: Multimodal deep learning has achieved significant progress in healthcare, marketing, and embodied intelligence, yet deployed systems frequently encounter samples with one or more missing modalities due to sensor failures, heterogeneous acquisition protocols, or transmission errors.
+**Background**: Multimodal deep learning has made significant progress in fields such as healthcare, marketing, and embodied AI. However, in practical deployment, samples often lack one or more modalities due to sensor failure, differing acquisition protocols, or transmission errors.
 
 **Limitations of Prior Work**:
 
-1. **Imputation-based methods** (e.g., MoPoE, M3Care) reconstruct missing modalities via VAEs, but reconstruction quality is inconsistent—generated outputs may be low-fidelity (blurry/distorted) or semantically misaligned (reconstructed content belongs to a different class than the input).
+1. **Imputation methods** (e.g., MoPoE, M3Care) reconstruct missing modalities via VAEs or other generative models. However, the quality of reconstruction varies—often resulting in low-fidelity (blurred/distorted) or semantically misaligned (label-mismatched) recoveries.
 
-2. **Discarding-based methods** (e.g., ModDrop, MUSE) simply ignore missing modalities, but when highly task-relevant modalities are absent, the discriminability of the remaining features degrades substantially.
+2. **Discarding methods** (e.g., ModDrop, MUSE) simply ignore missing modalities. However, when modalities with high task relevance are missing, the discriminative power based only on remaining modalities drops significantly.
 
-3. **Existing dynamic fusion methods** (QMF, DynMM, PDF) primarily address intra-modal noise (low fidelity) and cannot detect inter-modal semantic misalignment.
+3. **Existing dynamic fusion methods** (QMF, DynMM, PDF) primarily focus on intra-modal noise (low fidelity) and cannot detect inter-modal semantic misalignment.
 
-**Key Challenge** (discarding-imputation dilemma): Discarding missing modalities sacrifices task-relevant information → performance drops; imputing missing modalities may introduce task-irrelevant noise or semantic errors → performance also drops. Both strategies have inherent shortcomings, and no mechanism exists to dynamically trade off between them.
+**Key Challenge** (Discarding-Imputation Dilemma): Discarding missing modalities loses task-relevant information → performance degradation; imputing missing modalities may introduce task-irrelevant noise or semantic errors → performance degradation. Both approaches have drawbacks, and a dynamic trade-off mechanism is missing.
 
-**Key Insight**: Rather than choosing one strategy, DyMo dynamically evaluates whether each recovered modality is "worth fusing"—accepting it if recovery increases task-relevant information (positive reward) and rejecting it if recovery introduces noise or misalignment (negative reward).
+**Key Insight**: Rather than a binary choice, Ours dynamically evaluates whether each recovered modality is "worth fusing"—accepting it if the recovery increases task-relevant information (positive reward) and rejecting it if it introduces noise or misalignment (negative reward).
 
 ## Method
 
 ### Overall Architecture
 
-Input: incomplete multimodal sample $\mathbb{X} = \{x^{(m)}\}_{m \in \mathcal{I}}$ → recovery method $\Upsilon$ (e.g., VAE/TIP) reconstructs missing modalities → DyMo dynamic selection algorithm iteratively evaluates the MTIR reward for each recovered modality → only modalities with positive reward are fused → multimodal Transformer network $f$ produces predictions.
+DyMo decomposes the decision of "whether to impute and whether to use" into two steps: first, it uses an existing recovery method $\Upsilon$ (such as VAE or TIP) to reconstruct all missing modalities of an incomplete sample $\mathbb{X} = \{x^{(m)}\}_{m \in \mathcal{I}}$, yielding a set of candidate recovered modalities. Then, at inference time, it greedily and iteratively evaluates the MTIR reward (including intra-class similarity calibration) for each candidate. In each round, only the candidate with the highest reward is accepted, and all candidates with non-positive rewards are discarded. This continues until the candidate set is empty. Finally, the selected modalities are fed into a multimodal Transformer $f$ for prediction. $f$ consists of modality-specific encoders $h^{(m)}$, a multimodal Transformer $\psi$ with [CLS] tokens and attention masking, and a linear softmax classifier $\zeta$. The masking mechanism naturally supports arbitrary modality combinations, enabling the dynamic addition/subtraction of modalities within a single network. This process involves no extra training and occurs only as an inference-time decision.
 
-The network $f$ consists of modality-specific encoders $h^{(m)}$, a multimodal Transformer $\psi$ (with a [CLS] token and attention masking for missing modalities), and a linear softmax classifier $\zeta$.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    A["Incomplete sample<br/>Observed modalities"] --> B["Recovery method Υ (VAE/TIP)<br/>Reconstruct missing → Candidate set"]
+    B --> C
+    subgraph SEL["3. Greedy Iterative Selection (Inference-time)"]
+        direction TB
+        C["1. Information Reward MTIR<br/>Update: distance change to class prototypes"]
+        C --> D["2. Intra-class Similarity Calibration ICS<br/>Asymmetric α≤1 penalizes misalignment"]
+        D --> E{"Any positive reward?"}
+        E -->|"Yes: Merge highest reward<br/>Discard non-positive candidates"| C
+    end
+    E -->|"No: Empty candidate set"| F["Multimodal Transformer f<br/>Fuse selected modalities"]
+    F --> G["Prediction ŷ"]
+```
 
 ### Key Designs
 
-1. **Multimodal Task-relevant Information Reward (MTIR)**
+**1. MTIR Reward: Quantifying the Value of Recovery**
 
-    - Theoretical basis: a lower-bound relationship between mutual information $I(Y;\mathbf{Z})$ and empirical cross-entropy loss $\hat{\mathcal{L}}_{ce}$ is established—$I(Y;\mathbf{Z}) \geq H(Y) - \hat{\mathcal{L}}_{ce} - G\sqrt{\frac{\ln(1/\delta)}{2|\mathcal{D}|}}$—such that reducing the loss tightens the information lower bound.
-    - Classification is modeled as mixture density estimation in feature space: $p(y=k|\mathbf{z}) = \frac{\exp(-d_\phi(\mathbf{z}, \mathbf{c}_k))}{\sum_{k'}\exp(-d_\phi(\mathbf{z}, \mathbf{c}_{k'}))}$, where $\mathbf{c}_k$ denotes the class prototype computed from the training set.
-    - MTIR is defined as the change in classification loss before and after adding a recovered modality: a positive value indicates that the recovered modality provides useful information, while a negative value indicates that it introduces harmful information.
-    - **Intra-Class Similarity (ICS) Calibration**: An asymmetric calibration term $\alpha$ is introduced to down-weight the reward when the recovered representation is less representative within its predicted class cluster than the pre-recovery representation ($\alpha < 1$), enhancing the reward function's sensitivity to semantic misalignment.
+The root of the dilemma is the inability to determine beforehand whether a recovery provides information or noise. Starting from information theory, it is proven that task-relevant information $I(Y;\mathbf{Z})$ and empirical cross-entropy have a lower bound:
 
-2. **Iterative Selection Algorithm + Flexible Multimodal Architecture**
+$$I(Y;\mathbf{Z}) \geq H(Y) - \hat{\mathcal{L}}_{ce} - G\sqrt{\frac{\ln(1/\delta)}{2|\mathcal{D}|}}$$
 
-    - Greedy iterative selection: at each step, the recovered modality with the highest MTIR is added to the observed set; all modalities with non-positive reward are removed; the process repeats until the candidate set is empty.
-    - The multimodal Transformer supports arbitrary modality combinations: missing modality positions use dummy tokens with attention masking.
-    - During training, random subsets simulate missing modalities ($A$ random subsets per sample), paired with a missingness-agnostic contrastive loss $\mathcal{L}_{aux}$ to encourage intra-class clustering.
+Thus, "reducing classification loss" is equivalent to "raising the lower bound of task-relevant information." Losses can be estimated at inference time by using predicted labels $\hat{y}$ as proxies for ground truth. To ensure robustness to training distributions, classification is viewed as mixed density estimation in the feature space relative to class prototypes: $p(y=k|\mathbf{z}) = \frac{\exp(-d_\phi(\mathbf{z}, \mathbf{c}_k))}{\sum_{k'}\exp(-d_\phi(\mathbf{z}, \mathbf{c}_{k'}))}$, where $\mathbf{c}_k$ are pre-stored prototypes and $d_\phi$ is the Bregman divergence. MTIR then simplifies to the change in the sample representation's distance to the class prototype before and after adding a recovered modality. A reduced distance (positive reward) indicates useful information, while an increased distance (negative reward) indicates harmful information pushing the sample toward the wrong cluster.
+
+**2. Intra-class Similarity Calibration (ICS): Addressing Alignment Blind Spots**
+
+MTIR only considers the distance change to the predicted class prototype, which might miss cases where the predicted class changes ($\hat{y} \neq \hat{y}^u$) but the distances to the respective prototypes remain similar. To counter this "semantic misalignment," a calibration term $\alpha$ is introduced based on the "intra-class similarity (ICS)" within the predicted cluster (approximated by a truncated normal distribution). Crucially, $\alpha$ is **asymmetric**—it only weights down the reward ($ \alpha < 1$) when the representation becomes less typical after recovery. Since observed modalities are reliable while synthesized ones are suspect, this "penalty-only" conservative stance makes the reward more sensitive to semantic shifts.
+
+**3. Greedy Iterative Selection: Absorbing the Most Valuable Recoveries**
+
+Instead of fusing all positive-reward modalities at once, DyMo uses greedy iteration (Algorithm 1). In each step, rewards are calculated for the current candidate set; the candidate with the highest reward is moved to the observed set, while all non-positive reward candidates are discarded. Rest-candidates' rewards are recalculated based on the updated observed set. This iterative approach accounts for how selected modalities change the fused feature distribution and prevents noise accumulation.
 
 ### Loss & Training
 
-- Classification loss: $\mathcal{L}_{class} = -\frac{1}{A}\frac{1}{B}\sum_{\mathcal{S} \sim \mathcal{U}_A}\sum_{i=1}^{B}\log p_f(y_i|\{x^{(m)}\}_{m \in \mathcal{S}})$
-
-- Auxiliary contrastive loss: $\mathcal{L}_{aux} = -\frac{1}{A}\frac{1}{B}\sum\sum\log\frac{\exp(-d_\phi(\mathbf{z}_i, \mathbf{c}_{y_i})/t)}{\sum_{k'}\exp(-d_\phi(\mathbf{z}_i, \mathbf{c}_{k'})/t)}$
-
-- Total loss: $\mathcal{L} = \mathcal{L}_{class} + \mathcal{L}_{aux}$
-
-- Training is performed on complete data, with random subset sampling simulating all $2^M-1$ missing modality patterns.
+Training is conducted only on a complete dataset. To make the network robust to any combination of modalities, $A$ random modality subsets $\mathcal{S} \sim \mathcal{U}_A$ are sampled for each sample to simulate $2^M-1$ missing patterns. The classification loss is the average cross-entropy $\mathcal{L}_{class}$ across subsets. An auxiliary contrastive loss $\mathcal{L}_{aux}$ is added to ensure reliable class prototype distances by encouraging same-class clustering. The total loss is $\mathcal{L} = \mathcal{L}_{class} + \mathcal{L}_{aux}$, requiring no extra networks or multi-stage training.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Comparison with state-of-the-art methods on 5 datasets (PolyMNIST / MST / CelebA / DVM / UKBB-CAD / UKBB-Infarction):
+Comparison with SOTA across 5 datasets (PolyMNIST/MST/CelebA/DVM/UKBB-CAD/UKBB-Infarction):
 
-| Method | PolyMNIST (η=0.8) | MST (miss{M,T}) | CelebA (miss{T}) | DVM (γ=1) | CAD (γ=1) |
-|--------|-------------------|-----------------|------------------|-----------|-----------|
+| Method | PolyMNIST(η=0.8) | MST(miss{M,T}) | CelebA(miss{T}) | DVM(γ=1) | CAD(γ=1) |
+|------|------------------|----------------|-----------------|----------|----------|
 | ModDrop | 88.44 | 82.47 | 87.32 | 87.97 | 69.18 |
 | MTL | 91.14 | 84.37 | 89.38 | 92.32 | 70.23 |
 | OnlineMAE | 90.09 | 86.67 | 86.67 | - | - |
@@ -91,51 +101,51 @@ Comparison with state-of-the-art methods on 5 datasets (PolyMNIST / MST / CelebA
 | **DyMo_c** | **96.61** | **85.31** | **95.20** | **93.14** | **71.02** |
 | **DyMo_e** | **96.81** | **86.84** | 93.67 | **93.36** | **72.17** |
 
-PolyMNIST at 80% missing: DyMo surpasses OnlineMAE by +5.67%; DVM with full tabular missing: surpasses ModDrop by +4.11%.
+On PolyMNIST with 80% missingness, DyMo outperforms OnlineMAE by +5.67%. On DVM with full tabular missingness, it exceeds ModDrop by +4.11%.
 
 ### Ablation Study
 
-| Setting | PolyMNIST (η=0.8) | MST (miss{M,T}) |
-|---------|-------------------|-----------------|
-| Baseline (fuse all without selection) | 84.21 | 80.73 |
-| S (simultaneous fusion of all positive-reward modalities) | 94.33 | 82.08 |
-| I (iterative selection of highest-reward modality) | 94.50 | 82.12 |
-| I+C (iterative + calibration, full DyMo) | **96.61** | **85.31** |
+| Setup | PolyMNIST(η=0.8) | MST(miss{M,T}) |
+|------|------------------|----------------|
+| Baseline (Full fusion, no selection) | 84.21 | 80.73 |
+| S (Simultaneous fusion of positive rewards) | 94.33 | 82.08 |
+| I (Iterative selection of highest reward) | 94.50 | 82.12 |
+| I+C (Iterative + Calibration, Full DyMo) | **96.61** | **85.31** |
 
 ### Key Findings
 
-- Fusing all recovered modalities without dynamic selection (Baseline) yields substantially lower performance than DyMo, validating the assumption that recovery quality is unreliable.
-- Iterative selection (I) marginally outperforms simultaneous selection (S); ICS calibration (C) provides an additional 1–3% gain on most datasets.
-- DyMo is insensitive to the choice of distance function (cosine vs. Euclidean), with both yielding comparable results.
-- Existing dynamic fusion methods (QMF/DynMM/PDF) offer limited benefit under VAE-based recovery, as they cannot detect semantic misalignment.
+- Fusing all recovered modalities directly (Baseline) performs significantly worse than DyMo, confirming that recovery quality is unreliable.
+- Iterative selection (I) slightly outperforms simultaneous selection (S), and ICS calibration (C) provides an additional 1-3% gain on most datasets.
+- DyMo is robust to the choice of distance function (Cosine vs. Euclidean).
+- Existing dynamic fusion methods (QMF/DynMM/PDF) show limited efficacy with VAE recoveries because they cannot detect semantic misalignment.
 
 ## Highlights & Insights
 
-- The formulation of the discarding-imputation dilemma is precise and well-motivated; this work is the first to systematically address it with a theoretical framework.
-- The theoretical derivation chain from mutual information to classification loss to class prototype distance is complete: $I(Y;\mathbf{Z})$ → loss lower bound → Bregman divergence → computable MTIR.
-- The asymmetric design of ICS calibration ($\alpha \leq 1$ when post-recovery representativeness is lower than pre-recovery) reflects a principled "conservatism" toward recovered modalities—a well-motivated engineering choice.
-- The training strategy is concise and effective: random subset simulation combined with contrastive loss, requiring no additional networks or multi-stage training.
+- The "Discarding-Imputation Dilemma" is clearly defined and systematically addressed with a theoretical framework.
+- The theoretical chain from mutual information to classification loss and then to prototype distance is rigorous: $I(Y;\mathbf{Z})$ → Loss bound → Bregman divergence → Computable MTIR.
+- The asymmetric design of ICS calibration ($\alpha \leq 1$) reflects a "conservative" engineering intuition regarding synthetic modalities.
+- The training strategy is elegant: random subset simulation + contrastive loss, avoiding auxiliary networks.
 
 ## Limitations & Future Work
 
-- The ICS calibration term degrades performance on the CAD/Infarction datasets, necessitating dataset-specific hyperparameter tuning.
-- Each recovered modality requires a separate forward pass to compute MTIR—inference overhead increases with the number of missing modalities $M - |\mathcal{I}|$.
-- The choice of recovery method substantially affects DyMo's performance (e.g., TIP has limited capacity for full tabular recovery); DyMo's performance ceiling is bounded by the recovery method.
-- Validation is limited to classification tasks; extension to dense prediction tasks such as segmentation and detection remains unexplored.
+- The ICS calibration term slightly decreased performance on CAD/Infarction datasets, suggesting a need for dataset-specific hyperparameter tuning.
+- Calculation of MTIR for each candidate requires a forward pass—inference overhead increases with the number of missing modalities.
+- DyMo's performance upper bound is constrained by the underlying recovery method (e.g., TIP's limited capacity for full tabular recovery).
+- Evaluation is limited to classification; it has not yet been extended to dense prediction tasks like segmentation or detection.
 
 ## Related Work & Insights
 
-- **vs. ModDrop/MUSE**: Discarding-based methods suffer severe performance degradation when high-information modalities are missing (MUSE drops by 61% on MST); DyMo avoids this by combining recovery with selective fusion.
-- **vs. MoPoE/M3Care**: Imputation-based methods generate unreliable reconstructions under severe missingness; DyMo filters unreliable recoveries via MTIR.
-- **vs. QMF/DynMM/PDF**: Existing dynamic fusion methods focus on intra-modal noise and cannot detect semantic misalignment; DyMo handles both types of unreliability through class prototype distance.
-- **Methodological insight**: Using task loss reduction as a proxy for information gain is a broadly applicable principle for any scenario requiring dynamic decision-making.
+- **vs. ModDrop/MUSE**: Discarding methods suffer when high-information modalities are lost (MUSE drops 61% on MST); DyMo avoids this via selective recovery.
+- **vs. MoPoE/M3Care**: Imputation methods produce unreliable recoveries in severe missingness; DyMo filters these via MTIR.
+- **vs. QMF/DynMM/PDF**: Existing dynamic fusion focuses on intra-modal noise; DyMo detects both noise and semantic misalignment via class prototype distances.
+- **Methodological Insight**: The idea of using task loss reduction as a proxy for information gain is applicable to any scenario requiring dynamic decision-making.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ Novel problem formulation with complete theoretical derivation
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Five datasets, nine SOTA baselines, full ablation, and visual analysis
-- Writing Quality: ⭐⭐⭐⭐ Tight integration of theory and experiments; clear mathematical derivations
-- Value: ⭐⭐⭐⭐ A general framework for incomplete multimodal learning, directly applicable to medical imaging scenarios
+- Novelty: ⭐⭐⭐⭐ (Innovative problem definition, sound theory)
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ (5 datasets + 9 SOTA comparisons + comprehensive ablation)
+- Writing Quality: ⭐⭐⭐⭐ (Tight link between theory and experiments, clear derivations)
+- Value: ⭐⭐⭐⭐ (Generic framework for incomplete multimodal learning, directly applicable to medical imaging)
 
 <!-- RELATED:START -->
 
@@ -143,11 +153,11 @@ PolyMNIST at 80% missing: DyMo surpasses OnlineMAE by +5.67%; DVM with full tabu
 
 ## Related Papers
 
+- [\[ICLR 2026\] ODEBRAIN: Continuous-Time EEG Graph for Modeling Dynamic Brain Networks](odebrain_continuous-time_eeg_graph_for_modeling_dynamic_brain_networks.md)
+- [\[ECCV 2024\] TIP: Tabular-Image Pre-training for Multimodal Classification with Incomplete Data](../../ECCV2024/medical_imaging/tip_tabular-image_pre-training_for_multimodal_classification_with_incomplete_dat.md)
 - [\[ICLR 2026\] Adaptive Domain Shift in Diffusion Models for Cross-Modality Image Translation](adaptive_domain_shift_in_diffusion_models_for_cross-modality_image_translation.md)
-- [\[AAAI 2026\] Neural Bandit Based Optimal LLM Selection for a Pipeline of Tasks](../../AAAI2026/medical_imaging/neural_bandit_based_optimal_llm_selection_for_a_pipeline_of_tasks.md)
-- [\[CVPR 2026\] MUST: Modality-Specific Representation-Aware Transformer for Diffusion-Enhanced Survival Prediction with Missing Modality](../../CVPR2026/medical_imaging/must_modality-specific_representation-aware_transformer_for_diffusion-enhanced_s.md)
-- [\[AAAI 2026\] MedEyes: Learning Dynamic Visual Focus for Medical Progressive Diagnosis](../../AAAI2026/medical_imaging/medeyes_learning_dynamic_visual_focus_for_medical_progressive_diagnosis.md)
-- [\[CVPR 2026\] CHIPS: Efficient CLIP Adaptation via Curvature-aware Hybrid Influence-based Data Selection](../../CVPR2026/medical_imaging/chips_efficient_clip_adaptation_via_curvature-aware_hybrid_influence-based_data_.md)
+- [\[CVPR 2025\] Distilled Prompt Learning for Incomplete Multimodal Survival Prediction](../../CVPR2025/medical_imaging/distilled_prompt_learning_for_incomplete_multimodal_survival_prediction.md)
+- [\[ICLR 2026\] ProstaTD: Bridging Surgical Triplet from Classification to Fully Supervised Detection](prostatd_bridging_surgical_triplet_from_classification_to_fully_supervised_detec.md)
 
 </div>
 

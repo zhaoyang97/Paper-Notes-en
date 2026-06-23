@@ -2,81 +2,86 @@
 title: >-
   [Paper Note] Glance and Focus Reinforcement for Pan-cancer Screening
 description: >-
-  [ICLR 2026][Medical Imaging][Pan-cancer screening] This paper proposes GF-Screen, a two-stage framework in which a lightweight Glance model employs reinforcement learning to rapidly localize CT sub-volumes containing les…
+  [ICLR 2026][Medical Imaging][Reinforcement Learning] This paper proposes GF-Screen, a two-stage framework: a lightweight Glance model uses reinforcement learning to rapidly locate CT sub-volumes containing lesions, while the Focus model performs detailed segmentation only on the selected regions. By migrating the "intra-group relative comparison" concept of GRPO from NLP
 tags:
-  - "ICLR 2026"
-  - "Medical Imaging"
-  - "Pan-cancer screening"
-  - "reinforcement learning"
-  - "GRPO"
-  - "CT segmentation"
-  - "foreground-background imbalance"
+  - ICLR 2026
+  - Medical Imaging
+  - Reinforcement Learning
+  - GRPO
 date: 2026-05-08
-content_hash: bb3d126ff1077957
+content_hash: 96199c9fc50cc975
 ---
-
 # Glance and Focus Reinforcement for Pan-cancer Screening
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2601.19103](https://arxiv.org/abs/2601.19103)  
 **Code**: [GitHub](https://github.com/Luffy03/GF-Screen)  
-**Area**: Medical Imaging / Cancer Screening
-**Keywords**: Pan-cancer screening, reinforcement learning, GRPO, CT segmentation, foreground-background imbalance
+**Area**: Medical Imaging/Pan-cancer Screening  
+**Keywords**: Pan-cancer Screening, Reinforcement Learning, GRPO, CT Segmentation, Foreground-Background Imbalance
 
 ## TL;DR
 
-This paper proposes GF-Screen, a two-stage framework in which a lightweight Glance model employs reinforcement learning to rapidly localize CT sub-volumes containing lesions, while a Focus model performs fine-grained segmentation exclusively on the selected regions. By transferring GRPO's group-relative comparison paradigm from NLP to visual sub-volume groups, the method achieves RL optimization without a value network for the first time in a purely visual task. On the FLARE25 pan-cancer challenge, GF-Screen outperforms the champion solution by +25.6% DSC while achieving 5.7× faster inference.
+This paper proposes GF-Screen, a two-stage framework: a lightweight Glance model uses reinforcement learning to rapidly locate CT sub-volumes containing lesions, while the Focus model performs detailed segmentation only on the selected regions. By migrating the "intra-group relative comparison" concept of GRPO from NLP to visual sub-volume groups, this work achieves RL optimization without a value network for the first time in pure vision tasks. It significantly leads the champion solution in the FLARE25 pan-cancer challenge with a $+25.6\%$ DSC and is $5.7\times$ faster in inference.
 
 ## Background & Motivation
 
-**Background**: Pan-cancer screening aims to detect and segment multiple lesion types from large-scale CT scans using a single unified model. Existing methods such as nnUNet, SwinUNETR, and CancerUniT adopt sliding-window strategies to traverse the entire CT volume for block-wise segmentation, achieving competitive performance on individual lesion types.
+**Background**: Pan-cancer screening aims to detect and segment multiple types of lesions from large-scale CT scans using a universal model. Existing methods such as nnUNet, SwinUNETR, and CancerUniT adopt a sliding window approach to traverse the entire CT volume for patch-wise segmentation, achieving reasonable results on single lesion types.
 
-**Limitations of Prior Work**: Lesions occupy only approximately 0.085% of the CT volume, resulting in extreme foreground-background imbalance. Exhaustive inference introduces two critical problems: (1) substantial computational waste on healthy regions, with inference exceeding 100 seconds per scan and thus hindering large-scale deployment; and (2) redundant attention to healthy regions, which increases false positives and degrades screening precision.
+**Limitations of Prior Work**: Lesions typically occupy only about $0.085\%$ of the total CT volume area, leading to extreme foreground-background imbalance. Traversal-based inference causes two severe issues: first, it wastes computational resources on vast healthy regions, leading to low inference efficiency (over 100 seconds per scan), which hinders large-scale deployment; second, redundant attention to healthy regions increases false positives and reduces screening accuracy.
 
-**Key Challenge**: Accuracy and efficiency appear to be in conflict — higher detection sensitivity demands denser scanning, yet denser scanning generates more false positives and computational overhead. The root cause is that existing methods treat all regions uniformly and lack a selective attention mechanism.
+**Key Challenge**: Accuracy and efficiency appear to be contradictory—improving detection rates requires dense scanning, but dense scanning introduces significant false positives and computational waste. The root cause is that existing methods treat all regions equally, lacking a "selective attention" mechanism.
 
-**Goal**: (1) How can the model adopt a radiologist-like strategy of global coarse scanning followed by local fine inspection, skipping irrelevant regions? (2) How can selection behavior be trained with RL without introducing an additional value network? (3) How can the selection policy remain robust to severe foreground-background imbalance?
+**Goal**: (1) How to enable the model to perform a global coarse scan followed by local fine inspection like a radiologist, skipping irrelevant regions? (2) How to train "selective" behavior using RL without introducing an additional value network? (3) How to prevent the selection strategy from being overwhelmed by foreground-background imbalance?
 
-**Key Insight**: Radiologists reading CT scans employ a "glance-and-focus" strategy — rapidly surveying the global view to exclude normal regions and then carefully examining suspicious locations. The authors observe that a group of sub-volumes cropped from the same CT naturally constitutes the "candidate group" required by GRPO, enabling intra-group relative comparison directly without relying on an LLM to generate candidate answers.
+**Key Insight**: Radiologists adopt a "glance-and-focus" strategy when reading CTs—quickly scanning the whole volume to exclude normal areas, then carefully examining suspicious locations. The authors observed that a group of sub-volumes cropped from the same CT naturally constitutes the "candidate group" required by GRPO, allowing for direct intra-group relative comparison without requiring an LLM to generate candidate answers.
 
-**Core Idea**: A lightweight classification network performs "glancing" for selection, while a segmentation network performs "focusing" for fine inspection. Segmentation results serve as RL reward signals, and group-relative learning performs comparative optimization within sub-volume groups, simultaneously addressing efficiency and accuracy.
+**Core Idea**: A lightweight classification network is used for "Glance" selection, and a segmentation network for "Focus" inspection. Segmentation results serve as RL reward signals to optimize the sub-volume selection through group relative learning, simultaneously addressing both efficiency and accuracy.
 
 ## Method
 
 ### Overall Architecture
 
-GF-Screen consists of two collaborating models: a Glance model (lightweight 3D ResNet-18, ~32M parameters) that classifies cropped CT sub-volumes as "lesion-present" or "lesion-absent," and a Focus model (SwinUNETR) that performs pixel-level segmentation on selected sub-volumes. During training, $N=16$ randomly cropped sub-volumes are fed simultaneously into both models — the Focus model is trained with supervised segmentation using Dice-CE loss, and its segmentation output serves as a reward signal back-propagated to the Glance model via RL. During inference, the CT volume is first divided into sub-volumes via sliding window; the Glance model rapidly filters out approximately 83.3% of healthy sub-volumes, retaining only the 16.7% containing lesions for the Focus model to segment.
+GF-Screen consists of two collaborative models: the Glance model (lightweight 3D ResNet-18, ~32M parameters), responsible for classifying sub-volumes cropped from the CT as "lesion-present" or "lesion-absent"; and the Focus model (SwinUNETR), which performs pixel-level segmentation on selected sub-volumes. During training, $N=16$ randomly cropped sub-volumes are simultaneously fed into both models—the Focus model is trained using Dice-CE loss for supervised segmentation, and its segmentation performance serves as a reward signal backpropagated to the Glance model via RL. During inference, the CT volume is cropped into sub-volume groups via a sliding window; the Glance model quickly filters out approximately $83.3\%$ of healthy regions, retaining only the $16.7\%$ of lesion-containing sub-volumes for the Focus model to segment.
+
+The key to the entire pipeline is: the selection action is non-differentiable, so the two stages are linked through an "segmentation result $\rightarrow$ reward" RL chain. Three core designs (binary detection reward, group relative learning, and collaborative training) are implemented to enable this link.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["CT Volume"] --> B["Sliding Window Cropping<br/>N=16 Sub-volume Group"]
+    B --> G["Glance Model<br/>Select Lesion Sub-volumes"]
+    G -->|Selected| F["Focus Model<br/>SwinUNETR Fine Segmentation"]
+    F --> R["Binary Detection Reward<br/>1 if Overlap, else 0"]
+    R --> L["Group Relative Learning (GRL)<br/>Intra-group Norm for Relative Advantage"]
+    L --> C["Glance-Focus Collaborative Training<br/>Segmentation Results as Reward"]
+    C -.Policy Gradient Update.-> G
+    G -.Inference.-> O["Filter ~83% Healthy Regions<br/>Retain Only Lesion Sub-volumes"]
+```
 
 ### Key Designs
 
-1. **Binary Detection Reward Function**:
+**1. Binary Detection Reward: Asking "whether a lesion is detected" rather than "how well it is segmented"**
 
-    - Function: Provides an RL reward signal for each sub-volume selection decision.
-    - Mechanism: $r_i = \mathbb{1}(s_i \cap m_i \neq \emptyset)$, i.e., a reward of 1 is assigned if the Focus model's segmentation prediction $s_i$ has any overlap with the annotation $m_i$, and 0 otherwise. Segmentation DSC is deliberately not used as the reward.
-    - Design Motivation: A DSC reward biases the model toward "easily segmented" views (well-defined boundaries, standard orientations), which are not necessarily the most clinically important. Partially lesion-containing sub-volumes with challenging angles may yield low DSC yet remain diagnostically critical. The binary reward focuses on "whether a lesion is detected," avoiding the omission of difficult but important cases.
+Each selection action by the Glance model requires an RL reward for evaluation. The most direct idea would be to use the Focus model's segmentation DSC as the reward, but the authors deliberately avoided this. The reward is defined as $r_i = \mathbb{1}(s_i \cap m_i \neq \emptyset)$—as long as the Focus model's segmentation prediction $s_i$ on sub-volume $i$ has any overlap with the ground truth $m_i$, a reward of $1$ is given; otherwise $0$. This binary reward is used because DSC would push the model toward "easy-to-segment" views (clear boundaries, standard angles), while sub-volumes that partially contain lesions or have difficult angles, though yielding low DSC, are often the most clinically critical regions. Binary rewards narrow the Glance model's responsibility to pure detection judgment, preventing it from skipping difficult but important cases to achieve a higher score.
 
-2. **Group Relative Learning (GRL)**:
+**2. Group Relative Learning (GRL): Comparing sub-volumes from the same CT to eliminate the value network**
 
-    - Function: Estimates the advantage value for each sub-volume selection action without a value network, replacing the critic network in conventional PPO.
-    - Mechanism: $N$ sub-volumes cropped from the same CT form a comparison group, and relative advantages are computed via intra-group normalization: $A_i = (r_i - \text{mean}(r_{1..N})) / \text{std}(r_{1..N})$. Sub-volumes with positive advantage are encouraged to be selected, while those with negative advantage are encouraged to be discarded. The final objective $\mathcal{J}_{GRL}$ adopts a PPO-style clipped ratio multiplied by the advantage, with KL regularization ($\beta=0.01$) to constrain policy drift and a small-weight classification cross-entropy loss ($\alpha=0.1$) for basic supervision.
-    - Design Motivation: GRPO in NLP requires an LLM to generate multiple candidate responses to form comparison groups, a mechanism absent in visual tasks. GF-Screen cleverly exploits the multi-candidate structure naturally arising from CT sub-volume cropping, representing the first successful application of GRPO to a purely visual perception task. Compared with PPO, this eliminates value network training overhead and yields more stable convergence.
+Traditional PPO requires an additional critic network to estimate the advantage value of each action, which is unstable and expensive in visual sub-volume selection scenarios. GRL adopts the logic of GRPO: $N$ sub-volumes cropped from the same CT naturally form a comparison group. Intra-group normalization yields the relative advantage $A_i = (r_i - \text{mean}(r_{1..N})) / \text{std}(r_{1..N})$. Sub-volumes with positive advantage are encouraged for selection, while those with negative advantage are discouraged. The optimization objective $\mathcal{J}_{GRL}$ utilizes a PPO-style clipped ratio multiplied by the advantage value, plus a KL regularization term ($\beta=0.01$) to constrain policy shift, and a small-weight cross-entropy loss ($\alpha=0.1$) for basic supervision. The key insight is: while GRPO in NLP requires an LLM to generate multiple candidate responses to form a group, the "ordinary" data augmentation of CT sub-volume cropping inherently provides this structure—allowing pure visual perception tasks to apply GRPO directly, saving the value network and stabilizing convergence.
 
-3. **Glance-Focus Joint Training Strategy**:
+**3. Glance-Focus Collaborative Training: Using segmentation results as rewards to bridge non-differentiable stages**
 
-    - Function: End-to-end joint training of both models.
-    - Mechanism: The total loss is $L = L_{GRL} + L_{seg}$, where $L_{seg}$ is the standard Dice-CE segmentation loss. To maintain training stability, the Glance model maintains a frozen reference model $G_{ref}$ updated once per epoch. Training is conducted on a single A800 80G GPU with batch size 4, cropping 4 sub-volumes per volume (16 per group in total).
-    - Design Motivation: The selection operation is non-differentiable, and segmentation gradients cannot be directly back-propagated to the Glance model, necessitating RL. Converting segmentation outputs into reward signals is the key to bridging the two models.
+The decision of "which sub-volumes to select" is discrete, meaning gradients from the segmentation loss cannot be directly backpropagated to the Glance model; this necessitates the introduction of RL. The two models are trained end-to-end with a total loss $L = L_{GRL} + L_{seg}$, where $L_{seg}$ is the standard Dice-CE segmentation loss. Transforming the Focus model's segmentation results into reward signals is the link between the two. To stabilize training, the Glance model maintains a frozen reference model $G_{ref}$, updated once per epoch. The entire process uses a single A800 80G GPU, batch size of 4, with 4 volumes per batch and 16 sub-volumes per group.
 
 ### Loss & Training
 
-The Focus model is trained with the standard Dice-CE segmentation loss. The GRL loss for the Glance model comprises three terms: (1) a clipped policy gradient term — the primary optimization signal; (2) a KL divergence regularization term ($\beta=0.01$) — preventing excessive policy deviation; and (3) a cross-entropy classification term ($\alpha=0.1$) — providing weak supervision, with $\alpha$ set small to avoid model collapse to predicting all negatives due to foreground-background imbalance. The optimizer is AdamW with a learning rate of 3e-4 and cosine decay scheduling; sub-volume size is $96 \times 96 \times 64$.
+The Focus model is trained using standard Dice-CE segmentation loss. The GRL loss for the Glance model consists of three terms: (1) a clipped policy gradient term—the core optimization signal; (2) a KL divergence regularization term ($\beta=0.01$)—preventing the policy from deviating too far; and (3) a cross-entropy classification term ($\alpha=0.1$)—providing weak supervision, where a small $\alpha$ avoids model collapse into predicting all negative classes due to foreground-background imbalance. The optimizer is AdamW with a learning rate of 3e-4 and cosine decay scheduling. Sub-volume size is $96 \times 96 \times 64$.
 
 ## Key Experimental Results
 
 ### Main Results: Pan-cancer Segmentation and Detection (9 lesion types, 16 internal + 7 external datasets)
 
-| Method | Seg. DSC (%) | Det. F1 (%) | FPR (%) | Inference Time (s/scan) |
-|--------|-------------|------------|---------|------------------------|
+| Method | Segmentation DSC (%) | Detection F1 (%) | False Positive Rate (%) | Inference Time (s/scan) |
+|--------|----------------------|------------------|-------------------------|-------------------------|
 | nnUNet | 53.3 | 90.2 | 30.4 | 136 |
 | SwinUNETR | 48.6 | 92.5 | 47.5 | 114 |
 | VoCo | 56.1 | 92.2 | 41.8 | 114 |
@@ -84,79 +89,71 @@ The Focus model is trained with the standard Dice-CE segmentation loss. The GRL 
 | PASTA | 52.8 | 88.6 | 42.6 | 197 |
 | **GF-Screen** | **60.8** | **95.9** | **15.6** | **28** |
 
-GF-Screen surpasses the second-best method VoCo by 4.7% in segmentation DSC, achieves a detection F1 of 95.9% (+3.4%), reduces the false positive rate from 30.4% (second-best) to 15.6% (−14.8%), and is 4–7× faster in inference. It also leads on external datasets (average DSC 54.1% vs. 49.0% for the runner-up). On the FLARE25 public validation leaderboard, GF-Screen achieves 58.6% DSC / 52.2% NSD, substantially outperforming the FLARE24 champion (33.0% / 24.0%) by +25.6% and +28.2%, respectively.
+GF-Screen outperforms the second-best method, VoCo, by 4.7 points in segmentation DSC, achieves 95.9% detection F1 (+3.4%), and reduces the false positive rate from 30.4% to 15.6% (-14.8%) while being 4-7 times faster in inference. It also leads on external datasets (average DSC 54.1% vs. the second-best 49.0%). On the FLARE25 public validation leaderboard, GF-Screen significantly outperformed the FLARE24 champion with 58.6% DSC / 52.2% NSD (gains of $+25.6\%$ and $+28.2\%$ respectively).
 
-### Ablation Study: RL Training Strategy Comparison (FLARE23 dataset)
+### Ablation Study: RL Training Strategy Comparison (FLARE23 Dataset)
 
-| Training Strategy | DSC (%) | Selection Rate (%) | Notes |
-|-------------------|---------|--------------------|-------|
-| SwinUNETR Baseline | 41.5 | 100 | No Glance; full-volume segmentation |
-| Cross-Entropy (CE) | 37.6 | 3.1 | Collapse to negative class; too few selected |
+| Training Strategy | DSC (%) | Selection Ratio (%) | Description |
+|-------------------|---------|---------------------|-------------|
+| SwinUNETR Baseline| 41.5 | 100 | No Glance, full segmentation |
+| Cross-Entropy (CE)| 37.6 | 3.1 | Collapses to negative class |
 | Balanced CE | 37.8 | 5.3 | Slightly better but still collapses |
-| Focal Loss | 36.5 | 4.0 | Imbalance problem unresolved |
-| OHEM | 39.5 | 7.2 | Hard example mining yields limited gains |
-| PPO + Value Network | 24.5 | 51.6 | Unstable training; severe collapse |
+| Focal Loss | 36.5 | 4.0 | Imbalance remains unsolved |
+| OHEM | 39.5 | 7.2 | Limited help from hard mining |
+| PPO + Value Net | 24.5 | 51.6 | Unstable training, severe crash |
 | GRL + DSC Reward | 43.2 | 21.3 | Biased toward "easy" views |
-| GRL + Binary Reward | 53.1 | 23.0 | Detection reward markedly outperforms DSC reward |
-| **GRL + Binary Reward + αCE** | **56.7** | **16.7** | **Full method; best overall** |
+| GRL + Binary Reward| 53.1 | 23.0 | Detection reward significantly better |
+| **GRL + Binary + αCE** | **56.7** | **16.7** | **Full solution, optimal** |
 
 ### Key Findings
 
-- **Direct classification training inevitably fails**: Extreme foreground-background imbalance causes CE/Focal/OHEM to collapse entirely to the negative class (selection rates of 3–7%), demonstrating that a pure classification paradigm cannot address this problem.
-- **PPO is unstable**: Introducing an additional value network leads to severe training oscillation (DSC of only 24.5%), confirming the inadequacy of conventional RL methods for visual sub-volume selection.
-- **Binary reward >> DSC reward**: 53.1% vs. 43.2%, a gap of 10 percentage points, indicating that the Glance model should focus on "whether a lesion is present" rather than "how well it is segmented."
-- **Small-weight CE auxiliary term is effective**: Adding the CE term with $\alpha=0.1$ improves DSC from 53.1% to 56.7%, providing beneficial weak supervision without incurring collapse risk.
-- **Group size sensitivity**: $N=16$ is optimal (56.5% DSC); performance drops substantially at $N=4$ (45.9%), demonstrating that a sufficiently large set of intra-group comparison candidates is critical for GRL.
-- **High Glance model sensitivity**: Sensitivity of 97.7% (near-zero miss rate) and specificity of 75.9% (effective filtering of healthy regions).
+- **Direct training with classification loss inevitably fails**: Extreme foreground-background imbalance leads CE/Focal/OHEM to collapse into negative classes (selection ratios of 3-7%), indicating the pure classification paradigm cannot solve this issue.
+- **PPO is unstable**: Introducing an additional value network caused severe training oscillations (DSC only 24.5%), confirming the unsuitability of traditional RL methods for visual sub-volume selection.
+- **Binary Reward >> DSC Reward**: A 10-point gap (53.1% vs 43.2%) shows that the Glance model should focus on "presence" rather than "segmentation quality."
+- **Small-weight CE auxiliary is effective**: Adding $\alpha=0.1$ CE improved DSC from 53.1% to 56.7%, providing beneficial weak supervision without the risk of collapse.
+- **Group size sensitivity**: $N=16$ is optimal (56.5% DSC), while $N=4$ shows a significant drop (45.9%), indicating that sufficient intra-group comparison candidates are crucial for GRL.
+- **Glance model high sensitivity**: Achieves 97.7% sensitivity (minimal missed diagnoses) and 75.9% specificity (effective filtering of healthy regions).
 
 ## Highlights & Insights
 
-- **Key insight for transferring GRPO from NLP to vision**: Sub-volume cropping naturally produces candidate groups, enabling intra-group relative comparison without requiring LLM generation capabilities. This insight is particularly elegant — it reinterprets the seemingly mundane data augmentation operation of "random cropping" in medical imaging as "candidate generation" in RL, allowing visual tasks to fully leverage the advantages of GRPO.
-- **Positive coupling of efficiency and accuracy**: Conventional wisdom holds that "looking at more" yields greater accuracy, but this paper demonstrates that "selectively looking at less" is actually more accurate — discarding healthy regions not only saves computation but actively eliminates sources of false positives. This principle of "improving accuracy by subtraction" merits broader adoption in other foreground-sparse tasks.
-- **Insight behind the binary reward design**: The paper deliberately rejects the seemingly more informative DSC reward in favor of a coarse binary detection reward. The underlying rationale is that the Glance model acts as a "gatekeeper," not a "diagnostician" — it only needs to determine "whether something suspicious is present," not to evaluate segmentation quality. Clear delineation of model roles is central to the system design.
+- **Key Insight for Migrating GRPO to Vision**: Sub-volume cropping naturally creates candidate groups, enabling intra-group relative comparison without needing an LLM's generative capability. This insight is clever—reinterpreting "random cropping," a common data augmentation in medical imaging, as "candidate generation" in RL allows pure vision tasks to leverage the advantages of GRPO for the first time, saving the value network and stabilizing convergence.
+- **Positive Coupling of Efficiency and Accuracy**: Traditionally, "looking at more" implies higher accuracy. However, this paper proves that "selectively looking at less" is actually more accurate—discarding healthy regions not only saves compute but also actively eliminates sources of false positives. This "subtraction for accuracy" mindset deserves promotion in other sparse foreground tasks.
+- **Design Insight of Binary Rewards**: Eschewing fine-grained DSC rewards for coarse binary detection rewards highlights the role of the Glance model as a "gatekeeper," not a "doctor"—it only needs to judge "is there something suspicious," not evaluate segmentation quality. This clarity in role division is key to the system design.
 
 ## Limitations & Future Work
 
-- **Miss detection risk of the Glance model**: Although sensitivity reaches 97.7%, extremely small lesions or those spanning sub-volume boundaries may still be missed, and missed detections carry severe consequences in clinical settings.
-- **Fixed sub-volume size**: The fixed cropping size of $96 \times 96 \times 64$ may not be optimal for lesions of varying sizes, as large lesions may be split across multiple sub-volumes.
-- **CT modality only**: The method has not been tested on MRI, ultrasound, PET, or other imaging modalities; whether the GRL paradigm transfers to foreground-sparse scenarios in other modalities remains to be verified.
-- **Dependence on intra-group diversity**: If lesions are extremely dense (all positive) or the CT is entirely healthy (all negative), the gradient signal from intra-group comparison degrades.
-- Adaptive sub-volume sizing or multi-scale cropping strategies could be explored to better handle lesions of varying sizes.
+- **Glance Model Missed Diagnosis Risk**: Although sensitivity reaches 97.7%, lesions that are extremely small or span sub-volume boundaries might still be missed, which is costly in clinical settings.
+- **Fixed Sub-volume Dimensions**: The fixed $96 \times 96 \times 64$ size might not be optimal for lesions of different scales; large lesions could be split across multiple volumes.
+- **CT Modality Only**: Not yet tested on MRI, Ultrasound, or PET; whether the GRL paradigm transfers to foreground-sparse scenarios in other modalities remains to be verified.
+- **Group Comparison Dependency**: If a CT has extremely dense lesions (all positive) or is entirely healthy (all negative), the gradient signal from intra-group comparison may degrade.
+- Future work could consider adaptive sub-volume sizes or multi-scale cropping strategies to handle lesions of varying sizes.
 
 ## Related Work & Insights
 
-- **vs. CancerUniT**: CancerUniT employs a query-based Mask-Transformer for unified detection and segmentation of eight lesion types but still performs exhaustive inference without a foreground selection mechanism. GF-Screen outperforms it comprehensively in segmentation accuracy (+7.5% DSC) while being several times faster, demonstrating the superiority of "select then segment" over "full-volume inference."
-- **vs. PPO-based Visual RL (Wang et al. 2020)**: Prior work applied PPO to discard redundant patches in image classification but required an additional value network and could not handle dense prediction tasks such as segmentation. GF-Screen replaces PPO with GRL, eliminating the value network while achieving markedly greater stability on segmentation tasks (PPO variant yields only 24.5% DSC).
-- **vs. GRPO (Shao et al. 2024)**: GRPO in LLMs forms intra-group comparisons by having the model generate multiple responses; GF-Screen finds that CT sub-volume cropping naturally provides candidate groups, representing the first successful transfer of GRPO to a non-linguistic task.
-- **vs. PASTA**: PASTA leverages tumor synthesis for pre-training but does not address inference efficiency (197 s/scan, the slowest among all methods). GF-Screen adopts an entirely different approach and simultaneously improves both accuracy and efficiency.
+- **vs. CancerUniT**: CancerUniT uses a query-based Mask-Transformer for unified detection and segmentation across eight lesion types but still uses full-volume inference. GF-Screen leads significantly in segmentation accuracy (+7.5% DSC) while being multiple times faster, proving "select-then-segment" is superior to "full-volume inference."
+- **vs. Visual RL (Wang et al. 2020)**: Prior work used PPO to drop redundant patches in classification, but needed value networks and couldn't handle dense prediction tasks like segmentation. GF-Screen replaces PPO with GRL, eliminating the value network and performing more stably (PPO's DSC was only 24.5%).
+- **vs. GRPO (Shao et al. 2024)**: In LLMs, GRPO generates multiple outputs to form a group. GF-Screen identifies that CT sub-volume cropping naturally provides candidate groups, representing the first successful migration of GRPO to non-language tasks.
+- **vs. PASTA**: PASTA uses tumor synthesis for pre-training but does not address inference efficiency (197s/scan, slowest among all methods). GF-Screen improves both accuracy and efficiency using a fundamentally different approach.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ The insight of transferring GRPO to visual tasks is elegant, though the overall "coarse-to-fine" framework is a well-established paradigm.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Nine lesion types, 23 datasets, internal and external validation, FLARE25 leaderboard, and highly systematic ablation studies.
-- Writing Quality: ⭐⭐⭐⭐ The logical chain is clear and the figures are well-designed, though certain passages contain redundant exposition.
-- Value: ⭐⭐⭐⭐⭐ +25.6% DSC over the FLARE25 champion with 5.7× faster inference; extremely high practical deployment value.
-
-- **vs. PASTA**: Ours proposes a distinct technical approach on this basis and achieves improvements on key metrics.
-
-## Rating
-
-- Novelty: ⭐⭐⭐⭐⭐ First successful transfer of GRPO to vision + pan-cancer framework design.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 5,117 CT scans / 9 lesion types / 23 datasets / FLARE25 champion.
-- Writing Quality: ⭐⭐⭐⭐ Method is clearly presented; clinical motivation is convincing.
-- Value: ⭐⭐⭐⭐⭐ Direct clinical translation value for AI-assisted cancer screening.
+- Novelty: ⭐⭐⭐⭐ The insight of migrating GRPO to vision is clever, though the overall framework (coarse-to-fine) is a mature paradigm.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 9 lesion types, 23 datasets, internal/external validation + FLARE25 leaderboard; ablation studies are highly systematic.
+- Writing Quality: ⭐⭐⭐⭐ Clear logic chain and well-designed visuals, though some paragraphs are repetitive.
+- Value: ⭐⭐⭐⭐⭐ Significantly outperforming the FLARE25 champion (+25.6% DSC) while being 5.7x faster makes this highly valuable for actual deployment.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
 - [\[AAAI 2026\] PanFoMa: A Lightweight Foundation Model and Benchmark for Pan-Cancer Pathology Image Analysis](../../AAAI2026/medical_imaging/panfoma_a_lightweight_foundation_model_and_benchmark_for_pan-cancer.md)
 - [\[AAAI 2026\] MedEyes: Learning Dynamic Visual Focus for Medical Progressive Diagnosis](../../AAAI2026/medical_imaging/medeyes_learning_dynamic_visual_focus_for_medical_progressive_diagnosis.md)
+- [\[CVPR 2025\] Association of Radiologic PPFE Change with Mortality in Lung Cancer Screening Cohorts](../../CVPR2025/medical_imaging/association_of_radiologic_ppfe_change_with_mortality_in_lung_cancer_screening_co.md)
 - [\[CVPR 2026\] OraPO: Oracle-educated Reinforcement Learning for Data-efficient and Factual Radiology Report Generation](../../CVPR2026/medical_imaging/orapo_oracle-educated_reinforcement_learning_for_data-efficient_and_factual_radi.md)
-- [\[CVPR 2026\] MedGRPO: Multi-Task Reinforcement Learning for Heterogeneous Medical Video Understanding](../../CVPR2026/medical_imaging/medgrpo_multi-task_reinforcement_learning_for_heterogeneous_medical_video_unders.md)
-- [\[ICML 2026\] Evidential Reasoning Advances Interpretable Real-World Disease Screening](../../ICML2026/medical_imaging/evidential_reasoning_advances_interpretable_real-world_disease_screening.md)
+- [\[NeurIPS 2025\] FairGRPO: Fair Reinforcement Learning for Equitable Clinical Reasoning](../../NeurIPS2025/medical_imaging/fairgrpo_fair_reinforcement_learning_for_equitable_clinical_reasoning.md)
 
 </div>
 

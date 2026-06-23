@@ -2,175 +2,175 @@
 title: >-
   [Paper Note] Veritas: Generalizable Deepfake Detection via Pattern-Aware Reasoning
 description: >-
-  [ICLR 2026][LLM Safety][Deepfake Detection] This paper proposes Veritas, an MLLM-based deepfake detector that simulates human authentication reasoning via pattern-aware reasoning (fast judgment → reasoning → planning → s…
+  [ICLR 2026][LLM Safety][Deepfake Detection] Ours proposes Veritas, an MLLM-based deepfake detector that simulates human forensic thinking (fast judgment → reasoning → planning → self-reflection → conclusion) through pattern-aware reasoning. It features a two-stage training pipeline (SFT + MiPO cold-start + P-GRPO reinforcement learning) and the HydraFake dataset
 tags:
-  - "ICLR 2026"
-  - "LLM Safety"
-  - "Deepfake Detection"
-  - "MLLM"
-  - "Pattern-Aware Reasoning"
-  - "Reinforcement Learning"
-  - "HydraFake"
+  - ICLR 2026
+  - LLM Safety
+  - Deepfake Detection
+  - MLLM
+  - Pattern-Aware Reasoning
+  - Reinforcement Learning
+  - HydraFake
 date: 2026-05-08
-content_hash: 89e1b1d68b477b84
+content_hash: 1942a842a74dd6b0
 ---
-
 # Veritas: Generalizable Deepfake Detection via Pattern-Aware Reasoning
 
 **Conference**: ICLR 2026 Oral  
 **arXiv**: [2508.21048](https://arxiv.org/abs/2508.21048)  
 **Code**: [https://github.com/EricTan7/Veritas](https://github.com/EricTan7/Veritas)  
-**Area**: AI Safety / Multimodal VLM / Deepfake Detection
+**Area**: AI Safety / Multimodal VLM / Deepfake Detection  
 **Keywords**: Deepfake Detection, MLLM, Pattern-Aware Reasoning, Reinforcement Learning, HydraFake
 
 ## TL;DR
 
-This paper proposes Veritas, an MLLM-based deepfake detector that simulates human authentication reasoning via pattern-aware reasoning (fast judgment → reasoning → planning → self-reflection → conclusion). It introduces a two-stage training pipeline (SFT+MiPO cold-start + P-GRPO reinforcement learning) and constructs the HydraFake benchmark with a four-level OOD evaluation protocol. Veritas achieves an average accuracy of 90.7% across cross-forgery and cross-domain scenarios, surpassing the previous SOTA by 6.0%.
+Ours proposes Veritas, an MLLM-based deepfake detector that simulates human forensic thinking (fast judgment → reasoning → planning → self-reflection → conclusion) through pattern-aware reasoning. It features a two-stage training pipeline (SFT + MiPO cold-start + P-GRPO reinforcement learning) and the HydraFake dataset with four-level OOD evaluation, achieving an average accuracy of 90.7% across forgery types and domains, outperforming Prev. SOTA by 6.0%.
 
 ## Background & Motivation
 
-**Background**: The dominant paradigm in deepfake detection is training on FF++ and evaluating cross-domain generalization on datasets such as DFDC and CelebDF. Recent MLLM-based approaches (e.g., FFAA, M2F2-Det, FakeVLM) have attempted to introduce interpretability, yet final classification decisions still rely on compact visual models (e.g., CLIP), with MLLMs serving only as post-hoc explainers.
+**Background**: Mainstream deepfake detection involves training on FF++ and testing cross-domain generalization on datasets like DFDC and CelebDF. Recent MLLM-based methods (e.g., FFAA, M2F2-Det, FakeVLM) attempt to introduce interpretability, but final classification often relies on small vision models (e.g., CLIP), with MLLMs acting only as "post-hoc explainers."
 
 **Limitations of Prior Work**:
-   - **Benchmark–Practice Mismatch**: Existing benchmarks use a single training source (FF++ only) and low-quality test images, failing to reflect the real-world challenge of rich training distributions paired with highly variable test distributions.
-   - **Poor Cross-Forgery Generalization**: Existing detectors perform reasonably in Cross-Model settings (>90%), but degrade severely in Cross-Forgery (novel forgery types such as face restoration and personalization) and Cross-Domain (real-world social media deepfakes), with most falling below 85%.
-   - **Underutilized MLLM Reasoning**: MLLM-based methods predominantly follow a post-hoc paradigm—determining authenticity first and then generating explanations—so the reasoning process does not participate in the decision.
+   - **Benchmarks Disconnected from Industry**: Existing benchmarks use limited training sources (only FF++) and low-quality images, failing to simulate real-world challenges where training data is abundant but test distributions vary wildly.
+   - **Poor Cross-Forgery Generalization**: Current detectors perform adequately in Cross-Model scenarios (>90%) but degrade significantly in Cross-Forgery (e.g., face restoration, personalization) and Cross-Domain (real-world social media deepfakes) scenarios, often dropping below 85%.
+   - **Underutilized MLLM Reasoning**: Most MLLM-based methods follow a "judge then explain" paradigm where reasoning does not participate in the decision-making process.
 
-**Key Challenge**: Existing detectors learn artifact patterns specific to known forgery types, lacking the hierarchical reasoning capacity to handle OOD forgeries. Directly applying general-purpose MLLMs to deepfake detection yields poor performance (InternVL3-8B: 58.3%; GPT-4o: 60.8%), due to the absence of task-specific reasoning training data and strategies.
+**Key Challenge**: Existing detectors learn specific artifact patterns rather than human-like hierarchical reasoning. General MLLMs perform poorly on deepfake detection (InternVL3-8B at 58.3%, GPT-4o at 60.8%) due to the lack of targeted reasoning data and training strategies.
 
 **Goal**:
-   - Q1: What reasoning process is most effective for deepfake detection? → Pattern-aware reasoning.
-   - Q2: How can a model genuinely learn to reason rather than memorize patterns? → Two-stage training via MiPO + P-GRPO.
+   - Q1: What reasoning process is most effective for deepfake detection? → A: Pattern-aware reasoning.
+   - Q2: How to enable models to "learn to reason" instead of just "memorizing patterns"? → A: MiPO + P-GRPO two-stage training.
 
-**Key Insight**: Inspired by how human experts authenticate media—starting with a rapid intuition (fast judgment), then localizing key artifacts (reasoning), conducting layered analysis for difficult cases (planning), potentially revising initial assessments through deep reflection (self-reflection), and finally synthesizing a conclusion—this work formalizes these five cognitive modes and progressively internalizes them into an MLLM via SFT injection, preference alignment, and reinforcement learning.
+**Key Insight**: Emulate human forensic thinking—starting with a fast judgment, followed by locating key artifacts (reasoning), hierarchical analysis for difficult samples (planning), potential deep reflection to overturn initial judgments (self-reflection), and a final synthesis (conclusion). These five modes are formalized and internalized into the MLLM via SFT, preference alignment, and RL.
 
-**Core Idea**: Explicitly inject structured human-like authentication reasoning into an MLLM, and use a pattern-aware reward mechanism to encourage the model to apply the appropriate reasoning depth at the appropriate moment, enabling end-to-end transparent decision-making.
+**Core Idea**: Explicitly inject structured human forensic thinking patterns into the MLLM. Use a pattern-aware reward mechanism to incentivize the model to use appropriate reasoning depths at the right time, achieving end-to-end transparent decision-making.
 
 ## Method
 
 ### Overall Architecture
 
-Veritas is built upon InternVL3-8B and employs a two-stage training pipeline:
+Veritas aims to make a general MLLM learn forensic reasoning rather than memorizing specific artifacts. Using InternVL3-8B as a base, it takes a face image and user query as input and outputs a structured response within a `<think>` block (containing tags like `<fast>`, `<reasoning>`, `<planning>`, `<reflection>`, `<conclusion>`) followed by the final judgment.
 
-- **Stage 1 — Pattern-Guided Cold-Start**: SFT to inject reasoning format (36K samples), followed by MiPO (Mixed Preference Optimization) to align reasoning quality (3K manually annotated preference pairs).
-- **Stage 2 — Pattern-Aware Exploration**: P-GRPO (Pattern-aware Group Relative Policy Optimization) to incentivize adaptive reasoning via online sampling and pattern-aware rewards (9K samples, requiring only binary labels).
+The pipeline utilizes the HydraFake dataset through two training stages. Stage 1 is "pattern-guided cold-start": SFT injects the format of five reasoning patterns (36K samples), followed by MiPO (Mixed Preference Optimization) to align reasoning quality (3K human-labeled pairs), forcing the model to "get the right answer for the right reasons." Stage 2 is "pattern-aware exploration": P-GRPO (Pattern-aware Group Relative Policy Optimization) uses online sampling and pattern-aware rewards to incentivize planning and reflection only when necessary, training adaptive reasoning depth (9K samples, using only binary labels).
 
-The input consists of a face image and a user query; the output is a structured response containing a `<think>` block with pattern tags (`<fast>`, `<reasoning>`, `<planning>`, `<reflection>`, `<conclusion>`) followed by a final authenticity judgment. For simple samples the model may invoke only fast+reasoning+conclusion, while difficult samples trigger planning and reflection.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["Face Image + User Query"]
+    DATA["HydraFake Dataset<br/>50K Real+50K Fake / 4-level OOD Protocol"]
+    PAT["Pattern-Aware Reasoning Chain<br/>fast→reasoning→planning<br/>→reflection→conclusion (On-demand)"]
+    subgraph CS["Stage 1: Pattern-Guided Cold-Start"]
+        direction TB
+        SFT["SFT: Inject 5 Reasoning Patterns"]
+        MIPO["MiPO: Reasoning Quality Alignment<br/>Mixed 'Correct but Poor Reason' Negatives"]
+        SFT --> MIPO
+    end
+    PGRPO["Stage 2: P-GRPO Adaptive Exploration<br/>Pattern-aware Reward + Online Sampling"]
+    OUT["Structured Reasoning Chain + Judgment"]
+    IN --> DATA --> PAT --> CS
+    CS --> PGRPO --> OUT
+```
 
 ### Key Designs
 
-1. **HydraFake Dataset and Four-Level Evaluation Protocol**:
+**1. HydraFake Dataset & 4-Level Evaluation: Exposing OOD Weaknesses**
 
-    - **Function**: Construct a large-scale deepfake detection benchmark that closely mirrors industrial scenarios.
-    - **Mechanism**: 50K real images (from 88 datasets) + 50K forged images (from 36 generative models), covering face swapping, reenactment, entire-face generation, face restoration, relighting, and personalization. The training set contains only three basic forgery types (FS/FR/EFG, 48K images). Evaluation is organized into four levels: In-Domain (14K), Cross-Model (11K; unseen models including FLUX, StarryAI, and MAGI-1), Cross-Forgery (12K; unseen forgery types including attribute editing, generative face swapping, and personalization), and Cross-Domain (15K; unseen data domains and in-the-wild social media deepfakes from GPT-4o, Dreamina, and HailuoAI).
-    - **Design Motivation**: Simulate the real-world challenge of abundant training data paired with highly variable test distributions, enabling precise identification of detector weaknesses at different OOD levels.
-    - **Quality Control**: Low-quality datasets (DFDC, WDF) are excluded; Qwen2.5-VL-72B is used to generate sample-specific prompts for self-constructed data, and high-quality samples are selected through human filtering.
+Existing benchmarks reflect poor quality or limited diversity. HydraFake uses 50K real (from 88 sets) and 50K fake (36 models) samples covering face swapping, reenactment, synthesis, restoration, relighting, and personalization. The training set is restricted to 3 base types (FS/FR/EFG, 48K images) to create progressive OOD evaluation: In-Domain (14K); Cross-Model (11K) using unseen models like FLUX/StarryAI; Cross-Forgery (12K) with unseen methods like attribute editing; and Cross-Domain (15K) with wild deepfakes from GPT-4o/Dreamina. This localizes exactly where a detector fails.
 
-2. **Pattern-Aware Reasoning Framework**:
+**2. Pattern-Aware Reasoning: Structured Thinking with 5 Modes**
 
-    - **Function**: Define five reasoning patterns to simulate the human expert authentication workflow.
-    - **Mechanism**: `<fast>` rapid intuitive judgment → `<reasoning>` localization of one to two salient artifacts → `<planning>` hierarchical analysis for difficult samples → `<reflection>` self-revision to support or overturn the initial judgment → `<conclusion>` synthesis of all evidence for a final verdict. The model adaptively selects patterns during inference; simple samples may use only fast+reasoning+conclusion, while challenging samples invoke planning and reflection.
-    - **Design Motivation**: Vanilla CoT lacks structured cognitive guidance, leading models to produce superficial reasoning. Experiments demonstrate that pattern-aware reasoning outperforms flexible reasoning by 6.2% on Cross-Forgery and 3.3% on Cross-Domain.
-    - **Key Distinction from Post-hoc Explanation**: Post-hoc approaches determine the answer first and then construct justifications, so reasoning does not participate in the decision (accuracy is 8.4% lower). In Veritas, the reasoning process directly drives the final judgment.
+Vanilla CoT lacks guidance, often leading to superficial reasoning. Veritas defines an adaptive chain: `<fast>` for intuition, `<reasoning>` for 1-2 artifacts, `<planning>` for hierarchical analysis, `<reflection>` to challenge the initial judgment, and `<conclusion>` to synthesize evidence. These patterns are called on-demand; simple samples skip deep patterns. This differs from "post-hoc explanation" because reasoning directly drives the decision.
 
-3. **Mixed Preference Optimization (MiPO)**:
+**3. Mixed Preference Optimization (MiPO): Forcing Fine-grained Reasoning**
 
-    - **Function**: Align reasoning quality after SFT to prevent the model from memorizing patterns rather than reasoning.
-    - **Mechanism**: A mixed dispreferred dataset $\mathcal{D}_2$ is constructed with two types of negative samples—$s_l^\phi$ (correct answer but shallow/insufficiently detailed reasoning) and $s_l^\psi$ (incorrect answer). Positive samples $s_w$ are annotated by human experts. Training adopts a DPO-style objective: $\mathcal{L}_2 = -\mathbb{E}[\log\sigma(\beta\log\frac{\pi_\theta(s_w|q)}{\pi_{\text{SFT}}(s_w|q)} - \beta\log\frac{\pi_\theta(s_l|q)}{\pi_{\text{SFT}}(s_l|q)})]$
-    - **Design Motivation**: A purely SFT-trained model tends to produce outputs that are correct but shallowly reasoned. The inclusion of $s_l^\phi$—"correct answer, insufficient reasoning"—as negative samples compels the model to develop fine-grained reasoning. Ablations confirm: removing $s_l^\phi$ causes CF −1.1% and CD −0.8%; removing $s_l^\psi$ causes model collapse to 60.8%.
-    - **Distinction from Standard DPO**: MiPO introduces a novel category of dispreferred data—"correct answer but poor reasoning"—whereas conventional DPO typically uses only incorrect answers as negative samples.
+Post-SFT models often produce correct answers with shallow reasoning. MiPO uses a mixed negative dataset $\mathcal{D}_2$ containing two types of negative samples: $s_l^\phi$ (correct answer but coarse reasoning) and $s_l^\psi$ (incorrect answer). The positive $s_w$ is expert-labeled. The loss follows the DPO style:
 
-4. **Pattern-Aware GRPO (P-GRPO)**:
+$$\mathcal{L}_2 = -\mathbb{E}\Big[\log\sigma\big(\beta\log\frac{\pi_\theta(s_w|q)}{\pi_{\text{SFT}}(s_w|q)} - \beta\log\frac{\pi_\theta(s_l|q)}{\pi_{\text{SFT}}(s_l|q)}\big)\Big]$$
 
-    - **Function**: Use reinforcement learning to incentivize adaptive reasoning depth, encouraging the model to proactively employ planning and reflection when needed.
-    - **Mechanism**: For each query, $G=4$ responses are sampled and evaluated via pattern-aware rewards. The final reward is $R = R_{\text{pattern}} + \lambda_1 R_{\text{ref}} \cdot \mathbb{I}(\mathcal{C}=1) + \lambda_2 R_{\text{fmt}}$.
-    - **$R_{\text{pattern}}$ Design**: Correct answer with planning/reflection → +2.0; correct answer without advanced patterns → +1.0; incorrect answer without advanced patterns → 0.0; incorrect answer with planning → −0.5; incorrect answer with reflection → **−1.0** (the heaviest penalty, as reflection is the strongest pattern and its misuse is most costly).
-    - **$R_{\text{ref}}$ (Reflection Quality Reward)**: An external reward model (UnifiedReward-Qwen-3B) evaluates whether the reflection introduces a new perspective rather than repeating prior findings; this reward is granted only when the answer is correct.
-    - **Design Motivation**: Unlike methods that use length rewards to encourage longer reasoning, the authors argue that absolute reasoning length is unimportant; what matters is using the appropriate cognitive pattern at the appropriate moment. Penalties for overthinking prevent the model from overusing reflection.
+Including $s_l^\phi$ forces the model to learn to be "right for the right reasons."
+
+**4. Pattern-Aware GRPO (P-GRPO): RL for Adaptive Depth**
+
+P-GRPO incentivizes calling planning/reflection only when truly needed. For each query, $G=4$ responses are sampled. The reward is:
+
+$$R = R_{\text{pattern}} + \lambda_1 R_{\text{ref}} \cdot \mathbb{I}(\mathcal{C}=1) + \lambda_2 R_{\text{fmt}}$$
+
+$R_{\text{pattern}}$ gives +2.0 for a correct answer with planning/reflection, +1.0 for a correct answer without them, 0.0 for a wrong answer without them, -0.5 for a wrong answer with planning, and **-1.0** for a wrong answer with reflection. Reflection is the strongest pattern; failing while using it is penalized most heavily.
 
 ### Loss & Training
 
-- **Data Annotation Pipeline**: A three-step decoupled annotation process—(1) human experts summarize an artifact taxonomy (perceptual structural anomalies / subtle low-level artifacts / cognitively anomalous physical-law violations); (2) annotation is decoupled into three specialized steps completed automatically by MLLMs; (3) 36K SFT samples are generated.
-- **SFT Stage**: LoRA (rank=128, α=256), 3 epochs, lr=5e-5, batch size=64.
-- **MiPO Stage**: 3K manually annotated preference pairs, 2 epochs, DPO objective, $\beta=0$.
-- **P-GRPO Stage**: 9K images (binary labels only), G=4 sampling, lr=1e-6, 2 epochs, temperature=1.0.
-- Each stage inherits the model weights from the previous stage.
+- **Data Pipeline**: Three-step decoupled annotation: (1) Human-defined artifact taxonomy; (2) Decoupled MLLM-based automatic annotation; (3) Generation of 36K SFT samples.
+- **SFT Stage**: LoRA (rank=128, α=256), 3 epochs, lr=5e-5, BS=64.
+- **MiPO Stage**: 3K expert pairs, 2 epochs, DPO objective, $\beta=0.1$.
+- **P-GRPO Stage**: 9K images (binary labels only), G=4, lr=1e-6, 2 epochs.
+- All stages inherit from the previous model sequentially.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Method | Type | ID | Cross-Model | Cross-Forgery | Cross-Domain | Avg Acc |
-|--------|------|----|-------------|---------------|--------------|---------|
-| F3Net (ECCV'20) | Small visual model | 85.3 | 84.3 | 69.6 | 67.2 | 73.2 |
-| UniFD (CVPR'23) | Small visual model | 82.7 | 87.5 | 72.1 | 72.8 | 78.0 |
-| ProDet (NeurIPS'24) | Small visual model | 90.5 | 92.3 | 73.5 | 74.0 | 80.6 |
-| Co-SPY (CVPR'25) | Small visual model | 86.3 | 93.2 | 85.8 | 75.1 | 84.7 |
-| Effort (ICML'25) | Small visual model | 94.7 | 90.7 | 86.0 | 63.9 | 82.2 |
-| GPT-4o | Closed-source MLLM | 53.5 | 59.5 | 58.4 | 67.4 | 60.8 |
-| Gemini-2.5-Pro | Closed-source MLLM | 72.2 | 81.5 | 82.4 | 73.8 | 78.9 |
-| FakeVLM (NeurIPS'25) | MLLM detector | — | 77.0 | 75.7 | 78.5 | 77.3 |
-| SIDA-7B (CVPR'25) | MLLM detector | — | 87.9 | 67.2 | 73.0 | 76.3 |
-| Veritas-mini | Ours (restricted training) | — | 93.0 | 78.9 | 84.3 | 85.8 |
-| Veritas (cold-start) | Ours (cold-start only) | 96.8 | 95.8 | 80.6 | 82.2 | 87.3 |
+|------|------|-----|-------------|---------------|--------------|----------|
+| F3Net (ECCV'20) | Small Vision | 85.3 | 84.3 | 69.6 | 67.2 | 73.2 |
+| UniFD (CVPR'23) | Small Vision | 82.7 | 87.5 | 72.1 | 72.8 | 78.0 |
+| ProDet (NeurIPS'24) | Small Vision | 90.5 | 92.3 | 73.5 | 74.0 | 80.6 |
+| Co-SPY (CVPR'25) | Small Vision | 86.3 | 93.2 | 85.8 | 75.1 | 84.7 |
+| Effort (ICML'25) | Small Vision | 94.7 | 90.7 | 86.0 | 63.9 | 82.2 |
+| GPT-4o | Closed MLLM | 53.5 | 59.5 | 58.4 | 67.4 | 60.8 |
+| Gemini-2.5-Pro | Closed MLLM | 72.2 | 81.5 | 82.4 | 73.8 | 78.9 |
+| FakeVLM (NeurIPS'25) | MLLM Detector | - | 77.0 | 75.7 | 78.5 | 77.3 |
+| SIDA-7B (CVPR'25) | MLLM Detector | - | 87.9 | 67.2 | 73.0 | 76.3 |
+| Veritas (cold-start) | Ours (Cold) | 96.8 | 95.8 | 80.6 | 82.2 | 87.3 |
 | **Veritas (full)** | **Ours** | **97.3** | **98.6** | **90.3** | **82.2** | **90.7** |
 
-Veritas improves average accuracy by **6.0%** over the previous best Co-SPY (84.7%), by **32.4%** over the base model InternVL3-8B (58.3%), and by **11.8%** over the strongest closed-source model Gemini-2.5-Pro.
+Veritas outperforms Prev. SOTA Co-SPY (84.7%) by **6.0%** on average and exceeds Gemini-2.5-Pro by **11.8%**.
 
 ### Ablation Study
 
-| Configuration | ID | CM | CF | CD | Avg | Note |
-|---------------|----|----|----|----|-----|------|
-| Full (Pattern-aware + MiPO + P-GRPO) | 97.3 | 98.6 | 90.3 | 82.2 | 92.1 | Complete model |
-| w/o P-GRPO (cold-start only) | 96.9 | 98.4 | 87.4 | 80.1 | 90.7 | Remove RL; CF −2.9% |
-| w/o MiPO (SFT + P-GRPO) | — | — | 87.4 | 80.1 | 90.7 | MiPO provides better RL initialization |
-| w/o Reasoning | 97.8 | 93.3 | 73.0 | 69.5 | — | No reasoning; CF **drops 17.3%** |
-| Post-hoc Explanation | 96.3 | 95.0 | 79.0 | 76.8 | — | Post-hoc paradigm |
-| Flexible Reasoning (vanilla CoT) | 96.2 | 94.3 | 81.2 | 76.8 | 87.1 | Free-form reasoning; CF −9.1% |
-| w/o `<reflection>` | 97.0 | 97.2 | 82.5 | 77.3 | 88.5 | **Most impactful pattern** |
-| w/o `<planning>` | 96.7 | 96.9 | 85.0 | 80.1 | 89.7 | Largest impact on CM |
-| w/o `<fast>` | 97.3 | 98.8 | 86.9 | 79.1 | 90.5 | Minor impact |
-| w/o `<conclusion>` | 97.2 | 98.2 | 86.2 | 79.0 | 90.1 | Provides consistent gains |
-| MiPO w/o $s_l^\phi$ | 96.9 | 98.6 | 89.2 | 81.4 | 91.5 | Remove "correct but poor reasoning" negatives |
-| MiPO w/o $s_l^\psi$ | 65.3 | 64.8 | 58.6 | 54.3 | 60.8 | **Model collapse** |
+| Configuration | ID | CM | CF | CD | Avg |
+|------|----|----|----|----|-----|
+| Full (Pattern-aware + MiPO + P-GRPO) | 97.3 | 98.6 | 90.3 | 82.2 | 92.1 |
+| w/o P-GRPO (Cold-start only) | 96.9 | 98.4 | 87.4 | 80.1 | 90.7 |
+| w/o Reasoning | 97.8 | 93.3 | 73.0 | 69.5 | - |
+| Post-hoc Explanation | 96.3 | 95.0 | 79.0 | 76.8 | - |
+| Flexible Reasoning (vanilla CoT) | 96.2 | 94.3 | 81.2 | 76.8 | 87.1 |
+| w/o `<reflection>` | 97.0 | 97.2 | 82.5 | 77.3 | 88.5 |
+| MiPO w/o $s_l^\phi$ | 96.9 | 98.6 | 89.2 | 81.4 | 91.5 |
 
 ### Key Findings
 
-- **`<reflection>` is the most critical reasoning pattern**: Its removal reduces CF from 87.4% to 82.5% (−4.9%) and CD from 80.1% to 77.3% (−2.8%). Self-reflection enables the model to identify previously unseen forgery artifacts, which is essential for OOD generalization.
-- **Cold-start is a prerequisite for successful RL**: Skipping cold-start and applying RL directly (with equivalent data) leads to training instability due to low-quality rollouts; all purely RL configurations underperform the two-stage pipeline.
-- **$s_l^\phi$ in MiPO (correct answer, poor reasoning) is not strictly necessary but is important for OOD performance**: Its removal still yields correct answers but with shallower reasoning, resulting in CF −1.1% and CD −0.8%; whereas $s_l^\psi$ (incorrect answers) is foundational to preference learning, and its removal causes collapse.
-- **Model scaling**: InternVL3-2B already achieves CF 87.3% (cost-efficient), and scaling from 8B to 14B yields +2.9% on CF (CM 99.3%), demonstrating good scalability.
-- **Robustness**: Veritas achieves 87.4% under JPEG compression at QF=50 (vs. Effort at 66.3%) and 84.3% under Gaussian blur at σ=2.0 (vs. Co-SPY at 77.0%), with no such augmentations used during training.
-- **Reasoning quality evaluation**: In an MLLM-as-Judge evaluation (GPT-4o and Gemini-2.5-Pro as judges), Veritas (w/ MiPO) achieves ELO 1359, substantially outperforming Gemini-2.5-Pro (967) and GPT-4o (785).
+- **`<reflection>` is the most critical pattern**: Removing it drops CF from 87.4% to 82.5% (-4.9%). Reflection helps identify unseen artifacts.
+- **Cold-start is a prerequisite for RL**: Without cold-start, pure RL is unstable due to low-quality initial rollouts.
+- **$s_l^\phi$ in MiPO is vital for OOD**: Removing it results in shallower reasoning and lower performance in CF (-1.1%) and CD (-0.8%).
+- **Scalability**: Scaling from 8B to 14B improves CF by 2.9%.
+- **Robustness**: Veritas remains stable under JPEG compression (87.4% at QF=50) and Gaussian blur, without using these as training augmentations.
 
 ## Highlights & Insights
 
-- **Elegant pattern-aware reward design**: Rather than naively encouraging longer reasoning, the reward incentivizes using the appropriate pattern at the appropriate moment, with escalating penalties for overthinking (planning incorrect: −0.5; reflection incorrect: −1.0). This fine-grained pattern-level reward design is transferable to any task requiring structured reasoning, such as medical diagnostic reasoning or legal case analysis.
-- **"Correct answer, poor reasoning" as an overlooked training signal**: Conventional DPO uses only incorrect answers as negative samples. MiPO introduces the category of "correct answer but insufficiently detailed reasoning," compelling the model not merely to be right, but to be right in the right way. This insight is broadly applicable to any MLLM task requiring interpretable reasoning.
-- **HydraFake's four-level evaluation reveals the true bottleneck of detectors**: Existing methods already perform well in Cross-Model settings (>90%), while Cross-Forgery and Cross-Domain remain the genuine challenges. This finding reframes the evaluation perspective for the field.
-- **Two-stage decoupled design with complementary roles**: MiPO ensures high-quality rollouts that provide a favorable initialization for P-GRPO by improving initial reasoning quality; P-GRPO further explores the reasoning space via online sampling. Both stages are individually effective, and their combination yields additive gains (CF: SFT 87.4 → +MiPO or +P-GRPO → +Both 90.3).
+- **Sophisticated Pattern-Aware Reward**: Instead of rewarding length, it rewards the "correct pattern at the correct time" and punishes overthinking errors.
+- **The Power of $s_l^\phi$**: Most DPO setups only penalize wrong answers. MiPO's inclusion of "correct but shallow" signals is a transferable lesson for all interpretability-focused MLLM tasks.
+- **Diagnostic Evaluation via HydraFake**: The 4-level protocol reveals that Cross-Forgery and Cross-Domain are the actual bottlenecks, shifting the field's focus.
+- **Decoupled Two-Stage Synergy**: MiPO ensures high-quality rollouts for RL, while P-GRPO explores the reasoning space. Their combination provides a Gain of 2.9% on CF over cold-start.
 
 ## Limitations & Future Work
 
-- **Non-trivial annotation cost**: MiPO requires human expert annotation of 3K preference pairs, and the three-step SFT annotation pipeline—despite MLLM assistance—still demands substantial manual verification, limiting scalability.
-- **Restricted to face deepfakes**: HydraFake and Veritas target face deepfakes only and do not cover general AIGC detection (e.g., landscape, object, or scene synthesis); generalization to non-face domains remains unexplored.
-- **Cross-Domain performance has room for improvement**: A CD accuracy of 82.2% implies that approximately one in five in-the-wild deepfakes are missed. In particular, accuracy on FFIW samples is only 78.5%, and on InfiniteYou (CD) only 58.6% (cold-start alone: 55.9%).
-- **Inference efficiency**: The latency of generating reasoning chains with an MLLM is substantially higher than that of compact CNN-based detectors, requiring careful consideration of the latency–accuracy tradeoff in deployment.
-- **Reward model dependency**: The reflection quality reward relies on an external model (UnifiedReward-Qwen-3B), whose inherent biases may propagate into training; additionally, using a 3B model to evaluate the outputs of an 8B model introduces a scale mismatch.
+- **Annotation Cost**: High quality requires expert labeling (3K pairs) and extensive verification.
+- **Limited to Face Deepfakes**: HydraFake focuses on faces; generalization to general AIGC (scenery, objects) is unknown.
+- **CD Performance Gap**: An 82.2% CD accuracy means 1/5 of wild deepfakes are missed, with specific challenges in InfiniteYou (58.6%).
+- **Efficiency**: MLLM reasoning chains lead to higher latency compared to small CNN detectors.
 
 ## Related Work & Insights
 
-- **vs. FFAA / M2F2-Det**: These methods employ MLLMs for interpretability but rely on compact models such as CLIP for final classification, constituting an "MLLM-assisted" paradigm. Veritas enables the MLLM to produce judgments and reasoning chains end-to-end, realizing truly reasoning-driven detection. FFAA achieves only 64.0% on HydraFake; M2F2-Det only 63.2%.
-- **vs. FakeVLM / SIDA**: FakeVLM adopts a post-hoc explanation paradigm with broad coverage (77.3%); SIDA-7B performs strongly in Cross-Model settings (97.3%) but collapses on Cross-Forgery (63.3%). Veritas achieves balanced performance across all scenarios through pattern-aware reasoning.
-- **vs. Effort / Co-SPY**: The strongest compact visual model detectors. Effort leads on in-domain (94.7%) but achieves only 63.9% on Cross-Domain; Co-SPY is more balanced (84.7%) but remains significantly below Veritas. The Cross-Domain weakness of small models underscores the indispensable value of MLLM general knowledge for OOD generalization.
-- **vs. DeepSeek-R1 / s1 and other general reasoning methods**: Veritas's pattern-aware reward is a domain-specialized adaptation of general GRPO, demonstrating that in specialized domains, domain-driven reasoning patterns outperform generic CoT. This principle is transferable to visual tasks requiring structured reasoning, such as medical image analysis and remote sensing object detection.
+- **vs FFAA / M2F2-Det**: These use MLLMs for post-hoc explanation while small models decide. Veritas is reasoning-driven, outperforming FFAA (64.0%) significantly.
+- **vs Effort / Co-SPY**: Small vision models excel at ID but fail at CD (Effort 63.9%). Veritas utilizes MLLM general knowledge for superior OOD generalization.
+- **vs DeepSeek-R1**: Veritas's pattern-aware reward is a task-specialized version of general GRPO, proving that domain-driven patterns can outperform vanilla CoT.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — Introducing structured reasoning patterns into deepfake detection and designing pattern-aware rewards is conceptually novel; however, the core training components (SFT+DPO+GRPO) are not original contributions.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Includes a self-constructed large-scale benchmark, comparisons with 10 SOTA detectors, 6 general MLLMs, and 6 MLLM detectors, along with detailed ablations, robustness evaluations, and reasoning quality assessments. Highly comprehensive.
-- **Writing Quality**: ⭐⭐⭐⭐ — Logically structured with well-designed figures and a smooth narrative; some sections contain dense formula presentation.
-- **Value**: ⭐⭐⭐⭐⭐ — Contributes both a benchmark (HydraFake) and a method (Veritas); the cold-start model is open-sourced for community customization, representing a significant advancement for the deepfake detection field.
+- Novelty: ⭐⭐⭐⭐ Innovative integration of structured patterns and pattern-aware rewards in deepfake detection.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive benchmarks including small models, closed MLLMs, and robustness tests.
+- Writing Quality: ⭐⭐⭐⭐ Clear logic and excellent figures, though mathematical notation is dense.
+- Value: ⭐⭐⭐⭐⭐ Vital contribution of both the HydraFake benchmark and the Veritas method.
 
 <!-- RELATED:START -->
 
@@ -178,8 +178,8 @@ Veritas improves average accuracy by **6.0%** over the previous best Co-SPY (84.
 
 ## Related Papers
 
-- [\[CVPR 2026\] Pixels Don't Lie (But Your Detector Might): Bootstrapping MLLM-as-a-Judge for Trustworthy Deepfake Detection and Reasoning Supervision](../../CVPR2026/llm_safety/pixels_dont_lie_but_your_detector_might_bootstrapping_mllm-as-a-judge_for_trustw.md)
-- [\[ICML 2026\] PRPO: Paragraph-level Policy Optimization for Vision-Language Deepfake Detection](../../ICML2026/llm_safety/prpo_paragraph-level_policy_optimization_for_vision-language_deepfake_detection.md)
+- [\[ICML 2025\] Unlocking the Capabilities of Large Vision-Language Models for Generalizable and Explainable Deepfake Detection](../../ICML2025/llm_safety/unlocking_the_capabilities_of_large_vision-language_models_for_generalizable_and.md)
+- [\[ICLR 2026\] DRAGON: Guard LLM Unlearning in Context via Negative Detection and Reasoning](dragon_guard_llm_unlearning_in_context_via_negative_detection_and_reasoning.md)
 - [\[ICLR 2026\] From Static Benchmarks to Dynamic Protocol: Agent-Centric Text Anomaly Detection for Evaluating LLM Reasoning](from_static_benchmarks_to_dynamic_protocol_agent-centric_text_anomaly_detection_.md)
 - [\[ICLR 2026\] Supervised Reinforcement Learning: From Expert Trajectories to Step-wise Reasoning](supervised_reinforcement_learning_from_expert_trajectories_to_step-wise_reasonin.md)
 - [\[ICLR 2026\] wd1: Weighted Policy Optimization for Reasoning in Diffusion Language Models](wd1_weighted_policy_optimization_for_reasoning_in_diffusion_language_models.md)

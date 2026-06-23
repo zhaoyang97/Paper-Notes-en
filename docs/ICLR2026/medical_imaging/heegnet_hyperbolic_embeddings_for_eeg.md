@@ -2,123 +2,131 @@
 title: >-
   [Paper Note] HEEGNet: Hyperbolic Embeddings for EEG
 description: >-
-  [ICLR 2026][EEG] This work presents the first systematic empirical validation that EEG data exhibits hyperbolicity (hierarchical structure), and proposes HEEGNet…
+  [ICLR 2026][Medical Imaging][EEG] This paper provides the first systematic validation of the hyperbolic nature (hierarchical structure) of EEG data. It proposes HEEGNet, a hybrid Euclidean-hyperbolic network architecture that combines a Euclidean encoder for spatio-temporal-spectral feature extraction with a hyperbolic encoder to capture hierarchical r
 tags:
-  - "ICLR 2026"
-  - "EEG"
-  - "hyperbolic space"
-  - "domain adaptation"
-  - "hierarchy"
-  - "brain-computer interface"
+  - ICLR 2026
+  - Medical Imaging
+  - EEG
 date: 2026-05-08
-content_hash: f8e0fafda71dfd15
+content_hash: 9c460de4639b4809
 ---
-
 # HEEGNet: Hyperbolic Embeddings for EEG
 
 **Conference**: ICLR 2026  
 **arXiv**: [2601.03322](https://arxiv.org/abs/2601.03322)  
 **Code**: [GitHub](https://github.com/fightlesliefigt/HEEGNet)  
-**Area**: Brain-Computer Interface / Geometric Deep Learning  
-**Keywords**: EEG, hyperbolic space, domain adaptation, hierarchy, brain-computer interface
+**Area**: Brain-Computer Interface/Geometric Deep Learning  
+**Keywords**: EEG, Hyperbolic Space, Domain Adaptation, Hierarchical Structure, BCI
 
 ## TL;DR
-This work presents the first systematic empirical validation that EEG data exhibits hyperbolicity (hierarchical structure), and proposes HEEGNet, a hybrid hyperbolic network architecture. The model combines a Euclidean encoder for spatiotemporal-spectral feature extraction with a hyperbolic encoder for capturing hierarchical relationships, augmented by a novel coarse-to-fine domain adaptation strategy (DSMDBN). HEEGNet achieves state-of-the-art performance across multiple cross-domain tasks spanning visual evoked potentials, emotion recognition, and intracranial EEG.
+This paper provides the first systematic validation of the hyperbolic nature (hierarchical structure) of EEG data. It proposes HEEGNet, a hybrid Euclidean-hyperbolic network architecture that combines a Euclidean encoder for spatio-temporal-spectral feature extraction with a hyperbolic encoder to capture hierarchical relationships. Coupled with a novel coarse-to-fine domain adaptation strategy (DSMDBN), it achieves SOTA results across cross-domain tasks in visual evoked potentials, emotion recognition, and intracranial EEG.
 
 ## Background & Motivation
 
-### State of the Field
+**Background**: EEG-based BCIs suffer from poor generalization due to inter-subject/inter-session distribution shifts. Domain Adaptation (DA) methods (such as moment alignment) are current SOTA but fail under large shifts. EEG decoding has been almost exclusively based on Euclidean embeddings.
 
-**Background**: EEG-based BCIs suffer from poor generalization due to distribution shifts across subjects and sessions. Domain adaptation methods based on moment alignment represent the current SOTA, yet fail under large domain discrepancies. EEG decoding has been conducted almost exclusively in Euclidean embedding spaces.
+**Limitations of Prior Work**: (1) Cognitive processes such as visual processing and emotion regulation in the brain possess hierarchical structures, which are difficult to represent efficiently in Euclidean space—where the circumference of a circle grows linearly while the number of tree nodes grows exponentially; (2) Moment alignment alone cannot guarantee positive transfer, especially under large domain shifts.
 
-**Limitations of Prior Work**: (1) Cognitive processes such as visual processing and emotion regulation exhibit hierarchical organization in the brain, yet Euclidean space is inefficient for representing hierarchical data — the circumference of a circle grows linearly whereas the number of tree nodes grows exponentially; (2) moment alignment alone cannot guarantee positive transfer, particularly under large domain shifts.
+**Key Challenge**: The hierarchical structure of EEG features requires exponential representational capacity, which Euclidean space lacks, yet hyperbolic neural networks have not been systematically explored for EEG.
 
-**Key Challenge**: The hierarchical structure of EEG features demands exponential representational capacity, which Euclidean space cannot provide; however, hyperbolic neural networks have not yet been systematically explored for EEG.
+**Key Insight**: Preliminary research shows that EEG exhibits hyperbolicity (low $\delta_{rel}$). Replacing Euclidean MLR with hyperbolic MLR alone improves cross-domain performance, proving that hyperbolic embeddings indeed aid EEG generalization.
 
-**Key Insight**: Prior analysis reveals that EEG data exhibits hyperbolicity (low $\delta_{rel}$), and replacing the Euclidean MLR with a hyperbolic MLR alone improves cross-domain performance — demonstrating that hyperbolic embeddings genuinely benefit EEG generalization.
-
-**Core Idea**: Exploit hyperbolic space to capture the hierarchical structure of EEG, combined with a two-stage domain adaptation strategy (moment alignment → distribution alignment) to achieve cross-domain generalization.
+**Core Idea**: Utilizing hyperbolic space to capture the hierarchical structure of EEG combined with two-stage domain adaptation (moment alignment → distribution alignment) to achieve cross-domain generalization.
 
 ## Method
 
 ### Overall Architecture
-HEEGNet = Euclidean encoder (temporal → spatial → temporal convolution) → projection into hyperbolic space → hyperbolic convolutional layers → DSMDBN domain adaptation → hyperbolic MLR classifier.
+
+HEEGNet addresses EEG cross-domain generalization by capturing the natural hierarchical structure of cognitive processes while mitigating distribution shifts across subjects/sessions. It decouples signal processing from geometric representation: a Euclidean encoder (temporal → spatial → temporal convolutions) extracts spectral-spatial-temporal features from raw EEG, which are then projected via ProjX into the Lorentz hyperbolic space. Hyperbolic convolutions are used to refine hierarchical relationships, with DSMDBN two-stage domain adaptation interspersed to eliminate domain shifts. Finally, a hyperbolic MLR classifier outputs predictions.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Raw EEG Signals"] --> SG1
+    subgraph SG1["Hybrid Euclidean-Hyperbolic Architecture (Design 1)"]
+        direction TB
+        B["Euclidean Encoder<br/>T→S→T Convolutions<br/>Extract Spectral-Spatial-Temporal Features"] --> C["ProjX Mapping to<br/>Lorentz Hyperbolic Space"]
+        C --> D["Hyperbolic Pointwise Conv<br/>Refine Hierarchical Relations"]
+    end
+    SG1 --> SG2
+    subgraph SG2["DSMDBN Two-Stage Domain Adaptation (Design 2)"]
+        direction TB
+        E["DSMDBN(1) Moment Alignment<br/>Gyro-subtraction/multiplication for centering+scaling"] --> F["DSMDBN(2) Distribution Alignment<br/>Minimize HHSW Divergence<br/>Align to Standard Hyperbolic Gaussian"]
+    end
+    SG2 --> G["Hyperbolic MLR Classifier<br/>Scoring via Point-to-Hyperplane Distance"]
+    G --> H["Cross-Domain Prediction"]
+```
 
 ### Key Designs
 
-1. **Hybrid Euclidean–Hyperbolic Architecture**:
+**1. Hybrid Euclidean-Hyperbolic Architecture: Decoupling Signal Processing and Hierarchical Representation**
 
-    - **Function**: Euclidean convolutions extract spectral-spatial-temporal features; after projection, hyperbolic convolutions refine hierarchical relationships.
-    - **Mechanism**: Three EEGNet-style convolutional layers → ProjX projection onto the Lorentz model $\mathbb{L}_K^n$ → hyperbolic point-wise convolution.
-    - **Design Motivation**: Euclidean convolutions excel at signal processing and carry neurophysiological interpretability, while hyperbolic space is well-suited for representing hierarchical relations. The hybrid design leverages the strengths of both.
+Pure hyperbolic networks discard valuable signal processing priors in EEG decoding, while pure Euclidean networks cannot represent hierarchical structures (Euclidean space cannot accommodate exponential hierarchies). HEEGNet uses a two-stage approach: the front end consists of three EEGNet-style convolutional layers for spectral-spatial-temporal feature extraction with neurophysiological interpretability; then, ProjX projects features into the Lorentz model $\mathbb{L}_K^n$ for pointwise convolutions. The front end transforms signals into meaningful features, while the back end organizes hierarchical relationships in a space with exponential representational capacity.
 
-2. **DSMDBN (Two-Stage Domain Adaptation)**:
+**2. DSMDBN: Coarse-to-Fine Two-Stage Domain Adaptation**
 
-    - **Stage 1 — DSMDBN(1)**: Riemannian batch normalization performs domain-specific moment alignment; centering in hyperbolic space is implemented via gyro-subtraction and scaling via gyro-multiplication.
-    - **Stage 2 — DSMDBN(2)**: The HHSW divergence is minimized to align each source domain distribution to a canonical hyperbolic Gaussian $\mathcal{N}(\bar{0}, 1)$.
-    - **Design Motivation**: Moment alignment alone is insufficient under large domain shifts; adding distributional alignment provides theoretical guarantees. The coarse-to-fine ordering — moment alignment followed by distributional alignment — progressively closes the domain gap.
+Moment alignment (current SOTA) fails under large domain shifts. DSMDBN adds distribution alignment atop moment alignment. Stage one, DSMDBN(1), uses Riemannian Batch Normalization for domain-specific moment alignment—centering is implemented via gyro-subtraction and scaling via gyro-multiplication in hyperbolic space, aligning the mean and scale of each domain. Stage two, DSMDBN(2), minimizes the HHSW divergence to align the distribution of each source domain to a standard hyperbolic Gaussian $\mathcal{N}(\bar{0}, 1)$. This "coarse-to-fine" approach aligns first-order/second-order statistics before providing stronger theoretical guarantees for distribution alignment.
 
-3. **Lorentz Model Operations**:
+**3. Hyperbolic Operators on the Lorentz Model: Geometric Toolbox**
 
-    - Gyroaddition, gyromultiplication, and gyroinverse in the Lorentz model.
-    - Fréchet mean and variance defined on the Lorentz model.
-    - Hyperbolic MLR performs classification via the hyperbolic distance from a point to a hyperplane.
+Hyperbolic operations are built on the gyro-algebra of the Lorentz model: gyroaddition, gyromultiplication, and gyroinverse replace Euclidean operations. Fréchet mean and variance are redefined on the Lorentz model (supporting DSMDBN centering/scaling), and hyperbolic MLR uses hyperbolic distance from points to hyperplanes for classification. Notably, replacing only the Euclidean MLR head with a hyperbolic MLR improves cross-domain performance across all datasets, indicating this geometric toolset is inherently better suited for the hierarchical nature of EEG.
 
 ### Loss & Training
-- Classification loss + HHSW distributional alignment loss.
-- Domain-specific momentum batch normalization: momentum is updated with decay during training and fixed during inference.
-- Riemannian Adam optimizer.
+
+- Total Loss = Classification Loss + HHSW Distribution Alignment Loss.
+- Domain-specific momentum batch normalization: Statistics are updated with decaying momentum during training and fixed during testing.
+- Riemannian Adam optimizer is used for parameter updates on the manifold.
 
 ## Key Experimental Results
 
-### Preliminary Study
+### Background
 
-| Dataset | $\delta_{rel}$ (raw EEG) | $\delta_{rel}$ (embedding layer) | Notes |
-|---------|--------------------------|----------------------------------|-------|
-| Nakanishi | low | low | Visual |
-| Wang | low | low | Visual |
-| Seed | low | low | Emotion |
-| Faced | low | low | Emotion |
-| Boran | low | low | Intracranial |
+| Dataset | $\delta_{rel}$ Raw EEG | $\delta_{rel}$ Embedding Layer | Description |
+|---------|-----------------------|------------------------------|-------------|
+| Nakanishi | Low | Low | Visual |
+| Wang | Low | Low | Visual |
+| Seed | Low | Low | Emotional |
+| Faced | Low | Low | Emotional |
+| Boran | Low | Low | Intracranial |
 
-→ All datasets exhibit low $\delta_{rel}$, confirming the hyperbolicity of EEG data.
+→ All datasets exhibit low $\delta_{rel}$, confirming the hyperbolicity of EEG.
 
 ### Main Results
-Cross-subject / cross-session adaptation:
+Cross-subject/Cross-session Adaptation:
 
-| Method | Visual EEG | Emotion EEG | Intracranial EEG | Average |
-|--------|-----------|-------------|------------------|---------|
-| EEGNet | baseline | baseline | baseline | baseline |
-| EEGNet+HMLR | ↑ | ↑ | ↑ | consistent gain |
-| HEEGNet | **SOTA** | **SOTA** | **SOTA** | **best overall** |
+| Method | Visual EEG | Emotional EEG | Intracranial EEG | Average |
+|------|---------|---------|---------|------|
+| EEGNet | Baseline | Baseline | Baseline | Baseline |
+| EEGNet+HMLR | ↑ | ↑ | ↑ | Stable Gain |
+| HEEGNet | **SOTA** | **SOTA** | **SOTA** | **Overall Best** |
 
 ### Key Findings
-- Replacing the Euclidean MLR with a hyperbolic MLR alone yields improvements across all datasets, confirming that hyperbolic geometry is better suited for EEG.
-- t-SNE visualizations show markedly superior class separation in hyperbolic embeddings compared to Euclidean ones.
-- The two-stage DSMDBN strategy yields significant gains over moment alignment alone.
-- Performance improvements are also observed on motor imagery datasets (where hierarchical structure was not explicitly reported), suggesting the possible presence of unidentified hierarchical structure.
+- Replacing MLR with hyperbolic MLR alone improves performance across all datasets → hyperbolic geometry is better suited for EEG.
+- t-SNE visualization shows hyperbolic embeddings have significantly better class separability than Euclidean ones.
+- The two-stage DSMDBN strategy significantly outperforms moment alignment alone.
+- Performance gains are also observed on motor imagery datasets (where hierarchy was not explicitly reported) → suggests possible unidentified hierarchical structures.
 
 ## Highlights & Insights
-- **First systematic validation of EEG hyperbolicity**: Quantitative $\delta_{rel}$ analysis validated across multiple datasets provides a solid empirical foundation for this research direction.
-- **Rationale for the hybrid architecture**: Rather than adopting a purely hyperbolic network (which would discard signal-processing priors), the design first extracts meaningful features with Euclidean convolutions and then maps them to hyperbolic space — a design philosophy transferable to other domains.
-- **Coarse-to-fine nature of DSMDBN**: Moment alignment followed by distributional alignment constitutes a natural two-step strategy: the former brings means and scales closer, while the latter aligns overall distributional shape.
+- **First systematic validation of EEG hyperbolicity**: Quantitative analysis via $\delta_{rel}$ across multiple datasets provides a solid empirical foundation for this direction.
+- **Rationality of Hybrid Architecture**: Instead of pure hyperbolic layers (which lose signal processing priors), HEEGNet extracts features in Euclidean space before mapping to hyperbolic space—a design philosophy applicable to other domains.
+- **Coarse-to-fine DSMDBN**: Mapping moment alignment → distribution alignment is a natural two-step strategy, where the former aligns mean and scale, and the latter aligns the overall distribution shape.
 
 ## Limitations & Future Work
-- Hyperbolic operations (exponential/logarithmic maps) incur greater computational overhead than their Euclidean counterparts, posing challenges for real-time BCI applications.
-- The curvature $K$ is treated as a hyperparameter requiring manual tuning; adaptive curvature learning may be preferable.
-- HHSW may require a large number of projection directions to achieve accurate estimation in high dimensions.
-- Varying electrode counts across subjects in intracranial EEG datasets constrain cross-subject experimental setups.
+- Hyperbolic operations have higher computational overhead (exp/log maps) than Euclidean ones, affecting real-time BCI.
+- Curvature $K$ is a hyperparameter requiring tuning; adaptive curvature learning may be better.
+- HHSW might require many projection directions for accuracy in high dimensions.
+- Electrode counts vary across subjects in intracranial EEG, limiting cross-subject experimental setups.
 
 ## Related Work & Insights
-- **vs. EEGNet**: HEEGNet extends EEGNet with hyperbolic layers and DSMDBN, achieving comprehensive improvements.
-- **vs. Chang et al. (hyperbolic EEG)**: Their work focuses solely on contrastive pre-training, whereas HEEGNet presents a complete architecture design coupled with a domain adaptation framework.
-- **vs. Riemannian methods (e.g., SPDNet)**: SPDNet operates on the covariance matrix manifold, while HEEGNet operates in hyperbolic space, targeting distinct geometric structures.
+- **vs. EEGNet**: HEEGNet enhances EEGNet with hyperbolic layers and DSMDBN for across-the-board improvements.
+- **vs. Chang et al. (Hyperbolic EEG)**: They focus on contrastive pre-training; HEEGNet designs a complete architecture and domain adaptation scheme.
+- **vs. Riemannian methods like SPDNet**: SPDNet operates on covariance matrix manifolds, while HEEGNet operates in hyperbolic space, focusing on different geometric structures.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐⭐ First systematic demonstration of EEG hyperbolicity and first hybrid hyperbolic architecture for EEG.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Comprehensive coverage from preliminary studies to multi-dataset, multi-task, and ablation experiments.
-- **Writing Quality**: ⭐⭐⭐⭐ Background is well-introduced and methodology is clearly described.
-- **Value**: ⭐⭐⭐⭐ Introduces a novel geometric perspective to EEG decoding and opens a new direction in hyperbolic EEG research.
+- Novelty: ⭐⭐⭐⭐⭐ First systematic proof of EEG hyperbolicity and hybrid hyperbolic architecture.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ From background studies to multi-dataset, multi-task, and comprehensive ablation studies.
+- Writing Quality: ⭐⭐⭐⭐ Sufficient background introduction and clear methodological description.
+- Value: ⭐⭐⭐⭐ Introduces a new geometric perspective to EEG decoding and opens the hyperbolic EEG direction.
 
 <!-- RELATED:START -->
 
@@ -127,10 +135,10 @@ Cross-subject / cross-session adaptation:
 ## Related Papers
 
 - [\[ICML 2026\] EEG-Based Multimodal Learning via Hyperbolic Mixture-of-Curvature Experts](../../ICML2026/medical_imaging/eeg-based_multimodal_learning_via_hyperbolic_mixture-of-curvature_experts.md)
-- [\[AAAI 2026\] Shrinking the Teacher: An Adaptive Teaching Paradigm for Asymmetric EEG-Vision Alignment](../../AAAI2026/medical_imaging/shrinking_the_teacher_an_adaptive_teaching_paradigm_for_asymmetric_eeg-vision_al.md)
-- [\[NeurIPS 2025\] Convolutional Monge Mapping between EEG Datasets to Support Independent Component Labeling](../../NeurIPS2025/medical_imaging/convolutional_monge_mapping_between_eeg_datasets_to_support_independent_componen.md)
-- [\[AAAI 2026\] CAT-Net: A Cross-Attention Tone Network for Cross-Subject EEG-EMG Fusion Tone Decoding](../../AAAI2026/medical_imaging/cat-net_a_cross-attention_tone_network_for_cross-subject_eeg-emg_fusion_tone_dec.md)
-- [\[AAAI 2026\] NeuroBridge: Bio-Inspired Self-Supervised EEG-to-Image Decoding via Cognitive Priors and Bidirectional Semantic Alignment](../../AAAI2026/medical_imaging/neurobridge_bio-inspired_self-supervised_eeg-to-image_decoding_via_cognitive_pri.md)
+- [\[ICLR 2026\] Autoregressive Visual Decoding from EEG Signals](autoregressive_visual_decoding_from_eeg_signals.md)
+- [\[ICLR 2026\] Modeling the Density of Pixel-level Self-supervised Embeddings for Unsupervised Pathology Segmentation in Medical CT](modeling_the_density_of_pixel-level_self-supervised_embeddings_for_unsupervised_.md)
+- [\[CVPR 2026\] H2-Surv: Hierarchical Hyperbolic Multimodal Representation Learning for Survival Prediction](../../CVPR2026/medical_imaging/h2-surv_hierarchical_hyperbolic_multimodal_representation_learning_for_survival_.md)
+- [\[ICLR 2026\] ODEBRAIN: Continuous-Time EEG Graph for Modeling Dynamic Brain Networks](odebrain_continuous-time_eeg_graph_for_modeling_dynamic_brain_networks.md)
 
 </div>
 

@@ -2,166 +2,172 @@
 title: >-
   [Paper Note] Improving 2D Diffusion Models for 3D Medical Imaging with Inter-Slice Consistent Stochasticity
 description: >-
-  [ICLR 2026][Medical Imaging][3D medical reconstruction] This paper proposes Inter-Slice Consistent Stochasticity (ISCS), which generates inter-slice correlated noise via spherical linear interpolation (Slerp) during the…
+  [ICLR 2026][Medical Imaging][Paper Note] Ours proposes Inter-Slice Consistent Stochasticity (ISCS), which eliminates inter-slice discontinuity artifacts in 3D medical reconstruction from 2D diffusion priors by generating inter-slice correlated noise via Spherical Linear Interpolation (Slerp) during the re-noising step of diffusion sampling. It requires zero e
 tags:
-  - "ICLR 2026"
-  - "Medical Imaging"
-  - "3D medical reconstruction"
-  - "2D diffusion models"
-  - "inter-slice consistency"
-  - "spherical linear interpolation"
-  - "plug-and-play"
+  - ICLR 2026
+  - Medical Imaging
 date: 2026-05-08
-content_hash: e75fb79cb6e8af03
+content_hash: 3e116eb28a6749e9
 ---
-
 # Improving 2D Diffusion Models for 3D Medical Imaging with Inter-Slice Consistent Stochasticity
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2602.04162](https://arxiv.org/abs/2602.04162)  
 **Code**: [GitHub](https://github.com/duchenhe/ISCS)  
-**Area**: Medical Imaging / Diffusion Models
-**Keywords**: 3D medical reconstruction, 2D diffusion models, inter-slice consistency, spherical linear interpolation, plug-and-play
+**Area**: Medical Imaging/Diffusion Models  
+**Keywords**: 3D Medical Reconstruction, 2D Diffusion Models, Inter-slice Consistency, Spherical Linear Interpolation, Plug-and-play
 
 ## TL;DR
 
-This paper proposes Inter-Slice Consistent Stochasticity (ISCS), which generates inter-slice correlated noise via spherical linear interpolation (Slerp) during the re-noising step of diffusion sampling, eliminating inter-slice discontinuity artifacts in 3D medical reconstruction with 2D diffusion priors at their root cause — with zero additional computation, hyperparameters, or training overhead, and plug-and-play compatibility with any 2D diffusion inverse problem solver, yielding consistent improvements on sparse-view CT, limited-angle CT, and MRI super-resolution.
+Ours proposes Inter-Slice Consistent Stochasticity (ISCS), which eliminates inter-slice discontinuity artifacts in 3D medical reconstruction from 2D diffusion priors by generating inter-slice correlated noise via Spherical Linear Interpolation (Slerp) during the re-noising step of diffusion sampling. It requires zero extra computation, hyperparameters, or training overhead, and can be plugged-and-played into any 2D diffusion inverse solver, showing consistent improvements in sparse-view CT, limited-angle CT, and MRI super-resolution.
 
 ## Background & Motivation
 
-**Clinical demand for 3D medical imaging**: Clinical diagnosis (e.g., tumor volume assessment, surgical planning, disease progression tracking) relies on complete and accurate 3D volumetric reconstruction rather than individual 2D slices.
+**Clinical demand for 3D medical imaging**: Clinical diagnosis (e.g., tumor volume assessment, surgical planning, disease progression tracking) relies on complete and accurate 3D volumetric reconstruction rather than isolated 2D slices.
 
-**Infeasibility of 3D diffusion models**: Training diffusion models directly on high-dimensional volumetric data suffers from the curse of dimensionality — memory, computation, and data requirements far exceed what most academic and industrial groups can afford (Pinaya et al., 2022; Guo et al., 2025; Wang et al., 2025).
+**Infeasibility of 3D diffusion models**: Directly training diffusion models on high-dimensional volumetric data faces the "curse of dimensionality"—memory, computation, and data requirements far exceed the capacity of most laboratories and industry (Pinaya et al., 2022; Guo et al., 2025; Wang et al., 2025).
 
-**Practical compromise with 2D priors**: The prevailing approach trains diffusion models on 2D slices and reconstructs 3D volumes slice by slice — computationally feasible, but introducing new problems.
+**Practical compromise of 2D priors**: The mainstream approach is to train diffusion models on 2D slices and then reconstruct the 3D volume layer-by-layer; while computationally feasible, this introduces new issues.
 
-**Root cause of inter-slice discontinuity**: Each 2D slice is sampled independently during reverse diffusion, and the inherent stochastic noise injection renders the sampling trajectories of adjacent slices entirely uncorrelated, producing severe structural discontinuities and artifacts along the z-axis upon stacking.
+**Root cause of inter-slice discontinuity**: Each 2D slice is sampled independently during the reverse diffusion process. The inherent stochastic noise injection causes the sampling trajectories of adjacent slices to be completely uncorrelated, resulting in severe structural discontinuities and artifacts along the z-axis when stacked.
 
-**Limitations of existing methods**: (a) TV regularization — introduces sensitive hyperparameters and over-smooths fine details; (b) 3D patch training / biplanar priors — increase training/inference complexity and impose additional data constraints (e.g., requiring cubic volumes); (c) these methods fundamentally treat symptoms rather than the root cause.
+**Limitations of Prior Work**: (a) TV regularization introduces sensitive hyperparameters and tends to over-smooth, erasing details; (b) 3D patch training / bi-planar priors increase training/inference complexity and impose extra constraints on data (e.g., requiring cubes); (c) these methods are essentially "post-processing patches" that do not address the root cause.
 
-**Inspiration from video restoration**: Kwon & Ye (2025) identify that temporal flickering in video restoration likewise stems from incoherent diffusion sampling stochasticity, and propose Batch-Consistent Sampling (BCS) as a remedy. This paper systematically transfers that insight to 3D medical reconstruction and proposes a superior solution.
+**Inspiration from the video domain**: Kwon & Ye (2025) noted that temporal flickering in video restoration also stems from uncoordinated diffusion sampling stochasticity and proposed Batch-Consistent Sampling (BCS) to mitigate it. Ours systematically migrates this insight to 3D medical reconstruction and proposes a superior solution.
 
 ## Method
 
 ### Overall Architecture
 
-The 3D medical inverse problem solving framework based on 2D diffusion models consists of three iterative steps: (1) denoising prediction $\hat{x}_{0|t}$, (2) data fidelity update, and (3) re-noising to timestep $t-1$. ISCS modifies only the stochastic noise injection in step (3), leaving all other steps unchanged.
+The process of solving 3D medical inverse problems layer-by-layer based on 2D diffusion models is an iterative three-step process: first, using the diffusion network for denoising to predict the clean slice $\hat{x}_{0|t}$; second, applying data fidelity updates to impose measurement constraints; and finally, re-noising to time step $t-1$ to continue the next round. All modifications of ISCS occur in this last step—replacing the independently sampled random noise for each layer with a globally smooth and correlated noise volume. Denoising, fidelity, network structure, and training procedures remain unchanged.
 
-### Key Design 1: Root Cause Analysis of Inter-Slice Inconsistency
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    IN["Under-determined measurement y<br/>(Sparse-view/Limited-angle CT, Anisotropic MRI)"] --> DEN["① Denoising Prediction<br/>Network estimates clean slice x̂0|t"]
+    DEN --> FID["② Data Fidelity Update<br/>Project measurement constraints back"]
+    FID --> ISCS
 
-- **Function**: Systematically analyzes the fundamental cause of inter-slice discontinuity when using 2D diffusion priors for 3D reconstruction.
-- **Mechanism**: The re-noising step of the DDIM sampler can be decomposed into a deterministic component and a stochastic component:
+    subgraph ISCS["③ re-noising injecting ISCS correlated noise"]
+        direction TB
+        ANCHOR["Sample start/end anchors<br/>z₁, z_S ~ N(0, I)"] --> SLERP["Slerp along geodesic<br/>Generate S-layered correlated noise ε^ISCS<br/>(Near-strong far-weak, each layer remains standard Gaussian)"]
+    end
 
-$$x_{t-1} = \sqrt{\bar{\alpha}_{t-1}}\hat{x}_{0|t} + \underbrace{\sqrt{1-\bar{\alpha}_{t-1}-\eta^2\tilde{\beta}_t^2}\epsilon_{\theta^*}^{(t)}(x_t)}_{\text{deterministic noise}} + \underbrace{\eta\tilde{\beta}_t\epsilon}_{\text{stochastic noise}}$$
+    ISCS --> CHK{"Sampled to t = 0 ?"}
+    CHK -->|No, proceed to t-1| DEN
+    CHK -->|Yes| OUT["Inter-slice consistent<br/>3D volumetric data"]
+```
 
-The deterministic component is governed by network predictions (yielding similar outputs for similar inputs), whereas the stochastic noise $\epsilon \sim \mathcal{N}(0, \mathbf{I})$ is sampled independently for each slice — this is the root cause of inter-slice inconsistency. When the inverse problem is severely underdetermined (e.g., sparse-view CT), the data fidelity term provides weak constraints, granting the independent noise excessive degrees of freedom to drive adjacent slices toward entirely different trajectories.
+### Key Designs
 
-- **Design Motivation**: Only by identifying the root cause (incoherent stochasticity) can a principled solution be designed, rather than post-hoc treatment of symptoms.
+**1. Root cause analysis: Locating inter-slice discontinuity in the stochastic component of re-noising**
 
-### Key Design 2: Slerp-Based Inter-Slice Correlated Noise Generation
+To treat the disease at its source, the lesion must first be accurately located. Examining the re-noising step of the DDIM sampler:
 
-- **Function**: Replaces independent noise sampling with Spherical Linear Interpolation (Slerp) to generate smoothly correlated noise volumes across slices.
-- **Mechanism**: For a volume of $S$ slices, two anchor noise vectors $\mathbf{z}_1, \mathbf{z}_S \sim \mathcal{N}(0, \mathbf{I})$ are sampled, and intermediate-slice noise is generated by interpolating along the geodesic on the high-dimensional hypersphere:
+$$x_{t-1} = \sqrt{\bar{\alpha}_{t-1}}\hat{x}_{0|t} + \underbrace{\sqrt{1-\bar{\alpha}_{t-1}-\eta^2\tilde{\beta}_t^2}\epsilon_{\theta^*}^{(t)}(x_t)}_{\text{确定性噪声}} + \underbrace{\eta\tilde{\beta}_t\epsilon}_{\text{随机噪声}}$$
+
+The deterministic term is determined by network predictions, which naturally yield similar outputs for similar adjacent slices, and thus is not the issue. The real trouble lies in the stochastic term $\epsilon \sim \mathcal{N}(0, \mathbf{I})$, which is sampled independently for every layer, causing the sampling trajectories of adjacent slices to be completely decoupled. When the inverse problem is severely under-constrained (e.g., sparse-view CT where the data fidelity term barely restricts the solution space), this independent stochasticity gains excessive degrees of freedom, pushing adjacent layers toward entirely different solutions, resulting in structural breaks and artifacts along the z-axis. This decomposition identifies "uncoordinated stochasticity" as the root cause and directly points out: by making this stochasticity correlated across layers, discontinuity can be eliminated at the source without post-hoc smoothing.
+
+**2. Slerp for correlated noise: Sharing stochasticity while maintaining distributions**
+
+Having identified the lesion, the key is to make the noise correlated across layers without violating the premise that each layer follows a standard Gaussian distribution. ISCS samples two anchors $\mathbf{z}_1, \mathbf{z}_S \sim \mathcal{N}(0, \mathbf{I})$ for the $S$-layered volume and uses Spherical Linear Interpolation (Slerp) along the geodesic of the high-dimensional hypersphere to generate noise for intermediate layers:
 
 $$\epsilon_i^{\text{ISCS}} = \text{slerp}(\mathbf{z}_1, \mathbf{z}_S; \alpha_i) = \frac{\sin((1-\alpha_i)\Omega)}{\sin(\Omega)}\mathbf{z}_1 + \frac{\sin(\alpha_i\Omega)}{\sin(\Omega)}\mathbf{z}_S$$
 
-where $\alpha_i = (i-1)/(S-1)$ is the normalized position and $\Omega = \arccos(\langle \mathbf{z}_1, \mathbf{z}_S \rangle / (\|\mathbf{z}_1\| \cdot \|\mathbf{z}_S\|))$ is the angle between the anchors.
+where $\alpha_i = (i-1)/(S-1)$ is the normalized position of the layer, and $\Omega = \arccos(\langle \mathbf{z}_1, \mathbf{z}_S \rangle / (\|\mathbf{z}_1\| \cdot \|\mathbf{z}_S\|))$ is the angle between the two anchors. The reason for using the geodesic rather than direct linear interpolation lies in the rigid constraints of high-dimensional geometry: the probability mass of a high-dimensional isotropic Gaussian is concentrated almost entirely on a thin spherical shell of radius $\sqrt{d}$ (Gaussian Annulus Theorem). Linear interpolation follows the chord, and the norm of interpolated points $\|z\| < \sqrt{d}$ would fall out of this typical set, making intermediate noise no longer valid standard Gaussian samples. Slerp follows the geodesic, maintaining the vector norm and distribution statistics, ensuring each layer's noise still follows $\mathcal{N}(0, \mathbf{I})$, thereby injecting inter-slice correlation without shaking the theoretical foundation of diffusion sampling.
 
-- **Design Motivation**: Why Slerp rather than linear interpolation? By the Gaussian Annulus Theorem, the probability mass of a high-dimensional isotropic Gaussian concentrates on a thin spherical shell of radius $\sqrt{d}$. Linear interpolation traverses a chord — intermediate points satisfy $\|z\| < \sqrt{d}$, deviating from the typical set. Slerp traverses the geodesic, preserving vector norms and distributional statistics so that each slice's noise remains distributed as $\mathcal{N}(0, \mathbf{I})$.
+**3. Gradient correlation structure: Replacing BCS identical noise with "Near-strong, Far-weak"**
 
-### Key Design 3: Why Slerp Outperforms BCS (Identical Noise)
+BCS in the video domain also seeks to eliminate stochasticity between frames by injecting identical noise into all frames/layers. While sufficient for short videos (<16 frames, small inter-frame changes), this is too rigid for medical volumes (>300 layers, significant inter-slice anatomical changes). Identical noise strongly suppresses anatomical variation, improperly copying features from one layer to another with entirely different anatomy, creating stripe-like "copy artifacts." Slerp noise naturally avoids this: adjacent layers are highly correlated due to their small geodesic distance, ensuring local consistency, while correlation naturally decays as distance increases, leaving space to accommodate global anatomical changes. This "near-strong, far-weak" structure perfectly matches the "locally continuous, globally varying" essence of medical volumetric data.
 
-- **Function**: Constructs a noise structure with "strong local correlation, weak long-range correlation," replacing BCS's identical-noise scheme.
-- **Mechanism**: BCS applies identical noise to all slices, which is viable in video restoration (<16 frames, small inter-frame variation) but is overly rigid for medical volumes (>300 slices, significant inter-slice anatomical variation) — suppressing anatomical change and inducing "copy artifacts" (features inappropriately replicated across anatomically distinct slices). ISCS Slerp noise naturally satisfies the desired properties: (i) adjacent slices have highly correlated noise → local consistency; (ii) correlation decays with distance → global structural variation is permitted.
-- **Design Motivation**: The intrinsic characteristic of medical volumetric data is "locally continuous but globally varying"; the correlation structure of the noise should match this property rather than being uniformly identical or uniformly independent.
+**4. Plug-and-play integration: Zero extra overhead**
 
-### Key Design 4: Plug-and-Play Integration
-
-- **Function**: The ISCS noise volume directly replaces independent noise in the re-noising step of any diffusion sampler.
-- **Mechanism**: The modified update rule is:
+ISCS is implemented by simply replacing the independent noise in the sampler's re-noising step with the generated correlated noise volume:
 
 $$x_{t-1} = \sqrt{\bar{\alpha}_{t-1}}\hat{x}_{0|t} + \sqrt{1-\bar{\alpha}_{t-1}-\sigma_t^2}\cdot\epsilon_\theta(x_t) + \sigma_t \cdot \epsilon^{\text{ISCS}}$$
 
-No changes to network architecture, loss function, training procedure, or inference optimization steps are required.
-
-- **Design Motivation**: Minimizing integration cost enables broad applicability to any existing 2D diffusion inverse problem solver (DDNM, DDS, etc.), which is especially valuable in resource-constrained medical imaging settings.
+The network architecture, loss function, training workflow, and inference-time optimization steps all remain unchanged, and no new hyperparameters are introduced. Because the modification is so minimal, it can be attached to any existing 2D diffusion inverse solver (DDNM, DDS, etc.), which is particularly friendly to medical imaging scenarios where compute and data are often scarce.
 
 ## Key Experimental Results
 
 ### Experimental Setup
 
-- **CT dataset**: AAPM 2016 low-dose CT (10 patients, 5936 slices, 256×256); evaluated on 256×256×300 volumes.
-- **MRI dataset**: IXI T1 brain scans; evaluated on 256×256×150 volumes with 5× downsampling along the z-axis to simulate anisotropy.
-- **Baselines**: FDK, ADMM-TV (traditional); DDNM, DDS (2D diffusion solvers); DDS+TV regularization.
-- **Evaluation metrics**: PSNR, SSIM, LPIPS; independently evaluated on three views (axial / coronal / sagittal).
+- **CT Dataset**: AAPM 2016 Low-dose CT (10 patients, 5936 slices, 256×256), evaluated volume 256×256×300.
+- **MRI Dataset**: IXI T1 Brain scans, evaluated volume 256×256×150, z-axis 5× downsampling to simulate anisotropy.
+- **Baselines**: FDK, ADMM-TV (Traditional); DDNM, DDS (2D Diffusion Solvers); DDS+TV regularization.
+- **Metrics**: PSNR, SSIM, LPIPS; three views (Axial/Coronal/Sagittal) evaluated independently.
 
-### Table 1: Sparse-View CT (30 views) Main Results
+### Main Results
+
+#### Table 1: Sparse-view CT (30 views) Results
 
 | Method | Axial PSNR | Coronal PSNR | Sagittal PSNR | Coronal SSIM | Sagittal LPIPS |
-|--------|-----------|-------------|-------------|-------------|---------------|
+|------|-----------|-------------|-------------|-------------|---------------|
 | FDK | 23.91 | 23.92 | 23.79 | 0.414 | 0.310 |
 | ADMM-TV | 32.94 | 33.67 | 33.72 | 0.895 | 0.107 |
 | DDS | 34.76 | 35.12 | 35.33 | 0.906 | 0.141 |
 | DDS+TV | 36.26 | 37.08 | 37.50 | 0.938 | 0.088 |
-| **DDS+ISCS** | **36.97** | **37.75** | **38.16** | **0.944** | **0.065** |
+| **DDS+ISCS (Ours)** | **36.97** | **37.75** | **38.16** | **0.944** | **0.065** |
 
-### Table 2: Limited-Angle CT ([0°, 100°]) Main Results
+#### Table 2: Limited-angle CT ([0°, 100°]) Results
 
-| Method | Axial PSNR | Coronal PSNR | Sagittal PSNR | Coronal SSIM | \|Δ\| |
-|--------|-----------|-------------|-------------|-------------|-----|
+| Method | Axial PSNR | Coronal PSNR | Sagittal PSNR | Coronal SSIM | |Δ| |
+|------|-----------|-------------|-------------|-------------|-----|
 | DDNM | 28.40 | 28.75 | 28.22 | 0.774 | 0.016443 |
 | DDNM+ISCS | 30.89 | 31.88 | 31.59 | 0.906 | 0.001899 |
 | DDS+TV | 31.40 | 33.33 | 32.83 | 0.906 | 0.002566 |
-| **DDS+ISCS** | **31.65** | **32.90** | **32.49** | **0.917** | **0.001966** |
+| **DDS+ISCS (Ours)** | **31.65** | **32.90** | **32.49** | **0.917** | **0.001966** |
 
-### Table 3: BCS vs. ISCS Ablation (SVCT)
+### Ablation Study
+
+#### Table 3: BCS vs ISCS (SVCT)
 
 | Noise Type | Coronal PSNR | Coronal SSIM | Sagittal PSNR | Sagittal LPIPS |
-|-----------|-------------|-------------|-------------|---------------|
-| BCS (identical noise) | 38.00 | 0.937 | 38.24 | 0.081 |
-| **ISCS (Slerp noise)** | **38.16** | **0.941** | **38.78** | **0.073** |
+|---------|-------------|-------------|-------------|---------------|
+| BCS (Identical Noise) | 38.00 | 0.937 | 38.24 | 0.081 |
+| **ISCS (Slerp Noise)** | **38.16** | **0.941** | **38.78** | **0.073** |
 
 ## Key Findings
 
-1. **ISCS consistently improves across all tasks and baselines**: Regardless of solver (DDNM or DDS) or modality (CT or MRI), adding ISCS yields improvements, and in most metrics surpasses TV regularization, which requires additional optimization.
-2. **Gains are most pronounced on coronal and sagittal views**: These two views directly reflect inter-slice consistency along the z-axis — ISCS reduces Sagittal LPIPS on SVCT from 0.141 (DDS) to 0.065 (a 54% reduction), and on LACT from 0.193 to 0.077.
-3. **Slerp outperforms BCS**: Identical noise produces conspicuous stripe-like "copy artifacts" in medical volumes; the gradually varying correlation structure of Slerp better accommodates inter-slice anatomical variation.
-4. **Inter-slice difference metric |Δ| converges earlier**: ISCS brings the inter-slice difference close to the ground-truth reference early in the sampling process, whereas baselines maintain a large gap until late stages — ISCS narrows the effective search space, enabling more reliable convergence.
-5. **DDNM benefits more substantially**: On the LACT task, DDNM+ISCS improves over DDNM by +2.49/+3.13/+3.37 dB (three views), indicating that more underdetermined inverse problems benefit more from noise coordination.
-6. **Cost of TV regularization**: Although TV also improves quantitative metrics, it introduces over-smoothing/"cartoonization" artifacts that erase fine anatomical details — ISCS exhibits no such side effect.
+1. **ISCS consistently improves across all tasks and baselines**: Whether using DDNM or DDS, and whether for CT or MRI, adding ISCS yields improvements, outperforming TV regularization which requires additional optimization in most metrics.
+2. **Significant gains in Coronal and Sagittal views**: These two views directly reflect inter-slice consistency along the z-axis. ISCS's Sagittal LPIPS on SVCT dropped from 0.141 (DDS) to 0.065 (a 54% reduction), and from 0.193 to 0.077 on LACT.
+3. **Slerp outperforms BCS**: Identical noise creates obvious stripe "copy artifacts" in medical volumes, while Slerp's gradient correlation structure is better suited for inter-slice anatomical changes.
+4. **Early convergence of inter-slice difference metric |Δ|**: ISCS allows inter-slice differences to approach GT reference values early in the sampling process, whereas baselines maintain large gaps until the end. ISCS narrows the effective search space, helping the sampler converge more reliably.
+5. **DDNM benefits more**: In LACT, DDNM+ISCS achieves gains of +2.49/+3.13/+3.37 dB (three views) over DDNM, indicating that weaker-constrained inverse problems benefit more from noise coordination.
+6. **The cost of TV regularization**: While TV can improve quantitative metrics, it produces visually over-smoothed or "cartoonized" artifacts that erase fine anatomical details—ISCS has no such side effects.
 
 ## Highlights & Insights
 
-- **Root-cause treatment vs. symptom treatment**: TV regularization post-hoc smooths the consequences of discontinuity; ISCS controls the cause of discontinuity at the source. The former masks symptoms; the latter eliminates the root cause — a more elegant and thorough solution.
-- **Principled use of high-dimensional geometry**: The choice of Slerp is not ad hoc but is rigorously motivated by the Gaussian Annulus Theorem — high-dimensional Gaussian noise concentrates on a hyperspherical shell, so interpolation must follow geodesics to preserve distributional invariance.
-- **Zero-cost improvement**: No additional computational overhead, no introduced hyperparameters, no retraining required — highly practical for medical imaging settings with limited computational resources.
-- **Cross-domain transfer from video to medical imaging**: Inter-frame discontinuity (video) and inter-slice discontinuity (3D medical) share the same root cause (incoherent sampling stochasticity), but directly applying BCS is insufficient; the correlation structure must be tailored to the characteristics of medical volumes (long sequences + large anatomical variation) — exemplifying the research paradigm of "borrowing ideas while adapting to context."
+- **Root treatment vs Symptom treatment**: TV regularization is "post-processing smoothing of inconsistent results," while ISCS is "controlling the cause of inconsistency at the source." The former masks symptoms; the latter eliminates the cause, making it more elegant and thorough.
+- **Principled use of high-dimensional geometry**: The choice of Slerp is not ad hoc but based on rigorous mathematical derivation of the Gaussian Annulus Theorem—high-dimensional Gaussian noise concentrates on hyperspherical shells, so interpolation must follow the geodesic to preserve distribution invariance.
+- **Zero-cost improvement**: No increase in computational overhead, no new hyperparameters, and no retraining required—highly valuable for medical imaging scenarios with limited computational resources.
+- **Cross-domain transfer from video to medical**: Inter-frame discontinuity (video) and inter-slice discontinuity (3D medical) share the same root cause (uncoordinated sampling stochasticity), but direct application of BCS is suboptimal. Designing a more refined correlation structure for medical volumetric data (long sequences + large anatomical changes) demonstrates a research paradigm of "borrowing ideas but adapting to the domain."
 
 ## Limitations & Future Work
 
-1. **Only two inverse problem solvers evaluated**: Experiments are conducted only on DDNM and DDS, without coverage of more recent diffusion-based inverse solvers (e.g., MCG, DiffPIR), leaving generalizability to be further confirmed.
-2. **Fixed noise correlation structure**: The Slerp structure with two endpoint anchors and linear position assignment is fixed — neither learned nor data-adaptive. Regions with rapid anatomical variation (e.g., the cervicothoracic junction) may require spatially adaptive correlation fields.
-3. **Only VE diffusion models evaluated**: All experiments are conducted under the VE-SDE framework; performance under VP-SDE or flow matching-based frameworks remains unverified.
-4. **Limited evaluation data scale**: CT evaluation uses a single patient volume, and MRI also uses a single volume — limiting statistical significance.
-5. **Multi-anchor or piecewise Slerp not explored**: For very long sequences (>300 slices), two endpoint anchors may be insufficient to finely control inter-slice correlation in intermediate regions; piecewise interpolation or multi-anchor strategies warrant exploration.
+1. **Only two types of inverse solvers verified**: Experiments were only conducted on DDNM and DDS, not covering more recent DIS methods (e.g., MCG, DiffPIR), so generalizability needs further confirmation.
+2. **Fixed noise correlation structure**: The Slerp structure with two terminal anchors and linear allocation is fixed and neither learned nor adapted to data—for regions with drastic anatomical changes (e.g., cervicothoracic junction), a spatially adaptive correlation field may be needed.
+3. **Only VE diffusion models used**: All experiments are based on the VE-SDE framework, without verifying performance under VP-SDE or Flow Matching-based frameworks.
+4. **Limited evaluation data scale**: CT evaluation used volume from only one patient, and MRI also used only one volume—statistical significance is limited.
+5. **Multi-anchor or segmented Slerp not explored**: For ultra-long sequences (>300 layers), two terminal anchors might be insufficient for fine-grained control of correlations in middle regions; segmented interpolation or multi-anchor strategies are worth exploring.
 
 ## Related Work & Insights
 
-### vs. DDS+TV (Chung et al., 2024)
-DDS+TV performs an additional TV regularization optimization step after re-noising to smooth the z-axis — requiring tuning of a sensitive regularization weight $\lambda$ and risking over-smoothing that erases detail. ISCS operates directly on the re-noising noise itself, requiring no extra optimization steps or hyperparameters. On SVCT, Sagittal LPIPS is 0.065 vs. TV's 0.088 (↓26%), while avoiding cartoonization artifacts.
+### vs DDS+TV (Chung et al., 2024)
+DDS+TV executes an additional TV regularization optimization step after re-noising to smooth the z-axis—this requires tuning the sensitive regularization weight $\lambda$, and over-smoothing can erase details. ISCS starts from the re-noising noise itself, requiring no extra optimization steps or hyperparameters. On SVCT, it achieves a Sagittal LPIPS of 0.065 vs 0.088 for TV (↓26%), while avoiding cartoonized artifacts.
 
-### vs. BCS (Kwon & Ye, 2025)
-BCS is designed for video restoration and applies identical noise to all frames/slices — viable for short videos (<16 frames) but producing "copy artifacts" in medical volumes (>300 slices). ISCS Slerp noise allows inter-slice correlation to decay with distance, better accommodating the locally continuous yet globally varying nature of medical data. Ablation experiments (Table 2) show ISCS outperforms BCS by 0.54 dB PSNR and 0.008 LPIPS on the sagittal view.
+### vs BCS (Kwon & Ye, 2025)
+BCS is designed for video restoration and applies identical noise to all frames/layers—feasible for short videos (<16 frames) but produces "copy artifacts" in medical volumes (>300 layers). ISCS's Slerp noise allows inter-slice correlation to decay with distance, better adapting to the local continuity and global variation of medical data. Ablation (Table 3) shows ISCS outperforms BCS by 0.54 dB PSNR and 0.008 LPIPS on Sagittal views.
 
-### vs. DiffusionBlend (Song et al., 2024)
-DiffusionBlend mixes diffusion scores via 3D patch training to enhance 3D consistency — requiring additional 3D training cost and specialized data processing. ISCS requires no training whatsoever, modifying only the noise sampling at inference time, making it simpler and more general.
+### vs DiffusionBlend (Song et al., 2024)
+DiffusionBlend enhances 3D consistency by blending diffusion scores via 3D patch training—this requires additional 3D training costs and specialized data processing. ISCS requires no training at all and only modifies the noise sampling method during inference, making it simpler and more universal.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ Concise root-cause analysis + principled solution leveraging high-dimensional geometry; application of Slerp in diffusion sampling is novel.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Cross-validation across three tasks (SVCT + LACT + MRI SR) × two solvers (DDNM + DDS), with ablation and trajectory analysis.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ Clear and coherent logical chain from problem definition → root-cause analysis → solution derivation → experimental validation.
-- **Value**: ⭐⭐⭐⭐⭐ Zero additional computation + plug-and-play + open-source code; directly practical for the 3D medical imaging community.
+- **Novelty**: ⭐⭐⭐⭐ Concise analysis from the root cause + principled solution using high-dimensional geometry. Slerp application in diffusion sampling is novel.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ Cross-validation across three tasks (SVCT+LACT+MRI SR) and two solvers (DDNM+DDS), including ablation and trajectory analysis.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ Clear and smooth logical chain from problem definition → root cause analysis → solution derivation → experimental verification.
+- **Value**: ⭐⭐⭐⭐⭐ Zero extra computation + plug-and-play + open-source code; directly valuable for the 3D medical imaging community.
 
 <!-- RELATED:START -->
 
@@ -169,11 +175,11 @@ DiffusionBlend mixes diffusion scores via 3D patch training to enhance 3D consis
 
 ## Related Papers
 
+- [\[CVPR 2026\] Revisiting 2D Foundation Models for Scalable 3D Medical Image Classification](../../CVPR2026/medical_imaging/revisiting_2d_foundation_models_for_scalable_3d_medical_image_classification.md)
+- [\[ICLR 2026\] You Point, I Learn: Online Adaptation of Interactive Segmentation Models for Handling Distribution Shifts in Medical Imaging](you_point_i_learn_online_adaptation_of_interactive_segmentation_models_for_handl.md)
 - [\[ICLR 2026\] DM4CT: Benchmarking Diffusion Models for Computed Tomography Reconstruction](dm4ct_benchmarking_diffusion_models_for_computed_tomography_reconstruction.md)
+- [\[ICLR 2026\] OmniCT: Towards a Unified Slice-Volume LVLM for Comprehensive CT Analysis](omnict_towards_a_unified_slice-volume_lvlm_for_comprehensive_ct_analysis.md)
 - [\[ICLR 2026\] Adaptive Domain Shift in Diffusion Models for Cross-Modality Image Translation](adaptive_domain_shift_in_diffusion_models_for_cross-modality_image_translation.md)
-- [\[ICML 2026\] Are We Overconfident in Models and Results for Semi-Supervised 3D Medical Image Segmentation?](../../ICML2026/medical_imaging/are_we_overconfident_in_models_and_results_for_semi-supervised_3d_medical_image_.md)
-- [\[CVPR 2026\] Are General-Purpose Vision Models All We Need for 2D Medical Image Segmentation? A Cross-Dataset Empirical Study](../../CVPR2026/medical_imaging/are_general-purpose_vision_models_all_we_need_for_2d_medical_image_segmentation_.md)
-- [\[NeurIPS 2025\] PolyPose: Deformable 2D/3D Registration via Polyrigid Transformations](../../NeurIPS2025/medical_imaging/polypose_deformable_2d3d_registration_via_polyrigid_transformations.md)
 
 </div>
 

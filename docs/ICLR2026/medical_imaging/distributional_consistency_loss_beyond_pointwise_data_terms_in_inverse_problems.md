@@ -2,81 +2,61 @@
 title: >-
   [Paper Note] Distributional Consistency Loss: Beyond Pointwise Data Terms in Inverse Problems
 description: >-
-  [ICLR 2026][Medical Imaging][Inverse Problems] This paper proposes the Distributional Consistency (DC) loss, which replaces conventional pointwise data fidelity terms (e.g., MSE/NLL) with distribution-level calibration…
+  [ICLR 2026][Medical Imaging][Deep Image Prior] The authors propose the Distributional Consistency (DC) loss, which replaces traditional pointwise data fidelity terms (e.g., MSE/NLL) with distribution-level calibration. This approach avoids overfitting to noise, significantly improving performance in DIP denoising and PET image reconstruction without requiring early
 tags:
-  - "ICLR 2026"
-  - "Medical Imaging"
-  - "Inverse Problems"
-  - "Data Fidelity"
-  - "Distributional Consistency"
-  - "PET Reconstruction"
-  - "Deep Image Prior"
+  - ICLR 2026
+  - Medical Imaging
+  - Deep Image Prior
 date: 2026-05-08
-content_hash: 0693557abf0b07ab
+content_hash: d7ca4931ae309e68
 ---
-
 # Distributional Consistency Loss: Beyond Pointwise Data Terms in Inverse Problems
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2510.13972](https://arxiv.org/abs/2510.13972)  
 **Code**: [Available](https://github.com/GeorgeWebber/Distributional-Consistency-Loss)  
-**Area**: Medical Imaging
-**Keywords**: Inverse Problems, Data Fidelity, Distributional Consistency, PET Reconstruction, Deep Image Prior
+**Area**: Medical Imaging  
+**Keywords**: Inverse Problems, Data Fidelity Term, Distributional Consistency, PET Reconstruction, Deep Image Prior
 
 ## TL;DR
 
-This paper proposes the Distributional Consistency (DC) loss, which replaces conventional pointwise data fidelity terms (e.g., MSE/NLL) with distribution-level calibration, thereby eliminating overfitting to noise. The approach achieves significant performance gains in DIP-based denoising and PET image reconstruction without requiring early stopping.
+The authors propose the Distributional Consistency (DC) loss, which replaces traditional pointwise data fidelity terms (e.g., MSE/NLL) with distribution-level calibration. This approach avoids overfitting to noise, significantly improving performance in DIP denoising and PET image reconstruction without requiring early stopping.
 
 ## Background & Motivation
 
-The central challenge in inverse problems (medical imaging, geophysics, signal processing, etc.) is recovering the true signal from noisy measurements. Conventional methods decompose the objective into a **data fidelity term** and a **regularization term**. Data fidelity terms such as MSE and negative log-likelihood (NLL) measure pointwise discrepancies between predictions and noisy measurements, giving rise to a fundamental issue: **the optimization objective encourages the model to match individual noise realizations rather than ensuring statistical consistency between measurements and the model**.
+A core challenge in inverse problems (medical imaging, geophysics, signal processing, etc.) is recovering the true signal from noisy measurements. Traditional methods decompose the objective function into a **data fidelity term** and a **regularization term**. Data fidelity terms (such as MSE or negative log-likelihood, NLL) measure the discrepancy between predictions and noisy measurements pointwise. This leads to a fundamental issue: **the optimization objective encourages the model to match individual noise realizations rather than ensuring the measurements are statistically consistent with the model.**
 
-Under noisy realizations, the true signal is not the minimizer of pointwise data terms. Regularization is thus forced to simultaneously suppress noise fitting and impose structural priors—two conflicting objectives. Although early stopping and bias criteria can alleviate this tension, they require explicit hyperparameter tuning and do not modify the objective function itself.
+Under noisy realizations, the true signal is not the minimizer of the pointwise data term. Consequently, regularization must simultaneously "suppress noise fitting" and "impose structural priors," two tasks that are often in conflict. While early stopping or discrepancy principles can mitigate this, they require explicit hyperparameter tuning and do not change the objective function itself.
 
-**Core Motivation**: Can a data fidelity term be designed that fundamentally eliminates the incentive to fit noise, allowing regularization to focus exclusively on structural constraints?
+**Key Motivation**: Can a data fidelity term be designed to fundamentally eliminate the incentive to fit noise, allowing regularization to focus solely on structural constraints?
 
 ## Method
 
 ### Overall Architecture
 
-The DC loss is grounded in the **Probability Integral Transform (PIT)**: if a model is correctly calibrated, the quantile of each measurement within its predicted noise distribution should follow a uniform distribution. The DC loss serves as a data fidelity term by measuring the deviation of these empirical quantile values from uniformity.
-
-**Intuition for three fitting regimes**:
-
-- **Underfitting**: Most measurements fall in the tails of the predicted distribution; the quantile histogram peaks near 0 or 1.
-- **Well-calibrated**: The quantile histogram is approximately uniform.
-- **Overfitting**: Measurements concentrate near the center of the predicted distribution; the histogram exhibits a sharp peak near 0.5.
+The DC loss shifts the data fidelity term from "comparing measurements and predictions pointwise" to "testing whether a batch of measurements is statistically consistent with the model." The theoretical foundation is the **Probability Integral Transform (PIT)**: if the noise distribution predicted by the model is correct, the cumulative probability of each measurement falling within its predicted distribution should follow a uniform distribution. By measuring the degree to which the empirical distribution of these cumulative probabilities deviates from uniformity, the quality of the model can be assessed without pointwise noise fitting. Underfitting causes measurements to cluster at the ends of the predicted distribution (histograms peaking near 0 or 1), while overfitting causes clustering at the center (peaking at 0.5); the histogram is flat only when correctly calibrated.
 
 ### Key Designs
 
-**Step 1 – CDF Evaluation**: For each measurement $m_i$ and predicted noise distribution $\mathcal{D}_i(\hat{y}_i)$, compute the cumulative probability:
+**1. PIT Calibration instead of Pointwise Comparison: Functionally eliminating noise-fitting incentives**
 
-$$s_i = F_i(m_i | \hat{y}_i) = \mathbb{P}_{c \sim \mathcal{D}_i(\hat{y}_i)}(c \leq m_i)$$
+The minimum of pointwise data terms (MSE, NLL) coincides exactly with the noisy measurement, causing models to fit noise as optimization progresses. In contrast, DC calculates the cumulative probability $s_i = F_i(m_i \mid \hat{y}_i) = \mathbb{P}_{c \sim \mathcal{D}_i(\hat{y}_i)}(c \leq m_i)$ for each measurement $m_i$ and its predicted noise distribution $\mathcal{D}_i(\hat{y}_i)$, then requires the set $\{s_i\}$ to follow a uniform distribution. Thus, the optimal solution is no longer a single noise realization but an **equivalence class**—all predictions that make $\{s_i\}$ approximately uniform achieve low loss. These form a manifold near the maximum likelihood solution, allowing regularization to select the most structurally reasonable solution within this manifold without competing with the data fidelity term.
 
-**Step 2 – Logit Transformation**: Directly matching $s_i$ to a uniform distribution causes gradient vanishing (as $s_i$ saturates near 0 or 1 far from the solution). A logit transformation is therefore applied:
+**2. Logit Transform to Prevent Gradient Vanishing: Maintaining descent signals far from the solution**
 
-$$r_i = \text{logit}(s_i) = \ln\frac{s_i}{1-s_i}$$
+Matching $s_i$ directly to a uniform distribution poses a risk: when predictions are far from the true value, $s_i$ saturates at 0 or 1, leading to vanishing gradients. To address this, cumulative probabilities are stretched to the entire real axis using a logit transform $r_i = \mathrm{logit}(s_i) = \ln\frac{s_i}{1-s_i}$, making the target distribution Logistic(0,1) instead of Uniform(0,1). Even in the distribution tails, gradients do not vanish—approximations using Gaussian tails show $\partial r_i / \partial \hat{y}_i \approx -(m_i - \hat{y}_i)/\sigma^2$, which aligns with the descent direction of MSE. This ensures DC follows the same convergence path as traditional losses when far from the solution.
 
-This maps the uniform target to a Logistic(0,1) distribution while preserving gradient sensitivity.
+**3. Wasserstein-1 Distance for Distributional Deviation: A differentiable target for uniformity**
 
-**Step 3 – Wasserstein-1 Distance**: Given sorted values $r_i$ and reference samples $u_i$ from Logistic(0,1):
+With the transformed $\{r_i\}$, the remaining task is to quantify its distance from Logistic(0,1). The approach involves sorting $r_i$ and taking an equal number of reference samples $u_i$ from Logistic(0,1) (also sorted), then using the 1D Wasserstein-1 distance as the loss:
 
-$$\mathcal{L}_{\text{DC}}(\hat{\boldsymbol{\theta}}) = \frac{1}{N}\sum_{i=1}^{N}|r_i - u_i|$$
+$$\mathcal{L}_{\text{DC}}(\hat{\boldsymbol{\theta}}) = \frac{1}{N}\sum_{i=1}^{N}\lvert r_i - u_i \rvert$$
 
-**Behavior far from the solution**: Via a Gaussian tail approximation, the gradient of the DC loss aligns with that of MSE (i.e., $\partial r_i / \partial \hat{y}_i \approx -(m_i - \hat{y}_i)/\sigma^2$), ensuring convergence.
-
-**Behavior near the solution**: The DC loss defines an **equivalence class**—all predictions whose CDF values are approximately uniform attain low loss, forming a manifold near the MLE. Regularization then selects the optimal solution within this manifold, rather than trading off fidelity against regularization.
+The sorted pointwise absolute difference is the closed-form solution for 1D optimal transport, which is differentiable, robust to sample size, and equivalent to a differentiable goodness-of-fit test.
 
 ### Loss & Training
 
-The DC loss serves as a **plug-and-play replacement** for conventional data fidelity terms:
-
-- Compatible with unsupervised regularization methods that require no paired data.
-- Employs the same optimization procedure as traditional losses.
-- Avoids noise overfitting without early stopping.
-- Applicable when: the noise distribution is known and a large number of independent measurements are available.
-
-The synergy with regularization is the key advantage: under MSE, regularization and data fidelity are in opposition; under DC loss, regularization focuses exclusively on structural selection.
+DC loss is a **plug-and-play replacement** for traditional data fidelity terms. It requires no changes to network architectures, optimizers (like Adam), or unsupervised regularization terms; one simply replaces MSE/NLL with $\mathcal{L}_{\text{DC}}$. It is compatible with unsupervised methods lacking paired data. The primary benefit lies in training behavior: since the optimal solution is an equivalence class rather than a point noise realization, the model stabilizes upon reaching calibration and stops chasing noise. This means **early stopping is unnecessary**, effectively decoupling "noise suppression" from the responsibilities of regularization. The trade-off is the requirement for a known noise distribution and sufficient independent measurements for the PIT statistics to hold.
 
 ## Key Experimental Results
 
@@ -84,68 +64,68 @@ The synergy with regularization is the key advantage: under MSE, regularization 
 
 **Experiment 1: DIP Denoising (Gaussian Noise)**
 
-| Method | Early Stopping Required | Peak PSNR (σ=75/255) | Long-term Stability |
-|--------|:---:|:---:|:---:|
-| DIP-MSE | Yes | Lower | Degrades after 1,000 iterations |
-| DIP-DC | **No** | **Higher** | **Stable beyond 10,000 iterations** |
+| Method | Early Stopping Needed | Peak PSNR (σ=75/255) | Long-term Stability |
+|------|:---:|:---:|:---:|
+| DIP-MSE | Yes | Lower | Degenerates after 1000 iter |
+| DIP-DC | **No** | **Higher** | Stable at 10000 iter |
 
-DIP-DC outperforms **optimally early-stopped** DIP-MSE across all noise levels, with larger gains at higher noise.
+DIP-DC outperforms **optimally stopped** DIP-MSE across all noise levels, with greater advantages at higher noise levels.
 
 **Experiment 2: PET Image Reconstruction (Poisson Noise)**
 
-| Method | Performance at 10,000 Iterations | Noise Artifacts | Early Stopping Required |
-|--------|:---:|:---:|:---:|
-| NLL-Adam | Severe degradation | Heavy noise spikes | Yes |
-| MLEM | Gradual degradation | Progressively accumulates | Yes |
+| Method | Performance at 10k Iterations | Noise Artifacts | Early Stopping Needed |
+|------|:---:|:---:|:---:|
+| NLL-Adam | Severe degradation | Many noise spikes | Yes |
+| MLEM | Gradual degradation | Gradual accumulation | Yes |
 | DC-Adam | **Stable after convergence** | **Minimal** | **No** |
 
-**Experiment 3: DC+TV vs. NLL+TV Regularization**
+**Experiment 3: DC+TV Regularization vs. NLL+TV**
 
 | Metric | NLL+TV | DC+TV |
-|--------|:---:|:---:|
+|------|:---:|:---:|
 | Optimal NRMSE | Higher | **Lower** |
-| Optimal β magnitude | Large | **Orders of magnitude smaller** |
-| Image detail | Over-smoothed | **Detail preserved** |
+| Optimal β Magnitude | Large | **Orders of magnitude smaller** |
+| Image Detail | Over-smoothed | **Preserved details** |
 
 ### Ablation Study
 
-- **Noise model misspecification**: The DC loss remains robust under biased estimates of noise variance.
-- **Effect of overparameterization**: The advantage of DC loss increases with the degree of overparameterization.
-- **Real 3D PET brain data**: DC-Adam demonstrates stable behavior on data acquired from a Siemens clinical scanner.
+- Noise Model Mis-specification: DC loss remains robust even with biased noise variance estimates.
+- Impact of Over-parameterization: The advantages of DC loss become more pronounced as over-parameterization increases.
+- Real 3D PET Brain Data Validation: DC-Adam exhibits stable behavior on data from Siemens clinical scanners.
 
 ### Key Findings
 
-1. Far from the solution, the DC loss provides the same convergence direction as MSE/NLL; near the solution, it automatically ceases to chase noise.
-2. The optimal regularization strength for DC+TV is orders of magnitude smaller than for NLL+TV, as DC inherently suppresses noise.
-3. Practical feasibility is validated on real clinical PET data.
+1. DC loss provides the same convergence direction as MSE/NLL when far from the solution but automatically segments noise chasing as it approaches calibration.
+2. The optimal regularization strength for DC+TV is orders of magnitude smaller than for NLL+TV, as DC possesses inherent noise suppression.
+3. Practical feasibility was demonstrated on real clinical PET data.
 
 ## Highlights & Insights
 
-- **Paradigm shift in data fidelity**: Transitioning from "pointwise measurement matching" to "distribution-level calibration consistency" represents a foundational innovation in the inverse problems literature.
-- **Redefined role of regularization**: DC loss enables regularization to focus on structural selection rather than simultaneously resisting noise.
-- **Theoretical elegance**: Each component—PIT, logit transformation, and Wasserstein distance—is motivated by clear and principled reasoning.
-- **Strong practicality**: No modifications to network architecture or optimization pipeline are required; the approach is a true drop-in replacement.
+- **Paradigm Shift in Data Fidelity**: Moving from "pointwise matching" to "distributional calibration consistency" represents a foundational innovation in inverse problems.
+- **Redefining the Role of Regularization**: DC allows regularization to focus on structure rather than simultaneously resisting noise.
+- **Theoretical Elegance**: PIT + logit transform + Wasserstein distance; each step is clearly motivated.
+- **High Practicality**: A genuine drop-in replacement requiring no changes to network structures or optimization workflows.
 
 ## Limitations & Future Work
 
-- Assumes independent measurements and a known noise distribution; not directly applicable to small-data or unknown-noise settings.
-- Discrete noise distributions (e.g., Poisson) require randomized PIT.
-- Does not enforce structural properties (e.g., sparsity); prior knowledge is still needed.
-- Ill-conditioned forward operators fall outside the scope of the DC loss.
-- Computational overhead is slightly higher than pointwise methods.
-- Integration with score-based generative models remains largely unexplored and constitutes an important future direction.
+- Assumes independent measurements and a known noise distribution; not applicable to extremely small datasets or unknown noise scenarios.
+- Requires randomization of PIT for discrete noise (e.g., Poisson).
+- Does not guarantee structural properties (e.g., sparsity) on its own; still requires priors.
+- Does not address the ill-posedness of the forward operator itself.
+- Slightly higher computational overhead compared to pointwise methods.
+- Integration with score-based generative models remains an important future direction.
 
 ## Related Work & Insights
 
-- **vs. Robust losses (Huber/Student-t)**: The latter reduce the influence of outliers but do not prevent noise fitting.
-- **vs. Noise2Noise**: N2N requires multiple noisy observations of the same signal; DC requires only a single observation but assumes a large number of independent measurements.
-- **Connection to classical goodness-of-fit tests (K-S/CvM)**: DC loss can be viewed as a differentiable optimization counterpart to these tests.
-- **Potential extensions**: Integration with plug-and-play priors and score-based generative models.
+- Difference from robust losses (Huber/Student-t): The latter reduce the impact of outliers but do not prevent noise fitting.
+- Difference from Noise2Noise: N2N requires multiple noisy observations, whereas DC requires only one but necessitates many independent measurements.
+- Connection to classic Goodness-of-fit tests (K-S/CvM): DC can be viewed as a differentiable version for optimization.
+- Potential extensions: Combination with plug-and-play priors and score-based generative models.
 
 ## Rating
 
 | Dimension | Score |
-|-----------|:---:|
+|------|:---:|
 | Novelty | ★★★★★ |
 | Theoretical Depth | ★★★★☆ |
 | Experimental Thoroughness | ★★★★☆ |
@@ -158,11 +138,11 @@ DIP-DC outperforms **optimally early-stopped** DIP-MSE across all noise levels, 
 
 ## Related Papers
 
-- [\[CVPR 2026\] Benchmarking Endoscopic Surgical Image Restoration and Beyond](../../CVPR2026/medical_imaging/benchmarking_endoscopic_surgical_image_restoration_and_beyond.md)
-- [\[CVPR 2026\] CLoE: Expert Consistency Learning for Missing Modality Segmentation](../../CVPR2026/medical_imaging/cloe_expert_consistency_learning_for_missing_modality_segmentation.md)
+- [\[CVPR 2026\] Efficient Unrolled Networks for Large-Scale 3D Inverse Problems](../../CVPR2026/medical_imaging/efficient_unrolled_networks_for_large-scale_3d_inverse_problems.md)
+- [\[CVPR 2026\] KLIP: localized distribution shift detection via KL-divergence with diffusion priors in Inverse Problems](../../CVPR2026/medical_imaging/klip_localized_distribution_shift_detection_via_kl-divergence_with_diffusion_pri.md)
+- [\[ICLR 2026\] Towards Text–Mask Consistency in Medical Image Segmentation](towards_text-mask_consistency_in_medical_image_segmentation.md)
+- [\[ICLR 2026\] Moving Beyond Diffusion: Hierarchy-to-Hierarchy Autoregression for fMRI-to-Image Reconstruction](moving_beyond_diffusion_hierarchy-to-hierarchy_autoregression_for_fmri-to-image_.md)
 - [\[CVPR 2026\] Solving a Nonlinear Blind Inverse Problem for Tagged MRI with Physics and Deep Generative Priors](../../CVPR2026/medical_imaging/solving_a_nonlinear_blind_inverse_problem_for_tagged_mri_with_physics_and_deep_g.md)
-- [\[AAAI 2026\] Unsupervised Multi-Parameter Inverse Solving for Reducing Ring Artifacts in 3D X-Ray CBCT](../../AAAI2026/medical_imaging/unsupervised_multi-parameter_inverse_solving_for_reducing_ring_artifacts_in_3d_x.md)
-- [\[ICCV 2025\] ViCTr: Vital Consistency Transfer for Pathology Aware Image Synthesis](../../ICCV2025/medical_imaging/victr_vital_consistency_transfer_for_pathology_aware_image_synthesis.md)
 
 </div>
 

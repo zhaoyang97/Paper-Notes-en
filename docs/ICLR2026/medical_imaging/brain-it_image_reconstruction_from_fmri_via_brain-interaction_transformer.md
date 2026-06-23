@@ -2,100 +2,87 @@
 title: >-
   [Paper Note] Brain-IT: Image Reconstruction from fMRI via Brain-Interaction Transformer
 description: >-
-  [ICLR 2026][Medical Imaging][fMRI brain decoding] This paper proposes Brain-IT, a framework that employs a brain-inspired Brain Interaction Transformer (BIT) to cluster functionally similar brain voxels into cross-subjec…
+  [ICLR 2026][Medical Imaging][Diffusion Model] The Brain-IT framework is proposed, which utilizes a brain-inspired Brain Interaction Transformer (BIT) to cluster functionally similar brain voxels into cross-subject shared Brain Tokens. It predicts localized semantic and structural image features to achieve high-fidelity reconstruction from fMRI, matching the perfor
 tags:
-  - "ICLR 2026"
-  - "Medical Imaging"
-  - "fMRI brain decoding"
-  - "image reconstruction"
-  - "Brain-Interaction Transformer"
-  - "cross-subject transfer"
-  - "diffusion models"
-  - "Deep Image Prior"
+  - ICLR 2026
+  - Medical Imaging
+  - Diffusion Model
 date: 2026-05-08
-content_hash: c4a08f9dbc620626
+content_hash: 6882837da23a0997
 ---
-
 # Brain-IT: Image Reconstruction from fMRI via Brain-Interaction Transformer
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2510.25976](https://arxiv.org/abs/2510.25976)  
 **Code**: [Project Page](https://amitzalcher.github.io/Brain-IT/)  
-**Area**: 3D Vision
-**Keywords**: fMRI brain decoding, image reconstruction, Brain-Interaction Transformer, cross-subject transfer, diffusion models, Deep Image Prior
+**Area**: 3D Vision  
+**Keywords**: fMRI Brain Decoding, Image Reconstruction, Brain-Interaction Transformer, Cross-subject Transfer, Diffusion Models, Deep Image Prior
 
 ## TL;DR
 
-This paper proposes Brain-IT, a framework that employs a brain-inspired Brain Interaction Transformer (BIT) to cluster functionally similar brain voxels into cross-subject shared Brain Tokens, from which localized semantic and structural image features are predicted, enabling high-fidelity reconstruction of images from fMRI signals. With only 1 hour of data, Brain-IT achieves performance comparable to prior methods trained on 40 hours of data.
+The Brain-IT framework is proposed, which utilizes a brain-inspired Brain Interaction Transformer (BIT) to cluster functionally similar brain voxels into cross-subject shared Brain Tokens. It predicts localized semantic and structural image features to achieve high-fidelity reconstruction from fMRI, matching the performance of prior methods using 40 hours of data with only 1 hour of data.
 
 ## Background & Motivation
 
-Reconstructing visual experiences from fMRI brain signals is a core challenge in neuroscience and brain–computer interface research. Although the introduction of diffusion models has brought significant progress, existing methods still suffer from notable **fidelity** deficiencies—generated images may appear visually plausible but frequently deviate from the actually perceived stimuli, manifesting as:
+Reconstructing visual experiences from fMRI brain signals is a core challenge in neuroscience and brain-computer interfaces. Despite significant progress with diffusion models, existing methods still suffer from a lack of **fidelity**—the generated images may look realistic but often deviate from the actual perceived image in terms of:
 
-- **Structural bias**: incorrect position, color, and spatial layout
-- **Semantic distortion**: missing or distorted semantic content
-- **Root cause**: over-reliance on the generative prior of diffusion models, which can produce "realistic" images even when fMRI guidance is insufficient
+- **Structural Bias**: Incorrect positioning, color, and spatial layout.
+- **Semantic Distortion**: Missing or distorted semantic content.
+- **Root Cause**: Over-reliance on the generative prior of diffusion models, which can produce "realistic" images even when brain activity guidance is insufficient.
 
-The authors attribute the problem to three levels: (1) inappropriate fMRI representation extraction—existing methods compress all voxels into a single global embedding, discarding distributed information across the visual cortex; (2) the mapping strategy to image features—fully connected layers fail to exploit the distributed nature of brain regions; (3) feature integration in the generative model—lacking structural guidance.
+The authors attribute these issues to three levels: (1) Inadequate fMRI representation extraction—existing methods compress all voxels into a single global embedding, losing the distributed information of the visual cortex; (2) Inappropriate mapping to image features—fully connected layers fail to exploit the distributed nature of brain regions; (3) Feature integration in generative models—a lack of structural guidance.
 
-Furthermore, fMRI data acquisition is costly and time-consuming (approximately 40 hours of scanning per subject), making it an important practical challenge to transfer models to new subjects with minimal data.
+Furthermore, fMRI data acquisition is expensive and time-consuming (scanning one subject takes 40 hours). Transferring to new subjects with minimal data is a vital practical requirement.
 
 ## Method
 
 ### Overall Architecture
 
-Brain-IT consists of two stages: **image feature prediction** (BIT model) → **image reconstruction** (dual-branch generation).
+Brain-IT decouples "reconstruction from fMRI" into two sequential stages: first, using the brain-inspired Brain Interaction Transformer (BIT) to translate brain signals into **localized image features**, and then reconstructing the image using semantic and structural branches. Specifically, tens of thousands of voxels are first compressed into 128 cross-subject shared functional clusters via Voxel-to-Cluster (V2C) mapping. BIT consists of a Brain Tokenizer (producing 128 Brain Tokens) and a Cross-Transformer (modeling cluster interactions and writing localized image features). Subsequently, the semantic branch predicts CLIP tokens as generative conditions, while the low-level branch recovers a coarse structural map via Deep Image Prior inversion. During inference, these are fused within a diffusion model. The key to the pipeline is maintaining the distributed information of the visual cortex throughout the image space rather than compressing it into a global vector, ensuring both fidelity to the actual structure and the inclusion of fine details from the diffusion model.
 
-### 1. Voxel-to-Cluster Mapping (V2C)
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    IN["fMRI Activation<br/>(~40k voxels)"] --> V2C["Voxel-to-Cluster (V2C) Mapping<br/>GMM Clustering → 128<br/>Cross-subject Functional Clusters"]
+    AUG["Encoder Synthetic Data Augmentation<br/>Image → fMRI Encoder<br/>120k training pairs"] -. Training Samples .-> V2C
+    V2C --> BIT
+    subgraph BIT["Brain Interaction Transformer"]
+        direction TB
+        TOK["Brain Tokenizer<br/>Graph Attention → 128 Brain Tokens"] --> XT["Cross-Transformer<br/>Cluster Self-Attention + Cross-Attention<br/>→ Localized Image Features"]
+    end
+    BIT --> SEM["Semantic Branch<br/>Predicts 256 OpenCLIP tokens"]
+    BIT --> LOW["Low-level Branch<br/>Predicts VGG features → DIP Inversion<br/>→ Coarse Structural Map"]
+    LOW -->|"Noise as Init"| DIFF["Diffusion Model Fusion<br/>Coarse-to-fine Refinement"]
+    SEM -->|"Semantic Conditioning"| DIFF
+    DIFF --> OUT["Reconstructed Image"]
+```
 
-Voxel embeddings are obtained using the brain encoder from Beliy et al. (2024) (capturing the functional role of each voxel), and Gaussian Mixture Model (GMM) clustering is applied to voxel embeddings across all subjects, mapping approximately 40,000 voxels per subject into **128 functional clusters**. Key properties:
-- Clusters are shared across subjects, capturing functionally similar brain regions across individuals
-- Information aggregation is compressed from the voxel level to the cluster level, substantially reducing complexity
+### Key Designs
 
-### 2. Brain Interaction Transformer (BIT)
+**1. Voxel-to-Cluster Mapping (V2C): Compressing voxels into shared functional units**
 
-The core model that transforms fMRI signals into **localized image features**:
+Directly performing attention on ~40,000 voxels is computationally expensive and difficult to align across subjects. Brain-IT uses a brain encoder (Beliy et al., 2024) to extract embeddings capturing the functional role of each voxel. A Gaussian Mixture Model (GMM) is applied to the joint embeddings of all subjects to map voxels to **128 functional clusters**. Since clustering is performed in functional embedding space rather than anatomical space, it maps functionally similar regions across different individuals to the same clusters. This acts as an "information bottleneck" that reduces complexity and provides a basis for cross-subject transfer.
 
-**Brain Tokenizer**: Converts fMRI activations into Brain Tokens
-- **Voxel embeddings** (512-dim): learnable per-voxel vectors capturing functional properties, multiplied by fMRI activation values for modulation
-- **Cluster embeddings** (512-dim): learnable per-cluster vectors serving as information selection bottlenecks
-- Aggregation via a single-head graph attention layer: cluster embeddings as Query, modulated voxel activations as Key/Value, with attention restricted by the V2C mapping
-- Outputs 128 Brain Tokens of 512 dimensions each
+**2. Brain Interaction Transformer: Translating fMRI into Brain Tokens and localized image features**
 
-**Cross-Transformer**:
-- Self-attention layers model inter-cluster interactions
-- Cross-attention layers directly map information from Brain Tokens to localized image features
-- Each query token corresponds to one output image feature location, enabling direct information flow from functional clusters to local image features
+BIT operates in two steps. The Brain Tokenizer generates Brain Tokens: a set of learnable per-voxel embeddings (512-D) is multiplied by the fMRI activation for modulation. Then, per-cluster embeddings (512-D) serve as Queries, while modulated activations act as Keys/Values in a single-head graph attention layer. Attention range is limited by the V2C mapping, aggregating only relevant voxels into 128 tokens. The subsequent Cross-Transformer uses self-attention to model interactions and cross-attention to map Brain Tokens to localized image features. This direct path from functional clusters to localized features preserves spatial layouts, as evidenced by cross-attention maps showing clear contralateral organization and semantic selectivity.
 
-### 3. Dual-Branch Image Reconstruction
+**3. Dual-branch Reconstruction: Semantic branch for "what" and Low-level branch for "where"**
 
-**Semantic branch** (high-level):
-- BIT predicts 256 spatial OpenCLIP ViT-bigG/14 tokens
-- Training proceeds in two stages: feature alignment first (L2 loss), followed by joint training of BIT + diffusion model (diffusion loss)
-- Joint training allows BIT outputs to deviate from original CLIP representations, forming representations better suited for fMRI-conditioned generation
+The semantic branch handles high-level content: BIT predicts 256 spatial OpenCLIP ViT-bigG/14 tokens. Training involves $L_2$ feature alignment followed by joint training with the diffusion model (diffusion loss). This allows BIT outputs to deviate from original CLIP representations to better suit fMRI-conditioned generation. The low-level branch handles structure: BIT predicts multi-layer VGG features using InfoNCE loss, which are then inverted via Deep Image Prior (DIP). By optimizing a randomly initialized CNN to match BIT's VGG predictions, the convolutional inductive bias of DIP acts as a strong image prior, producing coarse but spatially and chromatically correct layouts without requiring structural training. During inference, the coarse image provides a global structure via noisy initialization, while the semantic branch guides the diffusion process for coarse-to-fine refinement.
 
-**Low-level branch** (structural):
-- BIT predicts multi-layer VGG features (trained with InfoNCE loss)
-- Inverted via Deep Image Prior (DIP): a randomly initialized CNN outputs an image optimized so that its VGG features match BIT predictions
-- The convolutional inductive bias of DIP provides a strong image prior, generating coarse but structurally correct layouts
+**4. Encoder Synthetic Data Augmentation: Expanding to 120k pairs**
 
-**Dual-branch fusion** (at inference):
-- The low-level branch generates a coarse image → noise is added and used as initialization for the diffusion process
-- The semantic branch provides conditional guidance → the diffusion model refines the coarse structure into a detailed image
-- Exploiting the diffusion model's "coarse-to-fine" generation property, the low-level image supplies reliable global structure
-
-### 4. Training Data Augmentation
-
-The image-to-fMRI encoder from Beliy et al. (2024) is used to predict fMRI responses for ~120,000 unlabeled COCO images, providing additional training pairs that are particularly important for transfer learning.
+Real fMRI training pairs are scarce. Brain-IT utilizes an image-to-fMRI encoder to predict fMRI responses for ~120,000 unlabeled COCO images. This is crucial for few-shot transfer scenarios, providing sufficient samples to fit BIT when only 1 hour of real scanning data is available.
 
 ## Key Experimental Results
 
-**Dataset**: NSD dataset (7T fMRI), 4 subjects (S1/2/5/7), ~9,000 images per subject, 1,000 shared test images.
+**Dataset**: NSD dataset (7T fMRI), 4 subjects (S1/2/5/7), approx. 9,000 images per subject, 1,000 shared test images.
 
-**Main Results with 40-hour full data** (Table 1, averaged over 4 subjects):
+**Main Results (40h Full Data)** (Table 1, Average of 4 subjects):
 
 | Metric | MindEye2 | MindTuner | **Brain-IT** |
-|--------|----------|-----------|-------------|
+|------|----------|-----------|-------------|
 | PixCorr ↑ | 0.322 | 0.322 | **0.386** |
 | SSIM ↑ | 0.431 | 0.421 | **0.486** |
 | Alex(2) ↑ | 96.1% | 95.8% | **98.4%** |
@@ -105,53 +92,53 @@ The image-to-fMRI encoder from Beliy et al. (2024) is used to predict fMRI respo
 | Eff ↓ | 0.619 | 0.612 | **0.564** |
 | SwAV ↓ | 0.344 | 0.340 | **0.320** |
 
-→ **State-of-the-art on 7 out of 8 metrics**, with substantial margins on low-level metrics (PixCorr, SSIM)
+→ **SOTA in 7 out of 8 metrics**, with significant Leads in low-level metrics (PixCorr, SSIM).
 
-**1-hour transfer learning**:
+**Main Results (1h Transfer Learning)**:
 
 | Metric | MindEye2 (1h) | MindTuner (1h) | **Brain-IT (1h)** |
-|--------|---------------|----------------|------------------|
+|------|---------------|----------------|------------------|
 | PixCorr | 0.195 | 0.224 | **0.331** |
 | SSIM | 0.419 | 0.420 | **0.473** |
 | Alex(2) | 84.2% | 87.8% | **97.1%** |
 
-→ **Brain-IT with 1 hour of data matches prior methods trained on 40 hours**
-→ Meaningful reconstructions are obtained with as little as 15 minutes of data
+→ **Brain-IT with 1 hour of data matches the performance of previous methods with 40 hours.**
+→ Meaningful reconstruction results are achieved with only 15 minutes of data.
 
-**Ablation on branch contribution**:
-- Low-level branch only: SSIM=0.505 (best structural fidelity), CLIP=85.8% (weak semantics)
-- Semantic branch only: SSIM=0.431, CLIP=95.2% (strong semantics)
-- Dual-branch fusion: SSIM=0.486, CLIP=96.4% (complementary enhancement)
+**Ablation Study**:
+- Low-level branch: SSIM=0.505 (optimal structural fidelity), CLIP=85.8% (weak semantics).
+- Semantic branch: SSIM=0.431, CLIP=95.2% (strong semantics).
+- Dual-branch fusion: SSIM=0.486, CLIP=96.4% (complementary enhancement).
 
 ## Highlights & Insights
 
-1. **Brain-inspired design**: The functional clustering and Brain Token design directly correspond to the distributed organization of the visual cortex and retinotopic structure, offering a more principled alternative to global compression.
-2. **Localized feature prediction**: Predicting localized image features directly from Brain Tokens (rather than a global embedding) preserves spatial information; cross-attention maps exhibit clear contralateral organization and semantic selectivity.
-3. **Novel DIP low-level branch**: Inverting VGG features via Deep Image Prior is a pioneering signal-to-image approach that leverages CNN inductive biases without training, effectively capturing structural information such as color and contour.
-4. **Highly efficient transfer learning**: Only voxel embeddings need to be fine-tuned (network weights are frozen); 1 hour ≈ prior methods' 40 hours, with meaningful results at 15 minutes—enabled by the shared cluster and weight design.
-5. **Interpretable attention maps**: Different Brain Tokens correspond to specific spatial locations and semantic concepts (faces, limbs, text), offering valuable neuroscientific insights.
+1. **Brain-inspired Design**: The functional clustering and Brain Token design directly correspond to the distributed organization and retinotopic structure of the visual cortex, proving more effective than global compression.
+2. **Localized Feature Prediction**: Predicting localized image features directly from Brain Tokens preserves spatial information. Cross-attention maps exhibit clear contralateral organization and semantic selectivity.
+3. **DIP Low-level Branch Innovation**: Inverting VGG features using Deep Image Prior is a novel signal-to-image approach that leverages CNN inductive biases without training, effectively capturing color, contours, and structure.
+4. **Efficient Transfer Learning**: By freezing network weights and only fine-tuning voxel embeddings, 1 hour of data yields results comparable to prior 40-hour benchmarks. This is enabled by the shared cluster and weight design.
+5. **Interpretability**: Different Brain Tokens correspond to specific spatial locations and semantic concepts (faces, limbs, text), providing valuable neuroscientific insights.
 
 ## Limitations & Future Work
 
-1. **Imperfect reconstruction**: Semantic and fine-grained details are sometimes inaccurate (acknowledged in the paper), potentially limited by the inherent resolution of fMRI signals.
-2. **Dependence on pretrained encoder**: The V2C mapping relies on the quality of the brain encoder from Beliy et al.; cluster quality affects the entire pipeline.
-3. **DIP inference overhead**: Low-level reconstruction for each image requires independent DIP network optimization, resulting in longer inference times.
-4. **Single dataset evaluation**: Validation is primarily conducted on the NSD dataset; although an OOD test on NSD Synthetic is included, generalization to other fMRI datasets has not been verified.
-5. **Limited subject count**: Only 4 subjects (S1/2/5/7) are evaluated; generalizability across individual differences awaits validation at a larger scale.
+1. **Imperfect Reconstruction**: Semantic and fine-grained details are occasionally inaccurate, potentially limited by the resolution of the fMRI signal itself.
+2. **Dependency on Pre-trained Encoders**: V2C mapping relies on the quality of external brain encoders; cluster quality impacts the entire pipeline.
+3. **DIP Inference Overhead**: Low-level reconstruction for each image requires independent optimization of the DIP network, leading to longer inference times.
+4. **Dataset Specificity**: Primarily validated on the NSD dataset. Although OOD tests were conducted on NSD Synthetic, other fMRI datasets were not tested.
+5. **Limited Subject Count**: Testing was limited to 4 subjects. Generalization across broader individual differences requires larger-scale validation.
 
 ## Related Work & Insights
 
-- **Global embedding methods**: MindEye/MindEye2 (Scotti et al.)—linear/MLP mapping from fMRI to global CLIP embeddings, discarding spatial information
-- **Cross-subject methods**: MindTuner (Gong et al.), MindBridge (Wang et al.)—scan-level fMRI alignment, exploiting only scan-level shared representations
-- **Voxel grouping**: NeuroPictor (Huo et al.), NeuroVLA (Shen et al.)—voxel grouping in anatomical space, yet still predicting global representations
-- **Brain-IT advantage**: functional clustering + localized prediction + dual-branch fusion, preserving spatial information from voxels through to image features
+- **Global Embedding Methods**: MindEye/MindEye2 (Scotti et al.) — Uses linear/MLP mapping to CLIP global embeddings, losing spatial information.
+- **Cross-subject Methods**: MindTuner (Gong et al.), MindBridge (Wang et al.) — Focuses on scan-level alignment, utilizing only shared representations.
+- **Voxel Grouping**: NeuroPictor (Huo et al.), NeuroVLA (Shen et al.) — Voxel grouping in anatomical space, yet still predicts global representations.
+- **Brain-IT Advantage**: Functional clustering + localized prediction + dual-branch fusion maintains spatiality from voxels to image features.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ (brain-inspired functional clustering, localized feature prediction, and DIP low-level branch are all pioneering contributions)
-- Experimental Thoroughness: ⭐⭐⭐⭐ (comprehensive metric comparisons and thorough transfer learning analysis, but limited to a single dataset)
-- Writing Quality: ⭐⭐⭐⭐⭐ (clear structure, excellent figures, intuitive method exposition)
-- Value: ⭐⭐⭐⭐⭐ (substantially advances fMRI image reconstruction SOTA; 1-hour transfer learning has significant clinical implications)
+- Novelty: ⭐⭐⭐⭐⭐ (Brain-inspired functional clustering, localized feature prediction, and DIP low-level branch are pioneering.)
+- Experimental Thoroughness: ⭐⭐⭐⭐ (Comprehensive metrics and transfer analysis, though limited to one dataset.)
+- Writing Quality: ⭐⭐⭐⭐⭐ (Clear structure, excellent diagrams, and intuitive methodology.)
+- Value: ⭐⭐⭐⭐⭐ (Significantly advances fMRI image reconstruction SOTA; 1-hour transfer is clinically significant.)
 
 <!-- RELATED:START -->
 
@@ -159,11 +146,11 @@ The image-to-fMRI encoder from Beliy et al. (2024) is used to predict fMRI respo
 
 ## Related Papers
 
-- [\[ICLR 2026\] Towards Interpretable Visual Decoding with Attention to Brain Representations](towards_interpretable_visual_decoding_with_attention_to_brain_representations.md)
-- [\[ICCV 2025\] Beyond Brain Decoding: Visual-Semantic Reconstructions to Mental Creation Extension Based on fMRI](../../ICCV2025/medical_imaging/beyond_brain_decoding_visualsemantic_reconstructions_to_ment.md)
-- [\[ICLR 2026\] Brain-Semantoks: Learning Semantic Tokens of Brain Dynamics with a Self-Distilled Foundation Model](brain-semantoks_learning_semantic_tokens_of_brain_dynamics_with_a_self-distilled.md)
-- [\[CVPR 2026\] Continual Learning for fMRI-Based Brain Disorder Diagnosis via Functional Connectivity Matrices Generative Replay](../../CVPR2026/medical_imaging/forge_continual_learning_for_fmri_based_brain_disorder_diagnosis.md)
-- [\[NeurIPS 2025\] Scalable Diffusion Transformer for Conditional 4D fMRI Synthesis](../../NeurIPS2025/medical_imaging/scalable_diffusion_transformer_for_conditional_4d_fmri_synthesis.md)
+- [\[CVPR 2026\] Bridging Brain and Semantics: A Hierarchical Framework for Semantically Enhanced fMRI-to-Video Reconstruction](../../CVPR2026/medical_imaging/bridging_brain_and_semantics_a_hierarchical_framework_for_semantically_enhanced_.md)
+- [\[ICLR 2026\] Moving Beyond Diffusion: Hierarchy-to-Hierarchy Autoregression for fMRI-to-Image Reconstruction](moving_beyond_diffusion_hierarchy-to-hierarchy_autoregression_for_fmri-to-image_.md)
+- [\[ICLR 2026\] Spike-based Digital Brain: A Novel Fundamental Model for Brain Activity Analysis](spike-based_digital_brain_a_novel_fundamental_model_for_brain_activity_analysis.md)
+- [\[ICLR 2026\] Unified Brain Surface and Volume Registration](unified_brain_surface_and_volume_registration.md)
+- [\[CVPR 2026\] Modeling the Brain's Grammar: ROI-Guided fMRI Pretraining for Transferable and Interpretable Vision Decoding](../../CVPR2026/medical_imaging/modeling_the_brains_grammar_roi-guided_fmri_pretraining_for_transferable_and_int.md)
 
 </div>
 

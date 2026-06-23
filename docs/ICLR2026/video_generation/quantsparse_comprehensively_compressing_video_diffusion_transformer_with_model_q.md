@@ -2,166 +2,158 @@
 title: >-
   [Paper Note] QuantSparse: Comprehensively Compressing Video Diffusion Transformer with Model Quantization and Attention Sparsification
 description: >-
-  [ICLR 2026][Video Generation][video-generation] This paper proposes QuantSparse, the first framework to jointly integrate model quantization and attention sparsification for video diffusion Transformer compression. By in…
+  [ICLR 2026][Video Generation][video-generation] This paper proposes the QuantSparse framework, which for the first time synergistically integrates model quantization and attention sparsification for the compression of video diffusion Transformers. By addressing the "amplified attention shift" caused by the naive combination of these two techniques through Multi-Scal
 tags:
-  - "ICLR 2026"
-  - "Video Generation"
-  - "video-generation"
-  - "model-compression"
-  - "quantization"
-  - "sparse-attention"
-  - "diffusion-transformer"
+  - ICLR 2026
+  - Video Generation
+  - video-generation
+  - model-compression
+  - quantization
+  - sparse-attention
+  - diffusion-transformer
 date: 2026-05-08
-content_hash: 272777af0f2c4b46
+content_hash: c46eb6e94ee9f0f6
 ---
-
 # QuantSparse: Comprehensively Compressing Video Diffusion Transformer with Model Quantization and Attention Sparsification
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2509.23681](https://arxiv.org/abs/2509.23681)  
 **Code**: [GitHub](https://github.com/wlfeng0509/QuantSparse)  
-**Area**: Video Generation
+**Area**: Video Generation  
 **Keywords**: video-generation, model-compression, quantization, sparse-attention, diffusion-transformer
 
 ## TL;DR
 
-This paper proposes QuantSparse, the first framework to jointly integrate model quantization and attention sparsification for video diffusion Transformer compression. By introducing Multi-Scale Salient Attention Distillation (MSAD) and Second-Order Sparse Attention Reparameterization (SSAR), QuantSparse addresses the "amplified attention shift" problem caused by naive combination of the two techniques. On HunyuanVideo-13B with W4A8 and 15% attention density, it achieves 3.68× storage compression and 1.88× inference speedup with nearly lossless generation quality.
+This paper proposes the QuantSparse framework, which for the first time synergistically integrates model quantization and attention sparsification for the compression of video diffusion Transformers. By addressing the "amplified attention shift" caused by the naive combination of these two techniques through Multi-Scale Salient Attention Distillation (MSAD) and Second-order Sparse Attention Reparameterization (SSAR), it achieves 3.68× storage compression and 1.88× inference speedup on HunyuanVideo-13B with W4A8 quantization and 15% attention density, while maintaining near-lossless generation quality.
 
 ## Background & Motivation
 
-1. **High computational cost of video diffusion models**: State-of-the-art models such as Wan2.1-14B require over 20 GB GPU memory and nearly one hour of inference time to generate a single high-definition video, severely limiting practical deployment, especially in resource-constrained settings.
+1. **High Computational Cost of Video Diffusion Models**: SOTA models like Wan2.1-14B require 20GB+ GPU memory and nearly one hour of inference time to generate a high-definition video, which severely restricts practical deployment, especially in resource-constrained scenarios.
 
-2. **Quantization and sparsification are two complementary compression directions**: Quantization reduces storage and computation via low-bit integer representations, while sparse attention reduces complexity by pruning redundant attention computations. The two are orthogonal and theoretically offer additive benefits.
+2. **Quantization and Sparsification are Complementary Compression Directions**: Quantization reduces storage and computation through low-bit integer representations, while sparse attention reduces complexity by pruning redundant attention calculations. Theoretically, they are orthogonal and their benefits can be superimposed.
 
-3. **Severe degradation when either method is pushed to its limit**: Extremely low-bit quantization (e.g., binarization) causes representational collapse, while extreme sparsification discards critical contextual information; both lead to severe quality degradation when applied independently.
+3. **Severe Degradation at Limits of Single Methods**: Quantizing to extremely low bits (e.g., binarization) leads to a collapse in representation capability, and extreme sparsification discards critical contextual information. Pushing either method to its limit independently leads to significant quality degradation.
 
-4. **Naive combination yields worse results**: Experiments reveal that simply combining quantization and sparsification introduces "amplified attention shift"—after sparsification removes low-magnitude attention weights, the systematic perturbation introduced by quantization on the remaining attention products is amplified, with the two sources of error mutually reinforcing and severely degrading fine-grained dependency modeling in video generation.
+4. **Naive Combination Performs Worse**: Experiments reveal that simply combining quantization and sparsification triggers an "amplified attention shift." After sparsification removes low-magnitude attention weights, the systematic perturbation from quantization on the remaining attention product is amplified. These two errors reinforce each other, severely damaging fine-grained dependency modeling in video generation.
 
-5. **Existing methods are developed in isolation**: Quantization methods (Q-VDiT, ViDiT-Q) and sparsification methods (SparseVideoGen, Jenga) have evolved independently; no prior work has systematically explored strategies for their joint integration.
+5. **Existing Methods Operates Independently**: Quantization methods (Q-VDiT, ViDiT-Q) and sparsification methods (SparseVideoGen, Jenga) have developed independently, and no work has yet systematically explored their synergistic integration strategy.
 
-6. **Memory bottleneck in attention distillation**: For models such as HunyuanVideo with sequence length $L > 10^4$, storing the full attention matrix requires $O(L^2)$ memory, making direct attention distillation infeasible.
+6. **Attention Distillation Faces Memory Bottlenecks**: For models like HunyuanVideo, where sequence length $L > 10^4$, storing the full attention matrix requires $O(L^2)$ memory, making direct attention distillation infeasible.
 
 ## Method
 
 ### Overall Architecture
 
-QuantSparse comprises two core modules: Multi-Scale Salient Attention Distillation (MSAD) during the **calibration phase**, and Second-Order Sparse Attention Reparameterization (SSAR) during the **inference phase**.
+QuantSparse aims to solve the problem where individual quantization or sparsification of video diffusion Transformers provides moderate compression, but pushing them to limits leads to quality collapse, and a naive combination performs worse than either alone. The paper first characterizes this "worse when stacked" failure mechanism as "amplified attention shift," where quantization noise and sparse masks interactively amplify errors. Based on this, the compression pipeline is divided into two parts: a **Calibration Phase** using Multi-Scale Salient Attention Distillation (MSAD) to align the quantized attention distribution with the Full Precision (FP) model to suppress the quantization noise term; and an **Inference Phase** using Second-order Sparse Attention Reparameterization (SSAR) to compensate for the context discarded by sparse masks to fill in the information loss term. Starting from an FP model, MSAD calibration produces a W4A8 quantized model. During inference, sparse attention and SSAR correction are applied, resulting in near-lossless video at approximately 15% attention density.
 
-### Problem Formulation: Amplified Attention Shift
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    FP["FP Video Diffusion Transformer"] --> SHIFT["Amplified Attention Shift Analysis<br/>Decomposed into Quantization Noise + Sparse Info Loss"]
+    SHIFT --> CAL
+    subgraph CAL["Calibration Phase: Multi-Scale Salient Attention Distillation MSAD (Targets Quant Noise)"]
+        direction TB
+        G["Global Scale<br/>Q/K Stride s Pooling<br/>Low-Res Alignment"]
+        L["Local Scale<br/>Top-k Salient Queries<br/>Full-Res Alignment"]
+    end
+    CAL --> QM["W4A8 Quantized Model"]
+    QM --> INF
+    subgraph INF["Inference Phase: Second-order Sparse Attention Reparameterization SSAR (Targets Sparse Info Loss)"]
+        direction TB
+        S["Sparse Attention<br/>~15% Density"] --> R["Second-order Residual Difference<br/>+ SVD Projection<br/>Refresh Cache Every 5 Steps"]
+    end
+    INF --> OUT["Near-lossless Generated Video"]
+```
 
-Quantization injects noise $\epsilon$ into the QK dot product; its interaction with the sparse mask $\mathbf{M}$ produces a compound shift:
+### Key Designs
 
-$$\Delta_{\text{total}} = \Delta_{\text{sparse}} + \Delta_{\text{quant}} + O(\|\epsilon\|_F \cdot \|\mathbf{M}\|_0)$$
+**1. Formalization of Amplified Attention Shift: Identifying the Root Cause of Naive Combination Failure**
 
-The third cross term is the root cause of naive combination failure—the information loss from sparsification and the quantization noise mutually reinforce each other.
+Directly stacking quantization and sparsification performs worse than using them individually. QuantSparse attributes this to a cross-term. Quantization injects noise $\epsilon$ into the QK dot product, and the sparse mask $\mathbf{M}$ removes low-amplitude weights. The composite shift can be written as $\Delta_{\text{total}} = \Delta_{\text{sparse}} + \Delta_{\text{quant}} + O(\|\epsilon\|_F \cdot \|\mathbf{M}\|_0)$. The first two terms are errors inherent to each method. The real difficulty lies in the third cross-term: sparsification concentrates attention mass on a few remaining weights, causing the perturbation from quantization noise on these weights to be proportionally amplified. These errors reinforce each other, destroying fine-grained spatio-temporal dependencies. By isolating this term, the subsequent modules have clear targets: one to suppress quantization noise $\epsilon$ (MSAD) and another to compensate for the information loss from the sparse mask $\mathbf{M}$ (SSAR).
 
-### Module 1: Multi-Scale Salient Attention Distillation (MSAD)
+**2. Multi-Scale Salient Attention Distillation (MSAD): Aligning Quantized Attention under $O(L^2)$ Memory Constraints**
 
-MSAD aligns the attention distribution of the quantized model in a memory-efficient manner via dual-scale global–local distillation.
+To align quantized attention with the FP distribution via distillation, the most direct way is to align the entire attention matrix. However, for HunyuanVideo where $L > 10^4$, storing the full $O(L^2)$ matrix is impossible. MSAD bypasses this bottleneck using global and local scales. The global scale exploits the spatial locality of videos by applying average pooling with stride $s$ to Q and K. Distillation loss $\mathcal{L}_{\text{global}} = \text{MSE}(\mathbf{A}_{\text{global}}^{\text{FP}} \| \mathbf{A}_{\text{global}}^{\text{quant}})$ is calculated at a low resolution $\tilde{L} = L/s^2$, reducing complexity to $1/s^2$ of full attention while preserving coarse global structure. The local scale targets the highly skewed attention distribution—less than 10% of tokens occupy most of the attention mass. Thus, it selects only the top-$k$ salient queries at full resolution for $\mathcal{L}_{\text{local}} = \text{MSE}(\mathbf{A}_{\text{local}}^{\text{FP}} \| \mathbf{A}_{\text{local}}^{\text{quant}})$, concentrating calibration effort on the most impactful regions at low cost. Both are optimized jointly with the quantization loss $\mathcal{L}_{\text{distill}} = \mathcal{L}_{\text{quant}} + \lambda_{\text{global}} \mathcal{L}_{\text{global}} + \lambda_{\text{local}} \mathcal{L}_{\text{local}}$, suppressing the quantization noise term in the shift formula.
 
-**Global guidance**: Exploiting the spatial locality of video data, Q and K are downsampled via average pooling with stride $s$, and the global attention distillation loss is computed at reduced resolution $\tilde{L} = L/s^2$, with complexity only $1/s^2$ of full attention:
+**3. Second-order Sparse Attention Reparameterization (SSAR): Compensating for Sparse Loss with Stable Second-order Residuals**
 
-$$\mathcal{L}_{\text{global}} = \text{MSE}(\mathbf{A}_{\text{global}}^{\text{FP}} \| \mathbf{A}_{\text{global}}^{\text{quant}})$$
-
-**Local guidance**: Attention distributions are found to be highly skewed—fewer than 10% of tokens account for the vast majority of attention mass. Only the top-$k$ salient queries are selected for full-resolution local distillation, focusing on high-impact regions at minimal cost:
-
-$$\mathcal{L}_{\text{local}} = \text{MSE}(\mathbf{A}_{\text{local}}^{\text{FP}} \| \mathbf{A}_{\text{local}}^{\text{quant}})$$
-
-**Joint optimization**: $\mathcal{L}_{\text{distill}} = \mathcal{L}_{\text{quant}} + \lambda_{\text{global}} \mathcal{L}_{\text{global}} + \lambda_{\text{local}} \mathcal{L}_{\text{local}}$
-
-### Module 2: Second-Order Sparse Attention Reparameterization (SSAR)
-
-SSAR addresses the information loss of sparse attention during inference.
-
-**Instability of first-order residuals**: The first-order residual is defined as $\Delta^{(t)} = \mathbf{A}_{\text{full}}^{(t)} - \mathbf{A}_{\text{sparse}}^{(t)}$. Prior work assumes this residual is constant across timesteps, but quantization noise $\epsilon^{(t)}$ varies across timesteps, violating this assumption.
-
-**Temporal stability of second-order residuals**: The key insight is that the second-order residual $\hat{\Delta}^{(t)} = \Delta^{(t)} - \Delta^{(t-1)}$ exhibits far smaller temporal variation than the first-order residual, since the quantization noise distributions of adjacent timesteps are similar and approximately cancel after differencing.
-
-**SVD projection for denoising**: SVD decomposition is applied to the second-order residual, projecting it onto the top $r$ principal components to further suppress temporal variance:
-
-$$\tilde{\Delta}_{\text{quant}} = \mathbf{S}_{:,:r} \mathbf{U}_{:r,:r} \mathbf{V}_{:,:r}^\top$$
-
-During inference, the cache is refreshed at fixed intervals (every 5 steps), and the second-order correction term efficiently approximates the full attention output without additional memory overhead.
+During inference, the sparse mask discards part of the context. Conventional cache-based methods store the first-order residual $\Delta^{(t)} = \mathbf{A}_{\text{full}}^{(t)} - \mathbf{A}_{\text{sparse}}^{(t)}$ and assume it remains nearly constant across timesteps. Under quantization, this assumption fails: quantization noise $\epsilon^{(t)}$ fluctuates across timesteps, making the first-order residual unstable and introducing outdated errors when reused. The key observation of SSAR is to use the second-order residual $\hat{\Delta}^{(t)} = \Delta^{(t)} - \Delta^{(t-1)}$. Since quantization noise distributions are similar at adjacent timesteps, the noise largely cancels out after differencing, making the temporal variation much smaller than the first-order residual and thus re-cacheable. Furthermore, SVD is applied to the second-order residual, projecting it onto the top $r$ principal components $\tilde{\Delta}_{\text{quant}} = \mathbf{S}_{:,:r} \mathbf{U}_{:r,:r} \mathbf{V}_{:,:r}^\top$ to filter out remaining temporal variance. During inference, the cache is refreshed every 5 steps, using this second-order correction to efficiently approximate full attention output with negligible extra storage, compensating for the information loss from the sparse mask.
 
 ## Key Experimental Results
 
-### Experimental Setup
+### Setup
 
 - **Models**: HunyuanVideo-13B, Wan2.1-1.3B, Wan2.1-14B
-- **Quantization settings**: W6A6, W4A8; channel-wise weight quantization + dynamic per-token activation quantization
-- **Baselines**: Quantization methods (PTQ4DiT, Q-DiT, SmoothQuant, QuaRot, ViDiT-Q, Q-VDiT); sparsification methods (DiTFastAttn, Jenga, SparseVideoGen); and their combinations
+- **Quantization Settings**: W6A6, W4A8, per-channel weight quantization + dynamic per-token activation quantization
+- **Baselines**: Quantization methods (PTQ4DiT, Q-DiT, SmoothQuant, QuaRot, ViDiT-Q, Q-VDiT); Sparsification methods (DiTFastAttn, Jenga, SparseVideoGen); and their combinations
 
-### Main Results
-
-**Table 1: HunyuanVideo-13B Main Results (W4A8)**
+### Table 1: HunyuanVideo-13B Main Results (W4A8)
 
 | Method | Density | VQA↑ | PSNR↑ | SSIM↑ | LPIPS↓ | Speedup |
-|--------|---------|------|-------|-------|--------|---------|
+|------|------|------|-------|-------|--------|--------|
 | Full Prec. | 100% | 81.23 | - | - | - | 1.00× |
 | Q-VDiT | 100% | 67.95 | 16.85 | 0.605 | 0.461 | 1.09× |
 | Q-VDiT+SVG | 15% | 76.30 | 16.66 | 0.591 | 0.460 | 1.84× |
 | **QuantSparse** | **15%** | **81.19** | **20.88** | **0.678** | **0.273** | **1.88×** |
 
-At 15% attention density, QuantSparse achieves a VQA score of 81.19 (close to the full-precision baseline of 81.23), a PSNR substantially higher than Q-VDiT+SVG (20.88 vs. 16.66), along with 1.88× speedup and 3.68× storage compression.
+QuantSparse achieves a VQA of 81.19 at 15% attention density (approaching full precision 81.23). PSNR significantly leads Q-VDiT+SVG (20.88 vs 16.66), while achieving a 1.88× speedup and 3.68× storage compression.
 
-### Ablation Study
-
-**Table 2: Module Contribution Ablation (Wan2.1-14B, W4A8, 25% density)**
+### Table 2: Ablation Study — Module Contribution (Wan2.1-14B, W4A8, 25% Density)
 
 | Module | VQA↑ | PSNR↑ | SSIM↑ | LPIPS↓ |
-|--------|------|-------|-------|--------|
-| No distillation | 81.92 | 14.35 | 0.486 | 0.425 |
-| + Global guidance | 85.26 | 16.01 | 0.547 | 0.349 |
-| + Local guidance | 86.95 | 16.82 | 0.561 | 0.325 |
-| + MSAD (global+local) | **91.98** | **18.72** | **0.630** | **0.240** |
-| No cache | 68.00 | 14.16 | 0.470 | 0.445 |
-| + First-order residual | 70.82 | 17.08 | 0.572 | 0.285 |
-| + Second-order residual | 89.73 | 18.68 | 0.616 | 0.258 |
-| + SSAR (second-order+SVD) | **91.98** | **18.72** | **0.630** | **0.240** |
+|------|------|-------|-------|--------|
+| No Distillation | 81.92 | 14.35 | 0.486 | 0.425 |
+| + Global Guidance | 85.26 | 16.01 | 0.547 | 0.349 |
+| + Local Guidance | 86.95 | 16.82 | 0.561 | 0.325 |
+| + MSAD (Global+Local) | **91.98** | **18.72** | **0.630** | **0.240** |
+| No Cache | 68.00 | 14.16 | 0.470 | 0.445 |
+| + 1st Order Residual | 70.82 | 17.08 | 0.572 | 0.285 |
+| + 2nd Order Residual | 89.73 | 18.68 | 0.616 | 0.258 |
+| + SSAR (2nd+SVD) | **91.98** | **18.72** | **0.630** | **0.240** |
 
-MSAD improves PSNR from 14.35 to 18.72 (+4.37), while SSAR improves it from 14.16 to 18.72 (+4.56); the two modules contribute comparably and complementarily.
+MSAD improves PSNR from 14.35 to 18.72 (+4.37), and SSAR improves it from 14.16 to 18.72 (+4.56). Both modules contribute equally and complementarily.
 
 ### Efficiency Analysis
 
-| Configuration | Model Storage | VRAM | DiT Time | Speedup |
-|---------------|--------------|------|----------|---------|
-| Full Prec. | 23.88 GB | 35.79 GB | 1264 s | 1.00× |
-| QuantSparse W4A8 15% | **6.49 GB** (↓3.68×) | 27.02 GB (↓1.32×) | **671 s** | **1.88×** |
+| Configuration | Model Storage | VRAM Consumption | DiT Time | Speedup |
+|------|---------|---------|---------|--------|
+| Full Prec. | 23.88GB | 35.79GB | 1264s | 1.00× |
+| QuantSparse W4A8 15% | **6.49GB** (↓3.68×) | 27.02GB (↓1.32×) | **671s** | **1.88×** |
 
 ## Highlights & Insights
 
-- **First systematic integration of quantization and sparsification**: Provides a mathematical analysis of "amplified attention shift" and a unified solution, filling the gap in jointly applying these two orthogonal compression techniques.
-- **Memory-efficient attention distillation**: MSAD cleverly circumvents the $O(L^2)$ memory bottleneck through global downsampling combined with local salient token selection.
-- **Key insight of second-order residuals**: The observation that first-order residuals are unstable under quantization while second-order residuals remain stable is an elegant mathematical finding, further improved by SVD projection for denoising.
-- **Nearly lossless aggressive compression**: Quality close to full precision is maintained at 15% attention density and W4A8, far surpassing all baselines.
+- **First Systematic Integration of Quantization + Sparsification**: Proposes a mathematical analysis of "amplified attention shift" and a unified solution, filling the gap in the synergistic application of these two orthogonal compression techniques.
+- **Memory-Efficient Attention Distillation**: MSAD bypasses the $O(L^2)$ memory bottleneck through global downsampling and local salient token selection.
+- **Key Insight on Second-order Residuals**: Identifies that first-order residuals are unstable under quantization but second-order residuals are stable. This elegant mathematical observation is further enhanced by SVD projection for noise reduction.
+- **Aggressive Near-Lossless Compression**: Achieves quality close to full precision at 15% attention density + W4A8, far exceeding all baselines.
 
-## Limitations & Future Work
+## Limitations
 
-- **Calibration phase cost**: MSAD requires running both the full-precision and quantized models simultaneously during PTQ calibration, imposing non-trivial memory and compute demands at that stage.
-- **Manual cache-refresh interval**: The cache-refresh interval of 5 is empirically determined; different models and resolutions may require re-tuning.
-- **Overhead of SVD decomposition**: Although the paper claims "negligible overhead," the practical cost of SVD decomposition on extremely long sequences or very large models warrants further validation.
-- **Limitations of evaluation metrics**: The study primarily relies on reference-based metrics (PSNR/SSIM) and no-reference metrics (VQA/CLIPSIM), lacking large-scale human subjective evaluation.
+- **Calibration Phase Cost**: MSAD requires running both the FP model and the quantized model during PTQ calibration, placing demands on memory and computation during calibration.
+- **Manual Cache-Refresh Interval**: The interval=5 is empirical; different models and resolutions may require retuning.
+- **SVD Decomposition Overhead**: Although described as "negligible overhead," the actual cost of SVD decomposition on extremely long sequences or very large models needs further verification.
+- **Metric Limitations**: Primarily relies on reference-based metrics like PSNR/SSIM and no-reference metrics like VQA/CLIPSIM, lacking large-scale subjective human evaluation.
 
 ## Related Work & Insights
 
-### vs. Q-VDiT (Feng et al., 2025) — Current SOTA Quantization Method
+### vs. Q-VDiT (Feng et al., 2025) — Current SOTA Quantization
 
-Q-VDiT introduces temporal distillation for quantization calibration and represents the prior state of the art in video DiT quantization. However, Q-VDiT focuses solely on quantization without sparsification, achieving only 16.85 PSNR on HunyuanVideo at W4A8. Even naively combining Q-VDiT with the SVG sparsification method yields only 16.66 PSNR (a slight regression), confirming that naive combination is ineffective. QuantSparse substantially outperforms this with 20.88 PSNR, demonstrating the necessity of co-design.
+Q-VDiT introduces temporal distillation for quantization calibration and was the prior SOTA for video DiT quantization. However, it only focuses on quantization. On HunyuanVideo W4A8, its PSNR is only 16.85. Even when combined with SVG sparsification, the PSNR is 16.66 (a slight decrease), proving that naive combination is ineffective. QuantSparse leads with 20.88 PSNR, demonstrating the necessity of joint design.
 
 ### vs. SparseVideoGen (Xi et al., 2025) — Static Sparse Attention
 
-SVG employs predefined spatio-temporal sparse masks to reduce attention computation and performs well at full precision. However, when combined with quantization (QuaRot+SVG on HunyuanVideo at W4A8, 15% density, VQA drops to 41.40), performance degrades severely. QuantSparse addresses the attention shift arising from quantization–sparsification interaction through MSAD and SSAR, achieving near-lossless quality at the same compression ratio.
+SVG uses predefined spatio-temporal sparse masks to reduce attention computation, performing well at full precision. However, when combined with quantization (QuaRot+SVG PSNR on HunyuanVideo W4A8 15% density is only 41.40 VQA), performance degrades severely. QuantSparse targets the quantization-sparse interaction via MSAD+SSAR, maintaining high quality at the same compression rates.
 
-### vs. DiTFastAttn (Yuan et al., 2024) — Cache-Based First-Order Residual
+### vs. DiTFastAttn (Yuan et al., 2024) — Cache-based 1st Order Residuals
 
-DiTFastAttn exploits the cross-timestep stability of first-order residuals for attention approximation. QuantSparse's SSAR demonstrates theoretically (Proposition 3.2) that first-order residuals are no longer stable under quantization, while second-order residuals possess temporal stability (Proposition 3.3)—a more rigorous generalization that substantially outperforms DiTFastAttn under the W4A8 setting.
+DFT utilizes the temporal stability of first-order residuals for attention approximation. QuantSparse's SSAR points out that first-order residuals are no longer stable under quantization (Proposition 3.2), whereas second-order residuals are (Proposition 3.3). This more rigorous theoretical generalization significantly outperforms DFT in W4A8 settings.
 
 ## Rating
 
-- ⭐⭐⭐⭐⭐ **Novelty**: First to co-design quantization and sparsification with rigorous theoretical analysis and two cleverly designed core modules.
-- ⭐⭐⭐⭐⭐ **Experimental Thoroughness**: Covers three models from 1.3B to 14B, two quantization settings, multiple baselines and combinations, and detailed ablation studies.
-- ⭐⭐⭐⭐ **Writing Quality**: Mathematical derivations are clear and figures are informative, though notation is dense and some derivation details are relegated to the appendix.
-- ⭐⭐⭐⭐⭐ **Value**: 3.68× storage compression, 1.88× inference speedup, and near-lossless quality offer direct practical value for video generation deployment.
+- ⭐⭐⭐⭐⭐ Novelty: First synergistic design of quantization and sparsification with solid theoretical analysis and clever module design.
+- ⭐⭐⭐⭐⭐ Experimental Thoroughness: Covers three models (1.3B-14B), two quantization settings, multiple baselines/combinations, and detailed ablations.
+- ⭐⭐⭐⭐ Writing Quality: Clear mathematical derivations and rich charts, though notation is dense and some details are in the appendix.
+- ⭐⭐⭐⭐⭐ Value: 3.68× storage compression + 1.88× speedup with near-lossless quality; direct value for video generation deployment.
 
 <!-- RELATED:START -->
 
@@ -169,11 +161,11 @@ DiTFastAttn exploits the cross-timestep stability of first-order residuals for a
 
 ## Related Papers
 
-- [\[ICLR 2026\] Lumos-1: On Autoregressive Video Generation with Discrete Diffusion from a Unified Model Perspective](lumos-1_on_autoregressive_video_generation_with_discrete_diffusion_from_a_unifie.md)
-- [\[ICLR 2026\] JavisDiT: Joint Audio-Video Diffusion Transformer with Hierarchical Spatio-Temporal Prior Synchronization](javisdit_joint_audio-video_diffusion_transformer_with_hierarchical_spatio-tempor.md)
-- [\[CVPR 2026\] MoVieDrive: Urban Scene Synthesis with Multi-Modal Multi-View Video Diffusion Transformer](../../CVPR2026/video_generation/moviedrive_urban_scene_synthesis_with_multi-modal_multi-view_video_diffusion_tra.md)
-- [\[ICML 2026\] VEDA: Scalable Video Diffusion via Distilled Sparse Attention](../../ICML2026/video_generation/veda_scalable_video_diffusion_via_distilled_sparse_attention.md)
-- [\[CVPR 2026\] When to Lock Attention: Training-Free KV Control in Video Diffusion](../../CVPR2026/video_generation/when_to_lock_attention_training-free_kv_control_in_video_diffusion.md)
+- [\[ICLR 2026\] Model Already Knows the Best Noise: Bayesian Active Noise Selection via Attention in Video Diffusion Model](model_already_knows_the_best_noise_bayesian_active_noise_selection_via_attention.md)
+- [\[ICLR 2026\] Syncphony: 用扩散 Transformer 实现音画同步的音频到视频生成](syncphony_synchronized_audio-to-video_generation_with_diffusion_transformers.md)
+- [\[ICLR 2026\] Neodragon: Mobile Video Generation Using Diffusion Transformer](neodragon_mobile_video_generation_using_diffusion_transformer.md)
+- [\[ICLR 2026\] EchoMotion: Unified Human Video and Motion Generation via Dual-Modality Diffusion Transformer](echomotion_unified_human_video_and_motion_generation_via_dual-modality_diffusion.md)
+- [\[ICLR 2026\] MoGA: Mixture-of-Groups Attention for End-to-End Long Video Generation](moga_mixture-of-groups_attention_for_end-to-end_long_video_generation.md)
 
 </div>
 

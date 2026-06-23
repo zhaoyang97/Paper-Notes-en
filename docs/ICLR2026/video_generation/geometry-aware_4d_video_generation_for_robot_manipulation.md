@@ -2,124 +2,133 @@
 title: >-
   [Paper Note] Geometry-aware 4D Video Generation for Robot Manipulation
 description: >-
-  [ICLR 2026][Video Generation][4D video generation] This paper proposes a geometry-aware 4D video generation framework that trains a video diffusion model via cross-view pointmap alignment supervision…
+  [ICLR 2026][Video Generation][Paper Note] This paper proposes a geometry-aware 4D video generation framework that trains video diffusion models via cross-view pointmap alignment supervision. By jointly predicting RGB and pointmaps, the model achieves spatio-temporally consistent multi-view RGB-D videos. It generates consistent videos from new perspectives with
 tags:
-  - "ICLR 2026"
-  - "Video Generation"
-  - "4D video generation"
-  - "robot manipulation"
-  - "cross-view consistency"
-  - "pointmap alignment"
-  - "pose estimation"
+  - ICLR 2026
+  - Video Generation
 date: 2026-05-08
-content_hash: a3f85a9a1b34a1c3
+content_hash: 6bda442cb6a47425
 ---
-
 # Geometry-aware 4D Video Generation for Robot Manipulation
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2507.01099](https://arxiv.org/abs/2507.01099)  
 **Code**: [Project Page](https://robot4dgen.github.io/)  
-**Area**: Video Generation
+**Area**: Video Generation  
 **Keywords**: 4D video generation, robot manipulation, cross-view consistency, pointmap alignment, pose estimation
 
 ## TL;DR
-This paper proposes a geometry-aware 4D video generation framework that trains a video diffusion model via cross-view pointmap alignment supervision, jointly predicting RGB and pointmap sequences to achieve spatiotemporally consistent multi-view RGB-D videos. Without requiring camera pose inputs at inference, the framework generates consistent videos from novel viewpoints and recovers robot end-effector trajectories using an off-the-shelf 6DoF pose tracker.
+This paper proposes a geometry-aware 4D video generation framework that trains video diffusion models via cross-view pointmap alignment supervision. By jointly predicting RGB and pointmaps, the model achieves spatio-temporally consistent multi-view RGB-D videos. It generates consistent videos from new perspectives without requiring camera pose input and recovers robot end-effector trajectories using off-the-shelf 6DoF pose trackers.
 
 ## Background & Motivation
 
-1. **Background**: Video generation models (e.g., SVD) are increasingly used as visual dynamics models for robot planning. Approaches to extracting robot actions from predicted videos include inverse dynamics models, behavior cloning, and RGB-based pose tracking.
-2. **Limitations of Prior Work**: (1) Pixel-space video models excel at short-horizon motion but lack 3D structural understanding, leading to flickering, distortion, and object disappearance; (2) 3D-aware methods enforce geometric constraints but are restricted to simple static backgrounds and struggle to scale to complex multi-object scenes; (3) existing methods suffer significant performance degradation under novel camera viewpoints.
-3. **Key Challenge**: Temporal consistency and 3D consistency are difficult to achieve simultaneously. Single-view prediction lacks geometric grounding, while multi-view methods either optimize temporal and spatial consistency separately or handle only single objects against white backgrounds.
-4. **Goal**: How to generate 4D videos that are simultaneously temporally coherent and cross-view 3D consistent, and how to recover robot manipulation trajectories from them?
-5. **Key Insight**: Drawing inspiration from DUSt3R's cross-view pointmap alignment, this work adapts the idea to video generation by supervising the model during training to project pointmap predictions from one viewpoint into another viewpoint's coordinate system.
-6. **Core Idea**: Cross-view pointmap alignment serves as geometric supervision for training a video diffusion model to learn a shared 3D scene representation. At inference, the model generates cross-view consistent 4D videos without requiring camera pose inputs.
+1. **Background**: Video generation models (e.g., SVD) are increasingly serving as visual dynamics models for robot planning. Existing methods for extracting robot actions from predicted videos include inverse dynamics models, behavior cloning, and RGB-based pose tracking.
+2. **Limitations of Prior Work**: (1) Pixel-space video models excel at short-term motion but lack 3D structural understanding, leading to flickering, deformation, or vanishing objects; (2) 3D-aware methods enforce geometric constraints but are limited to simple static backgrounds and struggle to scale to complex multi-object scenes; (3) Existing methods suffer from severe performance degradation under novel camera viewpoints.
+3. **Key Challenge**: Balancing temporal consistency with 3D consistency. Single-view predictions lack geometric localization, while multi-view methods tend to optimize temporal and spatial consistency separately or only handle single objects against white backgrounds.
+4. **Goal**: How to generate 4D videos that are both temporally coherent and cross-view 3D consistent to recover robot manipulation trajectories?
+5. **Key Insight**: Drawing from the cross-view pointmap alignment concept in DUSt3R, the idea is adapted for video generation tasks by supervising the model to project pointmap predictions from one viewpoint into the coordinate system of another during training.
+6. **Core Idea**: Use cross-view pointmap alignment as geometric supervision to train a video diffusion model. This allows the model to learn a shared 3D scene representation, enabling the generation of cross-view consistent 4D videos without requiring camera poses during inference.
 
 ## Method
 
 ### Overall Architecture
-Built upon Stable Video Diffusion (SVD). Each viewpoint independently predicts RGB video and pointmap sequences. Pointmap prediction has two output branches: the pointmap $X_t^n$ of viewpoint $v_n$ in its own coordinate system, and the projected pointmap $X_t^{m \to n}$ of viewpoint $v_m$ expressed in $v_n$'s coordinate system. Both branches are supervised jointly during training to enforce 3D consistency. The U-Net decoder employs a dual-branch architecture with cross-attention mechanisms.
+The method extends Stable Video Diffusion (SVD) by enabling the model to simultaneously predict RGB video and pointmap sequences for each viewpoint, binding "moving" pixels and "geometric" 3D structures into the same diffusion process. In the RGB path, each viewpoint is generated independently in its own coordinate system using a shared U-Net. The geometric path is asymmetric: the reference viewpoint $v_n$ predicts its own pointmap $X_t^n$, while the second viewpoint $v_m$ predicts the pointmap $X_t^{m \to n}$ projected into the $v_n$ coordinate system. This cross-view alignment serves as geometric supervision during training, forcing both viewpoints to converge toward a shared 3D scene representation. The pointmap branches use two decoders with independent weights, transmitting geometric cues from the reference view to the second view via cross-attention. Joint optimization of RGB loss and pointmap 3D alignment loss yields cross-view consistent 4D RGB-D videos. These are then processed by an off-the-shelf 6DoF pose tracker (FoundationPose) to recover the robot trajectory for execution.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    IN["Two-view RGB-D Observation<br/>Reference v_n + Second v_m"]
+    IN --> RGB["Shared U-Net<br/>Independent RGB Generation per View"]
+    IN --> PVAE["Pointmap VAE Encoding<br/>Fine-tuned from RGB VAE Initialization"]
+    subgraph SUP["Cross-view Geometric Consistency Supervision"]
+        direction TB
+        PVAE --> DN["v_n Decoder<br/>Predicts Pointmap in Own Frame"]
+        PVAE --> DM["v_m Decoder<br/>Predicts Pointmap in v_n Frame"]
+        DN -.->|"Multi-view Cross-attention<br/>Transfer Geometric Cues"| DM
+    end
+    RGB --> LOSS["Joint Temporal-3D Consistency Optimization<br/>RGB Diffusion Loss + λ·Pointmap Alignment Loss"]
+    SUP --> LOSS
+    LOSS --> OUT["Consistent 4D RGB-D Video"]
+    OUT --> POSE["FoundationPose<br/>6DoF Pose Tracking"]
+    POSE --> TRAJ["Robot Trajectory → Execution"]
+```
 
 ### Key Designs
 
-1. **Cross-view Geometric Consistency Supervision**:
-    - Function: Enforces the model to learn a shared 3D scene representation across viewpoints.
-    - Mechanism: The reference viewpoint $v_n$ predicts its own pointmap $X_t^n$; the second viewpoint $v_m$ predicts not in its own coordinate system but **projected into $v_n$'s coordinate system** as $X_t^{m \to n}$. Both branches are supervised with diffusion losses: $\mathcal{L}_{\text{3D-diff}}(t') = \mathbb{E}\|z_{t'}^n(0) - f_\theta(z_{t'}^n(k), k, c^n)\|^2 + \mathbb{E}\|z_{t'}^{m \to n}(0) - f_\theta(z_{t'}^{m \to n}(k), k, c^m)\|^2$. Camera poses are required during training to define the projection relationship, but at inference the model directly predicts the pointmap of another viewpoint in the reference coordinate system from a single-frame RGB-D input, **without camera pose as input**.
-    - Design Motivation: Inspired by the success of DUSt3R, cross-view pointmap alignment provides the most direct supervision signal for enforcing 3D consistency. The model internalizes the inter-view geometric mapping during training.
+**1. Cross-view Geometric Consistency Supervision: Anchoring Views via Pointmap Alignment**
 
-2. **Multi-view Cross-attention Mechanism**:
-    - Function: Enables cross-view information transfer in the pointmap prediction U-Net decoder.
-    - Mechanism: RGB video prediction shares a single U-Net across all viewpoints, as each viewpoint predicts independently in its own coordinate system. However, pointmap prediction requires alignment to a reference coordinate system, so two decoder branches with independent weights are used, augmented with cross-attention layers: intermediate features from $v_n$'s decoder are passed via cross-attention to $v_m$'s decoder, enabling the $v_m$ branch to attend to geometric cues from $v_n$ and accurately predict pointmaps in $v_n$'s coordinate system.
-    - Design Motivation: RGB prediction can proceed independently per viewpoint, but the asymmetric nature of pointmap prediction ($v_n$ predicts its own; $v_m$ predicts in $v_n$'s frame) necessitates separate decoders and information transfer. Cross-attention realizes asymmetric geometric information propagation.
+The primary failure of single-view video models is the lack of geometric anchors, causing objects to warp or disappear. This work adapts pointmap alignment—proven in static reconstruction by DUSt3R—as a direct supervision signal for 3D consistency in video generation. The reference view $v_n$ predicts its pointmap $X_t^n$, and the second view $v_m$ predicts $X_t^{m \to n}$ in the $v_n$ frame, both constrained by diffusion losses:
 
-3. **Joint Temporal–3D Consistency Optimization**:
-    - Function: Unifies temporal coherence and 3D spatial consistency within a single framework.
-    - Mechanism: The total loss combines RGB diffusion loss and pointmap 3D diffusion loss with a weight: $\mathcal{L} = \sum_{t'}[\mathcal{L}_{\text{diff}}^n(t') + \mathcal{L}_{\text{diff}}^m(t') + \lambda \cdot \mathcal{L}_{\text{3D-diff}}(t')]$, with $\lambda=1$. The Pointmap VAE is initialized from a pretrained RGB VAE and fine-tuned on pointmap data. Pretrained SVD weights provide a strong temporal prior.
-    - Design Motivation: SVD's temporal prior and pointmap alignment's 3D supervision are complementary. Joint optimization allows the model to leverage both motion knowledge from large-scale video pretraining and geometric constraints.
+$$\mathcal{L}_{\text{3D-diff}}(t') = \mathbb{E}\|z_{t'}^n(0) - f_\theta(z_{t'}^n(k), k, c^n)\|^2 + \mathbb{E}\|z_{t'}^{m \to n}(0) - f_\theta(z_{t'}^{m \to n}(k), k, c^m)\|^2$$
+
+While training requires camera poses to compute projection ground truth, once trained, the model interiorizes geometric mappings. During inference, it can predict the pointmap of another view in the reference frame using only single-frame RGB-D input, **without requiring camera poses as input**.
+
+**2. Multi-view Cross-attention: Transferring Geometric Cues via Asymmetric Decoders**
+
+While RGB prediction uses a shared U-Net for independent generation, the pointmap prediction is asymmetric because $v_m$ must "see" the geometry of $v_n$ to predict points in that frame. The pointmap decoders are split into two branches with independent weights linked by cross-attention layers. Intermediate features from the $v_n$ decoder are passed to the $v_m$ decoder, allowing $v_m$ to absorb reference geometry. Removing this cross-attention drops Task 1 performance (mIoU) from 0.70 to 0.41.
+
+**3. Joint Temporal-3D Consistency Optimization: Complementing SVD Priors with Pointmap Constraints**
+
+To balance temporal and spatial coherence, both objectives are optimized via a weighted joint loss:
+
+$$\mathcal{L} = \sum_{t'}[\underbrace{\mathcal{L}_{\text{diff}}^n(t') + \mathcal{L}_{\text{diff}}^m(t')}_{\text{RGB Loss}} + \lambda \cdot \underbrace{\mathcal{L}_{\text{3D-diff}}(t')}_{\text{Pointmap Loss}}]$$
+
+With $\lambda=1$, the model inherits strong temporal priors (motion knowledge) from SVD's large-scale pre-training while being strictly constrained by the geometric pointmap supervision.
 
 ### Loss & Training
-DDPM denoising formulation (direct clean data prediction). Pointmap VAE fine-tuning. Dual-view training requires known camera poses to compute projection ground truth. Training uses 25 demonstrations × 16 camera viewpoints = 400 videos per task (12 viewpoints for training, 4 for testing).
+Training utilizes dual-view pairs requiring camera poses for ground truth calculation. The dataset consists of 25 demonstrations × 16 camera views = 400 videos per task. 12 views are used for training, while 4 unseen views are used for testing to ensure the model learns generalized 3D representations.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Method | Cross-view mIoU↑ | FVD-nn↓ | FVD-mm↓ | AbsRel-nn↓ | δ1-nn↑ |
+| Method | Consistency mIoU↑ | FVD-nn↓ | FVD-mm↓ | AbsRel-nn↓ | δ1-nn↑ |
 |--------|------|------|----------|------|------|
-| 4D Gaussian | 0.39–0.46 | 1208–1396 | 815–1192 | 0.18–0.33 | 0.43–0.80 |
-| SVD | — | 370–977 | 417–743 | — | — |
-| SVD w/ MV attn | — | 536–942 | 445–767 | — | — |
-| Ours w/o MV attn | 0.26–0.44 | 451–597 | 302–607 | 0.10–0.15 | 0.75–0.89 |
-| **Ours** | **0.64–0.70** | **378–491** | **258–561** | **0.03–0.06** | **0.95–0.98** |
+| 4D Gaussian | 0.39-0.46 | 1208-1396 | 815-1192 | 0.18-0.33 | 0.43-0.80 |
+| SVD | — | 370-977 | 417-743 | — | — |
+| SVD w/ MV attn | — | 536-942 | 445-767 | — | — |
+| Ours w/o MV attn | 0.26-0.44 | 451-597 | 302-607 | 0.10-0.15 | 0.75-0.89 |
+| **Ours** | **0.64-0.70** | **378-491** | **258-561** | **0.03-0.06** | **0.95-0.98** |
 
 ### Ablation Study
 
-| Configuration | mIoU↑ | AbsRel↓ | Note |
+| Configuration | mIoU↑ | AbsRel↓ | Insights |
 |------|---------|------|------|
-| Full model | 0.64–0.70 | 0.03–0.06 | Cross-attention + cross-view supervision |
-| w/o MV attention | 0.26–0.44 | 0.10–0.15 | Removing cross-view attention drastically degrades consistency |
-| SVD baseline | — | — | RGB only, no 3D supervision |
-
-Robot manipulation success rate (novel viewpoint):
-
-| Task | Ours | Baseline |
-|------|------|------|
-| StoreCerealBoxUnderShelf | Higher | Lower |
-| PutSpatulaOnTable | Higher | Lower |
-| PlaceAppleFromBowlIntoBin | Higher | Lower |
+| Full model | 0.64-0.70 | 0.03-0.06 | Cross-attention + Cross-view supervision |
+| w/o MV attention | 0.26-0.44 | 0.10-0.15 | Consistency drops significantly without cross-view attention |
+| SVD baseline | — | — | RGB only, lacks 3D supervision |
 
 ### Key Findings
-- Cross-view attention is critical for 3D consistency: removing it drops mIoU from 0.70 to 0.41 (Task 1).
-- The proposed method maintains strong consistency on novel viewpoints unseen during training, demonstrating that the model learns a generalizable 3D representation.
-- Pointmap depth quality is exceptionally high: AbsRel of only 0.03–0.06, far outperforming 4D Gaussian's 0.20+.
-- The ability to operate without camera pose input at inference is highly practical for deployment, eliminating the need for pose calibration.
-- End-effector trajectories recovered from 4D videos via FoundationPose can directly control robots to execute tasks.
+- **Cross-view attention** is critical for 3D consistency; its removal reduces mIoU from 0.70 to 0.41.
+- **Novel view generalization**: The model maintains high consistency on views unseen during training, indicating a generalized 3D representation.
+- **High-quality depth**: Pointmap prediction achievement (AbsRel 0.03-0.06) significantly outperforms 4D Gaussian (0.20+).
+- **Inference without poses**: Avoiding pose calibration during deployment is a significant practical advantage.
+- **End-to-end loop**: Trajectories recovered via FoundationPose from 4D videos enable successful robot execution.
 
 ## Highlights & Insights
-- The design of **using poses during training but not at inference** is elegant: the model internalizes inter-view geometric mappings.
-- A natural transfer of DUSt3R's ideas from static reconstruction to 4D video generation.
-- Joint RGB + pointmap prediction (rather than RGB-only or depth-only) provides the most complete 4D information.
-- End-effector pose tracking closes the full loop from generation to control.
-- Bimanual manipulation tasks (PlaceAppleFromBowlIntoBin) validate effectiveness over long time horizons.
+- The **"Train with Pose, Infer without Pose"** design is effective as the model interiorizes geometric mappings.
+- Successful migration of **DUSt3R concepts** from static reconstruction to 4D video generation.
+- Joint RGB + Pointmap prediction provides a more complete 4D representation than depth-only or RGB-only models.
+- Closed-loop control is achieved through end-effector pose tracking.
 
 ## Limitations & Future Work
-- Supports only dual-view settings; extension to more viewpoints remains unexplored.
-- Data acquisition is non-trivial, requiring 25 demonstrations × 16 viewpoints per task.
-- The underlying SVD model may limit visual quality.
-- Gripper state inference relies on a simple distance threshold, which is not sufficiently robust.
-- Real-robot experiments are conducted only in simulation; real-world validation is limited.
+- Support is currently limited to two viewpoints.
+- Data collection costs (25 demos × 16 views) are high.
+- Underlying SVD limitations may restrict fine-grained visual quality.
+- Gripper state inference relies on simple distance thresholds, which could be improved.
+- Real-world validation remains limited compared to simulation environments.
 
 ## Related Work & Insights
-- **vs. DUSt3R**: DUSt3R targets static 3D reconstruction; this work extends cross-view pointmap alignment to video generation.
-- **vs. 4D Gaussian**: Optimizes temporal and spatial consistency separately; the proposed method performs tighter joint optimization.
-- **vs. UniPi/SuSIE**: Extract actions from video without considering 3D consistency.
-- **vs. CamAnimate/CameraCtrl**: Require camera poses as inference inputs.
+- **vs DUSt3R**: Extends cross-view pointmap alignment from static 3D to dynamic 4D video.
+- **vs 4D Gaussian**: Achieves tighter joint optimization of time/space versus separate optimization.
+- **vs UniPi/SuSIE**: Addresses the lack of 3D consistency in action extraction from video.
+- **vs CamAnimate/CameraCtrl**: Eliminates the requirement for camera poses as inference inputs.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Transfer of DUSt3R to 4D video generation + pose-free inference design
-- Experimental Thoroughness: ⭐⭐⭐⭐ 3 simulation tasks + 4 real tasks, though real-world manipulation experiments are limited
-- Writing Quality: ⭐⭐⭐⭐ Problem formulation is clear and method description is detailed
-- Value: ⭐⭐⭐⭐ The complete loop from 4D video generation to robot manipulation carries significant practical importance
+- Novelty: ⭐⭐⭐⭐ (DUSt3R-to-4D migration + pose-free inference)
+- Experimental Thoroughness: ⭐⭐⭐⭐ (3 sim tasks + 4 real tasks, though real-world manipulation is limited)
+- Writing Quality: ⭐⭐⭐⭐ (Clear definitions and detailed methodology)
+- Value: ⭐⭐⭐⭐ (Practical bridge from 4D video generation to robot control)
 
 <!-- RELATED:START -->
 
@@ -128,10 +137,10 @@ Robot manipulation success rate (novel viewpoint):
 ## Related Papers
 
 - [\[ICLR 2026\] Learning Video Generation for Robotic Manipulation with Collaborative Trajectory Control](learning_video_generation_for_robotic_manipulation_with_collaborative_trajectory.md)
+- [\[CVPR 2026\] WorldReel: 4D Video Generation with Consistent Geometry and Motion Modeling](../../CVPR2026/video_generation/worldreel_4d_video_generation_with_consistent_geometry_and_motion_modeling.md)
+- [\[CVPR 2026\] StereoWorld: Geometry-Aware Monocular-to-Stereo Video Generation](../../CVPR2026/video_generation/stereoworld_geometry-aware_monocular-to-stereo_video_generation.md)
+- [\[ICLR 2026\] MIMIC: Mask-Injected Manipulation Video Generation with Interaction Control](mimic_mask-injected_manipulation_video_generation_with_interaction_control.md)
 - [\[CVPR 2026\] SeeU: Seeing the Unseen World via 4D Dynamics-aware Generation](../../CVPR2026/video_generation/seeu_seeing_the_unseen_world_via_4d_dynamics-aware_generation.md)
-- [\[CVPR 2026\] Geometry-as-context: Modulating Explicit 3D in Scene-consistent Video Generation to Geometry Context](../../CVPR2026/video_generation/geometry-as-context_modulating_explicit_3d_in_scene-consistent_video_generation_.md)
-- [\[ICLR 2026\] Target-Aware Video Diffusion Models](target-aware_video_diffusion_models.md)
-- [\[ICML 2026\] CamGeo: Sparse Camera-Conditioned Image-to-Video Generation with 3D Geometry Prior](../../ICML2026/video_generation/camgeo_sparse_camera-conditioned_image-to-video_generation_with_3d_geometry_prio.md)
 
 </div>
 

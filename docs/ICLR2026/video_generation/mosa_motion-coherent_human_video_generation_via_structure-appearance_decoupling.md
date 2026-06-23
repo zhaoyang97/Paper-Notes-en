@@ -2,83 +2,97 @@
 title: >-
   [Paper Note] MoSA: Motion-Coherent Human Video Generation via Structure-Appearance Decoupling
 description: >-
-  [ICLR 2026][Video Generation][Human video generation] MoSA decomposes human video generation into a **structure generation** stage (a 3D Transformer generates physically plausible motion skeletons) and an **appearance ge…
+  [ICLR 2026][Video Generation][DiT] The authors propose the MoSA framework, which decouples human video generation into "structure generation" (pre-generating physically plausible motion skeletons via a 3D Transformer) and "appearance generation" (synthesizing videos via DiT guided by skeletons). A Human-Aware Dynamic Control (HADC) module is designed to
 tags:
-  - "ICLR 2026"
-  - "Video Generation"
-  - "Human video generation"
-  - "structure-appearance decoupling"
-  - "3D motion generation"
-  - "DiT"
-  - "dense tracking loss"
+  - ICLR 2026
+  - Video Generation
+  - DiT
 date: 2026-05-08
-content_hash: 78f6035cb3bd1cdf
+content_hash: 5e40d04177c52fff
 ---
-
 # MoSA: Motion-Coherent Human Video Generation via Structure-Appearance Decoupling
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2508.17404](https://arxiv.org/abs/2508.17404)  
-**Code**: None (to be released)  
-**Area**: Video Generation
-**Keywords**: Human video generation, structure-appearance decoupling, 3D motion generation, DiT, dense tracking loss
+**Code**: None (to be open-sourced)  
+**Area**: Video Generation  
+**Keywords**: Human Video Generation, Structure-Appearance Decoupling, 3D Motion Generation, DiT, Dense Tracking Loss
 
 ## TL;DR
 
-MoSA decomposes human video generation into a **structure generation** stage (a 3D Transformer generates physically plausible motion skeletons) and an **appearance generation** stage (a DiT synthesizes video conditioned on the skeletons). A Human-Aware Dynamic Control (HADC) module propagates sparse skeleton signals across the entire motion region. Combined with a dense tracking loss and contact constraints, MoSA comprehensively outperforms SOTA models such as HunyuanVideo and Wan 2.1 on FVD, CLIPSIM, and other metrics.
+The authors propose the MoSA framework, which decouples human video generation into "structure generation" (pre-generating physically plausible motion skeletons via a 3D Transformer) and "appearance generation" (synthesizing videos via DiT guided by skeletons). A Human-Aware Dynamic Control (HADC) module is designed to expand sparse skeleton signals into the entire motion region. Together with dense tracking loss and contact constraints, MoSA outperforms SOTA models like HunyuanVideo and Wan 2.1 across metrics including FVD and CLIPSIM.
 
 ## Background & Motivation
 
-**Background**: Current general-purpose video generation models (HunyuanVideo, CogVideoX, Wan 2.1, etc.) achieve high visual quality on natural scenes but frequently produce structural artifacts—limb distortion and unnatural motion—when generating human videos. Methods specialized for human video (e.g., the AnimateAnyone series) are mostly limited to faces/upper bodies or require additional pose-driving inputs, making them ill-suited for complex full-body motion.
+**Background**: Current mainstream general video generation models (e.g., HunyuanVideo, CogVideoX, Wan 2.1) achieve high visual quality in natural scenes but frequently suffer from structural collapse, such as limb distortion and unnatural movements, when generating human videos. Specialized methods (e.g., the AnimateAnyone series) are mostly limited to face/upper-body or require external pose-driven inputs, making it difficult to handle complex full-body movements.
 
-**Limitations of Prior Work**: First, reconstruction objectives based on pure noise denoising inherently favor appearance fidelity over structural consistency—models tend to "look good" while producing physically implausible motion. Second, some methods attempt to generate 2D skeleton sequences directly as guidance, but 2D representations lack depth information under occlusion, leading to structural errors such as interpenetrating legs. Third, skeletons are sparse keypoint representations; even when correctly generated, they provide limited control over subsequent pixel-level appearance generation.
+**Limitations of Prior Work**: First, training objectives based on pure noise reconstruction naturally favor appearance fidelity while ignoring structural consistency—models tend to "draw well" but move irrationally. Second, some methods attempt to generate skeleton sequences directly in 2D space as guidance, but 2D representations lack depth information, leading to structural errors (e.g., leg interpenetration) during limb occlusion. Third, skeletons themselves are sparse keypoint representations; even if generated correctly, their control over subsequent pixel-level appearance generation remains very limited.
 
-**Key Challenge**: Human appearance and motion carry fundamentally different signals—appearance requires pixel-level texture detail, while motion must satisfy physical and anatomical constraints. Existing methods couple both within the same generation process, forcing an inherent trade-off.
+**Key Challenge**: Human appearance and motion carry completely different signals—appearance requires pixel-level texture details, while motion requires adherence to physical constraints and anatomical plausibility. Existing methods couple these in the same generation process, leading to a trade-off.
 
-**Goal**: (1) How to generate physically plausible complex human motion? (2) How to make sparse skeleton signals effectively guide dense pixel generation? (3) How to model human–environment contact interactions?
+**Goal**: (1) How to generate physically plausible complex human motion? (2) How to make sparse skeleton signals effectively guide dense pixel generation? (3) How to model contact interactions between humans and the environment?
 
-**Key Insight**: The authors observe that human motion has strong priors in 3D space (large-scale MoCap datasets), while appearance is well-suited for pretrained DiT-based generation. The problem is therefore decomposed into two stages: first leveraging 3D priors to generate structurally sound motion sequences, then generating appearance conditioned on the skeletons. Motion plausibility is guaranteed by the 3D Transformer; visual quality is guaranteed by the DiT.
+**Key Insight**: The authors observe that human motion has excellent priors in 3D space (large-scale MoCap datasets), while appearance is well-suited for generation by pre-trained DiTs. Therefore, the problem is split into two steps: first leveraging 3D priors to generate structurally sound motion sequences, then generating appearance under skeleton guidance. This ensures motion plausibility via the 3D Transformer and visual quality via the DiT.
 
-**Core Idea**: Generate physically plausible skeleton sequences in 3D space using motion priors, then propagate the sparse skeleton guidance to the full motion region via the HADC module to guide the DiT in generating high-fidelity appearance.
+**Core Idea**: Generate physically plausible skeleton sequences in 3D space using motion priors, then use a Human-Aware Dynamic Control module to expand sparse skeleton guidance into the entire motion region to guide the DiT in generating high-fidelity appearance.
 
 ## Method
 
 ### Overall Architecture
 
-MoSA decouples human video generation into two branches. The **structure generation branch** receives motion semantics from the text prompt and generates a 3D human keypoint sequence via a pretrained 3D Structure Transformer, which is then projected into a 2D skeleton sequence. The **appearance generation branch** conditions on the full text prompt and skeleton structural features, performing iterative denoising via a DiT backbone. Structural information is passed between the two branches through the HADC module. During training, GT skeletons are used as conditions; during inference, skeletons are automatically generated by the structure branch.
+MoSA decomposes "how a human video should move" and "what the scene should look like" into two independent branches. The **Structure Generation Branch** focuses solely on motion: it extracts motion-related semantics from the text prompt, uses a pre-trained 3D Structure Transformer to generate a 3D human keypoint sequence, and projects it into 2D skeleton sequences. The **Appearance Generation Branch** uses the full text prompt and this skeleton sequence as conditions to iteratively denoise and generate the final video on a DiT backbone. These branches are not isolated—skeleton signals are processed by the HADC module before being injected into the appearance branch, transforming from sparse keypoints to dense guidance covering the entire human body. During training, skeletons extracted from GT videos are used as conditions, and only the appearance branch is trained while the structure branch is fixed. At inference, the structure branch generates skeletons from text. This ensures physical plausibility via 3D priors and visual quality via DiT.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    P["Text Prompt"]
+    subgraph STRUCT["3D Structure Transformer (Structure Branch)"]
+        direction TB
+        L["LLM extracts movement-related subset p'"] --> G["3D Structure Transformer generates 3D keypoints from noise"]
+        G --> PROJ["Project to 2D skeletons g_s"]
+    end
+    subgraph APP["Appearance Branch (DiT, CogVideoX-5B)"]
+        direction TB
+        DIT["DiT block iterative denoising"] --> HADC["Human-Aware Dynamic Control (HADC) sparse skeleton → dense regional guidance"]
+        HADC --> DIT
+    end
+    P --> L
+    P -->|Full prompt| DIT
+    PROJ -->|Skeleton condition| HADC
+    HADC --> V["Human Video"]
+    LOSS["Dense Tracking Loss + Contact Constraint"] -.->|Training Supervision| V
+```
 
 ### Key Designs
 
-1. **3D Structure Transformer (Structure Generation Branch)**:
+**1. 3D Structure Transformer: Generating motion in 3D to bypass 2D occlusion issues**
 
-    - **Function**: Generates physically plausible 3D human motion keypoint sequences from the text prompt, then projects them to 2D skeletons.
-    - **Mechanism**: An LLM first extracts motion-relevant subsets $p'$ from the full prompt (filtering background descriptions and other irrelevant content). The 3D Structure Transformer $\mathcal{G}_s^m$ then generates 3D keypoint sequences from Gaussian noise $z_T^s$ conditioned on $p'$, which are rendered into 2D skeletons $g_s$ via a Projection operation. The Transformer adopts an autoregressive architecture pretrained on million-scale MoCap datasets.
-    - **Design Motivation**: Compared to directly generating 2D skeletons, 3D generation offers two key advantages: (a) anatomical plausibility is ensured by 3D human body priors, and (b) depth information maintains structural correctness under limb occlusion. Experiments confirm that direct 2D skeleton generation causes interpenetrating legs in occluded regions.
+Generating skeletons directly in the 2D plane has a fatal flaw—when limbs overlap, the lack of depth information often leads to misplacement or interpenetration. MoSA constructs motion in 3D space. Specifically, an LLM extracts a motion-related subset $p'$ from the prompt, filtering out irrelevant background descriptions. The 3D Structure Transformer $\mathcal{G}_s^m$ generates a 3D keypoint sequence from Gaussian noise $z_T^s$ conditioned on $p'$, which is then rendered into 2D skeletons $g_s$ via a Projection operation. Pre-trained on million-scale MoCap datasets, this autoregressive Transformer inherently possesses human anatomical priors. Generating in 3D and then projecting to 2D ensures joint plausibility through 3D priors and maintains correct depth ordering during occlusions.
 
-2. **Human-Aware Dynamic Control (HADC) Module**:
+**2. Human-Aware Dynamic Control (HADC): Expanding sparse "point guidance" to body-wide "regional guidance"**
 
-    - **Function**: Expands sparse skeleton "point guidance" into "dense guidance" covering the entire motion region, addressing the limited control capacity of sparse skeletons.
-    - **Mechanism**: HADC modules are inserted between adjacent DiT blocks in the appearance branch. The $k$-th module receives skeleton features $s^k$ and video latent $a_i^k$, and uses a learnable weight predictor $\mathcal{P}^k$ to generate a spatially varying dynamic weight map $w^k = \mathcal{P}^k(s^k, a_i^k)$, producing $a_o^k = a_i^k \oplus (w^k \odot s^k)$. To ensure the weight map covers the human body region, a learnable network $\mathcal{U}^k$ converts $w^k$ into a mask latent and applies an L2 constraint $\mathcal{L}_m$ against the GT mask.
-    - **Design Motivation**: Skeletons consist of only $K$ keypoints and are too sparse for effective direct injection into the DiT. HADC learns spatial weights to diffuse the skeleton signal across the entire body region, effectively upgrading from "skeleton guidance" to "human-region guidance."
+Skeleton sequences consist of only $K$ keypoints, providing information that is too sparse for effective pixel-level control in DiT. HADC allows skeleton signals to diffuse across the entire human region. Inserted between adjacent DiT blocks, the $k$-th HADC receives skeleton features $s^k$ and video latent $a_i^k$. It uses a learnable weight predictor $\mathcal{P}^k$ to generate a spatially varying dynamic weight map $w^k = \mathcal{P}^k(s^k, a_i^k)$, and integrates the weighted skeleton signal back into the latent:
 
-3. **Dense Tracking Loss and Contact Constraints**:
+$$a_o^k = a_i^k \oplus (w^k \odot s^k)$$
 
-    - **Function**: Enhances temporal motion consistency and models human–environment interaction.
-    - **Mechanism**: The dense tracking loss $\mathcal{L}_{track}$ uses CoTracker3 to extract 2D trajectory points from generated and GT videos, computing a weighted L1 distance. The weight $e^{|t_v - t_v'|/2}$ assigns higher weight to frame pairs with larger temporal intervals, encouraging the model to learn long-range motion dependencies. The contact constraint $\mathcal{L}_{cont}$ models human–ground and human–object contact relationships in 3D space.
-    - **Design Motivation**: Pure noise reconstruction objectives favor appearance over motion; the tracking loss introduces explicit supervision for motion consistency. The contact constraint addresses physically implausible artifacts such as feet sinking into the ground or floating.
+To prevent weights from drifting to the background, a learnable network $\mathcal{U}^k$ transforms $w^k$ into a mask latent, constrained by an L2 loss $\mathcal{L}_m$ against the GT mask. This forces weights to concentrate on the human body, upgrading sparse "skeleton guidance" to dense "regional guidance."
+
+**3. Dense Tracking Loss and Contact Constraint: Supervising motion consistency and human-environment interaction**
+
+Standard reconstruction objectives lack constraints on motion correctness. Dense Tracking Loss $\mathcal{L}_{track}$ uses CoTracker3 to extract 2D trajectories from both generated and GT videos, calculating a weighted L1 distance. Weights are set to $e^{|t_v - t_v'|/2}$, assigning higher weights to frame pairs with larger temporal spans, explicitly encouraging the model to learn long-range motion dependencies. The Contact Constraint $\mathcal{L}_{cont}$ models 3D interaction between the human and the ground/objects, preventing physical inconsistencies like "feet sinking into the floor" or "floating."
 
 ### Loss & Training
 
-The total loss is $\mathcal{L} = \mathcal{L}_d + \lambda_m \mathcal{L}_m + \lambda_{track} \mathcal{L}_{track} + \lambda_{cont} \mathcal{L}_{cont}$. During training, the pretrained 3D Structure Transformer $\mathcal{G}_s^m$ is frozen, and skeleton sequences extracted from GT videos serve as structural conditions. The appearance generation branch uses CogVideoX-5B as its backbone. The authors also construct the **MoVid** dataset (30K human motion videos) covering diverse complex full-body actions including walking, running, jumping, and skating—substantially exceeding the motion diversity of existing human video datasets.
+The total loss is $\mathcal{L} = \mathcal{L}_d + \lambda_m \mathcal{L}_m + \lambda_{track} \mathcal{L}_{track} + \lambda_{cont} \mathcal{L}_{cont}$. During training, the pre-trained 3D Structure Transformer $\mathcal{G}_s^m$ is fixed. The appearance branch uses CogVideoX-5B as the backbone. The authors also constructed the MoVid dataset (30K human motion videos) covering diverse complex actions like walking, running, jumping, and skating.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Quantitative comparison with general-purpose video generation models on 300+ text prompts:
+Quantitative comparison against general video generation models on 300+ text prompts:
 
-| Method | FVD↓ | CLIPSIM↑ | Subject Consistency↑ | Background Consistency↑ | Motion Smoothness↑ | Dynamic Degree↑ | Quality↑ |
-|--------|------|----------|---------------------|------------------------|--------------------|-----------------|---------|
+| Method | FVD↓ | CLIPSIM↑ | Subject Cons.↑ | Background Cons.↑ | Motion Smooth.↑ | Dynamic Degree↑ | Visual Quality↑ |
+|------|------|----------|-----------|-----------|---------|---------|------|
 | ModelScope | 1945 | 0.2739 | 90.87% | 93.41% | 96.22% | 48.57% | 60.12% |
 | VideoCrafter2 | 1959 | 0.2801 | 93.43% | 97.01% | 97.31% | 35.71% | 60.32% |
 | LaVie | 1778 | 0.2895 | 93.80% | 95.51% | 97.21% | 53.73% | 62.57% |
@@ -92,68 +106,70 @@ Quantitative comparison with general-purpose video generation models on 300+ tex
 
 Contribution of each module (FVD↓ / CLIPSIM↑):
 
-| Configuration | FVD | CLIPSIM | Note |
-|--------------|-----|---------|------|
+| Ablation Config | FVD | CLIPSIM | Description |
+|---------|-----|---------|------|
 | Full MoSA | 1093 | 0.3035 | All components |
-| w/o structure branch | 1262 | 0.2971 | Direct fine-tuning of base model; FVD +169 |
-| 2D skeleton generation instead of 3D | 1230 | 0.2998 | Structural collapse under occlusion |
-| w/o HADC module | 1188 | 0.2973 | Insufficient control from sparse skeletons |
-| HADC w/o mask loss | 1112 | 0.3009 | Weight map lacks body-region constraint |
-| w/o dense tracking loss | 1172 | 0.3009 | Degraded motion consistency |
-| Static weight instead of temporal weighting | 1114 | 0.3016 | Insufficient long-range dependency learning |
-| w/o contact constraint | 1108 | 0.3021 | Unnatural human–environment interaction |
+| w/o Structure Branch | 1262 | 0.2971 | Direct finetune of base model, FVD +169 |
+| 2D skeleton instead of 3D | 1230 | 0.2998 | Structural collapse in occlusion scenes |
+| w/o HADC module | 1188 | 0.2973 | Insufficient sparse skeleton control |
+| HADC w/o mask loss | 1112 | 0.3009 | Weight map lacks human region constraint |
+| w/o Dense Tracking Loss | 1172 | 0.3009 | Decreased motion consistency |
+| Static vs. Temporal Weight | 1114 | 0.3016 | Insufficient long-range dependency learning |
+| w/o Contact Constraint | 1108 | 0.3021 | Unnatural human-env interaction |
 | HumanVid dataset | 1217 | 0.2949 | Insufficient motion diversity |
-| w/o additional human data | 1360 | 0.2899 | Degrades to base model |
+| w/o Extra Human Data | 1360 | 0.2899 | Degenerates to base model |
 
-Transferring the MoSA framework to Wan 2.1 also yields significant gains: Wan 2.1 baseline FVD=1251 / CLIPSIM=0.2951 → with MoSA FVD=1108 / CLIPSIM=0.3044, validating the generalizability of the framework.
+The MoSA framework also shows significant gains when migrated to Wan 2.1: Wan 2.1 original FVD=1251 / CLIPSIM=0.2951 → With MoSA FVD=1108 / CLIPSIM=0.3044, validating the framework's versatility.
 
 ### Key Findings
 
-- **Structure–appearance decoupling is the dominant contributor**: Removing the structure branch increases FVD from 1093 to 1262 (+15.5%), demonstrating that explicit structural guidance is critical for motion quality.
-- **3D outperforms 2D**: 3D→2D projection improves over direct 2D generation by 137 FVD, primarily because depth information maintains structural correctness under limb occlusion (visualizations show leg interpenetration with the 2D approach).
-- **HADC module is highly effective**: Removing HADC raises FVD by 95; the mask loss alone contributes an additional 19 FVD improvement, confirming that spatial weight constraints effectively extend the guidance signal across the human body region.
-- **Temporal weighting in the dense tracking loss is important**: Static weights vs. exponential temporal weighting differ by 21 FVD, indicating that learning long-range motion dependencies requires explicit encouragement.
-- **MoVid dataset is indispensable**: Compared to HumanVid, MoVid contributes a 124 FVD improvement due to its coverage of more complex and diverse full-body motions.
+- **Structure-Appearance Decoupling is the primary driver**: Without the structure branch, FVD rises from 1093 to 1262 (+15.5%), proving that explicit structural guidance is critical for motion quality.
+- **3D is Superior to 2D**: The 3D→2D projection outperforms direct 2D generation by 137 FVD, mainly because depth information maintains structural integrity during limb occlusions.
+- **HADC Module is Effective**: Removing HADC increases FVD by 95, and the mask loss contributes an additional 19 FVD improvement, indicating that spatial weight constraints effectively cover the human region.
+- **Temporal Weighting in Tracking Loss is Vital**: A 21 FVD difference exists between static weights and exponential temporal weighting, showing that long-range motion dependencies must be explicitly encouraged.
+- **MoVid Dataset is Irreplaceable**: MoVid contributed a 124 FVD improvement over HumanVid by covering more complex and diverse full-body motions.
 
 ## Highlights & Insights
 
-- **Systematic decoupling paradigm**: Motion = structural signals (requiring physical constraints); appearance = texture signals (requiring visual quality) → these two signal types naturally should be generated by different models. This two-stage "generate structure first, then fill in appearance" design is both principled and efficient, and is more amenable to separate optimization than end-to-end approaches.
-- **HADC's sparse-to-dense design**: Skeletons are extremely sparse representations (only $K$ points), yet HADC propagates the guidance signal from keypoints to the entire body region via a learnable weight predictor, with a mask loss constraining coverage. This sparse-to-dense signal propagation paradigm is transferable to any scenario requiring sparse control signals to guide dense generation.
-- **Temporal weighting in the tracking loss is elegant**: The weight $e^{|t_v - t_v'|/2}$ allocates more gradient to frame pairs with larger temporal spans, compelling the model to learn long-range motion consistency rather than focusing only on adjacent frames. This trick is directly applicable to any video generation task requiring temporal consistency.
+- **Systematic Decoupling Paradigm**: Motion = structural signals (requiring physical constraints), Appearance = texture signals (requiring visual quality) → These two signals should naturally be generated by different models. This two-stage design is both rational and efficient.
+- **Sparse-to-Dense HADC Design**: Points are sparse, but HADC diffuses guidance signals via a learnable weight predictor, constrained by mask loss. This "sparse → dense" signal propagation is a transferable idea for any sparse control task.
+- **Clever Temporal Weighting**: The $e^{|t_v - t_v'|/2}$ weight allows frame pairs with larger temporal gaps to contribute more gradients, forcing the model to learn long-range consistency rather than just focusing on adjacent frames.
 
 ## Limitations & Future Work
 
-- **Hand motion remains a bottleneck**: The 3D Structure Transformer is trained on SMPL body joints only, without finger keypoints, so fine-grained hand motions still exhibit artifacts. The authors identify incorporating hand 3D annotations as a straightforward improvement direction.
-- **Single-person limitation**: Although some multi-person interaction results are presented, the overall framework is designed primarily for single-person scenarios and lacks systematic interaction modeling for multi-person cases.
-- **Limited scale of MoVid**: At 30K videos, MoVid remains orders of magnitude smaller than general-purpose video datasets (millions of clips), potentially limiting generalization to broader scenarios.
-- **Computational overhead**: The structure branch, HADC modules, and tracking loss (requiring a CoTracker3 forward pass) introduce substantial additional training and inference costs.
+- **Hand Motion remains a Bottleneck**: The 3D Structure Transformer is trained on SMPL body joints, which do not include fingers, leading to distortions in fine hand movements.
+- **Single-Person Limitation**: While the paper shows some multi-person interactions, the framework is primarily designed for single-person scenarios and lacks systematic interaction modeling.
+- **MoVid Scale**: 30K videos is still small compared to million-scale general datasets, potentially limiting generalization.
+- **Computational Overhead**: The additional branches and tracking loss increase training and inference costs.
 
 ## Related Work & Insights
 
-- **vs. AnimateAnyone2**: AnimateAnyone2 also uses skeleton guidance but requires user-provided driving pose sequences and only supports simple scenarios such as dancing. MoSA's core advantage lies in automatically generating structurally plausible skeletons from text and supporting complex full-body motions such as running and skating.
-- **vs. VideoJAM**: VideoJAM also addresses joint motion–appearance representation but performs joint learning within a single model. MoSA more aggressively fully decouples the two branches, allowing the structure branch to focus on physical plausibility and the appearance branch to focus on visual quality.
-- **vs. direct 2D skeleton methods (MotionMaster/DreamDance, etc.)**: These methods generate or consume skeletons in 2D space and are prone to collapse under occlusion. MoSA fundamentally resolves this issue through 3D→2D projection.
+- **vs. AnimateAnyone2**: AnimateAnyone2 also uses skeleton guidance but requires user-provided driving pose sequences and supports simpler scenes. MoSA's advantage is automatic skeleton generation from text for complex motions.
+- **vs. VideoJAM**: VideoJAM focuses on joint motion-appearance representation within one model; MoSA more aggressively decouples them to optimize each separately.
+- **vs. Direct 2D Skeleton Methods**: These methods fail in occlusion; MoSA solves this fundamentally via 3D→2D projection.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ The structure–appearance decoupling idea is intuitively sound and represents the first systematic implementation in human video generation, though the two-stage "generate structure then generate appearance" paradigm has precedents in other domains.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ Quantitative comparisons against 7 general-purpose video models, 6-dimensional VBench evaluation, detailed per-module ablations, cross-backbone transfer validation, and qualitative visualizations—comprehensive throughout.
-- **Writing Quality**: ⭐⭐⭐⭐ Logic is clear and figures are informative, though some formula notation definitions are redundant.
-- **Value**: ⭐⭐⭐⭐ Provides a systematic decoupling paradigm for human video generation; the MoVid dataset also offers community value. However, the 30K dataset scale and single-person limitation require further extension for broader deployment.
-- **Writing Quality**: ⭐⭐⭐⭐ Motivation is clearly articulated and the architecture diagram is intuitive.
-- **Value**: ⭐⭐⭐⭐⭐ Represents a significant advance in motion plausibility for human video generation.
+- Novelty: ⭐⭐⭐⭐ The decoupling is intuitive and systematically implemented for human video, though the two-stage paradigm has precedents in other fields.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Quantitative comparison with 7 models + VBench evaluation + detailed ablation + backbone migration + qualitative visualization.
+- Writing Quality: ⭐⭐⭐⭐ Clear logic and rich visualization, though some notation is slightly redundant.
+- Value: ⭐⭐⭐⭐ Provides a systematic decoupling paradigm and the valuable MoVid dataset; however, the data scale and single-person focus mean further expansion is needed for deployment.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
 
+</div>
+
+<!-- RELATED:END -->
+
 ## Related Papers
 
-- [\[AAAI 2026\] MotionCharacter: Fine-Grained Motion Controllable Human Video Generation](../../AAAI2026/video_generation/motioncharacter_fine-grained_motion_controllable_human_video_generation.md)
+- [\[ICLR 2026\] EchoMotion: Unified Human Video and Motion Generation via Dual-Modality Diffusion Transformer](echomotion_unified_human_video_and_motion_generation_via_dual-modality_diffusion.md)
 - [\[CVPR 2026\] SymphoMotion: Joint Control of Camera Motion and Object Dynamics for Coherent Video Generation](../../CVPR2026/video_generation/symphomotion_joint_control_of_camera_motion_and_object_dynamics_for_coherent_vid.md)
-- [\[CVPR 2026\] PAM: A Pose-Appearance-Motion Engine for Sim-to-Real HOI Video Generation](../../CVPR2026/video_generation/pam_a_pose-appearance-motion_engine_for_sim-to-real_hoi_video_generation.md)
-- [\[ICLR 2026\] MotionStream: Real-Time Video Generation with Interactive Motion Controls](motionstream_real-time_video_generation_with_interactive_motion_controls.md)
-- [\[ICML 2026\] VAnim: Rendering-Aware Sparse State Modeling for Structure-Preserving Vector Animation](../../ICML2026/video_generation/vanim_rendering-aware_sparse_state_modeling_for_structure-preserving_vector_anim.md)
+- [\[AAAI 2026\] MotionCharacter: Fine-Grained Motion Controllable Human Video Generation](../../AAAI2026/video_generation/motioncharacter_fine-grained_motion_controllable_human_video_generation.md)
+- [\[CVPR 2026\] 3D-Aware Implicit Motion Control for View-Adaptive Human Video Generation](../../CVPR2026/video_generation/3d-aware_implicit_motion_control_for_view-adaptive_human_video_generation.md)
+- [\[ICLR 2026\] Anchor Frame Bridging for Coherent First-Last Frame Video Generation](anchor_frame_bridging_for_coherent_first-last_frame_video_generation.md)
 
 </div>
 

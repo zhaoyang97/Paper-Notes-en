@@ -1,127 +1,109 @@
 ---
 title: >-
-  [Paper Note] Tuning the Burn-in Phase in RNN Training Improves Performance
+  [Paper Note] Tuning the burn-in phase in training recurrent neural networks improves their performance
 description: >-
-  [ICLR 2026][Time Series][Recurrent Neural Networks] This paper provides a theoretical analysis of the critical role played by the burn-in length $m$ in Truncated Backpropagation Through Time (TBPTT) training of RNNs. It…
+  [ICLR 2026][Time Series][Paper Note] This work provides a theoretical proof of the critical impact of burn-in phase length $m$ on Truncated Backpropagation Through Time (TBPTT) performance in RNN training. It establishes upper bound estimates for training regret and validates through system identification and time series prediction experiments that proper
 tags:
-  - "ICLR 2026"
-  - "Time Series"
-  - "Recurrent Neural Networks"
-  - "Truncated Backpropagation Through Time"
-  - "Burn-in Phase"
-  - "Time Series Forecasting"
-  - "System Identification"
+  - ICLR 2026
+  - Time Series
 date: 2026-05-08
-content_hash: 0d29d1f4a4f84d9b
+content_hash: 2e3423dab830157d
 ---
+# Tuning the burn-in phase in training recurrent neural networks improves their performance
 
-# Tuning the Burn-in Phase in RNN Training Improves Performance
-
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2602.10911](https://arxiv.org/abs/2602.10911)  
-**Area**: Time Series
-**Keywords**: Recurrent Neural Networks, Truncated Backpropagation Through Time, Burn-in Phase, Time Series Forecasting, System Identification
+**Area**: Time Series  
+**Keywords**: Recurrent Neural Networks, Truncated Backpropagation, Burn-in Phase, Time Series Prediction, System Identification
 
 ## TL;DR
 
-This paper provides a theoretical analysis of the critical role played by the burn-in length $m$ in Truncated Backpropagation Through Time (TBPTT) training of RNNs. It establishes upper bounds on training regret and validates through system identification and time series forecasting experiments that appropriately tuning the burn-in phase can reduce prediction error by more than 60%.
+This work provides a theoretical proof of the critical impact of burn-in phase length $m$ on Truncated Backpropagation Through Time (TBPTT) performance in RNN training. It establishes upper bound estimates for training regret and validates through system identification and time series prediction experiments that proper tuning of the burn-in phase can reduce prediction error by over 60%.
 
 ## Background & Motivation
 
-The standard method for training RNNs is Backpropagation Through Time (BPTT), which faces three major challenges on long sequences:
+The standard method for training RNNs is Backpropagation Through Time (BPTT), but training on long sequences faces three major issues:
 
-**High computational and memory cost**: Forward and backward passes must traverse the entire sequence.
+**High Computational and Memory Costs**: Forward and backward passes must traverse the entire sequence.
 
-**Gradient explosion/vanishing**: Long-sequence BPTT is numerically unstable.
+**Vanishing/Exploding Gradients**: Long-sequence BPTT suffers from numerical instability.
 
-**Complex loss landscape**: Optimization becomes increasingly difficult as sequence length grows.
+**Complex Loss Landscapes**: Optimization becomes increasingly difficult as sequence length grows.
 
-**Truncated BPTT (TBPTT)** is the standard practical alternative: the long sequence is split into short sub-sequences, each processed independently with BPTT. However, the hidden state at the beginning of each sub-sequence is typically **zero-initialized**, causing initial outputs to be contaminated by transient effects.
+**Truncated BPTT (TBPTT)** is the standard practical alternative: long sequences are split into short subsequences, and BPTT is performed independently on each segment. However, the hidden states at the start of subsequences are typically **zero-initialized**, causing initial outputs to be affected by transients.
 
-**Burn-in phase**: The outputs of the first $m$ steps of each sub-sequence are excluded from the loss function, allowing the network to "warm up." This practice has been adopted in several prior works (Jaeger 2002; Bonassi 2022; Beintema 2021) but has never been theoretically analyzed or systematically tuned — a gap this paper addresses.
+**Burn-in Phase**: Excluding the outputs of the first $m$ steps of each segment from the loss function allows the network to "warm up." While this practice has been used in multiple works (Jaeger 2002; Bonassi 2022; Beintema 2021), it has never been theoretically analyzed or systematically tuned—a gap this paper fills.
 
 ## Method
 
 ### Overall Architecture
 
-Consider the standard RNN model:
+This paper does not propose a new network architecture; instead, it provides a theoretical characterization of the burn-in steps $m$ in TBPTT, which has long been treated as an "empirical trick." Considering a standard RNN $h_t = f(h_{t-1}, x_t; \theta_h)$ and $y_t = g(h_t, x_t; \theta_y)$, TBPTT splits a long sequence $D$ into $S$ subsequences of length $N$. Each segment performs BPTT independently after zero-initialization of hidden states. The role of burn-in is to discard the outputs of the first $m$ steps when calculating the loss, accounting for errors only after the $(m+1)$-th step. Thus, the subsequence loss is defined as $L(\theta; D_i) = \frac{1}{N-m}\sum_{j=m+1}^{N}\|y_j(0, \theta, X_i^d) - y_{j|i}^d\|^2$, where $m \in [0, N-1]$. The entire methodology revolves around determining the optimal value of $m$, which is dictated by the network's forgetting speed.
 
-$$h_t = f(h_{t-1}, x_t; \theta_h), \quad y_t = g(h_t, x_t; \theta_y)$$
+### Key Designs
 
-TBPTT splits the training sequence $D$ into $S$ sub-sequences of length $N$, with the burn-in loss defined as:
+**1. Exponential Output Stability Assumption: Quantifying the decay of zero-initialization error**
 
-$$L(\theta; D_i) = \frac{1}{N-m}\sum_{j=m+1}^{N}\|y_j(0, \theta, X_i^d) - y_{j|i}^d\|^2$$
-
-where $m \in [0, N-1]$ is the burn-in length.
-
-### Key Theoretical Results
-
-**Assumption 1 (Exponential Incremental Output Stability)**: There exist $C > 0$ and $\lambda \in (0,1)$ such that:
+The intuition behind burn-in is that transient errors from zero-initialization fade over time. To analyze this theoretically, the authors propose Assumption 1: there exist constants $C>0$ and a forgetting factor $\lambda \in (0,1)$ such that the difference between outputs generated by any two initial states satisfies:
 
 $$\|y_t(h_0^{(1)}, \theta, X) - y_t(h_0^{(2)}, \theta, X)\| \leq C\lambda^t \|h_0^{(1)} - h_0^{(2)}\|$$
 
-That is, the dependence of RNN outputs on initialization decays exponentially over time.
+This implies that the influence of initialization contracts exponentially at rate $\lambda^t$; the smaller the $\lambda$, the faster the network forgets. This assumption holds for mainstream architectures satisfying contractivity, such as LSTM, GRU, LRU, and State Space Models (SSM). Thus, the conclusions are not tied to a specific RNN but cover a broad class of models.
 
-**Theorem 1 (Training Regret)**: The regret of the TBPTT solution $\theta^*$ relative to a reference solution $\theta^b$ satisfies:
+**2. Training Regret Upper Bound: Expressing burn-in benefits as an exponential function of $m$**
 
-$$V^* - V^b \leq C_2 \cdot \frac{\lambda^m}{N-m}$$
+Theorem 1 links $m$ to performance by measuring the training regret of the TBPTT solution $\theta^*$ relative to an ideal baseline solution $\theta^b$. It proves $V^* - V^b \leq C_2 \cdot \frac{\lambda^m}{N-m}$. In this expression, $m$ appears in two places with opposing effects: the numerator $\lambda^m$ decays exponentially as $m$ increases (suppressing initialization bias), while the denominator $N-m$ decreases (reducing available supervisory samples and increasing variance). This tension implies that the regret upper bound reaches a minimum at some intermediate $m^*$, rather than $m$ being as large as possible or zero. This transforms burn-in tuning from an empirical guess into an optimization problem with a clear trade-off structure.
 
-**Theorem 2 (Performance Regret)**: The performance regret on the full sequence satisfies:
+**3. Coupling Performance Regret and Forgetting Factor: Practical rules for "$\lambda$ determining $m$"**
 
-$$P(0, \theta^*; D) - P(h_0^b, \theta^b; D) \leq E_2 \cdot \sqrt{\frac{(S-1)\lambda^{2o_{\min}} + S\lambda^m}{T-m}}$$
-
-### Core Idea
-
-- The regret upper bound **critically depends on the interplay between $m$ and $\lambda$**.
-- Smaller $\lambda$ (faster forgetting) allows larger $m$; larger $\lambda$ (slower forgetting) calls for smaller $m$.
-- The burn-in length should be treated as a **standard hyperparameter** in RNN training.
+Theorem 2 extends the analysis to deployment performance over the full sequence, providing $P(0, \theta^*; D) - P(h_0^b, \theta^b; D) \leq E_2 \cdot \sqrt{\frac{(S-1)\lambda^{2o_{\min}} + S\lambda^m}{T-m}}$, utilizing the turnpike property from optimal control to characterize the gap between truncated training and full-sequence deployment. Combining Theorems 1 and 2, the core conclusion is that the upper bound is dominated by the interaction between $m$ and $\lambda$. This leads to a practical guideline: the faster the network forgets (smaller $\lambda$), the quicker transients dissipate, allowing for a larger $m$; the slower it forgets (larger $\lambda$), the longer initialization effects persist, requiring a smaller $m$ to avoid losing too many effective samples. In other words, burn-in should not be a random default value but a standard hyperparameter tuned according to the model's own time constant, much like the learning rate.
 
 ## Key Experimental Results
 
-### System Identification (LSTM, $d_h=8$)
+### System Identification Experiments (LSTM, $d_h=8$)
 
-| Dataset | $N$ | Baseline $m=0$ Train MSE | Optimal $m^*$ Train MSE | Improvement | Test MSE Improvement |
+| Dataset | $N$ | Baseline $m=0$ Training MSE | Optimal $m^*$ Training MSE | Gain | Test MSE Gain |
 |--------|-----|-------|---------|------|------------|
 | Silver-Box | 100 | 0.242 | 0.042 | **-83%** | -51% |
 | RLC | 200 | 0.971 | 0.309 | **-68%** | **-79%** |
 | RLC | 500 | 0.442 | 0.186 | **-58%** | -58% |
 | W-H | 100 | 0.220 | 0.153 | -31% | -4% |
 
-### Time Series Forecasting Comparison
+### Time Series Prediction Comparison
 
 | Method | Advantages | Disadvantages |
 |------|------|------|
 | TBPTT ($m=\bar{m}$) | Simple | Suboptimal performance |
-| TBPTT ($m=m^*$) | **Universally best** | Requires tuning |
-| Stateful TBPTT | Carries hidden state | Numerically unstable |
+| TBPTT ($m=m^*$) | **Generally optimal** | Requires tuning |
+| Stateful TBPTT | Passes hidden states | Numerically unstable |
 | Full BPTT | Theoretically optimal | Computationally expensive |
 
 ### Key Findings
 
-1. **Large impact of burn-in**: Appropriate tuning reduces training and test MSE by over 60%.
-2. **Qualitative consistency**: The effect pattern of burn-in is highly consistent across different window lengths $N$.
-3. **TBPTT can outperform BPTT**: The stochasticity introduced by zero-initialized TBPTT yields better numerical stability and faster convergence.
-4. **Regularization effect**: Choosing $m < \bar{m}$ provides additional regularization.
-5. **Theory-experiment agreement**: Regret decays exponentially as $m$ decreases, consistent with theoretical predictions.
+1. **Significant Impact of Burn-in**: Proper tuning can reduce training and test MSE by over 60%.
+2. **Qualitative Consistency**: The impact pattern of burn-in remains highly consistent across different window lengths $N$.
+3. **TBPTT Can Outperform BPTT**: The stochasticity of zero-initialized TBPTT provides better numerical stability and faster convergence.
+4. **Regularization Effect**: Selecting $m < \bar{m}$ acts as an additional form of regularization.
+5. **Theory-Experiment Alignment**: Regret decays exponentially as $m$ decreases, consistent with theoretical predictions.
 
 ## Highlights & Insights
 
-1. **From heuristic to theory**: The burn-in phase is elevated from an unanalyzed empirical practice to a theoretically grounded training technique.
-2. **Optimal control perspective**: TBPTT performance is analyzed via the turnpike property, establishing a bridge between RNN training and optimal control theory.
-3. **High practical value**: Tuning burn-in incurs zero overhead (no increase in model complexity) and is directly applicable within existing frameworks.
-4. **Broad applicability**: The theory applies to all RNN architectures satisfying exponential output stability (LSTM, GRU, LRU, SSMs, etc.).
+1. **From Heuristic to Theory**: Elevates burn-in from an unanalyzed empirical practice to a theoretically grounded training method.
+2. **Optimal Control Perspective**: Analyzes TBPTT performance through the turnpike property, establishing a bridge between RNN training and optimal control.
+3. **High Practical Value**: Burn-in tuning is zero-cost (no increase in model complexity) and can be implemented within existing frameworks.
+4. **Broad Applicability**: Theory applies to all RNN architectures satisfying exponential output stability (LSTM, GRU, LRU, SSM, etc.).
 
 ## Limitations & Future Work
 
-1. Theoretical analysis is limited to MSE loss; generalization to other losses such as classification objectives requires further investigation.
-2. Quantitative verification of Assumption 1 is conservative (practical estimation of $\lambda$ is required), and exact computation of optimal $m$ remains challenging.
+1. Theoretical analysis is limited to MSE loss; generalizations to other loss functions like classification are needed.
+2. Quantitative validation of Assumption 1 is conservative (requires actual estimation of $\lambda$), making precise calculation of optimal $m$ difficult.
 3. Only zero-initialized TBPTT is considered; theoretical analysis of stateful training is left for future work.
-4. Experiments are conducted solely with LSTM architectures; validation on modern SSMs (e.g., Mamba) is absent.
-5. Only univariate forecasting is considered; multivariate settings are not addressed.
+4. Experiments only use the LSTM architecture; validation on modern SSMs (e.g., Mamba) is missing.
+5. Only univariate prediction is considered; multivariate scenarios are not covered.
 
 ## Rating ⭐⭐⭐⭐
 
-The paper offers rigorous theory, sufficient experiments, and strong practical utility. It elevates a neglected training hyperparameter to a theoretically informed tuning target with direct benefits for RNN training practice. Its main limitation is the relatively small experimental scale, with no evaluation on modern large-scale sequential models.
+Solid theory, sufficient experimentation, and strong practicality. It elevates a neglected training hyperparameter to a core tuning component with theoretical guidance, providing direct benefits to RNN training practices. The weakness lies in the small experimental scale and the lack of modern large-scale sequence models.
 
 <!-- RELATED:START -->
 
@@ -129,11 +111,11 @@ The paper offers rigorous theory, sufficient experiments, and strong practical u
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Human-Machine Ritual: Synergic Performance through Real-Time Motion Recognition](../../NeurIPS2025/time_series/human-machine_ritual_synergic_performance_through_real-time_motion_recognition.md)
-- [\[ICLR 2026\] HiVid: LLM-Guided Video Saliency For Content-Aware VOD And Live Streaming](hivid_llm-guided_video_saliency_for_content-aware_vod_and_live_streaming.md)
+- [\[ICLR 2026\] Weight-Space Linear Recurrent Neural Networks](weight-space_linear_recurrent_neural_networks.md)
+- [\[ICLR 2026\] Quadratic Direct Forecast for Training Multi-Step Time-Series Forecast Models](quadratic_direct_forecast_for_training_multi-step_time-series_forecast_models.md)
+- [\[CVPR 2026\] Stable Spike: Dual Consistency Optimization via Bitwise AND Operations for Spiking Neural Networks](../../CVPR2026/time_series/stable_spike_dual_consistency_optimization_via_bitwise_and_operations_for_spikin.md)
+- [\[AAAI 2026\] Urban Incident Prediction with Graph Neural Networks: Integrating Government Ratings and Crowdsourced Reports](../../AAAI2026/time_series/urban_incident_prediction_with_graph_neural_networks_integrating_government_rati.md)
 - [\[ICLR 2026\] Online Time Series Prediction Using Feature Adjustment](online_time_series_prediction_using_feature_adjustment.md)
-- [\[ICLR 2026\] SwiftTS: A Swift Selection Framework for Time Series Pre-trained Models via Multi-task Meta-Learning](swiftts_a_swift_selection_framework_for_time_series_pre-trained_models_via_multi.md)
-- [\[ICLR 2026\] Delta-XAI: A Unified Framework for Explaining Prediction Changes in Online Time Series Monitoring](delta-xai_a_unified_framework_for_explaining_prediction_changes_in_online_time_s.md)
 
 </div>
 

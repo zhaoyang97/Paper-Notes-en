@@ -2,132 +2,133 @@
 title: >-
   [Paper Note] Frame Guidance: Training-Free Guidance for Frame-Level Control in Video Diffusion Models
 description: >-
-  [ICLR 2026][Video Generation][Training-free guidance] This paper proposes Frame Guidance, a training-free frame-level guidance method that enables controllable video generation tasks — including keyframe guidance…
+  [ICLR 2026][Video Generation][Paper Note] Frame Guidance is a training-free frame-level guidance method that achieves various controllable video generation tasks, such as keyframe guidance, stylization, and looping videos, without model modification. It utilizes two core components: latent slicing (reducing VRAM by 60×) and Video Latent Optimization (VLO).
 tags:
-  - "ICLR 2026"
-  - "Video Generation"
-  - "Training-free guidance"
-  - "video diffusion models"
-  - "frame-level control"
-  - "keyframe generation"
-  - "stylized video"
+  - ICLR 2026
+  - Video Generation
 date: 2026-05-08
-content_hash: 93143072be64a6ab
+content_hash: 0e3f1346826dd10e
 ---
-
 # Frame Guidance: Training-Free Guidance for Frame-Level Control in Video Diffusion Models
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2506.07177](https://arxiv.org/abs/2506.07177)  
 **Code**: [https://frame-guidance-video.github.io/](https://frame-guidance-video.github.io/)  
-**Area**: Diffusion Models / Video Generation
-**Keywords**: Training-free guidance, video diffusion models, frame-level control, keyframe generation, stylized video
+**Area**: Diffusion Models / Video Generation  
+**Keywords**: Training-free guidance, Video diffusion models, Frame-level control, Keyframe generation, Stylized video  
 
 ## TL;DR
 
-This paper proposes Frame Guidance, a training-free frame-level guidance method that enables controllable video generation tasks — including keyframe guidance, stylization, and looping video — without modifying the model, via two core components: latent slicing (reducing memory by 60×) and Video Latent Optimization (VLO).
+Frame Guidance is a training-free frame-level guidance method that achieves various controllable video generation tasks, such as keyframe guidance, stylization, and looping videos, without model modification. It utilizes two core components: latent slicing (reducing VRAM by 60×) and Video Latent Optimization (VLO).
 
 ## Background & Motivation
 
-**Growing demand for controllable video generation**: As the quality of video diffusion models improves, users increasingly require fine-grained control over generated content.
+**Growing demand for controllable video generation**: As video diffusion model (VDM) quality improves, users increasingly require fine-grained control.
 
-**High cost of training-based methods**: Existing approaches typically require fine-tuning large-scale VDMs; as model sizes grow (e.g., Wan 14B), fine-tuning becomes increasingly impractical.
+**Training-based methods are uneconomical**: Existing methods usually require fine-tuning large-scale VDMs. As model sizes grow (e.g., Wan 14B), fine-tuning costs become prohibitive.
 
-**Limited generality of training-free methods**: Existing training-free methods (e.g., CamTrol, MotionClone) are designed for specific tasks and lack a unified framework.
+**Lack of universality in training-free methods**: Existing training-free methods (e.g., CamTrol, MotionClone) are often task-specific and lack a general framework.
 
-**Memory bottleneck of Video CausalVAE**: The causal dependency in CausalVAE requires decoding the full sequence to reconstruct a single frame, causing gradient computation to exceed 650 GB of memory.
+**Memory bottleneck of Video CausalVAE**: The causal dependency of CausalVAE requires decoding the entire sequence to reconstruct a single frame, leading to gradient calculation memory exceeding 650GB.
 
-**Inapplicability of existing guidance strategies to video**: The time-travel trick from image guidance washes out guidance signals in early denoising steps for video.
+**Inapplicability of existing guidance strategies to video**: Image-domain time-travel tricks tend to wash out guidance signals during the early steps of video generation.
 
-**Dual objective gap**: No prior method simultaneously satisfies both "model-agnostic + training-free" and "generalizable across multiple tasks."
+**Key Challenge of balancing dual objectives**: Methods that are simultaneously "model-agnostic + training-free" and "general-purpose multi-task" remain a gap in the field.
 
 ## Method
 
 ### Overall Architecture
 
-Frame Guidance applies gradient-based guidance to selected frames during the inference of a pretrained VDM, achieving efficient and controllable generation through three core components: **Latent Slicing** (efficient decoding), **VLO** (phased optimization strategy), and **task-adaptive loss design**.
+Frame Guidance does not modify any parameters of the pre-trained VDM. Instead, it performs a "guidance correction" at each sampling step: first, it predicts the clean video $x_{0\vert t}$ from the current latent $z_t$ using the Tweedie formula, decodes target frames into pixels, calculates a task loss $\mathcal{L}_e$ for these frames, and backpropagates the gradient to optimize $z_t$ before proceeding to the next denoising step. The core challenges lie in "how to make the gradient computation affordable" and "when to apply guidance"—the former is addressed by Latent Slicing to reduce decoding VRAM, and the latter by Video Latent Optimization (VLO) to concentrate guidance strength in the early stages.
 
-### Key Design 1: Latent Slicing
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    Z["Current latent z_t"] --> PRED["Predict clean video x₀|t <br/>via Tweedie Formula"]
+    PRED --> SLICE["Latent Slicing<br/>Decode 3-latent window<br/>+ 2× spatial downsampling"]
+    SLICE --> LOSS["Calculate task loss L_e<br/>on guided frames"]
+    LOSS -->|"Backprop through denoising net v_θ<br/>(Maintains temporal consistency)"| VLO["VLO schedules guidance strength<br/>by denoising stage"]
+    VLO -->|"Early t>t_E: Deterministic strong guidance"| Z
+    VLO -->|"Middle: Stochastic update with re-noising"| Z
+    VLO -->|"Late t≤t_L: Remove guidance for refinement"| OUT["Controllable Video Output"]
+```
 
-- **Discovery of temporal locality in CausalVAE**: Experiments show that, despite being designed as causal, perturbations in CausalVAE in practice only affect a small number of adjacent latents (temporal locality).
-- **Slice decoding**: When reconstructing frame $i$, only a window of 3 latents is decoded rather than the entire sequence.
-- **Spatial downsampling**: Latents are spatially downsampled by $2\times$ before decoding for loss computation.
-- **Effect**: Memory is reduced by up to **60×**, enabling guidance of large models such as Wan-14B on a single GPU.
+### Key Designs
 
-### Key Design 2: Video Latent Optimization (VLO)
+**1. Latent Slicing: Compressing CausalVAE full-sequence decoding into a local window**
 
-- **Core insight**: The global layout of video frames is determined within the first few denoising steps; early-stage guidance is most critical for temporal consistency.
-- **Phased strategy**:
-    - **Early phase** ($t > t_E$): Deterministic update $z_t \leftarrow z_t - \eta \nabla_{z_t} \mathcal{L}_e$, preserving the guidance signal.
-    - **Middle phase** ($t_E \geq t > t_L$): Stochastic update (with re-noising) to correct accumulated errors.
-    - **Late phase** ($t \leq t_L$): No guidance; free refinement of details.
+Video guidance is restricted by VRAM: CausalVAE's causal dependency means reconstructing any single frame requires decoding the entire latent sequence, requiring over 650GB VRAM for gradients. The authors observed a counter-intuitive fact: although CausalVAE is designed with a causal structure, perturbing one latent only affects a few adjacent frames, exhibiting significant temporal locality. Thus, to reconstruct the $i$-th frame, one only needs to decode a 3-latent window, reducing VRAM to below $15\times$. Combined with $2\times$ spatial downsampling of latents before VAE loss calculation, the total VRAM required for guidance is reduced by up to **60×**, enabling frame-level guidance on models like Wan-14B (14B parameters) on a single GPU. Downsampling also focuses the guidance signal on semantic structures rather than texture details.
 
-### Critical Role of Gradient Propagation
+**2. Gradient through the Denoising Network: Controlling the sequence via sparse frames**
 
-- Guidance gradients must propagate through the denoising network $v_\theta$ to influence temporal consistency across the entire video.
-- Guidance is applied only to sliced latents, but gradients propagate through the network to all frames.
-- Shortcut-based updates (bypassing the network) affect only the guided frames, leading to temporal discontinuities.
+Even when calculating loss on only a few sliced frames, updates cannot simply modify those specific frame latents. The guidance gradient must be backpropagated through the denoising network $v_\theta$ to $z_t$. This allows the signal to propagate from guided frames to the entire video, maintaining temporal consistency. If a shortcut update is used (bypassing the network to change pixels or latents directly), the impact is confined to the guided frames, causing temporal discontinuities/flickering at those positions. In short, Latent Slicing reduces "decoding" overhead, but the "network pass" is essential as the transmission path for sparse control.
 
-### Multi-Task Loss Design
+**3. Video Latent Optimization: Phase-based guidance strength allocation**
+
+Standard image "time-travel tricks" (repeated noise-denoise loops) wash out early guidance signals in video. Since global video layouts are established in the first few denoising steps, early guidance is critical for temporal consistency. VLO segments the sampling trajectory into three stages: Early ($t > t_E$) uses deterministic updates $z_t \leftarrow z_t - \eta \nabla_{z_t} \mathcal{L}_e$ to preserve the signal; Middle ($t_E \geq t > t_L$) uses stochastic updates with re-noising to correct accumulated errors; Late ($t \leq t_L$) removes guidance to let the model refine textures freely. Strong guidance is prioritized during the "layout determination" phase to maintain control without sacrificing image quality.
+
+### Loss & Training
+
+The universality of Frame Guidance stems from using different frame-level losses $\mathcal{L}_e$ within the same framework. Changing the loss changes the task without retraining. Let $x_{0\vert t}^i$ be the current prediction of the $i$-th frame, $\mathcal{I}$ the set of guided frames, and $\Psi$ the corresponding feature encoder (e.g., CSD for style, depth/edge extractors for general conditions):
 
 | Task | Loss Function |
-|------|--------------|
-| Keyframe guidance | $\mathcal{L}_e = \sum_{i \in \mathcal{I}} \|x_*^i - x_{0\vert t}^i\|_2^2$ |
+|------|----------|
+| Keyframe Guidance | $\mathcal{L}_e = \sum_{i \in \mathcal{I}} \|x_*^i - x_{0\vert t}^i\|_2^2$ |
 | Stylization | $\mathcal{L}_e = -\sum_{i \in \mathcal{I}} \cos(\Psi(x_{\text{style}}), \Psi(x_{0\vert t}^i))$ |
-| Looping video | $\mathcal{L}_e = \|x_{0\vert t}^1 - x_{0\vert t}^L\|_2^2$ |
-| General conditioning (depth/edge) | $\mathcal{L}_e = \sum_{i \in \mathcal{I}} \|\Psi(x_*^i) - \Psi(x_{0\vert t}^i)\|_2^2$ |
+| Looping Video | $\mathcal{L}_e = \|x_{0\vert t}^1 - x_{0\vert t}^L\|_2^2$ |
+| General Conditions (Depth/Edge) | $\mathcal{L}_e = \sum_{i \in \mathcal{I}} \|\Psi(x_*^i) - \Psi(x_{0\vert t}^i)\|_2^2$ |
 
 ## Key Experimental Results
 
 ### Keyframe Guidance (DAVIS Dataset)
 
 | Method | Training | FID ↓ | FVD ↓ |
-|--------|----------|-------|-------|
+|------|------|-------|-------|
 | CogX-I2V | ✓ | 60.36 | 890.1 |
-| TRF (training-free) | ✓ | 62.07 | 923.1 |
+| TRF (Training-free) | ✓ | 62.07 | 923.1 |
 | **Ours (CogX, I+F)** | ✓ | 57.62 | 613.4 |
 | **Ours (CogX, I+M+F)** | ✓ | 55.60 | 577.1 |
-| SVD-Interp (fine-tuned) | ✗ | 63.89 | 800.3 |
-| CogX-Interp (fine-tuned) | ✗ | 46.59 | 506.0 |
+| SVD-Interp (Fine-tuned) | ✗ | 63.89 | 800.3 |
+| CogX-Interp (Fine-tuned) | ✗ | 46.59 | 506.0 |
 
 ### Pexels Dataset
 
 | Method | FID ↓ | FVD ↓ |
-|--------|-------|-------|
+|------|-------|-------|
 | CogX-I2V | 74.98 | 1122.6 |
 | **Ours (Wan-14B, I+M+F)** | 71.63 | 904.8 |
 | **Ours (CogX, I+M+F)** | 68.97 | 989.3 |
 
-**Key Findings**: The training-free Frame Guidance surpasses the training-based SVD-Interp on most metrics, and falls only slightly short of the specially fine-tuned CogX-Interp.
+**Key Findings**: The training-free Frame Guidance outperforms the training-based SVD-Interp on most metrics and is only slightly trailing behind the specifically fine-tuned CogX-Interp.
 
 ## Highlights & Insights
 
-1. **Discovery of temporal locality in CausalVAE**: Despite its causal design, the VAE exhibits temporal locality in practice — a finding that enables the 60× memory reduction.
-2. **Phased strategy in VLO**: Unlike the uniform time-travel trick for images, VLO employs deterministic and stochastic phases tailored to the temporal characteristics of video.
-3. **Model agnosticism**: Demonstrated effectiveness across three distinct VDMs: CogVideoX, LTX-Video, and Wan-14B.
-4. **High flexibility**: Supports arbitrary keyframe positions, diverse conditioning signals, and multiple tasks without per-task training.
-5. **Sparse guidance suffices**: Guiding only a small number of frames is sufficient to control the entire video through gradient propagation in the network.
+1. **Discovery of CausalVAE temporal locality**: Although designed as causal, it exhibits temporal locality—a finding that makes the 60× VRAM reduction possible.
+2. **VLO staged strategy**: Unlike uniform image time-travel, it designs deterministic/stochastic phased optimization tailored for video temporal characteristics.
+3. **Model-agnostic**: Effectively works on CogVideoX, LTX-Video, and Wan-14B.
+4. **High flexibility**: Supports arbitrary keyframe positions, various conditional signals, and multiple tasks without per-task training.
+5. **Sparse frame guidance**: Guiding only a few frames can control the entire video via network gradient propagation.
 
 ## Limitations & Future Work
 
-1. Inference is slow (constrained to no more than 4× the base model runtime), and guidance steps and step sizes require manual tuning.
-2. Keyframe guidance achieves visual similarity rather than pixel-level exact matching.
-3. Stylization depends on the quality of specific style encoders such as CSD.
-4. For highly dynamic scenes (e.g., fast motion, scene transitions), layout determination in early steps may be insufficient.
-5. Guidance conditioned on additional modalities such as audio and text remains unexplored.
+1. Slower inference speed (operates within a 4× overhead of the base model), and guidance steps/learning rates require manual tuning.
+2. Keyframe guidance provides visual similarity rather than pixel-perfect alignment.
+3. Stylization quality depends on specific style encoders like CSD.
+4. For high-dynamic scenes (fast motion, scene cuts), layout determination in early steps may be insufficient.
+5. Guidance for other modalities like audio or text remains unexplored.
 
 ## Related Work & Insights
 
-- **Universal Guidance (Bansal et al., 2024)**: The foundational training-free guidance method for images; this paper extends it to video.
-- **TRF (Feng et al., 2024)**: Training-free keyframe interpolation for SVD, but lacks generality; Frame Guidance supports a broader range of tasks through frame-level loss design.
-- **CogX-Interp**: A fine-tuning-based keyframe interpolation method with higher precision but requiring training.
-- Insight: The temporal locality of CausalVAE may be leveraged by other training-free methods, such as video editing and inpainting.
+- **Universal Guidance (Bansal et al., 2024)**: Foundation for training-free guidance in the image domain; this work extends it to video.
+- **TRF (Feng et al., 2024)**: Training-free SVD frame interpolation but lacks universality; Frame Guidance achieves broader tasks through frame-level loss design.
+- **CogX-Interp**: A fine-tuning-based keyframe interpolation method with higher accuracy but requires training.
+- Insight: The temporal locality of CausalVAE could be exploited by other training-free methods such as editing or inpainting.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — Both Latent Slicing and VLO are clever designs tailored to the video setting.
+- Novelty: ⭐⭐⭐⭐ — Latent Slicing and VLO are clever designs specifically for video scenarios.
 - Experimental Thoroughness: ⭐⭐⭐⭐ — Validated across multiple models, tasks, and datasets.
-- Writing Quality: ⭐⭐⭐⭐⭐ — Clear structure, in-depth analysis, and excellent figures.
+- Writing Quality: ⭐⭐⭐⭐⭐ — Clear structure, deep analysis, and excellent visualizations.
 - Value: ⭐⭐⭐⭐⭐ — Highly practical in the era of large models; a significant milestone for training-free methods.
 
 <!-- RELATED:START -->
@@ -137,10 +138,10 @@ Frame Guidance applies gradient-based guidance to selected frames during the inf
 ## Related Papers
 
 - [\[CVPR 2026\] FlowMotion: Training-Free Flow Guidance for Video Motion Transfer](../../CVPR2026/video_generation/flowmotion_training-free_flow_guidance_for_video_motion_transfer.md)
-- [\[CVPR 2026\] When to Lock Attention: Training-Free KV Control in Video Diffusion](../../CVPR2026/video_generation/when_to_lock_attention_training-free_kv_control_in_video_diffusion.md)
-- [\[ICLR 2026\] Target-Aware Video Diffusion Models](target-aware_video_diffusion_models.md)
-- [\[ICLR 2026\] LoRA-Edit: Controllable First-Frame-Guided Video Editing via Mask-Aware LoRA Fine-Tuning](lora-edit_controllable_first-frame-guided_video_editing_via_mask-aware_lora_fine.md)
-- [\[ICML 2026\] Enhancing Train-Free Infinite-Frame Generation for Consistent Long Videos](../../ICML2026/video_generation/enhancing_train-free_infinite-frame_generation_for_consistent_long_videos.md)
+- [\[ICLR 2026\] Realtime Video Frame Interpolation Using One-Step Diffusion Sampling](realtime_video_frame_interpolation_using_one-step_diffusion_sampling.md)
+- [\[ICLR 2026\] Anchor Frame Bridging for Coherent First-Last Frame Video Generation](anchor_frame_bridging_for_coherent_first-last_frame_video_generation.md)
+- [\[CVPR 2026\] Improving Motion in Image-to-Video Models via Adaptive Low-Pass Guidance](../../CVPR2026/video_generation/improving_motion_in_image-to-video_models_via_adaptive_low-pass_guidance.md)
+- [\[ICLR 2026\] MAGREF: Masked Guidance for Any-Reference Video Generation with Subject Disentanglement](magref_masked_guidance_for_any-reference_video_generation_with_subject_disentang.md)
 
 </div>
 

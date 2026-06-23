@@ -2,75 +2,83 @@
 title: >-
   [Paper Note] Target-Aware Video Diffusion Models
 description: >-
-  [ICLR 2026][Video Generation][Video Diffusion Models] This paper proposes a target-aware video diffusion model that generates videos of an actor interacting with a specified target object…
+  [ICLR 2026][Video Generation][Paper Note] A target-aware video diffusion model is proposed that generates videos of actors interacting with a specified target using only an input image and a segmentation mask of the target object. The core innovation involves introducing a special [TGT] token and designing a selective cross-attention loss to focus the model on
 tags:
-  - "ICLR 2026"
-  - "Video Generation"
-  - "Video Diffusion Models"
-  - "Target-Aware"
-  - "Cross-Attention Loss"
-  - "Human Interaction"
-  - "Action Planning"
+  - ICLR 2026
+  - Video Generation
 date: 2026-05-08
-content_hash: f2c0a5c4d2538e21
+content_hash: e415e8e6f7e5975e
 ---
-
 # Target-Aware Video Diffusion Models
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2503.18950](https://arxiv.org/abs/2503.18950)  
 **Code**: [taeksuu.github.io/tavid](https://taeksuu.github.io/tavid/)  
-**Area**: Video Generation / Human-Object Interaction
+**Area**: Video Generation / Human-Object Interaction  
 **Keywords**: Video Diffusion Models, Target-Aware, Cross-Attention Loss, Human Interaction, Action Planning
 
 ## TL;DR
-This paper proposes a target-aware video diffusion model that generates videos of an actor interacting with a specified target object, given only a single input image and a segmentation mask of the target. The core innovations are the introduction of a special [TGT] token and a selective cross-attention loss that guides the model to attend to the spatial location of the target, achieving comprehensive improvements over baselines in both target alignment and video quality.
+A target-aware video diffusion model is proposed that generates videos of actors interacting with a specified target using only an input image and a segmentation mask of the target object. The core innovation involves introducing a special [TGT] token and designing a selective cross-attention loss to focus the model on the target's spatial location, outperforming baselines in both target alignment and video quality.
 
 ## Background & Motivation
-Video diffusion models have demonstrated remarkable capabilities in simulating complex scenes, but precise control over content and actions is required for practical applications. Existing controllable video generation methods typically rely on dense structural or motion cues (depth maps, edge maps, optical flow, drag trajectories, etc.) to guide actor motion. While effective for simple translations or viewpoint changes, these approaches face fundamental challenges in **actor–target interaction scenarios**, where providing structural motion guidance—such as how to reach for a cup on a table—is inherently difficult.
+Video diffusion models have demonstrated significant capabilities in simulating complex scenes, but practical applications require precise control over content and motion. Existing controllable video generation methods often rely on dense structural or motion cues (depth maps, edge maps, optical flow, dragging, etc.) to guide actor movement. While effective for simple translations or viewpoint changes, these methods face fundamental difficulties in **actor-target interaction scenarios**, where providing structural guidance (e.g., how to reach for a cup on a table) is extremely challenging.
 
-A further motivation is to leverage video diffusion models as **high-level action planners**. Rather than treating video models as "renderers" (requiring dense motion inputs), this work positions them as "planners" capable of generating plausible interaction actions given only a target location. This has significant implications for downstream applications such as robotic manipulation.
+An additional motivation is to utilize the video diffusion model as a **high-level action planner**. Rather than treating the model as a "renderer" requiring dense motion input, this work positions it as a "planner" that generates plausible interaction sequences given only the target location. This is of significant importance for downstream applications such as robotic manipulation.
 
-The core idea is to mark a target object with a single segmentation mask and allow the generative prior of the video diffusion model to autonomously infer reasonable interaction actions for the actor.
+**Core Idea**: Use only a single segmentation mask to label the target object, allowing the video diffusion model's generative prior to autonomously infer reasonable interaction movements for the actor.
 
 ## Method
 
 ### Overall Architecture
-**Inputs**: a single image $I$, a segmentation mask $M$ of the target object, and a text prompt describing the desired action. **Output**: a video in which the actor accurately interacts with the target specified by the mask. The method is built upon CogVideoX-5B-I2V and fine-tuned via LoRA.
+This paper addresses the limitation of current controllable video generation methods that rely on dense cues. Since sketching frame-by-frame guidance for "reaching for a cup" is nearly impossible, this method takes an input image, a binary mask of the target object, and a text prompt to let the model infer the interaction.
+
+**Mechanism**: The process begins by constructing a dataset of "non-contact to contact" interaction segments. During training, spatial information of the target is injected through **two parallel paths**: a visual path (mask concatenated with the image in the channel dimension) and a text path (a [TGT] token appended to the prompt). The base model is CogVideoX-5B-I2V, fine-tuned using LoRA. To ensure the model attends to the mask, a selective cross-attention loss is introduced to pull the attention map of the [TGT] token toward the mask. This loss is applied only to the most semantically aligned layers and attention regions.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    DATA["Dataset Construction<br/>BEHAVE+Ego-Exo4D interaction clips<br/>SAM for masks · CogVLM2 for captions"]
+    subgraph COND["Condition Injection (Dual Path)"]
+        direction TB
+        IMG["Input Image I"] --> CAT["Visual Path: Channel Concatenation<br/>image + downsampled mask"]
+        MASK["Binary Mask M"] --> CAT
+        TXT["Prompt with appended [TGT]<br/>'The person interacts<br/>with [TGT] object'"] --> TGT["Text Path: [TGT] token<br/>encoding target spatial info"]
+    end
+    DATA --> COND
+    CAT --> MODEL["CogVideoX-5B-I2V<br/>(LoRA Fine-tuning)"]
+    TGT --> MODEL
+    MODEL --> LOSS["Selective Cross-Attention Loss<br/>V2T · blocks 5~23 random 7 selection<br/>Align [TGT] attention with M"]
+    LOSS -->|Weighted with Rec Loss λ=0.1| MODEL
+    MODEL --> OUT["Actor-Target<br/>Interaction Video"]
+```
 
 ### Key Designs
 
-1. **Mask Condition Injection**: The binary segmentation mask $M$ is downsampled and concatenated with the input image as an additional channel fed into the diffusion model. The input channels of the image projection layer are extended accordingly, with newly added weights initialized to zero to preserve pretrained parameters. This allows the model to perceive the spatial location of the target, though this alone is insufficient to guarantee target awareness—the model may still ignore the mask information.
+**1. Dataset Construction: Filtering and Auto-labeling Interaction Segments**
+The [TGT] loss requires the supervision signal to contain a clear interaction process. The authors extracted 1,290 segments from BEHAVE and Ego-Exo4D. Each segment satisfies two conditions: the actor is present but not yet interacting with the target in the initial frame, and successful interaction occurs in subsequent frames. Masks are obtained via SAM, and captions are generated using CogVLM2.
 
-2. **[TGT] Token and Cross-Attention Loss**: This is the core contribution of the paper.
+**2. Mask Condition Injection: Pixels-level Target Perception**
+A binary mask $M$ is downsampled and concatenated with the input image $I$ as an additional channel. To accommodate this, the input dimension of the image projection layer is expanded, with new weights **initialized to zero** to preserve the pre-trained generative priors during early training stages.
 
-    - The phrase "The person interacts with [TGT] object." is appended to the text prompt, introducing a special token [TGT] to encode the spatial information of the target.
-    - A cross-attention loss is designed to align the cross-attention map of the [TGT] token with the input mask:
-     $$\mathcal{L}_{\text{attn}} = \mathbb{E}[\|A(\mathbf{z}_t^0, [\text{TGT}]) - M\|_2^2]$$
-     where $A(\mathbf{z}_t^0, [\text{TGT}])$ denotes the cross-attention weights between the first-frame video latent and the [TGT] token.
-    - The total training objective is: $\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{rec}} + \lambda_{\text{attn}} \mathcal{L}_{\text{attn}}$ (with $\lambda_{\text{attn}} = 0.1$).
-    - During inference, [TGT] is prepended to the word referring to the target in the text, enabling the model to leverage the spatial cues provided by the mask.
+**3. [TGT] Token and Cross-Attention Loss: Spatial Info via Text**
+The prompt is appended with "The person interacts with [TGT] object." The special token [TGT] encodes the target's spatial position. A cross-attention loss aligns the [TGT] attention map with the input mask:
 
-3. **Selective Cross-Attention Loss**: Rather than applying the loss indiscriminately across all transformer blocks and attention regions, the paper applies it selectively:
+$$\mathcal{L}_{\text{attn}} = \mathbb{E}\big[\,\|A(\mathbf{z}_t^0, [\text{TGT}]) - M\|_2^2\,\big]$$
 
-    - **Selective Transformer Blocks**: Empirical evaluation identifies blocks 5–23 (out of 42) as having cross-attention maps most semantically aligned with the segmentation mask. At each training step, 7 blocks are sampled from this range.
-    - **Selective Attention Regions**: The MM-DiT architecture contains four attention types (text-to-text, T2V, V2T, video-to-video). **V2T (video-to-text) cross-attention** directly influences the values of video latent representations and yields the best results. T2V also encodes semantic information but has an indirect effect.
+The total objective is $\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{rec}} + \lambda_{\text{attn}} \mathcal{L}_{\text{attn}}$ (where $\lambda_{\text{attn}} = 0.1$). During inference, the [TGT] token guides the model to utilize the spatial cues provided by the mask.
 
-4. **Dataset Construction**: A total of 1,290 video clips are extracted from the BEHAVE (simple human-object interactions) and Ego-Exo4D (complex scenarios such as cooking and car repair) datasets. Each clip satisfies: (1) the actor is present but not yet interacting with the target in the initial frame, and (2) the actor engages with the target in subsequent frames. Target masks are obtained using SAM, and text captions are generated using CogVLM2.
+**4. Selective Cross-Attention Loss: Layer and Region Specificity**
+Applying $\mathcal{L}_{\text{attn}}$ to all layers can contaminate those unrelated to spatial localization. Two filtering steps are used. **Block level**: Experiments showed blocks 5-23 (out of 42) align best with masks; 7 blocks are **randomly selected** from this range per training step. **Attention region**: The authors select V2T (video-to-text) cross-attention, as it **directly influences** video latent values through the dot product of values, whereas T2V is less effective.
 
-### Training Details
-- Built on CogVideoX-5B-I2V; LoRA rank=128, α=64.
-- Only LoRA layers and the image projection layer are trained; all other parameters are frozen.
-- Trained for 2,000 steps with AdamW, lr=1e-4, batch size=4.
-- 4× NVIDIA A100 GPUs; approximately 6 hours of training.
-- Inference: DPM sampler, 50 steps, CFG=6; approximately 4 minutes per video on a single A100.
+### Loss & Training
+The base model is frozen; only LoRA layers (rank=128, $\alpha=64$) and the expanded projection layer are updated. Training involves 2,000 steps using AdamW, a learning rate of 1e-4, and batch size 4, taking approximately 6 hours on 4x A100 GPUs. Inference uses a DPM solver with 50 steps and CFG=6.
 
 ## Key Experimental Results
 
-### Main Results — Target Alignment and Video Quality
+### Main Results
 
 | Method | Hum. Eval. ↑ | User Pref. ↑ | Contact Score ↑ | SS | BC | DD | MS |
-|--------|-------------|-------------|----------------|----|----|----|----|
+|------|-------------|-------------|----------------|----|----|----|----|
 | CogVideoX | 0.592 | 0.456 | 28.4% | 0.914 | 0.903 | 0.950 | 0.988 |
 | CogVideoX w. data | 0.692 | 0.596 | 36.2% | 0.915 | 0.900 | 0.956 | 0.990 |
 | Attn. Mod. | 0.613 | 0.508 | 22.2% | 0.878 | 0.887 | 0.827 | 0.984 |
@@ -78,43 +86,40 @@ The core idea is to mark a target object with a single segmentation mask and all
 
 ### Ablation Study
 
-| Configuration | Contact Score | Notes |
-|---------------|--------------|-------|
-| $\lambda_{\text{attn}} = 0.0$ (no attention loss) | 0.688 | ≈ CogVideoX w. data; confirms attention loss is critical |
-| $\lambda_{\text{attn}} = 0.01$ | 0.756 | Improvement but insufficient |
-| $\lambda_{\text{attn}} = 0.1$ (ours) | **0.896** | Optimal balance |
-| $\lambda_{\text{attn}} = 1.0$ | 0.904 | Marginally higher contact score but degraded video quality |
-| Random block selection | 0.840 | Inferior to semantic selection |
-| Uniform block selection | 0.839 | Inferior to semantic selection |
-| T2V Cross-Attn. | 0.784 | Inferior to V2T |
-| V2T Cross-Attn. (ours) | **0.896** | V2T directly influences video latent representations |
+| Configuration | Contact Score | Description |
+|------|--------------|------|
+| $\lambda_{\text{attn}} = 0.0$ | 0.688 | Identical to data-only fine-tuning; proves loss necessity |
+| $\lambda_{\text{attn}} = 0.01$ | 0.756 | Insufficient improvement |
+| $\lambda_{\text{attn}} = 0.1$ (Ours) | **0.896** | Optimal balance |
+| $\lambda_{\text{attn}} = 1.0$ | 0.904 | Slightly higher contact but degrades video quality |
+| Random Block Selection | 0.840 | Inferior to semantic selection |
+| V2T Cross-Attn. (Ours) | **0.896** | Superior to T2V for influencing latents |
 
 ### Key Findings
-- The cross-attention loss is critical for achieving target awareness: performance at $\lambda=0$ nearly equals the data-only fine-tuning baseline.
-- V2T cross-attention is the correct application site, as it directly influences video latent representations through value dot products.
-- Semantic block selection (every 3rd block from blocks 5–23) yields the best results.
-- The advantage of mask-based control is especially pronounced when multiple objects of the same category are present in the scene, as text cannot disambiguate them while masks can.
+- The cross-attention loss is critical for target awareness; without it, performance reverts to the data-only baseline.
+- V2T cross-attention is the optimal bridge for spatial signals.
+- Semantic block selection performs better than random or uniform selection.
+- Masks provide crucial disambiguation when multiple objects of the same class are present.
 - The model generalizes to non-human subjects (e.g., animals).
 
 ## Highlights & Insights
-- **Minimizing control input while maximizing generative prior**: Using only a single segmentation mask—without dense trajectories or multi-frame guidance—the model autonomously infers plausible interaction actions, fully leveraging the generative capacity of video diffusion models.
-- **Elegant [TGT] token design**: Spatial information is carried via a text token in a principled manner without any architectural modifications; only an additional training loss is introduced.
-- **In-depth analysis of selective loss**: The paper systematically characterizes the semantic properties of different blocks and attention regions in MM-DiT, yielding a principled design rather than empirical black-box tuning.
-- **Two compelling downstream applications**: Video content creation (navigation + interaction composition) and zero-shot 3D HOI motion synthesis demonstrate the potential of the model as an action planner.
+- **Minimal Control, Maximal Prior**: By using a single mask instead of dense trajectories, the model autonomously infers interactions, fully leveraging the diffusion model's generative capacity.
+- **Elegant [TGT] Design**: Utilizing text tokens to carry spatial information avoids architectural changes while providing a strong training signal.
+- **In-depth Selective Loss Analysis**: The systematic analysis of MM-DiT blocks and attention types offers a principled design rather than black-box tuning.
+- **Downstream Potential**: Demonstrated capabilities in navigation+interaction and zero-shot 3D HOI motion synthesis highlight its potential as an "action planner."
 
 ## Limitations & Future Work
-- Video quality is bounded by the underlying open-source model (CogVideoX); closed-source commercial models may yield better results.
-- The training data is captured with static cameras, leading the model to favor fixed viewpoints during generation.
-- The dataset contains only 1,290 clips; scaling up data volume may further improve generalization.
-- Currently only a single target mask is supported; multi-target simultaneous interaction (with preliminary exploration of [SRC]+[TGT]) remains to be fully addressed.
-- Generated motions are plausible but may lack physical precision in areas such as contact mechanics.
-- 3D pose and scene scale are not fully aligned in the physical simulation experiments.
+- Video quality is constrained by the open-source base model (CogVideoX).
+- Training data features static cameras, leading to limited camera motion in generated videos.
+- Small dataset size (1,290 clips); scaling may improve generalization.
+- Limited support for simultaneous multi-target interactions.
+- Physical accuracy (e.g., contact mechanics) may be insufficient for high-fidelity simulation.
 
 ## Related Work & Insights
-- **Distinction from ControlNet-style methods**: ControlNet requires dense per-frame conditions (depth/edge maps), making it suitable for precise control of simple motions; this paper uses a single-frame mask, better suited to HOI scenarios.
-- **Comparison with DragDiffusion**: Drag-based methods fail under large motion and cannot generate complex interactions.
-- **Distinction from Direct-a-Video**: Attention modulation methods require no training but perform poorly—in MM-DiT, the row-normalization of softmax causes amplified cross-attention values to corrupt self-attention, leading to temporal inconsistencies.
-- **Broader insight**: Video diffusion models inherently encode rich priors over physical world interactions; the key challenge lies in releasing these priors with minimal signals (a single mask).
+- **Vs. ControlNet**: ControlNet requires per-frame dense conditions, whereas this method uses a single-frame mask for complex HOI.
+- **Vs. DragDiffusion**: Dragging methods often fail during large motions or complex interactions.
+- **Vs. Direct-a-Video**: Attention modulation without training often disrupts self-attention in MM-DiT, causing temporal inconsistency; this work's training-based approach is more stable.
+- **Insight**: Video diffusion models inherently possess physical interaction priors; the challenge lies in unlocking them with minimal signaling (e.g., a single mask).
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐
@@ -123,16 +128,15 @@ The core idea is to mark a target object with a single segmentation mask and all
 - Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
-
-<div class="related-papers" markdown="1">
+<div class="related-papers" markdown="1"></div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] VMoBA: Mixture-of-Block Attention for Video Diffusion Models](vmoba_mixture-of-block_attention_for_video_diffusion_models.md)
+- [\[ICLR 2026\] Vid2World: Crafting Video Diffusion Models to Interactive World Models](vid2world_crafting_video_diffusion_models_to_interactive_world_models.md)
+- [\[ICLR 2026\] MoAlign: Motion-Centric Representation Alignment for Video Diffusion Models](moalign_motion-centric_representation_alignment_for_video_diffusion_models.md)
 - [\[ICLR 2026\] Frame Guidance: Training-Free Guidance for Frame-Level Control in Video Diffusion Models](frame_guidance_training-free_guidance_for_frame-level_control_in_video_diffusion.md)
-- [\[CVPR 2026\] PhysVid: Physics Aware Local Conditioning for Generative Video Models](../../CVPR2026/video_generation/physvid_physics_aware_local_conditioning_for_generative_video_models.md)
-- [\[CVPR 2026\] TEAR: Temporal-aware Automated Red-teaming for Text-to-Video Models](../../CVPR2026/video_generation/tear_temporal-aware_automated_red-teaming_for_text-to-video_models.md)
-- [\[ICLR 2026\] Geometry-aware 4D Video Generation for Robot Manipulation](geometry-aware_4d_video_generation_for_robot_manipulation.md)
-- [\[CVPR 2026\] Goal-Driven Reward by Video Diffusion Models for Reinforcement Learning](../../CVPR2026/video_generation/goal-driven_reward_by_video_diffusion_models_for_reinforcement_learning.md)
+- [\[ICLR 2026\] LikePhys: Evaluating Intuitive Physics Understanding in Video Diffusion Models via Likelihood Preference](likephys_evaluating_intuitive_physics_understanding_in_video_diffusion_models_vi.md)
 
 </div>
 

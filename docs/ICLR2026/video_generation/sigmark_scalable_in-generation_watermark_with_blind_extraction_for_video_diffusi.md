@@ -2,133 +2,148 @@
 title: >-
   [Paper Note] SIGMark: Scalable In-Generation Watermark with Blind Extraction for Video Diffusion
 description: >-
-  [ICLR 2026][Video Generation][Video diffusion models] SIGMark proposes the first blind watermarking framework for modern video diffusion models…
+  [ICLR 2026][Video Generation][Watermarking] SIGMark proposes the first blind-extraction in-generation watermarking framework for modern video diffusion models. It achieves constant-time blind extraction via Global Frame-level Pseudo-Random Coding (GF-PRC) and enhances temporal robustness under Causal 3D VAE via a Segmented Group Ordering (SGO) module. It reaches
 tags:
-  - "ICLR 2026"
-  - "Video Generation"
-  - "Video diffusion models"
-  - "watermarking"
-  - "blind extraction"
-  - "pseudorandom coding"
-  - "causal 3D VAE"
-  - "temporal robustness"
+  - ICLR 2026
+  - Video Generation
+  - Watermarking
 date: 2026-05-08
-content_hash: cfb97413ff50457e
+content_hash: 90beb6a23878d0a9
 ---
-
 # SIGMark: Scalable In-Generation Watermark with Blind Extraction for Video Diffusion
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2603.02882](https://arxiv.org/abs/2603.02882)  
 **Code**: [https://github.com/JeremyZhao1998/SIGMark-release](https://github.com/JeremyZhao1998/SIGMark-release)  
-**Area**: Video Generation
-**Keywords**: Video diffusion models, watermarking, blind extraction, pseudorandom coding, causal 3D VAE, temporal robustness
+**Area**: Video Generation/Watermarking  
+**Keywords**: Video Diffusion Models, Watermarking, Blind Extraction, Pseudo-Random Coding, Causal 3D VAE, Scalability
 
 ## TL;DR
-SIGMark proposes the first blind watermarking framework for modern video diffusion models, achieving scalable blind extraction with constant retrieval cost via Global Frame-level Pseudorandom Coding (GF-PRC), and addresses temporal perturbations under causal 3D VAE through a Segmented Group Ordering (SGO) module, attaining high bit accuracy and strong robustness on HunyuanVideo and Wan-2.2.
+SIGMark proposes the first blind-extraction in-generation watermarking framework for modern video diffusion models. It achieves constant-time blind extraction via Global Frame-level Pseudo-Random Coding (GF-PRC) and enhances temporal robustness under Causal 3D VAE via a Segmented Group Ordering (SGO) module. It reaches 90%+ bit accuracy with a capacity of 512×16 bits on HunyuanVideo and Wan-2.2.
 
 ## Background & Motivation
 
-**Background**: Video diffusion models (e.g., HunyuanVideo, Wan-2.2) are advancing rapidly, making invisible watermarking a critical technique for protecting copyright and tracing harmful AI-generated content. Existing approaches fall into two categories: post-processing watermarking (which degrades video quality) and in-generation watermarking (theoretically lossless but with notable limitations).
+1. **Background**: Video diffusion models (e.g., HunyuanVideo, Wan-2.2) are developing rapidly, making copyright protection and provenance of AI-generated content urgent. Invisible watermarking is a key technology, categorized into post-processing and in-generation watermarking.
 
-**Limitations of Prior Work**: Existing in-generation watermarking methods (e.g., VideoShield, VideoMark) are **non-blind** — extraction requires maintaining all message–key pairs and performing template matching, incurring costs that grow linearly with the number of users/requests and thus fail to scale to large platforms.
+2. **Limitations of Prior Work**:
+    - Post-processing watermarks (e.g., DCT, DT-CWT) inevitably degrade video quality.
+    - Existing in-generation methods (e.g., VideoShield, VideoMark) are non-blind: extraction requires maintaining all message-key pairs for template matching, with costs growing linearly with the number of generated videos.
+    - modern video diffusion models employ Causal 3D VAE, where temporal perturbations (e.g., frame loss) disrupt causal grouping, leading to highly inaccurate watermark inversion.
 
-**Key Challenge**: Modern video diffusion models employ a causal 3D VAE that decodes a group of $d_t$ frames from a single temporal latent feature. Temporal perturbations (frame deletion, cropping) disrupt frame groupings, causing the VAE encoder to produce incorrect latent features and making watermark extraction **highly fragile to temporal distortions**.
+3. **Key Challenge**: Scalability (blind extraction vs. non-blind template matching) and temporal robustness (sensitivity of frame grouping in Causal 3D VAE) are two critical challenges not yet simultaneously addressed.
 
-**Goal**: (1) How to achieve blind watermark extraction with constant computational cost? (2) How to maintain temporal robustness under the causal 3D VAE?
+4. **Goal**: (1) How to realize blind watermark extraction with constant complexity? (2) How to recover correct causal frame grouping under temporal perturbations?
 
-**Key Insight**: Replace per-request key storage with globally shared frame-level PRC keys, and design an optical-flow segmentation plus sliding-window detection scheme to recover correct frame groupings.
-
-**Core Idea**: Global frame-level pseudorandom coding enables blind extraction, while the SGO module recovers temporal ordering, reducing extraction complexity from linear to constant.
+5. **Core Idea**: Use globally shared frame-level PRC keys to encode watermark messages into initial noise for blind extraction, and employ optical flow segmentation combined with sliding window detection to restore causal frame grouping for temporal robustness.
 
 ## Method
 
 ### Overall Architecture
-SIGMark consists of an embedding stage and an extraction stage. During embedding, the watermark message is encoded into the initial latent noise via globally shared GF-PRC keys; the diffusion model then denoises this noise to produce a losslessly watermarked video. During extraction, the SGO module first recovers frame groupings from the (potentially perturbed) video, followed by diffusion inversion to obtain the latent noise, from which the message is decoded using the GF-PRC keys.
+SIGMark follows the "in-generation watermark" paradigm—instead of post-processing generated videos, it embeds the watermark into the initial noise of the diffusion model before the standard denoising process. The pipeline consists of two ends: the **embedding end** encodes watermark message $m$ via Global Frame-level Pseudo-Random Coding (GF-PRC) into the initial noise, producing a watermarked video with near-lossless quality after denoising. The **extraction end** takes a potentially cropped, frame-dropped, or compressed video, restores disrupted causal frame groups using the Segmented Group Ordering (SGO) module, performs Causal 3D VAE encoding and diffusion inversion to retrieve noise, and finally blind-decodes the message using the same global keys. The core of the framework lies in **sharing the same set of global PRC keys** $K$—used for encoding at the embedding end, alignment at the SGO module, and decoding at the extraction end—eliminating the need to store message-key pairs per request, which is the root of its "blind extraction" (constant extraction overhead).
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    M["Watermark Message m"] --> ENC["Global Frame-level PRC (GF-PRC)<br/>PRC.Encode to get Template Bit TP"]
+    ENC --> MOD["Sign Modulation<br/>z0(m)=(TP×2-1)×|z0|, remains Gaussian"]
+    MOD --> DIF["Diffusion Denoising Generation<br/>Watermarked Video (Lossless)"]
+    DIF -->|"Cropping/Frame Drop/Compression"| VF["Tampered Video VF′"]
+    VF --> SGO
+    subgraph SGO["Segmented Group Ordering SGO (Restore Causal Grouping)"]
+        direction TB
+        OF["Optical Flow Seg.<br/>Farnebäck cuts motion-consistent segments"] --> SW["Sliding Window Detection<br/>Locate causal index per frame"]
+    end
+    SGO --> INV["Causal 3D VAE Encoding + Diffusion Inversion<br/>Retrieve Inversion Noise z0′"]
+    INV --> DEC["GF-PRC Blind Decoding<br/>PRC.Decode restores message m̂"]
+    KEY["Global PRC Key Set K[i]<br/>Shared by Embedding/Alignment/Extraction → Blind"]
+    KEY -.-> ENC
+    KEY -.-> SW
+    KEY -.-> DEC
+```
 
 ### Key Designs
 
-1. **Global Frame-level Pseudorandom Coding (GF-PRC)**:
+**1. Global Frame-level Pseudo-Random Coding (GF-PRC): A global key for shared embedding and blind decoding**
 
-    - **Function**: Encodes the watermark message into the initial latent noise to enable blind extraction.
-    - **Mechanism**: A set of global frame-level PRC keys $K[i]$ is maintained, one per temporal dimension of the latent space. During embedding: $\text{TP}[i] = \text{PRC.Encode}(m[i]; K[i])$, then mapped to noise via sign modulation: $z_0(m) = (\text{TP} \times 2 - 1) \times |z_0|$.
-    - **Design Motivation**: PRC encoding maps the same message to different random template bits even under a shared global key, preserving noise diversity. Conventional stream ciphers (e.g., ChaCha20) cannot achieve this with fixed key material. Extraction requires only the global key, reducing complexity from $O(N)$ to $O(1)$.
+Non-blind methods fail to scale because they store an independent message-key pair for every generation request, requiring template matching against the entire database during extraction, making overhead grow linearly at $O(N)$. GF-PRC abandons per-request keys, instead assigning a **globally shared** pseudo-random error-correcting code (PRC) key $K[i]$ to each temporal dimension (a group of $d_t$ frames) of the latent. The total number of keys is set to the maximum frame capacity the system supports. During embedding, the watermark message $m[i] \in \{0,1\}^M$ is encoded into template bits $\mathrm{TP}[i] = \mathrm{PRC.Encode}(m[i]; K[i])$, then embedded into initial noise via element-wise sign modulation:
 
-2. **Segmented Group Ordering Module (SGO)**:
+$$z_0(m) = (\mathrm{TP} \times 2 - 1) \times |z_0|$$
 
-    - **Function**: Recovers causal frame groupings disrupted by temporal perturbations.
-    - **Mechanism**: A two-step procedure — (1) **Optical flow segmentation**: bidirectional Farnebäck optical flow is computed between adjacent frames; temporal cut points are detected using median flow magnitude, forward-backward consistency, and motion-compensated residuals, partitioning the video into motion-consistent segments. (2) **Sliding window detection**: within each segment, a window padded with $d_t - 1$ frames slides across positions; for each window position $j$, the latent frame is obtained by inversion and its index is determined as $\hat{\text{Idx}[j]} = \text{argmax}(\text{PRC.Detect}(z_0'[j]; K[0,1,...,f_l]))$; detection halts when consecutive results are consistent.
-    - **Design Motivation**: The causal 3D VAE requires correct frame groupings to produce consistent latent features. SGO exploits the frame-index detection capability of the global PRC keys to robustly recover correct groupings.
+Since the amplitude $|z_0|$ comes from Gaussian sampling and the sign is determined by the template bits, the modulated noise still follows $z_0(m) \sim \mathcal{N}(0, \mathbf{I})$, ensuring theoretically lossless quality. The key to this is the pseudo-random mapping of PRC (Christ & Gunn 2024)—even with the same message and key, different random template bits are generated each time, maintaining noise randomness and diversity under a global key. This is something traditional stream ciphers (e.g., ChaCha20) cannot achieve, as fixed key material maps identical messages to fixed outputs. Since the keys are globally known, the extraction end decodes sign bits of inversion noise $z_0'$ directly:
 
-3. **Message Extraction**:
+$$\hat{m[i]} = \mathrm{PRC.Decode}\Big(\frac{\mathrm{Sgn}(z_0'[i])+1}{2}; K[i]\Big)$$
 
-    - The regrouped frames are encoded by the causal 3D VAE and inverted to obtain $z_0'$.
-    - The message is recovered via PRC decoding: $\hat{m[i]} = \text{PRC.Decode}(\frac{\text{Sgn}(z_0'[i])+1}{2}; K[i])$.
-    - No original message storage or template matching is required.
+The system avoids the original message database and template matching, reducing extraction complexity from $O(N)$ to $O(1)$. This "blind extraction" is the source of scalability.
+
+**2. Segmented Group Ordering (SGO): Restoring disrupted causal frame grouping before decoding**
+
+Modern video diffusion uses Causal 3D VAE to encode $d_t$ consecutive frames into a single temporal latent feature ($f = f_l \times d_t$). Any temporal manipulation (frame loss, interpolation, cropping) causes frame grouping boundaries to shift, resulting in latent mismatches and inversion failure. SGO restores grouping in two steps. First, **Optical Flow Segmentation**: Farnebäck bidirectional optical flow is calculated for adjacent frames. An inconsistency score is derived from median flow amplitude, forward-backward consistency, and motion compensation residuals. Hysteresis thresholding identifies temporal cut points, dividing the video into motion-consistent segments. Second, **Sliding Window Detection**: Each segment only needs to locate the "first frame of a causal group." By padding $d_t-1$ frames at the segment start and using a sliding window to invert latents, PRC detection identifies the frame index via the global keys:
+
+$$\hat{\mathrm{Idx}[j]} = \mathrm{argmax}\big(\mathrm{PRC.Detect}(z_0'[j]; K[0,...,f_l])\big)$$
+
+When adjacent window detection results are consecutive ($\hat{\mathrm{Idx}[j]}+1 = \hat{\mathrm{Idx}[j+1]}$), the correct group start is locked, and missing slots are filled with the nearest available frames. This works because GF-PRC makes frame indices detectable via independent keys, allowing SGO to reuse this capability for alignment without extra training or storage.
 
 ### Loss & Training
-SIGMark is a **training-free** method that embeds watermarks entirely at inference time. The mathematical transformation preserves the Gaussian distribution of the noise, $z_0(m) \sim \mathcal{N}(0, \mathbf{I})$, theoretically leaving generation quality unaffected. Inversion uses flow-matching Euler discrete inversion (for HunyuanVideo and Wan-2.2) conditioned on an empty prompt.
+SIGMark is a training-free method that does not fine-tune any model parameters. Embedding relies purely on sign modulation, providing provable quality preservation. For extraction, inversion uses Euler discrete inversion for flow matching models (HunyuanVideo and Wan-2.2) and DDIM inversion for standard diffusion models, conditioned on an empty prompt.
 
 ## Key Experimental Results
 
-### Main Results (HunyuanVideo T2V, 512 bits)
+### Main Results (HunyuanVideo T2V/I2V, VBench-2.0 Evaluation)
 
-| Method | Type | Bit Acc↑ | V-score↑ |
-|--------|------|----------|----------|
-| No-mark | – | – | 0.490 |
-| DCT | Post-processing | 0.889 | 0.424 |
-| VideoMark | Non-blind | 0.873 | 0.507 |
-| VideoShield | Non-blind | 1.000 | 0.497 |
-| **SIGMark** | **Blind** | **0.958** | **0.506** |
+| Method | Category | 512-bit Bit Acc | V-score | 512×16-bit Bit Acc | V-score |
+|------|------|-------------|---------|----------------|---------|
+| No-mark | - | - | 0.490 | - | 0.490 |
+| DCT | Post-proc | 0.889 | 0.424 | 0.862 | 0.423 |
+| VideoMark | Non-blind | 0.873 | 0.507 | 0.758 | 0.502 |
+| VideoShield | Non-blind | 1.000 | 0.497 | 0.991 | 0.506 |
+| **SIGMark** | **Blind** | **0.958** | **0.506** | **0.885** | **0.499** |
 
-In high-capacity mode (512×16 bits), SIGMark achieves 0.885 bit accuracy, surpassing VideoMark (0.758).
+### Robustness Experiments (HunyuanVideo I2V, 512-bit/512×16-bit)
 
-### Robustness Results (HunyuanVideo I2V)
-
-| Method | No distortion | Gaussian noise | Compression | Temporal drop | Temporal insert |
-|--------|--------------|----------------|-------------|---------------|-----------------|
-| VideoMark | 0.85 | 0.64↓0.21 | 0.63↓0.22 | 0.52↓0.19 | 0.51↓0.20 |
-| VideoShield | 1.00 | 1.00↓0.00 | 0.99↓0.01 | 0.89↓0.10 | 0.84↓0.15 |
-| **SIGMark** | **0.98** | **0.89↓0.09** | **0.84↓0.14** | **0.81↓0.10** | **0.87↓0.04** |
+| Method | Spatial (None/Gaussian/Comp/Blur) | Temporal (None/Loss/Interp/Crop) |
+|------|------|------|
+| VideoMark | 0.85/0.64/0.63/0.64 | 0.71/0.52/0.51/0.51 |
+| VideoShield | 1.00/1.00/0.99/1.00 | 0.99/0.89/0.84/0.83 |
+| **SIGMark** | **0.98/0.89/0.84/0.95** | **0.91/0.81/0.87/0.85** |
 
 ### Ablation Study
 
-| Configuration | Bit Acc | Notes |
-|---------------|---------|-------|
-| Single PRC (non-GF) | 0.707 | Without global frame-level encoding |
-| GF-PRC (full) | 0.905 | Significant gain from frame-level encoding |
-| w/o SGO | 0.534 | Temporal robustness collapses |
+| Configuration | Bit Acc | Description |
+|------|---------|------|
+| Single PRC (Non-blind) | 0.707 | Degrades to VideoMark strategy without GF-PRC |
+| **GF-PRC (Ours)** | **0.905** | Complete embedding scheme |
+| w/o SGO | 0.534 | Significant drop under temporal perturbation without SGO |
 | w/o OF-seg | 0.762 | Without optical flow segmentation |
 | w/o SW-det | 0.823 | Without sliding window detection |
-| SGO (full) | 0.869 | Both components are complementary |
+| **SGO (Ours)** | **0.869** | Complete extraction scheme |
 
 ### Key Findings
-- Post-processing watermarks significantly degrade video quality (V-score drops from 0.490 to ~0.42), while in-generation methods are nearly lossless.
-- GF-PRC not only enables blind extraction but also provides additional error correction through inter-frame redundancy.
-- Both components of the SGO module (optical flow segmentation and sliding window detection) are indispensable.
-- Extraction time for VideoShield grows linearly with the number of videos, whereas SIGMark remains constant.
+- SIGMark's extraction time is constant, while VideoShield grows linearly with the number of videos (unfeasible for millions of videos).
+- GF-PRC not only enables blind extraction but also improves bit accuracy through inter-frame redundancy error correction.
+- Both sub-modules of SGO (OF-seg and SW-det) are indispensable.
+- Post-processing watermarks (DCT) show significantly lower V-scores, validating the quality preservation of in-generation methods.
 
 ## Highlights & Insights
-- **Paradigm shift from non-blind to blind extraction**: SIGMark is the first video diffusion watermarking method to achieve true blind extraction, reducing extraction complexity from $O(N)$ to $O(1)$, which is essential for large-scale platform deployment. The key insight is that PRC's pseudorandom mapping is compatible with globally shared keys.
-- **Systematic solution for temporal robustness**: The SGO module is specifically designed for the characteristics of causal 3D VAE and serves as a general frame-grouping recovery scheme transferable to other tasks requiring correct frame groupings.
-- **Training-free plug-and-play**: The entire framework requires no fine-tuning of model parameters and can be directly applied to any video diffusion model.
+- **Paradigm Shift in Blind Extraction**: The first to achieve true blind extraction in video diffusion watermarking, reducing extraction complexity from $O(N)$ to $O(1)$, which is vital for large-scale video platforms.
+- **Exquisite Application of PRC**: Uses the pseudo-random properties of PRC to maintain noise diversity under global keys, a feat traditional stream ciphers cannot achieve.
+- **Dedicated Design for Causal 3D VAE**: The SGO module is a specialized design for modern video diffusion models, showing a deep understanding of the architecture's temporal characteristics.
 
 ## Limitations & Future Work
-- Bit accuracy does not reach 100%, constrained by the error-correction capacity of PRC encoding and the precision of diffusion inversion.
-- Accuracy under spatial perturbations (e.g., 0.89 under Gaussian noise) still lags behind VideoShield (1.00).
-- The SGO module introduces additional computational overhead due to optical flow computation.
-- Hybrid strategies combining in-generation and post-processing watermarking could be explored to further enhance robustness.
+- Bit accuracy has not reached 100%, which relates to the error-correction capability of PRC and diffusion inversion precision.
+- Evaluation was limited to HunyuanVideo and Wan-2.2; generalizability to other models requires further verification.
+- Robustness under high compression rates (e.g., extremely low bitrate video compression) remains to be explored.
+- Future work could integrate multi-frame voting strategies to further enhance temporal robustness.
 
 ## Related Work & Insights
-- **vs. VideoShield**: A non-blind method requiring storage of all message–key pairs with linear extraction cost. SIGMark achieves blind extraction at constant cost.
-- **vs. VideoMark**: Also non-blind and PRC-based, but does not address global key sharing or temporal robustness under causal 3D VAE.
-- **vs. Gaussian Shading**: An image watermarking method extended to video; does not account for the temporal characteristics of the causal 3D VAE.
+- **vs. VideoShield/VideoMark**: These non-blind methods require exhaustive matching; SIGMark achieves constant overhead via global PRC.
+- **vs. Gaussian Shading**: An image watermarking method; SIGMark extends this to video and solves challenges unique to Causal 3D VAE.
+- **vs. DCT/DT-CWT**: Post-processing methods inevitably degrade quality, while SIGMark maintains generation quality.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ First blind-extraction video diffusion watermarking framework; GF-PRC and SGO are elegantly designed.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Two models, T2V/I2V settings, multiple perturbation types, comprehensive ablations.
-- **Writing Quality**: ⭐⭐⭐⭐ Problem motivation is clearly articulated; method exposition is logically structured.
-- **Value**: ⭐⭐⭐⭐⭐ Addresses a practical deployment bottleneck in video watermarking; significant contribution to AI content security.
+- Novelty: ⭐⭐⭐⭐ First blind extraction for video diffusion; ingenious GF-PRC and SGO.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Two mainstream models, multiple perturbations, ablation studies, and scalability analysis.
+- Writing Quality: ⭐⭐⭐⭐ Clear problem definition and logically rigorous method description.
+- Value: ⭐⭐⭐⭐⭐ High practical value for AI video security.
 
 <!-- RELATED:START -->
 
@@ -137,10 +152,10 @@ In high-capacity mode (512×16 bits), SIGMark achieves 0.885 bit accuracy, surpa
 ## Related Papers
 
 - [\[ICML 2026\] VEDA: Scalable Video Diffusion via Distilled Sparse Attention](../../ICML2026/video_generation/veda_scalable_video_diffusion_via_distilled_sparse_attention.md)
-- [\[ICLR 2026\] Target-Aware Video Diffusion Models](target-aware_video_diffusion_models.md)
+- [\[CVPR 2025\] DynamicScaler: Seamless and Scalable Video Generation for Panoramic Scenes](../../CVPR2025/video_generation/dynamicscaler_seamless_and_scalable_video_generation_for_panoramic_scenes.md)
+- [\[ECCV 2024\] VFusion3D: Learning Scalable 3D Generative Models from Video Diffusion Models](../../ECCV2024/video_generation/vfusion3d_learning_scalable_3d_generative_models_from_video_diffusion_models.md)
+- [\[ICLR 2026\] Neodragon: Mobile Video Generation Using Diffusion Transformer](neodragon_mobile_video_generation_using_diffusion_transformer.md)
 - [\[ICCV 2025\] STiV: Scalable Text and Image Conditioned Video Generation](../../ICCV2025/video_generation/stiv_scalable_text_and_image_conditioned_video_generation.md)
-- [\[ICLR 2026\] Lumos-1: On Autoregressive Video Generation with Discrete Diffusion from a Unified Model Perspective](lumos-1_on_autoregressive_video_generation_with_discrete_diffusion_from_a_unifie.md)
-- [\[ICLR 2026\] Frame Guidance: Training-Free Guidance for Frame-Level Control in Video Diffusion Models](frame_guidance_training-free_guidance_for_frame-level_control_in_video_diffusion.md)
 
 </div>
 

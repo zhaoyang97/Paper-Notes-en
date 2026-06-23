@@ -186,7 +186,7 @@
   "@type": "ScholarlyArticle",
   "name": {{ _seo_title_raw | tojson }},
   "headline": {{ _seo_title_raw | tojson }},
-  "description": {{ page.meta.description | tojson }},
+  "description": {{ (page.meta.description | default(config.site_description | default(config.site_name, true), true)) | tojson }},
   "url": {{ page.canonical_url | tojson }},
   "mainEntityOfPage": {{ page.canonical_url | tojson }},
   "inLanguage": "en",

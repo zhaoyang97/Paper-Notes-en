@@ -2,75 +2,82 @@
 title: >-
   [Paper Note] Stochastic Self-Guidance for Training-Free Enhancement of Diffusion Models
 description: >-
-  [ICLR2026][Image Generation][Diffusion Models] This paper proposes S²-Guidance, which constructs a weak model by **randomly dropping transformer block activations** during denoising to perform self-guidance…
+  [ICLR 2026][Image Generation][Diffusion Model] This paper proposes S²-Guidance, which utilizes **randomly dropped transformer block sub-networks** as weak models for self-guidance during the denoising process. This corrects suboptimal CFG predictions without additional training, consistently outperforming CFG and other advanced guidance strategies in text-to-image
 tags:
-  - "ICLR2026"
-  - "Image Generation"
-  - "Diffusion Models"
-  - "Classifier-Free Guidance"
-  - "Subnetwork"
-  - "Stochastic Block-Dropping"
-  - "Self-Guidance"
-  - "Text-to-Image"
-  - "Text-to-Video"
+  - ICLR 2026
+  - Image Generation
+  - Diffusion Model
+  - Classifier-Free Guidance
 date: 2026-05-08
-content_hash: df3669f5c10b2fec
+content_hash: 7cc7fc93043306a9
 ---
-
 # Stochastic Self-Guidance for Training-Free Enhancement of Diffusion Models
 
-**Conference**: ICLR2026
+**Conference**: ICLR2026  
 **arXiv**: [2508.12880](https://arxiv.org/abs/2508.12880)  
 **Code**: [Project Page](https://s2guidance.github.io/)  
-**Area**: Image Generation
-**Keywords**: Diffusion Models, Classifier-Free Guidance, Subnetwork, Stochastic Block-Dropping, Self-Guidance, Text-to-Image, Text-to-Video
+**Area**: Image Generation  
+**Keywords**: Diffusion Models, Classifier-Free Guidance, Sub-networks, Stochastic block-dropping, Self-guidance, Text-to-Image, Text-to-Video
 
 ## TL;DR
 
-This paper proposes S²-Guidance, which constructs a weak model by **randomly dropping transformer block activations** during denoising to perform self-guidance, correcting the suboptimal predictions of CFG without additional training. The method consistently outperforms CFG and other advanced guidance strategies on text-to-image and text-to-video tasks.
+This paper proposes S²-Guidance, which utilizes **randomly dropped transformer block sub-networks** as weak models for self-guidance during the denoising process. This corrects suboptimal CFG predictions without additional training, consistently outperforming CFG and other advanced guidance strategies in text-to-image and text-to-video tasks.
 
 ## Background & Motivation
 
-1. **CFG is the cornerstone of conditional generation**: Classifier-Free Guidance enhances generation quality by extrapolating between conditional and unconditional predictions, and has become the standard practice for diffusion models.
-2. **CFG has inherent deficiencies**: Empirical analysis shows that CFG-generated results deviate from the true distribution, leading to semantic inconsistency and loss of detail.
-3. **Weak model guidance is promising**: Works such as Autoguidance find that guiding with a degraded model improves over CFG, but require training a separate weak model, which is infeasible for large-scale pretrained models.
-4. **Manual network modification generalizes poorly**: Methods like SEG simulate weak models by modifying attention regions, but rely on empirical hyperparameter tuning and are designed for specific tasks.
-5. **Transformer blocks exhibit significant redundancy**: In mainstream architectures such as DiT, outputs across different blocks are highly similar, suggesting that subnetworks can substitute the full model for functional prediction.
-6. **A universal training-free improvement is needed**: Existing methods either require training a weak model or depend on task-specific modifications, lacking a simple and general solution.
+1. **CFG is the cornerstone of conditional generation**: Classifier-Free Guidance enhances generation quality by extrapolating conditional and unconditional predictions, becoming the standard in diffusion models.
+2. **Inherent flaws in CFG**: Empirical analysis shows that CFG produces results biased away from the true distribution, leading to semantic inconsistencies and loss of detail.
+3. **Promising direction of weak model guidance**: Works like Autoguidance found that guiding with a degraded version of the model can improve CFG, but this requires training an extra weak model, which is infeasible for large-scale pre-trained models.
+4. **Poor generalization of manual architectural modifications**: Methods like SEG simulate weak models by modifying attention regions but rely on empirical hyperparameter tuning and task-specific designs.
+5. **Significant redundancy in Transformer blocks**: In mainstream architectures like DiT, outputs from different blocks are highly similar, suggesting that sub-networks can serve as substitutes for the full model for functional prediction.
+6. **Need for a universal training-free solution**: Existing methods either require training weak models or depend on task-specific modifications, lacking a concise and general framework.
 
 ## Method
 
-### Step 1: Analyzing the Suboptimality of CFG
+### Overall Architecture
 
-The limitations of CFG are verified on a Gaussian mixture toy example — while conditional generation is improved, a mode shift occurs, and in the 2D case samples spread into non-target regions. t-SNE analysis on CIFAR-10 further confirms severe distributional collapse under CFG.
+S²-Guidance aims to solve the following: While Classifier-Free Guidance (CFG) pulls generation toward the conditional distribution, it accompanies mode shift and collapse, causing results to deviate from the true distribution and lose details. The core idea is to avoid external weak models; instead, during each denoising step, it **randomly drops a small subset of transformer blocks** from the current DiT to obtain a "degraded" sub-network prediction. The difference between the full model and this sub-network prediction serves as an additional **self-guidance correction term** to counteract suboptimal CFG extrapolation. The entire process is training-free: each step calculates the unconditional, conditional, and sub-network predictions in parallel. The first two form the regular CFG term, while the difference between the latter two forms the self-guidance correction. Compared to standard CFG, it only requires one additional masked forward pass.
 
-### Step 2: Naive S²-Guidance
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Denoising step t<br/>Input x_t + Condition c"] --> B["Full Model<br/>Cond. Prediction D(x_t|c)"]
+    A --> C["Full Model<br/>Uncond. Prediction D(x_t|φ)"]
+    A --> D["Sub-network Self-Guidance<br/>Randomly drop ~10% non-critical blocks<br/>Degraded Prediction D̂(x_t|c,m_t)"]
+    B --> E["CFG Extrapolation Term<br/>λ·(D(x_t|c)−D(x_t|φ))"]
+    C --> E
+    B --> F["Self-Guidance Correction Term<br/>−ω·(D̂(x_t|c,m_t)−D(x_t|c))"]
+    D --> F
+    E --> G["Combined Denoising Direction D̃<br/>Canceling suboptimal CFG extrapolation"]
+    F --> G
+    G --> H["Update x_t−1<br/>Enabled for middle ~80% noise levels"]
+```
 
-The core idea is to use the model's own subnetwork as the weak model:
+### Key Designs
+
+**1. Sub-network Self-Guidance: Using the model's own degraded version as a weak model**
+
+While CFG shifts generation toward conditional distributions, it introduces mode shift and collapse—evidenced by samples scattering to non-target regions in Gaussian mixture toy examples and confirmed by t-SNE on CIFAR-10. Methods like Autoguidance rely on training degraded weak models for correction, which is impractical for large models. This work exploits the redundancy where different blocks in DiT have highly similar outputs: applying a binary mask $\mathbf{m}$ to randomly drop blocks yields a sub-network prediction $\hat{D}_\theta(x_t|c,\mathbf{m})$. The deviation between this and the full prediction $D_\theta(x_t|c)$ characterizes the "ability lost" by the dropped blocks; subtracting this deviation pushes results away from suboptimal regions. The naive form averages $N$ masks per step to stabilize the signal:
 
 $$\tilde{D}_\theta^\lambda(x_t|c) = D_\theta(x_t|\phi) + \lambda(D_\theta(x_t|c) - D_\theta(x_t|\phi)) - \frac{\omega}{N}\sum_{i=1}^N(\hat{D}_\theta(x_t|c, \mathbf{m}_i) - D_\theta(x_t|c))$$
 
-- A binary mask $\mathbf{m}$ randomly drops a subset of transformer blocks to construct subnetwork predictions $\hat{D}_\theta$.
-- The deviation between the subnetwork prediction and the full model prediction serves as the self-guidance signal.
-- $N$ different masks are sampled per step and the guidance signals are averaged.
-- $\omega$ controls the self-guidance strength (S²Scale).
+where $\lambda$ is the CFG scale and $\omega$ (S²Scale) controls self-guidance strength.
 
-### Step 3: Simplification to S²-Guidance
+**2. Single Random Dropping: Reducing N forward passes to one**
 
-A key finding is that within a reasonable drop range, dropping different blocks consistently steers the model toward the desired distribution. This motivates a simplification to **a single random block-dropping per timestep**:
+The naive form is computationally expensive as it requires $N$ sub-network passes per step. The authors discovered that within a reasonable drop range, any random selection of dropped blocks consistently pulls the model toward the ideal distribution. They simplified the multi-mask sampling to a **single** random block-dropping per step:
 
 $$\tilde{D}_\theta^\lambda(x_t|c) = D_\theta(x_t|\phi) + \lambda(D_\theta(x_t|c) - D_\theta(x_t|\phi)) - \omega(\hat{D}_\theta(x_t|c, \mathbf{m}_t) - D_\theta(x_t|c))$$
 
-### Key Design Choices
+Since the mask $\mathbf{m}_t$ varies across timesteps, the cumulative effect across the denoising process retains the diversity of the naive form while requiring only one extra forward pass per step, with no increase in peak VRAM (as the sub-network and full model are executed sequentially).
 
-- **Protecting critical blocks**: Structurally important blocks (e.g., the first block) are excluded; random dropping is applied only among non-critical blocks.
-- **Drop ratio of ~10%**: Experiments confirm that dropping approximately 10% of blocks yields optimal performance.
-- **Application interval**: The method is most effective when applied within the middle 80% of the noise level range during denoising.
-- **Dynamic diversity**: Independently sampling masks at different timesteps is more robust than fixing the dropped block throughout denoising.
+**3. Engineering constraints for block-dropping: Where, how much, and when**
+
+Randomness must be constrained for stability. First, **protect critical blocks**: exclude structurally essential layers like the first block and only drop from non-critical layers to avoid destroying basic generation capabilities. Second, a **drop ratio of ~10%** is used, as experiments showed this performs best—too much causes excessive degradation, while too little weakens the guidance signal. Finally, the **application interval** is restricted to approximately the middle 80% of noise levels during denoising, skipping extreme early and late timesteps. The combination of these constraints and the "independent mask per step" dynamic diversity makes the method more robust than a static weak model with fixed dropped blocks.
 
 ## Key Experimental Results
 
-### Table 1: Text-to-Image HPSv2.1 and T2I-CompBench Comparison
+### Table 1: Text-to-Image Comparison on HPSv2.1 and T2I-CompBench
 
 | Model | Method | HPSv2.1 Avg↑ | Color↑ | Shape↑ | Texture↑ | Qalign(HPSv2.1)↑ |
 |------|------|:---:|:---:|:---:|:---:|:---:|
@@ -81,7 +88,7 @@ $$\tilde{D}_\theta^\lambda(x_t|c) = D_\theta(x_t|\phi) + \lambda(D_\theta(x_t|c)
 | SD3.5 | CFG | 30.82 | 51.29 | 47.71 | 47.39 | 4.63 |
 | SD3.5 | **S²-Guidance** | **31.56** | 57.57 | 51.23 | 50.13 | **4.70** |
 
-S²-Guidance achieves the best results across all HPSv2.1 dimensions and leads substantially on Color and Shape in T2I-CompBench.
+The method achieves the best scores across all dimensions of HPSv2.1 and significantly leads in the Color and Shape categories of T2I-CompBench.
 
 ### Table 2: ImageNet 256×256 Class-Conditional Generation
 
@@ -102,47 +109,47 @@ S²-Guidance achieves the best results across all HPSv2.1 dimensions and leads s
 | Wan-14B | CFG | 82.65 | 84.88 | 73.76 |
 | Wan-14B | **S²-Guidance** | **82.84** | **84.89** | **74.65** |
 
-The method achieves the highest overall score on both the 1.3B and 14B models, validating its generality.
+Achieved the highest total scores on both 1.3B and 14B models, validating the generalizability of the method.
 
 ### Computational Overhead
 
-- Runtime: approximately 40% increase over CFG (29.2s → 40.2s).
-- Peak memory: unchanged, as the subnetwork and full model run sequentially.
-- S²-Guidance with 20 steps achieves a higher HPS Score than CFG with 60 steps, yielding a superior performance–efficiency frontier.
+- Runtime: Increases by ~40% compared to CFG (29.2s → 40.2s).
+- Peak VRAM: Unchanged (sequential execution).
+- Efficiency: S²-Guidance at 20 steps outperforms CFG at 60 steps in HPS Score, offering a superior performance-efficiency frontier.
 
 ## Highlights & Insights
 
-- **Training-free and plug-and-play**: No additional weak model training is required; the method directly exploits the inherent redundancy of the model's own subnetwork and adapts to any DiT architecture.
-- **Clear theoretical intuition**: Starting from a closed-form analysis of Gaussian mixtures and progressively extending to real data, the argumentative chain is complete and rigorous.
-- **Minimal and efficient design**: Only one additional forward pass with ~10% blocks dropped is needed per step, with no increase in memory usage.
-- **Multi-task coverage**: Consistent improvements are demonstrated across class-conditional image generation, T2I, and T2V tasks, validated on multiple models including SD3, SD3.5, and Wan.
-- **Dynamic diversity outperforms fixed strategies**: The time-varying diversity of stochastic dropping naturally avoids the limitation of using a fixed weak model throughout the entire denoising process.
+- **Training-free and Plug-and-play**: No need to train external weak models; it leverages internal sub-network redundancy and adapts to any DiT architecture.
+- **Clear Theoretical Intuition**: Starts from closed-form analysis of Gaussian mixtures and transitions to real data with a complete logical chain.
+- **Extremely Simple and Efficient**: Only one extra forward pass (dropping ~10% blocks) per step with no extra memory usage.
+- **Multi-modal Task Coverage**: Consistent improvements across class-conditional image generation, T2I, and T2V tasks, verified on models like SD3, SD3.5, and Wan.
+- **Dynamic Diversity Superiority**: The time-varying diversity of random dropping naturally avoids the limitations of using a fixed weak model throughout the entire denoising process.
 
 ## Limitations & Future Work
 
-- **40% computational overhead**: Although memory usage is unchanged, the additional forward pass per step incurs non-trivial costs in large-scale deployment.
-- **Manual tuning of $\omega$**: The optimal S²Scale may vary across models and tasks, and excessively large $\omega$ can cause over-correction.
-- **Heuristic block-dropping design**: Excluding critical blocks and determining the drop range still relies on empirical analysis, lacking an automated selection mechanism.
-- **Applicability to non-DiT architectures is unverified**: The method is primarily tested on Transformer-based diffusion models; its suitability for architectures such as UNet remains uncertain.
-- **Diminishing gains on stronger models**: The improvement on Wan-14B is smaller than on the 1.3B model, suggesting diminishing marginal returns as the model approaches the state of the art.
+- **40% Computational Overhead**: While VRAM is constant, the extra forward pass per step remains a cost for large-scale deployment.
+- **Manual Hyperparameter $\omega$**: The optimal S²Scale value may vary by model and task; excessive $\omega$ can lead to over-correction.
+- **Heuristic Block-dropping Design**: Identifying non-critical blocks and the drop ratio still relies on empirical analysis, lacking an automated selection mechanism.
+- **Applicability to non-DiT Architectures**: Primarily tested on Transformer-based diffusion models; applicability to UNet remains to be verified.
+- **Diminishing Returns on Scale**: Improvements on Wan-14B are smaller than on 1.3B, suggesting gains converge as models approach SOTA.
 
 ## Related Work & Insights
 
-| Method | Requires Training? | Generality | Core Mechanism | Comparison with S²-Guidance |
+| Method | Training Required? | Generality | Core Mechanism | Comparison with S²-Guidance |
 |------|:---:|--------|---------|------------------|
-| CFG | × | High | Conditional–unconditional extrapolation | Suffers from mode shift and distributional collapse |
-| Autoguidance | ✓ | Low | Training a degraded weak model | Requires additional training; weak model selection is difficult |
-| SEG | × | Medium | Modifying attention regions | Task-specific, hyperparameter-sensitive, reduced aesthetic scores |
-| CFG++ | × | High | Manifold constraint | Some metrics fall below vanilla CFG |
-| CFG-Zero | × | High | Zero-initialization correction | Competitive but does not leverage weak model guidance direction |
-| **S²-Guidance** | **×** | **High** | **Stochastic block-dropping self-guidance** | **Universal, training-free, best overall performance** |
+| CFG | × | High | Cond-Uncond Extrapolation | Suffers from mode shift and collapse |
+| Autoguidance | ✓ | Low | Trained degraded weak model | Requires extra training; hard to select weak model |
+| SEG | × | Medium | Modify attention regions | Task-specific, sensitive to hyperparams, drops aesthetic scores |
+| CFG++ | × | High | Manifold constraints | Performance on some metrics is lower than original CFG |
+| CFG-Zero | × | High | Zero-init correction | Close performance but doesn't explore weak model guidance |
+| **S²-Guidance** | **×** | **High** | **Random block-drop self-guidance** | **Universal, training-free, best results** |
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — The insight of using stochastic block-dropping as a weak model is both novel and natural.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Comprehensive coverage from toy examples to ImageNet, T2I, and T2V, with thorough ablations.
-- **Writing Quality**: ⭐⭐⭐⭐ — The argument progresses logically from toy to real settings, with intuitive illustrations.
-- **Value**: ⭐⭐⭐⭐ — A plug-and-play universal enhancement for diffusion models with strong practical utility.
+- Novelty: ⭐⭐⭐⭐ — The insight of using random block-dropping as a weak model is novel and intuitive.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Comprehensive coverage from toy examples to ImageNet, T2I, and T2V with sufficient ablation.
+- Writing Quality: ⭐⭐⭐⭐ — Logical progression from toy to real-world scenarios with intuitive illustrations.
+- Value: ⭐⭐⭐⭐ — A practical, plug-and-play universal enhancement for diffusion models.
 
 <!-- RELATED:START -->
 
@@ -151,10 +158,10 @@ The method achieves the highest overall score on both the 1.3B and 14B models, v
 ## Related Papers
 
 - [\[AAAI 2026\] Self-NPO: Data-Free Diffusion Model Enhancement via Truncated Diffusion Fine-Tuning](../../AAAI2026/image_generation/self-npo_data-free_diffusion_model_enhancement_via_truncated_diffusion_fine-tuni.md)
-- [\[NeurIPS 2025\] Training-Free Safe Text Embedding Guidance for Text-to-Image Diffusion Models](../../NeurIPS2025/image_generation/training-free_safe_text_embedding_guidance_for_text-to-image_diffusion_models.md)
-- [\[CVPR 2026\] CFG-Ctrl: Control-Based Classifier-Free Diffusion Guidance](../../CVPR2026/image_generation/cfg-ctrl_control-based_classifier-free_diffusion_guidance.md)
-- [\[CVPR 2026\] Ani3DHuman: Photorealistic 3D Human Animation with Self-guided Stochastic Sampling](../../CVPR2026/image_generation/ani3dhuman_photorealistic_3d_human_animation_with_self-guided_stochastic_samplin.md)
-- [\[AAAI 2026\] Melodia: Training-Free Music Editing Guided by Attention Probing in Diffusion Models](../../AAAI2026/image_generation/melodia_training-free_music_editing_guided_by_attention_probing_in_diffusion_mod.md)
+- [\[ICLR 2026\] Stage-wise Dynamics of Classifier-Free Guidance in Diffusion Models](stage-wise_dynamics_of_classifier-free_guidance_in_diffusion_models.md)
+- [\[ICLR 2026\] Overshoot and Shrinkage in Classifier-Free Guidance: From Theory to Practice](overshoot_and_shrinkage_in_classifier-free_guidance_from_theory_to_practice.md)
+- [\[ICLR 2026\] Improving Classifier-Free Guidance in Masked Diffusion: Low-Dim Theoretical Insights with High-Dim Impact](improving_classifier-free_guidance_in_masked_diffusion_low-dim_theoretical_insig.md)
+- [\[ICLR 2026\] A Noise is Worth Diffusion Guidance](a_noise_is_worth_diffusion_guidance.md)
 
 </div>
 

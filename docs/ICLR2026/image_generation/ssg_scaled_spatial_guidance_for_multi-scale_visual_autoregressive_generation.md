@@ -2,92 +2,79 @@
 title: >-
   [Paper Note] SSG: Scaled Spatial Guidance for Multi-Scale Visual Autoregressive Generation
 description: >-
-  [ICLR 2026][Image Generation][VAR] This paper proposes Scaled Spatial Guidance (SSG), a training-free inference-time guidance method that enhances the coarse-to-fine hierarchical generation quality of visual autoregressi…
+  [ICLR 2026][Image Generation][VAR] Proposes Scaled Spatial Guidance (SSG), a training-free inference-time guidance method that enhances the coarse-to-fine hierarchical generation quality of visual autoregressive models through frequency-domain prior construction and semantic residual amplification.
 tags:
-  - "ICLR 2026"
-  - "Image Generation"
-  - "VAR"
-  - "next-scale prediction"
-  - "information bottleneck"
-  - "frequency-domain guidance"
-  - "training-free"
+  - ICLR 2026
+  - Image Generation
+  - VAR
 date: 2026-05-08
-content_hash: 256b406aff81fab6
+content_hash: 7be4ab821f6dbeb5
 ---
-
 # SSG: Scaled Spatial Guidance for Multi-Scale Visual Autoregressive Generation
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2602.05534](https://arxiv.org/abs/2602.05534)  
 **Code**: [GitHub](https://github.com/Youngwoo-git/SSG)  
-**Area**: Visual Autoregressive Models / Image Generation / Inference-Time Guidance
-**Keywords**: VAR, next-scale prediction, information bottleneck, frequency-domain guidance, training-free
+**Area**: Visual Autoregressive Models / Image Generation / Inference-time Guidance  
+**Keywords**: VAR, next-scale prediction, information bottleneck, frequency domain guidance, training-free
 
 ## TL;DR
 
-This paper proposes Scaled Spatial Guidance (SSG), a training-free inference-time guidance method that enhances the coarse-to-fine hierarchical generation quality of visual autoregressive models through frequency-domain prior construction and semantic residual amplification.
+Proposes Scaled Spatial Guidance (SSG), a training-free inference-time guidance method that enhances the coarse-to-fine hierarchical generation quality of visual autoregressive models through frequency-domain prior construction and semantic residual amplification.
 
 ## Background & Motivation
 
-Visual autoregressive (VAR) models generate images via next-scale prediction, naturally achieving coarse-to-fine hierarchical synthesis. However:
+Visual Autoregressive (VAR) models generate images via next-scale prediction, naturally achieving coarse-to-fine hierarchical synthesis. However:
 
-**Training–inference discrepancy**: Limited model capacity and accumulated errors cause the model to deviate from its coarse-to-fine nature at inference time, leading to redundant prediction of low-frequency information.
+**Training-Inference Bias**: Limited model capacity and accumulated errors cause the model to deviate from the coarse-to-fine essence during inference, where low-frequency information is redundantly predicted.
 
-**Limitations of existing improvements**:
+**Limitations of Prior Work**:
    - Auxiliary refinement modules (CoDe, HMAR) require retraining.
-   - Flow matching integration introduces additional overhead.
-   - Self-correction mechanisms require architectural modifications.
+   - Flow-matching integration increases overhead.
+   - Self-correction mechanisms require architecture modifications.
 
-**Core Problem**: How can one guide each generation step to produce novel, scale-specific high-frequency information without modifying model parameters?
+**Core Problem**: How to guide each generation step to produce novel high-frequency information specific to that scale without modifying model parameters?
 
 ## Method
 
-### 1. Derivation from an Information-Theoretic Perspective
+### Overall Architecture
 
-Starting from the Information Bottleneck (IB) principle, the stepwise generation of VAR is reformulated as a variational optimization problem:
+SSG addresses the training-inference bias in VAR inference: the model tends to repeat already determined low-frequency structures in each next-scale prediction rather than filling in the high-frequency details unique to that scale. SSG formulates this step as an Information Bottleneck (IB) optimization—aiming to retain novel high-frequency signals belonging to the current scale while suppressing low-frequency redundancy overlapping with previous coarser scales. Mechanism: For step $k$, the previous $logits \ell_{k-1}$ are first constructed into a non-distorted coarse-grained prior $\ell_{\text{prior}}$ in the frequency domain (DSE module). Then, the semantic residual $\Delta_k$ is obtained by subtracting the prior from the current $logits \ell_k$. This high-frequency signal is amplified along the direction of $\Delta_k$ using a scaled factor $\beta_k$ and re-injected into the sampling distribution. Finally, tokens for the current scale are sampled to proceed to the next. The entire process only modifies logits within the sampling loop and reuses cached outputs without additional forward passes or weight modifications, enabling zero-cost integration with existing VAR models.
 
-$$\mathcal{L}_{\text{VAR-IB}} = \max_{z_k} \beta I(z_k; H(\hat{f}_K)) - I(z_k; L(\hat{f}_K))$$
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    IB["Information Bottleneck Objective<br/>Preserve high-freq, suppress low-freq redundancy"]
+    PREV["Prev step logits ℓ_(k−1)<br/>(Coarse prior source)"] --> DSE["DSE Frequency Prior Construction<br/>Interp → DCT (Low from origin + High from interp) → IDCT"]
+    DSE --> PRIOR["Coarse-grained Prior ℓ_prior"]
+    CUR["Current step logits ℓ_k"] --> RES["Semantic Residual Δ_k = ℓ_k − ℓ_prior"]
+    PRIOR --> RES
+    IB -->|Determine amplification direction| RES
+    RES --> SSG["SSG Guided Extrapolation<br/>ℓ_k + β_k · Δ_k"]
+    SSG --> SAMP["Sample token map r_k"]
+    SAMP --> NEXT["Enter next scale k+1 (Loop)"]
+```
 
-- **Target information term**: Maximizes mutual information with high-frequency details.
-- **State redundancy term**: Minimizes redundancy with already-established coarse structures.
+### Key Designs
 
-### 2. SSG Formulation
+**1. Information Bottleneck Objective: Formalizing goal for each scale**
 
-The optimization objective is converted into a MAP-style surrogate function, yielding a closed-form solution:
+The training-inference bias in VAR stems from the model repeating predicted low-frequency structures instead of adding high-frequency details—but "what to add" was initially a vague intuition. SSG derives this from IB principles as a variational optimization $\mathcal{L}_{\text{VAR-IB}} = \max_{z_k} \beta I(z_k; H(\hat{f}_K)) - I(z_k; L(\hat{f}_K))$: the first term maximizes mutual information between the $k$-th latent $z_k$ and the final high-frequency components $H(\hat{f}_K)$ (generating new details), while the second term minimizes redundant mutual information with low-frequency components $L(\hat{f}_K)$ (reducing repetition), where $L(\hat{f}_K)\approx \hat{f}_{k-1}$. This transforms the goal into an actionable "more high-frequency, less low-frequency" trade-off, providing a theoretical basis for closed-form guidance.
 
-$$\ell_k^{\text{SSG}} = \ell_k + \beta_k \Delta_k = \ell_k + \beta_k (\ell_k - \ell_{\text{prior}})$$
+**2. DSE Frequency Domain Prior Construction: Building a non-distorted coarse reference**
 
-where:
-- $\ell_k$: residual logits at step $k$
-- $\ell_{\text{prior}}$: coarse-grained prior constructed from the previous step
-- $\Delta_k = \ell_k - \ell_{\text{prior}}$: semantic residual (high-frequency details)
-- $\beta_k$: step-wise scaling factor
+Guidance quality depends on the accuracy of $\ell_{\text{prior}}$. If the prior is distorted, the residual $\Delta_k$ will be misaligned, potentially suppressing correct details. Naive spatial interpolation of previous logits leads to over-smoothing (linear) or blocky artifacts (nearest-neighbor), both polluting $\Delta_k$. DSE performs fusion in the frequency domain: previous $logits \ell_{k-1}$ are spatially interpolated to get $\ell'_{\text{interp}}$, then DCT is applied to both. The low-frequency coefficients of $\ell_{k-1}$ are combined with the high-frequency coefficients of $\ell'_{\text{interp}}$, and IDCT is used to recover $\ell_{\text{prior}}$. Leveraging DCT orthogonality, this fusion precisely separates frequency bands—low frequencies remain faithful to the original scale while high frequencies provide a smooth extrapolation, resulting in a prior that is neither blurry nor aliased.
 
-### 3. Discrete Space Enhancement (DSE)
+**3. SSG Guided Extrapolation: Amplifying high frequencies with semantic residuals**
 
-Frequency-domain prior construction procedure:
-1. Spatially interpolate the previous-step logits $\ell_{k-1}$ to obtain $\ell'_{\text{interp}}$.
-2. Apply DCT to both.
-3. Fuse the low-frequency coefficients of $\ell_{k-1}$ with the high-frequency coefficients of $\ell'_{\text{interp}}$.
-4. Apply IDCT to recover the prior $\ell_{\text{prior}}$.
-
-**Advantages over simple interpolation**:
-- Linear interpolation over-smooths and attenuates the prior.
-- Nearest-neighbor interpolation introduces blocky discontinuities and spurious high frequencies.
-- DCT frequency-domain fusion preserves energy conservation and achieves precise band separation.
-
-### 4. Efficient Implementation
-
-- No additional forward passes required (cached logits are reused).
-- Implemented in only a few lines of code.
-- Negligible computational and memory overhead.
+The IB objective is mapped to a MAP-style proxy function $\mathcal{L}(\ell') = \beta(\ell')^{\top}\Delta_k - \tfrac12\|\ell'-\ell_k\|_2^2$. Since this quadratic form is strictly concave, its unique closed-form maximum yields the guidance formula: $\ell_k^{\text{SSG}} = \ell_k + \beta_k \Delta_k = \ell_k + \beta_k(\ell_k - \ell_{\text{prior}})$. The residual $\Delta_k$ corresponds precisely to the new high frequencies of the current scale. Extrapolating along this direction with factor $\beta_k$ amplifies scale-specific semantic residuals and suppresses low-frequency redundancy. While similar in form to CFG, the difference vector here arises from cross-scale frequency discrepancies rather than condition discrepancies, making it naturally suited for the VAR hierarchy without requiring unconditional forward passes.
 
 ## Key Experimental Results
 
-### ImageNet 256×256 Class-Conditional Generation
+### Main Results: ImageNet 256×256 Class-Conditioned Generation
 
 | Model | FID↓ | sFID↓ | IS↑ | Pre↑ | Rec↑ |
-|------|------|-------|-----|------|------|
+|-------|------|-------|-----|------|------|
 | VAR-d16 | 3.42 | 8.70 | 275.6 | 0.84 | 0.51 |
 | +SSG | **3.27** | **8.39** | **285.3** | **0.85** | 0.50 |
 | VAR-d20 | 2.67 | 7.97 | 299.8 | 0.83 | 0.55 |
@@ -97,53 +84,53 @@ Frequency-domain prior construction procedure:
 | VAR-d30 | 2.02 | 8.52 | 302.9 | 0.82 | 0.60 |
 | +SSG | **1.68** | **8.50** | **313.2** | 0.81 | **0.62** |
 
-### Cross-Model Generalization
+### Cross-model generalization
 
-SSG proves effective across different tokenization schemes:
+SSG is effective across different tokenization schemes:
 - Standard VAR (Tian et al.)
-- HART (hybrid tokens)
-- Infinity (bitwise tokens)
+- HART (Hybrid tokens)
+- Infinity (Bitwise tokens)
 
-### Comparison with Other Generative Models
+### Comparison with other generation models
 
-VAR-d30 + SSG (FID 1.68) is competitive with diffusion and masked generative models while retaining VAR's low-latency advantage (10-step inference).
+VAR-d30 + SSG (FID 1.68) is competitive with diffusion and masked models while maintaining the low-latency advantages of VAR (10-step inference).
 
 ### Ablation Study
 
 | Component | FID | IS |
-|------|-----|-----|
-| w/o SSG (baseline) | 2.02 | 302.9 |
-| SSG + linear interpolation prior | limited improvement | — |
-| SSG + nearest-neighbor prior | possible degradation | — |
-| SSG + DSE (frequency-domain fusion) | **1.68** | **313.2** |
+|-----------|-----|-----|
+| w/o SSG (Baseline) | 2.02 | 302.9 |
+| SSG + Linear Interpolation Prior | Limited gain | — |
+| SSG + Nearest Neighbor Prior | Potential degradation | — |
+| SSG + DSE (Freq Fusion) | **1.68** | **313.2** |
 
 ## Highlights & Insights
 
-1. **Elegant information-theoretic design**: SSG's closed-form solution is rigorously derived from the IB principle.
-2. **Completely training-free**: No modification of model weights, no additional data, and no fine-tuning required.
-3. **Theoretically grounded frequency-domain prior (DSE)**: Exploits DCT orthogonality to achieve lossless energy-preserving band fusion.
-4. **Strong consistency**: Effective across VAR models of varying scales and tokenization designs.
-5. **Minimal implementation**: Integrable in just a few lines of code.
+1. **Information-theory-driven design**: Elegant derivation of binary closed-form SSG from IB principles.
+2. **Completely training-free**: No modification to weights, no extra data, no fine-tuning.
+3. **Theoretically sound DSE**: Utilizes DCT orthogonality for energy-conserving frequency band fusion.
+4. **Consistency**: Effective across various VAR model scales and tokenization designs.
+5. **Minimal implementation**: Can be integrated with a few lines of code.
 
 ## Limitations & Future Work
 
-1. The effectiveness of SSG depends on a well-designed $\beta_k$ schedule, requiring per-model tuning.
-2. SSG has no effect at the first step (coarsest scale) due to the absence of a prior.
-3. SSG is fundamentally a posterior correction and cannot compensate for information loss inherent to the tokenizer.
-4. Applicable only to VAR models that operate on discrete visual tokens.
+1. SSG performance depends on a reasonable $\beta_k$ schedule, requiring hyperparameter tuning.
+2. No prior is available for the first step (coarsest scale), where SSG is inactive.
+3. As a posterior correction, it cannot recover information loss inherent to the tokenizer.
+4. Specifically designed for VAR models with discrete visual tokens.
 
 ## Related Work & Insights
 
-- **VAR models**: VAR (Tian 2024), HART (Tang 2025), Infinity (Han 2025)
-- **Visual guidance**: CFG, SAG, PAG, STG — none designed specifically for VAR
-- **Training–inference discrepancy mitigation**: CoDe, HMAR — both require retraining
+- **VAR Models**: VAR (Tian 2024), HART (Tang 2025), Infinity (Han 2025).
+- **Visual Guidance**: CFG, SAG, PAG, STG, though none target the VAR structure.
+- **Training-Inference Bias Mitigation**: CoDe, HMAR, but these require retraining.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐⭐ — Elegant bridging from information theory to practice
-- **Practicality**: ⭐⭐⭐⭐⭐ — Zero-cost integration, plug-and-play
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Validated across multiple models and settings
-- **Writing Quality**: ⭐⭐⭐⭐⭐ — Theoretical derivations are clear and intuitions are well-explained
+- **Novelty**: ⭐⭐⭐⭐⭐ — Elegant bridge from information theory to practice.
+- **Value**: ⭐⭐⭐⭐⭐ — Zero-cost integration, plug-and-play.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Verified across multiple models and settings.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ — Clear theoretical derivation and intuitive explanations.
 
 <!-- RELATED:START -->
 
@@ -152,10 +139,10 @@ VAR-d30 + SSG (FID 1.68) is competitive with diffusion and masked generative mod
 ## Related Papers
 
 - [\[ICLR 2026\] MVAR: Visual Autoregressive Modeling with Scale and Spatial Markovian Conditioning](mvar_visual_autoregressive_modeling_with_scale_and_spatial_markovian_conditionin.md)
-- [\[ICML 2026\] Visual Implicit Autoregressive Modeling](../../ICML2026/image_generation/visual_implicit_autoregressive_modeling.md)
+- [\[ICLR 2026\] NextStep-1: Toward Autoregressive Image Generation with Continuous Tokens at Scale](nextstep-1_toward_autoregressive_image_generation_with_continuous_tokens_at_scal.md)
+- [\[ICLR 2026\] BAR: Refactor the Basis of Autoregressive Visual Generation](bar_refactor_the_basis_of_autoregressive_visual_generation.md)
+- [\[ICLR 2026\] ViPO: Visual Preference Optimization at Scale](vipo_visual_preference_optimization_at_scale.md)
 - [\[CVPR 2026\] Markovian Scale Prediction: A New Era of Visual Autoregressive Generation](../../CVPR2026/image_generation/markovian_scale_prediction_a_new_era_of_visual_autoregressive_generation.md)
-- [\[ICLR 2026\] Laplacian Multi-scale Flow Matching for Generative Modeling](laplacian_multi-scale_flow_matching_for_generative_modeling.md)
-- [\[ICLR 2026\] Visual Autoregressive Modeling for Instruction-Guided Image Editing](visual_autoregressive_modeling_for_instruction-guided_image_editing.md)
 
 </div>
 

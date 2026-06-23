@@ -2,139 +2,129 @@
 title: >-
   [Paper Note] SongEcho: Towards Cover Song Generation via Instance-Adaptive Element-wise Linear Modulation
 description: >-
-  [ICLR 2026][Image Generation][Cover song generation] This paper proposes the SongEcho framework, which achieves cover song generation via Instance-Adaptive Element-wise Linear Modulation (IA-EiLM)…
+  [ICLR 2026][Image Generation][FiLM] Proposes the SongEcho framework, which achieves cover song generation through Instance-Adaptive Element-wise Linear Modulation (IA-EiLM), generating new vocals and accompaniments while preserving the original song's melody contour.
 tags:
-  - "ICLR 2026"
-  - "Image Generation"
-  - "Cover song generation"
-  - "FiLM"
-  - "element-wise linear modulation"
-  - "melody control"
-  - "parameter efficiency"
+  - ICLR 2026
+  - Image Generation
+  - FiLM
 date: 2026-05-08
-content_hash: 28a4b4334ca346e9
+content_hash: ce955fcb4a2ebcef
 ---
-
 # SongEcho: Towards Cover Song Generation via Instance-Adaptive Element-wise Linear Modulation
 
 **Conference**: ICLR 2026  
 **arXiv**: [2602.19976](https://arxiv.org/abs/2602.19976)  
 **Code**: [GitHub](https://github.com/lsfhuihuiff/SongEcho_ICLR2026)  
 **Area**: Image Generation  
-**Keywords**: Cover song generation, FiLM, element-wise linear modulation, melody control, parameter efficiency
+**Keywords**: Cover song generation, FiLM, element-wise linear modulation, melody control, parameter-efficient
 
 ## TL;DR
 
-This paper proposes the SongEcho framework, which achieves cover song generation via Instance-Adaptive Element-wise Linear Modulation (IA-EiLM), generating new vocals and accompaniment while preserving the melodic contour of the original song.
+Proposes the SongEcho framework, which achieves cover song generation through Instance-Adaptive Element-wise Linear Modulation (IA-EiLM), generating new vocals and accompaniments while preserving the original song's melody contour.
 
 ## Background & Motivation
 
-Cover songs are an important part of musical culture, retaining the core melody of the original while infusing new emotional depth and themes. However:
+Cover songs are a vital component of music culture, retaining the core melody of the original while injecting new emotional depth and themes. However:
 
-**Cover song generation is underexplored**: While melody-guided instrumental generation exists, simultaneous generation of new vocals and accompaniment for cover songs remains largely unaddressed.
+**Cover generation tasks are under-explored**: Although melody-guided instrumental generation exists, cover generation—which involves simultaneously generating new vocals and accompaniments—remains largely blank.
 
-**Limitations of existing conditioning mechanisms**:
-   - Cross-attention requires additional modeling of temporal alignment, which is indirect and introduces computational redundancy.
-   - Element-wise addition exploits temporal correspondence but has limited flexibility (affine transformation with fixed scaling factors).
+**Limitations of existing condition injection mechanisms**:
+   - Cross-attention requires extra modeling for temporal alignment, which is indirect and introduces computational redundancy.
+   - Element-wise addition leverages temporal correspondence but has limited flexibility (affine transformation with a fixed scaling factor).
 
-**Lack of adaptability in conditional representations**: Existing methods encode melody conditions independently, ignoring compatibility with the hidden states of the generative model.
+**Lack of adaptivity in condition representation**: Existing methods encode melody conditions independently, ignoring compatibility with the hidden states of the generative model.
 
 ## Method
 
-### Task Definition
+### Overall Architecture
 
-Cover song generation is reformulated as a conditional generation task: given the melody of an original vocal track and a text prompt, simultaneously generate new vocals and a harmonious accompaniment.
+SongEcho formalizes cover generation as a conditional generation task: synthesizing new vocals and harmonious accompaniments given the original vocal melody contour (a pitch sequence) and a text prompt. It uses the text-to-song model ACE-Step (a Linear Diffusion Transformer) as the backbone. First, a pitch extractor and melody encoder convert the pitch sequence into melody features $m$. Then, $m$ is injected into the FFN layer of each Transformer block via a lightweight module named IA-EiLM. The injection occurs in two steps: IACR allows the melody condition to "preview" the current hidden state to refine it into an instance-adaptive condition $c_i$, and EiLM then modulates the hidden state element-wise using $c_i$. The entire backbone weights are frozen; only IA-EiLM and the melody encoder are trained. Thus, melody-controllable covers are achieved with minimal trainable parameters (approx. 49M). The Suno70k dataset was also constructed to support this training paradigm.
 
-### 1. Element-wise Linear Modulation (EiLM)
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    P["Original Vocal Pitch Sequence<br/>+ Text Prompt/Lyrics"] --> ENC["Pitch Extraction RVMPE(100Hz)<br/>→ Melody Encoder(1D Conv) → Melody Feature m"]
+    ENC --> SA["ACE-Step Frozen Backbone<br/>Transformer Block · Self-Attention (Global Interaction)"]
+    SA --> IAEILM
+    subgraph IAEILM["IA-EiLM Injection Module (Inserted before FFN · Zero-initialized)"]
+        direction TB
+        IACR["Instance-Adaptive Condition Refinement IACR<br/>Gated Fusion of m and h_i → c_i"] --> EILM["Element-wise Linear Modulation EiLM<br/>γ_i⊙h_i+β_i Element-wise Time Alignment"]
+    end
+    IAEILM --> FFN["FFN Local Feature Transformation"]
+    FFN --> OUT["Cover Song<br/>(New Vocals + Harmonious Accompaniment)"]
+```
 
-Feature-wise Linear Modulation (FiLM) is extended to Element-wise Linear Modulation:
+### Key Designs
 
-$$h_i^m = \text{EiLM}(h_i | c) = \gamma_i \odot h_i + \beta_i$$
+**1. Element-wise Linear Modulation (EiLM): Point-wise time-aligned injection of melody conditions**
 
-where $(\gamma_i, \beta_i) = f_i(c)$, and the modulation parameters precisely match the shape of the hidden states $\gamma_i, \beta_i \in \mathbb{R}^{B \times T \times D_i}$.
+Melody is a time-varying sequence with a natural frame-level temporal correspondence to hidden states. Existing injection methods fail to utilize this effectively: cross-attention is flexible but redundant in modeling alignment, while element-wise addition utilizes alignment but degrades into an affine transformation with a fixed scaling factor, limiting flexibility. EiLM expands classic FiLM from "affine only in the feature channel dimension" to "all dimensions." The modulation is denoted as $h_i^m = \text{EiLM}(h_i \mid c) = \gamma_i \odot h_i + \beta_i$, where the shapes of $(\gamma_i, \beta_i) = f_i(c)$ precisely match the hidden states, including the time dimension $T$, i.e., $\gamma_i, \beta_i \in \mathbb{R}^{B \times T \times D_i}$. Consequently, each time step and channel receives independent scaling and offsets. The melody is written into the hidden states in an element-wise, time-aligned manner, retaining the benefits of addition while overcoming flexibility bottlenecks. Unlike TFiLM, which uses RNNs for recursive parameter generation, EiLM generates all parameters in a single operation without temporal dependencies.
 
-**Difference from FiLM**: FiLM operates along the feature dimension, whereas EiLM operates across all dimensions (including time), enabling element-wise modulation that ensures temporally aligned injection of melody.
+**2. Instance-Adaptive Condition Refinement (IACR): Dynamic adaptation of conditions based on current hidden states**
 
-### 2. Instance-Adaptive Condition Refinement (IACR)
+Using EiLM alone presents a risk: if the melody condition is encoded independently and mapped statically, a single melody must be compatible with vast variations in hidden states, forming an under-constrained many-to-one mapping that degrades injection quality. IACR ensures the condition feature "sees" the current hidden state before deciding the injection strategy. After linear projections of both paths, cross-modal interaction is performed using a gating mechanism inspired by WaveNet: $c_i = \tanh(L_{h_i}(h_i)) \odot \tanh(L_{m_i}(m))$. By directly accessing the hidden state $h_i$, the many-to-one mapping is tightened into a one-to-one mapping, alleviating feature conflicts and sound quality degradation caused by static injection. IA-EiLM, the core module of the paper, combines EiLM and IACR to improve the mechanism and representation respectively.
 
-**Core Idea**: Conditional features should dynamically adapt based on the hidden states of the generative model.
+**3. Zero Initialization and Parameter-Efficient Integration: Control injection without destroying the backbone**
 
-$$h'_i = L_{h_i}(h_i), \quad m'_i = L_{m_i}(m)$$
-$$c_i = \tanh(h'_i) \odot \tanh(m'_i)$$
+IA-EiLM is inserted before the FFN layer of each Transformer block. Since self-attention handles global interaction and FFN handles local feature transformation, this placement allows melody injection while avoiding dilution by global attention. To ensure training starts smoothly from original model behavior, the modulation uses zero initialization: $\text{EiLM-zero}(h_i \mid c_i) = (\gamma_i + 1) \odot h_i + \beta_i$, which is equivalent to an identity mapping at initialization. During training, all pre-trained parameters (Linear DiT, lyric encoder, text encoder) are frozen, and only IA-EiLM and the melody encoder are updated, keeping trainable parameters at approximately 49M, which is about 3% of SA ControlNet.
 
-A gating mechanism (inspired by WaveNet) enables interaction between hidden states and melody conditions, producing instance-adaptive conditional representations.
+**4. Suno70k Dataset: Filling the gap in full-track cover training data**
 
-**Theoretical Motivation**: Static condition mapping suffers from an under-constrained many-to-one mapping problem. IACR transforms this into a one-to-one mapping by providing direct access to the hidden state $h$.
-
-### 3. SongEcho Framework
-
-- Built upon ACE-Step (a text-to-song model)
-- Pitch extraction: RVMPE (100 Hz)
-- Melody encoder: 1D convolutional layers
-- IA-EiLM modules integrated before the FFN layer of each Transformer block
-- Zero initialization: $\text{EiLM-zero}(h_i|c_i) = (\gamma_i + 1) \odot h_i + \beta_i$, ensuring training starts from the original model behavior
-- Pretrained parameters are frozen; only IA-EiLM and the melody encoder are trained
-
-### 4. Suno70k Dataset
-
-To address the scarcity of full-song datasets, an AI-generated song dataset of 69,469 songs is constructed:
-- Filtered from 659K songs on Suno.ai
-- Quality assessed across five dimensions using SongEval
-- Enriched annotations generated by Qwen2-audio
+Cover generation has long suffered from a lack of paired full-track data. The authors constructed the Suno70k dataset with 69,469 AI-generated songs filtered from 659K Suno.ai songs. Songs were filtered based on quality across five dimensions using SongEval, and augmented labels were generated using Qwen2-audio, providing large-scale, text-labeled material for melody-controllable cover training.
 
 ## Key Experimental Results
 
-### Baselines
+### Comparison Methods
 - ACE-Step + SA ControlNet (1.6B trainable parameters)
 - ACE-Step + SA ControlNet + LoRA (331M)
 - ACE-Step + MuseControlLite (188M)
-- SongEcho (**49M**, approximately 3% of ControlNet parameters)
+- SongEcho (**49M**, approx. 3% of ControlNet parameters)
 
 ### Main Results (Suno70k Test Set)
 
-| Method | RPA↑ | RCA↑ | OA↑ | CLAP↑ | FD↓ | KL↓ | PER↓ | Params |
-|--------|------|------|-----|-------|-----|-----|------|--------|
-| ACE-Step (original) | - | - | - | 0.293 | 73.5 | 0.267 | 0.417 | - |
+| Method | RPA↑ | RCA↑ | OA↑ | CLAP↑ | FD↓ | KL↓ | PER↓ | Parameters |
+|------|------|------|-----|-------|-----|-----|------|-------|
+| Original ACE-Step | - | - | - | 0.293 | 73.5 | 0.267 | 0.417 | - |
 | +SA ControlNet | 0.621 | 0.644 | 0.686 | 0.288 | 106.0 | 0.202 | 0.371 | 1.6B |
 | +MuseControlLite | 0.521 | - | - | - | - | - | - | 188M |
-| **SongEcho** | **Best** | **Best** | **Best** | **Best** | **Best** | **Best** | **Best** | **49M** |
+| **SongEcho (Ours)** | **Best** | **Best** | **Best** | **Best** | **Best** | **Best** | **Best** | **49M** |
 
 ### Ablation Study
 
 | Configuration | RPA | CLAP | FD |
-|---------------|-----|------|----|
-| EiLM only (w/o IACR) | Lower | Lower | Higher |
+|------|-----|------|----|
+| EiLM only (no IACR) | Lower | Lower | Higher |
 | Addition injection only | Lower | Lower | Higher |
 | Cross-attention only | Lower | Lower | Higher |
-| IA-EiLM (full) | Best | Best | Best |
+| IA-EiLM (Full) | Best | Best | Best |
 
 ## Highlights & Insights
 
-1. **Exceptional parameter efficiency**: SongEcho surpasses all baselines with fewer than 3% of ControlNet's parameters.
-2. **Unified conditioning paradigm**: EiLM combines the advantages of both additive and attention-based approaches.
-3. **Well-motivated IACR**: Clear theoretical analysis framing the problem as a transition from under-constrained to one-to-one mapping.
-4. **Release of Suno70k**: A high-quality open-source song dataset.
+1. **Extreme Parameter Efficiency**: Surpasses all baselines using less than 3% of ControlNet parameters.
+2. **Unified Condition Injection Paradigm**: EiLM combines the advantages of both addition and attention-based methods.
+3. **Clear Theoretical Motivation for IACR**: Optimization analysis moving from under-constrained to one-to-one mappings.
+4. **Construction of High-Quality Open-Source Dataset**: Suno70k provides a foundation for the field.
 
 ## Limitations & Future Work
 
-1. Training on AI-generated songs leaves generalization to real-world recordings insufficiently evaluated.
-2. The definition of cover songs is narrow (global style transfer + melody preservation), without support for locally customized adaptations.
-3. Generation is constrained by the base model ACE-Step's 4-minute limit.
-4. Melody control relies on pitch sequences, without considering richer musical control dimensions such as rhythmic variation.
+1. Trained on AI-generated songs; generalization to real songs is not fully evaluated.
+2. Narrow definition of "cover" (global style transfer + melody preservation), excluding local customized adaptations.
+3. Limited by the 4-minute generation cap of the backbone ACE-Step.
+4. Melody control is based on pitch sequences, lacking richer musical dimensions like rhythm variations.
 
 ## Related Work & Insights
 
-- **Text-to-song**: Jukebox, Suno, DiffRhythm, ACE-Step
-- **Singing voice synthesis/conversion**: SVS and SVC series
-- **Controllable music generation**: ControlNet, MuseControlLite
-- **Conditional normalization**: FiLM, AdaIN, TFiLM
+- **Text-to-Song**: Jukebox, Suno, DiffRhythm, ACE-Step
+- **Singing Voice Synthesis/Conversion**: SVS, SVC series
+- **Controllable Music Generation**: ControlNet, MuseControlLite
+- **Conditional Normalization**: FiLM, AdaIN, T-FiLM
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — The EiLM+IACR combination is novel, with well-grounded theoretical motivation for IACR.
-- **Practicality**: ⭐⭐⭐⭐ — Parameter-efficient with high output quality; strong practical applicability.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Multi-dataset evaluation with thorough ablation studies.
-- **Writing Quality**: ⭐⭐⭐⭐ — Clear structure with well-articulated motivation.
+- **Novelty**: ⭐⭐⭐⭐ — The EiLM+IACR combination is novel, and IACR has strong theoretical motivation.
+- **Value**: ⭐⭐⭐⭐ — Parameter-efficient with excellent quality; possesses high practical application value.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Multi-dataset evaluation with thorough ablations.
+- **Writing Quality**: ⭐⭐⭐⭐ — Clear structure and well-explained motivations.
 
 <!-- RELATED:START -->
 
@@ -142,11 +132,11 @@ To address the scarcity of full-song datasets, an AI-generated song dataset of 6
 
 ## Related Papers
 
-- [\[CVPR 2026\] Test-Time Instance-Specific Parameter Composition: A New Paradigm for Adaptive Generative Modeling](../../CVPR2026/image_generation/test-time_instance-specific_parameter_composition_a_new_paradigm_for_adaptive_ge.md)
-- [\[ICLR 2026\] COSMO-INR: Complex Sinusoidal Modulation for Implicit Neural Representations](cosmo-inr_complex_sinusoidal_modulation_for_implicit_neural_representations.md)
-- [\[ICLR 2026\] TAVAE: A VAE with Adaptable Priors Explains Contextual Modulation in the Visual Cortex](tavae_a_vae_with_adaptable_priors_explains_contextual_modulation_in_the_visual_c.md)
-- [\[CVPR 2026\] FontCrafter: High-Fidelity Element-Driven Artistic Font Creation with Visual In-Context Generation](../../CVPR2026/image_generation/fontcrafter_high-fidelity_element-driven_artistic_font_creation_with_visual_in-c.md)
-- [\[ICLR 2026\] Mod-Adapter: Tuning-Free and Versatile Multi-concept Personalization via Modulation Adapter](mod-adapter_tuning-free_and_versatile_multi-concept_personalization_via_modulati.md)
+- [\[CVPR 2026\] Head-wise Adaptive Rotary Positional Encoding for Fine-Grained Image Generation](../../CVPR2026/image_generation/head-wise_adaptive_rotary_positional_encoding_for_fine-grained_image_generation.md)
+- [\[ICLR 2026\] I-DRUID: Layout to Image Generation via Instance-Disentangled Representation and Unpaired Data](i-druid_layout_to_image_generation_via_instance-disentangled_representation_and_.md)
+- [\[ICLR 2026\] Scale-wise Distillation of Diffusion Models](scale-wise_distillation_of_diffusion_models.md)
+- [\[CVPR 2026\] Layer-wise Instance Binding for Regional and Occlusion Control in Text-to-Image Diffusion Transformers](../../CVPR2026/image_generation/layer-wise_instance_binding_for_regional_and_occlusion_control_in_text-to-image_.md)
+- [\[ICLR 2026\] SESaMo: Symmetry-Enforcing Stochastic Modulation for Normalizing Flows](sesamo_symmetry-enforcing_stochastic_modulation_for_normalizing_flows.md)
 
 </div>
 

@@ -2,174 +2,157 @@
 title: >-
   [Paper Note] Temporal Concept Dynamics in Diffusion Models via Prompt-Conditioned Interventions
 description: >-
-  [ICLR 2026][Image Generation][Temporal concept dynamics] This paper proposes the PCI (Prompt-Conditioned Intervention) framework, which quantifies when concepts become committed during diffusion model denoising by switch…
+  [ICLR 2026][Image Generation][Paper Note] The PCI (Prompt-Conditioned Intervention) framework is proposed to quantify when concepts are fixed in diffusion models by switching text prompts at different timesteps of the denoising trajectory, applying these findings to time-aware image editing.
 tags:
-  - "ICLR 2026"
-  - "Image Generation"
-  - "Temporal concept dynamics"
-  - "prompt-conditioned intervention"
-  - "concept insertion success rate"
-  - "diffusion interpretability"
-  - "training-free editing"
+  - ICLR 2026
+  - Image Generation
 date: 2026-05-08
-content_hash: 2a7c2c87309efd45
+content_hash: 5fe2dd5833bc7cc2
 ---
-
 # Temporal Concept Dynamics in Diffusion Models via Prompt-Conditioned Interventions
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2512.08486](https://arxiv.org/abs/2512.08486)  
 **Code**: [PCI Framework](https://github.com/agoerguen/PCI)  
-**Area**: Diffusion Models / Interpretability / Image Editing
-**Keywords**: Temporal concept dynamics, prompt-conditioned intervention, concept insertion success rate, diffusion interpretability, training-free editing
+**Area**: Diffusion Models / Interpretability / Image Editing  
+**Keywords**: Temporal Concept Dynamics, Prompt-Conditioned Intervention, Concept Insertion Success, Diffusion Interpretability, Training-free Editing
 
 ## TL;DR
 
-This paper proposes the PCI (Prompt-Conditioned Intervention) framework, which quantifies when concepts become committed during diffusion model denoising by switching text prompts at different timesteps along the denoising trajectory, and applies these findings to temporally-aware image editing.
+The PCI (Prompt-Conditioned Intervention) framework is proposed to quantify when concepts are fixed in diffusion models by switching text prompts at different timesteps of the denoising trajectory, applying these findings to time-aware image editing.
 
 ## Background & Motivation
 
-Diffusion models are typically evaluated only through final outputs, yet the generation process unfolds as a dynamic trajectory:
+Diffusion models are typically evaluated only by their final outputs, yet the generation process is a dynamic evolution along a trajectory:
 
-**Temporal dynamics overlooked**: Existing interpretability methods mostly focus on "where" (attribution maps) or "what" (concept bottlenecks), rather than "when."
+**Temporal dynamics are overlooked**: Most existing interpretability methods focus on "where" (attribution maps) or "what" (concept bottlenecks) rather than "when".
 
-**Limitations of static analysis**:
-- Attribution maps localize concepts but do not answer when they emerge
-- Concept bottleneck models require additional training and are not faithful to the original model
-- Sparse autoencoders evaluate at a single timestep
+**Limitations of Prior Work**:
+   - Attribution maps locate concepts but do not explain when they emerge.
+   - Concept bottleneck models require additional training and may not be faithful to the original model.
+   - Sparse autoencoders (SAEs) are often evaluated at single timesteps.
 
-**Editing lacks temporal awareness**: Existing editing methods do not know when intervention is most effective.
+**Editing lacks time-awareness**: Current editing methods lack knowledge of when intervention is most effective.
 
-**Core Problem**: When does noise become a specific concept (e.g., age, weather), and at what point is it committed along the denoising trajectory?
+**Core Problem**: At what point does noise transform into specific concepts (e.g., age, weather) and become fixed within the denoising trajectory?
 
 ## Method
 
-### 1. Prompt-Conditioned Intervention (PCI)
+### Overall Architecture
 
-**Basic pipeline**:
-1. Begin denoising with a base prompt $P_b$
-2. Switch to a concept prompt $P_c$ (base prompt + target concept) at timestep $t_s$
-3. Continue denoising to generate the final image
-4. Use a VQA model (Qwen-VL-3B) to detect whether the concept is present
+PCI transforms the question of "when a concept is fixed" into a measurable perturbation experiment: a denoising trajectory is first followed using a base prompt without the target concept, then the prompt is suddenly switched to a version containing the concept at a specific timestep to observe if the concept emerges in the final image. By aggregating statistics across numerous random seeds and switching intervals, a Concept Insertion Success (CIS) curve is generated. The shape of this curve characterizes the temporal dynamics of the concept. Transition time scalars derived from the curve allow for cross-concept and cross-model comparisons and guide the selection of optimal timesteps for editing. The entire process is training-free, model-agnostic, and involves only text condition interventions without modifying weights or reading internal activations.
 
-$$\mathbf{x}_{t_s} = \text{Denoise}(\mathbf{x}_T, P_b)$$
-$$\mathbf{x}_0(P_b \xrightarrow{t_s} P_c) = \text{Denoise}(\mathbf{x}_{t_s}, P_c)$$
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Pure Noise + Base Prompt P_b"] --> B["1. Prompt-Conditioned Intervention<br/>Denoise to t_s, then switch to P_c"]
+    T["3. Fine-Grained Concept Taxonomy<br/>~800 concepts × 8 contexts"] -->|Construct concept prompt P_c| B
+    B --> C["VQA Binary Determination<br/>Does concept exist?"]
+    C -->|Aggregate across seeds/timesteps| D["2. Concept Insertion Success<br/>CIS Curve + Transition Time tau_q"]
+    D --> E["Temporal Hierarchy Patterns +<br/>CIS Guided Editing Windows"]
+```
 
-**Characteristics**: Training-free, model-agnostic, requires no access to model internals.
+### Key Designs
 
-### 2. Concept Insertion Success Rate (CIS)
+**1. Prompt-Conditioned Intervention: Probing plasticity via mid-trajectory switching**
 
-Defined as the probability that a concept appears in the final image after being inserted at timestep $t_s$.
+To determine the fixation point of a concept, PCI tests if inserting the concept at a specific timestep is still effective. The process denoises from pure noise to an intermediate state $\mathbf{x}_{t_s} = \text{Denoise}(\mathbf{x}_T, P_b)$ using a base prompt $P_b$. At the switching time $t_s$, the condition is replaced with the concept prompt $P_c$ (base prompt + target concept) to complete the denoising $\mathbf{x}_0(P_b \xrightarrow{t_s} P_c) = \text{Denoise}(\mathbf{x}_{t_s}, P_c)$. Early $t_s$ usually results in success, while late $t_s$ results in failure, indicating lost plasticity. A VQA model (Qwen-VL-3B) performs binary detection on the output to determine concept presence.
 
-- Averaged over multiple random seeds and base prompts
-- Monotonically non-decreasing, with a well-defined level-crossing time $\tau_q$
-- CIS curves reveal the temporal behavior of concepts
+**2. Concept Insertion Success (CIS) and Transition Windows: Quantifying curves into scalars**
 
-**Key metrics**:
-- $\tau_{50}$, $\tau_{70}$: timesteps at which CIS reaches 50%/70%
-- $W_{70 \to 50} = |\tau_{70} - \tau_{50}|$: transition window width
+CIS is defined as the probability that a concept appears in the final image after being inserted at timestep $t_s$, averaged over various seeds and base prompts. Since CIS is monotonic with respect to $t_s$, transition times $\tau_q$ (the timestep where the curve first reaches level $q$) are well-defined. The study uses $\tau_{50}$ and $\tau_{70}$ to denote when a concept "starts to fixate" and is "essentially locked." The transition window width $W_{70 \to 50} = |\tau_{70} - \tau_{50}|$ quantifies the speed of fixation: narrow windows imply rapid transition (e.g., global style), while wide windows suggest a longer editable margin (e.g., detailed accessories).
 
-### 3. Concept Taxonomy
+**3. Fine-Grained Concept Taxonomy: Ensuring broad generalizability**
 
-Covers approximately 800 fine-grained concept descriptions:
-- Demographics (gender, ethnicity, age group)
-- Objects (animals, artifacts, natural elements)
-- Human attributes (clothing, accessories, physical appearance)
-- Actions, properties, environmental factors, and styles
+To ensure findings are not anecdotal, the authors constructed approximately 800 fine-grained concept descriptions spanning demographics (gender, race, age), objects (animals, artifacts, natural elements), human attributes (clothing, accessories, physical traits), as well as actions, environments, and styles. Each concept is evaluated within 8 different contexts to analyze how context affects fixation time, providing the data foundation for discovering that out-of-distribution (OOD) combinations fixate earlier.
 
-Each concept is evaluated across 8 different contexts.
+## Method
 
-## Experiments
+### Main Results
 
-### Evaluated Models
-SD 2.1, SDXL, SD 3.5, PixArt-alpha, FLUX.1-dev
+#### Temporal Hierarchy Across Categories
 
-### Key Findings
-
-#### Cross-Category Temporal Hierarchy
-
-| Concept Type | Commitment Timing | Characteristics |
-|---------|---------|------|
-| Global factors (style, time, weather, season, color) | **Early** | Narrow transition window |
-| Human attributes (age, gender) | **Mid** | Moderate window |
-| Fine-grained attributes (accessories) | **Mid-to-late** | Wider window |
-| Out-of-distribution concepts (horse in living room) | **Anomalously early** | Narrow and brittle window |
+| Concept Type | Fixation Time | Characteristics |
+|:---|:---|:---|
+| Global Factors (Style, Time, Weather, Season, Color) | **Early** | Narrow transition window |
+| Human Attributes (Age, Gender) | **Intermediate** | Medium window |
+| Detail Attributes (Accessories) | **Mid-Late** | Wide window |
+| OOD Concepts (A horse in a living room) | **Abnormally Early** | Narrow and fragile window |
 
 #### Cross-Model Differences
 
 | Model Type | Characteristics |
-|---------|------|
-| Diffusion models (SD 2.1, SDXL) | Retain greater late-stage flexibility |
-| Rectified flow models (SD 3.5, FLUX) | Concepts commit earlier, transitions are steeper |
+|:---|:---|
+| Diffusion Models (SD 2.1, SDXL) | Retain more late-stage flexibility |
+| Rectified Flow Models (SD 3.5, FLUX) | Earlier concept fixation, steeper transitions |
 | PixArt-alpha (DiT) | Intermediate behavior |
 
-#### Context Dependence
+#### Context Dependency
 
-- The same concept commits at significantly different timesteps across contexts
-- Example: "baby" commits later in a "playground" than at a "bus stop" (more natural context)
-- Example: wearing surgical attire commits later in a "hospital" than on a "street"
-- **OOD concepts commit earlier**: unusual concept–context combinations lead to earlier commitment
+- The same concept fixates at significantly different times depending on the context.
+- Example: "Baby" fixates later in a "playground" than at a "bus stop" (more natural context).
+- Example: "Surgical scrubs" fixate later in a "hospital" than on a "street".
+- **OOD concepts fixate earlier**: Uncommon concept-context pairs lead to earlier locking.
 
-### Image Editing Application
+### Image Editing Applications
 
 | Method | CLIP_img↑ | CLIP_txt↑ | CLIP_dir↑ |
-|------|-----------|-----------|-----------|
+|:---|:---|:---|:---|
 | NTI+P2P | 0.867 | 0.222 | 0.098 |
 | Stable Flow | 0.832 | 0.215 | 0.063 |
 | PCI-$\tau_{50}$ | 0.889 | **0.224** | **0.139** |
 | PCI-$\tau_{60}$ | 0.863 | **0.229** | **0.153** |
 | PCI-$\tau_{70}$ | 0.835 | **0.234** | **0.168** |
 
-The CIS-guided editing window $[\tau_{50}, \tau_{70}]$ achieves the best edit–preservation balance across all metrics.
+Editing windows guided by CIS $[\tau_{50}, \tau_{70}]$ achieve the best balance between editability and identity preservation across all metrics.
 
 ### Ablation Study
 
-| Setting | Outcome |
-|------|------|
-| Different VQA models | Consistent results |
-| Prompt wording variations | Robust |
-| Number of seeds | Seed noise suppressed after averaging |
+| Setting | Effect |
+|:---|:---|
+| Different VQA Models | Consistent results |
+| Prompt Phrasing | Robust |
+| Number of Seeds | Seed noise is suppressed after averaging |
 
 ## Highlights & Insights
 
-1. **Pioneering temporal analysis tool**: Transforms diffusion timesteps into an interpretable analysis axis.
-2. **Rich temporal behavior patterns discovered**: A commitment hierarchy of global → human → fine-grained attributes.
-3. **Cross-model comparisons reveal architectural effects**: Temporal differences between rectified flow and diffusion models.
-4. **Practical editing application**: CIS-guided editing surpasses state-of-the-art across all metrics.
-5. **Zero training, zero cost**: The entire framework requires no training.
+1. **Pioneering Temporal Analysis Tool**: Transforms diffusion time into an interpretable axis for analysis.
+2. **Discovery of Temporal Patterns**: Reveals a fixation hierarchy of Global → Human → Details.
+3. **Architectural Insights**: Cross-model comparisons highlight temporal differences between Rectified Flow and Diffusion models.
+4. **Practical Editing**: CIS-guided editing outperforms SOTA methods across various metrics.
+5. **Zero Training**: The framework requires no training or optimization.
 
 ## Limitations & Future Work
 
-1. CIS relies on a VQA model (Qwen-VL-3B), which may introduce evaluation bias.
-2. Binary concept detection (yes/no) may be overly coarse.
-3. Analysis is primarily conducted on text-to-image models; temporal dynamics in video diffusion remain unexplored.
-4. Multi-concept interaction analysis remains preliminary.
-5. Automating CIS-guided editing (automatically selecting the optimal $\tau$) requires running the full CIS curve in advance.
+1. CIS depends on the VQA model (Qwen-VL-3B), which may introduce evaluation bias.
+2. Binary concept determination (Yes/No) may be too coarse.
+3. Analysis is focused on Text-to-Image; temporal dynamics in video diffusion remain unexplored.
+4. Multi-concept interaction analysis is still preliminary.
+5. Automating CIS-guided editing requires running the full CIS curve first.
 
-## Related Work & Insights
+## Related Work
 
-- **Static interpretability**: Attribution maps (Tang 2022), concept bottlenecks (Ismail 2024)
-- **Dynamic interpretability**: P2P (Hertz 2023), sparse autoencoders (Tinaz 2025)
-- **Diffusion editing**: NTI+P2P, Stable Flow, SDEdit
+- **Static Interpretability**: Attribution maps (Tang 2022), Concept Bottlenecks (Ismail 2024).
+- **Dynamic Interpretability**: P2P (Hertz 2023), Sparse Autoencoders (Tinaz 2025).
+- **Diffusion Editing**: NTI+P2P, Stable Flow, SDEdit.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐⭐ — A fundamentally new temporal analysis paradigm
-- **Value**: ⭐⭐⭐⭐ — Practical editing application with valuable analytical insights
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — 800+ concept descriptions, 5 models, extremely comprehensive analysis
-- **Writing Quality**: ⭐⭐⭐⭐⭐ — Clear structure; findings are interesting and precisely articulated
+- **Novelty**: ⭐⭐⭐⭐⭐ — A new paradigm for temporal dimension analysis.
+- **Value**: ⭐⭐⭐⭐ — Practical for editing and provides valuable insights.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Extremely comprehensive with 800+ concepts and 5 models.
+- **Writing Quality**: ⭐⭐⭐⭐⭐ — Clear structure, interesting findings, and precise delivery.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[ICLR 2026\] Pareto-Conditioned Diffusion Models for Offline Multi-Objective Optimization](pareto-conditioned_diffusion_models_for_offline_multi-objective_optimization.md)
+- [\[ICLR 2026\] Stage-wise Dynamics of Classifier-Free Guidance in Diffusion Models](stage-wise_dynamics_of_classifier-free_guidance_in_diffusion_models.md)
 - [\[ICLR 2026\] Intention-Conditioned Flow Occupancy Models](intention-conditioned_flow_occupancy_models.md)
 - [\[ICLR 2026\] SPEED: Scalable, Precise, and Efficient Concept Erasure for Diffusion Models](speed_scalable_precise_and_efficient_concept_erasure_for_diffusion_models.md)
-- [\[AAAI 2026\] Mass Concept Erasure in Diffusion Models with Concept Hierarchy](../../AAAI2026/image_generation/mass_concept_erasure_in_diffusion_models_with_concept_hierarchy.md)
-- [\[ICLR 2026\] Concept-TRAK: Understanding how diffusion models learn concepts through concept-level attribution](concept-trak_understanding_how_diffusion_models_learn_concepts_through_concept-l.md)
+- [\[ICML 2026\] Temporal Difference Learning for Diffusion Models](../../ICML2026/image_generation/temporal_difference_learning_for_diffusion_models.md)
+- [\[ICLR 2026\] Pareto-Conditioned Diffusion Models for Offline Multi-Objective Optimization](pareto-conditioned_diffusion_models_for_offline_multi-objective_optimization.md)
 
 </div>
 

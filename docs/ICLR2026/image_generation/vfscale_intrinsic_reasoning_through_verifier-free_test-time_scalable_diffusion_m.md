@@ -2,136 +2,156 @@
 title: >-
   [Paper Note] VFScale: Intrinsic Reasoning through Verifier-Free Test-time Scalable Diffusion Model
 description: >-
-  [ICLR 2026][Image Generation][Test-time scaling] VFScale proposes a test-time scalable diffusion model that requires no external verifier. By introducing an MRNCL loss and KL regularization to improve the energy landscap…
+  [ICLR 2026][Image Generation][Paper Note] VFScale proposes a verifier-free test-time scalable diffusion model. By employing MRNCL loss and KL regularization to improve the energy landscape, the intrinsic energy function serves as a verifier. Combined with hybrid MCTS denoising for efficient searching, a model trained on $6 \times 6$ mazes can solve 88% of $15
 tags:
-  - "ICLR 2026"
-  - "Image Generation"
-  - "Test-time scaling"
-  - "verifier-free"
-  - "energy function"
-  - "Monte Carlo tree search"
-  - "diffusion model reasoning"
+  - ICLR 2026
+  - Image Generation
 date: 2026-05-08
-content_hash: ace4f1a42c694dbb
+content_hash: 015fd9e1b146fc1e
 ---
-
 # VFScale: Intrinsic Reasoning through Verifier-Free Test-time Scalable Diffusion Model
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2502.01989](https://arxiv.org/abs/2502.01989)  
 **Code**: [https://github.com/AI4Science-WestlakeU/VFScale](https://github.com/AI4Science-WestlakeU/VFScale)  
-**Area**: Diffusion Models / Reasoning
-**Keywords**: Test-time scaling, verifier-free, energy function, Monte Carlo tree search, diffusion model reasoning
+**Area**: Diffusion Models/Reasoning  
+**Keywords**: Test-time Scaling, Verifier-Free, Energy Function, Monte Carlo Tree Search, Diffusion Model Reasoning
 
 ## TL;DR
-VFScale proposes a test-time scalable diffusion model that requires no external verifier. By introducing an MRNCL loss and KL regularization to improve the energy landscape, the model's intrinsic energy function serves as a verifier. Combined with hybrid MCTS denoising for efficient search, a model trained on 6×6 mazes achieves 88% success on 15×15 mazes, where standard diffusion models fail entirely.
+VFScale proposes a verifier-free test-time scalable diffusion model. By employing MRNCL loss and KL regularization to improve the energy landscape, the intrinsic energy function serves as a verifier. Combined with hybrid MCTS denoising for efficient searching, a model trained on $6 \times 6$ mazes can solve 88% of $15 \times 15$ mazes, whereas standard diffusion models fail completely.
 
 ## Background & Motivation
 
-**Background**: Inspired by human System 2 thinking, LLMs achieve strong performance on complex reasoning tasks via Chain-of-Thought. Diffusion models, with their iterative refinement process, are also well-suited for reasoning tasks, but their performance degrades sharply when problem difficulty exceeds the training distribution.
+**Background**: Inspired by human System 2 thinking, LLMs excel in complex reasoning via Chain-of-Thought. Diffusion models, through iterative refinement, are also suited for reasoning tasks, but their performance drops sharply when problem difficulty exceeds the training distribution.
 
-**Limitations of Prior Work**: (1) Simply increasing the number of sampling steps quickly saturates (Du et al. 2024); (2) test-time scaling via increased sample count relies on external verifiers for dense scoring signals, which are difficult to obtain for reasoning tasks; (3) humans can perform introspective reasoning without external feedback, a capability that existing methods lack.
+**Limitations of Prior Work**: (1) Simply increasing sampling steps saturates quickly (Du et al. 2024); (2) Test-time scaling via increasing sample counts relies on external verifiers for dense scoring signals, which are difficult to obtain for reasoning tasks; (3) Humans perform introspective reasoning without external feedback, a capability largely missing in existing methods.
 
-**Key Challenge**: A diffusion model's energy function can inherently serve as a verifier (since the score function is the negative gradient of the energy), but existing energy landscapes are of insufficient quality — low energy does not necessarily correspond to high-quality solutions (poor performance–energy consistency).
+**Key Challenge**: The energy function of a diffusion model can theoretically serve as a verifier (as the score function is the negative gradient of energy), but existing energy landscapes are of poor quality—low energy does not necessarily correspond to high-quality solutions (poor performance-energy consistency).
 
-**Goal**: How can the diffusion model's intrinsic energy function replace an external verifier to enable verifier-free test-time scaling?
+**Goal**: How to leverage the diffusion model's intrinsic energy function to replace external verifiers and achieve verifier-free test-time scaling?
 
-**Key Insight**: A two-pronged approach — improving the energy landscape on the training side, and improving search efficiency on the inference side.
+**Key Insight**: A dual approach—improving the energy landscape on the training side and enhancing search efficiency on the inference side.
 
-**Core Idea**: Aligning the monotonic relationship between energy values and sample quality via the MRNCL loss, and balancing exploration and exploitation during denoising via hMCTS.
+**Core Idea**: Align the monotonic relationship between energy values and sample quality via MRNCL loss, and balance exploration vs. exploitation during denoising using hMCTS.
 
 ## Method
 
 ### Overall Architecture
-**Training side**: On top of the standard MSE and contrastive losses, an MRNCL loss (aligning the monotonic relationship between energy and quality) and KL regularization (smoothing the energy landscape) are added. **Inference side**: Hybrid MCTS denoising — broad exploration via BoN in early steps and deep exploitation via MCTS in later steps.
+VFScale aims to enable test-time scaling without external verifiers by transforming the model's intrinsic energy function into a reliable "quality scorer." The approach proceeds along two lines: on the training side, MRNCL loss (aligning energy with sample quality) and KL regularization (smoothing the energy landscape) are added to the standard MSE reconstruction and contrastive losses, ensuring low energy truly corresponds to high-quality solutions. On the inference side, hybrid MCTS denoising is utilized—employing broad exploration (Best-of-N) during early stages with high noise and deep searching (MCTS) during late stages with low noise, using the model's own energy as the reward to guide the search. The training phase produces a credible intrinsic energy function, which the inference phase then treats as a verifier to drive search, collectively achieving verifier-free test-time scaling.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    A["Training Data<br/>(Maze / Sudoku)"] --> TR
+    subgraph TR["Training: Improving Energy Landscape"]
+        direction TB
+        B["MSE + Contrastive Loss<br/>(Basic Reconstruction)"]
+        C["MRNCL Loss<br/>Energy Monotonic with Distance"]
+        D["KL Regularization<br/>Smoothing the Denoising Trajectory"]
+    end
+    TR --> E["Intrinsic Energy Function<br/>(Verifier)"]
+    F["Test Problem<br/>(Out-of-Distribution Difficulty)"] --> G
+    E -->|"Provides Reward"| G
+    subgraph G["hMCTS Denoising: Search Strategy"]
+        direction TB
+        H["High Noise: Best-of-N<br/>Parallel Broad Search"]
+        I["Low Noise: MCTS<br/>UCB Deep Search + DDIM Rollback"]
+        H --> I
+    end
+    G --> J["High-Quality Solution"]
+```
 
 ### Key Designs
 
-1. **MRNCL Loss (Monotonic-Regression Negative Contrastive Learning)**:
+**1. MRNCL Loss: Hard-Constraining Energy to Increase with Distance from Correct Answers**
 
-    - **Function**: Ensures that samples farther from the ground truth have higher energy (performance–energy consistency).
-    - **Mechanism**: For each positive sample $x_0$, two negative samples $x_0^-$ and $x_0^{--}$ are generated (the latter being farther from the positive sample). After adding noise, three energy-distance pairs $(0, E_t^+)$, $(l_{2,0}^-, E_t^-)$, $(l_{2,0}^{--}, E_t^{--})$ are obtained and used in a linear regression to estimate slope $k_t$ and intercept $b_t$.
-    - **Loss**: $\mathcal{L}_{\text{MRNCL}} = \mathbb{E}[\max(0, \gamma - k_t) + \sum \|E - \hat{E}\|_2^2]$
-    - **Design Motivation**: The original contrastive loss only requires positive samples to be local energy minima, without constraining the energy ordering among negative samples.
+The root cause of poor energy landscapes is that original contrastive losses only require positive samples to be local minima, ignoring the relative ranking between negative samples. MRNCL (Monotonic-Regression Negative Contrastive Learning) addresses this missing ordinal relationship. For each positive sample $x_0$, two negative samples $x_0^-$ and $x_0^{--}$ are constructed, with the latter being further from the positive sample. After adding noise, energy values for three points are obtained: $(0, E_t^+)$, $(l_{2,0}^-, E_t^-)$, and $(l_{2,0}^{--}, E_t^{--})$. Linear regression is performed with $\ell_2$ distance to the positive sample as the x-axis and energy as the y-axis to calculate slope $k_t$ and intercept $b_t$. The loss is defined as:
 
-2. **KL Regularization**:
+$$\mathcal{L}_{\text{MRNCL}} = \mathbb{E}\big[\max(0, \gamma - k_t) + \sum \|E - \hat{E}\|_2^2\big]$$
 
-    - $\mathcal{L}_{\text{KL}} = \mathbb{E}_{t, p_{\theta,t}}[E_{\text{stop-grad}(\theta)}(x)] + \mathbb{E}_{t, p_{\theta,t}}[\log p_{\theta,t}(x)]$
-    - The first term encourages samples to have low energy; the second maximizes sampling diversity (entropy maximization).
-    - Applied at every denoising step $t$, unlike Du et al. 2021 who apply it only at the terminal step.
+The first term uses a hinge loss to force $k_t > \gamma$ (ensuring energy increases monotonically with distance), and the second term ensures the points fit the regression line (ensuring a smooth relationship). This allows the energy function to act as a verifier during test-time.
 
-3. **Hybrid MCTS Denoising (hMCTS)**:
+**2. KL Regularization: Smoothing the Energy Landscape Across the Denoising Trajectory**
 
-    - **Early stages** (high noise): BoN is used — $L$ initial noise samples are denoised in parallel to prevent premature elimination of promising trajectories.
-    - **Later stages** (low noise): MCTS is used:
-        - **Selection**: UCB formula $\text{UCB}(x_t, a_t) = Q(x_t, a_t) + c\sqrt{\frac{\ln N_i}{n_i}}$
-        - **Expansion**: Single-step denoising with different Gaussian noise samples → $K$ branches.
-        - **Simulation**: Fast sampling to $x_0$ via DDIM; $E_\theta(\hat{x}_0)$ is used as the reward (no external verifier required).
-        - **Backpropagation**: Values of all nodes along the path are updated.
-    - DDIM's subsequence sampling property makes simulation efficient.
+Monotonicity alone is insufficient; a rugged energy landscape can still mislead search. The KL regularization term is defined as:
 
-### Complete Training Objective
+$$\mathcal{L}_{\text{KL}} = \mathbb{E}_{t, p_{\theta,t}}[E_{\text{stop-grad}(\theta)}(x)] + \mathbb{E}_{t, p_{\theta,t}}[\log p_{\theta,t}(x)]$$
+
+The first term minimizes sample energy, pulling the distribution toward low-energy regions, while the second term maximizes entropy to encourage diversity. Unlike Du et al. (2021) who apply regularization only at the terminal state, this is applied at every denoising step $t$, smoothing the entire trajectory and making the energy scores reliable at every step.
+
+**3. Hybrid MCTS Denoising (hMCTS): Switching Search Strategy by Noise Level**
+
+hMCTS observes that denoising requires different search intensities as noise decreases. Early stages (high noise) use Best-of-$N$ to maintain $L$ parallel branches, avoiding premature pruning. Late stages (low noise) switch to MCTS for deep search. MCTS involves four steps: Selection uses UCB for exploration-exploitation balance:
+
+$$\text{UCB}(x_t, a_t) = Q(x_t, a_t) + c\sqrt{\frac{\ln N_i}{n_i}}$$
+
+Expansion performs a single denoising step with $K$ different Gaussian noise additions. Simulation uses DDIM jump-sampling to reach $\hat{x}_0$ and uses the intrinsic energy $E_\theta(\hat{x}_0)$ as the reward. Backpropagation updates the node values along the path. The jump-sampling of DDIM makes simulations computationally affordable for MCTS.
+
+### Loss & Training
+The training side optimizes four losses jointly; the first two ensure generation quality, while the latter two shape the energy landscape:
+
 $$\mathcal{L} = \mathcal{L}_{\text{MSE}} + \mathcal{L}_{\text{Contrast}} + \mathcal{L}_{\text{MRNCL}} + \mathcal{L}_{\text{KL}}$$
 
 ## Key Experimental Results
 
-### Base Generalization (N=1 Inference)
+### Main Results (N=1 Inference)
 
 | Method | Maze 6×6 | Maze 10×10 | Maze 15×15 | Sudoku D=33 | Sudoku D=25 |
-|--------|----------|------------|------------|-------------|-------------|
+|------|----------|------------|------------|-------------|-------------|
 | Original | 1.000 | 0.578 | 0.063 | 0.320 | 0.023 |
-| VFScale tr. | 1.000 | 0.775 | 0.281 | 0.195 | 0.008 |
+| Ours (VFScale tr.) | 1.000 | 0.775 | 0.281 | 0.195 | 0.008 |
 
 ### Test-time Scaling (Maze 15×15)
 
 | Method | N=1 | N=11 | N=41 | N=161 |
-|--------|-----|------|------|-------|
+|------|-----|------|------|-------|
 | Original BoN (Energy) | 0.063 | 0.047 | 0.078 | 0.109 |
 | Original BoN (GT) | 0.063 | 0.125 | 0.133 | 0.172 |
-| VFScale tr. BoN (GT) | 0.250 | 0.508 | 0.656 | 0.742 |
-| **VFScale tr. hMCTS** | **0.281** | — | — | **0.880** |
+| Ours BoN (GT) | 0.250 | 0.508 | 0.656 | 0.742 |
+| **Ours hMCTS** | **0.281** | — | — | **0.880** |
 
 ### Key Findings
-1. **Test-time scaling completely fails with the original training**: Even with a ground-truth verifier guiding BoN, the success rate on Maze 15×15 only increases from 6% to 17%.
-2. **Energy landscape quality is the bottleneck**: The original model achieves only ~70% performance–energy consistency.
-3. **VFScale training substantially improves scalability**: Under the same BoN budget, GT-guided success rate improves from 17% to 74%.
-4. **hMCTS further unlocks scaling potential**: Final success rate reaches 88% (trained on 6×6, tested on 15×15).
+1. **Standard training fails at test-time scaling**: Even with a Ground Truth (GT) verifier guiding BoN, Maze 15×15 success only improves from 6% to 17%.
+2. **Energy landscape quality is the bottleneck**: The performance-energy consistency of the original model is only around 70%.
+3. **VFScale training significantly improves scalability**: Under the same BoN budget, GT-guided success increases from 17% to 74%.
+4. **hMCTS further unlocks scaling potential**: It achieves an 88% success rate (6×6 training $\to$ 15×15 testing).
 5. **MRNCL and KL regularization are complementary**: Removing either degrades performance.
 
 ## Highlights & Insights
-- **Paradigm innovation**: The diffusion model's intrinsic energy function is used as a verifier, genuinely realizing "introspective reasoning without external feedback."
-- **Deep insight behind MRNCL**: Contrastive learning constrains positive–negative relationships but ignores the ordering among negative samples — this is the root cause of poor energy landscape quality.
-- **Elegant design of hMCTS**: Broad search with BoN in early stages and deep search with MCTS in later stages perfectly matches the denoising process as noise decreases over time.
-- **Remarkable generalization**: Training on 6×6 mazes and achieving 88% success on 15×15 mazes demonstrates the true potential of test-time scaling.
+- **Novelty**: Treats the intrinsic energy function of diffusion models as a verifier, achieving "introspective reasoning" without external feedback.
+- **Deeper Design Motivation**: Recognizes that contrastive learning ignores the ordinal relationships between negative samples, which is identified as the root cause of poor energy landscapes.
+- **Core Idea Efficiency**: The hMCTS design (early BoN and late MCTS) perfectly matches the noise-diminishing characteristics of the denoising process.
+- **Value**: Demonstrates strong generalization (6×6 to 15×15), showing the true potential of test-time scaling.
 
 ## Limitations & Future Work
-- The computational overhead of MCTS grows with the number of branches $K$ and rollout count $N_r$, requiring careful balancing.
-- Validation is currently limited to structured reasoning tasks such as mazes and Sudoku; more complex settings such as language reasoning remain to be explored.
-- The choice of linear regression in MRNCL may not be the optimal monotonic constraint formulation.
-- Adaptive switching points between the BoN and MCTS phases are worth investigating.
+- MCTS computational overhead grows with the number of branches $K$ and rollouts $N_r$; balancing this is crucial.
+- Validated primarily on structured reasoning like Mazes and Sudoku; language reasoning remains to be explored.
+- The linear regression choice in MRNCL might not be the optimal monotonic constraint.
+- Exploring adaptive switching points from BoN to MCTS.
 
 ## Related Work & Insights
-- **vs. Du et al. 2024**: Their energy-based diffusion model saturates during test-time scaling; VFScale addresses the root cause.
-- **vs. Ma et al. 2025**: Their approach depends on external verifiers for sample-count scaling, whereas VFScale fully internalizes this process.
-- **vs. AlphaGo/AlphaZero**: The core ideas of MCTS are borrowed and adapted to the diffusion denoising process.
+- **Vs. Du et al. 2024**: Their energy diffusion models saturate during test-time scaling; VFScale addresses the underlying landscape issues.
+- **Vs. Ma et al. 2025**: They rely on external verifiers for scaling; VFScale internalizes the verification process.
+- **Vs. AlphaGo/AlphaZero**: Adapts MCTS core concepts to the diffusion denoising process.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ — The concept of verifier-free test-time scaling, MRNCL, and hMCTS are all novel contributions.
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Maze and Sudoku tasks provide solid validation, though task diversity is limited.
-- Writing Quality: ⭐⭐⭐⭐⭐ — The logical flow from motivation to analysis to solution is clear and well-structured.
-- Value: ⭐⭐⭐⭐⭐ — Opens a new direction for reasoning capability and test-time scaling in diffusion models.
+- Novelty: ⭐⭐⭐⭐⭐ Concepts of verifier-free scaling, MRNCL, and hMCTS are highly innovative.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive validation on Maze/Sudoku, though the task diversity is somewhat limited.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear progression from motivation to solution.
+- Value: ⭐⭐⭐⭐⭐ Opens a new direction for diffusion model reasoning and scaling.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] MILR: Improving Multimodal Image Generation via Test-Time Latent Reasoning](milr_improving_multimodal_image_generation_via_test-time_latent_reasoning.md)
 - [\[ICLR 2026\] Test-Time Iterative Error Correction for Efficient Diffusion Models](test-time_iterative_error_correction_for_efficient_diffusion_models.md)
+- [\[ICLR 2026\] Inference-Time Scaling of Diffusion Models Through Classical Search](inference-time_scaling_of_diffusion_models_through_classical_search.md)
+- [\[ICLR 2026\] Mitigating Semantic Collapse in Generative Personalization with Test-Time Embedding Adjustment](mitigating_semantic_collapse_in_generative_personalization_with_test-time_embedd.md)
 - [\[ICLR 2026\] Compose Your Policies! Improving Diffusion-based or Flow-based Robot Policies via Test-time Distribution-level Composition](compose_your_policies_improving_diffusion-based_or_flow-based_robot_policies_via.md)
-- [\[ICML 2026\] Linearizing Vision Transformer with Test-Time Training](../../ICML2026/image_generation/linearizing_vision_transformer_with_test-time_training.md)
-- [\[ICLR 2026\] SPEED: Scalable, Precise, and Efficient Concept Erasure for Diffusion Models](speed_scalable_precise_and_efficient_concept_erasure_for_diffusion_models.md)
-- [\[ICLR 2026\] Beyond Confidence: The Rhythms of Reasoning in Generative Models](beyond_confidence_the_rhythms_of_reasoning_in_generative_models.md)
 
 </div>
 

@@ -2,75 +2,88 @@
 title: >-
   [Paper Note] ThinkOmni: Lifting Textual Reasoning to Omni-modal Scenarios via Guidance Decoding
 description: >-
-  [ICLR 2026][Multimodal VLM][Omni-modal reasoning] ThinkOmni is a training-free framework that leverages a text-only large reasoning model (LRM) to guide an omni-modal LLM (OLLM) during decoding via Stepwise Contrastive S…
+  [ICLR 2026][vlm_reasoning][LRM] The ThinkOmni training-free framework is proposed, which utilizes Large Reasoning Models (LRM) to guide Omni-modal LLMs (OLLM) during decoding. By employing Stepwise Contrastive Scaling to adaptively balance perception and reasoning signals, it achieves 70.2% on MathVista and 75.5% on MMAU, matching or surpassing reinf
 tags:
-  - "ICLR 2026"
-  - "Multimodal VLM"
-  - "Omni-modal reasoning"
-  - "guidance decoding"
-  - "LRM"
-  - "training-free"
-  - "contrastive scaling"
+  - ICLR 2026
+  - vlm_reasoning
+  - LRM
 date: 2026-05-08
-content_hash: f6a53ba82c801927
+content_hash: 0129c8ee5e0a767c
 ---
-
 # ThinkOmni: Lifting Textual Reasoning to Omni-modal Scenarios via Guidance Decoding
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2602.23306](https://arxiv.org/abs/2602.23306)  
 **Code**: [https://1ranguan.github.io/thinkomni](https://1ranguan.github.io/thinkomni)  
-**Area**: Multimodal VLM
-**Keywords**: Omni-modal reasoning, guidance decoding, LRM, training-free, contrastive scaling
+**Area**: Multi-modal VLM  
+**Keywords**: Omni-modal Reasoning, Guidance Decoding, LRM, Training-free, Contrastive Scaling
 
 ## TL;DR
-ThinkOmni is a training-free framework that leverages a text-only large reasoning model (LRM) to guide an omni-modal LLM (OLLM) during decoding via Stepwise Contrastive Scaling, which adaptively balances perception and reasoning signals. The method achieves 70.2% on MathVista and 75.5% on MMAU, matching or surpassing RFT-based approaches.
+The ThinkOmni training-free framework is proposed, which utilizes Large Reasoning Models (LRM) to guide Omni-modal LLMs (OLLM) during decoding. By employing Stepwise Contrastive Scaling to adaptively balance perception and reasoning signals, it achieves 70.2% on MathVista and 75.5% on MMAU, matching or surpassing reinforcement fine-tuning (RFT) methods.
 
 ## Background & Motivation
 
-**Background**: Large reasoning models (LRMs) such as DeepSeek-R1 and o1 demonstrate remarkable performance on textual reasoning tasks but are limited to text-only inputs. Omni-modal LLMs (OLLMs) such as Qwen2.5-Omni can process text, audio, images, and video, yet still exhibit weaknesses in complex reasoning tasks.
+**Background**: Large Reasoning Models (LRM) such as DeepSeek-R1 and o1 demonstrate exceptional performance in textual reasoning tasks but only process text inputs. Omni-modal LLMs (OLLM) like Qwen2.5-Omni can handle text, audio, images, and video, yet they still fall short in complex reasoning tasks.
 
-**Limitations of Prior Work**: Existing approaches to enhancing OLLM reasoning face several challenges:
-   - **Data scarcity**: SFT requires large quantities of high-quality multimodal reasoning samples, which are costly to obtain.
-   - **Training cost**: RFT (reinforcement fine-tuning) demands substantial GPU resources (8×40G for 7B models; 16×80G for 32B models).
-   - **Task specialization**: Existing enhancement methods (e.g., Omni-R1, HumanOmniV2) are limited to specific downstream tasks and lack generalizability.
-   - **Modality limitation**: Most prior work focuses on a single modality (image or audio) and does not achieve true cross-modal reasoning.
+**Limitations of Prior Work**: Existing paths to enhance OLLM reasoning capabilities face multiple challenges:
+   - **Data Scarcity**: SFT requires large volumes of high-quality multi-modal reasoning samples, which are costly to acquire.
+   - **Expensive Training**: RFT (Reinforcement Fine-Tuning) requires significant GPU resources (e.g., 8×40G for 7B models, 16×80G for 32B models).
+   - **Task Specialization**: Current enhancement schemes (e.g., Omni-R1, HumanOmniV2) are limited to specific downstream tasks and lack generalization.
+   - **Modality Limitation**: Most works focus on a single modality (image or audio) and do not achieve true cross-modal reasoning.
 
-**Key Challenge**: LRMs possess strong reasoning capabilities but cannot process non-textual inputs; OLLMs handle multimodal inputs but lack sufficient reasoning capacity. The two are complementary, yet how to combine them in a training-free manner at inference time remains the central challenge.
+**Key Challenge**: LRMs possess strong reasoning capabilities but cannot process non-text inputs; OLLMs can process multi-modal inputs but have insufficient reasoning capabilities. Their strengths are complementary, but fusing them at inference time without training remains a critical challenge.
 
-**Goal**: To transfer the textual reasoning capability of LRMs to omni-modal scenarios without additional training data or fine-tuning.
+**Goal**: To "lift" the textual reasoning capabilities of LRMs to omni-modal scenarios without relying on additional training data or fine-tuning.
 
-**Key Insight**: Inference-time guidance decoding is adopted, treating the LRM as a decoding-time "advisor" for the OLLM and fusing their signals at the logits level.
+**Key Insight**: Approaching the problem via inference-time guidance decoding, using the LRM as a "consultant" for the OLLM during decoding to fuse signals from both at the logits level.
 
-**Core Idea**: The textual reasoning signal produced by the LRM guides the OLLM's omni-modal decoding at the logits level, with Stepwise Contrastive Scaling adaptively regulating the perception–reasoning balance.
+**Core Idea**: Use pure-text reasoning signals generated by the LRM to guide the omni-modal decoding of the OLLM at the logits layer, adaptively regulating the perception-reasoning balance via Stepwise Contrastive Scaling.
 
 ## Method
 
 ### Overall Architecture
-The ThinkOmni framework consists of two core components: (1) **LRM-as-a-Guide**, which contrastively fuses the output logits of the OLLM and the LRM to form an enhanced decoding distribution; and (2) **Stepwise Contrastive Scaling**, which automatically computes the contribution magnitudes of perception and reasoning at each decoding step and dynamically adjusts fusion weights without manual tuning.
+ThinkOmni treats a pure-text Large Reasoning Model (LRM) $M_R$ as a decoding-time "consultant" for an Omni-modal Model (OLLM) $M_O$. For every token generated, the OLLM's omni-modal perception signals and the LRM's textual reasoning signals are fused at the logits layer into an enhanced distribution. The next token is sampled based on this distribution and appended to the prefix. This process involves no parameter updates and relies on two components: **LRM-as-a-Guide**, which "grafts" the reasoning model's textual reasoning increments into omni-modal decoding, and **Stepwise Contrastive Scaling**, which automatically determines the weight of perception versus reasoning at each step, allowing adaptation to various tasks like mathematics or audio without manual parameter tuning.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    IN["Omni-modal Input O +<br/>Generated Text Prefix x(<t)"]
+    subgraph GUIDE["LRM-as-a-Guide: Three-way Logits"]
+        direction LR
+        ZB["OLLM Omni-modal<br/>z_base = M_O(x, O)"]
+        ZN["OLLM Text-only<br/>z⁻ = M_O(x)"]
+        ZP["LRM Text-only<br/>z⁺ = M_R(x)"]
+    end
+    subgraph SCALE["Stepwise Contrastive Scaling: Adaptive Weighting"]
+        direction TB
+        JS["JS Divergence Measures Reasoning/Perception<br/>D_R, D_P → α_r, α_p (inc. warmup)"]
+        FUSE["Dual Contrastive Fusion<br/>P̂ = Softmax[ z_base<br/>+ α_r·(z⁺−z⁻) + α_p·(z_base−z⁻) ]"]
+    end
+    OUT["Sample next token via P̂<br/>Append to prefix"]
+
+    IN --> GUIDE
+    GUIDE --> JS
+    JS --> FUSE
+    FUSE --> OUT
+    OUT -->|"Repeat for each decoding step"| IN
+```
 
 ### Key Designs
 
-1. **LRM-as-a-Guide**:
+**1. LRM-as-a-Guide: Enabling Reasoning Signals from Vision-Blind Models**
 
-    - **Function**: At each decoding step, three sets of logits are obtained—from the OLLM (full omni-modal input), the OLLM (text-only input), and the LRM (text-only input)—to construct a contrastive signal.
-    - **Mechanism**: Base logits $\hat{z}^{\text{base}} = M_O(x_{<t}, O)$, negative logits $z^- = M_O(x_{<t})$ (multimodal input removed), and positive logits $z^+ = M_R(x_{<t})$. The fusion formula is: $\hat{P} = \text{Softmax}[z^{\text{base}} + \alpha \cdot (z^+ - z^-)]$. The contrastive term $(z^+ - z^-)$ encodes the incremental reasoning preference of the LRM relative to the OLLM in text-only mode.
-    - **Design Motivation**: Analogous to a differential amplifier, $z^+ - z^-$ amplifies the LRM's reasoning signal while suppressing linguistic noise shared by both models. Although the LRM cannot perceive multimodal content, the already-generated textual context implicitly encodes multimodal information as decoding progresses.
+The difficulty lies in how a model that cannot perceive multi-modal inputs can guide multi-modal decoding. ThinkOmni extracts three sets of logits at each step: the OLLM base term $z^{base}=M_O(x_{<t},O)$ with multi-modal input, the OLLM negative term $z^{-}=M_O(x_{<t})$ without multi-modal input, and the LRM positive term $z^{+}=M_R(x_{<t})$ based only on the textual prefix. The initial fusion follows $\hat{P}=\mathrm{Softmax}[z^{base}+\alpha\cdot(z^{+}-z^{-})]$. The contrastive term $z^{+}-z^{-}$ acts like a differential amplifier, magnifying the LRM's reasoning preference relative to the OLLM's pure-text mode while canceling shared linguistic noise. Although the LRM does not see the original images/audio, it provides effective guidance as the generated text prefix implicitly contains multi-modal information written by the OLLM.
 
-2. **Stepwise Contrastive Scaling**:
+**2. Stepwise Contrastive Scaling: Adaptive Weighting by Task and Decoding Step**
 
-    - **Function**: Dynamically computes reasoning weight $\alpha_r$ and perception weight $\alpha_p$ at each decoding step, replacing the fixed scalar $\alpha$.
-    - **Mechanism**: Jensen–Shannon divergence quantifies the discrepancy between the three distributions: $D_R = \text{JS}(P_R \| P)$ reflects the reasoning contribution, and $D_P = \text{JS}(P_O \| P)$ reflects the perception contribution. Subject to $\alpha_r + \alpha_p = 1$, the weights are allocated proportionally to $D_R / D_P$. A warmup mechanism is introduced to limit reasoning intervention during the initial decoding phase.
-    - **Design Motivation**: Different tasks and different decoding steps require varying degrees of reasoning versus perception. Mathematical problems require larger $\alpha_r$, while audio perception tasks require larger $\alpha_p$. A fixed $\alpha$ cannot adapt to all scenarios, as experiments demonstrate that the optimal $\alpha$ varies considerably across tasks.
+A fixed guidance weight $\alpha$ cannot adapt to all scenarios—math problems require stronger reasoning, while audio tasks require stronger perception. If $\alpha$ is too large, the lack of multi-modal content in $z^{+}/z^{-}$ induces hallucinations; if too small, guidance is weakened. ThinkOmni online measures the relative contributions using Jensen-Shannon divergence: reasoning term $D_R=\mathrm{JS}(P_R\,\|\,P)$ and perception term $D_P=\mathrm{JS}(P_O\,\|\,P)$, where $P_O, P_R, P$ are the softmax distributions of $M_O(x_{<t},O)$, $M_R(x_{<t})$, and $M_O(x_{<t})$. The distribution with the larger deviation is deemed more trustworthy at that moment. The single contrastive item is expanded into two independent signals:
 
-3. **Extended Formula**:
+$$\hat{P}=\mathrm{Softmax}\big[M_O(x_{<t},O)+\alpha^{r}_{t}\cdot(M_R(x_{<t})-M_O(x_{<t}))+\alpha^{p}_{t}\cdot(M_O(x_{<t},O)-M_O(x_{<t}))\big]$$
 
-    - **Function**: The complete fusion formula incorporates two contrastive terms.
-    - **Mechanism**: $\hat{P} = \text{Softmax}[M_O(x_{<t}, O) + \alpha_r \cdot (M_R(x_{<t}) - M_O(x_{<t})) + \alpha_p \cdot (M_O(x_{<t}, O) - M_O(x_{<t}))]$. The second contrastive term constitutes an aggressive visual contrastive decoding that directly enhances perception by differencing the outputs with and without multimodal input.
-    - **Design Motivation**: Dual contrastive terms independently and simultaneously enhance reasoning and perception capabilities.
+The first term injects reasoning increments controlled by $\alpha^{r}_{t}$; the second is an aggressive visual contrastive decoding term that reinforces perception via "multi-modal input minus no multi-modal input," controlled by $\alpha^{p}_{t}$. Weights are allocated based on $D_R, D_P$ and normalized such that $\alpha^{r}_{t}+\alpha^{p}_{t}=1$. Furthermore, a warmup phase for $\alpha^{r}_{t}$ suppresses LRM dominance when the prefix is too short.
 
 ### Loss & Training
-The method is entirely training-free. It requires the OLLM and LRM to share a vocabulary (e.g., both from the Qwen family). Three forward passes are required per decoding step.
+Completely training-free, requiring no extra data or fine-tuning. The sole constraint is that the OLLM and LRM must share the same vocabulary (e.g., both from the Qwen family) for logits alignment. The trade-off is 3× forward passes per decoding step, resulting in roughly 2.88× inference overhead compared to the base model.
 
 ## Key Experimental Results
 
@@ -86,45 +99,45 @@ The method is entirely training-free. It requires the OLLM and LRM to share a vo
 | Omni-R1 (RFT) | 64.7 | 25.4 | 39.8 | 70.5 | 59.6 | 43.0 |
 | +Qwen3 Guide | **71.3(+6.6)** | **31.5(+6.1)** | **45.2(+5.4)** | **75.4(+4.9)** | 59.8(+0.2) | 43.4(+0.4) |
 
-### Ablation Study — Comparison with Other Training-Free Methods (based on Qwen2.5-Omni-7B)
+### Ablation Study - Comparison with other training-free methods (based on Qwen2.5-Omni-7B)
 
 | Method | MathVista | MMAU | OmniBench |
 |------|-----------|------|-----------|
 | Base Model | 66.8 | 71.5 | 42.1 |
-| Average Logits Fusion | 55.0(−11.8) | 55.7(−15.8) | 36.1(−6.0) |
-| Caption-then-Answer | 61.0(−5.8) | 59.7(−11.8) | 32.3(−9.8) |
-| VCD | 66.5(−0.3) | 72.2(+0.7) | 43.1(+1.0) |
+| Average Logits Fusion | 55.0(-11.8) | 55.7(-15.8) | 36.1(-6.0) |
+| Caption-then-Answer | 61.0(-5.8) | 59.7(-11.8) | 32.3(-9.8) |
+| VCD | 66.5(-0.3) | 72.2(+0.7) | 43.1(+1.0) |
 | **ThinkOmni** | **68.8(+2.0)** | **73.8(+2.3)** | **43.2(+1.1)** |
 
 ### Key Findings
-- Applying ThinkOmni on top of the RFT-trained Omni-R1 still yields substantial gains (MathVista +6.6), demonstrating that the method is complementary to RFT.
-- Stronger LRMs (Qwen3 > DeepSeek-R1-Distill) produce larger improvements, validating that guidance quality determines the magnitude of gains.
-- The largest improvements occur on mathematical and scientific tasks (MathVision +7.9), while audio and general tasks see smaller gains, consistent with the expectation that LRMs are predominantly trained on math and science data.
-- Simple logits averaging severely degrades performance (−11.8), underscoring the necessity of contrastive fusion.
-- Efficiency analysis: Under the 7B+7B configuration, generation latency is 2.88× and prefill latency is 1.38× compared to the base model (since the LRM processes only text and handles a lighter prefix).
+- Applying ThinkOmni to Omni-R1 (already processed by RFT) still yielded significant gains (MathVista +6.6), indicating the method is complementary to RFT.
+- Stronger LRMs (Qwen3 > DeepSeek-R1-Distill) lead to greater improvements, validating that guidance quality determines the magnitude of the gain.
+- Improvements are most significant in math/science tasks (MathVision +7.9) and smaller in audio/general tasks, aligning with the LRM's training bias.
+- Simple average fusion of logits severely degrades performance (-11.8), highlighting the necessity of contrastive fusion.
+- Efficiency: In a 7B+7B configuration, generate latency is 2.88×, while prefill latency is only 1.38× (as the LRM only processes text).
 
 ## Highlights & Insights
-- **Training-free framework surpasses trained methods**: Using Qwen2.5-Omni-7B + Qwen3, ThinkOmni matches or exceeds RFT-based methods such as Omni-R1 and HumanOmniV2 on multiple benchmarks.
-- **Stepwise Contrastive Scaling is elegant and practical**: JS divergence automatically estimates the demand for reasoning versus perception at each step, eliminating the burden of manual hyperparameter tuning.
-- **Plug-and-play and scalable**: As stronger LRMs emerge (LRM development typically outpaces multimodal variants), ThinkOmni can benefit automatically.
-- **Rich qualitative analysis**: Token-level visualizations of LRM contributions show that logical connectives and key technical terms are primarily guided by the LRM, while content words are contributed by the OLLM.
+- **Training-free framework surpasses trained methods**: Based on Qwen2.5-Omni-7B + Qwen3, it matches or exceeds Omni-R1 and HumanOmniV2 across multiple benchmarks without RFT.
+- **Elegant and Practical Stepwise Contrastive Scaling**: Automatically estimates reasoning/perception needs via JS divergence, avoiding manual parameter tuning.
+- **Plug-and-play + Scalability**: ThinkOmni automatically benefits as stronger LRMs emerge (LRM development is typically faster than multi-modal variants).
+- **Rich Qualitative Analysis**: Token-level visualization shows that logical connectors and key terms are primarily guided by the LRM, while content words are contributed by the OLLM.
 
 ## Limitations & Future Work
-- The requirement that the OLLM and LRM share a vocabulary restricts the flexibility of model pairing (e.g., a LLaMA-family LRM cannot guide a Qwen-family OLLM).
-- Three forward passes per step incur approximately 2.88× inference overhead relative to the base model, which poses challenges for latency-sensitive deployments.
-- Gains on audio and general omni-modal tasks remain limited (DailyOmni +1.6 only), indicating that the method is less effective for perception-intensive tasks.
-- When multimodal inputs contain contradictory information (e.g., labels that conflict with visual content), the LRM may misdirect reasoning.
+- Requires OLLM and LRM to share a vocabulary, limiting flexibility in model combinations (e.g., LLaMA-based LRMs cannot guide Qwen-based OLLMs).
+- 3× forward passes per step result in ~2.88× overhead, challenging for latency-sensitive deployment.
+- Limited improvement on audio and general omni-modal tasks (DailyOmni only +1.6), indicating less help for perception-intensive tasks.
+- LRMs may provide incorrect guidance if multi-modal inputs contain contradictory information (e.g., a label contradicting visual content).
 
 ## Related Work & Insights
-- The key distinction from ProxyTuning (which belongs to the same guidance decoding paradigm) is that ThinkOmni enables cross-modal guidance without requiring the LRM to perceive multimodal inputs.
-- ThinkOmni is complementary to VCD (Visual Contrastive Decoding): VCD enhances perception, while ThinkOmni enhances reasoning.
-- The work introduces a new paradigm for "reasoning capability transfer": rather than fine-tuning the model, capabilities are grafted via logits fusion at inference time.
+- Key difference from ProxyTuning: ThinkOmni achieves cross-modal guidance where the LRM does not need to perceive multi-modal inputs.
+- Complementary to VCD (Visual Contrastive Decoding): VCD enhances perception while ThinkOmni enhances reasoning.
+- Provides a new paradigm for "reasoning capability transfer": grafting capabilities via logit fusion at inference time rather than fine-tuning.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Cross-modal guidance decoding is a novel idea; Stepwise Contrastive Scaling is an elegant design.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Six benchmarks, three OLLMs, multiple LRMs, comprehensive ablations, and efficiency analysis.
-- Writing Quality: ⭐⭐⭐⭐ Clear structure, thorough theoretical analysis, and rich qualitative visualizations.
-- Value: ⭐⭐⭐⭐⭐ A training-free method that surpasses RFT approaches is highly practical and offers an important paradigm-level contribution to the community.
+- Novelty: ⭐⭐⭐⭐ The cross-modal guidance decoding concept is novel, and Stepwise Contrastive Scaling is elegantly designed.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 6 benchmarks, 3 OLLMs, various LRMs, full ablation, and efficiency analysis.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure, thorough theoretical analysis, and rich visualization cases.
+- Value: ⭐⭐⭐⭐⭐ Surpasses RFT methods without training; high practicality and paradigm innovation offer significant inspiration to the community.
 
 <!-- RELATED:START -->
 
@@ -132,11 +145,11 @@ The method is entirely training-free. It requires the OLLM and LRM to share a vo
 
 ## Related Papers
 
-- [\[ACL 2026\] OMHBench: Benchmarking Balanced and Grounded Omni-Modal Multi-Hop Reasoning](../../ACL2026/multimodal_vlm/omhbench_benchmarking_balanced_and_grounded_omni-modal_multi-hop_reasoning.md)
-- [\[ICLR 2026\] Self-Aug: Query and Entropy Adaptive Decoding for Large Vision-Language Models](self-aug_query_and_entropy_adaptive_decoding_for_large_vision-language_models.md)
-- [\[AAAI 2026\] Leveraging Textual Compositional Reasoning for Robust Change Captioning](../../AAAI2026/multimodal_vlm/leveraging_textual_compositional_reasoning_for_robust_change_captioning.md)
-- [\[ICLR 2026\] Reasoning-Driven Multimodal LLM for Domain Generalization](reasoning-driven_multimodal_llm_for_domain_generalization.md)
-- [\[ICLR 2026\] Multi-modal Data Spectrum: Multi-modal Datasets are Multi-dimensional](multi-modal_data_spectrum_multi-modal_datasets_are_multi-dimensional.md)
+- [\[ICML 2026\] Native Active Perception as Reasoning for Omni-Modal Understanding](../../ICML2026/vlm_reasoning/native_active_perception_as_reasoning_for_omni-modal_understanding.md)
+- [\[ACL 2026\] OMHBench: Benchmarking Balanced and Grounded Omni-Modal Multi-Hop Reasoning](../../ACL2026/vlm_reasoning/omhbench_benchmarking_balanced_and_grounded_omni-modal_multi-hop_reasoning.md)
+- [\[ICLR 2026\] ProxyThinker: Test-Time Guidance Through Small Visual Reasoners](proxythinker_test-time_guidance_through_small_visual_reasoners.md)
+- [\[ICLR 2026\] MMReD: A Cross-Modal Benchmark for Dense Context Reasoning](mmred_a_cross-modal_benchmark_for_dense_context_reasoning.md)
+- [\[ICLR 2026\] Reasoning-Aligned Perception Decoupling for Scalable Multi-modal Reasoning](reasoning-aligned_perception_decoupling_for_scalable_multi-modal_reasoning.md)
 
 </div>
 

@@ -2,19 +2,13 @@
 title: >-
   [Paper Note] SpatiaLab: Can Vision-Language Models Perform Spatial Reasoning in the Wild?
 description: >-
-  [ICLR 2026][Multimodal VLM][Spatial Reasoning] This paper introduces SpatiaLab, a real-world spatial reasoning benchmark comprising 1…
+  [ICLR 2026][vlm_reasoning][Paper Note] SpatiaLab is introduced as a real-world spatial reasoning benchmark containing 1,400 vision-QA pairs across 6 major categories and 30 subcategories. Supporting both MCQ and open-ended evaluations, it reveals a significant spatial reasoning gap between the strongest current VLM (InternVL3.5-72B at 54.93% MCQ) and humans
 tags:
-  - "ICLR 2026"
-  - "Multimodal VLM"
-  - "Spatial Reasoning"
-  - "VLM Benchmark"
-  - "MCQ Evaluation"
-  - "Open-ended Evaluation"
-  - "Real-world Scenarios"
+  - ICLR 2026
+  - vlm_reasoning
 date: 2026-05-08
-content_hash: e86f277a9b0db7a3
+content_hash: e031e6ff227bc843
 ---
-
 # SpatiaLab: Can Vision-Language Models Perform Spatial Reasoning in the Wild?
 
 **Conference**: ICLR 2026  
@@ -24,117 +18,114 @@ content_hash: e86f277a9b0db7a3
 **Keywords**: Spatial Reasoning, VLM Benchmark, MCQ Evaluation, Open-ended Evaluation, Real-world Scenarios
 
 ## TL;DR
-This paper introduces SpatiaLab, a real-world spatial reasoning benchmark comprising 1,400 visual QA pairs spanning 30 subcategories across 6 major spatial task categories. Supporting both MCQ and open-ended evaluation formats, SpatiaLab reveals a substantial gap between the strongest current VLMs (InternVL3.5-72B: 54.93% MCQ) and humans (87.57%), with the gap widening further under open-ended settings.
+SpatiaLab is introduced as a real-world spatial reasoning benchmark containing 1,400 vision-QA pairs across 6 major categories and 30 subcategories. Supporting both MCQ and open-ended evaluations, it reveals a significant spatial reasoning gap between the strongest current VLM (InternVL3.5-72B at 54.93% MCQ) and humans (87.57%), with the disparity widening in open-ended settings.
 
 ## Background & Motivation
 
-**Background**: Spatial reasoning is a foundational cognitive ability for humans and is critical to robotics, autonomous driving, and AR/VR. While VLMs have made progress in multimodal representation and language grounding, spatial judgment in real-world environments remains fragile.
+**Background**: Spatial reasoning is a fundamental human cognitive ability, critical for robotics, autonomous driving, and AR/VR. While VLMs have advanced in multimodal representation and language grounding, spatial judgments in real-world environments remain fragile.
 
 **Limitations of Prior Work**:
-   - Existing spatial reasoning benchmarks are overly simplified: most focus on binary spatial relations, coarse depth categorization, or synthetic/puzzle-style scenes.
-   - Controlled environments reduce perceptual and reasoning difficulty, causing apparent saturation that masks failures under distribution shift.
-   - Critical challenges such as occlusion reasoning, cross-view scale consistency, and path planning under partial observability are severely undersampled.
-   - Models that perform well on synthetic benchmarks such as ScanQA and BLINK frequently fail in real-world settings.
+   - Existing spatial reasoning benchmarks are overly simplified, focusing mostly on binary spatial relations, low-resolution depth classification, or synthetic/puzzle-like scenes.
+   - Controlled environments reduce perception and reasoning difficulty, leading to superficial saturation that masks failures under distribution shifts.
+   - Key challenges such as occlusion reasoning, cross-view scale consistency, and path planning under partial observability are severely undersampled.
+   - Models performing well on synthetic benchmarks like ScanQA or BLINK often fail in real-world scenarios.
 
-**Key Challenge**: Humans seamlessly integrate multidimensional spatial information—relative position, depth, orientation, scale, navigation, and 3D geometry—whereas VLMs fall far short of human performance on any single dimension, let alone joint multi-dimensional reasoning.
+**Key Challenge**: Humans seamlessly integrate multi-dimensional spatial information involving relative position, depth, orientation, scale, navigation, and 3D geometry. VLMs significantly underperform humans in any single dimension, let alone joint multi-dimensional reasoning.
 
 **Goal**:
    - Construct a real-world benchmark covering all core axes of spatial reasoning.
-   - Employ dual-format evaluation (MCQ and open-ended) to avoid format bias.
-   - Evaluate 25+ VLMs and establish a human baseline.
-   - Conduct in-depth failure analysis and provide actionable directions for improvement.
+   - Employ both MCQ and open-ended formats to avoid format bias.
+   - Evaluate over 25 VLMs and establish human baselines.
+   - Analyze failure modes to provide actionable improvement directions.
 
-**Key Insight**: Drawing from cognitive psychology's taxonomy of spatial cognition, the paper systematically decomposes spatial reasoning into $6 \times 5 = 30$ fine-grained task types, constructing the benchmark from real photographs rather than synthetic data.
+**Key Insight**: Grounded in the spatial cognition taxonomy of cognitive psychology, spatial reasoning is systematically decomposed into 6×5=30 fine-grained task types using real photographs instead of synthetic data.
 
-**Core Idea**: SpatiaLab employs dual-format evaluation across 30 real-world spatial reasoning tasks to systematically expose fundamental deficiencies of VLMs in depth perception, occlusion reasoning, navigation planning, and 3D geometry.
+**Core Idea**: SpatiaLab systematically exposes fundamental VLM deficiencies in depth perception, occlusion reasoning, navigation planning, and 3D geometry through dual-format evaluations of 30 real-world spatial reasoning tasks.
 
 ## Method
 
 ### Overall Architecture
-SpatiaLab = Benchmark Dataset + Evaluation Protocol + Improvement Strategy Exploration
+SpatiaLab aims to determine if VLMs can perform spatial reasoning when confronted with cluttered real-world photographs. It decomposes spatial cognition into 6 major categories—Relative Positioning, Depth & Occlusion, Orientation, Size & Scale, Spatial Navigation, and 3D Geometry—each divided into 5 subcategories for a total of 30 task types. The pipeline involves multi-source image collection covering visual noise across 6 meta-dimensions, followed by a three-stage human annotation process with quality control to produce QA pairs in both MCQ (4-choice) and open-ended formats. The resulting benchmark contains 1,400 validated QA pairs (≥25 per subcategory). The study then evaluates models and explores improvement strategies.
 
-- 6 major categories: Relative Positioning, Depth & Occlusion, Orientation, Size & Scale, Spatial Navigation, and 3D Geometry.
-- Each major category contains 5 subcategories → 30 task types in total.
-- Each subcategory contains ≥25 questions, each major category ≥200 questions → 1,400 verified QA pairs in total.
-- Dual format: MCQ (4-choice) + open-ended generation.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Multi-source Image Collection<br/>Crawling + Targeted Retrieval + Real Shots<br/>6 Meta-dimensions for Visual Noise"] --> B["Three-stage Annotation + Quality Control<br/>Concept Training → QA Pairing → Dual-format Encoding<br/>Semantic Check → Independent Validation → Golden Standard"]
+    B --> C["1,400 Validated QA Pairs<br/>6 Categories × 30 Subcategories<br/>MCQ + Open-ended"]
+    C --> D["25+ VLM Evaluation + Human Baseline<br/>Dual-format Comparison"]
+    D --> E["Improvement Strategy Exploration<br/>CoT / Self-Reflection / SFT / Multi-agent SpatioXolver"]
+```
 
 ### Key Designs
 
-1. **Multi-source Image Collection**
+**1. Multi-source Image Collection: Reflecting Real-world Visual Noise**
 
-    - Function: Construct a visually diverse real-world image repository.
-    - Mechanism: Three complementary sources—automated web crawling, targeted online retrieval, and manual indoor/outdoor photography. Systematic coverage along 6 meta-dimensions: illumination, texture complexity, edge complexity, spatial relations, material type, and gravity constraints.
-    - Design Motivation: Ensure the benchmark reflects real-world visual noise and complexity rather than controlled laboratory conditions.
-    - Complexity statistics: average 21.48 objects per image, 11.88 partially visible, 3.23 depth layers, and 2.07 spatial reasoning steps per chain.
+Unlike benchmarks using synthetic or puzzle scenes, SpatiaLab uses three complementary sources for visual diversity: automated web crawling, targeted online searches for specific spatial relations, and manual indoor/outdoor photography. Collection is gridded across 6 meta-dimensions—lighting, texture complexity, edge complexity, spatial relations, material types, and gravity constraints. The resulting library is highly complex: averaging 21.48 objects per image, 11.88 partially visible objects, 3.23 depth layers, and requiring 2.07 spatial reasoning steps to solve.
 
-2. **Three-stage Annotation and Quality Control**
+**2. Three-stage Annotation + Triple Quality Control: Ensuring Reliability**
 
-    - Function: Ensure semantic validity, answer correctness, and task clarity of all QA pairs.
-    - Mechanism: Phase 1 annotator training → Phase 2 paired spatial QA generation per image → Phase 3 dual-format encoding. Three rounds of review: semantic validation → independent verification → gold-standard establishment.
-    - Design Motivation: Error rates in spatial reasoning QA are high under complex scenes; three rounds of review ensure the reliability of the final 1,400 questions.
+To prevent errors in complex scenes, Phase 1 trains annotators on spatial concept standards. Phase 2 generates spatial QA pairs for each image. Phase 3 encodes each pair into MCQ and open-ended formats. Triple review follows: semantic validation of the question, independent answer verification, and final golden standard establishment. This ensures 1:1 correspondence between MCQ and open-ended answers.
 
-3. **Improvement Strategy Exploration**
+**3. Improvement Strategy Exploration: Systematic Probing of Solutions**
 
-    - Function: Systematically test multiple approaches for enhancing VLM spatial reasoning.
-    - Methods covered: intrinsic reasoning, CoT prompting, CoT + self-reflection, SFT fine-tuning (40% data / 60% evaluation), and a multi-agent system (SpatioXolver).
-    - Design Motivation: Beyond exposing problems, the paper provides actionable improvement directions. SFT yields the best results on navigation and orientation; multi-agent reasoning helps on orientation but stagnates or degrades on other categories.
+The study evaluates several enhancement methods: intrinsic model reasoning, CoT prompting, CoT with self-reflection, SFT (fine-tuning Qwen-VL2.5-3B-Instruct on 40% of the data), and the multi-agent system SpatioXolver. Findings indicate no "silver bullet"—SFT benefits navigation and orientation, while multi-agent reasoning helps with orientation but stagnates or degrades in occlusion and scale categories.
 
 ### Loss & Training
-(This is a benchmark paper; no training loss is defined. SFT experiments fine-tune Qwen-VL2.5-3B-Instruct with a standard cross-entropy loss.)
+The benchmark itself requires no training loss. SFT experiments for improvement strategies utilized standard supervised loss to fine-tune Qwen-VL2.5-3B-Instruct (40% train / 60% eval).
 
 ## Key Experimental Results
 
 ### Main Results (MCQ Format, 25+ Models)
 
-| Model | 3D Geometry | Depth & Occlusion | Orientation | Relative Positioning | Size & Scale | Navigation | Overall |
-|-------|-------------|-------------------|-------------|----------------------|--------------|------------|---------|
+| Model | 3D Geometry | Depth & Occlusion | Orientation | Relative Position | Scale | Navigation | Overall |
+|------|-------|---------|------|---------|------|------|------|
 | Human Baseline | 93.70 | 74.13 | 91.58 | 91.51 | 88.89 | 87.76 | **87.57** |
 | InternVL3.5-72B | 50.00 | 57.14 | 53.47 | 66.04 | 49.21 | 54.85 | 54.93 |
 | GPT-5-mini | 48.74 | 54.83 | 60.40 | 62.74 | 44.84 | 56.54 | 54.29 |
 | o4-mini-medium | 51.26 | 58.30 | 54.95 | 64.15 | 40.87 | 51.48 | 53.21 |
-| Spatial-specialized Models | ~42 | ~38 | ~48 | ~38 | ~43 | ~39 | ~41 |
-| Random Baseline | 25.00 | 25.00 | 25.00 | 25.00 | 25.00 | 25.00 | 25.00 |
+| Spatial-specific Models | ~42 | ~38 | ~48 | ~38 | ~43 | ~39 | ~41 |
+| Random Choice | 25.00 | 25.00 | 25.00 | 25.00 | 25.00 | 25.00 | 25.00 |
 
 ### Open-ended Format Comparison
 
-| Model | MCQ Overall | Open-ended Overall | Performance Drop |
-|-------|-------------|-------------------|-----------------|
-| GPT-5-mini | 54.29 | **40.93** | −13.36 |
-| o4-mini-medium | 53.21 | 37.86 | −15.35 |
-| InternVL3.5-72B | 54.93 | 23.36 | **−31.57** |
-| Human Baseline | 87.57 | 64.93 | −22.64 |
-| Avg. MCQ→Open Gap | — | — | **−23.0%** |
+| Model | Overall MCQ | Overall Open-ended | Gain (Drop) |
+|------|--------|----------|---------|
+| GPT-5-mini | 54.29 | **40.93** | -13.36 |
+| o4-mini-medium | 53.21 | 37.86 | -15.35 |
+| InternVL3.5-72B | 54.93 | 23.36 | **-31.57** |
+| Human Baseline | 87.57 | 64.93 | -22.64 |
+| Avg. MCQ→Open gap | - | - | **-23.0%** |
 
 ### Key Findings
-- **Top models achieve only 55% (MCQ) / 41% (open-ended)**: A large gap remains relative to human performance of 88% / 65%. Spatial-specialized models perform even worse (~41%), indicating that current specialization approaches are ineffective.
-- **Open-ended evaluation exposes true capability**: The average MCQ-to-open-ended drop is 23%; spatial-specialized models drop the most (~27%), suggesting that MCQ scores can overestimate true spatial reasoning ability.
-- **Three most challenging categories**: Size & Scale, Depth & Occlusion, and Spatial Navigation consistently emerge as bottlenecks, with most models scoring below 50% (or 30% in open-ended settings).
-- **Model scale ≠ spatial reasoning ability**: Llama-3.2-11B achieves only 30.5%, worse than many 4B models, indicating that spatial reasoning requires specialized capabilities beyond raw parameter count.
-- **Limited gains from reasoning augmentation**: CoT helps on the Orientation category; SFT improves Navigation (+7.69%); however, multi-agent systems degrade performance on Occlusion and Size & Scale.
-- **Systematic failure patterns**: Tasks involving object rotation (2%), reflective surfaces (<20%), and tool handedness (<30%) result in near-total failure.
+- **Strongest models reach only 55% (MCQ) / 41% (Open-ended)**: A vast gap remains compared to humans (88%/65%). Spatial-specific models performed worse (~41%), suggesting current specialization methods are ineffective.
+- **Open-ended evaluation reveals true capability**: The average performance drop from MCQ to Open-ended is 23%, with spatial-specific models dropping most (~27%), indicating MCQ overestimates actual reasoning.
+- **Three hardest categories**: Size & Scale, Depth & Occlusion, and Spatial Navigation are consistent bottlenecks, with most models scoring below 50%/30%.
+- **Model scale $\neq$ spatial reasoning**: Llama-3.2-11B scored only 30.5%, worse than several 4B models, indicating spatial reasoning requires specific capabilities beyond pure scaling.
+- **Limited effect of reasoning enhancements**: CoT helps with orientation; SFT improves navigation (+7.69%), but multi-agent systems degrade in occlusion/scale tasks.
+- **Systematic failure modes**: Tasks involving object rotation (2%), reflective surfaces (<20%), and tool handedness (<30%) saw near-total failure across models.
 
 ## Highlights & Insights
-- **Well-designed real-world dual-format evaluation**: The 30-task taxonomy across 1,400 questions represents the most fine-grained categorization in spatial reasoning research; the MCQ + open-ended dual format addresses format bias, a critical issue overlooked by prior benchmarks.
-- **Counterintuitive finding—spatial-specialized models underperform general models**: SpaceOm, SpaceThinker, and SpaceQwen all lag behind InternVL3.5-72B on real-world scenes, demonstrating that spatial capabilities acquired from synthetic training data do not transfer to real-world settings.
-- **Diagnostic value of error analysis**: Cluster analysis reveals that failures concentrate in three patterns: spatial mislocalization, perspective/scale errors, and occlusion ordering failures—directly attributable to the lack of geometric supervision in VLM training.
-- **Necessity of open-ended evaluation**: The average MCQ-to-open-ended drop of 23% is largest on Navigation (which requires the most multi-step reasoning), indicating that current VLMs rely on elimination strategies rather than genuine spatial understanding.
+- **Sophisticated Real-world + Dual-format Design**: 1,400 tasks covering 30 types represent the most fine-grained classification in spatial reasoning. The MCQ+Open-ended dual format eliminates format bias, a critical issue ignored by previous benchmarks.
+- **Counter-intuitive Finding on Specialized Models**: SpaceOm, SpaceThinker, and SpaceQwen lag behind general models like InternVL3.5-72B in real scenarios, suggesting that spatial capabilities trained on synthetic data do not generalize.
+- **Diagnostic Value of Error Analysis**: Clustering analysis reveals failures are concentrated in spatial mislocalization, perspective/scale errors, and occlusion ordering failures, directly linked to a lack of geometric supervision in VLMs.
+- **Necessity of Open-ended Evaluation**: The drop in performance is most significant in navigation (requiring multi-step reasoning), showing that current VLMs rely on elimination strategies rather than true understanding.
 
 ## Limitations & Future Work
-- Although high in quality, the 1,400 questions are limited in quantity; as few as 25+ questions per subcategory may be insufficient for stable evaluation.
-- Open-ended evaluation relies on an LLM judge (Gemini-2.5-Flash); while Cohen's kappa = 0.738, the judging process itself remains imperfect.
-- Temporal spatial reasoning in video settings is not covered.
-- **Directions for improvement**: Developing spatial reasoning pre-training data based on physics engines, or incorporating explicit geometric encoding modules into VLMs to address spatial reasoning deficiencies.
+- While high quality, the volume of 1,400 questions (25+ per subcategory) might be limited for perfectly stable evaluation.
+- Open-ended evaluation relies on an LLM judge (Gemini-2.5-Flash); despite a Cohen's kappa of 0.738, the judgement is not infallible.
+- Temporal-spatial reasoning in video scenes is not covered.
+- **Future Directions**: Developing spatial reasoning pre-training data based on physics engines or introducing explicit geometric encoding modules in VLMs to bridge the gap.
 
 ## Related Work & Insights
-- **vs. BLINK-Spatial (2024)**: 14 task types / 3.8K questions but mixes synthetic and real data; best performance 59%. SpatiaLab focuses on 30 real-world task types, offering finer granularity and greater difficulty.
-- **vs. OmniSpatial (2025)**: 50 categories but only 1.5K questions in a puzzle setting; best performance 56%. SpatiaLab emphasizes real-world scenes over puzzle-style settings.
-- **vs. VSI-Bench (2025)**: An indoor video benchmark with 8 categories; best performance 45%. SpatiaLab covers a broader range of scene types and image modalities.
+- **vs BLINK-Spatial (2024)**: 14 tasks/3.8K questions but mixes synthetic and real data; best score 59%. SpatiaLab is more fine-grained and challenging.
+- **vs OmniSpatial (2025)**: 50 categories but only 1.5K questions in puzzle settings; best score 56%. SpatiaLab emphasizes realistic cluttered scenes.
+- **vs VSI-Bench (2025)**: An indoor video benchmark with 8 categories, best score 45%. SpatiaLab covers broader scene types and image modalities.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The 30-category taxonomy and dual-format evaluation design are novel, though the core methodology (benchmark construction) is not an entirely new paradigm.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Highly comprehensive: 25+ models, human baselines, improvement strategy exploration, and error analysis.
-- Writing Quality: ⭐⭐⭐⭐ Well-structured with in-depth analysis, though somewhat lengthy.
-- Value: ⭐⭐⭐⭐⭐ Fills a critical gap in real-world spatial reasoning evaluation, quantifies the VLM–human gap, and provides important guidance for the VLM community.
+- Novelty: ⭐⭐⭐⭐ 30 task types + dual-format design is novel, though the core methodology of benchmark construction is established.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 25+ models, human baselines, improvement strategies, and comprehensive error analysis.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure and deep analysis, despite length.
+- Value: ⭐⭐⭐⭐⭐ Fills the gap in real-world spatial reasoning evaluation and provides clear guidance for the VLM community.
 
 <!-- RELATED:START -->
 
@@ -142,11 +133,11 @@ SpatiaLab = Benchmark Dataset + Evaluation Protocol + Improvement Strategy Explo
 
 ## Related Papers
 
-- [\[ICLR 2026\] Spatial-DISE: A Unified Benchmark for Evaluating Spatial Reasoning in Vision-Language Models](spatial-dise_a_unified_benchmark_for_evaluating_spatial_reasoning_in_vision-lang.md)
 - [\[ICLR 2026\] OmniSpatial: Towards Comprehensive Spatial Reasoning Benchmark for Vision Language Models](omnispatial_towards_comprehensive_spatial_reasoning_benchmark_for_vision_languag.md)
-- [\[ICLR 2026\] Spatial CAPTCHA: Generatively Benchmarking Spatial Reasoning for Human-Machine Differentiation](spatial_captcha_generatively_benchmarking_spatial_reasoning_for_human-machine_di.md)
-- [\[CVPR 2026\] SpatiaLQA: A Benchmark for Evaluating Spatial Logical Reasoning in Vision-Language Models](../../CVPR2026/multimodal_vlm/spatialqa_a_benchmark_for_evaluating_spatial_logical_reasoning_in_vision-languag.md)
-- [\[ICLR 2026\] SpinBench: Perspective and Rotation as a Lens on Spatial Reasoning in VLMs](spinbench_perspective_and_rotation_as_a_lens_on_spatial_reasoning_in_vlms.md)
+- [\[ICLR 2026\] Spatial-DISE: A Unified Benchmark for Evaluating Spatial Reasoning in Vision-Language Models](spatial-dise_a_unified_benchmark_for_evaluating_spatial_reasoning_in_vision-lang.md)
+- [\[ICLR 2026\] Spatial Reasoning with Vision-Language Models in Ego-Centric Multi-View Scenes](spatial_reasoning_with_vision-language_models_in_ego-centric_multi-view_scenes.md)
+- [\[CVPR 2026\] SpatiaLQA: A Benchmark for Evaluating Spatial Logical Reasoning in Vision-Language Models](../../CVPR2026/vlm_reasoning/spatialqa_a_benchmark_for_evaluating_spatial_logical_reasoning_in_vision-languag.md)
+- [\[ICLR 2026\] Seeing Across Views: Benchmarking Spatial Reasoning of Vision-Language Models in Robotic Scenes](seeing_across_views_benchmarking_spatial_reasoning_of_vision-language_models_in_.md)
 
 </div>
 

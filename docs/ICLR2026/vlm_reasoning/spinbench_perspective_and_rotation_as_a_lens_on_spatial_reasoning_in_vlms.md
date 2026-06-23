@@ -2,84 +2,66 @@
 title: >-
   [Paper Note] SpinBench: Perspective and Rotation as a Lens on Spatial Reasoning in VLMs
 description: >-
-  [ICLR 2026][Multimodal VLM][spatial reasoning] This paper introduces SpinBench, a cognitively grounded diagnostic benchmark that systematically evaluates spatial reasoning in 37 VLMs through 7 progressively structured ta…
+  [ICLR 2026][vlm_reasoning][Vision-Language Model] SpinBench is proposed as a diagnostic benchmark grounded in cognitive science. It systematically evaluates the spatial understanding of 37 VLMs through 7 progressive task categories (ranging from object recognition to perspective taking), revealing systematic flaws such as egocentric bias and weak rotation comprehensio
 tags:
-  - "ICLR 2026"
-  - "Multimodal VLM"
-  - "spatial reasoning"
-  - "perspective taking"
-  - "mental rotation"
-  - "vision-language models"
-  - "benchmark"
+  - ICLR 2026
+  - vlm_reasoning
+  - Vision-Language Model
+  - benchmark
 date: 2026-05-08
-content_hash: 33dbc7f27bc0e355
+content_hash: 3d25587b05e98d1a
 ---
-
 # SpinBench: Perspective and Rotation as a Lens on Spatial Reasoning in VLMs
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2509.25390](https://arxiv.org/abs/2509.25390)  
 **Code**: [https://spinbench25.github.io/](https://spinbench25.github.io/)  
-**Area**: Multimodal VLM
-**Keywords**: spatial reasoning, perspective taking, mental rotation, vision-language models, benchmark
+**Area**: Multimodal VLM  
+**Keywords**: Spatial Reasoning, Perspective Taking, Mental Rotation, VLM, Benchmark
 
 ## TL;DR
 
-This paper introduces SpinBench, a cognitively grounded diagnostic benchmark that systematically evaluates spatial reasoning in 37 VLMs through 7 progressively structured task categories—ranging from object identity recognition to perspective taking—revealing systemic deficiencies including egocentric bias and weak rotation understanding.
+SpinBench is proposed as a diagnostic benchmark grounded in cognitive science. It systematically evaluates the spatial understanding of 37 VLMs through 7 progressive task categories (ranging from object recognition to perspective taking), revealing systematic flaws such as egocentric bias and weak rotation comprehension.
 
 ## Background & Motivation
 
-Spatial reasoning is a fundamental component of human cognition and a critical capability for embodied agents operating in the physical world. Despite impressive progress in visual understanding, the spatial reasoning capabilities of vision-language models (VLMs) remain poorly understood and insufficiently diagnosed.
+Spatial reasoning is a fundamental component of human cognition and a critical capability for embodied agents operating in the physical world. While Vision-Language Models (VLMs) have made remarkable progress in visual understanding, their spatial reasoning abilities remain poorly understood and under-diagnosed.
 
-Several key issues with existing approaches:
+Several key issues exist in current approaches:
 
-**Entangled evaluation**: Existing applications (navigation, manipulation, autonomous driving, etc.) primarily reflect end-to-end performance, where spatial reasoning is entangled with high-level language and planning objectives, making it impossible to directly test whether models genuinely understand geometric primitives such as rotation, translation, relative object pose, and viewpoint change.
+**Evaluation Entanglement**: Existing applications (navigation, manipulation, autonomous driving, etc.) mainly reflect end-to-end performance. Spatial reasoning is entangled with high-level language and planning goals, making it impossible to directly test whether models truly understand geometric primitives like rotation, translation, relative poses, and viewpoint changes.
 
-**Dataset bias reliance**: It remains unclear whether VLMs possess genuine spatial reasoning abilities or instead exploit dataset biases and shallow pattern matching.
+**Dataset Bias Dependence**: It is unclear whether VLMs truly possess spatial reasoning capabilities or rely on dataset biases and shallow pattern matching.
 
-**Inadequacy of existing benchmarks**: Prior spatial reasoning benchmarks (e.g., CLEVR, BLINK, SpaCE-10) fall short in the following respects: lack of controlled viewpoint variation, absence of reference frame change tests, no support for multi-frame reasoning, and entanglement of spatial reasoning with functional and physical commonsense knowledge.
+**Limitations of Prior Work**: Existing spatial reasoning benchmarks (e.g., CLEVR, BLINK, SpaCE-10) suffer from shortcomings such as a lack of controlled viewpoint changes, absence of reference frame variation tests, lack of support for multi-frame reasoning, and entanglement with functional and physical common sense.
 
-The core research question is grounded in a foundational insight from cognitive science—the classic mental rotation experiments of Shepard & Metzler (1971) demonstrate that spatial cognition typically relies on simulated, imagery-based processes. This raises the central question: **Can VLMs perform such imagery-based spatial reasoning, or are they limited to symbolic and linguistic associations?**
+The Core Problem addressed originates from fundamental insights in cognitive science—classic mental rotation experiments (Shepard & Metzler, 1971) proved that spatial cognition often depends on simulated, imagery-based processes. This leads to the **Key Challenge**: Can VLMs perform such imagery-based spatial reasoning, or are they limited to symbolic and linguistic associations?
 
 ## Method
 
 ### Overall Architecture
 
-SpinBench is designed around the core challenge of **perspective taking**—a highly integrative ability requiring cross-viewpoint object recognition, relative localization, and mental simulation of transformations. SpinBench decomposes this high-level capability into a set of targeted diagnostic categories, each representing a fundamental spatial reasoning skill that underlies perspective taking.
+SpinBench centers on **perspective taking**—the ability to reason about how "scene-object relationships change under viewpoint transformations"—as the core challenge. Since perspective taking is an integrated capability, the paper decomposes it into a set of **progressive diagnostic categories**, ranging from basic cross-view identification to mental transformations in full scenes. To disentangle spatial reasoning from irrelevant factors like functional or physical common sense, all tasks are restricted to a **horizontal 2D plane** (excluding vertical relations like up/down, with viewpoint changes limited to horizontal orbital motion), ensuring the evaluation focuses on geometric primitives like rotation, translation, and relative pose.
 
-To minimize confounding factors, all tasks are defined in a **horizontal 2D plane**, excluding vertical relations (e.g., above/below), with viewpoint changes restricted to horizontal orbits around the scene.
+The benchmark consists of four components corresponding to these design points: **7 progressive tasks** to decompose perspective taking into diagnosable cognitive sub-skills; **4 data domains** to ensure spatial capability is tested rather than memorization of specific appearances; **controlled variables and logical equivalence augmentation** for each sample to separate "visual perceptual errors" from "linguistic reasoning errors"; and finally, **$\kappa$-correction and pairwise consistency** metrics to enable fair comparisons across tasks with different option counts and directly measure spatial logic.
 
 ### Key Designs
 
-1. **Progressive structure of seven task categories**:
+**1. Seven Progressive Tasks: Decomposing Perspective Taking into Diagnosable Cognitive Sub-skills**
 
-    - **Identity Matching**: Evaluates whether models can consistently recognize the same object across different viewpoints—a prerequisite for cross-view reasoning. 405 samples.
-    - **Object-Relation Grounding**: Tests understanding of relative object configurations in single static images, including directional relations (left/right, front/back) and distance relations (near/far). 636 samples, the largest category.
-    - **Dynamic Translation**: Assesses reasoning about linear object displacement. Given two temporally ordered frames, the model must identify the direction of object motion relative to the observer. 156 samples.
-    - **Dynamic Rotation**: Focuses on rotational transformations, requiring the model to judge rotation direction (e.g., clockwise vs. counterclockwise). 353 samples.
-    - **Canonical View Selection**: Tests whether models can map between canonical viewpoints of an object (given a frontal view, select the left/right/back view). 358 samples.
-    - **Mental Rotation**: Tests whether models can mentally simulate object transformations—given an object and a specified rotation angle/direction, select the correct resulting configuration. 78 samples.
-    - **Perspective Taking**: The central task of SpinBench, requiring scene-level reasoning under viewpoint change. Includes two subtypes: (S) selecting the correct scene image from a new viewpoint; (T) predicting how object relations transform under a viewpoint change. 613 samples.
+Existing benchmarks often conflate spatial reasoning with high-level planning, making it impossible to locate where a model fails. SpinBench utilizes a progression chain of 2,599 samples. The base layer is **Identity Matching** (405 samples), testing consistency in identifying the same object from different views. Above this is **Object Relation Localization** (636 samples), judging direction (left/right, front/back) and distance (near/far) in single static images. More advanced are dynamic reasoning tasks: **Dynamic Translation** (156 samples) determines relative displacement direction from two sequential frames; **Dynamic Rotation** (353 samples) judges rotation direction (clockwise vs. counter-clockwise). Higher-level tasks include **Canonical View Selection** (358 samples) and **Mental Rotation** (78 samples). The top level is the core task, **Perspective Taking** (613 samples), requiring reasoning about entire scenes under viewpoint changes, subdivided into Selecting scene maps from a new viewpoint (S-type) and Predicting relation changes (T-type).
 
-2. **Diversity across four data domains**:
+**2. Four Data Domains: Verifying Spatial Capability over Appearance Memorization**
 
-    - **Infinigen Synthetic Scenes** (54.1%): Indoor tabletop multi-object scenes generated with Infinigen in Isaac Sim, using objects from the YCB dataset.
-    - **ABO Objects** (23.7%): Everyday objects from the Amazon Berkeley Objects dataset, providing 360° views.
-    - **Cars** (9.2%): Vehicle rotation sequences from the Multi-View Car Dataset.
-    - **Faces** (13.0%): Eight-pose sequences from the Stereo Face Database.
+To prevent models from relying on shallow patterns, samples span four sources: **Infinigen Synthetic Scenes** (54.1%), procedurally generated indoor tabletop scenes using Isaac Sim with YCB objects; **ABO Objects** (23.7%), daily items from Amazon Berkeley Objects with 360° views; **Cars** (9.2%), rotation sequences from the Multi-View Car Dataset; and **Faces** (13.0%), representing 8 poses from the Stereo Face Database.
 
-3. **Fine-grained controlled variables**:
+**3. Controlled Variables and Logical Equivalence Augmentation: Attributing Errors**
 
-    - **Reference frame variation**: Tests the ability to switch between egocentric and allocentric reference frames.
-    - **Symmetry augmentation**: Generates logically equivalent variants by flipping relations and answers (e.g., "left → right").
-    - **Syntactic augmentation**: Rephrases questions while preserving semantics.
-    - **Premise condition variants**: Distinguishes between failures in visual grounding and failures in linguistic reasoning.
+SpinBench overlays fine-grained controls to isolate failure causes. **Reference Frame Changes** explicitly switch between egocentric and allocentric coordinates. **Symmetry Augmentation** creates logically equivalent variants by flipping relations and answers (e.g., "$A$ is left of $B$" $\Leftrightarrow$ "$B$ is right of $A$") to test spatial logic. **Syntax Augmentation** rewrites questions to remove phrasing interference. **Premise Variants** provide or withhold visual premises to distinguish "visual localization failure" from "linguistic reasoning failure."
 
-### Evaluation Metrics
+**4. $\kappa$-correction and Pairwise Consistency: Fair Comparison and Logic Measurement**
 
-- **Raw accuracy**: Proportion of correctly answered questions.
-- **Cohen's kappa ($\kappa$)**: Chance-corrected accuracy that accounts for differences in option cardinality, enabling fair cross-task comparison.
-- **Pairwise consistency**: Measures whether models produce consistent responses across logically equivalent question pairs.
+Since task option counts vary, raw accuracy is distorted by random chance. SpinBench primarily uses **Cohen's kappa ($\kappa$)**, which subtracts the expected agreement by chance. Additionally, **Pairwise Consistency** measures if a model provides self-consistent answers to logically equivalent question pairs.
 
 ## Key Experimental Results
 
@@ -88,96 +70,84 @@ To minimize confounding factors, all tasks are defined in a **horizontal 2D plan
 37 VLMs were evaluated, including 4 commercial and 33 open-source models.
 
 | Model | Overall Accuracy | Consistency | Perfect Rate |
-|-------|-----------------|-------------|--------------|
+|------|-----------|--------|--------|
 | InternVL3-38B | 73.8% | 95.7% | 71.1% |
 | InternVL3.5-38B | 71.9% | 95.3% | 75.1% |
 | InternVL3-14B | 70.3% | 91.4% | 63.7% |
 | GPT-4.1 | 69.8% | 85.9% | 59.5% |
 | GPT-4o | 67.8% | 79.6% | 51.2% |
 | Claude Sonnet 4 | 64.8% | 71.7% | 42.8% |
-| Human | 91.2% | — | — |
+| Human | 91.2% | - | - |
 
-### Performance by Task Category
+### Key task performance
 
 | Task Category | Best Model $\kappa$ | General Performance |
-|--------------|--------------------|--------------------|
-| Object-Relation Grounding | >0.6 | Best overall; most models perform reliably |
-| Identity Matching | Bimodal distribution | Small models near chance; large models near perfect |
+|---------|----------|------------|
+| Object Relation Localization | >0.6 | Best performance; most models reliable |
+| Identity Matching | Bimodal | Small models near random; large models near perfect |
 | Dynamic Rotation | Difficult | Most models perform poorly |
-| Mental Rotation | Near chance | Most models at or below chance level |
-| Perspective Taking | Near chance | Most challenging category |
+| Mental Rotation | Near random | Most models at or below chance level |
+| Perspective Taking | Near random | Most challenging |
 
 ### Ablation Study
 
-| Configuration | Key Metric | Notes |
-|--------------|------------|-------|
-| Egocentric vs. allocentric | $\kappa$ gap up to 1.6 | Molmo-7B: egocentric 0.94, allocentric −0.66 |
-| CoT reasoning (Cosmos-Reason1) | Avg. +0.221 $\kappa$ | Largest gain on perspective taking: +0.650 |
-| CoT reasoning (SpaceOm) | Avg. +0.118 $\kappa$ | Object-relation grounding benefits most |
-| With vs. without premise | 41% of models below chance | Systemic failures persist even in pure language reasoning |
+| Configuration | Key Metric | Description |
+|------|---------|------|
+| Egocentric vs. Allocentric | $\kappa$ diff up to 1.6 | Molmo-7B: 0.94 (Egocentric) vs. -0.66 (Allocentric) |
+| CoT Reasoning (Cosmos-Reason1) | Avg +0.221 $\kappa$ | Max gain of +0.650 in Perspective Taking |
+| CoT Reasoning (SpaceOm) | Avg +0.118 $\kappa$ | Object Relation Localization benefited most |
+| Premise vs. No Premise | 41% models < random | Systemic failure even in pure linguistic reasoning |
 
 ### Key Findings
 
-1. **Systemic egocentric bias**: Models exhibit strong observer-perspective bias in dynamic rotation tasks. Models performing best on egocentric variants perform worst on allocentric variants, suggesting that first-person visual descriptions dominate inductive biases in training data.
-
-2. **Severely insufficient rotation understanding**: In mental rotation and perspective taking tasks, the majority of models perform at or below chance, indicating the absence of robust internal representations for rotational transformations.
-
-3. **Emergent capability**: Identity matching exhibits a clear emergent pattern—smaller models remain at chance level, while larger models (7B–8B+) achieve near-perfect accuracy, suggesting that cross-image 3D abstraction only becomes possible once models reach sufficient capacity.
-
-4. **Strong accuracy–consistency correlation**: A strong positive correlation exists between overall accuracy and consistency (Pearson $r = 0.874$, $p < 0.05$), indicating that models unable to maintain equivalences such as "A is to the left of B" = "B is to the right of A" lack genuine spatial understanding.
-
-5. **Human–VLM difficulty alignment**: A significant negative correlation is observed between human response times and VLM accuracy ($r = -0.54$, $p < 0.05$), validating that SpinBench captures spatial reasoning difficulties shared by both humans and VLMs.
+1. **Systematic Egocentric Bias**: Models exhibit strong observer-viewpoint bias in dynamic rotation. Models performing best on egocentric tasks often perform worst on allocentric variants.
+2. **Rotation Understanding Defiency**: Most models perform at or below chance in mental rotation and perspective taking, indicating a lack of robust internal representations for transformations.
+3. **Emergent Capabilities**: Identity matching shows clear emergence—small models stay at chance, while larger models (7B-8B+) reach near-perfect accuracy.
+4. **Accuracy-Consistency Correlation**: A strong positive correlation (Pearson $r=0.874, p<0.05$) exists between accuracy and consistency.
+5. **Human-VLM Difficulty Alignment**: Significant negative correlation between human response time and VLM accuracy ($r=-0.54, p<0.05$).
 
 ## Highlights & Insights
 
-1. **Cognitive science-driven benchmark design**: Inspired by the Shepard & Metzler mental rotation experiments, SpinBench decomposes spatial reasoning into progressive cognitive sub-skills. This hierarchical structure has been absent from prior benchmarks.
-
-2. **Diagnostic value beyond leaderboards**: SpinBench provides not merely a ranking of scores but a diagnostic framework that precisely identifies where VLMs succeed and fail in spatial reasoning, and how these skills compose in perspective taking.
-
-3. **Complementarity with existing benchmarks**: Weak and non-significant overall correlations with MindCube, ViewSpatial-Bench, OmniSpatial, and SpaCE-10 validate that SpinBench captures distinct foundational capabilities rather than general spatial intelligence.
-
-4. **Practical implications**: Direct guidance for embodied AI—failures in reference frame reasoning or rotation understanding may cause catastrophic failures in navigation, manipulation, and other safety-critical tasks.
+1. **Cognitive Science Driven Design**: Inspired by Shepard & Metzler, the benchmark decomposes spatial reasoning into progressive sub-skills, a hierarchy missing in prior work.
+2. **Diagnostic Value Beyond Leaderboards**: SpinBench identifies exactly where VLMs succeed or fail in the spatial reasoning pipeline.
+3. **Complementarity**: Weak correlation with other benchmarks (MindCube, SpaCE-10, etc.) confirms that SpinBench captures unique foundational capabilities.
+4. **Practical Utility**: Failures in reference frame reasoning or rotation directly impact navigation and manipulation safety in embodied AI.
 
 ## Limitations & Future Work
 
-1. **Incomplete spatial concept coverage**: Important spatial concepts such as containment (in), support (on), and vertical relations (above/below) are not yet covered.
-
-2. **Tasks restricted to the horizontal plane**: All tasks are defined in a 2D horizontal plane, excluding height variation and vertical relations, limiting the comprehensiveness of the evaluation.
-
-3. **Relatively small scale**: The benchmark comprises 2,599 samples in total, with some categories having limited sample sizes (e.g., mental rotation with only 78 samples).
-
-4. **No training guidance**: The benchmark is primarily an evaluation tool; how to leverage its data to train models with improved spatial reasoning has not been explored.
-
-5. **Synthetic data bias**: Infinigen synthetic scenes account for over 54% of samples, potentially introducing distributional discrepancies relative to real-world scenes.
+1. **Incomplete Concept Coverage**: Does not yet cover inclusion (in), support (on), or vertical relations (above/below).
+2. **2D Plane Constraint**: Tasks are limited to the horizontal plane, excluding height differences.
+3. **Small Scale for Some Categories**: The Mental Rotation category has a relatively small sample size (78).
+4. **Lack of Training Guidance**: Currently used for evaluation; improving spatial reasoning through this data remains unexplored.
+5. **Synthetic Data Bias**: Over 54% of data is synthetic (Infinigen), potentially differing from real-world distributions.
 
 ## Related Work & Insights
 
-- **CLEVR**: An early synthetic diagnostic dataset using simple 3D shapes only.
-- **MindCube**: Emphasizes cognitive mapping, focusing on how models track spatial information across scenes.
-- **ViewSpatial-Bench**: Focuses on viewpoint-dependent grounding.
-- **OmniSpatial**: Spatial tasks grounded in cognitive psychology, but entangles spatial reasoning with functional and physical commonsense knowledge.
-- **SpatialReasoner / SSR / APC**: Augment spatial reasoning via explicit 3D representations.
-- **MetaSpatial / SpatialVLM**: Enhance spatial understanding through reinforcement learning or large-scale pretraining.
-- Key implication: Purely language-based approaches face fundamental limitations in spatial reasoning, motivating the need for **structured reasoning beyond language**.
+- **CLEVR**: Early synthetic diagnostic dataset using simple 3D shapes.
+- **MindCube**: Emphasizes cognitive mapping and cross-scene spatial tracking.
+- **ViewSpatial-Bench**: Focuses on viewpoint-dependent localization.
+- **OmniSpatial**: Logic tasks based on cognitive psychology, but entangled with physical common sense.
+- **Key Insight**: Purely linguistic approaches have fundamental limits in spatial reasoning; **structured reasoning beyond language** is required.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ (The cognitively grounded, progressive diagnostic design is creative, though the benchmark format itself is well-established)
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ (37 models, human baselines, consistency analysis, scaling laws, and correlation analyses—highly comprehensive)
-- Writing Quality: ⭐⭐⭐⭐⭐ (Clear structure, in-depth analysis, and professional presentation)
-- Value: ⭐⭐⭐⭐ (Systematic diagnosis of VLM spatial reasoning offers important guidance, particularly for embodied AI)
+- Novelty: ⭐⭐⭐⭐
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐
+- Writing Quality: ⭐⭐⭐⭐⭐
+- Value: ⭐⭐⭐⭐
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
 - [\[ICLR 2026\] Through the Lens of Contrast: Self-Improving Visual Reasoning in VLMs](through_the_lens_of_contrast_self-improving_visual_reasoning_in_vlms.md)
+- [\[ICLR 2026\] MetaSpatial: Reinforcing 3D Spatial Reasoning in VLMs for the Metaverse](metaspatial_reinforcing_3d_spatial_reasoning_in_vlms_for_the_metaverse.md)
 - [\[ICLR 2026\] Spatial CAPTCHA: Generatively Benchmarking Spatial Reasoning for Human-Machine Differentiation](spatial_captcha_generatively_benchmarking_spatial_reasoning_for_human-machine_di.md)
-- [\[ICLR 2026\] Spatial-DISE: A Unified Benchmark for Evaluating Spatial Reasoning in Vision-Language Models](spatial-dise_a_unified_benchmark_for_evaluating_spatial_reasoning_in_vision-lang.md)
-- [\[ICML 2026\] 3ViewSense: Spatial and Mental Perspective Reasoning from Orthographic Views in Vision-Language Models](../../ICML2026/multimodal_vlm/3viewsense_spatial_and_mental_perspective_reasoning_from_orthographic_views_in_v.md)
-- [\[ICLR 2026\] Evaluating VLMs' Spatial Reasoning Over Robot Motion: A Step Towards Robot Planning with Motion Preferences](evaluating_vlms_spatial_reasoning_over_robot_motion_a_step_towards_robot_plannin.md)
+- [\[ICLR 2026\] LENS: Multi-level Evaluation of Multimodal Reasoning with Large Language Models](lens_multi-level_evaluation_of_multimodal_reasoning_with_large_language_models.md)
+- [\[ICLR 2026\] Pursuing Minimal Sufficiency in Spatial Reasoning](pursuing_minimal_sufficiency_in_spatial_reasoning.md)
 
 </div>
 

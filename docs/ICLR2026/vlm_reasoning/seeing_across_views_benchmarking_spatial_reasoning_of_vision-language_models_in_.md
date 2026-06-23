@@ -2,136 +2,119 @@
 title: >-
   [Paper Note] Seeing Across Views: Benchmarking Spatial Reasoning of Vision-Language Models in Robotic Scenes
 description: >-
-  [ICLR2026][Multimodal VLM][multi-view spatial reasoning] This paper proposes MV-RoboBench, the first benchmark integrating multi-view spatial reasoning with robotic manipulation tasks…
+  [ICLR 2026][vlm_reasoning][multi-view spatial reasoning] The authors introduce MV-RoboBench, the first benchmark integrating multi-view spatial reasoning with robotic manipulation execution. It contains 1.7K human-annotated QA pairs and reveals a massive gap between the strongest current VLMs (GPT-5 at only 56.4%) and humans (91.0%).
 tags:
-  - "ICLR2026"
-  - "Multimodal VLM"
-  - "multi-view spatial reasoning"
-  - "benchmark"
-  - "embodied AI"
-  - "VLM evaluation"
-  - "robotic manipulation"
+  - ICLR 2026
+  - vlm_reasoning
+  - multi-view spatial reasoning
+  - robotic manipulation
+  - VLM benchmark
+  - embodied AI
+  - MV-RoboBench
 date: 2026-05-08
-content_hash: dc704f229539c892
+content_hash: 9c575ad39f91ef0b
 ---
-
 # Seeing Across Views: Benchmarking Spatial Reasoning of Vision-Language Models in Robotic Scenes
 
-**Conference**: ICLR2026
+**Conference**: ICLR2026  
 **arXiv**: [2510.19400](https://arxiv.org/abs/2510.19400)  
-**Code**: [Project Page](https://github.com/) (open-sourced)  
-**Area**: Multimodal VLM
-**Keywords**: multi-view spatial reasoning, benchmark, embodied AI, VLM evaluation, robotic manipulation
+**Code**: [GitHub](https://github.com/) (Project page released)  
+**Area**: Multimodal VLM  
+**Keywords**: multi-view spatial reasoning, robotic manipulation, VLM benchmark, embodied AI, MV-RoboBench  
 
 ## TL;DR
-This paper proposes MV-RoboBench, the first benchmark integrating multi-view spatial reasoning with robotic manipulation tasks, systematically evaluating 40+ VLMs (open-source, closed-source, and reasoning-enhanced). The best-performing model, GPT-5, achieves only 56.4% accuracy, far below the human baseline of 91.0%. The study further reveals a positive correlation between spatial and robotic reasoning, and that performance on single-view benchmarks does not reliably transfer to multi-view settings.
+The authors introduce MV-RoboBench, the first benchmark integrating multi-view spatial reasoning with robotic manipulation execution. It contains 1.7K human-annotated QA pairs and reveals a massive gap between the strongest current VLMs (GPT-5 at only 56.4%) and humans (91.0%).
 
 ## Background & Motivation
-- VLMs serve as core components of Embodied AI, providing perceptual and reasoning capabilities for Vision-Language-Action (VLA) models.
-- Most VLM evaluations focus on **single-view** settings, leaving multi-view information integration severely underexplored.
-- Multi-camera configurations have become standard in robotic platforms, offering complementary viewpoints to mitigate occlusion and depth ambiguity.
-- Existing spatial reasoning benchmarks (EmbSpatial-Bench, RoboSpatial, etc.) primarily target single-view reasoning; ERQA and MMSI-Bench include only limited multi-view data.
-- All-Angles Bench and Ego3D-Bench employ multi-view inputs but are restricted to photo alignment or navigation perception, lacking manipulation-oriented embodied reasoning.
+- Vision-Language Models (VLMs) are the core foundation of Embodied AI and Vision-Language-Action (VLA) models, playing a critical role in robotic perception, reasoning, and decision-making.
+- Most VLM evaluations focus on single-view settings, but multi-camera configurations are increasingly prevalent on robotic platforms to provide complementary perspectives and mitigate occlusion or depth ambiguity.
+- Existing spatial reasoning benchmarks (EmbSpatial-Bench, Visual Spatial, RoboSpatial, etc.) primarily focus on single-view relational reasoning, lacking the integration of multi-view inputs and robotic manipulation.
+- A few multi-view benchmarks (All-Angles Bench, Ego3D-Bench) only focus on photo alignment or navigation-related perception, without touching upon manipulation-oriented embodied reasoning.
+- **Key Challenge**: There is a lack of a benchmark to systematically evaluate the spatial reasoning capabilities of VLMs in multi-view robotic manipulation scenarios.
 
 ## Method
 
-### Overall Architecture: MV-RoboBench Benchmark Design
-Built upon the AgiWorld and BridgeV2 datasets, MV-RoboBench contains 1,708 manually annotated multiple-choice questions spanning **Spatial Understanding** and **Robotic Execution**, organized into 8 sub-tasks:
+### Overall Architecture
+MV-RoboBench is a benchmark designed specifically for spatial reasoning in multi-view robotic manipulation scenes. Built upon two real-world robotic datasets, AgiWorld and BridgeV2, it covers both single-arm and dual-arm operations. Through a three-stage human-in-the-loop pipeline, 1,708 five-choice QA pairs were refined from approximately 980 operation episodes. The tasks are organized along two main axes—"Spatial Understanding" and "Robotic Execution"—comprising eight sub-tasks. By unifying "understanding multi-view scenes" and "judging manipulation rationality" under a single protocol, the benchmark enables a horizontal comparison of over 40 VLMs (open-source, closed-source, and reasoning-enhanced). On top of this, the benchmark includes two additional layers of analysis: first, injecting three types of Chain-of-Thought (CoT) enhancements to detect if failures stem from "missing clues" or "inability to reason"; second, using internal and external correlation axes to test the common assumptions that "accurate spatial perception leads to correct manipulation" and "strong single-view performance transfers to multi-view."
 
-- **Spatial Understanding (4 sub-tasks)**:
-    - Cross-View Matching: identifying the same object across viewpoints
-    - Distance Judgement: estimating relative distances between objects
-    - Viewpoint Identification: reasoning about viewpoint transformations
-    - 3D Spatial Consistency: maintaining consistent 3D spatial relationships
+### Key Designs
 
-- **Robotic Execution (4 sub-tasks)**:
-    - Action Planning: planning multi-step action sequences
-    - Step Execution: verifying correctness of a single next step
-    - Trajectory Selection: assessing feasibility of candidate motion paths
-    - Affordance Recognition: evaluating object interaction feasibility
+**1. Eight Sub-tasks: Decomposing Multi-view Embodied Reasoning into Locatable Dimensions**  
+Reporting a single total accuracy fails to pinpoint where a model struggles. Therefore, the benchmark splits capabilities into two categories and eight sub-tasks. Spatial Understanding focuses on "merging scenes across views into a consistent 3D mental representation," including Cross-View Matching, Distance Judgement, Viewpoint Identification, and 3D Spatial Consistency. Robotic Execution examines "manipulation decision-making based on this spatial understanding," including Action Planning, Step Execution, Trajectory Selection, and Affordance Recognition. This fine-grained decomposition allows for precise error localization—for instance, showing that nearly all non-reasoning models fail at 3D Spatial Consistency rather than making a generic claim that the "model is weak."
 
-### Key Design 1: Multi-Stage Human Quality Control Pipeline
-- **Data Collection**: Rule-based filtering + GPT-4.1-assisted screening (for triage only, not QA generation) + human verification.
-- **QA Generation**: Task-specific templates combined with trained annotators to construct five-choice QA pairs with plausible yet distinguishable distractors.
-- **Iterative Review**: Multiple rounds of annotation, revision, and answer distribution balancing to eliminate bias.
+**2. High-Quality Human Construction: Rational Distractors with Unique Answers**  
+Quality is ensured via a three-stage pipeline. In the data collection stage, candidate scenes are filtered by rules and then triaged by GPT-4.1 (used only for triaging, not for generating QA content), followed by human verification. In the QA generation stage, trained annotators use task-specific templates to construct five-choice questions, purposefully making the four distractors plausible yet distinguishable from the correct answer. Finally, a human-in-the-loop review iteratively revises questions and balances the answer distribution across options. Restricting the LLM to triage rather than generation prevents self-evaluation bias and closes shortcuts where models could guess based on option priors.
 
-### Key Design 2: CoT-Inspired Augmentation Exploration
-Three CoT-style augmentation strategies are systematically investigated:
-1. **Text CoT (w text)**: GPT-4.1-generated scene descriptions as supplementary textual context.
-2. **Visual CoT (w vggt)**: Novel view synthesis via VGGT to provide additional visual evidence.
-3. **Structural CoT (w depth)**: Depth estimation via MoGe-2 to introduce geometric constraints.
+**3. CoT Enhancement Exploration: Testing if External Clues Fix Spatial Shortcomings**  
+To answer whether poor performance is due to missing clues or reasoning deficits, three types of CoT enhancements are injected into the input without modifying the models: Textual CoT uses GPT-4.1 to generate scene descriptions as supplementary text; Visual CoT uses VGGsfm for novel view synthesis to provide extra visual evidence; Structural CoT uses MoGe-2 to estimate depth priors for geometric constraints. These supplement language, vision, and geometry respectively. Subsequent ablation studies can then distinguish which information gap hinders multi-view reasoning and how different model capacities absorb external clues.
 
-### Key Design 3: Dual-Axis Correlation Analysis
-- **Internal correlation axis**: Relationship between spatial reasoning and robotic execution performance within multi-view scenes.
-- **External transfer axis**: Whether performance on a single-view spatial benchmark (OmniSpatial) reliably predicts multi-view embodied reasoning capability.
+**4. Dual-Axis Correlation Analysis: Testing Default Assumptions**  
+The benchmark also uses two analysis axes to challenge common assumptions. The internal axis measures the correlation between spatial reasoning scores and robotic execution scores in multi-view scenes to test if "accurate perception leads to correct manipulation." The external axis compares model performance on the single-view benchmark OmniSpatial against MV-RoboBench to test if "single-view strength reliably transfers to multi-view." These axes allow the benchmark to provide falsifiable conclusions about capability transferability rather than just a leaderboard.
 
-## Experiments
+## Key Experimental Results
 
-### Main Results
+### Main Results: Multi-Model Multi-Category Evaluation
 
-| Model Type | Representative Model | Average Accuracy |
-|---|---|---|
-| Random Baseline | — | 19.7% |
-| Closed-Source VLM | GPT-4.1 | 30.9% |
-| Open-Source VLM | Qwen2.5-vl-72B | 24.3% |
-| Open-Source MoE | Llama-4-Maverick | 26.1% |
-| Reasoning Model | GPT-5 | **56.4%** |
-| Reasoning Model | Gemini-2.5-pro | 49.5% |
-| Human | — | **91.0%** |
+| Model | Avg. Accuracy | Spatial Understanding | Robotic Execution |
+| :--- | :--- | :--- | :--- |
+| Random Choice | 19.71% | ~19% | ~20% |
+| GPT-4.1 | 30.90% | 26.8% avg | 32.8% avg |
+| GPT-5 (Best) | **56.41%** | 52.7% avg | 60.4% avg |
+| Gemini-2.5-pro | 49.52% | 45.8% avg | 53.2% avg |
+| o4-mini | 46.47% | 40.4% avg | 52.5% avg |
+| Qwen2.5-vl-72B (Best OS) | 24.29% | 21.9% avg | 26.7% avg |
+| InternVL3-78B | 23.25% | 20.9% avg | 25.6% avg |
+| Human | **91.04%** | 93.7% avg | 88.2% avg |
 
-### Ablation Study: CoT Augmentation
+### Ablation Study: CoT Enhancement
 
-| Model | Base | w cot | w text | w vggt | w depth |
-|---|---|---|---|---|---|
-| Qwen2.5-vl-7B | 20.84 | 20.49 | 20.90 | 20.02 | **21.14** |
-| Gemma-3-12B | 20.49 | **24.19** | 18.43 | 18.31 | 20.41 |
-| GPT-4.1 | 29.87 | 29.84 | 31.66 | 28.02 | **33.12** |
+| Method | Qwen2.5-vl-7B | Gemma-3-12B | GPT-4.1 |
+| :--- | :--- | :--- | :--- |
+| Baseline (No enhancement) | 20.84% | 20.49% | 29.87% |
+| + CoT prompting | 20.49 (-0.35) | **24.19 (+3.70)** | 29.84 (-0.03) |
+| + Text description | 20.90 (+0.06) | 18.43 (-2.06) | **31.66 (+1.79)** |
+| + Novel view synthesis | 20.02 (-0.82) | 18.31 (-2.18) | 28.02 (-1.85) |
+| + Depth prior | 21.14 (+0.30) | 20.41 (-0.08) | **33.12 (+3.25)** |
 
 ### Key Findings
-1. **Reasoning capability is the primary differentiator**: Reasoning-enhanced models (GPT-5, o4-mini) substantially outperform perception-focused models, yet remain far below human performance.
-2. **3D Spatial Consistency is the most challenging sub-task**: Most non-reasoning models perform at or below random chance (~19.07%) on this task.
-3. **CoT augmentation effects are model-dependent**: Novel view synthesis generally degrades performance; depth priors are effective only for high-capacity models; CoT prompting is most beneficial for mid-scale open-source models.
-4. **Spatial and robotic reasoning are positively correlated**: This holds only for models with sufficient cross-view fusion capability.
-5. **Single-view to multi-view transfer fails**: Strong performance on OmniSpatial does not reliably predict multi-view embodied reasoning ability.
+1.  **3D Spatial Consistency is most challenging**: Most non-reasoning models perform near or below chance (~19%) on this sub-task, while reasoning-enhanced models can improve this to 49-82%.
+2.  **Spatial and Robot reasoning are positively correlated**: However, this holds only when models possess sufficient cross-view fusion capabilities.
+3.  **Single-view performance does not transfer reliably**: Models that excel on OmniSpatial can still perform near chance on MV-RoboBench.
+4.  **Mixed effects of CoT enhancements**: Synthetic novel views tend to degrade performance, and depth priors are only effective for high-capacity models.
+5.  **Reasoning-optimized architectures significantly outperform perception models**: GPT-5 shows an approximately 25 percentage point improvement over GPT-4.1.
 
 ## Highlights & Insights
-- First systematic benchmark for multi-view robotic manipulation spatial reasoning, filling a critical gap in the field.
-- Evaluation covers 40+ models across five categories, providing comprehensive experimental coverage.
-- Dual-axis analysis reveals an important negative result: single-view spatial capability does not transfer reliably.
-- All 1.7K QA items are fully human-curated, with data covering both single-arm and dual-arm manipulation scenarios.
+- First benchmark to systematically integrate multi-view spatial reasoning and robotic manipulation, filling a vital gap.
+- High-quality dataset of 1,708 human-annotated QA pairs across eight dimensional sub-tasks with fine-grained granularity.
+- Identified two critical conclusions: the positive correlation between spatial-robotic reasoning and the unreliable transfer from single-view performance, providing guidance for future research.
+- Systematically explored the effects of CoT enhancements in multi-view scenarios, finding that simply stacking geometric clues is insufficient.
 
 ## Limitations & Future Work
-- Only 2D images are used as input; the impact of explicit 3D representations (point clouds, meshes) remains unexplored.
-- Camera configurations are fixed by the source datasets; the effect of varying camera layouts is not investigated.
-- The multiple-choice format precludes evaluation of open-ended spatial reasoning.
-- CoT augmentation strategies are relatively basic; more advanced approaches such as active view selection are not explored.
+- The benchmark scale is relatively small (1.7K QA), which may not cover the full diversity of manipulation scenarios.
+- All tasks utilize a five-choice MCQ format rather than open-ended spatial reasoning.
+- Limited diversity in scenes as data is drawn from only two sources (AgiWorld and BridgeV2).
+- Preliminary exploration of CoT; lacks integration of deeper methods like geometric encoders.
+- Does not include multi-view reasoning in dynamic or video-based scenes.
 
 ## Related Work & Insights
-- **Spatial reasoning benchmarks**: EmbSpatial-Bench, Visual Spatial, RoboSpatial, Spatial-MM, SpatialVLM, and VSI-Bench are all limited to single-view settings.
-- **Multi-view benchmarks**: All-Angles Bench (photo alignment) and Ego3D-Bench (navigation perception) do not address robotic manipulation.
-- **Robotic scene evaluation**: ShareRobot (single-view), ERQA (partial multi-view but small scale).
-- **Geometry-augmented VLMs**: SpatialRGPT, SpatialLLM, and 3D-LLM explore the injection of geometric priors into language models.
+- **Single-view spatial benchmarks**: EmbSpatial-Bench, Visual Spatial, RoboSpatial, SpatialVLM, VSI-Bench, OmniSpatial.
+- **Multi-view benchmarks**: All-Angles Bench, Ego3D-Bench, ERQA, MMSI-Bench.
+- **Robot evaluation**: ShareRobot.
+- **3D Understanding methods**: SpatialRGPT, 3D-LLM, SpatialBot, VLM-3R.
+- **VLA Models**: $\pi_0$, CogAct, OpenVLA.
 
 ## Rating
-⭐⭐⭐⭐ (4/5)
 
-A solid benchmark contribution with large-scale and systematic evaluation. The dual-axis correlation analysis provides valuable insights. As a benchmark paper, however, the methodological contribution is limited, and the CoT augmentation exploration remains relatively shallow.
+| Dimension | Rating |
+| :--- | :--- |
+| Novelty | ⭐⭐⭐⭐ |
+| Technical Depth | ⭐⭐⭐ |
+| Experimental Thoroughness | ⭐⭐⭐⭐⭐ |
+| Writing Quality | ⭐⭐⭐⭐ |
+| Value | ⭐⭐⭐⭐ |
+| **Overall** | **⭐⭐⭐⭐** |
 
----
-title: >-
-  [Paper Review] Seeing Across Views: Benchmarking Spatial Reasoning of Vision-Language Models in Robotic Scenes
-description: >-
-  [ICLR2026][Multimodal][Spatial Reasoning] Proposes MV-RoboBench, the first VLM evaluation benchmark targeting multi-view spatial reasoning in robotic scenes, comprising 1.7K manually annotated QA pairs across eight sub-tasks in spatial understanding and robotic execution. Experiments show that current state-of-the-art VLMs fall far short of human performance, and that single-view spatial benchmark performance does not reliably transfer to multi-view robotic scenarios.
-tags:
-  - ICLR2026
-  - multimodal
-  - spatial reasoning
-  - benchmark
-  - multi-view
-  - robotic manipulation
-  - VLM evaluation
-  - embodied AI
----
+> This is a strong evaluation-focused work. Its core contribution lies in identifying the critical gap between multi-view perception and robotic manipulation and building a high-quality benchmark. The experiment is comprehensive, covering 30+ models, and the internal/external correlation analysis provides genuine insight. However, the methodology leans heavily toward data construction without novel model-side innovations.
 
 <!-- RELATED:START -->
 
@@ -139,11 +122,11 @@ tags:
 
 ## Related Papers
 
+- [\[ICLR 2026\] Spatial Reasoning with Vision-Language Models in Ego-Centric Multi-View Scenes](spatial_reasoning_with_vision-language_models_in_ego-centric_multi-view_scenes.md)
 - [\[ICLR 2026\] FRIEDA: Benchmarking Multi-Step Cartographic Reasoning in Vision-Language Models](frieda_benchmarking_multi-step_cartographic_reasoning_in_vision-language_models.md)
-- [\[ICML 2026\] 3ViewSense: Spatial and Mental Perspective Reasoning from Orthographic Views in Vision-Language Models](../../ICML2026/multimodal_vlm/3viewsense_spatial_and_mental_perspective_reasoning_from_orthographic_views_in_v.md)
-- [\[ICLR 2026\] Spatial CAPTCHA: Generatively Benchmarking Spatial Reasoning for Human-Machine Differentiation](spatial_captcha_generatively_benchmarking_spatial_reasoning_for_human-machine_di.md)
 - [\[ICLR 2026\] Spatial-DISE: A Unified Benchmark for Evaluating Spatial Reasoning in Vision-Language Models](spatial-dise_a_unified_benchmark_for_evaluating_spatial_reasoning_in_vision-lang.md)
-- [\[ICLR 2026\] OmniSpatial: Towards Comprehensive Spatial Reasoning Benchmark for Vision Language Models](omnispatial_towards_comprehensive_spatial_reasoning_benchmark_for_vision_languag.md)
+- [\[ICML 2026\] 3ViewSense: Spatial and Mental Perspective Reasoning from Orthographic Views in Vision-Language Models](../../ICML2026/vlm_reasoning/3viewsense_spatial_and_mental_perspective_reasoning_from_orthographic_views_in_v.md)
+- [\[ICLR 2026\] MindCube: Spatial Mental Modeling from Limited Views](mindcube_spatial_mental_modeling_from_limited_views.md)
 
 </div>
 

@@ -2,66 +2,74 @@
 title: >-
   [Paper Note] Reasoning-Driven Multimodal LLM for Domain Generalization
 description: >-
-  [ICLR 2026][Multimodal VLM] This paper proposes RD-MLDG — the first framework to incorporate MLLM reasoning chains into domain generalization. It constructs the DomainBed-Reasoning dataset…
+  [ICLR 2026][vlm_reasoning][Paper Note] Ours proposes RD-MLDG: the first framework to introduce Multimodal Large Language Model (MLLM) reasoning chains into Domain Generalization (DG). By constructing the DomainBed-Reasoning dataset, the study systematically analyzes two major challenges in reasoning supervision (optimization difficulty and reasoning mode mi
 tags:
-  - "ICLR 2026"
-  - "Multimodal VLM"
+  - ICLR 2026
+  - vlm_reasoning
 date: 2026-05-08
-content_hash: baf0727c071c6965
+content_hash: ddc7067cfb0333d7
 ---
-
 # Reasoning-Driven Multimodal LLM for Domain Generalization
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2602.23777](https://arxiv.org/abs/2602.23777)  
-**Institution**: Xidian University / Microsoft Research Asia
+**Unit**: Xidian University / Microsoft Research Asia  
 **Area**: Domain Generalization / Multimodal Reasoning
 
 ## TL;DR
 
-This paper proposes RD-MLDG — the first framework to incorporate MLLM reasoning chains into domain generalization. It constructs the DomainBed-Reasoning dataset, systematically analyzes two core challenges of reasoning supervision (optimization gap + reasoning pattern mismatch), and addresses them jointly via MTCT (Multi-Task Cross-Training) and SARR (Self-Aligned Reasoning Regularization), achieving an average accuracy of 86.89% across four standard DG benchmarks — substantially surpassing GPT-4o (83.46%) and all CLIP/ViT-based methods.
+Ours proposes RD-MLDG: the first framework to introduce Multimodal Large Language Model (MLLM) reasoning chains into Domain Generalization (DG). By constructing the DomainBed-Reasoning dataset, the study systematically analyzes two major challenges in reasoning supervision (optimization difficulty and reasoning mode mismatch). These are addressed through the synergy of Multi-Task Cross Training (MTCT) and Self-Aligned Reasoning Regularization (SARR). On four standard DG benchmarks, it achieves an average accuracy of 86.89%, significantly outperforming GPT-4o (83.46%) and all CLIP/ViT-based methods.
 
 ## Background & Motivation
 
-Existing domain generalization methods (IRM, CORAL, MixStyle, SWAD, etc.) focus on **feature-level invariance** — improving generalization by aligning latent representations across domains. CLIP-based methods introduce multimodal representations but remain constrained to feature-level alignment. The fundamental limitation is that feature-level invariance fails to capture higher-order cross-domain commonalities.
+Existing DG methods (IRM, CORAL, MixStyle, SWAD, etc.) focus on **feature-level invariance**—improving generalization by aligning latent representations across different domains. CLIP-based methods introduce multimodal representations but remain limited to feature-level alignment. The problem is that feature-level invariance fails to capture higher-level cross-domain commonalities.
 
-MLLMs exhibit strong reasoning capabilities, and reasoning chains can explicitly decompose the classification process into interpretable, domain-invariant steps (e.g., images of "printers" from different domains show large visual variation, yet the category-relevant portions of their reasoning chains are highly consistent). However, directly supervising with reasoning chains paradoxically yields **worse** performance than direct label supervision — this contradiction motivates the paper's in-depth analysis and framework design.
+MLLMs exhibit powerful reasoning capabilities; reasoning chains can explicitly decompose the classification process into interpretable, domain-invariant steps (e.g., although "printer" images from different domains differ greatly visually, the category-related parts of their reasoning chains are highly consistent). However, directly using reasoning chains for supervision results in performance **worse** than direct label supervision—this contradiction motivates the deep analysis and design of the new framework.
 
 ## Method
 
-### 1. DomainBed-Reasoning Dataset Construction
+### Overall Architecture
 
-GPT-4o is used to generate five-stage reasoning chains for each sample across four DomainBed datasets (PACS/VLCS/OfficeHome/TerraInc):
+RD-MLDG aims to elevate DG from "feature-level invariance" to "reasoning process-level invariance": even if visual differences for the same category across domains are large, the category-related reasoning criteria remain highly consistent. Therefore, rather than aligning ambiguous features, it is better to let the model learn a set of domain-invariant reasoning processes. The pipeline is as follows: first, GPT-4o is used to create the DomainBed-Reasoning dataset for all samples in DomainBed. A diagnosis reveals that "direct supervision with reasoning chains is worse than label supervision" due to two issues: the optimization gap and reasoning mode mismatch. Subsequently, an InternVL3-8B is fine-tuned in two stages: MTCT uses the classification path as an anchor to pull the reasoning path across the optimization gap, and SARR replaces GPT-4o-style supervision with self-generated chains to eliminate mode mismatch, eventually yielding a reasoning-driven DG classifier.
 
-> SUMMARY → CAPTION → REASONING → REFLECTION → CONCLUSION
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["DomainBed 4 Benchmarks<br/>PACS / VLCS / OfficeHome / TerraInc"] --> B["DomainBed-Reasoning Dataset<br/>GPT-4o 5-stage Reasoning Chain<br/>No labels + REFLECTION + Rejection Sampling"]
+    B --> C["Diagnosis: Direct Chain Supervision is Worse<br/>① Optimization Gap ② Reasoning Mode Mismatch"]
+    C -->|"Challenge ①: Hard Convergence"| D["MTCT (Multi-Task Cross Training)<br/>CLS Path as Anchor + Joint Reasoning Optimization"]
+    D -->|"Challenge ②: GPT-4o Style Mismatch"| E["SARR (Self-Aligned Reasoning Regularization)<br/>Self-Gen Chain Replacement + Keep Correct Conclusion Only<br/>Rerun MTCT, Iterative N=3"]
+    E --> F["DG Classifier<br/>InternVL3-8B + LoRA"]
+```
 
-Key design choices: (1) **ground-truth labels are withheld**, forcing reasoning to rely on visual evidence; (2) a REFLECTION stage is added for self-verification (reducing spurious generation compared to LLaVA-CoT's four-stage format); (3) **rejection sampling**: multiple candidate chains are generated per sample, retaining only those containing all components with a consistent conclusion.
+### Key Designs
 
-### 2. Systematic Analysis of Two Core Challenges
+**1. DomainBed-Reasoning Dataset: Upgrading Supervision from Labels to Interpretable Reasoning**
 
-**Challenge 1: Optimization gap under reasoning supervision.** Experiments on TerraInc with InternVL3-8B show that in the zero-shot setting, adding reasoning chains improves ground-truth token probability by +43.28%p over no-thinking; however, after SFT, reasoning chain supervision underperforms direct label supervision by 0.93%p. The reason is that reasoning chain SFT shifts only 1.88%p of tokens from low to high probability (vs. +43.38%p for direct label SFT), converges more slowly, and yields a lower proportion of high-confidence classification tokens (86.33% vs. 92.23%).
+The "reasoning process invariance" hypothesis requires data that can carry it. Since standard DG benchmarks only provide images and category labels, GPT-4o is used to generate a five-stage reasoning chain for each sample across PACS/VLCS/OfficeHome/TerraInc: SUMMARY → CAPTION → REASONING → REFLECTION → CONCLUSION. Three details ensure quality: **no ground-truth labels** are provided during generation to force reasoning to be based entirely on visual evidence and prevent answer leakage; an additional REFLECTION stage is inserted to reduce invalid generation and improve stability; finally, **rejection sampling** is performed to keep only chains that contain all components and reach a self-consistent conclusion. The category-related steps in these chains are naturally consistent across domains, serving as the carrier for process-level invariance and the supervision source for subsequent training.
 
-**Challenge 2: Reasoning pattern mismatch.** A stylistic gap exists between GPT-4o reasoning and InternVL3-8B's own reasoning: GPT-4o chains contain rich contextual descriptions (background, viewpoint), yielding only +1.88%p token probability improvement after SFT; self-generated chains yield +29.74%p but are simpler and less informative. The top-15 tokens with the greatest entropy reduction under the two supervision sources are entirely disjoint — GPT-4o chains emphasize descriptive details, while self-generated chains emphasize category-relevant terms.
+**2. MTCT (Multi-Task Cross Training): Using Classification Path as an Anchor to Bridge the Optimization Gap**
 
-### 3. RD-MLDG Framework
+Directly training with the chains is problematic—this is "Challenge I: Optimization Gap." On TerraInc, zero-shot with reasoning chains can increase ground-truth token probability by +43.28%p, but during SFT, reasoning supervision performs 0.93%p lower than direct label supervision because reasoning SFT only increases token probability by +1.88%p (compared to +43.38%p for direct label SFT). MTCT addresses this by constructing two prompts for the same image: a no-thinking **classification path** that directly predicts label $y_i$, providing a stable signal, and a **reasoning path** that inputs the full chain $\mathbf{r}_i$, providing rich semantics. The combined optimization is:
 
-**Stage 1 — MTCT (Multi-Task Cross-Training)**: addresses Challenge 1. For each training image, two prompts are constructed simultaneously:
+$$\mathcal{L}_{\text{MTCT}}=\frac{1}{B}\sum_{i=1}^{B}\Big[-\log p_{\theta}(y_i\mid\mathbf{x}_i,\mathbf{q}_{\text{cls}})-\frac{1}{T_i}\sum_{t=1}^{T_i}\log p_{\theta}(r_{i,t}\mid\mathbf{r}_{i,<t},\mathbf{x}_i,\mathbf{q}_{\text{reason}})\Big]$$
 
-- **Classification path** (no-thinking): directly predicts the label → provides a stable training signal
-- **Reasoning path**: conditioned on the reasoning chain → provides rich semantic signal
+The reasoning chain loss is normalized by token length $T_i$ to prevent long chains from dominating the gradient. The classification path acts as an "anchor," guiding the reasoning optimization and preventing overfitting on long sequences without learning high-confidence tokens.
 
-The joint loss $\mathcal{L}_{\text{MTCT}}$ is optimized, with the reasoning chain loss normalized by token length to prevent long chains from dominating the gradient. The classification path acts as an "anchor" to guide optimization of the reasoning path and prevent overfitting to complex reasoning sequences.
+**3. SARR (Self-Aligned Reasoning Regularization): Gradually Replacing GPT-4o Style with the Model's Own Style**
 
-**Stage 2 — SARR (Self-Aligned Reasoning Regularization)**: addresses Challenge 2. After MTCT training, the model generates its own reasoning chains; only chains whose `<CONCLUSION>` matches the ground-truth label are retained as new supervision signals, followed by re-running MTCT. This process iterates for $N$ rounds (set to $N=3$ in experiments), progressively replacing GPT-4o-style reasoning with the model's own style, striking a balance between semantic richness and optimizability.
+MTCT enables training, but "Challenge II: Reasoning Mode Mismatch" remains: GPT-4o chains are full of descriptive context (background, perspective), leading to only a +1.88%p token probability increase after SFT. Conversely, SFT with self-generated chains yields a +29.74%p increase but lacks informational depth. SARR allows the model to generate its own chains after MTCT, keeping only those where the `<CONCLUSION>` matches ground-truth labels $\hat{\mathbf{r}}_i$ as refined supervision. The model is then re-tuned using the same $\mathcal{L}_{\text{SARR}}$ target for $N$ iterations (typically $N=3$). Each round replaces part of the hard-to-optimize GPT-4o descriptions with the model's own style, balancing semantic richness and optimizability.
 
-Implementation details: InternVL3-8B backbone, LoRA rank 8 (applied to both visual encoder and language decoder), 3 epochs per stage, batch size 128, lr 5e-4, AdamW, 4× A100 80GB.
+### Loss & Training
+
+Both stages share the $\mathcal{L}_{\text{MTCT}}$ form of visual-classification plus normalized reasoning chain loss. SARR rounds simply replace the supervision chain from GPT-4o's version to the self-generated chain $\hat{\mathbf{r}}_i$. InternVL3-8B is used as the base with LoRA rank 8 applied to both vision encoders and language decoders. Each stage runs for 3 epochs with a batch size of 128, a learning rate of 5e-4, using the AdamW optimizer on 4× A100 80GB.
 
 ## Key Experimental Results
 
-### Main Results: DomainBed Standard Benchmark
+### Main Results: SOTA Comparison on DomainBed Benchmarks
 
-| Method | Backbone | PACS | VLCS | OfficeHome | TerraInc | **Avg.** |
-|--------|----------|------|------|------------|----------|----------|
+| Method | Backbone | PACS | VLCS | OfficeHome | TerraInc | **Average** |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | CORAL | ResNet-50 | 86.20 | 78.80 | 68.70 | 47.60 | 70.33 |
 | SMOS | ResNet-50 | 89.40 | 79.80 | 71.60 | 55.40 | 74.05 |
 | SWAD | ViT-B/16 | 91.30 | 79.40 | 76.90 | 45.40 | 73.25 |
@@ -73,61 +81,55 @@ Implementation details: InternVL3-8B backbone, LoRA rank 8 (applied to both visu
 | InternVL3-8B | MLLM | 96.26 | 85.67 | 85.10 | 46.84 | 78.47 |
 | **RD-MLDG** | **MLLM** | **98.13** | **87.03** | **91.73** | **70.65** | **86.89** |
 
-RD-MLDG achieves an average accuracy of 86.89%, surpassing GPT-4o by +3.43%p and the strongest CLIP-based method DGCLDTP by +3.70%p. The improvement on TerraInc is particularly striking — from InternVL3-8B's 46.84% to 70.65% (+23.81%p), even exceeding GPT-4o's 60.49% by +10.16%p.
+RD-MLDG achieves an average accuracy of 86.89%, surpassing GPT-4o by +3.43%p and the strongest CLIP method DGCLDTP by +3.70%p. The improvement on TerraInc is particularly striking—rising from 46.84% (InternVL3-8B) to 70.65% (+23.81%p), even exceeding GPT-4o by +10.16%p.
 
 ### Ablation Study (InternVL3-8B, OfficeHome / TerraInc)
 
-| Configuration | OfficeHome | $\Delta$ | TerraInc | $\Delta$ |
-|---------------|------------|----------|----------|----------|
+| Config | OfficeHome | $\Delta$ | TerraInc | $\Delta$ |
+| :--- | :--- | :--- | :--- | :--- |
 | Zero-shot | 85.10 | — | 46.84 | — |
-| + CLS only (direct classification) | 89.39 | — | 66.69 | — |
-| + Reasoning only (baseline) | 88.76 | — | 64.56 | — |
+| + CLS only | 89.39 | — | 66.69 | — |
+| + Reasoning only (Baseline) | 88.76 | — | 64.56 | — |
 | + MTCT | 90.58 | +1.81 | 67.19 | +2.63 |
 | + SARR | 90.91 | +2.14 | 65.29 | +0.73 |
-| + MTCT + SARR (full) | **91.73** | **+2.97** | **70.65** | **+6.09** |
+| + MTCT + SARR (Full) | **91.73** | **+2.97** | **70.65** | **+6.09** |
 
-Key findings: (1) reasoning-only supervision underperforms direct classification (CLS only) by 0.63%p / 2.13%p, validating Challenge 1; (2) MTCT alone yields significant gains; (3) the combination of MTCT + SARR far exceeds either component individually, with a +6.09%p gain on TerraInc.
+Key Findings: (1) Using reasoning chains alone (Reasoning only) is lower than direct classification (CLS only) by 0.63%p / 2.13%p, validating Challenge I; (2) MTCT alone provides significant gains; (3) The combined effect of MTCT + SARR far exceeds individual usage, especially on TerraInc with a +6.09%p boost.
 
-### SARR Self-Annotation Round Analysis
+### Key Findings
 
-On TerraInc, accuracy is 70.06% at $N=1$, 70.59% at $N=2$ ($p<0.01$, significant), and 70.65% at $N=3$ (not significantly different from $N=2$, $p\approx0.07$); accuracy stabilizes at 70.50%–70.60% for $N>3$. Token probability distributions also converge within the first 2–3 rounds.
-
-### Token-Level Analysis of MTCT
-
-After MTCT, the proportion of high-confidence (>0.75) category tokens increases from 86.33% to 90.23%, while the low-confidence (<0.25) proportion decreases from 7.59% to 3.19%. Although 19.33% of all tokens in GPT-4o reasoning chains remain in the low-probability region (semantic details are not fully fitted), the critical tokens required for classification are substantially reinforced.
+*   **SARR Iteration Analysis**: On TerraInc, accuracy reaches 70.06% at $N=1$, 70.59% at $N=2$ (significant at $p<0.01$), and 70.65% at $N=3$ (not significantly different from $N=2$). Token probability distributions also converge within 2-3 rounds.
+*   **MTCT Token Analysis**: After MTCT, the proportion of high-confidence category tokens (>0.75) increases from 86.33% to 90.23%, while the low-confidence proportion (<0.25) drops from 7.59% to 3.19%. Although 19.33% of GPT-4o chain tokens remain in the low-probability zone (semantic details being hard to fit), critical classification tokens are significantly enhanced.
 
 ## Highlights & Insights
 
 **Highlights**:
-
-- **A novel "process-level invariance" perspective**: the paper advances from feature-level invariance to reasoning process-level invariance, as the category-relevant reasoning steps within reasoning chains are naturally consistent across domains.
-- **Problem-driven method design**: two challenges (optimization gap + pattern mismatch) are first systematically analyzed, then addressed in a targeted manner via MTCT and SARR, yielding a rigorous logical structure.
-- **Remarkable gains on TerraInc**: +23.81%p over the base model and +10.16%p over GPT-4o, demonstrating that reasoning chains are especially effective in scenarios with large domain shifts.
+*   **A New Perspective on "Process-Level Invariance"**: Elevates DG from feature-level invariance to reasoning process-level invariance; category-related steps in reasoning chains are naturally consistent across domains.
+*   **Problem-Driven Design**: The systematic analysis of the two challenges (optimization difficulty and mode mismatch) leads to targeted designs (MTCT and SARR), forming a rigorous logic.
+*   **Exceptional Performance on TerraInc**: Improvements of +23.81%p over the base model and +10.16%p over GPT-4o suggest that reasoning chains are particularly effective for scenarios with dramatic domain shifts.
 
 **Limitations**:
-
-- Initial reasoning chain generation relies on GPT-4o, incurring non-trivial data construction costs.
-- Validation is limited to classification tasks; whether reasoning-driven DG generalizes to detection/segmentation remains unexplored.
-- The training requirement of 4× A100 GPUs poses a non-trivial barrier to broad reproducibility.
+*   Dependence on GPT-4o for initial reasoning chains entails high data construction costs.
+*   Verification is limited to classification tasks; it is unclear if reasoning-driven DG generalizes to detection or segmentation.
+*   Training overhead (4× A100) presents a barrier for widespread reproduction.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ First reasoning-driven DG framework + DomainBed-Reasoning dataset
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Four DG benchmarks + dual-model ablations + token-level analysis + parameter sensitivity
-- Writing Quality: ⭐⭐⭐⭐⭐ Complete logical loop from challenge discovery → analysis → method → validation
-- Value: ⭐⭐⭐⭐⭐ Opens a new reasoning-driven paradigm for domain generalization
+*   Novelty: ⭐⭐⭐⭐⭐ First reasoning-driven DG framework + DomainBed-Reasoning dataset.
+*   Experimental Thoroughness: ⭐⭐⭐⭐⭐ 4 DG benchmarks + dual-model ablation + token-level analysis + parameter sensitivity.
+*   Writing Quality: ⭐⭐⭐⭐⭐ Complete logical loop from challenge discovery to analysis to method and validation.
+*   Value: ⭐⭐⭐⭐⭐ Opens a new reasoning-driven paradigm for Domain Generalization.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
-- [\[CVPR 2026\] Towards Multimodal Domain Generalization with Few Labels](../../CVPR2026/multimodal_vlm/towards_multimodal_domain_generalization_with_few_labels.md)
-- [\[ICLR 2026\] VLM-SubtleBench: How Far Are VLMs from Human-Level Subtle Comparative Reasoning?](vlm-subtlebench_how_far_are_vlms_from_human-level_subtle_comparative_reasoning.md)
-- [\[ICLR 2026\] On the Generalization Capacities of MLLMs for Spatial Intelligence](on_the_generalization_capacities_of_mllms_for_spatial_intelligence.md)
+- [\[ICLR 2026\] Vid-LLM: A Compact Video-based 3D Multimodal LLM with Reconstruction–Reasoning Synergy](vid-llm_a_compact_video-based_3d_multimodal_llm_with_reconstructionreasoning_syn.md)
+- [\[ICLR 2026\] JUDO: A Juxtaposed Domain-Oriented Multimodal Reasoner for Industrial Anomaly QA](judo_a_juxtaposed_domain-oriented_multimodal_reasoner_for_industrial_anomaly_qa.md)
 - [\[ICLR 2026\] VTool-R1: VLMs Learn to Think with Images via Reinforcement Learning on Multimodal Tool Use](vtool-r1_vlms_learn_to_think_with_images_via_reinforcement_learning_on_multimoda.md)
-- [\[ICML 2026\] LIMSSR: LLM-Driven Sequence-to-Score Reasoning under Training-Time Incomplete Multimodal Observations](../../ICML2026/multimodal_vlm/limssr_llm-driven_sequence-to-score_reasoning_under_training-time_incomplete_mul.md)
+- [\[ICML 2026\] LIMSSR: LLM-Driven Sequence-to-Score Reasoning under Training-Time Incomplete Multimodal Observations](../../ICML2026/vlm_reasoning/limssr_llm-driven_sequence-to-score_reasoning_under_training-time_incomplete_mul.md)
+- [\[ICLR 2026\] VLM-SubtleBench: How Far Are VLMs from Human-Level Subtle Comparative Reasoning?](vlm-subtlebench_how_far_are_vlms_from_human-level_subtle_comparative_reasoning.md)
 
 </div>
 

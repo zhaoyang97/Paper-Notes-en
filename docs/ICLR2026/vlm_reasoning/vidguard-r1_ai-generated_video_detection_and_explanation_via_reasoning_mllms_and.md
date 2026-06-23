@@ -2,87 +2,87 @@
 title: >-
   [Paper Note] VidGuard-R1: AI-Generated Video Detection and Explanation via Reasoning MLLMs and RL
 description: >-
-  [ICLR 2026][Multimodal VLM][AI-generated video detection] VidGuard-R1 is the first video authenticity detector that fine-tunes an MLLM with GRPO (Group Relative Policy Optimization). By constructing a 140K shortcut-free…
+  [ICLR 2026][vlm_reasoning][GRPO] VidGuard-R1 is the first video authenticity detector to utilize Group Relative Policy Optimization (GRPO) reinforcement learning for fine-tuning MLLMs. By constructing a shortcut-free dataset of 140,000 real/fake video pairs and designing two specialized reward mechanisms—temporal artifact rewards and diffusion step qu
 tags:
-  - "ICLR 2026"
-  - "Multimodal VLM"
-  - "AI-generated video detection"
-  - "MLLM reasoning"
-  - "GRPO"
-  - "temporal artifacts"
-  - "explainable forensics"
+  - ICLR 2026
+  - vlm_reasoning
+  - GRPO
 date: 2026-05-08
-content_hash: 45889b8cda61e122
+content_hash: e0c5a110c1e3dbee
 ---
-
 # VidGuard-R1: AI-Generated Video Detection and Explanation via Reasoning MLLMs and RL
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2510.02282](https://arxiv.org/abs/2510.02282)  
 **Code**: [Project Page](https://vidguard-r1.github.io/)  
-**Area**: Multimodal VLM
+**Area**: Multimodal VLM  
 **Keywords**: AI-generated video detection, MLLM reasoning, GRPO, temporal artifacts, explainable forensics
 
 ## TL;DR
 
-VidGuard-R1 is the first video authenticity detector that fine-tunes an MLLM with GRPO (Group Relative Policy Optimization). By constructing a 140K shortcut-free real/fake video dataset and designing two specialized reward mechanisms—temporal artifact reward and diffusion-step quality reward—it achieves 86.17% accuracy on its in-house dataset and 95%+ zero-shot SOTA performance on GenVidBench and GenVideo benchmarks, while generating interpretable chain-of-thought reasoning.
+VidGuard-R1 is the first video authenticity detector to utilize Group Relative Policy Optimization (GRPO) reinforcement learning for fine-tuning MLLMs. By constructing a shortcut-free dataset of 140,000 real/fake video pairs and designing two specialized reward mechanisms—temporal artifact rewards and diffusion step quality rewards—it achieves 86.17% accuracy on its internal dataset and reaches 95%+ SOTA zero-shot detection performance on the GenVidBench and GenVideo benchmarks, while generating explainable Chain-of-Thought reasoning.
 
 ## Background & Motivation
 
-**Background**: AI video generation models (Sora, HunyuanVideo, Wan, etc.) have rapidly improved output quality, blurring the boundary between generated and real videos and introducing serious societal risks such as misinformation, privacy violations, and fraud. Accurate and explainable detection tools are urgently needed.
+**Background**: The visual quality of AI video generation models (such as Sora, HunyuanVideo, and Wan) has surged, blurring the boundaries between synthetic and real videos. This poses significant social risks, including the spread of misinformation, privacy violations, and fraud, creating an urgent need for accurate and explainable detection tools.
 
 **Limitations of Prior Work**:
 
-1. **Limited generalization of traditional detectors**: Early deepfake detectors target facial forgery only and fail to generalize to open-domain multi-scene videos; spatiotemporal consistency methods are easily bypassed by post-processing.
-2. **Poor direct application of MLLMs**: Powerful MLLMs such as GPT-4o achieve only ~57% accuracy when directly applied to video authenticity judgment—barely above random guessing.
-3. **Weak reasoning under SFT fine-tuning**: SFT improves detection accuracy but fails to elicit meaningful explanations such as "why this video is fake"—reasoning ability remains insufficient.
-4. **Shortcuts in existing datasets**: Benchmarks such as GenVideo and GenVidBench contain systematic differences in resolution, frame rate, bitrate, and duration between real and fake videos, causing models to exploit metadata rather than visual authenticity.
+1. **Severe limitations of traditional detectors**: Early DeepFake detectors focused exclusively on facial forgery and fail to generalize to open-domain, multi-scene videos; spatio-temporal consistency methods are easily bypassed by post-processing.
+2. **Poor performance of direct MLLM application**: Powerful MLLMs like GPT-4o achieve only approximately 57% accuracy when directly prompted for video authenticity, lingering near random chance.
+3. **Weak reasoning in SFT-tuned models**: While SFT improves detection accuracy, models fail to generate meaningful explanations for "why a video is fake" due to insufficient reasoning capabilities.
+4. **Shortcuts in existing datasets**: Benchmarks like GenVideo and GenVidBench contain systematic differences in resolution, frame rate, bitrate, and duration between real and fake videos. Models exploit these metadata shortcuts rather than assessing visual authenticity.
 
-**Key Challenge**: Models must both accurately detect and deeply reason about "where the fake is," yet SFT can only teach output format without stimulating exploratory reasoning.
+**Key Challenge**: The model must perform both accurate detection and deep reasoning regarding "where the flaws are," yet SFT only teaches output formats without stimulating exploratory reasoning.
 
-**Goal**: The paper introduces a GRPO reinforcement learning framework that encourages models to autonomously discover physical inconsistencies through multi-path reasoning sampling and group ranking, and designs two specialized reward signals to guide temporal reasoning and quality awareness.
+**Ours**: This work introduces the GRPO reinforcement learning framework to encourage the autonomous discovery of physical inconsistencies through multi-path reasoning sampling and intra-group ranking. Two specialized reward signals are designed to guide temporal reasoning and quality perception.
 
 ## Method
 
 ### Overall Architecture
 
-VidGuard-R1 adopts a two-stage training pipeline: **Stage 1** SFT initialization (learning CoT reasoning format on 30K videos) → **Stage 2** RL-enhanced reasoning (further improving reasoning and detection with GRPO/DPO on 100K videos). The backbone model is Qwen2.5-VL-7B.
+VidGuard-R1 addresses the dual challenge of accurately judging video authenticity and clearly explaining the flaws. Since directly applying powerful MLLMs (GPT-4o accuracy is ~57%) or relying solely on supervised fine-tuning is insufficient, the authors utilize Qwen2.5-VL-7B as a backbone. The pipeline consists of two stages: first, Supervised Fine-Tuning (SFT) on 30K videos with Chain-of-Thought (CoT) annotations to teach the model a "think-before-judging" format; second, Reinforcement Learning (RL) on 100K videos using Group Relative Policy Optimization (GRPO) to stimulate autonomous exploration of reasoning paths. The core detection capability originates from the RL phase—specifically, through two specialized rewards designed for synthetic video defects: GRPO-TA (temporal artifacts) and GRPO-Q (quality). The former forces the model to observe inter-frame dynamics, while the latter enables perception of quality degradation. The model eventually outputs a real/fake judgment, an explainable CoT, and an estimated generation quality level.
 
-### Key Design 1: Shortcut-Free Training Data Construction
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["真实视频<br/>InternVid + ActivityNet"] --> B["无快捷方式数据集构建<br/>配对生成假视频 + 标准化 + CoT标注<br/>(140K视频对)"]
+    B --> C["SFT：学会先思考再判真伪的<br/>CoT输出格式"]
+    C --> D["GRPO 探索式强化学习<br/>采样多条推理路径 + 组内排名"]
+    D --> E["GRPO-TA<br/>注入时序伪影<br/>逼模型看帧间动态"]
+    D --> F["GRPO-Q<br/>扩散步数当质量标尺<br/>细粒度感知退化"]
+    E --> G["真/假判定 + CoT解释<br/>(+生成质量档位)"]
+    F --> G
+```
 
-A critical flaw in existing benchmarks is the systematic difference in low-level features between real and fake videos (e.g., real videos >10s, fake videos <4s), causing models to take shortcuts. This paper constructs a 140K video dataset to eliminate such biases:
+### Key Designs
 
-- **Real video sources**: InternVid (55K) + ActivityNet (15K)
-- **Generated videos**: HunyuanVideo-I2V (50K) + CogVideoX-5B (20K) generate corresponding fake videos from the first frame and text description of real videos
-- **Standardization**: All videos are unified to 49 frames, 8 FPS, 720×480 resolution, YUV420p format
-- **CoT annotation**: Qwen-2.5-VL-72B generates reasoning annotations covering dimensions such as action consistency, lighting consistency, texture artifacts, and physical plausibility
+**1. Shortcut-free Training Data: Learning Visual Authenticity Over Metadata**
 
-### Key Design 2: GRPO-TA (Temporal Artifact-Enhanced Reward)
+A critical issue in existing benchmarks (GenVideo, GenVidBench) is that real and fake videos are systematically separable by low-level features—real videos often exceed 10 seconds while generated ones are under 4 seconds, with varying resolutions and bitrates. Models can "cheat" by reading metadata without analyzing the visual content. This work constructs 140K video pairs (70K real + 70K fake) to eliminate these shortcuts. Real videos are sourced from InternVid (55K) and ActivityNet (15K). Fake videos are generated using HunyuanVideo-I2V (50K) and CogVideoX-5B (20K) conditioned on the first frame and text description of the real videos, ensuring content alignment and erasing bias. All videos are standardized to 49 frames, 8 FPS, 720×480, and YUV420p. Finally, Qwen2.5-VL-72B is used to automatically label CoT reasoning (across dimensions like object interaction, background detail, and lighting) given the ground truth labels for SFT. This forces the model to find flaws within the imagery itself.
 
-Standard GRPO tends to exploit local visual cues (pixel distortion, lighting anomalies) while neglecting temporal inconsistencies. GRPO-TA reinforces temporal reasoning by injecting temporal artifacts:
+**2. GRPO Exploratory RL: From Passive Imitation to Active Reasoning**
 
-- **Operation**: Videos are randomly subjected to segment repetition or frame-order reversal (operation regions are selected based on a Gaussian distribution)
-- **Asymmetric reward design**: Detecting temporal anomalies in real videos after tampering yields a higher reward $\alpha_1 = 0.5$ (harder to detect), while detecting tampered generated videos yields a lower reward $\alpha_2 = 0.3$ (easier to detect)
-- **Conditional activation**: Additional rewards are added only when the original video prediction is correct and the group accuracy of tampered videos satisfies $\tilde{p} > \mu = 0.8$
+Data alone is insufficient—SFT only teaches the model to mimic reasoning formats without necessarily improving discriminative power (SFT accuracy is only 66%). While DPO relies on static preference pairs, it struggles to capture evolving temporal inconsistencies. GRPO samples a group of $G$ reasoning outputs for the same video and updates the policy via intra-group relative ranking. The advantage term $A_i$ normalizes the reward $r_i$ within the group, encouraging the model to explore and compare multiple reasoning paths rather than memorizing one. Since accuracy serves as the reward signal (1 for correct, 0 for incorrect), the model learns that physical consistency is the key to correct judgments.
 
-Reward function:
+**3. GRPO-TA: Forcing Temporal Reasoning via Artifacts**
 
-$$r_i^{\text{GRPO-TA}} = \begin{cases} r_i^{\text{GRPO}} + w_i, & \text{if } o_i \text{ correct and } \tilde{p} > \mu \\ r_i^{\text{GRPO}}, & \text{otherwise} \end{cases}$$
+Standard GRPO tends to rely on single-frame cues (pixel distortion, lighting anomalies). GRPO-TA (GRPO with Temporal Artifacts) actively injects temporal disruptions during training to correct this bias. Selected regions of a video are subjected to segment repetition or frame reversal based on a Gaussian distribution, creating temporal anomalies. These tampered videos must be identified as fake. The reward design is asymmetric: correctly identifying tampered versions of real videos (which are more subtle) yields a higher reward $\alpha_1 = 0.5$, while tampered generated videos (which already have instability) yield $\alpha_2 = 0.3$. To ensure stability, the additional reward $w_i$ is only activated if the original video was predicted correctly and the intra-group accuracy $\tilde{p}$ exceeds $\mu = 0.8$:
 
-### Key Design 3: GRPO-Q (Quality Evolution Reward)
+$$r_i^{\text{GRPO-TA}} = \begin{cases} r_i^{\text{GRPO}} + w_i, & \text{若 } o_i \text{ 正确且 } \tilde{p} > \mu \\ r_i^{\text{GRPO}}, & \text{否则} \end{cases}$$
 
-This design exploits an intrinsic property of diffusion models—different numbers of reverse diffusion steps produce videos of different quality—to train the model for fine-grained quality awareness:
+This shifts the model's attention from static pixels to inter-frame dynamics.
 
-- **Data augmentation**: For 12K real videos, 5 quality levels (20%, 40%, 60%, 80%, 95%) are generated using 10–50 diffusion steps, yielding 72K samples per model
-- **Graded reward**: An exact match of the quality level receives full reward $\delta = 1$; an inexact match receives partial reward proportional to the distance between predicted and ground-truth steps: $g(o_i, y_i) = \delta \cdot (1 - |s(o_i) - s(y_i)|)$
-- **Beyond binary judgment**: The model not only classifies real vs. fake, but also estimates the degree of quality degradation in generated videos
+**4. GRPO-Q: Using Diffusion Steps as a "Quality Ruler" for Fine-grained Perception**
+
+Diffusion models naturally produce lower quality videos with more artifacts as the number of reverse denoising steps decreases. GRPO-Q (GRPO with Quality evolutionary videos) converts this continuous attribute into a supervised signal. For 12K real videos, five quality levels are generated using diffusion steps ranging from 10 to 50 (corresponding to 20%, 40%, 60%, 80%, and 95%). The label space is expanded to $\mathcal{Y} = \{\text{real}\} \cup \{\text{fake-}s\}$, where $s$ is the diffusion step. Rewards are given based on the proximity of the predicted level to the ground truth. If the real/fake judgment is wrong, the reward is 0. A perfect match yields $\delta = 1$, while correct real/fake judgments with step deviations are calculated via $g(o_i, y_i) = \delta \cdot (1 - |s(o_i) - s(y_i)|)$, where $s(\cdot)$ maps outputs to a normalized $[0,1]$ scale. This regression-like task significantly enhances the model's understanding of "fakeness."
 
 ## Key Experimental Results
 
-### Main Results: Detection Performance on In-House Dataset
+### Main Results: Detection Performance on Internal Dataset
 
-| Method | Type | CogVideoX Acc. (%) | HunyuanVideo Acc. (%) |
-|--------|------|:---:|:---:|
+| Method | Type | CogVideoX Accuracy(%) | HunyuanVideo Accuracy(%) |
+|------|------|:---:|:---:|
 | I3D | CNN | 64.78 | 62.13 |
 | SlowFast | CNN | 77.87 | 77.03 |
 | TimeSformer | Transformer | 78.53 | 74.55 |
@@ -95,49 +95,49 @@ This design exploits an intrinsic property of diffusion models—different numbe
 | VidGuard-R1 (GRPO-TA) | MLLM | 82.17 | 83.72 |
 | VidGuard-R1 (GRPO-Q) | MLLM | **84.32** | **86.17** |
 
-Key observations: (1) Qwen2.5-VL-7B/GPT-4o applied directly are near random (~50–57%); (2) SFT raises accuracy to 66%, still below traditional video models; (3) GRPO improves ~2% over DPO; (4) GRPO-TA and GRPO-Q each contribute ~2% and ~5% further gains, validating the effectiveness of specialized rewards.
+Key Observations: (1) Direct application of Qwen2.5-VL-7B/GPT-4o is near random (~50-57%); (2) SFT improves accuracy to 66% but remains inferior to traditional video models; (3) GRPO improves by ~2% over DPO; (4) GRPO-TA and GRPO-Q improve by ~2% and ~5% respectively, validating the specialized rewards.
 
-### Zero-Shot Cross-Benchmark Generalization
+### Zero-Shot Generalization Across Benchmarks
 
-| Method | GenVidBench Mean (%) | GenVideo Best Metric |
-|--------|:---:|:---:|
+| Method | GenVidBench Mean(%) | GenVideo Best Metric |
+|------|:---:|:---:|
 | MViT V2 | 79.90 | - |
 | GPT-4.1 mini | 59.62 | - |
-| VidGuard-R1 (GRPO, zero-shot) | 96.37 | F1: 0.97 |
-| VidGuard-R1 (GRPO, fine-tuned) | **97.53** | F1: **0.98** |
+| VidGuard-R1 (GRPO, Zero-shot) | 96.37 | F1: 0.97 |
+| VidGuard-R1 (GRPO, Fine-tuned) | **97.53** | F1: **0.98** |
 
-VidGuard-R1 achieves 96.37% zero-shot on GenVidBench, surpassing the previous SOTA (MViT V2, 79.90%) by approximately 17 percentage points; F1 on GenVideo also leads by a large margin. Fine-tuning further improves performance to 97.53%.
+VidGuard-R1 achieves 96.37% zero-shot on GenVidBench, exceeding the previous SOTA (MViT V2, 79.90%) by approximately 17 percentage points. It also leads significantly in F1 score on GenVideo.
 
-### Ablation Study: Contribution of Each Training Stage
+### Ablation Study: Contribution of Training Stages
 
 | Training Configuration | CogVideoX | HunyuanVideo | Gain Source |
-|------------------------|:---:|:---:|-------------|
-| SFT (CoT) | 66.18 | 63.19 | Basic reasoning format |
+|----------|:---:|:---:|----------|
+| SFT (CoT) | 66.18 | 63.19 | Base reasoning format |
 | + DPO | 79.13 | 80.88 | Preference alignment +15% |
-| + GRPO | 81.30 | 81.90 | Group-ranking exploration +2% |
+| + GRPO | 81.30 | 81.90 | Group rank exploration +2% |
 | + GRPO-TA | 82.17 | 83.72 | Temporal reasoning +1.8% |
-| + GRPO-Q | 84.32 | 86.17 | Quality awareness +2.5% |
+| + GRPO-Q | 84.32 | 86.17 | Quality perception +2.5% |
 
-Each stage yields clear and consistent improvements. The largest jump occurs from SFT to DPO (~15%), indicating that preference learning is critical; the graded quality reward in GRPO-Q delivers the strongest incremental gain.
+Each stage provides consistent improvements. The jump from SFT to DPO is the largest (~15%), indicating preference learning is vital, whereas GRPO-Q provides the strongest incremental gain among the RL variants.
 
 ## Highlights & Insights
 
-### Strengths
+### Novelty & Value
 
-1. **Pioneering contribution**: The first work to apply GRPO reinforcement learning to AI-generated video detection, establishing a "detection + explanation" paradigm.
-2. **Clever reward design**: The asymmetric temporal artifact reward in GRPO-TA and the diffusion-step quality reward in GRPO-Q both leverage intrinsic properties of generative models in a targeted manner.
-3. **Rigorous dataset construction**: Systematic shortcut elimination via standardization ensures models learn visual authenticity rather than metadata differences.
-4. **Strong generalization**: Zero-shot performance exceeds 95% on GenVidBench/GenVideo, far surpassing all prior methods.
+1. **Foundational Contribution**: This is the first work to apply GRPO reinforcement learning to AI-generated video detection, establishing a "Detection + Explanation" paradigm.
+2. **Ingenious Reward Design**: The asymmetric temporal artifact reward in GRPO-TA and the diffusion step reward in GRPO-Q leverage the inherent characteristics of generative models.
+3. **Dataset Rigor**: The use of standardized data eliminated metadata shortcuts, ensuring the model learns visual authenticity.
+4. **Outstanding Generalization**: Reaching 95%+ zero-shot performance on established benchmarks far exceeds prior methods.
 
 ### Limitations & Future Work
 
-1. The backbone is fixed to Qwen2.5-VL-7B; generalizability to other MLLMs is not verified.
-2. GRPO-Q requires generating videos at multiple diffusion steps, incurring high data construction costs.
-3. Given the rapid iteration of generative models, the lasting effectiveness of the detection approach remains uncertain.
+1. The backbone is fixed to Qwen2.5-VL-7B; generalizability across other MLLMs remains unverified.
+2. GRPO-Q requires generating videos at multiple diffusion steps, which entails high data construction costs.
+3. As generative models iterate rapidly, the long-term effectiveness of specific detection cues is uncertain.
 
 ### Rating
 
-⭐⭐⭐⭐ — A pioneering work introducing reasoning-based RL into video forensics. The method design is elegant, experiments are thorough, and the work provides a compelling paradigm for explainable AI safety detection.
+⭐⭐⭐⭐ — A pioneering work introducing reasoning-based RL to video forensics. The methodology is sophisticated and well-validated, providing a powerful paradigm for explainable AI security detection.
 
 <!-- RELATED:START -->
 
@@ -146,10 +146,10 @@ Each stage yields clear and consistent improvements. The largest jump occurs fro
 ## Related Papers
 
 - [\[ICLR 2026\] SophiaVL-R1: Reinforcing MLLMs Reasoning with Thinking Reward](sophiavl-r1_reinforcing_mllms_reasoning_with_thinking_reward.md)
-- [\[NeurIPS 2025\] Video-R1: Reinforcing Video Reasoning in MLLMs](../../NeurIPS2025/multimodal_vlm/video-r1_reinforcing_video_reasoning_in_mllms.md)
-- [\[ICLR 2026\] Shuffle-R1: Efficient RL Framework for Multimodal Large Language Models via Data-centric Dynamic Shuffle](shuffle-r1_efficient_rl_framework_for_multimodal_large_language_models_via_data-.md)
-- [\[ICLR 2026\] Sparsity Forcing: Reinforcing Token Sparsity of MLLMs](sparsity_forcing_reinforcing_token_sparsity_of_mllms.md)
-- [\[ICCV 2025\] AIGI-Holmes: Towards Explainable and Generalizable AI-Generated Image Detection via Multimodal Large Language Models](../../ICCV2025/multimodal_vlm/aigi-holmes_towards_explainable_and_generalizable_ai-generated_image_detection_v.md)
+- [\[ICLR 2026\] Perception-R1: Advancing Multimodal Reasoning Capabilities of MLLMs via Visual Perception Reward](perception-r1_advancing_multimodal_reasoning_capabilities_of_mllms_via_visual_pe.md)
+- [\[NeurIPS 2025\] Video-R1: Reinforcing Video Reasoning in MLLMs](../../NeurIPS2025/vlm_reasoning/video-r1_reinforcing_video_reasoning_in_mllms.md)
+- [\[ICLR 2026\] Game-RL: Synthesizing Multimodal Verifiable Game Data to Boost VLMs' General Reasoning](game-rl_synthesizing_multimodal_verifiable_game_data_to_boost_vlms_general_reaso.md)
+- [\[ICLR 2026\] ReVisual-R1: Advancing Multimodal Reasoning from Optimized Cold Start to Staged Reinforcement Learning](revisual-r1_advancing_multimodal_reasoning_from_optimized_cold_start_to_staged_r.md)
 
 </div>
 

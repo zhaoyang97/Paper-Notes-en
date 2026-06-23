@@ -2,85 +2,68 @@
 title: >-
   [Paper Note] OmniSpatial: Towards Comprehensive Spatial Reasoning Benchmark for Vision Language Models
 description: >-
-  [ICLR 2026][Multimodal VLM][Spatial Reasoning] Grounded in cognitive psychology, this work introduces OmniSpatial—the first comprehensive spatial reasoning benchmark—systematically covering 4 dimensions (dynamic reasonin…
+  [ICLR 2026][vlm_reasoning][Paper Note] OmniSpatial is the first comprehensive spatial reasoning benchmark built on cognitive psychology. It systematically covers 4 dimensions and 50 subcategories (Dynamic Reasoning, Complex Spatial Logic, Spatial Interaction, and Perspective Transformation) with 8.4K human-annotated QA pairs. Results show that the o3 model
 tags:
-  - "ICLR 2026"
-  - "Multimodal VLM"
-  - "Spatial Reasoning"
-  - "VLM Benchmark"
-  - "Cognitive Psychology"
-  - "Dynamic Reasoning"
-  - "Perspective Transformation"
+  - ICLR 2026
+  - vlm_reasoning
 date: 2026-05-08
-content_hash: e49ff2a067a38e61
+content_hash: 65b277d1e53e3125
 ---
-
 # OmniSpatial: Towards Comprehensive Spatial Reasoning Benchmark for Vision Language Models
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2506.03135](https://arxiv.org/abs/2506.03135)  
 **Code**: [Project Page](https://github.com/omnispatial)  
-**Area**: Multimodal VLM / Benchmarking
+**Area**: Multimodal VLM/Benchmarking  
 **Keywords**: Spatial Reasoning, VLM Benchmark, Cognitive Psychology, Dynamic Reasoning, Perspective Transformation
 
 ## TL;DR
 
-Grounded in cognitive psychology, this work introduces OmniSpatial—the first comprehensive spatial reasoning benchmark—systematically covering 4 dimensions (dynamic reasoning, complex spatial logic, spatial interaction, and perspective transformation) across 50 subcategories with 8.4K manually annotated QA pairs. The strongest reasoning model, o3, achieves only 56.33% while humans reach 92.63%, revealing that complex spatial reasoning remains a fundamental bottleneck for VLMs.
+OmniSpatial is the first comprehensive spatial reasoning benchmark built on cognitive psychology. It systematically covers 4 dimensions and 50 subcategories (Dynamic Reasoning, Complex Spatial Logic, Spatial Interaction, and Perspective Transformation) with 8.4K human-annotated QA pairs. Results show that the o3 model achieves only 56.33% compared to a human score of 92.63%→ revealing that complex spatial reasoning remains a core bottleneck for VLMs.
 
 ## Background & Motivation
 
-**Background**: Spatial reasoning is a core capability of VLMs. Existing benchmarks (SpatialBot-Bench, EmbSpatial, etc.) focus on basic spatial relationships—left/right discrimination, distance estimation, and object counting. State-of-the-art reasoning models (o3, Gemini-2.5-Pro) have already surpassed 90% accuracy on these benchmarks, indicating that basic spatial understanding is approaching saturation.
+**Background**: Spatial reasoning is a core capability of VLMs. Existing benchmarks (SpatialBot-Bench, EmbSpatial, etc.) focus on basic spatial relations—distinguishing left/right, estimating distance, and object counting. Recent reasoning models (o3, Gemini-2.5-Pro) have reached >90% accuracy on these benchmarks → basic spatial understanding is nearing saturation.
 
 **Limitations of Prior Work**:
-- Basic spatial relations (left/right/front/back/counting) ≠ complex spatial reasoning (rotation/deformation/path planning/viewpoint transformation) → existing benchmarks underestimate the true capability gap.
-- Existing benchmarks rely heavily on template-based automatic annotation → insufficient data diversity and challenge, with rigid question phrasing (e.g., "Is A to the left of B?").
-- Lack of a systematic taxonomy grounded in cognitive psychology → task designs across benchmarks are fragmented and limited in coverage.
+- Basic spatial relations (left/right/front/back/counting) $\neq$ complex spatial reasoning (rotation/deformation/path planning/viewpoint transformation) → existing benchmarks underestimate the real capability gap.
+- Existing benchmarks mostly use template-based automatic annotation → insufficient data diversity and challenge, with rigid question phrasing (e.g., "Is A to the left of B?").
+- Lack of systematic classification supported by cognitive psychology theory → task designs are fragmented with limited coverage.
 
-**Key Challenge**: The "high scores" VLMs achieve on existing benchmarks mask their fundamental deficiencies in complex spatial reasoning in real-world scenarios—understanding an AED location in an emergency requires not only identifying "to the right of the door," but also reading a schematic diagram, associating a map with the physical scene, and planning a route.
+**Key Challenge**: High scores on existing benchmarks mask fundamental deficiencies in real-world complex spatial reasoning. For instance, understanding the location of an AED in an emergency requires more than identifying "to the right of the door"; it requires interpreting diagrams, correlating maps with real scenes, and planning routes.
 
-**Goal**: To construct a "non-saturable" comprehensive spatial reasoning benchmark covering the full spectrum of spatial cognitive abilities from basic to high-order.
+**Goal**: Construct an "unsaturable" comprehensive spatial reasoning benchmark covering the full spectrum of spatial cognitive abilities from basic to high-level.
 
-**Key Insight**: Drawing from cognitive psychology theories of spatial cognition (Chabris 2006; Meneghetti 2022), the paper decomposes complex spatial reasoning into 4 complementary dimensions, using this framework to design 50 subcategories and ensure theoretical completeness.
+**Key Insight**: Grounded in cognitive psychology theories (Chabris 2006; Meneghetti 2022), complex spatial reasoning is divided into 4 complementary dimensions → using this framework to design 50 subcategories → ensuring theoretical completeness.
 
-**Core Idea**: Redefine the complete boundaries of spatial reasoning evaluation by leveraging cognitive psychology theories of spatial cognition.
+**Core Idea**: Redefine the complete boundaries of "spatial reasoning" evaluation using cognitive psychology.
 
 ## Method
 
-### Overall Architecture: A 4-Dimension × 50-Subcategory Taxonomy
+### Overall Architecture
 
-Visual-spatial reasoning is formalized as the mapping $f:(\mathbf{I}_{1:T}, q) \longrightarrow a$, where $\mathbf{I}_{1:T}$ is an RGB observation stream, $q$ is the task query, and $a$ belongs to a verifiable answer/action space. Non-visual priors are excluded to ensure that improvements can be attributed to visual reasoning.
+OmniSpatial formalizes visual-spatial reasoning as a mapping $f:(\mathbf{I}_{1:T}, q) \longrightarrow a$: given an RGB observation stream $\mathbf{I}_{1:T}$ and a task query $q$, the model outputs $a$ within a verifiable answer/action space. Annotations deliberately exclude questions solvable by linguistic common sense alone to ensure score improvements are attributable to visual reasoning. The benchmark is built around a cognitive-driven taxonomy—dividing spatial cognition into 4 complementary dimensions and 50 subcategories—complemented by a multi-source, human-annotated data pipeline and two inference enhancement strategies to probe bottlenecks.
 
-The taxonomy rests on two pillars: (i) cognitive psychology foundations—independent faculties of spatial cognition (visualization, mental rotation, perspective transformation, spatial updating); and (ii) going beyond basic relations—tasks already saturated in existing benchmarks no longer provide discriminative power.
+### Key Designs
 
-### Key Design 1: Comprehensive Coverage Across Four Cognitive Dimensions
+**1. Taxonomy of Four Cognitive Dimensions: Redefining "Spatial Reasoning" for Completeness**
 
-| Dimension | Subcategories | Core Cognitive Ability | Representative Tasks |
-|---|:---:|---|---|
-| **Dynamic Reasoning** | 11 | Inferring motion and temporal change from visual evidence | Motion trajectory prediction, physical simulation, traffic scene analysis |
-| **Complex Spatial Logic** | 15 | High-order reasoning over relations, transformations, and geometric structures | 3D structural inference, mental folding/unfolding, spatial compatibility judgment |
-| **Spatial Interaction** | 12 | Task-oriented reasoning under environmental constraints | Path planning, obstacle avoidance, context-aware action selection |
-| **Perspective Transformation** | 12 | Ability to adopt alternative viewpoints | Mental rotation, mirror image understanding, multi-agent perspective coordination |
+Existing benchmarks only cover basic relations like left/right or counting, which state-of-the-art models have already "solved" (>90% accuracy). OmniSpatial avoids saturation not by randomly adding difficult questions, but by deriving dimensions from independent spatial cognitive faculties (visualization, mental rotation, perspective taking, and spatial updating): Dynamic Reasoning (11 subcategories) infers motion and temporal changes from visual evidence; Complex Spatial Logic (15 subcategories) performs high-level reasoning on relations/transformations/geometry; Spatial Interaction (12 subcategories) executes task-oriented reasoning under environmental constraints; Perspective Transformation (12 subcategories) examines the ability to adopt other perspectives. These 50 subcategories ensure theoretical completeness and cover applications from robotics to autonomous driving.
 
-**Design Motivation**: Each dimension corresponds to a distinct cognitive faculty—dynamic reasoning emphasizes motion inference, complex logic captures abstract transformations, spatial interaction focuses on real-time environmental engagement, and perspective transformation reflects cognitive flexibility. Together, they cover the full application spectrum from robotic manipulation to autonomous driving.
+**2. Multi-source Collection and Conversational Human Annotation: Closing Template Loopholes**
 
-### Key Design 2: Multi-Source Data and Rigorous Manual Annotation
+Template-based automatic annotation lacks diversity and is easily exploited. OmniSpatial collects images from four sources to expand the distribution: web images (excluding synthetic content via `-ai` tags), public spatial cognition tests, driver's license exams from at least 3 countries (including frames from US driving videos), and existing datasets like MME and HOI4D. All questions are converted into conversational natural language (e.g., "If you are entering the classroom, which side are the students on?"). Every question is cross-validated by 6 annotators (Krippendorff's $\alpha = 0.84$), resulting in a 1.5K human-annotated test set and a 6.9K training set.
 
-Data are drawn from four sources: (1) web images—spanning multiple countries, scenes, and weather conditions, with specific search terms (-ai, -generated) to exclude synthetic content; (2) cognitive test items—public spatial cognition tests emphasizing pure spatial reasoning; (3) driving examination questions—license exam scenarios from at least 3 countries, with frame extraction and annotation from U.S. driving test videos; (4) existing datasets—MME (with depth information) and HOI4D (human-object interaction video frame sequences).
+**3. PointGraph and SpatialCoT Enhancement: Probing Bottlenecks with Geometric Priors**
 
-Annotation employs conversational natural phrasing (e.g., "If you are entering the classroom, on which side are the students?") rather than templates ("Is A to the left of B?"), with 6 annotators cross-validated at Krippendorff's $\alpha = 0.84$, indicating high agreement. The final benchmark comprises a 1.5K test set (fully manually annotated) and a 6.9K training set.
-
-### Key Design 3: PointGraph and SpatialCoT Augmentation Strategies
-
-**PointGraph**: An open-vocabulary grounding model (Florence-2) is used to localize multiple objects and extract centroids and bounding boxes, assembled into a JSON-format scene graph → providing VLMs with explicit geometric cues to assist reasoning.
-
-**SpatialCoT**: Inspired by human mental imagery, InstantMesh generates 6 novel viewpoints for each input image, combined into a multi-view mosaic → fed together with the question into the VLM → chain-of-thought reasoning. This provides strong geometric priors, helping resolve occlusion and viewpoint-related reasoning ambiguities.
+VLMs lack intrinsic 3D representations, leading to reasoning failures under occlusion or viewpoint ambiguity. Two strategies were designed as probes: PointGraph uses Florence-2 to ground objects and extract centroids/bounding boxes into a JSON scene graph as explicit geometric cues; SpatialCoT uses InstantMesh to generate 6 new viewpoints of the input image, forming a multi-view grid for chain-of-thought reasoning. Limited improvements from these strategies suggest that the bottleneck is the inherent lack of spatial cognitive grounding in VLMs rather than a lack of geometric labels.
 
 ## Key Experimental Results
 
 ### Main Results: Representative Model Performance on OmniSpatial-test (%)
 
-| Model | Avg. | Operations | Motion Analysis | Traffic | Localization | Geography | Strategy | Pattern Recognition | Geometric Reasoning | Egocentric | Allocentric |
-|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| Model | Avg | Manip. | Motion | Traffic | Loc. | Geo. | Strategy | Pattern | Geom. | Ego. | Allo. |
+|------|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | Random | 24.98 | - | 24.86 | 26.30 | 25.88 | 23.43 | 27.27 | 21.44 | 24.77 | 22.55 | 24.84 |
 | GPT-4o | 47.81 | 65.54 | 57.23 | 56.47 | 52.38 | 54.09 | 26.29 | 25.48 | 75.98 | 39.49 | 39.76 |
 | o3 | **56.33** | 71.89 | 66.18 | 61.18 | 68.57 | 65.45 | **40.21** | 29.68 | 77.06 | **48.40** | **48.19** |
@@ -89,48 +72,48 @@ Annotation employs conversational natural phrasing (e.g., "If you are entering t
 | SoFar-3B | 45.14 | 56.49 | 51.16 | 54.12 | 53.14 | 52.73 | 31.75 | 22.88 | **71.60** | 36.56 | 41.69 |
 | **Human** | **92.63** | **94.62** | **96.07** | **91.38** | **95.11** | **92.15** | **89.02** | **85.90** | **98.53** | **94.30** | **90.26** |
 
-### Saturation Comparison: Existing Benchmarks vs. OmniSpatial
+### Saturation Comparison: Existing Benchmarks vs OmniSpatial
 
 | Model | SpatialBot-Bench | EmbSpatial | OmniSpatial |
-|---|:---:|:---:|:---:|
+|------|:---:|:---:|:---:|
 | o3 | >90% | >90% | 56.33% |
 | Gemini-2.5-Pro | >90% | >90% | 55.19% |
 | Human | ~95% | ~95% | 92.63% |
 
 ### Key Findings
 
-- The strongest reasoning model, o3 (56.33%), vs. humans (92.63%) → a gap of 36 percentage points → complex spatial reasoning is far from solved.
-- **Strategy (~40%) and Pattern Recognition (~30%)** are the most challenging dimensions → even o3 answers fewer than half correctly.
-- Perspective transformation (egocentric/allocentric, ~48%/~48%) proves notably difficult → VLMs lack intrinsic 3D representations and mental rotation capabilities.
-- Specialized spatial models (SpatialBot, RoboPoint) show no advantage on OmniSpatial (35–40%) → their "specialized" training sets are too simplistic.
-- PointGraph and SpatialCoT improve performance on certain dimensions but with limited gains → the root cause is a deficiency in fundamental spatial cognitive abilities.
+- Strongest model o3 (56.33%) vs Human (92.63%) → 36 percentage point gap → complex spatial reasoning is far from solved.
+- **Strategy (~40%) and Pattern Recognition (~30%)** are the most difficult dimensions → even o3 is only half correct.
+- Perspective Transformation (Egocentric/Allocentric, ~48%) is significantly challenging → VLMs lack internal 3D representations and mental rotation capabilities.
+- Domain-specific spatial models (SpatialBot, RoboPoint) show no advantage on OmniSpatial (35-40%) → "specialized" training sets are too simplistic.
+- PointGraph and SpatialCoT yield limited gains → confirms that the root cause is the absence of basic spatial cognitive grounding.
 
 ## Highlights & Insights
 
-- **"A Warning Against Saturation"**: The paper clearly demonstrates that existing benchmarks have been "solved" by state-of-the-art models → the community needs harder evaluation standards. OmniSpatial elevates assessment from pattern matching to cognitive reasoning.
-- **Theoretical Anchor in Cognitive Psychology**: Rather than arbitrarily adding difficult questions, the taxonomy is derived from spatial cognition theory → systematicity and completeness are theoretically guaranteed.
-- **Diagnostic Value of 50 Subcategories**: Difficulty varies dramatically across subtasks (geometric reasoning ~75% vs. pattern recognition ~30%) → providing precise guidance for model improvement.
-- **Human Performance Upper Bound at 92.63%**: Even humans do not achieve 100% → some tasks (e.g., pattern recognition at 85.90%) are genuinely challenging for humans as well → demonstrating the depth of the benchmark design.
+- **"Warning of Saturation"**: Clearly demonstrates that existing benchmarks are "solved," signaling the need for harder benchmarks that shift from "Pattern Matching" to "Cognitive Reasoning."
+- **Theoretical Anchoring in Cognitive Psychology**: The benchmark is not just a collection of hard questions; it is theoretically grounded, ensuring systematicity and completeness.
+- **Diagnostic Value of 50 Subcategories**: Significant variance in difficulty (Geometry Reasoning ~75% vs. Pattern Recognition ~30%) provides precise directions for model improvement.
+- **Human Upper Bound of 92.63%**: Even humans do not reach 100% on some tasks (e.g., Pattern Recognition 85.90%), proving the depth and challenge of the question design.
 
 ## Limitations & Future Work
 
-- The benchmark primarily relies on static images and a small number of video frames → dynamic spatial reasoning can be further extended to continuous video.
-- All 3D reasoning tasks are still conducted on 2D images → truly interactive 3D environments (VR/simulators) are not addressed.
-- Manual annotation ensures high quality but incurs large scaling costs → semi-automatic annotation pipelines should be explored for continuous data expansion.
-- PointGraph and SpatialCoT show limited effectiveness as augmentation strategies → more fundamental improvements may require introducing 3D spatial priors at the model architecture level.
+- Primarily based on static images or short video frames → dynamic spatial reasoning could be expanded to continuous video.
+- 3D reasoning tasks are conducted on 2D images → true 3D interactive environments (VR/Simulators) are not yet involved.
+- Human annotation is high-quality but costly → semi-automated annotation schemes should be explored for scaling.
+- PointGraph and SpatialCoT have limited effects → fundamental improvements likely require introducing 3D spatial priors at the architectural level.
 
 ## Related Work & Insights
 
-- **vs. SpatialBot-Bench/EmbSpatial**: Only 6–8 basic spatial relation categories with template annotation → OmniSpatial offers 50 categories with manual annotation → a comprehensive upgrade in dimensionality and difficulty.
-- **vs. VSI-Bench (Yang et al., 2024)**: 8 indoor scene categories with template annotation and 288 samples → OmniSpatial covers indoor/outdoor scenes across multiple countries with 6.5K images.
-- **vs. RoboSpatial (Song et al., 2024)**: Template-based automatic annotation at the million-sample scale → large in volume but limited in diversity and difficulty.
-- **Insight**: Could OmniSpatial be integrated with embodied AI → enabling models to execute actions based on spatial reasoning in simulators → shifting from "answering questions" to "completing tasks"?
+- **vs SpatialBot-Bench/EmbSpatial**: These use only 6-8 basic spatial relations and template annotation → OmniSpatial offers 50 categories and human annotation, upgrading dimensions and difficulty.
+- **vs VSI-Bench (Yang et al., 2024)**: Focused on 8 indoor scenes with 288 samples → OmniSpatial covers international indoor/outdoor scenes with 6.5K images.
+- **vs RoboSpatial (Song et al., 2024)**: Reaches million-scale with automatic templates → large scale but limited in diversity and difficulty.
+- **Insight**: Could OmniSpatial be integrated with Embodied AI → allowing models to perform actions in a simulator after spatial reasoning → shifting from "answering questions" to "executing tasks"?
 
 ## Rating
 
 ⭐⭐⭐⭐⭐ (5/5)
 
-Overall assessment: The first comprehensive spatial reasoning benchmark grounded in cognitive psychology theory, featuring carefully curated manual annotations across 50 categories × 8.4K questions. The substantial gap between o3 (56%) and humans (93%) validates the benchmark's discriminative power and value—establishing a new standard for evaluating spatial cognitive abilities in VLMs.
+Overall Assessment: The first comprehensive spatial reasoning benchmark based on cognitive psychology. The massive gap between o3 (56%) and Human (93%) across 50 categories and 8.4K human-annotated samples proves its discriminative power and value—setting a new bar for VLM spatial cognitive evaluation.
 
 <!-- RELATED:START -->
 
@@ -138,11 +121,11 @@ Overall assessment: The first comprehensive spatial reasoning benchmark grounded
 
 ## Related Papers
 
-- [\[ICLR 2026\] Spatial-DISE: A Unified Benchmark for Evaluating Spatial Reasoning in Vision-Language Models](spatial-dise_a_unified_benchmark_for_evaluating_spatial_reasoning_in_vision-lang.md)
 - [\[ICLR 2026\] SpatiaLab: Can Vision-Language Models Perform Spatial Reasoning in the Wild?](spatialab_can_vision-language_models_perform_spatial_reasoning_in_the_wild.md)
-- [\[CVPR 2026\] SpatiaLQA: A Benchmark for Evaluating Spatial Logical Reasoning in Vision-Language Models](../../CVPR2026/multimodal_vlm/spatialqa_a_benchmark_for_evaluating_spatial_logical_reasoning_in_vision-languag.md)
-- [\[ICLR 2026\] Spatial CAPTCHA: Generatively Benchmarking Spatial Reasoning for Human-Machine Differentiation](spatial_captcha_generatively_benchmarking_spatial_reasoning_for_human-machine_di.md)
-- [\[CVPR 2026\] SpatialScore: Towards Comprehensive Evaluation for Spatial Intelligence](../../CVPR2026/multimodal_vlm/spatialscore_towards_comprehensive_evaluation_for_spatial_intelligence.md)
+- [\[ICLR 2026\] Spatial-DISE: A Unified Benchmark for Evaluating Spatial Reasoning in Vision-Language Models](spatial-dise_a_unified_benchmark_for_evaluating_spatial_reasoning_in_vision-lang.md)
+- [\[CVPR 2026\] SpatiaLQA: A Benchmark for Evaluating Spatial Logical Reasoning in Vision-Language Models](../../CVPR2026/vlm_reasoning/spatialqa_a_benchmark_for_evaluating_spatial_logical_reasoning_in_vision-languag.md)
+- [\[ICLR 2026\] Spatial Reasoning with Vision-Language Models in Ego-Centric Multi-View Scenes](spatial_reasoning_with_vision-language_models_in_ego-centric_multi-view_scenes.md)
+- [\[CVPR 2025\] ESPIRE: A Diagnostic Benchmark for Embodied Spatial Reasoning of Vision-Language Models](../../CVPR2025/vlm_reasoning/espire_a_diagnostic_benchmark_for_embodied_spatial_reasoning_of_vision-language_.md)
 
 </div>
 

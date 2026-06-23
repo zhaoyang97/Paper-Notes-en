@@ -2,144 +2,148 @@
 title: >-
   [Paper Note] VTool-R1: VLMs Learn to Think with Images via Reinforcement Learning on Multimodal Tool Use
 description: >-
-  [Multimodal VLM] This paper proposes VTool-R1, the first framework that trains VLMs via reinforcement fine-tuning to generate interleaved textual and visual intermediate reasoning steps…
+  [ICLR 2026][vlm_reasoning][RFT] The study proposes VTool-R1, the first framework that trains VLMs via Reinforcement Learning Fine-tuning (RFT) to generate interleaved textual and visual intermediate reasoning steps, enabling models to "think with images."
 tags:
-  - "Multimodal VLM"
+  - ICLR 2026
+  - vlm_reasoning
+  - RFT
+  - VLM
+  - GRPO
 date: 2026-05-08
-content_hash: f1183d911b5ed394
+content_hash: f99b4787ff7ef699
 ---
-
 # VTool-R1: VLMs Learn to Think with Images via Reinforcement Learning on Multimodal Tool Use
 
 ## Paper Information
 - **Conference**: ICLR 2026
 - **arXiv**: [2505.19255](https://arxiv.org/abs/2505.19255)
 - **Code**: [https://github.com/VTOOL-R1/vtool-r1](https://github.com/VTOOL-R1/vtool-r1)
-- **Area**: Vision-Language Models / Reinforcement Fine-Tuning / Tool Use / Multimodal Reasoning
-- **Keywords**: RFT, VLM, visual reasoning, tool use, GRPO, multimodal chain-of-thought
+- **Area**: Visual Language Models / RL Fine-tuning / Tool Use / Multimodal Reasoning
+- **Keywords**: RFT, VLM, Visual Reasoning, Tool Use, GRPO, Multimodal Chain-of-Thought
 
 ## TL;DR
-This paper proposes VTool-R1, the first framework that trains VLMs via reinforcement fine-tuning to generate interleaved textual and visual intermediate reasoning steps, enabling models to "think with images."
+The study proposes VTool-R1, the first framework that trains VLMs via Reinforcement Learning Fine-tuning (RFT) to generate interleaved textual and visual intermediate reasoning steps, enabling models to "think with images."
 
 ## Background & Motivation
 
 ### Core Problem
-RFT (Reinforcement Fine-Tuning) has substantially improved the reasoning capabilities of LLMs, yet attempts to replicate this success in VLMs remain confined to **purely textual reasoning**: models process images only during initial encoding, while the reasoning chain is generated entirely in text form, without intermediate visual reasoning steps.
+While RFT has significantly enhanced the reasoning capabilities of LLMs, attempts to replicate this in the VLM domain remain confined to **text-only reasoning**: models process images only during the initial encoding phase, and the reasoning chain is generated entirely in text, lacking intermediate visual reasoning steps.
 
-### Why Is Pure-Text Reasoning Insufficient?
-Even state-of-the-art VLMs may rely on linguistic shortcuts. For instance, when shown an image of a six-fingered hand and asked "how many fingers are there," the model may answer "five" based on the textual prior that "a hand has five fingers," ignoring the visual evidence.
+### Why is text-only reasoning insufficient?
+Even state-of-the-art VLMs may rely on linguistic shortcuts. For example, when shown an image of a hand with six fingers and asked "how many fingers," a model might answer "five" based on a linguistic reasoning path of "a hand has five fingers," ignoring the visual evidence.
 
 ### Limitations of Prior Work
-- **Visual Sketchpad**: Incorporates visual steps at inference time, but lacks a training mechanism and is only effective on strong models such as GPT-4o.
-- **Refocus**: Generates visual edits but relies on commercial models to pre-generate them, yielding poor results on weaker open-source models.
-- **R1-VL and similar**: Only trains purely textual CoT, without visual reasoning steps.
+- **Visual Sketchpad**: Introduces visual steps during inference but lacks a training mechanism, proving effective only on powerful models like GPT-4o.
+- **Refocus**: Generates visual edits but relies on commercial models for pre-generation, performing poorly on weaker open-source models.
+- **R1-VL, etc.**: Only trains pure text CoT, excluding visual reasoning steps.
 
 ## Method
 
-### Core Idea
+### Overall Architecture
 
-VTool-R1 integrates Python-based visual editing tools into the RFT pipeline, enabling VLMs to autonomously learn—through **outcome-driven rewards**—when and how to generate visual reasoning steps.
+VTool-R1 integrates a set of Python visual editing tools into the RFT rollout process, allowing the VLM to execute in two rounds within a single Q&A session. In the first round, the model examines the original image and question to decide whether to answer directly or call a tool to highlight, mask, or box key regions. If a tool is selected, the code is executed in a Python sandbox to produce an edited image. In the second round, the edited image is sent back to the model along with the original image to generate the final answer. During training, only the correctness of the final answer serves as the reward signal, backpropagated via GRPO. Consequently, the model autonomously learns when to "edit and look again" versus when an immediate answer is more efficient.
 
-### Inference and Rollout Pipeline
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    A["Original Image I + Question x<br/>(Prompt with Tool Descriptions)"] --> B
+    subgraph RO["Two-round Interleaved Rollout"]
+        direction TB
+        B["VLM Round 1<br/>Thought 0 + Action 0"] -->|Direct Answer| C["Final Answer y"]
+        B -->|Call Tool| T["Visual Editing Toolset<br/>Highlight / Mask / Draw"]
+        T --> P["Python Sandbox Execution<br/>→ Edited Image I′"]
+        P --> D["VLM Round 2<br/>Input I ⊕ I′ for Further Reasoning"]
+        D --> C
+    end
+    C --> J["Outcome-oriented Reward<br/>LLM Judge compares with Ground Truth → 0 / 1"]
+    J --> G["GRPO Group Relative Advantage<br/>Update Policy θ"]
+```
 
-Two-round model execution:
-1. **Round 1**: The VLM generates Thought 0 (analysis of salient regions) and Action 0 (a tool call or a direct answer) conditioned on the image and question.
-2. **Tool Execution**: The generated code is executed in a Python sandbox, producing an edited image $I'$.
-3. **Round 2**: The VLM reasons over both the original image and the edited image to produce the final answer.
+### Key Designs
 
-Formal representation:
-$$y \sim \pi_\theta(\cdot | I, x; \texttt{T}) = \pi_\theta(\cdot | I \oplus I', x) = \pi_\theta(\cdot | I \oplus \texttt{T}(y', I), x)$$
+**1. Two-round interleaved rollout: Transforming visual editing into a real input-altering step in the reasoning chain**
 
-where $\oplus$ denotes dual-image concatenated input.
+The problem with pure text CoT is that once the model enters reasoning, it relies solely on language and cannot re-examine image details, potentially leading to linguistic shortcuts like "a hand has five fingers" while ignoring pixel evidence. VTool-R1 allows the first round to produce Thought 0 (analyzing where to look) and Action 0 (a snippet of pseudo-code to call a visual tool, or "no action" to provide an answer directly). If a tool is called, the code produces an edited image $I'$ after execution in a Python sandbox. In the second round, the model receives both the original image and $I'$ as concatenated inputs. The entire chain can be formalized as $y \sim \pi_\theta(\cdot | I, x; \texttt{T}) = \pi_\theta(\cdot | I \oplus I', x) = \pi_\theta(\cdot | I \oplus \texttt{T}(y', I), x)$, where $\oplus$ denotes image concatenation and $\texttt{T}$ is the editing operator applying the tool call $y'$ to image $I$. If the model opts out of tool use, the first round directly outputs $y \sim \pi_\theta(\cdot | I, x)$. Crucially, the edited image is fed back into the same VLM as a second image input rather than being inserted as text (as in Search-R1). Thus, visual operations become intermediate steps that actually change the model's input. This study focuses on single-round tool calls, leaving multi-round iteration for future work.
 
-### RFT Training Objective
+**2. Visual editing toolset: Deterministic operators for selective attention**
 
-Only the final reasoning response $y$ is optimized (not the intermediate tool call $y'$):
+The tools follow the design of Refocus, aiming not for complexity but for "directing attention to where it belongs," simulating human visual processing where one focuses before judging. For tabular tasks, three operations are provided: Highlight Column/Row (overlaying a semi-transparent red layer), Mask Column/Row (covering irrelevant areas with a white mask), and Draw Column/Row (circling targets with a red bounding box). For chart tasks, similar operations are applied to individual bars. These operators are deterministic and reproducible, allowing the model to consistently "edit then look." Because the tools are simple and reliable, performance gains can be cleanly attributed to the decision-making of "when and how to use" them.
 
-$$\max_{\pi_\theta} \mathbb{E}_{[I,x] \sim \mathcal{D}, y \sim \pi_\theta(\cdot|I,x;\texttt{T})} [r_\phi(I,x,y)] - \beta \mathbb{D}_{KL}[\pi_\theta(\cdot|I,x;\texttt{T}) \| \pi_{\text{ref}}(\cdot|I,x;\texttt{T})]$$
+**3. Outcome-oriented reward: Avoiding reward hacking by rewarding only final correctness**
 
-GRPO-based optimization:
+While providing process rewards for tool calls seems logical, the authors found it susceptible to exploitation—rewarding "successful calls" led to fake tool use, while punishing "failed calls" caused the model to avoid tools entirely. Thus, VTool-R1 employs a lightweight LLM judge to compare the predicted answer with the ground truth, assigning a reward of 1 for a match and 0 otherwise. Tool efficacy is reflected indirectly through its contribution to the final answer. Training optimizes only the final response $y$ without direct supervision of the tool call $y'$; gradients related to tools are backpropagated indirectly based on whether they improved accuracy. This returns the decision-making power to the model to explore through trial and error, leading to adaptive tool-use behavior.
+
+### Loss & Training
+
+Training optimizes only the final reasoning response $y$ without direct supervision of intermediate tool calls $y'$. The objective is reward maximization with a KL constraint: $\max_{\pi_\theta} \mathbb{E}_{[I,x] \sim \mathcal{D},\, y \sim \pi_\theta(\cdot|I,x;\texttt{T})} [r_\phi(I,x,y)] - \beta \mathbb{D}_{KL}[\pi_\theta(\cdot|I,x;\texttt{T}) \| \pi_{\text{ref}}(\cdot|I,x;\texttt{T})]$. This is implemented using GRPO, where for each sample, $G$ rollouts are sampled and normalized using the group relative advantage $\hat{A}_{i,t}$:
 
 $$\mathcal{J}_{GRPO}(\theta) = \mathbb{E}\left[\frac{1}{G}\sum_{i=1}^{G}\frac{1}{|y_i|}\sum_{t=1}^{|y_i|}\min\left(r_{i,t}(\theta)\hat{A}_{i,t}, \text{clip}(r_{i,t}(\theta), 1-\epsilon, 1+\epsilon)\hat{A}_{i,t}\right) - \beta\mathbb{D}_{KL}[\pi_\theta||\pi_{\text{ref}}]\right]$$
 
-### Reward Design
+Since rewards are based only on the final answer, gradients for tool calls are backpropagated entirely via "whether it improved accuracy," which is the root cause of why outcome-based rewards avoid hacking.
 
-**Pure outcome-driven rewards** are adopted: a lightweight LLM judge evaluates whether the predicted answer matches the ground truth, assigning a reward of 1 for a match.
-
-**Key Finding**: Process rewards (penalizing failed tool calls or rewarding successful ones) lead to reward hacking—the model either avoids tool use entirely or generates spurious "successful" tool calls.
-
-### Visual Editing Tool Set
-
-For table tasks:
-- Highlight Column/Row: semi-transparent red overlay
-- Mask Column/Row: white mask over irrelevant regions
-- Draw Column/Row: red bounding box annotation
-
-For chart tasks: analogous operations applied to individual bars in bar charts.
-
-## Experiments
+## Key Experimental Results
 
 ### Main Results
 
 | Model | Configuration | Chart Split | Table Split |
-|-------|---------------|-------------|-------------|
+|------|------|-------------|-------------|
 | Qwen2.5-VL 3B | Pure Run | 51.8 | 41.3 |
-| Qwen2.5-VL 3B | Tool Use (no training) | 24.6 | 24.3 |
+| Qwen2.5-VL 3B | Tool Use (No Training) | 24.6 | 24.3 |
 | **Qwen2.5-VL 3B** | **VTool-R1** | **64.0** | **57.9** |
 | Qwen2.5-VL 7B | Pure Run | 76.2 | 64.7 |
 | **Qwen2.5-VL 7B** | **VTool-R1** | **80.7** | **71.7** |
 | GPT-4o | Pure Run | 82.9 | 75.7 |
 | GPT-4o | Tool Use | 80.5 | 77.0 |
 
-### Comparison with Other Methods
+### Comparison with Prior Work
 
 | Method | Chart Split | Table Split |
-|--------|-------------|-------------|
+|------|-------------|-------------|
 | Deepeyes (7B) | 60.0 | - |
 | R1-VL (7B) | 63.8 | 45.4 |
 | **VTool-R1 (7B)** | **80.7** | **71.7** |
 
 ### Key Findings
 
-1. **RFT enables more effective tool use**: After training, both the 3B and 7B models learn to use tools effectively.
-2. **Tool use is non-monotonically increasing**: The frequency and success rate of tool calls fluctuate during training, indicating that the model learns to use tools selectively.
-3. **Outcome-driven rewards are most reliable**: Process rewards lead to reward hacking.
-4. **VTool-R1 substantially outperforms Deepeyes**: 80.7 vs. 60.0 on the Chart Split.
-5. **Convergence is achieved within approximately 50 training steps.**
+1. **RFT enables better tool use**: After training, 3B/7B models learn to use tools effectively.
+2. **Tool use is non-monotonic**: Tool call frequency and success rates fluctuate during training; the model learns selective usage.
+3. **Outcome-based rewards are most reliable**: Process rewards lead to reward hacking.
+4. **VTool-R1 significantly outperforms Deepeyes**: 80.7 vs 60.0 (Chart Split).
+5. **Convergence within approximately 50 training steps**.
 
-### Failure Case Analysis
-- Correct visual steps are generated but second-round reasoning produces an incorrect answer.
-- Visual augmentations contain minor artifacts (e.g., digits occluded by bounding boxes).
-- The model incorrectly judges that no tool is needed, yet answers incorrectly without one.
-- Tool code execution fails.
+### Analysis of Failure Cases
+- Correct visual step generation followed by incorrect second-round reasoning.
+- Slight flaws in visual enhancement (e.g., numbers being obscured by bounding boxes).
+- Misjudging that a tool is not needed, leading to a direct incorrect answer.
+- Tool code execution failure.
 
 ## Highlights & Insights
 
-1. **First RFT framework to train VLMs to generate multimodal chain-of-thought.**
-2. **Elegant design**: Only the final response is optimized, allowing the model to autonomously decide whether to invoke a tool.
-3. **Practically effective**: The 3B model, after training, matches or surpasses GPT-4o's tool-use capability.
-4. **In-depth training dynamics analysis**: The evolution of tool-use frequency and success rate reveals adaptive behavior.
+1. **First framework to use RFT for training VLMs to generate multimodal CoT.**
+2. **Elegant Design**: Optimizing only the final response allows the model to autonomously decide whether to use tools.
+3. **Practical Effectiveness**: Trained 3B models rival or exceed the tool-use capabilities of GPT-4o.
+4. **In-depth Training Dynamics**: Evolution of tool frequency and success rates reveals adaptive behavior.
 
 ## Limitations & Future Work
 
-1. Currently supports only single-round tool calls; multi-round visual reasoning is left for future work.
-2. The tool set is limited to selective attention operations and has not yet been extended to more complex visual tools.
-3. Multi-image input support from the VLM is required.
-4. No precise oracle verifier for tool-call correctness is available.
-5. Training is computationally demanding (8×H200 GPUs for the 32B model).
+1. Currently supports only single-round tool calls; multi-round visual reasoning is left for the future.
+2. Toolset is limited to selective attention operations and has not expanded to more complex visual tools.
+3. Requires VLM support for multi-image input.
+4. Lack of a precise oracle validator for tool call correctness.
+5. Training requires significant GPU resources (32B model requires 8×H200).
 
 ## Related Work & Insights
 
-- **Visual CoT**: ViperGPT (via Python programs), Visual Sketchpad (inference-time sketchpad)
-- **LLM/VLM Tool Use**: Search-R1, ReTool — RFT with textual tools
-- **VLM RFT**: R1-V, Vision-R1 — text-only reasoning chains
-- **Concurrent Work**: Deepeyes, OpenThink-IMG — different tool and task designs
+- **Visual CoT**: ViperGPT (via Python programs), Visual Sketchpad (inference-time canvas).
+- **LLM/VLM Tool Use**: Search-R1, ReTool — RFT for text tools.
+- **VLM RFT**: R1-V, Vision-R1 — text-only reasoning chains.
+- **Concurrent Work**: Deepeyes, OpenThink-IMG — differing tool and task designs.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐⭐ — First successful training of VLMs to generate multimodal reasoning chains
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Multi-scale model comparisons with thorough training dynamics analysis
-- **Writing Quality**: ⭐⭐⭐⭐ — Clear structure with well-defined formulations
-- **Value**: ⭐⭐⭐⭐ — Open-source framework with practical applicability
+- **Novelty**: ⭐⭐⭐⭐⭐ — First successful use of RFT for multimodal reasoning chains.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Comprehensive comparison across model scales and analysis of training dynamics.
+- **Writing Quality**: ⭐⭐⭐⭐ — Clear structure and well-defined concepts.
+- **Value**: ⭐⭐⭐⭐ — Open-source framework with practical operability.
 
 <!-- RELATED:START -->
 
@@ -147,11 +151,11 @@ For chart tasks: analogous operations applied to individual bars in bar charts.
 
 ## Related Papers
 
-- [\[ICLR 2026\] Why Reinforcement Fine-Tuning Preserves Prior Knowledge Better: A Data Perspective](why_reinforcement_fine-tuning_enables_mllms_preserve_prior_knowledge_better_a_da.md)
-- [\[AAAI 2026\] ReCAD: Reinforcement Learning Enhanced Parametric CAD Model Generation with Vision-Language Models](../../AAAI2026/multimodal_vlm/recad_reinforcement_learning_enhanced_parametric_cad_model_generation_with_visio.md)
 - [\[ICLR 2026\] VLM-SubtleBench: How Far Are VLMs from Human-Level Subtle Comparative Reasoning?](vlm-subtlebench_how_far_are_vlms_from_human-level_subtle_comparative_reasoning.md)
-- [\[ICCV 2025\] R1-VL: Learning to Reason with Multimodal Large Language Models via Step-wise Group Relative Policy Optimization](../../ICCV2025/multimodal_vlm/r1-vl_learning_to_reason_with_multimodal_large_language_models_via_step-wise_gro.md)
-- [\[ICCV 2025\] SC-Captioner: Improving Image Captioning with Self-Correction by Reinforcement Learning](../../ICCV2025/multimodal_vlm/sc-captioner_improving_image_captioning_with_self-correction_by_reinforcement_le.md)
+- [\[ICLR 2026\] DeepEyes: Incentivizing "Thinking with Images" via Reinforcement Learning](deepeyes_incentivizing_thinking_with_images_via_reinforcement_learning.md)
+- [\[ICLR 2026\] ReVisual-R1: Advancing Multimodal Reasoning from Optimized Cold Start to Staged Reinforcement Learning](revisual-r1_advancing_multimodal_reasoning_from_optimized_cold_start_to_staged_r.md)
+- [\[ICLR 2026\] Thyme: Think Beyond Images](thyme_think_beyond_images.md)
+- [\[CVPR 2026\] Thinking With Videos: Multimodal Tool-Augmented Reinforcement Learning for Long Video Reasoning](../../CVPR2026/vlm_reasoning/thinking_with_videos_multimodal_tool-augmented_reinforcement_learning_for_long_v.md)
 
 </div>
 

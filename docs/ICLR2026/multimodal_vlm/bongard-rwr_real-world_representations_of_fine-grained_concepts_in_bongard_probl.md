@@ -2,120 +2,129 @@
 title: >-
   [Paper Note] Bongard-RWR+: Real-World Representations of Fine-Grained Concepts in Bongard Problems
 description: >-
-  [ICLR 2026][Multimodal VLM][Bongard problems] Bongard-RWR+ is a benchmark comprising 5,400 Bongard problems, constructed via a VLM-based pipeline (Pixtral-12B + Flux.1-dev) that automatically generates photorealistic ima…
+  [ICLR 2026][Multimodal VLM][Bongard problems] The authors construct Bongard-RWR+, a benchmark containing 5400 Bongard problems, using a VLM pipeline (Pixtral-12B + Flux.1-dev) to automatically generate photorealistic images representing abstract concepts. Systematic evaluation reveals that state-of-the-art (SOTA) VLMs struggle to discern fine-grained visual concep
 tags:
-  - "ICLR 2026"
-  - "Multimodal VLM"
-  - "Bongard problems"
-  - "abstract visual reasoning"
-  - "few-shot learning"
-  - "VLM benchmark"
-  - "fine-grained concepts"
+  - ICLR 2026
+  - Multimodal VLM
+  - Bongard problems
+  - abstract visual reasoning
+  - few-shot learning
+  - VLM benchmark
+  - fine-grained concepts
 date: 2026-05-08
-content_hash: d245022a5c5b705c
+content_hash: 8f57f547a11cbf88
 ---
-
 # Bongard-RWR+: Real-World Representations of Fine-Grained Concepts in Bongard Problems
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2508.12026](https://arxiv.org/abs/2508.12026)  
 **Code**: Available  
-**Area**: Multimodal VLM
+**Area**: Multimodal VLM  
 **Keywords**: Bongard problems, abstract visual reasoning, few-shot learning, VLM benchmark, fine-grained concepts
 
 ## TL;DR
-Bongard-RWR+ is a benchmark comprising 5,400 Bongard problems, constructed via a VLM-based pipeline (Pixtral-12B + Flux.1-dev) that automatically generates photorealistic images to represent abstract concepts. Systematic evaluation reveals that state-of-the-art VLMs struggle to discriminate fine-grained visual concepts such as contour, rotation, and angle, with accuracy dropping as low as 19%.
+The authors construct Bongard-RWR+, a benchmark containing 5400 Bongard problems, using a VLM pipeline (Pixtral-12B + Flux.1-dev) to automatically generate photorealistic images representing abstract concepts. Systematic evaluation reveals that state-of-the-art (SOTA) VLMs struggle to discern fine-grained visual concepts such as contours, rotation, and angles, with accuracy reaching as low as 19%.
 
 ## Background & Motivation
-**Background**: Bongard Problems (BPs) are a classic test of abstract visual reasoning — given six images on each side, the task is to identify the abstract concept that distinguishes the two groups. Existing BP datasets are either synthetic black-and-white images (Bongard-LOGO) or use real images to represent coarse-grained concepts (e.g., "a person driving").
+**Background**: Bongard Problems (BP) are classic tests of abstract visual reasoning—given 6 images on the left and 6 on the right, the task is to identify the abstract concept that distinguishes the two sets. Existing BP datasets either consist of synthetic black-and-white images (Bongard-LOGO) or use real-world images to represent coarse-grained concepts (e.g., "person driving").
 
-**Limitations of Prior Work**: Although Bongard-RWR uses real images to represent fine-grained abstract concepts, it is hand-constructed with only 60 instances — a scale too small for robust evaluation. Moreover, no systematic diagnosis of VLM capabilities across different reasoning dimensions exists.
+**Limitations of Prior Work**: Although Bongard-RWR uses real-world images for fine-grained abstract concepts, it contains only 60 manually constructed instances, which is too small for robust evaluation. Furthermore, there is a lack of systematic diagnosis of VLM capabilities across different reasoning dimensions.
 
-**Key Challenge**: VLMs perform reasonably well on coarse-grained concept recognition, but their ability to handle fine-grained abstract concepts (e.g., "arrows pointing in the same vs. different directions") remains unknown, necessitating a sufficiently large benchmark for systematic testing.
+**Key Challenge**: VLMs perform reasonably well on coarse-grained concept recognition, but their ability to identify fine-grained abstract concepts (e.g., "arrows pointing in the same direction vs. different directions") remains unknown—a sufficiently large benchmark is needed for systematic testing.
 
-**Goal**: How can Bongard problems involving fine-grained abstract concepts be constructed at scale with photorealistic imagery? And how can the reasoning boundaries of VLMs be systematically evaluated?
+**Goal**: How can photorealistic Bongard problems containing fine-grained abstract concepts be constructed at scale? How can the boundaries of VLM visual reasoning capabilities be systematically evaluated?
 
-**Key Insight**: A semi-automatic pipeline of I2T (image captioning) → T2T (description augmentation) → T2I (image generation) → human verification is employed to scale 60 Bongard-RWR instances up to 5,400.
+**Key Insight**: A semi-automatic pipeline of I2T (image description) → T2T (description augmentation) → T2I (image generation) → human verification is employed to expand the 60 Bongard-RWR instances to 5400.
 
-**Core Idea**: A VLM-based pipeline is used to automatically generate photorealistic images for Bongard problems, enabling large-scale evaluation of VLMs' fine-grained abstract reasoning limits.
+**Core Idea**: Automate the generation of photorealistic images in Bongard problems using a VLM pipeline to test the limits of fine-grained abstract reasoning in VLMs at scale.
 
 ## Method
 
 ### Overall Architecture
-Bongard-RWR+ is a benchmark paper rather than a methodology paper. Its core contributions are a semi-automatic data construction pipeline and a multi-task, multi-dimensional evaluation framework. The benchmark consists of 49 abstract concepts × 100 matrix variants = 5,400 BPs.
+This is a benchmark paper rather than a method paper. The problem addressed is that the original Bongard-RWR has only 60 manual instances, too small for systematic diagnosis of VLM fine-grained abstract reasoning. The authors build a semi-automatic pipeline to "batch replicate" the real images from these 60 seed BPs into a large number of new photorealistic images expressing the same abstract concepts, ultimately generating 100 variants from each of the 54 source matrices = 5400 BPs (covering 49 abstract concepts). The pipeline follows the chain of I2T (image → description) → T2T (description augmentation) → T2I (description → image) → diversity-based selection → human verification. The generated data is then paired with a 6-task evaluation system ranging from binary classification to free-form generation (ordered by difficulty), supplemented by diagnostic analysis of concept semantic grouping.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    A["60 Seed Bongard Problems<br/>(Bongard-RWR Manual Instances)"]
+    subgraph GEN["Semi-automatic Image Generation Pipeline (Design 1)"]
+        direction TB
+        B["Pixtral-12B Generates<br/>Positive + Negative Descriptions"] --> C["T2T Model Augmentation<br/>1 Positive -> 15 Phrasing Variants"]
+        C --> D["Flux.1-dev Generates<br/>Candidate Photorealistic Images"]
+        D --> E["ViT-L/14 Cosine Similarity<br/>Diversity Maximization Selection"]
+        E --> F["Human Verification<br/>Faithful Concept Expression"]
+    end
+    A --> GEN
+    GEN --> G["Bongard-RWR+ Benchmark<br/>54 Source Matrices × 100 = 5400 BPs"]
+    G --> H["Multi-task Evaluation System (Design 2)<br/>I1S/I2S, D1S/D2S, CS, CG Tasks"]
+    G --> I["Concept Semantic Grouping Analysis (Design 3)<br/>49 Concepts -> 9 Semantic Groups"]
+```
 
 ### Key Designs
 
-1. **Semi-Automatic Image Generation Pipeline**:
+**1. Semi-automatic Image Generation Pipeline: Scaling manual construction to replicable concepts**
 
-    - **Function**: Starting from hand-crafted BP images, generates large quantities of new photorealistic images representing the same abstract concepts.
-    - **Mechanism**: (1) Pixtral-12B generates a positive description (capturing the target concept) and a negative description (suppressing the opposing concept) for each image; (2) a T2T model augments each positive description into 15 diverse variants; (3) Flux.1-dev generates candidate images from these descriptions; (4) human verification ensures concept fidelity. Diversity-maximizing selection is performed using pairwise cosine similarity of ViT-L/14 embeddings.
-    - **Design Motivation**: Manual construction does not scale. Automated generation must ensure concept fidelity — positive/negative descriptions prevent T2I models from conflating opposing concepts.
+Manual annotation reaches its limit at 60 BPs, so the core is to automate the scaling process while ensuring "concept fidelity." The pipeline consists of four steps: first, Pixtral-12B generates both a positive description (capturing the concept) and a negative description (explicitly suppressing the opposing concept) for each seed image. Second, a T2T model expands each positive description into 15 varied phrasings to enhance image diversity. Third, Flux.1-dev generates candidate images from these descriptions. Finally, human verification ensures each image faithfully represents the target concept. The paired positive/negative descriptions are crucial—fine-grained concepts often come in opposing pairs (e.g., "same direction" vs. "different direction"); without negative constraints, T2I models easily mix the opposing concepts. After generating candidates, ViT-L/14 embeddings are used to calculate pairwise cosine similarities for diversity maximization, selecting the most distinct images for the BP to avoid redundancy.
 
-2. **Multi-Task Evaluation Framework (6 Task Types)**:
+**2. Multi-task Evaluation System: Pinpointing VLM capability boundaries via 6 graded tasks**
 
-    - **Function**: Systematically evaluates VLMs from easy to difficult settings.
-    - **I1S/I2S**: Single/dual test-image binary classification (assigning images to the left or right group).
-    - **D1S/D2S**: Classification after converting images to text descriptions via I2T (testing the effect of intermediate steps).
-    - **CS**: Selecting the correct concept from $K$ candidates ($K = 2, 4, 8, 16$).
-    - **CG**: Free-text generation of the correct concept description.
+Using a single task cannot identify which specific stage causes VLM failure. The authors designed 6 tasks covering the spectrum from perception to reasoning and generation. The most basic are I1S/I2S—providing 1 or 2 test images for binary classification into the left or right concept group. D1S/D2S first convert images into text descriptions via I2T before classification, isolating whether "visual perception" or "textual reasoning" is the bottleneck. CS (Concept Selection) requires the model to choose the correct concept from $K$ candidates ($K=2/4/8/16$), measuring the degradation curve as distractors increase. The most difficult, CG (Concept Generation), requires the model to generate correct concept descriptions in free-form text. The increasing difficulty from binary to multiple-choice to open-ended generation allows localization of when specific capabilities fail.
 
-3. **Semantic Grouping Analysis of Concepts**:
+**3. Concept Semantic Grouping Analysis: Locating difficult abstract categories via 9 semantic groups**
 
-    - **Function**: Groups the 49 concepts into 9 semantic categories (Size, Position, Count, Branching, Similarity, Contour, Shape, Rotation, Angle).
-    - **Design Motivation**: Pinpoints specific weaknesses of VLMs — identifying which abstract concept categories are most challenging and which are more tractable.
+Overall accuracy masks specific weaknesses. The authors group 49 abstract concepts into 9 semantic categories—Size, Position, Count, Branching, Similarity, Contour, Shape, Rotation, and Angle—and calculate accuracy per group. This precise localization revealed that groups relying on exact spatial relationships, such as Contour, Rotation, and Angle, achieved less than 50% accuracy, while more holistic concepts like Shape, Size, and Branching reached approximately 75%.
 
 ### Loss & Training
-N/A (benchmark paper; existing models are evaluated without training).
+N/A (Benchmark paper; evaluates existing models without training).
 
 ## Key Experimental Results
 
 ### Main Results (Concept Selection Task)
 
 | Model | K=2 | K=4 | K=8 | K=16 |
-|-------|-----|-----|-----|------|
+|------|-----|-----|-----|------|
 | InternVL2.5-78B | **91%** | **78%** | **68%** | **57%** |
 | Qwen2-VL-72B | 85% | 65% | 48% | 33% |
 | LLaVA-Next-110B | 73% | 45% | 30% | 19% |
 | MiniCPM-o-8B | 72% | 44% | 28% | 19% |
 
-### Binary Classification Tasks (I1S/I2S)
+### Binary Classification Task (I1S/I2S)
 
 | Model | I1S | I2S | D1S | D2S |
-|-------|-----|-----|-----|-----|
+|------|-----|-----|-----|-----|
 | InternVL2.5-78B | 0.50 | 0.39 | 0.57 | 0.49 |
 | Qwen2-VL-72B | 0.49 | 0.44 | 0.58 | 0.42 |
-| Random Baseline | 0.50 | 0.50 | 0.50 | 0.50 |
+| Random baseline | 0.50 | 0.50 | 0.50 | 0.50 |
 
 ### Key Findings
-- **Binary classification is near chance**: All VLMs achieve approximately 50% accuracy on I1S/I2S, equivalent to random guessing, demonstrating that VLMs are nearly incapable of inferring fine-grained abstract concepts from few-shot images.
-- **Concept selection degrades rapidly**: InternVL2.5 achieves 91% at $K=2$ (demonstrating some discriminative ability), but collapses to 57% at $K=16$ as the number of distractors increases.
-- **Significant variation across semantic groups**: Shape, Size, and Branching are relatively easy (~75%), whereas Contour, Rotation, and Angle are difficult (<50%) — the latter require precise spatial relational reasoning.
-- DeepSeek-R1 achieves 0.56 on the text-only D2S task, suggesting that textual reasoning is more effective than visual reasoning — the bottleneck for VLMs lies in visual perception rather than reasoning.
-- Color vs. grayscale input shows no significant difference, confirming that the target concepts are structural and color-independent.
-- Small models (MiniCPM-8B) and large models (LLaVA-110B) achieve comparable performance, indicating that model scale is not a determining factor.
+- **Binary Classification Near Random**: Accuracy for all VLMs on I1S/I2S is approximately 50%, equivalent to random guessing. This indicates VLMs can hardly infer fine-grained abstract concepts from few-shot images.
+- **Concept Selection is Moderate but Degrades Fast**: InternVL2.5 achieves 91% at K=2 (showing some discriminatory power), but collapses to 57% at K=16 as distractors increase.
+- **Significant Semantic Group Differences**: Shape/Size/Branching are easier (~75%), while Contour/Rotation/Angle are harder (<50%)—the latter depend on precise spatial relationships.
+- DeepSeek-R1 reaches 0.56 on text-only D2S, suggesting textual reasoning is more effective than visual reasoning—the VLM bottleneck lies in visual perception rather than reasoning.
+- No significant difference between color vs. grayscale, confirming concepts are structural and not color-dependent.
+- Performance of small models (MiniCPM-8B) is comparable to large models (LLaVA-110B), suggesting model size is not the deciding factor.
 
 ## Highlights & Insights
-- **Reveals a fundamental weakness of VLMs**: Even the strongest 78B-parameter VLMs perform near chance on few-shot abstract visual reasoning — a failure mode unlikely to be resolved through scaling alone.
-- **Methodological value of the semi-automatic pipeline**: The I2T → T2T → T2I → human verification workflow is reusable for other scenarios requiring large-scale conceptual datasets.
-- **Comprehensive multi-task evaluation design**: Progressing from binary classification to multi-way selection to free-form generation, the framework enables precise localization of capability boundaries.
+- **Reveals Fundamental VLM Weaknesses**: In few-shot abstract visual reasoning, even the strongest 78B VLMs are near random—this is not a problem that can be solved solely by scaling.
+- **Value of Semi-automatic Data Generation Methodology**: The I2T→T2T→T2I→human verification pipeline can be reused for other scenarios requiring large-scale conceptual datasets.
+- **Robust Multi-task Evaluation Design**: Moving from binary classification to multiple-choice and generation effectively pinpoints capability boundaries.
 
 ## Limitations & Future Work
-- Concept fidelity of generated images still requires human verification, preventing full automation.
-- The 49 concepts covered represent a limited subset of the 394 concepts in the original Bongard problems.
-- Evaluation is restricted to zero-shot/few-shot VLMs; whether fine-tuning could yield improvements remains untested.
-- Generated images may contain T2I model artifacts that interfere with concept judgment.
+- Concept fidelity in generated images still requires human verification (not fully automated).
+- The number of concepts (49) is limited and does not cover all 394 concepts from the original Bongard problems.
+- Evaluation is limited to zero-shot/few-shot VLMs; the impact of fine-tuning remains untested.
+- Generated images may contain T2I model artifacts, potentially affecting concept judgment.
 
 ## Related Work & Insights
-- **vs. Bongard-LOGO**: LOGO contains 12K instances but relies entirely on synthetic black-and-white images; RWR+ provides 5.4K instances with photorealistic imagery, more closely aligned with VLM training distributions.
-- **vs. Bongard-HOI/OpenWorld**: These benchmarks use coarse-grained concepts (e.g., "a person driving"), on which VLMs perform relatively well; RWR+ employs fine-grained abstract concepts that expose genuine VLM weaknesses.
-- **vs. ARC (Chollet)**: ARC similarly tests abstract reasoning but in a grid domain; RWR+ operates in the real-image domain, making the two complementary.
+- **vs. Bongard-LOGO**: LOGO has 12K instances but only synthetic black-and-white images; RWR+ has 5.4K photorealistic instances closer to the VLM training distribution.
+- **vs. Bongard-HOI/OpenWorld**: These use coarse-grained concepts (e.g., "person driving") which VLMs handle relatively well; RWR+ uses fine-grained abstract concepts, exposing true VLM weaknesses.
+- **vs. ARC (Chollet)**: Tests abstract reasoning in the grid domain; RWR+ tests the real-image domain, providing a complementary perspective.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Semi-automatic generation pipeline + multi-dimensional evaluation framework
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Four large models, six task types, nine semantic groups, and extensive ablations
-- Writing Quality: ⭐⭐⭐⭐ Clear structure and comprehensive evaluation
-- Value: ⭐⭐⭐⭐ Establishes the capability ceiling and bottlenecks of VLMs in fine-grained reasoning
+- Novelty: ⭐⭐⭐⭐ (Semi-automatic generation + multi-dimensional evaluation)
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ (4 large models, 6 tasks, 9 semantic groups, comprehensive ablations)
+- Writing Quality: ⭐⭐⭐⭐ (Clear structure, comprehensive evaluation)
+- Value: ⭐⭐⭐⭐ (Defines the upper limits and bottlenecks of fine-grained VLM reasoning)
 
 <!-- RELATED:START -->
 
@@ -123,11 +132,11 @@ N/A (benchmark paper; existing models are evaluated without training).
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] FOCUS: Internal MLLM Representations for Efficient Fine-Grained Visual Question Answering](../../NeurIPS2025/multimodal_vlm/focus_internal_mllm_representations_for_efficient_fine-grained_visual_question_a.md)
-- [\[ICLR 2026\] Can Vision-Language Models Answer Face to Face Questions in the Real-World?](can_vision-language_models_answer_face_to_face_questions_in_the_real-world.md)
-- [\[ICML 2026\] TimeSpot: Benchmarking Geo-Temporal Understanding in Vision-Language Models in Real-World Settings](../../ICML2026/multimodal_vlm/timespot_benchmarking_geo-temporal_understanding_in_vision-language_models_in_re.md)
-- [\[CVPR 2026\] MA-Bench: Towards Fine-grained Micro-Action Understanding](../../CVPR2026/multimodal_vlm/ma-bench_towards_fine-grained_micro-action_understanding.md)
-- [\[CVPR 2026\] Towards Real-World Document Parsing via Realistic Scene Synthesis and Document-Aware Training](../../CVPR2026/multimodal_vlm/towards_real-world_document_parsing_via_realistic_scene_synthesis_and_document-a.md)
+- [\[ICLR 2026\] WorldSense: Evaluating Real-World Omnimodal Understanding for Multimodal LLMs](worldsense_evaluating_real-world_omnimodal_understanding_for_multimodal_llms.md)
+- [\[ICLR 2026\] UniF2ace: A Unified Fine-grained Face Understanding and Generation Model](unif2ace_a_underlineunified_underlinefine-grained_underlineface_understanding_an.md)
+- [\[ICLR 2026\] MotionSight: Boosting Fine-Grained Motion Understanding in Multimodal LLMs](motionsight_boosting_fine-grained_motion_understanding_in_multimodal_llms.md)
+- [\[CVPR 2025\] FLAIR: VLM with Fine-grained Language-informed Image Representations](../../CVPR2025/multimodal_vlm/flair_vlm_with_fine-grained_language-informed_image_representations.md)
+- [\[ICLR 2026\] GranViT: A Fine-Grained Vision Model For Autoregressive Multimodal Large Language Models](granvit_a_fine-grained_vision_model_for_autoregressive_multimodal_large_language.md)
 
 </div>
 

@@ -2,154 +2,168 @@
 title: >-
   [Paper Note] ATLAS: Adaptive Transfer Scaling Laws for Multilingual Pretraining, Finetuning, and Decoding the Curse of Multilinguality
 description: >-
-  [ICLR 2026][Multilingual & Machine Translation][scaling laws] This paper proposes the Adaptive Transfer Scaling Law (ATLAS), which decomposes effective data volume into three components—target language…
+  [ICLR 2026][Multilingual & Translation][scaling laws] This paper proposes the Adaptive Transfer Scaling Law (ATLAS), which decomposes the effective data volume into three terms: target language, transfer languages, and other languages, while introducing a data repetition saturation function. Validated across 774 multilingual training experiments (10M–8B parameters, 400+ l
 tags:
-  - "ICLR 2026"
-  - "Multilingual & Machine Translation"
-  - "scaling laws"
-  - "multilingual"
-  - "cross-lingual transfer"
-  - "curse of multilinguality"
-  - "pretraining vs finetuning"
+  - ICLR 2026
+  - Multilingual & Translation
+  - scaling laws
+  - multilingual
+  - cross-lingual transfer
+  - curse of multilinguality
+  - pretraining vs finetuning
 date: 2026-05-08
-content_hash: dbe45fe9257be81f
+content_hash: c1a0a28c1c338e08
 ---
-
 # ATLAS: Adaptive Transfer Scaling Laws for Multilingual Pretraining, Finetuning, and Decoding the Curse of Multilinguality
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2510.22037](https://arxiv.org/abs/2510.22037)  
-**Code**: Not released  
-**Area**: Multilingual Translation
+**Code**: Not open sourced  
+**Area**: Multilingual Translation  
 **Keywords**: scaling laws, multilingual, cross-lingual transfer, curse of multilinguality, pretraining vs finetuning
 
 ## TL;DR
-This paper proposes the Adaptive Transfer Scaling Law (ATLAS), which decomposes effective data volume into three components—target language, transfer languages, and other languages—and introduces a data repetition saturation function. Evaluated across 774 multilingual training experiments (10M–8B parameters, 400+ languages), ATLAS substantially outperforms existing scaling laws, improving multilingual $R^2$ from 0.67 to 0.98, and systematically quantifies the cross-lingual transfer matrix, capacity constraints underlying the curse of multilinguality, and the computational crossover point between pretraining and finetuning.
+This paper proposes the Adaptive Transfer Scaling Law (ATLAS), which decomposes the effective data volume into three terms: target language, transfer languages, and other languages, while introducing a data repetition saturation function. Validated across 774 multilingual training experiments (10M–8B parameters, 400+ languages), ATLAS significantly outperforms existing scaling laws (multilingual $R^2$ improved from 0.67 to 0.98). It systematically quantifies the cross-lingual transfer matrix, the capacity constraints of the "curse of multilinguality," and the compute crossover point between pretraining and finetuning.
 
 ## Background & Motivation
 
-### Limitations of Existing Scaling Laws
-Scaling law research has focused almost exclusively on English. The Chinchilla Scaling Law (CSL) models the effect of model size $N$ and data volume $D$ on loss via two power-law terms, but suffers from several shortcomings:
+### Limitations of Prior Work
+Scaling laws research has focused almost exclusively on English. The Chinchilla Scaling Law (CSL) models the impact of model size $N$ and data volume $D$ on loss using two power-law terms but suffers from several flaws:
 
-**No support for data repetition**: Low-resource languages (e.g., Hindi, Swahili) have extremely limited data and require multiple training epochs; CSL cannot model the diminishing returns of repeated data.
+**Inability to model data repetition**: Data for low-resource languages (e.g., Hindi, Swahili) is extremely limited, requiring multiple repetitions during training. CSL cannot model the diminishing returns of such repetitions.
 
-**Cross-lingual transfer is ignored**: Monolingual scaling laws only account for target-language token counts and cannot leverage positive or negative transfer from other languages.
+**Neglect of cross-lingual transfer**: Monolingual scaling laws only account for the token count of the target language, failing to exploit the positive or negative transfer effects from other languages.
 
-**Data-Constrained Scaling Law (DCSL)** accounts for data repetition but requires abundant observations both before and after the 1-epoch boundary for a two-stage fitting procedure. Collecting more than one epoch of data for high-resource languages (English, French) is costly, while low-resource languages may lack sufficient observations even before the first epoch.
+The **Data-Constrained Scaling Law (DCSL)** considers data repetition but requires a large number of observations both "before 1 epoch" and "after 1 epoch" for its two-stage fitting. Collecting data beyond 1 epoch for high-resource languages (English, French) is costly, while low-resource languages may not even have sufficient observations before reaching 1 epoch.
 
-### Practical Needs
+### Goal
 Developers of multilingual models face three core questions that lack systematic answers:
-- What are the transfer relationships among languages? Which language pairs are mutually beneficial, and which interfere?
-- How much additional compute is required as the number of supported languages grows? (A quantitative characterization of the curse of multilinguality.)
-- Given a fixed compute budget, is it more efficient to pretrain from scratch or to finetune from a multilingual checkpoint?
+- What are the transfer relationships between different languages? Which pairs are mutually beneficial, and which cause interference?
+- How much must compute resources increase when expanding the number of languages served by a model? (Quantitative characterization of the "curse of multilinguality")
+- Given a compute budget, is it more efficient to pretrain from scratch or finetune from a multilingual checkpoint?
 
 ## Method
 
-### Core Formula of ATLAS
-ATLAS builds on Chinchilla's functional form but replaces the raw data volume $D$ with an **effective data volume** $\mathcal{D}_{\text{eff}}$:
+### Overall Architecture
+ATLAS is not a new training algorithm but a family of fittable scaling laws. It follows the Chinchilla loss form but replaces the "data volume" term with an **effective data volume** $\mathcal{D}_{\text{eff}}$ that is aware of multilingual structures and incorporates a saturation function for data repetition. From the same experimental data, three downstream tools are derived: a cross-lingual transfer matrix based on bilingual transfer scores, a capacity formula for the curse of multilinguality, and a crossover formula for pretraining vs. finetuning. The input to the method is loss observations from 774 training experiments, and the output is a set of fitting parameters with physical meanings, allowing practitioners to determine language mixing, scaling budgets, and training starting points. The transfer matrix also provides empirical values for the transfer weight $\tau$ in the effective data volume formula, linking the three tools under a unified scaling law family.
 
-$$\mathcal{L}(N, \mathcal{D}_{\text{eff}}) = E + \frac{A}{N^\alpha} + \frac{B}{\mathcal{D}_{\text{eff}}^\beta}$$
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["774 Multilingual Training Experiments<br/>10M–8B Params · 400+ Lang Loss Obs."] --> B["Effective Data Scaling Law<br/>Replaces D with D_eff(target+transfer+other)<br/>+ Data Repetition Saturation Function"]
+    B --> C["Bilingual Transfer Score (BTS)<br/>→ 38×38 Cross-lingual Transfer Matrix"]
+    B --> D["Multilingual Curse Capacity Formula<br/>L(K,N,D_t) with exponents φ, ψ"]
+    B --> E["Pretraining vs. Finetuning Crossover<br/>Compute C = 1113708 · N^1.65"]
+    C -.->|"Provides Transfer Weight τ"| B
+    C --> F["Practitioner Decisions<br/>Lang Mixing · Scaling Budget · Starting Point"]
+    D --> F
+    E --> F
+```
 
-The effective data volume is decomposed into three terms:
+### Key Designs
 
-$$\mathcal{D}_{\text{eff}} = \underbrace{\mathcal{S}_{\lambda_t}(D_t; U_t)}_{\text{Target language}} + \underbrace{\sum_{i \in \mathcal{K}} \tau_i \mathcal{S}_{\lambda_i}(D_i; U_i)}_{\text{Transfer languages}} + \underbrace{\tau_{\text{other}} \mathcal{S}_{\lambda_{\text{other}}}(D_{\text{other}}; U_{\text{other}})}_{\text{Other languages}}$$
+**1. Effective Data Decomposition and Saturation Function: Enabling Scaling Laws to Perceive Transfer and Repetition**
 
-### Saturation Function (Handling Data Repetition)
-For each data source, a saturation function $\mathcal{S}_\lambda$ models the diminishing returns of repeated training passes:
+In the Chinchilla core formula $\mathcal{L}(N, D) = E + A/N^\alpha + B/D^\beta$, $D$ can only represent the token count of the target language. Consequently, it ignores cross-lingual transfer and assumes every token is fresh, overestimating the value of repeated data in low-resource settings. ATLAS replaces $D$ with the effective data volume $\mathcal{D}_{\text{eff}}$, resulting in $\mathcal{L}(N, \mathcal{D}_{\text{eff}}) = E + A/N^\alpha + B/\mathcal{D}_{\text{eff}}^\beta$. $\mathcal{D}_{\text{eff}}$ is decomposed into three semantically clear sources: the target language’s own data, languages that provide transfer, and all other languages bundled together:
 
-$$\mathcal{S}_\lambda(D; U) = \begin{cases} D, & D \leq U \text{ (}\leq\text{1 epoch)} \\ U\left[1 + \frac{1 - \exp(-\lambda(D/U - 1))}{\lambda}\right], & D > U \text{ (}>\text{1 epoch)} \end{cases}$$
+$$\mathcal{D}_{\text{eff}} = \underbrace{\mathcal{S}_{\lambda_t}(D_t; U_t)}_{\text{Target}} + \underbrace{\sum_{i \in \mathcal{K}} \tau_i \mathcal{S}_{\lambda_i}(D_i; U_i)}_{\text{Transfer}} + \underbrace{\tau_{\text{other}} \mathcal{S}_{\lambda_{\text{other}}}(D_{\text{other}}; U_{\text{other}})}_{\text{Other}}。$$
 
-Here $U$ denotes the number of unique tokens in that language, and $\lambda$ is a shared repetition decay parameter. Data volume grows linearly within the first epoch and saturates exponentially beyond it.
+Each term carries a transfer weight $\tau$ (where $\tau_i$ for transfer languages is provided by the transfer matrix) and a saturation parameter $\lambda$, allowing the model to distinguish which data actually helps and by how much. The $\mathcal{S}_\lambda(D; U)$ term is the saturation function for data repetition:
 
-### Cross-Lingual Transfer Matrix (38×38)
-A Bilingual Transfer Score (BTS) is defined to measure the effect of a source language $s$ on a target language $t$:
+$$\mathcal{S}_\lambda(D; U) = \begin{cases} D, & D \leq U \ (\le 1\ \text{epoch}) \\ U\left[1 + \dfrac{1 - \exp(-\lambda(D/U - 1))}{\lambda}\right], & D > U \ (> 1\ \text{epoch}) \end{cases}$$
 
-$$\text{BTS}_{s \to t} = -\frac{\sigma_{\text{bi}}(L_t(d_{\text{mono}})) - 2d_{\text{mono}}}{d_{\text{mono}}}$$
+Here, $U$ is the number of unique tokens, and $\lambda$ is a repetition decay coefficient shared across languages. Valid data grows linearly within the first epoch and enters exponential saturation once $D > U$. Unlike DCSL, this function is continuous and fittable in a single stage, making it applicable to low-resource languages that lack enough data for a full epoch. This "decomposition + saturation" approach is the key innovation, raising the multilingual $R^2$ from 0.67 to 0.98.
 
-where $d_{\text{mono}}$ is a preset target step count (42B tokens), and $\sigma_{\text{bi}}$ computes the number of tokens the bilingual model requires to reach the same loss. BTS = 0 indicates no transfer, BTS > 0 positive transfer, and BTS < 0 negative interference.
+**2. Bilingual Transfer Score (BTS): Quantifying "Language A Helping B"**
 
-BTS values are measured for 80 language pairs and estimated for the remaining pairs using auxiliary training signals ($R^2 = 0.85$), yielding a complete $38 \times 38$ transfer matrix.
+To characterize transfer, ATLAS defines the Bilingual Transfer Score (BTS) to measure the influence of source language $s$ on target language $t$:
 
-### Capacity Modeling for the Curse of Multilinguality
-The per-target-language loss is modeled as a function of the number of languages $K$, model size $N$, and target-language data $D_t$:
+$$\text{BTS}_{s \to t} = -\frac{\sigma_{\text{bi}}(L_t(d_{\text{mono}})) - 2d_{\text{mono}}}{d_{\text{mono}}},$$
 
-$$L(K, N, D_t) = L_\infty + A \frac{K^\phi}{N^\alpha} + B \frac{K^\psi}{D_t^\beta}$$
+where $d_{\text{mono}}$ is the preset target steps (42B tokens), and $\sigma_{\text{bi}}$ is the number of tokens a bilingual model requires to reach the same loss as a monolingual model. Intuitively, if a bilingual model reaches the monolingual performance level with fewer tokens, BTS is positive; if it takes more, BTS is negative. BTS=0 implies no transfer. The authors measured BTS for 80 pairs and extrapolated the rest ($R^2 = 0.85$) to create a $38 \times 38$ matrix, which serves as the empirical source for $\tau_i$.
 
-Here $\phi > 0$ reflects capacity pressure as the number of languages increases, and $\psi < 0$ captures positive cross-lingual transfer (i.e., the required data per language grows sub-linearly). The formula reduces to Chinchilla when $K = 1$.
+**3. Multilingual Curse Capacity Formula: Evaluating Expansion Costs**
 
-### Pretraining vs. Finetuning Crossover
-Loss curves for training from scratch and for finetuning from a Unimax checkpoint are compared to identify a crossover point: pretraining from scratch surpasses finetuning after approximately 144B–283B tokens. The crossover point scales with model size $N$ as $C = 1113708 \times N^{1.65}$.
+The "curse of multilinguality"—where performance per language degrades as more languages are supported—is essentially a dilution of finite capacity. ATLAS explicitly writes the loss of a single target language as a function of the number of languages $K$, model size $N$, and target data $D_t$:
+
+$$L(K, N, D_t) = L_\infty + A \frac{K^\phi}{N^\alpha} + B \frac{K^\psi}{D_t^\beta}。$$
+
+Two new exponents are introduced: $\phi > 0$ indicates that increasing $K$ adds pressure to the model capacity term (the source of the curse), while $\psi < 0$ suggests positive transfer, where the data required per language grows sublinearly (mitigating the curse). When $K=1$, the formula reverts to Chinchilla. Once $\phi$ and $\psi$ are fitted, practitioners can calculate "iso-loss" rules for budget increases.
+
+**4. Pretraining vs. Finetuning Crossover: Optimal Training Starting Points**
+
+This tool addresses whether it is more compute-efficient to pretrain from scratch or finetune from a multilingual checkpoint. By plotting loss curves for both approaches, the authors identified a crossover point. Finetuning is superior initially, but pretraining from scratch overtakes it after approximately 144B–283B tokens. This crossover compute $C$ follows a power law with model size $N$: $C = 113708 \times N^{1.65}$. Larger models have later crossover points, meaning the cost-effectiveness window for starting from an existing checkpoint is longer.
 
 ## Key Experimental Results
 
 ### Experimental Scale
-- **774 independent training runs** on the MADLAD-400 dataset (400+ languages)
-- Model scales: 10M–8B parameters across 20 size tiers
-- 280 monolingual + 240 bilingual + 120 multilingual mixture + 134 finetuning models
-- Vocabulary-insensitive loss evaluated on 48 languages
+- **774 independent training experiments** using the MADLAD-400 dataset (400+ languages).
+- Model Scale: 10M–8B parameters, 20 scale levels.
+- 280 monolingual models + 240 bilingual models + 120 multilingual mixtures + 134 finetuning models.
+- Evaluation of vocabulary-insensitive loss across 48 languages.
 
-### Scaling Law Fit Quality (Table 1)
+### Scaling Law Fitting Quality (Table 1)
 
 | Scaling Law | $R^2$ (Overall) | $R^2(N)$ | $R^2(D)$ | $R^2(C)$ | $R^2(M)$ |
-|-------------|----------------|----------|----------|----------|----------|
-| Chinchilla (multilingual) | 0.64 | -0.99 | 0.72 | 0.66 | 0.61 |
+|-------------|-----------------|----------|----------|----------|----------|
+| Chinchilla (Multilingual) | 0.64 | -0.99 | 0.72 | 0.66 | 0.61 |
 | Multilingual SL (He et al.) | 0.67 | -0.65 | 0.73 | 0.67 | 0.70 |
-| **ATLAS (full)** | **0.98** | **0.89** | **0.96** | **0.98** | **0.82** |
+| **ATLAS (Full)** | **0.98** | **0.89** | **0.96** | **0.98** | **0.82** |
 
-ATLAS substantially outperforms prior methods across all generalization dimensions in the multilingual setting, most notably improving extrapolation $R^2(N)$ for the largest models from $-0.99$ to $0.89$.
+ATLAS significantly exceeds previous methods in generalization $R^2$ across all dimensions in multilingual settings, particularly improving the $R^2(N)$ for extrapolation to the largest models from -0.99 to 0.89.
 
-### Key Findings on Cross-Lingual Transfer
-- **English is the most broadly positive transfer source**, appearing among the top-5 most helpful source languages for 19 of 30 target languages.
-- French (16/30), Spanish (13/30), and Hebrew (11/30) follow closely.
-- **Shared writing system** correlates with higher transfer: mean BTS of $-0.23$ for same-script pairs vs. $-0.39$ for different-script pairs ($p < .001$).
-- Transfer is **asymmetric**: global Pearson correlation $r = -0.11$, meaning "A helps B" does not imply "B helps A."
-- Same-family, same-script pairs (e.g., French–Spanish, Russian–Ukrainian) exhibit high symmetry; cross-family, cross-script pairs (e.g., Chinese–Persian, Russian–Vietnamese) exhibit high asymmetry.
+### Key Findings in Cross-lingual Transfer
+- **English is the most universal positive transfer source**, ranked in the top 5 most helpful sources for 19 out of 30 target languages.
+- French (16/30), Spanish (13/30), and Hebrew (11/30) follow.
+- **Language pairs with the same writing system** have a mean BTS of -0.23 versus -0.39 for different systems ($p < .001$).
+- Transfer is **asymmetric**: the global Pearson correlation $r = -0.11$, meaning "A helping B" does not imply "B helps A."
+- Pairs sharing the same family and script (e.g., French-Spanish, Russian-Ukrainian) are highly symmetric; those differing in both (e.g., Chinese-Persian) are highly asymmetric.
 
-### Quantitative Results on the Curse of Multilinguality
-- Fitted parameters: $\phi = 0.11$ (mild capacity curse) and $\psi = -0.04$ (slight positive transfer).
-- **Compute budget for expanding language coverage**: scaling from $K$ to $r \cdot K$ languages requires scaling the compute budget by $C \cdot r^{0.97}$.
-- Expanding to $4K$ languages requires a 2.74× increase in total tokens and a 1.4× increase in model size.
-- Increasing model size $N$ mitigates the curse of multilinguality more effectively than increasing data volume $D$ ($|\partial S / \partial \log N| > |\partial S / \partial \log D|$).
+### Key Findings in the Curse of Multilinguality
+- Fitted values: $\phi = 0.11$ (moderate capacity curse), $\psi = -0.04$ (slight positive transfer).
+- **Compute budget for language expansion**: Scaling from $K$ to $r \cdot K$ languages requires the compute budget to scale by $C \cdot r^{0.97}$.
+- Expanding to $4K$ languages requires a 2.74x increase in total tokens and a 1.4x increase in model size.
+- Increasing model size $N$ is more effective at mitigating the curse than increasing data volume $D$ ($|\partial S / \partial \log N| > |\partial S / \partial \log D|$).
 
 ### Pretraining vs. Finetuning
-- For a 2B-parameter model, finetuning a Unimax checkpoint is more efficient up to 144B–283B tokens.
-- Beyond this threshold, pretraining from scratch becomes superior.
-- The crossover occurs earliest for English (due to its low 5% sampling ratio in Unimax); other languages exhibit crossovers at approximately 1.4%.
+- For a 2B parameter model, finetuning a Unimax checkpoint is more efficient within 144B–283B tokens.
+- Beyond this threshold, pretraining from scratch is superior.
+- English reaches the crossover point earliest (due to its low 5% sampling ratio in Unimax).
 
 ## Highlights & Insights
 
-1. **Effective data decomposition as the key innovation**: Splitting multilingual training data into target-language, transfer-language, and other-language components—each with its own learned weight and saturation parameter—enables the model to precisely capture the contribution of each data source. This design is conceptually simple yet remarkably effective ($R^2$ improves from 0.67 to 0.98).
-2. **Practical value of the transfer matrix**: BTS scores for 1,444 language pairs constitute the largest empirical resource of this kind and can directly guide language mixture strategies in multilingual training.
-3. **Actionable formula for the curse of multilinguality**: The iso-loss formula for scaling from $K$ to $rK$ languages provides practitioners with a clear budget planning tool.
-4. **Script family matters more than language family**: Shared writing systems have a stronger influence on transfer than shared linguistic family, suggesting that subword vocabulary overlap is the primary mechanism underlying positive transfer.
-5. **Transfer asymmetry**: This finding cautions practitioners against intuitively assuming reciprocal transfer; empirical measurement is necessary.
+1. **Effective data decomposition as a key innovation**: Splitting data into target, transfer, and other terms allows precise capture of contributions. This simple change drives $R^2$ from 0.67 to 0.98.
+2. **Value of the transfer matrix**: The 1444 language-pair scores are a major empirical resource for guiding language mixing strategies.
+3. **Actionable formulas for the multilingual curse**: The iso-loss formula provides a clear budget planning tool for expanding language coverage.
+4. **Writing systems outweigh language families**: Shared scripts have a greater impact on transfer than shared language families, suggesting subword vocabulary sharing is a primary mechanism for positive transfer.
+5. **Transfer asymmetry**: This warns against assuming reciprocal benefits and emphasizes the need for empirical measurement.
 
 ## Limitations & Future Work
 
-1. **Evaluation limited to perplexity**: All experiments measure vocabulary-insensitive loss only; the predictive power of the scaling law on downstream tasks (e.g., translation, question answering, classification) remains unvalidated.
-2. **Single data source**: Only MADLAD-400 (CommonCrawl) is used; data from different domains or quality levels may alter transfer relationships.
-3. **Uniform sampling assumption**: The curse-of-multilinguality model assumes uniform sampling across languages, whereas practical deployments typically require non-uniform allocation.
-4. **Unimax checkpoint specificity**: The pretraining–finetuning crossover depends on the training mixture and duration of the Unimax checkpoint; different base models may yield different crossover points.
-5. **Model-size dependence of the transfer matrix**: BTS values are measured on 2B-parameter models; transfer relationships may differ at other scales, though some analysis is provided.
-6. **Underrepresentation of low-resource languages**: Despite data coverage of 400+ languages, in-depth analysis remains focused on approximately 50 languages.
+1. **Evaluation limited to perplexity**: All experiments measure vocabulary-insensitive loss; predictive power for downstream tasks (translation, QA) is not yet verified.
+2. **Single data source**: Only MADLAD-400 (CommonCrawl) was used; different domains or data qualities may alter transfer relationships.
+3. **Uniform sampling assumption**: The multilingual curse model assumes uniform sampling, whereas real deployments often use non-uniform distributions.
+4. **Unimax checkpoint specificity**: The crossover point depends on the specific base model's training mixture and duration.
+5. **Model size dependence of the transfer matrix**: BTS was measured at 2B; transfer relationships may shift at different scales.
+6. **Underrepresentation of low-resource languages**: While covering 400+ languages, deep analysis remains focused on roughly 50.
 
 ## Related Work & Insights
 
-| Method | Core Idea | Key Difference from ATLAS |
-|--------|-----------|--------------------------|
-| **Chinchilla** (Hoffmann 2022) | English monolingual $L = E + A/N^\alpha + B/D^\beta$ | No support for data repetition; no cross-lingual transfer modeling |
-| **DCSL** (Muennighoff 2024) | Repetition-aware, two-stage fitting | Requires sufficient pre- and post-epoch observations; unfriendly to multilingual settings |
-| **MSL** (He 2024) | Models multilinguality via language-family sampling ratios | Groups by language family only; ATLAS learns per-language transfer weights |
-| **BiMix** (Ge 2024) | Bivariate data-mixture scaling law | Focuses on English domains; does not address multilinguality |
-| **Llama-3** (Dubey 2024) | Briefly mentions multilingual scaling laws | Only 8% non-English tokens; far smaller in scale and depth than this work |
+| Method | Core Idea | Key Differences from ATLAS |
+|------|---------|-----------------|
+| **Chinchilla** (Hoffmann 2022) | Monolingual $L = E + A/N^\alpha + B/D^\beta$ | No support for repetition or cross-lingual transfer |
+| **DCSL** (Muennighoff 2024) | Data repetition awareness, two-stage fitting | Requires extensive epoch-specific observations |
+| **MSL** (He 2024) | Modeling via language family sampling ratios | Only groups by family; ATLAS learns per-language weights |
+| **BiMix** (Ge 2024) | Bivariate data mixing scaling law | Focused on English domains, not multilingual |
+| **Llama-3** (Dubey 2024) | Brief mention of multilingual scaling laws | Shallow analysis; only 8% non-English tokens |
 
-ATLAS's core advantages are: (1) unified single-stage fitting, (2) fine-grained cross-lingual transfer modeling, and (3) the largest multilingual scaling experiment conducted to date.
+ATLAS's core advantages include its (1) unified single-stage fitting, (2) fine-grained cross-lingual transfer modeling, and (3) its status as the largest multilingual scaling experiment to date.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The effective data decomposition combined with the saturation function is elegantly simple; the transfer matrix and curse-of-multilinguality modeling are both significant contributions.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 774 experiments, 400+ languages, 10M–8B parameters—unprecedented in scale, with rigorous multi-dimensional generalization validation.
-- Writing Quality: ⭐⭐⭐⭐ Well-structured with complete derivations and highly informative figures.
-- Value: ⭐⭐⭐⭐⭐ Directly actionable for engineering multilingual model training pipelines; the transfer matrix and iso-loss formula are immediately usable.
+- Novelty: ⭐⭐⭐⭐ The decomposition and saturation design is elegant; the curse and transfer modeling are major contributions.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Unprecedented scale with 774 experiments across 400+ languages.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure and comprehensive derivations.
+- Value: ⭐⭐⭐⭐⭐ Practical engineering guidance for multilingual training budgets and strategies.
 
 <!-- RELATED:START -->
 
@@ -158,10 +172,10 @@ ATLAS's core advantages are: (1) unified single-stage fitting, (2) fine-grained 
 ## Related Papers
 
 - [\[NeurIPS 2025\] Zero-Shot Performance Prediction for Probabilistic Scaling Laws](../../NeurIPS2025/multilingual_mt/zero-shot_performance_prediction_for_probabilistic_scaling_laws.md)
-- [\[ICLR 2026\] SASFT: Sparse Autoencoder-guided Supervised Finetuning to Mitigate Unexpected Code-Switching in LLMs](sasft_sparse_autoencoder-guided_supervised_finetuning_to_mitigate_unexpected_cod.md)
+- [\[ICLR 2026\] Language Confusion Gate: Language-Aware Decoding Through Model Self-Distillation](language_confusion_gate_language-aware_decoding_through_model_self-distillation.md)
 - [\[ICLR 2026\] From Utterance to Vividity: Training Expressive Subtitle Translation LLM via Adaptive Local Preference Optimization](from_utterance_to_vividity_training_expressive_subtitle_translation_llm_via_adap.md)
+- [\[ICLR 2026\] SASFT: Sparse Autoencoder-guided Supervised Finetuning to Mitigate Unexpected Code-Switching in LLMs](sasft_sparse_autoencoder-guided_supervised_finetuning_to_mitigate_unexpected_cod.md)
 - [\[ICLR 2026\] Multilingual Routing in Mixture-of-Experts](multilingual_routing_in_mixture-of-experts.md)
-- [\[ACL 2026\] Cross-Cultural Transfer of Emoji Semantics and Sentiment in Financial Social Media](../../ACL2026/multilingual_mt/cross-cultural_transfer_of_emoji_semantics_and_sentiment_in_financial_social_med.md)
 
 </div>
 

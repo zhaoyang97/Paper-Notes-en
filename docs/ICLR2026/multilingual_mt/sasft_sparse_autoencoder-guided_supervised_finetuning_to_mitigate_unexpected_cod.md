@@ -2,13 +2,18 @@
 title: >-
   [Paper Note] SASFT: Sparse Autoencoder-guided Supervised Finetuning to Mitigate Unexpected Code-Switching in LLMs
 description: >-
-  [Multilingual & Machine Translation] This paper uses Sparse Autoencoders (SAEs) to identify that unexpected code-switching in LLMs is associated with abnormally high pre-activation values of target-language features…
+  [ICLR 2026][Multilingual & Translation][Code-Switching] Utilizing Sparse Autoencoders (SAEs), it is discovered that unexpected code-switching in LLMs is correlated with abnormally high pre-activation values of target language features. This paper proposes SASFT, a method that constrains target language feature pre-activations during SFT training, reducing unexpected code-sw
 tags:
-  - "Multilingual & Machine Translation"
+  - ICLR 2026
+  - Multilingual & Translation
+  - Code-Switching
+  - Sparse Autoencoder
+  - Multilingual LLMs
+  - SFT
+  - Language Features
 date: 2026-05-08
-content_hash: 8bb2cefcb313b86a
+content_hash: 7630d8ff2007373c
 ---
-
 # SASFT: Sparse Autoencoder-guided Supervised Finetuning to Mitigate Unexpected Code-Switching in LLMs
 
 ## Basic Information
@@ -21,149 +26,126 @@ content_hash: 8bb2cefcb313b86a
 
 ## TL;DR
 
-This paper uses Sparse Autoencoders (SAEs) to identify that unexpected code-switching in LLMs is associated with abnormally high pre-activation values of target-language features, and proposes SASFT, a method that constrains language feature pre-activation values during SFT training, reducing unexpected code-switching by over 50%.
+Utilizing Sparse Autoencoders (SAEs), it is discovered that unexpected code-switching in LLMs is correlated with abnormally high pre-activation values of target language features. This paper proposes SASFT, a method that constrains target language feature pre-activations during SFT training, reducing unexpected code-switching by more than 50%.
 
 ## Background & Motivation
 
-### State of the Field
-Multilingual LLMs (e.g., Qwen-3, Llama-4, Gemma-3) frequently exhibit unexpected code-switching during generation—for instance, inserting Chinese or Korean text into responses to English queries—severely degrading user experience.
+### Background
+Multilingual LLMs (e.g., Qwen-3, Llama-4, Gemma-3) often exhibit unexpected code-switching during generation—such as suddenly inserting Chinese or Korean into an English response—which severely degrades user experience.
 
 ### Limitations of Prior Work
 
-**The only known attempt**: Guo et al. (2025) address code-switching in DeepSeek-R1 using GRPO with a language consistency reward, but lack mechanistic analysis and achieve limited effectiveness.
+**Only Known Attempt**: Guo et al. (2025) utilized GRPO + language consistency rewards to address code-switching in DeepSeek-R1, but this approach lacks mechanistic analysis and shows limited effectiveness;
 
-**Lack of fundamental understanding**: Existing work has not deeply analyzed the internal mechanism of code-switching.
+**Lack of Fundamental Understanding**: Prior work has not deeply analyzed the internal mechanisms underlying code-switching.
 
-### Core Findings
-SAE-based analysis reveals:
-1. LLMs contain **language-specific features**—directions in the residual stream that exhibit large projection values only when processing tokens of a specific language;
-2. When unexpected code-switching occurs, the **pre-activation values of target-language features increase abnormally**;
-3. Ablation experiments confirm that suppressing these features reduces code-switching.
+### Key Findings
+Analysis via SAE reveals:
+1. **Language-specific features** exist within LLMs—directions in the residual stream that exhibit large projection values only when processing specific language tokens;
+2. When unexpected code-switching occurs, the **pre-activation values** of target language features rise abnormally;
+3. Ablation experiments confirm that reducing these features reduces code-switching.
 
 ## Method
 
 ### Overall Architecture
 
-SASFT proceeds in two steps: (1) identifying language-specific features in the LLM; (2) introducing an auxiliary loss during SFT training to constrain these features.
+SASFT is a "diagnose-then-treat" pipeline. On the diagnostic side, SAEs are used to locate "language-responsible" specific features in the residual stream, confirming that the pre-activation values of these features climb abnormally before code-switching occurs, with causality established via directional ablation. On the treatment side, this observation is transformed into an auxiliary loss applied during the SFT phase to directly suppress the pre-activations of non-target language features, enabling the model to learn self-constraint and internalizing inference-time interventions into training.
 
-### 1. Sparse Autoencoder (SAE) Background
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    X["Residual stream x<br/>(Multilingual text)"] --> SAE["Characterizing language features with pre-activations<br/>SAE extracts pre-activation f(x), retaining<br/>negative signals removed by ReLU"]
+    SAE --> ID["Identifying language-specific feature set S_L<br/>via cross-lingual activation differences"]
+    ID --> VER["Mechanistic validation & directional ablation<br/>S_L pre-activations rise token-by-token before switching;<br/>Ablation confirms causality, but inference intervention is impractical"]
+    VER --> LOSS["SASFT auxiliary loss<br/>ReLU(f_s − α_j) gating, penalizing only<br/>out-of-bound non-target pre-activations"]
+    LOSS --> SFT["SFT joint training<br/>L = L_CE + λ·L_reduce"]
+    SFT --> OUT["Fine-tuned LLM<br/>Unexpected code-switching ↓50%+"]
+```
 
-Given a residual stream activation $\mathbf{x} \in \mathbb{R}^N$, the SAE computes feature activations $\mathbf{a} \in \mathbb{R}^M$ ($M \gg N$):
+### Key Designs
 
-$$
-\mathbf{f(x)} = \mathbf{W}_{\text{enc}} \mathbf{x} + \mathbf{b}_{\text{enc}}
-$$
+**1. Characterizing language features with pre-activations instead of activations: Retaining negative signals erased by ReLU**
 
-$$
-\mathbf{a(x)} = \text{ReLU}(\mathbf{f(x)})
-$$
+Given a residual stream $\mathbf{x} \in \mathbb{R}^N$, the SAE first encodes the pre-activation $\mathbf{f(x)} = \mathbf{W}_{\text{enc}} \mathbf{x} + \mathbf{b}_{\text{enc}}$, which then passes through $\mathbf{a(x)} = \text{ReLU}(\mathbf{f(x)})$ to obtain sparse activations (feature dimension $M \gg N$). Conventional methods only examine the activation value $\mathbf{a(x)}$, but ReLU truncates all negative values to zero. This paper specifically monitors the process where a "language feature that should remain negative or low" is gradually pushed higher—information that is completely lost in $\mathbf{a(x)}$. Therefore, SASFT uses the pre-activation $\mathbf{f(x)}$ as the object of analysis and constraint throughout the process to capture the continuous rising precursor before a code-switching equilibrium.
 
-This work focuses on the **pre-activation values** $\mathbf{f(x)}$ rather than the post-activation values $\mathbf{a(x)}$, as the latter discards meaningful negative pre-activation information.
+**2. Identifying language-specific features via cross-lingual activation differences: Extracting directions serving only specific languages**
 
-### 2. Language-Specific Feature Identification
+To constrain language features, one must first identify which features belong to which language. Following the metric from Deng et al. (2025), the monolingual score $\nu_s^L = \mu_s^L - \gamma_s^L$ is calculated for feature $s$ and language $L$, where $\mu_s^L$ is the mean activation on language $L$ text and $\gamma_s^L$ is the mean activation on other languages. A larger difference indicates the feature is mainly activated when processing $L$ tokens. The features with the highest $\nu$ values form the language-specific feature set $\mathcal{S}_L$. This step relies on multilingual calibration data to estimate the two means.
 
-Following Deng et al. (2025), the monolinguality of each feature is measured. For feature $s$ and language $L$, the score is defined as:
+**3. Mechanistic validation and limitations of directional ablation: Proving causality and why not to modify at inference time**
 
-$$
-\nu_s^L = \mu_s^L - \gamma_s^L
-$$
+After locating $\mathcal{S}_L$, the authors verify it as a "switch" for code-switching: statistics show that before switching to language $L$, the pre-activations of features in $\mathcal{S}_L$ increase token-by-token. Furthermore, directional ablation—subtracting a component along the language direction $\mathbf{d}$ in the residual stream $\mathbf{x}' \leftarrow \mathbf{x} - \lambda \mathbf{d}$—leads to a drop in the code-switching rate, confirming causality. However, inference-time ablation is impractical: first, pre-activations must be suppressed significantly to be effective, which may harm other capabilities; second, generating every token requires external hooks, adding inference overhead. These flaws motivated the authors to move the constraints to the training phase.
 
-where $\mu_s^L$ is the average activation of the feature on language $L$, and $\gamma_s^L$ is its average activation on all other languages. Features with the highest $\nu$ values are treated as language-specific features.
+**4. SASFT auxiliary loss: Penalizing only out-of-bound pre-activations with thresholded ReLU gating**
 
-### 3. Mechanistic Analysis of Code-Switching
-
-**Key Finding 1**: Prior to a code-switching event, the pre-activation values of the target-language features gradually increase (Figure 3).
-
-**Key Finding 2**: Directional ablation that subtracts the language feature direction reduces the code-switching rate (Figure 4):
-
-$$
-\mathbf{x}' \leftarrow \mathbf{x} - \lambda \mathbf{d}
-$$
-
-However, inference-time ablation has two drawbacks: (1) it requires substantially reducing pre-activation values, which may impair other capabilities; (2) it requires external intervention, increasing inference overhead.
-
-### 4. SASFT Training Objective
-
-An auxiliary loss is introduced during SFT to teach the LLM to autonomously maintain appropriate language feature pre-activation values:
+During training, a constraint is added alongside cross-entropy to teach the model to keep non-target language features within reasonable bounds:
 
 $$
 L_{\text{reduce}} = \mathbb{E}_{\mathcal{D}_j \sim \mathcal{D} \setminus \{\mathcal{D}_L\}}\left[\mathbb{E}_{\mathbf{x} \sim \mathcal{D}_j}\left[\sum_{s \in \mathcal{S}_L} \text{ReLU}(\mathbf{f}_s(\mathbf{x}) - \alpha_j)\right]\right]
 $$
 
-where $\mathcal{S}_L$ is the set of language-specific features for language $L$, and $\alpha_j$ is the estimated threshold of the mean pre-activation value.
+The outer expectation deliberately excludes target language data $\mathcal{D}_L$ (it is normal for $L$ features to activate on $L$ text), while the inner sum is over $\mathcal{S}_L$. The critical component is the $\text{ReLU}(\mathbf{f}_s(\mathbf{x}) - \alpha_j)$ gate: the threshold $\alpha_j$ is set to the estimated mean pre-activation rather than zero (since mean pre-activations are often negative, zero would be overly repressive). Gradients are generated only when pre-activations exceed $\alpha_j$, ensuring the loss corrects "abnormal rises" without disturbing normal fluctuations. The total loss is $L_{\text{training}} = L_{\text{cross-entropy}} + \lambda L_{\text{reduce}}$, and constraints can be applied across multiple layers simultaneously for stability.
 
-The final training loss is:
-
-$$
-L_{\text{training}} = L_{\text{cross-entropy}} + \lambda L_{\text{reduce}}
-$$
-
-### Key Design Choices
-
-- Target-language data $\mathcal{D}_L$ is excluded, as generating text in the target language does not constitute code-switching.
-- The threshold $\alpha_j$ is not set to zero, since the mean pre-activation value may be negative.
-- The loss can be applied across multiple layers for greater stability.
-
-## Experiments
+## Key Experimental Results
 
 ### Main Results: Code-Switching Rate Comparison
 
 | Model | Method | CS→Chinese | CS→Russian | CS→Korean |
-|-------|--------|-----------|-----------|----------|
-| Gemma-2-2B | SFT (baseline) | 0.74% | 0.57% | 3.45% |
+|------|------|---------|---------|---------|
+| Gemma-2-2B | SFT (Baseline) | 0.74% | 0.57% | 3.45% |
 | | SFT+GRPO | 0.74 (0%) | 0.49 (-14%) | 3.44 (0%) |
 | | SFT+Penalty | 0.67 (-10%) | 0.41 (-27%) | 1.18 (-66%) |
 | | **SASFT** | **0.42 (-43%)** | **0.22 (-61%)** | **0.73 (-79%)** |
-| Gemma-2-9B | SFT (baseline) | 0.78% | 0.12% | 0.81% |
+| Gemma-2-9B | SFT (Baseline) | 0.78% | 0.12% | 0.81% |
 | | **SASFT** | **0.41 (-47%)** | **0.01 (-94%)** | **0.13 (-84%)** |
-| Llama-3.1-8B | SFT (baseline) | 1.16% | 0.67% | 0.57% |
+| Llama-3.1-8B | SFT (Baseline) | 1.16% | 0.67% | 0.57% |
 | | **SASFT** | — | — | — |
 
 ### Ablation Study: Impact of Different Components
 
 | Configuration | CS→Chinese (↓) | MMLU (↑) | HumanEval (↑) |
-|--------------|---------------|---------|--------------|
-| SFT baseline | 0.78% | 69.2 | 42.1 |
-| SASFT (single layer) | 0.52% | 69.5 | 42.8 |
-| SASFT (multi-layer) | **0.41%** | **69.8** | **43.2** |
-| Inference-time ablation | 0.45% | 67.3 | 40.5 |
+|------|------------|---------|--------------|
+| SFT Baseline | 0.78% | 69.2 | 42.1 |
+| SASFT (Single Layer) | 0.52% | 69.5 | 42.8 |
+| SASFT (Multi-Layer) | **0.41%** | **69.8** | **43.2** |
+| Inference Ablation | 0.45% | 67.3 | 40.5 |
 
 ### Key Findings
 
-1. **SASFT reduces code-switching by over 50% in most settings**, achieving complete elimination in Korean scenarios in some cases;
-2. **Substantially outperforms GRPO**: GRPO yields near-zero improvement (0%) in most configurations, while SASFT consistently reduces code-switching;
-3. **Multilingual capabilities are preserved**: Performance is maintained or improved across six benchmarks including MMLU, HumanEval, and Flores-200;
-4. **Multi-layer application yields greater stability**: Cross-layer SASFT is more robust than its single-layer counterpart;
-5. **Suppression is more effective than promotion**: Reducing non-target-language features is more effective than amplifying source-language features;
-6. **Training-time constraint outperforms inference-time intervention**: SASFT modifies the model's internal behavior with no additional inference overhead.
+1. **SASFT reduces code-switching by more than 50% in most cases**, achieving 100% elimination in Korean scenarios;
+2. **Significantly outperforms GRPO**: GRPO is nearly ineffective in most settings (0% improvement), while SASFT is consistently effective;
+3. **No harm to multilingual capability**: Performance is maintained or even improved across 6 benchmarks including MMLU, HumanEval, and Flores-200;
+4. **Multi-layer application is more stable**: Cross-layer SASFT is more robust than single-layer;
+5. **Reduction is more effective than enhancement**: Reducing non-target language features is superior to enhancing source language features;
+6. **Training-based methods outperform inference intervention**: SASFT changes internal model behavior without additional inference overhead.
 
 ## Highlights & Insights
 
-- This is the first work to provide a rigorous mechanistic analysis of unexpected code-switching in LLMs, establishing a causal link to language feature pre-activation values.
-- The translation from inference-time intervention to training-time constraint is elegant, directly addressing both drawbacks of the former approach.
-- Strong generalizability is demonstrated across five models from three model families: Gemma-2, Llama-3.1, and Qwen-3.
-- The auxiliary loss design is clean and principled, leveraging ReLU gating to penalize only pre-activation values that exceed the threshold.
+- First in-depth analysis of the internal mechanism of unexpected code-switching in LLMs, revealing a causal relationship with language feature pre-activations.
+- Clever transition from inference-time intervention to training-time constraint, solving two major flaws of inference intervention.
+- Strong generalization: Validated across five models from three series: Gemma-2, Llama-3.1, and Qwen-3.
+- Elegant auxiliary loss design, utilizing ReLU gating to penalize only pre-activations that exceed a specific threshold.
 
 ## Limitations & Future Work
 
-- The approach requires a pre-trained SAE for the target model (Qwen-3 necessitates training a custom SAE, and this overhead is not quantified).
-- Language-specific feature identification depends on multilingual calibration data.
-- The paper primarily evaluates on Chinese, Korean, and Russian; generalization to a broader set of languages remains to be verified.
-- The code-switching definition relies on script-level detection, which may miss fine-grained lexical mixing.
+- Requires SAEs for the corresponding model (Qwen-3 required self-trained SAEs, the additional cost of which was not quantified).
+- Identification of language-specific features relies on multilingual calibration data.
+- The paper focus is limited to Chinese, Korean, and Russian; generalization to more languages remains to be verified.
+- The definition of code-switching is based on script detection, which may miss fine-grained lexical mixing.
 
 ## Related Work & Insights
 
-- **Code-switching in LLMs**: Guo et al. (2025) identify and attempt to address code-switching in DeepSeek-R1 using GRPO.
-- **SAE-based analysis**: Deng et al. (2025) discover language-specific features in LLMs.
+- **LLM Code-Switching**: Guo et al. (2025) identified and attempted to solve code-switching in DeepSeek-R1 using GRPO.
+- **SAE Analysis**: Deng et al. (2025) discovered language-specific features in LLMs.
 - **Multilingual LLMs**: Qwen-3 (Yang et al., 2025), Llama-4 (Meta, 2025), Gemma-3 (Team et al., 2025).
-- **Mechanistic interpretability**: Sparse autoencoders for understanding internal representations of LLMs.
+- **Mechanistic Interpretability**: Sparse Autoencoders used for understanding internal LLM representations.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ — First to combine SAE-based interpretability with the code-switching problem, delivering a seamless pipeline from mechanism analysis to solution.
-- Technical Depth: ⭐⭐⭐⭐ — A complete analysis–discovery–solution chain with a well-motivated pre-activation constraint design.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Comprehensive coverage across 5 models × 3 languages × 6 benchmarks.
-- Value: ⭐⭐⭐⭐⭐ — Directly addresses a critical pain point in multilingual LLM deployment.
+- Novelty: ⭐⭐⭐⭐⭐ — First to combine SAE interpretability with the code-switching problem, spanning from mechanism to solution.
+- Technical Depth: ⭐⭐⭐⭐ — Complete analysis-discovery-solution chain with cleverly designed pre-activation constraints.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Comprehensive coverage across 5 models, 3 languages, and 6 benchmarks.
+- Value: ⭐⭐⭐⭐⭐ — Directly addresses a pain point in the deployment of multilingual LLMs.
 
 <!-- RELATED:START -->
 
@@ -171,11 +153,11 @@ $$
 
 ## Related Papers
 
-- [\[ACL 2026\] Structure-Guided Entity Resolution: Fine-Tuning LLMs for Robust Name Matching in Complex Linguistic Contexts](../../ACL2026/multilingual_mt/structure-guided_entity_resolution_fine-tuning_llms_for_robust_name_matching_in_.md)
+- [\[ACL 2025\] MiLiC-Eval: Benchmarking Multilingual LLMs for China's Minority Languages](../../ACL2025/multilingual_mt/milic-eval_benchmarking_multilingual_llms_for_chinas_minority_languages.md)
+- [\[ACL 2025\] Did Translation Models Get More Robust Without Anyone Even Noticing?](../../ACL2025/multilingual_mt/translation_robustness.md)
+- [\[ACL 2025\] Code-Switching Curriculum Learning for Multilingual Transfer in LLMs](../../ACL2025/multilingual_mt/code-switching_curriculum_learning_for_multilingual_transfer_in_llms.md)
+- [\[ACL 2025\] Code-Switching Red-Teaming: LLM Evaluation for Safety and Multilingual Understanding](../../ACL2025/multilingual_mt/code-switching_red-teaming_llm_evaluation_for_safety_and_multilingual_understand.md)
 - [\[ICLR 2026\] ATLAS: Adaptive Transfer Scaling Laws for Multilingual Pretraining, Finetuning, and Decoding the Curse of Multilinguality](atlas_adaptive_transfer_scaling_laws_for_multilingual_pretraining_finetuning_and.md)
-- [\[ACL 2026\] Multilingual Steering by Design: Multilingual Sparse Autoencoders and Principled Layer Selection](../../ACL2026/multilingual_mt/multilingual_steering_by_design_multilingual_sparse_autoencoders_and_principled_.md)
-- [\[ICCV 2025\] SignRep: Enhancing Self-Supervised Sign Representations](../../ICCV2025/multilingual_mt/signrep_enhancing_self-supervised_sign_representations.md)
-- [\[CVPR 2026\] MMTIT-Bench: A Multilingual and Multi-Scenario Benchmark with Cognition-Perception-Reasoning Guided Text-Image Machine Translation](../../CVPR2026/multilingual_mt/mmtit-bench_a_multilingual_and_multi-scenario_benchmark_with_cognition-perceptio.md)
 
 </div>
 

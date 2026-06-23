@@ -2,82 +2,83 @@
 title: >-
   [Paper Note] MMedAgent-RL: Optimizing Multi-Agent Collaboration for Multimodal Medical Reasoning
 description: >-
-  [ICLR2026][Multi-Agent][multi-agent collaboration] This paper proposes MMedAgent-RL, a multi-agent system that simulates clinical consultation workflows (triage → specialist → attending physician) optimized via reinforce…
+  [ICLR 2026][Multi-Agent][multi-agent collaboration] MMedAgent-RL is proposed to optimize a multi-agent system simulating clinical consultation workflows (Triage → Specialist → Attending) via RL. The core innovation is Curriculum-guided Entropy-aware RL (C-MARL), which enables the Attending Physician agent to adopt distinct exploration-exploitation strategies when facing
 tags:
-  - "ICLR2026"
-  - "Multi-Agent"
-  - "multi-agent collaboration"
-  - "reinforcement learning"
-  - "medical VQA"
-  - "curriculum learning"
-  - "GRPO"
-  - "clinical reasoning"
+  - ICLR 2026
+  - Multi-Agent
+  - multi-agent collaboration
+  - reinforcement learning
+  - medical VQA
+  - curriculum learning
+  - GRPO
+  - clinical reasoning
 date: 2026-05-08
-content_hash: c08a6a9085651c40
+content_hash: 9a7c48bf934ce83b
 ---
-
 # MMedAgent-RL: Optimizing Multi-Agent Collaboration for Multimodal Medical Reasoning
 
-**Conference**: ICLR2026
+**Conference**: ICLR2026  
 **arXiv**: [2506.00555](https://arxiv.org/abs/2506.00555)  
-**Code**: Not released  
-**Area**: Medical Imaging
-**Keywords**: multi-agent collaboration, reinforcement learning, medical VQA, curriculum learning, GRPO, clinical reasoning
+**Code**: Not open-sourced  
+**Area**: Medical Imaging  
+**Keywords**: multi-agent collaboration, reinforcement learning, medical VQA, curriculum learning, GRPO, clinical reasoning  
 
 ## TL;DR
-This paper proposes MMedAgent-RL, a multi-agent system that simulates clinical consultation workflows (triage → specialist → attending physician) optimized via reinforcement learning. The core innovation is Curriculum-guided Multi-Agent Reinforcement Learning (C-MARL) with entropy-aware exploration, enabling the attending physician agent to adopt differentiated explore–exploit strategies when faced with correct, conflicting, or erroneous specialist opinions. The system achieves state-of-the-art performance on 5 medical VQA benchmarks spanning both in-domain and out-of-domain settings.
+MMedAgent-RL is proposed to optimize a multi-agent system simulating clinical consultation workflows (Triage → Specialist → Attending) via RL. The core innovation is Curriculum-guided Entropy-aware RL (C-MARL), which enables the Attending Physician agent to adopt distinct exploration-exploitation strategies when facing correct, conflicting, or incorrect specialist opinions, achieving SOTA performance across five in-domain and out-of-domain medical VQA benchmarks.
 
 ## Background & Motivation
-- **Background**: Medical image diagnosis spans multiple subspecialties (radiology, pathology, oncology, etc.), which a single Med-LVLM cannot adequately cover.
-- **Limitations of Prior Work**: Static multi-agent frameworks such as MedAgents and MDAgents rely on fixed GP→Specialist→GP pipelines with pre-defined, non-learnable interaction patterns. Specialist outputs are not always reliable and may introduce noise or misleading signals; majority voting can suppress correct minority opinions.
-- **Key Challenge**: The attending physician must learn **when to trust specialist consensus (exploit) and when to challenge it and reason independently (explore)**.
-- **Key Insight**: Works such as DeepSeek-R1 demonstrate that RL can substantially enhance LLM reasoning, yet RL optimization for multi-agent medical collaboration remains unexplored.
+- **Limitations of Single Agents**: Medical image diagnosis involves multiple sub-specialties (Radiology, Pathology, Oncology, etc.), and a single Med-LVLM struggle to cover all specialized knowledge.
+- **Deficiencies in Static Multi-Agents**: MedAgents, MDAgents, and others utilize fixed GP → Specialist → GP workflows where agent interaction patterns are predefined and non-learnable.
+- **Unreliable Specialist Opinions**: Specialist model outputs are not always correct and may introduce noise or mislead; majority voting can suppress correct minority opinions.
+- **Key Challenge**: The Attending Physician must learn **when to trust specialist consensus (exploit) and when to challenge it and explore independently (explore)**.
+- **Opportunities for RL**: DeepSeek-R1 and similar models have proven that RL enhances LLM reasoning, but RL optimization for multi-agent medical collaboration remains unexplored.
 
 ## Method
 
-### Overall Architecture: Clinical Consultation Simulation (GP→Specialists→GP)
-Two GP agents are trained via staged RL on top of Qwen2.5-VL:
+### Overall Architecture
+MMedAgent-RL executes a medical VQA task as a clinical consultation: first, the **Triage Physician** selects the appropriate specialty based on the image and question. Then, strong models acting as **Specialists** provide diagnostic opinions. Finally, the **Attending Physician** integrates these opinions with their own judgment to produce the final diagnosis. Both the Triage and Attending Physicians are based on Qwen2.5-VL and trained in stages using RL. Specialists are played by strong models like GPT and are not trained. Crucially, the Attending Physician is not trained to "copy-paste specialist opinions" but uses C-MARL to learn to exploit reliable opinions and question deviant ones.
 
-1. **Triage Doctor**: Selects the appropriate specialty based on the input image and text.
-2. **Specialists**: Portrayed by strong models (e.g., GPT), providing specialist diagnostic opinions.
-3. **Attending Physician**: Integrates specialist opinions with its own knowledge to make the final decision.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    IN["Input: Medical Image + Question"]
+    TRI["RL Optimization of Triage Physician<br/>GRPO selects 1 from 7 specialties"]
+    SP["Specialists (GPT-based, non-trainable)<br/>Provide diagnostic opinions"]
+    ATT["Attending Physician integrates opinions<br/>with own judgment for final diagnosis"]
+    OUT["Final Answer"]
+    IN --> TRI -->|Selected Dept| SP -->|Specialist Opinions| ATT --> OUT
 
-### Key Design 1: RL Optimization of the Triage Doctor
-- Dataset-provided image modality labels serve as ground truth (e.g., histology slide → Pathologist).
-- Seven candidate specialties: Pathologist, Radiologist, Surgeon, Oncologist, Endocrinologist, Ophthalmologist, Dermatologist.
-- Optimized with GRPO; reward function: $R = R_{format} \in \{0, 0.5\} + R_{accuracy} \in \{0, 1\}$.
-- Improves not only triage accuracy but also the reasoning process (justifying triage decisions).
+    subgraph CL["Curriculum-guided Entropy-aware RL (C-MARL): Training Attending Physician"]
+        direction TB
+        E["Easy (All Correct)<br/>Low Entropy · Exploit reliable consensus"] --> M["Medium (Partial Correct)<br/>Moderate Exploration · Handle conflict"] --> H["Hard (All Incorrect)<br/>High Entropy · Break false consensus"]
+    end
+    ATT -.Trained by C-MARL.-> CL
+```
 
-### Key Design 2: Curriculum-Guided Entropy-Aware RL (C-MARL)
-**Core Idea**: Training difficulty is defined by the reliability of specialist opinions, and the attending physician is trained in progressive stages.
+### Key Designs
 
-**Data Stratification** (based on specialist accuracy $s = \text{Acc}(y_d, y^*)$):
-- **Easy ($s=1$)**: All specialists answer correctly.
-- **Medium ($0<s<1$)**: Partial agreement; conflicting opinions exist.
-- **Hard ($s=0$)**: All specialists are wrong, forming a misleading consensus.
+**1. RL Optimization of Triage Physician: Learning "Whom to Consult"**
 
-**Dynamic Entropy Regulation** — a curriculum-dependent entropy regularization term is added to the standard GRPO objective:
+Triage in traditional multi-agent systems often follows hard-coded rules. Here, it is treated as a learnable strategy: given images and text, the model selects from 7 departments (Pathologist, Radiologist, Surgeon, Oncologist, Endocrinologist, Ophthalmologist, Dermatologist) and provides a rationale. Training uses GRPO with supervision from ground truth (GT) image modality labels. The reward consists of format and accuracy scores: $R = R_{format} + R_{accuracy}$, where $R_{format}\in\{0,0.5\}$ and $R_{accuracy}\in\{0,1\}$. This improves triage accuracy and enforces explicit reasoning chains.
 
-$$\mathcal{J}_{C\text{-}MARL}(\theta) = \mathbb{E}[\mathcal{J}_{GRPO}(\theta) + \gamma_s \cdot H_t(\pi_\theta)]$$
+**2. Curriculum-guided Entropy-aware RL (C-MARL): Learning to Trust or Question**
 
-- $\gamma_{easy} \approx 0$: No additional exploration needed in the Easy stage; the model focuses on exploiting reliable specialist knowledge.
-- $\gamma_{medium} > 0$: Moderate exploration is encouraged in the Medium stage to prevent overconfidence when facing conflicting information.
-- $\gamma_{hard} \gg \gamma_{medium}$: Strong exploration is enforced in the Hard stage to compel the model to overcome misleading specialist consensus.
+Specialist opinions are not always accurate—they can be correct, conflicting, or collectively misleading. C-MARL categorizes training samples by specialty reliability and adjusts exploration intensity accordingly. Accuracy $s = \text{Acc}(y_d, y^*)$ defines three levels: Easy ($s=1$), Medium ($0<s<1$), and Hard ($s=0$, misleading consensus). An entropy regularization term varying with difficulty is added to the GRPO objective:
 
-**Training Order**: Easy → Medium → Hard, following a curriculum from simple to difficult.
+$$\mathcal{J}_{C\text{-}MARL}(\theta) = \mathbb{E}\big[\mathcal{J}_{GRPO}(\theta) + \gamma_s \cdot H_t(\pi_\theta)\big]$$
 
-### Key Design 3: Theoretical Analysis
-- A convergence proof (Theorem 4.1) is provided demonstrating the advantage of curriculum learning over standard SGD.
-- The total training time under curriculum learning depends on the sum of distances between optimal policies in adjacent stages: $\sum_{j=0}^{J-1}\log\|\theta_j^\star - \theta_{j+1}^\star\|_2^2$.
-- An effective curriculum ensures small inter-stage distances, with each stage's solution serving as a warm start for the next.
-- Standard SGD is shown to be unable to converge to the optimal policy under equivalent conditions (lower-bound proof).
+The entropy coefficient $\gamma_s$ increases with difficulty: $\gamma_{easy}\approx 0$ (exploit reliable knowledge), $\gamma_{medium}>0$ (avoid overconfidence in conflict), and $\gamma_{hard}\gg\gamma_{medium}$ (force exploration to break false consensus). Training progresses from Easy → Medium → Hard, transitioning the Attending from "following" to "questioning" specialties.
+
+**3. Convergence Guarantees: Why Curriculum Training Outperforms Direct Training**
+
+The authors provide Theorem 4.1, proving curriculum training's superior convergence over standard SGD. Intuitively, total training time depends on the sum of distances between optimal policies of adjacent stages: $\sum_{j=0}^{J-1}\log\|\theta_j^\star - \theta_{j+1}^\star\|_2^2$. If the curriculum is effective, the solution of the previous stage serves as a warm start for the next, resulting in faster convergence. Standard SGD is proven unable to converge to the optimal policy under the same conditions (lower bound existence).
 
 ## Key Experimental Results
 
 ### Main Results (Accuracy, %)
 
-| Model | VQA-RAD | SLAKE | PathVQA | In-Domain Avg | OmniMedVQA | MMMU-Med | Out-of-Domain Avg |
-|-------|---------|-------|---------|---------------|------------|----------|-------------------|
+| Model | VQA-RAD | SLAKE | PathVQA | In-domain Avg | OmniMedVQA | MMMU-Med | Out-of-domain Avg |
+|------|---------|-------|---------|---------|------------|----------|---------|
 | GPT-4o | 61.0 | 75.5 | 69.4 | 68.6 | 68.5 | 69.7 | 69.1 |
 | Qwen2.5-VL-7B | 61.8 | 64.7 | 60.5 | 62.3 | 60.8 | 56.6 | 58.7 |
 | MedVLThinker-7B | 63.7 | 67.8 | 65.2 | 65.6 | 62.4 | 57.0 | 59.7 |
@@ -88,7 +89,7 @@ $$\mathcal{J}_{C\text{-}MARL}(\theta) = \mathbb{E}[\mathcal{J}_{GRPO}(\theta) + 
 ### Ablation Study
 
 | Configuration | VQA-RAD | SLAKE | OmniMedVQA | MMMU-Med |
-|---------------|---------|-------|------------|----------|
+|------|---------|-------|------------|----------|
 | Full MMedAgent-RL | 71.5 | 76.2 | 73.3 | 71.9 |
 | w/o Triage | 66.3 | 69.9 | 66.2 | 59.3 |
 | w/o Specialists | 65.8 | 67.8 | 64.4 | 54.2 |
@@ -98,36 +99,36 @@ $$\mathcal{J}_{C\text{-}MARL}(\theta) = \mathbb{E}[\mathcal{J}_{GRPO}(\theta) + 
 | + Easy + Medium + Hard | 71.5 | 76.2 | 73.3 | 71.9 |
 
 ### Key Findings
-1. **C-MARL contributes most**: Removing C-MARL results in an average drop of 18.6%, identifying it as the most critical component.
-2. **Each curriculum stage contributes incrementally**: Easy→Medium→Hard yields progressively cumulative gains, validating the curriculum design.
-3. **The Hard stage is crucial**: The largest improvements are observed under the "Hard" scenario where all specialists are incorrect (+20%), demonstrating that the model learns to resist blind conformity.
-4. **Strong out-of-domain generalization**: OmniMedVQA (+13%) and MMMU-Med (+15%) both substantially outperform the backbone and surpass GPT-4o.
-5. **Triage accuracy propagates through the pipeline**: The optimized triage doctor establishes the foundation for accurate specialist consultation downstream (+3%).
-6. **Test-Time Scaling (TTS) further boosts performance**: Majority voting yields an additional gain of 4.5%.
+1. **C-MARL Contribution**: Removing C-MARL drops performance by 18.6% on average, making it the most critical component.
+2. **Curriculum Efficacy**: The Easy→Medium→Hard progression cumulatively improves performance, validating the curriculum design.
+3. **Crucial Hard Stage**: The largest gain (+20%) occurs in "Hard" scenarios where specialists are all wrong, showing the model learns to distrust misleading consensus.
+4. **Generalization**: OmniMedVQA (+13%) and MMMU-Med (+15%) significantly outperform the base model and GPT-4o.
+5. **Triage Impact**: Optimized triage boosts overall chain performance by +3% by ensuring correct specialty consultation.
+6. **TTS Benefits**: Test-Time Scaling via majority voting yields an additional 4.5% improvement.
 
 ## Highlights & Insights
-- The entropy regulation mechanism in C-MARL is elegant: it addresses the specialist noise problem in multi-agent collaboration from an explore–exploit trade-off perspective.
-- The combination of curriculum learning and RL is theoretically grounded (convergence proof) rather than purely heuristic.
-- A 7B model surpasses GPT-4o on multiple benchmarks, demonstrating the substantial potential of RL-based optimization.
-- The experimental design is comprehensive, covering in-domain/out-of-domain evaluation, ablation studies, specialty selection analysis, and difficulty stratification.
+- The entropy regulation in C-MARL elegantly addresses specialty noise in multi-agent systems via an exploration-exploitation trade-off.
+- Combining curriculum learning with RL has theoretical grounding (convergence proofs) rather than being purely heuristic.
+- A 7B model surpassing GPT-4o on multiple benchmarks demonstrates the potential of RL optimization.
+- Extensive evaluation covers in/out-of-domain performance, specialty selection accuracy, and difficulty stratification.
 
 ## Limitations & Future Work
-- Specialists are portrayed by closed-source models such as GPT, resulting in high deployment costs and dependence on third-party APIs.
-- The triage specialty set is fixed at 7 categories, which may not cover all clinical scenarios.
-- The three-tier difficulty stratification relies on ground-truth labels, which are unavailable at inference time.
-- Evaluation is limited to multiple-choice VQA; open-ended clinical reasoning and report generation are not addressed.
-- The theoretical analysis rests on strong assumptions (e.g., strong convexity) that may not hold for practical deep networks.
+- Specialists rely on closed-source models (GPT), which increases deployment costs and API dependency.
+- Triage is limited to 7 fixed departments and may not cover all clinical scenarios.
+- The three-level curriculum relies on ground truth labels, which are unavailable during inference.
+- Evaluation is limited to multiple-choice VQA, excluding open-ended clinical reasoning or report generation.
+- Theoretical analysis assumes strong convexity, which deep networks may not satisfy.
 
 ## Related Work & Insights
-- **Medical VLMs**: Single-agent models including LLaVA-Med, HuatuoGPT-Vision, and VILA-M3.
-- **Medical Multi-Agent Systems**: Agent Hospital, MedAgents, and MDAgents — all rely on static, pre-defined pipelines.
-- **RL-Enhanced Reasoning**: GRPO-based post-training paradigms such as DeepSeek-R1 and VLM-R1.
-- **Curriculum Learning**: Progressive training from easy to hard (Bengio et al., 2009).
+- **Medical VLM**: Single-agent models like LLaVA-Med, HuatuoGPT-Vision, and VILA-M3.
+- **Medical Multi-Agent**: Agent Hospital, MedAgents, and MDAgents—utilizing static, predefined workflows.
+- **RL Reasoning**: Post-training paradigms like DeepSeek-R1 and VLM-R1 using GRPO.
+- **Curriculum Learning**: Progressive training strategies from easy to hard (Bengio et al., 2009).
 
 ## Rating
 ⭐⭐⭐⭐⭐ (5/5)
 
-The method is elegantly designed; the entropy regulation strategy in C-MARL is both intuitively well-motivated and theoretically supported. The experiments are comprehensive and convincing, and the result of a 7B model surpassing GPT-4o is impressive. The integration of curriculum learning and RL establishes a new paradigm for multi-agent collaborative reasoning.
+The method design is elegant; the entropy-regulation strategy of C-MARL is both intuitive and theoretically supported. The experiments are comprehensive, and the 7B model's performance exceeding GPT-4o is impressive. The integration of curriculum learning and RL provides a new paradigm for multi-agent collaboration.
 
 <!-- RELATED:START -->
 
@@ -137,9 +138,9 @@ The method is elegantly designed; the entropy regulation strategy in C-MARL is b
 
 - [\[ACL 2026\] ConSensus: Multi-Agent Collaboration for Multimodal Sensing](../../ACL2026/multi_agent/consensus_multi-agent_collaboration_for_multimodal_sensing.md)
 - [\[ICLR 2026\] Multi-Agent Design: Optimizing Agents with Better Prompts and Topologies](multi-agent_design_optimizing_agents_with_better_prompts_and_topologies.md)
-- [\[NeurIPS 2025\] MedAgentBoard: Benchmarking Multi-Agent Collaboration with Conventional Methods for Diverse Medical Tasks](../../NeurIPS2025/multi_agent/medagentboard_benchmarking_multi-agent_collaboration_with_conventional_methods_f.md)
+- [\[ICLR 2026\] AgentPO: Enhancing Multi-Agent Collaboration via Reinforcement Learning](agentpo_enhancing_multi-agent_collaboration_via_reinforcement_learning.md)
 - [\[AAAI 2026\] MedLA: A Logic-Driven Multi-Agent Framework for Complex Medical Reasoning with Large Language Models](../../AAAI2026/multi_agent/medla_a_logic-driven_multi-agent_framework_for_complex_medic.md)
-- [\[ICLR 2026\] MAC-AMP: A Closed-Loop Multi-Agent Collaboration System for Multi-Objective Antimicrobial Peptide Design](mac-amp_a_closed-loop_multi-agent_collaboration_system_for_multi-objective_antim.md)
+- [\[ICLR 2026\] Adaptive Collaboration with Humans: Metacognitive Policy Optimization for Multi-Agent LLMs with Continual Learning](adaptive_collaboration_with_humans_metacognitive_policy_optimization_for_multi-a.md)
 
 </div>
 

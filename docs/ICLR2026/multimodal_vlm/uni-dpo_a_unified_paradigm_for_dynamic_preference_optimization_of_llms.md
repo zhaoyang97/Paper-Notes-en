@@ -2,73 +2,90 @@
 title: >-
   [Paper Note] Uni-DPO: A Unified Paradigm for Dynamic Preference Optimization of LLMs
 description: >-
-  [ICLR 2026][Multimodal VLM][DPO improvement] Uni-DPO is proposed to unify dynamic reweighting of preference pairs via three components — quality-aware weighting (prioritizing pairs with large score margins)…
+  [ICLR 2026][Multimodal VLM][focal loss] The paper proposes Uni-DPO, which introduces a unified adjustment of preference pair weights through quality-aware weighting (prioritizing pairs with high score differences), performance-aware weighting (utilizing focal loss to focus on underfit samples), and a calibrated NLL loss component. Uni-DPO consistently outper
 tags:
-  - "ICLR 2026"
-  - "Multimodal VLM"
-  - "DPO improvement"
-  - "dynamic weighting"
-  - "quality-aware"
-  - "focal loss"
-  - "preference optimization"
+  - ICLR 2026
+  - Multimodal VLM
+  - focal loss
 date: 2026-05-08
-content_hash: 20a78219ce75d8e2
+content_hash: 778d2a8a87ee9ca6
 ---
-
 # Uni-DPO: A Unified Paradigm for Dynamic Preference Optimization of LLMs
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2506.10054](https://arxiv.org/abs/2506.10054)  
 **Code**: [https://github.com/pspdada/Uni-DPO](https://github.com/pspdada/Uni-DPO)  
-**Area**: Alignment RLHF / DPO
-**Keywords**: DPO improvement, dynamic weighting, quality-aware, focal loss, preference optimization
+**Area**: Alignment RLHF / DPO  
+**Keywords**: DPO improvement, dynamic weights, quality-aware, focal loss, preference optimization
 
 ## TL;DR
-Uni-DPO is proposed to unify dynamic reweighting of preference pairs via three components — quality-aware weighting (prioritizing pairs with large score margins), performance-aware weighting (focal loss focusing on underfitted samples), and a calibrated NLL loss — consistently outperforming DPO/SimPO on text understanding and mathematical reasoning benchmarks, with Gemma-2-9B achieving 67.1% on Arena-Hard, surpassing Claude 3 Opus (60.4%).
+The paper proposes Uni-DPO, which introduces a unified adjustment of preference pair weights through quality-aware weighting (prioritizing pairs with high score differences), performance-aware weighting (utilizing focal loss to focus on underfit samples), and a calibrated NLL loss component. Uni-DPO consistently outperforms DPO and SimPO on text understanding and mathematical reasoning benchmarks. Notably, Gemma-2-9B achieves 67.1% on Arena-Hard, surpassing Claude 3 Opus (60.4%).
 
 ## Background & Motivation
 
-**Background**: DPO optimizes policies directly from preference data via implicit rewards, and has become a standard approach for LLM alignment. SimPO further simplifies this by removing the reference model.
+**Background**: DPO has become the standard method for LLM alignment by optimizing policies directly from preference data through implicit rewards. SimPO further simplifies this by removing the reference model.
 
 **Limitations of Prior Work**:
-   - Standard DPO treats all preference pairs equally, despite large variance in data quality — high-quality pairs exhibit clear chosen/rejected distinctions, while low-quality pairs are noisy or ambiguous.
-   - A mismatch exists between data quality and model learning state: high-quality pairs may already be well-learned, and over-emphasizing them leads to overfitting.
-   - DPO lacks fine-grained external reward signals (unlike PPO/GRPO).
+   - Standard DPO treats all preference pairs with equal weight, despite significant variance in data quality—high-quality pairs have clear distinctions, while low-quality pairs are noisy or ambiguous.
+   - There is a mismatch between data quality and model performance: High-quality pairs may already be well-learned, and over-emphasizing them can lead to overfitting.
+   - DPO lacks fine-grained external reward signals compared to PPO or GRPO.
 
-**Key Challenge**: How to dynamically reweight preference pairs by jointly considering both the intrinsic quality of data and the model's current learning state?
+**Key Challenge**: How to dynamically adjust weights by simultaneously accounting for both intrinsic data quality and the current learning state of the model?
 
-**Core Idea**: Quality weights differentiate high- and low-quality data; performance weights focus on hard samples; calibrated NLL loss prevents the probability of chosen responses from degrading.
+**Key Insight**: Utilize quality weights to distinguish data noise, performance weights to focus on difficult samples, and calibrated NLL to prevent the collapse of high-probability responses.
 
 ## Method
 
 ### Overall Architecture
+
+The core problem Uni-DPO addresses is that standard DPO treats all preference pairs equally, ignoring both the distinctness of the data and the current learning progress of the model. Uni-DPO applies two dynamic weights to each preference pair and adds an extra calibrated NLL term to form the final loss:
+
 $$\mathcal{L}_{\text{Uni-DPO}} = -\mathbb{E}[w_{\text{qual}}(y_w, y_l) \cdot w_{\text{perf}}(\pi_\theta) \cdot \log\sigma(\Delta_r)] + \lambda\mathcal{L}_{\text{c-NLL}}$$
+
+Here, $w_{\text{qual}}$ measures the intrinsic quality of the preference pair (off-policy external signal), while $w_{\text{perf}}$ measures the model's current mastery of the sample (on-policy internal dynamics). Their product modulates the standard DPO term $\log\sigma(\Delta_r)$, while $\mathcal{L}_{\text{c-NLL}}$ ensures the absolute probability of good responses is maintained under specific conditions.
+
+The following diagram illustrates the relationship between the two weighting paths and the final loss construction:
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    IN["偏好对 (x, y_w, y_l)<br/>+ 外部质量分 S_w, S_l"]
+    IN --> QUAL["质量感知权重 w_qual<br/>σ(η·(S_w−S_l))<br/>好坏越分明→权重越大"]
+    IN --> PERF["性能感知权重 w_perf<br/>focal：模型已学会→降权<br/>长度归一化 + 固定阈值 τ_ref"]
+    IN --> DPO["DPO 项 logσ(Δr)<br/>隐式奖励边距"]
+    QUAL --> MUL["三者相乘<br/>w_qual · w_perf · logσ(Δr)"]
+    PERF --> MUL
+    DPO --> MUL
+    IN --> CNLL["校准 NLL 损失 L_c-NLL<br/>仅困难且高质量正样本激活<br/>托住好回答绝对概率"]
+    MUL --> SUM["Uni-DPO 损失<br/>= 加权 DPO 项 + λ·L_c-NLL"]
+    CNLL --> SUM
+```
 
 ### Key Designs
 
-1. **Quality-Aware Weight $w_{\text{qual}}$**:
+**1. Quality-aware weight $w_{\text{qual}}$: Amplifying high signal-to-noise ratio pairs**
 
-    - Function: Assigns weights based on external score differences, giving higher weight to pairs with larger score margins.
-    - $w_{\text{qual}}(y_w, y_l) = \sigma(\eta \cdot (S_w - S_l))$
-    - $S_w, S_l$ are sourced from human annotations, GPT-4, or reward models.
-    - Effect: Filters noisy/ambiguous preference pairs and retains high signal-to-noise data.
+This component addresses the inconsistency in data quality. Uni-DPO quantifies the distinctness of a pair using the difference in external scores:
 
-2. **Performance-Aware Weight $w_{\text{perf}}$ (Calibrated Focal)**:
+$$w_{\text{qual}}(y_w, y_l) = \sigma(\eta \cdot (S_w - S_l))$$
 
-    - Function: Down-weights already well-learned samples and focuses training on hard samples where the current model underperforms.
-    - $w_{\text{perf}} = [1 - \sigma(\frac{\beta}{|y_w|}\log\pi_\theta(y_w|x) - \frac{\beta}{|y_l|}\log\pi_\theta(y_l|x) - \tau_{\text{ref}})]^\gamma$
-    - Key improvement: A fixed threshold $\tau_{\text{ref}}$ replaces reference model dependency, avoiding per-sample constraints that cause training instability; length normalization (LN) is incorporated to prevent length bias.
-    - $\gamma$ controls focal intensity; $\tau_{\text{ref}}$ controls the expected margin.
+$S_w$ and $S_l$ represent external scores for chosen and rejected responses (from human labels, GPT-4, or Reward Models like ArmoRM), and $\eta$ controls the mapping steepness. Larger score differences result in weights closer to 1, while ambiguous pairs with small differences are down-weighted. This effectively filters noise and ambiguous preferences softly during training.
 
-3. **Calibrated NLL Loss $\mathcal{L}_{\text{c-NLL}}$**:
+**2. Performance-aware weight $w_{\text{perf}}$: Focusing on difficult samples**
 
-    - Function: Prevents the absolute probability of chosen responses from decreasing during DPO training.
-    - Activated only when the policy underperforms the reference model and the sample is of high quality.
-    - Reinforces the model's confidence on difficult, high-quality positive samples.
+High-quality pairs that the model has already mastered can lead to overfitting if over-emphasized. $w_{\text{perf}}$ adopts a focal loss approach to down-weight easy samples and up-weight difficult ones:
+
+$$w_{\text{perf}} = \Big[1 - \sigma\big(\tfrac{\beta}{|y_w|}\log\pi_\theta(y_w|x) - \tfrac{\beta}{|y_l|}\log\pi_\theta(y_l|x) - \tau_{\text{ref}}\big)\Big]^\gamma$$
+
+The bracketed term represents the current implicit margin. Two improvements are made: using a fixed threshold $\tau_{\text{ref}}$ instead of per-sample reference model dependence to stabilize training, and applying length normalization ($|y_w|, |y_l|$) to prevent length bias.
+
+**3. Calibrated NLL loss $\mathcal{L}_{\text{c-NLL}}$: Preventing divergence of good responses**
+
+DPO training can sometimes decrease the absolute probability of chosen responses while optimizing relative margins. $\mathcal{L}_{\text{c-NLL}}$ stabilizes this by adding a length-normalized NLL for $y_w$, gated by two conditions: $\mathbf{1}(\log\pi_{\text{ref}}(y_w|x) > \log\pi_\theta(y_w|x))$ (likelihood is lower than the reference) and $\mathbf{1}(S_w \ge \tau_{\text{good}})$ (response quality is high). This focuses reinforcement on high-quality positive samples that are currently difficult for the model.
 
 ### Loss & Training
-- $\eta = 0.7$, $\lambda = 0.001$, $\gamma = 3.0$, $\tau_{\text{ref}} \in [0.5, 2.0]$
-- Supports diverse quality score sources (human annotation, GPT-4, ArmoRM, and other reward models).
+- Parameters: $\eta = 0.7$, $\lambda = 0.001$, $\gamma = 3.0$, $\tau_{\text{ref}} \in [0.5, 2.0]$
+- Supports various quality scoring sources (Human, GPT-4, ArmoRM, etc.)
 
 ## Key Experimental Results
 
@@ -78,9 +95,9 @@ $$\mathcal{L}_{\text{Uni-DPO}} = -\mathbb{E}[w_{\text{qual}}(y_w, y_l) \cdot w_{
 |------|------|---------------|-----------|-------------|-----------|
 | Llama3-8B-Base | DPO | 15.5 | 15.9 | 45.5 | 31.80 |
 | | SimPO | 19.4 | 23.4 | 45.7 | 32.43 |
-| | **Uni-DPO** | **23.8** | **23.9** | **47.9** | **38.49** |
+| | **Ours** | **23.8** | **23.9** | **47.9** | **38.49** |
 | Gemma-2-9B-IT | SimPO | 53.2 | 59.1 | 67.7 | 57.7 |
-| | **Uni-DPO** | **54.7** | **67.1** | **72.8** | 57.5 |
+| | **Ours** | **54.7** | **67.1** | **72.8** | 57.5 |
 
 ### Main Results: Mathematical Reasoning (Qwen2.5-Math-7B)
 
@@ -89,7 +106,7 @@ $$\mathcal{L}_{\text{Uni-DPO}} = -\mathbb{E}[w_{\text{qual}}(y_w, y_l) \cdot w_{
 | Baseline | 64.3 | 65.8 | 23.3 | 47.5 | 39.11 |
 | DPO | 83.2 | 75.8 | 26.7 | 57.5 | 51.55 |
 | SimPO | 85.7 | 76.4 | 26.7 | 57.5 | 53.73 |
-| **Uni-DPO** | **88.9** | **78.2** | **26.7** | **67.5** | **56.80** |
+| **Ours** | **88.9** | **78.2** | **26.7** | **67.5** | **56.80** |
 
 ### Ablation Study
 
@@ -102,31 +119,31 @@ $$\mathcal{L}_{\text{Uni-DPO}} = -\mathbb{E}[w_{\text{qual}}(y_w, y_l) \cdot w_{
 | w/o $\mathcal{L}_{\text{c-NLL}}$ | 19.4 | 23.3 | 37.73 |
 
 ### Key Findings
-- **Length normalization (LN) is critical**: Removing it causes a sharp performance collapse (SedarEval −10.31) and training instability.
-- **Quality weighting most affects AlpacaEval**: Removing it drops WR from 20.5 to 15.9 (−4.6).
-- **Gemma-2-9B + Uni-DPO surpasses Claude 3 Opus**: Arena-Hard 67.1 vs. 60.4.
-- **Significant gains on mathematical reasoning**: Qwen2.5-Math-7B achieves an average of +3.07 over SimPO.
+- **Length Normalization (LN) is critical**: Performance drops sharply without it (e.g., -10.31 on SedarEval), leading to training instability.
+- **Quality weights impact AlpacaEval most**: Removing it reduces WR from 20.5 to 15.9 (-4.6).
+- **Gemma-2-9B with Uni-DPO surpasses Claude 3 Opus**: 67.1 vs 60.4 on Arena-Hard.
+- **Significant gains in math reasoning**: Qwen2.5-Math-7B shows a +3.07 average Gain over SimPO.
 
 ## Highlights & Insights
-- **Unified dual-perspective dynamic weighting**: The joint consideration of data quality (external signal) and learning difficulty (internal dynamics) is more effective than either perspective alone.
-- **Improved calibrated focal loss design**: Replacing reference model dependency with a fixed threshold and incorporating length normalization resolves the training instability of naive focal DPO.
-- **Transferability to mathematical reasoning**: The framework generalizes beyond dialogue and instruction following, yielding consistent gains on mathematical tasks.
+- **Unified dual-perspective weighting**: Combining data quality (external signal) and learning difficulty (internal dynamics) is more effective than either alone.
+- **Improved focal loss design**: Replacing reference model dependency with a fixed threshold and using length normalization solves the instability issues found in vanilla focal DPO.
+- **Cross-domain generalization**: The framework is not limited to dialogue but significantly benefits mathematical reasoning tasks.
 
 ## Limitations & Future Work
-- **Dependency on external scores**: Quality weights require reward model or GPT-4 scoring, increasing data preparation cost.
-- **Many hyperparameters**: $\eta, \gamma, \tau_{\text{ref}}, \lambda, \tau_{\text{good}}$ all require tuning.
-- **Potential directions**: Self-reward could replace external scoring; null-space constraints from NSPO could be integrated to add a safety dimension.
+- **Dependency on external scoring**: Quality weights require reward models or GPT-4, increasing data preparation costs.
+- **Hyperparameter sensitivity**: Multiple parameters like $\eta, \gamma, \tau_{\text{ref}}, \lambda, \tau_{\text{good}}$ require fine-tuning.
+- **Potential improvements**: Exploring self-rewarding mechanisms to replace external scores and integrating null-space constraints (NSPO) for safety dimensions.
 
 ## Related Work & Insights
-- **vs. DPO**: DPO applies uniform weighting → Uni-DPO introduces dual-dimensional dynamic reweighting, yielding consistent improvements.
-- **vs. SimPO**: SimPO simplifies by removing the reference model → Uni-DPO augments SimPO with quality and performance weights, achieving additive gains.
-- **vs. Standard focal loss**: Naive focal DPO is unstable; Uni-DPO's calibrated variant (fixed threshold + LN) resolves this issue.
+- **Comparison with DPO**: Standard DPO uses equal weights; Uni-DPO introduces dual-dimension dynamic weighting for consistent gains.
+- **Comparison with SimPO**: Uni-DPO builds on SimPO's reference-free architecture by adding quality and performance weights for additive gains.
+- **Comparison with standard focal loss**: While direct focal DPO is often unstable, Uni-DPO's calibrated version (fixed threshold + LN) resolves these stability issues.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Dual-perspective dynamic weighting is natural but not breakthrough.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Four models × multiple benchmarks × mathematical reasoning, with detailed ablations.
-- Writing Quality: ⭐⭐⭐⭐ Method motivation is clearly articulated.
-- Value: ⭐⭐⭐⭐ A practical improvement to DPO that is easy to integrate into existing pipelines.
+- Novelty: ⭐⭐⭐⭐ Dual-perspective weights are intuitive but not a fundamental break from existing paradigms.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Tested across 4 models, multiple benchmarks, and math tasks with extensive ablations.
+- Writing Quality: ⭐⭐⭐⭐ Methodological motivations are clearly stated.
+- Value: ⭐⭐⭐⭐ A practical improvement for DPO that is easy to integrate into existing pipelines.
 
 <!-- RELATED:START -->
 
@@ -135,10 +152,10 @@ $$\mathcal{L}_{\text{Uni-DPO}} = -\mathbb{E}[w_{\text{qual}}(y_w, y_l) \cdot w_{
 ## Related Papers
 
 - [\[ICML 2026\] TUR-DPO: Topology- and Uncertainty-Aware Direct Preference Optimization](../../ICML2026/multimodal_vlm/tur-dpo_topology-_and_uncertainty-aware_direct_preference_optimization.md)
-- [\[ICLR 2026\] K-Sort Eval: Efficient Preference Evaluation for Visual Generation via Corrected VLM-as-a-Judge](k-sort_eval_efficient_preference_evaluation_for_visual_generation_via_corrected_.md)
-- [\[ICLR 2026\] Multimodal Prompt Optimization: Why Not Leverage Multiple Modalities for MLLMs](multimodal_prompt_optimization_why_not_leverage_multiple_modalities_for_mllms.md)
-- [\[ICLR 2026\] Empowering Small VLMs to Think with Dynamic Memorization and Exploration](empowering_small_vlms_to_think_with_dynamic_memorization_and_exploration.md)
-- [\[ICLR 2026\] Unified Vision-Language Modeling via Concept Space Alignment](unified_vision-language_modeling_via_concept_space_alignment.md)
+- [\[ICLR 2026\] Importance Sampling for Multi-Negative Multimodal Direct Preference Optimization](importance_sampling_for_multi-negative_multimodal_direct_preference_optimization.md)
+- [\[CVPR 2026\] Dynamics-Aware Preference Optimization for Vision-Language Models](../../CVPR2026/multimodal_vlm/dynamics-aware_preference_optimization_for_vision-language_models.md)
+- [\[ICLR 2026\] When MLLMs Meet Compression Distortion: A Coding Paradigm Tailored to MLLMs](when_mllms_meet_compression_distortion_a_coding_paradigm_tailored_to_mllms.md)
+- [\[ICLR 2026\] Visual Self-Refine: A Pixel-Guided Paradigm for Accurate Chart Parsing](visual_self-refine_a_pixel-guided_paradigm_for_accurate_chart_parsing.md)
 
 </div>
 

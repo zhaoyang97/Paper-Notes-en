@@ -2,133 +2,140 @@
 title: >-
   [Paper Note] RAVENEA: A Benchmark for Multimodal Retrieval-Augmented Visual Culture Understanding
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][Retrieval-Augmented Generation] This paper introduces Ravenea, the first benchmark for evaluating multimodal retrieval-augmented cultural understanding. It comprises 1…
+  [ICLR 2026][Multimodal VLM][Paper Note] Ravenea is the first benchmark constructed to evaluate multimodal retrieval-augmented cultural understanding. It consists of 1,868 instances and 11,396 human-ranked Wikipedia documents covering 11 categories across 8 countries. Evaluations of 7 multimodal retrievers and 17 VLMs demonstrate that culture-aware RAG improv
 tags:
-  - "ICLR 2026"
-  - "Information Retrieval & RAG"
-  - "Retrieval-Augmented Generation"
-  - "Cultural Understanding"
-  - "Multimodal Benchmark"
-  - "Visual Question Answering"
-  - "Image Captioning"
+  - ICLR 2026
+  - Multimodal VLM
 date: 2026-05-08
-content_hash: bba518e2c4aa271a
+content_hash: 8c893ddc60a92460
 ---
-
 # RAVENEA: A Benchmark for Multimodal Retrieval-Augmented Visual Culture Understanding
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2505.14462](https://arxiv.org/abs/2505.14462)  
 **Code**: [https://jiaangli.github.io/ravenea](https://jiaangli.github.io/ravenea)  
-**Area**: Information Retrieval
+**Area**: Information Retrieval  
 **Keywords**: Retrieval-Augmented Generation, Cultural Understanding, Multimodal Benchmark, Visual Question Answering, Image Captioning
 
 ## TL;DR
-This paper introduces Ravenea, the first benchmark for evaluating multimodal retrieval-augmented cultural understanding. It comprises 1,868 instances and 11,396 human-ranked Wikipedia documents, spanning 11 categories across 8 countries. The benchmark evaluates 7 multimodal retrievers and 17 VLMs, finding that culture-aware RAG yields average improvements of 6% on cVQA and 11% on cIC.
+Ravenea is the first benchmark constructed to evaluate multimodal retrieval-augmented cultural understanding. It consists of 1,868 instances and 11,396 human-ranked Wikipedia documents covering 11 categories across 8 countries. Evaluations of 7 multimodal retrievers and 17 VLMs demonstrate that culture-aware RAG improves performance by an average of 6% on cVQA and 11% on cIC.
 
 ## Background & Motivation
 
-**Background**: VLMs perform well on general vision-language tasks but fall short in understanding cultural nuances—such as the ritual significance of traditional attire or region-specific symbols and customs. While RAG has been shown to effectively enhance cultural understanding in text-only settings, its application to multimodal cultural scenarios remains largely unexplored.
+**Background**: While VLMs excel at general vision-language tasks, they struggle to understand cultural nuances, such as the ritual significance of traditional attire or region-specific symbols and customs. Retrieval-Augmented Generation (RAG) has proven effective in improving cultural understanding in text-only settings, but its application in multimodal cultural scenarios remains largely unexplored.
 
-**Limitations of Prior Work**: (a) Existing multimodal cultural datasets primarily test VLMs' memorized cultural knowledge rather than their ability to understand culture in realistic scenarios. (b) It is unclear whether current multimodal retrievers can reliably retrieve culturally relevant documents. (c) VLM performance varies dramatically across countries and cultures, reflecting a pronounced cultural bias toward Western cultures.
+**Limitations of Prior Work**: (a) Existing multimodal cultural datasets primarily test the cultural knowledge memorized by VLMs rather than their cultural understanding in real-world scenarios; (b) It is unclear whether current multimodal retrievers can reliably retrieve culturally relevant documents; (c) VLMs exhibit significant performance variance across different countries/cultures, showing a clear cultural bias toward Western cultures.
 
-**Key Challenge**: VLMs are increasingly deployed in culturally sensitive contexts such as education and assistive technologies, yet their cultural blind spots risk causing misunderstanding or reinforcing cultural bias—and no systematic benchmark exists to evaluate and address this capability.
+**Key Challenge**: VLMs are increasingly deployed in scenarios like education and assistive technologies, yet their cultural blind spots may lead to misunderstandings or even reinforce cultural biases. There is a lack of a systematic benchmark to evaluate and improve this capability.
 
-**Goal**: (a) Construct a benchmark specifically designed to evaluate multimodal RAG for cultural understanding; (b) assess the cultural retrieval capability of existing retrievers; (c) quantify the gains that RAG provides to VLMs on cultural understanding tasks.
+**Goal**: (a) Construct a benchmark specifically for evaluating multimodal RAG cultural understanding; (b) Evaluate the cultural retrieval capabilities of existing retrievers; (c) Quantify the performance gains brought by RAG to VLM cultural understanding.
 
-**Key Insight**: Building on two existing cultural datasets, CVQA and CCUB, the authors perform BM25-based initial retrieval followed by human re-ranking annotation, attaching culturally relevant Wikipedia documents to each image and constructing a retrieval-augmented evaluation pipeline.
+**Key Insight**: Leveraging two existing cultural datasets (CVQA and CCUB), the authors employ an initial BM25 retrieval followed by human re-ranking and annotation to attach culturally relevant Wikipedia documents to each image, constructing a retrieval-augmented evaluation pipeline.
 
-**Core Idea**: By constructing a multimodal RAG benchmark grounded in human-annotated culturally relevant documents, the paper reveals substantial improvements in VLM cultural understanding enabled by culture-aware retrieval.
+**Core Idea**: Build a multimodal RAG benchmark through human-annotated cultural relevance to reveal the substantial improvements cultural-aware retrieval brings to VLM understanding.
 
 ## Method
 
 ### Overall Architecture
-The data construction pipeline proceeds as follows: (1) culturally relevant images and QA/caption pairs are sourced from CVQA/CCUB; (2) GPT-4o generates cultural descriptions to serve as queries; (3) BM25 retrieves the top-10 documents from 6 million Wikipedia articles; (4) human annotators label and re-rank the retrieved results for cultural relevance. The evaluation pipeline feeds retrieved cultural documents into VLMs to complete either cVQA or cIC tasks.
+Ravenea aims to determine whether and to what extent "culturally relevant external documents" can improve a VLM's understanding of cultural details. The paper formulates this into a pipeline of "benchmark construction $\rightarrow$ retriever training $\rightarrow$ gain quantification." First, images are sampled from two existing cultural datasets. GPT-4o generates cultural description queries, and BM25 performs a coarse retrieval of the Top-10 documents from 6 million Wikipedia articles. Humans then label these candidates as "culturally relevant/irrelevant" to produce the Ravenea benchmark with ranked documents. A **Culture-Aware Contrastive (CAC)** retriever is fine-tuned on these labels. Finally, the "retrieved document + VLM" setup is applied to downstream tasks (cVQA / cIC), using a custom **RegionScore** to measure cultural accuracy.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["CVQA / CCUB<br/>Cultural Images + Q&A/Descriptions"] --> B["GPT-4o generates cultural queries<br/>→ BM25 Coarse Top-10 Wiki retrieval"]
+    B --> C["1. Three-dimensional Annotation<br/>Country/Culture/Visual binary judgment per document"]
+    C --> D["Ravenea Benchmark<br/>1868 instances + 11396 ranked docs"]
+    D --> E["2. CAC Learning<br/>Fine-tuning CLIP/SigLIP retrievers"]
+    E --> F["Retrieve cultural docs → VLM<br/>cVQA / cIC downstream tasks"]
+    F --> G["3. RegionScore<br/>Cultural accuracy via region term matching"]
+```
 
 ### Key Designs
 
-1. **Three-Dimensional Cultural Relevance Annotation**:
+**1. Three-dimensional Cultural Relevance Annotation: Decomposing "Cultural Relevance" into Verifiable Binary Judgments**
 
-    - Function: Decomposes "cultural relevance" into three independently verifiable binary dimensions.
-    - Mechanism: Each image–document pair is annotated along three dimensions: (a) country association (True/False/Uncertain), (b) cultural content relevance, and (c) visual element relevance. The three dimensions are assessed independently to reduce annotation ambiguity.
-    - Design Motivation: "Cultural relevance" as a monolithic concept is too vague. Decomposing it improves annotation consistency (Cohen's $\kappa = 0.83$) and enables finer-grained analysis.
+Asking annotators to directly judge if a document is "culturally relevant" to an image is subjective and ambiguous. Ravenea decomposes this into three independent binary dimensions: (a) Country Relevance (Is the document related to the image's country?), (b) Cultural Content Relevance (Does it involve the cultural connotations of the image?), and (c) Visual Element Relevance (Does it correspond to visible elements in the image?). Evaluating these dimensions independently improves clarity, reaching a Cohen's $\kappa = 0.83$, and allows for fine-grained analysis (e.g., distinguishing "correct country but irrelevant culture" docs).
 
-2. **Culture-Aware Contrastive (CAC) Learning**:
+**2. Culture-Aware Contrastive (CAC) Learning: Adding Explicit Cultural Supervision to Retrievers**
 
-    - Function: Fine-tunes CLIP/SigLIP to improve cultural retrieval capability.
-    - Mechanism: A combination of three losses — $\mathcal{L}_{\text{CAC}} = \frac{1}{3}(\mathcal{L}_{\text{Culture Classify}} + \mathcal{L}_{\text{Rank}} + \mathcal{L}_{\text{Diversity}})$. The classification loss uses sigmoid binary cross-entropy to determine whether a document is culturally relevant; the ranking loss applies margin ranking to ensure relevant documents score higher than irrelevant ones; the diversity loss prevents the text embeddings of positive samples from collapsing.
-    - Design Motivation: Standard contrastive learning does not distinguish cultural relevance; explicit cultural supervision signals are needed to guide the retriever.
+Standard contrastive learning aligns image-text semantics without knowing which document is "more culturally relevant," leading to limited performance when retrieving cultural documents using CLIP/SigLIP. CAC fine-tunes encoders on Ravenea annotations using an equally weighted combination of loss functions:
 
-3. **RegionScore Evaluation Metric**:
+$$\mathcal{L}_{\text{CAC}} = \frac{1}{3}(\mathcal{L}_{\text{Culture Classify}} + \mathcal{L}_{\text{Rank}} + \mathcal{L}_{\text{Diversity}})$$
 
-    - Function: Quantifies whether generated captions contain correct geographic or cultural region references.
-    - Mechanism: Checks whether the target country name or its corresponding adjective/demonym appears in the generated caption. A simple binary match: $R(\mathbf{g}^{(i)}, I_i) = 1$ if the correct region term appears in the caption.
-    - Design Motivation: Existing metrics (ROUGE-L, CIDEr, BERTScore, CLIPScore) show weak or even negative correlation with human judgments of cultural accuracy. RegionScore achieves a Kendall $\tau$ of 0.442 with human judgments—statistically significant and substantially higher than all other metrics.
+The classification loss uses sigmoid binary cross-entropy to explicitly judge cultural relevance. The ranking loss uses margin ranking to separate relevant from irrelevant documents. The diversity loss constrains positive sample embeddings to prevent collapse, ensuring broad coverage in retrieval. Together, these upgrade the retriever from "semantically similar" to "culturally relevant."
+
+**3. RegionScore Evaluation Metric: Measuring Cultural Accuracy via Simple Regional Term Matching**
+
+A major challenge in cultural evaluation is that existing metrics (ROUGE-L, CIDEr, BERTScore, CLIPScore) correlate weakly or even negatively with human judgments of cultural accuracy. RegionScore simply checks for the presence of the target country name or its corresponding adjectives/nationalities in the generated description:
+
+$$R(\mathbf{g}^{(i)}, I_i) = 1 \quad \text{if correct regional words appear, else } 0$$
+
+Despite its simplicity, this binary matching aligns best with human judgment, achieving a Kendall $\tau$ of 0.442, significantly higher than other semantic metrics. This reveals a systematic blind spot in current evaluation frameworks regarding the cultural dimension.
 
 ### Loss & Training
 
-CAC training fine-tunes CLIP/SigLIP encoders on Ravenea annotation data, combining the three losses with equal weights. Annotation quality is ensured through multiple rounds of independent labeling plus meta-checker verification (98.2% acceptance rate), with annotators trained via detailed guidelines and mock tests.
+CAC training fine-tunes CLIP/SigLIP encoders using the Ravenea annotated data with an equal weighting of the three losses. Annotation quality is ensured via multi-round independent tagging + meta-checker validation (98.2% acceptance rate), with annotators undergoing detailed training and simulation tests.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Retrieval performance (7 retrievers):
+Retrieval Performance (across 7 retrievers):
 
 | Retriever | MRR↑ | P@1↑ | nDCG@5↑ |
 |-----------|------|------|---------|
 | CLIP-L/14 (frozen) | 75.44 | 60.87 | 78.09 |
 | SigLIP2 (frozen) | 68.62 | 54.66 | 71.44 |
 | LLaVA-OV-7B | 58.85 | 37.48 | 60.34 |
-| **Ravenea-CLIP (ours)** | **82.17** | **72.05** | **84.09** |
-| Ravenea-SigLIP (ours) | 70.95 | 57.14 | 73.92 |
+| **Ravenea-CLIP (Ours)** | **82.17** | **72.05** | **84.09** |
+| Ravenea-SigLIP (Ours) | 70.95 | 57.14 | 73.92 |
 
-Downstream tasks (17 VLMs, w/ vs. w/o RAG):
-- cVQA average improvement: +6%
-- cIC average improvement: +11% (RegionScore)
-- Lightweight models benefit more from RAG
+Downstream Tasks (17 VLMs, w/ vs w/o RAG):
+- cVQA: Average Gain of +6%
+- cIC: Average Gain of +11% (RegionScore)
+- Lightweight models benefit more significantly.
 
 ### Ablation Study
 
-| Analysis Dimension | Key Finding |
-|-------------------|-------------|
-| Retriever type | Contrastive architectures (CLIP/SigLIP) are naturally suited for retrieval; generative models (LLaVA, VL-T5) are not |
-| Cultural fine-tuning | Ravenea-CLIP P@1 improves from 60.87→72.05 (+11.18), demonstrating the value of cultural supervision signals |
-| Cross-country variation | VLM performance varies substantially across countries; each model exhibits distinct "cultural preferences" |
-| Metric comparison | RegionScore achieves the highest correlation with human judgments ($\tau = 0.442$); traditional metrics show negative correlation |
+| Analysis Dimension | Key Findings |
+|--------------------|--------------|
+| Retriever Type | Contrastive architectures (CLIP/SigLIP) are naturally suited for retrieval; generative models (LLaVA, VL-T5) are not. |
+| Cultural Fine-tuning | Ravenea-CLIP P@1 improved from 60.87 to 72.05 (+11.18), proving the value of cultural supervision. |
+| Cross-country Variance | VLM performance varies greatly by country; each model has its own "cultural preference." |
+| Metric Comparison | RegionScore has the highest correlation with human judgment ($\tau=0.442$); traditional metrics correlate poorly or negatively. |
 
 ### Key Findings
-- The fine-tuned contrastive retriever (Ravenea-CLIP) achieves state-of-the-art results on all metrics, with P@1 improving by over 11%.
-- Cultural RAG provides greater benefit to lightweight models—external knowledge compensates more substantially for the knowledge gaps of smaller models.
-- Different VLMs exhibit distinct "cultural preferences"—certain models understand specific national cultures significantly better than others.
-- Conventional automatic evaluation metrics fail to capture cultural accuracy; RegionScore is a meaningful, if preliminary, alternative.
-- Generative retrieval models (LLaVA-OV-7B) unexpectedly underperform discriminative models (CLIP) on cultural retrieval, likely due to a mismatch between their training objective and retrieval requirements.
+- Fine-tuned contrastive retrievers (Ravenea-CLIP) achieve SOTA on all metrics, with P@1 increasing by over 11%.
+- Cultural RAG is more beneficial for lightweight models, as external knowledge compensates for their limited internal knowledge base.
+- Different VLMs exhibit distinct "cultural preferences," with some models understanding specific cultures significantly better than others.
+- Traditional automatic evaluation metrics fail to measure cultural accuracy; RegionScore provides a meaningful, albeit preliminary, alternative.
+- Generative retrieval models (LLaVA-OV-7B) unexpectedly perform worse than discriminative models (CLIP) in cultural retrieval, likely due to training objectives being misaligned with retrieval tasks.
 
 ## Highlights & Insights
-- **Filling a Gap**: This is the first benchmark to systematically evaluate multimodal RAG for cultural understanding. The large-scale experimental setup (7 retrievers × 17 VLMs × 8 countries × 2 tasks) yields comprehensive empirical findings.
-- **RegionScore Insight**: A simple region-word match outperforms complex semantic metrics in reflecting cultural accuracy—this "simpler is better" finding exposes a blind spot in the existing evaluation paradigm with respect to cultural dimensions.
-- **Simplicity and Effectiveness of Cultural Fine-Tuning**: Three straightforward contrastive learning losses suffice to improve retrieval performance by 11%+, suggesting that explicit cultural supervision signals—rather than larger models—are the key ingredient.
-- **Cross-Cultural Bias Analysis**: Each VLM exhibits a unique pattern of cultural bias, with important implications for fairness research—future work should develop calibration methods targeted at cultural bias.
+- **Filling the Gap**: This is the first systematic benchmark for evaluating multimodal RAG cultural understanding, featuring a large experimental scale (7 retrievers × 17 VLMs × 8 countries × 2 tasks).
+- **RegionScore Insight**: The finding that simple regional term matching reflects cultural accuracy better than complex semantic metrics reveals a blind spot in current evaluation systems.
+- **Effective Simplicity of Cultural Fine-tuning**: Improving retrieval performance by 11%+ using three simple contrastive losses suggests that explicit cultural signals, rather than model scale, are key.
+- **Cross-cultural Variance Analysis**: Revealing unique cultural bias patterns in different VLMs provides important insights for fairness research and future calibration methods.
 
 ## Limitations & Future Work
-- Only 8 countries are covered; with 200+ countries in the world, many cultures (e.g., African, Middle Eastern, Pacific Islander) are unrepresented.
-- Wikipedia as the sole external knowledge source introduces bias, as Wikipedia's coverage is itself uneven across different cultures.
-- RegionScore only checks whether the correct country or region term is mentioned and cannot assess the accuracy of cultural details (e.g., whether the specific meaning of a ritual is correctly described).
-- Retrieval is conducted exclusively using English documents; cross-lingual cultural retrieval is not explored.
-- Although annotation quality is high, annotators may themselves hold biased understandings of certain cultures.
-- The cVQA task uses a multiple-choice format, which may not reflect open-ended cultural reasoning ability.
+- Only 8 countries are covered; many cultures (e.g., Africa, Middle East, Pacific Islands) remain unrepresented.
+- Wikipedia as the sole knowledge source introduces bias due to uneven coverage of different cultures.
+- RegionScore only checks for country/region terms and cannot evaluate the accuracy of specific cultural details (e.g., the exact meaning of a ritual).
+- Only English documents are used for retrieval; cross-lingual cultural retrieval remains unexplored.
+- Despite high quality, human annotators may have their own biases when interpreting certain cultures.
+- cVQA utilizes a multiple-choice format, which may not fully reflect open-ended cultural reasoning abilities.
 
 ## Related Work & Insights
-- **vs. CVQA (Romero et al., 2025)**: CVQA provides only QA pairs without external knowledge; Ravenea extends it with human-ranked Wikipedia documents to support RAG evaluation.
-- **vs. CCUB (Liu et al., 2023)**: CCUB focuses on cultural descriptions for text-to-image generation; Ravenea reverses the task direction (image→text) and incorporates retrieval augmentation.
-- **vs. Seo et al. (2025)**: Their work studies RAG for cultural understanding in a text-only setting; Ravenea extends this to the multimodal domain.
-- **Practical Implications**: In any multimodal system operating in culturally sensitive contexts—such as cultural heritage preservation or multicultural educational assistance—explicit culture-aware retrieval augmentation warrants serious consideration.
+- **vs CVQA (Romero et al., 2025)**: CVQA only provides Q&A pairs without external knowledge; Ravenea extends this with human-ranked Wikipedia documents for RAG evaluation.
+- **vs CCUB (Liu et al., 2023)**: CCUB focuses on cultural descriptions for text-to-image generation; Ravenea reverses the direction (image-to-text) and incorporates retrieval.
+- **vs Seo et al. (2025)**: While they study cultural RAG in text-only settings, Ravenea extends the paradigm to multimodal contexts.
+- **Practical Implications**: Explicit cultural retrieval augmentation should be considered for any multimodal system in culturally sensitive scenarios, such as cultural heritage preservation or multicultural education.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ First multimodal RAG benchmark for cultural understanding, filling an important gap
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Large-scale evaluation across 7 retrievers × 17 VLMs with multi-dimensional analysis
-- Writing Quality: ⭐⭐⭐⭐ Well-organized, though the dataset construction section is slightly verbose
-- Value: ⭐⭐⭐⭐ Sustained value for VLM cultural fairness research, though limited to 8 countries
+- Novelty: ⭐⭐⭐⭐ First multimodal RAG cultural benchmark; effectively fills an important gap.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Large-scale evaluation across 7 retrievers and 17 VLMs with multi-dimensional analysis.
+- Writing Quality: ⭐⭐⭐⭐ Well-organized, though the dataset construction section is somewhat lengthy.
+- Value: ⭐⭐⭐⭐ High value for cultural fairness research, though limited by 8 countries.
 
 <!-- RELATED:START -->
 
@@ -136,11 +143,11 @@ Downstream tasks (17 VLMs, w/ vs. w/o RAG):
 
 ## Related Papers
 
-- [\[AAAI 2026\] MAVIS: A Benchmark for Multimodal Source Attribution in Long-form Visual Question Answering](../../AAAI2026/information_retrieval/mavis_a_benchmark_for_multimodal_source_attribution_in_long-form_visual_question.md)
-- [\[ACL 2026\] Utility-Oriented Visual Evidence Selection for Multimodal Retrieval-Augmented Generation](../../ACL2026/information_retrieval/utility-oriented_visual_evidence_selection_for_multimodal_retrieval-augmented_ge.md)
-- [\[NeurIPS 2025\] Windsock is Dancing: Adaptive Multimodal Retrieval-Augmented Generation](../../NeurIPS2025/information_retrieval/windsock_is_dancing_adaptive_multimodal_retrieval-augmented_generation.md)
-- [\[CVPR 2026\] RobustVisRAG: Causality-Aware Vision-Based Retrieval-Augmented Generation under Visual Degradations](../../CVPR2026/information_retrieval/robustvisrag_causality-aware_vision-based_retrieval-augmented_generation_under_v.md)
-- [\[CVPR 2026\] M4-RAG: A Massive-Scale Multilingual Multi-Cultural Multimodal RAG](../../CVPR2026/information_retrieval/m4-rag_a_massive-scale_multilingual_multi-cultural_multimodal_rag.md)
+- [\[ICLR 2026\] RAG4DMC: Retrieval-Augmented Generation for Data-Level Modality Completion](rag4dmc_retrieval-augmented_generation_for_data-level_modality_completion.md)
+- [\[ACL 2026\] Utility-Oriented Visual Evidence Selection for Multimodal Retrieval-Augmented Generation](../../ACL2026/multimodal_vlm/utility-oriented_visual_evidence_selection_for_multimodal_retrieval-augmented_ge.md)
+- [\[CVPR 2025\] RAP: Retrieval-Augmented Personalization for Multimodal Large Language Models](../../CVPR2025/multimodal_vlm/rap_retrieval-augmented_personalization_for_multimodal_large_language_models.md)
+- [\[CVPR 2026\] RobustVisRAG: Causality-Aware Vision-Based Retrieval-Augmented Generation under Visual Degradations](../../CVPR2026/multimodal_vlm/robustvisrag_causality-aware_vision-based_retrieval-augmented_generation_under_v.md)
+- [\[ICLR 2026\] DualToken: Towards Unifying Visual Understanding and Generation with Dual Visual Vocabularies](dualtoken_towards_unifying_visual_understanding_and_generation_with_dual_visual_.md)
 
 </div>
 

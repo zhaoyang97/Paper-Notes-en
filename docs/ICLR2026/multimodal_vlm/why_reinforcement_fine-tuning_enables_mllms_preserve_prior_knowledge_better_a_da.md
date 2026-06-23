@@ -2,88 +2,91 @@
 title: >-
   [Paper Note] Why Reinforcement Fine-Tuning Preserves Prior Knowledge Better: A Data Perspective
 description: >-
-  [Multimodal VLM] Through a systematic study of how SFT and RFT affect prior knowledge using a jigsaw puzzle task, this paper reveals that the key to RFT avoiding catastrophic forgetting lies in **data distribution** rath…
+  [ICLR 2026][Multimodal VLM][RFT] This work systematically investigates the impact of SFT and RFT on prior knowledge through jigsaw tasks, revealing that RFT's ability to avoid catastrophic forgetting stems from its **data distribution** rather than algorithmic differences—data sampled by RFT naturally aligns with the base model's probability landscape
 tags:
-  - "Multimodal VLM"
+  - ICLR 2026
+  - Multimodal VLM
+  - RFT
+  - SFT
+  - GRPO
 date: 2026-05-08
-content_hash: f37d90c63497e367
+content_hash: 0941413f57c88164
 ---
-
 # Why Reinforcement Fine-Tuning Preserves Prior Knowledge Better: A Data Perspective
 
-## Metadata
+## Meta Info
 - **Conference**: ICLR 2026
 - **arXiv**: [2506.23508](https://arxiv.org/abs/2506.23508)
 - **Code**: Not released
 - **Area**: Multimodal Large Language Models / Reinforcement Fine-Tuning / Catastrophic Forgetting
-- **Keywords**: RFT, SFT, catastrophic forgetting, learning dynamics, GRPO, jigsaw puzzle task
+- **Keywords**: RFT, SFT, Catastrophic Forgetting, Learning Dynamics, GRPO, Jigsaw Tasks
 
 ## TL;DR
 
-Through a systematic study of how SFT and RFT affect prior knowledge using a jigsaw puzzle task, this paper reveals that the key to RFT avoiding catastrophic forgetting lies in **data distribution** rather than algorithmic differences — data sampled by RFT naturally aligns with the base model's probability landscape, causing less interference.
+This work systematically investigates the impact of SFT and RFT on prior knowledge through jigsaw tasks, revealing that RFT's ability to avoid catastrophic forgetting stems from its **data distribution** rather than algorithmic differences—data sampled by RFT naturally aligns with the base model's probability landscape, resulting in minimal interference.
 
 ## Background & Motivation
 
-SFT and RFT are the two primary post-training methods for large models, yet their effects on the preservation of prior knowledge remain unclear. Existing research has focused mainly on downstream task performance gains while neglecting the impact of fine-tuning on pretrained knowledge.
+SFT and RFT are the two primary methods for post-training large models, but their effects on preserving prior knowledge remain unclear. Existing research predominantly focuses on downstream task performance, neglecting the impact of fine-tuning on pre-trained knowledge.
 
-Key observations:
-- SFT enables rapid learning of new tasks but leads to **catastrophic forgetting**
-- RFT learns more slowly but **better preserves prior knowledge**
-- The underlying reason is unclear: is it due to algorithmic differences or data differences?
+Key Observations:
+- SFT learns new tasks rapidly but leads to **catastrophic forgetting**.
+- RFT learns more slowly but **preserves prior knowledge better**.
+- The underlying cause remains unknown: is it due to algorithmic differences or data distribution differences?
 
-This paper introduces a **jigsaw puzzle task** as an entirely novel task (with 0% accuracy for all existing MLLMs including GPT-4o) to systematically investigate this question.
+This paper introduces **jigsaw tasks** as a novel benchmark (where existing MLLMs, including GPT-4o, achieve 0% accuracy) to systematically study this problem.
 
 ## Method
 
-### Experimental Design
+### Overall Architecture
 
-**Jigsaw Puzzle Task**: The original image is divided into a $3 \times 3$ grid, shuffled randomly, and the model must output the correct sequence of position indices to reconstruct the image. This task is chosen because all state-of-the-art MLLMs (including GPT-4o and Qwen-2.5-VL-72B) achieve 0% accuracy, ensuring the task is genuinely novel.
+The paper does not propose a new algorithm but designs a controlled experiment to decompose the causal chain of why "RFT forgets less than SFT." It uses a jigsaw task, which no MLLM can solve, as a pure probe for "new knowledge." RFT and SFT (with various data formats) are trained on the same task. Finally, an eNTK learning dynamics framework is used to quantify the perturbation of each training sample on prior knowledge, attributing the difference to data distribution rather than the optimization algorithm.
 
-### RFT Reward Design
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Original Image<br/>Cut into 3×3 grid and shuffled"] --> B["Jigsaw Probe Task<br/>New knowledge with 0% accuracy for all MLLMs"]
+    B --> C["Rule-based Reward for RFT<br/>GRPO·R=R_hit+R_acc+R_fmt"]
+    B --> D["Three SFT Data Formats<br/>Non-Rea / 4o-Rollout / GRPO-Rollout"]
+    C --> E["eNTK Learning Dynamics Framework<br/>Magnitude + Direction Dual-Factor Attribution"]
+    D --> E
+    E --> F["Conclusion: Forgetting determined by data distribution<br/>not the RL algorithm itself"]
+```
 
-The GRPO algorithm is adopted with three rule-based rewards:
+### Key Designs
 
-$$R = R_{\text{hit}} + R_{\text{acc}} + R_{\text{fmt}}$$
+**1. Jigsaw Probe Task: A zero-baseline "new knowledge" probe**
+The prerequisite for studying forgetting is ensuring the new task is entirely novel to the model. The paper cuts original images into $3 \times 3$ grids and shuffles them, requiring the model to output the correct index sequence to reconstruct the image. Key SOTA MLLMs (e.g., GPT-4o, Qwen2.5-VL-72B) achieve 0% accuracy, ensuring any performance gain comes from fine-tuning and any prior knowledge decline is a side effect of the fine-tuning itself.
 
-- **Hit Reward**: $R_{\text{hit}} = \frac{\#\text{correct indices}}{m \times n}$, measuring partial correctness
-- **Accuracy Reward**: $R_{\text{acc}} \in \{0, 1\}$, awarded only when all indices are correct
-- **Format Reward**: $R_{\text{fmt}} \in \{0, 1\}$, requiring output to follow the `<think>...</think><answer>...</answer>` structure
+**2. Rule-based Reward for RFT: Leveraging partial correctness with GRPO**
+Jigsaw answers are sparse. To address the lack of early signals, the reward is decomposed: $R = R_{\text{hit}} + R_{\text{acc}} + R_{\text{fmt}}$. The hit reward $R_{\text{hit}} = \frac{\#\text{correct indices}}{m \times n}$ provides continuous partial credit based on correctly placed tiles. The accuracy reward $R_{\text{acc}} \in \{0, 1\}$ is binary for full completion, and the format reward $R_{\text{fmt}} \in \{0, 1\}$ ensures the output follows the `<think>...</think><answer>...</answer>` structure.
 
-### SFT Data Formats
+**3. Three SFT Data Formats: Decoupling algorithm from data**
+To verify if differences arise from data rather than the SFT algorithm, SFT is trained on different supervision sources: Non-Reasoning (Non-Rea) with direct answers; Rea-4o-Rollout using GPT-4o generated reasoning traces; and GRPO-Rollout using correct rollouts produced by the RFT-trained model. GRPO-Rollout is the critical group—it follows the standard SFT process but uses data from the RFT self-sampled distribution. If it preserves prior knowledge, the data distribution is the primary factor.
 
-Two data formats are compared:
-- **Non-Reasoning (Non-Rea)**: Answers provided directly, without any reasoning process
-- **Reasoning (Rea-4o-Rollout)**: Reasoning trajectories generated by GPT-4o plus answers
-- **GRPO-Rollout**: Correct rollouts generated by the model itself after RFT training
-
-### Learning Dynamics Analysis Framework
-
-Core question: How does a training sample $x_u$ affect the probability of a prior-knowledge sample $x_v$?
-
-Based on empirical Neural Tangent Kernel (eNTK) analysis:
+**4. eNTK Learning Dynamics Framework: Quantifying prior perturbation**
+This framework explains the mechanism by which a training sample $x_u$ changes the probability of a prior sample $x_v$. Based on the empirical Neural Tangent Kernel (eNTK), the change in log-probability after one update is approximated as:
 
 $$\Delta \log \pi^t(x_v)|_{x_u} \approx \eta \cdot \underbrace{\nabla_\theta \log \pi_{\theta^t}(x_v)^\top \nabla_\theta \log \pi_{\theta^t}(x_u)}_{\text{eNTK}(x_u, x_v)}$$
 
-Decomposed into two factors:
-- **Magnitude**: The norm of the eNTK, reflecting the intensity of interference
-- **Direction**: The degree of gradient alignment, reflecting whether interference is constructive (reinforcement) or destructive (forgetting)
+This is decomposed into two factors: **Magnitude** (the norm of the eNTK), reflecting the intensity of the perturbation, and **Direction** (gradient alignment), determining if the perturbation increases (enhances) or decreases (forgets) the prior probability. RFT self-sampled data falls into regions where the base model already has moderate probability, leading to smaller gradient norms and better alignment with prior knowledge.
 
-## Experiments
+## Key Experimental Results
 
-### New Task Learning Ability (Qwen2.5-VL-3B / 7B)
+### New Task Learning Capability (Qwen2.5-VL-3B / 7B)
 
-| Method | Training Steps | 3×3 Puzzle Accuracy |
-|--------|---------------|---------------------|
+| Method | Training Steps | 3×3 Jigsaw Accuracy |
+|------|---------|---------------|
 | Base | - | 0% |
 | RFT (GRPO) | 27,360 | 66% / 75% |
 | SFT-Non-Rea | 200 / 400 | 53% / 80% |
 | SFT-Rea-4o-Rollout | 4,100 | 70% / 78% |
 | SFT-Rea-GRPO-Rollout | 2,670 / 3,000 | 70% / 81% |
 
-### Prior Knowledge Retention (Qwen2.5-VL-7B, Performance Change)
+### Prior Knowledge Preservation (Qwen2.5-VL-7B, Performance Change)
 
 | Benchmark | RFT | SFT-Non-Rea | SFT-Rea-4o | SFT-GRPO-Roll |
-|-----------|-----|-------------|------------|----------------|
+|------|-----|-------------|------------|----------------|
 | RefCOCO_val | ↓0.6 | **↓57.2** | **↓37.5** | ↓8.6 |
 | DocVQA | ±0.0 | **↓27.4** | ↓2.3 | ↓0.9 |
 | MME | ↓8 | **↓1854** | ↓249 | ↓126 |
@@ -92,46 +95,45 @@ Decomposed into two factors:
 
 ### Key Findings
 
-1. **RFT can learn entirely novel tasks from scratch**: With sufficient exploration (27k steps), accuracy improves from 0% to 66–75%.
-2. **SFT learns faster but forgets more severely**: It reaches RFT-level performance in only 200–400 steps, but grounding ability drops by 57.2%.
-3. **Data is the key factor, not the algorithm**: Training SFT on rollouts generated by the RFT model (SFT-Rea-GRPO-Rollout) similarly preserves prior knowledge, with far less forgetting than standard SFT.
-4. **Reasoning trajectories help mitigate forgetting**: Data with reasoning (Rea-4o and GRPO-Rollout) exhibits substantially less forgetting than Non-Rea data.
-5. **eNTK Magnitude Analysis**: RFT rollout data has smaller eNTK norms, causing weaker interference with prior knowledge.
-6. **eNTK Direction Analysis**: RFT rollouts reside in regions of moderate probability under the base model, making their gradient directions more aligned with prior knowledge.
+1. **RFT can learn entirely new tasks from scratch**: After sufficient exploration (27k steps), accuracy improved from 0% to 66-75%.
+2. **SFT learns fast but forgets severely**: It reaches RFT-level performance in only 200-400 steps, but Grounding capability drops by 57.2%.
+3. **Data is key, not the algorithm**: SFT trained on rollouts from the RFT model (SFT-Rea-GRPO-Rollout) preserves prior knowledge, with much less forgetting than standard SFT.
+4. **Reasoning traces mitigate forgetting**: Data with reasoning (Rea-4o and GRPO-Rollout) shows significantly less forgetting than Non-Rea.
+5. **eNTK Magnitude Analysis**: RFT rollout data has smaller eNTK norms, causing less interference with prior knowledge.
+6. **eNTK Direction Analysis**: RFT rollouts are located in regions where the base model has moderate initial probability, making gradient directions more aligned with prior knowledge.
 
 ### Math/Science QA Validation
-
-Consistent forgetting patterns and learning dynamics trends are observed on math and science QA tasks using Qwen2.5, validating the generalizability of the conclusions.
+Consistent trends in forgetting and learning dynamics were observed in Math and Science QA tasks on Qwen2.5, verifying the generalizability of the conclusions.
 
 ## Highlights & Insights
 
-- The jigsaw puzzle task is an elegant choice as a litmus test for "genuinely novel knowledge," providing a zero-baseline for all MLLMs.
-- This is the first work to explain the forgetting gap between RFT and SFT from a data perspective, proposing a verifiable causal chain.
-- The learning dynamics analysis framework (magnitude + direction decomposition) provides theoretical depth.
-- The experiment of training SFT on GRPO-Rollout data serves as a key piece of evidence, cleanly disentangling the roles of algorithm and data.
-- The paper provides a counter-argument to the view that RFT cannot acquire genuinely new capabilities.
+- Clever choice of the jigsaw task as a touchstone for "new knowledge" where all MLLMs start at a zero baseline.
+- First to explain the forgetting difference between RFT and SFT from a data perspective, providing a verifiable causal chain.
+- The learning dynamics framework (magnitude + direction decomposition) provides theoretical depth.
+- Training SFT on GRPO-Rollout serves as critical evidence, cleanly isolating the roles of algorithm and data.
+- Provides a counter-argument to the view that "RFT cannot acquire new capabilities."
 
 ## Limitations & Future Work
 
-- Although novel, the jigsaw puzzle task is relatively simple with a fixed output format; generalization to more complex tasks remains unverified.
-- Experiments are conducted only on Qwen2.5-VL 3B/7B; larger-scale models are not evaluated.
-- The eNTK analysis is based on approximations, and its precision in large-scale models may be limited.
-- No new anti-forgetting algorithm is proposed; the work is primarily analytical and explanatory.
-- Generating GRPO-Rollout data requires completing RFT training first, increasing overall computational cost.
+- While novel, the jigsaw task is relatively simple with a fixed output format; its generalizability to more complex tasks is not fully verified.
+- Experiments were limited to Qwen2.5-VL 3B/7B; larger-scale models were not tested.
+- eNTK analysis is based on approximations, and its precision in massive models may be limited.
+- No new anti-forgetting algorithm was proposed; the work is primarily analytical and explanatory.
+- Generating GRPO-Rollout requires completing RFT training first, increasing the total computational cost.
 
 ## Related Work & Insights
 
-- **Jigsaw Puzzle Tasks**: Noroozi & Favaro (self-supervised learning); Lyu et al. (MLLM weakness probing); Jigsaw-R1 (RFT for jigsaw solving)
-- **MLLM Reinforcement Fine-Tuning**: DeepSeek-R1; Meng et al. (OOD generalization); RFT for perception tasks
-- **Catastrophic Forgetting Mitigation**: EWC (regularization), experience replay (data mixing), architectural approaches — none of which scale to large MLLMs
-- **RL's Razor**: Shenfeld et al. argue that RL implicitly favors KL-minimal solutions; this paper provides a complementary explanation from a data perspective
+- **Jigsaw Tasks**: Noroozi & Favaro (Self-supervised learning); Lyu et al. (MLLM weakness probing); Jigsaw-R1 (RFT for solving jigsaws).
+- **MLLM Reinforcement Fine-Tuning**: DeepSeek-R1; Meng et al. (OOD generalization); RFT for perceptual tasks.
+- **Catastrophic Forgetting Mitigation**: EWC (regularization); Experience Replay (data mixing); Architectural methods — often inapplicable to large-scale MLLMs.
+- **RL's Razor**: Shenfeld et al. suggest RL implicitly biases towards KL-minimal solutions; this work provides a complementary explanation from a data perspective.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐⭐ — A novel perspective explaining the forgetting gap through the lens of data distribution
-- **Technical Depth**: ⭐⭐⭐⭐⭐ — Rigorous learning dynamics analysis with tight integration of theory and experiments
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Multi-model, multi-task validation with carefully designed ablations
-- **Practical Value**: ⭐⭐⭐⭐ — Provides direct guidance for post-training strategy selection
+- **Novelty**: ⭐⭐⭐⭐⭐ — A fresh perspective explaining forgetting differences through data distribution.
+- **Technical Depth**: ⭐⭐⭐⭐⭐ — Rigorous learning dynamics analysis with a tight coupling of theory and experiment.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Validated across multiple models and tasks with sophisticated ablation designs.
+- **Value**: ⭐⭐⭐⭐ — Provides direct guidance for post-training strategy selection.
 
 <!-- RELATED:START -->
 
@@ -140,9 +142,9 @@ Consistent forgetting patterns and learning dynamics trends are observed on math
 ## Related Papers
 
 - [\[ICLR 2026\] WebDS: An End-to-End Benchmark for Web-based Data Science](webds_an_end-to-end_benchmark_for_web-based_data_science.md)
-- [\[ICLR 2026\] VTool-R1: VLMs Learn to Think with Images via Reinforcement Learning on Multimodal Tool Use](vtool-r1_vlms_learn_to_think_with_images_via_reinforcement_learning_on_multimoda.md)
 - [\[AAAI 2026\] ReCAD: Reinforcement Learning Enhanced Parametric CAD Model Generation with Vision-Language Models](../../AAAI2026/multimodal_vlm/recad_reinforcement_learning_enhanced_parametric_cad_model_generation_with_visio.md)
 - [\[AAAI 2026\] FT-NCFM: An Influence-Aware Data Distillation Framework for Efficient VLA Models](../../AAAI2026/multimodal_vlm/ft-ncfm_an_influence-aware_data_distillation_framework_for_efficient_vla_models.md)
+- [\[ICLR 2026\] VisJudge-Bench: Aesthetics and Quality Assessment of Visualizations](visjudge-bench_aesthetics_and_quality_assessment_of_visualizations.md)
 - [\[ICCV 2025\] SC-Captioner: Improving Image Captioning with Self-Correction by Reinforcement Learning](../../ICCV2025/multimodal_vlm/sc-captioner_improving_image_captioning_with_self-correction_by_reinforcement_le.md)
 
 </div>

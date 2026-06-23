@@ -2,155 +2,164 @@
 title: >-
   [Paper Note] Multimodal Dataset Distillation Made Simple by Prototype-Guided Data Synthesis
 description: >-
-  [ICLR 2026][Information Retrieval & RAG][multimodal distillation] This paper proposes PDS (Prototype-Guided Data Synthesis), the first training-free multimodal dataset distillation framework. It leverages CLIP's aligned…
+  [ICLR 2026][Multimodal VLM][CLIP] Ours proposes PDS (Prototype-Guided Data Synthesis), the first training-free multimodal dataset distillation framework. It utilizes the CLIP-aligned embedding space for modality-specific clustering, obtains cross-modal image-text prototype pairs through Hungarian matching, and synthesizes distilled images from image pr
 tags:
-  - "ICLR 2026"
-  - "Information Retrieval & RAG"
-  - "multimodal distillation"
-  - "CLIP"
-  - "unCLIP"
-  - "prototype learning"
-  - "training-free distillation"
+  - ICLR 2026
+  - Multimodal VLM
+  - CLIP
+  - unCLIP
 date: 2026-05-08
-content_hash: 09bb5f4c06222817
+content_hash: 943bbe5c02524785
 ---
-
 # Multimodal Dataset Distillation Made Simple by Prototype-Guided Data Synthesis
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2602.19756](https://arxiv.org/abs/2602.19756)  
 **Code**: [GitHub](https://github.com/junhyeok9712/PDS)  
-**Area**: Information Retrieval
-**Keywords**: multimodal distillation, CLIP, unCLIP, prototype learning, training-free distillation
+**Area**: Information Retrieval  
+**Keywords**: Multimodal distillation, CLIP, unCLIP, Prototype learning, training-free distillation  
 
 ## TL;DR
 
-This paper proposes PDS (Prototype-Guided Data Synthesis), the first training-free multimodal dataset distillation framework. It leverages CLIP's aligned embedding space to perform modality-specific clustering, applies the Hungarian algorithm for cross-modal prototype matching, and employs an unCLIP decoder to synthesize distilled images from image prototypes. On a distillation set of as few as 100 pairs, PDS surpasses all optimization-based methods at zero training cost while achieving state-of-the-art cross-architecture generalization.
+Ours proposes PDS (Prototype-Guided Data Synthesis), the first training-free multimodal dataset distillation framework. It utilizes the CLIP-aligned embedding space for modality-specific clustering, obtains cross-modal image-text prototype pairs through Hungarian matching, and synthesizes distilled images from image prototypes using an unCLIP decoder. At a minimal scale of 100 pairs, PDS outperforms optimization-based methods with zero training cost and achieves SOTA cross-architecture generalization.
 
 ## Background & Motivation
 
-**Background**: The success of vision-language models such as CLIP depends on large-scale image-text datasets like LAION-5B, which incur prohibitive training costs. Dataset distillation—compressing large datasets into a small set of synthetic samples—is well established for image classification, but multimodal distillation remains in its early stages, with only a handful of prior works such as MTT-VL, TESLA-VL, and LoRS.
+**Background**: The success of vision-language models like CLIP relies on large-scale image-text datasets such as LAION-5B, which incur extremely high training costs. While dataset distillation (compressing large datasets into small sets of synthetic samples) is mature in image classification, research in multimodal scenarios remains in early stages. Existing multimodal distillation methods include only a few works such as MTT-VL, TESLA-VL, and LoRS.
 
-**Limitations of Prior Work**: All existing multimodal distillation methods are optimization-based and suffer from three fundamental problems. First, the computational cost is enormous: they require repeatedly training models on full data while storing all intermediate parameters, becoming infeasible as dataset and model scale grow. Second, they are strongly architecture-dependent: jointly optimizing image pixels and text features essentially adds architecture-specific adversarial perturbations to the initialization images, producing distilled sets that look nearly identical to the originals; switching backbones (e.g., from NFNet to ResNet/ViT) necessitates complete re-distillation. Third, subset selection methods fail entirely at very small scales (e.g., 100 pairs) due to insufficient semantic diversity.
+**Limitations of Prior Work**: Existing multimodal distillation methods are all optimization-based, leading to three fundamental issues. First, computational cost is immense: models must be repeatedly trained on full data with all intermediate parameters stored, which becomes unsustainable as datasets and models scale. Second, strong architecture dependency: the joint optimization of image pixels and text features essentially adds architecture-related adversarial perturbations to initialized images. Synthesized distilled sets resemble original images but require complete re-distillation when switching backbones (e.g., from NFNet to ResNet/ViT). Third, subset selection methods fail completely at extremely small scales (e.g., 100 pairs) due to an inability to maintain semantic diversity.
 
-**Key Challenge**: Optimization-based methods are "heavy" (expensive and architecture-locked), while subset selection methods are "shallow" at extremely small scales (insufficient semantic diversity). A distillation approach that is both training-free and architecture-agnostic is needed.
+**Key Challenge**: Optimization methods are "heavy" (computationally expensive + architecture-locked), while subset selection is "shallow" at minimal scales (insufficient semantic diversity). A distillation scheme that is both training-free and architecture-agnostic is required.
 
-**Key Insight**: The authors observe that CLIP's embedding space naturally aligns image and text modalities, enabling direct semantic prototype extraction via clustering. The key insight is that the unCLIP decoder can generate images directly from CLIP image embeddings—something standard Stable Diffusion cannot do—thereby bypassing pixel-space optimization entirely.
+**Key Insight**: It is observed that the CLIP embedding space naturally aligns image and text modalities, allowing for the direct acquisition of semantic prototypes via clustering within this space. A critical insight is that an unCLIP decoder can generate images directly from CLIP image embeddings (which standard Stable Diffusion cannot), thereby bypassing pixel-space optimization.
 
-**Core Idea**: Construct cross-modal prototypes via CLIP embedding clustering and Hungarian matching, then synthesize distilled images from image prototypes using unCLIP, achieving zero-training multimodal dataset distillation.
+**Core Idea**: Build cross-modal prototypes using CLIP embedding clustering and Hungarian matching, then synthesize distilled images from image prototypes using unCLIP to achieve zero-training multimodal dataset distillation.
 
 ## Method
 
 ### Overall Architecture
 
-PDS is a three-stage pipeline. Given a large-scale image-text dataset $\mathcal{D} = \{(x_n, y_n)\}_{n=1}^N$, it produces a compressed distilled set $\mathcal{S} = \{(\tilde{x}_m, \tilde{y}_m)\}_{m=1}^M$ ($M \ll N$). The three stages are: (i) modality-specific clustering—extracting embeddings with CLIP encoders and clustering each modality independently; (ii) cross-modal prototype matching—solving a linear assignment problem to align image and text clusters; (iii) image synthesis—generating distilled images from image prototypes using an unCLIP decoder. No model parameters are trained throughout the entire process.
+PDS is a three-stage pipeline: given a large-scale image-text dataset $\mathcal{D} = \{(x_n, y_n)\}_{n=1}^N$, it outputs a compressed distilled set $\mathcal{S} = \{(\tilde{x}_m, \tilde{y}_m)\}_{m=1}^M$ ($M \ll N$). The three stages are: (i) Modality-specific clustering—extracting embeddings via CLIP encoders and performing separate clustering to identify $M$ semantic skeletons; (ii) Cross-modal prototype matching—aligning image and text clusters globally via the linear assignment problem to obtain image-text prototype pairs; (iii) unCLIP image synthesis—generating distilled images from image prototypes using an unCLIP decoder. The entire process requires no parameter training. The distilled set is evaluated by fine-tuning CLIP with standard contrastive loss.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    IN["Large-scale Image-Text Dataset D"] --> CLUS
+    subgraph CLUS["Modality-Specific Clustering"]
+        direction TB
+        ENC["CLIP Image-Text Encoding<br/>+ Low Similarity Filtering"] --> KM["Image/Text Embeddings<br/>Separate mini-batch k-means"]
+        KM --> CLS["M Image Clusters<br/>+ M Text Clusters"]
+    end
+    CLUS --> MATCH["Cross-modal Prototype Matching<br/>Hungarian Algorithm Global Pairing<br/>Mean Calculation & Pairless Cluster Removal"]
+    MATCH --> PROTO["M Image-Text Prototype Pairs<br/>(Image Prototype + Text Prototype)"]
+    PROTO --> SYN["unCLIP Image Synthesis<br/>Conditioned on Image Prototype<br/>+ Retrieved Retrieval Caption"]
+    SYN --> OUT["Distilled Set S (M Pairs)"]
+    OUT --> DOWN["InfoNCE Fine-tuning CLIP<br/>(Downstream Evaluation)"]
+```
 
 ### Key Designs
 
-1. **Modality-Specific Clustering**
+**1. Modality-Specific Clustering: Identifying semantically diverse representatives in the CLIP aligned space**
 
-    - **Function**: Extract semantically diverse representative prototypes from the large dataset.
-    - **Mechanism**: CLIP image and text encoders are used to extract embeddings $\{(z_n^{\text{img}}, z_n^{\text{txt}})\}$ for all sample pairs. Cosine similarity between image-text pairs is computed and low-similarity (noisy or weakly aligned) pairs are filtered out. Mini-batch k-means clustering is then applied independently to image embeddings and text embeddings, with the number of clusters set to the target distillation size $M$, yielding $M$ image clusters and $M$ text clusters.
-    - **Design Motivation**: The CLIP encoder is required rather than a VAE encoder, because VAE image embeddings and CLIP text embeddings do not share the same space. Experiments confirm that replacing CLIP with VAE causes IR@10 to collapse from 37.3% to 17.2%.
+The first step is to concentrate $M$ "skeletons" from massive samples. The challenge lies in covering semantic diversity while ensuring alignment between image and text branches. PDS first encodes all pairs into embeddings $\{(z_n^{\text{img}}, z_n^{\text{txt}})\}$ using CLIP encoders, filters out low-similarity (noisy/weakly aligned) pairs, and performs mini-batch k-means separately on image and text embeddings. The number of clusters is set to the target distilled set size $M$, resulting in $M$ image clusters and $M$ text clusters. CLIP encoders are essential here; replacing them with VAE encoders (common in image classification distillation) results in a collapse of IR@10 from 37.3% to 17.2% because VAE space is not aligned with text space.
 
-2. **Cross-Modal Cluster Matching**
+**2. Cross-modal Prototype Matching: One-to-one pairing of image and text clusters via Hungarian algorithm**
 
-    - **Function**: Establish a one-to-one correspondence between image clusters and text clusters.
-    - **Mechanism**: A cost matrix $K \in \mathbb{R}^{M \times M}$ is constructed, where $K_{ij}$ is the negative count of image-text pairs shared by image cluster $C_i^{\text{img}}$ and text cluster $C_j^{\text{txt}}$. The Hungarian algorithm then solves the linear assignment problem $\min_P \sum_{ij} K_{ij} P_{ij}$ (where $P$ is a permutation matrix) to obtain the globally optimal one-to-one matching. For each matched cluster pair, only the shared image-text pair embeddings are retained; their mean yields the cross-modal prototype $(\tilde{z}_i^{\text{img}}, \tilde{z}_j^{\text{txt}})$.
-    - **Design Motivation**: Simple cosine similarity matching cannot guarantee a globally optimal one-to-one correspondence. The Hungarian algorithm provides an exact solution in $O(M^3)$. For "pairless clusters" with no shared pairs, they can be retained at small distillation scales (with negligible impact) but should be discarded at large scales to avoid cross-modal misalignment.
+The $M$ image clusters and $M$ text clusters are independently indexed. Matching them requires knowing which image cluster corresponds to which text cluster. Unlike greedy pairing, which cannot guarantee global optimality, PDS uses linear assignment. A cost matrix $K \in \mathbb{R}^{M \times M}$ is constructed where $K_{ij}$ is the negative count of shared image-text pairs between image cluster $C_i^{\text{img}}$ and text cluster $C_j^{\text{txt}}$. The problem is solved via the Hungarian algorithm:
 
-3. **Image Synthesis via unCLIP Decoder**
+$$\min_P \sum_{ij} K_{ij} P_{ij},$$
 
-    - **Function**: Generate high-quality distilled images from image prototype embeddings.
-    - **Mechanism**: Since the U-Net in standard Stable Diffusion does not accept CLIP image embeddings as conditioning, the unCLIP architecture is adopted. Each image prototype $\tilde{z}_i^{\text{img}}$ is fed as a condition to the unCLIP decoder; the real caption most similar (by cosine similarity) to the text prototype is retrieved as auxiliary text conditioning. Classifier-free guidance is applied (guidance scale = 5.0, 100 sampling steps) to generate 224×224 images.
-    - **Design Motivation**: Three comparisons establish the necessity of this design. (1) Retrieving real images from image prototypes fails to preserve semantic diversity. (2) Pure text-to-image generation with unCLIP loses the fine-grained visual information encoded in image prototypes. (3) CLIP inversion (pixel-space optimization) produces unrealistic images and takes 1,477 seconds, compared to only 9.7 seconds for PDS.
+where $P$ is a permutation matrix. For each matched cluster pair, only the embeddings of shared pairs are averaged to obtain a prototype pair $(\tilde{z}_i^{\text{img}}, \tilde{z}_j^{\text{txt}})$. "Pairless clusters" (clusters with no shared pairs) are discarded to avoid introducing cross-modal noise.
+
+**3. unCLIP Image Synthesis: Decoding distilled images directly from image prototype embeddings**
+
+The final step is converting the image prototype embedding back into a trainable image. Since the standard Stable Diffusion U-Net only accepts text conditions, PDS utilizes the unCLIP decoder architecture. The image prototype $\tilde{z}_i^{\text{img}}$ is used as the primary condition, supplemented by the actual caption most similar to the text prototype as an auxiliary text condition. Generation employs classifier-free guidance (scale=5.0, 100 steps) to produce 224×224 distilled images. Comparison with alternatives shows that: retrieval of real images fails to maintain diversity; text-only generation (unCLIP text-to-image) loses fine-grained visual information; and pixel-space CLIP inversion is prohibitively slow (1477s vs 9.7s for PDS) and generates unrealistic images.
 
 ### Loss & Training
 
-PDS itself involves no training or loss function optimization—this is its core advantage. For downstream evaluation, the synthesized distillation set is used to fine-tune CLIP with the standard InfoNCE contrastive loss. During evaluation, the text encoder is frozen; only the image encoder and a learnable linear projection layer are trained. All experiments are conducted on a single RTX 3090.
+Ours involves no training or loss function optimization during distillation, which is its core advantage. After the distilled set is generated, downstream evaluation is conducted by fine-tuning a CLIP model using the standard InfoNCE contrastive loss on the distilled set. During evaluation, the text encoder is frozen, and only the image encoder and a learnable linear projection layer are trained. All experiments were completed on a single RTX 3090.
 
 ## Key Experimental Results
 
-### Main Results: Cross-Architecture Generalization (Flickr30K, distilled with CLIP ViT-L/14)
+### Main Results: Cross-Architecture Generalization (Flickr30K, Distilled using CLIP ViT-L/14)
 
-| Eval Backbone | # Pairs | Method | IR@1 | IR@10 | TR@1 | TR@10 |
+| Eval Backbone | Pairs | Method | IR@1 | IR@10 | TR@1 | TR@10 |
 |:---:|:---:|:---|:---:|:---:|:---:|:---:|
 | ResNet-50 | 100 | TESLA-VL | 4.1 | 22.9 | 6.5 | 27.3 |
 | ResNet-50 | 100 | LoRS | 6.3 | 28.0 | 9.1 | 34.5 |
-| ResNet-50 | 100 | **PDS** | **7.9** | **37.3** | **10.2** | **39.0** |
+| ResNet-50 | 100 | **PDS (Ours)** | **7.9** | **37.3** | **10.2** | **39.0** |
 | ResNet-50 | 300 | TESLA-VL | 10.3 | 40.6 | 14.9 | 48.8 |
 | ResNet-50 | 300 | LoRS | 8.6 | 33.5 | 14.7 | 44.1 |
-| ResNet-50 | 300 | **PDS** | **14.4** | **51.4** | **18.7** | **57.8** |
+| ResNet-50 | 300 | **PDS (Ours)** | **14.4** | **51.4** | **18.7** | **57.8** |
 | ViT-Ti/16 | 100 | TESLA-VL | 2.1 | 13.1 | 2.6 | 13.7 |
 | ViT-Ti/16 | 100 | LoRS | 2.8 | 16.1 | 5.2 | 20.5 |
-| ViT-Ti/16 | 100 | **PDS** | **6.8** | **28.5** | **6.6** | **26.9** |
+| ViT-Ti/16 | 100 | **PDS (Ours)** | **6.8** | **28.5** | **6.6** | **26.9** |
 | ViT-Ti/16 | 300 | TESLA-VL | 5.1 | 24.5 | 6.1 | 27.3 |
 | ViT-Ti/16 | 300 | LoRS | 4.1 | 20.7 | 6.2 | 25.7 |
-| ViT-Ti/16 | 300 | **PDS** | **9.1** | **38.4** | **9.6** | **37.5** |
+| ViT-Ti/16 | 300 | **PDS (Ours)** | **9.1** | **38.4** | **9.6** | **37.5** |
 
-PDS achieves consistent improvements across all settings. For ResNet + 300 pairs, IR@10 exceeds the second-best by 10.8 pp and TR@10 by 9.0 pp. The advantage is even more pronounced on ViT (12.4 pp lead in IR@10 at 100 pairs), underscoring the severe architecture dependence of optimization-based methods.
+PDS leads across all settings. For ResNet + 300 pairs, PDS improves IR@10 by 10.8pp and TR@10 by 9.0pp over the next best. The Gain on ViT is even more pronounced, indicating that optimization-based methods suffer from severe architecture lock-in.
 
-### Ablation Study: Image Synthesis Strategy Comparison (100 pairs, Flickr30K, ResNet)
+### Ablation Study: Comparison of Image Synthesis Strategies (100 pairs, Flickr30K, ResNet)
 
-| Method | IR@1 | IR@10 | TR@1 | TR@10 | VRAM (GB) | Time (s) |
+| Method | IR@1 | IR@10 | TR@1 | TR@10 | Memory (GB) | Time (s) |
 |:---|:---:|:---:|:---:|:---:|:---:|:---:|
 | Text-prototype retrieval | 5.2 | 27.1 | 6.4 | 28.2 | — | — |
 | Image-prototype retrieval | 5.5 | 28.7 | 8.0 | 30.2 | — | — |
 | unCLIP text-to-image | 5.2 | 26.7 | 6.4 | 28.9 | — | — |
-| CLIP inversion (image-aligned) | 4.4 | — | 4.2 | — | 6.13 | 1477.7 |
-| CLIP inversion (text-aligned) | 1.4 | — | 2.0 | — | 6.13 | 1477.7 |
-| **PDS (full)** | **7.9** | **37.3** | **10.2** | **39.0** | **4.34** | **9.7** |
+| CLIP Inversion (Img-align) | 4.4 | — | 4.2 | — | 6.13 | 1477.7 |
+| CLIP Inversion (Txt-align) | 1.4 | — | 2.0 | — | 6.13 | 1477.7 |
+| **PDS (Full)** | **7.9** | **37.3** | **10.2** | **39.0** | **4.34** | **9.7** |
 
-This table clearly demonstrates the contribution of each design decision: (1) conditioning on image prototypes rather than text prototypes alone yields substantial gains; (2) synthesized images outperform retrieved real images; (3) PDS is 150× faster than CLIP inversion with superior performance.
+This table demonstrates: (1) Using image prototypes significantly outperforms text prototypes; (2) Synthesized images outperform retrieved images; (3) PDS is 150x faster than CLIP inversion with superior results.
 
-### Comparison with Subset Selection Methods (100 pairs, Flickr30K, ResNet)
+### Comparison with Subset Selection (100 pairs, Flickr30K, ResNet)
 
 | Method | IR@1 | IR@10 | TR@1 | TR@10 |
 |:---|:---:|:---:|:---:|:---:|
 | K-center | 2.9 | 16.8 | 5.3 | 24.1 |
 | Herding | 3.6 | 20.1 | 6.7 | 28.2 |
-| CLIP score filtering | 2.5 | 14.5 | 4.7 | 18.9 |
-| LAION filtering | 2.4 | 14.5 | 4.7 | 19.3 |
-| Image-based filtering | 2.2 | 13.6 | 4.0 | 16.2 |
-| **PDS** | **7.9** | **37.3** | **10.2** | **39.0** |
+| CLIP score filter | 2.5 | 14.5 | 4.7 | 18.9 |
+| LAION filter | 2.4 | 14.5 | 4.7 | 19.3 |
+| Image-based filter | 2.2 | 13.6 | 4.0 | 16.2 |
+| **PDS (Ours)** | **7.9** | **37.3** | **10.2** | **39.0** |
 
-At the extremely small distillation scale of 100 pairs, PDS outperforms the best subset selection method (Herding) by 17.2 pp in IR@10 and 10.8 pp in TR@10. Subset selection methods are fundamentally constrained to selecting real samples and cannot preserve semantic diversity through interpolation.
+At minimal scales (100 pairs), PDS achieves an IR@10 that is 17.2pp higher than the best subset selection method (Herding). Subset selection is constrained to real samples and cannot maintain semantic diversity via interpolation.
 
 ### Key Findings
 
-- **Training-free distillation comprehensively outperforms optimization-based distillation**: PDS surpasses TESLA-VL and LoRS across all distillation set sizes and evaluation backbones without any training, challenging the assumption that distillation requires complex bilevel optimization.
-- **Optimization-based methods are essentially perturbation injection**: Visualization reveals that distilled images from TESLA-VL/LoRS are nearly identical to their initialization images, effectively adding architecture-specific adversarial perturbations, which explains their poor cross-architecture generalization.
-- **Image prototypes are the critical component**: Pure unCLIP text-to-image generation achieves only IR@10 = 26.7%, which jumps to 37.3% upon incorporating image prototype conditioning, demonstrating that image embeddings carry fine-grained visual information that text alone cannot capture.
-- **CLIP alignment is a prerequisite for multimodal distillation**: Replacing CLIP with VAE for encoding (as in D4M and MGD3) drops IR@10 from 37.3% to 9.8%–17.2%, confirming that cross-modal alignment quality directly determines distillation effectiveness.
-- **Handling pairless clusters**: At small distillation scales, pairless clusters are rare and their retention or removal has negligible effect; at large scales, they must be discarded to avoid introducing cross-modal misalignment noise.
+- **Training-free outperforms optimization**: PDS surpasses TESLA-VL and LoRS across all distilled sizes and backbones without any training, breaking the assumption that distillation requires complex bi-level optimization.
+- **Optimization methods are essentially adversarial noise**: Visualizations reveal that images from TESLA-VL/LoRS are nearly identical to their initialization, meaning they primarily learn architecture-dependent perturbations, leading to poor generalization.
+- **Image prototypes are critical**: Pure unCLIP text-to-image achieves an IR@10 of only 26.7%, which jumps to 37.3% with image prototypes, proving that image embeddings convey fine-grained visual info missing in text.
+- **CLIP alignment is a prerequisite**: Replacing CLIP with VAE (as in D4M/MGD3) drops IR@10 from 37.3% to the range of 9.8%~17.2%, proving cross-modal alignment quality dictates distillation success.
+- **Strategy for pairless clusters**: At small distillation scales, pairless clusters are rare and negligible. At larger scales, discarding them is essential to prevent introducing misaligned noise.
 
 ## Highlights & Insights
 
-- **Counter-intuitive finding: training-free outperforms trained methods**: PDS optimizes no parameters whatsoever, relying solely on the off-the-shelf capabilities of pretrained CLIP and unCLIP, yet surpasses methods that require repeated training iterations. This suggests that when pretrained embedding spaces are of sufficient quality, carefully designed utilization strategies (clustering + matching + decoding) are more effective than end-to-end optimization—an insight transferable to other data compression scenarios.
-- **Precise positioning of the unCLIP decoder**: The authors astutely identify that standard Stable Diffusion cannot accept CLIP image embeddings as conditioning, and that unCLIP fills exactly this gap. The design principle of "selecting a generative architecture that matches the representational form of the prototype" reflects a deep understanding of the capability boundaries of generative models.
-- **Remarkable efficiency advantage**: Image synthesis requires only 9.7 seconds and 4.34 GB of VRAM, versus 1,477 seconds and 6.13 GB for CLIP inversion—a 150× speedup. The entire distillation pipeline can be completed rapidly on a single RTX 3090, offering strong practical utility.
+- **Counter-intuitive "Training-free > Training-based"**: PDS uses off-the-shelf capabilities of CLIP+unCLIP without optimizing any parameters to outperform training-intensive methods. It demonstrates that when a pre-trained embedding space is sufficiently good, structural utilization (clustering+matching+decoding) is more effective than end-to-end optimization.
+- **Strategic use of unCLIP decoder**: The authors correctly identified that Stable Diffusion cannot be conditioned on CLIP image embeddings, whereas unCLIP fills this gap perfectly. This illustrates a profound understanding of generative model boundaries.
+- **Surprising efficiency**: Synthesis takes only 9.7s with 4.34GB VRAM vs 1477s and 6.13GB for CLIP inversion. The process is fully feasible on a single consumer GPU (RTX 3090).
 
 ## Limitations & Future Work
 
-- **Encoder lock-in**: PDS depends on the CLIP embedding space and cannot leverage stronger encoders such as SigLIP, as no corresponding unCLIP decoder exists for them. The authors identify developing conditional generators compatible with SigLIP embeddings as a future direction.
-- **Limited domain transferability**: CLIP and unCLIP are primarily trained on natural images and may degrade in specialized domains such as medical imaging, where domain-adaptive fine-tuning would be required.
-- **Underrepresentation of long-tail categories**: Cluster centroids naturally skew toward high-frequency semantics, potentially marginalizing rare concepts. The authors demonstrate in the appendix that PDS is more robust than subset selection on rare samples.
-- **Evaluation limited to retrieval tasks**: The paper evaluates only image-text retrieval (R@k) and does not cover downstream tasks such as classification, VQA, or image captioning; broader generalizability remains to be validated.
-- **Directions for improvement**: (1) Adaptive clustering strategies that dynamically allocate distillation samples per semantic cluster based on data distribution; (2) multi-round training-free prototype refinement that uses generated outputs to recalibrate prototypes iteratively.
+- **Encoder lock-in**: PDS depends on the CLIP embedding space and cannot benefit from stronger encoders (like SigLIP) until corresponding unCLIP-style decoders are available.
+- **Domain transfer limitations**: Since CLIP and unCLIP are trained on natural images, performance may degrade in specialized domains like medical imaging without domain-specific fine-tuning.
+- **Long-tail representation**: Cluster centers naturally bias toward high-frequency semantics, potentially marginalizing rare concepts.
+- **Evaluation task coverage**: The paper focuses on image-text retrieval (R@k), leaving generalization to VQA, Captioning, or classification to be verified.
+- **Future work**: (1) Adaptive clustering numbers to dynamically allocate samples to semantic clusters; (2) Iterative training-free prototype refinement using synthesized results for calibration.
 
 ## Related Work & Insights
 
-- **vs. TESLA-VL / LoRS**: These methods use trajectory matching for bilevel optimization, jointly learning pixel and text features at high computational cost with architecture lock-in. PDS bypasses optimization entirely, substituting clustering + matching + generation, achieving better results at zero training cost.
-- **vs. D4M / MGD3**: These training-free distillation methods for image classification use VAE encoders. Direct extension to multimodal settings fails due to the misalignment between VAE and CLIP embedding spaces (IR@10 drops by more than half), confirming that cross-modal alignment is a necessary condition for multimodal distillation.
-- **vs. subset selection (Herding / K-center / CLIP filtering)**: These methods are confined to selecting subsets of real data, which yields severely insufficient semantic diversity at very small scales (100 pairs). PDS overcomes this limitation by interpolating in embedding space and synthesizing new images.
-- **Promising follow-up direction**: If stronger encoders such as SigLIP acquire compatible conditional generators, the PDS framework can directly substitute components to achieve higher distillation quality.
+- **vs TESLA-VL / LoRS**: These use trajectory matching for bi-level optimization, learning pixel+text features with high cost and architecture lock. PDS bypasses optimization entirely with clustering+matching+generation.
+- **vs D4M / MGD3**: These are training-free methods for image classification using VAE. They fail in multimodal settings due to misalignment between VAE and CLIP spaces, highlighting the necessity of cross-modal alignment.
+- **vs Subset Selection**: Subset selection is limited to original samples and lacks diversity at small scales. PDS overcomes this via interpolation in embedding space followed by generation.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ — First training-free multimodal distillation framework; first use of the unCLIP decoder for image synthesis in dataset distillation.
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Comprehensive coverage of cross-architecture generalization, extremely small-scale comparisons, three categories of baselines, and multiple ablation studies.
-- Writing Quality: ⭐⭐⭐⭐ — Three-stage pipeline described clearly, motivation chain complete, comparisons conducted fairly.
-- Value: ⭐⭐⭐⭐ — Direct practical utility for multimodal data efficiency; distillation achievable on a single GPU.
+- Novelty: ⭐⭐⭐⭐⭐ First training-free multimodal distillation + first use of unCLIP for synthesis in distillation.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive cross-architecture generalization, minimal set comparisons, and multiple baselines/ablations.
+- Writing Quality: ⭐⭐⭐⭐ Clear description of the 3-stage pipeline and consistent motivation.
+- Value: ⭐⭐⭐⭐ High practical value for multimodal data efficiency; runs on a single GPU.
 
 <!-- RELATED:START -->
 
@@ -158,11 +167,11 @@ At the extremely small distillation scale of 100 pairs, PDS outperforms the best
 
 ## Related Papers
 
-- [\[AAAI 2026\] ReFeed: Retrieval Feedback-Guided Dataset Construction for Style-Aware Query Rewriting](../../AAAI2026/information_retrieval/refeed_retrieval_feedback-guided_dataset_construction_for_style-aware_query_rewr.md)
-- [\[ICLR 2026\] Attribution-Guided Decoding](attribution-guided_decoding.md)
-- [\[ICLR 2026\] Leveraging Data to Say No: Memory Augmented Plug-and-Play Selective Prediction](leveraging_data_to_say_no_memory_augmented_plug-and-play_selective_prediction.md)
-- [\[NeurIPS 2025\] SuperCLIP: CLIP with Simple Classification Supervision](../../NeurIPS2025/information_retrieval/superclip_clip_with_simple_classification_supervision.md)
-- [\[ICLR 2026\] RefTool: Reference-Guided Tool Creation for Knowledge-Intensive Reasoning](reftool_reference-guided_tool_creation_for_knowledge-intensive_reasoning.md)
+- [\[ICLR 2026\] Multimodal Dataset Distillation via Phased Teacher Models](multimodal_dataset_distillation_via_phased_teacher_models.md)
+- [\[ICLR 2026\] Asynchronous Matching with Dynamic Sampling for Multimodal Dataset Distillation](asynchronous_matching_with_dynamic_sampling_for_multimodal_dataset_distillation.md)
+- [\[NeurIPS 2025\] CovMatch: Cross-Covariance Guided Multimodal Dataset Distillation with Trainable Text Encoder](../../NeurIPS2025/multimodal_vlm/covmatch_crosscovariance_guided_multimodal_dataset_distillat.md)
+- [\[CVPR 2026\] Multimodal Distribution Matching for Vision-Language Dataset Distillation](../../CVPR2026/multimodal_vlm/multimodal_distribution_matching_for_vision-language_dataset_distillation.md)
+- [\[ICLR 2026\] Manzano: A Simple and Scalable Unified Multimodal Model with a Hybrid Vision Tokenizer](manzano_a_simple_and_scalable_unified_multimodal_model_with_a_hybrid_vision_toke.md)
 
 </div>
 

@@ -2,151 +2,132 @@
 title: >-
   [Paper Note] Self-Evolving Vision-Language Models for Image Quality Assessment via Voting and Ranking
 description: >-
-  [ICLR 2026][Multimodal VLM][VLM] This paper proposes EvoQuality, a self-supervised iterative framework that generates pseudo-ranking labels via pairwise majority voting and employs GRPO for self-iterative optimization…
+  [ICLR 2026][Multimodal VLM][VLM] Ours proposes the EvoQuality framework, which generates pseudo-ranking labels through pairwise majority voting combined with GRPO self-iterative optimization. This allows VLMs to autonomously improve image quality perception without human annotation, achieving a 31.8% PLCC improvement in zero-shot performance and surpa
 tags:
-  - "ICLR 2026"
-  - "Multimodal VLM"
-  - "VLM"
-  - "Image Quality Assessment"
-  - "Self-supervised"
-  - "GRPO"
-  - "Voting and Ranking"
+  - ICLR 2026
+  - Multimodal VLM
+  - VLM
+  - GRPO
 date: 2026-05-08
-content_hash: c65284372b63d73e
+content_hash: 2b9a0f77988f0022
 ---
-
 # Self-Evolving Vision-Language Models for Image Quality Assessment via Voting and Ranking
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2509.25787](https://arxiv.org/abs/2509.25787)  
 **Code**: None  
-**Area**: Multimodal VLM
+**Area**: Multimodal VLM  
 **Keywords**: VLM, Image Quality Assessment, Self-supervised, GRPO, Voting and Ranking
 
 ## TL;DR
 
-This paper proposes EvoQuality, a self-supervised iterative framework that generates pseudo-ranking labels via pairwise majority voting and employs GRPO for self-iterative optimization, enabling VLMs to autonomously improve their image quality perception without any human annotations. The framework achieves a 31.8% PLCC improvement in zero-shot settings and surpasses supervised SOTA on 5 out of 7 IQA benchmarks.
+Ours proposes the EvoQuality framework, which generates pseudo-ranking labels through pairwise majority voting combined with GRPO self-iterative optimization. This allows VLMs to autonomously improve image quality perception without human annotation, achieving a 31.8% PLCC improvement in zero-shot performance and surpassing supervised SOTA on 5 out of 7 IQA benchmarks.
 
 ## Background & Motivation
 
-Image Quality Assessment (IQA) is a classical computer vision task aimed at automatically evaluating the perceptual quality of images. While Vision-Language Models (VLMs) have demonstrated strong capabilities across various visual tasks, applying them to IQA still faces two major challenges:
+Image Quality Assessment (IQA) is a classic computer vision task focused on automatically evaluating the perceived quality of images. While Vision-Language Models (VLMs) have shown strong capabilities in various tasks, applying them to IQA faces two major challenges:
 
-**High annotation cost**: Conventional VLM post-training methods (e.g., SFT or RLHF) rely on large volumes of human-annotated quality scores, which are extremely expensive to collect and suffer from high subjectivity and low consistency.
+**High Annotation Costs**: Traditional VLM post-training methods (e.g., SFT or RLHF) rely on large-scale human-annotated quality scores, which are expensive to collect and suffer from high subjectivity and low consistency.
 
-**Gap in self-supervised learning for perceptual tasks**: Although self-supervised techniques have been validated for enhancing reasoning capabilities (e.g., mathematical reasoning), their application to perceptual tasks such as quality judgment remains largely unexplored. IQA differs fundamentally from reasoning tasks—it has no single correct answer and instead relies on relative comparisons.
+**Self-supervised Gap in Perception**: Although self-supervised techniques have proven effective in enhancing reasoning (e.g., mathematical reasoning), their application in perceptual tasks like quality judgment is almost non-existent. IQA differs from reasoning tasks as it lacks a single correct answer and relies on relative comparisons.
 
-**Limitations of Prior Work**: Most existing VLM-based IQA models require supervised fine-tuning on annotated IQA datasets, resulting in limited generalizability and poor transfer to unseen datasets.
+**Limitations of Prior Work**: Existing VLM-based IQA models mostly require supervised fine-tuning on labeled IQA datasets, leading to limited generalization and poor transfer performance on unseen datasets.
 
-The core motivation of this paper is: **Can VLMs autonomously improve their image quality perception without any human annotations?** The authors observe that while a VLM's single-pass quality judgment may be unreliable, the "wisdom of the crowd" derived from repeated pairwise comparisons can yield reliable quality rankings.
+**Goal**: Can a VLM autonomously improve its image quality perception without any human labels? **Key Insight**: While a single quality judgment by a VLM may be inaccurate, reliable quality rankings can emerge through the "wisdom of the crowd" via repeated pairwise comparisons.
 
 ## Method
 
 ### Overall Architecture
 
-EvoQuality is a self-supervised iterative optimization framework with the following core pipeline:
-1. Perform multiple pairwise quality comparisons between image pairs using the VLM.
-2. Establish consensus rankings (pseudo-labels) via majority voting.
-3. Convert ranking results into fidelity reward signals.
-4. Optimize the VLM using GRPO (Group Relative Policy Optimization).
-5. Repeat the above steps iteratively, allowing the VLM to progressively self-evolve.
+EvoQuality decomposes "unlabeled IQA enhancement" into a self-supervised closed loop consisting of offline and online phases. In the offline phase, the VLM performs pairwise comparisons, and majority voting generates a consensus ranking as pseudo-labels. In the online phase, this ranking is converted into fidelity rewards to fine-tune the model using GRPO. The fine-tuned, stronger VLM then returns to the offline phase to re-vote and produce cleaner pseudo-labels, enabling iterative self-evolution. The process relies on the assumption that "individual judgments are noisy, but collective voting is reliable."
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    IN["Unlabeled Images<br/>Pairwise Matching"]
+    subgraph OFF["Pairwise Majority Voting (Offline)"]
+        direction TB
+        A["VLM compares each pair<br/>independently K times"] --> B["Majority voting determines preference<br/>Aggregate global pseudo-ranking"]
+    end
+    IN --> OFF
+    OFF --> R["Fidelity Reward<br/>Weighted by voting consistency"]
+    R --> G["GRPO Optimization<br/>Group relative advantage update"]
+    G --> V["Stronger VLM"]
+    V -->|"Iterative Self-Evolution: Re-voting"| IN
+    V --> OUT["Zero-shot IQA<br/>Quality Prediction"]
+```
 
 ### Key Designs
 
-1. **Pairwise Majority Voting**:
+**1. Pairwise Majority Voting: Aggregating Unreliable Judgments into Reliable Rankings**
 
-    - For a set of images, the VLM performs $K$ repeated comparisons for each image pair, answering "which image has better quality?"
-    - Majority voting over the $K$ outputs determines the quality preference for each pair.
-    - A global quality ranking is obtained by aggregating all pairwise votes through a ranking algorithm (e.g., the Bradley-Terry model or simple counting).
-    - **Design Motivation**: Exploits the self-consistency principle—single samples may be unreliable, but the consistent direction across multiple samples reflects the model's genuine tendency.
+Assigning absolute quality scores is subjective and unstable for VLMs, but "which image is better" is a simpler task. EvoQuality has the VLM compare each pair $K$ times ($K=5 \sim 10$ is optimal). Majority voting determines the preference for each pair, and all pairwise preferences are aggregated into a global quality ranking using counting or Bradley-Terry models. This effectively transfers the concept of self-consistency from mathematical reasoning to perceptual tasks—while a single sample may fail, the direction of multiple samples reflects the model's true inclination.
 
-2. **Fidelity Reward Construction**:
+**2. Fidelity Reward: Grounding RL Signals in Voting Confidence**
 
-    - The pseudo-rankings produced by voting are converted into reward signals.
-    - A positive reward is assigned when the VLM's new output is consistent with the pseudo-ranking; a negative reward is assigned otherwise.
-    - The reward magnitude is proportional to voting consistency—pairs with higher voting agreement (i.e., more confident judgments) receive larger reward weights.
-    - **Design Motivation**: Highly consistent voting results are more reliable and should be weighted more heavily; low-consistency results may represent difficult samples or noise and should be down-weighted.
+To drive GRPO, the pseudo-rankings must be converted into optimizable rewards. EvoQuality provides a positive reward if the VLM's comparison matches the pseudo-ranking and a negative reward otherwise. The reward magnitude is proportional to the voting consistency of that pair. High-consistency pairs (where the model is certain) are prioritized for alignment, while pairs with near 50/50 votes (hard or noisy samples) receive low weights to prevent the model from overfitting to unreliable labels.
 
-3. **GRPO Optimization**:
+**3. GRPO Optimization: Group Relative Rewards instead of Critic Networks**
 
-    - Group Relative Policy Optimization is adopted as the reinforcement learning optimizer.
-    - GRPO does not require an additional critic/value network; it directly uses within-group relative rewards to update the policy.
-    - In each iteration, multiple responses are sampled from the current VLM, relative advantages are computed based on fidelity rewards, and model parameters are updated accordingly.
-    - **Design Motivation**: GRPO is more lightweight than PPO, making it suitable for iterative optimization of large models.
+The model is updated via Group Relative Policy Optimization. For each input, a group of responses is sampled from the current VLM. The relative fidelity rewards within the group determine the advantage $A_i$ for each response. The update follows the policy gradient: $L_{GRPO} = -\mathbb{E}\big[\sum_{i} A_i \log \pi_\theta(y_i \mid x_i)\big]$, with an added KL divergence constraint to prevent the model from deviating too far from its original visual capabilities. GRPO eliminates the need for an additional critic network and naturally fits the relative nature of quality ranking.
 
-4. **Iterative Self-Evolution Mechanism**:
+**4. Iterative Self-Evolution: Mutual Improvement of Labels and Models**
 
-    - After each optimization round, the updated VLM re-executes pairwise voting to generate new pseudo-labels.
-    - The new pseudo-labels are of higher quality (since the VLM has improved), further driving model improvement.
-    - This forms a positive feedback loop: better model → more accurate pseudo-labels → more effective training → better model.
-    - **Design Motivation**: Inspired by self-training, but using ranking rather than absolute scores to mitigate error accumulation.
-
-### Loss & Training
-
-- The GRPO policy gradient loss is used as the core objective:
-  $$L_{GRPO} = -\mathbb{E}\left[\sum_{i} A_i \log \pi_\theta(y_i | x_i)\right]$$
-  where $A_i$ denotes the relative advantage based on fidelity rewards.
-- A KL divergence constraint is incorporated to prevent the model from deviating excessively from its original capabilities.
-- Multi-round iterative training is performed, with newly generated pseudo-labels used in each round.
+After one training round, the updated VLM re-performs pairwise voting to generate higher-quality pseudo-labels. This creates a positive feedback loop: "Better Model → Accurate Pseudo-labels → Effective Training." Using relative rankings instead of absolute scores prevents the accumulation and amplification of absolute label errors across iterations, ensuring stability.
 
 ## Key Experimental Results
 
 ### Main Results
 
-EvoQuality is evaluated on 7 mainstream IQA benchmarks:
+EvoQuality was evaluated across 7 major IQA benchmarks:
 
 | Metric | Ours (EvoQuality) | Base VLM (Zero-shot) | Gain |
-|--------|-------------------|----------------------|------|
-| PLCC (average) | Significant improvement | Baseline | +31.8% |
-| Surpassing supervised SOTA | 5/7 benchmarks | — | — |
+|------|----------------|------------------|---------|
+| PLCC (Avg) | Significant Improvement | Baseline | +31.8% |
+| Beating Supervised SOTA | 5/7 Benchmarks | - | - |
 
-Key findings:
-- EvoQuality surpasses supervised SOTA VLM-based IQA models on 5 benchmarks: LIVE, CSIQ, TID2013, KADID-10K, and SPAQ.
-- Performance approaches supervised SOTA on KonIQ-10K and FLIVE.
-- Entirely self-supervised training, requiring no human quality annotations.
+**Key Findings**:
+- Surpassed supervised SOTA VLM-based IQA models on 5 benchmarks: LIVE, CSIQ, TID2013, KADID-10K, and SPAQ.
+- Approached supervised SOTA on KonIQ-10K and FLIVE.
+- Achieved these results via purely self-supervised training without any human quality annotations.
 
 ### Ablation Study
 
-| Configuration | Performance | Note |
-|---------------|-------------|------|
-| Direct optimization without voting | Significant degradation | Voting mechanism is essential |
-| Fixed pseudo-labels (single round) | Below iterative version | Iterative self-evolution yields sustained improvement |
-| Uniform reward weights | Below fidelity-weighted version | Consistency-based weighting is more effective |
-| Varying voting count $K$ | Improves initially, then saturates | $K=5$–$10$ is the optimal range |
-
-### Key Findings
-
-1. **Self-supervised learning can match supervised learning**: For the first time in the IQA domain, it is demonstrated that self-supervised methods can reach or exceed the performance of supervised fine-tuning.
-2. **Flexible composability**: EvoQuality can be stacked on top of pre-trained IQA models to further enhance generalization on unseen datasets.
-3. **Cross-dataset generalization**: Without any annotations from target datasets, the framework achieves SOTA performance on multiple out-of-distribution IQA benchmarks.
+| Configuration | Effect | Description |
+|------|------|------|
+| Direct optimization without voting | Performance drops significantly | Voting mechanism is core |
+| Fixed pseudo-labels (Single round) | Lower than iterative version | Iterative evolution provides continuous gains |
+| Uniform reward weights | Lower than fidelity weighting | Consistency weighting is more effective |
+| Different voting counts $K$ | Gains saturate as $K$ increases | $K=5 \sim 10$ is the optimal range |
 
 ## Highlights & Insights
 
-1. **Extending self-consistency from reasoning to perception**: The paper cleverly adapts the "sample multiple times and take the consistent answer" paradigm from mathematical reasoning to ranking-based IQA—replacing answer consistency verification with majority voting over pairwise comparisons.
-2. **Ranking is more suitable than scoring for self-supervision**: Absolute quality scores are difficult to self-evaluate, whereas relative quality comparisons more readily reach consensus through voting.
-3. **Elegant positive feedback loop design**: The iterative self-evolution mechanism endows the training process with a self-accelerating property.
-4. **High practical value**: The framework completely eliminates the dependency on human annotations in IQA, substantially reducing deployment costs.
+1. **Extending Self-consistency from Reasoning to Perception**: Successfully adapted the "consistency across multiple samples" idea from mathematical reasoning to ranking-based IQA by using majority voting for pairwise comparisons.
+2. **Ranking is Suites Self-supervision Better than Scoring**: Absolute quality scores are hard to self-evaluate, but relative quality comparisons more easily reach consensus through voting.
+3. **Elegant Positive Feedback Loop**: The iterative self-evolution mechanism allows the training process to "self-accelerate."
+4. **High Practical Value**: Eliminates the dependence on human annotations in the IQA field, significantly reducing deployment costs.
 
 ## Limitations & Future Work
 
-1. **Iterative efficiency**: The computational overhead of multi-round iteration combined with multiple sampling passes is substantial, particularly for large-scale VLMs.
-2. **Dependence on base model quality**: If the base VLM has extremely weak quality perception, voting may fail to converge to a meaningful ranking.
-3. **Task specificity**: The framework is designed for ranking/comparison tasks; adaptation to other perceptual tasks (e.g., aesthetic assessment, degradation detection) requires further modification.
-4. **Lack of theoretical convergence guarantees**: No theoretical analysis is provided for the convergence of iterative self-evolution; in practice, there is a risk of overfitting to pseudo-labels.
-5. **Scalable directions**: Extending the voting mechanism from pairwise to listwise comparisons may further improve efficiency.
+1. **Iterative Efficiency**: High computational overhead due to multiple iterations and sampling, especially for large-scale VLMs.
+2. **Base Model Dependency**: If the base VLM's initial quality perception is extremely weak, voting may fail to converge on a meaningful ranking.
+3. **Task Specificity**: Designed for ranking/comparison; adaptation is needed for other perceptual tasks like aesthetic assessment or damage detection.
+4. **Lack of Convergence Theory**: No theoretical analysis of the iterative evolution's convergence; risk of overfitting to pseudo-labels in practice.
+5. **Scalability**: Extending voting from pairwise to listwise levels could further improve efficiency.
 
 ## Related Work & Insights
 
-- **Traditional IQA methods**: Handcrafted feature methods (BRISQUE, NIQE) → deep learning methods (DBCNN, HyperIQA) → VLM-based methods (Q-Align, Q-Instruct).
-- **VLM self-improvement**: The success of self-iterative paradigms such as Self-Play and Self-Rewarding LLMs provides inspiration for this work.
-- **GRPO**: The GRPO optimization method proposed by DeepSeek is transferred from reasoning tasks to perceptual tasks in this paper.
-- **Insights**: The core idea of this framework (voting → pseudo-labels → self-iterative optimization) may be applicable to other visual tasks that lack a unique correct answer.
+- **IQA Evolution**: Hand-crafted features (BRISQUE, NIQE) → Deep learning (DBCNN, HyperIQA) → VLM-based (Q-Align, Q-Instruct).
+- **VLM Self-improvement**: Successes in self-iterative paradigms like Self-Play and Self-Rewarding LLMs inspired this work.
+- **GRPO**: Transferred the DeepSeek-proposed GRPO optimizer from reasoning tasks to perceptual tasks.
+- **Insight**: The core idea (Voting → Pseudo-labels → Self-iterative optimization) is potentially applicable to other vision tasks lacking unique "correct" answers.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — Creative application of self-consistency and GRPO to IQA, though individual components are not novel in themselves.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Comprehensive evaluation across 7 benchmarks with thorough ablations, but comparisons with more self-supervised baselines are lacking.
-- **Writing Quality**: ⭐⭐⭐⭐ — Motivation is clear and the framework is intuitive.
-- **Value**: ⭐⭐⭐⭐⭐ — Eliminates the need for IQA annotations, offering substantial practical value.
+- **Novelty**: ⭐⭐⭐⭐ — Creative application of self-consistency and GRPO to IQA, though individual components are established.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Comprehensive evaluation on 7 benchmarks with solid ablation, though comparison with more self-supervised methods is missing.
+- **Writing Quality**: ⭐⭐⭐⭐ — Clear motivation and intuitive framework.
+- **Value**: ⭐⭐⭐⭐⭐ — Large practical impact by removing the need for IQA annotations.
 
 <!-- RELATED:START -->
 
@@ -155,10 +136,10 @@ Key findings:
 ## Related Papers
 
 - [\[ICLR 2026\] Grounding-IQA: Grounding Multimodal Language Models for Image Quality Assessment](grounding-iqa_grounding_multimodal_language_model_for_image_quality_assessment.md)
-- [\[ICLR 2026\] VisJudge-Bench: Aesthetics and Quality Assessment of Visualizations](visjudge-bench_aesthetics_and_quality_assessment_of_visualizations.md)
-- [\[ICLR 2026\] Self-Aug: Query and Entropy Adaptive Decoding for Large Vision-Language Models](self-aug_query_and_entropy_adaptive_decoding_for_large_vision-language_models.md)
-- [\[ACL 2026\] What Do Vision-Language Models Encode for Personalized Image Aesthetics Assessment?](../../ACL2026/multimodal_vlm/what_do_vision-language_models_encode_for_personalized_image_aesthetics_assessme.md)
-- [\[ICML 2026\] Breaking Dual Bottlenecks: Evolving Unified Multimodal Models into Self-Adaptive Interleaved Visual Reasoners](../../ICML2026/multimodal_vlm/breaking_dual_bottlenecks_evolving_unified_multimodal_models_into_self-adaptive_.md)
+- [\[CVPR 2026\] VisPlay: Self-Evolving Vision-Language Models](../../CVPR2026/multimodal_vlm/visplay_self-evolving_vision-language_models.md)
+- [\[CVPR 2026\] R4-CGQA: Retrieval-based Vision Language Models for Computer Graphics Image Quality Assessment](../../CVPR2026/multimodal_vlm/r4-cgqa_retrieval-based_vision_language_models_for_computer_graphics_image_quali.md)
+- [\[CVPR 2026\] UARE: A Unified Vision-Language Model for Image Quality Assessment, Restoration, and Enhancement](../../CVPR2026/multimodal_vlm/uare_a_unified_vision-language_model_for_image_quality_assessment_restoration_an.md)
+- [\[CVPR 2026\] Probabilistic Prompt Adaptation for Unified Image Aesthetics and Quality Assessment](../../CVPR2026/multimodal_vlm/probabilistic_prompt_adaptation_for_unified_image_aesthetics_and_quality_assessm.md)
 
 </div>
 

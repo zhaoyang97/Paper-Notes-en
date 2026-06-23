@@ -2,86 +2,84 @@
 title: >-
   [Paper Note] Procedural Mistake Detection via Action Effect Modeling
 description: >-
-  [ICLR 2026][Multimodal VLM][procedural mistake detection] This paper proposes a dual-branch multimodal supervision framework for action effect modeling…
+  [ICLR 2026][Multimodal VLM][Paper Note] This paper proposes a dual-branch multimodal supervised action effect modeling framework. It combines a visual branch (extracting object states and spatial relationship features) with a text branch (utilizing GPT-4o generated scene graphs) to distill external supervision signals into learnable effect tokens, achieving
 tags:
-  - "ICLR 2026"
-  - "Multimodal VLM"
-  - "procedural mistake detection"
-  - "action effect modeling"
-  - "egocentric video"
-  - "scene graph"
-  - "multimodal supervision"
+  - ICLR 2026
+  - Multimodal VLM
 date: 2026-05-08
-content_hash: ad93354b2236ae85
+content_hash: 2bb3e4560f63e416
 ---
-
 # Procedural Mistake Detection via Action Effect Modeling
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2512.03474](https://arxiv.org/abs/2512.03474)  
-**Code**: [https://wenliangguo.github.io/Mistake_Detection](https://wenliangguo.github.io/Mistake_Detection) (project page)  
-**Area**: Multimodal VLM
-**Keywords**: procedural mistake detection, action effect modeling, egocentric video, scene graph, multimodal supervision
+**Code**: [https://wenliangguo.github.io/Mistake_Detection](https://wenliangguo.github.io/Mistake_Detection) (Project Page)  
+**Area**: Multimodal VLM  
+**Keywords**: Procedural mistake detection, action effect modeling, first-person video, scene graphs, multimodal supervision
 
 ## TL;DR
-This paper proposes a dual-branch multimodal supervision framework for action effect modeling, combining a visual branch (object state and spatial relation features) with a text branch (GPT-4o-generated scene graphs). Learnable effect tokens distill external supervision signals, achieving state-of-the-art mistake detection on egocentric procedural videos.
+This paper proposes a dual-branch multimodal supervised action effect modeling framework. It combines a visual branch (extracting object states and spatial relationship features) with a text branch (utilizing GPT-4o generated scene graphs) to distill external supervision signals into learnable effect tokens, achieving SOTA mistake detection performance in egocentric procedural videos.
 
 ## Background & Motivation
 
-**Background**: Procedural mistake detection aims to identify whether an operator has correctly executed steps from egocentric video (e.g., adding the wrong seasoning while cooking). Existing methods primarily focus on the execution process of actions (how-to-do), but neglect the consequences of those actions (what-happened-after).
+**Background**: Procedural mistake detection aims to identify whether an operator correctly executes steps from first-person videos (e.g., checking if the correct seasoning was added during cooking). Existing methods primarily focus on the action execution process ("how-to-do") but overlook the execution effect ("what-happened-after").
 
-**Limitations of Prior Work**: Modeling only the action process fails to distinguish cases where "the correct action was performed but the outcome was wrong." For instance, the act of "flipping" looks identical in execution, yet if the food is burnt afterward, the step is erroneous.
+**Limitations of Prior Work**: Modeling only the action process fails to distinguish cases where "the correct action was performed but the result was wrong." For instance, the physical execution of "flipping food" may look identical, but the outcome is incorrect if the food is burnt.
 
-**Key Challenge**: Whether an action is correct depends on its outcome, which is reflected in changes to object states and spatial relations after action completion. This requires understanding the causal "before-after" relationship.
+**Key Challenge**: The correctness of an action depends on its outcome, which is manifested in changes to object states and spatial relationships after the action is completed. This requires understanding "before-after" causality.
 
-**Goal**: How can action effects (object state changes + spatial relation changes) be effectively modeled to enhance mistake detection?
+**Goal**: How to effectively model action effects (object state changes + spatial relationship changes) to enhance mistake detection?
 
-**Key Insight**: Extract object state and spatial relation information from effect frames (key frames after action completion), and learn effect representations through visual and textual dual-path multimodal supervision.
+**Key Insight**: Extract object state and spatial relationship information from "effect frames" (key frames after action completion) and learn effect representations through a dual-path multimodal supervision of vision and text.
 
-**Core Idea**: Select the effect frame that best reflects the action outcome, extract visual and textual representations of object states and spatial relations from it, and distill these into learnable effect tokens via alignment learning.
+**Core Idea**: Select effect frames that best reflect the action outcome, extract visual and textual representations of object states and spatial relationships, and distill these into learnable effect tokens via alignment learning.
 
 ## Method
 
 ### Overall Architecture
-An Action Effect Modeling (AEM) module is added on top of the ActionFormer backbone: (1) effect frame selection, (2) visual branch for extracting object state/relation features, (3) text branch using GPT-4o to generate and encode scene graphs, (4) learnable effect tokens for distilling dual-path information, and (5) prompt-based mistake detection.
+The work addresses mistakes where the "action is correct but the result is wrong"—errors that cannot be distinguished by process alone and require observing final states and relative positions. The framework uses ActionFormer as a temporal backbone for action segmentation and integrates an Action Effect Modeling (AEM) module. From each action segment, it selects one effect frame that most accurately reflects the "post-action" state. Information is then extracted through two paths: the visual path captures object states and spatial layouts, while the text path utilizes GPT-4o to generate structured scene graphs. These are distilled into a learnable "effect token," which is concatenated with action features for the prompt-based detector. Notably, heavy external models like GPT-4o and Grounding DINO are only used as supervision during training; the inference phase uses only the learned effect tokens, incurring no extra overhead.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Egocentric Procedural Video"] --> B["ActionFormer Segmentation Backbone<br/>+ Dynamic Fusion → Action Segment Feature X"]
+    B --> C["Effect Frame Sampling<br/>Semantic Correlation × Visual Clarity<br/>Ranking top-1 frame"]
+    C -->|Training Only| D["Visual Branch<br/>Grounding DINO Detection<br/>Object State + Spatial Relation Features"]
+    C -->|Training Only| E["Text Branch<br/>GPT-4o Scene Graph<br/>State Subgraph + Relation Subgraph"]
+    D --> F["Effect-Aware Learning<br/>Effect token e distillation alignment<br/>+ Vision-Text Contrastive"]
+    E --> F
+    B --> G["Concatenate Action Feature X + Effect token e"]
+    F --> G
+    G --> H["Prompt-based Detector<br/>Determine Correct / Wrong"]
+```
 
 ### Key Designs
 
-1. **Effect Frame Sampling**:
+**1. Effect Frame Sampling: Selecting the frame that best illustrates the "result"**
 
-    - Function: Select the key frame from an action segment that best reflects the action outcome.
-    - Mechanism: Jointly considers semantic relevance (cosine similarity between segment features and GPT-4o description embeddings) and visual sharpness (measured via Laplacian operator), selecting the top-1 ranked frame.
-    - Design Motivation: The quality of the effect frame directly affects subsequent feature extraction. The naive baseline of using the last frame yields AUC = 70.6, while this method achieves 73.8, a gain of +3.2.
+Since mistakes are reflected in outcomes, selecting the right frame to extract effect features is critical. While a naive approach would take the last frame of a segment, that frame is often motion-blurred or precedes the actual result. The proposed method ranks frames based on two metrics: semantic correlation (similarity between action segment features and GPT-4o generated effect descriptions) and visual clarity (measured by the Laplacian operator to avoid blur). This sampling strategy improves AUC by 3.2 compared to using the last frame (70.6 vs 73.8).
 
-2. **Visual Branch (Dual-Path)**:
+**2. Visual Branch: Decomposing "Effect" into Object States and Spatial Relationships**
 
-    - Function: Extract object state features and spatial relation features from the effect frame.
-    - Mechanism: (a) State path: Grounding DINO detects objects; an image encoder extracts RoI features that are concatenated to form $F_s$. (b) Relation path: Object position encodings are concatenated to form $F_r$. Both feature streams are mapped through separate MLPs.
-    - Design Motivation: Object appearance change (state) and positional change (relation) are two independent dimensions of action effects; modeling them separately yields greater precision.
+Action effects consist of two dimensions: changes in appearance/state (e.g., food being burnt) and changes in relative positions (e.g., seasoning poured into a pot). The visual branch follows this decomposition: the state path uses Grounding DINO for object detection and extracts RoI features ($F_s$), while the relation path encodes spatial coordinates ($F_r$). Ablation studies show that spatial relationship features (72.6 AUC) contribute more to mistake detection than object state features (69.9 AUC).
 
-3. **Text Branch (Scene Graph)**:
+**3. Text Branch: GPT-4o Scene Graphs for Structured Semantics**
 
-    - Function: Use GPT-4o to generate scene graphs from effect frames, providing structured effect descriptions.
-    - Mechanism: Scene graph $G=(V,E)$ contains object, relation, and attribute nodes, decomposed into a state subgraph and a relation subgraph. GNN encoding followed by pooling produces text-side features $t_s$ and $t_r$.
-    - Design Motivation: Scene graphs provide structured semantic information complementary to visual features. Experiments show that adding the text branch improves AUC from 68.4 to 71.7.
+Visual features often lack explicit "subject-relation-object" structures. The text branch uses GPT-4o to generate a scene graph $G=(V,E)$ from the effect frame. This graph is decomposed into state and relation subgraphs, encoded by a GNN and pooled into text-side features $t_s$ and $t_r$. This provides structured semantics that complement visual features, raising AUC from 68.4 to 71.7.
 
-4. **Effect-Aware Learning**:
+**4. Effect-Aware Learning: Distilling Dual-Path Supervision into Learnable Tokens**
 
-    - Function: Distill visual and text dual-path supervision signals into learnable effect tokens.
-    - Mechanism: Effect token $e$ is mapped through an MLP and aligned with visual/text features via $L_2$ loss, while visual-text contrastive alignment is applied between the two branches. The distilled effect tokens are concatenated with action features and fed into the detector.
-    - Design Motivation: External models (GPT-4o, Grounding DINO) are only required during training; at inference, the learned tokens are used directly with no additional overhead.
+To avoid the high inference cost of GPT-4o and Grounding DINO, a learnable effect token $e$ is introduced. During training, $e$ is aligned with visual and text features via L2 distillation; simultaneously, contrastive learning is used to align visual and textual representations in a shared space. At inference, only the learned token $e$ is concatenated with action features, adding zero additional overhead.
 
 ### Loss & Training
-$$L = L_{\text{seg}} + L_{\text{eff}} + L_{\text{CL}} + L_{\text{det}}$$
-
-where $L_{\text{seg}}$ is action segmentation loss, $L_{\text{eff}}$ is the effect alignment $L_2$ loss, $L_{\text{CL}}$ is visual-text contrastive loss, and $L_{\text{det}}$ is mistake detection contrastive loss.
+The total loss is defined as: $L = L_{seg} + L_{eff} + L_{CL} + L_{det}$. These items correspond to action segmentation (temporal localization), effect alignment (L2 distillation of tokens), vision-text contrastive alignment, and the contrastive loss for mistake detection.
 
 ## Key Experimental Results
 
 ### Main Results (EgoPER Dataset)
 
 | Method | AUC | EDA |
-|--------|-----|-----|
+|------|-----|-----|
 | HF2-VAD | 59.9 | 27.1 |
 | EgoPED | 62.0 | 57.0 |
 | AMNAR | 68.5 | 64.4 |
@@ -90,40 +88,40 @@ where $L_{\text{seg}}$ is action segmentation loss, $L_{\text{eff}}$ is the effe
 ### Ablation Study
 
 | Component | AUC | EDA |
-|-----------|-----|-----|
-| Baseline (no AEM) | 67.6 | 65.6 |
-| + Visual effect supervision | 68.4 | 66.1 |
-| + Text supervision | 69.4 | 66.3 |
-| + Visual + Text (no alignment) | 71.7 | 66.4 |
+|------|-----|-----|
+| Baseline (No AEM) | 67.6 | 65.6 |
+| + Visual Supervision | 68.4 | 66.1 |
+| + Text Supervision | 69.4 | 66.3 |
+| + Visual + Text (No Alignment) | 71.7 | 66.4 |
 | **+ Aligned Visual + Text** | **73.8** | **66.7** |
 
 ### Key Findings
-- Compared to AMNAR (Prev. SOTA), AUC improves by 5.3 points.
-- The effect frame sampling strategy outperforms the naive last-frame baseline by 3.2 AUC.
-- Spatial relation features (AUC = 72.6) contribute more than object state features (AUC = 69.9).
-- Visual-text alignment yields an additional 2.1 AUC gain over simple fusion (71.7 → 73.8).
-- Open-source MLLM (Qwen3-VL) for scene graph generation achieves AUC = 73.3, approaching GPT-4o (73.8).
+- AUC improves by 5.3 points compared to the previous SOTA (AMNAR).
+- The effect frame sampling strategy improves AUC by 3.2 compared to the naive last-frame baseline.
+- Spatial relationship features (72.6 AUC) prove more critical than object state features (69.9 AUC).
+- Vision-text alignment provides an additional 2.1 AUC gain over simple fusion (71.7 -> 73.8).
+- Utilizing an open-source MLLM (Qwen3-VL) for scene graph generation achieves a performance (73.3) close to GPT-4o (73.8).
 
 ## Highlights & Insights
-- **Action Effect Modeling**: Shifting mistake detection from "whether the action was correctly performed" to "whether the action outcome is correct" represents a highly insightful change of perspective.
-- **Distillation-based Design**: GPT-4o and Grounding DINO provide supervision only during training; these models are not required at inference. The effect token serves as a knowledge distillation bridge.
-- **Decomposition of State vs. Relation**: Decomposing action effects into object state changes and spatial relation changes is a transferable design principle for broader causal reasoning tasks.
+- **Action Effect Modeling**: Shifting the focus of mistake detection from "how an action is performed" to "the correctness of the action's result" is a powerful and insightful perspective.
+- **Distillation Design**: Leveraging GPT-4o and Grounding DINO for supervision during training while bypassing them during inference ensures efficiency. The effect token acts as a bridge for knowledge distillation.
+- **State vs. Relation Decomposition**: Decomposing action effects into object states and spatial relationships provides a methodology transferable to broader causal reasoning tasks.
 
 ## Limitations & Future Work
-- The effect frame assumption requires that outcomes are immediately observable after action completion, which may not hold for delayed effects (e.g., slow cooking).
-- Generating scene graphs with GPT-4o incurs high cost; although not needed at inference, data preparation during training is time-consuming.
-- Evaluation is limited to constrained scenarios such as kitchen operations; generalization to more complex domains (e.g., industrial assembly) remains unknown.
-- The quality of Grounding DINO object detection directly affects visual branch performance.
+- The framework assumes effects are immediately visible after an action, which may not hold for delayed effects (e.g., slow cooking).
+- The cost of generating scene graphs with GPT-4o is high during the training data preparation phase.
+- Validation is limited to kitchen scenarios; generalization to complex industrial operations remains unproven.
+- The quality of the visual branch is directly dependent on the detection accuracy of Grounding DINO.
 
 ## Related Work & Insights
-- **vs. AMNAR**: The previous SOTA, which adopts an anomaly detection paradigm. The proposed method explicitly models action effects, offering greater interpretability.
-- **vs. EgoPED**: An earlier method that does not model effects; the proposed method substantially outperforms it.
-- **vs. ActionFormer**: Serves as the backbone network; the proposed AEM module is built on top of it.
+- **vs. AMNAR**: Previous SOTA using an anomaly detection paradigm; this work explicitly models action effects for better interpretability.
+- **vs. EgoPED**: An earlier method that does not model effects; this work significantly outperforms it.
+- **vs. ActionFormer**: Used as the backbone; this work extends it with the AEM module.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ The action effect modeling perspective is highly novel and convincing.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Two datasets with detailed ablations, though the scenarios are limited (kitchen only).
-- Writing Quality: ⭐⭐⭐⭐ Mathematical derivations are clear and the probabilistic framework is elegant.
+- Novelty: ⭐⭐⭐⭐⭐ The perspective of action effect modeling is highly novel and convincing.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Extensive ablations on two datasets, though limited primarily to kitchen environments.
+- Writing Quality: ⭐⭐⭐⭐ Clear derivations and an elegant probabilistic framework.
 - Value: ⭐⭐⭐⭐ Provides a new methodology for procedural video understanding.
 
 <!-- RELATED:START -->
@@ -133,10 +131,10 @@ where $L_{\text{seg}}$ is action segmentation loss, $L_{\text{eff}}$ is the effe
 ## Related Papers
 
 - [\[ICLR 2026\] Capacity-Aware Inference: Mitigating the Straggler Effect in Mixture of Experts](capacity-aware_inference_mitigating_the_straggler_effect_in_mixture_of_experts.md)
+- [\[ICLR 2026\] On Discriminative vs. Generative Classifiers: Rethinking MLLMs for Action Understanding](on_discriminative_vs_generative_classifiers_rethinking_mllms_for_action_understa.md)
 - [\[ICLR 2026\] Unified Vision-Language Modeling via Concept Space Alignment](unified_vision-language_modeling_via_concept_space_alignment.md)
-- [\[ICML 2026\] Pair2Scene: Learning Local Object Relations for Procedural Scene Generation](../../ICML2026/multimodal_vlm/pair2scene_learning_local_object_relations_for_procedural_scene_generation.md)
+- [\[ICLR 2026\] VideoChat-Flash: Hierarchical Compression for Long-Context Video Modeling](videochat-flash_hierarchical_compression_for_long-context_video_modeling.md)
 - [\[CVPR 2026\] From Observation to Action: Latent Action-based Primitive Segmentation for VLA Pre-training in Industrial Settings](../../CVPR2026/multimodal_vlm/from_observation_to_action_latent_action-based_primitive_segmentation_for_vla_pr.md)
-- [\[ACL 2026\] Vision-Language Models Mistake Head Orientation for Gaze Direction: Nonverbal Conversation Cues](../../ACL2026/multimodal_vlm/vision-language_models_mistake_head_orientation_for_gaze_direction_nonverbal_con.md)
 
 </div>
 

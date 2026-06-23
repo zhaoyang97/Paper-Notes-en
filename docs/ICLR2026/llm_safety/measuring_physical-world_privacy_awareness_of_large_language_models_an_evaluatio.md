@@ -2,139 +2,137 @@
 title: >-
   [Paper Note] Measuring Physical-World Privacy Awareness of Large Language Models: An Evaluation Benchmark
 description: >-
-  [ICLR 2026][LLM Safety][privacy awareness] This paper proposes EAPrivacy — the first 4-tier benchmark for evaluating LLM physical-world privacy awareness (400+ procedurally generated scenarios…
+  [ICLR 2026][LLM Safety][privacy awareness] This paper introduces EAPrivacy, the first 4-tier benchmark for evaluating the physical-world privacy awareness of LLMs, featuring $400+$ procedurally generated scenarios across $60+$ physical settings. The study reveals that all frontier models exhibit "asymmetric conservatism" (being overly conservative in task execu
 tags:
-  - "ICLR 2026"
-  - "LLM Safety"
-  - "privacy awareness"
-  - "embodied agent"
-  - "physical privacy"
-  - "contextual integrity"
-  - "benchmark"
-  - "PDDL"
+  - ICLR 2026
+  - LLM Safety
+  - privacy awareness
+  - embodied agent
+  - physical privacy
+  - contextual integrity
+  - benchmark
+  - PDDL
 date: 2026-05-08
-content_hash: 4c21e7cb30c30be8
+content_hash: 4e3c86ed39d82598
 ---
-
 # Measuring Physical-World Privacy Awareness of Large Language Models: An Evaluation Benchmark
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2510.02356](https://arxiv.org/abs/2510.02356)  
 **Code**: [GitHub](https://github.com/Graph-COM/EAPrivacy)  
-**Area**: AI Safety / Privacy / Embodied Intelligence
+**Area**: AI Safety / Privacy / Embodied AI  
 **Keywords**: privacy awareness, embodied agent, physical privacy, contextual integrity, benchmark, PDDL
 
 ## TL;DR
-This paper proposes EAPrivacy — the first 4-tier benchmark for evaluating LLM physical-world privacy awareness (400+ procedurally generated scenarios, 60+ physical scenes). It finds that all frontier models exhibit "asymmetric conservatism" (over-cautious on task execution yet insufficient on privacy protection), that enabling reasoning/thinking mode actually degrades privacy performance, and that the best model (Gemini 2.5 Pro) achieves only 59% accuracy in dynamic environments.
+This paper introduces EAPrivacy, the first 4-tier benchmark for evaluating the physical-world privacy awareness of LLMs, featuring $400+$ procedurally generated scenarios across $60+$ physical settings. The study reveals that all frontier models exhibit "asymmetric conservatism" (being overly conservative in task execution while providing insufficient privacy protection). Enabling reasoning modes actually degrades privacy performance, with the best model (Gemini 2.5 Pro) achieving only $59\%$ accuracy in dynamic environments.
 
 ## Background & Motivation
-**Background**: LLMs are increasingly deployed as embodied agents (home robots, medical assistants, office robots) operating in physical spaces. Existing privacy benchmarks (e.g., Mireshghallah 2023) only evaluate text-level privacy leakage.
+**Background**: LLMs are increasingly deployed in physical spaces as embodied agents (e.g., home robots, medical assistants, office robots). Existing privacy benchmarks (e.g., Mireshghallah 2023) only test privacy leakage at the textual level.
 
 **Limitations of Prior Work**:
-   - **Physical privacy ≠ textual privacy**: Physical-world privacy requires spatial reasoning (e.g., "a diary is on the desk"), contextual integrity judgment (e.g., "should not start cleaning while a meeting is in progress"), and multimodal perception (e.g., "hearing faint conversation")
-   - **Task–privacy conflicts are unevaluated**: An agent instructed to "clear the desk" encounters a hidden surprise gift on it — how should it balance the two?
-   - **Social norms vs. privacy**: A neighbor's apartment emits screams — should the agent report it (sacrificing privacy) or ignore it (respecting privacy)?
-   - Aligned LLMs perform well on textual privacy benchmarks (Gemini/GPT-4's secret disclosure rate can reach 0%), yet physical privacy poses an entirely different challenge
+   - **Physical Privacy $\neq$ Textual Privacy**: Physical privacy requires spatial reasoning ("the diary is on the table"), contextual integrity judgments ("cleaning should not begin while a meeting is in progress"), and multimodal perception ("hearing muffled conversation").
+   - **Task-Privacy Conflicts Unevaluated**: Agents may be instructed to "clean the table" while a hidden surprise gift is present—how should they balance these?
+   - **Social Norms vs. Privacy**: Hearing screams from a neighbor's apartment—should the agent report it (sacrificing privacy) or ignore it (respecting privacy)?
+   - Current aligned LLMs perform well on textual privacy benchmarks (Gemini/GPT-5 secret leakage rates can reach $0\%$), but physical privacy is fundamentally different.
 
-**Key Challenge**: In the physical world, privacy is not a static rule but a dynamic social contract that depends on context and requires reasoning — the question is whether LLMs possess this reasoning capacity.
+**Key Challenge**: Privacy in the physical world is not a static set of rules but a dynamic social contract dependent on context and reasoning—do LLMs possess this reasoning capability?
 
-**Core Idea**: Construct a 4-tier progressive evaluation using procedurally generated physical scenes in PDDL format (encoding spatial relationships and multimodal perception cues), ranging from simple sensitive-object identification to complex ethical dilemmas.
+**Core Idea**: Construct a 4-tier progressive evaluation using PDDL-formatted procedural physical scenarios (containing spatial relationships and multimodal perception cues), ranging from simple sensitive object identification to complex ethical dilemmas.
 
 ## Method
 
 ### Overall Architecture
-A 4-tier progressive design covering different levels of cognitive complexity in physical privacy:
 
-### 4-Tier Design
+The core question EAPrivacy addresses is: when LLMs are placed in physical spaces as embodied agents, can they still maintain privacy? While textual privacy benchmarks focus on "whether to disclose a piece of information," physical privacy involves spatial relationships (a diary left open on a desk), contextual judgments (not entering a room for cleaning during a meeting), and multimodal perception (muffled voices). To this end, the benchmark decomposes the evaluation into four levels of increasing cognitive complexity (Tier $1 \rightarrow 4$): from identifying sensitive objects to judging the appropriateness of actions across contexts, then to following implicit privacy constraints during task execution, and finally to navigating conflicts between privacy and public safety.
 
-1. **Tier 1: Sensitive Object Identification**
-    - Function: Identify sensitive objects (e.g., social security cards, passports) among 3–30 distractors on desks or in containers
-    - Input: Spatial relationships among objects in PDDL format (not natural-language descriptions)
-    - Evaluation: True positive rate, false positive rate, and spatial localization accuracy
-    - Clutter levels (3/5/10/30 distractors) are varied to assess the effect of environmental complexity on privacy awareness
-    - Design Motivation: The most fundamental physical-privacy capability — can the agent "see" what is privacy-sensitive in a real scene?
+Scenarios are **procedurally generated** rather than handwritten: there are $400+$ scenarios and $60+$ unique physical settings (offices, labs, homes, etc.). Spatial relationships between objects are described using **PDDL** (Planning Domain Definition Language), a structured format that allows precise control over environmental complexity and large-scale replication. Each scenario is overlaid with three types of **multimodal perception cues** (Visual / Audio / Action) to simulate the sensory input of an actual embodied agent. The ground truth for final answers is determined by five PhD-level annotators.
 
-2. **Tier 2: Privacy Reasoning in Dynamic Environments**
-    - Function: Judge the appropriateness (scored 1–5) of a given action under different contexts
-    - Input: Multimodal perception cues (Visual: "5 people at table"; Audio: "continuous speech"), simulating the perception of a physical agent
-    - Evaluation modes: (i) Rating Mode (MAD against human scores); (ii) Selection Mode (choose the most appropriate action from three options)
-    - Coverage: park / library / private residence × cleaning / security patrol / food delivery × normal→emergency / empty room→private meeting
-    - Design Motivation: Privacy is context-dependent — "start cleaning" is appropriate in an empty room but not during a private meeting
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    GEN["Procedurally Generated Scenarios<br/>PDDL Spatial Relations<br/>60+ Physical Scenes"] --> CUE["Multimodal Perception Cues<br/>Visual / Audio / Action"]
+    CUE --> T1["Tier 1: Sensitive Object Recognition<br/>Identify private items among clutter"]
+    T1 -->|Increasing Cognitive Complexity| T2["Tier 2: Dynamic Privacy Reasoning<br/>Appropriateness of same action across contexts"]
+    T2 -->|Increasing Cognitive Complexity| T3["Tier 3: Privacy and Task Conflict<br/>Infer implicit constraints and avoid violations"]
+    T3 -->|Increasing Cognitive Complexity| T4["Tier 4: Social Norms vs. Privacy<br/>Ethical trade-offs in extreme conflicts"]
+    T1 --> GT["Scoring against PhD-annotated Ground Truth"]
+    T2 --> GT
+    T3 --> GT
+    T4 --> GT
+```
 
-3. **Tier 3: Inferential Privacy and Task Conflicts**
-    - Function: The agent must infer implicit privacy constraints from multimodal cues (Theory of Mind) and respect them while executing tasks
-    - Example scenario: Observing someone hide a gift under a desk → instructed to "move everything off the desk" → should skip the gift
-    - Evaluation: (i) privacy violation rate; (ii) task completion rate (how much of the task is completed without violating privacy); (iii) three-way selection (one privacy-violating action vs. two non-violating alternatives)
-    - Design Motivation: Closest to real deployment — the agent must simultaneously satisfy explicit instructions and implicit privacy constraints
+### Key Designs
 
-4. **Tier 4: Social Norms vs. Privacy Ethical Dilemmas**
-    - Function: In high-stakes scenarios, critical social norms (public safety, child protection) should override individual privacy
-    - Example scenario: Hearing "a cry for help" from a neighboring apartment + observing "erratic silhouettes" → should call the police (sacrificing the neighbor's privacy)
-    - Evaluation: Binary judgment accuracy
-    - Grounded in U.S. legal and social normative frameworks, with acknowledgment of cross-cultural variation
-    - Design Motivation: Test the agent's ethical judgment under extreme circumstances
+**1. Tier 1—Sensitive Object Recognition: "Seeing" what is private**
 
-### Technical Characteristics
-- **Procedural generation**: 400+ scenarios across 60+ unique physical scenes (offices, laboratories, homes, etc.)
-- **PDDL format**: Structured representation of physical spatial relationships, beyond pure text narration
-- **Multimodal perception simulation**: Visual / Audio / Action cues simulating the real perception of an embodied agent
-- **Human annotation validation**: Five PhD-level annotators to establish ground truth
+This level assesses the most basic capability: picking out truly sensitive items (e.g., social security cards, passports) from a collection of miscellaneous objects. Scenarios use PDDL to describe the spatial layout of objects on surfaces or in containers rather than natural language prompts, forcing the model to locate targets within a structured layout. Evaluation metrics include true positive rate, false positive rate, and spatial localization accuracy. A key variable is clutter—distractors are scaled from $3$ to $30$ to test if privacy awareness collapses as environments become more complex.
+
+**2. Tier 2—Privacy Reasoning in Dynamic Environments: Contextual Appropriateness**
+
+Privacy is context-dependent: "starting to clean" is fine in an empty room but intrusive during a private meeting. This tier requires models to rate the appropriateness of the same action across different contexts on a scale of $1–5$, using multimodal cues (e.g., Visual: "$5$ people at table", Audio: "continuous speech"). Two evaluation modes are used: Rating Mode measures the Mean Absolute Deviation (MAD) from human scores, and Selection Mode requires the model to choose the most appropriate action from three candidates. Scenarios cover combinations of locations (Park / Library / Home), actions (Cleaning / Security Patrol / Food Delivery), and context shifts (Normal $\rightarrow$ Emergency, Empty Room $\rightarrow$ Private Meeting).
+
+**3. Tier 3—Reasoning-based Privacy and Task Conflict: Implicit Constraints**
+
+This tier most closely simulates real-world deployment: the agent must **infer unspoken privacy constraints** from multimodal cues (i.e., Theory of Mind) and actively avoid them while executing tasks. A typical scenario involves seeing someone hide a gift under a table and then being instructed to "remove everything from the table"—the correct action is to move the other items while specifically skipping the gift. Evaluation is split into three parts: privacy violation rate, task completion rate (how many instructions were followed without violations), and a multiple-choice selection. It weighs the competing goals of "maintaining privacy" and "completing the job."
+
+**4. Tier 4—Social Norms vs. Privacy Dilemmas: Ethical Trade-offs**
+
+The highest tier creates sharp conflicts: should the agent sacrifice personal privacy when critical social norms like public safety or child protection are at stake? For example, hearing "a cry for help" and seeing "erratic silhouettes" from a neighboring apartment suggests that reporting to the police is the correct judgment, even if it compromises the neighbor's privacy. Evaluation is based on the accuracy of binary judgments. Dilemmas are designed based on US legal and social frameworks, acknowledging that "correct answers" may vary across cultures.
 
 ## Key Experimental Results
 
 ### Main Results (16 Models × 4 Tiers)
 
 | Tier | Best Model | Performance | Key Challenge |
-|------|-----------|-------------|---------------|
-| Tier 1 | Gemini 2.5 Pro | 96%→26% (3→30 distractors) | Collapses in cluttered environments |
-| Tier 2 | Gemini 2.5 Pro | 59% Selection Acc, MAD=1.32 | Insufficient dynamic context understanding |
-| Tier 3 | Gemini 2.5 Flash | 71% privacy violation rate (best) | All models severely insufficient |
-| Tier 4 | Multiple models | 81–95% accuracy | Relatively easier but still gaps remain |
+|------|---------|------|---------|
+| Tier 1 | Gemini 2.5 Pro | $96\% \rightarrow 26\%$ ($3 \rightarrow 30$ distractors) | Collapse in cluttered environments |
+| Tier 2 | Gemini 2.5 Pro | $59\%$ Selection Acc, MAD=$1.32$ | Insufficient dynamic context understanding |
+| Tier 3 | Gemini 2.5 Flash | $71\%$ Privacy Violation Rate (Best) | severe deficiency across all models |
+| Tier 4 | Multiple Models | $81-95\%$ Accuracy | Relatively easier but still imperfect |
 
-### Core Finding: Asymmetric Conservatism
+### Key Findings: Asymmetric Conservatism
 
-| Dimension | Performance | Explanation |
-|-----------|------------|-------------|
-| Task execution | Over-cautious (Tier 3 task completion rate near 0%) | Models "prefer refusing tasks over making mistakes" |
-| Privacy protection | Severely insufficient (violation rate 71–98%) | Models simultaneously fail to protect privacy |
-| Overall outcome | Neither tasks nor privacy handled well | Over-safe and under-safe coexist |
+| Dimension | Behavior | Explanation |
+|------|------|------|
+| Task Execution | Overly Conservative (Tier 3 Completion $\approx 0\%$) | Models "prefer inaction over potential mistakes" |
+| Privacy Protection | Insufficient (Violation Rate $71-98\%$) | Models simultaneously fail to protect privacy |
+| Combined Result | Fails both tasks and privacy | Over-safety and under-safety coexist |
 
 ### Thinking Mode Degradation (Counter-intuitive Finding)
 
 | Model | Standard Mode | Thinking Mode | Change |
-|-------|-------------|---------------|--------|
-| Gemini 2.5 Pro | Baseline | Declines across Tier 1–3 | Reasoning introduces over-interpretation |
+|------|-------------|---------------|------|
+| Gemini 2.5 Pro | Baseline | Tier 1-3 all decreased | Reasoning added over-interpretation |
 | Claude 3.5 | Baseline | Similar degradation | — |
 
-### Key Findings
-- **Asymmetric conservatism is the most important finding**: Models are over-cautious about "doing things" (Tier 3 completion rate near 0% — almost all potentially privacy-related tasks are refused) yet insufficiently cautious about "protecting privacy" (violation rate 71–98%) — both types of errors occur simultaneously
-- **Thinking/Reasoning mode degradation** (Tier 1–3): Enabling reasoning mode leads to worse performance — likely because longer reasoning chains increase false positives (labeling irrelevant objects as sensitive) and over-interpretation (judging normal actions as inappropriate)
-- **Sensitivity to environmental complexity**: Accuracy is 96% with 3 distractors but drops to 26% with 30 — physical scene complexity is a key bottleneck
-- Textual privacy ≠ physical privacy: Models with 0% disclosure rates on text benchmarks exhibit severe deficiencies in physical privacy
-- GPT-4o and Claude-3.5-haiku ignore social norms in more than 15% of Tier 4 cases
+- **Asymmetric Conservatism is the most critical find**: Models are overly conservative about "doing" (Tier 3 completion rates near $0\%$—refusing almost all tasks that might involve privacy) but insufficiently conservative about "protecting" (violation rates $71-98\%$). Both types of errors coexist.
+- **Thinking/Reasoning Mode Degradation** (Tier 1-3): Enabling reasoning modes actually worsened performance, likely because longer reasoning chains increased "false positives" (marking irrelevant objects as sensitive) and "over-interpretation" (judging normal actions as inappropriate).
+- **Sensitivity to Environmental Complexity**: Accuracy dropped from $96\%$ with $3$ distractors to $26\%$ with $30$ distractors—physical complexity is a major bottleneck.
+- **Textual Privacy $\neq$ Physical Privacy**: Models with $0\%$ leakage rates on textual benchmarks are severely deficient in physical privacy scenarios.
+- GPT-4o and Claude-3.5-haiku ignored social norms in $>15\%$ of Tier 4 cases.
 
 ## Highlights & Insights
-- **Deeper implication of "asymmetric conservatism"**: Current alignment training creates a distorted safety posture — models have learned "refusal" as a safety strategy but have not learned to "actively protect" privacy. This is a systemic bias of RLHF
-- **Pioneering nature of physical privacy evaluation**: Extending privacy assessment from text to the physical world, and using PDDL combined with multimodal cues to simulate embodied perception, represents an important paradigm shift in evaluation
-- **Thinking mode degradation as a warning for scaling reasoning**: More reasoning is not always better — in privacy scenarios that require "common sense" rather than "deep analysis," reasoning may over-complicate straightforward judgments
+- **Implications of "Asymmetric Conservatism"**: This suggests current alignment training creates a distorted safety posture—models have learned "refusal" as a safety strategy but have not learned to "actively protect" privacy. This is a systemic bias of RLHF.
+- **Pioneering Physical Privacy Evaluation**: Moving privacy assessment from text to the physical world using PDDL and multimodal cues for embodied perception represents a significant paradigm shift in evaluation.
+- **Warning on Scaling Reasoning**: More reasoning is not always better—in privacy scenarios requiring "common sense" rather than "deep analysis," reasoning may over-complicate simple judgments.
 
 ## Limitations & Future Work
-- The framework is grounded solely in U.S. legal and social normative frameworks; cross-cultural applicability requires further exploration
-- The PDDL-based physical descriptions differ from real visual perception — no actual images or videos are used
-- The scale of 400+ scenarios remains limited relative to the complexity of the physical world
-- The "correct answers" in Tier 4 ethical dilemmas may be contested across cultures and personal value systems
-- Truly embodied systems (robots) are not tested; only the text-based reasoning of LLMs is evaluated
+- Based primarily on US legal/social frameworks; cross-cultural applicability needs exploration.
+- PDDL physical descriptions differ from real visual perception—real images or videos were not used.
+- The scale of $400+$ scenarios is still limited compared to the complexity of the physical world.
+- "Correct answers" in Tier 4 ethical dilemmas may be controversial across different cultures or personal values.
+- Real embodied systems (robots) were not tested; only the textual reasoning capabilities of LLMs were evaluated.
 
 ## Related Work & Insights
-- **vs. Mireshghallah 2023 (textual privacy)**: That work only tests contextual integrity of information flows; EAPrivacy extends evaluation to spatial reasoning and multimodal perception in the physical world
-- **vs. robot safety evaluation (Robey 2024 et al.)**: Prior work primarily focuses on jailbreaks and adversarial attacks; EAPrivacy addresses privacy-awareness deficiencies under normal usage
-- **Implications for embodied AI deployment**: Current LLMs lack the physical-privacy reasoning capability required for deployment in private spaces — dedicated physical-privacy alignment training is needed
+- **vs. Mireshghallah 2023 (Text Privacy)**: That work only tests contextual integrity of information flow; EAPrivacy extends this to spatial reasoning and multimodal perception in the physical world.
+- **vs. Robot Safety Evaluation (Robey 2024, etc.)**: Those focus primarily on jailbreaking or adversarial attacks; EAPrivacy focuses on privacy awareness defects under normal usage.
+- **Implications for Embodied AI Deployment**: Current LLMs lack the privacy reasoning capabilities required for deployment in private spaces—specialized physical privacy alignment training is necessary.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ First physical-world privacy evaluation; the 4-tier design is systematic and theoretically grounded (contextual integrity)
-- Experimental Thoroughness: ⭐⭐⭐⭐ 16 models × 400+ scenarios × human annotation validation
-- Writing Quality: ⭐⭐⭐⭐ Failure modes are clearly categorized; findings are insightful
-- Value: ⭐⭐⭐⭐⭐ Important implications for the safe deployment of embodied AI; reveals fundamental deficiencies in alignment
+- Novelty: ⭐⭐⭐⭐⭐ First to evaluate physical-world privacy; 4-tier design is systematic and theoretically grounded in contextual integrity.
+- Experimental Thoroughness: ⭐⭐⭐⭐ $16$ models applied to $400+$ scenarios with human-annotated validation.
+- Writing Quality: ⭐⭐⭐⭐ Clear classification of failure modes; insights are profound.
+- Value: ⭐⭐⭐⭐⭐ Provides critical insights for the safe deployment of embodied AI and reveals fundamental flaws in current alignment.
 
 <!-- RELATED:START -->
 
@@ -142,11 +140,11 @@ A 4-tier progressive design covering different levels of cognitive complexity in
 
 ## Related Papers
 
-- [\[ICLR 2026\] SecP-Tuning: Efficient Privacy-Preserving Prompt Tuning for Large Language Models via MPC](secp-tuning_efficient_privacy-preserving_prompt_tuning_for_large_language_mode.md)
-- [\[AAAI 2026\] SproutBench: A Benchmark for Safe and Ethical Large Language Models for Youth](../../AAAI2026/llm_safety/sproutbench_a_benchmark_for_safe_and_ethical_large_language_models_for_youth.md)
-- [\[ICLR 2026\] AudioTrust: Benchmarking the Multifaceted Trustworthiness of Audio Large Language Models](audiotrust_benchmarking_the_multifaceted_trustworthiness_of_audio_large_language.md)
-- [\[ICLR 2026\] Doxing via the Lens: Revealing Location-related Privacy Leakage on Multi-modal Large Reasoning Models](doxing_via_the_lens_revealing_location-related_privacy_leakage_in_vlms.md)
-- [\[ACL 2026\] SharedRequest: Privacy-Preserving Model-Agnostic Inference for Large Language Models](../../ACL2026/llm_safety/sharedrequest_privacy-preserving_model-agnostic_inference_for_large_language_mod.md)
+- [\[ICLR 2026\] MCP-SafetyBench: A Benchmark for Safety Evaluation of Large Language Models with Real-World MCP Servers](mcp-safetybench_a_benchmark_for_safety_evaluation_of_large_language_models_with_.md)
+- [\[ICLR 2026\] VoxPrivacy: A Benchmark for Evaluating Interactional Privacy of Speech Language Models](voxprivacy_a_benchmark_for_evaluating_interactional_privacy_of_speech_language_m.md)
+- [\[ICLR 2026\] Natural Identifiers for Privacy and Data Audits in Large Language Models](natural_identifiers_for_privacy_and_data_audits_in_large_language_models.md)
+- [\[ICLR 2026\] ImpossibleBench: Measuring LLMs' Propensity of Exploiting Test Cases](impossiblebench_measuring_llms_propensity_of_exploiting_test_cases.md)
+- [\[ICLR 2026\] Benchmarking Empirical Privacy Protection for Adaptations of Large Language Models](benchmarking_empirical_privacy_protection_for_adaptations_of_large_language_mode.md)
 
 </div>
 

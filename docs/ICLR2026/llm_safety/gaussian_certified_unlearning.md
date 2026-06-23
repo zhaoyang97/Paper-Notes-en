@@ -2,163 +2,134 @@
 title: >-
   [Paper Note] Gaussian Certified Unlearning in High Dimensions: A Hypothesis Testing Approach
 description: >-
-  [ICLR 2026 Oral][LLM Safety][machine unlearning] This paper proposes $(\phi,\varepsilon)$-Gaussian certifiability — a high-dimensional machine unlearning privacy framework grounded in hypothesis testing trade-off functio…
+  [ICLR 2026][LLM Safety][machine unlearning] Ours proposes $(\phi,\varepsilon)$-Gaussian certifiability—a high-dimensional machine unlearning privacy framework based on hypothesis testing trade-off functions. It rigorously proves that in the high-dimensional proportional regime ($p \sim n$), a single-step Newton update combined with calibrated Gaussian noise can
 tags:
-  - "ICLR 2026 Oral"
-  - "LLM Safety"
-  - "machine unlearning"
-  - "Gaussian certifiability"
-  - "hypothesis testing"
-  - "high-dimensional statistics"
-  - "Newton method"
-  - "privacy"
+  - ICLR 2026
+  - LLM Safety
+  - machine unlearning
+  - Gaussian certifiability
+  - hypothesis testing
+  - high-dimensional statistics
+  - Newton method
+  - privacy
 date: 2026-05-08
-content_hash: 15c6acd75931bf07
+content_hash: ba459e71fb99894b
 ---
-
 # Gaussian Certified Unlearning in High Dimensions: A Hypothesis Testing Approach
 
-**Conference**: ICLR 2026 Oral
+**Conference**: ICLR 2026 Oral  
 **arXiv**: [2510.13094](https://arxiv.org/abs/2510.13094)  
 **Code**: [Anonymous Repository](https://anonymous.4open.science/r/unlearning-E14D)  
-**Area**: AI Safety / Machine Unlearning / High-Dimensional Statistics
+**Area**: AI Safety / Machine Unlearning / High-dimensional Statistics  
 **Keywords**: machine unlearning, Gaussian certifiability, hypothesis testing, high-dimensional statistics, Newton method, privacy
 
 ## TL;DR
 
-This paper proposes $(\phi,\varepsilon)$-Gaussian certifiability — a high-dimensional machine unlearning privacy framework grounded in hypothesis testing trade-off functions. It rigorously proves that, in the high-dimensional proportional regime ($p \sim n$), a single Newton step combined with calibrated Gaussian noise simultaneously satisfies privacy (GPAR) and accuracy (GED→0) requirements. The work refutes the conclusion of Zou et al. (2025) that "at least two Newton steps are necessary," and theoretically identifies the fundamental incompatibility between the classical $\varepsilon$-certifiability and noise-addition mechanisms.
+Ours proposes $(\phi,\varepsilon)$-Gaussian certifiability—a high-dimensional machine unlearning privacy framework based on hypothesis testing trade-off functions. It rigorously proves that in the high-dimensional proportional regime ($p \sim n$), a single-step Newton update combined with calibrated Gaussian noise can simultaneously satisfy privacy (GPAR) and accuracy (GED $\to 0$) requirements. This result refutes the conclusion of Zou et al. (2025) that "at least two Newton steps are required" and theoretically reveals the fundamental reason why the old $\varepsilon$-certifiability is incompatible with noise injection mechanisms.
 
 ## Background & Motivation
 
-**Legal Drivers for Data Unlearning**: Regulations such as GDPR and CCPA mandate a "right to be forgotten," requiring models to efficiently erase the statistical influence of specific user data; full retraining is prohibitively expensive.
+**Legal Drivers for Data Unlearning**: Regulations such as GDPR and CCPA mandate the "right to be forgotten." Models must efficiently remove the statistical impact of specific user data, as full retraining is computationally prohibitive.
 
-**Mainstream Newton-Based Unlearning**: Guo et al. (2020) and Sekhari et al. (2021) established that in the low-dimensional regime ($p \ll n$), a single Newton step with noise injection suffices for privacy and accuracy guarantees. However, their proofs rely on $\Omega(1)$ strong convexity and $O(1)$ smoothness of the per-example loss.
+**Mainstream Newton Unlearning Methods**: Guo et al. (2020) and Sekhari et al. (2021) demonstrated that in low dimensions ($p \ll n$), single-step Newton updates plus noise ensure both privacy and accuracy. However, their proofs rely on $\Omega(1)$ strong convexity and $O(1)$ smoothness assumptions for per-example loss.
 
-**Breakdown of Low-Dimensional Assumptions in High Dimensions**: Taking Ridge regression as a canonical example, when $p \sim n$, requiring $\|x_i\|_2 \sim 1$ (to ensure $O(1)$ smoothness) drives the minimum eigenvalue of the per-example loss Hessian down to $2\lambda/n$, entirely destroying $\Omega(1)$ strong convexity and rendering existing frameworks invalid.
+**Collapse of Low-Dimensional Assumptions in High Dimensions**: Taking simple Ridge regression as an example, when $p \sim n$, requiring $\|x_i\|_2 \sim 1$ (to ensure $O(1)$ smoothness) causes the minimum eigenvalue of the per-example loss to drop to $2\lambda/n$, completely destroying $\Omega(1)$ strong convexity and rendering existing frameworks invalid.
 
-**High-Dimensional Attempt by Zou et al. (2025)**: This work relaxes some optimization assumptions but adopts $(\phi,\varepsilon)$-PAR certifiability, concluding that even deleting a single data point requires at least two Newton iterations to simultaneously guarantee privacy and accuracy.
+**High-Dimensional Attempts by Zou et al. (2025)**: While relaxing some optimization assumptions, they adopted $(\phi,\varepsilon)$-PAR certifiability. Their conclusion suggested that even for deleting a single data point, at least two Newton iterations are required to guarantee both privacy and accuracy.
 
-**Fundamental Deficiency of the Old Definition**: The $\varepsilon$-certifiability criterion is incompatible with noise-addition strategies — in high dimensions, it requires injecting disproportionately large noise to satisfy the privacy condition, thereby destroying model accuracy.
+**Intrinsic Flaw of the Old Definition**: $\varepsilon$-certifiability is incompatible with noise injection strategies. In high dimensions, it necessitates injecting disproportionately large noise to satisfy privacy conditions, which collapses model accuracy.
 
-**Core Insight**: In high dimensions, broad families of isotropic log-concave noise mechanisms converge in behavior to the Gaussian mechanism (Dong et al., 2021). The Gaussian trade-off curve is therefore the canonical choice for high-dimensional privacy proofs, and redefining certifiability accordingly resolves the aforementioned contradiction.
+**Key Insight**: In high dimensions, a broad class of isotropic log-concave noise mechanisms converges in behavior to the Gaussian mechanism (Dong et al., 2021). Therefore, the Gaussian trade-off curve is the canonical choice for high-dimensional privacy proofs. Redefining certifiability based on this solves the aforementioned contradiction.
 
 ## Method
 
 ### Overall Architecture
 
-Given training data $\mathcal{D}_n$, a trained model $\hat{\beta} = A(\mathcal{D}_n)$, and a deletion subset $\mathcal{D}_\mathcal{M}$, the unlearning algorithm proceeds in two steps:
+The paper addresses machine unlearning in the high-dimensional proportional regime ($p \sim n$, where parameters and samples are of the same order). Given training data $\mathcal{D}_n$, a trained model $\hat{\beta} = A(\mathcal{D}_n)$, and a subset to be deleted $\mathcal{D}_\mathcal{M}$, the unlearning algorithm is minimalist, consisting of two steps: first, using $\hat{\beta}$ as the initial value, perform a **single-step** Newton update on the target $L_{\setminus\mathcal{M}}$ (excluding $\mathcal{M}$) to obtain the approximate solution $\hat{\beta}^{(1)}_{\setminus\mathcal{M}} = \hat{\beta} - G(L_{\setminus\mathcal{M}})^{-1}(\hat{\beta})\, \nabla L_{\setminus\mathcal{M}}(\hat{\beta})$; second, add calibrated Gaussian noise $\tilde{\beta}_{\setminus\mathcal{M}} = \hat{\beta}^{(1)}_{\setminus\mathcal{M}} + b$, where $b \sim \mathcal{N}(0, \tfrac{r^2}{\varepsilon^2} I_p)$.
 
-1. **Approximation Step (Newton Step)**: Starting from $\hat{\beta}$, perform a single Newton update on the objective $L_{\setminus\mathcal{M}}$ with $\mathcal{M}$ removed:
+The true contribution lies not in the two-step algorithm itself, but in changing the "yardstick" for measuring privacy—certifiability defined by the Gaussian trade-off function. The four designs follow a "metrics then proof" structure: the first two redefine privacy (GPAR) and accuracy (GED) criteria, the third relaxes assumptions to enable proofs in high dimensions, and the fourth proves that single-step Newton + Gaussian noise is sufficient under these new criteria.
 
-$$\hat{\beta}^{(1)}_{\setminus\mathcal{M}} = \hat{\beta} - G(L_{\setminus\mathcal{M}})^{-1}(\hat{\beta}) \nabla L_{\setminus\mathcal{M}}(\hat{\beta})$$
+### Key Designs
 
-2. **Randomization Step (Noise Injection)**: Add calibrated Gaussian noise:
+**1. $(\phi,\varepsilon)$-Gaussian certifiability (GPAR): Reformulating privacy as a hypothesis testing problem**
 
-$$\tilde{\beta}_{\setminus\mathcal{M}} = \hat{\beta}^{(1)}_{\setminus\mathcal{M}} + b, \quad b \sim \mathcal{N}(0, \frac{r^2}{\varepsilon^2} I_p)$$
+The old $\varepsilon$-certifiability required the "unlearned model" and "retrained model" to be parameter-wise close. In high dimensions, this forces the injection of disproportionate noise. Ours formalizes privacy as a hypothesis test: an adversary observes the unlearned output and attempts to distinguish between "retraining from scratch plus noise ($\mathcal{P}_{re}$)" and "unlearning from the original model plus noise ($\mathcal{P}_{un}$)". The adversary's optimal distinguishing ability is characterized by the trade-off function $T(P,Q)(\alpha) = \inf_{\phi}\{\beta_\phi : \alpha_\phi \leq \alpha\}$. Ours selects the Gaussian curve $f_{G,\varepsilon}(\alpha) = \Phi(\Phi^{-1}(1-\alpha) - \varepsilon)$ as the benchmark. If $T(\mathcal{P}_{re}, \mathcal{P}_{un})(\alpha) \geq f_{G,\varepsilon}(\alpha)$ holds with probability $\geq 1-\phi$, the algorithm satisfies $(\phi,\varepsilon)$-GPAR.
 
-### Key Design 1: $(\phi,\varepsilon)$-Gaussian Certifiability (GPAR)
+**2. Generalized Error Divergence (GED): Stable accuracy measurement in high dimensions**
 
-The core idea formalizes the privacy guarantee of unlearning as a hypothesis testing problem: an adversary observes the post-unlearning model output and attempts to distinguish between "retrained on full data with noise added" and "unlearned from the original model with noise added." The trade-off function is defined as:
+Sekhari et al. (2021)'s "excess risk" relative to the "true population minimizer" is unstable when $p \sim n$ because the empirical solution and the true optimal solution have non-negligible bias. Ours uses GED to directly compare the prediction loss difference between the unlearned model and the ideal retrained model on a **new sample**:
 
-$$T(P,Q)(\alpha) = \inf_{\phi}\{\beta_\phi : \alpha_\phi \leq \alpha\}$$
+$$\text{GED}_\ell(A, \bar{A}; \mathcal{M}, \mathcal{D}_n) = \mathbb{E}\big[\,|\ell(y_0 \mid x_0^\top A(\mathcal{D}_{\setminus\mathcal{M}})) - \ell(y_0 \mid x_0^\top \tilde{\beta}_{\setminus\mathcal{M}})| \mid \mathcal{D}_n\,\big]$$
 
-The Gaussian trade-off curve is adopted as the reference:
+This avoids dependence on the true optimal solution and remains stable in high-dimensional proportional regimes.
 
-$$f_{G,\varepsilon}(\alpha) = \Phi(\Phi^{-1}(1-\alpha) - \varepsilon)$$
+**3. Relaxed Optimization Assumptions: Covering high-dimensional losses**
 
-If the unlearning algorithm satisfies $T(\mathcal{P}_{re}, \mathcal{P}_{un})(\alpha) \geq f_{G,\varepsilon}(\alpha)$ with probability $\geq 1-\phi$, it is said to satisfy $(\phi,\varepsilon)$-GPAR. Advantages of GPAR:
+Unlike low-dimensional proofs requiring per-example strong convexity, Ours shifts assumptions to the "global target": the loss $\ell$ is convex, the regularizer $r$ is $\nu$-strongly convex with $\nu = \Theta(1)$, and features $x_i$ are sub-Gaussian. By not requiring per-example strong convexity, these relaxed conditions cover Generalized Linear Models (GLMs) like Ridge, Logistic, and Poisson regression in high dimensions.
 
-- **Dimension Independence**: For any $p$-dimensional Gaussian vector, the trade-off depends only on the $\ell_2$ norm of the mean difference divided by the standard deviation, independent of dimension.
-- **Canonicity**: Broad isotropic log-concave noise mechanisms converge to Gaussian behavior as $p \to \infty$ (CLT for DP).
-- **Tightness**: In the sense of the Blackwell ordering, the Gaussian trade-off curve is the tightest characterization of the Gaussian mechanism.
-- **All prior certifiability notions ($\varepsilon$-$\delta$, Rényi, etc.) are suboptimal under the Gaussian mechanism.**
+**4. Privacy-Accuracy Guarantees for Single-Step Unlearning**
 
-### Key Design 2: Generalized Error Divergence (GED)
-
-GED quantifies the generalization gap between the unlearned model and the ideally retrained model on new data:
-
-$$\text{GED}_\ell(A, \bar{A}; \mathcal{M}, \mathcal{D}_n) = \mathbb{E}[|\ell(y_0 | x_0^\top A(\mathcal{D}_{\setminus\mathcal{M}})) - \ell(y_0 | x_0^\top \tilde{\beta}_{\setminus\mathcal{M}})| \mid \mathcal{D}_n]$$
-
-Compared to the excess risk based on the true population risk minimizer used by Sekhari et al. (2021), GED exhibits more stable behavior in the high-dimensional proportional regime.
-
-### Key Design 3: Relaxed Optimization Assumptions
-
-Rather than requiring the per-example loss $f(\beta, z_i)$ to satisfy $\Omega(1)$ strong convexity and $O(1)$ smoothness, the paper requires:
-
-- The loss $\ell$ is convex; the regularizer $r$ is strongly convex ($\nu$-strongly convex, $\nu = \Theta(1)$).
-- $\ell$ and $r$ are three-times differentiable with polynomial growth.
-- Features $x_i$ are sub-Gaussian; responses $y_i$ have sub-polynomial logarithmic moments.
-- This covers a broad model class including Ridge regression, Logistic regression, and Poisson regression.
-
-### Core Theoretical Results
-
-**Theorem 2 (Privacy)**: Under the above assumptions, with noise variance set to $r^2/\varepsilon^2$ where $r = C_1(n)\sqrt{C_2(n)m^3/(2\lambda\nu n)}$, the single-step Newton unlearning satisfies $(\phi_n, \varepsilon)$-GPAR with $\phi_n \to 0$.
-
-**Theorem 3 (Accuracy)**: Under the same setting, GED satisfies:
-
-$$\text{GED}(\tilde{\beta}_{\setminus\mathcal{M}}, \hat{\beta}_{\setminus\mathcal{M}}) = O_p\left(\frac{m^2 \cdot \text{polylog}(n)}{\sqrt{n}}\right)$$
-
-When $m = o(n^{1/4-\alpha})$, GED → 0, meaning $m$ data points can be simultaneously deleted while maintaining accuracy.
+Experimental noise variance is precisely calibrated as $r^2/\varepsilon^2$ where $r$ depends on the number of deleted points $m$. Theorem 2 proves this single-step Newton unlearning satisfies $(\phi_n, \varepsilon)$-GPAR. Theorem 3 proves $\text{GED}(\tilde{\beta}_{\setminus\mathcal{M}}, \hat{\beta}_{\setminus\mathcal{M}}) = O_p\big(\tfrac{m^2 \cdot \text{polylog}(n)}{\sqrt{n}}\big)$. Combined, they show that as long as Laplace noise is replaced by Gaussian noise, **one step** of Newton is sufficient.
 
 ## Key Experimental Results
 
 ### Main Results: GED vs. Dimension (Logistic Regression, $n=p$, $\varepsilon=0.75$, $\lambda=0.5$)
 
-| Deletion size $m$ | Noise type | log(GED) vs log(p) slope | GED behavior |
-|:-----------------:|:----------:|:------------------------:|:------------:|
-| 1 | Laplace (Zou) | 0.03 | Does not decay |
-| 1 | Gaussian (Ours) | -0.47 | Decays $\sim p^{-0.5}$ |
-| 5 | Laplace (Zou) | -0.03 | Does not decay |
-| 5 | Gaussian (Ours) | -0.54 | Decays $\sim p^{-0.5}$ |
-| 10 | Laplace (Zou) | -0.01 | Does not decay |
-| 10 | Gaussian (Ours) | -0.51 | Decays $\sim p^{-0.5}$ |
+| Deletion count $m$ | Noise Type | log(GED) vs log(p) Slope | GED Behavior |
+|:-----------:|:--------:|:----------------------:|:--------:|
+| 1 | Laplace (Zou) | 0.03 | No decay |
+| 1 | Gaussian (Ours) | -0.47 | Decays as $\sim p^{-0.5}$ |
+| 5 | Laplace (Zou) | -0.03 | No decay |
+| 5 | Gaussian (Ours) | -0.54 | Decays as $\sim p^{-0.5}$ |
+| 10 | Laplace (Zou) | -0.01 | No decay |
+| 10 | Gaussian (Ours) | -0.51 | Decays as $\sim p^{-0.5}$ |
 
-**Core Finding**: Laplace noise (required by the Zou et al. framework) causes the GED of a one-step Newton unlearning to fail to decay, necessitating a second step; whereas Gaussian noise (GPAR framework) yields a GED that stably decays at rate $p^{-0.5}$, making one step sufficient.
+**Core Conclusion**: Laplace noise (required by Zou et al.) results in non-decaying GED for single-step Newton, necessitating a second step. Gaussian noise (GPAR framework) allows GED to decay at $p^{-0.5}$ with just one step.
 
 ### Ablation Study: GED vs. $\varepsilon$ and $m$ ($n=p=1255$)
 
-| Experimental dimension | Observation |
-|:----------------------:|:-----------:|
-| Increasing $\varepsilon$ | Gaussian GED decreases monotonically toward retraining; Laplace GED remains substantially higher than Gaussian throughout |
-| Increasing $m$ ($5 \to 50$) | GED increases for both; Laplace consistently and significantly exceeds Gaussian |
-| $m$ vs. GED slope (Gaussian) | $\sim 1.4$ (empirically better than the theoretical bound of $m^{1.5}$) |
-| $m$ vs. GED slope (Laplace) | $\sim 0.24$ (slower growth but higher absolute values due to excessive noise) |
+| Observation | Result |
+|:--------:|:--------|
+| $\varepsilon$ Increase | Gaussian GED monotonically decreases; Laplace remains significantly higher. |
+| $m$ Increase ($5 \to 50$) | Both GEDs increase, but Laplace remains consistently higher than Gaussian. |
+| $m$ vs GED Slope (Gaussian) | $\sim 1.4$ (better than the theoretical $m^{1.5}$ bound). |
+| $m$ vs GED Slope (Laplace) | $\sim 0.24$ (slow growth but higher absolute value due to excessive noise). |
 
 ### Key Findings
 
-1. **Root Cause of One-Step vs. Two-Step Divergence Confirmed**: Theoretical predictions align precisely with experiments — the discrepancy originates from the choice of certifiability definition, not the algorithm itself.
-2. **Dimensional Advantage of Gaussian Noise**: As $p$ increases, accuracy under the Gaussian scheme improves continuously, while the Laplace scheme stagnates.
-3. **Feasibility of Multi-Point Deletion**: When $m = o(n^{1/4})$, simultaneous deletion of multiple users' data still preserves accuracy.
+1. **Root cause of 1-step vs. 2-step divergence**: Confirmed that the discrepancy stems from the certifiability definition (Gaussian vs. $\varepsilon$) rather than the unlearning algorithm.
+2. **Dimensional advantage of Gaussian noise**: As $p$ increases, the accuracy of the Gaussian scheme improves, whereas the Laplace scheme stagnates.
+3. **Feasibility of multi-point deletion**: When $m = o(n^{1/4})$, accuracy is preserved even when deleting multiple users at once.
 
 ## Highlights & Insights
 
-- **Conceptual Breakthrough**: The problem does not lie in an insufficient number of Newton steps, but rather in the inappropriate choice of certifiability concept. The classical $\varepsilon$-certifiability artificially forces disproportionate noise injection, degrading accuracy and producing the spurious "two-step necessity" conclusion.
-- **Theoretical Unification**: Through the hypothesis testing trade-off function framework, Gaussian Differential Privacy (Dong et al., 2022) from the differential privacy literature is imported into machine unlearning, establishing an elegant bridge between the two fields.
-- **Practicality**: A single Newton step requires only one Hessian-inverse-vector product, saving approximately half the computation compared to two-step methods.
-- **Blessing of Dimensionality**: High dimensionality is not merely a challenge — CLT effects make Gaussian certifiability a natural and optimal choice, with GPAR becoming more accurate as dimension grows.
+- **Conceptual Breakthrough**: The issue is not an insufficient number of Newton steps, but the improper choice of certifiability definition. The old $\varepsilon$-certifiability requires disproportionate noise, artificially degrading accuracy.
+- **Theoretical Unification**: Leveraging the hypothesis testing trade-off framework, Ours introduces Gaussian DP concepts into machine unlearning, building an elegant bridge between the two fields.
+- **Practicality**: The computational cost of single-step Newton is approximately half that of the two-step solution.
+- **Benefit of Dimensionality**: High dimensionality is not just a challenge—the CLT effect makes Gaussian certifiability a natural and optimal choice.
 
 ## Limitations & Future Work
 
-1. **Convexity/Strong Convexity Assumptions**: The theory applies only to convex loss with strongly convex regularization (RERM); non-convex optimization in deep learning is not covered.
-2. **GLM Data Assumptions**: Sub-Gaussian features and GLM-linked responses are required; real-world high-dimensional data may not satisfy these conditions.
-3. **Hessian Computation Cost**: Although only a single Newton step is needed, computing and storing the Hessian inverse remains expensive for large-scale models.
-4. **Limited Experimental Scale**: Simulation validation is conducted on Logistic regression with $p \leq 5000$; no evaluation on realistic deep models or LLMs is provided.
-5. **Loose Multi-Point Deletion Bound**: The empirically observed GED growth slope with respect to $m$ ($\sim 1.4$) is better than the theoretical bound ($m^{1.5}$), suggesting the bound may be further tightened.
+1. **Convexity Assumptions**: Theory applies only to RERM with convex loss and strongly convex regularization; non-convex deep learning is not covered.
+2. **GLM Data Assumptions**: Requires sub-Gaussian features and GLM relationships, which real-world high-dimensional data may violate.
+3. **Hessian Computational Cost**: While only one step is needed, computing/storing the Hessian inverse is still expensive for very large models.
+4. **Limited Experimental Scale**: Validated on Logistic regression up to $p=5000$; not tested on large-scale deep models or LLMs.
+5. **Loose Multi-point Bound**: Experiments show a GED growth slope of $\sim 1.4$ regarding $m$, which is better than the theoretical $m^{1.5}$ bound, suggesting potential for tighter theory.
 
 ## Related Work & Insights
 
-- **Low-Dimensional Machine Unlearning**: Guo et al. (2020) and Sekhari et al. (2021) prove that a single Newton step with noise suffices when $p \ll n$, but their assumptions break down when $p \sim n$.
-- **High-Dimensional Unlearning**: Zou et al. (2025) first study the $p \sim n$ proportional regime but use $\varepsilon$-certifiability with Laplace noise, concluding that at least two steps are necessary.
-- **Gaussian DP**: Dong et al. (2022) introduce Gaussian Differential Privacy ($f$-DP); this paper imports that framework into machine unlearning.
-- **Exact Unlearning**: Bourtoule et al. (2021) and Cao & Yang (2015) pursue exact retraining equivalence at high computational cost.
-- **Gradient-Descent-Based Unlearning**: Neel et al. (2021) and Allouah et al. (2025) analyze approximate unlearning via GD/SGD.
+- **Low-dimensional Unlearning**: Guo et al. (2020), Sekhari et al. (2021) prove single-step is enough when $p \ll n$.
+- **High-dimensional Unlearning**: Zou et al. (2025) first studied $p \sim n$ but concluded two steps are needed due to $\varepsilon$-certifiability.
+- **Gaussian DP**: Dong et al. (2022) proposed Gaussian DP ($f$-DP), which Ours adapts for unlearning.
+- **Exact Unlearning**: Bourtoule et al. (2021) focus on exact retraining equivalence at high cost.
+- **GD-based Unlearning**: Neel et al. (2021) analyze approximate unlearning via GD/SGD iterations.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ The new certifiability framework fundamentally reshapes the theoretical landscape of high-dimensional unlearning.
-- Experimental Thoroughness: ⭐⭐⭐ Simulation results robustly support the theory, but large-scale real-world experiments are absent.
-- Writing Quality: ⭐⭐⭐⭐⭐ Mathematical derivations are rigorous and clear; motivation is thoroughly articulated; comparative analysis is precise.
-- Value: ⭐⭐⭐⭐⭐ The work delivers a paradigm-level contribution to machine unlearning theory; ICLR Oral recognition is well deserved.
+- Novelty: ⭐⭐⭐⭐⭐ New certifiability framework fundamentally shifts the high-dimensional unlearning landscape.
+- Experimental Thoroughness: ⭐⭐⭐ Simulation confirms theory well, though real-world scale experiments are absent.
+- Writing Quality: ⭐⭐⭐⭐⭐ Rigorous mathematical derivation and clear motivation.
+- Value: ⭐⭐⭐⭐⭐ Paradigm-shifting contribution to unlearning theory, fully deserving of an ICLR Oral.
 
 <!-- RELATED:START -->
 
@@ -168,8 +139,8 @@ When $m = o(n^{1/4-\alpha})$, GED → 0, meaning $m$ data points can be simultan
 
 - [\[ICLR 2026\] Efficient Adversarial Attacks on High-dimensional Offline Bandits](efficient_adversarial_attacks_on_high-dimensional_offline_bandits.md)
 - [\[ICLR 2026\] Erase or Hide? Suppressing Spurious Unlearning Neurons for Robust Unlearning](erase_or_hide_suppressing_spurious_unlearning_neurons_for_robust_unlearning.md)
-- [\[ICML 2026\] Optimizing Token Choice for Code Watermarking: An RL Approach](../../ICML2026/llm_safety/optimizing_token_choice_for_code_watermarking_an_rl_approach.md)
 - [\[NeurIPS 2025\] ModHiFi: Identifying High Fidelity Predictive Components for Model Modification](../../NeurIPS2025/llm_safety/modhifi_identifying_high_fidelity_predictive_components_for_model_modification.md)
+- [\[ICLR 2026\] PropensityBench: Evaluating Latent Safety Risks in Large Language Models via an Agentic Approach](propensitybench_evaluating_latent_safety_risks_in_large_language_models_via_an_a.md)
 - [\[AAAI 2026\] Uncovering Pretraining Code in LLMs: A Syntax-Aware Attribution Approach](../../AAAI2026/llm_safety/uncovering_pretraining_code_in_llms_a_syntax-aware_attribution_approach.md)
 
 </div>

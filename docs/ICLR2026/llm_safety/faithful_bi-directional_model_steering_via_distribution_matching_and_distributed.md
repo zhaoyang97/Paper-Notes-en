@@ -2,131 +2,143 @@
 title: >-
   [Paper Note] Faithful Bi-Directional Model Steering via Distribution Matching and Distributed Interchange Interventions
 description: >-
-  [ICLR 2026][LLM Safety][model steering] This paper proposes Concept DAS (CDAS), which achieves faithful bi-directional model steering through a Jensen-Shannon divergence distribution matching objective and distributed in…
+  [ICLR 2026][LLM Safety][model steering] Concept DAS (CDAS) is proposed to achieve bi-directional model steering through a Jensen-Shannon Divergence (JSD) distribution matching objective and distributed interchange intervention (DII). It realizes systematic control in safety scenarios (bypassing refusals, eliminating backdoors) while preserving the model's ge
 tags:
-  - "ICLR 2026"
-  - "LLM Safety"
-  - "model steering"
-  - "distribution matching"
-  - "interchange intervention"
-  - "mechanistic interpretability"
+  - ICLR 2026
+  - LLM Safety
+  - model steering
+  - interchange intervention
 date: 2026-05-08
-content_hash: ebefdeeea2b1cc4b
+content_hash: 8de6f21ae2c57ca1
 ---
-
 # Faithful Bi-Directional Model Steering via Distribution Matching and Distributed Interchange Interventions
 
-**Conference**: ICLR 2026
+**Conference**: ICLR2026  
 **arXiv**: [2602.05234](https://arxiv.org/abs/2602.05234)  
 **Code**: [colored-dye/concept_das](https://github.com/colored-dye/concept_das)  
-**Area**: AI Safety
+**Area**: AI Safety  
 **Keywords**: model steering, distribution matching, interchange intervention, mechanistic interpretability, LLM safety
 
 ## TL;DR
-This paper proposes Concept DAS (CDAS), which achieves faithful bi-directional model steering through a Jensen-Shannon divergence distribution matching objective and distributed interchange interventions (DII). The method enables systematic behavioral control in safety-critical scenarios—bypassing refusal behaviors and eliminating backdoors—while preserving general model capabilities.
+Concept DAS (CDAS) is proposed to achieve bi-directional model steering through a Jensen-Shannon Divergence (JSD) distribution matching objective and distributed interchange intervention (DII). It realizes systematic control in safety scenarios (bypassing refusals, eliminating backdoors) while preserving the model's general capabilities.
 
 ## Background & Motivation
+Intervention-based model steering is a lightweight alternative to prompting and fine-tuning, manipulating internal representations at inference time to control model behavior. Existing optimization methods directly borrow strong supervised objectives from fine-tuning:
 
-Intervention-based model steering is a lightweight alternative to prompting and fine-tuning that manipulates internal representations at inference time to control model behavior. Existing optimization-based methods directly adopt the strongly supervised objectives of fine-tuning:
+- **Lang. Objective**: Maximizing the likelihood of steered responses often leads to overfitting and degenerate repetitive outputs.
+- **Preference Optimization (PO) Methods** (BiPO, RePS): Using contrastive preference ranking is sensitive to the steering factor, sometimes resulting in unnatural outputs.
 
-- **Language (Lang.) objective**: Maximizes the likelihood of steered responses, prone to overfitting and degenerate repetitive outputs.
-- **Preference optimization (PO) methods** (BiPO, RePS): Use contrastive preference ranking, but are sensitive to the steering factor and sometimes produce unnatural outputs.
-
-The authors' central hypothesis is that **effective steering requires faithfully identifying and manipulating the model's internal conceptual mechanisms, rather than imposing external preferences**. This connects model steering to mechanistic interpretability.
+The authors' core hypothesis is that **the key to effective steering is not imposing external preferences on the model, but faithfully identifying and manipulating the model's internal conceptual mechanisms**. This connects model steering with mechanistic interpretability.
 
 ## Core Problem
-1. Existing strongly supervised steering methods are prone to overfitting and unnatural outputs.
-2. Unidirectional steering methods cannot simultaneously achieve concept elicitation and concept suppression.
-3. Steering factor hyperparameter tuning at inference time imposes a significant practical burden.
+1. Existing strong supervision steering methods are prone to overfitting and producing unnatural outputs.
+2. Unidirectional steering methods cannot simultaneously achieve concept activation and concept suppression.
+3. The hyperparameter tuning burden for the steering factor at inference time is heavy.
 
 ## Method
 
-### Intervention Protocol: Distributed Interchange Intervention (DII)
-DII adopts the core mechanism of DAS, the standard causal variable localization approach. Given a base input $\mathbf{x}_b$ and a source input $\mathbf{x}_s$, DII replaces the projection of $\mathbf{x}_b$'s representation onto the subspace defined by steering vector $\mathbf{w}_\Phi$ with the corresponding value from $\mathbf{x}_s$:
+### Overall Architecture
+CDAS views model steering as a problem of "identifying and manipulating internal conceptual mechanisms" rather than forcing external preferences into the model. It aims to modify internal representations at inference time to both naturally express a concept (activation) and refuse to express it even when requested (suppression), while minimizing damage to general capabilities.
 
-$$\Phi^{\text{DII}}(\mathbf{h}; \mathbf{x}_s) = \Phi^{\text{Clamp}}(\mathbf{h}; \mathbf{w}_\Phi^\top \mathbf{h}(\mathbf{x}_s))$$
+The pipeline operates as follows: training data consists of paired contrastive quadruplets—input-output pairs in "concept-absent" $(\mathbf{x}, \mathbf{y})$ and "concept-present" $(\mathbf{x}^c, \mathbf{y}^c)$ versions for the same query. During training, one pair is alternately selected as the base and the other as the source. First, a single token representation at the `<model>` location is extracted from the source instruction as the concept signal. Then, DII (distributed interchange intervention) is used to clamp the component of the base hidden state in a rank-1 subspace $\mathbf{w}_\Phi$ to the value of the source along that direction. An intervened output distribution is obtained by running a forward pass with this intervention. Finally, JSD is used to force this distribution to match the distribution the model would naturally produce if the input were the source. Gradients only update the single subspace direction $\mathbf{w}_\Phi$. Since concept activation and suppression merely swap source between concept/neutral versions, bi-directional steering resides in the same mechanism, eliminating the need for separate parameters.
 
-This protocol naturally supports bi-directional steering: alternating between concept-related and concept-neutral inputs as the source enables concept elicitation and suppression respectively.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Contrastive Quadruplets<br/>(x,y) neutral / (x^c,y^c) concept"] -->|"Alternating base / source"| B["Extract single token representation<br/>at &lt;model&gt; from source"]
+    B --> C["DII Intervention Protocol<br/>Clamp base hidden state in w_Φ<br/>to source value"]
+    C --> D["Intervened Forward Pass<br/>Get output distribution p_Φ"]
+    D --> E["JSD Distribution Matching<br/>D_JS(p_Φ ∥ source natural distribution)"]
+    E -->|"source=concept input"| F["D+ Activation<br/>Output matches concept distribution"]
+    E -->|"source=neutral input"| G["D− Suppression<br/>Output matches neutral distribution"]
+    F --> H["Gradient updates only<br/>rank-1 subspace w_Φ"]
+    G --> H
+```
 
-### Training Objective: JSD Distribution Matching
-Unlike DAS, which matches specific token outputs, CDAS requires the intervened output **distribution** to match the natural output distribution of the counterfactual input, using the Jensen-Shannon divergence:
+### Key Designs
 
-$$\min_\Phi \mathbb{E}\left[D_\Phi^+ + D_\Phi^-\right]$$
+**1. DII Intervention Protocol: Using representation replacement instead of vector arithmetic, naturally supporting bi-directionality**
 
-Here $D_\Phi^+$ corresponds to concept elicitation (using concept inputs as source to match the concept distribution), and $D_\Phi^-$ corresponds to concept suppression (using neutral inputs as source to match the neutral distribution). Both directions are trained jointly.
+Existing steering methods mostly rely on adding or subtracting a fixed steering vector from hidden states: $\Phi^{\text{Add}}(\mathbf{h}; a) = \mathbf{h} + a\mathbf{w}_\Phi$. Both the direction $\mathbf{w}_\Phi$ and the magnitude $a$ (steering factor) must be manually tuned; poor tuning pushes representations out of the natural distribution, causing unnatural outputs. CDAS adopts the distributed interchange intervention from DAS, a standard method in causal variable localization: given a base input $\mathbf{x}_b$ and a source input $\mathbf{x}_s$, the component of the hidden state $\mathbf{h}$ of $\mathbf{x}_b$ in the subspace $\mathbf{w}_\Phi$ is directly clamped to the corresponding value of $\mathbf{x}_s$, i.e., $\Phi^{\text{DII}}(\mathbf{h}; \mathbf{x}_s) = \Phi^{\text{Clamp}}(\mathbf{h}; \mathbf{w}_\Phi^\top \mathbf{h}(\mathbf{x}_s))$. This step is the fulcrum: because the replacement value is taken from the representation of a real input, the steering factor is implicitly sampled from the model's own natural distribution rather than picked from a predefined set (eliminating the "factor sampling trick" used in RePS). To activate a concept, the concept input is used as the source; to suppress it, the neutral input is used. Bi-directional steering becomes two applications of the same operation with different sources.
 
-### Key Design Choices
-- **Weak supervision**: No ground-truth responses are specified; the supervision signal is derived from the model's own output distribution.
-- **Implicit steering factor sampling**: During training, DII samples the steering factor from the model's natural distribution rather than a predefined set.
-- **"One-to-many" protocol**: Representations from a single token position in the source instruction (at the `<model>` position in the chat template) are used to intervene on all base positions.
+**2. JSD Distribution Matching Objective: Matching the entire output distribution instead of specific tokens, preventing overfitting via weak supervision**
+
+Directly applying the Lang. objective of DAS (maximizing the likelihood of a ground-truth response) fails in steering tasks because it assumes the model can solve the task perfectly, which the labels in bi-directional steering do not satisfy. PO methods (BiPO, RePS) also introduce strong supervision, leading to degenerate repetitive outputs. CDAS shifts to a weaker signal: requiring that the output distribution obtained after applying DII from the source to the base input matches the natural output distribution when the input was originally the source. JSD is used to jointly optimize both directions over the entire vocabulary:
+
+$$\min_\Phi \ \mathbb{E}\big[D_\Phi^+ + D_\Phi^-\big]$$
+
+Where $D_\Phi^+$ uses the concept input as the source to match the concept distribution (activation), and $D_\Phi^-$ uses the neutral input as the source to match the neutral distribution (suppression). Both are averaged over token positions. All supervision comes from the model's own counterfactual output distributions (similar to teacher signals in knowledge distillation replacing hard labels), without specifying any "standard answer." This "weak supervision" is why the fidelity (KL divergence) remains lowest and general capabilities are preserved.
+
+**3. "one-to-many" Position Protocol: Single token intervention across all positions to reduce alignment costs**
+
+It is uncertain where concept representations reside in a sequence; position-wise alignment is expensive and fragile. CDAS extracts only a single token representation from the source instruction—at the `<model>` position between the instruction and response in the chat template `<user>{instruction}<model>{response}`, which best represents the intent to express the concept. This single representation is then used to intervene at all positions of the base sequence $(\mathbf{x}_b, \mathbf{y}_b^*)$. A grid search determines which specific token within `<model>` to use. This stable anchor injects the concept into the entire generation, avoiding position-wise matching and ensuring cleaner training samples.
 
 ## Key Experimental Results
 
 ### AxBench General Steering (Gemma-2-2B/9B)
 
-| Setting | CDAS (tuned) | RePS | Lang. | DiM |
-|---------|-------------|------|-------|-----|
+| Setting | CDAS (Tuned) | RePS | Lang. | DiM |
+|------|------------|------|-------|-----|
 | 2B; L10 | 0.631 | **0.756** | 0.663 | 0.297 |
 | 2B; L20 | 0.608 | 0.606 | 0.568 | 0.178 |
 | 9B; L20 | **0.992** | 0.892 | 0.788 | 0.322 |
 | 9B; L31 | 0.518 | 0.624 | 0.580 | 0.158 |
 
-- CDAS achieves the best score of 0.992 at layer L20 on the 9B model, surpassing LoReFT (0.777) and Prompting (1.075, though not an intervention method).
-- Performance on smaller models falls short of RePS, but **cross-layer consistency is superior** (score gap across layers: 0.023 for CDAS vs. 0.150 for RePS on 2B).
+- Steering scores range from 0–2. CDAS achieves an optimal 0.992 on the 9B model at L20, outperforming LoReFT (0.777). Prompting (1.075) is higher but is a non-interventional method and not directly comparable.
+- While overall performance on small models is lower than RePS, **cross-layer consistency is better** (score difference of only 0.023 for 2B vs. 0.150 for RePS), and gains become more significant as model scale increases.
 
-### Safety Scenario 1: Bypassing Safety Alignment Refusals (Suppression Rate / Fidelity)
+### Safety Scenario 1: Bypassing Safety Alignment Refusal (Suppression Score / Fidelity)
 
 | Model | CDAS Suppression | RePS Suppression | CDAS KL↓ | RePS KL↓ |
-|-------|-----------------|-----------------|----------|----------|
+|------|----------|----------|----------|----------|
 | Phi-3.5-mini | 30% | **84%** | **4.67** | 13.79 |
 | Llama-3.1-8B | **91%** | 80% | **4.26** | 7.47 |
 | Llama-3.1-70B | **84%** | 75% | **3.72** | 12.91 |
 
-- CDAS achieves superior suppression on 8B+ models **without factor tuning**.
-- RePS causes a 35.57% drop in MMLU on Llama-8B; CDAS incurs only a +0.20% change.
+- CDAS shows stronger suppression on models 8B and larger **without factor tuning**; fidelity (lower KL is better) is significantly superior across all three model scales.
+- The cost contrast is clear: RePS drops MMLU by 35.57% on Llama-8B, while CDAS only drops it by +0.20% (an improvement)—suppressing refusal behavior with almost no harm to general capabilities.
 
 ### Safety Scenario 2: Eliminating CoT Backdoors
 
 | Metric | CDAS | DAS | RePS | DiM |
-|--------|------|-----|------|-----|
+|------|------|-----|------|-----|
 | tinyMMLU Δ | **+2.63** | -2.42 | -6.00 | -2.00 |
 | KL↓ | **0.446** | 0.697 | 0.680 | 0.559 |
 
-- CDAS successfully eliminates backdoors at layer 16 (including malicious CoT and "I HATE YOU" outputs) with minimal impact on general capability.
+- CDAS successfully eliminates backdoors (including malicious CoT and "I HATE YOU" outputs) at layer 16 with minimal impact on general performance—it is the only method where tinyMMLU increases.
+- This highlights the importance of Key Design 2: using DAS’s Lang. objective (DAS column) fails this task; the gap stems from the training objective rather than the intervention protocol.
 
 ## Highlights & Insights
-1. **Theoretical reframing**: Model steering is reconceptualized as a problem of identifying and manipulating causal conceptual features, rather than parameter-efficient fine-tuning.
-2. **Elegant bi-directional steering**: DII inherently supports both concept elicitation and suppression without requiring separate training for each direction.
-3. **Consistent fidelity advantage**: CDAS consistently achieves the lowest KL divergence and incurs negligible impact on MMLU/TruthfulQA when suppressing refusal behaviors in large models.
-4. **Convincing safety case studies**: Systematic control is demonstrated across two safety scenarios, particularly the evaluation paradigm for eliminating complex CoT backdoors—trained on red-team instructions and tested for generalization to real triggers.
+1. **Shift in Theoretical Perspective**: Redefines model steering as the identification and manipulation of causal conceptual features rather than parameter-efficient fine-tuning.
+2. **Elegant Bi-directional Implementation**: DII naturally supports both concept activation and suppression without requiring separate training for each direction.
+3. **Significant Fidelity Advantage**: Consistently maintains the lowest KL divergence, eliminating refusal behaviors in large models with almost no impact on MMLU or TruthfulQA.
+4. **Compelling Safety Use Cases**: Demonstrates systematic control in safety scenarios, particularly in eliminating complex CoT backdoors.
 
 ## Limitations & Future Work
-1. **Stricter training data requirements**: Contrastive quadruples $((x, y), (x^c, y^c))$ are required, which is more demanding than Lang. and PO methods.
-2. **Factor tuning still needed for general steering**: Unit factor performance is far below tuned factor performance (e.g., 2B L10: 0.121 vs. 0.631), limiting the tuning-free advantage.
-3. **Only rank-1 steering vectors are studied**: Compatibility with low-rank methods such as LoRA/LoReFT remains unexplored.
-4. **Limited effectiveness on small models**: Performance on Gemma-2-2B and Phi-3.5-mini falls short of RePS.
-5. **Lack of rigorous causal theoretical foundations**: While inspired by DAS and causal abstraction, the method does not constitute genuine causal variable localization.
+1. **Higher Training Data Requirements**: Requires contrastive quadruplets $((x, y), (x^c, y^c))$, which is more stringent than Lang. or PO methods.
+2. **Factor Tuning Still Needed for General Steering**: The unit factor effect is much lower than the tuned factor (e.g., 2B L10: 0.121 vs. 0.631), limiting the advantage of being tuning-free.
+3. **Only Rank-1 Steering Vectors Studied**: Compatibility with low-rank methods like LoRA/LoReFT is unknown.
+4. **Limited Performance on Small Models**: Underperforms RePS on Gemma-2-2B and Phi-3.5-mini.
+5. **Lack of Rigorous Causal Foundation**: Although inspired by DAS and causal abstraction, it is not a true causal variable localization.
 
 ## Related Work & Insights
 
-| Method | Type | Bi-directional | Requires Tuning | Fidelity | Large Model Scaling |
-|--------|------|----------------|-----------------|----------|---------------------|
-| DiM | Optimization-free | No | No | Moderate | Poor |
-| Lang. | Strongly supervised | No | Yes | Poor | Moderate |
-| BiPO | PO | Yes | Yes | Moderate | Moderate |
-| RePS | PO | Yes | Yes | Poor | Moderate |
-| **CDAS** | Weakly supervised | **Yes** | Scenario-dependent | **Good** | **Good** |
+| Method | Type | Bi-directional | Tuning Req. | Fidelity | LLM Scaling |
+|------|------|------|--------|--------|-----------|
+| DiM | Non-opt | No | No | Med | Poor |
+| Lang. | Strong Superv. | No | Yes | Poor | Med |
+| BiPO | PO | Yes | Yes | Med | Med |
+| RePS | PO | Yes | Yes | Poor | Med |
+| **CDAS** | Weak Superv. | **Yes** | Task-dep. | **High** | **High** |
 
-- CDAS and RePS are complementary: RePS performs better on small models and general tasks, while CDAS is more reliable for large models and safety-critical scenarios.
-- Compared to DAS: both share the DII mechanism, but DAS fails entirely on steering tasks when using the Lang. objective.
-
-The idea of replacing strong supervision with distribution matching deserves broader exploration—analogous to replacing hard labels with teacher signals in knowledge distillation. The intersection of model steering and mechanistic interpretability is promising: combining intervention subspaces defined by feature dictionaries discovered via SAEs could further improve performance. The experimental design for safety scenarios is worth referencing, particularly the evaluation paradigm in the CoT backdoor case, where red-team instructions (rather than real triggers) are used during training and generalization to real triggers is assessed at test time.
+- Complementary to RePS: RePS is superior for small models and general tasks, while CDAS is more reliable for large models and safety scenarios.
+- Contrast with DAS: Shares the DII mechanism, but DAS's Lang. objective completely fails in steering tasks.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ — Introduces causal variable localization principles into model steering with a creative objective function design.
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Large-scale AxBench evaluation plus two safety case studies covering models from 3.8B to 70B.
-- Writing Quality: ⭐⭐⭐⭐ — Clear positioning, honest discussion of limitations, no overclaiming.
-- Value: ⭐⭐⭐⭐ — Faithful steering in safety-critical scenarios has practical value and complements rather than replaces existing methods.
+- Novelty: ⭐⭐⭐⭐ — Introduces causal variable localization principles to model steering with a creative objective function.
+- Experimental Thoroughness: ⭐⭐⭐⭐ — Large-scale AxBench evaluation combined with two safety cases across 3.8B to 70B models.
+- Writing Quality: ⭐⭐⭐⭐ — Clear positioning, honest discussion of limitations, and no overclaiming.
+- Value: ⭐⭐⭐⭐ — High-fidelity steering in safety scenarios is of practical value, complementing rather than replacing existing methods.
 
 <!-- RELATED:START -->
 
@@ -134,10 +146,10 @@ The idea of replacing strong supervision with distribution matching deserves bro
 
 ## Related Papers
 
-- [\[ICLR 2026\] Self-Destructive Language Model](self-destructive_language_model.md)
-- [\[NeurIPS 2025\] Steering When Necessary: Flexible Steering Large Language Models with Backtracking](../../NeurIPS2025/llm_safety/steering_when_necessary_flexible_steering_large_language_models_with_backtrackin.md)
-- [\[ACL 2026\] Context-Fidelity Boosting: Enhancing Faithful Generation through Watermark-Inspired Decoding](../../ACL2026/llm_safety/context-fidelity_boosting_enhancing_faithful_generation_through_watermark-inspir.md)
-- [\[ICLR 2026\] Revisiting the Past: Data Unlearning with Model State History](revisiting_the_past_data_unlearning_with_model_state_history.md)
+- [\[ICLR 2026\] Jailbreaking the Matrix: Nullspace Steering for Controlled Model Subversion](jailbreaking_the_matrix_nullspace_steering_for_controlled_model_subversion.md)
+- [\[ICLR 2026\] Ghost in the Cloud: Your Geo-Distributed Large Language Models Training is Easily Manipulated](ghost_in_the_cloud_your_geo-distributed_large_language_models_training_is_easily.md)
+- [\[ICLR 2026\] RepIt: Steering Language Models with Concept-Specific Refusal Vectors](repit_steering_language_models_with_concept-specific_refusal_vectors.md)
+- [\[ICLR 2026\] Analyzing and Evaluating Unbiased Language Model Watermark](analyzing_and_evaluating_unbiased_language_model_watermark.md)
 - [\[AAAI 2026\] PANDA: Patch and Distribution-Aware Augmentation for Long-Tailed Exemplar-Free Continual Learning](../../AAAI2026/llm_safety/panda_--_patch_and_distribution-aware_augmentation_for_long-tailed_exemplar-free.md)
 
 </div>

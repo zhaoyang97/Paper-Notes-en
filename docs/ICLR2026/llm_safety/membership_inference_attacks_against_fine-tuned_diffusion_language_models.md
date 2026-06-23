@@ -2,85 +2,96 @@
 title: >-
   [Paper Note] Membership Inference Attacks Against Fine-tuned Diffusion Language Models (SAMA)
 description: >-
-  [ICLR 2026][LLM Safety][Membership Inference Attack] This paper presents the first systematic study of membership inference attack (MIA) vulnerabilities in diffusion language models (DLMs)…
+  [ICLR 2026][LLM Safety][Diffusion Language Model] The first systematic study on membership inference attack (MIA) vulnerabilities in Diffusion Language Models (DLM). Proposes the SAMA method: leveraging DLM’s bidirectional mask structure to create exponential probing opportunities, while processing sparse and heavy-tailed membership signals through progressive masking
 tags:
-  - "ICLR 2026"
-  - "LLM Safety"
-  - "Membership Inference Attack"
-  - "Diffusion Language Model"
-  - "Privacy Leakage"
-  - "Robust Subset Aggregation"
-  - "Progressive Masking"
+  - ICLR 2026
+  - LLM Safety
+  - Diffusion Language Model
 date: 2026-05-08
-content_hash: 4bf10626bb5e5d9c
+content_hash: db207d52a6879763
 ---
-
 # Membership Inference Attacks Against Fine-tuned Diffusion Language Models (SAMA)
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2601.20125](https://arxiv.org/abs/2601.20125)  
 **Code**: [https://github.com/Stry233/SAMA](https://github.com/Stry233/SAMA)  
-**Area**: AI Security / Privacy Attacks
-**Keywords**: Membership Inference Attack, Diffusion Language Model, Privacy Leakage, Robust Subset Aggregation, Progressive Masking
+**Area**: AI Security / Privacy Attacks  
+**Keywords**: Membership Inference Attack, Diffusion Language Models, Privacy Leakage, Robust Subset Aggregation, Progressive Masking
 
 ## TL;DR
-This paper presents the first systematic study of membership inference attack (MIA) vulnerabilities in diffusion language models (DLMs), proposing SAMA: a method that exploits DLMs' bidirectional masking structure to generate exponentially many probing opportunities, and handles sparse, heavy-tailed membership signals via progressive masking, sign voting, and adaptive weighting. SAMA achieves AUC of 0.81 across 9 datasets, outperforming the best baseline by 30%.
+The first systematic study on membership inference attack (MIA) vulnerabilities in Diffusion Language Models (DLM). Proposes the SAMA method: leveraging DLM’s bidirectional mask structure to create exponential probing opportunities, while processing sparse and heavy-tailed membership signals through progressive masking + sign voting + adaptive weighting. Achieves an AUC of 0.81 across 9 datasets, outperforming the best baseline by 30%.
 
 ## Background & Motivation
 
-**Background**: Diffusion language models (DLMs, e.g., LLaDA/Dream) are an emerging alternative to autoregressive models (ARMs), using bidirectional masked token prediction. Existing MIA methods are designed for ARMs, leaving the privacy risks of DLMs completely uncharacterized.
+**Background**: Diffusion Language Models (DLMs, such as LLaDA/Dream) are emerging alternatives to autoregressive models, employing bidirectional mask token prediction. Existing Membership Inference Attack (MIA) methods are designed for autoregressive models, leaving the privacy risks of DLMs entirely unknown.
 
 **Limitations of Prior Work**:
-   - ARM-based MIA methods (Loss/Min-K%/ReCall, etc.) applied directly to DLMs perform near-randomly (AUC ≈ 0.5)
-   - Image diffusion MIA methods (SecMI/PIA) are also inapplicable (AUC ≤ 0.52)
-   - Membership signals in DLMs are configuration-dependent — signals fluctuate drastically across masking configurations, with intra-sample variance (σ ≈ 0.10) exceeding the member/non-member margin (δ ≈ 0.06)
-   - Domain adaptation effects introduce heavy-tailed noise, causing mean aggregation to collapse under extreme values
+   - Autoregressive MIA methods (Loss/Min-K%/ReCall, etc.) perform near randomly (AUC ≈ 0.5) when directly applied to DLMs.
+   - MIA methods for image diffusion models (SecMI/PIA) are also inapplicable (AUC ≤ 0.52).
+   - Membership signals in DLMs are configuration-dependent—signals fluctuate drastically under different mask configurations, and within-sample variance ($\sigma \approx 0.10$) is larger than the member/non-member margin ($\delta \approx 0.06$).
+   - Domain adaptation effects lead to heavy-tailed noise, causing mean-based aggregation to collapse in the face of extreme values.
 
-**Key Challenge**: DLMs' bidirectional structure provides exponentially many probing opportunities, yet the membership signal is extremely sparse and corrupted by heavy-tailed noise.
+**Key Challenge**: The bidirectional structure of DLMs provides exponential probing opportunities, but signals are extremely sparse and accompanied by heavy-tailed noise.
 
-**Core Idea**: Progressive multi-density mask probing + sign voting to suppress heavy-tailed noise + adaptive weighting = robust MIA.
+**Key Insight**: Progressive multi-density mask probing + sign voting to remove heavy-tailed noise + adaptive weighting = Robust MIA.
 
 ## Method
 
 ### Overall Architecture
-Given a fine-tuned DLM $\mathcal{M}^T$ and a pretrained reference model $\mathcal{M}^R$, for a target text $\mathbf{x}$: (1) progressively increase masking density (5%→50%), sampling multiple mask configurations at each step; (2) compute local subset loss differences under each configuration and apply sign voting; (3) aggregate across densities with adaptive weighting to produce a final membership score $\phi \in [0,1]$.
+SAMA (Subset-Aggregated Membership Attack) is a pure inference-time attack: given a fine-tuned Diffusion Language Model (DLM) $\mathcal{M}^T$ and a pre-trained reference model $\mathcal{M}^R$, it determines whether the target text $\mathbf{x}$ appeared in the fine-tuning data. Its starting point is the fundamental difference between DLMs and Autoregressive Models (ARMs)—ARMs have only one fixed left-to-right prediction, allowing only one probe point for a text; in contrast, DLMs can mask any combination of positions, where each mask configuration acts as an independent probe, leading to an attack surface that expands exponentially with text length. SAMA fully exploits this probing surface: first, it defines a basic probing primitive as "the difference in fill-in-the-blank loss between the reference and target models for a single mask configuration"; then, it spreads probe points across multiple densities using progressive masking; within each density, it samples many local subsets and uses sign voting to compress sparse, noisy signals into reliable binary judgments; finally, it applies adaptive weighting across densities to obtain a membership score $\phi \in [0,1]$.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    IN["Target text x<br/>Target model M^T + Reference model M^R"]
+    PROBE["Bidirectional Mask Probing Primitive<br/>Calculate Δ_DF for a single mask config<br/>= Reference loss - Target loss"]
+    PM["Progressive Masking<br/>T=16 steps, density α from 5% to 50%<br/>Generate a batch of mask configs per step"]
+    VOTE["Robust Subset Aggregation (Sign Voting)<br/>Sample N=128 subsets (m=10 tokens) per step<br/>B=1[Δ_DF>0], take mean to get β_t"]
+    AW["Adaptive Weighting<br/>φ = Σ w_t·β_t, w_t=1/t normalized<br/>Higher weight for sparse steps"]
+    OUT["Membership Score φ ∈ [0,1]<br/>Determine if x is in fine-tuning data"]
+    IN --> PROBE --> PM --> VOTE --> AW --> OUT
+```
 
 ### Key Designs
 
-1. **Membership Signal Difference Between DLMs and ARMs**:
+**1. Bidirectional Mask Probing Primitive: Turning each mask configuration into an independent attack**
 
-    - ARMs have a single fixed left-to-right prediction pattern → only one attack point
-    - Each masking configuration $\mathcal{S}$ in a DLM constitutes an independent probe: $\Delta_{DF}(\mathbf{x};\mathcal{S}) = \ell_{DF}(\mathbf{x};\mathcal{S},\mathcal{M}^R) - \ell_{DF}(\mathbf{x};\mathcal{S},\mathcal{M}^T)$
-    - Bidirectional context further enables probing of inter-token memorization relationships (e.g., jointly masking $x_i, x_j$ to test pair-level memorization)
+ARMs have only one fixed prediction mode, providing a single attack point per text. DLM’s bidirectional masking explodes this into an exponential probing surface—each mask configuration $\mathcal{S}$ can compare the fill-in-the-blank loss difference between the reference and target models:
 
-2. **Robust Subset Aggregation (Core Contribution)**:
+$$\Delta_{DF}(\mathbf{x};\mathcal{S}) = \ell_{DF}(\mathbf{x};\mathcal{S},\mathcal{M}^R) - \ell_{DF}(\mathbf{x};\mathcal{S},\mathcal{M}^T)$$
 
-    - **Function**: Converts sparse noisy signals into robust votes
-    - **Mechanism**: Randomly sample $N$ local subsets (each of $m=10$ tokens) from the masked positions, compute the loss difference $\Delta^n$ for each subset, binarize as $B^n = \mathbf{1}[\Delta^n > 0]$, and average over $N$ votes
-    - **Theoretical Guarantee** (Hodges–Lehmann theorem): For non-members, the probability of $B^n=1$ is exactly 0.5 regardless of the noise distribution; true member signals consistently push votes toward 1. The sign test remains reliable even under infinite variance
-    - This component accounts for the primary AUC improvement of 20–30%
+Subtracting the reference model loss is a critical calibration step: it isolates specific signals "memorized only during fine-tuning" from the general difficulty of the language itself—this item alone brings a 0.09–0.19 AUC gain in ablations. Because mask positions can be combined arbitrarily, the available probe points grow exponentially with text length; bidirectional context also allows simultaneously masking $x_i$ and $x_j$ to probe memorization of token co-occurrences. The following three designs are built on repeated sampling of this $\Delta_{DF}$.
 
-3. **Progressive Masking**:
+**2. Progressive Masking: Spreading probe points across multiple densities to balance signal strength and aggregation count**
 
-    - **Function**: Probes signals across multiple masking density levels
-    - Masking density increases linearly: $\alpha_t = \alpha_{\min} + \frac{t-1}{T-1}(\alpha_{\max} - \alpha_{\min})$
-    - Sparse masking: rich context → strong signal but few aggregation points; dense masking: many aggregation points but weaker individual signals and larger domain noise
-    - Default: $T=16$ steps, $\alpha \in [5\%, 50\%]$
+Relying on a single mask density is risky: membership signals fluctuate wildly across configurations, and within-sample variance ($\sigma \approx 0.10$) can exceed the member/non-member margin ($\delta \approx 0.06$). Fixing a single density makes it easy to encounter "null configurations" where signals are drowned by noise. SAMA linearly increases density over steps to collect evidence across multiple scales:
 
-4. **Adaptive Weighting**:
+$$\alpha_t = \alpha_{\min} + \frac{t-1}{T-1}(\alpha_{\max} - \alpha_{\min})$$
 
-    - $\text{Sama}(\mathbf{x}) = \sum_t w_t \hat{\beta}_t$, $w_t = \frac{1/t}{\sum_i 1/i}$
-    - Earlier steps (sparse masking) receive higher weights as their signals are cleaner
+Both ends involve trade-offs—sparse masks preserve more context and offer stronger single-point signals but provide fewer sampling points for aggregation; dense masks provide more aggregation points but weaker per-point signals and higher susceptibility to fine-tuning domain adaptation noise. Combining multi-density results captures the benefits of both "clean signals" and "sufficient aggregation." By default, $T=16$ steps are used, with $\alpha$ sweeping from 5% to 50%, contributing about 2–3% to the AUC.
 
-### Loss & Training
-- No training required — purely an inference-time attack method
-- 16 queries per sample (aligned with baselines), $N=128$ subsets, $m=10$ tokens/subset
+**3. Robust Subset Aggregation (Sign Voting): Compressing sparse, heavy-tailed signals into reliable votes**
+
+This is the most critical contribution of the paper, targeting the issue that "fine-tuning domain adaptation brings heavy-tailed noise, causing mean aggregation to be dominated by extreme values" (where outlier tokens with magnitudes far exceeding real signals appear in noise, usually representing domain terms rather than memorization traces). The method samples $N=128$ local subsets (each $m=10$ tokens) within the current density's mask positions, calculates the subset loss difference $\Delta^n$ for each, and binarizes it into a vote $B^n = \mathbf{1}[\Delta^n > 0]$. Averaging $N$ votes within a step yields $\hat{\beta}_t$. Using signs instead of values is justified by the Hodges-Lehmann theorem, which provides a distribution-free guarantee: for non-member samples, target and reference models behave similarly, making $\Delta^n$ pure zero-mean noise, such that the probability of $B^n=1$ is exactly 0.5—regardless of whether the underlying noise variance is finite or heavy-tailed. Conversely, true member signals consistently push the votes toward 1. This is why the method remains robust under heavy-tailed noise, independently contributing 20–30% to the AUC.
+
+**4. Adaptive Weighting: Biasing toward sparse steps with cleaner signals**
+
+The quality of votes across density steps is not equal—sparse steps have more complete context and higher signal-to-noise ratios, while denser steps become "dirtier." Therefore, the final score aggregates the votes from each step using inverse-step weighting:
+
+$$\phi(\mathbf{x}) = \sum_t w_t \hat{\beta}_t,\qquad w_t = \frac{1/t}{\sum_{i=1}^{T} 1/i}$$
+
+The weights $w_t$ decrease with step $t$ (a normalized form inspired by harmonic means in robust statistics). Early sparse steps receive the maximum weight, while cumulative evidence from dense steps is still incorporated. This item provides final refinement, adding approximately 3–5% to the AUC.
+
+### Implementation & Hyperparameters
+- Zero training required—a pure inference-time gray-box attack that only queries target/reference model fill-in-the-blank losses.
+- Default: $T=16$ steps, $\alpha$ from 5% to 50%, $N=128$ subsets per step, subset size $m=10$ tokens; scores are averaged over 4 Monte Carlo samples.
+- Query budget aligned with baselines (16 model queries per sample); subset sampling is performed offline on cached loss vectors, adding negligible query overhead.
 
 ## Key Experimental Results
 
-### Main Results: MIMIR Benchmark, 9 Datasets
+### Main Results: MIMIR Benchmark (9 Datasets)
 
-| Dataset | SAMA AUC | Best Baseline AUC | TPR@1%FPR (SAMA) | TPR@1%FPR (Baseline) |
+| Dataset | SAMA AUC | Best Baseline AUC | TPR@1%FPR(SAMA) | TPR@1%FPR(Baseline) |
 |--------|----------|-----------------|-----------------|-------------------|
 | ArXiv | **0.850** | 0.597 | **0.178** | 0.023 |
 | GitHub | **0.876** | 0.743 | **0.259** | 0.154 |
@@ -91,53 +102,53 @@ Given a fine-tuned DLM $\mathcal{M}^T$ and a pretrained reference model $\mathca
 
 ### Ablation Study: Component Contributions
 
-| Component | AUC Gain | Notes |
+| Component | AUC Gain | Description |
 |------|---------|------|
-| Baseline (Loss) | ~0.50 | Random-level |
-| + Reference model calibration | +0.09~0.19 | Isolates fine-tuning-specific memorization |
-| + Progressive masking | +2~3% | Multi-scale signal coverage |
-| **+ Robust subset aggregation** | **+20~30%** | **Key: sign voting handles heavy-tailed noise** |
-| + Adaptive weighting | +3~5% | Final refinement |
+| Baseline(Loss) | ~0.50 | Random |
+| +Reference Model Calibration | +0.09~0.19 | Isolation of fine-tuning specific memory |
+| +Progressive Masking | +2~3% | Multi-scale signals |
+| **+Robust Subset Aggregation** | **+20~30%** | **Key: Sign voting handles heavy-tailed noise** |
+| +Adaptive Weighting | +3~5% | Final refinement |
 
 ### Key Findings
-- **Existing ARM MIA methods completely fail on DLMs**: AUC ≈ 0.50, confirming that DLMs require dedicated attack methods
-- **Sign voting is the critical component**: Contributing 20–30% AUC improvement, with theoretical grounding via the Hodges–Lehmann theorem guaranteeing robustness to heavy-tailed noise
-- **Advantage is more pronounced at low FPR**: TPR@0.1%FPR improves by up to 14×, which is highly significant for real-world deployment scenarios
-- **Effective on both LLaDA-8B and Dream-7B**: Cross-architecture generalization demonstrated
+- **Existing ARM MIA methods fail completely on DLMs**: AUC ≈ 0.50, confirming that DLMs require specialized attack methods.
+- **Sign voting is the core**: Contributes 20-30% AUC improvement because the Hodges-Lehmann theorem guarantees robustness against heavy-tailed noise.
+- **Advantage is more pronounced at low FPR**: TPR@0.1%FPR improves by up to 14x, which is highly significant for actual deployment scenarios.
+- **Effective on both LLaDA-8B and Dream-7B**: Demonstrates cross-architecture generalization.
 
 ## Highlights & Insights
-- **First privacy attack study on DLMs**: Fills an important gap — as DLMs (LLaDA/Dream) grow in popularity, their privacy risks require systematic evaluation
-- **Elegant use of sign voting to handle heavy-tailed noise**: Transforming continuous noisy signals into binary votes leverages the distribution-free robustness of sign statistics — a technique transferable to any heavy-tailed noise setting
-- **DLMs' bidirectional structure is a double-edged sword**: It enables stronger language modeling, but also creates an exponentially large attack surface — every masking configuration is an independent privacy probing channel
+- **First study on DLM privacy attacks**: Fills a significant gap—as DLMs (LLaDA/Dream) become increasingly popular, their privacy risks require systematic evaluation.
+- **Elegant solution for heavy-tailed noise via sign voting**: Converts continuous noisy signals into binary votes, leveraging the distribution-free robustness of sign statistics. This technique is transferable to any heavy-tailed noise scenario.
+- **DLM’s bidirectional structure is a double-edged sword**: It offers stronger language modeling capabilities but also creates an exponential attack surface—each mask configuration serves as an independent privacy probing channel.
 
 ## Limitations & Future Work
-- **Gray-box assumption**: Requires access to logits from both the target and reference models; not applicable in black-box settings
-- **Query overhead**: 16 queries per sample, which may be costly for large-scale auditing
-- **Only fine-tuning scenarios tested**: Membership inference during pretraining remains unexplored
-- **Defense directions**: "Masking configuration randomization" defenses could be designed — deliberately injecting configuration noise across queries to obscure membership signals
+- **Gray-box assumption**: Requires querying target and reference model logits, which is not applicable in black-box scenarios.
+- **Query overhead**: 16 queries per sample can be costly for large-scale auditing.
+- **Fine-tuning focus only**: Membership inference during the pre-training phase remains unexplored.
+- **Defense direction**: One could design "mask configuration randomization" defenses—deliberately injecting configuration noise across different queries.
 
 ## Related Work & Insights
-- **vs. Min-K%/ReCall (ARM MIA)**: These methods rely on a single left-to-right prediction pattern; DLMs' bidirectional structure renders them ineffective
-- **vs. SecMI (image diffusion MIA)**: The continuous denoising process of image diffusion is fundamentally different from the discrete masking mechanism of text diffusion
-- **vs. Purifying LLMs (same conference)**: That paper finds backdoors redundantly encoded in MLPs; SAMA finds privacy signals sparsely distributed across masking configurations — the two works reveal parameter-level characteristics along different security dimensions
+- **vs Min-K%/ReCall (ARM MIA)**: These methods rely on a fixed left-to-right prediction pattern, which DLM's bidirectional structure renders ineffective.
+- **vs SecMI (Image Diffusion MIA)**: Continuous denoising in image diffusion is fundamentally different from the discrete masking mechanism in text diffusion.
+- **vs Purifying LLMs (Same Conference)**: While that paper found that backdoors are redundantly encoded in MLPs, SAMA finds that privacy signals are sparsely distributed across mask configurations—both reveal parameter-level features across different security dimensions.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ First DLM MIA study + innovative combination of sign voting to handle heavy-tailed noise
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 9 datasets × 2 models × 10+ baselines × comprehensive ablations
-- Writing Quality: ⭐⭐⭐⭐⭐ Exceptionally clear logical chain from theoretical motivation to method to experiments
-- Value: ⭐⭐⭐⭐⭐ Directly informs DLM privacy risk assessment and defense design
+- Novelty: ⭐⭐⭐⭐⭐ First DLM MIA study + innovative combination of sign voting for heavy-tailed noise.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 9 datasets × 2 models × 10+ baselines × detailed ablations.
+- Writing Quality: ⭐⭐⭐⭐⭐ Extremely clear logical chain from motivation to method to experiments.
+- Value: ⭐⭐⭐⭐⭐ Directly instructive for DLM privacy risk assessment and defense design.
 
 <!-- RELATED:START -->
 
-<div class="related-papers" markdown="1">
+<div class="related-papers" markdown="1"></div>
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Exploring the Limits of Strong Membership Inference Attacks on Large Language Models](../../NeurIPS2025/llm_safety/exploring_the_limits_of_strong_membership_inference_attacks_on_large_language_mo.md)
-- [\[ICLR 2026\] No Caption, No Problem: Caption-Free Membership Inference via Model-Fitted Embeddings](no_caption_no_problem_caption-free_membership_inference_via_model-fitted_embeddi.md)
+- [\[ICLR 2026\] Watermarking Diffusion Language Models](watermarking_diffusion_language_models.md)
 - [\[ACL 2026\] Membership Inference Attacks on In-Context Learning Recommendation](../../ACL2026/llm_safety/membership_inference_attacks_on_llm-based_recommender_systems.md)
+- [\[ICLR 2026\] Information-Theoretic Membership Inference for Granular Quantification of Memorization](information-theoretic_membership_inference_for_granular_quantification_of_memori.md)
 - [\[ICLR 2026\] wd1: Weighted Policy Optimization for Reasoning in Diffusion Language Models](wd1_weighted_policy_optimization_for_reasoning_in_diffusion_language_models.md)
-- [\[ICLR 2026\] Stop Tracking Me! Proactive Defense Against Attribute Inference Attack in LLMs](stop_tracking_me_proactive_defense_against_attribute_inference_attack_in_llms.md)
+- [\[NeurIPS 2025\] Exploring the Limits of Strong Membership Inference Attacks on Large Language Models](../../NeurIPS2025/llm_safety/exploring_the_limits_of_strong_membership_inference_attacks_on_large_language_mo.md)
 
 </div>
 

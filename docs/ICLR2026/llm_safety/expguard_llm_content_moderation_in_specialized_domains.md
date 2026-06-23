@@ -2,149 +2,143 @@
 title: >-
   [Paper Note] ExpGuard: LLM Content Moderation in Specialized Domains
 description: >-
-  [ICLR2026][LLM Safety][guardrail model] This paper proposes ExpGuard, a safety guardrail model targeting specialized domains such as finance, healthcare, and law, along with a companion dataset ExpGuardMix (58…
+  [ICLR 2026][LLM Safety][guardrail model] Ours proposes ExpGuard, a safety guardrail model oriented towards specialized domains such as finance, medicine, and law, along with the accompanying ExpGuardMix dataset (58,928 samples). On domain-specific test sets, the prompt classification F1 exceeds WildGuard by 8.9% and response classification by 15.3%, while mai
 tags:
-  - "ICLR2026"
-  - "LLM Safety"
-  - "guardrail model"
-  - "content moderation"
-  - "domain-specific"
-  - "financial/medical/legal"
+  - ICLR 2026
+  - LLM Safety
+  - guardrail model
+  - content moderation
+  - domain-specific
+  - financial/medical/legal
 date: 2026-05-08
-content_hash: 4fd5853246aca8a3
+content_hash: 300f08b8135199c0
 ---
-
 # ExpGuard: LLM Content Moderation in Specialized Domains
 
 **Conference**: ICLR2026  
 **arXiv**: [2603.02588](https://arxiv.org/abs/2603.02588)  
 **Code**: [brightjade/ExpGuard](https://github.com/brightjade/ExpGuard)  
-**Area**: Medical Imaging  
+**Area**: LLM Safety  
 **Keywords**: LLM safety, guardrail model, content moderation, domain-specific, financial/medical/legal
 
 ## TL;DR
-This paper proposes ExpGuard, a safety guardrail model targeting specialized domains such as finance, healthcare, and law, along with a companion dataset ExpGuardMix (58,928 samples). ExpGuard achieves prompt classification F1 exceeding WildGuard by 8.9% and response classification by 15.3% on domain-specific test sets, while maintaining state-of-the-art performance on general safety benchmarks.
+Ours proposes ExpGuard, a safety guardrail model oriented towards specialized domains such as finance, medicine, and law, along with the accompanying ExpGuardMix dataset (58,928 samples). On domain-specific test sets, the prompt classification F1 exceeds WildGuard by 8.9% and response classification by 15.3%, while maintaining SOTA performance on general safety benchmarks.
 
 ## Background & Motivation
-As LLMs are increasingly deployed in high-stakes specialized domains such as finance, healthcare, and law, existing safety guardrail models face significant challenges:
+As the deployment of LLMs progresses in high-risk specialized domains like finance, medicine, and law, existing safety guardrail models face severe challenges:
 
-- **Blind spots of general-purpose guardrails**: Existing guardrails (e.g., Llama-Guard, WildGuard) are primarily designed for general human–computer interaction scenarios and lack comprehension of domain-specific terminology and concepts. For instance, the financial term "haircut" (a discount applied to asset valuation) can be exploited in adversarial prompts to bypass general-purpose guardrails.
-- **Near-complete failure of API-based tools**: Detoxify, Perspective API, and OpenAI Moderation achieve only 0.3%–14.1% F1 on domain-specific test sets, rendering them nearly incapable of identifying domain-specific harmful content.
-- **Limitations of internal alignment**: Techniques such as RLHF are resource-intensive and difficult to extend to domain-specific risks; external guardrail models thus serve as a necessary complementary layer.
+- **Blind Spots of General Guardrails**: Existing guardrails (e.g., Llama-Guard, WildGuard) are primarily designed for general human-computer interaction scenarios and lack understanding of technical terminology and domain concepts. For instance, the financial term "haircut" (valuation discount on assets) can be used to construct malicious prompts that easily bypass the detection of general guardrails.
+- **Near-Failure of API Tools**: Detoxify, Perspective API, and OpenAI Moderation achieve F1 scores of only 0.3%-14.1% on specialized domain test sets, almost completely failing to identify domain-specific harmful content.
+- **Limitations of Internal Alignment**: Internal alignment techniques like RLHF are resource-intensive and struggle to cover domain-specific risks. External guardrail models are necessary as a supplementary layer.
 
 ## Core Problem
-How to build a safety guardrail model that handles both general safety detection and the effective identification of harmful content disguised through technical terminology in specialized domains such as finance, healthcare, and law?
+How to construct a safety guardrail model that can handle both general safety detection and effectively identify harmful content disguised with technical terminology in specialized domains such as finance, medicine, and law?
 
 ## Method
 
-### 1. ExpGuardMix Dataset Construction (58,928 Samples)
+### Overall Architecture
 
-The dataset is divided into ExpGuardTrain (56,653 samples for training) and ExpGuardTest (2,275 samples for evaluation).
+The contribution of ExpGuard lies not in the model architecture but in a "data-first" guardrail construction pipeline. General guardrails fail against risks disguised by terms like the financial "haircut" because their training data lacks domain-specific knowledge; thus, the authors grow the data **around domain terminology**. The pipeline extracts specialized terms from Wikipedia for three domains (Finance/Medicine/Law) as seeds. LLMs are used to synthesize harmful and benign prompts and corresponding responses around these terms. After triple-model CoT ensemble labeling and strict category consensus filtering, the ExpGuardMix dataset (58,928 samples = ExpGuardTrain 56,653 + expert-reviewed ExpGuardTest 2,275) is obtained. Finally, a 7B LLM is fine-tuned using multi-task learning on this training set, enabling the same guardrail to judge the harmfulness of both inbound prompts and outbound responses.
 
-**Phase 1: Domain Terminology Mining**
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    W["Wikipedia<br/>Finance/Medical/Legal Categories"] --> T["1. Domain Terminology Mining<br/>Wikidata→GPT-4o→Human Vote<br/>Obtained 2,646 terms"]
+    T --> G["2. Symmetric Prompt-Response Generation<br/>Harmful + Sensitive Benign prompts from seeds<br/>+ In-the-wild/jailbreak/human-written data"]
+    G --> R["Response Synthesis<br/>Mistral generates compliant<br/>Gemma generates refusal"]
+    R --> L["3. Triple-Model Consensus Labeling + Expert Verification<br/>Claude/Gemini/Qwen CoT label 13 classes<br/>≥2/3 exact category agreement + SBERT deduplication"]
+    L --> D["ExpGuardMix 58,928<br/>Train 56,653 / Test 2,275 Expert-reviewed"]
+    D --> M["4. Multi-task Guardrail Fine-tuning<br/>7B LLM"]
+    M --> O["ExpGuard<br/>Predicts harmfulness for both prompt / response"]
+```
 
-- Domain-specific terms are extracted by recursively crawling Wikipedia category pages in finance, healthcare, and law.
-- The Wikidata API is used to filter out non-technical entities (e.g., person names, organizations, countries).
-- GPT-4o is applied to exclude non-sensitive or irrelevant terms.
-- Manual verification is conducted by three annotators via majority vote, yielding a final set of 2,646 terms (finance: 989, healthcare: 1,012, law: 645).
+### Key Designs
 
-**Phase 2: Prompt and Response Generation**
+**1. Domain Terminology Mining: Turning "Professional Blind Spots" into Data Seeds**
 
-- **Harmful prompts**: For each term, GPT-4o generates harmful prompts targeting the risk scenarios associated with that term. Safety mechanisms are bypassed by prepending the prefix "I have an idea for a prompt:". Both long and short variants are generated, with random sampling from 100+ preset instruction templates and few-shot examples.
-- **Benign prompts**: Wikipedia documents are converted into instruction–response pairs, retaining only the instruction component. Although these involve sensitive topics, they are inherently safe and are included to mitigate over-refusal behavior.
-- **In-the-wild data**: Subsampled from LMSYS-Chat-1M and WildChat, supplemented with DAN jailbreak prompts and human-written data from HH-RLHF and Aegis 2.0.
-- **Response generation**: Compliant responses are generated using Mistral-7B-Instruct-v0.1 (an older model more prone to following harmful instructions), while refusal responses are generated using Gemma-3-27B-IT.
+General guardrails cannot block requests like "obscure high haircuts in asset evaluations" because they do not understand that "haircut" refers to a risk discount in finance, nor do they perceive the underlying intent of concealment. The authors' strategy is to let the terms themselves serve as data seeds: first, candidate terms are extracted by recursively crawling Wikipedia category pages for finance, medicine, and law. The Wikidata API is used to filter out non-technical entities like names, organizations, and countries. GPT-4o then excludes non-sensitive words unrelated to harmful scenarios. Finally, an manual check with a majority vote from three annotators results in 2,646 high-quality terms (989 Finance, 1,012 Medicine, 645 Law). Each term corresponds to a potential domain risk scenario, and all subsequent synthetic data are anchored to these terms, ensuring coverage of blind spots invisible to general guardrails from the source.
 
-**Phase 3: Classification Annotation and Filtering**
+**2. Symmetric Prompt-Response Generation: Reducing Missed Detections and Over-refusal**
 
-- Thirteen harmful categories plus one "harmless" pseudo-category are defined, covering violence, pornography, discrimination, privacy violations, financial fraud, illegal substances, and others.
-- Three-model ensemble annotation is performed using Claude 3.7 Sonnet, Gemini 2.0 Flash, and Qwen2.5-Max, each required to produce chain-of-thought reasoning before assigning a category label.
-- **Strict consensus filtering**: At least 2 out of 3 models must assign exactly the same category index (not merely "safe/unsafe"); 4.8% of ambiguous samples are discarded.
-- Near-duplicate samples with Sentence-BERT cosine similarity > 0.9 are removed.
+Feeding only harmful samples would train the guardrail to block any sensitive word, so this step deliberately implements positive-negative symmetry. Harmful side: GPT-4o generates prompts focused on the risk scenarios of each term, using prefixes like "I have an idea for a prompt:" to bypass the generation model's own safety mechanisms. Diversity is enhanced through long/short variants, random sampling from 100+ preset instruction templates, and few-shot examples. Benign side: Wikipedia documents are converted into instruction-response pairs, where only the instruction part is kept as a benign prompt—these are topically sensitive but semantically harmless, specifically designed to suppress over-refusal. This is supplemented with in-the-wild data from LMSYS-Chat-1M / WildChat, jailbreak prompts like DAN, and human-written samples from HH-RLHF and Aegis 2.0 to approximate the real distribution. Response side is also symmetric: Mistral-7B-Instruct-v0.1 (older and more compliant) generates compliant responses, while Gemma-3-27B-IT generates refusal responses. Approximately 50% of prompts have no response, 10% have refusal, and 40% have compliant responses to ensure typicality.
 
-### 2. ExpGuardTest (2,275 Samples)
+**3. Triple-Model Exact Category Consensus + Expert Verification: Minimizing Label Noise**
 
-- Distribution: finance (964), healthcare (771), law (540).
-- Initially annotated via LLM ensemble, then verified by domain experts.
-- The finance subset is reviewed by banking professionals, achieving Cohen's Kappa of 0.89 (prompt) / 0.98 (response), indicating near-perfect agreement.
+The label quality of synthetic data determines the upper bound of the guardrail. The authors define 13 harmful categories plus one "benign" pseudo-category (c0–c13, covering violence, sexual content, discrimination, privacy violation, financial fraud, illegal drugs, etc.). Claude 3.7 Sonnet, Gemini 2.0 Flash, and Qwen2.5-Max are used for ensemble labeling. Each model writes a CoT reasoning before providing a category, forcing domain-level judgment rather than surface classification. Crucially, consensus requires at least 2/3 of the models to provide the **exact same category index**, rather than a loose binary "safe/unsafe" agreement. If all three models judge an input as "unsafe" but assign different categories (e.g., one violence, one harassment, one hate), the sample is discarded. This removes 4.8% of ambiguous samples, followed by deduplication using Sentence-BERT with cosine similarity $>0.9$. For the evaluation side, human experts are involved: 2,275 ExpGuardTest samples (964 Finance, 771 Medicine, 540 Law) are first labeled by LLM ensembles, and the finance subset is cross-verified in two rounds by banking professionals. Cohen's Kappa for the ensemble labels against experts reached 0.89 for prompts and 0.98 for responses ("almost perfect agreement"), making this domain test set a reliable basis for comparison.
 
-### 3. ExpGuard Model Training
+**4. Multi-task Guardrail Fine-tuning: Dual Prediction with a Single 7B Model**
 
-- Fine-tuned from a 7B-parameter LLM on ExpGuardTrain in a multi-task setting.
-- When only a prompt is provided, the model predicts prompt harmfulness; when a prompt–response pair is provided, it predicts the harmfulness of both.
-- Output is a binary label (safe/unsafe).
+The final model is fine-tuned on ExpGuardTrain as a multi-task LLM (7B): when the input contains only a prompt, it predicts prompt harmfulness; when the input is a prompt-response pair, it predicts both simultaneously, outputting a unified safe/unsafe binary label. This allows a single guardrail to intercept inbound requests and audit outbound responses without training separate models. The authors also verified that gains do not stem from the backbone choice—using the Mistral-7B-v0.3 backbone (same as WildGuard) resulted in consistent trends, indicating that improvements come from the data rather than the architecture.
 
 ## Key Experimental Results
 
 ### Main Results on ExpGuardTest (F1%)
 
-| Model | Prompt F1 (Overall) | Response F1 (Overall) |
-|-------|--------------------|-----------------------|
-| Detoxify / Perspective / OpenAI Mod | 0.3–0.5 | 0.6 |
+| Model | Prompt Overall F1 | Response Overall F1 |
+|------|-------------|----------------|
+| Detoxify / Perspective / OpenAI Mod | 0.3-0.5 | 0.6 |
 | Azure | 14.1 | 2.6 |
 | Llama-Guard3 (8B) | 71.1 | 84.2 |
 | Aegis-Guard-D (7B) | 82.9 | 87.2 |
 | WildGuard (7B) | 84.4 | 77.4 |
-| **ExpGuard (7B)** | **93.3** | **92.7** |
+| **Ours (7B)** | **93.3** | **92.7** |
 
-- Prompt classification surpasses WildGuard by **+8.9%**; response classification by **+15.3%**.
-- ExpGuard leads across all three sub-domains: finance, healthcare, and law.
+- Prompt classification exceeds WildGuard by **+8.9%**, Response classification by **+15.3%**.
+- Leads in all three sub-domains: Finance, Medicine, and Law.
 
-### Results on Public Safety Benchmarks (Average F1% across 8 Benchmarks)
+### Results on General Safety Benchmarks (Avg F1% across 8 benchmarks)
 
-| Model | Prompt Avg. | Response Avg. |
-|-------|-------------|---------------|
+| Model | Prompt Average | Response Average |
+|------|-----------|--------------|
 | WildGuard | 84.2 | 78.8 |
-| **ExpGuard** | **85.7** | 78.5 |
+| **Ours** | **85.7** | 78.5 |
 
-- ExpGuard matches or slightly surpasses state-of-the-art on general benchmarks, demonstrating that domain specialization does not compromise general-purpose safety performance.
+- Performs at parity with or slightly better than SOTA on general benchmarks, showing no sacrifice of generality for domain specialization.
 
 ### Ablation Study
 
-- Removing domain-specific data: ExpGuardTest prompt F1 drops from 93.3% to 85.3% (−8.0%).
-- Removing in-the-wild data: public benchmark prompt F1 drops from 85.7% to 84.1%.
-- Removing human-written data: public benchmark response F1 drops from 78.5% to 73.9% (largest impact).
+- Removing domain-specific data: ExpGuardTest prompt F1 dropped from 93.3% to 85.3% (-8.0%).
+- Removing in-the-wild data: General benchmark prompt F1 dropped from 85.7% to 84.1%.
+- Removing human-written samples: General benchmark response F1 dropped from 78.5% to 73.9% (most significant impact).
 
 ### Jailbreak Robustness
 
-- ExpGuard remains competitive under standard jailbreak attacks (CipherChat, AutoDAN-Turbo, FlipAttack, GASP).
-- The ExpGuard+ variant, augmented with 270 domain-specific adversarial samples, significantly outperforms all baselines on domain-specific jailbreak attacks.
+- Maintains competitiveness under standard jailbreak attacks (CipherChat, AutoDAN-Turbo, FlipAttack, GASP).
+- The ExpGuard+ variant (adding 270 domain-specific adversarial samples) significantly outperforms all baselines on domain jailbreaks.
 
 ## Highlights & Insights
 
-1. **First safety guardrail dataset and model targeting specialized domains**: Fills a critical gap in LLM content moderation for finance, healthcare, and law.
-2. **Reusable data construction pipeline**: The Wikipedia-based terminology mining → LLM generation → three-model ensemble annotation → expert verification pipeline is extensible to other domains.
-3. **Rigorous quality control**: Three-model exact category consensus (rather than binary safe/unsafe consensus) combined with domain expert validation of the finance subset (Kappa 0.89/0.98).
-4. **Domain specialization without general degradation**: ExpGuard achieves substantial gains on ExpGuardTest while maintaining or exceeding state-of-the-art across 8 public benchmarks.
-5. **Quantifies the severe inadequacy of API-based tools**: Empirically demonstrates that mainstream APIs are nearly completely ineffective in professional scenarios.
+1. **First specialized safety guardrail dataset and model**: Fills the gap in LLM content moderation for Finance, Medicine, and Law.
+2. **Reproducible data construction process**: The pipeline based on Wikipedia term mining + LLM generation + triple-model ensemble labeling + expert verification is extensible to other domains.
+3. **Strict quality control**: Triple-model exact category consensus (not just binary consensus) + finance subset verification by domain experts (Kappa 0.89/0.98).
+4. **Domain specialization without general degradation**: Significant leads on ExpGuardTest while maintaining/exceeding SOTA on 8 public benchmarks.
+5. **Reveals severe deficiencies in API tools**: Quantitatively demonstrates that mainstream APIs almost completely fail in specialized scenarios.
 
 ## Limitations & Future Work
 
-- **Limited domain coverage**: Only finance, healthcare, and law are covered; other specialized domains (e.g., cybersecurity, chemical engineering) remain to be addressed.
-- **English-only support**: Multilingual domain-specific content moderation is an important direction for future work.
-- **Limitations of synthetic data**: Despite various augmentation strategies, synthetic data may not fully capture the diversity of real-world user interactions.
-- **Need for dynamic updates**: Harmful content and adversarial techniques evolve rapidly, necessitating continuous dataset updates.
-- **Incomplete expert validation**: Only the finance subset underwent expert review; reliability of the healthcare and law subsets is inferred from the LLM ensemble annotation.
+- **Limited domain coverage**: Only covers Finance, Medicine, and Law; other specialized domains (e.g., cybersecurity, chemical engineering) need extension.
+- **English only**: Multilingual domain moderation is an important future direction.
+- **Synthetic data limitations**: Despite augmentation, synthetic data may not fully reflect the diversity of real user interactions.
+- **Dynamic update requirement**: Harmful content and adversarial tactics evolve rapidly; the dataset requires continuous updates.
+- **Incomplete expert verification**: Only the finance subset was expert-reviewed; medical and legal subsets rely on reliability inferences from LLM ensemble labeling.
 
 ## Related Work & Insights
 
-| Dimension | WildGuard | Llama-Guard Series | ExpGuard |
-|-----------|-----------|-------------------|----------|
-| Domain Coverage | General | General | General + Finance/Healthcare/Law |
-| Training Data | WildGuardMix (92K) | Internal safety data | ExpGuardMix (58.9K) |
+| Dimension | WildGuard | Llama-Guard Series | Ours |
+|------|-----------|----------------|----------|
+| Domain Coverage | General | General | General + Finance/Medical/Legal |
+| Training Data | WildGuardMix (92K) | Internal Safety Data | ExpGuardMix (58.9K) |
 | Domain-specific F1 | 84.4 / 77.4 | 71.1 / 84.2 | **93.3 / 92.7** |
 | General Benchmarks | **84.2** / 78.8 | 78.9 / 66.8 | 85.7 / 78.5 |
-| Data Construction | LLM generation + in-the-wild | Undisclosed | Term mining + RAG generation + expert verification |
+| Data Construction | LLM Gen + In-the-wild | Proprietary | Term Mining + RAG Gen + Expert Verification |
 
-A key distinction from the "generate-then-filter" pipelines of An et al. (2024) and Cui et al. (2025) is that those works focus on reducing false positives (over-refusal), whereas this paper targets reducing false negatives (missed harmful content), and additionally introduces domain expert verification.
-
-The terminology mining → RAG generation → multi-model ensemble annotation → expert verification pipeline is highly transferable and applicable to constructing safety datasets in domains such as cybersecurity and biochemistry. The experiments compellingly demonstrate the necessity of open-source LLM guardrail models over commercial APIs in professional scenarios. ExpGuard, as an external moderation layer, complements internal alignment methods such as RLHF to form a dual-safety architecture suitable for industrial deployment.
+Key difference from "generate-filter" flows like An et al. (2024) and Cui et al. (2025): the former focuses on reducing false positives (over-refusal), whereas Ours focuses on reducing false negatives (missed harmful content) and introduces domain expert verification.
 
 ## Rating
-- Novelty: 8/10 — First systematic treatment of domain-specific LLM safety guardrails; the data construction methodology is innovative.
-- Experimental Thoroughness: 9/10 — Comprehensive evaluation across 13 baselines, 9 benchmarks, ablation studies, and jailbreak analysis.
-- Writing Quality: 8/10 — Well-structured with detailed pipeline descriptions and rich figures and tables.
-- Value: 8/10 — Addresses an important gap, though domain and language coverage remain limited.
+- Novelty: 8/10 — First systematic solution for specialized domain LLM guardrails with innovative data construction.
+- Experimental Thoroughness: 9/10 — Comprehensive with 13 baselines, 9 benchmarks, ablation studies, and jailbreak analysis.
+- Writing Quality: 8/10 — Clear structure, detailed pipeline description, and rich visualizations.
+- Value: 8/10 — Fills a critical gap, though domain and language coverage are still limited.
 
 <!-- RELATED:START -->
 
@@ -155,8 +149,8 @@ The terminology mining → RAG generation → multi-model ensemble annotation �
 - [\[ACL 2026\] FlexGuard: Continuous Risk Scoring for Strictness-Adaptive LLM Content Moderation](../../ACL2026/llm_safety/flexguard_continuous_risk_scoring_for_strictness-adaptive_llm_content_moderation.md)
 - [\[ACL 2026\] CarO: Chain-of-Analogy Reasoning Optimization for Robust Content Moderation](../../ACL2026/llm_safety/caro_chain-of-analogy_reasoning_optimization_for_robust_content_moderation.md)
 - [\[ACL 2026\] Making MLLMs Blind: Adversarial Smuggling Attacks in MLLM Content Moderation](../../ACL2026/llm_safety/making_mllms_blind_adversarial_smuggling_attacks_in_mllm_content_moderation.md)
+- [\[ICLR 2026\] SOSBench: Benchmarking Safety Alignment on Six Scientific Domains](sosbench_benchmarking_safety_alignment_on_six_scientific_domains.md)
 - [\[ACL 2026\] From Domains to Instances: Dual-Granularity Data Synthesis for LLM Unlearning](../../ACL2026/llm_safety/from_domains_to_instances_dual-granularity_data_synthesis_for_llm_unlearning.md)
-- [\[ICLR 2026\] LLM Unlearning with LLM Beliefs](llm_unlearning_with_llm_beliefs.md)
 
 </div>
 

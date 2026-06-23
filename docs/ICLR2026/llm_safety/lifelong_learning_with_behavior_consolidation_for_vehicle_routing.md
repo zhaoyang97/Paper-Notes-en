@@ -2,80 +2,79 @@
 title: >-
   [Paper Note] Lifelong Learning with Behavior Consolidation for Vehicle Routing
 description: >-
-  [ICLR 2026][LLM Safety][Lifelong Learning] This paper proposes LLR-BC, a framework for lifelong learning in neural VRP solvers. By combining decision-step-level experience buffers…
+  [ICLR 2026][LLM Safety][Paper Note] The LLR-BC framework is proposed for lifelong learning in neural VRP solvers. By employing decision-step-level experience buffering, Confidence-aware Experience Weighting (CaEW), and Decisive-seeking Behavior Consolidation (DsBC) with reverse KL divergence, the framework reduces the average performance gap (AP) by an o
 tags:
-  - "ICLR 2026"
-  - "LLM Safety"
-  - "Lifelong Learning"
-  - "Vehicle Routing Problem"
-  - "Catastrophic Forgetting"
-  - "Experience Replay"
-  - "Behavior Consolidation"
+  - ICLR 2026
+  - LLM Safety
 date: 2026-05-08
-content_hash: 4397eb04165895b0
+content_hash: 029fc3d47bbd50b5
 ---
-
 # Lifelong Learning with Behavior Consolidation for Vehicle Routing
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2509.21765](https://arxiv.org/abs/2509.21765)  
 **Code**: [github](https://github.com/PeiJY/LLR-BC)  
-**Area**: LLM Safety
-**Keywords**: Lifelong Learning, Vehicle Routing Problem, Catastrophic Forgetting, Experience Replay, Behavior Consolidation
+**Area**: LLM Security  
+**Keywords**: Lifelong learning, Vehicle Routing Problem, Catastrophic forgetting, Experience replay, Behavior consolidation
 
 ## TL;DR
 
-This paper proposes LLR-BC, a framework for lifelong learning in neural VRP solvers. By combining decision-step-level experience buffers, Confidence-aware Experience Weighting (CaEW), and Decision-seeking Behavior Consolidation via reverse KL divergence (DsBC), LLR-BC reduces the Average Performance gap (AP) by an order of magnitude on task sequences with simultaneously shifting distributions and scales, while preserving plasticity for new tasks and improving zero-shot generalization.
+The LLR-BC framework is proposed for lifelong learning in neural VRP solvers. By employing decision-step-level experience buffering, Confidence-aware Experience Weighting (CaEW), and Decisive-seeking Behavior Consolidation (DsBC) with reverse KL divergence, the framework reduces the average performance gap (AP) by an order of magnitude on task sequences with simultaneous distribution and scale variations, while maintaining plasticity for new tasks and enhancing zero-shot generalization.
 
 ## Background & Motivation
 
-**Background**: Neural combinatorial optimization solvers (e.g., POMO, INViT) learn VRP solution policies directly via deep reinforcement learning and have achieved performance competitive with classical heuristics (e.g., LKH3) on fixed-distribution, fixed-scale tasks. The dominant training paradigm is one-shot training on predefined tasks.
+**Background**: Neural combinatorial optimization solvers (e.g., POMO, INViT) directly learn solving strategies for VRP through deep reinforcement learning, matching classical heuristics (e.g., LKH3) on fixed distributions and scales. The mainstream training paradigm involves one-time training on predefined tasks.
 
-**Limitations of Prior Work**: In practice, logistics scenarios exhibit continuously shifting order distributions and scales—new delivery patterns and customer groups of varying sizes emerge over time. One-shot training cannot cover all future scenarios. Direct fine-tuning on new tasks causes catastrophic forgetting, leading to drastic performance degradation on previously learned tasks. Zero-shot generalization can partially mitigate this but has an upper bound, remaining insufficient when new tasks differ substantially from the training distribution.
+**Limitations of Prior Work**: Real-world logistics scenarios involve distribution and scale changes over time, with new delivery patterns and varying customer sizes constantly emerging. One-time training cannot cover all future cases. Direct fine-tuning on new tasks leads to catastrophic forgetting, causing a sharp performance decline on previously learned tasks. Zero-shot generalization provides some relief but has a performance ceiling, especially when new tasks differ significantly from the training distribution.
 
-**Key Challenge**: There is a fundamental conflict between *plasticity*—the ability to rapidly adapt to new tasks—and *stability*—the ability to retain knowledge from previous tasks. The two existing VRP lifelong learning works (Li et al. 2024, Feng et al. 2025) are limited to highly restricted settings: tasks vary only in scale or distance metric, task order is known and fixed, and old task instances can be actively generated for retraining. These assumptions do not hold in real-world scenarios.
+**Key Challenge**: There is a fundamental conflict between plasticity (the ability to adapt quickly to new tasks) and stability (the ability to retain knowledge of old tasks). Existing lifelong learning works for VRP (Li et al. 2024, Feng et al. 2025) are limited to highly restricted scenarios where tasks vary only in scale or distance metrics, task orders are fixed and known, or old task instances can be actively generated for retraining. These assumptions do not hold in real-world scenarios.
 
-**Goal**: (1) A general lifelong learning setting where both distribution and scale change simultaneously; (2) unknown task order and uncontrolled instance generation; (3) sustained high performance throughout the learning process, not only at the terminal state.
+**Goal**: (1) Support general lifelong learning scenarios with simultaneous distribution and scale changes; (2) Handle unknown task orders and uncontrollable instance generation; (3) Maintain high performance throughout the learning process rather than just at the final state.
 
-**Key Insight**: The authors observe that constructive VRP solvers make decisions sequentially—selecting the next node to visit at each step—such that small probability shifts can alter decisions and drastically degrade solution quality. Preserving old behavior thus requires retaining the probability distributions at critical decision steps, especially those with low confidence (i.e., easily perturbed), rather than preserving complete instance solutions.
+**Key Insight**: Decisions in constructive VRP solvers are sequential—selecting the next node to visit at each step. Small probability changes can alter decisions, leading to drastic changes in route quality. Thus, the key to retaining old behavior is not preserving solutions to entire instances, but preserving the probability distributions of critical decision steps, especially those with low confidence (easily perturbed).
 
-**Core Idea**: A decision-step-level experience buffer combined with mode-seeking behavior consolidation via reverse KL divergence effectively resists catastrophic forgetting at extremely low memory overhead (0.01% of training experience).
+**Core Idea**: Use decision-step-level experience buffering and behavior consolidation via reverse KL divergence to effectively resist catastrophic forgetting with minimal memory overhead (0.01% of total experience).
 
 ## Method
 
 ### Overall Architecture
 
-LLR-BC follows the experience replay paradigm. A fixed-size experience buffer $\mathcal{B}$ is maintained. When a new task arrives, at each training epoch: (1) a batch of instances is sampled and solved from the current task to obtain experience trajectories $\{\tau\}$; (2) the solver is updated via a DRL algorithm using $\{\tau\}$; (3) old experiences $\mathcal{E}$ are sampled from the buffer, weighted by CaEW, and used to compute the behavior consolidation loss via DsBC; (4) the new-task DRL loss and the behavior consolidation loss are jointly optimized. The framework is agnostic to model architecture and RL algorithm, and can be directly integrated into existing solvers such as POMO, Omni, and INViT.
+LLR-BC is based on the experience replay paradigm, maintaining a fixed-size experience buffer $\mathcal{B}$. When a new task arrives, in each training epoch: (1) A batch of instances is sampled and solved from the current task to obtain trajectories $\{\tau\}$; (2) The solver is updated using DRL based on $\{\tau\}$; (3) Old experiences $\mathcal{E}$ are sampled from the buffer, weighted via CaEW, and used to calculate the behavior consolidation loss via DsBC; (4) The new task DRL loss and behavior consolidation loss are jointly optimized. Current behavior is written to the buffer at the decision-step level only during the last epoch of each task. The framework is agnostic to model architecture and RL algorithms, allowing integration with POMO, Omni, INViT, etc.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["New Task Instances<br/>Sample and solve a batch"] --> B["DRL Policy Gradient<br/>Learn new tasks (Plasticity)"]
+    A -.->|"Collect at last epoch"| C["Decision-step Experience<br/>+ Reservoir Buffer B<br/>e = state, distribution"]
+    C -->|"Sample old experience E"| D["Confidence-aware Weighting CaEW<br/>Higher weight for lower variance"]
+    D --> E["Decisive-seeking Consolidation DsBC<br/>Reverse KL to keep top-1 decision"]
+    B --> F["Joint Optimization<br/>L = L_DRL + α·L_BC"]
+    E --> F
+    F --> G["Update Solver"]
+    G -.->|"Next epoch"| A
+```
 
 ### Key Designs
 
-1. **Decision-Step-Level Experience Representation and Reservoir Buffer**:
+**1. Decision-step Experience Representation and Reservoir Buffering**: Defined as $e = \langle s, \mathcal{P} \rangle$, where $s$ is the partial solution state and $\mathcal{P}$ is the full probability distribution over candidate nodes. This step-level representation naturally adapts to tasks of different scales. Preserving the full distribution provides richer strategy information than single actions. The buffer uses reservoir sampling to maintain a fixed size $|\mathcal{B}|$, ensuring all historical experiences have an equal probability of retention. Experiences are only collected during the last epoch of a task when the solver is fully trained, occupying only ~0.01% of total training experience.
 
-    - Function: Captures the solver's "behavioral memory" at minimal granularity; manages large-scale experience efficiently with a fixed-size buffer.
-    - Mechanism: Each experience is defined as $e = \langle s, \mathcal{P} \rangle$, where $s$ is the current partial solution state (sequence of visited nodes) and $\mathcal{P}$ is the solver's complete probability distribution over all candidate nodes at that state. Compared to existing methods that treat an entire instance as one experience unit, step-level representation achieves higher information density and more compact storage. The buffer employs reservoir sampling: new experiences replace existing ones with probability $|\mathcal{B}|/N$, ensuring all historical experiences are retained with equal probability. Experiences are collected only during the last epoch of each task—when the solver is fully trained and behavioral quality is highest. The entire buffer occupies approximately 0.01% of total training experience.
-    - Design Motivation: Instance-level buffers suffer from dimensionality inconsistency when scales vary and contain redundant information. Step-level representation naturally accommodates tasks of different scales, and probability distributions carry richer policy information than single actions.
+**2. Confidence-aware Experience Weighting (CaEW)**: Specifically targets decision points susceptible to perturbation. Sequential VRP decisions have cascading effects. Low-confidence decisions—where the model is "hesitant" among candidates—are most easily altered during new task training. CaEW measures confidence via distribution variance; lower variance (higher hesitation) leads to higher weights. The weight is $w(e) = 1 - \text{var}(\mathcal{P}) / \text{var}_{\max}(|\mathcal{P}|)$, where $\text{var}_{\max}(n) = (n-1)/n^2$ for $n$ candidates.
 
-2. **Confidence-aware Experience Weighting (CaEW)**:
+**3. Decisive-seeking Behavior Consolidation (DsBC)**: Constrains the current model not to deviate from historical behavior on old states. Unlike forward KL divergence used in traditional distillation, LLR-BC utilizes reverse KL divergence (RKLD) $D_{KL}(Q \| P)$. Its mode-seeking property ensures the learner replicates the teacher's highest-probability action. This aligns the distillation objective with downstream inference (greedy decoding), where preserving the top-1 decision is more critical than aligning the entire distribution. The loss is:
 
-    - Function: Differentiates the importance of experiences during consolidation, directing the model's attention toward critical decision points.
-    - Mechanism: Decision confidence is measured by the variance of the probability distribution. Low variance indicates that the model assigns similar probability to all candidate nodes—such "hesitant" states are most susceptible to perturbation by new-task training. The weight is defined as $w(e) = 1 - \text{var}(\mathcal{P}) / \text{var}_{\max}(|\mathcal{P}|)$, where $\text{var}_{\max}(n) = (n-1)/n^2$ is the maximum possible variance for $n$ candidates. Weights are normalized to sum to 1 within each sampled set.
-    - Design Motivation: Sequential decisions in VRP exhibit a cascade effect—an incorrect choice at a critical branching point propagates to all subsequent steps. Low-confidence decisions are the hallmark of such critical junctures.
+$$\mathcal{L}_{BC} = \sum_{e \in \mathcal{E}} \bar{w}(e) \sum_{a} \mathcal{P}_\theta(a) \log \frac{\mathcal{P}_\theta(a)}{\mathcal{P}(a)}$$
 
-3. **Decision-seeking Behavior Consolidation (DsBC)**:
-
-    - Function: Constrains the current model's behavior on old states to remain aligned with the buffered historical behavior, with emphasis on preserving the core decision of which node to select.
-    - Mechanism: Conventional knowledge distillation uses forward KL divergence ($D_{KL}(P \| Q)$), which encourages the learner to spread probability mass across all modes of the teacher, potentially diluting focus. LLR-BC instead employs reverse KL divergence (RKLD) $D_{KL}(Q \| P)$, whose mode-seeking property concentrates the learner on reproducing the teacher's highest-probability actions—precisely the decisions executed during greedy decoding in VRP solvers. The consolidation loss is $\mathcal{L}_{BC} = \sum_{e \in \mathcal{E}} \bar{w}(e) \sum_{a} \mathcal{P}_\theta(a) \log \frac{\mathcal{P}_\theta(a)}{\mathcal{P}(a)}$.
-    - Design Motivation: Constructive VRP solvers select the highest-probability node at inference time, making it more important to preserve top-1 decisions than to uniformly align the entire distribution. RKLD naturally emphasizes peak alignment.
+where $\bar{w}(e)$ represents the normalized weights from CaEW.
 
 ### Loss & Training
 
-The total loss is $\mathcal{L} = \mathcal{L}_{DRL} + \alpha \cdot \mathcal{L}_{BC}$, where $\mathcal{L}_{DRL}$ is the policy gradient loss of the underlying DRL algorithm (e.g., REINFORCE) and $\alpha = 100$ balances new-task learning against old-behavior consolidation. Each task is trained for 200 epochs; buffer size $|\mathcal{B}| = 1000$ (batch-level); $|\mathcal{E}| = 16$ batches of old experience are sampled per step. Because LLR-BC operates in behavior space rather than parameter space, it does not accumulate regularization constraints as tasks increase—unlike EWC—and thus does not progressively lose plasticity.
+The total loss is $\mathcal{L} = \mathcal{L}_{DRL} + \alpha \cdot \mathcal{L}_{BC}$, where $\mathcal{L}_{DRL}$ is the policy gradient loss (e.g., REINFORCE) and $\alpha = 100$ balances learning and consolidation. Each task is trained for 200 epochs with $|\mathcal{B}| = 1000$ (batch-level) and $|\mathcal{E}| = 16$ batches sampled per step. LLR-BC operates in the behavior space rather than the parameter space, preventing the cumulative regularization constraints that lead to plasticity loss in methods like EWC.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Six tasks are constructed on CVRP and TSP (6 distributions × 3 scales), averaged over 5 random task orderings. All metrics ×$10^{-3}$, lower is better.
+Evaluated on CVRP and TSP with 6 tasks (6 distributions × 3 scales), averaged over 5 random task orders. All metrics are $\times 10^{-3}$ (lower is better).
 
 | Method | CVRP AP↓ | CVRP AF↓ | CVRP APl↓ | TSP AP↓ | TSP AF↓ | TSP APl↓ |
 |:---|:---:|:---:|:---:|:---:|:---:|:---:|
@@ -87,106 +86,56 @@ Six tasks are constructed on CVRP and TSP (6 distributions × 3 scales), average
 | Restart | 60.5 | 41.3 | 9.1 | 31.7 | 50.5 | 7.1 |
 | **LLR-BC** | **4.2** | **0.7** | **3.5** | **3.4** | **0.8** | **2.8** |
 
-LLR-BC's AP is an order of magnitude lower than all baselines (CVRP: 4.2 vs. 23.5+; TSP: 3.4 vs. 14.8+), with near-zero AF (virtually no forgetting) and the best APl (fastest learning on new tasks). Although Li (inter/intra) achieves low forgetting, it does so at the cost of allocating half the training budget to retraining old task instances, resulting in poor new-task performance (APl).
+LLR-BC AP is an order of magnitude lower than all baselines. It achieves near-zero forgetting (AF) while maintaining the best plasticity (APl), outperforming Li (inter/intra) which sacrifices new task performance to retrain on old instances.
 
 ### Ablation Study
 
-Component ablation on task order 1 (×$10^{-3}$):
+Component ablation on task order 1 ($\times 10^{-3}$):
 
 | Variant | CVRP AP | CVRP AF | CVRP AMF | TSP AP | TSP AF |
 |:---|:---:|:---:|:---:|:---:|:---:|
-| LLR-BC (default) | 4.9 | 0.6 | 0.7 | 1.7 | 0.8 |
-| w/o CaEW (uniform) | 5.2 | 0.8 | 0.8 | 1.8 | 0.9 |
-| KLD instead of RKLD | 5.5 | 0.7 | 0.7 | 1.9 | 0.9 |
+| LLR-BC Default | 4.9 | 0.6 | 0.7 | 1.7 | 0.8 |
+| w/o CaEW (equal weight) | 5.2 | 0.8 | 0.8 | 1.8 | 0.9 |
+| Replace RKLD with KLD | 5.5 | 0.7 | 0.7 | 1.9 | 0.9 |
 | Buffer every epoch | 7.8 | 3.1 | 3.1 | 2.6 | 2.1 |
 | Instance-level buffer (-IB) | 35.4 | 23.4 | 27.2 | 2.5 | 1.8 |
-| Entropy instead of Var | 4.8 | 0.5 | 0.7 | 2.1 | 0.9 |
-| Scaled reservoir prob. (-Res) | 4.9 | 0.9 | 0.9 | 2.0 | 1.0 |
+| Replace Var with Entropy | 4.8 | 0.5 | 0.7 | 2.1 | 0.9 |
+| Scale reservoir prob (-Res) | 4.9 | 0.9 | 0.9 | 2.0 | 1.0 |
 
-The most critical finding is the large gap between step-level and instance-level experience representation—instance-level buffering degrades CVRP AP from 4.9 to 35.4 (7× worse). Buffering only at the last epoch is also important (buffering every epoch raises AF from 0.6 to 3.1). CaEW and RKLD each contribute consistent improvements, while the specific form of the confidence measure (Var/Entropy/Top2-Margin) has little sensitivity.
-
-### Key Findings
-
-- **Significant improvement in zero-shot generalization**: On TSPLIB (scales up to 1001), LLR-BC achieves 18.08 vs. Fine-tuning's 38.16; on CVRPLIB, 7.88 vs. 8.54. Cross-task knowledge accumulated during lifelong learning genuinely enhances generalization to unseen tasks.
-- **Universality across solvers**: Integrating LLR-BC into Omni and INViT reduces CVRP AP from 34.7→16.5 and 28.6→23.8, respectively, with consistent patterns.
-- **Behavior-space consolidation does not impair plasticity**: Unlike EWC, which imposes regularization in parameter space, LLR-BC allows parameters to change freely while only constraining output behavior alignment, so constraints do not accumulate as tasks increase. In experiments, LLR-BC learns new tasks even faster than Fine-tuning.
-- **Robustness to hyperparameters**: With $\alpha$ ranging from 10 to 1000, $|\mathcal{B}|$ from 250 to 1000, and $|\mathcal{E}|$ from 4 to 16, performance variation is far smaller than the gap with baselines.
-
-## Highlights & Insights
-
-- **Step-level experience representation is the core contribution**: Decomposing "a complete solution for an instance" into "state + probability distribution at each step" as the experience unit naturally accommodates tasks of varying scales, achieves high information density, and incurs negligible storage overhead. This design philosophy generalizes to all autoregressive sequential decision lifelong learning scenarios (e.g., scheduling, assignment problems).
-- **Clever application of reverse KL**: RKLD is uncommon in knowledge distillation, but in the greedy decoding setting of VRP, its mode-seeking property precisely matches the requirement of preserving top-1 decisions. The insight that "the distillation objective should match the downstream inference mechanism" is worth borrowing in other greedy/beam search settings.
-- **Extremely low memory overhead**: The buffer occupies only 0.01% of training experience, yet yields substantial performance gains, demonstrating that "choosing what to store wisely" matters more than "storing more."
-
-## Limitations & Future Work
-
-- **Fixed $|\mathcal{E}|$ is unbalanced across task scales**: For small-scale tasks with few new experiences, old experiences constitute a disproportionately large fraction of the batch, potentially suppressing plasticity; the opposite holds for large-scale tasks. Adaptive sampling ratios are a promising direction.
-- **Only same-type VRP lifelong learning is validated**: Lifelong learning across problem types (e.g., TSP→CVRP→VRPTW) remains unexplored and may require task-specific model components.
-- **Task boundary assumption**: The framework still assumes that task boundaries are known. Continuously drifting distributions are not addressed, though per-instance reservoir sampling is mentioned as a potential mitigation.
-- **Constructive solvers only**: The lifelong learning behavior of improvement-based solvers (e.g., neural selectors in LKH-based methods) may differ and is not investigated.
-
-## Related Work & Insights
-
-- **vs. EWC (parameter regularization)**: EWC constrains important parameters in parameter space; accumulated regularization terms across tasks progressively erode plasticity. LLR-BC constrains behavior in output space while leaving parameters free to explore, maintaining plasticity throughout.
-- **vs. Li et al. / Feng et al. (existing VRP lifelong learning)**: These methods rely on the assumption that old task instances can be actively generated, and allocate half the training budget to retraining on old tasks. LLR-BC requires only 0.01% of historical experience snippets without generating new instances, making it substantially more general.
-- **vs. DER++ (general continual learning with experience replay)**: DER++ also stores probability distributions, but LLR-BC adds CaEW weighting and RKLD—two design choices tailored to the greedy decision setting—achieving superior effectiveness for VRP.
-- This work demonstrates that behavior-level (rather than parameter-level or data-level) knowledge retention in sequential decision lifelong learning can simultaneously resolve the stability–plasticity conflict, offering insights for continual learning in LLM agents.
-
-## Rating
-
-- Novelty: ⭐⭐⭐⭐ First to extend lifelong learning to a general VRP setting with simultaneous distribution and scale shifts; the combination of step-level experience representation and RKLD consolidation is insightful.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 5 task orderings × 2 problem types × 7 baselines × 5 metrics; comprehensive ablations, cross-solver validation, and detailed hyperparameter sensitivity analysis.
-- Writing Quality: ⭐⭐⭐⭐ Clear structure, naturally motivated methodology, rigorous terminology.
-- Value: ⭐⭐⭐⭐ The framework is highly generalizable; the efficiency ratio of achieving order-of-magnitude performance gains at 0.01% memory overhead is impressive, though the VRP application domain is relatively niche.
+Key finding: Step-level representation is critical; instance-level buffering degrades CVRP AP by 7x. Last-epoch-only collection is also important for stability.
 
 ### Key Findings
 
-1. **Forgetting nearly eliminated**: AF approaches zero vs. Fine-tuning's 19.9—a 20× gap.
-2. **Plasticity unimpaired**: Behavior-level consolidation does not accumulate constraints unlike parameter regularization.
-3. **Universal across solvers**: Effective on all three base solvers—POMO, Omni, and INViT.
-4. **Hyperparameter robustness**: Variation under changes in $|\mathcal{B}|$, $|\mathcal{E}|$, and $\alpha$ over wide ranges is far smaller than the gap with baselines.
-5. **RKLD outperforms KLD**: Mode-seeking is better suited for preserving critical decisions (AP 4.9 vs. 5.5).
+- **Zero-shot Generalization Gain**: On TSPLIB, LLR-BC (18.08) outperforms Fine-tuning (38.16). Knowledge accumulated during lifelong learning enhances generalization.
+- **Cross-solver Universality**: LLR-BC improves AP on both Omni (34.7→16.5) and INViT (28.6→23.8).
+- **Behavior-space Plasticity**: Unlike EWC's parameter constraints, LLR-BC allows parameter freedom while aligning output behaviors. Thus, learning does not slow down as more tasks are added.
+- **Hyperparameter Insensitivity**: Performance is robust across variations in $\alpha$, $|\mathcal{B}|$, and $|\mathcal{E}|$.
 
 ## Highlights & Insights
 
-- 💡 **Fine-grained behavior replay**: Step-level representation with complete probability distributions achieves high information density.
-- 🎯 **RKLD behavior consolidation**: Mode-seeking suitability is rigorously motivated by the characteristics of VRP decision-making.
-- 🔄 **Extremely low storage overhead**: Buffer occupies only 0.01% of total experience.
-- 📐 **Five-dimensional evaluation protocol**: AP/AF/AMF/APl/AG provides comprehensive assessment of lifelong learning.
+- **Step-level representation is a core contribution**: Splitting full solutions into step-wise state-distribution pairs as experience units enables scale-compatibility and high information density with low overhead.
+- **RKLD application**: Leveraging the mode-seeking property of RKLD aligns the distillation objective with the downstream greedy inference method.
+- **Minimal memory footprint**: Significant performance gains are achieved with a buffer occupying only 0.01% of total training experience.
 
 ## Limitations & Future Work
 
-1. **Task boundary assumption**: Task boundaries are still assumed to be known.
-2. **Fixed experience sampling volume**: May become imbalanced when task scales differ significantly.
-3. **Limited cross-problem validation**: Only CVRP and TSP are evaluated.
-4. **Experience recency not considered**: Reservoir sampling retains experiences with equal probability regardless of recency.
-5. **Constructive solvers only**: Not extended to improvement-based solvers.
+- **Fixed $|\mathcal{E}|$ imbalance**: High old-experience ratios in small tasks might inhibit plasticity, while the reverse is true for large tasks. Adaptive sampling is needed.
+- **Homogeneous VRP only**: Cross-task lifelong learning (e.g., TSP to CVRP) has not been explored.
+- **Task boundary assumption**: The model assumes known task transitions. Handling continuous distribution drift is a future direction.
+- **Constructionist-only focus**: Lifelong learning behaviors in improvement-based solvers may differ.
 
 ## Related Work & Insights
 
-| Method | Type | Distinction |
-|:---:|:---:|:---:|
-| Li et al., 2024 | VRP Lifelong Learning | Allocates half resources to old instances; requires controllable generation |
-| Feng et al., 2025 | VRP Lifelong Learning | Limited to scale/distance metric variation |
-| EWC | Regularization | Parameter-level constraints cause plasticity degradation |
-| Fine-tuning | Baseline | No forgetting protection |
-| AMDKD | Knowledge Distillation | One-shot training only |
-| Omni | Meta-learning | Does not maintain old-task performance |
-
-Core insight: In VRP lifelong learning, behavior-level consolidation is more effective than parameter-level regularization or instance-level replay—the discrete combinatorial nature of the decision space demands preservation of highest-probability decisions.
+- **vs EWC (Parameter Regularization)**: EWC's constraints accumulate and reduce plasticity. LLR-BC maintains plasticity by constraining only the behavior space.
+- **vs Li et al. / Feng et al. (VRP Lifelong Learning)**: These rely on active instance generation for old tasks. LLR-BC requires only historical fragments (0.01% overhead) and no new generation.
+- **vs DER++ (General Experience Replay)**: LLR-BC introduces CaEW and RKLD specifically designed for the sequential greedy decision-making context of VRP.
 
 ## Rating
 
-| Dimension | Score |
-|:---:|:---:|
-| Novelty | ⭐⭐⭐⭐ |
-| Technical Depth | ⭐⭐⭐⭐ |
-| Experimental Thoroughness | ⭐⭐⭐⭐⭐ |
-| Writing Quality | ⭐⭐⭐⭐ |
-| Practical Value | ⭐⭐⭐⭐ |
-| Overall | ⭐⭐⭐⭐ |
-
-> A solid contribution at the intersection of lifelong learning and combinatorial optimization. CaEW and DsBC are well-motivated and carefully designed; experiments are extremely thorough (5 orderings, 3 solvers, multi-dimensional evaluation); performance surpasses baselines by an order of magnitude.
+- Novelty: ⭐⭐⭐⭐ Extends lifelong learning to distribution+scale VRP scenarios with insightful step-level representation.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Extensive benchmarks across 2 problem types, multiple solvers, and comprehensive ablations.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure and rigorous definitions.
+- Value: ⭐⭐⭐⭐ High efficiency and generalizable framework for sequential decision-making.
 
 <!-- RELATED:START -->
 
@@ -194,11 +143,11 @@ Core insight: In VRP lifelong learning, behavior-level consolidation is more eff
 
 ## Related Papers
 
-- [\[AAAI 2026\] PRISM: Privacy-Aware Routing for Adaptive Cloud-Edge LLM Inference via Semantic Sketch Collaboration](../../AAAI2026/llm_safety/prism_privacy-aware_routing_for_adaptive_cloud-edge_llm_inference_via_semantic_s.md)
-- [\[ICLR 2026\] Robustness and Radioactivity of Watermarks in Federated Learning May Be at Odds](watermark_robustness_and_radioactivity_may_be_at_odds_in_federated_learning.md)
-- [\[NeurIPS 2025\] CryptoMoE: Privacy-Preserving and Scalable Mixture of Experts Inference via Balanced Expert Routing](../../NeurIPS2025/llm_safety/cryptomoe_privacy-preserving_and_scalable_mixture_of_experts_inference_via_balan.md)
+- [\[CVPR 2026\] Elastic Weight Consolidation Done Right for Continual Learning](../../CVPR2026/llm_safety/elastic_weight_consolidation_done_right_for_continual_learning.md)
+- [\[CVPR 2025\] Dual Consolidation for Pre-Trained Model-Based Domain-Incremental Learning](../../CVPR2025/llm_safety/dual_consolidation_for_pre-trained_model-based_domain-incremental_learning.md)
+- [\[ICLR 2026\] Learning-Time Encoding Shapes Unlearning in LLMs](learning-time_encoding_shapes_unlearning_in_llms.md)
 - [\[ICLR 2026\] Supervised Reinforcement Learning: From Expert Trajectories to Step-wise Reasoning](supervised_reinforcement_learning_from_expert_trajectories_to_step-wise_reasonin.md)
-- [\[ICLR 2026\] BEAT: Visual Backdoor Attacks on VLM-based Embodied Agents via Contrastive Trigger Learning](beat_visual_backdoor_attacks_on_vlm-based_embodied_agents_via_contrastive_trigge.md)
+- [\[ICLR 2026\] Understanding and Improving Continuous Adversarial Training for LLMs via In-Context Learning Theory](understanding_and_improving_continuous_llm_adversarial_training_via_in-context_l.md)
 
 </div>
 

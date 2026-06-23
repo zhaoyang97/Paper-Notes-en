@@ -2,143 +2,116 @@
 title: >-
   [Paper Note] Improving the Trade-off Between Watermark Strength and Speculative Sampling Efficiency for Language Models
 description: >-
-  [ICLR 2026][LLM Safety][LLM watermarking] This paper proposes a quantitative measure of watermark strength (expected KL divergence) and fully characterizes the Pareto trade-off curve between watermark strength and specul…
+  [ICLR 2026][LLM Safety][Paper Note] This paper proposes a quantitative measure of watermark strength (expected KL divergence) and fully characterizes its Pareto trade-off curve with speculative sampling efficiency. It further achieves simultaneous maximum watermark strength and optimal sampling efficiency by pseudo-randomizing the acceptance decisions.
 tags:
-  - "ICLR 2026"
-  - "LLM Safety"
-  - "LLM watermarking"
-  - "speculative sampling"
-  - "watermark strength"
-  - "sampling efficiency"
-  - "Pareto frontier"
-  - "pseudo-random acceptance"
+  - ICLR 2026
+  - LLM Safety
 date: 2026-05-08
-content_hash: 44e3fbd4cd975c1e
+content_hash: 4dcc7a3b28c964bc
 ---
-
 # Improving the Trade-off Between Watermark Strength and Speculative Sampling Efficiency for Language Models
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2602.01428](https://arxiv.org/abs/2602.01428)  
 **Code**: [GitHub](https://github.com/hwq0726/watermark-tradeoff)  
-**Area**: AI Safety
-**Keywords**: LLM watermarking, speculative sampling, watermark strength, sampling efficiency, Pareto frontier, pseudo-random acceptance
+**Area**: AI Safety  
+**Keywords**: LLM Watermarking, Speculative Sampling, Watermark Strength, Sampling Efficiency, Pareto Frontier, Pseudo-random Acceptance  
 
 ## TL;DR
 
-This paper proposes a quantitative measure of watermark strength (expected KL divergence) and fully characterizes the Pareto trade-off curve between watermark strength and speculative sampling efficiency. By pseudo-randomizing the acceptance decision, the method simultaneously achieves maximum watermark strength and optimal sampling efficiency.
+This paper proposes a quantitative measure of watermark strength (expected KL divergence) and fully characterizes its Pareto trade-off curve with speculative sampling efficiency. It further achieves simultaneous maximum watermark strength and optimal sampling efficiency by pseudo-randomizing the acceptance decisions.
 
 ## Background & Motivation
 
-1. **LLM watermarking is a key technology for provenance**: Watermarking injects recoverable pseudo-random signals during token sampling to enable text provenance tracking, serving as a principled approach to ensure generated content is traceable.
+1. **LLM watermarking is a key technology for provenance**: Watermarking implements text traceability by injecting recoverable pseudo-random signals during the token sampling process, serving as a principled method to ensure content trackability.
 
-2. **Speculative sampling accelerates LLM inference**: Speculative sampling uses a lightweight draft model to rapidly generate candidate tokens, which are then verified in parallel by the target model. Higher acceptance rates yield greater speedups. Efficiency is measured by the expected acceptance rate: $\text{SE} = \mathbb{E}_\zeta[\sum_w \mathcal{A}_\zeta(w|w) Q_{\zeta,w}]$.
+2. **Speculative sampling accelerates LLM inference**: Speculative sampling uses a lightweight draft model to quickly generate candidate tokens followed by parallel verification by a target model. Higher acceptance rates lead to more significant speedups. Efficiency is measured by the expected acceptance rate: $\text{SE} = \mathbb{E}_\zeta[\sum_w \mathcal{A}_\zeta(w|w) Q_{\zeta,w}]$.
 
-3. **A fundamental trade-off exists between watermarking and speculative sampling**: Hu & Huang (2024) prove that it is impossible to simultaneously maintain the highest acceptance rate and the strongest watermark — stronger watermarks cause greater divergence between the draft and target distributions, reducing the acceptance rate. This impossibility result is discouraging.
+3. **Fundamental trade-off between watermarking and speculative sampling**: Hu & Huang (2024) proved the impossibility of simultaneously maintaining the highest acceptance rate and the strongest watermark—stronger watermarks cause the draft/target distributions to deviate more, thereby reducing the acceptance rate. This "impossibility" result is discouraging.
 
-4. **Prior definitions of watermark strength are too coarse**: Existing definitions are binary (watermark is "preserved" only if the watermarked distribution is an exact match), ignoring intermediate strength levels and precluding fine-grained trade-off analysis. A continuous, quantifiable measure of watermark strength is needed to fully characterize the trade-off curve.
+4. **Limitations of Prior Work in defining watermark strength**: Existing definitions are binary (a watermark is only "maintained" if it exactly matches the watermarked distribution), ignoring intermediate strength levels and preventing fine-grained trade-off analysis. This paper requires a continuous, quantifiable watermark strength measure to fully characterize the trade-off curve.
 
 ## Method
 
 ### Overall Architecture
 
-- **Function**: (1) Define a continuous quantitative measure of watermark strength; (2) fully characterize the Pareto frontier of watermark strength vs. sampling efficiency; (3) propose a new mechanism that breaks the trade-off.
-- **Design Motivation**: Prior binary definitions cannot reveal the continuous nature of the trade-off, and the true randomness in the accept/reject step is the root cause of watermark strength degradation.
-- **Mechanism**: Quantify watermark strength via expected KL divergence → derive a convex optimization formulation of the Pareto curve → pseudo-randomize the acceptance decision so that the entire generation process becomes a deterministic function of pseudo-random variables.
+This paper advances the trade-off problem between watermarking and speculative sampling through a three-step approach: "Quantify—Characterize—Break." It first uses expected KL divergence to transform the previously binary "watermark strength" into a continuous measurable quantity. Next, it formulates the optimal trade-off between strength and sampling efficiency as a Pareto curve. Finally, it identifies that the curve exists because of residual true randomness in the acceptance/rejection step; by pseudo-randomizing this "coin flip," the entire generation process becomes a deterministic function of pseudo-random numbers, allowing for simultaneous maximum strength and optimal efficiency.
 
-### Key Design 1: Quantitative Measure of Watermark Strength
+### Key Designs
 
-The watermark strength of an unbiased watermarking scheme is defined as the expected KL divergence between the watermarked distribution and the original distribution:
+**1. Expected KL Divergence Measure: Quantifying "Watermark Strength" as a Continuous Number**
 
-$$\text{WS}(\bm{P}_\zeta) = \mathbb{E}_\zeta[D_{\mathrm{KL}}(\bm{P}_\zeta \| \bm{P})] = \text{Ent}(\bm{P}) - \mathbb{E}_\zeta[\text{Ent}(\bm{P}_\zeta)]$$
+Previously, determining whether a watermark scheme "maintained" strength was binary—only exact matches counted, leaving intermediate strengths undefined and trade-off curves undrawable. This paper instead defines strength as the expected KL divergence between the watermarked distribution $\bm{P}_\zeta$ and the original distribution $\bm{P}$: $\text{WS}(\bm{P}_\zeta) = \mathbb{E}_\zeta[D_{\mathrm{KL}}(\bm{P}_\zeta \| \bm{P})] = \text{Ent}(\bm{P}) - \mathbb{E}_\zeta[\text{Ent}(\bm{P}_\zeta)]$. This is exactly equal to the mutual information $I(w;\zeta)$ between the token $w$ and the pseudo-random number $\zeta$, representing "how much pseudo-random signal can be inferred from the output." This metric is useful because it also characterizes detection difficulty: under a likelihood ratio test, the p-value for $n$ tokens satisfies $\lim_{n\to\infty}-\frac{1}{n}\log(\text{p-value})=\bar{D}$. Greater strength leads to faster p-value decay and fewer samples required for detection. Its upper bound is the entropy of the original distribution $\text{WS}(\bm{P}_\zeta)\leq\text{Ent}(\bm{P})$, achieved only when $\bm{P}_\zeta$ is degenerate (probability concentrated on a single token); both Gumbel-max and SynthID (as $m\to\infty$) can reach this bound.
 
-This measure carries deep information-theoretic meaning: it is equivalent to the mutual information $I(w; \zeta)$ between token $w$ and the pseudo-random variable $\zeta$. Key properties include:
+**2. Pareto Trade-off Curve: Formulating Empirical Observations as a Convex Optimization Problem**
 
-- **Upper bounded by the entropy of the original distribution**: $\text{WS}(\bm{P}_\zeta) \leq \text{Ent}(\bm{P})$, with equality if and only if $\bm{P}_\zeta$ is almost surely degenerate (all probability mass concentrated on a single token).
-- **Determines the exponential decay rate of p-values**: Under a likelihood ratio test, the p-value for $n$ tokens satisfies $\lim_{n\to\infty} -\frac{1}{n}\log(\text{p-value}) = \bar{D}$, directly determining the sample complexity required for detection.
-- **Both Gumbel-max and SynthID ($m\to\infty$) achieve maximum watermark strength**.
+While Hu & Huang (2024) proved the impossibility of simultaneously maintaining max efficiency and strength, it was a qualitative result. This paper explicitly formulates the trade-off by seeking the maximum reachable watermark strength given an efficiency requirement $r$: $L(r)=\max_{\mathcal{S}_{\text{draft}},\mathcal{S}_{\text{target}}}\text{WS}(\bm{P}_\zeta)\ \text{s.t.}\ \text{SSE}(\bm{Q}_\zeta,\bm{P}_\zeta)\geq r$. For the linear watermark class $\mathcal{Q}=\{(1-\theta)\text{Id}+\theta\mathcal{S}:\theta\in[0,1]\}$, this inverse curve can be further reduced to a convex optimization: minimizing the $\ell_1$ norm of the corresponding total variation distance subject to an entropy threshold. This allows the complete Pareto frontiers of Gumbel-max and SynthID to be accurately plotted, providing a computable boundary for the intuition that "strong watermarking inevitably slows sampling."
 
-### Key Design 2: Complete Characterization of the Pareto Trade-off Curve
+**3. Pseudo-random Acceptance Mechanism: Fixing the Final Truly Random Coin**
 
-The trade-off curve is formulated as a constrained optimization problem: given an efficiency requirement $r$, find the maximum achievable watermark strength:
-
-$$L(r) = \max_{\mathcal{S}_{\text{draft}}, \mathcal{S}_{\text{target}}} \text{WS}(\bm{P}_\zeta) \quad \text{s.t.} \quad \text{SSE}(\bm{Q}_\zeta, \bm{P}_\zeta) \geq r$$
-
-For the linear watermark class $\mathcal{Q} = \{(1-\theta)\text{Id} + \theta \mathcal{S} : \theta \in [0,1]\}$, the inverse curve reduces to a convex optimization problem where the objective is to minimize the $\ell_1$ norm (corresponding to total variation distance) subject to an entropy upper bound. The paper derives complete Pareto curves for both Gumbel-max and SynthID watermarking schemes.
-
-### Key Design 3: Pseudo-Random Acceptance Mechanism Breaks the Trade-off
-
-**Core Idea**: In standard speculative sampling, the accept/reject decision for draft tokens uses a **truly random** coin flip. Even given the pseudo-random variables of both draft and target models, the final token remains stochastic. This residual randomness weakens watermark strength.
-
-**Solution**: Pseudo-randomize the acceptance variable $u_t = G(\zeta_t^R)$ as well, making the entire generation process a deterministic function of pseudo-random variables. Theorem 4.1 establishes:
-
-- **Unbiasedness**: $\mathbb{E}_\zeta[\bm{P}'_\zeta(w)] = \bm{P}(w)$
-- **Maximum sampling efficiency**: $\text{SE} = 1 - \text{TV}(\bm{Q}, \bm{P})$
-- **Maximum watermark strength**: $\text{WS}(\bm{P}'_\zeta) = \text{Ent}(\bm{P})$
-
-At detection time, the pseudo-random acceptance variable $u_t$ provides additional information for more accurately selecting the correct test statistic. For Gumbel-max, an Ars-τ detector is proposed (using threshold $\tau$ to select between draft/target statistics); for SynthID, a Bayes-MLP detector is proposed (replacing simple weighted averaging with an MLP for statistic selection).
+Even if the pseudo-random numbers for the draft and target models are known, standard speculative sampling still uses a **truly random** coin to accept or reject a draft token. Consequently, the output tokens carry residual randomness, which consumes watermark strength. This paper introduces one key change: pseudo-randomizing the acceptance variable $u_t=G(\zeta_t^R)$, making the entire generation process a deterministic function of pseudo-random variables. Theorem 4.1 proves this modification simultaneously achieves three goals: unbiasedness $\mathbb{E}_\zeta[\bm{P}'_\zeta(w)]=\bm{P}(w)$, maximum sampling efficiency $\text{SE}=1-\text{TV}(\bm{Q},\bm{P})$, and maximum watermark strength $\text{WS}(\bm{P}'_\zeta)=\text{Ent}(\bm{P})$, effectively bypassing the constraints of the Pareto curve. On the detection side, since $u_t$ is now known, more accurate test statistics can be chosen: the Ars-τ detector is designed for Gumbel-max, using a threshold $\tau$ to switch between draft/target statistics; for SynthID, a Bayes-MLP detector is designed, replacing simple weighted averages with an MLP to select statistics.
 
 ## Key Experimental Results
 
 ### Experimental Setup
 
-- **Model pairs**: Llama-68M (draft) + Llama-7B (target); Gemma-2B (draft) + Gemma-7B (target)
-- **Datasets**: ELI5 question-answering task, C4 open-generation task
-- **Watermarking schemes**: Gumbel-max (temperature 0.5), SynthID (m=30, temperature 0.7)
+- **Model Pairs**: Llama-68M (draft) + Llama-7B (target); Gemma-2B (draft) + Gemma-7B (target)
+- **Datasets**: ELI5 (QA), C4 (open generation)
+- **Watermarking Schemes**: Gumbel-max (Temp 0.5), SynthID (m=30, Temp 0.7)
 - **Lookahead**: K ∈ {2, 3, 4}
-- **Metrics**: AATPS (average accepted tokens per step), TPR@FPR=1%
+- **Metrics**: AATPS (Average Accepted Tokens Per Step), TPR@FPR=1%
 
 ### Main Results: Sampling Efficiency and Detection Performance
 
 | Method | Watermark Scheme | AATPS (K=4) | TPR@100 tokens | TPR@200 tokens |
 |---|---|---|---|---|
-| Std. SpecSampl | None | ~3.2 | - | - |
+| Std. SpecSampl | No Watermark | ~3.2 | - | - |
 | Ars-Prior | Gumbel-max | ~3.2 | ~65% | ~88% |
 | **Ars-τ (Ours)** | **Gumbel-max** | **~3.2** | **~78%** | **~95%** |
 | Bayes-Prior | SynthID | ~3.2 | ~50% | ~75% |
 | **Bayes-MLP (Ours)** | **SynthID** | **~3.2** | **~62%** | **~85%** |
-| Oracle (theoretical upper bound) | Both | ~3.2 | ~85% | ~98% |
+| Oracle (Theoretical Upper Bound) | Both | ~3.2 | ~85% | ~98% |
 
-### Ablation Study: Trade-off Curve Validation
+### Ablation Study: Trade-off Curve Verification
 
 | Efficiency Requirement (r) | Gumbel-max WS | SynthID WS (m=30) | SynthID WS (m=∞) |
 |---|---|---|---|
-| Maximum efficiency | 0 | 0 | 0 |
-| 0.9 × max efficiency | Moderate | Moderate-low | Moderate |
-| 0.7 × max efficiency | High | Moderate | High |
-| No efficiency constraint | Maximum = Ent(P) | < Ent(P) | Maximum = Ent(P) |
+| Max Efficiency | 0 | 0 | 0 |
+| 0.9 × Max Efficiency | Medium | Medium-Low | Medium |
+| 0.7 × Max Efficiency | High | Medium | High |
+| No Efficiency Constraint | Max = Ent(P) | < Ent(P) | Max = Ent(P) |
 
-Experiments confirm that Gumbel-max and SynthID ($m=\infty$) achieve the same maximum watermark strength, while finite-$m$ SynthID yields lower watermark strength than Gumbel-max.
+Experiments verify that Gumbel-max and SynthID (m=∞) reach the same maximum watermark strength, but SynthID with finite $m$ has lower strength than Gumbel-max.
 
 ### Key Findings
 
-1. **Sampling efficiency is fully preserved**: AATPS under the pseudo-random acceptance mechanism is nearly identical to standard speculative sampling, confirming the maximum efficiency property in Theorem 4.1.
-2. **Detection capability is significantly improved**: At the same token count, Ars-τ improves TPR by approximately 10–15 percentage points over Ars-Prior, and Bayes-MLP improves TPR by approximately 10–12 percentage points over Bayes-Prior.
-3. **Approaches the Oracle upper bound**: At 200 tokens, the proposed method nearly matches the performance of the ideal Oracle detector, indicating that pseudo-randomizing the acceptance variable effectively reduces uncertainty in test statistic selection.
-4. **Unbiasedness verified**: Log perplexity is consistent with the non-watermarked baseline, confirming no degradation in output quality.
+1. **Efficiency Perfectly Maintained**: Under the pseudo-random acceptance mechanism, AATPS is almost identical to standard speculative sampling, confirming the maximum efficiency property of Theorem 4.1.
+2. **Significant Detection Gain**: At the same token count, Ars-τ improves TPR by approximately 10-15 percentage points over Ars-Prior, and Bayes-MLP improves by 10-12 percentage points over Bayes-Prior.
+3. **Approaching Oracle Bound**: At 200 tokens, the proposed method approaches the performance of the ideal Oracle detector, indicating that the pseudo-random acceptance variable effectively reduces uncertainty in test statistic selection.
+4. **Unbiasedness Verification**: Log Perplexity remains consistent with the non-watermarked version, confirming no reduction in output quality.
 
 ## Highlights & Insights
 
-- This is the first work to propose a continuous and meaningful quantitative measure of watermark strength, directly connecting it to p-value decay rates and sample complexity.
-- The complete Pareto trade-off curve is characterized, transforming empirical observations into a rigorous constrained optimization problem.
-- The pseudo-random acceptance mechanism is remarkably elegant — a minimal modification (replacing the true random coin with a pseudo-random one) simultaneously breaks the efficiency and strength bounds.
-- The theoretical analysis is thorough and complete (simultaneously proving unbiasedness, maximum efficiency, and maximum strength), and experimental results closely match theoretical predictions.
+- First to propose a continuous and meaningful quantitative measure for watermark strength, directly linking it to p-value decay rates and sample complexity.
+- Fully characterizes the Pareto trade-off curve, transforming empirical observations into a rigorous constrained optimization problem.
+- The design of the pseudo-random acceptance mechanism is remarkably elegant—a tiny change (replacing a true random coin with a pseudo-random one) simultaneously breaks the bounds of efficiency and strength.
+- Theoretical analysis is deep and complete (simultaneous proof of unbiasedness, max efficiency, and max strength), with experimental validation highly consistent with theoretical predictions.
 
 ## Limitations & Future Work
 
-- The approach directly applies to unbiased degenerate watermarks (Gumbel-max, SynthID); extensions to non-degenerate and biased watermarks remain open problems.
-- Detection requires training data (1,000 watermarked texts), and SynthID additionally requires non-watermarked texts as negative samples, increasing deployment complexity.
-- Only standard speculative sampling is evaluated; extensions to tree-based variants and other alternatives are not verified.
-- The effect of human editing on watermarks is not explored, whereas robustness to post-hoc editing is an important consideration in practical deployment.
+- Directly applicable to unbiased degenerate watermarks (Gumbel-max, SynthID); extensions to non-degenerate or biased watermarks remain an open problem.
+- Detection requires training data (1000 watermarked texts), and SynthID further requires non-watermarked text as negative samples, increasing deployment complexity.
+- Only evaluated on standard speculative sampling; extensions to variants like tree-based sampling are not yet verified.
+- The impact of manual editing on watermarks was not explored; watermark robustness is a major consideration for actual deployment.
 
 ## Rating
 
-| Dimension | Score |
+| Dimension | Rating |
 |---|---|
 | Novelty | ⭐⭐⭐⭐⭐ |
 | Effectiveness | ⭐⭐⭐⭐ |
 | Reproducibility | ⭐⭐⭐⭐ |
-| Practicality | ⭐⭐⭐⭐ |
+| Value | ⭐⭐⭐⭐ |
 
 <!-- RELATED:START -->
 
@@ -146,11 +119,11 @@ Experiments confirm that Gumbel-max and SynthID ($m=\infty$) achieve the same ma
 
 ## Related Papers
 
+- [\[ICLR 2026\] ManagerBench: Evaluating the Safety-Pragmatism Trade-off in Autonomous LLMs](managerbench_evaluating_the_safety-pragmatism_trade-off_in_autonomous_llms.md)
+- [\[ICLR 2026\] Sampling-aware Adversarial Attacks against Large Language Models](sampling-aware_adversarial_attacks_against_large_language_models.md)
+- [\[ACL 2025\] From Trade-off to Synergy: A Versatile Symbiotic Watermarking Framework for Large Language Models](../../ACL2025/llm_safety/from_tradeoff_to_synergy_a_versatile.md)
+- [\[ICLR 2026\] CodeGenGuard: A Watermark for Code Generation Models](codegenguard_a_watermark_for_code_generation_models.md)
 - [\[ACL 2026\] LLM-VA: Resolving the Jailbreak-Overrefusal Trade-off via Vector Alignment](../../ACL2026/llm_safety/llm-va_resolving_the_jailbreak-overrefusal_trade-off_via_vector_alignment.md)
-- [\[NeurIPS 2025\] Learning to Watermark: A Selective Watermarking Framework for Large Language Models via Multi-Objective Optimization](../../NeurIPS2025/llm_safety/learning_to_watermark_a_selective_watermarking_framework_for_large_language_mode.md)
-- [\[ICLR 2026\] wd1: Weighted Policy Optimization for Reasoning in Diffusion Language Models](wd1_weighted_policy_optimization_for_reasoning_in_diffusion_language_models.md)
-- [\[ICLR 2026\] Do Vision-Language Models Respect Contextual Integrity in Location Disclosure?](do_vision-language_models_respect_contextual_integrity_in_location_disclosure.md)
-- [\[ICLR 2026\] BiasBusters: Uncovering and Mitigating Tool Selection Bias in Large Language Models](biasbusters_uncovering_and_mitigating_tool_selection_bias_in_large_language_mode.md)
 
 </div>
 

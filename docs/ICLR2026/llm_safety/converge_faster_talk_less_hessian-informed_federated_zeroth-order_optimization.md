@@ -2,79 +2,86 @@
 title: >-
   [Paper Note] Converge Faster, Talk Less: Hessian-Informed Federated Zeroth-Order Optimization
 description: >-
-  [ICLR 2026][LLM Safety][Federated Learning] This paper proposes HiSo (Hessian-informed Scalar-only communication), which leverages a global diagonal Hessian approximation to accelerate convergence in federated zeroth-ord…
+  [ICLR 2026][LLM Safety][zeroth-order optimization] Ours proposes HiSo (Hessian-informed Scalar-only communication), which utilizes global diagonal Hessian approximation to accelerate convergence in federated zeroth-order optimization while strictly maintaining scalar-only communication without transmitting any second-order information. It is theoretically proven that u
 tags:
-  - "ICLR 2026"
-  - "LLM Safety"
-  - "Federated Learning"
-  - "zeroth-order optimization"
-  - "Hessian preconditioning"
-  - "scalar communication"
-  - "LLM fine-tuning"
+  - ICLR 2026
+  - LLM Safety
+  - zeroth-order optimization
+  - Hessian preconditioning
 date: 2026-05-08
-content_hash: 8f15017f7a46a887
+content_hash: 03cb45fde149d3a2
 ---
-
 # Converge Faster, Talk Less: Hessian-Informed Federated Zeroth-Order Optimization
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2506.02370](https://arxiv.org/abs/2506.02370)  
 **Code**: To be confirmed  
-**Area**: Optimization / Federated Learning
-**Keywords**: Federated Learning, zeroth-order optimization, Hessian preconditioning, scalar communication, LLM fine-tuning
+**Area**: Optimization / Federated Learning  
+**Keywords**: Federated Learning, zeroth-order optimization, Hessian preconditioning, scalar-only communication, LLM fine-tuning
 
 ## TL;DR
 
-This paper proposes HiSo (Hessian-informed Scalar-only communication), which leverages a global diagonal Hessian approximation to accelerate convergence in federated zeroth-order optimization while strictly maintaining scalar communication without transmitting any second-order information. Theoretical analysis proves that, under low effective rank and whitening assumptions, the convergence rate is independent of the Lipschitz constant $L$ and model dimension $d$. Experiments on OPT-350M/1.3B/2.7B fine-tuning demonstrate a 1.4–5.4× reduction in communication rounds, with total communication cost remaining at the KB level.
+Ours proposes HiSo (Hessian-informed Scalar-only communication), which utilizes global diagonal Hessian approximation to accelerate convergence in federated zeroth-order optimization while strictly maintaining scalar-only communication without transmitting any second-order information. It is theoretically proven that under low effective rank and whitening assumptions, the convergence rate is independent of the Lipschitz constant $L$ and model dimension $d$; experiments in fine-tuning OPT-350M/1.3B/2.7B achieve 1.4~5.4× acceleration in communication rounds, with communication costs reduced to the KB level.
 
 ## Background & Motivation
 
-**Background**: Federated LLM fine-tuning faces a severe communication bottleneck — FedAvg requires approximately 1–5 TB of communication per client for OPT-1.3B. DeComFL exploits scalar-seed representations of zeroth-order gradients to achieve dimension-free communication (TB → KB), but suffers from extremely slow convergence.
+**Background**: Federated learning (FL) for LLM fine-tuning faces severe communication bottlenecks—FedAvg requires approximately 1~5 TB of communication per client for OPT-1.3B. DeComFL utilizes scalar-seed representation of zeroth-order gradients to achieve dimension-independent communication (reducing TB to KB), but it converges extremely slowly.
 
-**Limitations of Prior Work**: ZO-SGD estimates gradients using isotropic random directions ($u \sim \mathcal{N}(0, I)$), completely ignoring the heterogeneous curvature of LLM parameter spaces — high- and low-curvature directions are searched with equal weight, resulting in large gradient estimation variance and a convergence rate of $\mathcal{O}(\sqrt{Ld/mR})$ that depends on both dimension $d$ and Lipschitz constant $L$. Conventional Hessian preconditioning requires $O(d)$ or $O(d^2)$ communication, directly breaking the scalar communication framework.
+**Limitations of Prior Work**: ZO-SGD uses isotropic random direction searches for gradients ($u \sim \mathcal{N}(0, I)$), completely ignoring the heterogeneous curvature of the LLM parameter space—high-curvature and low-curvature directions are searched with equal weight. This leads to large gradient estimation variance and a convergence rate of $\mathcal{O}(\sqrt{Ld/mR})$ that depends on dimension $d$ and the Lipschitz constant $L$. Traditional Hessian preconditioning requires $O(d)$ or $O(d^2)$ communication, directly breaking the scalar-only communication framework.
 
-**Key Challenge**: Curvature information can significantly accelerate convergence (as demonstrated by Adam and second-order methods), yet transmitting any Hessian-related information within a scalar communication framework incurs linear or quadratic overhead — fundamentally contradicting the goal of dimension-free communication.
+**Key Challenge**: How to utilize Hessian information to accelerate the convergence of federated zeroth-order optimization while strictly maintaining scalar-only communication (transmitting only one gradient scalar $g$ and a random seed per round)?
 
-**Goal**: How can Hessian information be exploited to accelerate convergence in federated zeroth-order optimization while strictly maintaining scalar communication (i.e., transmitting only a single gradient scalar $g$ and a random seed per round)?
+**Goal**: How can curvature information be leveraged to accelerate federated zeroth-order optimization convergence without exceeding the constraints of scalar-only communication?
 
-**Key Insight**: The key observation is that the globally aggregated zeroth-order gradient update $\Delta x_r$ can already be reconstructed from scalars (as used in the model reconstruction step), so a diagonal Hessian approximation can be computed via Adam-style EMA from these existing variables at zero additional communication cost.
+**Key Insight**: A critical observation is that the globally aggregated zeroth-order gradient update $\Delta x_r$ itself can be reconstructed from scalars (already used in the model reconstruction step). Therefore, a diagonal Hessian approximation can be computed "for free" using Adam-style EMA from these existing variables—without any additional communication.
 
-**Core Idea**: The random perturbation directions are warped by the inverse square root of the Hessian to concentrate search along high-curvature directions, while the Hessian itself is computed for free from the existing global gradient scalars — achieving curvature-accelerated optimization with zero additional communication overhead.
+**Core Idea**: Use the inverse square root of the Hessian to warp the random perturbation directions, enabling more refined searching along high-curvature directions. The Hessian itself is computed for free from existing global gradient scalars, achieving curvature acceleration at zero extra communication cost.
 
 ## Method
 
 ### Overall Architecture
 
-The paper first introduces a general scalar-communication FL framework (Algorithm 1) that decouples scalar communication from any specific optimizer — rather than being tied to ZO-SGD, it admits any optimization algorithm whose update direction can be represented via a scalar and a shared state. Within this framework, HiSo replaces ZO-SGD updates with Hessian-guided zeroth-order updates: the perturbation direction is changed from isotropic $u \sim \mathcal{N}(0, I)$ to $z \sim \mathcal{N}(0, H_r^{-1})$, and the expected update shifts from gradient descent $\nabla f$ to Newton-style descent $H_r^{-1}\nabla f$.
+HiSo first decouples "scalar communication" from specific optimizers and proposes a general framework (Algorithm 1): as long as the update direction can be written in the form of "scalar + state," any optimizer can be integrated into this dimension-independent communication protocol, rather than being restricted to ZO-SGD as in DeComFL. Within this framework, training progresses through "communication rounds $r$": the server first broadcasts aggregated scalars (according to which clients reconstruct the current global model without transmitting the entire model). Sampled clients run $\tau$ local update steps—this step specifically involves **Hessian-guided zeroth-order gradient estimation**, replacing isotropic zeroth-order perturbations with perturbations warped by the Hessian $z \sim \mathcal{N}(0, H_r^{-1})$. Consequently, the expectation of each update step changes from standard gradient descent $\nabla f$ to Newton-style $H_r^{-1}\nabla f$. Clients upload only a single gradient scalar $g$. The server averages these scalars to obtain the global update $\Delta x_r$ and then performs **zero-communication diagonal Hessian learning** (updating $H_{r+1}$ via EMA). The new $H_{r+1}$ enters the next round to continue warping perturbations. Crucially, $H_r$ can be reconstructed for free from the scalars already being transmitted.
 
-### Key Design 1: Hessian-Guided Zeroth-Order Gradient Estimation
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    S0["Global Model + Diagonal Hessian H_r"] -->|"Downlink<br/>Broadcast Aggregated Scalars"| C
+    subgraph C["1. Hessian-guided ZO Gradient Estimation<br/>(Client Local Updates ×τ steps)"]
+        direction TB
+        A["Reconstruct Local Model<br/>without full model transmission"] --> B["Warp random perturbation direction<br/>using H_r inverse square root"]
+        B --> D["Two forward passes to calculate scalar g<br/>Expectation ≈ Newton direction"]
+    end
+    C -->|"Uplink<br/>Scalar g only"| E["Server aggregates<br/>scalar mean to get Δx_r"]
+    E --> G["Update Global Model<br/>x_(r+1)"]
+    E --> F["2. Zero-comm Diagonal Hessian Learning<br/>EMA update H_(r+1) using Δx_r"]
+    F -->|"Next Round"| S0
+```
 
-- **Function**: Upgrades ZO gradient estimation from isotropic search to curvature-guided directional search.
-- **Mechanism**: Local updates are formalized as a subproblem minimizing gradient estimation error (Eqs. 5–6), and the optimal ascent direction is derived under the scalar representation constraint. The solution is $\Delta x = \frac{1}{\mu}[f(x + \mu H_r^{-1/2}u) - f(x)] \cdot H_r^{-1/2}u$, whose expectation satisfies $\mathbb{E}[\Delta x] \approx H_r^{-1}\nabla f(x)$ — equivalent to natural gradient / Newton descent. Crucially, each update still produces only one scalar $g$, fully preserving dimension-free communication.
-- **Design Motivation**: $H_r^{-1/2}$ transforms the isotropic search into a non-uniform search aligned with the Hessian eigendirections — finer resolution along high-curvature directions and coarser along low-curvature ones — substantially reducing gradient estimation variance.
+### Key Designs
 
-### Key Design 2: Zero-Communication-Cost Global Diagonal Hessian Learning
+**1. Hessian-guided Zeroth-order Gradient Estimation: Aligning Search with Curvature**
 
-- **Function**: Synchronously maintains a global diagonal Hessian approximation on both the server and clients without any additional communication overhead.
-- **Mechanism**: An Adam-style EMA is applied to the globally aggregated updates: $H_{r+1} = (1-\nu)H_r + \nu \,\text{Diag}([\Delta x_r]^2 + \epsilon I)$. The key observation is that $\Delta x_r$ can be fully reconstructed from scalars and random seeds (information already used in the model reconstruction step), making Hessian computation entirely free — requiring no extra communication and no additional function evaluations.
-- **Design Motivation**: The diagonal approximation avoids $d^2$ storage; EMA smoothing prevents noisy oscillations; $\epsilon$ ensures positive definiteness — conceptually consistent with RMSProp but applied to the federated zeroth-order setting.
+Standard ZO-SGD utilizes isotropic directions $u \sim \mathcal{N}(0, I)$ to probe gradients, which is equivalent to equal-weighted searching in all directions. This ignores the massive differences between high-curvature and low-curvature directions in the LLM parameter space, leading to high variance and slow convergence. HiSo formalizes the single-step local update as a subproblem (Eq. 5-6) of "minimizing gradient estimation error under scalar representation constraints." The derived ascent direction is $\Delta x = \frac{1}{\mu}[f(x + \mu H_r^{-1/2}u) - f(x)] \cdot H_r^{-1/2}u$. Here, $H_r^{-1/2}$ reshapes isotropic perturbations into non-uniform searches along Hessian eigenvectors: probing more finely in high-curvature directions and more coarsely in low-curvature ones. Its expectation $\mathbb{E}[\Delta x] \approx H_r^{-1}\nabla f(x)$ corresponds to natural gradient/Newton descent, significantly suppressing gradient estimation variance. Crucial to this step is that it still generates only one scalar $g$ for upload, maintaining the dimension-independent communication property.
 
-### Key Design 3: Variance Compression Theory via Low Whitening Rank
+**2. Zero-communication Diagonal Hessian Learning: Turning Constraints into a Free Lunch**
 
-- **Function**: Provides rigorous theoretical justification for the acceleration brought by Hessian guidance.
-- **Mechanism**: The paper introduces the "whitening rank" $\zeta = \text{Tr}(H^{-1/2}\Sigma H^{-1/2})$ to measure the quality of the Hessian approximation. When $H$ is a good approximation, $\zeta \ll L\kappa \ll Ld$, and the ZO gradient variance is compressed from the standard $Ld$ to $\zeta$ — improving the convergence rate from $\mathcal{O}(\sqrt{Ld/mR})$ to $\mathcal{O}(\sqrt{\zeta/mR})$, independent of both $d$ and $L$.
-- **Design Motivation**: The Hessian eigenvalue spectrum of LLMs exhibits a heavy-tailed distribution (with effective rank far smaller than dimension); the whitening operation induced by the diagonal Hessian approximation effectively flattens this distribution.
+Preconditioning typically requires transmitting $O(d)$ or even $O(d^2)$ second-order information, which conflicts with scalar-only communication goals. HiSo's ingenuity lies in noticing that the globally aggregated update $\Delta x_r$ is already fully reconstructible from scalars and random seeds (information already utilized in the model reconstruction step). Thus, computing the Hessian based on it is "free"—requiring no extra communication and no additional function evaluations. Specifically, an Adam-style EMA is used to maintain a diagonal approximation $H_{r+1} = (1-\nu)H_r + \nu \, \text{Diag}([\Delta x_r]^2 + \epsilon I)$ synchronously on the server and clients. The diagonal form avoids $d^2$ storage, EMA smooths noise, and $\epsilon$ ensures positive definiteness. The philosophy aligns with RMSProp but is adapted for the zeroth-order FL context.
+
+**3. Low Whitening Rank Theory: Explaining the Acceleration**
+
+To explain why Hessian guidance accelerates convergence, the paper introduces "whitening rank" $\zeta = \text{Tr}(H^{-1/2}\Sigma H^{-1/2})$ to measure the quality of the Hessian approximation. When $H$ is a good approximation, $\zeta \ll L\kappa \ll Ld$. Consequently, the variance of the ZO gradient is compressed from the standard $Ld$ to $\zeta$, and the convergence rate improves from $\mathcal{O}(\sqrt{Ld/mR})$ to $\mathcal{O}(\sqrt{\zeta/mR})$—becoming independent of model dimension $d$ and the Lipschitz constant $L$. This conclusion is grounded in the fact that LLM Hessian eigenvalues follow a long-tail distribution (effective rank is much smaller than the dimension). The whitening operation of the diagonal Hessian approximation successfully flattens this long tail, making $\zeta$ significantly smaller than the worst-case $Ld$.
 
 ### Loss & Training
 
-Standard federated learning objective: $\min_x f(x) = \frac{1}{M}\sum_{i=1}^M f_i(x)$. A subset of clients is uniformly sampled per round; each client performs $\tau$ local update steps before uploading a scalar. The Hessian is updated once per round via $\tau$-step EMA at the beginning of each round.
+Ours optimizes the standard federated objective $\min_x f(x) = \frac{1}{M}\sum_{i=1}^M f_i(x)$. In each round, a subset of clients is uniformly sampled. Chosen clients perform $\tau$ local update steps and upload only scalars. The diagonal Hessian is updated once at the start of each round via EMA of these $\tau$ steps; thus, curvature information maintenance is aligned with local steps without increasing communication.
 
 ## Key Experimental Results
 
-### Main Results: HiSo Communication Round Reduction (Table 2)
+### Main Results: HiSo Communication Round Acceleration (Table 2)
 
-| Model | Method | SST-2 Rounds | SST-2 Speedup | QQP Rounds | QQP Speedup | SQuAD Rounds | SQuAD Speedup |
-|-------|--------|-------------|--------------|-----------|------------|-------------|--------------|
+| Model | Method | SST-2 Rounds | SST-2 Gain | QQP Rounds | QQP Gain | SQuAD Rounds | SQuAD Gain |
+|------|------|-----------|-----------|---------|---------|-----------|-----------|
 | OPT-350M | DeComFL | 550 | 1× | 775 | 1× | 1350 | 1× |
 | | **HiSo** | **275** | **2×** | **425** | **1.8×** | **250** | **5.4×** |
 | OPT-1.3B | DeComFL | 1500 | 1× | 1125 | 1× | 350 | 1× |
@@ -82,12 +89,12 @@ Standard federated learning objective: $\min_x f(x) = \frac{1}{M}\sum_{i=1}^M f_
 | OPT-2.7B | DeComFL | 1250 | 1× | 1475 | 1× | 450 | 1× |
 | | **HiSo** | **775** | **1.6×** | **975** | **1.5×** | **200** | **2.3×** |
 
-Communication cost savings: 29%–80% (e.g., OPT-350M SQuAD reduces from 52.73 KB to 9.77 KB, an 81% reduction).
+Communication cost savings: 29%~80% (e.g., OPT-350M SQuAD reduced from 52.73 KB to 9.77 KB, an 81% reduction).
 
-### Comprehensive Baseline Comparison: LLM Fine-Tuning Accuracy and Communication Cost (Table 3)
+### Comprehensive Baseline Comparison: LLM Fine-tuning Accuracy and Communication (Table 3)
 
-| Model | Method | SST-2 Acc | SST-2 Comm. | QQP Acc | QQP Comm. | SQuAD F1 | SQuAD Comm. |
-|-------|--------|----------|------------|---------|----------|----------|------------|
+| Model | Method | SST-2 Acc | SST-2 Comm | QQP Acc | QQP Comm | SQuAD F1 | SQuAD Comm |
+|------|------|----------|-----------|---------|---------|----------|-----------|
 | OPT-125M | FedAvg | 87.63% | 0.15 TB | 61.21% | 0.08 TB | 37.27 | 0.05 TB |
 | | FedAdam | 88.29% | 0.30 TB | 63.18% | 0.06 TB | 37.98 | 0.03 TB |
 | | DeComFL | 85.21% | 22.92 KB | 60.11% | 32.17 KB | 34.12 | 17.42 KB |
@@ -103,40 +110,40 @@ Communication cost savings: 29%–80% (e.g., OPT-350M SQuAD reduces from 52.73 K
 
 ### Key Findings
 
-- **HiSo consistently outperforms DeComFL**: Across all model scales (OPT-125M to 2.7B) and all tasks, HiSo achieves higher accuracy with fewer communication rounds. Maximum speedup is 5.4× (OPT-350M SQuAD); minimum is 1.4× (OPT-1.3B SST-2).
-- **Communication gap versus first-order methods is enormous**: HiSo operates at the KB level (7–97 KB), while first-order methods require TBs (0.03–4.73 TB) — a gap of up to **90 million times** (e.g., FedZO at 4.73 TB vs. HiSo at 49.18 KB).
-- **Accuracy gap versus first-order methods is acceptable**: HiSo achieves 90.34% on OPT-1.3B SST-2 vs. FedAdam at 92.86% — a 2.5 percentage point gap — while reducing communication from 0.79 TB to 49.18 KB.
-- **Hessian EMA parameter $\nu$ is robust**: Different values of $\nu$ have negligible impact on convergence and final accuracy.
-- **Learned diagonal Hessian exhibits a heavy-tailed distribution**: Consistent with the low effective rank assumption, empirically validating the theoretical foundation.
+- **HiSo vs DeComFL clear victory**: Across all model scales (OPT-125M ~ 2.7B) and all tasks, HiSo achieves higher accuracy with fewer communication rounds. Maximum acceleration is 5.4× (OPT-350M SQuAD), and the minimum is 1.4× (OPT-1.3B SST-2).
+- **Extreme Communication Savings vs 1st-order Methods**: HiSo's communication costs are in KB (7~97 KB), while first-order methods require TB (0.03~4.73 TB). The gap can reach **90 million times** (e.g., FedZO 4.73 TB vs HiSo 49.18 KB).
+- **Acceptable Accuracy Gap vs 1st-order Methods**: On SST-2 for OPT-1.3B, HiSo reaches 90.34% vs FedAdam's 92.86%, a 2.5 percentage point difference while reducing communication costs from 0.79 TB to 49.18 KB.
+- **Robust Hessian EMA Parameter $\nu$**: Different values of $\nu$ have negligible impact on convergence and final accuracy.
+- **Learned Hessian Diagonals exhibit Long-tail Distribution**: This aligns with the low effective rank hypothesis, validating the theoretical foundation.
 
 ## Highlights & Insights
 
-- **"Free lunch" design philosophy**: Hessian information is extracted from existing global scalars (already used for model reconstruction) at zero additional communication cost — turning the "constraint" (scalar communication) into an "advantage" (free Hessian).
-- **Theoretical breakthrough**: This is the first result in zeroth-order FL achieving simultaneously dimension-free and Lipschitz-free convergence rates ($\mathcal{O}(\sqrt{\zeta/mR})$), while also resolving the open problem of providing low effective rank guarantees under multi-step local updates in DeComFL.
-- **General framework contribution**: Algorithm 1 decouples scalar communication from specific optimizers, enabling future integration of techniques such as momentum and variance reduction.
-- **"Whitening rank" concept**: $\zeta = \text{Tr}(H^{-1/2}\Sigma H^{-1/2})$ provides a tighter variance upper bound than the effective rank $\kappa$, theoretically explaining why ZO convergence in practice is far faster than the $\mathcal{O}(d)$ worst-case bound.
+- **"Free Lunch" Design Philosophy**: Hessian information is extracted from existing global scalars (which are already used for model reconstruction), requiring zero extra communication—transforming a "constraint" (scalar communication) into an "advantage" (free Hessian).
+- **Theoretical Breakthrough**: First result to achieve dimension-independent and Lipschitz-independent convergence rates ($\mathcal{O}(\sqrt{\zeta/mR})$) in zeroth-order FL, while solving the open problem of DeComFL’s inability to provide low effective rank guarantees under multi-step local updates.
+- **General Framework Contribution**: Algorithm 1 decouples scalar communication from specific optimizers, allowing future integration of more optimization techniques (e.g., momentum, variance reduction).
+- **"Whitening Rank" Concept**: $\zeta = \text{Tr}(H^{-1/2}\Sigma H^{-1/2})$ provides a tighter variance upper bound than "effective rank" $\kappa$, theoretically explaining why ZO converges much faster in practice than the $\mathcal{O}(d)$ worst-case scenario.
 
 ## Limitations & Future Work
 
-- The diagonal Hessian is a coarse approximation — off-diagonal curvature information (e.g., inter-parameter interactions) is entirely ignored, which may reduce effectiveness for highly coupled parameter spaces.
-- Whether the low effective rank and whitening assumptions hold across all LLM layers remains difficult to verify formally; the paper relies on indirect experimental support.
-- Although HiSo generally reduces communication, the cost on OPT-1.3B QQP (96.67 KB) exceeds that of DeComFL (43.95 KB), indicating that the speedup is not uniform across all settings.
-- Evaluation is limited to classification and QA tasks; generative tasks (e.g., text generation, dialogue) are not tested.
-- The current formulation does not include a momentum term (resembling RMSProp rather than Adam); the paper mentions this as a possible extension but provides no experiments.
+- Diagonal Hessian is a coarse approximation—off-diagonal curvature information (e.g., parameter interactions) is completely ignored, which may reduce effectiveness in highly coupled parameter spaces.
+- The low effective rank + whitening assumption may not hold for all LLM layers. The paper acknowledges this is difficult to verify but supports it indirectly with experiments.
+- While HiSo's accuracy is closer to first-order methods, the communication cost on OPT-1.3B QQP (96.67 KB) is higher than DeComFL (43.95 KB), indicating that acceleration is not uniform across all scenarios.
+- Validated only on classification/QA tasks; generative tasks (e.g., continuation, dialogue) were not tested.
+- Currently lacks momentum terms (similar to RMSProp rather than Adam); the paper mentions extensibility but experiments are absent.
 
 ## Related Work & Insights
 
-- **vs. DeComFL**: HiSo strictly generalizes DeComFL (reducing to DeComFL when $H_r \equiv I$); both use scalar communication, but HiSo achieves 1.4–5.4× speedup and provides theoretical coverage for multi-step local updates.
-- **vs. FedAdam/FedYogi**: First-order adaptive FL methods achieve higher accuracy but require $O(d)$ communication. HiSo approximately achieves similar adaptive effects under the scalar communication constraint.
-- **vs. Hessian-aware ZO (single-machine)**: Ye et al. (2018) and Zhao et al. (2025) validate the effectiveness of Hessian-guided ZO in single-machine settings; HiSo is the first to extend this to federated scalar communication and resolves the Hessian transmission problem.
-- **Insights**: The generality of the scalar communication framework suggests that variance reduction, momentum, and other techniques could potentially be incorporated at no additional communication cost, leaving substantial room for improvement in communication-constrained federated optimization.
+- **vs DeComFL**: HiSo is a strict generalization of DeComFL (degenerating to DeComFL when $H_r \equiv I$), providing 1.4~5.4× acceleration within the same scalar communication framework and offering theory that covers multi-step local updates.
+- **vs FedAdam/FedYogi**: First-order adaptive FL methods achieve higher accuracy but require $O(d)$ communication. HiSo achieves a similar adaptive effect within the scalar-only constraint.
+- **vs Hessian-aware ZO (Centralized)**: Ye et al. (2018) and Zhao et al. (2025) validated Hessian ZO effectiveness in centralized settings; HiSo generalizes this to the federated scalar communication context and solves the Hessian communication problem.
+- **Insight**: The flexibility of the scalar-only communication framework means that techniques like variance reduction and momentum might be introduced "for free," suggesting significant room for improvement in communication-constrained federated optimization.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ — An elegant combination of scalar communication and Hessian guidance; the "free Hessian" observation is insightful; theoretical contributions ($\zeta$ and whitening rank) are rigorous.
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Comprehensive grid across three OPT scales × three tasks, with full comparison against first-order and ZO baselines; generative task evaluation is missing.
-- Writing Quality: ⭐⭐⭐⭐ — Framework derivation and theoretical analysis are clear; the logical chain from subproblem to algorithm to theory is complete.
-- Value: ⭐⭐⭐⭐⭐ — Directly applicable to communication-constrained federated LLM fine-tuning; the general framework opens up substantial future research directions.
+- Novelty: ⭐⭐⭐⭐⭐ Perfect integration of scalar communication and Hessian guidance; the "free Hessian" observation is ingenious, and theoretical contributions ($\zeta$ and whitening rank) are solid.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Complete grid across three OPT scales and three tasks with comprehensive comparisons against first-order and ZO baselines, though lacking generative task validation.
+- Writing Quality: ⭐⭐⭐⭐ Clear derivation of the framework and theoretical analysis; the logical chain from subproblems to algorithm to theory is complete.
+- Value: ⭐⭐⭐⭐⭐ Highly practical for communication-constrained federated LLM fine-tuning; the universal framework opens space for subsequent research.
 
 <!-- RELATED:START -->
 
@@ -144,11 +151,11 @@ Communication cost savings: 29%–80% (e.g., OPT-350M SQuAD reduces from 52.73 K
 
 ## Related Papers
 
-- [\[ICML 2026\] Privacy Amplification in Differentially Private Zeroth-Order Optimization with Hidden States](../../ICML2026/llm_safety/privacy_amplification_in_differentially_private_zeroth-order_optimization_with_h.md)
-- [\[ICLR 2026\] Robustness and Radioactivity of Watermarks in Federated Learning May Be at Odds](watermark_robustness_and_radioactivity_may_be_at_odds_in_federated_learning.md)
 - [\[ICLR 2026\] SHE-LoRA: Selective Homomorphic Encryption for Federated Tuning with Heterogeneous LoRA](she-lora_selective_homomorphic_encryption_for_federated_tuning_with_heterogeneou.md)
 - [\[ICLR 2026\] OFMU: Optimization-Driven Framework for Machine Unlearning](ofmu_optimization-driven_framework_for_machine_unlearning.md)
 - [\[ICLR 2026\] PURGE: Reinforcement Unlearning via Group Relative Policy Optimization](reinforcement_unlearning_via_group_relative_policy_optimization.md)
+- [\[ICLR 2026\] EEPO: Exploration-Enhanced Policy Optimization via Sample-then-Forget](eepo_exploration-enhanced_policy_optimization_via_sample-then-forget.md)
+- [\[ICLR 2026\] wd1: Weighted Policy Optimization for Reasoning in Diffusion Language Models](wd1_weighted_policy_optimization_for_reasoning_in_diffusion_language_models.md)
 
 </div>
 

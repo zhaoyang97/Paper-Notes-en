@@ -2,106 +2,109 @@
 title: >-
   [Paper Note] Improving Long-Range Interactions in Graph Neural Simulators via Hamiltonian Dynamics
 description: >-
-  [ICLR 2026][Graph Learning][Graph Neural Simulators] This paper proposes Information-preserving Graph Neural Simulators (IGNS), which leverage port-Hamiltonian dynamical structure to prevent information dissipation on gr…
+  [ICLR 2026][Graph Learning][Port-Hamiltonian] Information-preserving Graph Neural Simulators (IGNS) are proposed to maintain non-dissipative information flow on graphs using port-Hamiltonian dynamics. Combining warmup initialization, geometric encoding, and multi-step training objectives, IGNS consistently outperforms existing graph neural simulators across six ph
 tags:
-  - "ICLR 2026"
-  - "Graph Learning"
-  - "Graph Neural Simulators"
-  - "Hamiltonian Dynamics"
-  - "Long-Range Interactions"
-  - "Port-Hamiltonian"
-  - "Multi-Step Training"
+  - ICLR 2026
+  - Graph Learning
+  - Port-Hamiltonian
 date: 2026-05-08
-content_hash: 34dc827d9307a8c1
+content_hash: 99c3fad129aa8a4e
 ---
-
 # Improving Long-Range Interactions in Graph Neural Simulators via Hamiltonian Dynamics
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2511.08185](https://arxiv.org/abs/2511.08185)  
 **Code**: [thobotics/neural_pde_matching](https://thobotics.github.io/neural_pde_matching)  
-**Area**: 3D Vision
-**Keywords**: Graph Neural Simulators, Hamiltonian Dynamics, Long-Range Interactions, Port-Hamiltonian, Multi-Step Training
+**Area**: 3D Vision  
+**Keywords**: Graph Neural Simulators, Hamiltonian Dynamics, Long-range Interactions, Port-Hamiltonian, Multi-step Training
 
 ## TL;DR
-This paper proposes Information-preserving Graph Neural Simulators (IGNS), which leverage port-Hamiltonian dynamical structure to prevent information dissipation on graphs. Combined with warmup initialization, geometric encoding, and multi-step training objectives, IGNS consistently outperforms existing graph neural simulators across 6 physics simulation benchmarks.
+Information-preserving Graph Neural Simulators (IGNS) are proposed to maintain non-dissipative information flow on graphs using port-Hamiltonian dynamics. Combining warmup initialization, geometric encoding, and multi-step training objectives, IGNS consistently outperforms existing graph neural simulators across six physical simulation benchmarks.
 
 ## Background & Motivation
-Physics system simulation is a core task in scientific computing. Traditional numerical solvers (e.g., finite element methods) incur prohibitive computational costs at high accuracy requirements. Graph Neural Simulators (GNS) can accelerate simulation by orders of magnitude by learning dynamics on graph-structured data. However, existing GNS face two fundamental challenges: (1) **Difficulty modeling long-range interactions** — message passing loses information between distant nodes due to over-smoothing and over-squashing after multiple layers; (2) **Error accumulation** — errors grow rapidly during autoregressive rollout after single-step training. Existing implicit/explicit denoising objectives can only mitigate local noise and fail to capture low-frequency drift that emerges over multiple steps. The core idea is to exploit the information-preserving property of Hamiltonian dynamics so that information is not dissipated on the graph, enabling effective long-range propagation and stable multi-step rollout.
+Physical system simulation is a core task in scientific computing, where traditional numerical solvers (e.g., Finite Element Methods) are computationally expensive under high-precision requirements. Graph Neural Simulators (GNS) accelerate simulations by several orders of magnitude by learning dynamics on graph-structured data. However, existing GNS face two fundamental problems: (1) **Difficulty in modeling long-range interactions**—the message-passing mechanism loses information between distant nodes due to over-smoothing and over-squashing after stacking multiple layers; (2) **Error accumulation**—errors amplify rapidly during autoregressive rollout after single-step training. Existing implicit/explicit denoising objectives only mitigate local noise and fail to capture low-frequency drifts occurring after multiple steps. The **Core Idea** is to leverage the information-preserving properties of Hamiltonian dynamics to prevent information dissipation on the graph, thereby enabling effective long-range propagation and stable multi-step rollout.
 
 ## Method
 
 ### Overall Architecture
-IGNS takes initial node states $\bar{\mathbf{X}}$ as input, first executing $l$ steps of a **warmup phase** (which propagates global context via message passing without advancing time) to produce enhanced initial states $\mathbf{X}(0) = \bar{\mathbf{X}}^{(l)}$. The system then enters the **simulation phase**, where it evolves according to port-Hamiltonian dynamics, with a multi-step loss $\mathcal{L}_{\text{multi-step}}$ supervising all intermediate predictions.
+IGNS seeks to resolve the chronic issues of information dissipation in long-range interactions and error accumulation in multi-step rollouts. The **Mechanism** involves embedding graph dynamics within a port-Hamiltonian structure: first, a warmup phase without time progression diffuses the global context; second, geometric relationships of irregular meshes are encoded as static priors into edges and injected into external force terms; third, the system evolves forward according to conserved Hamiltonian dynamics, supervised by a multi-step loss covering the entire window. The conservation structure serves as the foundation of the pipeline—ensuring that global information gathered during warmup and gradients backpropagated from distant time steps are not attenuated, thus simultaneously enabling long-range propagation and stable rollout.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    IN["Input: Graph structure<br/>Initial node state X"] --> WU["Warmup Phase<br/>l rounds of MP without time progression"]
+    GEO["Geometric Encoding<br/>Relative displacement/distance as static priors"] --> PH["Port-Hamiltonian Formulation<br/>Conserved evolution via Symplectic Euler"]
+    WU -->|"Enhanced initial state X(0)"| PH
+    PH --> TRAJ["Output: Predicted trajectory<br/>State q, p at each step"]
+    TRAJ -. Training Supervision .-> ML["Multi-step Training Objective<br/>Covers K-step window"]
+```
 
 ### Key Designs
 
-1. **Port-Hamiltonian Formulation**: IGNS parameterizes the graph dynamics as a port-Hamiltonian system:
-    $\dot{\mathbf{x}}_i = \mathbf{J} \nabla_{\mathbf{x}_i} H_\theta(t, \mathbf{X}) - \begin{bmatrix} 0 \\ \mathbf{D}_\theta \nabla_{\mathbf{p}_i} H_\theta \end{bmatrix} + \begin{bmatrix} 0 \\ \mathbf{r}_\theta(t, \mathbf{X}) \end{bmatrix}$
-   where $\mathbf{J}$ is a skew-symmetric matrix and $H_\theta$ is a learnable Hamiltonian. The pure Hamiltonian component ensures energy conservation and information non-dissipation; the damping term $\mathbf{D}_\theta$ captures non-conservative effects (e.g., frictional dissipation); and the external force term $\mathbf{r}_\theta$ models external driving. The Hamiltonian is parameterized via message passing, incorporating state information from both the node and its neighbors. A symplectic Euler integrator is employed to preserve energy conservation properties.
+**1. Port-Hamiltonian Formulation: Conserving Information on the Graph**
 
-   **Core Advantage**: In the absence of damping and external forces, the system is purely rotational (divergence-free), so information is fully preserved. Theoretical analysis proves that the sensitivity matrix norm $\|\partial \mathbf{x}(t) / \partial \mathbf{x}(s)\| \geq 1$, guaranteeing non-vanishing gradients and supporting effective long-range information propagation.
+To address information loss from over-smoothing/over-squashing, IGNS parameterizes dynamics as a port-Hamiltonian system: $\dot{\mathbf{x}}_i = \mathbf{J} \nabla_{\mathbf{x}_i} H_\theta(t, \mathbf{X}) - \begin{bmatrix} 0 \\ \mathbf{D}_\theta \nabla_{\mathbf{p}_i} H_\theta \end{bmatrix} + \begin{bmatrix} 0 \\ \mathbf{r}_\theta(t, \mathbf{X}) \end{bmatrix}$. Here, $\mathbf{J}$ is a skew-symmetric matrix; $H_\theta$ is a learnable Hamiltonian parameterized via message passing that consumes both node and neighbor states; the pure Hamiltonian part handles energy conservation and information preservation, the damping term $\mathbf{D}_\theta$ captures non-conservative effects like friction, and the external force term $\mathbf{r}_\theta$ models external drives. A Symplectic Euler integrator is used to maintain energy conservation properties. It is effective because the system is purely rotational (divergence-free) in the absence of damping and external forces, fully preserving information; theoretically, the sensitivity matrix norm is bounded below by $\|\partial \mathbf{x}(t) / \partial \mathbf{x}(s)\| \geq 1$ (Theorem 2). This prevents exponential gradient decay common in GCNs, supporting effective long-range propagation. Theorem 1 further proves that IGNS reduces to a neural oscillator framework and can approximate any mapping from initial conditions to solutions at time $\tau$, ensuring expressivity is not compromised by conservation constraints.
 
-2. **Warmup Phase**: Each message-passing step propagates information only to direct neighbors, yet long-range interactions are often critical from the very first simulation step. IGNS executes $l$ additional rounds of message passing before formal simulation (without advancing time), allowing each node to aggregate information within radius $l$. Crucially, due to the energy-conserving nature of the Hamiltonian core, the global context gathered during warmup is preserved throughout the entire rollout, rather than being dissipated as in standard GNNs.
+**2. Warmup Phase: Compensating for Missing Global Context**
 
-3. **Geometric Information Encoding**: Accurately encoding geometric structure on irregular meshes is essential for physics simulation. IGNS encodes relative displacement vectors $\mathbf{s}_{ij}$ and distances $\mathbf{d}_{ij}$ into edge features used to form the external force term. Unlike MeshGraphNets, IGNS does not update edge messages at each time step; instead, edge information serves as a static prior to weight neighbor messages, reducing overfitting to specific mesh configurations.
+Message passing only moves information to direct neighbors at each step, yet long-range interactions are often critical from the first step in physical simulations. Propagating information step-by-step is often too slow. IGNS executes $l$ rounds of extra message passing (without advancing time) before the formal temporal propagation, allowing each node to aggregate information within a radius $l$ to obtain an enhanced initial state $\mathbf{X}(0) = \bar{\mathbf{X}}^{(l)}$. The conservation property of the Hamiltonian core ensures this aggregated global information is preserved throughout the rollout, unlike standard GNNs where it dissipates quickly.
 
-4. **Multi-Step Training Objective**: Given a window $(q^{(t)}, \ldots, q^{(t+K)})$, the model rolls out from $q^{(t)}$ and optimizes all intermediate predictions:
-    $\mathcal{L}_{\text{multi-step}} = \sum_{\tau=1}^{K} \left( \|\hat{q}^{(t+\tau)} - q^{(t+\tau)}\|_2^2 + \|\hat{p}^{(t+\tau)} - p^{(t+\tau)}\|_2^2 \right)$
-   The multi-step loss is naturally compatible with IGNS: the non-dissipative core ensures signals do not decay over time, gradients from distant future steps do not vanish, and the model can genuinely leverage supervision across the full trajectory.
+**3. Geometric Encoding: Injecting Geometry as Static Priors on Irregular Meshes**
 
-### Theoretical Guarantees
-- **Universality (Theorem 1)**: IGNS can approximate any mapping from initial conditions to the solution at time $\tau$, proven by reducing IGNS to the neural oscillator framework.
-- **Long-Range Propagation (Theorem 2)**: The sensitivity matrix norm is lower-bounded by 1, guaranteeing non-vanishing gradients — in contrast to the exponential decay observed in GCNs.
+Accurate encoding of geometric structure is vital for physical simulation on irregular meshes. IGNS encodes relative displacement vectors $\mathbf{s}_{ij}$ and distances $\mathbf{d}_{ij}$ into edge features to form external force terms. Unlike MeshGraphNets which updates edge messages at every time step, IGNS treats edge information as static priors to weight neighbor messages, reducing overfitting to specific grid configurations.
+
+**4. Multi-step Training Objective: Covering the Trajectory with Supervision**
+
+Focusing on the pain point of error accumulation in autoregressive rollouts, IGNS performs a rollout from $q^{(t)}$ for a given window $(q^{(t)}, \ldots, q^{(t+K)})$ and optimizes all intermediate predictions: $\mathcal{L}_{\text{multi-step}} = \sum_{\tau=1}^{K} \left( \|\hat{q}^{(t+\tau)} - q^{(t+\tau)}\|_2^2 + \|\hat{p}^{(t+\tau)} - p^{(t+\tau)}\|_2^2 \right)$. This objective naturally aligns with IGNS—the non-dissipative core ensures signals do not decay over time, preventing gradient vanishing for distant steps. The model effectively utilizes supervision from the entire trajectory rather than just learning the next step.
 
 ## Key Experimental Results
 
 ### Main Results
-The paper evaluates on 6 benchmarks spanning Lagrangian and Eulerian systems:
+The paper evaluates the model on six benchmarks, categorized into Lagrangian and Eulerian systems:
 
-| Dataset | Type | IGNS MSE | MGN MSE | Improvement |
+| Dataset | Type | IGNS MSE | MGN MSE | Gain |
 |--------|------|----------|---------|------|
-| Plate Deformation | Long-range propagation | **Best** | 1.27 | Both IGNS and MGN perform well, but IGNS does not overfit |
-| Impact Plate | Long-range propagation | **Best** | 3095.75 | IGNS leads by a large margin |
-| Sphere Cloth | Complex dynamics | **Best** (~25×10⁻³) | 32.07×10⁻³ | Significant improvement |
-| Wave Balls | Oscillatory dynamics | **Best** (~1.5×10⁻³) | 1.78×10⁻³ | Substantially outperforms all baselines |
-| Cylinder Flow | Fluid dynamics | **Best** | 12.08×10⁻³ | Comparable to GraphCON |
-| Kuramoto-Sivashinsky | Chaotic dynamics | 2.41×10⁻³ | 10.76×10⁻³ | Close to GraphCON |
+| Plate Deformation | Long-range | **Best** | 1.27 | Both IGNS & MGN perform well, but IGNS avoids overfitting |
+| Impact Plate | Long-range | **Best** | 3095.75 | IGNS leads by a large margin |
+| Sphere Cloth | Complex Dynamics | **Best** (~25×10⁻³) | 32.07×10⁻³ | Significant improvement |
+| Wave Balls | Oscillatory Dynamics | **Best** (~1.5×10⁻³) | 1.78×10⁻³ | Substantial lead over all baselines |
+| Cylinder Flow | Fluid Dynamics | **Best** | 12.08×10⁻³ | Comparable to GraphCON |
+| Kuramoto-Sivashinsky | Chaotic Dynamics | 2.41×10⁻³ | 10.76×10⁻³ | Close to GraphCON |
 
 ### Ablation Study
 
-| Configuration | Key Metric | Notes |
+| Configuration | Key Metric | Description |
 |------|---------|------|
-| Data efficiency (Plate Def.) | IGNS advantage largest at 100 samples | Port-Hamiltonian inductive bias reduces data dependence |
-| Warmup steps $l$ | Consistent improvement from $l=1$ to $l=30$ | $l=5$ yields the largest gain; diminishing returns beyond $l=30$ |
-| Time-varying weight matrix (IGNS vs IGNSti) | IGNS performs better over long horizons | Time-varying parameterization improves expressivity for non-stationary dynamics |
-| Longer rollout ($T=100$) | IGNS remains stable | Validates long-horizon stability |
+| Data Efficiency (Plate Def.) | IGNS superior at 100 samples | Port-Hamiltonian inductive bias reduces data dependence |
+| Warmup Steps $l$ | Improvement $l=1 \to l=30$ | Largest gain at $l=5$; diminishing returns for $l>30$ |
+| Time-varying Weight Matrix | IGNS better in long-term | Time-varying parameterization improves expressivity for non-stationary dynamics |
+| Longer Rollout ($T=100$) | IGNS remains stable | Verifies long-term stability |
 
 ### Key Findings
-- The port-Hamiltonian structure consistently outperforms standard GNS **across all tasks**.
-- GraphCON is a special case of IGNS (with unit mass matrix) and is theoretically less expressive.
-- Although MGN is competitive on Plate Deformation, analysis reveals this stems from its large parameter count due to non-shared processors and geometric overfitting.
-- IGNS substantially outperforms baselines on Wave Balls, as port-Hamiltonian dynamics are a natural generalization of the wave equation.
-- The three newly introduced benchmarks (Plate Deformation, Sphere Cloth, Wave Balls) effectively probe long-range and oscillatory dynamics.
+- The port-Hamiltonian structure consistently leads standard GNS across **all tasks**.
+- GraphCON is a special case of IGNS (identity mass matrix) and is theoretically less expressive.
+- While MGN is competitive on Plate Deformation, analysis suggests it relies on massive parameters from non-shared processors and geometric overfitting.
+- IGNS far exceeds baselines in the Wave Balls task, as port-Hamiltonian systems are essentially generalizations of wave equations.
+- The three new benchmarks (Plate Deformation, Sphere Cloth, Wave Balls) effectively test long-range and oscillatory dynamics.
 
 ## Highlights & Insights
-- **A perfect integration of physical inductive bias and data-driven learning**: Hamiltonian dynamics do not hard-code physics but provide an information-preserving structural framework within which data-driven methods can learn.
-- **Theoretical-empirical consistency**: The two theorems (universality + information preservation) are not merely decorative — they directly explain why IGNS succeeds on long-range and multi-step tasks.
-- **Warmup design is simple yet effective**: The global context deficit in GNS is addressed in the most straightforward way — multiple rounds of message passing without advancing time.
-- **Highly parameter-efficient**: IGNS uses approximately 216K parameters versus MGN's 1.8M, achieving superior performance with an order-of-magnitude reduction in model size.
+- **Fusion of Physics Inductive Bias and Data-driven Methods**: Hamiltonian dynamics do not hard-code physics but provide a structural framework for information preservation, allowing data-driven methods to learn within it.
+- **Theory-Practice Consistency**: Two theorems (universality and information preservation) provide a direct explanation for the success of IGNS in long-range and multi-step tasks.
+- **Effective Warmup Design**: The missing global context problem in GNS is solved simply through multiple rounds of message passing without time progression.
+- **High Parameter Efficiency**: IGNS uses ~216K parameters compared to 1.8M in MGN, achieving better performance with an order of magnitude fewer parameters.
 
 ## Limitations & Future Work
-- Currently supports only open-loop forward simulation; closed-loop control is not supported.
-- The warmup step count $l$ requires manual selection, and the optimal value varies across tasks.
-- For systems with strong global coupling (e.g., periodic boundary conditions), the local information diffusion during warmup remains limited.
-- The advantage on Eulerian systems (Cylinder Flow, KS) is less pronounced than on Lagrangian systems.
-- Integration with hierarchical or rewiring-based approaches has not been explored.
+- Currently only supports open-loop forward simulation; closed-loop control is not yet supported.
+- The number of warmup steps $l$ requires manual selection, with optimal values varying by task.
+- For systems with strong global characteristics (e.g., periodic boundary conditions), local information diffusion via warmup remains limited.
+- Gains on Eulerian systems (Cylinder Flow, KS) are less significant than on Lagrangian systems.
+- Integration with hierarchical or rewiring methods remains unexplored.
 
 ## Related Work & Insights
-- **Relation to MeshGraphNets**: MGN uses first-order explicit Euler integration with non-shared processors; IGNS uses second-order port-Hamiltonian dynamics with a symplectic integrator — a qualitative step forward from first- to second-order dynamics.
-- **Relation to GraphCON**: GraphCON is a special case of IGNS ($\mathbf{M}=\mathbf{I}$); IGNS is more expressive through learnable mass, damping, and stiffness matrices.
-- **Relation to Neural ODEs**: IGNS generalizes Neural ODEs to graph-based port-Hamiltonian systems, while enjoying formal theoretical guarantees.
-- **Insight**: The oscillatory nature of second-order dynamics is naturally suited to wave propagation and elastic systems in physics simulation.
+- **Relation to MeshGraphNets**: MGN uses 1st-order explicit Euler with non-shared processors; IGNS uses 2nd-order port-Hamiltonian with a symplectic integrator, representing a qualitative leap.
+- **Relation to GraphCON**: GraphCON is a special case of IGNS ($\mathbf{M}=\mathbf{I}$). IGNS offers stronger expressivity via learnable mass/damping/stiffness matrices.
+- **Relation to Neural ODE**: IGNS generalizes Neural ODEs to graph-based port-Hamiltonian systems while maintaining theoretical guarantees.
+- **Insight**: The oscillatory nature of 2nd-order dynamics is naturally suited for wave propagation and elastic systems in physical simulations.
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐⭐
@@ -115,11 +118,11 @@ The paper evaluates on 6 benchmarks spanning Lagrangian and Eulerian systems:
 
 ## Related Papers
 
-- [\[NeurIPS 2025\] Sketch-Augmented Features Improve Learning Long-Range Dependencies in Graph Neural Networks](../../NeurIPS2025/graph_learning/sketch-augmented_features_improve_learning_long-range_dependencies_in_graph_neur.md)
+- [\[ICLR 2026\] Towards Quantifying Long-Range Interactions in Graph Machine Learning: A Large Graph Dataset and a Measurement](towards_quantifying_long-range_interactions_in_graph_machine_learning_a_large_gr.md)
+- [\[ICML 2025\] On Measuring Long-Range Interactions in Graph Neural Networks](../../ICML2025/graph_learning/on_measuring_long-range_interactions_in_graph_neural_networks.md)
+- [\[ICLR 2026\] LRIM: a Physics-Based Benchmark for Provably Evaluating Long-Range Capabilities in Graph Learning](lrim_a_physics-based_benchmark_for_provably_evaluating_long-range_capabilities_i.md)
+- [\[ICLR 2026\] Geometric Graph Neural Diffusion for Stable Molecular Dynamics Simulations](geometric_graph_neural_diffusion_for_stable_molecular_dynamics_simulations.md)
 - [\[AAAI 2026\] Are Graph Transformers Necessary? Efficient Long-Range Message Passing with Fractal Nodes in MPNNs](../../AAAI2026/graph_learning/are_graph_transformers_necessary_efficient_long-range_messag.md)
-- [\[ICLR 2026\] LogicXGNN: Grounded Logical Rules for Explaining Graph Neural Networks](logicxgnn_grounded_logical_rules_for_explaining_graph_neural_networks.md)
-- [\[ICLR 2026\] Are We Measuring Oversmoothing in Graph Neural Networks Correctly?](are_we_measuring_oversmoothing_in_graph_neural_networks_correctly.md)
-- [\[ICLR 2026\] Cooperative Sheaf Neural Networks](cooperative_sheaf_neural_networks.md)
 
 </div>
 

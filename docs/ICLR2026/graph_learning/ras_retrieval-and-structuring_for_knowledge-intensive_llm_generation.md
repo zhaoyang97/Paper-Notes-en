@@ -2,163 +2,159 @@
 title: >-
   [Paper Note] RAS: Retrieval-And-Structuring for Knowledge-Intensive LLM Generation
 description: >-
-  [ICLR 2026][Graph Learning][Retrieval-Augmented Generation] This paper proposes RAS, a framework that dynamically constructs query-specific knowledge graphs at inference time for each input question. Through three stages…
+  [ICLR 2026][Graph Learning][Paper Note] Ours proposes the RAS framework, which dynamically constructs query-specific knowledge graphs at inference time. Through a three-stage process of iterative retrieval planning, text-to-triple transformation, and graph-augmented answering, RAS achieves structured reasoning. It delivers improvements of up to 7.0% and 8.7%
 tags:
-  - "ICLR 2026"
-  - "Graph Learning"
-  - "Retrieval-Augmented Generation"
-  - "Knowledge Graph Construction"
-  - "Iterative Retrieval"
-  - "Graph-Structured Reasoning"
-  - "LLM Generation"
+  - ICLR 2026
+  - Graph Learning
 date: 2026-05-08
-content_hash: 391e75da51fcd0a9
+content_hash: fa0d151b8099fdab
 ---
-
 # RAS: Retrieval-And-Structuring for Knowledge-Intensive LLM Generation
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2502.10996](https://arxiv.org/abs/2502.10996)  
-**Code**: Available  
-**Area**: Graph Learning
+**Code**: Yes  
+**Area**: Graph Learning  
 **Keywords**: Retrieval-Augmented Generation, Knowledge Graph Construction, Iterative Retrieval, Graph-Structured Reasoning, LLM Generation
 
 ## TL;DR
 
-This paper proposes RAS, a framework that dynamically constructs query-specific knowledge graphs at inference time for each input question. Through three stages—iterative retrieval planning, text-to-triple conversion, and graph-augmented answering—RAS achieves structured reasoning and attains improvements of up to 7.0% and 8.7% over prior methods on 7 knowledge-intensive benchmarks for open-source and closed-source LLMs, respectively.
+Ours proposes the RAS framework, which dynamically constructs query-specific knowledge graphs at inference time. Through a three-stage process of iterative retrieval planning, text-to-triple transformation, and graph-augmented answering, RAS achieves structured reasoning. It delivers improvements of up to 7.0% and 8.7% for open-source and closed-source LLMs, respectively, across 7 knowledge-intensive benchmarks.
 
 ## Background & Motivation
 
-Although RAG provides LLMs with external knowledge, retrieved text remains unstructured, giving rise to several issues:
+While RAG provides external knowledge to LLMs, the retrieved text is unstructured, leading to the following issues:
 
-**Fragile implicit reasoning chains**: LLMs must internally bridge logical gaps across disparate passages; failures lead to hallucinations.
+**Fragile implicit reasoning chains**: LLMs must internally bridge logical gaps between different segments; failure to do so results in hallucinations.
 
-**Existing KG-RAG methods rely on static global graphs**: Approaches such as GraphRAG require indexing an entire corpus—processing Wikipedia 2018 alone demands millions of LLM calls and tens of thousands of dollars.
+**Dependency of existing KG-RAG on static global graphs**: Methods like GraphRAG require building a graph of the entire corpus. For instance, Wikipedia 2018 would require millions of LLM calls and tens of thousands of dollars.
 
-**Global graph quality problems**: Mixing evidence from multiple documents may introduce contradictory or ambiguous relations (e.g., conflicting associations for the same drug).
+**Global graph quality issues**: Merging evidence from multiple documents may introduce contradictory or ambiguous relationships (e.g., positive and negative associations for the same drug).
 
-Interpretability research (Lindsey et al., 2025) indicates that LLM errors often stem from failures in implicit reasoning chains, reinforcing the necessity of explicit, structured intermediate knowledge.
+Interpretability studies (Lindsey et al., 2025) suggest that LLM errors often stem from failures in implicit reasoning chains, reinforcing the necessity for explicit structured intermediate knowledge.
 
-**Core Idea**: Rather than pre-building a global KG, RAS constructs a lightweight, query-specific knowledge graph *on demand* at inference time for each query.
+**Core Idea**: Instead of pre-building a global KG, RAS constructs a lightweight, "on-demand" query-specific knowledge graph for each query during inference.
 
 ## Method
 
 ### Overall Architecture
 
-The RAS inference pipeline consists of three iteratively applied stages:
+RAS aims to address the pain point where RAG retrieves scattered paragraphs, forcing the LLM to connect cross-paragraph logic mentally, which often fails. The mechanism avoids implicit connections by structuring retrieved text into a "query-specific" small knowledge graph during inference, on which the model bases its answer.
 
-1. **Planning (§3.1)**: Assesses the current knowledge state, decides whether retrieval is needed, and generates sub-queries.
-2. **Text Retrieval & Structuring (§3.2)**: Retrieves documents → extracts triples → incrementally merges them into a query-specific KG.
-3. **Answering (§3.3)**: Generates the final answer based on the accumulated structured knowledge.
+The entire process is a three-stage iterative loop: first, **Knowledge-aware Planning** determines if current knowledge is sufficient and generates focused sub-queries if not; second, **Text Retrieval & Structuring** retrieves documents using sub-queries, extracts triples, and incrementally merges them into the current query graph $G_Q$; finally, when knowledge is deemed sufficient, it enters **Knowledge-augmented Answering** to generate responses based on the accumulated graph. Multiple rounds (up to 5 iterations) can occur between planning and answering, with the graph growing each round. Crucially, all three stages are driven by a single Graph LLM—an LLM backbone with a Graph Neural Network (GNN) encoder, fine-tuned via LoRA using **structure-aware multi-task learning** to unify planning and answering into one model.
 
-The entire pipeline is driven by a unified Graph LLM combining graph neural network encoding and LoRA fine-tuning.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    Q["Input Question Q"] --> PLAN["Knowledge-aware Planning<br/>Determining knowledge sufficiency"]
+    PLAN -->|"[SUBQ] Generate focused sub-query"| RETR["Text Retrieval & Structuring<br/>Retrieve docs → Extract triples<br/>Incremental merge into G_Q"]
+    RETR -->|"GNN encoding G_Q feedback"| PLAN
+    PLAN -->|"[SUFFICIENT] / [NO_RETRIEVAL]"| ANS["Knowledge-augmented Answering<br/>Query graph as soft tokens<br/>Fed into LLM generation"]
+    ANS --> OUT["Final Answer A"]
+```
 
 ### Key Designs
 
-#### Knowledge-Aware Planning
+**1. Knowledge-aware Planning: Autonomous decision-making on retrieval**
 
-*Initial planning*: The model decides between [SUBQ] (retrieval required; initial sub-query equals the original question) and [NO_RETRIEVAL] (answer directly).
+This step directly addresses the fragility of implicit reasoning chains. Instead of forcing the LLM to resolve logic internally, it explicitly supplements missing knowledge step-by-step. Upon receiving a question, the model decides whether to follow [SUBQ] (requires retrieval) or [NO_RETRIEVAL] (answer using internal parameters). During iterations, the model makes decisions based on the current accumulated graph $G_i$ and the history of sub-queries $[q_0, g_0, ..., q_i, g_i]$. It either outputs [SUBQ] $q_{i+1}$ to refine the knowledge search or [SUFFICIENT] to transition to answering. The decision is given by:
 
-*Iterative planning*: Given the accumulated knowledge graph $G_i$ and the history of sub-query chains $[q_0, g_0, \ldots, q_i, g_i]$, the model generates either:
-- [SUBQ] $q_{i+1}$: a new focused sub-query to continue retrieval, or
-- [SUFFICIENT]: knowledge is adequate; proceed to answering.
+$$p_{i+1} \leftarrow \mathcal{M}(\text{GNN}(G_i); \text{INST}_{\text{Plan}}; [q_0, g_0, ..., q_i, g_i]; Q)$$
 
-$$p_{i+1} \leftarrow \mathcal{M}(\text{GNN}(G_i); \text{INST}_{\text{Plan}}; [q_0, g_0, \ldots, q_i, g_i]; Q)$$
+**2. Text Retrieval & Structuring: Dynamic graph construction and merging**
 
-#### Text Retrieval & Structuring
-
-1. **Text retrieval**: A dense retriever (default: Contriever-MS MARCO) retrieves top-$k$ documents.
-2. **Text-to-Triples model**: A lightweight model $f_{t2t}$ based on LLaMA-3.2-3B-Instruct, trained on the WikiOfGraph dataset, converts text into $(s, r, o)$ triples.
-3. **Incremental knowledge enrichment**: Triples are converted into graph structures $g'_i = (V_i, E_i)$, node/edge attributes are encoded with Sentence-BERT, and the result is merged into the global query graph $G_Q$:
+This is the core differentiator from standard RAG. Instead of feeding raw text to the LLM, RAS structures it first. After obtaining a sub-query, a dense retriever (Contriever-MS MARCO) retrieves the top-k documents. A lightweight Text-to-Triples model $f_{t2t}$ (based on LLaMA-3.2-3B-Instruct, trained on WikiOfGraph) extracts $(s, r, o)$ triples. These form a local graph $g'_i = (V_i, E_i)$. Node and edge attributes are encoded via Sentence-BERT and incrementally merged into the query-specific graph $G_Q$:
 
 $$G_Q \leftarrow G_Q \cup g'_i$$
 
-#### Knowledge-Augmented Answering
+Constructing "on-demand query-specific graphs" instead of global KGs (like GraphRAG) avoids prohibitive costs and eliminates noise from contradictory multi-document evidence.
 
-The final answer is generated based on the encoded $G_Q$ and the sub-query chain:
+**3. Knowledge-augmented Answering: Structured graphs as soft tokens**
 
-$$A \leftarrow \mathcal{M}(\text{GNN}(G_Q); \text{INST}_{\text{Ans}}; [q_0, g_0, \ldots, q_i, g_i]; Q)$$
+When Planning determines knowledge is sufficient, the model generates the final answer based on the encoded query graph $G_Q$ and the sub-query chain:
 
-The GNN encodes the graph, and the resulting graph representation is fed into the LLM as soft tokens.
+$$A \leftarrow \mathcal{M}(\text{GNN}(G_Q); \text{INST}_{\text{Ans}}; [q_0, g_0, ..., q_i, g_i]; Q)$$
 
-#### Structure-Aware Multi-Task Learning
+The GNN encodes the entire graph into a representation fed as soft tokens into the LLM sequence. This anchors the answer to explicit structured knowledge.
 
-A single LLM is jointly trained on both Planning and Answering tasks using a standard next-token prediction objective. Parameter-efficient fine-tuning is performed via LoRA, while graph components are optimized simultaneously.
+**4. Structure-aware Multi-task Learning: Unified LLM for planning and answering**
+
+Planning and Answering tasks are not split between models; a single LLM is trained on both via standard next-token prediction, with random sampling between tasks. LoRA is used to fine-tune the backbone while simultaneously optimizing the GNN encoder parameters.
 
 ### Loss & Training
 
-- **Training data**: The HotpotQA-SUBQ dataset (208K samples) is constructed from HotpotQA, containing iterative sub-queries and [SUFFICIENT] / [NO_RETRIEVAL] labels.
-- **Backbone model**: LLaMA-2-7B or LLaMA-3-8B + Graph Transformer encoder.
-- **Training procedure**: LoRA fine-tuning + graph component parameter training; Planning and Answering tasks are randomly sampled in a multi-task setup.
-- **Triple extractor**: LLaMA-3.2-3B trained on WikiOfGraph, deployed with vLLM.
-- **Retrieval corpus**: Wikipedia 2018 (faiss index, split into 5 segments); Wikipedia 2020 for PopQA.
-- **Maximum iterations**: 5.
+- **Training Data**: HotpotQA-SUBQ (208K samples) built from HotpotQA, including iterative sub-queries and [SUFFICIENT]/[NO_RETRIEVAL] labels.
+- **Base Models**: LLaMA-2-7B or LLaMA-3-8B + Graph Transformer encoder.
+- **Training Strategy**: LoRA fine-tuning + graph component training, using multi-task random sampling.
+- **Triple Extractor**: LLaMA-3.2-3B trained on WikiOfGraph, deployed via vLLM.
+- **Retrieval Corpus**: Wikipedia 2018 (faiss index), Wikipedia 2020 for PopQA.
+- **Max Iterations**: 5.
 
 ## Key Experimental Results
 
 ### Main Results
 
-**7 benchmarks**: TriviaQA, 2WikiMultihopQA, PopQA (open-domain short-form QA), PubHealth, ARC-C (closed-book), ASQA, ELI5 (long-form generation).
+**7 Benchmarks**: TriviaQA, 2WikiMultihopQA, PopQA, PubHealth, ARC-C, ASQA, and ELI5.
 
-| Model | TQA (acc) | 2WQA (F1) | PopQA (acc) | Pub (acc) | ARC (acc) | ASQA (rg/mv) | ELI5 (rg/mv) |
-|-------|-----------|-----------|-------------|-----------|-----------|--------------|--------------|
+| Model | TQA(acc) | 2WQA(F1) | PopQA(acc) | Pub(acc) | ARC(acc) | ASQA(rg/mv) | ELI5(rg/mv) |
+|------|----------|----------|------------|----------|----------|-------------|-------------|
 | Self-RAG 7B | 66.4 | 25.1 | 54.9 | 72.4 | 67.3 | 35.7/74.3 | 17.9/35.6 |
 | RPG 7B | 65.1 | 33.6 | 56.0 | 73.4 | 65.4 | 37.6/84.4 | 19.1/46.4 |
-| **RAS 7B** | **72.7** | **42.1** | **58.3** | **74.7** | **68.5** | **37.2/95.2** | **19.7/47.8** |
+| **RAS 7B (Ours)** | **72.7** | **42.1** | **58.3** | **74.7** | **68.5** | **37.2/95.2** | **19.7/47.8** |
 | Sonnet-3.5+RAG | 72.5 | 53.7 | 57.3 | 53.9 | 87.1 | 38.8/61.6 | 20.2/32.3 |
-| **RAS Sonnet-3.5** | **77.6** | **57.7** | **62.3** | **71.3** | **93.9** | **39.1/70.5** | **23.3/37.7** |
+| **RAS Sonnet-3.5 (Ours)** | **77.6** | **57.7** | **62.3** | **71.3** | **93.9** | **39.1/70.5** | **23.3/37.7** |
 
-Compared with the previous SOTA (Self-RAG/RPG), RAS 7B achieves +9.7% on short-form QA and +7.9% on long-form generation.
+RAS 7B shows a **Gain** of 9.7% in short-form QA and 7.9% in long-form generation over Prev. SOTA (Self-RAG/RPG).
 
 ### Ablation Study
 
-| Variant | TQA | 2WQA | Pub | ASQA (rg/mv) |
-|---------|-----|------|-----|--------------|
-| RAS 7B (full) | 72.7 | 42.1 | 74.7 | 37.2/95.2 |
-| w/o GraphEncode (train) | 70.2 | 38.4 | 66.4 | 33.1/85.0 |
+| Variant | TQA | 2WQA | Pub | ASQA(rg/mv) |
+|------|-----|------|-----|-------------|
+| RAS 7B (Full) | 72.7 | 42.1 | 74.7 | 37.2/95.2 |
+| w/o GraphEncode | 70.2 | 38.4 | 66.4 | 33.1/85.0 |
 | w/o LoRA | 71.5 | 37.8 | 54.8 | 32.8/84.8 |
 | w/o Text-to-Triple | 70.4 | 38.2 | 71.4 | 36.2/73.8 |
 | w/o Multi-Task | 68.6 | 39.2 | 65.5 | 36.7/88.9 |
-| w/o Retrieval (inference) | 56.9 | 27.4 | 69.0 | 31.3/70.6 |
-| w/o Planning (inference) | 66.7 | 37.8 | 71.5 | 37.2/95.2 |
+| w/o Retrieval (Inference) | 56.9 | 27.4 | 69.0 | 31.3/70.6 |
+| w/o Planning (Inference) | 66.7 | 37.8 | 71.5 | 37.2/95.2 |
 
 ### Key Findings
 
-1. **Graph structuring is critical**: Removing Text-to-Triple causes ASQA MAUVE to drop from 95.2 to 73.8 (−22.4%); removing GraphEncode causes PubHealth to drop by 11.2%.
-2. **Iterative planning yields significant gains**: Removing Planning leads to −8.8% on TQA and −9.0% on 2WQA.
-3. **Role-swap experiment**: RAS 7B's planning capability is on par with Sonnet-3.5, but answering ability remains the primary bottleneck.
-4. **Information scales linearly**: Retaining 30–50% of triples already yields noticeable improvements, with gains not saturating at 100%.
-5. **Triple extractor selection**: Claude-3.5-Sonnet achieves the best quality but low efficiency (68 tokens/s); LLaMA-3.2-3B balances accuracy and efficiency (4,885 tokens/s).
-6. **High data efficiency**: Using only 5% of training data (10K samples) already surpasses the previous SOTA on TQA, 2WQA, and ELI5.
+1. **Graph structuring is critical**: Removing Text-to-Triple drops ASQA MAUVE from 95.2 to 73.8 (-22.4%); removing GraphEncode drops PubHealth by 11.2%.
+2. **Iterative planning provides significant value**: Removing Planning reduces TQA by 8.8% and 2WQA by 9.0%.
+3. **Role swapping**: The planning ability of RAS 7B is comparable to Sonnet-3.5, but the answering capability remains the main bottleneck.
+4. **Linear growth of information**: Retaining 30-50% of triples yields obvious gains, while 100% does not yet reaching saturation.
+5. **Efficiency**: LLaMA-3.2-3B serves as an efficient triple extractor (4885 tokens/s) vs Claude-3.5-Sonnet (68 tokens/s).
+6. **Data efficiency**: Using only 5% of training data (10K samples) outperforms Prev. SOTA on TQA, 2WQA, and ELI5.
 
 ## Highlights & Insights
 
-- **Query-specific KG over global KG**: Eliminates the prohibitive cost of full-corpus graph construction and the noise inherent in global graphs; only a relevant subgraph is built per inference.
-- **Unified retrieval–structuring–reasoning framework**: Planning, Structuring, and Answering are completed end-to-end by a single Graph LLM rather than being assembled from independent modules.
-- **Exceptionally high MAUVE scores**: RAS 7B achieves MAUVE = 95.2 on ASQA, indicating that generated long-form text is both accurate and fluent.
-- **Modular and flexible design**: Planning and Answering can be decoupled, enabling a stronger model for answering and a weaker model for planning.
+- **Query-specific KG as an alternative to global KG**: Avoids the astronomical costs and noise of full-corpus graph construction by building relevant subgraphs during inference.
+- **Unified Retrieval-Structuring-Reasoning framework**: Planning, Structuring, and Answering are executed end-to-end via a single Graph LLM.
+- **High MAUVE scores**: The MAUVE score of 95.2 on ASQA for RAS 7B indicates that generated long-form text is both accurate and naturally fluent.
+- **Modular flexibility**: Planning and Answering can be decoupled, allowing stronger models for answering and lighter models for planning.
 
 ## Limitations & Future Work
 
-1. The gap between the open-source versions (7B/8B) and closed-source models remains large, particularly on ARC-C (68.5 vs. 93.9).
-2. The triple extractor is a standalone model, adding system complexity and latency (end-to-end training is a potential alternative).
-3. The maximum of 5 iterations may be insufficient for more complex multi-hop reasoning chains.
-4. Graph encoding relies on a simple GNN; stronger graph Transformers or structured attention mechanisms remain unexplored.
-5. Performance on ELI5 is unstable, likely due to training data distribution shift.
+1. Performance gap between open-source (7B/8B) and closed-source models remains large, particularly on ARC-C (68.5 vs 93.9).
+2. The Triple extractor is a standalone model, increasing system complexity (end-to-end training could be exploration).
+3. The 5-iteration limit may be insufficient for highly complex multi-hop reasoning.
+4. Simplified GNNs are used; stronger Graph Transformers or structured attention could be explored.
+5. Unstable performance on ELI5 suggests potential distribution shifts in training data.
 
 ## Related Work & Insights
 
-- **vs. GraphRAG / G-Retriever**: These methods depend on pre-built global KGs, which are costly and introduce noise; RAS constructs graphs dynamically on demand.
-- **vs. Self-RAG / RPG**: Both share the self-reflection/iterative retrieval paradigm, but RAS additionally structures retrieved content into graphs.
-- **vs. Chain-of-Thought**: RAS's sub-query chain can be viewed as an explicit reasoning chain, further grounded by structured knowledge.
-- **Inspiration**: Future work could combine RAS's graph construction strategy with reinforcement learning (e.g., Search-Agent) to let an agent learn when to structuralize and when to answer directly.
+- **vs GraphRAG / G-Retriever**: These rely on pre-built global KGs; RAS builds them dynamically on-demand.
+- **vs Self-RAG / RPG**: While sharing iterative retrieval concepts, RAS adds the dimension of structuring retrieved content into graphs.
+- **vs Chain-of-Thought**: RAS's sub-query chain acts as an explicit reasoning chain anchored by structured knowledge.
+- Insight: Future work could combine RAS with Reinforcement Learning (e.g., Search-Agent) to let agents learn when to structure and when to answer directly.
 
 ## Rating
 
-- **Novelty**: ★★★★☆ — Dynamic query-specific KG construction represents a valuable new paradigm.
-- **Technical Depth**: ★★★★☆ — Multi-module integration is complete; multi-task training design is well-motivated.
-- **Experimental Thoroughness**: ★★★★★ — 7 benchmarks, multiple settings, comprehensive ablations, and open-source vs. closed-source comparisons.
-- **Writing Quality**: ★★★★☆ — Pipeline diagrams are clear; experimental organization is well-structured.
+- Novelty: ★★★★☆ — Dynamic query-specific KG construction is a valuable new paradigm.
+- Technical Depth: ★★★★☆ — Comprehensive multi-module integration and multi-task design.
+- Experimental Thoroughness: ★★★★★ — 7 benchmarks, inclusive settings, and thorough ablations.
+- Writing Quality: ★★★★☆ — Clear flowcharts and well-organized experimental analysis.
 
 <!-- RELATED:START -->
 
@@ -166,11 +162,11 @@ Compared with the previous SOTA (Self-RAG/RPG), RAS 7B achieves +9.7% on short-f
 
 ## Related Papers
 
-- [\[ACL 2026\] MegaRAG: Multimodal Knowledge Graph-Based Retrieval Augmented Generation](../../ACL2026/graph_learning/megarag_multimodal_knowledge_graph-based_retrieval_augmented_generation.md)
+- [\[ACL 2025\] Knowledge Graph Retrieval-Augmented Generation for LLM-based Recommendation (K-RagRec)](../../ACL2025/graph_learning/kg_rag_recommendation.md)
+- [\[ICLR 2026\] HGNet: Scalable Foundation Model for Automated Knowledge Graph Generation from Scientific Literature](hgnet_scalable_foundation_model_for_automated_knowledge_graph_generation_from_sc.md)
 - [\[CVPR 2026\] M3KG-RAG: Multi-hop Multimodal Knowledge Graph-enhanced Retrieval-Augmented Generation](../../CVPR2026/graph_learning/m3kg_rag_multi_hop_multimodal_knowledge_graph_enhanced_retrieval_augmented_genera.md)
-- [\[ACL 2026\] TagRAG: Tag-guided Hierarchical Knowledge Graph Retrieval-Augmented Generation](../../ACL2026/graph_learning/tagrag_tag-guided_hierarchical_knowledge_graph_retrieval-augmented_generation.md)
-- [\[ACL 2026\] STEM: Structure-Tracing Evidence Mining for Knowledge Graphs-Driven Retrieval-Augmented Generation](../../ACL2026/graph_learning/stem_structure-tracing_evidence_mining_for_knowledge_graphs-driven_retrieval-aug.md)
-- [\[ICLR 2026\] Entropy-Guided Dynamic Tokens for Graph-LLM Alignment in Molecular Understanding](entropy-guided_dynamic_tokens_for_graph-llm_alignment_in_molecular_understanding.md)
+- [\[ACL 2026\] MegaRAG: Multimodal Knowledge Graph-Based Retrieval Augmented Generation](../../ACL2026/graph_learning/megarag_multimodal_knowledge_graph-based_retrieval_augmented_generation.md)
+- [\[ICLR 2026\] Scaling Knowledge Graph Construction through Synthetic Data Generation and Distillation](scaling_knowledge_graph_construction_through_synthetic_data_generation_and_disti.md)
 
 </div>
 

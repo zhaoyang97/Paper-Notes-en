@@ -2,74 +2,76 @@
 title: >-
   [Paper Note] Copy-Paste to Mitigate Large Language Model Hallucinations
 description: >-
-  [ICLR 2026][Hallucination Detection][Hallucination Mitigation] This paper proposes a Copy-Paste generation paradigm that trains LLMs to preferentially copy spans directly from retrieved context rather than paraphrasing t…
+  [ICLR 2026][Hallucination Detection][RAG] The authors propose the Copy-Paste generation paradigm, which trains LLMs to prioritize directly copying segments from the retrieval context rather than free paraphrasing. Combined with DPO training for high copy preference, this approach improves faithfulness from 80.2% to 92.8% on counterfactual RAG benchmarks.
 tags:
-  - "ICLR 2026"
-  - "Hallucination Detection"
-  - "Hallucination Mitigation"
-  - "RAG"
-  - "Copy-Paste"
-  - "DPO"
-  - "Faithfulness"
+  - ICLR 2026
+  - Hallucination Detection
+  - RAG
+  - DPO
 date: 2026-05-08
-content_hash: 858e00665a1d15f5
+content_hash: 8a2912750039fec1
 ---
-
 # Copy-Paste to Mitigate Large Language Model Hallucinations
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2510.00508](https://arxiv.org/abs/2510.00508)  
 **Code**: [https://github.com/longyongchao/CopyPasteLLM](https://github.com/longyongchao/CopyPasteLLM)  
-**Area**: Hallucination Detection
+**Area**: Hallucination Detection  
 **Keywords**: Hallucination Mitigation, RAG, Copy-Paste, DPO, Faithfulness
 
 ## TL;DR
-This paper proposes a Copy-Paste generation paradigm that trains LLMs to preferentially copy spans directly from retrieved context rather than paraphrasing them freely. Combined with high-copy-preference DPO training, the approach improves faithfulness on counterfactual RAG benchmarks from 80.2% to 92.8%.
+The authors propose the Copy-Paste generation paradigm, which trains LLMs to prioritize directly copying segments from the retrieval context rather than free paraphrasing. Combined with DPO training for high copy preference, this approach improves faithfulness from 80.2% to 92.8% on counterfactual RAG benchmarks.
 
 ## Background & Motivation
 
-**Background**: RAG (Retrieval-Augmented Generation) reduces hallucinations by supplying LLMs with external context; however, LLMs tend to paraphrase rather than directly cite the context during generation, leading to information distortion and hallucinations.
+**Background**: Retrieval-Augmented Generation (RAG) reduces hallucinations by providing external context to LLMs. However, LLMs often "paraphrase" rather than quote directly when generating answers, leading to information distortion and hallucinations.
 
-**Limitations of Prior Work**: The paraphrasing process introduces two types of hallucinations—"Twist" (distorting facts present in the context) and "Causal" (upstream errors in the causal chain propagating downstream). Attribution methods mark sources but do not alter the generation process itself.
+**Limitations of Prior Work**: The paraphrasing process introduces two types of hallucinations: "Twist" (distorting facts within the context) and "Causal" (upstream errors propagating downstream). Citational methods merely tag sources without altering the fundamental generation mechanism.
 
-**Key Challenge**: There is a fundamental trade-off between fluent paraphrasing and faithful copying—while paraphrasing reads more naturally, each reformulation introduces a risk of hallucination.
+**Key Challenge**: There is a trade-off between highly fluent paraphrasing and highly faithful copying. While paraphrasing reads smoothly, every instance of paraphrasing represents a potential risk point for hallucinations.
 
-**Goal**: Can LLMs be trained to copy context spans as directly as possible while maintaining readability?
+**Goal**: Can LLMs be induced to copy context segments as directly as possible while maintaining readability?
 
-**Key Insight**: The analysis is grounded in an attention-anchoring perspective—when the previously generated token is copied from the context, the query vector of the next token is strongly correlated with the context key vectors, naturally promoting continued copying.
+**Key Insight**: From the perspective of attention anchoring, if the previously generated token was copied from the context, the query vector of the next token will be strongly correlated with the context key vectors, naturally creating a tendency to continue copying.
 
-**Core Idea**: Train LLMs to develop a "high-copy preference" by using DPO to steer the model toward responses that directly embed context spans.
+**Core Idea**: Establish a "high copy preference" in LLMs through DPO, making the model prefer an answer style that directly embeds context snippets.
 
 ## Method
 
 ### Overall Architecture
-The approach consists of two stages: (1) Copy-Paste Prompting to generate high-copy-rate candidate responses via three strategies (CP-Order / CP-Link / CP-Refine), and (2) multi-dimensional filtering + Elo ranking + DPO training.
+
+The workflow consists of two stages: first, using Copy-Paste-Prompting to guide a standard LLM to generate many "high-copy" candidate answers; second, using a multi-dimensional filtering and Elo ranking pipeline to select the best and worst pairs for DPO training to solidify the "copy-first" preference into the model weights. In other words, the first half relies on prompt engineering to create data, while the second half uses preference training to make copying the default habit. The resulting CopyPasteLLM actively embeds original context snippets during inference without requiring special prompts.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Retrieved Context + Query"] --> B["Three Copying Strategies<br/>CP-Order / CP-Link / CP-Refine"]
+    B -->|Generate High-Copy Candidates| C["Copy Intensity Quantization κ/δ<br/>Multi-dim Filtering + Elo Ranking"]
+    C --> D["365 Preference Pairs"]
+    D --> E["High-Copy Preference DPO Training<br/>+ Answer Stamping"]
+    E --> F["CopyPasteLLM<br/>Active Copying with No Prompts"]
+```
 
 ### Key Designs
 
-1. **Three Copy Strategies**:
+**1. Three Copying Strategies: Bridging Faithfulness and Fluency**
 
-    - CP-Order: Strict extraction—reordering relevant sentences from the context.
-    - CP-Link: Allows transition phrases of no more than 15 words to connect copied spans.
-    - CP-Refine: An iterative writer–reviewer loop of up to 5 rounds to improve readability while maintaining a high copy rate.
+Directly commanding a model to "copy the context" often results in stiff or even ungrammatical responses. Consequently, the authors design three levels of increasingly relaxed copying strategies to cover the spectrum from "strict extraction" to "high-quality paraphrasing." CP-Order is the strictest, allowing only the reordering of relevant original sentences from the context without adding any words, ensuring every token is traceable. CP-Link relaxes this slightly by allowing transitional phrases of up to 15 words to connect copied segments, addressing the jumpiness of pure extraction. CP-Refine runs a writer-reviewer iteration loop (up to 5 rounds) to maximize readability while maintaining a high copy rate. These strategies exist to provide the varied copy-intensity samples needed for the "copy vs. paraphrase" preference signals in DPO.
 
-2. **Quantitative Metrics**:
+**2. Quantifying Copy Intensity: Measuring Through Two Metrics**
 
-    - Copy Coverage $\kappa$ = proportion of response tokens originating from the context.
-    - Copy Density $\delta$ = emphasizes long contiguous spans (weighted by the square of span length).
+To train a model for copy preference, copying must first be measurable. This paper defines two metrics: Copy Coverage $\kappa$, which measures the proportion of tokens in the answer derived from the context, and Copy Density $\delta$, which applies a squared weight to the length of continuous copied segments. Distinguishing these two is crucial—experiments show that $\delta$ is a better predictor of faithfulness than $\kappa$. This is because long continuous segments imply the model is transporting complete semantic units, whereas high coverage might result from fragmented "patchwork" copying, which is more likely to introduce distortions at the connection points. These metrics serve as the core scoring dimensions for filtering preference pairs.
 
-3. **DPO Training**:
+**3. High-Copy Preference DPO Training and Answer Stamping**
 
-    - Requires only 365 high-quality preference pairs.
-    - Multi-dimensional filtering: AlignScore / MiniCheck (faithfulness), $\kappa$ / $\delta$ (copy intensity), query relevance, and fluency.
-    - Answer Stamping: the correct answer is appended at the end of the response to prevent answer omission caused by excessive copying.
+DPO is finally used to bake the copy preference into the model weights. Pair selection is multi-dimensional: AlignScore and MiniCheck ensure faithfulness, while $\kappa$ and $\delta$ measure copy intensity, combined with query relevance and fluency. Samples are selected after multi-dimensional Elo ranking. Notably, the training utilizes only 365 high-quality preference pairs. This data efficiency suggests that "copying vs. paraphrasing" is primarily a matter of generation style preference rather than capability. One side effect of pure copying is that the model might move entire context blocks but miss the final answer; thus, "Answer Stamping"—explicitly appending the correct answer at the end—is introduced. This step is critical: ablation shows accuracy drops from 92.8% to 45.1% without it, as it restores answer completeness without sacrificing copy faithfulness.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Dataset | Model | Method | Accuracy |
-|--------|------|------|--------|
+|---------|-------|--------|----------|
 | FaithEval (Counterfactual) | Llama-3-8B | Context-DPO | 80.2% |
 | FaithEval (Counterfactual) | Llama-3-8B | **CopyPasteLLM** | **92.8%** |
 | ConFiQA-MC | Llama-3-8B | Attributed | 37.3% |
@@ -77,36 +79,36 @@ The approach consists of two stages: (1) Copy-Paste Prompting to generate high-c
 
 ### Ablation Study
 
-| Variant | FaithEval | Note |
-|------|----------|------|
+| Variant | FaithEval | Description |
+|---------|-----------|-------------|
 | w/o Copy Preference | 71.2% | No high-copy training data |
-| w/o Answer Stamping | 45.1% | Excessive copying causes answer omission |
+| w/o Answer Stamping | 45.1% | Answer lost due to excessive copying |
 | **CopyPasteLLM** | **92.8%** | Full method |
 
 ### Key Findings
-- Answer Stamping is critical—its removal causes accuracy to drop sharply from 92.8% to 45.1%.
+- Answer Stamping is vital—without it, accuracy plunges from 92.8% to 45.1%.
 - Effective training requires only 365 preference pairs, demonstrating extremely high data efficiency.
-- Copy Density is a better predictor of faithfulness than Coverage; long contiguous spans are more reliable than short fragments.
+- Copy Density predicts faithfulness better than Coverage; long continuous segments are more reliable than short fragments.
 
 ## Highlights & Insights
-- **Attention-Anchoring Theory**: Copy operations enjoy a natural advantage at the attention mechanism level—when the previous token is copied from context, key-value vectors naturally guide continued copying, creating a "copy momentum."
-- **High-Efficiency Training with Minimal Data**: DPO on just 365 samples is sufficient to substantially shift generation style, suggesting that "copy vs. paraphrase" is primarily a preference issue rather than a capability issue.
-- **Necessity of Answer Stamping**: Explicitly prompting the model to state the answer at the end balances copy faithfulness with response completeness.
+- **Attention Anchoring Theory**: Copying operations have a natural advantage at the attention mechanism level—when the previous token is copied from the context, the key-value vectors naturally guide continued copying, creating "copy inertia."
+- **Efficient Minimalist Training**: DPO with just 365 samples can significantly alter generation style, suggesting that the choice between copying and paraphrasing is a preference issue.
+- **Necessity of Answer Stamping**: Prompting the model to provide an explicit answer at the end balances copy faithfulness with response completeness.
 
 ## Limitations & Future Work
-- High copy rates may reduce the naturalness and readability of responses.
-- Validation is limited to English RAG tasks; cross-lingual generalization remains unknown.
-- The Copy-Paste strategy may be ill-suited for questions requiring inferential synthesis rather than direct span retrieval.
+- High copy rates may reduce the naturalness and readability of the responses.
+- Validation was limited to English RAG tasks; cross-lingual effectiveness remains unknown.
+- The Copy-Paste strategy may not be suitable for problems requiring complex reasoning and synthesis rather than direct retrieval.
 
 ## Related Work & Insights
-- **vs. Context-DPO**: Both employ DPO, but Context-DPO does not explicitly optimize for copy preference, whereas this work directly optimizes the copying behavior.
-- **vs. Attributed LLM**: Attribution methods only annotate source references without modifying the generation process; this work intervenes at the level of the generation paradigm itself.
+- **vs. Context-DPO**: While both use DPO, Context-DPO does not emphasize copying preferences. This work explicitly optimizes for copying.
+- **vs. Attributed LLM**: Attributed LLMs tag citations without changing the generation process; this work intervenes in the generation mechanism itself.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The "copy-over-paraphrase" paradigm is novel and counterintuitive.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Multi-dataset, multi-model validation with clear ablations.
-- Writing Quality: ⭐⭐⭐⭐ The attention-anchoring analysis is insightful.
-- Value: ⭐⭐⭐⭐⭐ High practical value; directly applicable to RAG systems.
+- Novelty: ⭐⭐⭐⭐ The "copy over paraphrase" philosophy is novel and counter-intuitive.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Validated across multiple datasets and models with clear ablations.
+- Writing Quality: ⭐⭐⭐⭐ The analysis of attention anchoring is compelling.
+- Value: ⭐⭐⭐⭐⭐ High practical value; can be directly adopted by RAG systems.
 
 <!-- RELATED:START -->
 
@@ -114,11 +116,11 @@ The approach consists of two stages: (1) Copy-Paste Prompting to generate high-c
 
 ## Related Papers
 
-- [\[ICML 2026\] Revis: Sparse Latent Steering to Mitigate Object Hallucination in Large Vision-Language Models](../../ICML2026/hallucination/revis_sparse_latent_steering_to_mitigate_object_hallucination_in_large_vision-la.md)
+- [\[ICLR 2026\] Mitigating Hallucination in Vision-Language Model with Depth and Spatial-aware Key-Value Refinement](mitigating_hallucination_in_vision-language_model_with_depth_and_spatial-aware_k.md)
+- [\[CVPR 2026\] VES-RFT: Rewarding Visual Evidence Sensitivity to Mitigate Hallucinations in Large Vision-Language Models](../../CVPR2026/hallucination/ves-rft_rewarding_visual_evidence_sensitivity_to_mitigate_hallucinations_in_larg.md)
+- [\[ICLR 2026\] Hallucination-aware Intermediate Representation Edit in Large Vision-Language Models](hallucination-aware_intermediate_representation_edit_in_large_vision-language_mo.md)
+- [\[ACL 2025\] Hallucination Detox: Sensitivity Dropout (SenD) for Large Language Model Training](../../ACL2025/hallucination/hallucination_detox_send.md)
 - [\[ICLR 2026\] Dynamic Multimodal Activation Steering for Hallucination Mitigation in Large Vision-Language Models](dynamic_multimodal_activation_steering_for_hallucination_mitigation_in_large_vis.md)
-- [\[CVPR 2026\] Tell Model Where to Look: Mitigating Hallucinations in MLLMs by Vision-Guided Attention](../../CVPR2026/hallucination/tell_model_where_to_look_mitigating_hallucinations_in_mllms_by_vision-guided_att.md)
-- [\[NeurIPS 2025\] Teaming LLMs to Detect and Mitigate Hallucinations](../../NeurIPS2025/hallucination/teaming_llms_to_detect_and_mitigate_hallucinations.md)
-- [\[ICLR 2026\] Look Carefully: Adaptive Visual Reinforcements in Multimodal Large Language Models for Hallucination Mitigation](look_carefully_adaptive_visual_reinforcements_in_multimodal_large_language_model.md)
 
 </div>
 

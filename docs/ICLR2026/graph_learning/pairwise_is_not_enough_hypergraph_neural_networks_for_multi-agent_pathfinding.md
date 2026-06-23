@@ -2,126 +2,139 @@
 title: >-
   [Paper Note] Pairwise is Not Enough: Hypergraph Neural Networks for Multi-Agent Pathfinding
 description: >-
-  [ICLR2026][Graph Learning][MAPF] This paper proposes HMAGAT, which replaces the pairwise message passing of GNNs with a directed hypergraph attention network to model group interactions in multi-agent pathfinding…
+  [ICLR 2026][Graph Learning][MAPF] The authors propose HMAGAT, which replaces the pairwise message passing of GNNs with a directed hypergraph attention network to model group interactions in multi-agent pathfinding. It outperforms SOTA models with 85M parameters using only 1M parameters and 1% of the training data.
 tags:
-  - "ICLR2026"
-  - "Graph Learning"
-  - "MAPF"
-  - "Hypergraph Neural Networks"
-  - "Attention Mechanism"
-  - "Imitation Learning"
-  - "Group Interaction"
+  - ICLR 2026
+  - Graph Learning
+  - MAPF
+  - Attention
 date: 2026-05-08
-content_hash: d2d9450e558870b3
+content_hash: 37f80a78fab57084
 ---
-
 # Pairwise is Not Enough: Hypergraph Neural Networks for Multi-Agent Pathfinding
 
-**Conference**: ICLR2026
+**Conference**: ICLR2026  
 **arXiv**: [2602.06733](https://arxiv.org/abs/2602.06733)  
 **Code**: [GitHub](https://github.com/proroklab/HMAGAT)  
-**Area**: Graph Learning
-**Keywords**: MAPF, Hypergraph Neural Networks, Attention Mechanism, Imitation Learning, Group Interaction
+**Area**: Graph Learning  
+**Keywords**: MAPF, Hypergraph Neural Networks, Attention Mechanism, Imitation Learning, Group Interaction  
 
 ## TL;DR
-This paper proposes HMAGAT, which replaces the pairwise message passing of GNNs with a directed hypergraph attention network to model group interactions in multi-agent pathfinding, surpassing a 85M-parameter SOTA model using only 1M parameters and 1% of the training data.
+The authors propose HMAGAT, which replaces the pairwise message passing of GNNs with a directed hypergraph attention network to model group interactions in multi-agent pathfinding. It outperforms SOTA models with 85M parameters using only 1M parameters and 1% of the training data.
 
 ## Background & Motivation
 
-### State of the Field
+**Background**: Multi-Agent Pathfinding (MAPF) requires a team of agents to reach their goals collision-free. Optimal solving is NP-hard, leading to the prevalence of learning-based methods for online inference. The mainstream architectural backbone consists of "CNN encoding local observations → inter-agent message passing → MLP action decoding," where the message passing layers typically utilize GNNs or Transformers.
 
-**Background**:
-1. Multi-Agent Pathfinding (MAPF) requires multiple agents to reach their respective goals without collisions; optimal solving is NP-hard.
-2. Existing learning-based methods (GNNs, Transformers) model only pairwise interactions and fail to capture group dynamics arising from simultaneous multi-agent interactions.
-3. In high-density scenarios, attention dilution in GNNs is particularly severe: large numbers of irrelevant agents dilute the attention weights of critical interactions.
-4. MAPF is inherently a group problem — optimality and completeness can only be achieved by modeling the global joint state space.
-5. Hypergraphs are naturally suited for modeling group interactions, yet have not been applied to complex, tightly coupled MAPF scenarios.
-6. Existing hypergraph methods only handle small-scale (~10 agents) problems; whether they can scale to large-scale, highly coupled settings remains an open question.
+**Limitations of Prior Work**: The message passing in GNNs and Transformers is inherently **pairwise**—an edge connects only two agents. However, in high-density scenarios like intersections or narrow corridors, MAPF often requires **simultaneous** coordination among three or more agents to avoid deadlocks; pairwise interactions cannot express these indecomposable joint constraints. Furthermore, GNNs place all neighbors in the same softmax competition, leading to **attention dilution** where irrelevant agents drown out critical interactions in dense environments.
+
+**Key Challenge**: MAPF is fundamentally a group planning problem—optimal and complete solutions require modeling the joint state space of all agents. Existing architectures possess structural priors limited to the pairwise level, making them naturally unable to represent higher-order group interactions.
+
+**Key Insight**: Hyperedges in a hypergraph can connect an arbitrary number of nodes, making them naturally suited to encode group interactions. While existing hypergraph work has been validated in simple scenarios with ~10 agents (e.g., social grouping in trajectory prediction), whether they can scale to large-scale, highly coupled, and complex MAPF remains an open question.
+
+**Core Idea**: Directly replace the pairwise message passing GNN in classic MAPF backbones with a **Directed Hypergraph Attention Network (HGNN)**. Use the structural prior of "multiple agents jointly influencing one agent's decision" to replace brute-force data/parameter scaling—and experimentally demonstrate that correct inductive bias is more critical than model scale.
 
 ## Method
 
-**HMAGAT Architecture**: CNN encoder → Hypergraph Attention Network (HGNN) layers × 3 → MLP decoder
+### Overall Architecture
 
-- **Directed Hyperedge Design**: Single-head, multi-tail structure — multiple tail nodes (influencers) → single head node (influenced agent), naturally modeling "multiple agents jointly influencing one agent's decision."
-- **Two-Level Attention Mechanism**:
-    - Tail-to-hyperedge attention $\alpha_{ej}$: mean of head node features as query; tail node features + hyperedge features as key-value.
-    - Hyperedge-to-head attention $\alpha_{ie}$: head node as query; hyperedge representation as key-value.
-    - Softmax normalization at each level is restricted to its own scope, preventing cross-level dilution.
-- **Hypergraph Construction Strategies**:
-    - Lloyd hypergraph: Voronoi partitioning with soft boundaries for overlapping groupings; suited for medium-scale scenarios.
-    - k-means hypergraph: random point diffusion + clustering; complexity $O(k|V|)$; suited for large graphs.
-    - Shortest-distance hypergraph: constructed based on shortest-path distances between agents; suited for obstacle-dense environments.
-    - All strategies generate hyperedge features (relative position coordinates + Manhattan distance).
+HMAGAT follows the classic three-stage backbone of MAPF learning methods: a CNN encoder compresses each agent's local observation into a feature vector, three message-passing layers allow information exchange between agents, and finally, an MLP decodes the actions. Its primary distinction from the previous generation MAGAT is the replacement of the three pairwise GNN layers with Directed Hypergraph Attention Networks (HGNNs). In each frame, a heuristic strategy groups current agents to construct hyperedges, and the HGNN performs two-level attention aggregation, embedding the "multiple agents influencing a specific agent's decision" directly into the network's structural prior.
 
-**Training Pipeline**:
-- Expert demonstration trajectories collected on 21K instances using the lacam3 solver (vs. MAPF-GPT's 3.75M instances — 178× fewer).
-- Cross-entropy loss for imitation learning, with optional DAgger online expert correction.
-- Post-training quality improvement: fine-tuning on medium-difficulty instances to improve solution quality (rather than success rate alone).
-- RL temperature sampling module: a small model dynamically adjusts the softmax temperature $\tau \in [0.5, 1.0]$ to promote more deterministic policies.
+```mermaid
+flowchart TD
+    A["Local Agent Observations"] --> B["CNN Encoder<br/>Observation → Node Features"]
+    B --> GEN["Three Hypergraph Generation Strategies<br/>Lloyd / k-means / Shortest Distance"]
+    GEN -->|"Hyperedges + Hyperedge Features"| C
+    B -->|"Node Features"| C
+    subgraph HGNN["Directed Hypergraph Attention Network (×3 Layers)"]
+        direction TB
+        C["Directed Hypergraph<br/>Multi-tail → Single-head"] --> D["Dual-layer Attention<br/>Tail→Hyperedge Norm + Hyperedge→Head Norm"]
+    end
+    D --> E["MLP Decoder → Output Actions"]
+```
+
+### Key Designs
+
+**1. Directed Hypergraphs: Modeling "Group Influence" with Multi-tail Single-head Structures**
+
+GNN edges only connect two nodes, modeling pairwise relations like A influencing B. When three agents crowd an intersection simultaneously and require three-way coordination to avoid deadlock, pairwise edges cannot represent this joint constraint. HMAGAT utilizes directed hyperedges, where multiple tail nodes (influencers) point to a single head node (the influenced). This naturally encodes "a group of surrounding agents jointly deciding my next move" into a single hyperedge. This is the literal meaning of the title "Pairwise is Not Enough."
+
+**2. Dual-layer Attention: Decoupled Normalization to Prevent Attention Dilusion**
+
+Information aggregation proceeds in two steps. First, Tail-to-Hyperedge attention $\alpha_{ej}$: using the mean of head node features as the query and tail node features concatenated with hyperedge features $\mathbf{w}_{je}$ as key-value pairs, it aggregates information from tail nodes into a hyperedge representation. Second, Hyperedge-to-Head attention $\alpha_{ie}$: using the head node as the query and hyperedge representations as key-values to determine the contribution of different hyperedges. Crucially, two softmax layers normalize within their respective levels, decoupling competition inside a hyperedge from competition between hyperedges. In contrast, GNNs place all neighbors in one softmax; if $n$ neighbors exist and only $k$ are critical, the attention scales as $k/n$, decaying as density $n$ increases—the root of attention dilution.
+
+**3. Three Hypergraph Generation Strategies: Grouping in Different Scales and Terrains**
+
+Hyperedges are constructed dynamically in each frame using heuristic rules. The paper provides three complementary schemes: **Lloyd Hypergraphs** use Voronoi partitioning with "soft boundaries" for overlapping groups, offering high quality for medium scales but being computationally expensive ($O(|V|^3)$); **k-means Hypergraphs** use clustering with soft boundaries, reducing complexity to $O(k|V|)$ for large maps; **Shortest Distance Hypergraphs** group agents based on shortest path distance, which is more reliable in obstacle-dense maps where Euclidean distance is misleading. Each strategy attaches hyperedge features $\omega_{je}$ (relative coordinates and Manhattan distance, encoded via MLP $\phi$ into $\mathbf{w}_{je}$).
+
+### Loss & Training
+
+The core is Imitation Learning: demonstration trajectories are collected using the `lacam3` expert solver on 21K instances (approx. 178x fewer than the 3.75M used by MAPF-GPT), training with cross-entropy loss. DAgger is optionally used to correct policy drift. Two enhancement modules are included: a Post-training phase fine-tunes on medium-difficulty instances to improve solution quality (shorter paths), and an RL Temperature Sampling module trains a small model to dynamically adjust the softmax temperature $\tau \in [0.5, 1.0]$, ensuring more certain actions during congestion.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Metric | HMAGAT (1M, 21K instances) | MAPF-GPT (85M, 3.75M instances) | MAGAT (GNN) |
-|--------|---------------------------|----------------------------------|-------------|
+|------|------------|----------------|-------------|
 | Parameters | ~1M (1.2%) | 85M (100%) | ~1M |
 | Training Data | 21K (~0.56%) | 3.75M (100%) | 21K |
 | Dense Warehouse Success Rate | **75%+** | <11% | ~5% |
 | ost003d Large Map | ✓ Scalable | ✗ OOM | ✓ |
-| Small Map Avg. SoC | **Best** | Competitive | Worse |
+| Small Map Avg SoC | **Optimal** | Fair | Poor |
 
-## Ablation Study & In-Depth Analysis
+## Ablation Study
 
-| Component | Dense Warehouse Success Rate | Notes |
-|-----------|------------------------------|-------|
-| Full HMAGAT | **39.8%** | Complete model |
-| HGNN → GNN (MAGAT) | 2.3% | Hypergraph layer is critical — degrading to pairwise interaction causes performance collapse |
-| w/o post-training | ~30% | Post-training yields ~10% gain in medium/high-density scenarios |
-| w/o temperature sampling | ~35% | Temperature sampling reduces uncertain actions |
-| Lloyd → k-means hypergraph | ~37% | k-means slightly weaker but computationally cheaper; preferred for large graphs |
+| Component Ablation | Dense Warehouse Success Rate | Description |
+|----------|---------------------|------|
+| Full HMAGAT | **39.8%** | Complete Model |
+| HGNN → GNN (MAGAT) | 2.3% | Hypergraph layers are core—performance collapses with pairwise interaction |
+| w/o Post-training | ~30% | Post-training yields ~10% gain in high-density scenarios |
+| w/o Temp Sampling | ~35% | Sampling reduces hesitant/uncertain actions |
+| Lloyd → k-means | ~37% | k-means is slightly weaker but cheaper for large maps |
 
-### Attention Dilution Analysis
-- In GNNs, as neighborhood density increases, attention weights of critical interactions are diluted by large numbers of irrelevant agents.
-- The authors demonstrate that with $k$ critical neighbors among $n$ total neighbors, the attention allocated by a GNN to critical neighbors is approximately $k/n$, which decays as $n$ grows.
-- HGNNs confine attention scope via hyperedges — each hyperedge contains only a small set of relevant agents, preventing external dilution.
-- Validated through a handcrafted scenario: in a three-agent intersection setting, the GNN fails to capture three-way coordination while the HGNN succeeds.
-
-### Large-Scale Scalability
-
-| Map | HMAGAT | MAPF-GPT | Notes |
-|-----|--------|----------|-------|
-| ost003d (194×194) | ✓ Scalable | ✗ Cannot run | MAPF-GPT's Transformer runs OOM on large maps |
-| Warehouse (high density) | **75%+** | <11% | HMAGAT substantially outperforms in high-density scenarios |
+### Key Findings
+- **Attention Dilution Analysis**: In GNNs, as neighborhood density increases, key interaction weights are diluted by irrelevant agents. The authors prove that for $k$ critical neighbors among $n$ total neighbors, GNN attention is $\approx k/n$. HGNN restricts attention to small hyperedges, insulating the weight from external noise.
+- **Hand-crafted Scenarios**: In a three-agent intersection scenario, the authors demonstrate that GNNs fail to capture three-way coordination while HGNN succeeds.
+- **Scalability**: While MAPF-GPT's Transformer suffers from OOM on large maps like `ost003d` (194×194), HMAGAT scales successfully due to its local hypergraph structure.
 
 ## Highlights & Insights
-- **Inductive bias > data volume / parameter count** is the central conclusion — 1% of parameters and 1% of data outperform an 85M-parameter model, demonstrating that on problems with clear structure, the correct architectural prior (hypergraph) is more effective than brute-force data scaling.
-- The formalization and experimental validation of **attention dilution** provides a clear explanation for GNN failure in high-density scenarios.
-- The **handcrafted scenario** as a "minimal failure case" is highly convincing — it intuitively demonstrates why three-agent joint coordination cannot be decomposed into three pairwise interactions.
-- **Practical hypergraph construction strategies**: the Lloyd hypergraph based on Voronoi partitioning and the k-means hypergraph suited for large-scale settings offer flexible options for real-world deployment.
+- **Inductive Bias > Scale**: The core conclusion is that 1% of parameters and data can outperform an 80M+ model if the structural prior (hypergraphs) correctly matches the problem.
+- **Attention Dilution**: The formal analysis and experimental verification provide a clear explanation for GNN failure in high-density MAPF.
+- **Practical Strategies**: Providing multiple hyperedge generation strategies (Lloyd vs. k-means) makes the approach flexible for different computational budgets.
 
 ## Limitations & Future Work
-- Hypergraph construction strategies rely on preset communication radius $R^{\text{comm}}$ and color count — the optimal hypergraph structure is not learned adaptively.
-- Evaluation is limited to grid environments; extension to continuous spaces or more complex topologies (e.g., 3D environments) remains unexplored.
-- Imitation learning still depends on the quality of the expert solver — a suboptimal expert yields a suboptimal learned policy.
-- Hypergraph construction introduces additional computational overhead; scalability at very large agent counts (>1000) requires further verification.
-- Hyperedge size (number of agents per hyperedge) is implicitly determined by the construction strategy; an explicit analysis of optimal hyperedge size is absent.
+- Hypergraph generation relies on a preset communication radius $R^{\text{comm}}$ and color count, rather than adaptively learning the optimal structure.
+- Evaluation is limited to grid environments; extensions to continuous space or 3D topologies are not explored.
+- Imitation learning remains dependent on expert quality; sub-optimal experts lead to sub-optimal policies.
+- Hypergraph construction introduces extra overhead, and scalability to >1000 agents requires further verification.
 
 ## Related Work & Insights
-- **vs. MAGAT (Li et al.)**: Under an identical framework (CNN + message passing + MLP), replacing only the GNN layers with HGNN layers directly demonstrates that the hypergraph is the sole factor driving performance gains.
-- **vs. MAPF-GPT (Andreychuk et al.)**: An 85M-parameter GPT-style model trained on 3.75M instances is surpassed by HMAGAT with 1M parameters and 21K instances — model design matters far more than brute-force scaling.
-- **vs. SCRIMP (Wang et al.)**: SCRIMP models communication via Transformers, which are fundamentally all-to-all pairwise attention mechanisms and are equally susceptible to attention dilution in high-density scenarios.
-- **vs. HyperComm (Zhu et al.)**: HyperComm first applied hypergraphs to multi-agent communication but validated only on simple scenarios with ~10 agents; HMAGAT is the first to extend hypergraph-based methods to large-scale, tightly coupled MAPF.
-- **Broader Implications**: The approach of modeling group interactions via hypergraphs is generalizable to traffic management, robotic swarm coordination, and protein–protein interaction networks — any domain requiring modeling of many-body effects.
+- **vs MAGAT**: Under the same CNN+MLP framework, replacing GNN with HGNN is the sole factor for success.
+- **vs MAPF-GPT**: Demonstrates that architectural priors surpass brute-force scaling in structured tasks.
+- **vs SCRIMP**: SCRIMP uses Transformers for communication, which remains pairwise/all-to-all and suffers from dilution in density.
+- **Insight**: Hypergraph modeling of group interactions is generalizable to traffic management, swarm coordination, and protein-protein interaction networks.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Hypergraph + MAPF is a first; the inductive bias argument is compelling.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive coverage across multiple maps, ablations, attention analysis, and handcrafted scenarios.
-- Writing Quality: ⭐⭐⭐⭐ Clear structure, rich figures; the three-panel design of Figure 1 is particularly effective.
-- Value: ⭐⭐⭐⭐ Broadly instructive for discussions on inductive bias in multi-agent learning.
+- Novelty: ⭐⭐⭐⭐ (First use of hypergraphs in large-scale MAPF)
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ (Broad range of maps, scaling analysis, and hand-crafted proofs)
+- Writing Quality: ⭐⭐⭐⭐ (Clear logic and effective visualizations)
+- Value: ⭐⭐⭐⭐ (Significant implications for inductive bias vs. scaling laws)
 
-### Overall Assessment
-The most compelling aspect of this paper is not the performance numbers per se, but the extreme contrast — 1M vs. 85M parameters and 21K vs. 3.75M training instances — which directly demonstrates that on problems with clear structure, the correct inductive bias (hypergraph modeling of group interactions) is more effective than brute-force scaling of data and parameters. This serves as a valuable counterpoint to the "scaling-is-all-you-need" mindset prevalent in multi-agent learning, graph neural networks, and the era of large models.
+### Final Evaluation
+The most compelling aspect of this work is the 1M vs. 85M parameter comparison. It serves as a strong counter-argument to the "scaling is all you need" paradigm for structured scientific and engineering problems, proving that modeling group interactions as indecomposable units is essential for high-density coordination.
+
+## Related Papers
+
+- [\[ACL 2026\] EA-Agent: A Structured Multi-Step Reasoning Agent for Entity Alignment](../../ACL2026/graph_learning/ea-agent_a_structured_multi-step_reasoning_agent_for_entity_alignment.md)
+- [\[ICLR 2026\] Differentiable Lifting for Topological Neural Networks](differentiable_lifting_for_topological_neural_networks.md)
+- [\[ICLR 2026\] DHG-Bench: A Comprehensive Benchmark for Deep Hypergraph Learning](dhg-bench_a_comprehensive_benchmark_for_deep_hypergraph_learning.md)
+- [\[AAAI 2026\] S-DAG: A Subject-Based Directed Acyclic Graph for Multi-Agent Heterogeneous Reasoning](../../AAAI2026/graph_learning/s-dag_a_subject-based_directed_acyclic_graph_for_multi-agent.md)
+- [\[ICLR 2026\] Cooperative Sheaf Neural Networks](cooperative_sheaf_neural_networks.md)
+
+</div>
+
+<!-- RELATED:END -->
 
 <!-- RELATED:START -->
 
@@ -129,11 +142,11 @@ The most compelling aspect of this paper is not the performance numbers per se, 
 
 ## Related Papers
 
-- [\[ACL 2026\] EA-Agent: A Structured Multi-Step Reasoning Agent for Entity Alignment](../../ACL2026/graph_learning/ea-agent_a_structured_multi-step_reasoning_agent_for_entity_alignment.md)
-- [\[AAAI 2026\] S-DAG: A Subject-Based Directed Acyclic Graph for Multi-Agent Heterogeneous Reasoning](../../AAAI2026/graph_learning/s-dag_a_subject-based_directed_acyclic_graph_for_multi-agent.md)
-- [\[ICLR 2026\] Cooperative Sheaf Neural Networks](cooperative_sheaf_neural_networks.md)
-- [\[ACL 2026\] LegalGraphRAG: Multi-Agent Graph Retrieval-Augmented Generation for Reliable Legal Reasoning](../../ACL2026/graph_learning/legalgraphrag_multi-agent_graph_retrieval-augmented_generation_for_reliable_lega.md)
 - [\[ICLR 2026\] Beyond Simple Graphs: Neural Multi-Objective Routing on Multigraphs](beyond_simple_graphs_neural_multi-objective_routing_on_multigraphs.md)
+- [\[ICLR 2026\] LogicXGNN: Grounded Logical Rules for Explaining Graph Neural Networks](logicxgnn_grounded_logical_rules_for_explaining_graph_neural_networks.md)
+- [\[ICLR 2026\] Cooperative Sheaf Neural Networks](cooperative_sheaf_neural_networks.md)
+- [\[ICLR 2026\] WATS: Wavelet-Aware Temperature Scaling for Reliable Graph Neural Networks](wats_wavelet-aware_temperature_scaling_for_reliable_graph_neural_networks.md)
+- [\[ICLR 2026\] Canonical Tree Cover Neural Networks for Expressive and Invariant Graph Learning](canonical_tree_cover_neural_networks_for_expressive_and_invariant_graph_learning.md)
 
 </div>
 

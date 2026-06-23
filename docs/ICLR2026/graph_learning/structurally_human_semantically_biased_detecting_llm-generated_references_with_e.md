@@ -2,135 +2,144 @@
 title: >-
   [Paper Note] Structurally Human, Semantically Biased: Detecting LLM-Generated References with Embeddings and GNNs
 description: >-
-  [ICLR 2026][Graph Learning][LLM reference detection] By constructing paired citation graphs (human vs. GPT-4o-generated vs. random baseline) for 10,000 papers…
+  [ICLR 2026][Graph Learning][Paper Note] By constructing paired citation graphs for 10,000 papers (Human vs. GPT-4o Generated vs. Random Baseline), it is found that LLM-generated references are nearly indistinguishable from human ones in terms of graph topology (RF achieves only 60% accuracy). However, they can be effectively detected using semantic embedding
 tags:
-  - "ICLR 2026"
-  - "Graph Learning"
-  - "LLM reference detection"
-  - "citation graph"
-  - "graph neural networks"
-  - "semantic embeddings"
-  - "academic integrity"
+  - ICLR 2026
+  - Graph Learning
 date: 2026-05-08
-content_hash: f2875fd718fcf258
+content_hash: db1309c34070e868
 ---
-
 # Structurally Human, Semantically Biased: Detecting LLM-Generated References with Embeddings and GNNs
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2601.20704](https://arxiv.org/abs/2601.20704)  
 **Code**: None  
-**Area**: AI Safety / Graph Learning
-**Keywords**: LLM reference detection, citation graph, graph neural networks, semantic embeddings, academic integrity
+**Area**: AI Safety / Graph Learning  
+**Keywords**: LLM Citation Detection, Citation Graphs, Graph Neural Networks, Semantic Embeddings, Academic Integrity
 
 ## TL;DR
-By constructing paired citation graphs (human vs. GPT-4o-generated vs. random baseline) for 10,000 papers, this work finds that LLM-generated reference lists are nearly indistinguishable from human ones in terms of graph topology (RF accuracy only 60%), yet are effectively detectable via semantic embeddings (RF 83%, GNN 93%). This indicates that LLMs accurately mimic citation topology while leaving detectable semantic fingerprints.
+By constructing paired citation graphs for 10,000 papers (Human vs. GPT-4o Generated vs. Random Baseline), it is found that LLM-generated references are nearly indistinguishable from human ones in terms of graph topology (RF achieves only 60% accuracy). However, they can be effectively detected using semantic embeddings (RF 83%, GNN 93%), indicating that LLMs precisely mimic citation topology while leaving detectable semantic fingerprints.
 
 ## Background & Motivation
 
-**Background**: LLMs are increasingly used to synthesize scientific knowledge, draft literature reviews, and suggest references. Prior studies have found that LLM-generated references resemble human ones on coarse-grained metrics (title length, team size, citation count), but exhibit systematic biases at finer granularity (amplified Matthew effect, preference for recent papers, reduced self-citations).
+**Background**: LLMs are increasingly utilized to synthesize scientific knowledge, draft literature reviews, and suggest references. Prior research indicates that LLM-generated references resemble human ones on coarse-grained metrics (title length, team size, citation count) but exhibit systematic biases (intensified Matthew Effect, preference for recent papers, reduced self-citations).
 
-**Limitations of Prior Work**: It remains unclear whether LLM-generated and human-generated reference lists can be reliably distinguished. Single-reference auditing approaches (e.g., LLM-Check) are insufficient to capture list-level patterns.
+**Limitations of Prior Work**: It remains unclear whether LLM-generated reference lists can be reliably distinguished from human ones. Auditing individual citations (e.g., LLM-Check) is insufficient to capture patterns at the list level.
 
-**Key Challenge**: Do LLMs genuinely understand citation structure, or merely imitate it superficially? If topological structure is similar, where do the differences lie?
+**Key Challenge**: Do LLMs truly understand citation structures, or do they merely perform surface-level mimicry? If the topological structures are identical, where do the differences lie?
 
-**Goal**: To systematically evaluate the structural and semantic differences between LLM-generated and human citation graphs, and to develop corresponding detection methods.
+**Goal**: Systematically evaluate the differences between LLM-generated and human citation graphs across structural and semantic dimensions and develop detection methodologies.
 
-**Key Insight**: A progressive modeling strategy—from interpretable graph structural features to semantic embeddings to GNNs—that incrementally isolates the contributions of topology vs. semantics.
+**Key Insight**: A progressive modeling strategy—moving from interpretable graph structural features to semantic embeddings and then to GNNs—to deconstruct the contributions of topology vs. semantics.
 
-**Core Idea**: LLM references are "structurally human, semantically biased"—detection should target content signals rather than graph structure.
+**Core Idea**: LLM references are "structurally human but semantically biased"—detection should target content signals rather than the graph structure.
 
 ## Method
 
 ### Overall Architecture
 
-10,000 papers are sampled from SciSciNet → paired citation graphs are constructed (ground-truth, GPT-4o-generated, and domain-matched random baseline) → structural features are extracted (degree/closeness/eigenvector centrality, clustering coefficient, edge count) → semantic embeddings are extracted (OpenAI 3072-D) → RF + GNN three-class classification evaluation.
+The methodology follows a layer-by-layer controlled experiment: first, three directly comparable citation graphs are constructed for the same set of focal papers (Human/Real, GPT-4o Generated, and Domain-matched Random Baseline). Pure topological features and pure semantic embeddings are extracted from each graph and fed into classifiers separately to determine which signal supports "Human vs. LLM" discrimination. Detectors evolve from interpretable Random Forests to GNNs capable of jointly utilizing structure and semantics, thereby isolating topological and semantic contributions.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    A["10,000 Focal Papers"] --> B
+    subgraph B["Paired Citation Graph Construction (Design 1)"]
+        direction TB
+        B1["Real Graph<br/>SciSciNet Actual Citations"]
+        B2["GPT-4o Graph<br/>Generated via Memory"]
+        B3["Random Baseline Graph<br/>Domain-matched, Degree-preserved"]
+    end
+    B --> C1["Topological Features<br/>5-dim Centrality/Clustering"]
+    B --> C2["Semantic Embeddings<br/>3072-dim Text Encoding"]
+    C1 --> D["Topological vs. Semantic Comparison<br/>Input to RF (Design 2)"]
+    C2 --> D
+    C1 --> E["GNN Graph-level Classification<br/>Joint Structure/Semantics (Design 3)"]
+    C2 --> E
+    D --> F["Human vs. LLM Discrimination"]
+    E --> F
+```
 
 ### Key Designs
 
-1. **Citation Graph Construction**:
+**1. Paired Citation Graph Construction: Ensuring Comparability Across Sources**
 
-    - **Function**: Construct paired ground-truth/generated citation graphs for each paper.
-    - **Mechanism**: The focal paper serves as the main node; cited papers are child nodes; citation relations are retrieved from SciSciNet. GPT-4o generates references purely parametrically given title, abstract, author information, etc. The random baseline uniformly reshuffles citations within the same field, preserving the degree distribution.
-    - **Design Motivation**: Controlled experiment—three citation graphs for the same focal paper are directly comparable.
+The most significant confounding factor in determining whether LLM citations are "human-like" is that differences in topic and field naturally lead to variations in citation structure. To address this, 10,000 focal papers are sampled from SciSciNet. For each, three citation graphs sharing the same ego node are built: edges in the "Real Graph" come from actual SciSciNet citations; the "GPT-4o Graph" is generated solely from metadata (title, abstract, authors) based on the model's internal memory without retrieval; and the "Random Baseline Graph" is generated by uniformly reshuffling citations within the same field while preserving the degree distribution. Because these graphs share focal nodes and scale, any discriminative power is purely attributable to "Human vs. Generated" differences rather than topical distribution.
 
-2. **Structural Features vs. Semantic Embeddings**:
+**2. Topological vs. Semantic Comparison: Locating the Discriminative Signal**
 
-    - **Structural features**: Degree/closeness/eigenvector centrality, clustering coefficient, edge count → RF classification.
-    - **Semantic embeddings**: OpenAI text-embedding-3-large (3072-D) → graph-level aggregation → RF / used as GNN node features.
-    - **Design Motivation**: Disentangle the contributions of topological signals and content signals.
+To determine if LLMs understand citation structure or merely mimic it, two types of signals are strictly isolated and fed into classifiers. The topological path uses five graph structural metrics—degree centrality, closeness centrality, eigenvector centrality, clustering coefficient, and edge count. The semantic path uses OpenAI `text-embedding-3-large` to encode the text of each node into a 3072-dimensional embedding, aggregated into a graph-level representation. The disparity in accuracy between these two paths quantifies the information carried by topology vs. content. In experiments, the topological path achieves only 0.608 (near random), while the semantic path reaches 0.835, supporting the "structurally human, semantically biased" conclusion. To exclude the possibility that the 3072-dimensional capacity alone drives this, the authors replaced real embeddings with random ones, which dropped accuracy to $\approx 0.50$.
 
-3. **GNN Graph Classification**:
+**3. GNN Graph-level Classification: Pushing the Upper Bound**
 
-    - **Function**: Graph-level binary classification using GCN/GAT/GIN/GraphSAGE.
-    - **Mechanism**: Node features are either structural attributes (5-D) or semantic embeddings (3072-D); graph-level readout is followed by binary classification.
-    - **Design Motivation**: GNNs can jointly exploit both structural and semantic signals.
+Random Forests use aggregated graph-level features and lose relational information between nodes. This study employs GCN, GAT, GIN, and GraphSAGE for graph-level binary classification. Node features can be 5-dimensional structural attributes or 3072-dimensional semantic embeddings. After message passing and graph-level readout, the model outputs "Human vs. Generated." When using semantic embeddings, GNNs push accuracy from the RF's 0.835 to 0.93, validating that the graph structure amplifies semantic signals. In contrast, GNNs using only structural features remain at $\approx 0.55$.
 
 ### Loss & Training
 
-Adam optimizer, 70/15/15 split, balanced dataset. Robustness validated with dual LLMs (GPT-4o + Claude Sonnet 4.5) and dual embedding models (SPECTER + OpenAI).
+GNNs are trained using the Adam optimizer with a 70/15/15 train/val/test split, ensuring class balance to avoid bias. Robustness is verified via two-layered cross-validation: the generator side uses both GPT-4o and Claude Sonnet 4.5 (models trained on GPT and tested on Claude maintained $\approx 0.72$ accuracy); the embedding side uses both SPECTER and OpenAI models to confirm that the semantic fingerprint is not encoder-dependent.
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Method | GT vs GPT | GT vs Random | GPT vs Random |
+| Method | Human vs. GPT | Human vs. Random | GPT vs. Random |
 |------|----------|-------------|--------------|
-| RF (structural features) | 0.608 | 0.896 | 0.928 |
-| RF (semantic embeddings) | **0.835** | 0.908 | 0.953 |
-| GNN (structural features) | ~0.55 | ~0.90 | ~0.93 |
-| GNN (semantic embeddings) | **0.93** | ~0.95 | ~0.97 |
+| RF (Structural Features) | 0.608 | 0.896 | 0.928 |
+| RF (Semantic Embeddings) | **0.835** | 0.908 | 0.953 |
+| GNN (Structural Features) | $\approx 0.55$ | $\approx 0.90$ | $\approx 0.93$ |
+| GNN (Semantic Embeddings) | **0.93** | $\approx 0.95$ | $\approx 0.97$ |
 
 ### Ablation Study
 
-| Configuration | GT vs GPT Accuracy | Notes |
+| Configuration | Human vs. GPT Accuracy | Note |
 |------|----------------|------|
-| GNN + embeddings | 93% | Best |
-| RF + embeddings | 83.5% | Semantic embeddings contribute significantly |
-| RF + structure | 60.8% | Near random |
-| GNN + structure | ~55% | Structure alone entirely insufficient |
-| Random embedding substitution | ~50% | Confirms effect is not due to dimensionality |
-| Cross-generator (GPT train → Claude test) | ~72% | Generalizes to other LLMs |
+| GNN + Embedding | 93% | Best |
+| RF + Embedding | 83.5% | Large semantic contribution |
+| RF + Structure | 60.8% | Near random |
+| GNN + Structure | $\approx 55% $ | Structure insufficient |
+| Random Embedding Replacement | $\approx 50% $ | Confirms non-dimensionality effect |
+| Cross-generator (GPT Train $\rightarrow$ Claude Test) | $\approx 72% $ | Generalizes to other LLMs |
 
 ### Key Findings
-- **Topology is nearly indistinguishable**: Centrality and clustering coefficients of GPT citation graphs heavily overlap with ground-truth graphs; RF achieves only 60%.
-- **Semantic fingerprints are detectable**: Embedding features improve accuracy from 60% to 83% (RF) / 93% (GNN).
-- **Random baseline is easily separated**: Ground-truth vs. random achieves 89%+, GPT vs. random achieves 93%+—demonstrating that GPT does generate structurally plausible citations.
-- **Cross-LLM generalization**: A classifier trained on GPT-4o achieves 72% accuracy on Claude.
-- **Replacing embeddings with random vectors drops accuracy to 50%**, confirming that discriminative power derives from semantic structure rather than dimensionality.
+- **Topology is nearly indistinguishable**: GPT citation graphs overlap significantly with real ones in centrality and clustering coefficients; RF achieves only 60% accuracy.
+- **Semantic fingerprints are detectable**: Embedding features increase accuracy from 60% to 83% (RF) and 93% (GNN).
+- **Random baselines are easy to distinguish**: Human vs. Random $> 89\%$, GPT vs. Random $93\%+$, indicating GPT generates structurally plausible citations.
+- **Cross-LLM Generalization**: Classifiers trained on GPT-4o maintain 72% accuracy on Claude.
+- **Dimensionality effect ruled out**: Replacing embeddings with random vectors drops accuracy to 50%, confirming discriminative power comes from semantic structure.
 
 ## Highlights & Insights
-- The finding of **"structurally human, semantically biased"** has direct implications for auditing and debiasing strategies—detection efforts should focus on content signals rather than graph structure.
-- The **domain-matched random baseline** design is methodologically rigorous—reshuffling citations within the same field controls for topic distribution.
-- The **progressive analysis** (structure → embeddings → GNN) clearly delineates the contribution of each modeling layer.
+- The **"Structurally human, semantically biased"** finding provides direct guidance for auditing and debiasing strategies, suggesting a focus on content signals rather than graph topology.
+- The **domain-matched random baseline** design is rigorous, controlling for topic distribution via intra-field reshuffling.
+- The **progressive analysis** (Structure $\rightarrow$ Embedding $\rightarrow$ GNN) clearly demonstrates the contribution of each layer.
 
 ## Limitations & Future Work
-- Only parametric generation (without RAG) is tested; in practice, LLMs may employ retrieval-augmented generation.
-- The specific semantic dimensions underlying the observed differences (e.g., recency bias, prestige bias) are not deeply analyzed.
-- It remains unclear which dimensions of the 3072-D embeddings drive discriminative power.
-- Only binary classification is explored; multi-class settings (e.g., partially LLM-generated references) are not investigated.
+- Only parameterized generation (without RAG) was tested; real-world applications may use retrieval-augmented generation.
+- Specific dimensions of semantic bias (e.g., recency bias, prestige bias) were not analyzed in depth.
+- Which specific dimensions of the 3072-D embedding drive the discrimination?
+- This study focuses on binary classification and does not explore multi-class scenarios (e.g., partially LLM-generated references).
 
 ## Related Work & Insights
-- **vs. LLM-Check**: LLM-Check audits the existence of individual citations, whereas this paper evaluates graph-level patterns of entire reference lists.
-- **vs. Algaba et al.**: Prior work identified coarse-grained consistency; this paper achieves high-accuracy automatic detection via GNNs and embeddings.
+- **vs. LLM-Check**: While LLM-Check audits the existence of single citations, this work evaluates graph-level patterns of entire reference lists.
+- **vs. Algaba et al.**: Previous work identified coarse-level consistencies; this work achieves high-accuracy automated detection through GNNs and embeddings.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ The combination of citation graphs and GNNs is novel, though the analytical framework itself is relatively straightforward.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 10,000 graphs, dual LLMs, dual embedding models, multiple baselines, and random embedding controls—highly comprehensive.
-- Writing Quality: ⭐⭐⭐⭐ Excellent visualizations and clear layer-by-layer analysis.
-- Value: ⭐⭐⭐⭐ Practically meaningful for academic integrity and AI-assisted writing.
+- Novelty: ⭐⭐⭐⭐ The combination of citation graphs and GNNs is novel, though the analysis framework is straightforward.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 10,000 graphs, dual LLMs, dual embedding models, multiple baselines, and random embedding controls make it very comprehensive.
+- Writing Quality: ⭐⭐⭐⭐ Excellent visualization and clear step-by-step analysis.
+- Value: ⭐⭐⭐⭐ Significant implications for academic integrity and AI-assisted writing.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] Bridging ML and Algorithms: Comparison of Hyperbolic Embeddings](bridging_ml_and_algorithms_comparison_of_hyperbolic_embeddings.md)
+- [\[ICML 2025\] LLM Enhancers for GNNs: An Analysis from the Perspective of Causal Mechanism Identification](../../ICML2025/graph_learning/llm_enhancers_for_gnns_an_analysis_from_the_perspective_of_causal_mechanism_iden.md)
 - [\[ACL 2026\] Graph-Based Alternatives to LLMs for Human Simulation](../../ACL2026/graph_learning/graph-based_alternatives_to_llms_for_human_simulation.md)
-- [\[ICML 2026\] Aitchison Embeddings for Learning Compositional Graph Representations](../../ICML2026/graph_learning/aitchison_embeddings_for_learning_compositional_graph_representations.md)
+- [\[ICLR 2026\] Glance for Context: Learning When to Leverage LLMs for Node-Aware GNN-LLM Fusion](glance_for_context_learning_when_to_leverage_llms_for_node-aware_gnn-llm_fusion.md)
 - [\[ICLR 2026\] On the Expressive Power of GNNs for Boolean Satisfiability](on_the_expressive_power_of_gnns_for_boolean_satisfiability.md)
-- [\[ICLR 2026\] RAS: Retrieval-And-Structuring for Knowledge-Intensive LLM Generation](ras_retrieval-and-structuring_for_knowledge-intensive_llm_generation.md)
-- [\[AAAI 2026\] Sentient: Detecting APTs Via Capturing Indirect Dependencies and Behavioral Logic](../../AAAI2026/graph_learning/sentient_detecting_apts_via_capturing_indirect_dependencies_and_behavioral_logic.md)
 
 </div>
 

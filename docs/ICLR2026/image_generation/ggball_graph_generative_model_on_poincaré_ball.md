@@ -2,69 +2,69 @@
 title: >-
   [Paper Note] GGBall: Graph Generative Model on Poincaré Ball
 description: >-
-  [ICLR 2026][Image Generation][Hyperbolic Space] This paper proposes GGBall, the first graph generation framework operating entirely on the Poincaré ball model. By combining a hyperbolic vector-quantized variational autoe…
+  [ICLR 2026][Image Generation][Flow Matching] The authors propose GGBall, the first graph generative framework entirely based on the Poincaré ball model. By utilizing a Hyperbolic Vector Quantized Autoencoder (HVQVAE) and a Riemannian Flow Matching prior, it achieves SOTA performance in hierarchical and molecular graph generation, reducing the average generation e
 tags:
-  - "ICLR 2026"
-  - "Image Generation"
-  - "Hyperbolic Space"
-  - "Graph Generation"
-  - "Poincaré Ball Model"
-  - "Vector Quantization"
-  - "Flow Matching"
+  - ICLR 2026
+  - Image Generation
+  - Flow Matching
 date: 2026-05-08
-content_hash: 00469fe2ac488e2e
+content_hash: d9541165a4076ded
 ---
-
 # GGBall: Graph Generative Model on Poincaré Ball
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2506.07198](https://arxiv.org/abs/2506.07198)  
 **Code**: [GitHub](https://github.com/AI4Science-WestlakeU/GGBall)  
-**Area**: Graph Generation / Hyperbolic Geometry
-**Keywords**: Hyperbolic Space, Graph Generation, Poincaré Ball Model, Vector Quantization, Flow Matching
+**Area**: Graph Generation / Hyperbolic Geometry  
+**Keywords**: Hyperbolic space, graph generation, Poincaré ball model, vector quantization, Flow Matching
 
 ## TL;DR
-This paper proposes GGBall, the first graph generation framework operating entirely on the Poincaré ball model. By combining a hyperbolic vector-quantized variational autoencoder (HVQVAE) with a Riemannian flow matching prior, GGBall achieves state-of-the-art performance on both hierarchical and molecular graph generation, reducing the average generation error by 18% on hierarchical graph benchmarks.
+The authors propose GGBall, the first graph generative framework entirely based on the Poincaré ball model. By utilizing a Hyperbolic Vector Quantized Autoencoder (HVQVAE) and a Riemannian Flow Matching prior, it achieves SOTA performance in hierarchical and molecular graph generation, reducing the average generation error on hierarchical datasets by 18%.
 
 ## Background & Motivation
-- **Background**: Graph generation is a core task in molecular design, materials discovery, and related domains. Existing methods (e.g., DiGress, GDSS) primarily operate in Euclidean space or discrete graph space.
-- **Limitations of Prior Work**: Euclidean latent spaces are inherently ill-suited for capturing hierarchical structures and power-law degree distributions in graph data, leading to distortion of community structures and parent–child relationships.
-- **Key Challenge**: There is a geometric mismatch between the combinatorial, hierarchical nature of graphs and the linearly growing volume of Euclidean space.
-- **Key Insight**: The exponential volume growth of hyperbolic space naturally accommodates hierarchical structures (Gromov's theorem).
-- **Core Idea**: The standard Euclidean latent-space generation pipeline is fully reformulated in hyperbolic space, representing graph topology uniformly via node-level latent variables.
+- **Background**: Graph generation is a core task in fields such as molecular design and material discovery. Existing methods (e.g., DiGress, GDSS) primarily operate in Euclidean space or discrete graph spaces.
+- **Limitations of Prior Work**: Euclidean latent spaces are inherently unsuitable for capturing the hierarchical structures and power-law degree distributions of graph data, leading to the distortion of community structures and parent-child relationships.
+- **Key Challenge**: There is a geometric mismatch between the compositional, hierarchical nature of graphs and the linear volume growth of Euclidean space.
+- **Key Insight**: The exponential volume growth of hyperbolic space is naturally suited for representing hierarchical structures (Gromov's theorem).
+- **Core Idea**: Transform the standard Euclidean latent space generation pipeline entirely into hyperbolic space, using node-level latent variables to uniformly represent graph topology.
 
 ## Method
 
 ### Overall Architecture
-The framework adopts a two-stage generation process: (1) graph structures are encoded into discrete latent tokens on the Poincaré ball via HVQVAE; (2) a Riemannian flow matching model captures the latent prior, and at generation time samples are drawn from the prior, quantized, and decoded. A GNN encodes local structure, while a Transformer propagates global dependencies.
+GGBall aims to migrate the entire "encoding → quantization → prior → decoding" generation pipeline to the Poincaré ball, allowing the inherent exponential volume growth of hyperbolic geometry to accommodate the hierarchical structures and power-law degree distributions of graphs. The framework follows a two-stage process: The first stage is the Hyperbolic Vector Quantized Autoencoder (HVQVAE), which encodes a graph into a set of discrete node-level tokens on the Poincaré ball—a Poincaré Graph Neural Network first aggregates local neighborhood structures in hyperbolic space, followed by a Poincaré Diffusion Transformer to propagate global dependencies; finally, embeddings are quantized into a learnable hyperbolic codebook and reconstructed by the decoder. The second stage freezes the autoencoder and learns a prior over this discrete latent space using Riemannian Flow Matching, with a backbone that reuses the same Poincaré Transformer. During generation, latent tokens are first sampled from the flow matching prior and then decoded into a graph. The key aspect is staying within the hyperbolic manifold throughout the process, treating edge connectivity as an emergent property of the latent space geometry rather than a separately modeled discrete object.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    G["Input Graph G<br/>Nodes + Edges"] --> GNN
+    subgraph S1["Stage 1 · Hyperbolic Vector Quantized Autoencoder (HVQVAE)"]
+        direction TB
+        GNN["Poincaré GNN<br/>Tangent space aggregation of local neighborhoods"] --> TF["Poincaré Diffusion Transformer<br/>Geodesic attention for global propagation"]
+        TF --> VQ["Hyperbolic VQ Codebook<br/>Geodesic nearest neighbor retrieval"]
+        VQ --> DEC["Hyperbolic Decoder<br/>Graph reconstruction · Degree-edge consistency"]
+    end
+    VQ --> ZQ["Discrete node tokens z_q"]
+    ZQ -->|"Prior training"| FM["Stage 2 · Riemannian Flow Matching Prior<br/>Reusing Poincaré Transformer backbone"]
+    FM -->|"Sample tokens"| DEC
+    DEC --> OUT["Reconstructed / Generated Graph"]
+```
 
 ### Key Designs
 
-1. **Poincaré Graph Neural Network (Poincaré GNN)**:
+**1. Poincaré Graph Neural Network: Migrating message passing entirely to hyperbolic space**
 
-    - **Function**: Performs message passing in hyperbolic space to encode edge and node information into node representations.
-    - **Mechanism**: Tangent-space aggregation with distance-modulated message functions. $\log_0^c(\cdot)$ / $\exp_0^c(\cdot)$ are used to map representations to the tangent space for aggregation and back to the manifold.
-    - Message modulation: $\text{M}(\mathbf{m}_{ij}) = \gamma_{ij} \cdot \mathbf{m}_{ij} + \beta_{ij}$, where $\gamma_{ij}, \beta_{ij}$ are functions of the hyperbolic distance $d_c(\mathbf{h}_i, \mathbf{h}_j)$.
-    - **Design Motivation**: Curvature-aware distance modulation enables the model to directly encode the strength of hierarchical relationships.
+Euclidean GNNs directly perform weighted sums in vector space, but hyperbolic manifolds lack a native addition operation. GGBall utilizes the tangent space as a transition: it first uses the logarithmic map $\log_0^c(\cdot)$ to pull node representations into the tangent space of the origin (a local Euclidean approximation), performs neighborhood aggregation there, and then returns to the manifold via the exponential map $\exp_0^c(\cdot)$. This ensures every operation remains within the Poincaré ball. More crucially, the message function includes a curvature-aware distance modulation $\text{M}(\mathbf{m}_{ij}) = \gamma_{ij} \cdot \mathbf{m}_{ij} + \beta_{ij}$, where the scaling term $\gamma_{ij}$ and bias term $\beta_{ij}$ are functions of the hyperbolic distance $d_c(\mathbf{h}_i, \mathbf{h}_j)$. This means the further apart two nodes are hierarchically, the differently their messages are modulated, allowing the model to encode the strength of hierarchical relationships directly into the representation.
 
-2. **Poincaré Diffusion Transformer**:
+**2. Poincaré Diffusion Transformer: Propagating global structure via geodesic distance**
 
-    - **Function**: Models global graph structure by replacing dot-product attention with geodesic distance attention.
-    - Geodesic attention: $\alpha_{ij} \propto \exp(-\tau d_c(\mathbf{q}_i, \mathbf{k}_j))$
-    - Value aggregation uses the Möbius gyromidpoint to maintain geometric consistency.
-    - **Time modulation**: Timestep embeddings are injected to support the flow matching prior.
+GNNs are limited to local neighborhoods; global topology relies on Transformers. However, standard dot-product attention uses Euclidean inner products, which breaks geometric consistency in hyperbolic space. GGBall replaces attention scores with a geodesic distance form $\alpha_{ij} \propto \exp(-\tau d_c(\mathbf{q}_i, \mathbf{k}_j))$—the closer the query and key are on the manifold, the higher the score, with temperature $\tau$ controlling sharpness. Aggregation of attended values uses the Möbius gyromidpoint (a hyperbolic version of a weighted midpoint) to ensure results remain on the manifold. This Transformer also serves as the backbone for the Flow Matching prior, incorporating time-step embeddings for temporal modulation.
 
-3. **Hyperbolic Vector-Quantized Variational Autoencoder (HVQVAE)**:
+**3. Hyperbolic Vector Quantized Autoencoder (HVQVAE): Discretizing continuous hyperbolic embeddings**
 
-    - **Function**: Discretizes continuous hyperbolic embeddings into a learnable Poincaré codebook $\mathcal{C}$.
-    - **Mechanism**: Nearest-neighbor quantization based on geodesic distance: $\mathbf{z}_q = \arg\min_{\mathbf{c}_j} d_c(\mathbf{z}, \mathbf{c}_j)$.
-    - Codebook entries are initialized via hyperbolic $k$-means clustering and updated with a Riemannian optimizer.
-    - **Stability mechanism**: Inactive codebook entries are replaced via an expiry threshold; weighted Einstein midpoint updates are applied.
+Continuous latent spaces are difficult to pair with highly expressive priors, so GGBall introduces vector quantization to map node embeddings to a learnable Poincaré codebook $\mathcal{C}$. The quantization rule is modified to a hyperbolic version of nearest neighbor—retrieving the closest codeword based on geodesic distance $\mathbf{z}_q = \arg\min_{\mathbf{c}_j} d_c(\mathbf{z}, \mathbf{c}_j)$. The codebook is initialized via hyperbolic k-means and updated using a Riemannian optimizer. To avoid codebook collapse, it employs a stability mechanism: an expiry threshold detects infrequently hit codewords for replacement, while codewords themselves are updated using the weighted Einstein midpoint (hyperbolic mean) to ensure geometric stability.
 
 ### Loss & Training
-- Autoencoder loss: reconstruction loss + degree–edge consistency loss + L2 regularization.
-- HVQVAE loss: $\mathcal{L}_{\text{HVQVAE}} = \lambda_1 \mathcal{L}_{\text{AE}} + \lambda_2 \mathbb{E}[d_c^2(\text{sg}(\mathbf{z}_q), \mathbf{z})] + \lambda_3 \mathbb{E}[d_c^2(\mathbf{z}_q, \text{sg}(\mathbf{z}))]$
-- Flow matching prior: Riemannian conditional flow matching objective with geodesic interpolation paths.
+The first stage jointly trains the autoencoder and the codebook. The total loss $\mathcal{L}_{\text{HVQVAE}} = \lambda_1 \mathcal{L}_{\text{AE}} + \lambda_2 \mathbb{E}[d_c^2(\text{sg}(\mathbf{z}_q), \mathbf{z})] + \lambda_3 \mathbb{E}[d_c^2(\mathbf{z}_q, \text{sg}(\mathbf{z}))]$ consists of three components: the autoencoding term $\mathcal{L}_{\text{AE}}$ (combining reconstruction loss, degree-edge consistency loss, and L2 regularization) and two VQ commitment losses, where L2 distances are replaced by geodesic distances $d_c$ using the stop-gradient operator $\text{sg}(\cdot)$. The second stage freezes the autoencoder and trains the prior using Riemannian Conditional Flow Matching on the discrete latent space, regressing the vector field along geodesic interpolation paths to learn the continuous transport from noise to latent variables on the hyperbolic manifold.
 
 ## Key Experimental Results
 
@@ -73,9 +73,9 @@ The framework adopts a two-stage generation process: (1) graph structures are en
 | Method | Community-small Avg↓ | Ego-small Avg↓ | Space |
 |------|---------------------|----------------|------|
 | GraphVAE | 0.6233 | 0.1167 | Euclidean |
-| GDSS | 0.0460 | 0.0173 | Graph |
-| DiGress | 0.0380 | - | Graph |
-| HGDM | 0.0240 | 0.0137 | Hybrid |
+| GDSS | 0.0460 | 0.0173 | Graph Space |
+| DiGress | 0.0380 | - | Graph Space |
+| HGDM | 0.0240 | 0.0137 | Mixed |
 | **GGBall** | **0.0197** | **0.0117** | Hyperbolic |
 
 ### Molecular Graph Generation (QM9)
@@ -87,41 +87,51 @@ The framework adopts a two-stage generation process: (1) graph structures are en
 | **GGBall** | **98.33** | **96.38** | **93.77** | **88.45** |
 
 ### Key Findings
-- HVQVAE significantly improves chemical validity (95.18→99.14%) and edge precision over HAE.
-- The hyperbolic encoder achieves 4× lower MMD error in degree distribution preservation compared to Euclidean baselines.
-- Novelty of 93.77% substantially outperforms DiGress (32.51%), indicating stronger expressiveness of hyperbolic space.
+- HVQVAE significantly improves chemical validity (95.18% → 99.14%) and edge accuracy compared to Hyperbolic Autoencoders (HAE).
+- The hyperbolic encoder achieves 4× lower MMD error in degree distribution maintenance compared to Euclidean baselines.
+- The novelty of 93.77% far exceeds DiGress's 32.51%, indicating the superior expressive power of hyperbolic space.
 
 ## Highlights & Insights
-- GGBall is the first graph generation framework operating entirely on the Poincaré ball, unifying the encode–quantize–prior–decode pipeline end-to-end in hyperbolic space.
-- Node-level latent variables provide a unified representation of graph topology, treating edge connectivity as an emergent property of latent-space geometry.
-- GGBall achieves the highest V.U.N score on QM9, a composite metric combining novelty, uniqueness, and validity.
+- First graph generative framework entirely on the Poincaré ball, unifying the full pipeline of encoding, quantization, prior, and decoding.
+- Uses node-level latent variables to uniformly represent graph topology, treating edge connectivity as an emergent property of latent geometry.
+- Achieves the highest V.U.N score (a comprehensive metric of Validity, Uniqueness, and Novelty) on the QM9 dataset.
 
 ## Limitations & Future Work
-- Autoregressive priors underperform flow matching in preliminary experiments; further exploration is warranted.
-- Validity on molecular graphs is slightly below DiGress (98.33 vs. 99.00); tighter integration of chemical constraints remains an open challenge.
-- Hyperbolic space operations introduce higher computational complexity compared to their Euclidean counterparts.
+- Autoregressive priors performed worse than Flow Matching in initial experiments and require further exploration.
+- Validity on molecular graphs is slightly lower than DiGress (98.33 vs 99.00); the integration of fine-grained chemical constraints needs to be strengthened.
+- Computational overhead: Hyperbolic operations are more complex than standard Euclidean ones.
 
 ## Related Work & Insights
-- **vs. HGDM**: HGDM performs edge denoising only on Poincaré embeddings while still operating in discrete graph space; GGBall operates entirely within the hyperbolic latent space.
-- **vs. DiGress**: DiGress iteratively denoises in graph space and is constrained by Euclidean geometry; GGBall leverages hyperbolic latent variables to disentangle hierarchical structure.
+- **vs HGDM**: HGDM only performs edge denoising on Poincaré embeddings and still operates in discrete graph space; GGBall resides entirely in the hyperbolic latent space.
+- **vs DiGress**: DiGress performs iterative denoising in graph space and is limited by Euclidean geometry; GGBall leverages hyperbolic variables to decouple hierarchical structures.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐⭐ — First fully hyperbolic graph generation framework, with hyperbolic components throughout: GNN, Transformer, VQ, and flow matching.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Covers both abstract and molecular graphs with thorough ablations; large-scale graph benchmarks are lacking.
-- **Writing Quality**: ⭐⭐⭐⭐ — Mathematically rigorous with a clear presentation.
-- **Value**: ⭐⭐⭐⭐ — Opens a new direction for non-Euclidean geometry in generative modeling.
+- Novelty: ⭐⭐⭐⭐⭐ First fully hyperbolic graph generative framework, hyperbolizing everything from GNNs and Transformers to VQ and FM.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Covers abstract and molecular graphs with thorough ablation, though lacks large-scale graph data.
+- Writing Quality: ⭐⭐⭐⭐ Mathematically rigorous and clear in process.
+- Value: ⭐⭐⭐⭐ Opens new directions for non-Euclidean geometry in generative models.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
 
+**Conference**: ICLR 2026  
+**Related Papers**:
+- [2506.07198] GGBall: Graph Generative Model on Poincaré Ball (Ours)
+- [2302.00761] DiGress: Discrete Denoising diffusion for graph generation
+- [2402.14321] Hyperbolic Graph Diffusion Models (HGDM)
+
+</div>
+
+<!-- RELATED:END -->
+
 ## Related Papers
 
-- [\[ICLR 2026\] Verification of the Implicit World Model in a Generative Model via Adversarial Sequences](verification_of_the_implicit_world_model_in_a_generative_model_via_adversarial_s.md)
 - [\[ICLR 2026\] PolyGraph Discrepancy: a classifier-based metric for graph generation](polygraph_discrepancy_a_classifier-based_metric_for_graph_generation.md)
+- [\[ICLR 2026\] Verification of the Implicit World Model in a Generative Model via Adversarial Sequences](verification_of_the_implicit_world_model_in_a_generative_model_via_adversarial_s.md)
 - [\[ICLR 2026\] HOG-Diff: Higher-Order Guided Diffusion for Graph Generation](hog-diff_higher-order_guided_diffusion_for_graph_generation.md)
+- [\[ICLR 2026\] Continuously Augmented Discrete Diffusion model for Categorical Generative Modeling](continuously_augmented_discrete_diffusion_model_for_categorical_generative_model.md)
 - [\[ICLR 2026\] GenCP: Towards Generative Modeling Paradigm of Coupled Physics](gencp_towards_generative_modeling_paradigm_of_coupled_physics.md)
-- [\[ICLR 2026\] Laplacian Multi-scale Flow Matching for Generative Modeling](laplacian_multi-scale_flow_matching_for_generative_modeling.md)
 
 </div>
 

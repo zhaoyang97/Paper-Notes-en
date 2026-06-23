@@ -2,73 +2,100 @@
 title: >-
   [Paper Note] Follow-Your-Shape: Shape-Aware Image Editing via Trajectory-Guided Region Control
 description: >-
-  [ICLR 2026][Image Generation][Shape Editing] This paper proposes Follow-Your-Shape, a training-free and mask-free shape-aware editing framework. It constructs a Trajectory Divergence Map (TDM) by computing token-level ve…
+  [ICLR 2026][Image Generation][Shape Editing] Follow-Your-Shape is proposed as a training-free and mask-free shape-aware image editing framework. It constructs a Trajectory Divergence Map (TDM) by calculating token-level velocity differences between inversion and editing trajectories to precisely locate the editing region. Combined with stage-based KV injection, i
 tags:
-  - "ICLR 2026"
-  - "Image Generation"
-  - "Shape Editing"
-  - "Trajectory Divergence Map"
-  - "training-free"
-  - "Flow Matching"
-  - "KV Injection"
+  - ICLR 2026
+  - Image Generation
+  - Shape Editing
+  - Trajectory Divergence Map
+  - training-free
+  - Flow Matching
+  - KV Injection
 date: 2026-05-08
-content_hash: 46ba763f5a93aa12
+content_hash: e694568cedcaf7ad
 ---
-
 # Follow-Your-Shape: Shape-Aware Image Editing via Trajectory-Guided Region Control
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2508.08134](https://arxiv.org/abs/2508.08134)  
 **Code**: [Project Page](https://follow-your-shape.github.io/)  
-**Area**: Diffusion Models / Image Editing
+**Area**: Diffusion Models / Image Editing  
 **Keywords**: Shape Editing, Trajectory Divergence Map, training-free, Flow Matching, KV Injection
 
 ## TL;DR
-This paper proposes Follow-Your-Shape, a training-free and mask-free shape-aware editing framework. It constructs a Trajectory Divergence Map (TDM) by computing token-level velocity discrepancies between inversion and editing trajectories to precisely localize editing regions, and employs a staged KV injection strategy to achieve large-scale shape transformations while strictly preserving the background.
+Follow-Your-Shape is proposed as a training-free and mask-free shape-aware image editing framework. It constructs a Trajectory Divergence Map (TDM) by calculating token-level velocity differences between inversion and editing trajectories to precisely locate the editing region. Combined with stage-based KV injection, it achieves significant shape transformations while strictly preserving the background.
 
 ## Background & Motivation
-**Background**: Diffusion/Flow model-based image editing performs well on general tasks but frequently fails at structural editing involving large-scale shape transformations—either failing to achieve the target shape change or corrupting non-edited regions.
+**Background**: Image editing based on Diffusion/Flow models performs well on general tasks but often fails in structural editing involving large-scale shape transformations—either failing to achieve the target shape or destroying non-edited regions.
 
-**Limitations of Prior Work**: Existing region control strategies suffer from fundamental drawbacks:
-   - External binary masks: overly rigid and ill-suited for fine-grained boundaries
-   - Cross-attention map inference: noisy and unstable, unreliable under large deformations
-   - Unconditional KV injection: globally preserves structure but suppresses the intended edit
+**Limitations of Prior Work**: Existing region control strategies have fundamental flaws:
+   - External binary masks: Too rigid to handle fine boundaries.
+   - Cross-attention map inference: Noisy and unstable, making it unreliable for large deformations.
+   - Unconditional KV injection: Preserves structure globally but suppresses the target edit.
 
-**Key Challenge**: A fundamental tension between edit controllability and content preservation—enabling a Flow model to precisely modify the shape of a target region without affecting surrounding areas.
+**Key Challenge**: The conflict between editing controllability and content preservation—enabling Flow models to precisely modify the target region's shape without affecting other areas.
 
-**Goal**: How to achieve precise, large-scale shape editing without training or external masks?
+**Goal**: How to achieve precise large-scale shape editing without training or external masks?
 
-**Key Insight**: From a dynamical systems perspective—editing regions can be localized by measuring the degree of divergence between denoising trajectories under source and target conditions.
+**Key Insight**: From a dynamical systems perspective, the editing region can be localized by the degree of divergence between denoising trajectories under source and target conditions.
 
-**Core Idea**: Automatically localize editing regions by comparing velocity field discrepancies under source and target prompts, and leverage staged KV injection to achieve stable, shape-aware editing.
+**Core Idea**: Automatically locate the editing area by comparing velocity field differences under source and target prompts, and implement stable shape-aware editing using stage-based KV injection.
 
 ## Method
 
 ### Overall Architecture
-An inference-time editing framework built on FLUX.1-dev. Given a source image and prompt, the method first inverts the image to a noisy latent, then performs denoising in three stages: Stage 1 applies global KV injection to stabilize the trajectory → Stage 2 performs editing while collecting TDMs → Stage 3 applies selective KV injection guided by the TDM mask along with optional ControlNet structural guidance.
+Follow-Your-Shape addresses the overlooked sub-task of "large-scale shape editing": changing an object into a drastically different shape (e.g., changing a standing cat to a curled one) while strictly preserving the background. Built upon FLUX.1-dev, it is an inference-time framework that requires neither training nor external masks. The pipeline is as follows: given a source image and source/target prompts, a second-order RF-Solver inversion maps the image to a noise latent and records source KV features. The denoising process is then divided into three stages: Stage 1 uses unconditional KV injection to anchor the trajectory to the reconstruction manifold; Stage 2 allows editing while calculating the TDM from velocity field divergence in real-time to generate an editing mask; Stage 3 applies selective KV injection (target KV for the editing area, source KV for the background, supplemented by optional ControlNet constraints) to produce the final result.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    A["Source Image + Source/Target Prompts"] --> B["RF-Solver Second-order Inversion<br/>→ Noise Latent + Source KV"]
+    B --> S1
+    subgraph S1["Stage 1: Stability (Stage-based Scheduling)"]
+        direction TB
+        C["Unconditional KV Injection<br/>First k_front=2 steps, Mask M_S=0<br/>Anchor to Reconstruction Manifold"]
+    end
+    S1 --> S2
+    subgraph S2["Stage 2: Exploration"]
+        direction TB
+        D["Enable Editing M_S=1<br/>Calculate Velocity Divergence (TDM)"] --> E["Softmax Temporal Fusion<br/>+ Gaussian Blur + Otsu Threshold<br/>→ Editing Mask M_S"]
+    end
+    S2 --> S3
+    subgraph S3["Stage 3: Constraint"]
+        direction TB
+        F["Selective KV Injection<br/>Edit Area ← Target KV / Background ← Source KV"] --> G["Optional ControlNet<br/>depth+Canny, Interval [0.1,0.3]"]
+    end
+    S3 --> H["Edited Image<br/>Large Deformation + Background Preservation"]
+```
 
 ### Key Designs
-1. **Trajectory Divergence Map (TDM)**: The core contribution. During denoising, the token-level $L_2$ discrepancy between velocity fields conditioned on the source and target prompts is computed:
+
+**1. Stage-based Editing Schedule: Stability → Exploration → Constraint, avoiding unreliable TDM in high-noise phases.**
+
+The Trajectory Divergence Map (TDM) is used to delineate the editing region, but it is unreliable in the early denoising stages where noise dominates; using it throughout would misidentify the background as an editing area. Consequently, the denoising process is segmented. Stage 1 takes the first $k_{\text{front}}=2$ steps for unconditional KV injection (mask $M_S=\mathbf{0}$) to stabilize the trajectory on the reconstruction manifold. Stage 2 enables editing within a window $N$ ($M_S=1$) and collects TDM data to aggregate into a mask. Stage 3 performs selective injection based on this mask. Ablations show $k_{\text{front}}=2$ is the optimal balance for PSNR and CLIP Similarity.
+
+**2. Trajectory Divergence Map: Automatically identifying editing areas via velocity field divergence.**
+
+To identify "what to change and what to keep" without external labels, the authors measure the difference between denoising velocity fields under source and target prompts. Tokens with high divergence indicate regions where semantics are required to change. Specifically, at each step $t$, the $L_2$ distance between source and target velocities is calculated for each token $i$:
+
 $$\delta_t^{(i)} = \| v_\theta(\mathbf{z}_t^{(i)}, t, \mathbf{c}_{\text{tgt}}) - v_\theta(\mathbf{x}_t^{(i)}, t, \mathbf{c}_{\text{src}}) \|_2$$
-After min-max normalization to obtain $\tilde{\delta}_t^{(i)} \in [0,1]$, regions with high divergence are identified as the target editing regions.
 
-2. **Staged Editing Strategy**:
+This is normalized to $\tilde{\delta}_t^{(i)} \in [0,1]$. After the window ends, TDMs are aggregated via softmax temporal fusion: $\hat{\delta}^{(i)} = \sum_{t \in N} \alpha_t^{(i)} \tilde{\delta}_t^{(i)}$, where $\alpha_t^{(i)} = \exp(\tilde{\delta}_t^{(i)}) / \sum_{t'} \exp(\tilde{\delta}_{t'}^{(i)})$. This emphasizes tokens that change significantly at specific steps. The result is refined with Gaussian blur $\tilde{M}_S = \mathcal{G}_\sigma * \hat{\delta}$ and binarized using an adaptive Otsu threshold $M_S$, making the process fully automated.
 
-    - **Stage 1 (Trajectory Stabilization)**: For the first $k_{\text{front}}=2$ steps, unconditional KV injection ($M_S = \mathbf{0}$) is applied to anchor the trajectory onto the faithful reconstruction manifold.
-    - **Stage 2 (Editing + TDM Aggregation)**: Within the editing window $N$, $M_S = 1$ is set to allow editing while per-timestep normalized TDMs are collected. Softmax-weighted temporal fusion is used for aggregation:
-    $\hat{\delta}^{(i)} = \sum_{t \in N} \alpha_t^{(i)} \cdot \tilde{\delta}_t^{(i)}, \quad \alpha_t^{(i)} = \frac{\exp(\tilde{\delta}_t^{(i)})}{\sum_{t'} \exp(\tilde{\delta}_{t'}^{(i)})}$
-    Gaussian blurring $\tilde{M}_S = \mathcal{G}_\sigma * \hat{\delta}$ followed by Otsu thresholding yields the binary mask $M_S$.
-    - **Stage 3 (Structural and Semantic Consistency)**: KV features are blended according to $M_S$ (target KV for editing regions, source KV for non-editing regions):
-    $\{K^*, V^*\} \leftarrow M_S \odot \{K^{\text{tgt}}, V^{\text{tgt}}\} + (1 - M_S) \odot \{K^{\text{inv}}, V^{\text{inv}}\}$
-    Optionally, ControlNet (depth + Canny) provides auxiliary structural constraints.
+**3. Selective KV Injection via Masking: Target for edit area, Source for background.**
 
-3. **ReShapeBench**: A new benchmark comprising 120 images spanning single-object (70) and multi-object (50) scenes plus a general set (50), totaling 290 shape editing cases. Source–target prompt pairs differ only in the foreground object description and are verified by human annotators.
+In Stage 3, KV features are mixed in attention layers to balance controllability and preservation:
+
+$$\{K^*, V^*\} \leftarrow M_S \odot \{K^{\text{tgt}}, V^{\text{tgt}}\} + (1 - M_S) \odot \{K^{\text{inv}}, V^{\text{inv}}\}$$
+
+The editing region uses target prompt features to drive shape changes, while the background uses inverted source features for strict preservation. ControlNet (depth + Canny) is optionally used within the normalized denoising interval $[0.1, 0.3]$ to further stabilize geometric consistency.
+
+**4. ReShapeBench: Filling the gap in large-scale shape editing evaluation.**
+
+Existing benchmarks lack systematic evaluation for large-scale shape transformations. The authors constructed ReShapeBench, containing 290 test cases: single-object (70), multi-object (50), and a general set (50). Source and target prompts differ only in foreground descriptions, focusing the evaluation on shape changes rather than background or style variations.
 
 ### Loss & Training
-- **Training-free method**: A purely inference-time framework requiring no training or fine-tuning.
-- 14 denoising steps, guidance scale 2.0, $k_{\text{front}} = 2$.
-- ControlNet conditioning applied over the normalized denoising interval $[0.1, 0.3]$, depth strength 2.5, Canny strength 3.5.
-- RF-Solver second-order inversion is employed.
+This is a training-free framework. The default configuration uses 14 denoising steps, a guidance scale of 2.0, $k_{\text{front}}=2$, and second-order RF-Solver inversion. ControlNet is active in the range $[0.1, 0.3]$ with depth strength 2.5 and Canny strength 3.5.
 
 ## Key Experimental Results
 
@@ -83,9 +110,9 @@ After min-max normalization to obtain $\tilde{\delta}_t^{(i)} \in [0,1]$, region
 | Ours (w/o ControlNet) | 6.52 | 34.85 | **9.04** | 32.97 |
 | **Ours (Full)** | **6.57** | **35.79** | **8.23** | **33.71** |
 
-*Follow-Your-Shape achieves top performance across all metrics on ReShapeBench, with LPIPS of only 8.23 (vs. 16.42 for the next best) and CLIP Sim of 33.71 (vs. 30.41).*
+*Follow-Your-Shape leads across all metrics on ReShapeBench, with an LPIPS of 8.23 (next best 16.42) and CLIP Sim of 33.71 (next best 30.41).*
 
-### Ablation Study (Effect of $k_{\text{front}}$)
+### Ablation Study (Influence of $k_{\text{front}}$)
 
 | $k_{\text{front}}$ | AS↑ | PSNR↑ | LPIPS↓(×10³) | CLIP Sim↑ |
 |------|-----|-------|-------------|-----------|
@@ -95,40 +122,40 @@ After min-max normalization to obtain $\tilde{\delta}_t^{(i)} \in [0,1]$, region
 | 3 | 6.52 | 31.25 | 10.52 | 29.41 |
 | 4 | 6.48 | 30.41 | 12.37 | 27.66 |
 
-*An optimal $k_{\text{front}}$ exists: too small yields an unstable trajectory, too large suppresses editing—$k_{\text{front}}=2$ achieves the best trade-off.*
+*There is an optimal value for $k_{\text{front}}$; $k_{\text{front}}=2$ achieves the best balance between stability and editing capability.*
 
 ### Key Findings
-- Even without ControlNet, TDM-guided KV injection substantially outperforms all baselines.
+- Even without ControlNet, TDM-guided KV injection significantly outperforms all baselines.
 - Diffusion-based methods (MasaCtrl, PnPInversion, Dit4Edit) degrade severely under large deformations.
-- Flow model methods produce higher image quality overall but still exhibit ghosting or incomplete transformations under drastic shape changes.
-- Otsu thresholding is adaptive and requires no manual tuning; the TDM distribution is naturally suited to binary segmentation.
-- The timing ($[0.1, 0.3]$) and strength (depth 2.5, Canny 3.5) of ControlNet conditioning are critical hyperparameters.
+- Flow-based methods provide higher image quality but still suffer from ghosts or incomplete transformations during drastic shape changes.
+- The Otsu threshold is adaptive and eliminates manual tuning; the TDM distribution is naturally suited for binary segmentation.
+- The timing ($[0.1, 0.3]$) and intensity of ControlNet are crucial for geometric consistency.
 
 ## Highlights & Insights
-- **Dynamical systems perspective**: Reformulating editing region localization as a trajectory divergence measure yields an elegant theoretical motivation.
-- **No external masks or attention maps**: TDM dynamically extracts editing regions from the model's own behavior.
-- **Three-stage scheduling is carefully designed**: The stabilize→explore→constrain pipeline aligns naturally with denoising dynamics.
-- **Softmax-weighted temporal fusion**: Captures temporal dynamics more faithfully than simple averaging, as a token may remain unchanged at certain timesteps but shift significantly at later ones.
-- **ReShapeBench fills an evaluation gap**: Existing benchmarks are not designed for large-scale shape transformation tasks.
+- **Dynamical Systems Perspective**: Formulating editing region localization as a trajectory divergence measurement is a theoretically elegant approach.
+- **Elimination of External Masks and Attention Maps**: TDM dynamically extracts editing regions from the model's own behavior.
+- **Sophisticated Three-stage Scheduling**: The Stability $\to$ Exploration $\to$ Constraint pipeline aligns with the dynamic characteristics of denoising.
+- **Softmax Weighted Temporal Fusion**: Better captures temporal dynamics compared to simple averaging, as tokens may diverge only at specific steps.
+- **ReShapeBench addresses a benchmark gap**: Provides a specialized evaluation for large-scale shape transformations.
 
 ## Limitations & Future Work
-- Only supports prompt-based shape editing; complex geometric transformations that cannot be precisely described in text are not handled.
-- Requires second-order inversion via RF-Solver, doubling computational cost.
-- TDM is unreliable at high-noise timesteps, necessitating the staged strategy—which in turn introduces additional hyperparameters ($k_{\text{front}}$, window size $N$).
-- ControlNet dependency is optional but still required in certain scenarios, deviating from the ideal of a fully tool-free approach.
+- Limited to prompt-based editing; cannot handle complex geometric transformations that are difficult to describe via text.
+- Requires second-order inversion (RF-Solver), which doubles the computational cost.
+- TDM is unreliable in high-noise phases, necessitating a stage-based strategy and extra hyperparameters ($k_{\text{front}}, N$).
+- Optional dependence on ControlNet deviates from the ideal of "no external tools."
 - Extension to video editing remains unexplored.
 
 ## Related Work & Insights
-- **RF-Edit / RF-Solver**: This work builds upon RF-Solver inversion and replaces its global KV injection with TDM-guided selective injection.
-- **DiffEdit**: Similarly computes source–target prediction differences to generate masks, but operates on diffusion models without considering temporal trajectory dynamics.
-- **Stable Flow**: Proposes selective injection at vital layers; Follow-Your-Shape performs selective injection along the spatial dimension.
-- **Insight**: The deterministic ODE trajectories of Flow Matching are naturally well-suited for computing divergence measures. This trajectory-based paradigm may generalize to video editing or 3D content editing.
+- **RF-Edit / RF-Solver**: Ours is built on RF-Solver inversion, replacing its global KV injection with TDM-guided strategies.
+- **DiffEdit**: Also generates masks from source-target prediction differences but is diffusion-based and ignores trajectory dynamics.
+- **Stable Flow**: Proposes selective injection into vital layers; Follow-Your-Shape performs selective injection in the spatial dimension.
+- Insight: The deterministic ODE trajectories of Flow Matching are naturally suited for divergence metrics; this "trajectory-based" paradigm could extend to video or 3D content editing.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ — The trajectory divergence perspective of TDM is original, though staged injection represents an incremental contribution.
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Dual benchmarks and detailed ablations, though a user study is absent.
-- Writing Quality: ⭐⭐⭐⭐⭐ — Motivation figures are clear and the methodological derivation is well-structured.
-- Value: ⭐⭐⭐⭐ — Provides a systematic solution for shape editing, a previously underexplored subtask.
+- Novelty: ⭐⭐⭐⭐ — The trajectory divergence perspective is novel, though stage-based injection is incremental.
+- Experimental Thoroughness: ⭐⭐⭐⭐ — Dual benchmarks and detailed ablations, though lacks a user study.
+- Writing Quality: ⭐⭐⭐⭐⭐ — Clear motivation illustrations and fluid methodological derivation.
+- Value: ⭐⭐⭐⭐ — Provides a systematic solution for the neglected sub-task of shape editing.
 
 <!-- RELATED:START -->
 
@@ -137,10 +164,10 @@ After min-max normalization to obtain $\tilde{\delta}_t^{(i)} \in [0,1]$, region
 ## Related Papers
 
 - [\[ICLR 2026\] Training-Free Reward-Guided Image Editing via Trajectory Optimal Control](training-free_reward-guided_image_editing_via_trajectory_optimal_control.md)
+- [\[ICLR 2026\] Follow-Your-Preference: Towards Preference-Aligned Image Inpainting](follow-your-preference_towards_preference-aligned_image_inpainting.md)
+- [\[CVPR 2026\] ShapeAR: Generating Editable Shape Layers via Autoregressive Diffusion](../../CVPR2026/image_generation/shapear_generating_editable_shape_layers_via_autoregressive_diffusion.md)
+- [\[ICLR 2026\] FlowAlign: Trajectory-Regularized, Inversion-Free Flow-based Image Editing](flowalign_trajectory-regularized_inversion-free_flow-based_image_editing.md)
 - [\[CVPR 2026\] PhysGen: Physically Grounded 3D Shape Generation for Industrial Design](../../CVPR2026/image_generation/physgen_physically_grounded_3d_shape_generation_for_industrial_design.md)
-- [\[ICLR 2026\] DragFlow: Unleashing DiT Priors with Region Based Supervision for Drag Editing](dragflow_unleashing_dit_priors_with_region_based_supervision_for_drag_editing.md)
-- [\[ICLR 2026\] Visual Autoregressive Modeling for Instruction-Guided Image Editing](visual_autoregressive_modeling_for_instruction-guided_image_editing.md)
-- [\[ICLR 2026\] Evolutionary Caching to Accelerate Your Off-the-Shelf Diffusion Model](evolutionary_caching_to_accelerate_your_off-the-shelf_diffusion_model.md)
 
 </div>
 

@@ -2,92 +2,83 @@
 title: >-
   [Paper Note] Eliminating VAE for Fast and High-Resolution Generative Detail Restoration
 description: >-
-  [ICLR 2026][Image Generation][VAE elimination] By replacing the VAE encoder and decoder with ×8 pixel-(un)shuffle operations, this work converts latent-space diffusion super-resolution (GenDR) into pixel-space super-reso…
+  [ICLR 2026][Image Generation][pixel-shuffle] By replacing the VAE encoder and decoder with ×8 pixel-(un)shuffle, this work converts Latent Diffusion Super-Resolution (GenDR) into Pixel-space Super-Resolution (GenDR-Pix). Combined with multi-stage adversarial distillation and a PadCFG inference strategy, it achieves a 2.8× speedup and 60% VRAM savings while mainta
 tags:
-  - "ICLR 2026"
-  - "Image Generation"
-  - "VAE elimination"
-  - "super-resolution"
-  - "pixel-space diffusion"
-  - "adversarial distillation"
-  - "pixel-shuffle"
+  - ICLR 2026
+  - Image Generation
+  - pixel-shuffle
 date: 2026-05-08
-content_hash: fe13f894ac921cff
+content_hash: fcb1c102dfa582dc
 ---
-
 # Eliminating VAE for Fast and High-Resolution Generative Detail Restoration
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2602.10630](https://arxiv.org/abs/2602.10630)  
-**Code**: None (improvement upon GenDR)  
-**Area**: Image Generation
-**Keywords**: VAE elimination, super-resolution, pixel-space diffusion, adversarial distillation, pixel-shuffle
+**Code**: None (Based on GenDR)  
+**Area**: Image Generation  
+**Keywords**: VAE elimination, Super-resolution, Pixel-space diffusion, Adversarial distillation, pixel-shuffle
 
 ## TL;DR
 
-By replacing the VAE encoder and decoder with ×8 pixel-(un)shuffle operations, this work converts latent-space diffusion super-resolution (GenDR) into pixel-space super-resolution (GenDR-Pix). Combined with multi-stage adversarial distillation and a PadCFG inference strategy, the method achieves 2.8× speedup and 60% memory reduction with negligible visual degradation, enabling 4K image restoration within 1 second using only 6 GB of VRAM for the first time.
+By replacing the VAE encoder and decoder with ×8 pixel-(un)shuffle, this work converts Latent Diffusion Super-Resolution (GenDR) into Pixel-space Super-Resolution (GenDR-Pix). Combined with multi-stage adversarial distillation and a PadCFG inference strategy, it achieves a 2.8× speedup and 60% VRAM savings while maintaining negligible visual degradation, enabling 4K image restoration in under 1 second with only 6GB of VRAM.
 
 ## Background & Motivation
 
-Diffusion models have achieved breakthroughs in real-world super-resolution (Real-World SR), yet they face two major bottlenecks: **slow inference** and **high memory consumption**. Existing acceleration approaches (e.g., step distillation) reduce diffusion steps to one, but **memory constraints still limit the maximum processable resolution**, requiring tile-by-tile processing for high-resolution images.
+**Background**: Diffusion models have achieved breakthroughs in Real-World Super-Resolution (SR), but face bottlenecks in **inference speed** and **VRAM consumption**. Existing acceleration schemes (e.g., step distillation) reduce diffusion steps to 1, but **VRAM boundaries still limit the maximum processing size**, necessitating tile-by-tile processing for high-resolution images.
 
-**Key Finding: VAE is the bottleneck.** Profiling analysis reveals:
-- For a 1024² input, VAE latency is 2.6× that of UNet (191ms vs. 73ms)
-- VAE memory is 1.3× that of UNet (3.5 GB vs. 2.7 GB)
-- For a 2880² input, VAE latency is 1.89× that of UNet (3228ms vs. 1710ms)
-- At 4096², VAE directly causes OOM
+**Key Insight: VAE is the bottleneck**. Profiling analysis reveals:
+- For 1024² input, VAE time is 2.6× that of the UNet (191ms vs 73ms).
+- VAE VRAM is 1.3× that of the UNet (3.5GB vs 2.7GB).
+- For 2880² input, VAE time is 1.89× that of the UNet (3228ms vs 1710ms).
+- At 4096², VAE triggers Out-of-Memory (OOM).
 
-**Fidelity bottleneck**: Even the 16-channel VAE achieves reconstruction PSNR below 35 dB, with lossy compression discarding high-frequency details.
+**Limitations of Prior Work**: Even the reconstruction PSNR of a 16-channel VAE is below 35dB, as lossy compression loses high-frequency details. Existing solutions (like AdcSR) simplify the VAE but still operate in the latent space; they cannot fundamentally resolve the conflict between generation and reconstruction (e.g., removing decoder attention leads to texture loss).
 
-**Key Challenge**: Existing methods (e.g., AdcSR) only simplify the VAE while still operating in latent space; the generation–reconstruction conflict introduced by simplification cannot be fundamentally resolved (e.g., removing decoder attention leads to texture loss).
-
-**Core Idea**: pixel-(un)shuffle performs spatial scale transformations analogous to the VAE and can fully replace it, converting latent-space diffusion to pixel space. However, ×8 pixel-shuffle introduces checkerboard/repetitive-pattern artifacts, and no suitable discriminator exists for this setting.
+**Core Idea**: Pixel-(un)shuffle performs spatial scale transformations similar to a VAE and can be used to replace it entirely, shifting latent diffusion back to the pixel space. However, ×8 pixel-shuffle introduces checkerboard or repeating pattern artifacts and lacks a suitable discriminator.
 
 ## Method
 
 ### Overall Architecture
 
-GenDR-Pix = GenDR − VAE + ×8 pixel-(un)shuffle + multi-stage adversarial distillation + PadCFG. The VAE encoder and decoder are progressively removed across two stages.
+The core observation is that ×8 pixel-(un)shuffle performs spatial scale transformations similar to a VAE. Consequently, the latent diffusion SR (GenDR) pipeline can be reversed back into the pixel space. GenDR-Pix removes the VAE step-by-step through "two-stage adversarial distillation": Stage I first replaces the encoder with pixel-unshuffle to distill a generator $\mathcal{G}_1$ (GenDR-Adc) from low-quality pixels to high-quality latents; Stage II then replaces the decoder with pixel-shuffle to move the entire pipeline into the pixel space, reusing $\mathcal{G}_1$ from the previous stage as a discriminator while employing frequency domain loss and random padding to suppress artifacts from ×8 upsampling. Finally, a pixel-space-specific PadCFG is used during inference.
+
+```mermaid
+graph TD
+    LQ["Low Quality Image (LQ)"]
+    subgraph S1["1. Stage I: Replace Encoder with pixel-unshuffle"]
+        direction TB
+        A["×8 pixel-unshuffle<br/>(Replaces VAE encoder)"] --> B["Generator G1 / GenDR-Adc<br/>Distillation: Latent matching + Adversarial<br/>(GenDR UNet as Discriminator)"]
+    end
+    subgraph S2["2. Stage II: Replace Decoder with pixel-shuffle"]
+        direction TB
+        C["Generator G2<br/>×8 pixel-shuffle replaces decoder<br/>Full Pixel Space"]
+        C --> D["MFS Frequency Loss<br/>Suppress periodic artifacts"]
+        C --> E["G1 as Discriminator<br/>+ RandPad prevents collapse"]
+    end
+    PAD["3. PadCFG Inference<br/>Double padding branch self-ensemble"]
+    OUT["High-Resolution Output (4K / 8K)"]
+    LQ --> S1
+    S1 -->|"HQ latent; G1 reused as Discriminator"| S2
+    S2 --> PAD --> OUT
+```
 
 ### Key Designs
 
-1. **Stage I: Removing the Encoder**
+**1. Stage I: Replacing Encoder with pixel-unshuffle**
 
-    - Replace the VAE encoder with a ×8 pixel-unshuffle layer
-    - Use GenDR's UNet as a feature extractor for the discriminator
-    - Generator loss: $\mathcal{L}_{\mathcal{G}_1} = \|z_{\text{tea}} - z_{\text{stu}}\|_1 + \lambda_1 \cdot \text{softplus}(-\mathcal{D}(z_{\text{stu}}))$
-    - Output model GenDR-Adc: low-quality pixels → high-quality latent
+The VAE encoder at the input side is replaced with a parameter-free ×8 pixel-unshuffle layer, which folds the low-quality pixel image into a tensor of the same scale as the original latent. A generator $\mathcal{G}_1$ (GenDR-Adc) is distilled to map "low-quality pixels to high-quality latents." The distillation follows an adversarial framework, using the original GenDR UNet as a feature extractor for the discriminator. The generator loss is defined as $\mathcal{L}_{\mathcal{G}_1} = \|z_{\text{tea}} - z_{\text{stu}}\|_1 + \lambda_1 \cdot \text{softplus}(-\mathcal{D}(z_{\text{stu}}))$. This step eliminates the encoder's computational overhead and provides a $\mathcal{G}_1$ with a pixel-unshuffle input interface for Stage II.
 
-2. **Stage II: Removing the Decoder (Core Challenge)**
+**2. Stage II: Replacing Decoder with pixel-shuffle**
 
-    - Replace the decoder with a ×8 pixel-shuffle layer
-    - **Problem 1 – Repetitive pattern artifacts**: a single improper weight in ×8 upscaling propagates identical artifacts across all 8×8 patches
-    - **Solution – Masked Fourier Space (MFS) Loss**:
-        - Artifacts manifest as periodic highlights in the frequency domain, aligned with the pixel-shuffle scale factor
-        - A band-reject filter mask $\mathcal{M}$ is designed to penalize anomalous amplitudes:
-    $\mathcal{L}_{\mathcal{F}} = \|\mathcal{M} \cdot (|\mathcal{F}\{y_{\text{stu}}\}| - |\mathcal{F}\{y_{\text{tea}}\}|)\|_1$
+Replacing the decoder with a ×8 pixel-shuffle layer moves the entire pipeline into the pixel space. This introduces three challenges addressed by specific mechanisms. First, **repeating pattern artifacts**: Improper weights in the tail layer can replicate identical checkerboards across all 8×8 patches. This is addressed using Masked Fourier Space (MFS) loss, which penalizes abnormal amplitudes: $\mathcal{L}_{\mathcal{F}} = \|\mathcal{M} \cdot (|\mathcal{F}\{y_{\text{stu}}\}| - |\mathcal{F}\{y_{\text{tea}}\}|)\|_1$, where mask $\mathcal{M}$ targets these specific frequency bands. Second, **lack of a suitable discriminator**: Latent-space discriminators cannot process pixel-shuffled features. The authors reuse $\mathcal{G}_1$ from Stage I as the discriminator. Third, **discriminator collapse**: Fixed pixel-unshuffle patterns can lead the discriminator to rely on discrete patch representations. Random Padding (RandPad) is introduced, where $p_h, p_w \in \{0,...,7\}$ are sampled to pad the images as $\text{randpad}(y) = \text{pad}(y, [p_h, 8-p_h, p_w, 8-p_w])$, forcing the discriminator to learn continuous representations.
 
-    - **Problem 2 – No suitable discriminator**: latent-space discriminators cannot process pixel-shuffled features
-    - **Solution – Use Stage I model as discriminator**: GenDR-Adc ($\mathcal{G}_1$) naturally encodes inputs via pixel-unshuffle
+**3. PadCFG: Pixel-space Classifier-Free Guidance**
 
-    - **Problem 3 – Discriminator collapse**: fixed pixel-unshuffle patterns cause the discriminator to focus on discrete distributional representations
-    - **Solution – Random Padding (RandPad) augmentation**: randomly sample $p_h, p_w \in \{0,...,7\}$ and apply random padding to both SR and HQ images:
-    $\text{randpad}(y) = \text{pad}(y, [p_h, 8-p_h, p_w, 8-p_w])$
-      This encourages the discriminator to extract continuous representations, preventing pattern collapse
-
-3. **PadCFG: Classifier-Free Guidance in Pixel Space**
-
-    - Applying CFG directly in pixel space exacerbates artifacts
-    - Self-ensemble (multiple paddings → fusion) is integrated with CFG:
-    $\bar{y} = \omega \times \mathcal{G}_2(\text{pad}(x,[4,4,4,4]), c_{\text{pos}}) + (1-\omega) \times \mathcal{G}_2(\text{pad}(x,[3,5,3,5]), c_{\text{neg}})$
-    - Requires only 2 forward passes (same as standard CFG) while incorporating the ensemble effect of different paddings
+Applying standard CFG in pixel space can amplify artifacts. The authors incorporate self-ensemble logic into CFG, using different padding for positive and negative branches: $\bar{y} = \omega \times \mathcal{G}_2(\text{pad}(x,[4,4,4,4]), c_{\text{pos}}) + (1-\omega) \times \mathcal{G}_2(\text{pad}(x,[3,5,3,5]), c_{\text{neg}})$. This maintains the computational cost of two forward passes while achieving ensemble smoothing to suppress artifacts.
 
 ### Loss & Training
 
-Stage II total generator loss:
-$$\mathcal{L}_{\mathcal{G}_2} = \|y_{\text{tea}} - y_{\text{stu}}\|_1 + \lambda_1 \cdot \text{softplus}(-\mathcal{G}_1(y_{\text{stu}})) + \lambda_2 \mathcal{L}_{\mathcal{P}} + \lambda_3 \mathcal{L}_{\mathcal{F}}$$
-
-Parameters $\lambda_{1,2,3} = 0.05, 1, 0.1$. Trained with AdamW, learning rate 1e-5, BFloat16, 8×A100 GPUs, DeepSpeed ZeRO2.
+The total loss for the Stage II generator is: $$\mathcal{L}_{\mathcal{G}_2} = \|y_{\text{tea}} - y_{\text{stu}}\|_1 + \lambda_1 \cdot \text{softplus}(-\mathcal{G}_1(y_{\text{stu}})) + \lambda_2 \mathcal{L}_{\mathcal{P}} + \lambda_3 \mathcal{L}_{\mathcal{F}}$$ which includes pixel reconstruction, adversarial loss using $\mathcal{G}_1$ as the discriminator, perceptual loss $\mathcal{L}_{\mathcal{P}}$, and frequency loss $\mathcal{L}_{\mathcal{F}}$, with weights $\lambda_{1,2,3} = 0.05, 1, 0.1$. Training uses AdamW, learning rate 1e-5, BFloat16, and DeepSpeed ZeRO2 on 8×A100 GPUs.
 
 ## Key Experimental Results
 
@@ -95,75 +86,75 @@ Parameters $\lambda_{1,2,3} = 0.05, 1, 0.1$. Trained with AdamW, learning rate 1
 
 **ImageNet-Test Quantitative Comparison (×4 SR, 512² input)**:
 
-| Method | Params | MACs | PSNR↑ | SSIM↑ | CLIPIQA↑ | MUSIQ↑ |
-|--------|--------|------|-------|-------|----------|--------|
+| Method | Parameters | MACs | PSNR↑ | SSIM↑ | CLIPIQA↑ | MUSIQ↑ |
+|------|-------|------|-------|-------|----------|--------|
 | StableSR-50 | 1410M | 79940G | 26.00 | 0.7317 | 0.5768 | 64.54 |
 | DiffBIR-50 | 1717M | 24234G | 25.45 | 0.6651 | 0.7486 | 73.04 |
 | OSEDiff-1 | 1775M | 2265G | 24.82 | 0.7017 | 0.6778 | 71.74 |
 | GenDR-1 | 933M | 1637G | 24.14 | 0.6878 | 0.7395 | 74.68 |
-| **GenDR-Pix** | **866M** | **344/744G** | **25.49** | **0.7286** | 0.7168 | 72.85 |
+| **Ours** | **866M** | **344/744G** | **25.49** | **0.7286** | 0.7168 | 72.85 |
 
-**Efficiency Comparison (4K output, A100)**:
+**Efficiency Comparison (4K Output, A100)**:
 
-| Model | VAE Status | Time | Memory | MUSIQ |
-|-------|-----------|------|--------|-------|
-| GenDR | Full VAE | 4.92s | 20.75 GB | 70.96 |
-| GenDR-Adc | Encoder removed | 2.69s (−45%) | 17.75 GB (−14%) | 70.44 |
-| **GenDR-Pix** | **VAE removed** | **1.75s (−64%)** | **8.01 GB (−61%)** | 70.23 |
-| GenDR-Pix⋆ | No CFG | 0.87s (−82%) | 5.03 GB (−76%) | 68.64 |
+| Model | VAE Status | Time | VRAM | MUSIQ |
+|------|---------|------|------|-------|
+| GenDR | Full VAE | 4.92s | 20.75GB | 70.96 |
+| GenDR-Adc | Removed Encoder | 2.69s (-45%) | 17.75GB (-14%) | 70.44 |
+| **Ours** | **Removed VAE** | **1.75s (-64%)** | **8.01GB (-61%)** | 70.23 |
+| Ours⋆ | No CFG | 0.87s (-82%) | 5.03GB (-76%) | 68.64 |
 
 ### Ablation Study
 
 **Discriminator Design**:
 
 | Discriminator | RandPad | MUSIQ | CLIPIQA |
-|--------------|---------|-------|---------|
-| None | − | 60.95 | 0.4924 |
-| GenDR | − | 61.07 | 0.5457 |
+|-------|---------|-------|---------|
+| None | - | 60.95 | 0.4924 |
+| GenDR | - | 61.07 | 0.5457 |
 | GenDR-Adc | ✗ | 63.87 | 0.5764 |
 | GenDR-Adc | ✓ | **63.89** | **0.5937** |
 
-**MFS Loss**: Removing the frequency-domain loss degrades NIQE from 4.11 to 4.84 and LIQE from 3.21 to 2.91.
+**MFS Loss**: Removing MFS loss caused NIQE to rise from 4.11 to 4.84 and LIQE to drop from 3.21 to 2.91.
 
-**PadCFG**: PadCFG(4,4)+(3,5) achieves MUSIQ +0.45 and CLIPIQA +0.0061 while maintaining the same latency as vanilla CFG.
+**PadCFG**: PadCFG(4,4)+(3,5) increased MUSIQ by 0.45 and CLIPIQA by 0.0061 compared to vanilla CFG while maintaining similar latency.
 
 ### Key Findings
 
-- The speedup from VAE removal substantially exceeds that of architectural pruning approaches
-- Artifacts from ×8 pixel-shuffle can be effectively suppressed via frequency-domain loss and random padding
-- GenDR-Pix is the only model capable of directly super-resolving to 8K without tiling
-- User studies show that GenDR-Pix achieves perceptual quality comparable to the original GenDR
+- VAE removal provides speedups far exceeding architecture pruning.
+- Artifacts from ×8 pixel-shuffle are effectively resolved via frequency domain loss and random padding.
+- GenDR-Pix is the only model supporting direct 8K SR without tiling.
+- User studies indicate GenDR-Pix achieves perceptual quality comparable to the original GenDR.
 
 ## Highlights & Insights
 
-- The finding that **VAE is simultaneously an efficiency and fidelity bottleneck for one-step diffusion SR** has broad implications
-- The analogy between pixel-(un)shuffle and VAE is elegant and motivates a novel acceleration direction
-- The multi-stage distillation strategy of using the previous-stage model as the discriminator for the next stage is a clever design choice
-- RandPad's solution to discriminator collapse is simple yet effective, inspired by E-LPIPS
-- The practical performance of 1-second 4K SR with 6 GB VRAM has significant industrial deployment value
+- The discovery that **VAE is a dual bottleneck for efficiency and fidelity** in one-step diffusion SR is highly significant.
+- The analogy between pixel-(un)shuffle and VAE is elegant and motivates a new acceleration path.
+- The design of "reusing the previous stage model as the next stage discriminator" in multi-stage distillation is clever.
+- RandPad is a simple, effective solution to discriminator collapse, inspired by E-LPIPS.
+- Performance of 4K in 1 second with 6GB VRAM holds substantial industrial value.
 
 ## Limitations & Future Work
 
-- Validation is currently limited to GenDR (SD2.1 UNet); generalization to newer architectures such as SDXL and Flux remains unexplored
-- Only ×4 SR is supported; adapting to other scale factors requires adjusting pixel-shuffle parameters
-- The padding parameter selection in PadCFG is largely empirical and lacks theoretical justification
-- Stage II training still requires the Stage I model as a discriminator, resulting in a relatively complex training pipeline
-- For extreme degradations (e.g., severe compression artifacts), the performance gap with GenDR may widen
+- Currently only validated on GenDR (SD2.1 UNet); not yet extended to SDXL, Flux, or newer architectures.
+- Only supports ×4 SR; other scales require adjusting pixel-shuffle parameters.
+- Selection of PadCFG padding parameters is empirical and lacks theoretical guidance.
+- Stage II training requires the Stage I model as a discriminator, leading to a complex workflow.
+- In cases of extreme degradation, the gap with GenDR might widen.
 
 ## Related Work & Insights
 
-- **AdcSR**: replaces only the encoder with ×2 pixel-unshuffle; this work extends the approach to ×8, fully eliminating the VAE
-- **PixelFlow**: explores pixel-space diffusion
-- **GenDR / SiD / VSD**: foundational one-step diffusion SR methods
-- **E-LPIPS**: perceptual loss with random transformations, which inspired the RandPad design
-- Insight: similar VAE elimination strategies may be applicable to other diffusion-based applications that rely on VAEs, such as image editing and inpainting
+- **AdcSR**: Only replaces the encoder with ×2 pixel-unshuffle; this work extends it to ×8 to replace the full VAE.
+- **PixelFlow**: Exploration of pixel-space diffusion.
+- **GenDR / SiD / VSD**: Foundations of one-step diffusion SR.
+- **E-LPIPS**: Uses random transformations to enhance perceptual loss, which inspired RandPad.
+- Insight: Other diffusion applications using VAEs (e.g., editing, inpainting) could consider similar VAE elimination strategies.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ The direction of fully eliminating the VAE is novel; however, the core mechanism (pixel-shuffle substitution) is relatively intuitive, with the main contribution lying in overcoming engineering challenges
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive coverage across multiple datasets, metrics, detailed ablations, user studies, and efficiency analyses
-- Writing Quality: ⭐⭐⭐⭐ The roadmap-style presentation is clear and intuitive, though the density of equations is high
-- Value: ⭐⭐⭐⭐⭐ Significant practical acceleration (2.8× speedup / 60% memory reduction); 4K in 1 second has clear industrial application value
+- Novelty: ⭐⭐⭐⭐ Replacing the VAE entirely is novel, though pixel-shuffle substitution is intuitive; the contribution lies in solving the engineering challenges.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive coverage across datasets, metrics, ablations, user studies, and efficiency analysis.
+- Writing Quality: ⭐⭐⭐⭐ The roadmap presentation is clear, though formula density is high.
+- Value: ⭐⭐⭐⭐⭐ Significant practical acceleration (2.8× speedup / 60% VRAM reduction); 1-second 4K SR is of high industrial value.
 
 <!-- RELATED:START -->
 
@@ -174,8 +165,8 @@ Parameters $\lambda_{1,2,3} = 0.05, 1, 0.1$. Trained with AdamW, learning rate 1
 - [\[ICLR 2026\] GenDR: Lighten Generative Detail Restoration](gendr_lighten_generative_detail_restoration.md)
 - [\[ICLR 2026\] LVTINO: LAtent Video consisTency INverse sOlver for High Definition Video Restoration](lvtino_latent_video_consistency_inverse_solver_for_high_definition_video_restora.md)
 - [\[CVPR 2026\] DA-VAE: Plug-in Latent Compression for Diffusion via Detail Alignment](../../CVPR2026/image_generation/da-vae_plug-in_latent_compression_for_diffusion_via_detail_alignment.md)
-- [\[CVPR 2026\] PixelRush: Ultra-Fast, Training-Free High-Resolution Image Generation via One-step Diffusion](../../CVPR2026/image_generation/pixelrush_ultrafast_trainingfree_highresolution_im.md)
-- [\[ICML 2026\] Image Restoration via Diffusion Models with Dynamic Resolution](../../ICML2026/image_generation/image_restoration_via_diffusion_models_with_dynamic_resolution.md)
+- [\[ICLR 2026\] Latent Wavelet Diffusion for Ultra-High-Resolution Image Synthesis](latent_wavelet_diffusion_for_ultra_high-resolution_image_synthesis.md)
+- [\[ICLR 2026\] Massive Activations are the Key to Local Detail Synthesis in Diffusion Transformers](massive_activations_are_the_key_to_local_detail_synthesis_in_diffusion_transform.md)
 
 </div>
 

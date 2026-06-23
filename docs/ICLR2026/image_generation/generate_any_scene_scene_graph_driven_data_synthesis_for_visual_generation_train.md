@@ -2,153 +2,167 @@
 title: >-
   [Paper Note] Generate Any Scene: Scene Graph Driven Data Synthesis for Visual Generation Training
 description: >-
-  [ICLR 2026][Image Generation][Scene Graph] This paper proposes the Generate Any Scene data engine, which systematically enumerates scene graphs from a visual element taxonomy comprising 28K objects × 1.5K attributes × 10…
+  [ICLR 2026][Image Generation][Paper Note] The Generate Any Scene data engine is proposed, which systematically enumerates scene graphs based on a visual element taxonomy of 28K objects × 1.5K attributes × 10K relations and translates them into caption-VQA pairs. It supports four applications: self-improvement (SD1.5 +4%), targeted distillation (TIFA +10% with
 tags:
-  - "ICLR 2026"
-  - "Image Generation"
-  - "Scene Graph"
-  - "Compositional Generation"
-  - "Data Engine"
-  - "Self-Improvement"
-  - "Targeted Distillation"
-  - "Reward Model"
+  - ICLR 2026
+  - Image Generation
 date: 2026-05-08
-content_hash: 8a7504a8ca89ff26
+content_hash: 2724b4dfced9c36c
 ---
-
 # Generate Any Scene: Scene Graph Driven Data Synthesis for Visual Generation Training
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2412.08221](https://arxiv.org/abs/2412.08221)  
 **Code**: [GitHub](https://github.com/RAIVNLab/GenerateAnyScene)  
-**Area**: Image Generation / Data Synthesis
-**Keywords**: Scene Graph, Compositional Generation, Data Engine, Self-Improvement, Targeted Distillation, Reward Model
+**Area**: Image Generation / Data Synthesis  
+**Keywords**: Scene Graph, Compositional Generation, Data Engine, Self-improvement, Targeted Distillation, Reward Model
 
 ## TL;DR
-This paper proposes the Generate Any Scene data engine, which systematically enumerates scene graphs from a visual element taxonomy comprising 28K objects × 1.5K attributes × 10K relations, and converts them into caption–VQA pairs. The engine supports four applications: self-improvement (SD1.5 +4%), targeted distillation (<800 samples, TIFA +10%), a scene-graph reward model (DPG-Bench +5% vs. CLIP), and content moderation enhancement.
+The Generate Any Scene data engine is proposed, which systematically enumerates scene graphs based on a visual element taxonomy of 28K objects × 1.5K attributes × 10K relations and translates them into caption-VQA pairs. It supports four applications: self-improvement (SD1.5 +4%), targeted distillation (TIFA +10% with <800 data points), scene graph reward models (DPG-Bench +5% vs CLIP), and content moderation enhancement.
 
 ## Background & Motivation
 
-**Background**: Text-to-image generation models (e.g., DALL-E 3, SD, Flux) have achieved high levels of visual fidelity, yet remain severely deficient in compositional generalization and semantic alignment. A typical failure case: given the prompt "a black dog chasing a rabbit in Van Gogh style," a model may generate the dog while omitting the rabbit or rendering the wrong style.
+**Background**: Text-to-image (T2I) generation models (e.g., DALL-E 3, SD, Flux) have achieved high levels of visual fidelity but still suffer significantly from poor compositional generalization and semantic alignment. Typical failure cases occur when models omit objects or confuse styles, such as when processing the prompt "a black dog chasing a rabbit in Van Gogh style."
 
-**Limitations of Prior Work**: The root of the problem lies in training data. Mainstream datasets such as LAION and CC3M consist of web-crawled image–caption pairs that are inherently noisy, compositionally impoverished, and biased toward coarse single-object descriptions. These datasets lack explicit annotations of object–attribute relations and multi-object interactions, limiting models' ability to generalize to complex scenes. Dense compositional annotation by humans is not scalable, while automated VLM-based annotation introduces hallucinations and semantic noise.
+**Limitations of Prior Work**: The root cause lies in the training data. Mainstream datasets like LAION and CC3M are web-crawled image-caption pairs that are naturally noisy, compositionally weak, and biased toward coarse-grained descriptions of single objects. These datasets lack explicit annotations for object-attribute relationships and multi-object interactions, limiting the model's ability to generalize to complex scenes. Manual dense compositional annotation is not scalable, while VLM auto-labeling suffers from hallucinations and semantic noise.
 
-**Key Challenge**: Large-scale, high-quality, compositionally rich training data are required, yet no systematic method exists for producing data that covers the visual compositional space. Existing evaluation tools (DSG, DPG) already employ scene graphs to assess generation quality, but scene graphs have never been systematically applied on the data production side.
+**Key Challenge**: There is a need for large-scale, high-quality, and compositionally rich training data, yet no systematic method exists to cover the visual composition space for data production. Existing evaluation tools (DSG, DPG) already use scene graphs to assess generation quality, but scene graphs have never been systematically utilized at the production end for training data.
 
-**Goal**: How to construct a scalable data engine that systematically generates compositionally rich training data (captions + evaluation signals + reward signals) to improve the compositional generalization and semantic alignment of generative models?
+**Goal**: How to build a scalable data engine that systematically generates compositionally rich training data (captions + evaluations + reward signals) to improve the compositional generalization and semantic alignment of generative models?
 
-**Key Insight**: Scene graphs—grounded in cognitive science as a structured representation of visual space, with objects as nodes, attributes as node properties, and relations as edges—enable near-infinite compositional scene descriptions through systematic enumeration of graph topologies populated with metadata. VQA pairs for evaluation and reward modeling are automatically derived as a byproduct.
+**Key Insight**: Scene graphs, grounded in cognitive science as structured representations of visual space—where objects are nodes, labels are node attributes, and relationships are edges—can generate nearly infinite compositional scene descriptions by systematically enumerating scene graph topologies and filling them with metadata. Simultaneously, these can automatically derive VQA pairs for evaluation and reward modeling.
 
-**Core Idea**: Scene graphs serve as an intermediate representation for systematically enumerating the visual compositional space. A data engine is constructed to simultaneously produce training captions and fine-grained evaluation signals, driving self-improvement, distillation, and RLHF training for generative models.
+**Core Idea**: Use scene graphs as intermediate representations to systematically enumerate the visual composition space, building a data engine that produces both training captions and fine-grained evaluation signals to drive the self-improvement, distillation, and RLHF training of generative models.
 
 ## Method
 
 ### Overall Architecture
-Generate Any Scene is a five-stage data engine pipeline: (1) enumerate scene graph topologies under user-specified structural constraints; (2) sample objects, attributes, and relations from the visual element taxonomy to populate the scene graph; (3) sample scene-level attributes (style, viewpoint, etc.); (4) deterministically translate the scene graph into a natural language caption; (5) automatically enumerate exhaustive VQA pairs from the scene graph. Building on this engine, the paper proposes four downstream applications: self-improvement, targeted distillation, a scene-graph reward model, and content moderation enhancement.
+This paper addresses the root cause of poor compositional generalization in T2I models: the lack of dense compositional annotations for multiple objects and their attribute-relationship links in the training data. The approach does not modify the model but focuses on data synthesis. It abstracts "visual scenes" into scene graphs and uses an engine to systematically enumerate these graphs, translating each into both a natural language training caption and a set of VQA pairs for evaluation. This enables the mass production of rare combinations seldom found in natural datasets.
+
+The framework consists of two engine components and one application layer: first, **Visual Element Taxonomy and Scene Graph Enumeration**, which enumerates scene graph topologies under user constraints and fills them using a taxonomy of 28K objects / 1.5K attributes / 10K relations; second, **Bi-directional Scene Graph Translation**, which programmatically converts graphs into captions and template-based VQA pairs; finally, the **Triple Application Framework** (Self-improvement / Targeted Distillation / Scene Graph Reward), which uses the same data to drive three complementary training paradigms.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    A["User Constraints<br/>Degree Limits / Seed Graphs"] --> B["1. Taxonomy & Scene Graph Enumeration<br/>28K Objects × 1.5K Attributes × 10K Relations"]
+    B --> C["2. Bi-directional Translation"]
+    C -->|Programmatic Traversal| D["Synthetic Captions"]
+    C -->|Template Queries| E["Exhaustive VQA Pairs"]
+    subgraph APP["3. Triple Application Framework"]
+        direction TB
+        F["Self-improvement<br/>VQAScore selects top-25% for self-training"]
+        G["Targeted Distillation<br/>Eval locates weaknesses → <800 teacher data points"]
+        H["Scene Graph Reward<br/>VQA accuracy as GRPO signals"]
+    end
+    D --> F
+    D --> G
+    E --> H
+    F --> I["Generative Model with Stronger Alignment"]
+    G --> I
+    H --> I
+```
 
 ### Key Designs
 
-1. **Visual Element Taxonomy and Scene Graph Enumeration**
+**1. Visual Element Taxonomy and Scene Graph Enumeration: Turning Compositional Space into Systematic Discrete Structures**
 
-    - **Function**: Constructs a structured knowledge base of visual concepts to support systematic enumeration of scene graphs of arbitrary complexity.
-    - **Mechanism**: Objects, attributes, relations, and scene-level attributes are collected from multiple sources—WordNet, Wikipedia, Visual Genome, Places365, etc.—yielding 28,787 objects, 1,494 attributes, 10,492 relations, and 2,193 scene attributes, organized into a hierarchical taxonomy (e.g., flower → daisy → white daisy). Scene graph enumeration begins by sampling the number of object nodes, then systematically enumerates edge sets and attribute assignments satisfying degree-sequence constraints. Three types of control are supported: degree upper-bound constraints, seed-graph preservation (embedding user-supplied subgraphs), and commonsense plausibility filtering. All enumerations are precomputed and cached as parameter tuples.
-    - **Design Motivation**: The compositional diversity of existing datasets is determined by the distribution of naturally occurring data, which is inevitably biased toward common scenes. Systematic enumeration covers rare compositions and fills the long-tail gaps in training data. The hierarchical taxonomy allows granularity to be controlled from coarse to fine.
+The compositional diversity of natural datasets is restricted by real-world distributions, favoring common scenes and leaving long-tail combinations nearly absent. To fill this gap, a knowledge base capable of exhausting visual concepts is required. The authors collected 28,787 objects, 1,494 attributes, 10,492 relations, and 2,193 scene types from sources like WordNet, Wikipedia, Visual Genome, and Places365, organizing them into a hierarchical taxonomy (e.g., flower → daisy → white daisy). When enumerating graphs, the engine samples the number of nodes and systematically generates edge sets and attribute assignments satisfying degree-sequence constraints. Three types of constraints are provided: degree limits, seed graph preservation, and commonsense filtering.
 
-2. **Bidirectional Translation from Scene Graphs to Captions and VQA Pairs**
+**2. Bi-directional Translation from Scene Graph to Caption + VQA: Driving Both Training and Evaluation**
 
-    - **Function**: Converts structured scene graphs into text captions consumable by generative models, while simultaneously producing VQA pairs for evaluation and reward modeling.
-    - **Mechanism**: Caption translation uses a deterministic procedural algorithm—traversing the scene graph in topological order and converting objects, attributes, and relations into descriptive text, with grammatical disambiguation rules (e.g., "the first/second" to distinguish identical objects). VQA generation uses templates to query object attributes ("What color is the sphere?"), spatial relations ("What is to the left of the cube?"), and other properties; each answer maps directly to a node or edge in the scene graph, ensuring completeness.
-    - **Design Motivation**: Procedural translation is fast and free from hallucination risk (empirically showing no significant difference from LLM-based paraphrasing). VQA pairs enable fine-grained semantic evaluation at zero additional cost—covering every element of the scene graph and being far more precise than coarse metrics such as CLIPScore.
+Scene graphs must be converted into both text captions for model consumption and fine-grained evaluation signals. Caption translation uses a deterministic programmatic algorithm that performs a topological traversal, converting scene elements into descriptive text and using grammatical rules (e.g., "the first / second") to disambiguate identical objects. This avoids the hallucinations associated with LLM rewriting. Simultaneously, exhaustive VQA pairs are generated via templates querying object attributes ("What color is the sphere?") and spatial relations ("What is to the left of the cube?"). Each answer maps back to a specific node or edge, ensuring full coverage at zero additional cost.
 
-3. **Unified Application Framework: Self-Improvement, Distillation, and RLHF**
+**3. Triple Application Framework: One Engine for Self-improvement, Distillation, and RLHF**
 
-    - **Function**: Leverages data engine outputs to drive three complementary model improvement strategies.
-    - **Mechanism**: (a) *Self-improvement*: for each synthetic caption, 8 images are generated; the top-25% by VQAScore are selected as fine-tuning data for the next round, iterated for 3 epochs. (b) *Targeted distillation*: Generate Any Scene captions are used to systematically evaluate open-source versus closed-source models, identifying weaknesses in the open-source model (e.g., SD1.5's poor multi-object composition); fewer than 800 DALL-E 3 image–caption pairs targeting the identified capability gap are then used for LoRA fine-tuning. (c) *Scene-graph reward model*: VQA accuracy (answered by Qwen2.5-VL-3B) serves as a reward signal; GRPO is used to train SimpleAR-0.5B.
-    - **Design Motivation**: The three strategies address distinct bottlenecks—self-improvement requires no external data but is bounded by the model's own capability; distillation requires a teacher model but demands very little data; RLHF provides the finest-grained semantic alignment signal. All three rely on the structured captions and evaluation capabilities provided by Generate Any Scene.
+The engine powers three strategies. **Self-improvement** generates 8 images per synthetic caption and selects the top 25% by VQAScore as fine-tuning data for the next round (iterating over 3 epochs); it requires no external data but is capped by the model's own potential. **Targeted Distillation** uses the engine to evaluate and locate specific weaknesses in open-source models (e.g., poor multi-object composition in SD1.5) and then performs LoRA fine-tuning using fewer than 800 DALL-E 3 pairs targeting those specific capabilities. The **Scene Graph Reward Model** treats VQA accuracy (answered by Qwen2.5-VL-3B) as the reward signal for GRPO training of SimpleAR-0.5B, providing the most granular alignment signal.
 
 ### Loss & Training
-Both self-improvement and distillation employ LoRA for parameter-efficient fine-tuning. Each self-improvement round generates 10K captions × 8 images, selecting the top-25% (i.e., 2.5K pairs). Distillation uses only 778 captions. RLHF applies the GRPO algorithm, training for 1 epoch on 10K captions with VQA accuracy as the reward.
+Self-improvement and distillation are implemented via LoRA for parameter-efficient fine-tuning. Self-improvement uses 10K captions per round, generating 8 images per caption and selecting the top 2.5K pairs. Distillation uses only 778 captions. RLHF utilizes the GRPO algorithm with 10K captions for 1 epoch, using VQA accuracy as the reward.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Self-improvement (SDv1.5 baseline, evaluated on GenAI-Bench + 1K Generate Any Scene evaluation set):
+Self-improvement (SDv1.5 Baseline, evaluated on GenAI-Bench + 1K Generate Any Scene set):
 
 | Method | CLIPScore | ImageReward | LPIPS | VQAScore |
-|--------|-----------|-------------|-------|----------|
-| SDv1.5 (original) | 0.3167 | 0.2056 | 0.7297 | 0.5823 |
-| CC3M real-data fine-tuning | 0.3196 | 0.3842 | 0.7356 | 0.6044 |
-| **GAS self-improvement** | **0.3206** | **0.3927** | **0.7329** | **0.6109** |
+|------|-----------|-------------|-------|----------|
+| SDv1.5 Original | 0.3167 | 0.2056 | 0.7297 | 0.5823 |
+| CC3M Fine-tuned | 0.3196 | 0.3842 | 0.7356 | 0.6044 |
+| **GAS Self-improvement (Ours)** | **0.3206** | **0.3927** | **0.7329** | **0.6109** |
 
-RLHF reward model comparison (SimpleAR-0.5B):
+RLHF Reward Model Comparison (SimpleAR-0.5B):
 
 | Method | DPG-Bench Global | DPG Relation | GenEval Overall | GenAI All |
-|--------|-----------------|-------------|-----------------|-----------|
-| SFT baseline | 85.02 | 86.59 | 0.53 | 0.66 |
+|------|-----------------|-------------|-----------------|-----------|
+| SFT Baseline | 85.02 | 86.59 | 0.53 | 0.66 |
 | CLIP-RL | 86.64 | 88.51 | 0.59 | 0.67 |
 | **GAS Reward (Ours)** | **88.46** | **90.13** | **0.61** | **0.68** |
 
 ### Ablation Study
 
-Targeted distillation (SDv1.5, TIFA Score vs. caption complexity):
+Targeted Distillation (SDv1.5, TIFA Score vs. Caption Complexity):
 
-| Configuration | TIFA (multi-object captions) | Gain | Notes |
-|---------------|------------------------------|------|-------|
-| SDv1.5 (original) | ~0.50 | — | Poor compositional ability |
-| Random-caption distillation | ~0.55 | +5% | Non-targeted data |
-| **Targeted multi-object distillation** | **~0.60** | **+10%** | Only 778 captions |
+| Configuration | TIFA (Multi-object Captions) | Gain | Note |
+|------|-----------------|------|------|
+| SDv1.5 Original | ~0.50 | - | Poor composition |
+| Random Caption Distillation | ~0.55 | +5% | Non-targeted data |
+| **Targeted Multi-object Distillation** | **~0.60** | **+10%** | Only 778 captions |
 
-Compositional generalization test (400 unseen compositional captions):
+Compositional Generalization Test (400 unseen compositional captions):
 
 | Method | VQAScore | CLIPScore |
-|--------|----------|-----------|
+|------|----------|-----------|
 | SDv1.5 | 0.5823 | 0.2876 |
 | CC3M-FT | 0.6044 | 0.2927 |
-| **GAS-FT** | **0.6109** | **0.2938** |
+| **GAS-FT (Ours)** | **0.6109** | **0.2938** |
 
 ### Key Findings
-- Fine-tuning on synthetic data consistently outperforms fine-tuning on real CC3M data of the same scale, demonstrating that structured compositional data is more valuable than naturally occurring data.
-- Targeted distillation achieves TIFA +10% with only 778 captions, substantially outperforming random distillation (+5%)—pinpointing weaknesses matters more than using large amounts of data.
-- GRPO with the scene-graph reward surpasses the CLIP reward by +1.8% on DPG-Bench (88.46 vs. 86.64), with particularly pronounced gains on GenEval two-object tasks.
-- Generation diversity (LPIPS) is preserved after fine-tuning, indicating that improved semantic alignment does not require sacrificing diversity.
+- Synthetic data fine-tuning consistently outperforms real-world CC3M data of the same scale, proving that structured compositional data is more valuable than natural data.
+- Targeted distillation achieves a +10% TIFA gain with only 778 captions, nearly doubling the effectiveness of random distillation (+5%), proving "locating weaknesses" is more important than "data volume."
+- GRPO with GAS rewards outperforms CLIP rewards by +1.8% on DPG-Bench, showing particular strength in multi-object tasks on GenEval.
+- Generation diversity (LPIPS) remains stable after fine-tuning, indicating that semantic alignment can be improved without sacrificing diversity.
 
 ## Highlights & Insights
-- The paradigm of "data engine over model modification"—improving capability systematically through better training data rather than architectural changes—aligns with the data-centric AI trend.
-- The dual role of scene graphs is particularly elegant: they serve simultaneously as a structured template for data generation (input side) and as a completeness guarantee for evaluation and reward modeling (output side). This "generation–evaluation closed loop" makes the entire pipeline self-consistent.
-- The efficiency of targeted distillation with 778 samples is impressive. By using Generate Any Scene to systematically identify weaknesses and then selectively supplementing with strong-model data, the approach offers a broadly applicable "precision gap-filling" strategy.
-- VQA pairs as reward signals are more fine-grained than the holistic image–text matching score of CLIP, enabling attribution of errors to specific objects, attributes, or relations.
+- The "data engine over model modification" paradigm systematically improves capabilities through better training data, aligning with the data-centric AI trend.
+- The dual role of scene graphs is ingenious: acting as structured templates for generation (input) and as a guarantee of completeness for evaluation and rewards (output). This forms a self-consistent "generation-evaluation loop."
+- The efficiency of using 778 targeted distillation data points is impressive. Identifying weaknesses through systematic evaluation before filling them with high-quality teacher data is a highly practical "precision-patching" strategy.
+- VQA pairs as reward signals provide much finer granularity than standard CLIP image-text matching, as they can distinguish which specific object, attribute, or relation is incorrect.
 
 ## Limitations & Future Work
-- Self-improvement relies on VQAScore as the selection signal, but VQAScore itself may have blind spots for certain compositions.
-- Targeted distillation depends on a closed-source teacher model (DALL-E 3) and cannot compensate for domains where the teacher is also weak.
-- Although the compositional enumeration is systematic, it remains bounded by the taxonomy's coverage—28K objects cannot encompass all visual concepts.
-- The content moderation experiment is relatively small-scale (5K images); larger-scale validation is needed.
-- Applying the scene graph engine to training data augmentation for video generation has not been explored.
+- Self-improvement depends on VQAScore for selection, which may have blind spots for specific combinations.
+- Targeted distillation relies on a closed-source teacher model (DALL-E 3), making it difficult to improve in areas where the teacher is also weak.
+- While systematic, the scene graph compositions are limited by the 28K object taxonomy, which cannot cover every possible visual concept.
+- The content moderation experiments were small-scale (5K images); larger validation is required.
+- The use of scene graph engines for video generation data augmentation remains unexplored.
 
 ## Related Work & Insights
-- **vs. DreamSync**: DreamSync also performs self-improvement but without structured scene graphs; the systematic enumeration in Generate Any Scene provides broader compositional coverage.
-- **vs. DSG/DPG**: These works use scene graphs for evaluation; Generate Any Scene extends scene graphs from the evaluation side to the data production side, closing the loop.
-- **vs. DALL-E 3 recaptioning**: DALL-E 3 uses VLM-based recaptioning to improve caption quality; Generate Any Scene uses procedural generation to avoid VLM hallucinations.
-- The scene graph data engine paradigm is generalizable to any task requiring structured coverage of a compositional space (e.g., video generation, 3D generation, robot instruction following).
+- **vs DreamSync**: DreamSync performs self-improvement without structured scene graphs; GAS offers more diverse compositional coverage.
+- **vs DSG/DPG**: While these use scene graphs for evaluation, GAS extends them to the data production end to close the loop.
+- **vs DALL-E 3 Recaptioning**: DALL-E 3 uses VLMs for relabeling to improve caption quality; GAS uses programmatic generation to avoid VLM hallucinations.
+- The scene graph engine concept is generalizable to any task requiring structured coverage of compositional spaces, such as video generation, 3D generation, or robotic instruction following.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ The closed-loop design extending scene graphs from evaluation to data generation is novel; the unified framework across four applications is coherent.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ All four application scenarios are quantitatively validated, including compositional generalization tests.
-- **Writing Quality**: ⭐⭐⭐⭐ The overall structure is clear and the pipeline description is thorough.
-- **Value**: ⭐⭐⭐⭐⭐ The data-centric paradigm offers important insights for T2I training; the targeted distillation strategy has strong practical utility.
+- Novelty: ⭐⭐⭐⭐ 
+- Experimental Thoroughness: ⭐⭐⭐⭐ 
+- Writing Quality: ⭐⭐⭐⭐ 
+- Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
 
+</div>
+
+<!-- RELATED:END -->
+
 ## Related Papers
 
+- [\[ICLR 2026\] EchoGen: Generating Visual Echoes in Any Scene via Feed-Forward Subject-Driven Auto-Regressive Model](echogen_generating_visual_echoes_in_any_scene_via_feed-forward_subject-driven_au.md)
 - [\[ICLR 2026\] Consistent Text-to-Image Generation via Scene De-Contextualization](consistent_text-to-image_generation_via_scene_de-contextualization.md)
-- [\[NeurIPS 2025\] SceneDecorator: Towards Scene-Oriented Story Generation with Scene Planning and Scene Consistency](../../NeurIPS2025/image_generation/scenedecorator_towards_scene-oriented_story_generation_with_scene_planning_and_s.md)
-- [\[ICCV 2025\] Lay-Your-Scene: Natural Scene Layout Generation with Diffusion Transformers](../../ICCV2025/image_generation/lay-your-scene_natural_scene_layout_generation_with_diffusion_transformers.md)
-- [\[AAAI 2026\] STELLAR: Scene Text Editor for Low-Resource Languages and Real-World Data](../../AAAI2026/image_generation/stellar_scene_text_editor_for_low-resource_languages_and_real-world_data.md)
-- [\[ICLR 2026\] PolyGraph Discrepancy: a classifier-based metric for graph generation](polygraph_discrepancy_a_classifier-based_metric_for_graph_generation.md)
+- [\[ECCV 2024\] EchoScene: Indoor Scene Generation via Information Echo over Scene Graph Diffusion](../../ECCV2024/image_generation/echoscene_indoor_scene_generation_via_information_echo_over_scene_graph_diffusio.md)
+- [\[ICLR 2026\] Generating Metamers of Human Scene Understanding](generating_metamers_of_human_scene_understanding.md)
+- [\[ECCV 2024\] Mutual Learning for Acoustic Matching and Dereverberation via Visual Scene-driven Diffusion](../../ECCV2024/image_generation/mutual_learning_for_acoustic_matching_and_dereverberation_via_visual_scene-drive.md)
 
 </div>
 

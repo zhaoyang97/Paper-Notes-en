@@ -2,97 +2,94 @@
 title: >-
   [Paper Note] Embracing Discrete Search: A Reasonable Approach to Causal Structure Learning
 description: >-
-  [ICLR 2026][Image Generation][Causal Structure Learning] This paper proposes FLOP (Fast Learning of Order and Parents), a score-based causal discovery algorithm for linear models. By introducing fast parent selection and…
+  [ICLR 2026][Image Generation][Paper Note] Ours proposes FLOP (Fast Learning of Order and Parents), a score-based causal discovery algorithm for linear models. By employing fast parent selection and iterative Cholesky score updates, it significantly reduces runtime, making Iterative Local Search (ILS) feasible. It achieves near-perfect graph recovery on standar
 tags:
-  - "ICLR 2026"
-  - "Image Generation"
-  - "Causal Structure Learning"
-  - "Discrete Search"
-  - "Score Optimization"
-  - "DAG Learning"
-  - "Linear Models"
+  - ICLR 2026
+  - Image Generation
 date: 2026-05-08
-content_hash: b8c3980b6aebb5ec
+content_hash: a7021d5d9a4e74f4
 ---
-
 # Embracing Discrete Search: A Reasonable Approach to Causal Structure Learning
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2510.04970](https://arxiv.org/abs/2510.04970)  
 **Code**: [https://github.com/CausalDisco/flopsearch](https://github.com/CausalDisco/flopsearch)  
-**Area**: Image Generation
+**Area**: Image Generation  
 **Keywords**: Causal Structure Learning, Discrete Search, Score Optimization, DAG Learning, Linear Models
 
 ## TL;DR
 
-This paper proposes FLOP (Fast Learning of Order and Parents), a score-based causal discovery algorithm for linear models. By introducing fast parent selection and iterative Cholesky-based score updates, FLOP substantially reduces runtime, rendering Iterated Local Search (ILS) practical. It achieves near-perfect graph recovery on standard causal discovery benchmarks, reestablishing discrete search as a principled and competitive approach in causal discovery.
+Ours proposes FLOP (Fast Learning of Order and Parents), a score-based causal discovery algorithm for linear models. By employing fast parent selection and iterative Cholesky score updates, it significantly reduces runtime, making Iterative Local Search (ILS) feasible. It achieves near-perfect graph recovery on standard causal discovery benchmarks, re-establishing the validity of discrete search in causal discovery.
 
 ## Background & Motivation
 
-The core task of causal structure learning is to recover a directed acyclic graph (DAG) over variables from observational data. Score-based methods assign penalized likelihood scores to candidate DAGs and seek the graph with the optimal score.
+The core task of causal structure learning is to learn a Directed Acyclic Graph (DAG) representing relationships between variables from observational data. Score-based methods assign a penalized likelihood score to each DAG and seek the score-optimal graph.
 
-**Landscape of existing methods**:
+**The Landscape of Existing Methods**:
 
-**Exact algorithms**: Guarantee globally optimal graphs but scale exponentially, limiting applicability to roughly 30 variables.
+**Exact Algorithms**: Guarantee finding the score-optimal graph but have exponential runtime, limiting applicability to approximately 30 variables.
 
-**Local search methods** (e.g., GES, BOSS): Perform greedy hill-climbing by evaluating neighboring graphs, but are prone to local optima.
+**Local Search** (e.g., GES, BOSS): Perform hill-climbing by evaluating neighboring graphs but are prone to trapping in local optima.
 
-**Continuous optimization methods** (e.g., NOTEARS): Encode acyclicity as a smooth constraint and optimize continuously, but face empirical and theoretical concerns, including convergence issues and sensitivity to edge thresholding.
+**Continuous Optimization Methods** (e.g., NOTEARS): Encode acyclicity as a smooth constraint for continuous optimization, but face empirical and theoretical skepticism, convergence issues, and difficulties in edge threshold setting.
 
-A key insight is that the NP-hardness results commonly cited against discrete search **do not apply** to standard causal discovery settings — the canonical hard instances rely on latent variables, and when the distribution is representable by a sparse DAG, discrete search can recover the target graph in polynomial time.
+Key Insight: The NP-hard results often cited to dismiss discrete search **do not apply** to common causal discovery settings—standard hard constructions rely on unobservable variables, whereas discrete search can recover the target graph in polynomial time when the distribution is representable by a sparse DAG.
 
-**Core motivation**: Under finite samples, imprecise scores cause local search methods to stagnate in local optima — this is the central practical challenge. FLOP addresses this by accelerating computation sufficiently to "fully embrace discrete search," enabling thorough exploration within a meaningful computational budget to escape local optima.
+**Core Motivation**: In finite sample settings, imprecise scores leading to local optima is the core practical problem. FLOP accelerates computation to enable "fully embracing discrete search"—using sufficient computational budget for more thorough exploration to escape local optima.
 
 ## Method
 
 ### Overall Architecture
 
-FLOP adopts an order-based DAG search strategy: it searches over variable orderings and selects the optimal parent set for each given ordering. The algorithm comprises four core innovations, unified by a single theme: **trading computational efficiency for search thoroughness**.
+FLOP follows an order-based DAG search route: it first determines a causal order of variables, سپس greedily selects the optimal parent set for each node given that order to obtain a candidate DAG, and finally uses local search to refine the order and climb toward higher BIC scores. Its Mechanism is not to invent cleverer search criteria, but to execute each search step fast enough—allowing more thorough searching under the same time budget or repeated restarts to escape local optima. Specifically, the method starts from a **Principled Initialization** to provide a clean starting point, enters local search with **Fast Parent Selection** for warm-starting, uses **Incremental Cholesky Score Updates** to reduce each scoring step to a rank-1 update, and employs **Iterative Local Search (ILS)** to impose perturbations and restart upon reaching local optima. These four components overturn the old impression that "discrete search is infeasible due to slowness."
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Observational Data"] --> B["Principled Initialization<br/>Align with true causal order using statistics"]
+    B --> C["Fast Parent Selection<br/>Warm-start by reusing previous parent sets"]
+    C --> D["Incremental Cholesky Score Update<br/>Rank-1 update for single edge changes"]
+    D --> E{"Local Optimum Reached?"}
+    E -->|No, continue refining order| C
+    E -->|Yes| F["Iterative Local Search (ILS)<br/>Restart after controlled perturbation"]
+    F -->|Restart budget not exhausted| C
+    F -->|Budget exhausted| G["Output Causal DAG"]
+```
 
 ### Key Designs
 
-1. **Fast Parent Selection**: Parent sets are warm-started from those learned in the previous ordering iteration.
+**1. Principled Initialization: Starting search closer to the true causal order**
 
-    - Conventional methods recompute parent sets from scratch upon each ordering change.
-    - FLOP reuses the previous parent sets as a hot start, substantially reducing both computation and memory overhead.
-    - Experiments confirm this does not degrade search quality, as local ordering changes typically affect the optimal parents of only a small number of variables.
+Under random initialization, ancestor-descendant pairs with long distances or weak dependencies are particularly prone to being misidentified during parent selection in finite samples. Such poor starting points drag subsequent local searches into sub-optimal local optima. FLOP utilizes an initialization based on data statistics, ensuring the initial order is better aligned with the true causal order, thereby significantly reducing mismatches in distant weak dependencies and providing a clean start for local search.
 
-2. **Iterative Cholesky-based Score Updates**: Accelerates computation of the linear Gaussian BIC score.
+**2. Fast Parent Selection: Using warm-starts to avoid re-selecting parents for every order change**
 
-    - BIC scoring under linear Gaussian models requires computing regression residuals.
-    - FLOP exploits the incremental update property of Cholesky factorization: when a local search move modifies only a single edge, only a rank-1 update to the Cholesky factor is needed rather than a full redecomposition.
-    - This **amortizes** score update costs across local moves, significantly reducing per-step computation.
-    - Implemented in Rust for efficiency and distributed as the Python pip package `flopsearch`.
+Since orders are refined repeatedly during local search, traditional approaches re-select parents for all nodes from scratch whenever the order changes, which accounts for the majority of the computational overhead. FLOP observes that a local shift in order usually affects the optimal parent sets of only a few variables. Consequently, it uses parent sets learned from the previous order as a warm-start for the next round, recalculating only for the affected variables. This saves significant regression computation and memory without degrading search quality, as optimal parent sets for most variables remain invariant between adjacent orders.
 
-3. **Principled Order Initialization**: Reduces parent selection failures for distant ancestor–descendant pairs compared to random initialization.
+**3. Incremental Cholesky Score Update: Reducing edge change cost from full decomposition to rank-1 updates**
 
-    - Distant, weakly dependent ancestor–descendant pairs are particularly susceptible to errors under finite samples.
-    - FLOP employs a data-statistic-based initialization strategy to place the initial ordering closer to the true causal ordering.
-    - This provides a better starting point for subsequent local search.
+The BIC score for linear Gaussian models relies on regression residuals, which essentially involves solving normal equations. Performing Cholesky decomposition repeatedly is expensive. FLOP leverages the incremental nature of Cholesky factors: when a local move changes only one edge, the corresponding system matrix changes only by a rank-1 term. Thus, the existing Cholesky factor can be updated via a rank-1 operation instead of full re-decomposition. This amortizes the cost of score updates across a sequence of local moves. The numerical core is implemented in Rust for maximum efficiency and released via the `flopsearch` Python package.
 
-4. **Iterated Local Search (ILS)**: Systematically escapes local optima.
+**4. Iterative Local Search (ILS): Escaping local optima with controlled perturbations and using compute budget as a tunable knob**
 
-    - Traditional local search methods (e.g., BOSS) terminate upon reaching a local optimum.
-    - FLOP applies controlled perturbations at local optima and restarts the search, repeating this process iteratively.
-    - FLOP_k denotes $k$ ILS restarts, where $k$ serves as a **computational budget hyperparameter**.
-    - This establishes a direct link between runtime and finite-sample accuracy: more restarts → better graphs.
+Local search methods like BOSS stop immediately upon reaching a local optimum. However, since scores are imprecise in finite samples, local optima often do not represent the true graph. FLOP applies a controlled perturbation upon reaching a local optimum and restarts the search. Executing $k$ restarts is denoted as $\text{FLOP}_k$, where $k$ serves directly as a computational budget hyperparameter. The previous three designs make each search step fast enough that the "repeated restart" strategy of ILS becomes temporally feasible—establishing an explicit link between runtime and finite-sample accuracy: more restarts increase the probability of finding structures with higher scores that are closer to the true graph.
 
 ### Loss & Training
 
-The standard **BIC (Bayesian Information Criterion)** is used as the scoring function:
+The score function utilizes the standard BIC (Bayesian Information Criterion):
 
-$$\text{BIC}(G) = -2 \log L(G | \mathcal{D}) + k \log n$$
+$$\text{BIC}(G) = -2 \log L(G \mid \mathcal{D}) + k \log n,$$
 
-where $L$ is the likelihood, $k$ is the number of parameters, and $n$ is the sample size. Under linear Gaussian models, this score guarantees consistency — in the infinite-sample limit, the highest-scoring graph recovers the true causal graph (or its equivalence class, the CPDAG).
+where $L$ is the likelihood, $k$ is the number of parameters, and $n$ is the sample size. Under linear Gaussian models, this score is consistent: as the sample size approaches infinity, the score-optimal graph recovers the true causal graph (or its equivalence class, the CPDAG). This provides the justification for FLOP's focus on faster and more thorough optimization of the BIC rather than defining new objectives.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Experiments are conducted on data generated from linear additive noise models (ANMs) under both Erdős-Rényi (ER) and Scale-Free (SF) graph structures.
+Experiments were conducted on data generated from Linear Additive Noise Models (ANM), considering Erdős-Rényi (ER) and Scale-Free (SF) graph types.
 
-| Method | ER-50-deg8 SHD ↓ | ER-50-deg8 Exact Recovery | Runtime |
-|--------|-------------------|--------------------------|---------|
+| Method | ER-50-deg8 SHD ↓ | ER-50-deg8 Exact Recovery Rate | Runtime |
+|------|-------------------|---------------------|---------|
 | PC | ~350 | 0% | ~50s |
 | GES | ~250 | 0% | ~200s |
 | DAGMA | ~200 | 0% | ~300s |
@@ -100,49 +97,49 @@ Experiments are conducted on data generated from linear additive noise models (A
 | FLOP_20 | ~20 | 60% | ~100s |
 | FLOP_100 | ~10 | 60% | ~400s |
 
-On 50-node ER graphs with average degree 8 and 1,000 samples, FLOP substantially outperforms all baselines.
+On ER graphs with 50 nodes, average degree 8, and 1000 samples, FLOP significantly outperforms all baselines.
 
 ### Ablation Study
 
-| Configuration | Description |
-|---------------|-------------|
-| FLOP_0 (no ILS restarts) | Comparable accuracy to BOSS (~40% exact recovery) but faster runtime |
-| FLOP_20 (20 restarts) | Exact recovery improves to 60%; SHD decreases substantially |
-| FLOP_100 (100 restarts) | Comparable exact recovery to FLOP_20 but lower SHD on harder instances |
-| Random vs. principled initialization | Principled initialization significantly reduces errors on distant, weakly dependent pairs |
-| Without Cholesky acceleration | Runtime increases by multiples, rendering ILS infeasible |
+| Configuration | Effect Description |
+|------|---------|
+| FLOP_0 (No ILS restarts) | Accuracy comparable to BOSS (40% exact recovery) but runs faster. |
+| FLOP_20 (20 restarts) | Exact recovery rate increases to 60%; SHD drops significantly. |
+| FLOP_100 (100 restarts) | Exact recovery rate comparable to FLOP_20, but lower SHD on hard instances. |
+| Random vs. Principled Init | Principled initialization significantly reduces errors in distant weak dependencies. |
+| No Cholesky Acceleration | Runtime increases multiple times, making ILS infeasible. |
 
 ### Key Findings
 
-1. **Validity of discrete search**: Under standard causal discovery settings, discrete search can recover causal graph structure near-perfectly, challenging the prevailing view that "NP-hardness implies infeasibility."
-2. **Computation–accuracy tradeoff**: The parameter $k$ in FLOP_k establishes an explicit **runtime–accuracy tradeoff** that users can adjust according to their computational budget.
-3. **No advantage for continuous optimization**: Continuous methods such as DAGMA underperform discrete search under equivalent computational budgets and introduce additional complications related to thresholding and convergence.
-4. **Finite samples are the core challenge**: Even under asymptotic theoretical guarantees, finite-sample search may find graphs with higher scores than the ground truth — ILS is an effective countermeasure.
-5. **Rust implementation enables large-scale feasibility**: The efficient implementation makes full discrete search over 50+ nodes practically viable.
+1.  **Validity of Discrete Search**: Under standard causal discovery settings, discrete search can nearly perfectly recover causal graph structures, challenging the common perception of "infeasibility due to NP-hardness."
+2.  **Trade-off between Computation and Accuracy**: The $k$ parameter in $\text{FLOP}_k$ establishes a clear **runtime-accuracy trade-off**, allowing users to adjust based on computational budgets.
+3.  **No Advantage for Continuous Optimization**: Continuous methods like DAGMA are inferior to discrete search under the same computational budget and introduce additional issues like thresholding and convergence.
+4.  **Finite Samples as the Core Challenge**: Even with asymptotic guarantees, search may find graphs with higher scores than the true graph in finite samples—ILS is an effective strategy to address this.
+5.  **Rust Implementation Enables Large-scale Feasibility**: Efficient implementation makes full discrete search for 50+ nodes practically feasible.
 
 ## Highlights & Insights
 
-1. **Important epistemological contribution**: Beyond algorithmic improvement, this work offers a fundamental reexamination of methodology in causal discovery. The NP-hardness argument is carefully deconstructed — standard hard instances rely on latent variables and do not apply to common settings.
-2. **Integration of engineering and theory**: The Cholesky incremental update is a classical numerical linear algebra technique applied elegantly to causal discovery; the Rust implementation delivers a practically deployable tool.
-3. **Introduction of ILS meta-heuristics**: A classical optimization paradigm from operations research is brought into causal discovery, establishing an explicit computation/accuracy relationship.
-4. **Simplicity and elegance**: The entire method rests on well-established statistical foundations (BIC scoring, Cholesky decomposition) without invoking neural networks or complex optimization, returning to a simple, interpretable approach.
+1.  **Significant Epistemological Contribution**: Not just an algorithmic improvement, but a re-evaluation of the causal discovery methodology. The NP-hard argument is carefully deconstructed—standard hard constructions depend on unobservable variables and do not apply to common settings.
+2.  **Integration of Engineering and Theory**: Incremental Cholesky updates represent a clever application of classic numerical linear algebra in causal discovery. The Rust implementation provides a practically usable tool.
+3.  **Introduction of ILS Metaheuristic**: Brings a classic optimization paradigm from operations research into causal discovery, establishing an explicit link between computation and accuracy.
+4.  **Simplicity and Elegance**: The entire method is built on mature statistical foundations (BIC score, Cholesky decomposition) without introducing neural networks or complex optimization, returning to an "interpretable and simple" path.
 
 ## Limitations & Future Work
 
-1. **Restricted to linear models**: FLOP's Cholesky acceleration relies on the linear Gaussian assumption; nonlinear causal settings require new scoring functions and search strategies.
-2. **Causal sufficiency assumption**: The method assumes no unobserved confounders, an assumption frequently violated in practice.
-3. **Large-scale scalability**: While performance is strong at 50 nodes, scalability to hundreds or thousands of variables — as required in gene regulatory network applications — needs further investigation.
-4. **Observational data only**: Interventional data, which provides substantially more information for causal discovery, is not utilized.
-5. **Manual specification of ILS restart count**: Although a runtime–accuracy relationship is established, theoretical guidance for determining the optimal number of restarts is lacking.
+1.  **Limited to Linear Models**: FLOP's Cholesky acceleration relies on linear Gaussian assumptions; nonlinear causal scenarios require new score functions and search strategies.
+2.  **Causal Sufficiency Assumption**: Assumes no unobserved confounders, an assumption frequently violated in practical applications.
+3.  **Scaling to Very Large Graphs**: While performing well at 50 nodes, scalability for applications like gene regulatory networks with hundreds or thousands of variables remains to be enhanced.
+4.  **Observational Data Only**: Does not utilize interventional data, which can provide more information in causal discovery.
+5.  **Manual Setting of ILS Restarts**: Although a runtime-accuracy link is established, theoretical guidance for determining the optimal number of restarts is lacking.
 
 ## Related Work & Insights
 
-- **BOSS** (Andrews et al., 2023): The strongest order-based local search baseline; FLOP builds upon it with acceleration and ILS.
-- **GES** (Chickering, 2002): The classical equivalence-class-based search method; asymptotically optimal but limited under finite samples.
-- **NOTEARS / DAGMA**: Representative continuous optimization approaches; experiments in this paper demonstrate their inferiority to discrete search.
-- **Partition MCMC / Order MCMC** (Kuipers et al., 2022): Bayesian methods that escape local optima via simulated annealing, but at greater computational cost.
+-   **BOSS** (Andrews et al., 2023): The strongest order-based local search baseline; FLOP accelerates it and introduces ILS.
+-   **GES** (Chickering, 2002): Classic equivalence-class-based search, asymptotically optimal but performs poorly with finite samples.
+-   **NOTEARS / DAGMA**: Representatives of continuous optimization; ours' experiments show they are inferior to discrete search.
+-   **Partition MCMC / Order MCMC** (Kuipers et al., 2022): Bayesian methods using simulated annealing to escape local optima, but with higher computational overhead.
 
-The broader implication for causal discovery: improvements in computational efficiency can fundamentally alter the feasibility of entire algorithmic paradigms. When discrete search becomes sufficiently fast, its theoretical advantages — no thresholding, no continuous relaxation, direct BIC optimization — can be fully realized.
+Insight for the causal discovery field: Improvement in computational efficiency can fundamentally change the feasibility of algorithmic paradigms. When discrete search becomes fast enough, its theoretical advantages (no thresholding, no continuous relaxation, direct BIC optimization) can be fully realized.
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐
@@ -156,11 +153,11 @@ The broader implication for causal discovery: improvements in computational effi
 
 ## Related Papers
 
+- [\[ICLR 2026\] Discrete Variational Autoencoding via Policy Search](discrete_variational_autoencoding_via_policy_search.md)
+- [\[ICLR 2026\] Forward-Learned Discrete Diffusion: Learning how to noise to denoise faster](forward-learned_discrete_diffusion_learning_how_to_noise_to_denoise_faster.md)
+- [\[ICLR 2026\] What Matters for Representation Alignment: Global Information or Spatial Structure?](what_matters_for_representation_alignment_global_information_or_spatial_structur.md)
+- [\[ICLR 2026\] Inference-Time Scaling of Diffusion Models Through Classical Search](inference-time_scaling_of_diffusion_models_through_classical_search.md)
 - [\[ICLR 2026\] Discrete Adjoint Matching](discrete_adjoint_matching.md)
-- [\[NeurIPS 2025\] Non-Markovian Discrete Diffusion with Causal Language Models](../../NeurIPS2025/image_generation/non-markovian_discrete_diffusion_with_causal_language_models.md)
-- [\[ICLR 2026\] Loopholing Discrete Diffusion: Deterministic Bypass of the Sampling Wall](loopholing_discrete_diffusion_deterministic_bypass_of_the_sampling_wall.md)
-- [\[ICLR 2026\] JointDiff: Bridging Continuous and Discrete in Multi-Agent Trajectory Generation](jointdiff_bridging_continuous_and_discrete_in_multi-agent_trajectory_generation.md)
-- [\[ICML 2026\] Learning General Causal Structures with Hidden Dynamic Process for Climate Analysis](../../ICML2026/image_generation/learning_general_causal_structures_with_hidden_dynamic_process_for_climate_analy.md)
 
 </div>
 

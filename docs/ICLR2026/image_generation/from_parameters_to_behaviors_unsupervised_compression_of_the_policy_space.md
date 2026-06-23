@@ -2,95 +2,110 @@
 title: >-
   [Paper Note] From Parameters to Behaviors: Unsupervised Compression of the Policy Space
 description: >-
-  [ICLR 2026][Image Generation][policy space compression] Based on the manifold hypothesis, this paper proposes unsupervised compression of the policy space—training an autoencoder with a behavioral reconstruction loss (ra…
+  [ICLR 2026][Image Generation][Paper Note] Proposes unsupervised compression of the policy space based on the manifold hypothesis—training an autoencoder with behavior reconstruction loss (rather than parameter reconstruction loss) to compress the high-dimensional policy parameter space $\Theta \subseteq \mathbb{R}^P$ into a low-dimensional latent behavior spac
 tags:
-  - "ICLR 2026"
-  - "Image Generation"
-  - "policy space compression"
-  - "behavioral manifold"
-  - "autoencoder"
-  - "latent space optimization"
-  - "unsupervised pretraining"
+  - ICLR 2026
+  - Image Generation
 date: 2026-05-08
-content_hash: caa311ad47e7ae1b
+content_hash: 1210b64f522897cb
 ---
-
 # From Parameters to Behaviors: Unsupervised Compression of the Policy Space
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2509.22566](https://arxiv.org/abs/2509.22566)  
 **Code**: [GitHub](https://github.com/DavideTenediniPoliMi/from-parameters-to-behaviors-unsupervised-compression-of-the-policy-space)  
-**Area**: Image Generation
-**Keywords**: policy space compression, behavioral manifold, autoencoder, latent space optimization, unsupervised pretraining
+**Area**: Image Generation  
+**Keywords**: Policy space compression, behavior manifold, autoencoder, latent space optimization, unsupervised pre-training
 
 ## TL;DR
 
-Based on the manifold hypothesis, this paper proposes unsupervised compression of the policy space—training an autoencoder with a behavioral reconstruction loss (rather than a parameter reconstruction loss) to compress the high-dimensional policy parameter space $\Theta \subseteq \mathbb{R}^P$ into a low-dimensional latent behavioral space $\mathcal{Z} \subseteq \mathbb{R}^k$ (up to a 121801:1 compression ratio). Experiments on Mountain Car, Reacher, Hopper, and HalfCheetah demonstrate that the intrinsic dimensionality of the behavioral manifold is determined by environment complexity rather than network size, and that PGPE optimization in the latent space converges faster than PPO, SAC, and other SOTA baselines on 7 out of 8 tasks.
+Proposes unsupervised compression of the policy space based on the manifold hypothesis—training an autoencoder with behavior reconstruction loss (rather than parameter reconstruction loss) to compress the high-dimensional policy parameter space $\Theta \subseteq \mathbb{R}^P$ into a low-dimensional latent behavior space $\mathcal{Z} \subseteq \mathbb{R}^k$ (up to a 121801:1 compression ratio). Validated on environments such as Mountain Car, Reacher, Hopper, and HalfCheetah, it demonstrates that the intrinsic dimension of the behavior manifold depends on environmental complexity rather than network size. Furthermore, PGPE optimization in the latent space achieves faster convergence than SOTA methods like PPO and SAC in 7 out of 8 tasks.
 
 ## Background & Motivation
 
-**Background**: The success of deep reinforcement learning relies heavily on high-dimensional parameterization of policies via deep neural networks. However, this high-dimensional parameterization incurs severe sample inefficiency—policy network parameter spaces can span tens of thousands to millions of dimensions, yet many distinct parameter configurations produce identical or highly similar behaviors (state-action distributions).
+**Background**: The success of Deep Reinforcement Learning (RL) largely depends on the high-dimensional parameterization of policies by deep neural networks. However, this high-dimensional parameterization introduces severe sample inefficiency—policy network parameter spaces may have tens of thousands or even millions of dimensions, yet many different parameter configurations actually produce identical or extremely similar behaviors (state-action distributions).
 
-**Limitations of Prior Work**: (1) The high redundancy of the parameter space leads to extremely low search efficiency—agents struggle to navigate vast parameter spaces where many directions have no effect on behavior. (2) This problem is exacerbated in multi-task settings, where each new task typically requires learning from scratch (tabula rasa), failing to exploit shared structure across environments. (3) Existing approaches (e.g., diverse behavior discovery via DIAYN, asymmetric actor-critic) only partially alleviate these issues without fundamentally addressing parameter space redundancy.
+**Limitations of Prior Work**: (1) High redundancy in the parameter space leads to extremely low search efficiency—agents struggle to search through vast parameter spaces where many directions have no impact on behavior; (2) The problem is exacerbated in multi-task scenarios, where each new task typically requires learning from scratch (tabula rasa), failing to exploit the shared structure of the environment; (3) Existing methods (such as diverse behavior discovery DIAYN, asymmetric actor-critic) only indirectly alleviate these issues without fundamentally addressing parameter space redundancy.
 
-**Key Challenge**: The parameter dimensionality $P$ of a policy network can be very large (e.g., $10^5$), while the intrinsic dimensionality of effective behaviors may be extremely small (e.g., $1 \sim 16$). Searching for solutions on a low-dimensional manifold within a high-dimensional space is fundamentally inefficient.
+**Key Challenge**: While the parameter dimension $P$ of a policy network can be very large (e.g., $10^5$), the intrinsic dimension of effective behaviors may be minimal (e.g., $1 \sim 16$). Searching for solutions on a low-dimensional manifold within a high-dimensional space is profoundly inefficient.
 
-**Goal**: Learn a generative mapping $g: \mathcal{Z} \to \Theta$ from a low-dimensional latent space to the high-dimensional parameter space such that: (1) the latent space is organized by behavioral similarity rather than parameter proximity, (2) the compression is task-agnostic (unsupervised), and (3) the compressed space supports efficient task-specific optimization.
+**Goal**: To learn a generative mapping $g: \mathcal{Z} \to \Theta$ from a low-dimensional latent space to a high-dimensional parameter space such that: (1) the latent space is organized by behavior similarity (rather than parameter similarity), (2) the compression is task-agnostic (unsupervised), and (3) the compressed space supports efficient task-specific optimization.
 
-**Key Insight**: The authors ground their approach in the Manifold Hypothesis—a widely accepted assumption in machine learning that high-dimensional data concentrates on low-dimensional manifolds. Applying this to RL: the behavioral distributions of effective policies lie on a low-dimensional manifold within the parameter space, whose dimensionality is determined by environment complexity rather than network size.
+**Key Insight**: The authors build upon the Manifold Hypothesis—a widely accepted assumption in machine learning that high-dimensional data actually lies on a low-dimensional manifold. Applying this to RL: the behaviors of effective policies lie on a low-dimensional manifold within the parameter space, the dimension of which is determined by the environment's complexity rather than the network's size.
 
-**Core Idea**: Train an autoencoder with a behavioral reconstruction loss (rather than a parameter reconstruction loss) to compress the policy parameter space, then perform policy optimization in the learned low-dimensional latent space.
+**Core Idea**: Use behavior reconstruction loss (instead of parameter reconstruction loss) to train an autoencoder that compresses the policy parameter space, followed by policy optimization within the learned low-dimensional latent space.
 
 ## Method
 
 ### Overall Architecture
 
-The method follows the two-phase paradigm of Unsupervised RL (URL): a **pretraining phase** (unsupervised, task-agnostic) learns a low-dimensional representation of the policy parameter space, and a **fine-tuning phase** (supervised, task-specific) performs optimization in the learned low-dimensional space. The pretraining phase is further divided into three steps: (1) policy dataset generation—collecting a behaviorally diverse set of policies; (2) behavioral manifold learning—compressing policy parameters to a low-dimensional space via an autoencoder; and (3) latent behavior optimization—freezing the decoder and performing policy gradient optimization in the low-dimensional space.
+This paper addresses the issue of "massive parameter space and inefficient search" in deep RL: while policy networks range from thousands to millions of dimensions, the effective degrees of freedom determining behavior may be limited to just a few. The authors follow a two-stage Unsupervised RL (URL) approach: first, **task-agnostic pre-training** to learn a low-dimensional representation of the policy parameter space; second, **task-specific fine-tuning** within this low-dimensional space. The pre-training is divided into three sequential steps: collecting a pool of behavioral diverse policies, compressing these parameters into a latent space using an autoencoder, and finally freezing the decoder to perform optimization via policy gradients in the latent space.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Random Policy Sampling Pool<br/>High-dim Parameter Space Θ⊆ℝ^P"] --> B["Novelty Search-based Dataset Generation<br/>Keep Top 10% by Behavior Difference D"]
+    B --> C["Behaviorally Diverse Policy Dataset"]
+    C --> D["Autoencoder with Behavior Reconstruction Loss<br/>Encoder f:Θ→Z, Decoder g:Z→Θ"]
+    D --> E["Low-dim Latent Behavior Space Z⊆ℝ^k<br/>Frozen Decoder g"]
+    E --> F["Latent Space Policy Gradient Optimization<br/>PGPE Searches only z"]
+    F --> G["Decode back to Parameters θ=g(z)<br/>Obtain Optimal Policy"]
+```
 
 ### Key Designs
 
-1. **Novelty Search-Based Policy Dataset Generation**:
+**1. Novelty Search-based Dataset Generation: Covering Different Regions of the Behavior Manifold**
 
-    - Function: Generate a set of behaviorally diverse policies to serve as training data for the autoencoder.
-    - Mechanism: Naive random sampling in parameter space yields poor coverage of the behavioral space—many parameter configurations correspond to similar or identical behaviors. The authors therefore define a behavioral dissimilarity measure based on L2 distance in action space: $D(\pi_\theta \| \pi_{\theta'}) = \sqrt{\sum_{i=1}^{M}(\pi_\theta(\cdot|s_i) - \pi_{\theta'}(\cdot|s_i))^2}$, evaluated on a sampled subset of states. Novelty Search is then applied, scoring each policy by its average behavioral dissimilarity to its $k_n$ nearest neighbors, retaining only the top 10% most novel policies.
-    - Design Motivation: Measuring diversity directly in behavioral space (rather than parameter space) ensures that training data covers distinct regions of the behavioral manifold—a prerequisite for learning meaningful compressed representations.
+To learn a meaningful compressed representation, the policy set fed into the autoencoder must be sufficiently diverse **in behavior**. Simple random sampling in the parameter space leads to uneven coverage—many different parameter configurations result in similar behaviors. The authors define a behavior difference metric based on L2 distance in the action space:
 
-2. **Autoencoder with Behavioral Reconstruction Loss**:
+$$D(\pi_\theta \| \pi_{\theta'}) = \sqrt{\sum_{i=1}^{M}(\pi_\theta(\cdot|s_i) - \pi_{\theta'}(\cdot|s_i))^2}$$
 
-    - Function: Compress the high-dimensional policy parameter space $\Theta \subseteq \mathbb{R}^P$ into a low-dimensional latent space $\mathcal{Z} \subseteq \mathbb{R}^k$ ($k \ll P$).
-    - Mechanism: A symmetric autoencoder is used, with encoder $f_\xi: \Theta \to \mathcal{Z}$ and decoder $g_\zeta: \mathcal{Z} \to \Theta$. The key innovation lies in the training loss—rather than minimizing parameter reconstruction error $\|\theta - (g \circ f)(\theta)\|^2$ (which would require exact parameter recovery), the model minimizes the behavioral reconstruction loss $\mathcal{L}_B = \mathbb{E}_{\theta \sim \mathcal{D}_\Theta}[D(\pi_\theta \| \pi_{(g \circ f)(\theta)})]$. In practice, this is approximated via MSE over sampled states: $\hat{\mathcal{L}}_B = \frac{1}{NM}\sum_{i=1}^N \sum_{j=1}^M \|\pi_{\theta_i}(s_j) - \pi_{(g \circ f)(\theta_i)}(s_j)\|_2^2$.
-    - Design Motivation: The behavioral reconstruction loss liberates the decoder—it need not recover exact parameter values, but may discover any parameterization that produces the same behavior. This allows the latent space to be organized purely by functional similarity rather than parameter proximity, and constitutes the technical core of the paradigm shift "from parameters to behaviors."
+This evaluates the action discrepancy between two policies over a sampled subset of states. Novelty Search is then employed: each policy is scored based on its average behavioral difference relative to its $k_n$ nearest neighbors, keeping only the top 10% in novelty. This ensures the training set is spread across the behavior manifold rather than clustering in the parameter space.
 
-3. **Policy Gradient Optimization in Latent Space**:
+**2. Autoencoder with Behavior Reconstruction Loss: Organizing Latent Space by "Functional Similarity"**
 
-    - Function: Leverage the learned low-dimensional manifold representation for efficient task-specific policy optimization.
-    - Mechanism: The decoder parameters $\zeta^*$ are frozen, making $g_{\zeta^*}$ a deterministic differentiable function. Standard policy gradients can then be backpropagated through the decoder to the latent space via the chain rule: $\nabla_z J^R(z) = \nabla_z g_{\zeta^*}(z)^\top \nabla_\theta J^R(\theta)$. This is particularly well-suited for parameter-exploring policy gradient methods such as PGPE, which are otherwise inefficient in high-dimensional parameter spaces but regain their effectiveness in low-dimensional latent spaces. When PGPE operates in the latent space, computation of the decoder Jacobian is not required.
-    - Design Motivation: Reducing policy optimization from a search over a $10^5$-dimensional parameter space to a search over a $1 \sim 16$-dimensional latent space directly exploits the manifold structure and constitutes the core efficiency gain.
+Compression is performed using a symmetric autoencoder where the encoder $f_\xi: \Theta \to \mathcal{Z}$ maps parameters to a latent space, and the decoder $g_\zeta: \mathcal{Z} \to \Theta$ reconstructs them. Crucially, instead of the traditional parameter reconstruction error $\|\theta - (g \circ f)(\theta)\|^2$—which forces the decoder to replicate redundant parameters exactly—the authors minimize **behavior reconstruction loss**:
+
+$$\mathcal{L}_B = \mathbb{E}_{\theta \sim \mathcal{D}_\Theta}\big[D(\pi_\theta \| \pi_{(g \circ f)(\theta)})\big]$$
+
+In practice, this is approximated using MSE on sampled states:
+
+$$\hat{\mathcal{L}}_B = \frac{1}{NM}\sum_{i=1}^N \sum_{j=1}^M \|\pi_{\theta_i}(s_j) - \pi_{(g \circ f)(\theta_i)}(s_j)\|_2^2$$
+
+This shifts the decoder's objective: it no longer needs to replicate exact parameter values, but only needs to find **any set of parameters that produces the same behavior**. Consequently, the latent space is organized by functional similarity rather than numerical proximity.
+
+**3. Latent Space Policy Gradient Optimization: Reducing $10^5$-dim Search to Low Dimensions**
+
+Once pre-training is complete, the decoder parameters $\zeta^*$ are frozen, making $g_{\zeta^*}$ a deterministic differentiable function. Fine-tuning then occurs only in the low-dimensional latent space. Using the chain rule, standard policy gradients backpropagate through the decoder to the latent variables:
+
+$$\nabla_z J^R(z) = \nabla_z g_{\zeta^*}(z)^\top \nabla_\theta J^R(\theta)$$
+
+This low-dimensional optimization is particularly beneficial for parameter-exploring policy gradient methods like PGPE, which typically suffer from the curse of dimensionality. By operating in a $1 \sim 16$-dimensional latent space, PGPE regains efficiency without necessarily requiring explicit computation of the decoder's Jacobian.
 
 ### Loss & Training
 
-The autoencoder is trained with the behavioral reconstruction loss $\hat{\mathcal{L}}_B$, sampling a random batch of states at each gradient step to compute action-space MSE. Training hyperparameters (network architecture, learning rate, etc.) are held constant across all environments and configurations, demonstrating the generality of the approach.
+The autoencoder is trained using the behavior reconstruction loss $\hat{\mathcal{L}}_B$, calculating action-space MSE via a random batch of states at each gradient step. Hyperparameters (architecture, learning rate, etc.) are kept consistent across all environments, demonstrating the generality of the approach.
 
 ## Key Experimental Results
 
-### Main Results: Latent Behavioral Compression Quality on Mountain Car (Performance Recovery Rate)
+### Main Results: Latent Behavior Compression Quality on Mountain Car (Performance Recovery)
 
-Performance recovery rate = performance of the decoded policy in latent space / performance of policies in the training dataset. Values $\geq 1$ indicate recovery that matches or exceeds the original performance.
+Performance Recovery = Performance of policy decoded from latent space / Performance of original policy in dataset. A value $\geq 1$ indicates recovery or improvement over the original performance.
 
 | Policy Size | Dataset Size | 1D | 2D | 3D |
-|------------|-------------|------|------|------|
+| :--- | :--- | :--- | :--- | :--- |
 | Small (~$10^1$ params) | 50k | 0.64 | 0.93 | **0.94** |
 | Medium (~$10^3$ params) | 50k | 0.66 | 1.01 | **1.02** |
 | Large (~$10^5$ params) | 50k | **1.02** | 1.01 | 1.01 |
 | Medium | 100k | 0.51 | **1.02** | **1.02** |
 | Large | 100k | **1.01** | **1.01** | **1.01** |
 
-Large policies achieve a recovery rate of 1.01 even in a 1D latent space ($10^5:1$ compression ratio → near-perfect behavioral preservation). Medium policies exceed 1.0 starting from 2D. Small policies exhibit partial collapse at 1D (recovery rates of 0.50–0.64).
+Large policies achieve a recovery rate of 1.01 even in a 1D latent space (a $10^5:1$ compression ratio), signifying near-perfect behavior retention. Medium policies exceed 1.0 starting from 2D, while small policies exhibit some collapse in 1D.
 
 ### Ablation Study: Generalization Performance on HalfCheetah and Hopper
 
 | Environment | Task | 5D Recovery | 8D Recovery | 16D Recovery |
-|-------------|------|-------------|-------------|--------------|
+| :--- | :--- | :--- | :--- | :--- |
 | Hopper | forward | 1.33 | **1.59** | 1.48 |
 | Hopper | backward | **2.66** | 1.29 | 1.20 |
 | Hopper | jump | **3.83** | 1.54 | 2.42 |
@@ -99,40 +114,40 @@ Large policies achieve a recovery rate of 1.01 even in a 1D latent space ($10^5:
 | HalfCheetah | frontflip | 0.54 | 0.74 | **1.20** |
 | HalfCheetah | backflip | 0.55 | 0.75 | **1.23** |
 
-On HalfCheetah, increasing the latent dimensionality consistently improves performance recovery (5D→16D), suggesting a higher intrinsic dimensionality of the behavioral manifold in this environment. Challenging tasks (frontflip/backflip) have recovery rates below 1.0 at low dimensions but exceed 1.0 at 16D. Trends on Hopper are obscured by high variance.
+On HalfCheetah, increasing latent dimensionality consistently improves recovery rates, suggesting a higher intrinsic manifold dimension. Harder tasks (frontflip/backflip) require 16D to exceed a 1.0 recovery rate.
 
 ### Key Findings
 
-- **Extreme compression ratios**: Up to 121801:1 (Large policy → 1D latent space) with near-perfect behavioral preservation, strongly validating the low-dimensionality of the behavioral manifold.
-- **Behavioral manifold dimensionality vs. environment complexity**: Mountain Car achieves high recovery rates at 1–2D; Reacher requires 3–5D; HalfCheetah requires 8–16D—validating the hypothesis that intrinsic dimensionality is determined by the environment rather than network size.
-- **Convergence speed advantage**: Latent PGPE converges faster than PPO, SAC, TD3, and DDPG on 7 out of 8 tasks, though it does not always converge to the optimal solution.
-- **Dataset coverage constrains fine-tuning performance**: Latent PGPE fails on the height task because high-performing height policies are underrepresented in the training dataset, leading to insufficient behavioral manifold learning in that region.
+- **Extremely High Compression Ratios**: Achieves up to 121801:1 (Large policy to 1D latent space) with near-perfect behavioral preservation, validating the low-dimensionality of the behavior manifold.
+- **Manifold Dimension vs. Environment Complexity**: Mountain Car requires 1-2D, Reacher needs 3-5D, and HalfCheetah requires 8-16D, confirming that "intrinsic dimension is determined by the environment, not the network size."
+- **Convergence Speed Advantage**: Latent PGPE converges faster than PPO, SAC, TD3, and DDPG in 7 out of 8 tasks, though it does not always reach the global optimum.
+- **Dataset Coverage Impacts Fine-tuning Ceiling**: Latent PGPE fails on "height" tasks because the training dataset contained too few high-performing policies for that objective, leading to insufficient learning of that region of the manifold.
 
 ## Highlights & Insights
 
-- **Behavioral reconstruction loss as the core innovation**: Standard autoencoders minimize parameter reconstruction error, but the high redundancy of policy parameters makes exact parameter recovery both unnecessary and infeasible under aggressive compression. The behavioral reconstruction loss frees the decoder, allowing it to discover any parameterization that produces equivalent behavior, enabling the latent space to naturally organize by functional similarity.
-- **Empirical evidence that environment complexity determines intrinsic dimensionality**: Mountain Car (simple environment) → 1D suffices; HalfCheetah (complex environment) → 16D required. This not only validates the manifold hypothesis but also offers a novel perspective for "measuring environment complexity."
-- **Paradigmatic significance of the modular design**: Each of the three stages (data collection, compression, optimization) is independently replaceable, forming a blueprint for a new RL algorithm design paradigm.
+- **Behavior Reconstruction Loss as Core Innovation**: Traditional autoencoders minimize parameter error, but behavior reconstruction loss allows the decoder to find *any* parameterization that yields the same behavior, naturally organizing the latent space by function.
+- **Empirical Evidence of Environment-Driven Intrinsic Dimension**: Simple environments (Mountain Car) require low dimensions (1D), while complex ones (HalfCheetah) require higher dimensions (16D). This provides a new perspective for measuring environmental complexity.
+- **Paradigmatic Significance of Modular Design**: Each of the three stages (data collection, compression, optimization) can be independently swapped, serving as a blueprint for a new paradigm in RL algorithm design.
 
 ## Limitations & Future Work
 
-- **Coverage bottleneck in the pretraining dataset**: Fine-tuning performance is bounded by the behavioral coverage of the pretraining dataset—behaviors absent from the training set are not encoded in the latent space (as illustrated by the failure on the height task).
-- **Computational cost of policy dataset generation**: Generating large numbers (10k–100k) of policies and evaluating their pairwise behavioral dissimilarity incurs non-trivial computational cost in environments such as MuJoCo.
-- **Autoencoder architecture not optimized**: The paper employs a fixed symmetric autoencoder architecture with untuned hyperparameters across all settings; more advanced generative models (e.g., VAE, Diffusion Models) may further improve compression quality.
-- **Restricted to deterministic policies**: The current approach focuses on deterministic policies $\pi: \mathcal{S} \to \mathcal{A}$; behavioral manifold learning for stochastic policies remains an open problem.
+- **Bottleneck in Pre-training Dataset Coverage**: Fine-tuning performance is bounded by the training set's coverage—if a behavior is missing from the dataset (e.g., the "height" task), it won't be encoded in the latent space.
+- **Computational Cost of Policy Dataset Generation**: Generating and evaluating 10k-100k policies is computationally expensive for complex environments like MuJoCo.
+- **Unoptimized Autoencoder Architecture**: The paper uses a basic symmetric structure; advanced generative models (e.g., VAEs, Diffusion Models) might further improve compression quality.
+- **Limited to Deterministic Policies**: Current research focuses on $\pi: \mathcal{S} \to \mathcal{A}$; learning behavior manifolds for stochastic policies remains an open problem.
 
 ## Related Work & Insights
 
-- **vs. diverse behavior discovery methods (e.g., DIAYN)**: Methods such as DIAYN aim to discover diverse skills or options but do not explicitly compress the policy space. This paper directly learns the low-dimensional manifold structure of the policy space; the two approaches are complementary—skills discovered by DIAYN could be used to improve behavioral coverage in the policy dataset.
-- **vs. policy distillation / network pruning**: These methods compress individual policy networks in a task-specific manner. This paper performs task-agnostic compression—learning the low-dimensional structure of the entire policy space once, serving multiple downstream tasks.
-- **vs. policy space reduction** (Mutti et al., 2022): That work reduces the cardinality of the policy space (discretization), whereas this paper reduces its dimensionality (continuous representation). The constraints here are more relaxed, avoiding NP-hard optimization.
+- **vs. Diverse Behavior Discovery (e.g., DIAYN)**: While DIAYN discovers skills, it doesn't explicitly compress the policy space. These are complementary; DIAYN-discovered skills could improve the behavioral coverage of training datasets.
+- **vs. Policy Distillation/Network Pruning**: Those methods compress individual task-specific networks. Ours is task-agnostic compression, learning a low-dimensional structure that serves multiple downstream tasks.
+- **vs. Policy Space Reduction (Mutti et al., 2022)**: While prior work reduced cardinality (discretization), this work reduces dimensionality (continuous representation), avoiding NP-hard optimization via more relaxed constraints.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐⭐ Behavioral reconstruction loss + empirical validation of the manifold hypothesis in RL + modular two-phase paradigm; the approach is both novel and conceptually deep.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Four environments, multiple policy sizes and latent dimensionalities, comparison against four SOTA baselines, 10 random seeds; however, validation on more complex environments (e.g., Atari) is lacking.
-- Writing Quality: ⭐⭐⭐⭐ Problem formulation is clear, figures are intuitive, and mathematical notation is rigorous; some content is repetitive.
-- Value: ⭐⭐⭐⭐⭐ Introduces a fundamentally new paradigm for improving RL efficiency; the concept of a behavioral manifold opens broad avenues for future research.
+- Novelty: ⭐⭐⭐⭐⭐ Behavior reconstruction loss combined with empirical validation of the manifold hypothesis in RL offers a fresh and profound approach.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Validated across 4 environments with various policy sizes and latent dimensions; however, lacks validation in more complex domains like Atari.
+- Writing Quality: ⭐⭐⭐⭐ Clear problem definitions and intuitive diagrams; though some content is repetitive.
+- Value: ⭐⭐⭐⭐⭐ Provides a entirely new paradigm for improving RL efficiency with significant potential for future research extensions.
 
 <!-- RELATED:START -->
 
@@ -141,10 +156,10 @@ On HalfCheetah, increasing the latent dimensionality consistently improves perfo
 ## Related Papers
 
 - [\[ICLR 2026\] Generalization of Diffusion Models Arises with a Balanced Representation Space](generalization_of_diffusion_models_arises_with_a_balanced_representation_space.md)
-- [\[ICLR 2026\] Unsupervised Conformal Inference: Bootstrapping and Alignment to Control LLM Uncertainty](unsupervised_conformal_inference_bootstrapping_and_alignment_to_control_llm_unce.md)
+- [\[ICLR 2026\] Exploring the Design Space of Transition Matching](exploring_the_design_space_of_transition_matching.md)
+- [\[ICLR 2026\] DiffSDA: Unsupervised Diffusion Sequential Disentanglement Across Modalities](diffsda_unsupervised_diffusion_sequential_disentanglement_across_modalities.md)
+- [\[ICLR 2026\] Discrete Variational Autoencoding via Policy Search](discrete_variational_autoencoding_via_policy_search.md)
 - [\[ICML 2026\] SURF: Separation via Unsupervised Remixing Flow](../../ICML2026/image_generation/surf_separation_via_unsupervised_remixing_flow.md)
-- [\[ICLR 2026\] Diffusion Fine-Tuning via Reparameterized Policy Gradient of the Soft Q-Function](diffusion_fine-tuning_via_reparameterized_policy_gradient_of_the_soft_q-function.md)
-- [\[ICLR 2026\] PCPO: Proportionate Credit Policy Optimization for Aligning Image Generation Models](pcpo_proportionate_credit_policy_optimization_for_aligning_image_generation_mode.md)
 
 </div>
 

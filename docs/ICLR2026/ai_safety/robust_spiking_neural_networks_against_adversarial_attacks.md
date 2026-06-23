@@ -2,69 +2,79 @@
 title: >-
   [Paper Note] Robust Spiking Neural Networks Against Adversarial Attacks
 description: >-
-  [ICLR 2026][AI Safety][Spiking Neural Networks] This paper theoretically demonstrates that threshold-proximal spiking neurons are the key robustness bottleneck in directly trained SNNs — they simultaneously set the theor…
+  [ICLR 2026][AI Safety][Paper Note] This paper theoretically proves that threshold-proximity spiking neurons are the key bottleneck for the adversarial robustness of directly trained SNNs (they simultaneously set the theoretical upper bound of attack intensity and are most prone to state flipping). It proposes the Threshold Guarding Optimization (TGO) me
 tags:
-  - "ICLR 2026"
-  - "AI Safety"
-  - "Spiking Neural Networks"
-  - "Adversarial Robustness"
-  - "Membrane Potential Optimization"
-  - "Threshold-Proximal Neurons"
-  - "Noisy LIF Model"
+  - ICLR 2026
+  - AI Safety
 date: 2026-05-08
-content_hash: 2a8d65bac668c133
+content_hash: dceccc7ded21ad5d
 ---
-
 # Robust Spiking Neural Networks Against Adversarial Attacks
 
-**Conference**: ICLR 2026
+**Conference**: ICLR2026  
 **arXiv**: [2602.20548](https://arxiv.org/abs/2602.20548)  
 **Code**: To be confirmed  
-**Area**: AI Safety
-**Keywords**: Spiking Neural Networks, Adversarial Robustness, Membrane Potential Optimization, Threshold-Proximal Neurons, Noisy LIF Model
+**Area**: AI Security  
+**Keywords**: Spiking Neural Networks, Adversarial Robustness, Membrane Potential Optimization, Threshold-proximity Neurons, Noisy LIF Model
 
 ## TL;DR
-This paper theoretically demonstrates that threshold-proximal spiking neurons are the key robustness bottleneck in directly trained SNNs — they simultaneously set the theoretical upper bound on adversarial attack strength and are most susceptible to state flipping. The proposed Threshold Guarding Optimization (TGO) method addresses this through a dual strategy of membrane potential constraint and noisy LIF neurons, achieving state-of-the-art robustness across multiple adversarial attack scenarios with zero additional inference overhead.
+This paper theoretically proves that threshold-proximity spiking neurons are the key bottleneck for the adversarial robustness of directly trained SNNs (they simultaneously set the theoretical upper bound of attack intensity and are most prone to state flipping). It proposes the Threshold Guarding Optimization (TGO) method—a dual approach using membrane potential constraints and noisy LIF neurons—which achieves SOTA robustness across various adversarial scenarios with zero additional inference overhead.
 
 ## Background & Motivation
 
-**Background**: Spiking Neural Networks (SNNs), leveraging event-driven mechanisms and biologically plausible spike-based communication, have emerged as a prominent paradigm for energy-efficient neuromorphic computing. Direct training methods based on surrogate gradients (e.g., STBP/BPTT) have enabled SNNs to approach ANN-level performance on classification tasks.
+**Background**: Spiking Neural Networks (SNNs) have become an important paradigm for energy-efficient neuromorphic computing due to their event-driven mechanisms and biologically plausible spike transmission. Direct training methods based on surrogate gradients (such as STBP/BPTT) have enabled SNNs to approach ANN performance in classification tasks.
 
-**Limitations of Prior Work**: Directly trained SNNs inherit the adversarial vulnerability of ANNs — carefully crafted small perturbations can cause misclassification. Existing defenses such as adversarial training (AT) and regularized adversarial training (RAT) incur additional training overhead and offer limited transferability.
+**Limitations of Prior Work**: Directly trained SNNs inherit the adversarial vulnerability of ANNs—carefully designed infinitesimal perturbations can lead to classification errors. Existing defense methods like Adversarial Training (AT) and Regularized Adversarial Training (RAT) introduce significant training overhead and have limited portability.
 
-**Key Challenge**: Prior robustness improvements for SNNs (e.g., gradient sparsity regularization SR, evolutionary leakage factor FEEL-SNN) only yield significant gains when combined with AT/RAT, and a unified theoretical analysis of robustness bottlenecks in SNNs remains absent.
+**Key Challenge**: Existing robustness optimizations for SNNs (e.g., gradient Sparsity Regularization (SR), evolutionary leakage factors like FEEL-SNN) only show significant effects when combined with AT/RAT and lack a unified theoretical analysis of the SNN robustness bottleneck.
 
-**Goal**: Identify the fundamental cause of adversarial vulnerability in directly trained SNNs and design a defense method that requires no additional inference overhead.
+**Goal**: To identify the fundamental cause of adversarial vulnerability in directly trained SNNs and design a defense method without additional inference overhead.
 
-**Key Insight**: By analyzing membrane potential dynamics in spiking neurons, this work identifies that threshold-proximal neurons simultaneously amplify both the upper bound of gradient attack paths and the probability of state flipping.
+**Key Insight**: Starting from the membrane potential dynamics of spiking neurons, it was discovered that threshold-proximity neurons amplify both the upper bound of the gradient attack path and the probability of state flipping.
 
-**Core Idea**: Push membrane potentials away from the threshold + introduce noisy spiking mechanisms → reduce the theoretical upper bound of adversarial attacks + decrease state-flipping probability.
+**Core Idea**: Push membrane potentials away from the threshold + Introduce a noisy spiking mechanism $\to$ Lower the theoretical upper bound of adversarial attacks + Reduce the state flipping probability.
 
 ## Method
 
-### Theoretical Analysis: Dual Vulnerability of Threshold-Proximal Neurons
+### Overall Architecture
 
-**Vulnerability 1 — Maximum Potential Attack Path Upper Bound**: The maximum potential adversarial attack strength $\mathcal{R}_{\text{adv}}(f,x,\epsilon)$ is positively correlated with the $\ell_2$ norm of the model's Jacobian matrix. Since the surrogate gradient peaks near the threshold, a greater proportion of threshold-proximal neurons leads to a larger $\|J_f(x)\|_2^2$, thereby raising the theoretical upper bound on adversarial perturbation strength.
+The paper first provides a theoretical deconstruction: attributing the adversarial vulnerability of directly trained SNNs to "threshold-proximity neurons"—a group of neurons whose membrane potentials reside near the firing threshold. It is proven that they both expand the attack intensity bound and are the most susceptible to perturbation-induced flipping. Following this conclusion, the authors propose Threshold Guarding Optimization (TGO), targeting both the training loss and the neuron model. Membrane Potential Constraint (MC) pushes most neurons away from the threshold, while the Noisy LIF (NLIF) model provides a probabilistic layer of protection for neurons remaining near the threshold. Both act only during training; at inference, the model reverts to a standard SNN, incurring zero extra overhead.
 
-**Vulnerability 2 — State-Flipping Probability**: Theorem 1 proves that when Gaussian noise $\eta[t] \sim \mathcal{N}(0,\sigma^2)$ is applied to the membrane potential, the neuron state-flipping probability $P_{\text{flip}}$ increases monotonically as the membrane potential approaches the threshold. Theorem 2 further proves that a greater number of threshold-proximal neurons increases the number of reachable activation regions $K$ within the perturbation ball $B_\epsilon(x)$, loosening the upper bound on adversarial robustness.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    A["Directly trained SNN<br/>(Adversarially vulnerable)"] --> B["Threshold-proximity neuron bottleneck<br/>Attack upper bound↑ + Flip probability↑"]
+    B --> TGO
+    subgraph TGO["TGO (Training phase only)"]
+        direction TB
+        C["Membrane Potential Constraint (MC)<br/>Loss pushes most neurons away from threshold"]
+        D["Noisy LIF (NLIF)<br/>Probabilistic protection for residual proximity neurons"]
+    end
+    C -.Synergy.- D
+    TGO --> E["Inference: Degrades to standard SNN<br/>Robust and zero extra overhead"]
+```
 
-### TGO: Two Core Components
+### Key Designs
 
-**Component 1 — Membrane potential Constraint (MC)**: A penalty term is added to the loss function at each spiking neuron layer, penalizing neurons whose membrane potentials fall within a $\delta$-neighborhood of the threshold $V_{\text{th}}$:
+**1. Dual Vulnerability of Threshold-proximity Neurons: Locating the SNN Robustness Bottleneck**
 
-$$\mathcal{C}(V(t)_l) = \frac{1}{TN}\sum_{i=1}^{n}\max(0, \delta - |V(t)_i - V_{\text{th}}|)$$
+The authors identify neurons with membrane potentials near the threshold as the bottleneck and prove this from two perspectives. First, the attack intensity upper bound: the maximum potential intensity of an adversarial attack $\mathcal{R}_{\text{adv}}(f,x,\epsilon)$ is positively correlated with the $\ell_2$ norm of the model's Jacobian. Since surrogate gradients peak near the threshold, more threshold-proximity neurons lead to a larger $\|J_f(x)\|_2^2$, raising the theoretical upper bound of adversarial perturbation intensity. Second, state flipping: Theorem 1 proves that when Gaussian noise $\eta[t]\sim\mathcal{N}(0,\sigma^2)$ acts on the membrane potential, the flip probability $P_{\text{flip}}$ increases monotonically as the potential approaches the threshold. Theorem 2 further nodes that the more threshold-proximity neurons there are, the larger the number of reachable activation regions $K$ within the perturbation ball $B_\epsilon(x)$, loosening the robustness upper bound. These conclusions suggest that pushing membrane potentials away from the threshold can simultaneously lower the attack bound and flip probability.
 
-The total loss adopts a Lagrangian form $\mathcal{L}(\mathbf{x},\lambda) = \mathcal{L}_{\text{oss}}(\mathbf{x}) + \lambda \sum_l \mathcal{C}(V(t)_l)$, where $\lambda$ is dynamically adjusted via cosine annealing — small values early in training allow exploration, while larger values later enforce stronger constraints — avoiding convergence difficulties associated with a fixed $\lambda$.
+**2. Membrane Potential Constraint (MC): Pushing Potentials Away via Loss**
 
-**Component 2 — Noisy LIF Neuron (NLIF)**: Gaussian white noise $\xi[t]$ is injected into the membrane potential, converting the deterministic firing mechanism into a probabilistic one. Theoretical derivation shows that when the membrane potential is near the threshold ($z^2 < 1$), the flipping probability decreases monotonically with noise standard deviation $\sigma$, i.e., appropriately increasing noise reduces the state-flipping sensitivity of threshold-proximal neurons.
+To address the root cause of "too many threshold-proximity neurons," MC adds a hinge-like penalty to the loss of each spiking neuron layer. Any membrane potential falling within a $\delta$-neighborhood of the threshold $V_{\text{th}}$ incurs a cost:
 
-**Synergistic Mechanism**: MC pushes the majority of neurons' membrane potentials away from the threshold; for neurons that must remain near the threshold during training, NLIF further reduces their flipping probability. The two components are complementary rather than independent.
+$$\mathcal{C}(V(t)_l) = \frac{1}{TN}\sum_{i=1}^{n}\max\bigl(0,\ \delta - |V(t)_i - V_{\text{th}}|\bigr)$$
 
-### Key Hyperparameters
-- $\lambda_{\max}$: Upper bound on membrane potential constraint strength; set to 0.4 for WRN-16 and 0.6 for VGG-11. Larger $\lambda_{\max}$ improves robustness but reduces clean accuracy.
-- $\delta$: Threshold neighborhood width, controlling the triggering range of the penalty.
-- Noise $\sigma$: Standard deviation of NLIF noise, requiring a balance between robustness improvement and training stability.
-- Training timesteps $T=4$: All SNN models uniformly use 4-timestep simulation.
+This does not change the network structure but "squeezes" the membrane potential distribution toward either side during training, reducing the number of threshold-proximity neurons and directly weakening the causes of vulnerability. Tests show TGO reduces threshold-proximity neurons by approximately 40%, aligning with theoretical assumptions.
+
+**3. Noisy LIF Neurons (NLIF): Probabilistic Protection for Residual Proximity Neurons**
+
+MC cannot push all neurons away—some critical neurons must remain near the threshold for training. For these, NLIF injects Gaussian white noise $\xi[t]$ into the membrane potential, converting deterministic firing into probabilistic firing. While adding noise might seem counterintuitive for stability, theoretical derivation yields a result: when the potential is near the threshold ($z^2<1$), the flip probability decreases monotonically with respect to the noise standard deviation $\sigma$. Thus, appropriate noise can actually reduce the flip sensitivity of these neurons. MC handles "clearing the field" while NLIF provides "residual defense," together suppressing the flip probability.
+
+### Loss & Training
+
+The total loss combines the classification loss and layer-wise membrane potential constraints in a Lagrangian form: $\mathcal{L}(\mathbf{x},\lambda) = \mathcal{L}_{\text{oss}}(\mathbf{x}) + \lambda \sum_l \mathcal{C}(V(t)_l)$. The weight $\lambda$ is not fixed but adjusted from small to large using cosine annealing—low values in the early stages allow for exploration to avoid poor convergence, while high values in later stages enforce the constraint to push neurons away from the threshold. Its upper limit $\lambda_{\max}$ is the primary knob for the robustness-accuracy trade-off. The neighborhood width $\delta$ controls the penalty range, and the noise standard deviation $\sigma$ in NLIF balances robustness and training stability. All SNNs are consistently simulated using $T=4$ time steps.
 
 ## Key Experimental Results
 
@@ -79,7 +89,7 @@ The total loss adopts a Lagrangian form $\mathcal{L}(\mathbf{x},\lambda) = \math
 | RAT | RAT | 91.44 | 42.02 | 75.89 | 19.81 | 16.24 | 14.18 |
 | RAT | **TGO** | 87.33 | **69.16** | **79.28** | **47.69** | **38.07** | **33.13** |
 
-### Ablation Study: Component Contributions on CIFAR-100 VGG-11
+### Ablation Study: CIFAR-100 VGG-11 Component Contributions
 
 | MC | NLIF | Clean (BPTT) | FGSM (BPTT) | Clean (RAT) | FGSM (RAT) | PGD40 (RAT) |
 |----|------|-------------|-------------|-------------|-------------|-------------|
@@ -88,40 +98,33 @@ The total loss adopts a Lagrangian form $\mathcal{L}(\mathbf{x},\lambda) = \math
 | ✗ | ✓ | 70.6 | 8.1 (+2.1) | 68.1 | 25.2 (+4.3) | 9.1 (+2.2) |
 | ✓ | ✓ | 66.9 | **21.5 (+15.5)** | 63.3 | **33.8 (+13.0)** | **9.3 (+2.4)** |
 
-### Advanced Attacks: MTPGD & APGD (CIFAR-100 WRN-16)
-
-| Method | MTPGD-7 | MTPGD-40 | APGD-7 | APGD-40 |
-|------|---------|----------|--------|---------|
-| AT | 10.01 | 3.92 | 9.34 | 3.62 |
-| SR+AT | 16.88 | 7.33 | 14.48 | 7.20 |
-| **TGO+AT(EoT)** | **21.23** | **7.40** | **18.93** | **7.53** |
-
-- TGO reduces the proportion of threshold-proximal neurons by approximately 40%, validating the theoretical hypothesis.
-- Loss landscape analysis shows that TGO-optimized SNNs exhibit smoother gradient trajectories, effectively avoiding local optima.
+### Key Findings
+- TGO reduces the number of threshold-proximity neurons by approximately 40%, validating the theoretical hypothesis.
+- Loss landscape analysis shows that SNNs optimized with TGO have smoother gradient trajectories, effectively avoiding local optima traps.
 
 ## Highlights & Insights
-- **Theory-Driven Design**: Rather than blindly adapting ANN defense methods, this work identifies robustness bottlenecks from the perspective of SNN spiking mechanisms and designs targeted defense components accordingly.
-- **Zero Inference Overhead**: MC only affects the training loss; NLIF noise can be removed at inference (probabilistic training has already produced more robust weight distributions), leaving the inference stage identical to a standard SNN.
-- **High Compatibility**: TGO can be combined arbitrarily with BPTT/AT/RAT, consistently yielding significant improvements across all combinations.
-- **40% Reduction in Threshold-Proximal Neurons**: Visualization directly validates the correctness of the theoretical analysis.
+- **Theory-driven Design**: Instead of blindly applying ANN defense methods, it identifies robustness bottlenecks from SNN spiking mechanisms and designs targeted defensive components.
+- **Zero Inference Overhead**: MC only affects the training loss, and NLIF noise can be removed during inference (as the probabilistic training already makes the weights robust). The inference stage remains identical to a standard SNN.
+- **High Compatibility**: TGO can be combined with BPTT, AT, or RAT, providing significant improvements in all combinations.
+- **40% Reduction in Proximity Neurons**: Visualizations intuitively verify the correctness of the theoretical analysis.
 
 ## Limitations & Future Work
-- **Clean Accuracy Drop of 3–5%**: The constraint pushing membrane potentials away from the threshold inevitably sacrifices some standard classification performance, reflecting a robustness–accuracy trade-off.
-- **Evaluation Limited to Image Classification**: Generalizability to downstream tasks such as object detection and semantic segmentation has not been verified.
-- **Selection of Noise Standard Deviation $\sigma$**: The paper does not adequately discuss how to automatically determine the optimal $\sigma$ for different architectures and datasets.
-- **Limited Adaptive Attack Evaluation**: Although APGD and EoT are tested, a more comprehensive adaptive attack suite such as AutoAttack is not employed.
-- **Future Directions**: Layer-wise adaptive $\delta$ and $\sigma$ could be explored, and knowledge distillation could be incorporated to mitigate the clean accuracy loss.
+- **Clean Accuracy Drop (3-5%)**: The constraint to push potentials away from the threshold inevitably sacrifices some normal classification performance, representing a robustness-accuracy trade-off.
+- **Validation Limited to Image Classification**: Generalization to downstream tasks like object detection or semantic segmentation has not been verified.
+- **Selection of Noise Standard Deviation $\sigma$**: The paper does not fully discuss how to automatically determine the optimal $\sigma$ for different architectures and datasets.
+- **Limited Adaptive Attack Evaluation**: While APGD and EoT were tested, a more complete adaptive attack suite like AutoAttack was not employed.
+- **Future Directions**: Explore layer-wise adaptive $\delta$ and $\sigma$, or combine with knowledge distillation to mitigate clean accuracy loss.
 
 ## Related Work & Insights
-- **vs. SR (Gradient Sparsity Regularization)**: SR directly constrains gradient sparsity, whereas TGO targets the root cause (membrane potential distribution) to indirectly achieve stronger gradient sparsity effects. TGO outperforms SR across all attack scenarios in the experiments.
-- **vs. FEEL-SNN (Evolutionary Leakage Factor)**: FEEL-SNN enhances robustness through stochastic membrane potential decay but is only effective when combined with AT; TGO substantially improves FGSM robustness even under the BPTT strategy (+37%).
-- **vs. ANN Adversarial Training**: AT/RAT are transferred from ANNs without accounting for the spiking characteristics of SNNs; TGO exploits the unique properties of the spiking mechanism to design defenses that complement AT/RAT.
+- **vs SR (Sparsity Regularization)**: SR directly constrains gradient sparsity; TGO starts from the root (membrane potential distribution), indirectly achieving stronger gradient sparsity. Experimentally, TGO outperforms SR in all attack scenarios.
+- **vs FEEL-SNN (Evolutionary Leakage Factor)**: FEEL-SNN enhances robustness through stochastic membrane potential decay but is only effective when paired with AT. TGO significantly improves FGSM robustness even under the BPTT strategy (+37%).
+- **vs ANN Adversarial Training**: AT/RAT are migrated from ANNs without considering SNN spiking characteristics. TGO leverages the specific nature of the spiking mechanism to design defenses that complement AT/RAT.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Establishes a theoretical framework for SNN robustness bottlenecks from the perspective of threshold-proximal neurons; highly original viewpoint.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covers multiple architectures × multiple attacks × multiple training strategies with complete ablation; AutoAttack evaluation is missing.
-- Writing Quality: ⭐⭐⭐⭐ Theoretical derivations are rigorous, method motivation is clear, and figures are intuitive.
-- Value: ⭐⭐⭐⭐ Provides both a theoretical foundation and a practical tool for secure SNN deployment; zero inference overhead is a significant advantage.
+- Novelty: ⭐⭐⭐⭐ Unique perspective by establishing SNN robustness bottleneck theory through threshold-proximity neurons.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive across multiple architectures, attacks, and training strategies, with full ablation, though lacking AutoAttack.
+- Writing Quality: ⭐⭐⭐⭐ Rigorous theoretical derivation, clear motivation, and intuitive illustrations.
+- Value: ⭐⭐⭐⭐ Provides a theoretical foundation and practical tools for secure SNN deployment; zero inference overhead is a major advantage.
 
 <!-- RELATED:START -->
 
@@ -129,11 +132,11 @@ The total loss adopts a Lagrangian form $\mathcal{L}(\mathbf{x},\lambda) = \math
 
 ## Related Papers
 
-- [\[ICLR 2026\] Time Is All It Takes: Spike-Retiming Attacks on Event-Driven Spiking Neural Networks](time_is_all_it_takes_spike-retiming_attacks_on_event-driven_spiking_neural_netwo.md)
+- [\[CVPR 2026\] Towards Reliable Evaluation of Adversarial Robustness for Spiking Neural Networks](../../CVPR2026/ai_safety/towards_reliable_evaluation_of_adversarial_robustness_for_spiking_neural_network.md)
+- [\[ICLR 2026\] Robustify Spiking Neural Networks via Dominant Singular Deflation under Heterogeneous Training Vulnerability](robustify_spiking_neural_networks_via_dominant_singular_deflation_under_heteroge.md)
 - [\[AAAI 2026\] MPD-SGR: Robust Spiking Neural Networks with Membrane Potential Distribution-Driven Surrogate Gradient Regularization](../../AAAI2026/ai_safety/mpd-sgr_robust_spiking_neural_networks_with_membrane_potential_distribution-driv.md)
+- [\[ICLR 2026\] Time Is All It Takes: Spike-Retiming Attacks on Event-Driven Spiking Neural Networks](time_is_all_it_takes_spike-retiming_attacks_on_event-driven_spiking_neural_netwo.md)
 - [\[ICML 2026\] Frequency Matching in Spiking Neural Networks for mmWave Sensing](../../ICML2026/ai_safety/frequency_matching_in_spiking_neural_networks_for_mmwave_sensing.md)
-- [\[AAAI 2026\] Yours or Mine? Overwriting Attacks Against Neural Audio Watermarking](../../AAAI2026/ai_safety/yours_or_mine_overwriting_attacks_against_neural_audio_watermarking.md)
-- [\[ICLR 2026\] ATEX-CF: Attack-Informed Counterfactual Explanations for Graph Neural Networks](atex-cf_attack-informed_counterfactual_explanations_for_graph_neural_networks.md)
 
 </div>
 

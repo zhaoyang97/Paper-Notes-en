@@ -2,168 +2,177 @@
 title: >-
   [Paper Note] Action-Free Offline-to-Online RL via Discretised State Policies
 description: >-
-  [ICLR 2026][AI Safety][Action-free offline RL] This paper formalises the "action-free offline-to-online RL" setting for the first time and proposes the OSO-DecQN algorithm. By discretising continuous state differences in…
+  [ICLR 2026][AI Safety][DecQN] This paper formally defines the "Action-Free Offline-to-Online RL" setting for the first time and proposes the OSO-DecQN algorithm. By discretizing continuous state differences into three categorical tokens $\{-1, 0, 1\}$, the method pre-trains a state policy (predicting desired directions of state change rather than a
 tags:
-  - "ICLR 2026"
-  - "AI Safety"
-  - "Action-free offline RL"
-  - "state policy"
-  - "state discretisation"
-  - "DecQN"
-  - "guided online learning"
+  - ICLR 2026
+  - AI Safety
+  - DecQN
 date: 2026-05-08
-content_hash: f34f7e554094d564
+content_hash: 7809de7e35a7d254
 ---
-
 # Action-Free Offline-to-Online RL via Discretised State Policies
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2602.00629](https://arxiv.org/abs/2602.00629)  
-**Code**: Available (provided in supplementary material)  
-**Area**: AI Safety
-**Keywords**: Action-free offline RL, state policy, state discretisation, DecQN, guided online learning
+**Code**: Yes (Provided in supplementary materials)  
+**Area**: AI Safety  
+**Keywords**: Action-free offline RL, state policy, state discretization, DecQN, guided online learning
 
 ## TL;DR
 
-This paper formalises the "action-free offline-to-online RL" setting for the first time and proposes the OSO-DecQN algorithm. By discretising continuous state differences into ternary tokens $\{-1, 0, 1\}$, a state policy $Q(s, \Delta s)$ is pretrained on action-free $(s, r, s')$ tuples to predict the expected direction of next-state change rather than actions. A policy-switching mechanism combined with an online-trained inverse dynamics model (IDM) then translates the state policy into executable actions, guiding online agents to accelerate learning. The approach consistently improves both convergence speed and asymptotic performance on D4RL and DeepMind Control Suite (including 78-dimensional state spaces).
+This paper formally defines the "Action-Free Offline-to-Online RL" setting for the first time and proposes the OSO-DecQN algorithm. By discretizing continuous state differences into three categorical tokens $\{-1, 0, 1\}$, the method pre-trains a state policy (predicting desired directions of state change rather than actions) on data containing only $(s, r, s')$ tuples. During the online phase, the state policy is converted into executable actions via a policy switching mechanism and an online-trained inverse dynamics model, accelerating online agent learning. Consistent improvements in convergence speed and asymptotic performance are demonstrated on D4RL and DeepMind Control Suite (including a 78-dimensional state space).
 
 ## Background & Motivation
 
-**Background**: Offline RL has demonstrated the ability to learn policies from static datasets, but nearly all existing methods assume complete action labels $(s, a, r, s')$ in the dataset.
+**Background**: Offline RL has enabled learning policies from static datasets, but almost all existing methods assume that datasets include complete action labels $(s, a, r, s')$.
 
-**Limitations of Prior Work**: In many real-world scenarios, action information is inherently absent — treatment decisions in medical records are removed for privacy, specific operations in financial transactions are withheld due to proprietary strategy protection, and control signals in robot sensor logs are not recorded due to storage constraints. Such $(s, r, s')$-only datasets are widespread yet cannot be exploited by standard offline RL methods.
+**Limitations of Prior Work**: Action information is naturally missing in many real-world scenarios—medical records exclude treatment decisions for privacy, financial transactions hide specific operations to protect proprietary strategies, and robotic sensor logs omit control signals due to storage limits. Such $(s, r, s')$ data is abundant but cannot be utilized by standard offline RL.
 
-**Limitations of Existing Attempts**: (1) The $Q_{SS'}$ methods of Edwards et al. (2020) and Hepburn et al. (2024) estimate the value of state transitions but still rely on action labels during training; (2) Zhu et al. (2023) use a Decision Transformer to learn action-free state policies, but the approach is computationally expensive, yields unstable online guidance, and has not been validated across diverse environments; (3) The action discretisation approach of Seyde et al. (2022) requires bounded action ranges and is incompatible with action-free datasets. **No existing method simultaneously satisfies: learning from action-free offline data + high-dimensional scalability + effective guidance of online learning.**
+**Limitations of existing attempts**: (1) $Q_{SS'}$ methods (Edwards et al., 2020; Hepburn et al., 2024) estimate the value of state transitions but still rely on action labels during training; (2) Zhu et al. (2023) use Decision Transformers to learn action-free state policies, but face high computational costs, unstable online guidance, and limited validation; (3) Action discretization strategies (Seyde et al., 2022) depend on bounded action ranges and are inapplicable to action-free datasets. **No existing method simultaneously satisfies: learning from action-free offline data + high-dimensional scalability + effective guidance for online learning.**
 
-**Key Challenge**: Action-free data cannot be directly used by any standard value-based or policy-based RL algorithm. Directly regressing to predict the next state in continuous space leads to instability and overfitting.
+**Key Challenge**: Action-free data cannot be directly used for any standard value-based or policy-based RL algorithms. Direct regression for next-state prediction in continuous space leads to instability and overfitting.
 
-**Core Idea**: Rather than learning "which action to take," the method learns "in which direction the state should change" — by discretising continuous state differences into directional tokens $\{-1, 0, 1\}$, an ill-posed continuous regression problem is transformed into a structured classification problem, circumventing the action space while retaining sufficient decision-relevant information.
+**Core Idea**: Instead of learning "what action to take," learn "how the state should change." By discretizing continuous state differences into directional tokens $\{-1, 0, 1\}$, the ill-posed continuous regression problem is transformed into a structured classification problem, bypassing the action space while retaining sufficient decision information.
 
 ## Method
 
 ### Overall Architecture
 
-A two-stage pipeline: **offline pretraining** — learning a state policy $Q(s, \Delta s)$ from action-free $(s, r, s')$ datasets, where $\Delta s \in \{-1, 0, 1\}^M$ denotes the discrete direction of change for each state dimension; **guided online learning** — using the pretrained state policy via policy switching and an IDM to translate $\Delta s$ into executable actions, accelerating the online agent.
+The objective is to utilize offline datasets containing only $(s, r, s')$ without action labels. OSO-DecQN circumvents "action prediction" by predicting "the direction of state change" and translates these directions into actions during the online stage. The pipeline consists of two phases: **Offline Pre-training**, where state differences are discretized into directional tokens to learn a state policy $Q(s, \Delta s)$, where $\Delta s \in \{-1, 0, 1\}^M$ records the desired discrete change direction for each state dimension; and **Guided Online Learning**, where the pre-trained state policy, via policy switching and an online-trained Inverse Dynamics Model (IDM), translates $\Delta s$ into executable actions to accelerate the online agent's convergence.
+
+```mermaid
+flowchart TD
+    A["Action-Free Offline Data<br/>(s, r, s')"] --> B["State Discretization Transform<br/>State Differences → {-1,0,1} Directional Tokens Δs"]
+    B --> C["OSO-DecQN Offline Pre-training<br/>Value Decomposition (3M) + Conservative Regularization<br/>→ State Policy Q(s, Δs)"]
+    C --> D
+    subgraph D["Guided Online Learning Mechanism"]
+        direction TB
+        E["Policy Switching<br/>Probability β uses guided action<br/>else online policy exploration"]
+        G["Offline Data Augmentation<br/>Pseudo-action labeling for training data"] --> F["Online IDM<br/>Translates Δs into action a"]
+        E --> F
+    end
+    D --> H["Accelerated Online Agent"]
+```
 
 ### Key Designs
 
-1. **State Discretisation Transformation**:
+**1. State Discretization Transform: Reformulating Ill-posed Regression as Structured Classification**
 
-    - Function: Converts continuous state differences $s' - s$ into discrete directional tokens, transforming state prediction into a classification problem.
-    - Mechanism: After z-score normalisation of state differences, each dimension is mapped to $\{-1, 0, 1\}$ (decrease / unchanged / increase) according to threshold $\epsilon$. Formally:
-    $$\delta_i^\epsilon(s,s') = \begin{cases} -1 & s'_i - s_i < -\epsilon \\ 1 & s'_i - s_i > \epsilon \\ 0 & \text{otherwise} \end{cases}$$
-    - Design Motivation: (1) Continuous regression of $s'$ or $s'-s$ is highly unstable (experiments show performance near that of a random policy); (2) z-score normalisation achieves scale invariance without per-dimension tuning; (3) Theoretical guarantee: the value function error of $k$-bin discretisation is $O(H\sqrt{M}/k)$, which is controllable and decreases as precision improves.
+Directly regressing the next state $s'$ or the state difference $s'-s$ is experimentally shown to be nearly impossible—performance of policies from continuous regression is close to random. Continuous targets are unstable and prone to overfitting, with decision signals often drowned in noise. The proposed approach first computes z-score standardization for state differences and then uses a threshold $\epsilon$ to map each dimension to three directional tokens (decrease/stay/increase):
 
-2. **OSO-DecQN Offline Pretraining Algorithm**:
+$$\delta_i^\epsilon(s,s') = \begin{cases} -1 & s'_i - s_i < -\epsilon \\ 1 & s'_i - s_i > \epsilon \\ 0 & \text{otherwise} \end{cases}$$
 
-    - Function: Pretrains a high-quality state policy from action-free data.
-    - Mechanism: The value decomposition of DecQN is transferred from the action dimension to the state-difference dimension — $Q_\theta(s, \Delta s) = \frac{1}{M}\sum_{j=1}^M U^j_{\theta_j}(s, \Delta s_j)$ — where each state dimension independently maintains a utility branch and the total Q-value is the mean across all dimensions. An ensemble variant with double-Q learning stabilises training.
-    - Conservative Regularisation: $R_\theta = \sum_{(s,\Delta s)\sim D} \log \| \exp(Q_\theta(s, \cdot)) \|_1 - Q_\theta(s, \Delta s)$, which is equivalent to a CQL penalty in the discrete setting and simultaneously addresses both overestimation bias and state reachability constraints.
-    - Design Motivation: The decomposition structure of DecQN reduces the combinatorially explosive $3^M$ space to linear $3M$ complexity, making the method scalable to 78-dimensional state spaces.
+This transforms continuous prediction into discrete classification, preserving "where to go" decision information while eliminating regression instability. Z-score standardization provides scale invariance, removing the need for per-dimension threshold tuning. Discretization incurs a controllable theoretical cost—the value function error introduced by $k$-bin discretization is $O(H\sqrt{M}/k)$, which decreases as the number of bins increases; thus, coarse discretization does not introduce systematic bias.
 
-3. **Guided Online Learning Mechanism**:
+**2. OSO-DecQN Offline Pre-training: Compressing $3^M$ Combinatorial Space to Linear via Value Decomposition**
 
-    - Function: Transfers knowledge from the offline state policy to the online agent.
-    - Mechanism: (1) **Policy switching** — with probability $\beta$, use the offline-guided action; otherwise use the online policy: $a = I_\phi(s, \arg\max_{\Delta s} Q(s, \Delta s))$ (when guided) or $\pi_{on}(s)$ (when exploring); (2) **Online IDM training** — a lightweight inverse dynamics model $I_\phi$ is trained with L1 loss on online-collected $(s, a, s')$ tuples to map $\Delta s$ to actions; (3) **Offline data augmentation** — pseudo-actions are annotated for offline samples using the online policy $\pi_{on}(s_{off})$ to augment IDM training data.
-    - Design Motivation: The IDM is intentionally kept simple (fixed architecture across all environments) to ensure that performance gains are attributable to the quality of the state policy rather than the capability of the translator.
+After discretization, choosing one of three options for $M$ state dimensions leads to $3^M$ combinations, making a joint Q-value function infeasible. Following the DecQN value decomposition logic but applying it to state difference dimensions, the total Q-value is represented as the mean of utility branches for each dimension:
+
+$$Q_\theta(s, \Delta s) = \frac{1}{M}\sum_{j=1}^M U^j_{\theta_j}(s, \Delta s_j)$$
+
+By maintaining an independent utility branch $U^j$ for each state dimension, complexity is reduced from exponential $3^M$ to linear $3M$, enabling scalability to a 78-dimensional state space. Ensemble variants and double Q-learning are employed to suppress variance. To prevent overestimation in the offline setting, a conservative regularizer is added:
+
+$$R_\theta = \sum_{(s,\Delta s)\sim D} \log \| \exp(Q_\theta(s, \cdot)) \|_1 - Q_\theta(s, \Delta s)$$
+
+This is equivalent to CQL punishment in a discrete setting, addressing two issues: reducing overestimation bias for out-of-distribution actions and constraining the policy to state transitions reachable in the data. Ablations show that removing this term leads to failure in almost all tasks, identifying it as a necessary condition for offline performance.
+
+**3. Guided Online Learning Mechanism: Translating State Policy Knowledge to Online Agents**
+
+Since the state policy outputs directions $\Delta s$ while the environment accepts actions, a bridge is required. Three mechanisms facilitate this: **Policy Switching**, which uses a probability $\beta$ to adopt the offline guided action $a = I_\phi(s, \arg\max_{\Delta s} Q(s, \Delta s))$ or the online policy $\pi_{on}(s)$ for exploration; **Online IDM Training**, which trains a lightweight Inverse Dynamics Model $I_\phi$ with L1 loss using online-collected $(s, a, s')$ tuples to map $\Delta s$ back to actions; and **Offline Data Augmentation**, which labels offline samples with pseudo-actions from the current online policy $\pi_{on}(s_{off})$ to supplement IDM training data. The IDM architecture is intentionally kept simple to ensure performance gains are attributed to state policy quality rather than the translator.
 
 ### Loss & Training
 
-- **Offline phase**: $\theta \leftarrow \arg\min_\theta \sum (y_1 - Q_\theta(s, \Delta s))^2 + \alpha R_\theta$, where $y_1 = r + \gamma \bar{Q}_\theta(s', \Delta s')$ and $\Delta s'$ is sampled according to the softmax of $Q_\theta(s', \cdot)$.
-- **IDM training**: $L(\phi) = \|a_{on,off} - I_\phi(s, \Delta s_{off})\|_1 + \|a - I_\phi(s, \Delta s)\|_1$; the L1 loss is more robust to outliers due to its approximation of the median.
+- **Offline Phase**: $\theta \leftarrow \arg\min_\theta \sum (y_1 - Q_\theta(s, \Delta s))^2 + \alpha R_\theta$, where $y_1 = r + \gamma \bar{Q}_\theta(s', \Delta s')$, and $\Delta s'$ is sampled via softmax of $Q_\theta(s', \cdot)$.
+- **IDM Training**: $L(\phi) = \|a_{on,off} - I_\phi(s, \Delta s_{off})\|_1 + \|a - I_\phi(s, \Delta s)\|_1$. L1 loss is used for its robustness to outliers as it approximates the median.
 
 ## Key Experimental Results
 
-### Main Results: Offline Pretraining Performance (Selected from Table 1)
+### Main Results: Offline Pre-training Performance (Selection from Table 1)
 
-Normalised mean return of OSO-DecQN versus multiple baselines on D4RL and DeepMind Control Suite (mean ± standard error over 5 seeds × 10 episodes):
+Comparison of normalized average returns (mean of 5 seeds × 10 episodes ± SE) for OSO-DecQN against various baselines on D4RL and DeepMind Control Suite:
 
-| Dataset | BC (w/ actions) | BC $s'$ | BC $s'-s$ | BC $\Delta s$ | DecQN_N (no regularisation) | **OSO-DecQN** |
-|--------|-----------|---------|-----------|--------------|-------------------|---------------|
+| Dataset | BC (w/ Action) | BC $s'$ | BC $s'-s$ | BC $\Delta s$ | DecQN_N (No Reg) | **OSO-DecQN** |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | Hopper-medium-replay | 26.6 | 5.8 | 4.9 | 29.2±3.7 | 7.7±1.3 | **65.7±2.6** |
 | Hopper-expert | 110.6 | 2.2 | 9.9 | 106.9±2.4 | 1.9±0.45 | **111.6±0.08** |
-| HalfCheetah-medium-expert | 60.1 | -0.25 | -0.25 | 54.7±3.9 | -1.6±0.13 | **87.8±2.7** |
-| Walker2d-medium-replay | 23.5 | 6.4 | -0.32 | 37.5±6.1 | -0.41±0.26 | **84.8±2.2** |
-| Walker2d-medium-expert | 107.7 | 2.3 | -0.71 | 84.4±3.4 | -0.24±0.06 | **108.8±0.13** |
-| Cheetah-Run-medium-expert | 61.6 | 1.7 | 1.7 | 48.0±3.4 | 1.2±0.32 | **90.0±3.8** |
-| Quadruped-Walk-expert (78-dim) | 97.7 | 6.6 | 6.6 | 96.7±6.4 | 0.1±0.04 | **100.7±1.2** |
+| HalfCheetah-med-exp | 60.1 | -0.25 | -0.25 | 54.7±3.9 | -1.6±0.13 | **87.8±2.7** |
+| Walker2d-med-replay | 23.5 | 6.4 | -0.32 | 37.5±6.1 | -0.41±0.26 | **84.8±2.2** |
+| Walker2d-med-exp | 107.7 | 2.3 | -0.71 | 84.4±3.4 | -0.24±0.06 | **108.8±0.13** |
+| Cheetah-Run-med-exp | 61.6 | 1.7 | 1.7 | 48.0±3.4 | 1.2±0.32 | **90.0±3.8** |
+| Quadruped-Walk-exp (78D)| 97.7 | 6.6 | 6.6 | 96.7±6.4 | 0.1±0.04 | **100.7±1.2** |
 
-**Key observations**: (1) Continuous regression methods (BC $s'$, BC $s'-s$) achieve near-zero or negative performance on most tasks; (2) Discretised BC $\Delta s$ already approaches the performance of action-conditioned BC; (3) OSO-DecQN substantially surpasses imitation learning through RL, with especially pronounced advantages on mixed-quality datasets such as medium-replay and medium-expert; (4) The unregularised DecQN_N almost completely fails.
+**Key Findings**: (1) Continuous regression methods (BC $s'$, BC $s'-s$) perform near zero or negative in most tasks; (2) BC $\Delta s$ after discretization approaches the performance level of BC with actions; (3) OSO-DecQN significantly outperforms imitation learning via RL, especially on mixed-quality datasets like medium-replay; (4) DecQN_N without regularization fails almost entirely.
 
 ### Guided Online Learning Experiments
 
-Over 1M steps of online learning, OSO-DecQN-guided TD3/DecQN_N versus unguided baselines:
+Comparative performance of TD3/DecQN_N guided by OSO-DecQN vs. non-guided baselines over 1M online steps:
 
-| Environment | State Dim. | Action Dim. | Online Baseline | OSO-DecQN Guidance Effect |
-|------|---------|---------|---------|-------------------|
-| HalfCheetah | 17 | 6 | TD3 | Significant improvement in both convergence speed and asymptotic performance |
-| Walker2D | 17 | 6 | TD3 | Notable early-stage acceleration; improved asymptotic performance |
-| Hopper | 11 | 3 | TD3 | Modest improvement (task is inherently simple) |
-| Quadruped-Walk | 78 | 12 | DecQN_N | Sustained early-stage improvement, validating high-dimensional scalability |
-| Cheetah-Run | 17 | 6 | DecQN_N | Improved convergence speed and final performance |
+| Environment | State Dim | Action Dim | Online Baseline | OSO-DecQN Guidance Effect |
+| :--- | :--- | :--- | :--- | :--- |
+| HalfCheetah | 17 | 6 | TD3 | Significant improvement in speed and asymptotic performance |
+| Walker2D | 17 | 6 | TD3 | Notable early acceleration and asymptotic gain |
+| Hopper | 11 | 3 | TD3 | Minor improvement (simple task) |
+| Quadruped-Walk | 78 | 12 | DecQN_N | Continuous improvement in early stages, verifying scalability |
+| Cheetah-Run | 17 | 6 | DecQN_N | Improvements in both convergence speed and final performance |
 
-Compared with AF-Guide (Zhu et al., 2023): AF-Guide performs **below** the unguided TD3 baseline on all three D4RL environments, whereas OSO-DecQN performs **above** the baseline on all environments.
+Comparison with AF-Guide (Zhu et al., 2023) shows AF-Guide performs **below** the TD3 baseline without pre-training across all D4RL environments, whereas OSO-DecQN consistently stays **above** the baseline.
 
 ### Ablation Study
 
 | Ablation | Result | Conclusion |
-|--------|------|------|
-| Remove discretisation (use $s'$ or $s'-s$) | Normalised return drops sharply to near-random-policy level | Discretisation is essential; continuous regression is completely infeasible |
-| Remove regularisation (DecQN_N) | Near-total failure on all tasks (return ≈ 0) | Regularisation prevents overestimation and ensures state reachability |
-| Sensitivity to threshold $\epsilon$ | Performance stable over a wide range | Method is insensitive to $\epsilon$ |
-| 2-bin vs. 3-bin discretisation | Comparable performance | Coarse discretisation is already sufficiently effective |
-| Variation in IDM architecture / batch size | Performance largely unchanged | Improvement stems from the state policy, not the IDM |
-| Sensitivity to guidance ratio $\beta$ | Improvement consistent across reasonable range | Hyperparameter is robust |
-| TD3 → SAC as online agent | Equally effective | Method is decoupled from the specific online algorithm |
+| :--- | :--- | :--- |
+| Remove Discretization (use $s'$ or $s'-s$) | Normalized returns drop to random policy levels | Discretization is core; continuous regression is non-viable |
+| Remove Regularization (DecQN_N) | Almost complete failure (returns near 0) | Regularization prevents overestimation and ensures reachability |
+| Sensitivity to threshold $\epsilon$ | Performance stable across a wide range | Method is robust to $\epsilon$ |
+| 2-bin vs 3-bin Discretization | Similar performance | Coarse discretization is sufficiently effective |
+| IDM Architecture Change | Performance mostly unchanged | Improvement stems from state policy, not the IDM |
+| Sensitivity to $\beta$ ratio | Gains observed within reasonable ranges | Hyperparameter robust |
 
 ### Key Findings
 
-- **Continuous regression completely fails**: The discrete difference prediction error of BC $s'$ and BC $s'-s$ approaches that of a random policy (e.g., error ≈ 16–17 in Walker2d vs. 17 for a random policy), confirming the infeasibility of continuous prediction.
-- **Minimal information loss from discretisation**: BC $\Delta s$ already matches the performance of action-conditioned BC, and OSO-DecQN further significantly surpasses it via RL.
-- **Regularisation is a necessary condition**: The unregularised variant not only yields near-zero returns but also exhibits sharply elevated state prediction error, simultaneously suffering from overestimation bias and state unreachability.
-- **First validation of action-free offline-to-online RL on a 78-dimensional state space** (Quadruped-Walk).
+- **Continuous Regression Fails**: Prediction errors of BC $s'$ and BC $s'-s$ for discrete differences are close to random policy levels, confirming continuous prediction is infeasible.
+- **Minimal Information Loss**: BC $\Delta s$ matches BC with actions, and OSO-DecQN further surpasses it using RL.
+- **Regularization is Essential**: Without regularization, returns fall to zero and prediction errors spike to random levels, suffering from both overestimation bias and state unreachability.
+- **High-dimensional Scalability**: First verification of action-free offline-to-online RL on a 78-dimensional state space (Quadruped-Walk).
 
 ## Highlights & Insights
 
-- **Value of problem formalisation**: The paper is the first to define "action-free offline-to-online RL" as an independent research problem and to provide a complete framework, opening a new pathway for RL applications in action-absent domains such as medicine and finance.
-- **Elegance of the directional token design**: Discretising state differences into $\{-1, 0, 1\}$ appears simplistic but strikes precisely the optimal balance between information retention and prediction stability — it offers a controllable error bound in theory and matches or exceeds action-conditioned baselines in practice.
-- **Cross-domain architectural transfer**: The DecQN value decomposition is transferred from multi-agent RL to state-space decomposition, and CQL regularisation is transferred from action constraints to state reachability constraints — both cross-domain adaptations are highly natural.
-- **Highly convincing ablation study**: Tables 1 and 2 jointly demonstrate the necessity of discretisation and regularisation from two complementary perspectives — return and prediction error — forming a closed logical chain.
+- **Value of Problem Formalization**: This work defines "Action-Free Offline-to-Online RL" as a standalone research problem and provides a complete framework, opening paths for RL in action-deficient fields like healthcare and finance.
+- **Elegance of "Directional Tokens"**: Discretizing state differences into $\{-1, 0, 1\}$ balances information retention and prediction stability. It has a controllable error bound and matches or exceeds action-based baselines in practice.
+- **Cross-domain Architectural Design**: Naturally migrates value decomposition from multi-agent RL to state-space decomposition and CQL regularization from action constraints to state reachability constraints.
+- **Strong Empirical Evidence**: Tables 1 and 2 demonstrate the necessity of discretization and regularization from both return and prediction error perspectives, creating a closed logical loop.
 
 ## Limitations & Future Work
 
-- **Discretisation granularity is fixed at 3-bin $\{-1,0,1\}$**: While theory predicts reduced error with finer granularity, adaptive discretisation (e.g., progressive approaches as in Growing Q-Networks) is not experimentally explored.
-- **IDM assumes a locally smooth inverse mapping from states to actions**: In strongly discontinuous dynamics or highly multimodal inverse mapping scenarios, a simple IDM may fail.
-- **Not extended to visual observations**: All experiments use vector-based states; image-based environments would require additional encoders and reward extraction mechanisms.
-- **Theoretical analysis is limited to the discretisation error bound**: An end-to-end convergence guarantee for the full framework (pretraining + guided online learning) is absent.
-- **Guidance ratio $\beta$ is a fixed hyperparameter**: Adaptive decay strategies based on the online agent's learning progress are not explored.
-- Directions for improvement: (1) Incorporate categorical value functions (Farebrother et al., 2024) in place of regression; (2) Adaptive discretisation; (3) More expressive IDM architectures for complex dynamics; (4) Extension to visual RL.
+- **Fixed 3-bin Discretization**: Although theory suggests finer granularity reduces error, adaptive discretization (e.g., progressive methods in Growing Q-Networks) was not explored.
+- **IDM Assumptions**: Assumes a locally smooth inverse mapping from states to actions; may fail in highly discontinuous dynamics or multi-modal inverse mapping scenarios.
+- **Vectorized States Only**: All experiments were based on vectorized states; image-based environments would require additional encoders and reward extraction mechanisms.
+- **Theoretical Scope**: Theoretical analysis is limited to discretization error bounds, lacking end-to-end convergence guarantees for the entire framework.
+- **Static Guidance Ratio $\beta$**: Adaptive decay strategies for $\beta$ based on online agent progress were not investigated.
 
 ## Related Work & Insights
 
-- **vs. $Q_{SS'}$ (Edwards et al., 2020; Hepburn et al., 2024)**: Both estimate state-transition values but still require action labels during training. This paper eliminates the action dependency entirely.
-- **vs. AF-Guide (Zhu et al., 2023)**: The only direct competitor, which uses a Decision Transformer to learn action-free state policies with reward shaping to guide online learning, but is computationally expensive and experiments show that its online guidance performs worse than an unguided TD3 baseline.
-- **vs. DecQN (Seyde et al., 2022)**: The original DecQN is used for continuous action discretisation; OSO-DecQN transfers the same value decomposition idea from the action space to the state-difference space and adds conservative regularisation to suit the offline setting.
-- **Insights**: (1) The concept of a state policy is generalisable — any signal capable of predicting the expected direction of state transitions can serve as guidance for online learning; (2) Discretisation as a stabilisation tool can be applied to other RL scenarios where continuous prediction is unstable.
+- **vs. QSS' (Edwards et al., 2020; Hepburn et al., 2024)**: These also estimate transition values but still require action labels for training. This paper removes action dependency entirely.
+- **vs. AF-Guide (Zhu et al., 2023)**: A direct competitor using DT for state policies and reward shaping; however, it is computationally expensive and shows online performance below baseline in certain D4RL tasks.
+- **vs. DecQN (Seyde et al., 2022)**: Original DecQN was for continuous action discretization. OSO-DecQN migrates the decomposition idea to state difference space and adds conservative regularization for the offline setting.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ — Pioneering problem formalisation with an elegantly designed state-discretisation solution.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Five environments × four dataset quality levels; ablations are exceptionally complete with every design decision thoroughly validated.
-- Writing Quality: ⭐⭐⭐⭐ — Clear structure and in-depth analysis; the sections explaining why discretisation and why regularisation are particularly strong.
-- Value: ⭐⭐⭐⭐ — Opens a practical pathway for RL in action-absent settings, though application validation remains limited to simulated environments.
+- Novelty: ⭐⭐⭐⭐ Innovative problem formalization; discretization solution is cleverly designed.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 5 environments across 4 dataset qualities with exhaustive ablations.
+- Writing Quality: ⭐⭐⭐⭐ Clear structure and deep analysis, particularly regarding discretization and regularization necessity.
+- Value: ⭐⭐⭐⭐ Practical path for action-missing RL, though validation remains in simulated environments.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] LingoLoop Attack: Trapping MLLMs via Linguistic Context and State Entrapment into Endless Loops](lingoloop_attack_trapping_mllms_via_linguistic_context_and_state_entrapment_into.md)
+- [\[ICLR 2026\] TrojanTO: Action-Level Backdoor Attacks Against Trajectory Optimization Models](trojanto_action-level_backdoor_attacks_against_trajectory_optimization_models.md)
 - [\[ICLR 2026\] Sample-Efficient Distributionally Robust Multi-Agent Reinforcement Learning via Online Interaction](sample-efficient_distributionally_robust_multi-agent_reinforcement_learning_via_.md)
-- [\[ICLR 2026\] Beware Untrusted Simulators -- Reward-Free Backdoor Attacks in Reinforcement Learning](beware_untrusted_simulators_--_reward-free_backdoor_attacks_in_reinforcement_lea.md)
-- [\[ICML 2026\] OmniVL-Guard: Towards Unified Vision-Language Forgery Detection and Grounding via Balanced RL](../../ICML2026/ai_safety/omnivl-guard_towards_unified_vision-language_forgery_detection_and_grounding_via.md)
-- [\[NeurIPS 2025\] Fairness-Regularized Online Optimization with Switching Costs](../../NeurIPS2025/ai_safety/fairness-regularized_online_optimization_with_switching_costs.md)
-- [\[ICML 2026\] COPF: An Online Framework for Deployment-Stable Counterfactual Fairness in Evolving Graphs](../../ICML2026/ai_safety/copf_an_online_framework_for_deployment-stable_counterfactual_fairness_in_evolvi.md)
+- [\[ICML 2026\] Alignment Risks from Capability-Seeking RL Training](../../ICML2026/ai_safety/alignment_risks_from_capability-seeking_rl_training.md)
+- [\[ICLR 2026\] FERD: Fairness-Enhanced Data-Free Adversarial Robustness Distillation](ferd_fairness-enhanced_data-free_adversarial_robustness_distillation.md)
 
 </div>
 

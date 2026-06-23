@@ -2,90 +2,86 @@
 title: >-
   [Paper Note] Traceable Black-box Watermarks for Federated Learning
 description: >-
-  [ICLR 2026][AI Safety][Federated Learning] This paper proposes TraMark, which partitions the model parameter space into a main-task region and a watermark region and employs masked aggregation to prevent watermark collis…
+  [ICLR 2026][AI Safety][Paper Note] TraMark is proposed to realize server-side traceable black-box watermark injection in Federated Learning (FL) for the first time by partitioning the model parameter space into main task areas and watermark areas, and employing masked aggregation to prevent watermark collisions. It achieves a 99.58% verification rate wi
 tags:
-  - "ICLR 2026"
-  - "AI Safety"
-  - "Federated Learning"
-  - "Black-box Watermarking"
-  - "Traceability"
-  - "Model Leakage Detection"
-  - "Masked Aggregation"
+  - ICLR 2026
+  - AI Safety
 date: 2026-05-08
-content_hash: e7f4e935e47fbeff
+content_hash: 6b887ba261dcc888
 ---
-
 # Traceable Black-box Watermarks for Federated Learning
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2505.13651](https://arxiv.org/abs/2505.13651)  
 **Code**: [GitHub](https://github.com/JiiahaoXU/TraMark)  
-**Area**: AI Security
-**Keywords**: Federated Learning, Black-box Watermarking, Traceability, Model Leakage Detection, Masked Aggregation
+**Area**: AI Security  
+**Keywords**: Federated Learning, Black-box Watermarking, Traceability, Model Leakage Detection, Masked Aggregation  
 
 ## TL;DR
 
-This paper proposes TraMark, which partitions the model parameter space into a main-task region and a watermark region and employs masked aggregation to prevent watermark collision. TraMark achieves server-side traceable black-box watermark injection in federated learning for the first time, attaining a verification rate of 99.58% with only a 0.54% drop in main-task accuracy.
+TraMark is proposed to realize server-side traceable black-box watermark injection in Federated Learning (FL) for the first time by partitioning the model parameter space into main task areas and watermark areas, and employing masked aggregation to prevent watermark collisions. It achieves a 99.58% verification rate with only a 0.54% reduction in main task accuracy.
 
 ## Background & Motivation
 
-1. **Model leakage risk in federated learning**: In FL systems, every client has access to the global model. Malicious clients may copy and illegally distribute the model, threatening the collective interests of all participants. Protecting the intellectual property of FL-trained models has become a critical challenge.
+1.  **FL faces model leakage risks**: In FL systems, every client can access the global model. Malicious clients may copy and illegally distribute the model, threatening the collective interests of all participants. Protecting the intellectual property of FL-trained models has become a critical challenge.
 
-2. **Limitations of existing watermarking methods**: Parameter-level watermarks (e.g., FedTracker) require white-box access to model parameters for verification, which is infeasible in practical deployments (e.g., API access). Backdoor-based watermarks support black-box verification, but existing approaches either do not support tracing or require modifications to the local training protocol and access to client data.
+2.  **Existing watermarking methods have limitations**: Parameter-level watermarks (e.g., FedTracker) require white-box access to model parameters for verification, which is infeasible in practical deployment scenarios (e.g., API access). While backdoor-level watermarks support black-box verification, existing methods either lack traceability or require modifying local training protocols and accessing client data.
 
-3. **Tension between traceability and watermark collision**: Achieving traceability requires injecting a distinct watermark for each client; however, FedAvg aggregation merges all clients' parameters, causing watermark confusion (watermark collision) that undermines traceability. This is the core tension between traceability and federated aggregation.
+3.  **Conflict between traceability and watermark collision**: Realizing traceability requires injecting different watermarks for each client. However, FedAvg aggregation blends parameters from all clients, leading to watermark collisions that destroy traceability. This represents the **Key Challenge** between traceability and federated aggregation.
 
-4. **Lack of formal definitions**: Despite empirical progress, the literature still lacks formal definitions and mathematical modeling of the traceable black-box watermarking problem in FL, impeding the development of systematic solutions.
+4.  **Lack of formal definition**: Despite empirical progress, the literature lacks a formal definition and mathematical modeling of the traceable black-box watermarking problem in FL, hindering the development of systematic solutions.
 
 ## Method
 
-### Overall Architecture: TraMark
+### Overall Architecture
 
-- **Function**: Creates a personalized, traceable watermarked model for each client on the server side, enabling verifiers to detect model leakage and identify the leakage source under a black-box setting.
-- **Design Motivation**: Performing watermark injection entirely on the server side prevents malicious clients from tampering with the watermarking process; parameter space partitioning and masked aggregation resolve the watermark collision problem.
-- **Mechanism**: Three core components — (1) Constrained watermark region: partitioning model parameters into a main-task region and a watermark region; (2) Masked aggregation: aggregating only the main-task region while preserving the independence of each client's watermark region; (3) Independent watermark injection: training each client's model on a unique watermark dataset within the watermark region.
+TraMark consolidates the entire watermark lifecycle to the server side. Building upon standard FedAvg, the server allows the model to converge through a warmup phase. Then, it partitions each client's parameter space into a "main task area" and a "watermark area." During aggregation, only the main task areas are averaged, while the watermark areas remain independent. Each client model is then branded with a unique backdoor in its watermark area using a dedicated trigger dataset. Finally, personalized watermarked models are distributed back to clients. Consequently, malicious clients cannot interfere with the process, and watermarks do not overwrite each other. Verifiers can determine if a model has leaked and identify the source via black-box queries.
 
-### Key Design 1: Parameter Space Partitioning and Constrained Watermark Region
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    C["Client Local Training<br/>Upload Parameter Updates"] --> P["Constraint Watermark Region<br/>Warmup α·T rounds → Partition by Magnitude<br/>Main Task Mask + Watermark Mask"]
+    P --> A1
+    WD["Unique Watermark Dataset<br/>OOD Triggers + Unique Labels"] --> A2
+    subgraph G["Masked Aggregation + Gradient Mask Injection"]
+        direction TB
+        A1["Average Main Task Region via FedAvg<br/>Retain Individual Updates in Watermark Region"] --> A2["Train τ_w rounds in Watermark Region<br/>Gradients Locked by Watermark Mask"]
+    end
+    G --> OUT["Distribute Personalized Watermarked Models"]
+    OUT --> VER["Black-box Verification<br/>Trigger → Predefined Output → Locate Leaker"]
+```
 
-Existing methods perform watermark injection over the entire parameter space, causing two problems: (a) watermark perturbations spread across the full parameter space, degrading main-task performance; (b) watermarks from different clients are merged during aggregation, leading to collision. TraMark strictly partitions the parameter space into two regions using complementary binary masks:
+### Key Designs
 
-- **Watermark mask** $\mathbf{M}_w \in \{0,1\}^d$: marks the parameters used for watermark learning, with proportion $k$ (default 1%)
-- **Main-task mask** $\mathbf{M}_m \in \{0,1\}^d$: marks the parameters used for main-task learning, with proportion $1-k$
+**1. Constraining Watermark Regions: Confining perturbations to a "dark room" in parameter space to avoid degrading the main task**
 
-satisfying $\mathbf{M}_w + \mathbf{M}_m = \mathbf{1}^d$. The watermark region is selected based on parameter importance: after $\alpha \times T$ warm-up rounds, the $k \times d$ parameters with the smallest absolute values are selected as the watermark region, ensuring minimal impact on the main task.
+Existing methods inject watermarks throughout the entire parameter space, where perturbations dilute main task performance and cause watermark collisions during aggregation. TraMark uses a pair of complementary binary masks to strictly divide the $d$-dimensional parameters. The watermark mask $\mathbf{M}_w \in \{0,1\}^d$ marks $k$ (default 1%) of the parameters, while the main task mask $\mathbf{M}_m \in \{0,1\}^d$ marks the remaining $1-k$, satisfying $\mathbf{M}_w + \mathbf{M}_m = \mathbf{1}^d$. Parameters are not assigned randomly; the model is warmed up for $\alpha \times T$ rounds to establish meaningful weights. The $k \times d$ parameters with the smallest absolute values are selected—these "least important" weights cause minimal damage when carrying watermarks. This explains why **Ours** experiences a ~5% drop in main task accuracy when $\alpha=0$ in the ablation study.
 
-### Key Design 2: Masked Aggregation and Watermark Injection
+**2. Masked Aggregation + Gradient Mask Injection: Keeping watermarks independent without overflow**
 
-**Masked aggregation**: Unlike FedAvg, which uniformly averages all parameters, TraMark constructs a personalized global model for each client $i$ as follows:
+Traceability requires distinct watermarks for each client, but standard FedAvg averages them into a collision. TraMark maintains a personalized global model for each client $i$ and processes regions separately during aggregation:
 
 $$\tilde{\theta}_i = \theta_i + \mathbf{M}_m \odot \frac{1}{n}\sum_{i=1}^{n}\Delta_i + \mathbf{M}_w \odot \Delta_i$$
 
-The main-task region undergoes standard FedAvg aggregation (sharing knowledge), while the watermark region retains only the client's own updates (preserving unique watermarks).
-
-**Watermark injection**: Each personalized model $\tilde{\theta}_i$ is trained for $\tau_w$ steps on its corresponding unique watermark dataset $\mathcal{D}_i^w$, with gradients updated exclusively in the watermark region:
+The main task region undergoes standard FedAvg averaging to share knowledge, while the watermark region only incorporates its own update $\Delta_i$ to preserve uniqueness. During injection, gradients are similarly locked within the watermark region using masks. Training is performed on $\tilde{\theta}_i$ for $\tau_w$ (default 5) rounds using the unique watermark dataset:
 
 $$\tilde{\theta}_i^{s+1} = \tilde{\theta}_i^s - \eta_w g_i^s \odot \mathbf{M}_w$$
 
-Gradient masking ensures that watermark knowledge does not propagate into the main-task region.
+Since gradients are masked by $\mathbf{M}_w$, watermark knowledge cannot leak into main task parameters. This "partitioned aggregation + partitioned injection" approach results in extremely low overhead (0.64s per client) and explains the stability of the verification rate (VR) under pruning and fine-tuning attacks—the watermark and main task parameters are disjoint yet deeply coupled.
 
-### Key Design 3: Unique Watermark Dataset Construction
+**3. Unique Watermark Datasets: Eliminating collisions from both triggers and labels**
 
-To maximally avoid watermark collision, the watermark dataset assigned to each client must differ in both trigger patterns and output distribution:
+To ensure watermarks are distinguishable, the datasets assigned to clients must be mutually exclusive in both inputs and outputs. TraMark selects OOD samples unrelated to the main task distribution (e.g., MNIST classes) as triggers, ensuring triggers do not overlap: $\mathcal{X}_i^w \cap \mathcal{X}_j^w = \emptyset$. Simultaneously, predefined outputs are set to be distinct $\phi_i(x) \neq \phi_j(x)$, mapping each client to a different label. During verification, a leaked model will only produce the predefined output for its own trigger set and random guesses for others, allowing the verifier to confirm the leak and locate the specific client.
 
-- **Non-overlapping triggers**: $\mathcal{X}_i^w \cap \mathcal{X}_j^w = \emptyset$, using OOD samples unrelated to the main-task distribution (e.g., samples from individual MNIST classes)
-- **Distinct predefined outputs**: $\phi_i(x) \neq \phi_j(x)$, mapping each client to different target labels
-
-During verification, a watermarked model produces the predefined output only for triggers from its own watermark dataset, while responding with random guesses to other clients' triggers, thereby enabling reliable tracing.
-
-## Key Experimental Results
+## Main Results
 
 ### Experimental Setup
 
-- **Datasets**: FMNIST (CNN), CIFAR-10 (AlexNet), CIFAR-100 (VGG-16), Tiny-ImageNet (ViT)
-- **FL configuration**: 10 clients, 5 local training rounds, learning rate 0.01; both IID and non-IID (Dirichlet $\gamma=0.5$) settings
-- **Watermark configuration**: MNIST as watermark source, 100 samples per class, watermark learning rate 1e-4, $\tau_w=5$, $k=1\%$, $\alpha=0.5$
-- **Baselines**: FedAvg (no watermark), WAFFLE (black-box, non-traceable), FedTracker (white-box, traceable)
-- **Metrics**: Main-task accuracy (MA) and verification rate (VR)
+-   **Datasets**: FMNIST (CNN), CIFAR-10 (AlexNet), CIFAR-100 (VGG-16), Tiny-ImageNet (ViT)
+-   **FL Configuration**: 10 clients, 5 local training rounds, learning rate 0.01; IID and non-IID (Dirichlet γ=0.5) settings
+-   **Watermark Configuration**: MNIST as the watermark source, 100 samples per class, watermark learning rate 1e-4, $\tau_w=5$, $k=1\%$, $\alpha=0.5$
+-   **Baselines**: FedAvg (No watermark), WAFFLE (Black-box non-traceable), FedTracker (White-box traceable)
+-   **Metrics**: Main Task Accuracy (MA) and Verification Rate (VR)
 
 ### Main Results
 
@@ -99,43 +95,43 @@ During verification, a watermarked model produces the predefined output only for
 | Tiny-ImageNet | 21.05 | 21.24 | 20.40 / 100.0 | 20.91 / 100.0 |
 | **Average** | **65.44** | **65.31** | **61.25 / 87.50** | **64.90 / 99.58** |
 
-### Ablation Study: Key Hyperparameter Analysis
+### Ablation Study
 
 | Hyperparameter | Configuration | MA (%) | VR (%) |
 |---|---|---|---|
-| Partition ratio k=0.5% | Low watermark capacity | 65.70 | 84.17 |
-| **Partition ratio k=1.0% (default)** | **Balanced** | **65.66** | **99.17** |
-| Partition ratio k=5.0% | High watermark capacity | 65.16 | 100.0 |
-| Watermark dataset 50 samples | Insufficient data | 65.85 | 54.17 |
-| **Watermark dataset 100 samples (default)** | **Balanced** | **65.51** | **99.17** |
-| Watermark dataset 200 samples | Sufficient data | 65.57 | 100.0 |
-| Warm-up ratio α=0 | No warm-up | 59.50 | 100.0 |
-| **Warm-up ratio α=0.5 (default)** | **With warm-up** | **64.15** | **100.0** |
-| Warm-up ratio α=0.7 | Excessive warm-up | 65.20 | Degraded |
+| Partition Ratio k=0.5% | Low watermark capacity | 65.70 | 84.17 |
+| **Partition Ratio k=1.0% (Default)** | **Balanced** | **65.66** | **99.17** |
+| Partition Ratio k=5.0% | High watermark capacity | 65.16 | 100.0 |
+| Watermark Dataset 50 samples | Insufficient data | 65.85 | 54.17 |
+| **Watermark Dataset 100 samples (Default)** | **Balanced** | **65.51** | **99.17** |
+| Watermark Dataset 200 samples | Sufficient data | 65.57 | 100.0 |
+| Warmup Ratio α=0 | No warmup | 59.50 | 100.0 |
+| **Warmup Ratio α=0.5 (Default)** | **With warmup** | **64.15** | **100.0** |
+| Warmup Ratio α=0.7 | Excessive warmup | 65.20 | Decreased |
 
 ### Key Findings
 
-1. **TraMark achieves high tracing rate with minimal accuracy loss**: Average VR of 99.58% (vs. 87.50% for FedTracker), with MA dropping only 0.54% (vs. 4.19% for FedTracker), validating the effectiveness of the parameter space partitioning strategy.
-2. **Robustness against attacks**: VR remains stable under 30%–70% pruning rates and shows no significant degradation after 30 rounds of fine-tuning attacks, indicating strong coupling between watermark-region parameters and main-task parameters.
-3. **Warm-up training is critical**: Without warm-up, MA drops by approximately 5%, as randomly initialized parameters cannot accurately reflect importance, leading to improper partitioning.
-4. **Flexibility in watermark dataset selection**: MNIST, SVHN, and WafflePattern all achieve 100% VR, with no statistically significant differences ($p \geq 0.05$).
+1.  **TraMark achieves high traceability with low accuracy loss**: The average VR is 99.58% (vs. FedTracker's 87.50%), while MA decreases by only 0.54% (vs. FedTracker's 4.19%), validating the effectiveness of the parameter space partitioning strategy.
+2.  **Robustness to attacks**: VR remains stable under pruning rates of 30%-70% and shows no significant decline after 30 rounds of fine-tuning attacks, indicating high coupling between watermark and main task parameters.
+3.  **Warmup training is crucial**: MA drops by approximately 5% without warmup, as initial random parameters cannot accurately determine importance, leading to improper partitioning.
+4.  **Flexibility in watermark datasets**: MNIST, SVHN, and WafflePattern datasets all achieve 100% VR, with no statistically significant differences (p≥0.05).
 
 ## Highlights & Insights
 
-- Provides the first formal definition of the traceable black-box watermarking problem in federated learning, introducing the concepts of watermark collision and traceability constraints.
-- The combination of parameter space partitioning and masked aggregation is elegant and concise, simultaneously preventing watermark collision and preserving main-task performance.
-- Fully server-side operation requires no client cooperation and provides inherent resistance against malicious clients.
-- Watermark injection incurs negligible overhead (0.67 seconds per client) and can be seamlessly integrated into existing FedAvg frameworks.
+-   Provides the first formal definition of the traceable black-box watermarking problem in FL, introducing the concepts of watermark collision and traceability constraints.
+-   The design of parameter space partitioning combined with masked aggregation is elegant and concise, successfully avoiding collisions while maintaining main task performance.
+-   Operates entirely on the server side without requiring client cooperation, providing natural resistance against malicious clients.
+-   Incurs extremely low watermark injection overhead (0.67s per client), allowing seamless integration into existing FedAvg frameworks.
 
 ## Limitations & Future Work
 
-- The watermark dataset requires assigning distinct OOD trigger categories to each client, limiting scalability for tasks with few labels (a 10-class main task with 10 clients already requires 20 categories).
-- Evaluation is limited to classification tasks; applicability to other task types such as generation and detection remains unexplored.
-- Although $k=1\%$ suffices, the parameter space partitioning strategy relies on simple magnitude-based ranking; more refined importance measures may further improve main-task performance.
+-   The watermark dataset requires assigning different OOD trigger classes to each client, which limits scalability in tasks with few labels (e.g., 10 main task classes + 10 clients already requires 20 classes).
+-   The study only validates classification tasks; the applicability to other task types like generation or detection remains unexplored.
+-   While $k=1\%$ is sufficient, the partitioning strategy is based on simple magnitude ranking; more refined importance measures could further improve main task performance.
 
 ## Rating
 
-| Dimension | Score |
+| Dimension | Rating |
 |---|---|
 | Novelty | ⭐⭐⭐⭐ |
 | Effectiveness | ⭐⭐⭐⭐ |
@@ -148,11 +144,11 @@ During verification, a watermarked model produces the predefined output only for
 
 ## Related Papers
 
-- [\[ICLR 2026\] Toward Enhancing Representation Learning in Federated Multi-Task Settings](toward_enhancing_representation_learning_in_federated_multi-task_settings.md)
-- [\[CVPR 2026\] FedDAP: Domain-Aware Prototype Learning for Federated Learning under Domain Shift](../../CVPR2026/ai_safety/feddap_domain-aware_prototype_learning_for_federated_learning_under_domain_shift.md)
-- [\[AAAI 2026\] DeepTracer: Tracing Stolen Model via Deep Coupled Watermarks](../../AAAI2026/ai_safety/deeptracer_tracing_stolen_model_via_deep_coupled_watermarks.md)
-- [\[CVPR 2026\] Domain-Skewed Federated Learning with Feature Decoupling and Calibration](../../CVPR2026/ai_safety/domain-skewed_federated_learning_with_feature_decoupling_and_calibration.md)
-- [\[ICML 2026\] FedHPro: Federated Hyper-Prototype Learning via Gradient Matching](../../ICML2026/ai_safety/fedhpro_federated_hyper-prototype_learning_via_gradient_matching.md)
+- [\[ICLR 2026\] Black-Box Privacy Attacks on Shared Representations in Multitask Learning](black-box_privacy_attacks_on_shared_representations_in_multitask_learning.md)
+- [\[ICLR 2026\] A General Framework for Black-Box Attacks Under Cost Asymmetry](a_general_framework_for_black-box_attacks_under_cost_asymmetry.md)
+- [\[ICLR 2026\] SeRI: Gradient-Free Sensitive Region Identification in Decision-Based Black-Box Attacks](seri_gradient-free_sensitive_region_identification_in_decision-based_black-box_a.md)
+- [\[CVPR 2026\] SEBA: Sample-Efficient Black-Box Attacks on Visual Reinforcement Learning](../../CVPR2026/ai_safety/seba_sample-efficient_black-box_attacks_on_visual_reinforcement_learning.md)
+- [\[ICLR 2026\] Protection against Source Inference Attacks in Federated Learning](protection_against_source_inference_attacks_in_federated_learning.md)
 
 </div>
 

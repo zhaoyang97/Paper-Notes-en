@@ -2,13 +2,14 @@
 title: >-
   [Paper Note] Unlearning Evaluation through Subset Statistical Independence
 description: >-
-  [LLM Safety] This paper proposes Split-half Dependence Evaluation (SDE), which leverages HSIC-based statistical independence testing to evaluate machine unlearning at the subset level…
+  [ICLR 2026][LLM Safety][HSIC] Proposes Split-half Dependence Evaluation (SDE), which utilizes HSIC statistical independence tests to evaluate machine unlearning effectiveness at the subset level without requiring model retraining or auxiliary classifiers.
 tags:
-  - "LLM Safety"
+  - ICLR 2026
+  - LLM Safety
+  - HSIC
 date: 2026-05-08
-content_hash: cfdda2682f20bad1
+content_hash: c4f471cfb0835b8e
 ---
-
 # Unlearning Evaluation through Subset Statistical Independence
 
 ## Paper Information
@@ -16,64 +17,81 @@ content_hash: cfdda2682f20bad1
 - **arXiv**: [2603.00587](https://arxiv.org/abs/2603.00587)
 - **Code**: [https://github.com/ChildEden/SDE](https://github.com/ChildEden/SDE)
 - **Area**: Machine Unlearning / Privacy Protection / Statistical Testing
-- **Keywords**: Machine unlearning evaluation, HSIC, statistical independence, subset-level evaluation, membership inference
+- **Keywords**: Machine Unlearning Evaluation, HSIC, Statistical Independence, Subset-level Evaluation, Membership Inference
 
 ## TL;DR
-This paper proposes Split-half Dependence Evaluation (SDE), which leverages HSIC-based statistical independence testing to evaluate machine unlearning at the subset level, requiring neither model retraining nor auxiliary classifiers.
+Proposes Split-half Dependence Evaluation (SDE), which utilizes HSIC statistical independence tests to evaluate machine unlearning effectiveness at the subset level without requiring model retraining or auxiliary classifiers.
 
 ## Background & Motivation
 
 ### Core Problem
-How can one verify whether a machine unlearning procedure has succeeded? Existing evaluation methods exhibit fundamental limitations:
+How to verify if a machine unlearning process is successful? Existing evaluation methods have fundamental limitations:
 
-**Retraining Comparison**: Requires training a new reference model — contradicting the original motivation for unlearning.
+**Retraining Comparison**: Requires training a new model as a reference—contradicting the original intent of unlearning.
 
-**Membership Inference Attacks (MIA)**: Rely on training statistics and shadow models — difficult to obtain after unlearning.
+**Membership Inference Attack (MIA)**: Relies on training statistics, shadow models, etc.—difficult to obtain after unlearning.
 
-**Sample-level Inference**: Since unlearning removes only a small subset (5%–20%), per-sample signals are statistically weak after unlearning.
+**Sample-level Inference**: Unlearning usually removes small subsets (5%-20%); single-sample statistical clues are weak post-unlearning.
 
 ### Paradigm Shift
-From **sample-level MIA** → **subset-level statistical independence evaluation**.
+From **sample-level MIA** → **subset-level statistical independence evaluation**
 
-Core intuition: Training participation induces inter-sample dependencies in model outputs (via shared gradient updates and co-adaptation), whereas out-of-training data exhibits no such dependencies.
+Core Insight: Training involvement induces inter-sample dependencies among model outputs (shared gradient updates and co-adaptation), which do not exist in out-of-training data.
 
 ## Method
 
-### Split-half Dependence Evaluation (SDE)
+### Overall Architecture
 
-#### Core Idea
+SDE (Split-half Dependence Evaluation) aims to solve a problematic evaluation issue: how to determine whether a subset has truly been forgotten by the model without retraining reference models, relying on shadow models, or using auxiliary classifiers. Its Key Insight is to translate "whether it participated in training" into "whether the outputs are statistically independent"—if a subset truly participated in training, its samples will be entangled with each other in the model output due to shared gradient updates and co-adaptation; whereas data outside of training lacks such entanglement.
 
-The subset under evaluation $\mathcal{S}$ is randomly split into two halves $\mathcal{S}_1, \mathcal{S}_2$, and the statistical dependence between model outputs is computed as:
+Specifically: After obtaining the target subset to be evaluated, it is first randomly split into two halves. HSIC is used to measure the statistical dependence between the model outputs of these two halves, yielding a dependence value. This value is then compared against two dependence distributions: the "In-Training Reference" and the "Out-Of-Training Reference." The subset is classified based on which distribution it is closer to. Successful unlearning means that the dependence of the target subset, which originally belonged to the training set, has collapsed toward the out-of-training side after the unlearning process.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    IN["Unlearned model h^un + three subsets<br/>Target S_tar, IT Reference S_IT,<br/>OOT Reference S_OOT"]
+    subgraph DEP["Split-half Dependence Metric H(S,h) (Design 1, 2)"]
+        direction TB
+        A["Each subset randomly split in half S1, S2"]
+        B["HSIC estimates dependence of the two halves;<br/>shuffle S2 200 times to get distribution"]
+        A --> B
+    end
+    IN --> DEP
+    DEP --> C["Obtain three dependence distributions<br/>H(S_tar), H(S_IT), H(S_OOT)"]
+    C --> D["Unlearning Evaluation Protocol (Design 3)<br/>Compare D(S_tar,S_OOT) with D(S_tar,S_IT) using JSD"]
+    D -->|"Closer to S_OOT"| E["Judged as successful unlearning"]
+    D -->|"Closer to S_IT"| F["Judged as still in-training"]
+```
+
+### Key Designs
+
+**1. Split-half Dependence Metric $H(\mathcal{S}, h)$: Elevating sample-level clues to subset-level signals**
+
+Unlearning usually only removes small subsets (5%–20%). Since individual samples leave weak statistical clues post-unlearning, sample-level MIA is difficult to sustain. SDE operates at the subset granularity: the evaluation subset $\mathcal{S}$ is randomly split into two halves $\mathcal{S}_1, \mathcal{S}_2$, and the dependence between the outputs of the two halves is measured:
 
 $$H(\mathcal{S}, h) = \text{HSIC}(h(\mathcal{S}_1), h(\mathcal{S}_2))$$
 
-- **In-training subsets**: $H(\mathcal{S}_{IT}, h)$ is significantly higher than
-- **Out-of-training subsets**: $H(\mathcal{S}_{OOT}, h)$
+The in-training subset $H(\mathcal{S}_{IT}, h)$ will be significantly higher than the out-of-training subset $H(\mathcal{S}_{OOT}, h)$. There is theoretical support for this: when the model $h = \mathcal{A}(\mathcal{D}_{tr})$ is trained, $h(x_i)$ implicitly depends on $x_j$ through learned parameters; thus $h(x_i)$ and $h(x_j)$ are no longer independent. The shared influence components introduced by training are the root cause of stronger split-half dependence in in-training subsets. To obtain a distribution of $H(\mathcal{S}, h)$ rather than a single point value, $\mathcal{S}_2$ is shuffled 200 times for repeated estimation.
 
-#### HSIC (Hilbert-Schmidt Independence Criterion)
+**2. HSIC as a Non-parametric Dependence Estimator: No distribution assumptions**
+
+Dependence is measured using the Hilbert-Schmidt Independence Criterion (HSIC), which does not require assuming a specific output distribution and is suitable for characterizing complex dependencies in neural network outputs:
 
 $$\text{HSIC}(X, Y) = \frac{1}{(n-1)^2}\text{Tr}(KHLH)$$
 
-where $K, L$ are Gaussian RBF kernel matrices and $H = I - \frac{1}{n}\mathbf{1}\mathbf{1}^T$ is the centering matrix.
+Where $K, L$ are Gaussian RBF kernel matrices and $H = I - \frac{1}{n}\mathbf{1}\mathbf{1}^T$ is a centering matrix. The kernel bandwidth is set to the heuristic $\sigma = \sqrt{\text{dim}}$, which is verified in experiments as a robust default.
 
-The distribution of $H(\mathcal{S}, h)$ is estimated via 200 random shuffles of $\mathcal{S}_2$.
+**3. Unlearning Evaluation Protocol: Comparison with two reference distributions instead of hard thresholds**
 
-#### Unlearning Evaluation Protocol
+Since HSIC values fluctuate with datasets and subset sizes, SDE does not use an absolute threshold but instead performs relative comparison. Given the target subset $\mathcal{S}_{\text{tar}} \subseteq \mathcal{D}_f$, an in-training reference $\mathcal{S}_{IT} \subset \mathcal{D}_r$ is taken from the retain set, and an out-of-training reference $\mathcal{S}_{OOT} \subset \mathcal{D}_{te}$ is taken from the test set. Unlearning is considered successful if and only if:
 
-Given a target subset $\mathcal{S}_{\text{tar}} \subseteq \mathcal{D}_f$, a reference in-training set $\mathcal{S}_{IT} \subset \mathcal{D}_r$, and an out-of-training set $\mathcal{S}_{OOT} \subset \mathcal{D}_{te}$:
-
-Unlearning is deemed successful if and only if:
 $$D(\mathcal{S}_{\text{tar}}, \mathcal{S}_{OOT}, h^{un}) < D(\mathcal{S}_{\text{tar}}, \mathcal{S}_{IT}, h^{un})$$
 
-where $D$ denotes the Jensen-Shannon divergence between dependence distributions.
+Where $D$ uses Jensen-Shannon Divergence to compare the distance between two dependence distributions. Intuitively: the unlearned target subset is truly forgotten only if its dependence distribution is closer to "out-of-training" and further from "in-training."
 
-### Theoretical Analysis
+## Main Results
 
-Shared influence components introduced during training cause in-training subsets to exhibit stronger split-half dependence. Specifically, when $h = \mathcal{A}(\mathcal{D}_{tr})$, the output $h(x_i)$ implicitly depends on $x_j$ through the learned parameters, so $h(x_i)$ and $h(x_j)$ are no longer independent.
-
-## Experiments
-
-### Controlled Experiments (Retrained Model)
+### Controlled Experiments (Retrained Models)
 
 | Dataset-Model | R=5% |S|=400 | R=10% |S|=1000 | R=20% |S|=2000 |
 |------------|------|--------|--------|
@@ -90,7 +108,7 @@ Shared influence components introduced during training cause in-training subsets
 | Wasserstein | 0.89 |
 | **SDE (Ours)** | **0.95** |
 
-SDE consistently outperforms MMD and Wasserstein across **all settings**, with a particularly pronounced advantage on smaller subsets.
+SDE consistently outperforms MMD and Wasserstein in **all settings**, with a more significant advantage in small subsets.
 
 ### Evaluation of Unlearning Methods (CIFAR10-ResNet18, R=10%)
 
@@ -104,37 +122,37 @@ SDE consistently outperforms MMD and Wasserstein across **all settings**, with a
 
 ### Key Findings
 
-1. **Critical finding on Unroll**: Conventional metrics (ASR ≈ 0.30, consistent with retraining) indicate successful unlearning, yet SDE yields an OTR of only 3% — nearly all forget samples are still identified as in-training data.
-2. **SDE exposes the insufficiency of MIA**: Similar ASR values make it difficult to distinguish unlearning quality, whereas OTR provides clearer differentiation.
-3. Larger subsets and deeper-layer features yield better discriminative power.
-4. Kernel bandwidth $\sigma = \sqrt{\text{dim}}$ serves as a robust heuristic.
-5. Dependencies can be detected even in models trained for only 20% of the full training schedule.
+1. **Major Discovery on the Unroll Method**: Traditional metrics (ASR ≈ 0.30, matching Retrain) suggest successful unlearning, but SDE’s OTR is only 3%—almost all unlearned samples are still identified as in-training data.
+2. **SDE Reveals MIA Deficiencies**: Similar ASR makes it difficult to distinguish unlearning quality, whereas OTR provides a clearer distinction.
+3. Larger subsets and deeper features provide better discriminative power.
+4. Kernel bandwidth $\sigma = \sqrt{\text{dim}}$ is a robust heuristic choice.
+5. Dependence can be detected even in early models trained for only 20% of the epochs.
 
 ## Highlights & Insights
 
-1. **Retraining-free independent evaluation**: A genuinely independent verification framework for machine unlearning.
-2. **Subset-level evaluation aligned with the unlearning workflow**: Unlearning is inherently a subset-level operation.
-3. **Exposing blind spots in existing evaluation**: The Unroll case serves as a cautionary example.
-4. **Unified theory and practice**: The shared influence component analysis provides theoretical grounding for the method design.
+1. **Independent Evaluation without Retraining**: A truly independent verification scheme for unlearning.
+2. **Subset-level Evaluation Aligns with Unlearning Workflows**: Unlearning itself is an operation targeted at subsets.
+3. **Exposing Blind Spots in Existing Evaluations**: The case study of the Unroll method provides significant cautionary value.
+4. **Unity of Theory and Practice**: The analysis of shared influence components supports the design of the method.
 
 ## Limitations & Future Work
 
-1. The choice of kernel bandwidth $\sigma$ has a notable impact; the simple heuristic may not generalize to all scenarios (e.g., diffusion models).
-2. Reference set selection affects performance, and an optimal reference set construction strategy remains unresolved.
-3. The method may capture natural forgetting (representation drift, catastrophic forgetting) rather than intentional unlearning.
-4. The current framework yields only binary judgments, leaving the potential of HSIC as a continuous metric underexplored.
-5. Performance is weaker on shallow architectures such as AllCNN.
+1. The choice of kernel bandwidth $\sigma$ has a significant impact; simple heuristics might not apply to all scenarios (e.g., Diffusion Models).
+2. The selection of reference sets affects performance; the optimal strategy for reference set construction remains unresolved.
+3. It may capture natural forgetting (representation drift, catastrophic forgetting) rather than intentional unlearning.
+4. Currently only provides binary judgments, without fully utilizing the potential of HSIC as a continuous metric.
+5. Weaker effectiveness on shallow networks like AllCNN.
 
 ## Related Work & Insights
-- **Machine Unlearning**: SISA, Random-label, SalUn — representative unlearning algorithms.
-- **Membership Inference Attacks**: Confidence-based, loss-based, and auxiliary-classifier-based methods.
-- **Statistical Independence Testing**: HSIC, MMD — kernel-based statistical tests.
+- **Machine Unlearning**: SISA, Random-label, SalUn — various unlearning algorithms.
+- **Membership Inference Attack**: Methods based on confidence, loss, and auxiliary classifiers.
+- **Statistical Independence Tests**: HSIC, MMD — kernel-based statistical testing methods.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ — Subset-level statistical independence evaluation is a novel perspective.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Multi-dimensional controlled experiments and evaluation across unlearning methods.
-- **Writing Quality**: ⭐⭐⭐⭐ — Clear motivation and complete method description.
-- **Value**: ⭐⭐⭐⭐ — No additional training required; easy to deploy.
+- **Novelty**: ⭐⭐⭐⭐ — Subset-level statistical independence is a novel perspective.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Multi-dimensional controlled experiments and unlearning method evaluations.
+- **Writing Quality**: ⭐⭐⭐⭐ — Clear motivation and comprehensive method descriptions.
+- **Value**: ⭐⭐⭐⭐ — Requires no additional training and is easy to deploy.
 
 <!-- RELATED:START -->
 
@@ -142,11 +160,11 @@ SDE consistently outperforms MMD and Wasserstein across **all settings**, with a
 
 ## Related Papers
 
+- [\[ICLR 2026\] Invisible Safety Threat: Malicious Finetuning for LLM via Steganography](invisible_safety_threat_malicious_finetuning_for_llm_via_steganography.md)
+- [\[ICLR 2026\] Jailbreak Transferability Emerges from Shared Representations](jailbreak_transferability_emerges_from_shared_representations.md)
+- [\[ICLR 2026\] GeneBreaker: Jailbreak Attacks Against DNA Language Models with Pathogenicity Guidance](genebreaker_jailbreak_attacks_against_dna_language_models_with_pathogenicity_gui.md)
 - [\[AAAI 2026\] Ghost in the Transformer: Detecting Model Reuse with Invariant Spectral Signatures](../../AAAI2026/llm_safety/ghost_in_the_transformer_detecting_model_reuse_with_invariant_spectral_signature.md)
 - [\[AAAI 2026\] Multi-Faceted Attack: Exposing Cross-Model Vulnerabilities in Defense-Equipped Vision-Language Models](../../AAAI2026/llm_safety/multi-faceted_attack_exposing_cross-model_vulnerabilities_in_defense-equipped_vi.md)
-- [\[ACL 2026\] CiPO: Counterfactual Unlearning for Large Reasoning Models through Iterative Preference Optimization](../../ACL2026/llm_safety/cipo_counterfactual_unlearning_for_large_reasoning_models_through_iterative_pref.md)
-- [\[ICML 2026\] FedTreeLoRA: Reconciling Statistical and Functional Heterogeneity in Federated LoRA Fine-Tuning](../../ICML2026/llm_safety/fedtreelora_reconciling_statistical_and_functional_heterogeneity_in_federated_lo.md)
-- [\[AAAI 2026\] Beyond Superficial Forgetting: Thorough Unlearning through Knowledge Density Estimation and Block Re-insertion](../../AAAI2026/llm_safety/beyond_superficial_forgetting_thorough_unlearning_through_knowledge_density_esti.md)
 
 </div>
 

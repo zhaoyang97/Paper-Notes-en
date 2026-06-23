@@ -2,120 +2,153 @@
 title: >-
   [Paper Note] Rethinking Benign Relearning: Syntax as the Hidden Driver of Unlearning Failures
 description: >-
-  [ICLR 2026][LLM Safety][Machine Unlearning] This paper reveals that the true driver of "benign relearning" in LLM machine unlearning is syntactic similarity rather than topical relevance…
+  [ICLR 2026][LLM Safety][machine_unlearning] This paper reveals that the true driver of "benign relearning" in LLM machine unlearning is **syntactic similarity** rather than topical relevance, and proposes a **syntactic diversification** strategy to enhance unlearning robustness.
 tags:
-  - "ICLR 2026"
-  - "LLM Safety"
-  - "Machine Unlearning"
-  - "Benign Relearning"
-  - "Syntactic Similarity"
-  - "Unlearning Robustness"
-  - "Syntactic Diversification"
+  - ICLR 2026
+  - LLM Safety
+  - machine_unlearning
+  - LLM_safety
+  - syntactic_similarity
+  - benign_relearning
 date: 2026-05-08
-content_hash: 889d0544ef41df89
+content_hash: d01a791efb182776
 ---
-
 # Rethinking Benign Relearning: Syntax as the Hidden Driver of Unlearning Failures
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2602.03379](https://arxiv.org/abs/2602.03379)  
-**Code**: None  
-**Area**: LLM Evaluation
-**Keywords**: Machine Unlearning, Benign Relearning, Syntactic Similarity, Unlearning Robustness, Syntactic Diversification
+**Code**: Not released  
+**Area**: LLM Evaluation  
+**Keywords**: machine_unlearning, LLM_safety, syntactic_similarity, benign_relearning  
 
 ## TL;DR
-This paper reveals that the true driver of "benign relearning" in LLM machine unlearning is syntactic similarity rather than topical relevance, and proposes a syntactic diversification strategy (paraphrasing the forget set) that effectively suppresses relearning, accelerates forgetting, and alleviates the trade-off between unlearning efficacy and model utility.
+
+This paper reveals that the true driver of "benign relearning" in LLM machine unlearning is **syntactic similarity** rather than topical relevance, and proposes a **syntactic diversification** strategy to enhance unlearning robustness.
 
 ## Background & Motivation
-Machine Unlearning aims to remove specific content (e.g., private data, copyrighted material) from trained LLMs so that the model behaves as if it had never seen such data. Mainstream methods include Gradient Ascent (GA), Negative Preference Optimization (NPO), and SCRUB.
 
-However, **Benign Relearning** poses a serious threat to unlearning effectiveness: after unlearning, fine-tuning the model on benign data that appears unrelated to the forgotten content can recover the forgotten information. For example, after unlearning a passage from Harry Potter, fine-tuning on GPT-generated character descriptions can reproduce the original text.
+Machine unlearning aims to remove specific content from trained models while maintaining overall performance. However, the phenomenon of "benign relearning" shows that forgotten information can resurface even after fine-tuning on seemingly unrelated benign data.
 
-The prior BLUR benchmark attributed this to **topical relevance**: the closer the fine-tuning data is to the topic of the forgotten content, the stronger the recovery. However, the authors identify two experimental design flaws in BLUR: (1) datasets of different relevance levels vary in size, resulting in inconsistent numbers of gradient update steps; and (2) evaluation is performed only at the end of a fixed number of epochs, potentially missing recovery peaks.
+**Limitations of Prior Work**:
+- The BLUR benchmark attributes benign relearning to **topical relevance**, i.e., the overlap of entities/topics between the relearning data and the forgotten data.
+- Example: After unlearning Harry Potter passages, fine-tuning on GPT-generated descriptions of the same character can recover the forgotten content.
+- This intuitive explanation is widely accepted, but the authors find it incomplete.
 
-After standardizing the number of steps and evaluating progressively, the authors find that **the advantage of topical relevance largely disappears** — even completely unrelated filler text such as "Lorem ipsum" achieves comparable recovery. This motivates a deeper investigation into the true driving factor.
-
-The core finding is that **syntactic similarity — i.e., surface structural overlap — is the primary cause of benign relearning**. Unlearning predominantly suppresses "answer templates" rather than keywords themselves; syntactically similar data restores the suppressed template structures, allowing keywords to resurface.
+**Key Finding**:
+- BLUR experiments contain two confounding factors: (1) Inconsistent sizes of datasets with different relevance levels, leading to different numbers of gradient updates; (2) The degree of recovery is not monotonically increasing, and evaluating only at the end of an epoch may miss the peak.
+- Under fair evaluation (standardized step budget + reporting maximum recovery), the advantage of topical relevance largely disappears.
 
 ## Method
 
 ### Overall Architecture
-The paper consists of three parts: (1) re-examining BLUR's conclusions on topical relevance; (2) controlled experiments demonstrating that syntactic similarity is the primary factor; and (3) proposing syntactic diversification as a defense strategy.
+
+This work follows a "diagnose then treat" approach: it first overturns the previous conclusion that "topical relevance drives benign relearning" under fair evaluation, then proves through controlled experiments on TOFU that the true driver is **syntactic similarity**. Finally, it proposes **syntactic diversification** preprocessing to break the syntactic rigidity left by unlearning. The four steps are closely linked: first, create a "ruler" that measures only sentence structure without touching semantics (syntactic similarity metric); use it to decouple "syntactic similarity" and "topical relevance" in controlled experiments; explain why syntax can pull back knowledge from representation/gradient perspectives; and finally block this attack channel. This defense is a lightweight preprocessing step on the data side that can be applied before any unlearning method such as Gradient Ascent (GA), Negative Preference Optimization (NPO), or SCRUB.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Forget set $D_{\text{forget}}$<br/>+ Target set $D_{\text{target}}$"] --> B["Syntactic Similarity Measure<br/>Normalized Levenshtein Distance<br/>(Structure only, no semantics)"]
+    B --> C["Controlled Experiment Design<br/>Topical Relevance Set vs Syntactic Similarity Set<br/>(One cue per group)"]
+    C --> D["Syntactic-driven Mechanism<br/>Rep./Grad. Alignment + Loss Ratio<br/>(Unlearning suppresses templates; keywords revive with structure)"]
+    D --> E["Syntactic Diversification<br/>GPT-4o rewriting to break syntax<br/>(Pre-unlearning data processing)"]
+    E --> F["Robust Unlearning Model<br/>Compatible with GA / NPO / SCRUB"]
+```
 
 ### Key Designs
 
-1. **Syntactic Similarity Metric**: Normalized Levenshtein distance is used to measure surface structural overlap between two text segments: $\text{Sim}(s_1, s_2) = 1 - \frac{d_{\text{Lev}}(s_1, s_2)}{\max(|s_1|, |s_2|)}$, computed at the sentence level and averaged over all sentence pairs across datasets.
+**1. Syntactic Similarity Measure: Quantifying structural resemblance**
 
-2. **Controlled Experiment Design (TOFU Dataset)**: Under the forget05 scenario of the TOFU dataset (forgetting 10 fictional authors), two contrastive relearning sets are constructed:
+To argue that syntax rather than topic is at work, a semantic-free "ruler" is needed. The authors use normalized Levenshtein distance to measure the alignment between two text segments:
 
-    - $D_{\text{relearn}}^{\text{topic}}$ (topically relevant): non-name questions about the target authors (e.g., birthplace), with syntactic similarity of 0.2349
-    - $D_{\text{relearn}}^{\text{syntactic}}$ (syntactically similar): name-format questions identical in structure to the target set but concerning different authors, with syntactic similarity of 0.4513
-    - Key control: the syntactically similar set has **no topical overlap** with the target set
+$$\text{Sim}(s_1, s_2) = 1 - \frac{d_{\text{Lev}}(s_1, s_2)}{\max(|s_1|, |s_2|)}$$
 
-3. **Loss Ratio Analysis**: Loss Ratio is defined as $\mathcal{L}_{\text{template}} / \mathcal{L}_{\text{keyword}}$, partitioning answer tokens into template tokens (generic phrasing) and keyword tokens (specific forgotten information such as names). The Loss Ratio is observed to increase continuously during unlearning, indicating that unlearning disproportionately suppresses templates rather than keywords — this structural channel is what syntactic relearning exploits.
+Where $d_{\text{Lev}}$ is the minimum number of single-character edits required to change $s_1$ into $s_2$. The similarity falls in $[0,1]$. This metric focuses solely on surface-level character alignment and ignores semantics, allowing "same syntax" and "same topic" cues to be cleanly separated.
 
-4. **Syntactic Diversification**: GPT-4o is used to paraphrase queries in the forget set into diverse syntactic forms (preserving semantics), breaking the uniform template structure of the original forget set. After paraphrasing, the syntactic similarity between $D_{\text{relearn}}^{\text{syntactic}}$ and $D_{\text{forget}}'$ decreases from 0.4513 to 0.2241.
+**2. Controlled Experiment Design: Constructing relearning sets with isolated cues**
+
+The confounding factor in previous experiments is that "topically relevant" data is often "syntactically similar." The authors perform fine-grained partitioning in the TOFU forget05 scenario (unlearning knowledge of 10 fictional authors): the target set $D_{\text{target}}$ consists of QA pairs asking for the author's full name; the topic-related set $D_{\text{relearn}}^{\text{topic}}$ asks about the same author but different content (birthplace, profession), overlapping in topic but unique in syntax; the syntactic-similar set $D_{\text{relearn}}^{\text{syntactic}}$ maintains the same question template as the target set but replaces the author, resulting in syntactic overlap but topical irrelevance. Metrics confirm this separation: the syntactic similarity between $D_{\text{relearn}}^{\text{syntactic}}$ and $D_{\text{target}}$ is 0.4513, while $D_{\text{relearn}}^{\text{topic}}$ is only 0.2349.
+
+**3. Mechanism: Unlearning primarily suppresses templates; keywords revive with structure**
+
+To explain why syntactic overlap recovers knowledge, the authors analyze representations and gradients. In unlearned models, the cosine similarity of hidden representations and gradients between the syntactic-similar set and the target set is significantly higher than that of the topic-related set. This implies that identical syntax pulls internal representations and optimization directions toward the forgotten content. Furthermore, the authors divide target answers into **template tokens** (generic phrases) and **keyword tokens** (specific name info) and track the loss ratio:
+
+$$\text{Loss Ratio} = \frac{\mathcal{L}_{\text{template}}}{\mathcal{L}_{\text{keyword}}}$$
+
+This ratio increases during unlearning, indicating that current methods primarily suppress templates rather than keywords. Thus, fine-tuning on syntactically similar data quickly restores the suppressed template structure, bringing keywords back with it.
+
+**4. Syntactic Diversification: Breaking syntax before unlearning**
+
+Since vulnerability stems from the syntactic rigidity of the forget set, diversity is injected before unlearning. The authors use GPT-4o to generate syntactic variants of target queries in $D_{\text{forget}}$, filter out rewrites with high similarity to the original, and keep low-similarity versions to form $D_{\text{forget}}'$. The result: the average syntactic similarity between $D_{\text{relearn}}^{\text{syntactic}}$ and the forget set drops from 0.4513 to 0.2241, making it much harder for attackers to recover knowledge using the same question template.
 
 ### Loss & Training
-Syntactic diversification does not modify the unlearning algorithm itself (GA/NPO/SCRUB are retained); only the forget set is replaced with its diversified version $D_{\text{forget}}'$. This forces the model to directly suppress keywords rather than merely suppressing templates, fundamentally eliminating the syntactic relearning channel.
+
+Syntactic diversification is a data-side preprocessing step and can be combined with three mainstream unlearning methods: Gradient Ascent (GA), which maximizes loss on the forget set; Negative Preference Optimization (NPO), which suppresses forgotten content via preference optimization; and SCRUB, which optimizes the forget set and retain set jointly.
 
 ## Key Experimental Results
 
-### Main Results (TOFU Dataset, Relearn Success Rate)
+### Main Results: Relearning effects of syntax vs. topic on TOFU
 
-| Unlearning Method | Relearning Set | Step 10 Recovery | Step 30 Recovery | Step 50 Recovery |
-|---|---|---|---|---|
-| GA | $D_{\text{relearn}}^{\text{topic}}$ | ~0% | ~0% | ~0% |
-| GA | $D_{\text{relearn}}^{\text{syntactic}}$ | ~40% | ~60% | ~70% |
-| NPO | $D_{\text{relearn}}^{\text{topic}}$ | ~0% | ~0% | ~0% |
-| NPO | $D_{\text{relearn}}^{\text{syntactic}}$ | ~30% | ~50% | ~55% |
-| SCRUB | $D_{\text{relearn}}^{\text{topic}}$ | ~10% | ~15% | ~10% |
-| SCRUB | $D_{\text{relearn}}^{\text{syntactic}}$ | ~80% | ~90% | ~95% |
+| Unlearning Method | Relearning Set Type | Recovery after 50 steps |
+|---------|-----------|-----------------|
+| GA | $D_{\text{relearn}}^{\text{topic}}$ | No recovery |
+| GA | $D_{\text{relearn}}^{\text{syntactic}}$ | Keywords recover quickly |
+| NPO | $D_{\text{relearn}}^{\text{topic}}$ | Slight recovery |
+| NPO | $D_{\text{relearn}}^{\text{syntactic}}$ | Significant recovery |
+| SCRUB | $D_{\text{relearn}}^{\text{topic}}$ | Limited recovery |
+| SCRUB | $D_{\text{relearn}}^{\text{syntactic}}$ | Full recovery |
 
-Across all unlearning methods, recovery rates under the syntactically similar set substantially exceed those under the topically relevant set. SCRUB unlearns fastest but is the most vulnerable.
+Across all unlearning methods, the recovery effect of the syntactic-similar set is consistently and significantly superior to the topic-related set. SCRUB is the most efficient at unlearning but the most vulnerable to relearning.
 
-### Ablation Study (Syntactic Diversification Effect + Model Utility Preservation)
+### Ablation Study: Effect of Syntactic Diversification
 
-| Forget Set | Real Authors (Avg↑) | World Facts (Avg↑) | Retain Set (Avg↑) |
-|---|---|---|---|
-| $D_{\text{forget}}$ (original) | 0.4014 | 0.6056 | 0.1607 |
-| $D_{\text{forget}}'$ (diversified) | **0.4852** | **0.6104** | **0.3128** |
+**Model Utility Maintenance (GA Method)**:
 
-After syntactic diversification: (1) recovery rate against syntactic relearning drops to 0% even at only 50 unlearning steps; (2) model utility (Real Authors, Retain Set) improves significantly; and (3) the Loss Ratio converges to 1, indicating balanced suppression of both templates and keywords.
+| Metric | $D_{\text{forget}}$ | $D_{\text{forget}}'$ (Ours) |
+|------|---------------------|---------------------------|
+| Real Authors ROUGE↑ | 0.2608 | **0.4257** |
+| Real Authors Prob↑ | 0.3665 | **0.4223** |
+| Real Authors TR↑ | 0.5769 | **0.6075** |
+| World Facts Avg↑ | 0.6056 | **0.6104** |
+| Retain Set ROUGE↑ | 0.1036 | **0.4052** |
+| Retain Set Avg↑ | 0.1607 | **0.3128** |
+
+Syntactic diversification not only enhances unlearning robustness but also significantly improves model utility (notably, Retain Set ROUGE jumps from 0.10 to 0.41).
 
 ### Key Findings
-- Representation and gradient analysis: $D_{\text{relearn}}^{\text{syntactic}}$ exhibits substantially higher hidden state cosine similarity and gradient cosine similarity to the target set in the unlearned model compared to $D_{\text{relearn}}^{\text{topic}}$.
-- The differential relearning effects of $D_{\text{hi}} / D_{\text{mid}} / D_{\text{low}}$ in BLUR are consistent with their syntactic similarity ordering rather than their topical relevance ordering.
-- LoRA fine-tuning recovers forgotten content faster than full-parameter fine-tuning during relearning, suggesting that PEFT may amplify unlearning fragility.
-- Safety training (DPO) is more susceptible to syntactic relearning attacks than dedicated unlearning algorithms.
+
+1. **Syntactic Similarity > Topical Relevance**: Across all benchmarks and unlearning methods, syntactic similarity is the primary driver of benign relearning.
+2. **Skewed Unlearning**: Current methods excessively suppress template tokens rather than keyword tokens, creating structural vulnerability.
+3. **Triple Benefits of Diversification**: (a) Suppresses relearning, (b) accelerates unlearning, and (c) mitigates the trade-off between unlearning effectiveness and model utility.
+4. **Safety Training ≠ Unlearning**: Methods like DPO only suppress output without removing knowledge, making them more vulnerable under syntactic relearning.
+5. **LoRA Vulnerabilities**: While LoRA uses fewer parameters, it recovers forgotten information faster and more effectively in relearning scenarios.
 
 ## Highlights & Insights
-- **Overturning prior belief**: Topical relevance is not the primary cause of benign relearning — syntactic similarity is. This redefines the evaluation criteria for unlearning robustness.
-- The identification of methodological flaws in the BLUR benchmark (inconsistent step counts and single-point evaluation) is precise and sets a methodological standard for the field.
-- The proposed syntactic diversification strategy incurs virtually no additional training cost (requiring only a one-time GPT-4o paraphrasing step), yet simultaneously improves three dimensions: unlearning strength, robustness, and model utility.
-- The Loss Ratio analysis reveals an "uneven forgetting" mechanism — models preferentially forget template formats rather than the actual knowledge content.
-- The syntactic diversification solution is remarkably concise (only requiring GPT-4o query paraphrasing) while simultaneously improving unlearning efficacy, robustness, and model utility.
-- The methodological critique of the BLUR benchmark (inconsistent steps, single-point evaluation) serves as an important methodological reference for the community.
+
+- **Perspective Shift**: Shifting from the semantic level (topical relevance) to the surface form level (syntactic similarity) to understand unlearning failures is a counter-intuitive but well-supported finding.
+- **Elegant Experiment Design**: By constructing datasets that share syntactic patterns without topical overlap, the two factors are cleanly disentangled.
+- **Practicality**: The syntactic diversification strategy is simple to implement, requiring only one LLM rewriting step, yet yields significant results.
+- **Safety Implications**: It reveals a difficult-to-defend attack path in real-world deployments—forgotten knowledge can be recovered using syntactically similar but content-unrelated fine-tuning data.
 
 ## Limitations & Future Work
-- Validation is primarily conducted on the TOFU synthetic dataset; applicability to real-world scenarios (e.g., copyright data unlearning) requires further investigation.
-- Syntactic diversification relies on GPT-4o for paraphrasing, introducing additional cost and dependency on an external model.
-- Levenshtein distance as a syntactic metric may be overly coarse; future work could explore more precise measures such as syntactic tree distance.
-- Only Llama-2-7B is evaluated; generalizability to larger models (70B+) and different architectures remains unknown.
-- Combinations of syntactic diversification with other defense methods (e.g., adversarial training) are not explored.
+
+1. Experiments are primarily conducted on TOFU (synthetic dataset); unstructured text in the real world possesses higher syntactic diversity.
+2. Syntactic diversification depends on the rewriting quality of GPT-4o, introducing additional costs.
+3. Only Llama-2-7b-chat and Phi families were evaluated; the behavior of larger-scale models remains to be verified.
+4. The syntactic similarity metric (Levenshtein distance) is relatively simple and may not capture complex grammatical structural alignments.
 
 ## Related Work & Insights
-- Relationship to BLUR (Hu et al., 2025b): directly challenges its conclusion that "topical relevance determines relearning," identifying confounding factors in its experimental design.
-- Cross-findings with DuoAttention/LoRA: LoRA recovers faster during relearning, suggesting that PEFT may be a weak point in unlearning security.
-- Insight: unlearning evaluation should not focus solely on content-level dimensions; syntactic/structural attack surfaces are equally critical.
-- Broader implication: LLM knowledge may be encoded as "template + keyword" pairs, and unlearning should target both simultaneously.
-- Future work could explore combining syntactic diversification with prompt-level defenses (e.g., input perturbation) to build a multi-layered defense system.
+
+- **BLUR (Hu et al., 2025b)**: Proposed a three-tier classification of topical relevance; this paper overturns its core conclusion through improved experimental design.
+- **TOFU (Maini et al., 2024)**: Standard LLM unlearning benchmark used for the controlled experiments.
+- **GA/NPO/SCRUB**: Mainstream unlearning methods shown to share the same syntactic vulnerability.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Overturns mainstream understanding by identifying syntax rather than topic as the key factor in unlearning failure
-- Experimental Thoroughness: ⭐⭐⭐⭐ Multi-benchmark validation across TOFU and BLUR is comprehensive, though real-world scenario experiments are lacking
-- Writing Quality: ⭐⭐⭐⭐⭐ Problem formulation → rebuttal of prior work → controlled experiments → mechanistic analysis → solution; the logic is exceptionally tight
-- Value: ⭐⭐⭐⭐ Provides important guidance for evaluation methodology and defense strategies in the machine unlearning field
+
+- **Novelty**: ⭐⭐⭐⭐ — Identifying syntactic similarity as the driver of relearning is a novel insight.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ — Elegantly designed controlled experiments with thorough ablation and deep analysis.
+- **Value**: ⭐⭐⭐⭐ — Syntactic diversification is simple and effective.
+- **Writing Quality**: ⭐⭐⭐⭐ — Clear logic and intuitive visualizations.
+- **Overall**: ⭐⭐⭐⭐ (4/5)
 
 <!-- RELATED:START -->
 
@@ -123,11 +156,11 @@ After syntactic diversification: (1) recovery rate against syntactic relearning 
 
 ## Related Papers
 
+- [\[ICLR 2026\] Rethinking Bottlenecks in Safety Fine-Tuning of Vision Language Models](rethinking_bottlenecks_in_safety_fine-tuning_of_vision_language_models.md)
 - [\[ACL 2026\] Before Forgetting, Learn to Remember: Revisiting Foundational Learning Failures in LVLM Unlearning Benchmarks](../../ACL2026/llm_safety/before_forgetting_learn_to_remember_revisiting_foundational_learning_failures_in.md)
-- [\[ICLR 2026\] Inference-Time Backdoors via Hidden Instructions in LLM Chat Templates](inference-time_backdoors_via_hidden_instructions_in_llm_chat_templates.md)
-- [\[ICLR 2026\] Erase or Hide? Suppressing Spurious Unlearning Neurons for Robust Unlearning](erase_or_hide_suppressing_spurious_unlearning_neurons_for_robust_unlearning.md)
-- [\[ICLR 2026\] Exposing Hidden Biases in Text-to-Image Models via Automated Prompt Search](exposing_hidden_biases_in_text-to-image_models_via_automated_prompt_search.md)
+- [\[ICLR 2026\] HiddenEcho: Mitigating Noise Amplification in Differentially Private LLMs with Hidden-State Correction](hiddenecho_mitigating_noise_amplification_in_differentially_private_llms_with_hi.md)
 - [\[NeurIPS 2025\] Simplicity Prevails: Rethinking Negative Preference Optimization for LLM Unlearning](../../NeurIPS2025/llm_safety/simplicity_prevails_rethinking_negative_preference_optimization_for_llm_unlearni.md)
+- [\[AAAI 2026\] Uncovering Pretraining Code in LLMs: A Syntax-Aware Attribution Approach](../../AAAI2026/llm_safety/uncovering_pretraining_code_in_llms_a_syntax-aware_attribution_approach.md)
 
 </div>
 

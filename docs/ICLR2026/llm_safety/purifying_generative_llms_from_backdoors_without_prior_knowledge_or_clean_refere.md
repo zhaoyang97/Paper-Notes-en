@@ -2,142 +2,158 @@
 title: >-
   [Paper Note] Purifying Generative LLMs from Backdoors without Prior Knowledge or Clean Reference
 description: >-
-  [ICLR 2026][LLM Safety][LLM backdoor] A backdoor purification method for LLMs that requires neither prior knowledge nor a clean reference model. Mechanistic analysis reveals that backdoor associations are redundantly dis…
+  [ICLR 2026][LLM Safety][Paper Note] This paper proposes a backdoor purification method for LLMs that requires no prior knowledge or clean reference models. By analyzing the mechanism, it is discovered that backdoor associations are redundantly distributed in MLP layers. Using an immune-analogous approach, "signatures" are extracted from multiple backdoor
 tags:
-  - "ICLR 2026"
-  - "LLM Safety"
-  - "LLM backdoor"
-  - "backdoor purification"
-  - "mechanistic analysis"
-  - "MLP encoding"
-  - "immunity analogy"
-  - "signature extraction"
+  - ICLR 2026
+  - LLM Safety
 date: 2026-05-08
-content_hash: b7d042c1c6521c1f
+content_hash: 6e6e22f387f0844e
 ---
-
 # Purifying Generative LLMs from Backdoors without Prior Knowledge or Clean Reference
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2603.13461](https://arxiv.org/abs/2603.13461)  
 **Code**: [https://bd-vax.github.io/](https://bd-vax.github.io/)  
-**Area**: AI Safety / Backdoor Defense
-**Keywords**: LLM backdoor, backdoor purification, mechanistic analysis, MLP encoding, immunity analogy, signature extraction
+**Area**: AI Security / Backdoor Defense  
+**Keywords**: LLM Backdoor, Backdoor Purification, Mechanistic Analysis, MLP Encoding, Immune-Analogous Signature Extraction
 
 ## TL;DR
-A backdoor purification method for LLMs that requires neither prior knowledge nor a clean reference model. Mechanistic analysis reveals that backdoor associations are redundantly distributed across MLP layers. Inspired by immunology, the method extracts a "signature" from multiple backdoor variants, localizes and suppresses suspicious neurons, and applies lightweight fine-tuning for recovery. Across 5 attacks × 3 tasks, ASR is reduced by 80%+ while utility is preserved.
+This paper proposes a backdoor purification method for LLMs that requires no prior knowledge or clean reference models. By analyzing the mechanism, it is discovered that backdoor associations are redundantly distributed in MLP layers. Using an immune-analogous approach, "signatures" are extracted from multiple backdoor variants to locate and suppress suspicious neurons, followed by lightweight fine-tuning for recovery. The method reduces ASR by over 80% across 5 types of attacks and 3 tasks while maintaining utility.
 
 ## Background & Motivation
 
-**Background**: Backdoor attacks pose a serious security threat to LLMs — poisoned models behave normally on clean inputs but produce malicious outputs (sentiment manipulation, targeted refusal, code injection) when a trigger is present.
+**Background**: Backdoor attacks pose serious security threats to LLMs—models perform normally on standard inputs but produce malicious outputs (sentiment manipulation, targeted refusal, code injection) when a trigger is present.
 
 **Limitations of Prior Work**:
-   - Require prior knowledge of the trigger (unrealistic in practice)
-   - Require a clean reference model (typically unavailable in deployment scenarios)
-   - Rely on aggressive fine-tuning hyperparameters (extremely large learning rates)
-   - Mostly limited to classification tasks and cannot handle generative LLMs
-   - Vulnerable to adaptive attackers who can obfuscate internal signals
+   - Requires prior knowledge of the trigger (unrealistic).
+   - Requires a clean reference model (usually unavailable in deployment).
+   - Relies on aggressive fine-tuning hyperparameters (extremely high learning rates).
+   - Mostly limited to classification tasks, unable to handle generative LLMs.
+   - Vulnerable to adaptive attackers (who can obfuscate internal signals).
 
-**Key Challenge**: How can backdoors be purified without knowledge of the trigger and without relying on a clean model?
+**Key Challenge**: How to purify backdoors without knowing the trigger or relying on a clean reference model?
 
 **Goal**: Backdoor purification for LLMs under conditions of no prior knowledge and no clean reference model.
 
-**Key Insight**: Rather than identifying the trigger itself, the method disrupts the trigger–behavior association by precisely localizing how backdoors are encoded in model parameters.
+**Key Insight**: Instead of identifying the trigger itself, the method breaks the trigger-behavior association by precisely locating how the backdoor is encoded within the parameters.
 
-**Core Idea**: Construct multiple backdoor variants → extract a consistent "backdoor signature" across variants → suppress signature neurons + lightweight recovery fine-tuning.
+**Core Idea**: Construct multiple backdoor variants → extract a "backdoor signature" consistent across variants → suppress signature neurons + lightweight repair.
 
 ## Method
 
 ### Overall Architecture
-A three-stage pipeline: (1) **Mechanistic Analysis** — ablation experiments reveal the distributed and redundant nature of backdoor encoding in MLP layers; (2) **Immunity-Analogy Signature Extraction** — construct $N$ backdoor variants, extract backdoor signatures via differential updates and cross-variant consistency; (3) **Purification** — suppress signature neurons and apply lightweight fine-tuning with ~200 clean samples to restore utility.
+The goal is to remove backdoors from a suspicious LLM without knowing the trigger or having a clean reference model. The core hypothesis is: rather than guessing the trigger, it is better to understand **where the backdoor is encoded in the parameters** and then precisely "reset and repair" that portion.
+
+The pipeline consists of three steps: first, **mechanistic analysis** uses ablation experiments to confirm that backdoor associations are hidden in MLPs and redundantly distributed; second, **immune-analogous signature extraction** actively cultivates multiple "backdoor variants" from the suspicious model and compares their parameter change patterns to extract a cross-variant "backdoor signature" (a set of suspicious neuron indices); finally, **purification** resets the signature neurons and performs lightweight fine-tuning with ~200 clean samples to restore standard capabilities. The input is a suspicious model, and the output is a purified model with significantly lower ASR and maintained utility.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    IN["Suspicious Model θ_susp<br/>(Trigger Unknown)"] --> ANA["Mechanistic Analysis<br/>Ablation: Backdoor redundancy<br/>encoded in multiple MLP blocks"]
+    ANA -->|"Neuron-level granularity in MLP"| SIG
+    subgraph SIG["Immune-Analogous Signature Extraction"]
+        direction TB
+        VAR["Cultivate N variants from θ_susp<br/>Train poisoned θ_bd & clean θ_clean"] --> DIFF["Differential Update<br/>Δ_i = Δθ_bd − Δθ_clean"]
+        DIFF --> SCORE["Neuron Scoring s_j<br/>Mean Norm + Cosine Consistency"]
+        SCORE --> THR["Thresholding for Signature<br/>S = {j : s_j ≥ τ}"]
+    end
+    SIG --> PUR
+    subgraph PUR["Purification"]
+        direction TB
+        RESET["Reset Signature Neurons<br/>Full param gate/up_proj · LoRA A-row/B-col"] --> FT["Lightweight Repair (~200 samples)<br/>lr=1e-5, 5 epochs"]
+    end
+    PUR --> OUT["Purified Model<br/>ASR drops, utility maintained"]
+```
 
 ### Key Designs
 
-1. **Mechanistic Analysis Findings**:
+**1. Mechanistic Analysis: Locate where backdoors are hidden before purification**
 
-    - **Function**: Systematic ablation experiments reveal how backdoors are encoded in LLMs.
-    - **Key Findings**: (a) Removing poisoned attention updates → backdoor persists: attention only amplifies trigger signals but does not encode the association. (b) Removing poisoned MLP updates → backdoor is eliminated: **MLP layers are the carrier of backdoor associations**. (c) At least 12 consecutive MLP blocks must be removed to disable the backdoor. (d) Shuffling the order of poisoned block updates → backdoor remains effective: the association is **redundant and order-agnostic**.
-    - **Design Motivation**: This finding overturns the prior assumption that backdoors reside in attention layers or early layers, providing a theoretical basis for precise localization.
+Backdoor defense has long been hindered by a misconception—that trigger-behavior associations are encoded in attention or early layers. This paper uses systematic ablation to disprove this. The results yield four observations: (a) removing updates to **attention** during poisoning does not eliminate the backdoor, suggesting attention only amplifies signals; (b) removing updates to **MLP** eliminates the backdoor, proving MLP is the true carrier; (c) to fully disable a backdoor, **≥12 consecutive MLP blocks** must be removed, showing associations are not localized; (d) shuffling the order of poisoned blocks does not break the backdoor, indicating encoding is **redundant and order-independent**. These findings dictate the subsequent design: since backdoors are redundantly spread across MLPs, purification must target distributed suspicious parameters at the neuron level.
 
-2. **Immunity-Analogy Signature Extraction**:
+**2. Immune-Analogous Signature Extraction: Forcing out the backdoor fingerprint via variant commonalities**
 
-    - **Function**: Starting from the suspicious model, construct multiple backdoor variants and extract parameter change patterns that are consistent across variants.
-    - **Mechanism**:
-        - Construct $N$ variants: for each variant $i$, fine-tune a poisoned model $\theta_i^{\text{bd}}$ and a clean model $\theta_i^{\text{clean}}$ from the suspicious model using different triggers and behaviors.
-        - Compute the differential update $\Delta_i = \Delta\theta_i^{\text{bd}} - \Delta\theta_i^{\text{clean}}$ (cancels generic fine-tuning drift and pre-existing backdoors).
-        - Score each neuron $j$: $s_j = \frac{1}{N}\sum_i \|\Delta_{i,j}\|_2 + \lambda \frac{2}{N(N-1)}\sum_{i<\ell} \max\{0, \cos(\Delta_{i,j}, \Delta_{\ell,j})\}$
-        - The norm term measures poisoning magnitude; the alignment term measures cross-variant consistency (only positive cosine similarity is counted).
-        - Threshold filtering yields the backdoor signature $\mathbb{S} = \{j: s_j \geq \tau\}$.
-    - **Design Motivation**: Analogous to the immune system extracting shared antigens from multiple viral variants — parameter change patterns shared across variants with different triggers and behaviors constitute the backdoor association mechanism.
+After locating MLPs, the challenge is separating "backdoor-related parameter changes" from "normal fine-tuning drift" without a clean reference. Borrowing from immunology, where the immune system extracts shared antigens from different virus strains, the method posits that shared parameter change patterns between different backdoor variants (triggers/behaviors) represent the essence of the backdoor association.
 
-3. **Purification: Neuron Suppression + Lightweight Fine-tuning**:
+For each variant $i$, a poisoned model $\theta_i^{\text{bd}}$ and a clean model $\theta_i^{\text{clean}}$ are trained starting from the suspicious model using **different triggers and target behaviors**. Their respective updates are subtracted:
 
-    - **Function**: Reset signature neurons and restore utility with ~200 clean samples.
-    - **Full parameters**: Reinitialize flagged neurons in the `gate_proj`/`up_proj` matrices of the MLP.
-    - **LoRA**: Zero out the corresponding rows of the $A$ matrix or columns of the $B$ matrix.
-    - **Recovery**: Standard SFT with learning rate 1e-5 for 5 epochs using ~200 clean samples.
+$$\Delta_i = \Delta\theta_i^{\text{bd}} - \Delta\theta_i^{\text{clean}}$$
+
+This subtraction cancels out "general fine-tuning drift" and the "original backdoor in the suspicious model," leaving $\Delta_i$ to reflect the directional changes of the **newly injected backdoor**. Each neuron index $j$ is then scored:
+
+$$s_j = \frac{1}{N}\sum_i \|\Delta_{i,j}\|_2 + \lambda \frac{2}{N(N-1)}\sum_{i<\ell} \max\{0, \cos(\Delta_{i,j}, \Delta_{\ell,j})\}$$
+
+The first term is the average norm across variants, measuring how much a neuron was "modified" (poisoning intensity). The second term is the mean pairwise cosine similarity (clamped at zero), measuring how **consistent** the modification direction is across variants. A true backdoor neuron should show significant modification and directional consistency. Finally, a threshold is used to extract the backdoor signature:
+
+$$\mathbb{S} = \{j: s_j \geq \tau\}$$
+
+This set of indices is deemed the "backdoor carrier."
+
+**3. Purification: Reset signature neurons + lightweight repair with 200 samples**
+
+Purification involves clearing the parameters of these suspicious neurons and restoring model capabilities. For full-parameter models, the `gate_proj`/`up_proj` parameters of marked neurons in the MLP are reinitialized. For LoRA models, the corresponding rows in matrix A or columns in matrix B are zeroed. Since purification might damage normal capabilities, a lightweight recovery is performed using ~200 clean samples at a standard learning rate of $10^{-5}$ for 5 epochs. Crucially, a **mild learning rate** is used rather than the aggressive rates typical of previous defenses, as the backdoor has been structurally removed.
 
 ### Loss & Training
-- Signature extraction requires no training — it is purely analytical.
-- The recovery stage uses standard SFT loss with a moderate learning rate (no aggressive large learning rate).
-- $N = 6$ variants is the default (experiments confirm diminishing returns beyond $N \geq 5$–$6$).
+- The signature extraction phase involves no training loss; it is purely based on scoring and thresholding.
+- The recovery phase uses standard SFT loss with a mild learning rate ($10^{-5}$, 5 epochs, ~200 clean samples).
+- The default number of variants is $N=6$; diminishing returns are observed beyond $N \geq 5\text{-}6$.
 
 ## Key Experimental Results
 
-### Main Results: ASR Reduction (lower is better)
+### Main Results: ASR Reduction (Lower is Better)
 
-| Attack / Task | No Defense | Fine-tuning | Pruning | Quantization | CROW | Fine-Pruning | **Ours** |
-|---|---|---|---|---|---|---|---|
-| LLaMA-7B Sentiment Manipulation (Avg) | 28.16% | 29.96% | 13.78% | 16.36% | 8.66% | 10.94% | **0.91%** |
-| LLaMA-13B Sentiment Manipulation (Avg) | 52.37% | 52.18% | 44.11% | 42.93% | 24.47% | 17.87% | **3.49%** |
+| Attack/Task | No Defense | Fine-tuning | Pruning | Quantization | CROW | Fine-Pruning | **Ours** |
+|-----------|-------|------|------|------|------|-------------|---------|
+| LLaMA-7B Sentiment (Avg) | 28.16% | 29.96% | 13.78% | 16.36% | 8.66% | 10.94% | **0.91%** |
+| LLaMA-13B Sentiment (Avg) | 52.37% | 52.18% | 44.11% | 42.93% | 24.47% | 17.87% | **3.49%** |
 | LLaMA-7B Targeted Refusal (Avg) | 82.01% | 82.66% | 65.81% | — | — | 65.36% | **10.76%** |
 | LLaMA-13B Targeted Refusal (Avg) | 84.75% | 87.82% | 75.16% | — | — | 82.80% | **12.94%** |
 
-### Ablation Study: Effect of Number of Variants $N$
+### Ablation Study: Impact of Variant Number N
 
-| $N$ | BadNets-7B Refusal Task ASR |
-|---|---|
+| N | BadNets-7B Refusal ASR |
+|---|----------------------|
 | 1 | 40.91% |
-| 3 | ~20–25% |
+| 3 | ~20-25% |
 | 6 | **10.66%** |
 | 8+ | Marginal improvement |
 
-### Ablation Study: Scoring Component Contribution
+### Ablation Study: Score Components
 
 | Method | ASR | Utility |
-|---|---|---|
-| Norm term only | 10.26% | 58.86% (false positives → utility loss) |
-| Alignment term only | 77.04% | 59.88% (high ASR) |
+|------|-----|---------|
+| Norm only | 10.26% | 58.86% (False positives → Utility loss) |
+| Alignment only | 77.04% | 59.88% (High ASR) |
 | **Combined (Ours)** | **10.66%** | **59.42%** |
 
 ### Key Findings
-- **Backdoors are redundantly encoded in MLP layers**: This is the central mechanistic finding; attention layers only amplify signals and do not encode associations.
-- **Generalizes across 5 attack types**: Effective against BadNets, CTBA, MTBA, Sleeper, and VPI.
-- **Negligible utility loss**: Purified models achieve near-clean-model performance on 10 benchmarks and MT-Bench.
-- **~200 samples suffice for recovery**: The lightweight fine-tuning stage has minimal data requirements.
-- **Effective for LoRA models**: Full parameter access is not required.
+- **Backdoors are redundantly encoded in MLPs**: Mentioned as a critical discovery; attention only amplifies the signal.
+- **Universality across 5 attack types**: Effective against BadNets, CTBA, MTBA, Sleeper, and VPI.
+- **Minimal utility loss**: Purified models approach clean model performance on 10 benchmarks and MT-Bench.
+- **200 samples suffice for recovery**: Extremely low data requirement for the repair phase.
+- **Effective for LoRA**: Does not require full-parameter access.
 
 ## Highlights & Insights
-- **Elegance of the immunity analogy**: Constructing multiple "backdoor variants" is analogous to inoculating with different viral strains; parameter changes that are consistent across variants serve as the "antigen." Differential updates cleverly cancel generic fine-tuning drift and interference from pre-existing backdoors.
-- **Mechanistic finding on MLP backdoor encoding**: This overturns prior assumptions about attention layers and early layers, providing a new structural understanding for backdoor defense. The finding is complementary to the neuron-level analysis in SSAH.
-- **Fully assumption-free**: No trigger knowledge, no clean reference model, and no aggressive hyperparameters are required — making the method genuinely practical in real-world deployment scenarios.
+- **Elegant Immune Analogy**: Constructing multiple "backdoor variants" is akin to vaccination with different viral strains; identifying consistent parameter changes reveals the "antigen." Differential updates effectively eliminate noise from general drift.
+- **MLP Mechanism Discovery**: Overturns preconceived notions about attention or early layers, providing a new structural understanding of backdoor defense.
+- **Zero Prior Assumptions**: Neither the trigger, a clean reference model, nor aggressive hyperparameters are needed, making the method highly practical for real-world deployment.
 
 ## Limitations & Future Work
-- **Constructing $N$ variants incurs computational overhead** that scales linearly with $N$ (though $N = 6$ is sufficient in practice).
-- **Assumes access to a small number of clean samples** (~200) for the recovery stage.
-- **For highly stealthy backdoors** (e.g., those encoded entirely within attention layers), the mechanistic analysis may need to be extended.
-- **Future direction**: Integration with SSAH's SCU/RU classification — first use SSAH to identify safety-critical units, then apply the proposed method to examine whether these units are backdoor-contaminated.
+- **Computational Overhead**: Cost scales linearly with $N$ (though $N=6$ is sufficient).
+- **Clean Data Requirement**: Assumes access to a small amount of clean data (~200 samples) for recovery.
+- **Attention-Only Backdoors**: For extremely stealthy backdoors potentially encoded entirely in attention, the mechanistic analysis may need extension.
+- **Future Directions**: Could integrate with neuron-level analysis (like SSAH) to first identify safety-critical units and then check for backdoor contamination.
 
 ## Related Work & Insights
-- **vs. CROW**: CROW is the previous SOTA backdoor defense, but still exhibits relatively high ASR (8–24%) and greater utility degradation; the proposed method reduces ASR to <11% with superior utility preservation.
-- **vs. Fine-Pruning**: Fine-Pruning applies Wanda-based weight pruning, which is limited in effectiveness for generative LLMs (65–82% ASR); the immunity-based signature strategy is substantially more precise.
-- **vs. Standard Fine-tuning**: Standard fine-tuning is nearly ineffective against backdoors (ASR unchanged or even increases), demonstrating that backdoor associations are highly stable under conventional training.
+- **vs CROW**: CROW was the previous SOTA but maintains higher ASR (8-24%) and causes more utility loss; Ours reduces ASR to <11% with better utility.
+- **vs Fine-Pruning**: Fine-Pruning based on Wanda pruning has limited effect on generative LLMs (65-82% ASR); the immune signature strategy is far more precise.
+- **vs Standard Fine-tuning**: Standard fine-tuning is almost ineffective against backdoors, indicating the stability of backdoor associations during normal training.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐⭐ Dual innovation: immunity-analogy signature extraction + MLP mechanistic finding.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐⭐ 5 attacks × 3 tasks × multiple model scales × 5 baselines, with comprehensive ablations.
-- **Writing Quality**: ⭐⭐⭐⭐ Mechanistic analysis is well-organized; method motivation is natural and well-grounded.
-- **Value**: ⭐⭐⭐⭐⭐ The first assumption-free backdoor purification method for generative LLMs — practical and highly effective.
+- Novelty: ⭐⭐⭐⭐⭐ (Immune signature extraction + MLP mechanism discovery)
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ (5 attacks × 3 tasks × multiple models)
+- Writing Quality: ⭐⭐⭐⭐ (Clear mechanistic analysis and logical motivation)
+- Value: ⭐⭐⭐⭐⭐ (First practical, high-efficiency, zero-prior backdoor purification for generative LLMs)
 
 <!-- RELATED:START -->
 
@@ -145,11 +161,11 @@ A three-stage pipeline: (1) **Mechanistic Analysis** — ablation experiments re
 
 ## Related Papers
 
-- [\[ICLR 2026\] Inference-Time Backdoors via Hidden Instructions in LLM Chat Templates](inference-time_backdoors_via_hidden_instructions_in_llm_chat_templates.md)
-- [\[AAAI 2026\] Learning from the Undesirable: Robust Adaptation of Language Models without Forgetting](../../AAAI2026/llm_safety/learning_from_the_undesirable_robust_adaptation_of_language_models_without_forge.md)
 - [\[ICLR 2026\] Unmasking Backdoors: An Explainable Defense via Gradient-Attention Anomaly Scoring for Pre-trained Language Models](unmasking_backdoors_an_explainable_defense_via_gradient-attention_anomaly_scorin.md)
-- [\[ICML 2026\] Federated Variational Preference Alignment with Gumbel-Softmax Prior for Personalized User Preferences](../../ICML2026/llm_safety/federated_variational_preference_alignment_with_gumbel-softmax_prior_for_persona.md)
-- [\[CVPR 2026\] Phantasia: Context-Adaptive Backdoors in Vision Language Models](../../CVPR2026/llm_safety/phantasia_context-adaptive_backdoors_in_vision_language_models.md)
+- [\[ACL 2025\] CAVGAN: Unifying Jailbreak and Defense of LLMs via Generative Adversarial Attacks](../../ACL2025/llm_safety/cavgan_unifying_jailbreak_and_defense_of_llms_via_generative_adversarial_attacks.md)
+- [\[AAAI 2026\] Learning from the Undesirable: Robust Adaptation of Language Models without Forgetting](../../AAAI2026/llm_safety/learning_from_the_undesirable_robust_adaptation_of_language_models_without_forge.md)
+- [\[ICLR 2026\] Knowledge Externalization: Reversible Unlearning and Modular Retrieval in Multimodal Large Language Models](knowledge_externalization_reversible_unlearning_and_modular_retrieval_in_multimo.md)
+- [\[ICLR 2026\] Fine-Grained Privacy Extraction from Retrieval-Augmented Generation Systems by Exploiting Knowledge Asymmetry](fine-grained_privacy_extraction_from_retrieval-augmented_generation_systems_by_e.md)
 
 </div>
 

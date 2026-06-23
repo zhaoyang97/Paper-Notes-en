@@ -2,95 +2,91 @@
 title: >-
   [Paper Note] PMark: Towards Robust and Distortion-free Semantic-level Watermarking with Channel Constraints
 description: >-
-  [ICLR 2026][LLM Safety][LLM watermarking] PMark is a theoretically distortion-free and paraphrase-robust semantic-level watermarking method for LLMs. It employs cascaded binary filtering over candidate sentences using mu…
+  [ICLR 2026][LLM Safety][Paper Note] The authors propose PMark, a theoretically distortion-free and paraphrase-robust semantic-level watermarking method for LLMs. By performing cascaded binary filtering on candidate sentences through multi-channel orthogonal pivot vectors combined with median sampling, it ensures zero distortion while increasing watermark
 tags:
-  - "ICLR 2026"
-  - "LLM Safety"
-  - "LLM watermarking"
-  - "semantic-level watermarking"
-  - "distortion-free"
-  - "multi-channel constraints"
-  - "robustness theory"
+  - ICLR 2026
+  - LLM Safety
 date: 2026-05-08
-content_hash: dbe209b92473e040
+content_hash: 0d07fe743c28b888
 ---
-
 # PMark: Towards Robust and Distortion-free Semantic-level Watermarking with Channel Constraints
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2509.21057](https://arxiv.org/abs/2509.21057)  
 **Code**: Coming soon  
-**Area**: AI Safety / Watermarking
-**Keywords**: LLM watermarking, semantic-level watermarking, distortion-free, multi-channel constraints, robustness theory
+**Area**: AI Safety / Watermarking  
+**Keywords**: LLM Watermarking, Semantic-level Watermarking, Distortion-free, Multi-channel Constraints, Robustness Theory
 
 ## TL;DR
-PMark is a theoretically distortion-free and paraphrase-robust semantic-level watermarking method for LLMs. It employs cascaded binary filtering over candidate sentences using multiple orthogonal pivot vectors, with median-based sampling to guarantee distortion-freeness. Multi-channel design increases watermark evidence density and enhances robustness. Under paraphrase attacks, TP@FP1% reaches 95%+, outperforming prior SWM methods by 14.8%.
+The authors propose PMark, a theoretically distortion-free and paraphrase-robust semantic-level watermarking method for LLMs. By performing cascaded binary filtering on candidate sentences through multi-channel orthogonal pivot vectors combined with median sampling, it ensures zero distortion while increasing watermark evidence density for enhanced robustness. It achieves a TP@FP1% of 95%+ under paraphrase attacks, a 14.8% improvement over previous SWM methods.
 
 ## Background & Motivation
 
-**Background**: LLM watermarking falls into two categories: token-level (e.g., Green-Red watermarking) and semantic-level (SWM). SWM embeds watermark signals in the sentence semantic space to improve robustness against paraphrase attacks.
+**Background**: LLM watermarking is categorized into token-level (e.g., Green-Red watermarks) and semantic-level (SWM). SWM reinforces robustness against paraphrase attacks by embedding signals within the semantic space of sentences.
 
 **Limitations of Prior Work**:
-   - Existing SWM methods (SemStamp/k-SemStamp) rely on rejection sampling, introducing distributional distortion.
-   - Single-channel watermarks have sparse evidence density, making them easy to break under paraphrase attacks.
-   - No rigorous theoretical framework exists for analyzing watermark properties (distortion-free conditions, robustness bounds).
+   - Existing SWM methods (SemStamp/k-SemStamp) utilize rejection sampling, which introduces distributional distortion.
+   - Sparse evidence density in single-channel watermarks allows detection to be easily bypassed by paraphrasing.
+   - There is a lack of a rigorous theoretical framework to analyze watermark properties (conditions for zero distortion, robustness bounds).
 
-**Key Challenge**: A fundamental trade-off between distortion-freeness (preserving generation quality) and robustness (resisting paraphrase attacks).
+**Key Challenge**: The trade-off between distortion-free properties (maintaining generation quality) and robustness (resisting paraphrase attacks).
 
-**Goal**: Simultaneously achieve theoretical distortion-free guarantees and strong practical robustness against paraphrase attacks.
+**Goal**: Simultaneously achieve a theoretical distortion-free guarantee and strong practical robustness against paraphrase attacks.
 
-**Key Insight**: Multi-channel orthogonal pivot vectors — each sentence embeds multiple independent watermark bits, multiplying evidence density.
+**Key Insight**: Using multi-channel orthogonal pivot vectors equals embedding multiple independent watermark bits per sentence, which multiplies the evidence density.
 
-**Core Idea**: Distortion-free median sampling + cascaded multi-orthogonal-channel filtering = high-density watermark evidence → robustness.
+**Core Idea**: Distortion-free median sampling + multi-channel cascaded filtering = high-density watermark evidence $\rightarrow$ robustness.
 
 ## Method
 
 ### Overall Architecture
-During generation: for each sentence to be generated, sample $N$ candidates → apply $b$ orthogonal pivot vectors to successively bisect the candidate set → uniformly sample from the final subset. During detection: re-sample $N$ candidates per sentence to reconstruct the median → apply a soft z-test for statistical hypothesis testing. The offline variant simplifies to a zero-median prior, eliminating the need for re-sampling at detection time.
+PMark seeks to reconcile two typically conflicting objectives in watermarking: maintaining identical generation quality (distortion-free) and robustness against paraphrase attacks. It operates in the semantic space of sentences rather than at the token level. During sentence generation, the LLM first samples $N$ candidate sentences. A proxy function (mapping each candidate to a cosine similarity scalar with a pivot vector) works with $b$ mutually orthogonal pivot vectors to perform cascaded binary filtering on the candidates. Each pivot bisects the candidates at the median and retains the half specified by the secret key. A final output is uniformly sampled from the remaining candidates. Detection reverses this: for each sentence, $N$ candidates are resampled to reconstruct the filtering boundary (median), followed by a soft z-test for statistical verification. The offline version avoids resampling by assuming zero as the median prior.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    IN["Input Context<br/>LLM samples N candidate sentences"] --> PROXY["Proxy Function<br/>Map each candidate to scalar<br/>(Cosine similarity with pivot)"]
+    PROXY --> MULTI["Multi-channel Cascaded Filtering<br/>b orthogonal pivots per channel<br/>Binary split by median · Keep half via key<br/>Candidates shrink to N/2^b"]
+    MULTI --> SINGLE["Single-channel Distortion-free Sampling<br/>Uniform sampling from remaining candidates<br/>Probability of selection remains 1/N"]
+    SINGLE --> OUT["Output Watermarked Sentence<br/>Carries b independent key bits"]
+    OUT --> DET{"Detection<br/>Reconstruct b median boundaries"}
+    DET -->|"Online: Resample N candidates for estimation"| Z["Soft z-test<br/>Statistical testing of watermark signal"]
+    DET -->|"Offline: Median ≈ 0 prior · No resampling"| Z
+    Z --> VERDICT["Determine if watermarked"]
+```
 
 ### Key Designs
 
-1. **Proxy Function Theoretical Framework**:
+**1. Proxy Function Theoretical Framework: Proving "Distortion-free" Semantic Watermarking**
 
-    - Function: Unifies the theoretical analysis of semantic-level watermarking.
-    - Core Theorem: The watermarked distribution is distortion-free if and only if $q(u) = 1/M$ (i.e., the proxy value distribution is uniform), which is difficult to satisfy in practice.
-    - Design Motivation: Provides a theoretical tool for analyzing the sources of distortion in existing methods.
+Prior to PMark, semantic watermarking lacked a unified theoretical tool to analyze distortion. This paper defines a proxy function that maps each candidate sentence $s$ to a scalar (e.g., similarity to a pivot), then discretizes candidates into $M$ buckets to obtain the distribution $q(u)$. It rigorously proves that the watermark distribution is distortion-free relative to the original distribution if and only if $q(u) = 1/M$, meaning the proxy values are uniformly distributed across buckets. While hard to satisfy naturally, this identifies the source of distortion in rejection-sampling methods like SemStamp/k-SemStamp and serves as a benchmark for distortion-free samplers.
 
-2. **Single-Channel Distortion-Free Sampling**:
+**2. Single-channel Distortion-free Sampling: Constant Selection Probability via Median Bisection**
 
-    - Function: Ensures that single-channel watermark sampling introduces no distributional shift.
-    - Mechanism: Given pivot $v$, compute cosine similarities $\langle v, \mathcal{T}(s) \rangle$ for $N$ candidates and find the median to split them into two halves. A key bit selects one half, from which a candidate is sampled uniformly. Since each candidate has selection probability $1/N$, it follows that $P_M^w(s|\pi) = P_M(s|\pi)$.
-    - Theoretical Guarantee (Theorem 3): Strictly distortion-free.
+To ensure no distribution shift, given a pivot vector $v$, the cosine similarity $\langle v, \mathcal{T}(s) \rangle$ is calculated for $N$ candidates. The candidates are split into high and low similarity halves based on the median. The secret key bit determines which half to retain, and a candidate is sampled uniformly from that half. Crucially, regardless of the key bit, the final probability of any candidate being selected is exactly $1/N$. Thus, $P_M^w(s|\pi) = P_M(s|\pi)$, meaning the watermark and original distributions are pointwise equal. This provides the rigorous distortion-free guarantee of Theorem 3.
 
-3. **Multi-Channel Cascaded Filtering (Online PMark)**:
+**3. Multi-channel Cascaded Filtering (Online PMark): b Bits of Evidence per Sentence**
 
-    - Function: Uses $b$ orthogonal pivot vectors to multiply evidence density by a factor of $b$.
-    - Mechanism: $b$ orthogonal pivots are generated via QR decomposition. For $N$ candidates, median-based bisection is applied sequentially at each channel, retaining one half per channel (determined by a key bit): $V^{(0)} \to V^{(1)} \to \cdots \to V^{(b)}$. The final candidate is sampled uniformly from $V^{(b)}$ (containing $N/2^b$ candidates).
-    - Robustness Theory (Theorem 7): If attacks corrupt per-channel evidence with probability $\epsilon$, the SNR satisfies $\text{SNR} \geq \frac{(1-2\epsilon)\sqrt{bT}}{2\sqrt{\epsilon(1-\epsilon)}}$, growing with channel count $b$ and sentence count $T$.
-    - Design Motivation: Single-channel embeds only 1 bit of evidence per sentence; multi-channel embeds $b$ bits per sentence, multiplying evidence density.
+While single-channel is distortion-free, it only embeds 1 bit of evidence per sentence, which paraphrasing can easily erase. PMark stacks channels by generating $b$ orthogonal pivot vectors via QR decomposition properly. For $N$ candidates, it performs median bisection channel-by-channel. The candidate set shrinks sequentially $V^{(0)} \to V^{(1)} \to \cdots \to V^{(b)}$, finally sampling from the $N/2^b$ remaining candidates. Since pivots are orthogonal, the $b$ bits are independent, multiplying the evidence density. Theorem 7 shows that if an attack destroys evidence in each channel with probability $\epsilon$, the Signal-to-Noise Ratio (SNR) is:
 
-4. **Offline PMark (Simplified Variant)**:
+$$\text{SNR} \geq \frac{(1-2\epsilon)\sqrt{bT}}{2\sqrt{\epsilon(1-\epsilon)}}$$
 
-    - Function: An efficient variant that requires no re-sampling at detection time.
-    - Mechanism: In high-dimensional space, random vectors are nearly orthogonal and proxy function values concentrate around $[-\epsilon, \epsilon]$, so the median is close to zero. Zero is used directly as the prior median, eliminating re-sampling overhead at detection.
-    - Distortion Bound (Theorem 8): $\delta_{TV} \leq \epsilon$, with $\epsilon \leq 0.08$ in practice.
+SNR grows with the number of channels $b$ and sentences $T$, making the watermark much harder to remove.
 
-### Loss & Training
-- No training required — purely a sampling-based algorithm.
-- Generation requires $N$ samples per sentence ($N = 16$–$64$); the Online variant requires re-sampling at detection time to estimate the median.
+**4. Offline PMark: Utilizing Quasi-orthogonality to Eliminate Resampling**
 
-## Key Experimental Results
+Online detection requires resampling $N$ candidates to reconstruct the median, which is computationally expensive. Offline PMark leverages the geometric fact that random vectors in high-dimensional semantic space are nearly orthogonal, causing proxy values to concentrate in a narrow range around zero. By using zero as a fixed prior median, resampling is avoided. This introduces a slight distortion, but Theorem 8 bounds the total variation distance by $\delta_{TV} \leq \epsilon$. In practice, $\epsilon \leq 0.08$, making it negligible.
 
-### Main Results: TP@FP1% Under Paraphrase Attack
+### Main Results: TP@FP1% under Paraphrase Attack
 
 | Method | No Attack | Doc-P (GPT Paraphrase) | Gain |
-|--------|-----------|------------------------|------|
+|------|--------|----------------|------|
 | SemStamp (C4/Mistral) | ~99% | 73.5% | — |
 | k-SemStamp | 100% | ~80% | — |
 | **PMark Online** | **100%** | **97.8%** | **+24.3%** |
 | **PMark Offline** | 99.7% | 92.6% | +19.1% |
 
-### Ablation Study: Channel Count $b$ and Sample Count $N$
+### Ablation Study: Channels (b) and Samples (N)
 
 | N\b | b=1 | b=2 | b=3 | b=4 |
 |-----|-----|-----|-----|-----|
@@ -99,31 +95,31 @@ During generation: for each sentence to be generated, sample $N$ candidates → 
 | N=64 | 99.0 | 100.0 | 100.0 | 100.0 |
 
 ### Key Findings
-- **Multi-channel is the key**: Detection rate jumps from 81% to 97% when increasing from $b=1$ to $b=2$.
-- **Text quality improves rather than degrades**: PMark achieves lower PPL (4.37) than k-SemStamp (~5.0), as distortion-free sampling introduces no distributional shift.
-- **Robust to GPT-level paraphrase**: Even under heavy GPT-based paraphrasing (Doc-P), TP@FP1% remains above 95%.
+- **Multi-channel is crucial**: Moving from $b=1$ to $b=2$ jumps detection rates from 81% to 97%.
+- **No drop in text quality**: PMark's PPL (4.37) is lower than k-SemStamp (~5.0) because distortion-free sampling avoids distribution shifts.
+- **Robust to GPT-level paraphrasing**: Even under heavy paraphrasing (Doc-P), TP@FP1% remains above 95%.
 
 ## Highlights & Insights
-- **Elegant unification of theory and practice**: The paper rigorously proves distortion-free conditions and a robustness bound where SNR grows as $\sqrt{bT}$ — a rare contribution in the watermarking literature. Theory directly drives method design.
-- **Core intuition of multi-channel evidence density**: Analogous to redundancy in error-correcting codes — embedding multiple independent bits per sentence allows overall signal recovery even when some bits are corrupted by attacks.
-- **The offline simplification is remarkably clever**: It exploits the near-orthogonality of high-dimensional random vectors to approximate the median as zero, eliminating re-sampling overhead at detection time.
+- **Unity of Theory and Practice**: The paper provides a rare combination of a rigorous distortion-free proof and a robustness bound where SNR grows with $\sqrt{bT}$.
+- **Redundancy Intuition**: Similar to error-correcting codes, embedding multiple independent bits per sentence ensures that even if some channels are corrupted, the overall signal is recoverable.
+- **Clever Offline Simplification**: Utilizing high-dimensional "quasi-orthogonality" to approximate the median as zero is a smart way to eliminate detection overhead.
 
 ## Limitations & Future Work
-- **Sampling overhead**: Each sentence requires $N$ samples ($N = 16$–$64$), which introduces latency for real-time applications.
-- **Dependency on semantic encoder**: A fixed encoder (e.g., RoBERTa) is used; encoder quality directly affects watermarking performance.
-- **Sentence-level embedding only**: Reliable detection requires texts of at least ~10 sentences; short texts are not well supported.
-- **Future directions**: A hybrid scheme combining token-level and semantic-level watermarking — token-level for short texts, PMark for long texts — is a promising direction.
+- **Sampling Overhead**: Generating each sentence requires $N$ samples ($N=16\text{--}64$), which impacts latency for real-time applications.
+- **Semantic Encoder Dependence**: Requires a fixed encoder (e.g., RoBERTa); encoder quality directly affects performance.
+- **Sentence-level Constraints**: Reliable detection is difficult for very short texts ($< 10$ sentences).
+- **Future Direction**: Hybrid schemes combining token-level watermarks for short text and PMark for long text.
 
 ## Related Work & Insights
-- **vs. SemStamp/k-SemStamp**: These methods introduce distortion via rejection sampling; PMark achieves strict distortion-freeness via median-based sampling, with a 14.8% robustness improvement.
-- **vs. Green-Red token-level watermarking**: Token-level methods are fragile under paraphrasing (each token substitution represents information loss); PMark embeds watermarks at the semantic level, providing robustness to synonym-level paraphrasing.
-- **vs. UPV (best token-level method)**: PMark improves paraphrase robustness by 44.6%.
+- **vs. SemStamp/k-SemStamp**: These use rejection sampling and introduce distortion, whereas PMark uses median sampling for zero distortion and improves robustness by 14.8%.
+- **vs. Green-Red Token-level**: Token-level is fragile to paraphrasing (each token replacement loses information); PMark embeds at the semantic level and is robust to synonymous changes.
+- **vs. UPV (Top Token-level)**: PMark increases paraphrase robustness by 44.6%.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Both the theoretical framework and the multi-channel distortion-free design are significant contributions.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Covers multiple models, datasets, and attack types, though experiments at larger LLM scales are lacking.
-- Writing Quality: ⭐⭐⭐⭐⭐ Theoretical derivations are rigorous and method descriptions are clear.
-- Value: ⭐⭐⭐⭐⭐ Addresses two core challenges in semantic watermarking (distortion and robustness) with high theoretical and practical value.
+- Novelty: ⭐⭐⭐⭐⭐ (Theory framework + multi-channel distortion-free design)
+- Experimental Thoroughness: ⭐⭐⭐⭐ (Multiple models and attacks, but lacks massive LLM scale tests)
+- Writing Quality: ⭐⭐⭐⭐⭐ (Rigorous theory, clear methodology)
+- Value: ⭐⭐⭐⭐⭐ (Addresses two core SWM challenges: distortion and robustness)
 
 <!-- RELATED:START -->
 
@@ -131,11 +127,11 @@ During generation: for each sentence to be generated, sample $N$ candidates → 
 
 ## Related Papers
 
+- [\[ICLR 2026\] GraphShield: Graph-Theoretic Modeling of Network-Level Dynamics for Robust Jailbreak Detection](graphshield_graph-theoretic_modeling_of_network-level_dynamics_for_robust_jailbr.md)
 - [\[ACL 2026\] SWAN: Semantic Watermarking with Abstract Meaning Representation](../../ACL2026/llm_safety/swan_semantic_watermarking_with_abstract_meaning_representation.md)
-- [\[ICML 2026\] AliMark: Enhancing Robustness of Sentence-Level Watermarking Against Text Paraphrasing](../../ICML2026/llm_safety/alimark_enhancing_robustness_of_sentence-level_watermarking_against_text_paraphr.md)
+- [\[ICLR 2026\] Watermarking Diffusion Language Models](watermarking_diffusion_language_models.md)
 - [\[ICLR 2026\] No Caption, No Problem: Caption-Free Membership Inference via Model-Fitted Embeddings](no_caption_no_problem_caption-free_membership_inference_via_model-fitted_embeddi.md)
-- [\[ICLR 2026\] Erase or Hide? Suppressing Spurious Unlearning Neurons for Robust Unlearning](erase_or_hide_suppressing_spurious_unlearning_neurons_for_robust_unlearning.md)
-- [\[ACL 2026\] SSG: Logit-Balanced Vocabulary Partitioning for LLM Watermarking](../../ACL2026/llm_safety/ssg_logit-balanced_vocabulary_partitioning_for_llm_watermarking.md)
+- [\[ICLR 2026\] Robust LLM Unlearning via Post Judgment and Multi-Round Thinking](robust_llm_unlearning_via_post_judgment_and_multi-round_thinking.md)
 
 </div>
 

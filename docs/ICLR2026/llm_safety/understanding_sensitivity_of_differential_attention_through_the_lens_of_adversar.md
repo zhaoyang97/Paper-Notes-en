@@ -2,131 +2,133 @@
 title: >-
   [Paper Note] Understanding Sensitivity of Differential Attention through the Lens of Adversarial Robustness
 description: >-
-  [ICLR 2026][LLM Safety][Differential Attention] This work is the first to analyze the Differential Attention (DA) mechanism from an adversarial robustness perspective. It reveals that the subtraction structure in DA…
+  [ICLR 2026][LLM Safety][Differential Attention] This work provides the first analysis of the Differential Attention (DA) mechanism from an adversarial robustness perspective, revealing that its subtractive structure amplifies sensitivity to adversarial perturbations through negative gradient alignment while suppressing noise. It identifies the "Fragile Principle"—DA
 tags:
-  - "ICLR 2026"
-  - "LLM Safety"
-  - "Differential Attention"
-  - "adversarial robustness"
-  - "gradient alignment"
-  - "Lipschitz constant"
-  - "attention mechanism"
+  - ICLR 2026
+  - LLM Safety
+  - Differential Attention
+  - Attention
 date: 2026-05-08
-content_hash: a26dad58998e68cb
+content_hash: 7c6382f1acdfd5c5
 ---
-
 # Understanding Sensitivity of Differential Attention through the Lens of Adversarial Robustness
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2510.00517](https://arxiv.org/abs/2510.00517)  
 **Code**: None  
-**Area**: LLM Security
-**Keywords**: Differential Attention, adversarial robustness, gradient alignment, Lipschitz constant, attention mechanism
+**Area**: LLM Security  
+**Keywords**: Differential Attention, Adversarial Robustness, Gradient Alignment, Lipschitz Constant, Attention Mechanism
 
 ## TL;DR
-This work is the first to analyze the Differential Attention (DA) mechanism from an adversarial robustness perspective. It reveals that the subtraction structure in DA, while suppressing noise, amplifies sensitivity to adversarial perturbations through negative gradient alignment. The study establishes a "Fragility Principle"—DA improves discriminability on clean samples but becomes more vulnerable under adversarial attacks—and identifies a depth-dependent robustness crossover effect.
+This work provides the first analysis of the Differential Attention (DA) mechanism from an adversarial robustness perspective, revealing that its subtractive structure amplifies sensitivity to adversarial perturbations through negative gradient alignment while suppressing noise. It identifies the "Fragile Principle"—DA improves discriminative power on clean samples but is more fragile under adversarial attacks—and discovers depth-dependent robustness crossover effects.
 
 ## Background & Motivation
 
-**Background**: The DA mechanism introduced in Differential Transformer suppresses redundant or noisy information via the subtraction of two attention maps, $A_1 - \lambda A_2$, effectively reducing contextual hallucinations. This mechanism has since been adopted by several follow-up works. Its "noise cancellation" property makes DA particularly attractive for safety-critical applications such as autonomous driving, medical diagnosis, and legal document analysis.
+**Background**: The DA mechanism proposed in Differential Transformer suppresses redundant or noisy information through the subtraction of two attention maps $A_1 - \lambda A_2$, effectively reducing context hallucinations. It has been adopted by various subsequent works. Due to its "noise cancellation" property, DA is particularly attractive for safety-critical applications such as autonomous driving, medical diagnostics, and legal document analysis.
 
-**Limitations of Prior Work**: Intuitively, the subtraction structure in DA should improve robustness to perturbations by attenuating noise signals. However, this intuition has never been rigorously verified. Existing studies on attention robustness focus on standard attention, leaving the robustness of DA entirely unexplored.
+**Limitations of Prior Work**: Intuitively, the subtractive structure of DA should enhance robustness to perturbations by attenuating noise signals. However, this intuition has never been rigorously verified. Existing attention robustness research focuses on standard attention, leaving the robustness of DA entirely unexplored.
 
-**Key Challenge**: For the subtraction $A_1 - \lambda A_2$ to be effective, the two branches must have opposing gradient directions in the same regions (one enhancing, one suppressing). This "negative gradient alignment," however, is precisely what amplifies sensitivity to input perturbations—the very mechanism that suppresses noise becomes the source of adversarial vulnerability.
+**Key Challenge**: For the subtraction $A_1 - \lambda A_2$ in DA to be effective, the two branches must have opposite gradient directions in the same region (one enhancing, one suppressing). This "negative gradient alignment" precisely amplifies the sensitivity to input perturbations—the very mechanism that suppresses noise becomes the source of adversarial fragility.
 
-**Goal**: What is the behavior of DA's subtraction structure under adversarial perturbations? Is it more or less robust than standard attention? How does depth stacking affect robustness?
+**Goal**: What is the behavior of the DA subtractive structure under adversarial perturbations? Is it more robust or more fragile compared to standard attention? How does deep stacking affect robustness?
 
-**Key Insight**: The analysis proceeds from a theoretical framework of gradient analysis and Lipschitz constants to establish mathematical proofs of sensitivity amplification in DA, followed by systematic empirical validation on ViT/DiffViT and CLIP/DiffCLIP.
+**Key Insight**: Starting from a theoretical framework of gradient analysis and Lipschitz constants, the authors establish mathematical proofs for the amplification of DA sensitivity, subsequently verified through systematic experiments on ViT/DiffViT and CLIP/DiffCLIP.
 
-**Core Idea**: DA's noise cancellation mechanism is a double-edged sword—while suppressing redundant attention via negative gradient alignment, it structurally amplifies sensitivity to adversarial perturbations.
+**Core Idea**: The noise cancellation mechanism of DA is a double-edged sword—while it suppresses redundant attention through negative gradient alignment, it structurally amplifies sensitivity to adversarial perturbations.
 
 ## Method
 
 ### Overall Architecture
-The work combines theoretical analysis with empirical validation. The theoretical component establishes the "Fragility Principle" of DA—proving that the subtraction structure amplifies gradient norms and local Lipschitz constants under negative gradient alignment. The empirical component validates attack success rates, gradient alignment frequencies, and Lipschitz estimates on ViT/DiffViT (controlled experiments trained from scratch) and CLIP/DiffCLIP (pretrained models).
+This paper addresses a counter-intuitive question: since Differential Attention (DA) uses $A_1 - \lambda A_2$ to cancel noise, it should theoretically be more robust, but is it actually more stable or more fragile under adversarial attack? The authors decompose this via a two-stage approach: "theory first, followed by experimental verification." On the theoretical side, gradient analysis proves that this subtractive structure amplifies sensitivity to input under specific conditions, leading to the "Fragile Principle," which is then extended to local Lipschitz constants and the cumulative effects of multi-layer stacking. On the experimental side, two pipelines are implemented: a controlled comparison using ViT/DiffViT trained from scratch, and an evaluation of pre-trained CLIP/DiffCLIP models, measuring attack success rates, the frequency of negative gradient alignment, and Lipschitz estimates to verify whether the theoretically predicted phenomena occur.
 
 ### Key Designs
 
-1. **Fragility Principle — Gradient Amplification Analysis**:
+**1. Fragile Principle: Subtractive structures amplify sensitivity during negative gradient alignment**
 
-    - Function: Proves that the subtraction structure in DA amplifies sensitivity under negative gradient alignment.
-    - Mechanism: Let $\theta$ denote the angle between the input gradients of $A_1$ and $A_2$. By Lemma 1: $\|\nabla_\xi A_{DA}\|^2 = \|\nabla_\xi A_1\|^2 + \lambda^2 \|\nabla_\xi A_2\|^2 - 2\lambda \|\nabla_\xi A_1\| \|\nabla_\xi A_2\| \cos\theta$. When $\cos\theta < 0$ (negative gradient alignment), the cross term becomes positive, leading to gradient amplification. **Theorem 1** further characterizes the extremes: when $\cos\theta = -1$, $\|\nabla_\xi A_{DA}\| = (1+\lambda\rho)\|\nabla_\xi A_1\|$ (amplification); when $\cos\theta = +1$, $\|\nabla_\xi A_{DA}\| = (1-\lambda\rho)\|\nabla_\xi A_1\|$ (attenuation).
-    - Design Motivation: Negative gradient alignment is not incidental but **functionally necessary** for DA—without opposing gradient directions, the subtraction cannot effectively sharpen attention. Fragility is therefore a structural by-product of DA's design.
+The authors refute the intuition that subtraction attenuates noise and improves robustness. The key lies in observing how the gradient of the DA output with respect to input perturbation $\xi$ is synthesized. Let $\theta$ be the angle between the input gradients of the two branches $A_1$ and $A_2$. Lemma 1 expands the squared gradient norm of DA as:
 
-2. **Relative Sensitivity and Existence of Amplified Perturbations**:
+$$\|\nabla_\xi A_{DA}\|^2 = \|\nabla_\xi A_1\|^2 + \lambda^2 \|\nabla_\xi A_2\|^2 - 2\lambda \|\nabla_\xi A_1\| \|\nabla_\xi A_2\| \cos\theta.$$
 
-    - Function: Establishes a formal comparison of sensitivity between DA and standard attention.
-    - Mechanism: **Theorem 2** gives $\frac{\|\nabla_\xi A_{DA}\|}{\|\nabla_\xi A_{base}\|} = \gamma\sqrt{1+\lambda^2\rho^2 - 2\lambda\rho\cos\theta}$, where $\gamma$ is the ratio of gradient norms between the two branches. **Theorem 3** provides a necessary and sufficient condition for the existence of perturbations under which DA is strictly more sensitive than standard attention: $\cos\theta < \frac{1+\lambda^2\rho^2 - \gamma^{-2}}{2\lambda\rho}$. Since $\rho$ and $\theta$ can be controlled by an adversary, DA exposes a structural vulnerability.
-    - Design Motivation: Lemma 2 further derives an upper bound on the Lipschitz constant, establishing a quantitative relationship between DA's gradient amplification and robustness degradation.
+Note the negative sign before the cross-term: when the gradients of the two branches are in opposite directions, i.e., $\cos\theta < 0$ (negative gradient alignment), the entire cross-term becomes positive, pushing the gradient norm higher rather than lower. Theorem 1 compares two extremes: when $\cos\theta = -1$, $\|\nabla_\xi A_{DA}\| = (1+\lambda\rho)\|\nabla_\xi A_1\|$, amplifying sensitivity; when $\cos\theta = +1$, $\|\nabla_\xi A_{DA}\| = (1-\lambda\rho)\|\nabla_\xi A_1\|$, which corresponds to the intuitive attenuation. Critically, negative gradient alignment is not random noise: for subtraction to sharpen attention, the two branches must provide gradients in opposite directions in the same region to cancel redundancy. Thus, fragility is not an implementation bug but a structural byproduct of the DA design—the same mechanism that makes it more accurate on clean samples becomes a weakness in adversarial settings.
 
-3. **Depth-Dependent Robustness Analysis**:
+**2. Relative Sensitivity and Existence of Amplified Perturbations: DA sensitivity higher than standard attention can be triggered by adversaries**
 
-    - Function: Analyzes the cumulative effect of stacking multiple DA layers.
-    - Mechanism: DA's noise cancellation effect is independent of gradient alignment—it systematically suppresses shared activations/perturbations through structural subtraction. After stacking $D$ layers, perturbation propagation is bounded by $\|\Delta^{(D)}\| \leq (\bar{\alpha} \bar{L}_{DA})^D \|\xi\|$, where $\bar{\alpha} < 1$ reflects the noise cancellation factor. **Corollary 1** proves the existence of a depth threshold $D^*$: DA is more vulnerable than standard attention when $D < D^*$, and asymptotically more robust when $D > D^*$.
-    - Design Motivation: This reveals the coexistence of two independent mechanisms in DA: (i) negative gradient alignment locally amplifies fragility, and (ii) noise cancellation cumulatively enhances robustness across layers. This explains the empirically observed phenomenon of "fragility at shallow depth, robustness at greater depth."
+Proving that DA can amplify sensitivity is insufficient; it must be compared directly with standard attention, showing that such amplification is not a coincidence. Theorem 2 provides the ratio of their sensitivities:
+
+$$\frac{\|\nabla_\xi A_{DA}\|}{\|\nabla_\xi A_{base}\|} = \gamma\sqrt{1+\lambda^2\rho^2 - 2\lambda\rho\cos\theta},$$
+
+where $\gamma$ is the ratio of the gradient norms of the two branches, and $\rho$ characterizes the relative magnitude of the second branch. Theorem 3 further provides the necessary and sufficient condition for DA to be strictly more sensitive than standard attention: $\cos\theta < \frac{1+\lambda^2\rho^2 - \gamma^{-2}}{2\lambda\rho}$. This condition is dangerous because both $\rho$ and $\theta$ can be manipulated by an attacker through constructed perturbations—meaning there always exists a class of perturbations that can precisely push DA into the "more sensitive" side. This is a structural vulnerability that can be actively exploited rather than a corner case. Lemma 2 connects this amplification to the upper bound of the local Lipschitz constant, translating "amplified gradient" into "robustness degradation."
+
+**3. Depth-Dependent Robustness: Local fragility vs. cumulative noise cancellation**
+
+If DA were fragile everywhere, it would have been discarded. However, deep DA models perform well empirically. The authors resolve this contradiction by observing that two independent mechanisms coexist in DA: the previously analyzed negative gradient alignment operates locally at a single layer, while noise cancellation is a different matter—it systematically suppresses shared activations and perturbations across layers through structural subtraction. In a $D$-layer stack, perturbation propagation is constrained by:
+
+$$\|\Delta^{(D)}\| \leq (\bar{\alpha}\,\bar{L}_{DA})^D \|\xi\|$$
+
+where $\bar{\alpha} < 1$ is the noise cancellation factor, which scales down the perturbation at each layer. Consequently, Corollary 1 defines a depth threshold $D^*$: when $D < D^*$, single-layer sensitivity amplification dominates, making DA more fragile than standard attention; when $D > D^*$, cumulative noise cancellation outweighs local amplification, and DA becomes asymptotically more robust. This explains the crossover phenomenon of "fragile at shallow levels, robust at deep levels."
 
 ### Loss & Training
-This is an analytical study and proposes no new training strategy. All models are trained with standard procedures (no adversarial training) to isolate the effect of the DA architecture itself.
+This is an analytical work and does not propose new training strategies. All models use standard training (no adversarial training) to isolate the effects of the DA architecture itself.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Attack success rate comparison (single-layer ViT vs. DiffViT, CIFAR-10, PGD attack):
+Comparison of Attack Success Rate (ASR) (Single-layer ViT vs. DiffViT, CIFAR-10, PGD Attack):
 
 | Model | $\epsilon$=1/255 ASR | $\epsilon$=4/255 ASR | $\epsilon$=8/255 ASR | Clean Accuracy |
 |------|---------------------|---------------------|---------------------|-----------|
-| ViT (standard attention) | lower | moderate | higher | ~86% |
-| DiffViT ($\lambda_{init}$=0.8) | **0.8498** | higher | near 1.0 | 87.00% |
+| ViT (Standard Attention) | Low | Medium | High | ~86% |
+| DiffViT ($\lambda_{init}$=0.8) | **0.8498** | Higher | Near 1.0 | 87.00% |
 | DiffViT ($\lambda_{init}$=0.5) | 0.4074 | - | - | 86.05% |
 | DiffViT ($\lambda_{init}$=0.95) | 0.4164 | - | - | 84.68% |
 
-Effect of $\lambda_{init}$ on ASR: monotonically increasing from 0.5 to 0.8, then declining—excessive subtraction reduces fragility but also impairs clean accuracy.
+Impact of $\lambda_{init}$ on ASR: Increases monotonically from 0.5 to 0.8, then decreases—excessive subtraction reduces fragility but also damages clean accuracy.
 
-CLIP vs. DiffCLIP (pretrained models, COCO dataset): DiffCLIP exhibits higher attack success rates across all perturbation budgets and patch sizes.
+CLIP vs. DiffCLIP (Pre-trained models, COCO dataset): DiffCLIP exhibits higher ASR across all perturbation budgets and patch sizes.
 
 ### Ablation Study
 
-Depth-dependent robustness crossover (DiffViT, $\epsilon$=1/255):
+Depth-dependent robustness crossover effect (DiffViT, $\epsilon$=1/255):
 
-| Depth D | DiffViT ASR (PGD) | ViT ASR (PGD) | DiffViT Local Lipschitz | Notes |
+| Depth D | DiffViT ASR (PGD) | ViT ASR (PGD) | DiffViT Local Lipschitz | Note |
 |--------|-------------------|---------------|----------------------|------|
-| 1 | highest | lower | high | DA fragile |
-| 2 | decreasing | slightly increasing | higher | crossover begins |
-| 4 | continues decreasing | stabilizing | higher | noise cancellation accumulates |
-| 8 | below ViT | stabilizing | higher | DA more robust |
-| 12 | far below ViT | stabilizing | continuously rising | deep DA advantage |
+| 1 | Highest | Lower | High | DA Fragile |
+| 2 | Decreasing | Slight Rise | Higher | Crossover starts |
+| 4 | Further Decrease | Stabilizing | Higher | Noise cancellation cumulates |
+| 8 | Lower than ViT | Stabilizing | Higher | DA more robust |
+| 12 | Far lower than ViT | Stabilizing | Continues Rise | Advantage of deep DA |
 
-Note: At $\epsilon$=4/255, both models approach high ASR and the depth-robustness advantage disappears.
+Note: At $\epsilon$=4/255, both converge to high ASR, and the depth robustness advantage vanishes.
 
 ### Key Findings
-- **Negative gradient alignment is a structural property**: The frequency of negative gradient alignment is highest in the first layer of DiffCLIP, yet significant negative alignment is observed across all depths—even in the simplest single-layer models.
-- **Local Lipschitz constant**: DA models exhibit higher Lipschitz estimates across all configurations, with the highest values occurring in layers with larger $\lambda$.
-- **Dual effect of depth**: Per-layer Lipschitz values increase with depth, yet ASR decreases with depth (under small perturbations)—cumulative noise cancellation outweighs single-layer sensitivity amplification.
-- **CW attack validation**: Deeper DiffViT models require larger L2 perturbations to achieve 100% ASR, directly supporting the depth-robustness theory.
+- **Negative Gradient Alignment is a Structural Property**: DiffCLIP has the highest frequency of negative alignment in the first layer, but significant negative alignment exists across all depths—even in the simplest single-layer models.
+- **Local Lipschitz Constant**: DA models have higher Lipschitz estimates in all settings, with peaks occurring in layers with larger $\lambda$.
+- **Dual Effect of Depth**: Local Lipschitz values increase with depth, but ASR decreases with depth (for small perturbations)—cumulative noise cancellation overcomes single-layer sensitivity amplification.
+- **CW Attack Verification**: Deeper DiffViT requires larger L2 perturbations to reach 100% ASR, directly supporting the depth-dependent robustness theory.
 
 ## Highlights & Insights
-- **The deep insight that "functional necessity induces fragility"**: Negative gradient alignment in DA is not a bug but a feature—yet the same feature becomes a vulnerability in adversarial settings. This analytical framework is transferable to other mechanisms involving subtraction or contrastive structures (e.g., negative pairs in contrastive learning).
-- **Coexistence and competition of two independent mechanisms (gradient amplification vs. noise cancellation)**: DA appears more fragile when viewed layer by layer, but may become more robust when viewed across multiple layers. This provides theoretical guidance on how many DA layers to use.
-- **Non-monotonic effect of $\lambda$**: Increasing $\lambda$ from 0.5 to 0.8 increases fragility; exceeding 0.8 reverses this trend (excessive subtraction)—suggesting that $\lambda$ tuning can serve as a knob trading off robustness against performance.
+- **Insight into "Fragility as a Functional Necessity"**: Negative gradient alignment in DA is a feature, not a bug—but that same feature becomes a vulnerability in adversarial settings. This analytical framework is transferable to other structures involving subtraction/contrast (e.g., negative pairs in contrastive learning).
+- **Coexistence and Competition of Two Mechanisms**: DA is more fragile locally but potentially more robust globally. This provides theoretical guidance on "how many layers of DA to use."
+- **Non-monotonic effect of $\lambda$**: Increasing $\lambda$ from 0.5 to 0.8 increases fragility, but exceeding 0.8 decreases it (excessive subtraction). This suggests tuning $\lambda$ can serve as a knob between robustness and performance.
 
 ## Limitations & Future Work
-- **Theory relies on local linearization**: Gradient analysis holds under small perturbations but cannot fully capture the global nonlinear effects in deep networks.
-- **Layer isolation assumption**: DA layers are analyzed with other layers held fixed; in practice, inter-layer interactions may mitigate or exacerbate sensitivity.
-- **Only initialization of $\lambda$ is studied**: The dynamic evolution of $\lambda$ during training is not analyzed in depth.
-- **Natural/semantic adversarial examples not considered**: Only gradient-based attacks (PGD, CW, AutoAttack) are studied; the impact of natural distribution shift is unknown.
-- **Directions for improvement**: (a) Tuning $\lambda$ as a robustness–performance trade-off knob; (b) increasing DA depth as a lightweight robustness enhancement; (c) small-perturbation adversarial training is compatible with DA.
+- **Theory Based on Local Linearization**: Gradient analysis holds for small perturbations but may not fully capture the global non-linear effects of deep networks.
+- **Layer Isolation Assumption**: Analyzing DA while fixing other layers may overlook inter-layer interactions that mitigate or exacerbate sensitivity.
+- **$\lambda$ Dynamics**: The dynamic changes of $\lambda$ during the training process were not deeply analyzed.
+- **Natural/Semantic Adversarial Examples**: The study focuses on gradient-based attacks (PGD, CW, AutoAttack); the impact of natural distribution shifts remains unknown.
+- **Future Directions**: (a) Adjusting $\lambda$ as a robustness-performance trade-off knob; (b) increasing DA depth as a lightweight robustness enhancement; (c) small-perturbation adversarial training shows good compatibility with DA.
 
 ## Related Work & Insights
-- **vs. Ye et al. (2025) Differential Transformer**: The original paper focuses on DA's effectiveness in suppressing hallucinations; this work reveals the adversarial fragility cost of this design. The two are complementary: DA performs well on clean data but carries risk in adversarial settings.
-- **vs. Kim et al. (2021) / Dasoulas et al. (2021)**: These works improve attention robustness through Lipschitz constraints, whereas this paper analyzes how DA's subtraction structure elevates the Lipschitz constant. This analysis can inspire future Lipschitz-constrained designs for DA.
-- **vs. adversarial training methods**: This paper does not propose a defense method but rather provides a foundational analysis of the fragility inherent in the DA mechanism itself. However, appendix experiments demonstrate that small-perturbation adversarial training can effectively reduce DA's ASR.
+- **vs. Ye et al. (2025) Differential Transformer**: The original paper focused on DA's effect on suppressing hallucinations; this work reveals the adversarial fragility cost of that design. They are complementary: DA is superior on clean data but risky in adversarial settings.
+- **vs. Kim et al. (2021) / Dasoulas et al. (2021)**: Prior works improved attention robustness via Lipschitz constraints; this paper analyzes how DA's subtractive structure inherently increases the Lipschitz constant. This analysis could inspire future Lipschitz-constrained designs for DA.
+- **vs. Adversarial Training**: This work is not a defense method but a fundamental analysis of DA's fragility. However, Appendix experiments indicate that small-perturbation adversarial training can effectively reduce DA's ASR.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ First adversarial analysis of DA; reveals a fundamental trade-off between noise cancellation and fragility; solid theoretical contributions (4 theorems + corollary).
-- Experimental Thoroughness: ⭐⭐⭐⭐ Dual validation on ViT/DiffViT and CLIP/DiffCLIP, 5 datasets, 3 attack methods, comprehensive depth ablation. Limited to the vision domain.
-- Writing Quality: ⭐⭐⭐⭐⭐ Clear narrative arc from intuition ("DA should be more robust") to theoretical refutation to empirical validation; figures and analysis are tightly integrated.
-- Value: ⭐⭐⭐⭐ Important cautionary implications for deploying DA in safety-critical settings; the theoretical framework has lasting value for understanding subtractive attention mechanisms.
+- Novelty: ⭐⭐⭐⭐⭐ First adversarial perspective on DA, revealing the fundamental trade-off between noise cancellation and fragility with solid theoretical contributions (4 theorems + corollaries).
+- Experimental Thoroughness: ⭐⭐⭐⭐ Dual validation with ViT/DiffViT and CLIP/DiffCLIP across 5 datasets and 3 attack methods. Comprehensive depth ablation. Limited to the vision domain.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear narrative flow from intuition to theoretical refutation to experimental verification. Figures and analysis are tightly coupled.
+- Value: ⭐⭐⭐⭐ Provides a significant warning for deploying DA in safety-critical scenarios. The theoretical framework has lasting value for understanding subtractive attention mechanisms.
 
 <!-- RELATED:START -->
 
@@ -134,11 +136,11 @@ Note: At $\epsilon$=4/255, both models approach high ASR and the depth-robustnes
 
 ## Related Papers
 
-- [\[ICML 2026\] Towards Fine-Grained Robustness: Attention-Guided Test-Time Prompt Tuning for Vision-Language Models](../../ICML2026/llm_safety/towards_fine-grained_robustness_attention-guided_test-time_prompt_tuning_for_vis.md)
-- [\[ACL 2026\] Decomposed Trust: Privacy, Adversarial Robustness, Ethics, and Fairness in Low-Rank LLMs](../../ACL2026/llm_safety/decomposed_trust_privacy_adversarial_robustness_ethics_and_fairness_in_low-rank_.md)
-- [\[ICLR 2026\] Fair in Mind, Fair in Action? A Synchronous Benchmark for Understanding and Generation in UMLLMs](fair_in_mind_fair_in_action_a_synchronous_benchmark_for_understanding_and_genera.md)
-- [\[ICLR 2026\] Doxing via the Lens: Revealing Location-related Privacy Leakage on Multi-modal Large Reasoning Models](doxing_via_the_lens_revealing_location-related_privacy_leakage_in_vlms.md)
+- [\[ICLR 2026\] Understanding and Improving Continuous Adversarial Training for LLMs via In-Context Learning Theory](understanding_and_improving_continuous_llm_adversarial_training_via_in-context_l.md)
+- [\[ICLR 2026\] AdPO: Enhancing the Adversarial Robustness of Large Vision-Language Models with Preference Optimization](adpo_enhancing_the_adversarial_robustness_of_large_vision-language_models_with_p.md)
 - [\[ICLR 2026\] Attention Smoothing Is All You Need For Unlearning](attention_smoothing_is_all_you_need_for_unlearning.md)
+- [\[ICLR 2026\] Doxing via the Lens: Revealing Location-related Privacy Leakage on Multi-modal Large Reasoning Models](doxing_via_the_lens_revealing_location-related_privacy_leakage_in_vlms.md)
+- [\[ICLR 2026\] Fair in Mind, Fair in Action? A Synchronous Benchmark for Understanding and Generation in UMLLMs](fair_in_mind_fair_in_action_a_synchronous_benchmark_for_understanding_and_genera.md)
 
 </div>
 

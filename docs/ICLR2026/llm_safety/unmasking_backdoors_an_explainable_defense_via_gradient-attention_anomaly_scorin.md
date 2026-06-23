@@ -2,130 +2,143 @@
 title: >-
   [Paper Note] Unmasking Backdoors: An Explainable Defense via Gradient-Attention Anomaly Scoring for Pre-trained Language Models
 description: >-
-  [ICLR 2026][LLM Safety][backdoor detection] This paper proposes X-GRAAD, an inference-time backdoor defense that combines attention anomaly scoring and gradient importance scoring to localize trigger tokens…
+  [ICLR 2026][LLM Safety][Paper Note] The authors propose X-GRAAD, an inference-time backdoor defense method that combines attention anomaly scores and gradient importance scores to locate trigger tokens, followed by character-level perturbations to neutralize them. Across 5 Transformer models and 3 attack types, the method reduces ASR to near 0% while mai
 tags:
-  - "ICLR 2026"
-  - "LLM Safety"
-  - "backdoor detection"
-  - "gradient-attention anomaly scoring"
-  - "explainable defense"
-  - "NLP security"
-  - "inference-time defense"
+  - ICLR 2026
+  - LLM Safety
 date: 2026-05-08
-content_hash: f8ce6b39592b9091
+content_hash: 5909f9ec3bb4ef47
 ---
-
 # Unmasking Backdoors: An Explainable Defense via Gradient-Attention Anomaly Scoring for Pre-trained Language Models
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2510.04347](https://arxiv.org/abs/2510.04347)  
 **Code**: None (uses OpenBackdoor toolkit)  
-**Area**: AI Safety / Backdoor Defense
-**Keywords**: backdoor detection, gradient-attention anomaly scoring, explainable defense, NLP security, inference-time defense
+**Area**: AI Safety / Backdoor Defense  
+**Keywords**: Backdoor detection, Gradient-Attention Anomaly Scoring, Explainable defense, NLP safety, Inference-time defense
 
 ## TL;DR
-This paper proposes X-GRAAD, an inference-time backdoor defense that combines attention anomaly scoring and gradient importance scoring to localize trigger tokens, followed by character-level perturbation to neutralize them. Across 5 Transformer models × 3 attack types, ASR is reduced to near 0% while maintaining 88–95%+ CACC, with a 30× speedup over PURE.
+The authors propose X-GRAAD, an inference-time backdoor defense method that combines attention anomaly scores and gradient importance scores to locate trigger tokens, followed by character-level perturbations to neutralize them. Across 5 Transformer models and 3 attack types, the method reduces ASR to near 0% while maintaining 88-95%+ CACC, at a speed 30x faster than PURE.
 
 ## Background & Motivation
 
-**Background**: Pre-trained language models are vulnerable to backdoor attacks, in which adversaries embed trigger patterns into training data so that models behave normally on clean inputs but produce targeted misclassifications upon encountering triggers.
+**Background**: Pre-trained language models (PLMs) face threats from backdoor attacks, where attackers plant trigger patterns in training data to cause targeted misclassification while maintaining normal performance on clean inputs.
 
 **Limitations of Prior Work**:
-- Training-time defenses require monitoring the entire dataset, which is infeasible in third-party pre-training scenarios.
-- Inference-time defenses have limited capacity to handle unknown trigger patterns.
-- Most defenses lack explainability — they cannot inform users which tokens are suspicious.
+   - Training-time defenses require monitoring the entire dataset (infeasible for third-party pre-training scenarios).
+   - Inference-time defenses have limited capability against unknown trigger patterns.
+   - Most defenses lack explainability—they cannot identify specifically which tokens are suspicious to the user.
 
-**Key Challenge**: How can trigger tokens be precisely localized and neutralized without prior knowledge of the trigger pattern?
+**Key Challenge**: How to accurately locate and neutralize trigger tokens during inference without prior knowledge of the trigger pattern?
 
-**Goal**: Explainable inference-time backdoor defense.
+**Goal**: An explainable inference-time backdoor defense.
 
-**Key Insight**: A prior observation that trigger tokens simultaneously exhibit anomalies in both attention and gradient signals.
+**Key Insight**: Prior observations suggest that trigger tokens simultaneously exhibit anomalies in both attention and gradient signals.
 
-**Core Idea**: Gradient anomaly × attention anomaly = precise trigger localization → character-level perturbation neutralization.
+**Core Idea**: Gradient Anomaly $\times$ Attention Anomaly = Precise Trigger Localization $\rightarrow$ Character-level Perturbation Neutralization.
 
 ## Method
 
 ### Overall Architecture
-X-GRAAD is a two-module pipeline: (1) a **Token Attribution Scorer** that computes the product of attention anomaly and gradient anomaly for each token, and (2) a **Trigger Neutralizer & Defender** that applies character-level perturbations to the most suspicious tokens and re-predicts if the sequence anomaly score exceeds a threshold.
+X-GRAAD aims to identify and disable backdoor trigger tokens within a sentence during inference without knowing their appearance. The process consists of two sequential steps: first, a **Token Attribution Scorer** calculates a "suspicion" anomaly score for each token and aggregates them into a sentence-level anomaly score. Next, the **Trigger Neutralization & Defense** module compares the sentence score against a threshold. If it exceeds the threshold, the sentence is flagged as containing a trigger, and the token with the highest score undergoes character-level perturbation before being refed to the model; otherwise, the input is passed through unchanged. This process requires no modification to model weights or retraining, completing detection and purification within the overhead of a single forward/backward pass.
+
+```mermaid
+graph TD
+    X["Input sentence x<br/>(Potential unknown trigger)"] --> SCORER
+    subgraph SCORER["Token Attribution Scorer (Design 1)"]
+        direction TB
+        A["Attention Importance<br/>Mean weight across<br/>all layers/heads"] --> AS["Attn Score<br/>= Importance - mean"]
+        G["Gradient Importance<br/>L2 norm of logit<br/>w.r.t embedding"] --> GS["Grad Score<br/>= Importance / mean"]
+        AS --> M["Token Anomaly Score<br/>Score = Product of both"]
+        GS --> M
+    end
+    M --> PSI["Sentence Anomaly Score<br/>ψ(x)=max_k Score(t_k)"]
+    subgraph DEF["Trigger Neutralization & Defense (Design 2)"]
+        direction TB
+        TH{"ψ(x) > τ ?<br/>τ=p-th percentile of clean set"}
+        TH -->|"Yes: Suspected Backdoor"| NEU["Select max score token<br/>Randomly insert/replace 1-2 chars"]
+    end
+    PSI --> TH
+    TH -->|"No: Classified as Clean"| OUT["Final Prediction"]
+    NEU --> OUT
+```
 
 ### Key Designs
 
-1. **Token Attribution Scorer**:
+**1. Token Attribution Scorer: Exposing Triggers via Dual Attention and Gradient Channels**
 
-    - **Function**: Computes a composite anomaly score for each token.
-    - **Attention Importance**: The average attention matrix $\bar{A}$ is computed across all $L$ layers and $H$ heads; a token's attention importance equals the total attention weight it receives from all other tokens.
-    - **Gradient Importance**: Gradients of the predicted class logit with respect to input embeddings are computed; token importance equals the $L_2$ norm of the gradient vector.
-    - **Combination Strategy**: $\text{Score}(t_k) = \text{AttnScore}(t_k) \cdot \text{GradScore}(t_k)$ (multiplicative combination).
-    - **Sequence Score** = maximum token score: $\psi(x) = \max_k \text{Score}(t_k)$.
-    - **Design Motivation**: The multiplicative combination requires a token to be anomalous in **both channels** to be flagged as suspicious, thereby reducing false positives; the max-pooling focuses on the single most suspicious token.
+The core difficulty in backdoor defense is matching "unknown triggers." X-GRAAD breaks this by observing that trigger tokens score significantly higher in both attention and gradient signals relative to other tokens in the sentence. It calculates a "deviation" score for both channels and multiplies them. On the attention side, all $L$ layers and $H$ heads are averaged to obtain $\bar{A}$. A token's attention importance is the total weight assigned to it by all other tokens, and the attention score is derived by subtracting the sentence mean: $\text{AttnScore}(t_k)=\text{AttnImp}(t_k)-\bar{a}$. Triggers often hijack predictions by attracting excessive attention, deviating far from the mean. On the gradient side, the gradient of the predicted class logit with respect to the input embedding is computed. Gradient importance is the L2 norm of this vector, normalized by the sentence mean: $\text{GradScore}(t_k)=\text{GradImp}(t_k)/\bar{g}$, measuring its relative marginal impact on the final decision. The integrated token anomaly score is:
 
-2. **Trigger Neutralizer**:
+$$\text{Score}(t_k) = \text{AttnScore}(t_k) \cdot \text{GradScore}(t_k)$$
 
-    - **Function**: Applies character-level perturbations to suspicious tokens to disrupt trigger patterns.
-    - **Mechanism**: The highest-scoring token is identified; 1–2 characters are inserted or replaced at random positions. The perturbation is sufficient to break exact trigger matching while preserving the overall readability of the sentence.
-    - **Threshold Setting**: The score distribution is computed on a clean validation set, and the $p$-th percentile is used as the threshold.
+The sentence-level anomaly score is the maximum of all token scores: $\psi(x) = \max_k \text{Score}(t_k)$. Multiplication is critical here: the product is high only when a token is **anomalous in both channels**, which suppresses false positives where one channel might spike naturally. Using the max instead of the sum ensures the score focuses on the single most suspicious pivot token rather than being diluted by sentence length.
+
+**2. Trigger Neutralization & Defense: Threshold Filtering + Minimal Character Perturbation**
+
+After locating a suspicious token, the second design goal is "disabling" it without damaging clean sentences. The detection side uses a clean validation set to determine the distribution of $\psi(x)$, using the $p$-th percentile as threshold $\tau$ (95th percentile for BERT/DistilBERT; 65th for ALBERT due to compressed attention distributions). Only sentences with $\psi(x)>\tau$ are considered suspected backdoors and sent for purification. The purification side selects the token with the highest anomaly score and inserts or replaces 1–2 characters at random positions. Since backdoor triggers rely on exact string matching, a single-character change is sufficient to break the trigger pattern. This slight perturbation is far more gentle than deleting tokens or replacing them with UNK, preserving human readability and semantic integrity.
 
 ### Loss & Training
-- No training is required — this is a purely inference-time method.
-- A small clean validation set (20%) is needed to calibrate the threshold.
+- Training-free: This is a pure inference-time method that does not modify any weights of the protected model.
+- Only a small clean validation set is required to calibrate the $p$-th percentile threshold $\tau$.
 
 ## Key Experimental Results
 
 ### Main Results: 5 Models × 3 Attacks × 3 Datasets
 
-| Model / Attack / Dataset | No Defense ASR | ONION | RAP | PURE | **X-GRAAD** |
-|--------------------------|---------------|-------|-----|------|-------------|
+| Model/Attack/Dataset | No Defense ASR | ONION | RAP | PURE | **X-GRAAD (Ours)** |
+|----------------|----------|-------|-----|------|-----------|
 | BERT-BadNets-SST2 | 1.000 | 0.085 | 0.033 | 0.011 | **0.000** |
 | DistilBERT-LWS-IMDb | 0.981 | 0.512 | 0.689 | 0.728 | **0.027** |
-| RoBERTa-multiple settings | ~1.0 | high | high | medium | **<0.1** |
+| RoBERTa-Multi Settings | ~1.0 | High | High | Med | **<0.1** |
 
-### Ablation Study: Attention vs. Gradient vs. Combination
+### Ablation Study: Attention vs. Gradient vs. Combined
 
 | Method | ASR | CACC |
-|--------|-----|------|
-| Attention only | medium | medium |
-| Gradient only | medium | medium |
-| **X-GRAAD (combined)** | **lowest** | **highest** |
+|------|-----|------|
+| Attention only | Medium | Medium |
+| Gradient only | Medium | Medium |
+| **X-GRAAD (Combined)** | **Lowest** | **Highest** |
 
 ### Key Findings
-- **ASR → 0.0** on multiple BERT/DistilBERT settings.
-- **Multi-token triggers (e.g., "james bond")**: the model concentrates reliance onto a single pivot token, which X-GRAAD can detect.
-- **Domain-transfer attack (BadPre)**: ASR reduced from 0.929 to 0.003.
-- **Speed**: 44–50 seconds per test set vs. 1600+ seconds for PURE.
+- **ASR → 0.0** achieved across multiple BERT/DistilBERT settings.
+- **Multi-token triggers (e.g., "james bond")**: The model tends to concentrate reliance on a single pivot token, which X-GRAAD successfully detects.
+- **Domain transfer attacks (BadPre)**: ASR dropped from 0.929 to 0.003.
+- **Speed**: 44-50 seconds/test set compared to 1600+ seconds for PURE.
 
 ## Highlights & Insights
-- **Explainability as a core advantage**: X-GRAAD not only detects backdoors but also visualizes which tokens are triggers, providing auditable evidence.
-- **Synergy of gradient × attention**: The multiplicative combination of the two signal channels is more precise than either channel alone, since backdoor triggers exhibit anomalies in both.
-- **Elegant character-level perturbation**: Disrupts exact trigger matching without affecting semantics, and is more graceful than token deletion or replacement with UNK.
+- **Explainability is the core advantage**: Beyond detection, it visualizes which tokens are triggers, providing evidence for auditing.
+- **Gradient $\times$ Attention Synergy**: The multiplicative combination of signal channels is more precise than either channel alone, as triggers are anomalous in both.
+- **Elegant Perturbation**: Character-level changes disrupt exact matching without destroying semantics, proving more elegant than deletion or UNK replacement.
 
 ## Limitations & Future Work
-- **Only rare-word triggers evaluated**: Effectiveness against semantic- or syntactic-level triggers has not been tested.
-- **Requires a clean validation set**: Obtaining 20% clean data may be difficult in certain scenarios.
-- **ALBERT requires special handling**: The compressed attention distribution of its parameter-sharing architecture necessitates different thresholds.
-- **Classification tasks only**: Extension to generative LLMs has not been explored (complementary to the *Purifying LLMs* paper).
+- **Rare-word triggers only**: Effectiveness against semantic or syntax-level triggers remains untested.
+- **Requirement for clean data**: Obtaining 20% clean validation data may be difficult in some scenarios.
+- **Architecture-specific thresholds**: Compressed attention in ALBERT requires different threshold calibration.
+- **Classification focus**: Not yet extended to generative LLMs (complementary to "Purifying LLMs" research).
 
 ## Related Work & Insights
-- **vs. ONION**: ONION relies solely on perplexity for detection, whereas X-GRAAD employs dual-channel gradient + attention signals for greater precision.
-- **vs. PURE**: PURE requires 1600+ seconds; X-GRAAD takes only ~50 seconds, achieving a 30× speedup with lower ASR.
-- **vs. Purifying LLMs (same venue)**: That work targets generative LLMs using MLP mechanistic analysis, while this paper targets classification PLMs via inference-time anomaly detection — the two are complementary.
+- **vs. ONION**: ONION relies only on perplexity; X-GRAAD uses dual-channel gradient + attention for more precise detection.
+- **vs. PURE**: PURE requires over 1600s while X-GRAAD takes 50s; X-GRAAD is 30x faster with lower ASR.
+- **vs. Purifying LLMs (Same Conf)**: While that paper targets generative LLMs using MLP mechanism analysis, this work focuses on classification PLMs via inference-time anomaly detection—the two are complementary.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ The gradient × attention combination is concise and effective.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ Covers 5 models × 3 attacks × 3 datasets, but lacks evaluation on advanced trigger types.
-- **Writing Quality**: ⭐⭐⭐⭐ Methodology is clearly presented with informative visualizations.
-- **Value**: ⭐⭐⭐⭐ A practical inference-time backdoor defense whose explainability constitutes a clear differentiating advantage.
+- Novelty: ⭐⭐⭐⭐ The Gradient $\times$ Attention combination is simple and effective.
+- Experimental Thoroughness: ⭐⭐⭐⭐ 5 models × 3 attacks × 3 datasets, though advanced triggers are missing.
+- Writing Quality: ⭐⭐⭐⭐ Clear methodology and strong visualization analysis.
+- Value: ⭐⭐⭐⭐ Practical inference-time defense; explainability provides a strong differentiator.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
+- [\[ICLR 2026\] PRISON: Unmasking the Criminal Potential of Large Language Models](prison_unmasking_the_criminal_potential_of_large_language_models.md)
 - [\[AAAI 2026\] LAMP: Learning Universal Adversarial Perturbations for Multi-Image Tasks via Pre-trained Models](../../AAAI2026/llm_safety/lamp_learning_universal_adversarial_perturbations_for_multi-image_tasks_via_pre-.md)
-- [\[CVPR 2026\] Phantasia: Context-Adaptive Backdoors in Vision Language Models](../../CVPR2026/llm_safety/phantasia_context-adaptive_backdoors_in_vision_language_models.md)
-- [\[ICLR 2026\] Inference-Time Backdoors via Hidden Instructions in LLM Chat Templates](inference-time_backdoors_via_hidden_instructions_in_llm_chat_templates.md)
-- [\[ICLR 2026\] From Static Benchmarks to Dynamic Protocol: Agent-Centric Text Anomaly Detection for Evaluating LLM Reasoning](from_static_benchmarks_to_dynamic_protocol_agent-centric_text_anomaly_detection_.md)
-- [\[ICLR 2026\] Attention Smoothing Is All You Need For Unlearning](attention_smoothing_is_all_you_need_for_unlearning.md)
+- [\[ICLR 2026\] Winter Soldier: Backdooring Language Models at Pre-training with Indirect Data Poisoning](winter_soldier_backdooring_language_models_at_pre-training_with_indirect_data_po.md)
+- [\[ICLR 2026\] Multi-Feature Quantized Self-Attention for Fair Large Language Models](multi-feature_quantized_self-attention_for_fair_large_language_models.md)
+- [\[ICLR 2026\] Explainable LLM Unlearning through Reasoning](explainable_llm_unlearning_through_reasoning.md)
 
 </div>
 

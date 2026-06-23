@@ -2,109 +2,94 @@
 title: >-
   [Paper Note] MARC: Memory-Augmented RL Token Compression for Efficient Video Understanding
 description: >-
-  [ICLR 2026][Autonomous Driving][Video token compression] MARC is a framework that adopts a "retrieve-then-compress" strategy: a Visual Memory Retriever (VMR) selects the most query-relevant video segments…
+  [ICLR 2026][Autonomous Driving][GRPO] The MARC framework is proposed, utilizing a "retrieve-then-compress" strategy. It employs a Visual Memory Retriever (VMR) to select video segments most relevant to the query, and then utilizes Compression GRPO (C-GRPO) to distill the inference capabilities of a 64-frame teacher model into a student model using only 1 f
 tags:
-  - "ICLR 2026"
-  - "Autonomous Driving"
-  - "Video token compression"
-  - "reinforcement learning distillation"
-  - "visual memory retrieval"
-  - "GRPO"
-  - "efficient inference"
+  - ICLR 2026
+  - Autonomous Driving
+  - GRPO
 date: 2026-05-08
-content_hash: 4a000da9ceec38a1
+content_hash: d03a17103a0a68db
 ---
-
 # MARC: Memory-Augmented RL Token Compression for Efficient Video Understanding
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2510.07915](https://arxiv.org/abs/2510.07915)  
-**Code**: Available (Project Web / Code / Model all provided)  
-**Area**: Autonomous Driving
-**Keywords**: Video token compression, reinforcement learning distillation, visual memory retrieval, GRPO, efficient inference
+**Code**: Available (Project Web / Code / Model provided)  
+**Area**: Autonomous Driving  
+**Keywords**: Video token compression, RL distillation, visual memory retrieval, GRPO, efficient inference  
 
 ## TL;DR
 
-MARC is a framework that adopts a "retrieve-then-compress" strategy: a Visual Memory Retriever (VMR) selects the most query-relevant video segments, and Compression GRPO (C-GRPO) distills the reasoning capability of a 64-frame teacher model into a student model that operates on only 1-frame tokens. This achieves 95% visual token compression, 72% GPU memory reduction, 23.9% inference latency reduction, with virtually no performance loss (42.20 vs. 42.21).
+The MARC framework is proposed, utilizing a "retrieve-then-compress" strategy. It employs a Visual Memory Retriever (VMR) to select video segments most relevant to the query, and then utilizes Compression GRPO (C-GRPO) to distill the inference capabilities of a 64-frame teacher model into a student model using only 1 frame's worth of tokens. This achieves 95% visual token compression, a 72% reduction in GPU memory, and a 23.9% reduction in inference latency with virtually no performance loss (42.20 vs. 42.21).
 
 ## Background & Motivation
 
-**Computational bottleneck in video understanding**: Scaling VLMs from images to video causes an explosion in token count due to high frame rates and long durations, dramatically increasing inference cost and severely limiting deployment in latency-sensitive scenarios such as autonomous driving and surveillance.
+**Computational bottleneck of video understanding**: As VLMs extend from images to video, the explosion of token counts brought by high frame rates and long durations leads to a sharp increase in inference costs, severely limiting deployment in latency-sensitive scenarios such as autonomous driving and surveillance.
 
-**Limitations of existing token compression methods**: Mainstream compression methods (e.g., MovieChat, VidCom, ByteVideoLLM) rely primarily on training-free token merging strategies that handle spatial or temporal redundancy independently, inevitably losing critical information during compression and suffering significant performance degradation.
+**Limitations of existing token compression methods**: Mainstream compression methods (e.g., MovieChat, VidCom, ByteVideoLLM) are mostly based on training-free token merging strategies. These handle redundant information independently in spatial or temporal dimensions, inevitably losing critical information during compression and leading to significant performance degradation.
 
-**Independent treatment of spatiotemporal redundancy**: Existing methods overlook the temporally organized, context-aware nature of human visual memory. Cognitive science research indicates that humans segment continuous experience into discrete events and retrieve them via episodic memory.
+**Independent processing of spatio-temporal redundancy**: Existing methods ignore the temporal organization and context-aware characteristics of human visual memory. Cognitive science research suggests that humans segment continuous experiences into discrete events, recalling and retrieving them via episodic memory.
 
-**Difficulty of maintaining performance under extreme compression**: Reducing video to the token count equivalent of a single frame makes it difficult for naive geometric token-reduction heuristics to preserve teacher-level reasoning quality.
+**Performance challenges under extreme compression**: When compressing video to a token count equivalent to a single frame, naive geometric token reduction heuristics struggle to maintain the inference quality of teacher-level models.
 
-**Lack of learning-based compression solutions**: Most existing approaches are training-free inference-time techniques, lacking end-to-end solutions that optimize compression quality through learning.
+**Lack of training-based compression schemes**: Most existing methods are training-free inference-time tricks, lacking end-to-end schemes that optimize compression quality through learning.
 
-**Disconnect between retrieval and compression**: Video retrieval-augmented generation (Video-RAG) and token compression have typically been pursued as separate technical directions. This paper is the first to tightly integrate structured retrieval with RL-based compression.
+**Decoupling of retrieval and compression**: Video Retrieval-Augmented Generation (Video-RAG) and token compression are typically two separate technical routes. This paper is the first to tightly integrate structured retrieval with RL-based compression.
 
 ## Method
 
 ### Overall Architecture
 
-MARC is a **"retrieve-then-compress"** framework consisting of two core modules:
+MARC addresses a practical contradiction: high video token counts make VLM inference expensive, but crude token reduction loses key information and performance. The core idea is "retrieve then compress"—instead of blindly compressing the entire video, the most relevant segments are first selected, followed by meaningful compression within those segments.
 
-- **Visual Memory Retriever (VMR)**: Segments video into event-level clips and retrieves the top-k clips most relevant to the query.
-- **C-GRPO training strategy**: Uses a 64-frame teacher network as reference, and distills its reasoning capability into a student network operating on only 1-frame tokens via reinforcement learning.
+The workflow is as follows: The original video is first segmented into event-level clips by the **Visual Memory Retriever (VMR)**, which retrieves the top-k segments most relevant to the query. These segments enter the **Memory-Aware Temporal Compression Layer** for two-stage temporal compression to meet the token budget. The resulting small set of tokens is fed to the LLM. During training, **Compression GRPO (C-GRPO)** uses a 64-frame teacher network as a reference to distill inference capabilities into the student network using RL.
 
-The overall pipeline: raw video → event segmentation → top-k clip retrieval → Memory-Aware Temporal Compression → compressed tokens fed into LLM → C-GRPO alignment training.
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    Q["User Query"] --> VMR
+    V["Original Video<br/>(High Frame Rate / Long Duration)"] --> VMR
+    VMR["Visual Memory Retriever<br/>Event-level Segmentation + top-k Retrieval"] --> COMP
+    COMP["Memory-Aware Temporal Compression Layer<br/>Intra-segment Merging → Cross-segment Merging"] --> TOK["Compressed Tokens<br/>(≈1 frame, ~122 tokens)"]
+    TOK --> LLM["LLM Answer Generation"]
+    LLM --> ANS["Output Answer"]
+    ANS -.Training Alignment.-> CGRPO["Compression GRPO<br/>Correctness Gating + Maintenance Reward"]
+    TEA["Teacher Network<br/>64-frame Input"] -.Performance Reference.-> CGRPO
+    CGRPO -.RL Distillation Update.-> COMP
+```
 
 ### Key Designs
 
-#### 1. Visual Memory Retriever (VMR)
+**1. Visual Memory Retriever (VMR): Retrieve relevant segments before compression**
 
-**Function**: Retrieves event-level clips most relevant to the query from long videos, serving as input to downstream compression.
+Compressing the entire video directly often forces irrelevant redundancy into the process, diluting important information. VMR draws from cognitive science: humans recall experiences as discrete events rather than seamless flows. VMR uses a deep event detection network (Soucek & Lokoc, 2024) to identify temporal boundaries (scene changes, topic shifts), cutting video into semantically coherent segments. An embedding model (Bolya et al., 2025) then maps the query and segments to a shared latent space, using nearest neighbor search to select the top-k relevant segments (k=3). This significantly narrows the search space before compression begins.
 
-**Design Motivation**: Inspired by cognitive science—humans segment continuous visual experience into discrete events via episodic memory and retrieve them contextually. Compressing the entire video directly introduces substantial redundancy and degrades compression quality; retrieving first then compressing significantly narrows the search space.
+**2. Memory-Aware Temporal Compression Layer: Merging redundancy within event boundaries**
 
-**Mechanism**:
-- **Event-level video segmentation**: A deep event detection network (Soucek & Lokoc, 2024) identifies temporal boundaries such as scene cuts and topic transitions, segmenting the video into semantically coherent short clips (rather than fixed-length windows).
-- **Memory retrieval**: An embedding model (Bolya et al., 2025) maps the query and all clips into a shared high-dimensional latent space; nearest-neighbor search trained via contrastive learning selects the top-k most relevant clips.
-- In experiments, top-k = 3.
+The goal is to reduce frame counts without discarding evidence. This layer utilizes event boundaries provided by VMR to prioritize merging highly similar adjacent frames within the same event. It operates in two stages: Stage 1 (Intra-segment Merging) iteratively merges the most similar adjacent frame pairs within a short-term memory window $m$ using the mean $\mathbf{H}_{merge} = \frac{1}{2}(\mathbf{H}_a + \mathbf{H}_b)$ until the frame budget defined by ratio $\rho$ is met. Stage 2 (Cross-segment Merging) provides a lightweight global merge if the total frame count still exceeds the target $N_{target}$. Similarity is measured by patch-aligned mean cosine scores:
 
-#### 2. Memory-Aware Temporal Compression Layer
+$$\text{sim}(\mathbf{H}_a, \mathbf{H}_b) = \frac{1}{P}\sum_{p=1}^{P} \frac{\mathbf{h}_a^{(p)} \cdot \mathbf{h}_b^{(p)}}{\|\mathbf{h}_a^{(p)}\| \|\mathbf{h}_b^{(p)}\|}$$
 
-**Function**: Applies two-stage temporal compression to VMR-selected clips to reduce the number of visual tokens.
+**3. Compression GRPO (C-GRPO): Turning compression into a teacher-alignment reward problem**
 
-**Design Motivation**: Leverages the event boundary structure provided by VMR to preferentially merge highly similar adjacent frames within the same event (where redundancy is greatest), while preserving event evidence deemed important by VMR.
-
-**Mechanism**:
-- **Stage 1 (intra-segment merging)**: For each retrieved clip, within a short-term memory window $m$, iteratively merges the adjacent frame pair with the highest cosine similarity, representing them by their mean $\mathbf{H}_{merge} = \frac{1}{2}(\mathbf{H}_a + \mathbf{H}_b)$, until the frame budget corresponding to compression ratio $\rho$ is satisfied.
-- **Stage 2 (cross-segment merging)**: If the total frame count after intra-segment merging still exceeds the target $N_{target}$, a lightweight global merging step is applied.
-- Similarity is measured as the mean patch-aligned cosine score: $\text{sim}(\mathbf{H}_a, \mathbf{H}_b) = \frac{1}{P}\sum_{p=1}^{P} \frac{\mathbf{h}_a^{(p)} \cdot \mathbf{h}_b^{(p)}}{\|\mathbf{h}_a^{(p)}\| \|\mathbf{h}_b^{(p)}\|}$
-
-#### 3. Compression GRPO (C-GRPO)
-
-**Function**: Trains the student model via reinforcement learning in a teacher-student distillation paradigm to preserve teacher-level reasoning under extreme compression.
-
-**Design Motivation**: Standard GRPO focuses solely on answer correctness and format, without explicitly coupling student and teacher performance. C-GRPO introduces a retention alignment reward, reframing compression as an alignment problem rather than geometric reduction.
-
-**Mechanism**:
-- Defines a **retention ratio** $\eta = a_{comp} / a_{full}$ to quantify how much of the teacher's performance the student retains.
-- Introduces a **compression reward** $r_c = \alpha \cdot \max(0, \eta - \tau)$, where $\tau$ is the minimum acceptable retention threshold.
-- **Correctness gating**: $R_i = r_i + \mathbb{1}[\text{correct}] \cdot r_c$—only semantically correct generations receive the retention reward, preventing reward hacking.
-- In-group advantage normalization: $A_i = (R_i - \bar{R}) / \sigma_R$.
-- Final optimization uses a clipped objective with KL anchoring.
+Geometric reduction fails to maintain teacher-level quality at extreme compression ratios. Standard GRPO focuses on correctness and format rather than teacher alignment. C-GRPO introduces a "maintenance alignment" reward signal to redefine compression as an alignment problem. It defines a **maintenance ratio** $\eta = a_{comp} / a_{full}$ to quantify how much teacher performance is preserved, resulting in a **compression reward** $r_c = \alpha \cdot \max(0, \eta - \tau)$, where $\tau$ is the minimum acceptable threshold. A **correctness gate** $R_i = r_i + \mathbb{1}[\text{correct}] \cdot r_c$ ensures that only semantically correct generations receive the maintenance reward, preventing reward hacking. Advantages are then normalized as $A_i = (R_i - \bar{R}) / \sigma_R$ for optimization.
 
 ### Loss & Training
 
 $$\mathcal{L}_{\text{C-GRPO}} = \mathbb{E}\left[\frac{1}{G}\sum_{i=1}^{G}\left(\text{clip}\left(\frac{\pi_\theta(o_i|q)}{\pi_{\theta_{old}}(o_i|q)}, 1-\epsilon, 1+\epsilon\right) A_i\right) - \beta \text{KL}(\pi_\theta \| \pi_{ref})\right]$$
 
-- **Teacher network**: Qwen2.5-VL-3B with 64-frame input.
-- **Student network**: Same architecture, compressed to 1-frame tokens (~122 tokens).
-- **Training data**: Only 5K samples randomly drawn from Video-R1-260K (including video and image data).
+- **Teacher Network**: Qwen2.5-VL-3B with 64-frame input.
+- **Student Network**: Same architecture, compressed to 1 frame worth of tokens (~122 tokens).
+- **Training Data**: 5K samples randomly sampled from Video-R1-260K (video and image).
 - **Group size** $G=8$, threshold $\tau=0.6$.
-- Image data does not participate in compression reward computation but assists in building general reasoning capability for static scenes.
+- Image data aids general reasoning but does not involve compression rewards.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Model | Frames | VSI-Bench | VideoMMMU | MMVU | MVBench | TempCompass | VideoMME | Mean |
-|-------|--------|-----------|-----------|------|---------|-------------|----------|------|
+|------|------|-----------|-----------|------|---------|-------------|----------|------|
 | Qwen2.5-VL-3B (baseline) | 64 | 32.93 | 35.33 | 48.64 | 44.77 | 38.05 | 53.55 | 42.21 |
 | Qwen2.5-VL-3B | 16 | 27.63 | 30.78 | 45.28 | 43.89 | 37.95 | 44.37 | 38.32 |
 | InternVL3.5-4B | 64 | 28.96 | 33.33 | 47.51 | 44.71 | 58.34 | 39.15 | 42.00 |
@@ -112,25 +97,25 @@ $$\mathcal{L}_{\text{C-GRPO}} = \mathbb{E}\left[\frac{1}{G}\sum_{i=1}^{G}\left(\
 | ByteVideoLLM-3B | 64 | 21.33 | 22.33 | 28.63 | 22.56 | 35.55 | 22.70 | 25.52 |
 | MovieChat-3B | 1 | 25.14 | 25.78 | 39.35 | 37.10 | 38.79 | 26.41 | 32.10 |
 | VidCom2-3B | 64 | 25.50 | 23.89 | 31.08 | 29.88 | 35.23 | 21.48 | 27.84 |
-| **MARC-3B** | **1** | **27.55** | **33.11** | **51.99** | **45.82** | **55.34** | **39.44** | **42.20** |
+| **Ours (MARC-3B)** | **1** | **27.55** | **33.11** | **51.99** | **45.82** | **55.34** | **39.44** | **42.20** |
 
-**Key result**: MARC-3B uses only 4.71% of visual tokens (122.69 vs. original 2589.93), with a mean score of 42.20—virtually identical to the 64-frame baseline of 42.21.
+**Key Data**: MARC-3B uses only 4.71% of visual tokens (122.69 vs. original 2589.93); the mean score of 42.20 is nearly identical to the 64-frame baseline of 42.21.
 
 ### Ablation Study
 
-**Ablation on threshold $\tau$**:
+**$\tau$ Threshold Ablation**:
 
 | $\tau$ | VSI-Bench | VideoMMMU | MMVU | MVBench | TempCompass | VideoMME | Mean |
-|--------|-----------|-----------|------|---------|-------------|----------|------|
+|---|-----------|-----------|------|---------|-------------|----------|------|
 | 0.4 | 28.27 | 31.66 | 49.12 | 45.21 | 54.72 | 39.07 | 41.34 |
 | **0.6** | **27.55** | **33.11** | **51.99** | **45.82** | **55.34** | **39.44** | **42.20** |
 | 0.8 | 28.23 | 31.78 | 49.34 | 45.89 | 54.12 | 39.03 | 41.40 |
 
-**Ablation on VMR and training strategy**:
+**VMR and Training Strategy Ablation**:
 
 | Method | Frames | Mean |
-|--------|--------|------|
-| Baseline (w/o VMR) | 64 | 42.21 |
+|------|------|------|
+| Baseline (No VMR) | 64 | 42.21 |
 | Baseline + VMR | 64 | 45.56 |
 | SFT | 1 | 38.50 |
 | SFT + VMR | 1 | 40.16 |
@@ -138,46 +123,46 @@ $$\mathcal{L}_{\text{C-GRPO}} = \mathbb{E}\left[\frac{1}{G}\sum_{i=1}^{G}\left(\
 
 ### Key Findings
 
-1. **Near-lossless performance under extreme compression**: 95% token compression (64 frames → 1-frame tokens) yields a mean score of 42.20 vs. 42.21.
-2. **Significant efficiency gains**: GPU memory reduced by 72.4% (41.63 GB → 11.48 GB), LLM generation latency reduced by 23.9%, end-to-end latency reduced by 11.1%.
-3. **VMR alone improves performance**: Without compression, VMR improves the baseline from 42.21 to 45.56 (+7.9%), with up to 27.85% improvement on MVBench.
-4. **C-GRPO substantially outperforms SFT**: MARC achieves a mean of 42.20 vs. 38.50 for SFT (+9.6%).
-5. **Exceeds baseline on several benchmarks**: MARC surpasses the 64-frame baseline on MMVU, MVBench, and TempCompass.
-6. **Outperforms larger models**: MARC-3B exceeds InternVL3.5-4B (42.20 vs. 42.00) and Gemma-3-4B (42.20 vs. 38.87).
-7. **$\tau=0.6$ is optimal**: $\tau=0.4$ imposes too weak a constraint and leads to insufficient retention; $\tau=0.8$ yields sparse reward signals that limit learning.
+1. **Near-zero loss at extreme compression**: 95% token compression (64 frames → 1 frame token) with mean performance of 42.20 vs. 42.21.
+2. **Significant efficiency gains**: GPU memory reduced by 72.4% (41.63GB → 11.48GB), LLM generation latency reduced by 23.9%, and end-to-end latency reduced by 11.1%.
+3. **VMR improves performance independently**: Without compression, VMR improves the baseline from 42.21 to 45.56 (+7.9%), with a 27.85% jump on MVBench.
+4. **C-GRPO significantly outperforms SFT**: MARC mean 42.20 vs. SFT 38.50 (+9.6%).
+5. **Outperforms baseline on some benchmarks**: MARC exceeds the 64-frame baseline on MMVU, MVBench, and TempCompass.
+6. **Surpasses larger models**: MARC-3B mean exceeds InternVL3.5-4B (42.00) and Gemma-3-4B (38.87).
+7. **$\tau=0.6$ is optimal**: 0.4 is too loose for maintenance, while 0.8 results in sparse signals that hinder learning.
 
 ## Highlights & Insights
 
-- **Cognitive science-inspired retrieval design**: VMR's event-level segmentation simulates the encoding and retrieval mechanisms of human episodic memory, better reflecting the natural structure of video content than fixed windows or uniform sampling.
-- **Reframing compression as an alignment problem**: The core insight of C-GRPO is to redefine token compression from a geometric/heuristic operation to a teacher-student alignment problem, leveraging RL reward shaping to guide the compression direction.
-- **Elegant correctness gating**: Only correct generations receive the compression retention reward, preventing reward hacking and amplification of spurious patterns.
-- **Only 5K training samples**: The minimal training data (5K sampled from 260K) demonstrates the high data efficiency of C-GRPO.
-- **Retrieve-then-compress paradigm**: The pipeline design ensures that the compression module does not blindly compress the entire video, but instead performs meaningful compression on pre-selected key segments.
+- **Cognitive science-inspired retrieval**: VMR's event-level segmentation simulates human episodic memory encoding, aligning better with natural video structures than fixed windows.
+- **Compression as an alignment problem**: The core insight is redefining token compression from a geometric operation to a teacher-student alignment problem guided by RL reward shaping.
+- **Sophisticated correctness gating**: Only correct generations receive maintenance rewards, preventing reward hacking and the amplification of hallucinations.
+- **Only 5K training samples**: The high data efficiency of C-GRPO is demonstrated by using a tiny fraction of the available dataset.
+- **Retrieve-then-compress paradigm**: This pipeline ensures the compression module targets high-value evidence rather than blindly processing the entire video.
 
 ## Limitations & Future Work
 
-1. **Performance degradation on long videos**: On VideoMME, MARC retains only 74% of baseline performance (39.44 vs. 53.55), indicating that extreme compression still carries a meaningful cost for long-video understanding.
-2. **Validated only on 3B models**: All training experiments are based on Qwen2.5-VL-3B; the generalizability of MARC to 7B+ models has not been verified.
-3. **VMR depends on event segmentation quality**: If the event detection module misidentifies boundaries or query semantic matching is poor, downstream compression quality will suffer.
-4. **Fixed top-k=3**: The number of retrieved clips is fixed; adaptive selection strategies have not been explored.
-5. **Fixed compression ratio**: $\rho$ is not adaptively adjusted based on video complexity, which may be suboptimal for diverse video types.
-6. **Separate training of components**: VMR and C-GRPO are trained separately; fully end-to-end joint optimization has not been achieved.
+1. **Performance loss on long videos**: On VideoMME, MARC retains only 74% of baseline performance (39.44 vs. 53.55), showing a cost for extreme compression in long-form understanding.
+2. **Limited to 3B models**: Experiments were conducted on Qwen2.5-VL-3B; generalization to 7B+ models remains unverified.
+3. **Dependency on VMR quality**: Misjudged event boundaries or poor semantic matching by VMR will degrade downstream compression.
+4. **Fixed top-k=3**: The study did not explore adaptive selection strategies for retrieved segments.
+5. **Fixed compression ratio**: $\rho$ was not adaptively adjusted based on video complexity.
+6. **Separated training**: VMR and C-GRPO were trained separately rather than in a fully end-to-end joint optimization.
 
 ## Related Work & Insights
 
-- **Video-RAG direction**: The VMR module is essentially a video corpus retrieval scheme and can be integrated with agent-based systems (e.g., VideoAgent).
-- **Scalability of GRPO**: The compression reward design in C-GRPO can be generalized to token compression in other modalities (e.g., 3D point clouds, long documents).
-- **Token merging methods**: MovieChat's short-term memory merging is the direct predecessor of MARC's temporal compression layer; MARC significantly improves merging quality through the event structure provided by VMR.
-- **New paradigm for knowledge distillation**: Traditional KD aligns logits/features via KL divergence; C-GRPO opens a new path for "behavior-level" distillation using RL reward signals.
+- **Video-RAG**: VMR serves as a video corpus retrieval solution, potentially integrable with Agent-Based systems like VideoAgent.
+- **Scalability of GRPO**: C-GRPO's reward design can be generalized to other modalities like 3D point clouds or long documents.
+- **Token Merging**: MARC improves upon the temporal merging found in MovieChat by leveraging event structures provided by VMR.
+- **New Distillation Paradigm**: Unlike traditional KD using KL divergence on logits, C-GRPO presents a path for "behavioral-level" distillation via RL signals.
 
 ## Rating
 
-| Dimension | Score | Notes |
-|-----------|-------|-------|
-| Novelty | ⭐⭐⭐⭐ | First application of RL (GRPO) to video token compression; retrieve-then-compress combination is novel |
-| Experimental Thoroughness | ⭐⭐⭐⭐ | 6 benchmarks, extensive comparisons/ablations, complete efficiency evaluation; lacks large-model validation |
-| Writing Quality | ⭐⭐⭐⭐ | Clear structure, complete mathematical derivations, well-motivated |
-| Value | ⭐⭐⭐⭐⭐ | 95% compression with near-lossless performance; extremely high practical deployment value |
+| Dimension | Rating | Description |
+|------|------|------|
+| Novelty | ⭐⭐⭐⭐ | First application of RL (GRPO) to video token compression; novel retrieve-then-compress combo. |
+| Experimental Thoroughness | ⭐⭐⭐⭐ | Comprehensive evaluation across 6 benchmarks and efficiency metrics, though lacks larger model variants. |
+| Writing Quality | ⭐⭐⭐⭐ | Clear structure, complete mathematical derivations, and well-motivated. |
+| Value | ⭐⭐⭐⭐⭐ | 95% compression with negligible loss represents high value for practical deployment. |
 
 <!-- RELATED:START -->
 
@@ -186,10 +171,10 @@ $$\mathcal{L}_{\text{C-GRPO}} = \mathbb{E}\left[\frac{1}{G}\sum_{i=1}^{G}\left(\
 ## Related Papers
 
 - [\[NeurIPS 2025\] StreamForest: Efficient Online Video Understanding with Persistent Event Memory](../../NeurIPS2025/autonomous_driving/streamforest_efficient_online_video_understanding_with_persistent_event_memory.md)
+- [\[ICLR 2026\] Low-Latency Neural LiDAR Compression with 2D Context Models](low-latency_neural_lidar_compression_with_2d_context_models.md)
 - [\[ICLR 2026\] EgoDex: Learning Dexterous Manipulation from Large-Scale Egocentric Video](egodex_learning_dexterous_manipulation_from_large-scale_egocentric_video.md)
 - [\[ICML 2026\] Mitigating Error Accumulation in Continuous Navigation via Memory-Augmented Kalman Filtering](../../ICML2026/autonomous_driving/mitigating_error_accumulation_in_continuous_navigation_via_memory-augmented_kalm.md)
-- [\[AAAI 2026\] CompTrack: Information Bottleneck-Guided Low-Rank Dynamic Token Compression for Point Cloud Tracking](../../AAAI2026/autonomous_driving/comptrack_information_bottleneckguided_lowrank_dynamic_token_compres.md)
-- [\[AAAI 2026\] FastDriveVLA: Efficient End-to-End Driving via Plug-and-Play Reconstruction-based Token Pruning](../../AAAI2026/autonomous_driving/fastdrivevla_efficient_end-to-end_driving_via_plug-and-play_.md)
+- [\[ICLR 2026\] Plan-R1: Safe and Feasible Trajectory Planning as Language Modeling](plan-r1_safe_and_feasible_trajectory_planning_as_language_modeling.md)
 
 </div>
 

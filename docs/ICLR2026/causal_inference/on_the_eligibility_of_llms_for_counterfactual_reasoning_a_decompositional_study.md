@@ -2,164 +2,143 @@
 title: >-
   [Paper Note] On the Eligibility of LLMs for Counterfactual Reasoning: A Decompositional Study
 description: >-
-  [ICLR2026][Causal Inference][counterfactual reasoning] This paper proposes a decompositional evaluation framework grounded in Structural Causal Models (SCMs)…
+  [ICLR 2026][Causal Inference][counterfactual reasoning] This paper proposes a decompositional evaluation framework based on Structural Causal Models (SCM), splitting LLM counterfactual reasoning into four stages (causal variable identification → causal graph construction → intervention identification → outcome reasoning). It systematically diagnoses ability bottlenecks acro
 tags:
-  - "ICLR2026"
-  - "Causal Inference"
-  - "counterfactual reasoning"
-  - "structural causal model"
-  - "LLM evaluation"
-  - "decompositional analysis"
-  - "tool-augmented learning"
+  - ICLR 2026
+  - Causal Inference
+  - counterfactual reasoning
+  - structural causal model
+  - LLM evaluation
+  - decompositional analysis
+  - tool-augmented learning
 date: 2026-05-08
-content_hash: e362c43d5730b0b5
+content_hash: d28a0debb81efee3
 ---
-
 # On the Eligibility of LLMs for Counterfactual Reasoning: A Decompositional Study
 
-**Conference**: ICLR2026
+**Conference**: ICLR2026  
 **arXiv**: [2505.11839](https://arxiv.org/abs/2505.11839)  
-**Code**: To be confirmed  
-**Area**: Causal Reasoning
+**Code**: TBD  
+**Area**: Causal Reasoning  
 **Keywords**: counterfactual reasoning, structural causal model, LLM evaluation, decompositional analysis, tool-augmented learning
 
 ## TL;DR
 
-This paper proposes a decompositional evaluation framework grounded in Structural Causal Models (SCMs), decomposing LLM counterfactual reasoning into four stages (causal variable identification → causal graph construction → intervention identification → outcome reasoning). It systematically diagnoses capability bottlenecks at each stage across 11 multimodal datasets, and introduces tool-augmented and advanced elicitation strategies to improve performance.
+This paper proposes a decompositional evaluation framework based on Structural Causal Models (SCM), splitting LLM counterfactual reasoning into four stages (causal variable identification → causal graph construction → intervention identification → outcome reasoning). It systematically diagnoses ability bottlenecks across 11 multimodal datasets and suggests tool augmentation and advanced elicitation strategies to improve performance.
 
 ## Background & Motivation
 
-- Counterfactual reasoning is a critical capability for evaluating LLM adaptability and reliability: given a hypothetical change in premises, can a model adjust its conclusions accordingly?
-- Prior work has shown that LLMs perform poorly on counterfactual reasoning tasks, yet a **standardized framework** for systematically analyzing failure causes is lacking.
-- Existing evaluation approaches are predominantly end-to-end "direct probing": the model is given a counterfactual intervention and asked to respond, without accounting for the **causal modeling foundations** underlying counterfactual reasoning—such as variable identification and causal dependency construction.
-- A decompositional approach is needed to break counterfactual reasoning into independently assessable stages, enabling precise localization of LLM reasoning bottlenecks.
+- Counterfactual reasoning is a critical capability for evaluating LLM adaptability and reliability: given a hypothetical change in premises, can the model adjust its reasoning conclusions?
+- Prior research indicates that LLMs perform poorly in counterfactual tasks, yet there is a lack of a **standardized framework** to systematically analyze failure modes.
+- Most existing evaluations are end-to-end "direct tests": they provide counterfactual interventions and expect an answer, ignoring the **causal modeling foundations** behind counterfactual reasoning—such as variable identification and causal dependency construction.
+- There is a need for a decompositional method to break down counterfactual reasoning into independently evaluable stages to precisely locate LLM reasoning bottlenecks.
 
 ## Core Problem
 
-1. How do LLMs perform across the decomposed stages of counterfactual reasoning (causal variable identification, causal graph construction, intervention identification, and outcome reasoning)?
-2. Which auxiliary techniques can effectively improve LLMs' counterfactual reasoning capabilities?
+1. How do LLMs perform in each decomposed stage of counterfactual reasoning (causal variable identification, causal graph construction, intervention identification, and outcome reasoning)?
+2. Which auxiliary techniques effectively enhance the counterfactual reasoning capabilities of LLMs?
 
 ## Method
 
-### Causal Modeling Foundation
+### Overall Architecture
 
-Based on Pearl's Structural Causal Model (SCM), four types of causal variables are defined:
+Rather than training a new model, this work builds a "diagnostic bench" to answer a question often masked by end-to-end evaluations: exactly where does LLM counterfactual reasoning fail? Using Pearl’s Structural Causal Model (SCM) as a backbone, task information is formalized into four types of causal variables. The end-to-end process is then decomposed into four independently measurable stages—causal variable identification, causal graph construction, intervention identification, and outcome reasoning. During evaluation, each stage is fed with ground-truth data from the preceding stage to attribute errors to specific steps. The accompanying benchmark spans 11 datasets across text, vision-language, mathematical symbols, and code. After locating bottlenecks, a "divide and conquer" approach is applied: tool augmentation for explicit variables and advanced elicitation for implicit variables.
 
-- **Exposure (X)**: The treatment or intervention condition applied to the system.
-- **Covariate (Z)**: Pre-treatment variables that may affect both X and Y.
-- **Mediator (M)**: A variable lying on the X→Y causal pathway, where $M = f_M(X, Z)$.
-- **Outcome (Y)**: The result variable influenced by the exposure, where $Y = f_Y(X, M, Z)$.
+```mermaid
+graph TD
+    IN["Multimodal Instances<br/>Text/Vision/Math/Code<br/>Factual Context + Counterfactual Query"] --> D1["1. SCM Causal Variable Quadruplet<br/>X Exposure / Z Covariate / M Mediator / Y Outcome"]
+    D1 --> S
+    subgraph S["2. Four-Stage Decomposition + Ground-Truth Isolation"]
+        direction TB
+        T1["Task I: Causal Variable Identification"] --> T2["Task II: Causal Graph Construction (DAG)"]
+        T2 --> T3["Task III: Intervention Identification X'"]
+        T3 --> T4["Task IV: Outcome Reasoning M'/Y'<br/>Core Bottleneck"]
+    end
+    S --> G["Stage-by-Stage Diagnosis<br/>Bottleneck in Implicit Variable Reasoning"]
+    subgraph I["3. Divide & Conquer for Explicit/Implicit Variables"]
+        direction TB
+        E1["Tool Augmentation<br/>NER/Detection/Code Parsing<br/>For Explicit Variables"]
+        E2["Advanced Elicitation<br/>CoT / CoT-SC / ToT<br/>For Implicit Variables"]
+    end
+    G --> I
+    I --> OUT["Enhanced E2E Counterfactual Reasoning"]
+```
 
-The essence of counterfactual reasoning: given observed facts $(x, z, m, y)$, if X is intervened upon to take value $x'$, the updated quantities $M' = f_M(x', z)$ and $Y' = f_Y(x', M', z)$ must be computed.
+### Key Designs
 
-### Four-Stage Decompositional Evaluation
+**1. SCM Causal Variable Quadruplet: A Computational Foundation**
 
-| Stage | Task | Evaluation Objective |
-|-------|------|----------------------|
-| Task I | Causal Variable Identification | Correctly identify X, Z, M, Y from factual information |
-| Task II | Causal Graph Construction | Construct the correct DAG given the identified variables |
-| Task III | Counterfactual Intervention Identification | Correctly identify the intervened value $X'$ from a counterfactual query |
-| Task IV | Outcome Reasoning | Infer counterfactual mediator $M'$ and outcome $Y'$ given the causal graph and intervention |
+Previous evaluations treated counterfactual reasoning as a "black box," making it difficult to pinpoint failure causes. This work leverages Pearl’s SCM to reduce task information into four variables: Exposure $X$ (the treatment/intervention), Covariate $Z$ (pre-treatment confounders affecting $X$ and $Y$ alike), Mediator $M$ (variables on the path $X \to Y$, where $M = f_M(X, Z)$), and Outcome $Y$ (the result, where $Y = f_Y(X, M, Z)$). With this mechanism, counterfactual reasoning yields definitive answers: given observed facts $(x, z, m, y)$, if $X$ is intervened to $x'$, the correct results are recalculated along the causal chain:
 
-Key design: each stage's evaluation **provides ground-truth outputs from preceding stages**, so as to isolate and measure each stage's independent capability.
+$$M_{x'} = f_M(x', z), \qquad Y_{x'} = f_Y(x', M_{x'}, z).$$
 
-### Benchmark Construction
+This step transforms intuitive judgments of "correctness" into verifiable variable computations.
 
-Eleven datasets are collected and curated across four modalities:
+**2. Four-Stage Decomposition & Ground-Truth Isolation: Attributing Global Failure to Local Steps**
 
-- **Text**: CRASS (QA), CLOMO (logical parsing), RNN-Typology (syntactic parsing)
-- **Vision-Language**: CVQA-Bool, CVQA-Count, COCO
-- **Mathematical/Symbolic**: Arithmetic
-- **Code**: HumanEval-Exe, Open-Critic, Code-Preference
-- **Mixed**: MalAlgoQA
+Evaluation is sliced into four stages following the SCM computational sequence: Task I (identifying $X, Z, M, Y$), Task II (constructing the correct DAG), Task III (identifying the intervened variable $X'$), and Task IV (inferring $M'$ and $Y'$). The key is "ground-truth isolation": when evaluating a stage, the previous stage's standard answer is provided as input. This ensures that a stage's score reflects its own capability without error propagation. This isolation reveals that the bottleneck lies in Task IV (reasoning about implicit variables $M', Y'$), rather than Task II (causal graph construction), which achieves F1 > 0.9.
 
-Each dataset is preprocessed: causal variables are annotated, reference DAGs are constructed, and intervention variables and counterfactual outcomes are extracted.
+**3. Divide and Conquer: Tailored Solutions for Explicit/Implicit Variables**
 
-### Improvement Strategies
-
-**Strategy 1: Tool-Augmented Execution** (for explicit variable identification)
-
-Modality-specific tools are employed to assist entity recognition:
-
-- Text/Math: `bert-base-NER` for candidate entity extraction
-- Vision: `grounding-dino-base` for detecting relevant objects in images
-- Code: `GraphCodeBERT` for extracting functions, variables, and control structures
-
-Tool outputs are then filtered and refined by the LLM to produce the final set of explicit variables.
-
-**Strategy 2: Advanced Elicitation Strategies** (for implicit variable reasoning)
-
-- **CoT**: Step-by-step reasoning over mediator variables.
-- **CoT-SC**: Generates $k=5$ reasoning paths and selects the answer via majority voting.
-- **ToT**: $k=5$ branching reasoning paths, with intermediate results evaluated against task descriptions using BERTScore.
+Diagnosis shows that explicit variables ($X, Z, Y$, mostly localized in the input) fail due to cross-modal recognition issues, addressed via tool augmentation (function-calling NER). Text/Math uses bert-base-NER, Vision uses grounding-dino-base to detect objects while masking backgrounds, and Code uses GraphCodeBERT to extract structures. Implicit variables ($M, M', Y'$) fail due to reasoning depth, addressed via advanced elicitation: CoT for step-by-step logic, CoT-SC for majority voting across $k=5$ paths, and ToT for exploring $k=5$ branches using BERTScore for consistency. However, experiments warn that complex strategies like ToT can trigger "overthinking," introducing unsupported causal chains.
 
 ## Key Experimental Results
 
-Seven mainstream LLMs are evaluated: GPT-5, GPT-o4-mini-high, Qwen3-VL-235B, Llama-4-Scout, Llama-4-Maverick, Gemini2.5-Pro, and DeepSeek-VL.
+The study evaluates 7 LLMs: GPT-5, GPT-o4-mini-high, Qwen3-VL-235B, Llama-4-Scout, Llama-4-Maverick, Gemini2.5-Pro, and DeepSeek-VL.
 
 ### Task I: Causal Variable Identification
-
-- F1 for X reaches 87–92% on text datasets, but drops noticeably on visual and code modalities (e.g., <72% on Open-Critic).
-- **Implicit variable M is the hardest to identify**: even on text datasets, F1 for M is 5–10 points lower than for X.
-- Higher modality complexity leads to greater difficulty; the inferential nature of variables (explicit vs. implicit) constitutes an independent difficulty factor beyond modality.
+- X F1 reaches 87–92% in text but drops significantly in vision/code (e.g., <72% on Open-Critic).
+- **M identification is the most difficult**: Even in text, M's F1 is 5–10 points lower than X.
+- Modality complexity and the reasoning nature of the variable (explicit vs. implicit) are independent difficulty factors.
 
 ### Task II: Causal Graph Construction
-
-- Overall performance is strongest, with F1 > 0.9 in most cases.
-- The causal graph structure is rule-governed, enabling LLMs to apply construction rules effectively once variables are given.
+- Overall best performance, with F1 > 0.9 in most cases.
+- LLMs effectively apply construction rules when variables are given.
 
 ### Task III: Counterfactual Intervention Identification
-
-- LLMs consistently and accurately identify the value of $X'$ across modalities.
-- However, this task is relatively straightforward, as it does not require reasoning about the propagation of intervention effects.
+- LLMs accurately identify $X'$ values with stable cross-modal performance.
+- This task is relatively simple as it does not involve effect propagation.
 
 ### Task IV: Outcome Reasoning (Core Bottleneck)
-
-- **LLMs perform worst when reasoning about counterfactual $M'$ and $Y'$.**
-- GPT-5 achieves $M'$=92.1%, $Y'$=88.0% on CRASS, but drops to $M' \approx 75\%$, $Y' \approx 70\%$ on code datasets.
-- Weaker models (e.g., DeepSeek-VL) reach $Y' \approx 54\%$ on visual datasets.
-- This indicates that LLMs lack sufficient capacity for reasoning along causal chains.
+- **LLMs perform worst when reasoning about counterfactual $M'$ and $Y'$**.
+- GPT-5 achieves $M'=92.1\%$, $Y'=88.0\%$ on CRASS, but drops to $M' \approx 75\%$, $Y' \approx 70\%$ on code datasets.
+- Weaker models (e.g., DeepSeek-VL) see $Y'$ as low as ~54% on vision datasets.
 
 ### Improvement Effects
-
-- Tool augmentation yields significant gains for explicit variables: Llama-4-Scout improves by +32.0% on X in CVQA-Count.
-- Advanced elicitation strategies are effective but bounded for implicit variables: CoT-SC and ToT sometimes underperform simple CoT, as complex strategies may induce **overthinking**.
-- Combining both strategies yields the largest overall gains, though not in a simple additive manner, as errors accumulate and propagate through the pipeline.
+- Tool augmentation significantly boosts explicit variable identification: Llama-4-Scout improves X by +32.0% on CVQA-Count.
+- Advanced elicitation helps implicit variables but has a ceiling: overthinking in CoT-SC/ToT can sometimes lead to worse results than simple CoT.
 
 ## Highlights & Insights
 
-1. **Systematic decompositional framework**: The first work to decompose LLM counterfactual reasoning into four independently evaluable stages based on Pearl's SCM, enabling fine-grained diagnosis.
-2. **Large-scale multimodal benchmark**: Covers 11 datasets across 4 modalities, with each instance annotated with causal variables and reference DAGs.
-3. **Diagnostic findings**: Causal graph construction is not the bottleneck (F1 > 0.9); the true bottleneck lies in implicit variable reasoning, particularly for counterfactual $M'$ and $Y'$.
-4. **Actionable improvement strategies**: Tool augmentation and elicitation strategies target the respective weaknesses of explicit and implicit variables, and the limitations of ToT due to overthinking are identified.
+1. **Systematic Decomposition Framework**: First to use Pearl's SCM to split counterfactual reasoning into four independently evaluable stages for fine-grained diagnosis.
+2. **Large-scale Multimodal Benchmark**: Covers 11 datasets and 4 modalities with annotated causal variables and DAGs.
+3. **Diagnostic Findings**: Identifies that causal graph construction is not the bottleneck (>0.9 F1); the real difficulty lies in implicit variable reasoning ($M', Y'$).
+4. **Actionable Strategies**: Tool augmentation and elicitation address specific weaknesses, though ToT's overthinking remains a constraint.
 
 ## Limitations & Future Work
 
-- Causal variable annotation and DAG construction during preprocessing rely on manual or semi-automatic methods, limiting scalability.
-- The isolated evaluation design (providing ground-truth inputs per stage) does not reflect error accumulation in real end-to-end settings.
-- No effective mitigation is proposed for the overthinking problem observed in advanced elicitation strategies.
-- Only a limited set of LLMs is evaluated; open-source small models are not analyzed.
-- The tool selection in the tool-augmented strategy is relatively fixed, with no exploration of alternative configurations.
+- Causal variable annotation and DAG construction still rely on manual or semi-automatic methods, limiting scalability.
+- Isolated evaluation (providing GT at each stage) does not reflect error accumulation in real end-to-end scenarios.
+- No definitive solution is provided for the "overthinking" problem in advanced elicitation.
+- Only a limited number of LLMs were evaluated, lacking analysis of smaller open-source models.
 
 ## Related Work & Insights
 
-| Method | Evaluation Style | Causal Modeling | Multimodal | Decompositional |
-|--------|-----------------|-----------------|------------|-----------------|
-| CRASS (Frohberg et al., 2021) | End-to-end QA | None | Text only | No |
+| Method | Evaluation | Causal Modeling | Multimodal | Decomposition |
+|------|----------|----------|--------|----------|
+| CRASS (Frohberg et al., 2021) | E2E QA | None | Text only | No |
 | DICE (Shrivastava et al., 2025) | Diagnostic QA | Partial | Text only | No |
 | CausalProbe (Chi et al., 2024) | Probing | Partial | Text only | No |
-| MalAlgoQA (Sonkar et al., 2024) | Multiple-choice QA | None | Text + symbolic | No |
-| **Ours** | **Four-stage decomposition** | **Full SCM** | **4 modalities** | **Per-stage diagnosis** |
+| MalAlgoQA (Sonkar et al., 2024) | MCQ QA | None | Text+Symbol | No |
+| **Ours** | **4-Stage Decomposition** | **Full SCM** | **4 Modalities** | **Step-by-step Diagnosis** |
 
-Core distinction: prior work primarily conducts end-to-end evaluation; this paper is the first to align evaluation with the structured steps of SCM, enabling per-module failure attribution.
-
-The decompositional evaluation paradigm is generalizable to other complex reasoning tasks (e.g., mathematical proof, multi-step planning) by decomposing steps to precisely localize model weaknesses. The "tool augmentation + LLM high-level reasoning" pattern warrants further exploration in causal inference, particularly within multi-agent frameworks. The overthinking phenomenon suggests that elicitation strategy design must balance reasoning depth against the degree of evidential support available. Implicit variable reasoning constitutes a key bottleneck in LLM causal capabilities, and future work should address this at the training level rather than relying solely on inference-time strategies.
+The core difference is that while prior work focused on end-to-end assessment, this study aligns evaluation with structural SCM steps to achieve modular failure attribution.
 
 ## Rating
-- **Novelty**: 8/10 — The decompositional framework offers a novel entry point, though the task definitions at individual stages are relatively standard.
-- **Experimental Thoroughness**: 8/10 — Comprehensive coverage with 11 datasets and 7 LLMs, but lacks analysis of open-source small models and ablation studies.
-- **Writing Quality**: 7/10 — Structure is clear, but tables are data-dense and core insights could be distilled more concisely.
-- **Value**: 8/10 — Provides a systematic diagnostic tool and actionable improvement directions for LLM counterfactual reasoning.
+- Novelty: 8/10
+- Experimental Thoroughness: 8/10
+- Writing Quality: 7/10
+- Value: 8/10
 
 <!-- RELATED:START -->
 
@@ -167,11 +146,11 @@ The decompositional evaluation paradigm is generalizable to other complex reason
 
 ## Related Papers
 
-- [\[ICLR 2026\] RFEval: Benchmarking Reasoning Faithfulness under Counterfactual Perturbations](rfeval_benchmarking_reasoning_faithfulness_under_counterfactual_perturbations.md)
-- [\[NeurIPS 2025\] Counterfactual Reasoning for Steerable Pluralistic Value Alignment of Large Language Models](../../NeurIPS2025/causal_inference/counterfactual_reasoning_for_steerable_pluralistic_value_alignment_of_large_lang.md)
-- [\[ACL 2026\] Evaluating Counterfactual Strategic Reasoning in Large Language Models](../../ACL2026/causal_inference/evaluating_counterfactual_strategic_reasoning_in_large_language_models.md)
+- [\[ICLR 2026\] LLMs Struggle to Balance Reasoning and World Knowledge in Causal Narrative Understanding](llms_struggle_to_balance_reasoning_and_world_knowledge_in_causal_narrative_under.md)
 - [\[ACL 2026\] Parallel Universes, Parallel Languages: A Comprehensive Study on LLM-based Multilingual Counterfactual Example Generation](../../ACL2026/causal_inference/parallel_universes_parallel_languages_a_comprehensive_study_on_llm-based_multili.md)
-- [\[ICLR 2026\] SelfReflect: Can LLMs Communicate Their Internal Answer Distribution?](selfreflect_can_llms_communicate_their_internal_answer_distribution.md)
+- [\[ACL 2025\] CoA-Reasoning: Explorations on Counterfactual Analysis in Physical Reasoning of LVLMs](../../ACL2025/causal_inference/coa-reasoning_explorations_on_counterfactual_analysis_in_physical_reasoning_of_l.md)
+- [\[ACL 2026\] Evaluating Counterfactual Strategic Reasoning in Large Language Models](../../ACL2026/causal_inference/evaluating_counterfactual_strategic_reasoning_in_large_language_models.md)
+- [\[ICLR 2026\] Function Induction and Task Generalization: An Interpretability Study with Off-by-One Addition](function_induction_and_task_generalization_an_interpretability_study_with_off-by.md)
 
 </div>
 

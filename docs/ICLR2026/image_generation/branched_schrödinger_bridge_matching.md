@@ -2,141 +2,133 @@
 title: >-
   [Paper Note] Branched Schrödinger Bridge Matching
 description: >-
-  [ICLR 2026][Image Generation][Schrödinger Bridge] This paper proposes BranchSBM, a framework that extends Schrödinger Bridge Matching to branching scenarios by parameterizing multiple time-dependent velocity fields and g…
+  [ICLR 2026][Image Generation][Schrödinger Bridge] The authors propose the BranchSBM framework, which extends Schrödinger Bridge Matching to branching scenarios by parameterizing multiple time-dependent velocity fields and growth processes. This approach models bifurcating dynamic trajectories from a single initial distribution to multiple target distributions, signifi
 tags:
-  - "ICLR 2026"
-  - "Image Generation"
-  - "Schrödinger Bridge"
-  - "branching trajectories"
-  - "flow matching"
-  - "cell fate differentiation"
-  - "optimal transport"
+  - ICLR 2026
+  - Image Generation
+  - Schrödinger Bridge
+  - Flow Matching
 date: 2026-05-08
-content_hash: 090b2816c5f32b72
+content_hash: 023dc02c7bc6d974
 ---
-
 # Branched Schrödinger Bridge Matching
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2506.09007](https://arxiv.org/abs/2506.09007)  
 **Code**: [HuggingFace](https://huggingface.co/ChatterjeeLab/BranchSBM)  
-**Area**: Image Generation / Generative Model Theory
-**Keywords**: Schrödinger Bridge, branching trajectories, flow matching, cell fate differentiation, optimal transport
+**Area**: Image Generation / Generative Model Theory  
+**Keywords**: Schrödinger Bridge, Branched Trajectories, Flow Matching, Cell Fate Differentiation, Optimal Transport
 
 ## TL;DR
-This paper proposes BranchSBM, a framework that extends Schrödinger Bridge Matching to branching scenarios by parameterizing multiple time-dependent velocity fields and growth processes. It models bifurcating dynamics from a single initial distribution to multiple target distributions, significantly outperforming single-branch methods on tasks such as LiDAR surface navigation and single-cell perturbation modeling.
+The authors propose the BranchSBM framework, which extends Schrödinger Bridge Matching to branching scenarios by parameterizing multiple time-dependent velocity fields and growth processes. This approach models bifurcating dynamic trajectories from a single initial distribution to multiple target distributions, significantly outperforming single-branch methods in tasks such as LiDAR surface navigation and single-cell perturbation modeling.
 
 ## Background & Motivation
-Predicting intermediate trajectories between an initial and a target distribution is a central problem in generative modeling. Existing methods such as Flow Matching and Schrödinger Bridge Matching (SBM) effectively learn mappings between two distributions, but they model a **single stochastic path** and are inherently limited to unimodal transitions.
+Predicting intermediate trajectories between an initial distribution and a target distribution is a central problem in generative modeling. Existing methods like Flow Matching and Schrödinger Bridge Matching (SBM) effectively learn mappings between two distributions, but they model a **single stochastic path**, which inherently can only handle unimodal transitions.
 
-**Key Challenge**: Many real-world systems exhibit **branching dynamics**—i.e., evolution from a common origin into multiple distinct terminal distributions. Examples include:
-- **Cell fate differentiation**: A homogeneous progenitor population diverges into distinct cell types during development.
-- **Drug perturbation responses**: The same cell line may produce multiple different phenotypic outcomes following drug treatment.
-- **Path planning**: Multi-route navigation from a single origin to different destinations.
+**Key Challenge**: Many real-world systems exhibit **branching dynamics**—evolving from a common origin state and bifurcating into multiple distinct terminal distributions. Examples include:
+- **Cell Fate Differentiation**: Homogeneous progenitor cell populations differentiating into various cell types during development.
+- **Drug Perturbation Response**: A single cell line producing multiple different phenotypic outcomes after drug treatment.
+- **Path Planning**: Multi-path navigation from a single starting point to various destinations.
 
-Existing single-path SBM methods cannot model such branching behavior. When the target distribution is multimodal, single-branch approaches either suffer from mode collapse (converging only to the lowest-energy mode) or fail to accurately reach each terminal state.
+Current single-path SBM methods cannot model this branching behavior. When the target distribution is multimodal, single-branch methods either suffer from mode collapse (reaching only the lowest energy mode) or generate trajectories that fail to accurately reach all terminal states.
 
-**Key Insight**: This work generalizes SBM to the branching setting—learning a set of branched Schrödinger bridges, each with an independent drift field and growth rate, to jointly describe population-level bifurcating dynamics from a single origin to multiple endpoints.
+**Key Insight**: This work generalizes SBM to branching scenarios by learning a set of branched Schrödinger bridges. Each branch has an independent drift field and growth rate, which together describe the bifurcation dynamics of a population from a single origin to multiple destinations.
 
 ## Method
 
 ### Overall Architecture
-BranchSBM adopts a four-stage training strategy:
-- **Input**: Initial distribution $\pi_0$ and $K+1$ target distributions $\{\pi_{1,k}\}_{k=0}^{K}$
-- **Parameterization**: Each branch $k$ has an independent velocity network $u_{t,k}^\theta$ and a growth network $g_{t,k}^\phi$
-- **Output**: Learned branching trajectories—starting from the initial distribution, with mass redistributed across branches over time
+BranchSBM aims to learn trajectories that bifurcate from one origin to multiple destinations. Given an initial distribution $\pi_0$ and $K+1$ target distributions $\{\pi_{1,k}\}_{k=0}^{K}$, single-branch SBM can only fit one path and collapses when faced with multimodal terminal states. The core mechanism is to assign an independent velocity network $u_{t,k}^\theta$ (determining where the branch goes) and a growth network $g_{t,k}^\phi$ (determining how much mass flows into the branch) to each branch $k$. These are learned through phased training to decouple the two components, ultimately obtaining a family of branched trajectories that start from the same origin, redistribute mass over time among branches, and flow toward respective target distributions. The entire pipeline decouples "where to go" and "how to distribute mass" into two sets of networks learned across four stages, as illustrated below.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    IN["Input: Single origin π0<br/>+ K+1 target distributions"]
+    S1["Stage 1 · Neural Interpolation<br/>Learn energy-optimal conditional paths φ"]
+    S2["Stage 2 · Conditional Flow Matching<br/>Branch drift fields u_t,k (Direction)"]
+    S3["Stage 3 · Training Growth Networks<br/>g_t,k redistributes mass among branches (Σ weights=1)"]
+    S4["Stage 4 · Joint Fine-tuning<br/>Drift fields + Growth networks + Reconstruction loss"]
+    OUT["Output: K+1 branched trajectories<br/>Mass flows to respective target distributions"]
+    IN --> S1 --> S2 --> S3 --> S4 --> OUT
+```
 
 ### Key Designs
-1. **Unbalanced Conditional Stochastic Optimal Control (Unbalanced CondSOC)**:
 
-    - **Function**: Extends the standard GSB problem by introducing a time-dependent weight $w_t(X_t)$ driven by the growth rate $g_t(X_t)$.
-    - **Mechanism**: Mass can flow between branches through the growth rate concept—mass in the primary branch transfers to secondary branches over time.
-    - **Design Motivation**: Standard SBM assumes mass conservation (a one-to-one correspondence from initial to terminal states), but branching scenarios require mass bifurcation—the initial unified population must "split" across multiple targets.
-    - **Proposition 1**: Proves that the Unbalanced GSB problem can be efficiently solved by conditioning on endpoint pairs.
+**1. Unbalanced Conditional Stochastic Optimal Control (Unbalanced CondSOC): Allowing mass flow between branches**
 
-2. **Branched Generalized Schrödinger Bridge Problem**:
+Standard SBM assumes mass conservation—where each unit of initial mass corresponds one-to-one to a terminal state. This is the fundamental reason it cannot handle branching: a unified population cannot "split" into multiple targets under conservation constraints. BranchSBM introduces a time-dependent weight $w_t(X_t)$ driven by a growth rate $g_t(X_t)$ into the standard GSB problem. This allows mass from a primary branch to transfer to secondary branches over time, transforming "bifurcation" into a modelable continuous process. **Proposition 1** proves that this Unbalanced GSB problem can be solved efficiently by conditioning on endpoint pairs, decomposing a population-level optimization problem into sampleable conditional subproblems.
 
-    - Formalizes the branched GSB problem as a sum of multiple Unbalanced GSB problems.
-    - The primary branch ($k=0$) has an initial weight of 1; the $K$ secondary branches have initial weights of 0.
-    - Mass conservation constraint: $\sum_{k=0}^{K} w_{t,k} = 1$ holds for all $t$.
-    - **Proposition 2**: Proves that the branched CondSOC problem decomposes into independent per-branch subproblems.
+**2. Branched Generalized Schrödinger Bridge Problem: Sum of unbalanced subproblems**
 
-3. **Four-Stage Training Strategy**:
+Using Unbalanced CondSOC as a building block, BranchSBM formalizes the branched GSB problem as the sum of multiple Unbalanced GSB problems. The primary branch ($k=0$) starts with a weight of 1, while $K$ secondary branches start with a weight of 0. The process satisfies the mass conservation constraint $\sum_{k=0}^{K} w_{t,k} = 1$ for all time $t$—meaning total mass is conserved at any moment, and mass is only redistributed between branches without being created or destroyed. **Proposition 2** demonstrates that this branched CondSOC problem can be decomposed into independent branch subproblems, allowing each branch to be trained separately to avoid direct high-dimensional coupling.
 
-    - **Stage 1 — Neural Interpolant Optimization**: Trains an interpolation network $\varphi_{t,\eta}(\mathbf{x}_0, \mathbf{x}_{1,k})$ to learn energy-optimal conditional paths under the state cost $V_t(X_t)$, minimizing a trajectory loss $\mathcal{L}_{\text{traj}}$ that accounts for kinetic and potential energy.
-    - **Stage 2 — Conditional Flow Matching**: Trains the drift network $u_{t,k}^\theta$ for each branch to match the conditional velocity field learned in Stage 1, using the standard CFM loss $\mathcal{L}_{\text{flow}}$.
-    - **Stage 3 — Growth Network Training**: Freezes the drift network parameters and trains the growth network $g_{t,k}^\phi$, optimizing a composite loss comprising:
-        - Branch energy loss $\mathcal{L}_{\text{energy}}$: optimizes energy allocation across branches.
-        - Weight matching loss $\mathcal{L}_{\text{match}}$: ensures terminal weights match the target distribution proportions.
-        - Mass conservation loss $\mathcal{L}_{\text{mass}}$: enforces that the sum of all branch weights is conserved.
-    - **Stage 4 — Joint Fine-Tuning**: Unfreezes all parameters and jointly trains the drift and growth networks, incorporating a reconstruction loss $\mathcal{L}_{\text{recons}}$.
+**3. Four-stage Training Strategy: Decoupling drift and growth learning**
 
-4. **Theoretical Guarantees**:
+Since joint optimization of drift fields and growth rates is difficult, BranchSBM splits training into four progressive steps. Stage 1 is neural interpolation: training an interpolation network $\varphi_{t,\eta}(\mathbf{x}_0, \mathbf{x}_{1,k})$ to learn energy-optimal conditional paths under a state cost $V_t(X_t)$, minimizing kinetic and potential energy via a trajectory loss $\mathcal{L}_{\text{traj}}$. Stage 2 is conditional flow matching: training branch drift networks $u_{t,k}^\theta$ to match the conditional velocity fields from Stage 1 using standard CFM loss $\mathcal{L}_{\text{flow}}$. Stage 3 fixes the drift networks and trains growth networks $g_{t,k}^\phi$ by optimizing a composite loss: branch energy loss $\mathcal{L}_{\text{energy}}$ for energy distribution, weight matching loss $\mathcal{L}_{\text{match}}$ for terminal target alignment, and mass conservation loss $\mathcal{L}_{\text{mass}}$. Stage 4 unfreezes all parameters for joint fine-tuning with an added reconstruction loss $\mathcal{L}_{\text{recons}}$. This stepwise refinement avoids the instability of simultaneous optimization.
 
-    - **Proposition 3**: Proves that Stages 1+2 yield the optimal drift for the GSB problem.
-    - **Proposition 4**: Proves the existence of optimal growth functions via the direct method in the calculus of variations.
-    - **Lemma 2**: Proves that the optimal growth rate of secondary branches is non-decreasing (i.e., mass only flows out of the primary branch and does not return).
+**4. Theoretical Guarantees: From optimality to unidirectional mass flow**
+
+BranchSBM is supported by a series of theorems. **Proposition 3** ensures that Stage 1+2 training yields the optimal drift for the GSB problem, indicating no loss of optimality from decoupling. **Proposition 4** proves the existence of an optimal growth function using direct methods in the calculus of variations. **Lemma 2** proves that the optimal growth rate for secondary branches is non-decreasing—meaning mass only flows out of the primary branch and does not return, aligning with biological intuition that population differentiation from a single origin is generally irreversible.
 
 ### Loss & Training
-- Stage 1 uses the Adam optimizer with lr=1e-4.
-- Stages 2–4 use AdamW with lr=1e-3 and weight decay=1e-5.
-- Each stage is trained for up to 100 epochs.
-- Architecture: 3-layer MLP with SELU activation.
-- Secondary branch outputs of the growth network pass through softplus to ensure non-negativity.
-- State costs use the data-dependent LAND metric (low-dimensional) or RBF metric (high-dimensional).
+- Stage 1 uses Adam optimizer, lr=1e-4.
+- Stage 2-4 use AdamW optimizer, lr=1e-3, weight decay=1e-5.
+- Each stage trained for up to 100 epochs.
+- Model architecture: 3-layer MLP with SELU activation.
+- Growth network secondary branch outputs use softplus to ensure non-negativity.
+- State costs use data-dependent LAND metrics (low-dim) or RBF metrics (high-dim).
 
 ## Key Experimental Results
 
 ### Main Results
 
-| Dataset | Metric | BranchSBM | Single-branch SBM | Notes |
+| Dataset | Metric | BranchSBM | Single-branch SBM | Description |
 |--------|------|-----------|-----------|------|
-| LiDAR surface navigation | $\mathcal{W}_1$ / $\mathcal{W}_2$ | **Significantly lower** | High | Branching paths navigate both sides of a mountain |
-| Mouse hematopoiesis (t₁) | $\mathcal{W}_1$ / $\mathcal{W}_2$ | **Significantly lower** | High | Accurate prediction at intermediate time point |
-| Mouse hematopoiesis (t₂) | $\mathcal{W}_1$ / $\mathcal{W}_2$ | **Significantly lower** | High | Accurate recovery of two terminal cell fates |
-| Clonidine perturbation (50 PCs) | MMD / $\mathcal{W}_1$ / $\mathcal{W}_2$ | **Best** | Reaches cluster 0 only | Single branch fails to reach all terminal states |
-| Clonidine perturbation (100 PCs) | MMD | Better than 50PC single-branch | — | Validates high-dimensional scalability |
-| Clonidine perturbation (150 PCs) | MMD | Better than 50PC single-branch | — | Dimensionally scalable |
-| Trametinib perturbation (3 branches) | MMD / $\mathcal{W}_1$ / $\mathcal{W}_2$ | **Best** | Reaches cluster 0 only | Validates 3-branch capability |
+| LiDAR Surface Navigation | $\mathcal{W}_1$ / $\mathcal{W}_2$ | **Significantly lower** | High | Branch paths bypass both sides of the ridge |
+| Mouse Hematopoiesis (t₁) | $\mathcal{W}_1$ / $\mathcal{W}_2$ | **Significantly lower** | High | Accurate prediction at intermediate time points |
+| Mouse Hematopoiesis (t₂) | $\mathcal{W}_1$ / $\mathcal{W}_2$ | **Significantly lower** | High | Accurate terminal cell fate reconstruction |
+| Clonidine Perturbation (50PC) | MMD / $\mathcal{W}_1$ / $\mathcal{W}_2$ | **Best** | Only reached cluster0 | Single branch fails to reach all terminal states |
+| Clonidine Perturbation (100PC) | MMD | Better than 50PC single-branch | - | Validates high-dimensional scalability |
+| Clonidine Perturbation (150PC) | MMD | Better than 50PC single-branch | - | Dimensionally scalable |
+| Trametinib Perturbation (3-branch) | MMD / $\mathcal{W}_1$ / $\mathcal{W}_2$ | **Best** | Only reached cluster0 | Validates 3-branch capability |
 
 ### Ablation Study
 
-| Configuration | Key Metric | Notes |
+| Configuration | Key Metrics | Description |
 |------|---------|------|
-| Stage 3 only (frozen drift) | $\mathcal{L}_{\text{energy}}$ relatively high | Growth network trained independently |
-| Stage 3+4 (joint training) | $\mathcal{L}_{\text{energy}}$ lower | Joint optimization further reduces energy |
-| $\mathcal{L}_{\text{match}}$ | → 0 | Terminal weights accurately matched |
+| Stage 3 only (Fixed drift) | $\mathcal{L}_{\text{energy}}$ Higher | Independent training of growth network |
+| Stage 3+4 (Joint training) | $\mathcal{L}_{\text{energy}}$ Lower | Joint optimization further reduces energy |
+| $\mathcal{L}_{\text{match}}$ | → 0 | Accurate terminal weight matching |
 | $\mathcal{L}_{\text{mass}}$ | → 0 | Mass conservation satisfied |
 
 ### Key Findings
-- **Mode collapse in single-branch SBM**: Facing multimodal targets, single-branch methods converge to only the lowest-energy mode, completely ignoring other terminal states.
-- **Branching time can be learned automatically**: In the LiDAR experiment, the model automatically initiates branching at the mountain ridge, demonstrating that the framework learns optimal branching moments from data.
-- **High-dimensional scalability**: BranchSBM operates effectively from 50 to 150 principal components in single-cell perturbation experiments.
-- **Reasonable mass transfer dynamics**: Weight curves show mass smoothly transferring from the primary to secondary branches, consistent with biological intuition.
-- **Three-branch generalization**: The Trametinib experiment confirms the framework scales to more than two branches.
+- **Single-branch SBM suffers from mode collapse**: When facing multimodal targets, single-branch methods only reach the lowest energy mode, completely ignoring other terminal states.
+- **Automatic Learning of Branching Time**: In LiDAR experiments, the model automatically initiates branching at the ridge edge—showing the framework learns optimal branching moments from data.
+- **High-dimensional Scalability**: BranchSBM works effectively across 50 to 150 principal component dimensions in single-cell perturbation experiments.
+- **Reasonable Mass Transfer Dynamics**: Weight curves show smooth mass transfer from the primary to secondary branches, consistent with biological intuition.
+- **Effective Multi-branching**: The Trametinib experiment demonstrates the framework extends successfully to more than two branches.
 
 ## Highlights & Insights
-- **Novel and important problem formulation**: This is the first work to formally define and solve the branched Schrödinger bridge problem, filling a gap in generative model theory.
-- **Solid theoretical foundation**: A complete theoretical framework (Propositions 1–4) is presented, including existence, uniqueness, and constructive proofs.
-- **Elegant four-stage training design**: Decoupling drift learning from growth learning across stages avoids the difficulties of joint optimization.
-- **Clear application scenarios**: Cell fate differentiation and perturbation response are central problems in computational biology, and this work provides a principled solution.
-- **Deep connections to Flow Matching and OT**: The framework reduces to standard GSBM when growth rates are zero, theoretically unifying multiple existing approaches.
+- **Novel and Important Problem Definition**: First to formally define and solve the branched Schrödinger bridge problem, filling a gap in generative model theory.
+- **Solid Theory**: Provides a complete theoretical framework (Propositions 1-4) including existence, uniqueness, and constructive proofs.
+- **Elegant Four-stage Training**: Decoupling drift and growth learning avoids the difficulties of joint optimization.
+- **Clear Application Scenarios**: Cell fate differentiation and perturbation response are core problems in computational biology; this provides a principled solution.
+- **Deep Connections to Flow Matching and OT**: Reduces to standard GSBM when growth rates are zero, theoretically unifying multiple methods.
 
 ## Limitations & Future Work
-- **Branch count must be specified a priori**: The number of branches $K$ must be determined in advance via clustering; the framework cannot automatically discover branching structure.
-- **Endpoint coupling requires OT**: Pairing endpoints relies on optimal transport plans, which may incur substantial computational cost for large-scale data.
-- **Validated only in low-to-moderate dimensions (2–150D)**: Scalability to genome-wide settings (tens of thousands of dimensions) remains unverified.
-- **Simple MLP architecture**: More expressive architectures (e.g., Transformers, GNNs) may yield further performance gains.
-- **Limited use of intermediate time point data**: Training primarily relies on endpoint data; incorporating intermediate snapshot data should improve performance.
-- **Insufficient biological validation**: No comprehensive comparison with other computational biology methods (e.g., CellOT, PRESCIENT) is provided.
+- **Manual Branch Specification**: Requires pre-specifying $K$ (e.g., via clustering) rather than automatically discovering branch structures.
+- **OT Pairing Overhead**: Endpoint pairing relies on optimal transport plans, which may be computationally expensive for large-scale data.
+- **Verification Limited to Low-to-Mid Dimensions (2-150D)**: Scalability to genome-wide scales (tens of thousands of dimensions) remains unverified.
+- **Simple MLP Architecture**: More complex architectures (e.g., Transformers, GNNs) might improve performance.
+- **Limited Use of Intermediate Data**: Primarily trained on endpoint data; utilizing intermediate snapshots could further enhance accuracy.
+- **Biological Validation**: Lacks extensive comparison with specialized computational bio methods like CellOT or PRESCIENT.
 
 ## Related Work & Insights
-- **Schrödinger Bridge**: Schrödinger's (1931) classical problem has re-emerged in generative modeling (De Bortoli et al., 2021; Shi et al., 2023).
-- **Flow Matching**: Lipman et al. (2023)'s conditional flow matching provides the theoretical basis for Stage 2 of BranchSBM.
-- **Generalized SBM**: Liu et al. (2023) introduced state costs; BranchSBM adds the branching mechanism on top of this foundation.
-- **Unbalanced Optimal Transport**: Chizat et al. (2018) and Pariset et al. (2023) study transport problems without mass conservation.
-- **Single-cell trajectory inference**: Schiebinger et al. (2019) and Bunne et al. (2023) use OT methods to model cell state transitions.
-- **Insights**: Future work might incorporate attention mechanisms to enable the model to automatically learn branching structure, or extend the framework to handle branch merging (not just bifurcation).
+- **Schrödinger Bridge**: A classical problem by Schrödinger (1931), recently revitalized in generative modeling (De Bortoli et al., 2021; Shi et al., 2023).
+- **Flow Matching**: Conditional Flow Matching (Lipman et al., 2023) provides the theoretical basis for Stage 2.
+- **Generalized SBM**: Liu et al. (2023) introduced state costs; BranchSBM adds branching mechanisms on this basis.
+- **Unbalanced Optimal Transport**: Chizat et al. (2018) and Pariset et al. (2023) studied transport problems with non-conserved mass.
+- **Single-cell Trajectory Inference**: Schiebinger et al. (2019) and Bunne et al. (2023) used OT methods to model cell state transitions.
+- **Inspiration**: Can attention mechanisms be introduced to let the model learn branching structures automatically? Can it handle scenarios where branches merge?
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐⭐
@@ -151,10 +143,10 @@ BranchSBM adopts a four-stage training strategy:
 ## Related Papers
 
 - [\[NeurIPS 2025\] Schrödinger Bridge Matching for Tree-Structured Costs and Entropic Wasserstein Barycentres](../../NeurIPS2025/image_generation/schrödinger_bridge_matching_for_tree-structured_costs_and_entropic_wasserstein_b.md)
+- [\[ICLR 2026\] Diffusion & Adversarial Schrödinger Bridges via Iterative Proportional Markovian Fitting](diffusion_adversarial_schrödinger_bridges_via_iterative_proportional_markovian_f.md)
 - [\[NeurIPS 2025\] Dynamic Diffusion Schrödinger Bridge in Astrophysical Observational Inversions](../../NeurIPS2025/image_generation/dynamic_diffusion_schrödinger_bridge_in_astrophysical_observational_inversions.md)
-- [\[ICML 2026\] Geometry-based Schrödinger Bridges for Trustworthy Multimodal Fusion](../../ICML2026/image_generation/geometry-based_schrödinger_bridges_for_trustworthy_multimodal_fusion.md)
+- [\[ICLR 2026\] Entering the Era of Discrete Diffusion Models: A Benchmark for Schrödinger Bridges and Entropic Optimal Transport](entering_the_era_of_discrete_diffusion_models_a_benchmark_for_schrödinger_bridge.md)
 - [\[NeurIPS 2025\] Grasp2Grasp: Vision-Based Dexterous Grasp Translation via Schrödinger Bridges](../../NeurIPS2025/image_generation/grasp2grasp_vision-based_dexterous_grasp_translation_via_schrödinger_bridges.md)
-- [\[ICLR 2026\] Laplacian Multi-scale Flow Matching for Generative Modeling](laplacian_multi-scale_flow_matching_for_generative_modeling.md)
 
 </div>
 

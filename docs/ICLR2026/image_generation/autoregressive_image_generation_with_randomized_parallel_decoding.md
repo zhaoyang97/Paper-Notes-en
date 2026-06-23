@@ -2,74 +2,76 @@
 title: >-
   [Paper Note] Autoregressive Image Generation with Randomized Parallel Decoding
 description: >-
-  [ICLR 2026][Image Generation][autoregressive image generation] This paper proposes ARPG, a visual autoregressive model built upon a "guided decoding" framework that decouples positional guidance (query) from content repr…
+  [ICLR 2026][Image Generation][Paper Note] This paper proposes ARPG, a visual autoregressive model based on the "guided decoding" framework. By decoupling position guidance (query) from content representation (key-value), it achieves fully randomized order training and generation while supporting efficient parallel decoding. On ImageNet-1K 256×256, it achieves
 tags:
-  - "ICLR 2026"
-  - "Image Generation"
-  - "autoregressive image generation"
-  - "random-order modeling"
-  - "parallel decoding"
-  - "KV cache"
-  - "controllable generation"
+  - ICLR 2026
+  - Image Generation
 date: 2026-05-08
-content_hash: a9646fd4e368bc71
+content_hash: caec5ebe97d7823c
 ---
-
 # Autoregressive Image Generation with Randomized Parallel Decoding
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2503.10568](https://arxiv.org/abs/2503.10568)  
 **Code**: [https://github.com/hp-l33/ARPG](https://github.com/hp-l33/ARPG)  
-**Area**: Image Generation
-**Keywords**: autoregressive image generation, random-order modeling, parallel decoding, KV cache, controllable generation
+**Area**: Image Generation  
+**Keywords**: Autoregressive image generation, randomized order modeling, parallel decoding, KV cache, controllable generation
 
 ## TL;DR
-This paper proposes ARPG, a visual autoregressive model built upon a "guided decoding" framework that decouples positional guidance (query) from content representation (key-value), enabling fully randomized-order training and generation with efficient parallel decoding. On ImageNet-1K 256×256, ARPG achieves 1.94 FID in 64 steps with over 20× throughput improvement and over 75% memory reduction.
+This paper proposes ARPG, a visual autoregressive model based on the "guided decoding" framework. By decoupling position guidance (query) from content representation (key-value), it achieves fully randomized order training and generation while supporting efficient parallel decoding. On ImageNet-1K 256×256, it achieves a 1.94 FID in 64 steps, with over 20× throughput improvement and over 75% reduction in memory consumption.
 
 ## Background & Motivation
-Autoregressive (AR) models have achieved remarkable success in large language models, and this paradigm has been extended to visual generation (e.g., VQGAN, LlamaGen). However, applying next-token prediction to image generation faces two core challenges:
+Autoregressive (AR) models have achieved great success in Large Language Models, and this paradigm has been extended to visual generation (e.g., VQGAN, LlamaGen). However, applying next-token prediction to image generation faces two core challenges:
 
-**Fixed-order constraint**: Images have a 2D spatial structure, but AR models require flattening them into a 1D sequence (e.g., raster scan order), making it difficult for the model to handle zero-shot generalization tasks that require non-causal dependencies (e.g., inpainting, outpainting).
+**Fixed Order Limitations**: Images possess a 2D spatial structure, but AR models require flattening them into 1D sequences (e.g., raster scan order). This makes it difficult for models to handle zero-shot generalization tasks requiring non-causal dependencies (e.g., inpainting, outpainting).
 
-**Inference inefficiency**: Token-by-token generation is highly inefficient at high resolutions, where a 256×256 image requires generating hundreds of tokens.
+**Low Inference Efficiency**: Token-by-token generation is highly inefficient in high-resolution scenarios, especially as 256×256 images require generating hundreds of tokens.
 
-Existing alternatives each have shortcomings: MaskGIT achieves random-order generation via masked modeling but relies on bidirectional attention and cannot use KV caching; RandAR enables random ordering via positional instruction tokens but doubles the sequence length, incurring substantial computational and memory overhead.
+Existing alternatives have limitations: MaskGIT uses masked modeling for randomized order generation but relies on bidirectional attention, preventing the use of KV caches. RandAR implements randomized order via position instruction tokens but doubles the sequence length, leading to significant computation and memory overheads.
 
-**Core Idea**: Embed positional information of the prediction target as queries in the attention mechanism, fully decoupling content representation (KV) from positional guidance (Q), thereby supporting random-order modeling and parallel decoding while preserving causality.
+**Core Idea**: Embed the "positional information of the target" as a query into the attention mechanism to achieve complete decoupling of content representation (KV) and position guidance (Q). This maintains causality while supporting randomized order modeling and parallel decoding.
 
 ## Method
 
 ### Overall Architecture
-ARPG adopts a 2-Pass Decoder architecture. The first pass applies standard causal self-attention over known tokens to obtain contextualized representations (serving as global key-value pairs). The second pass applies cross-attention, using target-aware queries (position-embedded [MASK] tokens) to predict tokens at arbitrary positions. The input consists of a class label and an image token sequence; the output is the predicted token at the corresponding position.
+ARPG addresses the pain point where AR image generation is restricted to a fixed raster order, hindering zero-shot tasks and speed. The mechanism splits one decoding pass into two stages: the first stage uses causal self-attention to encode generated tokens into a set of global key-values (content representation); the second stage uses a batch of queries with known target positions to cross-attend to these key-values, predicting target tokens at any location simultaneously. The input is a class label plus an image token sequence, and the output consists of predicted tokens for various target positions. This process preserves causality while breaking free from fixed-order constraints and allowing multiple targets to share the same KV cache for parallel prediction.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Input: Class labels<br/>+ Known token sequence"] --> B
+    subgraph DEC["Two-Stage Decoder"]
+        direction TB
+        B["Phase 1: Self-Attention Decoder<br/>Encodes known tokens into global KV"]
+        B --> C["Guided Decoding Framework<br/>[MASK] + 2D RoPE generates position query<br/>Q for position, KV for content, fully decoupled"]
+        C --> D["Parallel Decoding<br/>Role-swapping cross-attention<br/>Shared KV, parallel multi-target prediction in one step"]
+    end
+    D --> E["Output: Tokens at target positions<br/>Batch generation in randomized order"]
+```
 
 ### Key Designs
-1. **Three Core Insights**:
 
-    - **Insight 1**: Breaking order-specific constraints in AR models requires explicit positional guidance so that the model knows where the next token to predict is located.
-    - **Insight 2**: In masked sequence modeling, queries corresponding to unmasked tokens receive no gradients from the loss function and thus play no role during training — meaning the queries can be entirely data-independent.
-    - **Insight 3**: [MASK] tokens encode only positional information and contribute nothing to the contextual representation; moreover, they are harmful to causality — and should therefore be removed from the key-value pairs.
+**1. Guided Decoding Framework: Decoupling "Where" from "Context"**
 
-2. **Guided Decoding Framework**: Based on the above insights, ARPG redefines the probability distribution for permutation autoregressive modeling. Each query $q_{\tau_i}$ is obtained by applying 2D RoPE positional encoding to a data-independent [MASK] token, while the key-value pairs are composed entirely of data-dependent known tokens. Through causal cross-attention, each target-aware query independently attends to the contextual key-value pairs, guiding the model to predict the token at a specific position.
+The primary challenge of bringing next-token prediction to images is that the model follows a pre-arranged sequence and cannot naturally know "where the next pixel to predict is." ARPG's starting point consists of three observations: breaking order constraints requires explicit position guidance; in masked modeling, queries corresponding to unmasked tokens receive no loss gradients, implying queries can be data-independent; and [MASK] tokens only carry position without contributing context—keeping them in KV pairs actually breaks causality. Following this, ARPG redefines the probability distribution for permuted autoregression: each query $q_{\tau_i}$ is derived from a data-independent [MASK] token combined with 2D RoPE, encoding only "where the target is," while all key-values come from data-dependent known tokens, encoding only "what the context is." With queries and KV pairs fully decoupled, the model can predict pixels at any randomized position guided by positional queries.
 
-3. **Parallel Decoding**: Since all tokens to be predicted are mutually independent (their queries do not influence one another), ARPG naturally supports parallel decoding. Multiple queries can be processed simultaneously, sharing a single KV cache. Unlike conventional cross-attention, ARPG swaps the roles of input and condition — known tokens serve as KV, and target positions serve as Q — thereby avoiding attention conflicts among multiple generation targets.
+**2. Parallel Decoding: Role-Swapping Cross-Attention to Eliminate Target Conflicts**
 
-4. **2-Pass Decoder Architecture**: The first-pass (self-attention decoder) processes input tokens to obtain global contextual representations; the second-pass (cross-attention decoder) uses guided decoding to predict target tokens. Experiments show that a symmetric configuration (e.g., 12+12 layers) achieves the best balance between efficiency and quality.
+Since each token to be predicted appears only as a query and they do not serve as KV for each other, they do not interfere. They can naturally be predicted in parallel in a single step while sharing the same KV cache. The key is that ARPG swaps the roles of traditional cross-attention—known tokens (conditions) serve as key-values, while target positions (inputs) serve as queries. This avoids conflicts caused by multiple generation targets competing for attention in the same sequence. This design allows ARPG to complete in 64 steps what would traditionally require hundreds of steps, increasing throughput by over 20× compared to LlamaGen and reducing memory consumption to less than 1/4 of VAR.
+
+**3. Two-Stage Decoder: Division of Labor in Context Encoding and Target Prediction**
+
+To implement these designs, a backbone is needed that can simultaneously handle "encoding known context" and "predicting guided by position queries." ARPG splits the decoder into two parts: the first stage is a self-attention decoder responsible for processing input tokens into a global context (the KV used in Design 1); the second stage is a cross-attention decoder using guided decoding (Design 1) and parallel decoding (Design 2) to predict target tokens. The distribution of layers between these two parts determines the balance between efficiency and quality. Ablations show a symmetric 12+12 configuration is optimal (FID 2.44). Skewing toward the guided section (6+18 or 0+24) is faster but degrades FID to 3.5 or 4.57, while removing the guided section entirely (24+0) reverts the model to a standard AR model with an FID of 90, losing all randomized order capability. This demonstrates that both context encoding and target guidance are essential.
 
 ### Loss & Training
-- Training uses standard teacher-forcing on randomly permuted sequences.
-- Sequences within each batch are independently shuffled, with the class token placed at the start.
-- RoPE frequencies are expanded along the batch dimension and shuffled accordingly to maintain alignment.
-- AdamW optimizer ($\beta_1=0.99$, $\beta_2=0.95$), initial learning rate 1e-4 per 256 batch size.
-- 400 epochs total training, with 100 epochs warmup followed by cosine scheduling to 1e-5.
-- Classifier-free guidance (CFG) class embedding dropout rate of 0.1.
-- LlamaGen tokenizer (16× downsampling, codebook size 16384).
+Training uses standard teacher-forcing on randomized sequences: within each batch, sequences are independently shuffled, class tokens are placed at the start, and RoPE frequencies are expanded along the batch dimension and shuffled synchronously to maintain positional alignment. The optimizer is AdamW ($\beta_1=0.99, \beta_2=0.95$), with the initial learning rate linearly scaled by a batch size of 1e-4/256. Training lasts 400 epochs (100-epoch warmup followed by cosine annealing to 1e-5). Class embeddings are dropped out with 0.1 probability for classifier-free guidance. The tokenizer follows LlamaGen's 16× downsampling and 16384 codebook size.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Model | Params | Steps | Throughput | Memory | FID↓ | IS↑ |
-|-------|--------|-------|------------|--------|------|-----|
+|------|--------|------|--------|------|------|-----|
 | LlamaGen-XXL | 1.4B | 576 | 1.58 it/s | 26.22 GB | 2.62 | 244.1 |
 | VAR-d24 | 1.0B | 10 | 48.90 it/s | 22.43 GB | 2.09 | 312.9 |
 | RandAR-XXL | 1.4B | 88 | 10.46 it/s | 21.77 GB | 2.15 | 322.0 |
@@ -80,9 +82,9 @@ ARPG adopts a 2-Pass Decoder architecture. The first pass applies standard causa
 
 ### Ablation Study
 
-| Configuration | Steps | Throughput | Memory | FID |
-|---------------|-------|------------|--------|-----|
-| ARPG-L (12+12) baseline | 64 | 62.12 it/s | 2.43 GB | 2.44 |
+| Config | Steps | Throughput | Memory | FID |
+|------|------|--------|------|-----|
+| ARPG-L (12+12) Baseline | 64 | 62.12 it/s | 2.43 GB | 2.44 |
 | Fewer Guided (18+6) | 64 | 50.72 it/s | 3.19 GB | 3.82 |
 | More Guided (6+18) | 64 | 66.11 it/s | 1.67 GB | 3.51 |
 | w/o Guided (24+0) | 256 | 11.70 it/s | 4.96 GB | 90 |
@@ -92,32 +94,32 @@ ARPG adopts a 2-Pass Decoder architecture. The first pass applies standard causa
 | Raster order | 256 | - | - | 2.49 |
 
 ### Key Findings
-- ARPG-XXL achieves 1.94 FID within 64 steps, with over 20× higher throughput than LlamaGen.
-- Compared to VAR at similar throughput, ARPG reduces memory consumption by over 75% (7.31 GB vs. 22.43 GB).
-- Reducing sampling steps (e.g., from 64 to 32) does not significantly degrade quality (ARPG-XXL: FID=2.08 at 32 steps vs. FID=1.94 at 64 steps).
-- Random-order generation, despite the increased modeling difficulty ($n!$ possible permutations), outperforms fixed-order generation.
-- Removing the guided decoder degrades the model to a standard AR model (FID spikes to 90), completely losing random-order generation capability.
+- ARPG-XXL achieves 1.94 FID within 64 steps, with throughput over 20× higher than LlamaGen.
+- Compared to VAR, ARPG reduces memory consumption by over 75% at similar throughput (7.31 GB vs 22.43 GB).
+- Reducing sampling steps (e.g., from 64 to 32) does not significantly degrade quality (ARPG-XXL: 32 steps FID=2.08 vs 64 steps FID=1.94).
+- Although randomized order modeling is more difficult ($n!$ possible permutations), it outperforms fixed-order generation.
+- Removing the guided decoder reverts the system to a standard AR model (FID spikes to 90), completely losing randomized order capabilities.
 
 ## Highlights & Insights
-- **Theoretical clarity**: Starting from a comparison between masked and autoregressive modeling, the method is derived through three rigorous insights, forming a complete logical chain.
-- **Efficiency and quality**: The approach substantially improves inference efficiency while maintaining competitive generation quality, which is highly valuable for practical deployment.
-- **Zero-shot generalization**: Random-order modeling enables the model to naturally support inpainting, outpainting, and resolution extrapolation without additional training.
-- **Controllable generation**: Simply replacing [MASK] queries with condition tokens (e.g., Canny edges, depth maps) enables controllable generation, achieving state-of-the-art results on ControlVAR and ControlAR.
-- **Minimal design**: The method does not rely on additional techniques such as QK normalization, AdaLN, or linear attention.
+- **Theoretical Clarity**: Derived from a rigorous comparison between masked modeling and autoregressive modeling, the design is justified through three structured insights.
+- **Efficiency & Quality Balance**: Maintains competitive generation quality while significantly boosting inference efficiency—crucial for real-world deployment.
+- **Zero-Shot Generalization**: Randomized order modeling naturally supports tasks like inpainting, outpainting, and resolution extension without additional training.
+- **Controllable Generation Extension**: By replacing [MASK] queries with condition tokens (e.g., Canny edges, depth maps), it achieves controllable generation, reaching SOTA on ControlVAR and ControlAR.
+- **Minimalist Design**: Does not rely on extra technical enhancements like QK normalization, AdaLN, or linear attention.
 
 ## Limitations & Future Work
-- Due to computational constraints, the method has not been extended to text-to-image generation.
-- The 512×512 resolution experiment involves only 50 epochs of fine-tuning rather than training from scratch, leaving high-resolution performance insufficiently validated.
-- The 2-pass decoder introduces additional architectural complexity, though the authors partially mitigate the overhead through shared KV caching.
-- Random-order training may require more training epochs to achieve the same convergence quality.
-- Compared to diffusion models, the FID scores remain behind the very top tier (e.g., DiT-XL/2 achieves a strong 2.27 FID).
+- Due to computational resource constraints, the model was not extended to text-to-image (T2I) generation.
+- For 512×512 resolution, only 50 epochs of fine-tuning were performed rather than training from scratch; high-resolution performance is not fully verified.
+- The two-stage decoder increases architectural complexity, though the authors mitigate overhead via shared KV.
+- Randomized order training may require more training epochs to reach the same convergence quality.
+- Compared to diffusion models, there remains a gap at the absolute top tier of FID scores (e.g., DiT-XL/2's 2.27 FID is very strong).
 
 ## Related Work & Insights
-- **Causal sequence modeling**: Raster-order AR models such as VQGAN and LlamaGen, whose efficiency is limited by token-by-token generation.
-- **Masked sequence modeling**: The MaskGIT family achieves parallel generation via bidirectional attention but cannot utilize KV caching.
-- **RandAR**: Achieves random ordering via positional instruction tokens, but doubling the sequence length introduces significant overhead.
-- **RAR**: Specifies the next token position via target-aware positional embeddings, yet still performs best under raster order.
-- **Insight**: Redefining the roles of Q, K, and V in the attention mechanism — where Q encodes position and KV encodes content — is an elegant design principle that may inspire other sequence modeling tasks.
+- **Causal Sequence Modeling**: AR models like VQGAN and LlamaGen use raster order; efficiency is limited by token-by-token generation.
+- **Masked Sequence Modeling**: MaskGIT series achieve parallel generation via bidirectional attention but cannot utilize KV caches.
+- **RandAR**: Implements randomized order via position instruction tokens, but doubling sequence length introduces significant overhead.
+- **RAR**: Specifies the next token position via target-aware positional embeddings but still optimizes primarily for raster order.
+- **Insight**: Redefining the roles of Q, K, and V in the attention mechanism (Q for position, KV for content) is an elegant design that may inspire other sequence modeling tasks.
 
 ## Rating
 - Novelty: ⭐⭐⭐⭐⭐
@@ -131,11 +133,11 @@ ARPG adopts a 2-Pass Decoder architecture. The first pass applies standard causa
 
 ## Related Papers
 
+- [\[CVPR 2026\] Parallel Jacobi Decoding for Fast Autoregressive Image Generation](../../CVPR2026/image_generation/parallel_jacobi_decoding_for_fast_autoregressive_image_generation.md)
 - [\[ICLR 2026\] Locality-aware Parallel Decoding for Efficient Autoregressive Image Generation](locality-aware_parallel_decoding_for_efficient_autoregressive_image_generation.md)
 - [\[ICCV 2025\] Randomized Autoregressive Visual Generation](../../ICCV2025/image_generation/randomized_autoregressive_visual_generation.md)
+- [\[ICLR 2026\] NextStep-1: Toward Autoregressive Image Generation with Continuous Tokens at Scale](nextstep-1_toward_autoregressive_image_generation_with_continuous_tokens_at_scal.md)
 - [\[ICLR 2026\] From Prediction to Perfection: Introducing Refinement to Autoregressive Image Generation](from_prediction_to_perfection_introducing_refinement_to_autoregressive_image_gen.md)
-- [\[AAAI 2026\] Annealed Relaxation of Speculative Decoding for Faster Autoregressive Image Generation](../../AAAI2026/image_generation/annealed_relaxation_of_speculative_decoding_for_faster_autor.md)
-- [\[ICCV 2025\] Grouped Speculative Decoding for Autoregressive Image Generation](../../ICCV2025/image_generation/grouped_speculative_decoding_for_autoregressive_image_generation.md)
 
 </div>
 

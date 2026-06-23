@@ -2,131 +2,129 @@
 title: >-
   [Paper Note] Bridging Generalization Gap of Heterogeneous Federated Clients Using Generative Models
 description: >-
-  [ICLR 2026][Image Generation][Model-heterogeneous federated learning] FedVTC proposes that, in model-heterogeneous federated learning, each client generates synthetic data via a Variational Transposed Convolution network…
+  [ICLR 2026][Image Generation][Paper Note] FedVTC proposes that in model-heterogeneous federated learning, each client uses a Variational Transposed Convolutional (VTC) network to generate synthetic data from aggregated feature distribution statistics to fine-tune local models. This significantly improves generalization without requiring public datasets while r
 tags:
-  - "ICLR 2026"
-  - "Image Generation"
-  - "Model-heterogeneous federated learning"
-  - "variational transposed convolution"
-  - "synthetic data fine-tuning"
-  - "feature distribution alignment"
-  - "communication efficiency"
+  - ICLR 2026
+  - Image Generation
 date: 2026-05-08
-content_hash: 84258f5dceafdd48
+content_hash: 37632980f244ca7a
 ---
-
 # Bridging Generalization Gap of Heterogeneous Federated Clients Using Generative Models
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2508.01669](https://arxiv.org/abs/2508.01669)  
-**Code**: N/A  
-**Area**: Federated Learning / Generative Models
-**Keywords**: Model-heterogeneous federated learning, variational transposed convolution, synthetic data fine-tuning, feature distribution alignment, communication efficiency
+**Code**: None  
+**Area**: Federated Learning / Generative Models  
+**Keywords**: Model Heterogeneous Federated Learning, Variational Transposed Convolution, Synthetic Data Fine-tuning, Feature Distribution Alignment, Communication Efficiency  
 
 ## TL;DR
-FedVTC proposes that, in model-heterogeneous federated learning, each client generates synthetic data via a Variational Transposed Convolution network (VTC) from aggregated feature distribution statistics to fine-tune the local model. Without requiring a public dataset, the method significantly improves generalization while reducing communication and memory overhead.
+FedVTC proposes that in model-heterogeneous federated learning, each client uses a Variational Transposed Convolutional (VTC) network to generate synthetic data from aggregated feature distribution statistics to fine-tune local models. This significantly improves generalization without requiring public datasets while reducing communication and memory overhead.
 
 ## Background & Motivation
-**Background**: Data heterogeneity in federated learning leads to poor generalization of local models. Conventional methods improve this through regularization or weight adjustment, but uniformly assume homogeneous client model architectures.
+**Background**: Data heterogeneity in federated learning leads to poor generalization of local models. Traditional methods improve this through regularization or weight adjustment but often assume identical client model architectures.
 
 **Limitations of Prior Work**:
-- Knowledge distillation methods require a public dataset, which is typically unavailable in practice.
-- Performing knowledge distillation in feature space can only debias the classification head, without improving the feature extractor.
-- Prototype-sharing methods regularize only the feature extractor while neglecting the classification head.
-- Proxy-model methods incur high communication and memory overhead.
+   - Knowledge distillation methods require public datasets, which are typically unavailable in practice.
+   - Distillation in feature space only debiases classifier heads and fails to improve feature extractors.
+   - Prototype sharing methods only regularize feature extractors while ignoring classifier heads.
+   - Proxy model methods incur high communication and memory overhead.
 
-**Key Challenge**: Model heterogeneity precludes parameter sharing for aggregation, yet clients still need to benefit from global information to improve generalization.
+**Key Challenge**: Model heterogeneity implies that parameters cannot be shared for aggregation, yet clients still need to benefit from global information to improve generalization.
 
-**Goal**: Simultaneously debias both the feature extractor and the classification head without relying on a public dataset or sharing model parameters.
+**Goal**: To debias both feature extractors and classifier heads without relying on public datasets or sharing model parameters.
 
-**Key Insight**: Clients share only the statistics of the feature distribution (mean + covariance), which are then used to guide the generation of synthetic data for full-model fine-tuning.
+**Key Insight**: Clients share only the statistics of feature distributions (mean and covariance), using them to guide the generation of synthetic data for full-model fine-tuning.
 
-**Core Idea**: Generate synthetic images from the global feature distribution via a variational transposed convolution network, and perform full-model fine-tuning on the local model to simultaneously debias both the feature extractor and the classification head.
+**Core Idea**: Use Variational Transposed Convolution to generate synthetic images from global feature distributions for full-model fine-tuning of local models, simultaneously debiasing the feature extractor and the classifier head.
 
 ## Method
 
 ### Overall Architecture
-Each client $k$ maintains a local model $f_k = h_k \circ g_k$ (feature extractor + classification head) and a VTC model $\psi_k$. The training pipeline proceeds as follows: (1) locally train $f_k$ and $\psi_k$; (2) upload per-class mean prototypes $\mathbf{c}_k^y$ and standard deviations $\boldsymbol{\sigma}_k$ to the server; (3) the server aggregates them into global prototypes $\mathbf{c}^y$ and global standard deviations $\boldsymbol{\sigma}$; (4) clients sample latent variables from the global distribution and generate synthetic data via the VTC; (5) the local model is fine-tuned on the synthetic data.
+FedVTC addresses the dilemma in model-heterogeneous federated learning where parameters cannot be shared and no public dataset is available. Client architectures differ, preventing direct weight aggregation, and local models generalize poorly due to data skew. The solution lies in clients exchanging **feature distribution statistics**, then using a small local generator to "paint" global knowledge into synthetic images for full-model fine-tuning.
+
+Specifically, each client $k$ holds a local model $f_k = h_k \circ g_k$ ($g_k$ is the feature extractor, $h_k$ is the classifier head) and a Variational Transposed Convolutional generator $\psi_k$. The workflow is: first, jointly train $f_k$ and $\psi_k$ on local data; then, upload only the mean prototype $\mathbf{c}_k^y$ and standard deviation $\boldsymbol{\sigma}_k$ for each category to the server; the server aggregates these into a global prototype $\mathbf{c}^y$ and global standard deviation $\boldsymbol{\sigma}$ for distribution; clients sample latent variables from this global distribution and feed them into $\psi_k$ to generate synthetic images; finally, $f_k$ is fine-tuned using these global-aware synthetic images. Only statistical vectors flow across clients, while raw data and model parameters remain local.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Local Heterogeneous Data<br/>(Different Client Architectures)"] --> B["Local Joint Training of f_k and VTC ψ_k<br/>(DM Loss expands generation domain)"]
+    B -->|"Upload only class mean prototypes + std<br/>(Comm. Efficiency)"| C["Server Aggregation<br/>Global Prototype c^y + Global Std σ"]
+    C -->|"Distribute Global Distribution"| D["Sample Latent Variables → VTC Generates Synthetic Images"]
+    D --> E["Full-Model Fine-Tuning of f_k<br/>Gradients pass through g_k and h_k"]
+    E -->|"Next Round"| B
+```
 
 ### Key Designs
 
-1. **Variational Transposed Convolution Network (VTC)**:
+**1. Variational Transposed Convolutional Network (VTC): "Painting" Global Feature Distributions into Images**
 
-    - **Function**: Generates synthetic image samples from low-dimensional Gaussian latent variables.
-    - **Mechanism**: Similar to a VAE decoder, but employs transposed convolutions as the upsampling architecture. The input $\mathbf{v} = \mathbf{z} + \boldsymbol{\sigma}_k \odot \boldsymbol{\epsilon}$ (reparameterization trick) yields synthetic image $\mathbf{x}' = \psi_k(\mathbf{v})$.
-    - **Training Objective**: Maximize the ELBO = reconstruction loss + KL divergence (aligning the local feature distribution to global prototypes).
+The core obstacle of model heterogeneity is the inability to align parameters. FedVTC sidesteps parameter transmission by externalizing "global knowledge" into fine-tunable images. VTC serves as the decoder tool—structurally similar to a VAE decoder, it uses transposed convolution for layer-wise upsampling to restore low-dimensional latent variables into images. The input is constructed via the reparameterization trick: $\mathbf{v} = \mathbf{z} + \boldsymbol{\sigma}_k \odot \boldsymbol{\epsilon}$ (where $\mathbf{z}$ is from the class prototype and $\boldsymbol{\epsilon}$ is Gaussian noise), yielding synthetic image $\mathbf{x}' = \psi_k(\mathbf{v})$. Training maximizes the ELBO, comprising reconstruction loss and KL divergence, where the latter aligns local feature distributions with global prototypes. Consequently, images sampled from the global distribution and generated by VTC naturally carry statistical information contributed by other clients.
 
-2. **Distribution Matching Regularization (DM Loss)**:
+**2. Distribution Matching Regularization (DM Loss): Preventing VTC Failure Outside Local Distributions**
 
-    - **Function**: Enhances the robustness of the VTC to diverse input latent variables.
-    - **Mechanism**: Introduces a Distribution Matching loss to ensure the VTC generates high-quality samples even when presented with latent variables sampled from the global distribution rather than the local one.
-    - **Design Motivation**: During local training, the VTC is exposed only to the local feature distribution; without this regularization, generation quality degrades when latent variables are sampled from the global distribution.
+VTC is trained locally on local feature distributions. However, at inference, it must generate images using latent variables sampled from the **global distribution**. If these distributions are misaligned, generation quality collapses. DM Loss (Distribution Matching Loss) fills this gap by constraining VTC to produce high-quality samples when facing global distribution inputs, effectively expanding the generator's operating domain from "local" to "global" in advance. Ablation studies show that removing this term leads to significant degradation of synthetic data under global sampling, confirming its role in cross-domain robustness.
 
-3. **Full-Model Fine-Tuning Strategy**:
+**3. Full-Model Fine-Tuning Strategy: Simultaneous Debiasing of Feature Extractor and Classifier Head**
 
-    - **Function**: Fine-tunes the entire local model $f_k$ using synthetic data (not just the classification head).
-    - **Mechanism**: Synthetic data passes through the full forward pass of the model, enabling simultaneous debiasing of both the feature extractor and the classification head.
-    - **Design Motivation**: Compared to feature-space distillation (which debiases only the classification head) and prototype sharing (which debiases only the feature extractor), FedVTC unifies both objectives through image-level synthetic data.
+Prior methods often biased one component—feature-space distillation corrected only the classifier head, while prototype sharing corrected only the feature extractor. FedVTC operates at the **image level**: synthetic data passes through the entire forward propagation of $f_k$. Thus, backpropagation gradients flow through both $g_k$ and $h_k$, debiasing both components simultaneously. This is the rationale for "generating images" instead of "generating features"—only complete image samples can drive end-to-end fine-tuning of the entire model.
 
-4. **Communication Efficiency**:
+**4. Communication Efficiency: Transmitting Only Statistical Vectors**
 
-    - **Function**: Clients exchange only feature distribution statistics with the server.
-    - **Transmitted Content**: Per-class mean prototypes $\mathbf{c}_k^y \in \mathbb{R}^p$ and standard deviations $\boldsymbol{\sigma}_k \in \mathbb{R}^p$.
-    - **Communication Cost**: Far lower than transmitting model parameters or full generative models.
+Proxy model methods transmit over-parameterized generators, and parameter-sharing methods transmit full weights, both incurring high costs. FedVTC exchanges only feature distribution statistics: class mean prototypes $\mathbf{c}_k^y \in \mathbb{R}^p$ and standard deviations $\boldsymbol{\sigma}_k \in \mathbb{R}^p$. These $p$-dimensional vectors are much smaller than model parameters or full generative models, keeping total communication low even with many clients and rounds.
 
 ### Loss & Training
 - VTC training loss: $\mathcal{L}_e = \mathcal{L}_{rc} + D_{KL} + \mathcal{L}_{DM}$
 - Reconstruction loss: $\mathcal{L}_{rc} = \|\mathbf{x}' - \mathbf{x}\|_2^2$
-- KL divergence: aligns the local feature distribution to global prototypes.
-- Local model fine-tuning: cross-entropy loss on synthetic data.
-- The VTC and local model are trained alternately, avoiding additional GPU memory consumption.
+- KL divergence: Aligns local feature distribution to global prototypes.
+- Local model fine-tuning: Cross-entropy loss on synthetic data.
+- VTC and local models are trained alternately to avoid extra memory consumption.
 
 ## Key Experimental Results
 
-### Main Results — Generalization Accuracy in Model-Heterogeneous FL
+### Main Results — Generalization Accuracy in Heterogeneous FL
 
 | Method | MNIST | CIFAR-10 | CIFAR-100 | Tiny-ImageNet |
-|--------|-------|----------|-----------|---------------|
-| FedGH (representation sharing) | Moderate | Moderate | Low | Low |
-| FedKD (knowledge distillation) | Requires public data | Requires public data | Requires public data | Requires public data |
+|------|-------|----------|-----------|---------------|
+| FedGH (Rep. Sharing) | Medium | Medium | Low | Low |
+| FedKD (Distillation) | Reqs. Public Data | Reqs. Public Data | Reqs. Public Data | Reqs. Public Data |
 | **FedVTC** | **Highest** | **Highest** | **Highest** | **Highest** |
 
 ### Ablation Study
 
 | Configuration | Generalization Accuracy |
-|---------------|------------------------|
-| FedVTC (full) | Best |
-| w/o DM Loss | Degraded (VTC is not robust to global distribution sampling) |
-| w/o full-model fine-tuning (classification head only) | Significant drop |
-| w/o KL alignment | Significant drop |
+|------|----------|
+| FedVTC (Full) | Optimal |
+| w/o DM Loss | Decrease (VTC not robust to global sampling) |
+| w/o Full Fine-tuning (Head only) | Significant Decrease |
+| w/o KL Alignment | Significant Decrease |
 
 ### Key Findings
-- **Full-model fine-tuning vs. partial alignment**: Fine-tuning the entire model with synthetic data substantially outperforms aligning only the feature space or the classification head.
-- **DM Loss is critical**: Without DM Loss, the quality of VTC-generated synthetic data degrades severely under global distribution sampling.
-- **Communication efficiency**: FedVTC incurs far lower communication cost than methods requiring model parameter or proxy model transmission.
-- **More pronounced advantage on large-scale datasets (Tiny-ImageNet)**: Demonstrates strong scalability of the proposed method.
+- **Full Fine-tuning vs. Partial Alignment**: Fine-tuning the entire model with synthetic data is far more effective than just aligning feature spaces or classifier heads.
+- **Criticality of DM Loss**: Without DM Loss, the quality of synthetic data generated by VTC degrades severely under global distribution sampling.
+- **Communication Efficiency**: FedVTC's communication volume is much lower than methods requiring the transfer of model parameters or proxy models.
+- **Scalability**: Advantages are more pronounced on larger-scale datasets (Tiny-ImageNet), indicating good scalability.
 
 ## Highlights & Insights
-- **Synthetic data as a knowledge transfer medium**: Rather than transmitting model parameters or raw data, FedVTC indirectly transfers global knowledge by sharing distribution statistics and generating synthetic data locally—elegantly balancing privacy protection and knowledge sharing.
-- **Unified debiasing of both components**: Prior methods debias either the feature extractor or the classification head; FedVTC naturally unifies both through image-level operations.
-- **Lightweight design**: The VTC is a simple transposed convolution network trained alternately with the local model, requiring no additional GPU memory.
+- **Synthetic Data as Knowledge Medium**: Instead of transmitting parameters or raw data, global knowledge is indirectly transferred via shared distribution statistics and local synthesis—balancing privacy and knowledge sharing.
+- **Unified Debiasing**: Previous methods debiased either the feature extractor or the classifier head; FedVTC naturally unifies this through image-level operations.
+- **Lightweight Design**: VTC is a simple transposed convolutional network trained alternately with the local model, requiring no additional GPU memory during the main training phase.
 
 ## Limitations & Future Work
-- The quality of VTC-generated images may be limited (simple transposed convolution vs. stronger generators such as diffusion models).
-- Per-class feature distributions are assumed to be Gaussian, which may not capture more complex real-world distributions.
-- Covariance estimation may be inaccurate when the feature dimension $p$ is large.
-- Privacy risks are not analyzed—whether feature means and covariances can be exploited to reconstruct raw data remains an open question.
+- The quality of images generated by VTC may be low (simple transposed convolution vs. stronger generators like Diffusion Models).
+- Assumption of Gaussian feature distributions for each class; real distributions may be more complex.
+- Covariance estimation might be inaccurate when feature dimensionality $p$ is high.
+- Privacy attacks are not considered—can feature means and variances be used to infer raw data?
 
 ## Related Work & Insights
-- **vs. FedGH/FedTGP**: These methods share prototypes to regularize only the feature extractor while neglecting the classification head; FedVTC simultaneously debiases both via synthetic data.
-- **vs. FedZKD/FedGen**: These methods perform knowledge distillation in feature space, debiasing only the classification head; FedVTC operates at the image level.
-- **vs. FedMAN**: This method transmits a hypernetwork-based proxy model with high communication overhead; FedVTC transmits only distribution statistics.
+- **vs. FedGH/FedTGP**: These share prototypes to regularize feature extractors but ignore heads; FedVTC debiases both via synthetic data.
+- **vs. FedZKD/FedGen**: These perform distillation in feature space, debiasing only classifier heads; FedVTC operates in image space.
+- **vs. FedMAN**: Transmits over-parameterized proxy models with high overhead; FedVTC only transmits statistics.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ Using the VTC as a synthetic data generator within federated learning is a novel combination.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Evaluated on 4 datasets with multiple heterogeneous baselines and ablations; reasonably comprehensive.
-- Writing Quality: ⭐⭐⭐⭐ Logic is clear and comparisons are well articulated.
-- Value: ⭐⭐⭐⭐ Addresses a practical pain point in model-heterogeneous FL with high communication efficiency.
+- Novelty: ⭐⭐⭐⭐ VTC as a synthetic data generator in FL is a novel combination.
+- Experimental Thoroughness: ⭐⭐⭐⭐ 4 datasets + multiple heterogeneous baselines + ablations.
+- Writing Quality: ⭐⭐⭐⭐ Clear logic and comparisons.
+- Value: ⭐⭐⭐⭐ Addresses real pain points in heterogeneous FL with high communication efficiency.
 
 <!-- RELATED:START -->
 
@@ -135,10 +133,10 @@ Each client $k$ maintains a local model $f_k = h_k \circ g_k$ (feature extractor
 ## Related Papers
 
 - [\[ICLR 2026\] Generalization of Diffusion Models Arises with a Balanced Representation Space](generalization_of_diffusion_models_arises_with_a_balanced_representation_space.md)
+- [\[ICLR 2026\] Bridging the Distribution Gap to Harness Pretrained Diffusion Priors for Super-Resolution](bridging_the_distribution_gap_to_harness_pretrained_diffusion_priors_for_super-r.md)
 - [\[ICCV 2025\] FedDifRC: Unlocking the Potential of Text-to-Image Diffusion Models in Heterogeneous Federated Learning](../../ICCV2025/image_generation/feddifrc_unlocking_the_potential_of_text-to-image_diffusion_models_in_heterogene.md)
+- [\[CVPR 2026\] Temporal Equilibrium MeanFlow: Bridging the Scale Gap for One-Step Generation](../../CVPR2026/image_generation/temporal_equilibrium_meanflow_bridging_the_scale_gap_for_one-step_generation.md)
 - [\[CVPR 2026\] Heterogeneous Decentralized Diffusion Models](../../CVPR2026/image_generation/heterogeneous_decentralized_diffusion_models.md)
-- [\[ICLR 2026\] Bridging Degradation Discrimination and Generation for Universal Image Restoration](bridging_degradation_discrimination_and_generation_for_universal_image_restorati.md)
-- [\[ICML 2026\] SpatialReward: Bridging the Perception Gap in Online RL for Image Editing via Explicit Spatial Reasoning](../../ICML2026/image_generation/spatialreward_bridging_the_perception_gap_in_online_rl_for_image_editing_via_exp.md)
 
 </div>
 

@@ -2,94 +2,106 @@
 title: >-
   [Paper Note] Condition Errors Refinement in Autoregressive Image Generation with Diffusion Loss
 description: >-
-  [ICLR 2026][Image Generation][autoregressive generation] This paper theoretically analyzes the advantage of autoregressive diffusion loss models over conditional diffusion models in correcting condition errors (exponenti…
+  [ICLR 2026][Image Generation][autoregressive generation] The paper theoretically analyzes the advantages of autoregressive diffusion loss models over conditional diffusion models in condition error correction (exponential decay of gradient norm). It proposes a condition refinement method based on Optimal Transport (Wasserstein Gradient Flow) to solve the "condition inconsist
 tags:
-  - "ICLR 2026"
-  - "Image Generation"
-  - "autoregressive generation"
-  - "diffusion loss"
-  - "condition refinement"
-  - "optimal transport"
-  - "Wasserstein gradient flow"
+  - ICLR 2026
+  - Image Generation
+  - autoregressive generation
+  - diffusion loss
+  - condition refinement
+  - optimal transport
+  - Wasserstein gradient flow
 date: 2026-05-08
-content_hash: 5f3d48922739e325
+content_hash: 69aefe380a709c85
 ---
-
 # Condition Errors Refinement in Autoregressive Image Generation with Diffusion Loss
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2602.07022](https://arxiv.org/abs/2602.07022)  
 **Code**: None  
-**Area**: Diffusion Models / Autoregressive Image Generation
+**Area**: Diffusion Models / Autoregressive Image Generation  
 **Keywords**: autoregressive generation, diffusion loss, condition refinement, optimal transport, Wasserstein gradient flow
 
 ## TL;DR
-This paper theoretically analyzes the advantage of autoregressive diffusion loss models over conditional diffusion models in correcting condition errors (exponential decay of gradient norms), and proposes a condition refinement method based on optimal transport (Wasserstein Gradient Flow) to address the "condition inconsistency" problem in autoregressive generation, achieving FID 1.31 on ImageNet (based on MAR).
+The paper theoretically analyzes the advantages of autoregressive diffusion loss models over conditional diffusion models in condition error correction (exponential decay of gradient norm). It proposes a condition refinement method based on Optimal Transport (Wasserstein Gradient Flow) to solve the "condition inconsistency" problem in the autoregressive process, achieving an FID of 1.31 on ImageNet (based on MAR).
 
 ## Background & Motivation
 
-**Background**: Autoregressive image generation has advanced rapidly in recent years. Methods such as MAR replace VQ tokenization with diffusion loss, achieving image quality competitive with or surpassing diffusion models. However, the theoretical differences between autoregressive diffusion loss and standard conditional diffusion models remain underexplored.
+**Background**: Autoregressive image generation has developed rapidly in recent years. Methods like MAR use diffusion loss instead of VQ tokenization, matching or even exceeding diffusion models in image generation quality. However, the theoretical differences between the "autoregressive + diffusion loss" paradigm and standard conditional diffusion models have not been fully explored.
 
-**Limitations of Prior Work**: Although autoregressive conditional generation progressively builds context, the condition $c_i$ at each step accumulates redundant information from preceding patches that is irrelevant to the current patch—referred to as "condition inconsistency." This redundancy perturbs the conditional score $\nabla_{x_t} \log p(x_t|c_i)$ in the denoising process, degrading generation quality.
+**Limitations of Prior Work**: Although autoregressive conditional generation constructs context step-by-step, each condition $c_i$ accumulates irrelevant, redundant information from previous patches in addition to information useful for the current patch ("condition inconsistency"). This redundant information disturbs the conditional score of the denoising process $\nabla_{x_t} \log p(x_t|c_i)$, thereby reducing generation quality.
 
-**Key Challenge**: Autoregressive methods capture dependencies through context accumulation, but the context inevitably incorporates noisy information irrelevant to generating the current patch. The challenge is to retain useful dependencies while eliminating redundancy.
+**Key Challenge**: Autoregressive methods capture dependencies through context accumulation, but the context inevitably contains noise information irrelevant to the current patch generation. How can redundancy be removed while preserving useful dependencies?
 
-**Goal**: (a) Theoretically characterize where autoregressive diffusion loss outperforms conditional diffusion; (b) analyze the mechanism behind condition inconsistency; (c) propose a theoretically grounded condition refinement method.
+**Goal**: (a) Theoretically characterize the advantages of autoregressive diffusion loss compared to conditional diffusion; (b) Analyze the formation mechanism of condition inconsistency; (c) Propose a theoretically guaranteed condition refinement method.
 
-**Key Insight**: The paper begins with a theoretical analysis of conditional score matching, proving that the autoregressive process itself yields a condition refinement effect (exponential decay of gradient norms), and then applies optimal transport theory to further correct residual condition inconsistency.
+**Key Insight**: Starting from the theoretical analysis of conditional score matching, it is proven that the autoregressive process inherently possesses a condition refinement effect (exponential decay of gradient norm). Subsequently, Optimal Transport theory (Wasserstein Gradient Flow) is used to further correct residual condition inconsistency.
 
-**Core Idea**: Autoregressive conditional generation inherently exhibits condition error decay, yet condition inconsistency persists. Wasserstein Gradient Flow-based condition refinement provides convergence guarantees to the ideal conditional distribution.
+**Core Idea**: Autoregressive conditional generation naturally features condition error decay, yet the condition inconsistency problem persists. Applying Wasserstein Gradient Flow for condition refinement can guarantee convergence to the ideal conditional distribution.
 
 ## Method
 
 ### Overall Architecture
 
-The method is built upon the autoregressive + diffusion loss framework (analogous to MAR). When generating each patch:
-- **Input**: The autoregressive model predicts an initial condition $c_i$.
-- **OT Refinement**: An optimal transport module refines the condition $c_i \to c_i^{(k)}$, driving it toward the ideal condition distribution $P_{c^*}$.
-- **Denoise MLP**: The refined condition guides the denoising process to generate the latent representation of the current patch.
-- **Output**: The generated patch is appended to the history, and the process continues to the next patch.
+This paper adopts a "theory-first, then implementation" approach. The problem addressed is that in image generators like MAR, the condition $c_i$ for each step—accumulated from preceding patches—contains redundant information irrelevant to the current generation. The paper labels this "condition inconsistency," which perturbs the denoising conditional score.
+
+The paper first addresses two theoretical points: (1) why autoregressive diffusion loss is more robust against such redundancy than global conditional diffusion (**Condition Error Decay**, where the conditional gradient norm decays exponentially with the patch index); (2) why the decay does not reach zero, and how residual redundancy is decomposed (**Condition Inconsistency**). These analyses identify the "residual redundancy" as the target, leading to the insertion of a single new module into the runtime pipeline: **Optimal Transport Condition Refinement**. After the autoregressive model predicts the initial condition and before it enters the denoiser, a Wasserstein gradient flow pushes the condition distribution back to the ideal distribution to eliminate residual redundancy. This is followed by patch-wise denoising and history backfilling. The runtime pipeline is as follows:
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Input: Generated Patch History"] --> B["Autoregressive Model<br/>Predicts Initial Condition c_i"]
+    B --> C["Optimal Transport Condition Refinement<br/>WGF/JKO Iteration + Sinkhorn<br/>Push c_i to Ideal Distribution P_c*"]
+    C --> D["Denoise MLP (diffusion loss)<br/>Denoise with Refined Condition"]
+    D --> E["Generate i-th Patch"]
+    E -->|Backfill History, Predict Next Patch| A
+    E --> F["Output: Complete Image"]
+```
+
+The two parts of theoretical analysis (error decay and inconsistency decomposition) are not processing nodes in the pipeline but serve as the rationale for performing Optimal Transport refinement. Thus, the primary novel implementation node is the **Optimal Transport Condition Refinement**.
 
 ### Key Designs
 
-1. **Theoretical Analysis of Condition Errors**:
+**1. Condition Error Decay Analysis: Proving AR performs implicit refinement**
 
-    - **Function**: Proves that the conditional score matching loss upper-bounds the unconditional score matching loss (Theorem 1), and that the conditional gradient norm in the autoregressive process decays exponentially (Theorem 2).
-    - **Mechanism**: Under standard Markov and Gaussian noise assumptions, a condition error term $\epsilon_c$ is defined to quantify the effect of conditioning on the score function. The key result is $\|\nabla_{x_t} \log p_t(x_t|c_i)\| \leq M\beta^i + m$, where $\beta \in (0,1)$, indicating that the influence of the condition decays exponentially to a steady-state value $m$ as autoregressive iteration proceeds.
-    - **Design Motivation**: Provides theoretical support for autoregressive diffusion loss methods—patch-by-patch generation inherently performs condition refinement, which is the fundamental reason these methods outperform globally conditioned diffusion models.
+This analysis explains why autoregressive + diffusion loss can outperform global conditional diffusion. Under standard Markovian and Gaussian noise assumptions, the paper defines a condition error term $\epsilon_c$ to quantify the disturbance caused by adding a condition to the score function. The first conclusion (Theorem 1) indicates that conditional score matching loss forms an upper bound for unconditional score matching, meaning conditioning only makes score estimation harder. The critical conclusion (Theorem 2) is that through the autoregressive steps, the norm of the conditional gradient decays exponentially:
 
-2. **Analysis of Condition Inconsistency (Lemma 6)**:
+$$\|\nabla_{x_t} \log p_t(x_t|c_i)\| \leq M\beta^i + m,\quad \beta \in (0,1)$$
 
-    - **Function**: Formally defines the information redundancy problem in autoregressive conditional generation.
-    - **Mechanism**: Each condition $c_i$ can be decomposed into the ideal condition $c_i^* = \pi_{\mathcal{I}_i^*}(c_i)$ (projected onto the minimal sufficient information subspace) and a redundant component $\eta_i = c_i - c_i^*$. The energy of the redundant component $\mathbb{E}[\|\eta_i\|_2^2]$ consists of two parts: propagation from preceding conditions and newly injected noise.
-    - **Design Motivation**: Reveals that while autoregressive condition refinement is effective, it is imperfect—redundant information accumulates continuously and requires additional correction.
+where $i$ is the patch index. This implies that as generation progresses, the influence of prior conditions on the current denoising decreases, eventually converging to a stationary value $m$. This demonstrates that patch-wise generation naturally possesses a "condition refinement" effect by fading out irrelevant historical information at an exponential rate.
 
-3. **Wasserstein Gradient Flow Condition Refinement (Proposition 2 + Theorem 3)**:
+**2. Condition Inconsistency Decomposition: Identifying the source of residual redundancy**
 
-    - **Function**: Models condition refinement as a gradient flow optimization problem in Wasserstein space.
-    - **Mechanism**: Minimizes the energy functional $\mathcal{F}(P_c) = W_2^2(P_c, P_{c^*}) + \lambda \mathbb{E}_{c \sim P_c}[\|c - \mathcal{T}^{-1}(x)\|^2]$ via JKO-scheme discretization. The first term pushes the condition toward the ideal distribution; the second term is an inverse-process regularizer that counteracts information accumulation.
-    - **Design Motivation**: The OT metric measures the "transport cost" between distributions rather than their overlap (as in KL divergence), making it more suitable for distributions with differing supports. The theoretical guarantee $W_2(P_c^{(k)}, P_{c^*}) \leq \rho^k W_2(P_c^{(0)}, P_{c^*})$ ensures exponential convergence.
+While exponential decay occurs, $\beta^i$ never hits zero, leaving residual redundancy. Lemma 6 formalizes this "condition inconsistency": each condition $c_i$ can be decomposed into an ideal condition $c_i^* = \pi_{\mathcal{I}_i^*}(c_i)$ and a redundant component $\eta_i = c_i - c_i^*$. The paper notes that the energy of redundancy $\mathbb{E}[\|\eta_i\|_2^2]$ consists of two parts: redundancy propagated from previous conditions and new noise injected at the current step. This decomposition reveals that while AR refinement is effective, it is imperfect, necessitating an explicit correction method.
 
-4. **Sinkhorn Algorithm Implementation**:
+**3. Optimal Transport Condition Refinement: Pushing conditions toward the ideal distribution**
 
-    - **Function**: Solves the regularized optimal transport problem in practice.
-    - **Mechanism**: Solves $\inf_\gamma \mathbb{E}_{(c,c')}[\|c - c'\|^2] + \epsilon \text{KL}(\gamma|\pi)$ efficiently via Sinkhorn iterations.
-    - **Design Motivation**: Directly solving the OT problem is NP-hard; entropic regularization via Sinkhorn enables $O(n^2)$ complexity.
+This module addresses the residual $\eta_i$. The paper models "refining conditions" as a gradient flow optimization in Wasserstein space (Proposition 2 + Theorem 3), aiming to minimize the energy functional:
+
+$$\mathcal{F}(P_c) = W_2^2(P_c, P_{c^*}) + \lambda \, \mathbb{E}_{c \sim P_c}\big[\|c - \mathcal{T}^{-1}(x)\|^2\big]$$
+
+The first term uses the 2-Wasserstein distance to pull the current distribution $P_c$ toward the ideal $P_{c^*}$, while the second term serves as inverse-process regularization. Optimal Transport (OT) is preferred over KL divergence because it provides meaningful gradients even when the supports of two distributions are disjoint. The optimization is discretized via JKO iterations and has an exponential convergence guarantee $W_2(P_c^{(k)}, P_{c^*}) \leq \rho^k W_2(P_c^{(0)}, P_{c^*})$.
+
+To ensure computational feasibility, entropy regularization is added:
+
+$$\inf_\gamma \, \mathbb{E}_{(c,c')}[\|c - c'\|^2] + \epsilon \, \text{KL}(\gamma|\pi)$$
+
+This is solved via Sinkhorn iterations, which makes the objective strictly convex and allows fast convergence with matrix scaling, reducing complexity to $O(n^2)$.
 
 ### Loss & Training
 
-- Base framework uses MAR's diffusion loss (cosine noise schedule, 1000 steps).
+- The base framework uses MAR's diffusion loss (cosine noise schedule, 1000 steps).
 - Learning rate $1 \times 10^{-5}$, 400 epochs, batch size 2048.
 - 100-epoch linear learning rate warmup.
-- EMA momentum 0.9999.
-- VAE: LDM's KL-16.
+- EMA momentum of 0.9999.
+- VAE uses LDM's KL-16.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Method | FID ↓ | IS ↑ | Precision ↑ | Recall ↑ |
-|--------|-------|------|-------------|----------|
+|------|-------|------|-------------|----------|
 | MAR (943M) | 1.55 | 303.7 | 0.81 | 0.62 |
 | De-MAR | 1.47 | 305.8 | 0.83 | 0.62 |
 | RAR | 1.50 | 306.9 | 0.80 | 0.62 |
@@ -101,7 +113,7 @@ The method is built upon the autoregressive + diffusion loss framework (analogou
 ### Ablation Study (Scalability)
 
 | Model Size | MAR FID | Ours FID | MAR IS | Ours IS |
-|------------|---------|----------|--------|---------|
+|---------|---------|----------|--------|---------|
 | 208M | 2.31 | **1.96** | 281.7 | **290.5** |
 | 479M | 1.78 | **1.59** | 296.0 | **301.5** |
 | 943M | 1.55 | **1.31** | 303.7 | **324.2** |
@@ -109,38 +121,37 @@ The method is built upon the autoregressive + diffusion loss framework (analogou
 **ImageNet 512×512:**
 
 | Method | FID ↓ | IS ↑ |
-|--------|-------|------|
+|------|-------|------|
 | MAR | 1.73 | 279.9 |
 | **Ours** | **1.58** | **302.3** |
 
 ### Key Findings
-- OT condition refinement consistently improves performance across all model sizes, with larger models showing more pronounced gains (208M: −0.35 FID → 943M: −0.24 FID, with superior absolute values).
-- Analysis of the denoising process shows higher SNR and lower noise intensity in later denoising stages, confirming that condition refinement is effective.
-- The autoregressive baseline (AR) substantially outperforms the conditional diffusion baseline (CDM), validating the theoretical analysis (3.26 → 2.02).
-- The method remains effective at high resolution (512×512).
+- OT condition refinement consistently improves performance across all model sizes, with more significant gains as the model scales.
+- Analysis of the denoising process shows that this method achieves a higher SNR and lower noise intensity in later stages, indicating the effectiveness of condition refinement.
+- The autoregressive baseline (AR) is significantly superior to the conditional diffusion model (CDM) baseline, validating the theoretical analysis (3.26 → 2.02).
+- The method remains effective for high-resolution 512×512 generation.
 
 ## Highlights & Insights
-- **Strong integration of theory and practice**: Rather than designing methods heuristically, the paper first theoretically analyzes the advantages of autoregressive diffusion loss (exponential decay of conditional gradients), identifies the residual issue (condition inconsistency), and resolves it via OT theory. The analysis–discovery–solution chain is logically coherent.
-- **Wasserstein Gradient Flow for condition refinement** is an interesting perspective that can be transferred to any scenario requiring "correction of a conditional distribution," such as guidance optimization in conditional generation or formalization of prompt engineering.
-- The finding that **autoregressive generation inherently performs condition refinement** is independently valuable—it explains why methods such as MAR can generate high-quality images without global attention.
+- **Theory-Practice Synergy**: The design is not heuristic but guided by theoretical analysis of condition error decay in AR diffusion loss, followed by a targeted solution using OT theory.
+- **WGF Perspective**: Using Wasserstein Gradient Flow for condition refinement is an interesting approach that could be transferred to other scenarios requiring "correction of conditional distributions," such as guidance optimization or formalizing prompt engineering.
+- **Implicit Refinement of AR**: The discovery that autoregressive processes naturally perform condition refinement explains why methods like MAR generate high-quality images despite lacking global attention.
 
 ## Limitations & Future Work
-- The OT refinement module introduces additional inference overhead (Sinkhorn iterations), but the paper does not report inference speed comparisons.
-- The theoretical analysis relies on numerous simplifying assumptions (Gaussian distributions, small variance, bounded second-order derivatives, etc.); whether these hold strictly for deep networks is debatable.
-- Validation is limited to ImageNet; experiments on more complex tasks such as text-to-image generation are absent.
-- How the ideal condition distribution $P_{c^*}$ is obtained or approximated in practice is not sufficiently discussed.
-- Comparisons with De-MAR and RAR are incomplete (e.g., parameter counts and training costs may not be controlled).
+- The OT refinement module increases inference overhead due to Sinkhorn iterations, but the paper does not report a direct inference speed comparison.
+- Theoretical derivations rely on simplifying assumptions (Gaussian distribution, small variance, bounded second derivatives); the degree to which deep networks satisfy these is unclear.
+- Evaluation is limited to ImageNet, lacking experiments on more complex tasks like Text-to-Image.
+- The practical acquisition or approximation of the ideal condition distribution $P_{c^*}$ is not fully discussed.
 
 ## Related Work & Insights
-- **vs. MAR**: OT condition refinement is applied directly on top of MAR, reducing FID from 1.55 to 1.31 and increasing IS from 303.7 to 324.2, demonstrating that MAR's conditions have room for improvement.
-- **vs. Conditional Diffusion Models (CDM)**: Both theoretical analysis and experiments show that autoregressive diffusion loss outperforms globally conditioned diffusion (FID 2.02 vs. 3.26).
-- **vs. RAR/De-MAR**: These are all methods that improve autoregressive image generation; this paper approaches the problem from the perspective of condition refinement, making it complementary to the others.
+- **vs MAR**: Directly adds OT condition refinement to MAR, reducing FID from 1.55 to 1.31 and increasing IS from 303.7 to 324.2, suggesting room for improvement in MAR's conditioning.
+- **vs Conditional Diffusion Models (CDM)**: Both theory and experiments suggest autoregressive diffusion loss is superior to global conditional diffusion.
+- **vs RAR/De-MAR**: These are complementary approaches to improving AR image generation; this work focuses uniquely on condition refinement.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ The theoretical analysis perspective is novel and OT-based condition refinement is creative, though the method itself (Sinkhorn + JKO) combines existing tools.
-- **Experimental Thoroughness**: ⭐⭐⭐ Main experiments are solid, but inference speed, training cost, and T2I experiments are missing.
-- **Writing Quality**: ⭐⭐⭐⭐ Theoretical derivations are rigorous and clear, though the heavy notation raises the reading barrier.
-- **Value**: ⭐⭐⭐⭐ Contributes to the theoretical understanding of autoregressive image generation; the OT refinement method is practical and transferable.
+- Novelty: ⭐⭐⭐⭐ The theoretical analysis perspective is novel, and OT condition refinement is creative.
+- Experimental Thoroughness: ⭐⭐⭐ Main experiments are solid, but lack inference speed analysis and T2I tasks.
+- Writing Quality: ⭐⭐⭐⭐ Theoretical derivations are rigorous and clear, though heavily notation-laden.
+- Value: ⭐⭐⭐⭐ Contributes significantly to the theoretical understanding of autoregressive image generation.
 
 <!-- RELATED:START -->
 
@@ -149,10 +160,10 @@ The method is built upon the autoregressive + diffusion loss framework (analogou
 ## Related Papers
 
 - [\[ICLR 2026\] From Prediction to Perfection: Introducing Refinement to Autoregressive Image Generation](from_prediction_to_perfection_introducing_refinement_to_autoregressive_image_gen.md)
+- [\[ICLR 2026\] BAR: Refactor the Basis of Autoregressive Visual Generation](bar_refactor_the_basis_of_autoregressive_visual_generation.md)
+- [\[ICLR 2026\] MADFormer: Mixed Autoregressive and Diffusion Transformers for Continuous Image Generation](textitmadformer_mixed_autoregressive_and_diffusion_transformers_for_continuous_i.md)
 - [\[ICLR 2026\] Autoregressive Image Generation with Randomized Parallel Decoding](autoregressive_image_generation_with_randomized_parallel_decoding.md)
-- [\[ICLR 2026\] Locality-aware Parallel Decoding for Efficient Autoregressive Image Generation](locality-aware_parallel_decoding_for_efficient_autoregressive_image_generation.md)
-- [\[ICLR 2026\] Visual Autoregressive Modeling for Instruction-Guided Image Editing](visual_autoregressive_modeling_for_instruction-guided_image_editing.md)
-- [\[ICLR 2026\] SSG: Scaled Spatial Guidance for Multi-Scale Visual Autoregressive Generation](ssg_scaled_spatial_guidance_for_multi-scale_visual_autoregressive_generation.md)
+- [\[ICLR 2026\] NextStep-1: Toward Autoregressive Image Generation with Continuous Tokens at Scale](nextstep-1_toward_autoregressive_image_generation_with_continuous_tokens_at_scal.md)
 
 </div>
 

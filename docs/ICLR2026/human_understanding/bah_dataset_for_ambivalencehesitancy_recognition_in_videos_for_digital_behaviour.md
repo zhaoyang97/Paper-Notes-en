@@ -2,154 +2,155 @@
 title: >-
   [Paper Note] BAH Dataset for Ambivalence/Hesitancy Recognition in Videos for Digital Behaviour Analysis
 description: >-
-  [ICLR 2026][Human Understanding][ambivalence/hesitancy recognition] This paper introduces BAH, the first multimodal dataset for Ambivalence/Hesitancy (A/H) recognition in videos, comprising 1…
+  [ICLR 2026][Human Understanding][Paper Note] This paper proposes BAH, the first multimodal dataset for Ambivalence/Hesitancy (A/H) recognition in videos. It contains 1,118 videos (8.26 hours) from 224 participants across 9 Canadian provinces, annotated by behavioral science experts, and provides baseline experimental results at both frame and video levels.
 tags:
-  - "ICLR 2026"
-  - "Human Understanding"
-  - "ambivalence/hesitancy recognition"
-  - "multimodal video dataset"
-  - "behaviour change"
-  - "affective computing"
-  - "domain adaptation"
+  - ICLR 2026
+  - Human Understanding
 date: 2026-05-08
-content_hash: cd8122570d996b1a
+content_hash: cd8690506fc0f1f9
 ---
-
 # BAH Dataset for Ambivalence/Hesitancy Recognition in Videos for Digital Behaviour Analysis
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2505.19328](https://arxiv.org/abs/2505.19328)  
 **Code**: [github.com/sbelharbi/bah-dataset](https://github.com/sbelharbi/bah-dataset)  
-**Area**: Human Behaviour Understanding / Affective Computing
-**Keywords**: ambivalence/hesitancy recognition, multimodal video dataset, behaviour change, affective computing, domain adaptation
+**Area**: Human Behavior Understanding / Affective Computing  
+**Keywords**: Ambivalence/Hesitancy Recognition, Multimodal Video Dataset, Behavioral Change, Affective Computing, Domain Adaptation
 
 ## TL;DR
 
-This paper introduces BAH, the first multimodal dataset for Ambivalence/Hesitancy (A/H) recognition in videos, comprising 1,118 video clips (8.26 hours total) from 224 participants across 9 Canadian provinces, annotated by behavioural science experts, with frame-level and video-level baseline experimental results provided.
+This paper proposes BAH, the first multimodal dataset for Ambivalence/Hesitancy (A/H) recognition in videos. It contains 1,118 videos (8.26 hours) from 224 participants across 9 Canadian provinces, annotated by behavioral science experts, and provides baseline experimental results at both frame and video levels.
 
 ## Background & Motivation
 
-Ambivalence and Hesitancy (A/H) are core psychological states in behaviour change, characterized by the simultaneous experience of desire and resistance to change. In face-to-face clinical interviews, healthcare providers can identify A/H through non-verbal cues such as vocal tone, facial expressions, and body language, enabling targeted personalized interventions. However, in digital health (eHealth) intervention settings, automatic, reliable, and non-intrusive A/H recognition remains unavailable.
+Ambivalence and Hesitancy (A/H) are core psychological states in the process of behavioral change, manifesting as individuals simultaneously experiencing the desire to change and resistance to it. In face-to-face clinical interviews, healthcare providers can identify A/H through non-verbal cues such as vocal tone, facial expressions, and body language to implement targeted personalized interventions. However, in digital health (eHealth) intervention scenarios, there is a lack of automatic, reliable, and non-invasive means for A/H recognition.
 
-Existing affective computing research has primarily focused on basic emotions (e.g., the seven universal expressions), continuous emotional dimensions (valence–arousal), and pain estimation. Although compound emotion recognition has advanced, A/H—as a more subtle complex emotion involving internal conflict of attitudes and intentions—remains entirely unexplored in the machine learning community. The fundamental reason is the absence of dedicated training and evaluation datasets. The BAH dataset is proposed specifically to address this gap.
+Existing affective computing research primarily focuses on basic emotions (e.g., 7 categories including happiness, sadness, surprise), continuous emotional dimensions (Valence-Arousal), and pain estimation. Although progress has been made in compound emotion recognition, A/H—as a subtle complex emotion involving internal conflict between attitudes and intentions—remains entirely unexplored in the machine learning community. The fundamental reason is the absence of specialized training and evaluation datasets. The BAH dataset is proposed specifically to fill this gap.
 
 ## Method
 
 ### Overall Architecture
 
-The construction of the BAH dataset constitutes a complete end-to-end pipeline: from participant recruitment and data collection, to expert annotation protocol design, baseline model evaluation, and domain adaptation experiments. Rather than presenting an algorithmic innovation, this work is a systematic contribution centred on the dataset itself.
+The contribution of BAH is not a single algorithm, but a complete construction pipeline that grounds "A/H concepts from behavioral science" into "machine-learnable video benchmarks." The core challenge addressed is that A/H is a subtle, transient internal conflict that only manifests genuinely in natural contexts; any deviation in the process would render the labels meaningless. Therefore, the pipeline is designed around "evoking genuine A/H, labeling it accurately, and measuring it fairly." It utilizes a web platform for participants to record remotely at home, using 7 carefully designed questions to elicit A/H rather than acting. The recorded videos undergo preprocessing (face alignment, transcription, audio extraction) and are then annotated at video, frame, and cue levels by three behavioral science experts following a unified codebook. Finally, an evaluation protocol tailored for extreme class imbalance (reporting F1, WF1, and AP simultaneously) ensures that baseline scores reflect the model's ability to recognize the rare positive class. The final output includes 1,118 videos (8.26 hours) from 224 participants.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    A["Participants<br/>(224 from 9 Canadian provinces)"] --> CAP
+    subgraph CAP["Remote Acquisition (AER) + Seven Evocative Questions"]
+        direction TB
+        B["AER Web Platform<br/>Calibration & Avatar Guidance"] --> C["7 Targeted Questions<br/>Neutral/Ambivalence/Hesitancy..."]
+    end
+    CAP --> D["Preprocessing<br/>Face Alignment, Transcription, Audio"]
+    D --> E["Multi-level Expert Annotation<br/>Video, Frame, and Cue levels"]
+    E --> F["BAH Dataset<br/>1118 videos, 8.26h"]
+    F --> G["Imbalanced Evaluation Protocol<br/>F1 / WF1 / AP"]
+    G --> H["Multimodal Baselines<br/>Vision, Audio, Text, Fusion"]
+```
 
 ### Key Designs
 
-1. **Data Collection Platform (AER)**: The paper develops the "Automatic Expression Recognition" web platform (www.aerstudy.ca), through which participants remotely record their responses using their own devices (computers with cameras and microphones). Built-in calibration tests ensure data quality, and a virtual avatar guides participants through the entire procedure. The design motivation is to enable large-scale, diverse, and low-cost data collection.
+**1. Remote Acquisition Platform (AER): Scaling with Diversity**
 
-2. **Seven Elicitation Questions**: The behavioural science team carefully designed seven questions intended to elicit neutral, positive, negative, ambivalent, willing, resistant, and hesitant responses respectively. For example, Question 4 ("Tell us something you enjoy doing but wish you could stop") is specifically designed to elicit ambivalence. This design ensures that A/H emerges naturally rather than through acted performance.
+Subtle states like A/H requires massive real-world samples for learning. Laboratory recording is expensive and lacks diversity. The team built AER (www.aerstudy.ca), a web platform allowing participants to record remotely at home using their own webcams and microphones, guided by a virtual avatar. Built-in calibration tests filter out poor video/audio quality. Since data is collected in the "wild" rather than a studio, it closer reflects real eHealth deployment, despite increased noise from lighting and equipment. 224 participants aged 18–66 were recruited via Prolific across 9 Canadian provinces, with balanced distributions in gender (59.8% M / 39.3% F), ethnicity, and age.
 
-3. **Multi-level Annotation Scheme**: Three behavioural science experts annotate the data following a purpose-designed codebook, including:
+**2. Seven Evocative Questions: Natural Expression over Acting**
 
-    - **Video-level annotation**: overall judgment of whether A/H is present
-    - **Frame-level annotation**: precise temporal boundaries of A/H occurrences
-    - **Cue annotation**: records of specific cues used to identify A/H (facial expressions, verbal content, audio, body language, cross-modal inconsistency)
+Dataset quality depends on the authenticity of the state. Behavioral scientists designed 7 questions to elicit neutral, positive, negative, ambivalent, willing, resistant, and hesitant responses. For example, Question 4 ("Tell us about something you enjoy doing but wish you could stop") specifically targets the conflict between desire and resistance. Question order is randomized, and participants are unaware of the target emotions, ensuring A/H is induced through genuine self-disclosure rather than posing.
 
-4. **Diversity Assurance**: 224 participants aged 18–66 are recruited from 9 Canadian provinces, covering diverse genders (59.8% male, 39.3% female), ethnicities (52.2% White, 21.0% Asian, 11.6% mixed, etc.), and age groups. 65.2% are non-students, reducing recruitment bias.
+**3. Multi-level Expert Annotation: Presence, Timing, and Cues**
 
-### Dataset Statistics
+Video-level labels alone cannot support temporal localization or interpretability. Three experts trained on a unified codebook used ELAN software for two-stage annotation: first determining A/H presence at the video level, then marking precise onset/offset times at the frame level. They also recorded specific cues (facial expression, verbal, audio, body language, and cross-modal inconsistency). Cross-modal inconsistency (e.g., saying "yes" while shaking the head "no") is emphasized as a core signal. The paper omits "apex" or intensity labels as A/H is often a persistent or fluctuating state without a single maximum intensity moment.
 
-- **Total**: 1,118 video clips, 8.26 hours in total, with 638 clips containing A/H and 1.5 hours of A/H content
-- **Frame count**: 714,005 frames, of which 131,103 contain A/H (only 18.36%)
-- **A/H segment characteristics**: 1,274 A/H segments in total, with mean duration of $4.25 \pm 2.47$ seconds (approximately $102.92 \pm 59.16$ frames), ranging from 0.01 to 23.8 seconds
-- **Severe class imbalance**: positive-class frames account for only 18.36% at the frame level, a characteristic requiring special consideration during training and evaluation
+**4. Specialized Evaluation Protocol for Extreme Imbalance**
 
-### Evaluation Metrics
-
-Given the severe class imbalance, three metrics are employed: positive-class F1 score, weighted F1 (WF1), and positive-class Average Precision (AP). Since WF1 is biased towards the negative class (predicting all negative yields WF1 of 0.7148), F1 and AP more faithfully reflect true recognition capability.
+A/H occurs sparsely on the timeline. Among 1,118 videos (8.26 hours), 638 contain A/H (totaling 1.5 hours). At the frame level, only 18.36% (131,103 out of 714,005 frames) are positive. There are 1,274 A/H segments with an average duration of $4.25\pm2.47$ seconds ($102.92\pm59.16$ frames). To prevent inflated metrics from "all-negative" predictions, the protocol reports F1 (positive class), Weighted F1 (WF1), and Average Precision (AP). Since WF1 is biased towards the majority negative class (baseline of 0.7148 with all-negative predictions), F1 and AP serve as the primary indicators of a model's ability to identify rare positive instances.
 
 ## Key Experimental Results
 
 ### Main Results: Frame-level Classification
 
 | Modality Combination | F1 | WF1 | AP |
-|---|---|---|---|
-| Visual (ResNet152+TCN) | 0.2213 | 0.7450 | 0.2674 |
+|---------|-----|-----|-----|
+| Vision (ResNet152+TCN) | 0.2213 | 0.7450 | 0.2674 |
 | Audio | 0.2099 | 0.7387 | 0.2520 |
 | Text Transcription | 0.2486 | 0.7149 | 0.2047 |
-| Visual + Audio | 0.2873 | 0.7338 | 0.2818 |
-| Visual + Text | 0.3046 | 0.7424 | 0.2809 |
-| Trimodal Fusion | 0.2737 | 0.7396 | 0.2416 |
+| Vision + Audio | 0.2873 | 0.7338 | 0.2818 |
+| Vision + Text | 0.3046 | 0.7424 | 0.2809 |
+| Tri-modal Fusion | 0.2737 | 0.7396 | 0.2416 |
 
-### Ablation Study: Impact of Temporal Context Modelling
+### Ablation Study: Impact of Context Modeling
 
-| Configuration | F1 | WF1 | AP | Note |
-|---|---|---|---|---|
-| ResNet152 without context | 0.1757 | 0.7086 | 0.2096 | Single-frame independent classification |
-| ResNet152 + TCN with context | 0.2213 | 0.7450 | 0.2674 | Temporal context modelling |
+| Configuration | F1 | WF1 | AP | Description |
+|------|-----|-----|-----|------|
+| ResNet152 w/o Context | 0.1757 | 0.7086 | 0.2096 | Independent frame classification |
+| ResNet152 + TCN w/ Context | 0.2213 | 0.7450 | 0.2674 | Temporal context modeling |
 
 ### Zero-shot Inference (Video-LLaVA)
 
-| Prompting Strategy | Frame-level F1 | Video-level F1 |
-|---|---|---|
-| Simple prompt | 0.0000 | 0.0000 |
-| Definition only | 0.1360–0.3296 | 0.1836–0.7575 |
-| Transcription + definition | 0.3604 | 0.7233 |
+| Prompt Style | Frame F1 | Video F1 |
+|---------|--------|---------|
+| Simple Prompt | 0.0000 | 0.0000 |
+| Definition Only | 0.1360-0.3296 | 0.1836-0.7575 |
+| Transcripts + Definition | 0.3604 | 0.7233 |
 
-### Domain Adaptation (Personalisation)
+### Domain Adaptation (Personalization)
 
 | Method | F1 | WF1 | AP |
-|---|---|---|---|
-| Source-only | $0.1547 \pm 0.1608$ | $0.6814 \pm 0.1687$ | $0.2462 \pm 0.1665$ |
-| UDA (MMD) | $0.2418 \pm 0.1513$ | $0.6494 \pm 0.1484$ | $0.2608 \pm 0.1685$ |
-| UDA (Sub-Based) | $0.2674 \pm 0.1475$ | $0.6461 \pm 0.1534$ | $0.2673 \pm 0.1642$ |
-| Oracle | 0.3699 | — | — |
+|------|-----|-----|-----|
+| Source-only | 0.1547±0.1608 | 0.6814±0.1687 | 0.2462±0.1665 |
+| UDA (MMD) | 0.2418±0.1513 | 0.6494±0.1484 | 0.2608±0.1685 |
+| UDA (Sub-Based) | 0.2674±0.1475 | 0.6461±0.1534 | 0.2673±0.1642 |
+| Oracle | 0.3699 | - | - |
 
 ### Key Findings
 
-1. **A/H recognition is highly challenging**: All baseline models achieve F1 below 0.32 and AP below 0.28, indicating that A/H recognition is substantially more difficult than basic emotion recognition.
-2. **Text transcription is critical**: The text modality alone (F1: 0.2486) already outperforms the visual modality (F1: 0.2213), and the Visual + Text combination achieves the best F1 (0.3046).
-3. **Temporal context is beneficial**: Modelling temporal dependencies with TCN improves performance across all backbones, as A/H is not an instantaneous phenomenon.
-4. **Zero-shot M-LLMs heavily depend on text**: Video-LLaVA's performance is highly sensitive to the inclusion of text transcriptions; purely visual zero-shot recognition is nearly ineffective.
-5. **Personalisation shows promise**: Subject-based UDA improves F1 from 0.1547 to 0.2674, though a substantial gap remains relative to the Oracle upper bound (0.3699).
+1.  **High Difficulty of A/H Recognition**: All baseline models show F1 scores below 0.32 and AP below 0.28, suggesting A/H recognition is significantly more difficult than basic emotion recognition.
+2.  **Crucial Role of Text**: The text modality alone (F1 0.2486) outperforms vision (F1 0.2213), and the Vision+Text combination achieves the best overall F1 (0.3046).
+3.  **Temporal Context Benefits**: Using TCN to model temporal dependencies improves performance across all backbones, as A/H is not an instantaneous state.
+4.  **Zero-shot M-LLM Text Reliance**: Video-LLaVA performance depends heavily on transcripts; zero-shot recognition using vision alone is nearly impossible.
+5.  **Potential of Personalization**: Participant-based Unsupervised Domain Adaptation (Sub-Based UDA) significantly improves F1 from 0.1547 to 0.2674, though it remains below the Oracle upper bound (0.3699).
 
 ## Highlights & Insights
 
-- **Strong originality**: This is the first dataset in the ML community dedicated to A/H recognition, filling a critical gap at the intersection of behavioural science and machine learning.
-- **High annotation quality**: Behavioural science experts annotate according to a rigorous codebook, providing not only A/H occurrence labels but also detailed cues including facial, verbal, audio, body language, and cross-modal inconsistency signals.
-- **Multi-task applicability**: The dataset supports diverse research directions including frame-level classification, video-level classification, personalised learning (domain adaptation), and interpretability analysis.
-- **Cross-modal inconsistency** is a key cue for A/H recognition—for example, verbally saying "yes" while shaking the head "no"—providing important inspiration for future method design.
-- **Data collection is conducted in naturalistic, in-the-wild conditions** (participants using their own devices), which increases task difficulty while enhancing practical applicability.
+-   **High Novelty**: This is the first dataset in the ML community dedicated to A/H recognition, bridging a gap between behavioral science and machine learning.
+-   **Fine-grained Annotation**: Expert annotations covers not just A/H presence but also specific cues like facial expressions, verbal content, and cross-modal inconsistencies.
+-   **Multi-task Applicability**: Supports frame-level classification, video-level classification, domain adaptation (personalization), and interpretability studies.
+-   **Cross-modal Inconsistency** is identified as a vital signal for A/H (e.g., verbal-nonverbal mismatch), providing insight for future architecture design.
+-   **In-the-wild Data Collection** using participants' own devices increases task difficulty but enhances practical value for eHealth applications.
 
 ## Limitations & Future Work
 
-1. **Some videos are annotated by a single annotator**, lacking systematic inter-annotator agreement verification.
-2. **The visual modality uses only cropped, aligned faces**, overlooking body language information in full frames—despite annotators emphasising body language as an important cue.
-3. **Severe class imbalance** (only 18% positive frames at the frame level): although downsampling is employed, more advanced imbalanced learning methods are not explored.
-4. **Feature fusion strategies are simple** (e.g., concatenation), failing to adequately exploit cross-modal inconsistency, which is a core characteristic of A/H.
-5. **Systematic evaluation of large-scale pretrained models is lacking**: zero-shot experiments cover only Video-LLaVA, without evaluating stronger multimodal large language models.
+1.  **Single Annotator per Video**: While consistency checks were performed on a subset, most videos were annotated by only one expert.
+2.  **Limited Vision Cues**: Baseline models only used cropped facial regions, ignoring body language cues highlighted by experts.
+3.  **Severe Imbalance**: Only 18% of frames are positive; the study did not explore advanced imbalanced learning techniques beyond downsampling.
+4.  **Simple Fusion**: Strategies like concatenation do not fully exploit the "inconsistency" feature inherent in A/H.
+5.  **Large Model Testing**: Zero-shot experiments were limited to Video-LLaVA and did not cover more powerful recent multimodal large models (M-LLMs).
 
 ## Related Work & Insights
 
-- Similar to C-EXPR-DB (compound emotions) but more targeted: BAH focuses specifically on the clinically relevant A/H state.
-- Complementary to MESC (emotional support conversations) and IEMOCAP (acted performance): BAH uses natural responses from real participants.
-- Significant implications for digital health intervention: automatic A/H recognition could substantially improve the personalisation and effectiveness of eHealth interventions.
-- Cross-modal inconsistency detection may draw on methods from deception detection and sarcasm recognition.
-- The "textualisation" direction for multimodal large language models (M-LLMs) warrants deeper investigation: converting visual and audio cues into textual descriptions to leverage LLM reasoning capabilities.
+-   Similar to C-EXPR-DB (compound emotions) but more specialized for clinically relevant A/H states.
+-   Complements MESC (emotional support) and IEMOCAP (acted), as BAH features natural responses from diverse participants.
+-   Significantly impacts digital health interventions by enabling personalized eHealth responses via automated A/H detection.
+-   Detection of cross-modal inconsistency could draw from methods in deception detection and sarcasm recognition.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ (first A/H dataset; pioneering contribution to the field)
-- Experimental Thoroughness: ⭐⭐⭐⭐ (comprehensive baselines but limited algorithmic innovation)
-- Writing Quality: ⭐⭐⭐⭐ (clear structure, detailed appendices)
-- Value: ⭐⭐⭐⭐⭐ (fills an important gap; broad application prospects)
+- Novelty: ⭐⭐⭐⭐⭐ (First A/H dataset, pioneering contribution)
+- Experimental Thoroughness: ⭐⭐⭐⭐ (Comprehensive baselines but limited algorithmic innovation)
+- Writing Quality: ⭐⭐⭐⭐ (Clear structure, detailed appendices)
+- Value: ⭐⭐⭐⭐⭐ (Fills a major gap with broad application prospects)
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
+</div>
 
 ## Related Papers
 
+- [\[CVPR 2025\] Team LEYA in 10th ABAW Competition: Multimodal Ambivalence/Hesitancy Recognition Approach](../../CVPR2025/human_understanding/team_leya_in_10th_abaw_competition_multimodal_ambivalencehesitancy_recognition_a.md)
+- [\[ICLR 2026\] BANZ-FS: BANZSL Fingerspelling Dataset](banz-fs_banzsl_fingerspelling_dataset.md)
+- [\[ICLR 2026\] From Pixels to Semantics: Unified Facial Action Representation Learning for Micro-Expression Analysis](from_pixels_to_semantics_unified_facial_action_representation_learning_for_micro.md)
+- [\[CVPR 2026\] HUMAPS-4D: A Multimodal Dataset for HUman Motion Analysis with Physiological and Semantic informations](../../CVPR2026/human_understanding/humaps-4d_a_multimodal_dataset_for_human_motion_analysis_with_physiological_and_.md)
 - [\[AAAI 2026\] Facial-R1: Aligning Reasoning and Recognition for Facial Emotion Analysis](../../AAAI2026/human_understanding/facial-r1_aligning_reasoning_and_recognition_for_facial_emotion_analysis.md)
-- [\[ICLR 2026\] NeuroGaze-Distill: Brain-informed Distillation and Depression-Inspired Geometric Priors for Robust Facial Emotion Recognition](neurogaze-distill_brain-informed_distillation_and_depression-inspired_geometric_.md)
-- [\[CVPR 2026\] UniDex: A Robot Foundation Suite for Universal Dexterous Hand Control from Egocentric Human Videos](../../CVPR2026/human_understanding/unidex_a_robot_foundation_suite_for_universal_dexterous_hand_control_from_egocen.md)
-- [\[ICLR 2026\] GaitSnippet: Gait Recognition Beyond Unordered Sets and Ordered Sequences](gaitsnippet_gait_recognition_beyond_unordered_sets_and_ordered_sequences.md)
-- [\[CVPR 2026\] HUM4D: A Dataset and Evaluation for Complex 4D Markerless Human Motion Capture](../../CVPR2026/human_understanding/hum4d_markerless_motion_capture.md)
 
 </div>
 

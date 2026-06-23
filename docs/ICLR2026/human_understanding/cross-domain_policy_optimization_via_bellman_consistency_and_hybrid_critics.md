@@ -2,153 +2,133 @@
 title: >-
   [Paper Note] Cross-Domain Policy Optimization via Bellman Consistency and Hybrid Critics
 description: >-
-  [ICLR 2026][Human Understanding][Cross-Domain Reinforcement Learning] This paper proposes the Q Avatar framework, which quantifies the transferability of source-domain models via cross-domain Bellman consistency and comb…
+  [ICLR 2026][Human Understanding][Paper Note] The Q Avatar framework is proposed to quantify source model transferability via cross-domain Bellman consistency. By utilizing an adaptive, hyperparameter-free weighting function to hybridize source and target domain Q-functions, reliable knowledge transfer is achieved in cross-domain RL with different state-action spa
 tags:
-  - "ICLR 2026"
-  - "Human Understanding"
-  - "Cross-Domain Reinforcement Learning"
-  - "Bellman Consistency"
-  - "Hybrid Critic"
-  - "Q-Function Transfer"
-  - "Negative Transfer Prevention"
+  - ICLR 2026
+  - Human Understanding
 date: 2026-05-08
-content_hash: f5d3956dd7dc82ea
+content_hash: 0f1099d628f54208
 ---
-
 # Cross-Domain Policy Optimization via Bellman Consistency and Hybrid Critics
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2603.12087](https://arxiv.org/abs/2603.12087)  
 **Code**: [https://rl-bandits-lab.github.io/Cross-Domain-RL/](https://rl-bandits-lab.github.io/Cross-Domain-RL/)  
-**Area**: Human Understanding
-**Keywords**: Cross-Domain Reinforcement Learning, Bellman Consistency, Hybrid Critic, Q-Function Transfer, Negative Transfer Prevention
+**Area**: Human Understanding  
+**Keywords**: Cross-domain RL, Bellman consistency, Hybrid Critic, Q-function transfer, Negative transfer protection
 
 ## TL;DR
 
-This paper proposes the Q Avatar framework, which quantifies the transferability of source-domain models via cross-domain Bellman consistency and combines source- and target-domain Q-functions through an adaptive, hyperparameter-free weighting function. The framework enables reliable knowledge transfer in cross-domain RL with mismatched state-action spaces, guaranteeing no negative transfer regardless of source model quality or domain similarity.
+The Q Avatar framework is proposed to quantify source model transferability via cross-domain Bellman consistency. By utilizing an adaptive, hyperparameter-free weighting function to hybridize source and target domain Q-functions, reliable knowledge transfer is achieved in cross-domain RL with different state-action spaces, guaranteeing no negative transfer regardless of source model quality or domain similarity.
 
 ## Background & Motivation
 
-### Problem Background
-Cross-domain reinforcement learning (CDRL) aims to leverage data collected in a source domain to improve learning efficiency in a target domain. In practical scenarios—such as transfer between robots with different morphologies—the source and target domains often have **different state and action spaces**, making direct transfer infeasible.
+### Background
+Cross-Domain Reinforcement Learning (CDRL) aims to leverage data collected from a source domain to improve learning efficiency in a target domain. In practical scenarios (e.g., between robots with different morphologies), the source and target domains often possess **different state and action spaces**, making direct transfer impossible.
 
-### Two Fundamental Challenges
+### Key Challenges
 
-**State-Action Space Mismatch**: Source and target domains may have state and action representations of different dimensionalities, requiring complex inter-domain mappings.
+**State-Action Space Inconsistency**: Source and target domains may have different dimensions for state and action representations, requiring complex inter-domain mappings.
 
-**Unknown Transferability**: The effectiveness of transferring a source-domain model is difficult to assess in advance, and CDRL is prone to **negative transfer**—where performance after transfer is worse than learning from scratch.
+**Unknown Transferability**: It is difficult to determine the transfer performance of a source model beforehand. CDRL is prone to **negative transfer**, where performance after transfer is worse than learning from scratch.
 
 ### Limitations of Prior Work
-- Manually designed latent-space mapping methods (Ammar & Taylor, 2012) lack flexibility.
-- Learned inter-domain mapping methods (Zhang et al., 2021; Gui et al., 2023) rely on dynamics alignment but offer no performance guarantees and ignore the transferability issue.
-- All existing methods assume sufficient domain similarity and do not address negative transfer prevention.
+- Hand-crafted latent space mapping methods (Ammar & Taylor, 2012) lack flexibility.
+- Learned inter-domain mappings (Zhang et al., 2021; Gui et al., 2023) are based on dynamic alignment but lack performance guarantees and ignore transferability issues.
+- All existing methods assume domains are sufficiently similar and do not address negative transfer protection.
 
 ## Method
 
 ### Overall Architecture
 
-Q Avatar consists of three core components:
-1. **Cross-Domain Bellman Consistency**: Quantifies the transferability of the source-domain Q-function.
-2. **Hybrid Critic**: Adaptively combines source- and target-domain Q-functions via learned weights.
-3. **Normalizing Flow Inter-Domain Mapping**: Learns cross-domain correspondences for states and actions.
+Q Avatar addresses cross-domain transfer where state and action space dimensions differ between the source (e.g., simulator) and target (e.g., real robot). The approach follows a three-step mechanism: "Bridge, Quantify, and Mix." First, it uses normalizing flow-based mappings $\phi, \psi$ to map target domain state-actions back to the source domain, enabling the source Q-function to be evaluated on target data. Second, it uses the cross-domain Bellman error to quantify the reliability of the transferred Q-function in real-time. Finally, it dynamically weights the source and target critics into a hybrid critic to drive policy updates. The mechanism ensures that the hybrid weight fluctuates automatically with transferability—relying more on the source when it is credible and reverting to target-only learning when it is not—preventing negative transfer even with poor source models or large domain gaps.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    SRC["Source Pre-trained Q-function Q_src"] --> MAP["Normalizing Flow Mapping<br/>φ,ψ: Target (s,a) → Source"]
+    IN["Target State-Action (s,a)"] --> MAP
+    MAP --> BELL["Cross-Domain Bellman Consistency<br/>Calc Error ε_cd to Quantify Transferability"]
+    BELL -->|"Small ε_cd → Large α<br/>Large ε_cd → Small α"| HYB["Q Avatar Hybrid Critic<br/>(1-α) Q_tar + α Q_src"]
+    TAR["Target Self-learning Critic Q_tar<br/>(TD Error ε_td)"] --> HYB
+    HYB --> POL["NPG-style Policy Update"]
+```
 
 ### Key Designs
 
-1. **Cross-Domain Bellman Consistency**
+**1. Normalizing Flow Inter-domain Mapping: Stable Cross-Domain Correspondence**
 
-   A cross-domain Bellman error is defined to measure the applicability of the source-domain Q-function in the target domain:
+The first step addresses spatial inconsistency. Since source and target dimensions differ, the source Q-function cannot directly process target $(s,a)$. Q Avatar uses normalizing flows to parameterize mappings $\phi: \mathcal{S}_{\text{tar}} \to \mathcal{S}_{\text{src}}$ and $\psi: \mathcal{A}_{\text{tar}} \to \mathcal{A}_{\text{src}}$. The training objective minimizes the cross-domain Bellman loss, making the mapping converge toward making the source Q-function self-consistent in the target domain. Normalizing flows are chosen for their inherent invertibility and training stability, avoiding degenerate solutions common in alignment. This component is modular; the Q Avatar framework is compatible with various mapping methods.
 
-   $\epsilon_{\text{cd}}(s,a;\phi,\psi,Q_{\text{src}},\pi) = |Q_{\text{src}}(\phi(s),\psi(a)) - r_{\text{tar}}(s,a) - \gamma \mathbb{E}_{s',a'}[Q_{\text{src}}(\phi(s'),\psi(a'))]|$
+**2. Cross-Domain Bellman Consistency: Quantifying Transferability**
 
-   where $\phi: \mathcal{S}_{\text{tar}} \to \mathcal{S}_{\text{src}}$ and $\psi: \mathcal{A}_{\text{tar}} \to \mathcal{A}_{\text{src}}$ are inter-domain mappings. A small error indicates that the source-domain Q-function satisfies the Bellman equation in the target domain after mapping, implying high transferability.
+CDRL's primary difficulty is the inability to judge source knowledge quality beforehand. Q Avatar formalizes "transferability" as a computable metric: the cross-domain Bellman error $\epsilon_{\text{cd}}(s,a;\phi,\psi,Q_{\text{src}},\pi) = |Q_{\text{src}}(\phi(s),\psi(a)) - r_{\text{tar}}(s,a) - \gamma \mathbb{E}_{s',a'}[Q_{\text{src}}(\phi(s'),\psi(a'))]|$. If the mapped source Q-function satisfies the Bellman equation in the target domain (low error), it is consistent with the target rewards and dynamics and thus reliable. This metric relies solely on data rather than extra environment interaction or human priors.
 
-2. **Q Avatar Hybrid Critic**
+**3. Q Avatar Hybrid Critic: Hyperparameter-free Weighting**
 
-   At each policy update step, a weighted combination is used:
-
-   $Q^{(t)}_{\text{avatar}} = (1-\alpha(t)) Q^{(t)}_{\text{tar}} + \alpha(t) Q_{\text{src}}(\phi^{(t)}, \psi^{(t)})$
-
-   The weight $\alpha(t)$ is **adaptive and hyperparameter-free**, determined by the ratio of the cross-domain Bellman error to the TD error:
-
-   $\alpha(t) = \frac{1/\|\epsilon_{\text{cd}}\|_{d^{\pi^{(t)}}}}{1/\|\epsilon_{\text{td}}^{(t)}\|_{d^{\pi^{(t)}}} + 1/\|\epsilon_{\text{cd}}\|_{d^{\pi^{(t)}}}}$
-
-   When the source-domain Q-function has a small Bellman error (high transferability), $\alpha$ is large and source-domain knowledge is weighted more heavily; otherwise, $\alpha$ is small and the agent relies primarily on target-domain learning. This guarantees **no negative transfer regardless of source model quality**.
-
-3. **Normalizing Flow Inter-Domain Mapping**
-
-   Normalizing flow models are employed to learn $\phi$ and $\psi$ by minimizing the cross-domain Bellman loss. The invertibility of flow models ensures training stability. This design demonstrates the compatibility of the Q Avatar framework with existing inter-domain mapping methods.
-
-### Convergence Guarantee
-
-**Theorem** (informal): The average suboptimality gap of Q Avatar is upper-bounded by:
-$$O\left(\frac{\log|\mathcal{A}|}{\sqrt{T}(1-\gamma)}\right) + C \cdot \min\{\|\epsilon_{\text{td}}^{(t)}\|, \|\epsilon_{\text{cd}}\|\}$$
-
-That is, Q Avatar automatically selects the smaller of the TD error and the cross-domain Bellman error, ensuring effective utilization under any source model quality.
+During policy updates, Q Avatar linearly blends the target critic and the source critic: $Q^{(t)}_{\text{avatar}} = (1-\alpha(t)) Q^{(t)}_{\text{tar}} + \alpha(t) Q_{\text{src}}(\phi^{(t)}, \psi^{(t)})$. The weight $\alpha(t)$ is fully adaptive and calculated as the ratio of the reciprocals of the cross-domain Bellman error and the target TD error: $\alpha(t) = \frac{1/\|\epsilon_{\text{cd}}\|_{d^{\pi^{(t)}}}}{1/\|\epsilon_{\text{td}}^{(t)}\|_{d^{\pi^{(t)}}} + 1/\|\epsilon_{\text{cd}}\|_{d^{\pi^{(t)}}}}$. When the source error is smaller than the target error, $\alpha$ increases to favor source knowledge. The theoretical optimality gap is bounded by $O\left(\frac{\log|\mathcal{A}|}{\sqrt{T}(1-\gamma)}\right) + C \cdot \min\{\|\epsilon_{\text{td}}^{(t)}\|, \|\epsilon_{\text{cd}}\|\}$, ensuring the hybrid critic performs no worse than learning from scratch.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Evaluation environments span locomotion control, robotic arm manipulation, and goal-conditioned navigation:
+Evaluations were conducted across locomotion, robot arm manipulation, and navigation:
 
-| Environment | Threshold | Q Avatar | SAC (from scratch) | Ratio |
-|---|---|---|---|---|
+| Environment | Threshold | Q Avatar | SAC (From Scratch) | Ratio |
+| :--- | :--- | :--- | :--- | :--- |
 | HalfCheetah | 6000 | 126K steps | 176K steps | 0.71 |
 | Ant | 1600 | 206K steps | 346K steps | 0.59 |
 | Door Opening | 90 | 48K steps | 98K steps | 0.49 |
 | Table Wiping | 45 | 72K steps | 98K steps | 0.73 |
 | Navigation | 20 | 218K steps | 490K steps | **0.44** |
 
-In the best case, Q Avatar reaches the performance threshold using only 44% of the environment steps required by SAC.
-
-### Comparison with Baselines
-Q Avatar outperforms CMD, CAT-SAC, CAT-PPO, and FT (fine-tuning) on all tasks, with a notably superior IQM aggregate metric.
+In the best case, it requires only 44% of the environment steps compared to SAC to reach the threshold.
 
 ### Ablation Study
 
-| Configuration | Key Metric | Observation |
-|---|---|---|
-| Strong positive transfer (symmetric Ant) | High $\alpha(t)$ | Source-domain knowledge effectively utilized |
-| Strong negative transfer (reversed-goal Ant) | Low $\alpha(t)$ | Automatic negative transfer prevention |
-| Low-quality source model (return 1000 vs. 7000) | Gradually decreasing $\alpha(t)$ | Adaptive reduction of source dependence |
-| Unrelated domain transfer (Hopper → Table Wiping) | No negative transfer | Reliability guarantee |
-| Non-stationary environment (noisy reward + actions) | Positive transfer preserved | Robustness |
-| $N_\alpha$ sensitivity test | Slight sensitivity | 300/1000/3000 all viable |
+| Configuration | Key Metric | Description |
+| :--- | :--- | :--- |
+| Strong Positive Transfer (Symmetric Ant) | High $\alpha(t)$ | Effectively utilizes source knowledge |
+| Strong Negative Transfer (Opposite Goal Ant) | Low $\alpha(t)$ | Automatically protects against negative transfer |
+| Low Quality Source (Return 1000 vs 7000) | Decreasing $\alpha(t)$ | Adaptive reduction of dependence |
+| Unrelated Domain (Hopper → Table Wiping) | No negative transfer | Reliable safety guarantee |
+| Non-stationary Env (Noisy Rewards+Actions) | Maintained gain | Robustness |
+| $N_\alpha$ Sensitivity Test | Slight sensitivity | Works well across 300/1000/3000 |
 
 ### Key Findings
-- $\alpha(t)$ accurately reflects transferability: high under positive transfer, low under negative transfer.
-- Even when source and target domains are completely unrelated (Hopper vs. Table Wiping), Q Avatar does not incur negative transfer.
-- Multi-source transfer is supported with automatic weight allocation.
-- The framework is effective on image-based DMC tasks as well.
+- $\alpha(t)$ accurately reflects transferability: high for positive and low for negative transfer.
+- Q Avatar avoids negative transfer even when source and target domains are completely unrelated.
+- Supports multi-source transfer with automatic weight distribution.
+- Validated effectiveness on image-based DMC tasks.
 
 ## Highlights & Insights
 
-1. **Theory-Driven Framework Design**: The formal definition of transferability is grounded in Bellman consistency, with theory and algorithm design tightly coupled.
-2. **Hyperparameter-Free Adaptive Weighting**: $\alpha(t)$ is determined entirely by the Bellman error ratio, requiring no manual tuning—a key factor for practical usability.
-3. **Negative Transfer Guarantee**: Regardless of source model quality or domain discrepancy, performance is guaranteed to be no worse than pure target-domain learning—a property that existing CDRL methods generally lack.
-4. **"Avatar" Metaphor**: The naming draws an analogy to the film in which humans remotely control engineered bodies to adapt to an alien environment, elegantly conveying the algorithmic intuition.
+1.  **Theory-Driven Framework**: Establishes a formal definition of transferability from Bellman consistency, tightly coupling theory with algorithm design.
+2.  **Hyperparameter-free Adaptive Weighting**: $\alpha(t)$ is determined entirely by error ratios, eliminating manual tuning for practical usability.
+3.  **Negative Transfer Guarantee**: Ensures performance is at least as good as learning from scratch, a critical feature missing in most CDRL methods.
+4.  **"Avatar" Metaphor**: Analogy to remote-controlling an engineered body to adapt to an alien environment effectively conveys the algorithmic concept.
 
 ## Limitations & Future Work
 
-- The tabular analysis assumes finite state-action spaces and an exploratory initial distribution, which diverges from practical continuous control settings.
-- The quality of the normalizing flow mapping directly affects the accuracy of cross-domain Bellman error estimation.
-- Experiments use SAC-pretrained source models exclusively; effectiveness with models trained by other algorithms (e.g., PPO) remains unvalidated.
-- Scalability to high-dimensional complex tasks (e.g., dexterous hand manipulation) has yet to be verified.
-- The current framework addresses only single-source-to-single-target and multi-source-to-single-target settings; multi-target scenarios are not considered.
+- Tabular analysis assumes finite state-action spaces and exploratory initial distributions, creating a gap with continuous control reality.
+- The training quality of the normalizing flow mapping directly affects the accuracy of Bellman error estimation.
+- Source models were pre-trained with SAC; robustness to other algorithms (e.g., PPO) remains unverified.
+- Scalability to high-dimensional complex tasks (e.g., dexterous manipulation) requires further validation.
+- Currently limited to single-target scenarios (single-to-single or multi-to-single source).
 
 ## Related Work & Insights
 
-- **CMD** (Gui et al., 2023): Learns inter-domain mappings via dynamics cycle-consistency, but offers no performance guarantees.
-- **CAT** (You et al., 2022): Learns mappings via encoder-decoder architectures, but is limited to parameter-level transfer.
-- **DARC** (Eysenbach et al., 2021): A reward augmentation approach, but assumes identical state-action spaces.
-- **Task Vectors** (Wang et al., 2020): Uses dual Q-functions for Q-learning updates, but is similarly restricted to identical spaces.
-- **Insight**: The notion of Bellman consistency as a transferability measure is generalizable to imitation learning, offline RL, and related settings.
+- **CMD** (Gui et al., 2023): Learned inter-domain mapping via dynamic cycle consistency but lacks performance guarantees.
+- **CAT** (You et al., 2022): Uses encoder-decoders for mapping but is limited to parameter-level transfer.
+- **DARC** (Eysenbach et al., 2021): Reward augmentation method, but assumes identical state-action spaces.
+- **Task Vectors** (Wang et al., 2020): Uses dual Q-functions for Q-learning but is restricted to identical spaces.
+- Insight: The use of Bellman consistency as a transferability metric could be extended to imitation learning and offline RL.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐ — The combination of cross-domain Bellman consistency and adaptive hybrid critics is highly novel.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ — Comprehensive evaluation across diverse environments, positive/negative transfer scenarios, multi-source transfer, image-based tasks, and sensitivity analysis.
-- Writing Quality: ⭐⭐⭐⭐ — Theory is clearly presented, experiments are thorough, and the "Avatar" naming is elegant.
-- Value: ⭐⭐⭐⭐⭐ — Addresses the core negative transfer challenge in CDRL with theoretical guarantees and strong practical utility.
+- Novelty: ⭐⭐⭐⭐ 
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ 
+- Writing Quality: ⭐⭐⭐⭐ 
+- Value: ⭐⭐⭐⭐⭐ 
 
 <!-- RELATED:START -->
 
@@ -156,11 +136,11 @@ Q Avatar outperforms CMD, CAT-SAC, CAT-PPO, and FT (fine-tuning) on all tasks, w
 
 ## Related Papers
 
+- [\[CVPR 2026\] HamiPose: Hamiltonian Optimization for Unsupervised Domain Adaptive Pose Estimation](../../CVPR2026/human_understanding/hamipose_hamiltonian_optimization_for_unsupervised_domain_adaptive_pose_estimati.md)
+- [\[ICLR 2026\] Human-Object Interaction via Automatically Designed VLM-Guided Motion Policy](human-object_interaction_via_automatically_designed_vlm-guided_motion_policy.md)
+- [\[CVPR 2026\] Through the Frequency Lens: Cross-Domain Generalisable Gaze Estimation with Adaptive Modulation](../../CVPR2026/human_understanding/through_the_frequency_lens_cross-domain_generalisable_gaze_estimation_with_adapt.md)
 - [\[NeurIPS 2025\] A Generalized Label Shift Perspective for Cross-Domain Gaze Estimation](../../NeurIPS2025/human_understanding/a_generalized_label_shift_perspective_for_crossdomain_gaze_e.md)
-- [\[CVPR 2026\] WildCap: Facial Albedo Capture in the Wild via Hybrid Inverse Rendering](../../CVPR2026/human_understanding/wildcap_facial_albedo_capture_in_the_wild_via_hybrid_inverse_rendering.md)
-- [\[ACL 2026\] Hybrid Autoregressive-Diffusion Model for Real-Time Sign Language Production](../../ACL2026/human_understanding/hybrid_autoregressive-diffusion_model_for_real-time_sign_language_production.md)
-- [\[ICCV 2025\] CarGait: Cross-Attention based Re-ranking for Gait Recognition](../../ICCV2025/human_understanding/cargait_cross_attention_based_re_ranking_for_gait_recognition.md)
-- [\[ICCV 2025\] DADM: Dual Alignment of Domain and Modality for Face Anti-Spoofing](../../ICCV2025/human_understanding/dadm_dual_alignment_of_domain_and_modality_for_face_anti-spoofing.md)
+- [\[CVPR 2026\] Towards Cross-Modal Preservation, Consistency and Alignment for Privacy-Preserving Visible-Infrared Person Re-Identification](../../CVPR2026/human_understanding/towards_cross-modal_preservation_consistency_and_alignment_for_privacy-preservin.md)
 
 </div>
 

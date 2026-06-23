@@ -2,200 +2,156 @@
 title: >-
   [Paper Note] VeriTrail: Closed-Domain Hallucination Detection with Traceability
 description: >-
-  [ICLR2026][Hallucination Detection][faithfulness evaluation] This paper proposes VeriTrail — the first closed-domain hallucination detection method that provides traceability for multi-generative-step (MGS) processes. It…
+  [ICLR 2026][Hallucination Detection][faithfulness evaluation] VeriTrail is proposed—the first closed-domain hallucination detection method providing traceability for multi-generative-step (MGS) processes. It models the generation process as a Directed Acyclic Graph (DAG) and verifies facts layer-by-layer along paths while establishing the first MGS datasets containing all interme
 tags:
-  - "ICLR2026"
-  - "Hallucination Detection"
-  - "faithfulness evaluation"
-  - "traceability"
-  - "multi-generative-step"
-  - "DAG"
+  - ICLR 2026
+  - Hallucination Detection
+  - faithfulness evaluation
+  - traceability
+  - multi-generative-step
+  - DAG
 date: 2026-05-08
-content_hash: 6f20b5c0b2670988
+content_hash: 94b032a62715fd28
 ---
-
 # VeriTrail: Closed-Domain Hallucination Detection with Traceability
 
 **Conference**: ICLR2026  
 **arXiv**: [2505.21786](https://arxiv.org/abs/2505.21786)  
-**Code**: [Dataset](https://aka.ms/veritrail-datasets)  
+**Code**: [Datasets](https://aka.ms/veritrail-datasets)  
 **Area**: Hallucination Detection  
 **Keywords**: hallucination detection, faithfulness evaluation, traceability, multi-generative-step, DAG
 
 ## TL;DR
-This paper proposes VeriTrail — the first closed-domain hallucination detection method that provides traceability for multi-generative-step (MGS) processes. It models the generation process as a DAG and performs layer-by-layer verification along paths, while also introducing the first MGS datasets that include all intermediate outputs with human annotations.
+VeriTrail is proposed—the first closed-domain hallucination detection method providing traceability for multi-generative-step (MGS) processes. It models the generation process as a Directed Acyclic Graph (DAG) and verifies facts layer-by-layer along paths while establishing the first MGS datasets containing all intermediate outputs and human annotations.
 
 ## Background & Motivation
-- LLMs frequently generate unsupported content even when instructed to follow source materials — a phenomenon termed "closed-domain hallucination."
-- Generation processes fall into two categories:
-    - **Single-Generative-Step (SGS)**: e.g., standard RAG, where a single LLM call produces the final output.
-    - **Multi-Generative-Step (MGS)**: e.g., hierarchical summarization and GraphRAG, where intermediate outputs serve as inputs to subsequent steps.
-- MGS is more prone to hallucinations: errors can be introduced and propagated at each step.
-- **Core Argument**: For MGS, detecting hallucinations only in the final output is insufficient. Two additional capabilities are required:
-    - **Provenance**: understanding how an output is derived from source material.
-    - **Error Localization**: identifying at which step a hallucination was introduced.
-- Existing methods evaluate only the relationship between the final output and source material, without leveraging intermediate outputs, and thus cannot provide traceability.
+- Even when LLMs are instructed to follow source materials, they frequently generate unsupported content—"closed-domain hallucinations."
+- Generation processes are categorized into two types:
+    - **Single-Generative-Step (SGS)**: e.g., standard RAG, where one LLM call produces the final result.
+    - **Multi-Generative-Step (MGS)**: e.g., hierarchical summarization, GraphRAG, where intermediate outputs serve as subsequent inputs.
+- MGS is more prone to hallucinations: each step may introduce and propagate errors.
+- **Key Challenge**: For MGS, merely detecting hallucinations in the final output is insufficient; there is a need for:
+    - **Provenance**: Understanding how the output is derived from source materials.
+    - **Error Localization**: Identifying the specific step where the hallucination was introduced.
+- Existing methods only evaluate the relationship between the output and source materials without utilizing intermediate outputs, thus failing to provide traceability.
 
-## Core Contributions
+## Core Idea
 1. A unified conceptual framework for generation processes (DAG representation).
-2. VeriTrail: the first closed-domain hallucination detection method providing traceability for both MGS and SGS.
-3. FABLES+ and DiverseSumm+: the first MGS datasets containing all intermediate outputs with human annotations.
+2. VeriTrail: The first closed-domain hallucination detection method providing traceability for both MGS and SGS.
+3. FABLES+ and DiverseSumm+: The first MGS datasets containing all intermediate outputs and human annotations.
 
 ## Method
 
-### Conceptual Framework: DAG Representation of Generation Processes
+### Overall Architecture
 
-The generation process is modeled as a directed acyclic graph $G = (V, E)$:
-- **Nodes** $v \in V$: text segments (source documents / intermediate outputs / final output).
-- **Directed edges** $(u, v) \in E$: $u$ is used as input for generating $v$.
-- **Root nodes** $V_0$: source documents (no incoming edges).
-- **Terminal node** $v^*$: final output (no outgoing edges).
-- **Stage function** $\text{stage}: V \to \mathbb{N}$: reflects a node's position in the generation process.
+VeriTrail aims to solve the conflict between judging closed-domain hallucinations in MGS final outputs and explaining the derivation—specifically, which path the supporting evidence follows back to the source and at which step the hallucination was introduced. The mechanism involves modeling the entire generation chain as a Directed Acyclic Graph (DAG), where source documents, intermediate outputs, and the final output are nodes. It extracts factual claims from the final output and performs **per-claim, top-down recursive verification**: starting from the upstream nodes of the final output, it selects evidence, generates a verdict, and then propagates candidates one layer closer to the source, iterating until it converges to "evidence-supported root nodes" or triggers termination. The accumulated evidence chain serves as both the provenance path and the basis for error localization.
 
-### VeriTrail Detection Pipeline
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}%%
+flowchart TD
+    A["Multi-Generative-Step (MGS)<br/>Source → Intermediate → Final v*"] --> B["1. DAG Representation<br/>Nodes=Text, Edges=Dependency"]
+    B --> C["Extract claims from final output v*"]
+    C --> D["2. Claim Decomposition + Evidence Selection<br/>Sub-claims → Evidence Sentences → ID Verification"]
+    subgraph LOOP["3. Verdict Generation + Candidate Propagation + Termination"]
+        direction TB
+        E["Verdict Generation<br/>FS / NFS / Inconclusive (Context Restoration)"] --> F{"Termination Condition met?"}
+    end
+    D --> E
+    F -->|"No: Propagate candidates to source"| D
+    F -->|Yes| G["4. Traceability Output<br/>Evidence Chain → Provenance + Error Localization"]
+```
 
-Input: (1) a completed generation process DAG; (2) termination parameter $q$; (3) a set of factual claims $C$ extracted from $v^*$.
+### Key Designs
 
-Each claim $c \in C$ is processed independently through the following steps:
+**1. DAG representation: A unified mathematical carrier for traceability**
 
-#### Step 1: Sub-claim Decomposition
-- The Claimify Decomposition module is applied to split compound claims into independently verifiable sub-claims.
-- Example: "Company X acquired two startups in 2020 as part of its healthcare expansion" → (1) X acquired two startups in 2020; (2) the acquisition was part of a healthcare expansion.
-- Decomposition is applied recursively, with a maximum of 20 iterations to avoid infinite loops.
+In the past, closed-domain hallucination detection only focused on the "output vs. source" ends, treating the intermediate process as a black box. VeriTrail models the entire generation chain as a DAG $G = (V, E)$: nodes $v \in V$ represent text fragments (source/intermediate/final), and directed edges $(u, v) \in E$ indicate that $u$ was used as input to generate $v$. The set of root nodes $V_0$ represents source documents, and the terminal node $v^*$ is the final output. A stage function $\text{stage}: V \to \mathbb{N}$ marks the layer of each node. This unified representation allows SGS (e.g., standard RAG) to be treated as a degenerate DAG with one intermediate layer, making the verification workflow universally applicable.
 
-#### Step 2: Evidence Selection
-- Starting from the source nodes $\text{src}(v^*)$ of the terminal node.
-- Sentences are segmented using NLTK and assigned unique IDs.
-- An LLM selects sentences that support or contradict the claim and its sub-claims (returning sentence IDs).
-- If the context window is exceeded, the input is split into multiple parallel prompts.
-- **ID validation guarantee**: non-matching IDs are discarded to ensure evidence is not hallucinated.
+**2. Claim decomposition + Evidence selection: Sinking verification to the atomic level**
 
-#### Step 3: Verdict Generation
-- If no sentences are selected → "Not Fully Supported."
-- Otherwise, the LLM assigns one of three verdicts based on the evidence:
-    - **Fully Supported**: the source text strongly implies the entire claim.
-    - **Not Fully Supported**: at least part of the claim is not supported by the source text.
-    - **Inconclusive**: the source text is ambiguous or contradictory.
+Verifying a complex claim directly can lead to ambiguous "partially correct" results. Thus, the Decomposition module (via Claimify) splits complex claims into independent sub-claims. For example, "Company X acquired two startups in 2020 as part of healthcare expansion" is split into (1) X acquired two startups in 2020, and (2) the acquisition was part of healthcare expansion. Decomposition is recursive (up to 20 times). For evidence selection, NLTK splits candidate text into sentences with unique IDs. The LLM selects IDs that support or contradict the claim. A critical step is **ID Verification**: any IDs returned by the model that do not match real sentences are discarded, ensuring the "evidence" actually exists in the source and is not a hallucination itself.
 
-**Context Handling**: Rather than using selected sentences directly (which may be ambiguous out of context):
-- Root nodes: full content is included.
-- Non-root nodes: summaries generated during the evidence selection step are used.
+**3. Verdict generation + Candidate propagation + Termination: Controlling conservatism with $q$**
 
-#### Step 4: Candidate Node Selection and Iterative Termination
-Candidate nodes for the next verification round are selected based on the latest verdict:
+Once evidence is selected, a verdict is generated: if no sentences are selected, it is "Not Fully Supported" (NFS). Otherwise, the LLM chooses from **Fully Supported** (FS), **Not Fully Supported** (NFS), or **Inconclusive**. To avoid ambiguity from isolated sentences, the model evaluates evidence within a restored context (full content for roots, summaries for intermediate nodes). The next set of candidate nodes to verify depends on the current verdict:
 
 | Latest Verdict | Candidate Node Selection Strategy |
-|---|---|
-| Fully Supported / Inconclusive | Source nodes of nodes with evidence in the current round |
-| Not Fully Supported | Source nodes of all verified nodes in the current round (broader, to prevent missed detections) |
+|----------|---------------|
+| Fully Supported / Inconclusive | Source nodes of the current evidence nodes |
+| Not Fully Supported | Source nodes of all currently verified nodes (broader search) |
 
-Termination conditions (any one sufficient):
-1. Candidate nodes consist only of already-verified root nodes with evidence → adopt the latest verdict.
-2. No candidate nodes (root nodes not reached, or root nodes have no evidence) → Not Fully Supported.
-3. Not Fully Supported for $q$ consecutive iterations → Not Fully Supported.
+The iteration terminates when: ① Candidates are only verified root nodes; ② No candidates remain; or ③ NFS occurs $q$ consecutive times. The parameter $q$ acts as a "knob": a larger $q$ ensures more thorough verification but leads to more conservative NFS verdicts.
 
-### Traceability Output
-For each claim, the method returns:
-- **Final verdict** + LLM reasoning.
-- **All intermediate verdicts**.
-- **Evidence chain**: selected sentences (with node IDs) + evidence summaries from each round.
+**4. Traceability output: Extracting provenance and error localization**
 
-#### Provenance
-- For Fully Supported claims: the evidence chain records the path from intermediate nodes to root nodes.
+For each claim, VeriTrail returns the final verdict plus internal reasoning, all intermediate verdicts, and an **evidence chain**. This chain supports:
+- **Provenance**: For FS claims, the chain records the support path from intermediate nodes back to the root.
+- **Error Localization**: By finding the last iteration $n$ where the verdict was FS, the stage where hallucinations were introduced is identified as $\{\text{stage}(v) \mid v \in V_e(n),\, v \notin V_0\}$. If a claim is never FS, the error is localized to the final output or remains undetermined.
 
-#### Error Localization
-- The last iteration $n$ yielding a Fully Supported verdict is identified.
-- The stage of non-root nodes with evidence in that iteration is designated as the error stage.
-- $\{\text{stage}(v) | v \in V_e(n), v \notin V_0\}$
+### Walkthrough Example
 
-## Dataset Construction
+In hierarchical summarization, a book is split into chunks, summarized into Level-1 summaries, merged into Level-2 summaries, and finally into a full summary $v^*$. For a claim "The protagonist gave up the inheritance," verification starts upstream of $v^*$ (Level-2 nodes). If Level-2 provides FS, candidates move to Level-1. If Level-1 also provides FS, it moves to the original chunks (roots). If the roots also support it, the path `Chunk → L1 → L2 → Final` is recorded as provenance. Conversely, if Level-2 was FS but Level-1 becomes NFS for $q$ iterations, the error is localized to the step where L1 summaries were merged into L2.
+
+## Datasets
 
 ### FABLES+ (Hierarchical Summarization)
-- Based on the FABLES book summarization dataset.
-- Hierarchical summaries were regenerated for 22 books (average 118K tokens), with all intermediate outputs retained.
-- 734 claims were extracted; 48% reused original annotations, with the remainder annotated manually.
+- Based on the FABLES book summary dataset.
+- Regenerated hierarchical summaries for 22 books (avg. 118K tokens), preserving all intermediate outputs.
+- Extracted 734 claims; 48% used original labels, others were human-annotated.
 
 ### DiverseSumm+ (GraphRAG)
 - Based on the DiverseSumm news dataset.
 - 148 stories, 1,479 articles, totaling 1.19M tokens.
-- 20 questions were sampled, and answers were generated using GraphRAG.
-- 560 claims were extracted and annotated by 4 Upwork annotators and 1 author.
-- 87% of claims could be assessed from associated articles; 13% required consulting additional articles.
+- Sampled 20 questions, generated answers using GraphRAG.
+- Extracted 560 claims, annotated by 4 Upwork annotators and 1 author.
 
-## Experimental Results
+## Key Experimental Results
 
 ### Baselines
 
-| Category | Method | Long-Document Strategy |
-|---|---|---|
+| Category | Method | Long-content Strategy |
+|------|------|---------------|
 | NLI | INFUSE | Bidirectional entailment ranking |
 | NLI | AlignScore | 350-token chunking |
 | NLI | Bespoke-MiniCheck-7B | 32K-token chunking |
-| RAG | Top-k Retrieval | Embedding retrieval + verdict |
-| Direct Verification | Gemini 1.5 Pro / GPT-4.1 Mini | Long-context LM |
+| RAG | Top-k Retrieval | Embedding retrieval + Verdict |
+| Direct | Gemini 1.5 Pro / GPT-4o Mini | Long-context LM |
 
-### Hard Prediction Results (Macro F1 / Balanced Accuracy)
+### Main Results (Macro F1 / Balanced Accuracy)
 
 | Method | FABLES+ F1 | FABLES+ Bal.Acc | DiverseSumm+ F1 | DiverseSumm+ Bal.Acc |
-|---|---|---|---|---|
-| **VeriTrail (q=3)** | **84.5** | **83.6** | **79.5** | 76.3 |
-| **VeriTrail (q=1)** | 74.0 | **84.6** | 76.6 | **83.0** |
+|------|-----------|----------------|-----------------|---------------------|
+| **Ours (q=3)** | **84.5** | **83.6** | **79.5** | 76.3 |
+| **Ours (q=1)** | 74.0 | **84.6** | 76.6 | **83.0** |
 | RAG (k=15) | 69.6 | 76.5 | 75.1 | 74.0 |
 | Bespoke-MiniCheck-7B | 62.2 | 69.0 | 72.1 | 69.4 |
 | Gemini 1.5 Pro | 61.1 | 60.8 | 49.8 | 57.6 |
-| GPT-4.1 Mini | 60.7 | 58.2 | 62.9 | 61.5 |
+| GPT-4o Mini | 60.7 | 58.2 | 62.9 | 61.5 |
 | AlignScore | 59.6 | 67.5 | 60.4 | 62.7 |
 | INFUSE | 40.5 | 59.5 | 20.0 | 50.1 |
 
 **Key Findings**:
-- VeriTrail outperforms all baselines on both datasets (q=3 achieves the best F1; q=1 achieves the best Balanced Accuracy).
-- Direct long-context verification (Gemini 1.5 Pro) underperforms, likely due to difficulty retrieving relevant information from extremely long documents.
-- Classical NLI methods such as AlignScore and INFUSE show notably degraded performance on long documents.
+- Ours outperforms all baselines on both datasets (q=3 is best for F1, q=1 is best for Balanced Accuracy).
+- Direct long-context verification (Gemini 1.5 Pro) is suboptimal, likely due to difficulties in retrieving information within massive documents.
+- NLI methods like AlignScore and INFUSE show significant performance degradation on long documents.
 
-### Trade-off of the $q$ Parameter
-- q=1 (terminate after one NFS): high NFS recall (89.8%), low NFS precision (55.1%).
-- q=3 (terminate after three NFS): more balanced (NFS precision 84.5%, recall 55.9%).
-- Larger $q$ yields more thorough verification but produces more conservative NFS verdicts.
+### Highlights & Insights
+- **q-parameter trade-off**: q=1 (terminate on first NFS) yields high NFS recall (89.8%) but low precision (55.1%). q=3 is more balanced (NFS precision 84.5%, recall 55.9%).
+- Increasing $q$ makes verification more thorough but NFS verdicts more conservative.
 
-## Strengths and Limitations
+## Limitations & Future Work
+- Dependency on LLMs for evidence selection and verdict generation (limited by LLM capability).
+- Error localization cannot determine a specific stage in some scenarios.
+- Limited dataset scale (734 + 560 claims).
+- Primary evaluation was restricted to the gpt-4o model.
 
-### Strengths
-- The first hallucination detection method providing traceability (provenance + error localization).
-- The DAG framework unifies the representation of both SGS and MGS processes.
-- Sentence-level evidence selection with ID validation guarantees that evidence is not hallucinated.
-- Outperforms strong baselines on extremely long documents (>100K tokens).
-- Cost-effective (analyzed in Appendix D).
+## Rating
+**Innovation**: ⭐⭐⭐⭐⭐  
+**Value**: ⭐⭐⭐⭐⭐  
+**Experimental Thoroughness**: ⭐⭐⭐⭐  
+**Writing Quality**: ⭐⭐⭐⭐⭐  
 
-### Limitations
-- Relies on LLMs for evidence selection and verdict generation, subject to LLM capability constraints.
-- Error localization cannot always determine the exact stage in certain scenarios.
-- Dataset scale is limited (734 + 560 claims).
-- Evaluation is restricted to the gpt-4o model.
-
-## Personal Evaluation and Reflections
-
-### Novelty ⭐⭐⭐⭐⭐
-- The paradigm shift from "detection" to "detection + traceability" is highly valuable.
-- DAG-based modeling of generation processes represents a fundamental rethinking of hallucination detection.
-- The iterative evidence selection and candidate node propagation mechanism is elegantly designed.
-
-### Practical Value ⭐⭐⭐⭐⭐
-- Directly addresses real-world demands of MGS pipelines (e.g., GraphRAG, hierarchical summarization).
-- Error localization is extremely valuable for system debugging and improvement.
-- Sentence-level evidence chains significantly reduce the cost of manual auditing.
-
-### Dataset Contribution ⭐⭐⭐⭐
-- FABLES+ and DiverseSumm+ fill a critical gap in MGS hallucination detection data.
-- The inclusion of complete intermediate outputs is a key innovation.
-- However, dataset scale remains limited.
-
-### Experimental Design ⭐⭐⭐⭐
-- Comprehensive baseline coverage (NLI, RAG, long-context LM).
-- Dual evaluation via hard and soft predictions.
-- Ablation analysis and error case studies (appendix) enhance credibility.
-
-### Overall Rating ⭐⭐⭐⭐⭐
-A pioneering work that advances closed-domain hallucination detection from "judging correctness" to "tracing origins and localizing errors." The DAG framework elegantly unifies diverse generation processes, and VeriTrail's iterative verification mechanism demonstrates strong performance on extremely long documents. For increasingly complex MGS pipelines such as GraphRAG, this traceable approach to hallucination detection offers substantial practical value.
+VeriTrail is a pioneering work that evolves closed-domain hallucination detection from "judging correctness" to "tracing sources and localizing errors." The DAG framework elegantly unifies various generation processes, and the iterative verification mechanism demonstrates strong performance on ultra-long documents. For increasingly complex MGS pipelines like GraphRAG, this traceable detection method offers significant practical utility.
 
 <!-- RELATED:START -->
 
@@ -203,11 +159,11 @@ A pioneering work that advances closed-domain hallucination detection from "judg
 
 ## Related Papers
 
-- [\[ICML 2026\] From Out-of-Distribution Detection to Hallucination Detection: A Geometric View](../../ICML2026/hallucination/from_out-of-distribution_detection_to_hallucination_detection_a_geometric_view.md)
+- [\[ICLR 2026\] Beyond In-Domain Detection: SpikeScore for Cross-Domain Hallucination Detection](beyond_in-domain_detection_spikescore_for_cross-domain_hallucination_detection.md)
+- [\[ICLR 2026\] Neural Message-Passing on Attention Graphs for Hallucination Detection](neural_message-passing_on_attention_graphs_for_hallucination_detection.md)
 - [\[ICLR 2026\] Enhancing Hallucination Detection through Noise Injection](enhancing_hallucination_detection_through_noise_injection.md)
-- [\[CVPR 2026\] TriDF: Evaluating Perception, Detection, and Hallucination for Interpretable DeepFake Detection](../../CVPR2026/hallucination/tridf_evaluating_perception_detection_and_hallucination_for_interpretable_deepfa.md)
-- [\[ACL 2026\] Enhancing Hallucination Detection via Future Context](../../ACL2026/hallucination/enhancing_hallucination_detection_via_future_context.md)
-- [\[ICML 2026\] Automatic Layer Selection for Hallucination Detection](../../ICML2026/hallucination/automatic_layer_selection_for_hallucination_detection.md)
+- [\[ICLR 2026\] Learning to Reason for Hallucination Span Detection](learning_to_reason_for_hallucination_span_detection.md)
+- [\[ACL 2025\] Learning Auxiliary Tasks Improves Reference-Free Hallucination Detection in Open-Domain Long-Form Generation](../../ACL2025/hallucination/learning_auxiliary_tasks_improves_reference-free_hallucination_detection_in_open.md)
 
 </div>
 

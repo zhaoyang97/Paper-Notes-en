@@ -2,148 +2,156 @@
 title: >-
   [Paper Note] Diffusion Blend: Inference-Time Multi-Preference Alignment for Diffusion Models
 description: >-
-  [ICLR 2026][Image Generation][multi-preference alignment] This paper proposes Diffusion Blend, which achieves multi-preference alignment at inference time by blending the backward diffusion processes of multiple reward-f…
+  [ICLR 2026][Image Generation][multi-preference alignment] Diffusion Blend is proposed to achieve multi-preference alignment by blending the backward diffusion processes of multiple reward-finetuned models at inference time. DB-MPA supports arbitrary linear combinations of rewards; DB-KLA enables dynamic KL regularization control; and DB-MPA-LS eliminates inference overhead th
 tags:
-  - "ICLR 2026"
-  - "Image Generation"
-  - "multi-preference alignment"
-  - "inference-time"
-  - "backward SDE blending"
-  - "KL regularization control"
-  - "Pareto-optimal"
+  - ICLR 2026
+  - Image Generation
+  - multi-preference alignment
+  - inference-time
+  - backward SDE blending
+  - KL regularization control
+  - Pareto-optimal
 date: 2026-05-08
-content_hash: e84af13955db82a1
+content_hash: 7e3f4e7cd4ac1f3a
 ---
-
 # Diffusion Blend: Inference-Time Multi-Preference Alignment for Diffusion Models
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2505.18547](https://arxiv.org/abs/2505.18547)  
-**Code**: Available (GitHub)  
-**Area**: Diffusion Models / Multi-Objective Alignment
-**Keywords**: multi-preference alignment, inference-time, backward SDE blending, KL regularization control, Pareto-optimal
+**Code**: Yes (GitHub)  
+**Area**: Diffusion Models / Multi-Objective Alignment  
+**Keywords**: multi-preference alignment, inference-time, backward SDE blending, KL regularization control, Pareto-optimal  
 
 ## TL;DR
-This paper proposes Diffusion Blend, which achieves multi-preference alignment at inference time by blending the backward diffusion processes of multiple reward-finetuned models. DB-MPA supports arbitrary linear combinations of rewards; DB-KLA enables dynamic KL regularization control; DB-MPA-LS eliminates inference overhead via stochastic LoRA sampling. The paper theoretically derives error bounds for the blending approximation and empirically approaches the MORL oracle upper bound.
+Diffusion Blend is proposed to achieve multi-preference alignment by blending the backward diffusion processes of multiple reward-finetuned models at inference time. DB-MPA supports arbitrary linear combinations of rewards; DB-KLA enables dynamic KL regularization control; and DB-MPA-LS eliminates inference overhead through stochastic LoRA sampling. The method theoretically proves error bounds for the blending approximation and approaches the MORL oracle upper bound in experiments.
 
 ## Background & Motivation
 
-**Background**: RL fine-tuning of diffusion models typically fixes a single reward function and KL regularization weight $\alpha$. Once fine-tuned, the model is locked to a specific $(r, \alpha)$ configuration and cannot adapt to varying user preferences.
+**Background**: RL fine-tuning of diffusion models typically fixes a single reward function and a KL regularization weight $\alpha$. After fine-tuning, the model is locked into a specific $(r, \alpha)$ configuration, making it unable to adapt to diverse user preferences.
 
-**Limitations of Prior Work**: (a) Users may require different trade-offs among aesthetics, semantic consistency, and human preference, necessitating a separate fine-tuned model for each preference combination—at prohibitive cost; (b) KL regularization that is too weak leads to reward hacking, while too strong regularization yields insufficient alignment, and the optimal value requires grid search; (c) Rewarded Soup (linear interpolation in weight space) is too coarse, and guidance-based methods require differentiable rewards and incur large computational cost.
+**Limitations of Prior Work**: (a) Users may require different trade-offs between aesthetics, semantic consistency, and human preference, necessitating a separate fine-tuned model for every preference combination (prohibitive cost); (b) Weak KL regularization causes reward hacking, while excessive strength results in under-alignment, with the optimal value requiring grid search; (c) Rewarded Soup (linear combination in parameter space) is too coarse, while guidance methods require differentiable rewards and high computational costs.
 
-**Key Challenge**: Deployment-time flexibility in preferences versus the rigidity of fine-tuning. How can arbitrary preference combinations be accommodated at inference time without retraining?
+**Key Challenge**: Flexibility of preferences post-deployment vs. the fixity of fine-tuning. How to adapt to arbitrary preference combinations at inference time without retraining?
 
-**Goal**: Given $m$ models each fine-tuned on a distinct base reward, generate images aligned to $r(w) = \sum w_i r_i$ at inference time according to user-specified weights $w$, while supporting dynamic adjustment of KL regularization strength.
+**Goal**: Given $m$ models fine-tuned on separate base rewards, generate images aligned with $r(w) = \sum w_i r_i$ at inference time according to user-specified weights $w$, while supporting dynamic adjustment of KL strength.
 
-**Key Insight**: Starting from the backward SDE perspective of diffusion models, the paper proves that the drift term $f^{(r,\alpha)}$ of an aligned model can be decomposed into a pretrained drift plus a control term. By approximating the control term via a Jensen gap linearization, the backward SDE admits a linear blending scheme.
+**Key Insight**: From the perspective of the backward SDE of diffusion models, the drift term $f^{(r,\alpha)}$ of an aligned model can be expressed as the pre-trained drift plus a control term. By linearizing the control term via a Jensen gap approximation, linear blending of backward SDEs can be achieved.
 
-**Core Idea**: The backward SDE drift of a reward-aligned diffusion model can be linearly combined to approximate the alignment effect of any linear combination of rewards.
+**Core Idea**: The backward SDE drift terms of reward-aligned diffusion models can be linearly combined to approximate the alignment effect of an arbitrary linear combination of rewards.
 
 ## Method
 
 ### Overall Architecture
 
-Two phases:
-- **Fine-tuning phase**: Independently RL fine-tune one model per base reward $r_i$, yielding $m$ fine-tuned models $\theta_i^{\text{rl}}$.
-- **Inference phase**: The user specifies weights $w$; the backward SDE drifts of the $m$ models are blended according to $w$ at each denoising step.
+This paper addresses the issue where RL fine-tuning locks diffusion models into a fixed "reward + KL weight" configuration. Diffusion Blend shifts "preference adaptation" from the training phase to the inference phase—off-line, only $m$ LoRA models are RL-finetuned for each base reward $r_i$ individually. On-line, during each denoising step, the backward diffusion processes of these models are "blended" according to real-time user weights, requiring no additional fine-tuned.
+
+This blending capability relies on a theoretical foundation: reward alignment only modifies a control term within the backward SDE drift, which is approximately linear with respect to the reward. Consequently, a "linear combination of rewards" corresponds to a "linear combination of drifts." Based on this, three inference algorithms are derived: DB-MPA allows users to tune multi-reward ratios via weights $w$; DB-KLA allows users to tune KL regularization strength via $\lambda$; and DB-MPA-LS reduces the $m\times$ inference overhead of DB-MPA back to $1\times$.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    R["m Base Rewards<br/>r_1 … r_m"] --> FT["Individual RL Fine-Tuning<br/>yielding m LoRA models"]
+    U["User-Specified<br/>Weights w / KL Coeff λ"] --> TH
+    FT --> TH["Theoretical Foundation<br/>SDE Decomposition + Jensen Linearization<br/>Linear Combined Rewards ≈ Linear Combined Drifts"]
+    TH -->|Tune reward ratios w| MPA["DB-MPA<br/>Weighted blend of backward SDE drifts based on w"]
+    TH -->|Tune KL strength λ| KLA["DB-KLA<br/>Convex combination of pre-trained and aligned models"]
+    MPA -->|Eliminate m× overhead| LS["DB-MPA-LS<br/>Stochastic sampling of one LoRA per step"]
+    MPA --> OUT["Aligned Image"]
+    KLA --> OUT
+    LS --> OUT
+```
 
 ### Key Designs
 
-1. **Proposition 1: SDE Decomposition of Aligned Models**
+**1. Theoretical Foundation: Isolating "Alignment" from Drift and Linearizing into Additive Control Terms**
 
-    - Function: Decomposes the backward drift of an aligned model into a pretrained drift and a control term.
-    - Mechanism: $f^{(r,\alpha)}(x_t, t) = f^{\text{pre}}(x_t, t) - \beta(t) u^{(r,\alpha)}(x_t, t)$, where $u^{(r,\alpha)} = \nabla_{x_t} \log \mathbb{E}_{x_0 \sim p_{0|t}^{\text{pre}}}[\exp(r(x_0)/\alpha)]$.
-    - Design Motivation: Isolating the alignment effect into the control term $u^{(r,\alpha)}$ establishes the foundation for subsequent linear combination.
+To blend multiple aligned models at inference time, it is necessary to first clarify how "alignment" modifies the backward diffusion and ensure these modifications are linearly additive. The paper proves this in two steps. First, SDE decomposition (Proposition 1): the backward SDE drift of any model fine-tuned with reward $r$ and KL weight $\alpha$ can be cleanly decomposed into a pre-trained drift plus a control term, $f^{(r,\alpha)}(x_t, t) = f^{\text{pre}}(x_t, t) - \beta(t)\, u^{(r,\alpha)}(x_t, t)$. Here, $f^{\text{pre}}$ is shared across all models, and the control term $u^{(r,\alpha)} = \nabla_{x_t} \log \mathbb{E}_{x_0 \sim p_{0|t}^{\text{pre}}}[\exp(r(x_0)/\alpha)]$ encapsulates the entire "pull" exerted by the reward—thus reducing multi-preference blending to the combination of these control terms.
 
-2. **Jensen Gap Approximation + Linearization (Lemma 2)**
+Second, the control term is linearized. Since $\log \mathbb{E}[\exp(\cdot)]$ is non-linear, rewards cannot be directly added. The paper swaps the order of log-exp and expectation, using $\bar{u}^{(r,\alpha)} = \nabla_x \mathbb{E}[r(x_0)/\alpha]$ to approximate $u^{(r,\alpha)}$ (a Jensen gap approximation commonly used in diffusion guidance methods like DPS and RGG; the error tends to 0 as $t \to 0$). Once the control term becomes a linear operator on the reward, the linearity of expectation applies: for a linear reward $r(w) = \sum w_i r_i$, we obtain
 
-    - Function: Approximates $\log \mathbb{E}[\exp(\cdot)]$ by $\mathbb{E}[\cdot]$ (exchanging the order of log-exp and expectation).
-    - Mechanism: $u^{(r,\alpha)} \approx \bar{u}^{(r,\alpha)} = \nabla_x \mathbb{E}[r(x_0)/\alpha]$. By linearity of expectation, for a linear reward $r(w) = \sum w_i r_i$, it follows that $f^{(r(w),\alpha)} \approx \sum w_i f^{(r_i, \alpha)}$.
-    - Design Motivation: The Jensen gap approximation is widely used in diffusion models (e.g., DPS/RGG), and the approximation error vanishes as $t \to 0$.
+$$f^{(r(w),\alpha)} \approx \sum_i w_i\, f^{(r_i, \alpha)}.$$
 
-3. **DB-MPA (Multi-Preference Alignment)**
+This means to achieve generation aligned with $r(w)$, one simply needs to sum the drifts of individual reward models weighted by $w$—the shared foundation for the subsequent algorithms.
 
-    - Function: Blends the backward SDEs of reward-finetuned models at inference time according to user weights $w$.
-    - Mechanism: At each denoising step, computes $\hat{\epsilon}_t = \sum w_i \epsilon_{\theta_i^{\text{rl}}}(x_t, t)$.
+**2. DB-MPA: Direct Blending of Backward SDEs at Inference Time via User Weights**
 
-4. **DB-KLA (KL Alignment Control)**
+With the aforementioned linearization, multi-reward ratioing is implemented as a minimal inference change: given weights $w$, each denoising step uses a weighted average of the noise predictions from the $m$ fine-tuned models, $\hat{\epsilon}_t = \sum_i w_i\, \epsilon_{\theta_i^{\text{rl}}}(x_t, t)$. This requires no retraining, no differentiable rewards, and no inference-time search, allowing users to adjust the aesthetics-alignment trade-off in real-time. The cost is $m \times$ forward passes per step—a bottleneck addressed by Design 4.
 
-    - Function: Adjusts KL regularization strength at inference time.
-    - Mechanism: $f^{(r, \alpha/\lambda)} \approx (1-\lambda) f^{\text{pre}} + \lambda f^{(r,\alpha)}$, blending the pretrained and fine-tuned models.
+**3. DB-KLA: Making KL Regularization Strength an Inference-Time Knob**
 
-5. **DB-MPA-LS (Overhead-Free Approximation)**
+The same decomposition can also adjust KL strength rather than just reward ratios. The paper scales the target KL weight from $\alpha$ to $\alpha/\lambda$ and approximates it as a convex combination of the pre-trained and aligned models: $f^{(r, \alpha/\lambda)} \approx (1-\lambda) f^{\text{pre}} + \lambda f^{(r,\alpha)}$. Higher $\lambda$ shifts toward stronger alignment (risking reward hacking), while lower $\lambda$ remains conservative, preserving pre-trained quality. This turns KL weight selection from a grid-search fine-tuning task into a continuously adjustable scalar at inference time.
 
-    - Function: Eliminates the $m\times$ inference overhead of DB-MPA.
-    - Mechanism: At each denoising step, a single LoRA adapter is stochastically sampled according to weights $w$ (Bernoulli/Categorical sampling) rather than evaluating all models. Proposition 2 proves that the blended SDE and the stochastic sampling SDE share identical marginal distributions.
-    - Design Motivation: Exploits the stochasticity of the diffusion process—noise injection makes step-wise stochastic sampling statistically equivalent to weighted averaging.
+**4. DB-MPA-LS: Eliminating $m\times$ Overhead with Stochastic LoRA Sampling**
+
+DB-MPA's requirement to evaluate all $m$ models per step is its primary practical bottleneck. The solution: instead of averaging all models at each step, treat weights $w$ as a probability distribution and randomly sample one LoRA adapter (Bernoulli for two rewards, Categorical for multi-reward) for that specific step. Proposition 2 proves that this step-wise stochastic SDE has the same marginal distribution as the weighted blend SDE. This equivalence stems from the noise injection inherent to diffusion processes, making "stochastic selection" statistically equivalent to "weighted averaging." Consequently, inference overhead is reduced from $m\times$ back to $1\times$ with minimal quality loss. Note that this equivalence is unique to diffusion models and does not hold for DB-KLA, where convex combination coefficients may be negative.
 
 ### Loss & Training
 
-- DPOK is used to RL fine-tune SD v1.5.
-- Each base reward is fine-tuned independently.
-- No training is required at inference time; only the noise prediction at each denoising step is modified.
+- RL fine-tuning on SD v1.5 using DPOK (policy gradient). Each base reward is used to train an independent rank-4 LoRA with AdamW and a learning rate of $1\times10^{-5}$.
+- No training is required at inference; only the noise prediction in the denoising step is modified (via weighted blending or stochastic LoRA sampling).
 
 ## Key Experimental Results
 
 ### Main Results (SD v1.5, ImageReward + VILA/PickScore)
 
-DB-MPA dominates the Pareto frontier over Rewarded Soup (RS), CoDe, and RGG, approaching the MORL oracle upper bound.
+DB-MPA consistently outperforms Rewarded Soup (RS), CoDe, and RGG across the Pareto front, closely approaching the MORL oracle upper bound.
 
-Key figures: At $w=0.5$, DB-MPA achieves 85–90% of the performance of each independently fine-tuned model on both rewards, whereas RS reaches only 60–70%.
+Key numerical feature: At $w=0.5$, DB-MPA achieves approximately 85-90% of the performance of individual fine-tuned models for both rewards, whereas RS only reaches 60-70%.
 
 ### Ablation Study
 
-| Method | Inference Overhead | Performance (vs. MORL) |
-|--------|-------------------|------------------------|
+| Method | Inference Overhead | Performance (vs MORL) |
+|------|---------|--------------|
 | DB-MPA | $m \times$ | ~95% of MORL |
 | DB-MPA-LS | $1 \times$ | ~90% of MORL |
 | RS | $1 \times$ | ~70% of MORL |
 | RGG | $1 \times$ (+ gradient) | ~60% of MORL |
 | CoDe | $N \times$ (search) | ~65% of MORL |
 
-DB-KLA enables smooth KL control: $\lambda > 1$ strengthens alignment but risks overfitting, while $\lambda < 1$ is more conservative but preserves pretrained quality.
+DB-KLA provides smooth control over KL: $\lambda > 1$ strengthens alignment but may lead to overfitting, while $\lambda < 1$ is conservative and preserves pre-trained quality.
 
 ### Key Findings
-- DB-MPA substantially outperforms RS (weight-space interpolation) on the Pareto frontier, demonstrating that **backward SDE blending is superior to parameter-space blending**.
-- DB-MPA-LS via stochastic LoRA sampling incurs negligible performance loss (~5% gap) while reducing inference overhead to $1\times$.
-- DB-KLA offers a more flexible KL control mechanism than retraining.
-- The Jensen gap approximation remains effective for JPEG compressibility, a reward adversarial to aesthetics.
+- DB-MPA significantly outperforms RS (parameter space blending) on the Pareto front, demonstrating that **backward SDE blending is superior to parameter space blending**.
+- DB-MPA-LS stochastic LoRA sampling approximation results in negligible performance loss (~5% gap) while reducing overhead to 1×.
+- DB-KLA offers a more flexible method for KL control compared to repeated fine-tuning.
+- The Jensen gap approximation remains effective for JPEG compressibility ( a reward that competes with aesthetics).
 
 ## Highlights & Insights
-- The contrast between **SDE blending and parameter-space blending** is clear and compelling. Rewarded Soup linearizes in parameter space; DB-MPA linearizes in the SDE drift space. The latter is better grounded theoretically and yields superior performance. The core reason is that the linearization error of the SDE drift is bounded (Lemma 1), whereas no analogous guarantee exists for parameter-space linearization.
-- **Proposition 2 (stochastic LoRA sampling equivalence)** is an elegant theoretical result—leveraging the noise injection of the SDE to make step-wise random selection equivalent to weighted averaging. This is infeasible in LLMs (discrete token space) and constitutes a unique advantage of diffusion models.
-- The approach offers extremely high inference-time flexibility: users can adjust the aesthetics–alignment trade-off in real time via a slider.
+- **SDE Blending vs. Parameter Blending**: The comparison is robust—Rewarded Soup linearizes in parameter space, while DB-MPA linearizes in the SDE drift space. The latter is better grounded theoretically and performs better because the drift linearization error is bounded (Lemma 1), whereas parameter-space linearization lacks such guarantees.
+- **Proposition 2 (Stochastic LoRA Sampling Equivalence)**: This is an elegant theoretical contribution. By leveraging diffusion noise injection, step-wise random sampling becomes equivalent to weighted averaging. This is unique to diffusion models and impossible for LLMs due to their discrete token space.
+- **Inference-Time Flexibility**: Users can adjust the aesthetics vs. alignment trade-offs in real-time using sliders.
 
 ## Limitations & Future Work
-- The Jensen gap approximation error grows when $\alpha$ is very small (the $L_{t,2}$ term in Lemma 1), making the approach unsuitable for extreme alignment requirements.
-- Validation is limited to SD v1.5; applicability to larger models (SDXL/Flux) has not been tested.
-- DB-MPA incurs $m\times$ inference overhead, which is impractical for large numbers of reward functions (partially mitigated by DB-MPA-LS).
-- The linear reward combination assumption limits expressiveness; non-linear preference relations cannot be handled.
-- Comparisons with recent alignment methods such as DAV/DenseGRPO are absent.
+- The Jensen gap approximation error increases as $\alpha$ becomes very small (the $L_{t,2}$ term in Lemma 1), making it less effective for extreme alignment requirements.
+- Validation was primarily performed on SD v1.5; only small-scale feasibility tests were done on SDXL, and larger models (e.g., Flux) were not tested.
+- DB-MPA incurs an $m \times$ inference overhead, which is impractical for many rewards (though mitigated by DB-MPA-LS).
+- The linear reward combination assumption limits expressiveness; non-linear preference relationships cannot be handled.
+- Comparison with recent alignment methods such as DAV or DenseGRPO is missing.
 
 ## Related Work & Insights
-- **vs. Rewarded Soup**: Parameter-space linearization vs. SDE drift linearization. DB-MPA is theoretically more rigorous and achieves better performance.
-- **vs. Guidance methods (RGG/CoDe)**: DB-MPA requires neither differentiable rewards nor inference-time search, and outperforms both.
-- **vs. LLM DeRa**: Shares the same inspiration (blending aligned and base models), but contributes SDE-theoretic analysis and stochastic LoRA sampling innovations tailored to diffusion models.
+- **vs Rewarded Soup**: Parameter space linearization vs. SDE drift linearization. DB-MPA is more theoretically rigorous and achieves higher performance.
+- **vs Guidance (RGG/CoDe)**: Does not require differentiable rewards or inference-time search, while providing better performance.
+- **vs LLM DeRa**: Shares similar inspiration (blending aligned and base models) but introduces SDE theoretical analysis and stochastic LoRA sampling specifically for diffusion models.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ The SDE blending theoretical framework is novel; the stochastic LoRA sampling equivalence is an elegant contribution.
-- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive across multiple reward combinations, Pareto analysis, and KL control experiments, but limited to SD v1.5.
-- Writing Quality: ⭐⭐⭐⭐⭐ Theoretical derivations are clear, figures are intuitive, and the motivation–theory–algorithm–experiment narrative is tightly structured.
-- Value: ⭐⭐⭐⭐⭐ Provides a practically useful and theoretically grounded solution for multi-preference deployment of diffusion models.
+- Novelty: ⭐⭐⭐⭐⭐ The theoretical framework for SDE blending and the stochastic LoRA sampling equivalence are significant contributions.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive experiments across rewards and Pareto analysis, though limited to SD v1.5.
+- Writing Quality: ⭐⭐⭐⭐⭐ Theoretical derivations are clear, visualizations are intuitive, and the logic from motivation to experiment is tight.
+- Value: ⭐⭐⭐⭐⭐ Provides a practical and theoretically sound solution for multi-preference deployment of diffusion models.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
 
+</div>
+
 ## Related Papers
 
+- [\[ICLR 2026\] Inference-Time Scaling of Diffusion Models Through Classical Search](inference-time_scaling_of_diffusion_models_through_classical_search.md)
+- [\[ICLR 2026\] $\alpha$-DPO: Robust Preference Alignment for Diffusion Models via $\alpha$ Divergence](alpha-dpo_robust_preference_alignment_for_diffusion_models_via_alpha_divergence.md)
 - [\[ICLR 2026\] RNE: plug-and-play diffusion inference-time control and energy-based training](rne_plug-and-play_diffusion_inference-time_control_and_energy-based_training.md)
+- [\[ICLR 2026\] Compositional Visual Planning via Inference-Time Diffusion Scaling](compositional_visual_planning_via_inference-time_diffusion_scaling.md)
 - [\[ICLR 2026\] GLASS Flows: Efficient Inference for Reward Alignment of Flow and Diffusion Models](glass_flows_reward_alignment_diffusion.md)
-- [\[AAAI 2026\] Multi-Metric Preference Alignment for Generative Speech Restoration](../../AAAI2026/image_generation/multi-metric_preference_alignment_for_generative_speech_restoration.md)
-- [\[ICLR 2026\] Unsupervised Conformal Inference: Bootstrapping and Alignment to Control LLM Uncertainty](unsupervised_conformal_inference_bootstrapping_and_alignment_to_control_llm_unce.md)
-- [\[ICLR 2026\] Test-Time Iterative Error Correction for Efficient Diffusion Models](test-time_iterative_error_correction_for_efficient_diffusion_models.md)
 
 </div>
 

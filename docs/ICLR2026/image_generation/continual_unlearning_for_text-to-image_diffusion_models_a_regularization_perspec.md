@@ -2,138 +2,145 @@
 title: >-
   [Paper Note] Continual Unlearning for Text-to-Image Diffusion Models: A Regularization Perspective
 description: >-
-  [ICLR 2026][Image Generation][continual unlearning] This paper presents the first systematic study of continual unlearning for text-to-image (T2I) diffusion models. It identifies that existing unlearning methods suffer f…
+  [ICLR 2026][Image Generation][continual unlearning] This paper presents the first systematic study of continual unlearning in T2I diffusion models. It identifies that existing unlearning methods suffer from "utility collapse" due to cumulative parameter drift under sequential requests. To mitigate this, the authors propose a suite of additional regularization strategies
 tags:
-  - "ICLR 2026"
-  - "Image Generation"
-  - "continual unlearning"
-  - "diffusion models"
-  - "regularization"
-  - "gradient projection"
-  - "concept erasure"
+  - ICLR 2026
+  - Image Generation
+  - continual unlearning
+  - diffusion models
+  - regularization
+  - gradient projection
+  - concept erasure
 date: 2026-05-08
-content_hash: 5b9cc10a50b760bf
+content_hash: ca794b5028452500
 ---
-
 # Continual Unlearning for Text-to-Image Diffusion Models: A Regularization Perspective
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2511.07970](https://arxiv.org/abs/2511.07970)  
 **Code**: [https://justinhylee135.github.io/CUIG_Project_Page/](https://justinhylee135.github.io/CUIG_Project_Page/)  
-**Area**: Diffusion Models / Machine Unlearning
+**Area**: Diffusion Models / Machine Unlearning  
 **Keywords**: continual unlearning, diffusion models, regularization, gradient projection, concept erasure
 
 ## TL;DR
-This paper presents the first systematic study of continual unlearning for text-to-image (T2I) diffusion models. It identifies that existing unlearning methods suffer from "utility collapse" under sequential unlearning requests due to cumulative parameter drift, and proposes a suite of plug-in regularization strategies (L1/L2 norm, selective fine-tuning, model merging) along with a semantics-aware gradient projection method to mitigate this issue.
+This paper presents the first systematic study of continual unlearning in T2I diffusion models. It identifies that existing unlearning methods suffer from "utility collapse" due to cumulative parameter drift under sequential requests. To mitigate this, the authors propose a suite of additional regularization strategies (L1/L2 norms, selective fine-tuning, model merging) and a semantic-aware gradient projection method.
 
 ## Background & Motivation
 
-**Background**: Machine unlearning aims to remove specific concepts (e.g., copyrighted content, harmful styles) from pretrained models without retraining from scratch. Existing methods (e.g., ConAbl, SculpMem) perform well when erasing multiple concepts simultaneously.
+**Background**: Machine unlearning aims to remove specific concepts (e.g., copyrighted content, harmful styles) from pre-trained models without retraining from scratch. Existing methods (ConAbl, SculpMem, etc.) perform effectively when unlearning multiple concepts simultaneously.
 
-**Limitations of Prior Work**: In practice, unlearning requests arrive **sequentially** (e.g., removing violent content today and an artist's style tomorrow), rather than all at once. Existing methods exhibit "utility collapse" after only a few sequential requests — the model not only forgets the target concept but loses the ability to generate unrelated concepts as well.
+**Limitations of Prior Work**: In practice, unlearning requests arrive **sequentially** (e.g., deleting violent content today and a specific artist's style tomorrow) rather than all at once. Existing methods experience "utility collapse" after only a few sequential requests—where the model not only forgets the target concept but also loses the ability to generate unrelated concepts.
 
-**Key Challenge**: Each unlearning operation pushes model parameters away from the pretrained weights. Sequential operations lead to cumulative parameter drift far exceeding that of simultaneous unlearning. Since the pretrained weights encode the model's generative capabilities, excessive drift implies capability degradation.
+**Key Challenge**: Each unlearning operation pushes parameters away from the pre-trained weights. Sequential operations lead to cumulative parameter drift significantly larger than simultaneous unlearning. Since pre-trained weights encode the model's generative capacity, excessive deviation results in the loss of that capacity.
 
-**Goal**: (a) Define and benchmark the continual unlearning problem; (b) diagnose the root cause of utility collapse; (c) propose plug-in regularization strategies compatible with existing unlearning methods; (d) address the challenge of concept retention within the same semantic domain.
+**Goal**: (a) Define and benchmark the continual unlearning problem. (b) Diagnose the root cause of utility collapse. (c) Propose additional regularization strategies compatible with existing unlearning methods. (d) Solve the challenge of concept retention within the same semantic domain.
 
-**Key Insight**: Drawing on regularization and gradient projection techniques from continual learning to constrain parameter updates. A key insight is the need for **semantic awareness** — concepts semantically close to the unlearning target are more susceptible to collateral forgetting.
+**Key Insight**: Regularization and gradient projection ideas from continual learning are adapted to constrain parameter updates. The key insight is the need for **semantic awareness**, as concepts semantically similar to the unlearning target are more prone to being "collateral damage."
 
-**Core Idea**: Utility collapse in continual unlearning is fundamentally caused by cumulative parameter drift. Regularization-based drift constraints combined with gradient projection to protect semantically related concepts can effectively alleviate this problem.
+**Core Idea**: The utility collapse in continual unlearning is essentially caused by cumulative parameter drift. This can be effectively mitigated by using regularization to constrain drift and gradient projection to protect semantically similar concepts.
 
 ## Method
 
 ### Overall Architecture
 
-At each unlearning request:
-- **Input**: The model $\theta_{n-1}^*$ after the previous unlearning step and a new unlearning target $c_n^*$
-- **Process**: Update the model using the unlearning loss $\mathcal{L}_{\text{unlearn}}$ with additional regularization constraints
-- **Output**: A new model $\theta_n^*$ that simultaneously: (1) effectively erases $c_n^*$; (2) maintains the unlearning of $c_1^*, \ldots, c_{n-1}^*$; (3) preserves the generative capability for all unrelated concepts
+The paper addresses the problem where unlearning requests arrive one after another, causing gradual model degradation. When a new target $c_n^*$ arrives, the system starts from the model $\theta_{n-1}^*$ of the previous round and updates it using an unlearning loss $\mathcal{L}_{\text{unlearn}}$ to obtain the new model $\theta_n^*$. An ideal $\theta_n^*$ must satisfy three conditions: effectively erase the current target $c_n^*$, maintain the erasure of previous targets $c_1^*,...,c_{n-1}^*$, and preserve the generative capacity for unrelated concepts.
+
+The authors observe that "utility collapse" stems from cumulative parameter drift—each unlearning step pushes weights further from the pre-trained state. All proposed strategies aim to **constrain parameter updates and pull the model back toward the pre-trained weights**. These four strategies are added as auxiliary terms to $\mathcal{L}_{\text{unlearn}}$, remaining orthogonal to the underlying unlearning algorithm (e.g., ConAbl / SculpMem).
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    REQ["Sequential Requests<br/>c₁* → c₂* → … → cₙ*"] --> INIT["Start from θ(n-1)*"]
+    INIT --> LOSS["Unlearning Loss L_unlearn<br/>Erase current target cₙ*"]
+    LOSS -->|"Naive Update → Cumulative Drift → Utility Collapse"| REG
+    subgraph REG["Constrain Updates (Plug-and-play Regularizers)"]
+        direction TB
+        D1["1. Norm Regularization L1/L2<br/>Penalize ‖θ−θ(n-1)*‖ drift"]
+        D2["2. Selective Fine-Tuning SelFT<br/>Unfreeze top-k% important parameters"]
+        D3["3. Model Merging<br/>Independent unlearning + TIES merge"]
+        D4["4. Gradient Projection GradProj<br/>Update orthogonal to similar concepts"]
+    end
+    REG --> OUT["New Model θn*<br/>Erases cₙ* and preserves utility"]
+    OUT -->|"Next Request"| INIT
+```
 
 ### Key Designs
 
-1. **Update Norm Regularization (L1/L2)**:
+**1. Update Norm Regularization (L1/L2): Directly penalizing drift magnitude**
 
-    - **Function**: Directly penalizes the magnitude of parameter updates.
-    - **Mechanism**: $\mathcal{L}_{\text{unlearn}}(\theta, \{c_n^*\}) + \lambda \|\theta - \theta_{n-1}^*\|_p^p$; L1 encourages sparse updates while L2 prevents excessive drift in individual weights.
-    - **Design Motivation**: The most straightforward approach to constraining cumulative drift; simple yet effective.
+To address cumulative drift, a penalty term pulling parameters toward $\theta_{n-1}^*$ is added: $\mathcal{L}_{\text{unlearn}}(\theta, \{c_n^*\}) + \lambda \|\theta - \theta_{n-1}^*\|_p^p$. The L1 norm encourages sparse updates, while the L2 norm prevents any single weight from changing excessively. This is a basic way to constrain drift without task-specific information, improving general retention across domains.
 
-2. **Selective Fine-Tuning (SelFT)**:
+**2. Selective Fine-Tuning (SelFT): Updating only essential parameters**
 
-    - **Function**: Updates only the top-k% parameters most important to the target concept, freezing the rest.
-    - **Mechanism**: Parameter importance is estimated via a first-order Taylor approximation $|\nabla_{\theta[d]} \mathcal{L}_{\text{unlearn}} \cdot \theta_{n-1}^*[d]|$; only the most important parameters are updated.
-    - **Design Motivation**: Compared to the isotropic sparsity of L1 regularization, SelFT leverages task-relevant sparsity for more targeted updates.
+While L1 is sparse, it is isotropic and does not distinguish which parameters are critical for unlearning. SelFT uses a first-order Taylor approximation to estimate the importance of each parameter to the unlearning loss: $|\nabla_{\theta[d]} \mathcal{L}_{\text{unlearn}} \cdot \theta_{n-1}^*[d]|$. Only the top-k% most important parameters are unfrozen. Restricting updates to task-relevant subsets reduces interference with unrelated concepts.
 
-3. **Model Merging (Model Merge)**:
+**3. Model Merging: Independent unlearning followed by aggregation**
 
-    - **Function**: Independently unlearns each concept starting from the pretrained weights, then merges all individually unlearned models using TIES-Merging.
-    - **Mechanism**: Each independently unlearned model remains close to the pretrained weights; after merging, the combined model still resides within the same loss basin, preserving utility.
-    - **Design Motivation**: Independent unlearning avoids cumulative drift, and merging aggregates all unlearning effects while maintaining proximity to the pretrained weights.
+To avoid cumulative drift, each concept is unlearned **independently starting from the pre-trained weights**. Consequently, each independent model deviates only slightly from the pre-trained weights, remaining within the same loss basin. These models are then aggregated using TIES-Merging. Since every constituent model is close to the original pre-trained weights, the merged model aggregates all erasure effects while staying near the pre-trained state, thus preserving utility.
 
-4. **Gradient Projection (GradProj) — Semantics-Aware Regularization**:
+**4. Gradient Projection (GradProj): Semantic-aware protection of similar concepts**
 
-    - **Function**: Projects the unlearning gradient onto a subspace orthogonal to semantically related concepts, preventing interference with those concepts.
-    - **Mechanism**: Unlearning primarily modifies the cross-attention matrices $W_K$ and $W_V$. Since linear projections preserve neighborhood structure, modifying $W_K$ and $W_V$ to erase $c^*$ inevitably perturbs semantically related concepts $c$. GradProj selects the top-$K$ semantically similar concepts (ranked by cosine similarity of text embeddings) and removes the gradient components of $W_K$ and $W_V$ along the embedding directions of these concepts.
-    - **Design Motivation**: Cross-domain retention (e.g., preserving objects when unlearning a style) can be addressed by general regularization, but within-domain retention (e.g., preserving other styles when unlearning one style) is highly challenging. Experiments show a strong negative correlation between retention accuracy and text embedding similarity, necessitating semantics-aware constraints.
+While the first three methods handle cross-domain retention (e.g., unlearning a style without affecting objects), **in-domain retention** is harder (e.g., unlearning one style often destroys others). Unlearning primarily modifies the $W_K, W_V$ of cross-attention layers. Since linear projections maintain neighborhood structures, modifying them to erase $c^*$ inevitably affects semantically similar concepts $c$. GradProj identifies the top-K most similar concepts via text embedding cosine similarity and **removes components of the unlearning gradient** that lie in the direction of these concept embeddings. This ensures updates occur in a subspace orthogonal to similar concepts, significantly improving in-domain retention (RA-I).
 
 ### Loss & Training
 
-- Unlearning loss based on ConAbl or SculpMem.
-- Regularization is added on top of the unlearning loss and is orthogonally compatible with specific unlearning methods.
-- GradProj selects top-$K=5$ semantically similar concepts.
+- Utilizes unlearning losses based on ConAbl or SculpMem.
+- Regularizers are appended to the unlearning loss, ensuring compatibility with various base methods.
+- GradProj selects the top-K=5 semantically similar concepts.
 
 ## Key Experimental Results
 
-### Main Results (ConAbl + 12-Step Sequential Unlearning)
+### Main Results (ConAbl + 12-step Sequential Unlearning)
 
-| Method | UA ↑ | RA-I ↑ | RA-C ↑ | Notes |
-|--------|------|--------|--------|-------|
-| Sequential (no regularization) | ~95% | ~20% | ~30% | Utility collapse |
-| Simultaneous (non-sequential) | ~90% | ~70% | ~85% | Good but costly |
-| + L2 Regularization | ~92% | ~40% | ~75% | Large cross-domain improvement |
-| + SelFT | ~93% | ~35% | ~70% | Cross-domain improvement |
-| + Model Merge | ~90% | ~50% | **~85%** | Best overall |
-| + GradProj | ~90% | **~60%** | ~70% | Best within-domain retention |
-| + Merge + GradProj | ~88% | **~65%** | **~85%** | Best complementary performance |
+| Method | UA ↑ | RA-I ↑ | RA-C ↑ | Description |
+|------|------|--------|--------|------|
+| Sequential (No Reg) | ~95% | ~20% | ~30% | Utility Collapse |
+| Simultaneous (Non-seq) | ~90% | ~70% | ~85% | Effective but high cost |
+| + L2 Regularization | ~92% | ~40% | ~75% | High cross-domain gain |
+| + SelFT | ~93% | ~35% | ~70% | Cross-domain gain |
+| + Model Merge | ~90% | ~50% | **~85%** | Strongest overall |
+| + GradProj | ~90% | **~60%** | ~70% | Best in-domain retention |
+| + Merge + GradProj | ~88% | **~65%** | **~85%** | Best complementary effect |
 
 ### Ablation Study
 
-| Analysis | Key Finding |
-|----------|-------------|
-| Parameter drift vs. retention | Sequential drift far exceeds simultaneous unlearning drift; strongly correlated with retention accuracy |
-| Semantic similarity vs. RA-I | Strong negative correlation ($r \approx -0.8$); more similar concepts are harder to retain |
-| $W_K, W_V$ change vs. similarity | Strong positive correlation; key/value representations of semantically similar concepts are heavily perturbed |
-| GradProj $K$ value | $K=5$ suffices to cover the most critical semantic neighbors |
+| Analysis | Key Findings |
+|------|---------|
+| Parameter Drift vs. Retention | Sequential drift is much larger than simultaneous drift and strongly correlates with RA. |
+| Semantic Similarity vs. RA-I | Strong negative correlation (r ≈ -0.8); similar concepts are harder to retain. |
+| $W_K, W_V$ Change vs. Similarity | Strong positive correlation; key/value vectors of similar concepts are heavily perturbed. |
+| GradProj K-value | K=5 is sufficient to cover the most critical semantic neighbors. |
 
 ### Key Findings
-- Retention accuracy collapses below 50% after just 3–4 sequential unlearning steps; after 12 steps, the model can barely generate any meaningful images.
-- Parameter drift from simultaneous and independent unlearning is of a comparable and much smaller magnitude than that from sequential unlearning.
-- Model Merge achieves the strongest overall retention because each model independently remains close to the pretrained weights.
-- GradProj yields the most significant improvement in within-domain retention (RA-I) by precisely protecting semantically similar concepts.
-- The regularization strategies are complementary and can be combined.
+- Without regularization, Retain Accuracy (RA) collapses to <50% after only 3-4 sequential steps; after 12 steps, the model fails to generate meaningful images.
+- Parameter drift for simultaneous and independent unlearning is comparable and much smaller than in the sequential setting.
+- Model Merge offers the strongest overall retention because each component model is independently close to pre-trained weights.
+- GradProj provides the most significant boost to in-domain retention (RA-I) by precisely protecting semantic neighbors.
+- Regularization methods are complementary and can be combined for better performance.
 
 ## Highlights & Insights
-- **Clear and valuable problem formulation**: This is the first work to benchmark continual unlearning for T2I diffusion models. The motivation is well-grounded (unlearning requests arrive sequentially in practice), and the benchmark design is principled (standardized evaluation based on UnlearnCanvas).
-- **In-depth root cause analysis**: Beyond identifying utility collapse, the paper provides a theoretical explanation via parameter drift analysis and Taylor expansion — the change in retention loss is bounded by $\|\theta^* - \theta^\dagger\|$.
-- **The semantics-aware gradient projection** is a transferable idea applicable to any setting where modifying one model capability should not affect closely related capabilities, such as multi-task learning and model editing.
-- **Plug-in regularization does not modify the underlying unlearning method**, making it general-purpose and readily combinable with any unlearning algorithm.
+- **Valuable Problem Definition**: Benchmarks continual unlearning in T2I models for the first time, addressing realistic sequential requests via a standardized evaluation (UnlearnCanvas).
+- **In-depth Root Cause Analysis**: Beyond identifying utility collapse, the paper provides a theoretical explanation via parameter drift analysis and Taylor expansion, linking RA loss to $\|\theta^* - \theta^\dagger\|$.
+- **Transferable Semantic-Awareness**: The GradProj approach is applicable to any scenario requiring "modifying one capability without affecting similar ones," such as multi-task learning or model editing.
+- **Genericity**: The proposed regularizers do not modify the base unlearning algorithm, allowing for plug-and-play integration.
 
 ## Limitations & Future Work
-- While Model Merge is effective, it requires independent unlearning for each concept, making its computational cost comparable to simultaneous unlearning.
-- GradProj requires knowledge of which concepts are semantically similar to the target; automatic discovery of such concepts in practice is not sufficiently discussed.
-- Evaluation is limited to fine-tuned SD on UnlearnCanvas; generalization to larger models such as SDXL and real-world unlearning scenarios has not been tested.
-- Regularization cannot fully resolve within-domain retention (RA-I remains substantially below RA-C), indicating the problem is not yet fully solved.
-- The theoretical limits of the trade-off between unlearning efficacy (UA) and retention (RA) remain an open question.
+- While effective, Model Merge requires independent unlearning for every concept, which is computationally expensive.
+- GradProj depends on identifying semantically similar concepts; automated discovery of these concepts in practice remains underexplored.
+- Evaluations were conducted on fine-tuned Stable Diffusion (SD) within UnlearnCanvas; tests on larger models like SDXL or real-world unlearning scenarios are needed.
+- Regularization does not fully solve in-domain retention (RA-I remains lower than RA-C).
+- Whether a theoretical limit exists for the trade-off between Unlearn Accuracy (UA) and Retain Accuracy (RA).
 
 ## Related Work & Insights
-- **vs. ConAbl**: Direct improvement — combining ConAbl with Model Merge and GradProj substantially improves retention in the continual setting.
-- **vs. SculpMem**: Benefits equally from these regularization strategies, demonstrating the generality of the proposed approach.
-- **vs. Continual Learning**: The paper draws on ideas from EWC and gradient projection, but highlights a key distinction — in unlearning, the concepts to be retained have already been learned by the model, making interference risks more pronounced.
+- **vs. ConAbl**: Direct upgrade—combining ConAbl with Model Merge and GradProj significantly improves retention in sequential settings.
+- **vs. SculpMem**: Also benefits from these regularization strategies, demonstrating the approach's universality.
+- **vs. Continual Learning**: Draws inspiration from EWC and gradient projection but highlights that interference risk is higher in unlearning because the concepts to be retained have already been learned.
 
 ## Rating
-- **Novelty**: ⭐⭐⭐⭐ — The problem setting is novel (continual unlearning for T2I); the methods are primarily adaptations of existing techniques, though the semantics-aware gradient projection is a creative contribution.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ — 12-step sequential evaluation, both style and object settings, multiple baselines, comprehensive ablation and analysis.
-- **Writing Quality**: ⭐⭐⭐⭐⭐ — The problem–diagnosis–solution narrative is exceptionally clear, with theoretical analysis and experiments mutually reinforcing each other.
-- **Value**: ⭐⭐⭐⭐⭐ — Defines an important new research direction with direct social and legal relevance.
+- Novelty: ⭐⭐⭐⭐ New problem setting (Continual Unlearning for T2I); mostly adaptation of existing techniques, but the semantic-aware GradProj is creative.
+- Experimental Thoroughness: ⭐⭐⭐⭐ Comprehensive 12-step sequences, style/object settings, multiple baselines, and detailed ablation.
+- Writing Quality: ⭐⭐⭐⭐⭐ Extremely clear logical chain (Problem-Diagnosis-Solution); theoretical analysis is well-validated by experiments.
+- Value: ⭐⭐⭐⭐⭐ Defines an important new research direction with direct social and legal implications.
 
 <!-- RELATED:START -->
 
@@ -141,11 +148,11 @@ At each unlearning request:
 
 ## Related Papers
 
-- [\[ICLR 2026\] The Spacetime of Diffusion Models: An Information Geometry Perspective](the_spacetime_of_diffusion_models_an_information_geometry_perspective.md)
-- [\[ICLR 2026\] Localized Concept Erasure in Text-to-Image Diffusion Models via High-Level Representation Misdirection](localized_concept_erasure_in_text-to-image_diffusion_models_via_high-level_repre.md)
+- [\[ICLR 2026\] Forget Many, Forget Right: Scalable and Precise Concept Unlearning in Diffusion Models](forget_many_forget_right_scalable_and_precise_concept_unlearning_in_diffusion_mo.md)
+- [\[ICLR 2026\] ACCORD: Alleviating Concept Coupling through Dependence Regularization for Text-to-Image Diffusion Personalization](accord_alleviating_concept_coupling_through_dependence_regularization_for_text-t.md)
 - [\[ICCV 2025\] Holistic Unlearning Benchmark: A Multi-Faceted Evaluation for Text-to-Image Diffusion Model Unlearning](../../ICCV2025/image_generation/holistic_unlearning_benchmark_a_multi-faceted_evaluation_for_text-to-image_diffu.md)
 - [\[ICCV 2025\] Joint Diffusion Models in Continual Learning](../../ICCV2025/image_generation/joint_diffusion_models_in_continual_learning.md)
-- [\[ICML 2026\] A Unified Framework for Diffusion Model Unlearning with f-Divergence](../../ICML2026/image_generation/a_unified_framework_for_diffusion_model_unlearning_with_f-divergence.md)
+- [\[ICLR 2026\] The Spacetime of Diffusion Models: An Information Geometry Perspective](the_spacetime_of_diffusion_models_an_information_geometry_perspective.md)
 
 </div>
 

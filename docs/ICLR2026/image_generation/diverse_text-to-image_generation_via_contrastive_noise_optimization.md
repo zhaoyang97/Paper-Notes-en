@@ -2,162 +2,168 @@
 title: >-
   [Paper Note] Diverse Text-to-Image Generation via Contrastive Noise Optimization
 description: >-
-  [ICLR 2026][Image Generation][Diffusion models] This paper proposes Contrastive Noise Optimization (CNO), which applies an InfoNCE contrastive loss over the Tweedie denoised prediction space to optimize initial noise vec…
+  [ICLR 2026][Image Generation][Diffusion Model] Ours proposes Contrastive Noise Optimization (CNO), which enhances the generation diversity of diffusion models through a pre-processing approach by imposing an InfoNCE contrastive loss on initial noise within the Tweedie denoising prediction space, maintaining fidelity without modifying the sampling process or the mod
 tags:
-  - "ICLR 2026"
-  - "Image Generation"
-  - "Diffusion models"
-  - "text-to-image generation"
-  - "diversity"
-  - "contrastive learning"
-  - "noise optimization"
-  - "InfoNCE"
+  - ICLR 2026
+  - Image Generation
+  - Diffusion Model
+  - InfoNCE
 date: 2026-05-08
-content_hash: 05608806266563c6
+content_hash: 6c6546b05101a78a
 ---
-
 # Diverse Text-to-Image Generation via Contrastive Noise Optimization
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2510.03813](https://arxiv.org/abs/2510.03813)  
-**Code**: Available (official open-source)  
-**Area**: Diffusion Models / Image Generation
-**Keywords**: Diffusion models, text-to-image generation, diversity, contrastive learning, noise optimization, InfoNCE
+**Code**: Yes (Official Open Source)  
+**Area**: Diffusion Models / Image Generation  
+**Keywords**: Diffusion Models, Text-to-Image Generation, Diversity, Contrastive Learning, Noise Optimization, InfoNCE
 
 ## TL;DR
 
-This paper proposes Contrastive Noise Optimization (CNO), which applies an InfoNCE contrastive loss over the Tweedie denoised prediction space to optimize initial noise vectors as a preprocessing step, improving the generation diversity of diffusion models while maintaining fidelity, without modifying the sampling process or model parameters.
+Ours proposes Contrastive Noise Optimization (CNO), which enhances the generation diversity of diffusion models through a pre-processing approach by imposing an InfoNCE contrastive loss on initial noise within the Tweedie denoising prediction space, maintaining fidelity without modifying the sampling process or the model itself.
 
 ## Background & Motivation
 
-**Diversity bottleneck in diffusion models**: Current text-to-image diffusion models (e.g., SD1.5, SDXL, SD3) tend to produce highly similar outputs given the same prompt (mode collapse), especially under deterministic samplers (e.g., DDIM, FM-ODE), leading to severely limited output diversity.
+**Diversity bottleneck of diffusion models**: Current text-to-image diffusion models (e.g., SD1.5, SDXL, SD3) often generate highly similar results (mode collapse) when given the same prompt, especially under deterministic samplers (e.g., DDIM, FM-ODE), where output diversity is severely lacking.
 
-**Root cause lies in the noise space distribution**: Randomly sampled Gaussian initial noises do not guarantee uniform dispersion in the semantic space after denoising, causing multiple noise vectors to map to similar generated results.
+**Root cause in noise space distribution**: Randomly sampled Gaussian initial noise does not guarantee uniform dispersion in the post-denoising semantic space, leading to multiple noises mapping to similar generation results.
 
-**Limitations of prior work**: Increasing stochasticity (e.g., stochastic samplers) sacrifices generation quality; post-processing methods (e.g., rejection sampling) incur high computational cost; modifying model architectures or training pipelines introduces significant invasiveness.
+**Limitations of Prior Work**: Increasing randomness (e.g., stochastic samplers) sacrifices quality; post-processing methods (e.g., rejection sampling) involve high computational overhead; modifying model architecture or training pipelines is highly intrusive.
 
-**Inspiration from contrastive learning**: The InfoNCE loss naturally embodies an attract-repel structure that simultaneously encourages fidelity (attraction term) and diversity (repulsion term) within a noise batch.
+**Key Insight from contrastive learning**: The InfoNCE loss naturally possesses a structure that "pulls positive samples closer and pushes negative samples apart," making it suitable for simultaneously maintaining fidelity (attraction term) and enhancing diversity (repulsion term) within a noise batch.
 
-**Appeal of the preprocessing paradigm**: Optimizing only the initial noise before sampling enables seamless composition with arbitrary diffusion models and samplers, offering strong generality and plug-and-play capability.
+**Goal of the pre-processing paradigm**: If the initial noise can be optimized solely before sampling, it can be combined with any diffusion model and sampler, offering extreme versatility and plug-and-play characteristics.
 
-**Need for theoretical controllability**: A theoretically grounded and analytically computable parameter is needed to balance diversity and fidelity, rather than relying on manual hyperparameter tuning.
+**Need for theoretical controllability**: A parsable parameter is required to balance diversity and fidelity, rather than relying on manual hyperparameter tuning.
 
 ## Method
 
 ### Overall Architecture
 
-CNO is a **one-shot preprocessing** method. Given a batch of randomly sampled initial noises $\{z_i\}_{i=1}^B$, gradient-based optimization is applied so that each noise vector remains close to its original position (fidelity) while being pushed apart from others in the Tweedie denoised prediction space (diversity). The optimized noises are then fed into any standard diffusion sampling pipeline without modifying the sampler or model parameters.
+CNO addresses the mode collapse problem where diffusion models under deterministic samplers produce highly repetitive results for the same prompt. The Core Idea is to completely decouple "diversity enhancement" from the sampling process, treating it as a one-time pre-processing step. Given a batch of random Gaussian noises $\{z_i\}_{i=1}^B$, a few steps of gradient optimization are performed before feeding them into the diffusion model: at each step, a single denoising step of the diffusion model maps each noise to the semantic space, where a contrastive loss is calculated. This loss ensures each noise anchors to its original position (fidelity) while pushing the batch of noises away from each other (diversity). The gradient is then backpropagated to update the noise itself. After several iterations, a batch of noises that are "semantically dispersed yet remain within the distribution" is obtained and fed into any standard diffusion sampling pipeline. The entire process only modifies the noise vectors without touching model weights, making it orthogonal to samplers and model architectures.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    A["Batch of random Gaussian noise<br/>z_1 … z_B"] --> B["Tweedie one-step denoising<br/>Map to semantic space x̂_0"]
+    B --> C["Efficient Implementation<br/>Latent Pooling + Stop-Gradient"]
+    C --> D["InfoNCE Contrastive Loss<br/>Attraction term anchors + Repulsion term pushes"]
+    D --> E["γ closed-form balance<br/>γ=(τ·ln(B-1)+1)⁻¹ adjusts attraction"]
+    E --> F{"Reach iteration count?"}
+    F -->|"No: Gradient backprop to update noise"| A
+    F -->|Yes| G["Optimized noise batch"]
+    G --> H["Standard sampling for any DM<br/>(Sampler/Weights unchanged)"]
+    H --> I["Diverse and high-fidelity image batch"]
+```
 
 ### Key Designs
 
-**1. Tweedie Denoised Prediction Space**
+**1. Tweedie denoising prediction space: Measuring distance in semantic space instead of noise space**
 
-- For each noise $z_i$, a one-step denoising prediction (Tweedie denoised prediction) from the diffusion model yields a semantic-level representation $\hat{x}_0(z_i)$.
-- Distances are computed in this space rather than in the raw noise space, as noise-space distances do not directly correspond to semantic differences in the final generated outputs.
+Pushing two noises apart directly in the original noise space is ineffective because the Euclidean distance between Gaussian noises is almost unrelated to the semantic differences of their final generated images—two distant noises could be denoised into nearly identical images. CNO's Mechanism is to first use the one-step denoising (Tweedie's formula) of the diffusion model to map each $z_i$ into the optimal estimate of the clean latent $\hat{z}_{0|T}^{i}$, and then calculate the distance in this semantic space. This step translates "whether noise is dispersed" into "whether generation results are dispersed," allowing optimization to act directly on meaningful semantic signals.
 
-**2. InfoNCE Contrastive Loss**
+**2. InfoNCE Contrastive Loss: Fidelity via attraction, diversity via repulsion**
 
-- **Attraction term**: Anchors each optimized noise near its original position to prevent excessive deviation that would degrade quality.
-- **Repulsion term**: Pushes different noise vectors apart in the denoised prediction space to enhance output diversity.
-- Loss formulation:
+CNO adopts the InfoNCE form from representation learning to unify fidelity and diversity into a single loss. For each anchor noise $z_i$, the attraction term in the numerator anchors its denoising prediction $\hat{z}_{0|T}^{i}$ near its original (unoptimized) version $\hat{z}_{0|T}^{i,\text{ref}}$, acting as a fixed reference point to prevent noise deviation and quality degradation. The remaining $B-1$ samples in the denominator form the repulsion term, pushing different noises apart in the denoising prediction space to enhance output diversity. The base loss is written as:
 
-$$\mathcal{L}_{\text{CNO}} = -\frac{1}{B}\sum_{i=1}^{B}\log\frac{\exp(\text{sim}(z_i, z_i^{\text{orig}})/\tau)}{\exp(\text{sim}(z_i, z_i^{\text{orig}})/\tau) + \sum_{j \neq i}\exp(\text{sim}(z_i, z_j)/\tau)}$$
+$$\mathcal{L}_{\text{InfoNCE}} = \frac{1}{B}\sum_{i=1}^{B}\left[-\log\frac{\exp(f(\hat{z}_{0|T}^{i}, \hat{z}_{0|T}^{i,\text{ref}})/\tau)}{\sum_{j=1}^{B}\exp(f(\hat{z}_{0|T}^{i}, \hat{z}_{0|T}^{j})/\tau)}\right]$$
 
-**3. γ Parameter and Closed-Form Formula**
+where $f(\cdot,\cdot)$ is cosine similarity and $\tau$ is the temperature. This structure naturally fits diverse generation: one term maintains quality while the other expands the distribution, eliminating the need to manually weight two independent objectives.
 
-- $\gamma$ controls the balance between attraction and repulsion.
-- Closed-form formula: $\gamma = (\tau \cdot \ln(B-1) + 1)^{-1}$
-- As batch size $B$ increases, more repulsive samples are introduced, and $\gamma$ automatically reduces the repulsion strength to prevent excessive dispersion.
+**3. γ closed-form formula: Auto-adaptive diversity-fidelity balance per batch**
 
-**4. Adaptive Latent Pooling**
+The above loss has a hidden risk: as the batch size $B$ increases, each anchor is pushed by more negative samples, and the cumulative repulsion force expands, potentially pushing the noise out of the original Gaussian distribution and generating unreasonable or outlier images. CNO introduces a coefficient $\gamma$ to specifically regulate the attraction—changing the temperature of the attraction term in the numerator from $\tau$ to $\gamma\tau$:
 
-- Spatial downsampling of latents using a window $w$ reduces the dimensionality for contrastive loss computation.
-- $w=16$ is the optimal trade-off: computationally efficient with negligible performance loss.
+$$\mathcal{L}_{\text{CNO}}^{\gamma} = \frac{1}{B}\sum_{i=1}^{B}\left[-\log\frac{\exp(f(\hat{z}_{0|T}^{i}, \hat{z}_{0|T}^{i,\text{ref}})/(\gamma\tau))}{\sum_{j=1}^{B}\exp(f(\hat{z}_{0|T}^{i}, \hat{z}_{0|T}^{j})/\tau)}\right]$$
 
-**5. Stop-Gradient Strategy**
+Crucially, CNO does not leave $\gamma$ for grid search; instead, it sets "maximum attraction = sum of maximum of $B-1$ repulsion terms" to solve for the closed-form solution $\gamma = (\tau \cdot \ln(B-1) + 1)^{-1}$. It automatically decreases as $B$ increases, strengthening attraction to counteract repulsion expansion. For instance, with $\tau=0.1$ and $B=5$, $\gamma\approx 0.88$, which aligns closely with commonly used fixed values, effectively removing a round of parameter tuning. $\gamma$ effectively acts as a regularization term pulling noise back toward the Gaussian prior.
 
-- Gradients through paired noises in the repulsion term are detached (stop-gradient), reducing computational overhead and avoiding instability caused by mutual coupling between noise vectors.
+**4. Efficient Implementation: Latent Pooling + Stop-Gradient**
+
+The first two designs calculate pairwise similarities on the original full-resolution latent $(B,C,S,S)$ and require backpropagation through the diffusion model at each step, which is computationally prohibitive for modern T2I backbones. CNO reduces this via two components. First, **adaptive latent pooling**: the latent space is downsampled to $(B,C,w,w)$ using window $w$ before calculating the contrastive loss, significantly reducing similarity matrix computation and VRAM. $w=16$ is found to be optimal. Second, **stop-gradient**: a truncation operator is added to the diffusion model path used for the Tweedie estimate, avoiding expensive backpropagation through the entire model. Ablations show this results in negligible loss in diversity and quality (MSS 0.1321 vs 0.1317) while significantly saving training costs.
 
 ### Loss & Training
 
-- Objective: minimize the CNO contrastive loss.
-- Optimizer: standard gradient descent (e.g., Adam) applied to a batch of noise vectors for a small number of iterations.
-- Only the noise vectors $z_i$ are optimized; model parameters remain unchanged.
-- Temperature $\tau$ is a hyperparameter; $\gamma$ is jointly determined via the closed-form formula, eliminating the need for hyperparameter search.
+The entire optimization targets the noise vectors $z_i$ without updating any model parameters. With the goal of minimizing $\mathcal{L}_{\text{CNO}}^{\gamma}$, a few iterations are run on a batch of noises using a standard optimizer. The temperature $\tau$ is the only hyperparameter required, and it is linked with $\gamma$ through the closed-form formula to automatically determine the balance point, leaving almost no knobs to tune during deployment.
 
 ## Key Experimental Results
 
 ### Main Results
 
-Comparison of CNO against baseline methods across multiple diffusion models on diversity and quality metrics:
+Comparison of diversity and quality metrics between CNO and baseline methods across multiple diffusion models:
 
 | Model | Method | MSS ↓ | Vendi Score ↑ | Coverage ↑ | PickScore ↑ |
-|-------|--------|-------|--------------|------------|-------------|
+|------|------|-------|--------------|------------|-------------|
 | SD1.5 | DDIM | 0.1657 | 4.6949 | - | - |
-| SD1.5 | **CNO** | **0.1317** | **4.7855** | - | - |
+| SD1.5 | **Ours** | **0.1317** | **4.7855** | - | - |
 | SDXL | DDIM | 0.2169 | - | - | - |
-| SDXL | **CNO** | **0.1623** | - | **0.7568** | - |
+| SDXL | **Ours** | **0.1623** | - | **0.7568** | - |
 | SD3 | FM-ODE | - | 4.2205 | - | - |
-| SD3 | **CNO** | - | **4.2644** | - | - |
+| SD3 | **Ours** | - | **4.2644** | - | - |
 
 ### Ablation Study
 
 | Component | MSS ↓ | Vendi ↑ | Note |
-|-----------|-------|---------|------|
+|------|-------|---------|------|
 | Full CNO (w=16) | **0.1317** | **4.7855** | Optimal configuration |
-| w/o attraction term | 0.1285 | 4.8012 | Slightly higher diversity but degraded quality |
-| w/o repulsion term | 0.1648 | 4.7011 | Marginal diversity improvement |
-| w=4 | 0.1325 | 4.7801 | High computational cost with limited gain |
-| w=32 | 0.1398 | 4.7512 | Excessive information loss |
-| w/o stop-gradient | 0.1321 | 4.7830 | Comparable performance but doubled computation |
+| w/o Attraction | 0.1285 | 4.8012 | Higher diversity but lower quality |
+| w/o Repulsion | 0.1648 | 4.7011 | Insignificant diversity gain |
+| w=4 | 0.1325 | 4.7801 | High cost, limited gains |
+| w=32 | 0.1398 | 4.7512 | Too much information loss |
+| w/o Stop-gradient | 0.1321 | 4.7830 | Similar results but 2x computation |
 
 ### Key Findings
 
-1. **Pareto optimality**: CNO occupies the dominant Pareto frontier on the PickScore (quality) vs. Vendi Score (diversity) scatter plot.
-2. **Compatibility with few-step samplers**: CNO remains effective on few-step samplers such as FLUX and SDXL-Lightning, demonstrating the generality of the preprocessing paradigm.
-3. **Validation of the closed-form γ formula**: The theoretically derived $\gamma$ value closely matches the grid-search optimum, eliminating hyperparameter tuning.
-4. **Robustness to window size**: Performance is stable for $w \in [8, 32]$, with $w=16$ being optimal.
+1. **Pareto Optimal**: CNO occupies the dominant Pareto frontier in the PickScore (Quality) vs. Vendi Score (Diversity) scatter plot.
+2. **Compatibility with Few-step Sampling**: Remains effective on few-step samplers like FLUX and SDXL-Lightning, proving the versatility of the pre-processing paradigm.
+3. **$\gamma$ Closed-form Verification**: The theoretically derived $\gamma$ values match grid-searched optimal values, removing hyperparameter tuning.
+4. **Window size robustness**: Performance is stable within $w \in [8, 32]$, with $w=16$ being optimal.
 
 ## Highlights & Insights
 
-- **Plug-and-play**: As a preprocessing method, CNO is orthogonal to arbitrary diffusion models and samplers, requiring minimal engineering effort for deployment.
-- **Theoretical elegance**: The closed-form formula for $\gamma$ unifies the effects of batch size and temperature into a single interpretable parameter.
-- **Novel perspective on contrastive learning**: Transferring InfoNCE from representation learning to noise-space optimization represents a clever conceptual migration.
-- **Insight into the Tweedie space**: Measuring distances in the semantically meaningful denoised prediction space—rather than in the raw noise space—is the key to the method's effectiveness.
+- **Plug-and-play**: As a pre-processing method, it is orthogonally combined with any diffusion model and sampler, with very low engineering deployment costs.
+- **Theoretical Elegance**: The closed-form formula for $\gamma$ unifies the effects of batch size and temperature into a single interpretable parameter.
+- **New Perspective on Contrastive Learning**: Migrating InfoNCE from representation learning to noise space optimization is a clever conceptual transfer.
+- **Tweedie Space Insight**: Measuring distance in the semantically relevant denoising prediction space rather than the noise space is key to the method's effectiveness.
 
 ## Limitations & Future Work
 
-1. **Additional computational overhead**: Each generation requires extra optimization iterations (albeit one-shot), introducing latency for real-time applications.
-2. **Batch dependency**: The method requires simultaneous optimization of a batch of noises and is therefore inapplicable in single-image generation scenarios.
-3. **Insufficient validation of semantic diversity**: MSS and Vendi Score primarily measure pixel-level diversity; in-depth analysis of semantic-level diversity is lacking.
-4. **Tweedie prediction accuracy**: The method relies on the quality of one-step denoising predictions, which may be insufficiently accurate for certain models or timesteps.
-5. **Scalability**: For very large batch sizes, the computational and memory costs of the contrastive loss may become a bottleneck.
+1. **Extra Computational Overhead**: Requires additional optimization iterations per generation (though one-shot), affecting latency for real-time applications.
+2. **Batch Dependency**: The method requires optimizing a batch of noises simultaneously and cannot be used for single-image generation.
+3. **Insufficient Semantic Diversity Verification**: MSS and Vendi Score primarily measure pixel-level diversity; in-depth analysis of semantic-level diversity is lacking.
+4. **Tweedie Prediction Accuracy**: Depends on the quality of the one-step denoising prediction, which may be inaccurate for certain models or timesteps.
+5. **Scalability**: For very large batch sizes, the computation and memory overhead of the contrastive loss may become a bottleneck.
 
 ## Related Work & Insights
 
-- **DDIM / DPM-Solver**: Deterministic samplers are efficient but lack diversity; CNO directly addresses this shortcoming.
-- **DPP (Determinant Point Process)**: A classical diversity sampling method; the CNO contrastive loss can be viewed as a continuous analogue of DPP.
-- **Contrastive learning (SimCLR / MoCo)**: InfoNCE has been extensively validated in representation learning; CNO transfers it to the noise space of generative models.
-- **Noise scheduling research**: Prior work has examined the effect of noise scheduling on generation quality; CNO is the first to focus on the effect of noise initialization on diversity.
+- **DDIM / DPM-Solver**: Deterministic samplers are efficient but lack diversity; CNO effectively fills this gap.
+- **DPP (Determinantal Point Process)**: A classic diversity sampling method; CNO's contrastive loss can be viewed as a continuous version of DPP.
+- **Contrastive Learning (SimCLR/MoCo)**: InfoNCE is widely validated in representation learning; CNO transfers it to the noise space of generative models.
+- **Noise scheduling research**: Previous works focused on the impact of noise scheduling on quality; CNO is the first to focus on the impact of noise initialization on diversity.
 
 ## Rating
 
-- **Novelty**: ⭐⭐⭐⭐ — Applying contrastive learning to noise optimization is a concise and novel idea; the closed-form γ formula adds theoretical depth.
-- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Covers multiple models (SD1.5/SDXL/SD3/FLUX), includes comprehensive ablation studies, and presents convincing Pareto analysis.
-- **Writing Quality**: ⭐⭐⭐⭐ — Motivation is clearly articulated, method derivation is fluent, and figures are of high quality.
-- **Value**: ⭐⭐⭐⭐ — Strong practical utility as a plug-and-play solution; provides a clean resolution to the diversity problem in diffusion model generation.
+- **Novelty**: ⭐⭐⭐⭐ — Applying contrastive learning to noise optimization is a concise and novel idea; the closed-form $\gamma$ formula adds theoretical depth.
+- **Experimental Thoroughness**: ⭐⭐⭐⭐ — Covers multiple models (SD1.5/SDXL/SD3/FLUX), complete ablation studies, and convincing Pareto analysis.
+- **Writing Quality**: ⭐⭐⭐⭐ — Clear motivation, smooth derivation, and high-quality charts.
+- **Value**: ⭐⭐⭐⭐ — High practical utility as a plug-and-play solution for the diversity problem in diffusion model generation.
 
 <!-- RELATED:START -->
 
 <div class="related-papers" markdown="1">
 
+</div>
+
+<!-- RELATED:END -->
+
 ## Related Papers
 
+- [\[CVPR 2025\] Learning to Sample Effective and Diverse Prompts for Text-to-Image Generation](../../CVPR2025/image_generation/learning_to_sample_effective_and_diverse_prompts_for_text-to-image_generation.md)
+- [\[ICLR 2026\] Scaling Group Inference for Diverse and High-Quality Generation](scaling_group_inference_for_diverse_and_high-quality_generation.md)
+- [\[ICLR 2026\] TIPO: Text to Image with Text Pre-sampling for Prompt Optimization](tipo_text_to_image_with_text_pre-sampling_for_prompt_optimization.md)
 - [\[ICLR 2026\] PCPO: Proportionate Credit Policy Optimization for Aligning Image Generation Models](pcpo_proportionate_credit_policy_optimization_for_aligning_image_generation_mode.md)
-- [\[CVPR 2026\] Neighbor GRPO: Contrastive ODE Policy Optimization Aligns Flow Models](../../CVPR2026/image_generation/neighbor_grpo_contrastive_ode_policy_optimization_aligns_flow_models.md)
-- [\[ICCV 2025\] Straighten Viscous Rectified Flow via Noise Optimization](../../ICCV2025/image_generation/straighten_viscous_rectified_flow_via_noise_optimization.md)
-- [\[ICLR 2026\] Improved Object-Centric Diffusion Learning with Registers and Contrastive Alignment (CODA)](improved_object-centric_diffusion_learning_with_registers_and_contrastive_alignm.md)
-- [\[ICLR 2026\] RMFlow: Refined Mean Flow by a Noise-Injection Step for Multimodal Generation](rmflow_refined_mean_flow_by_a_noise-injection_step_for_multimodal_generation.md)
+- [\[ICLR 2026\] Mitigating Noise Shift in Denoising Generative Models with Noise Awareness Guidance](mitigating_noise_shift_in_denoising_generative_models_with_noise_awareness_guida.md)
 
 </div>
 

@@ -2,83 +2,79 @@
 title: >-
   [Paper Note] Easier Painting Than Thinking: Can Text-to-Image Models Set the Stage, but Not Direct the Play?
 description: >-
-  [ICLR 2026][Image Generation][T2I evaluation] This paper proposes T2I-CoReBench, the first comprehensive benchmark that systematically evaluates both **compositional ability** (Composition) and **reasoning ability** (Rea…
+  [ICLR 2026][Image Generation][benchmark] Proposes T2I-CoReBench, the first comprehensive benchmark to systematically evaluate both the **Composition** and **Reasoning** capabilities of T2I models. It covers 12 evaluation dimensions, 1080 high-difficulty prompts, and approximately 13,500 checklist questions. A large-scale evaluation of 38 models reveals that r
 tags:
-  - "ICLR 2026"
-  - "Image Generation"
-  - "T2I evaluation"
-  - "compositional generation"
-  - "reasoning ability"
-  - "benchmark"
-  - "scene graph"
+  - ICLR 2026
+  - Image Generation
+  - benchmark
 date: 2026-05-08
-content_hash: 79e8be52a755d2b3
+content_hash: 36c349d0ae0cd426
 ---
-
 # Easier Painting Than Thinking: Can Text-to-Image Models Set the Stage, but Not Direct the Play?
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2509.03516](https://arxiv.org/abs/2509.03516)  
-**Code**: [GitHub](https://github.com/) (available, with Leaderboard and Benchmark)  
-**Area**: Text-to-Image Generation / Evaluation Benchmark
-**Keywords**: T2I evaluation, compositional generation, reasoning ability, benchmark, scene graph
+**Code**: [GitHub](https://github.com/) (Available, including Leaderboard and Benchmark)  
+**Area**: Text-to-Image Generation / Evaluation Benchmark  
+**Keywords**: T2I Evaluation, Compositional Generation, Reasoning Capability, Benchmark, Scene Graph
 
 ## TL;DR
 
-This paper proposes T2I-CoReBench, the first comprehensive benchmark that systematically evaluates both **compositional ability** (Composition) and **reasoning ability** (Reasoning) of T2I models. It covers 12 evaluation dimensions, 1,080 high-difficulty prompts, and approximately 13,500 checklist questions. Large-scale evaluation of 38 models reveals that reasoning capability lags far behind compositional capability, constituting the primary bottleneck in current T2I generation.
+Proposes T2I-CoReBench, the first comprehensive benchmark to systematically evaluate both the **Composition** and **Reasoning** capabilities of T2I models. It covers 12 evaluation dimensions, 1080 high-difficulty prompts, and approximately 13,500 checklist questions. A large-scale evaluation of 38 models reveals that reasoning capabilities lag far behind compositional ones, identifying reasoning as the core bottleneck in current T2I generation.
 
 ## Background & Motivation
 
-In T2I generation, text prompts simultaneously contain **explicit descriptions** (content requiring compositional generation) and **implicit cues** (content requiring reasoning to generate correctly). For instance, "a ripe tomato squeezed tightly in a fist" implicitly entails "tomato juice bursting out." This corresponds to two core capabilities: Composition and Reasoning.
+In T2I generation, text prompts contain both **explicit descriptions** (content requiring compositional generation) and **implicit cues** (content requiring reasoning to generate correctly). For example, "a ripe tomato held tightly in a fist" implies "tomato juice bursting out." This corresponds to two core capabilities: Composition and Reasoning.
 
-**Two major deficiencies of existing benchmarks**:
+**Limitations of Prior Work**:
+- **Lack of comprehensiveness**: Most benchmarks evaluate only composition or only reasoning, using heuristic taxonomies that fail to systematically cover all dimensions.
+- **Lack of complexity**: Compositional scenarios typically test only a few visual elements ($\le 5$), while reasoning tasks involve simple one-to-one causality, failing to reflect high-density real-world scenarios.
 
-**Lack of comprehensiveness**: Most benchmarks evaluate either composition or reasoning, with heuristic taxonomies that fail to systematically cover all dimensions.
-
-**Lack of complexity**: Compositional scenarios test only a small number of visual elements (≤5), and reasoning tasks test only simple one-to-one causality, failing to reflect high-density real-world scenes.
-
-**Key Insight**: The paper draws on scene graph structures to formalize compositional ability, and on the philosophical tripartite classification of reasoning (deductive/inductive/abductive) to formalize reasoning ability, constructing a 12-dimensional evaluation framework that is both comprehensive and complex.
+**Key Insight**: Leverage Scene Graph structures to organize compositional capabilities and the philosophical trichotomy of reasoning (Deductive/Inductive/Abductive) to organize reasoning capabilities, building a comprehensive and complex 12-dimensional evaluation system.
 
 ## Method
 
 ### Overall Architecture
 
-T2I-CoReBench consists of three components: (1) a 12-dimensional evaluation taxonomy; (2) a high-complexity prompt and checklist construction pipeline; and (3) an MLLM-based automatic evaluation protocol.
+The core observation of T2I-CoReBench is that a T2I prompt contains both **explicit descriptions** (what to draw, reliant on composition) and **implicit cues** (what to think, reliant on reasoning). Current benchmarks are either restricted in scope or too low in complexity. The pipeline structures "what to evaluate" and "how to evaluate": first, using a 12-dimensional taxonomy to structure **Composition** (4 dimensions from Scene Graphs) and **Reasoning** (8 dimensions from philosophical trichotomy), then employing multiple Large Reasoning Models (LRMs) to collaboratively generate high-complexity prompts and atomized checklists, and finally using MLLMs to verify generated images against the checklist to aggregate scores. The benchmark includes 1080 prompts and ~13,500 checklist questions.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    subgraph TAX["12-Dimensional Taxonomy"]
+        direction TB
+        COMP["Compositional Dimensions: Scene Graph<br/>MI / MA / MR / TR (4 Dimensions)"]
+        REAS["Reasoning Dimensions: Deductive / Inductive / Abductive<br/>LR/BR/HR/PR/GR/AR/CR/RR (8 Dimensions)"]
+    end
+    TAX --> BUILD["Prompt + Checklist Pipeline<br/>3 LRMs Collaborative Generation → Human Review"]
+    BUILD --> PROMPT["1080 High-Difficulty Prompts"]
+    BUILD --> CHECK["~13,500 Atomized Checklist Questions"]
+    PROMPT --> IMG["T2I Model Generated Images"]
+    IMG --> EVAL["MLLM Evaluator (Gemini 2.5 Flash)<br/>Binary VQA per Checklist Item"]
+    CHECK --> EVAL
+    EVAL --> SCORE["Aggregated Scores by 12 Dimensions"]
+```
 
 ### Key Designs
 
-1. **Compositional Ability Evaluation (4 dimensions)**: Based on the three elements of scene graphs:
+**1. Composition Dimensions: Increasing Visual Element Density via Scene Graphs**
+A common flaw in existing compositional benchmarks is sparse visual elements (usually $\le 5$), which fails to test model performance under density pressure. This work uses the Instance-Attribute-Relation triplets of Scene Graphs to split composition into four dimensions and increases density to $\sim 20$ visual elements per prompt: MI (Multi-Instance) requires ~25 instances (e.g., "busy modern kitchen"), MA (Multi-Attribute) requires ~20 attributes for a single subject, MR (Multi-Relation) requires ~15 relations, and TR (Text Rendering) requires ~15 text entries. The average density is 4-5x higher than DPG-Bench, pushing models to their compositional limits.
 
-    - **MI (Multi-Instance)**: Generating approximately 25 instances in a single image, e.g., "a busy modern kitchen"
-    - **MA (Multi-Attribute)**: Binding approximately 20 attributes to a single subject
-    - **MR (Multi-Relation)**: Approximately 15 relational connections within a scene
-    - **TR (Text Rendering)**: Precise rendering of content and layout for approximately 15 text items
+**2. Reasoning Dimensions: Systematic Coverage via Philosophical Trichotomy**
+Previous reasoning evaluations were often fragmented heuristics and limited to simple causality. This work uses the Deductive/Inductive/Abductive framework to split reasoning into 8 dimensions: Deductive (Premise $\to$ Conclusion) includes LR (Logic), BR (Behavior), HR (Hypothesis), PR (Process); Inductive (Pattern $\to$ Rule) includes GR (Generalization), AR (Analogy); Abductive (Observation $\to$ Explanation) includes CR (Common Sense), RR (Reconstruction). It introduces one-to-many and many-to-one reasoning chains to move beyond simple one-to-one causality.
 
-   Compared to existing benchmarks such as DPG-Bench, visual element density is increased by 4–5× (~20 vs. ~5).
-
-2. **Reasoning Ability Evaluation (8 dimensions)**: Based on the philosophical tripartite classification of reasoning:
-
-    - **Deductive Reasoning** (premise → conclusion): LR (Logical Reasoning), BR (Behavioral Reasoning), HR (Hypothetical Reasoning), PR (Process Reasoning)
-    - **Inductive Reasoning** (pattern → rule): GR (Generalization Reasoning), AR (Analogical Reasoning)
-    - **Abductive Reasoning** (observation → explanation): CR (Commonsense Reasoning), RR (Reconstruction Reasoning)
-
-   The framework introduces complex reasoning chains of one-to-many (one action → multiple consequences) and many-to-one (multiple premises → one conclusion), surpassing the one-to-one reasoning limitation of existing benchmarks.
-
-3. **Prompt and Checklist Construction Pipeline**:
-
-    - Three SOTA large reasoning models (Claude Sonnet 4, Gemini 2.5 Pro, OpenAI o3) are used to assist in generating prompts, ensuring diversity and complexity.
-    - Each prompt is paired with a checklist of independent yes/no questions that verify explicit and implicit visual elements point by point.
-    - All samples undergo rigorous human review.
+**3. Prompt + Checklist Pipeline: Ensuring Difficulty and Verifiability**
+To ensure prompts are difficult and diverse without model bias, a unified instruction template (task goals + prompt design principles + checklist rules) is used. Three SOTA LRMs (Claude Sonnet 4, Gemini 2.5 Pro, OpenAI o3) collaboratively generate candidates, followed by strict human review. Each prompt is paired with a checklist—a set of independent, binary (Yes/No) questions targeting explicit and implicit cues. This atomization is key to automated MLLM evaluation, preventing ambiguity.
 
 ### Loss & Training
 
-This paper presents an evaluation benchmark and involves no training process. The evaluation protocol employs Gemini 2.5 Flash as the MLLM evaluator, converting each checklist question into a binary VQA task ("0" = No / "1" = Yes), leveraging the atomic design of checklists to ensure compatibility with MLLM-based evaluation.
+As a benchmark, there is no training process. During evaluation, the checklists are fed to an MLLM evaluator (Gemini 2.5 Flash, selected for high alignment with human judgment and scalability). Each checklist question is treated as a binary VQA task ("1"=Yes / "0"=No). Results remain consistent across different evaluators like Qwen2.5-VL-72B and Qwen3-VL.
 
 ## Key Experimental Results
 
-### Main Results (Comprehensive Evaluation of 38 Models)
+### Main Results (38 Models Evaluated)
 
-| Model | Parameters | Composition Avg. | Reasoning Avg. | Overall Avg. |
+| Model | Params | Comp. Mean | Reas. Mean | Overall Mean |
 |------|--------|---------|---------|--------|
 | FLUX.2-dev | 32B | **84.7** | **54.2** | **64.4** |
 | Qwen-Image-2512 | 20B | 83.7 | 51.7 | 62.4 |
@@ -90,50 +86,50 @@ This paper presents an evaluation benchmark and involves no training process. Th
 | PixArt-α | 0.6B | 25.0 | 23.7 | 24.1 |
 | Janus-Pro-1B | 1B | 35.5 | 13.0 | 20.5 |
 
-| Per-Dimension Breakdown (FLUX.2-dev) | MI | MA | MR | TR | LR | BR | HR | PR | GR | AR | CR | RR |
+| Breakdown (FLUX.2-dev) | MI | MA | MR | TR | LR | BR | HR | PR | GR | AR | CR | RR |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
 | Score | 89.5 | 83.4 | 72.7 | 93.3 | 48.4 | 33.5 | 53.4 | 83.1 | 62.3 | 64.3 | 62.1 | 26.9 |
 
 ### Ablation Study
 
-- Evaluation results from different MLLM evaluators (Qwen2.5-VL-72B, Qwen3-VL series) are highly consistent with those from Gemini 2.5 Flash.
-- Using three different LRMs for prompt generation avoids single-model bias.
+- Results from different MLLM evaluators (Qwen2.5-VL-72B, Qwen3-VL series) are highly consistent with Gemini 2.5 Flash.
+- Utilizing three different LRMs for prompt generation successfully avoided single-model bias.
 
 ### Key Findings
 
-1. **Compositional ability is improving steadily**: Open-source models are gradually closing the gap with closed-source counterparts; FLUX.2-dev achieves a compositional average of 84.7.
-2. **Reasoning ability severely lags behind**: Even the strongest model shows a reasoning average far below its compositional score; FLUX.2-dev scores only 54.2 in reasoning vs. 84.7 in composition.
-3. **Chain-of-thought in unified models is helpful but limited**: BAGEL w/ Think improves reasoning from 34.1 to 41.9, but still falls substantially short of diffusion models.
-4. **Text Rendering shows large variance**: FLUX.2-dev reaches 93.3, while most unified/autoregressive models score below 10.
-5. **Model scale is not a decisive factor**: LongCat-Image at 6B achieves a reasoning average of 54.1, surpassing HunyuanImage-3.0 at 80B (48.6).
+1. **Steady Improvement in Composition**: Open-source models are narrowing the gap with closed-source ones (FLUX.2-dev reached 84.7).
+2. **Significant Reasoning Gap**: Even the strongest models perform poorly in reasoning compared to composition (FLUX.2-dev: 54.2 Reasoning vs. 84.7 Composition).
+3. **Internal Thinking Models Help but are Limited**: BAGEL w/ Think improved reasoning from 34.1 to 41.9 but still lags behind diffusion models.
+4. **Huge Variance in Text Rendering**: FLUX.2-dev excels at 93.3, while most autoregressive/unified models are below 10.
+5. **Scale is Not Decisive**: The 6B LongCat-Image outperformed the 80B HunyuanImage-3.0 in reasoning (54.1 vs 48.6).
 
 ## Highlights & Insights
 
-- This is the first work to systematically introduce the philosophical tripartite reasoning taxonomy (deductive/inductive/abductive) into T2I evaluation, providing a theoretically grounded classification framework.
-- The high-density compositional design (~20 elements/prompt) and high-intensity reasoning design (one-to-many/many-to-one) better reflect real-world application scenarios.
-- The work surfaces an important finding: **T2I models are better at "painting" (composition) than "thinking" (reasoning)**—precisely as the title suggests.
-- The checklist design decomposes complex evaluation into atomic questions, improving assessment reliability.
+- Systematically introduces the philosophical trichotomy (Deduction/Induction/Abduction) to T2I evaluation for the first time.
+- High-density composition (~20 elements/prompt) and intense reasoning (one-to-many/many-to-one) better reflect real-world applications.
+- Reveals a critical insight: **T2I models are better at "painting" (composition) than "thinking" (reasoning)**.
+- Checklist design decomposes complex evaluation into atomic questions, improving reliability.
 
 ## Limitations & Future Work
 
-- The MLLM evaluator may introduce its own biases, despite human validation efforts.
-- The difficulty definition for reasoning dimensions (one-to-many/many-to-one) is relatively coarse-grained; further refinement of reasoning chain length is warranted.
-- Only static image generation is evaluated; video or interactive generation is not addressed.
-- The benchmark's 1,080 prompts are moderate in scale, with only 90 prompts per dimension, potentially limiting statistical power.
+- MLLM evaluators may still possess inherent biases despite human validation.
+- Reasoning difficulty definitions (one-to-many/many-to-one) remain relatively coarse; reasoning chain lengths could be further refined.
+- Only static images are evaluated; no video or interactive generation is included.
+- Statistical power might be limited by the sample size per dimension (90 prompts each).
 
 ## Related Work & Insights
 
-- **DPG-Bench / ConceptMix**: Pioneers in compositional evaluation, but insufficiently complex.
-- **R2I-Bench / WISE**: Early explorations of reasoning evaluation, but covering only a subset of reasoning types.
-- **GenAI-Bench**: General-purpose evaluation but lacking a systematic taxonomy.
-- Insight: The reasoning dimensions of this benchmark can inform the training of T2I models to improve reasoning capability.
+- **DPG-Bench / ConceptMix**: Early compositional benchmarks, but lacking complexity.
+- **R2I-Bench / WISE**: Explorations into reasoning, but covering only limited types.
+- **GenAI-Bench**: General evaluation but lacking a systematic taxonomy.
+- Insight: The reasoning dimensions in this benchmark could serve as training objectives for future T2I models.
 
 ## Rating
 
-- Novelty: ⭐⭐⭐⭐ First systematic integration of composition and reasoning evaluation with a theoretically grounded taxonomy, though the benchmark construction methodology itself is not entirely novel.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Broad coverage of 38 models, cross-validation with multiple evaluators, and in-depth analysis.
-- Writing Quality: ⭐⭐⭐⭐⭐ Clear logic, polished figures, and thorough explanation of the taxonomy.
-- Value: ⭐⭐⭐⭐⭐ Fills a critical gap in T2I reasoning evaluation with significant implications for the community.
+- Novelty: ⭐⭐⭐⭐ First systematic integration of composition and reasoning with a theoretical foundation.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Comprehensive evaluation of 38 models and cross-validation of evaluators.
+- Writing Quality: ⭐⭐⭐⭐⭐ Clear logic, high-quality visualizations, and well-explained taxonomy.
+- Value: ⭐⭐⭐⭐⭐ Fills a gap in T2I reasoning evaluation with significant implications for the community.
 
 <!-- RELATED:START -->
 
@@ -142,10 +138,10 @@ This paper presents an evaluation benchmark and involves no training process. Th
 ## Related Papers
 
 - [\[NeurIPS 2025\] Aligning Text to Image in Diffusion Models is Easier Than You Think](../../NeurIPS2025/image_generation/aligning_text_to_image_in_diffusion_models_is_easier_than_you_think.md)
-- [\[ICLR 2026\] Everything in Its Place: Benchmarking Spatial Intelligence of Text-to-Image Models](everything_in_its_place_benchmarking_spatial_intelligence_of_text-to-image_model.md)
 - [\[CVPR 2026\] CRAFT: Aligning Diffusion Models with Fine-Tuning Is Easier Than You Think](../../CVPR2026/image_generation/craft_aligning_diffusion_models_with_finetuning_is_easier_than_you_think.md)
-- [\[ICLR 2026\] Direct Reward Fine-Tuning on Poses for Single Image to 3D Human in the Wild](direct_reward_fine-tuning_on_poses_for_single_image_to_3d_human_in_the_wild.md)
-- [\[ICLR 2026\] RNE: plug-and-play diffusion inference-time control and energy-based training](rne_plug-and-play_diffusion_inference-time_control_and_energy-based_training.md)
+- [\[ICLR 2026\] Stage-wise Dynamics of Classifier-Free Guidance in Diffusion Models](stage-wise_dynamics_of_classifier-free_guidance_in_diffusion_models.md)
+- [\[ICLR 2026\] Reinforcing Diffusion Models by Direct Group Preference Optimization](reinforcing_diffusion_models_by_direct_group_preference_optimization.md)
+- [\[ICLR 2026\] Generation then Reconstruction: Accelerating Masked Autoregressive Models via Two-Stage Sampling](generation_then_reconstruction_accelerating_masked_autoregressive_models_via_two.md)
 
 </div>
 

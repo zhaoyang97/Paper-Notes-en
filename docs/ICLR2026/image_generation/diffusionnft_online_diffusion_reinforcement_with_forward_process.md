@@ -2,95 +2,98 @@
 title: >-
   [Paper Note] DiffusionNFT: Online Diffusion Reinforcement with Forward Process
 description: >-
-  [ICLR 2026][Image Generation][online RL] DiffusionNFT proposes a fundamentally new online RL paradigm for diffusion models: rather than performing policy optimization over the reverse sampling process (as in GRPO)…
+  [ICLR 2026][Image Generation][online RL] DiffusionNFT proposes a novel online RL paradigm for diffusion models: instead of performing policy optimization on the reverse sampling process (e.g., GRPO), it utilizes a contrastive training approach on the forward process via a flow matching objective for positive and negative samples. This defines an implicit poli
 tags:
-  - "ICLR 2026"
-  - "Image Generation"
-  - "online RL"
-  - "forward process"
-  - "negative-aware finetuning"
-  - "flow matching"
-  - "CFG-free"
+  - ICLR 2026
+  - Image Generation
+  - online RL
+  - forward process
+  - negative-aware finetuning
+  - flow matching
+  - CFG-free
 date: 2026-05-08
-content_hash: c9b8b9d402687d9e
+content_hash: cdea2f321a21af53
 ---
-
 # DiffusionNFT: Online Diffusion Reinforcement with Forward Process
 
 **Conference**: ICLR 2026 Oral  
 **arXiv**: [2509.16117](https://arxiv.org/abs/2509.16117)  
 **Code**: [https://research.nvidia.com/labs/dir/DiffusionNFT](https://research.nvidia.com/labs/dir/DiffusionNFT)  
-**Area**: Diffusion Models / Reinforcement Learning Alignment
-**Keywords**: online RL, forward process, negative-aware finetuning, flow matching, CFG-free
+**Area**: Diffusion Models / RL Alignment  
+**Keywords**: online RL, forward process, negative-aware finetuning, flow matching, CFG-free  
 
 ## TL;DR
-DiffusionNFT proposes a fundamentally new online RL paradigm for diffusion models: rather than performing policy optimization over the reverse sampling process (as in GRPO), it performs contrastive training on positive and negative samples via a flow matching objective over the *forward* process, defining an implicit policy improvement direction. The method is 3–25× faster than FlowGRPO and requires no CFG.
+DiffusionNFT proposes a novel online RL paradigm for diffusion models: instead of performing policy optimization on the reverse sampling process (e.g., GRPO), it utilizes a contrastive training approach on the forward process via a flow matching objective for positive and negative samples. This defines an implicit policy improvement direction, achieving 3-25× speedups over FlowGRPO while eliminating the need for CFG.
 
 ## Background & Motivation
 
-**Background**: FlowGRPO and DanceGRPO discretize the reverse sampling process into an MDP and apply GRPO with SDE samplers to achieve online RL alignment of diffusion models, yielding notable results.
+**Background**: FlowGRPO/DanceGRPO discretize the reverse sampling process into an MDP, utilizing SDE samplers and GRPO to achieve online RL alignment for diffusion models, which has yielded significant results.
 
-**Limitations of Prior Work**: GRPO-based methods suffer from three fundamental limitations: (a) **forward inconsistency**—optimizing only the reverse process may cause the model to degenerate into a cascade of Gaussians; (b) **solver constraints**—only first-order SDE samplers are supported, precluding more efficient ODE or higher-order solvers; (c) **CFG complexity**—simultaneous optimization of conditional and unconditional models is inefficient and engineering-heavy.
+**Limitations of Prior Work**: GRPO-style methods face three fundamental limitations: (a) **Forward Inconsistency**—optimizing only the reverse process may cause the model to degenerate into cascaded Gaussians; (b) **Solver Constraints**—optimization is restricted to first-order SDE samplers, preventing the use of more efficient ODE or high-order solvers; (c) **CFG Complexity**—the requirement to optimize both conditional and unconditional models simultaneously leads to low efficiency and engineering complexity.
 
-**Key Challenge**: Reverse-process RL requires likelihood estimation, yet the exact likelihood of diffusion models is intractable. Discretization approximations introduce systematic bias.
+**Key Challenge**: Reverse process RL requires likelihood estimation, but the likelihood of diffusion models cannot be calculated exactly. Discretization approximations introduce systematic bias.
 
-**Goal**: Can RL be performed on the **forward process** (via a flow matching objective), entirely avoiding likelihood estimation, solver constraints, and CFG dependence?
+**Goal**: Can RL be performed on the **forward process** (flow matching objective) to completely circumvent likelihood estimation, solver constraints, and CFG reliance?
 
-**Key Insight**: A diffusion policy has a unique forward process but multiple reverse processes (corresponding to different solvers). Optimization over the forward process is more fundamental—it directly defines the policy improvement direction via positive/negative sample contrast, embedded within the supervised learning framework of flow matching.
+**Key Insight**: A diffusion policy has a unique forward process even though it may have multiple reverse processes (depending on the solver). Optimizing on the forward process is more fundamental—it directly uses the contrast between positive and negative samples to define the policy improvement direction, embedding this into the supervised learning framework of flow matching.
 
-**Core Idea**: RL signals are converted into a contrastive flow matching objective over the forward process using positive and negative samples. Implicit parameterization integrates reinforcement guidance directly into a single policy model.
+**Core Idea**: Transform RL signals into a contrastive flow matching objective for positive and negative samples in the forward process, utilizing implicit parameterization to integrate reinforcement guidance directly into a single policy model.
 
 ## Method
 
 ### Overall Architecture
 
-Each iteration proceeds as follows:
-1. **Data Collection**: Sample $K$ images from the current model using any solver; score each image with a reward function.
-2. **Positive/Negative Partitioning**: Each image is assigned to the positive set $\mathcal{D}^+$ with probability $r$ and to the negative set $\mathcal{D}^-$ with probability $1-r$.
-3. **Policy Optimization**: Train simultaneously on a positive branch (flow matching on $\mathcal{D}^+$) and a negative branch (flow matching on $\mathcal{D}^-$) over the forward process, extracting the improvement direction via implicit parameterization.
-4. **Only clean images need to be stored**—no trajectory storage is required.
+DiffusionNFT aims to solve the issues where existing diffusion RL methods (FlowGRPO, DanceGRPO, etc.) perform policy gradients on the **reverse sampling process**, thereby being hindered by likelihood estimation, SDE solver constraints, and CFG dependencies. It adopts a fundamental shift in perspective—the forward process of a diffusion policy is uniquely determined while the reverse process varies with the solver, making RL on the **forward process** more essential. The workflow is an iterative loop: sample a batch of images with the current model, soft-partition them into a positive set $\mathcal{D}^+$ and a negative set $\mathcal{D}^-$ according to rewards, and then apply a contrastive flow matching objective on the forward process to "approach positive samples and move away from negative samples." After updating the model, the cycle repeats; only clean images are saved, and sampling trajectories do not need to be stored.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400}}}%%
+flowchart TD
+    M["Current Policy Model<br/>v_old"] --> S["Sample K Clean Images<br/>with Any Solver"]
+    S --> R["Reward Function Scoring"]
+    R --> SP["Soft-partition D+ / D-<br/>via Probability r"]
+    SP --> CFM["Improvement Direction Theorem<br/>Contrastive Flow Matching"]
+    CFM --> IP["Implicit Parameterization<br/>Single Model v_θ Composes v_theta+ and v_theta-"]
+    IP --> U["Update Policy v_θ → v_old"]
+    U -->|Next Iteration| M
+```
 
 ### Key Designs
 
-1. **Improvement Direction Theorem (Theorem 3.1)**:
+**1. Improvement Direction Theorem: Binding "Approaching Positives" and "Avoiding Negatives" into a Single Direction**
 
-    - **Function**: Proves that the difference directions among the positive, negative, and old policy velocity fields are proportional.
-    - **Mechanism**: $\Delta := \alpha(\mathbf{x}_t)[\mathbf{v}^+(\mathbf{x}_t) - \mathbf{v}^{\text{old}}(\mathbf{x}_t)] = [1-\alpha(\mathbf{x}_t)][\mathbf{v}^{\text{old}}(\mathbf{x}_t) - \mathbf{v}^-(\mathbf{x}_t)]$, where $\alpha$ is a scalar related to the density ratio of the positive policy.
-    - **Design Motivation**: Establishes the equivalence "moving away from negatives = moving toward positives," a form analogous to CFG but derived from RL principles.
+To perform RL on the forward process, the relationship between the velocity fields of positive samples, negative samples, and the old policy must first be established. Theorem 3.1 proves that their directional differences are proportional:
 
-2. **Policy Optimization Objective (Theorem 3.2)**:
+$$\Delta := \alpha(\mathbf{x}_t)[\mathbf{v}^+(\mathbf{x}_t) - \mathbf{v}^{\text{old}}(\mathbf{x}_t)] = [1-\alpha(\mathbf{x}_t)][\mathbf{v}^{\text{old}}(\mathbf{x}_t) - \mathbf{v}^-(\mathbf{x}_t)]$$
 
-    - **Function**: Designs a flow matching loss that jointly exploits positive and negative data.
-    - **Mechanism**: $\mathcal{L}(\theta) = \mathbb{E}[r \|\mathbf{v}_\theta^+ - \mathbf{v}\|^2 + (1-r)\|\mathbf{v}_\theta^- - \mathbf{v}\|^2]$, where $\mathbf{v}_\theta^+ = (1-\beta)\mathbf{v}^{\text{old}} + \beta \mathbf{v}_\theta$ (implicit positive policy) and $\mathbf{v}_\theta^- = (1+\beta)\mathbf{v}^{\text{old}} - \beta \mathbf{v}_\theta$ (implicit negative policy).
-    - **Design Motivation**: Through implicit parameterization, only a single model $\mathbf{v}_\theta$ is trained, yet it is equivalently pulled toward the positive policy and pushed away from the negative policy. The optimal solution $\mathbf{v}_{\theta^*} = \mathbf{v}^{\text{old}} + \frac{2}{\beta}\Delta$ automatically integrates reinforcement guidance into the policy.
+where $\alpha(\mathbf{x}_t)$ is a scalar related to the density ratio of the positive policy. The significance lies in characterizing "moving towards the positive policy $\mathbf{v}^+$" and "moving away from the negative policy $\mathbf{v}^-$" as the same direction $\Delta$. This avoids individual likelihood estimation—the primary bottleneck in reverse RL—by focusing solely on this improvement direction. Formally, it resembles the guidance term in CFG, but the direction is derived entirely from RL principles rather than a heuristic conditional/unconditional difference.
 
-3. **Forward Consistency**:
+**2. Implicit Parameterization: Learning Both Branches with a Single Model**
 
-    - **Function**: Guarantees that the trained model still corresponds to a valid forward process.
-    - **Mechanism**: DiffusionNFT employs the standard flow matching loss (forward process) rather than policy gradients over the reverse SDE.
-    - **Design Motivation**: FlowGRPO's exclusive optimization of the reverse process may break forward–reverse consistency.
+Given the improvement direction, the next step is applying it to a trainable flow matching loss. Theorem 3.2 provides an objective that consumes both positive and negative data:
 
-4. **CFG-free Training**:
+$$\mathcal{L}(\theta) = \mathbb{E}\big[r \,\|\mathbf{v}_\theta^+ - \mathbf{v}\|^2 + (1-r)\,\|\mathbf{v}_\theta^- - \mathbf{v}\|^2\big]$$
 
-    - **Function**: Operates without CFG; reinforcement guidance subsumes the role of CFG.
-    - **Mechanism**: The term $\Delta$ in Theorem 3.1 is formally equivalent to guidance—RL automatically learns the guidance direction.
-    - **Design Motivation**: Avoids the complexity of jointly training conditional and unconditional models as required by GRPO.
+The key is that the positive and negative branches are not two independent networks but are composed from the same $\mathbf{v}_\theta$ via implicit parameterization: the positive policy $\mathbf{v}_\theta^+ = (1-\beta)\mathbf{v}^{\text{old}} + \beta \mathbf{v}_\theta$ and the negative policy $\mathbf{v}_\theta^- = (1+\beta)\mathbf{v}^{\text{old}} - \beta \mathbf{v}_\theta$. Consequently, training the single model $\mathbf{v}_\theta$ is equivalent to simultaneously approaching the positive policy and moving away from the negative one. Solving for the optimum yields $\mathbf{v}_{\theta^*} = \mathbf{v}^{\text{old}} + \frac{2}{\beta}\Delta$—reinforcement guidance is automatically integrated into the policy itself. Inference no longer requires an additional guidance model, which is the root cause for eliminating CFG.
+
+**3. Three Corollary Advantages of Forward Process Optimization: Forward Consistency, Solver Freedom, and CFG-free**
+
+Moving RL to the forward process does more than just changing the loss; it sheds three burdens of reverse RL. First, **Forward Consistency**: GRPO-style methods optimize only the reverse sampling process without ensuring self-consistency between forward and reverse, which can lead to model degeneration. Since the forward process of a diffusion policy is uniquely determined, training on it with standard flow matching naturally ensures the model remains a valid forward process. Second, **Solver Freedom**: Reverse RL discretizes sampling into an MDP, locking it to first-order SDE samplers. In DiffusionNFT, the training objective is decoupled from the sampling process, allowing any ODE or high-order solver for data collection without storing sampling trajectories. Third, **CFG-free**: The $\Delta$ in Theorem 3.1 is formally equivalent to a guidance term, meaning the RL process itself learns the guidance direction and absorbs it into a single policy via Design 2, removing the need to maintain dual models like in GRPO.
 
 ### Loss & Training
 
-- Based on SD3.5-Medium with rectified flow parameterization.
-- Each iteration samples $K$ images, partitioned into positives and negatives by reward.
-- $\beta$ controls guidance strength (analogous to CFG scale).
+- Based on SD3.5-Medium, rectified flow parameterization.
+- Sample $K$ images per round, partitioned into positive/negative sets based on rewards.
+- $\beta$ controls guidance intensity (analogous to CFG scale).
 - Supports joint training with multiple reward models.
 
 ## Key Experimental Results
 
-### Main Results (SD3.5-Medium, Single-Reward Head-to-Head vs. FlowGRPO)
+### Main Results (SD3.5-Medium, Head-to-Head vs FlowGRPO with Single Reward)
 
 | Task | DiffusionNFT | FlowGRPO | Efficiency Gain |
-|------|-------------|----------|----------------|
+|------|-------------|----------|---------|
 | GenEval | 0.98 (1k steps) | 0.95 (5k steps) | **25×** |
-| PickScore | Higher | — | 3–5× |
+| PickScore | Higher | — | 3-5× |
 | Aesthetic | Higher | — | 3× |
 | OCR | Higher | — | 5× |
 
@@ -102,41 +105,41 @@ Each iteration proceeds as follows:
 
 ### Ablation Study
 
-| Configuration | Outcome |
-|--------------|---------|
-| Positive samples only (RFT) | Rapid collapse |
-| DiffusionNFT (full) | Stable improvement |
-| Larger $\beta$ | More aggressive but may overfit |
-| Different solvers (ODE / higher-order) | Fully compatible, no performance drop |
+| Configuration | Effect |
+|------|-----|
+| Positive Samples Only (RFT) | Rapid collapse |
+| DiffusionNFT (Full) | Stable improvement |
+| Increasing $\beta$ | More aggressive but risks overfitting |
+| Different Solvers (ODE/High-order) | Fully compatible, no performance drop |
 
 ### Key Findings
-- **Negative samples are critical**: Training on positive samples alone (RFT) leads to mode collapse; incorporating negative samples stabilizes training.
-- DiffusionNFT, entirely CFG-free, rapidly improves from a very low starting point (GenEval 0.24 w/o CFG) to 0.98, surpassing FlowGRPO + CFG at 0.95.
-- Any solver (ODE / higher-order) can be used, and no trajectory storage is required, yielding significantly higher training efficiency.
-- Generalization gains are observed on out-of-distribution rewards as well.
+- **Negative samples are crucial**: Training only on positive samples (RFT) leads to mode collapse, whereas incorporating negative samples provides stability.
+- DiffusionNFT is entirely CFG-free yet rapidly improves from a very low baseline (GenEval 0.24 w/o CFG) to 0.98, surpassing FlowGRPO + CFG (0.95).
+- It allows for any solver (ODE/high-order) and does not require storing sampling trajectories, leading to significantly higher training efficiency.
+- Shows generalized improvements even for out-of-distribution rewards.
 
 ## Highlights & Insights
-- The conceptual shift from **reverse-process RL to forward-process RL** is the central contribution. The forward process of a diffusion model is uniquely determined whereas the reverse process depends on solver choice; performing RL over the forward process is more fundamental and circumvents the difficulty of likelihood estimation.
-- The **implicit parameterization** is particularly elegant: by defining $\mathbf{v}_\theta^+ = (1-\beta)\mathbf{v}^{\text{old}} + \beta \mathbf{v}_\theta$, training a single model is equivalent to simultaneously approaching positive and retreating from negative directions—far more efficient than explicitly training a guidance model.
-- The **NFT vs. GRPO** analogy mirrors **DPO vs. PPO** in LLMs: RL is reformulated within a supervised learning framework, substantially simplifying engineering.
+- The shift from **Reverse RL to Forward RL** is the core contribution. The forward process is unique while the reverse process is solver-dependent; performing RL on the former is more fundamental and avoids the difficulties of likelihood estimation.
+- The **implicit parameterization** technique is highly ingenious—by defining $\mathbf{v}_\theta^+ = (1-\beta)\mathbf{v}^{\text{old}} + \beta \mathbf{v}_\theta$, training one model becomes equivalent to "approaching the good while avoiding the bad." This is far more efficient than explicitly training a guidance model.
+- The **NFT vs GRPO** analogy is similar to DPO vs PPO in LLMs—transforming RL into a supervised learning framework, which simplifies engineering implementation.
 
 ## Limitations & Future Work
-- The choice of $\beta$ requires tuning; excessively large values lead to reward overfitting.
-- Positive/negative partitioning based on sampling probability rather than hard thresholds may introduce noise.
-- Evaluation is conducted solely on SD3.5-Medium; generalization to other architectures (SDXL / Flux / DiT) has not been verified.
-- Theoretical analysis assumes infinite data and model capacity; approximation errors in practice are not quantified.
-- Reward weighting in multi-reward joint training has not been systematically studied.
+- The choice of $\beta$ requires tuning; a value too large can lead to reward overfitting.
+- Classification of positive/negative samples is based on sampling probability rather than a hard threshold, which may introduce noise.
+- Only validated on SD3.5-Medium; not yet tested on other architectures (SDXL/Flux/DiT).
+- Theoretical analysis assumes infinite data and model capacity; the approximation error in practice is not quantified.
+- Reward weight settings for multi-reward joint training have not been systematically studied.
 
 ## Related Work & Insights
-- **vs. FlowGRPO**: Fundamentally different—forward-process RL vs. reverse-process RL. DiffusionNFT is 3–25× faster, requires no SDE sampler, and eliminates CFG.
-- **vs. DPO / DRaFT**: DiffusionNFT is an online (on-policy) method, avoiding the distributional shift inherent to offline approaches.
-- **vs. LLM NFT (Chen et al., 2025c)**: Transfers the NFT paradigm from language models to diffusion models, adapting it to leverage the properties of flow matching.
+- **vs FlowGRPO**: Fundamental difference—Forward RL vs Reverse RL. DiffusionNFT is 3-25× faster and operates without SDE samplers or CFG.
+- **vs DPO/DRaFT**: DiffusionNFT is on-policy, avoiding the distribution shift issues inherent in offline methods.
+- **vs LLM NFT (Chen et al., 2025c)**: Adapts the NFT paradigm from language models to diffusion models by leveraging the properties of flow matching.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Forward-process RL is an entirely new paradigm; implicit parameterization elegantly unifies positive and negative data training.
-- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Head-to-head comparison with FlowGRPO is clear and rigorous; multi-reward joint training evaluation is comprehensive.
-- Writing Quality: ⭐⭐⭐⭐⭐ Theoretical derivations are rigorous and clear; the analogy with CFG provides strong intuition; figures and tables are well designed.
-- Value: ⭐⭐⭐⭐⭐ Addresses multiple fundamental problems in diffusion RL (solver constraints, CFG dependence, efficiency); has strong potential to become the new standard.
+- Novelty: ⭐⭐⭐⭐⭐ Forward process RL is a brand-new paradigm, and implicit parameterization elegantly unifies positive/negative training.
+- Experimental Thoroughness: ⭐⭐⭐⭐⭐ Clear head-to-head comparison with FlowGRPO and comprehensive multi-reward joint training.
+- Writing Quality: ⭐⭐⭐⭐⭐ Theoretical derivations are rigorous and clear, analogies to CFG are intuitive, and chart design is excellent.
+- Value: ⭐⭐⭐⭐⭐ Solves several fundamental issues in diffusion RL (solver constraints, CFG reliance, efficiency), with the potential to become a new standard.
 
 <!-- RELATED:START -->
 
@@ -145,10 +148,10 @@ Each iteration proceeds as follows:
 ## Related Papers
 
 - [\[ICLR 2026\] Flow Matching with Injected Noise for Offline-to-Online Reinforcement Learning](flow_matching_with_injected_noise_for_offline-to-online_reinforcement_learning.md)
-- [\[CVPR 2026\] OARS: Process-Aware Online Alignment for Generative Real-World Image Super-Resolution](../../CVPR2026/image_generation/oars_process-aware_online_alignment_for_generative_real-world_image_super-resolu.md)
 - [\[AAAI 2026\] ORVIT: Near-Optimal Online Distributionally Robust Reinforcement Learning](../../AAAI2026/image_generation/orvit_near-optimal_online_distributionally_robust_reinforcement_learning.md)
+- [\[ICLR 2026\] Forward-Learned Discrete Diffusion: Learning how to noise to denoise faster](forward-learned_discrete_diffusion_learning_how_to_noise_to_denoise_faster.md)
 - [\[ICLR 2026\] EditScore: Unlocking Online RL for Image Editing via High-Fidelity Reward Modeling](editscore_unlocking_online_rl_for_image_editing_via_high-fidelity_reward_modelin.md)
-- [\[ICLR 2026\] Hierarchical Entity-centric Reinforcement Learning with Factored Subgoal Diffusion](hierarchical_entity-centric_reinforcement_learning_with_factored_subgoal_diffusi.md)
+- [\[CVPR 2026\] DRiffusion: Draft-and-Refine Process Parallelizes Diffusion Models with Ease](../../CVPR2026/image_generation/driffusion_draft-and-refine_process_parallelizes_diffusion_models_with_ease.md)
 
 </div>
 

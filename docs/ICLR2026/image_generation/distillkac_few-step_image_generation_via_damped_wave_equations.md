@@ -2,86 +2,85 @@
 title: >-
   [Paper Note] DistillKac: Few-Step Image Generation via Damped Wave Equations
 description: >-
-  [ICLR 2026][Image Generation][damped wave equation] This paper replaces the Fokker-Planck equation with the damped wave equation (telegrapher's equation) and its stochastic Kac representation as the probabilistic flow fo…
+  [ICLR 2026][Image Generation][damped wave equation] The telegrapher equation (damped wave equation) and its stochastic Kac representation are proposed as the foundation for generative probability flows to replace the Fokker-Planck equation. This framework achieves finite-speed propagation, and an endpoint distillation method is introduced for few-step generation, achiev
 tags:
-  - "ICLR 2026"
-  - "Image Generation"
-  - "damped wave equation"
-  - "Kac process"
-  - "finite-speed flow"
-  - "endpoint distillation"
-  - "few-step generation"
+  - ICLR 2026
+  - Image Generation
+  - damped wave equation
+  - Kac process
+  - finite-speed flow
+  - endpoint distillation
+  - few-step generation
 date: 2026-05-08
-content_hash: 04396f3b3693cd2c
+content_hash: 32a64004f6eb305e
 ---
-
 # DistillKac: Few-Step Image Generation via Damped Wave Equations
 
-**Conference**: ICLR 2026
+**Conference**: ICLR 2026  
 **arXiv**: [2509.21513](https://arxiv.org/abs/2509.21513)  
 **Code**: None  
-**Area**: Diffusion Models / Few-Step Generation / Novel PDE Framework
+**Area**: Diffusion Models / Few-step Generation / New PDE Framework  
 **Keywords**: damped wave equation, Kac process, finite-speed flow, endpoint distillation, few-step generation
 
 ## TL;DR
-This paper replaces the Fokker-Planck equation with the damped wave equation (telegrapher's equation) and its stochastic Kac representation as the probabilistic flow foundation for generative models, enabling finite-speed propagation. An endpoint distillation method is proposed for few-step generation, achieving FID=4.14 in 4 steps and FID=5.66 in 1 step on CIFAR-10.
+The telegrapher equation (damped wave equation) and its stochastic Kac representation are proposed as the foundation for generative probability flows to replace the Fokker-Planck equation. This framework achieves finite-speed propagation, and an endpoint distillation method is introduced for few-step generation, achieving FID=4.14 in 4 steps and FID=5.66 in 1 step on CIFAR-10.
 
 ## Background & Motivation
 
-**Background**: Diffusion models are grounded in the Fokker-Planck equation (a parabolic PDE), whose reverse velocity field becomes stiff near the terminal time, as the diffusion process permits infinite propagation speed.
+**Background**: Diffusion models are based on the Fokker-Planck equation (a parabolic PDE), where the reverse velocity field becomes stiff near the terminal time because the diffusion process allows for infinite propagation speed.
 
-**Limitations of Prior Work**: The velocity norm of the reverse ODE can grow unboundedly as $t \to T$, causing numerical instability near the endpoint and requiring a large number of steps to guarantee accuracy. During distillation, student models tend to deviate from teacher trajectories under large step sizes.
+**Limitations of Prior Work**: The norm of the reverse ODE velocity can grow unboundedly as $t \to T$, leading to instability in terminal sampling and requiring many steps to ensure precision. During distillation, student models easily deviate from teacher trajectories at large step sizes.
 
-**Key Challenge**: Infinite propagation speed → stiff velocity field → unstable sampling → many steps required. Can this problem be addressed at the PDE level?
+**Key Challenge**: Infinite speed propagation $\to$ velocity field stiffness $\to$ sampling instability $\to$ requirement for many steps. Can this be resolved at the PDE level?
 
-**Goal**: Introduce a hyperbolic PDE (damped wave equation) as an alternative, exploiting its finite-speed propagation to obtain more stable few-step generation.
+**Goal**: Introduce a hyperbolic PDE (damped wave equation) as an alternative to leverage its finite-speed propagation characteristics for more stable few-step generation.
 
-**Key Insight**: The damped wave equation generalizes the Fokker-Planck equation — diffusion emerges as the limit when both damping and speed tend to infinity. The Kac process naturally imposes a velocity upper bound $c$, guaranteeing globally bounded kinetic energy and Lipschitz regularity in Wasserstein space.
+**Key Insight**: The damped wave equation is a generalization of the Fokker-Planck equation—diffusion is the limit when damping and velocity tend toward infinity. The Kac process naturally possesses a velocity upper bound $c$, ensuring globally bounded kinetic energy and Lipschitz regularity in Wasserstein space.
 
-**Core Idea**: Finite-speed probabilistic flow ensures that endpoint matching automatically guarantees proximity along the entire path, thereby stabilizing few-step distillation.
+**Core Idea**: Probability flows with finite speed allow endpoint matching to automatically guarantee path proximity, making few-step distillation more stable.
 
 ## Method
 
 ### Overall Architecture
 
-- **PDE Replacement**: Replaces the Fokker-Planck equation with the damped wave equation $\partial_{tt} p + \lambda \partial_t p = c^2 \nabla^2 p$
-- **Stochastic Kac Representation**: Particles move at finite speed $c$, with velocity direction reversed (1D) or resampled (high-dimensional) according to a Poisson process
-- **Guided Kac Flow**: Incorporates CFG in the velocity space while preserving square-integrability
-- **Endpoint Distillation**: The student matches the teacher's output at the endpoints of each time interval
+This paper addresses the "terminal velocity field stiffness" in few-step generation by modifying the underlying PDE. The Fokker-Planck equation (parabolic) is replaced with the damped wave equation $\partial_{tt} p + \lambda \partial_t p = c^2 \nabla^2 p$ (hyperbolic, also known as the telegrapher equation). The pipeline consists of three stages: first, constructing a **finite-speed** probability flow using the Kac representation (position-velocity coupling where velocity is bounded by $c$); second, applying classifier-free guidance in the velocity space to obtain a Guided Kac Flow (the 100-step teacher); and finally, using endpoint distillation to compress the teacher into a 1-step student. The key is that since the flow is velocity-bounded and trajectories stay within causal cones, aligning endpoints "for free" ensures path alignment.
+
+```mermaid
+graph TD
+    A["Data / Noise<br/>Position-Velocity Coupling"] --> B["Finite-Speed Probability Flow<br/>Kac Process: Velocity ≤ c"]
+    B --> C["Velocity-Space CFG<br/>Guided Kac Flow (Teacher, 100 steps)"]
+    C --> D["Endpoint Distillation<br/>100→20→4→2→1 Compression"]
+    D --> E["Few-Step Image Generation<br/>1~4 Step Sampling"]
+```
 
 ### Key Designs
 
-1. **Finite-Speed Probabilistic Flow**:
+**1. Finite-Speed Probability Flow: Using the Kac process to bound the velocity field $c$ and eliminate terminal stiffness**
 
-    - Function: Replaces the diffusion SDE with the Kac process, yielding a globally bounded velocity field
-    - Mechanism: In the Kac process, particle position $X_t$ and velocity $V_t$ evolve jointly, with $|V_t| \leq c$, so trajectories remain within the causal cone and cannot propagate infinitely
-    - Design Motivation: Bounded velocity → no terminal stiffness → more stable numerical integration → more robust few-step sampling
+The norm of the reverse ODE velocity in diffusion models grows unboundedly near $t \to T$ because Fokker-Planck allows infinite propagation speed. This paper adopts the stochastic Kac representation of the damped wave equation: the particle's position $X_t$ and velocity $V_t$ evolve together, with $|V_t| \leq c$. Velocity direction flips according to a Poisson process in 1D or resamples in high dimensions. With a hard speed limit, trajectories are confined to causal cones, resulting in globally bounded kinetic energy and Lipschitz regularity in Wasserstein space. This removes terminal stiffness, making numerical integration more stable for few-step sampling.
 
-2. **Endpoint Distillation + Path Stability Theorem (Theorem 8)**:
+**2. Velocity-Space CFG: Guidance in the velocity field to preserve speed constraints**
 
-    - Function: Proves that endpoint matching guarantees proximity along the entire trajectory
-    - Mechanism: By exploiting the Lipschitz regularity of the Kac flow, if the student and teacher agree at endpoints $t_k$, they remain close throughout the interval $[t_{k+1}, t_k]$, with errors decaying at $O(M^{-1})$ (Euler student)
-    - Design Motivation: This is an advantage unique to finite-speed flows — infinite-speed diffusion flows cannot guarantee such stability
+Traditional CFG operates in the score space, which might produce extrapolated fields that violate finite-speed constraints. This work applies guidance directly to the Kac velocity field:
 
-3. **Velocity-Space CFG**:
+$$u_{\text{guided}} = (1+w)\, u_\theta^{\text{cond}} - w\, u_\theta^{\text{uncond}}$$
 
-    - Function: Applies classifier-free guidance to the Kac velocity field
-    - Mechanism: $u_{\text{guided}} = (1+w) u_\theta^{\text{cond}} - w u_\theta^{\text{uncond}}$, proved to preserve square-integrability under mild conditions
-    - Design Motivation: Conventional CFG operates in score space and may violate the finite-speed constraint; operating in velocity space naturally preserves it
+It is proven that under mild conditions, this guided field remains square-integrable, meaning the finite-speed structure is preserved. The resulting Guided Kac Flow serves as the stable teacher for distillation.
+
+**3. Endpoint Distillation + Path Stability (Theorem 8): Aligning endpoints ensures trajectory alignment**
+
+Standard distillation fails when students deviate from teacher paths at large steps. This method trains the student to match the teacher's output at interval endpoints $t_k$ (endpoint MSE). Theorem 8 proves that due to the Lipschitz regularity of Kac flows, aligning endpoints ensures the student and teacher remain close throughout the interval $[t_{k+1}, t_k]$, with the error decaying as $O(M^{-1})$ (where $M$ is the Euler student steps). Finite-speed flows uniquely provide this endpoint-to-path stability guarantee.
 
 ### Loss & Training
 
-- UNet backbone; evaluated on CIFAR-10, CelebA-64, and LSUN Bedroom-256
-- Teacher: 100-step Guided Kac Flow (AB-2 integrator)
-- Distillation: iterative schedule 100→20→4→2→1 steps
-- Endpoint MSE loss
+The teacher is a 100-step Guided Kac Flow integrated using AB-2 (second-order Adams-Bashforth), which provides second-order precision with one function evaluation per step. The distillation target is endpoint MSE, performed iteratively in stages (100→20→4→2→1). The backbone is a UNet trained on CIFAR-10, CelebA-64, and LSUN Bedroom-256.
 
 ## Key Experimental Results
 
 ### Main Results
 
 | Method | NFE | FID (CIFAR-10) | FID (CelebA-64) |
-|--------|-----|----------------|-----------------|
+|------|-----|---------------|----------------|
 | Guided Kac Flow (100 steps, AB-2) | 100 | 3.58 | 3.50 |
 | **DistillKac** | **20** | **3.72** | **3.42** |
 | DistillKac | 4 | 4.14 | 4.36 |
@@ -93,45 +92,43 @@ This paper replaces the Fokker-Planck equation with the damped wave equation (te
 | iCT | 2 | 2.46 | — |
 
 ### Key Findings
-- Distilling from 100 to 1 step increases FID by only 2.08 (3.58→5.66), demonstrating the endpoint stability advantage of finite-speed flow
-- At 20 steps, DistillKac (3.72) substantially outperforms DDIM (6.84); the gap widens further at 4 steps (4.14 vs. unavailable)
-- The AB-2 integrator achieves the best efficiency: second-order accuracy with only one function evaluation per step
-- Absolute FID values remain below EDM (1.79) and iCT (2.46), indicating that the base Kac flow model's fitting capacity requires further improvement
+- Distilling from 100 to 1 step only increases FID by 2.08 (3.58→5.66), demonstrating the endpoint stability of finite-speed flows.
+- At 20 steps, DistillKac (3.72) significantly outperforms DDIM (6.84); the gap widens at 4 steps.
+- The AB-2 integrator is highly efficient, providing high precision with optimized function evaluations.
+- Absolute FID values are currently higher than EDM (1.79) or iCT (2.46), suggesting the base Kac flow model capability needs further improvement.
 
 ## Highlights & Insights
-- **PDE-Level Innovation**: Extending generative models from parabolic PDEs (Fokker-Planck) to hyperbolic PDEs (damped wave equation) represents a fundamental paradigm shift. The taxonomy in Table 1 — mapping three PDE classes (parabolic/elliptic/hyperbolic) to three families of generative models — is highly illuminating.
-- The **endpoint-to-path stability theorem** is the core theoretical contribution: the geometric properties of finite-speed flows allow endpoint supervision to yield path consistency "for free," providing the theoretical foundation for the distillation design.
-- Potential impact: If the base Kac flow model quality can be further improved (e.g., via DiT), the stability advantages of finite-speed propagation may become even more pronounced at scale.
+- **PDE Innovation**: Expanding generative models from parabolic PDEs (Fokker-Planck) to hyperbolic PDEs (damped wave equation) is a fundamental paradigm shift.
+- **Endpoint-Path Stability**: Theorem 8 is a core theoretical contribution, showing that the geometric properties of finite-speed flows allow "free" path consistency from endpoint supervision.
+- **Potential**: The stability benefits of finite-speed flows might become more significant in large-scale models (e.g., using DiT).
 
 ## Limitations & Future Work
-- Absolute generation quality falls short of SOTA (FID 3.58 vs. EDM 1.79); the base Kac flow model requires improvement
-- Validation is limited to small-scale datasets (CIFAR-10, CelebA-64); experiments on ImageNet or high-resolution benchmarks are absent
-- The speed bound $c$ and damping rate $\lambda$ of the Kac process require tuning, increasing the hyperparameter burden
-- The efficiency of the directional resampling mechanism for Kac processes in high dimensions is not thoroughly analyzed
-- Comparison with consistency models (iCT, sCT) is insufficiently comprehensive
+- Absolute generation quality lags behind SOTA (FID 3.58 vs EDM 1.79).
+- Validation is limited to small-scale datasets (CIFAR-10, CelebA-64); lacks ImageNet or high-resolution experiments.
+- Hyperparameters like speed bound $c$ and damping rate $\lambda$ require tuning.
+- Comparison with consistency models (iCT, sCT) is not exhaustive.
 
 ## Related Work & Insights
-- **vs. Kac Flow (Duong et al., 2026)**: DistillKac builds on this work by adding CFG and distillation, reducing FID from 6.42 to 3.58 (100 steps) and 5.66 (1 step)
-- **vs. Progressive Distillation**: Conceptually similar, but with a distinct theoretical foundation — DistillKac provides formal guarantees via the endpoint-to-path stability theorem
-- **vs. Flow Matching / Rectified Flow**: Both are ODE-based flows, but the Kac process imposes a finite-speed constraint that may yield greater stability near the terminal time
+- **vs Kac Flow (Duong et al., 2026)**: DistillKac adds CFG and distillation, improving 100-step FID from 6.42 to 3.58.
+- **vs Progressive Distillation**: Similar concept but different theoretical foundation—DistillKac offers endpoint-path stability guarantees.
+- **vs Flow Matching**: Both use ODE flows, but Kac introduces finite-speed constraints for better terminal stability.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ Pioneering hyperbolic PDE framework for generative models; outstanding theoretical contribution
-- Experimental Thoroughness: ⭐⭐⭐ Limited to small datasets; absolute performance is not sufficiently strong
-- Writing Quality: ⭐⭐⭐⭐⭐ Rigorous and elegant theoretical derivations; the mapping from PDEs to generative models is clearly presented
-- Value: ⭐⭐⭐⭐ Opens a new direction (hyperbolic generative models), but further work is needed to validate large-scale feasibility
+- Novelty: ⭐⭐⭐⭐⭐ Pioneering hyperbolic PDE framework for generative models.
+- Experimental Thoroughness: ⭐⭐⭐ Restricted to small datasets; absolute performance is not yet top-tier.
+- Writing Quality: ⭐⭐⭐⭐⭐ Rigorous theoretical derivation and clear mapping from PDE to generative modeling.
+- Value: ⭐⭐⭐⭐ Opens a new direction (hyperbolic generative models), though large-scale feasibility requires further validation.
 
 <!-- RELATED:START -->
-
 <div class="related-papers" markdown="1">
 
 ## Related Papers
 
+- [\[ICLR 2026\] FALCON: Few-step Accurate Likelihoods for Continuous Flows](falcon_few-step_accurate_likelihoods_for_continuous_flows.md)
+- [\[ICLR 2026\] PairFlow: Closed-Form Source-Target Coupling for Few-Step Generation in Discrete Flow Models](pairflow_closed-form_source-target_coupling_for_few-step_generation_in_discrete_.md)
+- [\[ICLR 2026\] BézierFlow: Learning Bézier Stochastic Interpolant Schedulers for Few-Step Generation](bézierflow_learning_bézier_stochastic_interpolant_schedulers_for_few-step_genera.md)
+- [\[ICLR 2026\] Generalised Flow Maps for Few-Step Generative Modelling on Riemannian Manifolds](generalised_flow_maps_for_few-step_generative_modelling_on_riemannian_manifolds.md)
 - [\[CVPR 2026\] Uni-DAD: Unified Distillation and Adaptation of Diffusion Models for Few-step Few-shot Image Generation](../../CVPR2026/image_generation/uni-dad_unified_distillation_and_adaptation_of_diffusion_models_for_few-step_few.md)
-- [\[ICML 2026\] Envisioning Beyond the Few: Disentangled Semantics and Primitives for Few-Shot Atypical Layout-to-Image Generation](../../ICML2026/image_generation/envisioning_beyond_the_few_disentangled_semantics_and_primitives_for_few-shot_at.md)
-- [\[CVPR 2026\] Refining Few-Step Text-to-Multiview Diffusion via Reinforcement Learning](../../CVPR2026/image_generation/refining_few-step_text-to-multiview_diffusion_via_reinforcement_learning.md)
-- [\[ICCV 2025\] Learning Few-Step Diffusion Models by Trajectory Distribution Matching](../../ICCV2025/image_generation/learning_few-step_diffusion_models_by_trajectory_distribution_matching.md)
-- [\[ICLR 2026\] RMFlow: Refined Mean Flow by a Noise-Injection Step for Multimodal Generation](rmflow_refined_mean_flow_by_a_noise-injection_step_for_multimodal_generation.md)
 
 </div>
 

@@ -2,19 +2,18 @@
 title: >-
   [Paper Note] Draw-In-Mind: Rebalancing Designer-Painter Roles in Unified Multimodal Models Benefits Image Editing
 description: >-
-  [ICLR 2026][Image Generation][Unified Multimodal Model] This paper identifies a role imbalance in existing unified multimodal models, where the understanding module merely acts as a translator while the generation module…
+  [ICLR 2026][Image Generation][Unified Multimodal Model] This paper identifies a responsibility imbalance in current unified multimodal models where the understanding module acts merely as a translator, forcing the generative module to simultaneously serve as both "designer" and "painter." By constructing the DIM dataset (14M long-context image-text pairs + 233K CoT editing
 tags:
-  - "ICLR 2026"
-  - "Image Generation"
-  - "Unified Multimodal Model"
-  - "Chain-of-Thought"
-  - "image editing"
-  - "Designer-Painter"
-  - "Data-Centric"
+  - ICLR 2026
+  - Image Generation
+  - Unified Multimodal Model
+  - Chain-of-Thought
+  - image editing
+  - Designer-Painter
+  - Data-Centric
 date: 2026-05-08
-content_hash: 1007c7164d08dc74
+content_hash: e5a409965c0bcb6b
 ---
-
 # Draw-In-Mind: Rebalancing Designer-Painter Roles in Unified Multimodal Models Benefits Image Editing
 
 **Conference**: ICLR 2026  
@@ -24,106 +23,115 @@ content_hash: 1007c7164d08dc74
 **Keywords**: Unified Multimodal Model, Chain-of-Thought, image editing, Designer-Painter, Data-Centric
 
 ## TL;DR
-This paper identifies a role imbalance in existing unified multimodal models, where the understanding module merely acts as a translator while the generation module is forced to simultaneously serve as both "designer" and "painter." By constructing the DIM dataset (14M long-context text-image pairs + 233K CoT editing blueprints), design responsibilities are transferred to the understanding module. The resulting 4.6B-parameter model surpasses models five times its size.
+This paper identifies a responsibility imbalance in current unified multimodal models where the understanding module acts merely as a translator, forcing the generative module to simultaneously serve as both "designer" and "painter." By constructing the DIM dataset (14M long-context image-text pairs + 233K CoT editing blueprints), the design responsibility is shifted to the understanding module, allowing a 4.6B parameter model to outperform models five times its size.
 
 ## Background & Motivation
-**Background**: Unified multimodal understanding and generation models (e.g., Show-o, BAGEL, UniWorld) achieve strong performance on text-to-image (T2I) generation, yet still lag significantly behind proprietary models such as GPT-4o-Image on instruction-guided image editing.
+**Background**: Unified multimodal understanding and generation models (e.g., Show-o, BAGEL, UniWorld) perform excellently in T2I generation but still lag significantly behind proprietary models like GPT-4o-Image in instruction-guided image editing.
 
-**Limitations of Prior Work**: In existing editing models, the understanding module encodes user instructions purely as semantic conditions (acting as a "translator"), while the generation module must simultaneously infer original layouts, localize edit regions, and render new content (acting as both "designer" and "painter"). This allocation of responsibilities is fundamentally unreasonable.
+**Limitations of Prior Work**: The understanding modules of existing editing models only encode user instructions into semantic conditions (acting as "translators"), while the generative modules must simultaneously infer the original layout, localize the editing area, and render new content (acting as both "designer" and "painter"). This distribution of responsibilities is highly sub-optimal.
 
-**Key Challenge**: The understanding module is typically trained on complex reasoning tasks with several times more data than the generation module, yet remains underutilized for design planning. Simply scaling parameters (e.g., Step1X-Edit's 12.5B generation parameters) is not an effective strategy.
+**Key Challenge**: Understanding modules are typically trained on complex reasoning tasks with much larger datasets than generative modules, yet they are underutilized for design planning. Simply scaling the parameter size (e.g., Step1X-Edit's 12.5B generative parameters) is not an effective strategy.
 
-**Goal**: How can the responsibilities of the understanding and generation modules be rebalanced to enable more effective editing?
+**Goal**: How to rebalance the division of labor between understanding and generation modules for more efficient editing?
 
-**Key Insight**: A data-centric approach—constructing an editing dataset with CoT reasoning blueprints so that an external designer (MLLM) performs edit planning in text space, leaving the generation module only the task of "painting."
+**Key Insight**: Data-centric approach—constructing an editing dataset containing CoT reasoning blueprints, allowing an external designer (MLLM) to complete the editing planning in the text space, so the generative module only needs to execute "painting."
 
-**Core Idea**: Transfer "design" responsibilities from the generation module to the understanding module, explicitly reducing the cognitive burden on the generation module via CoT editing blueprints.
+**Core Idea**: Shift the "design" responsibility from the generative module to the understanding module, explicitly reducing the cognitive burden on the generative module through CoT editing blueprints.
 
 ## Method
 
 ### Overall Architecture
-A connector-based architecture is employed: a frozen Qwen2.5-VL-3B (understanding module) is connected to a trainable SANA1.5-1.6B (generation module) via a two-layer MLP, with a total of only 4.6B parameters. At inference time, an external designer (e.g., GPT-4o) generates a CoT editing blueprint, upon which the model executes the edit.
+DIM aims to resolve the role imbalance in unified multimodal models where the understanding module acts only as a translator and the generative module is forced to be both designer and painter. The architecture is minimalist: a frozen Qwen2.5-VL-3B serves as the understanding module, connected via a two-layer MLP to a trainable SANA1.5-1.6B generative module, totaling only 4.6B parameters. The system is driven by data: a long-context T2I annotation allows the generative module to learn fine-grained text-to-image correspondence, and an instruction dataset with four-step CoT editing blueprints shifts the design responsibility—what to change and how—from the generation side to the text space. These are injected into the model through two-stage training. During inference, an external designer (default GPT-4o) first writes the editing blueprint, and the generative module only needs to follow the blueprint to draw the image.
+
+```mermaid
+%%{init: {'flowchart': {'rankSpacing': 24, 'nodeSpacing': 28, 'padding': 6, 'wrappingWidth': 400, 'subGraphTitleMargin': {'top': 8, 'bottom': 16}}}}%%
+flowchart TD
+    SRC["High-res Web Images<br/>+ Existing Editing Pairs"] --> D1["DIM-T2I Long-context Annotation<br/>21 Dimensions → 146 Words/Prompt"]
+    SRC --> D2
+    subgraph D2G["DIM-Edit 4-step CoT Editing Blueprints"]
+        direction TB
+        D2["GPT-4o 3-level Quality Assessment<br/>Discard/Complete/Refine Instructions"] --> D2b["4-step CoT: Global Layout → Local Objects<br/>→ Localize Edit Area → Imagine Result"]
+    end
+    D1 --> TR["Two-stage Editing Training<br/>Frozen Qwen2.5-VL-3B + 2-layer MLP + SANA1.5-1.6B"]
+    D2b --> TR
+    TR --> INF["Inference: External Designer writes blueprint<br/>→ DIM-4.6B-Edit draws accordingly"]
+    INF --> OUT["Edited Image"]
+```
 
 ### Key Designs
-1. **DIM-T2I Dataset (14M)**: High-resolution (≥512²) images are collected from the web and annotated along 21 dimensions using an internal model, producing long-context captions. The average prompt length reaches 146.76 words (existing datasets typically have <40 words), providing a foundation for complex CoT comprehension.
 
-2. **DIM-Edit Dataset (233K)**:
+**1. DIM-T2I Long-context Annotation: Teaching the understander "Global Perception"**
 
-    - Data sources: 160K UltraEdit (filtered via joint SSIM/DINO/CLIP criteria) + 46K ShareGPT-4o-Image + 27K manually edited data.
-    - **Quality Assessment**: GPT-4o classifies original prompts into three categories—Misaligned (discarded), Partially Aligned (supplemented with unmentioned modifications), and Aligned (disambiguated and refined).
-    - **CoT Blueprint Generation**: GPT-4o generates a four-step CoT for each image pair: (1) global layout perception, (2) local object perception, (3) edit region localization, and (4) imagination of the edited image. The average prompt length reaches 252.64 words, far exceeding existing datasets.
+For the generative module to make fewer mistakes during editing, it must first understand fine-grained image-text correspondences. However, existing T2I prompts are generally short and lack descriptive granularity. DIM collects high-resolution ($\ge 512^2$) images from the web and uses internal models to generate long-context annotations across 21 dimensions, pushing the average prompt length to 146.76 words. This step does not directly teach editing but allows the connector and generative module to adapt to mapping "dense text → fine-grained images" during the T2I pre-training phase, laying the foundation for processing complex CoT blueprints later.
 
-3. **Two-Stage Training Strategy**:
+**2. DIM-Edit 4-step CoT Editing Blueprints: Decomposing editing into executable design drafts**
 
-    - T2I Stage: The connector and SANA1.5-1.6B are trained on DIM-T2I + 6.9M public data, with Qwen2.5-VL-3B frozen.
-    - Editing Stage I: Fine-tuned on UltraEdit to acquire basic editing capabilities (source images concatenated with noise along the channel dimension).
-    - Editing Stage II: Fine-tuned on DIM-Edit, yielding the final DIM-4.6B-Edit model.
+This is the core of the work, addressing the overload where the generative module serves as both designer and painter. For data sources, DIM aggregates 233K image pairs from existing sources like UltraEdit, ShareGPT-4o-Image, and manual edits (using a high-consistency subset of UltraEdit filtered by SSIM/DINO/CLIP). Since original instruction quality varies, GPT-4o first classifies each prompt into three categories: Misaligned (discarded), Partially Aligned (completing missing modifications), and Aligned (disambiguation and refinement). These cleaned instructions and source images are then fed to GPT-4o to write four-step CoT blueprints: Global Layout Perception (identifying key objects and positions), Local Object Perception (describing shapes/colors/textures/states), Edit Area Localization, and Edited Image Imagination. This reasoning chain explicitly defines what and where to change in text, with an average length of 252.64 words. The generative module no longer receives a vague instruction but a blueprint nearly equivalent to a final draft, effectively shifting the cognitive load to the text space.
+
+**3. Two-stage Editing Training: Learning basic editing then blueprint execution**
+
+To prevent interference between T2I and CoT editing capabilities, training is done sequentially. The T2I stage trains the connector and SANA1.5-1.6B on DIM-T2I plus 6.9M public data while freezing Qwen2.5-VL-3B to establish dense mappings. The first editing stage fine-tunes on UltraEdit, where the source image is concatenated with noise along the channel dimension to learn basic editing intuition. The second editing stage fine-tunes on DIM-Edit with CoT blueprints, narrowing the generative module's role to strictly "executing the design draft," resulting in DIM-4.6B-Edit.
 
 ### Loss & Training
-- Vanilla flow matching is used as the sole training objective.
-- Optimizer: AdamW; learning rate $2 \times 10^{-5}$ for T2I, $1 \times 10^{-4}$ for Editing Stage I, and $1 \times 10^{-5}$ for Stage II.
-- T2I batch size: 256 (8 epochs); editing batch size: 32 (Stage I: 10 epochs, Stage II: 50 epochs).
-- Distillation data such as BLIP3-o-60K are deliberately excluded to prevent data leakage and benchmark hacking.
-- GPT-4o is used as the default designer at inference time; the effectiveness of multiple designers including GPT-5 and Claude is also validated.
-- During editing inference, the designer does not access the target image (only the source image and instruction are provided), ensuring alignment with real-world usage scenarios.
+The entire process uses vanilla flow matching as the objective function without additional distillation or alignment losses. The optimizer is AdamW. The T2I stage uses a learning rate of $2 \times 10^{-5}$ and batch size 256 for 8 epochs. Editing Stage I uses $1 \times 10^{-4}$ and batch size 32 for 10 epochs. Stage II reduces the learning rate to $1 \times 10^{-5}$ for 50 epochs. Distillation data like BLIP3-o-60K is intentionally excluded to avoid data leakage or benchmark hacking. During inference, GPT-4o is used as the default designer, though experiments confirm GPT-5 and Claude are also effective. Crucially, the designer only sees the source image and instruction during inference, matching real-world scenarios.
 
 ## Key Experimental Results
 
 ### Main Results (ImgEdit Benchmark)
 
 | Model | Params | Add | Replace | Remove | Background | Style | Action | Overall |
-|-------|--------|-----|---------|--------|------------|-------|--------|---------|
+|------|--------|-----|---------|--------|------------|-------|--------|---------|
 | Step1X-Edit | 7B+12.5B | 3.88 | 3.40 | 2.41 | 3.16 | 4.63 | 2.52 | 3.06 |
 | BAGEL | 14B | 3.56 | 3.30 | 2.62 | 3.24 | 4.49 | 4.17 | 3.20 |
 | UniWorld-V1 | 7B+12B | 3.82 | 3.47 | 3.24 | 2.99 | 4.21 | 2.74 | 3.26 |
 | GPT-4o-Image | — | 4.61 | 4.35 | 3.66 | 4.57 | 4.93 | 4.89 | 4.20 |
 | **DIM-4.6B-Edit** | **3B+1.6B** | **4.09** | **4.00** | **3.43** | **3.87** | **4.92** | **4.08** | **3.67** |
 
-*DIM significantly outperforms open-source models in the 14B–19B range with fewer than 5B parameters, narrowing the gap with GPT-4o-Image.*
+*DIM significantly outperforms open-source models in the 14B-19B range with less than 5B parameters, narrowing the gap with GPT-4o-Image.*
 
-### GEdit-Bench-EN (Text Change task excluded)
+### GEdit-Bench-EN (Excluding Text Change tasks)
 
 | Model | BC | CA | MA | MC | SC | SA | SRM | SRP | TT | AVG (w/o TC) |
-|-------|----|----|----|----|----|----|-----|-----|----|-------------|
+|------|----|----|----|----|----|----|-----|-----|----|-------------|
 | Step1X-Edit | 7.03 | 6.26 | 6.46 | 3.66 | 7.24 | 7.17 | 6.42 | 7.39 | 6.62 | 6.35 |
 | **DIM-4.6B-Edit** | **7.02** | **6.81** | **6.00** | **4.67** | **7.16** | **7.48** | **6.67** | **6.76** | **6.55** | **6.50** |
 
 ### Key Findings
-- With only 1.6B generation parameters, DIM surpasses Step1X-Edit backed by 12B FLUX, validating that data quality outweighs parameter scale.
-- Janus-4o (7B), trained on the same data (ShareGPT-4o-Image), performs substantially worse than DIM, demonstrating that the gains stem from the CoT blueprints themselves rather than the data source.
-- Multiple external designers (GPT-4o, GPT-5, Claude, etc.) all effectively drive DIM, confirming the generalizability of the framework.
-- T2I quality is also strong: GenEval 0.77, MJHQ-30K FID best of 5.50.
+- 1.6B generative parameters can outperform the 12B FLUX backend of Step1X-Edit, verifying that data quality > parameter scale.
+- Janus-4o (7B), trained on similar data (ShareGPT-4o-Image), performs significantly worse than DIM, indicating the gain comes from the CoT blueprint itself rather than the data source.
+- Different external designers (GPT-4o, GPT-5, Claude) can effectively drive DIM, proving the framework's generalization.
+- Strong T2I quality: GenEval 0.77, and an optimal FID of 5.50 on MJHQ-30K.
 
 ## Highlights & Insights
-- **Insightful Diagnosis**: Attributing editing failures to "role imbalance" rather than insufficient model size is a highly original perspective.
-- **Exemplary Data Engineering**: The four-step CoT blueprint design (perception → localization → imagination) closely mirrors the human editing thought process.
-- **Extreme Efficiency**: Only a two-layer MLP is used as the connector (MetaQuery employs a 1.6B transformer), demonstrating that complex connectors are unnecessary.
-- **Rigorous Data Curation**: Three-tier prompt quality assessment combined with multi-dimensional filtering effectively mitigates common noise in AI-generated data.
-- **Design/Execution Separation Paradigm**: This paradigm is transferable to other generative tasks requiring complex reasoning.
+- **Deep Insight**: Attributing editing failure to "role imbalance" rather than insufficient model size is a novel and effective perspective.
+- **Superior Data Engineering**: The four-step CoT design (Perception → Localization → Imagination) aligns closely with the human cognitive process of image editing.
+- **Extreme Efficiency**: Using only a two-layer MLP as a connector (compared to MetaQuery's 1.6B transformer) proves that complex connectors are not mandatory.
+- **Rigorous Data Cleaning**: Three-level prompt quality assessment and multi-dimensional filtering avoid common noise in AI-generated data.
+- **Design/Execution Separation Paradigm**: This paradigm can be generalized to other generation tasks requiring complex reasoning.
 
 ## Limitations & Future Work
-- Reliance on an external MLLM (GPT-4o) as the designer increases inference cost and API dependency.
-- Performance on the Text Change task is relatively weak due to the absence of corresponding training data; text editing data should be supplemented in future work.
-- Internalizing the designer into the model has not been explored; an end-to-end approach may be preferable.
-- The two-stage editing training may introduce catastrophic forgetting; curriculum learning strategies warrant further investigation.
-- The 14M-scale DIM-T2I dataset still imposes considerable computational demands.
-- Although L1 and CLIP-I metrics on the MagicBrush test set are competitive, the DINO metric underperforms certain methods, indicating room for improvement in fine-grained semantic preservation.
-- Only single-round editing is currently supported; multi-round iterative editing (e.g., modifying background followed by foreground) remains to be explored.
+- Dependency on external MLLMs (GPT-4o) as designers increases inference costs and API reliance.
+- Performance on Text Change tasks is relatively weak due to a lack of specific training data.
+- Internalizing the designer into the model (currently external) was not explored; an end-to-end solution might be superior.
+- The two-stage training for editing might introduce forgetting; curriculum learning strategies could be optimized.
+- The 14M data scale for DIM-T2I still requires significant computational resources.
+- While L1 and CLIP-I metrics on MagicBrush are superior, the DINO metric lags behind some methods, suggesting room for improvement in fine-grained semantic preservation.
+- Currently only supports single-turn editing; support for multi-turn iterative editing needs further exploration.
 
 ## Related Work & Insights
-- **MetaQuery**: Also a connector-based unified model, but employs a large 1.6B transformer connector; DIM achieves comparable performance with a two-layer MLP, suggesting the key bottleneck lies in data rather than connector architecture.
-- **BAGEL**: A 14B integrated unified model whose editing performance is inferior to DIM's 4.6B, confirming that "bigger is not always better."
-- **Step1X-Edit / UniWorld-V1**: State-of-the-art large-scale editing models (7B+12B backends), both surpassed by DIM with fewer parameters.
-- **Janus-4o**: Trained on the same ShareGPT-4o-Image data but achieves an Overall score of only 3.19 (vs. DIM's 3.67), demonstrating that the gains from CoT blueprints do not derive from the data source itself.
-- **InstructPix2Pix**: An early editing model; DIM's two-stage training strategy is inspired by its channel-concatenation design.
-- **UltraEdit**: A large-scale AI editing dataset; DIM selects a high-consistency subset for Stage I training.
-- **Insight**: As gains from architectural innovations plateau, **high-quality data design**—particularly CoT reasoning chains—may represent a more efficient breakthrough path. The "plan first, then execute" paradigm in human editing workflows can be directly translated into data design principles.
+- **MetaQuery**: Also a connector-based unified model but uses a 1.6B transformer connector; DIM matches it with a 2-layer MLP, indicating the bottleneck is data, not connector architecture.
+- **BAGEL**: A 14B integrated unified model whose editing performance is inferior to DIM's 4.6B, confirming "bigger is not always better."
+- **Step1X-Edit / UniWorld-V1**: Large-scale editing models (7B+12B backend) surpassed by DIM with fewer parameters.
+- **Janus-4o**: Trained on ShareGPT-4o-Image but achieves an overall score of only 3.19 (vs DIM's 3.67), showing CoT blueprints provide gains beyond the raw data source.
+- **InstructPix2Pix**: Early editing model; DIM's two-stage training strategy is inspired by its channel concatenation design.
+- **UltraEdit**: Large-scale AI editing dataset; DIM uses its high-consistency subset for stage-one training.
+- **Insight**: When architectural dividends approach saturation, **high-quality data design** (especially CoT reasoning chains) becomes a more efficient path to breakthroughs. The "think then act" paradigm from human workflows can be directly translated into data design principles.
 
 ## Rating
-- Novelty: ⭐⭐⭐⭐⭐ — The "designer-painter" role separation insight is highly original and validated through data design rather than architectural changes.
-- Experimental Thoroughness: ⭐⭐⭐⭐ — Multi-benchmark evaluation and multi-designer generalization tests are conducted, though ablation studies could be more thorough.
-- Writing Quality: ⭐⭐⭐⭐⭐ — Logically clear, intuitively analogized, and well-illustrated.
-- Value: ⭐⭐⭐⭐⭐ — Offers a fundamentally new perspective on image editing in unified models; dataset is open-sourced.
+- Novelty: ⭐⭐⭐⭐⭐ — The insight into "Designer-Painter" role separation is highly original and validated through data rather than architecture.
+- Experimental Thoroughness: ⭐⭐⭐⭐ — Validated across multiple benchmarks and designers, though ablation could be deeper.
+- Writing Quality: ⭐⭐⭐⭐⭐ — Logical, intuitive analogies, and high-quality illustrations.
+- Value: ⭐⭐⭐⭐⭐ — Provides a new direction for image editing in unified models; data is open-sourced.
 
 <!-- RELATED:START -->
 
@@ -132,10 +140,10 @@ A connector-based architecture is employed: a frozen Qwen2.5-VL-3B (understandin
 ## Related Papers
 
 - [\[ICLR 2026\] Uni-X: Mitigating Modality Conflict with a Two-End-Separated Architecture for Unified Multimodal Models](uni-x_mitigating_modality_conflict_with_a_two-end-separated_architecture_for_uni.md)
+- [\[ICLR 2026\] MMaDA-Parallel: Multimodal Large Diffusion Language Models for Thinking-Aware Editing and Generation](mmada-parallel_multimodal_large_diffusion_language_models_for_thinking-aware_edi.md)
+- [\[ECCV 2024\] LayoutDETR: Detection Transformer Is a Good Multimodal Layout Designer](../../ECCV2024/image_generation/layoutdetr_detection_transformer_is_a_good_multimodal_layout_designer.md)
 - [\[CVPR 2026\] ConsistCompose: Unified Multimodal Layout Control for Image Composition](../../CVPR2026/image_generation/consistcompose_multimodal_layout_control.md)
-- [\[ICLR 2026\] Visual Autoregressive Modeling for Instruction-Guided Image Editing](visual_autoregressive_modeling_for_instruction-guided_image_editing.md)
-- [\[CVPR 2026\] MICON-Bench: Benchmarking and Enhancing Multi-Image Context Image Generation in Unified Multimodal Models](../../CVPR2026/image_generation/micon-bench_benchmarking_and_enhancing_multi-image_context_image_generation_in_u.md)
-- [\[ICLR 2026\] EditReward: A Human-Aligned Reward Model for Instruction-Guided Image Editing](editreward_a_human-aligned_reward_model_for_instruction-guided_image_editing.md)
+- [\[ICLR 2026\] EditScore: Unlocking Online RL for Image Editing via High-Fidelity Reward Modeling](editscore_unlocking_online_rl_for_image_editing_via_high-fidelity_reward_modelin.md)
 
 </div>
 
